@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1FE66C4332B
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1CD8DC433DB
 	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:52 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7007364E6B
+	by mail.kernel.org (Postfix) with ESMTPS id 7698764E62
 	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7007364E6B
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7698764E62
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,62 +23,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=n0jsAi8kys2X3AgZ0biR/aLCUqwzAt/sNCAiP6h80Rk=; b=JzH5vRdkLMz3IGhvRIXNQ3++v
-	8kPRqH4QfR5CNNK5wPgQ+54a12ge+nqbl+Gp9yFyz3w5wQQs15cezL3K3E9PTCbfiF4UEh6uWkWYh
-	dd6d6VR7NpVPLar9+rV5h0tUt+Rvsn75wNVMZEUJdmt4M+Ff9h2titwngj6COnr8Z34lTc6HDXuS6
-	PjtaHZjjKZbZuYvEaR/mpd2vuwlQRVyRzXEoSSTeK+HBECzAtcNHvjYMS5tbQtUNJdCWPV+CBaKaj
-	ozYmy7iF8gt6U5KTme4ICTV7OLPfz7rdLXWsCbwuxZxt0/tzQ2zLFMJBJLch709irpZjhz2BokL5e
-	qevkjyWrA==;
+	 bh=fqNWXMjOPGHIKMXEtifgqpYEGAjl8lCHgL9As0CeYVo=; b=pxua1ouRsaOGz64oVQcNrbNpC
+	Neae3p9r17cvcbhdcbF2cyIESkDQSHvfQgLH3hK7PPDMQsykfnB6xa1wC4lUE2CrBz33JqGrFjVB2
+	65BSdtPdj5WOv8/3Dln0Dun7ZEZvu6gfleBvJ3uYrAipfo6MiD4fMNybCUuj1ILfXtK8DZR7lZSgQ
+	gK45/HtLZqpJaCoBUanAifP9SHI4ihjnM5FGfJTrvIKaT8fot0b/jA2Fq6HuIrKZU21O+EWJc4C9u
+	GD3oj09wsRhyL/x5hMwO8fSKdKAqAIG7d+mBOCxd1bahPTbKydZhBv7mS9EGCMbdWdsZQ8lOrha6L
+	uPWUOatbw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1lEOrW-0005Ce-7I; Tue, 23 Feb 2021 03:59:50 +0000
+	id 1lEOrV-0005CU-P6; Tue, 23 Feb 2021 03:59:49 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1lE9Ji-0004tt-2G
+ id 1lE9Jj-0004tl-6b
  for linux-phy@lists.infradead.org; Mon, 22 Feb 2021 11:23:57 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNenB035092;
- Mon, 22 Feb 2021 05:23:40 -0600
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNbmn035081;
+ Mon, 22 Feb 2021 05:23:37 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1613993020;
- bh=XLr9OoErgvpAWzGsepng7zsPazqJ3thUGn3RfXKhxtc=;
+ s=ti-com-17Q1; t=1613993017;
+ bh=NLb9VikzuEC/eyCmeIli0+Vydm/e4xaj3++s8WQCSn4=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=EzF+ajnuI7gvrcQEyh11UMUusewZPPcDPVf6yXHjlWbNm413Vvz4eXuZxaohdz4sp
- MZWiTnFeZ+kMOKZXa5KduGt6LbAf5X36LninNP5xmfSCFdcbkbGtvDM8r6BXEZO0Bf
- 5a4tWfDBULlNl2AF+KCtBUm97cHNUXy5zigVdcDc=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 11MBNeWt117536
+ b=FIdGd74bL66F3bfU6zdNDXC1NOOhvUaNVjCo/GCMp2Djh9TOBrMMrjTZnlXzt9tIG
+ 5WRxEi5LB3OOyBAXEBidWoZiurHs7MTdnbEiUN495YrbDsIhzrkc5W3GJgQI5bBeFA
+ UoEoGfsiAL+cDY50hD5errO2Ey9I30zv3k+xEayU=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 11MBNb62050208
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 22 Feb 2021 05:23:40 -0600
-Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 22 Feb 2021 05:23:37 -0600
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 22
- Feb 2021 05:23:39 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ Feb 2021 05:23:36 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 22 Feb 2021 05:23:39 -0600
+ Frontend Transport; Mon, 22 Feb 2021 05:23:36 -0600
 Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNFDb088010;
- Mon, 22 Feb 2021 05:23:37 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNFDa088010;
+ Mon, 22 Feb 2021 05:23:34 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
  Herring <robh+dt@kernel.org>, Peter Rosin <peda@axentia.se>,
  Swapnil Jakhade <sjakhade@cadence.com>
-Subject: [PATCH v2 2/9] dt-bindings: phy: cadence-torrent: Add binding for
- refclk driver
-Date: Mon, 22 Feb 2021 16:53:07 +0530
-Message-ID: <20210222112314.10772-3-kishon@ti.com>
+Subject: [PATCH v2 1/9] dt-bindings: phy: ti,
+ phy-j721e-wiz: Add bindings for AM64 SERDES Wrapper
+Date: Mon, 22 Feb 2021 16:53:06 +0530
+Message-ID: <20210222112314.10772-2-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20210222112314.10772-1-kishon@ti.com>
 References: <20210222112314.10772-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210222_062354_215683_B0883810 
-X-CRM114-Status: GOOD (  10.65  )
-X-Mailman-Approved-At: Mon, 22 Feb 2021 22:59:48 -0500
+X-CRM114-CacheID: sfid-20210222_062355_391044_34BB614A 
+X-CRM114-Status: GOOD (  13.11  )
+X-Mailman-Approved-At: Mon, 22 Feb 2021 22:59:47 -0500
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,61 +97,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add binding for refclk driver used to route the refclk out of torrent
-SERDES.
+Add bindings for AM64 SERDES Wrapper.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- .../bindings/phy/phy-cadence-torrent.yaml     | 20 ++++++++++++++++---
- include/dt-bindings/phy/phy-cadence-torrent.h |  2 ++
- 2 files changed, 19 insertions(+), 3 deletions(-)
+ .../bindings/phy/ti,phy-j721e-wiz.yaml        | 10 ++++++---
+ include/dt-bindings/phy/phy-ti.h              | 21 +++++++++++++++++++
+ 2 files changed, 28 insertions(+), 3 deletions(-)
+ create mode 100644 include/dt-bindings/phy/phy-ti.h
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-index e266ade53d87..4608599a31d8 100644
---- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-+++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
-@@ -28,13 +28,27 @@ properties:
-   '#size-cells':
-     const: 0
+diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+index c33e9bc79521..bf431f98e6ea 100644
+--- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
++++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+@@ -12,9 +12,10 @@ maintainers:
  
-+  '#clock-cells':
+ properties:
+   compatible:
+-    enum:
+-      - ti,j721e-wiz-16g
+-      - ti,j721e-wiz-10g
++    oneOf:
++      - const: ti,j721e-wiz-16g
++      - const: ti,j721e-wiz-10g
++      - const: ti,am64-wiz-10g
+ 
+   power-domains:
+     maxItems: 1
+@@ -42,6 +43,9 @@ properties:
+   "#reset-cells":
+     const: 1
+ 
++  "#clock-cells":
 +    const: 1
 +
-   clocks:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 2
-     description:
--      PHY reference clock. Must contain an entry in clock-names.
-+      PHY reference clock for 1 item. Must contain an entry in clock-names.
-+      Optional Parent to enable output reference clock.
+   ranges: true
  
-   clock-names:
--    const: refclk
-+    minItems: 1
-+    items:
-+      - const: refclk
-+      - const: phy_en_refclk
+   assigned-clocks:
+diff --git a/include/dt-bindings/phy/phy-ti.h b/include/dt-bindings/phy/phy-ti.h
+new file mode 100644
+index 000000000000..ad955d3a56b4
+--- /dev/null
++++ b/include/dt-bindings/phy/phy-ti.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * This header provides constants for TI SERDES.
++ */
 +
-+  assigned-clocks:
-+    maxItems: 3
++#ifndef _DT_BINDINGS_TI_SERDES
++#define _DT_BINDINGS_TI_SERDES
 +
-+  assigned-clock-parents:
-+    maxItems: 3
- 
-   reg:
-     minItems: 1
-diff --git a/include/dt-bindings/phy/phy-cadence-torrent.h b/include/dt-bindings/phy/phy-cadence-torrent.h
-index e387b6a95741..3c92c6192493 100644
---- a/include/dt-bindings/phy/phy-cadence-torrent.h
-+++ b/include/dt-bindings/phy/phy-cadence-torrent.h
-@@ -10,4 +10,6 @@
- #define TORRENT_SERDES_EXTERNAL_SSC	1
- #define TORRENT_SERDES_INTERNAL_SSC	2
- 
-+#define CDNS_TORRENT_REFCLK_DRIVER      0
++/* Clock index for output clocks from WIZ */
 +
- #endif /* _DT_BINDINGS_TORRENT_SERDES_H */
++/* MUX Clocks */
++#define TI_WIZ_PLL0_REFCLK	0
++#define TI_WIZ_PLL1_REFCLK	1
++#define TI_WIZ_REFCLK_DIG	2
++
++/* Reserve index here for future additions */
++
++/* MISC Clocks */
++#define TI_WIZ_PHY_EN_REFCLK	16
++
++#endif /* _DT_BINDINGS_TI_SERDES */
 -- 
 2.17.1
 
