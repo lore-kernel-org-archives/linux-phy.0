@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id F3EC0C4332D
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6E8D1C4332E
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:53 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6B0DC64E62
+	by mail.kernel.org (Postfix) with ESMTPS id E707464E6B
 	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6B0DC64E62
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E707464E6B
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,61 +23,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vURNfqRXW0kPbjNqa0MzFfd6JgjlLYJ7I/Z4X2qWhHE=; b=Pm9b7Xd4f+bjJbim58mBduyu+
-	9cBczLk9xFnZ5/96JQ+Ss+S0rKvxfN9hxpajy8pxCu+TrMwXrwn0t4+Ka2pZ9Url9uWPn55mJ/l5b
-	Mckn7cnwCCDQJ9VwKDBb+KSqCb07msvLQ4jvNSTI0TI5NAJhV74Suy8PH10PjUYZKAnehBs1s+zYr
-	NtWd9INEjGBGJh+dvFcQSG4Em2XWzu0nKdhi563WWO3vijgmdHNFcUV5ryY0NcDPk55k0tWIoJIs/
-	yVW4oCTwBK6+hC1y39xMrb9ajEozzDaedWVsoQCPLZztP8xhMMw8wM3h3/ndBC4qxZlQt38qP5E+C
-	TEWO26NqQ==;
+	 bh=VkGLXa/07e5L9hIcEtp1yBRyE9ctxzuXLKwQVR7Wh5c=; b=ejVKdytxl5k7+/nKgo5BPi9Wp
+	svXFWFnjUt1NP5RZCly3dVCPoKK4JaI3doTiJrVWQ0dbAdXuLrv5p+CYzOCafOG6ZntNzNEharSgw
+	TeNLSHrhTi8RZPWaOc9ZD4izbZbGimDNtAfz0VFI1PvRUcXpSQX02f6756zskRaMQllfk5pb+ZiEX
+	/oIFFZ+hEC6nwENeIvto/FjFK9Ld4wtA6i9+y8n93xjrzr2L6G2yrJL8rrJweR74oBeF4Da0z1OqL
+	X0h8fP/6faW1LISMnDiFY09mh+qsaa57KyKO2XFPQ/ysOuqmoN2okZUFE1aLpDvLQsrAvSp2DGfTF
+	199odnUng==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1lEOrX-0005D2-FN; Tue, 23 Feb 2021 03:59:51 +0000
+	id 1lEOrY-0005DC-2s; Tue, 23 Feb 2021 03:59:52 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1lE9Jq-0004vk-Gz
- for linux-phy@lists.infradead.org; Mon, 22 Feb 2021 11:24:07 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNrQu007159;
- Mon, 22 Feb 2021 05:23:53 -0600
+ id 1lE9Jt-0004yB-CM
+ for linux-phy@lists.infradead.org; Mon, 22 Feb 2021 11:24:08 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNxPp007180;
+ Mon, 22 Feb 2021 05:23:59 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1613993033;
- bh=yl5c3BCTyT37yEjGx+zc4U9i0HfK311WmYFX/4ra4Kc=;
+ s=ti-com-17Q1; t=1613993039;
+ bh=LgqkTSE9IpV02yTf8dTUWnXAEbh5vkZeANTOvYgN90s=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=KWKYz8IuJJDDEdIla8jdwsK0znnxkrMAWweY1pr/AsMrlLDMhxKD3nHV9lvCJJm4t
- qce++HrQaOElsFI0V84MsB5E5wCDd6L0HIijcu2Wwz93imBWVQwHTrFX/z+hYwW+Y4
- b349ScwFM2ZSXsGhVyrqQwY1F/pNwDjJantepD7w=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 11MBNqfR050378
+ b=NZ55mlxMAq43voDR4uC0wQOA+rS7PxxrAn+NB0AY/T7Q9ufyRvgxXvbqXJh6AxsTq
+ 53V9Eu4Do4ogWJbrXmlX74KP7ea1fQY4tzLb0xfux3f69AD++ZYQtZLgHeqZHto390
+ Vf1qMrDApSf1GD0Yk2DAQwyqm5ohZudyrXtJ8+is=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 11MBNxP8117792
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 22 Feb 2021 05:23:53 -0600
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 22 Feb 2021 05:23:59 -0600
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 22
- Feb 2021 05:23:52 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ Feb 2021 05:23:59 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 22 Feb 2021 05:23:52 -0600
+ Frontend Transport; Mon, 22 Feb 2021 05:23:59 -0600
 Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNFDf088010;
- Mon, 22 Feb 2021 05:23:50 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNFDh088010;
+ Mon, 22 Feb 2021 05:23:56 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
  Herring <robh+dt@kernel.org>, Peter Rosin <peda@axentia.se>,
  Swapnil Jakhade <sjakhade@cadence.com>
-Subject: [PATCH v2 6/9] phy: ti: j721e-wiz: Configure full rate divider for
- AM64
-Date: Mon, 22 Feb 2021 16:53:11 +0530
-Message-ID: <20210222112314.10772-7-kishon@ti.com>
+Subject: [PATCH v2 8/9] phy: ti: j721e-wiz: Enable reference clock output in
+ cmn_refclk_<p/m>
+Date: Mon, 22 Feb 2021 16:53:13 +0530
+Message-ID: <20210222112314.10772-9-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20210222112314.10772-1-kishon@ti.com>
 References: <20210222112314.10772-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210222_062402_805571_3293D10E 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20210222_062405_546898_60F4690C 
+X-CRM114-Status: GOOD (  15.19  )
 X-Mailman-Approved-At: Mon, 22 Feb 2021 22:59:48 -0500
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -97,127 +97,160 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The frequency of the txmclk between PCIe and SERDES has
-changed to 250MHz from 500MHz. Configure full rate divider
-for AM64 accordingly.
+cmn_refclk_<p/m> lines in Torrent SERDES is used for connecting external
+reference clock. cmn_refclk_<p/m> can also be configured to output the
+reference clock. In order to drive the refclk out from the SERDES
+(Cadence Torrent), PHY_EN_REFCLK should be set in SERDES_RST of WIZ.
+Model PHY_EN_REFCLK as a clock, so that platforms like AM642 EVM can
+enable it.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- drivers/phy/ti/phy-j721e-wiz.c | 39 +++++++++++++++++++++++++++++++---
- 1 file changed, 36 insertions(+), 3 deletions(-)
+ drivers/phy/ti/phy-j721e-wiz.c | 89 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 89 insertions(+)
 
 diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index 1a4e09a394a8..2706e7be0c28 100644
+index f9299dcdbdb7..03896240a5d5 100644
 --- a/drivers/phy/ti/phy-j721e-wiz.c
 +++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -101,6 +101,13 @@ static const struct reg_field p_standard_mode[WIZ_MAX_LANES] = {
- 	REG_FIELD(WIZ_LANECTL(3), 24, 25),
+@@ -66,6 +66,7 @@ enum wiz_clock_input {
+ 
+ static const struct reg_field por_en = REG_FIELD(WIZ_SERDES_CTRL, 31, 31);
+ static const struct reg_field phy_reset_n = REG_FIELD(WIZ_SERDES_RST, 31, 31);
++static const struct reg_field phy_en_refclk = REG_FIELD(WIZ_SERDES_RST, 30, 30);
+ static const struct reg_field pll1_refclk_mux_sel =
+ 					REG_FIELD(WIZ_SERDES_RST, 29, 29);
+ static const struct reg_field pll0_refclk_mux_sel =
+@@ -86,6 +87,7 @@ static const char * const output_clk_names[] = {
+ 	[TI_WIZ_PLL0_REFCLK] = "pll0-refclk",
+ 	[TI_WIZ_PLL1_REFCLK] = "pll1-refclk",
+ 	[TI_WIZ_REFCLK_DIG] = "refclk-dig",
++	[TI_WIZ_PHY_EN_REFCLK] = "phy-en-refclk",
  };
  
-+static const struct reg_field p0_fullrt_div[WIZ_MAX_LANES] = {
-+	REG_FIELD(WIZ_LANECTL(0), 22, 23),
-+	REG_FIELD(WIZ_LANECTL(1), 22, 23),
-+	REG_FIELD(WIZ_LANECTL(2), 22, 23),
-+	REG_FIELD(WIZ_LANECTL(3), 22, 23),
+ static const struct reg_field p_enable[WIZ_MAX_LANES] = {
+@@ -158,6 +160,14 @@ struct wiz_clk_div_sel {
+ 	const char		*node_name;
+ };
+ 
++struct wiz_phy_en_refclk {
++	struct clk_hw		hw;
++	struct regmap_field	*phy_en_refclk;
++	struct clk_init_data	clk_data;
 +};
 +
- static const struct reg_field typec_ln10_swap =
- 					REG_FIELD(WIZ_SERDES_TYPEC, 30, 30);
- 
-@@ -191,6 +198,7 @@ static const struct wiz_clk_div_sel clk_div_sel[] = {
- enum wiz_type {
- 	J721E_WIZ_16G,
- 	J721E_WIZ_10G,
-+	AM64_WIZ_10G,
- };
- 
- #define WIZ_TYPEC_DIR_DEBOUNCE_MIN	100	/* ms */
-@@ -208,6 +216,7 @@ struct wiz {
++#define to_wiz_phy_en_refclk(_hw) container_of(_hw, struct wiz_phy_en_refclk, hw)
++
+ static const struct wiz_clk_mux_sel clk_mux_sel_16g[] = {
+ 	{
+ 		/*
+@@ -237,6 +247,7 @@ struct wiz {
+ 	unsigned int		clk_div_sel_num;
+ 	struct regmap_field	*por_en;
+ 	struct regmap_field	*phy_reset_n;
++	struct regmap_field	*phy_en_refclk;
+ 	struct regmap_field	*p_enable[WIZ_MAX_LANES];
  	struct regmap_field	*p_align[WIZ_MAX_LANES];
  	struct regmap_field	*p_raw_auto_start[WIZ_MAX_LANES];
- 	struct regmap_field	*p_standard_mode[WIZ_MAX_LANES];
-+	struct regmap_field	*p0_fullrt_div[WIZ_MAX_LANES];
- 	struct regmap_field	*pma_cmn_refclk_int_mode;
- 	struct regmap_field	*pma_cmn_refclk_mode;
- 	struct regmap_field	*pma_cmn_refclk_dig_div;
-@@ -373,7 +382,7 @@ static int wiz_regfield_init(struct wiz *wiz)
- 		return PTR_ERR(wiz->mux_sel_field[PLL1_REFCLK]);
+@@ -469,6 +480,76 @@ static int wiz_regfield_init(struct wiz *wiz)
+ 		return PTR_ERR(wiz->typec_ln10_swap);
  	}
  
--	if (wiz->type == J721E_WIZ_10G)
-+	if (wiz->type == J721E_WIZ_10G || wiz->type == AM64_WIZ_10G)
- 		wiz->mux_sel_field[REFCLK_DIG] =
- 			devm_regmap_field_alloc(dev, regmap,
- 						refclk_dig_sel_10g);
-@@ -417,6 +426,12 @@ static int wiz_regfield_init(struct wiz *wiz)
- 				i);
- 			return PTR_ERR(wiz->p_standard_mode[i]);
- 		}
-+
-+		wiz->p0_fullrt_div[i] = devm_regmap_field_alloc(dev, regmap, p0_fullrt_div[i]);
-+		if (IS_ERR(wiz->p0_fullrt_div[i])) {
-+			dev_err(dev, "P%d_FULLRT_DIV reg field init failed\n", i);
-+			return PTR_ERR(wiz->p0_fullrt_div[i]);
-+		}
- 	}
- 
- 	wiz->typec_ln10_swap = devm_regmap_field_alloc(dev, regmap,
-@@ -718,6 +733,17 @@ static int wiz_phy_reset_assert(struct reset_controller_dev *rcdev,
- 	return ret;
- }
- 
-+static int wiz_phy_fullrt_div(struct wiz *wiz, int lane)
-+{
-+	if (wiz->type != AM64_WIZ_10G)
-+		return 0;
-+
-+	if (wiz->lane_phy_type[lane] == PHY_TYPE_PCIE)
-+		return regmap_field_write(wiz->p0_fullrt_div[lane], 0x1);
++	wiz->phy_en_refclk = devm_regmap_field_alloc(dev, regmap, phy_en_refclk);
++	if (IS_ERR(wiz->phy_en_refclk)) {
++		dev_err(dev, "PHY_EN_REFCLK reg field init failed\n");
++		return PTR_ERR(wiz->phy_en_refclk);
++	}
 +
 +	return 0;
 +}
 +
- static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
- 				  unsigned long id)
- {
-@@ -741,6 +767,10 @@ static int wiz_phy_reset_deassert(struct reset_controller_dev *rcdev,
- 		return ret;
++static int wiz_phy_en_refclk_enable(struct clk_hw *hw)
++{
++	struct wiz_phy_en_refclk *wiz_phy_en_refclk = to_wiz_phy_en_refclk(hw);
++	struct regmap_field *phy_en_refclk = wiz_phy_en_refclk->phy_en_refclk;
++
++	regmap_field_write(phy_en_refclk, 1);
++
++	return 0;
++}
++
++static void wiz_phy_en_refclk_disable(struct clk_hw *hw)
++{
++	struct wiz_phy_en_refclk *wiz_phy_en_refclk = to_wiz_phy_en_refclk(hw);
++	struct regmap_field *phy_en_refclk = wiz_phy_en_refclk->phy_en_refclk;
++
++	regmap_field_write(phy_en_refclk, 0);
++}
++
++static int wiz_phy_en_refclk_is_enabled(struct clk_hw *hw)
++{
++	struct wiz_phy_en_refclk *wiz_phy_en_refclk = to_wiz_phy_en_refclk(hw);
++	struct regmap_field *phy_en_refclk = wiz_phy_en_refclk->phy_en_refclk;
++	int val;
++
++	regmap_field_read(phy_en_refclk, &val);
++
++	return !!val;
++}
++
++static const struct clk_ops wiz_phy_en_refclk_ops = {
++	.enable = wiz_phy_en_refclk_enable,
++	.disable = wiz_phy_en_refclk_disable,
++	.is_enabled = wiz_phy_en_refclk_is_enabled,
++};
++
++static int wiz_phy_en_refclk_register(struct wiz *wiz)
++{
++	struct wiz_phy_en_refclk *wiz_phy_en_refclk;
++	struct device *dev = wiz->dev;
++	struct clk_init_data *init;
++	struct clk *clk;
++
++	wiz_phy_en_refclk = devm_kzalloc(dev, sizeof(*wiz_phy_en_refclk), GFP_KERNEL);
++	if (!wiz_phy_en_refclk)
++		return -ENOMEM;
++
++	init = &wiz_phy_en_refclk->clk_data;
++
++	init->ops = &wiz_phy_en_refclk_ops;
++	init->flags = 0;
++	init->name = output_clk_names[TI_WIZ_PHY_EN_REFCLK];
++
++	wiz_phy_en_refclk->phy_en_refclk = wiz->phy_en_refclk;
++	wiz_phy_en_refclk->hw.init = init;
++
++	clk = devm_clk_register(dev, &wiz_phy_en_refclk->hw);
++	if (IS_ERR(clk))
++		return PTR_ERR(clk);
++
++	wiz->output_clks[TI_WIZ_PHY_EN_REFCLK] = clk;
++
+ 	return 0;
+ }
+ 
+@@ -724,6 +805,8 @@ static void wiz_clock_cleanup(struct wiz *wiz, struct device_node *node)
+ 		of_clk_del_provider(clk_node);
+ 		of_node_put(clk_node);
+ 	}
++
++	of_clk_del_provider(wiz->dev->of_node);
+ }
+ 
+ static int wiz_clock_register(struct wiz *wiz)
+@@ -747,6 +830,12 @@ static int wiz_clock_register(struct wiz *wiz)
+ 		}
  	}
  
-+	ret = wiz_phy_fullrt_div(wiz, id - 1);
-+	if (ret)
++	ret = wiz_phy_en_refclk_register(wiz);
++	if (ret) {
++		dev_err(dev, "Failed to add phy-en-refclk\n");
 +		return ret;
++	}
 +
- 	if (wiz->lane_phy_type[id - 1] == PHY_TYPE_DP)
- 		ret = regmap_field_write(wiz->p_enable[id - 1], P_ENABLE);
- 	else
-@@ -768,6 +798,9 @@ static const struct of_device_id wiz_id_table[] = {
- 	{
- 		.compatible = "ti,j721e-wiz-10g", .data = (void *)J721E_WIZ_10G
- 	},
-+	{
-+		.compatible = "ti,am64-wiz-10g", .data = (void *)AM64_WIZ_10G
-+	},
- 	{}
- };
- MODULE_DEVICE_TABLE(of, wiz_id_table);
-@@ -899,14 +932,14 @@ static int wiz_probe(struct platform_device *pdev)
- 	wiz->dev = dev;
- 	wiz->regmap = regmap;
- 	wiz->num_lanes = num_lanes;
--	if (wiz->type == J721E_WIZ_10G)
-+	if (wiz->type == J721E_WIZ_10G || wiz->type == AM64_WIZ_10G)
- 		wiz->clk_mux_sel = clk_mux_sel_10g;
- 	else
- 		wiz->clk_mux_sel = clk_mux_sel_16g;
- 
- 	wiz->clk_div_sel = clk_div_sel;
- 
--	if (wiz->type == J721E_WIZ_10G)
-+	if (wiz->type == J721E_WIZ_10G || wiz->type == AM64_WIZ_10G)
- 		wiz->clk_div_sel_num = WIZ_DIV_NUM_CLOCKS_10G;
- 	else
- 		wiz->clk_div_sel_num = WIZ_DIV_NUM_CLOCKS_16G;
+ 	wiz->clk_data.clks = wiz->output_clks;
+ 	wiz->clk_data.clk_num = WIZ_MAX_OUTPUT_CLOCKS;
+ 	ret = of_clk_add_provider(node, of_clk_src_onecell_get, &wiz->clk_data);
 -- 
 2.17.1
 
