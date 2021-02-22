@@ -2,19 +2,20 @@ Return-Path: <SRS0=RVtz=HZ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	UNWANTED_LANGUAGE_BODY,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6E8D1C4332E
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6FD2CC43332
 	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:53 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E707464E6B
+	by mail.kernel.org (Postfix) with ESMTPS id AAE6164E61
 	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E707464E6B
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org AAE6164E61
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,61 +24,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VkGLXa/07e5L9hIcEtp1yBRyE9ctxzuXLKwQVR7Wh5c=; b=ejVKdytxl5k7+/nKgo5BPi9Wp
-	svXFWFnjUt1NP5RZCly3dVCPoKK4JaI3doTiJrVWQ0dbAdXuLrv5p+CYzOCafOG6ZntNzNEharSgw
-	TeNLSHrhTi8RZPWaOc9ZD4izbZbGimDNtAfz0VFI1PvRUcXpSQX02f6756zskRaMQllfk5pb+ZiEX
-	/oIFFZ+hEC6nwENeIvto/FjFK9Ld4wtA6i9+y8n93xjrzr2L6G2yrJL8rrJweR74oBeF4Da0z1OqL
-	X0h8fP/6faW1LISMnDiFY09mh+qsaa57KyKO2XFPQ/ysOuqmoN2okZUFE1aLpDvLQsrAvSp2DGfTF
-	199odnUng==;
+	 bh=vGGAr4OSJVbwkmLa/hAdYHFDgc7LfWkLJQsIuVbUq6w=; b=M+ROCXcDPze9bUAiykJ8LStvo
+	W2wAuN4H6vyHCsChnk1xW9FRvrZIpfWYTKehxtVSBAA2tsHIjtEagxzJUroEtj02gPYPD185HFjd3
+	Z+vRKu8pArse/SQ/EtcfvjSLsLLRKO/M5PTdswKr676h/dIOe1LAwldn9o0Bdbx4VB2gWBDzzA4Wh
+	BI2e1jztqkLG2R/Ci1IMrMs6v20Ksp2P6BAfGi+m6LGjaQCnfFt+3V6epK5alKqVEHt/N/5NSty4H
+	5G7LghkSVu4ECuRbqFCzrCJKKbx7ma1SY8RVELB629+fyPCvhEXJn2r5DoBiKJGeQZVEAS6wYn6Rq
+	xtm6AcCtw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1lEOrY-0005DC-2s; Tue, 23 Feb 2021 03:59:52 +0000
+	id 1lEOrX-0005D8-Mq; Tue, 23 Feb 2021 03:59:51 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1lE9Jt-0004yB-CM
+ id 1lE9Jq-0004wW-Gy
  for linux-phy@lists.infradead.org; Mon, 22 Feb 2021 11:24:08 +0000
 Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNxPp007180;
- Mon, 22 Feb 2021 05:23:59 -0600
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNu6J007166;
+ Mon, 22 Feb 2021 05:23:56 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1613993039;
- bh=LgqkTSE9IpV02yTf8dTUWnXAEbh5vkZeANTOvYgN90s=;
+ s=ti-com-17Q1; t=1613993036;
+ bh=OJlIz+AWFMmzXGgsTjG9uyhtO88Ig4YJBS7ThBMgmDc=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=NZ55mlxMAq43voDR4uC0wQOA+rS7PxxrAn+NB0AY/T7Q9ufyRvgxXvbqXJh6AxsTq
- 53V9Eu4Do4ogWJbrXmlX74KP7ea1fQY4tzLb0xfux3f69AD++ZYQtZLgHeqZHto390
- Vf1qMrDApSf1GD0Yk2DAQwyqm5ohZudyrXtJ8+is=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 11MBNxP8117792
+ b=ryoE01jMhrMj/lGo1LnpzqTUFFxzd2S84RW1L1ntHube7O8tZdUdsG7qrb8JSNKej
+ KYT5HgGZBq/SVU9MhcCTuFbs5LdIu1LS/qyikJgxXio9utP6YuqZ//VdLIM9Iz72IR
+ XgEtbAYP3Flic1AviTHpjzLdvmZ94dDQJvmTb+jo=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 11MBNulo117766
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 22 Feb 2021 05:23:59 -0600
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 22 Feb 2021 05:23:56 -0600
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 22
- Feb 2021 05:23:59 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ Feb 2021 05:23:56 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 22 Feb 2021 05:23:59 -0600
+ Frontend Transport; Mon, 22 Feb 2021 05:23:56 -0600
 Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNFDh088010;
- Mon, 22 Feb 2021 05:23:56 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNFDg088010;
+ Mon, 22 Feb 2021 05:23:53 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
  Herring <robh+dt@kernel.org>, Peter Rosin <peda@axentia.se>,
  Swapnil Jakhade <sjakhade@cadence.com>
-Subject: [PATCH v2 8/9] phy: ti: j721e-wiz: Enable reference clock output in
- cmn_refclk_<p/m>
-Date: Mon, 22 Feb 2021 16:53:13 +0530
-Message-ID: <20210222112314.10772-9-kishon@ti.com>
+Subject: [PATCH v2 7/9] phy: ti: j721e-wiz: Model the internal clocks without
+ device tree input
+Date: Mon, 22 Feb 2021 16:53:12 +0530
+Message-ID: <20210222112314.10772-8-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20210222112314.10772-1-kishon@ti.com>
 References: <20210222112314.10772-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210222_062405_546898_60F4690C 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20210222_062402_776017_48F758C6 
+X-CRM114-Status: GOOD (  23.14  )
 X-Mailman-Approved-At: Mon, 22 Feb 2021 22:59:48 -0500
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -97,160 +98,281 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-cmn_refclk_<p/m> lines in Torrent SERDES is used for connecting external
-reference clock. cmn_refclk_<p/m> can also be configured to output the
-reference clock. In order to drive the refclk out from the SERDES
-(Cadence Torrent), PHY_EN_REFCLK should be set in SERDES_RST of WIZ.
-Model PHY_EN_REFCLK as a clock, so that platforms like AM642 EVM can
-enable it.
+commit 091876cc355d ("phy: ti: j721e-wiz: Add support for WIZ module
+present in TI J721E SoC") modeled the internal clocks depending on the
+subnodes that are populated in device tree. However recent discussions
+in the mailing list [1] suggested to just add #clock cells in the parent
+DT node and model the clocks within the driver.
+
+Model the mux clocks without device tree input for AM64x SoC. Don't
+remove the earlier design since DT nodes for J7200 and J721e are already
+upstreamed.
+
+[1] -> http://lore.kernel.org/r/20210108025943.GA1790601@robh.at.kernel.org
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- drivers/phy/ti/phy-j721e-wiz.c | 89 ++++++++++++++++++++++++++++++++++
- 1 file changed, 89 insertions(+)
+ drivers/phy/ti/phy-j721e-wiz.c | 144 +++++++++++++++++++++++++++++++--
+ 1 file changed, 139 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index f9299dcdbdb7..03896240a5d5 100644
+index 2706e7be0c28..f9299dcdbdb7 100644
 --- a/drivers/phy/ti/phy-j721e-wiz.c
 +++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -66,6 +66,7 @@ enum wiz_clock_input {
+@@ -7,6 +7,7 @@
+  */
  
+ #include <dt-bindings/phy/phy.h>
++#include <dt-bindings/phy/phy-ti.h>
+ #include <linux/clk.h>
+ #include <linux/clk-provider.h>
+ #include <linux/gpio.h>
+@@ -27,6 +28,10 @@
+ #define WIZ_SERDES_TYPEC	0x410
+ #define WIZ_LANECTL(n)		(0x480 + (0x40 * (n)))
+ 
++#define WIZ_MAX_INPUT_CLOCKS	4
++/* To include mux clocks, divider clocks and gate clocks */
++#define WIZ_MAX_OUTPUT_CLOCKS	32
++
+ #define WIZ_MAX_LANES		4
+ #define WIZ_MUX_NUM_CLOCKS	3
+ #define WIZ_DIV_NUM_CLOCKS_16G	2
+@@ -52,6 +57,13 @@ enum wiz_refclk_div_sel {
+ 	CMN_REFCLK1_DIG_DIV,
+ };
+ 
++enum wiz_clock_input {
++	WIZ_CORE_REFCLK,
++	WIZ_EXT_REFCLK,
++	WIZ_CORE_REFCLK1,
++	WIZ_EXT_REFCLK1,
++};
++
  static const struct reg_field por_en = REG_FIELD(WIZ_SERDES_CTRL, 31, 31);
  static const struct reg_field phy_reset_n = REG_FIELD(WIZ_SERDES_RST, 31, 31);
-+static const struct reg_field phy_en_refclk = REG_FIELD(WIZ_SERDES_RST, 30, 30);
  static const struct reg_field pll1_refclk_mux_sel =
- 					REG_FIELD(WIZ_SERDES_RST, 29, 29);
- static const struct reg_field pll0_refclk_mux_sel =
-@@ -86,6 +87,7 @@ static const char * const output_clk_names[] = {
- 	[TI_WIZ_PLL0_REFCLK] = "pll0-refclk",
- 	[TI_WIZ_PLL1_REFCLK] = "pll1-refclk",
- 	[TI_WIZ_REFCLK_DIG] = "refclk-dig",
-+	[TI_WIZ_PHY_EN_REFCLK] = "phy-en-refclk",
- };
+@@ -70,6 +82,11 @@ static const struct reg_field pma_cmn_refclk_dig_div =
+ 					REG_FIELD(WIZ_SERDES_TOP_CTRL, 26, 27);
+ static const struct reg_field pma_cmn_refclk1_dig_div =
+ 					REG_FIELD(WIZ_SERDES_TOP_CTRL, 24, 25);
++static const char * const output_clk_names[] = {
++	[TI_WIZ_PLL0_REFCLK] = "pll0-refclk",
++	[TI_WIZ_PLL1_REFCLK] = "pll1-refclk",
++	[TI_WIZ_REFCLK_DIG] = "refclk-dig",
++};
  
  static const struct reg_field p_enable[WIZ_MAX_LANES] = {
-@@ -158,6 +160,14 @@ struct wiz_clk_div_sel {
+ 	REG_FIELD(WIZ_LANECTL(0), 30, 31),
+@@ -130,8 +147,10 @@ struct wiz_clk_divider {
+ #define to_wiz_clk_div(_hw) container_of(_hw, struct wiz_clk_divider, hw)
+ 
+ struct wiz_clk_mux_sel {
+-	u32			table[4];
++	u32			table[WIZ_MAX_INPUT_CLOCKS];
  	const char		*node_name;
++	u32			num_parents;
++	u32			parents[WIZ_MAX_INPUT_CLOCKS];
  };
  
-+struct wiz_phy_en_refclk {
-+	struct clk_hw		hw;
-+	struct regmap_field	*phy_en_refclk;
-+	struct clk_init_data	clk_data;
-+};
-+
-+#define to_wiz_phy_en_refclk(_hw) container_of(_hw, struct wiz_phy_en_refclk, hw)
-+
- static const struct wiz_clk_mux_sel clk_mux_sel_16g[] = {
+ struct wiz_clk_div_sel {
+@@ -164,14 +183,20 @@ static const struct wiz_clk_mux_sel clk_mux_sel_10g[] = {
+ 		 * Mux value to be configured for each of the input clocks
+ 		 * in the order populated in device tree
+ 		 */
++		.num_parents = 2,
++		.parents = { WIZ_CORE_REFCLK, WIZ_EXT_REFCLK },
+ 		.table = { 1, 0 },
+ 		.node_name = "pll0-refclk",
+ 	},
  	{
- 		/*
-@@ -237,6 +247,7 @@ struct wiz {
- 	unsigned int		clk_div_sel_num;
- 	struct regmap_field	*por_en;
- 	struct regmap_field	*phy_reset_n;
-+	struct regmap_field	*phy_en_refclk;
- 	struct regmap_field	*p_enable[WIZ_MAX_LANES];
- 	struct regmap_field	*p_align[WIZ_MAX_LANES];
- 	struct regmap_field	*p_raw_auto_start[WIZ_MAX_LANES];
-@@ -469,6 +480,76 @@ static int wiz_regfield_init(struct wiz *wiz)
- 		return PTR_ERR(wiz->typec_ln10_swap);
- 	}
++		.num_parents = 2,
++		.parents = { WIZ_CORE_REFCLK, WIZ_EXT_REFCLK },
+ 		.table = { 1, 0 },
+ 		.node_name = "pll1-refclk",
+ 	},
+ 	{
++		.num_parents = 2,
++		.parents = { WIZ_CORE_REFCLK, WIZ_EXT_REFCLK },
+ 		.table = { 1, 0 },
+ 		.node_name = "refclk-dig",
+ 	},
+@@ -232,6 +257,9 @@ struct wiz {
+ 	struct gpio_desc	*gpio_typec_dir;
+ 	int			typec_dir_delay;
+ 	u32 lane_phy_type[WIZ_MAX_LANES];
++	struct clk		*input_clks[WIZ_MAX_INPUT_CLOCKS];
++	struct clk		*output_clks[WIZ_MAX_OUTPUT_CLOCKS];
++	struct clk_onecell_data	clk_data;
+ };
  
-+	wiz->phy_en_refclk = devm_regmap_field_alloc(dev, regmap, phy_en_refclk);
-+	if (IS_ERR(wiz->phy_en_refclk)) {
-+		dev_err(dev, "PHY_EN_REFCLK reg field init failed\n");
-+		return PTR_ERR(wiz->phy_en_refclk);
-+	}
-+
-+	return 0;
-+}
-+
-+static int wiz_phy_en_refclk_enable(struct clk_hw *hw)
+ static int wiz_reset(struct wiz *wiz)
+@@ -469,8 +497,69 @@ static const struct clk_ops wiz_clk_mux_ops = {
+ 	.get_parent = wiz_clk_mux_get_parent,
+ };
+ 
+-static int wiz_mux_clk_register(struct wiz *wiz, struct device_node *node,
+-				struct regmap_field *field, const u32 *table)
++static int wiz_mux_clk_register(struct wiz *wiz, struct regmap_field *field,
++				const struct wiz_clk_mux_sel *mux_sel, int clk_index)
 +{
-+	struct wiz_phy_en_refclk *wiz_phy_en_refclk = to_wiz_phy_en_refclk(hw);
-+	struct regmap_field *phy_en_refclk = wiz_phy_en_refclk->phy_en_refclk;
-+
-+	regmap_field_write(phy_en_refclk, 1);
-+
-+	return 0;
-+}
-+
-+static void wiz_phy_en_refclk_disable(struct clk_hw *hw)
-+{
-+	struct wiz_phy_en_refclk *wiz_phy_en_refclk = to_wiz_phy_en_refclk(hw);
-+	struct regmap_field *phy_en_refclk = wiz_phy_en_refclk->phy_en_refclk;
-+
-+	regmap_field_write(phy_en_refclk, 0);
-+}
-+
-+static int wiz_phy_en_refclk_is_enabled(struct clk_hw *hw)
-+{
-+	struct wiz_phy_en_refclk *wiz_phy_en_refclk = to_wiz_phy_en_refclk(hw);
-+	struct regmap_field *phy_en_refclk = wiz_phy_en_refclk->phy_en_refclk;
-+	int val;
-+
-+	regmap_field_read(phy_en_refclk, &val);
-+
-+	return !!val;
-+}
-+
-+static const struct clk_ops wiz_phy_en_refclk_ops = {
-+	.enable = wiz_phy_en_refclk_enable,
-+	.disable = wiz_phy_en_refclk_disable,
-+	.is_enabled = wiz_phy_en_refclk_is_enabled,
-+};
-+
-+static int wiz_phy_en_refclk_register(struct wiz *wiz)
-+{
-+	struct wiz_phy_en_refclk *wiz_phy_en_refclk;
 +	struct device *dev = wiz->dev;
 +	struct clk_init_data *init;
++	const char **parent_names;
++	unsigned int num_parents;
++	struct wiz_clk_mux *mux;
++	char clk_name[100];
 +	struct clk *clk;
++	int ret = 0, i;
 +
-+	wiz_phy_en_refclk = devm_kzalloc(dev, sizeof(*wiz_phy_en_refclk), GFP_KERNEL);
-+	if (!wiz_phy_en_refclk)
++	mux = devm_kzalloc(dev, sizeof(*mux), GFP_KERNEL);
++	if (!mux)
 +		return -ENOMEM;
 +
-+	init = &wiz_phy_en_refclk->clk_data;
++	num_parents = mux_sel->num_parents;
 +
-+	init->ops = &wiz_phy_en_refclk_ops;
-+	init->flags = 0;
-+	init->name = output_clk_names[TI_WIZ_PHY_EN_REFCLK];
++	parent_names = kzalloc((sizeof(char *) * num_parents), GFP_KERNEL);
++	if (!parent_names)
++		return -ENOMEM;
 +
-+	wiz_phy_en_refclk->phy_en_refclk = wiz->phy_en_refclk;
-+	wiz_phy_en_refclk->hw.init = init;
++	for (i = 0; i < num_parents; i++) {
++		clk = wiz->input_clks[mux_sel->parents[i]];
++		if (IS_ERR_OR_NULL(clk)) {
++			dev_err(dev, "Failed to get parent clk for %s\n",
++				output_clk_names[clk_index]);
++			ret = -EINVAL;
++			goto err;
++		}
++		parent_names[i] = __clk_get_name(clk);
++	}
 +
-+	clk = devm_clk_register(dev, &wiz_phy_en_refclk->hw);
-+	if (IS_ERR(clk))
-+		return PTR_ERR(clk);
++	snprintf(clk_name, sizeof(clk_name), "%s_%s", dev_name(dev), output_clk_names[clk_index]);
 +
-+	wiz->output_clks[TI_WIZ_PHY_EN_REFCLK] = clk;
++	init = &mux->clk_data;
 +
- 	return 0;
- }
++	init->ops = &wiz_clk_mux_ops;
++	init->flags = CLK_SET_RATE_NO_REPARENT;
++	init->parent_names = parent_names;
++	init->num_parents = num_parents;
++	init->name = clk_name;
++
++	mux->field = field;
++	mux->table = mux_sel->table;
++	mux->hw.init = init;
++
++	clk = devm_clk_register(dev, &mux->hw);
++	if (IS_ERR(clk)) {
++		ret = PTR_ERR(clk);
++		goto err;
++	}
++
++	wiz->output_clks[clk_index] = clk;
++
++err:
++	kfree(parent_names);
++
++	return ret;
++}
++
++static int wiz_mux_of_clk_register(struct wiz *wiz, struct device_node *node,
++				   struct regmap_field *field, const u32 *table)
+ {
+ 	struct device *dev = wiz->dev;
+ 	struct clk_init_data *init;
+@@ -615,9 +704,15 @@ static int wiz_div_clk_register(struct wiz *wiz, struct device_node *node,
+ static void wiz_clock_cleanup(struct wiz *wiz, struct device_node *node)
+ {
+ 	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
++	struct device *dev = wiz->dev;
+ 	struct device_node *clk_node;
+ 	int i;
  
-@@ -724,6 +805,8 @@ static void wiz_clock_cleanup(struct wiz *wiz, struct device_node *node)
++	if (wiz->type == AM64_WIZ_10G) {
++		of_clk_del_provider(dev->of_node);
++		return;
++	}
++
+ 	for (i = 0; i < WIZ_MUX_NUM_CLOCKS; i++) {
+ 		clk_node = of_get_child_by_name(node, clk_mux_sel[i].node_name);
  		of_clk_del_provider(clk_node);
- 		of_node_put(clk_node);
+@@ -631,6 +726,36 @@ static void wiz_clock_cleanup(struct wiz *wiz, struct device_node *node)
  	}
-+
-+	of_clk_del_provider(wiz->dev->of_node);
  }
  
- static int wiz_clock_register(struct wiz *wiz)
-@@ -747,6 +830,12 @@ static int wiz_clock_register(struct wiz *wiz)
- 		}
++static int wiz_clock_register(struct wiz *wiz)
++{
++	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
++	struct device *dev = wiz->dev;
++	struct device_node *node = dev->of_node;
++	int clk_index;
++	int ret;
++	int i;
++
++	if (wiz->type != AM64_WIZ_10G)
++		return 0;
++
++	clk_index = TI_WIZ_PLL0_REFCLK;
++	for (i = 0; i < WIZ_MUX_NUM_CLOCKS; i++, clk_index++) {
++		ret = wiz_mux_clk_register(wiz, wiz->mux_sel_field[i], &clk_mux_sel[i], clk_index);
++		if (ret) {
++			dev_err(dev, "Failed to register clk: %s\n", output_clk_names[clk_index]);
++			return ret;
++		}
++	}
++
++	wiz->clk_data.clks = wiz->output_clks;
++	wiz->clk_data.clk_num = WIZ_MAX_OUTPUT_CLOCKS;
++	ret = of_clk_add_provider(node, of_clk_src_onecell_get, &wiz->clk_data);
++	if (ret)
++		dev_err(dev, "Failed to add clock provider: %s\n", node->name);
++
++	return ret;
++}
++
+ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ {
+ 	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
+@@ -648,6 +773,7 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 		ret = PTR_ERR(clk);
+ 		return ret;
  	}
++	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
  
-+	ret = wiz_phy_en_refclk_register(wiz);
-+	if (ret) {
-+		dev_err(dev, "Failed to add phy-en-refclk\n");
+ 	rate = clk_get_rate(clk);
+ 	if (rate >= 100000000)
+@@ -661,6 +787,7 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 		ret = PTR_ERR(clk);
+ 		return ret;
+ 	}
++	wiz->input_clks[WIZ_EXT_REFCLK] = clk;
+ 
+ 	rate = clk_get_rate(clk);
+ 	if (rate >= 100000000)
+@@ -668,6 +795,13 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 	else
+ 		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x2);
+ 
++	if (wiz->type == AM64_WIZ_10G) {
++		ret = wiz_clock_register(wiz);
++		if (ret)
++			dev_err(dev, "Failed to register wiz clocks\n");
 +		return ret;
 +	}
 +
- 	wiz->clk_data.clks = wiz->output_clks;
- 	wiz->clk_data.clk_num = WIZ_MAX_OUTPUT_CLOCKS;
- 	ret = of_clk_add_provider(node, of_clk_src_onecell_get, &wiz->clk_data);
+ 	for (i = 0; i < WIZ_MUX_NUM_CLOCKS; i++) {
+ 		node_name = clk_mux_sel[i].node_name;
+ 		clk_node = of_get_child_by_name(node, node_name);
+@@ -677,8 +811,8 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 			goto err;
+ 		}
+ 
+-		ret = wiz_mux_clk_register(wiz, clk_node, wiz->mux_sel_field[i],
+-					   clk_mux_sel[i].table);
++		ret = wiz_mux_of_clk_register(wiz, clk_node, wiz->mux_sel_field[i],
++					      clk_mux_sel[i].table);
+ 		if (ret) {
+ 			dev_err(dev, "Failed to register %s clock\n",
+ 				node_name);
 -- 
 2.17.1
 
