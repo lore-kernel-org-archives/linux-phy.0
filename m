@@ -1,84 +1,81 @@
-Return-Path: <SRS0=scWi=HS=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=RVtz=HZ=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-11.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 91C68C433DB
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Feb 2021 04:40:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1B42FC433E6
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:52 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0F41164DC3
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Feb 2021 04:40:05 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0F41164DC3
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linuxfoundation.org
+	by mail.kernel.org (Postfix) with ESMTPS id 6A03564E61
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Feb 2021 03:59:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6A03564E61
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
-	Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe
-	:List-Id:MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=NSoJlDZw3O1v20VUuoWuheW93zDaGu4qNQ2bCCBn5V0=; b=vym9oN6rFOheJsYHtv4dofmz5H
-	8F+EeGZOfrHH20M1GCO8qlg62v0IqaMhzwQSFC43PJpLpBW/8/AyZxl6x2UwjlhHnQvM5LLupmCaT
-	xAa0RLQpiZRY9sh0/vByofHmE3BY3xAIoVG4LND4HbXhPrYOHtt4DBxhI3LklgiR76G9p83PiPktJ
-	Fy9YBiZlSJK4KcQhAfAEVVKgBOi3yddJSpG8741wJpgRZ38NcKPThx2qk19+FPkdiO0npNFDoXOmK
-	AaeGCbN3xD8v0Bozfmy47oL3AmviOKrffE1JP++/+hNR0Ds6CrujdiUOZO8yY/x7OlXluCkJRLHWp
-	EsjZ25vA==;
+	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Mcahqbr1duReyYr6VWoB9ST7TfitM/FRCYKL+N0DqHg=; b=aNGIOKzcsBTPWnDeZFY/hCIAdZ
+	i90N++k0ZG/EsDKbLHIWYb29q/6hddhAoMl70c7h++wyo8GtQ66gv1cpwB+MsBHahSi6n8QUjdkuz
+	ajaJiURUw7/xU7Hsegv5E4EYRlcYwji0NzSWraNedYgdCJ35QyJhViia6FvU24FgpMkofVl5SVYv3
+	oFFwXLGmQCXPvDloxoLCoxbFFUDVvf4Ojjb4W+D0PEQvfOj5nGGZjZIif/+1kRamOODEvmcT1aVUe
+	3PcLxvOYzFG/U+B5rh3ZR2J89A5hysFjI83Di1cJ4zUfG4q3XPjkkTx87T78jz+QzFFPEWj1yYW0t
+	v0axEAKg==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1lBs9c-000391-Mb; Tue, 16 Feb 2021 04:40:04 +0000
-Received: from mail-qt1-x834.google.com ([2607:f8b0:4864:20::834])
+	id 1lEOrV-0005CX-VB; Tue, 23 Feb 2021 03:59:50 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1lBlNE-0002cO-KP
- for linux-phy@lists.infradead.org; Mon, 15 Feb 2021 21:25:41 +0000
-Received: by mail-qt1-x834.google.com with SMTP id e15so5773413qte.9
- for <linux-phy@lists.infradead.org>; Mon, 15 Feb 2021 13:25:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linuxfoundation.org; s=google;
- h=date:from:to:subject:message-id:mime-version:content-disposition;
- bh=+r0YNA3kDkMkPPkmRiEPv+XCfKlQ5U0kh/67l4DDOnE=;
- b=MEUtW3qgjmua61qcwjUyfTrw29ADbxZcVNxn0B5ctVQz9X1M5QvlB6ee42myDcIHZD
- HNRey64/2fYmOArfcWM30ymmueuNRyeL4+xQ+hnvotQ39xarxMrjmUC/2GkLohSCTDJC
- wILUscT9FRcPaH1WGfizHvA37DfC7EvcBZWBY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:mime-version
- :content-disposition;
- bh=+r0YNA3kDkMkPPkmRiEPv+XCfKlQ5U0kh/67l4DDOnE=;
- b=i2os6E+wjh0LRASzu7i1vGztkOwGe9CWakIn1tyvkhT4+1LaVODmV09+0BitoSlhTI
- 7n5u1tSzo+0fz+qzdLQ/p6pjlnJppCyiQgT406M9yWs390ako4rh5Y6jrn/NcErJNPnM
- 3GbKgi4cULU97pdMRhkh4jmD+WHZsR+icHTaGWudlk/o3AcbLblIq2RfTb4rNqmwwmI0
- eaitMNb/1hR0mcbrLCTAwh5CuJjenW3AbPinVWJzymJVGcbRXjbnxwHWJgXBwDcbAaHn
- q448ujge18f5ZVhnOqAiJ9k/a/ZUYW4lyQjBMqDEygh7W9HGowBDvhHDaxucsjX+Xhw4
- xpZQ==
-X-Gm-Message-State: AOAM533ENRelHTsspnA9dZ2/MnjWoM0ktu8MzU+/Yd6Bvtnjdmvr487Z
- 3S/ORAl/Nr5hoTcZrVyOfX9MHz7Vb29jhA==
-X-Google-Smtp-Source: ABdhPJw1E1ItoGy/KypSaIMA0qgQyr3mMvjWQDeUt0YXK5NmXnc7i5ddLiKUjZL2MuQ6IzGuLwwzNg==
-X-Received: by 2002:ac8:72c6:: with SMTP id o6mr15931335qtp.259.1613424337005; 
- Mon, 15 Feb 2021 13:25:37 -0800 (PST)
-Received: from chatter.i7.local
- (bras-base-mtrlpq5031w-grc-32-216-209-220-18.dsl.bell.ca. [216.209.220.18])
- by smtp.gmail.com with ESMTPSA id h5sm11909508qti.22.2021.02.15.13.25.36
- for <linux-phy@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Feb 2021 13:25:36 -0800 (PST)
-Date: Mon, 15 Feb 2021 16:25:35 -0500
-From: Konstantin Ryabitsev <konstantin@linuxfoundation.org>
-To: linux-phy@lists.infradead.org
-Subject: (ignore) creating initial archive entry
-Message-ID: <20210215212535.y4x6b2d7sbd7rali@chatter.i7.local>
+ id 1lE9Jj-0004tI-76
+ for linux-phy@lists.infradead.org; Mon, 22 Feb 2021 11:23:57 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNYSZ035075;
+ Mon, 22 Feb 2021 05:23:34 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1613993014;
+ bh=eg79OgHeosFuQo7HrdUnztwwOwIbN8h6QbcvgDDBaog=;
+ h=From:To:CC:Subject:Date;
+ b=TlTrBh27TnlfrSKw1KlO+niUHt+WdvU/HT5UKK86VoD2qqhFarC2uHxuQtRdTu2iw
+ MGPMPti7LUYM1HyBmqNNBv31/xzRWKPvgA+Y5/4q/6pMjleaLDFZex84znOlqfjhxC
+ Tu2Y1dMvYZn5W9ztl4cCZ2IH6C9zmBbOUrXDgcsE=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 11MBNYms038366
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 22 Feb 2021 05:23:34 -0600
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 22
+ Feb 2021 05:23:33 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Mon, 22 Feb 2021 05:23:33 -0600
+Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 11MBNFDZ088010;
+ Mon, 22 Feb 2021 05:23:17 -0600
+From: Kishon Vijay Abraham I <kishon@ti.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Peter Rosin <peda@axentia.se>,
+ Swapnil Jakhade <sjakhade@cadence.com>
+Subject: [PATCH v2 0/9] AM64: Add SERDES bindings and driver support
+Date: Mon, 22 Feb 2021 16:53:05 +0530
+Message-ID: <20210222112314.10772-1-kishon@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210215_162540_785412_10B6E053 
-X-CRM114-Status: UNSURE (   5.54  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Mon, 15 Feb 2021 23:40:03 -0500
+X-CRM114-CacheID: sfid-20210222_062355_560087_E4699163 
+X-CRM114-Status: GOOD (  13.75  )
+X-Mailman-Approved-At: Mon, 22 Feb 2021 22:59:48 -0500
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,17 +87,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello:
+AM64 uses the same SERDES as in J7200, however AM642 EVM doesn't
+have a clock generator (unlike J7200 base board). Here the clock from
+the SERDES has to be routed to the PCIE connector. This series adds
+support to drive reference clock output from SERDES and also adds
+SERDES (torrent) and SERDES wrapper (WIZ) bindings.
 
-Please ignore this test message -- it is used to create the initial
-lore.kernel.org archival entry in order to enable patchwork integration.
+v1 of the patch series can be found @ [1]
+Changes from v1:
+*) Model the internal clocks without device tree input (Add #clock-cells
+   to SERDES DT nodes for getting a reference to the clock using index
+   to phandle). This is in accordance with comment given by Rob [2].
+   However the existing method to model clocks from device tree is not
+   removed to support upstreamed device tree.
+*) Included a patch to fix modifying static data by instance specific
+   initializations.
+*) Added a fix to delete "clk_div_sel" clk provider during cleanup
 
--K
+
+[1] -> https://lore.kernel.org/r/20201224114250.1083-1-kishon@ti.com
+[2] -> http://lore.kernel.org/r/20210108025943.GA1790601@robh.at.kernel.org
+
+Kishon Vijay Abraham I (9):
+  dt-bindings: phy: ti,phy-j721e-wiz: Add bindings for AM64 SERDES
+    Wrapper
+  dt-bindings: phy: cadence-torrent: Add binding for refclk driver
+  dt-bindings: ti-serdes-mux: Add defines for AM64 SoC
+  phy: ti: j721e-wiz: Remove "regmap_field" from wiz_clk_{mux|div}_sel
+  phy: ti: j721e-wiz: Delete "clk_div_sel" clk provider during cleanup
+  phy: ti: j721e-wiz: Configure full rate divider for AM64
+  phy: ti: j721e-wiz: Model the internal clocks without device tree
+    input
+  phy: ti: j721e-wiz: Enable reference clock output in cmn_refclk_<p/m>
+  phy: cadence-torrent: Add support to drive refclk out
+
+ .../bindings/phy/phy-cadence-torrent.yaml     |  20 +-
+ .../bindings/phy/ti,phy-j721e-wiz.yaml        |  10 +-
+ drivers/phy/cadence/phy-cadence-torrent.c     | 202 +++++++++-
+ drivers/phy/ti/phy-j721e-wiz.c                | 349 +++++++++++++++---
+ include/dt-bindings/mux/ti-serdes.h           |   5 +
+ include/dt-bindings/phy/phy-cadence-torrent.h |   2 +
+ include/dt-bindings/phy/phy-ti.h              |  21 ++
+ 7 files changed, 553 insertions(+), 56 deletions(-)
+ create mode 100644 include/dt-bindings/phy/phy-ti.h
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
