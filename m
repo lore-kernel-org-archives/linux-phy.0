@@ -2,62 +2,61 @@ Return-Path: <SRS0=xen9=H4=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-22.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-8.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 49652C433E0
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Feb 2021 11:12:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D9354C433DB
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Feb 2021 11:18:24 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D804564EF3
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Feb 2021 11:12:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D804564EF3
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 6F26264EE7
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Feb 2021 11:18:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6F26264EE7
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linuxfoundation.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Ag0vTTAkfICD+rA02d06JdQFTYy33PIiXpqr707vweE=; b=cVDwt3vteEs2hesCDFh7f1aFHB
-	eiIdEGgMonnL/ipb/w7YBH/eFfuAUvX6btavOYevD3yMn/3N5rHTTNK3m2OAb1F2zuU1qGoE5GiZA
-	Qnko2yOAvx94a2drc9/Y/z2yniWqOdtG0r8IFVoT8s80ZsMfjCGUjDj9Zfa6D3rngjiPmzauCshy0
-	5aZDuUkSFk5y/HZCMvCbXSdqoFO1Vb4S4IPc3sodVIRRhbak3HqiWSOEWmqZjJ7HUd4JMkwwJOJmH
-	sWcdxTKBlOYaM5Jet3ZvkSDJSd0xBqZu/jGEAwOT3+7Tv0kPeRd1YwzcUH1aPxjzGQR1z+p0ccgDD
-	U7eYjSGA==;
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nuBBglb0IWwiAEVjXvircGjB80ifr00OFT1WGhY+dVw=; b=ni9Jd+NEGrSsLRmC4DQ3vdeeS
+	ps1Iu6gXVvR9Y4gLLIOMxG3piZiMrqFByts0UQMPhBaGAMggSEv7w0OKWzPXFr3dKNG4C+syhNuWf
+	aClOJfzbxidm+hjTxaV3PRrpTqaXiC1E6i+vb58IXRyggLgI5jD3L7yp7QwQN8/yEZXhVDXt4Upli
+	GTCaFEVCrjDPpx3rsmxPhO9M6ektASSSfxXejbpFZL1k0OvTJhk6pS553zRElpq77CmyhVaunnZ6Y
+	UduRTXgChxjKCt4WTgMvC8f7yPNh9BjgusqGdeeUSSbYochZMytM3pg9BwWMlNVJwLuwuREMz+32F
+	okAdb4FvA==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1lFb3E-0007e9-4s; Fri, 26 Feb 2021 11:12:52 +0000
+	id 1lFb8Z-0008Gm-Kk; Fri, 26 Feb 2021 11:18:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1lFb3C-0007dj-9K
- for linux-phy@lists.infradead.org; Fri, 26 Feb 2021 11:12:51 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 2C2C164DDA;
- Fri, 26 Feb 2021 11:12:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1614337968;
- bh=yI1EWY46ibA8KnKsAOavYvHFytGyojJsQ8TnGh70IZ8=;
- h=From:To:Cc:Subject:Date:From;
- b=nKAVaOKkzVtc0ccyAOC2I0u4Bg6/vNk6/u2p/PvIZCrvez7uusl4vDwqWO+5G5hgd
- RKg382v+3A1A1jCdfP4LoN9ftijqORLL2IuGwlBQ4xiCM9XzmDgSwsh5BDD2S4lPEk
- N1JZMfRIDYJix8CYbAfcsnEsKuR9aa1e3Z/vFUVWq2YY1H/ER7UktfQBOYBOmOf5B+
- GIooaXk84gwAK8zZlGDPmN0zsDnABWfz8AvZDGbIMFiFIPCcKwGrcpGKr+Z65PmtyI
- cz2BTziIgUSTg74qJl3rCdZJjgkYVlf0Yk/q7O1mL+1EK/5FGLbIXWXqBXcFClS1yY
- kparzeAfJ3F+g==
-From: Vinod Koul <vkoul@kernel.org>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: [PATCH] MAINTAINERS: Add linux-phy list and patchwork
-Date: Fri, 26 Feb 2021 16:42:33 +0530
-Message-Id: <20210226111233.2601369-1-vkoul@kernel.org>
-X-Mailer: git-send-email 2.26.2
+ id 1lFb8X-0008Ff-Hl
+ for linux-phy@lists.infradead.org; Fri, 26 Feb 2021 11:18:22 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 1155564E6C;
+ Fri, 26 Feb 2021 11:18:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+ s=korg; t=1614338300;
+ bh=CV2eVk/4WwcqzsV+ldYXBw9lPTOow4MrUi8k6XKYZLI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=rtZBTo8E3CdJa4rmGbJm92MUmhH+5DBC21zyAtVoIekOvkpHmcHQJJM951GcDBcAi
+ btH+bFKkdTtinG/5sN/XEYWAQJ+9Rro1ELiSbSdUv+MuswXAlB613AjGyIQFq3gKw4
+ XvSvmroO+XTqjA3OsvjzOG8znNZQdIRN7suHAN54=
+Date: Fri, 26 Feb 2021 12:18:17 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH] MAINTAINERS: Add linux-phy list and patchwork
+Message-ID: <YDjY+Ucvkw/zIvV6@kroah.com>
+References: <20210226111233.2601369-1-vkoul@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210226111233.2601369-1-vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210226_061250_417418_DD367695 
-X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-CacheID: sfid-20210226_061821_987737_3CAFDCE6 
+X-CRM114-Status: UNSURE (   8.93  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,42 +70,27 @@ List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
 Cc: linux-phy@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>,
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>
+ Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Linux-phy subsystem gained mailing list and a patchwork instance. Add the
-details to MAINTAINERS file
+On Fri, Feb 26, 2021 at 04:42:33PM +0530, Vinod Koul wrote:
+> Linux-phy subsystem gained mailing list and a patchwork instance. Add the
+> details to MAINTAINERS file
+> 
+> Signed-off-by: Vinod Koul <vkoul@kernel.org>
+> ---
+> 
+> Greg, Linus: Can we merge this patch for -rc1?
 
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
----
+I'll queue it up after -rc1 is out, no rush :)
 
-Greg, Linus: Can we merge this patch for -rc1?
+thanks,
 
- MAINTAINERS | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 546aa66428c9..d53754790d38 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -7448,8 +7448,9 @@ F:	include/uapi/asm-generic/
- GENERIC PHY FRAMEWORK
- M:	Kishon Vijay Abraham I <kishon@ti.com>
- M:	Vinod Koul <vkoul@kernel.org>
--L:	linux-kernel@vger.kernel.org
-+L:	linux-phy@lists.infradead.org
- S:	Supported
-+Q:	https://patchwork.kernel.org/project/linux-phy/list/
- T:	git git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git
- F:	Documentation/devicetree/bindings/phy/
- F:	drivers/phy/
--- 
-2.26.2
-
+greg k-h
 
 -- 
 linux-phy mailing list
