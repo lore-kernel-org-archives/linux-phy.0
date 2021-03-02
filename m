@@ -2,19 +2,19 @@ Return-Path: <SRS0=5tgH=IB=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 629D9C433E0
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Mar 2021 18:56:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 28764C433E0
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Mar 2021 20:34:09 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DEDA664ED7
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Mar 2021 18:56:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DEDA664ED7
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linuxfoundation.org
+	by mail.kernel.org (Postfix) with ESMTPS id 9046864F09
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Mar 2021 20:34:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9046864F09
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
@@ -22,58 +22,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZPOlYZA0SRTZZkQqOgaDYhJOMpxylRD9CEE5RL+nd6w=; b=ZLMULLjzrQDXuYZaNSfQCm5Fv
-	IT074a2AdL+dBO6Hs4HCijCVzumPPXx19eEiosRD5qrWkZPwZomQIYbhYfkq2gif5x79EubeyCqnM
-	8HSP9zW+kuiSehv/qFdz1eZ7jHVQuVBmbWQ5OFDzncd5O/53u85A6nvGBdi6Jjk+DEiIcoDDs5KUF
-	jEcibo4ZFxxp3FJOiqfOShvluLeah1DGZyQ+4k0tFVrAf/CMPvbF2APppXcayJeCzB446brU0QcvM
-	TslTnj0d27IEwQG/xAFuV6AczdaraJCig4RGsPvCmrZ87sPbXdsO3RzZsMrFiP25kt3kmHDQzMYC1
-	tJisIaxKQ==;
+	 bh=pTedNJJrB3wD/iE/hsjG3ZPDi69dJrOnQzruelkyKIk=; b=Kykuesd4+G+9TqV14/zoMXy7+
+	FOODbNiPHf77CdFa71SpX2PRhbRgYce4Hc/iYuuE0oU4f1HiTm7jACWWvJ97t3NJAqNrerYcQGrOH
+	9ISbNDo2fkL4n2qYg4wxxWBG5lEgQjuQTEWuaI0Cf6GvR0NorLM8NVmG21MaDNH5o5WkG8LMkFYTL
+	VdwjDniNxUaQ6l1h6z1JNr6lqOZFmb++veOP+lIAKj/frYeEhmM0MhNm/3PEPgwByuKp3SrcCdnuN
+	7v/JMY31n9w/aXDlPOUF5KgZkNqyZXA/iMQrL+wjYgsLQp+3IClPKCKSrs9a4QkHgdh6fHZo6MEA/
+	UVEkI0YNQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lHWfw-0066sa-CF; Wed, 03 Mar 2021 18:56:48 +0000
+	id 1lHYC6-006RC6-4R; Wed, 03 Mar 2021 20:34:06 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lHT1y-005HXe-Oy
- for linux-phy@desiato.infradead.org; Wed, 03 Mar 2021 15:03:19 +0000
+ id 1lHT6D-005IzO-GJ
+ for linux-phy@desiato.infradead.org; Wed, 03 Mar 2021 15:07:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=q8pNg5ZYBQg7sePAv3cIeE9LDTar2nvb6PeioP+QGRA=; b=KPc73KxoRQDWCJVM7ZDxEF6dHs
- YjhzVEpHb60buTSjBR3fqzndpFiLGaHqR6kXvh7WcqBlK0ZaDXkdD/N1z31sTBgz5CHul2ylH3B0A
- zEK3WqtCUuM1h2y8QLOyZf/fCIxwEFHn1IBBVr3uKnlyq+kjO0t7RWA1pHFkkp2R2pZvgGV6oNi9v
- UkadbOKqEyEp9I9TVv/0q9SHQRi04FjhrHGtqOhQ2kjrbmeBMC0Mt0J9qMS47G8Y0w9rz3j5ELXEQ
- IH14dMIow0dGRQyKlJun8e42RxCCquRLZjnJhXW5MBkt06Al1i8kIU4NLG6BpSe0rWGt3QJZACqhv
- ECqHI0pA==;
+ bh=nrl+4sLxuA7NwNupoDJ50wcFAB++uLrzLa0rj01TrJY=; b=YFJzyp6jJQqn6oX+9ZrmIbnqi7
+ aimnkpQdLLmrVZ5VW4AH8Xj1pJC5YJRof6YJ2m0a1JxOT4iKUb+z3WEeEkpmBGPVua3MiOmejrfkk
+ eCFCu37VGbUOS/OUcI+vQGJRQcd/qONo0zncFO98ajTM/co0gpgrMl0K1xlQvrSk+7/5OAcXmX/YC
+ b985LRPSzO5x23D5BpOtVi781CIoDdsvMdNX52aWUUvZuwqwcw3/9dzvt6mTdLFSX+9qxwi8loCb9
+ 4IF4xLyNpP6zwma2NTmpOAQ/qWsz9eWeH03IdaAfoDqDosrMQhU9aCecaC+1ybIUua3hPW91uRqGP
+ TMnG4XOw==;
 Received: from mail.kernel.org ([198.145.29.99])
  by casper.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lH45P-00H63l-U4
- for linux-phy@lists.infradead.org; Tue, 02 Mar 2021 12:25:13 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 7BE8B64F14;
- Tue,  2 Mar 2021 12:25:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1614687906;
- bh=Aldm8YMvXG8WVX+mOd7bcdqNQnSYW9wkuny25CHQMo8=;
+ id 1lH490-00H6Gt-0M
+ for linux-phy@lists.infradead.org; Tue, 02 Mar 2021 12:28:55 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 07BE764F7A;
+ Tue,  2 Mar 2021 12:28:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1614688129;
+ bh=A5H4O3r7D9MypgFZD+4PBqBdA7HmqquEKOppYxkCEGY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BqY+FnncddCy86MsJfCwxtqZlVd+QhCG/KBo2bHMBnoKIn+sGYVxmZKOw7FoI1H5n
- PbQf6AemFCsRZ8F1Dt8iwo6t58tu/kKXdaFf/EvwaIkxJdN1DPSYGMXt9MLgK6LCuf
- h11SgPfPU/QkmOWIjuxcyzJs09Ypzrw/u1iJx0Ik=
-Date: Tue, 2 Mar 2021 13:25:03 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: stable@vger.kernel.org, Linux Phy <linux-phy@lists.infradead.org>,
- Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: Commits for 5.11 stable
-Message-ID: <YD4un+98ZK7yLJNV@kroah.com>
-References: <YD4LfQEXWawk2b4C@vkoul-mobl> <YD4NINW6u28SxedJ@kroah.com>
- <YD4SlyXIVFZQYip5@vkoul-mobl> <YD4WTn1mdE+RBoR1@kroah.com>
- <YD4su5gWILbbrd0z@vkoul-mobl>
+ b=PWj1pUq9VGpVf4Y4UgUVTLskdBcNVjdMJOlXR+n1OTowYT0cUtUO2JE3rqI7sBq/r
+ ItRQJi5aM/l91SqdjSb+T80YJn2TFNT6VxLqoG14AtVIf0wpXfAZ5AwjmU3d3DBV9B
+ KqLDJAD37E1EJqWp8VpiwlSN/pQ7A/MjVd8RLfUJG4zMNSwfOQSvHomOtf1cGywuHS
+ /Z50Kr6obxVdSRQ9A4l6QNSR+K3wl5xbN7QSlt7OatwaIPHHOA2alk/S262QoniOtN
+ mCPpxRPfwR5Ti6NNyy0s7Fmmnup1XWEfN3CDZaxZ0EQcqdMY/cNssIgKEWKCJyzD9c
+ cSw/2xUiBvpLQ==
+Date: Tue, 2 Mar 2021 17:58:44 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Cc: kishon@ti.com, linux-phy@lists.infradead.org,
+ devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org, neil@brown.name
+Subject: Re: [PATCH] phy: ralink: phy-mt7621-pci: fix XTAL bitmask
+Message-ID: <YD4vfDrvdlduVUQL@vkoul-mobl>
+References: <20210302105412.16221-1-sergio.paracuellos@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YD4su5gWILbbrd0z@vkoul-mobl>
+In-Reply-To: <20210302105412.16221-1-sergio.paracuellos@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210302_122513_860434_3F923FA7 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20210302_122855_910220_DD7FA587 
+X-CRM114-Status: UNSURE (   4.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,49 +92,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 02, 2021 at 05:46:59PM +0530, Vinod Koul wrote:
-> On 02-03-21, 11:41, Greg KH wrote:
-> > On Tue, Mar 02, 2021 at 03:55:27PM +0530, Vinod Koul wrote:
-> > > 
-> > > HI Greg,
-> > > 
-> > > On 02-03-21, 11:02, Greg KH wrote:
-> > > > On Tue, Mar 02, 2021 at 03:25:09PM +0530, Vinod Koul wrote:
-> > > > > Hi Greg,
-> > > > > 
-> > > > > Please include these commits for 5.11 stable series
-> > > > > 
-> > > > > 9a8b9434c60f phy: mediatek: Add missing MODULE_DEVICE_TABLE()
-> > > > > 25e3ee590f62 phy: phy-brcm-sata: remove unneeded semicolon
-> > > > > 6b46e60a6943 phy: USB_LGM_PHY should depend on X86
-> > > > > 36acd5e24e30 phy: lantiq: rcu-usb2: wait after clock enable
-> > > > > c188365402f6 phy: rockchip: emmc, add vendor prefix to dts properties
-> > > > > 88d9f40c4b71 devicetree: phy: rockchip-emmc optional add vendor prefix
-> > > > > aaf316de3bba phy: cpcap-usb: remove unneeded conversion to bool
-> > > > > 39961bd6b70e phy: rockchip-emmc: emmc_phy_init() always return 0
-> > > > 
-> > > > Why take these?
-> > > > 
-> > > > What problems do they solve?
-> > > 
-> > > Sorry I should have provided the context. I had sent these as fixes for
-> > > 5.11 but that was bit late so we merged it for 5.12 [1]
-> > 
-> > I still do not have any context :(
-> 
-> Please see the discussion we had in https://lore.kernel.org/lkml/20210210091249.GC2774@vkoul-mobl.Dlink/
+On 02-03-21, 11:54, Sergio Paracuellos wrote:
+> When this was rewriten to get mainlined and start to
+> use 'linux/bitfield.h' headers, XTAL_MASK was wrong.
+> It must mask three bits but only two were used. Hence
+> properly fix it to make things work.
 
-All that means is that you felt some of these needed to go into 5.11 but
-did not make it.  That does not mean that all of the above qualifies for
-stable backporting, correct?
+Applied, thanks
 
-So can I have a list of ids, in the order in which they should be
-applied, that you feel should go into 5.11, and any other older stable
-releases?
-
-thanks,
-
-greg k-h
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
