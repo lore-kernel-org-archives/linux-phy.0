@@ -1,83 +1,102 @@
-Return-Path: <SRS0=tCwO=IC=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=UbcY=ID=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BFA4AC433E0
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Mar 2021 04:46:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6A31AC433DB
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 03:59:58 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 287F764EF8
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Mar 2021 04:46:38 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 287F764EF8
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id F187A64EE1
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 03:59:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F187A64EE1
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:CC:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Vl52fn69Afl5OcumhAybjqLdJyXHZyjYr3aaljwoo0I=; b=NmnbfDBpHbnROTBeXn3FOhu0C
-	oTXrkOr/2D3xf6mHxsQ3VQNoO0PX5rLUW/aqS1GdWusHYW2mSu7Brr8U4GAoP44/7GQ3O2ZlM9Uoc
-	WBCN5K/tY6lQD3nF7cAgU6DcbBb58hQ1/5WBqo5Fb3oiu94pBUm43TbuuwlwUCRHfiSFPrZ359mEU
-	VEGf5Dz+YJyIMHSTCpiu65NNE3G7ocqVkAc4JBJ1a+6Dh0EL2EydLOvhogwsuuDlKrqE3BE41GL+c
-	tsPxGhd33OfYTkb/9quZk/0V+IAffe7tRFmLduR9pcRFT4uGJmKyhDKPYJp8lSm+czFHpANgOfoUc
-	2KgkCuyFw==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=oMbglUWZTEp2SRvAC2FyC9tHrrZxNwzQI36pTTgpEcw=; b=cgg1jhaCheDh+6b3l26w/lldLo
+	cYQq/PubrAG9bWhDrkA0USEy84700NLRlDGnDuJSd6IqYayB3fV8mZa9xoZTp0aQ7VD5Nz7HC6U9O
+	7f/GOONzBFcxV5LLqF8FaUPGwlQk2omBEAYRSE0Z5Mfq9L9dmt1F4aJsvNubh45ktZHQytV4RgT1T
+	rMnLoUkRhLLDsW0YHAVKmNzov+WF6Oy43roUGGLQlTmT4B04I09gT7/nwUPhPBh1yA7LLmAhO99Ef
+	lbYIFkvixdNRvAJQS/1Hy6u3jvUWR30N9eQUWnTcwdyyw69sHdKVzsnXUSiFu8hWRVsJkVRLsnQ2c
+	JdBppXSw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lHfsg-007kor-W1; Thu, 04 Mar 2021 04:46:35 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1lI1d6-00CEee-9q; Fri, 05 Mar 2021 03:59:56 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lHfsY-007kkl-Ce
- for linux-phy@lists.infradead.org; Thu, 04 Mar 2021 04:46:30 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1244jp9U053936;
- Wed, 3 Mar 2021 22:45:51 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1614833151;
- bh=u9Fq9fIcV8m7q8E+GxjFecB7Rn7qfqMQABRRfIQPQ20=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=U7AUjuUC2GePB6TOCvKlXOErPWvIBabL0u2hKgcX4tjWItsT1YShQ5PJG6BwvLFC2
- 1a0PODXcFRL9A1MxGhkd4fuLPd0aA3/bt7fBsNqfdIQqOvTjlxlOGLmnjqGFZ4APga
- 0LXrjlI+JQScEtebPVQZALC1mT58YCwqY5OfnAP4=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1244jpKF074566
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 3 Mar 2021 22:45:51 -0600
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 3 Mar
- 2021 22:45:51 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 3 Mar 2021 22:45:51 -0600
-Received: from [10.250.233.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1244jmBx090114;
- Wed, 3 Mar 2021 22:45:49 -0600
-Subject: Re: [PATCH v2 1/9] dt-bindings: phy: ti,phy-j721e-wiz: Add bindings
- for AM64 SERDES Wrapper
-To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Peter
- Rosin <peda@axentia.se>, Swapnil Jakhade <sjakhade@cadence.com>
-CC: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-phy@lists.infradead.org>
-References: <20210222112314.10772-1-kishon@ti.com>
- <20210222112314.10772-2-kishon@ti.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <8fc3e9a0-573e-01b1-1054-55d3c19e42f6@ti.com>
-Date: Thu, 4 Mar 2021 10:15:47 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
+ id 1lHT8m-005JuY-Vt
+ for linux-phy@desiato.infradead.org; Wed, 03 Mar 2021 15:10:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=WTqhktbSK+pb9FujmiEWqSsD3Ov6W1SagmahMe1crb4=; b=gMaUl9I4c0Xi6RfWKkcGFc9cW/
+ MVJwUypSmgP8pVUe8x+NiEDVTUyMrU60vdJ6SRpBOJDvhc+8xu3CcMO3TqEME3xUe78D1euSJ9kHM
+ AHfPefqz6FBdp2IxZzou6XRvxBkWoWhJ6LfdsvtBA8noV7MwY/l16ou7xJ2BdjVzx23dCwaaswy1G
+ 6tFQrOXYv90BLEnO/dmcreztVCda+E6P2rD0yu9Yz639Bpp/s/HLn/0XgqiKPQD7Kf4OUxe6euVlU
+ o+71TJcikxShdbx/mhrKOIR21JTRNgzPdvGJf1XtYPrHM31N7C3zSm4pPLhNEFQtLxJxgMUjdnTg1
+ OM1cXgTw==;
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+ by casper.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
+ id 1lH2gQ-00GyN3-CL
+ for linux-phy@lists.infradead.org; Tue, 02 Mar 2021 10:55:20 +0000
+Received: by mail-wr1-x429.google.com with SMTP id d11so19348182wrj.7
+ for <linux-phy@lists.infradead.org>; Tue, 02 Mar 2021 02:55:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WTqhktbSK+pb9FujmiEWqSsD3Ov6W1SagmahMe1crb4=;
+ b=eekxItstzdek5bmY3Fy4eehDypAbrdub+lzL53FCHxqePg1RLZDjbEEHCxfe7H5MeL
+ towuuIVEYAu76BFuny9l7i0558AzCjJQwktgvVC56VAIPG5pefsy7m+wYCgrwh0OwpNx
+ tZb3O6EXXH7lqAbnkqYPREIe4oOmXsySzOSAbCE85QopRCcIKKht9ZcDJ0rpP7mYKEnK
+ vviYTzhYaT90BQj+oIszMmWAJJrLlYs+e3CcNZ6yaJkA99jdrNtqgOWem7BKqI0WnguT
+ SlYzp+ZW5ClaM4W0z+R77lXtqsS8NOCLuyQkkuFQ36eA8CGjqoL3YiRE2anwN2GEu1oP
+ fZ7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WTqhktbSK+pb9FujmiEWqSsD3Ov6W1SagmahMe1crb4=;
+ b=D+1MoOOtrwXzM1OQV/dlAABp7lcSAeyj2Vx8u8cFMCv0kAFVogOq3n0Ac2cmWPCIVh
+ /3j/Q9LXA1xoC/GBDZE4Q0MAckwC8SjhLCER0viigCEuUyyh0JuxehvrOqw4q1zOXc5B
+ AiOsZ2cTXEplZgE6qWSHBe68IDRav/102g/AwoW2bSXhpdtqPz5iwymKEDHP2qkq2DK2
+ KVjyoV7SCUmKbaNpdileD39uj9mRWRcAl1AS4wqUqTiBSjJgEw6jflp69Gchi/g8hLWv
+ qAmmaN8EVeS9APEs4K7fDV6rWM4cXHuZOgJfHVi/AyE2YDcjJoczGY4zEU8CwNp0orY4
+ xurA==
+X-Gm-Message-State: AOAM533ObwkL2l9w6m2mF0ODESb35lz1RzT4IxYm3vr/b1SWwK1JO4Bi
+ uwa5H6cEHhNQJ0UWTHdJlEw=
+X-Google-Smtp-Source: ABdhPJz2NeMkaA+BYqC42OXCin/GZFMyb6o91RKMQqOLxd9eWe0+cyjePPdLgXfy8TyNxcUMz/i6ZA==
+X-Received: by 2002:a5d:4c81:: with SMTP id z1mr6493646wrs.85.1614682454582;
+ Tue, 02 Mar 2021 02:54:14 -0800 (PST)
+Received: from localhost.localdomain (67.red-83-54-30.dynamicip.rima-tde.net.
+ [83.54.30.67])
+ by smtp.gmail.com with ESMTPSA id v5sm2270407wmh.2.2021.03.02.02.54.13
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 02 Mar 2021 02:54:14 -0800 (PST)
+From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+To: vkoul@kernel.org
+Cc: kishon@ti.com, linux-phy@lists.infradead.org, devel@driverdev.osuosl.org,
+ linux-kernel@vger.kernel.org, neil@brown.name
+Subject: [PATCH] phy: ralink: phy-mt7621-pci: fix XTAL bitmask
+Date: Tue,  2 Mar 2021 11:54:12 +0100
+Message-Id: <20210302105412.16221-1-sergio.paracuellos@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <20210222112314.10772-2-kishon@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20210302_105520_338797_3B83287C 
+X-CRM114-Status: GOOD (  10.87  )
+X-Mailman-Approved-At: Fri, 05 Mar 2021 03:59:53 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,81 +113,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
+When this was rewriten to get mainlined and start to
+use 'linux/bitfield.h' headers, XTAL_MASK was wrong.
+It must mask three bits but only two were used. Hence
+properly fix it to make things work.
 
-On 22/02/21 4:53 pm, Kishon Vijay Abraham I wrote:
-> Add bindings for AM64 SERDES Wrapper.
+Fixes: d87da32372a0 ("phy: ralink: Add PHY driver for MT7621 PCIe PHY")
+Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+---
+ drivers/phy/ralink/phy-mt7621-pci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-I've fixed all your comments provided in the previous version. Can you
-review this and give your ACKs please?
+diff --git a/drivers/phy/ralink/phy-mt7621-pci.c b/drivers/phy/ralink/phy-mt7621-pci.c
+index 9a610b414b1f..84ee2b5c2228 100644
+--- a/drivers/phy/ralink/phy-mt7621-pci.c
++++ b/drivers/phy/ralink/phy-mt7621-pci.c
+@@ -62,7 +62,7 @@
+ 
+ #define RG_PE1_FRC_MSTCKDIV			BIT(5)
+ 
+-#define XTAL_MASK				GENMASK(7, 6)
++#define XTAL_MASK				GENMASK(8, 6)
+ 
+ #define MAX_PHYS	2
+ 
+-- 
+2.25.1
 
-Best Regards,
-Kishon
-
-> 
-> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-> ---
->  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 10 ++++++---
->  include/dt-bindings/phy/phy-ti.h              | 21 +++++++++++++++++++
->  2 files changed, 28 insertions(+), 3 deletions(-)
->  create mode 100644 include/dt-bindings/phy/phy-ti.h
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> index c33e9bc79521..bf431f98e6ea 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> @@ -12,9 +12,10 @@ maintainers:
->  
->  properties:
->    compatible:
-> -    enum:
-> -      - ti,j721e-wiz-16g
-> -      - ti,j721e-wiz-10g
-> +    oneOf:
-> +      - const: ti,j721e-wiz-16g
-> +      - const: ti,j721e-wiz-10g
-> +      - const: ti,am64-wiz-10g
->  
->    power-domains:
->      maxItems: 1
-> @@ -42,6 +43,9 @@ properties:
->    "#reset-cells":
->      const: 1
->  
-> +  "#clock-cells":
-> +    const: 1
-> +
->    ranges: true
->  
->    assigned-clocks:
-> diff --git a/include/dt-bindings/phy/phy-ti.h b/include/dt-bindings/phy/phy-ti.h
-> new file mode 100644
-> index 000000000000..ad955d3a56b4
-> --- /dev/null
-> +++ b/include/dt-bindings/phy/phy-ti.h
-> @@ -0,0 +1,21 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * This header provides constants for TI SERDES.
-> + */
-> +
-> +#ifndef _DT_BINDINGS_TI_SERDES
-> +#define _DT_BINDINGS_TI_SERDES
-> +
-> +/* Clock index for output clocks from WIZ */
-> +
-> +/* MUX Clocks */
-> +#define TI_WIZ_PLL0_REFCLK	0
-> +#define TI_WIZ_PLL1_REFCLK	1
-> +#define TI_WIZ_REFCLK_DIG	2
-> +
-> +/* Reserve index here for future additions */
-> +
-> +/* MISC Clocks */
-> +#define TI_WIZ_PHY_EN_REFCLK	16
-> +
-> +#endif /* _DT_BINDINGS_TI_SERDES */
-> 
 
 -- 
 linux-phy mailing list
