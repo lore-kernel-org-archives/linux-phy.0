@@ -2,100 +2,160 @@ Return-Path: <SRS0=UbcY=ID=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6A31AC433DB
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 03:59:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 06BE3C433E6
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 03:59:59 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F187A64EE1
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 03:59:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F187A64EE1
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 7AC9464EE1
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 03:59:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7AC9464EE1
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=oMbglUWZTEp2SRvAC2FyC9tHrrZxNwzQI36pTTgpEcw=; b=cgg1jhaCheDh+6b3l26w/lldLo
-	cYQq/PubrAG9bWhDrkA0USEy84700NLRlDGnDuJSd6IqYayB3fV8mZa9xoZTp0aQ7VD5Nz7HC6U9O
-	7f/GOONzBFcxV5LLqF8FaUPGwlQk2omBEAYRSE0Z5Mfq9L9dmt1F4aJsvNubh45ktZHQytV4RgT1T
-	rMnLoUkRhLLDsW0YHAVKmNzov+WF6Oy43roUGGLQlTmT4B04I09gT7/nwUPhPBh1yA7LLmAhO99Ef
-	lbYIFkvixdNRvAJQS/1Hy6u3jvUWR30N9eQUWnTcwdyyw69sHdKVzsnXUSiFu8hWRVsJkVRLsnQ2c
-	JdBppXSw==;
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
+	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1C9+rfe2TCn7kdO+9vSSI5ZiBvg7QzpqqMruYo7oB5U=; b=hYZohsAom0KrCOs93ciHaDcHU
+	Gfvyp9LZ2vWWGXl4hn3/0By70JNzM/ZYaIZR9MDacimCDsivWCV6i1+jqUY4s9+w13xhoxm8nYCvC
+	E5p+5kTwDGNkBn9EiK8VLG4plaRj8mzbBXzh9b6dnirw2wNKVPz4Bmn87Tl075hbhlO6/N9MsE7zO
+	9UfGcME2zcGWw3tL3p6xvkgg2X5UAVrLNmuiammVJmceQQA57Q63R1yjX2lutIwOPoq83ky9S/U9D
+	9hvc8iI1uVQausHNDsOOdCK7scTcQV+h7xGimspg1VDOtkRtynfWwill8rs9Kbe7aAo8snqU5lAcf
+	oasw33u5g==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lI1d6-00CEee-9q; Fri, 05 Mar 2021 03:59:56 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1lI1d6-00CEer-QC; Fri, 05 Mar 2021 03:59:56 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lHT8m-005JuY-Vt
- for linux-phy@desiato.infradead.org; Wed, 03 Mar 2021 15:10:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=WTqhktbSK+pb9FujmiEWqSsD3Ov6W1SagmahMe1crb4=; b=gMaUl9I4c0Xi6RfWKkcGFc9cW/
- MVJwUypSmgP8pVUe8x+NiEDVTUyMrU60vdJ6SRpBOJDvhc+8xu3CcMO3TqEME3xUe78D1euSJ9kHM
- AHfPefqz6FBdp2IxZzou6XRvxBkWoWhJ6LfdsvtBA8noV7MwY/l16ou7xJ2BdjVzx23dCwaaswy1G
- 6tFQrOXYv90BLEnO/dmcreztVCda+E6P2rD0yu9Yz639Bpp/s/HLn/0XgqiKPQD7Kf4OUxe6euVlU
- o+71TJcikxShdbx/mhrKOIR21JTRNgzPdvGJf1XtYPrHM31N7C3zSm4pPLhNEFQtLxJxgMUjdnTg1
- OM1cXgTw==;
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
- by casper.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lH2gQ-00GyN3-CL
- for linux-phy@lists.infradead.org; Tue, 02 Mar 2021 10:55:20 +0000
-Received: by mail-wr1-x429.google.com with SMTP id d11so19348182wrj.7
- for <linux-phy@lists.infradead.org>; Tue, 02 Mar 2021 02:55:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WTqhktbSK+pb9FujmiEWqSsD3Ov6W1SagmahMe1crb4=;
- b=eekxItstzdek5bmY3Fy4eehDypAbrdub+lzL53FCHxqePg1RLZDjbEEHCxfe7H5MeL
- towuuIVEYAu76BFuny9l7i0558AzCjJQwktgvVC56VAIPG5pefsy7m+wYCgrwh0OwpNx
- tZb3O6EXXH7lqAbnkqYPREIe4oOmXsySzOSAbCE85QopRCcIKKht9ZcDJ0rpP7mYKEnK
- vviYTzhYaT90BQj+oIszMmWAJJrLlYs+e3CcNZ6yaJkA99jdrNtqgOWem7BKqI0WnguT
- SlYzp+ZW5ClaM4W0z+R77lXtqsS8NOCLuyQkkuFQ36eA8CGjqoL3YiRE2anwN2GEu1oP
- fZ7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WTqhktbSK+pb9FujmiEWqSsD3Ov6W1SagmahMe1crb4=;
- b=D+1MoOOtrwXzM1OQV/dlAABp7lcSAeyj2Vx8u8cFMCv0kAFVogOq3n0Ac2cmWPCIVh
- /3j/Q9LXA1xoC/GBDZE4Q0MAckwC8SjhLCER0viigCEuUyyh0JuxehvrOqw4q1zOXc5B
- AiOsZ2cTXEplZgE6qWSHBe68IDRav/102g/AwoW2bSXhpdtqPz5iwymKEDHP2qkq2DK2
- KVjyoV7SCUmKbaNpdileD39uj9mRWRcAl1AS4wqUqTiBSjJgEw6jflp69Gchi/g8hLWv
- qAmmaN8EVeS9APEs4K7fDV6rWM4cXHuZOgJfHVi/AyE2YDcjJoczGY4zEU8CwNp0orY4
- xurA==
-X-Gm-Message-State: AOAM533ObwkL2l9w6m2mF0ODESb35lz1RzT4IxYm3vr/b1SWwK1JO4Bi
- uwa5H6cEHhNQJ0UWTHdJlEw=
-X-Google-Smtp-Source: ABdhPJz2NeMkaA+BYqC42OXCin/GZFMyb6o91RKMQqOLxd9eWe0+cyjePPdLgXfy8TyNxcUMz/i6ZA==
-X-Received: by 2002:a5d:4c81:: with SMTP id z1mr6493646wrs.85.1614682454582;
- Tue, 02 Mar 2021 02:54:14 -0800 (PST)
-Received: from localhost.localdomain (67.red-83-54-30.dynamicip.rima-tde.net.
- [83.54.30.67])
- by smtp.gmail.com with ESMTPSA id v5sm2270407wmh.2.2021.03.02.02.54.13
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Mar 2021 02:54:14 -0800 (PST)
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-To: vkoul@kernel.org
-Cc: kishon@ti.com, linux-phy@lists.infradead.org, devel@driverdev.osuosl.org,
- linux-kernel@vger.kernel.org, neil@brown.name
-Subject: [PATCH] phy: ralink: phy-mt7621-pci: fix XTAL bitmask
-Date: Tue,  2 Mar 2021 11:54:12 +0100
-Message-Id: <20210302105412.16221-1-sergio.paracuellos@gmail.com>
-X-Mailer: git-send-email 2.25.1
+ id 1lHhAO-007spg-7d
+ for linux-phy@lists.infradead.org; Thu, 04 Mar 2021 06:09:45 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
+ 1245tXCB026048; Wed, 3 Mar 2021 22:08:29 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=proofpoint;
+ bh=d4G0tTY7ZRZaox9AmEqwSZzLcgpuwuLOFa+0YkZeYqQ=;
+ b=Opp4oNGd5ERrAcJcRbkBxjv0eWVNaQhKaAI8iiRiCKL0bB5QPf/Y87ieg0TIx5Bo1/lQ
+ CL2G0WHeJ8bKwEGQGpLsV8veRhSzq+dK2ZwNnfWYOPI+sIjacr0CsYKOsdx86LgRZL32
+ KMNp/gZr0S2hN7xbkiVj9IAk+nx6ngh1MOJT6l0h/qtwsHjGLJkr9QVgmH4QjupDg0i9
+ KTP8lDsV+PzsWFOR9okV5k9NkJCCmY5M38JaoDJ92Vq62YppqY/d8L8CLQAFmcWKDssf
+ b8kQ7ETl7Md3z1oW4dRQDjesTG1BCtsPhbWAZbs2zCuIjbtA7s6oF9OOajcMMXPz1MFF 0w== 
+Received: from nam12-bn8-obe.outbound.protection.outlook.com
+ (mail-bn8nam12lp2169.outbound.protection.outlook.com [104.47.55.169])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 36yjj2r9er-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 03 Mar 2021 22:08:29 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=V80pDCi2oPexORpodS4jScAEjeu0k1wHs9miczviRG7Ze0cAvv8Y5FhWMvRgmwMH7rFDc8SvEa07pBsLSZUdD32fhQVXACvw0rcbYfvCwsjXqHW7KRzwts+wwbSoZj8VH5/uEi9bvk6ZMBUiF/1Qw1dnmyOWizrHcDRoL1WLtFYdG3EavJZwnFcnwfeRUaRsKI6twH2dTL3W8BGu5JUkxM3DHF8kmjxmQokSOsox2J0wGVffnxeWPT+V1jA2XVsuOs1lloYYeqJpBOqSInRRkyi5jYLky9yPizBM6jlu+mco/kqVX/7nQA1QDsHI1MtpoQdjrvXTTuN2HUayTFvLnQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=d4G0tTY7ZRZaox9AmEqwSZzLcgpuwuLOFa+0YkZeYqQ=;
+ b=l1JOElnXZtxpWUF4WWu8PCUBa0iqYtjwbczOzgAPUCO2MWny/NuojkpgdRtHL+nmZDx+EDOeKB+bVs2pEsxFn+2xhWVcYpU4G1p7DuCikRMNIXTTbYHPeBdVzdAes34oZEJWgu1H2GSMIrh47k21zz4qUQdjg2ZDRrkMF4TBfsNfz5TYpACmx/j7f4ABHWv9KIcjvCnhRLoG3PbaNQhmcJHuwKuurbqRKrJJMUUvTl3whDNmQ4QhiukKqD+cTpCdecpuek0urYgeCpDlNn9O0Q12Yh3T74yQRpTEa70Coh7c454QKNAqNEKN5erRdM1aejHa6zEz9PNojPjhFkwsIQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 64.207.220.244) smtp.rcpttodomain=lists.infradead.org
+ smtp.mailfrom=cadence.com; dmarc=pass (p=none sp=none pct=100) action=none
+ header.from=cadence.com; dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=d4G0tTY7ZRZaox9AmEqwSZzLcgpuwuLOFa+0YkZeYqQ=;
+ b=3mlOo/+YYPxMZKT2la4cwrBXD4aFYSxmIxoSM9W7w5NOcc5YSllReUGdanKxfZ/Qtg980V6L7Bm42N0i/Nm1asDl9l/NLSH6sSWpv8HJMjpkTiqibNZAPFA8YAf56veef0WSdefHlBK5M1rna6tJqOCF2aWDdznWuhgBamUVN8A=
+Received: from DM3PR11CA0008.namprd11.prod.outlook.com (2603:10b6:0:54::18) by
+ BN3PR07MB2705.namprd07.prod.outlook.com (2a01:111:e400:7bb2::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3912.17; Thu, 4 Mar
+ 2021 06:08:27 +0000
+Received: from DM6NAM12FT031.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:0:54:cafe::1e) by DM3PR11CA0008.outlook.office365.com
+ (2603:10b6:0:54::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3912.17 via Frontend
+ Transport; Thu, 4 Mar 2021 06:08:27 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 64.207.220.244)
+ smtp.mailfrom=cadence.com; lists.infradead.org; dkim=none (message not
+ signed) header.d=none;lists.infradead.org; dmarc=pass action=none
+ header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 64.207.220.244 as permitted sender) receiver=protection.outlook.com;
+ client-ip=64.207.220.244; helo=wcmailrelayl01.cadence.com;
+Received: from wcmailrelayl01.cadence.com (64.207.220.244) by
+ DM6NAM12FT031.mail.protection.outlook.com (10.13.179.19) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3912.9 via Frontend Transport; Thu, 4 Mar 2021 06:08:26 +0000
+Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
+ by wcmailrelayl01.cadence.com (8.14.7/8.14.4) with ESMTP id
+ 12468Jjr067409
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=OK);
+ Wed, 3 Mar 2021 22:08:25 -0800
+X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
+Received: from maileu3.global.cadence.com (10.160.88.99) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1367.3; Thu, 4 Mar 2021 07:08:18 +0100
+Received: from vleu-orange.cadence.com (10.160.88.83) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1367.3 via Frontend Transport; Thu, 4 Mar 2021 07:08:18 +0100
+Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 12468IkC032357;
+ Thu, 4 Mar 2021 07:08:18 +0100
+Received: (from sjakhade@localhost)
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 12468IcF032356;
+ Thu, 4 Mar 2021 07:08:18 +0100
+From: Swapnil Jakhade <sjakhade@cadence.com>
+To: <vkoul@kernel.org>, <kishon@ti.com>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>
+CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <nsekhar@ti.com>,
+ <lokeshvutla@ti.com>
+Subject: [PATCH 4/4] phy: cadence-torrent: Update PCIe + USB config for
+ correct PLL1 clock
+Date: Thu, 4 Mar 2021 07:08:16 +0100
+Message-ID: <1614838096-32291-5-git-send-email-sjakhade@cadence.com>
+X-Mailer: git-send-email 2.4.5
+In-Reply-To: <1614838096-32291-1-git-send-email-sjakhade@cadence.com>
+References: <1614838096-32291-1-git-send-email-sjakhade@cadence.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210302_105520_338797_3B83287C 
-X-CRM114-Status: GOOD (  10.87  )
+X-OrganizationHeadersPreserved: maileu3.global.cadence.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 2c9d4773-6afa-4883-4060-08d8ded3eca5
+X-MS-TrafficTypeDiagnostic: BN3PR07MB2705:
+X-Microsoft-Antispam-PRVS: <BN3PR07MB270581C8F10F6B318067B780C5979@BN3PR07MB2705.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1148;
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: GHS82TBMpzuLZDVmu3tROvzeN3HU3R1BzfGu54gbR+34aw4aA5DCkvvDVEPebOHDws5A0jJdTk94UzxtO9AQQfxCiIEmOhoj+ucMBAt25iDXc40j4ltM6X5BqWmCK9fSb8l9SGnMzJMYqKSF/3i32kZNiKkQ8IFFoa+VhO9Oz9V2/G/QF2CDws2Idzci9oPd/L0pR0jg3W2jku1wOIX01/Ef+EbOeQ97GVPaR3YgvesnSCJGYYDVzPi/zsWNMXnKUOMB4rsJ3zFrKxU0Q/7speMAk9sU7JxSsGi0SrCfbV68F3uoFNId1QVznCEohdQ/ezUOGUEruhnSmFnOKCZSAqSZ1zwgeEhcQGmUPr5w1o53PBmdbbqu1uvZpuAFOx+c2BhSCBTxgiwdVs3LB0rHfEpjOSjcrD9fNs85SKZUUqR3V8ovl7u6XtmspAU8PIX00pOyN8XfS0apzFub+iZlG1wKZGd8/+wKTVS19YD/lSdSeunAivYmk2kWOrngbx8Dz0hpsvO0rKekifctAGpdWQbkFoHy73PxC/45lahzevPxeXX531YNKnSZ8CQZKpo2FRStZB/VoKyOTiEwhuY+pn0xB9kOJ1q+xLrMVfp4oNUXEbZpCXk4zD3GTDPZNJOoNpRCqzfvpnvlR3eXM4hHOyNoTPTnKaG7TybSC4NCiz+eUNISFBpXknje8ktI6Y8xf6hk9WW+qXxkvab9hziRhQ==
+X-Forefront-Antispam-Report: CIP:64.207.220.244; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:wcmailrelayl01.cadence.com; PTR:ErrorRetry; CAT:NONE;
+ SFS:(4636009)(346002)(376002)(39860400002)(136003)(396003)(36092001)(36840700001)(46966006)(82740400003)(2616005)(4326008)(82310400003)(110136005)(81166007)(26005)(36756003)(36906005)(70206006)(15650500001)(47076005)(42186006)(54906003)(426003)(8676002)(336012)(316002)(36860700001)(86362001)(8936002)(70586007)(5660300002)(2906002)(356005)(186003)(478600001)(83380400001)(36900700001);
+ DIR:OUT; SFP:1101; 
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2021 06:08:26.1504 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2c9d4773-6afa-4883-4060-08d8ded3eca5
+X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[64.207.220.244];
+ Helo=[wcmailrelayl01.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: DM6NAM12FT031.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN3PR07MB2705
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369, 18.0.761
+ definitions=2021-03-04_01:2021-03-03,
+ 2021-03-04 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 bulkscore=0
+ clxscore=1015 adultscore=0 impostorscore=0 mlxlogscore=999 mlxscore=0
+ lowpriorityscore=0 spamscore=0 phishscore=0 priorityscore=1501
+ malwarescore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2009150000 definitions=main-2103040025
 X-Mailman-Approved-At: Fri, 05 Mar 2021 03:59:53 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -113,32 +173,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When this was rewriten to get mainlined and start to
-use 'linux/bitfield.h' headers, XTAL_MASK was wrong.
-It must mask three bits but only two were used. Hence
-properly fix it to make things work.
+Update PCIe + USB register sequences for correct PLL1 clock configuration.
+Also, update sequences for other USB configurations with dependent changes.
 
-Fixes: d87da32372a0 ("phy: ralink: Add PHY driver for MT7621 PCIe PHY")
-Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- drivers/phy/ralink/phy-mt7621-pci.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/cadence/phy-cadence-torrent.c | 47 +++++++++++++++--------
+ 1 file changed, 31 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/phy/ralink/phy-mt7621-pci.c b/drivers/phy/ralink/phy-mt7621-pci.c
-index 9a610b414b1f..84ee2b5c2228 100644
---- a/drivers/phy/ralink/phy-mt7621-pci.c
-+++ b/drivers/phy/ralink/phy-mt7621-pci.c
-@@ -62,7 +62,7 @@
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index f78a6731c26a..b371795e66a2 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -2655,8 +2655,6 @@ static struct cdns_reg_pairs usb_100_int_ssc_cmn_regs[] = {
+ 	{0x0C5E, CMN_PLL1_VCOCAL_REFTIM_START},
+ 	{0x0C56, CMN_PLL0_VCOCAL_PLLCNT_START},
+ 	{0x0C56, CMN_PLL1_VCOCAL_PLLCNT_START},
+-	{0x0003, CMN_PLL0_VCOCAL_TCTRL},
+-	{0x0003, CMN_PLL1_VCOCAL_TCTRL},
+ 	{0x00C7, CMN_PLL0_LOCK_REFCNT_START},
+ 	{0x00C7, CMN_PLL1_LOCK_REFCNT_START},
+ 	{0x00C7, CMN_PLL0_LOCK_PLLCNT_START},
+@@ -2664,7 +2662,9 @@ static struct cdns_reg_pairs usb_100_int_ssc_cmn_regs[] = {
+ 	{0x0005, CMN_PLL0_LOCK_PLLCNT_THR},
+ 	{0x0005, CMN_PLL1_LOCK_PLLCNT_THR},
+ 	{0x8200, CMN_CDIAG_CDB_PWRI_OVRD},
+-	{0x8200, CMN_CDIAG_XCVRC_PWRI_OVRD}
++	{0x8200, CMN_CDIAG_XCVRC_PWRI_OVRD},
++	{0x007F, CMN_TXPUCAL_TUNE},
++	{0x007F, CMN_TXPDCAL_TUNE}
+ };
  
- #define RG_PE1_FRC_MSTCKDIV			BIT(5)
+ static struct cdns_torrent_vals usb_100_int_ssc_cmn_vals = {
+@@ -2707,13 +2707,28 @@ static struct cdns_torrent_vals usb_phy_pcs_cmn_vals = {
+ };
  
--#define XTAL_MASK				GENMASK(7, 6)
-+#define XTAL_MASK				GENMASK(8, 6)
+ /* USB 100 MHz Ref clk, no SSC */
+-static struct cdns_reg_pairs usb_100_no_ssc_cmn_regs[] = {
++static struct cdns_reg_pairs sl_usb_100_no_ssc_cmn_regs[] = {
++	{0x0028, CMN_PDIAG_PLL1_CP_PADJ_M0},
++	{0x001E, CMN_PLL1_DSM_FBH_OVRD_M0},
++	{0x000C, CMN_PLL1_DSM_FBL_OVRD_M0},
+ 	{0x0003, CMN_PLL0_VCOCAL_TCTRL},
+ 	{0x0003, CMN_PLL1_VCOCAL_TCTRL},
+ 	{0x8200, CMN_CDIAG_CDB_PWRI_OVRD},
+ 	{0x8200, CMN_CDIAG_XCVRC_PWRI_OVRD}
+ };
  
- #define MAX_PHYS	2
- 
++static struct cdns_torrent_vals sl_usb_100_no_ssc_cmn_vals = {
++	.reg_pairs = sl_usb_100_no_ssc_cmn_regs,
++	.num_regs = ARRAY_SIZE(sl_usb_100_no_ssc_cmn_regs),
++};
++
++static struct cdns_reg_pairs usb_100_no_ssc_cmn_regs[] = {
++	{0x8200, CMN_CDIAG_CDB_PWRI_OVRD},
++	{0x8200, CMN_CDIAG_XCVRC_PWRI_OVRD},
++	{0x007F, CMN_TXPUCAL_TUNE},
++	{0x007F, CMN_TXPDCAL_TUNE}
++};
++
+ static struct cdns_reg_pairs usb_100_no_ssc_tx_ln_regs[] = {
+ 	{0x02FF, TX_PSC_A0},
+ 	{0x06AF, TX_PSC_A1},
+@@ -3497,8 +3512,8 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 		},
+ 		[TYPE_USB] = {
+ 			[TYPE_NONE] = {
+-				[NO_SSC] = &usb_100_no_ssc_cmn_vals,
+-				[EXTERNAL_SSC] = &usb_100_no_ssc_cmn_vals,
++				[NO_SSC] = &sl_usb_100_no_ssc_cmn_vals,
++				[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 			},
+ 			[TYPE_PCIE] = {
+@@ -3507,13 +3522,13 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 				[INTERNAL_SSC] = &usb_100_int_ssc_cmn_vals,
+ 			},
+ 			[TYPE_SGMII] = {
+-				[NO_SSC] = &usb_100_no_ssc_cmn_vals,
+-				[EXTERNAL_SSC] = &usb_100_no_ssc_cmn_vals,
++				[NO_SSC] = &sl_usb_100_no_ssc_cmn_vals,
++				[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 			},
+ 			[TYPE_QSGMII] = {
+-				[NO_SSC] = &usb_100_no_ssc_cmn_vals,
+-				[EXTERNAL_SSC] = &usb_100_no_ssc_cmn_vals,
++				[NO_SSC] = &sl_usb_100_no_ssc_cmn_vals,
++				[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 			},
+ 		},
+@@ -3906,8 +3921,8 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 		},
+ 		[TYPE_USB] = {
+ 			[TYPE_NONE] = {
+-				[NO_SSC] = &usb_100_no_ssc_cmn_vals,
+-				[EXTERNAL_SSC] = &usb_100_no_ssc_cmn_vals,
++				[NO_SSC] = &sl_usb_100_no_ssc_cmn_vals,
++				[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 			},
+ 			[TYPE_PCIE] = {
+@@ -3916,13 +3931,13 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 				[INTERNAL_SSC] = &usb_100_int_ssc_cmn_vals,
+ 			},
+ 			[TYPE_SGMII] = {
+-				[NO_SSC] = &usb_100_no_ssc_cmn_vals,
+-				[EXTERNAL_SSC] = &usb_100_no_ssc_cmn_vals,
++				[NO_SSC] = &sl_usb_100_no_ssc_cmn_vals,
++				[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 			},
+ 			[TYPE_QSGMII] = {
+-				[NO_SSC] = &usb_100_no_ssc_cmn_vals,
+-				[EXTERNAL_SSC] = &usb_100_no_ssc_cmn_vals,
++				[NO_SSC] = &sl_usb_100_no_ssc_cmn_vals,
++				[EXTERNAL_SSC] = &sl_usb_100_no_ssc_cmn_vals,
+ 				[INTERNAL_SSC] = &sl_usb_100_int_ssc_cmn_vals,
+ 			},
+ 		},
 -- 
-2.25.1
+2.26.1
 
 
 -- 
