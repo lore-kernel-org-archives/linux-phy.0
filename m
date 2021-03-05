@@ -5,157 +5,64 @@ X-Spam-Level:
 X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1CA2FC43381
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 98C99C433DB
 	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 04:00:03 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 939A56500C
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 04:00:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 939A56500C
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
+	by mail.kernel.org (Postfix) with ESMTPS id 1F6FA6500D
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Mar 2021 04:00:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1F6FA6500D
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=huawei.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
-	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TCOCsXnKjzcez0lxGcACHvjYR0fnJ6u0LE3Om7sT1TA=; b=YbySue6h84ikcDEzgRr2wdl9f
-	rFhzYCv98KSy4g0VNj/UAJdgBor+QQH6If489Wuix/sk6YBBculhIp4K8jVGPjU4IQlG8LBMOeS5F
-	ixJD7ZDDxECnSuyNValNNLhDsKc3kNG6K7B6I0KLLmieYpqxDkiWQ/Z0NWaPZPJ4ui/ZZcurQlu7N
-	IWcK1LjZtH4ckJ95tEcJ7VE/92MmsZxgBuNU1qFegM3DMqTP5uByHleWZNpcjr80HyRyDbylBbWxd
-	p14mQdL6R7SvByynMptR35RAY0rj+MMq+Fg0KVjemYONNLtxGLFsfKWLiWscWtpkGXTwtmtcv3RzZ
-	yHu+PXi/Q==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=BBvn7JBOpnyZn53qXYpykTOJW5JH2g70DaMUrqo0gN4=; b=cj/XZctfcQxPLRaLlWrUTw9o2F
+	DwNeZyiqwaoVBuWee/txfitEG9SHvO8oZPX8z+nf4fR1qhrrEjh7Ayru+/qp/WRTMGmPfjqA7rGaE
+	8vzJRJPAkvsIczi0zjGs+i/OW/ximd+Xe6VWqZSmwy9i8EwSXLDyf6up0OGf9KY5K0GQtJcqnggFC
+	W/pmG3JZtm8tvv0ssecWm28XNVylpYSsDAukwdukerTQvmdza6bnk/V2VYkCuGM+YBhsGSICeFGoK
+	nbbR6lX3w9QbEKLx8Ud5aeN46UPvN2aEv95tNUAkvrDnpwPt4xgqMa5/f607BjSZoSo7j0t/of0Jg
+	WUfeEHGQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lI1dA-00CEiH-SL; Fri, 05 Mar 2021 04:00:01 +0000
-Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
- helo=mx0a-0014ca01.pphosted.com)
+	id 1lI1dB-00CEiY-FH; Fri, 05 Mar 2021 04:00:01 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lHhAN-007sph-CE
- for linux-phy@lists.infradead.org; Thu, 04 Mar 2021 06:09:45 +0000
-Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
- by mx0b-0014ca01.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 1245tlu4026179; Wed, 3 Mar 2021 22:08:30 -0800
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=proofpoint;
- bh=H/HYDqvp99xauiCPwtqUeDogM5vAS8KWumCbXfeKsAA=;
- b=Xk20vxlnFqNmnrD3OfZQwlVdNRwzOAA5oqysPpoqqfpev0g6sP3SyESOcyP/Cq+/Skdr
- E2WuuL+Nd4HCCpLd/0YVy0nsZncF7Jcw2viLNIuj/Kges9wYFyWft1WMfSJl7HjSynCY
- Mqt1nDWvOTAIlTL2dF037JnC4oD7De/B5cZKDv31R+pWta9SG+j28BXTjX2UKiP6WPfG
- oz2FZhefrDvETJeF+OR6Zw85mdaPz7xgBAgWO3jz1yZ1ATFOwc7DofBVDSv3g9R5NYZ4
- 6MQpd0jThAQWbrEz9cLgnug0ZcaASn47fWVKTxvaWD3Ls7vS7wIZQI5Jrsx4QsdrTRMs fg== 
-Received: from nam11-co1-obe.outbound.protection.outlook.com
- (mail-co1nam11lp2176.outbound.protection.outlook.com [104.47.56.176])
- by mx0b-0014ca01.pphosted.com with ESMTP id 36yjj2r9es-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 03 Mar 2021 22:08:29 -0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kOlpah9SVDRTnl1v+xIoWqCh7bRd7kvWIGxUPDlhRzyG6IeNY9Ofy3r7ckWOoXEwRuOvdXUqa0iz57rxofn3FGyKe6ae9lcDz+uLejY6p0e+HPsmDvV7WWvq7MitcdeqhGNbWpzhcTNPN23cF8YCD7htVhfSNcaExnvc2Ulc1nvgZvw6BsHHGVUJ9A3aR5vencCOg0hjiaXZJEnTwoa5H9zR9R8dPgeWP8iIw+t1NiNAIVDDjGflsr5KcHgo7BCo+cLVVCrEp1m7Pwqx91FjrOYSSswLViRkNuuuDM0tooP/dggHB/8/G3bipby/agBfKBOuh2YCxawaYmObIpfcaQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=H/HYDqvp99xauiCPwtqUeDogM5vAS8KWumCbXfeKsAA=;
- b=km89+tcqGrbxFKVuYQZ1Qe2PnAp2Cb6IxnddJHOGno9qrE1Twf/W9hhfODkwX2EtxFJQgjHf8aU6ZmCgwXL14JYYWYy0848paJ+SgV9cpHGrN+adcg3bi0hAiev2Gy5qOAkpPLwhX7MOSjs2afBITCDddoQ+cRO3/YV50Q/WlUrGzSPkn+imDbA7A7RPlgMPbSMK99zW6shgZeCSM7/TEHZCblHgIh2KdTckDrMP0pR+WgQnJfWK/QqPfGRTRbjKo/VGRSTRgIiGC98tE2l0yTPMg23I8eTXD4yuXcspcSYO0MGBEp35ZWuSaCS18y4sZ6ktxuskMhmrpBtNzO2Yag==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 64.207.220.244) smtp.rcpttodomain=lists.infradead.org
- smtp.mailfrom=cadence.com; dmarc=pass (p=none sp=none pct=100) action=none
- header.from=cadence.com; dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=H/HYDqvp99xauiCPwtqUeDogM5vAS8KWumCbXfeKsAA=;
- b=R+HmPAVfBPQU42KJp9cKrXQ/nRncTBK12TqFOJ4mK+CIeQmzZeEqKOkNyuTpUI2oObMBnr0c93VmuTSlBdvnSPJdMyYNMKYH4vvgibnicNl19+LWcyzpuWuiRuWqjWmt/406nXSDW6uijT+/6vB1IHAFZ4WNR4nVXGFVz87+s74=
-Received: from DS7PR03CA0276.namprd03.prod.outlook.com (2603:10b6:5:3ad::11)
- by MW2PR07MB3995.namprd07.prod.outlook.com (2603:10b6:907:a::29) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3890.23; Thu, 4 Mar
- 2021 06:08:27 +0000
-Received: from DM6NAM12FT017.eop-nam12.prod.protection.outlook.com
- (2603:10b6:5:3ad:cafe::32) by DS7PR03CA0276.outlook.office365.com
- (2603:10b6:5:3ad::11) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3912.17 via Frontend
- Transport; Thu, 4 Mar 2021 06:08:26 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 64.207.220.244)
- smtp.mailfrom=cadence.com; lists.infradead.org; dkim=none (message not
- signed) header.d=none;lists.infradead.org; dmarc=pass action=none
- header.from=cadence.com;
-Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
- 64.207.220.244 as permitted sender) receiver=protection.outlook.com;
- client-ip=64.207.220.244; helo=wcmailrelayl01.cadence.com;
-Received: from wcmailrelayl01.cadence.com (64.207.220.244) by
- DM6NAM12FT017.mail.protection.outlook.com (10.13.178.65) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3912.9 via Frontend Transport; Thu, 4 Mar 2021 06:08:24 +0000
-Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
- by wcmailrelayl01.cadence.com (8.14.7/8.14.4) with ESMTP id
- 12468Jjp067409
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=OK);
- Wed, 3 Mar 2021 22:08:23 -0800
-X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
-Received: from maileu3.global.cadence.com (10.160.88.99) by
- maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3; Thu, 4 Mar 2021 07:08:18 +0100
-Received: from vleu-orange.cadence.com (10.160.88.83) by
- maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3 via Frontend Transport; Thu, 4 Mar 2021 07:08:18 +0100
-Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
- by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 12468ItP032349;
- Thu, 4 Mar 2021 07:08:18 +0100
-Received: (from sjakhade@localhost)
- by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 12468IMM032348;
- Thu, 4 Mar 2021 07:08:18 +0100
-From: Swapnil Jakhade <sjakhade@cadence.com>
-To: <vkoul@kernel.org>, <kishon@ti.com>, <linux-phy@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <nsekhar@ti.com>,
- <lokeshvutla@ti.com>
-Subject: [PATCH 2/4] phy: ti: j721e-wiz: Add support for configuring QSGMII
-Date: Thu, 4 Mar 2021 07:08:14 +0100
-Message-ID: <1614838096-32291-3-git-send-email-sjakhade@cadence.com>
-X-Mailer: git-send-email 2.4.5
-In-Reply-To: <1614838096-32291-1-git-send-email-sjakhade@cadence.com>
-References: <1614838096-32291-1-git-send-email-sjakhade@cadence.com>
+ id 1lI1Kb-00C7eB-Pv
+ for linux-phy@lists.infradead.org; Fri, 05 Mar 2021 03:40:54 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
+ by szxga07-in.huawei.com (SkyGuard) with ESMTP id 4DsD475xxtz8srs;
+ Fri,  5 Mar 2021 11:39:03 +0800 (CST)
+Received: from localhost.localdomain (10.175.102.38) by
+ DGGEMS409-HUB.china.huawei.com (10.3.19.209) with Microsoft SMTP Server id
+ 14.3.498.0; Fri, 5 Mar 2021 11:40:37 +0800
+From: 'Wei Yongjun <weiyongjun1@huawei.com>
+To: <weiyongjun1@huawei.com>, Kishon Vijay Abraham I <kishon@ti.com>, "Vinod
+ Koul" <vkoul@kernel.org>, Paul Cercueil <paul@crapouillou.net>,
+ =?UTF-8?q?=E5=91=A8=E7=90=B0=E6=9D=B0=20=28Zhou=20Yanjie=29?=
+ <zhouyanjie@wanyeetech.com>,
+ =?UTF-8?q?=E6=BC=86=E9=B9=8F=E6=8C=AF=20=28Qi=20Pengzhen=29?=
+ <aric.pzqi@ingenic.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <kernel-janitors@vger.kernel.org>, Hulk Robot <hulkci@huawei.com>
+Subject: [PATCH -next] phy: ingenic: Fix a typo in ingenic_usb_phy_probe()
+Date: Fri, 5 Mar 2021 03:49:33 +0000
+Message-ID: <20210305034933.3240914-1-weiyongjun1@huawei.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-OrganizationHeadersPreserved: maileu3.global.cadence.com
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 30dc8735-089f-42a0-aa07-08d8ded3ebeb
-X-MS-TrafficTypeDiagnostic: MW2PR07MB3995:
-X-Microsoft-Antispam-PRVS: <MW2PR07MB399595E14A8C95E73824DF18C5979@MW2PR07MB3995.namprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:854;
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: QPaFs/63tS4kHBZ+HnImnl3gSgI36vtC0fmH+UZzIxg0aV2/1fRRgdFew1uTMOJnRRUsNxn/DHCB6wkJx1hrGYb1CBj3+nESSGNbpZky9heSDiP6u7dHnTmMuXbayJCUZQjd3LpuIaMg4V9R8NPTtkqa//jsVAK1EOIU3vEKtXUt3WlbgTISw+SeqAuGXWD9fQKNZo8e/o1Ds7Si7qhqY/cn6C/yYU7lE5iumdjdHit9EwYThfQvQw9O4MEpHBbmSShhBPru831KeF2zRUiK5636sJGIHp7/vCCJVreSqpB4C1Lqa1oWj+lOkvnOBT47ly0GqrSivveWhZc2pcNMyleeMmQAIipynnOBhEfvROwDhXbyz+k9VdjEfrl3kUkVtxJWdt34eWQOKC7GDUYNbKF6Pjiz1/xGoh4qHXpGKFG0rqgsdZ5s77NUWReiUtfO65UIGu2wNxvZtQDWB8aLX+Tcwoe5yeaqZonTjcZxYxui3TXMgNUMju+GIjTZmxnMDg5Qk1NYkGUco5PqItCRSPAlcKE3qgHCIOLqGLbZ7l4lIvUP4ABi2apyEXgr0BHW6/VlzzyiF5mmXeAtqmf3seoAzXjJ2Wz1oZKLmnk9KtJtPbhHOX4SUVWzmUaLeDaqrqPgubC7QgZ6PejzZh6Rk4E2C7WYygRJpWhmLh2Seea0TkSN+oTddh8vCYVPaT5ifgxaIQ7Y23VYBeCj/fnFGA==
-X-Forefront-Antispam-Report: CIP:64.207.220.244; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:CAL; SFV:NSPM; H:wcmailrelayl01.cadence.com; PTR:ErrorRetry; CAT:NONE;
- SFS:(4636009)(396003)(39860400002)(376002)(136003)(346002)(36092001)(46966006)(36840700001)(478600001)(316002)(70586007)(70206006)(81166007)(36906005)(4326008)(6666004)(8676002)(8936002)(356005)(186003)(54906003)(42186006)(36756003)(336012)(26005)(5660300002)(2616005)(110136005)(82740400003)(426003)(83380400001)(86362001)(47076005)(82310400003)(36860700001)(2906002)(36900700001);
- DIR:OUT; SFP:1101; 
-X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2021 06:08:24.9351 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 30dc8735-089f-42a0-aa07-08d8ded3ebeb
-X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[64.207.220.244];
- Helo=[wcmailrelayl01.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: DM6NAM12FT017.eop-nam12.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW2PR07MB3995
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369, 18.0.761
- definitions=2021-03-04_01:2021-03-03,
- 2021-03-04 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
- score=0 bulkscore=0
- clxscore=1015 adultscore=0 impostorscore=0 mlxlogscore=999 mlxscore=0
- lowpriorityscore=0 spamscore=0 phishscore=0 priorityscore=1501
- malwarescore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2009150000 definitions=main-2103040025
-X-Mailman-Approved-At: Fri, 05 Mar 2021 03:59:54 +0000
+X-Originating-IP: [10.175.102.38]
+X-CFilter-Loop: Reflected
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20210305_034051_030706_313C84FF 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Fri, 05 Mar 2021 03:59:53 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -172,135 +79,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Kishon Vijay Abraham I <kishon@ti.com>
+From: Wei Yongjun <weiyongjun1@huawei.com>
 
-Configure MAC clock dividers required for QSGMII to be functional.
+Fix the return value check typo which testing the wrong variable
+in ingenic_usb_phy_probe().
 
-Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Fixes: 31de313dfdcf ("PHY: Ingenic: Add USB PHY driver using generic PHY framework.")
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
 ---
- drivers/phy/ti/phy-j721e-wiz.c | 64 ++++++++++++++++++++++++++++++++--
- 1 file changed, 62 insertions(+), 2 deletions(-)
+ drivers/phy/ingenic/phy-ingenic-usb.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index 03896240a5d5..995c7dbec77b 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -27,6 +27,7 @@
- #define WIZ_SERDES_RST		0x40c
- #define WIZ_SERDES_TYPEC	0x410
- #define WIZ_LANECTL(n)		(0x480 + (0x40 * (n)))
-+#define WIZ_LANEDIV(n)		(0x484 + (0x40 * (n)))
- 
- #define WIZ_MAX_INPUT_CLOCKS	4
- /* To include mux clocks, divider clocks and gate clocks */
-@@ -127,6 +128,20 @@ static const struct reg_field p0_fullrt_div[WIZ_MAX_LANES] = {
- 	REG_FIELD(WIZ_LANECTL(3), 22, 23),
- };
- 
-+static const struct reg_field p_mac_div_sel0[WIZ_MAX_LANES] = {
-+	REG_FIELD(WIZ_LANEDIV(0), 16, 22),
-+	REG_FIELD(WIZ_LANEDIV(1), 16, 22),
-+	REG_FIELD(WIZ_LANEDIV(2), 16, 22),
-+	REG_FIELD(WIZ_LANEDIV(3), 16, 22),
-+};
-+
-+static const struct reg_field p_mac_div_sel1[WIZ_MAX_LANES] = {
-+	REG_FIELD(WIZ_LANEDIV(0), 0, 8),
-+	REG_FIELD(WIZ_LANEDIV(1), 0, 8),
-+	REG_FIELD(WIZ_LANEDIV(2), 0, 8),
-+	REG_FIELD(WIZ_LANEDIV(3), 0, 8),
-+};
-+
- static const struct reg_field typec_ln10_swap =
- 					REG_FIELD(WIZ_SERDES_TYPEC, 30, 30);
- 
-@@ -252,6 +267,8 @@ struct wiz {
- 	struct regmap_field	*p_align[WIZ_MAX_LANES];
- 	struct regmap_field	*p_raw_auto_start[WIZ_MAX_LANES];
- 	struct regmap_field	*p_standard_mode[WIZ_MAX_LANES];
-+	struct regmap_field	*p_mac_div_sel0[WIZ_MAX_LANES];
-+	struct regmap_field	*p_mac_div_sel1[WIZ_MAX_LANES];
- 	struct regmap_field	*p0_fullrt_div[WIZ_MAX_LANES];
- 	struct regmap_field	*pma_cmn_refclk_int_mode;
- 	struct regmap_field	*pma_cmn_refclk_mode;
-@@ -290,6 +307,27 @@ static int wiz_reset(struct wiz *wiz)
- 	return 0;
- }
- 
-+static int wiz_p_mac_div_sel(struct wiz *wiz)
-+{
-+	u32 num_lanes = wiz->num_lanes;
-+	int ret;
-+	int i;
-+
-+	for (i = 0; i < num_lanes; i++) {
-+		if (wiz->lane_phy_type[i] == PHY_TYPE_QSGMII) {
-+			ret = regmap_field_write(wiz->p_mac_div_sel0[i], 1);
-+			if (ret)
-+				return ret;
-+
-+			ret = regmap_field_write(wiz->p_mac_div_sel1[i], 2);
-+			if (ret)
-+				return ret;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
- static int wiz_mode_select(struct wiz *wiz)
- {
- 	u32 num_lanes = wiz->num_lanes;
-@@ -300,8 +338,8 @@ static int wiz_mode_select(struct wiz *wiz)
- 	for (i = 0; i < num_lanes; i++) {
- 		if (wiz->lane_phy_type[i] == PHY_TYPE_DP)
- 			mode = LANE_MODE_GEN1;
--		else
--			mode = LANE_MODE_GEN4;
-+		else if (wiz->lane_phy_type[i] == PHY_TYPE_QSGMII)
-+			mode = LANE_MODE_GEN2;
- 
- 		ret = regmap_field_write(wiz->p_standard_mode[i], mode);
- 		if (ret)
-@@ -347,6 +385,12 @@ static int wiz_init(struct wiz *wiz)
- 		return ret;
+diff --git a/drivers/phy/ingenic/phy-ingenic-usb.c b/drivers/phy/ingenic/phy-ingenic-usb.c
+index ea127b177f46..28c28d816484 100644
+--- a/drivers/phy/ingenic/phy-ingenic-usb.c
++++ b/drivers/phy/ingenic/phy-ingenic-usb.c
+@@ -352,8 +352,8 @@ static int ingenic_usb_phy_probe(struct platform_device *pdev)
  	}
  
-+	ret = wiz_p_mac_div_sel(wiz);
-+	if (ret) {
-+		dev_err(dev, "Configuring P0 MAC DIV SEL failed\n");
-+		return ret;
-+	}
-+
- 	ret = wiz_init_raw_interface(wiz, true);
- 	if (ret) {
- 		dev_err(dev, "WIZ interface initialization failed\n");
-@@ -471,6 +515,22 @@ static int wiz_regfield_init(struct wiz *wiz)
- 			dev_err(dev, "P%d_FULLRT_DIV reg field init failed\n", i);
- 			return PTR_ERR(wiz->p0_fullrt_div[i]);
- 		}
-+
-+		wiz->p_mac_div_sel0[i] =
-+		  devm_regmap_field_alloc(dev, regmap, p_mac_div_sel0[i]);
-+		if (IS_ERR(wiz->p_mac_div_sel0[i])) {
-+			dev_err(dev, "P%d_MAC_DIV_SEL0 reg field init fail\n",
-+				i);
-+			return PTR_ERR(wiz->p_mac_div_sel0[i]);
-+		}
-+
-+		wiz->p_mac_div_sel1[i] =
-+		  devm_regmap_field_alloc(dev, regmap, p_mac_div_sel1[i]);
-+		if (IS_ERR(wiz->p_mac_div_sel1[i])) {
-+			dev_err(dev, "P%d_MAC_DIV_SEL1 reg field init fail\n",
-+				i);
-+			return PTR_ERR(wiz->p_mac_div_sel1[i]);
-+		}
- 	}
+ 	priv->phy = devm_phy_create(dev, NULL, &ingenic_usb_phy_ops);
+-	if (IS_ERR(priv))
+-		return PTR_ERR(priv);
++	if (IS_ERR(priv->phy))
++		return PTR_ERR(priv->phy);
  
- 	wiz->typec_ln10_swap = devm_regmap_field_alloc(dev, regmap,
--- 
-2.26.1
+ 	phy_set_drvdata(priv->phy, priv);
+ 
 
 
 -- 
