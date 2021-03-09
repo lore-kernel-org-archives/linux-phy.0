@@ -1,84 +1,88 @@
-Return-Path: <SRS0=qg3g=IG=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=CLz0=IH=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-12.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 72FC2C433DB
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Mar 2021 17:52:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 85271C433E0
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Mar 2021 08:26:57 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DB0F0652AF
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Mar 2021 17:52:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DB0F0652AF
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 098E065237
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Mar 2021 08:26:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 098E065237
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=J9zoosCLKJnSLIo7ar4rUxNpYWaCnaeVBhZg4aKMJrI=; b=SNQ4ExUyL+PkyYl0M6oM9/n1p
-	38L3djwa6p1IhI7iXvyHgcyNPJvJww8ggURoE5HlgzDV+0ANzHtnW1Y8772TDEPkkDXvr40xcuiJs
-	1Vg2z2C65uD4m7wT07MtZVOsqdYZQHboEo1ZN9iGHNM1Ns/g+XHrIg2dEDoiiwWbFiTUHs7ychz1P
-	AWCAsVqQIz2ahxKGBoblw/hJdFhMvNjn9avwqjyvj4bJOqs1JP6f1A4cg/b1MzuAqVrWs0CA0KeKy
-	ekLEYu2EswZke68zPBno1Y7AjPSgXV4Y99OCkC/wp7Q3SdgbERzVC9iotJiHOwp/lE92KIouwOPA3
-	NAArB3P9Q==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Bm+VJAR/uAXvm1Xi9PqL6EfjTUnAdSM3LzuUYV3MWAM=; b=VXrWOUiiFoZdb7MVW1Cm/sdMZF
+	aIVP49XJbktB6jz4Y3ZFunFV0S0SAea2TsGfTBcQelpLd+ZoUi+bjHjo4zZupYf7Ewf1POn1cK1p5
+	jYxkH0iF/FxQU1ZPD3YBzVVt+vCB0pEttxg/5JnRHsy2Y78PvLyuKNnzuvM/j94iJ54zBT/sQoFAP
+	hXp/f67dNlsolRbe78LM0DR2WclyUY/R2WFVsSrisGcpua1sXD/AHkknQflm/BZ+GtlV3EKc7UibR
+	XLJY7DPQRVcVTIpalL3FqKuBxuBB82/Z01LZS2Hp23zgE8+h5Mntb57Lx2f6dv0jIi2qnFCN5M2u0
+	5bdiX2iA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lJK38-001XMG-PF; Mon, 08 Mar 2021 17:52:10 +0000
-Received: from mail-io1-f54.google.com ([209.85.166.54])
+	id 1lJXhe-0041oR-Pa; Tue, 09 Mar 2021 08:26:55 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lJK35-001XLJ-RM
- for linux-phy@lists.infradead.org; Mon, 08 Mar 2021 17:52:09 +0000
-Received: by mail-io1-f54.google.com with SMTP id o9so10879178iow.6
- for <linux-phy@lists.infradead.org>; Mon, 08 Mar 2021 09:52:07 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=xPB4huatYbwl80jYKwSF7UcinL+RMW/E9f/YgeQxn+Y=;
- b=DfQ9RMbLF2B91K3Vc2mRpeElxZgTkDXtfx/1dTT0mj/aQwDyuQBSJLN1Mpa5uCGFct
- 6CoC4NuI/dZhBNB0gFLFr+OOE6XvA9NNWGhd1q9B+xeChdo1VChAFVvby34C+Z9e0sS6
- QL5rK10A6n6k4Td6Ku5/NkDKtyS+Npia/JE3ddvD8wFIykocEpqBXbWtX3PYMVXjiJES
- TDvIRCPj6iAz6AtrQDUyEGTnP2bPOrYdKTGROEYIXP79jB59OAtBROxQm0tLNbJtGw7y
- pacUA4Qlse1BeiqjZAvhGZFNW/Fm68L5jr3yuMp3+n1GqKz5cwqZjRiEUuo2s/AMtynj
- ybrQ==
-X-Gm-Message-State: AOAM532e690k9mGqAY/1cW8yt1tTy/pBisJWaJhaPA5QC4+KvjeLl0XV
- svzEwR1BbhT3lXk/ge3BFXN/A1Ye6A==
-X-Google-Smtp-Source: ABdhPJxBT9iwoqUcXW65Awv827IA4yDuByiJmyRaO4420WIC/jZsQA1Tw1dirDsINRWvGXiwv/Egrw==
-X-Received: by 2002:a02:7086:: with SMTP id
- f128mr24249918jac.104.1615225926425; 
- Mon, 08 Mar 2021 09:52:06 -0800 (PST)
-Received: from robh.at.kernel.org ([64.188.179.253])
- by smtp.gmail.com with ESMTPSA id i3sm6208434ioq.13.2021.03.08.09.52.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 08 Mar 2021 09:52:05 -0800 (PST)
-Received: (nullmailer pid 2699399 invoked by uid 1000);
- Mon, 08 Mar 2021 17:52:03 -0000
-Date: Mon, 8 Mar 2021 10:52:03 -0700
-From: Rob Herring <robh@kernel.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: devicetree@vger.kernel.org, Swapnil Jakhade <sjakhade@cadence.com>,
- linux-phy@lists.infradead.org, Peter Rosin <peda@axentia.se>,
- Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH v2 3/9] dt-bindings: ti-serdes-mux: Add defines for AM64
- SoC
-Message-ID: <20210308175203.GA2699351@robh.at.kernel.org>
-References: <20210222112314.10772-1-kishon@ti.com>
- <20210222112314.10772-4-kishon@ti.com>
+ id 1lJXhZ-0041nI-HP; Tue, 09 Mar 2021 08:26:52 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
+ 1298QjaI014685; Tue, 9 Mar 2021 09:26:45 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=selector1;
+ bh=6useEKFTe+Bqa/XiaAvxpMZHpCqKWtSJwAWFIVF7tLg=;
+ b=d4MsmYodNPFER5m32lmOBHOKdVKRFxt/vRlyik7Wxi6oOhIura9YjnnrbJV3ca6FwsDp
+ jp83t4vcfh4EIBdtECWre3p9mGeqaKL6eHJNYb/O/ncBxY4LBtf+5EevUIPUhwZyRU0/
+ RoyfFpZPU1Gyin+4BDeL8gqzv50YM9YUYka542Dz7hrrDlyICUTY8/iHqgUo/2TN6kpa
+ 7IFxMhnZyx+YbZx+v0DP7Npn5eqR1epRs8S5FskheVfwy0BuxNeat9ZEP8QR8y/3Wq4T
+ GthSzOC2o2W3zVVRRdKJZUj8VN9KbkIYx6eu1SlVr6MHVtDmSx53iEajoiDJt+0IOm2c ew== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 373yreh0r0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 09 Mar 2021 09:26:45 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C0BD410002A;
+ Tue,  9 Mar 2021 09:26:38 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag2node3.st.com [10.75.127.6])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id AB1C9221794;
+ Tue,  9 Mar 2021 09:26:38 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG2NODE3.st.com (10.75.127.6)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 9 Mar 2021 09:26:38
+ +0100
+From: Amelie Delaunay <amelie.delaunay@foss.st.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
+ <amelie.delaunay@foss.st.com>
+Subject: [RESEND PATCH v3 0/2] STM32 USBPHYC ck_usbo_48m clock provider
+Date: Tue, 9 Mar 2021 09:26:31 +0100
+Message-ID: <20210309082633.8213-1-amelie.delaunay@foss.st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210222112314.10772-4-kishon@ti.com>
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG2NODE3.st.com
+ (10.75.127.6)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369, 18.0.761
+ definitions=2021-03-09_06:2021-03-08,
+ 2021-03-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210308_175207_984726_A907C141 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20210309_082649_904155_464C7AE9 
+X-CRM114-Status: GOOD (  11.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,19 +99,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 22 Feb 2021 16:53:08 +0530, Kishon Vijay Abraham I wrote:
-> AM64 has a single lane SERDES which can be configured to be used
-> with either PCIe or USB. Define the possilbe values for the SERDES
-> function in AM64 SoC here.
-> 
-> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-> Acked-by: Peter Rosin <peda@axentia.se>
-> ---
->  include/dt-bindings/mux/ti-serdes.h | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
+STM32 USBPHYC provides clocks to STM32 RCC pour STM32 USB controllers.
+Specifically, ck_usbo_48m is a possible clock parent for USB OTG clock,
+during OTG Full-Speed operation.
 
-Acked-by: Rob Herring <robh@kernel.org>
+This series registers the usbphyc as clock provider of this ck_usbo_48m clock.
+
+---
+Resent with linux-phy ML in cc
+Changes in v3:
+- remove #clock-cells from required properties
+Changes in v2:
+- fix COMMON_CLK dependency issue reported by kernel test robot
+---
+Amelie Delaunay (2):
+  dt-bindings: phy: phy-stm32-usbphyc: add #clock-cells property
+  phy: stm32: register usbphyc as clock provider of ck_usbo_48m clock
+
+ .../bindings/phy/phy-stm32-usbphyc.yaml       |  5 ++
+ drivers/phy/st/Kconfig                        |  1 +
+ drivers/phy/st/phy-stm32-usbphyc.c            | 65 +++++++++++++++++++
+ 3 files changed, 71 insertions(+)
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
