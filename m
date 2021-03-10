@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 96B93C433E6
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Mar 2021 15:55:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AAAF6C433E0
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Mar 2021 15:55:23 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 391F064F4C
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Mar 2021 15:55:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 391F064F4C
+	by mail.kernel.org (Postfix) with ESMTPS id 3539664E27
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Mar 2021 15:55:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 3539664E27
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,63 +23,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wGEyXgJguZ1t4L7TB+n6HJM+YUYOULYM9fcofPg/TPc=; b=eMK7T5W8ugRtMCEd72mOwXJEI
-	SwETD0BVZnOiVKhAOTj/1zxgMmbS8n9cIHJG4q8ATMKsbJyB/Gymz927X3pEkGk8k1pyBMSzUJPmb
-	nfvnNsWgbrMJ+Oe06P1+LEf4Ttr7TGi8vZNi0hfvXLbGcui8pNMVpRG1qi6G+C5Mg0LWAZ1/1KZGR
-	nXXfaseiCjoab0YNPvyNW1ZhhsHQcReeEV2owwKApN5LXA3YDyZ1c1uB4iri5a1eqo9sIOKnpAdCS
-	aHDHOJa+B/TLSOLxDM59rBoLkCrBZOCrVcf8pQEVIEAv+ePa/g8utwv+sqw4+JdFhEsrifuS1/Igr
-	egw6DKPVw==;
+	 bh=SRrdgMyf3JWV7d+2i/nFI6NdjTd1uNy9z+NrpWh8gEg=; b=jKEsvrh3dvaxnNjCJ0V/jKbrQ
+	ogNVewvYIxq4WeZ/pHV66Clr6QTrP48pMlTSkp3JxEc1/Vbtf94E2di4E3MlM33tkrbC9CG5SPTad
+	s8ybprsOpz8m/ztBe4T3lzJscaTmId351Y0mMe5FEJas37QXkZ3AjYHs4ST62mdcZ/XuUlagyy5IS
+	VGFXq6z9GBsbi08edbDjIIp2fllYQwSNHRjRzPB5XbpAkras+e9HrbG0RIElkfelEF39QK50vZ/gd
+	6ACPEXNxFk6kPB0NFWVPFd8G84JXnZRfiiKfGZyp7yadPpAFrHJApHZB6Akzu7QSG5Hzmk3h6/Yjw
+	DGgaCQFnA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lK1B6-0079gf-KJ; Wed, 10 Mar 2021 15:55:16 +0000
+	id 1lK1BB-0079ht-Aa; Wed, 10 Mar 2021 15:55:21 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lK1B3-0079g5-FG
- for linux-phy@lists.infradead.org; Wed, 10 Mar 2021 15:55:15 +0000
+ id 1lK1B6-0079gb-NE
+ for linux-phy@lists.infradead.org; Wed, 10 Mar 2021 15:55:18 +0000
 Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12AFtANJ071321;
- Wed, 10 Mar 2021 09:55:10 -0600
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12AFtDr5071336;
+ Wed, 10 Mar 2021 09:55:13 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1615391710;
- bh=dm+U4X4EOZxEx+9CgGj+1LJA+tv3/55FfGG9lW8Ffdk=;
+ s=ti-com-17Q1; t=1615391713;
+ bh=J2qWef0WUfP/Vl5TQ9acXH6M0zbocwoIq+ewinLGc58=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Zhb8WPS2KOTvRel1/RxPtFnx0IhqUkyODogfUFTVgvui80jLTCyKbqo6iHIP3PgC9
- cSBElsGYwd1/5Hg6Gw+vdLjCFVoFfuD2xU1UncrCXtIlnZeu6yql+sQQixx3r+8tWb
- Yn02EpzLR1aQIYR/48q6fjA+LR6QjZyVJKNWfIk4=
-Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12AFtAYH029708
+ b=RiKkWHv23agR/QWl5DElBDLyl4uuD5B+9ZgotP74tr209mY61SQfNNWCDzN5qYnox
+ VHLFUpoIqz7MUp3iIyCGHDQGzQu4mjaDqNp+eYb0nwl6gDLOwfSD9U9EEjVTe598dq
+ Vyq6OFWrfIdYu6WtuR/J8KoIoIYu4XKhL1hTN8Zc=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12AFtDqm029819
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 10 Mar 2021 09:55:10 -0600
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ Wed, 10 Mar 2021 09:55:13 -0600
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Wed, 10
- Mar 2021 09:55:10 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2021 09:55:07 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Wed, 10 Mar 2021 09:55:10 -0600
+ Frontend Transport; Wed, 10 Mar 2021 09:55:06 -0600
 Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12AFsq5l082613;
- Wed, 10 Mar 2021 09:55:07 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12AFsq5k082613;
+ Wed, 10 Mar 2021 09:55:04 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
  Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
  Swapnil Jakhade <sjakhade@cadence.com>
 CC: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>, Lokesh Vutla
  <lokeshvutla@ti.com>, <linux-phy@lists.infradead.org>
-Subject: [PATCH 4/4] phy: cadence-torrent: Explicitly request exclusive reset
- control
-Date: Wed, 10 Mar 2021 21:24:45 +0530
-Message-ID: <20210310155445.534-5-kishon@ti.com>
+Subject: [PATCH 3/4] phy: cadence-torrent: Do not configure SERDES if it's
+ already configured
+Date: Wed, 10 Mar 2021 21:24:44 +0530
+Message-ID: <20210310155445.534-4-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20210310155445.534-1-kishon@ti.com>
 References: <20210310155445.534-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210310_155513_812194_6B9F0785 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20210310_155517_111311_7268EC52 
+X-CRM114-Status: GOOD (  13.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,28 +96,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-No functional change. Since the reset controls obtained in
-Torrent is exclusively used by the Torrent device, use
-exclusive reset control request API calls.
+Do not configure torrent SERDES if it's already configured.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- drivers/phy/cadence/phy-cadence-torrent.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/cadence/phy-cadence-torrent.c | 32 ++++++++++++++++-------
+ 1 file changed, 22 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index 5ee1657f5a1c..ff8bb4b724c0 100644
+index ab51c4bf7b30..5ee1657f5a1c 100644
 --- a/drivers/phy/cadence/phy-cadence-torrent.c
 +++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -2264,7 +2264,7 @@ static int cdns_torrent_reset(struct cdns_torrent_phy *cdns_phy)
- 		return PTR_ERR(cdns_phy->phy_rst);
+@@ -371,6 +371,10 @@ static const struct phy_ops cdns_torrent_phy_ops = {
+ 	.owner		= THIS_MODULE,
+ };
+ 
++static const struct phy_ops noop_ops = {
++	.owner		= THIS_MODULE,
++};
++
+ struct cdns_reg_pairs {
+ 	u32 val;
+ 	u32 off;
+@@ -2306,6 +2310,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	struct device_node *child;
+ 	int ret, subnodes, node = 0, i;
+ 	u32 total_num_lanes = 0;
++	int already_configured;
+ 	u8 init_dp_regmap = 0;
+ 	u32 phy_type;
+ 
+@@ -2344,16 +2349,20 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = cdns_torrent_reset(cdns_phy);
+-	if (ret)
+-		goto clk_cleanup;
++	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1, &already_configured);
+ 
+-	ret = cdns_torrent_clk(cdns_phy);
+-	if (ret)
+-		goto clk_cleanup;
++	if (!already_configured) {
++		ret = cdns_torrent_reset(cdns_phy);
++		if (ret)
++			goto clk_cleanup;
++
++		ret = cdns_torrent_clk(cdns_phy);
++		if (ret)
++			goto clk_cleanup;
+ 
+-	/* Enable APB */
+-	reset_control_deassert(cdns_phy->apb_rst);
++		/* Enable APB */
++		reset_control_deassert(cdns_phy->apb_rst);
++	}
+ 
+ 	for_each_available_child_of_node(dev->of_node, child) {
+ 		struct phy *gphy;
+@@ -2423,7 +2432,10 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 		of_property_read_u32(child, "cdns,ssc-mode",
+ 				     &cdns_phy->phys[node].ssc_mode);
+ 
+-		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
++		if (!already_configured)
++			gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
++		else
++			gphy = devm_phy_create(dev, child, &noop_ops);
+ 		if (IS_ERR(gphy)) {
+ 			ret = PTR_ERR(gphy);
+ 			goto put_child;
+@@ -2507,7 +2519,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 		goto put_lnk_rst;
  	}
  
--	cdns_phy->apb_rst = devm_reset_control_get_optional(dev, "torrent_apb");
-+	cdns_phy->apb_rst = devm_reset_control_get_optional_exclusive(dev, "torrent_apb");
- 	if (IS_ERR(cdns_phy->apb_rst)) {
- 		dev_err(dev, "%s: failed to get apb reset\n",
- 			dev->of_node->full_name);
+-	if (cdns_phy->nsubnodes > 1) {
++	if (cdns_phy->nsubnodes > 1 && !already_configured) {
+ 		ret = cdns_torrent_phy_configure_multilink(cdns_phy);
+ 		if (ret)
+ 			goto put_lnk_rst;
 -- 
 2.17.1
 
