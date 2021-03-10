@@ -1,95 +1,89 @@
-Return-Path: <SRS0=CLz0=IH=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=wP85=II=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.2 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,
-	NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A676AC433E6
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Mar 2021 22:52:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D3586C433E0
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Mar 2021 10:24:48 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3C42964FBC
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Mar 2021 22:52:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 3C42964FBC
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 5890C64F72
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Mar 2021 10:24:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5890C64F72
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	References:CC:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WXKtVHzXdhVZFCLpikHt+hdfV2WntGQCqgD2k+mqSp8=; b=He6ViEKeKGwkeyPpf8B21ecGF
-	E6B01bZVcoQduNG86j1PXEgK/rQIy195tQ+kzqgdXIo6xAu2nORZAYI0waWiWRmFmBtpmESrL8WJs
-	2lmbl1DRWR9iB2PY2gpBTVZUktFmqBJOPpj+hGgEnGUTJgLq+0rtbYlkamwK1Cuy8hDJqwWjQFOM/
-	VuniXf+iJb7Y6fcxZ3sGM/NUtTzUPbn/od2ufTbh2jmXbugas/ViNGcfF2S73tzGvLY+ht42zInLd
-	WMBy7V5WL9gMhqUTJFEU0b/1Ba80dsCO21NSvIWCffkhpMKn4sGIEjaROhm2syoDZZ0taZX8POzlU
-	Yu/KYk1Vw==;
+	 bh=4Ga+HlGCGZaD6lX2SrvnyHFrKVn8+ACfyt+f3HSI5Bg=; b=C1VVwm5DKB4QapWN1axqjc3AR
+	B4niHBukJWc4T+UXBtanE0YmXmMMcKYYx5m8+WtjYweQ+OX34LlsWhBtcFtPZB6PlVpP2TXofWoFl
+	mTtTSFKQrkhcMi24jgLP7vGh18Riv/G/h5DTu4qrh9tANY4k3rODfoNLDCwWmkf4Pn76EhnjBZgEr
+	VS2UYBOPuJ/DfJhWVub/QUufQrEXplKmjKmB03j7ONxlH8LjXKshlALdyWGyWXeIaCvao3GtZdbOb
+	AwwflLdyFuCZqEm/wOKtpgY3fFrDE11H12gePZSZ+i/Y7aacRqw1xd37FOMGb44iASo8pPCp0gzTb
+	1BZINERiw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lJlD2-005bNq-Jb; Tue, 09 Mar 2021 22:52:12 +0000
-Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
+	id 1lJw1G-006aLm-HU; Wed, 10 Mar 2021 10:24:46 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lJlCn-005bN9-Sd; Tue, 09 Mar 2021 22:52:00 +0000
-Received: by mail-pj1-x1030.google.com with SMTP id gb6so227432pjb.0;
- Tue, 09 Mar 2021 14:51:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=g89i0HKVVK17ZHojtMfNmi1K2EkjJlXDtcm3OypLR74=;
- b=ely7tZKJEg0V/UnSn+ooeMOHZb1z7GRwJ9YAkSxz+oqF7umX2C4MV5ANe/HdVLrV9L
- 7ycy5+Kuya+oQP7mlLgGdkDoiYEF6mDKxZi7uyRBDsazpQ71MvdqZ64WIXU+i56B2q5l
- ptcyAFfGp0Mpe4kysAqMNHuPJNGFppudIe3Q0g0VkzM+RchOSeVT+86a459b7USGu1na
- ckU/lv9KjeWFBKUf/0477AGjn9k1fBjxApVdveKyqA0oQw5JiVS/H2cBzy4K8BR8PSiB
- t9ra90qmyH9C8hS+IHfGiV/9x85wTqgSC1XYuDKJssYljkMfjzbWCOsBH8sa0Yua78tt
- oY4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=g89i0HKVVK17ZHojtMfNmi1K2EkjJlXDtcm3OypLR74=;
- b=PlfO4Tg5yugDdGGjTtRVntk6mPBkYAGZtRMOfkxFEqJ8TGL64NceJuBKGpujMyWJeA
- bbOfdjmmPdrLdExvbynVQyAZSmsAfwg5TJhtB0okElBRGZk0R+4WhjzxN/u1QNAbRcFo
- 1Ne9MHH8hg5kXImRGrH82cB4jCxBfFdHjRlq4I5qVUzOt7hJQz2rm4Jp3+y/AsisvBXY
- R+j0tOAMEGWtKm19m4QleHzJG6CzWdIFQ/ib5/lfEqj05Dd1lpNaeOo11U7FPdIQ6Se3
- d+ewHWC9jbwpzs3dzA1sOu+0RVii+KGlIzUArhR44sFp1rsqDpDb3tyVnuXt0/J8/Cq/
- 6yDg==
-X-Gm-Message-State: AOAM531K9XFFxRNfOB14V8hYlz9i6mPd6PEd55zHSfdmXV3g088flv1y
- sr9PlZ6N0SqQEngr9v08Y8g=
-X-Google-Smtp-Source: ABdhPJziIlNdo9kD1ROvfvgq8d0GCtVAV263bhoLjF+IxX/73q05eTTsdU/EDmxvKM68tO+rFGY9sQ==
-X-Received: by 2002:a17:902:d346:b029:e4:c35b:dc0a with SMTP id
- l6-20020a170902d346b02900e4c35bdc0amr295499plk.75.1615330316494; 
- Tue, 09 Mar 2021 14:51:56 -0800 (PST)
-Received: from [10.67.49.104] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id b19sm9872696pfo.7.2021.03.09.14.51.55
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 09 Mar 2021 14:51:56 -0800 (PST)
-Subject: Re: [PATCH] dt-bindings: phy: brcm, brcmstb-usb-phy: add power-domains
-To: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Cc: linux-phy@lists.infradead.org, Florian Fainelli <f.fainelli@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Al Cooper <alcooperx@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?=
- <rafal@milecki.pl>
-References: <20210309182616.25783-1-zajec5@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <ca771a45-4f59-29b5-c4b3-4036e7d7db58@gmail.com>
-Date: Tue, 9 Mar 2021 14:51:54 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.7.1
+ id 1lJw18-006aIt-5v
+ for linux-phy@lists.infradead.org; Wed, 10 Mar 2021 10:24:44 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12AAOVmB127513;
+ Wed, 10 Mar 2021 04:24:31 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1615371871;
+ bh=i09rXQy/RppMIEWjXFpnoKgIX92U98VUciWg+IgQCcY=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Dow2EYJaRA2Rl8750jd7BObGVy3xIjKkJ6szsmnmPRlHSXguG6kjUkduGa+Vks4jm
+ Mw66qzJjIs/L76LJhnZhKsaZPy4397ICBMeyf2ZUKpHAteyKVqOQIZkYtxRFT/O+WJ
+ 582jgrIkOJtV2Oi3Y3a5fW51Udfd8L7gehMDANG4=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12AAOV07013901
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 10 Mar 2021 04:24:31 -0600
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Wed, 10
+ Mar 2021 04:24:30 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
+ Frontend Transport; Wed, 10 Mar 2021 04:24:30 -0600
+Received: from [10.250.234.4] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12AAOR52115402;
+ Wed, 10 Mar 2021 04:24:28 -0600
+Subject: Re: [PATCH v2 9/9] phy: cadence-torrent: Add support to drive refclk
+ out
+To: Swapnil Kashinath Jakhade <sjakhade@cadence.com>, Vinod Koul
+ <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Peter Rosin
+ <peda@axentia.se>
+CC: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+References: <20210222112314.10772-1-kishon@ti.com>
+ <20210222112314.10772-10-kishon@ti.com>
+ <MN2PR07MB616036AE3164A0BB929BE0D8C5929@MN2PR07MB6160.namprd07.prod.outlook.com>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <a04dcf6a-1152-8ef4-7ea4-00e67172c4b2@ti.com>
+Date: Wed, 10 Mar 2021 15:54:27 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.10.0
 MIME-Version: 1.0
-In-Reply-To: <20210309182616.25783-1-zajec5@gmail.com>
+In-Reply-To: <MN2PR07MB616036AE3164A0BB929BE0D8C5929@MN2PR07MB6160.namprd07.prod.outlook.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210309_225158_309914_0AF9AAAE 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210310_102438_855239_5EC5E592 
+X-CRM114-Status: GOOD (  24.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,20 +95,221 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMy85LzIxIDEwOjI2IEFNLCBSYWZhxYIgTWnFgmVja2kgd3JvdGU6Cj4gRnJvbTogUmFmYcWC
-IE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgo+IAo+IE9uIEJDTTQ5MDggVVNCIFBIWSBpcyBt
-YW5hZ2VkIHVzaW5nIHBvd2VyIGNvbnRyb2xsZXIgc28gaXQgbmVlZHMKPiBkZXNjcmliaW5nIHBy
-b3Blcmx5IHVzaW5nIHRoZSBwb3dlci1kb21haW5zLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFJhZmHF
-giBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KCkFja2VkLWJ5OiBGbG9yaWFuIEZhaW5lbGxp
-IDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4KClRoaXMgZG9lcyBmaXggdGhlIGZvbGxvd2luZyB3YXJu
-aW5nIHdoZW4gYXBwbHlpbmcgeW91ciBsYXRlc3QgcGF0Y2hlczoKCithcmNoL2FybTY0L2Jvb3Qv
-ZHRzL2Jyb2FkY29tL2JjbTQ5MDgvYmNtNDkwOC1hc3VzLWd0LWFjNTMwMC5kdC55YW1sOgp1c2It
-cGh5QGMyMDA6ICdwb3dlci1kb21haW5zJyBkb2VzIG5vdCBtYXRjaCBhbnkgb2YgdGhlIHJlZ2V4
-ZXM6CidwaW5jdHJsLVswLTldKycKClRoYW5rcyEKLS0gCkZsb3JpYW4KCi0tIApsaW51eC1waHkg
-bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Swapnil,
+
+On 09/03/21 7:51 pm, Swapnil Kashinath Jakhade wrote:
+> Hi Kishon,
+> 
+>> -----Original Message-----
+>> From: Kishon Vijay Abraham I <kishon@ti.com>
+>> Sent: Monday, February 22, 2021 4:53 PM
+>> To: Kishon Vijay Abraham I <kishon@ti.com>; Vinod Koul
+>> <vkoul@kernel.org>; Rob Herring <robh+dt@kernel.org>; Peter Rosin
+>> <peda@axentia.se>; Swapnil Kashinath Jakhade <sjakhade@cadence.com>
+>> Cc: linux-kernel@vger.kernel.org; devicetree@vger.kernel.org; linux-
+>> phy@lists.infradead.org
+>> Subject: [PATCH v2 9/9] phy: cadence-torrent: Add support to drive refclk out
+>>
+>> EXTERNAL MAIL
+>>
+>>
+>> cmn_refclk_<p/m> lines in Torrent SERDES is used for connecting external
+>> reference clock. cmn_refclk_<p/m> can also be configured to output the
+>> reference clock. Model this derived reference clock as a "clock" so that
+>> platforms like AM642 EVM can enable it.
+>>
+>> This is used by PCIe to use the same refclk both in local SERDES
+>> and remote device. Add support here to drive refclk out.
+>>
+>> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+>> ---
+>>  drivers/phy/cadence/phy-cadence-torrent.c | 202 +++++++++++++++++++++-
+>>  1 file changed, 199 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c
+>> b/drivers/phy/cadence/phy-cadence-torrent.c
+>> index f310e15d94cb..07eebdd90d4b 100644
+>> --- a/drivers/phy/cadence/phy-cadence-torrent.c
+>> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
+>> @@ -7,7 +7,9 @@
+>>   */
+>>
+>>  #include <dt-bindings/phy/phy.h>
+>> +#include <dt-bindings/phy/phy-cadence-torrent.h>
+>>  #include <linux/clk.h>
+>> +#include <linux/clk-provider.h>
+>>  #include <linux/delay.h>
+>>  #include <linux/err.h>
+>>  #include <linux/io.h>
+>> @@ -76,6 +78,8 @@
+>>   * register offsets from SD0801 PHY register block base (i.e MHDP
+>>   * register base + 0x500000)
+>>   */
+>> +#define CMN_CDIAG_REFCLK_OVRD		0x004CU
+>> +#define CMN_CDIAG_REFCLK_DRV0_CTRL	0x0050U
+> 
+> Nitpick, this can be added sequentially.
+> 
+>>  #define CMN_SSM_BANDGAP_TMR		0x0021U
+>>  #define CMN_SSM_BIAS_TMR		0x0022U
+>>  #define CMN_PLLSM0_PLLPRE_TMR		0x002AU
+>> @@ -206,6 +210,8 @@
+>>  #define RX_DIAG_ACYA			0x01FFU
+>>
+>>  /* PHY PCS common registers */
+>> +#define PHY_PIPE_CMN_CTRL1		0x0000U
+>> +#define PHY_ISO_CMN_CTRL		0x0008U
+>>  #define PHY_PLL_CFG			0x000EU
+>>  #define PHY_PIPE_USB3_GEN2_PRE_CFG0	0x0020U
+>>  #define PHY_PIPE_USB3_GEN2_POST_CFG0	0x0022U
+>> @@ -216,6 +222,10 @@
+>>  #define PHY_PMA_CMN_CTRL2		0x0001U
+>>  #define PHY_PMA_PLL_RAW_CTRL		0x0003U
+>>
+>> +static const char * const clk_names[] = {
+>> +	[CDNS_TORRENT_REFCLK_DRIVER] = "refclk-driver",
+>> +};
+>> +
+>>  static const struct reg_field phy_pll_cfg =
+>>  				REG_FIELD(PHY_PLL_CFG, 0, 1);
+>>
+>> @@ -231,6 +241,36 @@ static const struct reg_field phy_pma_pll_raw_ctrl =
+>>  static const struct reg_field phy_reset_ctrl =
+>>  				REG_FIELD(PHY_RESET, 8, 8);
+>>
+>> +#define REFCLK_OUT_NUM_CONFIGURATIONS_PCS_CONFIG	2
+> 
+> This could be reduced just to REFCLK_OUT_NUM_PCS_CONFIG, but up to you.
+> Same below.
+> 
+>> +
+>> +enum cdns_torrent_refclk_out_pcs {
+>> +	PHY_ISO_CMN_CTRL_8,
+>> +	PHY_PIPE_CMN_CTRL1_0,
+>> +};
+>> +
+>> +#define REFCLK_OUT_NUM_CONFIGURATIONS_CMN_CONFIG	5
+>> +
+>> +enum cdns_torrent_refclk_out_cmn {
+>> +	CMN_CDIAG_REFCLK_OVRD_4,
+>> +	CMN_CDIAG_REFCLK_DRV0_CTRL_1,
+>> +	CMN_CDIAG_REFCLK_DRV0_CTRL_4,
+>> +	CMN_CDIAG_REFCLK_DRV0_CTRL_5,
+>> +	CMN_CDIAG_REFCLK_DRV0_CTRL_6,
+>> +};
+>> +
+>> +static const struct reg_field refclk_out_pcs_cfg[] = {
+>> +	[PHY_ISO_CMN_CTRL_8]	= REG_FIELD(PHY_ISO_CMN_CTRL, 8,
+>> 8),
+>> +	[PHY_PIPE_CMN_CTRL1_0]	= REG_FIELD(PHY_PIPE_CMN_CTRL1,
+>> 0, 0),
+>> +};
+>> +
+>> +static const struct reg_field refclk_out_cmn_cfg[] = {
+>> +	[CMN_CDIAG_REFCLK_OVRD_4]	=
+>> REG_FIELD(CMN_CDIAG_REFCLK_OVRD, 4, 4),
+>> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_1]	=
+>> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 1, 1),
+>> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_4]	=
+>> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 4, 4),
+>> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_5]  =
+>> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 5, 5),
+>> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_6]	=
+>> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 6, 6),
+>> +};
+>> +
+>>  enum cdns_torrent_phy_type {
+>>  	TYPE_NONE,
+>>  	TYPE_DP,
+>> @@ -279,6 +319,8 @@ struct cdns_torrent_phy {
+>>  	struct regmap_field *phy_pma_cmn_ctrl_2;
+>>  	struct regmap_field *phy_pma_pll_raw_ctrl;
+>>  	struct regmap_field *phy_reset_ctrl;
+>> +	struct clk *clks[CDNS_TORRENT_REFCLK_DRIVER + 1];
+>> +	struct clk_onecell_data clk_data;
+>>  };
+>>
+>>  enum phy_powerstate {
+>> @@ -288,6 +330,16 @@ enum phy_powerstate {
+>>  	POWERSTATE_A3 = 3,
+>>  };
+>>
+>> +struct cdns_torrent_derived_refclk {
+>> +	struct clk_hw		hw;
+>> +	struct regmap_field
+>> 	*pcs_fields[REFCLK_OUT_NUM_CONFIGURATIONS_PCS_CONFIG];
+>> +	struct regmap_field
+>> 	*cmn_fields[REFCLK_OUT_NUM_CONFIGURATIONS_CMN_CONFIG];
+>> +	struct clk_init_data	clk_data;
+>> +};
+>> +
+>> +#define to_cdns_torrent_derived_refclk(_hw)	\
+>> +			container_of(_hw, struct
+>> cdns_torrent_derived_refclk, hw)
+>> +
+>>  static int cdns_torrent_phy_init(struct phy *phy);
+>>  static int cdns_torrent_dp_init(struct phy *phy);
+>>  static int cdns_torrent_dp_run(struct cdns_torrent_phy *cdns_phy,
+>> @@ -1604,6 +1656,111 @@ static int cdns_torrent_dp_run(struct
+>> cdns_torrent_phy *cdns_phy, u32 num_lanes)
+>>  	return ret;
+>>  }
+>>
+>> +static int cdns_torrent_derived_refclk_enable(struct clk_hw *hw)
+>> +{
+>> +	struct cdns_torrent_derived_refclk *derived_refclk =
+>> to_cdns_torrent_derived_refclk(hw);
+>> +
+>> +	regmap_field_write(derived_refclk-
+>>> cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_6], 0);
+>> +	regmap_field_write(derived_refclk-
+>>> cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_4], 1);
+>> +	regmap_field_write(derived_refclk-
+>>> cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_5], 1);
+>> +	regmap_field_write(derived_refclk-
+>>> cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_1], 0);
+>> +	regmap_field_write(derived_refclk-
+>>> cmn_fields[CMN_CDIAG_REFCLK_OVRD_4], 1);
+>> +	regmap_field_write(derived_refclk-
+>>> pcs_fields[PHY_PIPE_CMN_CTRL1_0], 1);
+>> +	regmap_field_write(derived_refclk-
+>>> pcs_fields[PHY_ISO_CMN_CTRL_8], 1);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void cdns_torrent_derived_refclk_disable(struct clk_hw *hw)
+>> +{
+>> +	struct cdns_torrent_derived_refclk *derived_refclk =
+>> to_cdns_torrent_derived_refclk(hw);
+>> +
+>> +	regmap_field_write(derived_refclk-
+>>> pcs_fields[PHY_ISO_CMN_CTRL_8], 0);
+>> +}
+>> +
+> 
+> PHY_ISO_CMN_CTRL is a PHY isolation register. Not sure, but is this correct
+> to control phy_en_refclk to enable/disable refclk output from here?
+
+hmm.. I see this is used to drive phy_en_refclk when in ISOLATION mode.
+Given that we are not selecting to operate in isolation mode, this
+shouldn't be required.
+
+This was present in the sequence given by HW team but maybe it's enabled
+for some debugging.
+
+I've also verified PCIe works without this configuration. I'll repost
+without this configuration and also check with HW team on why it was added.
+
+Thanks
+Kishon
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
