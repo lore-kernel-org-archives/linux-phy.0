@@ -1,96 +1,167 @@
-Return-Path: <SRS0=2Et4=IJ=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=7zeO=IN=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-12.2 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 8AED1C433DB
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Mar 2021 20:33:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3BC51C433E0
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Mar 2021 05:44:26 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0D19B64F8C
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Mar 2021 20:33:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0D19B64F8C
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 9C47764E45
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Mar 2021 05:44:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9C47764E45
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
+	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Message-ID:Date:
+	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DUXUGKwAz69ucHtuzZmVDf3Kei6+1s+D7fa++OIPbRs=; b=TRnseHdKX2sU+wMbeaL19jc5D
-	WIb1es62Tx0AjNSj/Ou9ancnP57BEkebKxDkaN3bpoCh0hASWtyim6W7IZabFDJuSkNLMqExm0JyB
-	sSR1wDAMtKfKrp/aXv2LgJk/723nlWsd21BqcP94foGxnxBFjvBNCO6xWVeiZM0VhprvHujWjZTwO
-	m2ERyx9fLkV5pLSFRuJ9cwZZwtLgKvLG9oFdGzaK8OUV04GLLwgdXtPE5krAYe1zmJCMeG5XzLXeM
-	7AVuy+G+M4lV6kO+f2IBXSB7lAX/qEgX31Q7afq6g90u2HHJqdq16KimWjEexvm48csJrV/kyI7dj
-	VlwAHmbBQ==;
+	 bh=CLlUMucL1y6r2cbzBO7X3QdldsornyAKGIglc568VRk=; b=NgreCe4SdCUAEDdVcwWr6Fxck
+	XH+f6MiRxZyN0oGBf/1fgf6CPoJQyIwdU1vOkqlcsPFTen8itHupylDFgooTvu/6FIZ3xIY9tE9JJ
+	zkqZi6ZfCVEhQ7ZrLB02XUUvQx2O861uHtFQ/p3feIZj2ZR4e99EqSP+f1BMg3NbIfhMiMMHHWodQ
+	U3Uq0YSxPksHpGVYjcaD+P/VpGkS+jveIUuLjqAraOtpmNP/C2tK81n7S4sB1XZ9IgrNVOfHRA9QW
+	/lzy0893rF46DtyUidIZtwKdOz1IqFfZzrzHe6EiFsGt/jU0HJDmWED9AO2XnDdOeBUMNtsgtU7lW
+	gLF5n5eNQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lKRzp-00A4Cs-Gp; Thu, 11 Mar 2021 20:33:26 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1lLg1f-00Ez7Y-J7; Mon, 15 Mar 2021 05:44:23 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lKRzk-00A4CO-8z
- for linux-phy@lists.infradead.org; Thu, 11 Mar 2021 20:33:23 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id v2so28922941lft.9
- for <linux-phy@lists.infradead.org>; Thu, 11 Mar 2021 12:33:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=lDxi9l/65w1lS5MeVsfp0a2o3WqXobOac2jPACVvWIo=;
- b=gqFV3M8auXLT3svzUoytk0Umf1KAkOaqlfY5H56OjlaSjU/rs3MCe5DHuNs2D7OLl1
- dkhs9c+kSfLVsRRdcNO8Rihlpo7WJ6vkJsLOWUL1NQEN4mFx1Ne6KqzLZ8sbY1AW+dcg
- kK3Vko9qVktuM7AG0+Gjt5X384mMAEZv6vuPCmKS95aDuBMLtRCNRTetTPNK9spStG1R
- Ur6cHLNE1swoU03XUsY/IBHVvGOHNJQHbu1ftczt+HUArPHsGWlonCyVKYIKxxDHRpwr
- HgoxCqw/uQ+Vdo3Uw2dTcsYgl3wYeWCueFbsun+hObn4yj+4GVGcq03dhDxi4eF1O6DV
- YriQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=lDxi9l/65w1lS5MeVsfp0a2o3WqXobOac2jPACVvWIo=;
- b=mYkwUM7cJ9MCOva4qNAxK9JaQNCJ5UAQxSfMmMla8q7RN6zMcCIGh3qkNKMlf9O/9c
- SrYO0uQS9DXAsAD6uYhJu8cPxwdHtE4zWHbmUXLpLOUKE3fKMs9T4RB++qtdir32WB2k
- RkAok9/IaXj1jtexfqqDwHs/Wc5H0MOVNI19TQX3jmZ1KN7Ok2zcCajW621Q3KHyL9WZ
- AhJnnqOpSNabPAs1UU9NVgi1flm8MnJHj12ykwRWuhRMw22Y9kNinJRmG8a+dvJ7eU6s
- MMbsc23x4+VCW2QdGylM4Bk4KVgJ0EkLLgZP+lt8vA6OMvzhzcHp+MGHDsgPLfDrlS3B
- NzKg==
-X-Gm-Message-State: AOAM530BNgMF/ImQawfeGytfLbuffugRkAz3NsG371YiNo2iQ+p63Jmn
- dtWRmOtqqYIwlZcviNFzB58=
-X-Google-Smtp-Source: ABdhPJw8KFY3irIf8lesknRMh5e8ws2nSFDJJQ6gOTenIvdwRyo99g33LfCaISUTRtBG972zTlzRSQ==
-X-Received: by 2002:a05:6512:4c4:: with SMTP id
- w4mr3281698lfq.91.1615494799457; 
- Thu, 11 Mar 2021 12:33:19 -0800 (PST)
-Received: from localhost.localdomain
- (ip-194-187-74-233.konfederacka.maverick.com.pl. [194.187.74.233])
- by smtp.googlemail.com with ESMTPSA id u15sm1144658lff.262.2021.03.11.12.33.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 11 Mar 2021 12:33:18 -0800 (PST)
-Subject: Re: [PATCH] dt-bindings: phy: bcm-ns-usb2-phy: convert to yaml
+ id 1lLg1Z-00Ez6w-GZ
+ for linux-phy@lists.infradead.org; Mon, 15 Mar 2021 05:44:21 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
+ 12F5d0jg000547; Sun, 14 Mar 2021 22:44:11 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=proofpoint;
+ bh=EdGvYZAWkjD80msijK9sXtAQ60/v/GOHG2F4Qi/CQmg=;
+ b=QvrSh+tsG8Gbm/kUp3UZ1qO9qhkFSVJMZ2TiADjQOW5LCf9PBLaHfO5JVeG3w2wV9pmi
+ bSbdfHYrMJ4o906eGIfUNNwyT1t4MX/O0VKIbNeXQf+VAujR/uHZ3feWAZLAJ5qvZl8Q
+ lrW6HHY3f73n3B7lTEmTy7Mbl0rO3a+xqZOb7JSAEUmRW2asJvYw6ZMwJDg5Qc1hYO8u
+ fwzdd+uGaRJtj0Ubx8sf1/S/qoHqOVztWy/Scd4Wa6Vw8xEH8LlIP240ywaLItshSNWx
+ +Xf5eNoqMw1FZ2j06cdsTe9mWWjWPMG5TOVKniAjXHUOMP9ywrMTIH6anJtY9aCnQklb qQ== 
+Received: from nam04-bn3-obe.outbound.protection.outlook.com
+ (mail-bn3nam04lp2055.outbound.protection.outlook.com [104.47.46.55])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 378sv2cumt-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sun, 14 Mar 2021 22:44:11 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Z75iZV+nCguhYLrg12MD4dpFfSy5PovnBb09ECesmkxuJ0T9wJk+nWEaNMh8u9Od58nkftuRQw5g39C+zYPzPw//+Q6frzYkCfXsI/QWSkxL6E+fEYtFn9yAO21q0FGxFYiyuNbChjD2wn2BXSUHPBZ3nInygWmrAiw++7XQ93wpE2P4tzKIsXOGLveS7XJEFb/Gt49dvoso+U/aD+WXl+8ZqzAL5AxZSWvtiT/efyB2SA2rcgrW+7exuLEYEau9T4VRdPvZnLUVdIcdgiOnlv/CS1rUeKNhREKUJqLftL2SN1yBtRVKu7fk4CHRYsFEwoMp7rqULO7ALOpI9XZaJg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=EdGvYZAWkjD80msijK9sXtAQ60/v/GOHG2F4Qi/CQmg=;
+ b=ce0oOSCtzVhAHJtbHYnBN+3zaweB9QH2JANON5FCI0+7/iap2U4i66d+IXemStBMIYQFkiPNjou/dHD8p/5RDRqzEfeIHjLt5AGm7wLXXlG0qmk5KZA2aNFlYzy6H3MKWN/GNphWn+TMzQa5EwOqezeZQVkiuExDZl71iWeNZf+/vKgQppusJSzr9mbRYQptINL+VQDyV4i6MyL4BUl6e9y/pBQuF32woeHIH4Sp8WsTfOgsqq4ObmbXMRc+U023VKD5AxALnvmLVT9zLdb2yV09SMVvsCCteChoelcOaiQSLC8utj/K/qtliUsbUWQ1TZX58+Meb+MDNZgFmRG3SA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cadence.com; dmarc=pass action=none header.from=cadence.com;
+ dkim=pass header.d=cadence.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=EdGvYZAWkjD80msijK9sXtAQ60/v/GOHG2F4Qi/CQmg=;
+ b=Yr53XmV2b5UAa1qq0vYOL8Nkd9iaf1MHIG4N7TDlne3vNmddky3efCmN4BXTv0d9VaSm+GfnqTcSDP6Iyqzwn2wUokWbIoOj4YhTRDhZz+oT7LRUF5SYgMo/58iOV9AmBW1vb2zN202cdoTRF35/hhU8642cOhN3r3R9luyuVmY=
+Received: from MN2PR07MB6160.namprd07.prod.outlook.com (2603:10b6:208:11d::30)
+ by MN2PR07MB6400.namprd07.prod.outlook.com (2603:10b6:208:11c::18)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3933.32; Mon, 15 Mar
+ 2021 05:44:07 +0000
+Received: from MN2PR07MB6160.namprd07.prod.outlook.com
+ ([fe80::294b:4e83:24b:ce39]) by MN2PR07MB6160.namprd07.prod.outlook.com
+ ([fe80::294b:4e83:24b:ce39%4]) with mapi id 15.20.3933.032; Mon, 15 Mar 2021
+ 05:44:07 +0000
+From: Swapnil Kashinath Jakhade <sjakhade@cadence.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Cc: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- Hauke Mehrtens <hauke@hauke-m.de>, bcm-kernel-feedback-list@broadcom.com,
- =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>,
- linux-phy@lists.infradead.org, Vivek Unune <npcomplete13@gmail.com>
-References: <20201116074650.16070-1-zajec5@gmail.com>
- <20201116074650.16070-2-zajec5@gmail.com>
-From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
-Message-ID: <411eafa9-70d6-0d46-66dd-ea03c5594e1a@gmail.com>
-Date: Thu, 11 Mar 2021 21:33:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.6.1
-MIME-Version: 1.0
-In-Reply-To: <20201116074650.16070-2-zajec5@gmail.com>
+CC: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ Lokesh Vutla <lokeshvutla@ti.com>
+Subject: RE: [PATCH v3 6/6] phy: cadence-torrent: Add support to drive refclk
+ out
+Thread-Topic: [PATCH v3 6/6] phy: cadence-torrent: Add support to drive refclk
+ out
+Thread-Index: AQHXFaYs7WEgRRFHHkyCqf5z5Sn98Kp+4pag
+Date: Mon, 15 Mar 2021 05:44:07 +0000
+Message-ID: <MN2PR07MB61600E34E02DFF458338CE5EC56C9@MN2PR07MB6160.namprd07.prod.outlook.com>
+References: <20210310120840.16447-1-kishon@ti.com>
+ <20210310120840.16447-7-kishon@ti.com>
+In-Reply-To: <20210310120840.16447-7-kishon@ti.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc2pha2hhZGVcYXBwZGF0YVxyb2FtaW5nXDA5ZDg0OWI2LTMyZDMtNGE0MC04NWVlLTZiODRiYTI5ZTM1Ylxtc2dzXG1zZy03MjVmN2ZhMi04NTUxLTExZWItODU0Ny1jOGY3NTA0NDIyZDhcYW1lLXRlc3RcNzI1ZjdmYTMtODU1MS0xMWViLTg1NDctYzhmNzUwNDQyMmQ4Ym9keS50eHQiIHN6PSIxMTQwOCIgdD0iMTMyNjAyNjA2NDMzMzk2MTkzIiBoPSJoNHlmdG5tY0c0Z3E4THN0MkxWMUwvSEdYZWc9IiBpZD0iIiBibD0iMCIgYm89IjEiLz48L21ldGE+
+x-dg-rorf: true
+authentication-results: ti.com; dkim=none (message not signed)
+ header.d=none;ti.com; dmarc=none action=none header.from=cadence.com;
+x-originating-ip: [59.145.174.78]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3545cca6-cbe0-4bf1-de09-08d8e77559a4
+x-ms-traffictypediagnostic: MN2PR07MB6400:
+x-microsoft-antispam-prvs: <MN2PR07MB640026B629A278D7E87464FEC56C9@MN2PR07MB6400.namprd07.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1169;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: V15f6bTROCZtx1PjXIMrB/hSbXnN6RiixQHYcDnxlykv3t33c+bJxDNiKVmOU6zWNMbqD4RjO9Y6/lbuwmknJ95ctjOj1CGETb1ZBYEVmIiObN5keOUBrm7PZjC6iZgz451cls4usw7K02oQMyEdzJzQt4DshxE2xPZo0peoB6j8rwDDJb5lFqK1jMH5JwLaLXzScKcS68PWMLAZt+KEaoe5tRuRw63plO3rqoL8k47bQ5Rv1igdqQlHHQALKrPuO1o0mSP9P4vIoHe0DGm/6qwd5YwljNb896vuP/0mX+wgT+n+QdJa209gWPxBPUCZmJza6ASf93Nw8whRafLsGrVSrXhm9c4xX+kPXsiVVLKdauR9AZ2C5bfLjae2B5i9ULj7S89atPJBOfm5SIm3ADi5sSHLNgIg6pQo2smCMbZVACg/QKmjvHn4zXHqJ81UZ7C4pWwlE27CngbNg30tUsBhB7XKO0i9HfDH+VmaxnQ6/PD4Ah1qSlUbfLjqNof96WqbNwfzyPRwJEW2zfcqFl0ok8mx9p1Dr8jp1MXGaDjOatYZceEoYJhpNPdwhOydOkSjRnuSwutbGWheTi/NeyDm2vvVUs7Da4i8KymcVVviqzYm70PxzCnNdRLBglWz4MD6grj5kg8XDTMK7IH47Q==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MN2PR07MB6160.namprd07.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(136003)(376002)(396003)(39860400002)(346002)(36092001)(26005)(9686003)(55016002)(186003)(8936002)(86362001)(2906002)(33656002)(83380400001)(478600001)(8676002)(54906003)(52536014)(4326008)(71200400001)(316002)(66476007)(110136005)(76116006)(66446008)(30864003)(5660300002)(6506007)(53546011)(64756008)(66556008)(7696005)(66946007)(309714004);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: =?us-ascii?Q?XJOfWIsAolUdDuNtUCTRs+m7FvPIEj3ME8KHMRYGPEOQW/McgXsd9NG/obXW?=
+ =?us-ascii?Q?Kptt/vTsL8T1E6H09wzI1WDvNJkduuqESmQ+wvhgiTJGm3IxtQdkHXpEJ6gT?=
+ =?us-ascii?Q?TisNk+ApNWLCwjCcPmI+ZDoFqMxZyht4wo8w0e7JUqoi6P/tuh8//l9jos8r?=
+ =?us-ascii?Q?P5w94bvdF0t77IGan1rRdtBX4mziHZBt3uRVRTD946dOAd0aMC1RMegQQK0Z?=
+ =?us-ascii?Q?RQd9+qxLabqMzqvgrm2dv4VZKaz5Qq2YG84/xsoVzFZIjo01p3tQ9jmeuT9F?=
+ =?us-ascii?Q?dR/pI9AhmVySuPwrM6q7Rg+ZKrVSIPrxMl80nxb9oHl7+qTI6XK1sHrj3HDB?=
+ =?us-ascii?Q?oncE8reegMsvtVFB2hVAFZbiJ0O3naTMXEvESBK52V8Arobkh6tI7MfADbzL?=
+ =?us-ascii?Q?C/xFPlYLo9YnH7lELzp3W0TOcAWdn0SHOYOjFm0mWTaKXaojbA5IrpT3m33R?=
+ =?us-ascii?Q?OpHCfeXOJf6OJiZ8Haqj1hfe3563K3GfGfsMvVy8Obu+3sHph3RRgudZBNbA?=
+ =?us-ascii?Q?q+k8FYRdhfciANPfnv3Ee7mah2fYuxVnJo26YGtiO8QpX+K3rA5j+2xjMCys?=
+ =?us-ascii?Q?PW9Nht1N69GhmBGw+lgHBFsNfUewR6NMqGvDafU9m9UO4W9FD6DSo+6pK+y2?=
+ =?us-ascii?Q?V3QUqFIzuffheW19S9aiT9j1fH1wyfP31B8mk1Rm05175AOloChyGASpE/v2?=
+ =?us-ascii?Q?jvkWKUGX6eGjCF1Yf45B2bGtT9PuJ45aSx1Y/FbNRSZC+tnXyKmyYNAmKurr?=
+ =?us-ascii?Q?/1/Ds1gOcrMN21GSFoViQ5U92OxY7O7y0H2ha1Hrt8WnoaCXaVaEWEVAo7+7?=
+ =?us-ascii?Q?kGZLi1AEOmr3A20Bw+jXSBvzWZI6G7+RrslYGCCMhvRqeaIiqUjcQ7/Bfl2Q?=
+ =?us-ascii?Q?MKKqSH9b9RgB2hIJW5XIqp6wF1BVHYeNU5eewthdMxZEvqW12X0m1J08LaD6?=
+ =?us-ascii?Q?2bXQCdKUj//trrfYDsj56ENykX/Los4llqjzAUu9kQpBbY1j/ElBs/t6UN6T?=
+ =?us-ascii?Q?raWy6/wp0WMpKfT78mQNkbu2LrY3vsRd07H/h2X3e5ap++puJms/CP7OI4Z1?=
+ =?us-ascii?Q?H8xyEjcXaae4X1nn8xRecOAd9/oAI7pnLCehGqastFJaJiF8CA27bhvroTcs?=
+ =?us-ascii?Q?zMeyYNSLOe5aMkookiAiN8Bh/qnzs0jsSEAGxqypf5JmWyuijM1SSWrFfe3w?=
+ =?us-ascii?Q?XJr1snIlcHF3tCNPx8Dw4UbWJowq5f12fdEiDzmYAbD66/khE2bN+Tno52KV?=
+ =?us-ascii?Q?p3v682E0mra2br+cCpLvOV5P+BP3chgPor/Qh/xnfV90kyXJnaFyj2jiltwL?=
+ =?us-ascii?Q?hpF4HMBueierKCZG0R8Sx7vA?=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MN2PR07MB6160.namprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3545cca6-cbe0-4bf1-de09-08d8e77559a4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Mar 2021 05:44:07.3402 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FOK1+DWln4ggbaFZM2K0RIWaHB3jIpUD5FRfcn7e6KAH5KjVzF00F2jIahmfonuWDKkPVkzDxkgJ76baO6QwlgRA3yzxO9i7+bApncbNWY8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR07MB6400
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369, 18.0.761
+ definitions=2021-03-15_01:2021-03-15,
+ 2021-03-15 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 phishscore=0
+ mlxlogscore=999 priorityscore=1501 bulkscore=0 impostorscore=0 spamscore=0
+ adultscore=0 malwarescore=0 suspectscore=0 mlxscore=0 lowpriorityscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2009150000 definitions=main-2103150039
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210311_203321_297993_88932A86 
-X-CRM114-Status: GOOD (  24.36  )
+X-CRM114-CacheID: sfid-20210315_054418_443072_F8B917CD 
+X-CRM114-Status: GOOD (  28.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,80 +173,376 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTYuMTEuMjAyMCAwODo0NiwgUmFmYcWCIE1pxYJlY2tpIHdyb3RlOgo+IEZyb206IFJhZmHF
-giBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KPiAKPiAxLiBDb252ZXJ0IGZyb20gdHh0IHRv
-IHlhbWwKPiAyLiBEcm9wICJEcml2ZXIgZm9yIiBmcm9tIHRoZSB0aXRsZQo+IDMuIERvY3VtZW50
-ICIjcGh5LWNlbGxzIgo+IDQuIEZpeCBleGFtcGxlIG5vZGUgbmFtZSAobm90aWNlZCBieSBkdF9i
-aW5kaW5nX2NoZWNrKQo+IDUuIEFkZCAjaW5jbHVkZSB0byBleGFtcGxlIChub3RpY2VkIGJ5IGR0
-X2JpbmRpbmdfY2hlY2spCj4gNi4gU3BlY2lmeSBsaWNlbnNlCj4gCj4gU2lnbmVkLW9mZi1ieTog
-UmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgo+IC0tLQo+IEkgdGhpbmsgdGhpcyBz
-aG91bGQgZ28gdGhyb3VnaCBsaW51eC1waHkgdHJlZS4gS2lzaG9uLCBWaW5vZCwgY2FuIHlvdQo+
-IHRha2UgdGhpcyBwYXRjaD8KPiAKPiBUaGlzIHBhdGNoIGdlbmVyYXRlcyBhIGZhbHNlIHBvc2l0
-aXZlIGNoZWNrcGF0Y2gucGwgd2FybmluZyBbMF0uCj4gUGxlYXNlIGlnbm9yZToKPiBXQVJOSU5H
-OiBEVCBiaW5kaW5nIGRvY3MgYW5kIGluY2x1ZGVzIHNob3VsZCBiZSBhIHNlcGFyYXRlIHBhdGNo
-LiBTZWU6IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9zdWJtaXR0aW5nLXBhdGNo
-ZXMucnN0Cj4gCj4gWzBdIGh0dHBzOi8vbGttbC5vcmcvbGttbC8yMDIwLzIvMTgvMTA4NAoKU2Ft
-ZSB0aGluZyBoZXJlLgoKS2lzaG9uLCBWaW5vZDogSSBzZW50IHRoaXMgcGF0Y2ggYmFjayBpbiBE
-ZWNlbWJlciwgaXQgd2FzIFJldmlld2VkLWJ5ClJvYiwgYnV0IG5ldmVyIGFjY2VwdGVkLgoKQ291
-bGQgeW91IHB1c2ggdGhpcyBwYXRjaCB0byB0aGUgbGludXgtcGh5LmdpdD8KCgo+IC0tLQo+ICAg
-Li4uL2JpbmRpbmdzL3BoeS9iY20tbnMtdXNiMi1waHkudHh0ICAgICAgICAgIHwgMjEgLS0tLS0t
-LQo+ICAgLi4uL2JpbmRpbmdzL3BoeS9iY20tbnMtdXNiMi1waHkueWFtbCAgICAgICAgIHwgNTkg
-KysrKysrKysrKysrKysrKysrKwo+ICAgMiBmaWxlcyBjaGFuZ2VkLCA1OSBpbnNlcnRpb25zKCsp
-LCAyMSBkZWxldGlvbnMoLSkKPiAgIGRlbGV0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2Rl
-dmljZXRyZWUvYmluZGluZ3MvcGh5L2JjbS1ucy11c2IyLXBoeS50eHQKPiAgIGNyZWF0ZSBtb2Rl
-IDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L2JjbS1ucy11c2Iy
-LXBoeS55YW1sCj4gCj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
-aW5ncy9waHkvYmNtLW5zLXVzYjItcGh5LnR4dCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
-aW5kaW5ncy9waHkvYmNtLW5zLXVzYjItcGh5LnR4dAo+IGRlbGV0ZWQgZmlsZSBtb2RlIDEwMDY0
-NAo+IGluZGV4IGE3YWVlOWVhODkyNi4uMDAwMDAwMDAwMDAwCj4gLS0tIGEvRG9jdW1lbnRhdGlv
-bi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9iY20tbnMtdXNiMi1waHkudHh0Cj4gKysrIC9kZXYv
-bnVsbAo+IEBAIC0xLDIxICswLDAgQEAKPiAtRHJpdmVyIGZvciBCcm9hZGNvbSBOb3J0aHN0YXIg
-VVNCIDIuMCBQSFkKPiAtCj4gLVJlcXVpcmVkIHByb3BlcnRpZXM6Cj4gLS0gY29tcGF0aWJsZTog
-YnJjbSxucy11c2IyLXBoeQo+IC0tIHJlZzogaW9tZW0gYWRkcmVzcyByYW5nZSBvZiBETVUgKERl
-dmljZSBNYW5hZ2VtZW50IFVuaXQpCj4gLS0gcmVnLW5hbWVzOiAiZG11IiwgdGhlIG9ubHkgbmVl
-ZGVkICYgc3VwcG9ydGVkIHJlZyByaWdodCBub3cKPiAtLSBjbG9ja3M6IFVTQiBQSFkgcmVmZXJl
-bmNlIGNsb2NrCj4gLS0gY2xvY2stbmFtZXM6ICJwaHktcmVmLWNsayIsIHRoZSBvbmx5IG5lZWRl
-ZCAmIHN1cHBvcnRlZCBjbG9jayByaWdodCBub3cKPiAtCj4gLVRvIGluaXRpYWxpemUgVVNCIDIu
-MCBQSFkgZHJpdmVyIG5lZWRzIHRvIHNldHVwIFBMTCBjb3JyZWN0bHkuIFRvIGRvIHRoaXMgaXQK
-PiAtcmVxdWlyZXMgcGFzc2luZyBwaGFuZGxlIHRvIHRoZSBVU0IgUEhZIHJlZmVyZW5jZSBjbG9j
-ay4KPiAtCj4gLUV4YW1wbGU6Cj4gLQl1c2IyLXBoeSB7Cj4gLQkJY29tcGF0aWJsZSA9ICJicmNt
-LG5zLXVzYjItcGh5IjsKPiAtCQlyZWcgPSA8MHgxODAwYzAwMCAweDEwMDA+Owo+IC0JCXJlZy1u
-YW1lcyA9ICJkbXUiOwo+IC0JCSNwaHktY2VsbHMgPSA8MD47Cj4gLQkJY2xvY2tzID0gPCZnZW5w
-bGwgQkNNX05TUF9HRU5QTExfVVNCX1BIWV9SRUZfQ0xLPjsKPiAtCQljbG9jay1uYW1lcyA9ICJw
-aHktcmVmLWNsayI7Cj4gLQl9Owo+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3MvcGh5L2JjbS1ucy11c2IyLXBoeS55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZp
-Y2V0cmVlL2JpbmRpbmdzL3BoeS9iY20tbnMtdXNiMi1waHkueWFtbAo+IG5ldyBmaWxlIG1vZGUg
-MTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwLi4wNWI0ZGNkODAwMTkKPiAtLS0gL2Rldi9udWxs
-Cj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9iY20tbnMtdXNi
-Mi1waHkueWFtbAo+IEBAIC0wLDAgKzEsNTkgQEAKPiArIyBTUERYLUxpY2Vuc2UtSWRlbnRpZmll
-cjogR1BMLTIuMC1vbmx5IE9SIEJTRC0yLUNsYXVzZQo+ICslWUFNTCAxLjIKPiArLS0tCj4gKyRp
-ZDogaHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvcGh5L2JjbS1ucy11c2IyLXBoeS55YW1s
-Iwo+ICskc2NoZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFt
-bCMKPiArCj4gK3RpdGxlOiBCcm9hZGNvbSBOb3J0aHN0YXIgVVNCIDIuMCBQSFkKPiArCj4gK2Rl
-c2NyaXB0aW9uOiA+Cj4gKyAgVG8gaW5pdGlhbGl6ZSBVU0IgMi4wIFBIWSBkcml2ZXIgbmVlZHMg
-dG8gc2V0dXAgUExMIGNvcnJlY3RseS4KPiArICBUbyBkbyB0aGlzIGl0IHJlcXVpcmVzIHBhc3Np
-bmcgcGhhbmRsZSB0byB0aGUgVVNCIFBIWSByZWZlcmVuY2UgY2xvY2suCj4gKwo+ICttYWludGFp
-bmVyczoKPiArICAtIFJhZmHFgiBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KPiArCj4gK3By
-b3BlcnRpZXM6Cj4gKyAgY29tcGF0aWJsZToKPiArICAgIGNvbnN0OiBicmNtLG5zLXVzYjItcGh5
-Cj4gKwo+ICsgIHJlZzoKPiArICAgIGl0ZW1zOgo+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBpb21l
-bSBhZGRyZXNzIHJhbmdlIG9mIERNVSAoRGV2aWNlIE1hbmFnZW1lbnQgVW5pdCkKPiArCj4gKyAg
-cmVnLW5hbWVzOgo+ICsgICAgaXRlbXM6Cj4gKyAgICAgIC0gY29uc3Q6IGRtdQo+ICsKPiArICBj
-bG9ja3M6Cj4gKyAgICBpdGVtczoKPiArICAgICAgLSBkZXNjcmlwdGlvbjogVVNCIFBIWSByZWZl
-cmVuY2UgY2xvY2sKPiArCj4gKyAgY2xvY2stbmFtZXM6Cj4gKyAgICBpdGVtczoKPiArICAgICAg
-LSBjb25zdDogcGh5LXJlZi1jbGsKPiArCj4gKyAgIiNwaHktY2VsbHMiOgo+ICsgICAgY29uc3Q6
-IDAKPiArCj4gK3JlcXVpcmVkOgo+ICsgIC0gY29tcGF0aWJsZQo+ICsgIC0gcmVnCj4gKyAgLSBy
-ZWctbmFtZXMKPiArICAtIGNsb2Nrcwo+ICsgIC0gY2xvY2stbmFtZXMKPiArICAtICIjcGh5LWNl
-bGxzIgo+ICsKPiArYWRkaXRpb25hbFByb3BlcnRpZXM6IGZhbHNlCj4gKwo+ICtleGFtcGxlczoK
-PiArICAtIHwKPiArICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9jbG9jay9iY20tbnNwLmg+Cj4g
-KyAgICBwaHlAMTgwMGMwMDAgewo+ICsgICAgICAgIGNvbXBhdGlibGUgPSAiYnJjbSxucy11c2Iy
-LXBoeSI7Cj4gKyAgICAgICAgcmVnID0gPDB4MTgwMGMwMDAgMHgxMDAwPjsKPiArICAgICAgICBy
-ZWctbmFtZXMgPSAiZG11IjsKPiArICAgICAgICBjbG9ja3MgPSA8JmdlbnBsbCBCQ01fTlNQX0dF
-TlBMTF9VU0JfUEhZX1JFRl9DTEs+Owo+ICsgICAgICAgIGNsb2NrLW5hbWVzID0gInBoeS1yZWYt
-Y2xrIjsKPiArICAgICAgICAjcGh5LWNlbGxzID0gPDA+Owo+ICsgICAgfTsKPiAKCi0tIApsaW51
-eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+
+> -----Original Message-----
+> From: Kishon Vijay Abraham I <kishon@ti.com>
+> Sent: Wednesday, March 10, 2021 5:39 PM
+> To: Kishon Vijay Abraham I <kishon@ti.com>; Vinod Koul
+> <vkoul@kernel.org>; Swapnil Kashinath Jakhade <sjakhade@cadence.com>
+> Cc: linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org; Lokesh
+> Vutla <lokeshvutla@ti.com>
+> Subject: [PATCH v3 6/6] phy: cadence-torrent: Add support to drive refclk out
+> 
+> EXTERNAL MAIL
+> 
+> 
+> cmn_refclk_<p/m> lines in Torrent SERDES is used for connecting external
+> reference clock. cmn_refclk_<p/m> can also be configured to output the
+> reference clock. Model this derived reference clock as a "clock" so that
+> platforms like AM642 EVM can enable it.
+> 
+> This is used by PCIe to use the same refclk both in local SERDES
+> and remote device. Add support here to drive refclk out.
+> 
+> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+> ---
+>  drivers/phy/cadence/Kconfig               |   1 +
+>  drivers/phy/cadence/phy-cadence-torrent.c | 188 +++++++++++++++++++++-
+>  2 files changed, 186 insertions(+), 3 deletions(-)
+> 
+
+Reviewed-by: Swapnil Jakhade <sjakhade@cadence.com>
+
+Thanks & regards,
+Swapnil
+
+> diff --git a/drivers/phy/cadence/Kconfig b/drivers/phy/cadence/Kconfig
+> index 432832bdbd16..27e9d6c377e5 100644
+> --- a/drivers/phy/cadence/Kconfig
+> +++ b/drivers/phy/cadence/Kconfig
+> @@ -7,6 +7,7 @@ config PHY_CADENCE_TORRENT
+>  	tristate "Cadence Torrent PHY driver"
+>  	depends on OF
+>  	depends on HAS_IOMEM
+> +	depends on COMMON_CLK
+>  	select GENERIC_PHY
+>  	help
+>  	  Support for Cadence Torrent PHY.
+> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c
+> b/drivers/phy/cadence/phy-cadence-torrent.c
+> index 591a15834b48..c6fee7f75f57 100644
+> --- a/drivers/phy/cadence/phy-cadence-torrent.c
+> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
+> @@ -7,7 +7,9 @@
+>   */
+> 
+>  #include <dt-bindings/phy/phy.h>
+> +#include <dt-bindings/phy/phy-cadence-torrent.h>
+>  #include <linux/clk.h>
+> +#include <linux/clk-provider.h>
+>  #include <linux/delay.h>
+>  #include <linux/err.h>
+>  #include <linux/io.h>
+> @@ -84,6 +86,8 @@
+>  #define CMN_PLLSM1_PLLLOCK_TMR		0x0034U
+>  #define CMN_CDIAG_CDB_PWRI_OVRD		0x0041U
+>  #define CMN_CDIAG_XCVRC_PWRI_OVRD	0x0047U
+> +#define CMN_CDIAG_REFCLK_OVRD		0x004CU
+> +#define CMN_CDIAG_REFCLK_DRV0_CTRL	0x0050U
+>  #define CMN_BGCAL_INIT_TMR		0x0064U
+>  #define CMN_BGCAL_ITER_TMR		0x0065U
+>  #define CMN_IBCAL_INIT_TMR		0x0074U
+> @@ -206,6 +210,7 @@
+>  #define RX_DIAG_ACYA			0x01FFU
+> 
+>  /* PHY PCS common registers */
+> +#define PHY_PIPE_CMN_CTRL1		0x0000U
+>  #define PHY_PLL_CFG			0x000EU
+>  #define PHY_PIPE_USB3_GEN2_PRE_CFG0	0x0020U
+>  #define PHY_PIPE_USB3_GEN2_POST_CFG0	0x0022U
+> @@ -216,6 +221,10 @@
+>  #define PHY_PMA_CMN_CTRL2		0x0001U
+>  #define PHY_PMA_PLL_RAW_CTRL		0x0003U
+> 
+> +static const char * const clk_names[] = {
+> +	[CDNS_TORRENT_REFCLK_DRIVER] = "refclk-driver",
+> +};
+> +
+>  static const struct reg_field phy_pll_cfg =
+>  				REG_FIELD(PHY_PLL_CFG, 0, 1);
+> 
+> @@ -231,6 +240,26 @@ static const struct reg_field phy_pma_pll_raw_ctrl =
+>  static const struct reg_field phy_reset_ctrl =
+>  				REG_FIELD(PHY_RESET, 8, 8);
+> 
+> +static const struct reg_field phy_pipe_cmn_ctrl1_0 =
+> REG_FIELD(PHY_PIPE_CMN_CTRL1, 0, 0);
+> +
+> +#define REFCLK_OUT_NUM_CMN_CONFIG	5
+> +
+> +enum cdns_torrent_refclk_out_cmn {
+> +	CMN_CDIAG_REFCLK_OVRD_4,
+> +	CMN_CDIAG_REFCLK_DRV0_CTRL_1,
+> +	CMN_CDIAG_REFCLK_DRV0_CTRL_4,
+> +	CMN_CDIAG_REFCLK_DRV0_CTRL_5,
+> +	CMN_CDIAG_REFCLK_DRV0_CTRL_6,
+> +};
+> +
+> +static const struct reg_field refclk_out_cmn_cfg[] = {
+> +	[CMN_CDIAG_REFCLK_OVRD_4]	=
+> REG_FIELD(CMN_CDIAG_REFCLK_OVRD, 4, 4),
+> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_1]	=
+> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 1, 1),
+> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_4]	=
+> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 4, 4),
+> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_5]  =
+> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 5, 5),
+> +	[CMN_CDIAG_REFCLK_DRV0_CTRL_6]	=
+> REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 6, 6),
+> +};
+> +
+>  enum cdns_torrent_phy_type {
+>  	TYPE_NONE,
+>  	TYPE_DP,
+> @@ -279,6 +308,8 @@ struct cdns_torrent_phy {
+>  	struct regmap_field *phy_pma_cmn_ctrl_2;
+>  	struct regmap_field *phy_pma_pll_raw_ctrl;
+>  	struct regmap_field *phy_reset_ctrl;
+> +	struct clk *clks[CDNS_TORRENT_REFCLK_DRIVER + 1];
+> +	struct clk_onecell_data clk_data;
+>  };
+> 
+>  enum phy_powerstate {
+> @@ -288,6 +319,16 @@ enum phy_powerstate {
+>  	POWERSTATE_A3 = 3,
+>  };
+> 
+> +struct cdns_torrent_derived_refclk {
+> +	struct clk_hw		hw;
+> +	struct regmap_field	*phy_pipe_cmn_ctrl1_0;
+> +	struct regmap_field
+> 	*cmn_fields[REFCLK_OUT_NUM_CMN_CONFIG];
+> +	struct clk_init_data	clk_data;
+> +};
+> +
+> +#define to_cdns_torrent_derived_refclk(_hw)	\
+> +			container_of(_hw, struct
+> cdns_torrent_derived_refclk, hw)
+> +
+>  static int cdns_torrent_phy_init(struct phy *phy);
+>  static int cdns_torrent_dp_init(struct phy *phy);
+>  static int cdns_torrent_dp_run(struct cdns_torrent_phy *cdns_phy,
+> @@ -1604,6 +1645,108 @@ static int cdns_torrent_dp_run(struct
+> cdns_torrent_phy *cdns_phy, u32 num_lanes)
+>  	return ret;
+>  }
+> 
+> +static int cdns_torrent_derived_refclk_enable(struct clk_hw *hw)
+> +{
+> +	struct cdns_torrent_derived_refclk *derived_refclk =
+> to_cdns_torrent_derived_refclk(hw);
+> +
+> +	regmap_field_write(derived_refclk-
+> >cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_6], 0);
+> +	regmap_field_write(derived_refclk-
+> >cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_4], 1);
+> +	regmap_field_write(derived_refclk-
+> >cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_5], 1);
+> +	regmap_field_write(derived_refclk-
+> >cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_1], 0);
+> +	regmap_field_write(derived_refclk-
+> >cmn_fields[CMN_CDIAG_REFCLK_OVRD_4], 1);
+> +	regmap_field_write(derived_refclk->phy_pipe_cmn_ctrl1_0, 1);
+> +
+> +	return 0;
+> +}
+> +
+> +static void cdns_torrent_derived_refclk_disable(struct clk_hw *hw)
+> +{
+> +	struct cdns_torrent_derived_refclk *derived_refclk =
+> to_cdns_torrent_derived_refclk(hw);
+> +
+> +	regmap_field_write(derived_refclk->phy_pipe_cmn_ctrl1_0, 0);
+> +}
+> +
+> +static int cdns_torrent_derived_refclk_is_enabled(struct clk_hw *hw)
+> +{
+> +	struct cdns_torrent_derived_refclk *derived_refclk =
+> to_cdns_torrent_derived_refclk(hw);
+> +	int val;
+> +
+> +	regmap_field_read(derived_refclk->phy_pipe_cmn_ctrl1_0, &val);
+> +
+> +	return !!val;
+> +}
+> +
+> +static const struct clk_ops cdns_torrent_derived_refclk_ops = {
+> +	.enable = cdns_torrent_derived_refclk_enable,
+> +	.disable = cdns_torrent_derived_refclk_disable,
+> +	.is_enabled = cdns_torrent_derived_refclk_is_enabled,
+> +};
+> +
+> +static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy
+> *cdns_phy)
+> +{
+> +	struct cdns_torrent_derived_refclk *derived_refclk;
+> +	struct device *dev = cdns_phy->dev;
+> +	struct regmap_field *field;
+> +	struct clk_init_data *init;
+> +	const char *parent_name;
+> +	struct regmap *regmap;
+> +	char clk_name[100];
+> +	struct clk *clk;
+> +	int i;
+> +
+> +	derived_refclk = devm_kzalloc(dev, sizeof(*derived_refclk),
+> GFP_KERNEL);
+> +	if (!derived_refclk)
+> +		return -ENOMEM;
+> +
+> +	snprintf(clk_name, sizeof(clk_name), "%s_%s", dev_name(dev),
+> +		 clk_names[CDNS_TORRENT_REFCLK_DRIVER]);
+> +
+> +	clk = devm_clk_get_optional(dev, "phy_en_refclk");
+> +	if (IS_ERR(clk)) {
+> +		dev_err(dev, "No parent clock for derived_refclk\n");
+> +		return PTR_ERR(clk);
+> +	}
+> +
+> +	init = &derived_refclk->clk_data;
+> +
+> +	if (clk) {
+> +		parent_name = __clk_get_name(clk);
+> +		init->parent_names = &parent_name;
+> +		init->num_parents = 1;
+> +	}
+> +	init->ops = &cdns_torrent_derived_refclk_ops;
+> +	init->flags = 0;
+> +	init->name = clk_name;
+> +
+> +	regmap = cdns_phy->regmap_phy_pcs_common_cdb;
+> +	field = devm_regmap_field_alloc(dev, regmap,
+> phy_pipe_cmn_ctrl1_0);
+> +	if (IS_ERR(field)) {
+> +		dev_err(dev, "phy_pipe_cmn_ctrl1_0 reg field init failed\n");
+> +		return PTR_ERR(field);
+> +	}
+> +	derived_refclk->phy_pipe_cmn_ctrl1_0 = field;
+> +
+> +	regmap = cdns_phy->regmap_common_cdb;
+> +	for (i = 0; i < REFCLK_OUT_NUM_CMN_CONFIG; i++) {
+> +		field = devm_regmap_field_alloc(dev, regmap,
+> refclk_out_cmn_cfg[i]);
+> +		if (IS_ERR(field)) {
+> +			dev_err(dev, "CMN reg field init failed\n");
+> +			return PTR_ERR(field);
+> +		}
+> +		derived_refclk->cmn_fields[i] = field;
+> +	}
+> +
+> +	derived_refclk->hw.init = init;
+> +
+> +	clk = devm_clk_register(dev, &derived_refclk->hw);
+> +	if (IS_ERR(clk))
+> +		return PTR_ERR(clk);
+> +
+> +	cdns_phy->clks[CDNS_TORRENT_REFCLK_DRIVER] = clk;
+> +
+> +	return 0;
+> +}
+> +
+>  static int cdns_torrent_phy_on(struct phy *phy)
+>  {
+>  	struct cdns_torrent_inst *inst = phy_get_drvdata(phy);
+> @@ -2071,6 +2214,37 @@ int cdns_torrent_phy_configure_multilink(struct
+> cdns_torrent_phy *cdns_phy)
+>  	return 0;
+>  }
+> 
+> +static void cdns_torrent_clk_cleanup(struct cdns_torrent_phy *cdns_phy)
+> +{
+> +	struct device *dev = cdns_phy->dev;
+> +
+> +	of_clk_del_provider(dev->of_node);
+> +}
+> +
+> +static int cdns_torrent_clk_register(struct cdns_torrent_phy *cdns_phy)
+> +{
+> +	struct device *dev = cdns_phy->dev;
+> +	struct device_node *node = dev->of_node;
+> +	int ret;
+> +
+> +	ret = cdns_torrent_derived_refclk_register(cdns_phy);
+> +	if (ret) {
+> +		dev_err(dev, "failed to register derived refclk\n");
+> +		return ret;
+> +	}
+> +
+> +	cdns_phy->clk_data.clks = cdns_phy->clks;
+> +	cdns_phy->clk_data.clk_num = CDNS_TORRENT_REFCLK_DRIVER + 1;
+> +
+> +	ret = of_clk_add_provider(node, of_clk_src_onecell_get, &cdns_phy-
+> >clk_data);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to add clock provider: %s\n", node-
+> >name);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static int cdns_torrent_phy_probe(struct platform_device *pdev)
+>  {
+>  	struct cdns_torrent_phy *cdns_phy;
+> @@ -2134,17 +2308,21 @@ static int cdns_torrent_phy_probe(struct
+> platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+> 
+> +	ret = cdns_torrent_clk_register(cdns_phy);
+> +	if (ret)
+> +		return ret;
+> +
+>  	ret = clk_prepare_enable(cdns_phy->clk);
+>  	if (ret) {
+>  		dev_err(cdns_phy->dev, "Failed to prepare ref clock\n");
+> -		return ret;
+> +		goto clk_cleanup;
+>  	}
+> 
+>  	cdns_phy->ref_clk_rate = clk_get_rate(cdns_phy->clk);
+>  	if (!(cdns_phy->ref_clk_rate)) {
+>  		dev_err(cdns_phy->dev, "Failed to get ref clock rate\n");
+> -		clk_disable_unprepare(cdns_phy->clk);
+> -		return -EINVAL;
+> +		ret = -EINVAL;
+> +		goto clk_disable;
+>  	}
+> 
+>  	/* Enable APB */
+> @@ -2323,7 +2501,10 @@ static int cdns_torrent_phy_probe(struct
+> platform_device *pdev)
+>  		reset_control_put(cdns_phy->phys[i].lnk_rst);
+>  	of_node_put(child);
+>  	reset_control_assert(cdns_phy->apb_rst);
+> +clk_disable:
+>  	clk_disable_unprepare(cdns_phy->clk);
+> +clk_cleanup:
+> +	cdns_torrent_clk_cleanup(cdns_phy);
+>  	return ret;
+>  }
+> 
+> @@ -2340,6 +2521,7 @@ static int cdns_torrent_phy_remove(struct
+> platform_device *pdev)
+>  	}
+> 
+>  	clk_disable_unprepare(cdns_phy->clk);
+> +	cdns_torrent_clk_cleanup(cdns_phy);
+> 
+>  	return 0;
+>  }
+> --
+> 2.17.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
