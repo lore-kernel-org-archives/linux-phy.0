@@ -2,91 +2,93 @@ Return-Path: <SRS0=lbOJ=IP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 913E3C433DB
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Mar 2021 16:10:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E9D04C433E0
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Mar 2021 19:34:46 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1D4FC64E27
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Mar 2021 16:10:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1D4FC64E27
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
+	by mail.kernel.org (Postfix) with ESMTPS id 7CB9F64EED
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Mar 2021 19:34:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7CB9F64EED
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=chromium.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
-	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Tart0fpl3f/UC6XDnTZP1LulqeDYmFXRYyXZF/XPvew=; b=AIvKTdpMdi+RfJaUUsfG1bddP
-	RM4QdAJgqKPikffQwYxF+vXgA0G6rcLmWPnwlbgNYR7+ZtVUFxTYIy2iR89KpDnW7hgLQyyNfxGBp
-	icNn3+PmKnFkiGFkzIv3WHRiCVWpOmZ+8cNdGW+0y8P98y3kIer75Eo2HmR4IRtz8wC2qp9/OA6PW
-	3KfG+1XWWwsMjZYk2O9W8tPfp/nBHvslDV8sbm7bu5OOWFYaWiivenXCzcsImzsD7XKzclaGNdutf
-	ezAvcXwrcubfXYOJ6qvC6yscKEJ387ozOssjMNjWKpg6DABFnSrow7dh8hFvlYtxJnY85YtCeOsjR
-	bj02OM+0w==;
+	 bh=JFnEMG8zDJktOMGYI415L25NUTEil4Q32dqnkNsQo3c=; b=gCok+fdjbTaNfQM4Pdeu2JCRa
+	yCxSOWOqZOh7EjyUiMqJiWxTiEdwv+sOWhqR0wI5QQvo7uj8TTCMd8p41bmbWp2brlN7FG0e3NXeQ
+	4zXMTU5u+n/TPgWwlLuv3WPPrp+bxBn6WJKhJRiYimA2WXUJaQlAylt8xTJDwvTNvNQKaCdtMClAw
+	abPCOVoslKhyaFnJWpNgKoi/apA8PTClSf8g6tkA1O8R9zCrQEzym+nvas3n4qbNWIvQelZ4SgS++
+	g28S/yanttH1kp1hS2hzOoyCIiYTQB9aPFSA6WwDjP/hCfZn7h/a2JjzYvDHRcqHwKPQpxHEQd8v9
+	cXMI4rwmw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lMYkj-003VQH-HR; Wed, 17 Mar 2021 16:10:33 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1lMbwL-003p2S-0D; Wed, 17 Mar 2021 19:34:45 +0000
+Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lMYkQ-003VM5-9V; Wed, 17 Mar 2021 16:10:16 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 12HFlrRv010043; Wed, 17 Mar 2021 17:10:08 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=selector1;
- bh=xgpzGC4wdyQX7DWrBZkXr6BWb3iEnXnND5XfVReNl8c=;
- b=n7qV4iFaKwMjmk5V+qYigLrv88LW+LziE7pfYzJ5OksDpkA+KSuu7G5mBIHFkSY5qxAG
- UMizZf74A1pN81Pyc+gNMi913ObEWmEgTNe2FgVNeKoQgm9pPY4Jj9yUDowT7A0lWpNg
- KjFk66AyoHbpr37BmwyJbyY0vteXC21OFLR35yC7GXBJE6OBP78VqfaqADawviKrhpAq
- doZPh5wQYL5TABK4opzrPkQuwWGxVmOrEboBHP5aD8Bz/8XHZx08p7md7yT+K555TQe6
- +7vFvlrUMK6d3Vo/X8cJ1im5+XnKWQpeeTYnPP0pJPZxwhG/RERZOIC/6lI+S+5MUIBF AA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 37a8pr67jj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 17 Mar 2021 17:10:08 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 311F910002A;
- Wed, 17 Mar 2021 17:10:08 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2173B23E915;
- Wed, 17 Mar 2021 17:10:08 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG2NODE2.st.com (10.75.127.5)
- with Microsoft SMTP Server (TLS) id 15.0.1497.2; Wed, 17 Mar 2021 17:10:07
- +0100
-From: Amelie Delaunay <amelie.delaunay@foss.st.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Alexandre Torgue
- <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
- <amelie.delaunay@foss.st.com>
-Subject: [PATCH 2/2] phy: stm32: manage optional vbus regulator on
- phy_power_on/off
-Date: Wed, 17 Mar 2021 17:09:54 +0100
-Message-ID: <20210317160954.15487-3-amelie.delaunay@foss.st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20210317160954.15487-1-amelie.delaunay@foss.st.com>
-References: <20210317160954.15487-1-amelie.delaunay@foss.st.com>
+ id 1lMbwH-003p1p-Sn
+ for linux-phy@lists.infradead.org; Wed, 17 Mar 2021 19:34:43 +0000
+Received: by mail-pl1-x635.google.com with SMTP id f17so73312plr.0
+ for <linux-phy@lists.infradead.org>; Wed, 17 Mar 2021 12:34:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=aC9XfsPEhWKeOkyFve3gS/y0ZK6Rzz537p4VTrc/pes=;
+ b=J7R0WNva4AWUE8efmdEYqtl6XZlVUBn+CBlU6HWx77oRXvMjetKAsiD/YUYQchl7iR
+ 2dUWIMmTGRS552IhNuMHn1MRe2X8gDQzUE6Lt7q3D1P1kUmDH9CicIblf5m/yUbpIH7+
+ 9RvzBuZs+pQx9RJHQGgaGMxoUQJYjDIi9qVR4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=aC9XfsPEhWKeOkyFve3gS/y0ZK6Rzz537p4VTrc/pes=;
+ b=nZVrYG7f7fFXcWzwh1FHnWrnrL3qMMfJ5kPuzBxH45vN0p5fwwxI9reV/BnUHbZfE0
+ aAwSARlchkJmrDUFXlvLzK61HRAIBsoikB1+GCS99xpjEG5uODO5kqDQRCujVAJ4MFbI
+ BC01bZwep7hqZn6I80D984d2CBd36EQOsF1+cBBt5k3QGAgnDUzY5czNE5N5FTS+tqNa
+ Uhzx6ZtVpaYi/4/n7h3ZYGVD/ErhXJFWHOxdwjpcAoGhlKLZRpALq/xiE5naLMvJwBbW
+ NkYLfeFBWIV/rj7Ah4vw6rgBBJycFykFlzi8wafmagrAINfR5IykV61i7/cCD4baOl+v
+ PYRg==
+X-Gm-Message-State: AOAM53188ugExj/bJ4d8/7Emisoes6PEc1Go8nwV9OWwdQvZk6E0KPow
+ /VXI8dkCEDOub20q5YdRd04Vgw==
+X-Google-Smtp-Source: ABdhPJzvuzh0GDbQL02R1z72e58lYtYzY2DOXtCGDAWJ1P7tMT0SK4OSOelL6P3kE8/PqHxea2fa1w==
+X-Received: by 2002:a17:902:ee06:b029:e4:ba18:3726 with SMTP id
+ z6-20020a170902ee06b02900e4ba183726mr5991813plb.17.1616009679874; 
+ Wed, 17 Mar 2021 12:34:39 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:3cf8:6a09:780b:f65d])
+ by smtp.gmail.com with UTF8SMTPSA id v134sm20517485pfc.182.2021.03.17.12.34.38
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 17 Mar 2021 12:34:39 -0700 (PDT)
+Date: Wed, 17 Mar 2021 12:34:36 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Sandeep Maheswaram <sanm@codeaurora.org>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Wesley Cheng <wcheng@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
+ Doug Anderson <dianders@chromium.org>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, Manu Gautam <mgautam@codeaurora.org>
+Subject: Re: [PATCH 1/3] dt-bindings: usb: qcom,dwc3: Add bindings for SC7280
+Message-ID: <YFJZzAPo4Rh8I5lX@google.com>
+References: <1615978901-4202-1-git-send-email-sanm@codeaurora.org>
+ <1615978901-4202-2-git-send-email-sanm@codeaurora.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG2NODE2.st.com
- (10.75.127.5)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369, 18.0.761
- definitions=2021-03-17_10:2021-03-17,
- 2021-03-17 signatures=0
+Content-Disposition: inline
+In-Reply-To: <1615978901-4202-2-git-send-email-sanm@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210317_161014_586759_17208FAE 
-X-CRM114-Status: GOOD (  17.37  )
+X-CRM114-CacheID: sfid-20210317_193442_011610_5475F500 
+X-CRM114-Status: GOOD (  12.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,76 +105,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch adds support for optional vbus regulator.
-It is managed on phy_power_on/off calls and may be needed for host mode.
+On Wed, Mar 17, 2021 at 04:31:39PM +0530, Sandeep Maheswaram wrote:
+> Add the compatible string for sc7280 SoC from Qualcomm.
+> 
+> Signed-off-by: Sandeep Maheswaram <sanm@codeaurora.org>
+> ---
+>  Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> index c3cbd1f..413299b 100644
+> --- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> +++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+> @@ -16,6 +16,7 @@ properties:
+>            - qcom,msm8996-dwc3
+>            - qcom,msm8998-dwc3
+>            - qcom,sc7180-dwc3
+> +          - qcom,sc7280-dwc3
+>            - qcom,sdm845-dwc3
+>            - qcom,sdx55-dwc3
+>            - qcom,sm8150-dwc3
 
-Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
----
- drivers/phy/st/phy-stm32-usbphyc.c | 31 ++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
-
-diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
-index c184f4e34584..3e491dfb2525 100644
---- a/drivers/phy/st/phy-stm32-usbphyc.c
-+++ b/drivers/phy/st/phy-stm32-usbphyc.c
-@@ -57,6 +57,7 @@ struct pll_params {
- struct stm32_usbphyc_phy {
- 	struct phy *phy;
- 	struct stm32_usbphyc *usbphyc;
-+	struct regulator *vbus;
- 	u32 index;
- 	bool active;
- };
-@@ -291,9 +292,31 @@ static int stm32_usbphyc_phy_exit(struct phy *phy)
- 	return stm32_usbphyc_pll_disable(usbphyc);
- }
- 
-+static int stm32_usbphyc_phy_power_on(struct phy *phy)
-+{
-+	struct stm32_usbphyc_phy *usbphyc_phy = phy_get_drvdata(phy);
-+
-+	if (usbphyc_phy->vbus)
-+		return regulator_enable(usbphyc_phy->vbus);
-+
-+	return 0;
-+}
-+
-+static int stm32_usbphyc_phy_power_off(struct phy *phy)
-+{
-+	struct stm32_usbphyc_phy *usbphyc_phy = phy_get_drvdata(phy);
-+
-+	if (usbphyc_phy->vbus)
-+		return regulator_disable(usbphyc_phy->vbus);
-+
-+	return 0;
-+}
-+
- static const struct phy_ops stm32_usbphyc_phy_ops = {
- 	.init = stm32_usbphyc_phy_init,
- 	.exit = stm32_usbphyc_phy_exit,
-+	.power_on = stm32_usbphyc_phy_power_on,
-+	.power_off = stm32_usbphyc_phy_power_off,
- 	.owner = THIS_MODULE,
- };
- 
-@@ -519,6 +542,14 @@ static int stm32_usbphyc_probe(struct platform_device *pdev)
- 		usbphyc->phys[port]->index = index;
- 		usbphyc->phys[port]->active = false;
- 
-+		usbphyc->phys[port]->vbus = devm_regulator_get_optional(&phy->dev, "vbus");
-+		if (IS_ERR(usbphyc->phys[port]->vbus)) {
-+			ret = PTR_ERR(usbphyc->phys[port]->vbus);
-+			if (ret == -EPROBE_DEFER)
-+				goto put_child;
-+			usbphyc->phys[port]->vbus = NULL;
-+		}
-+
- 		port++;
- 	}
- 
--- 
-2.17.1
-
+Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
 
 -- 
 linux-phy mailing list
