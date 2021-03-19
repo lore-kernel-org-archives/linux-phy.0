@@ -4,17 +4,17 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-17.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9A97FC433DB
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Mar 2021 12:44:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 30D5CC433E0
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Mar 2021 12:44:06 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 488E764EA4
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Mar 2021 12:44:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 488E764EA4
+	by mail.kernel.org (Postfix) with ESMTPS id CFDED64EED
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Mar 2021 12:44:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CFDED64EED
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,63 +23,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CKjSDLLM4SHZBssRFRoN1HAaWd0bNxoPKkd7RljpHM8=; b=GiGzZVQq2Vcg2QbWvBb3vzg3u
-	pJ7ZqCy9d/yRSqOKF1AfDZYRpKf2LmWm+L0sAlwZ0vN2xrSeLt0VLDbuOT5gzcfYqrK/9Ibeky9m5
-	QNsdgy0vshcUht8EA942pTV5j5elBLiGk7BGChHH413xI/RjY6SaY8WBxfHyicSeNbofB89VV4GyQ
-	ZFnTBpXyUqPF8nC1rMhiiCZ8tRGI1Mi9yK3UGHIBQlmEdQ+kS17B455w7NryOCQuY669fgbmEOsIz
-	m5jOz8+TlfJ6WLGc0RatVP6Wj9HZ6G7IYOjmb+SsjZ379wZhGT8m/3MHsBnhlGyEFjt3W1xrCNaS5
-	aRtslGKmA==;
+	 bh=XnGtKnJ3nCbmm3Ok7ZngsnAfIy0DcMqGIOYAt/97mfA=; b=rW7okLg4T/WiVFoSSfYTGFVZu
+	+T1c/+JrJKNxWgGKl+wNooNgf/B2Dy385uOfJEZtmxcInC5qNbtbrouDqJyjwbAwc8026zo9XhGax
+	RBvuZyUA2gv2Iw5WI6/ank3WoVIvoEKV/AAh/5G/YKoZ7CoNycynne0LFiATBom9qCfIXLZ0TiyeB
+	YT7faQuKAQNiBnZkbwOohGd5lEb3DRMkq4LshP7DAC50XwwQHYjalqYAiptMZlGUVQd0eytv4JNGB
+	bpe82og4ojdvWNGyWVGppHNlRippno+ttDZZh3U6SBrNnAfTc4o/0V9jDHcmJ/qhrVNU6G3MV7BbI
+	JYhUt84wQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lNETx-007Pyx-Nf; Fri, 19 Mar 2021 12:44:01 +0000
+	id 1lNETz-007PzB-EX; Fri, 19 Mar 2021 12:44:04 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lNERx-007Pse-NG
- for linux-phy@lists.infradead.org; Fri, 19 Mar 2021 12:43:59 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12JCfrUS048326;
- Fri, 19 Mar 2021 07:41:53 -0500
+ id 1lNES0-007Psj-Cj
+ for linux-phy@lists.infradead.org; Fri, 19 Mar 2021 12:44:02 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12JCfv4J048333;
+ Fri, 19 Mar 2021 07:41:57 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1616157713;
- bh=M9USRoR5J3RSLtwkCWEx5+N8qLJ8X7rTcoD+wACuxxk=;
+ s=ti-com-17Q1; t=1616157717;
+ bh=WnJojV2RIcrSpG/FMHpx7hS8r2BmwynHcxEFLLXKjTQ=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=bxrsIRpQBE4Mm8l6sSNJq+ExlFNrwjq5jqP8bXP2R3B7Hx6QxDPaXY1vupJ5K56gL
- dNdXx9FbkM0vRLoiG2nYxZ7yABCry4CTR80z1R1wZmCTiTpwM/G4UwStsDgqsPToYc
- ae3u724PuPEzzyi0+dom3XWfWpGSBbDCvPrMJces=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12JCfreZ124474
+ b=Z/0OYnUq8Y14U0inB4NQ9WodFC7Fx1QcyxpxgOhFOvlicQQSuAlNZJKfkHvk28XsH
+ a90xE809D2H+8Bxa8+YsiJBTh3k+DF0cLN7ubTaVBlHI1uHkeKn8yj2IDlYFSVmDFj
+ zDfftVyF7cqnKr/hdRNRUZjgwrnuvxG3VXdGgijM=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12JCfvXf084873
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 19 Mar 2021 07:41:53 -0500
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ Fri, 19 Mar 2021 07:41:57 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Fri, 19
- Mar 2021 07:41:53 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2021 07:41:57 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Fri, 19 Mar 2021 07:41:53 -0500
+ Frontend Transport; Fri, 19 Mar 2021 07:41:57 -0500
 Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12JCfTf6011913;
- Fri, 19 Mar 2021 07:41:50 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12JCfTf7011913;
+ Fri, 19 Mar 2021 07:41:54 -0500
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
  Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
  Swapnil Jakhade <sjakhade@cadence.com>
 CC: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
  <linux-phy@lists.infradead.org>, Lokesh Vutla <lokeshvutla@ti.com>
-Subject: [PATCH v7 05/13] phy: cadence: Sierra: Move all clk_get_*() to a
- separate function
-Date: Fri, 19 Mar 2021 18:11:20 +0530
-Message-ID: <20210319124128.13308-6-kishon@ti.com>
+Subject: [PATCH v7 06/13] phy: cadence: Sierra: Move all reset_control_get*()
+ to a separate function
+Date: Fri, 19 Mar 2021 18:11:21 +0530
+Message-ID: <20210319124128.13308-7-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20210319124128.13308-1-kishon@ti.com>
 References: <20210319124128.13308-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210319_124358_166812_435A0F3F 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20210319_124400_874319_F4A9F534 
+X-CRM114-Status: GOOD (  11.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,51 +96,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-No functional change. Group all devm_clk_get_optional() to a
-separate function.
+No functional change. Group devm_reset_control_get() and
+devm_reset_control_get_optional() to a separate function.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-Reviewed-by: Swapnil Jakhade <sjakhade@cadence.com>
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 ---
- drivers/phy/cadence/phy-cadence-sierra.c | 57 +++++++++++++++---------
- 1 file changed, 35 insertions(+), 22 deletions(-)
+ drivers/phy/cadence/phy-cadence-sierra.c | 36 ++++++++++++++++--------
+ 1 file changed, 25 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index f7ba0ed416bc..7bf1b4c7774a 100644
+index 7bf1b4c7774a..935f165404e4 100644
 --- a/drivers/phy/cadence/phy-cadence-sierra.c
 +++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -477,6 +477,38 @@ static int cdns_regmap_init_blocks(struct cdns_sierra_phy *sp,
+@@ -509,6 +509,28 @@ static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
  	return 0;
  }
  
-+static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
++static int cdns_sierra_phy_get_resets(struct cdns_sierra_phy *sp,
 +				      struct device *dev)
 +{
-+	struct clk *clk;
-+	int ret;
++	struct reset_control *rst;
 +
-+	clk = devm_clk_get_optional(dev, "phy_clk");
-+	if (IS_ERR(clk)) {
-+		dev_err(dev, "failed to get clock phy_clk\n");
-+		return PTR_ERR(clk);
++	rst = devm_reset_control_get(dev, "sierra_reset");
++	if (IS_ERR(rst)) {
++		dev_err(dev, "failed to get reset\n");
++		return PTR_ERR(rst);
 +	}
-+	sp->clk = clk;
++	sp->phy_rst = rst;
 +
-+	clk = devm_clk_get_optional(dev, "cmn_refclk_dig_div");
-+	if (IS_ERR(clk)) {
-+		dev_err(dev, "cmn_refclk_dig_div clock not found\n");
-+		ret = PTR_ERR(clk);
-+		return ret;
++	rst = devm_reset_control_get_optional(dev, "sierra_apb");
++	if (IS_ERR(rst)) {
++		dev_err(dev, "failed to get apb reset\n");
++		return PTR_ERR(rst);
 +	}
-+	sp->cmn_refclk_dig_div = clk;
-+
-+	clk = devm_clk_get_optional(dev, "cmn_refclk1_dig_div");
-+	if (IS_ERR(clk)) {
-+		dev_err(dev, "cmn_refclk1_dig_div clock not found\n");
-+		ret = PTR_ERR(clk);
-+		return ret;
-+	}
-+	sp->cmn_refclk1_dig_div = clk;
++	sp->apb_rst = rst;
 +
 +	return 0;
 +}
@@ -148,52 +138,27 @@ index f7ba0ed416bc..7bf1b4c7774a 100644
  static int cdns_sierra_phy_probe(struct platform_device *pdev)
  {
  	struct cdns_sierra_phy *sp;
-@@ -487,7 +519,6 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 	unsigned int id_value;
- 	int i, ret, node = 0;
- 	void __iomem *base;
--	struct clk *clk;
- 	struct device_node *dn = dev->of_node, *child;
+@@ -559,17 +581,9 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
  
- 	if (of_get_child_count(dn) == 0)
-@@ -524,11 +555,9 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 
- 	platform_set_drvdata(pdev, sp);
- 
--	sp->clk = devm_clk_get_optional(dev, "phy_clk");
--	if (IS_ERR(sp->clk)) {
--		dev_err(dev, "failed to get clock phy_clk\n");
--		return PTR_ERR(sp->clk);
+-	sp->phy_rst = devm_reset_control_get(dev, "sierra_reset");
+-	if (IS_ERR(sp->phy_rst)) {
+-		dev_err(dev, "failed to get reset\n");
+-		return PTR_ERR(sp->phy_rst);
 -	}
-+	ret = cdns_sierra_phy_get_clocks(sp, dev);
+-
+-	sp->apb_rst = devm_reset_control_get_optional(dev, "sierra_apb");
+-	if (IS_ERR(sp->apb_rst)) {
+-		dev_err(dev, "failed to get apb reset\n");
+-		return PTR_ERR(sp->apb_rst);
+-	}
++	ret = cdns_sierra_phy_get_resets(sp, dev);
 +	if (ret)
 +		return ret;
  
- 	sp->phy_rst = devm_reset_control_get(dev, "sierra_reset");
- 	if (IS_ERR(sp->phy_rst)) {
-@@ -542,22 +571,6 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 		return PTR_ERR(sp->apb_rst);
- 	}
- 
--	clk = devm_clk_get_optional(dev, "cmn_refclk_dig_div");
--	if (IS_ERR(clk)) {
--		dev_err(dev, "cmn_refclk_dig_div clock not found\n");
--		ret = PTR_ERR(clk);
--		return ret;
--	}
--	sp->cmn_refclk_dig_div = clk;
--
--	clk = devm_clk_get_optional(dev, "cmn_refclk1_dig_div");
--	if (IS_ERR(clk)) {
--		dev_err(dev, "cmn_refclk1_dig_div clock not found\n");
--		ret = PTR_ERR(clk);
--		return ret;
--	}
--	sp->cmn_refclk1_dig_div = clk;
--
  	ret = clk_prepare_enable(sp->clk);
  	if (ret)
- 		return ret;
 -- 
 2.17.1
 
