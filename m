@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-9.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EB3FAC433DB
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Mar 2021 21:01:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id F2928C433DB
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Mar 2021 21:02:30 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9A49961994
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Mar 2021 21:01:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9A49961994
+	by mail.kernel.org (Postfix) with ESMTPS id 931D861937
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Mar 2021 21:02:30 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 931D861937
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=chromium.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,55 +23,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:Message-ID:Date:To:Cc:From:Subject:References:
 	In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M/tROJNIGX+UfvndTJy8IQwpUtSrDgLnpRd9qYFhN6o=; b=TUqt+FaVh5vn2M36hHb8vVNJ4
-	bKXVR6eCLrKYGuM7R5I3amk9a47FJVdtUMn9YtlU7w8N5dWownwmezGHCLgQPvBGoAbYJ5nnju7xu
-	Y8TlQIt29nSnRpOnYllq3mb7dHnseGvJ3fk9xKJku+m7RYRNZ0ANP9+nYYYo0lS8Iyq3s+1gI6q5H
-	JXz7OE7MXWom7Zyid25+fx78YnurHvO0b7oIyq6ubpbDdoJd5pdBEpfVnfJw+CeR9J9el/yLG9dHJ
-	711JRYS7SaRkrIbiEVWq4APPSt1YR7cGJnx/IYZuuRuv+NQ0pYXsE7kP79Lolvv10Aunh+rxXj6WT
-	D9wxpromw==;
+	 bh=JvZ/FF2j0OqOBh8LLyTjFRuKBefIRKLol+BklXmNazk=; b=BE8st4jxvMcxHA7bGBDxOD4fd
+	d8IaZcEonx2YLEMdk33dc+f7rXyM/szSpZdCC6o9xFqjUR/b7mma6phg6Env/prNY+X0Mci1LvNDi
+	1rwtxpMuN9wsxd/yUhphBU6kO08E0QH0GIxxMb3s0NGnUsY3PYIXFvcXwab9jyjRJW0k0frIZ5rmx
+	1lJaRdH1y754pQfn1ixxY1whdY5VswjQOIdLCDGj7oIKjKLHXM+ShyBvtXILt/AU3v1vwpUvit9WC
+	9jXNRkqQqVsOsNAOy4rf7GXg7BpHiQBoaAQLOXaCxmXa9JTjBcmw9Mq4pqkfs0U7ElUYxtEq8yJo5
+	MDoz+XfKA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lOo9k-00FkiP-SQ; Tue, 23 Mar 2021 21:01:41 +0000
-Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
+	id 1lOoAW-00Fkko-Ts; Tue, 23 Mar 2021 21:02:29 +0000
+Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lOo9g-00Fkhk-4H
- for linux-phy@lists.infradead.org; Tue, 23 Mar 2021 21:01:38 +0000
-Received: by mail-pg1-x52b.google.com with SMTP id v2so12986923pgk.11
- for <linux-phy@lists.infradead.org>; Tue, 23 Mar 2021 14:01:35 -0700 (PDT)
+ id 1lOoAS-00FkkH-9G
+ for linux-phy@lists.infradead.org; Tue, 23 Mar 2021 21:02:26 +0000
+Received: by mail-pg1-x535.google.com with SMTP id h25so12995607pgm.3
+ for <linux-phy@lists.infradead.org>; Tue, 23 Mar 2021 14:02:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:content-transfer-encoding:in-reply-to:references
  :subject:from:cc:to:date:message-id:user-agent;
- bh=j+3BKrM5me7auELaARAPwAS0rivnyHdPonNpXLIjgro=;
- b=hcjviBgIQ6fe5fnQkbvXjT0gP4wOpIiSxoK0n/0cLGbkVhMOQH9HkpHhxhhQGQe6TL
- epk2vtpx/VDLXbDMJPsb9JxcJFztD4XrY2b5qFXD3zCD/yiVCAr9ApuCub6uoxGDmcKc
- XgjPlyZmWF7uYz+KaOC5eofj9eIzLIAkcsbBM=
+ bh=0nmdLKTQUU2U2MlvkwteXMP5AIq4bw0Xz/4Qd0uYKt4=;
+ b=lWuQcN3sK9Ca9FEj5KeA4qv6DqeYqUD11pu0cCKxPc6Eaoj5OyTu+43rBNtwonazoa
+ wTK251fZxSM+LfcEGxYIBj0jOpyeMZbTbdbUC4uH1BGj6pVeOTb+GSva15KnPeFN2k97
+ VRqSeNt/1nM5ZgTa37IkDyfwn+g7cucu5xpg0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:content-transfer-encoding
  :in-reply-to:references:subject:from:cc:to:date:message-id
  :user-agent;
- bh=j+3BKrM5me7auELaARAPwAS0rivnyHdPonNpXLIjgro=;
- b=AXAjXLiIEYNSbxHfDj1eePzCDYPXbkRa/sR9wuiRmdHuxKm1CG9aJZESkDLxAekbib
- bLHtdjEsMArJY6pC2YnWSzbpKgvugHKzhxuL3L8Wk3d+JAjREt5pGxSnpw0V0zvYfkIY
- /zKqIeX6qV25WdBHAKa2qZA8LrYxZEbRb9AA8JXevrOwHGQh1cYQECAjIdIdXIgHCnIK
- ZqG5VLDg2AWZZllC1uXNE0vEp0bSTzvZ8vHjXn5FwX0s/OnKDsrxIxmEXI0YuuzpFp+S
- 8YmYg4PxcZTXQKtml/cm0cLOC8XZ0RHhyVjoC0xodpV5lO5hwPgKmHcDRE4Llso1Tvsv
- bg3Q==
-X-Gm-Message-State: AOAM533V4GZx2Pi0wtQCdkC9pS9UgSi+WOkMchzjXWZIkdTxu75XyJde
- vVyAhJHhW9XsKbIv8XkTsuK9PA==
-X-Google-Smtp-Source: ABdhPJy9VXxmhfEyOS8ICDrQ14e4OC/h87W74XrDtXDEVQUnVRUhGKTFvcqy27HUIUkaRwpqZ6HO9A==
-X-Received: by 2002:a62:78d4:0:b029:1f1:595b:dfdf with SMTP id
- t203-20020a6278d40000b02901f1595bdfdfmr149205pfc.81.1616533294364; 
- Tue, 23 Mar 2021 14:01:34 -0700 (PDT)
+ bh=0nmdLKTQUU2U2MlvkwteXMP5AIq4bw0Xz/4Qd0uYKt4=;
+ b=lgOC5OYryWpQQyKCvVGW+HFjLj3AD5gMOSq9XEmXAEP/fVxdufn/LS8nTqD62ZJhyP
+ xk6DFeeY+PpMRE3Z3Q68sRmI7L92GzzqDBAdjSNnD+4b7bdlAR8FEbuZREOig9iGk7a4
+ +Fm81b9Xrd4n8HwLkYYrlsKGm/toRlMCJHpWOMiXsk9YR8cNPuIuUoTEcMSMR3HJfwuO
+ ClAsg/yftR6hZlWTsc4R6R1XAMb3r7Uyo31+eWBHa9Wjf82fPeO7+t3olz3vc0eiqGum
+ mxX+Ybi9PI5SxecWC6YS0xnrWCPcXTMLyiPSDaRv7tx+M8zufUUa8Rd1SbREdbBJzohm
+ zQaQ==
+X-Gm-Message-State: AOAM530DVLrJvFDXpLq0wxVvT1f1ZHli7/10YEGIPYPZaU3l+Lnu3RWB
+ 48xScdMok3fH20XyWtPoVo/3KQ==
+X-Google-Smtp-Source: ABdhPJymVqgWCHhY+IXyAkrmtX70mjVttdAPK3H+B3EXnXCLpFLS4kYrDMHtxJRkN04PoUGhyOQ2pQ==
+X-Received: by 2002:a17:902:e549:b029:e6:6b3a:49f7 with SMTP id
+ n9-20020a170902e549b02900e66b3a49f7mr171266plf.52.1616533342892; 
+ Tue, 23 Mar 2021 14:02:22 -0700 (PDT)
 Received: from chromium.org ([2620:15c:202:201:84ac:62f7:16a8:ccc7])
- by smtp.gmail.com with ESMTPSA id c24sm102212pfi.193.2021.03.23.14.01.33
+ by smtp.gmail.com with ESMTPSA id c2sm109388pfb.121.2021.03.23.14.02.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 23 Mar 2021 14:01:33 -0700 (PDT)
+ Tue, 23 Mar 2021 14:02:22 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1615978901-4202-2-git-send-email-sanm@codeaurora.org>
+In-Reply-To: <1615978901-4202-3-git-send-email-sanm@codeaurora.org>
 References: <1615978901-4202-1-git-send-email-sanm@codeaurora.org>
- <1615978901-4202-2-git-send-email-sanm@codeaurora.org>
-Subject: Re: [PATCH 1/3] dt-bindings: usb: qcom,dwc3: Add bindings for SC7280
+ <1615978901-4202-3-git-send-email-sanm@codeaurora.org>
+Subject: Re: [PATCH 2/3] dt-bindings: phy: qcom,
+ usb-snps-femto-v2: Add bindings for SC7280
 From: Stephen Boyd <swboyd@chromium.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
@@ -84,12 +85,12 @@ To: Andy Gross <agross@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, Matthias Kaehlcke <mka@chromium.org>,
  Rob Herring <robh+dt@kernel.org>, Sandeep Maheswaram <sanm@codeaurora.org>,
  Vinod Koul <vkoul@kernel.org>, Wesley Cheng <wcheng@codeaurora.org>
-Date: Tue, 23 Mar 2021 14:01:32 -0700
-Message-ID: <161653329214.3012082.3763700105699946359@swboyd.mtv.corp.google.com>
+Date: Tue, 23 Mar 2021 14:02:21 -0700
+Message-ID: <161653334107.3012082.10885367970914434263@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210323_210136_376193_99D5F807 
-X-CRM114-Status: UNSURE (   7.19  )
+X-CRM114-CacheID: sfid-20210323_210224_501869_5CF37EC0 
+X-CRM114-Status: UNSURE (   6.98  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -107,8 +108,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting Sandeep Maheswaram (2021-03-17 04:01:39)
-> Add the compatible string for sc7280 SoC from Qualcomm.
+Quoting Sandeep Maheswaram (2021-03-17 04:01:40)
+> Add the compatible string for sc7280 SoC from Qualcomm
 > 
 > Signed-off-by: Sandeep Maheswaram <sanm@codeaurora.org>
 > ---
