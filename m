@@ -2,88 +2,91 @@ Return-Path: <SRS0=4oE9=IX=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-8.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B7D02C433DB
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id EE729C433E0
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:53 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 58EE561A28
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 58EE561A28
+	by mail.kernel.org (Postfix) with ESMTPS id 7A48A61A25
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7A48A61A25
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=AtGhh83JND2AfhLvog7s4JdIi2+DUU5dDwbcFPnNa44=; b=NHyQpE4SjCKSIsuRqKknsz4wx4
-	/ZMBrEfRELayyo0Iy3Ir77jakRPXu1rtdeOgt0QBSorlEoC0ZieKzsan0FpbC0pcWeRbU5w785xAz
-	TdSS24u2qCCqglb54mcmw+mugdzHUVrO0l3Zt4QFIb7sXJUKZnCpdZQOX5a8/Q0VfQXi5Q56Lf60N
-	vCD1vYQrs/KMKxoMJkksELdg780f6Gtb5sP4teKjSxSmVhw61QM9OfnZAGIWWMciWw9dm9OrcCDJ0
-	BXF5S7rpUwPbi74iffugFBwvNioF5kZKUk3HvTgMpwbPcS56lGeCRJQ+ltJU+H9+C9YgVhPAsw29a
-	a4HfhYCA==;
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
+	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LHYxpKK/pt60TCYugofTlSPvd8fr7+qumFWFQd8r6f8=; b=KlGR6d0t8MEy6Wp/vBzbVGyXO
+	/7LR2ufgRRRopD/x0vz+SsWH9Zk0VRXT/PvOclndVIHGrMS+WGaA4nLtDZuZpAKcElSKeU3FF5flp
+	ReQzYvMFM1zoh6DrdLrioK/12f8GljxCorOkQGlFqYYFuWwVAZUEyG4WLHsmeYBL4FSyNyws4wk37
+	6NjHaDv/6IO0UTlWrA4KXs4NpccT6WlUsfBEfVBGOAbACZTxZYBNKQSN47frVTtWChhXUdLHfhy7t
+	xl9v1arj+KSULlSeIo19x4vUAUSz08gGq5k38GZJy/Gc4ZZ13k1BtENkrW/qfrN9ckqWB5Szy3WPk
+	5120sE8yA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lPT2O-001qJ0-Cu; Thu, 25 Mar 2021 16:40:48 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1lPT2R-001qJf-Pa; Thu, 25 Mar 2021 16:40:51 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lPT2L-001qIa-4j
- for linux-phy@lists.infradead.org; Thu, 25 Mar 2021 16:40:47 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id k8so2968012wrc.3
- for <linux-phy@lists.infradead.org>; Thu, 25 Mar 2021 09:40:44 -0700 (PDT)
+ id 1lPT2O-001qIz-8B
+ for linux-phy@lists.infradead.org; Thu, 25 Mar 2021 16:40:50 +0000
+Received: by mail-wr1-x432.google.com with SMTP id j7so2982053wrd.1
+ for <linux-phy@lists.infradead.org>; Thu, 25 Mar 2021 09:40:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YFSqMATttwvnEjox5mDDMXVQmf/3aquCS0HIVj6Hd8M=;
- b=YJYg7GzEy6eYG0tQt7jGwsFchmsnf+97rlxrBtGJo/3ExZbGd93Qn6m6O4xAQvLpX3
- RJ/ug1TZL1JKn800jH8/OEwrJY1MaFG5AeduhnhIX7cpdM6fXqKvuB/QEDuWn0bO8Emj
- uqMBThTbqNaTkIdeEVrl8MFgvA29dFGTvwhDexbS3ySlA3Ws3a54Oq7Wmz51kPPcLpZ3
- NstEO4Ke3y4i+Hdzjh5whcWiGVb7nLnPzeLm8fXhqI2cIBiMUjfGZK/mJN4bDFrScO+H
- +kYEX53eTiF3Ir3t60zj1vDsMJhUXDVmzhbs4BCBwlO/XWRgJ7Ua3m1k1JvZ4XXkPfFG
- 1PVg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=BIOzYjpuWV2ikVARWL5rnMXlYplC4fVIyiluPMIE1oE=;
+ b=T+5lmaYU0760xN0cgcjj5c8+SDzlH7A/atUQUf4fLVOx2WE54T7z8ZItEJZl86LVVR
+ o0FPEerykYnJ0HBljGhYcwKI4YJepfTiet/oep+mOhuOJOvgJyonZP+cHnoTSfmLfYWV
+ lRPTLweJBT7lz99SB3JACg4kCo0ZbWBiI2jLX8C6u9fzHoCJy4GGRANnNF+O3SvYEXDB
+ UYAzmpR8wcGZc4F+05TL3vSTLf+98outM3Z9NS+G69NKHOAEx158eCryef57QwYZiKpz
+ 5/PU5edUocmXm1scX0khV7VMSg2OVn7VZPp69hyzYYEEZAF5mdyx36Lx04en2FUyCY5r
+ U6YQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YFSqMATttwvnEjox5mDDMXVQmf/3aquCS0HIVj6Hd8M=;
- b=cBt/X2DOwQymLEQH+fTFhFxgz867CGpRhqmi0eZDhPwBdVaQmjinEgNqdwMvmGJ/yy
- oCryer969Ft9zyvAkW617j1KVHG1H0D0Ny1+bV/BHXyim7pfmG0xmmarCgV1f8fixnaX
- Qn3whFMZL7kYSOcwb6yqCAelakdhSfB7vRuZrtRJ4Hf3pD0fbpGhms/RnkgVtFALaYCR
- bBCx2xm44IXK5W8XExPHgVt1w0nLAXoIAB7ry+aDtefG+OqD5Dgxaqufw8Te7UrzKERM
- Lp/39ntIf2dwRayw3NEXWWpbLDmeS34/L8HDF5sdRWhE3jh2Fh5nChRl7buUjLTMHzut
- qp5A==
-X-Gm-Message-State: AOAM532PVWPeRgZxZ7XC0LSCPqdlOp1CdLYGwjQqskHZo6GUfrIgX2pn
- 6bsTtXZ5SZi0S0Vea9lXL34=
-X-Google-Smtp-Source: ABdhPJzbSHaK3fx6FuRZT8GUnvbbhA34wtR5k7r/LDHoXqVWAj0QJPFzW+EAA/qkswAowOlV2ORN1Q==
-X-Received: by 2002:adf:d1cd:: with SMTP id b13mr9944791wrd.47.1616690444397; 
- Thu, 25 Mar 2021 09:40:44 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=BIOzYjpuWV2ikVARWL5rnMXlYplC4fVIyiluPMIE1oE=;
+ b=cIMl+RD0ar3r2+E1J6I8GxrYrB7cLRhihJNDg8ob70MNu54lbzruNZXZO48ET8vkjq
+ Qbp1nV/0ypG8vC5vcP+4U/d5Sk+yGpHXeckiZqwmkAlUWpFo7tSVGFQq470buXN9q/Xu
+ VBi2AYDh39Ylr63TDULZrroIq2+Qay/9KFSo/woUfYDlC1wYMnFE5jTTZ+yHs0HaP/7t
+ fyFVr1+M9XclA2RJbfMiUSnGMOo/DsateSXoYn595d92XuDiSs3gNRCEQzhSj3vgnwKi
+ t5nkjOuVan66li1eep2O8L6OtMTOgx1tQ4cYUuZ7xYSd+23Icul5f2YTfQSpyhIFxv5T
+ j45Q==
+X-Gm-Message-State: AOAM531Yn+Zpmm/PKsFLTuMqediwvHvaEW5KJCnXauq2SkkrbacqcJSR
+ qCg8OYQG9z5wfF3zqnHhSHU=
+X-Google-Smtp-Source: ABdhPJyZAKo+sD+iopvWd3BFRQ8xlnIOc5+qTBvaeiQHoQwgOF2llYd0lTLSDaZWT58a8VW8MaFZOw==
+X-Received: by 2002:adf:9261:: with SMTP id 88mr9676623wrj.270.1616690447651; 
+ Thu, 25 Mar 2021 09:40:47 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id 91sm8415188wrl.20.2021.03.25.09.40.43
+ by smtp.gmail.com with ESMTPSA id j16sm11847179wmi.2.2021.03.25.09.40.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 25 Mar 2021 09:40:43 -0700 (PDT)
+ Thu, 25 Mar 2021 09:40:45 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>,
  Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
  Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: [PATCH v8 00/13] Tegra XHCI controller ELPG support
-Date: Thu, 25 Mar 2021 17:40:44 +0100
-Message-Id: <20210325164057.793954-1-thierry.reding@gmail.com>
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH v8 01/13] clk: tegra: Add PLLE HW power sequencer control
+Date: Thu, 25 Mar 2021 17:40:45 +0100
+Message-Id: <20210325164057.793954-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20210325164057.793954-1-thierry.reding@gmail.com>
+References: <20210325164057.793954-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210325_164045_362474_F8F8BAE8 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20210325_164048_416688_697EB27D 
+X-CRM114-Status: GOOD (  15.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,60 +103,139 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+From: JC Kuo <jckuo@nvidia.com>
 
-Tegra XHCI controler can be placed in ELPG (Engine Level PowerGated)
-state for power saving when all of the connected USB devices are in
-suspended state. This patch series includes clk, phy and pmc changes
-that are required for properly place controller in ELPG and bring
-controller out of ELPG.
+PLLE has a hardware power sequencer logic which is a state machine
+that can power on/off PLLE without any software intervention. The
+sequencer has two inputs, one from XUSB UPHY PLL and the other from
+SATA UPHY PLL. PLLE provides reference clock to XUSB and SATA UPHY
+PLLs. When both of the downstream PLLs are powered-off, PLLE hardware
+power sequencer will automatically power off PLLE for power saving.
 
-I've rebased this on v5.12-rc2 and fixed two minor issues that
-checkpatch had pointed out. One of the patches compared to v7 was
-already merged into v5.12, so that rebased out.
+XUSB and SATA UPHY PLLs also have their own hardware power sequencer
+logic. XUSB UPHY PLL is shared between XUSB SuperSpeed ports and PCIE
+controllers. The XUSB UPHY PLL hardware power sequencer has inputs
+from XUSB and PCIE. When all of the XUSB SuperSpeed ports and PCIE
+controllers are in low power state, XUSB UPHY PLL hardware power
+sequencer automatically power off PLL and flags idle to PLLE hardware
+power sequencer. Similar applies to SATA UPHY PLL.
 
-Greg, you had previously indicated[0] that you'd be willing for me to
-take the USB patches through the Tegra tree to resolve the complicated
-dependencies within this series, but I don't think you ever gave a
-formal Acked-by. Should I take your comments to be equivalent and just
-add them to the USB patches?
+PLLE hardware power sequencer has to be enabled after both downstream
+sequencers are enabled.
 
-Vinod, as discussed earlier, please take a look and provide an Acked-by
-if you're okay with me taking this through the Tegra tree for v5.13.
+This commit adds two helper functions:
+1. tegra210_plle_hw_sequence_start() for XUSB PADCTL driver to enable
+   PLLE hardware sequencer at proper time.
 
-Thanks,
-Thierry
+2. tegra210_plle_hw_sequence_is_enabled() for XUSB PADCTL driver to
+   check whether PLLE hardware sequencer has been enabled or not.
 
-[0]: https://lore.kernel.org/linux-tegra/YB1wxazg%2FQpRSJz6@kroah.com/
+Signed-off-by: JC Kuo <jckuo@nvidia.com>
+Acked-by: Stephen Boyd <sboyd@kernel.org>
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/clk/tegra/clk-tegra210.c | 53 +++++++++++++++++++++++++++++++-
+ include/linux/clk/tegra.h        |  4 ++-
+ 2 files changed, 55 insertions(+), 2 deletions(-)
 
-JC Kuo (13):
-  clk: tegra: Add PLLE HW power sequencer control
-  clk: tegra: Don't enable PLLE HW sequencer at init
-  phy: tegra: xusb: Move usb3 port init for Tegra210
-  phy: tegra: xusb: Rearrange UPHY init on Tegra210
-  phy: tegra: xusb: Add Tegra210 lane_iddq operation
-  phy: tegra: xusb: Add sleepwalk and suspend/resume
-  soc/tegra: pmc: Provide USB sleepwalk register map
-  dt-bindings: phy: tegra-xusb: Add nvidia,pmc prop
-  phy: tegra: xusb: Add wake/sleepwalk for Tegra210
-  phy: tegra: xusb: Tegra210 host mode VBUS control
-  phy: tegra: xusb: Add wake/sleepwalk for Tegra186
-  usb: host: xhci-tegra: Unlink power domain devices
-  xhci: tegra: Enable ELPG for runtime/system PM
-
- .../phy/nvidia,tegra124-xusb-padctl.txt       |    1 +
- drivers/clk/tegra/clk-pll.c                   |   12 -
- drivers/clk/tegra/clk-tegra210.c              |   53 +-
- drivers/phy/tegra/xusb-tegra186.c             |  558 +++++-
- drivers/phy/tegra/xusb-tegra210.c             | 1553 ++++++++++++++---
- drivers/phy/tegra/xusb.c                      |   92 +-
- drivers/phy/tegra/xusb.h                      |   22 +-
- drivers/soc/tegra/pmc.c                       |   94 +
- drivers/usb/host/xhci-tegra.c                 |  613 +++++--
- include/linux/clk/tegra.h                     |    4 +-
- include/linux/phy/tegra/xusb.h                |   10 +-
- 11 files changed, 2615 insertions(+), 397 deletions(-)
-
+diff --git a/drivers/clk/tegra/clk-tegra210.c b/drivers/clk/tegra/clk-tegra210.c
+index 68cbb98af567..b9099012dc7b 100644
+--- a/drivers/clk/tegra/clk-tegra210.c
++++ b/drivers/clk/tegra/clk-tegra210.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ /*
+- * Copyright (c) 2012-2014 NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2012-2020 NVIDIA CORPORATION.  All rights reserved.
+  */
+ 
+ #include <linux/io.h>
+@@ -403,6 +403,14 @@ static unsigned long tegra210_input_freq[] = {
+ #define PLLRE_BASE_DEFAULT_MASK		0x1c000000
+ #define PLLRE_MISC0_WRITE_MASK		0x67ffffff
+ 
++/* PLLE */
++#define PLLE_MISC_IDDQ_SW_CTRL		(1 << 14)
++#define PLLE_AUX_USE_LOCKDET		(1 << 3)
++#define PLLE_AUX_SS_SEQ_INCLUDE		(1 << 31)
++#define PLLE_AUX_ENABLE_SWCTL		(1 << 4)
++#define PLLE_AUX_SS_SWCTL		(1 << 6)
++#define PLLE_AUX_SEQ_ENABLE		(1 << 24)
++
+ /* PLLX */
+ #define PLLX_USE_DYN_RAMP		1
+ #define PLLX_BASE_LOCK			(1 << 27)
+@@ -489,6 +497,49 @@ static unsigned long tegra210_input_freq[] = {
+ #define PLLU_MISC0_WRITE_MASK		0xbfffffff
+ #define PLLU_MISC1_WRITE_MASK		0x00000007
+ 
++bool tegra210_plle_hw_sequence_is_enabled(void)
++{
++	u32 value;
++
++	value = readl_relaxed(clk_base + PLLE_AUX);
++	if (value & PLLE_AUX_SEQ_ENABLE)
++		return true;
++
++	return false;
++}
++EXPORT_SYMBOL_GPL(tegra210_plle_hw_sequence_is_enabled);
++
++int tegra210_plle_hw_sequence_start(void)
++{
++	u32 value;
++
++	if (tegra210_plle_hw_sequence_is_enabled())
++		return 0;
++
++	/* skip if PLLE is not enabled yet */
++	value = readl_relaxed(clk_base + PLLE_MISC0);
++	if (!(value & PLLE_MISC_LOCK))
++		return -EIO;
++
++	value &= ~PLLE_MISC_IDDQ_SW_CTRL;
++	writel_relaxed(value, clk_base + PLLE_MISC0);
++
++	value = readl_relaxed(clk_base + PLLE_AUX);
++	value |= (PLLE_AUX_USE_LOCKDET | PLLE_AUX_SS_SEQ_INCLUDE);
++	value &= ~(PLLE_AUX_ENABLE_SWCTL | PLLE_AUX_SS_SWCTL);
++	writel_relaxed(value, clk_base + PLLE_AUX);
++
++	fence_udelay(1, clk_base);
++
++	value |= PLLE_AUX_SEQ_ENABLE;
++	writel_relaxed(value, clk_base + PLLE_AUX);
++
++	fence_udelay(1, clk_base);
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(tegra210_plle_hw_sequence_start);
++
+ void tegra210_xusb_pll_hw_control_enable(void)
+ {
+ 	u32 val;
+diff --git a/include/linux/clk/tegra.h b/include/linux/clk/tegra.h
+index eb016fc9cc0b..f7ff722a03dd 100644
+--- a/include/linux/clk/tegra.h
++++ b/include/linux/clk/tegra.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0-only */
+ /*
+- * Copyright (c) 2012, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2012-2020, NVIDIA CORPORATION.  All rights reserved.
+  */
+ 
+ #ifndef __LINUX_CLK_TEGRA_H_
+@@ -123,6 +123,8 @@ static inline void tegra_cpu_clock_resume(void)
+ }
+ #endif
+ 
++extern int tegra210_plle_hw_sequence_start(void);
++extern bool tegra210_plle_hw_sequence_is_enabled(void);
+ extern void tegra210_xusb_pll_hw_control_enable(void);
+ extern void tegra210_xusb_pll_hw_sequence_start(void);
+ extern void tegra210_sata_pll_hw_control_enable(void);
 -- 
 2.30.2
 
