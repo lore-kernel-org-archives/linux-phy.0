@@ -8,14 +8,14 @@ X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3B1B4C433C1
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C246FC433C1
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:59 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D6801619BF
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D6801619BF
+	by mail.kernel.org (Postfix) with ESMTPS id 413F661A1E
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 16:40:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 413F661A1E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,72 +24,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
 	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hTHm4e9PBxAqGZqYSSGN5vpjnhE4I+9hz5ojG4I5CJU=; b=SfGJqVOOpbQ+4SkTKYSrbVm5K
-	NgdIEAvOkl70nXS2Ukq6yascyWz1a+fqYB/uKB/vk87RkQt9yrxyXpgb9kZ9nOqx4HTaDUjJIF4J1
-	W7cv3l/iT8W6u96+fuOFOGXJeC/RXw1EMDM9ACK2R7CpAHLYe6lmHpuRNvhmkLITu7ZvZunyRDWYU
-	sU7gqrjcBV1UmyITI3kJmLoFuaxqHZ7sHGLuyyCuz1XF+wpKKKjCTBaGi6QW4x8UaJpW7iNZLWMwI
-	xwCAbX6EnoASfO7NY5FYJmJUvj5pT2L4wD70NkJdcPH2fhhztEsNJAL3B5gGND44/d4MQSYiHtoLt
-	xpvN0vmUA==;
+	 bh=ZzvxXgKQilblEVvci8K16Lp1p7UItqq1dc15OfKqLvM=; b=EGD1eRoOLZq4Brs2e7VYEhqit
+	B/jy3W2BhN3Vi8ceWpgxqc0s7It+wtTcOjGPjaGyL1WM8thSomYLL4wUZmG/MXBSPuJqi8zzeq+jb
+	2RLEZHPenten0NAWyK4CxRTZNgPMGeGqFCxDmEqH+5v1c1RVeey15bFBRN7Fw3ktvw+ZMdS+3nS/A
+	QPc1UUBmMnd9CkVGWXDEjPSIJiYManPCbCbDk2pkIVAZEYEDGDYy8ztqXkal4UZlNWMqhJRqqLd8K
+	STw6yOpH+rfle2RE+RwjskXhnzA1edd0Wjjde3xYCl1LI6H0ZbX+Z0QWJRHw4nmSVk+arkPDrCbjw
+	u/jgG93ZA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lPT2U-001qK9-Ei; Thu, 25 Mar 2021 16:40:54 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1lPT2X-001qKt-LR; Thu, 25 Mar 2021 16:40:57 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lPT2Q-001qJP-En
- for linux-phy@lists.infradead.org; Thu, 25 Mar 2021 16:40:52 +0000
-Received: by mail-wm1-x336.google.com with SMTP id
- z6-20020a1c4c060000b029010f13694ba2so1529897wmf.5
- for <linux-phy@lists.infradead.org>; Thu, 25 Mar 2021 09:40:50 -0700 (PDT)
+ id 1lPT2T-001qJp-0l
+ for linux-phy@lists.infradead.org; Thu, 25 Mar 2021 16:40:55 +0000
+Received: by mail-wr1-x435.google.com with SMTP id b9so2936619wrt.8
+ for <linux-phy@lists.infradead.org>; Thu, 25 Mar 2021 09:40:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=7xHWkhn/z0JEymImWDnOlsM+EPtRLYWHNs/Xv1gr+uM=;
- b=Q+0cCvOricq0GsG0pDLQC5rPnSBWSZv1Cw7sGhPN6hgzMXFSUCBwTYYT4gWsaqpp+C
- iZzZRyZ8TTz8Wh/EhBTG29RNDoKhmSfBVG+OnZi6KYwqWRvtOBgFSa1q/slLfTTi7qpv
- juF/luqVjJ83YlDfU/C95TbD0Hn/Ll+X4R6qSxHVguAYHBJVInoTV+aOCvqWVEmB1EK7
- OY5BoJikPRpy+vvbOiw3tHa0sncm/xvjyIcza/aCG3s7KMr8P6DCMHXOf9sARVLzldjF
- PiUHdz+wLNw/npyPjwqeCIEERXsyojS7UAy8yYPT5QGayaVdJmJ3HAAEij5wmjJVkCi6
- w67g==
+ bh=ebtKj0t5fFS91geJ2HeaRMHYkRbLC4QYHc0p43CsX9w=;
+ b=q+Pn0eHDRGblDBTQKQ99yrmEfSD5rB4AvnIHNMR7vdUbf70JRiV6v0hriZElf0TDog
+ NEcgjjr21y9t+5xx3CxasbvpNco2I8cyyzGTUBpxNJ6WjS74PwFqndfw4C7tIvrTc4Un
+ CGTr0Gf8HODF+etbfKSvMwmINhKLNTZaQuzgqwfJUT7gmnAREBchUyz4MtiVEefLgAgN
+ hXHIL41IVSjhXuwr3B9WhZtTg/T104OBtH8dUm9dqfE99G9cztd/c8py6sjrM8InDNcv
+ cKNa9w8/n4i0MeClY0E6+A0mLSRlCU0CFki1SHcwycwJFjVJv7C/9VvRGpZ/gIce5aW0
+ 0DsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7xHWkhn/z0JEymImWDnOlsM+EPtRLYWHNs/Xv1gr+uM=;
- b=oz1LzkQyxSKjQwEuWIwiLv/f3eCShq+Id/esHCvHEpyid1pJhGIlf58ayImv+KrOtq
- oQCj3YCiOkvstO4DouhxKaVTum5WsQmb9Mu70fE1Afps60rOxWGEaGjEL4znxHgSFyTh
- 0NSMsN/uWQtVIZbLlCMLz7wOBbeFCFU4LLSu3tYenfAH/ssa2ea06fpxjxd33cNb2r9Z
- qRfzR/oPKUqfDFqU4KvyOnyvQ+AFtACIo5ztsu+uOMWXYn9N6kcgIYoT41XiyDm56wo1
- xVGs4IKCQ7hbpjWGo7WHUImnFnSgVTa6vxmNUe5YYRoQfFanuBBZBwv6/JQjaye66uhu
- d8mQ==
-X-Gm-Message-State: AOAM530Yu9KvuOg3wk4sQpv6GigVfnVSL0+rVTiXNpAmtZ/6qsAT1O7Q
- JPwtMNwYemoWXX52U4phgMLqDOZQHh0=
-X-Google-Smtp-Source: ABdhPJxqtyCkFdufHDekeuhCqWrE08Px7391PietRFnTEt4dlFECQEGki4iWZXp1/0HZZUGVbBPkmg==
-X-Received: by 2002:a05:600c:19cf:: with SMTP id
- u15mr8645258wmq.7.1616690449958; 
- Thu, 25 Mar 2021 09:40:49 -0700 (PDT)
+ bh=ebtKj0t5fFS91geJ2HeaRMHYkRbLC4QYHc0p43CsX9w=;
+ b=BB4n0UdfYrR5apTKh5EnIvbjjxxEZX0zsMVQx8pQ/QeEUi7XousNONOQtC6PzF6g5W
+ X14ZGvP9K6pZdrVxtTWYTKEoNKjwFSAEWstGhZtKxZXQajlANZYjf2jd8gIbPVw4kWYS
+ 18c6TSolfrGGMvic2a0cRomZnnhNuvzqJTqD/nUTzHUR2tyT2UoR5jfjE73/5dXm0v2q
+ ok4vj++RWTDZo15jfG14uSjnG8bWU0H7Cvwm/XqyU8Rg22c5JuXlFZd3QMZpzoK6zOd2
+ /zN3WuqI1zgeTHAxhQghzIyJzLdKAsmCOKXw+ovTh9qJ0h0ZU/lWrmz8MlSLryFGTwUK
+ CBrA==
+X-Gm-Message-State: AOAM5313Nf0Wa3VRZyO5Kr0hkunY76XuudKQ2XC/XOf8FFlKOOna+KYw
+ I7IZ9G8C0FypXn+mfLJdrUYBZ19T/48=
+X-Google-Smtp-Source: ABdhPJwXZVteXJzRKOqCn0xLNhJis1zZd2vpns53KRLu5+NKaqUR9+JdNb2fkmzo8LrehgxliH3uFA==
+X-Received: by 2002:adf:e7c2:: with SMTP id e2mr10446296wrn.338.1616690452300; 
+ Thu, 25 Mar 2021 09:40:52 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id m17sm8496286wrx.92.2021.03.25.09.40.48
+ by smtp.gmail.com with ESMTPSA id l9sm6546359wmq.2.2021.03.25.09.40.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 25 Mar 2021 09:40:48 -0700 (PDT)
+ Thu, 25 Mar 2021 09:40:51 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>,
  Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
  Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH v8 02/13] clk: tegra: Don't enable PLLE HW sequencer at init
-Date: Thu, 25 Mar 2021 17:40:46 +0100
-Message-Id: <20210325164057.793954-3-thierry.reding@gmail.com>
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: [PATCH v8 03/13] phy: tegra: xusb: Move usb3 port init for Tegra210
+Date: Thu, 25 Mar 2021 17:40:47 +0100
+Message-Id: <20210325164057.793954-4-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20210325164057.793954-1-thierry.reding@gmail.com>
 References: <20210325164057.793954-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210325_164051_451215_98CC49A3 
-X-CRM114-Status: UNSURE (   9.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210325_164053_277923_94386FCA 
+X-CRM114-Status: GOOD (  22.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,41 +104,487 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: JC Kuo <jckuo@nvidia.com>
 
-PLLE hardware power sequencer references PEX/SATA UPHY PLL hardware
-power sequencers' output to enable/disable PLLE. PLLE hardware power
-sequencer has to be enabled only after PEX/SATA UPHY PLL's sequencers
-are enabled.
+The programming sequence in tegra210_usb3_port_enable() is required
+for both cold boot and SC7 exit, and must be performed only after
+PEX/SATA UPHY is initialized. Therefore, this commit moves the
+programming sequence to tegra210_usb3_phy_power_on(). PCIE/SATA phy
+.power_on() stub will invoke tegra210_usb3_phy_power_on() if the lane
+is assigned for XUSB super-speed.
 
 Signed-off-by: JC Kuo <jckuo@nvidia.com>
-Acked-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/clk/tegra/clk-pll.c | 12 ------------
- 1 file changed, 12 deletions(-)
+ drivers/phy/tegra/xusb-tegra210.c | 316 +++++++++++++++++-------------
+ drivers/phy/tegra/xusb.c          |   4 +-
+ drivers/phy/tegra/xusb.h          |   4 +-
+ 3 files changed, 180 insertions(+), 144 deletions(-)
 
-diff --git a/drivers/clk/tegra/clk-pll.c b/drivers/clk/tegra/clk-pll.c
-index c5cc0a2dac6f..0193cebe8c5a 100644
---- a/drivers/clk/tegra/clk-pll.c
-+++ b/drivers/clk/tegra/clk-pll.c
-@@ -2515,18 +2515,6 @@ static int clk_plle_tegra210_enable(struct clk_hw *hw)
- 	pll_writel(val, PLLE_SS_CTRL, pll);
- 	udelay(1);
+diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
+index 66bd4613835b..4dc9286ec1b8 100644
+--- a/drivers/phy/tegra/xusb-tegra210.c
++++ b/drivers/phy/tegra/xusb-tegra210.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ /*
+- * Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2014-2020, NVIDIA CORPORATION.  All rights reserved.
+  * Copyright (C) 2015 Google, Inc.
+  */
  
--	val = pll_readl_misc(pll);
--	val &= ~PLLE_MISC_IDDQ_SW_CTRL;
--	pll_writel_misc(val, pll);
+@@ -256,6 +256,32 @@ to_tegra210_xusb_padctl(struct tegra_xusb_padctl *padctl)
+ 	return container_of(padctl, struct tegra210_xusb_padctl, base);
+ }
+ 
++static const struct tegra_xusb_lane_map tegra210_usb3_map[] = {
++	{ 0, "pcie", 6 },
++	{ 1, "pcie", 5 },
++	{ 2, "pcie", 0 },
++	{ 2, "pcie", 3 },
++	{ 3, "pcie", 4 },
++	{ 3, "sata", 0 },
++	{ 0, NULL,   0 }
++};
++
++static int tegra210_usb3_lane_map(struct tegra_xusb_lane *lane)
++{
++	const struct tegra_xusb_lane_map *map;
++
++	for (map = tegra210_usb3_map; map->type; map++) {
++		if (map->index == lane->index &&
++		    strcmp(map->type, lane->pad->soc->name) == 0) {
++			dev_dbg(lane->pad->padctl->dev, "lane = %s map to port = usb3-%d\n",
++				lane->pad->soc->lanes[lane->index].name, map->port);
++			return map->port;
++		}
++	}
++
++	return -EINVAL;
++}
++
+ /* must be called under padctl->lock */
+ static int tegra210_pex_uphy_enable(struct tegra_xusb_padctl *padctl)
+ {
+@@ -470,19 +496,14 @@ static void tegra210_pex_uphy_disable(struct tegra_xusb_padctl *padctl)
+ {
+ 	struct tegra_xusb_pcie_pad *pcie = to_pcie_pad(padctl->pcie);
+ 
+-	mutex_lock(&padctl->lock);
 -
--	val = pll_readl(pll->params->aux_reg, pll);
--	val |= (PLLE_AUX_USE_LOCKDET | PLLE_AUX_SS_SEQ_INCLUDE);
--	val &= ~(PLLE_AUX_ENABLE_SWCTL | PLLE_AUX_SS_SWCTL);
--	pll_writel(val, pll->params->aux_reg, pll);
--	udelay(1);
--	val |= PLLE_AUX_SEQ_ENABLE;
--	pll_writel(val, pll->params->aux_reg, pll);
+ 	if (WARN_ON(pcie->enable == 0))
+-		goto unlock;
++		return;
+ 
+ 	if (--pcie->enable > 0)
+-		goto unlock;
++		return;
+ 
+ 	reset_control_assert(pcie->rst);
+ 	clk_disable_unprepare(pcie->pll);
 -
- out:
- 	if (pll->lock)
- 		spin_unlock_irqrestore(pll->lock, flags);
+-unlock:
+-	mutex_unlock(&padctl->lock);
+ }
+ 
+ /* must be called under padctl->lock */
+@@ -712,19 +733,14 @@ static void tegra210_sata_uphy_disable(struct tegra_xusb_padctl *padctl)
+ {
+ 	struct tegra_xusb_sata_pad *sata = to_sata_pad(padctl->sata);
+ 
+-	mutex_lock(&padctl->lock);
+-
+ 	if (WARN_ON(sata->enable == 0))
+-		goto unlock;
++		return;
+ 
+ 	if (--sata->enable > 0)
+-		goto unlock;
++		return;
+ 
+ 	reset_control_assert(sata->rst);
+ 	clk_disable_unprepare(sata->pll);
+-
+-unlock:
+-	mutex_unlock(&padctl->lock);
+ }
+ 
+ static int tegra210_xusb_padctl_enable(struct tegra_xusb_padctl *padctl)
+@@ -1599,6 +1615,128 @@ static const struct tegra_xusb_lane_soc tegra210_pcie_lanes[] = {
+ 	TEGRA210_LANE("pcie-6", 0x028, 24, 0x3, pcie),
+ };
+ 
++static struct tegra_xusb_usb3_port *
++tegra210_lane_to_usb3_port(struct tegra_xusb_lane *lane)
++{
++	int port;
++
++	if (!lane || !lane->pad || !lane->pad->padctl)
++		return NULL;
++
++	port = tegra210_usb3_lane_map(lane);
++	if (port < 0)
++		return NULL;
++
++	return tegra_xusb_find_usb3_port(lane->pad->padctl, port);
++}
++
++static int tegra210_usb3_phy_power_on(struct phy *phy)
++{
++	struct device *dev = &phy->dev;
++	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
++	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra_xusb_usb3_port *usb3 = tegra210_lane_to_usb3_port(lane);
++	unsigned int index;
++	u32 value;
++
++	if (!usb3) {
++		dev_err(dev, "no USB3 port found for lane %u\n", lane->index);
++		return -ENODEV;
++	}
++
++	index = usb3->base.index;
++
++	value = padctl_readl(padctl, XUSB_PADCTL_SS_PORT_MAP);
++
++	if (!usb3->internal)
++		value &= ~XUSB_PADCTL_SS_PORT_MAP_PORTX_INTERNAL(index);
++	else
++		value |= XUSB_PADCTL_SS_PORT_MAP_PORTX_INTERNAL(index);
++
++	value &= ~XUSB_PADCTL_SS_PORT_MAP_PORTX_MAP_MASK(index);
++	value |= XUSB_PADCTL_SS_PORT_MAP_PORTX_MAP(index, usb3->port);
++	padctl_writel(padctl, value, XUSB_PADCTL_SS_PORT_MAP);
++
++	value = padctl_readl(padctl, XUSB_PADCTL_UPHY_USB3_PADX_ECTL1(index));
++	value &= ~(XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_MASK <<
++		   XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_SHIFT);
++	value |= XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_VAL <<
++		 XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_SHIFT;
++	padctl_writel(padctl, value, XUSB_PADCTL_UPHY_USB3_PADX_ECTL1(index));
++
++	value = padctl_readl(padctl, XUSB_PADCTL_UPHY_USB3_PADX_ECTL2(index));
++	value &= ~(XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_MASK <<
++		   XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_SHIFT);
++	value |= XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_VAL <<
++		 XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_SHIFT;
++	padctl_writel(padctl, value, XUSB_PADCTL_UPHY_USB3_PADX_ECTL2(index));
++
++	padctl_writel(padctl, XUSB_PADCTL_UPHY_USB3_PAD_ECTL3_RX_DFE_VAL,
++		      XUSB_PADCTL_UPHY_USB3_PADX_ECTL3(index));
++
++	value = padctl_readl(padctl, XUSB_PADCTL_UPHY_USB3_PADX_ECTL4(index));
++	value &= ~(XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_MASK <<
++		   XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_SHIFT);
++	value |= XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_VAL <<
++		 XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_SHIFT;
++	padctl_writel(padctl, value, XUSB_PADCTL_UPHY_USB3_PADX_ECTL4(index));
++
++	padctl_writel(padctl, XUSB_PADCTL_UPHY_USB3_PAD_ECTL6_RX_EQ_CTRL_H_VAL,
++		      XUSB_PADCTL_UPHY_USB3_PADX_ECTL6(index));
++
++	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
++	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_VCORE_DOWN(index);
++	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
++
++	usleep_range(100, 200);
++
++	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
++	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN_EARLY(index);
++	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
++
++	usleep_range(100, 200);
++
++	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
++	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN(index);
++	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
++
++	return 0;
++}
++
++static int tegra210_usb3_phy_power_off(struct phy *phy)
++{
++	struct device *dev = &phy->dev;
++	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
++	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra_xusb_usb3_port *usb3 = tegra210_lane_to_usb3_port(lane);
++	unsigned int index;
++	u32 value;
++
++	if (!usb3) {
++		dev_err(dev, "no USB3 port found for lane %u\n", lane->index);
++		return -ENODEV;
++	}
++
++	index = usb3->base.index;
++
++	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
++	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN_EARLY(index);
++	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
++
++	usleep_range(100, 200);
++
++	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
++	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN(index);
++	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
++
++	usleep_range(250, 350);
++
++	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
++	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_VCORE_DOWN(index);
++	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
++
++	return 0;
++}
+ static struct tegra_xusb_lane *
+ tegra210_pcie_lane_probe(struct tegra_xusb_pad *pad, struct device_node *np,
+ 			 unsigned int index)
+@@ -1668,6 +1806,9 @@ static int tegra210_pcie_phy_power_on(struct phy *phy)
+ 	value |= XUSB_PADCTL_USB3_PAD_MUX_PCIE_IDDQ_DISABLE(lane->index);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB3_PAD_MUX);
+ 
++	if (tegra_xusb_lane_check(lane, "usb3-ss"))
++		err = tegra210_usb3_phy_power_on(phy);
++
+ unlock:
+ 	mutex_unlock(&padctl->lock);
+ 	return err;
+@@ -1677,15 +1818,22 @@ static int tegra210_pcie_phy_power_off(struct phy *phy)
+ {
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+ 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	int err = 0;
+ 	u32 value;
+ 
++	mutex_lock(&padctl->lock);
++
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB3_PAD_MUX);
+ 	value &= ~XUSB_PADCTL_USB3_PAD_MUX_PCIE_IDDQ_DISABLE(lane->index);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB3_PAD_MUX);
+ 
+ 	tegra210_pex_uphy_disable(padctl);
+ 
+-	return 0;
++	if (tegra_xusb_lane_check(lane, "usb3-ss"))
++		err = tegra210_usb3_phy_power_off(phy);
++
++	mutex_unlock(&padctl->lock);
++	return err;
+ }
+ 
+ static const struct phy_ops tegra210_pcie_phy_ops = {
+@@ -1839,6 +1987,9 @@ static int tegra210_sata_phy_power_on(struct phy *phy)
+ 	value |= XUSB_PADCTL_USB3_PAD_MUX_SATA_IDDQ_DISABLE(lane->index);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB3_PAD_MUX);
+ 
++	if (tegra_xusb_lane_check(lane, "usb3-ss"))
++		err = tegra210_usb3_phy_power_on(phy);
++
+ unlock:
+ 	mutex_unlock(&padctl->lock);
+ 	return err;
+@@ -1848,15 +1999,22 @@ static int tegra210_sata_phy_power_off(struct phy *phy)
+ {
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+ 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	int err = 0;
+ 	u32 value;
+ 
++	mutex_lock(&padctl->lock);
++
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB3_PAD_MUX);
+ 	value &= ~XUSB_PADCTL_USB3_PAD_MUX_SATA_IDDQ_DISABLE(lane->index);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB3_PAD_MUX);
+ 
+ 	tegra210_sata_uphy_disable(lane->pad->padctl);
+ 
+-	return 0;
++	if (tegra_xusb_lane_check(lane, "usb3-ss"))
++		err = tegra210_usb3_phy_power_off(phy);
++
++	mutex_unlock(&padctl->lock);
++	return err;
+ }
+ 
+ static const struct phy_ops tegra210_sata_phy_ops = {
+@@ -1984,137 +2142,13 @@ static const struct tegra_xusb_port_ops tegra210_hsic_port_ops = {
+ 
+ static int tegra210_usb3_port_enable(struct tegra_xusb_port *port)
+ {
+-	struct tegra_xusb_usb3_port *usb3 = to_usb3_port(port);
+-	struct tegra_xusb_padctl *padctl = port->padctl;
+-	struct tegra_xusb_lane *lane = usb3->base.lane;
+-	unsigned int index = port->index;
+-	u32 value;
+-	int err;
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_SS_PORT_MAP);
+-
+-	if (!usb3->internal)
+-		value &= ~XUSB_PADCTL_SS_PORT_MAP_PORTX_INTERNAL(index);
+-	else
+-		value |= XUSB_PADCTL_SS_PORT_MAP_PORTX_INTERNAL(index);
+-
+-	value &= ~XUSB_PADCTL_SS_PORT_MAP_PORTX_MAP_MASK(index);
+-	value |= XUSB_PADCTL_SS_PORT_MAP_PORTX_MAP(index, usb3->port);
+-	padctl_writel(padctl, value, XUSB_PADCTL_SS_PORT_MAP);
+-
+-	/*
+-	 * TODO: move this code into the PCIe/SATA PHY ->power_on() callbacks
+-	 * and conditionalize based on mux function? This seems to work, but
+-	 * might not be the exact proper sequence.
+-	 */
+-	err = regulator_enable(usb3->supply);
+-	if (err < 0)
+-		return err;
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_UPHY_USB3_PADX_ECTL1(index));
+-	value &= ~(XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_MASK <<
+-		   XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_SHIFT);
+-	value |= XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_VAL <<
+-		 XUSB_PADCTL_UPHY_USB3_PAD_ECTL1_TX_TERM_CTRL_SHIFT;
+-	padctl_writel(padctl, value, XUSB_PADCTL_UPHY_USB3_PADX_ECTL1(index));
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_UPHY_USB3_PADX_ECTL2(index));
+-	value &= ~(XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_MASK <<
+-		   XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_SHIFT);
+-	value |= XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_VAL <<
+-		 XUSB_PADCTL_UPHY_USB3_PAD_ECTL2_RX_CTLE_SHIFT;
+-	padctl_writel(padctl, value, XUSB_PADCTL_UPHY_USB3_PADX_ECTL2(index));
+-
+-	padctl_writel(padctl, XUSB_PADCTL_UPHY_USB3_PAD_ECTL3_RX_DFE_VAL,
+-		      XUSB_PADCTL_UPHY_USB3_PADX_ECTL3(index));
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_UPHY_USB3_PADX_ECTL4(index));
+-	value &= ~(XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_MASK <<
+-		   XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_SHIFT);
+-	value |= XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_VAL <<
+-		 XUSB_PADCTL_UPHY_USB3_PAD_ECTL4_RX_CDR_CTRL_SHIFT;
+-	padctl_writel(padctl, value, XUSB_PADCTL_UPHY_USB3_PADX_ECTL4(index));
+-
+-	padctl_writel(padctl, XUSB_PADCTL_UPHY_USB3_PAD_ECTL6_RX_EQ_CTRL_H_VAL,
+-		      XUSB_PADCTL_UPHY_USB3_PADX_ECTL6(index));
+-
+-	if (lane->pad == padctl->sata)
+-		err = tegra210_sata_uphy_enable(padctl, true);
+-	else
+-		err = tegra210_pex_uphy_enable(padctl);
+-
+-	if (err) {
+-		dev_err(&port->dev, "%s: failed to enable UPHY: %d\n",
+-			__func__, err);
+-		return err;
+-	}
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+-	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_VCORE_DOWN(index);
+-	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+-
+-	usleep_range(100, 200);
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+-	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN_EARLY(index);
+-	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+-
+-	usleep_range(100, 200);
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+-	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN(index);
+-	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+-
+ 	return 0;
+ }
+ 
+ static void tegra210_usb3_port_disable(struct tegra_xusb_port *port)
+ {
+-	struct tegra_xusb_usb3_port *usb3 = to_usb3_port(port);
+-	struct tegra_xusb_padctl *padctl = port->padctl;
+-	struct tegra_xusb_lane *lane = port->lane;
+-	unsigned int index = port->index;
+-	u32 value;
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+-	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN_EARLY(index);
+-	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+-
+-	usleep_range(100, 200);
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+-	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN(index);
+-	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+-
+-	usleep_range(250, 350);
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+-	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_VCORE_DOWN(index);
+-	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+-
+-	if (lane->pad == padctl->sata)
+-		tegra210_sata_uphy_disable(padctl);
+-	else
+-		tegra210_pex_uphy_disable(padctl);
+-
+-	regulator_disable(usb3->supply);
+-
+-	value = padctl_readl(padctl, XUSB_PADCTL_SS_PORT_MAP);
+-	value &= ~XUSB_PADCTL_SS_PORT_MAP_PORTX_MAP_MASK(index);
+-	value |= XUSB_PADCTL_SS_PORT_MAP_PORTX_MAP(index, 0x7);
+-	padctl_writel(padctl, value, XUSB_PADCTL_SS_PORT_MAP);
+ }
+ 
+-static const struct tegra_xusb_lane_map tegra210_usb3_map[] = {
+-	{ 0, "pcie", 6 },
+-	{ 1, "pcie", 5 },
+-	{ 2, "pcie", 0 },
+-	{ 2, "pcie", 3 },
+-	{ 3, "pcie", 4 },
+-	{ 3, "pcie", 4 },
+-	{ 0, NULL,   0 }
+-};
+-
+ static struct tegra_xusb_lane *
+ tegra210_usb3_port_map(struct tegra_xusb_port *port)
+ {
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 941006f503e4..3110aafa8cf6 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ /*
+- * Copyright (c) 2014-2016, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2014-2020, NVIDIA CORPORATION.  All rights reserved.
+  */
+ 
+ #include <linux/delay.h>
+@@ -376,7 +376,7 @@ static int tegra_xusb_setup_pads(struct tegra_xusb_padctl *padctl)
+ 	return 0;
+ }
+ 
+-static bool tegra_xusb_lane_check(struct tegra_xusb_lane *lane,
++bool tegra_xusb_lane_check(struct tegra_xusb_lane *lane,
+ 				  const char *function)
+ {
+ 	const char *func = lane->soc->funcs[lane->function];
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index ea35af747066..37a5550a84ac 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0-only */
+ /*
+- * Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
++ * Copyright (c) 2014-2020, NVIDIA CORPORATION.  All rights reserved.
+  * Copyright (c) 2015, Google Inc.
+  */
+ 
+@@ -128,6 +128,8 @@ struct tegra_xusb_lane_ops {
+ 	void (*remove)(struct tegra_xusb_lane *lane);
+ };
+ 
++bool tegra_xusb_lane_check(struct tegra_xusb_lane *lane, const char *function);
++
+ /*
+  * pads
+  */
 -- 
 2.30.2
 
