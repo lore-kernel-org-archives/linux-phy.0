@@ -2,75 +2,72 @@ Return-Path: <SRS0=4oE9=IX=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-19.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=3.4.0
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 25271C433DB
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 18:06:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E8742C433C1
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 20:26:32 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 68C9D61A24
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 18:06:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 68C9D61A24
+	by mail.kernel.org (Postfix) with ESMTPS id 4BDE461A3D
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Mar 2021 20:26:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4BDE461A3D
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BBbz2p11rS4E0oHY0C/ogFQEKsHncbbCWVBd2do66k0=; b=KozcVXLk1RcWu6wlV846Pc1uk
-	EMAc+ak61hSGKDgZE9Gzi6pheBynvVRS91TcoZjB5QzSX0znF6nRj2oVk5XnHDfwlhvx7D0dveVQC
-	iZRmgt8kM7M9l33q700uguRnx7BdNGFEn7zfT0GakvDPOXU0tjjAYNx5sqjl0tvBDpJh2tbEr9MhL
-	mXN1hnAeEqhfuxKPsA+LBECFkDFUwD8DS31qhVdRSZ6s7vTHmwDFufqTnR9iZVXxg7TcQONT8TcVI
-	FA1tYCGs2hUUkLDELkCRuzh/Bw/ed4kH010rs/6YjqPLKlVD6OfEPAZYQhmY45eJVyZvgOhCjaPYa
-	OA5SRARVQ==;
+	 bh=c0vo/DfF9TkCPHQdK19gUN3bGOS1uAvnhRRkZEOCkVM=; b=okIXyhGdN2gisE+xOPYK/8zzL
+	ejxEivOAc8P23k6XPp7h/F9fmdicKCU4xM6X0eGhfAFE3BxVF+D4OeIqMt+LbuG7QzpgDmcfPflYO
+	/yDX4fBIL962+JbW36yrp+1cMjg7QZuOoj/WeMFMGt04QVcCxrO+KSlGEmTCw4Bzs2R/qjwJDtySp
+	NPb7OBjXSpZyvywPWtj/sVHEB2MbKeWCZwok1OqlO78SGSq8j1MMH4JIwluZIYLTd5KRDkD2NqcCj
+	VY3g0z4KVxXCr/RwstFwQZ4064lZJ4KH18LzmdjwYUkDrBL+DBsLrC0BCXRZ5N04ZAoKotXbyjSBW
+	pH3XIVCVw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lPUN7-001z9D-Uy; Thu, 25 Mar 2021 18:06:18 +0000
+	id 1lPWYo-0029Um-Nu; Thu, 25 Mar 2021 20:26:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lPUMc-001z5W-Tn
- for linux-phy@lists.infradead.org; Thu, 25 Mar 2021 18:05:53 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 1A01561A3D;
- Thu, 25 Mar 2021 18:05:45 +0000 (UTC)
+ id 1lPWYj-0029U7-I3
+ for linux-phy@lists.infradead.org; Thu, 25 Mar 2021 20:26:28 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 49F1661A27;
+ Thu, 25 Mar 2021 20:26:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1616695545;
- bh=xRBCw8pSm2i5X8w+SNX0wRQAOZJ0ORdbAYW15mMVEa8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=S4bv6/8mHoJFQuKH6kvttFl1a4VP83iShaj2szVa3mbaSDTN6SWaVpWXsDYxavBh7
- UWWwxIoa9LdQLutIJM3QaKxzjm5ahwgCBXNHLun6eC1vy1XHIroPFqDsfu43srw1lp
- 3Pm8A10YxiQwQB7lHIeD/cgF8KrbCDyX2Kz0Vx1pH8fu+BUeNYi0waTaFZY/o454eh
- cckE5fbBxyPwFMn1CnPfNVQUbS87t3Wmwmxkryp5f9VGZJcCSki1PeVOC7bAJc0KWE
- 6DLusdjkgYskL3+ZAXxIDxUT+vxpLHmmC/h78fy52jQ0mVs+9UHcf29EJH2y98XGGc
- rVU51CECZKA7g==
-Received: by mail.kernel.org with local (Exim 4.94)
- (envelope-from <mchehab@kernel.org>)
- id 1lPUMX-001Mag-Pi; Thu, 25 Mar 2021 19:05:41 +0100
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Alex Dewar <alex.dewar90@gmail.com>, Atul Gopinathan <leoatul12@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Yu Chen <chenyu56@huawei.com>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-staging@lists.linux.dev,
- Rob Herring <robh@kernel.org>
-Subject: [PATCH v5 (RESEND) 1/7] phy: phy-hi3670-usb3: move driver from
- staging into phy
-Date: Thu, 25 Mar 2021 19:05:33 +0100
-Message-Id: <36c31dcdcd49d5a728a1fe4040bbaef5268d7f79.1616695231.git.mchehab+huawei@kernel.org>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <cover.1616695231.git.mchehab+huawei@kernel.org>
-References: <cover.1616695231.git.mchehab+huawei@kernel.org>
+ s=k20201202; t=1616703982;
+ bh=fZXAAEYVQBauK0H+Vz0Emi23PbMvfjDdD63dTv4ZJ7I=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=a2eOgb0Xy5YP2pY3YAqUnJNj9VdZO+652cOfK0y7CBAWHMBXlxAhXLsBg3gfaoP70
+ Ru7optSp75SfF09F8G1mPt2XsZbxD/tmK+yKLKxaovWoCKZ2Id0rgnjUa9EkhZ4I6S
+ NC+XCX3ipPX9oaMVqYHiRuJBrItGPwYUBUOzbGRMXxdPOfDnvUVqoAJC33wngl7r4n
+ yZ8Rx7AzWgBCT+UjSjeiPVm5Ikr4blqTG70o26hzB+KSJZCWicUbEXqpVmpOwT8MWu
+ koOykR2EM4nCWF8R/BSfn0jtvkFVdAyyqU4iQD3zF7kt+M4ehGnPbBftF3F/wUoG50
+ GpfqOsAbTVg0Q==
+Date: Thu, 25 Mar 2021 13:26:16 -0700
+From: Nathan Chancellor <nathan@kernel.org>
+To: Thierry Reding <thierry.reding@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
+ Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+ clang-built-linux@googlegroups.com
+Subject: Re: [PATCH v8 09/13] phy: tegra: xusb: Add wake/sleepwalk for Tegra210
+Message-ID: <20210325202616.xgjkdg7zev6apofe@archlinux-ax161>
+References: <20210325164057.793954-1-thierry.reding@gmail.com>
+ <20210325164057.793954-10-thierry.reding@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210325164057.793954-10-thierry.reding@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210325_180547_498673_1A84149F 
-X-CRM114-Status: GOOD (  23.77  )
+X-CRM114-CacheID: sfid-20210325_202626_033572_0B1FBF98 
+X-CRM114-Status: GOOD (  21.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,1630 +84,1073 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The phy USB3 driver for Hisilicon 970 (hi3670) is ready
-for mainstream. Mode it from staging into the main driver's
-phy/ directory.
+On Thu, Mar 25, 2021 at 05:40:53PM +0100, Thierry Reding wrote:
+> From: JC Kuo <jckuo@nvidia.com>
+> 
+> This commit implements Tegra210 XUSB PADCTL wake and sleepwalk
+> routines. Sleepwalk logic is in PMC (always-on) hardware block.
+> PMC driver provides managed access to the sleepwalk registers
+> via regmap framework.
+> 
+> Signed-off-by: JC Kuo <jckuo@nvidia.com>
+> Signed-off-by: Thierry Reding <treding@nvidia.com>
+> ---
+>  drivers/phy/tegra/xusb-tegra210.c | 930 ++++++++++++++++++++++++++++++
+>  1 file changed, 930 insertions(+)
+> 
+> diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
+> index b038d032fea1..8af73ba78ad7 100644
+> --- a/drivers/phy/tegra/xusb-tegra210.c
+> +++ b/drivers/phy/tegra/xusb-tegra210.c
+> @@ -16,6 +16,8 @@
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/reset.h>
+>  #include <linux/slab.h>
+> +#include <linux/regmap.h>
+> +#include <linux/of_platform.h>
+>  
+>  #include <soc/tegra/fuse.h>
+>  
+> @@ -52,6 +54,20 @@
+>  #define XUSB_PADCTL_SS_PORT_MAP_PORTX_MAP(x, v) (((v) & 0x7) << ((x) * 5))
+>  #define XUSB_PADCTL_SS_PORT_MAP_PORT_DISABLED 0x7
+>  
+> +#define XUSB_PADCTL_ELPG_PROGRAM_0 0x20
+> +#define   USB2_PORT_WAKE_INTERRUPT_ENABLE(x)      BIT((x))
+> +#define   USB2_PORT_WAKEUP_EVENT(x)               BIT((x) + 7)
+> +#define   SS_PORT_WAKE_INTERRUPT_ENABLE(x)        BIT((x) + 14)
+> +#define   SS_PORT_WAKEUP_EVENT(x)                 BIT((x) + 21)
+> +#define   USB2_HSIC_PORT_WAKE_INTERRUPT_ENABLE(x) BIT((x) + 28)
+> +#define   USB2_HSIC_PORT_WAKEUP_EVENT(x)          BIT((x) + 30)
+> +#define   ALL_WAKE_EVENTS ( \
+> +		USB2_PORT_WAKEUP_EVENT(0) | USB2_PORT_WAKEUP_EVENT(1) | \
+> +		USB2_PORT_WAKEUP_EVENT(2) | USB2_PORT_WAKEUP_EVENT(3) | \
+> +		SS_PORT_WAKEUP_EVENT(0) | SS_PORT_WAKEUP_EVENT(1) | \
+> +		SS_PORT_WAKEUP_EVENT(2) | SS_PORT_WAKEUP_EVENT(3) | \
+> +		USB2_HSIC_PORT_WAKEUP_EVENT(0))
+> +
+>  #define XUSB_PADCTL_ELPG_PROGRAM1 0x024
+>  #define XUSB_PADCTL_ELPG_PROGRAM1_AUX_MUX_LP0_VCORE_DOWN (1 << 31)
+>  #define XUSB_PADCTL_ELPG_PROGRAM1_AUX_MUX_LP0_CLAMP_EN_EARLY (1 << 30)
+> @@ -90,6 +106,8 @@
+>  #define XUSB_PADCTL_USB2_OTG_PAD_CTL1_PD_DR (1 << 2)
+>  #define XUSB_PADCTL_USB2_OTG_PAD_CTL1_PD_DISC_OVRD (1 << 1)
+>  #define XUSB_PADCTL_USB2_OTG_PAD_CTL1_PD_CHRP_OVRD (1 << 0)
+> +#define   RPD_CTRL(x)                      (((x) & 0x1f) << 26)
+> +#define   RPD_CTRL_VALUE(x)                (((x) >> 26) & 0x1f)
+>  
+>  #define XUSB_PADCTL_USB2_BIAS_PAD_CTL0 0x284
+>  #define XUSB_PADCTL_USB2_BIAS_PAD_CTL0_PD (1 << 11)
+> @@ -108,6 +126,8 @@
+>  #define XUSB_PADCTL_USB2_BIAS_PAD_CTL1_TRK_START_TIMER_SHIFT 12
+>  #define XUSB_PADCTL_USB2_BIAS_PAD_CTL1_TRK_START_TIMER_MASK 0x7f
+>  #define XUSB_PADCTL_USB2_BIAS_PAD_CTL1_TRK_START_TIMER_VAL 0x1e
+> +#define   TCTRL_VALUE(x)                (((x) & 0x3f) >> 0)
+> +#define   PCTRL_VALUE(x)                (((x) >> 6) & 0x3f)
+>  
+>  #define XUSB_PADCTL_HSIC_PADX_CTL0(x) (0x300 + (x) * 0x20)
+>  #define XUSB_PADCTL_HSIC_PAD_CTL0_RPU_STROBE (1 << 18)
+> @@ -251,16 +271,161 @@
+>  #define XUSB_PADCTL_USB2_VBUS_ID_OVERRIDE_FLOATING 8
+>  #define XUSB_PADCTL_USB2_VBUS_ID_OVERRIDE_GROUNDED 0
+>  
+> +/* USB2 SLEEPWALK registers */
+> +#define UTMIP(_port, _offset1, _offset2) \
+> +		(((_port) <= 2) ? (_offset1) : (_offset2))
+> +
+> +#define PMC_UTMIP_UHSIC_SLEEP_CFG(x)	UTMIP(x, 0x1fc, 0x4d0)
+> +#define   UTMIP_MASTER_ENABLE(x)		UTMIP(x, BIT(8 * (x)), BIT(0))
+> +#define   UTMIP_FSLS_USE_PMC(x)			UTMIP(x, BIT(8 * (x) + 1), \
+> +							BIT(1))
+> +#define   UTMIP_PCTRL_USE_PMC(x)		UTMIP(x, BIT(8 * (x) + 2), \
+> +							BIT(2))
+> +#define   UTMIP_TCTRL_USE_PMC(x)		UTMIP(x, BIT(8 * (x) + 3), \
+> +							BIT(3))
+> +#define   UTMIP_WAKE_VAL(_port, _value)		(((_value) & 0xf) << \
+> +					(UTMIP(_port, 8 * (_port) + 4, 4)))
+> +#define   UTMIP_WAKE_VAL_NONE(_port)		UTMIP_WAKE_VAL(_port, 12)
+> +#define   UTMIP_WAKE_VAL_ANY(_port)		UTMIP_WAKE_VAL(_port, 15)
+> +
+> +#define PMC_UTMIP_UHSIC_SLEEP_CFG1	(0x4d0)
+> +#define   UTMIP_RPU_SWITC_LOW_USE_PMC_PX(x)	BIT((x) + 8)
+> +#define   UTMIP_RPD_CTRL_USE_PMC_PX(x)		BIT((x) + 16)
+> +
+> +#define PMC_UTMIP_MASTER_CONFIG		(0x274)
+> +#define   UTMIP_PWR(x)				UTMIP(x, BIT(x), BIT(4))
+> +#define   UHSIC_PWR(x)				BIT(3)
+> +
+> +#define PMC_USB_DEBOUNCE_DEL		(0xec)
+> +#define   DEBOUNCE_VAL(x)			(((x) & 0xffff) << 0)
+> +#define   UTMIP_LINE_DEB_CNT(x)			(((x) & 0xf) << 16)
+> +#define   UHSIC_LINE_DEB_CNT(x)			(((x) & 0xf) << 20)
+> +
+> +#define PMC_UTMIP_UHSIC_FAKE(x)		UTMIP(x, 0x218, 0x294)
+> +#define   UTMIP_FAKE_USBOP_VAL(x)		UTMIP(x, BIT(4 * (x)), BIT(8))
+> +#define   UTMIP_FAKE_USBON_VAL(x)		UTMIP(x, BIT(4 * (x) + 1), \
+> +							BIT(9))
+> +#define   UTMIP_FAKE_USBOP_EN(x)		UTMIP(x, BIT(4 * (x) + 2), \
+> +							BIT(10))
+> +#define   UTMIP_FAKE_USBON_EN(x)		UTMIP(x, BIT(4 * (x) + 3), \
+> +							BIT(11))
+> +
+> +#define PMC_UTMIP_UHSIC_SLEEPWALK_CFG(x)	UTMIP(x, 0x200, 0x288)
+> +#define   UTMIP_LINEVAL_WALK_EN(x)		UTMIP(x, BIT(8 * (x) + 7), \
+> +							BIT(15))
+> +
+> +#define PMC_USB_AO			(0xf0)
+> +#define   USBOP_VAL_PD(x)			UTMIP(x, BIT(4 * (x)), BIT(20))
+> +#define   USBON_VAL_PD(x)			UTMIP(x, BIT(4 * (x) + 1), \
+> +							BIT(21))
+> +#define   STROBE_VAL_PD(x)			BIT(12)
+> +#define   DATA0_VAL_PD(x)			BIT(13)
+> +#define   DATA1_VAL_PD				BIT(24)
+> +
+> +#define PMC_UTMIP_UHSIC_SAVED_STATE(x)	UTMIP(x, 0x1f0, 0x280)
+> +#define   SPEED(_port, _value)			(((_value) & 0x3) << \
+> +						(UTMIP(_port, 8 * (_port), 8)))
+> +#define   UTMI_HS(_port)			SPEED(_port, 0)
+> +#define   UTMI_FS(_port)			SPEED(_port, 1)
+> +#define   UTMI_LS(_port)			SPEED(_port, 2)
+> +#define   UTMI_RST(_port)			SPEED(_port, 3)
+> +
+> +#define PMC_UTMIP_UHSIC_TRIGGERS		(0x1ec)
+> +#define   UTMIP_CLR_WALK_PTR(x)			UTMIP(x, BIT(x), BIT(16))
+> +#define   UTMIP_CAP_CFG(x)			UTMIP(x, BIT((x) + 4), BIT(17))
+> +#define   UTMIP_CLR_WAKE_ALARM(x)		UTMIP(x, BIT((x) + 12), \
+> +							BIT(19))
+> +#define   UHSIC_CLR_WALK_PTR			BIT(3)
+> +#define   UHSIC_CLR_WAKE_ALARM			BIT(15)
+> +
+> +#define PMC_UTMIP_SLEEPWALK_PX(x)	UTMIP(x, 0x204 + (4 * (x)), \
+> +							0x4e0)
+> +/* phase A */
+> +#define   UTMIP_USBOP_RPD_A			BIT(0)
+> +#define   UTMIP_USBON_RPD_A			BIT(1)
+> +#define   UTMIP_AP_A				BIT(4)
+> +#define   UTMIP_AN_A				BIT(5)
+> +#define   UTMIP_HIGHZ_A				BIT(6)
+> +/* phase B */
+> +#define   UTMIP_USBOP_RPD_B			BIT(8)
+> +#define   UTMIP_USBON_RPD_B			BIT(9)
+> +#define   UTMIP_AP_B				BIT(12)
+> +#define   UTMIP_AN_B				BIT(13)
+> +#define   UTMIP_HIGHZ_B				BIT(14)
+> +/* phase C */
+> +#define   UTMIP_USBOP_RPD_C			BIT(16)
+> +#define   UTMIP_USBON_RPD_C			BIT(17)
+> +#define   UTMIP_AP_C				BIT(20)
+> +#define   UTMIP_AN_C				BIT(21)
+> +#define   UTMIP_HIGHZ_C				BIT(22)
+> +/* phase D */
+> +#define   UTMIP_USBOP_RPD_D			BIT(24)
+> +#define   UTMIP_USBON_RPD_D			BIT(25)
+> +#define   UTMIP_AP_D				BIT(28)
+> +#define   UTMIP_AN_D				BIT(29)
+> +#define   UTMIP_HIGHZ_D				BIT(30)
+> +
+> +#define PMC_UTMIP_UHSIC_LINE_WAKEUP	(0x26c)
+> +#define   UTMIP_LINE_WAKEUP_EN(x)		UTMIP(x, BIT(x), BIT(4))
+> +#define   UHSIC_LINE_WAKEUP_EN			BIT(3)
+> +
+> +#define PMC_UTMIP_TERM_PAD_CFG		(0x1f8)
+> +#define   PCTRL_VAL(x)				(((x) & 0x3f) << 1)
+> +#define   TCTRL_VAL(x)				(((x) & 0x3f) << 7)
+> +
+> +#define PMC_UTMIP_PAD_CFGX(x)		(0x4c0 + (4 * (x)))
+> +#define   RPD_CTRL_PX(x)			(((x) & 0x1f) << 22)
+> +
+> +#define PMC_UHSIC_SLEEP_CFG	PMC_UTMIP_UHSIC_SLEEP_CFG(0)
+> +#define   UHSIC_MASTER_ENABLE			BIT(24)
+> +#define   UHSIC_WAKE_VAL(_value)		(((_value) & 0xf) << 28)
+> +#define   UHSIC_WAKE_VAL_SD10			UHSIC_WAKE_VAL(2)
+> +#define   UHSIC_WAKE_VAL_NONE			UHSIC_WAKE_VAL(12)
+> +
+> +#define PMC_UHSIC_FAKE			PMC_UTMIP_UHSIC_FAKE(0)
+> +#define   UHSIC_FAKE_STROBE_VAL			BIT(12)
+> +#define   UHSIC_FAKE_DATA_VAL			BIT(13)
+> +#define   UHSIC_FAKE_STROBE_EN			BIT(14)
+> +#define   UHSIC_FAKE_DATA_EN			BIT(15)
+> +
+> +#define PMC_UHSIC_SAVED_STATE		PMC_UTMIP_UHSIC_SAVED_STATE(0)
+> +#define   UHSIC_MODE(_value)			(((_value) & 0x1) << 24)
+> +#define   UHSIC_HS				UHSIC_MODE(0)
+> +#define   UHSIC_RST				UHSIC_MODE(1)
+> +
+> +#define PMC_UHSIC_SLEEPWALK_CFG		PMC_UTMIP_UHSIC_SLEEPWALK_CFG(0)
+> +#define   UHSIC_WAKE_WALK_EN			BIT(30)
+> +#define   UHSIC_LINEVAL_WALK_EN			BIT(31)
+> +
+> +#define PMC_UHSIC_SLEEPWALK_P0		(0x210)
+> +#define   UHSIC_DATA0_RPD_A			BIT(1)
+> +#define   UHSIC_DATA0_RPU_B			BIT(11)
+> +#define   UHSIC_DATA0_RPU_C			BIT(19)
+> +#define   UHSIC_DATA0_RPU_D			BIT(27)
+> +#define   UHSIC_STROBE_RPU_A			BIT(2)
+> +#define   UHSIC_STROBE_RPD_B			BIT(8)
+> +#define   UHSIC_STROBE_RPD_C			BIT(16)
+> +#define   UHSIC_STROBE_RPD_D			BIT(24)
+> +
+>  struct tegra210_xusb_fuse_calibration {
+>  	u32 hs_curr_level[4];
+>  	u32 hs_term_range_adj;
+>  	u32 rpd_ctrl;
+>  };
+>  
+> +struct tegra210_xusb_padctl_context {
+> +	u32 usb2_pad_mux;
+> +	u32 usb2_port_cap;
+> +	u32 ss_port_map;
+> +	u32 usb3_pad_mux;
+> +};
+> +
+>  struct tegra210_xusb_padctl {
+>  	struct tegra_xusb_padctl base;
+> +	struct regmap *regmap;
+>  
+>  	struct tegra210_xusb_fuse_calibration fuse;
+> +	struct tegra210_xusb_padctl_context context;
+>  };
+>  
+>  static inline struct tegra210_xusb_padctl *
+> @@ -890,6 +1055,663 @@ static int tegra210_hsic_set_idle(struct tegra_xusb_padctl *padctl,
+>  	return 0;
+>  }
+>  
+> +static int tegra210_usb3_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
+> +					      enum usb_device_speed speed)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	int port = tegra210_usb3_lane_map(lane);
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	if (port < 0) {
+> +		dev_err(dev, "invalid usb3 port number\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	dev_dbg(dev, "phy enable sleepwalk usb3 %d\n", port);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+> +	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN_EARLY(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+> +
+> +	usleep_range(100, 200);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+> +	value |= XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+> +
+> +	usleep_range(250, 350);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_usb3_disable_phy_sleepwalk(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	int port = tegra210_usb3_lane_map(lane);
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	if (port < 0) {
+> +		dev_err(dev, "invalid usb3 port number\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	dev_dbg(dev, "phy disable sleepwalk usb3 %d\n", port);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+> +	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN_EARLY(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+> +
+> +	usleep_range(100, 200);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM1);
+> +	value &= ~XUSB_PADCTL_ELPG_PROGRAM1_SSPX_ELPG_CLAMP_EN(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM1);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_usb3_enable_phy_wake(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	int port = tegra210_usb3_lane_map(lane);
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	if (port < 0) {
+> +		dev_err(dev, "invalid usb3 port number\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	dev_dbg(dev, "phy enable wake usb3 %d\n", port);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= SS_PORT_WAKEUP_EVENT(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	usleep_range(10, 20);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= SS_PORT_WAKE_INTERRUPT_ENABLE(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_usb3_disable_phy_wake(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	int port = tegra210_usb3_lane_map(lane);
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	if (port < 0) {
+> +		dev_err(dev, "invalid usb3 port number\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	dev_dbg(dev, "phy disable wake usb3 %d\n", port);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value &= ~SS_PORT_WAKE_INTERRUPT_ENABLE(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	usleep_range(10, 20);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= SS_PORT_WAKEUP_EVENT(port);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static bool tegra210_usb3_phy_remote_wake_detected(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	int index = tegra210_usb3_lane_map(lane);
+> +	u32 value;
+> +
+> +	if (index < 0)
+> +		return false;
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	if ((value & SS_PORT_WAKE_INTERRUPT_ENABLE(index)) && (value & SS_PORT_WAKEUP_EVENT(index)))
+> +		return true;
+> +
+> +	return false;
+> +}
+> +
+> +static int tegra210_utmi_enable_phy_wake(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	unsigned int index = lane->index;
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	dev_dbg(dev, "phy enable wake on usb2 %d\n", index);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= USB2_PORT_WAKEUP_EVENT(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	usleep_range(10, 20);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= USB2_PORT_WAKE_INTERRUPT_ENABLE(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_utmi_disable_phy_wake(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	unsigned int index = lane->index;
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	dev_dbg(dev, "phy disable wake on usb2 %d\n", index);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value &= ~USB2_PORT_WAKE_INTERRUPT_ENABLE(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	usleep_range(10, 20);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= USB2_PORT_WAKEUP_EVENT(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static bool tegra210_utmi_phy_remote_wake_detected(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	unsigned int index = lane->index;
+> +	u32 value;
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	if ((value & USB2_PORT_WAKE_INTERRUPT_ENABLE(index)) &&
+> +	    (value & USB2_PORT_WAKEUP_EVENT(index)))
+> +		return true;
+> +
+> +	return false;
+> +}
+> +
+> +static int tegra210_hsic_enable_phy_wake(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	unsigned int index = lane->index;
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	dev_dbg(dev, "phy enable wake on hsic %d\n", index);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= USB2_HSIC_PORT_WAKEUP_EVENT(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	usleep_range(10, 20);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= USB2_HSIC_PORT_WAKE_INTERRUPT_ENABLE(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_hsic_disable_phy_wake(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	unsigned int index = lane->index;
+> +	struct device *dev = padctl->dev;
+> +	u32 value;
+> +
+> +	dev_dbg(dev, "phy disable wake on hsic %d\n", index);
+> +
+> +	mutex_lock(&padctl->lock);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value &= ~USB2_HSIC_PORT_WAKE_INTERRUPT_ENABLE(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	usleep_range(10, 20);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	value &= ~ALL_WAKE_EVENTS;
+> +	value |= USB2_HSIC_PORT_WAKEUP_EVENT(index);
+> +	padctl_writel(padctl, value, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static bool tegra210_hsic_phy_remote_wake_detected(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	unsigned int index = lane->index;
+> +	u32 value;
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_ELPG_PROGRAM_0);
+> +	if ((value & USB2_HSIC_PORT_WAKE_INTERRUPT_ENABLE(index)) &&
+> +	    (value & USB2_HSIC_PORT_WAKEUP_EVENT(index)))
+> +		return true;
+> +
+> +	return false;
+> +}
+> +
+> +#define padctl_pmc_readl(_priv, _offset)						\
+> +({											\
+> +	u32 value;									\
+> +	WARN(regmap_read(_priv->regmap, _offset, &value), "read %s failed\n", #_offset);\
+> +	value;										\
+> +})
+> +
+> +#define padctl_pmc_writel(_priv, _value, _offset)					\
+> +	WARN(regmap_write(_priv->regmap, _offset, _value), "write %s failed\n", #_offset)
+> +
+> +static int tegra210_pmc_utmi_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
+> +						  enum usb_device_speed speed)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	struct tegra210_xusb_padctl *priv = to_tegra210_xusb_padctl(padctl);
+> +	struct device *dev = padctl->dev;
+> +	unsigned int port = lane->index;
+> +	u32 value, tctrl, pctrl, rpd_ctrl;
+> +
+> +	if (!priv->regmap)
+> +		return -EOPNOTSUPP;
+> +
+> +	if (speed > USB_SPEED_HIGH)
+> +		return -EINVAL;
+> +
+> +	dev_dbg(dev, "phy enable sleepwalk usb2 %d speed %d\n", port, speed);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
+> +	tctrl = TCTRL_VALUE(value);
+> +	pctrl = PCTRL_VALUE(value);
+> +
+> +	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(port));
+> +	rpd_ctrl = RPD_CTRL_VALUE(value);
+> +
+> +	/* ensure sleepwalk logic is disabled */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value &= ~UTMIP_MASTER_ENABLE(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	/* ensure sleepwalk logics are in low power mode */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_MASTER_CONFIG);
+> +	value |= UTMIP_PWR(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_MASTER_CONFIG);
+> +
+> +	/* set debounce time */
+> +	value = padctl_pmc_readl(priv, PMC_USB_DEBOUNCE_DEL);
+> +	value &= ~UTMIP_LINE_DEB_CNT(~0);
+> +	value |= UTMIP_LINE_DEB_CNT(0x1);
+> +	padctl_pmc_writel(priv, value, PMC_USB_DEBOUNCE_DEL);
+> +
+> +	/* ensure fake events of sleepwalk logic are desiabled */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_FAKE(port));
+> +	value &= ~(UTMIP_FAKE_USBOP_VAL(port) | UTMIP_FAKE_USBON_VAL(port) |
+> +			UTMIP_FAKE_USBOP_EN(port) | UTMIP_FAKE_USBON_EN(port));
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_FAKE(port));
+> +
+> +	/* ensure wake events of sleepwalk logic are not latched */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +	value &= ~UTMIP_LINE_WAKEUP_EN(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +
+> +	/* disable wake event triggers of sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value &= ~UTMIP_WAKE_VAL(port, ~0);
+> +	value |= UTMIP_WAKE_VAL_NONE(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	/* power down the line state detectors of the pad */
+> +	value = padctl_pmc_readl(priv, PMC_USB_AO);
+> +	value |= (USBOP_VAL_PD(port) | USBON_VAL_PD(port));
+> +	padctl_pmc_writel(priv, value, PMC_USB_AO);
+> +
+> +	/* save state per speed */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SAVED_STATE(port));
+> +	value &= ~SPEED(port, ~0);
+> +	if (speed == USB_SPEED_HIGH)
+> +		value |= UTMI_HS(port);
+> +	else if (speed == USB_SPEED_FULL)
+> +		value |= UTMI_FS(port);
+> +	else if (speed == USB_SPEED_LOW)
+> +		value |= UTMI_LS(port);
+> +	else
+> +		value |= UTMI_RST(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SAVED_STATE(port));
+> +
+> +	/* enable the trigger of the sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEPWALK_CFG(port));
+> +	value |= UTMIP_LINEVAL_WALK_EN(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEPWALK_CFG(port));
+> +
+> +	/* reset the walk pointer and clear the alarm of the sleepwalk logic,
+> +	 * as well as capture the configuration of the USB2.0 pad
+> +	 */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_TRIGGERS);
+> +	value |= (UTMIP_CLR_WALK_PTR(port) | UTMIP_CLR_WAKE_ALARM(port) |
+> +		UTMIP_CAP_CFG(port));
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_TRIGGERS);
+> +
+> +	/* program electrical parameters read from XUSB PADCTL */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_TERM_PAD_CFG);
+> +	value &= ~(TCTRL_VAL(~0) | PCTRL_VAL(~0));
+> +	value |= (TCTRL_VAL(tctrl) | PCTRL_VAL(pctrl));
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_TERM_PAD_CFG);
+> +
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_PAD_CFGX(port));
+> +	value &= ~RPD_CTRL_PX(~0);
+> +	value |= RPD_CTRL_PX(rpd_ctrl);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_PAD_CFGX(port));
+> +
+> +	/* setup the pull-ups and pull-downs of the signals during the four
+> +	 * stages of sleepwalk.
+> +	 * if device is connected, program sleepwalk logic to maintain a J and
+> +	 * keep driving K upon seeing remote wake.
+> +	 */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_SLEEPWALK_PX(port));
+> +	value = (UTMIP_USBOP_RPD_A | UTMIP_USBOP_RPD_B | UTMIP_USBOP_RPD_C |
+> +		UTMIP_USBOP_RPD_D);
+> +	value |= (UTMIP_USBON_RPD_A | UTMIP_USBON_RPD_B | UTMIP_USBON_RPD_C |
+> +		UTMIP_USBON_RPD_D);
+> +	if (speed == USB_SPEED_UNKNOWN) {
+> +		value |= (UTMIP_HIGHZ_A | UTMIP_HIGHZ_B | UTMIP_HIGHZ_C |
+> +			UTMIP_HIGHZ_D);
+> +	} else if ((speed == USB_SPEED_HIGH) || (speed == USB_SPEED_FULL)) {
+> +		/* J state: D+/D- = high/low, K state: D+/D- = low/high */
+> +		value |= UTMIP_HIGHZ_A;
+> +		value |= UTMIP_AP_A;
+> +		value |= (UTMIP_AN_B | UTMIP_AN_C | UTMIP_AN_D);
+> +	} else if (speed == USB_SPEED_LOW) {
+> +		/* J state: D+/D- = low/high, K state: D+/D- = high/low */
+> +		value |= UTMIP_HIGHZ_A;
+> +		value |= UTMIP_AN_A;
+> +		value |= (UTMIP_AP_B | UTMIP_AP_C | UTMIP_AP_D);
+> +	}
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_SLEEPWALK_PX(port));
+> +
+> +	/* power up the line state detectors of the pad */
+> +	value = padctl_pmc_readl(priv, PMC_USB_AO);
+> +	value &= ~(USBOP_VAL_PD(port) | USBON_VAL_PD(port));
+> +	padctl_pmc_writel(priv, value, PMC_USB_AO);
+> +
+> +	usleep_range(50, 100);
+> +
+> +	/* switch the electric control of the USB2.0 pad to PMC */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value |= (UTMIP_FSLS_USE_PMC(port) | UTMIP_PCTRL_USE_PMC(port) |
+> +			UTMIP_TCTRL_USE_PMC(port));
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG1);
+> +	value |= (UTMIP_RPD_CTRL_USE_PMC_PX(port) |
+> +			UTMIP_RPU_SWITC_LOW_USE_PMC_PX(port));
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG1);
+> +
+> +	/* set the wake signaling trigger events */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value &= ~UTMIP_WAKE_VAL(port, ~0);
+> +	value |= UTMIP_WAKE_VAL_ANY(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	/* enable the wake detection */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value |= UTMIP_MASTER_ENABLE(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +	value |= UTMIP_LINE_WAKEUP_EN(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_pmc_utmi_disable_phy_sleepwalk(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	struct tegra210_xusb_padctl *priv = to_tegra210_xusb_padctl(padctl);
+> +	struct device *dev = padctl->dev;
+> +	unsigned int port = lane->index;
+> +	u32 value;
+> +
+> +	if (!priv->regmap)
+> +		return -EOPNOTSUPP;
+> +
+> +	dev_dbg(dev, "phy disable sleepwalk usb2 %d\n", port);
+> +
+> +	/* disable the wake detection */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value &= ~UTMIP_MASTER_ENABLE(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +	value &= ~UTMIP_LINE_WAKEUP_EN(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +
+> +	/* switch the electric control of the USB2.0 pad to XUSB or USB2 */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value &= ~(UTMIP_FSLS_USE_PMC(port) | UTMIP_PCTRL_USE_PMC(port) |
+> +			UTMIP_TCTRL_USE_PMC(port));
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG1);
+> +	value &= ~(UTMIP_RPD_CTRL_USE_PMC_PX(port) |
+> +			UTMIP_RPU_SWITC_LOW_USE_PMC_PX(port));
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG1);
+> +
+> +	/* disable wake event triggers of sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +	value &= ~UTMIP_WAKE_VAL(port, ~0);
+> +	value |= UTMIP_WAKE_VAL_NONE(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
+> +
+> +	/* power down the line state detectors of the port */
+> +	value = padctl_pmc_readl(priv, PMC_USB_AO);
+> +	value |= (USBOP_VAL_PD(port) | USBON_VAL_PD(port));
+> +	padctl_pmc_writel(priv, value, PMC_USB_AO);
+> +
+> +	/* clear alarm of the sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_TRIGGERS);
+> +	value |= UTMIP_CLR_WAKE_ALARM(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_TRIGGERS);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_pmc_hsic_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
+> +						  enum usb_device_speed speed)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	struct tegra210_xusb_padctl *priv = to_tegra210_xusb_padctl(padctl);
+> +	struct device *dev = padctl->dev;
+> +	unsigned int port = lane->index;
+> +	u32 value;
+> +
+> +	if (!priv->regmap)
+> +		return -EOPNOTSUPP;
+> +
+> +	dev_dbg(dev, "phy enable sleepwalk hsic %d\n", port);
+> +
+> +	/* ensure sleepwalk logic is disabled */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEP_CFG);
+> +	value &= ~UHSIC_MASTER_ENABLE;
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEP_CFG);
+> +
+> +	/* ensure sleepwalk logics are in low power mode */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_MASTER_CONFIG);
+> +	value |= UHSIC_PWR(port);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_MASTER_CONFIG);
+> +
+> +	/* set debounce time */
+> +	value = padctl_pmc_readl(priv, PMC_USB_DEBOUNCE_DEL);
+> +	value &= ~UHSIC_LINE_DEB_CNT(~0);
+> +	value |= UHSIC_LINE_DEB_CNT(0x1);
+> +	padctl_pmc_writel(priv, value, PMC_USB_DEBOUNCE_DEL);
+> +
+> +	/* ensure fake events of sleepwalk logic are desiabled */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_FAKE);
+> +	value &= ~(UHSIC_FAKE_STROBE_VAL | UHSIC_FAKE_DATA_VAL |
+> +			UHSIC_FAKE_STROBE_EN | UHSIC_FAKE_DATA_EN);
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_FAKE);
+> +
+> +	/* ensure wake events of sleepwalk logic are not latched */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +	value &= ~UHSIC_LINE_WAKEUP_EN;
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +
+> +	/* disable wake event triggers of sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEP_CFG);
+> +	value &= ~UHSIC_WAKE_VAL(~0);
+> +	value |= UHSIC_WAKE_VAL_NONE;
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEP_CFG);
+> +
+> +	/* power down the line state detectors of the port */
+> +	value = padctl_pmc_readl(priv, PMC_USB_AO);
+> +	value |= (STROBE_VAL_PD(port) | DATA0_VAL_PD(port) | DATA1_VAL_PD);
+> +	padctl_pmc_writel(priv, value, PMC_USB_AO);
+> +
+> +	/* save state, HSIC always comes up as HS */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SAVED_STATE);
+> +	value &= ~UHSIC_MODE(~0);
+> +	value |= UHSIC_HS;
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SAVED_STATE);
+> +
+> +	/* enable the trigger of the sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEPWALK_CFG);
+> +	value |= (UHSIC_WAKE_WALK_EN | UHSIC_LINEVAL_WALK_EN);
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEPWALK_CFG);
+> +
+> +	/* reset the walk pointer and clear the alarm of the sleepwalk logic,
+> +	 * as well as capture the configuration of the USB2.0 port
+> +	 */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_TRIGGERS);
+> +	value |= (UHSIC_CLR_WALK_PTR | UHSIC_CLR_WAKE_ALARM);
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_TRIGGERS);
+> +
+> +	/* setup the pull-ups and pull-downs of the signals during the four
+> +	 * stages of sleepwalk.
+> +	 * maintain a HSIC IDLE and keep driving HSIC RESUME upon remote wake
+> +	 */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEPWALK_P0);
+> +	value = (UHSIC_DATA0_RPD_A | UHSIC_DATA0_RPU_B | UHSIC_DATA0_RPU_C |
+> +		UHSIC_DATA0_RPU_D);
+> +	value |= (UHSIC_STROBE_RPU_A | UHSIC_STROBE_RPD_B | UHSIC_STROBE_RPD_C |
+> +		UHSIC_STROBE_RPD_D);
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEPWALK_P0);
+> +
+> +	/* power up the line state detectors of the port */
+> +	value = padctl_pmc_readl(priv, PMC_USB_AO);
+> +	value &= ~(STROBE_VAL_PD(port) | DATA0_VAL_PD(port) | DATA1_VAL_PD);
+> +	padctl_pmc_writel(priv, value, PMC_USB_AO);
+> +
+> +	usleep_range(50, 100);
+> +
+> +	/* set the wake signaling trigger events */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEP_CFG);
+> +	value &= ~UHSIC_WAKE_VAL(~0);
+> +	value |= UHSIC_WAKE_VAL_SD10;
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEP_CFG);
+> +
+> +	/* enable the wake detection */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEP_CFG);
+> +	value |= UHSIC_MASTER_ENABLE;
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEP_CFG);
+> +
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +	value |= UHSIC_LINE_WAKEUP_EN;
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra210_pmc_hsic_disable_phy_sleepwalk(struct tegra_xusb_lane *lane)
+> +{
+> +	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+> +	struct tegra210_xusb_padctl *priv = to_tegra210_xusb_padctl(padctl);
+> +	struct device *dev = padctl->dev;
+> +	unsigned int port = lane->index;
+> +	u32 value;
+> +
+> +	if (!priv->regmap)
+> +		return -EOPNOTSUPP;
+> +
+> +	dev_dbg(dev, "phy disable sleepwalk hsic %d\n", port);
+> +
+> +	/* disable the wake detection */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEP_CFG);
+> +	value &= ~UHSIC_MASTER_ENABLE;
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEP_CFG);
+> +
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +	value &= ~UHSIC_LINE_WAKEUP_EN;
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_LINE_WAKEUP);
+> +
+> +	/* disable wake event triggers of sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UHSIC_SLEEP_CFG);
+> +	value &= ~UHSIC_WAKE_VAL(~0);
+> +	value |= UHSIC_WAKE_VAL_NONE;
+> +	padctl_pmc_writel(priv, value, PMC_UHSIC_SLEEP_CFG);
+> +
+> +	/* power down the line state detectors of the port */
+> +	value = padctl_pmc_readl(priv, PMC_USB_AO);
+> +	value |= (STROBE_VAL_PD(port) | DATA0_VAL_PD(port) | DATA1_VAL_PD);
+> +	padctl_pmc_writel(priv, value, PMC_USB_AO);
+> +
+> +	/* clear alarm of the sleepwalk logic */
+> +	value = padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_TRIGGERS);
+> +	value |= UHSIC_CLR_WAKE_ALARM;
+> +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_TRIGGERS);
+> +
+> +	return 0;
+> +}
+> +
+>  static int tegra210_usb3_set_lfps_detect(struct tegra_xusb_padctl *padctl,
+>  					 unsigned int index, bool enable)
+>  {
+> @@ -986,6 +1808,11 @@ static void tegra210_usb2_lane_remove(struct tegra_xusb_lane *lane)
+>  static const struct tegra_xusb_lane_ops tegra210_usb2_lane_ops = {
+>  	.probe = tegra210_usb2_lane_probe,
+>  	.remove = tegra210_usb2_lane_remove,
+> +	.enable_phy_sleepwalk = tegra210_pmc_utmi_enable_phy_sleepwalk,
+> +	.disable_phy_sleepwalk = tegra210_pmc_utmi_disable_phy_sleepwalk,
+> +	.enable_phy_wake = tegra210_utmi_enable_phy_wake,
+> +	.disable_phy_wake = tegra210_utmi_disable_phy_wake,
+> +	.remote_wake_detected = tegra210_utmi_phy_remote_wake_detected,
+>  };
+>  
+>  static int tegra210_usb2_phy_init(struct phy *phy)
+> @@ -1449,6 +2276,11 @@ static void tegra210_hsic_lane_remove(struct tegra_xusb_lane *lane)
+>  static const struct tegra_xusb_lane_ops tegra210_hsic_lane_ops = {
+>  	.probe = tegra210_hsic_lane_probe,
+>  	.remove = tegra210_hsic_lane_remove,
+> +	.enable_phy_sleepwalk = tegra210_pmc_hsic_enable_phy_sleepwalk,
+> +	.disable_phy_sleepwalk = tegra210_pmc_hsic_disable_phy_sleepwalk,
+> +	.enable_phy_wake = tegra210_hsic_enable_phy_wake,
+> +	.disable_phy_wake = tegra210_hsic_disable_phy_wake,
+> +	.remote_wake_detected = tegra210_hsic_phy_remote_wake_detected,
+>  };
+>  
+>  static int tegra210_hsic_phy_init(struct phy *phy)
+> @@ -1879,6 +2711,11 @@ static const struct tegra_xusb_lane_ops tegra210_pcie_lane_ops = {
+>  	.remove = tegra210_pcie_lane_remove,
+>  	.iddq_enable = tegra210_uphy_lane_iddq_enable,
+>  	.iddq_disable = tegra210_uphy_lane_iddq_disable,
+> +	.enable_phy_sleepwalk = tegra210_usb3_enable_phy_sleepwalk,
+> +	.disable_phy_sleepwalk = tegra210_usb3_disable_phy_sleepwalk,
+> +	.enable_phy_wake = tegra210_usb3_enable_phy_wake,
+> +	.disable_phy_wake = tegra210_usb3_disable_phy_wake,
+> +	.remote_wake_detected = tegra210_usb3_phy_remote_wake_detected,
+>  };
+>  
+>  static int tegra210_pcie_phy_init(struct phy *phy)
+> @@ -2044,6 +2881,11 @@ static const struct tegra_xusb_lane_ops tegra210_sata_lane_ops = {
+>  	.remove = tegra210_sata_lane_remove,
+>  	.iddq_enable = tegra210_uphy_lane_iddq_enable,
+>  	.iddq_disable = tegra210_uphy_lane_iddq_disable,
+> +	.enable_phy_sleepwalk = tegra210_usb3_enable_phy_sleepwalk,
+> +	.disable_phy_sleepwalk = tegra210_usb3_disable_phy_sleepwalk,
+> +	.enable_phy_wake = tegra210_usb3_enable_phy_wake,
+> +	.disable_phy_wake = tegra210_usb3_disable_phy_wake,
+> +	.remote_wake_detected = tegra210_usb3_phy_remote_wake_detected,
+>  };
+>  
+>  static int tegra210_sata_phy_init(struct phy *phy)
+> @@ -2293,6 +3135,8 @@ tegra210_xusb_padctl_probe(struct device *dev,
+>  			   const struct tegra_xusb_padctl_soc *soc)
+>  {
+>  	struct tegra210_xusb_padctl *padctl;
+> +	struct device_node *np;
+> +	struct platform_device *pdev;
+>  	int err;
+>  
+>  	padctl = devm_kzalloc(dev, sizeof(*padctl), GFP_KERNEL);
+> @@ -2306,6 +3150,26 @@ tegra210_xusb_padctl_probe(struct device *dev,
+>  	if (err < 0)
+>  		return ERR_PTR(err);
+>  
+> +	np = of_parse_phandle(dev->of_node, "nvidia,pmc", 0);
+> +	if (!np) {
+> +		dev_warn(dev, "nvidia,pmc property is missing\n");
+> +		goto out;
+> +	}
+> +
+> +	pdev = of_find_device_by_node(np);
+> +	if (!pdev) {
+> +		dev_warn(dev, "PMC device is not available\n");
+> +		goto out;
+> +	}
+> +
+> +	if (!device_is_bound(&pdev->dev))
 
-Acked-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
- .../bindings/phy/hisilicon,hi3670-usb3.yaml   |  73 ++
- MAINTAINERS                                   |   9 +-
- drivers/phy/hisilicon/Kconfig                 |  10 +
- drivers/phy/hisilicon/Makefile                |   1 +
- drivers/phy/hisilicon/phy-hi3670-usb3.c       | 668 ++++++++++++++++++
- drivers/staging/hikey9xx/Kconfig              |  11 -
- drivers/staging/hikey9xx/Makefile             |   2 -
- drivers/staging/hikey9xx/phy-hi3670-usb3.c    | 668 ------------------
- drivers/staging/hikey9xx/phy-hi3670-usb3.yaml |  73 --
- 9 files changed, 760 insertions(+), 755 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
- create mode 100644 drivers/phy/hisilicon/phy-hi3670-usb3.c
- delete mode 100644 drivers/staging/hikey9xx/phy-hi3670-usb3.c
- delete mode 100644 drivers/staging/hikey9xx/phy-hi3670-usb3.yaml
+This breaks arm64 allmodconfig:
 
-diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-new file mode 100644
-index 000000000000..ebd78acfe2de
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-@@ -0,0 +1,73 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/hisilicon,hi3670-usb3.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Hisilicon Kirin970 USB PHY
-+
-+maintainers:
-+  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-+
-+description: |+
-+  Bindings for USB3 PHY on HiSilicon Kirin 970.
-+
-+properties:
-+  compatible:
-+    const: hisilicon,hi3670-usb-phy
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  hisilicon,pericrg-syscon:
-+    $ref: '/schemas/types.yaml#/definitions/phandle'
-+    description: phandle of syscon used to control iso refclk.
-+
-+  hisilicon,pctrl-syscon:
-+    $ref: '/schemas/types.yaml#/definitions/phandle'
-+    description: phandle of syscon used to control usb tcxo.
-+
-+  hisilicon,sctrl-syscon:
-+    $ref: '/schemas/types.yaml#/definitions/phandle'
-+    description: phandle of syscon used to control phy deep sleep.
-+
-+  hisilicon,eye-diagram-param:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description: Eye diagram for phy.
-+
-+  hisilicon,tx-vboost-lvl:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description: TX level vboost for phy.
-+
-+required:
-+  - compatible
-+  - hisilicon,pericrg-syscon
-+  - hisilicon,pctrl-syscon
-+  - hisilicon,sctrl-syscon
-+  - hisilicon,eye-diagram-param
-+  - hisilicon,tx-vboost-lvl
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    bus {
-+      #address-cells = <2>;
-+      #size-cells = <2>;
-+
-+      usb3_otg_bc: usb3_otg_bc@ff200000 {
-+        compatible = "syscon", "simple-mfd";
-+        reg = <0x0 0xff200000 0x0 0x1000>;
-+
-+        usb_phy {
-+          compatible = "hisilicon,hi3670-usb-phy";
-+          #phy-cells = <0>;
-+          hisilicon,pericrg-syscon = <&crg_ctrl>;
-+          hisilicon,pctrl-syscon = <&pctrl>;
-+          hisilicon,sctrl-syscon = <&sctrl>;
-+          hisilicon,eye-diagram-param = <0xfdfee4>;
-+          hisilicon,tx-vboost-lvl = <0x5>;
-+        };
-+      };
-+    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 8c44fd8fd85d..a37489f5b070 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -18654,7 +18654,7 @@ L:	linux-usb@vger.kernel.org
- S:	Maintained
- F:	drivers/usb/roles/intel-xhci-usb-role-switch.c
- 
--USB IP DRIVER FOR HISILICON KIRIN
-+USB IP DRIVER FOR HISILICON KIRIN 960
- M:	Yu Chen <chenyu56@huawei.com>
- M:	Binghui Wang <wangbinghui@hisilicon.com>
- L:	linux-usb@vger.kernel.org
-@@ -18662,6 +18662,13 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
- F:	drivers/phy/hisilicon/phy-hi3660-usb3.c
- 
-+USB IP DRIVER FOR HISILICON KIRIN 970
-+M:	Mauro Carvalho Chehab <mchehab@kernel.org>
-+L:	linux-usb@vger.kernel.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/hisilicon,kirin970-usb3.yaml
-+F:	drivers/phy/hisilicon/phy-kirin970-usb3.c
-+
- USB ISP116X DRIVER
- M:	Olav Kongas <ok@artecdesign.ee>
- L:	linux-usb@vger.kernel.org
-diff --git a/drivers/phy/hisilicon/Kconfig b/drivers/phy/hisilicon/Kconfig
-index 1c73053bcc98..4d008cfc279c 100644
---- a/drivers/phy/hisilicon/Kconfig
-+++ b/drivers/phy/hisilicon/Kconfig
-@@ -23,6 +23,16 @@ config PHY_HI3660_USB
- 
- 	  To compile this driver as a module, choose M here.
- 
-+config PHY_HI3670_USB
-+	tristate "hi3670 USB PHY support"
-+	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
-+	select GENERIC_PHY
-+	select MFD_SYSCON
-+	help
-+	  Enable this to support the HISILICON HI3670 USB PHY.
-+
-+	  To compile this driver as a module, choose M here.
-+
- config PHY_HISTB_COMBPHY
- 	tristate "HiSilicon STB SoCs COMBPHY support"
- 	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
-diff --git a/drivers/phy/hisilicon/Makefile b/drivers/phy/hisilicon/Makefile
-index 92e874ae9c74..51729868145b 100644
---- a/drivers/phy/hisilicon/Makefile
-+++ b/drivers/phy/hisilicon/Makefile
-@@ -1,6 +1,7 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_PHY_HI6220_USB)		+= phy-hi6220-usb.o
- obj-$(CONFIG_PHY_HI3660_USB)		+= phy-hi3660-usb3.o
-+obj-$(CONFIG_PHY_HI3670_USB)		+= phy-hi3670-usb3.o
- obj-$(CONFIG_PHY_HISTB_COMBPHY)		+= phy-histb-combphy.o
- obj-$(CONFIG_PHY_HISI_INNO_USB2)	+= phy-hisi-inno-usb2.o
- obj-$(CONFIG_PHY_HIX5HD2_SATA)		+= phy-hix5hd2-sata.o
-diff --git a/drivers/phy/hisilicon/phy-hi3670-usb3.c b/drivers/phy/hisilicon/phy-hi3670-usb3.c
-new file mode 100644
-index 000000000000..e7e579ce0302
---- /dev/null
-+++ b/drivers/phy/hisilicon/phy-hi3670-usb3.c
-@@ -0,0 +1,668 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Phy provider for USB 3.1 controller on HiSilicon Kirin970 platform
-+ *
-+ * Copyright (C) 2017-2020 Hilisicon Electronics Co., Ltd.
-+ *		http://www.huawei.com
-+ *
-+ * Authors: Yu Chen <chenyu56@huawei.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/kernel.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#define SCTRL_SCDEEPSLEEPED		(0x0)
-+#define USB_CLK_SELECTED		BIT(20)
-+
-+#define PERI_CRG_PEREN0			(0x00)
-+#define PERI_CRG_PERDIS0		(0x04)
-+#define PERI_CRG_PEREN4			(0x40)
-+#define PERI_CRG_PERDIS4		(0x44)
-+#define PERI_CRG_PERRSTEN4		(0x90)
-+#define PERI_CRG_PERRSTDIS4		(0x94)
-+#define PERI_CRG_ISODIS			(0x148)
-+#define PERI_CRG_PEREN6			(0x410)
-+#define PERI_CRG_PERDIS6		(0x414)
-+
-+#define USB_REFCLK_ISO_EN		BIT(25)
-+
-+#define GT_CLK_USB2PHY_REF		BIT(19)
-+
-+#define PCTRL_PERI_CTRL3		(0x10)
-+#define PCTRL_PERI_CTRL3_MSK_START	(16)
-+#define USB_TCXO_EN			BIT(1)
-+
-+#define PCTRL_PERI_CTRL24		(0x64)
-+#define SC_CLK_USB3PHY_3MUX1_SEL	BIT(25)
-+
-+#define USB3OTG_CTRL0			(0x00)
-+#define USB3OTG_CTRL3			(0x0c)
-+#define USB3OTG_CTRL4			(0x10)
-+#define USB3OTG_CTRL5			(0x14)
-+#define USB3OTG_CTRL7			(0x1c)
-+#define USB_MISC_CFG50			(0x50)
-+#define USB_MISC_CFG54			(0x54)
-+#define USB_MISC_CFG58			(0x58)
-+#define USB_MISC_CFG5C			(0x5c)
-+#define USB_MISC_CFGA0			(0xa0)
-+#define TCA_CLK_RST			(0x200)
-+#define TCA_INTR_EN			(0x204)
-+#define TCA_INTR_STS			(0x208)
-+#define TCA_GCFG			(0x210)
-+#define TCA_TCPC			(0x214)
-+#define TCA_SYSMODE_CFG			(0x218)
-+#define TCA_VBUS_CTRL			(0x240)
-+
-+#define CTRL0_USB3_VBUSVLD		BIT(7)
-+#define CTRL0_USB3_VBUSVLD_SEL		BIT(6)
-+
-+#define CTRL3_USB2_VBUSVLDEXT0		BIT(6)
-+#define CTRL3_USB2_VBUSVLDEXTSEL0	BIT(5)
-+
-+#define CTRL5_USB2_SIDDQ		BIT(0)
-+
-+#define CTRL7_USB2_REFCLKSEL_MASK	GENMASK(4, 3)
-+#define CTRL7_USB2_REFCLKSEL_ABB	(BIT(4) | BIT(3))
-+#define CTRL7_USB2_REFCLKSEL_PAD	BIT(4)
-+
-+#define CFG50_USB3_PHY_TEST_POWERDOWN	BIT(23)
-+
-+#define CFG54_USB31PHY_CR_ADDR_MASK	GENMASK(31, 16)
-+
-+#define CFG54_USB3PHY_REF_USE_PAD	BIT(12)
-+#define CFG54_PHY0_PMA_PWR_STABLE	BIT(11)
-+#define CFG54_PHY0_PCS_PWR_STABLE	BIT(9)
-+#define CFG54_USB31PHY_CR_ACK		BIT(7)
-+#define CFG54_USB31PHY_CR_WR_EN		BIT(5)
-+#define CFG54_USB31PHY_CR_SEL		BIT(4)
-+#define CFG54_USB31PHY_CR_RD_EN		BIT(3)
-+#define CFG54_USB31PHY_CR_CLK		BIT(2)
-+#define CFG54_USB3_PHY0_ANA_PWR_EN	BIT(1)
-+
-+#define CFG58_USB31PHY_CR_DATA_MASK     GENMASK(31, 16)
-+
-+#define CFG5C_USB3_PHY0_SS_MPLLA_SSC_EN	BIT(1)
-+
-+#define CFGA0_VAUX_RESET		BIT(9)
-+#define CFGA0_USB31C_RESET		BIT(8)
-+#define CFGA0_USB2PHY_REFCLK_SELECT	BIT(4)
-+#define CFGA0_USB3PHY_RESET		BIT(1)
-+#define CFGA0_USB2PHY_POR		BIT(0)
-+
-+#define INTR_EN_XA_TIMEOUT_EVT_EN	BIT(1)
-+#define INTR_EN_XA_ACK_EVT_EN		BIT(0)
-+
-+#define CLK_RST_TCA_REF_CLK_EN		BIT(1)
-+#define CLK_RST_SUSPEND_CLK_EN		BIT(0)
-+
-+#define GCFG_ROLE_HSTDEV		BIT(4)
-+#define GCFG_OP_MODE			GENMASK(1, 0)
-+#define GCFG_OP_MODE_CTRL_SYNC_MODE	BIT(0)
-+
-+#define TCPC_VALID			BIT(4)
-+#define TCPC_LOW_POWER_EN		BIT(3)
-+#define TCPC_MUX_CONTROL_MASK		GENMASK(1, 0)
-+#define TCPC_MUX_CONTROL_USB31		BIT(0)
-+
-+#define SYSMODE_CFG_TYPEC_DISABLE	BIT(3)
-+
-+#define VBUS_CTRL_POWERPRESENT_OVERRD	GENMASK(3, 2)
-+#define VBUS_CTRL_VBUSVALID_OVERRD	GENMASK(1, 0)
-+
-+#define KIRIN970_USB_DEFAULT_PHY_PARAM	(0xfdfee4)
-+#define KIRIN970_USB_DEFAULT_PHY_VBOOST	(0x5)
-+
-+#define TX_VBOOST_LVL_REG		(0xf)
-+#define TX_VBOOST_LVL_START		(6)
-+#define TX_VBOOST_LVL_ENABLE		BIT(9)
-+
-+struct hi3670_priv {
-+	struct device *dev;
-+	struct regmap *peri_crg;
-+	struct regmap *pctrl;
-+	struct regmap *sctrl;
-+	struct regmap *usb31misc;
-+
-+	u32 eye_diagram_param;
-+	u32 tx_vboost_lvl;
-+
-+	u32 peri_crg_offset;
-+	u32 pctrl_offset;
-+	u32 usb31misc_offset;
-+};
-+
-+static int hi3670_phy_cr_clk(struct regmap *usb31misc)
-+{
-+	int ret;
-+
-+	/* Clock up */
-+	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
-+				 CFG54_USB31PHY_CR_CLK, CFG54_USB31PHY_CR_CLK);
-+	if (ret)
-+		return ret;
-+
-+	/* Clock down */
-+	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
-+				 CFG54_USB31PHY_CR_CLK, 0);
-+
-+	return ret;
-+}
-+
-+static int hi3670_phy_cr_set_sel(struct regmap *usb31misc)
-+{
-+	return regmap_update_bits(usb31misc, USB_MISC_CFG54,
-+				  CFG54_USB31PHY_CR_SEL, CFG54_USB31PHY_CR_SEL);
-+}
-+
-+static int hi3670_phy_cr_start(struct regmap *usb31misc, int direction)
-+{
-+	int ret, reg;
-+
-+	if (direction)
-+		reg = CFG54_USB31PHY_CR_WR_EN;
-+	else
-+		reg = CFG54_USB31PHY_CR_RD_EN;
-+
-+	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54, reg, reg);
-+
-+	if (ret)
-+		return ret;
-+
-+	ret = hi3670_phy_cr_clk(usb31misc);
-+	if (ret)
-+		return ret;
-+
-+	return regmap_update_bits(usb31misc, USB_MISC_CFG54,
-+				  CFG54_USB31PHY_CR_RD_EN | CFG54_USB31PHY_CR_WR_EN, 0);
-+}
-+
-+static int hi3670_phy_cr_wait_ack(struct regmap *usb31misc)
-+{
-+	u32 reg;
-+	int retry = 10;
-+	int ret;
-+
-+	while (retry-- > 0) {
-+		ret = regmap_read(usb31misc, USB_MISC_CFG54, &reg);
-+		if (ret)
-+			return ret;
-+		if ((reg & CFG54_USB31PHY_CR_ACK) == CFG54_USB31PHY_CR_ACK)
-+			return 0;
-+
-+		ret = hi3670_phy_cr_clk(usb31misc);
-+		if (ret)
-+			return ret;
-+
-+		usleep_range(10, 20);
-+	}
-+
-+	return -ETIMEDOUT;
-+}
-+
-+static int hi3670_phy_cr_set_addr(struct regmap *usb31misc, u32 addr)
-+{
-+	u32 reg;
-+	int ret;
-+
-+	ret = regmap_read(usb31misc, USB_MISC_CFG54, &reg);
-+	if (ret)
-+		return ret;
-+
-+	reg = FIELD_PREP(CFG54_USB31PHY_CR_ADDR_MASK, addr);
-+	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
-+				 CFG54_USB31PHY_CR_ADDR_MASK, reg);
-+
-+	return ret;
-+}
-+
-+static int hi3670_phy_cr_read(struct regmap *usb31misc, u32 addr, u32 *val)
-+{
-+	int reg;
-+	int i;
-+	int ret;
-+
-+	for (i = 0; i < 100; i++) {
-+		ret = hi3670_phy_cr_clk(usb31misc);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	ret = hi3670_phy_cr_set_sel(usb31misc);
-+	if (ret)
-+		return ret;
-+
-+	ret = hi3670_phy_cr_set_addr(usb31misc, addr);
-+	if (ret)
-+		return ret;
-+
-+	ret = hi3670_phy_cr_start(usb31misc, 0);
-+	if (ret)
-+		return ret;
-+
-+	ret = hi3670_phy_cr_wait_ack(usb31misc);
-+	if (ret)
-+		return ret;
-+
-+	ret = regmap_read(usb31misc, USB_MISC_CFG58, &reg);
-+	if (ret)
-+		return ret;
-+
-+	*val = FIELD_GET(CFG58_USB31PHY_CR_DATA_MASK, reg);
-+
-+	return 0;
-+}
-+
-+static int hi3670_phy_cr_write(struct regmap *usb31misc, u32 addr, u32 val)
-+{
-+	int i;
-+	int ret;
-+
-+	for (i = 0; i < 100; i++) {
-+		ret = hi3670_phy_cr_clk(usb31misc);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	ret = hi3670_phy_cr_set_sel(usb31misc);
-+	if (ret)
-+		return ret;
-+
-+	ret = hi3670_phy_cr_set_addr(usb31misc, addr);
-+	if (ret)
-+		return ret;
-+
-+	ret = regmap_write(usb31misc, USB_MISC_CFG58,
-+			   FIELD_PREP(CFG58_USB31PHY_CR_DATA_MASK, val));
-+	if (ret)
-+		return ret;
-+
-+	ret = hi3670_phy_cr_start(usb31misc, 1);
-+	if (ret)
-+		return ret;
-+
-+	ret = hi3670_phy_cr_wait_ack(usb31misc);
-+
-+	return ret;
-+}
-+
-+static int hi3670_phy_set_params(struct hi3670_priv *priv)
-+{
-+	u32 reg;
-+	int ret;
-+	int retry = 3;
-+
-+	ret = regmap_write(priv->usb31misc, USB3OTG_CTRL4,
-+			   priv->eye_diagram_param);
-+	if (ret) {
-+		dev_err(priv->dev, "set USB3OTG_CTRL4 failed\n");
-+		return ret;
-+	}
-+
-+	while (retry-- > 0) {
-+		ret = hi3670_phy_cr_read(priv->usb31misc,
-+					 TX_VBOOST_LVL_REG, &reg);
-+		if (!ret)
-+			break;
-+
-+		if (ret != -ETIMEDOUT) {
-+			dev_err(priv->dev, "read TX_VBOOST_LVL_REG failed\n");
-+			return ret;
-+		}
-+	}
-+	if (ret)
-+		return ret;
-+
-+	reg |= (TX_VBOOST_LVL_ENABLE | (priv->tx_vboost_lvl << TX_VBOOST_LVL_START));
-+	ret = hi3670_phy_cr_write(priv->usb31misc, TX_VBOOST_LVL_REG, reg);
-+	if (ret)
-+		dev_err(priv->dev, "write TX_VBOOST_LVL_REG failed\n");
-+
-+	return ret;
-+}
-+
-+static bool hi3670_is_abbclk_selected(struct hi3670_priv *priv)
-+{
-+	u32 reg;
-+
-+	if (!priv->sctrl) {
-+		dev_err(priv->dev, "priv->sctrl is null!\n");
-+		return false;
-+	}
-+
-+	if (regmap_read(priv->sctrl, SCTRL_SCDEEPSLEEPED, &reg)) {
-+		dev_err(priv->dev, "SCTRL_SCDEEPSLEEPED read failed!\n");
-+		return false;
-+	}
-+
-+	if ((reg & USB_CLK_SELECTED) == 0)
-+		return false;
-+
-+	return true;
-+}
-+
-+static int hi3670_config_phy_clock(struct hi3670_priv *priv)
-+{
-+	u32 val, mask;
-+	int ret;
-+
-+	if (!hi3670_is_abbclk_selected(priv)) {
-+		/* usb refclk iso disable */
-+		ret = regmap_write(priv->peri_crg, PERI_CRG_ISODIS,
-+				   USB_REFCLK_ISO_EN);
-+		if (ret)
-+			goto out;
-+
-+		/* enable usb_tcxo_en */
-+		ret = regmap_write(priv->pctrl, PCTRL_PERI_CTRL3,
-+				   USB_TCXO_EN |
-+				   (USB_TCXO_EN << PCTRL_PERI_CTRL3_MSK_START));
-+
-+		/* select usbphy clk from abb */
-+		mask = SC_CLK_USB3PHY_3MUX1_SEL;
-+		ret = regmap_update_bits(priv->pctrl,
-+					 PCTRL_PERI_CTRL24, mask, 0);
-+		if (ret)
-+			goto out;
-+
-+		ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0,
-+					 CFGA0_USB2PHY_REFCLK_SELECT, 0);
-+		if (ret)
-+			goto out;
-+
-+		ret = regmap_read(priv->usb31misc, USB3OTG_CTRL7, &val);
-+		if (ret)
-+			goto out;
-+		val &= ~CTRL7_USB2_REFCLKSEL_MASK;
-+		val |= CTRL7_USB2_REFCLKSEL_ABB;
-+		ret = regmap_write(priv->usb31misc, USB3OTG_CTRL7, val);
-+		if (ret)
-+			goto out;
-+
-+		return 0;
-+	}
-+
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG54,
-+				 CFG54_USB3PHY_REF_USE_PAD,
-+				 CFG54_USB3PHY_REF_USE_PAD);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0,
-+				 CFGA0_USB2PHY_REFCLK_SELECT,
-+				 CFGA0_USB2PHY_REFCLK_SELECT);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_read(priv->usb31misc, USB3OTG_CTRL7, &val);
-+	if (ret)
-+		goto out;
-+	val &= ~CTRL7_USB2_REFCLKSEL_MASK;
-+	val |= CTRL7_USB2_REFCLKSEL_PAD;
-+	ret = regmap_write(priv->usb31misc, USB3OTG_CTRL7, val);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_write(priv->peri_crg,
-+			   PERI_CRG_PEREN6, GT_CLK_USB2PHY_REF);
-+	if (ret)
-+		goto out;
-+
-+	return 0;
-+out:
-+	dev_err(priv->dev, "failed to config phy clock ret: %d\n", ret);
-+	return ret;
-+}
-+
-+static int hi3670_config_tca(struct hi3670_priv *priv)
-+{
-+	u32 val, mask;
-+	int ret;
-+
-+	ret = regmap_write(priv->usb31misc, TCA_INTR_STS, 0xffff);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_write(priv->usb31misc, TCA_INTR_EN,
-+			   INTR_EN_XA_TIMEOUT_EVT_EN | INTR_EN_XA_ACK_EVT_EN);
-+	if (ret)
-+		goto out;
-+
-+	mask = CLK_RST_TCA_REF_CLK_EN | CLK_RST_SUSPEND_CLK_EN;
-+	ret = regmap_update_bits(priv->usb31misc, TCA_CLK_RST, mask, 0);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_update_bits(priv->usb31misc, TCA_GCFG,
-+				 GCFG_ROLE_HSTDEV | GCFG_OP_MODE,
-+				 GCFG_ROLE_HSTDEV | GCFG_OP_MODE_CTRL_SYNC_MODE);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_update_bits(priv->usb31misc, TCA_SYSMODE_CFG,
-+				 SYSMODE_CFG_TYPEC_DISABLE, 0);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_read(priv->usb31misc, TCA_TCPC, &val);
-+	if (ret)
-+		goto out;
-+	val &= ~(TCPC_VALID | TCPC_LOW_POWER_EN | TCPC_MUX_CONTROL_MASK);
-+	val |= (TCPC_VALID | TCPC_MUX_CONTROL_USB31);
-+	ret = regmap_write(priv->usb31misc, TCA_TCPC, val);
-+	if (ret)
-+		goto out;
-+
-+	ret = regmap_write(priv->usb31misc, TCA_VBUS_CTRL,
-+			   VBUS_CTRL_POWERPRESENT_OVERRD | VBUS_CTRL_VBUSVALID_OVERRD);
-+	if (ret)
-+		goto out;
-+
-+	return 0;
-+out:
-+	dev_err(priv->dev, "failed to config phy clock ret: %d\n", ret);
-+	return ret;
-+}
-+
-+static int hi3670_phy_init(struct phy *phy)
-+{
-+	struct hi3670_priv *priv = phy_get_drvdata(phy);
-+	u32 val;
-+	int ret;
-+
-+	/* assert controller */
-+	val = CFGA0_VAUX_RESET | CFGA0_USB31C_RESET |
-+	      CFGA0_USB3PHY_RESET | CFGA0_USB2PHY_POR;
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, val, 0);
-+	if (ret)
-+		goto out;
-+
-+	ret = hi3670_config_phy_clock(priv);
-+	if (ret)
-+		goto out;
-+
-+	/* Exit from IDDQ mode */
-+	ret = regmap_update_bits(priv->usb31misc, USB3OTG_CTRL5,
-+				 CTRL5_USB2_SIDDQ, 0);
-+	if (ret)
-+		goto out;
-+
-+	/* Release USB31 PHY out of TestPowerDown mode */
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG50,
-+				 CFG50_USB3_PHY_TEST_POWERDOWN, 0);
-+	if (ret)
-+		goto out;
-+
-+	/* Deassert phy */
-+	val = CFGA0_USB3PHY_RESET | CFGA0_USB2PHY_POR;
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, val, val);
-+	if (ret)
-+		goto out;
-+
-+	usleep_range(100, 120);
-+
-+	/* Tell the PHY power is stable */
-+	val = CFG54_USB3_PHY0_ANA_PWR_EN | CFG54_PHY0_PCS_PWR_STABLE |
-+	      CFG54_PHY0_PMA_PWR_STABLE;
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG54,
-+				 val, val);
-+	if (ret)
-+		goto out;
-+
-+	ret = hi3670_config_tca(priv);
-+	if (ret)
-+		goto out;
-+
-+	/* Enable SSC */
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG5C,
-+				 CFG5C_USB3_PHY0_SS_MPLLA_SSC_EN,
-+				 CFG5C_USB3_PHY0_SS_MPLLA_SSC_EN);
-+	if (ret)
-+		goto out;
-+
-+	/* Deassert controller */
-+	val = CFGA0_VAUX_RESET | CFGA0_USB31C_RESET;
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, val, val);
-+	if (ret)
-+		goto out;
-+
-+	usleep_range(100, 120);
-+
-+	/* Set fake vbus valid signal */
-+	val = CTRL0_USB3_VBUSVLD | CTRL0_USB3_VBUSVLD_SEL;
-+	ret = regmap_update_bits(priv->usb31misc, USB3OTG_CTRL0, val, val);
-+	if (ret)
-+		goto out;
-+
-+	val = CTRL3_USB2_VBUSVLDEXT0 | CTRL3_USB2_VBUSVLDEXTSEL0;
-+	ret = regmap_update_bits(priv->usb31misc, USB3OTG_CTRL3, val, val);
-+	if (ret)
-+		goto out;
-+
-+	usleep_range(100, 120);
-+
-+	ret = hi3670_phy_set_params(priv);
-+	if (ret)
-+		goto out;
-+
-+	return 0;
-+out:
-+	dev_err(priv->dev, "failed to init phy ret: %d\n", ret);
-+	return ret;
-+}
-+
-+static int hi3670_phy_exit(struct phy *phy)
-+{
-+	struct hi3670_priv *priv = phy_get_drvdata(phy);
-+	u32 mask;
-+	int ret;
-+
-+	/* Assert phy */
-+	mask = CFGA0_USB3PHY_RESET | CFGA0_USB2PHY_POR;
-+	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, mask, 0);
-+	if (ret)
-+		goto out;
-+
-+	if (!hi3670_is_abbclk_selected(priv)) {
-+		/* disable usb_tcxo_en */
-+		ret = regmap_write(priv->pctrl, PCTRL_PERI_CTRL3,
-+				   USB_TCXO_EN << PCTRL_PERI_CTRL3_MSK_START);
-+	} else {
-+		ret = regmap_write(priv->peri_crg, PERI_CRG_PERDIS6,
-+				   GT_CLK_USB2PHY_REF);
-+		if (ret)
-+			goto out;
-+	}
-+
-+	return 0;
-+out:
-+	dev_err(priv->dev, "failed to exit phy ret: %d\n", ret);
-+	return ret;
-+}
-+
-+static const struct phy_ops hi3670_phy_ops = {
-+	.init		= hi3670_phy_init,
-+	.exit		= hi3670_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int hi3670_phy_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct phy *phy;
-+	struct hi3670_priv *priv;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->dev = dev;
-+	priv->peri_crg = syscon_regmap_lookup_by_phandle(dev->of_node,
-+							 "hisilicon,pericrg-syscon");
-+	if (IS_ERR(priv->peri_crg)) {
-+		dev_err(dev, "no hisilicon,pericrg-syscon\n");
-+		return PTR_ERR(priv->peri_crg);
-+	}
-+
-+	priv->pctrl = syscon_regmap_lookup_by_phandle(dev->of_node,
-+						      "hisilicon,pctrl-syscon");
-+	if (IS_ERR(priv->pctrl)) {
-+		dev_err(dev, "no hisilicon,pctrl-syscon\n");
-+		return PTR_ERR(priv->pctrl);
-+	}
-+
-+	priv->sctrl = syscon_regmap_lookup_by_phandle(dev->of_node,
-+						      "hisilicon,sctrl-syscon");
-+	if (IS_ERR(priv->sctrl)) {
-+		dev_err(dev, "no hisilicon,sctrl-syscon\n");
-+		return PTR_ERR(priv->sctrl);
-+	}
-+
-+	/* node of hi3670 phy is a sub-node of usb3_otg_bc */
-+	priv->usb31misc = syscon_node_to_regmap(dev->parent->of_node);
-+	if (IS_ERR(priv->usb31misc)) {
-+		dev_err(dev, "no hisilicon,usb3-otg-bc-syscon\n");
-+		return PTR_ERR(priv->usb31misc);
-+	}
-+
-+	if (of_property_read_u32(dev->of_node, "hisilicon,eye-diagram-param",
-+				 &priv->eye_diagram_param))
-+		priv->eye_diagram_param = KIRIN970_USB_DEFAULT_PHY_PARAM;
-+
-+	if (of_property_read_u32(dev->of_node, "hisilicon,tx-vboost-lvl",
-+				 &priv->tx_vboost_lvl))
-+		priv->tx_vboost_lvl = KIRIN970_USB_DEFAULT_PHY_VBOOST;
-+
-+	phy = devm_phy_create(dev, NULL, &hi3670_phy_ops);
-+	if (IS_ERR(phy))
-+		return PTR_ERR(phy);
-+
-+	phy_set_drvdata(phy, priv);
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id hi3670_phy_of_match[] = {
-+	{ .compatible = "hisilicon,hi3670-usb-phy" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, hi3670_phy_of_match);
-+
-+static struct platform_driver hi3670_phy_driver = {
-+	.probe	= hi3670_phy_probe,
-+	.driver = {
-+		.name	= "hi3670-usb-phy",
-+		.of_match_table	= hi3670_phy_of_match,
-+	}
-+};
-+module_platform_driver(hi3670_phy_driver);
-+
-+MODULE_AUTHOR("Yu Chen <chenyu56@huawei.com>");
-+MODULE_LICENSE("GPL v2");
-+MODULE_DESCRIPTION("Hilisicon Kirin970 USB31 PHY Driver");
-diff --git a/drivers/staging/hikey9xx/Kconfig b/drivers/staging/hikey9xx/Kconfig
-index 82bb4a22b286..88bdf5655d20 100644
---- a/drivers/staging/hikey9xx/Kconfig
-+++ b/drivers/staging/hikey9xx/Kconfig
-@@ -1,16 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0
- 
--# to be placed at drivers/phy
--config PHY_HI3670_USB
--	tristate "hi3670 USB PHY support"
--	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
--	select GENERIC_PHY
--	select MFD_SYSCON
--	help
--	  Enable this to support the HISILICON HI3670 USB PHY.
--
--	  To compile this driver as a module, choose M here.
--
- # to be placed at drivers/spmi
- config SPMI_HISI3670
- 	tristate "Hisilicon 3670 SPMI Controller"
-diff --git a/drivers/staging/hikey9xx/Makefile b/drivers/staging/hikey9xx/Makefile
-index 1924fadac952..9371dcc3d35b 100644
---- a/drivers/staging/hikey9xx/Makefile
-+++ b/drivers/staging/hikey9xx/Makefile
-@@ -1,7 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0
- 
--obj-$(CONFIG_PHY_HI3670_USB)		+= phy-hi3670-usb3.o
--
- obj-$(CONFIG_SPMI_HISI3670)		+= hisi-spmi-controller.o
- obj-$(CONFIG_MFD_HI6421_SPMI)		+= hi6421-spmi-pmic.o
- obj-$(CONFIG_REGULATOR_HI6421V600)	+= hi6421v600-regulator.o
-diff --git a/drivers/staging/hikey9xx/phy-hi3670-usb3.c b/drivers/staging/hikey9xx/phy-hi3670-usb3.c
-deleted file mode 100644
-index e7e579ce0302..000000000000
---- a/drivers/staging/hikey9xx/phy-hi3670-usb3.c
-+++ /dev/null
-@@ -1,668 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-only
--/*
-- * Phy provider for USB 3.1 controller on HiSilicon Kirin970 platform
-- *
-- * Copyright (C) 2017-2020 Hilisicon Electronics Co., Ltd.
-- *		http://www.huawei.com
-- *
-- * Authors: Yu Chen <chenyu56@huawei.com>
-- */
--
--#include <linux/bitfield.h>
--#include <linux/clk.h>
--#include <linux/kernel.h>
--#include <linux/mfd/syscon.h>
--#include <linux/module.h>
--#include <linux/phy/phy.h>
--#include <linux/platform_device.h>
--#include <linux/regmap.h>
--
--#define SCTRL_SCDEEPSLEEPED		(0x0)
--#define USB_CLK_SELECTED		BIT(20)
--
--#define PERI_CRG_PEREN0			(0x00)
--#define PERI_CRG_PERDIS0		(0x04)
--#define PERI_CRG_PEREN4			(0x40)
--#define PERI_CRG_PERDIS4		(0x44)
--#define PERI_CRG_PERRSTEN4		(0x90)
--#define PERI_CRG_PERRSTDIS4		(0x94)
--#define PERI_CRG_ISODIS			(0x148)
--#define PERI_CRG_PEREN6			(0x410)
--#define PERI_CRG_PERDIS6		(0x414)
--
--#define USB_REFCLK_ISO_EN		BIT(25)
--
--#define GT_CLK_USB2PHY_REF		BIT(19)
--
--#define PCTRL_PERI_CTRL3		(0x10)
--#define PCTRL_PERI_CTRL3_MSK_START	(16)
--#define USB_TCXO_EN			BIT(1)
--
--#define PCTRL_PERI_CTRL24		(0x64)
--#define SC_CLK_USB3PHY_3MUX1_SEL	BIT(25)
--
--#define USB3OTG_CTRL0			(0x00)
--#define USB3OTG_CTRL3			(0x0c)
--#define USB3OTG_CTRL4			(0x10)
--#define USB3OTG_CTRL5			(0x14)
--#define USB3OTG_CTRL7			(0x1c)
--#define USB_MISC_CFG50			(0x50)
--#define USB_MISC_CFG54			(0x54)
--#define USB_MISC_CFG58			(0x58)
--#define USB_MISC_CFG5C			(0x5c)
--#define USB_MISC_CFGA0			(0xa0)
--#define TCA_CLK_RST			(0x200)
--#define TCA_INTR_EN			(0x204)
--#define TCA_INTR_STS			(0x208)
--#define TCA_GCFG			(0x210)
--#define TCA_TCPC			(0x214)
--#define TCA_SYSMODE_CFG			(0x218)
--#define TCA_VBUS_CTRL			(0x240)
--
--#define CTRL0_USB3_VBUSVLD		BIT(7)
--#define CTRL0_USB3_VBUSVLD_SEL		BIT(6)
--
--#define CTRL3_USB2_VBUSVLDEXT0		BIT(6)
--#define CTRL3_USB2_VBUSVLDEXTSEL0	BIT(5)
--
--#define CTRL5_USB2_SIDDQ		BIT(0)
--
--#define CTRL7_USB2_REFCLKSEL_MASK	GENMASK(4, 3)
--#define CTRL7_USB2_REFCLKSEL_ABB	(BIT(4) | BIT(3))
--#define CTRL7_USB2_REFCLKSEL_PAD	BIT(4)
--
--#define CFG50_USB3_PHY_TEST_POWERDOWN	BIT(23)
--
--#define CFG54_USB31PHY_CR_ADDR_MASK	GENMASK(31, 16)
--
--#define CFG54_USB3PHY_REF_USE_PAD	BIT(12)
--#define CFG54_PHY0_PMA_PWR_STABLE	BIT(11)
--#define CFG54_PHY0_PCS_PWR_STABLE	BIT(9)
--#define CFG54_USB31PHY_CR_ACK		BIT(7)
--#define CFG54_USB31PHY_CR_WR_EN		BIT(5)
--#define CFG54_USB31PHY_CR_SEL		BIT(4)
--#define CFG54_USB31PHY_CR_RD_EN		BIT(3)
--#define CFG54_USB31PHY_CR_CLK		BIT(2)
--#define CFG54_USB3_PHY0_ANA_PWR_EN	BIT(1)
--
--#define CFG58_USB31PHY_CR_DATA_MASK     GENMASK(31, 16)
--
--#define CFG5C_USB3_PHY0_SS_MPLLA_SSC_EN	BIT(1)
--
--#define CFGA0_VAUX_RESET		BIT(9)
--#define CFGA0_USB31C_RESET		BIT(8)
--#define CFGA0_USB2PHY_REFCLK_SELECT	BIT(4)
--#define CFGA0_USB3PHY_RESET		BIT(1)
--#define CFGA0_USB2PHY_POR		BIT(0)
--
--#define INTR_EN_XA_TIMEOUT_EVT_EN	BIT(1)
--#define INTR_EN_XA_ACK_EVT_EN		BIT(0)
--
--#define CLK_RST_TCA_REF_CLK_EN		BIT(1)
--#define CLK_RST_SUSPEND_CLK_EN		BIT(0)
--
--#define GCFG_ROLE_HSTDEV		BIT(4)
--#define GCFG_OP_MODE			GENMASK(1, 0)
--#define GCFG_OP_MODE_CTRL_SYNC_MODE	BIT(0)
--
--#define TCPC_VALID			BIT(4)
--#define TCPC_LOW_POWER_EN		BIT(3)
--#define TCPC_MUX_CONTROL_MASK		GENMASK(1, 0)
--#define TCPC_MUX_CONTROL_USB31		BIT(0)
--
--#define SYSMODE_CFG_TYPEC_DISABLE	BIT(3)
--
--#define VBUS_CTRL_POWERPRESENT_OVERRD	GENMASK(3, 2)
--#define VBUS_CTRL_VBUSVALID_OVERRD	GENMASK(1, 0)
--
--#define KIRIN970_USB_DEFAULT_PHY_PARAM	(0xfdfee4)
--#define KIRIN970_USB_DEFAULT_PHY_VBOOST	(0x5)
--
--#define TX_VBOOST_LVL_REG		(0xf)
--#define TX_VBOOST_LVL_START		(6)
--#define TX_VBOOST_LVL_ENABLE		BIT(9)
--
--struct hi3670_priv {
--	struct device *dev;
--	struct regmap *peri_crg;
--	struct regmap *pctrl;
--	struct regmap *sctrl;
--	struct regmap *usb31misc;
--
--	u32 eye_diagram_param;
--	u32 tx_vboost_lvl;
--
--	u32 peri_crg_offset;
--	u32 pctrl_offset;
--	u32 usb31misc_offset;
--};
--
--static int hi3670_phy_cr_clk(struct regmap *usb31misc)
--{
--	int ret;
--
--	/* Clock up */
--	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
--				 CFG54_USB31PHY_CR_CLK, CFG54_USB31PHY_CR_CLK);
--	if (ret)
--		return ret;
--
--	/* Clock down */
--	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
--				 CFG54_USB31PHY_CR_CLK, 0);
--
--	return ret;
--}
--
--static int hi3670_phy_cr_set_sel(struct regmap *usb31misc)
--{
--	return regmap_update_bits(usb31misc, USB_MISC_CFG54,
--				  CFG54_USB31PHY_CR_SEL, CFG54_USB31PHY_CR_SEL);
--}
--
--static int hi3670_phy_cr_start(struct regmap *usb31misc, int direction)
--{
--	int ret, reg;
--
--	if (direction)
--		reg = CFG54_USB31PHY_CR_WR_EN;
--	else
--		reg = CFG54_USB31PHY_CR_RD_EN;
--
--	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54, reg, reg);
--
--	if (ret)
--		return ret;
--
--	ret = hi3670_phy_cr_clk(usb31misc);
--	if (ret)
--		return ret;
--
--	return regmap_update_bits(usb31misc, USB_MISC_CFG54,
--				  CFG54_USB31PHY_CR_RD_EN | CFG54_USB31PHY_CR_WR_EN, 0);
--}
--
--static int hi3670_phy_cr_wait_ack(struct regmap *usb31misc)
--{
--	u32 reg;
--	int retry = 10;
--	int ret;
--
--	while (retry-- > 0) {
--		ret = regmap_read(usb31misc, USB_MISC_CFG54, &reg);
--		if (ret)
--			return ret;
--		if ((reg & CFG54_USB31PHY_CR_ACK) == CFG54_USB31PHY_CR_ACK)
--			return 0;
--
--		ret = hi3670_phy_cr_clk(usb31misc);
--		if (ret)
--			return ret;
--
--		usleep_range(10, 20);
--	}
--
--	return -ETIMEDOUT;
--}
--
--static int hi3670_phy_cr_set_addr(struct regmap *usb31misc, u32 addr)
--{
--	u32 reg;
--	int ret;
--
--	ret = regmap_read(usb31misc, USB_MISC_CFG54, &reg);
--	if (ret)
--		return ret;
--
--	reg = FIELD_PREP(CFG54_USB31PHY_CR_ADDR_MASK, addr);
--	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
--				 CFG54_USB31PHY_CR_ADDR_MASK, reg);
--
--	return ret;
--}
--
--static int hi3670_phy_cr_read(struct regmap *usb31misc, u32 addr, u32 *val)
--{
--	int reg;
--	int i;
--	int ret;
--
--	for (i = 0; i < 100; i++) {
--		ret = hi3670_phy_cr_clk(usb31misc);
--		if (ret)
--			return ret;
--	}
--
--	ret = hi3670_phy_cr_set_sel(usb31misc);
--	if (ret)
--		return ret;
--
--	ret = hi3670_phy_cr_set_addr(usb31misc, addr);
--	if (ret)
--		return ret;
--
--	ret = hi3670_phy_cr_start(usb31misc, 0);
--	if (ret)
--		return ret;
--
--	ret = hi3670_phy_cr_wait_ack(usb31misc);
--	if (ret)
--		return ret;
--
--	ret = regmap_read(usb31misc, USB_MISC_CFG58, &reg);
--	if (ret)
--		return ret;
--
--	*val = FIELD_GET(CFG58_USB31PHY_CR_DATA_MASK, reg);
--
--	return 0;
--}
--
--static int hi3670_phy_cr_write(struct regmap *usb31misc, u32 addr, u32 val)
--{
--	int i;
--	int ret;
--
--	for (i = 0; i < 100; i++) {
--		ret = hi3670_phy_cr_clk(usb31misc);
--		if (ret)
--			return ret;
--	}
--
--	ret = hi3670_phy_cr_set_sel(usb31misc);
--	if (ret)
--		return ret;
--
--	ret = hi3670_phy_cr_set_addr(usb31misc, addr);
--	if (ret)
--		return ret;
--
--	ret = regmap_write(usb31misc, USB_MISC_CFG58,
--			   FIELD_PREP(CFG58_USB31PHY_CR_DATA_MASK, val));
--	if (ret)
--		return ret;
--
--	ret = hi3670_phy_cr_start(usb31misc, 1);
--	if (ret)
--		return ret;
--
--	ret = hi3670_phy_cr_wait_ack(usb31misc);
--
--	return ret;
--}
--
--static int hi3670_phy_set_params(struct hi3670_priv *priv)
--{
--	u32 reg;
--	int ret;
--	int retry = 3;
--
--	ret = regmap_write(priv->usb31misc, USB3OTG_CTRL4,
--			   priv->eye_diagram_param);
--	if (ret) {
--		dev_err(priv->dev, "set USB3OTG_CTRL4 failed\n");
--		return ret;
--	}
--
--	while (retry-- > 0) {
--		ret = hi3670_phy_cr_read(priv->usb31misc,
--					 TX_VBOOST_LVL_REG, &reg);
--		if (!ret)
--			break;
--
--		if (ret != -ETIMEDOUT) {
--			dev_err(priv->dev, "read TX_VBOOST_LVL_REG failed\n");
--			return ret;
--		}
--	}
--	if (ret)
--		return ret;
--
--	reg |= (TX_VBOOST_LVL_ENABLE | (priv->tx_vboost_lvl << TX_VBOOST_LVL_START));
--	ret = hi3670_phy_cr_write(priv->usb31misc, TX_VBOOST_LVL_REG, reg);
--	if (ret)
--		dev_err(priv->dev, "write TX_VBOOST_LVL_REG failed\n");
--
--	return ret;
--}
--
--static bool hi3670_is_abbclk_selected(struct hi3670_priv *priv)
--{
--	u32 reg;
--
--	if (!priv->sctrl) {
--		dev_err(priv->dev, "priv->sctrl is null!\n");
--		return false;
--	}
--
--	if (regmap_read(priv->sctrl, SCTRL_SCDEEPSLEEPED, &reg)) {
--		dev_err(priv->dev, "SCTRL_SCDEEPSLEEPED read failed!\n");
--		return false;
--	}
--
--	if ((reg & USB_CLK_SELECTED) == 0)
--		return false;
--
--	return true;
--}
--
--static int hi3670_config_phy_clock(struct hi3670_priv *priv)
--{
--	u32 val, mask;
--	int ret;
--
--	if (!hi3670_is_abbclk_selected(priv)) {
--		/* usb refclk iso disable */
--		ret = regmap_write(priv->peri_crg, PERI_CRG_ISODIS,
--				   USB_REFCLK_ISO_EN);
--		if (ret)
--			goto out;
--
--		/* enable usb_tcxo_en */
--		ret = regmap_write(priv->pctrl, PCTRL_PERI_CTRL3,
--				   USB_TCXO_EN |
--				   (USB_TCXO_EN << PCTRL_PERI_CTRL3_MSK_START));
--
--		/* select usbphy clk from abb */
--		mask = SC_CLK_USB3PHY_3MUX1_SEL;
--		ret = regmap_update_bits(priv->pctrl,
--					 PCTRL_PERI_CTRL24, mask, 0);
--		if (ret)
--			goto out;
--
--		ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0,
--					 CFGA0_USB2PHY_REFCLK_SELECT, 0);
--		if (ret)
--			goto out;
--
--		ret = regmap_read(priv->usb31misc, USB3OTG_CTRL7, &val);
--		if (ret)
--			goto out;
--		val &= ~CTRL7_USB2_REFCLKSEL_MASK;
--		val |= CTRL7_USB2_REFCLKSEL_ABB;
--		ret = regmap_write(priv->usb31misc, USB3OTG_CTRL7, val);
--		if (ret)
--			goto out;
--
--		return 0;
--	}
--
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG54,
--				 CFG54_USB3PHY_REF_USE_PAD,
--				 CFG54_USB3PHY_REF_USE_PAD);
--	if (ret)
--		goto out;
--
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0,
--				 CFGA0_USB2PHY_REFCLK_SELECT,
--				 CFGA0_USB2PHY_REFCLK_SELECT);
--	if (ret)
--		goto out;
--
--	ret = regmap_read(priv->usb31misc, USB3OTG_CTRL7, &val);
--	if (ret)
--		goto out;
--	val &= ~CTRL7_USB2_REFCLKSEL_MASK;
--	val |= CTRL7_USB2_REFCLKSEL_PAD;
--	ret = regmap_write(priv->usb31misc, USB3OTG_CTRL7, val);
--	if (ret)
--		goto out;
--
--	ret = regmap_write(priv->peri_crg,
--			   PERI_CRG_PEREN6, GT_CLK_USB2PHY_REF);
--	if (ret)
--		goto out;
--
--	return 0;
--out:
--	dev_err(priv->dev, "failed to config phy clock ret: %d\n", ret);
--	return ret;
--}
--
--static int hi3670_config_tca(struct hi3670_priv *priv)
--{
--	u32 val, mask;
--	int ret;
--
--	ret = regmap_write(priv->usb31misc, TCA_INTR_STS, 0xffff);
--	if (ret)
--		goto out;
--
--	ret = regmap_write(priv->usb31misc, TCA_INTR_EN,
--			   INTR_EN_XA_TIMEOUT_EVT_EN | INTR_EN_XA_ACK_EVT_EN);
--	if (ret)
--		goto out;
--
--	mask = CLK_RST_TCA_REF_CLK_EN | CLK_RST_SUSPEND_CLK_EN;
--	ret = regmap_update_bits(priv->usb31misc, TCA_CLK_RST, mask, 0);
--	if (ret)
--		goto out;
--
--	ret = regmap_update_bits(priv->usb31misc, TCA_GCFG,
--				 GCFG_ROLE_HSTDEV | GCFG_OP_MODE,
--				 GCFG_ROLE_HSTDEV | GCFG_OP_MODE_CTRL_SYNC_MODE);
--	if (ret)
--		goto out;
--
--	ret = regmap_update_bits(priv->usb31misc, TCA_SYSMODE_CFG,
--				 SYSMODE_CFG_TYPEC_DISABLE, 0);
--	if (ret)
--		goto out;
--
--	ret = regmap_read(priv->usb31misc, TCA_TCPC, &val);
--	if (ret)
--		goto out;
--	val &= ~(TCPC_VALID | TCPC_LOW_POWER_EN | TCPC_MUX_CONTROL_MASK);
--	val |= (TCPC_VALID | TCPC_MUX_CONTROL_USB31);
--	ret = regmap_write(priv->usb31misc, TCA_TCPC, val);
--	if (ret)
--		goto out;
--
--	ret = regmap_write(priv->usb31misc, TCA_VBUS_CTRL,
--			   VBUS_CTRL_POWERPRESENT_OVERRD | VBUS_CTRL_VBUSVALID_OVERRD);
--	if (ret)
--		goto out;
--
--	return 0;
--out:
--	dev_err(priv->dev, "failed to config phy clock ret: %d\n", ret);
--	return ret;
--}
--
--static int hi3670_phy_init(struct phy *phy)
--{
--	struct hi3670_priv *priv = phy_get_drvdata(phy);
--	u32 val;
--	int ret;
--
--	/* assert controller */
--	val = CFGA0_VAUX_RESET | CFGA0_USB31C_RESET |
--	      CFGA0_USB3PHY_RESET | CFGA0_USB2PHY_POR;
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, val, 0);
--	if (ret)
--		goto out;
--
--	ret = hi3670_config_phy_clock(priv);
--	if (ret)
--		goto out;
--
--	/* Exit from IDDQ mode */
--	ret = regmap_update_bits(priv->usb31misc, USB3OTG_CTRL5,
--				 CTRL5_USB2_SIDDQ, 0);
--	if (ret)
--		goto out;
--
--	/* Release USB31 PHY out of TestPowerDown mode */
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG50,
--				 CFG50_USB3_PHY_TEST_POWERDOWN, 0);
--	if (ret)
--		goto out;
--
--	/* Deassert phy */
--	val = CFGA0_USB3PHY_RESET | CFGA0_USB2PHY_POR;
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, val, val);
--	if (ret)
--		goto out;
--
--	usleep_range(100, 120);
--
--	/* Tell the PHY power is stable */
--	val = CFG54_USB3_PHY0_ANA_PWR_EN | CFG54_PHY0_PCS_PWR_STABLE |
--	      CFG54_PHY0_PMA_PWR_STABLE;
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG54,
--				 val, val);
--	if (ret)
--		goto out;
--
--	ret = hi3670_config_tca(priv);
--	if (ret)
--		goto out;
--
--	/* Enable SSC */
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFG5C,
--				 CFG5C_USB3_PHY0_SS_MPLLA_SSC_EN,
--				 CFG5C_USB3_PHY0_SS_MPLLA_SSC_EN);
--	if (ret)
--		goto out;
--
--	/* Deassert controller */
--	val = CFGA0_VAUX_RESET | CFGA0_USB31C_RESET;
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, val, val);
--	if (ret)
--		goto out;
--
--	usleep_range(100, 120);
--
--	/* Set fake vbus valid signal */
--	val = CTRL0_USB3_VBUSVLD | CTRL0_USB3_VBUSVLD_SEL;
--	ret = regmap_update_bits(priv->usb31misc, USB3OTG_CTRL0, val, val);
--	if (ret)
--		goto out;
--
--	val = CTRL3_USB2_VBUSVLDEXT0 | CTRL3_USB2_VBUSVLDEXTSEL0;
--	ret = regmap_update_bits(priv->usb31misc, USB3OTG_CTRL3, val, val);
--	if (ret)
--		goto out;
--
--	usleep_range(100, 120);
--
--	ret = hi3670_phy_set_params(priv);
--	if (ret)
--		goto out;
--
--	return 0;
--out:
--	dev_err(priv->dev, "failed to init phy ret: %d\n", ret);
--	return ret;
--}
--
--static int hi3670_phy_exit(struct phy *phy)
--{
--	struct hi3670_priv *priv = phy_get_drvdata(phy);
--	u32 mask;
--	int ret;
--
--	/* Assert phy */
--	mask = CFGA0_USB3PHY_RESET | CFGA0_USB2PHY_POR;
--	ret = regmap_update_bits(priv->usb31misc, USB_MISC_CFGA0, mask, 0);
--	if (ret)
--		goto out;
--
--	if (!hi3670_is_abbclk_selected(priv)) {
--		/* disable usb_tcxo_en */
--		ret = regmap_write(priv->pctrl, PCTRL_PERI_CTRL3,
--				   USB_TCXO_EN << PCTRL_PERI_CTRL3_MSK_START);
--	} else {
--		ret = regmap_write(priv->peri_crg, PERI_CRG_PERDIS6,
--				   GT_CLK_USB2PHY_REF);
--		if (ret)
--			goto out;
--	}
--
--	return 0;
--out:
--	dev_err(priv->dev, "failed to exit phy ret: %d\n", ret);
--	return ret;
--}
--
--static const struct phy_ops hi3670_phy_ops = {
--	.init		= hi3670_phy_init,
--	.exit		= hi3670_phy_exit,
--	.owner		= THIS_MODULE,
--};
--
--static int hi3670_phy_probe(struct platform_device *pdev)
--{
--	struct phy_provider *phy_provider;
--	struct device *dev = &pdev->dev;
--	struct phy *phy;
--	struct hi3670_priv *priv;
--
--	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
--	if (!priv)
--		return -ENOMEM;
--
--	priv->dev = dev;
--	priv->peri_crg = syscon_regmap_lookup_by_phandle(dev->of_node,
--							 "hisilicon,pericrg-syscon");
--	if (IS_ERR(priv->peri_crg)) {
--		dev_err(dev, "no hisilicon,pericrg-syscon\n");
--		return PTR_ERR(priv->peri_crg);
--	}
--
--	priv->pctrl = syscon_regmap_lookup_by_phandle(dev->of_node,
--						      "hisilicon,pctrl-syscon");
--	if (IS_ERR(priv->pctrl)) {
--		dev_err(dev, "no hisilicon,pctrl-syscon\n");
--		return PTR_ERR(priv->pctrl);
--	}
--
--	priv->sctrl = syscon_regmap_lookup_by_phandle(dev->of_node,
--						      "hisilicon,sctrl-syscon");
--	if (IS_ERR(priv->sctrl)) {
--		dev_err(dev, "no hisilicon,sctrl-syscon\n");
--		return PTR_ERR(priv->sctrl);
--	}
--
--	/* node of hi3670 phy is a sub-node of usb3_otg_bc */
--	priv->usb31misc = syscon_node_to_regmap(dev->parent->of_node);
--	if (IS_ERR(priv->usb31misc)) {
--		dev_err(dev, "no hisilicon,usb3-otg-bc-syscon\n");
--		return PTR_ERR(priv->usb31misc);
--	}
--
--	if (of_property_read_u32(dev->of_node, "hisilicon,eye-diagram-param",
--				 &priv->eye_diagram_param))
--		priv->eye_diagram_param = KIRIN970_USB_DEFAULT_PHY_PARAM;
--
--	if (of_property_read_u32(dev->of_node, "hisilicon,tx-vboost-lvl",
--				 &priv->tx_vboost_lvl))
--		priv->tx_vboost_lvl = KIRIN970_USB_DEFAULT_PHY_VBOOST;
--
--	phy = devm_phy_create(dev, NULL, &hi3670_phy_ops);
--	if (IS_ERR(phy))
--		return PTR_ERR(phy);
--
--	phy_set_drvdata(phy, priv);
--	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
--	return PTR_ERR_OR_ZERO(phy_provider);
--}
--
--static const struct of_device_id hi3670_phy_of_match[] = {
--	{ .compatible = "hisilicon,hi3670-usb-phy" },
--	{ },
--};
--MODULE_DEVICE_TABLE(of, hi3670_phy_of_match);
--
--static struct platform_driver hi3670_phy_driver = {
--	.probe	= hi3670_phy_probe,
--	.driver = {
--		.name	= "hi3670-usb-phy",
--		.of_match_table	= hi3670_phy_of_match,
--	}
--};
--module_platform_driver(hi3670_phy_driver);
--
--MODULE_AUTHOR("Yu Chen <chenyu56@huawei.com>");
--MODULE_LICENSE("GPL v2");
--MODULE_DESCRIPTION("Hilisicon Kirin970 USB31 PHY Driver");
-diff --git a/drivers/staging/hikey9xx/phy-hi3670-usb3.yaml b/drivers/staging/hikey9xx/phy-hi3670-usb3.yaml
-deleted file mode 100644
-index ebd78acfe2de..000000000000
---- a/drivers/staging/hikey9xx/phy-hi3670-usb3.yaml
-+++ /dev/null
-@@ -1,73 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0
--%YAML 1.2
-----
--$id: http://devicetree.org/schemas/phy/hisilicon,hi3670-usb3.yaml#
--$schema: http://devicetree.org/meta-schemas/core.yaml#
--
--title: Hisilicon Kirin970 USB PHY
--
--maintainers:
--  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
--
--description: |+
--  Bindings for USB3 PHY on HiSilicon Kirin 970.
--
--properties:
--  compatible:
--    const: hisilicon,hi3670-usb-phy
--
--  "#phy-cells":
--    const: 0
--
--  hisilicon,pericrg-syscon:
--    $ref: '/schemas/types.yaml#/definitions/phandle'
--    description: phandle of syscon used to control iso refclk.
--
--  hisilicon,pctrl-syscon:
--    $ref: '/schemas/types.yaml#/definitions/phandle'
--    description: phandle of syscon used to control usb tcxo.
--
--  hisilicon,sctrl-syscon:
--    $ref: '/schemas/types.yaml#/definitions/phandle'
--    description: phandle of syscon used to control phy deep sleep.
--
--  hisilicon,eye-diagram-param:
--    $ref: /schemas/types.yaml#/definitions/uint32
--    description: Eye diagram for phy.
--
--  hisilicon,tx-vboost-lvl:
--    $ref: /schemas/types.yaml#/definitions/uint32
--    description: TX level vboost for phy.
--
--required:
--  - compatible
--  - hisilicon,pericrg-syscon
--  - hisilicon,pctrl-syscon
--  - hisilicon,sctrl-syscon
--  - hisilicon,eye-diagram-param
--  - hisilicon,tx-vboost-lvl
--  - "#phy-cells"
--
--additionalProperties: false
--
--examples:
--  - |
--    bus {
--      #address-cells = <2>;
--      #size-cells = <2>;
--
--      usb3_otg_bc: usb3_otg_bc@ff200000 {
--        compatible = "syscon", "simple-mfd";
--        reg = <0x0 0xff200000 0x0 0x1000>;
--
--        usb_phy {
--          compatible = "hisilicon,hi3670-usb-phy";
--          #phy-cells = <0>;
--          hisilicon,pericrg-syscon = <&crg_ctrl>;
--          hisilicon,pctrl-syscon = <&pctrl>;
--          hisilicon,sctrl-syscon = <&sctrl>;
--          hisilicon,eye-diagram-param = <0xfdfee4>;
--          hisilicon,tx-vboost-lvl = <0x5>;
--        };
--      };
--    };
--- 
-2.30.2
+ERROR: modpost: "device_is_bound" [drivers/phy/tegra/phy-tegra-xusb.ko] undefined!
 
+https://github.com/ClangBuiltLinux/continuous-integration2/runs/2196101892?check_suite_focus=true
+
+> +		return ERR_PTR(-EPROBE_DEFER);
+> +
+> +	padctl->regmap = dev_get_regmap(&pdev->dev, "usb_sleepwalk");
+> +	if (!padctl->regmap)
+> +		dev_info(dev, "pmc regmap is not available.\n");
+> +
+> +out:
+>  	return &padctl->base;
+>  }
+>  
+> @@ -2313,9 +3177,75 @@ static void tegra210_xusb_padctl_remove(struct tegra_xusb_padctl *padctl)
+>  {
+>  }
+>  
+> +static void tegra210_xusb_padctl_save(struct tegra_xusb_padctl *padctl)
+> +{
+> +	struct tegra210_xusb_padctl *priv = to_tegra210_xusb_padctl(padctl);
+> +
+> +	priv->context.usb2_pad_mux =
+> +		padctl_readl(padctl, XUSB_PADCTL_USB2_PAD_MUX);
+> +	priv->context.usb2_port_cap =
+> +		padctl_readl(padctl, XUSB_PADCTL_USB2_PORT_CAP);
+> +	priv->context.ss_port_map =
+> +		padctl_readl(padctl, XUSB_PADCTL_SS_PORT_MAP);
+> +	priv->context.usb3_pad_mux =
+> +		padctl_readl(padctl, XUSB_PADCTL_USB3_PAD_MUX);
+> +}
+> +
+> +static void tegra210_xusb_padctl_restore(struct tegra_xusb_padctl *padctl)
+> +{
+> +	struct tegra210_xusb_padctl *priv = to_tegra210_xusb_padctl(padctl);
+> +	struct tegra_xusb_lane *lane;
+> +
+> +	padctl_writel(padctl, priv->context.usb2_pad_mux,
+> +		XUSB_PADCTL_USB2_PAD_MUX);
+> +	padctl_writel(padctl, priv->context.usb2_port_cap,
+> +		XUSB_PADCTL_USB2_PORT_CAP);
+> +	padctl_writel(padctl, priv->context.ss_port_map,
+> +		XUSB_PADCTL_SS_PORT_MAP);
+> +
+> +	list_for_each_entry(lane, &padctl->lanes, list) {
+> +		if (lane->pad->ops->iddq_enable)
+> +			tegra210_uphy_lane_iddq_enable(lane);
+> +	}
+> +
+> +	padctl_writel(padctl, priv->context.usb3_pad_mux,
+> +		XUSB_PADCTL_USB3_PAD_MUX);
+> +
+> +	list_for_each_entry(lane, &padctl->lanes, list) {
+> +		if (lane->pad->ops->iddq_disable)
+> +			tegra210_uphy_lane_iddq_disable(lane);
+> +	}
+> +}
+> +
+> +static int tegra210_xusb_padctl_suspend_noirq(struct tegra_xusb_padctl *padctl)
+> +{
+> +	mutex_lock(&padctl->lock);
+> +
+> +	tegra210_uphy_deinit(padctl);
+> +
+> +	tegra210_xusb_padctl_save(padctl);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +	return 0;
+> +}
+> +
+> +static int tegra210_xusb_padctl_resume_noirq(struct tegra_xusb_padctl *padctl)
+> +{
+> +	mutex_lock(&padctl->lock);
+> +
+> +	tegra210_xusb_padctl_restore(padctl);
+> +
+> +	tegra210_uphy_init(padctl);
+> +
+> +	mutex_unlock(&padctl->lock);
+> +	return 0;
+> +}
+> +
+>  static const struct tegra_xusb_padctl_ops tegra210_xusb_padctl_ops = {
+>  	.probe = tegra210_xusb_padctl_probe,
+>  	.remove = tegra210_xusb_padctl_remove,
+> +	.suspend_noirq = tegra210_xusb_padctl_suspend_noirq,
+> +	.resume_noirq = tegra210_xusb_padctl_resume_noirq,
+>  	.usb3_set_lfps_detect = tegra210_usb3_set_lfps_detect,
+>  	.hsic_set_idle = tegra210_hsic_set_idle,
+>  	.vbus_override = tegra210_xusb_padctl_vbus_override,
+> -- 
+> 2.30.2
+> 
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
 -- 
 linux-phy mailing list
