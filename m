@@ -2,95 +2,95 @@ Return-Path: <SRS0=WJYd=IY=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-12.2 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1FCEEC433C1
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Mar 2021 09:05:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 91A08C433DB
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Mar 2021 12:44:07 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7D91561A2D
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Mar 2021 09:05:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7D91561A2D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
+	by mail.kernel.org (Postfix) with ESMTPS id 0653E61999
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Mar 2021 12:44:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0653E61999
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:CC:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8GMIHsG4Z5Ob4lLuUrCAoCm3kLL5JxQRc/snc6lWfMw=; b=pLmI7GGj9cgMmVV3A3LPPLW/J
-	SX2ZSbsI20i7OCUnAhP4A1iYPDrWFoUKL7nbr+pUYP7SlHNMLi/69CqQd1T7xHKo5fhHye3Yka+Al
-	C+uawI4Y7qhzXd8cMfUMm/Y1IxuT0Ek7caz+vNEZ1Tu0zTvtdAjbYCapvl6joDi1HowbxzlNuIfY4
-	Ocieb1BrladV8rTl3qLQCR+g0D34SO4XCu9FPlZvon7aZ8JwHVd7txsMaEv/p7ZIVG5jt9PuusGON
-	2zqywUh4M1WMY/+6gzjpKVK8aPgz0HY0NzGCGRj77kNA+75QxjoGBW6tUaeYB/G3LSKSgr/tNm/Nu
-	6DnwBSLdw==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ioBlKMuGad0Qwqv0d1CFH85NCowLGQ47ae4n7+GG1WE=; b=ki+5M9a4zhJgacXDj1UVLbIEQ
+	BVnLNVCmYiJCkQ//UZVuCkHaKNSUPMAORLwlcwQ0fp1an1q1jjZdBy3xqf6Jsm26oT9zQpiN5jA4T
+	P37utPF+djiOAlb4NF3hpDlJvZPzgKklqgunSTvKQLxqivkNGSYXeMlojqZNN6mzWXQOR4pTRqD2c
+	2TpnUHt4TT6ZVtap0XnPNDXjzhKHovlBMt0Lw9TpEpi5zLTno4XJOytWvzLmfjei+8BCgHwiDeDGm
+	DaCyOSrQYohrodvtxGucjj3LSzUbCqDyqhkyJm5roiA82yVLPSRE0Q7Mn5E0zwexe/vIg5//QNM4K
+	d6MrAmlUQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lPiPb-0034WQ-L8; Fri, 26 Mar 2021 09:05:47 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1lPlor-003X7J-AM; Fri, 26 Mar 2021 12:44:05 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lPiPV-0034Ve-83; Fri, 26 Mar 2021 09:05:44 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 12Q91f9o008067; Fri, 26 Mar 2021 10:05:35 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=selector1;
- bh=SfGDczMFdVs4NsLs7fVrUK95O9Wm/idmWV1zG/3B7ks=;
- b=jL43Rz2N0zLtHTkJh3ufuzEUV8+Z3TbBptIr1IKRqDN8NAiocMg+wO/0XU2hGOyNDTwW
- ji0JrhS0pLXUYBZWbzfUe4zCkA4B5smB/bpIbu1BRy37/gKzIgYmcHW+3MjOekBfu7St
- +q7Odmf1I+Vxhl+x5/cxHpAi37/K5p9/CPuFZLWZVAunbLZSc00vGWhtHFFLfDsMBufx
- 5tAJqD6zymWVKRgUiyp7ZUFhcOST0nnyDAAtKv8fEvUiVNXv7PPjlQUvEJ/6C99kbPBv
- iKsINgVvkqEB7VtkWTM2NLgG8bxpW2PuFoTM6SF0eP5EuQXhC4FCK806xy2XFqWfvED8 rg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 37h136320v-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 26 Mar 2021 10:05:35 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4A44A100034;
- Fri, 26 Mar 2021 10:05:34 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag2node3.st.com [10.75.127.6])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 323C924187A;
- Fri, 26 Mar 2021 10:05:34 +0100 (CET)
-Received: from lmecxl0995.lme.st.com (10.75.127.50) by SFHDAG2NODE3.st.com
- (10.75.127.6) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Fri, 26 Mar
- 2021 10:05:33 +0100
-Subject: Re: [PATCH 1/2] dt-bindings: phy: add vbus-supply optional property
- to phy-stm32-usbphyc
-To: Rob Herring <robh@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>
-References: <20210317160954.15487-1-amelie.delaunay@foss.st.com>
- <20210317160954.15487-2-amelie.delaunay@foss.st.com>
- <20210326002851.GA2031564@robh.at.kernel.org>
-From: Amelie DELAUNAY <amelie.delaunay@foss.st.com>
-Message-ID: <5c0d0bc5-1243-fcda-4578-da6cad80c53c@foss.st.com>
-Date: Fri, 26 Mar 2021 10:05:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
+ id 1lPlon-003X6Q-By
+ for linux-phy@lists.infradead.org; Fri, 26 Mar 2021 12:44:03 +0000
+Received: by mail-ej1-x632.google.com with SMTP id w3so8207799ejc.4
+ for <linux-phy@lists.infradead.org>; Fri, 26 Mar 2021 05:44:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=zHs2rz0P64Y16pZ4KFsK15GuVu5q4UHDRiwzGtDX5Xk=;
+ b=KEQHQzWz9TsC0TbmvPwkTSOndS4w/COOp9yZlcU36HPaJG6Ki6q4WIaH4qDYd/Mmf2
+ xK2wT4QwPluTs+YCrvQlTEmuH4g2363RiJ6g8SQGu/t7d+lbcXbDHD0zDVWRoKdgueOb
+ Iz2rF7NCdreolUAmmhX/AK2JU/HtM5suN5mG7cJHSlp4DjvfGGy0xqPoHa3oAXvEsodV
+ K0A6hg37Y47Ir1A6kaYH7aTnSB06SaXc4A1v8ii4OE+MOZVM0jJ1x1fqURQA5vQ4RzUa
+ Z7N7URJLvDENDNFDjOyS9AqpUepCj1AZgDg68R4u8paXTH0x0O130dfYVPt/fR90/KH1
+ 5V3A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=zHs2rz0P64Y16pZ4KFsK15GuVu5q4UHDRiwzGtDX5Xk=;
+ b=VtOQe1JeQnQ6Qmqjc3Z1f0hUsVKDv6/Ds122cDIVetYEH/Nq5Y7uaZCHOCefXmULfB
+ TBWGDmiTBCCG4li4opLm+tTR6vnY3XsCB22wd3r4no0QtcHAx6F+zv88xFRgR83sz0Rw
+ 34fm4EzwcuUT8F5QHrH23gLSsoBcSEG9n+U3Xo3GIufT1rthvkudYYKaG4MszAiFdd4v
+ yIfbFOgEFw3YGABzshdRRpv5BgexGrxuF3xeP0Eai21zt+GurjRGth6gc+wKoiXqHo5H
+ nn95MK9pLp7pkws+SlS5UNDWHO3CN8Vf6BP5XZ54NSK5sgQd693wNCiDyw7POAsFTfBz
+ t6TQ==
+X-Gm-Message-State: AOAM532K+dRymaTsbsR0UuOiRTSKNCloIxgTK+8yspICB3bmx+rqvXOw
+ 8TAczYflOxex5RJmdg2Ez/Q=
+X-Google-Smtp-Source: ABdhPJwEO9FcXpyM3blf4SD+DstxaqueR87M3PPzgmo5NhiszndF0ytGwkHBhmXsdrYBwNpI/sO7Sg==
+X-Received: by 2002:a17:906:4055:: with SMTP id
+ y21mr14904860ejj.507.1616762640686; 
+ Fri, 26 Mar 2021 05:44:00 -0700 (PDT)
+Received: from localhost ([62.96.65.119])
+ by smtp.gmail.com with ESMTPSA id gj26sm3752684ejb.67.2021.03.26.05.43.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 26 Mar 2021 05:43:59 -0700 (PDT)
+Date: Fri, 26 Mar 2021 13:44:21 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Nathan Chancellor <nathan@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
+ Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+ clang-built-linux@googlegroups.com
+Subject: Re: [PATCH v8 09/13] phy: tegra: xusb: Add wake/sleepwalk for Tegra210
+Message-ID: <YF3XJVD5PfGKxfxn@orome.fritz.box>
+References: <20210325164057.793954-1-thierry.reding@gmail.com>
+ <20210325164057.793954-10-thierry.reding@gmail.com>
+ <20210325202616.xgjkdg7zev6apofe@archlinux-ax161>
 MIME-Version: 1.0
-In-Reply-To: <20210326002851.GA2031564@robh.at.kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SFHDAG2NODE3.st.com
- (10.75.127.6)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369, 18.0.761
- definitions=2021-03-26_02:2021-03-26,
- 2021-03-26 signatures=0
+In-Reply-To: <20210325202616.xgjkdg7zev6apofe@archlinux-ax161>
+User-Agent: Mutt/2.0.6 (98f8cb83) (2021-03-06)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210326_090541_577673_6565B49E 
-X-CRM114-Status: GOOD (  20.42  )
+X-CRM114-CacheID: sfid-20210326_124401_533319_3E43C096 
+X-CRM114-Status: GOOD (  12.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,64 +102,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============5669326137740032699=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
 
-On 3/26/21 1:28 AM, Rob Herring wrote:
-> On Wed, Mar 17, 2021 at 05:09:53PM +0100, Amelie Delaunay wrote:
->> This patch adds vbus-supply optional property to phy sub-nodes.
->> A regulator for USB VBUS may be needed for host mode.
->>
->> Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
->> ---
->>   Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml | 3 +++
->>   1 file changed, 3 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml b/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
->> index 018cc1246ee1..ad2378c30334 100644
->> --- a/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
->> +++ b/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
->> @@ -71,6 +71,9 @@ patternProperties:
->>         phy-supply:
->>           description: regulator providing 3V3 power supply to the PHY.
->>   
->> +      vbus-supply:
->> +        description: regulator providing 5V Vbus to the USB connector.
-> 
-> Unless Vbus is powering the phy, then this only belongs in the USB
-> connector node.
-> 
+--===============5669326137740032699==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="HPPmyzACOAwF/C+y"
+Content-Disposition: inline
 
-Do you mean I should declare a connector node as a child of the phy node 
-and get the vbus-supply property from this connector node ?
 
-In case of a on-board autonomous hub between the phy and the connectors, 
-so no driver to drive it nor to get the vbus-supply property to provide 
-VBUS to the hub, then the connectors, how to use connector ?
+--HPPmyzACOAwF/C+y
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-[USB controller]===[USB PHY]===[(USB HUB)]===|> USB A connector
-                               /              |> USB A connector
-                             VBUS             |> USB A connector
-                                              |> USB A connector
+On Thu, Mar 25, 2021 at 01:26:16PM -0700, Nathan Chancellor wrote:
+> On Thu, Mar 25, 2021 at 05:40:53PM +0100, Thierry Reding wrote:
+[...]
+> > @@ -2306,6 +3150,26 @@ tegra210_xusb_padctl_probe(struct device *dev,
+> >  	if (err < 0)
+> >  		return ERR_PTR(err);
+> > =20
+> > +	np =3D of_parse_phandle(dev->of_node, "nvidia,pmc", 0);
+> > +	if (!np) {
+> > +		dev_warn(dev, "nvidia,pmc property is missing\n");
+> > +		goto out;
+> > +	}
+> > +
+> > +	pdev =3D of_find_device_by_node(np);
+> > +	if (!pdev) {
+> > +		dev_warn(dev, "PMC device is not available\n");
+> > +		goto out;
+> > +	}
+> > +
+> > +	if (!device_is_bound(&pdev->dev))
+>=20
+> This breaks arm64 allmodconfig:
+>=20
+> ERROR: modpost: "device_is_bound" [drivers/phy/tegra/phy-tegra-xusb.ko] u=
+ndefined!
+>=20
+> https://github.com/ClangBuiltLinux/continuous-integration2/runs/219610189=
+2?check_suite_focus=3Dtrue
 
-Please advise.
+Good catch. I replaced this with:
 
-Regards,
-Amelie
+	if (!platform_get_drvdata(pdev))
 
->> +
->>         "#phy-cells":
->>           enum: [ 0x0, 0x1 ]
->>   
->> -- 
->> 2.17.1
->>
+which will work fine and is equivalent, at least in this particular
+case.
+
+Thanks,
+Thierry
+
+--HPPmyzACOAwF/C+y
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmBd1yUACgkQ3SOs138+
+s6HLmhAAg6VGGfAUPFpswBOLFB6vY4Imt5wexLqOOm2CVgQjoVAt25YGeBNljtdZ
+bSduOlYIT+QG9IrKj4zSCjE6RI3y3i/SggxS4Xob7ecbHh3ZRpDeGIcrJY6+XHqd
+Eh2yu3NElQWSI6e6yADhr5wjrma6bB7jA9OfXU5VdUZn/OvQnia3Z0d1CWh5eOKj
+XhtJzeuVELoTwi/Z1STdTjXT9Rcw7ttaYCyI/Pu4rrE7u3Vcwmu/N2pDf+CjRlkP
+WcZwEFg3WnqpG+zxBYgPsDvEcicJcmkre4ssDGhIztMcIyVmUpGHUlV5pgknskBQ
+u1Mmbu7zdYJsyFdQ3PnoOInpjn0adIp/kMrpToVDULHD8UbploTho/qa2J7XaCoz
+EFkXiTJnzNWLNkWBsD+SwqJ2joLLvbopTh5vfW7mWaDxGN/gwLVNNR/ueSuuWUeI
+wDmwygansqDJ5A7z1eaHi9MHrBTxxwWR4HpCzEd/nH0v/twBVj+Uyhfvm2ZCvzT9
+rWwrAg7bS6d5yQCQPEqVaS23PS4AVP0ddaXf489KdNYwMcCrWEQPlcByEg84APhY
+OtzEb6pxI25jpm7XWZPVAOp8XpBT4Xl8iPx0DGSWv1YZXXm+riSa+RVMsJp8KsAU
+mGsd/PLWctV+cZjMO8BBZx+kCjTZA2vqZEQva8h2O0vERObkYUE=
+=zpPK
+-----END PGP SIGNATURE-----
+
+--HPPmyzACOAwF/C+y--
+
+
+--===============5669326137740032699==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5669326137740032699==--
+
