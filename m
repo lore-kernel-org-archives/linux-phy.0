@@ -2,20 +2,19 @@ Return-Path: <SRS0=B2Kc=I4=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	UNWANTED_LANGUAGE_BODY,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7BB99C433C1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 593AEC433E0
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:18 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0D776619D1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0D776619D1
+	by mail.kernel.org (Postfix) with ESMTPS id CBBB8619DB
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CBBB8619DB
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,45 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DNZ7EgWoWzaK4uIKrHmXECU8l4wzX2deCBvhOWher00=; b=If8hhoQTV5YW+cI151wakETBk
-	GvYr5PF4Jeo9xKHqizoh/Xx++qJB7wbUgH9Te9It5jCptTdukl7OBpKPU8YqjJLX+xVPk9J0ILQWu
-	aavQsnzrbtqG1Qq538PkEvPaz8zsN4wGsWBZme5s4HtYCxxwFw1mA6Y/qh84YQuOfArw08kZTb6rz
-	2o0TPFfFVeAg1L0w+L2wAjJTT8ybpeXbIgiAOom+3RCp51MhJGF0vJnOoL/exBAiAcZcvNx69g++X
-	4ptySVUCbXCslrLFtoMfB4Mms+YTtvqCK6dGWNRc2atCiNpWckK8WAWZt8Nx0voMrEq0qE8hgGR9C
-	aMzZm1zWw==;
+	 bh=igJx6tDaPaX+A9rQLoaNRCqFODCvqn3EwMwYFK0Dbio=; b=efmJ1LZt0wkyBBWrAab+/PusH
+	Ey4beuzuzUX923f3Tn9fnORYdGY2a3DY475em7sgQOS+1dOKqAfa+CE/66EtVYV96Enviw+FSxzbC
+	hBobgKm0CJ0vLHw+mYasavZRrCcRuCnX1icDgGGHw0Hg7AHJUrSV3/Wm6XiYAasfWOarE95LSWP7c
+	GnxHM/BqMTBb3q9S98sN+CPcX6lPIHadE7K7v+tTYorbfFtbcY32sBr7Rj1246tmny7ovjmVO1lU0
+	euTtLGRRw+x7VDkN9H+E1WkIRRiSi7R7ouKeXSd4cxBbE2fgsZW56GC+DGnAlAXjipbE/dL/+rYV8
+	ZAKI6h+9w==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRIGk-004Slx-Qy; Tue, 30 Mar 2021 17:35:10 +0000
+	id 1lRIGq-004Smi-1s; Tue, 30 Mar 2021 17:35:16 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRIGe-004SkR-RD
- for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 17:35:07 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UHYxnK057214;
- Tue, 30 Mar 2021 12:34:59 -0500
+ id 1lRIGm-004Slz-7E
+ for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 17:35:15 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UHZ5OJ057284;
+ Tue, 30 Mar 2021 12:35:05 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1617125699;
- bh=oyLcX4zTICMuRbzkOD5Koeq3zdkXhldkZIUq9vZlncE=;
+ s=ti-com-17Q1; t=1617125705;
+ bh=exPtfFP357uEoI265sBSxQidNZbHwCy+lm1TSU/QwUI=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=K3Fnejc+96F4eclc1c3BTPfDLQgBJ9yiRk/DwOasZw7fDdE3p3iyws4MCPoqmXXgb
- Xy9XQ9zCa3hrdxuRW9vfNzD5mEmTrVaXSDDRJLG/UM5c41bvXmHCjk0RYG2tCRLFGh
- DwAnmE8QqoaP8bn+/Nn/6qecf6suPEAdnLiEp3eQ=
-Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UHYxEV068748
+ b=klAWR/g0XSp2ekS+fjDS4+DVOXI4pDzmUIoimtLc7c0L+6GJkGkI4W5QVV4YyAdYq
+ nXuwWpMbVPfG4qZHoQi0QnX2MW9BGKQxHI2xvhdwrPA+r5w7CguUyusI6IMQA+BZGC
+ ISZjLeYLrwKpIce8XWLipZvfufACHZndR2k3KpLw=
+Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UHZ5CD041024
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 30 Mar 2021 12:34:59 -0500
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 30 Mar 2021 12:35:05 -0500
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 30
- Mar 2021 12:34:58 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2021 12:35:05 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Tue, 30 Mar 2021 12:34:59 -0500
+ Frontend Transport; Tue, 30 Mar 2021 12:35:05 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXmgr125244;
- Tue, 30 Mar 2021 12:34:53 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXmgs125244;
+ Tue, 30 Mar 2021 12:34:59 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
@@ -79,17 +78,17 @@ To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <dmaengine@vger.kernel.org>
 CC: Pratyush Yadav <p.yadav@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: [PATCH 10/16] media: cadence: csi2rx: Add wrappers for subdev calls
-Date: Tue, 30 Mar 2021 23:03:42 +0530
-Message-ID: <20210330173348.30135-11-p.yadav@ti.com>
+Subject: [PATCH 11/16] dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
+Date: Tue, 30 Mar 2021 23:03:43 +0530
+Message-ID: <20210330173348.30135-12-p.yadav@ti.com>
 X-Mailer: git-send-email 2.30.0
 In-Reply-To: <20210330173348.30135-1-p.yadav@ti.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210330_183505_499927_EDE6B5AF 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20210330_183512_828507_4D83FE4F 
+X-CRM114-Status: GOOD (  12.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,113 +105,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When this bridge driver is being user by another platform driver, it
-might want to call subdev operations like getting format, setting
-format, enumerating format codes, etc. Add wrapper functions that pass
-that call through to the sensor.
-
-Currently wrappers are added only for the ops used by TI's platform
-driver. More can be added later as needed.
+The CSI2RX subsystem uses PSI-L DMA to transfer frames to memory. It can
+have up to 32 threads but the current driver only supports using one. So
+add an entry for that one thread.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/media/platform/cadence/cdns-csi2rx.c | 77 ++++++++++++++++++++
- 1 file changed, 77 insertions(+)
+ drivers/dma/ti/k3-psil-j721e.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/drivers/media/platform/cadence/cdns-csi2rx.c b/drivers/media/platform/cadence/cdns-csi2rx.c
-index 3385e1bc213e..2e8bbc53cb8b 100644
---- a/drivers/media/platform/cadence/cdns-csi2rx.c
-+++ b/drivers/media/platform/cadence/cdns-csi2rx.c
-@@ -408,12 +408,89 @@ static int csi2rx_s_stream(struct v4l2_subdev *subdev, int enable)
- 	return ret;
- }
+diff --git a/drivers/dma/ti/k3-psil-j721e.c b/drivers/dma/ti/k3-psil-j721e.c
+index 7580870ed746..19ffa31e6dc6 100644
+--- a/drivers/dma/ti/k3-psil-j721e.c
++++ b/drivers/dma/ti/k3-psil-j721e.c
+@@ -58,6 +58,14 @@
+ 		},					\
+ 	}
  
-+static int csi2rx_g_frame_interval(struct v4l2_subdev *subdev,
-+				   struct v4l2_subdev_frame_interval *fi)
-+{
-+	struct csi2rx_priv *csi2rx = v4l2_subdev_to_csi2rx(subdev);
++#define PSIL_CSI2RX(x)					\
++	{						\
++		.thread_id = x,				\
++		.ep_config = {				\
++			.ep_type = PSIL_EP_NATIVE,	\
++		},					\
++	}
 +
-+	return v4l2_subdev_call(csi2rx->source_subdev, video, g_frame_interval,
-+				fi);
-+}
-+
-+static int csi2rx_s_frame_interval(struct v4l2_subdev *subdev,
-+				   struct v4l2_subdev_frame_interval *fi)
-+{
-+	struct csi2rx_priv *csi2rx = v4l2_subdev_to_csi2rx(subdev);
-+
-+	return v4l2_subdev_call(csi2rx->source_subdev, video, s_frame_interval,
-+				fi);
-+}
-+
-+static int csi2rx_enum_mbus_code(struct v4l2_subdev *subdev,
-+				 struct v4l2_subdev_pad_config *cfg,
-+				 struct v4l2_subdev_mbus_code_enum *code)
-+{
-+	struct csi2rx_priv *csi2rx = v4l2_subdev_to_csi2rx(subdev);
-+
-+	return v4l2_subdev_call(csi2rx->source_subdev, pad, enum_mbus_code,
-+				cfg, code);
-+}
-+
-+static int csi2rx_get_fmt(struct v4l2_subdev *subdev,
-+			  struct v4l2_subdev_pad_config *cfg,
-+			  struct v4l2_subdev_format *fmt)
-+{
-+	struct csi2rx_priv *csi2rx = v4l2_subdev_to_csi2rx(subdev);
-+
-+	return v4l2_subdev_call(csi2rx->source_subdev, pad, get_fmt, cfg, fmt);
-+}
-+
-+static int csi2rx_set_fmt(struct v4l2_subdev *subdev,
-+			  struct v4l2_subdev_pad_config *cfg,
-+			  struct v4l2_subdev_format *fmt)
-+{
-+	struct csi2rx_priv *csi2rx = v4l2_subdev_to_csi2rx(subdev);
-+
-+	return v4l2_subdev_call(csi2rx->source_subdev, pad, set_fmt, cfg, fmt);
-+}
-+
-+static int csi2rx_enum_frame_size(struct v4l2_subdev *subdev,
-+				  struct v4l2_subdev_pad_config *cfg,
-+				  struct v4l2_subdev_frame_size_enum *fse)
-+{
-+	struct csi2rx_priv *csi2rx = v4l2_subdev_to_csi2rx(subdev);
-+
-+	return v4l2_subdev_call(csi2rx->source_subdev, pad, enum_frame_size,
-+				cfg, fse);
-+}
-+
-+static int csi2rx_enum_frame_interval(struct v4l2_subdev *subdev,
-+				      struct v4l2_subdev_pad_config *cfg,
-+				      struct v4l2_subdev_frame_interval_enum *fie)
-+{
-+	struct csi2rx_priv *csi2rx = v4l2_subdev_to_csi2rx(subdev);
-+
-+	return v4l2_subdev_call(csi2rx->source_subdev, pad, enum_frame_interval,
-+				cfg, fie);
-+}
-+
- static const struct v4l2_subdev_video_ops csi2rx_video_ops = {
- 	.s_stream	= csi2rx_s_stream,
-+	.g_frame_interval = csi2rx_g_frame_interval,
-+	.s_frame_interval = csi2rx_s_frame_interval,
-+};
-+
-+static const struct v4l2_subdev_pad_ops csi2rx_pad_ops = {
-+	.enum_mbus_code = csi2rx_enum_mbus_code,
-+	.get_fmt	= csi2rx_get_fmt,
-+	.set_fmt	= csi2rx_set_fmt,
-+	.enum_frame_size = csi2rx_enum_frame_size,
-+	.enum_frame_interval = csi2rx_enum_frame_interval,
- };
- 
- static const struct v4l2_subdev_ops csi2rx_subdev_ops = {
- 	.video		= &csi2rx_video_ops,
-+	.pad		= &csi2rx_pad_ops,
- };
- 
- static int csi2rx_async_bound(struct v4l2_async_notifier *notifier,
+ /* PSI-L source thread IDs, used for RX (DMA_DEV_TO_MEM) */
+ static struct psil_ep j721e_src_ep_map[] = {
+ 	/* SA2UL */
+@@ -138,6 +146,8 @@ static struct psil_ep j721e_src_ep_map[] = {
+ 	PSIL_PDMA_XY_PKT(0x4707),
+ 	PSIL_PDMA_XY_PKT(0x4708),
+ 	PSIL_PDMA_XY_PKT(0x4709),
++	/* CSI2RX */
++	PSIL_CSI2RX(0x4940),
+ 	/* CPSW9 */
+ 	PSIL_ETHERNET(0x4a00),
+ 	/* CPSW0 */
 -- 
 2.30.0
 
