@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 387EFC433DB
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 57FBBC433C1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:08 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B6B06619B1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B6B06619B1
+	by mail.kernel.org (Postfix) with ESMTPS id DBA47619CF
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DBA47619CF
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,45 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Igcj2RBX2/a461H+ue9NBO0UpeAK4o4HgvPbvowDdSE=; b=h1M9CxEFh8tyc8hwZsKqQPaNv
-	gAZR63ifrEG4ZveXygiy/E3VKVyFJg6J0L3WTqmoyzYbHZ8pBCjiKnVjqm/qwdqSeLEhkmEqqYBFf
-	ipT8L+hKiZnv6w+BHWkrJHRBQlrs11jGhvnckFGdhnyDQ5oRA1XMGbea6e5eRiFgRFce8I17KYjnO
-	21qtl/V0g/zeV25d050Gur2hQxmYnN5jrNdLkXgQI37UJz2Fws2xCDS7c8xzHtiBj6nquQ7kVAzaJ
-	0WwcaYv+gukjNhrufPKrO/tKJjMXyq7nqMuB+32YULVsPeEaFy5GnOXdOrOvsvkTT6FPi9TM5t/Mw
-	K7+0/lOeA==;
+	 bh=FP5cRtTtYg/ByBxFbr/63kbBCDsRBn6B4qtoheJNoTY=; b=lZY9QLvu7OsOvv+CEBMlEwDie
+	bePIxT4knLrYMo3S7Hf3J4VNpzDNaxPeXpfrhfQXMD2b2+4y613YaoX9fPyhS2X6A34+uYygzHDPk
+	4AjuiyT0IhI02U5WS3sIipxdzZVhSmmoZnBKpdH1Izy/hvlUyphaTuS7K6kZBx+ukUCPHwiNEoAAB
+	il/XyWWcZ3FLkJl2GVPR0Q+gSnbMZKpq3AD457iK7d5T7+CqxJlRpN0/nVpZHGbwUH7RTK1p7hdz5
+	q5NxWIbdGtp2OYtVd6D0vYXBIQC3PfHfol5z5U+1pJS+i4b48vwxBFj5mEW8LrWkxSUT2pf5iC8HL
+	uBi5Z1I0g==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRIGZ-004Sjo-Ma; Tue, 30 Mar 2021 17:34:59 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1lRIGg-004Skz-08; Tue, 30 Mar 2021 17:35:06 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRIGS-004SiH-IY
- for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 17:34:56 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UHYkW8080852;
- Tue, 30 Mar 2021 12:34:46 -0500
+ id 1lRIGY-004SjN-Kn
+ for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 17:35:01 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UHYqev057185;
+ Tue, 30 Mar 2021 12:34:52 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1617125686;
- bh=nFwFKwKkm2Tg7mXODMtl1Qe24xGGc90Y5vckjfrUM3U=;
+ s=ti-com-17Q1; t=1617125692;
+ bh=lbeVUbvAR4oductXBEoruja1yT2y8SvkHXqgYIrrklE=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=KhFXzFRXlc9hm2zgNKhDPSATD6M36w3Tw5uKUDqwCEwen3r5TN25+K0Wfg+unFRHt
- nJHKE2+HCRYvD6MvL8hy8kE6fnPdFXGFHH6YT0ahOaNEGMSGTZDXy+G46y/iHNIcyz
- okUWWe5uNkl0WNMsHr+GJnAaGdcJLnwow0CUckM8=
-Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UHYkjW026148
+ b=dBY1eZOMB8xhObsTadyWKSE+0DooNzUM5h+IMYv0KkpsU8YIuPLEvFlKKGPnyKlMI
+ GVn78U7Hnk5X9pTndkOkUwMMYbnjciJ04HUm8trsH9n2BHYvqBkskyyUP3F+XWQaLD
+ j4klMYe8qQZVVJPx+OjqECI5ctEwE1grlwl6rwXE=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UHYqPN032783
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 30 Mar 2021 12:34:46 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 30 Mar 2021 12:34:52 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 30
- Mar 2021 12:34:46 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2021 12:34:52 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Tue, 30 Mar 2021 12:34:46 -0500
+ Frontend Transport; Tue, 30 Mar 2021 12:34:52 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXmgp125244;
- Tue, 30 Mar 2021 12:34:40 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXmgq125244;
+ Tue, 30 Mar 2021 12:34:46 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
@@ -78,17 +78,18 @@ To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <dmaengine@vger.kernel.org>
 CC: Pratyush Yadav <p.yadav@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: [PATCH 08/16] media: cadence: csi2rx: Fix stream data configuration
-Date: Tue, 30 Mar 2021 23:03:40 +0530
-Message-ID: <20210330173348.30135-9-p.yadav@ti.com>
+Subject: [PATCH 09/16] media: cadence: csi2rx: Turn subdev power on before
+ starting stream
+Date: Tue, 30 Mar 2021 23:03:41 +0530
+Message-ID: <20210330173348.30135-10-p.yadav@ti.com>
 X-Mailer: git-send-email 2.30.0
 In-Reply-To: <20210330173348.30135-1-p.yadav@ti.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210330_183454_797645_387E3D6B 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20210330_183459_435189_3058F365 
+X-CRM114-Status: GOOD (  11.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,48 +106,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Firstly, there is no VC_EN bit present in the STREAM_DATA_CFG register.
-Bit 31 is part of the VL_SELECT field. Remove it completely.
-
-Secondly, it makes little sense to enable ith virtual channel for ith
-stream. Sure, there might be a use-case that demands it. But there might
-also be a use case that demands all streams to use the 0th virtual
-channel. Prefer this case over the former because it is less arbitrary
-and also makes it very clear what the limitations of the current driver
-is instead of giving a false impression that multiple virtual channels
-are supported.
+The subdevice power needs to be turned on before the stream is started.
+Otherwise it might not be in the proper state to stream the data. Turn
+it off when stopping the stream.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/media/platform/cadence/cdns-csi2rx.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+ drivers/media/platform/cadence/cdns-csi2rx.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/drivers/media/platform/cadence/cdns-csi2rx.c b/drivers/media/platform/cadence/cdns-csi2rx.c
-index eca65b157f59..7d1ac51e0698 100644
+index 7d1ac51e0698..3385e1bc213e 100644
 --- a/drivers/media/platform/cadence/cdns-csi2rx.c
 +++ b/drivers/media/platform/cadence/cdns-csi2rx.c
-@@ -48,7 +48,6 @@
- #define CSI2RX_STREAM_STATUS_RDY			BIT(31)
+@@ -256,6 +256,10 @@ static int csi2rx_start(struct csi2rx_priv *csi2rx)
  
- #define CSI2RX_STREAM_DATA_CFG_REG(n)		(CSI2RX_STREAM_BASE(n) + 0x008)
--#define CSI2RX_STREAM_DATA_CFG_EN_VC_SELECT		BIT(31)
- #define CSI2RX_STREAM_DATA_CFG_VC_SELECT(n)		BIT((n) + 16)
+ 	writel(reg, csi2rx->base + CSI2RX_STATIC_CFG_REG);
  
- #define CSI2RX_STREAM_CFG_REG(n)		(CSI2RX_STREAM_BASE(n) + 0x00c)
-@@ -290,8 +289,11 @@ static int csi2rx_start(struct csi2rx_priv *csi2rx)
- 		writel(CSI2RX_STREAM_CFG_FIFO_MODE_LARGE_BUF,
- 		       csi2rx->base + CSI2RX_STREAM_CFG_REG(i));
++	ret = v4l2_subdev_call(csi2rx->source_subdev, core, s_power, true);
++	if (ret && ret != -ENOIOCTLCMD)
++		goto err_disable_pclk;
++
+ 	ret = v4l2_subdev_call(csi2rx->source_subdev, video, s_stream, true);
+ 	if (ret)
+ 		goto err_disable_pclk;
+@@ -358,6 +362,10 @@ static void csi2rx_stop(struct csi2rx_priv *csi2rx)
+ 	if (v4l2_subdev_call(csi2rx->source_subdev, video, s_stream, false))
+ 		dev_warn(csi2rx->dev, "Couldn't disable our subdev\n");
  
--		writel(CSI2RX_STREAM_DATA_CFG_EN_VC_SELECT |
--		       CSI2RX_STREAM_DATA_CFG_VC_SELECT(i),
-+		/*
-+		 * Enable one virtual channel. When multiple virtual channels
-+		 * are supported this will have to be changed.
-+		 */
-+		writel(CSI2RX_STREAM_DATA_CFG_VC_SELECT(0),
- 		       csi2rx->base + CSI2RX_STREAM_DATA_CFG_REG(i));
++	ret = v4l2_subdev_call(csi2rx->source_subdev, core, s_power, false);
++	if (ret && ret != -ENOIOCTLCMD)
++		dev_warn(csi2rx->dev, "Couldn't power off subdev\n");
++
+ 	if (csi2rx->dphy) {
+ 		writel(0, csi2rx->base + CSI2RX_DPHY_LANE_CTRL_REG);
  
- 		writel(CSI2RX_STREAM_CTRL_START,
 -- 
 2.30.0
 
