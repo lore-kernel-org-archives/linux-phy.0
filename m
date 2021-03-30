@@ -2,70 +2,91 @@ Return-Path: <SRS0=B2Kc=I4=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-11.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6E6E6C433C1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 14:23:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 34846C433DB
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:34:13 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2154561955
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 14:23:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2154561955
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id B98DF61964
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:34:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B98DF61964
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/mw5IL/yCxA1de/r9s4xThyERgbEvRo6kp9VEApVOE0=; b=ByaHTak9Jwaf1lv1xhtDSmxMK
-	tGQwNin/dCPz/7rEEwJoZlmGSLRV7GZCjhxZirOZ35m7aPQ0vcH8m6Y3ncxHn52d5tg+ztsNf6ra4
-	x9x0lV1PVchAQ3bZcMgMH+UL2aY1cJ7W0n8SaTrHCDtAptUMSwEkvWV1HTHCoTKYJbRnKmJvbOEDh
-	5VXJWWUBpUeIwiAwBaS08mTY4NLko3aY6BiP6UBbf9Hf0wTKstAy1vUqhGW7xRDIMXreRfq3opNfV
-	VF++VClpoC8owE2pxOto5EE9dWMOx+XqSHHtrQT8TPxJ5PzgvBcT7ttipcGJVC5cmyoUgrzOh0hAS
-	reVhKOiGQ==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=AprRzbqNej0Pa9vUP8D2QxOjFC3RiuJuLQlcTRzJ5d8=; b=R1Na+myfGOI3Fa4U0iMsX2UEuF
+	RT6oS9Ma6LpCosMFcuAKVYRQ0EH3Zsyhi74USmifrE5IafG33k2xLC5v27iNem8ai21HY8ljFgyEM
+	gtL8UBXNtlckNd5hJT+ZvFhrJUemxR1V5Ji3o140NjkW7/1og21A8IHdqZFmfTzyrelAv70Z4CZz0
+	4k19cAZMP//4SAZDJdirJoM7X2XFSgySvCGqy5yg9zHHjzavjblP+dpoheOE+ByNMBYNMpElKln/M
+	B5B2gqCCdepNvX/T0sQqI/TX75j7ltCq2RrKzzdit8pC1I+W8VSGMC6LpypUZELteZA0O7sumwFDR
+	uJzgtMiA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRFHS-003zAy-3y; Tue, 30 Mar 2021 14:23:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lRIFn-004Sbf-05; Tue, 30 Mar 2021 17:34:11 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRFHO-003z8G-E1
- for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 14:23:40 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 23933619C8;
- Tue, 30 Mar 2021 14:23:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617114217;
- bh=5M2yquBBhiLOCTGF5f2g2d6BfrScvdQstqJq4iBUW4k=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SlmOX/BM7xUXgpNG4rww+7aN+rGDiGfKqmW77POT8KkwCl8Ed0VgKMjbJN9R/R6WU
- O2IdwUQv359wKtHBCbibVKep0hhbo8BQmWA0k0FT2o3GJCPXdxFKzEhP/1Ya8KjsVH
- hp1rQJTnVneQiCGsdOztaNgsmHDXUTmIc4SGRKEGlRT8QPE4xLyjR/vCdp3Mgcx0wB
- tGP2D+KjRdClVoPj7owA9ni94LwLNRG1otLVWflae8UrpAkcVWB/moIYQUpKNhgJnH
- DpMa76lfSpqOBcSqLVyfq4kzm71bje1RcRJioH4t5fo459FAtilVx5Yax3jOcmICGP
- e6Ut/cmcWb62g==
-Date: Tue, 30 Mar 2021 19:53:32 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
- Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v8 06/13] phy: tegra: xusb: Add sleepwalk and
- suspend/resume
-Message-ID: <YGM0ZOroZolJ9zEC@vkoul-mobl.Dlink>
-References: <20210325164057.793954-1-thierry.reding@gmail.com>
- <20210325164057.793954-7-thierry.reding@gmail.com>
+ id 1lRIFh-004Sax-LK
+ for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 17:34:08 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXtnt056809;
+ Tue, 30 Mar 2021 12:33:55 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1617125635;
+ bh=klDN3SRCgEm92mzhH+b10dVnhg4f/bIDdg6mQxTtm4o=;
+ h=From:To:CC:Subject:Date;
+ b=DHU9Kl08+poeyMRGZ5LTonGYtO7avzKKZPcvTTCoiUpl9Ktnuu2CYUcLN67MxO0QL
+ c+PXjfelxxXwJx/WMkyYUeY9TaFO46ja46uDOiAAch4VTI8+pakFrtBXwEZcgahdv7
+ 1n+BOxAQcroO2uGMB0Xv+sHyr8gCxw9jq+Jx1qRI=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UHXtdE031312
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 30 Mar 2021 12:33:55 -0500
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 30
+ Mar 2021 12:33:55 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
+ Frontend Transport; Tue, 30 Mar 2021 12:33:55 -0500
+Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXmgh125244;
+ Tue, 30 Mar 2021 12:33:49 -0500
+From: Pratyush Yadav <p.yadav@ti.com>
+To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
+ <vkoul@kernel.org>, Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Benoit Parrot <bparrot@ti.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Alexandre Courbot <acourbot@chromium.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>, Stanimir Varbanov
+ <stanimir.varbanov@linaro.org>, Helen Koike <helen.koike@collabora.com>,
+ Michael Tretter <m.tretter@pengutronix.de>,
+ Peter Chen <peter.chen@nxp.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ <linux-media@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <dmaengine@vger.kernel.org>
+CC: Pratyush Yadav <p.yadav@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Subject: [PATCH 00/16] CSI2RX support on J721E
+Date: Tue, 30 Mar 2021 23:03:32 +0530
+Message-ID: <20210330173348.30135-1-p.yadav@ti.com>
+X-Mailer: git-send-email 2.30.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210325164057.793954-7-thierry.reding@gmail.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210330_152338_779628_2ADD3F3F 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20210330_183406_138673_B66133CB 
+X-CRM114-Status: GOOD (  12.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,39 +103,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-03-21, 17:40, Thierry Reding wrote:
-> From: JC Kuo <jckuo@nvidia.com>
-> 
-> This commit adds sleepwalk/wake and suspend/resume interfaces
-> to Tegra XUSB PHY driver.
-> 
-> Tegra XUSB host controller driver makes use of sleepwalk functions
-> to enable/disable sleepwalk circuit which is in always-on partition
-> and can respond to USB resume signals when controller is not powered.
-> Sleepwalk can be enabled/disabled for any USB UPHY individually.
-> 
->   - tegra_xusb_padctl_enable_phy_sleepwalk()
->   - tegra_xusb_padctl_disable_phy_sleepwalk()
-> 
-> Tegra XUSB host controller driver makes use of wake functions to
-> enable/disable/query wake circuit which is in always-on partition
-> can wake system up when USB resume happens.
-> Wake circuit can be enabled/disabled for any USB PHY individually.
-> 
->   - tegra_xusb_padctl_enable_phy_wake()
->   - tegra_xusb_padctl_disable_phy_wake()
->   - tegra_xusb_padctl_remote_wake_detected()
-> 
-> This commit also adds two system suspend stubs that can be used to
-> save and restore XUSB PADCTL context during system suspend and
-> resume.
->   - tegra_xusb_padctl_suspend_noirq()
->   - tegra_xusb_padctl_resume_noirq()
+Hi,
 
-Acked-By: Vinod Koul <vkoul@kernel.org>
+This series adds support for CSI2 capture on J721E. It includes some
+fixes to the Cadence CSI2RX driver, adds Rx support to Cadence DPHY
+driver, and finally adds the TI CSI2RX wrapper driver.
 
--- 
-~Vinod
+Tested on TI's J721E with OV5640 sensor.
+
+Paul Kocialkowski (1):
+  phy: Distinguish between Rx and Tx for MIPI D-PHY with submodes
+
+Pratyush Yadav (15):
+  phy: cdns-dphy: Prepare for Rx support
+  phy: cdns-dphy: Allow setting mode
+  phy: cdns-dphy: Add Rx support
+  media: cadence: csi2rx: Add external DPHY support
+  media: cadence: csi2rx: Soft reset the streams before starting capture
+  media: cadence: csi2rx: Set the STOP bit when stopping a stream
+  media: cadence: csi2rx: Fix stream data configuration
+  media: cadence: csi2rx: Turn subdev power on before starting stream
+  media: cadence: csi2rx: Add wrappers for subdev calls
+  dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
+  dt-bindings: media: Add DT bindings for TI CSI2RX driver
+  media: ti-vpe: csi2rx: Add CSI2RX support
+  dt-bindings: phy: Convert Cadence DPHY binding to YAML
+  dt-bindings: phy: cdns,dphy: make clocks optional
+  dt-bindings: phy: cdns,dphy: add power-domains property
+
+ .../devicetree/bindings/media/ti,csi2rx.yaml  |  70 ++
+ .../devicetree/bindings/phy/cdns,dphy.txt     |  20 -
+ .../devicetree/bindings/phy/cdns,dphy.yaml    |  52 +
+ MAINTAINERS                                   |   7 +
+ drivers/dma/ti/k3-psil-j721e.c                |  10 +
+ drivers/media/platform/Kconfig                |  11 +
+ drivers/media/platform/cadence/cdns-csi2rx.c  | 269 ++++-
+ drivers/media/platform/ti-vpe/Makefile        |   1 +
+ drivers/media/platform/ti-vpe/ti-csi2rx.c     | 964 ++++++++++++++++++
+ drivers/phy/cadence/cdns-dphy.c               | 407 +++++++-
+ include/linux/phy/phy-mipi-dphy.h             |  13 +
+ 11 files changed, 1754 insertions(+), 70 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/ti,csi2rx.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
+ create mode 100644 drivers/media/platform/ti-vpe/ti-csi2rx.c
+
+--
+2.30.0
+
 
 -- 
 linux-phy mailing list
