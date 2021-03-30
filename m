@@ -2,83 +2,71 @@ Return-Path: <SRS0=B2Kc=I4=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2F900C433C1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 11:04:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 69F0AC433C1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 14:13:08 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CFFB161983
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 11:04:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CFFB161983
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 15BBF619BA
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 14:13:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 15BBF619BA
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
-	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cJ7hexxTzbZ1ZwVsRweGrQUGvto3KVc4WAZ2Lr4+BaE=; b=EqcydXDE/02HomveLJ30A43ad
-	0JAt+ZQN6FA4ddEtkX0WCuYj8aMwFOEFoRPmYHIZVMeHnEfpuR9cnYqgLRmDUxZkiWVBFiZK/IPKz
-	m6R+NxOUVNufDh7ABaTDhtWJ7Osxdb+4/pO31lyLfjO/9T55i7dCSXHSvFuWJHYjfWEKsZ8e5Yj45
-	DBKUcJKVqEDbE+d2UC0ngjn3Wo7PLlrA+IUT3NPyKZCb1lrcmTShuU3B2krysJSC9d6RpMeo6M6Xj
-	GsFuegyjD14qsjyO9wMvuRrLjLZNHPN5qtbLf1t7yIaar2ZP16X/AlbalROaRa1Ulr08/mZWQvg1T
-	q6pTiSvYw==;
+	 bh=1na2uqu5/wIQ9r4VS7DwdgNzK/SvzMxWSI+PHfCNqsw=; b=e+F0FCK32ldUVDzMN50vRKat7
+	Inae8OSKOPIBr8lEo/JNYb6KL02shwxq/oNJpCmQdD1Sntk3Xz8LJlyMskPvu/tPrD6DXqvQWkVlh
+	LLYEcbtyDUwzOuwnTUBDqLF2hgLotH9pXeivFm3kB2zP8zAfWcJn39Fl+Xvvc42yz/BYywQl9+lE1
+	wZv3n2ZUjnf0mKodZQcBIs5yEAHCds4ajXnV07jXsVpq2FHkMiA508TOjQJHpt5BPKtNm6q+lWSvQ
+	lGBvjfI8O67iItCrOZeqFkZ9xdmKqp3bnEL8iRl8VrrMkJrmnL04TPKpLHNyI58OmIC+mz3iFv3SL
+	Ctjyeldgg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRCAR-003VZh-KX; Tue, 30 Mar 2021 11:04:15 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1lRF7C-003xKD-5y; Tue, 30 Mar 2021 14:13:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRC8C-003UwK-Nq
- for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 11:02:16 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UB1qUp118784;
- Tue, 30 Mar 2021 06:01:52 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1617102112;
- bh=59EnkL6XynB+CmMeLFU+N4d7tezrzxfTeoZ6WWGI8KU=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=huKdsmiBgO6jZIrgEr+7Sutuus+rJZjGcPcdmDN669encF8XxBna3FgvAp2htaSLn
- idwrIBzuXbsRvYIolpWc8yeSIzs1rnUoRgk4zU8N3S7AEIHbNQD6Oc6zWn0sr1X37V
- g6F1ysyu2KAav1RvBIbX+qJm+iUgICmcWVZTukww=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UB1qne013109
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 30 Mar 2021 06:01:52 -0500
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 30
- Mar 2021 06:01:52 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Tue, 30 Mar 2021 06:01:52 -0500
-Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UB1dcl094447;
- Tue, 30 Mar 2021 06:01:49 -0500
-From: Kishon Vijay Abraham I <kishon@ti.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>
-CC: Swapnil Jakhade <sjakhade@cadence.com>, <linux-phy@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>, Lokesh Vutla <lokeshvutla@ti.com>
-Subject: [PATCH v2 3/5] phy: cadence-torrent: Do not configure SERDES if it's
- already configured
-Date: Tue, 30 Mar 2021 16:31:36 +0530
-Message-ID: <20210330110138.24356-4-kishon@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20210330110138.24356-1-kishon@ti.com>
-References: <20210330110138.24356-1-kishon@ti.com>
+ id 1lRF77-003xGj-DO
+ for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 14:13:03 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id EAECE619C7;
+ Tue, 30 Mar 2021 14:12:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1617113577;
+ bh=3EtIj/RWbuCW8vrJE3TlniTyeTl35eaNnhpLSPK0Fe4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Q5wC3BDexHUQ+B03VrMn1iqwD843Ut3sKwN3zm10ZiJxwdntLFeQMW4Drlmi3EYnu
+ fsstGHcNoG9rkZFNO8pbmAhsX3dmQCT8OQaLZEPoMcwQTzNelsjkebVwBKsYFFYukI
+ SJO0d0xNk9onsYknDkBbGpbzh9oSsgPY1OH+lLEk4i9qnO4wjs3y4U7vngOJj632XF
+ tpd5H4GS1sHC036mRaj3FGFYdKhLyvkquIzE6eXN4pXP14q98gyDT0wVqq6p4X4YZd
+ KeXy+kMfv0pQX2HEhw42KIQXo1thl37p8/JZ++QErXiiqNNuPJTgM5JewU4curDKm+
+ jeHOLhDOx2FzA==
+Date: Tue, 30 Mar 2021 19:42:53 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Thierry Reding <thierry.reding@gmail.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
+ Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v8 03/13] phy: tegra: xusb: Move usb3 port init for
+ Tegra210
+Message-ID: <YGMx5cLmX+d48XKO@vkoul-mobl.Dlink>
+References: <20210325164057.793954-1-thierry.reding@gmail.com>
+ <20210325164057.793954-4-thierry.reding@gmail.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20210325164057.793954-4-thierry.reding@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210330_120157_930187_1F942C27 
-X-CRM114-Status: GOOD (  13.24  )
+X-CRM114-CacheID: sfid-20210330_151302_238136_6252F1E2 
+X-CRM114-Status: UNSURE (   7.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,90 +83,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Do not configure torrent SERDES if it's already configured.
+Hi Thierry,
 
-Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-Reviewed-by: Swapnil Jakhade <sjakhade@cadence.com>
----
- drivers/phy/cadence/phy-cadence-torrent.c | 32 ++++++++++++++++-------
- 1 file changed, 22 insertions(+), 10 deletions(-)
+On 25-03-21, 17:40, Thierry Reding wrote:
 
-diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index ab51c4bf7b30..5ee1657f5a1c 100644
---- a/drivers/phy/cadence/phy-cadence-torrent.c
-+++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -371,6 +371,10 @@ static const struct phy_ops cdns_torrent_phy_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static const struct phy_ops noop_ops = {
-+	.owner		= THIS_MODULE,
-+};
-+
- struct cdns_reg_pairs {
- 	u32 val;
- 	u32 off;
-@@ -2306,6 +2310,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
- 	struct device_node *child;
- 	int ret, subnodes, node = 0, i;
- 	u32 total_num_lanes = 0;
-+	int already_configured;
- 	u8 init_dp_regmap = 0;
- 	u32 phy_type;
- 
-@@ -2344,16 +2349,20 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	ret = cdns_torrent_reset(cdns_phy);
--	if (ret)
--		goto clk_cleanup;
-+	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1, &already_configured);
- 
--	ret = cdns_torrent_clk(cdns_phy);
--	if (ret)
--		goto clk_cleanup;
-+	if (!already_configured) {
-+		ret = cdns_torrent_reset(cdns_phy);
-+		if (ret)
-+			goto clk_cleanup;
-+
-+		ret = cdns_torrent_clk(cdns_phy);
-+		if (ret)
-+			goto clk_cleanup;
- 
--	/* Enable APB */
--	reset_control_deassert(cdns_phy->apb_rst);
-+		/* Enable APB */
-+		reset_control_deassert(cdns_phy->apb_rst);
-+	}
- 
- 	for_each_available_child_of_node(dev->of_node, child) {
- 		struct phy *gphy;
-@@ -2423,7 +2432,10 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
- 		of_property_read_u32(child, "cdns,ssc-mode",
- 				     &cdns_phy->phys[node].ssc_mode);
- 
--		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
-+		if (!already_configured)
-+			gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
-+		else
-+			gphy = devm_phy_create(dev, child, &noop_ops);
- 		if (IS_ERR(gphy)) {
- 			ret = PTR_ERR(gphy);
- 			goto put_child;
-@@ -2507,7 +2519,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
- 		goto put_lnk_rst;
- 	}
- 
--	if (cdns_phy->nsubnodes > 1) {
-+	if (cdns_phy->nsubnodes > 1 && !already_configured) {
- 		ret = cdns_torrent_phy_configure_multilink(cdns_phy);
- 		if (ret)
- 			goto put_lnk_rst;
+> +static struct tegra_xusb_usb3_port *
+> +tegra210_lane_to_usb3_port(struct tegra_xusb_lane *lane)
+> +{
+> +	int port;
+> +
+> +	if (!lane || !lane->pad || !lane->pad->padctl)
+> +		return NULL;
+
+This looks problematic to me, so if lane is NULL, it will still go ahead
+and check lane->pad which would result in NULL pointer dereference.
+
 -- 
-2.17.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
