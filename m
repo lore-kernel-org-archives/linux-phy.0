@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 593AEC433E0
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id EA4D6C433DB
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:27 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CBBB8619DB
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CBBB8619DB
+	by mail.kernel.org (Postfix) with ESMTPS id 8EF5E619D1
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 17:35:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8EF5E619D1
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,45 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=igJx6tDaPaX+A9rQLoaNRCqFODCvqn3EwMwYFK0Dbio=; b=efmJ1LZt0wkyBBWrAab+/PusH
-	Ey4beuzuzUX923f3Tn9fnORYdGY2a3DY475em7sgQOS+1dOKqAfa+CE/66EtVYV96Enviw+FSxzbC
-	hBobgKm0CJ0vLHw+mYasavZRrCcRuCnX1icDgGGHw0Hg7AHJUrSV3/Wm6XiYAasfWOarE95LSWP7c
-	GnxHM/BqMTBb3q9S98sN+CPcX6lPIHadE7K7v+tTYorbfFtbcY32sBr7Rj1246tmny7ovjmVO1lU0
-	euTtLGRRw+x7VDkN9H+E1WkIRRiSi7R7ouKeXSd4cxBbE2fgsZW56GC+DGnAlAXjipbE/dL/+rYV8
-	ZAKI6h+9w==;
+	 bh=FS9ubp5hciIfiQPewmANLASDzHrzbMhdeslRhVNaCEk=; b=GYsUQFcGG4jUEmWX84yBi3tqN
+	vBULCR3N1mh1soT/Bt2v/hPhZd/2RITaaWsYi/34olkftGXg4hR7BioqCTZkLhXY0UkmSQaOgNnug
+	hSufSumOYqiStR1XI6Akfq8ryzUeePmDlkTdj5bgbXrlC0CkSoiQukYGR5SjZYZ0pfyYlPDkztHda
+	3k4MSejUoL7HniVvZCi/a3PdUgqfjP8FoJLS7KoDK4eNR+qaFTpbg4pdRXvvnYK0GiD/Jtn1xLmx3
+	PlDx/JI//5dlvrBWrCclAaVKt22oRWH1G4hjoxH6OMiAR6LJmjqGpYe7TivDXTWfd0dAgVdkhTd9b
+	dCobh3jWw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRIGq-004Smi-1s; Tue, 30 Mar 2021 17:35:16 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1lRIGz-004SoR-PA; Tue, 30 Mar 2021 17:35:25 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRIGm-004Slz-7E
- for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 17:35:15 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UHZ5OJ057284;
- Tue, 30 Mar 2021 12:35:05 -0500
+ id 1lRIGs-004Sn0-33
+ for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 17:35:21 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12UHZBR8081000;
+ Tue, 30 Mar 2021 12:35:11 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1617125705;
- bh=exPtfFP357uEoI265sBSxQidNZbHwCy+lm1TSU/QwUI=;
+ s=ti-com-17Q1; t=1617125712;
+ bh=MPpPVeVWYZ+8y7/Bl7MCutZCIVpIdePmkSU7nZnIfkY=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=klAWR/g0XSp2ekS+fjDS4+DVOXI4pDzmUIoimtLc7c0L+6GJkGkI4W5QVV4YyAdYq
- nXuwWpMbVPfG4qZHoQi0QnX2MW9BGKQxHI2xvhdwrPA+r5w7CguUyusI6IMQA+BZGC
- ISZjLeYLrwKpIce8XWLipZvfufACHZndR2k3KpLw=
-Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UHZ5CD041024
+ b=hDfIqO94uEz7SMUG0tdB1Mz+3+bjUhiL02eEMBnsV2XOg09ENAqu4e7ounaQ6Is5j
+ 2fKpVpWDaxAKiKurEpuICFUpBgIPvFmHcWr0yucnff62RvLXnTU3amPoFZV4Pa/Toc
+ 8GEoEf8R/NbRzzMA7yDcLmm/re0R+1vHyFOFqq3g=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12UHZB1C034207
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 30 Mar 2021 12:35:05 -0500
-Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 30 Mar 2021 12:35:11 -0500
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 30
- Mar 2021 12:35:05 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2021 12:35:11 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Tue, 30 Mar 2021 12:35:05 -0500
+ Frontend Transport; Tue, 30 Mar 2021 12:35:11 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXmgs125244;
- Tue, 30 Mar 2021 12:34:59 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12UHXmgt125244;
+ Tue, 30 Mar 2021 12:35:05 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
@@ -78,17 +78,17 @@ To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <dmaengine@vger.kernel.org>
 CC: Pratyush Yadav <p.yadav@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: [PATCH 11/16] dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
-Date: Tue, 30 Mar 2021 23:03:43 +0530
-Message-ID: <20210330173348.30135-12-p.yadav@ti.com>
+Subject: [PATCH 12/16] dt-bindings: media: Add DT bindings for TI CSI2RX driver
+Date: Tue, 30 Mar 2021 23:03:44 +0530
+Message-ID: <20210330173348.30135-13-p.yadav@ti.com>
 X-Mailer: git-send-email 2.30.0
 In-Reply-To: <20210330173348.30135-1-p.yadav@ti.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210330_183512_828507_4D83FE4F 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20210330_183519_929854_6EF22A75 
+X-CRM114-Status: GOOD (  13.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,43 +105,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The CSI2RX subsystem uses PSI-L DMA to transfer frames to memory. It can
-have up to 32 threads but the current driver only supports using one. So
-add an entry for that one thread.
+TI's J721E uses the Cadence CSI2RX and DPHY peripherals to facilitate
+capture over a CSI-2 bus. The TI CSI2RX platform driver glues all the
+parts together.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/dma/ti/k3-psil-j721e.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ .../devicetree/bindings/media/ti,csi2rx.yaml  | 70 +++++++++++++++++++
+ 1 file changed, 70 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/ti,csi2rx.yaml
 
-diff --git a/drivers/dma/ti/k3-psil-j721e.c b/drivers/dma/ti/k3-psil-j721e.c
-index 7580870ed746..19ffa31e6dc6 100644
---- a/drivers/dma/ti/k3-psil-j721e.c
-+++ b/drivers/dma/ti/k3-psil-j721e.c
-@@ -58,6 +58,14 @@
- 		},					\
- 	}
- 
-+#define PSIL_CSI2RX(x)					\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_NATIVE,	\
-+		},					\
-+	}
+diff --git a/Documentation/devicetree/bindings/media/ti,csi2rx.yaml b/Documentation/devicetree/bindings/media/ti,csi2rx.yaml
+new file mode 100644
+index 000000000000..ebd894364391
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/ti,csi2rx.yaml
+@@ -0,0 +1,70 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/ti,csi2rx.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- /* PSI-L source thread IDs, used for RX (DMA_DEV_TO_MEM) */
- static struct psil_ep j721e_src_ep_map[] = {
- 	/* SA2UL */
-@@ -138,6 +146,8 @@ static struct psil_ep j721e_src_ep_map[] = {
- 	PSIL_PDMA_XY_PKT(0x4707),
- 	PSIL_PDMA_XY_PKT(0x4708),
- 	PSIL_PDMA_XY_PKT(0x4709),
-+	/* CSI2RX */
-+	PSIL_CSI2RX(0x4940),
- 	/* CPSW9 */
- 	PSIL_ETHERNET(0x4a00),
- 	/* CPSW0 */
++title: TI CSI2RX Wrapper Device Tree Bindings
++
++maintainers:
++  - Pratyush Yadav <p.yadav@ti.com>
++
++properties:
++  compatible:
++    items:
++      - const: ti,csi2rx
++
++  dmas:
++    description: RX DMA Channel 0
++
++  dma-names:
++    items:
++      - const: rx0
++
++  reg:
++    maxItems: 1
++    description: Base address and size of the TI wrapper registers.
++
++  power-domains:
++    maxItems: 1
++    description:
++      PM domain provider node and an args specifier containing
++      the device id value.
++
++  ranges: true
++
++  "#address-cells":
++    const: 2
++
++  "#size-cells":
++    const: 2
++
++patternProperties:
++  "csi-bridge@":
++    type: object
++    description: CSI2 bridge node.
++
++required:
++  - compatible
++  - reg
++  - dmas
++  - dma-names
++  - power-domains
++  - "#address-cells"
++  - "#size-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/soc/ti,sci_pm_domain.h>
++
++    ti_csi2rx0: ticsi2rx {
++        compatible = "ti,csi2rx";
++        dmas = <&main_udmap 0x4940>;
++        dma-names = "rx0";
++        reg = <0x0 0x4500000 0x0 0x1000>;
++        power-domains = <&k3_pds 26 TI_SCI_PD_EXCLUSIVE>;
++        #address-cells = <2>;
++        #size-cells = <2>;
++    };
 -- 
 2.30.0
 
