@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6A624C433C1
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E5F77C433DB
 	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 11:19:11 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E41776195D
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 11:19:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E41776195D
+	by mail.kernel.org (Postfix) with ESMTPS id 75EF061962
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 11:19:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 75EF061962
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,48 +22,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hzUhjCJDPWgrk2Z5HleF9GgiQRKY9CGAKDw5epimgCM=; b=HDohN3fRzWSBWYTqtKEgStFYP
-	u2RHknfPFq9D5wPB+L1s7UGwjZ77Dr2Emb9PpMphoLhtPW2h+EBXbHBf4oEno33vHPgSGcOaRU2CB
-	scv0i2NCxiArVLIRZEqr5YL3W76c5IdUSYKDL7wJ6/dxE/b+1R3WVf3hzOFdEcLaLQ+WpqEgfP7uO
-	/KJr6FZeUNuaL8OgA2uxwEIp1qYsjpvYFM2/FuUZyLYV1wRcEXgGKcpNnBKFx9bV6cwPXKs0xZ0tQ
-	Q3CduRc8C1Vn0s3P8rLomgdaF8vIkr1UAzCPd8cHPokr6zBdHYuDD7AvUIJ+vE1RIIngOikpOEIZQ
-	t7kz5ExQA==;
+	 bh=ykSKit8PSRvsFpn0TnlBbdUWeDhxT14+Nej7thwEU8A=; b=C+meOQ42ADfdLhTPL9Fugzd28
+	Kw4kJlvA9cLrbNbi65MqFhI5zneCwN+vdvBRbWTX78nbKF/JQMnA2wWj2z5eiLvqdZFp6N4w1v21w
+	NSA4HbYQ3WhdSUW6UchBGiuagjcp+zoYEhgiWq5Sgfvt1weh9lnAG34tDjNi65tuKod8Ci0jkeRKl
+	fHtU0kCBpOFLx8N0NVvc+pC7fTFlZDvzacI6O35vm0jtZJyTC5ihhDiPQbx+DPoc4ypmvOloTK5XG
+	KrS04UX72vf9valfnWKQIStjKShC2TvvbwUsxBX5Y0ETlK27ldV66pjp8G39Di3ahyyD/CHUcdzXO
+	i7dOG0KJg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRYsL-006QOj-W6; Wed, 31 Mar 2021 11:19:08 +0000
+	id 1lRYsP-006QQg-IV; Wed, 31 Mar 2021 11:19:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRYpQ-006P7f-Jh
- for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 11:16:09 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 0D24A6195D;
- Wed, 31 Mar 2021 11:16:01 +0000 (UTC)
+ id 1lRYqF-006POm-QF
+ for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 11:17:04 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id B294D6195D;
+ Wed, 31 Mar 2021 11:16:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617189363;
- bh=+y8vuiilDhv05xBYXqxQZWWGkxtIXm6bEVC8PvtrtPI=;
+ s=k20201202; t=1617189413;
+ bh=Fg1HIGN3CeImTBjCARQjOr8UdmTKiuMeaC+WX9KUH3c=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XhBzSkzs7ZEnue62eQDuGw6bZaLK1fxVz24GDP3I9dHzN0GzTrnyt3BfngA3JQSA4
- ccgPrhju27iJuz4bth/+QdLEkaSgwNX1eiKAO8paigXXJqeorLGDvVVmiAtQY55W6z
- oHVUSEDY1B1LrRYxLfFb0NX03pYYgirJsVyVzfdINA29IyPsnj68lUvFaSUWYATyd8
- mz+cnzDJ+3SR4cS0lcQqEiRtA//a3EJDlfXaWUeDJuvkTejd5arIo/k+Bag93gCK1f
- 9Rm76OddPXOl4yVjSv3NDsOr9QrtWURdoOClLHpGHGFwykNdAT4XSJCB2/aRAXnxhV
- RhyJkLoa7scHw==
-Date: Wed, 31 Mar 2021 16:45:58 +0530
+ b=QFacM2dyeASt+7G6DMjt9PCZ+5Uj8BCOdooiIW1caeOK7mqyl2DBvAAHunixct4hv
+ BaC5Xu/ChiqfF9rBm/5y8orSCXLaUztAdVo446IlKI17PVqTwx+cz8Lz0T2KcJlnbA
+ JLf8LY4YLP0IRCnI70bKi6RgjNmj5YBSvIOVZhmThyclNt9SpfahwPynxzUA93wqOH
+ oycvZoE5zBMJB9sgSgTIBgqKS2S78FxfW+SBi0V4RKZAUxYDEQC93Mx2KhKyekp0Mk
+ n9vG9cSkoWBLbWugXoP0NeioBqdaD2emvuc1HvJK4F8LHf27ldK8bFSxEaIUDDjh1Q
+ gk8XIne0aZIPg==
+Date: Wed, 31 Mar 2021 16:46:49 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
- Swapnil Jakhade <sjakhade@cadence.com>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- Lokesh Vutla <lokeshvutla@ti.com>
-Subject: Re: [PATCH v2 0/5] j721e-wiz/cadence-torrent: Support to skip SERDES
- configuration
-Message-ID: <YGRZ7oAiawC46zVF@vkoul-mobl.Dlink>
-References: <20210330110138.24356-1-kishon@ti.com>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Bjarni Jonasson <bjarni.jonasson@microchip.com>,
+ Steen Hegelund <steen.hegelund@microchip.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Andrew Lunn <andrew@lunn.ch>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: microchip: PHY_SPARX5_SERDES should depend on
+ ARCH_SPARX5
+Message-ID: <YGRaIbyivDr9MKGK@vkoul-mobl.Dlink>
+References: <20210331081937.367408-1-geert+renesas@glider.be>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210330110138.24356-1-kishon@ti.com>
+In-Reply-To: <20210331081937.367408-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210331_121605_332018_A044A6A2 
-X-CRM114-Status: UNSURE (   6.06  )
+X-CRM114-CacheID: sfid-20210331_121656_668965_2CD03C7C 
+X-CRM114-Status: UNSURE (   5.30  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,13 +83,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30-03-21, 16:31, Kishon Vijay Abraham I wrote:
-> Add support to skip SERDES configuration if it's already configured in
-> bootloader.
-> 
-> The wiz part was initially sent in [1] but that was sent more in the
-> context of Sierra but this is in context of Torrent. The Sierra part
-> would be sent later.
+On 31-03-21, 10:19, Geert Uytterhoeven wrote:
+> The Microchip Sparx5 SerDes PHY is present only Microchip Sparx5 SoCs.
+> Hence add a dependency on ARCH_SPARX5, to prevent asking the user about
+> this driver when configuring a kernel without support for Sparx5 SoCs.
 
 Applied, thanks
 
