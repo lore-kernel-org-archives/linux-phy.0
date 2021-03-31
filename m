@@ -2,18 +2,18 @@ Return-Path: <SRS0=Nkk4=I5=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id ECF2AC433C1
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 12:23:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8FD8FC433ED
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 12:46:32 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1B8D861998
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 12:23:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1B8D861998
+	by mail.kernel.org (Postfix) with ESMTPS id 30B326196C
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 12:46:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 30B326196C
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,47 +22,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ga4bRQgU6MW75SREB030D7fLcaf67YArnyG4kvWGC0E=; b=FZaXTGpnqjW1TSAjw60GSi+z7
-	ls72Mi4w+7R+MNtXECHf3qFSc+Wvr4u+IJlUOHUGwhB3bfjogrs37k3naeyez+I0GGNnge+tdScZ9
-	3o2d9yYHNESXXGz2lc48BtFaA17Mki6PqbQwSVt6M4meTWD5YR2XdNRNyFrNmZfGrzdTixvVprN3V
-	IunCu7EK2k2ui1AJyfcc2YZUwmLzRLkIzOJp/ucSoZzbG1X5FKRcmX0cntq32LI6tR6oWU12Q2qBl
-	sk4BhJUNAtQRAK1jgOSN21icrZyQBVEYpyqOSAZ77JYMjjsbLLiYIv9tBDPNsOjn1gPXvYqawwbbs
-	BRg2+exGg==;
+	 bh=dJ42Y/XEDtcKzJGvFWYQ9p1U5qpTvXZmFkH1Bm9VRHc=; b=AVpPlR/NyCQA5X3zbIpzI2QkU
+	xNfmgHXalXVewrtDiDlFPQK6MliEeBOUue4/z6E4XivlPCuuH3wr5zm7NOheiFLLS35iB/uj7osqM
+	VXOyidNfj4wdiMkESbd61WyQ+sfn04GIdXEDcgPbqjVkK2F+++IB4BCgkDQ5rKFMu0QcpCl7MMjx/
+	xZIWqDf25Tthxroq95KDtp7OIHCnqYVGxQ70e/3ToSYDlnAUw3Wz1gS+av7uJVldO3r4IrS98SKOE
+	zwFqp7MFFSLk55JWDVP0Bgy/LHm8vxFIRFlj2lxwnlxc8kw26DJRFdID2s5y435yFhCEWs/9AzdgE
+	qbmsZ9BRQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRZsB-006YeC-4G; Wed, 31 Mar 2021 12:22:59 +0000
+	id 1lRaEv-006aGh-RG; Wed, 31 Mar 2021 12:46:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRZs7-006YdZ-8V
- for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 12:22:57 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id D82F26198F;
- Wed, 31 Mar 2021 12:22:52 +0000 (UTC)
+ id 1lRaEr-006aFv-GO
+ for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 12:46:27 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id E315461959;
+ Wed, 31 Mar 2021 12:46:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617193373;
- bh=1JiCJZdLpge4QRk61c2bdfMSYMM5/ZEtJKjCa5IcbFE=;
+ s=k20201202; t=1617194783;
+ bh=TQkoHACl/sFM+5iuM6x9rFOysAjN+duolQetZcUwOWQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FIF1+1parke0flNNrBG/PNNUuZOT38aLJBXV6NBEQ5/Jp5+d8DSGkJKJ8DnhZUd/K
- nSQuX9064Y+DO4CkwvZMkvmLSnIYxgbIckJuWK1p8xLOSEgeiQAeDSFxISQ1cy2Eaz
- svNIy9S1fDRhQt1gc6GzPmhrFG3c5zhwex0WeJJai8jLtzC7S3wHYiQQ3Tr8w1yjYn
- qSNkNXY7+uaA9Kn0OttHQniboMyZVmt3DylcCseP2cl150FvVJ/qUB7+mKBdGjh7Ai
- c9pTGVDyRVODqs5tzSXLeWDBzbgV/pQjnOA9RnjMSrQNhWbZICgMCNiaPmI6GnPsW6
- k5HxxdPTsgUxw==
-Date: Wed, 31 Mar 2021 17:52:49 +0530
+ b=tqRxQ6KO5Yo+HpqJhww4Y98I+1ZL0YA14AIiEGQRGDc2J8BaKegd6HvMh8s2S6Pu9
+ hujaLdAsFyJWfrTLTxPDLXq/RrxSsZvSQVHG5SSedEqo4L8MYNBtUKtgzMNMKFp7Oy
+ NedtbimR2scRy2fmCQCZaUkM3CD2+UW+JIqAaRgqPdWq4W58jEsGaIefGBgdtV1XsE
+ +TwJHetOtZuV+LQVDRqeDSS/ge23LlmogViLNIDdgVZYhjbWCoDB2AEqosviKt12yI
+ CuSM46EowOq91jlcKyYWy3iuUGVuWmqHCO87SX1e22aGLxwFxJo3FSxVXghWjmMPMy
+ 3xx3hJErZ0+/A==
+Date: Wed, 31 Mar 2021 18:16:19 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>,
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Alex Dewar <alex.dewar90@gmail.com>, Atul Gopinathan <leoatul12@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Yu Chen <chenyu56@huawei.com>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-staging@lists.linux.dev,
  Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH RESEND] dt-bindings: phy: bcm-ns-usb3-phy: convert to yaml
-Message-ID: <YGRpmStAzQBVFeU9@vkoul-mobl.Dlink>
-References: <20210329165056.31647-1-zajec5@gmail.com>
+Subject: Re: [PATCH v5 (RESEND) 1/7] phy: phy-hi3670-usb3: move driver from
+ staging into phy
+Message-ID: <YGRvG+3sD0gX2I+b@vkoul-mobl.Dlink>
+References: <cover.1616695231.git.mchehab+huawei@kernel.org>
+ <36c31dcdcd49d5a728a1fe4040bbaef5268d7f79.1616695231.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210329165056.31647-1-zajec5@gmail.com>
+In-Reply-To: <36c31dcdcd49d5a728a1fe4040bbaef5268d7f79.1616695231.git.mchehab+huawei@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210331_132255_552027_41DC7CC7 
-X-CRM114-Status: UNSURE (   4.74  )
+X-CRM114-CacheID: sfid-20210331_134626_024931_E0ED1464 
+X-CRM114-Status: UNSURE (   9.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,15 +80,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjktMDMtMjEsIDE4OjUwLCBSYWZhxYIgTWnFgmVja2kgd3JvdGU6Cj4gRnJvbTogUmFmYcWC
-IE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgo+IAo+IDEuIENoYW5nZSBzeW50YXggZnJvbSB0
-eHQgdG8geWFtbAo+IDIuIERyb3AgIkRyaXZlciBmb3IiIGZyb20gdGhlIHRpdGxlCj4gMy4gRHJv
-cCAicmVnID0gPDB4MD47IiBmcm9tIGV4YW1wbGUgKG5vdGljZWQgYnkgZHRfYmluZGluZ19jaGVj
-aykKPiA0LiBTcGVjaWZ5IGxpY2Vuc2UKCkFwcGxpZWQsIHRoYW5rcwoKLS0gCn5WaW5vZAoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 25-03-21, 19:05, Mauro Carvalho Chehab wrote:
+> The phy USB3 driver for Hisilicon 970 (hi3670) is ready
+> for mainstream. Mode it from staging into the main driver's
+> phy/ directory.
+
+Overall lgtm, some nits below. With those fixed:
+
+Acked-By: Vinod Koul <vkoul@kernel.org>
+
+> +static int hi3670_phy_cr_clk(struct regmap *usb31misc)
+> +{
+> +	int ret;
+> +
+> +	/* Clock up */
+> +	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
+> +				 CFG54_USB31PHY_CR_CLK, CFG54_USB31PHY_CR_CLK);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* Clock down */
+> +	ret = regmap_update_bits(usb31misc, USB_MISC_CFG54,
+> +				 CFG54_USB31PHY_CR_CLK, 0);
+> +
+> +	return ret;
+
+return regmap_update_bits() ?
+ (i see few more in driver like this, pls change others as well)
+
+> +static int hi3670_phy_cr_read(struct regmap *usb31misc, u32 addr, u32 *val)
+> +{
+> +	int reg;
+> +	int i;
+> +	int ret;
+
+all these could be in a single line
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
