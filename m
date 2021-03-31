@@ -2,80 +2,81 @@ Return-Path: <SRS0=Nkk4=I5=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 8B3B4C433B4
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 13:06:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BF73BC433B4
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 13:14:41 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 363AF6198F
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 13:06:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 363AF6198F
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 6931461969
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 13:14:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6931461969
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dELT+HUKPwxzuve9JYr9hZyOyReEq94cNb0DKfgXcLY=; b=Ga3bJ0aepFTmZg8aBWHt0reER
-	9LKwxLNIVRue321ZJC3f/wS2mkwBBXYMbReg6siPYG26kPoqy/PIu8w9kMU+CCrGM/e0BsIhdDEEB
-	/Io/SjzUOhiwh2oT4v3HZPb7uGYVJ4o6BKSiWqn7g0mGqIjNu8RkvJ6ZCISyjCl9htHPbMG/nJb4w
-	0vLnHgu55jGP0D9Y1aFB9ElR/NkK+ZCofOY2xT3udf86ppjiBtvtWQ8G9tWGdrjdDu4UvtIYtxSm5
-	/X9O9YScCfGWjkh5FmxFqMBhULM5tipK68hsGQvfQpWWL7hYR6oZViBrs0ZOc0sw0kWi3gj5jxl54
-	uDPpv/lmQ==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=eU06ejVSEJAFH5MjPUixhIDYdy2ENgmD6FfSk8060QM=; b=CFFhC7u2Z8ot17aUYDDb/dM7gg
+	oscgS9PsWzAdk8TxBeYhVIf9bacdjxQa/TXmiPoEjA6OwADvAqeZlzp+gkLKrWK4N6VhSE6ngWzUg
+	yD6+zbvJX7zm5pE81QQ8uO6KUPl0B+ghHcSebGhVMeB3jG3FjfWlOQRBL/dYNOAX1IocYcxXHEVwT
+	h41nqK2CyDdaYMLT3QsMvexgWa/ZrocN7J0+UHYjZuxVvX9iEyG3kSDgPWYZ7WsZtvCYbr+snqVja
+	tD+AcT29xvQ7leL5fAsQ/x5513cJdznFBRC2G+cFHrgUtapTFmC+kOfu48CrPktGdKN5rxngyxG86
+	gAjZto7g==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRaY6-006btk-M2; Wed, 31 Mar 2021 13:06:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lRagA-006dM1-Kt; Wed, 31 Mar 2021 13:14:38 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRaY2-006bsv-Tr
- for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 13:06:16 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 9699760C41;
- Wed, 31 Mar 2021 13:06:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617195973;
- bh=Gv6lEJ0fn89KoyjqIPpCwCbRxnqQTj/4wgxCn1DsqVc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=nwREw8fz3HaVl+ZPBbD6j9lstJa1hFwemniqrsKPXPq8DprocOSn7iqT7szpe7/Qr
- Qrpjxout4rmmXwEwVlD5weNdDenC7K9Jvu7+fyv/2s4CJAmXx4eUF61qHa0a7OHqw0
- gcN2oRIqtGwrFeuJEbWCMURAdFV+7lQoAhJTEbeXAP9GkQWGs2lMwJAl8NCrKncl5Y
- lv9CAZYU/EqDRaJdVIZLahGx164mPStZgFb4fV8necyXXOtGuf/WmNpQ7WUGkaq2lz
- MBLfI4J0m32wur93oG9qRerdjegoLb+z7N1BP1f8tUOVYglJ74JvzWUKHOOBaEGfvl
- I42O0udR2lKrQ==
-Date: Wed, 31 Mar 2021 18:36:09 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Pratyush Yadav <p.yadav@ti.com>
-Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Benoit Parrot <bparrot@ti.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Alexandre Courbot <acourbot@chromium.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Stanimir Varbanov <stanimir.varbanov@linaro.org>,
- Helen Koike <helen.koike@collabora.com>,
- Michael Tretter <m.tretter@pengutronix.de>,
- Peter Chen <peter.chen@nxp.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- dmaengine@vger.kernel.org, Vignesh Raghavendra <vigneshr@ti.com>,
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: Re: [PATCH 00/16] CSI2RX support on J721E
-Message-ID: <YGRzwboQ0sL/bAWU@vkoul-mobl.Dlink>
-References: <20210330173348.30135-1-p.yadav@ti.com>
- <YGRB/42Q6aVBLoAq@vkoul-mobl.Dlink>
- <20210331114019.g4dnuhs2hno5fjdn@ti.com>
+ id 1lRafz-006dIT-4u
+ for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 13:14:35 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 12VDEKEu004547;
+ Wed, 31 Mar 2021 08:14:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1617196460;
+ bh=emzISIIaj9DN6ngJlWUurFnk/Mw6N2UJ67+bocEf8FA=;
+ h=From:To:CC:Subject:Date;
+ b=yRsRt2opczkiM160TTcSWE1JjumxzPh9KCBb8YyPDJvkLglNxoRfRCM+rs0qSdk8J
+ bkcfatMSvOOFzxLdAWwlmojRlZhPi632vtIlMJVb5nVqIoZmpJz0p0q9dBSzgxOVpK
+ 9lRG7wM+h4ghpV9nNlB3p6rj+CnIHIolRIvwAijk=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 12VDEKFl081787
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 31 Mar 2021 08:14:20 -0500
+Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Wed, 31
+ Mar 2021 08:14:20 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
+ Frontend Transport; Wed, 31 Mar 2021 08:14:20 -0500
+Received: from a0393678-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 12VDEHLl054143;
+ Wed, 31 Mar 2021 08:14:18 -0500
+From: Kishon Vijay Abraham I <kishon@ti.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
+CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, Lokesh
+ Vutla <lokeshvutla@ti.com>
+Subject: [PATCH] phy: ti: j721e-wiz: Configure 'p_standard_mode' only for
+ DP/QSGMII
+Date: Wed, 31 Mar 2021 18:44:17 +0530
+Message-ID: <20210331131417.15596-1-kishon@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210331114019.g4dnuhs2hno5fjdn@ti.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210331_140615_169893_5657E1A7 
-X-CRM114-Status: GOOD (  18.73  )
+X-CRM114-CacheID: sfid-20210331_141427_795300_BA21D4B7 
+X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,49 +93,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31-03-21, 17:10, Pratyush Yadav wrote:
-> On 31/03/21 03:03PM, Vinod Koul wrote:
-> > On 30-03-21, 23:03, Pratyush Yadav wrote:
-> > > Hi,
-> > > 
-> > > This series adds support for CSI2 capture on J721E. It includes some
-> > > fixes to the Cadence CSI2RX driver, adds Rx support to Cadence DPHY
-> > > driver, and finally adds the TI CSI2RX wrapper driver.
-> > > 
-> > > Tested on TI's J721E with OV5640 sensor.
-> > > 
-> > > Paul Kocialkowski (1):
-> > >   phy: Distinguish between Rx and Tx for MIPI D-PHY with submodes
-> > > 
-> > > Pratyush Yadav (15):
-> > >   phy: cdns-dphy: Prepare for Rx support
-> > >   phy: cdns-dphy: Allow setting mode
-> > >   phy: cdns-dphy: Add Rx support
-> > >   media: cadence: csi2rx: Add external DPHY support
-> > >   media: cadence: csi2rx: Soft reset the streams before starting capture
-> > >   media: cadence: csi2rx: Set the STOP bit when stopping a stream
-> > >   media: cadence: csi2rx: Fix stream data configuration
-> > >   media: cadence: csi2rx: Turn subdev power on before starting stream
-> > >   media: cadence: csi2rx: Add wrappers for subdev calls
-> > >   dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
-> > >   dt-bindings: media: Add DT bindings for TI CSI2RX driver
-> > >   media: ti-vpe: csi2rx: Add CSI2RX support
-> > >   dt-bindings: phy: Convert Cadence DPHY binding to YAML
-> > >   dt-bindings: phy: cdns,dphy: make clocks optional
-> > >   dt-bindings: phy: cdns,dphy: add power-domains property
-> > 
-> > Is there any dependency between patches to various subsystems, if not
-> > please do consider sending a series per subsystem...
-> 
-> Without patch 1, patch 5 and later won't build. Without patch 11, patch 
-> 13 will not work.
+Configure 'p_standard_mode' only for DP/QSGMII as for other modes
+it's not used as per the programming sequence. Add "continue" in the
+else to prevent random value from being written to p_standard_mode.
 
-Cover letter is a good place to mention this! And what do you mean by
-not working, do we have compile time dependencies? I agree that for
-everything to work all the pieces need to land
+Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+---
+ drivers/phy/ti/phy-j721e-wiz.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index 95905e5c4f3d..fc636233dbd6 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -340,6 +340,8 @@ static int wiz_mode_select(struct wiz *wiz)
+ 			mode = LANE_MODE_GEN1;
+ 		else if (wiz->lane_phy_type[i] == PHY_TYPE_QSGMII)
+ 			mode = LANE_MODE_GEN2;
++		else
++			continue;
+ 
+ 		ret = regmap_field_write(wiz->p_standard_mode[i], mode);
+ 		if (ret)
 -- 
-~Vinod
+2.17.1
+
 
 -- 
 linux-phy mailing list
