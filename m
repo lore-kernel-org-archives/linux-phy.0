@@ -8,14 +8,14 @@ X-Spam-Status: No, score=-7.2 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 	SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id ECCD8C433ED
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 16:38:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7BC5FC433ED
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 16:45:07 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9B28A60FE7
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 16:38:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9B28A60FE7
+	by mail.kernel.org (Postfix) with ESMTPS id 236006102A
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 16:45:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 236006102A
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,52 +24,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GUcokzo7gc25NJKSXBMEsazkWePNsJ7U1HmJPu5tc2Y=; b=ouNpE1iWF5sapq9DmYwgGT6wO
-	XOZ84C/9uZ6OeQN5Zu0tC7gBR5So6ukBHas6ElauOZHrh2KQFgNlWpaw6Gw9vWxrYNbyeyHOClMIE
-	IxuyYQZFVRX1DjFIQOl6nKti50LejqjhBeC5zWpb7GgbjEawEunjv7jkM6Mf9uAf2MSp612Jtevi4
-	6AZqHPkIeLhJou4fExkkBtInhUzIjVncEkRoptBYF+UGgr5d0LYHKl3RZ4IG/TvsbK4Ts1zaH0UFB
-	AFvozRk/M+/I9hoiZ/T8EMqi8ZmgDDhRnjh2RVzSkCAb37B5saHQ9luwkw2UP3IDTvw35YB+bsHa5
-	yhT/Uxl/g==;
+	 bh=1oemkICz10GW5NbGdkmoHuyCCMFANt4HitVB4QjyPMY=; b=i09yVK8avFqSbveJqVRCJS9KM
+	qeEKj1Lh4R5gecH3Ghw85f4i1vPiPqsQ7XGIj6XEIlIMS+KoG04FFQFOfJV2JyKH3/Ax0f7zbdX9H
+	daTVf163S2KQKiimyugzK6RSXcZSOURePThRkrF9lLdU0ATfxPZt1ySxx+8jKH1oOVat+C0Tbqfwq
+	id+2DNKuAgYkWSM5t5k4ahNbV2m6BSmhCIqjELJaSum/uolyAy6bTx3pDpKVpgIRccGrYiCQhi3qt
+	xg8hkigJhAEiIQXspmnTZ1cCrCcdfcsjoO8n2seiLNiww5i7qIx8m1FBXVKn9QgaEcsAv0NKEYb/0
+	LMYoLywkw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRdrH-0077Uc-14; Wed, 31 Mar 2021 16:38:19 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1lRdxp-0078B1-Dw; Wed, 31 Mar 2021 16:45:05 +0000
+Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRdrB-0077Tx-P4
- for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 16:38:15 +0000
-Received: by mail-ed1-x529.google.com with SMTP id b16so23063066eds.7
- for <linux-phy@lists.infradead.org>; Wed, 31 Mar 2021 09:38:13 -0700 (PDT)
+ id 1lRdxl-0078AH-3d
+ for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 16:45:02 +0000
+Received: by mail-ej1-x62d.google.com with SMTP id u9so31030895ejj.7
+ for <linux-phy@lists.infradead.org>; Wed, 31 Mar 2021 09:45:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=EvHVTiNpxncmqmnUHDfaPgtAPjMzlqjL23gXxm4wP7w=;
- b=Qc9ML1reRfZwzolatzMLJ+NIMbdbzZYl0uUtLIp/Z5rmjKxdccvOmMiPSQ/mbKY3XF
- dLn3acNZJ43G5XJQf4HNsKhKN7AbWKucnsM9RxABhzCqWgmkeZwYNG8s3RNTKTLYtBFH
- clILf/FiIxtUpZlZtUOdd2j9HGf78CtXHZWDb3dwrNGWa4ugkzI4dgKkHufTxFZafYqf
- lAPw0mkELlCOE0/ijpkhGRK1UXoUrU8LtWpVy+Aso5RlQoX5Xp/ctfX44c2M9EkmhQAl
- k5YFNnrmFCbJlgTQTmvP2oHQL93ovkHhOlnhwlexeiukFatNBjz6VFcCmW3J/emDwrSS
- pkEQ==
+ bh=otH4FKql+m9GEJITFfDeO134ix6C/z4KiXTf8Ah/jNA=;
+ b=JZSrb/oAf2nPpFbAYhXKRSVcaZTb2TYA5PQ6pavenYdSJZVAkww9G+N3CLHaLfpXfi
+ WNEAVlovDZq146ZCK8EbeehX4NIY8b/5h8C9q/egWHoTJsGDf1DnhBXueuu8FBx82LgE
+ /5iVwdvCcGfRDIvFETbzNbVkXNT0m/PDUB8y5yghr28S7nPUmPnerRRcm9KAIlixhcw4
+ phLMqLgLnGQT6CjN0dpAGK5HZ7luboWciskoEb2CcjJRQTmjJNIejqd8k6QVTkT//+mn
+ ++fq9rUhekuXRrhwnIBs3dwQVR/RF+0Bxr4RRp9/KeUYb3mwD0JBVs0idulTJV7tNeva
+ Lpow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=EvHVTiNpxncmqmnUHDfaPgtAPjMzlqjL23gXxm4wP7w=;
- b=sUcWDFs2BJMZ+YbLE1dmwKNLUHQB4rb3SfbYd8M60K0ESUsyhMKR89/WuuDgFZffXV
- OZfOTrcB8p0M+yDMr16kszoBaGaqBg9ugMFuELNoPSKU+Z0fva+bYgxmrDYrAFpxhg7i
- udPzkbEXuTSVG03LCNlPxza8m+JHiDB8Fgfev5k5LvGdrLN068v+txDbvXlXArKlNjiZ
- xhLS0xCcdazBj+1VwRUi1tqMYl9SwXfXfV2L6Jp1Z4c+D8jxvLI69OtC3iK4Nb6e49Eg
- NPFHK3zbYO406OLqFAtsXog9Jm8nEvbA7PcBHkM+4CKzsPLEN3jvdghMqyZ/7kjzm3VX
- dW6g==
-X-Gm-Message-State: AOAM531fxaGLEPiAL8ljRkdQpLEB1x18gWzMSPJqx+BSXsGXCx6/8YSp
- 24pcuMBMHhUxGWq+vq0b43o=
-X-Google-Smtp-Source: ABdhPJyRMANGCobgTFhalJYhZ+QN7TnYGntxs9rJQvdr/u30sa0oJOm1V57wan97s7JF2dg9HinP7A==
-X-Received: by 2002:aa7:c497:: with SMTP id m23mr4823080edq.74.1617208693241; 
- Wed, 31 Mar 2021 09:38:13 -0700 (PDT)
+ bh=otH4FKql+m9GEJITFfDeO134ix6C/z4KiXTf8Ah/jNA=;
+ b=EGoYVghG1fZd2zTWt3CtCk2PqECpRB5dzBv4jRM1AtaZ1uX8MeYcIfhpa6NoHi7ysl
+ RagS70TCAsXdBgEoEJrFM6ZsEo2PVgzNFUr34hX3qsbzEgzFb24Yx86b9FWKTpVLYbcN
+ YoUg0qW9yQ/Vo+Ck2n+mzg6gjeV935bl6HrLrUxR5zV+Chwgl8TJbv7u2Edf4H8gK7kU
+ jM7FxDzO3LD2m4FLBJk2Rdp2OJppJmeg/EvY9fVfy2Tc0fmsKSSNUGtCgW+9zJcDAsar
+ MtDwNc+EFMm1nGIRT/rRUk+xAeu89SDqMV6rOYc1ie8zB+KADDwRb/AWbF3laCKvy+8q
+ 9iLQ==
+X-Gm-Message-State: AOAM533usEmbdt/dhp/e3KhYaDl9BSg244pKfGbd09xfkrXlZAD7/hjZ
+ cOmeHYCvy65e4fit/MBe9k0=
+X-Google-Smtp-Source: ABdhPJxGsxhKrvY7nrHqgYzGz4G0qJtfRp58mNJSWiX+iCCLm9nqUTGrJ+GtWn5M+S1J5Tz9A+GO2g==
+X-Received: by 2002:a17:906:2cd1:: with SMTP id
+ r17mr4461369ejr.429.1617209099758; 
+ Wed, 31 Mar 2021 09:44:59 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id a26sm2239439edm.15.2021.03.31.09.38.12
+ by smtp.gmail.com with ESMTPSA id h24sm1515349ejl.9.2021.03.31.09.44.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 31 Mar 2021 09:38:12 -0700 (PDT)
-Date: Wed, 31 Mar 2021 18:38:39 +0200
+ Wed, 31 Mar 2021 09:44:58 -0700 (PDT)
+Date: Wed, 31 Mar 2021 18:45:25 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -79,16 +80,17 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
 Subject: Re: [PATCH v8 06/13] phy: tegra: xusb: Add sleepwalk and
  suspend/resume
-Message-ID: <YGSlj85/3kkfoDiH@orome.fritz.box>
+Message-ID: <YGSnJRlY4+RzjR7b@orome.fritz.box>
 References: <20210325164057.793954-1-thierry.reding@gmail.com>
  <20210325164057.793954-7-thierry.reding@gmail.com>
  <YGM0ZOroZolJ9zEC@vkoul-mobl.Dlink>
+ <YGSlj85/3kkfoDiH@orome.fritz.box>
 MIME-Version: 1.0
-In-Reply-To: <YGM0ZOroZolJ9zEC@vkoul-mobl.Dlink>
+In-Reply-To: <YGSlj85/3kkfoDiH@orome.fritz.box>
 User-Agent: Mutt/2.0.6 (98f8cb83) (2021-03-06)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210331_173814_037571_8157D6E6 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20210331_174501_239364_58D6F226 
+X-CRM114-Status: GOOD (  19.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,83 +102,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4095062840065635347=="
+Content-Type: multipart/mixed; boundary="===============2797519426410836990=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4095062840065635347==
+--===============2797519426410836990==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="fQeIu1t7loiQgo/8"
+	protocol="application/pgp-signature"; boundary="6tyHdok+qz2c/VGy"
 Content-Disposition: inline
 
 
---fQeIu1t7loiQgo/8
+--6tyHdok+qz2c/VGy
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Mar 30, 2021 at 07:53:32PM +0530, Vinod Koul wrote:
-> On 25-03-21, 17:40, Thierry Reding wrote:
-> > From: JC Kuo <jckuo@nvidia.com>
+On Wed, Mar 31, 2021 at 06:38:39PM +0200, Thierry Reding wrote:
+> On Tue, Mar 30, 2021 at 07:53:32PM +0530, Vinod Koul wrote:
+> > On 25-03-21, 17:40, Thierry Reding wrote:
+> > > From: JC Kuo <jckuo@nvidia.com>
+> > >=20
+> > > This commit adds sleepwalk/wake and suspend/resume interfaces
+> > > to Tegra XUSB PHY driver.
+> > >=20
+> > > Tegra XUSB host controller driver makes use of sleepwalk functions
+> > > to enable/disable sleepwalk circuit which is in always-on partition
+> > > and can respond to USB resume signals when controller is not powered.
+> > > Sleepwalk can be enabled/disabled for any USB UPHY individually.
+> > >=20
+> > >   - tegra_xusb_padctl_enable_phy_sleepwalk()
+> > >   - tegra_xusb_padctl_disable_phy_sleepwalk()
+> > >=20
+> > > Tegra XUSB host controller driver makes use of wake functions to
+> > > enable/disable/query wake circuit which is in always-on partition
+> > > can wake system up when USB resume happens.
+> > > Wake circuit can be enabled/disabled for any USB PHY individually.
+> > >=20
+> > >   - tegra_xusb_padctl_enable_phy_wake()
+> > >   - tegra_xusb_padctl_disable_phy_wake()
+> > >   - tegra_xusb_padctl_remote_wake_detected()
+> > >=20
+> > > This commit also adds two system suspend stubs that can be used to
+> > > save and restore XUSB PADCTL context during system suspend and
+> > > resume.
+> > >   - tegra_xusb_padctl_suspend_noirq()
+> > >   - tegra_xusb_padctl_resume_noirq()
 > >=20
-> > This commit adds sleepwalk/wake and suspend/resume interfaces
-> > to Tegra XUSB PHY driver.
-> >=20
-> > Tegra XUSB host controller driver makes use of sleepwalk functions
-> > to enable/disable sleepwalk circuit which is in always-on partition
-> > and can respond to USB resume signals when controller is not powered.
-> > Sleepwalk can be enabled/disabled for any USB UPHY individually.
-> >=20
-> >   - tegra_xusb_padctl_enable_phy_sleepwalk()
-> >   - tegra_xusb_padctl_disable_phy_sleepwalk()
-> >=20
-> > Tegra XUSB host controller driver makes use of wake functions to
-> > enable/disable/query wake circuit which is in always-on partition
-> > can wake system up when USB resume happens.
-> > Wake circuit can be enabled/disabled for any USB PHY individually.
-> >=20
-> >   - tegra_xusb_padctl_enable_phy_wake()
-> >   - tegra_xusb_padctl_disable_phy_wake()
-> >   - tegra_xusb_padctl_remote_wake_detected()
-> >=20
-> > This commit also adds two system suspend stubs that can be used to
-> > save and restore XUSB PADCTL context during system suspend and
-> > resume.
-> >   - tegra_xusb_padctl_suspend_noirq()
-> >   - tegra_xusb_padctl_resume_noirq()
+> > Acked-By: Vinod Koul <vkoul@kernel.org>
 >=20
-> Acked-By: Vinod Koul <vkoul@kernel.org>
+> Thanks. I didn't see an Acked-by on patches 7-9. Did I miss them or did
+> you not get around to that yet?
 
-Thanks. I didn't see an Acked-by on patches 7-9. Did I miss them or did
-you not get around to that yet?
+Patch 10 is also missing an Acked-by, I think.
 
 Thierry
 
---fQeIu1t7loiQgo/8
+--6tyHdok+qz2c/VGy
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmBkpY8ACgkQ3SOs138+
-s6H71xAApJOssnhCMYvdV0893k75SPdXH3Jje5QjqvEU9BzMkY8poGqBZ9s9kU/9
-YDA9io8wQLUemmjeCJz2UzX5dshX1+cEAK1pCU1lAURTdGbYagQCp+dNXvaAI6fe
-O8wPMS+BskGEysxaMqapj7vzXBeaZDu42n1oAZZJpdF50n0vkv1KAai6l9F+QhBO
-T6wqqZQUHVkDjo/30bhFABsZ12JpeoiMYtls5eJ0XY/tzv81UFcpwwefaIe5InrQ
-MJnYdZMh9BZnty6L/vWoFglAoeWkqrwf/NmcDvm3wPJeFLGl5pNbg8UYl84U2Yto
-mYLwEfr0IZ3My/p0DS9J5t8EKdWlEHi2/6DwqomUzWTgpGvQw1OcBEms/1nAn4iE
-FzVQ0CC9mEzpgMKq/s879SkZ5TRKPRyKk1A6Xk+GT/T3h0xSFm9yaqh29JoWLQMc
-sENdbotG84BeW5zYJFzS5iR2hjV+9G1oaqCcJ1FZVgIm3HIPvYr4JhhRR3cv0OeH
-koNssH4CEftVlZYirEAwUaNdp7Qxg8R4GAnzqAn1UaEy2o51kwSStBL5HUI+suqP
-3Xn80VzPqbk6lVlTqOBO7z8J/ixOvGh2jz6QVpAupKDe8TmQJ4Ob7ALQKQZ87q0Y
-6LOQdfUdyS79VUNmKwE5DtkiBK5a2k3PPIkY7YfjBETXujyfpq0=
-=M/pQ
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmBkpyUACgkQ3SOs138+
+s6HFsg//UwDKgGejSxpnuBJxnouNV+6Q2F9C8O2joVdF5OEZvENOqMZJaGiMl2R3
+aVcYGSFIDeOdNNBeP2naSOkbkhB9sYOHGcqVEm9BKNpc71qGlJ/lrPTlE0G/HzBy
+KeLKglSAhxYwY4dZZ6ut6kNgnCEqhfJQXzR7NM5VHn7YcxlyRgDkXMLiL2IeZnPa
+CaNLMBX79Wdq4/d6m62FR15CqSyT4J0L7aw/7dkiK+fj7elu4zvLc29Zoub12XLt
+Sttoyb1+k25VVQLJWZBcc4LAA2iBq7S17jOcG1it2e6WHyBvaNUle618A/oZnaNb
+oavb6C+/sWZmtZ4Uxyu48ZWQodl+gPu7RsebslMqLTBbfqF1/LYfOb4FshUKEXMw
+tbZGYDCXuOrszoJBCChlZpaRmwnpGN9iHN1WY2oR6j7X229ilSSUJIKsinI0nrqg
+0Hb40/Gjig3FiQNfARLf4VFpOCpnmNDYTErAoF6IvjVBPcNJrHvENHBCiyLqos+K
+VlZdUTOhtX1aBx8qwzl8XwRloJt45p750pcLgbdu4oouZVB7VQ2/eoFasjW9Zqtu
+KVXG2OfOVkoeSJb0hYF6w9zmxxMwXNs/Ecc8bXgC91TYwIIee9H8QJDXQh96Bce0
+OaWSE9N0EobZE6zYUPGZ6PJjPuuUDzEXRqHIpYkBvNdwdVJfsZM=
+=QenT
 -----END PGP SIGNATURE-----
 
---fQeIu1t7loiQgo/8--
+--6tyHdok+qz2c/VGy--
 
 
---===============4095062840065635347==
+--===============2797519426410836990==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -187,5 +192,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4095062840065635347==--
+--===============2797519426410836990==--
 
