@@ -2,66 +2,67 @@ Return-Path: <SRS0=Nkk4=I5=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 59DEEC433E3
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 10:00:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9F7AEC433DB
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 11:19:01 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BE39C61969
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 10:00:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org BE39C61969
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=glider.be
+	by mail.kernel.org (Postfix) with ESMTPS id 23D946195D
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 11:19:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 23D946195D
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=dTb6416BdoiwI+oTM1XtGpiVhicAedUI+gzV7GU4Z2w=; b=GXA4sa5/brGLWOUH9KFBYNKIXc
-	6WosGwZl/R6UVTZE+S6K+6bi+KHwa2E20lFdhXM7tdu+ZgnyPe59kHarugvHxyqsRRX9xgOQAsTg/
-	zPRTYQ50ZrOWpIjtqk6BrCuLF1Gk3/xp0NhOG+i5pV53iO133+R8SARpAJwu4lOUMjDFh7YvZ0tsA
-	iqCT/Nf1Tf1vLUbMO7CT5WGHSdC5QJvEgL0/XlOepKKwqKffbBVtMxFALMSCaQe63NfCsHgP1kEtJ
-	O80OzA4+F8U3KkOYJW6AVIbOcNG6n7JLe36xhRZsqrTvubBXiayHLKOoHfFzzEsHrOHeMPVLoGkd+
-	nQ/ih3Pg==;
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Tg0Zaw3uul0nWWO45vD5q+FDqrs3P4SeHnYKQRuzYRg=; b=ibU0XCJhAIX0MK1f/8FF6AA/l
+	E1egM/7BfKRbqhThDSfqr5I6fBnVOQUu6sGKjUPs5hbR15wqKc6LFJ0ejjfEQiFrJOCJ2UQosNGe5
+	0Fd9bjqBhD/Bv2fFF+4i5p4XwF7VC29LQiBwk2udZs/Pl4XbEZHf41EO7b5P8WWoPeNDzIrrpzTMs
+	QpKp5xK8oMnb/WFfc55MNCMPSJEnMtRiIy5StlZ64OGaPY7hvi7RyirD4M0vO6hNIZXIcaH1R5Ljh
+	p0q3O40o06f3OkLh/uIf+47z1DRQfgKpcSGq/kiIvzG0o/kU87fEoMS31IlMKm5+1yWeJdfljTY1+
+	T0Fg0iUHQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRXe7-006Cxg-4N; Wed, 31 Mar 2021 10:00:19 +0000
-Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
+	id 1lRYsF-006QKr-2S; Wed, 31 Mar 2021 11:18:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRXdV-006CuM-1o
- for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 09:59:42 +0000
-Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed20:ada2:b4da:6568:5ad5])
- by xavier.telenet-ops.be with bizsmtp
- id mxzd240095W9KJv01xzdYP; Wed, 31 Mar 2021 11:59:38 +0200
-Received: from rox.of.borg ([192.168.97.57])
- by ramsan.of.borg with esmtps (TLS1.3) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.93)
- (envelope-from <geert@linux-m68k.org>)
- id 1lRXdQ-00BseR-K9; Wed, 31 Mar 2021 11:59:36 +0200
-Received: from geert by rox.of.borg with local (Exim 4.93)
- (envelope-from <geert@linux-m68k.org>)
- id 1lRW4g-001Xah-7p; Wed, 31 Mar 2021 10:19:38 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Bjarni Jonasson <bjarni.jonasson@microchip.com>,
- Steen Hegelund <steen.hegelund@microchip.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Andrew Lunn <andrew@lunn.ch>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH] phy: microchip: PHY_SPARX5_SERDES should depend on ARCH_SPARX5
-Date: Wed, 31 Mar 2021 10:19:37 +0200
-Message-Id: <20210331081937.367408-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.25.1
+ id 1lRYnc-006OOx-AE
+ for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 11:14:16 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id D3F4F6195D;
+ Wed, 31 Mar 2021 11:14:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1617189248;
+ bh=/qrwf4ibBO5YM+ChG3SK10ENvkb+3yKaA1jC0utRdGo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=UUJX/y5dyMN6YghXIrAeqF3rPpo0OPM5RDiZL7X3xzr4P4CkxrLCmkFeBrfKAZOxa
+ HroHWzbiW6aftNCRi9Jd23Ckc4zllQn3duzyhI3w8pXul3FdEi7cJWFbh591drMpAW
+ mHZtIHfoNkBHlEdEJeWUmdMO3l3LVBUkDzcmefABXaEkNFVKdf4W2VXckfbxgdJbAd
+ u0XM5+lJ8q7IIUc5f2Vyscw+dUiremnkeANmEt3Xnf9F842ubs4bGUN1YdAEhqvoVX
+ 5TILfVzFcE/2C1q9KzSsYc31xPKjTuWqmDQHuaYbEk7xDfRVy0Fiy8aEndK+kn6JT+
+ HUiCi61KkuHxg==
+Date: Wed, 31 Mar 2021 16:44:04 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Swapnil Jakhade <sjakhade@cadence.com>,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, Lokesh Vutla <lokeshvutla@ti.com>
+Subject: Re: [PATCH v7 00/13] PHY: Add support in Sierra to use external clock
+Message-ID: <YGRZfDnFpmhN89hk@vkoul-mobl.Dlink>
+References: <20210319124128.13308-1-kishon@ti.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210319124128.13308-1-kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210331_105941_255676_A6381C8C 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20210331_121413_129720_FA068DE2 
+X-CRM114-Status: UNSURE (   6.84  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,31 +80,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Microchip Sparx5 SerDes PHY is present only Microchip Sparx5 SoCs.
-Hence add a dependency on ARCH_SPARX5, to prevent asking the user about
-this driver when configuring a kernel without support for Sparx5 SoCs.
+On 19-03-21, 18:11, Kishon Vijay Abraham I wrote:
+> Patch series adds support in Sierra driver to use external clock.
+> 
+> v1 of the patch series can be found @ [1]
+> v2 of the patch series can be found @ [2]
+> v3 of the patch series can be found @ [3]
+> v4 of the patch series can be found @ [5]
+> v5 of the patch series can be found @ [6]
+> v6 of the patch series can be found @ [7]
 
-Fixes: 2ff8a1eeb5aa8bb4 ("phy: Add Sparx5 ethernet serdes PHY driver")
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- drivers/phy/microchip/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+Applied, thanks. I was able to resolve the conflict on patch 4, please
+check it was fine
 
-diff --git a/drivers/phy/microchip/Kconfig b/drivers/phy/microchip/Kconfig
-index 0b1a818e01b88cc5..3728a284bf643d48 100644
---- a/drivers/phy/microchip/Kconfig
-+++ b/drivers/phy/microchip/Kconfig
-@@ -6,6 +6,7 @@
- config PHY_SPARX5_SERDES
- 	tristate "Microchip Sparx5 SerDes PHY driver"
- 	select GENERIC_PHY
-+	depends on ARCH_SPARX5 || COMPILE_TEST
- 	depends on OF
- 	depends on HAS_IOMEM
- 	help
 -- 
-2.25.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
