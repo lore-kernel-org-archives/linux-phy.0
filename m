@@ -1,69 +1,81 @@
-Return-Path: <SRS0=B2Kc=I4=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Nkk4=I5=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7E1AFC433C1
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 18:04:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4FF80C433C1
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 06:06:51 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0158E619CA
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Mar 2021 18:04:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0158E619CA
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id A630461963
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Mar 2021 06:06:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A630461963
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
-	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:Subject:
+	From:References:Cc:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w1ZDFnw3vsF/1v35PYR9fiq2a8qVMNFO14NyqpiNlIU=; b=p/MxZN2Kc/MiWTAK1STFiarnK
-	SP+eGjvWFDTTjCSKHLQvRj+wWgMKdHDIsidx3q6zXc9PiT8fBOolTm4OIsqT1JHKbJ63n03ttWwhQ
-	iRCyDYwrjM61wpG1vdJxEDsIg7xzSDeaKBmIJJrAwxelHKQWSk8DNq7e7rXxK4N8zIF1nqGj9f8zM
-	IgzS+I8fSIizloPjGD59j5dRK1Z9lSHWolz5Q5A4gDH5l6zDXreEyydvpLKyev4ljG88j7j5Z40Yk
-	xcpMDd3y5IW1AZdiivwl2iHgMB1xi1uWvn2OenZzCNwlHoOJUC/3CQkYvigrkqWYduzh/0O7fBmg/
-	2AuK3MIkA==;
+	 bh=LH9qpSl2OltWiA6wOOLMWsACYxS+mv1HJ2zCGmgWT1Q=; b=pcIsmQHjxujCJBlEIIRY7not2
+	RPM4TGRh4GYyXL9hFZ6eDxFV46tdNHItFQjgptMiYhOxjT9FKnfVf8qto17rhDwM8xDvA1ExAIRuG
+	g617q/QyqfbPfoHQ+L9HgZyq1s5BTtiubrn5WqB6+S8LCque7/oDW2L3J/LpMI60IVY2KoGCShfBm
+	a0yAeJmaPxyxmAPcQ2STzeErCFfl/MAj2ONZHqVCy9JwjCih9R7knNkIWsdpohfRU4YL4lN/RNEsS
+	I5prvF+seNv0vqdSBRPQP6hdiITNSml7XnDScCaFGT40N1mx782GVZviCmDxzeGu2KwteKYx3XnaT
+	SbeOBXWtA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRIjY-004Xd1-9W; Tue, 30 Mar 2021 18:04:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lRU08-005aZk-TG; Wed, 31 Mar 2021 06:06:49 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRIjT-004XcE-OV
- for linux-phy@lists.infradead.org; Tue, 30 Mar 2021 18:04:53 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 6EA2B619B9;
- Tue, 30 Mar 2021 18:04:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617127490;
- bh=oModXwUxmMyfRIh4whro1oarObAUSB3dp/vTGTrHtNI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=tG4VSIyBs+E9e2ru4dsikVZABSZML651QC1v1ISSa/lKZMSrvp3uKRD0Ig7g8j3KG
- mouSQDuhajQvw7bOASH+waX/Ub7iGx1do40PYEZ+dcY5iox7knO1PBSYOq+3/YXaeA
- UvMEZgMYJ+wc0PAE/3OONKlFtOQvqLtcO1GPMvXnqCEwUug6olaIy6F1FtdJaTOdmT
- dZbGVfJbO2GbESCJYojWfAPFtkvMrp7v8fXGhd+m2hDgN8YRdePHZyIThNnUcoyQy3
- I/BqcgrDFM+CKlYpfrAvn7AzbT2DZjaNx7WZGIZ1Ry+JRT9190igLgH7q1rV0/NCpo
- Z+v3sNeQwmmTQ==
-Date: Tue, 30 Mar 2021 23:34:46 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Swapnil Jakhade <sjakhade@cadence.com>
-Cc: kishon@ti.com, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, mparab@cadence.com, nsekhar@ti.com,
- lokeshvutla@ti.com
-Subject: Re: [PATCH 0/4] PHY: Update Cadence Torrent PHY multilink
- configurations specific to TI
-Message-ID: <YGNoPhhuTPfYRN+f@vkoul-mobl.Dlink>
-References: <1614838096-32291-1-git-send-email-sjakhade@cadence.com>
+ id 1lRU02-005aZ5-V4
+ for linux-phy@lists.infradead.org; Wed, 31 Mar 2021 06:06:45 +0000
+Received: from [192.168.1.111] (91-157-208-71.elisa-laajakaista.fi
+ [91.157.208.71])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 801F38DA;
+ Wed, 31 Mar 2021 08:06:36 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1617170797;
+ bh=VILbDV1g0gxNqONJ/YaXNqbdVu6oy81uJAYmz2A735k=;
+ h=To:Cc:References:From:Subject:Date:In-Reply-To:From;
+ b=Zp00r5q6OLXWjlSuXKr+hxYs0jNggnJa6qp4kkhVrgkOaL2nBl7oG2OcAL+w03Xgd
+ 37Ohb1Si1LYdjkshfbgFZGdAFIhDYTLyD9z7odYtbc2DphDpHkgh0N/ABFSz4w1b7E
+ OpKx+5OplgF7UtIBMfX2e8RfT7flEyA6j1aEpswQ=
+To: Pratyush Yadav <p.yadav@ti.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Benoit Parrot <bparrot@ti.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Alexandre Courbot <acourbot@chromium.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Stanimir Varbanov <stanimir.varbanov@linaro.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Michael Tretter <m.tretter@pengutronix.de>, Peter Chen <peter.chen@nxp.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, dmaengine@vger.kernel.org
+Cc: Vignesh Raghavendra <vigneshr@ti.com>
+References: <20210330173348.30135-1-p.yadav@ti.com>
+ <20210330173348.30135-14-p.yadav@ti.com>
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Subject: Re: [PATCH 13/16] media: ti-vpe: csi2rx: Add CSI2RX support
+Message-ID: <91bbf2a9-9d27-7f9b-1c17-ad6544a828f1@ideasonboard.com>
+Date: Wed, 31 Mar 2021 09:06:35 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.7.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1614838096-32291-1-git-send-email-sjakhade@cadence.com>
+In-Reply-To: <20210330173348.30135-14-p.yadav@ti.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210330_190452_063879_7294FFAF 
-X-CRM114-Status: UNSURE (   7.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210331_070643_192451_55008A7B 
+X-CRM114-Status: GOOD (  21.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,23 +87,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04-03-21, 07:08, Swapnil Jakhade wrote:
-> This patch series updates Torrent PHY driver for multilink configurations
-> specific to TI platform. It also adds support for configuring QSGMII in
-> TI Wiz driver.
+Hi,
+
+On 30/03/2021 20:33, Pratyush Yadav wrote:
+> TI's J721E uses the Cadence CSI2RX and DPHY peripherals to facilitate
+> capture over a CSI-2 bus.
 > 
-> This patch series is dependent on [1] and should be applied on
-> top of this.
+> The Cadence CSI2RX IP acts as a bridge between the TI specific parts and
+> the CSI-2 protocol parts. TI then has a wrapper on top of this bridge
+> called the SHIM layer. It takes in data from stream 0, repacks it, and
+> sends it to memory over PSI-L DMA.
+> 
+> This driver acts as the "front end" to V4L2 client applications. It
+> implements the required ioctls and buffer operations, passes the
+> necessary calls on to the bridge, programs the SHIM layer, and performs
+> DMA via the dmaengine API to finally return the data to a buffer
+> supplied by the application.
+> 
+> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> ---
+>   MAINTAINERS                               |   7 +
+>   drivers/media/platform/Kconfig            |  11 +
+>   drivers/media/platform/ti-vpe/Makefile    |   1 +
+>   drivers/media/platform/ti-vpe/ti-csi2rx.c | 964 ++++++++++++++++++++++
+>   4 files changed, 983 insertions(+)
+>   create mode 100644 drivers/media/platform/ti-vpe/ti-csi2rx.c
 
-Applied, thanks
+Some quick comments:
 
--- 
-~Vinod
+"ti-vpe" directory is not correct, this has nothing to do with VPE. That 
+said, the directory has already been abused by having CAL driver there, 
+perhaps we should rename the directory just to "ti". But if we do that, 
+I think we should have subdirs for cal, vpe and this new one.
+
+"ti-csi2rx" is rather generic name. TI has had CSI-2 RX IPs before (CAL) 
+and probably will also have new ones in the future. If there's no clear 
+model name for the IP, as I think is the case here, it's probably best 
+to just use the SoC model in the name. E.g. the DSS on J7 is "ti,j721e-dss".
+
+This driver implements the legacy video API. I think it would be better 
+(and easier to maintain) to only implement the media-controller API, 
+unless you specifically need to support the legacy API for existing 
+userspace.
+
+  Tomi
 
 -- 
 linux-phy mailing list
