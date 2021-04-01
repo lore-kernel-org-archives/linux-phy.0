@@ -2,70 +2,87 @@ Return-Path: <SRS0=2YxO=I6=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BFEBCC433ED
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 06:49:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3F719C433B4
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 07:33:59 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 55150600EF
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 06:49:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 55150600EF
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id D41B06105A
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 07:33:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D41B06105A
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UUNX7w5IhJkvj09YpB4vhzDiF2xO7GWJKOdWcU4LFfw=; b=V7puKFKmmG2cat1Rsjz5zPUgd
-	PCOnMSDWfFv99/4Q7/XQfOSmne2WcDrXZjTN8710Z8xPCudKr+lOYTvHAhRfqyOMWPSWyt2wrRYbb
-	pqFq9o0UgPob+t4mtgKF0q2P+tj3ht7RZ9o61vE3xVERJj4ZXGuOWCe+Ycf72/HxG3xVtglilVRz4
-	pqIhRctLAi8ofVrWYxcoA/63HWxQs2AzSs6i4z/Bm76dTkGaMScil21WgfUzwnsBTsk931ZfoUY2Z
-	hht1+JuKDJ4wwVLvRYrv41x6NUhlsa+mssOpF9i25qeWU/SlCNGNQMr85bN89/fEcjo60RehjdUa9
-	cWUow6Gvw==;
+	List-Unsubscribe:List-Id:MIME-Version:Date:Cc:To:From:Subject:Message-ID:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=uv0W5HWsJOwd5NHqo/uss+p7ut6v32CeqHvCB9uNxTU=; b=mrzcqSSf80AM+tXuGgklj0iwPI
+	ShDAbaozZCvn2r5wPc96YpZUKZvo0avGE7tC6XiztIPqLYK4HLJZ20gzdGDK0QD7vBmhx6sLeZTUg
+	lJAEM8PDfyQYf4WAb20R0JzaSdXPNIeEdoghqhd5eSrosEy2q0lNwr8Aw24+6Dia1Sq01Y2xkdGwc
+	Hyn0ZZffSIcGSn81P14YEYWVE2LPlt+2NqZDphibfRU0o3uVq1J6NKlWJCQpzWH35ciehZb0enBI9
+	IPON6zcKypgSutDPDZl6cU0Y8fBzLo66OD/gG0O61U3kbKAlLrgg8d46iOvSC24RguZ2u9KqVEdPM
+	QYMIDJMA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRr8r-008jNZ-HS; Thu, 01 Apr 2021 06:49:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lRrq1-008nYx-7J; Thu, 01 Apr 2021 07:33:57 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRr8n-008jMF-Gt
- for linux-phy@lists.infradead.org; Thu, 01 Apr 2021 06:49:19 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 2006A610A5;
- Thu,  1 Apr 2021 06:49:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617259756;
- bh=Hhp02BDYFoPZ7/j9E5Md/2IuILswyJ5r7RdCPV+U47w=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=onj8inPvOhaCKXVInG9Tn/7/DE5X3bUbeScYXRgfk3lF/pDtQnEIugcfOi6x0TDrA
- +UC7Cg79GFTvv/mKxkzFUaE44kvxbtoMUpSapqUSlbFGp0IszWZeJ7z5nkK6WXy8p/
- hCrbH+08vhBaLl/j2P0lijOntLuGhEdTRVG/ionIY94gUUAt0b9sYkzo004xf3HzJX
- ABxKy+TQpYLP/O3HsUKW9jJyLZM4bxmwlMCdXQ+7q0bCtnBCJCGYErzKgeAjzggZ7q
- YKT4Tuk8zY1xH9FOiChKIDkNRGH2vh3AvswjJA1xumrH1/6ioTyXBKY0Os9gI7s0/L
- r1dd803h8S4WQ==
-Date: Thu, 1 Apr 2021 12:19:11 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
- Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v8 11/13] phy: tegra: xusb: Add wake/sleepwalk for Tegra186
-Message-ID: <YGVs5/57Z+6zKuQa@vkoul-mobl.Dlink>
-References: <20210325164057.793954-1-thierry.reding@gmail.com>
- <20210325164057.793954-12-thierry.reding@gmail.com>
+ id 1lRrpx-008nYD-98
+ for linux-phy@lists.infradead.org; Thu, 01 Apr 2021 07:33:55 +0000
+Received: by mail-wr1-x433.google.com with SMTP id k8so780927wrc.3
+ for <linux-phy@lists.infradead.org>; Thu, 01 Apr 2021 00:33:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=message-id:subject:from:to:cc:date:user-agent:mime-version
+ :content-transfer-encoding;
+ bh=M4Vn2x7LYFvskShVgkHnVYDSST8AZ5E8PRowpdD+Pys=;
+ b=lSrU7eCkawm4nCmeM2S51RbGiglSJQ98+QDe42WUxlLGsBrYIYquS87IhyUcdQv/Vu
+ YCENXL95Tr/OVrkJqEfDg+dbdlHRRII/uHs92Pjck858KHG/dH9eBtNE5P6nFG9MW4e3
+ cjiYTZxhpwrWNWJzbfvTVJADYDGAa/I25IqnOOgtGft8hZKCXNdCV88f5sa/SMRe0VbY
+ z5+Cbb+/EGrjv22rNzB11wye9hUkSIy0BK4D85dkS3Yx7viW1iYhDI0HFYD/oOvR4bq5
+ YH/8lkhhp4Bgu+VAUmK360FvZpkJ0YjAduUzhrRcQOf7Jyvs1i+59Jwt65d+j2qDf8kF
+ xzFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:user-agent
+ :mime-version:content-transfer-encoding;
+ bh=M4Vn2x7LYFvskShVgkHnVYDSST8AZ5E8PRowpdD+Pys=;
+ b=DhFbUmCYQCsojKUof4uqh9LCtkOLAui3pEa93WIgkw799u5QEtrerzA3QnNKqHVPC/
+ X676l2Fu1pjhUnUcRfu9Cdte9pjDMaLEae15PLibmEDrvFhXvdJSKDxRTWPKpXhxw093
+ BlHbD0cfnGmhkQuxGrKOZQg0HL4XAmdXvwcIYjwEuzg/fDjfXVAsyIBeUI6xNIQzI9H8
+ CE+GOYsxZzPoeUnKeJmU9U1D1pURq8tiw+II39kAQ2fwwGoREuk5/lZqawYEhhijot9Q
+ 9hPerJmjcHtqBrgbEvBdZjH0m93bDx0ecdqn/Ggx+sJouh7EBbBllbUBLOhxLuwti4qL
+ FE7g==
+X-Gm-Message-State: AOAM533tu8EelSOJI5+2XaAGdaUAwl4vHJ7tKnFT3pdKfnTc3dYT0TKn
+ BmDiZFT15L3b41YVMKjWE9g=
+X-Google-Smtp-Source: ABdhPJwlEJpAlk8h3VfXuVCgX2VnNFUIeLlr6LQfCIxL2291eR/i95pLgC7UsFY8/1hjoqNueTZGTQ==
+X-Received: by 2002:adf:f841:: with SMTP id d1mr7911879wrq.36.1617262431345;
+ Thu, 01 Apr 2021 00:33:51 -0700 (PDT)
+Received: from 192.168.10.5 ([39.46.7.73])
+ by smtp.gmail.com with ESMTPSA id f126sm6899718wmf.17.2021.04.01.00.33.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 01 Apr 2021 00:33:50 -0700 (PDT)
+Message-ID: <943b92c6ac291726cf0e6bd92e88f2110c14b74c.camel@gmail.com>
+Subject: [Discussion] Uninitialized variable in wiz_mode_select()
+From: Muhammad Usama Anjum <musamaanjum@gmail.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+ "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, open
+ list <linux-kernel@vger.kernel.org>,  kernel-janitors@vger.kernel.org,
+ colin.king@canonical.com,  dan.carpenter@oracle.com
+Cc: musamaanjum@gmail.com
+Date: Thu, 01 Apr 2021 12:33:46 +0500
+User-Agent: Evolution 3.36.4-0ubuntu1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210325164057.793954-12-thierry.reding@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210401_074917_893742_1AC9A360 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20210401_083353_607462_1D682B15 
+X-CRM114-Status: UNSURE (   6.01  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,89 +99,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-03-21, 17:40, Thierry Reding wrote:
-> From: JC Kuo <jckuo@nvidia.com>
-> 
-> This commit implements Tegra186/Tegra194 XUSB PADCTL/AO wake and
-> sleepwalk operations.
-> 
-> Signed-off-by: JC Kuo <jckuo@nvidia.com>
-> Signed-off-by: Thierry Reding <treding@nvidia.com>
-> ---
->  drivers/phy/tegra/xusb-tegra186.c | 558 +++++++++++++++++++++++++++++-
->  1 file changed, 557 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-> index 5d64f69b39a9..6378bf722745 100644
-> --- a/drivers/phy/tegra/xusb-tegra186.c
-> +++ b/drivers/phy/tegra/xusb-tegra186.c
-> @@ -1,6 +1,6 @@
->  // SPDX-License-Identifier: GPL-2.0
->  /*
-> - * Copyright (c) 2016-2019, NVIDIA CORPORATION.  All rights reserved.
-> + * Copyright (c) 2016-2020, NVIDIA CORPORATION.  All rights reserved.
->   */
->  
->  #include <linux/delay.h>
-> @@ -113,6 +113,117 @@
->  #define  ID_OVERRIDE_FLOATING			ID_OVERRIDE(8)
->  #define  ID_OVERRIDE_GROUNDED			ID_OVERRIDE(0)
->  
-> +/* XUSB AO registers */
-> +#define XUSB_AO_USB_DEBOUNCE_DEL		(0x4)
-> +#define   UHSIC_LINE_DEB_CNT(x)			(((x) & 0xf) << 4)
-> +#define   UTMIP_LINE_DEB_CNT(x)			((x) & 0xf)
-> +
-> +#define XUSB_AO_UTMIP_TRIGGERS(x)		(0x40 + (x) * 4)
-> +#define   CLR_WALK_PTR				(1 << 0)
-> +#define   CAP_CFG				(1 << 1)
-> +#define   CLR_WAKE_ALARM			(1 << 3)
-> +
-> +#define XUSB_AO_UHSIC_TRIGGERS(x)		(0x60 + (x) * 4)
-> +#define   HSIC_CLR_WALK_PTR			(1 << 0)
-> +#define   HSIC_CLR_WAKE_ALARM			(1 << 3)
-> +#define   HSIC_CAP_CFG				(1 << 4)
-> +
-> +#define XUSB_AO_UTMIP_SAVED_STATE(x)		(0x70 + (x) * 4)
-> +#define   SPEED(x)				((x) & 0x3)
-> +#define     UTMI_HS				SPEED(0)
-> +#define     UTMI_FS				SPEED(1)
-> +#define     UTMI_LS				SPEED(2)
-> +#define     UTMI_RST				SPEED(3)
-> +
-> +#define XUSB_AO_UHSIC_SAVED_STATE(x)		(0x90 + (x) * 4)
-> +#define   MODE(x)				((x) & 0x1)
-> +#define   MODE_HS				MODE(0)
-> +#define   MODE_RST				MODE(1)
-> +
-> +#define XUSB_AO_UTMIP_SLEEPWALK_CFG(x)		(0xd0 + (x) * 4)
-> +#define XUSB_AO_UHSIC_SLEEPWALK_CFG(x)		(0xf0 + (x) * 4)
-> +#define   FAKE_USBOP_VAL			(1 << 0)
-> +#define   FAKE_USBON_VAL			(1 << 1)
-> +#define   FAKE_USBOP_EN				(1 << 2)
-> +#define   FAKE_USBON_EN				(1 << 3)
-> +#define   FAKE_STROBE_VAL			(1 << 0)
-> +#define   FAKE_DATA_VAL				(1 << 1)
-> +#define   FAKE_STROBE_EN			(1 << 2)
-> +#define   FAKE_DATA_EN				(1 << 3)
-> +#define   WAKE_WALK_EN				(1 << 14)
-> +#define   MASTER_ENABLE				(1 << 15)
-> +#define   LINEVAL_WALK_EN			(1 << 16)
+Hi,
 
-BIT() or GENMASK() please
+`mode` remains uninitialized when `lane_phy_type` isn't PHY_TYPE_DP
+or 
+PHY_TYPE_QSGMII. I've checked the dtsi (k3-j721e-common-proc-
+board.dts) 
+and possible values of `lane_phy_type` are justPHY_TYPE_USB3 and 
+PHY_TYPE_PCIE. If this is correct, the mode will remain uninitialized with
+garbage value. `mode` should be initialized to what? It seems like it is highly 
+implementation dependent.
 
-> +static inline void ao_writel(struct tegra186_xusb_padctl *priv, u32 value, unsigned int offset)
-> +{
-> +	dev_dbg(priv->base.dev, "ao %08x < %08x\n", offset, value);
+/drivers/phy/ti/phy-j721e-wiz.c: 344 in wiz_mode_select()
+338             for (i = 0; i < num_lanes; i++) {
+339                     if (wiz->lane_phy_type[i] == PHY_TYPE_DP)
+340                             mode = LANE_MODE_GEN1;
+341                     else if (wiz->lane_phy_type[i] == PHY_TYPE_QSGMII)
+342                             mode = LANE_MODE_GEN2;
+343     
+>>>     CID 1503592:  Uninitialized variables  (UNINIT)
+>>>     Using uninitialized value "mode" when calling "regmap_field_write".
+344                     ret = regmap_field_write(wiz->p_standard_mode[i], mode);
+345                     if (ret)
+346                             return ret;
+347             }
+348     
+349             return 0;
 
-Too many debug prints in this patch as well...
+Thanks,
+Usama
 
-With the nits fixed:
-
-Acked-By: Vinod Koul <vkoul@kernel.org>
-
--- 
-~Vinod
 
 -- 
 linux-phy mailing list
