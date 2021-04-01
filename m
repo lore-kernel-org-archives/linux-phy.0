@@ -2,19 +2,20 @@ Return-Path: <SRS0=2YxO=I6=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-2.2 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-12.2 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5BE4DC433B4
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 10:44:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AA30AC433ED
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 11:00:06 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B12CF60FED
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 10:44:05 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B12CF60FED
+	by mail.kernel.org (Postfix) with ESMTPS id 53F42610A0
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Apr 2021 11:00:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 53F42610A0
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,53 +24,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9fwQ1eYfC1dq7Q7VxT9Ed2J6wxWr1ntn3qIotd/PPEw=; b=k1NE8R9iEQPG0AAO+oXgJFMPM
-	xPuKuTFwkF/3rD/YVLEiwY4jr7qbtnh1pCVVITQLNfPWNRXKJ3FQULrV78/pcVmTKXVjiSxlPo9Dl
-	1GIzh27Orbdhv3btWlvMqMxlBG+EToAmJLCtq2wWbQLKvQ4WJjnSc84yVNLAfAb1Py1Nl8dcCCPDF
-	oamWnZdlVhzD2qOGWspGzbxmfv9SMvg0P62HvBEDyDEvSTfnQQ6DHmvD7L1K11vYqKNWSi/yiZthh
-	s93sbyiBgX2Ertytn5Aie5NLpEMnxQL8HUp/TIiOvrXmUUNqXqDc7Ty9waCBoW7XR2fZVDy7xG0Pg
-	kokVvuBug==;
+	 bh=r+C5eFQox0pNUpIG22r26ngbDEqqKhy/uV6R4leUpf4=; b=lAd2XKm/ydiXPFmli6DiZyLiJ
+	fj/7WeIrTfV6er2YpZwWbTYJ2EAgHmpFguXTKN+ZbKKJHA+EAoNj6JmfaAEWa/arCyqjN/CryMj7N
+	1RfBNwc74ReSO6gLe/ScRLSqKXR/zzvHGJy8IlueU9KcLjvAmfGH5AQA1w5wET39MFOyqhtrFlrzp
+	7q9vdNfWRWlbOH01XAOU2aJg2TgD+0f6W6NJR5NfJ2ai8eUIu2lK+4oaJAPcVlWTYVF0afLVQd28E
+	F2zbozF3uQwLBD3ObgiYEROztEXstZTSLifKGF/BJfKaMyRPXo8JFR3txrFj+i45YvBsR+tX/o9pM
+	SZt8ioFwA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRuo0-009H7O-6M; Thu, 01 Apr 2021 10:44:04 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1lRv3P-009J7A-0G; Thu, 01 Apr 2021 11:00:03 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRunv-009H6J-Ul
- for linux-phy@lists.infradead.org; Thu, 01 Apr 2021 10:44:02 +0000
-Received: by mail-ej1-x635.google.com with SMTP id u9so2167894ejj.7
- for <linux-phy@lists.infradead.org>; Thu, 01 Apr 2021 03:43:57 -0700 (PDT)
+ id 1lRv3K-009J6G-Ux
+ for linux-phy@lists.infradead.org; Thu, 01 Apr 2021 10:59:56 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id u9so2228699ejj.7
+ for <linux-phy@lists.infradead.org>; Thu, 01 Apr 2021 03:59:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=Z2Xj9X++1xKNjk6Nkw+jJ5VVq86lauIjuo/R8uGXA1Q=;
- b=JMJUL97JvyV4vzgt4RoMBmpjB9ZN25b3h9VsWlVl9AbUtg4U77lylxgBc/8CN4o0e9
- 1ZLFGC/bmYe5YzbuV/6xZHnh+PYQGdpKAkIuEjvftBWqNQRrVZiTWNGTLP9teJF3pIo4
- FYAWOoLUQB4isIJyZBRXauVdYt4QD0Xou4WVVvtIgGCkHqfnBmckOgiqXnz18lA/TnCG
- 5AqQXs+zKt/nxpBFKoSnUJsTzff3mSGMGiYTTXX5ecSspsdvil21wuYTSKLSC8Q4KN0+
- 0xK40WicPNz2TTitj5vwe1K0MIl9Eo85PM9km75MFmZtuKyVlBcXqSlbKcn6oqQTMEEh
- d9IQ==
+ bh=HQT+MfXSbU3OrSCCpbcdilBmnY1F0nrfdGq3rre+Jq8=;
+ b=sFdAa+KJ/72QxV7NWhfK6r4ms6/34selgLvWkNEGEPm4Q42S6Pc5jt5i7K1iyP7Nzx
+ lYYaR1y+DcPvsqXaO3evhm93l1p3KJXlYvXpjuwGoADenT/cOZ/ZllNb4PKHTTf6fGXA
+ sRR87zOBDkUnvSuzSEhIJXT3I6vtm2qbFsjrFQWUhsGxGDu/HSmP7Wl7C+5EboaMXMQx
+ TS0Of0dwpicC3laUDxrPIhJRjLjqw8uj2m7SayqIRhzKaUBAdFXizwyP1lGUQ1NraFsw
+ 2rQ9MlQncIR+P8mK7iKeqJCMx4wAVMCrR95I9LRFwAnaLpgne4In3P+YyFv/SQIVRRUG
+ 9qhA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Z2Xj9X++1xKNjk6Nkw+jJ5VVq86lauIjuo/R8uGXA1Q=;
- b=NN5ijGq7PtexFp7Oskm9y7jgVzK4AuGCq5jPinCBgPHGDfrYqUIvGO9BZ2jbWBCl3m
- g96GMZlVNVecjfkHaqNPe24ThzPFuxDrlBa4PA/nlNqGWk50GI9h7okPP8/hBXr4EEZ3
- ZSYB7vPO6vwz9Poukv0vtNHNIEUP38ektrJKVZUPs7hZN3sIdkuNkV6yYO9LlsfQagdD
- wQXJuO7bqzvz+tERnkrwCDLa6INpnrcdAYH4rKq0z4tSa4IXnBL4KMi/Ek6dW3Vq3kdp
- fumDN8uaQpWeV+Yxsq8BK3AxUBaiPe2rWOglqU4kFGZhXoJcJiujRFHuRCVX43L/D0vS
- Iv1w==
-X-Gm-Message-State: AOAM530BM8sTQMNqFbQw5MKCOHZizUr/vko9BxK+qoMFRn8HQVFsCY6o
- LXtuW0sXTH6Kau9+1j94onA=
-X-Google-Smtp-Source: ABdhPJxbblLGWVTf/sepUozDRnpyY5PZ4mzcupZDOP0VB1Ffw9zjvwvn9AOV/Qlh0/6jB4duxvP0Xg==
-X-Received: by 2002:a17:906:4ada:: with SMTP id
- u26mr8385823ejt.129.1617273836871; 
- Thu, 01 Apr 2021 03:43:56 -0700 (PDT)
+ bh=HQT+MfXSbU3OrSCCpbcdilBmnY1F0nrfdGq3rre+Jq8=;
+ b=hDvob4Cxotfx8uYxfWyk6a41cm0i1nGhi9PrJJNSarGvsJ57DtTvg2OMku035kpNTF
+ 5Jyu8EdyjGVDG0sLnlyfOKkBoVbZE1FQ5X0q+jT+ZYN46FSDFri292NigWyRO3Z51Pjb
+ iTDCpAD0wdzCOSaeB5aA9CMklerO+2DqHvkUVnPtEN3ryhlG7j5DETCR3cZOLaP/p7sV
+ 5sG9uXr35koJg9x6BO8fxwrMnSxJTZqG1qzF4CjMvXkGCEg6uxHAQmk4nTpEBOudixf9
+ 3yqET4OpPFENe6jZT29UTiIJfaFloHJRhIDR/9unHeiDo6CBybSFPVWPjmlnWzSRuqaI
+ ZuPA==
+X-Gm-Message-State: AOAM533JDzHq8YKAY5/m6zKQxs9c+Hxa25BF7h1soDrupdY4fJTAyN9g
+ l2o6fJAGsJeuZpHYKbbe2Io=
+X-Google-Smtp-Source: ABdhPJwif69oPS/oE0DnF294MN6X53YGdyUxADFwKndhXaPMFcJS6q3Z9IqzRYL8CHmdmuLaZzoYwA==
+X-Received: by 2002:a17:906:2612:: with SMTP id
+ h18mr8341376ejc.309.1617274794368; 
+ Thu, 01 Apr 2021 03:59:54 -0700 (PDT)
 Received: from localhost ([62.96.65.119])
- by smtp.gmail.com with ESMTPSA id x4sm3104954edd.58.2021.04.01.03.43.54
+ by smtp.gmail.com with ESMTPSA id ci22sm2597916ejc.54.2021.04.01.03.59.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 01 Apr 2021 03:43:54 -0700 (PDT)
-Date: Thu, 1 Apr 2021 12:44:22 +0200
+ Thu, 01 Apr 2021 03:59:51 -0700 (PDT)
+Date: Thu, 1 Apr 2021 13:00:18 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -77,17 +78,17 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Mathias Nyman <mathias.nyman@intel.com>, JC Kuo <jckuo@nvidia.com>,
  Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v8 09/13] phy: tegra: xusb: Add wake/sleepwalk for Tegra210
-Message-ID: <YGWkBsGu0R/dnYcA@orome.fritz.box>
+Subject: Re: [PATCH v8 11/13] phy: tegra: xusb: Add wake/sleepwalk for Tegra186
+Message-ID: <YGWnwhhiEZ596ct4@orome.fritz.box>
 References: <20210325164057.793954-1-thierry.reding@gmail.com>
- <20210325164057.793954-10-thierry.reding@gmail.com>
- <YGVr9EIBOHC9N/+/@vkoul-mobl.Dlink>
+ <20210325164057.793954-12-thierry.reding@gmail.com>
+ <YGVs5/57Z+6zKuQa@vkoul-mobl.Dlink>
 MIME-Version: 1.0
-In-Reply-To: <YGVr9EIBOHC9N/+/@vkoul-mobl.Dlink>
+In-Reply-To: <YGVs5/57Z+6zKuQa@vkoul-mobl.Dlink>
 User-Agent: Mutt/2.0.6 (98f8cb83) (2021-03-06)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210401_114400_340004_4C8083F1 
-X-CRM114-Status: GOOD (  36.12  )
+X-CRM114-CacheID: sfid-20210401_115955_042624_C644A10A 
+X-CRM114-Status: GOOD (  20.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,271 +100,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3267348183400714416=="
+Content-Type: multipart/mixed; boundary="===============1271236301659374192=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============3267348183400714416==
+--===============1271236301659374192==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="scOahIY3tU/uvpTQ"
+	protocol="application/pgp-signature"; boundary="BQy/s5Q8W1hUIwRV"
 Content-Disposition: inline
 
 
---scOahIY3tU/uvpTQ
+--BQy/s5Q8W1hUIwRV
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Apr 01, 2021 at 12:15:08PM +0530, Vinod Koul wrote:
+On Thu, Apr 01, 2021 at 12:19:11PM +0530, Vinod Koul wrote:
 > On 25-03-21, 17:40, Thierry Reding wrote:
+> > From: JC Kuo <jckuo@nvidia.com>
+> >=20
+> > This commit implements Tegra186/Tegra194 XUSB PADCTL/AO wake and
+> > sleepwalk operations.
+> >=20
+> > Signed-off-by: JC Kuo <jckuo@nvidia.com>
+> > Signed-off-by: Thierry Reding <treding@nvidia.com>
+> > ---
+> >  drivers/phy/tegra/xusb-tegra186.c | 558 +++++++++++++++++++++++++++++-
+> >  1 file changed, 557 insertions(+), 1 deletion(-)
+> >=20
+> > diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb=
+-tegra186.c
+> > index 5d64f69b39a9..6378bf722745 100644
+> > --- a/drivers/phy/tegra/xusb-tegra186.c
+> > +++ b/drivers/phy/tegra/xusb-tegra186.c
+> > @@ -1,6 +1,6 @@
+> >  // SPDX-License-Identifier: GPL-2.0
+> >  /*
+> > - * Copyright (c) 2016-2019, NVIDIA CORPORATION.  All rights reserved.
+> > + * Copyright (c) 2016-2020, NVIDIA CORPORATION.  All rights reserved.
+> >   */
+> > =20
+> >  #include <linux/delay.h>
+> > @@ -113,6 +113,117 @@
+> >  #define  ID_OVERRIDE_FLOATING			ID_OVERRIDE(8)
+> >  #define  ID_OVERRIDE_GROUNDED			ID_OVERRIDE(0)
+> > =20
+> > +/* XUSB AO registers */
+> > +#define XUSB_AO_USB_DEBOUNCE_DEL		(0x4)
+> > +#define   UHSIC_LINE_DEB_CNT(x)			(((x) & 0xf) << 4)
+> > +#define   UTMIP_LINE_DEB_CNT(x)			((x) & 0xf)
+> > +
+> > +#define XUSB_AO_UTMIP_TRIGGERS(x)		(0x40 + (x) * 4)
+> > +#define   CLR_WALK_PTR				(1 << 0)
+> > +#define   CAP_CFG				(1 << 1)
+> > +#define   CLR_WAKE_ALARM			(1 << 3)
+> > +
+> > +#define XUSB_AO_UHSIC_TRIGGERS(x)		(0x60 + (x) * 4)
+> > +#define   HSIC_CLR_WALK_PTR			(1 << 0)
+> > +#define   HSIC_CLR_WAKE_ALARM			(1 << 3)
+> > +#define   HSIC_CAP_CFG				(1 << 4)
+> > +
+> > +#define XUSB_AO_UTMIP_SAVED_STATE(x)		(0x70 + (x) * 4)
+> > +#define   SPEED(x)				((x) & 0x3)
+> > +#define     UTMI_HS				SPEED(0)
+> > +#define     UTMI_FS				SPEED(1)
+> > +#define     UTMI_LS				SPEED(2)
+> > +#define     UTMI_RST				SPEED(3)
+> > +
+> > +#define XUSB_AO_UHSIC_SAVED_STATE(x)		(0x90 + (x) * 4)
+> > +#define   MODE(x)				((x) & 0x1)
+> > +#define   MODE_HS				MODE(0)
+> > +#define   MODE_RST				MODE(1)
+> > +
+> > +#define XUSB_AO_UTMIP_SLEEPWALK_CFG(x)		(0xd0 + (x) * 4)
+> > +#define XUSB_AO_UHSIC_SLEEPWALK_CFG(x)		(0xf0 + (x) * 4)
+> > +#define   FAKE_USBOP_VAL			(1 << 0)
+> > +#define   FAKE_USBON_VAL			(1 << 1)
+> > +#define   FAKE_USBOP_EN				(1 << 2)
+> > +#define   FAKE_USBON_EN				(1 << 3)
+> > +#define   FAKE_STROBE_VAL			(1 << 0)
+> > +#define   FAKE_DATA_VAL				(1 << 1)
+> > +#define   FAKE_STROBE_EN			(1 << 2)
+> > +#define   FAKE_DATA_EN				(1 << 3)
+> > +#define   WAKE_WALK_EN				(1 << 14)
+> > +#define   MASTER_ENABLE				(1 << 15)
+> > +#define   LINEVAL_WALK_EN			(1 << 16)
 >=20
-> > +static int tegra210_usb3_enable_phy_sleepwalk(struct tegra_xusb_lane *=
-lane,
-> > +					      enum usb_device_speed speed)
+> BIT() or GENMASK() please
+>=20
+> > +static inline void ao_writel(struct tegra186_xusb_padctl *priv, u32 va=
+lue, unsigned int offset)
 > > +{
-> > +	struct tegra_xusb_padctl *padctl =3D lane->pad->padctl;
-> > +	int port =3D tegra210_usb3_lane_map(lane);
-> > +	struct device *dev =3D padctl->dev;
-> > +	u32 value;
-> > +
-> > +	if (port < 0) {
-> > +		dev_err(dev, "invalid usb3 port number\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	dev_dbg(dev, "phy enable sleepwalk usb3 %d\n", port);
+> > +	dev_dbg(priv->base.dev, "ao %08x < %08x\n", offset, value);
 >=20
-> Too much noise for my taste :)
-> (here and other places)
-
-These are purely for debugging purposes. The idea being that they can be
-quickly enabled by defining DEBUG. Otherwise if something ever goes
-wrong in this code somebody will have to add this exact same code again
-just to troubleshoot.
-
-But if you insist I can remove this and similar other debug messages.
-
-> > +static int tegra210_pmc_utmi_enable_phy_sleepwalk(struct tegra_xusb_la=
-ne *lane,
-> > +						  enum usb_device_speed speed)
-> > +{
-> > +	struct tegra_xusb_padctl *padctl =3D lane->pad->padctl;
-> > +	struct tegra210_xusb_padctl *priv =3D to_tegra210_xusb_padctl(padctl);
-> > +	struct device *dev =3D padctl->dev;
-> > +	unsigned int port =3D lane->index;
-> > +	u32 value, tctrl, pctrl, rpd_ctrl;
-> > +
-> > +	if (!priv->regmap)
-> > +		return -EOPNOTSUPP;
-> > +
-> > +	if (speed > USB_SPEED_HIGH)
-> > +		return -EINVAL;
-> > +
-> > +	dev_dbg(dev, "phy enable sleepwalk usb2 %d speed %d\n", port, speed);
-> > +
-> > +	value =3D padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
-> > +	tctrl =3D TCTRL_VALUE(value);
-> > +	pctrl =3D PCTRL_VALUE(value);
-> > +
-> > +	value =3D padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(port));
-> > +	rpd_ctrl =3D RPD_CTRL_VALUE(value);
-> > +
-> > +	/* ensure sleepwalk logic is disabled */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
-> > +	value &=3D ~UTMIP_MASTER_ENABLE(port);
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
-> > +
-> > +	/* ensure sleepwalk logics are in low power mode */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_MASTER_CONFIG);
-> > +	value |=3D UTMIP_PWR(port);
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_MASTER_CONFIG);
+> Too many debug prints in this patch as well...
 >=20
-> We really should have a read_modify_write() helper.. quite repeat of
-> this here
-
-I actually tried this once a while back, but the resulting code didn't
-look much better, in my opinion. In this particular case it might
-actually work because what we modify is simple, but consider the case
-of some of the other expressions where individual arguments to the
-functions will become really long and then the code ends up very
-unreadable.
-
-One alternative that I had considered was to have a mix and use the
-read/modify/write helper only where it wouldn't hurt readability, but
-that is perhaps half of the time and it would make register accesses
-completely inconsistent.
-
-I agree that this looks like a bit of boilerplate, but on the other hand
-it's consistent and it's also very trivial to follow.
-
-> > +	/* set debounce time */
-> > +	value =3D padctl_pmc_readl(priv, PMC_USB_DEBOUNCE_DEL);
-> > +	value &=3D ~UTMIP_LINE_DEB_CNT(~0);
-> > +	value |=3D UTMIP_LINE_DEB_CNT(0x1);
-> > +	padctl_pmc_writel(priv, value, PMC_USB_DEBOUNCE_DEL);
-> > +
-> > +	/* ensure fake events of sleepwalk logic are desiabled */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_FAKE(port));
-> > +	value &=3D ~(UTMIP_FAKE_USBOP_VAL(port) | UTMIP_FAKE_USBON_VAL(port) |
-> > +			UTMIP_FAKE_USBOP_EN(port) | UTMIP_FAKE_USBON_EN(port));
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_FAKE(port));
-> > +
-> > +	/* ensure wake events of sleepwalk logic are not latched */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_LINE_WAKEUP);
-> > +	value &=3D ~UTMIP_LINE_WAKEUP_EN(port);
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_LINE_WAKEUP);
-> > +
-> > +	/* disable wake event triggers of sleepwalk logic */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
-> > +	value &=3D ~UTMIP_WAKE_VAL(port, ~0);
-> > +	value |=3D UTMIP_WAKE_VAL_NONE(port);
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEP_CFG(port));
-> > +
-> > +	/* power down the line state detectors of the pad */
-> > +	value =3D padctl_pmc_readl(priv, PMC_USB_AO);
-> > +	value |=3D (USBOP_VAL_PD(port) | USBON_VAL_PD(port));
-> > +	padctl_pmc_writel(priv, value, PMC_USB_AO);
-> > +
-> > +	/* save state per speed */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SAVED_STATE(port));
-> > +	value &=3D ~SPEED(port, ~0);
-> > +	if (speed =3D=3D USB_SPEED_HIGH)
-> > +		value |=3D UTMI_HS(port);
-> > +	else if (speed =3D=3D USB_SPEED_FULL)
-> > +		value |=3D UTMI_FS(port);
-> > +	else if (speed =3D=3D USB_SPEED_LOW)
-> > +		value |=3D UTMI_LS(port);
-> > +	else
-> > +		value |=3D UTMI_RST(port);
+> With the nits fixed:
 >=20
-> This could look better with a switch statement
+> Acked-By: Vinod Koul <vkoul@kernel.org>
 
-Agreed, I've switched this to a switch statement.
-
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SAVED_STATE(port));
-> > +
-> > +	/* enable the trigger of the sleepwalk logic */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_SLEEPWALK_CFG(port));
-> > +	value |=3D UTMIP_LINEVAL_WALK_EN(port);
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_SLEEPWALK_CFG(port));
-> > +
-> > +	/* reset the walk pointer and clear the alarm of the sleepwalk logic,
-> > +	 * as well as capture the configuration of the USB2.0 pad
-> > +	 */
->=20
-> /*
->  * multi
->  * line style please
->  */
-
-Done.
-
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_UHSIC_TRIGGERS);
-> > +	value |=3D (UTMIP_CLR_WALK_PTR(port) | UTMIP_CLR_WAKE_ALARM(port) |
-> > +		UTMIP_CAP_CFG(port));
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_UHSIC_TRIGGERS);
-> > +
-> > +	/* program electrical parameters read from XUSB PADCTL */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_TERM_PAD_CFG);
-> > +	value &=3D ~(TCTRL_VAL(~0) | PCTRL_VAL(~0));
-> > +	value |=3D (TCTRL_VAL(tctrl) | PCTRL_VAL(pctrl));
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_TERM_PAD_CFG);
-> > +
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_PAD_CFGX(port));
-> > +	value &=3D ~RPD_CTRL_PX(~0);
-> > +	value |=3D RPD_CTRL_PX(rpd_ctrl);
-> > +	padctl_pmc_writel(priv, value, PMC_UTMIP_PAD_CFGX(port));
-> > +
-> > +	/* setup the pull-ups and pull-downs of the signals during the four
-> > +	 * stages of sleepwalk.
-> > +	 * if device is connected, program sleepwalk logic to maintain a J and
-> > +	 * keep driving K upon seeing remote wake.
-> > +	 */
-> > +	value =3D padctl_pmc_readl(priv, PMC_UTMIP_SLEEPWALK_PX(port));
-> > +	value =3D (UTMIP_USBOP_RPD_A | UTMIP_USBOP_RPD_B | UTMIP_USBOP_RPD_C |
-> > +		UTMIP_USBOP_RPD_D);
-> > +	value |=3D (UTMIP_USBON_RPD_A | UTMIP_USBON_RPD_B | UTMIP_USBON_RPD_C=
- |
-> > +		UTMIP_USBON_RPD_D);
-> > +	if (speed =3D=3D USB_SPEED_UNKNOWN) {
-> > +		value |=3D (UTMIP_HIGHZ_A | UTMIP_HIGHZ_B | UTMIP_HIGHZ_C |
-> > +			UTMIP_HIGHZ_D);
-> > +	} else if ((speed =3D=3D USB_SPEED_HIGH) || (speed =3D=3D USB_SPEED_F=
-ULL)) {
-> > +		/* J state: D+/D- =3D high/low, K state: D+/D- =3D low/high */
-> > +		value |=3D UTMIP_HIGHZ_A;
-> > +		value |=3D UTMIP_AP_A;
-> > +		value |=3D (UTMIP_AN_B | UTMIP_AN_C | UTMIP_AN_D);
-> > +	} else if (speed =3D=3D USB_SPEED_LOW) {
-> > +		/* J state: D+/D- =3D low/high, K state: D+/D- =3D high/low */
-> > +		value |=3D UTMIP_HIGHZ_A;
-> > +		value |=3D UTMIP_AN_A;
-> > +		value |=3D (UTMIP_AP_B | UTMIP_AP_C | UTMIP_AP_D);
-> > +	}
->=20
-> no else? err case? Also this could use a switch too
-
-There's no else or error case here because all other values have already
-been rejected by the "speed > USB_SPEED_HIGH" check earlier in this
-function. I agree that this looks better as a switch, though, so I've
-changed to that.
-
-> > +static int tegra210_pmc_utmi_disable_phy_sleepwalk(struct tegra_xusb_l=
-ane *lane)
-> > +{
-> > +	struct tegra_xusb_padctl *padctl =3D lane->pad->padctl;
-> > +	struct tegra210_xusb_padctl *priv =3D to_tegra210_xusb_padctl(padctl);
-> > +	struct device *dev =3D padctl->dev;
-> > +	unsigned int port =3D lane->index;
-> > +	u32 value;
-> > +
-> > +	if (!priv->regmap)
-> > +		return -EOPNOTSUPP;
->=20
-> That should be an error like EIO as we always expect regmap to be set,
-> no an unsupported error right?
-
-This is for backwards-compatibility with older device trees. Device
-trees prior to this patch series don't have a reference to that regmap,
-but the code should keep working with such device trees, otherwise USB
-will be broken on newer kernel versions if you don't update the device
-tree.
-
-"unsupported" here means that this particular feature isn't supported
-because the regmap is missing, so we can't reprogram the registers
-needed to make this work.
-
-FWIW, the ->probe() function will print a warning if the regmap is
-absent, so in combination with this -EOPNOTSUPP that is hopefully going
-to make this clearer to users.
+Done, thanks.
 
 Thierry
 
---scOahIY3tU/uvpTQ
+--BQy/s5Q8W1hUIwRV
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmBlpAQACgkQ3SOs138+
-s6GZ6hAAmhcGixFEuOzP/8dzao8GjIg64Y26a8H3scO7s4v9HPqfDVbHoPNgQPfX
-yxouvPhV+a7GEYaEdmot9roPKiwVxZM3ZXVlnAzrELHsBR4s6vlqYkDE+4I6lh+e
-Ga19/8JTpiJLPex9M6RsW/EHb7oOwhclfQzqunruyhMaCfwKMb1d5iEAWtBEHNAo
-RvT3ERs5rsgdyWARj/dAkG9nxh3JW3QgK6trUn40/axrTeDFl1Efp0ZI0BO1j0L8
-QCmvbmdvnYvAttlslijQDGPzsqbR273yC9xZ3eqHxTajYWeIYDPym8fxCBa5pFmn
-+gUZhFwduSoyjC7XTmLoLG85hs/bwQyzncptKH/7C50/eI4/c3SJPOvTdosh333G
-YheLDcrqgt522iE2KegwWFH64Cx8fMnWvpZ0Gyh/si1skJs873JFQGrGtyV26TOt
-RoHMu0sPh5WP3wrnJ/Fd4Q1cYrMZQqN2hNJFXqHjs3Ye63zW2tK6/5Q9nEzbE1n7
-lxJ36nMSvxFPRWSJPW/u+zyINAp3vnxzmnE2Hije1gIIlM9Hvp29rrtUmWV9hnJJ
-aM/OMlBm/VUWHDrhzi6sQ2vll7+XqU/4scjZx0mWTbfrDW28shRqgsg/FcKOqHZT
-1JXwFIqVRW0+ZwWoX8Rw0Tu/WI0fgzkb1IWvf4Qo6BLAgndLobo=
-=Jhuu
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmBlp8AACgkQ3SOs138+
+s6FNYQ//ZCu0RiXY4bKYD0YkdSBK952Z/KYrEDrhuDPEBc3i9RA8TE6l/IJqgA6l
+gvczZki7xJf5xxfPYVQz47kCpP6aVYTQhx2tkqIopBvjf6pIxTpxvSZYQak7bg9h
+x63nuX/TsJg1pZhInBMmN1pex1a6W1HeDthgOvMjInP08qJiRcHuePWNOfMVYMxR
+m1EmYOD3SvSnMU6OchsmZ//pRn8E32JGZmJbxHotF/JTvPvoyb/vhOESBFDkaw/X
+L0qHzDJf7Bq94qrJkB7/L09qCfnXT85eg6UvIPSeKY2oCRAZejRcOoLDEzWkpgWi
+MSrU2k/ltVbdZQuaGEw3zJxBsALkBXKLqZMFQBZ5jAVF+pYtCYY65uThu+Xl5OKh
+pTkQNRJiL4vFG6NSuTUgGrddTi2BXrD9OC+N0OJhLp7gK2wzjRUO4g0OMHYlnsE4
+6ukP6vQ7/y5w1R89pKPabN1Hua9/ealW6FQtOq3IP+LgKp655AC36POOS5GdPJAT
+J+4I89T1STHN4ebmiQHjMDm4rKZYZIuWRaTduMgaXthxYXMt7vUZI5MTDlsBawWz
+4MuVs6bDQa3vV3ivwNn8ILyDFEdzQivGg6T8Ad3J5UgqyrR6LtWi4v7a64zgHYel
+6Rg+Xj78dfixdNoG73VW2kUHCnr9/kBXx7eqYQGOk627xjctIno=
+=5jX+
 -----END PGP SIGNATURE-----
 
---scOahIY3tU/uvpTQ--
+--BQy/s5Q8W1hUIwRV--
 
 
---===============3267348183400714416==
+--===============1271236301659374192==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -374,5 +238,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============3267348183400714416==--
+--===============1271236301659374192==--
 
