@@ -4,17 +4,17 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=unavailable autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 80D22C433B4
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Apr 2021 10:54:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 90BEBC433ED
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Apr 2021 10:56:26 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D1E12610C7
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Apr 2021 10:54:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D1E12610C7
+	by mail.kernel.org (Postfix) with ESMTPS id 3FAC7610A0
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Apr 2021 10:56:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 3FAC7610A0
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,37 +23,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pFDbDGfA+uSkepKyid2f5SWZNODdc8APOZ51JkAqqMc=; b=YE+oVsOgdfd0dMP6dPDERZWL4
-	XijpWA2Oca/oCu2LIVcixs8H4a+2QGii0AteO50ub6GJjtFjUmo8QP2iYDqxf+emahDxg/PKDwZl4
-	+7Rc5yq1ko2slni0JxIuZrRNN6uHT6EUGsnvn1ihaUBy5dyuuG4CHeAu8PWQ9JBwA4a1PaM5pze6Y
-	SwhT0rlfdqbNOGEAYz6Xa62OmFSgwfU62MschTQ0dbNt/yB4jvXH8/ntPif67eFekoTjus5Q+SFEn
-	I2obWvFyqFOzJp70hdw36Q27Q3aFQX6cDGIki526vJLD2KEzRPNhCxn59V72Nq7EduwQSpwh2ysgw
-	mSzHg/Yag==;
+	 bh=JIOGfy6kLjEyGacyJGlEYDDySRiDYvhY6UDmFV/UGJg=; b=mwlCILtUmGEip94qdDiV1ryIi
+	DeICt/4O3eYg7btU+t5WRV1YBoNGfHnx5qJLZbVZi6/klOL8dnHXX5viXtEy06cImkOnMB0AAmtYJ
+	lfe75it5y0TPPQ0RJqF/jeq3HFafrfxGZ8hR3EDfHxuFLuEGpJJjESHd94G9gJWeGPmJlymusg2vM
+	drsm0HDltIaQ3rJ+PSN3qRzJHnxzM3BcuVjgYt4gSJpFJEc/uEygVwdt+YS0AY+w+5A3atDjOQLMX
+	rurwAK2ZUCmWc8qKtM2vopeEFNSoHd8JW9stAeXMiO0IjmcwtjW9VatAVPkYAkQVqueYdnDlQbXVw
+	9Iao91YyQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lSHRX-00Cov3-Mr; Fri, 02 Apr 2021 10:54:24 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1lSHTU-00Cp5T-8y; Fri, 02 Apr 2021 10:56:24 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lSHRT-00CouV-1e
- for linux-phy@lists.infradead.org; Fri, 02 Apr 2021 10:54:22 +0000
+ id 1lSHTP-00Cp51-QB
+ for linux-phy@lists.infradead.org; Fri, 02 Apr 2021 10:56:21 +0000
 Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
  [62.78.145.57])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 2E9402C1;
- Fri,  2 Apr 2021 12:54:18 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 0A83D2C1;
+ Fri,  2 Apr 2021 12:56:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1617360858;
- bh=UCwrUSuRtIFAymur1layRIL6FGb6Pt2qNdjBqyeQzZU=;
+ s=mail; t=1617360979;
+ bh=6eYqrEyZZU/9oqYbn/7t26/s8F+2OY3y3ACoAKZHSa4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hY75K9CBnpYTHA6LZx8KY0B2lznyAsUuGfoxQoXu6gMZ83pfmaOSeeIgHXD9Dg8lm
- vDXyFZNsw35IvV0yxqXKe/1ZD0+9U1qcsE99dZRPpbkXjvadKV+jxkkUpmZCrNQdSL
- +SO1kHCAxLvm5UMcgkKpB4OmqgS+/5/kpL2/feuI=
-Date: Fri, 2 Apr 2021 13:53:34 +0300
+ b=mr4LNeAhc1IVzQf9Ok/ScczcYUQN9fFhw8fhDTO/Ku0XHqINqDEYB/+GKBD0gbDKc
+ lALpd6EuwdIQK3ITfoLiZfOgSH/d6w/Cuq3cW08DEh4VIQbN7rRBNMmDdWOjcSIsd8
+ yrUjjw9JBjwP4nAp0MRN1ywmg3QYpnLsnvSdO96k=
+Date: Fri, 2 Apr 2021 13:55:35 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Pratyush Yadav <p.yadav@ti.com>
-Cc: Rob Herring <robh@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Peter Ujfalusi <peter.ujfalusi@gmail.com>,
  Maxime Ripard <mripard@kernel.org>, Benoit Parrot <bparrot@ti.com>,
  Hans Verkuil <hverkuil-cisco@xs4all.nl>,
  Alexandre Courbot <acourbot@chromium.org>,
@@ -65,19 +64,17 @@ Cc: Rob Herring <robh@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  dmaengine@vger.kernel.org, Vignesh Raghavendra <vigneshr@ti.com>,
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: Re: [PATCH 12/16] dt-bindings: media: Add DT bindings for TI CSI2RX
- driver
-Message-ID: <YGb3rnuDCdM6XnvJ@pendragon.ideasonboard.com>
+Subject: Re: [PATCH 09/16] media: cadence: csi2rx: Turn subdev power on
+ before starting stream
+Message-ID: <YGb4J5q9N0ExOgn9@pendragon.ideasonboard.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
- <20210330173348.30135-13-p.yadav@ti.com>
- <20210401155201.GA488101@robh.at.kernel.org>
- <YGbrcKPA9K8Ws0lv@pendragon.ideasonboard.com>
+ <20210330173348.30135-10-p.yadav@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YGbrcKPA9K8Ws0lv@pendragon.ideasonboard.com>
+In-Reply-To: <20210330173348.30135-10-p.yadav@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210402_115420_005375_A0D891AC 
-X-CRM114-Status: GOOD (  24.42  )
+X-CRM114-CacheID: sfid-20210402_115620_201003_B5659975 
+X-CRM114-Status: GOOD (  16.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,128 +91,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Apr 02, 2021 at 01:01:22PM +0300, Laurent Pinchart wrote:
-> On Thu, Apr 01, 2021 at 10:52:01AM -0500, Rob Herring wrote:
-> > On Tue, Mar 30, 2021 at 11:03:44PM +0530, Pratyush Yadav wrote:
-> > > TI's J721E uses the Cadence CSI2RX and DPHY peripherals to facilitate
-> > > capture over a CSI-2 bus. The TI CSI2RX platform driver glues all the
-> > > parts together.
-> > > 
-> > > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > > ---
-> > >  .../devicetree/bindings/media/ti,csi2rx.yaml  | 70 +++++++++++++++++++
-> > >  1 file changed, 70 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/media/ti,csi2rx.yaml
-> > > 
-> > > diff --git a/Documentation/devicetree/bindings/media/ti,csi2rx.yaml b/Documentation/devicetree/bindings/media/ti,csi2rx.yaml
-> > > new file mode 100644
-> > > index 000000000000..ebd894364391
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/media/ti,csi2rx.yaml
-> > > @@ -0,0 +1,70 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/media/ti,csi2rx.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: TI CSI2RX Wrapper Device Tree Bindings
-> > > +
-> 
-> A description would be useful, especially given that the TRM doesn't
-> mention "CSI2RX".
-> 
-> > > +maintainers:
-> > > +  - Pratyush Yadav <p.yadav@ti.com>
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    items:
-> > > +      - const: ti,csi2rx
-> > > +
-> > > +  dmas:
-> > > +    description: RX DMA Channel 0
-> > 
-> > items:
-> >   - description: RX DMA Channel 0
-> > 
-> > Or just 'maxItems: 1'
-> > 
-> > > +
-> > > +  dma-names:
-> > > +    items:
-> > > +      - const: rx0
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +    description: Base address and size of the TI wrapper registers.
-> > 
-> > That's all 'reg' properties, drop 'description'.
-> 
-> According to SPRUIL1B, there are four register banks for the CSI_RX_IF,
-> and two register banks for the DPHY_RX. What's your plan to support
-> these ? Not everything need to be implemented at once, but backward
-> compatibility need to be taken into account in the design.
-> 
-> > > +
-> > > +  power-domains:
-> > > +    maxItems: 1
-> > > +    description:
-> > > +      PM domain provider node and an args specifier containing
-> > > +      the device id value.
-> > 
-> > Drop.
-> > 
-> > > +
-> > > +  ranges: true
-> > > +
-> > > +  "#address-cells":
-> > > +    const: 2
-> > > +
-> > > +  "#size-cells":
-> > > +    const: 2
-> > > +
-> > > +patternProperties:
-> > > +  "csi-bridge@":
-> > 
-> > "^csi-bridge@"
-> > 
-> > > +    type: object
-> > > +    description: CSI2 bridge node.
-> > 
-> > Just an empty node?
-> 
-> Even if the node is optional, it would be useful to include it in the
-> example below, to show how it's supposed to be used.
-> 
-> > > +
-> > > +required:
-> > > +  - compatible
-> > > +  - reg
-> > > +  - dmas
-> > > +  - dma-names
-> > > +  - power-domains
-> > > +  - "#address-cells"
-> > > +  - "#size-cells"
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +    #include <dt-bindings/soc/ti,sci_pm_domain.h>
-> > > +
-> > > +    ti_csi2rx0: ticsi2rx {
-> > > +        compatible = "ti,csi2rx";
-> > > +        dmas = <&main_udmap 0x4940>;
-> > > +        dma-names = "rx0";
-> > > +        reg = <0x0 0x4500000 0x0 0x1000>;
-> > > +        power-domains = <&k3_pds 26 TI_SCI_PD_EXCLUSIVE>;
-> > > +        #address-cells = <2>;
-> > > +        #size-cells = <2>;
-> > > +    };
+Hi Pratyush,
 
-It would also be useful to expand this to a full example that includes
-integration with the PHY.
+Thank you for the patch.
+
+On Tue, Mar 30, 2021 at 11:03:41PM +0530, Pratyush Yadav wrote:
+> The subdevice power needs to be turned on before the stream is started.
+> Otherwise it might not be in the proper state to stream the data. Turn
+> it off when stopping the stream.
+
+The .s_power() operation is deprecated. Subdev drivers should control
+power internally in their .s_stream() operation, and they should use
+runtime PM to do so (this will allow usage of runtime PM autosuspend, to
+avoid expensive power off/on cycles when stopping and restarting video
+capture).
+
+> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> ---
+>  drivers/media/platform/cadence/cdns-csi2rx.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
+> 
+> diff --git a/drivers/media/platform/cadence/cdns-csi2rx.c b/drivers/media/platform/cadence/cdns-csi2rx.c
+> index 7d1ac51e0698..3385e1bc213e 100644
+> --- a/drivers/media/platform/cadence/cdns-csi2rx.c
+> +++ b/drivers/media/platform/cadence/cdns-csi2rx.c
+> @@ -256,6 +256,10 @@ static int csi2rx_start(struct csi2rx_priv *csi2rx)
+>  
+>  	writel(reg, csi2rx->base + CSI2RX_STATIC_CFG_REG);
+>  
+> +	ret = v4l2_subdev_call(csi2rx->source_subdev, core, s_power, true);
+> +	if (ret && ret != -ENOIOCTLCMD)
+> +		goto err_disable_pclk;
+> +
+>  	ret = v4l2_subdev_call(csi2rx->source_subdev, video, s_stream, true);
+>  	if (ret)
+>  		goto err_disable_pclk;
+> @@ -358,6 +362,10 @@ static void csi2rx_stop(struct csi2rx_priv *csi2rx)
+>  	if (v4l2_subdev_call(csi2rx->source_subdev, video, s_stream, false))
+>  		dev_warn(csi2rx->dev, "Couldn't disable our subdev\n");
+>  
+> +	ret = v4l2_subdev_call(csi2rx->source_subdev, core, s_power, false);
+> +	if (ret && ret != -ENOIOCTLCMD)
+> +		dev_warn(csi2rx->dev, "Couldn't power off subdev\n");
+> +
+>  	if (csi2rx->dphy) {
+>  		writel(0, csi2rx->base + CSI2RX_DPHY_LANE_CTRL_REG);
+>  
 
 -- 
 Regards,
