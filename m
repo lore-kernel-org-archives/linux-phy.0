@@ -1,81 +1,105 @@
-Return-Path: <SRS0=ixR+=I7=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=C3a/=JB=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-8.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-12.2 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 82CD5C433ED
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Apr 2021 10:58:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3BE9BC433B4
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Apr 2021 13:24:03 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2ACC16112F
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Apr 2021 10:58:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2ACC16112F
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
+	by mail.kernel.org (Postfix) with ESMTPS id A4E6061358
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Apr 2021 13:24:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A4E6061358
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ksTQaKWQBOQnieLAfPpcxuat5VsppXHE12Kx1HlkWvQ=; b=LtgW5BgTEeEayl4UtZ78PPHGB
-	SykWpq7r8gM9pa+VTqleUVAHYW0gDyZSebHlZlNRQfnppVpZI77vPQ0L9ef6Nm7C3dIuniZfbmk8b
-	sCBJ7VeWkfjPSEOdc+PHz7CBVp5N/SDc4Wq4HI3FQr7dQX4I7LVVsksx9hk8IaLrklm6XbeNK60l3
-	ql0MT907g75wZ6zysK3oWVyZ3m4irBLt0F5OEvJHvCApfGO6Wrq0BWdJaZsMXMFQ2nmN/HFtFpPcF
-	bPoB2U0V9eqghXID0KYIXMAwHWaBJVRxvnV/AHNC1PUTFOqjkHTyqRWWsoN2NG0E+1jAgT45UXHkv
-	K5z6+EEvA==;
+	 bh=XvLd79p2nHfH4HM2FJueJT59s8xIrTnnADO1NauuP0k=; b=SuS1czaLFPMAx0f2jR0L4QxBb
+	4xIotfmMu5I+cVYgzwkYtpGEFyQr0n+zGT5ZZNPCcQtJ/HwV3bye421dBRFvVg+RxxdfCEMgVM7Zz
+	pS0j8SFmPngC/RZSJ+W9rrvZ87bttlsMdTGQan9jKNJkOfmxN3ANU1ZymnOMMPzoQ4ooHwTagUrkJ
+	RHvxZbQVoPGknBPJ2TDk8u9/aaQ1irFvJa3j4QD0Zo8tn6hTCH7koLqZrjGuGpliTSU7WbtKU42nH
+	qKcrlon/G/mpESgkuFyed9UUb4+QCJyC6PAOusacaGmOyjMJWviD3qWA1RzYZcpURC5+J9op3AArP
+	pYgM/O9Rg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lSHVj-00CpGI-Fh; Fri, 02 Apr 2021 10:58:45 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1lT2jM-00FlVP-DY; Sun, 04 Apr 2021 13:24:00 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lSHVf-00CpFo-VK
- for linux-phy@lists.infradead.org; Fri, 02 Apr 2021 10:58:41 +0000
-Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
- [62.78.145.57])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 197672C1;
- Fri,  2 Apr 2021 12:58:39 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1617361119;
- bh=o16YH/amK93o9sUsyfCF2kW9i62zSal5yr6Wff73gGw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kx4XXqd3VRUrP3Velb+mNLGyx25fqfqRT0i3xkTijHxD4jxV+YpE4yGtyfMmY2iXp
- drld9qdcUOkJ4O3aBP43rV2dslhKBZiQzvhbBfZ4juJyF9VLMTzW30TumcZpXoCuxS
- W13lxx4pdwY0THf0JbG+xp/LM/qknhEt6GSuNKSk=
-Date: Fri, 2 Apr 2021 13:57:55 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Pratyush Yadav <p.yadav@ti.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Benoit Parrot <bparrot@ti.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ id 1lT2jI-00FlUV-EH
+ for linux-phy@lists.infradead.org; Sun, 04 Apr 2021 13:23:54 +0000
+Received: by mail-lf1-x132.google.com with SMTP id m12so13863288lfq.10
+ for <linux-phy@lists.infradead.org>; Sun, 04 Apr 2021 06:23:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Nzpd4Vuf3kote7U8VoWNZRV+1cO2k+CwPl3bjJUX7L4=;
+ b=jTGiv/ltH6tXMRh1sa9l53S3rlQ36ZEyoAOJ0OFYDQD4lcg1DYLAt4HMH2OfaFb3Ks
+ 7WfrNF6HtYqm80fkl2TWUk8vMxTKf3Ar7OO2WTIkf6XTIX6NdezwR+8/Os8zSc1DN2EV
+ bYcOlHYmIxM1LcR2Ea36+G8e4oscGJLSsCMsqrxki62wsaz2fGRAbdmtdeMjcn2TRzUQ
+ 4cnNPvo+xch76Yu/9jPc7rRBVEj8ZWJUUYnmEyvVPr1MPtuwSSIwpCodv2MSpoIM+ut0
+ yoC5XaNHHYwZ2+W963Jq4TgMSvAyN3dEYO/S0jydgxJrGnMBw6fe28dpCLbnhPPkqE2o
+ nZ9g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Nzpd4Vuf3kote7U8VoWNZRV+1cO2k+CwPl3bjJUX7L4=;
+ b=rQSvueLVQEhqFUzJCzIAqKkW+ym4S90hSZ90PnbAGyvZeLgvGYuock5Nj6ve+Kujjd
+ 7qAvIlApX4ChdIAFwEHGD4rW1OSyH5ggt+qELKZD+nKgrfypmLK5HCGChfcY3U7uiUtJ
+ 4orJQdY0hNBa80uOL4NPToCfe8+whlNB6wq1qJn+KkylWgXncfXMaBgFPmUKRrNFn6Tp
+ kf0J8In+vKPFLbfTXsuphvlw41ltxb6wYW4JSVBVWMtXYTSP+Ffum9RzFrQJ8o7mU0Dl
+ Q2rZKulb0gn2QZTFUFLuK1uEh8JdR+DgPiDD3vwLtEtfCldLS+/i9CkxVL29j5RpZK1j
+ tIZA==
+X-Gm-Message-State: AOAM5307BG1jxqLeDO+LPlwI44/YNW2BKXS7uv1tcfsXEXEaHYnYMGE9
+ vM3oOEmet9vP4qYwqHwUUE0=
+X-Google-Smtp-Source: ABdhPJwHUBVB8eEUjrJWD4onehy9Mey9+WSE1xcAdji3JR12pymm1dFCr3aamwRwRGniVZLgXGLsOQ==
+X-Received: by 2002:ac2:4471:: with SMTP id y17mr14574843lfl.307.1617542630157; 
+ Sun, 04 Apr 2021 06:23:50 -0700 (PDT)
+Received: from [10.0.0.42] (91-157-86-200.elisa-laajakaista.fi.
+ [91.157.86.200])
+ by smtp.gmail.com with ESMTPSA id y22sm1441965lfg.133.2021.04.04.06.23.48
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 04 Apr 2021 06:23:49 -0700 (PDT)
+Subject: Re: [PATCH 11/16] dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
+To: Pratyush Yadav <p.yadav@ti.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Benoit Parrot <bparrot@ti.com>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
  Alexandre Courbot <acourbot@chromium.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Stanimir Varbanov <stanimir.varbanov@linaro.org>,
  Helen Koike <helen.koike@collabora.com>,
- Michael Tretter <m.tretter@pengutronix.de>,
- Peter Chen <peter.chen@nxp.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- dmaengine@vger.kernel.org, Vignesh Raghavendra <vigneshr@ti.com>,
+ Michael Tretter <m.tretter@pengutronix.de>, Peter Chen <peter.chen@nxp.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, dmaengine@vger.kernel.org
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: Re: [PATCH 00/16] CSI2RX support on J721E
-Message-ID: <YGb4s1rSuZLr3Iv0@pendragon.ideasonboard.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
- <YGRB/42Q6aVBLoAq@vkoul-mobl.Dlink>
+ <20210330173348.30135-12-p.yadav@ti.com>
+From: =?UTF-8?Q?P=c3=a9ter_Ujfalusi?= <peter.ujfalusi@gmail.com>
+Message-ID: <78a5983c-04c8-4a4c-04fe-bb1f31e87375@gmail.com>
+Date: Sun, 4 Apr 2021 16:24:47 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YGRB/42Q6aVBLoAq@vkoul-mobl.Dlink>
+In-Reply-To: <20210330173348.30135-12-p.yadav@ti.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210402_115840_082080_C61F918A 
-X-CRM114-Status: GOOD (  21.35  )
+X-CRM114-CacheID: sfid-20210404_142352_599862_8BC9978C 
+X-CRM114-Status: GOOD (  21.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,74 +111,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Mar 31, 2021 at 03:03:51PM +0530, Vinod Koul wrote:
-> On 30-03-21, 23:03, Pratyush Yadav wrote:
-> > Hi,
-> > 
-> > This series adds support for CSI2 capture on J721E. It includes some
-> > fixes to the Cadence CSI2RX driver, adds Rx support to Cadence DPHY
-> > driver, and finally adds the TI CSI2RX wrapper driver.
-> > 
-> > Tested on TI's J721E with OV5640 sensor.
-> > 
-> > Paul Kocialkowski (1):
-> >   phy: Distinguish between Rx and Tx for MIPI D-PHY with submodes
-> > 
-> > Pratyush Yadav (15):
-> >   phy: cdns-dphy: Prepare for Rx support
-> >   phy: cdns-dphy: Allow setting mode
-> >   phy: cdns-dphy: Add Rx support
-> >   media: cadence: csi2rx: Add external DPHY support
-> >   media: cadence: csi2rx: Soft reset the streams before starting capture
-> >   media: cadence: csi2rx: Set the STOP bit when stopping a stream
-> >   media: cadence: csi2rx: Fix stream data configuration
-> >   media: cadence: csi2rx: Turn subdev power on before starting stream
-> >   media: cadence: csi2rx: Add wrappers for subdev calls
-> >   dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
-> >   dt-bindings: media: Add DT bindings for TI CSI2RX driver
-> >   media: ti-vpe: csi2rx: Add CSI2RX support
-> >   dt-bindings: phy: Convert Cadence DPHY binding to YAML
-> >   dt-bindings: phy: cdns,dphy: make clocks optional
-> >   dt-bindings: phy: cdns,dphy: add power-domains property
-> 
-> Is there any dependency between patches to various subsystems, if not
-> please do consider sending a series per subsystem...
-
-Splitting the series per subsystem will facilitate merging, but for the
-first versions, keeping all patches together facilitate review. I'd
-prefer if we could have a v2 that still includes everything, until we
-agree on the interface between the two subsystems. At that point, we can
-split the series if needed.
-
-> > 
-> >  .../devicetree/bindings/media/ti,csi2rx.yaml  |  70 ++
-> >  .../devicetree/bindings/phy/cdns,dphy.txt     |  20 -
-> >  .../devicetree/bindings/phy/cdns,dphy.yaml    |  52 +
-> >  MAINTAINERS                                   |   7 +
-> >  drivers/dma/ti/k3-psil-j721e.c                |  10 +
-> >  drivers/media/platform/Kconfig                |  11 +
-> >  drivers/media/platform/cadence/cdns-csi2rx.c  | 269 ++++-
-> >  drivers/media/platform/ti-vpe/Makefile        |   1 +
-> >  drivers/media/platform/ti-vpe/ti-csi2rx.c     | 964 ++++++++++++++++++
-> >  drivers/phy/cadence/cdns-dphy.c               | 407 +++++++-
-> >  include/linux/phy/phy-mipi-dphy.h             |  13 +
-> >  11 files changed, 1754 insertions(+), 70 deletions(-)
-> >  create mode 100644 Documentation/devicetree/bindings/media/ti,csi2rx.yaml
-> >  delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
-> >  create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-> >  create mode 100644 drivers/media/platform/ti-vpe/ti-csi2rx.c
-
--- 
-Regards,
-
-Laurent Pinchart
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgUHJhdHl1c2gsCgpPbiAzLzMwLzIxIDg6MzMgUE0sIFByYXR5dXNoIFlhZGF2IHdyb3RlOgo+
+IFRoZSBDU0kyUlggc3Vic3lzdGVtIHVzZXMgUFNJLUwgRE1BIHRvIHRyYW5zZmVyIGZyYW1lcyB0
+byBtZW1vcnkuIEl0IGNhbgo+IGhhdmUgdXAgdG8gMzIgdGhyZWFkcyBidXQgdGhlIGN1cnJlbnQg
+ZHJpdmVyIG9ubHkgc3VwcG9ydHMgdXNpbmcgb25lLiBTbwo+IGFkZCBhbiBlbnRyeSBmb3IgdGhh
+dCBvbmUgdGhyZWFkLgoKSWYgeW91IGFyZSBhYnNvbHV0ZWx5IHN1cmUgdGhhdCB0aGUgb3RoZXIg
+dGhyZWFkcyBhcmUgbm90IGdvaW5nIHRvIGJlCnVzZWQsIHRoZW46CkFja2VkLWJ5OiBQZXRlciBV
+amZhbHVzaSA8cGV0ZXIudWpmYWx1c2lAZ21haWwuY29tPgoKYnV0IEkgd291bGQgY29uc2lkZXIg
+YWRkaW5nIHRoZSBvdGhlciB0aHJlYWRzIGlmIHRoZXJlIGlzIGEgY2hhbmNlIHRoYXQKdGhlIGNz
+MnJ4IHdpbGwgbmVlZCB0byBzdXBwb3J0IGl0IGluIHRoZSBmdXR1cmUuCgo+IFNpZ25lZC1vZmYt
+Ynk6IFByYXR5dXNoIFlhZGF2IDxwLnlhZGF2QHRpLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9kbWEv
+dGkvazMtcHNpbC1qNzIxZS5jIHwgMTAgKysrKysrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgMTAg
+aW5zZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2RtYS90aS9rMy1wc2lsLWo3
+MjFlLmMgYi9kcml2ZXJzL2RtYS90aS9rMy1wc2lsLWo3MjFlLmMKPiBpbmRleCA3NTgwODcwZWQ3
+NDYuLjE5ZmZhMzFlNmRjNiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2RtYS90aS9rMy1wc2lsLWo3
+MjFlLmMKPiArKysgYi9kcml2ZXJzL2RtYS90aS9rMy1wc2lsLWo3MjFlLmMKPiBAQCAtNTgsNiAr
+NTgsMTQgQEAKPiAgCQl9LAkJCQkJXAo+ICAJfQo+ICAKPiArI2RlZmluZSBQU0lMX0NTSTJSWCh4
+KQkJCQkJXAo+ICsJewkJCQkJCVwKPiArCQkudGhyZWFkX2lkID0geCwJCQkJXAo+ICsJCS5lcF9j
+b25maWcgPSB7CQkJCVwKPiArCQkJLmVwX3R5cGUgPSBQU0lMX0VQX05BVElWRSwJXAo+ICsJCX0s
+CQkJCQlcCj4gKwl9Cj4gKwo+ICAvKiBQU0ktTCBzb3VyY2UgdGhyZWFkIElEcywgdXNlZCBmb3Ig
+UlggKERNQV9ERVZfVE9fTUVNKSAqLwo+ICBzdGF0aWMgc3RydWN0IHBzaWxfZXAgajcyMWVfc3Jj
+X2VwX21hcFtdID0gewo+ICAJLyogU0EyVUwgKi8KPiBAQCAtMTM4LDYgKzE0Niw4IEBAIHN0YXRp
+YyBzdHJ1Y3QgcHNpbF9lcCBqNzIxZV9zcmNfZXBfbWFwW10gPSB7Cj4gIAlQU0lMX1BETUFfWFlf
+UEtUKDB4NDcwNyksCj4gIAlQU0lMX1BETUFfWFlfUEtUKDB4NDcwOCksCj4gIAlQU0lMX1BETUFf
+WFlfUEtUKDB4NDcwOSksCj4gKwkvKiBDU0kyUlggKi8KPiArCVBTSUxfQ1NJMlJYKDB4NDk0MCks
+Cj4gIAkvKiBDUFNXOSAqLwo+ICAJUFNJTF9FVEhFUk5FVCgweDRhMDApLAo+ICAJLyogQ1BTVzAg
+Ki8KPiAKCi0tIApQw6l0ZXIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
