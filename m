@@ -2,19 +2,19 @@ Return-Path: <SRS0=WDaa=JD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 469DCC433ED
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 17:10:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 45F0EC433ED
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 17:53:52 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E810D6139E
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 17:10:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E810D6139E
+	by mail.kernel.org (Postfix) with ESMTPS id E458C613D4
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 17:53:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E458C613D4
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,76 +23,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5YHQQQh4rMYjgrpgdDveK68pHAgKuOT+4AUwUiCtZvA=; b=GdANie8ND9iJkVvVtyv01PoqC
-	EXmpMOz7xguDVKmUWJhEKv/JiTE2H7OH8o0xYAYtZIkYK3CDmmCQ97mJ381hHCSCRVrkrdBjd5Hot
-	+h8iGWIJSOCveXbmsWIDIu1NXWQc3Ipyz6W8PrMmKDtF5jz13Bdo6SYK97Bq4VPtkp2gXl+x2lIrT
-	Lx5Kcno+0G99jIo8MYkY/oA41jLwrOjaysSQxkxCngdC9cA6f5XM57GaAiHPl4feAhMKJCHEuR/GX
-	F+SyEu+Ohx4em8c4X7vTXKQieAD2tD6CbZd6EC8QE6hP/Y1+6x3urBtiRv0jezdAiw+hY5vnxTCxM
-	cZk/5O64Q==;
+	 bh=TyR4CrX/7rpxJYKUapEC5zsu2OmhS/PdlhojpBUbnZI=; b=EWV75fpkl3iUQUVnr/XUn0lip
+	38XUJIG1mMvYIj6uuPdb330S09pTWCZ2FA1OQkFHi3TBgVh0XWtHJFkbDkybEoJ7YX7e4HsO0s57/
+	cTa0oFWQmuXVI+NpqCNOPnWhyuhkfPdcUQRA4dwmzbKW1xZtUncxu7WGgiPHgaxPYys6nGrmhu5si
+	E4J5z1o+gIbnNgHfPDC6A/A3M6RJDEoi1SshJ4MKPPmLvT9jFglvyQDw/P2vTwLzVrYAXOggcUhYx
+	uXmTfJCAttV7eVQrLAHodYDu2ZkPYB5r/N8/j7qk0XGGkvGs813lDBCxEGdN9DegvxbtaYXAH3cNK
+	N0fEJai3A==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lTpDx-003536-F5; Tue, 06 Apr 2021 17:10:45 +0000
+	id 1lTpte-003A3t-Bu; Tue, 06 Apr 2021 17:53:50 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lTpDs-00352L-LI
- for linux-phy@lists.infradead.org; Tue, 06 Apr 2021 17:10:43 +0000
+ id 1lTptR-003A1H-ML
+ for linux-phy@lists.infradead.org; Tue, 06 Apr 2021 17:53:40 +0000
 Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 136HAXJs099221;
- Tue, 6 Apr 2021 12:10:33 -0500
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 136HrTfw115653;
+ Tue, 6 Apr 2021 12:53:29 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1617729033;
- bh=5cgGv2ddS7xAI9SJVy7TZDsonSl+Ly4iKerJkT8q2kM=;
+ s=ti-com-17Q1; t=1617731609;
+ bh=LA7VQv3A9JWbmuuofLpTAukY9+6Pt/CKyjnIiSE3bVA=;
  h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=yUGf6lgh+7CoxRNKDNBa83ksW+Cifbw+m1HyAhX3oy0PIGNV00OxXdkUjq74NWmv3
- f3VKptBV2gZVSBQR+YbT9i7SGJPTeW0WD3kX8ptWmPGCKHPt1tVD6uLXRxVi/PPmxx
- 5c1RNf6CctmE+lLeGA0vfgShYqsxYu2tnRp0cNPE=
-Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 136HAXEc036568
+ b=tLW1V9b3hVe0zIyrKxs2pD062AVxvBpx3WKB6ayqg8csg/x0iHDtHUTcypV1JgZLb
+ eUkKGM4owNep1gcYM/raftDG/5DplPLkrMRBtdfcE7Nbd+aQtmVFS2ETbkPRyH3JmU
+ XClo4NYwtNSLHv/xlubFiTdjwCySyEalOgJq9Ol8=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 136HrTAe107173
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 6 Apr 2021 12:10:33 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 6 Apr 2021 12:53:29 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 6 Apr
- 2021 12:10:33 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ 2021 12:53:29 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Tue, 6 Apr 2021 12:10:33 -0500
+ Frontend Transport; Tue, 6 Apr 2021 12:53:29 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 136HAWC0099528;
- Tue, 6 Apr 2021 12:10:32 -0500
-Date: Tue, 6 Apr 2021 22:40:31 +0530
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 136HrSna103034;
+ Tue, 6 Apr 2021 12:53:29 -0500
+Date: Tue, 6 Apr 2021 23:23:27 +0530
 From: Pratyush Yadav <p.yadav@ti.com>
-To: =?iso-8859-1?Q?P=E9ter?= Ujfalusi <peter.ujfalusi@gmail.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 CC: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
- <vkoul@kernel.org>, Maxime Ripard <mripard@kernel.org>, Benoit Parrot
- <bparrot@ti.com>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Alexandre Courbot <acourbot@chromium.org>, Laurent Pinchart
- <laurent.pinchart@ideasonboard.com>, Stanimir Varbanov
- <stanimir.varbanov@linaro.org>, Helen Koike <helen.koike@collabora.com>,
- Michael Tretter <m.tretter@pengutronix.de>,
+ <vkoul@kernel.org>, Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Benoit Parrot <bparrot@ti.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Alexandre Courbot <acourbot@chromium.org>,
+ Stanimir Varbanov <stanimir.varbanov@linaro.org>, Helen Koike
+ <helen.koike@collabora.com>, Michael Tretter <m.tretter@pengutronix.de>,
  Peter Chen <peter.chen@nxp.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
  <linux-media@vger.kernel.org>, <devicetree@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <dmaengine@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: Re: [PATCH 11/16] dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
-Message-ID: <20210406171029.nku6hrmw7pohr5ri@ti.com>
+ <dmaengine@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>, Tomi
+ Valkeinen <tomi.valkeinen@ideasonboard.com>
+Subject: Re: [PATCH 09/16] media: cadence: csi2rx: Turn subdev power on
+ before starting stream
+Message-ID: <20210406175325.rgmjgk4suggeldaz@ti.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
- <20210330173348.30135-12-p.yadav@ti.com>
- <78a5983c-04c8-4a4c-04fe-bb1f31e87375@gmail.com>
- <20210406150942.4kyjh2ehsvklupjr@ti.com>
- <54b0846e-d633-2a03-2c64-f1f0a85c2410@gmail.com>
- <20210406165554.5mhn4u5enbf2tvaz@ti.com>
+ <20210330173348.30135-10-p.yadav@ti.com>
+ <YGb4J5q9N0ExOgn9@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210406165554.5mhn4u5enbf2tvaz@ti.com>
+In-Reply-To: <YGb4J5q9N0ExOgn9@pendragon.ideasonboard.com>
 User-Agent: NeoMutt/20171215
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210406_181041_354208_D164441C 
-X-CRM114-Status: GOOD (  26.85  )
+X-CRM114-CacheID: sfid-20210406_185338_087625_1538C8F3 
+X-CRM114-Status: GOOD (  24.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,70 +102,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/04/21 10:25PM, Pratyush Yadav wrote:
-> On 06/04/21 06:33PM, P=E9ter Ujfalusi wrote:
-> > =
+On 02/04/21 01:55PM, Laurent Pinchart wrote:
+> Hi Pratyush,
+> 
+> Thank you for the patch.
+> 
+> On Tue, Mar 30, 2021 at 11:03:41PM +0530, Pratyush Yadav wrote:
+> > The subdevice power needs to be turned on before the stream is started.
+> > Otherwise it might not be in the proper state to stream the data. Turn
+> > it off when stopping the stream.
+> 
+> The .s_power() operation is deprecated. Subdev drivers should control
+> power internally in their .s_stream() operation, and they should use
+> runtime PM to do so (this will allow usage of runtime PM autosuspend, to
+> avoid expensive power off/on cycles when stopping and restarting video
+> capture).
 
-> > =
+The s_power documentation in v4l2-subdev.h does not mention that it is 
+depreciated. A documentation update is in order. I will send a separate 
+patch to do it.
 
-> > On 4/6/21 6:09 PM, Pratyush Yadav wrote:
-> > > On 04/04/21 04:24PM, P=E9ter Ujfalusi wrote:
-> > >> Hi Pratyush,
-> > >>
-> > >> On 3/30/21 8:33 PM, Pratyush Yadav wrote:
-> > >>> The CSI2RX subsystem uses PSI-L DMA to transfer frames to memory. I=
-t can
-> > >>> have up to 32 threads but the current driver only supports using on=
-e. So
-> > >>> add an entry for that one thread.
-> > >>
-> > >> If you are absolutely sure that the other threads are not going to be
-> > >> used, then:
-> > > =
+I tested this with OV5640. Not doing an s_power() operation before 
+s_stream() does not work. The application freezes forever waiting for 
+the first frame. So the OV5640 driver needs to be updated to use runtime 
+PM to do this, right?
 
-> > > The opposite in fact. I do expect other threads to be used in the =
+> 
+> > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> > ---
+> >  drivers/media/platform/cadence/cdns-csi2rx.c | 8 ++++++++
+> >  1 file changed, 8 insertions(+)
+> > 
+> > diff --git a/drivers/media/platform/cadence/cdns-csi2rx.c b/drivers/media/platform/cadence/cdns-csi2rx.c
+> > index 7d1ac51e0698..3385e1bc213e 100644
+> > --- a/drivers/media/platform/cadence/cdns-csi2rx.c
+> > +++ b/drivers/media/platform/cadence/cdns-csi2rx.c
+> > @@ -256,6 +256,10 @@ static int csi2rx_start(struct csi2rx_priv *csi2rx)
+> >  
+> >  	writel(reg, csi2rx->base + CSI2RX_STATIC_CFG_REG);
+> >  
+> > +	ret = v4l2_subdev_call(csi2rx->source_subdev, core, s_power, true);
+> > +	if (ret && ret != -ENOIOCTLCMD)
+> > +		goto err_disable_pclk;
+> > +
+> >  	ret = v4l2_subdev_call(csi2rx->source_subdev, video, s_stream, true);
+> >  	if (ret)
+> >  		goto err_disable_pclk;
+> > @@ -358,6 +362,10 @@ static void csi2rx_stop(struct csi2rx_priv *csi2rx)
+> >  	if (v4l2_subdev_call(csi2rx->source_subdev, video, s_stream, false))
+> >  		dev_warn(csi2rx->dev, "Couldn't disable our subdev\n");
+> >  
+> > +	ret = v4l2_subdev_call(csi2rx->source_subdev, core, s_power, false);
+> > +	if (ret && ret != -ENOIOCTLCMD)
+> > +		dev_warn(csi2rx->dev, "Couldn't power off subdev\n");
+> > +
+> >  	if (csi2rx->dphy) {
+> >  		writel(0, csi2rx->base + CSI2RX_DPHY_LANE_CTRL_REG);
+> >  
+> 
+> -- 
+> Regards,
+> 
+> Laurent Pinchart
 
-> > > future. But the current driver can only use one so I figured it is =
-
-> > > better to add just the thread that is currently needed and then I can =
-
-> > > always add the rest later.
-> > > =
-
-> > > Why does this have to be a one-and-done deal? Is there anything wrong =
-
-> > > with adding the other threads when the driver can actually use them?
-> > =
-
-> > You can skip CCing DMAengine (and me ;) ). Less subsystems is the better
-> > when sending patches...
-> =
-
-> I'm a bit confused here. If you are no longer interested in maintaining =
-
-> the TI DMA drivers then that's fine, I can skip CCing you. But the patch =
-
-> is still relevant to the dmaengine list so why should I skip CCing it? =
-
-> And if I don't CC the dmaengine list then on which list would I get =
-
-> comments/reviews for the patch?
-
-Ignore this. Got your point. Will do it in v2.
-
--- =
-
+-- 
 Regards,
 Pratyush Yadav
 Texas Instruments Inc.
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
