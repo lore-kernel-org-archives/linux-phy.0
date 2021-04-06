@@ -2,19 +2,19 @@ Return-Path: <SRS0=WDaa=JD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-5.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3BF14C433ED
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 16:56:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 469DCC433ED
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 17:10:47 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CDD34613C0
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 16:56:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CDD34613C0
+	by mail.kernel.org (Postfix) with ESMTPS id E810D6139E
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 17:10:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E810D6139E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,45 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ALgaQUOjZ3zlKTL0jPBtfVWlNjQhOl5g1hYVAySB1FU=; b=Yx9YTgNN1Adds5lFyu/t+spkO
-	AC5BBzU2JsTSOgZEGtrmV2lLZtZiXqGzAVrifmdYVZNRm89k3EMQtuzDVdYfSgA/ZP/2nWIrde/8O
-	3YglT1j1eWaOBVJ5sBugbmf6pQf1fKY3+juH4FHMXlVUmoLyt2sDUS4p+d+7hGH+bLyM5DQ6vJHb4
-	Puq8k5K7vwdDRMp5bFJBor7Oa+AMViYhOBaTOO7k4FCdDJJ70hG4LcOayUGLEQwzz2IhYKnomk3RO
-	2u1/KnRdyKiH3Ka7/vyAfTgET1PmgsFsCvSzSzQwjI/f408Et946lN2aQLEXm47MN8jGgRkcbmKjo
-	UkNchyEmw==;
+	 bh=5YHQQQh4rMYjgrpgdDveK68pHAgKuOT+4AUwUiCtZvA=; b=GdANie8ND9iJkVvVtyv01PoqC
+	EXmpMOz7xguDVKmUWJhEKv/JiTE2H7OH8o0xYAYtZIkYK3CDmmCQ97mJ381hHCSCRVrkrdBjd5Hot
+	+h8iGWIJSOCveXbmsWIDIu1NXWQc3Ipyz6W8PrMmKDtF5jz13Bdo6SYK97Bq4VPtkp2gXl+x2lIrT
+	Lx5Kcno+0G99jIo8MYkY/oA41jLwrOjaysSQxkxCngdC9cA6f5XM57GaAiHPl4feAhMKJCHEuR/GX
+	F+SyEu+Ohx4em8c4X7vTXKQieAD2tD6CbZd6EC8QE6hP/Y1+6x3urBtiRv0jezdAiw+hY5vnxTCxM
+	cZk/5O64Q==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lTozr-0033C0-4U; Tue, 06 Apr 2021 16:56:11 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1lTpDx-003536-F5; Tue, 06 Apr 2021 17:10:45 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lTozm-0033BX-49
- for linux-phy@lists.infradead.org; Tue, 06 Apr 2021 16:56:09 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 136Gtw5h047850;
- Tue, 6 Apr 2021 11:55:58 -0500
+ id 1lTpDs-00352L-LI
+ for linux-phy@lists.infradead.org; Tue, 06 Apr 2021 17:10:43 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 136HAXJs099221;
+ Tue, 6 Apr 2021 12:10:33 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1617728158;
- bh=+9XjRgYfCOrNjdj1kkEqP/Q3v02FwLNYKDPldfbcuiI=;
+ s=ti-com-17Q1; t=1617729033;
+ bh=5cgGv2ddS7xAI9SJVy7TZDsonSl+Ly4iKerJkT8q2kM=;
  h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=tjAN7lxASQ7GQgzBSfvPUAJVbed53QtBUL9oOxt1+Px6vCgCJYXJKr17FC9lKR7rS
- oJwnUGUbf3qZ1to0kpE4KZPESWsmElTk4g34/qqHqGNT6PTMWOW6qTbBOTu8lbineW
- KkEhEZ7bcZx3Sq/y1NYfjS6Iepw1ZCwLjlrx9lrU=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 136Gtwrb021543
+ b=yUGf6lgh+7CoxRNKDNBa83ksW+Cifbw+m1HyAhX3oy0PIGNV00OxXdkUjq74NWmv3
+ f3VKptBV2gZVSBQR+YbT9i7SGJPTeW0WD3kX8ptWmPGCKHPt1tVD6uLXRxVi/PPmxx
+ 5c1RNf6CctmE+lLeGA0vfgShYqsxYu2tnRp0cNPE=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 136HAXEc036568
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 6 Apr 2021 11:55:58 -0500
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 6 Apr 2021 12:10:33 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 6 Apr
- 2021 11:55:58 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ 2021 12:10:33 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Tue, 6 Apr 2021 11:55:58 -0500
+ Frontend Transport; Tue, 6 Apr 2021 12:10:33 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 136Gtvuo052410;
- Tue, 6 Apr 2021 11:55:57 -0500
-Date: Tue, 6 Apr 2021 22:25:56 +0530
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 136HAWC0099528;
+ Tue, 6 Apr 2021 12:10:32 -0500
+Date: Tue, 6 Apr 2021 22:40:31 +0530
 From: Pratyush Yadav <p.yadav@ti.com>
 To: =?iso-8859-1?Q?P=E9ter?= Ujfalusi <peter.ujfalusi@gmail.com>
 CC: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
@@ -78,20 +78,21 @@ CC: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <dmaengine@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 Subject: Re: [PATCH 11/16] dmaengine: ti: k3-psil-j721e: Add entry for CSI2RX
-Message-ID: <20210406165554.5mhn4u5enbf2tvaz@ti.com>
+Message-ID: <20210406171029.nku6hrmw7pohr5ri@ti.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
  <20210330173348.30135-12-p.yadav@ti.com>
  <78a5983c-04c8-4a4c-04fe-bb1f31e87375@gmail.com>
  <20210406150942.4kyjh2ehsvklupjr@ti.com>
  <54b0846e-d633-2a03-2c64-f1f0a85c2410@gmail.com>
+ <20210406165554.5mhn4u5enbf2tvaz@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <54b0846e-d633-2a03-2c64-f1f0a85c2410@gmail.com>
+In-Reply-To: <20210406165554.5mhn4u5enbf2tvaz@ti.com>
 User-Agent: NeoMutt/20171215
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210406_175606_649020_A7BE0582 
-X-CRM114-Status: GOOD (  33.78  )
+X-CRM114-CacheID: sfid-20210406_181041_354208_D164441C 
+X-CRM114-Status: GOOD (  26.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,109 +109,56 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/04/21 06:33PM, P=E9ter Ujfalusi wrote:
-> =
-
-> =
-
-> On 4/6/21 6:09 PM, Pratyush Yadav wrote:
-> > On 04/04/21 04:24PM, P=E9ter Ujfalusi wrote:
-> >> Hi Pratyush,
-> >>
-> >> On 3/30/21 8:33 PM, Pratyush Yadav wrote:
-> >>> The CSI2RX subsystem uses PSI-L DMA to transfer frames to memory. It =
-can
-> >>> have up to 32 threads but the current driver only supports using one.=
- So
-> >>> add an entry for that one thread.
-> >>
-> >> If you are absolutely sure that the other threads are not going to be
-> >> used, then:
+On 06/04/21 10:25PM, Pratyush Yadav wrote:
+> On 06/04/21 06:33PM, P=E9ter Ujfalusi wrote:
 > > =
-
-> > The opposite in fact. I do expect other threads to be used in the =
-
-> > future. But the current driver can only use one so I figured it is =
-
-> > better to add just the thread that is currently needed and then I can =
-
-> > always add the rest later.
-> > =
-
-> > Why does this have to be a one-and-done deal? Is there anything wrong =
-
-> > with adding the other threads when the driver can actually use them?
-> =
-
-> You can skip CCing DMAengine (and me ;) ). Less subsystems is the better
-> when sending patches...
-
-I'm a bit confused here. If you are no longer interested in maintaining =
-
-the TI DMA drivers then that's fine, I can skip CCing you. But the patch =
-
-is still relevant to the dmaengine list so why should I skip CCing it? =
-
-And if I don't CC the dmaengine list then on which list would I get =
-
-comments/reviews for the patch?
-
-> =
 
 > > =
 
-> >> Acked-by: Peter Ujfalusi <peter.ujfalusi@gmail.com>
-> >>
-> >> but I would consider adding the other threads if there is a chance that
-> >> the cs2rx will need to support it in the future.
-> >>
-> >>> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> >>> ---
-> >>>  drivers/dma/ti/k3-psil-j721e.c | 10 ++++++++++
-> >>>  1 file changed, 10 insertions(+)
-> >>>
-> >>> diff --git a/drivers/dma/ti/k3-psil-j721e.c b/drivers/dma/ti/k3-psil-=
-j721e.c
-> >>> index 7580870ed746..19ffa31e6dc6 100644
-> >>> --- a/drivers/dma/ti/k3-psil-j721e.c
-> >>> +++ b/drivers/dma/ti/k3-psil-j721e.c
-> >>> @@ -58,6 +58,14 @@
-> >>>  		},					\
-> >>>  	}
-> >>>  =
+> > On 4/6/21 6:09 PM, Pratyush Yadav wrote:
+> > > On 04/04/21 04:24PM, P=E9ter Ujfalusi wrote:
+> > >> Hi Pratyush,
+> > >>
+> > >> On 3/30/21 8:33 PM, Pratyush Yadav wrote:
+> > >>> The CSI2RX subsystem uses PSI-L DMA to transfer frames to memory. I=
+t can
+> > >>> have up to 32 threads but the current driver only supports using on=
+e. So
+> > >>> add an entry for that one thread.
+> > >>
+> > >> If you are absolutely sure that the other threads are not going to be
+> > >> used, then:
+> > > =
 
-> >>> +#define PSIL_CSI2RX(x)					\
-> >>> +	{						\
-> >>> +		.thread_id =3D x,				\
-> >>> +		.ep_config =3D {				\
-> >>> +			.ep_type =3D PSIL_EP_NATIVE,	\
-> >>> +		},					\
-> >>> +	}
-> >>> +
-> >>>  /* PSI-L source thread IDs, used for RX (DMA_DEV_TO_MEM) */
-> >>>  static struct psil_ep j721e_src_ep_map[] =3D {
-> >>>  	/* SA2UL */
-> >>> @@ -138,6 +146,8 @@ static struct psil_ep j721e_src_ep_map[] =3D {
-> >>>  	PSIL_PDMA_XY_PKT(0x4707),
-> >>>  	PSIL_PDMA_XY_PKT(0x4708),
-> >>>  	PSIL_PDMA_XY_PKT(0x4709),
-> >>> +	/* CSI2RX */
-> >>> +	PSIL_CSI2RX(0x4940),
-> >>>  	/* CPSW9 */
-> >>>  	PSIL_ETHERNET(0x4a00),
-> >>>  	/* CPSW0 */
-> >>>
-> >>
-> >> -- =
+> > > The opposite in fact. I do expect other threads to be used in the =
 
-> >> P=E9ter
+> > > future. But the current driver can only use one so I figured it is =
+
+> > > better to add just the thread that is currently needed and then I can =
+
+> > > always add the rest later.
+> > > =
+
+> > > Why does this have to be a one-and-done deal? Is there anything wrong =
+
+> > > with adding the other threads when the driver can actually use them?
 > > =
 
+> > You can skip CCing DMAengine (and me ;) ). Less subsystems is the better
+> > when sending patches...
 > =
 
-> -- =
+> I'm a bit confused here. If you are no longer interested in maintaining =
 
-> P=E9ter
+> the TI DMA drivers then that's fine, I can skip CCing you. But the patch =
+
+> is still relevant to the dmaengine list so why should I skip CCing it? =
+
+> And if I don't CC the dmaengine list then on which list would I get =
+
+> comments/reviews for the patch?
+
+Ignore this. Got your point. Will do it in v2.
 
 -- =
 
