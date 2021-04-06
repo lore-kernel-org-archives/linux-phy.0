@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E1A3DC433ED
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 18:48:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 42DCFC433B4
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 18:51:28 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 75363613C0
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 18:48:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 75363613C0
+	by mail.kernel.org (Postfix) with ESMTPS id CB35B613C0
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 18:51:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CB35B613C0
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,45 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=412pKCiO2rtbWQ0bGSjJP/fnix+1BD7fVjTigMkRUB0=; b=Y+uUJzvFSa13IeMOsddFEbCWb
-	jwgcYqbkqxiEIp27B3z3k3xy1KfYJWu07qR0Hs6+XfRJY8trj9+pPq42QM5z80pf3/0zlHELM7ST5
-	M0F8F+xlNP1G8eC7Jk8U/LdDHKGmKD4NS9vbz//2m7DMTSsj4L3XHmm+IO3Wh6IvtcdEOnkLkdWSR
-	+UhpEnnoMGAoCUbn3Qbh1ue6ayEpEF1z4st2dmcerp3PsGdnjXNEsw7rVJHrSyxD42cNnKJzTiFz6
-	LaIKEy5vT0+fTZhZo7dZ/vlXVnbLcoZYXtFHCaYl5yy98374RBX9SLztm472NFZRi8rfTBa+SaHkI
-	synQiTmDA==;
+	 bh=ohMxRRn9CdLFGtHZWOWPGfKDRrZSwilOvExfvsihIS0=; b=VMWp89bfUy2A4P86B9oyDROhw
+	X9rSW0/Dn64AXOZ3Z8vzs5CFuWQy9eB7QqDIpzZ1IZ31ZRbkMDmF0pDxdcJDsIfqVA/VljQ/flLmM
+	2hgOPNXURrFkb2TzaDa/N5mVgM0vugT6sf4Zw6byuot3+Vf1Lj0jk+sc0eSC78q843sn0i08pKYMr
+	arKiaW9VETC9ACfmUOVauTZ5Qe5BETA2iaUmYVK+9RH3TWI1sQhcbfs+iu+hvNELsNGSi4u6hIV+n
+	+tNu0v7Lvjku6S5aE+j1IakWZbHfYLp7WqPfXFq/Ki3KAMI552qY+RrNpePTiFHVC809NmDaKYeHt
+	+oniXwoNw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lTqkl-003IHm-Qe; Tue, 06 Apr 2021 18:48:44 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1lTqnO-003INS-94; Tue, 06 Apr 2021 18:51:26 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lTqkh-003IHL-59
- for linux-phy@lists.infradead.org; Tue, 06 Apr 2021 18:48:41 +0000
+ id 1lTqnJ-003IN7-PO
+ for linux-phy@lists.infradead.org; Tue, 06 Apr 2021 18:51:24 +0000
 Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 136ImVOO093015;
- Tue, 6 Apr 2021 13:48:31 -0500
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 136IpEDw007939;
+ Tue, 6 Apr 2021 13:51:14 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1617734911;
- bh=Q/jz6vulWvnwCL1uFn+Cr3yxMcztB0HWPUk2BbmlXmo=;
+ s=ti-com-17Q1; t=1617735074;
+ bh=Vs1ay3jn3W1+KiUPHbAfauoyCwmztua6vBwO95z5HqQ=;
  h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=lAxTY7RFfAR0NVtCLSY3XQLd1V0imGpedADxjGR/G91DG3p2fFZyeTLhaPSbtP9P3
- 3jITUgQURv3VcGougfG7sBrBYj4rH2nN1r67LXnTy6TzwoLp+bwqXReqnwJ3aJ8NYi
- 54jVyqyiUo7quqOhK/uQWKZOQrJB3Ist+YYugTcg=
-Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 136ImVUW071802
+ b=VYYrwQEOWc1SWk7ciLNyA57LJbw9tFtBCpQ5AWnHTVMG8Q7Ic8QgaPtvDQVM0Sbd8
+ CybIiBCgqJ+uEK2AwvIqiJPFj+/WiYewKhjMyaP+P0eHVk5UK49tGjHB2dIgpgqxYv
+ +VMVoom29gWlw545GN/4lqcbMGyKQpfnTNXy1wXM=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 136IpEAL076140
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 6 Apr 2021 13:48:31 -0500
-Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 6 Apr 2021 13:51:14 -0500
+Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Tue, 6 Apr
- 2021 13:48:31 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ 2021 13:51:14 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Tue, 6 Apr 2021 13:48:31 -0500
+ Frontend Transport; Tue, 6 Apr 2021 13:51:14 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 136ImUd1076720;
- Tue, 6 Apr 2021 13:48:31 -0500
-Date: Wed, 7 Apr 2021 00:18:30 +0530
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 136IpD3k028810;
+ Tue, 6 Apr 2021 13:51:13 -0500
+Date: Wed, 7 Apr 2021 00:21:12 +0530
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 CC: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
@@ -77,19 +77,20 @@ CC: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
  <dmaengine@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>, Tomi
  Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: Re: [PATCH 15/16] dt-bindings: phy: cdns,dphy: make clocks optional
-Message-ID: <20210406184828.ftxrrnrrvbprrlom@ti.com>
+Subject: Re: [PATCH 14/16] dt-bindings: phy: Convert Cadence DPHY binding to
+ YAML
+Message-ID: <20210406185110.d7mp7grsevndcrr2@ti.com>
 References: <20210330173348.30135-1-p.yadav@ti.com>
- <20210330173348.30135-16-p.yadav@ti.com>
- <YGbyfg4hs/yLsqw0@pendragon.ideasonboard.com>
+ <20210330173348.30135-15-p.yadav@ti.com>
+ <YGbwnTNiL6WYoxPF@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YGbyfg4hs/yLsqw0@pendragon.ideasonboard.com>
+In-Reply-To: <YGbwnTNiL6WYoxPF@pendragon.ideasonboard.com>
 User-Agent: NeoMutt/20171215
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210406_194839_666944_8CBDF3BF 
-X-CRM114-Status: GOOD (  27.06  )
+X-CRM114-CacheID: sfid-20210406_195122_440867_CBF65931 
+X-CRM114-Status: GOOD (  24.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,57 +107,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02/04/21 01:31PM, Laurent Pinchart wrote:
+On 02/04/21 01:23PM, Laurent Pinchart wrote:
 > Hi Pratyush,
 > 
 > Thank you for the patch.
 > 
-> On Tue, Mar 30, 2021 at 11:03:47PM +0530, Pratyush Yadav wrote:
-> > The clocks are not used by the DPHY when used in Rx mode so make them
-> > optional.
-> 
-> Isn't there a main functional clock (DPHY_RX_MAIN_CLK in the J721E TRM)
-> that is needed in RX mode ?
-
-That clock is different from the clocks being used in this binding. The 
-"psm" clock is for the PMA state machine (the internal state machine for 
-the DPHY). The divider for this clock should be set such that the 
-resultant clock is as close to 1 MHz as possible. This can be done 
-either by programming the register value or by setting the correct value 
-on the psm_clock_freq pin. On J721E the pin already has the correct 
-value so there is no need for setting it via the register.
-
-The other clock is "pll_ref" which is used to set the input clock 
-divider. Setting this divider is part of the DPHY TX programming 
-sequence but is not part of the RX programming sequence. I'm not sure 
-what exactly the divider does but I think it is supposed to divide the 
-clock from the input stream to the TX DPHY to make sure the internal 
-state machine is running at the correct speed. Anyway, it is not needed 
-on the RX side because for that there is another register used (see 
-cdns_dphy_rx_get_band_ctrl() in patch 4).
-
-The DPHY_RX_MAIN_CLK does eventually get divided into the PSM clock but 
-it is not used directly.
-
-> 
+> On Tue, Mar 30, 2021 at 11:03:46PM +0530, Pratyush Yadav wrote:
+> > Convert Cadence DPHY binding to YAML.
+> > 
 > > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 > > ---
-> >  Documentation/devicetree/bindings/phy/cdns,dphy.yaml | 2 --
-> >  1 file changed, 2 deletions(-)
+> >  .../devicetree/bindings/phy/cdns,dphy.txt     | 20 --------
+> >  .../devicetree/bindings/phy/cdns,dphy.yaml    | 51 +++++++++++++++++++
+> >  2 files changed, 51 insertions(+), 20 deletions(-)
+> >  delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
+> >  create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
 > > 
+> > diff --git a/Documentation/devicetree/bindings/phy/cdns,dphy.txt b/Documentation/devicetree/bindings/phy/cdns,dphy.txt
+> > deleted file mode 100644
+> > index 1095bc4e72d9..000000000000
+> > --- a/Documentation/devicetree/bindings/phy/cdns,dphy.txt
+> > +++ /dev/null
+> > @@ -1,20 +0,0 @@
+> > -Cadence DPHY
+> > -============
+> > -
+> > -Cadence DPHY block.
+> > -
+> > -Required properties:
+> > -- compatible: should be set to "cdns,dphy".
+> > -- reg: physical base address and length of the DPHY registers.
+> > -- clocks: DPHY reference clocks.
+> > -- clock-names: must contain "psm" and "pll_ref".
+> > -- #phy-cells: must be set to 0.
+> > -
+> > -Example:
+> > -	dphy0: dphy@fd0e0000{
+> > -		compatible = "cdns,dphy";
+> > -		reg = <0x0 0xfd0e0000 0x0 0x1000>;
+> > -		clocks = <&psm_clk>, <&pll_ref_clk>;
+> > -		clock-names = "psm", "pll_ref";
+> > -		#phy-cells = <0>;
+> > -	};
 > > diff --git a/Documentation/devicetree/bindings/phy/cdns,dphy.yaml b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-> > index d1bbf96a8250..0807ba68284d 100644
-> > --- a/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
+> > new file mode 100644
+> > index 000000000000..d1bbf96a8250
+> > --- /dev/null
 > > +++ b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-> > @@ -33,8 +33,6 @@ properties:
-> >  required:
-> >    - compatible
-> >    - reg
-> > -  - clocks
-> > -  - clock-names
-> >    - "#phy-cells"
-> >  
-> >  additionalProperties: false
+> > @@ -0,0 +1,51 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/cdns,dphy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Cadence DPHY Device Tree Bindings
+> > +
+> > +maintainers:
+> > +  - Pratyush Yadav <p.yadav@ti.com>
+> > +
+> > +properties:
+> > +  compatible:
+> > +    items:
+> > +      - const: cdns,dphy
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +    description: Physical base address and length of the DPHY registers.
+> 
+> You can drop the description.
+
+Ok.
+
+> 
+> > +
+> > +  clocks:
+> > +    maxItems: 2
+> > +    description: DPHY reference clocks.
+> 
+> It's best to describe individual items, which will then allow dropping
+> the maxItems property:
+> 
+>   clocks:
+>     items:
+>       - description: Description of the psm clock
+>       - description: Description of the pll_ref clock
+
+Ok. Though I'd mention that I am not 100% sure what the pll_ref clock is 
+supposed to be. The original binding doesn't have a description either.
+
+> 
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: psm
+> > +      - const: pll_ref
+> > +
+> > +  "#phy-cells":
+> > +    const: 0
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - clocks
+> > +  - clock-names
+> > +  - "#phy-cells"
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +
+> > +    dphy0: dphy@fd0e0000{
+> 
+> This is copied verbatim from the existing description, but while at it,
+> I'd rename the node from dphy@... to phy@..., as DT node are supposed to
+> be named according to the class of devices, not the specific device
+> type.
+
+Ok.
+
+> 
+> With these small issues addressed,
+> 
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+Thanks.
+
+> 
+> > +        compatible = "cdns,dphy";
+> > +        reg = <0xfd0e0000 0x1000>;
+> > +        clocks = <&psm_clk>, <&pll_ref_clk>;
+> > +        clock-names = "psm", "pll_ref";
+> > +        #phy-cells = <0>;
+> > +    };
 > 
 > -- 
 > Regards,
