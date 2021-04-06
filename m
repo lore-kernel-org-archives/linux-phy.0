@@ -2,73 +2,76 @@ Return-Path: <SRS0=WDaa=JD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3DF10C43470
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 05:09:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 36110C433B4
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 10:23:04 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D85F46139B
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 05:09:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D85F46139B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id D884E6054E
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Apr 2021 10:23:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D884E6054E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linux.intel.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U0lqRW1bHsJISkXroWyJrtOJphV2MmYZHnxLu5OJ6hA=; b=GgRUgF5llFMj01X0t29LQKSRn
-	ypBqPsjs5zVZ9WCcagQ/BH58vHq2qgTDhjz37DFOkScRVFpCeNXvxP02N9i7jl4vjlx3cYO2a2jLH
-	Q5Ip1zW/QjR/81+wBBcy/FUGPUBvoC2Mx+9WnHFMrZzu+SveFw9nV+U/28n++Kjwwv7LfVMO8ef/b
-	qN34SzvdozRP47n+CvZgheiaFKqwd1X44jBh9S8gNfbQbrLQOGkY/ltOjGNEx2DqYPM6NEXs/sXbp
-	jzW4dHVAfuYHX0Ve3sBO8/J6OEzwxB59mdN6TXNR2GpoVhc9yysYzupkxw5Fugr9oRgYd2aStZcSf
-	5VbfVXVGQ==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=cfog7U/H9/tFhYwU7UUtk6D7QXxQBh8sP9KkN5YoGp0=; b=Obq3ko06XJ67HMPYJxP8H5u1jM
+	Ea4yx3+vPCR0d3ZhcnfhM1mYrJ0TUj8hHTRDgUs2Q2hA8yw/io1PFoX5SqzHLeecudvD/tMMJGMO/
+	Mw2zyUE0cKrA81KhXycX7khDTU/QBqVp75Fb9uOf3+0T1VjlX1d4Mp7/8rYwzXTjrs1vZW3ZNAfZ/
+	cqlUMXo7kOXGRQddDNhLHVoko/pVjS1xvBQlhJnscPgEn+H/jgAtgqwwN5UdcKK2ZdndQbL3j0shJ
+	U17L3lSM4jO0Ykz0A2P3RUOPaujatu3v4mgtC0DYNSOudx7SpzqsQqL/Vbddjd2gP5IpfU9TfLDeW
+	3PnCsECg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lTdyG-001XhF-6n; Tue, 06 Apr 2021 05:09:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lTirO-0029dF-C9; Tue, 06 Apr 2021 10:23:02 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lTdy3-001Xes-A8; Tue, 06 Apr 2021 05:09:37 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 20F396139B;
- Tue,  6 Apr 2021 05:09:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617685774;
- bh=b/ekTIqAkKQJ1OdjUrtAk59X/tXIbJWTlvoQpbRbxR8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uT1/KSK2sFi5RtJ8n9BPTy5vN27fJ59O935Ajz07sZYrvrpI/t9tsz+zyytnVmmI6
- cEt3OgQqDVP8Y182eahKg1piI3mxrt+yP+WOzNN9qe7EMHBu/PgRpxwfScC1rgUuO3
- YwxZ7BFSVuk6tWsnAOahdHmvN4qroP8rIHUozCzT/GQllOy3cjP/Ykr269vM+EdZxm
- GbTguMXLXShGsynkYVYboWoSddAYz2noejxaOogl/TyOFm+k54Jbx4rozAWBMk5vIa
- S8xHkIOnxwsAUIqWul9UXd7DkiT3ubFVnk50HhhtA/ddGmIhuHxrqk9KEwXBQp7yq6
- RLGuqXFewxgAw==
-Date: Tue, 6 Apr 2021 10:39:29 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: kernel test robot <lkp@intel.com>
-Cc: Steen Hegelund <steen.hegelund@microchip.com>, kbuild-all@lists.01.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Bjarni Jonasson <bjarni.jonasson@microchip.com>,
- Andrew Lunn <andrew@lunn.ch>,
+ id 1lTirB-0029c1-8H; Tue, 06 Apr 2021 10:22:51 +0000
+IronPort-SDR: Nl+qoanvrfoEAHfqwNw86WIkUwwq9wr3slWtP1eKF7YGSDgK2j2LXI40OlsNBZ1JHZrcxJE3fi
+ uKqvQKwGsHRQ==
+X-IronPort-AV: E=McAfee;i="6000,8403,9945"; a="180164845"
+X-IronPort-AV: E=Sophos;i="5.81,309,1610438400"; d="scan'208";a="180164845"
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 06 Apr 2021 03:22:42 -0700
+IronPort-SDR: Ce8QKxGNyzHd2lPlXwfiSMXekdbtn8cBvZCtxDo1xUlIs0JyxUBkEIKqyZyXArDNTyhE52Y3TN
+ FnFXKJeLrUTQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.81,309,1610438400"; d="scan'208";a="448512067"
+Received: from black.fi.intel.com ([10.237.72.28])
+ by fmsmga002.fm.intel.com with ESMTP; 06 Apr 2021 03:22:38 -0700
+Received: by black.fi.intel.com (Postfix, from userid 1003)
+ id D7376202; Tue,  6 Apr 2021 13:22:53 +0300 (EEST)
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: "David S. Miller" <davem@davemloft.net>, Yangbo Lu <yangbo.lu@nxp.com>,
+ Vladimir Oltean <vladimir.oltean@nxp.com>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Cc: Claudiu Manoil <claudiu.manoil@nxp.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Lars Povlsen <lars.povlsen@microchip.com>,
- UNGLinuxDriver@microchip.com, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] phy: fix resource_size.cocci warnings
-Message-ID: <YGvtCewknNzLEt7t@vkoul-mobl.Dlink>
-References: <202103190711.pUzuZRzG-lkp@intel.com>
- <20210318232844.GA65886@63b0c5462fda>
+ UNGLinuxDriver@microchip.com, Jakub Kicinski <kuba@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: [PATCH v2 1/1] time64.h: Consolidated PSEC_PER_SEC definition
+Date: Tue,  6 Apr 2021 13:22:51 +0300
+Message-Id: <20210406102251.60301-1-andriy.shevchenko@linux.intel.com>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210318232844.GA65886@63b0c5462fda>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210406_060935_667242_64B93C8D 
-X-CRM114-Status: UNSURE (   5.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210406_112249_670180_90DFB85C 
+X-CRM114-Status: GOOD (  17.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,21 +88,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19-03-21, 07:28, kernel test robot wrote:
-> From: kernel test robot <lkp@intel.com>
-> 
-> drivers/phy/microchip/sparx5_serdes.c:2440:54-57: ERROR: Missing resource_size with iores
-> 
-> 
->  Use resource_size function on resource object
->  instead of explicit computation.
-> 
-> Generated by: scripts/coccinelle/api/resource_size.cocci
+We have currently three users of the PSEC_PER_SEC each of them defining it
+individually. Instead, move it to time64.h to be available for everyone.
 
-Applied, thanks
+There is a new user coming with the same constant in use. It will also
+make its life easier.
 
+Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Acked-by: Heiko Stuebner <heiko@sntech.de>
+---
+v2: added tag (Heiko), rebased on top of newest rc
+
+Since it touches PHY stuff, I assume that the PHY tree is the best
+to suck this.
+
+ drivers/net/ethernet/mscc/ocelot_ptp.c           | 2 ++
+ drivers/phy/phy-core-mipi-dphy.c                 | 2 --
+ drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c | 8 ++++----
+ include/soc/mscc/ocelot_ptp.h                    | 2 --
+ include/vdso/time64.h                            | 1 +
+ 5 files changed, 7 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/net/ethernet/mscc/ocelot_ptp.c b/drivers/net/ethernet/mscc/ocelot_ptp.c
+index a33ab315cc6b..87ad2137ba06 100644
+--- a/drivers/net/ethernet/mscc/ocelot_ptp.c
++++ b/drivers/net/ethernet/mscc/ocelot_ptp.c
+@@ -4,6 +4,8 @@
+  * Copyright (c) 2017 Microsemi Corporation
+  * Copyright 2020 NXP
+  */
++#include <linux/time64.h>
++
+ #include <soc/mscc/ocelot_ptp.h>
+ #include <soc/mscc/ocelot_sys.h>
+ #include <soc/mscc/ocelot.h>
+diff --git a/drivers/phy/phy-core-mipi-dphy.c b/drivers/phy/phy-core-mipi-dphy.c
+index 14e0551cd319..77fe65367ce5 100644
+--- a/drivers/phy/phy-core-mipi-dphy.c
++++ b/drivers/phy/phy-core-mipi-dphy.c
+@@ -12,8 +12,6 @@
+ #include <linux/phy/phy.h>
+ #include <linux/phy/phy-mipi-dphy.h>
+ 
+-#define PSEC_PER_SEC	1000000000000LL
+-
+ /*
+  * Minimum D-PHY timings based on MIPI D-PHY specification. Derived
+  * from the valid ranges specified in Section 6.9, Table 14, Page 41
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+index 8af8c6c5cc02..347dc79a18c1 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+@@ -11,16 +11,16 @@
+ #include <linux/clk-provider.h>
+ #include <linux/delay.h>
+ #include <linux/init.h>
++#include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/of_device.h>
+ #include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
+ #include <linux/reset.h>
++#include <linux/time64.h>
++
+ #include <linux/phy/phy.h>
+ #include <linux/phy/phy-mipi-dphy.h>
+-#include <linux/pm_runtime.h>
+-#include <linux/mfd/syscon.h>
+-
+-#define PSEC_PER_SEC	1000000000000LL
+ 
+ #define UPDATE(x, h, l)	(((x) << (l)) & GENMASK((h), (l)))
+ 
+diff --git a/include/soc/mscc/ocelot_ptp.h b/include/soc/mscc/ocelot_ptp.h
+index 6a7388fa7cc5..ded497d72bdb 100644
+--- a/include/soc/mscc/ocelot_ptp.h
++++ b/include/soc/mscc/ocelot_ptp.h
+@@ -37,8 +37,6 @@ enum {
+ 
+ #define PTP_CFG_MISC_PTP_EN		BIT(2)
+ 
+-#define PSEC_PER_SEC			1000000000000LL
+-
+ #define PTP_CFG_CLK_ADJ_CFG_ENA		BIT(0)
+ #define PTP_CFG_CLK_ADJ_CFG_DIR		BIT(1)
+ 
+diff --git a/include/vdso/time64.h b/include/vdso/time64.h
+index 9d43c3f5e89d..b40cfa2aa33c 100644
+--- a/include/vdso/time64.h
++++ b/include/vdso/time64.h
+@@ -9,6 +9,7 @@
+ #define NSEC_PER_MSEC	1000000L
+ #define USEC_PER_SEC	1000000L
+ #define NSEC_PER_SEC	1000000000L
++#define PSEC_PER_SEC	1000000000000LL
+ #define FSEC_PER_SEC	1000000000000000LL
+ 
+ #endif /* __VDSO_TIME64_H */
 -- 
-~Vinod
+2.30.2
+
 
 -- 
 linux-phy mailing list
