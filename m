@@ -5,16 +5,16 @@ X-Spam-Level:
 X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7E208C43461
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Apr 2021 05:35:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id ED935C43460
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Apr 2021 05:35:37 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1519861179
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Apr 2021 05:35:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1519861179
+	by mail.kernel.org (Postfix) with ESMTPS id 7D1E461179
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Apr 2021 05:35:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7D1E461179
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,45 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
 	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9sLG1h5R0Psrw7L79/1RucFII3JBzrOsVS41AYdLfbA=; b=IVlPeCycOnpJ1TOozhh6GYow5
-	gWInZks2WST2qntqda38uDjxK8ZfLB/DkCZy/ZB2bIMcLYOim95CyPLr408L97ZuD5FhynlPL6eki
-	Zw05MivPfR9eZYL14RBEFoGTQk+6VGSQd19m9LSx152OdXCnuDID8veDccU7NsYeXJbmyHszIsBxO
-	FB4xXNaIyizOIPZw+KrI5f7AGcFjE15am8ciNGN5mlEdrRh+gxjfo+4GhGJ9iW5mGnc+xGNVzTpCZ
-	8o2/17IAH8+eqRT2zZh5XQiOgdjb2DdpjGnrubghCrF4/4C5PFChz7CyRLA+ccA1O9pfRufeK01xr
-	t1HGOUosg==;
+	 bh=0LCtj2fghgkgACe5+0l/z8OGLmK9RDbDdMSwFRrTjlg=; b=aWPMcfqvAH3GDLKW5G3MTWREl
+	JjKvfyUDAsA1wkKcaSUGUSttC9HBzBjz1PJzyhxRRTwvsyHvx+Gpd0Ssr551s4inIglYuNwuOfu2q
+	TCnitqA+e4qEPF0VIWC3tNBcMY4auYCQtkZlQ5MmWjvHzy/n3YCx6LVvc1aBqaflj/f9LiWMx3hBK
+	GpY63+2TkJHJBoBQccP8HTwc/etJqeKr9sWHbfYh7dghvmsWelmxZBBDi0HMcs5/t0yrODdAY0j1X
+	pxfjYQCqBbCDvu6E5YHD4p+NCiOxDQeeWX2XPzjfwnUOrjSGr5raRR06AtfSF93ro2OVNttYQ//lk
+	xaW44Cc0w==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lUjnl-00A9wt-Ou; Fri, 09 Apr 2021 05:35:29 +0000
+	id 1lUjnn-00A9xi-Pq; Fri, 09 Apr 2021 05:35:35 +0000
 Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
  helo=mx0a-0014ca01.pphosted.com)
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lUjmv-00A9d6-2s
- for linux-phy@lists.infradead.org; Fri, 09 Apr 2021 05:34:42 +0000
+ id 1lUjmu-00A9by-FH
+ for linux-phy@lists.infradead.org; Fri, 09 Apr 2021 05:34:44 +0000
 Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
  by mx0b-0014ca01.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 1395PgEm030137; Thu, 8 Apr 2021 22:34:33 -0700
+ 1395PpuU030900; Thu, 8 Apr 2021 22:34:31 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=proofpoint;
- bh=rj+BBguDEa4hJlIk53/312K9VHbjliTchwhI8/b6Ubs=;
- b=fFsNLb6gAA2i/vgVRiLJQgO8X23E9MQKRJal0fZNuxwluQnretOHlYxQClWaTcqZiO41
- yfxWUJ1O/Bz3JbGp90MJwnTfhBB0P0rpX9R46FSe7YipBZmNJAoHSVdw1HJbw8nCcSes
- 8GecfJTt33RV66nmqWm5IHJMVn9i7uaiulp4aj1CuGClDUXyvO4mhebhUGfSDnm6bF6E
- j6sP1CEgTBuT6TyTwm70POvkr1HfIto577QhnoNOBx19Obd53szejYIZZ9vvGCa+mfqm
- bIcAhvaBXz6SuQqfXRolzqA+CXpZCkWgKgNRKTd0NfK22UU3SRPkG88G54sxGhd9xMh1 kg== 
-Received: from nam10-dm6-obe.outbound.protection.outlook.com
- (mail-dm6nam10lp2108.outbound.protection.outlook.com [104.47.58.108])
- by mx0b-0014ca01.pphosted.com with ESMTP id 37rvb4ttj0-1
+ bh=rsmXs24XN44+1+w+pHIrAns443BOJvgXs4b+LFOrXDI=;
+ b=TNfeBTn1J301rcAwrsDwc5sUSotwDo3TzU5EuZ9jBldPaUeS6OTk3n02KkNq7Y4waJis
+ nVQAInfO+tnw3vqQEyJ0XevHnUE1BD8uEE20QIedde4rMizpgJJxDPVo4sgIIPxaLP0u
+ r2xy8hJu0uLL2ONaWe9dJk9BpK8nKJbHnqbb4y45Wdi4HoLCzf1dGgH93q3rbAMSySII
+ mMwRJkFUUoNikVuWjhFAm1TgyefkIHDZUzxgwpoMFk2NG/pethV2q9rMEjlk2FcKjyKP
+ zHfEc4fCC6PO1lR7nfK/ZZE4zipghsr5JArFPLXmiOQpyn54BvhAhZFimUizucVaKkbW 4g== 
+Received: from nam12-bn8-obe.outbound.protection.outlook.com
+ (mail-bn8nam12lp2177.outbound.protection.outlook.com [104.47.55.177])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 37rvb4tthp-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 08 Apr 2021 22:34:33 -0700
+ Thu, 08 Apr 2021 22:34:30 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SQRRg+Svto9i/zet9ZVDXMxMDpBBw9bw4sZNuWROY0sW6b7ui4Q9tqPIY+wXEu8pWqDAhMoxZMKcdvPrxo7WEn9PJGrDAOWBwDc+uA6YTVtll2yjmiwSNCG4agxQdn/a7vaHCWj6qqERHEF7t13kEBuOUDsGPBIkkFffcd6OT2odoxcYRgWPUlif5y+jkeFXfF+K5/a1yJXxyAK7NOPwdaaWoRbr7RntvvNhdZGlnY5XDYcPERNlXEwT0CLBGkyblg6k2INxamEXWxM5vFBMz8z75Grc1Jtw7IzilBU3z/jg1C/aOPDcV6SvnDxY+Q/OrkM/FdmDaILGc6iooTnafQ==
+ b=gUqNurVXFsoI9Pi6LsXONkLjeaJ25dFBtD6Ir+8BpzRvZYmX/QE5CenDFmrr4k3pLhAOe2RFa09kotoaGLWiunT02XDrQT55HlmP6bRbV4I/WxaQ8t4RYYLZCEhpn0NO03K0NhK+K5jj6UiE+LpflyuXKN15sE1XKhLo3aHsBgXl0uVExXCJznO7R+Z2n4dZoMCbTonE3s5raeoeQULqpmajkTfea2R1wO6yWikt4Aqypq9VBk+rfZm7AtS5Z5ACqPdN0olcBI1QUq2XSoeIBM4xyDfwKHgankdw9FXBAV0OVpLZeNZp9aHhv8Hgw2surJMe7BY8ACCh54Z5YjfYWQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rj+BBguDEa4hJlIk53/312K9VHbjliTchwhI8/b6Ubs=;
- b=L7khFiDBcJqx3rkINAO7xz2YBKLHfnwXW3ZtcN7Xi5EFlz5PjQ92qDR8kWugJl26XkNQug/nqxpevel6n/k/EDl+ZB70uBPHtYHF4w66lqh+PYWXhV9BHsZ7/BaoOT3m2H9+EMNtuDjFg9Yqy8yXuXSoA+B3x1wDo9lXN+kErU9vmWeOE7mHSlNLcogOp3pHiDhlIW1p79nE8q51F+Am24FGL43v2yt+Befr7vn794b/odA7xv74NLO1PC50Eb+pEgcjKafGzIwLxxy7LbBSf0xZjjuIW5Om8L9elTOnI2TX9l85/YhgKmhsEjqIUK/CyJHdWkZhu3zYnkhQPE6+NQ==
+ bh=rsmXs24XN44+1+w+pHIrAns443BOJvgXs4b+LFOrXDI=;
+ b=ENHOSsZHcEJLP1/lhn/YRtPbcTyqEoAvF1CfYWA07+gtGHpeniXMgpXY1A8F7dhst05P4O4FzFm/QNb5l0c9KNYnEnXOeLQ8Ogm+BjkAIViw95XZPztPr8slBf5APAd6ZGDMGyJmEgAp+gisWazpRt6uP019ofNhJZ31Lbb/ij8PhfD/T8taVUHYi0hTfqKa3qI9rrrb2baThojsdTtF/B6eGaOettredy7Ti13RzTw19FdTFsm4iKAGWqcL5J6R/yk9Dn0yIK77KLSVpYiN4VI8Ze6kBk3bjYmDhvDwkvLeW/Tb4Xb5nhSiugS8z6OZuXBLmy60I9sr4L2/cIVuNQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  158.140.1.147) smtp.rcpttodomain=pengutronix.de smtp.mailfrom=cadence.com;
  dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
@@ -69,18 +69,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rj+BBguDEa4hJlIk53/312K9VHbjliTchwhI8/b6Ubs=;
- b=lYDAqqYHEKGAxU8i52rySKxwQrGX2RQrKjRiYNjRNfoBzym0lzgolhL6R+s4/Qo8GeITS/as1U07QXBnF5eAfx9ox5p1oG2RDqGIVk80pzEEmolbBopQS7a22RxqiVOkEUzAJ/rx3+ccRP0hJIvfUYan4oRBKbSLQdu8sgnyszc=
-Received: from MWHPR11CA0019.namprd11.prod.outlook.com (2603:10b6:301:1::29)
- by SN6PR07MB4400.namprd07.prod.outlook.com (2603:10b6:805:5c::12) with
+ bh=rsmXs24XN44+1+w+pHIrAns443BOJvgXs4b+LFOrXDI=;
+ b=cPpTe4ZTWw7gR0Tk9jkzPoIFbnMoWYyNjHKmTUqHViQoMYtUjW25cK+08xKTFYtx/3yrWG8CBFSDnIJUOytrp+ijq8DdtL14pJ3t9p8XAdMNUMz8/6dXsCNTDOvVC8ywgo7AdNuoXz5DuhxXvvI4gWet26dy7RkdAETBpaN3+p4=
+Received: from MWHPR13CA0012.namprd13.prod.outlook.com (2603:10b6:300:16::22)
+ by DM6PR07MB7851.namprd07.prod.outlook.com (2603:10b6:5:36::33) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4020.18; Fri, 9 Apr
- 2021 05:34:30 +0000
-Received: from MW2NAM12FT040.eop-nam12.prod.protection.outlook.com
- (2603:10b6:301:1:cafe::99) by MWHPR11CA0019.outlook.office365.com
- (2603:10b6:301:1::29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4020.17 via Frontend
- Transport; Fri, 9 Apr 2021 05:34:30 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3999.28; Fri, 9 Apr
+ 2021 05:34:26 +0000
+Received: from MW2NAM12FT009.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:300:16:cafe::78) by MWHPR13CA0012.outlook.office365.com
+ (2603:10b6:300:16::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4042.6 via Frontend
+ Transport; Fri, 9 Apr 2021 05:34:26 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.147)
  smtp.mailfrom=cadence.com; pengutronix.de; dkim=none (message not signed)
  header.d=none; pengutronix.de; dmarc=pass action=none header.from=cadence.com; 
@@ -88,14 +88,14 @@ Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
  158.140.1.147 as permitted sender) receiver=protection.outlook.com;
  client-ip=158.140.1.147; helo=sjmaillnx1.cadence.com;
 Received: from sjmaillnx1.cadence.com (158.140.1.147) by
- MW2NAM12FT040.mail.protection.outlook.com (10.13.180.228) with Microsoft SMTP
+ MW2NAM12FT009.mail.protection.outlook.com (10.13.180.76) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4042.6 via Frontend Transport; Fri, 9 Apr 2021 05:34:28 +0000
+ 15.20.4042.6 via Frontend Transport; Fri, 9 Apr 2021 05:34:25 +0000
 Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
  by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
- 1395YJ5c032749
+ 1395YJ5W032749
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 8 Apr 2021 22:34:27 -0700
+ Thu, 8 Apr 2021 22:34:24 -0700
 X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
 Received: from maileu3.global.cadence.com (10.160.88.99) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
@@ -104,19 +104,19 @@ Received: from vleu-orange.cadence.com (10.160.88.83) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
  15.0.1497.2 via Frontend Transport; Fri, 9 Apr 2021 07:34:19 +0200
 Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
- by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 1395YJ11027881;
- Fri, 9 Apr 2021 07:34:19 +0200
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 1395YI6e027848;
+ Fri, 9 Apr 2021 07:34:18 +0200
 Received: (from sjakhade@localhost)
- by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 1395YJTQ027875;
- Fri, 9 Apr 2021 07:34:19 +0200
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 1395YIDL027847;
+ Fri, 9 Apr 2021 07:34:18 +0200
 From: Swapnil Jakhade <sjakhade@cadence.com>
 To: <vkoul@kernel.org>, <kishon@ti.com>, <p.zabel@pengutronix.de>,
  <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
 CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <lokeshvutla@ti.com>
-Subject: [PATCH 12/14] phy: cadence-torrent: Add PCIe + DP multilink
- configuration
-Date: Fri, 9 Apr 2021 07:34:14 +0200
-Message-ID: <1617946456-27773-13-git-send-email-sjakhade@cadence.com>
+Subject: [PATCH 05/14] phy: cadence-torrent: Add PHY registers for DP in array
+ format
+Date: Fri, 9 Apr 2021 07:34:07 +0200
+Message-ID: <1617946456-27773-6-git-send-email-sjakhade@cadence.com>
 X-Mailer: git-send-email 2.4.5
 In-Reply-To: <1617946456-27773-1-git-send-email-sjakhade@cadence.com>
 References: <1617946456-27773-1-git-send-email-sjakhade@cadence.com>
@@ -124,41 +124,41 @@ MIME-Version: 1.0
 X-OrganizationHeadersPreserved: maileu3.global.cadence.com
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 7fad658e-130f-4858-899f-08d8fb1924e6
-X-MS-TrafficTypeDiagnostic: SN6PR07MB4400:
-X-Microsoft-Antispam-PRVS: <SN6PR07MB4400AA3DA096A62BEC419761C5739@SN6PR07MB4400.namprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:296;
+X-MS-Office365-Filtering-Correlation-Id: 460bbf3b-539d-4636-d4dd-08d8fb1922ec
+X-MS-TrafficTypeDiagnostic: DM6PR07MB7851:
+X-Microsoft-Antispam-PRVS: <DM6PR07MB7851ABA69BDF55FF3D7DE1EAC5739@DM6PR07MB7851.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4714;
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: vSb06Rlm6jjWieUqv9SzPEACzFRwl2pJYJEj2wIQFM61ZX3YWVe/DyzLnUD4a3qU3c/RNzNXuGJARWvATB5hpdufWhpSlOHZAydS8Uf34Q0JE1GapxyqUCwGbMA0l75gzvvXZhMnCzhIxoH35ZLrmaeHO42djKERF3bCXfotb9lOFW3xRZqZbpxXE+JZvTZb6OOyLCX6dRCrqX2k7hDrRMfcADArBYUiGacwx1mst+vdJu9plqQp5YZ09eWECMR+1PQqplRse5HgkIvcDjXGfj8zJqGgs3cGyrYIfFGGtEKFD+fJkLzbcoBocVj94MygFdqKxsa/MeOGTn8V1MXWdAkOaMCdaRZdeBzERw6cAjZLRQGQ/77bUlhQhVVYAKM2gXjhS7RydLEGt3ZtH/nU7NLGORyeeF6OkW2yhZyk9pstQcR27/IunndJ+LTgvnWOLNYnyPKvlnz02Mo1hklabuUU0GYpZUO6V2Ph8jIw6bi02NcjVCiM4DSjuWUWdBnHNUMizYWTck/N2ablCoX2BWzfWZgw0AHL5IJrodFnqh/IMQ983wCmo00/mV1olJmwl0vt+PSbJ4AOfT2dqS1QUYkX2wso8SBAnI6280mk/27Fiv+/BShM8wIHkKObURMPIp0U/VXDqLhrzjg/ucYaipTQMAobrCCm3wXxDvGg4n3JaWOdf4iAWAA1mQ6U/4r4jWzeYTeY1gyfpQI4OdIa4A==
+X-Microsoft-Antispam-Message-Info: AaOtbXHqg+UH4vLZoo8pJb9wAe92vaJRL9TIIlC9yXlqajzOvwwu3Bregql+ytRpZU0vhl4CyJjENuVtX5oD01fFhAFCJlPSwCy8bHx4hv050u/6+HsjaLCBykOHCbTFTG9El+FM6mdxXzxlXrSbBlm9+zLPPMoiM8IWAhSqo4o+t708sqeAJz5LHQ9as7qP2k/KXjGB6jhTagFnpxD8NbxpmUo7X5BmPCsYZIIDC81MX2d/4PV8LRZBKNCV23/nQneVt7lfM2fy7/Yp7goRlCGyX4U9vNySLdxkE4+uaavx/QGkd6ieecBb8QIsI7nzjMuAcxUxUXVWkWAxp/q02Kt6j43MrQnGSjNbx3DsEYdL6iXTYS4y43yfMFgCmXZH7uT9y17nFsSyiEZssD/QkvqWQt+Rc/KzCwp7DTdI/KE8fqW9uyYTcYOa+nG+Grc4jy3ieROcsEIqFxUcGcqc1rH9f7hSOuco4oYxKImY85YoUC15pgSDC44NsZLd8KfWIKtOR2q2FQ02c8yOqDtgq/tZXgFxktVfJTGlhwvsA/jPhHxdbNWX4H9+9RvPAr4bLfPwjemD/RJSuqBkzvKjUq7OT5S8+bbhOUxTS/LZwTitWHts1/BGJRRQqlsnAecRBfVgOMNt82jzdN51zqDrHZiyB3yncPKhdIwGwRycRCdwJNdgdnWeHq+abnMuNtTx5cIAsddZGl3E2uBFalu1MQ==
 X-Forefront-Antispam-Report: CIP:158.140.1.147; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:CAL; SFV:NSPM; H:sjmaillnx1.cadence.com; PTR:unknown.Cadence.COM; CAT:NONE;
- SFS:(4636009)(39860400002)(136003)(396003)(346002)(376002)(36092001)(36840700001)(46966006)(316002)(82310400003)(2906002)(36756003)(426003)(54906003)(2616005)(336012)(82740400003)(186003)(26005)(86362001)(47076005)(356005)(6666004)(110136005)(42186006)(478600001)(70206006)(7636003)(36860700001)(8936002)(4326008)(36906005)(5660300002)(8676002)(70586007)(2101003);
+ SFS:(4636009)(376002)(39860400002)(346002)(396003)(136003)(36092001)(36840700001)(46966006)(336012)(426003)(83380400001)(30864003)(6666004)(8936002)(42186006)(110136005)(54906003)(36906005)(36756003)(7636003)(2616005)(8676002)(186003)(356005)(478600001)(5660300002)(82310400003)(47076005)(316002)(70586007)(2906002)(4326008)(70206006)(36860700001)(26005)(86362001)(82740400003)(2101003);
  DIR:OUT; SFP:1101; 
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2021 05:34:28.4227 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7fad658e-130f-4858-899f-08d8fb1924e6
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2021 05:34:25.0826 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 460bbf3b-539d-4636-d4dd-08d8fb1922ec
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.147];
  Helo=[sjmaillnx1.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: MW2NAM12FT040.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: MW2NAM12FT009.eop-nam12.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR07MB4400
-X-Proofpoint-ORIG-GUID: XYnp81SlgxvI-837QvS_cdpYwZOnKVAj
-X-Proofpoint-GUID: XYnp81SlgxvI-837QvS_cdpYwZOnKVAj
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR07MB7851
+X-Proofpoint-ORIG-GUID: pj4AABapafaVjgXE8R-OlKIIC4vje_bL
+X-Proofpoint-GUID: pj4AABapafaVjgXE8R-OlKIIC4vje_bL
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.391, 18.0.761
  definitions=2021-04-09_03:2021-04-08,
  2021-04-09 signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
  score=0 bulkscore=0
  malwarescore=0 impostorscore=0 mlxscore=0 lowpriorityscore=0
- mlxlogscore=971 clxscore=1015 suspectscore=0 spamscore=0 adultscore=0
+ mlxlogscore=999 clxscore=1015 suspectscore=0 spamscore=0 adultscore=0
  priorityscore=1501 phishscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.12.0-2104060000 definitions=main-2104090040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210409_063440_024859_B27B119E 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20210409_063441_590211_6A4986EB 
+X-CRM114-Status: GOOD (  18.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -175,68 +175,351 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add PCIe + DP no SSC multilink configuration sequences.
+Add PHY registers for single link DP in array format to simplify
+code and to improve readability.
 
 Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 ---
- drivers/phy/cadence/phy-cadence-torrent.c | 131 ++++++++++++++++++++++
- 1 file changed, 131 insertions(+)
+ drivers/phy/cadence/phy-cadence-torrent.c | 450 +++++++++++++---------
+ 1 file changed, 274 insertions(+), 176 deletions(-)
 
 diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index becbf8456b2d..bf37569c6c51 100644
+index 39a26a1a4c51..4ec5909f192c 100644
 --- a/drivers/phy/cadence/phy-cadence-torrent.c
 +++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -2572,6 +2572,77 @@ static int cdns_torrent_phy_remove(struct platform_device *pdev)
+@@ -341,20 +341,12 @@ struct cdns_torrent_derived_refclk {
+ #define to_cdns_torrent_derived_refclk(_hw)	\
+ 			container_of(_hw, struct cdns_torrent_derived_refclk, hw)
+ 
+-static void cdns_torrent_dp_pma_cfg(struct cdns_torrent_phy *cdns_phy,
+-				    struct cdns_torrent_inst *inst);
+-static
+-void cdns_torrent_dp_pma_cmn_cfg_19_2mhz(struct cdns_torrent_phy *cdns_phy);
+ static
+ void cdns_torrent_dp_pma_cmn_vco_cfg_19_2mhz(struct cdns_torrent_phy *cdns_phy,
+ 					     u32 rate, bool ssc);
+ static
+-void cdns_torrent_dp_pma_cmn_cfg_25mhz(struct cdns_torrent_phy *cdns_phy);
+-static
+ void cdns_torrent_dp_pma_cmn_vco_cfg_25mhz(struct cdns_torrent_phy *cdns_phy,
+ 					   u32 rate, bool ssc);
+-static void cdns_torrent_dp_pma_lane_cfg(struct cdns_torrent_phy *cdns_phy,
+-					 unsigned int lane);
+ 
+ struct cdns_reg_pairs {
+ 	u32 val;
+@@ -759,9 +751,6 @@ static void cdns_torrent_dp_pma_cmn_rate(struct cdns_torrent_phy *cdns_phy,
+ 	unsigned int hsclk_div_val = 0;
+ 	unsigned int i;
+ 
+-	/* 16'h0000 for single DP link configuration */
+-	regmap_field_write(cdns_phy->phy_pll_cfg, 0x0);
+-
+ 	switch (rate) {
+ 	case 1620:
+ 		clk_sel_val = 0x0f01;
+@@ -806,8 +795,7 @@ static void cdns_torrent_dp_pma_cmn_rate(struct cdns_torrent_phy *cdns_phy,
+ static int cdns_torrent_dp_configure_rate(struct cdns_torrent_phy *cdns_phy,
+ 					  struct phy_configure_opts_dp *dp)
+ {
+-	u32 ret;
+-	u32 read_val;
++	u32 read_val, ret;
+ 
+ 	/* Disable the cmn_pll0_en before re-programming the new data rate. */
+ 	regmap_field_write(cdns_phy->phy_pma_pll_raw_ctrl, 0x0);
+@@ -825,17 +813,12 @@ static int cdns_torrent_dp_configure_rate(struct cdns_torrent_phy *cdns_phy,
+ 	ndelay(200);
+ 
+ 	/* DP Rate Change - VCO Output settings. */
+-	if (cdns_phy->ref_clk_rate == CLK_19_2_MHZ) {
++	if (cdns_phy->ref_clk_rate == CLK_19_2_MHZ)
+ 		/* PMA common configuration 19.2MHz */
+-		cdns_torrent_dp_pma_cmn_vco_cfg_19_2mhz(cdns_phy, dp->link_rate,
+-							dp->ssc);
+-		cdns_torrent_dp_pma_cmn_cfg_19_2mhz(cdns_phy);
+-	} else if (cdns_phy->ref_clk_rate == CLK_25_MHZ) {
++		cdns_torrent_dp_pma_cmn_vco_cfg_19_2mhz(cdns_phy, dp->link_rate, dp->ssc);
++	else if (cdns_phy->ref_clk_rate == CLK_25_MHZ)
+ 		/* PMA common configuration 25MHz */
+-		cdns_torrent_dp_pma_cmn_vco_cfg_25mhz(cdns_phy, dp->link_rate,
+-						      dp->ssc);
+-		cdns_torrent_dp_pma_cmn_cfg_25mhz(cdns_phy);
+-	}
++		cdns_torrent_dp_pma_cmn_vco_cfg_25mhz(cdns_phy, dp->link_rate, dp->ssc);
+ 	cdns_torrent_dp_pma_cmn_rate(cdns_phy, dp->link_rate, dp->lanes);
+ 
+ 	/* Enable the cmn_pll0_en. */
+@@ -1184,9 +1167,6 @@ static int cdns_torrent_dp_init(struct phy *phy)
+ 
+ 	cdns_torrent_dp_write(regmap, PHY_AUX_CTRL, 0x0003); /* enable AUX */
+ 
+-	/* PHY PMA registers configuration function */
+-	cdns_torrent_dp_pma_cfg(cdns_phy, inst);
+-
+ 	/*
+ 	 * Set lines power state to A0
+ 	 * Set lines pll clk enable to 0
+@@ -1231,67 +1211,6 @@ static int cdns_torrent_dp_init(struct phy *phy)
+ 	return ret;
+ }
+ 
+-static void cdns_torrent_dp_pma_cfg(struct cdns_torrent_phy *cdns_phy,
+-				    struct cdns_torrent_inst *inst)
+-{
+-	unsigned int i;
+-
+-	if (cdns_phy->ref_clk_rate == CLK_19_2_MHZ)
+-		/* PMA common configuration 19.2MHz */
+-		cdns_torrent_dp_pma_cmn_cfg_19_2mhz(cdns_phy);
+-	else if (cdns_phy->ref_clk_rate == CLK_25_MHZ)
+-		/* PMA common configuration 25MHz */
+-		cdns_torrent_dp_pma_cmn_cfg_25mhz(cdns_phy);
+-
+-	/* PMA lane configuration to deal with multi-link operation */
+-	for (i = 0; i < inst->num_lanes; i++)
+-		cdns_torrent_dp_pma_lane_cfg(cdns_phy, i);
+-}
+-
+-static
+-void cdns_torrent_dp_pma_cmn_cfg_19_2mhz(struct cdns_torrent_phy *cdns_phy)
+-{
+-	struct regmap *regmap = cdns_phy->regmap_common_cdb;
+-
+-	/* refclock registers - assumes 19.2 MHz refclock */
+-	cdns_torrent_phy_write(regmap, CMN_SSM_BIAS_TMR, 0x0014);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM0_PLLPRE_TMR, 0x0027);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM0_PLLLOCK_TMR, 0x00A1);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM1_PLLPRE_TMR, 0x0027);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM1_PLLLOCK_TMR, 0x00A1);
+-	cdns_torrent_phy_write(regmap, CMN_BGCAL_INIT_TMR, 0x0060);
+-	cdns_torrent_phy_write(regmap, CMN_BGCAL_ITER_TMR, 0x0060);
+-	cdns_torrent_phy_write(regmap, CMN_IBCAL_INIT_TMR, 0x0014);
+-	cdns_torrent_phy_write(regmap, CMN_TXPUCAL_INIT_TMR, 0x0018);
+-	cdns_torrent_phy_write(regmap, CMN_TXPUCAL_ITER_TMR, 0x0005);
+-	cdns_torrent_phy_write(regmap, CMN_TXPDCAL_INIT_TMR, 0x0018);
+-	cdns_torrent_phy_write(regmap, CMN_TXPDCAL_ITER_TMR, 0x0005);
+-	cdns_torrent_phy_write(regmap, CMN_RXCAL_INIT_TMR, 0x0240);
+-	cdns_torrent_phy_write(regmap, CMN_RXCAL_ITER_TMR, 0x0005);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_INIT_TMR, 0x0002);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_ITER_TMR, 0x0002);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_REFTIM_START, 0x000B);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_PLLCNT_START, 0x0137);
+-
+-	/* PLL registers */
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL0_CP_PADJ_M0, 0x0509);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL0_CP_IADJ_M0, 0x0F00);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL0_FILT_PADJ_M0, 0x0F08);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_DSM_DIAG_M0, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL1_CP_PADJ_M0, 0x0509);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL1_CP_IADJ_M0, 0x0F00);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL1_FILT_PADJ_M0, 0x0F08);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_DSM_DIAG_M0, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_INIT_TMR, 0x00C0);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_ITER_TMR, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_INIT_TMR, 0x00C0);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_ITER_TMR, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_REFTIM_START, 0x0260);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_TCTRL, 0x0003);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_REFTIM_START, 0x0260);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_TCTRL, 0x0003);
+-}
+-
+ /*
+  * Set registers responsible for enabling and configuring SSC, with second and
+  * third register values provided by parameters.
+@@ -1473,50 +1392,6 @@ void cdns_torrent_dp_pma_cmn_vco_cfg_19_2mhz(struct cdns_torrent_phy *cdns_phy,
+ 	cdns_torrent_phy_write(regmap, CMN_PLL1_LOCK_PLLCNT_START, 0x0099);
+ }
+ 
+-static
+-void cdns_torrent_dp_pma_cmn_cfg_25mhz(struct cdns_torrent_phy *cdns_phy)
+-{
+-	struct regmap *regmap = cdns_phy->regmap_common_cdb;
+-
+-	/* refclock registers - assumes 25 MHz refclock */
+-	cdns_torrent_phy_write(regmap, CMN_SSM_BIAS_TMR, 0x0019);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM0_PLLPRE_TMR, 0x0032);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM0_PLLLOCK_TMR, 0x00D1);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM1_PLLPRE_TMR, 0x0032);
+-	cdns_torrent_phy_write(regmap, CMN_PLLSM1_PLLLOCK_TMR, 0x00D1);
+-	cdns_torrent_phy_write(regmap, CMN_BGCAL_INIT_TMR, 0x007D);
+-	cdns_torrent_phy_write(regmap, CMN_BGCAL_ITER_TMR, 0x007D);
+-	cdns_torrent_phy_write(regmap, CMN_IBCAL_INIT_TMR, 0x0019);
+-	cdns_torrent_phy_write(regmap, CMN_TXPUCAL_INIT_TMR, 0x001E);
+-	cdns_torrent_phy_write(regmap, CMN_TXPUCAL_ITER_TMR, 0x0006);
+-	cdns_torrent_phy_write(regmap, CMN_TXPDCAL_INIT_TMR, 0x001E);
+-	cdns_torrent_phy_write(regmap, CMN_TXPDCAL_ITER_TMR, 0x0006);
+-	cdns_torrent_phy_write(regmap, CMN_RXCAL_INIT_TMR, 0x02EE);
+-	cdns_torrent_phy_write(regmap, CMN_RXCAL_ITER_TMR, 0x0006);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_INIT_TMR, 0x0002);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_ITER_TMR, 0x0002);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_REFTIM_START, 0x000E);
+-	cdns_torrent_phy_write(regmap, CMN_SD_CAL_PLLCNT_START, 0x012B);
+-
+-	/* PLL registers */
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL0_CP_PADJ_M0, 0x0509);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL0_CP_IADJ_M0, 0x0F00);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL0_FILT_PADJ_M0, 0x0F08);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_DSM_DIAG_M0, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL1_CP_PADJ_M0, 0x0509);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL1_CP_IADJ_M0, 0x0F00);
+-	cdns_torrent_phy_write(regmap, CMN_PDIAG_PLL1_FILT_PADJ_M0, 0x0F08);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_DSM_DIAG_M0, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_INIT_TMR, 0x00FA);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_ITER_TMR, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_INIT_TMR, 0x00FA);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_ITER_TMR, 0x0004);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_REFTIM_START, 0x0317);
+-	cdns_torrent_phy_write(regmap, CMN_PLL0_VCOCAL_TCTRL, 0x0003);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_REFTIM_START, 0x0317);
+-	cdns_torrent_phy_write(regmap, CMN_PLL1_VCOCAL_TCTRL, 0x0003);
+-}
+-
+ /*
+  * Set registers responsible for enabling and configuring SSC, with second
+  * register value provided by a parameter.
+@@ -1640,49 +1515,6 @@ void cdns_torrent_dp_pma_cmn_vco_cfg_25mhz(struct cdns_torrent_phy *cdns_phy,
+ 	cdns_torrent_phy_write(regmap, CMN_PLL1_LOCK_PLLCNT_START, 0x00C7);
+ }
+ 
+-static void cdns_torrent_dp_pma_lane_cfg(struct cdns_torrent_phy *cdns_phy,
+-					 unsigned int lane)
+-{
+-	/* Per lane, refclock-dependent receiver detection setting */
+-	if (cdns_phy->ref_clk_rate == CLK_19_2_MHZ)
+-		cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-				       TX_RCVDET_ST_TMR, 0x0780);
+-	else if (cdns_phy->ref_clk_rate == CLK_25_MHZ)
+-		cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-				       TX_RCVDET_ST_TMR, 0x09C4);
+-
+-	/* Writing Tx/Rx Power State Controllers registers */
+-	cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-			       TX_PSC_A0, 0x00FB);
+-	cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-			       TX_PSC_A2, 0x04AA);
+-	cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-			       TX_PSC_A3, 0x04AA);
+-	cdns_torrent_phy_write(cdns_phy->regmap_rx_lane_cdb[lane],
+-			       RX_PSC_A0, 0x0000);
+-	cdns_torrent_phy_write(cdns_phy->regmap_rx_lane_cdb[lane],
+-			       RX_PSC_A2, 0x0000);
+-	cdns_torrent_phy_write(cdns_phy->regmap_rx_lane_cdb[lane],
+-			       RX_PSC_A3, 0x0000);
+-
+-	cdns_torrent_phy_write(cdns_phy->regmap_rx_lane_cdb[lane],
+-			       RX_PSC_CAL, 0x0000);
+-
+-	cdns_torrent_phy_write(cdns_phy->regmap_rx_lane_cdb[lane],
+-			       RX_REE_GCSM1_CTRL, 0x0000);
+-	cdns_torrent_phy_write(cdns_phy->regmap_rx_lane_cdb[lane],
+-			       RX_REE_GCSM2_CTRL, 0x0000);
+-	cdns_torrent_phy_write(cdns_phy->regmap_rx_lane_cdb[lane],
+-			       RX_REE_PERGCSM_CTRL, 0x0000);
+-
+-	cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-			       XCVR_DIAG_BIDI_CTRL, 0x000F);
+-	cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-			       XCVR_DIAG_PLLDRC_CTRL, 0x0001);
+-	cdns_torrent_phy_write(cdns_phy->regmap_tx_lane_cdb[lane],
+-			       XCVR_DIAG_HSCLK_SEL, 0x0000);
+-}
+-
+ static int cdns_torrent_derived_refclk_enable(struct clk_hw *hw)
+ {
+ 	struct cdns_torrent_derived_refclk *derived_refclk = to_cdns_torrent_derived_refclk(hw);
+@@ -1972,9 +1804,6 @@ static int cdns_torrent_phy_init(struct phy *phy)
+ 	if (cdns_phy->nsubnodes > 1)
+ 		return 0;
+ 
+-	if (phy_type == TYPE_DP)
+-		return cdns_torrent_dp_init(phy);
+-
+ 	/**
+ 	 * Spread spectrum generation is not required or supported
+ 	 * for SGMII/QSGMII
+@@ -2060,6 +1889,9 @@ static int cdns_torrent_phy_init(struct phy *phy)
+ 		}
+ 	}
+ 
++	if (phy_type == TYPE_DP)
++		return cdns_torrent_dp_init(phy);
++
  	return 0;
  }
  
-+/* PCIe and DP link configuration */
-+static struct cdns_reg_pairs pcie_dp_link_cmn_regs[] = {
-+	{0x0003, PHY_PLL_CFG},
-+	{0x0601, CMN_PDIAG_PLL0_CLK_SEL_M0},
-+	{0x0400, CMN_PDIAG_PLL0_CLK_SEL_M1}
+@@ -2584,6 +2416,168 @@ static int cdns_torrent_phy_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++/* Single DisplayPort(DP) link configuration */
++static struct cdns_reg_pairs sl_dp_link_cmn_regs[] = {
++	{0x0000, PHY_PLL_CFG},
 +};
 +
-+static struct cdns_reg_pairs pcie_dp_xcvr_diag_ln_regs[] = {
++static struct cdns_reg_pairs sl_dp_xcvr_diag_ln_regs[] = {
 +	{0x0000, XCVR_DIAG_HSCLK_SEL},
-+	{0x0001, XCVR_DIAG_HSCLK_DIV},
-+	{0x0012, XCVR_DIAG_PLLDRC_CTRL}
++	{0x0001, XCVR_DIAG_PLLDRC_CTRL}
 +};
 +
-+static struct cdns_reg_pairs dp_pcie_xcvr_diag_ln_regs[] = {
-+	{0x0001, XCVR_DIAG_HSCLK_SEL},
-+	{0x0009, XCVR_DIAG_PLLDRC_CTRL}
++static struct cdns_torrent_vals sl_dp_link_cmn_vals = {
++	.reg_pairs = sl_dp_link_cmn_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_link_cmn_regs),
 +};
 +
-+static struct cdns_torrent_vals pcie_dp_link_cmn_vals = {
-+	.reg_pairs = pcie_dp_link_cmn_regs,
-+	.num_regs = ARRAY_SIZE(pcie_dp_link_cmn_regs),
++static struct cdns_torrent_vals sl_dp_xcvr_diag_ln_vals = {
++	.reg_pairs = sl_dp_xcvr_diag_ln_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_xcvr_diag_ln_regs),
 +};
 +
-+static struct cdns_torrent_vals pcie_dp_xcvr_diag_ln_vals = {
-+	.reg_pairs = pcie_dp_xcvr_diag_ln_regs,
-+	.num_regs = ARRAY_SIZE(pcie_dp_xcvr_diag_ln_regs),
++/* Single DP, 19.2 MHz Ref clk, no SSC */
++static struct cdns_reg_pairs sl_dp_19_2_no_ssc_cmn_regs[] = {
++	{0x0014, CMN_SSM_BIAS_TMR},
++	{0x0027, CMN_PLLSM0_PLLPRE_TMR},
++	{0x00A1, CMN_PLLSM0_PLLLOCK_TMR},
++	{0x0027, CMN_PLLSM1_PLLPRE_TMR},
++	{0x00A1, CMN_PLLSM1_PLLLOCK_TMR},
++	{0x0060, CMN_BGCAL_INIT_TMR},
++	{0x0060, CMN_BGCAL_ITER_TMR},
++	{0x0014, CMN_IBCAL_INIT_TMR},
++	{0x0018, CMN_TXPUCAL_INIT_TMR},
++	{0x0005, CMN_TXPUCAL_ITER_TMR},
++	{0x0018, CMN_TXPDCAL_INIT_TMR},
++	{0x0005, CMN_TXPDCAL_ITER_TMR},
++	{0x0240, CMN_RXCAL_INIT_TMR},
++	{0x0005, CMN_RXCAL_ITER_TMR},
++	{0x0002, CMN_SD_CAL_INIT_TMR},
++	{0x0002, CMN_SD_CAL_ITER_TMR},
++	{0x000B, CMN_SD_CAL_REFTIM_START},
++	{0x0137, CMN_SD_CAL_PLLCNT_START},
++	{0x0509, CMN_PDIAG_PLL0_CP_PADJ_M0},
++	{0x0F00, CMN_PDIAG_PLL0_CP_IADJ_M0},
++	{0x0F08, CMN_PDIAG_PLL0_FILT_PADJ_M0},
++	{0x0004, CMN_PLL0_DSM_DIAG_M0},
++	{0x0509, CMN_PDIAG_PLL1_CP_PADJ_M0},
++	{0x0F00, CMN_PDIAG_PLL1_CP_IADJ_M0},
++	{0x0F08, CMN_PDIAG_PLL1_FILT_PADJ_M0},
++	{0x0004, CMN_PLL1_DSM_DIAG_M0},
++	{0x00C0, CMN_PLL0_VCOCAL_INIT_TMR},
++	{0x0004, CMN_PLL0_VCOCAL_ITER_TMR},
++	{0x00C0, CMN_PLL1_VCOCAL_INIT_TMR},
++	{0x0004, CMN_PLL1_VCOCAL_ITER_TMR},
++	{0x0260, CMN_PLL0_VCOCAL_REFTIM_START},
++	{0x0003, CMN_PLL0_VCOCAL_TCTRL},
++	{0x0260, CMN_PLL1_VCOCAL_REFTIM_START},
++	{0x0003, CMN_PLL1_VCOCAL_TCTRL}
 +};
 +
-+static struct cdns_torrent_vals dp_pcie_xcvr_diag_ln_vals = {
-+	.reg_pairs = dp_pcie_xcvr_diag_ln_regs,
-+	.num_regs = ARRAY_SIZE(dp_pcie_xcvr_diag_ln_regs),
-+};
-+
-+/* DP Multilink, 100 MHz Ref clk, no SSC */
-+static struct cdns_reg_pairs dp_100_no_ssc_cmn_regs[] = {
-+	{0x007F, CMN_TXPUCAL_TUNE},
-+	{0x007F, CMN_TXPDCAL_TUNE}
-+};
-+
-+static struct cdns_reg_pairs dp_100_no_ssc_tx_ln_regs[] = {
++static struct cdns_reg_pairs sl_dp_19_2_no_ssc_tx_ln_regs[] = {
++	{0x0780, TX_RCVDET_ST_TMR},
 +	{0x00FB, TX_PSC_A0},
 +	{0x04AA, TX_PSC_A2},
 +	{0x04AA, TX_PSC_A3},
 +	{0x000F, XCVR_DIAG_BIDI_CTRL}
 +};
 +
-+static struct cdns_reg_pairs dp_100_no_ssc_rx_ln_regs[] = {
++static struct cdns_reg_pairs sl_dp_19_2_no_ssc_rx_ln_regs[] = {
 +	{0x0000, RX_PSC_A0},
 +	{0x0000, RX_PSC_A2},
 +	{0x0000, RX_PSC_A3},
@@ -246,223 +529,268 @@ index becbf8456b2d..bf37569c6c51 100644
 +	{0x0000, RX_REE_PERGCSM_CTRL}
 +};
 +
-+static struct cdns_torrent_vals dp_100_no_ssc_cmn_vals = {
-+	.reg_pairs = dp_100_no_ssc_cmn_regs,
-+	.num_regs = ARRAY_SIZE(dp_100_no_ssc_cmn_regs),
++static struct cdns_torrent_vals sl_dp_19_2_no_ssc_cmn_vals = {
++	.reg_pairs = sl_dp_19_2_no_ssc_cmn_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_19_2_no_ssc_cmn_regs),
 +};
 +
-+static struct cdns_torrent_vals dp_100_no_ssc_tx_ln_vals = {
-+	.reg_pairs = dp_100_no_ssc_tx_ln_regs,
-+	.num_regs = ARRAY_SIZE(dp_100_no_ssc_tx_ln_regs),
++static struct cdns_torrent_vals sl_dp_19_2_no_ssc_tx_ln_vals = {
++	.reg_pairs = sl_dp_19_2_no_ssc_tx_ln_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_19_2_no_ssc_tx_ln_regs),
 +};
 +
-+static struct cdns_torrent_vals dp_100_no_ssc_rx_ln_vals = {
-+	.reg_pairs = dp_100_no_ssc_rx_ln_regs,
-+	.num_regs = ARRAY_SIZE(dp_100_no_ssc_rx_ln_regs),
++static struct cdns_torrent_vals sl_dp_19_2_no_ssc_rx_ln_vals = {
++	.reg_pairs = sl_dp_19_2_no_ssc_rx_ln_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_19_2_no_ssc_rx_ln_regs),
 +};
 +
- /* Single DisplayPort(DP) link configuration */
- static struct cdns_reg_pairs sl_dp_link_cmn_regs[] = {
- 	{0x0000, PHY_PLL_CFG},
-@@ -3514,6 +3585,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 			[TYPE_NONE] = {
- 				[NO_SSC] = &sl_dp_link_cmn_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[NO_SSC] = &pcie_dp_link_cmn_vals,
++/* Single DP, 25 MHz Ref clk, no SSC */
++static struct cdns_reg_pairs sl_dp_25_no_ssc_cmn_regs[] = {
++	{0x0019, CMN_SSM_BIAS_TMR},
++	{0x0032, CMN_PLLSM0_PLLPRE_TMR},
++	{0x00D1, CMN_PLLSM0_PLLLOCK_TMR},
++	{0x0032, CMN_PLLSM1_PLLPRE_TMR},
++	{0x00D1, CMN_PLLSM1_PLLLOCK_TMR},
++	{0x007D, CMN_BGCAL_INIT_TMR},
++	{0x007D, CMN_BGCAL_ITER_TMR},
++	{0x0019, CMN_IBCAL_INIT_TMR},
++	{0x001E, CMN_TXPUCAL_INIT_TMR},
++	{0x0006, CMN_TXPUCAL_ITER_TMR},
++	{0x001E, CMN_TXPDCAL_INIT_TMR},
++	{0x0006, CMN_TXPDCAL_ITER_TMR},
++	{0x02EE, CMN_RXCAL_INIT_TMR},
++	{0x0006, CMN_RXCAL_ITER_TMR},
++	{0x0002, CMN_SD_CAL_INIT_TMR},
++	{0x0002, CMN_SD_CAL_ITER_TMR},
++	{0x000E, CMN_SD_CAL_REFTIM_START},
++	{0x012B, CMN_SD_CAL_PLLCNT_START},
++	{0x0509, CMN_PDIAG_PLL0_CP_PADJ_M0},
++	{0x0F00, CMN_PDIAG_PLL0_CP_IADJ_M0},
++	{0x0F08, CMN_PDIAG_PLL0_FILT_PADJ_M0},
++	{0x0004, CMN_PLL0_DSM_DIAG_M0},
++	{0x0509, CMN_PDIAG_PLL1_CP_PADJ_M0},
++	{0x0F00, CMN_PDIAG_PLL1_CP_IADJ_M0},
++	{0x0F08, CMN_PDIAG_PLL1_FILT_PADJ_M0},
++	{0x0004, CMN_PLL1_DSM_DIAG_M0},
++	{0x00FA, CMN_PLL0_VCOCAL_INIT_TMR},
++	{0x0004, CMN_PLL0_VCOCAL_ITER_TMR},
++	{0x00FA, CMN_PLL1_VCOCAL_INIT_TMR},
++	{0x0004, CMN_PLL1_VCOCAL_ITER_TMR},
++	{0x0317, CMN_PLL0_VCOCAL_REFTIM_START},
++	{0x0003, CMN_PLL0_VCOCAL_TCTRL},
++	{0x0317, CMN_PLL1_VCOCAL_REFTIM_START},
++	{0x0003, CMN_PLL1_VCOCAL_TCTRL}
++};
++
++static struct cdns_reg_pairs sl_dp_25_no_ssc_tx_ln_regs[] = {
++	{0x09C4, TX_RCVDET_ST_TMR},
++	{0x00FB, TX_PSC_A0},
++	{0x04AA, TX_PSC_A2},
++	{0x04AA, TX_PSC_A3},
++	{0x000F, XCVR_DIAG_BIDI_CTRL}
++};
++
++static struct cdns_reg_pairs sl_dp_25_no_ssc_rx_ln_regs[] = {
++	{0x0000, RX_PSC_A0},
++	{0x0000, RX_PSC_A2},
++	{0x0000, RX_PSC_A3},
++	{0x0000, RX_PSC_CAL},
++	{0x0000, RX_REE_GCSM1_CTRL},
++	{0x0000, RX_REE_GCSM2_CTRL},
++	{0x0000, RX_REE_PERGCSM_CTRL}
++};
++
++static struct cdns_torrent_vals sl_dp_25_no_ssc_cmn_vals = {
++	.reg_pairs = sl_dp_25_no_ssc_cmn_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_25_no_ssc_cmn_regs),
++};
++
++static struct cdns_torrent_vals sl_dp_25_no_ssc_tx_ln_vals = {
++	.reg_pairs = sl_dp_25_no_ssc_tx_ln_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_25_no_ssc_tx_ln_regs),
++};
++
++static struct cdns_torrent_vals sl_dp_25_no_ssc_rx_ln_vals = {
++	.reg_pairs = sl_dp_25_no_ssc_rx_ln_regs,
++	.num_regs = ARRAY_SIZE(sl_dp_25_no_ssc_rx_ln_regs),
++};
++
+ /* USB and SGMII/QSGMII link configuration */
+ static struct cdns_reg_pairs usb_sgmii_link_cmn_regs[] = {
+ 	{0x0002, PHY_PLL_CFG},
+@@ -3322,6 +3316,11 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 	.block_offset_shift = 0x2,
+ 	.reg_offset_shift = 0x2,
+ 	.link_cmn_vals = {
++		[TYPE_DP] = {
++			[TYPE_NONE] = {
++				[NO_SSC] = &sl_dp_link_cmn_vals,
 +			},
- 		},
++		},
  		[TYPE_PCIE] = {
  			[TYPE_NONE] = {
-@@ -3536,6 +3610,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 				[EXTERNAL_SSC] = &pcie_usb_link_cmn_vals,
- 				[INTERNAL_SSC] = &pcie_usb_link_cmn_vals,
- 			},
-+			[TYPE_DP] = {
-+				[NO_SSC] = &pcie_dp_link_cmn_vals,
-+			},
+ 				[NO_SSC] = NULL,
+@@ -3398,6 +3397,11 @@ static const struct cdns_torrent_data cdns_map_torrent = {
  		},
- 		[TYPE_SGMII] = {
- 			[TYPE_NONE] = {
-@@ -3595,6 +3672,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 			[TYPE_NONE] = {
- 				[NO_SSC] = &sl_dp_xcvr_diag_ln_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[NO_SSC] = &dp_pcie_xcvr_diag_ln_vals,
+ 	},
+ 	.xcvr_diag_vals = {
++		[TYPE_DP] = {
++			[TYPE_NONE] = {
++				[NO_SSC] = &sl_dp_xcvr_diag_ln_vals,
 +			},
- 		},
++		},
  		[TYPE_PCIE] = {
  			[TYPE_NONE] = {
-@@ -3617,6 +3697,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 				[EXTERNAL_SSC] = &pcie_usb_xcvr_diag_ln_vals,
- 				[INTERNAL_SSC] = &pcie_usb_xcvr_diag_ln_vals,
- 			},
+ 				[NO_SSC] = NULL,
+@@ -3498,6 +3502,20 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 		},
+ 	},
+ 	.cmn_vals = {
++		[CLK_19_2_MHZ] = {
 +			[TYPE_DP] = {
-+				[NO_SSC] = &pcie_dp_xcvr_diag_ln_vals,
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_19_2_no_ssc_cmn_vals,
++				},
 +			},
- 		},
- 		[TYPE_SGMII] = {
- 			[TYPE_NONE] = {
-@@ -3715,6 +3798,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 				[TYPE_NONE] = {
- 					[NO_SSC] = &sl_dp_100_no_ssc_cmn_vals,
- 				},
-+				[TYPE_PCIE] = {
-+					[NO_SSC] = &dp_100_no_ssc_cmn_vals,
++		},
++		[CLK_25_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_25_no_ssc_cmn_vals,
 +				},
- 			},
- 			[TYPE_PCIE] = {
- 				[TYPE_NONE] = {
-@@ -3737,6 +3823,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 					[EXTERNAL_SSC] = &pcie_100_no_ssc_cmn_vals,
- 					[INTERNAL_SSC] = &pcie_100_int_ssc_cmn_vals,
- 				},
-+				[TYPE_DP] = {
-+					[NO_SSC] = NULL,
-+				},
- 			},
- 			[TYPE_SGMII] = {
- 				[TYPE_NONE] = {
-@@ -3812,6 +3901,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 				[TYPE_NONE] = {
- 					[NO_SSC] = &sl_dp_100_no_ssc_tx_ln_vals,
- 				},
-+				[TYPE_PCIE] = {
-+					[NO_SSC] = &dp_100_no_ssc_tx_ln_vals,
-+				},
- 			},
- 			[TYPE_PCIE] = {
- 				[TYPE_NONE] = {
-@@ -3834,6 +3926,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 					[EXTERNAL_SSC] = NULL,
- 					[INTERNAL_SSC] = NULL,
- 				},
-+				[TYPE_DP] = {
-+					[NO_SSC] = NULL,
-+				},
- 			},
- 			[TYPE_SGMII] = {
- 				[TYPE_NONE] = {
-@@ -3909,6 +4004,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 				[TYPE_NONE] = {
- 					[NO_SSC] = &sl_dp_100_no_ssc_rx_ln_vals,
- 				},
-+				[TYPE_PCIE] = {
-+					[NO_SSC] = &dp_100_no_ssc_rx_ln_vals,
-+				},
- 			},
- 			[TYPE_PCIE] = {
- 				[TYPE_NONE] = {
-@@ -3931,6 +4029,9 @@ static const struct cdns_torrent_data cdns_map_torrent = {
- 					[EXTERNAL_SSC] = &pcie_100_no_ssc_rx_ln_vals,
- 					[INTERNAL_SSC] = &pcie_100_no_ssc_rx_ln_vals,
- 				},
-+				[TYPE_DP] = {
-+					[NO_SSC] = &pcie_100_no_ssc_rx_ln_vals,
-+				},
- 			},
- 			[TYPE_SGMII] = {
- 				[TYPE_NONE] = {
-@@ -3996,6 +4097,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 			[TYPE_NONE] = {
- 				[NO_SSC] = &sl_dp_link_cmn_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[NO_SSC] = &pcie_dp_link_cmn_vals,
 +			},
++		},
+ 		[CLK_100_MHZ] = {
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -3576,6 +3594,20 @@ static const struct cdns_torrent_data cdns_map_torrent = {
  		},
+ 	},
+ 	.tx_ln_vals = {
++		[CLK_19_2_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_19_2_no_ssc_tx_ln_vals,
++				},
++			},
++		},
++		[CLK_25_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_25_no_ssc_tx_ln_vals,
++				},
++			},
++		},
+ 		[CLK_100_MHZ] = {
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -3654,6 +3686,20 @@ static const struct cdns_torrent_data cdns_map_torrent = {
+ 		},
+ 	},
+ 	.rx_ln_vals = {
++		[CLK_19_2_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_19_2_no_ssc_rx_ln_vals,
++				},
++			},
++		},
++		[CLK_25_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_25_no_ssc_rx_ln_vals,
++				},
++			},
++		},
+ 		[CLK_100_MHZ] = {
+ 			[TYPE_PCIE] = {
+ 				[TYPE_NONE] = {
+@@ -3737,6 +3783,11 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 	.block_offset_shift = 0x0,
+ 	.reg_offset_shift = 0x1,
+ 	.link_cmn_vals = {
++		[TYPE_DP] = {
++			[TYPE_NONE] = {
++				[NO_SSC] = &sl_dp_link_cmn_vals,
++			},
++		},
  		[TYPE_PCIE] = {
  			[TYPE_NONE] = {
-@@ -4018,6 +4122,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 				[EXTERNAL_SSC] = &pcie_usb_link_cmn_vals,
- 				[INTERNAL_SSC] = &pcie_usb_link_cmn_vals,
- 			},
-+			[TYPE_DP] = {
-+				[NO_SSC] = &pcie_dp_link_cmn_vals,
-+			},
+ 				[NO_SSC] = NULL,
+@@ -3813,6 +3864,11 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
  		},
- 		[TYPE_SGMII] = {
- 			[TYPE_NONE] = {
-@@ -4077,6 +4184,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 			[TYPE_NONE] = {
- 				[NO_SSC] = &sl_dp_xcvr_diag_ln_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[NO_SSC] = &dp_pcie_xcvr_diag_ln_vals,
+ 	},
+ 	.xcvr_diag_vals = {
++		[TYPE_DP] = {
++			[TYPE_NONE] = {
++				[NO_SSC] = &sl_dp_xcvr_diag_ln_vals,
 +			},
- 		},
++		},
  		[TYPE_PCIE] = {
  			[TYPE_NONE] = {
-@@ -4099,6 +4209,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 				[EXTERNAL_SSC] = &pcie_usb_xcvr_diag_ln_vals,
- 				[INTERNAL_SSC] = &pcie_usb_xcvr_diag_ln_vals,
- 			},
-+			[TYPE_DP] = {
-+				[NO_SSC] = &pcie_dp_xcvr_diag_ln_vals,
-+			},
+ 				[NO_SSC] = NULL,
+@@ -3913,6 +3969,20 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
  		},
- 		[TYPE_SGMII] = {
- 			[TYPE_NONE] = {
-@@ -4197,6 +4310,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 				[TYPE_NONE] = {
- 					[NO_SSC] = &sl_dp_100_no_ssc_cmn_vals,
- 				},
-+				[TYPE_PCIE] = {
-+					[NO_SSC] = &dp_100_no_ssc_cmn_vals,
+ 	},
+ 	.cmn_vals = {
++		[CLK_19_2_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_19_2_no_ssc_cmn_vals,
 +				},
- 			},
++			},
++		},
++		[CLK_25_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_25_no_ssc_cmn_vals,
++				},
++			},
++		},
+ 		[CLK_100_MHZ] = {
  			[TYPE_PCIE] = {
  				[TYPE_NONE] = {
-@@ -4219,6 +4335,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 					[EXTERNAL_SSC] = &pcie_100_no_ssc_cmn_vals,
- 					[INTERNAL_SSC] = &pcie_100_int_ssc_cmn_vals,
- 				},
-+				[TYPE_DP] = {
-+					[NO_SSC] = NULL,
+@@ -3991,6 +4061,20 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 		},
+ 	},
+ 	.tx_ln_vals = {
++		[CLK_19_2_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_19_2_no_ssc_tx_ln_vals,
 +				},
- 			},
- 			[TYPE_SGMII] = {
- 				[TYPE_NONE] = {
-@@ -4294,6 +4413,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 				[TYPE_NONE] = {
- 					[NO_SSC] = &sl_dp_100_no_ssc_tx_ln_vals,
- 				},
-+				[TYPE_PCIE] = {
-+					[NO_SSC] = &dp_100_no_ssc_tx_ln_vals,
++			},
++		},
++		[CLK_25_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_25_no_ssc_tx_ln_vals,
 +				},
- 			},
++			},
++		},
+ 		[CLK_100_MHZ] = {
  			[TYPE_PCIE] = {
  				[TYPE_NONE] = {
-@@ -4316,6 +4438,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 					[EXTERNAL_SSC] = NULL,
- 					[INTERNAL_SSC] = NULL,
- 				},
-+				[TYPE_DP] = {
-+					[NO_SSC] = NULL,
+@@ -4069,6 +4153,20 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
+ 		},
+ 	},
+ 	.rx_ln_vals = {
++		[CLK_19_2_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_19_2_no_ssc_rx_ln_vals,
 +				},
- 			},
- 			[TYPE_SGMII] = {
- 				[TYPE_NONE] = {
-@@ -4391,6 +4516,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 				[TYPE_NONE] = {
- 					[NO_SSC] = &sl_dp_100_no_ssc_rx_ln_vals,
- 				},
-+				[TYPE_PCIE] = {
-+					[NO_SSC] = &dp_100_no_ssc_rx_ln_vals,
++			},
++		},
++		[CLK_25_MHZ] = {
++			[TYPE_DP] = {
++				[TYPE_NONE] = {
++					[NO_SSC] = &sl_dp_25_no_ssc_rx_ln_vals,
 +				},
- 			},
++			},
++		},
+ 		[CLK_100_MHZ] = {
  			[TYPE_PCIE] = {
- 				[TYPE_NONE] = {
-@@ -4413,6 +4541,9 @@ static const struct cdns_torrent_data ti_j721e_map_torrent = {
- 					[EXTERNAL_SSC] = &pcie_100_no_ssc_rx_ln_vals,
- 					[INTERNAL_SSC] = &pcie_100_no_ssc_rx_ln_vals,
- 				},
-+				[TYPE_DP] = {
-+					[NO_SSC] = &pcie_100_no_ssc_rx_ln_vals,
-+				},
- 			},
- 			[TYPE_SGMII] = {
  				[TYPE_NONE] = {
 -- 
 2.26.1
