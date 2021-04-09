@@ -1,65 +1,80 @@
-Return-Path: <SRS0=ZRRf=JF=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=s7Ie=JG=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
+	URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 303CCC433B4
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Apr 2021 11:56:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A5441C433B4
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Apr 2021 01:44:34 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D07D561157
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Apr 2021 11:56:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D07D561157
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=huawei.com
+	by mail.kernel.org (Postfix) with ESMTPS id 1B46A60FE5
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Apr 2021 01:44:34 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1B46A60FE5
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=kkGTdTYv9Ov7JMaI+ZXBbLtl8ZdayizPNyC+M+kC340=; b=JfnREj08jJ0Y0cIxOAWhfMIljI
-	EA2KsA+io6ffjBkp8jvHeu8VUdmMfleZLY4rwCTyigE8kQArChlqiziii8H6H2muCOsDf380Mt1xe
-	K5RXPInuzRnfmKzg526ksyRltZ8p4/58xuLBqEtuRxM4G4Eibkb2+VDXlvTC35xbLS9OyxmYXvojt
-	Y81G94LSXh7bo8ku7y+p7pAELBQqwlVPe3GXWYuBtF1UonbxhMm01aq+ijcWsBGL3fG3JAAsyZ4ZD
-	3aHxCYttKZLNmiwtUMWdOw1IqZ+E5zWxmMPCxV9MtuRnDF6hWfWPHURx7N6aNSnLDqvkapokhkHHe
-	kr8mmjQw==;
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Date:CC:To:From:
+	Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=O5hw2ujcPoQLKe0aCqYYuMzIYPba2CV6Y4arjNNZ2QU=; b=cEN21FGDpsMfvZ4kml4kJ3N49
+	5qe+pfRQpG/+bgROV/EEZLUTIikSykU2VWC/5C9oGXg9w/sA578dm0/pc3n6OGyfk3GGmkHIwoblE
+	ELJjmkj6maSS6LZzbnu30mPOTCihN1u/ytdBgqn8C08qDrl+yzTaMJ5sjJ9265xW8e52UpjPNgECi
+	5i9HZsDjuH3hWJHBDuBCWmC4bEPaz3Cv+dJfXUI/5LUZQOEd/DqvepxTjQ+KYjY2fqWbBuJ1TrsXm
+	zntKLSk8l7isVJuB0IPDQgU9ef7DTkaY6r0fn+pEWtlsY6etffoVfw/OQEta19ocnJUY1UCUuEiqf
+	Ou/XzflRA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lUTGy-007unC-3Z; Thu, 08 Apr 2021 11:56:32 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190])
+	id 1lUgCG-009f6s-4O; Fri, 09 Apr 2021 01:44:32 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lUTGk-007ulC-HK; Thu, 08 Apr 2021 11:56:20 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by szxga04-in.huawei.com (SkyGuard) with ESMTP id 4FGKRc3Ky4z19KPl;
- Thu,  8 Apr 2021 19:54:04 +0800 (CST)
-Received: from huawei.com (10.67.174.47) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.498.0; Thu, 8 Apr 2021
- 19:56:10 +0800
-From: He Ying <heying24@huawei.com>
-To: <chunkuang.hu@kernel.org>, <p.zabel@pengutronix.de>,
- <chunfeng.yun@mediatek.com>, <kishon@ti.com>, <vkoul@kernel.org>,
- <matthias.bgg@gmail.com>
-CC: <dri-devel@lists.freedesktop.org>, <linux-arm-kernel@lists.infradead.org>, 
+ id 1lUgBw-009f2U-Ki; Fri, 09 Apr 2021 01:44:16 +0000
+X-UUID: dc2ab52bcf7c410f93e2c87cb9fe9022-20210408
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=QlQV/IjGGqn8yZBn7TzzTKt2J3XWX4ZDL0hPjNElmPk=; 
+ b=XO4qE+DO9QylqmUgxDWhuDixTsvO9ot0/QhlwC20bPZrypM/ZZcXOsSitQgMDjZQCPdbkFSI3HHtKbOV6FTlHRRpM4QGRGIYMPsyltZyUWoYo42MT4uCq66rfxS041mZW5AZAJcZJIsL/xL3cK2qBZiWuUtTT9QI5XvqiBOWpIA=;
+X-UUID: dc2ab52bcf7c410f93e2c87cb9fe9022-20210408
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1351644486; Thu, 08 Apr 2021 18:44:06 -0700
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 8 Apr 2021 18:34:04 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 9 Apr 2021 09:34:00 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 9 Apr 2021 09:34:00 +0800
+Message-ID: <1617932040.12105.11.camel@mhfsdcap03>
+Subject: Re: [PATCH v2 -next] phy: phy-mtk-hdmi: Remove redundant dev_err
+ call in mtk_hdmi_phy_probe()
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: He Ying <heying24@huawei.com>
+CC: <chunkuang.hu@kernel.org>, <p.zabel@pengutronix.de>, <kishon@ti.com>,
+ <vkoul@kernel.org>, <matthias.bgg@gmail.com>,
+ <dri-devel@lists.freedesktop.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>, <heying24@huawei.com>
-Subject: [PATCH v2 -next] phy: phy-mtk-hdmi: Remove redundant dev_err call in
- mtk_hdmi_phy_probe()
-Date: Thu, 8 Apr 2021 07:55:30 -0400
-Message-ID: <20210408115530.15673-1-heying24@huawei.com>
-X-Mailer: git-send-email 2.17.1
+ <linux-kernel@vger.kernel.org>
+Date: Fri, 9 Apr 2021 09:34:00 +0800
+In-Reply-To: <20210408115530.15673-1-heying24@huawei.com>
+References: <20210408115530.15673-1-heying24@huawei.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-Originating-IP: [10.67.174.47]
-X-CFilter-Loop: Reflected
+X-TM-SNTS-SMTP: FB4F945084C6864C1700CE1A8C0D5AD93A629F8E0CEFB464A6F6F98223C2952B2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210408_125618_926768_D2F53209 
-X-CRM114-Status: UNSURE (   8.06  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210409_024414_754777_596326C1 
+X-CRM114-Status: GOOD (  15.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,37 +91,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-There is a error message within devm_ioremap_resource
-already, so remove the dev_err call to avoid redundant
-error message.
+On Thu, 2021-04-08 at 07:55 -0400, He Ying wrote:
+> There is a error message within devm_ioremap_resource
+> already, so remove the dev_err call to avoid redundant
+> error message.
+> 
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: He Ying <heying24@huawei.com>
+> ---
+> v2:
+> - Use 'return PTR_ERR()' instead of 'ret = PTR_ERR();return ret;'.
+> 
+>  drivers/phy/mediatek/phy-mtk-hdmi.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+> index 8313bd517e4c..8ad8f717ef43 100644
+> --- a/drivers/phy/mediatek/phy-mtk-hdmi.c
+> +++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+> @@ -119,9 +119,7 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
+>  	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>  	hdmi_phy->regs = devm_ioremap_resource(dev, mem);
+>  	if (IS_ERR(hdmi_phy->regs)) {
+> -		ret = PTR_ERR(hdmi_phy->regs);
+> -		dev_err(dev, "Failed to get memory resource: %d\n", ret);
+> -		return ret;
+> +		return PTR_ERR(hdmi_phy->regs);
+>  	}
+Reviewed-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: He Ying <heying24@huawei.com>
----
-v2:
-- Use 'return PTR_ERR()' instead of 'ret = PTR_ERR();return ret;'.
-
- drivers/phy/mediatek/phy-mtk-hdmi.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
-index 8313bd517e4c..8ad8f717ef43 100644
---- a/drivers/phy/mediatek/phy-mtk-hdmi.c
-+++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
-@@ -119,9 +119,7 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
- 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	hdmi_phy->regs = devm_ioremap_resource(dev, mem);
- 	if (IS_ERR(hdmi_phy->regs)) {
--		ret = PTR_ERR(hdmi_phy->regs);
--		dev_err(dev, "Failed to get memory resource: %d\n", ret);
--		return ret;
-+		return PTR_ERR(hdmi_phy->regs);
- 	}
- 
- 	ref_clk = devm_clk_get(dev, "pll_ref");
--- 
-2.17.1
-
+Thanks a lot
+>  
+>  	ref_clk = devm_clk_get(dev, "pll_ref");
 
 -- 
 linux-phy mailing list
