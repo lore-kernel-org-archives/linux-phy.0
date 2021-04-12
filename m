@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5E36FC433ED
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 05:05:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9ECD6C433ED
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 05:05:56 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B315161209
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 05:05:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B315161209
+	by mail.kernel.org (Postfix) with ESMTPS id 43F6661206
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 05:05:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 43F6661206
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,59 +22,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kBAgeUMb2+e08tQ7H95OURo8e2p2Eo3t0AcV2lRzxps=; b=i+0F5gz3R2+6WuglbXVGTN8am
-	y3sfJH2FneK/vRwq7Fq76r5dhEqE1SnxWRvZxVEeHl8ZO4cwAwBGFWX45R9cNLuCTd97M6WW2gqL3
-	YehECgDSdoDakVgIndj0qvp/KcDZFw8FTUJzCJ3zvvJydi/tlCyEiuqtHt/KMwhbx4AMw2buFWgu1
-	AkLx3yjV9y/L5F3H5crNipDKPp5hcVnD1tCjnS24DYCnaebjjYl5hdVBv7mjkw9753kShoGKuyBtk
-	u6o47MFKMhR28WLFVnSu15wKBypDTclKna8HdjduDyWicQnttbj4FYWKb/y8xy76iqWiIrZz4VUgx
-	7IbUG/OOg==;
+	 bh=WsazjJ7n7gAf5h2OobnmtBh0GIgcTq6E3V4rOPAgXm0=; b=MRAGvqO2IA2N4M+FyDN4fBFM0
+	R2YPMa+n65DWkNmLznwFGMta+/EMil7xDdExVqlolc+hkU23zyns2pW/3SyOcODtpyrfcOm/Ku0W8
+	KDpdTLa/GpCFfxGK+4AaLfXzrd8777mYjHWwm5GaQkCzEG7VwYsjLE9cPDFS95Bb6FJF86QUQOXrJ
+	n0higQ1FdM4Bhil3P1wuku3GMjjOqNLM1CSCRVKKpY6b7H4kpZBerQSHh3NErO/uKEfWvXc+pxNGV
+	u6C1IYDVwRhvBSyEkBHhSypcP4X5tVQxUn/ZRhYyQyGdmEjsFqp03MmpD8C4kt3BV+pivl1b+wN+u
+	TavSu756A==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lVolb-005iDR-Or; Mon, 12 Apr 2021 05:05:43 +0000
+	id 1lVolm-005iF0-MH; Mon, 12 Apr 2021 05:05:54 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lVolZ-005iCy-4G
- for linux-phy@desiato.infradead.org; Mon, 12 Apr 2021 05:05:41 +0000
+ id 1lVolk-005iEm-7U
+ for linux-phy@desiato.infradead.org; Mon, 12 Apr 2021 05:05:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Transfer-Encoding
- :Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
- Sender:Reply-To:Content-ID:Content-Description;
- bh=4h69nikMAhghy52gPEhLa6uftfFEqDidDpJBra5/QyU=; b=kRM8Ci1mDOHMTyg4Gm5Afr/t4/
- n8JoMe2GXNl8HjbJ216WJGG2+ZcmTVsfoentjR4/EzYPKHJPONpJBIU0pROK+9Aw4zulrRITXx+W9
- BIlN9F4BuntoLoPVG/MJDQHZ5Bxur4yPbu/APlgnqocPeSHHVceVhxHGnnZJmsREB9StTuy2Kc1rQ
- ymNW9F+KFgL3LAz7feSoDn3NGS9pB3CFJBNTg9MdmPe1SIr5JlJfW10ToNVbRqM1EtkSe1WJtKIAA
- 7Hjd2d+bn3yUyRnp5Uy6r4I2N7+thHEPHjq26cxTDTijXNGoNql6worvzLbtxL2csbHJktybcd+5R
- y3mhEC+g==;
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=zgY+cm2rGvieRuqIOZK3vCZ+HGpuzpq6DgXDsRHk0w4=; b=DiaU2GZZV3EiB96NK/Ws+L/goF
+ EP+jyJyT2S/qJoHinHMTkUMmqoSDvFKPnWBQTBwzGewDWaGynjXwCEmKkErjMmXKLWwBXPMlQ7eMp
+ am1MShQIPSlChC7UjSeK15KTuOaZDFEOihMglrsiHYFiMav9Pn6UMYK3A4eyQMrqV0ysEO+yC7YtQ
+ 3IpSBj+3kyEvwpBqjjPxb4OSaqnj2Iq6m5Zwezd/5ZQUr/uDdP5mWan4pjAMhdK9Oqff60Ksh7nEg
+ PbHJIQaE+HgGIGu9TGZL39X+i7v/qaHfwyfw7Cvh1SOLU+bimkgtSWuVopZuhol0OClOcyNpNv5D3
+ wfpW5Arg==;
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lVolW-005sap-Pg
- for linux-phy@lists.infradead.org; Mon, 12 Apr 2021 05:05:39 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 74E2E610C8;
- Mon, 12 Apr 2021 05:05:37 +0000 (UTC)
+ id 1lVolh-005sbI-VV
+ for linux-phy@lists.infradead.org; Mon, 12 Apr 2021 05:05:51 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id B7A8B6109E;
+ Mon, 12 Apr 2021 05:05:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1618203938;
- bh=yeXv1VrFrrOxwBupLJbnw2n2xCQ5E67r16qIw0dYYSk=;
+ s=k20201202; t=1618203949;
+ bh=69ao+phJ4ZWkOF6Qux9UxXLL2zz8zJSiFyh+IT8ycxA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=u3pykSZJ5Ssw7LwCjs0/vZ8En/M3f8VQiU94Ll1EgAJuG5SWYoc6eXG+E4v+yNC+F
- YgcEBg2U8qVllVAAWtNgMa9/ZJe+uiCFoLvr3Mb6EYxEBR+ALrNU0k4TBZ4XjZ5AiK
- X88gNl4T5UZeRlECUSClEzIa9MPECviXjRCfcdeYjoi67FP8ENW95kXdHpfMNUzNjh
- cuiUUMezLB5XKsH/MfzMmN0aH3kk4/U/ReX0mTfYEJbwsp3wCTkUrwUZJlRHR40CxR
- 5ovBHDVccc3MtdJoIfvd3t7OPPnHZJxWjDG2mtq5uIUeDJI2Of/GOyTqKMnhHoM2Kw
- /ZUzLI/CNokxw==
-Date: Mon, 12 Apr 2021 10:35:34 +0530
+ b=u+p2E4uHmqxNjaNa2gdtoPZm+SNTdCBp5NFwLKlHP3p7h+mfcGY21b+q2RI7s3jeM
+ cntWgIT1rFJ8KEOOnX2QZ3uiWUfs+FCRT0Rzx3ZpbD+NXjqr/avf0y3jGszfribWKa
+ P24SzS6JUojHHzOflxRLJC2Vs6+u6SPXvJT51F+KhaKs/Ilgj7Hq2ibzM4OYNzyQKE
+ YmNLGAXefqn5kH3mIMYvXypNCp6cAlniehxOjcyN4jeFG1nOQC1QobHLzEKlK4WRCo
+ A0x5E7gQWXnLpSU36NOCpCQ6cq4CDsSGuuw0LSWkwBagz+Ngyhc9/hObs/PllVl2/D
+ /qLsHPU61EDjw==
+Date: Mon, 12 Apr 2021 10:35:45 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Shixin Liu <liushixin2@huawei.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH -next] phy: ti: j721e-wiz: Add missing include linux/slab.h
-Message-ID: <YHPVHkayrZFAsq+X@vkoul-mobl.Dlink>
-References: <20210408012829.432938-1-liushixin2@huawei.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+Cc: linux-phy@lists.infradead.org, Junlin Yang <yangjunlin@yulong.com>
+Subject: Re: [PATCH] phy: Revert "phy: ti: j721e-wiz: add missing of_node_put"
+Message-ID: <YHPVKZFRdPW5qAmP@vkoul-mobl.Dlink>
+References: <20210408062914.3813102-1-vkoul@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210408012829.432938-1-liushixin2@huawei.com>
+In-Reply-To: <20210408062914.3813102-1-vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210411_220538_874027_5F3F2978 
-X-CRM114-Status: UNSURE (   5.45  )
+X-CRM114-CacheID: sfid-20210411_220550_054670_A745D616 
+X-CRM114-Status: UNSURE (   3.26  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,28 +86,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDgtMDQtMjEsIDA5OjI4LCBTaGl4aW4gTGl1IHdyb3RlOgo+IFdoZW4gY29tcGlsaW5nIHdp
-dGggQ09ORklHX1BIWV9KNzIxRV9XSVosIEh1bGsgUm9ib3QgcmVwb3J0ZWQ6Cj4gCj4gZHJpdmVy
-cy9waHkvdGkvcGh5LWo3MjFlLXdpei5jOiBJbiBmdW5jdGlvbiDigJh3aXpfbXV4X2Nsa19yZWdp
-c3RlcuKAmToKPiBkcml2ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmM6NjU5OjE3OiBlcnJvcjog
-aW1wbGljaXQgZGVjbGFyYXRpb24gb2YgZnVuY3Rpb24g4oCYa3phbGxvY+KAmTsgZGlkIHlvdSBt
-ZWFuIOKAmHZ6YWxsb2PigJk/IFstV2Vycm9yPWltcGxpY2l0LWZ1bmN0aW9uLWRlY2xhcmF0aW9u
-XQo+ICAgNjU5IHwgIHBhcmVudF9uYW1lcyA9IGt6YWxsb2MoKHNpemVvZihjaGFyICopICogbnVt
-X3BhcmVudHMpLCBHRlBfS0VSTkVMKTsKPiAgICAgICB8ICAgICAgICAgICAgICAgICBefn5+fn5+
-Cj4gICAgICAgfCAgICAgICAgICAgICAgICAgdnphbGxvYwo+IGRyaXZlcnMvcGh5L3RpL3BoeS1q
-NzIxZS13aXouYzo2NTk6MTU6IHdhcm5pbmc6IGFzc2lnbm1lbnQgdG8g4oCYY29uc3QgY2hhciAq
-KuKAmSBmcm9tIOKAmGludOKAmSBtYWtlcyBwb2ludGVyIGZyb20gaW50ZWdlciB3aXRob3V0IGEg
-Y2FzdCBbLVdpbnQtY29udmVyc2lvbl0KPiAgIDY1OSB8ICBwYXJlbnRfbmFtZXMgPSBremFsbG9j
-KChzaXplb2YoY2hhciAqKSAqIG51bV9wYXJlbnRzKSwgR0ZQX0tFUk5FTCk7Cj4gICAgICAgfCAg
-ICAgICAgICAgICAgIF4KPiBkcml2ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmM6Njk3OjI6IGVy
-cm9yOiBpbXBsaWNpdCBkZWNsYXJhdGlvbiBvZiBmdW5jdGlvbiDigJhrZnJlZeKAmTsgZGlkIHlv
-dSBtZWFuIOKAmHZmcmVl4oCZPyBbLVdlcnJvcj1pbXBsaWNpdC1mdW5jdGlvbi1kZWNsYXJhdGlv
-bl0KPiAgIDY5NyB8ICBrZnJlZShwYXJlbnRfbmFtZXMpOwo+ICAgICAgIHwgIF5+fn5+Cj4gICAg
-ICAgfCAgdmZyZQoKQXBwbGllZCwgdGhhbmtzCgotLSAKflZpbm9kCgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 08-04-21, 11:59, Vinod Koul wrote:
+> This reverts commit 00f2e6f668b0 ("phy: ti: j721e-wiz: add missing of_node_put")
+> as it erroneously adds the of_node_put() as incorrect place.
+
+Applied, thanks
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
