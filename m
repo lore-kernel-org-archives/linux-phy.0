@@ -7,55 +7,55 @@ X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
 	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 08060C433ED
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 10:19:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DA9E8C433ED
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 10:22:44 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 544DB61353
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 10:19:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 544DB61353
+	by mail.kernel.org (Postfix) with ESMTPS id 20C2C6134F
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Apr 2021 10:22:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 20C2C6134F
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=pengutronix.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:
+	In-Reply-To:MIME-Version:Date:Message-ID:Subject:From:References:Cc:To:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0ivXyMgRb20NhMh+8zAVSt22kUHq6+qa8BG11+QfwkM=; b=gYO23xXcm2ABJ6jPLJX6iDPI4
-	ldVjaDsBofg5Lk7w6+2VEmx7iDmeKDnUxE+xIySFDSaPrFKet7usOwMjb6BquC0bFFojTlJlgHoQ4
-	kgAGpMsUuDr7IAqtJ6aUgR2gXHUjJYZMGoROYNUn2uWRuDhSdQNDOXO0Z+fUa6/SYJ+eK2JgEQyE4
-	F5sIjt+Z4rz5Qv34ySTXOA93otDTM1ElPG1uTl8E2a85DvK6h2Qi+Nz0Ufxx0d2eznpXSfbyjLxs7
-	fmxjNIRbFLXCdBiw8V5HEFl72OZuGt2Ay+hZeQtCLkwartu5r2rtx2QbZ7+yqCRQ6TKtD+nA6Pz9z
-	xHeM/eW1g==;
+	 bh=syuYwhUcSOCiDoeaQd37xJIA/c6fjTkJmlfKRKlZoAA=; b=LGz6uP5aUW1UNa0C2ht4fpMS6
+	c4Is9HVDWiuIHGYR/nGYD7+nSXI6ljg7Z6yilsXetcd0cSnPVqkXGLNO7iun/JPoNBG4PhictJtwQ
+	dXNqVjq6c8KTkwBMHt1jFRwRe44WFvu3lhfgOZoNWkmiprbyGjOWM1mB/AkiMSH9KT0RKxcqONDU7
+	i2I4gj1gEZxF7MFUkHNBXcJAHu+5cAmJR0MrrPvlWPAHoz7/mUmMTORV035RszrkvbKlpSaDXMelX
+	ontKqTmY2cknx65jL7PnJN47D0UTZAX+Rs5gT+Dw6J1HzxewOoW4NLNnPiwSZDNiGLJo5aZ4XLDYh
+	UGWDTBygQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lVtfW-006QLZ-Ly; Mon, 12 Apr 2021 10:19:46 +0000
+	id 1lVtiL-006QfG-TY; Mon, 12 Apr 2021 10:22:42 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lVtfT-006QLF-Nr
- for linux-phy@desiato.infradead.org; Mon, 12 Apr 2021 10:19:44 +0000
+ id 1lVtiK-006Qf2-2P
+ for linux-phy@desiato.infradead.org; Mon, 12 Apr 2021 10:22:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Type:In-Reply-To:MIME-Version
- :Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ :Date:Message-ID:Subject:From:References:Cc:To:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=b9uHAu6dpSQps3Obdg/OHzraLa2b8fe8E520EpPd73Y=; b=oMbd0A83DQ8Uv2FVsaxhnjAN65
- MDJf24YD/6V6Z301VCQNjlt3pWMyPmjkMZ2Qefkf52w2XiIUUbxG0QTrLuDbIFntgjA8SsYmlM3Fl
- LoArT5RfFBOmpopIy/0bys8IFbMPIh8UcFZ4qzHZpFCb3o+TkHZ54OgmYhZMeVOS33rZ78BHkRJYc
- nLvr9Vg7O/KMsfq95Qi5MXwBFWec2QQe74W3J8yUntZAEt228NNLDkqCqNUFM1Oj41fH+OZgPK7w0
- 3RMoGIdXfOB/ytYIPOeSkzBgrF+tUKHSaaE807B+LKyWpRtqXTaptZnIH2vZefleoNFRRU43tMc1A
- 986nodZQ==;
+ bh=CXy+mw5dOgkmlADEu3F8aXuYek41bUl8NQczrhSIdv8=; b=hestjFbcOokqI8V7T61zNYD2QX
+ uoz5yxZJWTcgWuYnmw0BgfzM6+ejFOib7j+MRIv7mI0OWHAUQTD/mAd5ViCNAf/eDiJim5qN4XDMv
+ jJtnMGaa5A7nxWy0g/OO5/8mrDy+Bm/Wn+OCXI8QFAIbExOAfU52i7zTSWV7QJHn++dyanguy2WS4
+ BShyNGW+Aw6bmYCZMDGv2QNlUe25SFt1Y5hf2SPpRKYs3AqxT1dYSOnCzCWQhU91KoHAwB4AYPieP
+ zDuy7kCgSgtd25oqRR/U2Y/lvaO8N5yYM0rwPbY5hjCaM2nRqzO1uwqGauNzYweOyd2tA8M8gVhke
+ ExRTaJNQ==;
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lVtfQ-0067tf-Hx
- for linux-phy@lists.infradead.org; Mon, 12 Apr 2021 10:19:42 +0000
+ id 1lVtiH-00686c-4X
+ for linux-phy@lists.infradead.org; Mon, 12 Apr 2021 10:22:38 +0000
 Received: from gallifrey.ext.pengutronix.de
  ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <mkl@pengutronix.de>)
- id 1lVtfL-0006f5-8e; Mon, 12 Apr 2021 12:19:35 +0200
+ id 1lVtiB-00079X-CW; Mon, 12 Apr 2021 12:22:31 +0200
 Received: from [IPv6:2a03:f580:87bc:d400:3d5d:9164:44d1:db57] (unknown
  [IPv6:2a03:f580:87bc:d400:3d5d:9164:44d1:db57])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
@@ -64,15 +64,13 @@ Received: from [IPv6:2a03:f580:87bc:d400:3d5d:9164:44d1:db57] (unknown
  (Client CN "mkl@blackshift.org",
  Issuer "StartCom Class 1 Client CA" (not verified))
  (Authenticated sender: mkl@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id B4AA160CD29;
- Mon, 12 Apr 2021 10:19:33 +0000 (UTC)
-Subject: Re: [PATCH 1/4] dt-bindings: phy: Add binding for TI TCAN104x CAN
- transceivers
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 41F5A60CD35;
+ Mon, 12 Apr 2021 10:22:29 +0000 (UTC)
 To: Aswath Govindraju <a-govindraju@ti.com>
 Cc: Vignesh Raghavendra <vigneshr@ti.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Chandrasekar Ramakrishnan <rcsekar@samsung.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>, Faiz Abbas
+ <faiz_abbas@ti.com>, Chandrasekar Ramakrishnan <rcsekar@samsung.com>,
  Wolfgang Grandegger <wg@grandegger.com>,
  "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -80,7 +78,7 @@ Cc: Vignesh Raghavendra <vigneshr@ti.com>,
  netdev@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20210409134056.18740-1-a-govindraju@ti.com>
- <20210409134056.18740-2-a-govindraju@ti.com>
+ <20210409134056.18740-5-a-govindraju@ti.com>
 From: Marc Kleine-Budde <mkl@pengutronix.de>
 Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
  mQINBFFVq30BEACtnSvtXHoeHJxG6nRULcvlkW6RuNwHKmrqoksispp43X8+nwqIFYgb8UaX
@@ -142,20 +140,22 @@ Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
  0yCEJ41rW/p3UpTV9wwE2VbGD1XjzVKl8SuAUfjjcGGys3yk5XQ5cccWTCwsVdo2uAcY1MVM
  HhN6YJjnMqbFoHQq0H+2YenTlTBn2Wsp8TIytE1GL6EbaPWbMh3VLRcihlMj28OUWGSERxat
  xlygDG5cBiY3snN3xJyBroh5xk/sHRgOdHpmujnFyu77y4RTZ2W8
-Message-ID: <f9b04d93-c249-970e-3721-50eb268a948f@pengutronix.de>
-Date: Mon, 12 Apr 2021 12:19:30 +0200
+Subject: Re: [PATCH 4/4] can: m_can_platform: Add support for transceiver as
+ phy
+Message-ID: <9509372e-60f1-85cf-cc22-f7c1e66ae738@pengutronix.de>
+Date: Mon, 12 Apr 2021 12:22:26 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.12.0
 MIME-Version: 1.0
-In-Reply-To: <20210409134056.18740-2-a-govindraju@ti.com>
+In-Reply-To: <20210409134056.18740-5-a-govindraju@ti.com>
 X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
 X-SA-Exim-Mail-From: mkl@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210412_031940_783372_CAF0FF6B 
-X-CRM114-Status: GOOD (  22.71  )
+X-CRM114-CacheID: sfid-20210412_032237_367972_92919462 
+X-CRM114-Status: GOOD (  28.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,124 +167,128 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1388360423411101899=="
+Content-Type: multipart/mixed; boundary="===============0487216846325315027=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============1388360423411101899==
+--===============0487216846325315027==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="VhEA5bSmRp0le01lxmGDGUi1mwFsUyVLI"
+ boundary="ZcKzB18WVh2ifi2HCVkrsNr3IzjeryztF"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---VhEA5bSmRp0le01lxmGDGUi1mwFsUyVLI
-Content-Type: multipart/mixed; boundary="OBJqPya6rP0JiPEes0P0cAigqYmJ4JKBD";
+--ZcKzB18WVh2ifi2HCVkrsNr3IzjeryztF
+Content-Type: multipart/mixed; boundary="w3ghW4tZBR23ZVBlaIWDDYVNiMsMARMjl";
  protected-headers="v1"
 From: Marc Kleine-Budde <mkl@pengutronix.de>
 To: Aswath Govindraju <a-govindraju@ti.com>
 Cc: Vignesh Raghavendra <vigneshr@ti.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Chandrasekar Ramakrishnan <rcsekar@samsung.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>, Faiz Abbas
+ <faiz_abbas@ti.com>, Chandrasekar Ramakrishnan <rcsekar@samsung.com>,
  Wolfgang Grandegger <wg@grandegger.com>,
  "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Sriram Dash <sriram.dash@samsung.com>, linux-can@vger.kernel.org,
  netdev@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Message-ID: <f9b04d93-c249-970e-3721-50eb268a948f@pengutronix.de>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: Add binding for TI TCAN104x CAN
- transceivers
+Message-ID: <9509372e-60f1-85cf-cc22-f7c1e66ae738@pengutronix.de>
+Subject: Re: [PATCH 4/4] can: m_can_platform: Add support for transceiver as
+ phy
 References: <20210409134056.18740-1-a-govindraju@ti.com>
- <20210409134056.18740-2-a-govindraju@ti.com>
-In-Reply-To: <20210409134056.18740-2-a-govindraju@ti.com>
+ <20210409134056.18740-5-a-govindraju@ti.com>
+In-Reply-To: <20210409134056.18740-5-a-govindraju@ti.com>
 
---OBJqPya6rP0JiPEes0P0cAigqYmJ4JKBD
+--w3ghW4tZBR23ZVBlaIWDDYVNiMsMARMjl
 Content-Type: text/plain; charset=utf-8
 Content-Language: de-DE
 Content-Transfer-Encoding: quoted-printable
 
 On 4/9/21 3:40 PM, Aswath Govindraju wrote:
-> Add binding documentation for TI TCAN104x CAN transceivers.
+> From: Faiz Abbas <faiz_abbas@ti.com>
 >=20
+> Add support for implementing transceiver node as phy. The max_bitrate i=
+s
+> obtained by getting a phy attribute.
+>=20
+> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
 > Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
 > ---
->  .../bindings/phy/ti,tcan104x-can.yaml         | 56 +++++++++++++++++++=
-
->  1 file changed, 56 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/ti,tcan104x-c=
-an.yaml
+>  drivers/net/can/m_can/m_can_platform.c | 25 +++++++++++++++++++++++++
+>  1 file changed, 25 insertions(+)
 >=20
-> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml=
- b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> new file mode 100644
-> index 000000000000..4abfc30a97d0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> @@ -0,0 +1,56 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/phy/ti,tcan104x-can.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: TCAN104x CAN TRANSCEIVER PHY
-> +
-> +maintainers:
-> +  - Aswath Govindraju <a-govindraju@ti.com>
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^tcan104x-phy"
-> +
-> +  compatible:
-> +    enum:
-> +      - ti,tcan1042
-> +      - ti,tcan1043
+> diff --git a/drivers/net/can/m_can/m_can_platform.c b/drivers/net/can/m=
+_can/m_can_platform.c
+> index 599de0e08cd7..4a762b5a21d8 100644
+> --- a/drivers/net/can/m_can/m_can_platform.c
+> +++ b/drivers/net/can/m_can/m_can_platform.c
+> @@ -6,6 +6,7 @@
+>  // Copyright (C) 2018-19 Texas Instruments Incorporated - http://www.t=
+i.com/
+> =20
+>  #include <linux/platform_device.h>
+> +#include <linux/phy/phy.h>
+> =20
+>  #include "m_can.h"
+> =20
+> @@ -67,7 +68,9 @@ static int m_can_plat_probe(struct platform_device *p=
+dev)
+>  	struct resource *res;
+>  	void __iomem *addr;
+>  	void __iomem *mram_addr;
+> +	struct phy *transceiver;
+>  	int irq, ret =3D 0;
+> +	u32 bitrate_max;
+> =20
+>  	mcan_class =3D m_can_class_allocate_dev(&pdev->dev,
+>  					      sizeof(struct m_can_plat_priv));
+> @@ -101,6 +104,28 @@ static int m_can_plat_probe(struct platform_device=
+ *pdev)
+>  		goto probe_fail;
+>  	}
+> =20
+> +	transceiver =3D devm_phy_optional_get(&pdev->dev, "can_transceiver");=
 
-Can you create a generic standby only and a generic standby and enable tr=
-ansceiver?
+> +	if (IS_ERR(transceiver)) {
+> +		ret =3D PTR_ERR(transceiver);
+> +		dev_err(&pdev->dev, "error while getting phy, err=3D%d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	if (!transceiver) {
+> +		dev_warn(&pdev->dev, "No transceiver phy found\n");
 
+I think that's a bit to loud.
+
+> +	} else {
+> +		ret =3D phy_power_on(transceiver);
+
+Please move the phy power on/off to the ndo_open and ndo_stop callbacks. =
+There's
+no need to power the transceivers if the CAN interface is down.
+
+> +		if (ret) {
+> +			dev_err(&pdev->dev, "error powering on phy, err=3D%d\n", ret);
+> +			return ret;
+> +		}
+> +		/* converting from Mbps to bps */
+> +		bitrate_max =3D (transceiver->attrs.max_link_rate) * 1000000;
+> +		if (!bitrate_max)
+> +			dev_warn(&pdev->dev, "Invalid value for transceiver max bitrate. Ig=
+noring bitrate limit\n");
+
+Please move this check to the generic transcevier code.
+
+> +		priv->cdev.can.bitrate_max =3D bitrate_max;
+> +	}
 > +
-> +  '#phy-cells':
-> +    const: 0
-> +
-> +  standby-gpios:
-> +    description:
-> +      gpio node to toggle standby signal on transceiver
-> +    maxItems: 1
-> +
-> +  enable-gpios:
-> +    description:
-> +      gpio node to toggle enable signal on transceiver
-> +    maxItems: 1
-> +
-> +  max-bitrate:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      max bit rate supported in bps
-> +    minimum: 1
-> +
-> +required:
-> +  - compatible
-> +  - '#phy-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +
-> +    transceiver1: tcan104x-phy {
-> +      compatible =3D "ti,tcan1043";
-> +      #phy-cells =3D <0>;
-> +      max-bitrate =3D <5000000>;
-> +      standby-gpios =3D <&wakeup_gpio1 16 GPIO_ACTIVE_LOW>;
-> +      enable-gpios =3D <&main_gpio1 67 GPIO_ACTIVE_LOW>;
-> +    };
+>  	priv->base =3D addr;
+>  	priv->mram_base =3D mram_addr;
+> =20
 >=20
 
+Marc
 
 --=20
 Pengutronix e.K.                 | Marc Kleine-Budde           |
@@ -293,29 +297,29 @@ Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
 Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
 
---OBJqPya6rP0JiPEes0P0cAigqYmJ4JKBD--
+--w3ghW4tZBR23ZVBlaIWDDYVNiMsMARMjl--
 
---VhEA5bSmRp0le01lxmGDGUi1mwFsUyVLI
+--ZcKzB18WVh2ifi2HCVkrsNr3IzjeryztF
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEK3kIWJt9yTYMP3ehqclaivrt76kFAmB0HrIACgkQqclaivrt
-76kFEQgApcgvgOMunfGzxg5TYvbHfm6xhq4oSooWtRlbdbfr9Pd5rJT8lMv0E+Jv
-KXZj2V2AxK9V+iyzYE3XJYTqFWb7moFrStLJYwG1fyH7X2l8p5qms1tACJkbBwRa
-DUwKBUqGBfwhaAZGvciu0h+80O4v4gnSgB0GxaswBfLb5sm0wfJESKlIe1LkMPHS
-k+xd5pNJ93UM+uKJMm6sWZkdLywD2RphutjSYazIIR4AEeL8uw3Zyps6mMOcBh4W
-lfK0mAHfmWkrbl/INC92cUQI3Q2kwdA6CFfMCS9X3N6FiiTxD+xpNk8u9n3/rRCJ
-J6t3a/KN1QvASuWkvC8+Q9HyVwHfgw==
-=ZIEz
+iQEzBAEBCgAdFiEEK3kIWJt9yTYMP3ehqclaivrt76kFAmB0H2IACgkQqclaivrt
+76n6egf/eFsUSJiwBzgGg9LfFL04wB2B4YGhHoQGhX7uRj2QNAsq9btgslMVHJnd
+eHvdoYrB733sOkKSg/p0SBxuKRD3vca8aY44UNwdT+AnX3AyoelH2i7iXJofhy8c
+0McPKTY/uz/PQNvMzu1GyIoeF4cpYUwVnF9H3KEC/voONaDi8XHNoU6g7RP3uwSp
+9Nh/9QjXxHIa8OUkhW4Ymp/qk/NkA5l6zPDLMmMFu56u3q/bg00CMC0wVPpyL/nm
+7mkRiVt3fRYoqv+IqXSAs/M464fY0Np3+Gsd+PNP5nG/JAPLGTC8autLogS4XDaj
+kwq7/dF9WbHw0yssLda0q2EXtQRQvQ==
+=ZP+A
 -----END PGP SIGNATURE-----
 
---VhEA5bSmRp0le01lxmGDGUi1mwFsUyVLI--
+--ZcKzB18WVh2ifi2HCVkrsNr3IzjeryztF--
 
 
---===============1388360423411101899==
+--===============0487216846325315027==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -326,5 +330,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============1388360423411101899==--
+--===============0487216846325315027==--
 
