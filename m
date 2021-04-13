@@ -2,103 +2,104 @@ Return-Path: <SRS0=GU22=JK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 556B0C433B4
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Apr 2021 13:18:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2DE95C433B4
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Apr 2021 14:32:36 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D20FA613AE
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Apr 2021 13:18:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D20FA613AE
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 9C052613AB
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Apr 2021 14:32:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9C052613AB
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
+	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZOs4inJyjCS1jTgY+NJ4U/wRAf+Er4NZTwfTl67x9wQ=; b=j6kyWeGoFNaDXF0sTSIgoZu00
-	lKjLmjoAECVfr1cepdXAJTy/y0N33dzIP9n5AOWQ6AiEzUkA19PbDT4qj7pe1kuTUO9JTzKrRQ0K9
-	/zO8CH/eowvi67eZF/hm4ZDwp9ByrmMWbU4QNre+IsNe0FkIWbsesCAKV8/3M03HUsWDmCHFE1CH+
-	zMQmR+2Ekz9wHpoPuO5Vdi5rKs+T+lyhzC/agnBs/xpxpdZB6S6R99v7snLabKRV2o4uyll6XzRWY
-	H8jYsygE/NuLJtcIy+9asXgVAlc/RxFer2h0b/YtPApwmUNrRjmftKissKWvb78XJnXBfsApPJOWk
-	9Tn1y4agg==;
+	 bh=BIGTLditrrM2SrnbF6SDlU0FoQ5ZS/Rp+jnYLdhzmRw=; b=DWePzZqBHyidp0+b2Q0n1iPcJ
+	BRzv2H0tqsTsDqy8b4Sg1CMrabGoR+nidvBwYFYM94/52pstVp/ZqugGuS+BASV6JNyUTlTiGZ+RI
+	FWZCt0F+SjGBkrvOIHmO0fhK7o4nCm68j5Mf8FwLTLrXteDUinmy6r6glqkumRIOmCF/riWUp06us
+	hNp5szkGexHSM5OQB8MnhX/NY+Yz4+ITF0qWisxppbHzQAP7RYujVW5YMrmWhfwmjimP1mSyilktJ
+	4O6+7tlM9845x4RqPNUSay+yaav3UxXQqWlL4JOWArPffp5Ethp+utxjoSsoRXKSbA1EWmumjxcMe
+	9Lal6DOvg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lWIvW-009LmF-0O; Tue, 13 Apr 2021 13:17:58 +0000
+	id 1lWK5h-009WBI-TE; Tue, 13 Apr 2021 14:32:33 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lWItE-009LWz-KG
- for linux-phy@desiato.infradead.org; Tue, 13 Apr 2021 13:15:51 +0000
+ id 1lWK5f-009WAQ-Sz; Tue, 13 Apr 2021 14:32:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:Cc:To:Subject:Message-ID
- :Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ d=infradead.org; s=bombadil.20210309; h=Content-Type:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=2diZWBcd1URd5GoR8BcQqj+ayxNThTky2oELI+7zA1Q=; b=SZQinybfBw4jGJlF7gVqWfIU1M
- ZCd1sN0/9oCIPhe6ZV9AIYsBhdqDteZqugTe26YSDdiJAwwMPbEzQmSfnlpBveNHDkjJxgUcu5drg
- tggMeOuToeZ/1bCyvBkc5X4OCSSQ5Kc8kMpSlfElz7RhFKN0qMDF7uhzD7t1bMU8qCx2pFU7NRTZK
- 5GU79GI8Qk41VZf4xRip/ErNGBoOETrQTymIqGqUDWEJa3WJye8LLmQjCbPjvNhwAhGjpE+gJrFwX
- 2zUN59hfjBAzGH6Bb/7u3/WC8pj8e0dP0YTK601JY+APFE0By0w11bzvhhmzouMTKSf7kAlVzJ874
- Y4O4eVhg==;
-Received: from mail.kernel.org ([198.145.29.99])
+ bh=pjdn0iPLZsVnMrs5LhG4TkO0pVvE9Vj+yQMAhrHcFD4=; b=l3yLlTFKMiZoaCjkTfJ8FX1GCt
+ Sd8YvBwxleyf0eTrR4upkBjtzudwWU4+ZjonO0BgMXnF36p7Nel/LHVI+vmOuomV7V9La+xpAXz3d
+ OPXQdPdiKHg4CeURVwhA+eFicoAub/Pn8ss2veCHd6/FZJxOgUBHb8RBiAGdWAKP5fWyuHjYcbb+k
+ 3LnnjWiIPzNTdmMoZGFhN48uTbsxNxUeLIi3jlT162kWyaYQW7JccVzzo7DVV5mzG5FM3BklqziA0
+ Es2+VWpL/y3yC0TwxEOB6Rq9QzohOABO04s6UWAVA6NvzOuGXP8m1SrENGToGqwO+vKlR90QdBVcO
+ R2SFrZ1A==;
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lWItB-0073Jc-Mq
- for linux-phy@lists.infradead.org; Tue, 13 Apr 2021 13:15:35 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 9EED3613B2
- for <linux-phy@lists.infradead.org>; Tue, 13 Apr 2021 13:15:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1618319732;
- bh=hntf3n54qqh0uXzZ6D8tUaPqStMPIr+/hNfZoDniY4A=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=pFpwLvstWECXqVpOgyrkrKmlfsQ28mBYBwtR2o1zDIZNTN3s1OyR8ka9IMQF3ifAE
- apbS1JSkX1Thm0Dz70rv4l+fRx8vcuF9w7H0zOOqpejghSANJvWB7UO37TuxD0SsPE
- tPNQd5x1e3XOL1g/hzXjXdaL4D/pRLipUmK6nOWDyro+mXVGfwYFTYKNilgerKm4ss
- VbyvwloBimOPyZejVrnXMy5SwDPYjcGpLt7in7dRz23norkDFszPBjq6XLp2scE4Ss
- IpeYXQTzhOEVZSa4EnQ+y8p0vmIN3KT0xqanjCYFh1IMn2jykf6CATmG4DFSpIF8+T
- 9Z6LYAE7/ltbQ==
-Received: by mail-ej1-f47.google.com with SMTP id v6so24572555ejo.6
- for <linux-phy@lists.infradead.org>; Tue, 13 Apr 2021 06:15:32 -0700 (PDT)
-X-Gm-Message-State: AOAM530ZcsWOryMqKJ5p/rW9pxC6kK0nknToRudXhXvfrD5eO/xIsjtD
- kQM533VdVWi++B7e4AIJP7pTTBgFdmupc1A+6Q==
-X-Google-Smtp-Source: ABdhPJzC/tge5Y9i/M8U9jxXXMaHumRpj2qoNI/uM/HWkeG+5F6Zoeof4s70jO3VjFJc52wf9aBwCKB/22YZrMkMMhQ=
-X-Received: by 2002:a17:907:367:: with SMTP id
- rs7mr18299959ejb.468.1618319731269; 
- Tue, 13 Apr 2021 06:15:31 -0700 (PDT)
+ id 1lWK5c-0076bu-BZ; Tue, 13 Apr 2021 14:32:30 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
+ 13DENfbF013334; Tue, 13 Apr 2021 16:32:17 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=selector1;
+ bh=pjdn0iPLZsVnMrs5LhG4TkO0pVvE9Vj+yQMAhrHcFD4=;
+ b=D8o3fopuhzzacBsQEBYvQTpOZjtYCfs7A40Lsqg9qTYRetxwbeP/tRK0uiwTIZAGiq2o
+ mQG1SsVSv8VtLnkzeKPgCENWi3Og7b7XYsROd9NE9KMszI2bnrT9p9XnvUJgphP85hIv
+ 3Yi0QnniZOhG8ctweBUAdvSP0xb3u4ObVFxEhT4ltCMrFIWtARaQewhdMyR2gJDRB9/6
+ jYXzjZ/qUzzRbHycYtQg/mRm2bTl8nkRaldDmv++l2UxpukU3wGWDhVaqj92EWba2M/9
+ TQq1o9qmJjRtFBbeGUm1CXXgChJI7nBaV8/5oN3BlVuXnUF2o/nWR4Jj/g8K+cSG/s92 ow== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 37vu4e5b92-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 13 Apr 2021 16:32:17 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 32EE5100038;
+ Tue, 13 Apr 2021 16:32:17 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag2node3.st.com [10.75.127.6])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 23D87246F3E;
+ Tue, 13 Apr 2021 16:32:17 +0200 (CEST)
+Received: from localhost (10.75.127.46) by SFHDAG2NODE3.st.com (10.75.127.6)
+ with Microsoft SMTP Server (TLS) id 15.0.1497.2; Tue, 13 Apr 2021 16:32:16
+ +0200
+From: Amelie Delaunay <amelie.delaunay@foss.st.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
+ <amelie.delaunay@foss.st.com>
+Subject: [PATCH v2 2/2] phy: stm32: manage optional vbus regulator on
+ phy_power_on/off
+Date: Tue, 13 Apr 2021 16:31:41 +0200
+Message-ID: <20210413143141.12919-3-amelie.delaunay@foss.st.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20210413143141.12919-1-amelie.delaunay@foss.st.com>
+References: <20210413143141.12919-1-amelie.delaunay@foss.st.com>
 MIME-Version: 1.0
-References: <20210409134056.18740-1-a-govindraju@ti.com>
- <20210409134056.18740-2-a-govindraju@ti.com>
- <f9b04d93-c249-970e-3721-50eb268a948f@pengutronix.de>
- <20210412174956.GA4049952@robh.at.kernel.org>
- <20210413074106.gvgtjkofyrdp5yxt@pengutronix.de>
-In-Reply-To: <20210413074106.gvgtjkofyrdp5yxt@pengutronix.de>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 13 Apr 2021 08:15:18 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+yEQGuZYWhsQ-we36_Xi5X94YJ23oFe-T6h4U4X6iUhg@mail.gmail.com>
-Message-ID: <CAL_Jsq+yEQGuZYWhsQ-we36_Xi5X94YJ23oFe-T6h4U4X6iUhg@mail.gmail.com>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: Add binding for TI TCAN104x CAN
- transceivers
-To: Marc Kleine-Budde <mkl@pengutronix.de>
-Cc: Aswath Govindraju <a-govindraju@ti.com>,
- Vignesh Raghavendra <vigneshr@ti.com>, 
- Kishon Vijay Abraham I <kishon@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>, 
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Chandrasekar Ramakrishnan <rcsekar@samsung.com>, 
- Wolfgang Grandegger <wg@grandegger.com>,
- "David S. Miller" <davem@davemloft.net>, 
- Jakub Kicinski <kuba@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- linux-can@vger.kernel.org, 
- netdev <netdev@vger.kernel.org>, devicetree@vger.kernel.org, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-phy@lists.infradead.org
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG2NODE3.st.com
+ (10.75.127.6)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.391, 18.0.761
+ definitions=2021-04-13_08:2021-04-13,
+ 2021-04-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210413_061533_822799_DA04B1AD 
-X-CRM114-Status: GOOD (  24.15  )
+X-CRM114-CacheID: sfid-20210413_073228_696599_998BBF51 
+X-CRM114-Status: GOOD (  18.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,91 +116,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 13, 2021 at 2:41 AM Marc Kleine-Budde <mkl@pengutronix.de> wrote:
->
-> On 12.04.2021 12:49:56, Rob Herring wrote:
-> > On Mon, Apr 12, 2021 at 12:19:30PM +0200, Marc Kleine-Budde wrote:
-> > > On 4/9/21 3:40 PM, Aswath Govindraju wrote:
-> > > > Add binding documentation for TI TCAN104x CAN transceivers.
-> > > >
-> > > > Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
-> > > > ---
-> > > >  .../bindings/phy/ti,tcan104x-can.yaml         | 56 +++++++++++++++++++
-> > > >  1 file changed, 56 insertions(+)
-> > > >  create mode 100644 Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > >
-> > > > diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > new file mode 100644
-> > > > index 000000000000..4abfc30a97d0
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > @@ -0,0 +1,56 @@
-> > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id: "http://devicetree.org/schemas/phy/ti,tcan104x-can.yaml#"
-> > > > +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> > > > +
-> > > > +title: TCAN104x CAN TRANSCEIVER PHY
-> > > > +
-> > > > +maintainers:
-> > > > +  - Aswath Govindraju <a-govindraju@ti.com>
-> > > > +
-> > > > +properties:
-> > > > +  $nodename:
-> > > > +    pattern: "^tcan104x-phy"
-> > > > +
-> > > > +  compatible:
-> > > > +    enum:
-> > > > +      - ti,tcan1042
-> > > > +      - ti,tcan1043
-> > >
-> > > Can you create a generic standby only and a generic standby and enable transceiver?
-> >
-> > As a fallback compatible fine, but no generic binding please. A generic
-> > binding can't describe any timing requirements between the 2 GPIO as
-> > well as supplies when someone wants to add those (and they will).
->
-> Right - that makes sense.
->
-> > > > +
-> > > > +  '#phy-cells':
-> > > > +    const: 0
-> > > > +
-> > > > +  standby-gpios:
-> > > > +    description:
-> > > > +      gpio node to toggle standby signal on transceiver
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  enable-gpios:
-> > > > +    description:
-> > > > +      gpio node to toggle enable signal on transceiver
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  max-bitrate:
-> > > > +    $ref: /schemas/types.yaml#/definitions/uint32
-> > > > +    description:
-> > > > +      max bit rate supported in bps
-> >
-> > We already have 'max-speed' for serial devices, use that.
->
-> There is already the neither Ethernet PHY (PHYLINK/PHYLIB) nor generic
-> PHY (GENERIC_PHY) can-transceiver binding
-> Documentation/devicetree/bindings/net/can/can-transceiver.yaml which
-> specifies max-bitrate. I don't have strong feelings whether to use
-> max-bitrate or max-speed.
+This patch adds support for optional vbus regulator.
+It is managed on phy_power_on/off calls and may be needed for host mode.
 
-Okay, max-bitrate is fine.
+Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
+---
+No changes in v2.
+---
+ drivers/phy/st/phy-stm32-usbphyc.c | 31 ++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
->
-> Speaking about Ethernet PHYs, what are to pros and cons to use the
-> generic PHY compared to the Ethernet PHY infrastructure?
+diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
+index c184f4e34584..3e491dfb2525 100644
+--- a/drivers/phy/st/phy-stm32-usbphyc.c
++++ b/drivers/phy/st/phy-stm32-usbphyc.c
+@@ -57,6 +57,7 @@ struct pll_params {
+ struct stm32_usbphyc_phy {
+ 	struct phy *phy;
+ 	struct stm32_usbphyc *usbphyc;
++	struct regulator *vbus;
+ 	u32 index;
+ 	bool active;
+ };
+@@ -291,9 +292,31 @@ static int stm32_usbphyc_phy_exit(struct phy *phy)
+ 	return stm32_usbphyc_pll_disable(usbphyc);
+ }
+ 
++static int stm32_usbphyc_phy_power_on(struct phy *phy)
++{
++	struct stm32_usbphyc_phy *usbphyc_phy = phy_get_drvdata(phy);
++
++	if (usbphyc_phy->vbus)
++		return regulator_enable(usbphyc_phy->vbus);
++
++	return 0;
++}
++
++static int stm32_usbphyc_phy_power_off(struct phy *phy)
++{
++	struct stm32_usbphyc_phy *usbphyc_phy = phy_get_drvdata(phy);
++
++	if (usbphyc_phy->vbus)
++		return regulator_disable(usbphyc_phy->vbus);
++
++	return 0;
++}
++
+ static const struct phy_ops stm32_usbphyc_phy_ops = {
+ 	.init = stm32_usbphyc_phy_init,
+ 	.exit = stm32_usbphyc_phy_exit,
++	.power_on = stm32_usbphyc_phy_power_on,
++	.power_off = stm32_usbphyc_phy_power_off,
+ 	.owner = THIS_MODULE,
+ };
+ 
+@@ -519,6 +542,14 @@ static int stm32_usbphyc_probe(struct platform_device *pdev)
+ 		usbphyc->phys[port]->index = index;
+ 		usbphyc->phys[port]->active = false;
+ 
++		usbphyc->phys[port]->vbus = devm_regulator_get_optional(&phy->dev, "vbus");
++		if (IS_ERR(usbphyc->phys[port]->vbus)) {
++			ret = PTR_ERR(usbphyc->phys[port]->vbus);
++			if (ret == -EPROBE_DEFER)
++				goto put_child;
++			usbphyc->phys[port]->vbus = NULL;
++		}
++
+ 		port++;
+ 	}
+ 
+-- 
+2.17.1
 
-For higher speed ethernet, both are used. There's the serdes phy and
-the ethernet phy with serdes phy using the generic phy binding. For
-CAN, it probably comes down to what's a better fit.
-
-Rob
 
 -- 
 linux-phy mailing list
