@@ -1,104 +1,109 @@
-Return-Path: <SRS0=GU22=JK=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=pdUw=JL=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2B632C43460
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Apr 2021 14:32:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9C5F6C433ED
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Apr 2021 06:25:07 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id A89EA613AE
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Apr 2021 14:32:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A89EA613AE
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
+	by mail.kernel.org (Postfix) with ESMTPS id 16F3C611EE
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Apr 2021 06:25:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 16F3C611EE
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:Date:
-	Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:CC:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cyHVImd70TI6XtHHPacGVe7KswKeML0J79fObtrmt18=; b=eV/8PD7vDazx2FkZFppHxyvGZ
-	4g/FcmNxlWEpAc0KAAshTZsft3eDU65ac/HchLLAEA5Pe9wzKdzx7e8z34tJMENsyIxj3o9aSUPqo
-	6eMNxPJQYs7x5ED/yuaMb77rFOwh+0w74/lp2271yNK2FTFU0okHeazm4aeLl1oghgAHqsrnbm59J
-	2G/6vLkZxyHGmwYM3Hr0+3rQIzzsGboUapscyqkIO/9tRDfKGxeDzCPvjjW3EEAKpT+49z8/tk90k
-	W5sO75sVDUJjjfoj/iFoifyLIBDOQW+4NBVe5O+8z629x67X+ZuvOcqNGjSATpfIO0bbE/POeYV6v
-	NmycdlZ8w==;
+	 bh=9RErLCr92NOmGVLccCIMmfPDBNHpSzanF3DrRM2AJrk=; b=oTZYA6Oy9dlRNHTXuXNX/kNDM
+	ghhiQTekX/vu1ysqlHqMszuS58SV2xwO25MHzfd/Q2mf2riOv40TVUF2u7J+RVSjPaR/J8gYevAko
+	PnX5b4DHOIVbLxyKJSlo4V0UOlPHSZDDUy/Mm9AxWZwb5iPnoRCXm4WZqwrgAYTGofoBIhndQZWcP
+	MnJJktO26rj5lHh+UcbH4kadvAYhCA7ubrQZ0yFqus/PqUs9tIR3A15XQLpsDUlVfCCpfMY2HjCY1
+	f84pxs8BDTh6lDDPrBuNaKfns0dMkW24lujY3XJHC9tTRrC3nR2i9QneHZmT0xlfmjm/sMiC0HoXw
+	EOD2vGzag==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lWK63-009WCo-PX; Tue, 13 Apr 2021 14:32:56 +0000
+	id 1lWYxU-00Bfrk-Kr; Wed, 14 Apr 2021 06:25:04 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lWK5g-009WAk-BR; Tue, 13 Apr 2021 14:32:32 +0000
+ id 1lWYxL-00Bfp8-OE
+ for linux-phy@desiato.infradead.org; Wed, 14 Apr 2021 06:24:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:MIME-Version:References:
- In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=6iYZAF1/Vkdy0FjL5VVkFCS8auvkDLWr+RYeFeOCiXE=; b=Yf19T5Ify56ak0zQarLyTna8kf
- cTPtk22I0n07YhkRAvRu7QbWUx8Ll/VgJ5jaDe7fRXqtVkTQAHwILV1Ei/3pRf4M/mE9VyYFpktiN
- PhaFqoD/mU95GHUqGM0Y2vJKixO7xtdzgkN/ErycRPJdoLI5FkEUV+rTCnpOHzpNjiNJ8EjWehBt7
- NVCg+kurBy734lELgd8u68HiBJVVXTGPa9u5Xe66RD+qlD+wuClU3iOvbyILO7NrfhUIrv8KI0f45
- f29ww2nx+PMdIVAJK4yoqQRkCCIn895rbxhxh5iFatYVy5PtufEJGP/Qckk58fdxAu3sQOO4TH8F+
- n0vfGpeg==;
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+ d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
+ Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:CC:To:
+ Subject:Sender:Reply-To:Content-ID:Content-Description;
+ bh=Tatg9a6e94y6CMD2F/1h6q8KcihISkNKSKxCVmDchLg=; b=fHhxqntngstygWohCVSmXs4svK
+ /+r8KyHQkMOmxT+S5NkzMSuGKe2g/6o8/idVpnfNI0RvQDPWqeBnCDpwoeeBI1nFk9UL0dOfB3kGG
+ QpEXURarcIOSIlHeePF1tnICHUMBnvhlFYGW7QiKPuyiQyz7qo158dvHBLB3L4px5t+T+E1E8BTsn
+ R9QTbQogOfwGPHYgRKJvK9ua1DWjjzoUphocRxqtaXm0altiXn+KVCo0jLhTfq0ieC6WIVfwBc2/h
+ jjl03loldI2pkt6dqOWgheErm52OzT4qUxVx/1gklEdts4yTvRW8RjDAejxGJJC2zKOq4W9KECHn9
+ e315Lz2A==;
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lWK5c-0076c0-HT; Tue, 13 Apr 2021 14:32:31 +0000
-Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 13DEWM2J010080; Tue, 13 Apr 2021 16:32:22 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=selector1;
- bh=6iYZAF1/Vkdy0FjL5VVkFCS8auvkDLWr+RYeFeOCiXE=;
- b=j8FYMo56x90Zcosuc6Ro8E1d7ChzXvz0xjd4XzM2ns3qPeYKqjVeLUaca/QXC8hcqo+k
- Y8ttq5v6dIpzxp2Hqu6moTU3AdDccNUOij7TJfUwUP8tebIVjRbS2so6dtcIiV1e5upT
- 8PCnIpigGvkcCstA+uOczXHRKWFKUygzygDT//AMDX7RXPnyjUYACEYI0W0DhHH0NpTu
- v6rQUFJD4h4BCXhFW74z5hd0G63BGQUK8zjWWI+dZFdu+akJqIaxeSHD2toFYmpmCiFD
- R50UCb7neqGdxdo7w6iZO/5YKji3AoNIrsqtDr1RNbmkBGdvRZNPJIk8eDOwo64BTG8V Pw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 37vrp5e7eq-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 13 Apr 2021 16:32:22 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 292B510002A;
- Tue, 13 Apr 2021 16:32:16 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag2node3.st.com [10.75.127.6])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 19702246F3E;
- Tue, 13 Apr 2021 16:32:16 +0200 (CEST)
-Received: from localhost (10.75.127.45) by SFHDAG2NODE3.st.com (10.75.127.6)
- with Microsoft SMTP Server (TLS) id 15.0.1497.2; Tue, 13 Apr 2021 16:32:15
- +0200
-From: Amelie Delaunay <amelie.delaunay@foss.st.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Alexandre Torgue
- <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
- <amelie.delaunay@foss.st.com>
-Subject: [PATCH v2 1/2] dt-bindings: phy: add vbus-supply optional property to
- phy-stm32-usbphyc
-Date: Tue, 13 Apr 2021 16:31:40 +0200
-Message-ID: <20210413143141.12919-2-amelie.delaunay@foss.st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20210413143141.12919-1-amelie.delaunay@foss.st.com>
-References: <20210413143141.12919-1-amelie.delaunay@foss.st.com>
+ id 1lWYxI-007Wnu-9q
+ for linux-phy@lists.infradead.org; Wed, 14 Apr 2021 06:24:54 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 13E6OgMg087065;
+ Wed, 14 Apr 2021 01:24:42 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1618381482;
+ bh=Tatg9a6e94y6CMD2F/1h6q8KcihISkNKSKxCVmDchLg=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=POFmz0mINczFqTmRV4tMH4wqLntuBNuF7Ziamx3V0VWlQyvjPGVjC4DTuCSSfFyv/
+ JVlWXxsGi8rvC/p5ZaS3B3uDydfg0V1D0WmXNz+pz8n7wceB9lZFd6hV2eOoXO/+yp
+ axzDhfIOSxbf8j6rhpC8WgRSgO59dNtlZxbFjnSA=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 13E6OgW4109341
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 14 Apr 2021 01:24:42 -0500
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Wed, 14
+ Apr 2021 01:24:42 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
+ Frontend Transport; Wed, 14 Apr 2021 01:24:42 -0500
+Received: from [172.24.145.148] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 13E6Oa7I097401;
+ Wed, 14 Apr 2021 01:24:37 -0500
+Subject: Re: [PATCH 2/4] phy: phy-can-transceiver: Add support for generic CAN
+ transceiver driver
+To: Marc Kleine-Budde <mkl@pengutronix.de>
+CC: Vignesh Raghavendra <vigneshr@ti.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>, Grygorii Strashko
+ <grygorii.strashko@ti.com>,
+ Chandrasekar Ramakrishnan <rcsekar@samsung.com>,
+ Wolfgang Grandegger <wg@grandegger.com>, "David S. Miller"
+ <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, Sriram Dash
+ <sriram.dash@samsung.com>,
+ <linux-can@vger.kernel.org>, <netdev@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>
+References: <20210409134056.18740-1-a-govindraju@ti.com>
+ <20210409134056.18740-3-a-govindraju@ti.com>
+ <fe0a8a9b-35c6-8f23-5968-0b14abb6078d@pengutronix.de>
+From: Aswath Govindraju <a-govindraju@ti.com>
+Message-ID: <a7c72056-8d3d-f9ba-b8f0-868a4926a7d6@ti.com>
+Date: Wed, 14 Apr 2021 11:54:36 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.10.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG2NODE3.st.com
- (10.75.127.6)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.391, 18.0.761
- definitions=2021-04-13_08:2021-04-13,
- 2021-04-13 signatures=0
+In-Reply-To: <fe0a8a9b-35c6-8f23-5968-0b14abb6078d@pengutronix.de>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210413_073228_896759_FFC871F7 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20210413_232452_490471_AD18AF67 
+X-CRM114-Status: GOOD (  34.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,49 +120,262 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch adds vbus-supply optional property to phy sub-nodes using
-connector node.
-A regulator for USB VBUS may be needed for host mode.
+Hi Marc,
 
-Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
----
-Changes in v2:
-- add connector vbus-supply property as suggested by Rob
----
- .../devicetree/bindings/phy/phy-stm32-usbphyc.yaml    | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+On 12/04/21 3:48 pm, Marc Kleine-Budde wrote:
+> On 4/9/21 3:40 PM, Aswath Govindraju wrote:
+>> The driver adds support for generic CAN transceivers. Currently
+>> the modes supported by this driver are standby and normal modes for TI
+>> TCAN1042 and TCAN1043 CAN transceivers.
+>>
+>> The transceiver is modelled as a phy with pins controlled by gpios, to put
+>> the transceiver in various device functional modes. It also gets the phy
+>> attribute max_link_rate for the usage of m_can drivers.
+> 
+> This driver should be independent of CAN driver, so you should not mention a
+> specific driver here.
+> 
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml b/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
-index 018cc1246ee1..3329f1d33a4f 100644
---- a/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
-+++ b/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
-@@ -74,6 +74,13 @@ patternProperties:
-       "#phy-cells":
-         enum: [ 0x0, 0x1 ]
- 
-+      connector:
-+        type: object
-+        allOf:
-+          - $ref: ../connector/usb-connector.yaml
-+        properties:
-+          vbus-supply: true
-+
-     allOf:
-       - if:
-           properties:
-@@ -130,6 +137,10 @@ examples:
-             reg = <0>;
-             phy-supply = <&vdd_usb>;
-             #phy-cells = <0>;
-+            connector {
-+                compatible = "usb-a-connector";
-+                vbus-supply = <&vbus_sw>;
-+            };
-         };
- 
-         usbphyc_port1: usb-phy@1 {
--- 
-2.17.1
+I will substitute m_can with can in the respin.
+
+>> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+>> ---
+>>  drivers/phy/Kconfig               |   9 ++
+>>  drivers/phy/Makefile              |   1 +
+>>  drivers/phy/phy-can-transceiver.c | 140 ++++++++++++++++++++++++++++++
+>>  3 files changed, 150 insertions(+)
+>>  create mode 100644 drivers/phy/phy-can-transceiver.c
+>>
+>> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+>> index 54c1f2f0985f..51902b629fc6 100644
+>> --- a/drivers/phy/Kconfig
+>> +++ b/drivers/phy/Kconfig
+>> @@ -61,6 +61,15 @@ config USB_LGM_PHY
+>>  	  interface to interact with USB GEN-II and USB 3.x PHY that is part
+>>  	  of the Intel network SOC.
+>>  
+>> +config PHY_CAN_TRANSCEIVER
+>> +	tristate "CAN transceiver PHY"
+>> +	select GENERIC_PHY
+>> +	help
+>> +	  This option enables support for CAN transceivers as a PHY. This
+>> +	  driver provides function for putting the transceivers in various
+>> +	  functional modes using gpios and sets the attribute max link
+>> +	  rate, for mcan drivers.
+>> +
+>>  source "drivers/phy/allwinner/Kconfig"
+>>  source "drivers/phy/amlogic/Kconfig"
+>>  source "drivers/phy/broadcom/Kconfig"
+>> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+>> index adac1b1a39d1..9c66101c9605 100644
+>> --- a/drivers/phy/Makefile
+>> +++ b/drivers/phy/Makefile
+>> @@ -9,6 +9,7 @@ obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
+>>  obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
+>>  obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
+>>  obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
+>> +obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+= phy-can-transceiver.o
+>>  obj-y					+= allwinner/	\
+>>  					   amlogic/	\
+>>  					   broadcom/	\
+>> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+>> new file mode 100644
+>> index 000000000000..14496f6e1666
+>> --- /dev/null
+>> +++ b/drivers/phy/phy-can-transceiver.c
+>> @@ -0,0 +1,140 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * phy-can-transceiver.c - phy driver for CAN transceivers
+>> + *
+>> + * Copyright (C) 2021 Texas Instruments Incorporated - http://www.ti.com
+>> + *
+>> + */
+>> +#include<linux/phy/phy.h>
+>> +#include<linux/platform_device.h>
+>> +#include<linux/module.h>
+>> +#include<linux/gpio.h>
+>> +#include<linux/gpio/consumer.h>
+>> +
+>> +struct can_transceiver_data {
+>> +	u32 flags;
+>> +#define STB_PRESENT	BIT(0)
+>> +#define EN_PRESENT	BIT(1)
+> 
+> please add a common prefix to the defines
+
+I will add a common prefix(GPIO) in the respin.
+
+> 
+>> +};
+>> +
+>> +struct can_transceiver_phy {
+>> +	struct phy *generic_phy;
+>> +	struct gpio_desc *standby_gpio;
+>> +	struct gpio_desc *enable_gpio;
+>> +};
+>> +
+>> +/* Power on function */
+>> +static int can_transceiver_phy_power_on(struct phy *phy)
+>> +{
+>> +	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
+>> +
+>> +	if (can_transceiver_phy->standby_gpio)
+>> +		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
+>> +	if (can_transceiver_phy->enable_gpio)
+>> +		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 1);
+> 
+> Please add a newline before the return.
+> 
+
+Will make this change in the respin.
+
+>> +	return 0;
+>> +}
+>> +
+>> +/* Power off function */
+>> +static int can_transceiver_phy_power_off(struct phy *phy)
+>> +{
+>> +	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
+>> +
+>> +	if (can_transceiver_phy->standby_gpio)
+>> +		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
+>> +	if (can_transceiver_phy->enable_gpio)
+>> +		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
+> 
+> same here
+> 
+
+Will make this change in the respin
+
+>> +	return 0;
+>> +}
+>> +
+>> +static const struct phy_ops can_transceiver_phy_ops = {
+>> +	.power_on	= can_transceiver_phy_power_on,
+>> +	.power_off	= can_transceiver_phy_power_off,
+>> +	.owner		= THIS_MODULE,
+>> +};
+>> +
+>> +static const struct can_transceiver_data tcan1042_drvdata = {
+>> +	.flags = STB_PRESENT,
+>> +};
+>> +
+>> +static const struct can_transceiver_data tcan1043_drvdata = {
+>> +	.flags = STB_PRESENT | EN_PRESENT,
+>> +};
+>> +
+>> +static const struct of_device_id can_transceiver_phy_ids[] = {
+>> +	{
+>> +		.compatible = "ti,tcan1042",
+>> +		.data = &tcan1042_drvdata
+>> +	},
+>> +	{
+>> +		.compatible = "ti,tcan1043",
+>> +		.data = &tcan1043_drvdata
+>> +	},
+>> +	{ }
+>> +};
+>> +MODULE_DEVICE_TABLE(of, can_transceiver_phy_ids);
+>> +
+>> +int can_transceiver_phy_probe(struct platform_device *pdev)
+>> +{
+>> +	struct phy_provider *phy_provider;
+>> +	struct device *dev = &pdev->dev;
+>> +	struct can_transceiver_phy *can_transceiver_phy;
+>> +	const struct can_transceiver_data *drvdata;
+>> +	const struct of_device_id *match;
+>> +	struct phy *phy;
+>> +	struct gpio_desc *standby_gpio;
+>> +	struct gpio_desc *enable_gpio;
+>> +	u32 max_bitrate = 0;
+>> +
+>> +	can_transceiver_phy = devm_kzalloc(dev, sizeof(struct can_transceiver_phy), GFP_KERNEL);
+> 
+> error handling?
+> 
+
+Will add this in the respin.
+
+>> +
+>> +	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+>> +	drvdata = match->data;
+>> +
+>> +	phy = devm_phy_create(dev, dev->of_node,
+>> +			      &can_transceiver_phy_ops);
+>> +	if (IS_ERR(phy)) {
+>> +		dev_err(dev, "failed to create can transceiver phy\n");
+>> +		return PTR_ERR(phy);
+>> +	}
+>> +
+>> +	device_property_read_u32(dev, "max-bitrate", &max_bitrate);
+>> +	phy->attrs.max_link_rate = max_bitrate / 1000000;
+> 
+> The problem is, there are CAN transceivers with a max of 83.3 kbit/s or 125 kbit/s.
+> 
+
+The only way that I was able to find for this is to add a phy attribute
+"max_bit_rate" in include/linux/phy/phy.h. Would this be an acceptable
+solution ?
+
+>> +	can_transceiver_phy->generic_phy = phy;
+>> +
+>> +	if (drvdata->flags & STB_PRESENT) {
+>> +		standby_gpio = devm_gpiod_get(dev, "standby",   GPIOD_OUT_LOW);
+> 
+> please use only one space after the ",".
+
+Will correct this in respin.
+
+> Why do you request the gpio standby low?
+
+While probing the transceiver has to be in standby state and only after
+calling the power on does the transceiver go to enable state. This was
+the reason behind requesting gpio standby low.
+
+Thank you for for review.
+
+Regards,
+Aswath
+
+> 
+>> +		if (IS_ERR(standby_gpio))
+>> +			return PTR_ERR(standby_gpio);
+>> +		can_transceiver_phy->standby_gpio = standby_gpio;
+>> +	}
+>> +
+>> +	if (drvdata->flags & EN_PRESENT) {
+>> +		enable_gpio = devm_gpiod_get(dev, "enable",   GPIOD_OUT_LOW);
+>> +		if (IS_ERR(enable_gpio))
+>> +			return PTR_ERR(enable_gpio);
+>> +		can_transceiver_phy->enable_gpio = enable_gpio;
+>> +	}
+>> +
+>> +	phy_set_drvdata(can_transceiver_phy->generic_phy, can_transceiver_phy);
+>> +
+>> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+>> +
+>> +	return PTR_ERR_OR_ZERO(phy_provider);
+>> +}
+>> +
+>> +static struct platform_driver can_transceiver_phy_driver = {
+>> +	.probe = can_transceiver_phy_probe,
+>> +	.driver = {
+>> +		.name = "can-transceiver-phy",
+>> +		.of_match_table = can_transceiver_phy_ids,
+>> +	},
+>> +};
+>> +
+>> +module_platform_driver(can_transceiver_phy_driver);
+>> +
+>> +MODULE_AUTHOR("Faiz Abbas <faiz_abbas@ti.com>");
+>> +MODULE_AUTHOR("Aswath Govindraju <a-govindraju@ti.com>");
+>> +MODULE_DESCRIPTION("CAN TRANSCEIVER PHY driver");
+>> +MODULE_LICENSE("GPL v2");
+>>
+> 
+> marc
+> 
 
 
 -- 
