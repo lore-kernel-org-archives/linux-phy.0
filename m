@@ -2,99 +2,87 @@ Return-Path: <SRS0=pdUw=JL=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-11.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A8033C433B4
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Apr 2021 13:25:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3A6C3C433ED
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Apr 2021 14:05:55 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1CFF26117A
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Apr 2021 13:25:16 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1CFF26117A
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 9926061166
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Apr 2021 14:05:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9926061166
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AI5YyO259qH3PFua0m9SRrQ2Wha/7QI4puewAkq2Zqk=; b=mLENo+YqN6w70JhNQjyhcNdWa
-	Aaw6pgYTKulecJ6QT7J5GvDeWVIj45PccGdV/m7YXrGCG2NTKtxgzKwfvE3W7seBT1odUS0ohh/H0
-	YaOMQO/m716/14tpKY2i1VmV9aac2BObBvr9R0SomW7JEywVgBWYx0dBt4/ao1jC+91SJwXhCad1R
-	7WbjqbW/1SSxbHqmqhaPgeookgq3nWjB/OiqKiGDkvigZbbALdrbl9HRe24dO+D3e9SvbsvLBv+7S
-	RwQ/8lLixcm9up79ssJ8t9rvi4YnXf27JvfbSFmwaxbmpkXsbqvCEBCetmBa0eFcpbwFidz2QsK6M
-	IY/SGNO0Q==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=mqLho9yFvxReH20iLLk1XIFZzSsDQMdogvnv4VDBi8E=; b=YMAV4xfFtiofFyoyBIr4kqd18c
+	1stfMWSIbooJYy9mLKOM55YDFaPNiJUgxDBUM6IA12NeAP3kAmTPWLDwWh72e2p0zFyGgwF7op3an
+	2YTV+jeNpgE+Ol6A0IBDOzpOjktJwHZAZr0aVp0HpwseZK+o6pT9Bn0pomgk+WkCO27bw2sGwH5Nm
+	SNNWnIEy+vcsH9tGfrAoqO18Yf9wQ3CCFPpNJRHROuBvGrcHLbRsC+kLZ1HaNmHCQJ6m0KNLAxRv5
+	0mXnee810yGYvebTUehGPijwIHNLTKZlOyC10u5xe/yxB3luF6DJKT9dO/bFS5KuPvRttUsEYn8du
+	0DFDWjXA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lWfW6-00CjTr-1K; Wed, 14 Apr 2021 13:25:14 +0000
-Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
+	id 1lWg9P-00CqpR-PE; Wed, 14 Apr 2021 14:05:52 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lWfW1-00CjRq-Jr
- for linux-phy@desiato.infradead.org; Wed, 14 Apr 2021 13:25:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:Cc:To:Subject:Message-ID
- :Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=SquDUiPngSwrW4b6IjS70OYb7L7/gAGj8BPEFeGyXCM=; b=HSy44sU8j74dBusrJBQlRztq4w
- vWQm5ZY6lKptZZKL2Plbt3ra2zoC6C63JXy8f7N8qzNu/oO3Qycnnbin1XxoezlzMVjJ4KxF3jvvQ
- aKCr1FJuQ9JiqDAdfO07Yt7PeYfkSCLeyuiR7nAl6O31zMCgKZaeiAqYgxlGE299jyx6MVKGyz5QL
- xlhe0bL3beqMXna5yaeATLtn698Z+ZDXwmO2sbTzNpJrxajkeAwfCPEX1CjEFDwN0UBble8nqfSiO
- FK/xzLVJdjvAvHutVF5jNuorX/wvznF9gXTYxyGCxvaPFSu32FZkVd86nhT+40E3QbyUZc2WwLGao
- Ag4YjUTA==;
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lWfVy-007nDQ-Dj
- for linux-phy@lists.infradead.org; Wed, 14 Apr 2021 13:25:08 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 5F5346120E
- for <linux-phy@lists.infradead.org>; Wed, 14 Apr 2021 13:25:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1618406705;
- bh=KsfaSXwOVw8QET+rbrgc/Q2gfMGscvpWJQ5f6uP0bDI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Iks8ZnUzibOCOteCTqLQDc3sO5dWbVeFufkJSHTUyiuVNtcpRqRXS0SLs11jkHmkb
- MM3xrtvIwsBTm4XeXa+KJBW5otpGgsXJdBf1PLWoFl6S+6jknNP+IEbgGHPls7OmuQ
- kHZnazrVjYdMCTbHdbaTM5brZS9X3pnAGdhY44N6GEnw95SrMNdrMDcDwkciMq/Ps/
- ffiJEXI7SmS/tWpFVde8yq8BhxsCkNgrrh030U5t5Z0HuTWY+1VXdnFLwC83BoOBOe
- b0rnWYbgFPS4Xq0+Lz4Jqn8YGEFMv/iS7JktC43lK2k8yNa3ddhxjTHd2GzY/MAK3Z
- GW8y9TNcG0/KA==
-Received: by mail-qt1-f169.google.com with SMTP id j7so15373651qtx.5
- for <linux-phy@lists.infradead.org>; Wed, 14 Apr 2021 06:25:05 -0700 (PDT)
-X-Gm-Message-State: AOAM533vR1P4VnZo7QEr+pvlRtHpeG/EBpyoY4k6frybfbWEBI9bAF3l
- URtVPvDSwhNzjOEkH9eOwfX//xKjlEKdCjFJiw==
-X-Google-Smtp-Source: ABdhPJwJA1ciQB+OakY6pTjV36EpJWrGm4YT0HjQNhSLoyqhAQXeNhsuTJc+12R0uWC9xI3XPGMST7pxg0owMnX4v58=
-X-Received: by 2002:a05:622a:8:: with SMTP id x8mr26156855qtw.31.1618406704544; 
- Wed, 14 Apr 2021 06:25:04 -0700 (PDT)
+ id 1lWg9H-00Cqnc-Hi
+ for linux-phy@lists.infradead.org; Wed, 14 Apr 2021 14:05:46 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 13EE5RAB049687;
+ Wed, 14 Apr 2021 09:05:27 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1618409127;
+ bh=+lMvqu6ah1GaMcYti3LSJHHCNLxGEnObRGR6qXXpcyU=;
+ h=From:To:CC:Subject:Date;
+ b=mtkZvgXip2BqeVdC65NmKtokDPxSP7UGZ/d2HhcImqA5rR5iZwW/AjMShc3SITMXa
+ 14QoSY8zDKPV7CXwuiC0ouFzO3zvfvZrrAldtUsw1tC9t58NNtkRJbFFgmxWi/FoBb
+ VXh5pHavqXiVJgwS4L41db5Nsb5FZQyYng4ZWpe8=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 13EE5RUq119347
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 14 Apr 2021 09:05:27 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Wed, 14
+ Apr 2021 09:05:26 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
+ Frontend Transport; Wed, 14 Apr 2021 09:05:26 -0500
+Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
+ (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 13EE5Lu8074247;
+ Wed, 14 Apr 2021 09:05:22 -0500
+From: Aswath Govindraju <a-govindraju@ti.com>
+To: 
+CC: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, Chandrasekar Ramakrishnan
+ <rcsekar@samsung.com>, Wolfgang Grandegger <wg@grandegger.com>, Marc
+ Kleine-Budde <mkl@pengutronix.de>,
+ "David S . Miller" <davem@davemloft.net>,
+ Jakub Kicinski <kuba@kernel.org>, Rob Herring <robh+dt@kernel.org>, Kishon
+ Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ <linux-can@vger.kernel.org>, <netdev@vger.kernel.org>, Vignesh Raghavendra
+ <vigneshr@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>, Grygorii Strashko
+ <grygorii.strashko@ti.com>, Aswath Govindraju <a-govindraju@ti.com>
+Subject: [PATCH v2 0/6] CAN TRANSCEIVER: Add support for CAN transceivers
+Date: Wed, 14 Apr 2021 19:35:15 +0530
+Message-ID: <20210414140521.11463-1-a-govindraju@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20210409134056.18740-1-a-govindraju@ti.com>
- <20210409134056.18740-4-a-govindraju@ti.com>
- <20210412175134.GA4109207@robh.at.kernel.org>
- <e1c2b752-5a2b-e973-c188-5916d8a2e31f@ti.com>
-In-Reply-To: <e1c2b752-5a2b-e973-c188-5916d8a2e31f@ti.com>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 14 Apr 2021 08:24:52 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJ6OW6Pwtj7yTiCguvXDPfMreVpEsxAg59pwfa2qWvqEA@mail.gmail.com>
-Message-ID: <CAL_JsqJ6OW6Pwtj7yTiCguvXDPfMreVpEsxAg59pwfa2qWvqEA@mail.gmail.com>
-Subject: Re: [PATCH 3/4] dt-bindings: net: can: Document transceiver
- implementation as phy
-To: Aswath Govindraju <a-govindraju@ti.com>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>, 
- Grygorii Strashko <grygorii.strashko@ti.com>, Faiz Abbas <faiz_abbas@ti.com>, 
- Chandrasekar Ramakrishnan <rcsekar@samsung.com>,
- Wolfgang Grandegger <wg@grandegger.com>, 
- Marc Kleine-Budde <mkl@pengutronix.de>, "David S. Miller" <davem@davemloft.net>,
- Jakub Kicinski <kuba@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Sriram Dash <sriram.dash@samsung.com>, linux-can@vger.kernel.org, 
- netdev <netdev@vger.kernel.org>, devicetree@vger.kernel.org, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-phy@lists.infradead.org
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210414_062506_516724_F40525F4 
-X-CRM114-Status: GOOD (  22.43  )
+X-CRM114-CacheID: sfid-20210414_150544_046353_CFB547DB 
+X-CRM114-Status: GOOD (  18.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,59 +99,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 14, 2021 at 1:49 AM Aswath Govindraju <a-govindraju@ti.com> wrote:
->
-> Hi Rob,
->
-> On 12/04/21 11:21 pm, Rob Herring wrote:
-> > On Fri, Apr 09, 2021 at 07:10:53PM +0530, Aswath Govindraju wrote:
-> >> From: Faiz Abbas <faiz_abbas@ti.com>
-> >>
-> >> Some transceivers need a configuration step (for example, pulling the
-> >> standby or enable lines) for them to start sending messages. The
-> >> transceiver can be implemented as a phy with the configuration done in the
-> >> phy driver. The bit rate limitation can the be obtained by the driver using
-> >> the phy node.
-> >>
-> >> Document the above implementation in the bosch mcan bindings
-> >>
-> >> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
-> >> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
-> >> ---
-> >>  Documentation/devicetree/bindings/net/can/bosch,m_can.yaml | 6 ++++++
-> >>  1 file changed, 6 insertions(+)
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/net/can/bosch,m_can.yaml b/Documentation/devicetree/bindings/net/can/bosch,m_can.yaml
-> >> index 798fa5fb7bb2..2c01899b1a3e 100644
-> >> --- a/Documentation/devicetree/bindings/net/can/bosch,m_can.yaml
-> >> +++ b/Documentation/devicetree/bindings/net/can/bosch,m_can.yaml
-> >> @@ -109,6 +109,12 @@ properties:
-> >>    can-transceiver:
-> >>      $ref: can-transceiver.yaml#
-> >>
-> >> +  phys:
-> >> +    minItems: 1
-> >
-> > maxItems: 1
->
-> Will add this in the respin.
->
-> >
-> >> +
-> >> +  phy-names:
-> >> +    const: can_transceiver
-> >
-> > Kind of a pointless name. You don't really need a name if there's a
-> > single entry.
-> >
->
-> This name used by devm_phy_optional_get() in m_can driver to get the phy
-> data structure.
+The following series of patches add support for CAN transceivers.
 
-With no name, you'll get the 1st one. Looks like the phy subsystem
-warns on this. That's wrong, so please fix that.
+TCAN1042 has a standby signal that needs to be pulled high for
+sending/receiving messages[1]. TCAN1043 has a enable signal along with
+standby signal that needs to be pulled up for sending/receiving
+messages[2], and other combinations of the two lines can be used to put the
+transceiver in different states to reduce power consumption. On boards
+like the AM654-idk and J721e-evm these signals are controlled using gpios.
 
-Rob
+Patch 1 rewords the comment that restricts max_link_rate attribute to have
+units of Mbps.
+
+Patch 2 adds an API for devm_of_phy_optional_get_by_index
+
+Patch 3 models the transceiver as a phy device tree node with properties
+for max bit rate supported, gpio properties for indicating gpio pin numbers
+to which standby and enable signals are connected.
+
+Patch 4 adds a generic driver to support CAN transceivers.
+
+Patches 5 & 6 add support for implementing the transceiver as a phy of
+m_can_platform driver.
+
+changes since v1:
+- Added patch 1 (in v2) that rewords the comment that restrict
+  max_link_rate attribute to have units of Mbps.
+- Added patch 2 (in v2) that adds an API for
+  devm_of_phy_optional_get_by_index
+- Patch 1 (in v1)
+  - updated MAINTAINERS file
+- Patch 2 (in v1)
+  - replaced m_can with CAN to make the driver independent of CAN driver
+  - Added prefix CAN_TRANSCEIVER for EN_PRESENT and STB_PRESENT
+  - Added new line before return statements in power_on() and power_off
+  - Added error handling patch for devm_kzalloc()
+  - used the max_link_rate attribute directly instead of dividing it by
+    1000000
+  - removed the spaces before GPIOD_OUT_LOW in devm_gpiod_get()
+  - Corrected requested value for standby-gpios to GPIOD_OUT_HIGH
+  - Updated MAINTAINERS file
+- Patch 3 (in v1)
+  - replaced minItems with maxItems
+  - Removed phy-names property as there is only one phy
+- Patch 4 (in v1)
+  - replaced dev_warn with dev_info when no transceiver is found
+  - Added struct phy * field in m_can_classdev struct
+  - moved phy_power_on and phy_power_off to m_can_open and m_can_close
+    respectively
+  - Moved the check for max_bit_rate to generice transceiver driver
+
+[1] - https://www.ti.com/lit/ds/symlink/tcan1042h.pdf
+[2] - https://www.ti.com/lit/ds/symlink/tcan1043-q1.pdf
+
+Aswath Govindraju (4):
+  phy: core: Reword the comment specifying the units of max_link_rate to
+    be Mbps
+  phy: Add API for devm_of_phy_optional_get_by_index
+  dt-bindings: phy: Add binding for TI TCAN104x CAN transceivers
+  phy: phy-can-transceiver: Add support for generic CAN transceiver
+    driver
+
+Faiz Abbas (2):
+  dt-bindings: net: can: Document transceiver implementation as phy
+  can: m_can: Add support for transceiver as phy
+
+ .../bindings/net/can/bosch,m_can.yaml         |   3 +
+ .../bindings/phy/ti,tcan104x-can.yaml         |  56 +++++++
+ MAINTAINERS                                   |   2 +
+ drivers/net/can/m_can/m_can.c                 |  18 +++
+ drivers/net/can/m_can/m_can.h                 |   2 +
+ drivers/net/can/m_can/m_can_platform.c        |  15 ++
+ drivers/phy/Kconfig                           |   9 ++
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/phy-can-transceiver.c             | 146 ++++++++++++++++++
+ drivers/phy/phy-core.c                        |  26 ++++
+ include/linux/phy/phy.h                       |   4 +-
+ 11 files changed, 281 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+ create mode 100644 drivers/phy/phy-can-transceiver.c
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
