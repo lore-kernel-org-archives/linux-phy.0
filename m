@@ -2,20 +2,19 @@ Return-Path: <SRS0=RYiS=JR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 079D4C433ED
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 11:23:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BCF6BC433B4
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 16:19:07 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4E80C613AF
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 11:23:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4E80C613AF
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oracle.com
+	by mail.kernel.org (Postfix) with ESMTPS id 0EB6C613D4
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 16:19:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0EB6C613D4
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
@@ -23,110 +22,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=s6jte/0nEaqKyTXHj1LYScb+CPFa14+crrzdwr/GxKM=; b=qm7t65yU+DnYvEUapmSpTX4Kk
-	QGgyvubSg8e3qPTExAmyQvHLPqRV8r4TQF5vTPhBKXjxzq+S26YXGZ8qDb+/g3eW3uDPARVPw9mdy
-	4CkEWMY3bdyUNvsY1JHgb6mJhCko3HbmdSt0iIab0enAeN907QRz17n7sGEKi8Ztn0g9iU9Tgq/i3
-	wEMdUJ/eZt9EIOKFva0NgkqxUJGJ00R0jkC+pYq8l6/ZK3g5cmZr+qHcAetVTgEK3tI96HE+0XAVh
-	ag91XJBOwmC4bSghQCEOIuo2sRCNBjbggVXkEcD2gxdNCaFT4uRRPn9qj+DLbNYikJ+ponhwMP9E0
-	u+sqNz6hA==;
+	 bh=P6UXclAFl+3kyXi2DzS3g6VptDQBJsLFjYMPAsm+UkI=; b=Hvv8kiY0VPglKp93hm8weIeq0
+	q6ZotwQ698bK2FAUJPN2DDxnhX7VI+hQLgzspF2uqTyIVm1co2idiu1UOWIrBJbdUCt2koRJ9cVW/
+	+X3Pz8K6+CJPcR5/0oJOEUjSV5VWOfcg3LLx4SQl9qpiz95dF4bPbTWTYPpOnxD9kcOuPuPMwCZX4
+	YHwcaAGVQgI4P4caCzY2AEGNcvVurOn7uZxkLhdhY5jHOlMDGMWYcP1fsrJP+6illc0wVydtGqEKD
+	ukgzYl/93gVRkRI/TSKxpTTZNTki4RC4Omud737bJnZxmV3kgFqCBWLrg2e4HuC8CjXOLTCls79s/
+	UK7Gj+jew==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lYoTf-00By4y-Co; Tue, 20 Apr 2021 11:23:35 +0000
+	id 1lYt5d-00CYgA-Ab; Tue, 20 Apr 2021 16:19:05 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lYoTV-00By0z-GT; Tue, 20 Apr 2021 11:23:27 +0000
+ id 1lYt5c-00CYfz-1S; Tue, 20 Apr 2021 16:19:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
  :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=R7JGUmF3J71wLA6dPwUce8FwqmxU6JTnhs1XaoTWtpc=; b=MeSHY3ZTrMB1uwH2ggmP8A9ZZr
- HD5F0Gx6gqm3XXI9FnDeitx8FGX6tev7/9n+oduYisrQHePueUBoUy1QbHYCw3jsCzfK3aWFauCRP
- QmpfaM8W4e4GQo49ZuWyhEdaNcLu1rcMfVbfGD52P5w693bJ8o6Dzmqr7s/k9d+jesC0NOlhARQXb
- exV1bLFZJE8xth5ywc1+hDwSBldot7u1GSjuC0CWI1SGyHsVwiEuOZJtqJXyJKhjJC95g+9GUBF8O
- AKiN5C1hPdljcPtiKmNby/5Zl2p6Ay5WQY87W21qe3YM+162WnNHxM8QLbmZ9U4edu3ILncuVORnt
- 1lWB95QA==;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+ bh=gIPhzA9HUv1qnvCxakpORWgFq6NXlIMH81KWtgGX3Qo=; b=w+ZJ98MWIhzXu69zbcx/+7ge5N
+ EfpMRTn6BHNCCMMITs9Zx6KUYDFSAZ8Bxsp/eHLPS4auIlzjYTPBi4CmZKbstnvODfpFkJxYQ9bDw
+ cl0j7i2D2DaHya5gG9c5nQdexqFVxjvQEfkiQMRQf4oSlEG3kY9Y24NjOnCoAPtqPET5zGHdLSORV
+ 60LRACpX96XItT+8tfVYxCZChrVcBBhQK036iYxocD3m5wvIkVin/paSaNdSyf1UhKy3cCZEtj4Ls
+ +DsWYLcRRQkqaEV1x9KPpoluEvHA50JYmL7Fz501hZf8FUb+sqBi8I4I/Don8FCEDfs4Z2A5rC0tI
+ l243KA7A==;
+Received: from mail-oi1-f171.google.com ([209.85.167.171])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lYoTQ-00C461-4I; Tue, 20 Apr 2021 11:23:24 +0000
-Received: from pps.filterd (m0246632.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 13KBMmuM012376; Tue, 20 Apr 2021 11:22:48 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=R7JGUmF3J71wLA6dPwUce8FwqmxU6JTnhs1XaoTWtpc=;
- b=mzrAyP3z3vTbOYF05fKTtm1FSfsRhaXIMtNI32junvaq2xixqdu4DFtiOEnKHMCjmDAu
- pzOmg6bFqIFulJfFAK3gAc4G1ubri2zL7y+ukl2ZTNZd4enmkHEeJ6kOxa09vXbI9Cau
- pxckDe5aQNXRp1SihBx1WvxHHU5bOAl0qwzbdRlKb6bAcGZRRvbBEvMsbe3h/AM/l6mO
- 6K0B0emzos5cXJDAWeD+zogdWeN4yukpTfk465biG7Agf/JhaT7Tq2FLJjNIss62qUS9
- j74qQsLbz2k9Dn5eRznUZ+6NPhFOVGc2XKyCruqh+CG4TG6qi4y3ofFXm87t+4F6DYgG CQ== 
-Received: from oracle.com (aserp3020.oracle.com [141.146.126.70])
- by mx0b-00069f02.pphosted.com with ESMTP id 381bjn86tg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 20 Apr 2021 11:22:48 +0000
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [127.0.0.1])
- by pps.podrdrct (8.16.0.36/8.16.0.36) with SMTP id 13KBKXsp006877;
- Tue, 20 Apr 2021 11:22:47 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
- by aserp3020.oracle.com with ESMTP id 3809k06m19-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 20 Apr 2021 11:22:47 +0000
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 13KBKAbB005467;
- Tue, 20 Apr 2021 11:22:46 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3020.oracle.com with ESMTP id 3809k06m07-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 20 Apr 2021 11:22:46 +0000
-Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 13KBMEHV030572;
- Tue, 20 Apr 2021 11:22:18 GMT
-Received: from kadam (/102.36.221.92) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 20 Apr 2021 04:22:13 -0700
-Date: Tue, 20 Apr 2021 14:21:52 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: "Alice Guo (OSS)" <alice.guo@oss.nxp.com>, gregkh@linuxfoundation.org,
- rafael@kernel.org, horia.geanta@nxp.com, aymen.sghaier@nxp.com,
- herbert@gondor.apana.org.au, davem@davemloft.net, tony@atomide.com,
- geert+renesas@glider.be, mturquette@baylibre.com, sboyd@kernel.org,
- vkoul@kernel.org, peter.ujfalusi@gmail.com, a.hajda@samsung.com,
- narmstrong@baylibre.com, robert.foss@linaro.org, airlied@linux.ie,
- daniel@ffwll.ch, khilman@baylibre.com, tomba@kernel.org,
- jyri.sarha@iki.fi, joro@8bytes.org, will@kernel.org,
- mchehab@kernel.org, ulf.hansson@linaro.org, adrian.hunter@intel.com,
- kishon@ti.com, kuba@kernel.org, linus.walleij@linaro.org,
- Roy.Pledge@nxp.com, leoyang.li@nxp.com, ssantosh@kernel.org,
- matthias.bgg@gmail.com, edubezval@gmail.com, j-keerthy@ti.com,
- balbi@kernel.org, linux@prisktech.co.nz, stern@rowland.harvard.edu,
- wim@linux-watchdog.org, linux@roeck-us.net,
- linux-kernel@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-clk@vger.kernel.org, dmaengine@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, iommu@lists.linux-foundation.org,
- linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-gpio@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-staging@lists.linux.dev, linux-mediatek@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-watchdog@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [RFC v1 PATCH 1/3] drivers: soc: add support for
- soc_device_match returning -EPROBE_DEFER
-Message-ID: <20210420112151.GE1981@kadam>
-References: <20210419042722.27554-1-alice.guo@oss.nxp.com>
- <20210419042722.27554-2-alice.guo@oss.nxp.com>
- <CAMuHMdUbrPxtJ9DCP0_nFrReuuO4vFY2J79LrKY82D7bCOfzRw@mail.gmail.com>
+ id 1lYt5W-00CGfr-NC; Tue, 20 Apr 2021 16:19:02 +0000
+Received: by mail-oi1-f171.google.com with SMTP id k25so39496309oic.4;
+ Tue, 20 Apr 2021 09:18:57 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=gIPhzA9HUv1qnvCxakpORWgFq6NXlIMH81KWtgGX3Qo=;
+ b=p9yCwUu+vYuq+qFQambRSFi53Kr2JMvD2kv271x7xaKAlOTHmWaOJLMFMaaRxdJ1YA
+ NR6ZdPuZSC1eG/x0PkJ3B5Z6z9pXYqgoY56crkmJUrFv/nb3UQKqzhTkY5aqqeNMde1I
+ t7EFlEzIpyIi5BO0hlObBeo3W3BHQO5pnWdQToCOHoj2oFCpQkOraJGNEAwlaVvZALSS
+ 8oqWLM74VKV/kfW85emcLX1z6PZfAEBG6Pw/4ULUO2mojNqE6b68na7iEG7XSH4mHRuL
+ ErAXkmUjnEQjz7P/OHx5iYl5qYc48KGU0Ej37YL9tVgu5NV8GQxBwknm+ahFtvmmlkQg
+ 7atg==
+X-Gm-Message-State: AOAM530ImTQ0zhuwi4y+Yj9ze5wks2+7Dpyt1t/4bccPngyOju0Pqq4y
+ tgzQjpYt1fMljIEFX2OQuw==
+X-Google-Smtp-Source: ABdhPJzMwLM9/HXEolq7C1EBWV2XVHaZgZjFEowEyXWQZ6iagGS5KUJYyobc+JCer4HWUWM5H6qrLg==
+X-Received: by 2002:aca:4c45:: with SMTP id z66mr3517644oia.39.1618935536979; 
+ Tue, 20 Apr 2021 09:18:56 -0700 (PDT)
+Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 93sm2872499otr.31.2021.04.20.09.18.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 20 Apr 2021 09:18:56 -0700 (PDT)
+Received: (nullmailer pid 3422973 invoked by uid 1000);
+ Tue, 20 Apr 2021 16:18:55 -0000
+Date: Tue, 20 Apr 2021 11:18:55 -0500
+From: Rob Herring <robh@kernel.org>
+To: Baruch Siach <baruch@tkos.co.il>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
+ Kathiravan T <kathirav@codeaurora.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pci@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/5] PCI: qcom: add support for IPQ60xx PCIe controller
+Message-ID: <20210420161855.GA3402221@robh.at.kernel.org>
+References: <cover.1618916235.git.baruch@tkos.co.il>
+ <c6ff03d1377ea9b5ff40ab283c884aeff6254dd9.1618916235.git.baruch@tkos.co.il>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMuHMdUbrPxtJ9DCP0_nFrReuuO4vFY2J79LrKY82D7bCOfzRw@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-GUID: e0r_GcH24oUhB4PQiI_vI2-dauff_ZRM
-X-Proofpoint-ORIG-GUID: e0r_GcH24oUhB4PQiI_vI2-dauff_ZRM
+In-Reply-To: <c6ff03d1377ea9b5ff40ab283c884aeff6254dd9.1618916235.git.baruch@tkos.co.il>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210420_042320_304965_F932ACDC 
-X-CRM114-Status: GOOD (  24.45  )
+X-CRM114-CacheID: sfid-20210420_091858_803714_014D6CC0 
+X-CRM114-Status: GOOD (  38.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,67 +109,413 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 19, 2021 at 10:20:13AM +0200, Geert Uytterhoeven wrote:
-> Hi Alice,
+On Tue, Apr 20, 2021 at 02:21:36PM +0300, Baruch Siach wrote:
+> From: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
 > 
-> CC Arnd (soc_device_match() author)
+> IPQ60xx series of SoCs have one port of PCIe gen 3. Add support for that
+> platform.
 > 
-> On Mon, Apr 19, 2021 at 6:28 AM Alice Guo (OSS) <alice.guo@oss.nxp.com> wrote:
-> > From: Alice Guo <alice.guo@nxp.com>
-> >
-> > In i.MX8M boards, the registration of SoC device is later than caam
-> > driver which needs it. Caam driver needs soc_device_match to provide
-> > -EPROBE_DEFER when no SoC device is registered and no
-> > early_soc_dev_attr.
+> The code is based on downstream Codeaurora kernel v5.4. Split out the
+> registers access part from .init into .post_init. Registers are only
+> accessible after phy_power_on().
 > 
-> I'm wondering if this is really a good idea: soc_device_match() is a
-> last-resort low-level check, and IMHO should be made available early on,
-> so there is no need for -EPROBE_DEFER.
+> Signed-off-by: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
+> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
+> ---
+>  drivers/pci/controller/dwc/pcie-qcom.c | 279 +++++++++++++++++++++++++
+>  1 file changed, 279 insertions(+)
 > 
-> >
-> > Signed-off-by: Alice Guo <alice.guo@nxp.com>
-> 
-> Thanks for your patch!
-> 
-> > --- a/drivers/base/soc.c
-> > +++ b/drivers/base/soc.c
-> > @@ -110,6 +110,7 @@ static void soc_release(struct device *dev)
-> >  }
-> >
-> >  static struct soc_device_attribute *early_soc_dev_attr;
-> > +static bool soc_dev_attr_init_done = false;
-> 
-> Do you need this variable?
-> 
-> >
-> >  struct soc_device *soc_device_register(struct soc_device_attribute *soc_dev_attr)
-> >  {
-> > @@ -157,6 +158,7 @@ struct soc_device *soc_device_register(struct soc_device_attribute *soc_dev_attr
-> >                 return ERR_PTR(ret);
-> >         }
-> >
-> > +       soc_dev_attr_init_done = true;
-> >         return soc_dev;
-> >
-> >  out3:
-> > @@ -246,6 +248,9 @@ const struct soc_device_attribute *soc_device_match(
-> >         if (!matches)
-> >                 return NULL;
-> >
-> > +       if (!soc_dev_attr_init_done && !early_soc_dev_attr)
-> 
-> if (!soc_bus_type.p && !early_soc_dev_attr)
+> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+> index 8a7a300163e5..3e27de744738 100644
+> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+> @@ -41,6 +41,31 @@
+>  #define L23_CLK_RMV_DIS				BIT(2)
+>  #define L1_CLK_RMV_DIS				BIT(1)
+>  
+> +#define PCIE_ATU_CR1_OUTBOUND_6_GEN3		0xC00
+> +#define PCIE_ATU_CR2_OUTBOUND_6_GEN3		0xC04
+> +#define PCIE_ATU_LOWER_BASE_OUTBOUND_6_GEN3	0xC08
+> +#define PCIE_ATU_UPPER_BASE_OUTBOUND_6_GEN3	0xC0C
+> +#define PCIE_ATU_LIMIT_OUTBOUND_6_GEN3		0xC10
+> +#define PCIE_ATU_LOWER_TARGET_OUTBOUND_6_GEN3	0xC14
+> +#define PCIE_ATU_UPPER_TARGET_OUTBOUND_6_GEN3	0xC18
+> +
+> +#define PCIE_ATU_CR1_OUTBOUND_7_GEN3		0xE00
+> +#define PCIE_ATU_CR2_OUTBOUND_7_GEN3		0xE04
+> +#define PCIE_ATU_LOWER_BASE_OUTBOUND_7_GEN3	0xE08
+> +#define PCIE_ATU_UPPER_BASE_OUTBOUND_7_GEN3	0xE0C
+> +#define PCIE_ATU_LIMIT_OUTBOUND_7_GEN3		0xE10
+> +#define PCIE_ATU_LOWER_TARGET_OUTBOUND_7_GEN3	0xE14
+> +#define PCIE_ATU_UPPER_TARGET_OUTBOUND_7_GEN3 	0xE18
 
-There is one place checking this already.  We could wrap it in a helper
-function:
+ATU registers are standard DWC registers. Plus upstream now dynamically 
+detects how many ATU regions there are.
 
-static bool device_init_done(void)
-{
-	return soc_bus_type.p ? true : false;
-}
+> +
+> +#define PCIE20_COMMAND_STATUS			0x04
+> +#define BUS_MASTER_EN				0x7
+> +#define PCIE20_DEVICE_CONTROL2_STATUS2		0x98
+> +#define PCIE_CAP_CPL_TIMEOUT_DISABLE		0x10
 
-regards,
-dan carpenter
+All PCI standard registers.
+
+> +#define PCIE30_GEN3_RELATED_OFF			0x890
+
+Looks like a DWC port logic register. The define at a minimum goes in 
+the common code. We probably already have one. Code touching the 
+register should ideally be there too (hint: look at the other drivers). 
+
+> +
+> +#define RXEQ_RGRDLESS_RXTS			BIT(13)
+> +#define GEN3_ZRXDC_NONCOMPL			BIT(0)
+> +
+>  #define PCIE20_PARF_PHY_CTRL			0x40
+>  #define PHY_CTRL_PHY_TX0_TERM_OFFSET_MASK	GENMASK(20, 16)
+>  #define PHY_CTRL_PHY_TX0_TERM_OFFSET(x)		((x) << 16)
+> @@ -52,6 +77,10 @@
+>  #define PCIE20_PARF_DBI_BASE_ADDR		0x168
+>  #define PCIE20_PARF_SLV_ADDR_SPACE_SIZE		0x16C
+>  #define PCIE20_PARF_MHI_CLOCK_RESET_CTRL	0x174
+> +#define AHB_CLK_EN				BIT(0)
+> +#define MSTR_AXI_CLK_EN				BIT(1)
+> +#define BYPASS					BIT(4)
+> +
+>  #define PCIE20_PARF_AXI_MSTR_WR_ADDR_HALT	0x178
+>  #define PCIE20_PARF_AXI_MSTR_WR_ADDR_HALT_V2	0x1A8
+>  #define PCIE20_PARF_LTSSM			0x1B0
+> @@ -94,6 +123,12 @@
+>  #define SLV_ADDR_SPACE_SZ			0x10000000
+>  
+>  #define PCIE20_LNK_CONTROL2_LINK_STATUS2	0xa0
+> +#define PCIE_CAP_CURR_DEEMPHASIS		BIT(16)
+> +#define SPEED_GEN1				0x1
+> +#define SPEED_GEN2				0x2
+> +#define SPEED_GEN3				0x3
+> +#define AXI_CLK_RATE				200000000
+> +#define RCHNG_CLK_RATE				100000000
+>  
+>  #define DEVICE_TYPE_RC				0x4
+>  
+> @@ -168,6 +203,15 @@ struct qcom_pcie_resources_2_7_0 {
+>  	struct clk *pipe_clk;
+>  };
+>  
+> +struct qcom_pcie_resources_2_9_0 {
+> +	struct clk *iface;
+> +	struct clk *axi_m_clk;
+> +	struct clk *axi_s_clk;
+> +	struct clk *axi_bridge_clk;
+> +	struct clk *rchng_clk;
+> +	struct reset_control *rst[8];
+> +};
+> +
+>  union qcom_pcie_resources {
+>  	struct qcom_pcie_resources_1_0_0 v1_0_0;
+>  	struct qcom_pcie_resources_2_1_0 v2_1_0;
+> @@ -175,6 +219,7 @@ union qcom_pcie_resources {
+>  	struct qcom_pcie_resources_2_3_3 v2_3_3;
+>  	struct qcom_pcie_resources_2_4_0 v2_4_0;
+>  	struct qcom_pcie_resources_2_7_0 v2_7_0;
+> +	struct qcom_pcie_resources_2_9_0 v2_9_0;
+>  };
+>  
+>  struct qcom_pcie;
+> @@ -1266,6 +1311,225 @@ static void qcom_pcie_post_deinit_2_7_0(struct qcom_pcie *pcie)
+>  	clk_disable_unprepare(res->pipe_clk);
+>  }
+>  
+> +static int qcom_pcie_get_resources_2_9_0(struct qcom_pcie *pcie)
+> +{
+> +	struct qcom_pcie_resources_2_9_0 *res = &pcie->res.v2_9_0;
+> +	struct dw_pcie *pci = pcie->pci;
+> +	struct device *dev = pci->dev;
+> +	int i;
+> +	const char *rst_names[] = { "pipe", "sleep", "sticky",
+> +				    "axi_m", "axi_s", "ahb",
+> +				    "axi_m_sticky", "axi_s_sticky", };
+> +
+> +	res->iface = devm_clk_get(dev, "iface");
+> +	if (IS_ERR(res->iface))
+> +		return PTR_ERR(res->iface);
+> +
+> +	res->axi_m_clk = devm_clk_get(dev, "axi_m");
+> +	if (IS_ERR(res->axi_m_clk))
+> +		return PTR_ERR(res->axi_m_clk);
+> +
+> +	res->axi_s_clk = devm_clk_get(dev, "axi_s");
+> +	if (IS_ERR(res->axi_s_clk))
+> +		return PTR_ERR(res->axi_s_clk);
+> +
+> +	res->axi_bridge_clk = devm_clk_get(dev, "axi_bridge");
+> +	if (IS_ERR(res->axi_bridge_clk))
+> +		return PTR_ERR(res->axi_bridge_clk);
+> +
+> +	res->rchng_clk = devm_clk_get(dev, "rchng");
+> +	if (IS_ERR(res->rchng_clk))
+> +		return PTR_ERR(res->rchng_clk);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(rst_names); i++) {
+> +		res->rst[i] = devm_reset_control_get(dev, rst_names[i]);
+
+Don't we have a bulk api for this? Clocks too.
+
+> +		if (IS_ERR(res->rst[i])) {
+> +			return PTR_ERR(res->rst[i]);
+> +		}
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void qcom_pcie_deinit_2_9_0(struct qcom_pcie *pcie)
+> +{
+> +	struct qcom_pcie_resources_2_9_0 *res = &pcie->res.v2_9_0;
+> +
+> +	clk_disable_unprepare(res->axi_m_clk);
+> +	clk_disable_unprepare(res->axi_s_clk);
+> +	clk_disable_unprepare(res->axi_bridge_clk);
+> +	clk_disable_unprepare(res->rchng_clk);
+> +	clk_disable_unprepare(res->iface);
+> +}
+> +
+> +static int qcom_pcie_init_2_9_0(struct qcom_pcie *pcie)
+> +{
+> +	struct qcom_pcie_resources_2_9_0 *res = &pcie->res.v2_9_0;
+> +	struct device *dev = pcie->pci->dev;
+> +	int i, ret;
+> +
+> +	for (i = 0; i < ARRAY_SIZE(res->rst); i++) {
+> +		ret = reset_control_assert(res->rst[i]);
+> +		if (ret) {
+> +			dev_err(dev, "reset #%d assert failed (%d)\n", i, ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	usleep_range(2000, 2500);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(res->rst); i++) {
+> +		ret = reset_control_deassert(res->rst[i]);
+> +		if (ret) {
+> +			dev_err(dev, "reset #%d deassert failed (%d)\n", i,
+> +				ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	/*
+> +	 * Don't have a way to see if the reset has completed.
+> +	 * Wait for some time.
+> +	 */
+> +	usleep_range(2000, 2500);
+> +
+> +	ret = clk_prepare_enable(res->iface);
+> +	if (ret) {
+> +		dev_err(dev, "cannot prepare/enable core clock\n");
+> +		goto err_clk_iface;
+> +	}
+> +
+> +	ret = clk_prepare_enable(res->axi_m_clk);
+> +	if (ret) {
+> +		dev_err(dev, "cannot prepare/enable core clock\n");
+> +		goto err_clk_axi_m;
+> +	}
+> +
+> +	ret = clk_set_rate(res->axi_m_clk, AXI_CLK_RATE);
+> +	if (ret) {
+> +		dev_err(dev, "MClk rate set failed (%d)\n", ret);
+> +		goto err_clk_axi_m;
+> +	}
+> +
+> +	ret = clk_prepare_enable(res->axi_s_clk);
+> +	if (ret) {
+> +		dev_err(dev, "cannot prepare/enable axi slave clock\n");
+> +		goto err_clk_axi_s;
+> +	}
+> +
+> +	ret = clk_set_rate(res->axi_s_clk, AXI_CLK_RATE);
+> +	if (ret) {
+> +		dev_err(dev, "SClk rate set failed (%d)\n", ret);
+> +		goto err_clk_axi_s;
+> +	}
+> +
+> +	ret = clk_prepare_enable(res->axi_bridge_clk);
+> +	if (ret) {
+> +		dev_err(dev, "cannot prepare/enable axi bridge clock\n");
+> +		goto err_clk_axi_bridge;
+> +	}
+> +
+> +	ret = clk_prepare_enable(res->rchng_clk);
+> +	if (ret) {
+> +		dev_err(dev, "cannot prepare/enable rchng clock\n");
+> +		goto err_clk_rchng;
+> +	}
+> +
+> +	ret = clk_set_rate(res->rchng_clk, RCHNG_CLK_RATE);
+> +	if (ret) {
+> +		dev_err(dev, "rchng_clk rate set failed (%d)\n", ret);
+> +		goto err_clk_rchng;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_clk_rchng:
+> +	clk_disable_unprepare(res->rchng_clk);
+> +err_clk_axi_bridge:
+> +	clk_disable_unprepare(res->axi_bridge_clk);
+> +err_clk_axi_s:
+> +	clk_disable_unprepare(res->axi_s_clk);
+> +err_clk_axi_m:
+> +	clk_disable_unprepare(res->axi_m_clk);
+> +err_clk_iface:
+> +	clk_disable_unprepare(res->iface);
+> +	/*
+> +	 * Not checking for failure, will anyway return
+> +	 * the original failure in 'ret'.
+> +	 */
+> +	for (i = 0; i < ARRAY_SIZE(res->rst); i++)
+> +		reset_control_assert(res->rst[i]);
+> +
+> +	return ret;
+> +}
+> +
+> +static int qcom_pcie_post_init_2_9_0(struct qcom_pcie *pcie)
+> +{
+> +	struct dw_pcie *pci = pcie->pci;
+> +	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
+> +	u32 val;
+> +	int i;
+> +
+> +	writel(SLV_ADDR_SPACE_SZ,
+> +		pcie->parf + PCIE20_v3_PARF_SLV_ADDR_SPACE_SIZE);
+> +
+> +	val = readl(pcie->parf + PCIE20_PARF_PHY_CTRL);
+> +	val &= ~BIT(0);
+
+What's BIT(0)?
+
+> +	writel(val, pcie->parf + PCIE20_PARF_PHY_CTRL);
+> +
+> +	writel(0, pcie->parf + PCIE20_PARF_DBI_BASE_ADDR);
+> +
+> +	writel(DEVICE_TYPE_RC, pcie->parf + PCIE20_PARF_DEVICE_TYPE);
+> +	writel(BYPASS | MSTR_AXI_CLK_EN | AHB_CLK_EN,
+> +		pcie->parf + PCIE20_PARF_MHI_CLOCK_RESET_CTRL);
+> +	writel(RXEQ_RGRDLESS_RXTS | GEN3_ZRXDC_NONCOMPL,
+> +		pci->dbi_base + PCIE30_GEN3_RELATED_OFF);
+> +
+> +	writel(MST_WAKEUP_EN | SLV_WAKEUP_EN | MSTR_ACLK_CGC_DIS
+> +		| SLV_ACLK_CGC_DIS | CORE_CLK_CGC_DIS |
+> +		AUX_PWR_DET | L23_CLK_RMV_DIS | L1_CLK_RMV_DIS,
+> +		pcie->parf + PCIE20_PARF_SYS_CTRL);
+> +
+> +	writel(0, pcie->parf + PCIE20_PARF_Q2A_FLUSH);
+> +
+> +	writel(BUS_MASTER_EN, pci->dbi_base + PCIE20_COMMAND_STATUS);
+
+Pretty sure the DWC core or PCI core does this already.
+
+> +
+> +	writel(DBI_RO_WR_EN, pci->dbi_base + PCIE20_MISC_CONTROL_1_REG);
+> +	writel(PCIE_CAP_LINK1_VAL, pci->dbi_base + offset + PCI_EXP_SLTCAP);
+> +
+> +	/* Configure PCIe link capabilities for ASPM */
+> +	val = readl(pci->dbi_base + offset + PCI_EXP_LNKCAP);
+> +	val &= ~PCI_EXP_LNKCAP_ASPMS;
+> +	writel(val, pci->dbi_base + offset + PCI_EXP_LNKCAP);
+> +
+> +	writel(PCIE_CAP_CPL_TIMEOUT_DISABLE, pci->dbi_base +
+> +		PCIE20_DEVICE_CONTROL2_STATUS2);
+> +
+> +	writel(PCIE_CAP_CURR_DEEMPHASIS | SPEED_GEN3,
+> +			pci->dbi_base + offset + PCI_EXP_DEVCTL2);
+
+This all looks like stuff that should be in the DWC core code. Maybe we 
+need an ASPM disable quirk or something? That's probably somewhat 
+common.
+
+> +
+> +	for (i = 0;i < 256;i++)
+> +		writel(0x0, pcie->parf + PCIE20_PARF_BDF_TO_SID_TABLE_N
+> +				+ (4 * i));
+> +
+
+> +	writel(0x4, pci->atu_base + PCIE_ATU_CR1_OUTBOUND_6_GEN3);
+> +	writel(0x90000000, pci->atu_base + PCIE_ATU_CR2_OUTBOUND_6_GEN3);
+> +	writel(0x0, pci->atu_base + PCIE_ATU_LOWER_BASE_OUTBOUND_6_GEN3);
+> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_BASE_OUTBOUND_6_GEN3);
+> +	writel(0x00107FFFF, pci->atu_base + PCIE_ATU_LIMIT_OUTBOUND_6_GEN3);
+> +	writel(0x0, pci->atu_base + PCIE_ATU_LOWER_TARGET_OUTBOUND_6_GEN3);
+> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_TARGET_OUTBOUND_6_GEN3);
+> +	writel(0x5, pci->atu_base + PCIE_ATU_CR1_OUTBOUND_7_GEN3);
+> +	writel(0x90000000, pci->atu_base + PCIE_ATU_CR2_OUTBOUND_7_GEN3);
+> +	writel(0x200000, pci->atu_base + PCIE_ATU_LOWER_BASE_OUTBOUND_7_GEN3);
+> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_BASE_OUTBOUND_7_GEN3);
+> +	writel(0x7FFFFF, pci->atu_base + PCIE_ATU_LIMIT_OUTBOUND_7_GEN3);
+> +	writel(0x0, pci->atu_base + PCIE_ATU_LOWER_TARGET_OUTBOUND_7_GEN3);
+> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_TARGET_OUTBOUND_7_GEN3);
+
+This should all be coming from 'ranges' in the DT. If not, why not?
+
+If you haven't caught the theme yet, everything outside of PARF register 
+accesses had better have a good explanation why they can't be in common 
+code.
+
+> +
+> +	return 0;
+> +}
+> +
+>  static int qcom_pcie_link_up(struct dw_pcie *pci)
+>  {
+>  	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
+> @@ -1456,6 +1720,15 @@ static const struct qcom_pcie_ops ops_1_9_0 = {
+>  	.config_sid = qcom_pcie_config_sid_sm8250,
+>  };
+>  
+> +/* Qcom IP rev.: 2.9.0  Synopsys IP rev.: 5.00a */
+> +static const struct qcom_pcie_ops ops_2_9_0 = {
+> +	.get_resources = qcom_pcie_get_resources_2_9_0,
+> +	.init = qcom_pcie_init_2_9_0,
+> +	.post_init = qcom_pcie_post_init_2_9_0,
+> +	.deinit = qcom_pcie_deinit_2_9_0,
+> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
+> +};
+> +
+>  static const struct dw_pcie_ops dw_pcie_ops = {
+>  	.link_up = qcom_pcie_link_up,
+>  	.start_link = qcom_pcie_start_link,
+> @@ -1508,6 +1781,11 @@ static int qcom_pcie_probe(struct platform_device *pdev)
+>  		goto err_pm_runtime_put;
+>  	}
+>  
+> +	/* We need ATU for .post_init */
+> +	pci->atu_base = devm_platform_ioremap_resource_byname(pdev, "atu");
+
+The DWC core handles this now.
+
+> +	if (IS_ERR(pci->atu_base))
+> +		pci->atu_base = NULL;
+> +
+>  	pcie->phy = devm_phy_optional_get(dev, "pciephy");
+>  	if (IS_ERR(pcie->phy)) {
+>  		ret = PTR_ERR(pcie->phy);
+> @@ -1555,6 +1833,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+>  	{ .compatible = "qcom,pcie-qcs404", .data = &ops_2_4_0 },
+>  	{ .compatible = "qcom,pcie-sdm845", .data = &ops_2_7_0 },
+>  	{ .compatible = "qcom,pcie-sm8250", .data = &ops_1_9_0 },
+> +	{ .compatible = "qcom,pcie-ipq6018", .data = &ops_2_9_0 },
+>  	{ }
+>  };
+>  
+> -- 
+> 2.30.2
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 -- 
 linux-phy mailing list
