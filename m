@@ -2,79 +2,131 @@ Return-Path: <SRS0=RYiS=JR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1E12DC433ED
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 11:23:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 079D4C433ED
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 11:23:38 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C4F136139A
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 11:23:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C4F136139A
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=tkos.co.il
+	by mail.kernel.org (Postfix) with ESMTPS id 4E80C613AF
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Apr 2021 11:23:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4E80C613AF
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oracle.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=89MBIjN36R+qpxqSjOKkuGjL4vVjzz2SZby3hLEegQ0=; b=B/7nhO/BRp0joEksuTye+cauh
-	nlVyBwrpP/TRKOGnZynTcey9iD2Fvvmf7WB59WAnkU5KLwloBA+1i30YMtfrqSCOl1YnR+fncOU2g
-	PJUFhXmIb1tMbh9/iOeoK2eQ1oFEfzrmusP8DnkyDZ3JIueVxvGSWATbj2Hfm2crJhiZ32L20njls
-	b4ZGaAe9A1bV9wA6kZTgb2rLkauHHetfTxfH2uIzHe+vjVXx/UbvkYdtwoknBaOQI3cOYjX3qaD0u
-	FeUf/SXz3igEX9mOjre1GbmZFlpqqneT0/tWeGgyHCt8KTzgAJCYyma72sg8k6A6PmDU/pOVETyXR
-	C7v5qqwGg==;
+	 bh=s6jte/0nEaqKyTXHj1LYScb+CPFa14+crrzdwr/GxKM=; b=qm7t65yU+DnYvEUapmSpTX4Kk
+	QGgyvubSg8e3qPTExAmyQvHLPqRV8r4TQF5vTPhBKXjxzq+S26YXGZ8qDb+/g3eW3uDPARVPw9mdy
+	4CkEWMY3bdyUNvsY1JHgb6mJhCko3HbmdSt0iIab0enAeN907QRz17n7sGEKi8Ztn0g9iU9Tgq/i3
+	wEMdUJ/eZt9EIOKFva0NgkqxUJGJ00R0jkC+pYq8l6/ZK3g5cmZr+qHcAetVTgEK3tI96HE+0XAVh
+	ag91XJBOwmC4bSghQCEOIuo2sRCNBjbggVXkEcD2gxdNCaFT4uRRPn9qj+DLbNYikJ+ponhwMP9E0
+	u+sqNz6hA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lYoTG-00Bxv2-Sq; Tue, 20 Apr 2021 11:23:11 +0000
+	id 1lYoTf-00By4y-Co; Tue, 20 Apr 2021 11:23:35 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lYoS9-00Bxf8-Ci; Tue, 20 Apr 2021 11:22:01 +0000
+ id 1lYoTV-00By0z-GT; Tue, 20 Apr 2021 11:23:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
- :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=Iq1+jHdS0OV0pmoHSJlQubkOTixHRINpF32Ja6SjNtI=; b=ddFCRFn5xG6kz2f68KjMA/o7rr
- fTSeb5DBBkQyX/Xg0nDoSLtSx3/1YHsLDiaxjiIwlHjRlqWdNBY29ZYtIpUAlQMQ2Pz49uhNr1ZhA
- cJ6TDYfZDyoPYzb5jOcQnanafDdF64gnsSSLB93gLtXWOWKdNgqztrYUXqXoXYZ86RM9ZSu0dm1h8
- BGK9QLbuiKOEL0hBDLJBeL3ri4WhCUI1Fcz4kCoT7qUdwvXPglEkjNrcP4vs17Yw/pMj8g/yBW/qn
- wvVKSC3S6vhD3yw1zxuRtuf/wDdmD9pZV+ECPKhhmzyS7eArnCuBbzmvBw6qFwH60BG8ksomAJ70h
- YLzUn2ug==;
-Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=R7JGUmF3J71wLA6dPwUce8FwqmxU6JTnhs1XaoTWtpc=; b=MeSHY3ZTrMB1uwH2ggmP8A9ZZr
+ HD5F0Gx6gqm3XXI9FnDeitx8FGX6tev7/9n+oduYisrQHePueUBoUy1QbHYCw3jsCzfK3aWFauCRP
+ QmpfaM8W4e4GQo49ZuWyhEdaNcLu1rcMfVbfGD52P5w693bJ8o6Dzmqr7s/k9d+jesC0NOlhARQXb
+ exV1bLFZJE8xth5ywc1+hDwSBldot7u1GSjuC0CWI1SGyHsVwiEuOZJtqJXyJKhjJC95g+9GUBF8O
+ AKiN5C1hPdljcPtiKmNby/5Zl2p6Ay5WQY87W21qe3YM+162WnNHxM8QLbmZ9U4edu3ILncuVORnt
+ 1lWB95QA==;
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lYoS6-00C41v-PY; Tue, 20 Apr 2021 11:22:00 +0000
-Received: from tarshish.tkos.co.il (unknown [10.0.8.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id 475FA440E71;
- Tue, 20 Apr 2021 14:21:47 +0300 (IDT)
-From: Baruch Siach <baruch@tkos.co.il>
-To: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Baruch Siach <baruch@tkos.co.il>,
- Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
- Kathiravan T <kathirav@codeaurora.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/5] dt-bindings: pci: qcom: Document PCIe bindings for
- IPQ6018 SoC
-Date: Tue, 20 Apr 2021 14:21:40 +0300
-Message-Id: <e285d5041b8c19d4a7fab4d1a3ce9dd2b487cbad.1618916235.git.baruch@tkos.co.il>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <cover.1618916235.git.baruch@tkos.co.il>
-References: <cover.1618916235.git.baruch@tkos.co.il>
+ id 1lYoTQ-00C461-4I; Tue, 20 Apr 2021 11:23:24 +0000
+Received: from pps.filterd (m0246632.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
+ 13KBMmuM012376; Tue, 20 Apr 2021 11:22:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=R7JGUmF3J71wLA6dPwUce8FwqmxU6JTnhs1XaoTWtpc=;
+ b=mzrAyP3z3vTbOYF05fKTtm1FSfsRhaXIMtNI32junvaq2xixqdu4DFtiOEnKHMCjmDAu
+ pzOmg6bFqIFulJfFAK3gAc4G1ubri2zL7y+ukl2ZTNZd4enmkHEeJ6kOxa09vXbI9Cau
+ pxckDe5aQNXRp1SihBx1WvxHHU5bOAl0qwzbdRlKb6bAcGZRRvbBEvMsbe3h/AM/l6mO
+ 6K0B0emzos5cXJDAWeD+zogdWeN4yukpTfk465biG7Agf/JhaT7Tq2FLJjNIss62qUS9
+ j74qQsLbz2k9Dn5eRznUZ+6NPhFOVGc2XKyCruqh+CG4TG6qi4y3ofFXm87t+4F6DYgG CQ== 
+Received: from oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by mx0b-00069f02.pphosted.com with ESMTP id 381bjn86tg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 20 Apr 2021 11:22:48 +0000
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [127.0.0.1])
+ by pps.podrdrct (8.16.0.36/8.16.0.36) with SMTP id 13KBKXsp006877;
+ Tue, 20 Apr 2021 11:22:47 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+ by aserp3020.oracle.com with ESMTP id 3809k06m19-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 20 Apr 2021 11:22:47 +0000
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 13KBKAbB005467;
+ Tue, 20 Apr 2021 11:22:46 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3020.oracle.com with ESMTP id 3809k06m07-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 20 Apr 2021 11:22:46 +0000
+Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 13KBMEHV030572;
+ Tue, 20 Apr 2021 11:22:18 GMT
+Received: from kadam (/102.36.221.92) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 20 Apr 2021 04:22:13 -0700
+Date: Tue, 20 Apr 2021 14:21:52 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Cc: "Alice Guo (OSS)" <alice.guo@oss.nxp.com>, gregkh@linuxfoundation.org,
+ rafael@kernel.org, horia.geanta@nxp.com, aymen.sghaier@nxp.com,
+ herbert@gondor.apana.org.au, davem@davemloft.net, tony@atomide.com,
+ geert+renesas@glider.be, mturquette@baylibre.com, sboyd@kernel.org,
+ vkoul@kernel.org, peter.ujfalusi@gmail.com, a.hajda@samsung.com,
+ narmstrong@baylibre.com, robert.foss@linaro.org, airlied@linux.ie,
+ daniel@ffwll.ch, khilman@baylibre.com, tomba@kernel.org,
+ jyri.sarha@iki.fi, joro@8bytes.org, will@kernel.org,
+ mchehab@kernel.org, ulf.hansson@linaro.org, adrian.hunter@intel.com,
+ kishon@ti.com, kuba@kernel.org, linus.walleij@linaro.org,
+ Roy.Pledge@nxp.com, leoyang.li@nxp.com, ssantosh@kernel.org,
+ matthias.bgg@gmail.com, edubezval@gmail.com, j-keerthy@ti.com,
+ balbi@kernel.org, linux@prisktech.co.nz, stern@rowland.harvard.edu,
+ wim@linux-watchdog.org, linux@roeck-us.net,
+ linux-kernel@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-omap@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-clk@vger.kernel.org, dmaengine@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, iommu@lists.linux-foundation.org,
+ linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
+ netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-gpio@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-staging@lists.linux.dev, linux-mediatek@lists.infradead.org,
+ linux-pm@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [RFC v1 PATCH 1/3] drivers: soc: add support for
+ soc_device_match returning -EPROBE_DEFER
+Message-ID: <20210420112151.GE1981@kadam>
+References: <20210419042722.27554-1-alice.guo@oss.nxp.com>
+ <20210419042722.27554-2-alice.guo@oss.nxp.com>
+ <CAMuHMdUbrPxtJ9DCP0_nFrReuuO4vFY2J79LrKY82D7bCOfzRw@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdUbrPxtJ9DCP0_nFrReuuO4vFY2J79LrKY82D7bCOfzRw@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-GUID: e0r_GcH24oUhB4PQiI_vI2-dauff_ZRM
+X-Proofpoint-ORIG-GUID: e0r_GcH24oUhB4PQiI_vI2-dauff_ZRM
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210420_042159_091014_C0115688 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20210420_042320_304965_F932ACDC 
+X-CRM114-Status: GOOD (  24.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,66 +143,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document qcom,pcie-ipq6018. This is similar to the ipq8074 with a few
-different clock sources, and one additional reset.
+On Mon, Apr 19, 2021 at 10:20:13AM +0200, Geert Uytterhoeven wrote:
+> Hi Alice,
+> 
+> CC Arnd (soc_device_match() author)
+> 
+> On Mon, Apr 19, 2021 at 6:28 AM Alice Guo (OSS) <alice.guo@oss.nxp.com> wrote:
+> > From: Alice Guo <alice.guo@nxp.com>
+> >
+> > In i.MX8M boards, the registration of SoC device is later than caam
+> > driver which needs it. Caam driver needs soc_device_match to provide
+> > -EPROBE_DEFER when no SoC device is registered and no
+> > early_soc_dev_attr.
+> 
+> I'm wondering if this is really a good idea: soc_device_match() is a
+> last-resort low-level check, and IMHO should be made available early on,
+> so there is no need for -EPROBE_DEFER.
+> 
+> >
+> > Signed-off-by: Alice Guo <alice.guo@nxp.com>
+> 
+> Thanks for your patch!
+> 
+> > --- a/drivers/base/soc.c
+> > +++ b/drivers/base/soc.c
+> > @@ -110,6 +110,7 @@ static void soc_release(struct device *dev)
+> >  }
+> >
+> >  static struct soc_device_attribute *early_soc_dev_attr;
+> > +static bool soc_dev_attr_init_done = false;
+> 
+> Do you need this variable?
+> 
+> >
+> >  struct soc_device *soc_device_register(struct soc_device_attribute *soc_dev_attr)
+> >  {
+> > @@ -157,6 +158,7 @@ struct soc_device *soc_device_register(struct soc_device_attribute *soc_dev_attr
+> >                 return ERR_PTR(ret);
+> >         }
+> >
+> > +       soc_dev_attr_init_done = true;
+> >         return soc_dev;
+> >
+> >  out3:
+> > @@ -246,6 +248,9 @@ const struct soc_device_attribute *soc_device_match(
+> >         if (!matches)
+> >                 return NULL;
+> >
+> > +       if (!soc_dev_attr_init_done && !early_soc_dev_attr)
+> 
+> if (!soc_bus_type.p && !early_soc_dev_attr)
 
-Signed-off-by: Baruch Siach <baruch@tkos.co.il>
----
- .../devicetree/bindings/pci/qcom,pcie.txt     | 24 +++++++++++++++++++
- 1 file changed, 24 insertions(+)
+There is one place checking this already.  We could wrap it in a helper
+function:
 
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.txt b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-index 0da458a051b6..25f4def468bf 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-@@ -14,6 +14,7 @@
- 			- "qcom,pcie-qcs404" for qcs404
- 			- "qcom,pcie-sdm845" for sdm845
- 			- "qcom,pcie-sm8250" for sm8250
-+			- "qcom,pcie-ipq6018" for ipq6018
- 
- - reg:
- 	Usage: required
-@@ -123,6 +124,16 @@
- 			- "ahb"		AHB clock
- 			- "aux"		Auxiliary clock
- 
-+- clock-names:
-+	Usage: required for ipq6018
-+	Value type: <stringlist>
-+	Definition: Should contain the following entries
-+			- "iface"	PCIe to SysNOC BIU clock
-+			- "axi_m"	AXI Master clock
-+			- "axi_s"	AXI Slave clock
-+			- "axi_bridge"	AXI bridge clock
-+			- "rchng"
-+
- - clock-names:
- 	Usage: required for qcs404
- 	Value type: <stringlist>
-@@ -209,6 +220,19 @@
- 			- "ahb"			AHB Reset
- 			- "axi_m_sticky"	AXI Master Sticky reset
- 
-+- reset-names:
-+	Usage: required for ipq6018
-+	Value type: <stringlist>
-+	Definition: Should contain the following entries
-+			- "pipe"		PIPE reset
-+			- "sleep"		Sleep reset
-+			- "sticky"		Core Sticky reset
-+			- "axi_m"		AXI Master reset
-+			- "axi_s"		AXI Slave reset
-+			- "ahb"			AHB Reset
-+			- "axi_m_sticky"	AXI Master Sticky reset
-+			- "axi_s_sticky"	AXI Slave Sticky reset
-+
- - reset-names:
- 	Usage: required for qcs404
- 	Value type: <stringlist>
--- 
-2.30.2
+static bool device_init_done(void)
+{
+	return soc_bus_type.p ? true : false;
+}
 
+regards,
+dan carpenter
 
 -- 
 linux-phy mailing list
