@@ -2,78 +2,83 @@ Return-Path: <SRS0=Wr7y=JS=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EC3FDC433ED
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Apr 2021 04:45:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 748CBC433B4
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Apr 2021 13:56:43 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 513E76140F
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Apr 2021 04:45:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 513E76140F
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=tkos.co.il
+	by mail.kernel.org (Postfix) with ESMTPS id F007261445
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Apr 2021 13:56:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F007261445
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:In-reply-to:Subject:Cc:
-	To:From:References:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=R9fUKqwc9jS/NHHaLZiFa5A1J4mc0vJfY7AxJeA3wWU=; b=JEjGJjdHFrMjTncg80m83dEEY
-	yTqWJlMAeoTIrIKX5cpeXshtMzWgGFpjUfABnRGlob47aiG687ggG4uW8St6rMp0kvpfgezxojCns
-	ODxTsyGA23ZM+mSFtAJZFYosEtpI+X4oeHVcBB3MSBthJRPAkLvGwC79FQdJjS2Mt0imjE//h8of0
-	CP0HNRChyWYzMoCKrT9oncObAGHEdXO4KuaHNMRUR8fhTPJ1isCCGxzEuuWkiBwQer6e9kzHFD7D6
-	eryykZRK0Za0KVxJrZof5wh2Yrl8NiYrDS0A2Eg0I9s5/5mVNI/2svij2jkpXa6zA7KvWTMYE1UKw
-	7QOhiV/mA==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=FKqxPhxDXp5iBqvNMKRFXtVgB9d9CNI3Xq/Xap4raQE=; b=f6Va0Xma3jhKeV3BWs+x60GoRJ
+	+dNQ2w6zwdzdc5jMA1RujRi02ExWoJv25ix8vGRqOsFgXX3F2nNFuSgwC5p+nyXbuiN7zw0CUC6fV
+	PdGuKeDoz/xwiIwn0CD6H3vkTc/QviDcxohEyGc0UvWDyWz9ZqRsNUNKctw01nh7XawV00Mmss6hn
+	kAMumFinMP702seWWQAfLIopMgFjboAzdBVX9nPnGk1SjAi7hpgeIeZDQm2tWHAw//De/5YgOxwLl
+	9btQFYHzogkTqzAXsXsdj6qepXP5fHlNfs+r994LXFeNWw5m9vJk0mzAu4rG2VzjY4sZOqL+T4T0Y
+	DCFp0a8g==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lZ4jy-00Debv-H9; Wed, 21 Apr 2021 04:45:30 +0000
+	id 1lZDLN-00EVnr-2k; Wed, 21 Apr 2021 13:56:41 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lZ4ji-00DeaS-Re; Wed, 21 Apr 2021 04:45:15 +0000
+ id 1lZDL5-00EVlo-BU
+ for linux-phy@desiato.infradead.org; Wed, 21 Apr 2021 13:56:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:MIME-Version:Message-ID:
- Date:In-reply-to:Subject:Cc:To:From:References:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=jIszFoiv9Hv5yaHQVn2EnK/a2BkaHxi/A+smMP5b7y4=; b=R/xUuE6TSK9LXSgbJcinEnB+ZI
- QyyLiiwerLNvxXaSIwzoUY4gJMpwiN4xnsLcuyhloG9sTcyKQDpwfwbneFeGDQJtm7MlKZrAens0J
- SqjoR5uiS2PUqa2LFyZFJDjq5q3byi3ZwjyrYQ6aL7NINxYFkWTHwxswgwiLdUNREf8rKqUFW1G0w
- biRWGcvDSc1LgpTxuCbcPea1gLZnwXrjNy9LjXFMztMGeN12b+eerRdDdOwMJo0vrdZ8kt5C+lnS5
- SN68Jl0JPsIfe7ptBp46f0N4mLhSYyo6AL/bes4Uc+1OEDrHqY+J/qqG63BlZbeU1uGywFEK9VH5g
- 905UKCVA==;
-Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
+ d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
+ MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=/D0x2DG7nAE2avgO6ToB6YMiUCbYpWRarK6dDtXQmNs=; b=FeGSAcaBk5P39MH53Txm0E+jpE
+ 7JrY4jWIqT79THtZ/pomxwAHRsspAczzRu13jKI8uTJrpWF1hMijxdC9tffLxZEcoqtooxeDiq9kR
+ rAzOVbvBZKLVp9M764SvJgTHOvZDgZrkteGIgcej0KR1QpS2w2wiFRvu8uLWHjnZdbpzAIhRSAlV1
+ jDixEiFIfjtKVsW9pi9IeSAT0YsvSmFsG2pIyxpp27hmenEIOnlLX4nP7+WDPB13mFWFKpCNO51Fe
+ hnyD/hYUaoNmrStZcbZdsCdknYuu2/lNRS4KdlkfZ14ZdStJfDFm9+OyenDo3mPAzvWXy3PLRPgia
+ FR+sNFzA==;
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lZ4jd-00Cayf-1p; Wed, 21 Apr 2021 04:45:13 +0000
-Received: from tarshish (unknown [10.0.8.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id 402D64405EB;
- Wed, 21 Apr 2021 07:45:02 +0300 (IDT)
-References: <cover.1618916235.git.baruch@tkos.co.il>
- <c6ff03d1377ea9b5ff40ab283c884aeff6254dd9.1618916235.git.baruch@tkos.co.il>
- <20210420161855.GA3402221@robh.at.kernel.org>
-User-agent: mu4e 1.4.15; emacs 27.1
-From: Baruch Siach <baruch@tkos.co.il>
-To: Rob Herring <robh@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Selvam Sathappan Periakaruppan
- <speriaka@codeaurora.org>, Kathiravan T <kathirav@codeaurora.org>, Bjorn
- Helgaas <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 1/5] PCI: qcom: add support for IPQ60xx PCIe controller
-In-reply-to: <20210420161855.GA3402221@robh.at.kernel.org>
-Date: Wed, 21 Apr 2021 07:45:01 +0300
-Message-ID: <87r1j4kzzm.fsf@tarshish>
+ id 1lZDL2-00Cw0N-Uk
+ for linux-phy@lists.infradead.org; Wed, 21 Apr 2021 13:56:22 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 23BFE61445;
+ Wed, 21 Apr 2021 13:56:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1619013380;
+ bh=WriTCo0S6j+IjAPj6Z5yqE11oeq+w4YKDEuY4LaCLAA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=lYNrwyHe5Wffdt7MP8/+/yxwH1NzaeuNbIYc3H4VjKowvtrlXbVP+1t9GfcEt5p43
+ ZtbxCw53f1eUeY581aUtYVrtU8KddkQPx58r6YMOgMKnEnccBtklyuVgsJEEZk5Rbw
+ /oRvUJY5UYc8xpezhBGJVxqgvGs8KYhkNoNmxZkHn7yMYw1FkYqvts9XJ1Gse/DsUf
+ rr9jqEWY0ESAUgk8J0d3ZuF9E2VDGncThrY1dF8CBRQTJBm5i/Tx2exmf5fK7hPeuS
+ jWPJgMXwhtYD1PF4wfoMF8mMTlZc2H+EdmUWQZ/mBhjgunr9NXOO5ae4Tq3Kthxe59
+ a/UbyGPy0prnA==
+From: Arnd Bergmann <arnd@kernel.org>
+To: JC Kuo <jckuo@nvidia.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Marc Zyngier <maz@kernel.org>,
+ Rikard Falkeborn <rikard.falkeborn@gmail.com>,
+ linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] phy: tegra: xusb: annotate PM functions as __maybe_unused
+Date: Wed, 21 Apr 2021 15:56:07 +0200
+Message-Id: <20210421135613.3560777-1-arnd@kernel.org>
+X-Mailer: git-send-email 2.29.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210420_214509_594585_AF49FCA6 
-X-CRM114-Status: GOOD (  31.80  )
+X-CRM114-CacheID: sfid-20210421_065621_049079_BDFB4303 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,212 +95,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
+From: Arnd Bergmann <arnd@arndb.de>
 
-Thanks for your review.
+Depending on the configuration, there are no references to these
+two helpers:
 
-I have a few comments below.
+drivers/phy/tegra/xusb.c:1286:12: error: 'tegra_xusb_padctl_resume_noirq' defined but not used [-Werror=unused-function]
+ 1286 | static int tegra_xusb_padctl_resume_noirq(struct device *dev)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/phy/tegra/xusb.c:1276:12: error: 'tegra_xusb_padctl_suspend_noirq' defined but not used [-Werror=unused-function]
 
-On Tue, Apr 20 2021, Rob Herring wrote:
-> On Tue, Apr 20, 2021 at 02:21:36PM +0300, Baruch Siach wrote:
->> From: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
->> 
->> IPQ60xx series of SoCs have one port of PCIe gen 3. Add support for that
->> platform.
->> 
->> The code is based on downstream Codeaurora kernel v5.4. Split out the
->> registers access part from .init into .post_init. Registers are only
->> accessible after phy_power_on().
->> 
->> Signed-off-by: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
->> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
->> ---
->>  drivers/pci/controller/dwc/pcie-qcom.c | 279 +++++++++++++++++++++++++
->>  1 file changed, 279 insertions(+)
->> 
->> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
->> index 8a7a300163e5..3e27de744738 100644
->> --- a/drivers/pci/controller/dwc/pcie-qcom.c
->> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
->> @@ -41,6 +41,31 @@
->>  #define L23_CLK_RMV_DIS				BIT(2)
->>  #define L1_CLK_RMV_DIS				BIT(1)
->>  
->> +#define PCIE_ATU_CR1_OUTBOUND_6_GEN3		0xC00
->> +#define PCIE_ATU_CR2_OUTBOUND_6_GEN3		0xC04
->> +#define PCIE_ATU_LOWER_BASE_OUTBOUND_6_GEN3	0xC08
->> +#define PCIE_ATU_UPPER_BASE_OUTBOUND_6_GEN3	0xC0C
->> +#define PCIE_ATU_LIMIT_OUTBOUND_6_GEN3		0xC10
->> +#define PCIE_ATU_LOWER_TARGET_OUTBOUND_6_GEN3	0xC14
->> +#define PCIE_ATU_UPPER_TARGET_OUTBOUND_6_GEN3	0xC18
->> +
->> +#define PCIE_ATU_CR1_OUTBOUND_7_GEN3		0xE00
->> +#define PCIE_ATU_CR2_OUTBOUND_7_GEN3		0xE04
->> +#define PCIE_ATU_LOWER_BASE_OUTBOUND_7_GEN3	0xE08
->> +#define PCIE_ATU_UPPER_BASE_OUTBOUND_7_GEN3	0xE0C
->> +#define PCIE_ATU_LIMIT_OUTBOUND_7_GEN3		0xE10
->> +#define PCIE_ATU_LOWER_TARGET_OUTBOUND_7_GEN3	0xE14
->> +#define PCIE_ATU_UPPER_TARGET_OUTBOUND_7_GEN3 	0xE18
->
-> ATU registers are standard DWC registers. Plus upstream now dynamically 
-> detects how many ATU regions there are.
->
->> +#define PCIE20_COMMAND_STATUS			0x04
->> +#define BUS_MASTER_EN				0x7
->> +#define PCIE20_DEVICE_CONTROL2_STATUS2		0x98
->> +#define PCIE_CAP_CPL_TIMEOUT_DISABLE		0x10
->
-> All PCI standard registers.
+Mark them as __maybe_unused to shut up the warnings without adding
+fragile #ifdefs.
 
-PCIE20_COMMAND_STATUS is indeed the common PCI_COMMAND. I could not find
-anything that matches PCIE20_DEVICE_CONTROL2_STATUS2. Where should I
-look?
+Fixes: b8bb3d9c9b74 ("phy: tegra: xusb: Add sleepwalk and suspend/resume")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/phy/tegra/xusb.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
->
->> +#define PCIE30_GEN3_RELATED_OFF			0x890
->
-> Looks like a DWC port logic register. The define at a minimum goes in 
-> the common code. We probably already have one. Code touching the 
-> register should ideally be there too (hint: look at the other drivers). 
-
-pcie-tegra194.c uses the equivalent GEN3_RELATED_OFF. So I can move the
-definition to a common header. As for the code, I don't know. The tegra
-configuration sequence involves other registers as well.
-
-[snip]
-
->> +static int qcom_pcie_post_init_2_9_0(struct qcom_pcie *pcie)
->> +{
->> +	struct dw_pcie *pci = pcie->pci;
->> +	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
->> +	u32 val;
->> +	int i;
->> +
->> +	writel(SLV_ADDR_SPACE_SZ,
->> +		pcie->parf + PCIE20_v3_PARF_SLV_ADDR_SPACE_SIZE);
->> +
->> +	val = readl(pcie->parf + PCIE20_PARF_PHY_CTRL);
->> +	val &= ~BIT(0);
->
-> What's BIT(0)?
-
-I have no idea. I have no access to hardware documentation. I'm just
-porting working code from the Codeaurora tree.
-
->
->> +	writel(val, pcie->parf + PCIE20_PARF_PHY_CTRL);
->> +
->> +	writel(0, pcie->parf + PCIE20_PARF_DBI_BASE_ADDR);
->> +
->> +	writel(DEVICE_TYPE_RC, pcie->parf + PCIE20_PARF_DEVICE_TYPE);
->> +	writel(BYPASS | MSTR_AXI_CLK_EN | AHB_CLK_EN,
->> +		pcie->parf + PCIE20_PARF_MHI_CLOCK_RESET_CTRL);
->> +	writel(RXEQ_RGRDLESS_RXTS | GEN3_ZRXDC_NONCOMPL,
->> +		pci->dbi_base + PCIE30_GEN3_RELATED_OFF);
->> +
->> +	writel(MST_WAKEUP_EN | SLV_WAKEUP_EN | MSTR_ACLK_CGC_DIS
->> +		| SLV_ACLK_CGC_DIS | CORE_CLK_CGC_DIS |
->> +		AUX_PWR_DET | L23_CLK_RMV_DIS | L1_CLK_RMV_DIS,
->> +		pcie->parf + PCIE20_PARF_SYS_CTRL);
->> +
->> +	writel(0, pcie->parf + PCIE20_PARF_Q2A_FLUSH);
->> +
->> +	writel(BUS_MASTER_EN, pci->dbi_base + PCIE20_COMMAND_STATUS);
->
-> Pretty sure the DWC core or PCI core does this already.
->
->> +
->> +	writel(DBI_RO_WR_EN, pci->dbi_base + PCIE20_MISC_CONTROL_1_REG);
->> +	writel(PCIE_CAP_LINK1_VAL, pci->dbi_base + offset + PCI_EXP_SLTCAP);
->> +
->> +	/* Configure PCIe link capabilities for ASPM */
->> +	val = readl(pci->dbi_base + offset + PCI_EXP_LNKCAP);
->> +	val &= ~PCI_EXP_LNKCAP_ASPMS;
->> +	writel(val, pci->dbi_base + offset + PCI_EXP_LNKCAP);
->> +
->> +	writel(PCIE_CAP_CPL_TIMEOUT_DISABLE, pci->dbi_base +
->> +		PCIE20_DEVICE_CONTROL2_STATUS2);
->> +
->> +	writel(PCIE_CAP_CURR_DEEMPHASIS | SPEED_GEN3,
->> +			pci->dbi_base + offset + PCI_EXP_DEVCTL2);
->
-> This all looks like stuff that should be in the DWC core code. Maybe we 
-> need an ASPM disable quirk or something? That's probably somewhat 
-> common.
-
-Where in common code should that be? Which part is quirky?
-
->> +
->> +	for (i = 0;i < 256;i++)
->> +		writel(0x0, pcie->parf + PCIE20_PARF_BDF_TO_SID_TABLE_N
->> +				+ (4 * i));
->> +
->
->> +	writel(0x4, pci->atu_base + PCIE_ATU_CR1_OUTBOUND_6_GEN3);
->> +	writel(0x90000000, pci->atu_base + PCIE_ATU_CR2_OUTBOUND_6_GEN3);
->> +	writel(0x0, pci->atu_base + PCIE_ATU_LOWER_BASE_OUTBOUND_6_GEN3);
->> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_BASE_OUTBOUND_6_GEN3);
->> +	writel(0x00107FFFF, pci->atu_base + PCIE_ATU_LIMIT_OUTBOUND_6_GEN3);
->> +	writel(0x0, pci->atu_base + PCIE_ATU_LOWER_TARGET_OUTBOUND_6_GEN3);
->> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_TARGET_OUTBOUND_6_GEN3);
->> +	writel(0x5, pci->atu_base + PCIE_ATU_CR1_OUTBOUND_7_GEN3);
->> +	writel(0x90000000, pci->atu_base + PCIE_ATU_CR2_OUTBOUND_7_GEN3);
->> +	writel(0x200000, pci->atu_base + PCIE_ATU_LOWER_BASE_OUTBOUND_7_GEN3);
->> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_BASE_OUTBOUND_7_GEN3);
->> +	writel(0x7FFFFF, pci->atu_base + PCIE_ATU_LIMIT_OUTBOUND_7_GEN3);
->> +	writel(0x0, pci->atu_base + PCIE_ATU_LOWER_TARGET_OUTBOUND_7_GEN3);
->> +	writel(0x0, pci->atu_base + PCIE_ATU_UPPER_TARGET_OUTBOUND_7_GEN3);
->
-> This should all be coming from 'ranges' in the DT. If not, why not?
-
-I'll try to drop it and see if it works. I see that common code
-overwrites this area anyway.
-
->
-> If you haven't caught the theme yet, everything outside of PARF register 
-> accesses had better have a good explanation why they can't be in common 
-> code.
->
->> +
->> +	return 0;
->> +}
->> +
->>  static int qcom_pcie_link_up(struct dw_pcie *pci)
->>  {
->>  	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
->> @@ -1456,6 +1720,15 @@ static const struct qcom_pcie_ops ops_1_9_0 = {
->>  	.config_sid = qcom_pcie_config_sid_sm8250,
->>  };
->>  
->> +/* Qcom IP rev.: 2.9.0  Synopsys IP rev.: 5.00a */
->> +static const struct qcom_pcie_ops ops_2_9_0 = {
->> +	.get_resources = qcom_pcie_get_resources_2_9_0,
->> +	.init = qcom_pcie_init_2_9_0,
->> +	.post_init = qcom_pcie_post_init_2_9_0,
->> +	.deinit = qcom_pcie_deinit_2_9_0,
->> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->> +};
->> +
->>  static const struct dw_pcie_ops dw_pcie_ops = {
->>  	.link_up = qcom_pcie_link_up,
->>  	.start_link = qcom_pcie_start_link,
->> @@ -1508,6 +1781,11 @@ static int qcom_pcie_probe(struct platform_device *pdev)
->>  		goto err_pm_runtime_put;
->>  	}
->>  
->> +	/* We need ATU for .post_init */
->> +	pci->atu_base = devm_platform_ioremap_resource_byname(pdev, "atu");
->
-> The DWC core handles this now.
-
-With ATU code in .post_init gone, we can remove this as well.
-
-baruch
-
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 0aadac678191..963de5913e50 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -1273,7 +1273,7 @@ static int tegra_xusb_padctl_remove(struct platform_device *pdev)
+ 	return err;
+ }
+ 
+-static int tegra_xusb_padctl_suspend_noirq(struct device *dev)
++static __maybe_unused int tegra_xusb_padctl_suspend_noirq(struct device *dev)
+ {
+ 	struct tegra_xusb_padctl *padctl = dev_get_drvdata(dev);
+ 
+@@ -1283,7 +1283,7 @@ static int tegra_xusb_padctl_suspend_noirq(struct device *dev)
+ 	return 0;
+ }
+ 
+-static int tegra_xusb_padctl_resume_noirq(struct device *dev)
++static __maybe_unused int tegra_xusb_padctl_resume_noirq(struct device *dev)
+ {
+ 	struct tegra_xusb_padctl *padctl = dev_get_drvdata(dev);
+ 
 -- 
-                                                     ~. .~   Tk Open Systems
-=}------------------------------------------------ooO--U--Ooo------------{=
-   - baruch@tkos.co.il - tel: +972.52.368.4656, http://www.tkos.co.il -
+2.29.2
+
 
 -- 
 linux-phy mailing list
