@@ -2,102 +2,96 @@ Return-Path: <SRS0=80zw=J3=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-10.7 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C5E5BC433B4
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:05:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 929F6C433ED
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:06:11 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5EFD161409
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:05:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5EFD161409
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id E8DB86143A
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:06:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E8DB86143A
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iX13npTWEC5lpsCD2J0UJCOvzyWXHlwGpXSEzzCtkg4=; b=Wv05YDe0vnzV8h8D3l24+hih0
-	/DMsThv/pSV0uAvoHkF6yOsK5JXhJh486hkS3iJM3EVdgCcvvKJUvl3FGMD9SRpFMlmbyWOfSi68m
-	UEs/oGj/pvlTt0QKXDwNyk6TSoSkH5BgMO6pMnMNBc6gQSifkyQ897snm7/amBkdbTfsO7a6mNp5j
-	KV8b7knCTZaG2OdseXciVmSSA6+TRkmX/EJrG2z3tDZoVZ7fX/omkY/hsiNMFkxMrABb+9XiPsM12
-	eaXQTZ4lgKF+ho8PbUiwnq7DepOnVk2E78AFwcIWc4DLDTX9+cNPaTGAzzBtbjzyO2ojaBm4freeu
-	7pmcz+8cQ==;
+	 bh=hq+nvA7XmFZQo6NEZJemUDm4yM8L2lqBBXtyn6oCwgk=; b=HosQkKVJlKq2xQ6bw32cs+7cc
+	9aq+/AzGGSXbAawsxugbB6bNcpD4cY97yAmzh6rnGTpr4/YXTYaN6lc3Ls2rbkGkG7M0rZrBfqQLj
+	T7GSi2buuMNasypBRpg1AN2cjGDS4cks5Lh+A9m/o/EvhNi2ka+qdlDeBS/mdnkdoTGMqQdoVBrA1
+	dOSuAJRGkZjjJ+qdtblg4m/9ewstf//MMSSNpIkrug4WAE1gt/HHJKwqxMmjBLCNF9JJ292OdJgkb
+	KZ5GZXc8SNPJEm59uYsstUJglnYqHl7Duwdiy3SnhD8F867a/QpoyiHQhw2FaS7zsAzRXOmeyGo6I
+	w+LcPUQAA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lcUi8-0080q5-Qf; Fri, 30 Apr 2021 15:05:44 +0000
+	id 1lcUiX-0080uV-4s; Fri, 30 Apr 2021 15:06:09 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lcUhw-0080oI-20; Fri, 30 Apr 2021 15:05:32 +0000
+ id 1lcUiT-0080tq-GL
+ for linux-phy@desiato.infradead.org; Fri, 30 Apr 2021 15:06:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
- :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ d=infradead.org; s=bombadil.20210309; h=Content-Type:Cc:To:Subject:Message-ID
+ :Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=UtTHHLQsplee9C29Cg59LYjLb0qT4MBNWWXqLYYCrMk=; b=V0a3Cd5swXKek6dzylzcwm84as
- 0OJXNvPAo3mA0AhpqctE1ns8/4JJaI7qtQOSXz73qkru43Jq+t5tRXDppevVFFLee8Qg0RRKId4Q0
- NwuaU9oIR8p9x9mo8bIO7IYmewwjR3HEF61MALuFMzGqHsDXmiNmp7WXKm1cV8LhZcOx0iGs4zvIU
- rCcLM9NjulMXaEQr5opqCmjuP0dVrEYL2nmPxy2exUAR9gTSy5nTWb8Sc2E2F7ZRfmv4f0Nwfu1+p
- Fc/iuS5bF98NXFdtg48QCrLgs2ZqEiB3xNxk5Y9XQ8OJ/zsqI4IVYNURD/xLouc9Z8v4Ho42aV+bv
- elzLkezQ==;
-Received: from mail-ot1-f50.google.com ([209.85.210.50])
+ bh=n4yNY14iANXzzHRqcO5/UVD04FwUySJbnV2wB6AF6ks=; b=dHGsvYfy0G0qLfiFAs3jDZM4uR
+ RdF9gUMnsLQr9pJiITvqpLQbijM3MT15ANh1xJ4c0NZJhY1ok+5lbfII1o1g41tvD6U9/LQTQVjoC
+ du03aHYbab2XtQ3Zt1oAJhAqCIKnvOhcJYuTV9v5ZxlMRPS/M8EZ9Tplx1CqNj77B8vs3+YveJc+X
+ kYCJ6YZ4sykaufpR95xI1XEqvuWx0bxqyBKCKFTRGmESEOl4J5wcImJeHj0zWu5Xr1kDRct0s3Y5v
+ RRezcCVEAf8FJhVmNyTbtgsnMAsgni9kIPf5Ql+VuO8n2L6Qn5AYUX8fpHm2+MLAgf6lSQZJGBBOO
+ +xRjVPpw==;
+Received: from mail-il1-x131.google.com ([2607:f8b0:4864:20::131])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lcUhs-001TD4-SO; Fri, 30 Apr 2021 15:05:30 +0000
-Received: by mail-ot1-f50.google.com with SMTP id
- c8-20020a9d78480000b0290289e9d1b7bcso50598592otm.4; 
- Fri, 30 Apr 2021 08:05:28 -0700 (PDT)
+ id 1lcUiR-001TFd-1V
+ for linux-phy@lists.infradead.org; Fri, 30 Apr 2021 15:06:04 +0000
+Received: by mail-il1-x131.google.com with SMTP id c18so56443273iln.7
+ for <linux-phy@lists.infradead.org>; Fri, 30 Apr 2021 08:06:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=n4yNY14iANXzzHRqcO5/UVD04FwUySJbnV2wB6AF6ks=;
+ b=CfUq5RBVdq2vvyGjjooQxXACzeB68ARRk4s0/ONsuzqV21SG5/SNpTNj2436qspGii
+ X1r9Ry/WHYFQ+nGvCiSTiH6e+aM37cOSDNliI9xNdw+KWdT0f5oP9f5mOOxCSqOxbdtO
+ RiU5D00Rp9gAKLwliwzoyA/t5wCFH0/TyibD7kaqhC7AzbXoaBDO+nw5/TOvY8lsuVr3
+ ARE7LNtdPxFX3vejxIWUKfsNboIBVfGXfKF1Lr9Usstm+DRMGrMul3lcqRtIQoxXbMsm
+ Tx1RBoFf1K91Nx2QWNQCwFKjnASD/KwvTKGup+WzRIg1N2ldsw1aOGYtWWQaEWWretfC
+ aRuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=UtTHHLQsplee9C29Cg59LYjLb0qT4MBNWWXqLYYCrMk=;
- b=OfXIo/C6e7doHOXoYcrINEn3pooIfmmu5Ztc08uiZITPoFUrcqq9iIRggty87ITBRo
- R/9IPumNab66kZz+DF4gHNmby7N68sFxIBbfFSvbF5NN3eBrX3u+LIhXd6bw7FWYfcur
- lApYZ5xSf1n0/8ZgwxID5PDAi6PnAPh2fG/HWKwWVKNWfCA1CG8P1Ht3HLxv0dt5DevW
- rhPEaNshrwG2o1MlQ85bOehZbgm9ercKdac8qp5ufl14QbLuHh/s99zIRp8NQRwqXYQO
- uBolpWClnl3tvlSiZ6mqBBjgoQ+u2tdMnK3D9ONiyp2lkkd8ro1/FgQyEA3GW2/Ri44C
- 2pBg==
-X-Gm-Message-State: AOAM5331PqQAl8MXZDzr+f3HHMFJJW7qq+P5F1/NwiwNTAaexTzRbstq
- I4gwYzIwJQ5V7G+kHlfWKw==
-X-Google-Smtp-Source: ABdhPJx1O2/+nZKt9VsdxpJqX6nGHemCbL49ftbKVxAnrCeSzCa7c/mPWvFZ64aU1ZwqfgyTwX8BnA==
-X-Received: by 2002:a05:6830:1db9:: with SMTP id
- z25mr1490915oti.220.1619795127585; 
- Fri, 30 Apr 2021 08:05:27 -0700 (PDT)
-Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w13sm798615oop.0.2021.04.30.08.05.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 30 Apr 2021 08:05:26 -0700 (PDT)
-Received: (nullmailer pid 3323131 invoked by uid 1000);
- Fri, 30 Apr 2021 15:05:25 -0000
-Date: Fri, 30 Apr 2021 10:05:25 -0500
-From: Rob Herring <robh@kernel.org>
-To: Baruch Siach <baruch@tkos.co.il>
-Cc: linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
- devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>, linux-phy@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>,
- Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
- Kathiravan T <kathirav@codeaurora.org>, Andy Gross <agross@kernel.org>
-Subject: Re: [PATCH 5/5] dt-bindings: pci: qcom: Document PCIe bindings for
- IPQ6018 SoC
-Message-ID: <20210430150525.GA3323075@robh.at.kernel.org>
-References: <cover.1618916235.git.baruch@tkos.co.il>
- <e285d5041b8c19d4a7fab4d1a3ce9dd2b487cbad.1618916235.git.baruch@tkos.co.il>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=n4yNY14iANXzzHRqcO5/UVD04FwUySJbnV2wB6AF6ks=;
+ b=KMEPwMyJ6djRiv/jPmBQF1X54TKBGkc5L0SkKrE1Lz8qdmn9oOMCtVBBkEb7i/yGxn
+ nDGOVkGy0KF1yLXqvzZbdFPa2TwquZqg72SCRV2v+DGQZbTzY8gVXuZVEYVQtB4EWpS4
+ C8frFX41gDg0lXIKN4PXcdIhl827T+Yhq2i7JZXKsGQ3RL+9N4spGCvSlSFMnV3LwDMF
+ 2rmbDEq7C9ZVjs0kkfaQkLKkXjxWohSYA5GFnqcI29ZL4CQrVqrm86p5KVAWeEqJKCWV
+ vPzrkBcg8zb88CTeKAzE+lJjb5OUUODfw00m73ZBaM2348KzteJcw1HlnHr458T+m/LA
+ M5Dg==
+X-Gm-Message-State: AOAM532MDc+Uq5R9eZ7dP2aEX3oT/6FqMYWco9GvYEgPQe8RoWdXoWq1
+ gOXFgjYec2tLdOG9NNjgxEypEy5f7F1zZk3UoqQ=
+X-Google-Smtp-Source: ABdhPJzK+4SWfOymIki2WzgOcGx3B7dWkalS4IdUQsSsz6OKOgXOWDeV2TbRAODNyoxopIKs2EzbDohCIjoc4JWJnCI=
+X-Received: by 2002:a92:ad07:: with SMTP id w7mr4419679ilh.98.1619795159738;
+ Fri, 30 Apr 2021 08:05:59 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e285d5041b8c19d4a7fab4d1a3ce9dd2b487cbad.1618916235.git.baruch@tkos.co.il>
+References: <87czuggpra.wl-chenli@uniontech.com>
+In-Reply-To: <87czuggpra.wl-chenli@uniontech.com>
+From: Alan Cooper <alcooperx@gmail.com>
+Date: Fri, 30 Apr 2021 11:05:48 -0400
+Message-ID: <CAOGqxeWPSnCZtCXZK_2v8kxgF_7HJBAj+ruoKLWy=2YEYKPGrg@mail.gmail.com>
+Subject: Re: [PATCH] phy: usb: Fix misuse of IS_ENABLED
+To: Chen Li <chenli@uniontech.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-phy@lists.infradead.org, 
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210430_080529_714965_2C66FA14 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210430_080603_107487_74A77054 
+X-CRM114-Status: GOOD (  17.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,17 +108,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 20 Apr 2021 14:21:40 +0300, Baruch Siach wrote:
-> Document qcom,pcie-ipq6018. This is similar to the ipq8074 with a few
-> different clock sources, and one additional reset.
-> 
-> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
+On Tue, Apr 27, 2021 at 3:18 AM Chen Li <chenli@uniontech.com> wrote:
+>
+>
+> While IS_ENABLED() is perfectly fine for CONFIG_* symbols, it is not
+> for other symbols such as __BIG_ENDIAN that is provided directly by
+> the compiler.
+>
+> Switch to use CONFIG_CPU_BIG_ENDIAN instead of __BIG_ENDIAN.
+>
+> Signed-off-by: Chen Li <chenli@uniontech.com>
 > ---
->  .../devicetree/bindings/pci/qcom,pcie.txt     | 24 +++++++++++++++++++
->  1 file changed, 24 insertions(+)
-> 
+>  drivers/phy/broadcom/phy-brcm-usb-init.h | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
+> index 899b9eb43fad..a39f30fa2e99 100644
+> --- a/drivers/phy/broadcom/phy-brcm-usb-init.h
+> +++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
+> @@ -78,7 +78,7 @@ static inline u32 brcm_usb_readl(void __iomem *addr)
+>          * Other architectures (e.g., ARM) either do not support big endian, or
+>          * else leave I/O in little endian mode.
+>          */
+> -       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(__BIG_ENDIAN))
+> +       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(CONFIG_CPU_BIG_ENDIAN))
+>                 return __raw_readl(addr);
+>         else
+>                 return readl_relaxed(addr);
+> @@ -87,7 +87,7 @@ static inline u32 brcm_usb_readl(void __iomem *addr)
+>  static inline void brcm_usb_writel(u32 val, void __iomem *addr)
+>  {
+>         /* See brcmnand_readl() comments */
+> -       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(__BIG_ENDIAN))
+> +       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(CONFIG_CPU_BIG_ENDIAN))
+>                 __raw_writel(val, addr);
+>         else
+>                 writel_relaxed(val, addr);
+> --
+> 2.31.1
+>
+>
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Al Cooper <alcooperx@gmail.com>
 
 -- 
 linux-phy mailing list
