@@ -1,92 +1,101 @@
-Return-Path: <SRS0=tvr4=JY=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=80zw=J3=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4005AC433B4
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Apr 2021 07:25:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3BD09C433ED
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:04:46 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C3DD661165
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Apr 2021 07:25:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C3DD661165
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=uniontech.com
+	by mail.kernel.org (Postfix) with ESMTPS id DF34C6143A
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:04:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DF34C6143A
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Subject:To:From:Message-ID:Date:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+eIx0bhbloO98cLHJF/lmiYeo/guG30TPkXmmFbQdqk=; b=jkNdaF/fDoSfha
-	gvDKMXkaPaHwB3vtsB7irfAihHiXA2w8dkRIR75UM7sy/9CV8fKZB63kBE9I9fRQErdY5+xILQ8Ry
-	AJ9HYFNFIMK1SkZggRTbqcJsbDHhGhABoXulebl/A5T5i8AeCbXkGS1SfL6IB56JJmSk3qt5ZUoOv
-	mxNHENR0tMvBq6oegwaJkl1sXGKuCIvCdtcABhsoH/4EiiHFLmCcJjK79vowNPvQNe7HTNaNIhufH
-	shfOXE6wSHoa9Iemcz/9nuYklvvRD2SwQz7Lhru5t0KsOKe4C7xd1NPzN/ChgSk7S+u/6gE1NTJSk
-	fqsfAfbPNttK29iqHy/w==;
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iIQKftJmO9eKAjdfKuM/CfwlUXL2y9v3vCq8VrOyjaw=; b=nzjRowt1x9kdpUasghDJYeK9R
+	66rPot9AH2GryYZBTLVQIqNU698hcTv38MrZjahe21VLzr6vyAnR6IIf4FyBElsTYig7AUG5wN0+g
+	jsyGV0czmiRJSvV0Tv6ZGgk2tn2w/YZwmLx0XE5nYFH+Qw9ZzbuwPsbmkIQdYvKpoe6TXb/Ih0Cr/
+	5IX2U/hS2D7Aaa3vRC4fnaQbHAuB/ddNYhnPKmaOBqLDZN1mzxY0OTOYgNlGYvXZRQRedcgcDTLU2
+	BWz7geoDE4PhBmPWGNO+wQZWIzqtOsxSBM3eCp3GhVJNOwiGhME+EtrsdzSa5gz9dU+oA42+ihmtp
+	baNivT47g==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lbI6S-000xgK-JV; Tue, 27 Apr 2021 07:25:52 +0000
+	id 1lcUhA-0080iE-8w; Fri, 30 Apr 2021 15:04:44 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lbHyq-000wel-3y
- for linux-phy@desiato.infradead.org; Tue, 27 Apr 2021 07:18:00 +0000
+ id 1lcUgx-0080gY-Eo; Fri, 30 Apr 2021 15:04:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:MIME-Version:Subject:To:
- From:Message-ID:Date:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=kFZBT4RtXkGw2wNUQt+0kMQGsDUac6h5K1V8pD2o034=; b=A/ZuA7VfS9SK10tbovdRNDD6RG
- 8CMmkaphu3prWquhcpIDEzooF5IoHW3/wNbD/TP9uU/iDhgnUM2kZRk0FaeHMH3D/kU5dQuRpiQS4
- nPKovr/or6sgAA3zXKGmVuYIjQ9gWA9Ik9FBEAfB2rpCwnchU0Bkf3cg6noPGbULvDfqYBAdmiwJB
- gaXAOgo30oFTAKzcyikfRk3OryqwkdFAEws4YqXwz6NJvr7YYg7ptWaqd41CD+GEhxT1IBh66uv5Y
- 1nBi6oELF9BNgIENGAcRvd9MWVf1KQEOtu6b9JjppLxS+wrEGDaxFc7GHqsbW5rrktKGyZTGnvPZv
- LkEcKrhA==;
-Received: from regular1.263xmail.com ([211.150.70.201])
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=/INWjCRM1B9+70V8iiUyLDnZTxKydu+XSX6q0Y8SkH8=; b=cjxo0GBW2qXHdnLyWbZCIFtNQz
+ anv5ok85QcOPSTlVQ1pPHf1ymloEMkCssKGYOLQ9mPrEa+zJkd7C/QMT7vfI4+DVnVWVcnwYNTPbV
+ PDk/knW+UygfoU1U+5FwlmxgVjPU5OfcwfV0yPGtLIMUn0rTg1UW14GgbG35T1n7393nZqyNqsDp3
+ lZO+sZCxemeNnXRbdH2l3qq8lFp5fttf0y0yA8l/10CNtWVk7QHYMAaM44qhxY4kEG0lBwpCg+gSo
+ P4ML5VaqiPxepY78jdprOiTZvkuu3Mixm2L8pKFmjwqnYvkJHksFlUp/+B1+i1kWl+s5QYjDgSHlQ
+ i5lZynug==;
+Received: from mail-oi1-f182.google.com ([209.85.167.182])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lbHyl-00GV6U-47
- for linux-phy@lists.infradead.org; Tue, 27 Apr 2021 07:17:56 +0000
-Received: from localhost (unknown [192.168.167.70])
- by regular1.263xmail.com (Postfix) with ESMTP id 926B8EBE;
- Tue, 27 Apr 2021 15:17:46 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from manjaro.uniontech.com (unknown [58.246.122.242])
- by smtp.263.net (postfix) whith ESMTP id
- P26231T140422967936768S1619507865545002_; 
- Tue, 27 Apr 2021 15:17:45 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <a34eb6b106d6c9eb9c4ab77661bd265f>
-X-RL-SENDER: chenli@uniontech.com
-X-SENDER: chenli@uniontech.com
-X-LOGIN-NAME: chenli@uniontech.com
-X-FST-TO: alcooperx@gmail.com
-X-RCPT-COUNT: 5
-X-SENDER-IP: 58.246.122.242
-X-ATTACHMENT-NUM: 0
-X-System-Flag: 0
-Date: Tue, 27 Apr 2021 15:17:45 +0800
-Message-ID: <87czuggpra.wl-chenli@uniontech.com>
-From: Chen Li <chenli@uniontech.com>
-To: Al Cooper <alcooperx@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com
-Subject: [PATCH] phy: usb: Fix misuse of IS_ENABLED
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
- FLIM-LB/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL-LB/10.8 EasyPG/1.0.0
- Emacs/28.0.50 (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+ id 1lcUgu-001TA3-OY; Fri, 30 Apr 2021 15:04:29 +0000
+Received: by mail-oi1-f182.google.com with SMTP id u16so52971573oiu.7;
+ Fri, 30 Apr 2021 08:04:25 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=/INWjCRM1B9+70V8iiUyLDnZTxKydu+XSX6q0Y8SkH8=;
+ b=ELq8MjjlqRD6ihXkt+xGl8mFOYxwn9BK7pq3DoHZ+U08rxe5csBEVBb6eVaWZgB1CQ
+ gfQ1uBqB8gLICcc0qPG1hXIEfNBC3yoVzv3TgZoD+k6+ybDVUa1ftA5r9KETDcv8Uu+e
+ 9KG0ylv8NMscE9jIY5BilzZTxA0Xu2VGn+Nz1uVD/SSS/aVYWmY9TIFeDvDROvXqFT0l
+ vi4+TJTRbj6ONSqQj6N5ob0OgQD7EasbmV9svORXUi2szgt+em94KNw6MzuVZQV/bxzE
+ zvgs7H8PBwn12S+4hECGhtWcQhP+Q+B3cQ323hRFj6PLHmdV7ZkIXgqRbWCFEl3so4Hg
+ ZnkQ==
+X-Gm-Message-State: AOAM532E/s3e6gh0Gwy0AHie87RD00l/HQUOsJ1ejLc0lQ5tUvUoSo7L
+ Q07QWH760p8/cXYhy6/JtQ==
+X-Google-Smtp-Source: ABdhPJz6HzVAj0or5d1D7Hnc0EjbBhimRieQL/4bKusYwgFYusuFeT5uNTTaBlN49s62e34R6js8GQ==
+X-Received: by 2002:aca:dd86:: with SMTP id u128mr4230463oig.155.1619795065227; 
+ Fri, 30 Apr 2021 08:04:25 -0700 (PDT)
+Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 68sm740146otc.54.2021.04.30.08.04.23
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 30 Apr 2021 08:04:23 -0700 (PDT)
+Received: (nullmailer pid 3321318 invoked by uid 1000);
+ Fri, 30 Apr 2021 15:04:22 -0000
+Date: Fri, 30 Apr 2021 10:04:22 -0500
+From: Rob Herring <robh@kernel.org>
+To: Baruch Siach <baruch@tkos.co.il>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, Kathiravan T <kathirav@codeaurora.org>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: Re: [PATCH 4/5] dt-bindings: phy: qcom, qmp: Add IPQ60xx PCIe PHY
+ bindings
+Message-ID: <20210430150422.GA3321286@robh.at.kernel.org>
+References: <cover.1618916235.git.baruch@tkos.co.il>
+ <f787ca496eae2a0d5ff4f17655eaff9f39a14321.1618916235.git.baruch@tkos.co.il>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <f787ca496eae2a0d5ff4f17655eaff9f39a14321.1618916235.git.baruch@tkos.co.il>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210427_001755_347679_8C039F7C 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20210430_080428_820978_4A6EEE73 
+X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,45 +112,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, 20 Apr 2021 14:21:39 +0300, Baruch Siach wrote:
+> Add ipq6018 qmp phy device for the single PCIe serdes lane on IPQ60xx
+> SoCs.
+> 
+> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
+> ---
+>  .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 25 +++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+> 
 
-While IS_ENABLED() is perfectly fine for CONFIG_* symbols, it is not
-for other symbols such as __BIG_ENDIAN that is provided directly by
-the compiler.
-
-Switch to use CONFIG_CPU_BIG_ENDIAN instead of __BIG_ENDIAN.
-
-Signed-off-by: Chen Li <chenli@uniontech.com>
----
- drivers/phy/broadcom/phy-brcm-usb-init.h | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
-index 899b9eb43fad..a39f30fa2e99 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init.h
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
-@@ -78,7 +78,7 @@ static inline u32 brcm_usb_readl(void __iomem *addr)
- 	 * Other architectures (e.g., ARM) either do not support big endian, or
- 	 * else leave I/O in little endian mode.
- 	 */
--	if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(__BIG_ENDIAN))
-+	if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(CONFIG_CPU_BIG_ENDIAN))
- 		return __raw_readl(addr);
- 	else
- 		return readl_relaxed(addr);
-@@ -87,7 +87,7 @@ static inline u32 brcm_usb_readl(void __iomem *addr)
- static inline void brcm_usb_writel(u32 val, void __iomem *addr)
- {
- 	/* See brcmnand_readl() comments */
--	if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(__BIG_ENDIAN))
-+	if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(CONFIG_CPU_BIG_ENDIAN))
- 		__raw_writel(val, addr);
- 	else
- 		writel_relaxed(val, addr);
--- 
-2.31.1
-
-
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
