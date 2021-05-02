@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2A09EC43460
-	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 14:06:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A702AC43461
+	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 14:07:02 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EB56D611AE
-	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 14:06:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EB56D611AE
+	by mail.kernel.org (Postfix) with ESMTPS id 700C56157F
+	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 14:07:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 700C56157F
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,45 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
 	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bEpFOK0bXivPlqjgqse66cz+oWywKpj77coAK9HiEyE=; b=IlzMKYEoEW8zsWLV022C1hL/k
-	nyRV5MO6RI8YSP6654qH6sld+2cd0ZHlR1v13omXAalQlamx0IjrfTPgXFtC8TXARNUl8ObGTcpw5
-	N3YPopg1Y4NKIDejgx90oiOzbLWQjhba4+Z44IZKG+mqrZ7QWI3pQxUYesU3FwAtGiYwSYa8LssEW
-	+IfS918IBM6JQoTMS6iH51Z817OhqVs9jRCVUDbODQIItD3vDAZ2FghictEpm1PX8x0dKxWCyV0gL
-	zSy6eq/8nOdw0zrfoit/EAoJcs8fuhfg+a6SolUKI2sadvNLrert+J7W+rFQNXWJvlBCvEprWf89D
-	v45fr7tSQ==;
+	 bh=YJv2n5glLpXAm/gfUp/HNfZM/xSRcsvKaVO1MVTfdT8=; b=BolOYAZBh43VRZ8vje2xf9MK6
+	dpGkuK+k+zkY1n3yy7hzQH2AwOc8g5BdgmH6VTWInJZeCmSs7py0c6gEU7z9cYIetui0lu50inRfW
+	9pUWzCIDqRKIcp+bXIysYE0vZ0TWvYSeTMd0yu/g1auZFbUllw2vUbhD/O6ntFKjlFRMkgEsZ6TC5
+	6wZtJmQo+s7ud9RW82L8cf1MP8BaSnUYy4cwCbuFaOSdkZWw0g28XaIKRjBNofIey4Ml+0NjnkI6l
+	074+PEO4/d6XgqUqMyoZU8bDM2/soKi9R4lFxe2WsVuUatrRD3gq/EhjUzBzLgj+crfAKT3TWrbUn
+	S4gJgIGlQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1ldCkJ-00BtPq-Uj; Sun, 02 May 2021 14:06:56 +0000
+	id 1ldCkO-00BtS2-UC; Sun, 02 May 2021 14:07:00 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1ldCjY-00BtB3-7J
- for linux-phy@desiato.infradead.org; Sun, 02 May 2021 14:06:08 +0000
+ id 1ldCjo-00BtFQ-Ad
+ for linux-phy@desiato.infradead.org; Sun, 02 May 2021 14:06:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=xc9hzh7AGfrBz+kmtl79OrDyNzgkrG8NSjBuCb44ti4=; b=OcICPoBW/T3KhFw45jKhGNcyQf
- +IhJVP1aYztlUEaIMfA/vUFKt1dfOvcI9B/A/z9vCzD1QOwPX4kMaIMMh2pbeyU+YawmDjjAzGEqE
- r8EeXNHBdlqGKv5v/t3gcG+8D6PIlcjegw5pi8UlO9ihrKrzkR4QvBMe+CB2wxbuTvkepxUoIOeeR
- ECbxMvhdfQ0fckzvjZ9H1ff7bBibUkErCWGPHhzpbl7+3OiF7uk3egV8X485V0RmBqGJP+yQMktig
- QetndSME6zaEkALw0BNekjEMVvzk4PftpmGNV2yZkPeFaXtOM99N/VI9WDDKSSDrSn3+QHN7FzDUG
- G7mi7zPQ==;
+ bh=zOUqH+1nzQM1doOKRtreNxw/jnDp6cGaE831zuAbWEw=; b=Mj/8+MRxGkzbfJ9yKS/hoeH675
+ cQ8BMGuWsLfpuV5sjEJcQe29Fwln3ppu6xmzRD8XU6FgZPtwO4Y8yJ6Y50v7dqTV7pXlu6Yl5dsl4
+ 9IZOcTysqKZc+vRFAIsj6fw+f0cv3ZY/2t1En7OkHRBny2v8VpbxsQEVoinpuFtqnFYKYvfTPlJq+
+ 4jJgqYUJ2Y7tzPgwq3Wd4NEV8QsSlIhvQF704g3eTFdyxFcFWAA/JIDnND49HAIiqvW3P49IilAIP
+ wKpiUjMAz+mLIEzlscd6fpLPY8ADCg7hLgU1pQYVrMcrcn1kMJbKYXC7WnL8e/yXWFFW3rEIlsEgm
+ RR2KrjqA==;
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1ldCjV-002YbL-Hv
- for linux-phy@lists.infradead.org; Sun, 02 May 2021 14:06:06 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 59D79613AA;
- Sun,  2 May 2021 14:06:03 +0000 (UTC)
+ id 1ldCjl-002YdL-N9
+ for linux-phy@lists.infradead.org; Sun, 02 May 2021 14:06:23 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 17993613E1;
+ Sun,  2 May 2021 14:06:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1619964364;
- bh=QAT7/DpyHeJMZMdN80nWXT2iJv4L2bS1nhzR0FOK+k8=;
+ s=k20201202; t=1619964380;
+ bh=XXiP8hIl8j9SfARZKtshWyoRYEFRCqGySqGCWLow8yU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Q8nQkyX+QsqAqH1V5mpG6yC/uax31vrS4xE3f2znQJUz29EeG4WWIY5HC10ahobKP
- ExPlmCfSnz9xsvkLD7Bqo7g0cr0Hy7nIxyazmay7Er/Xp8Q50kEWncnoDlESLcCTGE
- xuueZdaI+Zs06sShaK+gJcAsuUyDmL5JOYB64aaoHHvqhcekM0swsIWOSpu1EDyMJX
- BBPGakd72U32D50ZVNECwxf4LstCfrjiNDSEQ52hvSLrRTFJvBLvch/qYTCuoYKkFI
- Ly8eWmpqt+VAXnS2i4L0gMFnu+MqyY19rByzYCnaTzeoCcj24+xZViix6s33i8NqkO
- c80vL4+7agPSA==
+ b=h2p83LnFoBHJanBcS96OC2EirFnXccHj1U9JYfyaQU+Gw7Xm/003QfpbZlbcH3/DQ
+ yYS4l5vD1xWNIIbHeulVLe+lfndSGmLwXshQTdqCq5RkkKnQBcNnW6bjxLRKCJhK2Y
+ nfyOB744daGJVIQy5w25Skrdbb5nzV7BZm0aI+ydybZShTN7nMtBR3Dzyjm2eWucHk
+ un4QQFHw6YaCFvEpek9hMXu/nRqNAjZdLPLC1hty1v1+LVBdg/H5POA3ptFfh1VVnI
+ taA14cpvICMuLELgSEAuBC97ZujdrSdaazqMkSqXO6d/085Z6VZhaFFpscrIUEcSHf
+ /sRfIiC4oygLg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -69,18 +69,18 @@ Cc: Yang Yingliang <yangyingliang@huawei.com>, Hulk Robot <hulkci@huawei.com>,
  Vinod Koul <vkoul@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Sasha Levin <sashal@kernel.org>, linux-phy@lists.infradead.org
-Subject: [PATCH AUTOSEL 4.14 15/16] phy: phy-twl4030-usb: Fix possible
+Subject: [PATCH AUTOSEL 4.9 11/12] phy: phy-twl4030-usb: Fix possible
  use-after-free in twl4030_usb_remove()
-Date: Sun,  2 May 2021 10:05:43 -0400
-Message-Id: <20210502140544.2720138-15-sashal@kernel.org>
+Date: Sun,  2 May 2021 10:06:05 -0400
+Message-Id: <20210502140606.2720323-11-sashal@kernel.org>
 X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20210502140544.2720138-1-sashal@kernel.org>
-References: <20210502140544.2720138-1-sashal@kernel.org>
+In-Reply-To: <20210502140606.2720323-1-sashal@kernel.org>
+References: <20210502140606.2720323-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210502_070605_617427_331C4FF7 
+X-CRM114-CacheID: sfid-20210502_070621_793591_8B6DFA06 
 X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,14 +118,14 @@ Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/phy/ti/phy-twl4030-usb.c | 2 +-
+ drivers/phy/phy-twl4030-usb.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
-index c267afb68f07..ea7564392108 100644
---- a/drivers/phy/ti/phy-twl4030-usb.c
-+++ b/drivers/phy/ti/phy-twl4030-usb.c
-@@ -801,7 +801,7 @@ static int twl4030_usb_remove(struct platform_device *pdev)
+diff --git a/drivers/phy/phy-twl4030-usb.c b/drivers/phy/phy-twl4030-usb.c
+index ddb530ee2255..9d57695e1f21 100644
+--- a/drivers/phy/phy-twl4030-usb.c
++++ b/drivers/phy/phy-twl4030-usb.c
+@@ -798,7 +798,7 @@ static int twl4030_usb_remove(struct platform_device *pdev)
  
  	usb_remove_phy(&twl->phy);
  	pm_runtime_get_sync(twl->dev);
