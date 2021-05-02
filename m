@@ -1,97 +1,87 @@
-Return-Path: <SRS0=80zw=J3=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=h+Aw=J5=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 929F6C433ED
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:06:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 27026C433ED
+	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 14:05:31 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E8DB86143A
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Apr 2021 15:06:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E8DB86143A
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id C3F5061462
+	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 14:05:30 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C3F5061462
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
+	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hq+nvA7XmFZQo6NEZJemUDm4yM8L2lqBBXtyn6oCwgk=; b=HosQkKVJlKq2xQ6bw32cs+7cc
-	9aq+/AzGGSXbAawsxugbB6bNcpD4cY97yAmzh6rnGTpr4/YXTYaN6lc3Ls2rbkGkG7M0rZrBfqQLj
-	T7GSi2buuMNasypBRpg1AN2cjGDS4cks5Lh+A9m/o/EvhNi2ka+qdlDeBS/mdnkdoTGMqQdoVBrA1
-	dOSuAJRGkZjjJ+qdtblg4m/9ewstf//MMSSNpIkrug4WAE1gt/HHJKwqxMmjBLCNF9JJ292OdJgkb
-	KZ5GZXc8SNPJEm59uYsstUJglnYqHl7Duwdiy3SnhD8F867a/QpoyiHQhw2FaS7zsAzRXOmeyGo6I
-	w+LcPUQAA==;
+	 bh=0o2BkTayM5hI7sDaUSBiSPTJfr2etJ8zjJD1egvzdew=; b=EGKNQgYqFs6oPHlGrzWIFWaUk
+	D2d/P/THJbEuKyd+DKr1iVVm4Y7a+5VynVrKQHRor2F+dBUCpm04i+LbInylTrBG5n/sivjKfjkuh
+	wo4QMHdWaqRK1GdvkHs2CACzV35nqjUETc01HFFzaBP2TaPCPitp3pnfGpkYDYs1MMa6PFOW1pMLc
+	OOHEGnVguUHYjK9DP7wgPkhc3mddcVuHyM9Whqk1VrRYXa1UpJlekZmQxfMG//B2q/4d9hMgVQ82w
+	jeb921Fpypfv+DiIk+H9cS3N/0dPzewtsQg9Kr07csYEfbU5yj38rVLT/4d7qVOLYJKRJpKwBEQHW
+	OkCAQMb7w==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lcUiX-0080uV-4s; Fri, 30 Apr 2021 15:06:09 +0000
+	id 1ldCiu-00Bszn-Q5; Sun, 02 May 2021 14:05:28 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lcUiT-0080tq-GL
- for linux-phy@desiato.infradead.org; Fri, 30 Apr 2021 15:06:06 +0000
+ id 1ldCif-00BswR-Kz
+ for linux-phy@desiato.infradead.org; Sun, 02 May 2021 14:05:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:Cc:To:Subject:Message-ID
- :Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=n4yNY14iANXzzHRqcO5/UVD04FwUySJbnV2wB6AF6ks=; b=dHGsvYfy0G0qLfiFAs3jDZM4uR
- RdF9gUMnsLQr9pJiITvqpLQbijM3MT15ANh1xJ4c0NZJhY1ok+5lbfII1o1g41tvD6U9/LQTQVjoC
- du03aHYbab2XtQ3Zt1oAJhAqCIKnvOhcJYuTV9v5ZxlMRPS/M8EZ9Tplx1CqNj77B8vs3+YveJc+X
- kYCJ6YZ4sykaufpR95xI1XEqvuWx0bxqyBKCKFTRGmESEOl4J5wcImJeHj0zWu5Xr1kDRct0s3Y5v
- RRezcCVEAf8FJhVmNyTbtgsnMAsgni9kIPf5Ql+VuO8n2L6Qn5AYUX8fpHm2+MLAgf6lSQZJGBBOO
- +xRjVPpw==;
-Received: from mail-il1-x131.google.com ([2607:f8b0:4864:20::131])
+ d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
+ MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
+ :Reply-To:Content-Type:Content-ID:Content-Description;
+ bh=UXcw+8uvwwDQbbmp4s0aBQ7W9CCY28cu+33GSnbABXU=; b=Mh3jihX+lXJBlf6XYiZPHeNxmr
+ uRQjVUhtT+VsoKnuRRairc4MRnrvTfScvCiwe4nPo+1xYVupE8AwDivqorrjH61EtnpBx8KkBP6Jc
+ tWtd74Pal9IsXQjQ8Tf8k7HTcv/fokTVV2HIcmQ2kd7YPwlWY+2fqg+roIegJGckYF7WvrePuMJdu
+ mLiU/IuQyTf+vDEzoM82kaSUxgMLNzzxWcQguAWahtW/U1PeC4BJvx0IUilBW7IzPOEo9II7lF5Gp
+ RDUzyfb3DJTVmhTyK9v/fI2QaLOfjEMy3nckF802lVMcpClZhLqx6d8exY7f6d6N7wefrjI4xvhTE
+ ku47Z8+Q==;
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lcUiR-001TFd-1V
- for linux-phy@lists.infradead.org; Fri, 30 Apr 2021 15:06:04 +0000
-Received: by mail-il1-x131.google.com with SMTP id c18so56443273iln.7
- for <linux-phy@lists.infradead.org>; Fri, 30 Apr 2021 08:06:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=n4yNY14iANXzzHRqcO5/UVD04FwUySJbnV2wB6AF6ks=;
- b=CfUq5RBVdq2vvyGjjooQxXACzeB68ARRk4s0/ONsuzqV21SG5/SNpTNj2436qspGii
- X1r9Ry/WHYFQ+nGvCiSTiH6e+aM37cOSDNliI9xNdw+KWdT0f5oP9f5mOOxCSqOxbdtO
- RiU5D00Rp9gAKLwliwzoyA/t5wCFH0/TyibD7kaqhC7AzbXoaBDO+nw5/TOvY8lsuVr3
- ARE7LNtdPxFX3vejxIWUKfsNboIBVfGXfKF1Lr9Usstm+DRMGrMul3lcqRtIQoxXbMsm
- Tx1RBoFf1K91Nx2QWNQCwFKjnASD/KwvTKGup+WzRIg1N2ldsw1aOGYtWWQaEWWretfC
- aRuA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=n4yNY14iANXzzHRqcO5/UVD04FwUySJbnV2wB6AF6ks=;
- b=KMEPwMyJ6djRiv/jPmBQF1X54TKBGkc5L0SkKrE1Lz8qdmn9oOMCtVBBkEb7i/yGxn
- nDGOVkGy0KF1yLXqvzZbdFPa2TwquZqg72SCRV2v+DGQZbTzY8gVXuZVEYVQtB4EWpS4
- C8frFX41gDg0lXIKN4PXcdIhl827T+Yhq2i7JZXKsGQ3RL+9N4spGCvSlSFMnV3LwDMF
- 2rmbDEq7C9ZVjs0kkfaQkLKkXjxWohSYA5GFnqcI29ZL4CQrVqrm86p5KVAWeEqJKCWV
- vPzrkBcg8zb88CTeKAzE+lJjb5OUUODfw00m73ZBaM2348KzteJcw1HlnHr458T+m/LA
- M5Dg==
-X-Gm-Message-State: AOAM532MDc+Uq5R9eZ7dP2aEX3oT/6FqMYWco9GvYEgPQe8RoWdXoWq1
- gOXFgjYec2tLdOG9NNjgxEypEy5f7F1zZk3UoqQ=
-X-Google-Smtp-Source: ABdhPJzK+4SWfOymIki2WzgOcGx3B7dWkalS4IdUQsSsz6OKOgXOWDeV2TbRAODNyoxopIKs2EzbDohCIjoc4JWJnCI=
-X-Received: by 2002:a92:ad07:: with SMTP id w7mr4419679ilh.98.1619795159738;
- Fri, 30 Apr 2021 08:05:59 -0700 (PDT)
+ id 1ldCid-002YTd-3u
+ for linux-phy@lists.infradead.org; Sun, 02 May 2021 14:05:12 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id E4ADF613D8;
+ Sun,  2 May 2021 14:05:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1619964310;
+ bh=s++pOuEuj5uVGNpgdbWGjOD4K3Kud/91J//OAfiA/aw=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=QrBZK327T7bTeu3CRgojME+D3kFHTItuTDfbIFcNk2w8cuP6KL31AknQmNgx99Sac
+ 2UhNhA7Vr1aSnaCebTbw9Y4CuqjzRaCpSH3vevuwtynrioXgJ6uxVo//5L674lDhs5
+ z8CRWHWmh/FML/Wp2bD/HWQL+ys0LlwnXeqOzhz9HWae7g+Fx/PzAP8XBXYRq2/49K
+ PihmA3Y2JUptveK368+bh8w48TNbragt4A/P50Xs9M/mQgsG9M933/iSlQ8l3h5orD
+ QjD94DSGbHuwNAj4Kfg+KV0ZX6gIPrcJoRMfdacKDlstt6HgQRgc1kDJ5T/zR8MHQG
+ 9g7zt9M8YoXWw==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Yang Yingliang <yangyingliang@huawei.com>, Hulk Robot <hulkci@huawei.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sasha Levin <sashal@kernel.org>, linux-phy@lists.infradead.org
+Subject: [PATCH AUTOSEL 5.4 29/34] phy: phy-twl4030-usb: Fix possible
+ use-after-free in twl4030_usb_remove()
+Date: Sun,  2 May 2021 10:04:29 -0400
+Message-Id: <20210502140434.2719553-29-sashal@kernel.org>
+X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20210502140434.2719553-1-sashal@kernel.org>
+References: <20210502140434.2719553-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <87czuggpra.wl-chenli@uniontech.com>
-In-Reply-To: <87czuggpra.wl-chenli@uniontech.com>
-From: Alan Cooper <alcooperx@gmail.com>
-Date: Fri, 30 Apr 2021 11:05:48 -0400
-Message-ID: <CAOGqxeWPSnCZtCXZK_2v8kxgF_7HJBAj+ruoKLWy=2YEYKPGrg@mail.gmail.com>
-Subject: Re: [PATCH] phy: usb: Fix misuse of IS_ENABLED
-To: Chen Li <chenli@uniontech.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-phy@lists.infradead.org, 
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210430_080603_107487_74A77054 
-X-CRM114-Status: GOOD (  17.65  )
+X-CRM114-CacheID: sfid-20210502_070511_199577_04328201 
+X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,48 +98,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 27, 2021 at 3:18 AM Chen Li <chenli@uniontech.com> wrote:
->
->
-> While IS_ENABLED() is perfectly fine for CONFIG_* symbols, it is not
-> for other symbols such as __BIG_ENDIAN that is provided directly by
-> the compiler.
->
-> Switch to use CONFIG_CPU_BIG_ENDIAN instead of __BIG_ENDIAN.
->
-> Signed-off-by: Chen Li <chenli@uniontech.com>
-> ---
->  drivers/phy/broadcom/phy-brcm-usb-init.h | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
-> index 899b9eb43fad..a39f30fa2e99 100644
-> --- a/drivers/phy/broadcom/phy-brcm-usb-init.h
-> +++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
-> @@ -78,7 +78,7 @@ static inline u32 brcm_usb_readl(void __iomem *addr)
->          * Other architectures (e.g., ARM) either do not support big endian, or
->          * else leave I/O in little endian mode.
->          */
-> -       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(__BIG_ENDIAN))
-> +       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(CONFIG_CPU_BIG_ENDIAN))
->                 return __raw_readl(addr);
->         else
->                 return readl_relaxed(addr);
-> @@ -87,7 +87,7 @@ static inline u32 brcm_usb_readl(void __iomem *addr)
->  static inline void brcm_usb_writel(u32 val, void __iomem *addr)
->  {
->         /* See brcmnand_readl() comments */
-> -       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(__BIG_ENDIAN))
-> +       if (IS_ENABLED(CONFIG_MIPS) && IS_ENABLED(CONFIG_CPU_BIG_ENDIAN))
->                 __raw_writel(val, addr);
->         else
->                 writel_relaxed(val, addr);
-> --
-> 2.31.1
->
->
+From: Yang Yingliang <yangyingliang@huawei.com>
 
-Reviewed-by: Al Cooper <alcooperx@gmail.com>
+[ Upstream commit e1723d8b87b73ab363256e7ca3af3ddb75855680 ]
+
+This driver's remove path calls cancel_delayed_work(). However, that
+function does not wait until the work function finishes. This means
+that the callback function may still be running after the driver's
+remove function has finished, which would result in a use-after-free.
+
+Fix by calling cancel_delayed_work_sync(), which ensures that
+the work is properly cancelled, no longer running, and unable
+to re-schedule itself.
+
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
+Link: https://lore.kernel.org/r/20210407092716.3270248-1-yangyingliang@huawei.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/phy/ti/phy-twl4030-usb.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
+index 9887f908f540..812e5409d359 100644
+--- a/drivers/phy/ti/phy-twl4030-usb.c
++++ b/drivers/phy/ti/phy-twl4030-usb.c
+@@ -779,7 +779,7 @@ static int twl4030_usb_remove(struct platform_device *pdev)
+ 
+ 	usb_remove_phy(&twl->phy);
+ 	pm_runtime_get_sync(twl->dev);
+-	cancel_delayed_work(&twl->id_workaround_work);
++	cancel_delayed_work_sync(&twl->id_workaround_work);
+ 	device_remove_file(twl->dev, &dev_attr_vbus);
+ 
+ 	/* set transceiver mode to power on defaults */
+-- 
+2.30.2
+
 
 -- 
 linux-phy mailing list
