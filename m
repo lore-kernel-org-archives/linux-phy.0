@@ -1,108 +1,85 @@
-Return-Path: <SRS0=h+Aw=J5=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=jd0v=KA=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.2 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,
-	NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 30B6FC433B4
-	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 15:53:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7FFF5C433B4
+	for <linux-phy@archiver.kernel.org>; Wed,  5 May 2021 09:19:07 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E3D7B611F1
-	for <linux-phy@archiver.kernel.org>; Sun,  2 May 2021 15:53:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E3D7B611F1
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id EF922613ED
+	for <linux-phy@archiver.kernel.org>; Wed,  5 May 2021 09:19:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EF922613ED
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=tkos.co.il
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
+	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sjJQ9qLWW+zflit1D38rBX+7nuerlg2SndcvSLXLWmo=; b=nhyqj+cU5Rl0XkUvvYIUwNrBR
-	XVMgBdGA9MM2GFsWKpkNZHrJCn1jXqiLXCf0W+5ITMIFycUIBM5c8pI7zz1fE+rMnlaHxR3r9UloY
-	1Xd9DLX16OR052Pq7Di7EZ4JVI8vE25R5AxQZXl9BAV7EWRn5fccJ7FlD5CfQAVoNPT5sxN8WvDb3
-	DWMZClpXaHoGySMF5HQbf4W1rZ0NtjcYcyZ83RAhTFKNsGowwG0O4696eO/zVPhx4AgPkGV/xOLUa
-	YYnlfQ5r0UZzcod8dTtnMKyt/gIRSVow7hTgTXUouBQVV2qlpNfz1w/Vafyqe7GILvjSkfMrKgoOH
-	FZocpNGPQ==;
+	 bh=iyJy7o/NwIn3eebSGgT9L0dFWHnEJt7ZWKM/qrGGTaE=; b=Vm8q4p8SjvGJwL546SVUE0TiV
+	GjsHrZo2mC2XFYkCsB+Zcg1jk8jZ02rcfISBXvvlreetHBpyUPpmtFe3Af2T2YkcYzxa3VLQKhNr7
+	SA5ddhXiKN+elBU7jlU1lGZnzQxCpcZBYPexpwE2tpJN5ZiXmGwYQkrrR/PDyd+1wVZ+cYzAMCE44
+	IqxTQIbDyc0N05bgjYl6OCEoWo+pat61DCUJGqeNr5/lV6tCLmvZkqFCKd0+J4KTwaljzgJSVFlsq
+	3dSdBM2nmhA9wgtZb6CnsPD1NsxgjSMZnh9vvMV5oeVESmJWJSXRP47+D5Mf6ByHJCjfl1QPbFMzH
+	01yS9tJOw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1ldEPb-00C396-8P; Sun, 02 May 2021 15:53:39 +0000
+	id 1leDgP-000hDu-5f; Wed, 05 May 2021 09:19:05 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1ldEPY-00C380-E0
- for linux-phy@desiato.infradead.org; Sun, 02 May 2021 15:53:37 +0000
+ id 1leDgC-000hCL-6h; Wed, 05 May 2021 09:18:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:
- Subject:Sender:Reply-To:Cc:Content-ID:Content-Description;
- bh=+pEIgenmE+D1r/CBbObpajLyzMM6TZCndrUq5f9PnOY=; b=YPt5KlDdNJP4Nu6C6asVo725RZ
- YDgiVcyZdmu1IrZy7tjGBzCJ2GeaDcOynk5b8TziObOtCgXZyNLH3QonehD7DtVIBN32paix9pHCt
- 4kaYdf5SMJoFCvsVekWL00axWiPDXHPNXjbz+HCYSTPHuIfmFrfjbSH2VH+ioku9sC10WVOTEQ/eR
- JzURDoMPvqnPXxU6vHIi2MZQM5dR6Ef+7sYZgSh546QXPjmgDi5tTSFG4bcUFqK0hyn/QxB28kNsC
- 5xAMp4/iYAjQjgsN8iaNa4I+Di7Jhtw42Cnc/oXELXSefmwZp19fcufUSP5qBGEAuOyrLb2U5Z4UW
- HIwGh03Q==;
-Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
+ MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
+ :Reply-To:Content-Type:Content-ID:Content-Description;
+ bh=5tWYicnI6FID6w6cHs2yfL6A3Yltao6Iy0b5CpW2s2Y=; b=xfhzys2ladxZFmmAwhVgGZix5Z
+ yKg86TZG2lpWTxO7fGvWH37/FVl+tsWtiEfwM2ANHd7BviQ3lfaKSXz4GygdICusag6o6gUW1KSCc
+ 1D1weGwOvY0fqQfYuXE9eabgjeN+oYnNCweeqOtzeDhqUFfsy+SQQLziskzghqAf6LMaUpMdqRl2V
+ UrB5ZFCW2GpvXuHsmlBNRyoj14rAQ6+VDv6Bt0ZedjkWa2SiyNudkOXPOYLpxNyT74rto2Wp9/32n
+ qY+iHAY+Ch7ESIVH2ucAViNV4T6dZJkfqmroXcphu4gM631ExpagXtXwlx2xL7YqxYYjMDo4BczLz
+ IvbwMnGQ==;
+Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1ldEPW-002ahK-0a
- for linux-phy@lists.infradead.org; Sun, 02 May 2021 15:53:35 +0000
-Received: by mail-pj1-x1031.google.com with SMTP id ge1so1670974pjb.2
- for <linux-phy@lists.infradead.org>; Sun, 02 May 2021 08:53:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=+pEIgenmE+D1r/CBbObpajLyzMM6TZCndrUq5f9PnOY=;
- b=XkbmSvFSxzs+Z8m4ADAPLryBIfQwqvUVhF9JZo9yzIpiYZ93tIhbHc9SUqKOG2fopB
- D4STrJLTuaFBjgQh2cV1Zvv8DO7VFwOUQWb8C4WHaggrFl3RMwGoO8YSnQuIYJNqs/jo
- DDRj68CENpbWgMFGGTv4joxEf6ESefR+ZGffwnE9Fx9TNRHZMuGdrB0gtPRgfEV3Xh3e
- RFUMbW+bFtNMcs9gNRCKJP+LaJzzl6St120WRaPmjVOqdFKOBfV1aCuEfezUlryvub8L
- Vc9PIbtD3uPHCZG4hTZ+xJKrO+Ao65GTMlrZIXWLyhJSfR8j8IwKiDjO6LczoBBYzdWE
- 9CDg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=+pEIgenmE+D1r/CBbObpajLyzMM6TZCndrUq5f9PnOY=;
- b=eSqkFLRR156821xnYKzRIi+pYeYTxLvfWKMhQYfGwKWvX1JEUUUF9H+msykZGqGcAf
- plqBPQo6tQecPlPLz54ZhREp8rR3fvkWWCvzikiSTO2KAsTv2G/B1pOmGacXvRuGbqSi
- bgqpsToLtQxZ5Iixrjv0tCSbpF3OeZK/19SkOBP35u1NLisn0G9EgLzXVlN6k5Y7obae
- WA6qkAbTVadJBS4Wg6xZUKjpsHngRaeTy8PAbMM3LzecoSfD3X7XG85AVQfCBMx1N2//
- zXZWM50rZSgyjtp+FCi7E6T3kJ/iaYnrdnjWAOYEp9xBZB9wKdkPpRyUcuDfWC4cZE+Q
- 90pQ==
-X-Gm-Message-State: AOAM5314e7bDMUNZx9LdJ/sVZFMWe17d/9Zaa1BnPEeMikCebVB/UZ+S
- sxf4LHrbB+W+b75FNgCtwjk=
-X-Google-Smtp-Source: ABdhPJxi9yYKa4vdHvC1mZQ4QAirZnEUrb5wgTDaPKEV3BAJiAw/z26to0Aqw6ojl0RKUDzHMas2Bg==
-X-Received: by 2002:a17:90a:9511:: with SMTP id
- t17mr26332999pjo.235.1619970813247; 
- Sun, 02 May 2021 08:53:33 -0700 (PDT)
-Received: from [192.168.1.67] (99-44-17-11.lightspeed.irvnca.sbcglobal.net.
- [99.44.17.11])
- by smtp.gmail.com with ESMTPSA id x23sm6728984pfc.170.2021.05.02.08.53.32
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 02 May 2021 08:53:32 -0700 (PDT)
-Subject: Re: [PATCH] phy: usb: Fix misuse of IS_ENABLED
-To: Chen Li <chenli@uniontech.com>, Al Cooper <alcooperx@gmail.com>,
+ id 1leDg8-004bRV-Um; Wed, 05 May 2021 09:18:50 +0000
+Received: from tarshish.tkos.co.il (unknown [10.0.8.4])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx.tkos.co.il (Postfix) with ESMTPS id A9019440870;
+ Wed,  5 May 2021 12:18:36 +0300 (IDT)
+From: Baruch Siach <baruch@tkos.co.il>
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Baruch Siach <baruch@tkos.co.il>,
+ Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
+ Kathiravan T <kathirav@codeaurora.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-phy@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com
-References: <87czuggpra.wl-chenli@uniontech.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <bbbc3229-5dc4-f8f9-f2e1-5cb28213e269@gmail.com>
-Date: Sun, 2 May 2021 08:53:30 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Firefox/78.0 Thunderbird/78.10.0
+ Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Jingoo Han <jingoohan1@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Robert Marko <robert.marko@sartura.hr>, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-tegra@vger.kernel.org
+Subject: [PATCH v2 1/6] PCI: dwc: tegra: move GEN3_RELATED DBI register to
+ common header
+Date: Wed,  5 May 2021 12:18:29 +0300
+Message-Id: <c15ac1443ec765e32a2801241dcd8e924abc769b.1620203062.git.baruch@tkos.co.il>
+X-Mailer: git-send-email 2.30.2
+In-Reply-To: <cover.1620203062.git.baruch@tkos.co.il>
+References: <cover.1620203062.git.baruch@tkos.co.il>
 MIME-Version: 1.0
-In-Reply-To: <87czuggpra.wl-chenli@uniontech.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210502_085334_083790_7CCF3679 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210505_021849_343986_518331AD 
+X-CRM114-Status: GOOD (  10.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,23 +96,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+These are common dwc macros that will be used for other platforms.
 
+Signed-off-by: Baruch Siach <baruch@tkos.co.il>
+---
+ drivers/pci/controller/dwc/pcie-designware.h | 6 ++++++
+ drivers/pci/controller/dwc/pcie-tegra194.c   | 6 ------
+ 2 files changed, 6 insertions(+), 6 deletions(-)
 
-On 4/27/2021 12:17 AM, Chen Li wrote:
-> 
-> While IS_ENABLED() is perfectly fine for CONFIG_* symbols, it is not
-> for other symbols such as __BIG_ENDIAN that is provided directly by
-> the compiler.
-> 
-> Switch to use CONFIG_CPU_BIG_ENDIAN instead of __BIG_ENDIAN.
-> 
-> Signed-off-by: Chen Li <chenli@uniontech.com>
-
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
-Fixes: 94583a41047e ("phy: usb: Restructure in preparation for adding
-7216 USB support")
+diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
+index 7247c8b01f04..ceb359b6e6a6 100644
+--- a/drivers/pci/controller/dwc/pcie-designware.h
++++ b/drivers/pci/controller/dwc/pcie-designware.h
+@@ -74,6 +74,12 @@
+ #define PCIE_MSI_INTR0_MASK		0x82C
+ #define PCIE_MSI_INTR0_STATUS		0x830
+ 
++#define GEN3_RELATED_OFF			0x890
++#define GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL	BIT(0)
++#define GEN3_RELATED_OFF_GEN3_EQ_DISABLE	BIT(16)
++#define GEN3_RELATED_OFF_RATE_SHADOW_SEL_SHIFT	24
++#define GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK	GENMASK(25, 24)
++
+ #define PCIE_PORT_MULTI_LANE_CTRL	0x8C0
+ #define PORT_MLTI_UPCFG_SUPPORT		BIT(7)
+ 
+diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
+index 6fa216e52d14..57203f32cfdb 100644
+--- a/drivers/pci/controller/dwc/pcie-tegra194.c
++++ b/drivers/pci/controller/dwc/pcie-tegra194.c
+@@ -193,12 +193,6 @@
+ #define GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC_MASK	GENMASK(23, 8)
+ #define GEN3_EQ_CONTROL_OFF_FB_MODE_MASK	GENMASK(3, 0)
+ 
+-#define GEN3_RELATED_OFF			0x890
+-#define GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL	BIT(0)
+-#define GEN3_RELATED_OFF_GEN3_EQ_DISABLE	BIT(16)
+-#define GEN3_RELATED_OFF_RATE_SHADOW_SEL_SHIFT	24
+-#define GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK	GENMASK(25, 24)
+-
+ #define PORT_LOGIC_AMBA_ERROR_RESPONSE_DEFAULT	0x8D0
+ #define AMBA_ERROR_RESPONSE_CRS_SHIFT		3
+ #define AMBA_ERROR_RESPONSE_CRS_MASK		GENMASK(1, 0)
 -- 
-Florian
+2.30.2
+
 
 -- 
 linux-phy mailing list
