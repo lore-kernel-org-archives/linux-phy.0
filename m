@@ -2,106 +2,80 @@ Return-Path: <SRS0=oIvu=KB=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 89409C43461
-	for <linux-phy@archiver.kernel.org>; Thu,  6 May 2021 11:17:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id F3B7DC433B4
+	for <linux-phy@archiver.kernel.org>; Thu,  6 May 2021 11:50:02 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E2B90611CB
-	for <linux-phy@archiver.kernel.org>; Thu,  6 May 2021 11:17:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E2B90611CB
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 99F88613D9
+	for <linux-phy@archiver.kernel.org>; Thu,  6 May 2021 11:50:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 99F88613D9
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=vivo.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qIQmSMI6Tqjb8CH0LXCAcYctozuL+AILswCfLUPAmtM=; b=lcd7knadSqGK77f9Q98rvpSWF
-	zQc2ywNluV7jWb+3wlANIXZqK2jCLt89N+esBWgaN3sfx+51W6k/Ibge/N5/D3tY8mRVJWOHeFjHg
-	tPsGlBET4oHA7sFPdpOLGeMgIgXOuN7//h5Vz7piQOYXSos00YhQYvp06SS0siooLFsBid2lHiXja
-	NfOc+C/Vt2fR6sL+BuLAmHBaUHNdW7BV2bQHeWPLfdko7FQnjf+B1SCe/GLEig3cC/4Ib4e4DwbJY
-	/HAdiLIktb63c/pArdKimoyx/pO+zg6BH+srjemcrVbRTTTUfqOBEnL0arOUak5YqTdo7wBe7m+gf
-	xUWXZtYkA==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=SGbnv/MED0YZu9q5GKbNK70RhdCL0pAYbnADauoYUEw=; b=k5bNODtR+U9vZGIDrs2D1QpquS
+	B3pmJZMWKJYtOThgmKpknzthtMyNxl4+Em+eQGt6yq6QDgg1JEJvhhu+x8i4jK8KMpq7Tp5M+/r5I
+	X9lAiQxbUW/PSjAVkDx456RtzWVsEtG1RsZBHqzrQT57o4qCtIQffaETeDtxHNZAg/KOS1cKEN0j/
+	uwK3auVfq2QO+g9hTHVldWOWxGHSVfiz7K1D+lsjk8AQN8KMTNkGWzWh2/eoNXK1IMcb+Xz1ZgusD
+	x47ioQ3MWvSBlQ0emu7UzlpAZlMkqV8v5oYr6jJAx3bQzkNjCuA4o7aMRyDpJm43nxVQlWLE665l+
+	xBSSAB1g==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lec0l-0046WI-CY; Thu, 06 May 2021 11:17:43 +0000
+	id 1lecW0-004Avb-Qi; Thu, 06 May 2021 11:50:00 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lebym-0046Dg-Bn
- for linux-phy@desiato.infradead.org; Thu, 06 May 2021 11:15:58 +0000
+ id 1lecVz-004Av8-AI
+ for linux-phy@desiato.infradead.org; Thu, 06 May 2021 11:49:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
- :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=bcj0pWWA8nFHZcaEeJrGAFY0Y2i6kRxQp4Wf+dRkrMc=; b=DDIjCy+/+QJ9EDYfs/CQVnTVLX
- Cz5KibCwOTan4eJ3UqXdp1zhcN3+DHsp/s1w8ZMsiBG1LzIX1B5P/RtsrHIerG9VR1fI26kTW8r4s
- 4Ik8RxUzHmSulu/O0tsEnZQVSDnM/W3uqP/lgFhrxNUvJSfVhLjuSipkd4oJ0Hu8UvFLplSxhJUgA
- SFmugOs2hrm/ss3OBcxYu1I7jskUJ8Oz1T17MZeKvayf/L6njGXFrtxMJVlIzyrfoEVFiuJEdhuCp
- TpCft8DXgUwr+4IoFfRyUxAFwmqWPFUelbUQWCaYGOLRwnuGWd7jmXhe6bDMWKwo/0V5mvG8QnP5x
- 8SQCi4UQ==;
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+ MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=hEb9PY51eF1OoPJpfjES/iT9G7VlSKAzGgXiKQ4Wpv0=; b=Cjf+3OQM8iamwveKkFRdz7i/mP
+ FDXe2A0UmReeuUnYmwCXb6ytKaetWS5iRQuEdy9awpCQQcbyyy23IeCse1ylQvPSm2wyWR77biNk0
+ /iyJwKY3+AlXEPy0bxO/0eTYjVnrqhFvCoQj+0lBMdlrMthH+4mokf00OOBJhBPSjQNcJWdW8c6AU
+ Kzez64pw5//4vudaX7fL4Jm3yyn//liMgG55UmHf0b0Q6IlFm4tfDSqEq8aZSMNG9qj+LYfyB7pqB
+ Kdotciftv5pvPP5ZVFOGuj/JPaU4J3wdHXNO5Ugtso+Vv3QkuZb2iC7HF6UDy4/BLngn4p98PDQQI
+ aE3LbZGg==;
+Received: from mail-m176216.qiye.163.com ([59.111.176.216])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lebyj-005ygK-UP
- for linux-phy@lists.infradead.org; Thu, 06 May 2021 11:15:39 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id x5so5165565wrv.13
- for <linux-phy@lists.infradead.org>; Thu, 06 May 2021 04:15:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=bcj0pWWA8nFHZcaEeJrGAFY0Y2i6kRxQp4Wf+dRkrMc=;
- b=nx33U0MdKytL2LeL/A3OBCQcElimwWw/4yEPpHFwZbFDqisrnuREQLuAZyx6jvlrj5
- 58b3UFV9rfe94VikNAaI3ueEPEzBPPI+LdGlhP6ZOrbhn0oDAzn2XS6uyOGvYA+2NUb4
- 5/wGOKqulsUeNdvxzpb+ULOH/m6a1ggvUUwRszekCdlmOPSxOU8HFgjoNrL8JRhlJ1Wz
- MBgWZ4VCPS70SSWsFZVNMqkVCE1i50s7huEVZEx40X2N5gG7VzNMJO0FJfVyfTpLvAt3
- 6JrDRkA4VXw94kiB2n0LHLUE7Gywwcn/rSLvDehqTiOqtguPnMQ80xFnsF+znBHRqW6Y
- DybA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=bcj0pWWA8nFHZcaEeJrGAFY0Y2i6kRxQp4Wf+dRkrMc=;
- b=n1iw2ImZdI7BzQ2iqDaiVm6WuxczduID+pG+v7ztjYvqhghhpmUhR0U1M8Kugbr3oe
- aDXtkWi1ngzzEIKC/nU38lPntqAqERqA0H1uIuHsbpthGm9tqivPIhJkp4krSqVyXbd1
- dcEhqBkbH0+pecSXUZWKTijb24+0UhjpVbBz1sARK02S/pFn5Cxkacx3TRrZtTSbu5n7
- 1apoLA9wAh82/xicNWJ9P7zbEP+TKxqptrdQqv9CRH55J+eXK6hi1zcZR8ZJq76eDPlR
- 61+2S0mft2a9sUORhNxap2eyesRJL12OhtpiWNwB/58xIW+21B8HFAObLJQNNehmz5v0
- 3vng==
-X-Gm-Message-State: AOAM532qeJnBLI2RH3uLQ8/rXbjWU+5HbZnz2vIfQ3J/wTWS6QmTMTCG
- U18CrPNZg6PoalSjFuHpkco=
-X-Google-Smtp-Source: ABdhPJxJ9grl1B/XxF/8opkBocpLHYlo2dk8HqNadhlsu7dvjNCfyEqecrxPRlVTxJXSiMy/6ZpGiQ==
-X-Received: by 2002:a05:6000:1541:: with SMTP id
- 1mr4539384wry.364.1620299736213; 
- Thu, 06 May 2021 04:15:36 -0700 (PDT)
-Received: from localhost.localdomain
- (231.red-83-51-243.dynamicip.rima-tde.net. [83.51.243.231])
- by smtp.gmail.com with ESMTPSA id u5sm3642433wrt.38.2021.05.06.04.15.35
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 06 May 2021 04:15:35 -0700 (PDT)
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-To: vkoul@kernel.org
-Cc: linux-phy@lists.infradead.org, kishon@ti.com, robh+dt@kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-staging@lists.linux.dev, gregkh@linuxfoundation.org, neil@brown.name,
- ilya.lipnitskiy@gmail.com
-Subject: [PATCH 2/5] dt-bindings: phy: mediatek,
- mt7621-pci-phy: add clock entries
-Date: Thu,  6 May 2021 13:15:28 +0200
-Message-Id: <20210506111531.21978-3-sergio.paracuellos@gmail.com>
+ id 1lecVu-005zxR-I4
+ for linux-phy@lists.infradead.org; Thu, 06 May 2021 11:49:56 +0000
+Received: from wanjb-virtual-machine.localdomain (unknown [36.152.145.182])
+ by mail-m176216.qiye.163.com (Hmail) with ESMTPA id 52B17C2019C;
+ Thu,  6 May 2021 19:49:46 +0800 (CST)
+From: Wan Jiabing <wanjiabing@vivo.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Swapnil Jakhade <sjakhade@cadence.com>,
+ Yuti Amonkar <yamonkar@cadence.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: kael_w@yeah.net,
+	Wan Jiabing <wanjiabing@vivo.com>
+Subject: [PATCH] dt-bindings: phy: cadence-torrent: update reference file of
+ docs
+Date: Thu,  6 May 2021 19:49:39 +0800
+Message-Id: <20210506114940.22215-1-wanjiabing@vivo.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20210506111531.21978-1-sergio.paracuellos@gmail.com>
-References: <20210506111531.21978-1-sergio.paracuellos@gmail.com>
 MIME-Version: 1.0
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZS1VLWVdZKFlBSE83V1ktWUFJV1kPCR
+ oVCBIfWUFZGkMZGlYZQkgfTRhLSR5MSxhVEwETFhoSFyQUDg9ZV1kWGg8SFR0UWUFZT0tIVUpKS0
+ hKQ1VLWQY+
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Mio6CCo6HD8SQ0IWSR0YMQNP
+ GUwaC0JVSlVKTUlLSEtKTENNQ0NJVTMWGhIXVQwaFRESGhkSFRw7DRINFFUYFBZFWVdZEgtZQVlI
+ TVVKTklVSk9OVUpDSVlXWQgBWUFJSE9ONwY+
+X-HM-Tid: 0a7941832da0d976kuws52b17c2019c
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210506_041537_995846_4BDCCA76 
-X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-CacheID: sfid-20210506_044954_781077_FA49DB03 
+X-CRM114-Status: UNSURE (   7.32  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -119,52 +93,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-MT7621 SoC clock driver has already mainlined in
-'commit 48df7a26f470 ("clk: ralink: add clock driver for mt7621 SoC")'
-Hence update schema with the add of the entries related to
-clock.
+In commit fd7abc3c5b87 ("phy: cadence-torrent: Use a common header
+file for Cadence SERDES"), phy-cadence-torrent.h was renamed to
+phy-cadence.h. Fix it of the Documentation.
 
-Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Signed-off-by: Wan Jiabing <wanjiabing@vivo.com>
 ---
- .../bindings/phy/mediatek,mt7621-pci-phy.yaml        | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-index 0ccaded3f245..d8614ef8995c 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-@@ -16,6 +16,14 @@ properties:
-   reg:
-     maxItems: 1
- 
-+  clocks:
-+    maxItems: 1
-+    description:
-+      PHY reference clock. Must contain an entry in clock-names.
-+
-+  clock-names:
-+    const: sys_clk
-+
-   "#phy-cells":
-     const: 1
-     description: selects if the phy is dual-ported
-@@ -23,6 +31,8 @@ properties:
- required:
-   - compatible
-   - reg
-+  - clocks
-+  - clock-names
-   - "#phy-cells"
- 
- additionalProperties: false
-@@ -32,5 +42,7 @@ examples:
-     pcie0_phy: pcie-phy@1e149000 {
-       compatible = "mediatek,mt7621-pci-phy";
-       reg = <0x1e149000 0x0700>;
-+      clocks = <&sysc 0>;
-+      clock-names = "sys_clk";
-       #phy-cells = <1>;
-     };
+diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+index 01dcd14e7b2a..320a232c7208 100644
+--- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+@@ -118,7 +118,7 @@ patternProperties:
+         description:
+           Specifies the Spread Spectrum Clocking mode used. It can be NO_SSC,
+           EXTERNAL_SSC or INTERNAL_SSC.
+-          Refer include/dt-bindings/phy/phy-cadence-torrent.h for the constants to be used.
++          Refer include/dt-bindings/phy/phy-cadence.h for the constants to be used.
+         $ref: /schemas/types.yaml#/definitions/uint32
+         enum: [0, 1, 2]
+         default: 0
 -- 
 2.25.1
 
