@@ -2,103 +2,98 @@ Return-Path: <SRS0=/0rM=KC=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0C214C433ED
-	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 07:50:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1C953C433ED
+	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 22:12:12 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 678B161451
-	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 07:50:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 678B161451
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 8DBF261377
+	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 22:12:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8DBF261377
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=DQEK72PFUEtloss+cOIpQe7lvC6BS+GVBo1jxhcBq3w=; b=b8Z248beiqf/1gjOKayqkbeeaa
-	4a4q4qMwTNXnLkVd4P43wdZhfjGETqiK4vIGdwrSmkgO5v6bLcM1ZjgT5i6Z+dzQqL6t3SGXuauvi
-	qlgLC7c/I7FEfhKHpV/nNQGrXFZCH5pw5m419hPXWhRsmyvof4vniaNBL/QIGKfTCcteSHppBNOSV
-	4dBksGsOiWpINOf9Cg1LYOjX2HkU7mHJS1Hm7LD2S++pXIrROy+cUHMiKsVgvi26oolOV1cME9FsF
-	mXhZ95Q0+Q5i293Hf61Da+5TnhE3hXvv3zWTLJmR+/TUi6LFky6zzvNzIHwvMYCvJVabhIxoJkmX8
-	+U5ygoug==;
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=TF2cFy1tnUcdljkJQxxDyhqVcGs8tr5Wl2YiXN1Euz8=; b=QVZSS2mIXH0LuQ8pzvBDbxVNP
+	fLpMp7HlolBAo4MUecU5OKdlSpZZs2IDaWv4wN7Y7s3Y5G/7h/T1Em7sEGNvg4qUtUyPfAJm7aGhL
+	HxS9m7DwX/9meQ/Zd2noyiBHkVE+/HiamWUGFcxj6wdG7ndyjeQzTdyPw3HoayyUkcapMcgKH2GEY
+	HDrxUKFNGSWSYar7TE05MLRnLrAJBQT+sG8/Z4hA3ecDi3iwMJ+rKvTJMq467H0enXj44ebwmatc8
+	gQtuwAtjC8Mcn8WvedD1g1XMf0DwhFL82AZK8PAUGxVwCrubkb2N1W/rjzUIq+eiuOECZxdJMAWBw
+	zkxmTxuXw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1levGA-006R9W-8k; Fri, 07 May 2021 07:50:54 +0000
+	id 1lf8hc-00891G-Jn; Fri, 07 May 2021 22:12:09 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1levG8-006R8k-Lu
- for linux-phy@desiato.infradead.org; Fri, 07 May 2021 07:50:52 +0000
+ id 1lf8ha-00890r-HY
+ for linux-phy@desiato.infradead.org; Fri, 07 May 2021 22:12:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:In-Reply-To:References;
- bh=lmFZ9X92n0xS5eD8fIhVvq1AgFmBTPGqdtSRgzKCzBY=; b=svkMTWIppy9v7IhVwAs8InwEEx
- 3grGAsJshEvAXXF2PtC3Vok4VT5r+2Dq/I+MsZ52oOK9Fu9WJtdfh/ElMnZJteKgnCF5plwqFXaqS
- JWzo8GTLv80Hxp9Xfx213nLYMCWSIPUQbl7ctODHtdRcG/cqrH0+YaRgOe+A/aue0h+uzhZKQqVSv
- zjyarpVL6OQL9pyE/tbTHI7+gkT6IIj1SZl2ruqjrm1QpODjTkjvFsd1PvH77WtxEP4FQvJY0Dca6
- /2gR8cGiygNVd51bvAXLhl3Bn9l300q8SbKrjPApzWaN7AwBZl/7rRxyR1iuXOttAbxr5Td8TBQt5
- fnVmdblg==;
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=/rvNcQv5ALxrR0naTewdJhe0quQ9LN/bF0ysksseIEY=; b=YtAySW7MnbCg1HGafGo8++BpdO
+ ueaPdl78sfMilqJFTKjtQ/2EIBU2/0A4e+Gmx5kU+z8puD1n/LnboqGZrdsjCE1YRGtJuxsFPYXgD
+ CLzm8Kv9VxL7DVyBLF5CcDDp0mSy0rEpQj6sJGaWNCyWrrcY0TvDPsPKauIrmALG5KX3DAJJ0sl6X
+ /fn+kEqMqvEK9JYOcEuFi5xbDZdzkHmXJOKwkQZubP1wiwXETveY6LPEa3RR6t3KhbafiJ1SJs4hq
+ uhe0QNm+B/UMrtOkC4f22uh/28hsiBtgK+lE9QFIzTu19qunM8M56U723SQWbnNG5TKZO3ZXv2exQ
+ 4lDcJkvA==;
+Received: from mail-oo1-f52.google.com ([209.85.161.52])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1levG6-006fNk-4B
- for linux-phy@lists.infradead.org; Fri, 07 May 2021 07:50:51 +0000
-Received: by mail-wm1-x330.google.com with SMTP id
- o26-20020a1c4d1a0000b0290146e1feccdaso6011385wmh.0
- for <linux-phy@lists.infradead.org>; Fri, 07 May 2021 00:50:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lmFZ9X92n0xS5eD8fIhVvq1AgFmBTPGqdtSRgzKCzBY=;
- b=Nw0+uWR6sBwev9n8g5JNOaPAJ41dWuMDfZnmMHJCF0waPyxqEFwowUPAUjzKw4tMpo
- 9F6KXeNJYNBKAAWr4Pg0xW8i/VEQPEUQiZnsyEtXIyEgd8R/LGOx4mydtetBFFDoca1m
- YBsA5gL+pUy+BvCXDWhhQ2M7hkrNyqvc7PYt0a/9RoXvJe0+BYSjvcvwF/BfFoMkCHPv
- yWBDiEdNDaZkPdmwakQeqj/3ZU/6H41UApuk6PeSdzldQNtUIOpTMMWE5Ckrj6QWVcpc
- 3zbxFNO2b1vSbSoiX9H48vWQQDPC+/5w07256M6PeN/v0lZHgt2QaopTjbaTRdH3Y1K4
- 08TA==
+ id 1lf8hX-007DU4-WF
+ for linux-phy@lists.infradead.org; Fri, 07 May 2021 22:12:05 +0000
+Received: by mail-oo1-f52.google.com with SMTP id
+ h9-20020a4a94090000b02901f9d4f64172so2278306ooi.5
+ for <linux-phy@lists.infradead.org>; Fri, 07 May 2021 15:12:02 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lmFZ9X92n0xS5eD8fIhVvq1AgFmBTPGqdtSRgzKCzBY=;
- b=RLucihlgC0/5xr0EfwSW856gLEwQhkFCnIlM+BfYQxWBC6G54+l7LhyzzO8/1YnjYr
- xqAx7JYuXKTTFItyHRcAlEFlXhSFKj8t3P4qn1EH/ATOoygJ3b+3qcQ0RsFBGkBQjVn0
- 0C28oPB1RaDV+IygsQCMpiHakAsQ6bfw7hBgYWn0RZh1l9LDF9lWtpxRLv5A3MYU6Kc/
- igs4orZ/alzXP16EyMSZSrPtCgEq2RFNByB8hqLfN++jZDGTc7oM9Px9uPFEcWTlJjup
- 2LFDep2QAfCOJHLjy1YlafAazeZSoFzwK931mdgbP93ybTCY0+536eChYGRsw5wokK4g
- tyiQ==
-X-Gm-Message-State: AOAM532M2ozaxdzSQo83Ntg8vyPcVq8BXWm7eecWGDkr7mWmPPRB3/Hp
- XAYK7H6nJBW3lmvrRtdi2+E=
-X-Google-Smtp-Source: ABdhPJz7fejmXo4zC/a3xw0WLaeBC07EPUrCl4mhzdcOzuQI2JCtQfeIyxRrD95s5ZglQzGOPXVz1w==
-X-Received: by 2002:a05:600c:4304:: with SMTP id
- p4mr19719003wme.111.1620373848178; 
- Fri, 07 May 2021 00:50:48 -0700 (PDT)
-Received: from localhost.localdomain
- (231.red-83-51-243.dynamicip.rima-tde.net. [83.51.243.231])
- by smtp.gmail.com with ESMTPSA id i13sm7317982wrs.12.2021.05.07.00.50.44
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 07 May 2021 00:50:47 -0700 (PDT)
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-To: vkoul@kernel.org
-Cc: linux-phy@lists.infradead.org, kishon@ti.com, gregkh@linuxfoundation.org,
- neil@brown.name, ilya.lipnitskiy@gmail.com,
- kernel test robot <lkp@intel.com>
-Subject: [PATCH v2] phy: ralink: phy-mt7621-pci: properly print pointer address
-Date: Fri,  7 May 2021 09:50:43 +0200
-Message-Id: <20210507075043.14392-1-sergio.paracuellos@gmail.com>
-X-Mailer: git-send-email 2.25.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=/rvNcQv5ALxrR0naTewdJhe0quQ9LN/bF0ysksseIEY=;
+ b=FE0bqZhqn+n1Cr6iq3vn1q4HwBEItICUhWCl1W6/mKJ81W2OWgwwXgyQXna3CK6yJe
+ SPmEBU4yCM3RdbgWdCK3HXnFKFB0HX13KfCtZYFGyzSIbSuBPqvuHs2PHShqVBO0CZw2
+ LAzfjbskpVaumUBG7USYYuBfvhHhou6QhPpvkDOL8UDCcqBOjvUnj3AQvI4xasyeEpHH
+ YtSz3dgoaBzxDFWiqSZFvxDZX1MvnSBWLZwp9Rh9oqOkhIvUt30CfaPFjwwGh9Yp3CEE
+ aVIL10TuFA/k4IS1rkgLzrbI6rLzx/1k74QhAdsMKlXr47iRQlRP0L4UTjuXEmjhT7Lf
+ SSBA==
+X-Gm-Message-State: AOAM530uwzEFgjEbC2bzqebgPNX9GRTrZknonOzNvh1JB+OKtqUImA9a
+ lcm/Hqh/4DS0sENthsp+Mg==
+X-Google-Smtp-Source: ABdhPJzvPtsvbac2Jn5WYp0UEmz6zR4DRNDm3TNvPg3pBSSYiFtETu2wQBHRtLL52BozFDBoXwU57A==
+X-Received: by 2002:a4a:d98a:: with SMTP id k10mr9444899oou.51.1620425522176; 
+ Fri, 07 May 2021 15:12:02 -0700 (PDT)
+Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id k8sm1212467oig.6.2021.05.07.15.12.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 07 May 2021 15:12:01 -0700 (PDT)
+Received: (nullmailer pid 2987891 invoked by uid 1000);
+ Fri, 07 May 2021 22:12:00 -0000
+Date: Fri, 7 May 2021 17:12:00 -0500
+From: Rob Herring <robh@kernel.org>
+To: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Cc: vkoul@kernel.org, linux-phy@lists.infradead.org, kishon@ti.com,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-staging@lists.linux.dev, gregkh@linuxfoundation.org, neil@brown.name,
+ ilya.lipnitskiy@gmail.com
+Subject: Re: [PATCH 2/5] dt-bindings: phy: mediatek, mt7621-pci-phy: add clock
+ entries
+Message-ID: <20210507221200.GA2984128@robh.at.kernel.org>
+References: <20210506111531.21978-1-sergio.paracuellos@gmail.com>
+ <20210506111531.21978-3-sergio.paracuellos@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210506111531.21978-3-sergio.paracuellos@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210507_005050_201346_C5835B98 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20210507_151204_062769_76CEF773 
+X-CRM114-Status: GOOD (  17.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,41 +110,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The way of printing the pointer address for the 'port_base'
-address got into compile warnings on some architectures
-[-Wpointer-to-int-cast]. Instead of use '%08x' and cast
-to an 'unsigned int' just make use of '%px' and avoid the
-cast. To avoid not really needed driver verbosity on normal
-behaviour change also from 'dev_info' to 'dev_dbg'.
+On Thu, May 06, 2021 at 01:15:28PM +0200, Sergio Paracuellos wrote:
+> MT7621 SoC clock driver has already mainlined in
+> 'commit 48df7a26f470 ("clk: ralink: add clock driver for mt7621 SoC")'
+> Hence update schema with the add of the entries related to
+> clock.
+> 
+> Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+> ---
+>  .../bindings/phy/mediatek,mt7621-pci-phy.yaml        | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
+> index 0ccaded3f245..d8614ef8995c 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
+> @@ -16,6 +16,14 @@ properties:
+>    reg:
+>      maxItems: 1
+>  
+> +  clocks:
+> +    maxItems: 1
+> +    description:
+> +      PHY reference clock. Must contain an entry in clock-names.
+> +
+> +  clock-names:
+> +    const: sys_clk
 
-Fixes: d87da32372a0 ("phy: ralink: Add PHY driver for MT7621 PCIe PHY")
-Reported-by: kernel test robot <lkp@intel.com>
-Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
----
-Changes in v2:
- - Change dev_info to dev_dbg and redo long commit message accordly.
+You don't really need -names when there is only 1.
 
- drivers/phy/ralink/phy-mt7621-pci.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> +
+>    "#phy-cells":
+>      const: 1
+>      description: selects if the phy is dual-ported
+> @@ -23,6 +31,8 @@ properties:
+>  required:
+>    - compatible
+>    - reg
+> +  - clocks
+> +  - clock-names
 
-diff --git a/drivers/phy/ralink/phy-mt7621-pci.c b/drivers/phy/ralink/phy-mt7621-pci.c
-index 753cb5bab930..88e82ab81b61 100644
---- a/drivers/phy/ralink/phy-mt7621-pci.c
-+++ b/drivers/phy/ralink/phy-mt7621-pci.c
-@@ -272,8 +272,8 @@ static struct phy *mt7621_pcie_phy_of_xlate(struct device *dev,
- 
- 	mt7621_phy->has_dual_port = args->args[0];
- 
--	dev_info(dev, "PHY for 0x%08x (dual port = %d)\n",
--		 (unsigned int)mt7621_phy->port_base, mt7621_phy->has_dual_port);
-+	dev_dbg(dev, "PHY for 0x%px (dual port = %d)\n",
-+		mt7621_phy->port_base, mt7621_phy->has_dual_port);
- 
- 	return mt7621_phy->phy;
- }
--- 
-2.25.1
+Technically, you can't add new properties and make them required as that 
+breaks the ABI. If that's okay here, explain it in the commit message. 
 
+>    - "#phy-cells"
+>  
+>  additionalProperties: false
+> @@ -32,5 +42,7 @@ examples:
+>      pcie0_phy: pcie-phy@1e149000 {
+>        compatible = "mediatek,mt7621-pci-phy";
+>        reg = <0x1e149000 0x0700>;
+> +      clocks = <&sysc 0>;
+> +      clock-names = "sys_clk";
+>        #phy-cells = <1>;
+>      };
+> -- 
+> 2.25.1
+> 
 
 -- 
 linux-phy mailing list
