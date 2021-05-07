@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1C953C433ED
-	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 22:12:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6A23AC433B4
+	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 22:13:02 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8DBF261377
-	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 22:12:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8DBF261377
+	by mail.kernel.org (Postfix) with ESMTPS id 3063D61377
+	for <linux-phy@archiver.kernel.org>; Fri,  7 May 2021 22:13:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 3063D61377
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,77 +23,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TF2cFy1tnUcdljkJQxxDyhqVcGs8tr5Wl2YiXN1Euz8=; b=QVZSS2mIXH0LuQ8pzvBDbxVNP
-	fLpMp7HlolBAo4MUecU5OKdlSpZZs2IDaWv4wN7Y7s3Y5G/7h/T1Em7sEGNvg4qUtUyPfAJm7aGhL
-	HxS9m7DwX/9meQ/Zd2noyiBHkVE+/HiamWUGFcxj6wdG7ndyjeQzTdyPw3HoayyUkcapMcgKH2GEY
-	HDrxUKFNGSWSYar7TE05MLRnLrAJBQT+sG8/Z4hA3ecDi3iwMJ+rKvTJMq467H0enXj44ebwmatc8
-	gQtuwAtjC8Mcn8WvedD1g1XMf0DwhFL82AZK8PAUGxVwCrubkb2N1W/rjzUIq+eiuOECZxdJMAWBw
-	zkxmTxuXw==;
+	 bh=9I3jQ+9BCGAAJ5q7Ua/KqB5qjvJK0UBxHH4AHdoI5bg=; b=EacZTSZ2OC08xLQNA/zFMwfNz
+	voHe6Fq3DvFZQcSx+nV6BiF9kCO0DaAvS0Ga9w7M9mDEPllz0pVr4qbdK+0ssjZh4djw8hunOcBgr
+	IvntT7XJyv4yPPPaK7s6PFeNV6/jIDd74f7WWe43UmDzQ7ytsUvReIB9lckuLGHjdb9JtPeQBPL5J
+	kkpj7FSNGY6FxEUqc/TeVDO+1f3f9tQDuA+3bJlNko1+485C0j4HOSl3zYUZdG4XOlAWqJT+aAAyh
+	E/BPg6kVTyjENmVvFUe4aW/UxvBDqPC8yopVNtHw8/f7obVqLjceiSfHnuNSsW+5KONphZosRvjXA
+	Ptr8Y37Kw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lf8hc-00891G-Jn; Fri, 07 May 2021 22:12:09 +0000
+	id 1lf8iS-0089F3-Mt; Fri, 07 May 2021 22:13:00 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lf8ha-00890r-HY
- for linux-phy@desiato.infradead.org; Fri, 07 May 2021 22:12:06 +0000
+ id 1lf8iQ-0089EJ-B3
+ for linux-phy@desiato.infradead.org; Fri, 07 May 2021 22:12:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
  :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=/rvNcQv5ALxrR0naTewdJhe0quQ9LN/bF0ysksseIEY=; b=YtAySW7MnbCg1HGafGo8++BpdO
- ueaPdl78sfMilqJFTKjtQ/2EIBU2/0A4e+Gmx5kU+z8puD1n/LnboqGZrdsjCE1YRGtJuxsFPYXgD
- CLzm8Kv9VxL7DVyBLF5CcDDp0mSy0rEpQj6sJGaWNCyWrrcY0TvDPsPKauIrmALG5KX3DAJJ0sl6X
- /fn+kEqMqvEK9JYOcEuFi5xbDZdzkHmXJOKwkQZubP1wiwXETveY6LPEa3RR6t3KhbafiJ1SJs4hq
- uhe0QNm+B/UMrtOkC4f22uh/28hsiBtgK+lE9QFIzTu19qunM8M56U723SQWbnNG5TKZO3ZXv2exQ
- 4lDcJkvA==;
-Received: from mail-oo1-f52.google.com ([209.85.161.52])
+ bh=/8r+Lbr0DfTNwnY+IjwEBCPWL05D0ozGUpSsW0fUkTA=; b=Di5t2SJZtUlDc3ocDuk2ejUq14
+ yet+tchhliBd0uqqNiQ5L3SjdMG10SoWASNOZb8toDIEkNx6XlZyL4RzTa7+BD6zlqXdLCjdi3ay5
+ 987ye5KCbeyIQJZTrCkSovxM8KltrW9SW/T6bHUbmFiEHfPOZNXSpkyFGkJxiW6S1M1RvHVU5AKQq
+ zLcaVlREOasN2t+fxxeloNScruP5ZWVLFmPgyZot+AVjarMF3wx8vBPjAZj3rtEd8Surag5MJlWPj
+ 1xFyMKzGnWdp7FUpNYKXzxRJiVz4izmbtAc3dFVSGlGFDZrLROR/kxuSHduuPBYNhcZLKMK5F2VBB
+ +lHSR4HA==;
+Received: from mail-oi1-f172.google.com ([209.85.167.172])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lf8hX-007DU4-WF
- for linux-phy@lists.infradead.org; Fri, 07 May 2021 22:12:05 +0000
-Received: by mail-oo1-f52.google.com with SMTP id
- h9-20020a4a94090000b02901f9d4f64172so2278306ooi.5
- for <linux-phy@lists.infradead.org>; Fri, 07 May 2021 15:12:02 -0700 (PDT)
+ id 1lf8iO-007DZv-04
+ for linux-phy@lists.infradead.org; Fri, 07 May 2021 22:12:57 +0000
+Received: by mail-oi1-f172.google.com with SMTP id k25so10073657oic.4
+ for <linux-phy@lists.infradead.org>; Fri, 07 May 2021 15:12:55 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=/rvNcQv5ALxrR0naTewdJhe0quQ9LN/bF0ysksseIEY=;
- b=FE0bqZhqn+n1Cr6iq3vn1q4HwBEItICUhWCl1W6/mKJ81W2OWgwwXgyQXna3CK6yJe
- SPmEBU4yCM3RdbgWdCK3HXnFKFB0HX13KfCtZYFGyzSIbSuBPqvuHs2PHShqVBO0CZw2
- LAzfjbskpVaumUBG7USYYuBfvhHhou6QhPpvkDOL8UDCcqBOjvUnj3AQvI4xasyeEpHH
- YtSz3dgoaBzxDFWiqSZFvxDZX1MvnSBWLZwp9Rh9oqOkhIvUt30CfaPFjwwGh9Yp3CEE
- aVIL10TuFA/k4IS1rkgLzrbI6rLzx/1k74QhAdsMKlXr47iRQlRP0L4UTjuXEmjhT7Lf
- SSBA==
-X-Gm-Message-State: AOAM530uwzEFgjEbC2bzqebgPNX9GRTrZknonOzNvh1JB+OKtqUImA9a
- lcm/Hqh/4DS0sENthsp+Mg==
-X-Google-Smtp-Source: ABdhPJzvPtsvbac2Jn5WYp0UEmz6zR4DRNDm3TNvPg3pBSSYiFtETu2wQBHRtLL52BozFDBoXwU57A==
-X-Received: by 2002:a4a:d98a:: with SMTP id k10mr9444899oou.51.1620425522176; 
- Fri, 07 May 2021 15:12:02 -0700 (PDT)
+ bh=/8r+Lbr0DfTNwnY+IjwEBCPWL05D0ozGUpSsW0fUkTA=;
+ b=ANJtn5H7gfp7YoXaut4celjJhtak1xo+MyIQ+x1SUsSbY8UF0grpBV1qyv12VTYgL2
+ 9e6azfrTeJ5Bp/7bd7RvNTRtwrwjDHdJraYuPyRE7hho7v3dy1npwr77BYkOVTaEFpYj
+ kUX9/OEc4ymEJXExfXx5W323xLnoSe3lsf4dHD6meuDW6YQpnx7honKTdwF+6Umn60di
+ 6AhyOhNCiQ6aue2bD7PVTBZRb2Q7e3lNrjNNPB8UiCW7QST2Smx0qLhMudv4FCn+t6k7
+ tnR8AD/Y4Pk9YIbiG94vY93RHr27UZ5D2EuTM8svxCS+h5k9/rqLrRgvL8RWtjgrUewE
+ 051w==
+X-Gm-Message-State: AOAM533ydFcgsZI1IrykwE7DjDHzjpnRDwIkobw9oF4NfB7lgh3yN6PS
+ njor4DQtVLkK9Shdfv6O/w==
+X-Google-Smtp-Source: ABdhPJxzRsysvH1mVPYlJJZQwPKP4H/r7r7SGEWfJPxQDIkZwWiZcYqZIO62Qahjy+LCSFmPQbFMZg==
+X-Received: by 2002:aca:4dc3:: with SMTP id a186mr10715266oib.22.1620425575033; 
+ Fri, 07 May 2021 15:12:55 -0700 (PDT)
 Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k8sm1212467oig.6.2021.05.07.15.12.00
+ by smtp.gmail.com with ESMTPSA id 88sm1445861otx.2.2021.05.07.15.12.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 07 May 2021 15:12:01 -0700 (PDT)
-Received: (nullmailer pid 2987891 invoked by uid 1000);
- Fri, 07 May 2021 22:12:00 -0000
-Date: Fri, 7 May 2021 17:12:00 -0500
+ Fri, 07 May 2021 15:12:53 -0700 (PDT)
+Received: (nullmailer pid 2989456 invoked by uid 1000);
+ Fri, 07 May 2021 22:12:52 -0000
+Date: Fri, 7 May 2021 17:12:52 -0500
 From: Rob Herring <robh@kernel.org>
-To: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Cc: vkoul@kernel.org, linux-phy@lists.infradead.org, kishon@ti.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-staging@lists.linux.dev, gregkh@linuxfoundation.org, neil@brown.name,
- ilya.lipnitskiy@gmail.com
-Subject: Re: [PATCH 2/5] dt-bindings: phy: mediatek, mt7621-pci-phy: add clock
- entries
-Message-ID: <20210507221200.GA2984128@robh.at.kernel.org>
-References: <20210506111531.21978-1-sergio.paracuellos@gmail.com>
- <20210506111531.21978-3-sergio.paracuellos@gmail.com>
+To: Wan Jiabing <wanjiabing@vivo.com>
+Cc: Yuti Amonkar <yamonkar@cadence.com>, Swapnil Jakhade <sjakhade@cadence.com>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, kael_w@yeah.net,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH] dt-bindings: phy: cadence-torrent: update reference file
+ of docs
+Message-ID: <20210507221252.GA2989400@robh.at.kernel.org>
+References: <20210506114940.22215-1-wanjiabing@vivo.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210506111531.21978-3-sergio.paracuellos@gmail.com>
+In-Reply-To: <20210506114940.22215-1-wanjiabing@vivo.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210507_151204_062769_76CEF773 
-X-CRM114-Status: GOOD (  17.61  )
+X-CRM114-CacheID: sfid-20210507_151256_057482_9437D384 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,63 +108,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 06, 2021 at 01:15:28PM +0200, Sergio Paracuellos wrote:
-> MT7621 SoC clock driver has already mainlined in
-> 'commit 48df7a26f470 ("clk: ralink: add clock driver for mt7621 SoC")'
-> Hence update schema with the add of the entries related to
-> clock.
+On Thu, 06 May 2021 19:49:39 +0800, Wan Jiabing wrote:
+> In commit fd7abc3c5b87 ("phy: cadence-torrent: Use a common header
+> file for Cadence SERDES"), phy-cadence-torrent.h was renamed to
+> phy-cadence.h. Fix it of the Documentation.
 > 
-> Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+> Signed-off-by: Wan Jiabing <wanjiabing@vivo.com>
 > ---
->  .../bindings/phy/mediatek,mt7621-pci-phy.yaml        | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
+>  Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-> index 0ccaded3f245..d8614ef8995c 100644
-> --- a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-> @@ -16,6 +16,14 @@ properties:
->    reg:
->      maxItems: 1
->  
-> +  clocks:
-> +    maxItems: 1
-> +    description:
-> +      PHY reference clock. Must contain an entry in clock-names.
-> +
-> +  clock-names:
-> +    const: sys_clk
 
-You don't really need -names when there is only 1.
-
-> +
->    "#phy-cells":
->      const: 1
->      description: selects if the phy is dual-ported
-> @@ -23,6 +31,8 @@ properties:
->  required:
->    - compatible
->    - reg
-> +  - clocks
-> +  - clock-names
-
-Technically, you can't add new properties and make them required as that 
-breaks the ABI. If that's okay here, explain it in the commit message. 
-
->    - "#phy-cells"
->  
->  additionalProperties: false
-> @@ -32,5 +42,7 @@ examples:
->      pcie0_phy: pcie-phy@1e149000 {
->        compatible = "mediatek,mt7621-pci-phy";
->        reg = <0x1e149000 0x0700>;
-> +      clocks = <&sysc 0>;
-> +      clock-names = "sys_clk";
->        #phy-cells = <1>;
->      };
-> -- 
-> 2.25.1
-> 
+Applied, thanks!
 
 -- 
 linux-phy mailing list
