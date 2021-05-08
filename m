@@ -5,17 +5,17 @@ X-Spam-Level:
 X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
 	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
 	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,USER_AGENT_GIT
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C69E9C43611
-	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 07:09:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0AAA1C433B4
+	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 07:09:50 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 344C3608FE
-	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 07:09:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 344C3608FE
+	by mail.kernel.org (Postfix) with ESMTPS id 8293B6145E
+	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 07:09:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8293B6145E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,83 +24,82 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
 	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=X/W7dcK/4rZtBKLCSosFJyH7Qq/qiNn0Ot+HeyFvdSo=; b=qSpFA+GAZIaBzH1eisz5iKXZn
-	G/+C13yehO5yzRzZF4mn24eg17zmgg68JpkzeYz5nXVD0jWhHXMCUJECMrBLuVufhKtLNUvxSJFP/
-	N6Izp7dC3bmTQ1JGhhTRzpVhUnKjnrGKHRr9ajMF080IxT3KBYxmq/tG3SNi0hhSkvNtQ0jZokHxf
-	6ZGA9v7oMzyZWYX0sfqEsSCf/+6gm9hrLxSy+XKWDC29AYQZfZRjo3hgxONQsoOb/i3cKWphhJXpo
-	vYK4G8LTo4HP8DdhNEbQs2oLF/BGvbTwfOrptIRuKkOt+USk0MDCuMHBysEcjcrp8dlWTZgR5kLUT
-	hjsnluPPw==;
+	 bh=YplTVDb1ZeFkoeq2f9u2Mn9A2RISwyGb//QJWhSTueM=; b=HdRNU8Y3/fSYUV78RNb0+cmE8
+	14o0uPK9SmDgJEoAXX/ra+tVtdVU0uIkPI238+Oik6hbZiJ9hCbJ2i9vrQFMlLWRZOA4T3lw4klBQ
+	zW93G6CYs1xck/HiT5Rfk0AKtJR3I5EWBf6shM/XhieRex016boMyPBqjW/47dJRX0msMCnFDRLUe
+	OQCBRZIAcqOIpKdV++wuE8iWEF2X778UOJMA70l/AdKFG1J1iO/ck5sX+S5FPBTTohTYQTa6LE8KC
+	hgY9mpphnMme0iN740BEWZZQmQ7EWGZHALm1C8c4db5bMI8HFoz5aTgD4nFwcVAKpcwmZ2tCc6g4G
+	EqI6YVZHw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lfH5x-009276-Ho; Sat, 08 May 2021 07:09:49 +0000
+	id 1lfH5v-00926o-Vg; Sat, 08 May 2021 07:09:48 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lfH5q-00925k-EG
- for linux-phy@desiato.infradead.org; Sat, 08 May 2021 07:09:42 +0000
+ id 1lfH5o-00925d-EE
+ for linux-phy@desiato.infradead.org; Sat, 08 May 2021 07:09:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=5j0/SkQ5MnH/k0JVcJB2AM+3scDK+wjHcTxj/JFadC8=; b=KnhTrWx4kclr93nmhC2BW4AxYr
- E5zAGXCi4g5+t41Vbb5PLeMjDAsmOAfZfPPkKxcfBqTOMEyHOsWT50ZiUCdsT94YPINzW+53GrrB3
- cs3GvmXjOG4p/BmMhDuSdb+0ndTQIistrfCUGwuLPyKNlSfiHau3t3bZlQtMnQInohAESTY6dZNgt
- KsmhqtezewddC/eS0YFOyXWc0aV6xcmzpCGkVu0ZwOMUELuQy6ipKi4/giLTfXl6+qSN38DvEjYuP
- isIiSVQIqtj9yNnbhsXNc4T5y1Ie3/Sz1olZp7FYb14jK449ws6b/MdzYF4AWBAExzGHnUjGAnFcV
- uquWp2bQ==;
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+ bh=cbFyM8/48A5QwY5f+jcAHfVdDdKUhqPQqn/9aWFc+bo=; b=1N6WOcOKE2BxVq9+CWPWcP9McR
+ xgL5jBQZLyfI+pvh7Og9Cspw2aItJx5P8bt07gJeJJdD/jbwPnwMN0Hy4h513WaJADlSEoGDb/ceZ
+ Y5Il5ZyXEtM2LIDmgsJv9RK8uni1RQGzukAkaqxAfCY1HwQ11TirMYNOCf5sl/MlzrELdmVVcmbX/
+ sEKKFk9MVgH1pfsBHEzOivYUfe7SNoK/oS20WezRTWtF+0Ysb5r9ZcLQALok1Aqi11lqzeBGyc8oA
+ v5H0pKdm/n92HOdaxRSd6FUH75AStZ6Aw0jdiYL0rkMCQlU8mJxP98Gmd/LgVyRhcYlMUDiOMpF3g
+ vse6tURA==;
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lfH5n-007PoD-VC
- for linux-phy@lists.infradead.org; Sat, 08 May 2021 07:09:41 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id v12so11365057wrq.6
- for <linux-phy@lists.infradead.org>; Sat, 08 May 2021 00:09:39 -0700 (PDT)
+ id 1lfH5l-007Pmd-BL
+ for linux-phy@lists.infradead.org; Sat, 08 May 2021 07:09:39 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id n2so11421226wrm.0
+ for <linux-phy@lists.infradead.org>; Sat, 08 May 2021 00:09:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=5j0/SkQ5MnH/k0JVcJB2AM+3scDK+wjHcTxj/JFadC8=;
- b=GA+TKHud80mn4qE30fVhSRtcBi0OjBR1MavRxpfJqh0LQSgNZdUJOY80kToQ1cYmNG
- f9J159mvua6gFHdBOpfBuF0nXdkmsQEcbmAzpJqpGOhjfncF7mXYrkJDcw1A4+bDvBA3
- x68H5TAhq8jY2YgIHk345vZUN/+UAu4VJHd5x2gJrUDfLwyuLr5zqGEJuFe3NrvQPjk+
- 5CXvMW3rt3dz5BjNR2nAZ9vwAe8vLEkuw+jmZI4zGInQAqH28zJ/uBg8Pno9/oE57h73
- fQDEDMijv6fQPYdxUcdzZ7TgdE6hT333DkE3sIssI0D15Jki6gCEqA4N3VKyfMkCmAMF
- /dNw==
+ bh=cbFyM8/48A5QwY5f+jcAHfVdDdKUhqPQqn/9aWFc+bo=;
+ b=A+9tsp1WsUbv6YGsDOBneGaswtgeo3mlJsb7bEr16UTDC+I1DyqSE8OqjVMDWlx84n
+ INVEaYq4+1Xa3BGmNbQKDaeOVPtcchcYAoi2y6w5X9T3oT2RZd13UocYSh8vsTemka5j
+ d6qDiwd/0mJr2P5OwdCMSStIS4N5jrA9sCpparX9N+IXxQfDxuQCBLqUmlNa5J/OQ90J
+ vV+JaQoDW1VQTaOLqIKSK/1jgUhcuaYg1ddVdFo5pozUFuxiofpbFJTaGQqiWbYds4M3
+ r1mvznDuSDeccrkpmoBEcsvtcaxekcXZrFuj5d8AYtp+xdWaY4o8BPsx08XImfFprYWc
+ G+Tg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=5j0/SkQ5MnH/k0JVcJB2AM+3scDK+wjHcTxj/JFadC8=;
- b=cJcrfreo5dJVqmXC4kCGHsVInbpWT3o7f18zsqbSuv+TpK5kOUBYW5w5ztD+zZP9r3
- yJ/9ndkET1X14A3J7Ri0YGI4fIQkkXwnEPVo3Egi6ZjPXltN+7e9mZUGykp0GVG0sXLR
- zJvzl54LyHP9/TfSHcP4MHJAIQnLZQfzx11Zi+OSoXH4JU0q4qfPhILjfZtEMRNHbPjE
- aPvJaz1iPrSpmmqsdTjBSFfUrr71aqks4Zc5LTTXSmHtgQ3CuEjO28WJiS7DXBymxART
- 3mjMyBJK+usnEeJpyUjg5Z7Tb2OdDG6iI6heFFfmyqvi/P+cmVVljSwo7aYYcKADKwBg
- 7wtg==
-X-Gm-Message-State: AOAM532KjsTn3YBGUf7Re0z275s1nOeMSt6oijIii+IlKa4Vax4kfdqc
- 7oK+pFU1+F8dcIHDi3bFbMY=
-X-Google-Smtp-Source: ABdhPJwjBXqL1KZBUhuCyAQwuynl0Jh6CqAysR/8Lz1mlmCIOEzf0l/RQ+mHfVULZtM07Z2hKEIZDg==
-X-Received: by 2002:a5d:525c:: with SMTP id k28mr17406270wrc.158.1620457778811; 
- Sat, 08 May 2021 00:09:38 -0700 (PDT)
+ bh=cbFyM8/48A5QwY5f+jcAHfVdDdKUhqPQqn/9aWFc+bo=;
+ b=NVF+P3+3AUjU/kmqyynui+xcmb2boRCJV4h5fQ2cjcrRrsFAzS0k1uTiQq1/AbuNSK
+ ZOQ/Qjx66oUpbn8v10PfFs2XlQSblLJQN3YObBGVyJqS2vVb6BnmgdLrLSOFaHQgd9w5
+ FBsxd9WD6SHTVMlbdCazP/ufQ3hTYFWkcN8pQfWtD2dRkjbPAK3DZjELuMYrH56UQXoK
+ UokftEmXewapKOpIgT6aCkyDRMEXCHDENEQHuannv95sTu4foAg3UwyWIn05RKdaZ+et
+ WB8o6rBajGcbdwpmZVYDOaKjrfLYRaVaH4Rn1AIHAqlI57s0hHxabsUSZ9wcV+os39C3
+ b7vg==
+X-Gm-Message-State: AOAM530C+/53WCp95sdy/xS4fMAyjB0jiotIM9Wjg1NkdOx8m/OGQ7AX
+ yWH1hnoFVoQFE2ybwu3vAE9XddRuUBsqrQ==
+X-Google-Smtp-Source: ABdhPJxyI2ENCVd++zyUNxuNgDHuy4rRseRL4FBlKqO4/h72eQ+TmEFWLiNrBX6g0GJrm+Q8EDOY3Q==
+X-Received: by 2002:a5d:6087:: with SMTP id w7mr16863668wrt.136.1620457775830; 
+ Sat, 08 May 2021 00:09:35 -0700 (PDT)
 Received: from localhost.localdomain
  (231.red-83-51-243.dynamicip.rima-tde.net. [83.51.243.231])
- by smtp.gmail.com with ESMTPSA id s18sm11740345wro.95.2021.05.08.00.09.37
+ by smtp.gmail.com with ESMTPSA id s18sm11740345wro.95.2021.05.08.00.09.34
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 08 May 2021 00:09:38 -0700 (PDT)
+ Sat, 08 May 2021 00:09:35 -0700 (PDT)
 From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
 To: vkoul@kernel.org
 Cc: kishon@ti.com, devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
  robh+dt@kernel.org, linux-staging@lists.linux.dev,
- gregkh@linuxfoundation.org, neil@brown.name, ilya.lipnitskiy@gmail.com,
- kernel test robot <lkp@intel.com>
-Subject: [PATCH RESEND v2 6/6] phy: ralink: phy-mt7621-pci: properly print
- pointer address
-Date: Sat,  8 May 2021 09:09:30 +0200
-Message-Id: <20210508070930.5290-7-sergio.paracuellos@gmail.com>
+ gregkh@linuxfoundation.org, neil@brown.name, ilya.lipnitskiy@gmail.com
+Subject: [PATCH RESEND v2 3/6] phy: ralink: phy-mt7621-pci: use kernel clock
+ APIS
+Date: Sat,  8 May 2021 09:09:27 +0200
+Message-Id: <20210508070930.5290-4-sergio.paracuellos@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20210508070930.5290-1-sergio.paracuellos@gmail.com>
 References: <20210508070930.5290-1-sergio.paracuellos@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210508_000940_012117_1D0763E4 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20210508_000937_396452_D13D8048 
+X-CRM114-Status: GOOD (  20.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,35 +116,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The way of printing the pointer address for the 'port_base'
-address got into compile warnings on some architectures
-[-Wpointer-to-int-cast]. Instead of use '%08x' and cast
-to an 'unsigned int' just make use of '%px' and avoid the
-cast. To avoid not really needed driver verbosity on normal
-behaviour change also from 'dev_info' to 'dev_dbg'.
+MT7621 SoC clock driver has already mainlined in
+'commit 48df7a26f470 ("clk: ralink: add clock driver for mt7621 SoC")'
+This allow us to properly use kernel clock apis to get
+the clock frequency needed for the phy configuration
+instead of use custom architecture code to do the same.
 
-Fixes: d87da32372a0 ("phy: ralink: Add PHY driver for MT7621 PCIe PHY")
-Reported-by: kernel test robot <lkp@intel.com>
 Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
 ---
- drivers/phy/ralink/phy-mt7621-pci.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/phy/ralink/phy-mt7621-pci.c | 33 +++++++++++++++++------------
+ 1 file changed, 20 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/phy/ralink/phy-mt7621-pci.c b/drivers/phy/ralink/phy-mt7621-pci.c
-index f56ff10b0885..242c5d8b8635 100644
+index 753cb5bab930..f56ff10b0885 100644
 --- a/drivers/phy/ralink/phy-mt7621-pci.c
 +++ b/drivers/phy/ralink/phy-mt7621-pci.c
-@@ -273,8 +273,8 @@ static struct phy *mt7621_pcie_phy_of_xlate(struct device *dev,
+@@ -5,6 +5,7 @@
+  */
  
- 	mt7621_phy->has_dual_port = args->args[0];
+ #include <dt-bindings/phy/phy.h>
++#include <linux/clk.h>
+ #include <linux/bitfield.h>
+ #include <linux/bitops.h>
+ #include <linux/module.h>
+@@ -14,8 +15,6 @@
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
+ #include <linux/sys_soc.h>
+-#include <mt7621.h>
+-#include <ralink_regs.h>
  
--	dev_info(dev, "PHY for 0x%08x (dual port = %d)\n",
--		 (unsigned int)mt7621_phy->port_base, mt7621_phy->has_dual_port);
-+	dev_dbg(dev, "PHY for 0x%px (dual port = %d)\n",
-+		mt7621_phy->port_base, mt7621_phy->has_dual_port);
+ #define RG_PE1_PIPE_REG				0x02c
+ #define RG_PE1_PIPE_RST				BIT(12)
+@@ -62,8 +61,6 @@
  
- 	return mt7621_phy->phy;
+ #define RG_PE1_FRC_MSTCKDIV			BIT(5)
+ 
+-#define XTAL_MASK				GENMASK(8, 6)
+-
+ #define MAX_PHYS	2
+ 
+ /**
+@@ -71,6 +68,7 @@
+  * @dev: pointer to device
+  * @regmap: kernel regmap pointer
+  * @phy: pointer to the kernel PHY device
++ * @sys_clk: pointer to the system XTAL clock
+  * @port_base: base register
+  * @has_dual_port: if the phy has dual ports.
+  * @bypass_pipe_rst: mark if 'mt7621_bypass_pipe_rst'
+@@ -80,6 +78,7 @@ struct mt7621_pci_phy {
+ 	struct device *dev;
+ 	struct regmap *regmap;
+ 	struct phy *phy;
++	struct clk *sys_clk;
+ 	void __iomem *port_base;
+ 	bool has_dual_port;
+ 	bool bypass_pipe_rst;
+@@ -116,12 +115,14 @@ static void mt7621_bypass_pipe_rst(struct mt7621_pci_phy *phy)
+ 	}
  }
+ 
+-static void mt7621_set_phy_for_ssc(struct mt7621_pci_phy *phy)
++static int mt7621_set_phy_for_ssc(struct mt7621_pci_phy *phy)
+ {
+ 	struct device *dev = phy->dev;
+-	u32 xtal_mode;
++	unsigned long clk_rate;
+ 
+-	xtal_mode = FIELD_GET(XTAL_MASK, rt_sysc_r32(SYSC_REG_SYSTEM_CONFIG0));
++	clk_rate = clk_get_rate(phy->sys_clk);
++	if (!clk_rate)
++		return -EINVAL;
+ 
+ 	/* Set PCIe Port PHY to disable SSC */
+ 	/* Debug Xtal Type */
+@@ -139,13 +140,13 @@ static void mt7621_set_phy_for_ssc(struct mt7621_pci_phy *phy)
+ 			       RG_PE1_PHY_EN, RG_PE1_FRC_PHY_EN);
+ 	}
+ 
+-	if (xtal_mode <= 5 && xtal_mode >= 3) { /* 40MHz Xtal */
++	if (clk_rate == 40000000) { /* 40MHz Xtal */
+ 		/* Set Pre-divider ratio (for host mode) */
+ 		mt7621_phy_rmw(phy, RG_PE1_H_PLL_REG, RG_PE1_H_PLL_PREDIV,
+ 			       FIELD_PREP(RG_PE1_H_PLL_PREDIV, 0x01));
+ 
+ 		dev_dbg(dev, "Xtal is 40MHz\n");
+-	} else if (xtal_mode >= 6) { /* 25MHz Xal */
++	} else if (clk_rate == 25000000) { /* 25MHz Xal */
+ 		mt7621_phy_rmw(phy, RG_PE1_H_PLL_REG, RG_PE1_H_PLL_PREDIV,
+ 			       FIELD_PREP(RG_PE1_H_PLL_PREDIV, 0x00));
+ 
+@@ -196,13 +197,15 @@ static void mt7621_set_phy_for_ssc(struct mt7621_pci_phy *phy)
+ 	mt7621_phy_rmw(phy, RG_PE1_H_PLL_BR_REG, RG_PE1_H_PLL_BR,
+ 		       FIELD_PREP(RG_PE1_H_PLL_BR, 0x00));
+ 
+-	if (xtal_mode <= 5 && xtal_mode >= 3) { /* 40MHz Xtal */
++	if (clk_rate == 40000000) { /* 40MHz Xtal */
+ 		/* set force mode enable of da_pe1_mstckdiv */
+ 		mt7621_phy_rmw(phy, RG_PE1_MSTCKDIV_REG,
+ 			       RG_PE1_MSTCKDIV | RG_PE1_FRC_MSTCKDIV,
+ 			       FIELD_PREP(RG_PE1_MSTCKDIV, 0x01) |
+ 			       RG_PE1_FRC_MSTCKDIV);
+ 	}
++
++	return 0;
+ }
+ 
+ static int mt7621_pci_phy_init(struct phy *phy)
+@@ -212,9 +215,7 @@ static int mt7621_pci_phy_init(struct phy *phy)
+ 	if (mphy->bypass_pipe_rst)
+ 		mt7621_bypass_pipe_rst(mphy);
+ 
+-	mt7621_set_phy_for_ssc(mphy);
+-
+-	return 0;
++	return mt7621_set_phy_for_ssc(mphy);
+ }
+ 
+ static int mt7621_pci_phy_power_on(struct phy *phy)
+@@ -324,6 +325,12 @@ static int mt7621_pci_phy_probe(struct platform_device *pdev)
+ 		return PTR_ERR(phy->phy);
+ 	}
+ 
++	phy->sys_clk = devm_clk_get(dev, NULL);
++	if (IS_ERR(phy->sys_clk)) {
++		dev_err(dev, "failed to get phy clock\n");
++		return PTR_ERR(phy->sys_clk);
++	}
++
+ 	phy_set_drvdata(phy->phy, phy);
+ 
+ 	provider = devm_of_phy_provider_register(dev, mt7621_pcie_phy_of_xlate);
 -- 
 2.25.1
 
