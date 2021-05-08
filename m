@@ -8,14 +8,14 @@ X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CE883C433B4
-	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 06:52:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 729D1C433ED
+	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 06:52:53 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 28D4661288
-	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 06:52:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 28D4661288
+	by mail.kernel.org (Postfix) with ESMTPS id 26B2C61464
+	for <linux-phy@archiver.kernel.org>; Sat,  8 May 2021 06:52:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 26B2C61464
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,82 +24,84 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
 	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=l+oq/dMerGhKJVzegz7pnqCaWStWPsKccwgoPaSDpZA=; b=JUaOhd9ojUJ4Hp01AJRBVUkRb
-	iXIUueqyIpDSIqw4a4l46UggTDs/AcLKqNzB+TW1Vjeil1L9KbykW0A69URiRnbj4/VMHYddzGyUs
-	jF8mvWZqjgqK+RoqWSclnY/jPUTskuuXlIDdt+GAshWtTrCf0euH18QcaIp82vvDHH8xPSnBqdykO
-	XZtB7P6R0rXOnuN3AUvSDwhusQP2L/mkAKI3bdZoWXBQPOsHOHREL9y4q4v0OC+bhg3m1USh087+9
-	VMX67ED/lvDduWg2lCRTcdnnCJ//tVSa1QQzgAQXGtsT4r2aa5cUo9k05+zzjiSx4AgIC9zvvQyS8
-	dowHlJo+w==;
+	 bh=PdpuTlviHGssm9LdQnnkO1fTgrIHmbExW/8CnnFUd80=; b=Ehxwsf+bH8LqlkrxQ6oYL2wm/
+	SUg/c/aKMY3OF6Y99nb9elfJ2seKLOzoBHKSCr1cxU9eCMjIL8tmb4UhxESaF1t6G554ofGhiZFEZ
+	NeqPYNWsTOFb/qr0LLX7V7C4tJS+nj7xEVQKqx+CscqliUvp0Rn457442HHz/KK2Cz5OwTulT8IOX
+	VvamwF+EtcaNeVPw42/ycLQAmrZVH59fUld0zk0ZH2Y07Qi5sv/NzsO7VIJj5M5l0exghUOI/TcFA
+	TK3FcifJnK2zA7FCLpOHUgnD6cd5c5gDboJdkGdyLLrAs8ON8GTXUx2y678K+u3imqLw2GGtP6Tz0
+	tJqd/oRSQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lfGpV-0090Hn-OO; Sat, 08 May 2021 06:52:49 +0000
+	id 1lfGpX-0090I7-DV; Sat, 08 May 2021 06:52:51 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lfGpN-0090Ff-5m
- for linux-phy@desiato.infradead.org; Sat, 08 May 2021 06:52:41 +0000
+ id 1lfGpP-0090Fq-2x
+ for linux-phy@desiato.infradead.org; Sat, 08 May 2021 06:52:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=HcVgM2vyvgzDYevyg/QfJoz8h0kWR0tPVu2/nxnMK08=; b=YohRDKnvAon05SZnVhcvU2fu6H
- WHiaca6Xw3DGxvzeuSYoIThzRcl1ZtlAB48E2K3vfW+G+EY+Ae6FbiV2EqKzCwsYvNh9eqFNfCuf9
- eD7HLhN0gghbc1e8ULrSotDSMpshD4mK5F++zPuz0s0A1e+lfMh8wveFuI/4NzNynlxOkIEetzQ8j
- af54a+RGanyUTaufqKnKD0NuN1Uq/LJtYgBIipikyM86mrFX7+AKq1Y0PCsE1DKgDbINbfjkiMMD1
- EBQaAQ17+Abk7arXnvv1YydBTSn3vEkmMaoaWDGKbl2NEEjN/7le0k//2Xi4j6MoTNdwSD9RI9wIl
- rtsX7QdA==;
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+ bh=rnhsZglV9Tim8CW0KmXYUH85PSzSV/y0PNcnH/Ygu/E=; b=tUvZ50tLrPy/wiFlVdC+Tf6keM
+ btkbKDQEIiG50Fs4oJZfSHXSLWmVh3fIWHUJX12BtbaFlG9zHqUQdbba7MlBwrqSAFmyOjohB11fP
+ HZcT6X9lrR4P98L82Wno+S9QIpk7PfsEWEQt9UX32VREM6fpfl6zvEkppjxMmF6tbSqWdWT+usFB0
+ bMs9ofaDYXSRPayAIss3YyJW2O7uFmrOWRdqIQpQ4HPkDerx6Hy9M7O4AsDNIUE3ry/Fe0SrIf3oM
+ 5dlrZyw7dkMW06s4ybNf1jxG5QcnWdIhRQOBf0Pm13nJsDS98gcvf9700u+hClBlYwwKsEB1Un1Uy
+ 4lnZHl2Q==;
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lfGpK-007PLi-Lo
- for linux-phy@lists.infradead.org; Sat, 08 May 2021 06:52:39 +0000
-Received: by mail-wm1-x329.google.com with SMTP id g65so6360980wmg.2
- for <linux-phy@lists.infradead.org>; Fri, 07 May 2021 23:52:38 -0700 (PDT)
+ id 1lfGpM-007PME-KH
+ for linux-phy@lists.infradead.org; Sat, 08 May 2021 06:52:41 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id
+ s5-20020a7bc0c50000b0290147d0c21c51so6005148wmh.4
+ for <linux-phy@lists.infradead.org>; Fri, 07 May 2021 23:52:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=HcVgM2vyvgzDYevyg/QfJoz8h0kWR0tPVu2/nxnMK08=;
- b=fHmva84B+WM6w350eDqTkOl8FhXPDtg3gQ5ij5heAEjBqaqYLXNqQN5dO1WgFamQbs
- +k00beVVVRps76Mbh2kjyu65rGMjX10gdZVeRe0KOPBSA9EdOmMB5F5tEQoUv8jtPa9C
- 4k5qWvlFDFMuw/Nz9BVvidJhnBG8KoDv+1DiWlrXTktjkbWm/2enCyy8+Xto3h2/Y921
- /aebEBFYS1YSCUMqMR2qr3Cg2SyyDNUwWdcVQYKlWl93rs59LtfJjLOXb8gxYHn92toB
- 7dTs9hW2KMddOLDUscODrpvQYCwWgwF475QzX1h9+/M9g9TsuD3QQTdYYlbFCASuFqVl
- qWcw==
+ bh=rnhsZglV9Tim8CW0KmXYUH85PSzSV/y0PNcnH/Ygu/E=;
+ b=LQcyHlKI3cmGbxplDQAJgFpcZ2vWNGbNxmmwsnLjSwGKYDbEK896BewQFECt6Tu7d8
+ S7kau4cHh3oqU2TMv6GgeZE/A7mO+Kaux1/fnFpzeNw72D+/pfY/ZBC3iHOmndxctgrn
+ XTA643lzwlo1D7JXYKYEZNYfs1f9TGMPOxhqwfaOBfP2MOfxSyYRLx8oSjaV+uIX0Yct
+ t2/ZXVGzj2j9kIgFjNDpcVuVtZmN5HP940DXu+HxfH/8T3PCqwJDTttrQCDMNUcJa2Ky
+ IJxHQM0w00U84RP/N2+m0Cspx1eXMy5w2nkWjpmnn8h4YnbzVNm0HCVPbk7gjad32acW
+ LGrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=HcVgM2vyvgzDYevyg/QfJoz8h0kWR0tPVu2/nxnMK08=;
- b=feHo75JLC9KN/wEIQwKoCBgmOdb1tLbCbXzWusM3NlJGD8R/YUuM6KvFU+kXdD4ODl
- 9Vnp2+yLZ5nS3QeidbZxJa+hyz23jL3NnUCHTG62ZN9PIt6lCR5N/11V61BfLSH2Ajnw
- 40DDcMtEGZkDfGHnglpFyfoHON7cvdJOaYAFtAO48zBsVJk2bSyOmR0EPa84j1KxIaGZ
- tj6l1jWcpns3Z/KItTsne/EBjFvOSdX5+9Hgeys8UgceYGCZ+uhAiW8X9/hIORyOwrtm
- hzi/DmD7aN/8N4fX+UPmP0eS5fjCkD2hFsHcidVA7e7SlAWV3lD6x8djJ4PGYfMuM7PX
- +xQQ==
-X-Gm-Message-State: AOAM533eOZzVnYzIbQw0ImvopUR7ZDKYiL5K4TNSnQPP/YN5FguUP7UU
- gj8fJ07+1DgOz1mbm2hxZfU=
-X-Google-Smtp-Source: ABdhPJzTLLM5AeDPLomNArvDRyEqjwe2fWIWNeSysSiv1Jwx4GEpVY2WfenAYWcZ9D0dRaEgoGiecA==
-X-Received: by 2002:a1c:e387:: with SMTP id a129mr14667277wmh.61.1620456757203; 
- Fri, 07 May 2021 23:52:37 -0700 (PDT)
+ bh=rnhsZglV9Tim8CW0KmXYUH85PSzSV/y0PNcnH/Ygu/E=;
+ b=fNWMmBDpkT4WR1soO5WMafObMDChUtcqyudXfs1j4qXXAKPPuVDEznFvY1R27HGQR+
+ pKU6v4SsbcUUrGL90Nb43usH4KWea0gKhcBMogZ8JhaY3dUHVToC0gl8SqjW9ITNkg6g
+ xBnuWp2Q7/y52GuMNpVI0vCfV6Y3UdZ85k+RPNxlUWcQVkHRzs2WguKfCsxx6mmC4j1k
+ 0AgD6/5xB2I4OxmeBGgr0ZbD3dy7WG4reKe8z+NK+ei1fGvatii748RKyUywL17iFd6P
+ z0VptVgGjvbvgVPCuHFXBXG335cGnH5RpIqfeR2En0ms6fJgxgvsIE7BWWx1vPIdsYM9
+ u4gg==
+X-Gm-Message-State: AOAM531Nf1X4pklU+D3jkTnjpcUQqJJ0W6HHeXL28V7Cnda9AlHBtsNq
+ k9MbXmW4ucu0uy5+Je7o4EM=
+X-Google-Smtp-Source: ABdhPJxfPpdspV0gYutpfTe5YchDZnQYJXqPP4rbHosmjZFV1JVsgOuTaJWVJflzXrejLiFn33yHtg==
+X-Received: by 2002:a1c:c28a:: with SMTP id
+ s132mr25250444wmf.145.1620456759167; 
+ Fri, 07 May 2021 23:52:39 -0700 (PDT)
 Received: from localhost.localdomain
  (231.red-83-51-243.dynamicip.rima-tde.net. [83.51.243.231])
- by smtp.gmail.com with ESMTPSA id b12sm11638010wro.28.2021.05.07.23.52.36
+ by smtp.gmail.com with ESMTPSA id b12sm11638010wro.28.2021.05.07.23.52.38
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 07 May 2021 23:52:36 -0700 (PDT)
+ Fri, 07 May 2021 23:52:38 -0700 (PDT)
 From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
 To: vkoul@kernel.org
 Cc: linux-phy@lists.infradead.org, kishon@ti.com,
  linux-staging@lists.linux.dev, gregkh@linuxfoundation.org, neil@brown.name,
  ilya.lipnitskiy@gmail.com
-Subject: [PATCH v2 2/6] dt-bindings: phy: mediatek,
- mt7621-pci-phy: add clock entries
-Date: Sat,  8 May 2021 08:52:28 +0200
-Message-Id: <20210508065232.4882-3-sergio.paracuellos@gmail.com>
+Subject: [PATCH v2 4/6] phy: ralink: Kconfig: enable COMPILE_TEST on
+ mt7621-pci-phy driver
+Date: Sat,  8 May 2021 08:52:30 +0200
+Message-Id: <20210508065232.4882-5-sergio.paracuellos@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20210508065232.4882-1-sergio.paracuellos@gmail.com>
 References: <20210508065232.4882-1-sergio.paracuellos@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210507_235238_731289_562D2DC8 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20210507_235240_681406_E33D7CAF 
+X-CRM114-Status: GOOD (  12.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,48 +118,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-MT7621 SoC clock driver has already mainlined in
-'commit 48df7a26f470 ("clk: ralink: add clock driver for mt7621 SoC")'
-Hence update schema with the add of the entries related to
-clock. Since until now things were not properly being done
-we mark also 'clock' as required in the binding since this
-will be now the only way to properly retrieve frequency to be
-able to make a correct configuration of the PCIe phy registers.
+After use the clock apis and avoid custom architecture
+code this driver can properly be enabled for COMPILE_TEST.
 
 Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
 ---
- .../devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml     | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/phy/ralink/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-index 0ccaded3f245..29d4123323c2 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,mt7621-pci-phy.yaml
-@@ -16,6 +16,9 @@ properties:
-   reg:
-     maxItems: 1
- 
-+  clocks:
-+    maxItems: 1
-+
-   "#phy-cells":
-     const: 1
-     description: selects if the phy is dual-ported
-@@ -23,6 +26,7 @@ properties:
- required:
-   - compatible
-   - reg
-+  - clocks
-   - "#phy-cells"
- 
- additionalProperties: false
-@@ -32,5 +36,6 @@ examples:
-     pcie0_phy: pcie-phy@1e149000 {
-       compatible = "mediatek,mt7621-pci-phy";
-       reg = <0x1e149000 0x0700>;
-+      clocks = <&sysc 0>;
-       #phy-cells = <1>;
-     };
+diff --git a/drivers/phy/ralink/Kconfig b/drivers/phy/ralink/Kconfig
+index ecc309ba9fee..c2373b30b8a6 100644
+--- a/drivers/phy/ralink/Kconfig
++++ b/drivers/phy/ralink/Kconfig
+@@ -4,7 +4,7 @@
+ #
+ config PHY_MT7621_PCI
+ 	tristate "MediaTek MT7621 PCI PHY Driver"
+-	depends on RALINK && OF
++	depends on (RALINK && OF) || COMPILE_TEST
+ 	select GENERIC_PHY
+ 	select REGMAP_MMIO
+ 	help
 -- 
 2.25.1
 
