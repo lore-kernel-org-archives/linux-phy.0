@@ -2,99 +2,80 @@ Return-Path: <SRS0=0Txu=KF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,MISSING_HEADERS,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A873EC433B4
-	for <linux-phy@archiver.kernel.org>; Mon, 10 May 2021 05:14:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D2E36C433B4
+	for <linux-phy@archiver.kernel.org>; Mon, 10 May 2021 12:15:46 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 12EA161432
-	for <linux-phy@archiver.kernel.org>; Mon, 10 May 2021 05:14:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 12EA161432
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 3132F6142D
+	for <linux-phy@archiver.kernel.org>; Mon, 10 May 2021 12:15:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 3132F6142D
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=glider.be
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:CC:Subject:Reply-To:To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CEF75MKJ8Y5fnXzPLsfEE17Gboy/GEEnKBpSpP5Ue9I=; b=mn5NNsglnbzwp9rM6vcrK4ysW
-	+qL51MCBZd+zHCivIz5k9/IQGCRfOZ5Es8vPDAPVyLcmarNjoFFWneh9P5zaF16Vi7RU/MjSkYute
-	8JTdYNBlV4hXI01S/PCG9DNv5EvtdQG1x/bi1OhPUbYTGmobgOLmOKm/qQl6ypS/oOLzj1+t0Tfry
-	9RlU740+aLYNjIF8N0JrlywupCxgjoI4Xj+xH08k+MT1uZLkznU/HYMH3Mo1PaUdpTwN64qYvJKre
-	cQAH/P6DL9ThLhOOAu8ZHWr137YFIkf4Q8hmHGq7YcQUnqV/AUKNG6P750DBt6qOpPmKe6eSuVznS
-	pNoVJH5Ew==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=bch/nBXYRhBQAsxEwcaEUTpekR3Ezge1bgHuuX8g+ak=; b=JaQqbyomLDWA76AWRr5n3j+iJG
+	+185oVF8qSrYtYD88GTLYLrF83hHhjJSTtXIS+nW1VLMJgeZboWA5JMvp3U6fccr9UaC4E121B7ID
+	bb2YiOGdvYIG64bmgk9A4uIY/b5mcFv2yxyLum3rAH27IVrY413wBLK4GJQOLkM9OXWgWl/qS/03C
+	waQeOW9XWHH+Ne/IsI+h6C1YPSUMVhsiBx1IpZemjC7eRrMS8zJ61npOQMkXXMRnHgGB9gAtvxmMA
+	578ZPr1O26I0IWU5uiPL5hvy9QZaquzi9srcaEacuKgzmEEBlqduJUsZ9d5TAySu5Gu/okAHURqgJ
+	7dMjj49g==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lfyEb-00DBAb-Bi; Mon, 10 May 2021 05:13:44 +0000
+	id 1lg4p5-00EE0j-Nl; Mon, 10 May 2021 12:15:43 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lfyE0-00DB7B-Hw
- for linux-phy@desiato.infradead.org; Mon, 10 May 2021 05:13:00 +0000
+ id 1lg4kS-00ECqJ-Jj
+ for linux-phy@desiato.infradead.org; Mon, 10 May 2021 12:10:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:CC:
- Subject:Sender:Reply-To:To:Content-ID:Content-Description;
- bh=/ILRdSkhXloiMFf1uEKykB73GaM3pnrVf46TDj3RgUM=; b=XL63qBb7CBg8ZT29VJ9vxfAm4A
- RJV2KUnZhFVSr0lvDf0cTZuC9c9yen9+++1zX+3JAtNaHbYFg/cxv9U3B8EqSsscB5057Kqae9xUX
- sQSpc1uXYEnh0aUZJG3FSZXX+Eg6hcWDBD46/PxRXmkEhLqWPQ3oLcWSWWHV0/PaJK/AMGmwZLmu0
- CGNtkTn1k6ylQ/wNtlzNv0ESbuNIPKbkW6w1gc9dK7y0Abkls7YV+2+0DVoACv4QNYmeUTxFx/uwW
- dBkL/PqPo+Xln0xebKxcwmqv20ev05fvnA5fvYceLJZG4+8c36Yzks0EccIFHvP7REiFB2AduwYgJ
- Wql7R2Rw==;
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+ MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=d3/Mgi8cBKsNJ33DJ1NbHfZDTufl63Td6V4m3f7mm34=; b=WQOIv72Kf30BN3iIwHUQxO+JWU
+ pFsbLFT0/JpS7MujA+hE+yX/qucTmS9FKKgAQgUd1JIShTWId5Cp7KYJhHmOjeMDNn1T1Lt8AJBRF
+ EvgFl2c0L1dEa1RzB0oLdTfH6YyhAKxlWVUWQvUMoYd7gyna0vpM0CtXZ9RV3pgaOZAFZuqzD6HXQ
+ ZoqKZitcRtRGB7IpuzMWBiEo8Iqv1d9wO6j7lmIm699GoywBRADrCAOiFMf3b2tyX/Egj0HjVG7oo
+ c5DanfPHqyWc7mDcJ+9kp7m0gVoYPIUzewmWOSD8rMACGttaiEuRDJO5u05GL4hrvs+lRD/mN+kg+
+ WZKz2sKw==;
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lfyDx-008IO2-LS
- for linux-phy@lists.infradead.org; Mon, 10 May 2021 05:12:59 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 14A5CsO0081678;
- Mon, 10 May 2021 00:12:54 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1620623574;
- bh=/ILRdSkhXloiMFf1uEKykB73GaM3pnrVf46TDj3RgUM=;
- h=Subject:CC:References:From:Date:In-Reply-To;
- b=O+VKvvUwpp88jb0agYKFqP0UmVwUhxWBKlzBAPwX8pqVoWjwx99RZzYK8hv6rvhYl
- xkHFWRfhuJYDnkg7fjIZ6G1s0v30ygavgVzYBBFUVGS2e7egCByZ9ThDUAXnk5VrFs
- s5IQnItj1CGRLBmeOuu8ZaF6raYoYPYZSva0IjOw=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 14A5CsEc057763
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 10 May 2021 00:12:54 -0500
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Mon, 10
- May 2021 00:12:54 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Mon, 10 May 2021 00:12:54 -0500
-Received: from [10.250.235.117] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 14A5CnZ6011061;
- Mon, 10 May 2021 00:12:50 -0500
-Subject: Re: [PATCH v5 0/3] CAN TRANSCEIVER: Add support for CAN transceivers
-CC: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <linux-can@vger.kernel.org>, Kishon Vijay
- Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>, Wolfgang
- Grandegger <wg@grandegger.com>, Lokesh Vutla <lokeshvutla@ti.com>, Vignesh
- Raghavendra <vigneshr@ti.com>, Grygorii Strashko <grygorii.strashko@ti.com>
-References: <20210416113058.23815-1-a-govindraju@ti.com>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <7845ae4a-abcc-1644-d47a-574656f3ebbb@ti.com>
-Date: Mon, 10 May 2021 10:42:47 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
+ id 1lg4kO-008fpN-QZ
+ for linux-phy@lists.infradead.org; Mon, 10 May 2021 12:10:55 +0000
+Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed20:f937:4595:45ff:bcbf])
+ by michel.telenet-ops.be with bizsmtp
+ id 30Ai2500c4jQ7kl060AilM; Mon, 10 May 2021 14:10:42 +0200
+Received: from rox.of.borg ([192.168.97.57])
+ by ramsan.of.borg with esmtps (TLS1.3) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.93)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1lg4kE-004QgL-2e; Mon, 10 May 2021 14:10:42 +0200
+Received: from geert by rox.of.borg with local (Exim 4.93)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1lg4kD-00HQCb-Jd; Mon, 10 May 2021 14:10:41 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Sergei Shtylyov <sergei.shtylyov@gmail.com>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-renesas-soc@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH] dt-bindings: phy: renesas,
+ rcar-gen3-pcie-phy: Convert to json-schema
+Date: Mon, 10 May 2021 14:10:40 +0200
+Message-Id: <0301c3a7dae9afde115b6437a11c23ab85cb8b75.1620648490.git.geert+renesas@glider.be>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <20210416113058.23815-1-a-govindraju@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210509_221257_816558_9F0F883B 
-X-CRM114-Status: GOOD (  28.49  )
+X-CRM114-CacheID: sfid-20210510_051053_035351_FBD00D62 
+X-CRM114-Status: GOOD (  13.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,97 +92,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi all,
+Convert the Renesas R-Car Gen3 PCIe PHY Device Tree binding
+documentation to json-schema.
 
-On 16/04/21 5:00 pm, Aswath Govindraju wrote:
-> The following series of patches add support for CAN transceivers.
-> 
-> TCAN1042 has a standby signal that needs to be pulled high for
-> sending/receiving messages[1]. TCAN1043 has a enable signal along with
-> standby signal that needs to be pulled up for sending/receiving
-> messages[2], and other combinations of the two lines can be used to put the
-> transceiver in different states to reduce power consumption. On boards
-> like the AM654-idk and J721e-evm these signals are controlled using gpios.
-> 
-> Patch 1 rewords the comment that restricts max_link_rate attribute to have
-> units of Mbps.
-> 
-> Patch 2 models the transceiver as a phy device tree node with properties
-> for max bit rate supported, gpio properties for indicating gpio pin numbers
-> to which standby and enable signals are connected.
-> 
-> Patch 2 adds a generic driver to support CAN transceivers.
-> 
-> changes since v4:
-> - In patch 3 made the correction from mcan to CAN, in Kconfig help
-> 
-> changes since v3:
-> - dropped patch 2(in v3)
-> - changed the node name property in patch 3(in v3)
-> - picked up Rob Herring's reviewed-by for patch 3(in v3)
-> 
-> changes since v2:
-> - dropped 5 and 6 patches and to be sent via linux-can-next
-> - added static keyword for can_transceiver_phy_probe()
-> - changed enable gpio example to active high in patch 3
-> - Rearranged the file names in alphabetical order in Makefile
->   and MAINTAINERS file
-> 
-> changes since v1:
-> - Added patch 1 (in v2) that rewords the comment that restrict
->   max_link_rate attribute to have units of Mbps.
-> - Added patch 2 (in v2) that adds an API for
->   devm_of_phy_optional_get_by_index
-> - Patch 1 (in v1)
->   - updated MAINTAINERS file
-> - Patch 2 (in v1)
->   - replaced m_can with CAN to make the driver independent of CAN driver
->   - Added prefix CAN_TRANSCEIVER for EN_PRESENT and STB_PRESENT
->   - Added new line before return statements in power_on() and power_off
->   - Added error handling patch for devm_kzalloc()
->   - used the max_link_rate attribute directly instead of dividing it by
->     1000000
->   - removed the spaces before GPIOD_OUT_LOW in devm_gpiod_get()
->   - Corrected requested value for standby-gpios to GPIOD_OUT_HIGH
->   - Updated MAINTAINERS file
-> - Patch 3 (in v1)
->   - replaced minItems with maxItems
->   - Removed phy-names property as there is only one phy
-> - Patch 4 (in v1)
->   - replaced dev_warn with dev_info when no transceiver is found
->   - Added struct phy * field in m_can_classdev struct
->   - moved phy_power_on and phy_power_off to m_can_open and m_can_close
->     respectively
->   - Moved the check for max_bit_rate to generice transceiver driver
-> 
-> [1] - https://www.ti.com/lit/ds/symlink/tcan1042h.pdf
-> [2] - https://www.ti.com/lit/ds/symlink/tcan1043-q1.pdf
-> 
+Update the example to match reality.
 
-Posted v6 of this series after making small changes in patch 3 which
-include copyright right year change and web address change to https.
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+I have listed Sergei as the maintainer, as he wrote the original driver
+and bindings.  Sergei: Please scream if this is inappropriate ;-)
+---
+ .../bindings/phy/rcar-gen3-phy-pcie.txt       | 24 ---------
+ .../phy/renesas,rcar-gen3-pcie-phy.yaml       | 53 +++++++++++++++++++
+ 2 files changed, 53 insertions(+), 24 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/rcar-gen3-phy-pcie.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen3-pcie-phy.yaml
 
-Thanks,
-Aswath
-
-
-> Aswath Govindraju (3):
->   phy: core: Reword the comment specifying the units of max_link_rate to
->     be Mbps
->   dt-bindings: phy: Add binding for TI TCAN104x CAN transceivers
->   phy: phy-can-transceiver: Add support for generic CAN transceiver
->     driver
-> 
->  .../bindings/phy/ti,tcan104x-can.yaml         |  56 +++++++
->  MAINTAINERS                                   |   2 +
->  drivers/phy/Kconfig                           |   9 ++
->  drivers/phy/Makefile                          |   1 +
->  drivers/phy/phy-can-transceiver.c             | 146 ++++++++++++++++++
->  include/linux/phy/phy.h                       |   2 +-
->  6 files changed, 215 insertions(+), 1 deletion(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
->  create mode 100644 drivers/phy/phy-can-transceiver.c
-> 
+diff --git a/Documentation/devicetree/bindings/phy/rcar-gen3-phy-pcie.txt b/Documentation/devicetree/bindings/phy/rcar-gen3-phy-pcie.txt
+deleted file mode 100644
+index 63853b35e0830d21..0000000000000000
+--- a/Documentation/devicetree/bindings/phy/rcar-gen3-phy-pcie.txt
++++ /dev/null
+@@ -1,24 +0,0 @@
+-* Renesas R-Car generation 3 PCIe PHY
+-
+-This file provides information on what the device node for the R-Car
+-generation 3 PCIe PHY contains.
+-
+-Required properties:
+-- compatible: "renesas,r8a77980-pcie-phy" if the device is a part of the
+-	      R8A77980 SoC.
+-- reg: offset and length of the register block.
+-- clocks: clock phandle and specifier pair.
+-- power-domains: power domain phandle and specifier pair.
+-- resets: reset phandle and specifier pair.
+-- #phy-cells: see phy-bindings.txt in the same directory, must be <0>.
+-
+-Example (R-Car V3H):
+-
+-	pcie-phy@e65d0000 {
+-		compatible = "renesas,r8a77980-pcie-phy";
+-		reg = <0 0xe65d0000 0 0x8000>;
+-		#phy-cells = <0>;
+-		clocks = <&cpg CPG_MOD 319>;
+-		power-domains = <&sysc 32>;
+-		resets = <&cpg 319>;
+-	};
+diff --git a/Documentation/devicetree/bindings/phy/renesas,rcar-gen3-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,rcar-gen3-pcie-phy.yaml
+new file mode 100644
+index 0000000000000000..247ef7c47cf5b52b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/renesas,rcar-gen3-pcie-phy.yaml
+@@ -0,0 +1,53 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/renesas,rcar-gen3-pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Renesas R-Car Generation 3 PCIe PHY
++
++maintainers:
++  - Sergei Shtylyov <sergei.shtylyov@gmail.com>
++
++properties:
++  compatible:
++    const: renesas,r8a77980-pcie-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  power-domains:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  '#phy-cells':
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - power-domains
++  - resets
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/r8a77980-cpg-mssr.h>
++    #include <dt-bindings/power/r8a77980-sysc.h>
++
++    pcie-phy@e65d0000 {
++            compatible = "renesas,r8a77980-pcie-phy";
++            reg = <0xe65d0000 0x8000>;
++            #phy-cells = <0>;
++            clocks = <&cpg CPG_MOD 319>;
++            power-domains = <&sysc R8A77980_PD_ALWAYS_ON>;
++            resets = <&cpg 319>;
++    };
+-- 
+2.25.1
 
 
 -- 
