@@ -2,101 +2,91 @@ Return-Path: <SRS0=mSol=KJ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D6CC2C433ED
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:30:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1317CC433ED
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:44:03 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4567C6145A
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:30:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4567C6145A
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id C68046145B
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:44:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C68046145B
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1HGnc6jX/EXEtt2QeOHGKvDu/IrPVxCFzCRnrzU1Lgo=; b=MxMKnN2UmdxRKeLH5NYM3LYJJ
-	EHA0qnzdh108FaSHCMBifH11gwpu5R3/CrB1pspOC6ypNcVHrviG+GcNuywAzyN3/wBOmtmJd4IRy
-	/6xRdMxihGvwO6gtLuaWOO/vnN1s5OXjHWk5Niya2jwnN5qwuWlBg6wZrfMWY+wMXDMshUBSTPKML
-	0lRtIDcEXNRqFCQHoTVfMjRtOXvzG7brJ1K+W+yQ47X++MAZZAj/ANTrvvlGKcNe5FJlW4MWEiWx7
-	fxmdhIbc/CbYoZkrLVGfMtg7X7TnG3T2ZcFF0fhnwOyteXuH1YeFlb7C0eYBrXHukS7UNzbbr4wxH
-	aSmRbVmMw==;
+	 bh=HYXdyNpcW9M+Ytwa7v6LFAJX3+rFvArEzg3kheesgVg=; b=CSuT7H5Ykx3mqp2s5kqhI1dVe
+	Me//mmFZ+9yryn5eeHSGqytCiH+A+GzgMX79lIV4qYXJig44LxWcNYIZM1OGA3JFPpLrMJ2m6xe2g
+	Up9TxeDQDEFoApNx0jkLpCBrwJb1iBL7F0rPdUm5TpSSEYK57e693jm3vL90oiQxEzEzUBFEHoafs
+	vsD18FZa78nIm3wbkw2oDEbj81G53xQutiV9OiZEvCc6g1luUf3fAIB0Epi68rDYfnX01eU9skmnU
+	GGYgsq5KC6NJUUNrj+y9yiQeb1kF1dZ+9ym4eaQx/l7ZRrM6TjppSPxk8uueMVxp62kLnCUjDqy56
+	lLBYnalDA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lhW1a-007uCL-Ly; Fri, 14 May 2021 11:30:34 +0000
+	id 1lhWEb-007wzm-3x; Fri, 14 May 2021 11:44:01 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lhW1Z-007uCG-8T
- for linux-phy@desiato.infradead.org; Fri, 14 May 2021 11:30:33 +0000
+ id 1lhWEM-007wxM-IT; Fri, 14 May 2021 11:43:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:Cc:To:Subject:Message-ID
- :Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=I9A3nXY3kUs1dCLrxrDBTwMVEeu4aFNeSYtm9K3Kp8M=; b=NaEbVEwVcCP1O8pSp8aP7zC/uT
- J0j4JJr0Bm35JuF7jGvkS8MNRlDbk3lOsHzLYabkEwtmRNkY0wUpc32RDQCtsrz2tBYuB1Md3HQwa
- 8kFXP9sA3PTMsk+HKXQIwXmkM8iCaaf/JQJQ8uS0921UbqPLvBoFbIhJisrfXp6qjjs+NyBLP900J
- tgz3Jk3cUjdI44zkGGSy5E8lhA3h3amrkipwTsAQxMYt++vyAcbslGb3jVsRJ1YIFObi3xJ9Pw/G9
- 7o+p7olI3jrzmCZdD72Qv8Q89A6wlE/xLMOeGNPokxUJbCr1ozH1PvuXIxGKwe1c3O5Dp3PqlW0DR
- X/qGqslA==;
-Received: from mail-oi1-x236.google.com ([2607:f8b0:4864:20::236])
+ bh=0kc2yQNTRcc1Onbi1b+Zy2JW/yrMLWc8kUvLwYUym5o=; b=tVMLNNFak5t40m6f9Tykt3+uy2
+ uWk7qp7y/h5w0Uf6sa5tMUaKSJ4oZO9VFD4Nfs6Fmc7AcwqGmiY6Ke3UY+69dKPNmAUVDaS5UX2fN
+ PqoIzeiS6Iw944CbqpwDiwNSzHQNGQu4t34IHb1GXw5izaUQjEcsH8J7n+O1POZgud/J8gcbRA5GO
+ NloBCUtlDwFIJjXPib44Jtfcx+eLoHYXGPWG7RTMmZ32p7IJjB00rMr+6+iJHqCEzg+rkPwxuXTg7
+ 5KnS+K+6at6b7riB581EqVlctHkEtBjgHi4qvZjBD5/DeJsLaMOWWf1aCjZkaqGwVKbjexTA11O/T
+ tTgbaDWA==;
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lhW1W-00BwDH-LK
- for linux-phy@lists.infradead.org; Fri, 14 May 2021 11:30:31 +0000
-Received: by mail-oi1-x236.google.com with SMTP id n184so28119000oia.12
- for <linux-phy@lists.infradead.org>; Fri, 14 May 2021 04:30:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=I9A3nXY3kUs1dCLrxrDBTwMVEeu4aFNeSYtm9K3Kp8M=;
- b=Zu0kMNaA+VfdfU/cHDDtfr8znlbneoVWuur733RqIN4ZBC0OuXa/1ESBC9MKcs+yPV
- /3+grRzw6qjrCQmJssWN3/mN4sGd8q7dtv13xguBZr+OjR/jxL4N42JgtJb3m1SSM579
- Jrhj+faVyCFWmCikRk8hXucEfqbYHw5nPWa+Z4XGgwq7XrhihB67SQ+aghSKvtTWP2lD
- a+N+W95KUieb2Y5gyTH3BkDtkjyFXzyfrtqFRYxNJViYA1CkdOxd9JmUegm+xh+7RAaB
- kdXwPYuwAsqde8TfSBJhgKdYsuBTLQhHSartMAwBkhijZyhESWtibNa4w7L1+2qjyCAp
- vAcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=I9A3nXY3kUs1dCLrxrDBTwMVEeu4aFNeSYtm9K3Kp8M=;
- b=ZlNB9uIAWSRleg8uhgIJdihVNkUQg3i7mtNw9YrXWMa3SH4vNfOi+5uMxPQCwOhxHy
- V7J6J1YOqWUUDjnov3GLAMjhPe01BDXLo3vc48oLq44E2OV3EHSvJJBsluZ9d5Kmr2u/
- 8AbpyIAjnPbry/+LRmGlqKeGF1nnclraAzmSXv8M94iDeH6GbgdYZs3sz0wp/QBpsHEX
- DgB8iWCys0ZdanVJuiKBPi19SjRcbzsRXRuXUNBs+mlJ4G/ptIRM8fNBT4NzQpiLO11L
- sLHdRPm1RzXmpbvetqzQJs8LAG5FSfx04C8Qih3ac2A5uYXqj3H5O3vds6rufGppHyJd
- svzw==
-X-Gm-Message-State: AOAM533PumUSy3hR6VeTwR4cA+IBKRO3wwLp0N6qJPYhi+JCTm+xAOKw
- zo97fW75ie+hWyP8LZk8GUbPGStIlnroPd9/zD0=
-X-Google-Smtp-Source: ABdhPJz/ERXhEYZDgOaIYDv7u7TRctVMeZb1O535axRV9MDzBlsvmc6AlLq+npWyEpXhKg16Cv0rRZvByOjuJxWekg8=
-X-Received: by 2002:aca:ab8c:: with SMTP id u134mr6631520oie.158.1620991827668; 
- Fri, 14 May 2021 04:30:27 -0700 (PDT)
+ id 1lhWEJ-00BwgJ-0l; Fri, 14 May 2021 11:43:45 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 3546A61457;
+ Fri, 14 May 2021 11:43:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1620992616;
+ bh=D9SeSZMfTDBXMVPovhU+ohm8+gepJ+ryWPBg/rsXxd0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=KKyxg82d4tL3Rs0wPDHBCaVXdK5v32QR2/ph3b2r/vRhcrZMBK/Et7ZaHc14ntblw
+ XfFfaHGy9Jd5bKkeLvYXWH3kTbKYhgvxk/QzWarLNOGdGtUpyHQpzbKVmUuiDFhxUZ
+ z2PpXXTq7zTcEDc4EJERBWZC6nEGgiQuVZCQLrmX/xy5r9zTONc8EGRnSu3sng0Vib
+ 9NbDgWCvSEl99CRyQs51IiWRmu7Rqv6ivPIPSTY2fHoRPvsls+8LKzn92w1s2C0R/r
+ 4MgxC16WKdX3T58/WADX4u6y5pPadK/khyRSfB3SbJe+kdNWSTX3bhYVgkOplU57Iu
+ p7Fe6KOGDS5WA==
+Date: Fri, 14 May 2021 17:13:32 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Baruch Siach <baruch@tkos.co.il>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
+ Kathiravan T <kathirav@codeaurora.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Jingoo Han <jingoohan1@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Robert Marko <robert.marko@sartura.hr>, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-tegra@vger.kernel.org
+Subject: Re: [PATCH v2 3/6] phy: qcom-qmp: add QMP V2 PCIe PHY support for
+ ipq60xx
+Message-ID: <YJ5iZPXkmW/rm9Ok@vkoul-mobl.Dlink>
+References: <cover.1620203062.git.baruch@tkos.co.il>
+ <e24f2bedb8a7346018b58136bcb0a4004d8677a0.1620203062.git.baruch@tkos.co.il>
 MIME-Version: 1.0
-References: <20210508070930.5290-1-sergio.paracuellos@gmail.com>
- <YJ5VHnZaLi4o31vL@vkoul-mobl.Dlink>
- <CAMhs-H8A1o3_TJGjPNUO3K_gf+kDkbj7mFy21LJfUEB0sEhvSg@mail.gmail.com>
- <YJ5ddkGytGI+kAt9@kroah.com>
-In-Reply-To: <YJ5ddkGytGI+kAt9@kroah.com>
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Date: Fri, 14 May 2021 13:30:16 +0200
-Message-ID: <CAMhs-H8kjL-TdX97mvw+Q3X-HybR3Ox8KrXUY3vJp2jKwv4Q8g@mail.gmail.com>
-Subject: Re: [PATCH RESEND v2 0/6] phy: ralink: mt7621-pci-phy: some
- improvements
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, 
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-phy@lists.infradead.org, 
- Rob Herring <robh+dt@kernel.org>, linux-staging@lists.linux.dev, 
- NeilBrown <neil@brown.name>, Ilya Lipnitskiy <ilya.lipnitskiy@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <e24f2bedb8a7346018b58136bcb0a4004d8677a0.1620203062.git.baruch@tkos.co.il>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210514_043030_718797_E6C7949C 
-X-CRM114-Status: GOOD (  21.64  )
+X-CRM114-CacheID: sfid-20210514_044343_100611_308325E1 
+X-CRM114-Status: UNSURE (   5.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,48 +103,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, May 14, 2021 at 1:22 PM Greg KH <gregkh@linuxfoundation.org> wrote:
->
-> On Fri, May 14, 2021 at 01:19:18PM +0200, Sergio Paracuellos wrote:
-> > On Fri, May 14, 2021 at 12:46 PM Vinod Koul <vkoul@kernel.org> wrote:
-> > >
-> > > On 08-05-21, 09:09, Sergio Paracuellos wrote:
-> > > > Hi all,
-> > > >
-> > > > This series contains some improvements in the pci phy driver
-> > > > for MT7621 SoCs.
-> > > >
-> > > > MT7621 SoC clock driver has already mainlined in
-> > > > 'commit 48df7a26f470 ("clk: ralink: add clock driver for mt7621 SoC")'
-> > > >
-> > > > Because of this we can update schema documentation and device tree
-> > > > to add related clock entries and avoid custom architecture code
-> > > > in favour of using the clock kernel framework to retrieve clock
-> > > > frequency needed to properly configure the PCIe related Phys.
-> > > >
-> > > > After this changes there is no problem to properly enable this
-> > > > driver for COMPILE_TEST.
-> > > >
-> > > > Configuration has also modified from 'tristate' to 'bool' depending
-> > > > on PCI_MT7621 which seems to have more sense.
-> > >
-> > > Applied 2-6, thanks
-> >
-> > Thanks, Vinod.
-> >
-> > Greg, can you take patch 1 through your tree?
->
-> Sure, can you resend it?
+On 05-05-21, 12:18, Baruch Siach wrote:
+> From: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
+> 
+> Based on code from downstream Codeaurora tree. The ipq60xx has one gen3
+> PCIe port.
 
-Thanks, I have just resent it.
+Applied, thanks
 
->
-> thanks,
->
-> greg k-h
-
-Best regards,
-     Sergio Paracuellos
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
