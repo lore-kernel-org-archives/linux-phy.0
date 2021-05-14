@@ -2,109 +2,76 @@ Return-Path: <SRS0=mSol=KJ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-12.3 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-7.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1050BC433B4
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 15:54:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 86827C433B4
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 16:37:49 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7FB9661446
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 15:54:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7FB9661446
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 064D461354
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 16:37:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 064D461354
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=sntech.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
+	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hziBtGnkzPN280/L6w9oA8rGRdTKCe4YcihqRgU/m9I=; b=EQwLUT5T6zBLBe8Du7ND15mXC
-	0+eV2C4XtiLaOrhCCKtkmw6H4kuLZPsv6c+BfuzVawomeNogehD/oLToLOYeuJHVYh10OtwNbIgZY
-	Mq8y5qbCBAiLHmSK5ZxnqqSvaQKEFQNwdT1SKok478uukKNBuF0RRN7D/3dyrnoWOJzd7o7ND0S9h
-	DPr2I9jAMvOvgEPgbczkO3+edPIJXFmbV5DP72tp/f52wp87lESQmQN85+PIBhf8P/C+2gnQnfKLL
-	sJcicMF/Zpvl/dRNUyq/Sb+W0kNwXHh0MAv/pdX1rQILe5Vt+IHHTPQIksS16458Urvx6tCkipHD0
-	DNr24PDsg==;
+	 bh=DaUTLWe1ZzVffAaLhoPE+Lcah1V+a/9lplXA2udurAg=; b=FZPa8qgeswF0DJFhMSnpugbmF
+	dtCSA9AFfWt70nXTEB3rufcQIgSwcEgTpvPLmHaOFEABNjKoiM6QkerKh1T2m15GJfAaR/PJjCOBv
+	ziWDnOTXgy2NOCtXtSei1ARkyPuDfnsKSx6t+hxvBzE+g1LfRhZOBGshmZw+uftZSnpGTu2tUcI7U
+	TQ1OpzTTZaLB1wiHxvbH8YgXp0nFhGBQ+L7ZExCrN47nAZwmpM2dJxPaD2tfBUv/cy0xeGPn6hrqA
+	SEcBcce/HK6ODHIaKpdqhOTzxZqJX8dhBec9/SsDWgMm14t4vMDP78fBtqI0PgYaNgLhOt21/WrQG
+	oeH9r/uNg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lha8m-008QyW-1z; Fri, 14 May 2021 15:54:16 +0000
+	id 1lhaos-008WBB-Ib; Fri, 14 May 2021 16:37:46 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lha8a-008Qxt-Ez; Fri, 14 May 2021 15:54:04 +0000
+ id 1lhaoq-008WAe-TC; Fri, 14 May 2021 16:37:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:
- Subject:Sender:Reply-To:Content-ID:Content-Description;
- bh=nJjqUh+eedhnbrR//6OaBv5/ZsdN4XZOU4mhcsRuoyg=; b=lYy3GtbVUJISR8ZbLoKmOavLT7
- YMoH9yFCmZLb+DDyFRpoGqb/BfItkdmtViL6iRSlxKemTS5/nGqaK2ublAZZ2CxqVRJZymPPdxoiX
- uxwplpxOeFe12IiAPJyTXBDY90p/iOIxEfN4KxY5HvYTrX913DclBSH3JbGeSA7Hrl46dI6sEakDp
- v2K/f2UaVCjS6LQrgAHaKSOKRb98jxSV4wW6N00tar4DUKhzx2dzNCZRWzIXOLubuz5hYhf3DjH2p
- 8kloga1bPpLiuM9+kCEAQSbFc+IwyRnjWg+xpRMZXNkp1XJNx6ZIlNvSxn6gaseYeHXaHC7tiZFQn
- EL1Pldwg==;
-Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
+ Content-Type:MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:
+ To:From:Sender:Reply-To:Content-ID:Content-Description;
+ bh=uMiTSgAJ9Itk0koP+OG9U1rDJwfEibvr75OF/rlAgR8=; b=QI0yqwY2UyTEr8FhauQ8BbgmJ0
+ UDBBQjkZcBn1BwzRvATd/1uxrTGqZ01mza5EbVNKibZxpbeWtbDXliWhkszeNyX9/Dm14GaiFzPSo
+ M4zE9eZEQ6UHJi6mlKKoSi3Q8pWjcdUiTuYZve7AYJefPKmEwrsqQXFUsbmuVvOAej/bzLMigGvzc
+ WQRRpbVbALyToPvpFVbybkxJQllGwOZ6Dtuz5M8Zoo4Whb+R9dNjqjLxmz3Vgow5JIj39fntXLZ1D
+ 0uTKpQxMqLlZJGHP2jkP21in8Q6JDLVh404bvcRPvuU0IrwfjKBslJfrJ1+nRGGnYQyfOqrKrUau5
+ s79yk27Q==;
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lha8T-00C5wr-Pu; Fri, 14 May 2021 15:53:59 +0000
-Received: by mail-ed1-x532.google.com with SMTP id r11so11179478edt.13;
- Fri, 14 May 2021 08:53:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=nJjqUh+eedhnbrR//6OaBv5/ZsdN4XZOU4mhcsRuoyg=;
- b=f5pKrku0e6EM6tOZFoRr8i5ryGCMprW/ArJmi1G1tF1P3P7TB/vGZt6eUZBeYX1OGP
- 4onTfNm+56vE+G3yKyyomtIVL/0TNH+IF3DEnOwqDIJ0EUpf+yDjVYVMnXLC0j8N9vlB
- 0LablOmpCVmnbJPG82EWGdqqbeH62hmqq9UT7wSqc5XZut/4D2/BTlqC4eYe0rLabD2v
- OFQOhntIB1I9aLkzF8xewSXdLpLPngab91x9DAK63/E85M4PiX9uswAdiBkxJTD159me
- eg2D15l8+0Xts9zanmFZyE/89732PpRS0TuLEsgtcyKUJAca/Yq+j0vuZGPanW1zZSNI
- 9gOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=nJjqUh+eedhnbrR//6OaBv5/ZsdN4XZOU4mhcsRuoyg=;
- b=jmzHiPshS+e8UmluN/7fXkrWZXgn0nPgMXw1myDReaKv9eerba98Kh7C/c1Dks5NCV
- DMxThERGp2g1YYMmYaTliEK3uIlA9A3nZAgCI5RUew5Rsp+ibKF4OsSK0VqlUB5jnQas
- +zzsYAGJyGH56SPsuxUY3DWJwWmR2jRtjjhxOaFggCBXR4HdjNtv7eEEgnxANvbjQ2N+
- yANdhzRUA9d259DhKrPmdddKyds1M/uFv1tp+V9IydDu4+79RpIWXOKufGE211U+9kSh
- 2bjCGXYBnV7K8GwOO6Ed81WJLMR7dkvCXr907TLumFpwSr9i9liRrjnZ4mPmGrFXm0Rm
- 90cA==
-X-Gm-Message-State: AOAM5325ENJBQ08eJtUIx8bseYTkWf2HXkT3YyREb18TWf/TYtLE6Szo
- tBNvrJedXOwxrI+NgvqN3XE=
-X-Google-Smtp-Source: ABdhPJxiEhDApEu75kJdXXESrqi6t2oBygLR+znc2KM99z8D4A006a1c0919pGQoeo6o0GXD+663Ew==
-X-Received: by 2002:a05:6402:2753:: with SMTP id
- z19mr56769103edd.158.1621007635210; 
- Fri, 14 May 2021 08:53:55 -0700 (PDT)
-Received: from [192.168.2.2] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id
- ks10sm3911610ejb.41.2021.05.14.08.53.54
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 14 May 2021 08:53:54 -0700 (PDT)
-Subject: Re: [PATCH v2 4/5] dt-bindings: soc: rockchip: grf: add compatible
- for RK3308 USB grf
-To: Tobias Schramm <t.schramm@manjaro.org>, linux-usb@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-Cc: Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20210514150044.2099298-1-t.schramm@manjaro.org>
- <20210514150044.2099298-5-t.schramm@manjaro.org>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <e995a144-1cbb-06c6-074f-2623bf31b003@gmail.com>
-Date: Fri, 14 May 2021 17:53:52 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:78.0) Gecko/20100101
- Thunderbird/78.10.0
+ id 1lhaoo-00C7h5-H3; Fri, 14 May 2021 16:37:43 +0000
+Received: from p5b127fa9.dip0.t-ipconnect.de ([91.18.127.169]
+ helo=phil.fritz.box)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1lhaoi-0003p9-LK; Fri, 14 May 2021 18:37:36 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, robh+dt@kernel.org, linus.walleij@linaro.org,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ vkoul@kernel.org, shawn.lin@rock-chips.com, david.wu@rock-chips.com,
+ cl@rock-chips.com, linux-arm-kernel@lists.infradead.org, kishon@ti.com,
+ huangtao@rock-chips.com, zhangqing@rock-chips.com, jay.xu@rock-chips.com
+Subject: Re: (subset) [PATCH v5 0/4] convert grf.txt to YAML
+Date: Fri, 14 May 2021 18:37:35 +0200
+Message-Id: <162101023435.2009214.882597722137585064.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.29.2
+In-Reply-To: <20210512122346.9463-1-jbx6244@gmail.com>
+References: <20210512122346.9463-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20210514150044.2099298-5-t.schramm@manjaro.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210514_085357_875068_F0F750F0 
-X-CRM114-Status: GOOD (  18.70  )
+X-CRM114-CacheID: sfid-20210514_093742_581647_2B1399AF 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,87 +88,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Tobias,
-
-The grf serie is currently still under review. So things can change.
-Must add a change log below a "---" in the commit message for rob+dt.
-Maybe add a patch that fixes the reg size of "rockchip,rk3308-grf" as well?
-
-Johan
-
-On 5/14/21 5:00 PM, Tobias Schramm wrote:
-> The RK3308 has a USB GRF.
-> This patch adds a compatible string for it.
+On Wed, 12 May 2021 14:23:42 +0200, Johan Jonker wrote:
+> Changed V5:
+>   changed compatibles for rk3066/rk3188
+>   add rockchip-usb-phy.yaml
+>   move and restyle grf nodes rk3066/rk3188
+>   remove applied patches
 > 
-> Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
-> ---
->  Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 1 +
->  1 file changed, 1 insertion(+)
+> Changed V4:
+>   revert separate schemas for each 'if' subset
+>   add additionalProperties
+>   move properties to top level
 > 
-> diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> index 84bdaf88d5a6..df77bd2e6752 100644
-> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> @@ -30,6 +30,7 @@ properties:
->                - rockchip,rk3288-grf
->                - rockchip,rk3308-core-grf
->                - rockchip,rk3308-detect-grf
+> [...]
 
-> +              - rockchip,rk3308-usb2phy-grf
->                - rockchip,rk3308-grf
+Applied, thanks!
 
-Sort alphabetically.
+[2/4] dt-bindings: soc: rockchip: convert grf.txt to YAML
+      commit: f2ffa8f9e32d38f5c37e3c61c5b02d434057f3db
+[3/4] ARM: dts: rockchip: move and restyle grf nodes rk3066/rk3188
+      commit: a082a4ba218457fd52256e4357184b58d3fcaa49
+[4/4] arm64: dts: rename grf-gpio nodename in rk3328.dtsi
+      commit: 19486fe587b8ed17daf87a6419b51e3a65ce565c
 
->                - rockchip,rk3328-grf
->                - rockchip,rk3328-usb2phy-grf
-> 
-
-Also allow usb2-phy as sub nodes name.
-
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - rockchip,px30-usb2phy-grf
-+              - rockchip,rk3228-grf
-
-               - rockchip,rk3308-usb2phy-grf
-
-+              - rockchip,rk3328-usb2phy-grf
-+              - rockchip,rk3399-grf
-+              - rockchip,rv1108-grf
-+
-+    then:
-+      required:
-+        - "#address-cells"
-+        - "#size-cells"
-+
-+      patternProperties:
-+        "usb2-phy@[0-9a-f]+$":
-+          type: object
-+
-+          $ref: "/schemas/phy/phy-rockchip-inno-usb2.yaml#"
-+
-+          unevaluatedProperties: false
-
-===
-Heiko's sort rules:
-
-compatible
-reg
-interrupts
-[alphabetical]
-status [if needed]
-
-===
-
-Sort #phy-cells below interrupt-names.
-
-
-+				#phy-cells = <0>;
-+				interrupts = <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "linestate";
+Best regards,
+-- 
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
