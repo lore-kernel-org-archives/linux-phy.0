@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CE88BC433ED
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:44:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E4D52C433B4
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:44:36 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 640C061457
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:44:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 640C061457
+	by mail.kernel.org (Postfix) with ESMTPS id 98B656145B
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 11:44:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 98B656145B
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,44 +22,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Szu5qt55z3qgNp6tKk5Ywz5pT2yruVjLkmGZGviKWTY=; b=VtB1Ig7X4IxKSdqVJI/UUqNGl
-	WnXDgV+Uz4iOpWbAmVk6rlFs6qFUQHR73DuseB09D+nIju5tzkePz1vJpsAjXYD3yJ7+dZe++BG6h
-	nZFQAuHDXluwGim/tnaKM4JfM0mGHdft3j7UZZxOnKNlKYwTlak3pjaw0jZrxQkSrl0sqnRNcRQ3F
-	80vODYO58PRp9q0Jwvblir4aOAg8L8wt3Cdf9LT9JPJ7VwYvT+DWlb2u8IGUYDMT1w0Dkalb3slDb
-	B5AgxoT6Ts3GkbYW/Sms/cTGh8SpHSgtBw9RzVX42F9X2qzBCBbBqe9ts/RgYqlioPogOJe/MOlSQ
-	+zzEJrqWA==;
+	 bh=TxHXayKa9Ke1BzyJPbleHTwDHgdc+LofAA5S+D4yJEY=; b=FGn+W+VBHm01ZYug1eu77Jenk
+	uKkR13+ZVX5Oyjvk9WrZbojerEDWhbQL7JsB23voogp9DGpPrj8k7Ib8EtiBJG362ZX8V+hVOP6c1
+	ctHP+V4ggu9RMGcmZyUlWSTcrACEpuBjFG5kw8l9Vv/9KqwfqnU3Fftz0JTl8EkzSZuXDwcQCn62D
+	Q5+lr0GHYUQa+gFXb9gwlR1cGhFLU8wWSnCcArUS79hzPq9mNCDTLJllizy8SS3u6khFMnIVbhcXC
+	xGYOLlti6YY7SGa0yHcVtftJysS3vVE2cQzO3h8sTUcz1qtLZpZfPOVEUCns5gZKfwX9RXICMBRdk
+	EsZh0ByDg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lhWEt-007x3T-R8; Fri, 14 May 2021 11:44:19 +0000
+	id 1lhWF9-007x6i-4Q; Fri, 14 May 2021 11:44:35 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lhWES-007wyT-2G; Fri, 14 May 2021 11:43:53 +0000
+ id 1lhWEe-007x0L-IN; Fri, 14 May 2021 11:44:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
  :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=RGymiw+2Z0CrVGQL3tLC/2joq3j9YANXn8aNlznTKfc=; b=1SatdrG5iJAisZM3ExWTpc2X7T
- xTvFb7KeWd9SLDemslWOw7v+O4u+si+yo5dJ22FGoo3/z6KfMETsHPdqAz+kyWJDJL5Y84Y4EQBvj
- 5aGkklLrlF3W06mPa0j4zR3PGurM2/c/cHXIBhte7D79mk1SvDOYIiO2nhtdEFsxtnKDyXP5z1uWv
- c9H+jbu0Bv+4wRdsfY7JlhUQeBjzFypLYFBGy0sXOPjIA2fLdpFJjxShwm6l9VW9ICNo3aGXCwLvt
- rwKTLrL9ExtYNZsZz2nVBzONnnVfyTtiFoUK5hgFHJ4J84tEQFOuAePu4C3kM2Zol2SZN+Mvid1ZM
- p7Byty2w==;
+ bh=2JsM+efkeBz+eB3w7sQZv9LXyZukGA4NzuWtZI9vhJ4=; b=jxV2sybxByH6tbJde4jXrTT6/v
+ YxGVCpouCnarWUfkAPpiGmhu1nzBI+Q8KFZpNxK6rYY8XspolVzbtf0W+QRWkGTx+wGhEPshDccO0
+ gjRDWM24aW7Ogry6FlO9WNGUJzBu4hlkeSTwPtlN1TyxaiyT8Y6TGzOOkn3Nj4x5Z6ZcVtwSV3wdt
+ 34tAVVpnBV6OzqJcMpIY5Z3vshSOLnYLQQQZkzzskWW0qnRl/H4DXv0uvJFlikrOwPFOpq9k9q3Fe
+ nK4QqCDRrD/82sTnpxPSB/OigD8Ofg9C+XJXtLFC3tkIXIK3uu8unMijMLdZzD614m1AYM9shaMsb
+ OgLmwlkg==;
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lhWEP-00BwhV-Kd; Fri, 14 May 2021 11:43:50 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 454AB6145A;
- Fri, 14 May 2021 11:43:47 +0000 (UTC)
+ id 1lhWEc-00BwiQ-7s; Fri, 14 May 2021 11:44:03 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id CC1FC6145A;
+ Fri, 14 May 2021 11:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1620992629;
- bh=DEEn9u4JI/4C8qoAzzUOFfbfbwR5u1R3Df6cNGtTaoA=;
+ s=k20201202; t=1620992641;
+ bh=bqDabLQz7zSI4wyPaor5mwgm9M0kgOlikayGU/L67Y8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uRXvrns4KL4up+D0gVwsTVoGHiP2V+JSFcgAVEdNrb91oeb7gVzADVZi44e3Uqj/Q
- pmHkkT/E5C4n+qlb1G0XegfO0nD8AI6EyJG5aJlr+jde9VEQ4AVPpXdW4NPiy5afhZ
- 4vNtCEmbNBN2g/a7iKjcf7jBJh549zmh/SmvX1ynSsCWtKlhAEazOlDl9YrlGgkWhf
- N7s4c/WsDVMxJ1a1Oz5Th58J7A3mMaYQMpHJ8ERrKY7gWYbiFihI9JMW15Nlt8O4/U
- eOwIR5qSntpyFIYkHjL2BkfvYqKO64hQwbuHvukYDStjNfqfiVTCImSkBRZ+kFZeij
- 6uGee/o/Vs2Sw==
-Date: Fri, 14 May 2021 17:13:45 +0530
+ b=XPVBS1D/Ye5CbTqCebil9ND2oS4IIbTkJVk0xKJF6pHdzk0w2HLbcQIdiUwaHaAmd
+ SiP+Qif7iQmgsf1XJijkmhwncnI9b7rfNWfrVcYOslWTWyahEkynbgSnlMIopBtN4E
+ ayU61F79nMMDM2KVYZyiNbGeqaxSrz0tB690paWoqkGLge1Q63SXAADSfC4ENvUIxq
+ MDpbNMZLgP7n2JXaooGuWvEWOR1N6sLo3a4UtxSx+X2tkoBJ0c7iEteghsLG7DeOgK
+ 3cd1CBWmX/mu9vvSTEkMsBVE/KRYoZI5h+pvZ01IwDAytJGba2H+Qs+4h9+T216jqb
+ jtbxjd+gzDFIg==
+Date: Fri, 14 May 2021 17:13:57 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Baruch Siach <baruch@tkos.co.il>
 Cc: Andy Gross <agross@kernel.org>,
@@ -76,17 +76,17 @@ Cc: Andy Gross <agross@kernel.org>,
  linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-tegra@vger.kernel.org
-Subject: Re: [PATCH v2 5/6] dt-bindings: phy: qcom,qmp: Add IPQ60xx PCIe PHY
- bindings
-Message-ID: <YJ5icVahK6aOGoig@vkoul-mobl.Dlink>
+Subject: Re: [PATCH v2 6/6] dt-bindings: pci: qcom: Document PCIe bindings
+ for IPQ6018 SoC
+Message-ID: <YJ5ifaRnHO4k2dgw@vkoul-mobl.Dlink>
 References: <cover.1620203062.git.baruch@tkos.co.il>
- <be83d8580942ab9d141dffff4e4f33f34a4c9ed9.1620203062.git.baruch@tkos.co.il>
+ <fd732635f4ad64263e361ce98af2944bfbd513ef.1620203062.git.baruch@tkos.co.il>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <be83d8580942ab9d141dffff4e4f33f34a4c9ed9.1620203062.git.baruch@tkos.co.il>
+In-Reply-To: <fd732635f4ad64263e361ce98af2944bfbd513ef.1620203062.git.baruch@tkos.co.il>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210514_044349_712974_70B0C803 
-X-CRM114-Status: UNSURE (   4.50  )
+X-CRM114-CacheID: sfid-20210514_044402_330431_1D1C4A47 
+X-CRM114-Status: UNSURE (   5.29  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,8 +105,8 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 05-05-21, 12:18, Baruch Siach wrote:
-> Add ipq6018 qmp phy device for the single PCIe serdes lane on IPQ60xx
-> SoCs.
+> Document qcom,pcie-ipq6018. This is similar to the ipq8074 with a few
+> different clock sources, and one additional reset.
 
 Applied, thanks
 
