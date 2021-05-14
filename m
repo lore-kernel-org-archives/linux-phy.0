@@ -2,75 +2,82 @@ Return-Path: <SRS0=mSol=KJ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 18DF9C433ED
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 10:27:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0886BC433ED
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 10:34:21 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8B06C61454
-	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 10:27:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8B06C61454
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=manjaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id C62B6613F2
+	for <linux-phy@archiver.kernel.org>; Fri, 14 May 2021 10:34:20 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C62B6613F2
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1D5Ih8iD8J/CUwCbP1pw2ic+Be6+R4e4xjMgJXrK5FU=; b=jqQLJngzH0ikkVFc5Qjv22+om
-	ugMDLiHuAit3ELemxnHShf+TN2HJiDrITFPdkWsw2F9pmF/yalEOu+BEC0Xk6u4u44/l5lYFxbslB
-	tBxVApF0rLidmb7d8I9/52ijCvuEN/PSUgMeUGx6h7pCfVsI5JQphk5TLJDLXMyeCcQYdAfPZSCeN
-	EqmQU11lX5Q0lhs9mArp2yEofzVtEZzndb8QyvKE/et7H+rXitQB/y61ce2A2GXrI0Tbn6LU/7rcL
-	2CerExdewO1yfHbV1h+Rgr/Deag6Q9gnXYF1sn/zM8sehBPRdG6q0B30JZxvdndcjc9p8ScWLO3kA
-	yvpASIFDg==;
+	 bh=EL77d1XPlgpNj+wsZdMJjmDNeVDc9/Y4X4xPm+wsPus=; b=Xd3fSAPA1qCb4l/3ZWOREv0Sn
+	7JA+LGjNtSdnVLjMPbRMVa/5vAG1H1HvG7wJwLkooZYHIsvTv5gwbNWf2NQsquTmk9LDtuuZzq4y5
+	HPIXZ54DnXC2tgK7hDc0TaTGemNqb2gDlXbOj6uxDbGx+5BIHqOeUiibfMjwBVyGWL99hw1FjxqMf
+	kR9/2vA/RTlpgxmWhV18yjfgmtaUy/uQjVzTEhLQzP9VPt1nu8PHS6rd2hUehkKGUHfQtP4N7rhcU
+	GTYrKkY7buiwrULTzni/qjbsp+6uHDOheIKhLA1X04ZeprX+nGTTo4T/8B4Ud6N9loyc2xEQP9bAY
+	1/ThaNjwg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lhV2s-007lUA-NX; Fri, 14 May 2021 10:27:50 +0000
+	id 1lhV98-007mpQ-Vk; Fri, 14 May 2021 10:34:19 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lhV1t-007lBl-0E; Fri, 14 May 2021 10:26:49 +0000
+ id 1lhV97-007mob-6v
+ for linux-phy@desiato.infradead.org; Fri, 14 May 2021 10:34:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
- :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=Up75WIqfYRa4e4XU9rkSk2hZJTfa173xxi4NaJDcTxI=; b=0Xf0A+9+oNoT+WC3FTyzPX8oN4
- ZrUcEpGAf46+QzXPlvNh9TVJpp8/ARGn43bFyzRbEXVg6iAYOqP5oQ9LYWq0r7tUyQqtyPetURMzn
- clXcFVkLeRMvAHPu3qDIZ5oKCipcBC43hxuBTqhY6HNasmAi4ONGT/r4yseEoaRaLN1Fxr1DyN/ea
- PKh4kTksCw4YJDWigioizBY43EIG1jrymYjO8T7+Y1klMz1Ug4Mkj+H8pF9uiW6nZYeTrGSFdiNrK
- zl+TD3lrwe48IRLKNzIC2W/Kp4C2ONaLxr3QAEva+I53I1VhYfExRUcAmFigQ1UN55PKWpVIrOg6O
- eRnROPEA==;
-Received: from mail.manjaro.org ([176.9.38.148])
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=h4TTQGvv0kTCqP9V16/bL452A2WAd45GXz/6qfSH138=; b=FhSnhxZr4YQwM0s+Tg/iWDyLwe
+ fWJvy5yf4AynxXjOhEPEAiqEpP5y2SWz5UHHiWT82DvP8ZECgOF2/ZTgMsEwaS3/gYWhCiFZ1b5DU
+ fmO2q4VwQttOVu1pcbQYRCWTLBJlRQFQZhrT0JtcABQNMfQRIZXyjXDfbJe0489gj4kBv+sTekdme
+ X/CHN6SSx7x824nUTIk/cqAi8MkKgDM/YVnbj7lwQXY4Fx2z025keH5XFvSmnbDA74gZFJDY7vGlC
+ hT40cwpKuNlWgLPBTKhnc5OW12B/dvUFYWTKGLpB19C7X8dR54SY3kpsUSgIIlWgx1EO+ijaxbT+T
+ VW/rkrbw==;
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lhV1q-00BtgK-CX; Fri, 14 May 2021 10:26:47 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.manjaro.org (Postfix) with ESMTP id 0377B22259B;
- Fri, 14 May 2021 12:26:45 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at manjaro.org
-Received: from mail.manjaro.org ([127.0.0.1])
- by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id ppF3dsjAFkFR; Fri, 14 May 2021 12:26:40 +0200 (CEST)
-From: Tobias Schramm <t.schramm@manjaro.org>
-To: linux-usb@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-Cc: Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Tobias Schramm <t.schramm@manjaro.org>
-Subject: [PATCH 4/4] arm64: dts: rockchip: add USB support to RK3308 dts
-Date: Fri, 14 May 2021 12:27:34 +0200
-Message-Id: <20210514102734.2091238-5-t.schramm@manjaro.org>
-In-Reply-To: <20210514102734.2091238-1-t.schramm@manjaro.org>
-References: <20210514102734.2091238-1-t.schramm@manjaro.org>
+ id 1lhV94-00BtxV-T8
+ for linux-phy@lists.infradead.org; Fri, 14 May 2021 10:34:16 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 427F9613F2;
+ Fri, 14 May 2021 10:34:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1620988454;
+ bh=MDt/JtauvGdhtTdBJNw3Sa4IR6v2OgRIZKcYn8oVayk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=S8aTy1tbQfDpZ7uXrHpa7HCbo1fIoAjSRcxrnWq3lEKXdjTc2IB5uZNK/G4dOKu8p
+ J3uE96Z3FJq6IqrGZc8dE+CdUFLNDSHHJ+BlQzKuReoRzMo0s1enWugdLv2TvFdOSm
+ 4BokGU+PBQwOF02uYmnAlJQqUg9r6YYJ2kzEYqEVG6Hwq3y7hCnwgqRDrqv5CqBZs7
+ ynvPF7j9HghkLRWFPaUfxBQEhxoEG/LD9Sn2ongrG9PaRZ4U63VPwwXkfLfA59pRbs
+ 5jaHbxUxYmXxrNQjMU6zWAZwW5szfdGVvgSf3/ldVDnomwyLNntCIVrNu3MeS/TQMo
+ eLP/KvGOOVkjQ==
+Date: Fri, 14 May 2021 16:04:10 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Sergei Shtylyov <sergei.shtylyov@gmail.com>,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: phy: renesas, rcar-gen3-pcie-phy: Convert to
+ json-schema
+Message-ID: <YJ5SIqP2gIzbv/na@vkoul-mobl.Dlink>
+References: <0301c3a7dae9afde115b6437a11c23ab85cb8b75.1620648490.git.geert+renesas@glider.be>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <0301c3a7dae9afde115b6437a11c23ab85cb8b75.1620648490.git.geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210514_032646_596149_5E521D98 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20210514_033414_976083_7F86032F 
+X-CRM114-Status: UNSURE (   6.27  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -88,112 +95,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Rockchip RK3308 features an integrated USB 2.0 phy, an USB OTG
-controller and OHCI/EHCI interfaces.
-This patch adds all of those to the RK3308 dtsi and thereby enables USB
-support on the RK3308.
+On 10-05-21, 14:10, Geert Uytterhoeven wrote:
+> Convert the Renesas R-Car Gen3 PCIe PHY Device Tree binding
+> documentation to json-schema.
+> 
+> Update the example to match reality.
 
-Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
----
- arch/arm64/boot/dts/rockchip/rk3308.dtsi | 75 ++++++++++++++++++++++++
- 1 file changed, 75 insertions(+)
+Applied, thanks
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-index 0c5fa9801e6f..80fd802d6c15 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-@@ -177,6 +177,43 @@ reboot-mode {
- 		};
- 	};
- 
-+	usb2phy_grf: syscon@ff008000 {
-+		compatible = "rockchip,rk3308-usb2phy-grf", "syscon",
-+			     "simple-mfd";
-+		reg = <0x0 0xff008000 0x0 0x4000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		u2phy: usb2-phy@100 {
-+			compatible = "rockchip,rk3308-usb2phy";
-+			reg = <0x100 0x10>;
-+			clocks = <&cru SCLK_USBPHY_REF>;
-+			clock-names = "phyclk";
-+			clock-output-names = "usb480m_phy";
-+			#clock-cells = <0>;
-+			assigned-clocks = <&cru USB480M>;
-+			assigned-clock-parents = <&u2phy>;
-+			status = "disabled";
-+
-+			u2phy_otg: otg-port {
-+				#phy-cells = <0>;
-+				interrupts = <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "otg-bvalid", "otg-id",
-+						  "linestate";
-+				status = "disabled";
-+			};
-+
-+			u2phy_host: host-port {
-+				#phy-cells = <0>;
-+				interrupts = <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "linestate";
-+				status = "disabled";
-+			};
-+		};
-+	};
-+
- 	detect_grf: syscon@ff00b000 {
- 		compatible = "rockchip,rk3308-detect-grf", "syscon", "simple-mfd";
- 		reg = <0x0 0xff00b000 0x0 0x1000>;
-@@ -579,6 +616,44 @@ spdif_tx: spdif-tx@ff3a0000 {
- 		status = "disabled";
- 	};
- 
-+	usb20_otg: usb@ff400000 {
-+		compatible = "rockchip,rk3308-usb", "rockchip,rk3066-usb",
-+			     "snps,dwc2";
-+		reg = <0x0 0xff400000 0x0 0x40000>;
-+		interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_OTG>;
-+		clock-names = "otg";
-+		dr_mode = "otg";
-+		g-np-tx-fifo-size = <16>;
-+		g-rx-fifo-size = <280>;
-+		g-tx-fifo-size = <256 128 128 64 32 16>;
-+		phys = <&u2phy_otg>;
-+		phy-names = "usb2-phy";
-+		status = "disabled";
-+	};
-+
-+	usb_host_ehci: usb@ff440000 {
-+		compatible = "generic-ehci";
-+		reg = <0x0 0xff440000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
-+		clock-names = "usbhost", "arbiter", "utmi";
-+		phys = <&u2phy_host>;
-+		phy-names = "usb";
-+		status = "disabled";
-+	};
-+
-+	usb_host_ohci: usb@ff450000 {
-+		compatible = "generic-ohci";
-+		reg = <0x0 0xff450000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
-+		clock-names = "usbhost", "arbiter", "utmi";
-+		phys = <&u2phy_host>;
-+		phy-names = "usb";
-+		status = "disabled";
-+	};
-+
- 	sdmmc: mmc@ff480000 {
- 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff480000 0x0 0x4000>;
 -- 
-2.31.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
