@@ -2,99 +2,89 @@ Return-Path: <SRS0=G5Ry=KM=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-12.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 570DBC433B4
-	for <linux-phy@archiver.kernel.org>; Mon, 17 May 2021 12:10:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B1C90C43460
+	for <linux-phy@archiver.kernel.org>; Mon, 17 May 2021 13:24:44 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1C01D61263
-	for <linux-phy@archiver.kernel.org>; Mon, 17 May 2021 12:10:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1C01D61263
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
+	by mail.kernel.org (Postfix) with ESMTPS id 77C9F610E9
+	for <linux-phy@archiver.kernel.org>; Mon, 17 May 2021 13:24:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 77C9F610E9
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=loongson.cn
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
-	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=sYaZdiJo8PH0EFj28HMYZqgFJVBNqs5YJqX5TP7YJ4k=; b=lMG9hfIf9e+cDeQLU3I74KXrx1
-	0txQLkScpQ37HWnLczvZ/BY9FZr+CLMb0WnOEUBLV7FIV3VnqRaxf0yqXL4K1t/yOPAgbUbSwNSWg
-	REUzEbO50QQ7lyH/3oWWs7eak1VWF25EuBEBpWm8Isfgx1LiQdZpgGW8tvxe73iTo2WMop8w9EaAU
-	xDm1G2bLgV1e1Y6OZhcZeD1iyZXlRx+u2/k8GXfsUBuEAAwgjFmCWKODYF4yqHOhRx2o5Q1CMkwMG
-	2JY227ga85vl/1ftdwzJj27fzUMoE8GN/hz6v8oaTwVB+soy7siv3iApJ2UkR2y/ZOVn0KoGZGtSS
-	3kV3VVvw==;
+	:Content-Type:MIME-Version:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=ow5wObPyQIzAl4HEH31jpqoVAYbko0q5Vpi8UmHHmus=; b=YLszSaUxjHsBZkEi6/L+vJHgg8
+	ckp3gVLvb49QFUrfLMYE1yDqMEMThBETY5irKQaw+ux74rCAFrFdVRzrH6bXfzEq9gsNYt9I0kOVc
+	Wz5xDi3o/0jUTcE1ge7M4YgRkc5IFxbiggbQ585mSlt0KrT2oFiC/3cE06dSzSMf1XsUu85Np80RU
+	GgEKe5ryVp/wDmiuuM1D/dlVC3DlLFNx+dzEyUj6/iQ/BmM4swCDFpEa4SBv3CzIWNjSspi0hvBM9
+	MhU7dV8HbqJFhIB4M3E4dRDVLRG2n036x+7bGwLYeFVNFj3qV0yrGdcag7vCmuF/qBbUihYQA5CzV
+	TlH5O6vA==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lic4X-00EqLF-A8; Mon, 17 May 2021 12:10:09 +0000
+	id 1lidEf-00F3wL-Cm; Mon, 17 May 2021 13:24:41 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lic32-00Eq8o-PV; Mon, 17 May 2021 12:09:10 +0000
+ id 1lidAO-00F2tl-5p; Mon, 17 May 2021 13:20:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:MIME-Version:Message-ID:
- Date:Subject:CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=bavnRqI5ucsHk4llNawSfeoyU7Pikb9myCdrZ4Z3/yk=; b=Gyj6biXQ7iqMv3DfZJc4r5VoWQ
- C39UhyPq6bYdyRpipqnDrECbGA7fd5Icap2GKrmzXPDTWuI/wKyz5RIeF8TzpGK4PWMoNDJuxZw3z
- MKeNW/xQUtrLtAAv6IXBmQjQ5oi8c/RIco1Fi6+ThNmjRkYumljQozzHxHwfrvFOOvkMdEWW9mQx9
- B7Jl328mqI8MIf2RdfJhCT1TaNXxZjxsF7ntNcpWJhynjwRc0euL4KbdbML2iFyQ7uuj6O+PDu7x3
- N2+n9srbiOuxwZbluKtc9BX7cl85K5/yW+7csi/pQKxptFUV1c6cSq7mtNEY8Q3A6XVkrrSx4eMNL
- 2lVMAEDA==;
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
- by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lic2z-00Dk6d-Ha; Mon, 17 May 2021 12:08:35 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 14HC6oQ1010202; Mon, 17 May 2021 14:08:25 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=selector1;
- bh=bavnRqI5ucsHk4llNawSfeoyU7Pikb9myCdrZ4Z3/yk=;
- b=VMttQHmqLNPUAXUcp8GfM0viUsm2Z02Gp5aoXvDlmVR+e5Mn4s5nLrwo4UO8m1EPfskI
- hidvTEtd505cIVivkEAxIiCPwKeav4fNkKBpkTx5QWxokarMEEVVczOca5Xjk7TPZDke
- Ubv9jlkYYIeqr4aLutoFiNVCrtKx3q68QIB7hu/zQkW5h8O7Zv1RsLFRIj7TS5DYfsBW
- /VWDeV2lxUH0B9i+aWT2cht/hOf21LVyqPcJ7uT6uT76/g5rJujiOutGUtAu07/PH5O8
- mTzkZ4lhv0i9T2fxdp25Rjrasw/HzX115vs+PAl15+pwMPlUnID5GU3a2pIMfalDXhbU 7Q== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 38kmb2sf3m-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 17 May 2021 14:08:25 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C9440100034;
- Mon, 17 May 2021 14:08:24 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag2node3.st.com [10.75.127.6])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B670122D636;
- Mon, 17 May 2021 14:08:24 +0200 (CEST)
-Received: from localhost (10.75.127.49) by SFHDAG2NODE3.st.com (10.75.127.6)
- with Microsoft SMTP Server (TLS) id 15.0.1497.2; Mon, 17 May 2021 14:08:23
- +0200
-From: Amelie Delaunay <amelie.delaunay@foss.st.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Alexandre Torgue
- <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
- <amelie.delaunay@foss.st.com>
-Subject: [RESEND PATCH v2 0/2] STM32 USBPHYC vbus-supply property support
-Date: Mon, 17 May 2021 14:08:19 +0200
-Message-ID: <20210517120821.26466-1-amelie.delaunay@foss.st.com>
-X-Mailer: git-send-email 2.17.1
-MIME-Version: 1.0
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG2NODE3.st.com
- (10.75.127.6)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.391, 18.0.761
- definitions=2021-05-17_04:2021-05-17,
- 2021-05-17 signatures=0
+ d=infradead.org; s=bombadil.20210309; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=DMZMz9ugGBXkoKCwmBbR40flsKXt+rGpdXgSQkZS0/o=; b=ZucmrVGYKIfGTc0oV/cr16aPaG
+ Wizsmv9aaD06b9/E4I/4KGqF37sENSNECQiI5OlU/7P2I3i8ddV7WFafgYEZ5TBx/3dza0RMTB2ES
+ N0+wpz1QYAAIrRutEpgrCI1EswVeHsEm4A+epjdjPVF/KKlwoMfrag5m3yH0ElUsi0OagF7t5EWvV
+ kTsUPN4ZG03VvzD6jcSuT4PSAzR5Jh6ZeZfeJRhqjZifbns6w7u8OmFIdWFNSqvbksvmC+OPMtO5O
+ 7E8KS/WeT8j4OIE/FG7IxJN4aJ6ZYuJG1tYiCC0VtnrN5yKBfgquEEyx8I9nDROt2s2hB0T5xMFeN
+ 4oKvYxMA==;
+Received: from mail.loongson.cn ([114.242.206.163] helo=loongson.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
+ id 1lidAG-00DnIN-Bg; Mon, 17 May 2021 13:20:13 +0000
+Received: from linux.localdomain (unknown [113.200.148.30])
+ by mail.loongson.cn (Coremail) with SMTP id AQAAf9Cx6cmAbaJg5GwYAA--.37607S2; 
+ Mon, 17 May 2021 21:20:01 +0800 (CST)
+From: Tiezhu Yang <yangtiezhu@loongson.cn>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, lkp@intel.com,
+ Dan Carpenter <dan.carpenter@oracle.com>, Heiko Stuebner <heiko@sntech.de>,
+ kbuild@lists.01.org
+Subject: [PATCH] phy: phy-mtk-tphy: Fix some resource leaks in mtk_phy_init()
+Date: Mon, 17 May 2021 21:20:00 +0800
+Message-Id: <1621257600-15046-1-git-send-email-yangtiezhu@loongson.cn>
+X-Mailer: git-send-email 2.1.0
+X-CM-TRANSID: AQAAf9Cx6cmAbaJg5GwYAA--.37607S2
+X-Coremail-Antispam: 1UD129KBjvdXoWrtr43Kw1fZF1kKw4UuF1rJFb_yoWfurc_uF
+ 1vgwnxWan8WF1akw1UKr1xZFyI93W0qFykGrySy3yFkryjgw1Y9rsFvFZ3uF4DCan3CF13
+ J3s09ana9r4xAjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUbsxYjsxI4VWkCwAYFVCjjxCrM7AC8VAFwI0_Gr0_Xr1l1xkIjI8I
+ 6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
+ 8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVW8JVW5JwA2z4x0Y4vE2Ix0
+ cI8IcVCY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z2
+ 80aVCY1x0267AKxVW0oVCq3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAK
+ zVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Cr0_Gr1UMc
+ vjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvY0x0EwIxGrwACI402YVCY1x02628vn2kIc2xK
+ xwCY02Avz4vE14v_Xr4l42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2
+ IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v2
+ 6r1q6r43MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF4lIxAIcVC0I7IYx2
+ IY6xkF7I0E14v26r4j6F4UMIIF0xvE42xK8VAvwI8IcIk0rVWrZr1j6s0DMIIF0xvEx4A2
+ jsIE14v26r4j6F4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVFxhVjvjDU0x
+ ZFpf9x07j5_-9UUUUU=
+X-CM-SenderInfo: p1dqw3xlh2x3gn0dqz5rrqw2lrqou0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210517_050833_921369_2AEAF269 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20210517_062008_785017_2E3A940A 
+X-CRM114-Status: UNSURE (   6.19  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,30 +96,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-STM32 USBPHYC provides two USB High-Speed ports which are used by controllers
-with Host capabilities. That's why vbus-supply has to be supported on each
-phy node.
+Use clk_disable_unprepare() in the error path of mtk_phy_init() to fix
+some resource leaks.
 
+Fixes: cd4ec4b03dc1 ("phy: phy-mt65xx-usb3: add mediatek directory and rename file")
+Reported-by: kernel test robot <lkp@intel.com>
+Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Tiezhu Yang <yangtiezhu@loongson.cn>
 ---
-Changes in v2:
-- use connector node vbus-supply property as suggested by Rob
----
-Amelie Delaunay (2):
-  dt-bindings: phy: add vbus-supply optional property to
-    phy-stm32-usbphyc
-  phy: stm32: manage optional vbus regulator on phy_power_on/off
+ drivers/phy/mediatek/phy-mtk-tphy.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
- .../bindings/phy/phy-stm32-usbphyc.yaml       | 11 +++++++
- drivers/phy/st/phy-stm32-usbphyc.c            | 31 +++++++++++++++++++
- 2 files changed, 42 insertions(+)
-
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index cdbcc49..731c483 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -949,6 +949,8 @@ static int mtk_phy_init(struct phy *phy)
+ 		break;
+ 	default:
+ 		dev_err(tphy->dev, "incompatible PHY type\n");
++		clk_disable_unprepare(instance->ref_clk);
++		clk_disable_unprepare(instance->da_ref_clk);
+ 		return -EINVAL;
+ 	}
+ 
 -- 
-2.17.1
+2.1.0
 
 
 -- 
