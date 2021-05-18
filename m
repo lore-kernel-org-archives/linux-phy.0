@@ -4,16 +4,16 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no version=3.4.0
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 96196C433ED
-	for <linux-phy@archiver.kernel.org>; Tue, 18 May 2021 01:04:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5645CC43460
+	for <linux-phy@archiver.kernel.org>; Tue, 18 May 2021 01:30:32 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0602661354
-	for <linux-phy@archiver.kernel.org>; Tue, 18 May 2021 01:04:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0602661354
+	by mail.kernel.org (Postfix) with ESMTPS id 16BC5613B5
+	for <linux-phy@archiver.kernel.org>; Tue, 18 May 2021 01:30:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 16BC5613B5
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,76 +22,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ay2LEHfwsN1Po0rzJ6WN08e2uRdm9kH5YnGg+2UWihc=; b=GdwVkY9W2bu1QUdthhyl5yYDg
-	3+uV167TBpiyvXR5KsnfKeCZjOo7+hOn26Kn2z+vd6zyVmyKHPjKvGMQonAaiFYE4rIfpGB4YvBnx
-	Noa6ZalbSEZZUzF5sPoAynokQqxDpNM9z+44Bh2Iw0pjzpk5ViJXP7GMsYECtQYqAS8imD4faZiYJ
-	D6g3nqE1OSZ0dAiGNo+hCHy1JucUKgHQf0FkxMVDr347AzeUIibPv8IeSwrPxVxyZ3u1BAkGtwKte
-	3BvZLd6RRZLKu7vV6ZCilzl+s4AU5ApsVkREw8+CLzac1IqMb1kIxRsbMEOgWrFvl9IS15ie1L/QG
-	OTdb8/3Ag==;
+	 bh=qBPMnkjuC+CZ4EYEydBiFCNCRD8T3i9ouiefiqPS+E0=; b=kiROZod3whYirQLVFQ73dGoR1
+	yrgyC7c1VIfP5OONUDbyTJCeHOpPP7txORrxMg5mIAN8+vWEz1tIFJqzos8K8s/tlMMzFubgfwjGj
+	/MgWfuFGyb/9xOMI5F29AZkyrSGnL802JSxcanPfpDsBuTqcHgELTC8LBT/c8Okg0znKIIGWZEv+D
+	Yln/SnXMl9MMLvPGF9BAWBuj6jR7bnz68hZUx8mhp9YPx+Yx9P69CZ8dUwI5E86QqNsVuuAvsfscU
+	gB4r14Q7t1Msj6NyZnQqDkp7qcuDQiya9OuLNpHBewVlvrPJbqlBOEvXzoswADRCTJS7U41KQL7CK
+	+Xo+0uNXQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lioAF-00GaBN-NB; Tue, 18 May 2021 01:04:51 +0000
+	id 1lioZ3-00GdBR-UR; Tue, 18 May 2021 01:30:30 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lioAA-00GaAZ-TF; Tue, 18 May 2021 01:04:48 +0000
+ id 1lioYp-00Gd8X-G8; Tue, 18 May 2021 01:30:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
  :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=SxHwQbAd9PyYMHvbV2F26fHPcBALRSGxTgLDpMOWzQQ=; b=ldWdTpEX9wSHIiuX0jmnwuN/Vl
- LtmHLhB3KJJsI8L5hrmchE6u4diHv74JlNzsnlnBcWUqTB7cn/W871mEnsPVfH72AM5ER1r//dyr2
- OiiruazWu7JVlcn4q0cYLsfTESe5oDt+t+wnmUnhf7Y30ViikGVqsBWyyH/Sexc3Bz0AIzhd5wZIZ
- KxsLOqGXMYdpVRm1p834a1pTsQcTjsBzxpnT9Hvd1hHlTx/Qj2/Fx1MPm3GmQ8RGy/ej0bayB5cv8
- 2xTRyZeFebJrmp14ntq1gfrqpiOMGhyZf7YjiI/TP/8fOSc597p+6Fh2CxgLdnMQH1DjhsAMMniOV
- sqT9rdcA==;
-Received: from mail-oi1-f172.google.com ([209.85.167.172])
+ bh=oiChmmm3c4jQ/mjCqDyUKJLtpixrBak0jzUaVwVqz5o=; b=Fd0u+eejpjVJvPSOA/G9S8IZvx
+ hFwqahJQU5TNh726x3Ty0og/38KnUAaG0eWgeadX+POPauPSHPrmc2AvFPgvSSEC3n4XGOzwTBCCK
+ D0EZUub5V9vSeP1LsFWOExbbrJRZRiJN1b97n9jFD00Y8nzWQjKJPGxa9P5qk1QOMlRcSkYgjeZpr
+ adebslKhAi/1vwsUbkHLAeVgOUyCc8YHQ0QwtVLnQqgWRhp3HQ34NxL+2YbmEfmda1G4R09CNp80B
+ uqLNfp7A5Zw/YTgV1JBlIRy2KtWARioEnbp0Gs0YpFNB0L+bFrUb8YwnNkByjwpGPb6jYDjGfFmSM
+ 1FZc7xRQ==;
+Received: from mail-oi1-f170.google.com ([209.85.167.170])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lioA7-00EFEP-Ia; Tue, 18 May 2021 01:04:45 +0000
-Received: by mail-oi1-f172.google.com with SMTP id u144so8213774oie.6;
- Mon, 17 May 2021 18:04:42 -0700 (PDT)
+ id 1lioYn-00EFth-64; Tue, 18 May 2021 01:30:14 +0000
+Received: by mail-oi1-f170.google.com with SMTP id u144so8259082oie.6;
+ Mon, 17 May 2021 18:30:13 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=SxHwQbAd9PyYMHvbV2F26fHPcBALRSGxTgLDpMOWzQQ=;
- b=ODie0+HWKSSjAGlZ/pNPHnlqoocq3IYyzNkU7k8MY7B3IYt843Ir3TzE0f2wXfCJ/I
- VOHzIN3SmTXMMaY+Gei/jqhpzlgBqi/9YW1Jg2H42/IOthonbdi1+Do13p5LErcYPHRL
- vVPGOfHA8mGBywPN81vTD9DauVS6oDmwYX93LiUhskf5rHgJJrWDYQYLtY8wtMhMvxiy
- KCgyZ2Ssjd2AO6MGaeNqwMJAiSPPKz6oWIKbFjvK7WFH7CoPa6ysepGmna4DWkS+c59z
- ByDTPnKNQvQrGOmNxB9VtUh84rUmY9Dc/4XLlwdQbiGFy8TD49fOtwrCINP7YVJhZ19F
- 5MCA==
-X-Gm-Message-State: AOAM532lONsgRRDG7zK6ko5w9hIaS3l5L7xP01OyerL2/+t2mOiWZU+w
- RrH9vzR3+1tjmfcxnLsjspv+Upa7dA==
-X-Google-Smtp-Source: ABdhPJyf0pyW0S41fWKZ804dgH5cblGefnR1aOV1tvOb/H1KFlgu8LzH9jN6ZmU22hvwZ66FGvTi/A==
-X-Received: by 2002:aca:2417:: with SMTP id n23mr1411208oic.111.1621299880509; 
- Mon, 17 May 2021 18:04:40 -0700 (PDT)
+ bh=oiChmmm3c4jQ/mjCqDyUKJLtpixrBak0jzUaVwVqz5o=;
+ b=GdAHSj1SO7pSmO+6qmsQ5SrQwuUPoWMcO/ScianmIQs2Vz0kiJc/BblWRkGGG1x8zd
+ uHze5SjhGY50S/cIRjGxSFfKop+xCjDye9ngM9RgZAUpe0ldPMAWhvw/9XL70k5hXi/x
+ spUZjCDEbJ1iTtz8ld2RVZJRj6Hf47LHL7hD7InIC6akYXv8e7H1BAUqBWYqzMDc/zip
+ yUFQltmp+QYGZ76zqQMjvpO5mXdbBl7z+X3lT6TDxawVBoRjC1TjgQdkkpuCBDlvfDVD
+ 8/j+rxCJuVHvPnK5u5Qwk3pJ7qrl7jmLHJveSu9afH4/u7Rl5Ddkgm/owHy1S5FATBGj
+ yEHA==
+X-Gm-Message-State: AOAM532ztsV1QxAvFDrkalCsusQZhVEpO5rC4+d6hDYgCmaZuDmgH0DX
+ jgvTALx2MAgVCFPGJn1V/Q==
+X-Google-Smtp-Source: ABdhPJyxdV0Mr4rv6ASsJEiOUDxby5DAJBSRvp3cezJZCDJozkHkPwp+yZtsKluvwzG0ue1LMi/r1w==
+X-Received: by 2002:a54:4396:: with SMTP id u22mr1504292oiv.118.1621301412607; 
+ Mon, 17 May 2021 18:30:12 -0700 (PDT)
 Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id z9sm3398791oog.25.2021.05.17.18.04.39
+ by smtp.gmail.com with ESMTPSA id e6sm3424903otk.64.2021.05.17.18.30.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 17 May 2021 18:04:39 -0700 (PDT)
-Received: (nullmailer pid 3562405 invoked by uid 1000);
- Tue, 18 May 2021 01:04:38 -0000
-Date: Mon, 17 May 2021 20:04:38 -0500
+ Mon, 17 May 2021 18:30:12 -0700 (PDT)
+Received: (nullmailer pid 3604678 invoked by uid 1000);
+ Tue, 18 May 2021 01:30:10 -0000
+Date: Mon, 17 May 2021 20:30:10 -0500
 From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: heiko@sntech.de, linus.walleij@linaro.org, kishon@ti.com, vkoul@kernel.org,
- jay.xu@rock-chips.com, shawn.lin@rock-chips.com, david.wu@rock-chips.com,
- zhangqing@rock-chips.com, huangtao@rock-chips.com, cl@rock-chips.com,
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 1/4] dt-bindings: phy: convert rockchip-usb-phy.txt to
- YAML
-Message-ID: <20210518010438.GA3548693@robh.at.kernel.org>
-References: <20210512122346.9463-1-jbx6244@gmail.com>
- <20210512122346.9463-2-jbx6244@gmail.com>
+To: Tobias Schramm <t.schramm@manjaro.org>
+Cc: Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ Johan Jonker <jbx6244@gmail.com>, linux-usb@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH v2 1/5] dt-bindings: phy: rockchip-inno-usb2: add
+ compatible for rk3308 USB phy
+Message-ID: <20210518013010.GA3604623@robh.at.kernel.org>
+References: <20210514150044.2099298-1-t.schramm@manjaro.org>
+ <20210514150044.2099298-2-t.schramm@manjaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210512122346.9463-2-jbx6244@gmail.com>
+In-Reply-To: <20210514150044.2099298-2-t.schramm@manjaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210517_180443_648816_25E71B6E 
-X-CRM114-Status: GOOD (  22.57  )
+X-CRM114-CacheID: sfid-20210517_183013_242829_8D197BE3 
+X-CRM114-Status: GOOD (  10.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,180 +108,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, May 12, 2021 at 02:23:43PM +0200, Johan Jonker wrote:
-> Current dts files with Rockchip 'usbphy' nodes are manually verified.
-> In order to automate this process rockchip-usb-phy.txt has to be
-> converted to YAML.
+On Fri, 14 May 2021 17:00:40 +0200, Tobias Schramm wrote:
+> The RK3308 features a slightly different USB phy than other Rockchip SoCs.
+> This patch adds a compatible string for it.
 > 
-> Add "#phy-cells", because it is a required property
-> by phy-provider.yaml
-
-Maybe we should relax that. Or changing the node name would solve it. 
-
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
 > ---
->  .../devicetree/bindings/phy/rockchip-usb-phy.txt   | 52 -------------
->  .../devicetree/bindings/phy/rockchip-usb-phy.yaml  | 86 ++++++++++++++++++++++
->  2 files changed, 86 insertions(+), 52 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-usb-phy.txt
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip-usb-phy.yaml
+>  .../devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml          | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip-usb-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-usb-phy.txt
-> deleted file mode 100644
-> index 4ed569046..000000000
-> --- a/Documentation/devicetree/bindings/phy/rockchip-usb-phy.txt
-> +++ /dev/null
-> @@ -1,52 +0,0 @@
-> -ROCKCHIP USB2 PHY
-> -
-> -Required properties:
-> - - compatible: matching the soc type, one of
-> -     "rockchip,rk3066a-usb-phy"
-> -     "rockchip,rk3188-usb-phy"
-> -     "rockchip,rk3288-usb-phy"
-> - - #address-cells: should be 1
-> - - #size-cells: should be 0
-> -
-> -Deprecated properties:
-> - - rockchip,grf : phandle to the syscon managing the "general
-> -   register files" - phy should be a child of the GRF instead
-> -
-> -Sub-nodes:
-> -Each PHY should be represented as a sub-node.
-> -
-> -Sub-nodes
-> -required properties:
-> -- #phy-cells: should be 0
-> -- reg: PHY configure reg address offset in GRF
-> -		"0x320" - for PHY attach to OTG controller
-> -		"0x334" - for PHY attach to HOST0 controller
-> -		"0x348" - for PHY attach to HOST1 controller
-> -
-> -Optional Properties:
-> -- clocks : phandle + clock specifier for the phy clocks
-> -- clock-names: string, clock name, must be "phyclk"
-> -- #clock-cells: for users of the phy-pll, should be 0
-> -- reset-names: Only allow the following entries:
-> - - phy-reset
-> -- resets: Must contain an entry for each entry in reset-names.
-> -- vbus-supply: power-supply phandle for vbus power source
-> -
-> -Example:
-> -
-> -grf: syscon@ff770000 {
-> -	compatible = "rockchip,rk3288-grf", "syscon", "simple-mfd";
-> -
-> -...
-> -
-> -	usbphy: phy {
-> -		compatible = "rockchip,rk3288-usb-phy";
-> -		#address-cells = <1>;
-> -		#size-cells = <0>;
-> -
-> -		usbphy0: usb-phy0 {
-> -			#phy-cells = <0>;
-> -			reg = <0x320>;
-> -		};
-> -	};
-> -};
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip-usb-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip-usb-phy.yaml
-> new file mode 100644
-> index 000000000..3b6b39da0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/rockchip-usb-phy.yaml
-> @@ -0,0 +1,86 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/rockchip-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip USB2.0 phy
-> +
-> +maintainers:
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - const: rockchip,rk3288-usb-phy
-> +      - items:
-> +          - enum:
-> +              - rockchip,rk3066a-usb-phy
-> +              - rockchip,rk3188-usb-phy
-> +          - const: rockchip,rk3288-usb-phy
-> +
-> +  "#phy-cells":
-> +    const: 0
 
-If we did add this, we'd want it to be 1 so we could identify which phy.
-
-> +
-> +  "#address-cells":
-> +    const: 1
-> +
-> +  "#size-cells":
-> +    const: 0
-> +
-> +required:
-> +  - compatible
-> +  - "#phy-cells"
-> +  - "#address-cells"
-> +  - "#size-cells"
-> +
-> +additionalProperties: false
-> +
-> +patternProperties:
-> +  "usb-phy@[0-9a-f]+$":
-> +    type: object
-> +
-> +    properties:
-> +      reg:
-> +        maxItems: 1
-> +
-> +      "#phy-cells":
-> +        const: 0
-> +
-> +      clocks:
-> +        maxItems: 1
-> +
-> +      clock-names:
-> +        const: phyclk
-> +
-> +      "#clock-cells":
-> +        const: 0
-> +
-> +      resets:
-> +        maxItems: 1
-> +
-> +      reset-names:
-> +        const: phy-reset
-> +
-> +      vbus-supply:
-> +        description: phandle for vbus power source
-> +
-> +    required:
-> +      - reg
-> +      - "#phy-cells"
-> +
-> +    additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    usbphy: usbphy {
-> +      compatible = "rockchip,rk3288-usb-phy";
-> +      #phy-cells = <0>;
-> +      #address-cells = <1>;
-> +      #size-cells = <0>;
-> +
-> +      usbphy0: usb-phy@320 {
-> +        reg = <0x320>;
-> +        #phy-cells = <0>;
-> +      };
-> +    };
-> -- 
-> 2.11.0
-> 
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
