@@ -2,76 +2,95 @@ Return-Path: <SRS0=Qy0S=KO=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9257FC433ED
-	for <linux-phy@archiver.kernel.org>; Wed, 19 May 2021 10:46:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B8FBEC433ED
+	for <linux-phy@archiver.kernel.org>; Wed, 19 May 2021 15:18:19 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5C325611BD
-	for <linux-phy@archiver.kernel.org>; Wed, 19 May 2021 10:46:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5C325611BD
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=arm.com
+	by mail.kernel.org (Postfix) with ESMTPS id 6E440610A8
+	for <linux-phy@archiver.kernel.org>; Wed, 19 May 2021 15:18:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6E440610A8
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
-	:Content-Type:MIME-Version:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=byhueeqn0D8d5MOw/tM7oH9NTKJEDYw8A1wpYz39Fig=; b=U646cENHWx3H3O0T10b9mfJMV/
-	zF1eKLIU7KR9b9+DnYwpK2Y3pXxAJCVsPVFBp8udX3PkCo5MC3SoboYqJxIAAOHNzlUJAYiCCLcIa
-	TjxUSCF8cElbjkv4hM4Ox/8Sgnkd6XCYbg1ZQG7xqjpfFai9AAB56iy5pEzkKqdhc0qooOR2DywRb
-	/e33T2kaRVIjCtc5AF7xfM08Cf39MjV0JzG3FEi/S8GMbPZmSU3wQXy7VNsJMcRUNJfU6FBtWJN7Q
-	rVqzcFuN0btvm7FuNvDpCUe5zMwYNfHreqmVXSqUaoUVnWGswzy+XwV12/G0n6AxrcPGzZq0ZRmE0
-	BfuKgM1w==;
+	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f2L01eTmiOpj/5AfKEDKX7cXy6ifpf330JLw4INjgnQ=; b=FLr6Meub7H3Jv2/DvJePeM4CX
+	D33IUyMlkH0dgMWaxdz+BvICPjgmF0kYjg0VgPYg6lWdGuHq6TbHTwD7AkSd7/xoKxghQB0TWS+p7
+	lPo8CBIxDigpnxHB3iCdLSpef6G18TrFHlxDPkby343IG8yU09I4qEZ6ldUYKotmUio3wGeewuF2W
+	KBZgnEp05yMY90jYbrpbivCI6swdOhbRHkL2sa6XlE86W+G4Pq22v5Ao7hAoYqd7XGd/meYzvrzOe
+	89Vu4lWXqECtOsmbS0pCEBheS9p06m7L2KrsHJMdbUzfZZoiYxe2K6OqVkeR4jy+kO5dSc2o9BL61
+	ZSevvKKEg==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1ljJiG-003deq-Nz; Wed, 19 May 2021 10:46:04 +0000
+	id 1ljNxh-004MHA-UZ; Wed, 19 May 2021 15:18:18 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1ljJf1-003cIp-1k; Wed, 19 May 2021 10:42:43 +0000
+ id 1ljNxR-004MEG-R2; Wed, 19 May 2021 15:18:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ d=infradead.org; s=bombadil.20210309; h=Content-Type:Cc:To:Subject:Message-ID
+ :Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=l75WdoDXauDex2sXZZiUaZfzhyXh0AhZYA3LCCM/tMk=; b=RPKC03dPReBEadepdhFt9Y9mBd
- Uf/2vsym8aC0O9rmPAofFk90FNdhG4Y9byWLxesEw4vddFQKOft+TCHLG590z+wWH50TVPw1w5Z02
- N/cpC+GbcH2gztl+r6Sw65y6TSXNjTExJ6ORo7SWFHMxuIXvqDHzZEtlNx/QN0aobwO1fRFZ4dhud
- zAaq6TkXBcpu5nGk0jk4SXPTKGM9wYOaF/lhidzlTMrfrtoiLRptJk+6p9RUnaB3osoRnSo3/PRrz
- 3wnY7SMeYvA5VS/e101pEvDls/bXwjBe99ksy7ab7wvd4Bqj5BVt/WepuUzbOBR5Ok3hOM/N6Kz/B
- xBbsWv+w==;
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
- id 1ljJey-00FMWR-Ff; Wed, 19 May 2021 10:42:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E9111480;
- Wed, 19 May 2021 03:42:39 -0700 (PDT)
-Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5897E3F719;
- Wed, 19 May 2021 03:42:37 -0700 (PDT)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>
-Cc: Rob Herring <robh@kernel.org>, Icenowy Zheng <icenowy@aosc.io>,
- Samuel Holland <samuel@sholland.org>, Ondrej Jirman <megous@megous.com>,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@googlegroups.com,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: [PATCH v6 13/17] phy: sun4i-usb: Add support for the H616 USB PHY
-Date: Wed, 19 May 2021 11:41:48 +0100
-Message-Id: <20210519104152.21119-14-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.14.1
-In-Reply-To: <20210519104152.21119-1-andre.przywara@arm.com>
-References: <20210519104152.21119-1-andre.przywara@arm.com>
+ bh=E8p3UdfSArXFmlIeHMaV0UWf0YNcTHf31Kz/oRQvB2Y=; b=zVUrpqwuExLbRzFnf+UaLfQDcY
+ s3DEY+UmyVh4fEHhSoDvH8+Kb5byPdjmAW2sr3Ek4Am200e6jnu8tFdgQuFYf8/qf6E9pT85A8Ci0
+ EAt8wPrFRcN39OhVemEhtEWqkpSluKOtPIJEUy+PnSPdIxjeObeUhN5CLr1SiCeDqTmsXrMojX+5j
+ eqBT+PUzFjf8tIk8M9A9ygWRgaU0Lpd87piwzMKXG2rBXK76mcp0NUQKeWN63lEaHlJdQPLPN6Fgd
+ U2xSfoqWjdX0WGPXUHnVO1LwHCDCveWRyeSDBbtiQBc7wlyLH8RTDgTFmey7s/zeUWX3OC2pnnc12
+ vRkX+7Gw==;
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
+ id 1ljNxP-00Fa50-Cg; Wed, 19 May 2021 15:18:00 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 571B66135F;
+ Wed, 19 May 2021 15:17:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1621437478;
+ bh=c+IEVTunFe30w7ogB/IAN3huK2t9VfW9QwLl3VpCa08=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=nf1qUo57ru5boOQUeQi6aZRa+idhytrYYWQBsMIh0N76Pv9ZELRHmFnK01Xu3q2/6
+ MB6JrKgYdO2D6etejTV1zfK2BJmiS0XNkSz2f+HfWQmH2lc004fqqNkgn/vpcdAAgF
+ qepnKyQZPQrUSk13bwr0+u054K1h6PZmnGuo+Zh2zkmzPOyNdGSEqBqg902bo/Q+o4
+ +TjRt4gILLbdY/OhH1m8VuoRdoR2ZPzdN4r+RvOkNFWEI0NU/nEU0s2OEREzaEpSNC
+ 2qBgU0xveUp1R6FzjaCn1u/o4wsne77m8hqm0me9Lp/9gtqqAFkMe4fq13pICszSsR
+ tKh4WJyfdSrlw==
+Received: by mail-ed1-f41.google.com with SMTP id w12so8076093edx.1;
+ Wed, 19 May 2021 08:17:58 -0700 (PDT)
+X-Gm-Message-State: AOAM532ACFQg4c/gYJh2zvxmR2Cnbc2N14dtR3e3AZxQOCCGTzERNmae
+ F49aR6VdqiJmd/o3dtrE0kfuUxXrRnf4kW6Xtw==
+X-Google-Smtp-Source: ABdhPJwOYwVtRLx9sKZdict2H1FAMFQvZK2Ew7pbG3fTyjBtHO+tC9tIIgY6UaUnSE+9VfiPaZ5PHom5bkNsTthHsFs=
+X-Received: by 2002:a05:6402:124b:: with SMTP id
+ l11mr15226813edw.137.1621437476871; 
+ Wed, 19 May 2021 08:17:56 -0700 (PDT)
+MIME-Version: 1.0
+References: <20210512122346.9463-1-jbx6244@gmail.com>
+ <162101023435.2009214.882597722137585064.b4-ty@sntech.de>
+In-Reply-To: <162101023435.2009214.882597722137585064.b4-ty@sntech.de>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 19 May 2021 10:17:44 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLbumF-x8yAO2C5wTG5cDpVmgFdqADrEDguQ-ZidMj25g@mail.gmail.com>
+Message-ID: <CAL_JsqLbumF-x8yAO2C5wTG5cDpVmgFdqADrEDguQ-ZidMj25g@mail.gmail.com>
+Subject: Re: (subset) [PATCH v5 0/4] convert grf.txt to YAML
+To: Heiko Stuebner <heiko@sntech.de>
+Cc: Johan Jonker <jbx6244@gmail.com>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ devicetree@vger.kernel.org, 
+ Linus Walleij <linus.walleij@linaro.org>, linux-phy@lists.infradead.org, 
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Vinod <vkoul@kernel.org>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, David Wu <david.wu@rock-chips.com>, 
+ Liang Chen <cl@rock-chips.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Tao Huang <huangtao@rock-chips.com>, 
+ Elaine Zhang <zhangqing@rock-chips.com>, Jianqun Xu <jay.xu@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210519_034240_585497_A1EF10A1 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20210519_081759_486691_AB56B6AA 
+X-CRM114-Status: GOOD (  12.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,58 +102,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB PHY used in the Allwinner H616 SoC inherits some traits from its
-various predecessors: it has four full PHYs like the H3, needs some
-extra bits to be set like the H6, and puts SIDDQ on a different bit like
-the A100. Plus it needs this weird PHY2 quirk.
+On Fri, May 14, 2021 at 11:37 AM Heiko Stuebner <heiko@sntech.de> wrote:
+>
+> On Wed, 12 May 2021 14:23:42 +0200, Johan Jonker wrote:
+> > Changed V5:
+> >   changed compatibles for rk3066/rk3188
+> >   add rockchip-usb-phy.yaml
+> >   move and restyle grf nodes rk3066/rk3188
+> >   remove applied patches
+> >
+> > Changed V4:
+> >   revert separate schemas for each 'if' subset
+> >   add additionalProperties
+> >   move properties to top level
+> >
+> > [...]
+>
+> Applied, thanks!
+>
+> [2/4] dt-bindings: soc: rockchip: convert grf.txt to YAML
+>       commit: f2ffa8f9e32d38f5c37e3c61c5b02d434057f3db
 
-Name all those properties in a new config struct and assign a new
-compatible name to it.
+Patch 1 is a dependency of this, so now linux-next is broken.
 
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
----
- drivers/phy/allwinner/phy-sun4i-usb.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
-
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index ed7b9cc5a424..a55765ad7bad 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -994,6 +994,17 @@ static const struct sun4i_usb_phy_cfg sun50i_h6_cfg = {
- 	.missing_phys = BIT(1) | BIT(2),
- };
- 
-+static const struct sun4i_usb_phy_cfg sun50i_h616_cfg = {
-+	.num_phys = 4,
-+	.type = sun50i_h6_phy,
-+	.disc_thresh = 3,
-+	.phyctl_offset = REG_PHYCTL_A33,
-+	.dedicated_clocks = true,
-+	.phy0_dual_route = true,
-+	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
-+	.needs_phy2_siddq = true,
-+};
-+
- static const struct of_device_id sun4i_usb_phy_of_match[] = {
- 	{ .compatible = "allwinner,sun4i-a10-usb-phy", .data = &sun4i_a10_cfg },
- 	{ .compatible = "allwinner,sun5i-a13-usb-phy", .data = &sun5i_a13_cfg },
-@@ -1008,6 +1019,7 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
- 	{ .compatible = "allwinner,sun50i-a64-usb-phy",
- 	  .data = &sun50i_a64_cfg},
- 	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
-+	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, sun4i_usb_phy_of_match);
--- 
-2.17.5
-
+> [3/4] ARM: dts: rockchip: move and restyle grf nodes rk3066/rk3188
+>       commit: a082a4ba218457fd52256e4357184b58d3fcaa49
+> [4/4] arm64: dts: rename grf-gpio nodename in rk3328.dtsi
+>       commit: 19486fe587b8ed17daf87a6419b51e3a65ce565c
+>
+> Best regards,
+> --
+> Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
