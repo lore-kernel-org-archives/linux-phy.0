@@ -2,95 +2,81 @@ Return-Path: <SRS0=PcV7=KP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 14609C433ED
-	for <linux-phy@archiver.kernel.org>; Thu, 20 May 2021 00:06:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D58ABC43460
+	for <linux-phy@archiver.kernel.org>; Thu, 20 May 2021 13:52:07 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C8D84611C2
-	for <linux-phy@archiver.kernel.org>; Thu, 20 May 2021 00:06:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C8D84611C2
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 7F2B961057
+	for <linux-phy@archiver.kernel.org>; Thu, 20 May 2021 13:52:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7F2B961057
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=huawei.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TWutOvAAPP0KZK5ySOuPaixDvpYmMWrJ/fRm2k6arQo=; b=anao7UFYU+w8IVBc6npzImnRg
-	t6Lx0cKQE3uZlhoyG9hyAjxi7cs0dZRk0+1JLjvu+faMqlZ7rkt0gYqDof/rBJIjIblt/JSwwXN8T
-	lT+46BDmseEv3Olvl0ew9996GS+luXH0FvZTKQhNALSWkfG+pyjsAg3yNA423wdMBxwiGv5DDoLZ3
-	B5NLNylY/K/Y/b09iOrCcynYU8mRDBGmVUWeydURZt3BdPkscuZ42gEqaGEOnxNADVEt0oZ6N7ll7
-	UrrVlRm43jP8vs7qFmekVwP8aecXbgrTnY5SnkgajEimXl/L6obtROe0xGIAGnZCPVdwa7/g8ayeL
-	ol2hIzIzA==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=EcbTjfBkzh9syAkxf9LW5jAIng7lCe6hfK2ac2/8/Kw=; b=EMfsX5Rer78077Ie/UVLdaIAQP
+	nA7/leFuzmaqa7sgXDTV75WCgeS1N4bkxDvVkYL7ngxzbcgVckzZXNMQX6/9s3oz5No8lLzbrsc+A
+	HlsUCzLN9cbUJINtdBCR4pmSSIfsTRBFMwFHizRocmCZYVMS6TJCyLs+yOVQKMISke+lR/PdZBjoQ
+	u4p3JBlq8bXXeEatbPOfw/nn1KPdg5PMZ2FOH4xIpsTzN20ubcEsma0ba0ruDIwjPrFPqmREB4lJh
+	jKFQ7CdvMFQrOr7RPEb6frz62ZoOY1VPZSdEQYzYTI0KhbME+gRLK0CU4XVf86iuiGdZjkMhXkKTv
+	+DGQsUaw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
-	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1ljWCU-005POq-V0; Thu, 20 May 2021 00:06:07 +0000
+	by desiato.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ljj5p-001I8o-Rk; Thu, 20 May 2021 13:52:05 +0000
 Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
- by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1ljWCP-005PNo-EQ; Thu, 20 May 2021 00:06:02 +0000
+ by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1ljj5l-001I8A-Kr
+ for linux-phy@desiato.infradead.org; Thu, 20 May 2021 13:52:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
- :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=+/HHwpUG4DYqY1wOYcmevFTpDYTTWuP4aLIe9OEyOIE=; b=uqpW3vP8pURw3oP0YsYN+VhwSt
- R5/z8HVrcJxXMt+o0HlDNbUDnznfh7s2zP6vG0F0j4w9AMT0NnTvIpKlFdtBZul0Jz7CQ/i13aH3c
- M27qzhzijQlO5Txi1AMWniflvSREffjN0z1c0nBYg/WV9QOCKJqhELhj2TMMmqKSZeIrRoEwgAI13
- pXR08m+hXyFRGiMbItKelz0NRdm0V97ZqAaLw/bAr/iKp9qTibMruYjHH5ldVOqKF2ACCjWT2EQwg
- TQwXnBpEH7+XeqaaMSehxwohh9XIA9QOzRtMB7dPjhKeL3PtMAy/97AWXeVr6hll/OrYqW7RfYsMS
- HAPdwIMA==;
-Received: from mail-ot1-f48.google.com ([209.85.210.48])
+ d=infradead.org; s=bombadil.20210309; h=Content-Type:MIME-Version:Message-ID:
+ Date:Subject:CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=xlN3GWFfkJWEzf4YtU9O9h269bWWhABA4YjY9d163xo=; b=u87t1qq+I9lpZVpf7EWXaTNT5h
+ qMcxFKs/mOx6uanjp/vdbdGTwASR7KgEW0XZw0SPfv1GiCIyQll7ZnNOuV7R19Z6N7HH2IpKCvRxs
+ OPpw86XWbdZPEnDRrxozohZkmW0tPI39LfEkBdlhs5N94rLdAdB809v3uQBCAuGvlW7dD6jSfmkpu
+ yNeTV/JHexgdPTbKu4rjAGXDWW3zoe7UCYvbWoPx7vlzFG2bL+AT0ujrM8V/K3mfXovAeMaKWVivd
+ SVMGt1cBtNnpVxpD1GN72fiYGB33WQXtWuTqXTKYuq+7pss3yQZIBx/Ks2kiew3oAOwssLM9i0gr7
+ iKFvGV1Q==;
+Received: from szxga04-in.huawei.com ([45.249.212.190])
  by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1ljWCN-00FrJN-0G; Thu, 20 May 2021 00:06:00 +0000
-Received: by mail-ot1-f48.google.com with SMTP id
- 80-20020a9d08560000b0290333e9d2b247so2799750oty.7; 
- Wed, 19 May 2021 17:05:58 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=+/HHwpUG4DYqY1wOYcmevFTpDYTTWuP4aLIe9OEyOIE=;
- b=hw5XV0XUqXC7LHYIW1lDh0pukBTsv9uidaqGC1nVvOeaPFax9YY2JVC5pwxLs2rm/J
- r96vhhmFUB7b4kj/gqd2S+vNpYBY5Cz0TQHh1+nbOzfj7G833wRyFi6KExPNaYHYnmM5
- Z7OAbQphD8dx34H17FKhhPh3cHrHmsKfEbWSDf19HrVgHvhldKM62QHJ3Qs/Sp19yYmn
- 4we+7nXofQ843mkbkvvJ+ZTdQQ3Jk5GMWzWYJ8ECDG9JJjJnrR/DtSFVdlQzkqLvFucH
- 0qNQ/j2oG2zQcV7gxjKaslK2MKBF9tQu+pSQvg75IzJw3RUydRXoAHn1uTedxFq8MABq
- IgHA==
-X-Gm-Message-State: AOAM5330zVWNtuvzfT2T8Rb/0u0OSi/VVxhj7ZIEyVCbCWDHB6/mzHyF
- IyLW9uwVsTkrJ2RzcQdLqA==
-X-Google-Smtp-Source: ABdhPJw5gex1OFhEgIpWnHy7lFKkRi3NhLOnuaVuAAlbkZZf7bbRmy2hkqeJlyFMuVyUw1rpIxJDmQ==
-X-Received: by 2002:a9d:37e2:: with SMTP id x89mr1786329otb.352.1621469157717; 
- Wed, 19 May 2021 17:05:57 -0700 (PDT)
-Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id r10sm245097oic.4.2021.05.19.17.05.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 May 2021 17:05:56 -0700 (PDT)
-Received: (nullmailer pid 3927287 invoked by uid 1000);
- Thu, 20 May 2021 00:05:55 -0000
-Date: Wed, 19 May 2021 19:05:55 -0500
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: linux-kernel@vger.kernel.org, heiko@sntech.de,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, kishon@ti.com,
- devicetree@vger.kernel.org, robh+dt@kernel.org, vkoul@kernel.org
-Subject: Re: [PATCH v6 2/4] dt-bindings: phy: rename phy nodename in
- phy-rockchip-inno-usb2.yaml
-Message-ID: <20210520000555.GA3927257@robh.at.kernel.org>
-References: <20210518165658.12764-1-jbx6244@gmail.com>
- <20210518165658.12764-3-jbx6244@gmail.com>
+ id 1ljj5i-00GO8L-Op
+ for linux-phy@lists.infradead.org; Thu, 20 May 2021 13:52:00 +0000
+Received: from dggems702-chm.china.huawei.com (unknown [172.30.72.60])
+ by szxga04-in.huawei.com (SkyGuard) with ESMTP id 4FmB011ZLFzqTdb;
+ Thu, 20 May 2021 21:48:17 +0800 (CST)
+Received: from dggema769-chm.china.huawei.com (10.1.198.211) by
+ dggems702-chm.china.huawei.com (10.3.19.179) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.1.2176.2; Thu, 20 May 2021 21:51:48 +0800
+Received: from localhost (10.174.179.215) by dggema769-chm.china.huawei.com
+ (10.1.198.211) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Thu, 20
+ May 2021 21:51:47 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <kishon@ti.com>, <vkoul@kernel.org>, <yuehaibing@huawei.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH -next] phy: phy-twl4030-usb: use DEVICE_ATTR_RO macro
+Date: Thu, 20 May 2021 21:51:32 +0800
+Message-ID: <20210520135132.37628-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210518165658.12764-3-jbx6244@gmail.com>
+X-Originating-IP: [10.174.179.215]
+X-ClientProxiedBy: dggems704-chm.china.huawei.com (10.3.19.181) To
+ dggema769-chm.china.huawei.com (10.1.198.211)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210519_170559_067210_0D30DE89 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20210520_065158_984683_B35CBAD7 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,26 +93,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 18 May 2021 18:56:56 +0200, Johan Jonker wrote:
-> The pattern: "^(|usb-|usb2-|usb3-|pci-|pcie-|sata-)phy(@[0-9a-f,]+)*$"
-> in phy-provider.yaml has required "#phy-cells" for phy nodes.
-> The "phy-cells" in rockchip-inno-usb2 nodes are located in subnodes.
-> Rename the nodename to pattern "usb2phy@[0-9a-f]+$" to prevent
-> notifications. Remove unneeded "#phy-cells" from parent node.
-> Also sort example.
-> 
-> make ARCH=arm dtbs_check
-> DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
-> phy/phy-provider.yaml
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  .../devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml       | 11 +++--------
->  Documentation/devicetree/bindings/soc/rockchip/grf.yaml       |  4 ++--
->  2 files changed, 5 insertions(+), 10 deletions(-)
-> 
+Use DEVICE_ATTR_RO helper instead of plain DEVICE_ATTR,
+which makes the code a bit shorter and easier to read.
 
-Acked-by: Rob Herring <robh@kernel.org>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/phy/ti/phy-twl4030-usb.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
+index 812e5409d359..5771e2486a3b 100644
+--- a/drivers/phy/ti/phy-twl4030-usb.c
++++ b/drivers/phy/ti/phy-twl4030-usb.c
+@@ -544,8 +544,8 @@ static int twl4030_usb_ldo_init(struct twl4030_usb *twl)
+ 	return 0;
+ }
+ 
+-static ssize_t twl4030_usb_vbus_show(struct device *dev,
+-		struct device_attribute *attr, char *buf)
++static ssize_t vbus_show(struct device *dev,
++			 struct device_attribute *attr, char *buf)
+ {
+ 	struct twl4030_usb *twl = dev_get_drvdata(dev);
+ 	int ret = -EINVAL;
+@@ -557,7 +557,7 @@ static ssize_t twl4030_usb_vbus_show(struct device *dev,
+ 
+ 	return ret;
+ }
+-static DEVICE_ATTR(vbus, 0444, twl4030_usb_vbus_show, NULL);
++static DEVICE_ATTR_RO(vbus);
+ 
+ static irqreturn_t twl4030_usb_irq(int irq, void *_twl)
+ {
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
