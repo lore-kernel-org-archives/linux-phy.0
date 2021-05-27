@@ -2,77 +2,89 @@ Return-Path: <SRS0=IoTu=KW=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2C63BC4707F
-	for <linux-phy@archiver.kernel.org>; Thu, 27 May 2021 13:41:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C3868C47089
+	for <linux-phy@archiver.kernel.org>; Thu, 27 May 2021 14:51:35 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E7C4D6124B
-	for <linux-phy@archiver.kernel.org>; Thu, 27 May 2021 13:41:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E7C4D6124B
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
+	by mail.kernel.org (Postfix) with ESMTPS id 834DF60C40
+	for <linux-phy@archiver.kernel.org>; Thu, 27 May 2021 14:51:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 834DF60C40
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ci0h3eAUuKUk4oR8JxEW8OPqxmt1nvDYGMx00A1gx40=; b=yBY/XST+hiYXpjfUtKl2sEmi7J
-	q+xvJSg0i6689Uy/9RQ1kf84xuGS9SREt5HzLR0jruqpgLyNQjDC2MlgtwSriTRW6PQJcuP5QnUpr
-	Z1x2U1CWewqsJeZVCXsww/AP6A64pzaAvu1HsxdEx6Yra+FJg3fxR5ZsriqpXw+o/hr8H3MPnRZnq
-	nLa2gruoyCbv2HYm6FnMmxvFMlfxVORsU2wLr20XvzduocSNM9FYFVGs6P6OQAniIE2bian8qYA+l
-	UcBhjsQm369IuU4+9grU5jjjB2pkszoG3SbJ8l7PTUr8w+NvOpHQRfSDeTk3QX3DNDX4+UTcaisox
-	fftBXuvw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k7JPbup6OHoVZNgKPcxDJl9SUxjGBCSUT0QUlt3cpa8=; b=v9K/r1ceTVVKoQ
+	h6rtRYiigstuESCrqoE6xamX2z2Nf/uNQaqjoq9Z8YVh93pFZtDLScjNI6HFNS0O9MsrsCUSIqep/
+	yXo00PHR90qCIAd1jAxtW6LeP5YxPdGa3G+XKXoHguOAYXq1IhO5XHR59d3SIqYkpMPkoYY2TMNEp
+	XGDFq2phCnV1/4D6pRzqTpSVmF1qby7fSNTu3IpmSqdFds43D04EHSCQp6+0XpFc7UiHrrW6Vvg5u
+	3bnsVYDr5gyNUpTiWbFkFjtOVHqoMSsFxMkBOePq1VJUkykbFzpYQC8v267F+tGDMqY6UuF/n7vBu
+	OkQuic9K3u58Zc9w7HcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lmGGl-006N0d-VR; Thu, 27 May 2021 13:41:51 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1lmHME-006vt4-NX; Thu, 27 May 2021 14:51:34 +0000
+Received: from mail-oi1-f172.google.com ([209.85.167.172])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lmG5I-006HUV-Q7
- for linux-phy@lists.infradead.org; Thu, 27 May 2021 13:30:02 +0000
-Received: from [192.168.1.111] (91-157-208-71.elisa-laajakaista.fi
- [91.157.208.71])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 09864ED;
- Thu, 27 May 2021 15:29:57 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1622122199;
- bh=yR/grf3p5cSL4FQsJoHO8ZzmX5PWtfRjN/6uJPBLG88=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=NlhgSUinbel7MPx12HO9bd/P/4jf+w5eh2bVQ2Qb/bOL81/PiYqcuqnwoUWC8xBpV
- lLY0TaW80I6r5gwLIfhe0pfI6QQ5cfsg/luV8Nzpi+mjmKKM04fjvVV4bPTGG21R/4
- 6wDQ9T5TnA0Vabmq1aCNx5XPkyw83FShlhn7doi4=
-Subject: Re: [PATCH v2 13/18] media: ti: Add CSI2RX support for J721E
-To: Pratyush Yadav <p.yadav@ti.com>, Maxime Ripard <mripard@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Peter Ujfalusi <peter.ujfalusi@gmail.com>,
- Steve Longerbeam <slongerbeam@gmail.com>, Benoit Parrot <bparrot@ti.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- dmaengine@vger.kernel.org
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ id 1lmGvU-006kvK-7d
+ for linux-phy@lists.infradead.org; Thu, 27 May 2021 14:23:57 +0000
+Received: by mail-oi1-f172.google.com with SMTP id c3so901934oic.8
+ for <linux-phy@lists.infradead.org>; Thu, 27 May 2021 07:23:54 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
+ :message-id;
+ bh=1vMehXJ6oAYHbp4RF5sTG65I60stU8VCEuNRTkFfowk=;
+ b=f2Ot69Qodb18kyG/S7/89g3pfxUq/h2OekUw0qMM+9ZAAUJMrxLhqCcetKnVgoFtWI
+ Q9IOrhtsn+/2X1ERe5b1meuJCajybQlAAUqJnVAODKLjR4tl6ZOmnFkjaA3QMi34YWho
+ sALttMVTdH+yy7/w5KRCscqixF64Suw5uPb9M0SLoENIA4SGWckbKnD8W5OEA0XpZ0pQ
+ MCzi2rLCcEIoy5HRSIdIMsPrMlI3tlaFvvBiZzF72QugChX/bd0rATlkYHy7CHb3KwmK
+ DYoMwTp8W5CaQVs/54PgMEshAJIWpGnLavO/6lK66AT7Qo0iiyL097pN/nRmhTpumP9M
+ Yz4g==
+X-Gm-Message-State: AOAM531KdKSUVRyIjEGqojOGgFfB6Q/E4IedQRb7ipB1B8MXT9i/fvRq
+ KLtgqbWn90+oLYk4nZX84g==
+X-Google-Smtp-Source: ABdhPJwqCnMFuak9KEKSjV2tWB/d3DGPZ0evW9gOyvH6zbV1jKLsdfVChSwboF7IiV17kI71uxP3Pw==
+X-Received: by 2002:a05:6808:3d3:: with SMTP id
+ o19mr1434254oie.136.1622125433926; 
+ Thu, 27 May 2021 07:23:53 -0700 (PDT)
+Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id c18sm501578otm.1.2021.05.27.07.23.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 May 2021 07:23:50 -0700 (PDT)
+Received: (nullmailer pid 731786 invoked by uid 1000);
+ Thu, 27 May 2021 14:23:27 -0000
+From: Rob Herring <robh@kernel.org>
+To: Pratyush Yadav <p.yadav@ti.com>
+Cc: Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ devicetree@vger.kernel.org, Benoit Parrot <bparrot@ti.com>,
+ dmaengine@vger.kernel.org, Steve Longerbeam <slongerbeam@gmail.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org,
  Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+ Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, linux-phy@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>
+In-Reply-To: <20210526152308.16525-15-p.yadav@ti.com>
 References: <20210526152308.16525-1-p.yadav@ti.com>
- <20210526152308.16525-14-p.yadav@ti.com>
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Message-ID: <5e00444a-683f-b4fa-9156-4450ca4edaf6@ideasonboard.com>
-Date: Thu, 27 May 2021 16:29:57 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.8.1
-MIME-Version: 1.0
-In-Reply-To: <20210526152308.16525-14-p.yadav@ti.com>
-Content-Language: en-US
+ <20210526152308.16525-15-p.yadav@ti.com>
+Subject: Re: [PATCH v2 14/18] media: dt-bindings: Add DT bindings for TI J721E
+ CSI2RX driver
+Date: Thu, 27 May 2021 09:23:27 -0500
+Message-Id: <1622125407.764961.731785.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210527_063001_042664_A3A9E01C 
-X-CRM114-Status: GOOD (  16.90  )
+X-CRM114-CacheID: sfid-20210527_072356_312711_3F1D9D45 
+X-CRM114-Status: GOOD (  17.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,44 +96,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Pratyush,
-
-On 26/05/2021 18:23, Pratyush Yadav wrote:
+On Wed, 26 May 2021 20:53:04 +0530, Pratyush Yadav wrote:
 > TI's J721E uses the Cadence CSI2RX and DPHY peripherals to facilitate
-> capture over a CSI-2 bus.
-> 
-> The Cadence CSI2RX IP acts as a bridge between the TI specific parts and
-> the CSI-2 protocol parts. TI then has a wrapper on top of this bridge
-> called the SHIM layer. It takes in data from stream 0, repacks it, and
-> sends it to memory over PSI-L DMA.
-> 
-> This driver acts as the "front end" to V4L2 client applications. It
-> implements the required ioctls and buffer operations, passes the
-> necessary calls on to the bridge, programs the SHIM layer, and performs
-> DMA via the dmaengine API to finally return the data to a buffer
-> supplied by the application.
+> capture over a CSI-2 bus. The TI CSI2RX platform driver glues all the
+> parts together.
 > 
 > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> 
+> ---
+> 
+> Changes in v2:
+> - Rename to ti,j721e-csi2rx.yaml
+> - Add an entry in MAINTAINERS.
+> - Add a description for the binding.
+> - Change compatible to ti,j721e-csi2rx to make it SoC specific.
+> - Remove description from dmas, reg, power-domains.
+> - Remove a limit of 2 from #address-cells and #size-cells.
+> - Fix add ^ to csi-bridge subnode regex.
+> - Make ranges mandatory.
+> - Add unit address in example.
+> - Add a reference to cdns,csi2rx in csi-bridge subnode.
+> - Expand the example to include the csi-bridge subnode as well.
+> - Re-order subject prefixes.
+> 
+>  .../bindings/media/ti,j721e-csi2rx.yaml       | 101 ++++++++++++++++++
+>  MAINTAINERS                                   |   1 +
+>  2 files changed, 102 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/ti,j721e-csi2rx.yaml
+> 
 
-I noticed that my test app didn't work at all with this, and I also 
-wasn't able to use v4l2-ctl to set the format.
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
 
-At least for my test app the problem was that this driver doesn't 
-initialize the format at all. My app first calls VIDIOC_G_FMT with 
-v4l2_format.type == V4L2_BUF_TYPE_VIDEO_CAPTURE, then after the call 
-modifies the fields it wants to change and calls VIDIOC_S_FMT. This 
-failed, as G_FMT returned uninitialized fmt, i.e. type was 0, which my 
-app didn't set again.
+yamllint warnings/errors:
 
-I believe the driver should have an initial format, something that it 
-will accept if an app calls G_FMT and then S_FMT.
+dtschema/dtc warnings/errors:
+Unknown file referenced: [Errno 2] No such file or directory: '/usr/local/lib/python3.8/dist-packages/dtschema/schemas/media/cdns,csi2rx.yaml'
+xargs: dt-doc-validate: exited with status 255; aborting
+make[1]: *** Deleting file 'Documentation/devicetree/bindings/media/ti,j721e-csi2rx.example.dt.yaml'
+Unknown file referenced: [Errno 2] No such file or directory: '/usr/local/lib/python3.8/dist-packages/dtschema/schemas/media/cdns,csi2rx.yaml'
+make[1]: *** [scripts/Makefile.lib:380: Documentation/devicetree/bindings/media/ti,j721e-csi2rx.example.dt.yaml] Error 255
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:1416: dt_binding_check] Error 2
 
-  Tomi
+See https://patchwork.ozlabs.org/patch/1484096
+
+This check can fail if there are any dependencies. The base for a patch
+series is generally the most recent rc1.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit.
+
 
 -- 
 linux-phy mailing list
