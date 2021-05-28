@@ -5,49 +5,49 @@ X-Spam-Level:
 X-Spam-Status: No, score=-15.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=unavailable autolearn_force=no version=3.4.0
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 997FBC47087
-	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 06:44:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 43E78C4708E
+	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 07:17:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 25CF3613D4
-	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 06:44:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 25CF3613D4
+	by mail.kernel.org (Postfix) with ESMTPS id EC9C7611C9
+	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 07:17:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EC9C7611C9
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:Subject:
-	From:References:Cc:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=POtSD0q+YtrcQtJ5w/VbfA43tlYXK+7WvwkkFjODy4I=; b=ROHunHlqBLGnBAwjpkGy6yL4lf
-	TgvRBhuZyvzDT4bgn+Zb7o2d83y7wriU9gWzjB6ynSOZNfk80G73gLM9DLjCZX5efC+p/jvcjzNpD
-	jhSeUiLuoRQgROIuLjqRlZd1vb8s+Fo7Xmd7u02KM/h2ZmbzoO2CrmzQQmHPx74wyvy7qQPoXyjCA
-	z+Wi40E5Ofmmc5N5QZGH6mKVOhiihAO8htmhIsMLMNnVi1YgZLSU7mswiGFEqS3aOC4sumQlFrhoU
-	oyy/w19zSAGM5hHLgj0EC5gapeXJfInB5Y4404oc0eXCgq+964H3xhIXj/Dz6nCCje/g9jvIryoLB
-	ECJiA0Lw==;
+	bh=Wlz4xfVGaVonlJ/V1Z1tf10gI8uN+YcCT3Mn6kGXNnY=; b=00A1TKOnr71yaktOIkPvMJ0JZB
+	SJk7AAjW8WcweVsb6Ss2z8V2lLjHtEs3uKqHZkFyRa6UiSXH/JvQgRr19iLaBpzbINZFRL4gMD+JU
+	tpl9E67gAP5pxKoatUkvGAvc0sW5O7rvy+FqijKXHqB+s0PWp+l7HPv14bl3S5DKKKlyYZ5Ynw8ZR
+	I+wDhq9YWDudppq/ePDkJCMBbbRQS9sffAar0On4RnnAVrSEEXR6sfE64OjS3E6opwCMWpJOswLBe
+	lwfgE2SfIghotxwpGheB+PZkO4sH8V0DnbaHkIBuOo7nYXCuXeHy/TruwBPo4RbzOtYN0QGHKHCYy
+	0LG+Bp6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lmWEo-00ChMW-KY; Fri, 28 May 2021 06:44:54 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1lmWjy-00CuhR-GJ; Fri, 28 May 2021 07:17:06 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lmWEi-00ChKP-U6
- for linux-phy@lists.infradead.org; Fri, 28 May 2021 06:44:53 +0000
+ id 1lmWjw-00CufD-7U
+ for linux-phy@lists.infradead.org; Fri, 28 May 2021 07:17:05 +0000
 Received: from [192.168.1.111] (91-157-208-71.elisa-laajakaista.fi
  [91.157.208.71])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 57E1D8C7;
- Fri, 28 May 2021 08:44:46 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id D034D8C7;
+ Fri, 28 May 2021 09:16:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1622184287;
- bh=8iafTruYlTPcuzhTxWfAHVoehPZpu5bhMZEgahfJlLw=;
- h=To:Cc:References:From:Subject:Date:In-Reply-To:From;
- b=nfc7s4rHvEsaYjalxos3+r1ZPGBOc//BIv1gwkoDeTHXhKeWqd4SJTaI61gNeGaTz
- L85FBYKY7a5AHD3n8Pt98VNoK3I2qrnh1wZj2VgMPZPchGyliBWbK1psXZDxj/EpO9
- hHutshhHOrmO7U57OD6gQ2qfEBRMOB8ZteoDcaeg=
+ s=mail; t=1622186220;
+ bh=CrcGIprNiWYjyNBEAjRVKsmiWp0B7Zru8OKtl8SwMMk=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=A0eMB83vn68dWs7oY99yf0EZalzsYf95dAS70wN57DUz9ssEnwPExUddDg/5/qlvg
+ 1qDRHuQcYJ5YkG9lvGraoXFdT2OEEHmRnlYp3OTJVoCvSa6weUV8pl+eL36HnVc4f4
+ c21rik+TaQd1LNBve6I7psWrPHyNnHuZvSrfQ9kw=
+Subject: Re: [PATCH v2 10/18] media: cadence: csi2rx: Populate subdev devnode
 To: Pratyush Yadav <p.yadav@ti.com>, Maxime Ripard <mripard@kernel.org>,
  Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
@@ -60,20 +60,18 @@ Cc: Vignesh Raghavendra <vigneshr@ti.com>,
  Chunfeng Yun <chunfeng.yun@mediatek.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 References: <20210526152308.16525-1-p.yadav@ti.com>
- <20210526152308.16525-6-p.yadav@ti.com>
+ <20210526152308.16525-11-p.yadav@ti.com>
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: Re: [PATCH v2 05/18] media: ov5640: Use runtime PM to control sensor
- power
-Message-ID: <72352182-66ac-121e-ab09-da52af1b7581@ideasonboard.com>
-Date: Fri, 28 May 2021 09:44:45 +0300
+Message-ID: <9c38a72c-18e8-1e54-b3b4-85ff5d47857a@ideasonboard.com>
+Date: Fri, 28 May 2021 10:16:58 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.8.1
 MIME-Version: 1.0
-In-Reply-To: <20210526152308.16525-6-p.yadav@ti.com>
+In-Reply-To: <20210526152308.16525-11-p.yadav@ti.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210527_234449_153758_0DA73183 
-X-CRM114-Status: GOOD (  39.68  )
+X-CRM114-CacheID: sfid-20210528_001704_469410_08F3DDAB 
+X-CRM114-Status: GOOD (  16.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,306 +88,38 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/05/2021 18:22, Pratyush Yadav wrote:
-> Calling s_power subdev callback is discouraged. Instead, the subdevs
-> should use runtime PM to control its power. Use runtime PM callbacks to
-> control sensor power. The pm counter is incremented when the stream is
-> started and decremented when the stream is stopped.
-> 
-> Refactor s_stream() a bit to make this new control flow easier. Add a
-> helper to choose whether mipi or dvp set_stream needs to be called. The
-> logic flow is also changed to make it a bit clearer.
+On 26/05/2021 18:23, Pratyush Yadav wrote:
+> The devnode can be used by media-ctl and other userspace tools to
+> perform configurations on the subdev. Without it, media-ctl returns
+> ENOENT when setting format on the sensor subdev.
 > 
 > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> 
 > ---
 > 
-> Changes in v2:
-> - New in v2.
+> (no changes since v1)
 > 
->   drivers/media/i2c/Kconfig  |   2 +-
->   drivers/media/i2c/ov5640.c | 124 +++++++++++++++++++++++--------------
->   2 files changed, 77 insertions(+), 49 deletions(-)
+>   drivers/media/platform/cadence/cdns-csi2rx.c | 1 +
+>   1 file changed, 1 insertion(+)
 > 
-> diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-> index 462c0e059754..5588fc1cc14a 100644
-> --- a/drivers/media/i2c/Kconfig
-> +++ b/drivers/media/i2c/Kconfig
-> @@ -914,7 +914,7 @@ config VIDEO_OV2740
+> diff --git a/drivers/media/platform/cadence/cdns-csi2rx.c b/drivers/media/platform/cadence/cdns-csi2rx.c
+> index 1df21f462f3c..49bed63d5faa 100644
+> --- a/drivers/media/platform/cadence/cdns-csi2rx.c
+> +++ b/drivers/media/platform/cadence/cdns-csi2rx.c
+> @@ -613,6 +613,7 @@ static int csi2rx_probe(struct platform_device *pdev)
+>   	csi2rx->pads[CSI2RX_PAD_SINK].flags = MEDIA_PAD_FL_SINK;
+>   	for (i = CSI2RX_PAD_SOURCE_STREAM0; i < CSI2RX_PAD_MAX; i++)
+>   		csi2rx->pads[i].flags = MEDIA_PAD_FL_SOURCE;
+> +	csi2rx->subdev.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
 >   
->   config VIDEO_OV5640
->   	tristate "OmniVision OV5640 sensor support"
-> -	depends on OF
-> +	depends on OF && PM
->   	depends on GPIOLIB && VIDEO_V4L2 && I2C
->   	select MEDIA_CONTROLLER
->   	select VIDEO_V4L2_SUBDEV_API
-> diff --git a/drivers/media/i2c/ov5640.c b/drivers/media/i2c/ov5640.c
-> index 5b9cc71df473..4ed5758e2398 100644
-> --- a/drivers/media/i2c/ov5640.c
-> +++ b/drivers/media/i2c/ov5640.c
-> @@ -15,6 +15,7 @@
->   #include <linux/init.h>
->   #include <linux/module.h>
->   #include <linux/of_device.h>
-> +#include <linux/pm_runtime.h>
->   #include <linux/regulator/consumer.h>
->   #include <linux/slab.h>
->   #include <linux/types.h>
-> @@ -238,8 +239,6 @@ struct ov5640_dev {
->   	/* lock to protect all members below */
->   	struct mutex lock;
->   
-> -	int power_count;
-> -
->   	struct v4l2_mbus_framefmt fmt;
->   	bool pending_fmt_change;
->   
-> @@ -1277,6 +1276,14 @@ static int ov5640_set_stream_mipi(struct ov5640_dev *sensor, bool on)
->   				on ? 0x00 : 0x0f);
->   }
->   
-> +static int ov5640_set_stream(struct ov5640_dev *sensor, bool on)
-> +{
-> +	if (sensor->ep.bus_type == V4L2_MBUS_CSI2_DPHY)
-> +		return ov5640_set_stream_mipi(sensor, on);
-> +	else
-> +		return ov5640_set_stream_dvp(sensor, on);
-> +}
-> +
->   static int ov5640_get_sysclk(struct ov5640_dev *sensor)
->   {
->   	 /* calculate sysclk */
-> @@ -2155,37 +2162,6 @@ static int ov5640_set_power(struct ov5640_dev *sensor, bool on)
->   
->   /* --------------- Subdev Operations --------------- */
->   
-> -static int ov5640_s_power(struct v4l2_subdev *sd, int on)
-> -{
-> -	struct ov5640_dev *sensor = to_ov5640_dev(sd);
-> -	int ret = 0;
-> -
-> -	mutex_lock(&sensor->lock);
-> -
-> -	/*
-> -	 * If the power count is modified from 0 to != 0 or from != 0 to 0,
-> -	 * update the power state.
-> -	 */
-> -	if (sensor->power_count == !on) {
-> -		ret = ov5640_set_power(sensor, !!on);
-> -		if (ret)
-> -			goto out;
-> -	}
-> -
-> -	/* Update the power count. */
-> -	sensor->power_count += on ? 1 : -1;
-> -	WARN_ON(sensor->power_count < 0);
-> -out:
-> -	mutex_unlock(&sensor->lock);
-> -
-> -	if (on && !ret && sensor->power_count == 1) {
-> -		/* restore controls */
-> -		ret = v4l2_ctrl_handler_setup(&sensor->ctrls.handler);
-> -	}
-> -
-> -	return ret;
-> -}
-> -
->   static int ov5640_try_frame_interval(struct ov5640_dev *sensor,
->   				     struct v4l2_fract *fi,
->   				     u32 width, u32 height)
-> @@ -2681,6 +2657,7 @@ static int ov5640_s_ctrl(struct v4l2_ctrl *ctrl)
->   {
->   	struct v4l2_subdev *sd = ctrl_to_sd(ctrl);
->   	struct ov5640_dev *sensor = to_ov5640_dev(sd);
-> +	struct device *dev = &sensor->i2c_client->dev;
->   	int ret;
->   
->   	/* v4l2_ctrl_lock() locks our own mutex */
-> @@ -2690,7 +2667,7 @@ static int ov5640_s_ctrl(struct v4l2_ctrl *ctrl)
->   	 * not apply any controls to H/W at this time. Instead
->   	 * the controls will be restored right after power-up.
->   	 */
-> -	if (sensor->power_count == 0)
-> +	if (pm_runtime_suspended(dev))
->   		return 0;
->   
->   	switch (ctrl->id) {
-> @@ -2939,39 +2916,56 @@ static int ov5640_enum_mbus_code(struct v4l2_subdev *sd,
->   static int ov5640_s_stream(struct v4l2_subdev *sd, int enable)
->   {
->   	struct ov5640_dev *sensor = to_ov5640_dev(sd);
-> +	struct device *dev = &sensor->i2c_client->dev;
->   	int ret = 0;
->   
->   	mutex_lock(&sensor->lock);
->   
-> -	if (sensor->streaming == !enable) {
-> -		if (enable && sensor->pending_mode_change) {
-> +	if (sensor->streaming == enable)
-> +		goto out;
-> +
-> +	if (enable) {
-> +		ret = pm_runtime_get_sync(dev);
-> +		if (ret < 0) {
-> +			pm_runtime_put_noidle(dev);
-> +			goto out;
-> +		}
-
-There now seems to be a function to do the above steps: 
-pm_runtime_resume_and_get.
-
-> +
-> +		if (sensor->pending_mode_change) {
->   			ret = ov5640_set_mode(sensor);
->   			if (ret)
-> -				goto out;
-> +				goto put_pm;
->   		}
->   
-> -		if (enable && sensor->pending_fmt_change) {
-> +		if (sensor->pending_fmt_change) {
->   			ret = ov5640_set_framefmt(sensor, &sensor->fmt);
->   			if (ret)
-> -				goto out;
-> +				goto put_pm;
->   			sensor->pending_fmt_change = false;
->   		}
->   
-> -		if (sensor->ep.bus_type == V4L2_MBUS_CSI2_DPHY)
-> -			ret = ov5640_set_stream_mipi(sensor, enable);
-> -		else
-> -			ret = ov5640_set_stream_dvp(sensor, enable);
-> +		ret = ov5640_set_stream(sensor, enable);
-> +		if (ret)
-> +			goto put_pm;
-> +	} else {
-> +		ret = ov5640_set_stream(sensor, enable);
-
-Instead of using "enable" here (and in the enable path above), just use 
-true/false. It'll be more readable.
-
-> +		if (ret)
-> +			goto out;
->   
-> -		if (!ret)
-> -			sensor->streaming = enable;
-> +		pm_runtime_put(dev);
->   	}
-> +
-> +	sensor->streaming = enable;
-> +	goto out;
-> +
-> +put_pm:
-> +	pm_runtime_put(dev);
->   out:
->   	mutex_unlock(&sensor->lock);
->   	return ret;
->   }
-
-The flow in the above function is quite confusing. I think you should 
-either 1) have a separate error paths via gotos and a return 0 before 
-the error labels, or 2) common error and success path, without that 
-final "goto out" you have above.
-
-Maybe if you move the code in the "if (enable) {} else {}" to the 
-ov5640_set_stream(), the flow will be easier to manage.
-
->   
->   static const struct v4l2_subdev_core_ops ov5640_core_ops = {
-> -	.s_power = ov5640_s_power,
->   	.log_status = v4l2_ctrl_subdev_log_status,
->   	.subscribe_event = v4l2_ctrl_subdev_subscribe_event,
->   	.unsubscribe_event = v4l2_event_subdev_unsubscribe,
-> @@ -3037,6 +3031,29 @@ static int ov5640_check_chip_id(struct ov5640_dev *sensor)
->   	return ret;
->   }
->   
-> +static int ov5640_suspend(struct device *dev)
-> +{
-> +	struct i2c_client *client = to_i2c_client(dev);
-> +	struct v4l2_subdev *subdev = i2c_get_clientdata(client);
-> +	struct ov5640_dev *sensor = to_ov5640_dev(subdev);
-> +
-> +	return ov5640_set_power(sensor, false);
-> +}
-> +
-> +static int ov5640_resume(struct device *dev)
-> +{
-> +	struct i2c_client *client = to_i2c_client(dev);
-> +	struct v4l2_subdev *subdev = i2c_get_clientdata(client);
-> +	struct ov5640_dev *sensor = to_ov5640_dev(subdev);
-> +	int ret = 0;
-> +
-> +	ret = ov5640_set_power(sensor, true);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return __v4l2_ctrl_handler_setup(&sensor->ctrls.handler);
-> +}
-> +
->   static int ov5640_probe(struct i2c_client *client)
->   {
->   	struct device *dev = &client->dev;
-> @@ -3162,13 +3179,17 @@ static int ov5640_probe(struct i2c_client *client)
->   	if (ret)
->   		goto entity_cleanup;
->   
-> +	pm_runtime_enable(dev);
-> +	pm_runtime_set_suspended(dev);
-> +
->   	ret = v4l2_async_register_subdev_sensor(&sensor->sd);
->   	if (ret)
-> -		goto free_ctrls;
-> +		goto error_pm;
->   
->   	return 0;
->   
-> -free_ctrls:
-> +error_pm:
-> +	pm_runtime_disable(dev);
-
-The label style used here seems to be the 
-"label-tells-what-will-be-done", so I think instead of "error_pm", it 
-should be, perhaps, "pm_disable".
-
->   	v4l2_ctrl_handler_free(&sensor->ctrls.handler);
->   entity_cleanup:
->   	media_entity_cleanup(&sensor->sd.entity);
-> @@ -3178,17 +3199,23 @@ static int ov5640_probe(struct i2c_client *client)
->   
->   static int ov5640_remove(struct i2c_client *client)
->   {
-> +	struct device *dev = &client->dev;
->   	struct v4l2_subdev *sd = i2c_get_clientdata(client);
->   	struct ov5640_dev *sensor = to_ov5640_dev(sd);
->   
->   	v4l2_async_unregister_subdev(&sensor->sd);
->   	media_entity_cleanup(&sensor->sd.entity);
-> +	pm_runtime_disable(dev);
->   	v4l2_ctrl_handler_free(&sensor->ctrls.handler);
->   	mutex_destroy(&sensor->lock);
->   
->   	return 0;
->   }
->   
-> +static const struct dev_pm_ops ov5640_pm_ops = {
-> +	SET_RUNTIME_PM_OPS(ov5640_suspend, ov5640_resume, NULL)
-> +};
-> +
->   static const struct i2c_device_id ov5640_id[] = {
->   	{"ov5640", 0},
->   	{},
-> @@ -3205,6 +3232,7 @@ static struct i2c_driver ov5640_i2c_driver = {
->   	.driver = {
->   		.name  = "ov5640",
->   		.of_match_table	= ov5640_dt_ids,
-> +		.pm = &ov5640_pm_ops,
->   	},
->   	.id_table = ov5640_id,
->   	.probe_new = ov5640_probe,
+>   	ret = media_entity_pads_init(&csi2rx->subdev.entity, CSI2RX_PAD_MAX,
+>   				     csi2rx->pads);
 > 
 
+I don't understand this one. There's nothing to configure in cdns-csi2rx 
+from userspace, as far as I can see, so why is the dev node needed? And 
+why would the lack of csi2rx dev node cause sensor subdev config to fail?
+
+  Tomi
 
 -- 
 linux-phy mailing list
