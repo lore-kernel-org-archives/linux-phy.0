@@ -4,75 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-15.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6B837C4708C
-	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 07:23:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A72B0C4708C
+	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 07:24:25 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1F64E61358
-	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 07:23:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1F64E61358
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
+	by mail.kernel.org (Postfix) with ESMTPS id 51BC9611C9
+	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 07:24:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 51BC9611C9
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:Subject:
-	From:References:Cc:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=T7E9IUMPJkOfbMSAJopUFk4JNkDagj8p7vY/rNwRXbI=; b=1ZtMuAK57yW6TTpEkBitefWhZw
-	1EJAgxpcLF8/rWU1aS5nie7Ov34R0M6EHXiue68++Fao5WhN5Byqle8t8bSb7SCcEUUWQLeTQqC19
-	h0vOQl/hO8qntXEh8x5kcauKfHovfqndOhpD7NL0r9VS0cnlj3yB/iNEiPXma1X1BN9mR33Yvt/zv
-	Y4SunH4p+Q/8jEVOU7sw1BSBKQtawlvPihCV4oau2WgXUz0W4P+VUACz1C8B7qI8yW4Z2PzMedj9a
-	41wQe4xOXo5zWZXrFrpZtj3GEikjdZDv5YQYmmlfV/NrGCW36wUdiAKE0pf8moM7SNf8dnFD40uZz
-	q+/TJxQQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5AIVSxMDa1Renu1vOE1kocZbiI8OYhl/tpf5agfbshs=; b=la3oWpM78cyOS8
+	C1wpP9p8Z+nzf+IW1b53XXzV2YFzsSmIs8zTIYhW7vxCwVPNeLh60yniufKtY7VFNvYOSBVNx6ezW
+	x3h7OQLW3ya0Fgfd600H0aB5zJ06rgw/g8Qt5QxhyFoplZV19ZUNDIVZFhnPHlqdjk5JQE6Xg+N5o
+	ySMM9lBofsKTrrekcfz788yKpBJOIte2LRMIFR5q0EnexEOHhrb7ZEF9TgcRVhd68DH/XlZnWEoOR
+	BT57OKbUVqWEuwvIMu6OpYNhQTjnThl7TCW78Jgm8nyG1esEHB5HpbKn8lh+cjx3ckK8yzRih3hqB
+	VXkjyVa+X/bmoPJENKgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lmWpn-00CxMi-LE; Fri, 28 May 2021 07:23:07 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1lmWr2-00Cxw9-RL; Fri, 28 May 2021 07:24:24 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lmWpk-00CxK3-BY
- for linux-phy@lists.infradead.org; Fri, 28 May 2021 07:23:05 +0000
-Received: from [192.168.1.111] (91-157-208-71.elisa-laajakaista.fi
- [91.157.208.71])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id B54078C7;
- Fri, 28 May 2021 09:23:00 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1622186582;
- bh=OPKpiNkI7EGdOfEcOnlnMpofa22CpOcKc0Jo6JviSDg=;
- h=To:Cc:References:From:Subject:Date:In-Reply-To:From;
- b=FzuGPMehtGZleUXxI3tRKvFZsYqki6dSuO0FugzpAJ78NnD9Z8/sZlnzmum5YyBO8
- TMHwkdR1eT4IZhXuioEZEZ03ciZMH20dKC3wsgZKGMv4gz/RqPTEqdISX7PQBQR90o
- NXusfAqtSVqPp6qqzyHDwJRAwYq/1WmMOR2ZDM8o=
-To: Pratyush Yadav <p.yadav@ti.com>, Maxime Ripard <mripard@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Peter Ujfalusi <peter.ujfalusi@gmail.com>,
- Steve Longerbeam <slongerbeam@gmail.com>, Benoit Parrot <bparrot@ti.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- dmaengine@vger.kernel.org
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ id 1lmWqp-00CxpP-83
+ for linux-phy@lists.infradead.org; Fri, 28 May 2021 07:24:12 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 14S7O5Sk130782;
+ Fri, 28 May 2021 02:24:05 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1622186645;
+ bh=nu/t+eRoAY6NtRobRU6f3fX1UwivEdiSbjMIVTJEhRI=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=otvU6YfVvMb0VmTfNfLokxvoHGITg5Yqi+Bg+rqneUxQeQU2hHXR1nsy8ADTT+ODj
+ UKffTmjq+TT/E03XgDbRKrsSR7kdKMa9jK1D8xYlG2KiTEailf5y6KtRIkpnTc1V3R
+ BGUBsVhf6bxHEjX7l5zTRtw1lu6o95vdcNLI32pA=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 14S7O5U8036400
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 28 May 2021 02:24:05 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Fri, 28
+ May 2021 02:24:05 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
+ Frontend Transport; Fri, 28 May 2021 02:24:05 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 14S7O4dV114575;
+ Fri, 28 May 2021 02:24:04 -0500
+Date: Fri, 28 May 2021 12:54:03 +0530
+From: Pratyush Yadav <p.yadav@ti.com>
+To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+CC: Maxime Ripard <mripard@kernel.org>, Mauro Carvalho Chehab
+ <mchehab@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+ Steve Longerbeam <slongerbeam@gmail.com>, Benoit
+ Parrot <bparrot@ti.com>, <linux-media@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <dmaengine@vger.kernel.org>, Vignesh
+ Raghavendra <vigneshr@ti.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v2 10/18] media: cadence: csi2rx: Populate subdev devnode
+Message-ID: <20210528072401.2vdrtjdiepnr72vv@ti.com>
 References: <20210526152308.16525-1-p.yadav@ti.com>
- <20210526152308.16525-7-p.yadav@ti.com>
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: Re: [PATCH v2 06/18] media: cadence: csi2rx: Add external DPHY support
-Message-ID: <cebc1dc8-3e7a-16d2-a59a-6963f5886b64@ideasonboard.com>
-Date: Fri, 28 May 2021 10:23:00 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.8.1
+ <20210526152308.16525-11-p.yadav@ti.com>
+ <9c38a72c-18e8-1e54-b3b4-85ff5d47857a@ideasonboard.com>
 MIME-Version: 1.0
-In-Reply-To: <20210526152308.16525-7-p.yadav@ti.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <9c38a72c-18e8-1e54-b3b4-85ff5d47857a@ideasonboard.com>
+User-Agent: NeoMutt/20171215
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210528_002304_578207_59520125 
-X-CRM114-Status: GOOD (  29.37  )
+X-CRM114-CacheID: sfid-20210528_002411_399435_20350C01 
+X-CRM114-Status: GOOD (  21.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,155 +98,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/05/2021 18:22, Pratyush Yadav wrote:
-> Some platforms like TI's J721E can have the CSI2RX paired with an
-> external DPHY. Add support to enable and configure the DPHY using the
-> generic PHY framework.
+On 28/05/21 10:16AM, Tomi Valkeinen wrote:
+> On 26/05/2021 18:23, Pratyush Yadav wrote:
+> > The devnode can be used by media-ctl and other userspace tools to
+> > perform configurations on the subdev. Without it, media-ctl returns
+> > ENOENT when setting format on the sensor subdev.
+> > 
+> > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> > ---
+> > 
+> > (no changes since v1)
+> > 
+> >   drivers/media/platform/cadence/cdns-csi2rx.c | 1 +
+> >   1 file changed, 1 insertion(+)
+> > 
+> > diff --git a/drivers/media/platform/cadence/cdns-csi2rx.c b/drivers/media/platform/cadence/cdns-csi2rx.c
+> > index 1df21f462f3c..49bed63d5faa 100644
+> > --- a/drivers/media/platform/cadence/cdns-csi2rx.c
+> > +++ b/drivers/media/platform/cadence/cdns-csi2rx.c
+> > @@ -613,6 +613,7 @@ static int csi2rx_probe(struct platform_device *pdev)
+> >   	csi2rx->pads[CSI2RX_PAD_SINK].flags = MEDIA_PAD_FL_SINK;
+> >   	for (i = CSI2RX_PAD_SOURCE_STREAM0; i < CSI2RX_PAD_MAX; i++)
+> >   		csi2rx->pads[i].flags = MEDIA_PAD_FL_SOURCE;
+> > +	csi2rx->subdev.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
+> >   	ret = media_entity_pads_init(&csi2rx->subdev.entity, CSI2RX_PAD_MAX,
+> >   				     csi2rx->pads);
+> > 
 > 
-> Get the pixel rate and bpp from the subdev and pass them on to the DPHY
-> along with the number of lanes. All other settings are left to their
-> default values.
-> 
-> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> 
-> ---
-> 
-> Changes in v2:
-> - Use phy_pm_runtime_get_sync() and phy_pm_runtime_put() before making
->    calls to set PHY mode, etc. to make sure it is ready.
-> 
->   drivers/media/platform/cadence/cdns-csi2rx.c | 158 +++++++++++++++++--
->   1 file changed, 148 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/media/platform/cadence/cdns-csi2rx.c b/drivers/media/platform/cadence/cdns-csi2rx.c
-> index c68a3eac62cd..459326de2eff 100644
-> --- a/drivers/media/platform/cadence/cdns-csi2rx.c
-> +++ b/drivers/media/platform/cadence/cdns-csi2rx.c
-> @@ -30,6 +30,12 @@
->   #define CSI2RX_STATIC_CFG_DLANE_MAP(llane, plane)	((plane) << (16 + (llane) * 4))
->   #define CSI2RX_STATIC_CFG_LANES_MASK			GENMASK(11, 8)
->   
-> +#define CSI2RX_DPHY_LANE_CTRL_REG		0x40
-> +#define CSI2RX_DPHY_CL_RST			BIT(16)
-> +#define CSI2RX_DPHY_DL_RST(i)			BIT((i) + 12)
-> +#define CSI2RX_DPHY_CL_EN			BIT(4)
-> +#define CSI2RX_DPHY_DL_EN(i)			BIT(i)
-> +
->   #define CSI2RX_STREAM_BASE(n)		(((n) + 1) * 0x100)
->   
->   #define CSI2RX_STREAM_CTRL_REG(n)		(CSI2RX_STREAM_BASE(n) + 0x000)
-> @@ -54,6 +60,11 @@ enum csi2rx_pads {
->   	CSI2RX_PAD_MAX,
->   };
->   
-> +struct csi2rx_fmt {
-> +	u32				code;
-> +	u8				bpp;
-> +};
-> +
->   struct csi2rx_priv {
->   	struct device			*dev;
->   	unsigned int			count;
-> @@ -85,6 +96,52 @@ struct csi2rx_priv {
->   	int				source_pad;
->   };
->   
-> +static const struct csi2rx_fmt formats[] = {
-> +	{
-> +		.code	= MEDIA_BUS_FMT_YUYV8_2X8,
-> +		.bpp	= 16,
-> +	},
-> +	{
-> +		.code	= MEDIA_BUS_FMT_UYVY8_2X8,
-> +		.bpp	= 16,
-> +	},
-> +	{
-> +		.code	= MEDIA_BUS_FMT_YVYU8_2X8,
-> +		.bpp	= 16,
-> +	},
-> +	{
-> +		.code	= MEDIA_BUS_FMT_VYUY8_2X8,
-> +		.bpp	= 16,
-> +	},
-> +};
-> +
-> +static u8 csi2rx_get_bpp(u32 code)
-> +{
-> +	int i;
-> +
-> +	for (i = 0; i < ARRAY_SIZE(formats); i++) {
-> +		if (formats[i].code == code)
-> +			return formats[i].bpp;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static s64 csi2rx_get_pixel_rate(struct csi2rx_priv *csi2rx)
-> +{
-> +	struct v4l2_ctrl *ctrl;
-> +
-> +	ctrl = v4l2_ctrl_find(csi2rx->source_subdev->ctrl_handler,
-> +			      V4L2_CID_PIXEL_RATE);
-> +	if (!ctrl) {
-> +		dev_err(csi2rx->dev, "no pixel rate control in subdev: %s\n",
-> +			csi2rx->source_subdev->name);
-> +		return -EINVAL;
-> +	}
-> +
-> +	return v4l2_ctrl_g_ctrl_int64(ctrl);
-> +}
-> +
->   static inline
->   struct csi2rx_priv *v4l2_subdev_to_csi2rx(struct v4l2_subdev *subdev)
->   {
-> @@ -101,6 +158,66 @@ static void csi2rx_reset(struct csi2rx_priv *csi2rx)
->   	writel(0, csi2rx->base + CSI2RX_SOFT_RESET_REG);
->   }
->   
-> +static int csi2rx_configure_external_dphy(struct csi2rx_priv *csi2rx)
-> +{
-> +	union phy_configure_opts opts = { };
-> +	struct phy_configure_opts_mipi_dphy *cfg = &opts.mipi_dphy;
-> +	struct v4l2_subdev_format sd_fmt;
-> +	s64 pixel_rate;
-> +	int ret;
-> +	u8 bpp;
-> +	bool got_pm = true;
-> +
-> +	sd_fmt.which = V4L2_SUBDEV_FORMAT_ACTIVE;
-> +	sd_fmt.pad = 0;
-> +
-> +	ret = v4l2_subdev_call(csi2rx->source_subdev, pad, get_fmt, NULL,
-> +			       &sd_fmt);
-> +	if (ret)
-> +		return ret;
-> +
-> +	bpp = csi2rx_get_bpp(sd_fmt.format.code);
-> +	if (!bpp)
-> +		return -EINVAL;
-> +
-> +	pixel_rate = csi2rx_get_pixel_rate(csi2rx);
-> +	if (pixel_rate < 0)
-> +		return pixel_rate;
-> +
-> +	ret = phy_mipi_dphy_get_default_config(pixel_rate, bpp,
-> +					       csi2rx->num_lanes, cfg);
-> +	if (ret)
-> +		return ret;
+> I don't understand this one. There's nothing to configure in cdns-csi2rx
+> from userspace, as far as I can see, so why is the dev node needed? And why
+> would the lack of csi2rx dev node cause sensor subdev config to fail?
 
-I guess the above code works for now, but with multiple streams it 
-won't. There's no (single) pixel rate or bpp with multiple streams, and 
-the link freq is the one that needs to be used. There's 
-v4l2_get_link_freq() helper which makes it easier to support both pixel 
-rate and link freq.
+Sensor config does not fail. But when I run media-ctl to set the format 
+on /dev/media0, I get an error message that comes because the devnode 
+for the bridge does not exist. I was not 100% sure about this patch but 
+I figured if media-ctl expects it then it should be exposed.
 
-  Tomi
+I don't mind dropping this patch. Just want to make sure what the right 
+thing to do here is. Should every element of the pipeline have a devnode 
+or not?
+
+-- 
+Regards,
+Pratyush Yadav
+Texas Instruments Inc.
 
 -- 
 linux-phy mailing list
