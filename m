@@ -1,90 +1,78 @@
-Return-Path: <SRS0=IoTu=KW=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Ugb/=KX=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-15.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C3868C47089
-	for <linux-phy@archiver.kernel.org>; Thu, 27 May 2021 14:51:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 432B3C4708C
+	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 06:09:33 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 834DF60C40
-	for <linux-phy@archiver.kernel.org>; Thu, 27 May 2021 14:51:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 834DF60C40
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 9658F613D1
+	for <linux-phy@archiver.kernel.org>; Fri, 28 May 2021 06:09:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9658F613D1
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k7JPbup6OHoVZNgKPcxDJl9SUxjGBCSUT0QUlt3cpa8=; b=v9K/r1ceTVVKoQ
-	h6rtRYiigstuESCrqoE6xamX2z2Nf/uNQaqjoq9Z8YVh93pFZtDLScjNI6HFNS0O9MsrsCUSIqep/
-	yXo00PHR90qCIAd1jAxtW6LeP5YxPdGa3G+XKXoHguOAYXq1IhO5XHR59d3SIqYkpMPkoYY2TMNEp
-	XGDFq2phCnV1/4D6pRzqTpSVmF1qby7fSNTu3IpmSqdFds43D04EHSCQp6+0XpFc7UiHrrW6Vvg5u
-	3bnsVYDr5gyNUpTiWbFkFjtOVHqoMSsFxMkBOePq1VJUkykbFzpYQC8v267F+tGDMqY6UuF/n7vBu
-	OkQuic9K3u58Zc9w7HcA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=hFhAWzPEft/eAunaPh1f+IKps5L3t13skpbohsC9VZ4=; b=cyNU1bqeuniw5udpGFSVd1bLzH
+	Jb1/T/iHQJFdZtXnep/Xp2kJRrCkRcz2JAjxSZcGcxS/tpE1chCJ3cYtYGgPM2iJBTu7MaMgU60qS
+	rbUXKER5AjFaPxwJzCAzZj1RDgLcneW7Qrud2lG7A2E+k6jgDRRxgCpl0YatrT51ysfNRvyf//P60
+	QDkj7cgtBtybRu18ppGQDmTpgDS7toQJqo+9Y/5VkLIEQ5GihebUtvd71vB/08tJ4t61RfSBdVSBk
+	nXarsmwTTYbg7qayTkbm7tLESJtCUkupsKwDQ84nhp9aynFVkc/XY2o5zaaYXc7OY2R1sVwQqT3bu
+	FjtdEdFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lmHME-006vt4-NX; Thu, 27 May 2021 14:51:34 +0000
-Received: from mail-oi1-f172.google.com ([209.85.167.172])
+	id 1lmVga-00CTG5-4U; Fri, 28 May 2021 06:09:32 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lmGvU-006kvK-7d
- for linux-phy@lists.infradead.org; Thu, 27 May 2021 14:23:57 +0000
-Received: by mail-oi1-f172.google.com with SMTP id c3so901934oic.8
- for <linux-phy@lists.infradead.org>; Thu, 27 May 2021 07:23:54 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
- :message-id;
- bh=1vMehXJ6oAYHbp4RF5sTG65I60stU8VCEuNRTkFfowk=;
- b=f2Ot69Qodb18kyG/S7/89g3pfxUq/h2OekUw0qMM+9ZAAUJMrxLhqCcetKnVgoFtWI
- Q9IOrhtsn+/2X1ERe5b1meuJCajybQlAAUqJnVAODKLjR4tl6ZOmnFkjaA3QMi34YWho
- sALttMVTdH+yy7/w5KRCscqixF64Suw5uPb9M0SLoENIA4SGWckbKnD8W5OEA0XpZ0pQ
- MCzi2rLCcEIoy5HRSIdIMsPrMlI3tlaFvvBiZzF72QugChX/bd0rATlkYHy7CHb3KwmK
- DYoMwTp8W5CaQVs/54PgMEshAJIWpGnLavO/6lK66AT7Qo0iiyL097pN/nRmhTpumP9M
- Yz4g==
-X-Gm-Message-State: AOAM531KdKSUVRyIjEGqojOGgFfB6Q/E4IedQRb7ipB1B8MXT9i/fvRq
- KLtgqbWn90+oLYk4nZX84g==
-X-Google-Smtp-Source: ABdhPJwqCnMFuak9KEKSjV2tWB/d3DGPZ0evW9gOyvH6zbV1jKLsdfVChSwboF7IiV17kI71uxP3Pw==
-X-Received: by 2002:a05:6808:3d3:: with SMTP id
- o19mr1434254oie.136.1622125433926; 
- Thu, 27 May 2021 07:23:53 -0700 (PDT)
-Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id c18sm501578otm.1.2021.05.27.07.23.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 27 May 2021 07:23:50 -0700 (PDT)
-Received: (nullmailer pid 731786 invoked by uid 1000);
- Thu, 27 May 2021 14:23:27 -0000
-From: Rob Herring <robh@kernel.org>
-To: Pratyush Yadav <p.yadav@ti.com>
-Cc: Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- devicetree@vger.kernel.org, Benoit Parrot <bparrot@ti.com>,
- dmaengine@vger.kernel.org, Steve Longerbeam <slongerbeam@gmail.com>,
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org,
+ id 1lmVgX-00CTE7-D5
+ for linux-phy@lists.infradead.org; Fri, 28 May 2021 06:09:31 +0000
+Received: from [192.168.1.111] (91-157-208-71.elisa-laajakaista.fi
+ [91.157.208.71])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id EB4168C7;
+ Fri, 28 May 2021 08:09:25 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1622182167;
+ bh=jDi8jSXdNVCFkVabP69b1FsiwFVcxxaghC6ZX3Y2Wh8=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=ALKPxTKurVV3J/hhWaapdlQIBfCUG2H/vzXBM8nOrEf6L9tF0tej1oqbr4a0uKZ2a
+ 1+/0vF1qGf28iM1zMs/CheknE+gmyVSFrI6aA6bU4jtswKHXXW084l+V+4YopcJ44C
+ wb1JdXxad/9xVE41rU0+nSzuWz1LEyEw9EU5X0Dk=
+Subject: Re: [PATCH v2 04/18] phy: cdns-dphy: Add Rx support
+To: Pratyush Yadav <p.yadav@ti.com>, Maxime Ripard <mripard@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+ Steve Longerbeam <slongerbeam@gmail.com>, Benoit Parrot <bparrot@ti.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ dmaengine@vger.kernel.org
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
  Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Peter Ujfalusi <peter.ujfalusi@gmail.com>,
- Vignesh Raghavendra <vigneshr@ti.com>, linux-phy@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>
-In-Reply-To: <20210526152308.16525-15-p.yadav@ti.com>
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 References: <20210526152308.16525-1-p.yadav@ti.com>
- <20210526152308.16525-15-p.yadav@ti.com>
-Subject: Re: [PATCH v2 14/18] media: dt-bindings: Add DT bindings for TI J721E
- CSI2RX driver
-Date: Thu, 27 May 2021 09:23:27 -0500
-Message-Id: <1622125407.764961.731785.nullmailer@robh.at.kernel.org>
+ <20210526152308.16525-5-p.yadav@ti.com>
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Message-ID: <b4de2fb9-6169-136b-e7b3-9eb4b0240eb8@ideasonboard.com>
+Date: Fri, 28 May 2021 09:09:25 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.8.1
+MIME-Version: 1.0
+In-Reply-To: <20210526152308.16525-5-p.yadav@ti.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210527_072356_312711_3F1D9D45 
-X-CRM114-Status: GOOD (  17.23  )
+X-CRM114-CacheID: sfid-20210527_230929_636453_F178424D 
+X-CRM114-Status: GOOD (  27.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,68 +84,263 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 26 May 2021 20:53:04 +0530, Pratyush Yadav wrote:
-> TI's J721E uses the Cadence CSI2RX and DPHY peripherals to facilitate
-> capture over a CSI-2 bus. The TI CSI2RX platform driver glues all the
-> parts together.
+On 26/05/2021 18:22, Pratyush Yadav wrote:
+> The Cadence DPHY can be used to receive image data over the CSI-2
+> protocol. Add support for Rx mode. The programming sequence differs from
+> the Tx mode so it is added as a separate set of hooks to isolate the two
+> paths.
+> 
+> The PHY is in Tx mode by default and it needs to be set in Rx mode by
+> setting the submode to PHY_MIPI_DPHY_SUBMODE_RX in the set_mode()
+> callback.
 > 
 > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> 
 > ---
 > 
-> Changes in v2:
-> - Rename to ti,j721e-csi2rx.yaml
-> - Add an entry in MAINTAINERS.
-> - Add a description for the binding.
-> - Change compatible to ti,j721e-csi2rx to make it SoC specific.
-> - Remove description from dmas, reg, power-domains.
-> - Remove a limit of 2 from #address-cells and #size-cells.
-> - Fix add ^ to csi-bridge subnode regex.
-> - Make ranges mandatory.
-> - Add unit address in example.
-> - Add a reference to cdns,csi2rx in csi-bridge subnode.
-> - Expand the example to include the csi-bridge subnode as well.
-> - Re-order subject prefixes.
+> (no changes since v1)
 > 
->  .../bindings/media/ti,j721e-csi2rx.yaml       | 101 ++++++++++++++++++
->  MAINTAINERS                                   |   1 +
->  2 files changed, 102 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/ti,j721e-csi2rx.yaml
+>   drivers/phy/cadence/cdns-dphy.c | 237 ++++++++++++++++++++++++++++++++
+>   1 file changed, 237 insertions(+)
 > 
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index 7d5f7b333893..7bbca679e2bb 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -1,11 +1,14 @@
+>   // SPDX-License-Identifier: GPL-2.0+
+>   /*
+>    * Copyright: 2017-2018 Cadence Design Systems, Inc.
+> + * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com/
+>    */
+>   
+>   #include <linux/bitops.h>
+> +#include <linux/bitfield.h>
+>   #include <linux/clk.h>
+>   #include <linux/io.h>
+> +#include <linux/iopoll.h>
+>   #include <linux/module.h>
+>   #include <linux/of_address.h>
+>   #include <linux/of_device.h>
+> @@ -25,10 +28,14 @@
+>   #define DPHY_PMA_RCLK(reg)		(0x600 + (reg))
+>   #define DPHY_PMA_RDATA(lane, reg)	(0x700 + ((lane) * 0x100) + (reg))
+>   #define DPHY_PCS(reg)			(0xb00 + (reg))
+> +#define DPHY_ISO(reg)			(0xc00 + (reg))
+>   
+>   #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
+>   #define DPHY_CMN_SSM_EN			BIT(0)
+> +#define DPHY_CMN_RX_BANDGAP_TIMER_MASK	GENMASK(8, 1)
+>   #define DPHY_CMN_TX_MODE_EN		BIT(9)
+> +#define DPHY_CMN_RX_MODE_EN		BIT(10)
+> +#define DPHY_CMN_RX_BANDGAP_TIMER	0x14
+>   
+>   #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
+>   #define DPHY_CMN_PWM_DIV(x)		((x) << 20)
+> @@ -45,10 +52,27 @@
+>   #define DPHY_CMN_OPDIV_FROM_REG		BIT(6)
+>   #define DPHY_CMN_OPDIV(x)		((x) << 7)
+>   
+> +#define DPHY_BAND_CFG			DPHY_PCS(0x0)
+> +#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
+> +#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
+> +
+>   #define DPHY_PSM_CFG			DPHY_PCS(0x4)
+>   #define DPHY_PSM_CFG_FROM_REG		BIT(0)
+>   #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
+>   
+> +#define DPHY_POWER_ISLAND_EN_DATA	DPHY_PCS(0x8)
+> +#define DPHY_POWER_ISLAND_EN_DATA_VAL	0xaaaaaaaa
+> +#define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
+> +#define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
+> +
+> +#define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
+> +#define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
+> +#define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
+> +#define DPHY_ISO_DL_CTRL_L2		DPHY_ISO(0x30)
+> +#define DPHY_ISO_DL_CTRL_L3		DPHY_ISO(0x3c)
+> +#define DPHY_ISO_LANE_READY_BIT		0
+> +#define DPHY_ISO_LANE_READY_TIMEOUT_MS	100UL
+> +
+>   #define DSI_HBP_FRAME_OVERHEAD		12
+>   #define DSI_HSA_FRAME_OVERHEAD		14
+>   #define DSI_HFP_FRAME_OVERHEAD		6
+> @@ -57,6 +81,9 @@
+>   #define DSI_NULL_FRAME_OVERHEAD		6
+>   #define DSI_EOT_PKT_SIZE		4
+>   
+> +#define DPHY_LANES_MIN			1
+> +#define DPHY_LANES_MAX			4
+> +
+>   struct cdns_dphy_cfg {
+>   	u8 pll_ipdiv;
+>   	u8 pll_opdiv;
+> @@ -312,6 +339,214 @@ static const struct cdns_dphy_ops tx_ref_dphy_ops = {
+>   	.set_psm_div = cdns_dphy_ref_set_psm_div,
+>   };
+>   
+> +static int cdns_dphy_rx_power_on(struct cdns_dphy *dphy)
+> +{
+> +	/* Start RX state machine. */
+> +	writel(DPHY_CMN_SSM_EN | DPHY_CMN_RX_MODE_EN |
+> +	       FIELD_PREP(DPHY_CMN_RX_BANDGAP_TIMER_MASK,
+> +			  DPHY_CMN_RX_BANDGAP_TIMER),
+> +	       dphy->regs + DPHY_CMN_SSM);
+> +
+> +	return 0;
+> +}
+> +
+> +static int cdns_dphy_rx_power_off(struct cdns_dphy *dphy)
+> +{
+> +	writel(0, dphy->regs + DPHY_CMN_SSM);
+> +
+> +	return 0;
+> +}
+> +
+> +static int cdns_dphy_rx_get_band_ctrl(unsigned long hs_clk_rate)
+> +{
+> +	unsigned int rate = hs_clk_rate / 1000000UL;
+> +
+> +	if (rate < 80 || rate >= 2500)
+> +		return -EOPNOTSUPP;
+> +
+> +	if (rate >= 80 && rate < 100)
+> +		return 0;
+> +
+> +	if (rate >= 100 && rate < 120)
+> +		return 1;
+> +
+> +	if (rate >= 120 && rate < 160)
+> +		return 2;
+> +
+> +	if (rate >= 160 && rate < 200)
+> +		return 3;
+> +
+> +	if (rate >= 200 && rate < 240)
+> +		return 4;
+> +
+> +	if (rate >= 240 && rate < 280)
+> +		return 5;
+> +
+> +	if (rate >= 280 && rate < 320)
+> +		return 6;
+> +
+> +	if (rate >= 320 && rate < 360)
+> +		return 7;
+> +
+> +	if (rate >= 360 && rate < 400)
+> +		return 8;
+> +
+> +	if (rate >= 400 && rate < 480)
+> +		return 9;
+> +
+> +	if (rate >= 480 && rate < 560)
+> +		return 10;
+> +
+> +	if (rate >= 560 && rate < 640)
+> +		return 11;
+> +
+> +	if (rate >= 640 && rate < 720)
+> +		return 12;
+> +
+> +	if (rate >= 720 && rate < 800)
+> +		return 13;
+> +
+> +	if (rate >= 800 && rate < 880)
+> +		return 14;
+> +
+> +	if (rate >= 880 && rate < 1040)
+> +		return 15;
+> +
+> +	if (rate >= 1040 && rate < 1200)
+> +		return 16;
+> +
+> +	if (rate >= 1200 && rate < 1350)
+> +		return 17;
+> +
+> +	if (rate >= 1350 && rate < 1500)
+> +		return 18;
+> +
+> +	if (rate >= 1500 && rate < 1750)
+> +		return 19;
+> +
+> +	if (rate >= 1750 && rate < 2000)
+> +		return 20;
+> +
+> +	if (rate >= 2000 && rate < 2250)
+> +		return 21;
+> +
+> +	if (rate >= 2250 && rate < 2500)
+> +		return 22;
+> +
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+All the above could be handled with a simple table and a for loop.
 
-yamllint warnings/errors:
+> +	/* Unreachable. */
+> +	WARN(1, "Reached unreachable code.");
+> +	return -EINVAL;
+> +}
+> +
+> +static int cdns_dphy_rx_wait_for_bit(void __iomem *addr, unsigned int bit)
+> +{
+> +	u32 val;
+> +
+> +	return readl_relaxed_poll_timeout(addr, val, val & BIT(bit), 10,
+> +					  DPHY_ISO_LANE_READY_TIMEOUT_MS * 1000);
+> +}
+> +
+> +static int cdns_dphy_rx_wait_lane_ready(struct cdns_dphy *dphy, int lanes)
+> +{
+> +	void __iomem *reg = dphy->regs;
+> +	int ret;
+> +
+> +	if (lanes < DPHY_LANES_MIN || lanes > DPHY_LANES_MAX)
+> +		return -EINVAL;
+> +
+> +	/* Clock lane */
+> +	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_CL_CTRL_L,
+> +					DPHY_ISO_LANE_READY_BIT);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* Data lanes. Minimum one lane is mandatory. */
+> +	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_DL_CTRL_L0,
+> +					DPHY_ISO_LANE_READY_BIT);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (lanes < 2)
+> +		return 0;
+> +
+> +	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_DL_CTRL_L1,
+> +					DPHY_ISO_LANE_READY_BIT);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (lanes < 3)
+> +		return 0;
+> +
+> +	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_DL_CTRL_L2,
+> +					DPHY_ISO_LANE_READY_BIT);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (lanes < 4)
+> +		return 0;
+> +
+> +	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_DL_CTRL_L3,
+> +					DPHY_ISO_LANE_READY_BIT);
+> +	if (ret)
+> +		return ret;
+> +
 
-dtschema/dtc warnings/errors:
-Unknown file referenced: [Errno 2] No such file or directory: '/usr/local/lib/python3.8/dist-packages/dtschema/schemas/media/cdns,csi2rx.yaml'
-xargs: dt-doc-validate: exited with status 255; aborting
-make[1]: *** Deleting file 'Documentation/devicetree/bindings/media/ti,j721e-csi2rx.example.dt.yaml'
-Unknown file referenced: [Errno 2] No such file or directory: '/usr/local/lib/python3.8/dist-packages/dtschema/schemas/media/cdns,csi2rx.yaml'
-make[1]: *** [scripts/Makefile.lib:380: Documentation/devicetree/bindings/media/ti,j721e-csi2rx.example.dt.yaml] Error 255
-make[1]: *** Waiting for unfinished jobs....
-make: *** [Makefile:1416: dt_binding_check] Error 2
+This, too, could be handled with an array (for the regs) and a for loop.
 
-See https://patchwork.ozlabs.org/patch/1484096
-
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit.
-
+  Tomi
 
 -- 
 linux-phy mailing list
