@@ -2,90 +2,69 @@ Return-Path: <SRS0=BSok=K2=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4F42BC47082
-	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 08:34:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 476A3C47082
+	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 08:35:35 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EEBDF61186
-	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 08:34:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EEBDF61186
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 12276610C9
+	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 08:35:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 12276610C9
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lihBvN+OFhkxSkNCElgOexYxF5E1LeLdQuMBM32xTs4=; b=av5PFCGAaCkt+v+Shd0SwLHdfZ
-	/JCtYGwrDVmEph0imRYpBv+WMuvCZurH0P64HhqDx0t+FpXCsNHcmj5v+8iIqcB8InecwuCdjTstg
-	LwNbVzE2xTPBhFsk6sBbgyEc6vUB/0NiG34y/BRc5dUQtgK7IyrPwewKWELRMQyTOuJPerJLPCf1e
-	mECXGX7GD4sqohlDyVVSHbnsUMYlF4jptgJ3NpijFFTDtezqVf2gXOpE3CWHM09vGTY2CcqnNty8a
-	CzREAMqTXDTmBZQh0QD7oOJYyfob6n2CNCc8tWOHgdJ/Qk6emoXl9n6mQB1yPguVJYZDMUQ/Q84gk
-	HY9LF/jA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hPIm3zBidMSGWCVNjzXIyku0MKFHKy61qvv5oewT5q8=; b=latEKZerNCdy/e
+	J18nVbxpnAn49IcQ1M7Mzia0JRdbPjX5JX4nkWY5r2IbwFCpTWwoBQsiHoESNxoWjpqBtg121ZhUM
+	7l2HX5NFWPbAYA9cN6xBPRa/+5UrS2ERS0tZ47gumsFRQqAxP7u5WunwnuuAGznM1jjAOqmbkzP+b
+	iLhPojpcPxf8tyWzYyyDSHT/mesISWvI4SJQegC4rMTeJFDs2GF/BJM/XSApOPMoXoeqVfSLXj8tH
+	8/l84M2uwVjjRW1sKLma5QGbmUbUU4fclubS2u3DZ6KYDHL0O0Eo5PXFLUjiiLwVK2pvRqzS5zxxa
+	2xPwyR0FOeTGreyzTqGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lndNd-00BTSi-D8; Mon, 31 May 2021 08:34:37 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1lndOY-00BThS-Fr; Mon, 31 May 2021 08:35:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lndNa-00BTR4-C1
- for linux-phy@lists.infradead.org; Mon, 31 May 2021 08:34:36 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 14V8YPIC054720;
- Mon, 31 May 2021 03:34:25 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1622450065;
- bh=WdtpfZPowPiCpRprSpaKbtvu6+Gb9+ktjGrBmve1/Yk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=IboIlrSNI8JWHEMEHnrJLIia3sBOPpz8SkWmwEvrO9t/YWPWKkevaORko7bGucVef
- +OrG8eu9iwGxfvUdhcIrdzA0q8thkyTu841ZlZFIGbPN0uptFYg3K0ICwKWgxyujGM
- JGk7EL4wPEgl1Ye6C9JVy9NTeoDyWrgXdOOUIkL4=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 14V8YPFT029524
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 31 May 2021 03:34:25 -0500
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Mon, 31
- May 2021 03:34:25 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Mon, 31 May 2021 03:34:25 -0500
-Received: from [10.250.235.117] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 14V8YI0w030521;
- Mon, 31 May 2021 03:34:20 -0500
-Subject: Re: [PATCH v6 1/3] phy: core: Reword the comment specifying the units
- of max_link_rate to be Mbps
-To: Vinod Koul <vkoul@kernel.org>
-CC: <linux-can@vger.kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>,
- Wolfgang Grandegger <wg@grandegger.com>, Vignesh Raghavendra
- <vigneshr@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-References: <20210510051006.11393-1-a-govindraju@ti.com>
- <20210510051006.11393-2-a-govindraju@ti.com>
- <YLSNvUDJZ/v6NTuN@vkoul-mobl.Dlink>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <615d3a2a-0dc2-0e87-fdac-e170542d33da@ti.com>
-Date: Mon, 31 May 2021 14:04:17 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
+ id 1lndOC-00BTbl-LG; Mon, 31 May 2021 08:35:13 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 2ADA0611EE;
+ Mon, 31 May 2021 08:35:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1622450111;
+ bh=h0daNFOBtnGVuD3sxjbRsyFpXcSCgAHAlgQieU7xUJM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jvUQtc6pLUtBmEvufELqzhlrgnGIYM0LZ9NeOR6Czd4DMs3h6KkluBBX+Rxly2iZN
+ RrViLjY9vEJ9FQshDWkCHB2sS+rzhRPxLUHHPyQlT8H7lbOiXf3wSivLSm3DVKsbEy
+ svShKts5m1oPpFmf4Vwk5HtdDzlEQ+WsHbeANY3CopHE1qOWcikv6Y8wojzmWHirNS
+ xGgKSRUpeTwrFLe/mH8vB3zfjmmI9BwDwyA3P0Ecq3+7nddHLj6ZhbsgI7R+VocyGv
+ xO+uswSheQeCtnZ3/gYpJpgdvKo0Rqw2Nz2XnGhRaSmXTD0wxuQE7PJjuQASUza9Rt
+ 24vSMwzEogvxw==
+Date: Mon, 31 May 2021 14:05:08 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: heiko@sntech.de, robh+dt@kernel.org, kishon@ti.com,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 2/4] dt-bindings: phy: rename phy nodename in
+ phy-rockchip-inno-usb2.yaml
+Message-ID: <YLSfvDeKrB0b66Ol@vkoul-mobl.Dlink>
+References: <20210518165658.12764-1-jbx6244@gmail.com>
+ <20210518165658.12764-3-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <YLSNvUDJZ/v6NTuN@vkoul-mobl.Dlink>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20210518165658.12764-3-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210531_013434_611239_24854FA1 
-X-CRM114-Status: GOOD (  21.40  )
+X-CRM114-CacheID: sfid-20210531_013512_751678_265693CA 
+X-CRM114-Status: UNSURE (   6.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,51 +81,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
-
-On 31/05/21 12:48 pm, Vinod Koul wrote:
-> On 10-05-21, 10:40, Aswath Govindraju wrote:
->> In some subsystems (eg. CAN, SPI), the max link rate supported can be less
->> than 1 Mbps and if the unit for max_link_rate is Mbps then it can't be
->> used. Therefore, leave the decision of units to be used, to the producer
->> and consumer.
->>
->> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
->> Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
->> ---
->>  include/linux/phy/phy.h | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
->> index 0ed434d02196..f3286f4cd306 100644
->> --- a/include/linux/phy/phy.h
->> +++ b/include/linux/phy/phy.h
->> @@ -125,7 +125,7 @@ struct phy_ops {
->>  /**
->>   * struct phy_attrs - represents phy attributes
->>   * @bus_width: Data path width implemented by PHY
->> - * @max_link_rate: Maximum link rate supported by PHY (in Mbps)
->> + * @max_link_rate: Maximum link rate supported by PHY (units to be decided by producer and consumer)
+On 18-05-21, 18:56, Johan Jonker wrote:
+> The pattern: "^(|usb-|usb2-|usb3-|pci-|pcie-|sata-)phy(@[0-9a-f,]+)*$"
+> in phy-provider.yaml has required "#phy-cells" for phy nodes.
+> The "phy-cells" in rockchip-inno-usb2 nodes are located in subnodes.
+> Rename the nodename to pattern "usb2phy@[0-9a-f]+$" to prevent
+> notifications. Remove unneeded "#phy-cells" from parent node.
+> Also sort example.
 > 
-> So there are a few users of max_link_rate. It would be better that we
-> document all previous users of max_link_rate that unit is in Mbps and
-> then modify it here
-> 
+> make ARCH=arm dtbs_check
+> DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
+> phy/phy-provider.yaml
 
-I was able to see that the max_link_rate attribute was used at,
+This fails to apply for me, needs rebase..
 
-drivers/phy/cadence/phy-cadence-torrent.c:2514:
-gphy->attrs.max_link_rate = cdns_phy->max_bit_rate;
-
-and in the bindings there is indication that the units to be used is Mbps.
-
-Can you please point me if there is any other place that I might have
-missed to look at or that might need documentation update?
-
-Thanks,
-Aswath
-
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
