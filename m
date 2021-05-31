@@ -2,65 +2,93 @@ Return-Path: <SRS0=BSok=K2=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-10.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D2BCDC4708F
-	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 08:40:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B04D7C47082
+	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 09:16:51 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 99C93610C9
-	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 08:40:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 99C93610C9
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 7C6CF606A5
+	for <linux-phy@archiver.kernel.org>; Mon, 31 May 2021 09:16:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7C6CF606A5
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W7qUCVMX+qWR/Oyh1Dg51BfzAhRutotxn09WurzuiZY=; b=rUqffUoo+hkNDJ
-	GRcIoC49yQpcfNL3NOuvPXBOCIwyT3Remc0/Kz/BnpAusZ1b9LGiDAbd18TEZ3rhuSn07loBLsGFc
-	sbfhMsZeLHbKK33ITAHXSrUtu/wjf762IjGYMRM0dsm6nmoTpMDAdV+Y9py+HpbLME0/P+H11ANHJ
-	DaDcZENLeDfpAzFedINhVDmNbhGLvEQRSkXprUDHQAhlVHTBor1FFXV5l8TaGQEn0d6LkJx7yE7aF
-	cmj/56SsBxPauAS603/GymytR/Ocj6SRspVssDHC7o5+VJgaPREVtmqKI6dziuMWQh7uFstIsSJkR
-	qiUX5lbtypsMMdF4L/nA==;
+	List-Owner; bh=5SkVK5QUqhKnL24mutJiYoVG+T7JybeMx9GUItuoq+U=; b=kcKVatEr2+q2qi
+	AgC3FUM57XFL5W/Kdl+/1sl3gc6d3+bGJFzce3zDz6769kRQWl+InneP3j17wm3qr9bAoBnXReuOA
+	k59vt758engkhLNJxorsLCfvpfvxC7WXoum5yCxx+PsGqE7CtMk/FEcmPoeKrW+EUFoClqxEQtVSm
+	739bKiwlb9ajM6CrNcJriU5RlRdN3iQdVLWuSgcaEQU3CB0on7K4yEID0OIPfAFZrgLvpOQEj70Ij
+	jO4qjAus6D1ABUcAYTXCqUvNWXVFf8ot2rSoB8QPIylhkDXIAGiFW1uOXNakW8ZBkHoawSXgrcVcm
+	8heeMjxW1NklikY9xXPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lndSw-00BV3m-37; Mon, 31 May 2021 08:40:06 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lne2V-00BgiM-27; Mon, 31 May 2021 09:16:51 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lndSt-00BV2a-HO
- for linux-phy@lists.infradead.org; Mon, 31 May 2021 08:40:04 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 30C1B6023E;
- Mon, 31 May 2021 08:40:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1622450403;
- bh=hIo9igXETrqt8JGupXund+T2mtkuw9aDgnbLO9HhyN0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IMX+1p1XnD68tYgotvN1s1ACQ+Y/xvPR0Mo27Kdc6p0Ra+3bsuyiEihZzV0Qy/21O
- PBrNdp+BvYan4Tfq4071JGbwLuvxb42hGih5x62SVvzc28BkYC7QHpOqUZEvkNkdS+
- BY9Fa9OvmW5MGQqnwAwSeP1HUjj7XWddbQ4lMeLbYAEedgE4yPBwqludlILxELu4dN
- ZFu4FJ3uJ/Nwi/3BEYOau+jNT3GjlUfOr1Uk8Mc+pEC1FVE+y/RPmiBsk1K0IOxCi3
- 0K28aJxa0bNRvZXNqaT5SPcAk44uECTcR29sbfPy5M1EM7tlFzBwuI9iKnkifjcqka
- i5O/v3PLi0g6A==
-Date: Mon, 31 May 2021 14:09:59 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Yang Li <yang.lee@linux.alibaba.com>
-Cc: kishon@ti.com, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: ti: Fix an error code in wiz_probe()
-Message-ID: <YLSg3z3hYsT/QQ1n@vkoul-mobl.Dlink>
-References: <1621939832-65535-1-git-send-email-yang.lee@linux.alibaba.com>
+ id 1lne2S-00Bgh7-Uu
+ for linux-phy@lists.infradead.org; Mon, 31 May 2021 09:16:50 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 14V9GglZ070674;
+ Mon, 31 May 2021 04:16:42 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1622452602;
+ bh=Its6+pOD1tBTaXUgRpY3KMtTS3wCWqo3YueW1RmMxa4=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=bhyHSF86k7TkEqFAYrfbkzaEnncWTx402W1pNM9x25C2B1kNpEgNcgH4kGbvr/E/v
+ mkTSAKmvn2Azip1C/SjOXBGxfZyyDEqj3m6J64QRdoUp/jX6wFsMnuXj0ATGFU9RYB
+ t/TCtI9r09p9pjLXGiqOM4a5o6WIWnMcSKA4ahyA=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 14V9GgR2072205
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 31 May 2021 04:16:42 -0500
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Mon, 31
+ May 2021 04:16:42 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
+ Frontend Transport; Mon, 31 May 2021 04:16:42 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 14V9GfmG035500;
+ Mon, 31 May 2021 04:16:42 -0500
+Date: Mon, 31 May 2021 14:46:40 +0530
+From: Pratyush Yadav <p.yadav@ti.com>
+To: =?iso-8859-1?Q?P=E9ter?= Ujfalusi <peter.ujfalusi@gmail.com>
+CC: Maxime Ripard <mripard@kernel.org>, Mauro Carvalho Chehab
+ <mchehab@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Benoit Parrot <bparrot@ti.com>, <linux-media@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <dmaengine@vger.kernel.org>,
+ Vignesh Raghavendra <vigneshr@ti.com>, Tomi
+ Valkeinen <tomi.valkeinen@ideasonboard.com>, Chunfeng Yun
+ <chunfeng.yun@mediatek.com>, Laurent Pinchart
+ <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v2 11/18] dmaengine: ti: k3-psil-j721e: Add entry for
+ CSI2RX
+Message-ID: <20210531091638.6mynfeusuzlgegdr@ti.com>
+References: <20210526152308.16525-1-p.yadav@ti.com>
+ <20210526152308.16525-12-p.yadav@ti.com>
+ <916ef8c9-e444-afa4-d544-8fa672690fdb@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1621939832-65535-1-git-send-email-yang.lee@linux.alibaba.com>
+In-Reply-To: <916ef8c9-e444-afa4-d544-8fa672690fdb@gmail.com>
+User-Agent: NeoMutt/20171215
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210531_014003_624929_E3A26A48 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20210531_021649_091595_65DFB198 
+X-CRM114-Status: GOOD (  15.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,57 +100,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-05-21, 18:50, Yang Li wrote:
-> When the code execute this if statement, the value of ret is 0. 
-> However, we can see from the dev_err() log that the value of 
-> ret should be -EINVAL.
-> 
-> Clean up smatch warning:
-> 
-> drivers/phy/ti/phy-j721e-wiz.c:1216 wiz_probe() warn: missing error code
-> 'ret'
+On 31/05/21 09:51AM, P=E9ter Ujfalusi wrote:
+> =
 
-Single line is fine for this
+> =
 
-> 
-> Reported-by: Abaci Robot <abaci@linux.alibaba.com>
-> Fixes: 'commit c9f9eba06629 ("phy: ti: j721e-wiz: Manage
-> typec-gpio-dir")'
+> On 26/05/2021 18:23, Pratyush Yadav wrote:
+> > The CSI2RX subsystem uses PSI-L DMA to transfer frames to memory. It can
+> > have up to 32 threads but the current driver only supports using one. So
+> > add an entry for that one thread.
+> > =
 
-Please dont split to two lines for fixes tag
+> > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> > =
 
-> Signed-off-by: Yang Li <yang.lee@linux.alibaba.com>
+> > ---
+> > =
 
-I have fixed while applying so Applied, thanks
+> > Changes in v2:
+> > - Add all 64 threads, instead of having only the one thread being
+> >   currently used by the driver.
+> =
 
-> ---
->  drivers/phy/ti/phy-j721e-wiz.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-> index 9eb6d37..126f5b8 100644
-> --- a/drivers/phy/ti/phy-j721e-wiz.c
-> +++ b/drivers/phy/ti/phy-j721e-wiz.c
-> @@ -1212,6 +1212,7 @@ static int wiz_probe(struct platform_device *pdev)
->  
->  		if (wiz->typec_dir_delay < WIZ_TYPEC_DIR_DEBOUNCE_MIN ||
->  		    wiz->typec_dir_delay > WIZ_TYPEC_DIR_DEBOUNCE_MAX) {
-> +			ret = -EINVAL;
->  			dev_err(dev, "Invalid typec-dir-debounce property\n");
->  			goto err_addr_to_resource;
->  		}
-> -- 
-> 1.8.3.1
+> How many threads CSI2RX have? 32 (as per commit message) or 64? If I
+> recall right, it is 32.
 
--- 
-~Vinod
+Ah, sorry I forgot to update the commit message. Each instance of CSI2RX =
 
--- 
+has 32 threads, and J721E has 2 instances. So 64 threads total.
+
+-- =
+
+Regards,
+Pratyush Yadav
+Texas Instruments Inc.
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
