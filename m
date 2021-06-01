@@ -2,87 +2,90 @@ Return-Path: <SRS0=tIkt=K3=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D6C76C4708F
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 16:50:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 04A49C4708F
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 17:45:28 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9ED4F610A8
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 16:50:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9ED4F610A8
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id B7F5C613DD
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 17:45:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B7F5C613DD
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MQGBZRLW7h8+J1YFmYmIHEmsWP3wNxUnA7WrZSqXX0k=; b=qNIxxtVvsgVxOq
-	XX59ub2hLddNR8ghCtcQK2+Lh74pyqOLnaaAn3OdgfIARBZxygP6+vqWr9AYH8eq7LgHeztGLAKAj
-	gO87eHqjvdmzDHl+9ZQStxsylnfRVP1JrbznxIYux75DOoqhXhyB1mabey2S94lNERc56brMbFEAU
-	jcjepuknQ/rIn4KPVOKKusa5mvJI8agwQkcTq0YQZIz329AkEJyWuf6AonZrJDKfuFRfMzvSUqwwd
-	WgwmgOuLY4XZaQlFR2Wv/4//zifTCdJqcoebu+0FlBbHF9XX3hiI6C65udh25CIv+9+VWTYZ4oAj9
-	KogLMdiLvpxVSFBZIsDA==;
+	List-Owner; bh=3fbTRYkOaemTTUG4/8MTh9Du0Bg7N7qsD1XyN5x3Qb0=; b=pQXkOgJHJL8V2d
+	NcnlOala++j+sTf38u4a1/4OlsRNmqnW4L3KtGWZlZhD/Bj4lH813Ov9KLuSbE+icJWxbGdeH22kL
+	KrjDjRsCdC+F3Qdz19D9Hj1mq7pPjLl9h9+lBsV3c6LFxUoJDJlEvwzLoldhYib8Z2R0Cph2BonrV
+	CbgEE0caERHRW43PD0tzurWZLdzPMxOK54eAm3u7ZPVp48ovTC7qiJlNWa2IB8shuIqgj7lx9SekG
+	ZTXeL1+OxEqKIIO9iFVMzILZdTphdqdoTDOBtP64Bu8hNblbBQ66fPB2oWYSlBgmqbsJWZPtMphrr
+	aIqxgef/sjgmFoD+NjXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lo7ab-00HYLg-0Q; Tue, 01 Jun 2021 16:50:01 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1lo8SF-0008PY-7E; Tue, 01 Jun 2021 17:45:27 +0000
+Received: from mail-oi1-f182.google.com ([209.85.167.182])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lo7Yw-00HXVP-7e; Tue, 01 Jun 2021 16:48:19 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id j10so18172260edw.8;
- Tue, 01 Jun 2021 09:48:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=B8yrT0K2LfeXhIzhR/5QWBV3kbYfUc/He2mmnHviDt4=;
- b=jA46gtlB32jvqbaHFH9jvsdOlOHKjWDjyRLRCJcEBBCKrBB2uCTJZMeJkkuy1uF7M+
- 3TmncLhd5DOkG72wA9Rd8mmT5+m2Se1i2OIabtgfaFRjV8oHI0VvJUONxpKYZ7iysIR3
- 3Y70T1sHaA889A1Usd7AmaAeWq/0DuWn8FmZFvBEK5cYBvUZ2Q8ip8F27RnoAA+Nw8iE
- WKkxKoWOIofMPLYWKViOqLq7d0CJKEsVtQmjHUEeRK4mL5+nHtPyhT5F0Ofi6tM1/Uku
- MayRehNB9R1KjmTUaA8yspDbFysFCiv4HDzvM/SV6GPz9GRBIf4uJFHNLzMwYSEdH1tJ
- SjDg==
+ id 1lo8SB-0008Ni-Lh
+ for linux-phy@lists.infradead.org; Tue, 01 Jun 2021 17:45:25 +0000
+Received: by mail-oi1-f182.google.com with SMTP id w127so153841oig.12
+ for <linux-phy@lists.infradead.org>; Tue, 01 Jun 2021 10:45:22 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=B8yrT0K2LfeXhIzhR/5QWBV3kbYfUc/He2mmnHviDt4=;
- b=kf2idLUoopd8oL/bRAgfQOEKLaYLHPcXmwhWfgPFybQgyPSqcm5qZhWxTEJVsYpwXf
- XdJkGkvOLumLaL/JbY3cLtrrPLjJBqWM+u2y3I0IqmTL4t+NA5+64qWCXZ6NMFRqmyhj
- sdq1UJ6R+zX6jNxfwu7EySLdGR1PtvKfRg0n8LjN6oNVmbkXQUJXVe3562ehYj4Zrv9I
- NP28LcebtZ5dFh66dBTwzwbANHglFFXtzqzxv5ZkfQGfOZ7sPO4j/QjmZpn4/HjMyxed
- VbJ+2bMYrsILONPQCfOp0+7yY6b5LhOboZLF93ktWI9FICG/GC/8WeFaW4qkhjXhaYyb
- JeNw==
-X-Gm-Message-State: AOAM530MyhLpV9Fawt7IW3gZY1xYTdRxwDho3EooJ8QoGjyj4Z5a3MmL
- rPlKk6ojpIqIH1Wh7g3K4xk=
-X-Google-Smtp-Source: ABdhPJwYFb76+ATm+1vcRtbPA1ti1sxM+CUyTpVJbs5DshpTnTSjevMP61I9Rp6PBQKTVhgIVA5Llw==
-X-Received: by 2002:a05:6402:40d0:: with SMTP id
- z16mr34296115edb.104.1622566096823; 
- Tue, 01 Jun 2021 09:48:16 -0700 (PDT)
-Received: from debian.home (81-204-249-205.fixed.kpn.net. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q18sm8327750edd.3.2021.06.01.09.48.14
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 01 Jun 2021 09:48:16 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Cc: robh+dt@kernel.org, kishon@ti.com, vkoul@kernel.org, t.schramm@manjaro.org,
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v7 5/5] arm64: dts: rockchip: add USB support to rk3308.dtsi
-Date: Tue,  1 Jun 2021 18:48:00 +0200
-Message-Id: <20210601164800.7670-6-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20210601164800.7670-1-jbx6244@gmail.com>
-References: <20210601164800.7670-1-jbx6244@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=D/RwutDeiUE8RoJ6NiieivInKsIh5wCxpSy1RciiElU=;
+ b=b5Y2XLhpXUvXi4kg8hsU3yyHAZpVanZF93sJ221FyTKIyozqRYNbEjc8DOmDuPvgHC
+ utzywwbdJrME9P7LEGAwEKzNihXsIKWWJZ/tQ8gOAQl9vHDVV7oMPiueKbeEm634UDWe
+ nNOy+1ocjdbH6qObaz06qmzyvr+wTOb+OYTN4GMQlXBF+ln6LTTEmktbdEcy7dgehE30
+ idfMjPa0IySqPggUkBSoQNTK2TS/LYcA1ThtncymVNeY9PBMaow1UX2k8XNjvC7qYDTT
+ JMsMVwGNQa2wvvRSq3LvT7VpGB3BCJqRVm53wSIbMP2HLZABOH5eOZrc2bd3/Aa1FKAa
+ MXIg==
+X-Gm-Message-State: AOAM531caeIXb0n99tLsskQAnBjoY00nQdz6yRzvUg+i6Vursx+mMJNa
+ dEodTCCw8u3rROJVePJSwg==
+X-Google-Smtp-Source: ABdhPJzvNU9U33YqpbUUxKRtRnym65kpSninZ/cD0ub81YCj0r4m8yLb2ew3h563MJZYBCJh6BxCow==
+X-Received: by 2002:a05:6808:1592:: with SMTP id
+ t18mr18633949oiw.123.1622569522240; 
+ Tue, 01 Jun 2021 10:45:22 -0700 (PDT)
+Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id z9sm3554897oog.25.2021.06.01.10.45.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 01 Jun 2021 10:45:21 -0700 (PDT)
+Received: (nullmailer pid 684833 invoked by uid 1000);
+ Tue, 01 Jun 2021 17:45:19 -0000
+Date: Tue, 1 Jun 2021 12:45:19 -0500
+From: Rob Herring <robh@kernel.org>
+To: Pratyush Yadav <p.yadav@ti.com>
+Cc: Maxime Ripard <mripard@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Peter Ujfalusi <peter.ujfalusi@gmail.com>,
+ Steve Longerbeam <slongerbeam@gmail.com>, Benoit Parrot <bparrot@ti.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ dmaengine@vger.kernel.org, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v2 15/18] media: dt-bindings: Convert Cadence CSI2RX
+ binding to YAML
+Message-ID: <20210601174519.GA666193@robh.at.kernel.org>
+References: <20210526152308.16525-1-p.yadav@ti.com>
+ <20210526152308.16525-16-p.yadav@ti.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210526152308.16525-16-p.yadav@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210601_094818_318734_B56DF4D2 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20210601_104523_754209_43849BC2 
+X-CRM114-Status: GOOD (  26.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,133 +97,316 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Tobias Schramm <t.schramm@manjaro.org>
+On Wed, May 26, 2021 at 08:53:05PM +0530, Pratyush Yadav wrote:
+> Convert the Cadence CSI2RX binding to use YAML schema.
+> 
+> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> 
+> ---
+> 
+> Changes in v2:
+> - New in v2.
+> 
+>  .../devicetree/bindings/media/cdns,csi2rx.txt | 100 -----------
+>  .../bindings/media/cdns,csi2rx.yaml           | 164 ++++++++++++++++++
+>  2 files changed, 164 insertions(+), 100 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/media/cdns,csi2rx.txt
+>  create mode 100644 Documentation/devicetree/bindings/media/cdns,csi2rx.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/media/cdns,csi2rx.txt b/Documentation/devicetree/bindings/media/cdns,csi2rx.txt
+> deleted file mode 100644
+> index 6b02a0657ad9..000000000000
+> --- a/Documentation/devicetree/bindings/media/cdns,csi2rx.txt
+> +++ /dev/null
+> @@ -1,100 +0,0 @@
+> -Cadence MIPI-CSI2 RX controller
+> -===============================
+> -
+> -The Cadence MIPI-CSI2 RX controller is a CSI-2 bridge supporting up to 4 CSI
+> -lanes in input, and 4 different pixel streams in output.
+> -
+> -Required properties:
+> -  - compatible: must be set to "cdns,csi2rx" and an SoC-specific compatible
+> -  - reg: base address and size of the memory mapped region
+> -  - clocks: phandles to the clocks driving the controller
+> -  - clock-names: must contain:
+> -    * sys_clk: main clock
+> -    * p_clk: register bank clock
+> -    * pixel_if[0-3]_clk: pixel stream output clock, one for each stream
+> -                         implemented in hardware, between 0 and 3
+> -
+> -Optional properties:
+> -  - phys: phandle to the external D-PHY, phy-names must be provided
+> -  - phy-names: must contain "dphy", if the implementation uses an
+> -               external D-PHY
+> -
+> -Required subnodes:
+> -  - ports: A ports node with one port child node per device input and output
+> -           port, in accordance with the video interface bindings defined in
+> -           Documentation/devicetree/bindings/media/video-interfaces.txt. The
+> -           port nodes are numbered as follows:
+> -
+> -           Port Description
+> -           -----------------------------
+> -           0    CSI-2 input
+> -           1    Stream 0 output
+> -           2    Stream 1 output
+> -           3    Stream 2 output
+> -           4    Stream 3 output
+> -
+> -           The stream output port nodes are optional if they are not
+> -           connected to anything at the hardware level or implemented
+> -           in the design.Since there is only one endpoint per port,
+> -           the endpoints are not numbered.
+> -
+> -
+> -Example:
+> -
+> -csi2rx: csi-bridge@0d060000 {
+> -	compatible = "cdns,csi2rx";
+> -	reg = <0x0d060000 0x1000>;
+> -	clocks = <&byteclock>, <&byteclock>
+> -		 <&coreclock>, <&coreclock>,
+> -		 <&coreclock>, <&coreclock>;
+> -	clock-names = "sys_clk", "p_clk",
+> -		      "pixel_if0_clk", "pixel_if1_clk",
+> -		      "pixel_if2_clk", "pixel_if3_clk";
+> -
+> -	ports {
+> -		#address-cells = <1>;
+> -		#size-cells = <0>;
+> -
+> -		port@0 {
+> -			reg = <0>;
+> -
+> -			csi2rx_in_sensor: endpoint {
+> -				remote-endpoint = <&sensor_out_csi2rx>;
+> -				clock-lanes = <0>;
+> -				data-lanes = <1 2>;
+> -			};
+> -		};
+> -
+> -		port@1 {
+> -			reg = <1>;
+> -
+> -			csi2rx_out_grabber0: endpoint {
+> -				remote-endpoint = <&grabber0_in_csi2rx>;
+> -			};
+> -		};
+> -
+> -		port@2 {
+> -			reg = <2>;
+> -
+> -			csi2rx_out_grabber1: endpoint {
+> -				remote-endpoint = <&grabber1_in_csi2rx>;
+> -			};
+> -		};
+> -
+> -		port@3 {
+> -			reg = <3>;
+> -
+> -			csi2rx_out_grabber2: endpoint {
+> -				remote-endpoint = <&grabber2_in_csi2rx>;
+> -			};
+> -		};
+> -
+> -		port@4 {
+> -			reg = <4>;
+> -
+> -			csi2rx_out_grabber3: endpoint {
+> -				remote-endpoint = <&grabber3_in_csi2rx>;
+> -			};
+> -		};
+> -	};
+> -};
+> diff --git a/Documentation/devicetree/bindings/media/cdns,csi2rx.yaml b/Documentation/devicetree/bindings/media/cdns,csi2rx.yaml
+> new file mode 100644
+> index 000000000000..ff5dd4211ac9
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/cdns,csi2rx.yaml
+> @@ -0,0 +1,164 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/cdns,csi2rx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Cadence MIPI-CSI2 RX controller
+> +
+> +description: |
+> +  The Cadence MIPI-CSI2 RX controller is a CSI-2 bridge supporting up to 4 CSI
+> +  lanes in input, and 4 different pixel streams in output.
+> +
+> +maintainers:
+> +  - Pratyush Yadav <p.yadav@ti.com>
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - const: cdns,csi2rx
 
-The Rockchip RK3308 features an integrated USB 2.0 phy, an USB OTG
-controller and OHCI/EHCI interfaces.
-This patch adds all of those to the RK3308 dtsi and thereby enables USB
-support on the RK3308.
+Since there has to be an SoC specific compatible, this should be:
 
-Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
+compatible:
+  contains:
+    const: cdns,csi2rx
 
-Changed:
-  restyle
-  limit grf reg size
-  change sub nodename
----
- arch/arm64/boot/dts/rockchip/rk3308.dtsi | 74 +++++++++++++++++++++++++++++++-
- 1 file changed, 73 insertions(+), 1 deletion(-)
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 3
+> +    maxItems: 6
+> +
+> +  clock-names:
+> +    minItems: 3
+> +    maxItems: 6
+> +    items:
+> +      - const: sys_clk # main clock
+> +      - const: p_clk # register bank clock
+> +      - const: pixel_if0_clk # pixel stream 0 output clock
+> +      - const: pixel_if1_clk # pixel stream 1 output clock
+> +      - const: pixel_if2_clk # pixel stream 2 output clock
+> +      - const: pixel_if3_clk # pixel stream 3 output clock
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description: phandle to the external D-PHY
+> +
+> +  phy-names:
+> +    items:
+> +      - const: dphy
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        unevaluatedProperties: false
+> +        description: CSI-2 input
+> +
+> +        properties:
+> +          endpoint:
+> +            $ref: video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +
+> +            properties:
+> +              clock-lanes:
+> +                maxItems: 1
+> +
+> +              data-lanes:
+> +                maxItems: 1
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-index b815ce73e..a185901ab 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-@@ -164,7 +164,7 @@
- 
- 	grf: grf@ff000000 {
- 		compatible = "rockchip,rk3308-grf", "syscon", "simple-mfd";
--		reg = <0x0 0xff000000 0x0 0x10000>;
-+		reg = <0x0 0xff000000 0x0 0x08000>;
- 
- 		reboot-mode {
- 			compatible = "syscon-reboot-mode";
-@@ -177,6 +177,42 @@
- 		};
- 	};
- 
-+	usb2phy_grf: syscon@ff008000 {
-+		compatible = "rockchip,rk3308-usb2phy-grf", "syscon", "simple-mfd";
-+		reg = <0x0 0xff008000 0x0 0x4000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		u2phy: usb2phy@100 {
-+			compatible = "rockchip,rk3308-usb2phy";
-+			reg = <0x100 0x10>;
-+			assigned-clocks = <&cru USB480M>;
-+			assigned-clock-parents = <&u2phy>;
-+			clocks = <&cru SCLK_USBPHY_REF>;
-+			clock-names = "phyclk";
-+			clock-output-names = "usb480m_phy";
-+			#clock-cells = <0>;
-+			status = "disabled";
-+
-+			u2phy_otg: otg-port {
-+				interrupts = <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "otg-bvalid", "otg-id",
-+						  "linestate";
-+				#phy-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			u2phy_host: host-port {
-+				interrupts = <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "linestate";
-+				#phy-cells = <0>;
-+				status = "disabled";
-+			};
-+		};
-+	};
-+
- 	detect_grf: syscon@ff00b000 {
- 		compatible = "rockchip,rk3308-detect-grf", "syscon", "simple-mfd";
- 		reg = <0x0 0xff00b000 0x0 0x1000>;
-@@ -579,6 +615,42 @@
- 		status = "disabled";
- 	};
- 
-+	usb20_otg: usb@ff400000 {
-+		compatible = "rockchip,rk3308-usb", "rockchip,rk3066-usb",
-+			     "snps,dwc2";
-+		reg = <0x0 0xff400000 0x0 0x40000>;
-+		interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_OTG>;
-+		clock-names = "otg";
-+		dr_mode = "otg";
-+		g-np-tx-fifo-size = <16>;
-+		g-rx-fifo-size = <280>;
-+		g-tx-fifo-size = <256 128 128 64 32 16>;
-+		phys = <&u2phy_otg>;
-+		phy-names = "usb2-phy";
-+		status = "disabled";
-+	};
-+
-+	usb_host_ehci: usb@ff440000 {
-+		compatible = "generic-ehci";
-+		reg = <0x0 0xff440000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
-+		phys = <&u2phy_host>;
-+		phy-names = "usb";
-+		status = "disabled";
-+	};
-+
-+	usb_host_ohci: usb@ff450000 {
-+		compatible = "generic-ohci";
-+		reg = <0x0 0xff450000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
-+		phys = <&u2phy_host>;
-+		phy-names = "usb";
-+		status = "disabled";
-+	};
-+
- 	sdmmc: mmc@ff480000 {
- 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x0 0xff480000 0x0 0x4000>;
--- 
-2.11.0
+If there's only 1 lane, are you assigning between clock and data lanes? 
+If not, then there's no mapping needed.
 
+> +
+> +            required:
+> +              - clock-lanes
+> +              - data-lanes
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Stream 0 output
+> +
+> +      port@2:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Stream 1 output
+> +
+> +      port@3:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Stream 2 output
+> +
+> +      port@4:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Stream 3 output
+> +
+> +    required:
+> +      - port@0
+> +
+> +
+> +dependencies:
+> +  phys: [ 'phy-names' ]
+> +  phy-names: [ 'phys' ]
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    csi2rx: csi-bridge@d060000 {
+> +      compatible = "cdns,csi2rx";
+> +      reg = <0x0d060000 0x1000>;
+> +      clocks = <&byteclock>, <&byteclock>,
+> +        <&coreclock>, <&coreclock>,
+> +        <&coreclock>, <&coreclock>;
+> +      clock-names = "sys_clk", "p_clk",
+> +              "pixel_if0_clk", "pixel_if1_clk",
+> +              "pixel_if2_clk", "pixel_if3_clk";
+> +      phys = <&dphy0>;
+> +      phy-names = "dphy";
+> +
+> +      ports {
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +
+> +        port@0 {
+> +          reg = <0>;
+> +
+> +          csi2rx_in_sensor: endpoint {
+> +            remote-endpoint = <&sensor_out_csi2rx>;
+> +            clock-lanes = <0>;
+> +            data-lanes = <1 2>;
+> +          };
+> +        };
+> +
+> +        port@1 {
+> +          reg = <1>;
+> +
+> +          csi2rx_out_grabber0: endpoint {
+> +            remote-endpoint = <&grabber0_in_csi2rx>;
+> +          };
+> +        };
+> +
+> +        port@2 {
+> +          reg = <2>;
+> +
+> +          csi2rx_out_grabber1: endpoint {
+> +            remote-endpoint = <&grabber1_in_csi2rx>;
+> +          };
+> +        };
+> +
+> +        port@3 {
+> +          reg = <3>;
+> +
+> +          csi2rx_out_grabber2: endpoint {
+> +            remote-endpoint = <&grabber2_in_csi2rx>;
+> +          };
+> +        };
+> +
+> +        port@4 {
+> +          reg = <4>;
+> +
+> +          csi2rx_out_grabber3: endpoint {
+> +            remote-endpoint = <&grabber3_in_csi2rx>;
+> +          };
+> +        };
+> +      };
+> +    };
+> -- 
+> 2.30.0
 
 -- 
 linux-phy mailing list
