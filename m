@@ -5,17 +5,17 @@ X-Spam-Level:
 X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
 	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
 	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,USER_AGENT_GIT
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 028ADC47080
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 16:49:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D6C76C4708F
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 16:50:01 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C8629613C1
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 16:49:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C8629613C1
+	by mail.kernel.org (Postfix) with ESMTPS id 9ED4F610A8
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jun 2021 16:50:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9ED4F610A8
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,66 +24,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pmg3fIyLzqp+dAjaN+EqAMyB5qrgMM/f0L4TqbQy46I=; b=ODJaM+Qwco8580
-	4jXXkgAQ/6RQkpLRqBaQITVel2hFggki5qA8jFpbAMKBbclU3ahVfnxoFTk+KnNh6TccYOzgY78zz
-	9S2qtdsLXsvvrjnASBgqUrnE8EcOQAOIjR/Zo9uPuIex0B1Tqc0Z+z6ZNPa6SgTsEFlJ2OE0jSVPS
-	Vf6Ur/oEJBTzHo6oRBXyErsyYzXwdiLRQUlKeORmcZnWI2oS+gjRtXUow/qkOX3FUYSMVMBSWTWnb
-	tIgxjz8jplXQzckmfuwXAwL6un/NATsy4mGRyaml9pb4pSjC/QwEFxMQERHaQ7ZNt6+f3qgVyl3D0
-	JE+Xjoj9JX23qOHMPHjA==;
+	List-Owner; bh=MQGBZRLW7h8+J1YFmYmIHEmsWP3wNxUnA7WrZSqXX0k=; b=qNIxxtVvsgVxOq
+	XX59ub2hLddNR8ghCtcQK2+Lh74pyqOLnaaAn3OdgfIARBZxygP6+vqWr9AYH8eq7LgHeztGLAKAj
+	gO87eHqjvdmzDHl+9ZQStxsylnfRVP1JrbznxIYux75DOoqhXhyB1mabey2S94lNERc56brMbFEAU
+	jcjepuknQ/rIn4KPVOKKusa5mvJI8agwQkcTq0YQZIz329AkEJyWuf6AonZrJDKfuFRfMzvSUqwwd
+	WgwmgOuLY4XZaQlFR2Wv/4//zifTCdJqcoebu+0FlBbHF9XX3hiI6C65udh25CIv+9+VWTYZ4oAj9
+	KogLMdiLvpxVSFBZIsDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lo7a7-00HY5T-14; Tue, 01 Jun 2021 16:49:31 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1lo7ab-00HYLg-0Q; Tue, 01 Jun 2021 16:50:01 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lo7Yu-00HXUG-96; Tue, 01 Jun 2021 16:48:17 +0000
-Received: by mail-ej1-x635.google.com with SMTP id t15so9762800eju.3;
- Tue, 01 Jun 2021 09:48:15 -0700 (PDT)
+ id 1lo7Yw-00HXVP-7e; Tue, 01 Jun 2021 16:48:19 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id j10so18172260edw.8;
+ Tue, 01 Jun 2021 09:48:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=DHH8YHAlTPU5T8bDwFoNt/piYkwaeBsEh0BIqwvr1v8=;
- b=UWfVn7196iEf7L184gwllFhn6rdJEIWyjJCbY5n2WJCVE3/0likbwUcU+ZHcNxJ5C9
- zzfZqKJJUvFzjm49sXA5z3F2EAoUJIBPIht6iz/Ws2OKkKoSMbHO17MUMNE3tYrz2bwg
- MfXqeEekBVhSH+SAlYqynKa5PbySth8XWvmy2n6gmb24HNn6Qs5zAqFfHRj+j+tYDGHt
- iroOJJcYKWLV/VwUm7q1W1qgKEFMeN2S0qF2WYtjHLUQFW373EIJSyh7Nj1EMERGt6vt
- THXONO63VvoMJsl9CpM/jm97wHpnWKsddcNZcCcAwInnzG8q2Vn8TFk735K30ALmBlsZ
- w8Ww==
+ bh=B8yrT0K2LfeXhIzhR/5QWBV3kbYfUc/He2mmnHviDt4=;
+ b=jA46gtlB32jvqbaHFH9jvsdOlOHKjWDjyRLRCJcEBBCKrBB2uCTJZMeJkkuy1uF7M+
+ 3TmncLhd5DOkG72wA9Rd8mmT5+m2Se1i2OIabtgfaFRjV8oHI0VvJUONxpKYZ7iysIR3
+ 3Y70T1sHaA889A1Usd7AmaAeWq/0DuWn8FmZFvBEK5cYBvUZ2Q8ip8F27RnoAA+Nw8iE
+ WKkxKoWOIofMPLYWKViOqLq7d0CJKEsVtQmjHUEeRK4mL5+nHtPyhT5F0Ofi6tM1/Uku
+ MayRehNB9R1KjmTUaA8yspDbFysFCiv4HDzvM/SV6GPz9GRBIf4uJFHNLzMwYSEdH1tJ
+ SjDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=DHH8YHAlTPU5T8bDwFoNt/piYkwaeBsEh0BIqwvr1v8=;
- b=DJlL98Fg2PZv2C/Agp//0vDII2Fug9y2q/fL5xqiUq+z6xMcmgpVQkFj8/Je/WhN3M
- Mq3J8uiirgMAoA0eZVj9fPbTI7WLqou5jSat4qggF4jkCq970iEnXW6Yy3dufnbq4CRO
- JpZkw7q4IcvrB0FTsmwpCsxyWaZpj7DxUF/dlBmcS64ZlhHOQ7rXU8flYdpvCVbscTrh
- xG6nOA4z9dyvEUPaHpO9pW9Ra0g4RXFfKDq3jrfPzHuvBay7VjqgWUPwgPpYwXXRKadh
- zJbAEvSUix6nuCi6yBwDWR3YUMevb9gpU3YFgRMZF1GBBNavJi8TzBDt3etXdMMbBx/g
- ebSA==
-X-Gm-Message-State: AOAM532TrAKMMmXhx4wLKuSOdIAX1IxLd62LHx4eK8WOObMgcjVgvQDg
- bY/VLmbt6QfonyqDBs4J8UE=
-X-Google-Smtp-Source: ABdhPJxn8fLUrUgadCnTVAG5yqfmlbvyD3qqaRyr7KxYhhdmAgyN9kCwnpKervVuHajee3iAm0dALw==
-X-Received: by 2002:a17:906:1dc2:: with SMTP id
- v2mr30584241ejh.8.1622566094887; 
- Tue, 01 Jun 2021 09:48:14 -0700 (PDT)
+ bh=B8yrT0K2LfeXhIzhR/5QWBV3kbYfUc/He2mmnHviDt4=;
+ b=kf2idLUoopd8oL/bRAgfQOEKLaYLHPcXmwhWfgPFybQgyPSqcm5qZhWxTEJVsYpwXf
+ XdJkGkvOLumLaL/JbY3cLtrrPLjJBqWM+u2y3I0IqmTL4t+NA5+64qWCXZ6NMFRqmyhj
+ sdq1UJ6R+zX6jNxfwu7EySLdGR1PtvKfRg0n8LjN6oNVmbkXQUJXVe3562ehYj4Zrv9I
+ NP28LcebtZ5dFh66dBTwzwbANHglFFXtzqzxv5ZkfQGfOZ7sPO4j/QjmZpn4/HjMyxed
+ VbJ+2bMYrsILONPQCfOp0+7yY6b5LhOboZLF93ktWI9FICG/GC/8WeFaW4qkhjXhaYyb
+ JeNw==
+X-Gm-Message-State: AOAM530MyhLpV9Fawt7IW3gZY1xYTdRxwDho3EooJ8QoGjyj4Z5a3MmL
+ rPlKk6ojpIqIH1Wh7g3K4xk=
+X-Google-Smtp-Source: ABdhPJwYFb76+ATm+1vcRtbPA1ti1sxM+CUyTpVJbs5DshpTnTSjevMP61I9Rp6PBQKTVhgIVA5Llw==
+X-Received: by 2002:a05:6402:40d0:: with SMTP id
+ z16mr34296115edb.104.1622566096823; 
+ Tue, 01 Jun 2021 09:48:16 -0700 (PDT)
 Received: from debian.home (81-204-249-205.fixed.kpn.net. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q18sm8327750edd.3.2021.06.01.09.48.13
+ by smtp.gmail.com with ESMTPSA id q18sm8327750edd.3.2021.06.01.09.48.14
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 01 Jun 2021 09:48:14 -0700 (PDT)
+ Tue, 01 Jun 2021 09:48:16 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
 Cc: robh+dt@kernel.org, kishon@ti.com, vkoul@kernel.org, t.schramm@manjaro.org,
  linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v7 4/5] arm64: dts: rockchip: rename nodename for
- phy-rockchip-inno-usb2
-Date: Tue,  1 Jun 2021 18:47:59 +0200
-Message-Id: <20210601164800.7670-5-jbx6244@gmail.com>
+Subject: [PATCH v7 5/5] arm64: dts: rockchip: add USB support to rk3308.dtsi
+Date: Tue,  1 Jun 2021 18:48:00 +0200
+Message-Id: <20210601164800.7670-6-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20210601164800.7670-1-jbx6244@gmail.com>
 References: <20210601164800.7670-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210601_094816_360681_AFF2094B 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20210601_094818_318734_B56DF4D2 
+X-CRM114-Status: GOOD (  13.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,71 +100,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pattern: "^(|usb-|usb2-|usb3-|pci-|pcie-|sata-)phy(@[0-9a-f,]+)*$"
-in phy-provider.yaml has required "#phy-cells" for phy nodes.
-The "phy-cells" in rockchip-inno-usb2 nodes are located in subnodes.
-Rename the nodename to pattern "usb2phy@[0-9a-f]+$" to prevent
-notifications.
+From: Tobias Schramm <t.schramm@manjaro.org>
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
-phy/phy-provider.yaml
+The Rockchip RK3308 features an integrated USB 2.0 phy, an USB OTG
+controller and OHCI/EHCI interfaces.
+This patch adds all of those to the RK3308 dtsi and thereby enables USB
+support on the RK3308.
 
+Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 2 +-
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 2 +-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 4 ++--
- 3 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 4e243d72e..248ebb61a 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -822,7 +822,7 @@
- 		#address-cells = <1>;
- 		#size-cells = <1>;
+Changed:
+  restyle
+  limit grf reg size
+  change sub nodename
+---
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 74 +++++++++++++++++++++++++++++++-
+ 1 file changed, 73 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index b815ce73e..a185901ab 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -164,7 +164,7 @@
  
--		u2phy: usb2-phy@100 {
-+		u2phy: usb2phy@100 {
- 			compatible = "rockchip,px30-usb2phy";
- 			reg = <0x100 0x20>;
- 			clocks = <&pmucru SCLK_USBPHY_REF>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index bc0bdc3d8..8c821acb2 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -819,7 +819,7 @@
- 		#address-cells = <1>;
- 		#size-cells = <1>;
+ 	grf: grf@ff000000 {
+ 		compatible = "rockchip,rk3308-grf", "syscon", "simple-mfd";
+-		reg = <0x0 0xff000000 0x0 0x10000>;
++		reg = <0x0 0xff000000 0x0 0x08000>;
  
--		u2phy: usb2-phy@100 {
-+		u2phy: usb2phy@100 {
- 			compatible = "rockchip,rk3328-usb2phy";
- 			reg = <0x100 0x10>;
- 			clocks = <&xin24m>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index a2eba5357..c1a253507 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1418,7 +1418,7 @@
- 			status = "disabled";
+ 		reboot-mode {
+ 			compatible = "syscon-reboot-mode";
+@@ -177,6 +177,42 @@
  		};
+ 	};
  
--		u2phy0: usb2-phy@e450 {
-+		u2phy0: usb2phy@e450 {
- 			compatible = "rockchip,rk3399-usb2phy";
- 			reg = <0xe450 0x10>;
- 			clocks = <&cru SCLK_USB2PHY0_REF>;
-@@ -1445,7 +1445,7 @@
- 			};
- 		};
++	usb2phy_grf: syscon@ff008000 {
++		compatible = "rockchip,rk3308-usb2phy-grf", "syscon", "simple-mfd";
++		reg = <0x0 0xff008000 0x0 0x4000>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++
++		u2phy: usb2phy@100 {
++			compatible = "rockchip,rk3308-usb2phy";
++			reg = <0x100 0x10>;
++			assigned-clocks = <&cru USB480M>;
++			assigned-clock-parents = <&u2phy>;
++			clocks = <&cru SCLK_USBPHY_REF>;
++			clock-names = "phyclk";
++			clock-output-names = "usb480m_phy";
++			#clock-cells = <0>;
++			status = "disabled";
++
++			u2phy_otg: otg-port {
++				interrupts = <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "otg-bvalid", "otg-id",
++						  "linestate";
++				#phy-cells = <0>;
++				status = "disabled";
++			};
++
++			u2phy_host: host-port {
++				interrupts = <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "linestate";
++				#phy-cells = <0>;
++				status = "disabled";
++			};
++		};
++	};
++
+ 	detect_grf: syscon@ff00b000 {
+ 		compatible = "rockchip,rk3308-detect-grf", "syscon", "simple-mfd";
+ 		reg = <0x0 0xff00b000 0x0 0x1000>;
+@@ -579,6 +615,42 @@
+ 		status = "disabled";
+ 	};
  
--		u2phy1: usb2-phy@e460 {
-+		u2phy1: usb2phy@e460 {
- 			compatible = "rockchip,rk3399-usb2phy";
- 			reg = <0xe460 0x10>;
- 			clocks = <&cru SCLK_USB2PHY1_REF>;
++	usb20_otg: usb@ff400000 {
++		compatible = "rockchip,rk3308-usb", "rockchip,rk3066-usb",
++			     "snps,dwc2";
++		reg = <0x0 0xff400000 0x0 0x40000>;
++		interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru HCLK_OTG>;
++		clock-names = "otg";
++		dr_mode = "otg";
++		g-np-tx-fifo-size = <16>;
++		g-rx-fifo-size = <280>;
++		g-tx-fifo-size = <256 128 128 64 32 16>;
++		phys = <&u2phy_otg>;
++		phy-names = "usb2-phy";
++		status = "disabled";
++	};
++
++	usb_host_ehci: usb@ff440000 {
++		compatible = "generic-ehci";
++		reg = <0x0 0xff440000 0x0 0x10000>;
++		interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
++		phys = <&u2phy_host>;
++		phy-names = "usb";
++		status = "disabled";
++	};
++
++	usb_host_ohci: usb@ff450000 {
++		compatible = "generic-ohci";
++		reg = <0x0 0xff450000 0x0 0x10000>;
++		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru HCLK_HOST>, <&cru HCLK_HOST_ARB>, <&u2phy>;
++		phys = <&u2phy_host>;
++		phy-names = "usb";
++		status = "disabled";
++	};
++
+ 	sdmmc: mmc@ff480000 {
+ 		compatible = "rockchip,rk3308-dw-mshc", "rockchip,rk3288-dw-mshc";
+ 		reg = <0x0 0xff480000 0x0 0x4000>;
 -- 
 2.11.0
 
