@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 54571C47083
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Jun 2021 18:17:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7975FC47096
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Jun 2021 19:51:45 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 207ED60D07
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Jun 2021 18:17:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 207ED60D07
+	by mail.kernel.org (Postfix) with ESMTPS id 4982F613EE
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Jun 2021 19:51:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4982F613EE
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,62 +23,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kGxYGn/2NRGEQFneEqt5QLn62BTZLw3ol+4PX5NeZlY=; b=KqAdZHNF0v95CO
-	0BMngnvusF/6KGgo/dpd7/SXsA4UFR9aTj6ihk6szd0j/y5CdApWkaOdYgxVebmuAaAGU5pL4AP+y
-	IjF4DtrMtDf0/17idtXN/+6xmZwZTh8Gd+UffS7KKtEZIxDi9Wz7UazlMVChQfMRqquPAo/UY6GA7
-	KffNEwBCzbYA69ZLibeqSgMVrkEiuW4b/9gSAaTLu4nuItGMtd++fQmcUjIEyXTJ3hJdRwyeHM6x7
-	/XE/ntIRg8OknmU6AZSt2w0nxkeHAPRqYwwIE9qtkvrByZkN/VxVjlxGunQZYS2Km4jCFn73E8csl
-	xZskZ9qQXxAmjH8NLb6w==;
+	List-Owner; bh=yRs+D2g5X8u6w5de7QftEjAS8MsLaSzYx4I2Gie7Ivk=; b=1iHs6yNSvR3BiG
+	2T7ixvDbInb25Ngh4v994vwRKcC+qpG7PHmhkB5ebdvxn7np5z/TOITIqtG1IhN3NUnabFz26WReX
+	BpAo5aJsFXQ/KfiLJilfrPn5OCCmb6qf98v1CpXqLa5DUNXVdsp2795hQMrausHqmfs4rYwoMHWsD
+	kbTLmdF+UpAekaRDl8XQ87OcVSGj9zfrMApsMRODhSWpYdtqJbSeSwdALI1imtkgWPaEJpj5LB4+i
+	Of8zQOVcKN37rhjAO713WMHVdOBpssYDXex+PVEJt2vMgaMz5iPauoi4QOgTGo7M7WQ04ybhTopfg
+	q2k4I11Gx8AXXsill+gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1loVR9-005fsW-Hk; Wed, 02 Jun 2021 18:17:51 +0000
-Received: from mail-ot1-f53.google.com ([209.85.210.53])
+	id 1loWu0-0061pT-Ph; Wed, 02 Jun 2021 19:51:44 +0000
+Received: from mail-ot1-f45.google.com ([209.85.210.45])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1loVR7-005fry-5C; Wed, 02 Jun 2021 18:17:50 +0000
-Received: by mail-ot1-f53.google.com with SMTP id
- 69-20020a9d0a4b0000b02902ed42f141e1so3304987otg.2; 
- Wed, 02 Jun 2021 11:17:47 -0700 (PDT)
+ id 1loWty-0061o8-Pp
+ for linux-phy@lists.infradead.org; Wed, 02 Jun 2021 19:51:44 +0000
+Received: by mail-ot1-f45.google.com with SMTP id
+ 36-20020a9d0ba70000b02902e0a0a8fe36so3534897oth.8
+ for <linux-phy@lists.infradead.org>; Wed, 02 Jun 2021 12:51:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=wpRwaaLx7ZrqEe3dJg/pfS23Gh7oExJO6rQu4khhsvk=;
- b=t+oalruvoc3G+Y2w5HdZFCWU9rejjBIItBoBmiTZuHvlIXXJQMKSeU6Ct1NmNHDKIQ
- 1/MNsvBf5wSKnd+4fCpwvTsGeS4xEr6bBOeofxhe2NsHxOdUG/AWw+wZooHOO5p6ifKn
- SJmwuI2rHkFxJt+duICPbGENoE5L9kf2MGp0xv1IO+i0BCVO+fyKJx2NtQl9fm7l/ZRo
- 3QRdqxkV3ahEF7B1K5AQ92+EB/B3RNuEpNZqQ9t1NjpgoYb0q4j8ElOV3P3hMbUsbZOe
- Ro06yuA0iR6QNMGAefR4f+EoOjL2S0qHdO4YkLCV6tj6qCMKmYTzkhwo6dZcifMDXOtI
- /C0Q==
-X-Gm-Message-State: AOAM530/MpCH1VcaoUhwg5qQDqqL+UAXh0b3aHkyYOpBXGlNNDO+6iob
- 3fNLlGIlpF/szwXkFGAiQg==
-X-Google-Smtp-Source: ABdhPJz6mFx2UAL5eFsPavAxkeMRAsjIw/c+vaFDEXCA/NcRNW/9Nw3FYzsBljrABentk20l/DHNSA==
-X-Received: by 2002:a9d:5c16:: with SMTP id o22mr9314609otk.319.1622657866851; 
- Wed, 02 Jun 2021 11:17:46 -0700 (PDT)
+ bh=+Q7Dprv1XHrLOLADgwS+LUK9nX7U22rV5liWcuJi1sQ=;
+ b=WUN7/moLMaPeS82PupjI+79pJ+Nta0O5HCcrap5wHWFUexrN889BxpN5n2MOh2fhUZ
+ ehWeQQonJZr3yZvcGDC5icp9Z+yMPR02NVRpSUXP9+l9z9CxV8k2/gYw/b5K19k9h/Gi
+ bMikRz35t6RMtEyu+QHGa3NWrIZeS1AIN4DO8bJoDjxKqna4wUr7JUGlHR6V6Yfokvkw
+ 9biCRLnw1NgT+UX6BMH2/mrH2TZcJT3cqpk0mil3d4wlHijplVDoYsUB4KUVuY4t4qmQ
+ IDv0ZftHbBdqmDuOzYxX9utInxAsgUlO7M/hFDwvjozuJQttwE1rC+aaoTaTgVIbVWEd
+ Q8ZA==
+X-Gm-Message-State: AOAM533ld7WlrICmn2i0DwYMGf+JwlGawy54eAieaqKhBxPwlZ3/7dPa
+ 2eHewqNgHaquwwaEk9F0aRE0SlUBCg==
+X-Google-Smtp-Source: ABdhPJwwMBhCZYX2BPqAsh/iJokBF2o4Qnby7q+rYIweMoIYXdgIomW7ueAVqAo+AIB0QXXG+duWFg==
+X-Received: by 2002:a9d:3e5:: with SMTP id f92mr4917267otf.181.1622663501828; 
+ Wed, 02 Jun 2021 12:51:41 -0700 (PDT)
 Received: from robh.at.kernel.org (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x7sm122639ooc.23.2021.06.02.11.17.45
+ by smtp.gmail.com with ESMTPSA id b81sm194380oia.19.2021.06.02.12.51.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 02 Jun 2021 11:17:46 -0700 (PDT)
-Received: (nullmailer pid 3706027 invoked by uid 1000);
- Wed, 02 Jun 2021 18:17:44 -0000
-Date: Wed, 2 Jun 2021 13:17:44 -0500
+ Wed, 02 Jun 2021 12:51:41 -0700 (PDT)
+Received: (nullmailer pid 3875025 invoked by uid 1000);
+ Wed, 02 Jun 2021 19:51:39 -0000
+Date: Wed, 2 Jun 2021 14:51:39 -0500
 From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: devicetree@vger.kernel.org, linux-rockchip@lists.infradead.org,
- vkoul@kernel.org, t.schramm@manjaro.org, linux-phy@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org, kishon@ti.com,
- heiko@sntech.de, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v7 2/5] dt-bindings: soc: rockchip: grf: add compatible
- for RK3308 USB grf
-Message-ID: <20210602181744.GA3705993@robh.at.kernel.org>
-References: <20210601164800.7670-1-jbx6244@gmail.com>
- <20210601164800.7670-3-jbx6244@gmail.com>
+To: Pratyush Yadav <p.yadav@ti.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Steve Longerbeam <slongerbeam@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@gmail.com>, dmaengine@vger.kernel.org,
+ Benoit Parrot <bparrot@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH v2 16/18] phy: dt-bindings: Convert Cadence DPHY binding
+ to YAML
+Message-ID: <20210602195139.GA3874992@robh.at.kernel.org>
+References: <20210526152308.16525-1-p.yadav@ti.com>
+ <20210526152308.16525-17-p.yadav@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210601164800.7670-3-jbx6244@gmail.com>
+In-Reply-To: <20210526152308.16525-17-p.yadav@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210602_111749_224356_80E8D55A 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20210602_125142_860042_976D7A74 
+X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,25 +103,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 01 Jun 2021 18:47:57 +0200, Johan Jonker wrote:
-> From: Tobias Schramm <t.schramm@manjaro.org>
+On Wed, 26 May 2021 20:53:06 +0530, Pratyush Yadav wrote:
+> Convert Cadence DPHY binding to YAML.
 > 
-> The RK3308 has a USB GRF.
-> This patch adds a compatible string for it.
+> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 > 
-> Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
 > 
-> Changed:
->   Add "rockchip,rk3308-usb2phy-grf" to "usb2phy@[0-9a-f]+$"
->   patternProperties too.
-> ---
->  Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+> Changes in v2:
+> - Drop reg description.
+> - Add a description for each DPHY clock.
+> - Rename dphy@... to phy@... in example.
+> - Add Laurent's R-by.
+> - Re-order subject prefixes.
+> 
+>  .../devicetree/bindings/phy/cdns,dphy.txt     | 20 --------
+>  .../devicetree/bindings/phy/cdns,dphy.yaml    | 51 +++++++++++++++++++
+>  2 files changed, 51 insertions(+), 20 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
+>  create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
