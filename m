@@ -2,88 +2,68 @@ Return-Path: <SRS0=cVk+=K5=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BFEF6C47082
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 04:34:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 96109C47096
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 05:06:10 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7C9E26124B
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 04:34:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7C9E26124B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 57588613F0
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 05:06:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 57588613F0
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=huawei.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hZ7RlIUoq0FAJu0gYQahZbIy3IDNxDLI+NcdX9TYTTs=; b=3TJ/wdrzFrr0H1
-	mEjgCnfCKCz16oy3dsIbpoDtMW6idu6XD8zGe+WbQV26QYPWLJ80CJZ9yJWiEveCO1tdUEkgS1n1N
-	kbPafu33MC00q1dWRSByD4P/mPNR4d0Q2mKg1VA9WTIUnXmVipITWimrCVUlVKmQEvOllLe6LDclZ
-	fdLaL9LJua3n0mo9jNMwQ1w2MgwXMdN2Kq3fQdZSkBsrJBkH15zznIMyT32cxQBfwxuSkT5y9UucX
-	ve4H1usJm/Rk5g/BOmVvtZNjxGETiS46ZkOhXB7enq6xI4/OivdZtG7VPsnzAQCheBn9YJ05gM9nG
-	1eAE8G/asbwXKSq5Qt2g==;
+	List-Owner; bh=1jiPFxInVxlnnfshJ3JUtfQtxqWBZ2LXp0Bk6/r69Vs=; b=Wg++78FBwFIh8y
+	RECerH3ZmugO1jn4++Qnbnikih+wen3xm4HfKiLSWcTJIKU2Ij3Ga9ZmhM8z4Swr//2BFmIZwbF+z
+	gD3NEePvuvMABltxS82kmrzsnckpd1N2hkcC84pUSqDNyNB2lCICIXMtmOLl+hKeCkmqWetcDwgDw
+	7bwFNPd3wfOvKOxKbLpYA0QvGc3RUNnprEw6z0lyDb6mR2fGCff1/VdAVm/s7gTWIntFpu7ioEM9t
+	QG7o2pVgYGray+UzdNvTKKSE8/1bI6QRTfLP73mTb2DPqsDSCwZrac0HzbOI7Qr2Oc5yb3Jll+Gjg
+	PVpNoGGE8VttMW7zFZeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lof3u-0075rX-1P; Thu, 03 Jun 2021 04:34:30 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1lofYX-00789z-RL; Thu, 03 Jun 2021 05:06:09 +0000
+Received: from szxga01-in.huawei.com ([45.249.212.187])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lof3o-0075iL-FN
- for linux-phy@lists.infradead.org; Thu, 03 Jun 2021 04:34:29 +0000
-Received: by mail-wm1-x331.google.com with SMTP id
- n17-20020a7bc5d10000b0290169edfadac9so5024717wmk.1
- for <linux-phy@lists.infradead.org>; Wed, 02 Jun 2021 21:32:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AUu5Be+XzHstT70CYgAaXmsVnYZ58qvDyiXH1sXBPVU=;
- b=glTp2vtM4weMjOMMWlfQSuFZRA4yk2ybrQtkDduYsC7KgkMGSHb3yQwEDgoaH4Mbvy
- Dwox0vk8MkhpnFy0mwwoZOwbmCpJ+DMCT6irHWaMAHdHzdMoxrkNNGWv4VrZ1OHuqpKn
- qhCSWqDk2dPkFz+PDdcdI7Ba08eqkYUlgnd8Sxiv/DSmkw2YSLC9bMFmybwTifU6wkMh
- 57vuYkQIDQv5qB4YQISsQh4A3DYtHEueyzhqv/gzc6oj493XT11GySm6k1PlJZBaEuwS
- pVuzkoivIkIH/8McTmmvjkcjCJ6qmqRqY6blZ1bI1jn8GESqE3RqiZe7yO9Sf+d6UScP
- jkQA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AUu5Be+XzHstT70CYgAaXmsVnYZ58qvDyiXH1sXBPVU=;
- b=fAIO4/dsyH4fXns+QWUFPgH3ab6oYE24dW3SrMOW0XxJFU9AWYDhBQKecApOgtvp64
- yuCdq4tXnmoAZpUNpt9P/5az3Zw3TdtJcvT8U/9YQ0D7Y/cq/7Uo1DNnd9pKEq1no8wZ
- vpIf3OAO22xWdipB75E56RetjYyVPyM3PybuRXHUV5QkL3cYFFs0qDY6bsFvdtmVZcKO
- 3GSLcTSwG8dOrE3BXOqLqXhu02WvUX4BxckPlApFiRqfIfG5aCES/ItBFj6UR0JLy7dO
- wworz25DdzjnJtiWwZmdFcBpWStAux+hRRri//BTHCtH+vbRaoJYbdxPT5ze78/RwLws
- PJQA==
-X-Gm-Message-State: AOAM531O+w4VSokuBvTzR0nWyA01hi47jk6ttM8K1z7HJYZdGToIpsIu
- agBjBIlNUqH3HGiVopC/asM=
-X-Google-Smtp-Source: ABdhPJzL77B9OTy6pJOXA2jImK8/FLGtZvxrlkOmDmM4O32Xs3BTRJrxlcSEYU5QZgUCpOHJTB269w==
-X-Received: by 2002:a1c:cc12:: with SMTP id h18mr34341705wmb.141.1622694741058; 
- Wed, 02 Jun 2021 21:32:21 -0700 (PDT)
-Received: from localhost.localdomain (113.red-88-4-247.dynamicip.rima-tde.net.
- [88.4.247.113])
- by smtp.gmail.com with ESMTPSA id u17sm1921697wrt.61.2021.06.02.21.32.20
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 02 Jun 2021 21:32:20 -0700 (PDT)
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-To: vkoul@kernel.org
-Cc: lkp@intel.com, ndesaulniers@google.com, linux-phy@lists.infradead.org,
- neil@brown.name, ilya.lipnitskiy@gmail.com
-Subject: [PATCH] phy: ralink: phy-mt7621-pci: drop 'of_match_ptr' to fix
- -Wunused-const-variable
-Date: Thu,  3 Jun 2021 06:32:19 +0200
-Message-Id: <20210603043219.32646-1-sergio.paracuellos@gmail.com>
+ id 1lofYU-007824-Dd
+ for linux-phy@lists.infradead.org; Thu, 03 Jun 2021 05:06:08 +0000
+Received: from dggemv711-chm.china.huawei.com (unknown [172.30.72.55])
+ by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4FwYdR1pBbzWr72;
+ Thu,  3 Jun 2021 13:01:15 +0800 (CST)
+Received: from dggpeml500017.china.huawei.com (7.185.36.243) by
+ dggemv711-chm.china.huawei.com (10.1.198.66) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2176.2; Thu, 3 Jun 2021 13:05:52 +0800
+Received: from huawei.com (10.175.103.91) by dggpeml500017.china.huawei.com
+ (7.185.36.243) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2176.2; Thu, 3 Jun 2021
+ 13:05:52 +0800
+From: Yang Yingliang <yangyingliang@huawei.com>
+To: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
+CC: <vkoul@kernel.org>, <steen.hegelund@microchip.com>
+Subject: [PATCH -next] phy: Sparx5 Eth SerDes: check return value after
+ calling platform_get_resource()
+Date: Thu, 3 Jun 2021 13:10:14 +0800
+Message-ID: <20210603051014.2674744-1-yangyingliang@huawei.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+X-Originating-IP: [10.175.103.91]
+X-ClientProxiedBy: dggems703-chm.china.huawei.com (10.3.19.180) To
+ dggpeml500017.china.huawei.com (7.185.36.243)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210602_213426_184162_87D7ACE7 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20210602_220606_677021_6E414857 
+X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,31 +80,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The of_device_id is included unconditionally by of.h header and used
-in the driver as well. Remove of_match_ptr to fix W=1 compile test
-warning with !CONFIG_OF:
+It will cause null-ptr-deref if platform_get_resource() returns NULL,
+we need check the return value.
 
-drivers/phy/ralink/phy-mt7621-pci.c:341:34: warning: unused variable 'mt7621_pci_phy_ids' [-Wunused-const-variable]
-
-Reported-by: kernel test robot <lkp@intel.com>
-Signed-off-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
 ---
- drivers/phy/ralink/phy-mt7621-pci.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/microchip/sparx5_serdes.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/phy/ralink/phy-mt7621-pci.c b/drivers/phy/ralink/phy-mt7621-pci.c
-index 242c5d8b8635..5e6530f545b5 100644
---- a/drivers/phy/ralink/phy-mt7621-pci.c
-+++ b/drivers/phy/ralink/phy-mt7621-pci.c
-@@ -348,7 +348,7 @@ static struct platform_driver mt7621_pci_phy_driver = {
- 	.probe = mt7621_pci_phy_probe,
- 	.driver = {
- 		.name = "mt7621-pci-phy",
--		.of_match_table = of_match_ptr(mt7621_pci_phy_ids),
-+		.of_match_table = mt7621_pci_phy_ids,
- 	},
- };
+diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
+index c8a7d0927ced..4076580fc2cd 100644
+--- a/drivers/phy/microchip/sparx5_serdes.c
++++ b/drivers/phy/microchip/sparx5_serdes.c
+@@ -2470,6 +2470,10 @@ static int sparx5_serdes_probe(struct platform_device *pdev)
+ 	priv->coreclock = clock;
  
+ 	iores = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	if (!iores) {
++		dev_err(priv->dev, "Invalid resource\n");
++		return -EINVAL;
++	}
+ 	iomem = devm_ioremap(priv->dev, iores->start, resource_size(iores));
+ 	if (IS_ERR(iomem)) {
+ 		dev_err(priv->dev, "Unable to get serdes registers: %s\n",
 -- 
 2.25.1
 
