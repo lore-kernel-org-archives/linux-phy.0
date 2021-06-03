@@ -2,61 +2,61 @@ Return-Path: <SRS0=cVk+=K5=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-7.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 086FBC47096
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 08:58:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1D4D8C47082
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 09:56:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6B9AF6136E
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 08:58:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6B9AF6136E
+	by mail.kernel.org (Postfix) with ESMTPS id C8B0A613F0
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 09:56:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C8B0A613F0
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=sntech.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6XqJgCFH2YRiyvJfRx6hdMcXpzbouyIm4fFAdP9YKEQ=; b=C1CjOj7OM9u4Ub
-	mM/NMCHeUb7bNhgMGTjEH/5mDmLEVrKHEHnwgCb5tjpJNlwkVVLZdv9OMKeoU2VD/58Thh8gtLJN2
-	u+oY0GC5IDGeyxDwmY45NwSkS9+unW5zPUb86JQNV5zPeQsk/we/X/khovdBSuq3iz9HcVzrXkYZQ
-	gYwiYLSg1u8DwIYIt814rN7zSI7zernx68B/N7KUypdA6HfurcEM7VecYaLqDY7B+6DPeNxacvZ9h
-	+Koi9Ld9fj666inp3XTJHVva6aDf4Ah5JomFKAOeHgVPWdMsT7e0c25NXT6XRfzR8JKj0mYY1Uode
-	iihUONoc9P9dzbjincrA==;
+	List-Owner; bh=Nv+dFJgPp7jdI4s1pgSbtbDhvXp8zFF9+o1ooJo/7zI=; b=C7gjxwaqSwCHCk
+	VcWXu1Cv9kc4jFBozaKTrAvKabSXv3AH9xKz8UGxzZ8/JGnaRhtK2rvt6PyTDqsx4E1OF9JvLRLaG
+	t5Bl2aJkpsrM4GI3UGfiS/F6HCqhrMQmqJ6j/RiSFKM2jaq5a1uxi8TAAn1h/7R6N5/O59Hu373fd
+	bsB3mmc2sYRlFA0a6ZB+FZnqiurMMJD8y9P1zqylIR1fu/0KCScwEJVBR+IiUfrVYzKnM8l5VED5o
+	+KxcmhNecGCkWna68eSe7oB5vx8Y7sUnRjePDTfIRQOBdJoOFIs4YuPvSytlNu7Oe56GFuM4HoKI+
+	buKL9HgAqAjmzoiz/oMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lojBU-007oVP-08; Thu, 03 Jun 2021 08:58:36 +0000
+	id 1lok5S-007wlu-Bc; Thu, 03 Jun 2021 09:56:26 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lojBR-007oU6-MO; Thu, 03 Jun 2021 08:58:34 +0000
+ id 1lok5P-007wkX-Ha; Thu, 03 Jun 2021 09:56:24 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
+ helo=phil.lan)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1lojBL-0004B6-0N; Thu, 03 Jun 2021 10:58:27 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>, Vinod Koul <vkoul@kernel.org>
-Cc: robh+dt@kernel.org, kishon@ti.com, t.schramm@manjaro.org,
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v7 1/5] dt-bindings: phy: rename phy nodename in
- phy-rockchip-inno-usb2.yaml
-Date: Thu, 03 Jun 2021 10:58:26 +0200
-Message-ID: <3601774.Dhsi8hcfAM@diego>
-In-Reply-To: <YLhukPL7jSx3+dBj@vkoul-mobl>
+ id 1lok5L-0004PQ-8Y; Thu, 03 Jun 2021 11:56:19 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, kishon@ti.com, t.schramm@manjaro.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, vkoul@kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v7 0/5] convert grf.txt to YAML
+Date: Thu,  3 Jun 2021 11:56:16 +0200
+Message-Id: <162271417225.3165003.9593649275522382168.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.29.2
+In-Reply-To: <20210601164800.7670-1-jbx6244@gmail.com>
 References: <20210601164800.7670-1-jbx6244@gmail.com>
- <20210601164800.7670-2-jbx6244@gmail.com> <YLhukPL7jSx3+dBj@vkoul-mobl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210603_015833_770145_B737DA6C 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20210603_025623_605840_180DC42C 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,39 +73,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
-
-Am Donnerstag, 3. Juni 2021, 07:54:24 CEST schrieb Vinod Koul:
-> On 01-06-21, 18:47, Johan Jonker wrote:
-> > The pattern: "^(|usb-|usb2-|usb3-|pci-|pcie-|sata-)phy(@[0-9a-f,]+)*$"
-> > in phy-provider.yaml has required "#phy-cells" for phy nodes.
-> > The "phy-cells" in rockchip-inno-usb2 nodes are located in subnodes.
-> > Rename the nodename to pattern "usb2phy@[0-9a-f]+$" to prevent
-> > notifications. Remove unneeded "#phy-cells" from parent node.
-> > Also sort example.
-> > 
-> > make ARCH=arm dtbs_check
-> > DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
-> > phy/phy-provider.yaml
-> > 
-> > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> > Acked-by: Rob Herring <robh@kernel.org>
-> > ---
-> >  .../devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml       | 11 +++--------
-> >  Documentation/devicetree/bindings/soc/rockchip/grf.yaml       |  4 ++--
+On Tue, 1 Jun 2021 18:47:55 +0200, Johan Jonker wrote:
+> Changed V7:
+>   rebase
+>   add compatible for rk3308 USB grf
+>     add "rockchip,rk3308-usb2phy-grf" to "usb2phy@[0-9a-f]+$"
+>     patternProperties too
+>   add USB support to rk3308.dtsi
+>     restyle
+>     limit grf reg size
+>     change sub nodename
+>   remove applied patches
 > 
-> I dont have grf.yaml, I guess it would be easier to split this into two
-> or apply this thru rockchip tree. If you prefer latter:
-> 
-> Acked-By: Vinod Koul <vkoul@kernel.org>
+> [...]
 
-before we do any more rounds, I'll just do that with your Ack, thanks :-)
+Applied, thanks!
 
+[1/5] dt-bindings: phy: rename phy nodename in phy-rockchip-inno-usb2.yaml
+      commit: e71ccdff376b0bd1bf4d47642b7ec4d791293b96
+[2/5] dt-bindings: soc: rockchip: grf: add compatible for RK3308 USB grf
+      commit: da76290fa39dc647bf7a1bac6467e66c8e465e54
+[3/5] ARM: dts: rockchip: rename nodename for phy-rockchip-inno-usb2
+      commit: 2fd2300a9c17ee1c48b1b7a7fabbb90fd12a64f1
+[4/5] arm64: dts: rockchip: rename nodename for phy-rockchip-inno-usb2
+      commit: 8c3d64251ac5c5a3d10364f6b07d3603ac1e7b4a
+[5/5] arm64: dts: rockchip: add USB support to rk3308.dtsi
+      commit: 9fcf74b274a1dc5bcda37c34470061ef1e1130dd
 
-Heiko
-
-
-
+Best regards,
+-- 
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
