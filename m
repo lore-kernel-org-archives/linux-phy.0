@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-4.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 23E87C47096
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 05:48:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 47CB7C47096
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 05:49:35 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CA785613E6
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 05:48:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CA785613E6
+	by mail.kernel.org (Postfix) with ESMTPS id 104A7613EE
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Jun 2021 05:49:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 104A7613EE
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,46 +22,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jPLuQL2VctkMilQG3uRanu1XLhsODb+A36Fz3Rm2LxQ=; b=rI0ldAfoHMxFZM
-	vUfnz+k23mKBewA5hnUCDCKIh74gaUt1g7ofGMo1z+mqpn5cNI5wrTCjzbnpU0EB98IQWx7wqC8W0
-	VWt74WMOLsPoeyjDbsgavwh6yyT5joEfGx7HIJzvHimw2zBOmoTD1avyMOLttqmDMfONP/9gm2YpY
-	+mpZIe2MiCi7BWyrvh7TKbJtGu72aaUm/xlspF3mol6uQtUpmwd5No7T7Z+U5/t/dx4RlWikO1aEi
-	fejTF7y8nm/vy+eXjsDD9vQodE3OsvR2PcYNY7dXBCd26tJTC6H2/jStBoujBoV4uTnlER953c+Xf
-	hVW7rbmw95ay0YZLgSkg==;
+	List-Owner; bh=9LnL62J1zHNmjojuRRDvSJDeOCZ1Kf4/Zo86HUmZi2I=; b=aHAVJiRyPb6A6u
+	O6NA98ko7Yi2ihTZ/O7MUOLwMxIRfF8lLRW4oIaPpDa3h6ss4JHm+/CmVT8haS/X6/Bo/Ru1NtqbB
+	2vJCZF273co8qiWuMCSKAszW03HaJbctC6vcLYJrrYQWntxgLaVRolMrhE+2eg8AQdcBs8ahuwCTA
+	k+KbFlVk82j4VnnTxw4ogimFbAXwuXr/kRYE87zz3KW/BfBu+pdB0vS0Hckvz7/kwNTJcoWF+yBHT
+	1g+XIRWp4QNgpcDmYc1sZPZX5eutMCZi6ELBGohNQjhYHeqVJwuvNhhjNyqToAI7yiaZTGeCzio0P
+	EIJzT2el4UTpB0e2WQNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1logDg-007EJ3-9v; Thu, 03 Jun 2021 05:48:40 +0000
+	id 1logEY-007ELW-Kd; Thu, 03 Jun 2021 05:49:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1logDd-007EIT-JO
- for linux-phy@lists.infradead.org; Thu, 03 Jun 2021 05:48:38 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id C4CD961369;
- Thu,  3 Jun 2021 05:48:35 +0000 (UTC)
+ id 1logEU-007EL0-VZ
+ for linux-phy@lists.infradead.org; Thu, 03 Jun 2021 05:49:32 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id BCB1361369;
+ Thu,  3 Jun 2021 05:49:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1622699316;
- bh=EX+xKk9EPM9iI3srMZjz+ml116tGL4M4cy2PUJqfhy8=;
+ s=k20201202; t=1622699370;
+ bh=CA5CSdjZBRa4Qv1WOjAo6swDQqJBKNZLwtBz5M0dgFs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OBUiecXnYKbPt0gP3vagyP8VfOxD/n1l0qNGSQuNXB4cNxHHFV6E6csHgF/xDnkr7
- Opc1TDQ6mq3yQffAfK+f33HdDXHWAqog6Tinbz2X++bKXCtlT3dqb+H38uoUtVMZU9
- 7FALlSefr49JdlFv1LdJ09Xi3hov7kcNaSIdUQRDGc/ETWC19TbhBcC23S5WZMycJP
- +xaMZjxBS5CCO6EQulBSgZSrc4+0aKt8hbn+knyQR5JHEh1TZ/2pg4NribVw+hF4Gf
- QRkscjS6OOsBtWBHR0lbz0UHFMTnqSvt4IMT0x2P6jmKDgYbAyEhQSwy4dSzGAVzCK
- zAZldWdQc1VFg==
-Date: Thu, 3 Jun 2021 11:18:32 +0530
+ b=Tt7d1qGGJogMUnc/5PfH4Lrt+r0I2N8YrFtIP/37cijqWfVxeh3K32vDsqH8Mn4wQ
+ pD/INgfKqg+ZTG2Ni2R/tVmpZlthg8DcwhVE13EIV3N1VPARHtL0wv6iK7OUxqkypI
+ bJ+jD+amRs02mV0hbx/C+rY2C6Pf8/fGvzNayI1LNMuEx0Tf8z6VBy2yMB/ptHl4Gv
+ iJGeE4eSOm6rPvjR8Y2BmbBXI8CdKJxWvVjhJbVV8UD4MC1r3uu/o+WzzFqTy09erg
+ F5EFh465+dmYqMF0Vg+189tlDr3OjLuBQ7Z6pbNvch/Sx/B9pHPn+DoVJ2XU0p3ucY
+ uajZ/AQu4VDTA==
+Date: Thu, 3 Jun 2021 11:19:27 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Cc: lkp@intel.com, ndesaulniers@google.com, linux-phy@lists.infradead.org,
- neil@brown.name, ilya.lipnitskiy@gmail.com
-Subject: Re: [PATCH] phy: ralink: phy-mt7621-pci: drop 'of_match_ptr' to fix
- -Wunused-const-variable
-Message-ID: <YLhtMBcVk89HKstd@vkoul-mobl>
-References: <20210603043219.32646-1-sergio.paracuellos@gmail.com>
+To: Yang Yingliang <yangyingliang@huawei.com>
+Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ steen.hegelund@microchip.com
+Subject: Re: [PATCH -next] phy: Sparx5 Eth SerDes: check return value after
+ calling platform_get_resource()
+Message-ID: <YLhtZ+WEVgIrqIUb@vkoul-mobl>
+References: <20210603051014.2674744-1-yangyingliang@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210603043219.32646-1-sergio.paracuellos@gmail.com>
+In-Reply-To: <20210603051014.2674744-1-yangyingliang@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210602_224837_670585_3D6DF476 
-X-CRM114-Status: UNSURE (   5.65  )
+X-CRM114-CacheID: sfid-20210602_224931_049804_03315988 
+X-CRM114-Status: UNSURE (   4.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,10 +79,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03-06-21, 06:32, Sergio Paracuellos wrote:
-> The of_device_id is included unconditionally by of.h header and used
-> in the driver as well. Remove of_match_ptr to fix W=1 compile test
-> warning with !CONFIG_OF:
+On 03-06-21, 13:10, Yang Yingliang wrote:
+> It will cause null-ptr-deref if platform_get_resource() returns NULL,
+> we need check the return value.
 
 Applied, thanks
 
