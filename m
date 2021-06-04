@@ -2,64 +2,90 @@ Return-Path: <SRS0=hNs7=K6=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PULL_REQUEST,
-	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-8.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 803B0C4708F
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Jun 2021 10:26:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 24300C4743C
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Jun 2021 19:04:05 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4FFAF61406
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Jun 2021 10:26:58 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4FFAF61406
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linuxfoundation.org
+	by mail.kernel.org (Postfix) with ESMTPS id DFAB76140F
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Jun 2021 19:04:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DFAB76140F
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8NeUjWNkoHS+3fAb0YJCIMV1sj5rxfHfhwxkvV/G8Hw=; b=hHaSlUgzD870R1
-	RO+8EmEujAyqcf67EeyBUki17N68Kuy8f2FyNd4cDaFpJVzH+xZ0NOIgTZTky4S3GR4tgxl+0TusP
-	EIw8wFflv8UKyoK1H4PHglXOiZk2gLMvwGH9qBXB1dpxkbVwOTGu7+MV9VXSAM1ldKhN/xF13TskQ
-	QT04A4nqFs1N+SaLpJxHD2d3LgkkLa8CyyNjVNXXSQsHIYnAGOPJ2S88pnbf526+Hja7kUvtQ46ot
-	L+yNo/GjcTalsbYDWjBWS++0FEJ8WJrJyhui3QmVpBk/d3aQI89RQWr96oqonGV5Y4hf4fkaTovkk
-	jpqvzSjjsGxO2Wpu+zhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=r2UwD03CoBSFpnl9HNbAp5VxAXY1aggbrfBnfUiay0A=; b=SHYAUOmH9kcGA9
+	7LWKs/gceNk+O/RorIN83Sux50Z+vzvHxW34vgK9OyQj3ijjOGWy/14hxx64NEItRlde9yzuVATPE
+	EzsI0MuUwE80MNqdjqtkIsKVIpfqOjfP5qpb9WE+p+whqsQfv01cegwZ3Xrh+ij8tltZ2exKUPYaM
+	qfmnsqTLyQq25V78OTLCT6o0aE+8fr5ZfMGJIQ22GnCR+AEO+yE7wbsS4fvA5WcsrF1pg0aMJ/eTm
+	sCJIR3nEyHIzmszNdwHRKc1J4U2xCuHqQw7BZaRE0iZlFgwhea/HKwBeVnrYeWg07IKBKzBxUlyxS
+	9qQXWAajFvpvu0O6bmZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lp72X-00Cx5G-1c; Fri, 04 Jun 2021 10:26:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lpF6y-00EvYs-Fa; Fri, 04 Jun 2021 19:04:04 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lp6n0-00CqfT-OV
- for linux-phy@lists.infradead.org; Fri, 04 Jun 2021 10:11:02 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 5BEA161400;
- Fri,  4 Jun 2021 10:10:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1622801454;
- bh=4kWHAKUYAptvdKTKP+IbuMyYHMt0OC7/Pc06+tOzKc4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1Sh3CdH2m9fiTr7q3uyeVG7/UceoCd/YukBTmlIRkrcSwnhac3DvYhl4jR6NxQ4mR
- X27T9H025rqgbA9HwDphxqLY42KSp2HaEaBAWvRL/D+VZEDfp6pJvqm3Y2UcyWopF5
- 2y+3Xdnc/iRxNCM9onoseb87VN2dYcfhtDijhbaw=
-Date: Fri, 4 Jun 2021 12:10:51 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: LKML <linux-kernel@vger.kernel.org>,
- Linux Phy <linux-phy@lists.infradead.org>
-Subject: Re: [GIT PULL]: Generic phy fixes for v5.13
-Message-ID: <YLn8K6IvsGG7LOLr@kroah.com>
-References: <YLnraMuKUKPtktfZ@vkoul-mobl>
+ id 1lpF6s-00EvWk-Px; Fri, 04 Jun 2021 19:04:02 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id
+ b145-20020a1c80970000b029019c8c824054so8495742wmd.5; 
+ Fri, 04 Jun 2021 12:03:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DHU9r9qJ7f3y57BwW4Qkv4q6Btiso2T9prw5IOLS5+0=;
+ b=awJgxzWxRYr+LdcAZSkviGJAdgq/iNEGo2VfwjyUqX4jhUfsImih8lTVTe4yKgS2ff
+ tb/qWbJFaRY+V36MbIXsqH6zrD/pcFFtdpaamZG9hejKjWnfyKLAaTO2uI51fINYqduQ
+ hRQFfBdMsTVijvJ3BrTanhfu9oK5CRvflEdcZn5BDHykVzIQ11m6CEzX7sNoDttwjBgv
+ FzZQJhprNVpCShzBbM+sbc7xK49S/AGUDCFLwNbCQt0Z1l+XrKUzoUjCWQO7S+xjNeuI
+ e6AYXboNnN9ZiH5Yn5ZpVHkInkmx8VKcKboNZAcWJt5mPnxW7HSQPcSXhFvQSCGKOXRO
+ EVOQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DHU9r9qJ7f3y57BwW4Qkv4q6Btiso2T9prw5IOLS5+0=;
+ b=JdPQPy5mXtbx1a1kIpPn5TP74e9mqL3GLaK/I6whLImVNdXfjv0iJIXuqAxW2CDwff
+ TIEfyga1tJ1A3Z5R7z6WXyVpxJhZPrqz70fUeXMGxTOl7vvzmZtkZ4bH7/atruF2sOu9
+ wI+Iy/IMk0HeC2e6q7FiyZ6QfaDdXlv061xCC4vlvPaEGeyb4pSQbCnHZ1aZ9tqzhkrh
+ P3jphMXyeewYmrcL//KVf4r7IR2xoTLhRdx59h9yYlZiyb9CUJlCAMtxYBFrU95+qIxf
+ qmpMNmVexftQchanDTyFvKk2YOo5spjNW1QYUAAf2mlnFi4Mdogc28KSfRsbXl9o5SkA
+ pinQ==
+X-Gm-Message-State: AOAM530dbbqtjyP3MC3OTVcb10pdWKXaEFezyIIkVjatk2BXGZagipb+
+ BrDhLZXrr/f3jWY/5hPs1M8=
+X-Google-Smtp-Source: ABdhPJykGZ2XaAh+6nd5AWh78goWmo9NEO2GwWjbKCccA/e4aZpvDtr7jUVgMKUMCOXcYM5PtPeIbA==
+X-Received: by 2002:a1c:6209:: with SMTP id w9mr4977091wmb.27.1622833435509;
+ Fri, 04 Jun 2021 12:03:55 -0700 (PDT)
+Received: from localhost.localdomain
+ (p200300f137127c00f22f74fffe210725.dip0.t-ipconnect.de.
+ [2003:f1:3712:7c00:f22f:74ff:fe21:725])
+ by smtp.googlemail.com with ESMTPSA id x10sm7576200wrt.65.2021.06.04.12.03.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 04 Jun 2021 12:03:55 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: robh+dt@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org
+Cc: kishon@ti.com, vkoul@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: [PATCH 0/2] phy: Add support for the HDMI TX PHY on Meson8/8b/8m2
+Date: Fri,  4 Jun 2021 21:03:36 +0200
+Message-Id: <20210604190338.2248295-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.31.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YLnraMuKUKPtktfZ@vkoul-mobl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210604_031054_958814_72DE24BF 
-X-CRM114-Status: UNSURE (   7.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210604_120358_859162_B1E3697C 
+X-CRM114-Status: GOOD (  11.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,22 +102,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 04, 2021 at 02:29:20PM +0530, Vinod Koul wrote:
-> Hello Greg,
-> 
-> Please pull to recive few fixes for phy subsystem.
-> 
-> The following changes since commit 6efb943b8616ec53a5e444193dccf1af9ad627b5:
-> 
->   Linux 5.13-rc1 (2021-05-09 14:17:44 -0700)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-fixes-5.13
+Amlogic Meson8/8b/8m2 SoCs embed a HDMI TX PHY. Unfortunately there is
+no (public) documentation for this hardware. The best thing we have is
+the 3.10 vendor kernel, which unfortunately doesn't document most
+register bits (only a few are named there, the rest is all magic
+numbers).
+It is possible that this is a TranSwitch HDMI TX PHY based core, but
+this is pure speculation.
 
-Pulled and pushed out, thanks.
+Adding a driver for the HDMI TX PHY gets us one step closer to video
+output on these older SoCs.
 
-greg k-h
+
+Martin Blumenstingl (2):
+  dt-bindings: phy: Add the Amlogic Meson8 HDMI TX PHY bindings
+  phy: amlogic: Add a new driver for the HDMI TX PHY on Meson8/8b/8m2
+
+ .../phy/amlogic,meson8-hdmi-tx-phy.yaml       |  51 ++++++
+ drivers/phy/amlogic/Kconfig                   |  11 ++
+ drivers/phy/amlogic/Makefile                  |   1 +
+ drivers/phy/amlogic/phy-meson8-hdmi-tx.c      | 150 ++++++++++++++++++
+ 4 files changed, 213 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml
+ create mode 100644 drivers/phy/amlogic/phy-meson8-hdmi-tx.c
+
+-- 
+2.31.1
+
 
 -- 
 linux-phy mailing list
