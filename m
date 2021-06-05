@@ -1,94 +1,64 @@
-Return-Path: <SRS0=hNs7=K6=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=9Xm/=K7=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1A1F8C4743D
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Jun 2021 19:05:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 056D2C47082
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Jun 2021 13:25:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CC9F0601FA
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Jun 2021 19:05:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CC9F0601FA
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
+	by mail.kernel.org (Postfix) with ESMTPS id BE4D8613FE
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Jun 2021 13:25:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org BE4D8613FE
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=wanadoo.fr
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eKlpYjxWfd1u5+OtLQiASSDlBVCzhXF0SM0ulxFfkCQ=; b=Dfz5lzqAMUBloc
-	Rz1cSpxQ4o4LRXtzvMtlwYMbN9mpO974tNt+GwrmfUoYBgX3sFAg8p/IeQ0GEHaeD7h97h2Kd1Ku/
-	elXlBMVSC1mfI0KCxkcKdZvbhzRSbtnW0KAYxEs0PWeN6OkzJOTtGlVXFBC90p5+/v0QPT8LMjLCs
-	hiH5NWWUNEvXZq2KS8g5WSlhZ3A+or2JCKJtywg2/FN+kAPEPgOvZlh8XjF408ApNyosfYo3PCP96
-	bNiz/hbC8gQVXuONsNNys8ac30r63hVGbzC1HG9blcVUEYkq8O4fhHtDfpgUoRDkKO1io+69jfCBN
-	CzOUDy0Fq2q6aK0ifxwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Cu3TFvBiUc/c/D26LjegpB7OswoSl/gkmmmtTSd2ijE=; b=QzVWlA6cM2VqpR
+	3HiW1k9du1iF7BFYw8NtCWuotSqbcDKnu2KvXUEG/IazHzeNzHvRxKyl62rnCl3QADTy7DlkJLDDZ
+	UFSONPv1K1PyaWTPUGAN1XG6gwWLe4MjU/zkQSq/Q2Cidx+IVM51paZfrN9CCnacLPe+EYEu1nG1p
+	HYwN88qnLAsCqIj0x3gtunUhRqv7ga2eoJzHkLAq0NKHBpqFP8veA0Vu4EKvzShJ31ZhBnWYi7ecG
+	2PQzamXM76WNct20mUOHxrlDk6U3NGnElawXKvUFn0DXJkuDCVQv/UDU6KRRb/r2w/l1BuDn5SLkF
+	NwZwZERO9WVGtHOwNDLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lpF7w-00Evpn-Ch; Fri, 04 Jun 2021 19:05:04 +0000
-Received: from mail-wm1-f51.google.com ([209.85.128.51])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lpF7r-00Evmv-Fn; Fri, 04 Jun 2021 19:05:03 +0000
-Received: by mail-wm1-f51.google.com with SMTP id
- l11-20020a05600c4f0bb029017a7cd488f5so6193476wmq.0; 
- Fri, 04 Jun 2021 12:04:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Twf9jLAwNkQLT/Ujy3oKloWts7LR/OdCMpxXY26zthg=;
- b=MP1bQU74xRmIPbbCW5IfT+gtc1NZbEbx9s8o/Qh6TED2ofeYU181cNMzQJKG7vAr2D
- CkfCrALUhSJuXNr2NpeMOCYqOu7yQzZ3FV3mVNu+smsnfyt9mUlkxhxmNA30estAfJur
- wOU6Z6m5uvF71GLaV9tm9FbPwDFAuOQ7NuMxrImxqpg+KL4C4z1J0aiwHg1EEFCQBPs+
- oIul4zenm0OZlgRuf98T5OCFRNi9Puy1qbMfd0A9DPbpoD7YKnE3x+kKVWS04FW07BG7
- zRNtwzSFrvQTQjfhIQNK2ifJv+Jbu0ueqJyhY6GckpNU5C47tvJTiSFemdkIV9mR7msf
- oD6Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Twf9jLAwNkQLT/Ujy3oKloWts7LR/OdCMpxXY26zthg=;
- b=jYEKwUwi6U1sXslbrcYjfp6eMz+V/pgJVo2fiMoQ5dQ2wEiWvdBgiZymMcNQJTZpR8
- FPo6nOl/TMbWDWswhT/2e4a+Wo3KyrPaB7N6VU7c/VkSdObSnoYprG/HrSwXGd2N2bv6
- CAsKonk/vybp1npP9FoU+SIi7i570toxA4ELmwu8bYdn/2dWQebjRZ2POkV2YLhRvetx
- RdAyD4kLD0B22REVco8osJ5FaBo9azCajW3I9mv/OAI7nW0vgUTmkrGBEtUqOin4eORR
- Gg1ka21SqjtLYT4OVF3Tt0y9zel8MvQ2ii6XSg0FQOMy+7HN69S1pFoNR5ESNMh/kcpX
- RI0g==
-X-Gm-Message-State: AOAM5325POmr0Mfbd0JKAZ0+gAmQ1ByR0RStDkfoilnX9FsJ4os/J85E
- 5SfK5UZb+7qEnEM7rO7Hz3b0e3A2dVDR2A==
-X-Google-Smtp-Source: ABdhPJytzExsCF3VUCig9c0sedFUkKAZMizhqxJiYlsmCY4WJCwJJhIj+2PCmu37/Tn7SInLTg5y3Q==
-X-Received: by 2002:a7b:c4d2:: with SMTP id g18mr4973716wmk.25.1622833437623; 
- Fri, 04 Jun 2021 12:03:57 -0700 (PDT)
-Received: from localhost.localdomain
- (p200300f137127c00f22f74fffe210725.dip0.t-ipconnect.de.
- [2003:f1:3712:7c00:f22f:74ff:fe21:725])
- by smtp.googlemail.com with ESMTPSA id x10sm7576200wrt.65.2021.06.04.12.03.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 04 Jun 2021 12:03:57 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: robh+dt@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org
-Cc: kishon@ti.com, vkoul@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: [PATCH 2/2] phy: amlogic: Add a new driver for the HDMI TX PHY on
- Meson8/8b/8m2
-Date: Fri,  4 Jun 2021 21:03:38 +0200
-Message-Id: <20210604190338.2248295-3-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.31.1
-In-Reply-To: <20210604190338.2248295-1-martin.blumenstingl@googlemail.com>
-References: <20210604190338.2248295-1-martin.blumenstingl@googlemail.com>
+	id 1lpWIq-00Gc7W-BP; Sat, 05 Jun 2021 13:25:28 +0000
+Received: from smtp02.smtpout.orange.fr ([80.12.242.124]
+ helo=smtp.smtpout.orange.fr)
+ by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1lpWIn-00Gc6m-Qb
+ for linux-phy@lists.infradead.org; Sat, 05 Jun 2021 13:25:27 +0000
+Received: from localhost.localdomain ([86.243.172.93]) by mwinf5d78 with ME
+ id DRHj2500C21Fzsu03RHkfm; Sat, 05 Jun 2021 15:17:47 +0200
+X-ME-Helo: localhost.localdomain
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Sat, 05 Jun 2021 15:17:47 +0200
+X-ME-IP: 86.243.172.93
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+To: kishon@ti.com,
+	vkoul@kernel.org,
+	tony@atomide.com
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel-janitors@vger.kernel.org,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Subject: [PATCH] phy: ti: dm816x: Fix the error handling path in
+ 'dm816x_usb_phy_probe()
+Date: Sat,  5 Jun 2021 15:17:43 +0200
+Message-Id: <ac5136881f6bdec50be19b3bf73b3bc1b15ef1f1.1622898974.git.christophe.jaillet@wanadoo.fr>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210604_120459_561302_48A23098 
-X-CRM114-Status: GOOD (  24.48  )
+X-CRM114-CacheID: sfid-20210605_062526_024071_477A4A90 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,209 +75,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Amlogic Meson8/8b/8m2 have a built-in HDMI PHY in the HHI register
-region. Unfortunately only few register bits are documented. For
-HHI_HDMI_PHY_CNTL0 the magic numbers are taken from the 3.10 vendor
-kernel.
+Add an error handling path in the probe to release some resources, as
+already done in the remove function.
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Fixes: 609adde838f4 ("phy: Add a driver for dm816x USB PHY")
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 ---
- drivers/phy/amlogic/Kconfig              |  11 ++
- drivers/phy/amlogic/Makefile             |   1 +
- drivers/phy/amlogic/phy-meson8-hdmi-tx.c | 150 +++++++++++++++++++++++
- 3 files changed, 162 insertions(+)
- create mode 100644 drivers/phy/amlogic/phy-meson8-hdmi-tx.c
+ drivers/phy/ti/phy-dm816x-usb.c | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-index db5d0cd757e3..e6c3a2a8b769 100644
---- a/drivers/phy/amlogic/Kconfig
-+++ b/drivers/phy/amlogic/Kconfig
-@@ -2,6 +2,17 @@
- #
- # Phy drivers for Amlogic platforms
- #
-+config PHY_MESON8_HDMI_TX
-+	tristate "Meson8, Meson8b and Meson8m2 HDMI TX PHY driver"
-+	default ARCH_MESON
-+	depends on (ARCH_MESON && ARM) || COMPILE_TEST
-+	depends on OF
-+	select MFD_SYSCON
-+	help
-+	  Enable this to support the HDMI TX PHYs found in Meson8,
-+	  Meson8b and Meson8m2 SoCs.
-+	  If unsure, say N.
-+
- config PHY_MESON8B_USB2
- 	tristate "Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver"
- 	default ARCH_MESON
-diff --git a/drivers/phy/amlogic/Makefile b/drivers/phy/amlogic/Makefile
-index 8fa07fbd0d92..c0886c850bb0 100644
---- a/drivers/phy/amlogic/Makefile
-+++ b/drivers/phy/amlogic/Makefile
-@@ -1,4 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0-only
-+obj-$(CONFIG_PHY_MESON8_HDMI_TX)		+= phy-meson8-hdmi-tx.o
- obj-$(CONFIG_PHY_MESON8B_USB2)			+= phy-meson8b-usb2.o
- obj-$(CONFIG_PHY_MESON_GXL_USB2)		+= phy-meson-gxl-usb2.o
- obj-$(CONFIG_PHY_MESON_G12A_USB2)		+= phy-meson-g12a-usb2.o
-diff --git a/drivers/phy/amlogic/phy-meson8-hdmi-tx.c b/drivers/phy/amlogic/phy-meson8-hdmi-tx.c
-new file mode 100644
-index 000000000000..8f13960a4492
---- /dev/null
-+++ b/drivers/phy/amlogic/phy-meson8-hdmi-tx.c
-@@ -0,0 +1,150 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Meson8, Meson8b and Meson8m2 HDMI TX PHY.
-+ *
-+ * Copyright (C) 2020 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/bits.h>
-+#include <linux/clk.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#define HHI_HDMI_PHY_CNTL0				0x3a0
-+	#define HHI_HDMI_PHY_CNTL0_HDMI_CTL1		GENMASK(31, 16)
-+	#define HHI_HDMI_PHY_CNTL0_HDMI_CTL0		GENMASK(15, 0)
-+
-+#define HHI_HDMI_PHY_CNTL1				0x3a4
-+	#define HHI_HDMI_PHY_CNTL1_CLOCK_ENABLE		BIT(1)
-+	#define HHI_HDMI_PHY_CNTL1_SOFT_RESET		BIT(0)
-+
-+#define HHI_HDMI_PHY_CNTL2				0x3a8
-+
-+struct phy_meson8_hdmi_tx_priv {
-+	struct regmap		*hhi;
-+	struct clk		*tmds_clk;
-+};
-+
-+static int phy_meson8_hdmi_tx_init(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+
-+	return clk_prepare_enable(priv->tmds_clk);
-+}
-+
-+static int phy_meson8_hdmi_tx_exit(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+
-+	clk_disable_unprepare(priv->tmds_clk);
-+
-+	return 0;
-+}
-+
-+static int phy_meson8_hdmi_tx_power_on(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+	unsigned int i;
-+	u16 hdmi_ctl0;
-+
-+	if (clk_get_rate(priv->tmds_clk) >= 2970UL * 1000 * 1000)
-+		hdmi_ctl0 = 0x1e8b;
-+	else
-+		hdmi_ctl0 = 0x4d0b;
-+
-+	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL0,
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL1, 0x08c3) |
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL0, hdmi_ctl0));
-+
-+	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL1, 0x00000000);
-+
-+	/* Reset three times, just like the vendor driver does */
-+	for (i = 0; i < 3; i++) {
-+		regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL1,
-+			     HHI_HDMI_PHY_CNTL1_CLOCK_ENABLE |
-+			     HHI_HDMI_PHY_CNTL1_SOFT_RESET);
-+		usleep_range(1000, 2000);
-+
-+		regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL1,
-+			     HHI_HDMI_PHY_CNTL1_CLOCK_ENABLE);
-+		usleep_range(1000, 2000);
+diff --git a/drivers/phy/ti/phy-dm816x-usb.c b/drivers/phy/ti/phy-dm816x-usb.c
+index 57adc08a89b2..9fe6ea6fdae5 100644
+--- a/drivers/phy/ti/phy-dm816x-usb.c
++++ b/drivers/phy/ti/phy-dm816x-usb.c
+@@ -242,19 +242,28 @@ static int dm816x_usb_phy_probe(struct platform_device *pdev)
+ 
+ 	pm_runtime_enable(phy->dev);
+ 	generic_phy = devm_phy_create(phy->dev, NULL, &ops);
+-	if (IS_ERR(generic_phy))
+-		return PTR_ERR(generic_phy);
++	if (IS_ERR(generic_phy)) {
++		error = PTR_ERR(generic_phy);
++		goto clk_unprepare;
 +	}
+ 
+ 	phy_set_drvdata(generic_phy, phy);
+ 
+ 	phy_provider = devm_of_phy_provider_register(phy->dev,
+ 						     of_phy_simple_xlate);
+-	if (IS_ERR(phy_provider))
+-		return PTR_ERR(phy_provider);
++	if (IS_ERR(phy_provider)) {
++		error = PTR_ERR(phy_provider);
++		goto clk_unprepare;
++	}
+ 
+ 	usb_add_phy_dev(&phy->phy);
+ 
+ 	return 0;
 +
-+	return 0;
-+}
-+
-+static int phy_meson8_hdmi_tx_power_off(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+
-+	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL0,
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL1, 0x0841) |
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL0, 0x8d00));
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops phy_meson8_hdmi_tx_ops = {
-+	.init		= phy_meson8_hdmi_tx_init,
-+	.exit		= phy_meson8_hdmi_tx_exit,
-+	.power_on	= phy_meson8_hdmi_tx_power_on,
-+	.power_off	= phy_meson8_hdmi_tx_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int phy_meson8_hdmi_tx_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np = pdev->dev.of_node;
-+	struct phy_meson8_hdmi_tx_priv *priv;
-+	struct phy_provider *phy_provider;
-+	struct phy *phy;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->hhi = syscon_node_to_regmap(np->parent);
-+	if (IS_ERR(priv->hhi))
-+		return PTR_ERR(priv->hhi);
-+
-+	priv->tmds_clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(priv->tmds_clk))
-+		return PTR_ERR(priv->tmds_clk);
-+
-+	phy = devm_phy_create(&pdev->dev, np, &phy_meson8_hdmi_tx_ops);
-+	if (IS_ERR(phy))
-+		return PTR_ERR(phy);
-+
-+	phy_set_drvdata(phy, priv);
-+
-+	phy_provider = devm_of_phy_provider_register(&pdev->dev,
-+						     of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id phy_meson8_hdmi_tx_of_match[] = {
-+	{ .compatible = "amlogic,meson8-hdmi-tx-phy" },
-+	{ .compatible = "amlogic,meson8b-hdmi-tx-phy" },
-+	{ .compatible = "amlogic,meson8m2-hdmi-tx-phy" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, phy_meson8_hdmi_tx_of_match);
-+
-+static struct platform_driver phy_meson8_hdmi_tx_driver = {
-+	.probe	= phy_meson8_hdmi_tx_probe,
-+	.driver	= {
-+		.name		= "phy-meson8-hdmi-tx",
-+		.of_match_table	= phy_meson8_hdmi_tx_of_match,
-+	},
-+};
-+module_platform_driver(phy_meson8_hdmi_tx_driver);
-+
-+MODULE_AUTHOR("Martin Blumenstingl <martin.blumenstingl@googlemail.com>");
-+MODULE_DESCRIPTION("Meson8, Meson8b and Meson8m2 HDMI TX PHY driver");
-+MODULE_LICENSE("GPL v2");
++clk_unprepare:
++	pm_runtime_disable(phy->dev);
++	clk_unprepare(phy->refclk);
++	return error;
+ }
+ 
+ static int dm816x_usb_phy_remove(struct platform_device *pdev)
 -- 
-2.31.1
+2.30.2
 
 
 -- 
