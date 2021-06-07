@@ -1,64 +1,65 @@
-Return-Path: <SRS0=9Xm/=K7=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=wYXb=LB=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-17.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 056D2C47082
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Jun 2021 13:25:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 62AB7C47082
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Jun 2021 03:51:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BE4D8613FE
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Jun 2021 13:25:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org BE4D8613FE
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=wanadoo.fr
+	by mail.kernel.org (Postfix) with ESMTPS id 2720661209
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Jun 2021 03:51:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2720661209
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=socionext.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Cu3TFvBiUc/c/D26LjegpB7OswoSl/gkmmmtTSd2ijE=; b=QzVWlA6cM2VqpR
-	3HiW1k9du1iF7BFYw8NtCWuotSqbcDKnu2KvXUEG/IazHzeNzHvRxKyl62rnCl3QADTy7DlkJLDDZ
-	UFSONPv1K1PyaWTPUGAN1XG6gwWLe4MjU/zkQSq/Q2Cidx+IVM51paZfrN9CCnacLPe+EYEu1nG1p
-	HYwN88qnLAsCqIj0x3gtunUhRqv7ga2eoJzHkLAq0NKHBpqFP8veA0Vu4EKvzShJ31ZhBnWYi7ecG
-	2PQzamXM76WNct20mUOHxrlDk6U3NGnElawXKvUFn0DXJkuDCVQv/UDU6KRRb/r2w/l1BuDn5SLkF
-	NwZwZERO9WVGtHOwNDLA==;
+	List-Owner; bh=7epCkmCVq4VdQI0fPsnaayRk4yzctAoLy94gJvIoj/Q=; b=jCPkLnjIk5Awo5
+	R+MD04+9XmGwnSi+V7c/VM6PG50t9ZY6DPEHbxqWn7mZ0TafqvLium/lQduFWKrZDgcDtG4GCusxd
+	S03uDlY9hZwBP9hH8No2FbEg3lpACfmYbCC3n/NB3L+I65q1Eo7JirvHfc9FlOFBKzxWs1a/8SUkN
+	5zoXrDRaaeW6BexmJ1uZPLBOlY8++LmSlwfnjT6y5dGL7k9l9gVUXfA5JEo7KxbkC1faYoiaapW5A
+	rT/d/XrY8lkoJiDT1SgcvA2CEazQpyVjAEOfydoLiSCj8GOMW+hBGQ752KRF64ONSrEXWqSuKjRIl
+	n7pLOPkX99CGZgdDNq8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lpWIq-00Gc7W-BP; Sat, 05 Jun 2021 13:25:28 +0000
-Received: from smtp02.smtpout.orange.fr ([80.12.242.124]
- helo=smtp.smtpout.orange.fr)
+	id 1lq6IG-001Pyv-N2; Mon, 07 Jun 2021 03:51:16 +0000
+Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lpWIn-00Gc6m-Qb
- for linux-phy@lists.infradead.org; Sat, 05 Jun 2021 13:25:27 +0000
-Received: from localhost.localdomain ([86.243.172.93]) by mwinf5d78 with ME
- id DRHj2500C21Fzsu03RHkfm; Sat, 05 Jun 2021 15:17:47 +0200
-X-ME-Helo: localhost.localdomain
-X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Sat, 05 Jun 2021 15:17:47 +0200
-X-ME-IP: 86.243.172.93
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-To: kishon@ti.com,
-	vkoul@kernel.org,
-	tony@atomide.com
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel-janitors@vger.kernel.org,
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Subject: [PATCH] phy: ti: dm816x: Fix the error handling path in
- 'dm816x_usb_phy_probe()
-Date: Sat,  5 Jun 2021 15:17:43 +0200
-Message-Id: <ac5136881f6bdec50be19b3bf73b3bc1b15ef1f1.1622898974.git.christophe.jaillet@wanadoo.fr>
-X-Mailer: git-send-email 2.30.2
-MIME-Version: 1.0
+ id 1lq6Hu-001PvG-0w; Mon, 07 Jun 2021 03:50:58 +0000
+Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 07 Jun 2021 12:50:50 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id 4288E205902A;
+ Mon,  7 Jun 2021 12:50:50 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Mon, 7 Jun 2021 12:50:50 +0900
+Received: from plum.e01.socionext.com (unknown [10.212.243.119])
+ by kinkan2.css.socionext.com (Postfix) with ESMTP id 010CEB62AB;
+ Mon,  7 Jun 2021 12:50:49 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: [PATCH] phy: uniphier-pcie: Fix updating phy parameters
+Date: Mon,  7 Jun 2021 12:50:42 +0900
+Message-Id: <1623037842-19363-1-git-send-email-hayashi.kunihiko@socionext.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210605_062526_024071_477A4A90 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20210606_205054_204908_732A9747 
+X-CRM114-Status: GOOD (  14.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,59 +71,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add an error handling path in the probe to release some resources, as
-already done in the remove function.
+The current driver uses a value from register TEST_O as the original
+value for register TEST_I, though, the value is overwritten by "param",
+so there is a bug that the original value isn't no longer used.
 
-Fixes: 609adde838f4 ("phy: Add a driver for dm816x USB PHY")
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+The value of TEST_O[7:0] should be masked with "mask", replaced with
+"param", and placed in the bitfield TESTI_DAT_MASK as new TEST_I value.
+
+Fixes: c6d9b1324159 ("phy: socionext: add PCIe PHY driver support")
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- drivers/phy/ti/phy-dm816x-usb.c | 17 +++++++++++++----
- 1 file changed, 13 insertions(+), 4 deletions(-)
+ drivers/phy/socionext/phy-uniphier-pcie.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-dm816x-usb.c b/drivers/phy/ti/phy-dm816x-usb.c
-index 57adc08a89b2..9fe6ea6fdae5 100644
---- a/drivers/phy/ti/phy-dm816x-usb.c
-+++ b/drivers/phy/ti/phy-dm816x-usb.c
-@@ -242,19 +242,28 @@ static int dm816x_usb_phy_probe(struct platform_device *pdev)
+diff --git a/drivers/phy/socionext/phy-uniphier-pcie.c b/drivers/phy/socionext/phy-uniphier-pcie.c
+index e4adab3..6bdbd1f 100644
+--- a/drivers/phy/socionext/phy-uniphier-pcie.c
++++ b/drivers/phy/socionext/phy-uniphier-pcie.c
+@@ -24,11 +24,13 @@
+ #define PORT_SEL_1		FIELD_PREP(PORT_SEL_MASK, 1)
  
- 	pm_runtime_enable(phy->dev);
- 	generic_phy = devm_phy_create(phy->dev, NULL, &ops);
--	if (IS_ERR(generic_phy))
--		return PTR_ERR(generic_phy);
-+	if (IS_ERR(generic_phy)) {
-+		error = PTR_ERR(generic_phy);
-+		goto clk_unprepare;
-+	}
+ #define PCL_PHY_TEST_I		0x2000
+-#define PCL_PHY_TEST_O		0x2004
+ #define TESTI_DAT_MASK		GENMASK(13, 6)
+ #define TESTI_ADR_MASK		GENMASK(5, 1)
+ #define TESTI_WR_EN		BIT(0)
  
- 	phy_set_drvdata(generic_phy, phy);
- 
- 	phy_provider = devm_of_phy_provider_register(phy->dev,
- 						     of_phy_simple_xlate);
--	if (IS_ERR(phy_provider))
--		return PTR_ERR(phy_provider);
-+	if (IS_ERR(phy_provider)) {
-+		error = PTR_ERR(phy_provider);
-+		goto clk_unprepare;
-+	}
- 
- 	usb_add_phy_dev(&phy->phy);
- 
- 	return 0;
++#define PCL_PHY_TEST_O		0x2004
++#define TESTO_DAT_MASK		GENMASK(7, 0)
 +
-+clk_unprepare:
-+	pm_runtime_disable(phy->dev);
-+	clk_unprepare(phy->refclk);
-+	return error;
- }
+ #define PCL_PHY_RESET		0x200c
+ #define PCL_PHY_RESET_N_MNMODE	BIT(8)	/* =1:manual */
+ #define PCL_PHY_RESET_N		BIT(0)	/* =1:deasssert */
+@@ -77,11 +79,12 @@ static void uniphier_pciephy_set_param(struct uniphier_pciephy_priv *priv,
+ 	val  = FIELD_PREP(TESTI_DAT_MASK, 1);
+ 	val |= FIELD_PREP(TESTI_ADR_MASK, reg);
+ 	uniphier_pciephy_testio_write(priv, val);
+-	val = readl(priv->base + PCL_PHY_TEST_O);
++	val = readl(priv->base + PCL_PHY_TEST_O) & TESTO_DAT_MASK;
  
- static int dm816x_usb_phy_remove(struct platform_device *pdev)
+ 	/* update value */
+-	val &= ~FIELD_PREP(TESTI_DAT_MASK, mask);
+-	val  = FIELD_PREP(TESTI_DAT_MASK, mask & param);
++	val &= ~mask;
++	val |= mask & param;
++	val = FIELD_PREP(TESTI_DAT_MASK, val);
+ 	val |= FIELD_PREP(TESTI_ADR_MASK, reg);
+ 	uniphier_pciephy_testio_write(priv, val);
+ 	uniphier_pciephy_testio_write(priv, val | TESTI_WR_EN);
 -- 
-2.30.2
+2.7.4
 
 
 -- 
