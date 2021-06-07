@@ -2,80 +2,104 @@ Return-Path: <SRS0=wYXb=LB=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3A8C8C47082
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Jun 2021 13:18:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DB6FCC47094
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Jun 2021 13:25:16 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F30E5611BD
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Jun 2021 13:18:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F30E5611BD
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 9B84C610C7
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Jun 2021 13:25:16 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9B84C610C7
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cerno.tech
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DofOeBv85cb2KoN+Q1vc45ugug3vn0dMiuae6BdECLg=; b=0mNwNi06ptUQXi
-	uiuB/n+I8qiRdNg5MJBzIRaem87zq6jtobKDYVCX0Hb4KS9KxS8Ze4vOKzdvDu/BqL1NYTtiBohVw
-	lWJz7u7DzINISeE9+zt0EQqW6wuPjoScR0gGIG32h5B1E8I0/9x6YxfhfOoB5m3L6jQnrDi4Y2LsF
-	/ngCLy1goUuJnYrDgENIknj6cfD8/VX97hTKjo5bjmxlDak2teTPe5Ufy1I/ks/IBa4ozBiOwHXkj
-	2CEm0yMoW888ycgAkDG++eZIX+qgM0XVmDdMq6DzBaONvsGdOi4BVG1tDBQ/fp9r8UeWe384icQmW
-	CPRKnKyZ3/uVTGOqoTUw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=EO/52vjd/gDmEWuBil9+istnYILg7sdq3l/kP2OMpcM=; b=u8MTpIFZUHw4OROs74wHIKXHeS
+	DTrR1ENGNRXLqAwuq/6Pu9wvUG4AAKPnW7Y4rInkSkgmRt0BHwvynhg6EDBAazIBi68SvvWwAzmy1
+	n62vh5C9ZU8tTva/fuujuY7K/MUcet0FSXzvY8m/ZH5bNItKIodHJza3o+30mGcSp429XhWBRXvXY
+	DWV4VBGjH6/w6psUBt0Q0o78yJyKTZgGbpCvWmbOyVdrxQPIoUrBsmV7L5msKLsssnh7gfTZ4pVnr
+	9JQ9srQ3S8/YjOjyfc0kvEfWWM/QPj+dFgIsi9Fij834fDoC5tH7x4NHbWn/EibQfPV/YoVjIsIFl
+	nKS/c5qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lqF9Z-003kJn-8N; Mon, 07 Jun 2021 13:18:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lqFFj-003mIt-SS; Mon, 07 Jun 2021 13:25:15 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lqF7v-003jsN-Pa; Mon, 07 Jun 2021 13:17:16 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id CFBDA61185;
- Mon,  7 Jun 2021 13:17:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1623071830;
- bh=SGYTD9jGwwVnbXxZJo2IMmz6s1Wuu6sgPJY01wB0hj8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=dPCoPQPpVQTmPC46OSxK1YTNM4Rp6aENDRN4jpV6sOt92dlgCTNDtvdIKKhAOh//3
- 7SrSB3TObM5qhZbsm4W8IHxTQFzgHQhiMyQMLjPpEawn++uhYu095w3YgbX8lb8H5O
- aZRBIAlEEPPBQC7dsVKW5uR2jUOXZh9P+woU4bzxO7usIMoDV16K2DSPEP1Dl3oPNg
- aP2Mp5L2uvW2dDYx7tobV4I6XjWu+onEc6DCtfPLqcEqK1CnlOIb09/ubR5+JdSKm5
- vVCljfmvgD8uqf2fgJ/akVABNFRLJUWejC+qX13dt4XDXUXT2LgdsVp58xuwlzagOL
- KJ+GHtyCIwDWQ==
-Received: by mail-ej1-f45.google.com with SMTP id h24so26660604ejy.2;
- Mon, 07 Jun 2021 06:17:10 -0700 (PDT)
-X-Gm-Message-State: AOAM531pp++3+BBqWtq8DpqRWxz5EcnXjQD1/yxDyyFTWzsiUb9Tu2VG
- r5sOq5WhSryMyupulTx9sKL44uwNgoAZ1cALiA==
-X-Google-Smtp-Source: ABdhPJyB2mu2p0Vz6GuEA33/JHz9vO2OJC5SpaUCqz5KbM1IIo7ajKUdT/3rQ7GMquBx8tQt0gQr02DtW31fRQgs5vQ=
-X-Received: by 2002:a17:906:fa13:: with SMTP id
- lo19mr18291724ejb.468.1623071829381; 
- Mon, 07 Jun 2021 06:17:09 -0700 (PDT)
+ id 1lqFDf-003leG-4g; Mon, 07 Jun 2021 13:23:11 +0000
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 81482580579;
+ Mon,  7 Jun 2021 09:23:01 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute6.internal (MEProxy); Mon, 07 Jun 2021 09:23:01 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=eIGEOso5WV+AOgirZtfFc6JFRhs
+ xePWMObTrGPYzxdE=; b=hI86DV35aCBf34dHf9ILs9hXUs/wgUb0aZnNxSVWnPF
+ Sk7M/gj6gaF3I9oVhXOU9cVftfwtViGnN6RZID2gjPJicHP8oXKDteZCcNrwL16f
+ DOj3krZtgCFrRzUF5AxZ6PlDMEsNyhJLU8fPdOdbeaXeAmx/CmYXhsNpcAu8RqN3
+ J1JO0l75btousxw2qdROB45k5mzLn4ltAA50YjElVSeo2144Mna5On9enYlcaAiA
+ D1CUHbkvL5jOyqg0nyo7UfJIy7r4FZmyT/bzGHlC6vCjqKGptqO/Sf/qY2IXeFst
+ frQKGtqzqQYqHd685HMUdkkiBIEAv0wB+ZVKk85I1hQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=eIGEOs
+ o5WV+AOgirZtfFc6JFRhsxePWMObTrGPYzxdE=; b=QsetC05r8jv/tx2c6VYG1o
+ ySKTHkDnhdO97GXt/MrI8F+Bd/AJPyeiQPC6EoCXRcUrM3zgGiByemEtwsgJmRBk
+ vdxn7jY6RPoS27CULafVmDCJY987tkFQkY6P7rsvFw/vk8exjkNEcGyBiKEwII9Y
+ eFFhbWP1rkhtsICJGOfxK0Im7V08sPPdIGTcjHmvQXB0e7ERmQXt7DluY0w5e/8+
+ A/goRUvkYJLKYP1vU6rU546N5BTN6JjDTGc2IwIykVpVbj0Oas21YwT5bN/+gcxY
+ myAlzSNkgw2VWpAkXtPLGFYaFmheydfM2YvEknQtwNcZ/E+l9u1SFi3sskRQ0oBQ
+ ==
+X-ME-Sender: <xms:sh2-YKb3d4Xd5RLDWWUCTqXFsmredhExw1N0IdEU6Mi3wCvWZ8ZPkQ>
+ <xme:sh2-YNaxkSVQgkvsZr_u218E8-Wd4rHUTG2DqDX37IdLDEdpoXAlc6-WkgGJrXXiS
+ 33O-_KHhS42IbPRyqw>
+X-ME-Received: <xmr:sh2-YE9Ud2Ei4GQy5ldpkLjRkKWgcnokR-PAPRDLNnjpZQXo5OXBCCyD9eBzpyYdYWE1Dg2z3UQFORTqS9qhuXG0i4_KtvgBH3SY>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduledrfedtjedgieefucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmh
+ grgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:sh2-YMpLRTV_9DQG505QhkLWlE7WFpIZ3Cq9a0kCHa7aVe4pojPy7g>
+ <xmx:sh2-YFqFFDdAp6-890Gg7wl4ChKLDB_EP2EFWJ3gawE_BxIMEZqyzw>
+ <xmx:sh2-YKQ_al-qaoCiDwvhKLYeI-y3a7_kpOEy9aOpIpPl8cJ_5qdItg>
+ <xmx:tR2-YG6s32D0mQGsspz303hd6NGkhWAC0EJOfxbFHKIcsEEVIx6nsA>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
+ 7 Jun 2021 09:22:58 -0400 (EDT)
+Date: Mon, 7 Jun 2021 15:22:55 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Andre Przywara <andre.przywara@arm.com>
+Cc: Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Rob Herring <robh@kernel.org>, Icenowy Zheng <icenowy@aosc.io>,
+ Samuel Holland <samuel@sholland.org>, Ondrej Jirman <megous@megous.com>,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@googlegroups.com,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org
+Subject: Re: [PATCH v6 12/17] phy: sun4i-usb: Introduce port2 SIDDQ quirk
+Message-ID: <20210607132255.7fa75a7k7ud2g7ux@gilmour>
+References: <20210519104152.21119-1-andre.przywara@arm.com>
+ <20210519104152.21119-13-andre.przywara@arm.com>
+ <20210524115946.jwsasjbr3biyixhz@gilmour>
+ <20210525122901.778bfccd@slackpad.fritz.box>
 MIME-Version: 1.0
-References: <20210601164800.7670-1-jbx6244@gmail.com>
- <20210601164800.7670-2-jbx6244@gmail.com>
- <YLhukPL7jSx3+dBj@vkoul-mobl> <3601774.Dhsi8hcfAM@diego>
-In-Reply-To: <3601774.Dhsi8hcfAM@diego>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 7 Jun 2021 08:16:58 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+xE7UfXcr-RTkxB8gZej8M52Fk-yM3yYA3KA7mMn50ng@mail.gmail.com>
-Message-ID: <CAL_Jsq+xE7UfXcr-RTkxB8gZej8M52Fk-yM3yYA3KA7mMn50ng@mail.gmail.com>
-Subject: Re: [PATCH v7 1/5] dt-bindings: phy: rename phy nodename in
- phy-rockchip-inno-usb2.yaml
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, 
- Johan Jonker <jbx6244@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, 
- Tobias Schramm <t.schramm@manjaro.org>, linux-phy@lists.infradead.org, 
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- devicetree@vger.kernel.org, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+In-Reply-To: <20210525122901.778bfccd@slackpad.fritz.box>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210607_061711_925429_ED86619D 
-X-CRM114-Status: GOOD (  14.85  )
+X-CRM114-CacheID: sfid-20210607_062307_297472_2D8FBEFF 
+X-CRM114-Status: GOOD (  32.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,44 +111,112 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============8785644940329540113=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBKdW4gMywgMjAyMSBhdCAzOjU4IEFNIEhlaWtvIFN0w7xibmVyIDxoZWlrb0BzbnRl
-Y2guZGU+IHdyb3RlOgo+Cj4gSGkgVmlub2QsCj4KPiBBbSBEb25uZXJzdGFnLCAzLiBKdW5pIDIw
-MjEsIDA3OjU0OjI0IENFU1Qgc2NocmllYiBWaW5vZCBLb3VsOgo+ID4gT24gMDEtMDYtMjEsIDE4
-OjQ3LCBKb2hhbiBKb25rZXIgd3JvdGU6Cj4gPiA+IFRoZSBwYXR0ZXJuOiAiXih8dXNiLXx1c2Iy
-LXx1c2IzLXxwY2ktfHBjaWUtfHNhdGEtKXBoeShAWzAtOWEtZixdKykqJCIKPiA+ID4gaW4gcGh5
-LXByb3ZpZGVyLnlhbWwgaGFzIHJlcXVpcmVkICIjcGh5LWNlbGxzIiBmb3IgcGh5IG5vZGVzLgo+
-ID4gPiBUaGUgInBoeS1jZWxscyIgaW4gcm9ja2NoaXAtaW5uby11c2IyIG5vZGVzIGFyZSBsb2Nh
-dGVkIGluIHN1Ym5vZGVzLgo+ID4gPiBSZW5hbWUgdGhlIG5vZGVuYW1lIHRvIHBhdHRlcm4gInVz
-YjJwaHlAWzAtOWEtZl0rJCIgdG8gcHJldmVudAo+ID4gPiBub3RpZmljYXRpb25zLiBSZW1vdmUg
-dW5uZWVkZWQgIiNwaHktY2VsbHMiIGZyb20gcGFyZW50IG5vZGUuCj4gPiA+IEFsc28gc29ydCBl
-eGFtcGxlLgo+ID4gPgo+ID4gPiBtYWtlIEFSQ0g9YXJtIGR0YnNfY2hlY2sKPiA+ID4gRFRfU0NI
-RU1BX0ZJTEVTPX4vLmxvY2FsL2xpYi9weXRob24zLjUvc2l0ZS1wYWNrYWdlcy9kdHNjaGVtYS9z
-Y2hlbWFzLwo+ID4gPiBwaHkvcGh5LXByb3ZpZGVyLnlhbWwKPiA+ID4KPiA+ID4gU2lnbmVkLW9m
-Zi1ieTogSm9oYW4gSm9ua2VyIDxqYng2MjQ0QGdtYWlsLmNvbT4KPiA+ID4gQWNrZWQtYnk6IFJv
-YiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4gPiA+IC0tLQo+ID4gPiAgLi4uL2RldmljZXRy
-ZWUvYmluZGluZ3MvcGh5L3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIueWFtbCAgICAgICB8IDExICsr
-Ky0tLS0tLS0tCj4gPiA+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvc29jL3Jv
-Y2tjaGlwL2dyZi55YW1sICAgICAgIHwgIDQgKystLQo+ID4KPiA+IEkgZG9udCBoYXZlIGdyZi55
-YW1sLCBJIGd1ZXNzIGl0IHdvdWxkIGJlIGVhc2llciB0byBzcGxpdCB0aGlzIGludG8gdHdvCj4g
-PiBvciBhcHBseSB0aGlzIHRocnUgcm9ja2NoaXAgdHJlZS4gSWYgeW91IHByZWZlciBsYXR0ZXI6
-Cj4gPgo+ID4gQWNrZWQtQnk6IFZpbm9kIEtvdWwgPHZrb3VsQGtlcm5lbC5vcmc+Cj4KPiBiZWZv
-cmUgd2UgZG8gYW55IG1vcmUgcm91bmRzLCBJJ2xsIGp1c3QgZG8gdGhhdCB3aXRoIHlvdXIgQWNr
-LCB0aGFua3MgOi0pCgpUaGlzIGlzIGdlbmVyYXRpbmcgd2FybmluZ3Mgb24gbGludXgtbmV4dCBu
-b3c6CgovYnVpbGRzL3JvYmhlcnJpbmcvbGludXgtZHQvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL3NvYy9yb2NrY2hpcC9ncmYuZXhhbXBsZS5kdC55YW1sOgpzeXNjb25AZmY3NzAw
-MDA6IHVzYjJwaHlAZTQ1MDogJyNwaHktY2VsbHMnIGRvZXMgbm90IG1hdGNoIGFueSBvZiB0aGUK
-cmVnZXhlczogJ3BpbmN0cmwtWzAtOV0rJwpGcm9tIHNjaGVtYTogL2J1aWxkcy9yb2JoZXJyaW5n
-L2xpbnV4LWR0L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9zb2Mvcm9ja2NoaXAv
-Z3JmLnlhbWwKL2J1aWxkcy9yb2JoZXJyaW5nL2xpbnV4LWR0L0RvY3VtZW50YXRpb24vZGV2aWNl
-dHJlZS9iaW5kaW5ncy9zb2Mvcm9ja2NoaXAvZ3JmLmV4YW1wbGUuZHQueWFtbDoKdXNiMnBoeUBl
-NDUwOiAnI3BoeS1jZWxscycgZG9lcyBub3QgbWF0Y2ggYW55IG9mIHRoZSByZWdleGVzOgoncGlu
-Y3RybC1bMC05XSsnCkZyb20gc2NoZW1hOiAvYnVpbGRzL3JvYmhlcnJpbmcvbGludXgtZHQvRG9j
-dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9waHktcm9ja2NoaXAtaW5uby11c2Iy
-LnlhbWwKClJvYgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+
+--===============8785644940329540113==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="y2gxgfnqjc5ew5rx"
+Content-Disposition: inline
+
+
+--y2gxgfnqjc5ew5rx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Tue, May 25, 2021 at 12:29:01PM +0100, Andre Przywara wrote:
+> On Mon, 24 May 2021 13:59:46 +0200
+> Maxime Ripard <maxime@cerno.tech> wrote:
+>=20
+> Hi Maxime,
+>=20
+> > On Wed, May 19, 2021 at 11:41:47AM +0100, Andre Przywara wrote:
+> > > At least the Allwinner H616 SoC requires a weird quirk to make most
+> > > USB PHYs work: Only port2 works out of the box, but all other ports
+> > > need some help from this port2 to work correctly: The CLK_BUS_PHY2 and
+> > > RST_USB_PHY2 clock and reset need to be enabled, and the SIDDQ bit in
+> > > the PMU PHY control register needs to be cleared. For this register to
+> > > be accessible, CLK_BUS_ECHI2 needs to be ungated. Don't ask ....
+> > >=20
+> > > Instead of disguising this as some generic feature, do exactly that
+> > > in our PHY init:
+> > > If the quirk bit is set, and we initialise a PHY other than PHY2, ung=
+ate
+> > > this one special clock, and clear the SIDDQ bit. We can pull in the
+> > > other required clocks via the DT.
+> > >=20
+> > > Signed-off-by: Andre Przywara <andre.przywara@arm.com> =20
+> >=20
+> > What is this SIDDQ bit doing exactly?
+>=20
+> I probably know as much as you do, but as Jernej pointed out, in some
+> Rockchip code it's indeed documented as some analogue PHY supply switch:
+> ($ git grep -i siddq drivers/phy/rockchip)
+>=20
+> In fact we had this pin/bit for ages, it was just hidden as BIT(1) in
+> our infamous PMU_UNK1 register. Patch 10/17 drags that into the light.
+
+Ok
+
+> > I guess we could also expose this using a power-domain if it's relevant?
+>=20
+> Mmmh, interesting idea. So are you thinking about registering a genpd
+> provider in sun4i_usb_phy_probe(), then having a power-domains property
+> in the ehci/ohci nodes, pointing to the PHY node? And if yes, should
+> the provider be a subnode of the USB PHY node, with a separate
+> compatible? That sounds a bit more involved, but would have the
+> advantage of allowing us to specify the resets and clocks from PHY2
+> there, and would look a bit cleaner than hacking them into the
+> other EHCI/OHCI nodes.
+
+I'm not sure we need a separate device node, we could just register the
+phy driver as a genpd provider, and then with an arg (so with
+of_genpd_add_provider_onecell?) the index of the USB controller we want
+to power up.
+
+> I would not touch the existing SoCs (even though it seems to apply to
+> them as well, just not in the exact same way), but I can give it a
+> try for the H616. It seems like the other SIDDQ bits (in the other
+> PHYs) are still needed for operation, but the PD provide could actually
+> take care of this as well.
+>=20
+> Does that make sense or is this a bit over the top for just clearing an
+> extra bit?
+
+Using what I described above should be fairly simple, so if we can fit
+in an available and relevant abstraction, yeah, I guess :)
+
+Maxime
+
+--y2gxgfnqjc5ew5rx
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYL4drwAKCRDj7w1vZxhR
+xd7TAQDncN/zcz+Z9eSgAJaMRWNdzFFjpQWl9G5zj8Ywa1FdIAEAqsVgmYFPss9l
+yFRreCSeCDL8U8Q4q9q5CcNgKG6geQ0=
+=WN4y
+-----END PGP SIGNATURE-----
+
+--y2gxgfnqjc5ew5rx--
+
+
+--===============8785644940329540113==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8785644940329540113==--
+
