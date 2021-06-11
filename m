@@ -2,92 +2,66 @@ Return-Path: <SRS0=gvcI=LF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9C215C48BD1
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Jun 2021 13:02:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DCD4BC48BE0
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Jun 2021 13:46:54 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 62A43613CC
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Jun 2021 13:02:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 62A43613CC
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 81705613C3
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Jun 2021 13:46:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 81705613C3
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bp.renesas.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=z6bn7Mo0mj1TC6Syb9MHoYf/bHrIT9CWVehXYEqq2P4=; b=bwBTxnk0HrMaxLGWLXekudfZhc
-	tQ69qHbCwuCZFrjlKOca7Nt3yEoQRmGCMGlRfTKq6YZSyj+h6dhQi5F0I8HHxXDiz2v2Bcd7psZo5
-	qEG7nZky+6r7nwmLtBfKXBjHlQ/FlQx/MUtC2L33z5NXtFYzmjiyByV8aoyVEKctwzePsXlZkbuFA
-	UuWzLqVZ/B3KqZyOeIa7aWPTLW6RcgS7WLDln+pnfTAJFG+81O+d042jmgCGOkef1fryVLKDrEiAb
-	+NI1k70OOylLYQAFE/CB3N6c7NyS4jW4GF6JOW9SxxvbTB+qCTCS4V/kyW1GVySYW0PtqC/6PzDYr
-	wGh9hrQQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kVS9osrwQQ1oRu6Zhthos3hxQEjPVXRBsrEd1jFI81o=; b=ESpwzVZsPmZ3qh
+	JqcLow+Df7clUwy5ZXDeigWyWx4yIc7XAhZ68LZbjjjWvwe6A/Hry3N6hKgy4zz+K0Jk9Bx5YxrHZ
+	z7+PyQG6oVOlAU/cHHmdrXePQky4ORbf7W9tqCEFoYhTuMSN8ZWlyKhaLhDQP83sMGqnOfEz7OzWV
+	BlLFyVyD270hmUoRW91C8rlmlfJjHSTav4vJiXuytEqLWttrK4Cyf5YW5aEnGNaDUvj74+l6u6Niy
+	pHRHzJ0RxLGb3sYor5mFsCZX6M+k/0kwGXKjMPSrJwn7Yf6CLjYKDHxLSC06o8Wp9jiEIaR+sLrkx
+	ASx7Z0VxTGumbm3lmWBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lrgnd-005LCJ-UT; Fri, 11 Jun 2021 13:02:13 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lrgna-005LBV-TP
- for linux-phy@lists.infradead.org; Fri, 11 Jun 2021 13:02:13 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 15BD1xxm043638;
- Fri, 11 Jun 2021 08:01:59 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1623416519;
- bh=bMMWvzfrFHl4j9c+dznuq5O3XnvQE4Ox9cPFZYk/Sj4=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=jOzQ0IAB7U4Oxb4Ul/KKGQJuHkNxJDi8ysJpzq35QmUHfcdr2C/n9iSf4B52G3oMU
- lgSznlT7SZKzdeJmOgTkMV12AR1KnDYPlVuM1Smlor1lFr1IT5xxkPK4312qBseFoF
- OeG/i+ULj6x942viY0FRPcWyf5qYDebzuoolgVLo=
-Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 15BD1xsY094056
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 11 Jun 2021 08:01:59 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Fri, 11
- Jun 2021 08:01:59 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Fri, 11 Jun 2021 08:01:59 -0500
-Received: from [10.250.212.96] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 15BD1sNC022485;
- Fri, 11 Jun 2021 08:01:55 -0500
-Subject: Re: [PATCH v6 1/3] phy: core: Reword the comment specifying the units
- of max_link_rate to be Mbps
-To: Aswath Govindraju <a-govindraju@ti.com>, Vinod Koul <vkoul@kernel.org>
-CC: <linux-can@vger.kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>,
- Wolfgang Grandegger <wg@grandegger.com>, Vignesh Raghavendra
- <vigneshr@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>, Rob Herring
- <robh+dt@kernel.org>,
- <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20210510051006.11393-1-a-govindraju@ti.com>
- <20210510051006.11393-2-a-govindraju@ti.com>
- <YLSNvUDJZ/v6NTuN@vkoul-mobl.Dlink>
- <615d3a2a-0dc2-0e87-fdac-e170542d33da@ti.com>
- <0150622f-8543-ac4a-fe18-f22d7862d163@ti.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <7913b08e-a71c-d29d-d921-c25a87c0616a@ti.com>
-Date: Fri, 11 Jun 2021 18:31:54 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
-MIME-Version: 1.0
-In-Reply-To: <0150622f-8543-ac4a-fe18-f22d7862d163@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+	id 1lrhUs-005QyS-2c; Fri, 11 Jun 2021 13:46:54 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171]
+ helo=relmlie5.idc.renesas.com)
+ by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1lrhUo-005QxT-Ok
+ for linux-phy@lists.infradead.org; Fri, 11 Jun 2021 13:46:52 +0000
+X-IronPort-AV: E=Sophos;i="5.83,265,1616425200"; d="scan'208";a="84106292"
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+ by relmlie5.idc.renesas.com with ESMTP; 11 Jun 2021 22:46:47 +0900
+Received: from localhost.localdomain (unknown [10.226.92.121])
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id D8B204274BD0;
+ Fri, 11 Jun 2021 22:46:44 +0900 (JST)
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Rob Herring <robh+dt@kernel.org>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>, Vinod Koul <vkoul@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Chris Paterson <Chris.Paterson2@renesas.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org
+Subject: [PATCH 0/6] Add RZ/G2L USB2.0 phy and host support
+Date: Fri, 11 Jun 2021 14:46:36 +0100
+Message-Id: <20210611134642.24029-1-biju.das.jz@bp.renesas.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210611_060211_067760_7DD7DE42 
-X-CRM114-Status: GOOD (  18.61  )
+X-CRM114-CacheID: sfid-20210611_064650_938786_A21A3CD4 
+X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,66 +73,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+This patch series adds USB2.0 phy and Host support for RZ/G2L SoC.
 
-On 11/06/21 6:12 pm, Aswath Govindraju wrote:
-> Hi Vinod,
-> 
-> On 31/05/21 2:04 pm, Aswath Govindraju wrote:
->> Hi Vinod,
->>
->> On 31/05/21 12:48 pm, Vinod Koul wrote:
->>> On 10-05-21, 10:40, Aswath Govindraju wrote:
->>>> In some subsystems (eg. CAN, SPI), the max link rate supported can be less
->>>> than 1 Mbps and if the unit for max_link_rate is Mbps then it can't be
->>>> used. Therefore, leave the decision of units to be used, to the producer
->>>> and consumer.
->>>>
->>>> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
->>>> Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
->>>> ---
->>>>  include/linux/phy/phy.h | 2 +-
->>>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>>
->>>> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
->>>> index 0ed434d02196..f3286f4cd306 100644
->>>> --- a/include/linux/phy/phy.h
->>>> +++ b/include/linux/phy/phy.h
->>>> @@ -125,7 +125,7 @@ struct phy_ops {
->>>>  /**
->>>>   * struct phy_attrs - represents phy attributes
->>>>   * @bus_width: Data path width implemented by PHY
->>>> - * @max_link_rate: Maximum link rate supported by PHY (in Mbps)
->>>> + * @max_link_rate: Maximum link rate supported by PHY (units to be decided by producer and consumer)
->>>
->>> So there are a few users of max_link_rate. It would be better that we
->>> document all previous users of max_link_rate that unit is in Mbps and
->>> then modify it here
->>>
->>
->> I was able to see that the max_link_rate attribute was used at,
->>
->> drivers/phy/cadence/phy-cadence-torrent.c:2514:
->> gphy->attrs.max_link_rate = cdns_phy->max_bit_rate;
->>
->> and in the bindings there is indication that the units to be used is Mbps.
->>
->> Can you please point me if there is any other place that I might have
->> missed to look at or that might need documentation update?
->>
+A new driver introduced for RZ/G2L USB phy control block,
+which mainly controls reset and power down of the USB2.0/PHY.
 
-The only user seems to be Torrent and max_bit_rate is documented well in
-Torrent.
+This patchset is based on master branch [1]
 
-Acked-by: Kishon Vijay Abraham I <kishon@ti.com>
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git/
 
-Thanks
-Kishon
+Biju Das (6):
+  dt-bindings: phy: renesas: Document RZ/G2L USB PHY Control bindings
+  drivers: clk: renesas: r9a07g044-cpg: Add USB clocks
+  phy: renesas: Add RZ/G2L usb phy control driver
+  arm64: configs: defconfig: Enable RZ/G2L USB PHY control driver
+  dt-bindings: phy: renesas,usb2-phy: Document RZ/G2L phy bindings
+  arm64: dts: renesas: r9a07g044: Add USB2.0 phy and host support
+
+ .../phy/renesas,rzg2l-usbphyctrl.yaml         |  50 ++++++
+ .../bindings/phy/renesas,usb2-phy.yaml        |   1 +
+ arch/arm64/boot/dts/renesas/r9a07g044.dtsi    |  81 +++++++++
+ arch/arm64/configs/defconfig                  |   1 +
+ drivers/clk/renesas/r9a07g044-cpg.c           |   6 +
+ drivers/phy/renesas/Kconfig                   |   7 +
+ drivers/phy/renesas/Makefile                  |   1 +
+ drivers/phy/renesas/phy-rzg2l-usbphyctrl.c    | 163 ++++++++++++++++++
+ 8 files changed, 310 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
+ create mode 100644 drivers/phy/renesas/phy-rzg2l-usbphyctrl.c
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
