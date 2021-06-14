@@ -2,74 +2,76 @@ Return-Path: <SRS0=iPW2=LI=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3688EC48BE8
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 00:21:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 38665C48BE6
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 05:51:02 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E77D46124B
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 00:21:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E77D46124B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=arm.com
+	by mail.kernel.org (Postfix) with ESMTPS id EF5FB60BBB
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 05:51:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EF5FB60BBB
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MdcCxl14x5rgFgB15SIYRoH4AnKm4tZRUWtzmVs08+I=; b=RQ3M/4/m11Gyit
-	yM+CvzJAAvxweP3vVqOcxWLkE5uYCHpkvMaohTAXlg5XASL35p7q42FkJiLEo6g97S+sf8Kz1RawJ
-	m0SOqtj8mJFuwor+T38DcU4CNyeVOa3sVtc+mNtHutryLb1+fLcq9GMV6dU19Pu2ThScqqNtsSZEq
-	XHpzHWg6RpdycKTbnnoeiBjSsa+v++7ODxQ9jOnvW4cllZRptcDXdOSXWM9msanTOiGcAJwelXqez
-	mZbzcADjC1y6BM7PHuBUcaARdbf3aBdMNY1piSjMJgoOqbYghQHfSx2Rw5aRN3cqY1l0XF1DyPMrI
-	B3dagX/FL/cwxR8Me1YA==;
+	List-Owner; bh=vqYvNKPL7hND1I8VmUJ7wWV2DdPiSbe+DoA5GeSauqw=; b=moxybIU5LbBzFT
+	aqcjuMjN4S/Mm0ytP6eYFonKcLsrZ1XJcmY12rpuXyXEHqkivlsAhh3ICkjTIBMVmRCVmwg+qhucO
+	1sECT2tlKqstRr3B/RpWiRBrWbhGmsA0kE3EW03FWg5L04PZ8CpwNlEF935NWr82gfIo0ZKCVOafS
+	2a9VoK2M541QD1YO48bsppyQlprbn8pU+Q2JfPpxf/EXjJgK7ECdq9/r2hKXkMTw80+sX8pVyzSh6
+	09ejxLqnodqpOVbyllJzWX39ADQbYR9jm48BIXplEHZF5UMneDRn8MF4Ca/o32ewucgtoX6HXZ13k
+	WcDSMESplSUf2pLMJjyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lsaLw-00BkLA-Eb; Mon, 14 Jun 2021 00:21:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lsaLi-00BkIc-Pf; Mon, 14 Jun 2021 00:21:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18D0D6D;
- Sun, 13 Jun 2021 17:21:01 -0700 (PDT)
-Received: from slackpad.fritz.box (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EBCBA3F70D;
- Sun, 13 Jun 2021 17:20:58 -0700 (PDT)
-Date: Mon, 14 Jun 2021 01:20:47 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Chen-Yu Tsai <wens@csie.org>
-Cc: Maxime Ripard <maxime@cerno.tech>, Jernej Skrabec
- <jernej.skrabec@gmail.com>, Rob Herring <robh@kernel.org>, Icenowy Zheng
- <icenowy@aosc.io>, Samuel Holland <samuel@sholland.org>, Ondrej Jirman
- <megous@megous.com>, linux-arm-kernel
- <linux-arm-kernel@lists.infradead.org>, linux-sunxi
- <linux-sunxi@googlegroups.com>, linux-sunxi@lists.linux.dev, linux-kernel
- <linux-kernel@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org, linux-usb
- <linux-usb@vger.kernel.org>
-Subject: Re: [linux-sunxi] Re: [PATCH v6 12/17] phy: sun4i-usb: Introduce
- port2 SIDDQ quirk
-Message-ID: <20210614012047.37774ca8@slackpad.fritz.box>
-In-Reply-To: <CAGb2v66mFAWzM_mqT8GiP5NmPNXjEsKq8C6cn8EHSjK82etjyg@mail.gmail.com>
-References: <20210519104152.21119-1-andre.przywara@arm.com>
- <20210519104152.21119-13-andre.przywara@arm.com>
- <20210524115946.jwsasjbr3biyixhz@gilmour>
- <20210525122901.778bfccd@slackpad.fritz.box>
- <20210607132255.7fa75a7k7ud2g7ux@gilmour>
- <20210607151742.2f05ff95@slackpad.fritz.box>
- <CAGb2v66mFAWzM_mqT8GiP5NmPNXjEsKq8C6cn8EHSjK82etjyg@mail.gmail.com>
-Organization: Arm Ltd.
-X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.31; x86_64-slackware-linux-gnu)
+	id 1lsfUz-00CcYJ-CS; Mon, 14 Jun 2021 05:51:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1lsfUv-00CcUX-Lo
+ for linux-phy@lists.infradead.org; Mon, 14 Jun 2021 05:50:59 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 05209611CE;
+ Mon, 14 Jun 2021 05:50:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1623649856;
+ bh=KYwc30r/lp2B0B16drySkBiM9QvnXttHPWZWHoPBwVo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=R4PVRON784Zn6cLN1rockSMpa0A0SGXEaqR1omCd31/X7EcQGJ+xrASwE08hVf1/e
+ VOQiatwTdgQff82mQ/4lP+051oS1SZan8l9d4Ouba3sfhNDJcgqvoQCJc0+2SbDSWq
+ ap4jCmG0mlTzURGwfmyn1HbNwrTK5j2og5ikbQKGtoxUdOvwT6laeebeSgSMhfM9l0
+ 9qx0/Ul37HSiBFK6ApP5f54rbhWUcQ16u6JR1T6Tk1RDb/RaISwc5mFDI3QfcUz8XK
+ AqjLKZhp13Yqd9aUyCHAb7AW62XGH8xYM2jR09WiqU9A01nRl3EfZ3J5naYPpRdEjF
+ 0fjTVLUfODEog==
+Date: Mon, 14 Jun 2021 11:20:53 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Aswath Govindraju <a-govindraju@ti.com>, linux-can@vger.kernel.org,
+ Marc Kleine-Budde <mkl@pengutronix.de>,
+ Wolfgang Grandegger <wg@grandegger.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 1/3] phy: core: Reword the comment specifying the
+ units of max_link_rate to be Mbps
+Message-ID: <YMbuPaSrBZ+W/uKN@vkoul-mobl>
+References: <20210510051006.11393-1-a-govindraju@ti.com>
+ <20210510051006.11393-2-a-govindraju@ti.com>
+ <YLSNvUDJZ/v6NTuN@vkoul-mobl.Dlink>
+ <615d3a2a-0dc2-0e87-fdac-e170542d33da@ti.com>
+ <0150622f-8543-ac4a-fe18-f22d7862d163@ti.com>
+ <7913b08e-a71c-d29d-d921-c25a87c0616a@ti.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <7913b08e-a71c-d29d-d921-c25a87c0616a@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210613_172106_973579_1F697B86 
-X-CRM114-Status: GOOD (  46.20  )
+X-CRM114-CacheID: sfid-20210613_225057_765705_A29DC3F3 
+X-CRM114-Status: GOOD (  15.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,116 +88,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 7 Jun 2021 22:26:02 +0800
-Chen-Yu Tsai <wens@csie.org> wrote:
+On 11-06-21, 18:31, Kishon Vijay Abraham I wrote:
 
-Hi Chen-Yu,
-
-> On Mon, Jun 7, 2021 at 10:17 PM Andre Przywara <andre.przywara@arm.com> wrote:
-> >
-> > On Mon, 7 Jun 2021 15:22:55 +0200
-> > Maxime Ripard <maxime@cerno.tech> wrote:
-> >
-> > Hi Maxime,
-> >  
-> > > On Tue, May 25, 2021 at 12:29:01PM +0100, Andre Przywara wrote:  
-> > > > On Mon, 24 May 2021 13:59:46 +0200
-> > > > Maxime Ripard <maxime@cerno.tech> wrote:
-> > > >
-> > > > Hi Maxime,
-> > > >  
-> > > > > On Wed, May 19, 2021 at 11:41:47AM +0100, Andre Przywara wrote:  
-> > > > > > At least the Allwinner H616 SoC requires a weird quirk to make most
-> > > > > > USB PHYs work: Only port2 works out of the box, but all other ports
-> > > > > > need some help from this port2 to work correctly: The CLK_BUS_PHY2 and
-> > > > > > RST_USB_PHY2 clock and reset need to be enabled, and the SIDDQ bit in
-> > > > > > the PMU PHY control register needs to be cleared. For this register to
-> > > > > > be accessible, CLK_BUS_ECHI2 needs to be ungated. Don't ask ....
-> > > > > >
-> > > > > > Instead of disguising this as some generic feature, do exactly that
-> > > > > > in our PHY init:
-> > > > > > If the quirk bit is set, and we initialise a PHY other than PHY2, ungate
-> > > > > > this one special clock, and clear the SIDDQ bit. We can pull in the
-> > > > > > other required clocks via the DT.
-> > > > > >
-> > > > > > Signed-off-by: Andre Przywara <andre.przywara@arm.com>  
-> > > > >
-> > > > > What is this SIDDQ bit doing exactly?  
-> > > >
-> > > > I probably know as much as you do, but as Jernej pointed out, in some
-> > > > Rockchip code it's indeed documented as some analogue PHY supply switch:
-> > > > ($ git grep -i siddq drivers/phy/rockchip)
-> > > >
-> > > > In fact we had this pin/bit for ages, it was just hidden as BIT(1) in
-> > > > our infamous PMU_UNK1 register. Patch 10/17 drags that into the light.  
-> > >
-> > > Ok
-> > >  
-> > > > > I guess we could also expose this using a power-domain if it's relevant?  
-> > > >
-> > > > Mmmh, interesting idea. So are you thinking about registering a genpd
-> > > > provider in sun4i_usb_phy_probe(), then having a power-domains property
-> > > > in the ehci/ohci nodes, pointing to the PHY node? And if yes, should
-> > > > the provider be a subnode of the USB PHY node, with a separate
-> > > > compatible? That sounds a bit more involved, but would have the
-> > > > advantage of allowing us to specify the resets and clocks from PHY2
-> > > > there, and would look a bit cleaner than hacking them into the
-> > > > other EHCI/OHCI nodes.  
-> > >
-> > > I'm not sure we need a separate device node, we could just register the
-> > > phy driver as a genpd provider, and then with an arg (so with
-> > > of_genpd_add_provider_onecell?) the index of the USB controller we want
-> > > to power up.  
-> >
-> > Yeah, I figured that myself meanwhile ;-) I now have a fairly nice
-> > implementation, which does away with the extra clocks and resets from
-> > the EHCI/OHCI nodes, and just adds one extra clock to the PHY node. The
-> > rest is power domains properties.  
+> >>> So there are a few users of max_link_rate. It would be better that we
+> >>> document all previous users of max_link_rate that unit is in Mbps and
+> >>> then modify it here
+> >>>
+> >>
+> >> I was able to see that the max_link_rate attribute was used at,
+> >>
+> >> drivers/phy/cadence/phy-cadence-torrent.c:2514:
+> >> gphy->attrs.max_link_rate = cdns_phy->max_bit_rate;
+> >>
+> >> and in the bindings there is indication that the units to be used is Mbps.
+> >>
+> >> Can you please point me if there is any other place that I might have
+> >> missed to look at or that might need documentation update?
+> >>
 > 
-> I'm wondering, since SIDDQ refers to the analog power for USB, it shouldn't
-> really affect the HCIs, only the PHYs. Is there any way to model it like
-> this and test it?
-
-That is actually a good point: it is indeed solely a PHY property. The
-HCIs already connect to their PHYs, among other reasons to power them
-on, so it should really be an internal PHY affair.
-Which is actually what this patch here does.
-So I can combine the best of both approaches: we already have the
-PHY2 clock and reset references in the PHY node, so can just reach out
-and enable them as well, alongside the actually associated PHY clock.
-This allows us to get rid of the bogus PHY2 clock references from all
-HCIs.
-So all of this H616 quirk can be fully contained within the PHY driver,
-with no impact on the HCI parts and no extra DT properties
-(power-domains, clocks) needed there.
-
-Seems to work on a quick test. I will send a version ASAP.
-
-Thanks!
-Andre
-
+> The only user seems to be Torrent and max_bit_rate is documented well in
+> Torrent.
 > 
-> ChenYu
-> 
-> > > > I would not touch the existing SoCs (even though it seems to apply to
-> > > > them as well, just not in the exact same way), but I can give it a
-> > > > try for the H616. It seems like the other SIDDQ bits (in the other
-> > > > PHYs) are still needed for operation, but the PD provide could actually
-> > > > take care of this as well.
-> > > >
-> > > > Does that make sense or is this a bit over the top for just clearing an
-> > > > extra bit?  
-> > >
-> > > Using what I described above should be fairly simple, so if we can fit
-> > > in an available and relevant abstraction, yeah, I guess :)  
-> >
-> > Thanks!
-> > I will post what I have, just need to find some solution for the RTC
-> > clock bits.
-> >
-> > Cheers,
-> > Andre
-> >
+> Acked-by: Kishon Vijay Abraham I <kishon@ti.com>
+
+Series Applied, thanks
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
