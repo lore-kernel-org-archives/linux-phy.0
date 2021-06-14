@@ -2,19 +2,20 @@ Return-Path: <SRS0=iPW2=LI=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PULL_REQUEST,
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 38665C48BE6
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 05:51:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3BA16C48BE6
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 08:28:05 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EF5FB60BBB
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 05:51:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EF5FB60BBB
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 0AA3761153
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Jun 2021 08:28:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0AA3761153
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linuxfoundation.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -22,56 +23,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vqYvNKPL7hND1I8VmUJ7wWV2DdPiSbe+DoA5GeSauqw=; b=moxybIU5LbBzFT
-	aqcjuMjN4S/Mm0ytP6eYFonKcLsrZ1XJcmY12rpuXyXEHqkivlsAhh3ICkjTIBMVmRCVmwg+qhucO
-	1sECT2tlKqstRr3B/RpWiRBrWbhGmsA0kE3EW03FWg5L04PZ8CpwNlEF935NWr82gfIo0ZKCVOafS
-	2a9VoK2M541QD1YO48bsppyQlprbn8pU+Q2JfPpxf/EXjJgK7ECdq9/r2hKXkMTw80+sX8pVyzSh6
-	09ejxLqnodqpOVbyllJzWX39ADQbYR9jm48BIXplEHZF5UMneDRn8MF4Ca/o32ewucgtoX6HXZ13k
-	WcDSMESplSUf2pLMJjyw==;
+	List-Owner; bh=RH1ijBop67rpVZ/GhTIZmeXfKbhccZKdXVGiniCBwxU=; b=bF96vFKEiejptN
+	+U4Ls42l/Pq5uHJdeWS3fYJ/l8v3LPlEr9lHia+hqb0aIjHSNnlX6SU4zy3+bJnCBiqWyMKfI9Tqm
+	uTWDo2TRCehPz2IAkq+208/sHnHLMY1CzknaOoSWnONyxhEHzPm/W1VawJeKwuNtDE1lfey8gXQaP
+	/sYMa4IGaKRUVmhWK/UYgdvN7kIUrTTHk20OAPM/DCFknTFB7z8mXKMP0nyxwajJig/1uHd77zqnn
+	+buPKtwXj1Z3Js5zBuD/Z5zCMOoB1M7yJFgG73FbCc1PRlKf2hdT2xlCD8PHjdd3JMA6hANDPkRI7
+	T8WXxgkO4MeQAmB5tITQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lsfUz-00CcYJ-CS; Mon, 14 Jun 2021 05:51:01 +0000
+	id 1lshwy-00D6H4-Jb; Mon, 14 Jun 2021 08:28:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lsfUv-00CcUX-Lo
- for linux-phy@lists.infradead.org; Mon, 14 Jun 2021 05:50:59 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 05209611CE;
- Mon, 14 Jun 2021 05:50:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1623649856;
- bh=KYwc30r/lp2B0B16drySkBiM9QvnXttHPWZWHoPBwVo=;
+ id 1lshww-00D6G9-P0
+ for linux-phy@lists.infradead.org; Mon, 14 Jun 2021 08:28:03 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 6409661370;
+ Mon, 14 Jun 2021 08:28:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+ s=korg; t=1623659281;
+ bh=5WpXj+v2aZrwm0AM5cVGrmbOMJxn+umwHqzjnzUIOW4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=R4PVRON784Zn6cLN1rockSMpa0A0SGXEaqR1omCd31/X7EcQGJ+xrASwE08hVf1/e
- VOQiatwTdgQff82mQ/4lP+051oS1SZan8l9d4Ouba3sfhNDJcgqvoQCJc0+2SbDSWq
- ap4jCmG0mlTzURGwfmyn1HbNwrTK5j2og5ikbQKGtoxUdOvwT6laeebeSgSMhfM9l0
- 9qx0/Ul37HSiBFK6ApP5f54rbhWUcQ16u6JR1T6Tk1RDb/RaISwc5mFDI3QfcUz8XK
- AqjLKZhp13Yqd9aUyCHAb7AW62XGH8xYM2jR09WiqU9A01nRl3EfZ3J5naYPpRdEjF
- 0fjTVLUfODEog==
-Date: Mon, 14 Jun 2021 11:20:53 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Aswath Govindraju <a-govindraju@ti.com>, linux-can@vger.kernel.org,
- Marc Kleine-Budde <mkl@pengutronix.de>,
- Wolfgang Grandegger <wg@grandegger.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Lokesh Vutla <lokeshvutla@ti.com>, Rob Herring <robh+dt@kernel.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 1/3] phy: core: Reword the comment specifying the
- units of max_link_rate to be Mbps
-Message-ID: <YMbuPaSrBZ+W/uKN@vkoul-mobl>
-References: <20210510051006.11393-1-a-govindraju@ti.com>
- <20210510051006.11393-2-a-govindraju@ti.com>
- <YLSNvUDJZ/v6NTuN@vkoul-mobl.Dlink>
- <615d3a2a-0dc2-0e87-fdac-e170542d33da@ti.com>
- <0150622f-8543-ac4a-fe18-f22d7862d163@ti.com>
- <7913b08e-a71c-d29d-d921-c25a87c0616a@ti.com>
+ b=LDEUiIpyc9xO0ZpqFYG4H/3HF8smf0AYYgIQJXvKIXwIQkcgaCtSfEl4zsduMOFjV
+ 86DX2EHMA5SifWkqvKcnqjW10u4nXeUgfhOcZzsY5YhuVLnNJntstVmBjJGMe98oHt
+ ul6LOMW0jHDwlMPToKEbDO1kfo73eI8T/qnIaWJ4=
+Date: Mon, 14 Jun 2021 10:27:43 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Thierry Reding <thierry.reding@gmail.com>
+Cc: Felipe Balbi <balbi@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "Vinod Koul linux-usb @ vger . kernel . org" <vkoul@kernel.org>,
+ linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org
+Subject: Re: [GIT PULL 2/2] usb: tegra: Changes for v5.14-rc1
+Message-ID: <YMcS/yfYsotZN7Vx@kroah.com>
+References: <20210611164037.3567270-1-thierry.reding@gmail.com>
+ <20210611164037.3567270-2-thierry.reding@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7913b08e-a71c-d29d-d921-c25a87c0616a@ti.com>
+In-Reply-To: <20210611164037.3567270-2-thierry.reding@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210613_225057_765705_A29DC3F3 
-X-CRM114-Status: GOOD (  15.03  )
+X-CRM114-CacheID: sfid-20210614_012802_853682_54418C24 
+X-CRM114-Status: GOOD (  15.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,33 +77,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11-06-21, 18:31, Kishon Vijay Abraham I wrote:
-
-> >>> So there are a few users of max_link_rate. It would be better that we
-> >>> document all previous users of max_link_rate that unit is in Mbps and
-> >>> then modify it here
-> >>>
-> >>
-> >> I was able to see that the max_link_rate attribute was used at,
-> >>
-> >> drivers/phy/cadence/phy-cadence-torrent.c:2514:
-> >> gphy->attrs.max_link_rate = cdns_phy->max_bit_rate;
-> >>
-> >> and in the bindings there is indication that the units to be used is Mbps.
-> >>
-> >> Can you please point me if there is any other place that I might have
-> >> missed to look at or that might need documentation update?
-> >>
+On Fri, Jun 11, 2021 at 06:40:37PM +0200, Thierry Reding wrote:
+> Hi Greg, Felipe,
 > 
-> The only user seems to be Torrent and max_bit_rate is documented well in
-> Torrent.
+> The following changes since commit 1f9cab6cc20c6ed35c659aa25e282265275f0732:
 > 
-> Acked-by: Kishon Vijay Abraham I <kishon@ti.com>
+>   phy: tegra: xusb: Add wake/sleepwalk for Tegra186 (2021-06-03 14:52:45 +0200)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/for-5.14-usb
+> 
+> for you to fetch changes up to 971ee247060d88dceb72428b5d203687312884f4:
+> 
+>   usb: xhci: tegra: Enable ELPG for runtime/system PM (2021-06-11 18:15:46 +0200)
+> 
+> This is a set of changes that was supposed to go into v5.13 but missed
+> the window by just a couple of days. I've since taken this for a spin
+> in linux-next through the Tegra tree and everything seems A-OK.
+> 
+> Note that this includes the contents of the first pull request in this
+> set because of a build-time dependency. I'm assuming that all of this
+> will go through Greg's USB tree, in which case there's no reason to pull
+> in the first pull request since it's already included in this one.
 
-Series Applied, thanks
+I have pulled this into my tree now, thanks.
 
--- 
-~Vinod
+greg k-h
 
 -- 
 linux-phy mailing list
