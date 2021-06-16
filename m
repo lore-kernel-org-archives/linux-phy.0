@@ -2,161 +2,82 @@ Return-Path: <SRS0=xt5n=LK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5D885C49EAF
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 18:42:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9BE9AC48BE6
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 23:28:37 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 229F3613F1
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 18:42:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 229F3613F1
+	by mail.kernel.org (Postfix) with ESMTPS id 57FF461166
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 23:28:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 57FF461166
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=e3D77C9PSgV2Bi6BI1+QNNmj9MS9qqK95AFyfBK2K08=; b=YJ0ph3X9XJi/JYpktKbvIXJdFM
-	fAf8b6L4E5x16cpWUBLlStBtzKcChhDV3nqpin72KGfF+TVc+/31KJsxgmDkPfd5Q7TrZukMZt36H
-	ibXyMZ2YEFShJa1w5zC82BwmbiUMqpkxL0vTsHvkMNsoYh3bwD8p5v6n41naxdYUD0zFSWKsA9hXH
-	j2M9S5/4jlmPGk9mZVPCPhO+oyO4TEWR90lCmSegjiqwvsiHYWeyI8RAhM2o8wzm+s+zvtna9Miqz
-	1qjkTZQoDk2DZJAS3ggsYXEXkGT7wFtv9ZFFlGntk86a729Tg/75AMVbjIrRezUN+d6oO3AzUX8XU
-	+Wzf/btA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SYG6/shzgg5q+0PwkMkDxLnoqwPJFk09zwPoopzgS6k=; b=IhTU8Ma99lxhnv
+	jtge8W8Pe1vb8QPUTyHDTNQGwIJeaEdDVT8NDSDjqDCtPBcqxAyNAqRMHWPhp4PikNVyxMft10JVt
+	dulF6Cmzww+HQ+pTwXSXHLFpdPw1s+M1Xsld6T8aPgursDZ3/Xv1euEWNoZiNncARwDUjm6zQ3ayd
+	sd+Ym2UtuBm6FZ6GXL4isovulI6S1uwtutffk/1DVJ7EJxtUUR3Lx6eYIVN+Ze5BFAH/wVD6OnUR/
+	t7Y7d2r6ofaAj6mrYzQUp+KWiyhF0YHF8+RGuSRmUUSVFthM12zcelOWfsCMgI6YNJCHBAexY6Ywo
+	nFxWdTrvdWXpxG3e+Phw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ltaUC-007RVG-IL; Wed, 16 Jun 2021 18:42:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ltexY-0089XL-Kc; Wed, 16 Jun 2021 23:28:36 +0000
+Received: from mail-io1-f49.google.com ([209.85.166.49])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ltaU9-007RU3-Sm; Wed, 16 Jun 2021 18:41:59 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 3914E610A3;
- Wed, 16 Jun 2021 18:41:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1623868917;
- bh=A/u+qgoYDIfPJH2nR7TN1MVSs3c34aZySloJGmF3DxI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XW7Y4X4BrA5t9ijeAkMM5QcCdVYTcPYigARzxXFbf+hvb/uvp+9Mh4a34b6q7DC/i
- sftLrmCBohcI5jLH7tRhCQG0oRbDHxXeJk4RnxcA6Ul46XtSEkqfRY8t/XGFaIFk86
- qALO4rJMHfSIQDqcWwSZq03gCR35QANxOrYdPBiBe/2o4ooVhYHO++ff/Wjl3yD1k0
- 5+AqyA7gDeMM/vaNpWgsQ3+LVyhh+c7BqwX1vaXN+fU88HSnc2YCtVPrtUbPSvo8Oo
- 6qWAuSvjwilO69NivBQSK/Tx5fcLWTIvpS50NkVkCoknp6Umst4ITXs8YCSnSw0png
- hRSa7JSohypWw==
-Date: Wed, 16 Jun 2021 20:41:50 +0200
-From: Wolfram Sang <wsa@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-ide@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org,
- dri-devel@lists.freedesktop.org, dmaengine@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-iio@vger.kernel.org,
- alsa-devel@alsa-project.org, iommu@lists.linux-foundation.org,
- linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-can@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-gpio@vger.kernel.org, linux-pwm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-rtc@vger.kernel.org, linux-serial@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org,
- Jens Axboe <axboe@kernel.dk>, Stephen Boyd <sboyd@kernel.org>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- "David S. Miller" <davem@davemloft.net>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, Jonathan Cameron <jic23@kernel.org>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Jassi Brar <jassisinghbrar@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, Jakub Kicinski <kuba@kernel.org>,
- Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>, Andrew Lunn <andrew@lunn.ch>,
- Vivien Didelot <vivien.didelot@gmail.com>,
- Vladimir Oltean <olteanv@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Lee Jones <lee.jones@linaro.org>, Ohad Ben-Cohen <ohad@wizery.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mark Brown <broonie@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH] dt-bindings: Drop redundant minItems/maxItems
-Message-ID: <YMpF7gkpbNQYX5EB@kunai>
-Mail-Followup-To: Wolfram Sang <wsa@kernel.org>,
- Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-ide@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org, dri-devel@lists.freedesktop.org,
- dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-iio@vger.kernel.org, alsa-devel@alsa-project.org,
- iommu@lists.linux-foundation.org, linux-media@vger.kernel.org,
- linux-mmc@vger.kernel.org, netdev@vger.kernel.org,
- linux-can@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-rtc@vger.kernel.org,
- linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-watchdog@vger.kernel.org, Jens Axboe <axboe@kernel.dk>,
- Stephen Boyd <sboyd@kernel.org>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- "David S. Miller" <davem@davemloft.net>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>,
- Jonathan Cameron <jic23@kernel.org>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Jakub Kicinski <kuba@kernel.org>,
- Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>,
- Andrew Lunn <andrew@lunn.ch>,
- Vivien Didelot <vivien.didelot@gmail.com>,
- Vladimir Oltean <olteanv@gmail.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Lee Jones <lee.jones@linaro.org>, Ohad Ben-Cohen <ohad@wizery.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- Palmer Dabbelt <palmer@dabbelt.com>,
- Albert Ou <aou@eecs.berkeley.edu>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mark Brown <broonie@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Guenter Roeck <linux@roeck-us.net>
-References: <20210615191543.1043414-1-robh@kernel.org>
+ id 1ltexK-0089VJ-Lu; Wed, 16 Jun 2021 23:28:24 +0000
+Received: by mail-io1-f49.google.com with SMTP id d9so1058085ioo.2;
+ Wed, 16 Jun 2021 16:28:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=xV2j/EdwVr9gYo7BsYPb7ja8r4fncuGCJrMkRrs/+ek=;
+ b=EnWwAStbn3dCi62huzgDTAOoOUx5STYGpyZSx/yr1cVKpSAEu2hc8yGFlxd28Yva9w
+ ea21ZdIESe3O7DHkiyt4GfE+ZQHiVfxKdyooOVTzgCztm+hJygOiKj2WOAFSRU9X0WHp
+ S4kWSMKc69j8PVfplVpsLiuf2AXoGkmAplPH3NHO6GqMdf49NG0n1vOEwo/+/KXeWkjj
+ eWU4FiqvM7wv7xqsU8DzyQwE3UHLM1co2Zc6tKV6G9l8UFKFOv1NsIOBTS1+neTJfIEz
+ l5MifuArBcbo6KK/pdzqipVo6q22is6kSF6zcb2ka4JFBZ8jmRaJRvZHedPS+LvblYNi
+ SflQ==
+X-Gm-Message-State: AOAM531F88bjMbyPHYveBNDMA5YeVkk7LQQvbgzG43luS/SQSYMKg61e
+ 5zsQEfvZffPgEjm2puMjRj+D0RZgYA==
+X-Google-Smtp-Source: ABdhPJy3RhIjKN/CDWVX8vYjXN0Rn6x/UxRBlzkJvxqDZVxPyVz+nQXCDwrjbqXkYYHI4y39Ek+SAA==
+X-Received: by 2002:a05:6602:38d:: with SMTP id
+ f13mr1377780iov.109.1623886101700; 
+ Wed, 16 Jun 2021 16:28:21 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+ by smtp.gmail.com with ESMTPSA id i7sm1341033ilq.50.2021.06.16.16.28.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 16 Jun 2021 16:28:20 -0700 (PDT)
+Received: (nullmailer pid 284524 invoked by uid 1000);
+ Wed, 16 Jun 2021 23:28:17 -0000
+Date: Wed, 16 Jun 2021 17:28:17 -0600
+From: Rob Herring <robh@kernel.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
+Subject: Re: [PATCH 1/3] dt-bindings: phy: mediatek: tphy: add support
+ hardware version 3
+Message-ID: <20210616232817.GA277610@robh.at.kernel.org>
+References: <1622791880-20262-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20210615191543.1043414-1-robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <1622791880-20262-1-git-send-email-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210616_114158_012582_AE8868CD 
-X-CRM114-Status: GOOD (  20.53  )
+X-CRM114-CacheID: sfid-20210616_162822_766710_117B30C2 
+X-CRM114-Status: GOOD (  23.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,115 +89,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0597857205167220121=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, Jun 04, 2021 at 03:31:18PM +0800, Chunfeng Yun wrote:
+> The PHYA architecture is updated, and doesn't support slew rate
+> calibration anymore on 7nm or advanced process, add a new version
+> number to support it.
+> Note: the FreqMeter bank is not used but reserved.
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+>  .../devicetree/bindings/phy/mediatek,tphy.yaml     | 14 +++++++++-----
+>  1 file changed, 9 insertions(+), 5 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> index b8a7651a3d9a..939c09296b5f 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> @@ -15,7 +15,7 @@ description: |
+>    controllers on MediaTek SoCs, includes USB2.0, USB3.0, PCIe and SATA.
+>  
+>    Layout differences of banks between T-PHY V1 (mt8173/mt2701) and
+> -  T-PHY V2 (mt2712) when works on USB mode:
+> +  T-PHY V2 (mt2712) / V3 (mt8195) when works on USB mode:
+>    -----------------------------------
+>    Version 1:
+>    port        offset    bank
+> @@ -34,7 +34,7 @@ description: |
+>    u2 port2    0x1800    U2PHY_COM
+>                ...
+>  
+> -  Version 2:
+> +  Version 2/3:
+>    port        offset    bank
+>    u2 port0    0x0000    MISC
+>                0x0100    FMREG
+> @@ -59,7 +59,8 @@ description: |
+>  
+>    SPLLC shared by u3 ports and FMREG shared by u2 ports on V1 are put back
+>    into each port; a new bank MISC for u2 ports and CHIP for u3 ports are
+> -  added on V2.
+> +  added on V2; the FMREG bank for slew rate calibration is not used anymore
+> +  and reserved on V3;
+>  
+>  properties:
+>    $nodename:
+> @@ -79,8 +80,11 @@ properties:
+>                - mediatek,mt2712-tphy
+>                - mediatek,mt7629-tphy
+>                - mediatek,mt8183-tphy
+> -              - mediatek,mt8195-tphy
+>            - const: mediatek,generic-tphy-v2
 
---===============0597857205167220121==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Ul4MnuDBL/PvPlAZ"
-Content-Disposition: inline
+This doesn't look like a good change.
 
+What happens if a DT has the above. It didn't work or didn't support new 
+features? Please clarify in the commit the implications of changing 
+this. Changing a DT to 'mediatek,generic-tphy-v3' will break existing OS 
+if it was looking for v2.
 
---Ul4MnuDBL/PvPlAZ
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Jun 15, 2021 at 01:15:43PM -0600, Rob Herring wrote:
-> If a property has an 'items' list, then a 'minItems' or 'maxItems' with t=
-he
-> same size as the list is redundant and can be dropped. Note that is DT
-> schema specific behavior and not standard json-schema behavior. The tooli=
-ng
-> will fixup the final schema adding any unspecified minItems/maxItems.
->=20
-> This condition is partially checked with the meta-schema already, but
-> only if both 'minItems' and 'maxItems' are equal to the 'items' length.
-> An improved meta-schema is pending.
->=20
-> Cc: Jens Axboe <axboe@kernel.dk>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: Herbert Xu <herbert@gondor.apana.org.au>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: David Airlie <airlied@linux.ie>
-> Cc: Daniel Vetter <daniel@ffwll.ch>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-> Cc: Kamal Dasu <kdasu.kdev@gmail.com>
-> Cc: Jonathan Cameron <jic23@kernel.org>
-> Cc: Lars-Peter Clausen <lars@metafoo.de>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: Joerg Roedel <joro@8bytes.org>
-> Cc: Jassi Brar <jassisinghbrar@gmail.com>
-> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
-> Cc: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> Cc: Jakub Kicinski <kuba@kernel.org>
-> Cc: Wolfgang Grandegger <wg@grandegger.com>
-> Cc: Marc Kleine-Budde <mkl@pengutronix.de>
-> Cc: Andrew Lunn <andrew@lunn.ch>
-> Cc: Vivien Didelot <vivien.didelot@gmail.com>
-> Cc: Vladimir Oltean <olteanv@gmail.com>
-> Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Cc: Kishon Vijay Abraham I <kishon@ti.com>
-> Cc: Linus Walleij <linus.walleij@linaro.org>
-> Cc: "Uwe Kleine-K=C3=B6nig" <u.kleine-koenig@pengutronix.de>
-> Cc: Lee Jones <lee.jones@linaro.org>
-> Cc: Ohad Ben-Cohen <ohad@wizery.com>
-> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Cc: Philipp Zabel <p.zabel@pengutronix.de>
-> Cc: Paul Walmsley <paul.walmsley@sifive.com>
-> Cc: Palmer Dabbelt <palmer@dabbelt.com>
-> Cc: Albert Ou <aou@eecs.berkeley.edu>
-> Cc: Alessandro Zummo <a.zummo@towertech.it>
-> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: Zhang Rui <rui.zhang@intel.com>
-> Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
-> Cc: Wim Van Sebroeck <wim@linux-watchdog.org>
-> Cc: Guenter Roeck <linux@roeck-us.net>
-> Signed-off-by: Rob Herring <robh@kernel.org>
-
-Acked-by: Wolfram Sang <wsa@kernel.org> # for I2C
-
-
---Ul4MnuDBL/PvPlAZ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmDKRekACgkQFA3kzBSg
-KbbFdA/+J6slaN90bvqrl9Kylr+F1vWPHBVKSRdA0mnhK09uqqdE0YEx3nLRBJYG
-zGjhfQY+0UCubghvsI8mYBKj+jv5fkzM8D2Mr13GL5b+zVFOML1f24o8y9Fwsi6A
-qbgTfoI0FaRdGTd1ocYLkYtywYrM9XmSeG9QuXBLIufeQsnOspjtQQ+WYRNM4qzw
-Qa+FkuAJZPED0sG7wbpPkzaA4eNfoKn0YQNwk8tIDdl5qvrw6W0cZ6lhog5v5kPB
-c3gC2OJzR4fXzt+uA2rIWWF9rujLHaiWT0nWXSz93ViX9pZPZ77kDSK4xEz8h3Rr
-mRX25SXmSnOf3xLGGkw6fx86sT5dZ6HlhWbhHbXdGzeYBeCfrgXwgj3wHXlyHA5S
-jIgGUlAeT9uMSmv3lmSQ4Lx3tUvKupZ8zX9N6/ay+2kiIei931x+sP73627hNjwz
-Tnbj1JBDeNgP0Oukiq6xMGyT5VxQk1rgh0garZvFZoPVEr/ae1Z5A8/mNKSwhOVj
-4PRKHuz72zpDbx7LuMaG6EnY5fzhDSGVRCSIeNs4yRX1cnVbtEGbsI7yOmrUx+wl
-3kAkYFZYbin5oRO36gDyYg5ZUyFDy4s+Jh5a8kPFANPY2ToOS8Ssa1hFNu0SSgve
-uONICGgcQoHO4Jbvea809td91bvqtiCieKCCX19GqJa37ktj2Ww=
-=EWxK
------END PGP SIGNATURE-----
-
---Ul4MnuDBL/PvPlAZ--
-
-
---===============0597857205167220121==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +      - items:
+> +          - enum:
+> +              - mediatek,mt8195-tphy
+> +          - const: mediatek,generic-tphy-v3
+>        - const: mediatek,mt2701-u3phy
+>          deprecated: true
+>        - const: mediatek,mt2712-u3phy
+> @@ -91,7 +95,7 @@ properties:
+>      description:
+>        Register shared by multiple ports, exclude port's private register.
+>        It is needed for T-PHY V1, such as mt2701 and mt8173, but not for
+> -      T-PHY V2, such as mt2712.
+> +      T-PHY V2/V3, such as mt2712.
+>      maxItems: 1
+>  
+>    "#address-cells":
+> -- 
+> 2.18.0
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0597857205167220121==--
-
