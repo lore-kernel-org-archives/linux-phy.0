@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9BE9AC48BE6
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 23:28:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5FCBDC48BE5
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 23:31:16 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 57FF461166
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 23:28:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 57FF461166
+	by mail.kernel.org (Postfix) with ESMTPS id 24CC6613AE
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Jun 2021 23:31:16 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 24CC6613AE
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,61 +23,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SYG6/shzgg5q+0PwkMkDxLnoqwPJFk09zwPoopzgS6k=; b=IhTU8Ma99lxhnv
-	jtge8W8Pe1vb8QPUTyHDTNQGwIJeaEdDVT8NDSDjqDCtPBcqxAyNAqRMHWPhp4PikNVyxMft10JVt
-	dulF6Cmzww+HQ+pTwXSXHLFpdPw1s+M1Xsld6T8aPgursDZ3/Xv1euEWNoZiNncARwDUjm6zQ3ayd
-	sd+Ym2UtuBm6FZ6GXL4isovulI6S1uwtutffk/1DVJ7EJxtUUR3Lx6eYIVN+Ze5BFAH/wVD6OnUR/
-	t7Y7d2r6ofaAj6mrYzQUp+KWiyhF0YHF8+RGuSRmUUSVFthM12zcelOWfsCMgI6YNJCHBAexY6Ywo
-	nFxWdTrvdWXpxG3e+Phw==;
+	List-Owner; bh=g1TaEZXIwHp0nsieooV91r35qJXTWtpZbpgJuGIFWZU=; b=BTV/zl5ewjJ89b
+	c2hYv9Za0uNDWhnBLIvOMwKNQVd7NJuhf8JzV9a/f91RouHj4nkUtKzciTmKsU9jhp6xTJJ6SWLr4
+	ThNHKcurBJFrOX3gUTZOY97rLZr2Am8jMsG1n3mmWhuhLqGvZheQhwBvR+OT2BROfN7YpbaPFTdyw
+	Y1MtyGvXig0S4o+uiy5LCLd5YjLDgJH05wrYM5r/L7E6KLM5JGbdHXTXzpSfIk47fV4GUCAsGvOBz
+	zFrQzcJDW6+rxcWzYggPRbzYhFs8VjQZvBhabtt8tO3b4heNoOVSyy9CnwuETxjRzyQD7jAYg4Q2h
+	noGBmFCZm9f6DfNHC84w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ltexY-0089XL-Kc; Wed, 16 Jun 2021 23:28:36 +0000
-Received: from mail-io1-f49.google.com ([209.85.166.49])
+	id 1ltf07-0089zC-Ne; Wed, 16 Jun 2021 23:31:15 +0000
+Received: from mail-io1-f50.google.com ([209.85.166.50])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ltexK-0089VJ-Lu; Wed, 16 Jun 2021 23:28:24 +0000
-Received: by mail-io1-f49.google.com with SMTP id d9so1058085ioo.2;
- Wed, 16 Jun 2021 16:28:22 -0700 (PDT)
+ id 1ltf05-0089yA-3h; Wed, 16 Jun 2021 23:31:14 +0000
+Received: by mail-io1-f50.google.com with SMTP id k16so1031223ios.10;
+ Wed, 16 Jun 2021 16:31:12 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=xV2j/EdwVr9gYo7BsYPb7ja8r4fncuGCJrMkRrs/+ek=;
- b=EnWwAStbn3dCi62huzgDTAOoOUx5STYGpyZSx/yr1cVKpSAEu2hc8yGFlxd28Yva9w
- ea21ZdIESe3O7DHkiyt4GfE+ZQHiVfxKdyooOVTzgCztm+hJygOiKj2WOAFSRU9X0WHp
- S4kWSMKc69j8PVfplVpsLiuf2AXoGkmAplPH3NHO6GqMdf49NG0n1vOEwo/+/KXeWkjj
- eWU4FiqvM7wv7xqsU8DzyQwE3UHLM1co2Zc6tKV6G9l8UFKFOv1NsIOBTS1+neTJfIEz
- l5MifuArBcbo6KK/pdzqipVo6q22is6kSF6zcb2ka4JFBZ8jmRaJRvZHedPS+LvblYNi
- SflQ==
-X-Gm-Message-State: AOAM531F88bjMbyPHYveBNDMA5YeVkk7LQQvbgzG43luS/SQSYMKg61e
- 5zsQEfvZffPgEjm2puMjRj+D0RZgYA==
-X-Google-Smtp-Source: ABdhPJy3RhIjKN/CDWVX8vYjXN0Rn6x/UxRBlzkJvxqDZVxPyVz+nQXCDwrjbqXkYYHI4y39Ek+SAA==
-X-Received: by 2002:a05:6602:38d:: with SMTP id
- f13mr1377780iov.109.1623886101700; 
- Wed, 16 Jun 2021 16:28:21 -0700 (PDT)
+ bh=xYjPOVFrGcuwzYtCkpC3/ADNpp9HDl4uS6+qpD2/Jyw=;
+ b=XTirVzKIGCFWf+WumCNWD72yxAnBMhXX6jjx2ILclWKCsm22hdppUBtiEDfll30+iV
+ Iz018kzvbd6IaaZEM8p3RS4QSrhau680JD3COpBEgrNVc/Voya1ULYwnwjPTxXR1Ihwg
+ zOYACujuGeuPogW9K71MOsXwfLps6ElXyjgBvqwW5XWyXP1i16oXUTYFS//537qxnnyh
+ nDjgfYGsaReGkJfF81F0smB+8a/OhzluZu277X/ZfPKORYUxvxMQpeL6Kz5mmS75+btQ
+ XmDy9BYEw7E6dnJfW3/HKmglxTr0RXJC5UyKE7xX15d71WGBVrpjOhf+q4YssYQ1zYXw
+ 0/Kw==
+X-Gm-Message-State: AOAM532skP3ajU6TT+vmLgoITvsiXbx9iFzcZP3Z43ufaI2JLOHv6pv8
+ 40ImqYb3j4zZMvhE/N+rEw==
+X-Google-Smtp-Source: ABdhPJyyUtjrWdXCPRwIyDSdK8eyilrcAdS/kqWlBnMmR3Kq3QNqwcTLrFso8p3R0dLnOz85MLm7Iw==
+X-Received: by 2002:a05:6638:3298:: with SMTP id
+ f24mr1587297jav.25.1623886272107; 
+ Wed, 16 Jun 2021 16:31:12 -0700 (PDT)
 Received: from robh.at.kernel.org ([64.188.179.248])
- by smtp.gmail.com with ESMTPSA id i7sm1341033ilq.50.2021.06.16.16.28.19
+ by smtp.gmail.com with ESMTPSA id p19sm1953479iob.7.2021.06.16.16.31.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Jun 2021 16:28:20 -0700 (PDT)
-Received: (nullmailer pid 284524 invoked by uid 1000);
- Wed, 16 Jun 2021 23:28:17 -0000
-Date: Wed, 16 Jun 2021 17:28:17 -0600
+ Wed, 16 Jun 2021 16:31:11 -0700 (PDT)
+Received: (nullmailer pid 288247 invoked by uid 1000);
+ Wed, 16 Jun 2021 23:31:09 -0000
+Date: Wed, 16 Jun 2021 17:31:09 -0600
 From: Rob Herring <robh@kernel.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
-Subject: Re: [PATCH 1/3] dt-bindings: phy: mediatek: tphy: add support
- hardware version 3
-Message-ID: <20210616232817.GA277610@robh.at.kernel.org>
-References: <1622791880-20262-1-git-send-email-chunfeng.yun@mediatek.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, kishon@ti.com, vkoul@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add the Amlogic Meson8 HDMI TX PHY
+ bindings
+Message-ID: <20210616233109.GA285667@robh.at.kernel.org>
+References: <20210604190338.2248295-1-martin.blumenstingl@googlemail.com>
+ <20210604190338.2248295-2-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1622791880-20262-1-git-send-email-chunfeng.yun@mediatek.com>
+In-Reply-To: <20210604190338.2248295-2-martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210616_162822_766710_117B30C2 
-X-CRM114-Status: GOOD (  23.62  )
+X-CRM114-CacheID: sfid-20210616_163113_200274_98E836E8 
+X-CRM114-Status: GOOD (  18.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,81 +93,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 04, 2021 at 03:31:18PM +0800, Chunfeng Yun wrote:
-> The PHYA architecture is updated, and doesn't support slew rate
-> calibration anymore on 7nm or advanced process, add a new version
-> number to support it.
-> Note: the FreqMeter bank is not used but reserved.
+On Fri, Jun 04, 2021 at 09:03:37PM +0200, Martin Blumenstingl wrote:
+> Amlogic Meson8, Meson8b and Meson8m2 all include an identical (or at
+> least very similar) HDMI TX PHY. The PHY registers are part of the HHI
+> register area.
 > 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > ---
->  .../devicetree/bindings/phy/mediatek,tphy.yaml     | 14 +++++++++-----
->  1 file changed, 9 insertions(+), 5 deletions(-)
+>  .../phy/amlogic,meson8-hdmi-tx-phy.yaml       | 51 +++++++++++++++++++
+>  1 file changed, 51 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> index b8a7651a3d9a..939c09296b5f 100644
-> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-> @@ -15,7 +15,7 @@ description: |
->    controllers on MediaTek SoCs, includes USB2.0, USB3.0, PCIe and SATA.
->  
->    Layout differences of banks between T-PHY V1 (mt8173/mt2701) and
-> -  T-PHY V2 (mt2712) when works on USB mode:
-> +  T-PHY V2 (mt2712) / V3 (mt8195) when works on USB mode:
->    -----------------------------------
->    Version 1:
->    port        offset    bank
-> @@ -34,7 +34,7 @@ description: |
->    u2 port2    0x1800    U2PHY_COM
->                ...
->  
-> -  Version 2:
-> +  Version 2/3:
->    port        offset    bank
->    u2 port0    0x0000    MISC
->                0x0100    FMREG
-> @@ -59,7 +59,8 @@ description: |
->  
->    SPLLC shared by u3 ports and FMREG shared by u2 ports on V1 are put back
->    into each port; a new bank MISC for u2 ports and CHIP for u3 ports are
-> -  added on V2.
-> +  added on V2; the FMREG bank for slew rate calibration is not used anymore
-> +  and reserved on V3;
->  
->  properties:
->    $nodename:
-> @@ -79,8 +80,11 @@ properties:
->                - mediatek,mt2712-tphy
->                - mediatek,mt7629-tphy
->                - mediatek,mt8183-tphy
-> -              - mediatek,mt8195-tphy
->            - const: mediatek,generic-tphy-v2
+> diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml
+> new file mode 100644
+> index 000000000000..18a123b9bb0a
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml
+> @@ -0,0 +1,51 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/phy/amlogic,meson8-hdmi-tx-phy.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Amlogic Meson8, Meson8b and Meson8m2 HDMI TX PHY
+> +
+> +maintainers:
+> +  - Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> +
+> +description: |+
+> +  The HDMI TX PHY node should be the child of a syscon node with the
+> +  required property:
+> +
+> +  compatible = "amlogic,meson-hhi-sysctrl", "simple-mfd", "syscon"
 
-This doesn't look like a good change.
+Is there a sub range of registers for this functionality in 
+"amlogic,meson-hhi-sysctrl"? If so, please add a 'reg' property.
 
-What happens if a DT has the above. It didn't work or didn't support new 
-features? Please clarify in the commit the implications of changing 
-this. Changing a DT to 'mediatek,generic-tphy-v3' will break existing OS 
-if it was looking for v2.
-
-> +      - items:
-> +          - enum:
-> +              - mediatek,mt8195-tphy
-> +          - const: mediatek,generic-tphy-v3
->        - const: mediatek,mt2701-u3phy
->          deprecated: true
->        - const: mediatek,mt2712-u3phy
-> @@ -91,7 +95,7 @@ properties:
->      description:
->        Register shared by multiple ports, exclude port's private register.
->        It is needed for T-PHY V1, such as mt2701 and mt8173, but not for
-> -      T-PHY V2, such as mt2712.
-> +      T-PHY V2/V3, such as mt2712.
->      maxItems: 1
->  
->    "#address-cells":
+> +
+> +  Refer to the bindings described in
+> +  Documentation/devicetree/bindings/mfd/syscon.yaml
+> +
+> +properties:
+> +  $nodename:
+> +    pattern: "^hdmi-phy$"
+> +
+> +  compatible:
+> +    enum:
+> +      - amlogic,meson8-hdmi-tx-phy
+> +      - amlogic,meson8b-hdmi-tx-phy
+> +      - amlogic,meson8m2-hdmi-tx-phy
+> +
+> +  clocks:
+> +    minItems: 1
+> +    description:
+> +      HDMI TMDS clock
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    hdmi_tx_phy: hdmi-phy {
+> +      compatible = "amlogic,meson8-hdmi-tx-phy";
+> +      clocks = <&tmds_clock>;
+> +      #phy-cells = <0>;
+> +    };
 > -- 
-> 2.18.0
+> 2.31.1
 
 -- 
 linux-phy mailing list
