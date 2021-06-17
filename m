@@ -6,16 +6,16 @@ X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
 	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
 	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1E9B4C2B9F4
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 19:43:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6F2C5C2B9F4
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 19:43:51 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D4CF9613D5
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 19:43:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D4CF9613D5
+	by mail.kernel.org (Postfix) with ESMTPS id 34F5A6113E
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 19:43:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 34F5A6113E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,51 +24,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TztSV4YCaKWLsCA5lm6B5/pvM17mvF2s8Oa1+mWRDiI=; b=blDbpJdyvx/Hcy
-	m5LC9Klx4CZ6ZLulzv68VC7+/MTtikALrUFgvI2srMCiRKD9CNhNze0U5BaxGzt7Jk4tjBWfoo3cd
-	U9AiAiWGMttTAXoSYOZnNVkokzEvvnlcK9dQY/RNpujJ29qhJp4hBN2csgNqrPIO8lcPpjhq8eqHR
-	98nrO3Br653NBNsxtHxlmGh38H97OwL1h8s3OkkMMvMhVkR6XFHh2L/djtNFW6rdyxDMoBiWxJTtk
-	//F3LKdh9kn5nFQfGeaVzJss61Rb3ueKsg2f9dCoUaqGICZ+40r9+yE57t2cN3JWu6nIvGd5h5xpH
-	EpZ9wMGgjByEpTmz0s9w==;
+	List-Owner; bh=WaewS2hVsWbQRSNyQin1h1f5NH0sP7+TkaWZbQS6+9U=; b=dBg6mmncxvUXw8
+	Fm/IntvC1okZy08RZcKZ2f3o25hrQ4qfncn1tZNTWmeks+uIGAJWIj7ILGnAlYka6Bk2bS4gpW0mU
+	jFEXMpghAa7FzRjfZAMj13la5Dz0nJKsemaC9VotJj6rL2Y7n+9i1fhvcysZOOSUXZd70CYvGEbdw
+	y/v0FdtEVxkSVCwE4maP5mqj2z52oxVeYa7No8YgXTrWNWHOa5AmCxrl7bQGtvRqEpBEX8+VwQNE6
+	RbV6C8qRm8sp4rDqqUVGO99HBGPXFfoXBIpSGSKKCGHue6lsSi2okJGCjkb3c3Z3LCECH/0aed+Xe
+	EYGtNqaDDxNQpGgej2/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ltxvH-00BaOz-8W; Thu, 17 Jun 2021 19:43:31 +0000
-Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
+	id 1ltxva-00BaZL-Mp; Thu, 17 Jun 2021 19:43:50 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ltxvE-00BaMZ-0p; Thu, 17 Jun 2021 19:43:29 +0000
-Received: by mail-pl1-x62b.google.com with SMTP id o21so3483858pll.6;
- Thu, 17 Jun 2021 12:43:27 -0700 (PDT)
+ id 1ltxvX-00BaVS-Qt; Thu, 17 Jun 2021 19:43:49 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id
+ k22-20020a17090aef16b0290163512accedso5986788pjz.0; 
+ Thu, 17 Jun 2021 12:43:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IphS2NfYy5YZOfBpgQZDF/SMsovEiyi9nwsRO6kEmeA=;
- b=W/pVQVs4NBXtAYB44k2FtP7IHprt6d6EQ3dpcGJzbORkjzsTXC497kYd5Ph5SvW7On
- AQOK39Cn16MWTOGPzVp1O2FYev8QYj+EfmqZlnkpPvMw068YdCfdq58EssXhzPIrWn3l
- YTmqO05Yn3QKdXQAj5ntx2kInNGvcqNCv1vLDE3VhahwWsHblJqjx90cDlqI6EqjTtrG
- 3/KMyZvPalXzJF0rmMjIdJX326IspxknvB45A0NbzN0VdXGDk3UK1+gSo54j5jTmKKjK
- VgMBkuh0vBvr4g48oU8cQfNbbPovAzJ5E9Qe4New5O8l17FRfuCHWAfDXp1TXNvfo5ma
- aUeg==
+ bh=ru7VYZQFM1VVEN15+QmGHBxSNzsOgYyzaqlXuO2dVxw=;
+ b=Lw7iEBZ4GD3k2g+fSKiJqkf85PV7RM3V4AcTlkHE5CxPdrnHgXsvsxuqGq0RDe33cc
+ uXNcINgRIEnA+CdK0wQphN7H3fTlGDe6qrFFTaROCmFtZh4Qxi8KQnf86KtaRN4Xc6cr
+ 0XUhUmpCpx2hWZmv9Cml21ppM2R6msZ+TrI+m5GWaQpy3o0cLh11y3+2F0aiC3Sik1ss
+ xQnYIGhqlo38r6HMGmpCkGg72/bHRGYACDbGpqds5QboQHg95wXexwhhtTXK4aTVkqb3
+ F5dbsdVhnlHIM73fLHOFmwWUDC/ktoK1e5xKgkLkcK2A/3F3BJrBa0e1J3MpMai/Y4Di
+ p9mw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IphS2NfYy5YZOfBpgQZDF/SMsovEiyi9nwsRO6kEmeA=;
- b=slsh7RExkTFLCluAT6DUdvsz+gxnpd1zfA7Z/MZlm4foi4BYyDoQ+gJYv372r4YC+8
- dsgFvF6yyf6Qd8QJIG5z0ToWCrjA0XW2jhFR8KAHaPo081O+QXFG2pAl/MDQKLiFqXvx
- ZknU5oLZW2//Gako6V+kOBFXcKPw0ymRAOZKTzNX7YaKG+XX/5aAdRmke6m/FirbbYmu
- /LbM2NypmriuzFiusf1/v4zrEaIi748J0FaXWJvpZOgjxdPz6D1WCK1B6hlvf/0DeeFM
- 3DBFjSv2WM7TDBeFYbTd+603LF3kJqCZkwubpcDq3s5zniubHtLBSIGwqmiDVG6L6HoX
- BU6A==
-X-Gm-Message-State: AOAM531SSNd+Akd2PNuDwt985Z5JV0SQEp0/bXnokwQSJe5iO0bp00xl
- GGumKnxLkuzpOLZycz3sjQ3y3IjynZQ=
-X-Google-Smtp-Source: ABdhPJwx8ZB3IeQr09msM778ELNHTToq+Qc73hhIl+bWtjosPtRLzG8166FGLfKwgITZ18ya2OFIXQ==
-X-Received: by 2002:a17:90a:5795:: with SMTP id
- g21mr6988218pji.235.1623959006613; 
- Thu, 17 Jun 2021 12:43:26 -0700 (PDT)
+ bh=ru7VYZQFM1VVEN15+QmGHBxSNzsOgYyzaqlXuO2dVxw=;
+ b=bvraSQqtPzPAXPUJD5mbBU/CFw4N5O5mAtgEvRoWmTaAAQoB2omgPhFqe6WIyq3d6R
+ scqRpuDOiBd4D5QLEtUYiVRPG2iHbSI4zBbJ/X+Q3zS5DPA4kLortIX3e6sjZWKkfqR4
+ JlCZvxAr+pZvv/g8Ffbf8wjxCim8LeCu33Y9sHZOw496hD6TRrueQT7WAAVOB5lXlvq0
+ BBAcWlgN7Q/yBghxlqxjazcl1Bgv57bw7SOaM6RE6ZBzvuDaBFje0zjGNNGfh+DmjcVU
+ o1iAe2RyXqyCzadwqtMgam838qMMtDRVBKOP60snNXjl+euLmsDAPzMtnsXomtWrqBY3
+ vQWA==
+X-Gm-Message-State: AOAM533kkocTMyA7ParVIuWpuWqIdzI6ZLqciHLI9U6ggApVaEQzKE3y
+ CYVvA1KWKOndr3LZFLlVeJNdNu/bB8g=
+X-Google-Smtp-Source: ABdhPJy8kifTsQYkHADB3X/VjwWX4edCBRIlpmtaNoexFdNOuNYczcrBwE+yOodX+UnG3Bcu8rQXdQ==
+X-Received: by 2002:a17:90b:197:: with SMTP id
+ t23mr6968654pjs.61.1623959023215; 
+ Thu, 17 Jun 2021 12:43:43 -0700 (PDT)
 Received: from archl-c2lm.. ([103.51.75.27])
- by smtp.gmail.com with ESMTPSA id z9sm5987187pfa.2.2021.06.17.12.43.21
+ by smtp.gmail.com with ESMTPSA id z9sm5987187pfa.2.2021.06.17.12.43.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 17 Jun 2021 12:43:26 -0700 (PDT)
+ Thu, 17 Jun 2021 12:43:42 -0700 (PDT)
 From: Anand Moon <linux.amoon@gmail.com>
 To: --to=linux-phy@lists.infradead.org,
  --to=linux-arm-kernel@lists.infradead.org,
@@ -81,16 +82,17 @@ Cc: Anand Moon <linux.amoon@gmail.com>,
  Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [RFCv1 3/8] phy: amlogic: meson8b-usb2: Use phy exit callback function
-Date: Thu, 17 Jun 2021 19:41:38 +0000
-Message-Id: <20210617194154.2397-4-linux.amoon@gmail.com>
+Subject: [RFCv1 4/8] phy: amlogic: meson8b-usb2: Use phy set_mode callback
+ function
+Date: Thu, 17 Jun 2021 19:41:39 +0000
+Message-Id: <20210617194154.2397-5-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.31.1
 In-Reply-To: <20210617194154.2397-1-linux.amoon@gmail.com>
 References: <20210617194154.2397-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210617_124328_086870_03A8E8C3 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20210617_124347_930767_A0A794AC 
+X-CRM114-Status: GOOD (  14.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,49 +109,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reorder the code for phy bulkclk disable in .exit callback function.
+Reorder the code for phy set_mode in .set_mode callback function.
+For now configure the phy in host mode.
 
 Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
- drivers/phy/amlogic/phy-meson8b-usb2.c | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+ drivers/phy/amlogic/phy-meson8b-usb2.c | 62 ++++++++++++++++++--------
+ 1 file changed, 43 insertions(+), 19 deletions(-)
 
 diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-index d48171b0b32e..2b32a3eabccf 100644
+index 2b32a3eabccf..18e0986f6ed2 100644
 --- a/drivers/phy/amlogic/phy-meson8b-usb2.c
 +++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-@@ -164,6 +164,15 @@ static int phy_meson8b_usb2_init(struct phy *phy)
+@@ -173,11 +173,43 @@ static int phy_meson8b_usb2_exit(struct phy *phy)
  	return 0;
  }
  
-+static int phy_meson8b_usb2_exit(struct phy *phy)
-+{
-+	struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
+-static int phy_meson8b_usb2_power_on(struct phy *phy)
++static int phy_meson8b_usb2_setmode(struct phy *phy, enum phy_mode mode,
++				    int submode)
+ {
+ 	struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
+ 	u32 reg;
+ 
++	switch (mode) {
++	case PHY_MODE_USB_HOST:
++		if (priv->match->host_enable_aca) {
++			regmap_update_bits(priv->regmap, REG_ADP_BC,
++					   REG_ADP_BC_ACA_ENABLE,
++					   REG_ADP_BC_ACA_ENABLE);
 +
-+	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
++			udelay(ACA_ENABLE_COMPLETE_TIME);
++
++			regmap_read(priv->regmap, REG_ADP_BC, &reg);
++			if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
++				dev_warn(&phy->dev, "USB ID detect failed!\n");
++				return -EINVAL;
++			}
++		}
++		break;
++	default:
++		dev_warn(&phy->dev, "USB ID detect failed to setnode! %d\n", mode);
++		return -EINVAL;
++	}
++
++	priv->dr_mode = mode;
 +
 +	return 0;
 +}
 +
- static int phy_meson8b_usb2_power_on(struct phy *phy)
- {
- 	struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
-@@ -220,13 +229,13 @@ static int phy_meson8b_usb2_power_off(struct phy *phy)
- 				   REG_DBG_UART_SET_IDDQ,
- 				   REG_DBG_UART_SET_IDDQ);
++static int phy_meson8b_usb2_power_on(struct phy *phy)
++{
++	struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
++	int ret;
++
+ 	regmap_update_bits(priv->regmap, REG_CONFIG, REG_CONFIG_CLK_32k_ALTSEL,
+ 			   REG_CONFIG_CLK_32k_ALTSEL);
  
--	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
+@@ -197,24 +229,12 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
+ 	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_SOF_TOGGLE_OUT,
+ 			   REG_CTRL_SOF_TOGGLE_OUT);
+ 
+-	if (priv->dr_mode == USB_DR_MODE_HOST) {
+-		regmap_update_bits(priv->regmap, REG_DBG_UART,
+-				   REG_DBG_UART_SET_IDDQ, 0);
+-
+-		if (priv->match->host_enable_aca) {
+-			regmap_update_bits(priv->regmap, REG_ADP_BC,
+-					   REG_ADP_BC_ACA_ENABLE,
+-					   REG_ADP_BC_ACA_ENABLE);
+-
+-			udelay(ACA_ENABLE_COMPLETE_TIME);
+-
+-			regmap_read(priv->regmap, REG_ADP_BC, &reg);
+-			if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
+-				dev_warn(&phy->dev, "USB ID detect failed!\n");
+-				clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
+-				return -EINVAL;
+-			}
+-		}
++	ret = phy_meson8b_usb2_setmode(phy, priv->dr_mode, 0);
++	if (ret) {
++		phy_meson8b_usb2_power_off(phy);
++		dev_err(&phy->dev, "Failed to initialize PHY with mode %d\n",
++			priv->dr_mode);
++		return ret;
+ 	}
  
  	return 0;
- }
- 
- static const struct phy_ops phy_meson8b_usb2_ops = {
- 	.init           = phy_meson8b_usb2_init,
-+	.exit           = phy_meson8b_usb2_exit,
+@@ -238,6 +258,7 @@ static const struct phy_ops phy_meson8b_usb2_ops = {
+ 	.exit           = phy_meson8b_usb2_exit,
  	.power_on	= phy_meson8b_usb2_power_on,
  	.power_off	= phy_meson8b_usb2_power_off,
++	.set_mode	= phy_meson8b_usb2_setmode,
  	.owner		= THIS_MODULE,
+ };
+ 
+@@ -261,6 +282,9 @@ static int phy_meson8b_usb2_probe(struct platform_device *pdev)
+ 	if (!priv->match)
+ 		return -ENODEV;
+ 
++	/* start in host mode */
++	priv->dr_mode = PHY_MODE_USB_HOST;
++
+ 	priv->regmap = devm_regmap_init_mmio(&pdev->dev, base,
+ 					     &phy_meson8b_usb2_regmap_conf);
+ 	if (IS_ERR(priv->regmap))
 -- 
 2.31.1
 
