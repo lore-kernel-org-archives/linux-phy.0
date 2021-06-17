@@ -2,19 +2,19 @@ Return-Path: <SRS0=Iqmd=LL=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=no autolearn_force=no version=3.4.0
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A1704C48BE5
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:24:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4B931C2B9F4
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:27:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6196961351
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:24:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6196961351
+	by mail.kernel.org (Postfix) with ESMTPS id 1EE7C61351
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:27:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1EE7C61351
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,56 +23,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Xq5FGEq1FgEED/2cwhUaySSQ8UII35fhEZ8jvl4wwE=; b=GtwNIz81axFERJ
-	2O/eayB5kaCs/FFG0rzeaibXgVKVyJ1lYjVmfndWohEMQC86bzOrV/qV+c4qhVOgtbc/jkXTGfBWy
-	1zEahYaBMYCA8xP1fGhNMOJq63+zpp8IU41psiLSkEgYtqsPZTZbK+soU0sm4DwR4uMrFffoRaTyb
-	sETqoxyb01EmjnYGVzGJuOs4CY6Xdf8EegMJSWVusghg/Au3rKoAcfRPgni+LB3HRQgZ5omUHIin1
-	b+XfEgaD06LRD3eXVMyx7/ZTA0lUzHETpXmc44DPkpGNPY9OGpZFySc1v+ir1AgwiYq2DUYNISk6I
-	/tbAG8DhZQ0Whjo2Xogw==;
+	List-Owner; bh=sAgpXoZJVVZQEyQbTFdkTbFWtjg9r88SSdxVyBtluho=; b=ISE1Zc5iYyTjL1
+	SH/ateNAh2mX/3dN3b2Uanj1J9gzHR74Vs0y48D63CMJxTcbYUi614kar7eVQzMZwRq2P2rh0jPKZ
+	pqNU18bp0mWd6Yk6iYpHv2jikJOigTgatP6Ar30EDF6M73SYmYIlIzV0WosvbrF5Kyo59ND7hiIOH
+	SfPookZluVTdxKhbDQHiO6EKKJk8aGzyQBelep+jPgtiMkvjzkH0Yh9X4j2ilMB3tPJat9dBRjpNE
+	HpP0MN2WQ1JkCCaUBaW0bU4APcRHEZd/lYP5BifHz2U2Z9l5FwBnzzLR78+BtU4bK0Vl5AtXjSrnH
+	rqts/6hGDZ48LcfX4lZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lu0RD-00BxCw-Rm; Thu, 17 Jun 2021 22:24:39 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1lu0Ta-00BxYJ-L6; Thu, 17 Jun 2021 22:27:06 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lu0RB-00BxCL-9T; Thu, 17 Jun 2021 22:24:38 +0000
-Received: by mail-ej1-x633.google.com with SMTP id g20so12610355ejt.0;
- Thu, 17 Jun 2021 15:24:36 -0700 (PDT)
+ id 1lu0TY-00BxXf-My; Thu, 17 Jun 2021 22:27:05 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id hv20so6553906ejc.12;
+ Thu, 17 Jun 2021 15:27:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=T50KbAThdeevR6uB4Id+cbtEC5Z15njRViPF/2u5PCs=;
- b=Qkg/tIGdoJHarCmVrz02bhylDw6IuiZyhNKw+H0gSWcHJRB/YG0gHleAptmrer6rSV
- /hv9Y94OKoq4xycsRpuyRMdw4rpHsEGT/RRgrL7Oyksd+V4hkhKtEVND6fjMxhoP/b+e
- 3Gl18bAkR13OPvp3GQ8tO/Fsm2pEKt7ykqz15UL5YyE3UNQH3U9kcJ4o3ai4b6h0zlZ8
- PyJbwvWNWn2g4X5AaHJ4MBE/Cnx3U2Ss3uCGOqiCX6peFidW/kx84GagopBeZFwCXMGm
- ceX1RdcIM4zIhsW1fGEJt1pSvfK4+CJsG3yy8TsVBO1JRvOAlp5llXGFmPXkDPEmvROv
- jTbg==
+ :cc; bh=XBUUiRVifylGetd2oLvmNK/P++7zX9Z7YgNBUErs4Vs=;
+ b=ggMhfu3axYL8C4ap0nbWKkEpnCtKKRXBEbRmyc0jerIaGcMimeQWJ8RvvbZL6U5OZF
+ WsKQNOenJLOATry+yy1U1+cXSxUZntw+/z8ZQnko27QXIQhw38R7wORTRIgr27P5X7SG
+ ipspex+3Zz0PEpfp16gkt61mRkmdpFsOHIWBcRw8OPSGvyHSO6wptXqTlu+FCKCgUHMb
+ +YwjCicDWlyHGL38hNobBy5/Rnxyjx9JfQORRi8AucdnazkVESDdcpVwGyG3XuU8kOLQ
+ tluzcMwM060nXgRbuwLWeFmFDmU+vQZqQH2zB+Mzng45PbBywIr9QoiFrms3dtbr/HUb
+ qVsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=T50KbAThdeevR6uB4Id+cbtEC5Z15njRViPF/2u5PCs=;
- b=teRLzPLVJDqtF/0II23eKYa/zTfO051Ky/mPUHi/PBXvMDLZJhyfdqnq4f65qyL/0l
- FWmZeSJe233Ck+LavHdPuj/fcFXK7WIEs48HgBAceGFhkAHUGVHmMf4gJaxx1eMRYJ5a
- 6xqGFsha6Tcxe4iRSMYDTM554fpqLMVkCHx+LztlV3IySNj8YyO3Vv2LGB4av/WNlej6
- VxusyDOY0niodO5S5YZB0F84ZHSX3VGdVTDSCKCnyTudhF6szUxp1CCPFmwE+v5XSIQt
- hUvLBoLy0jkmkgH005NBFGtYbxGyX8BiEqidqalcVnRXVGK6EJkxb4kzOYELo3XTbVq5
- ZyuQ==
-X-Gm-Message-State: AOAM533Eu9gQppX0ndZRu6qT5gGJUQDJlnxQIXi5dJrJ3x84YEdWFxbR
- hp/LACfqGLCYM/MCFiqLIeW47uzI4Rh9gWrmDka/kNY5c10=
-X-Google-Smtp-Source: ABdhPJwrZod3kcnlN/pabK+bk5akynewCBmBuwQ8at429BZSEKzc0v/foDCSUvXSgXNf79VWmHNi7NTa+NIqa0VBSKQ=
-X-Received: by 2002:a17:906:2c52:: with SMTP id
- f18mr7610434ejh.258.1623968675568; 
- Thu, 17 Jun 2021 15:24:35 -0700 (PDT)
+ bh=XBUUiRVifylGetd2oLvmNK/P++7zX9Z7YgNBUErs4Vs=;
+ b=IbYlTWBYWjUV3m5lp1l+yQ6UC+COadTk0kwZ6OKzdpTqyquitHtvCTRX0KcRnSBlSr
+ baYQeUiE9Dt63ZuIaw9FO1VsK6KaNDp4gppsVGLMqE5GaI9PRrr6L9B4b8EIlWGqZVnK
+ n81GGDn4RluqUz21+3+jdbvCduKXjLPal4D/68/xQ8Z80l7oPRXCogXK5FV+JPMw5cWQ
+ mfVA1PiR06aA+o53h75C8jvoCBCjuq7pGw3AbcEKg1+II+lS3kESg79Cf6JIjEEAhzZM
+ tiZJMkZz+f6grXyz9UOHOruZxTPSIi/sStsYlJk8dZHbZFznSyNRpSGem6bm53nD+noK
+ jx4Q==
+X-Gm-Message-State: AOAM530YPiO7SCCdEA73Zg7CkCVRzQk+uY++zUpFP9o+/nBY7G3dVmy2
+ L4SWIw67kE9zx8HhZPZu2e66giyWLISQRGDIcAk=
+X-Google-Smtp-Source: ABdhPJyMKvbRGhk/yi1r0TWkeVgBBCLvywBFU7icC+Ej8Hh6tgBltevZFnA2nAbDjyGU1B7W65uQ06sVjxLlzccRECI=
+X-Received: by 2002:a17:907:988a:: with SMTP id
+ ja10mr7501286ejc.527.1623968822667; 
+ Thu, 17 Jun 2021 15:27:02 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210617194154.2397-1-linux.amoon@gmail.com>
- <20210617194154.2397-7-linux.amoon@gmail.com>
-In-Reply-To: <20210617194154.2397-7-linux.amoon@gmail.com>
+ <20210617194154.2397-9-linux.amoon@gmail.com>
+In-Reply-To: <20210617194154.2397-9-linux.amoon@gmail.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 18 Jun 2021 00:24:24 +0200
-Message-ID: <CAFBinCCE+6G7QtDoxfbcZVVRf-MDX-epSo=_k_PJZgWX+_Whvg@mail.gmail.com>
-Subject: Re: [RFCv1 6/8] phy: amlogic: meson8b-usb2: Use phy reset callback
- function
+Date: Fri, 18 Jun 2021 00:26:51 +0200
+Message-ID: <CAFBinCCS6mzukqgnJijn2khaaOAPb_mg+zAqYxpUb57297C6Tg@mail.gmail.com>
+Subject: Re: [RFCv1 8/8] phy: amlogic: meson8b-usb2: don't log an error on
+ -EPROBE_DEFER
 To: Anand Moon <linux.amoon@gmail.com>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>, 
@@ -80,8 +80,9 @@ Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
  linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210617_152437_394628_DA056229 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20210617_152704_787763_084A5DBA 
+X-CRM114-Status: UNSURE (   7.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,44 +99,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Anand,
-
 On Thu, Jun 17, 2021 at 9:44 PM Anand Moon <linux.amoon@gmail.com> wrote:
-[...]
-> +static int phy_meson8b_usb2_reset(struct phy *phy)
-> +{
-> +       struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
-> +       int ret;
-> +
-> +       if (priv->is_enabled) {
-> +               ret = reset_control_reset(priv->reset);
-> +               if (ret) {
-> +                       dev_err(&phy->dev, "Failed to trigger USB reset\n");
-> +                       return ret;
-> +               }
-> +       }
-> +
-> +       return 0;
-> +}
-will this reset change the register values back to some kind of default?
-If it does then we're not re-applying our desired register values
-afterwards - which is probably asking for trouble.
+>
+> devm_phy_create can return -EPROBE_DEFER if the phy-supply is not ready
+> yet. Silence this warning as the driver framework will re-attempt
+> registering the PHY. Use dev_err_probe() for phy resources to indicate
+> the deferral reason when waiting for the resource to come up.
+This is a good improvement - thank you!
 
-For shared resets (like the one we have here) reset_control_reset will
-only trigger the reset line once until all drivers using that reset
-line are unloaded.
-So effectively this new phy_ops.reset callback will be a no-op.
-
-[...]
-> -       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, NULL);
-> +       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, "phy");
-I think this breaks compatibility with existing .dtbs and our
-dt-bindings (as we're not documenting a "reset-names" property).
-What is the goal of this one?
-
-
-Best regards,
-Martin
+> Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 -- 
 linux-phy mailing list
