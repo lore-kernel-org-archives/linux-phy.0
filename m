@@ -4,17 +4,17 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=no autolearn_force=no version=3.4.0
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 89647C49361
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:16:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E6488C2B9F4
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:17:04 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4573E61369
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:16:22 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4573E61369
+	by mail.kernel.org (Postfix) with ESMTPS id ADCF7613DB
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Jun 2021 22:17:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org ADCF7613DB
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,56 +23,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pI9ffMAHe2J20QhDebGijQr+W0GDkuVjIwP7MK6TNTA=; b=podbyJsDBf47pe
-	AS/mlrgBZ6tgqDqichYokNAQlqZhfNPtfpxILLDXcXV8Tw0E4H4Di+Y6AollTopCySMOB6jK/ppN+
-	6ObT/2UqZyGPzFL1FBBQAIPSer1D3XM0b5jed3XFSNcBTWDfJ5k8jxPLuRAvu6CDi/5alKKOhFey7
-	nN86ejENrgmQIF2q297WgOtRO5VNid+3vxhN4agc7iqwVKcU+Y3wzcJVDV/a5CKnIySbQu4NIcXKT
-	QxGHzYN/KdlAdRwFbfPgtTRKE0PMzzLZdaYxdkHymiEu7CcxO/nHyGLJK0gYnu+qkwuJ1pRpLY8k/
-	eATzHGwskkFFAOX2o+Kg==;
+	List-Owner; bh=OixheQWMMTykHdyTZVF5xxSy3wkWa6p4KKZuC1GRzeY=; b=xdBco2dqNSiqaD
+	W8hM7y6k/2Z7f+0YFDyDwRdR6KgbsPsiO6Nozn3Ay1B2PqP2CDLj729KvMwG+4yyfkw69b18I+9h4
+	PQvgO2Zs0vt64EPIAGHz3QX5sQfG+rv373CWGj3vFzLhkUze2+iyj0uQv9ZAFbQlX68vFVcxN476X
+	ag70E2rdf7nrWs8EoQb3JP3Hf7yK0loQBpLJSXrps67n2BdqSaSzJuzvSKqWzkZPzPK2zwCA+zOsT
+	72lOCil8fME/1cZaAa0IeX5eGKg/h6m5WRloZK9xY3GgMzYjy74ZFjsik4xiclfwTq9wfUYzFpZQ6
+	w/nV5FFbqrB6Hp6L0EKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lu0JB-00Bvd5-Ok; Thu, 17 Jun 2021 22:16:21 +0000
+	id 1lu0Js-00BvoU-7f; Thu, 17 Jun 2021 22:17:04 +0000
 Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lu0J9-00BvcA-2y; Thu, 17 Jun 2021 22:16:20 +0000
-Received: by mail-ej1-x634.google.com with SMTP id og14so12504205ejc.5;
- Thu, 17 Jun 2021 15:16:18 -0700 (PDT)
+ id 1lu0Jp-00BvnS-Va; Thu, 17 Jun 2021 22:17:03 +0000
+Received: by mail-ej1-x634.google.com with SMTP id g8so12572725ejx.1;
+ Thu, 17 Jun 2021 15:17:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AwVsJszErVtiyw5bOlSHdlACIUbk2leEVGsI22Nm16c=;
- b=kJNfxLLxB72H4z5568lAYK6FwqUG64zbFQZGgHu0rNw3JSMmfIYJbli8QZgaHLkqwN
- dqGNlVi2B663P/UJFyPxXHsOhsML6veC9Sd2PIGMz+hwSi5aFjrSo3GNcjioZsymEJUA
- Xhw6CnEwgNZYNP8zdNaBu9ylCoLnUsO5jungvWWNorKlZiHs1kgXoMFXvdFI1r7NaBvB
- RiG6cxxfC+TpLGLP/RjArtcTWQvjExLFct8del+j85LN7oAyvABr2nfvp7j0pfgPYSCq
- xkmpWB1uJFj/dGkh35bZJSCxegWSck8lfgZIDsnyTimeTZJqygEl2DagMKzgWpmXb54G
- LfDg==
+ :cc; bh=ybMe0lmQbosDLY3cne/H0mPnypKlqLOjNhEtZI+tynw=;
+ b=TSe1lIb7GNp6tmwWwLbF/rr4f678W+T+unft30gpSl49fgdPDf0VUq8jcKQCA0/hCl
+ vOExD7Gdto+xHcAi2mgQlA04SzJlG/n9uWT3Msw6y50Pc8TIrsLQSJtIPIxOhV50No3x
+ y6JIX+LXXOxXviA86YWI5eGQDAqVzk54/Iym+cL5Bfu6B0nTSsmx4+ZVuZwpIWzCQ7aK
+ b9PBUaBixEbHf43+HuJTTJzKjzeHAhqi1sezSY/6iJusjOJEOig/ADSGY49Ow5/KhuuJ
+ SnFqMFrCqm4rYfvIKQCh89AtCM1tUV66hIv88Xf1AFKhGv+hGGq6MAxVVCOcj8nb/ySQ
+ XbKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=AwVsJszErVtiyw5bOlSHdlACIUbk2leEVGsI22Nm16c=;
- b=ZtyFVIjkl4lZrnd+L33kaLU9j80F6bUlCwyqaKYPqLlMxhKeo14nmHL0GR6WnjTFzB
- 6RZvL6eFAMBayWA4FWKYBr0sWpw117/OpCHNV7BcPJOuKX1L/VoxX/MbgoRARKiLOfCL
- z/xPPFv7Q/Eo9OnrxsxMCP+HPxTOcVcLd/VGKHUl1Ss2dAEw3+zrG2t9eZMRrfy74DBT
- RJZwu0ivg6ChMtuDoWPsBnHEKjquYZYrTPlebReM6Uyvmo56FkvCaBFd8MJUiOU4kyr7
- vd2m0RY0SiEotitG1frMi4HpyJzaaii9MBQimNnkr23KRv6WRPyVZZWAvtyLeOh4SQaf
- liaA==
-X-Gm-Message-State: AOAM5314lZ3MNquNFpgQ7u29EI1OoHs794GQWY2ylOoYObYSeviPPcWY
- 6fRZvIWbGapb2e42Y20YKj5XhirxCdZVopKqvvk=
-X-Google-Smtp-Source: ABdhPJwq5lDCttRtdcLtp8xWWsEyuZqDh41mR0y7tmleLZioJ3kdB5nIgDKCGPjdhNhzugBo1SrbqHNC/5oB4qsNROA=
-X-Received: by 2002:a17:907:9607:: with SMTP id
- gb7mr7735421ejc.208.1623968177208; 
- Thu, 17 Jun 2021 15:16:17 -0700 (PDT)
+ bh=ybMe0lmQbosDLY3cne/H0mPnypKlqLOjNhEtZI+tynw=;
+ b=s6NScCcf8iZkLGuqrTtK3CRs8kamJjzonGx9899GjHsQR1VRr4eue4cy2m8pShvxba
+ siUEpme/yArR/lA/ERL/to1q8QvUk7iRFxmecb+MkKzM6FhSTMnRgQwurY0pf0DiFRvW
+ gqcLzV9Z+EdMbDqLCcbhCrl1iwra5KrWg1QydSRWDwKI5oA/wonfXDQJ0Ta2PGoDNtEs
+ lQt3wQ5tZzY/MytkpXbfO2+uj7i7QfuKmfriAcjSCpeNzyUPOi38+6qkYAuJrl6gOI5w
+ qdQHgKD8yPbPFfoZCRJskke/2kDNjzOj/SNRxxHRcJ4Z9YgnP0o1cHS97JNBmJnBkPn6
+ 20xw==
+X-Gm-Message-State: AOAM532lz5jB8ytLmd40bbnwK20V/VUC1EsfBwd4JaN6jKVwMaFZabq4
+ EDPni7JeBaEikxkcTXiocX5F6vREK64brRDhyEk=
+X-Google-Smtp-Source: ABdhPJyHiCQZPtWEEUn80WFtwkk1XE+OvA8BVP6yd4SX0BugyxFtURFkuWV+GY6KXpOzcWdy7DhuvpJFdY0ZgjAKERI=
+X-Received: by 2002:a17:906:3b99:: with SMTP id
+ u25mr7628425ejf.539.1623968219820; 
+ Thu, 17 Jun 2021 15:16:59 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210617194154.2397-1-linux.amoon@gmail.com>
- <20210617194154.2397-5-linux.amoon@gmail.com>
-In-Reply-To: <20210617194154.2397-5-linux.amoon@gmail.com>
+ <20210617194154.2397-6-linux.amoon@gmail.com>
+In-Reply-To: <20210617194154.2397-6-linux.amoon@gmail.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 18 Jun 2021 00:16:06 +0200
-Message-ID: <CAFBinCB1rrmJ5=M0tSGS_47BarFcrs2Kz5qFzrHw8+OEYxX3DA@mail.gmail.com>
-Subject: Re: [RFCv1 4/8] phy: amlogic: meson8b-usb2: Use phy set_mode callback
- function
+Date: Fri, 18 Jun 2021 00:16:49 +0200
+Message-ID: <CAFBinCD1dJ=oqjzkCrAdMMdxF8W1Aujcwo20vJ1oLv=mtn5TZw@mail.gmail.com>
+Subject: Re: [RFCv1 5/8] phy: amlogic: meson8b-usb2: Reorder phy poweroff
+ callback function
 To: Anand Moon <linux.amoon@gmail.com>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>, 
@@ -80,8 +80,9 @@ Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
  linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210617_151619_195863_93AAD17B 
-X-CRM114-Status: GOOD (  13.24  )
+X-CRM114-CacheID: sfid-20210617_151702_059831_B7771341 
+X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,48 +101,14 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Anand,
 
-On Thu, Jun 17, 2021 at 9:43 PM Anand Moon <linux.amoon@gmail.com> wrote:
+On Thu, Jun 17, 2021 at 9:44 PM Anand Moon <linux.amoon@gmail.com> wrote:
 >
-> Reorder the code for phy set_mode in .set_mode callback function.
-> For now configure the phy in host mode.
-as mentioned in the cover-letter: to my knowledge these register bits
-are "static"
-The settings for dr_mode == USB_DR_MODE_HOST mainly apply to the
-second PHY (usb1_phy)
-
-[...]
-> +static int phy_meson8b_usb2_setmode(struct phy *phy, enum phy_mode mode,
-> +                                   int submode)
->  {
->         struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
->         u32 reg;
+> Move the phy_meson8b_usb2_power_off fundtion to avoid compilation
+> error.
 >
-> +       switch (mode) {
-> +       case PHY_MODE_USB_HOST:
-> +               if (priv->match->host_enable_aca) {
-> +                       regmap_update_bits(priv->regmap, REG_ADP_BC,
-> +                                          REG_ADP_BC_ACA_ENABLE,
-> +                                          REG_ADP_BC_ACA_ENABLE);
-> +
-> +                       udelay(ACA_ENABLE_COMPLETE_TIME);
-> +
-> +                       regmap_read(priv->regmap, REG_ADP_BC, &reg);
-> +                       if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
-> +                               dev_warn(&phy->dev, "USB ID detect failed!\n");
-> +                               return -EINVAL;
-> +                       }
-> +               }
-> +               break;
-> +       default:
-> +               dev_warn(&phy->dev, "USB ID detect failed to setnode! %d\n", mode);
-> +               return -EINVAL;
-I have tested this driver already with PHY_MODE_USB_DEVICE (on my
-Odroid-C1) so I don't see why we should drop support for this
-Also if we want runtime mode switching in this driver then we would
-need to undo the changes from "case PHY_MODE_USB_HOST" above
-
-I suggest dropping this patch until we know for sure if and which
-registers need to be updated based on the DR mode.
+> drivers/phy/amlogic/phy-meson8b-usb2.c:247:3: error:
+>         implicit declaration of function 'phy_meson8b_usb2_power_off';
+you have introduced this warning in patch #4 of this series
 
 
 Best regards,
