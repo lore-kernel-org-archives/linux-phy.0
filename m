@@ -2,20 +2,19 @@ Return-Path: <SRS0=grP4=LM=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7AFFEC49361
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Jun 2021 20:01:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5512CC48BE8
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Jun 2021 20:07:00 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3B94261284
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Jun 2021 20:01:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 3B94261284
+	by mail.kernel.org (Postfix) with ESMTPS id 1D4F0613D1
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Jun 2021 20:07:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1D4F0613D1
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,57 +23,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=te/m5Fmd2/2Fh6RsvL4i6zQ1c5wUhPCikbqPbQx6Bno=; b=xYYCikjrlDzLvy
-	yKFAHxSn/xADVfelPQX1hJ1G2GzWWcmOBooICpI/Jqn4YTXFsKPuEIoqFTzhIDMxrN/80lu+EFD44
-	ObjQB+LmqGubk1Hqfqr1YFHE7VIrO3IPq6FGEH8iC16aK+06TYrnZbOVkCAzcmROxlY6EiLTIKcGW
-	wMLGvPN3X3ZZcjv2tB2ccO/okfgWwL8vkxDBiSrZLyyfeDgugS8OJMjP9PGY645+vhkLELpkx08hv
-	usFM+tg6FVyHh2Zex33jjjMgxm3Cqow7+ygiaqFNxGN8j/yjVVZrCCfmCgxb2UBrqH9f3NQMcsy7H
-	mVay7rP8FZrYtClHYNPg==;
+	List-Owner; bh=aaTbKR+LnKoqSgQMrbBf4lUdBRZvfBV7A4th2gYwPCg=; b=ZnmR3bWVEGpfpg
+	Zs5ufTXz3jnTwD35KL9cagDsyAFepZOnckvxYE+7TJuyoVSQkpeU3jKuOT9eCczfVUTENPu6wqz8A
+	7+hdI5XtqX5djJk4rWB7gMQojEP5C0XPSw7/O/0sbn+NYM840atck6qF/+eyTpiWcjsNxhAijPiAz
+	YGY9OEAC3e9xtNvKMgv9JrR1AH2hWcsAS07OPGOepVM2n6AkTGIfCfFi/Vq3f5gqYjsi5isRzyZYy
+	VoRrJleLS8oCdbOP0D9gWSYIL84SZtSKYKAJw1I+9OXgrWnzkl6UbKoJdBYrKtpyI5hfwn1/m98C4
+	zVCa/8q4qvrNmoco1ycQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1luKgY-00FP3V-Oi; Fri, 18 Jun 2021 20:01:50 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1luKlX-00FPd1-IL; Fri, 18 Jun 2021 20:06:59 +0000
+Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1luKgW-00FP2j-4z; Fri, 18 Jun 2021 20:01:49 +0000
-Received: by mail-ed1-x529.google.com with SMTP id s15so10124820edt.13;
- Fri, 18 Jun 2021 13:01:45 -0700 (PDT)
+ id 1luKlU-00FPcK-U6; Fri, 18 Jun 2021 20:06:58 +0000
+Received: by mail-ed1-x52f.google.com with SMTP id df12so7693813edb.2;
+ Fri, 18 Jun 2021 13:06:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6QTjBFDFCa5wxgzXV7/ZQNMNegFSSiirJH3DOi2Mowg=;
- b=U4p6NUo6NxmDTnbo2R00GUSqOPKE+qjZt8Klk6p9jMVaMwcujnDAhKDocwfnPzjfJa
- 7g7w/VxyBj/G+S2lqjPNd6lGwHp+FU2Y5YP4kz3a1mSzGjEodtZYT0xRNXqcrcl0Yfbh
- 4DIUFApCND6+hnkPtPI4EX3/vYFjEr9GZqkub0TOYThSX2LFzdV1N/Z2jWVwxZRff5KA
- CsLl3WMtOMbXaUpK4GcJAr0ade4BluXa7DFCladX8l9jkgHBncxIm0YbcCQbfN1EBXZL
- HOBjx9yl9ur6YHWnH+V4yYyeIY0kzAKwZ8bLmxcUQ5Gbp9KDiwLdv7YlVywxo0jogVlQ
- PpPg==
+ :cc; bh=jd6Y9FdRbI8WadsWZ8AlDZHBohYqsQzy8vJ8yBRlmjY=;
+ b=NkcH1LO5w4su6nqdC6W+7rrRp4CL85LjmCG4Xm9yjd68m/9Qu+lZD/z92BsQP8JIFT
+ rnQNsTX5bLt9tO05Yg5lD58qMlFRQe0oFo0EXj81q5Y1UAXZ8vVNN+ZKY/7o0JumIp4g
+ m6laKU+RGHL626SDXA0pPxO3WwVGtR55PmY3gLFLazY0NmL4tompZZnpUNvpZQitC/ac
+ EIhxE/KEfCAzsZFF3hazazsBGqFPLd0qJTK5NZv8mQUXil25YRSS0XdtC1zjE1q/3ioh
+ GzibQePBbyWvj3biOHS9oVhvWi0R6eXe0AgFA+CkVdTr80uIpkFzzpkpOlXCTf2mH66g
+ UtUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=6QTjBFDFCa5wxgzXV7/ZQNMNegFSSiirJH3DOi2Mowg=;
- b=Op3XbsJhMIQEccq3ufGY82TbTj53Sg154Xnz8r0kfDnjEZHsXWaBAHfcnp1dLIQMvn
- aC4D5iyTd0qONbur50Ukuz88JNaihg4LxwWY7nkudRwwK6Vi1HSZKCPMctGjl25ykQ0U
- YpuR9JFVPgcoGBwGwJ/jiQ9MrD0bRuNT+Mh+7H492A7bC0AoSZTsTqTZ+h5OVilbUqj4
- BhfIuWifi22WQ4gFWQs4wSz8wM9mlkI/tZ9j55wVnmR1pmMeeFYqXWEdBwkT9I8inNkc
- kUg9kPBSOjGaBpiN/uD51O/QbRcTPC9Psm87wrzkZ6KZZaVTtil8RP7yx2ubBUgTrujK
- IbWQ==
-X-Gm-Message-State: AOAM531VmmFGM6oekHvcWWwF0Od0u0ZyX7YCd3EfdRDxTvsYvppdMO5N
- LNfLDjdSWVbWr3I85oFAnrzJ9LsLdR8TN5bZ98A=
-X-Google-Smtp-Source: ABdhPJxohO1/4OynRMCvyD6kNQVy6NdX8sknWeZm6xSBJ9r5JVQ2eHpMXAwyt9cYBeaA1M2EVrmvSxABcvi/4z9tMjc=
-X-Received: by 2002:a05:6402:3581:: with SMTP id
- y1mr7253865edc.143.1624046504688; 
- Fri, 18 Jun 2021 13:01:44 -0700 (PDT)
+ bh=jd6Y9FdRbI8WadsWZ8AlDZHBohYqsQzy8vJ8yBRlmjY=;
+ b=LeKlaR9YhZgmPNmdHhIrhlQXuVot25mWziFC+ObPpTf8nwtManNXcfV2pg2ZwzcrT6
+ dkCqiiEDuu4cM02lhRrtscM+YmTeoY9eic7E2gMPyNRHVXdBSit361W9OCsnabjXw9PP
+ /ssjL9n3sbE8GzgkKnf/lDNUNsgyFbH8iU7pq79tdrcS0VA5ktry0G0SnaYrXrxLxe32
+ GtOgXMvazik3t8NwaJrmJDAoHncE2koYk5mZlzoaQ79GGFCwNS7CS3n2WcNhJ5RXdvGR
+ lWe95nmtwsA/aopc9oHnycikn6LTYB8ps9Mq0DKN29rHI0cMeRoJCTbEIKqhZtPlu3a9
+ 2VyA==
+X-Gm-Message-State: AOAM531+dlurFhiDFXQeBGrdoNcXhQEiYyPrK34BY4jK8AImsStL49XP
+ dj4jPHp+lM+0y2r/f8Bp9WqJIWEJqbRBErGnpPY=
+X-Google-Smtp-Source: ABdhPJy/eX13COPO4fwgWcbKjgdq/roFKgUhw73XmjuLqQVOrKeFvYgYKC+Ud97JzQ6PtlAQofSyde0mLEhzq7onpSI=
+X-Received: by 2002:aa7:c790:: with SMTP id n16mr7323619eds.98.1624046815446; 
+ Fri, 18 Jun 2021 13:06:55 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210617194154.2397-1-linux.amoon@gmail.com>
- <20210617194154.2397-5-linux.amoon@gmail.com>
- <CAFBinCB1rrmJ5=M0tSGS_47BarFcrs2Kz5qFzrHw8+OEYxX3DA@mail.gmail.com>
- <CANAwSgQVgKUoTpfaJyfxdphqc6M=Oq6jj5zZ7An9St7PdzQHYA@mail.gmail.com>
-In-Reply-To: <CANAwSgQVgKUoTpfaJyfxdphqc6M=Oq6jj5zZ7An9St7PdzQHYA@mail.gmail.com>
+ <20210617194154.2397-7-linux.amoon@gmail.com>
+ <CAFBinCCE+6G7QtDoxfbcZVVRf-MDX-epSo=_k_PJZgWX+_Whvg@mail.gmail.com>
+ <CANAwSgRqixugUr-t2OheLBVwD=EOkaLqxnGkT-Bx=p_A4Nyr8Q@mail.gmail.com>
+In-Reply-To: <CANAwSgRqixugUr-t2OheLBVwD=EOkaLqxnGkT-Bx=p_A4Nyr8Q@mail.gmail.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 18 Jun 2021 22:01:33 +0200
-Message-ID: <CAFBinCDpQybqD96CCMBDKYUXEYCABr0QMfxFH1AWrXP12UxxMg@mail.gmail.com>
-Subject: Re: [RFCv1 4/8] phy: amlogic: meson8b-usb2: Use phy set_mode callback
+Date: Fri, 18 Jun 2021 22:06:44 +0200
+Message-ID: <CAFBinCALsnpbJGEb4LBLd_jy3E8fOZAQaacz-P7ijfkeyYg2dA@mail.gmail.com>
+Subject: Re: [RFCv1 6/8] phy: amlogic: meson8b-usb2: Use phy reset callback
  function
 To: Anand Moon <linux.amoon@gmail.com>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -85,8 +83,8 @@ Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  linux-amlogic@lists.infradead.org, 
  Linux Kernel <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210618_130148_250440_EED845C6 
-X-CRM114-Status: GOOD (  18.53  )
+X-CRM114-CacheID: sfid-20210618_130657_031527_B02FBE90 
+X-CRM114-Status: GOOD (  15.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,62 +103,40 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Anand,
 
-On Fri, Jun 18, 2021 at 3:19 PM Anand Moon <linux.amoon@gmail.com> wrote:
+On Fri, Jun 18, 2021 at 5:33 PM Anand Moon <linux.amoon@gmail.com> wrote:
 [...]
-> > I suggest dropping this patch until we know for sure if and which
-> > registers need to be updated based on the DR mode.
+> > For shared resets (like the one we have here) reset_control_reset will
+> > only trigger the reset line once until all drivers using that reset
+> > line are unloaded.
+> > So effectively this new phy_ops.reset callback will be a no-op.
 >
-> Yes, I have observed this, Can you give these small changes a try?
-> With the below changes, I got the  PHY_MODE_USB_DEVICE support working.
-first of all: sorry that I have not linked my source of information previously:
-- Meson8b: [0]
-- Meson8 and Meson8m2: [1]
-
-Unfortunately I don't have any datasheet or "better documentation" of
-how the registers should be programmed.
-This is why I am a bit defensive when I am asked to change something
-there - as I simply have no way of knowing if the changes are good or
-not. I can only tell whether they're "identical" or "different" from
-what the vendor kernel does.
+> I know his register is shared between two USB IPs,
+> but I have not observed any issues.
+have you checked at which point we're then actually triggering the reset?
+I assume that you will find that the reset is only triggered for the
+very first power_on/init call - which makes this patch effectively a
+no-op (yes, we're calling reset_control_reset then, but that doesn't
+mean that a reset is triggered on hardware level - see
+drivers/reset/core.c at around line 346).
 
 [...]
-> +       case PHY_MODE_USB_DEVICE:
-> +       case PHY_MODE_USB_OTG:
-> +               regmap_update_bits(priv->regmap, REG_ADP_BC,
-> +                                  REG_ADP_BC_DCD_ENABLE,
-> +                                  REG_ADP_BC_DCD_ENABLE);
-> +
-> +               udelay(ACA_ENABLE_COMPLETE_TIME);
-> +
-> +               regmap_read(priv->regmap, REG_ADP_BC, &reg);
-> +               if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
-> +                       dev_warn(&phy->dev, "USB ID detect failed!\n");
-> +                       return -EINVAL;
-> +               }
-> +               regmap_update_bits(priv->regmap, REG_ADP_BC,
-> +                                  REG_ADP_BC_ID_PULLUP, REG_ADP_BC_ID_PULLUP);
-> +               break;
-According to the vendor kernel this should only be applied to
-"host-only" USB_PORT_IDX_B (which is usb1 in the mainline .dtsi).
-Based on that I think it's not correct to apply this for DEVICE and OTG modes.
-
-The vendor kernel does not configure REG_ADP_BC_ID_PULLUP anywhere.
-Also DCD_ENABLE is only ever set to 0 (while you are enabling it now), see [2].
-
-As mentioned before: all I can say about this patch is that it
-programs the registers differently than the vendor kernel does.
-From your description I am not sure if you are now getting different
-behavior on Odroid-C1 with this patch (compared to what we had
-before).
+> > > -       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, NULL);
+> > > +       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, "phy");
+> > I think this breaks compatibility with existing .dtbs and our
+> > dt-bindings (as we're not documenting a "reset-names" property).
+> > What is the goal of this one?
+> >
+>
+> OK, If we pass NULL over here there is the possibility
+> USB phy will not get registered.
+I don't understand why - with NULL everything is working fine for me.
+Also no matter which name you give to the reset line (in reset-names),
+it will be the same reset line in all cases. If it's the same reset
+line before and after: why is this needed?
 
 
 Best regards,
 Martin
-
-
-[0] https://github.com/endlessm/linux-meson/blob/03393bb8e8478626e03ee93b0a2a225d6de242b5/arch/arm/mach-meson8b/usbclock.c#L120
-[1] https://github.com/endlessm/linux-meson/blob/03393bb8e8478626e03ee93b0a2a225d6de242b5/arch/arm/mach-meson8/usbclock.c#L120
-[2] https://github.com/endlessm/linux-meson/blob/d6e13c220931110fe676ede6da69fc61a7cb04b6/drivers/amlogic/usb/dwc_otg/310/dwc_otg_pcd.c#L71
 
 -- 
 linux-phy mailing list
