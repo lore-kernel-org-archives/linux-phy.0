@@ -2,88 +2,92 @@ Return-Path: <SRS0=EqQx=LP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 38B05C49EA2
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:21:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 31CBAC48BE5
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:24:45 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F102661156
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:21:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F102661156
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 033E360240
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:24:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 033E360240
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=amarulasolutions.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mZxdp681gZ/ctstpYzV1l5vG7+ZTmN68oA+GnqjUBJg=; b=2MP/Dwmvdi7eln
-	xB3Lw44Rm50mjG33yFK63Ty8qoFjT3mSMkG12/n8JV8uHeAMGWp0S5Bfyup41QF4Ldflma++iO+PC
-	m+oB+kv8+qYwpRoq3KJP6RQA0lcIXi08wjffL863MqFnuyUhD9wZ2Kqq//KIlMEzzuYA7Mm6k/yC4
-	oX69eKaRyhnYVaoP8f34qWdK57/cGpTcXHHVMcmFtEAIlH7dz2TySlRAUWCVORUXzIGDbeZ/abPjt
-	+pXILJENfwRtX2pwCP1VYsSWitCSfWTVDF7gGKVjWEaUGMBvxJ4v+gWLMQTvImIS+goh3tNtHRDp6
-	c8yUQ9AUj5ds1FVOwIag==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PwuYEjAIUknFz/5SqghASsV6MicjgquwsqTv5mWitGU=; b=b0v+WdkAOcFYke
+	Ckc48GXqLuBUqBm0uY4o3lA8ZZGy6Qgkth8cws/uu89NZk2VEFRYnxVoR6YFZUvX3YlUVOomLzhSB
+	Ppns9KKvBDeOFYt39sihkV4SVZoFEWoTUxU1ib/HRmFZlVRPMPLpmvJIarVBqkQ6yc9J/756hLmKz
+	cSQ0dsSx8+xFm1MulfomIxouFiaxmjaMHosTZby05wEw1Rpo9SP8dhw2t7ajko2/tgsr2nu+N8XA6
+	noItaB8BnbWNdF6INMre30izxwMZfpCklVKHhCWxHKM+KRuT5yu3ucg1g6CW4YPoHyC1q65Tcc/Lc
+	M5cIujJ1dnjvZMFHqVNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvEFC-002Sg2-Fw; Mon, 21 Jun 2021 07:21:18 +0000
-Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	id 1lvEIW-002TiX-HV; Mon, 21 Jun 2021 07:24:44 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvEF9-002Sdq-UQ; Mon, 21 Jun 2021 07:21:17 +0000
-Received: by mail-ed1-x530.google.com with SMTP id i24so6812553edx.4;
- Mon, 21 Jun 2021 00:21:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Mbnpi+F4BB/za1oZMA5jK8Z4P2+DO3unM76FgufrKCk=;
- b=C1wLOHrY+8yhoDafdxlC+Y0cECMb7v+XjOPS3rH+P2Q1WcsO3W3Ujeip9PHRSxraJA
- n1DY1bRWGnPiGESaP7X8wiyJDg06t+h2dXdFHbUtF4k9gfMm5yfuJU+CXRAZhaVZD5Px
- ZM+sxnjmJrFVWLCZVITVK/u6ClhSfIoAXb2aFrx0890J65fENt6EqvO7oeib0Il388wH
- Sfr5jRmp66bSmL6MwLDac09qoxIypuUlznhLJE3X+sh+ggRAu1WLccmiruaTk+5vJQEp
- Cr4gHD8jcdHk0X8OTlyjizOPF0jZv6vzutA/QjWdcBWZc3epT5HKoMeew2lcb9fws58c
- p86w==
+ id 1lvEIS-002TgR-Rx
+ for linux-phy@lists.infradead.org; Mon, 21 Jun 2021 07:24:42 +0000
+Received: by mail-pf1-x436.google.com with SMTP id y4so5949104pfi.9
+ for <linux-phy@lists.infradead.org>; Mon, 21 Jun 2021 00:24:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4Mz90SrmvetiiKOz2FA2/q5WPVb/5Mateql9uC1osYI=;
+ b=LH6roB4QN50Ss3fd6q+CBK16FfSLRV/++biPwO3AeQTv8PFz5YsC987Yl5PrPtbQUR
+ grYaD4IXKWdJJOg4dF6BckzRXAb951oI2Olp611oMhF3JgfviD5I5Jhy/q+gsRLvIMqk
+ koZVmpZYLZherETZSArj4lMgsAiX7fGYNfJ8E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Mbnpi+F4BB/za1oZMA5jK8Z4P2+DO3unM76FgufrKCk=;
- b=DTNMODGUIYSS7RHD3GnRH1Go+KHA7hEYe7dFoVRwbjH0JildtTGmafbUJ78J5pE2cP
- 4TVL0EPh93vLLlHSQoQo9X03rlRFXLWynvQ+FxJaqDwi08EkgWW3G3kIXzbpyJNmfZg8
- YSz77x+aHhYL61sJV/3aGpzwpU4mMzdEl17X/8usganRiKVXA4um1Ku6iwCCCbJ/z1Wq
- nnt6ZessUl4F7FOfnVKuoh77Go6jYnpnv+yGMagWg+AN/nChq7ZleXpX55wxP5uDDgpS
- wLIzvYSPMsNLe95nim72+Id8WgnToo6hnLNUG2DXhbf8HliYbPmlWCt8TmvYs+VlsvlB
- TW9w==
-X-Gm-Message-State: AOAM532CjOZoZi7ws9sMSs58ACQ9jnCHVWbEYnwZ0nh1oD7t0QUaBeC4
- 8/iqifSLDCPDdlOUOuovJ2zXKMLg/YbakLPgJBs=
-X-Google-Smtp-Source: ABdhPJzlIsUmCD7QxdwFQ9JK241Kbhh7qVixABRLmzZHYhoNnheWKO0m38DxzqM0PUPXsxCYX3EZhXqDzI0UcRcRofI=
-X-Received: by 2002:a05:6402:3581:: with SMTP id
- y1mr2055328edc.31.1624260073558; 
- Mon, 21 Jun 2021 00:21:13 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4Mz90SrmvetiiKOz2FA2/q5WPVb/5Mateql9uC1osYI=;
+ b=sUaQpOzprIQAuZQq+MQgTWw85Qgw0N5SmHGLl7n6dvZFkd8FXyk0V8eu55Yho2fSkL
+ RiehgUoi3cKg8b8ZD9S7kFtWW5uBlpj8EOVriifF23lCX7kluaDJ+LWxtYRrF6vppqrG
+ c2w90TyODNrjxh4rIL16a/Yo7hRyZPtw7s12utHprCYw+ZanQ3D8PageYtMv+O5/1GnD
+ tGz4w2KaT+9GBUzQgl2lv/33qHtNpE/R6pZzEBePsw7IWVBv/CcYg6OczTj3nk1mzAVk
+ u7U/C1TjYZ+L6bJcWgwZsix1VKDC8+WcFOiH1tbmC50dUgOVaIUb4ALbpZS3n2oUhu0r
+ 3k4A==
+X-Gm-Message-State: AOAM531KKrMYlZc1AO19zIb7zEDA10lRP/PtWNSRIBC5E9/WXa1V7J6B
+ RAVxf6EWk1wDRwckI8mXvrNw9w==
+X-Google-Smtp-Source: ABdhPJxiCxvGt4Lvg95BHdbOmEwOZrpqM6XZznMkEdEE3H9U0aYNeyTH/9EQGYu7BduM/FJvQrX1Kg==
+X-Received: by 2002:a63:ef04:: with SMTP id u4mr22267854pgh.429.1624260278855; 
+ Mon, 21 Jun 2021 00:24:38 -0700 (PDT)
+Received: from localhost.localdomain ([2405:201:c00a:a884:139:e97f:a55d:7f66])
+ by smtp.gmail.com with ESMTPSA id
+ 21sm13951294pfh.103.2021.06.21.00.24.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Jun 2021 00:24:38 -0700 (PDT)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Tomasz Figa <t.figa@samsung.com>,
+ Fancy Fang <chen.fang@nxp.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ linux-amarula@amarulasolutions.com,
+ Anthony Brandon <anthony@amarulasolutions.com>,
+ Francis Laniel <francis.laniel@amarulasolutions.com>,
+ Matteo Lisi <matteo.lisi@engicam.com>,
+ Milco Pratesi <milco.pratesi@engicam.com>,
+ Jagan Teki <jagan@amarulasolutions.com>
+Subject: [RFC PATCH 0/9] arm64: imx8mm: Add MIPI DSI support
+Date: Mon, 21 Jun 2021 12:54:15 +0530
+Message-Id: <20210621072424.111733-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-References: <20210617194154.2397-1-linux.amoon@gmail.com>
- <CAFBinCDVnBApYziHazeS8f2FXHQ-tUS55-g6B22c20OtfYD=xw@mail.gmail.com>
- <CANAwSgQcVDdPMZjuaN4O1dpVDd-KrNCGLDq0h4vfP4YZ2vSV2Q@mail.gmail.com>
- <CAFBinCA0-M-P5bWMKmMTq+Kgx+iEBpxirjWGxpaQqR3pfn84Fw@mail.gmail.com>
-In-Reply-To: <CAFBinCA0-M-P5bWMKmMTq+Kgx+iEBpxirjWGxpaQqR3pfn84Fw@mail.gmail.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 21 Jun 2021 12:51:02 +0530
-Message-ID: <CANAwSgQnW6RknOjfn2q0avggG7VLwEo+LaxUdbfTw1v17g5UGQ@mail.gmail.com>
-Subject: Re: [RFCv1 0/8] Meson-8b and Meson-gxbb USB phy code re-structure
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>, 
- Jerome Brunet <jbrunet@baylibre.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
- linux-phy@lists.infradead.org, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-amlogic@lists.infradead.org, 
- Linux Kernel <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210621_002116_050907_1CBC6BCD 
-X-CRM114-Status: GOOD (  26.19  )
+X-CRM114-CacheID: sfid-20210621_002441_088136_172DB362 
+X-CRM114-Status: GOOD (  11.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,58 +104,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Martin,
+This series support MIPI DSI on i.MX8MM.
 
-On Sat, 19 Jun 2021 at 01:47, Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> Hi Anand,
->
-> On Fri, Jun 18, 2021 at 3:20 PM Anand Moon <linux.amoon@gmail.com> wrote:
-> [...]
-> > (some email id got messed up while sending these changes.)
-> it happened to me before: don't worry, it's something that can be fixed
->
-> [...]
-> > > > Initially if we connect USB HDD at initial boot it get detected.
-> > > > but after that usb hotplug of USB HDD is broken.
-> > > > I did not observe and USB debug events messages to trace the root cause.
-> > > >
-> > > > Another issue I observed is increase of USB interrupts event
-> > > > even if there is not much activity on USB ports.
-> > > > I tried some clk changes but it did not workout for me.
-> > > I suggest reporting this to the dwc2 maintainers and asking for advice
-> > > on how to debug these issues.
-> > >
-> > Yes I have enabled the CONFIG_USB_DWC2_DEBUG
-> > to help debug this issue but could not find much clue on
-> > why this is happening.
-> I think CONFIG_USB_DWC2_DEBUG is a good starting point.
-> For myself I came to the conclusion that the dwc2 IP is too complex to
-> understand without additional information
-> Some additional information can be found in public datasheets of other
-> SoCs which are also using a dwc2 core, see for example RK3128 [0] or
-> RT3050 [1]
-> That's why my suggestion is to additionally ask the dwc2 maintainers
-> (which are not Cc'ed on this mail) for debugging suggestions.
->
+It worked directly with existing mxsfb driver but the SEC DSIM
+timings has to be validate and tested through all platforms, 
+ie reason I'm sending it as RFC.
 
-Yes, I will investigate with mode debugging and Cc USB maintainers in
-the next version for more details.
+Tested on Engicam i.Core MX8M Mini SoM.
 
->
-> Best regards,
-> Martin
->
+patch 1: dt-bindings for SEC MIPI DSIM
 
-Thanks for these inputs.
->
-> [0] https://rockchip.fr/RK312X%20TRM/chapter-26-usb-otg-2-0.pdf
-> [1] http://static6.arrow.com/aropdfconversion/aa9a14376a75e7c5d6daa9f6aaed8411909d2021/rt3050_5x_v2.0_081408_0902.pdf
+patch 2: SEC MIPI DSIM bridge driver
 
-Thanks
+patch 3: dt-bindings for SEC DSIM DPHY
 
--Anand
+patch 4: SEC DSIM DPHY driver
+
+patch 5: MIPI DPHY reset enable in blk-ctl
+
+patch 6: display mix blk ctl node
+
+patch 7: eLCDIF node
+
+patch 8: MIPI DSI pipeline nodes
+
+patch 9: Enable LVDS panel on EDIMM2.2
+
+Note:
+- all these patches on top of Peng Fan's blk-ctl driver.
+- anyone interest, please have a look on this repo
+  https://github.com/openedev/linux/commits/imx8mm
+
+Any inputs?
+Jagan.
+
+Jagan Teki (9):
+  dt-bindings: display: bridge: Add Samsung SEC MIPI DSIM bindings
+  drm: bridge: Add Samsung SEC MIPI DSIM bridge driver
+  dt-bindings: phy: Add SEC DSIM DPHY bindings
+  phy: samsung: Add SEC DSIM DPHY driver
+  soc: imx8mm: blk-ctl: Add MIPI DPHY reset enable
+  arm64: dts: imx8mm: Add display mix blk ctl
+  arm64: dts: imx8mm: Add eLCDIF node support
+  arm64: dts: imx8mm: Add MIPI DSI pipeline
+  arm64: dts: imx8mm-icore: Enable LVDS panel for EDIMM2.2
+
+ .../display/bridge/samsung,sec-dsim.yaml      |  184 ++
+ .../bindings/phy/samsung,sec-dsim-dphy.yaml   |   56 +
+ .../freescale/imx8mm-icore-mx8mm-edimm2.2.dts |   90 +
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi     |  104 ++
+ drivers/gpu/drm/bridge/Kconfig                |   15 +
+ drivers/gpu/drm/bridge/Makefile               |    1 +
+ drivers/gpu/drm/bridge/sec-dsim.c             | 1535 +++++++++++++++++
+ drivers/phy/samsung/Kconfig                   |    9 +
+ drivers/phy/samsung/Makefile                  |    1 +
+ drivers/phy/samsung/phy-sec-dsim-dphy.c       |  236 +++
+ drivers/soc/imx/blk-ctl-imx8mm.c              |    4 +
+ include/dt-bindings/power/imx8mm-power.h      |    5 +-
+ 12 files changed, 2238 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/samsung,sec-dsim.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/samsung,sec-dsim-dphy.yaml
+ create mode 100644 drivers/gpu/drm/bridge/sec-dsim.c
+ create mode 100644 drivers/phy/samsung/phy-sec-dsim-dphy.c
+
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
