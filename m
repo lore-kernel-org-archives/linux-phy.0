@@ -1,78 +1,69 @@
-Return-Path: <SRS0=MmQi=LN=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=EqQx=LP=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B806EC48BDF
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Jun 2021 02:57:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4B54FC48BE5
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 03:53:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7D5AD6135A
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Jun 2021 02:57:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7D5AD6135A
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
+	by mail.kernel.org (Postfix) with ESMTPS id 1B42C6113C
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 03:53:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1B42C6113C
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OQQ5d3t8DIS0/deaE4+dx4Lgi0eF2QvwHbn0fqe8pEg=; b=FqcClp87ia+i3G
-	OKmXqAIfZU9tCwnbeZmoMIdpcQh5/XPbz6M2y57dX8lsnMaTNZh++ugZtiKBo3moEUO5fwT2evd7q
-	CGrsmkRhVY7kL9Fn2k/4/BSQUEoQRgHQ0HQzmHHSloEil2A+ZPWaSO9y7zCL3aASEh7bQL1x0MHDi
-	xCE3cz4euNvowOoud4sG86vKSYqlt7B1bDKSI7WxGWfvMBLcSpsV+vJwTgZRHExAPPQcU3pOkzN5j
-	CyWb/jqZE908dmPlMvfwot7KwLkPmvW6BNNrXWyDoFrlyEj5J81+N/6fJwqjuiUbeYfFogC3f9q91
-	g0068wATJvFo0zufXj/w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KG6mfZpjX/lf1uarfV0m3xz/vTX63JBH/yuwuDgV5RI=; b=hXEJRCXDb48xGp
+	h5DVsb8sJSqUpXYsv67uDBfTzu+RfuS05EbHTUFhBAujy/NkYUvbbW/YcZUX/QUZyJ/pIyoVRr5h8
+	dwZW4lzVrW+Pu4RKBVu30nvAo91Kh26Z3QFk5Gj0qSK04i8evPGyMYWcmXLt+TbccmH5W2wVUxGSO
+	nZyelfuYrGFkA94sNLImILLdSWOAbAw7zKM8NEVVmbe098Rp9Pxa3aO/R/Q61+fp80qA6U550O10+
+	Hm4CxcqFHd9Z+CASGJ70E1QQnyq2+tVhWGIHNMZ/j4Xem+RgglWj/MqEBUGIVF3FcXcz0Zrm7M8K5
+	M37lQlzPUaEhpLuQGn8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1luRB9-00G63n-1U; Sat, 19 Jun 2021 02:57:51 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1lvAzi-0020LQ-KH; Mon, 21 Jun 2021 03:53:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1luRAt-00G61H-6R; Sat, 19 Jun 2021 02:57:36 +0000
-X-UUID: 78722d7862fd429d9405424b5c37f6cc-20210618
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=+DNgoc0dJLPn2Z9eauLliOfak73wsTSbX0RxPScRkfM=; 
- b=RWOwgKmtIawD72yGl+NsrWkjmn+gJQyyNeMt9XeTehiZ2k6nb3APX9O1vdIa+elaLlyno/zb2G/0e6TlniCXDBwnZtI751tP65JP/iqF7AoUD63qBWUQtuslYJOsm+ON77u6k9z3VhQn4Uw8G0b4OCVMcMR6ExIP2cZ+E86Lti0=;
-X-UUID: 78722d7862fd429d9405424b5c37f6cc-20210618
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1069663994; Fri, 18 Jun 2021 19:57:32 -0700
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 18 Jun 2021 19:47:29 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 19 Jun 2021 10:47:25 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sat, 19 Jun 2021 10:47:24 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- "Rob Herring" <robh+dt@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Matthias Brugger
- <matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2 1/3] dt-bindings: phy: mediatek: tphy: add support hardware
- version 3
-Date: Sat, 19 Jun 2021 10:47:17 +0800
-Message-ID: <1624070839-1233-1-git-send-email-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+ id 1lvAzV-0020JI-ML; Mon, 21 Jun 2021 03:52:54 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id DBEFD60725;
+ Mon, 21 Jun 2021 03:52:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1624247572;
+ bh=RJf49uRgzXxA9bjN6VYQdbbDHBJXNIssYY4EJQsK6O4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=nz+Xa9/ERTZcal8bRaRv9umf0lBsqYqUAybFBy7UOv5btP0iHDxX8OOsd4VRWbjIi
+ AOCEnQCEvj5h2TrB4eL8VO+Q2ceb5bpCKE5YtUPhLBxsMCTY6Gp/9AL26ITmHKln6a
+ w3GcvmZHU5M4VQPt/sB5ebpfo6izjsPvPDklJHWjq89vUlY6meby8IjAKlZiLFAxfu
+ uYs6+blZjXHk42yr8+Y4pYjVWwGwZz4b0xJlQc5vor6TtoNwrQwGdWmcRNMEPrPJG+
+ lCl9Chy7i92vfEkryVfmZH3cG4il5oUcUltfM4ginG5fE7lbgWJ8AJqAKbs6PNlyfw
+ 9gkaUH1u+XH+w==
+Date: Mon, 21 Jun 2021 09:22:46 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Colin King <colin.king@canonical.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: rockchip: remove redundant initialization of
+ pointer cfg
+Message-ID: <YNANDuQgtahNHxiG@vkoul-mobl>
+References: <20210609113901.185230-1-colin.king@canonical.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 61F31F61220BC684D2241E75CFBD627072BEFBA453B5AAAAE65EB56E6EAC09FE2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20210609113901.185230-1-colin.king@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210618_195735_291624_1A65F975 
-X-CRM114-Status: GOOD (  12.81  )
+X-CRM114-CacheID: sfid-20210620_205253_790953_E3D7CD92 
+X-CRM114-Status: UNSURE (   7.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,78 +80,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PHYA architecture is updated, and doesn't support slew rate
-calibration anymore on 7nm or advanced process, add a new version
-number to support it.
-Due to the FreqMeter bank is not used but reserved, it's backward
-with v2 until now.
-For mt8195, no function changes when use generic v2 or v3 compatible,
-but prefer to use v3's compatible, it will not waste the time to
-calibrate the slew rate, and also correspond with hardware version.
+On 09-06-21, 12:39, Colin King wrote:
+> From: Colin Ian King <colin.king@canonical.com>
+> 
+> The pointer cfg is being initialized with a value that is never read and
+> it is being updated later with a new value. The initialization is
+> redundant and can be removed.
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v2: add more commit log suggested by Rob
----
- .../devicetree/bindings/phy/mediatek,tphy.yaml     | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+Applied, thanks
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-index b8a7651a3d9a..939c09296b5f 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-@@ -15,7 +15,7 @@ description: |
-   controllers on MediaTek SoCs, includes USB2.0, USB3.0, PCIe and SATA.
- 
-   Layout differences of banks between T-PHY V1 (mt8173/mt2701) and
--  T-PHY V2 (mt2712) when works on USB mode:
-+  T-PHY V2 (mt2712) / V3 (mt8195) when works on USB mode:
-   -----------------------------------
-   Version 1:
-   port        offset    bank
-@@ -34,7 +34,7 @@ description: |
-   u2 port2    0x1800    U2PHY_COM
-               ...
- 
--  Version 2:
-+  Version 2/3:
-   port        offset    bank
-   u2 port0    0x0000    MISC
-               0x0100    FMREG
-@@ -59,7 +59,8 @@ description: |
- 
-   SPLLC shared by u3 ports and FMREG shared by u2 ports on V1 are put back
-   into each port; a new bank MISC for u2 ports and CHIP for u3 ports are
--  added on V2.
-+  added on V2; the FMREG bank for slew rate calibration is not used anymore
-+  and reserved on V3;
- 
- properties:
-   $nodename:
-@@ -79,8 +80,11 @@ properties:
-               - mediatek,mt2712-tphy
-               - mediatek,mt7629-tphy
-               - mediatek,mt8183-tphy
--              - mediatek,mt8195-tphy
-           - const: mediatek,generic-tphy-v2
-+      - items:
-+          - enum:
-+              - mediatek,mt8195-tphy
-+          - const: mediatek,generic-tphy-v3
-       - const: mediatek,mt2701-u3phy
-         deprecated: true
-       - const: mediatek,mt2712-u3phy
-@@ -91,7 +95,7 @@ properties:
-     description:
-       Register shared by multiple ports, exclude port's private register.
-       It is needed for T-PHY V1, such as mt2701 and mt8173, but not for
--      T-PHY V2, such as mt2712.
-+      T-PHY V2/V3, such as mt2712.
-     maxItems: 1
- 
-   "#address-cells":
 -- 
-2.18.0
+~Vinod
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
