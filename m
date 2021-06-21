@@ -4,17 +4,17 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5B78FC48BE5
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:27:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 91417C49EA2
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:28:19 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1D93760FDA
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:27:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1D93760FDA
+	by mail.kernel.org (Postfix) with ESMTPS id 5BB2660E08
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:28:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5BB2660E08
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=amarulasolutions.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,50 +23,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QCldmf36tEYgd7OG2lp7RVpw00/b/g+kuS+poZ3jK1s=; b=GI9CiJgU5i/8ok
-	/nua/RNjyHYZxUD6dgXCatxWCWAY65OQDzEMgTMZ/DYE3zf/kAIx5YVTq9w3FXijY13oeICmmcFzx
-	H5r2rigcL6ycOOolyXQkzCegfMgvhtpYS8SmWTm2rhJn64ZOtt2gXHViuqvQzYdRYiXL+z/7jq086
-	Ub0dqcut35OqTLH6v9qsK2NVkLEuE6c8QoaNTX28aWElm3JK485NO2Xv9OP6uUncfkrB5k9cYOSft
-	Ai5M6MrRLmZNjGO5glnIzovuddXUoc/QD58HO/10kUppRaooBpzDr7zChbgMyGrBgHge2u0NybH6Z
-	es5bCzHrN7tymwnvd0/Q==;
+	List-Owner; bh=JWg21hOHAswanwMNDEE1kGp64jm7nraUibxYCBKocvo=; b=lF8c7syP+sZAhw
+	Jo6Ar88SPzaRGzyFYnnvK4OTQ7upz4H0IuniInyB/+HoXctSrl1oRVy88hzVoEtXSFxTst1PuiaSa
+	Ye+N8NhYQkm7kJyaMfZbIibXasI6nYAbvO1f/Kv4qlD81POlKTqgbq4vCyvPWu3UJSsb+Kow71njo
+	TU3XDShUBI1tIjhJZ4zdowVpgdQaQf/2yvQStmoEklYsLwAi48KfSAm4hZURWhmKEOs55SX4SN78X
+	IYChd++lhVZ9NU/BF2fqBN5XkCIUOw/2P6uT4OuScwZJAlmHxgCUC0HLafDW+L1xGOB8J/48TKdss
+	xtGtC0xryZmGoJNSrDHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvEKh-002Ufz-CF; Mon, 21 Jun 2021 07:26:59 +0000
-Received: from mail-pf1-x435.google.com ([2607:f8b0:4864:20::435])
+	id 1lvELy-002VFj-As; Mon, 21 Jun 2021 07:28:18 +0000
+Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvEJ0-002TvI-JA
- for linux-phy@lists.infradead.org; Mon, 21 Jun 2021 07:25:16 +0000
-Received: by mail-pf1-x435.google.com with SMTP id w71so2922014pfd.4
- for <linux-phy@lists.infradead.org>; Mon, 21 Jun 2021 00:25:14 -0700 (PDT)
+ id 1lvEJ7-002TzC-9b
+ for linux-phy@lists.infradead.org; Mon, 21 Jun 2021 07:25:22 +0000
+Received: by mail-pg1-x532.google.com with SMTP id e20so13466275pgg.0
+ for <linux-phy@lists.infradead.org>; Mon, 21 Jun 2021 00:25:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=/pGjb2AmXz+lBmXRvuYK+0My7OEKqfzWIwfNjkS45hA=;
- b=B9B52vgxd/J4eTdK7UlVsZJ7csp6Wy5F6P2A20Mfw0H1RRWpOrSZaJTujs3hnlfzCz
- lquOWxd8ZvszDgJBt5LkR7OIgGAYPjCdylfqn/O2NYN4AtmxpZNGZJgy/JPcPkMTY5hX
- nywtvsNF2KIYxRwwwQnWW7ejXPXt/r/tOk/hU=
+ bh=wE0EtFYsjB5vlJwRJRnVD3mRJGbikL6A/mq3nMXEQvo=;
+ b=EXV22jysZtFBGfkOj6eka+mm+ScqN1Gb+9Drg+5vhkPlVJF+YFq3khisQeIp1MwM4k
+ 5+bruQxYxg1/hjhUZnCxLAXEl9Cc23GXlH0C4wty7MYRQPvGJBeGK7jU3QNvRNf2pqaP
+ 5Df8uMr4bfWCrKq4/osNjUUK3c5pmy/xMWy50=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=/pGjb2AmXz+lBmXRvuYK+0My7OEKqfzWIwfNjkS45hA=;
- b=Wfk31bSMsSRz2w4IAHh0ZIyCBAKIMrDlWLSnZsLSxtqyREZN1d55ztkb9hII+4xeHp
- h9oy2I1lyV/m45o1nuIXki/P1paJKh8NJxzTj4A73zWsVMPIfl6K+CCHYJ78S92vrUVt
- UN1gDpaWDz6aF3aKzA+rPKdr6aE9Upw7Nxx90uK5zP4d2cgnxsv6de4OhgacXJi+uAsu
- Pcrh24jW/vXI9IuL2Kik5OpiuGDXjprp8sf6Q0rBYapHZ54t1w3PyTdV16T9hlv/hTYg
- 06FKSkHe6MsF5bDLfYcS0owVSfT/lgYH0wdilGd5O2Q/LtW29hnOB+HdmsnY97H4EHvS
- 6FnQ==
-X-Gm-Message-State: AOAM531sDZL9iQPscZSwENDV8ytOVd/xB9KLt1CgtoxtZZyVVz9rega4
- 6DEDTZBpQ8TWPwFnenwkL8hEJQ==
-X-Google-Smtp-Source: ABdhPJxo+t1TLHHi1OZRYJMnwd/WKQz+bnqZydSgYB9/egnda8r4P1VP3GSrFWZ7KhGsl+nW3aljHQ==
-X-Received: by 2002:a63:ed17:: with SMTP id d23mr22382992pgi.107.1624260313749; 
- Mon, 21 Jun 2021 00:25:13 -0700 (PDT)
+ bh=wE0EtFYsjB5vlJwRJRnVD3mRJGbikL6A/mq3nMXEQvo=;
+ b=Mf3t41qzrOL0dpWLU/aWhI7rl7b+RBKo7hMdm6VYy5yz5xNLlpfjXhXOLTltUKovWS
+ ENs+GEx9S6MWUo0nlU/uHSs2NcoCHijqagvIyLEg9QgQI0iF35nmao61+DchTIeixKuR
+ Ry6f+WEFMmeXP594Pv0C5/vikyBRW6DAE4ln4OX+5YLrwwdjNwqcBp8DDULkJch6ZOxj
+ P4gJ4QEtZZC8LcikUORWTr01+VRvlgas+1ewSmMucLSWz0ZgVhak9C0e5w3uSKo1lMFp
+ 8ab+6N2oorwtvwlIyWPyHzae0CvE1RHpt8wjSwBSZozV/vA+W1AI+9nX06zzKDpbe6Y4
+ vXwA==
+X-Gm-Message-State: AOAM533O1l2yk+b+30puHHhWudIEIv4kW4p1/yYqFnHUPjGsS1xV86VM
+ cNn5Nh0XNw7lMUI4d1KFwzQ+0Q==
+X-Google-Smtp-Source: ABdhPJzRHoAtTRbTlR5W+aeNHLX4JpicPLn++ox7Da1Q5l/obTH4wW4HwzGNFYk/GzMiTBnG3OWONg==
+X-Received: by 2002:a63:4915:: with SMTP id w21mr22619815pga.363.1624260320470; 
+ Mon, 21 Jun 2021 00:25:20 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c00a:a884:139:e97f:a55d:7f66])
  by smtp.gmail.com with ESMTPSA id
- 21sm13951294pfh.103.2021.06.21.00.25.08
+ 21sm13951294pfh.103.2021.06.21.00.25.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Jun 2021 00:25:13 -0700 (PDT)
+ Mon, 21 Jun 2021 00:25:20 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <s.hauer@pengutronix.de>, Tomasz Figa <t.figa@samsung.com>,
@@ -79,17 +79,18 @@ Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Francis Laniel <francis.laniel@amarulasolutions.com>,
  Matteo Lisi <matteo.lisi@engicam.com>,
  Milco Pratesi <milco.pratesi@engicam.com>,
- Jagan Teki <jagan@amarulasolutions.com>
-Subject: [RFC PATCH 5/9] soc: imx8mm: blk-ctl: Add MIPI DPHY reset enable
-Date: Mon, 21 Jun 2021 12:54:20 +0530
-Message-Id: <20210621072424.111733-6-jagan@amarulasolutions.com>
+ Jagan Teki <jagan@amarulasolutions.com>, Rob Herring <robh+dt@kernel.org>
+Subject: [RFC PATCH 6/9] arm64: dts: imx8mm: Add display mix blk ctl
+Date: Mon, 21 Jun 2021 12:54:21 +0530
+Message-Id: <20210621072424.111733-7-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20210621072424.111733-1-jagan@amarulasolutions.com>
 References: <20210621072424.111733-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210621_002514_683177_46C6745C 
-X-CRM114-Status: GOOD (  12.06  )
+X-CRM114-CacheID: sfid-20210621_002521_393619_F49EBE82 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,51 +107,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add MIPI DPHY reset enable pin in blk-ctl driver for i.MX8MM.
+Add display mix blk control node for i.MX8MM.
 
+Cc: Rob Herring <robh+dt@kernel.org>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/soc/imx/blk-ctl-imx8mm.c         | 4 ++++
- include/dt-bindings/power/imx8mm-power.h | 5 +++--
- 2 files changed, 7 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 26 +++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-diff --git a/drivers/soc/imx/blk-ctl-imx8mm.c b/drivers/soc/imx/blk-ctl-imx8mm.c
-index 5ca8d6c52917..a9d900754faf 100644
---- a/drivers/soc/imx/blk-ctl-imx8mm.c
-+++ b/drivers/soc/imx/blk-ctl-imx8mm.c
-@@ -25,6 +25,7 @@
- #define MEDIA_BLK_MIPI_CSI_I_PRESETN_SFT_EN			BIT(4)
- #define MEDIA_BLK_CAMERA_PIXEL_RESET_N_SFT_EN			BIT(3)
- #define MEDIA_BLK_CSI_BRIDGE_SFT_EN				GENMASK(2, 0)
-+#define MEDIA_BLK_GPR_MIPI_M_RESETN				BIT(17)
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 849dd0250ba9..fe5485ee9419 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -663,6 +663,20 @@ pgc_gpu: power-domain@5 {
+ 						resets = <&src IMX8MQ_RESET_GPU_RESET>;
+ 						power-domains = <&pgc_gpumix>;
+ 					};
++
++					pgc_dispmix: power-domain@10 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_DISPMIX>;
++						clocks = <&clk IMX8MM_CLK_DISP_ROOT>,
++							 <&clk IMX8MM_CLK_DISP_AXI_ROOT>,
++							 <&clk IMX8MM_CLK_DISP_APB_ROOT>;
++					};
++
++					pgc_mipi: power-domain@11 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_MIPI>;
++						power-domains = <&pgc_dispmix>;
++					};
+ 				};
+ 			};
+ 		};
+@@ -1016,6 +1030,18 @@ aips4: bus@32c00000 {
+ 			#size-cells = <1>;
+ 			ranges = <0x32c00000 0x32c00000 0x400000>;
  
- #define MEDIA_BLK_BUS_PD_MASK					BIT(12)
- #define MEDIA_BLK_MIPI_CSI_PD_MASK				GENMASK(11, 10)
-@@ -41,6 +42,9 @@ static struct imx_blk_ctl_hw imx8mm_dispmix_blk_ctl_pds[] = {
- 	IMX_BLK_CTL_PD("MIPI_DSI", "mipi", IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DSI, 0x4,
- 		       MEDIA_BLK_MIPI_DSI_PD_MASK, 0, MEDIA_BLK_MIPI_DSI_I_PRESETN_SFT_EN,
- 		       IMX_BLK_CTL_PD_RESET),
-+	IMX_BLK_CTL_PD("DPHY", "dphy", IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DPHY, 0x4,
-+		       MEDIA_BLK_MIPI_DSI_PD_MASK, 0x8, MEDIA_BLK_GPR_MIPI_M_RESETN,
-+		       IMX_BLK_CTL_PD_RESET),
- 	IMX_BLK_CTL_PD("MIPI_CSI", "mipi", IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_CSI, 0x4,
- 		       MEDIA_BLK_MIPI_CSI_PD_MASK, 0,
- 		       MEDIA_BLK_MIPI_CSI_I_PRESETN_SFT_EN | MEDIA_BLK_CAMERA_PIXEL_RESET_N_SFT_EN,
-diff --git a/include/dt-bindings/power/imx8mm-power.h b/include/dt-bindings/power/imx8mm-power.h
-index a10266befa9c..8becb123e191 100644
---- a/include/dt-bindings/power/imx8mm-power.h
-+++ b/include/dt-bindings/power/imx8mm-power.h
-@@ -27,7 +27,8 @@
- #define IMX8MM_BLK_CTL_PD_DISPMIX_CSI_BRIDGE	0
- #define IMX8MM_BLK_CTL_PD_DISPMIX_LCDIF		1
- #define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DSI	2
--#define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_CSI	3
--#define IMX8MM_BLK_CTL_PD_DISPMIX_MAX		4
-+#define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DPHY	3
-+#define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_CSI	4
-+#define IMX8MM_BLK_CTL_PD_DISPMIX_MAX		5
- 
- #endif
++			dispmix_blk_ctl: blk-ctl@32e28000 {
++				compatible = "fsl,imx8mm-dispmix-blk-ctl", "syscon";
++				reg = <0x32e28000 0x100>;
++				#power-domain-cells = <1>;
++				power-domains = <&pgc_dispmix>, <&pgc_mipi>;
++				power-domain-names = "dispmix", "mipi";
++				clocks = <&clk IMX8MM_CLK_DISP_ROOT>,
++					 <&clk IMX8MM_CLK_DISP_AXI_ROOT>,
++					 <&clk IMX8MM_CLK_DISP_APB_ROOT>;
++				clock-names = "disp", "axi", "apb";
++			};
++
+ 			usbotg1: usb@32e40000 {
+ 				compatible = "fsl,imx8mm-usb", "fsl,imx7d-usb";
+ 				reg = <0x32e40000 0x200>;
 -- 
 2.25.1
 
