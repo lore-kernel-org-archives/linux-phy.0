@@ -2,18 +2,18 @@ Return-Path: <SRS0=EqQx=LP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0D9B8C49361
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 06:18:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B695AC48BE5
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 06:33:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CE3266100B
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 06:18:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CE3266100B
+	by mail.kernel.org (Postfix) with ESMTPS id 874F461003
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 06:33:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 874F461003
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,48 +22,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=reirkeF8X2pYgclnJCPenZYN8fdr9WXHw59CT6f3yEg=; b=qkMXsQM75Fjqew
-	dRAFQqZ3IDVK5XequlZDIkIwDvlkPOsnCIagZ1vIDc+pUlVE8/YcrU5OE3Hh6USDiNCNCLPT9b+D9
-	Rw5xjb4dsksYUggOG2PNG8hR94lMLnZD/BrHKzDmGqBDI4QzNlrvQKkiIURJSx1Bgs422p7L3LriW
-	en54LdaxbDF9mnZk26dqW7EKomUqqf8N49HNK5BlL348F8Jh+kxSD8WDzqgddiMLaHQ3sEtvmMwo0
-	u6ogn3QQuAARoKoW+FlM4SHcC7wyTeQCX1i7aGmlh7XMN1qdclknu6WCQSeV4zDRnWtNDGBIbOtZV
-	P5paEnODt+NzRkewqxeg==;
+	List-Owner; bh=UMZDVUrVKNBZ0ujpfIaYqD7Osfdv39K0h1K5lrpm0ZE=; b=EIn6p1wynQet4U
+	6TsDscENZhVmvTpUUC8OGN+lyjTyrNS5Gu0DungftdOkA2/WdpAcg6JErWJ+Q6IO9841MIzRontXa
+	o1nT5utTmJW98Q4crTjjeVRrcw6U0F0+cXyEcDvnYkuyYoFl522WnQNxyGYTKw43/0f0JEaIEicFR
+	0Mv2yEYV77h+OEX6t85NRjuNREELue0EgkSc3avBFHLkSmx3p8AMqiszqXaxHOKg+o0keCN1FabNx
+	XGUg5zUSzB6u/MZ+7mL5vatMduGbXaXE4KDPkXszFuHIw9hqfde3rPk6kJCa8YsJOBGbUsmI3bTB1
+	LMtgvx62aBdcrfBmtDaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvDGR-002IGv-A1; Mon, 21 Jun 2021 06:18:31 +0000
+	id 1lvDUv-002KOY-0s; Mon, 21 Jun 2021 06:33:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvDGA-002IDI-Rn; Mon, 21 Jun 2021 06:18:17 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 877C76100B;
- Mon, 21 Jun 2021 06:18:13 +0000 (UTC)
+ id 1lvDUi-002KLq-DA; Mon, 21 Jun 2021 06:33:17 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id E3ADD61003;
+ Mon, 21 Jun 2021 06:33:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1624256294;
- bh=YFZygVbRLxrAS2J28Fh5EQZmQgGwcUaOw0GMfbFbMUI=;
+ s=k20201202; t=1624257195;
+ bh=4CHyizIg9hIDQpvR1sUF6YvkzCW5f0Mg81yRETpYfxM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=iqmDwOxrZLPQoYJ27yefzt4i0apxEJoiWDl6okQepYJuyM0oq1k2774163AhJOkNj
- 8TgJomOdjyk26J04eN6i16uJu2Mx/dhyh05IC0npJecRMjSDJek7JVHkuQ4nWMWdeX
- oYgac/cSufdvyDR6nvg9QpjaUKxYuOUtBtzGqgRHguqBpvYgv85cfuRxcMmCRCsaDa
- D6zhTII9kWmSxbxK3ZOhfyfkp0Kpo03ba0JPUYrkj/i50k7bQkf8ENcByZ9nNFP614
- znf44JUyZFdoY5jOmF1N3Ewy2xzAocWYDvDEwEIwTeA42W3U2CE9Xr5s0RtbfYWAyv
- wsJvUTexufetw==
-Date: Mon, 21 Jun 2021 11:48:10 +0530
+ b=Kkq/6Ie9xmSIeYZ0BVM7Kn12lEiK5wWTTUy2Odxg1XrCVA+Q+hve3E65qUukWEYUe
+ C8Dl6tQm6Rol0GPks9qonx7BJW/+0hqC5DdNEXmxJZ6AsGqeRwefPV/gX370AQemD3
+ 0uNSntOyUmMJiY8Sztli/cHhWZcb1Z1AfFmIB20chdT3s2wYxMr7ErNKHnPXqczFsH
+ HU2l7bp3nonEjEipvrdzq013S10bwUrXSagUO8w8CzNWXBpcYAEE5cCC/FhqIc/YSV
+ Vdl3DxaXC2mQpVvkpTDBGTsfFqKnf0Ig5T55bG9lQKL3etV57yzSjk3RV/HIerC2CX
+ tHIn22z54zpvg==
+Date: Mon, 21 Jun 2021 12:03:12 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: robh+dt@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
- kishon@ti.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/2] phy: amlogic: Add a new driver for the HDMI TX PHY
- on Meson8/8b/8m2
-Message-ID: <YNAvItt8BQH1QmQT@vkoul-mobl>
-References: <20210604190338.2248295-1-martin.blumenstingl@googlemail.com>
- <20210604190338.2248295-3-martin.blumenstingl@googlemail.com>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>
+Subject: Re: [PATCH] phy: uniphier-pcie: Fix updating phy parameters
+Message-ID: <YNAyqHH5PYSm9XMV@vkoul-mobl>
+References: <1623037842-19363-1-git-send-email-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210604190338.2248295-3-martin.blumenstingl@googlemail.com>
+In-Reply-To: <1623037842-19363-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210620_231814_955745_8B069FC3 
-X-CRM114-Status: GOOD (  14.70  )
+X-CRM114-CacheID: sfid-20210620_233316_506212_9C6D4D17 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,40 +79,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04-06-21, 21:03, Martin Blumenstingl wrote:
-> Amlogic Meson8/8b/8m2 have a built-in HDMI PHY in the HHI register
-> region. Unfortunately only few register bits are documented. For
-> HHI_HDMI_PHY_CNTL0 the magic numbers are taken from the 3.10 vendor
-> kernel.
+On 07-06-21, 12:50, Kunihiko Hayashi wrote:
+> The current driver uses a value from register TEST_O as the original
+> value for register TEST_I, though, the value is overwritten by "param",
+> so there is a bug that the original value isn't no longer used.
 > 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->  drivers/phy/amlogic/Kconfig              |  11 ++
->  drivers/phy/amlogic/Makefile             |   1 +
->  drivers/phy/amlogic/phy-meson8-hdmi-tx.c | 150 +++++++++++++++++++++++
->  3 files changed, 162 insertions(+)
->  create mode 100644 drivers/phy/amlogic/phy-meson8-hdmi-tx.c
-> 
-> diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-> index db5d0cd757e3..e6c3a2a8b769 100644
-> --- a/drivers/phy/amlogic/Kconfig
-> +++ b/drivers/phy/amlogic/Kconfig
-> @@ -2,6 +2,17 @@
->  #
->  # Phy drivers for Amlogic platforms
->  #
-> +config PHY_MESON8_HDMI_TX
-> +	tristate "Meson8, Meson8b and Meson8m2 HDMI TX PHY driver"
-> +	default ARCH_MESON
-> +	depends on (ARCH_MESON && ARM) || COMPILE_TEST
+> The value of TEST_O[7:0] should be masked with "mask", replaced with
+> "param", and placed in the bitfield TESTI_DAT_MASK as new TEST_I value.
 
-depends on ARM seems redundant..
+Applied, thanks
 
-> + * Meson8, Meson8b and Meson8m2 HDMI TX PHY.
-> + *
-> + * Copyright (C) 2020 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-
-2021..
 -- 
 ~Vinod
 
