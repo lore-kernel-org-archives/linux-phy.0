@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 02E03C48BE5
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:26:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5B78FC48BE5
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:27:00 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B8EAF60FDA
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:26:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B8EAF60FDA
+	by mail.kernel.org (Postfix) with ESMTPS id 1D93760FDA
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 07:27:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1D93760FDA
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=amarulasolutions.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,51 +23,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ez95EYPnacuUc9eOu4FKHzJjUYI/WKPiN+BMak8hQlQ=; b=IYKgTkypjnmQi6
-	Yndfq4bXj/an5VZGvCRsH+eHU7u6AOIeXsyhB+SEbecFn9dFotRrXSoIlcPyfQ+MhTxJbBN81fky4
-	ErFEcg0THEj2MGkYcuw61tJQjuDRRPeP7Kw2wLfGsdwERE4xbtadOtpnSGvTWss5NCyqVy0SI7SlZ
-	Tho90kaOYxxZMWtzPxy9T4qsORdnP3TVm36U0IbRCjntEnuN2qbl4raPnFfnioPsAe41r09Y9LQue
-	DyaajdFBwGHD3AKwxfR/2DBagbfxqhNR45ngHsTdIaHSVFm3YW+AUQpGHOWnNyuGp2RxCGcO2E9oY
-	wfsWjD7V3VLj/dDm+uOg==;
+	List-Owner; bh=QCldmf36tEYgd7OG2lp7RVpw00/b/g+kuS+poZ3jK1s=; b=GI9CiJgU5i/8ok
+	/nua/RNjyHYZxUD6dgXCatxWCWAY65OQDzEMgTMZ/DYE3zf/kAIx5YVTq9w3FXijY13oeICmmcFzx
+	H5r2rigcL6ycOOolyXQkzCegfMgvhtpYS8SmWTm2rhJn64ZOtt2gXHViuqvQzYdRYiXL+z/7jq086
+	Ub0dqcut35OqTLH6v9qsK2NVkLEuE6c8QoaNTX28aWElm3JK485NO2Xv9OP6uUncfkrB5k9cYOSft
+	Ai5M6MrRLmZNjGO5glnIzovuddXUoc/QD58HO/10kUppRaooBpzDr7zChbgMyGrBgHge2u0NybH6Z
+	es5bCzHrN7tymwnvd0/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvEKH-002UVL-8M; Mon, 21 Jun 2021 07:26:33 +0000
-Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
+	id 1lvEKh-002Ufz-CF; Mon, 21 Jun 2021 07:26:59 +0000
+Received: from mail-pf1-x435.google.com ([2607:f8b0:4864:20::435])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvEIu-002Tsf-Q2
- for linux-phy@lists.infradead.org; Mon, 21 Jun 2021 07:25:13 +0000
-Received: by mail-pl1-x636.google.com with SMTP id x22so6504452pll.11
- for <linux-phy@lists.infradead.org>; Mon, 21 Jun 2021 00:25:08 -0700 (PDT)
+ id 1lvEJ0-002TvI-JA
+ for linux-phy@lists.infradead.org; Mon, 21 Jun 2021 07:25:16 +0000
+Received: by mail-pf1-x435.google.com with SMTP id w71so2922014pfd.4
+ for <linux-phy@lists.infradead.org>; Mon, 21 Jun 2021 00:25:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Lup727rZLbGr3vyVlbClHGUKHLX9fxH8BjtfQEfB8/4=;
- b=aMmsv68lVfYZR82zX+vhWtVfOZjjn/TBWHf4EnveoeT12AUEmHOzYzB/QM6hBDz/FN
- QFCga/+I7XcFJXk8TxJgqeD7DUKO93LTm6xuMyHjfojLMXoZQhvEmGeCVmUTEj09PZzk
- BN4kGoNiKB8ivLG5XzJfJB+xZ52aIAR4AMD/8=
+ bh=/pGjb2AmXz+lBmXRvuYK+0My7OEKqfzWIwfNjkS45hA=;
+ b=B9B52vgxd/J4eTdK7UlVsZJ7csp6Wy5F6P2A20Mfw0H1RRWpOrSZaJTujs3hnlfzCz
+ lquOWxd8ZvszDgJBt5LkR7OIgGAYPjCdylfqn/O2NYN4AtmxpZNGZJgy/JPcPkMTY5hX
+ nywtvsNF2KIYxRwwwQnWW7ejXPXt/r/tOk/hU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Lup727rZLbGr3vyVlbClHGUKHLX9fxH8BjtfQEfB8/4=;
- b=Ku6s7C97S4WTEubibg5nJCRhghG+qlQN65CohvLAoqLCFW/fBffZHgpiSTgr6Fa4XF
- 3WqNKSgVdGpDvDbzFYSTbOz9ROeLICMDk42vtGXqCgQ8jzCOex+vvu8x1p2rDF204sVC
- CwvMpfzM2cJ9i2BiNb4jxsY8hjjPlcjAOvbJilcgUgxH5u+XF6fSFC66I8MAxTZXmMXA
- JWKd46CqnmakpcD8elANXv06m4K+iazkQYIgbgq1mwxYIhiHTW5gIiTRwNT3zS7IHsCu
- 2Q2S4XEm/FLOPmGK2uy2UMA4b0qyXCX/iL85CO/vzPg61UEVGK1rbFAmRw5l1KQjI1kC
- KPdA==
-X-Gm-Message-State: AOAM5303GnpfsbJmiZmHIFiwCcfqtLKI+tnuwZ9F2YIWVJsc2msRbdJu
- p5gYMZezEB7kE/jRJFkQErp42A==
-X-Google-Smtp-Source: ABdhPJzifgqvkvEs04pUMLDheJAy9L6rtD13FLwnanqcAZd8AIuPsznijFvjfR+DvvUqFmz+nLFIbg==
-X-Received: by 2002:a17:902:d48b:b029:122:d1b9:7e5a with SMTP id
- c11-20020a170902d48bb0290122d1b97e5amr9985842plg.47.1624260307627; 
- Mon, 21 Jun 2021 00:25:07 -0700 (PDT)
+ bh=/pGjb2AmXz+lBmXRvuYK+0My7OEKqfzWIwfNjkS45hA=;
+ b=Wfk31bSMsSRz2w4IAHh0ZIyCBAKIMrDlWLSnZsLSxtqyREZN1d55ztkb9hII+4xeHp
+ h9oy2I1lyV/m45o1nuIXki/P1paJKh8NJxzTj4A73zWsVMPIfl6K+CCHYJ78S92vrUVt
+ UN1gDpaWDz6aF3aKzA+rPKdr6aE9Upw7Nxx90uK5zP4d2cgnxsv6de4OhgacXJi+uAsu
+ Pcrh24jW/vXI9IuL2Kik5OpiuGDXjprp8sf6Q0rBYapHZ54t1w3PyTdV16T9hlv/hTYg
+ 06FKSkHe6MsF5bDLfYcS0owVSfT/lgYH0wdilGd5O2Q/LtW29hnOB+HdmsnY97H4EHvS
+ 6FnQ==
+X-Gm-Message-State: AOAM531sDZL9iQPscZSwENDV8ytOVd/xB9KLt1CgtoxtZZyVVz9rega4
+ 6DEDTZBpQ8TWPwFnenwkL8hEJQ==
+X-Google-Smtp-Source: ABdhPJxo+t1TLHHi1OZRYJMnwd/WKQz+bnqZydSgYB9/egnda8r4P1VP3GSrFWZ7KhGsl+nW3aljHQ==
+X-Received: by 2002:a63:ed17:: with SMTP id d23mr22382992pgi.107.1624260313749; 
+ Mon, 21 Jun 2021 00:25:13 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c00a:a884:139:e97f:a55d:7f66])
  by smtp.gmail.com with ESMTPSA id
- 21sm13951294pfh.103.2021.06.21.00.25.01
+ 21sm13951294pfh.103.2021.06.21.00.25.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Jun 2021 00:25:07 -0700 (PDT)
+ Mon, 21 Jun 2021 00:25:13 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <s.hauer@pengutronix.de>, Tomasz Figa <t.figa@samsung.com>,
@@ -80,18 +79,17 @@ Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Francis Laniel <francis.laniel@amarulasolutions.com>,
  Matteo Lisi <matteo.lisi@engicam.com>,
  Milco Pratesi <milco.pratesi@engicam.com>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Subject: [RFC PATCH 4/9] phy: samsung: Add SEC DSIM DPHY driver
-Date: Mon, 21 Jun 2021 12:54:19 +0530
-Message-Id: <20210621072424.111733-5-jagan@amarulasolutions.com>
+ Jagan Teki <jagan@amarulasolutions.com>
+Subject: [RFC PATCH 5/9] soc: imx8mm: blk-ctl: Add MIPI DPHY reset enable
+Date: Mon, 21 Jun 2021 12:54:20 +0530
+Message-Id: <20210621072424.111733-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20210621072424.111733-1-jagan@amarulasolutions.com>
 References: <20210621072424.111733-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210621_002508_905993_5F865817 
-X-CRM114-Status: GOOD (  22.81  )
+X-CRM114-CacheID: sfid-20210621_002514_683177_46C6745C 
+X-CRM114-Status: GOOD (  12.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,290 +106,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Samsung SEC MIPI DSIM DPHY controller is part of registers
-available in SEC MIPI DSIM bridge for NXP's i.MX8M Mini and
-Nano Processors.
+Add MIPI DPHY reset enable pin in blk-ctl driver for i.MX8MM.
 
-Add phy driver for it.
-
-Cc: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/phy/samsung/Kconfig             |   9 +
- drivers/phy/samsung/Makefile            |   1 +
- drivers/phy/samsung/phy-sec-dsim-dphy.c | 236 ++++++++++++++++++++++++
- 3 files changed, 246 insertions(+)
- create mode 100644 drivers/phy/samsung/phy-sec-dsim-dphy.c
+ drivers/soc/imx/blk-ctl-imx8mm.c         | 4 ++++
+ include/dt-bindings/power/imx8mm-power.h | 5 +++--
+ 2 files changed, 7 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
-index e20d2fcc9fe7..e80d40d1278c 100644
---- a/drivers/phy/samsung/Kconfig
-+++ b/drivers/phy/samsung/Kconfig
-@@ -103,3 +103,12 @@ config PHY_EXYNOS5250_SATA
- 	  Exynos5250 based SoCs.This SerDes/Phy supports SATA 1.5 Gb/s,
- 	  SATA 3.0 Gb/s, SATA 6.0 Gb/s speeds. It supports one SATA host
- 	  port to accept one SATA device.
-+
-+config PHY_SEC_DSIM_DPHY
-+	tristate "Samsung SEC MIPI DSIM DPHY driver"
-+	depends on OF && HAS_IOMEM
-+	select GENERIC_PHY
-+	select REGMAP_MMIO
-+	help
-+          Enable this to add support for the SEC MIPI DSIM DPHY as found
-+          on NXP's i.MX8M Mini and Nano family of SOCs.
-diff --git a/drivers/phy/samsung/Makefile b/drivers/phy/samsung/Makefile
-index 3959100fe8a2..4d46c7ec0072 100644
---- a/drivers/phy/samsung/Makefile
-+++ b/drivers/phy/samsung/Makefile
-@@ -11,3 +11,4 @@ phy-exynos-usb2-$(CONFIG_PHY_EXYNOS5250_USB2)	+= phy-exynos5250-usb2.o
- phy-exynos-usb2-$(CONFIG_PHY_S5PV210_USB2)	+= phy-s5pv210-usb2.o
- obj-$(CONFIG_PHY_EXYNOS5_USBDRD)	+= phy-exynos5-usbdrd.o
- obj-$(CONFIG_PHY_EXYNOS5250_SATA)	+= phy-exynos5250-sata.o
-+obj-$(CONFIG_PHY_SEC_DSIM_DPHY)		+= phy-sec-dsim-dphy.o
-diff --git a/drivers/phy/samsung/phy-sec-dsim-dphy.c b/drivers/phy/samsung/phy-sec-dsim-dphy.c
-new file mode 100644
-index 000000000000..31de4a774b5f
---- /dev/null
-+++ b/drivers/phy/samsung/phy-sec-dsim-dphy.c
-@@ -0,0 +1,236 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2018 NXP
-+ * Copyright (C) 2021 Amarula Solutions(India)
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/clk-provider.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_platform.h>
-+#include <linux/phy/phy.h>
-+#include <linux/regmap.h>
-+
-+#define DSI_PHYCTRL_B1			0x00
-+#define DSI_PHYCTRL_B2			0x04
-+#define DSI_PHYCTRL_M1			0x08
-+#define DSI_PHYCTRL_M2			0x0c
-+#define DSI_PHYTIMING			0x10
-+#define DSI_PHYTIMING1			0x14
-+#define DSI_PHYTIMING2			0x18
-+
-+/* phytiming */
-+#define M_TLPXCTL_MASK			GENMASK(15, 8)
-+#define M_TLPXCTL(x)			FIELD_PREP(M_TLPXCTL_MASK, (x))
-+#define M_THSEXITCTL_MASK		GENMASK(7, 0)
-+#define M_THSEXITCTL(x)			FIELD_PREP(M_THSEXITCTL_MASK, (x))
-+
-+/* phytiming1 */
-+#define M_TCLKPRPRCTL_MASK		GENMASK(31, 24)
-+#define M_TCLKPRPRCTL(x)		FIELD_PREP(M_TCLKPRPRCTL_MASK, (x))
-+#define M_TCLKZEROCTL_MASK		GENMASK(23, 16)
-+#define M_TCLKZEROCTL(x)		FIELD_PREP(M_TCLKZEROCTL_MASK, (x))
-+#define M_TCLKPOSTCTL_MASK		GENMASK(15, 8)
-+#define M_TCLKPOSTCTL(x)		FIELD_PREP(M_TCLKPOSTCTL_MASK, (x))
-+#define M_TCLKTRAILCTL_MASK		GENMASK(7, 0)
-+#define M_TCLKTRAILCTL(x)		FIELD_PREP(M_TCLKTRAILCTL_MASK, (x))
-+
-+/* phytiming2 */
-+#define M_THSPRPRCTL_MASK		GENMASK(23, 16)
-+#define M_THSPRPRCTL(x)			FIELD_PREP(M_THSPRPRCTL_MASK, (x))
-+#define M_THSZEROCTL_MASK		GENMASK(15, 8)
-+#define M_THSZEROCTL(x)			FIELD_PREP(M_THSZEROCTL_MASK, (x))
-+#define M_THSTRAILCTL_MASK		GENMASK(7, 0)
-+#define M_THSTRAILCTL(x)		FIELD_PREP(M_THSTRAILCTL_MASK, (x))
-+
-+struct dsim_dphy_plat_data {
-+	unsigned int m_tlpxctl;
-+	unsigned int m_thsexitctl;
-+	unsigned int m_tclkprprctl;
-+	unsigned int m_tclkzeroctl;
-+	unsigned int m_tclkpostctl;
-+	unsigned int m_tclktrailctl;
-+	unsigned int m_thsprprctl;
-+	unsigned int m_thszeroctl;
-+	unsigned int m_thstrailctl;
-+};
-+
-+struct dsim_dphy {
-+	struct regmap *regmap;
-+	struct clk *phy_ref_clk;
-+	const struct dsim_dphy_plat_data *pdata;
-+};
-+
-+static const struct regmap_config dsim_dphy_regmap_config = {
-+	.reg_bits = 8,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+	.max_register = DSI_PHYTIMING2,
-+	.name = "mipi-dphy",
-+};
-+
-+static int dsim_dphy_init(struct phy *phy)
-+{
-+	struct dsim_dphy *dphy = phy_get_drvdata(phy);
-+	const struct dsim_dphy_plat_data *pdata = dphy->pdata;
-+	u32 reg;
-+
-+	/* phytiming */
-+	regmap_read(dphy->regmap, DSI_PHYTIMING, &reg);
-+
-+	reg &= ~M_TLPXCTL_MASK;
-+	reg |= M_TLPXCTL(pdata->m_tlpxctl);
-+	reg &= ~M_THSEXITCTL_MASK;
-+	reg |= M_THSEXITCTL(pdata->m_thsexitctl);
-+	regmap_write(dphy->regmap, DSI_PHYTIMING, reg);
-+
-+	/* phytiming1 */
-+	regmap_read(dphy->regmap, DSI_PHYTIMING1, &reg);
-+
-+	reg &= ~M_TCLKPRPRCTL_MASK;
-+	reg |= M_TCLKPRPRCTL(pdata->m_tclkprprctl);
-+	reg &= ~M_TCLKZEROCTL_MASK;
-+	reg |= M_TCLKZEROCTL(pdata->m_tclkzeroctl);
-+	reg &= ~M_TCLKPOSTCTL_MASK;
-+	reg |= M_TCLKPOSTCTL(pdata->m_tclkpostctl);
-+	reg &= ~M_TCLKTRAILCTL_MASK;
-+	reg |= M_TCLKTRAILCTL(pdata->m_tclktrailctl);
-+	regmap_write(dphy->regmap, DSI_PHYTIMING1, reg);
-+
-+	/* phytiming2 */
-+	regmap_read(dphy->regmap, DSI_PHYTIMING2, &reg);
-+
-+	reg &= ~M_THSPRPRCTL_MASK;
-+	reg |= M_THSPRPRCTL(pdata->m_thsprprctl);
-+	reg &= ~M_THSZEROCTL_MASK;
-+	reg |= M_THSZEROCTL(pdata->m_thszeroctl);
-+	reg &= ~M_THSTRAILCTL_MASK;
-+	reg |= M_THSTRAILCTL(pdata->m_thstrailctl);
-+	regmap_write(dphy->regmap, DSI_PHYTIMING2, reg);
-+
-+	return 0;
-+}
-+
-+static int dsim_dphy_exit(struct phy *phy)
-+{
-+	return 0;
-+}
-+
-+static int dsim_dphy_power_on(struct phy *phy)
-+{
-+	struct dsim_dphy *dphy = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = clk_prepare_enable(dphy->phy_ref_clk);
-+	if (ret < 0)
-+		return ret;
-+
-+	return ret;
-+}
-+
-+static int dsim_dphy_power_off(struct phy *phy)
-+{
-+	struct dsim_dphy *dphy = phy_get_drvdata(phy);
-+
-+	clk_disable_unprepare(dphy->phy_ref_clk);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops dsim_dphy_phy_ops = {
-+	.init = dsim_dphy_init,
-+	.exit = dsim_dphy_exit,
-+	.power_on = dsim_dphy_power_on,
-+	.power_off = dsim_dphy_power_off,
-+	.owner = THIS_MODULE,
-+};
-+
-+static const struct dsim_dphy_plat_data imx8mm_dphy_plat_data = {
-+	/* phytiming */
-+	.m_tlpxctl	= 0x06,
-+	.m_thsexitctl	= 0x0b,
-+	/* phytiming1 */
-+	.m_tclkprprctl	= 0x07,
-+	.m_tclkzeroctl	= 0x26,
-+	.m_tclkpostctl	= 0x0d,
-+	.m_tclktrailctl	= 0x08,
-+	/* phytimings2 */
-+	.m_thsprprctl	= 0x08,
-+	.m_thszeroctl	= 0x0d,
-+	.m_thstrailctl	= 0x0b,
-+};
-+
-+static const struct of_device_id dsim_dphy_of_match[] = {
-+	{
-+		.compatible = "fsl,imx8mm-sec-dsim-dphy",
-+		.data = &imx8mm_dphy_plat_data,
-+	},
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, dsim_dphy_of_match);
-+
-+static int dsim_dphy_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	struct phy_provider *phy_provider;
-+	struct dsim_dphy *dphy;
-+	struct phy *phy;
-+	void __iomem *base;
-+
-+	if (!np)
-+		return -ENODEV;
-+
-+	dphy = devm_kzalloc(dev, sizeof(*dphy), GFP_KERNEL);
-+	if (!dphy)
-+		return -ENOMEM;
-+
-+	dphy->pdata = of_device_get_match_data(&pdev->dev);
-+	if (!dphy->pdata)
-+		return -EINVAL;
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	dphy->regmap = devm_regmap_init_mmio(&pdev->dev, base,
-+					     &dsim_dphy_regmap_config);
-+	if (IS_ERR(dphy->regmap)) {
-+		dev_err(dev, "failed create the DPHY regmap\n");
-+		return PTR_ERR(dphy->regmap);
-+	}
-+
-+	dphy->phy_ref_clk = devm_clk_get(&pdev->dev, "phy_ref");
-+	if (IS_ERR(dphy->phy_ref_clk)) {
-+		dev_err(dev, "failed to get phy_ref clock\n");
-+		return PTR_ERR(dphy->phy_ref_clk);
-+	}
-+
-+	dev_set_drvdata(dev, dphy);
-+
-+	phy = devm_phy_create(dev, np, &dsim_dphy_phy_ops);
-+	if (IS_ERR(phy)) {
-+		dev_err(dev, "failed to create phy %ld\n", PTR_ERR(phy));
-+		return PTR_ERR(phy);
-+	}
-+	phy_set_drvdata(phy, dphy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static struct platform_driver dsim_dphy_driver = {
-+	.probe	= dsim_dphy_probe,
-+	.driver = {
-+		.name = "sec-dsim-dphy",
-+		.of_match_table	= dsim_dphy_of_match,
-+	}
-+};
-+module_platform_driver(dsim_dphy_driver);
-+
-+MODULE_AUTHOR("Jagan Teki <jagan@amarulasolutions.com>");
-+MODULE_DESCRIPTION("Samsung SEC MIPI DSIM DPHY driver");
-+MODULE_LICENSE("GPL");
+diff --git a/drivers/soc/imx/blk-ctl-imx8mm.c b/drivers/soc/imx/blk-ctl-imx8mm.c
+index 5ca8d6c52917..a9d900754faf 100644
+--- a/drivers/soc/imx/blk-ctl-imx8mm.c
++++ b/drivers/soc/imx/blk-ctl-imx8mm.c
+@@ -25,6 +25,7 @@
+ #define MEDIA_BLK_MIPI_CSI_I_PRESETN_SFT_EN			BIT(4)
+ #define MEDIA_BLK_CAMERA_PIXEL_RESET_N_SFT_EN			BIT(3)
+ #define MEDIA_BLK_CSI_BRIDGE_SFT_EN				GENMASK(2, 0)
++#define MEDIA_BLK_GPR_MIPI_M_RESETN				BIT(17)
+ 
+ #define MEDIA_BLK_BUS_PD_MASK					BIT(12)
+ #define MEDIA_BLK_MIPI_CSI_PD_MASK				GENMASK(11, 10)
+@@ -41,6 +42,9 @@ static struct imx_blk_ctl_hw imx8mm_dispmix_blk_ctl_pds[] = {
+ 	IMX_BLK_CTL_PD("MIPI_DSI", "mipi", IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DSI, 0x4,
+ 		       MEDIA_BLK_MIPI_DSI_PD_MASK, 0, MEDIA_BLK_MIPI_DSI_I_PRESETN_SFT_EN,
+ 		       IMX_BLK_CTL_PD_RESET),
++	IMX_BLK_CTL_PD("DPHY", "dphy", IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DPHY, 0x4,
++		       MEDIA_BLK_MIPI_DSI_PD_MASK, 0x8, MEDIA_BLK_GPR_MIPI_M_RESETN,
++		       IMX_BLK_CTL_PD_RESET),
+ 	IMX_BLK_CTL_PD("MIPI_CSI", "mipi", IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_CSI, 0x4,
+ 		       MEDIA_BLK_MIPI_CSI_PD_MASK, 0,
+ 		       MEDIA_BLK_MIPI_CSI_I_PRESETN_SFT_EN | MEDIA_BLK_CAMERA_PIXEL_RESET_N_SFT_EN,
+diff --git a/include/dt-bindings/power/imx8mm-power.h b/include/dt-bindings/power/imx8mm-power.h
+index a10266befa9c..8becb123e191 100644
+--- a/include/dt-bindings/power/imx8mm-power.h
++++ b/include/dt-bindings/power/imx8mm-power.h
+@@ -27,7 +27,8 @@
+ #define IMX8MM_BLK_CTL_PD_DISPMIX_CSI_BRIDGE	0
+ #define IMX8MM_BLK_CTL_PD_DISPMIX_LCDIF		1
+ #define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DSI	2
+-#define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_CSI	3
+-#define IMX8MM_BLK_CTL_PD_DISPMIX_MAX		4
++#define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_DPHY	3
++#define IMX8MM_BLK_CTL_PD_DISPMIX_MIPI_CSI	4
++#define IMX8MM_BLK_CTL_PD_DISPMIX_MAX		5
+ 
+ #endif
 -- 
 2.25.1
 
