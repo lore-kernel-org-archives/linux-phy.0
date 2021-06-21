@@ -2,18 +2,18 @@ Return-Path: <SRS0=EqQx=LP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4B54FC48BE5
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 03:53:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8A57CC48BE5
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 04:01:48 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1B42C6113C
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 03:53:07 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1B42C6113C
+	by mail.kernel.org (Postfix) with ESMTPS id 50BA56109E
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jun 2021 04:01:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 50BA56109E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,48 +22,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KG6mfZpjX/lf1uarfV0m3xz/vTX63JBH/yuwuDgV5RI=; b=hXEJRCXDb48xGp
-	h5DVsb8sJSqUpXYsv67uDBfTzu+RfuS05EbHTUFhBAujy/NkYUvbbW/YcZUX/QUZyJ/pIyoVRr5h8
-	dwZW4lzVrW+Pu4RKBVu30nvAo91Kh26Z3QFk5Gj0qSK04i8evPGyMYWcmXLt+TbccmH5W2wVUxGSO
-	nZyelfuYrGFkA94sNLImILLdSWOAbAw7zKM8NEVVmbe098Rp9Pxa3aO/R/Q61+fp80qA6U550O10+
-	Hm4CxcqFHd9Z+CASGJ70E1QQnyq2+tVhWGIHNMZ/j4Xem+RgglWj/MqEBUGIVF3FcXcz0Zrm7M8K5
-	M37lQlzPUaEhpLuQGn8w==;
+	List-Owner; bh=YFgRjMdQvmXJnqR7+QPpaCMx3025QnBnU0Ss4MBr22k=; b=psqj6FkZPbwZpr
+	2PRIgfMLnSduox1iYbqZ6tEIGX3tdbQinvq7fD8ZnupUAc9rr1e20qD09CdMTWLqofEFDd4h54/PE
+	SeSTYWYNW632CcZYXcYS64PNIETKM4lozpRRES+n/tl79Pb99h+TM44cIgb4CO8yNkw+xoeh+nSWn
+	g3UqfXQ9z1iA4lnCM5ofabXP6uUooLrjve+4585tH9Bp11v2EaP8l1U9INH3SwuwEQ/rdcbq38ZYh
+	BUJAMXC5WVjxOuZYvQ2doID1XZOQnEYX0/iNuYtbwBJ41xqv5f1QYrqnmidD6A65y0BoTZUgjfyNN
+	Cd6iqaC9Z477/suYIJEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvAzi-0020LQ-KH; Mon, 21 Jun 2021 03:53:06 +0000
+	id 1lvB87-0021BF-P9; Mon, 21 Jun 2021 04:01:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvAzV-0020JI-ML; Mon, 21 Jun 2021 03:52:54 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id DBEFD60725;
- Mon, 21 Jun 2021 03:52:51 +0000 (UTC)
+ id 1lvB85-0021As-3C
+ for linux-phy@lists.infradead.org; Mon, 21 Jun 2021 04:01:46 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id D002F61009;
+ Mon, 21 Jun 2021 04:01:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1624247572;
- bh=RJf49uRgzXxA9bjN6VYQdbbDHBJXNIssYY4EJQsK6O4=;
+ s=k20201202; t=1624248104;
+ bh=MGtK5Q8aQv5cOmJha8F0EMM1SwE+xd03W08dLK11hDA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=nz+Xa9/ERTZcal8bRaRv9umf0lBsqYqUAybFBy7UOv5btP0iHDxX8OOsd4VRWbjIi
- AOCEnQCEvj5h2TrB4eL8VO+Q2ceb5bpCKE5YtUPhLBxsMCTY6Gp/9AL26ITmHKln6a
- w3GcvmZHU5M4VQPt/sB5ebpfo6izjsPvPDklJHWjq89vUlY6meby8IjAKlZiLFAxfu
- uYs6+blZjXHk42yr8+Y4pYjVWwGwZz4b0xJlQc5vor6TtoNwrQwGdWmcRNMEPrPJG+
- lCl9Chy7i92vfEkryVfmZH3cG4il5oUcUltfM4ginG5fE7lbgWJ8AJqAKbs6PNlyfw
- 9gkaUH1u+XH+w==
-Date: Mon, 21 Jun 2021 09:22:46 +0530
+ b=Ljax6mjU1oYqOyJmlUcirdeeFHbfv87ldbj0CKVpgzQ73BGgWo1skBfF5azmiJOpK
+ sfLPnhMnxAYIsoNQC8/YINANqKAnENw1yREWwbbk7JpaQb7qwJJEln8XMKjDfO96pC
+ bNamfH/PKNSN9/Fke6YgGXlOozM2hcVi3JaPp8Op+uWWvNH6Hpm4XcTl/tzQlUVmjh
+ 6ZFQ7AdZZSkNKOHUhi7LQXD1wMQ3ha7ymcS8lHeYOv4OlAAK6Ey115a1x35zf1nJes
+ 18De9b4YecvVWDwNdVQf9iEQV6YlPzkaoob/1Uz9A7q9WHibveaHJEt505LWIpgBsO
+ Qp8Hfftrvfxow==
+Date: Mon, 21 Jun 2021 09:31:41 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Colin King <colin.king@canonical.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: rockchip: remove redundant initialization of
- pointer cfg
-Message-ID: <YNANDuQgtahNHxiG@vkoul-mobl>
-References: <20210609113901.185230-1-colin.king@canonical.com>
+To: Biju Das <biju.das.jz@bp.renesas.com>, Rob Herring <robh+dt@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Chris Paterson <Chris.Paterson2@renesas.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH 1/6] dt-bindings: phy: renesas: Document RZ/G2L USB PHY
+ Control bindings
+Message-ID: <YNAPJZ2nUB7rp0FU@vkoul-mobl>
+References: <20210611134642.24029-1-biju.das.jz@bp.renesas.com>
+ <20210611134642.24029-2-biju.das.jz@bp.renesas.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210609113901.185230-1-colin.king@canonical.com>
+In-Reply-To: <20210611134642.24029-2-biju.das.jz@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210620_205253_790953_E3D7CD92 
-X-CRM114-Status: UNSURE (   7.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210620_210145_222252_E4E29427 
+X-CRM114-Status: GOOD (  13.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,14 +83,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09-06-21, 12:39, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
-> 
-> The pointer cfg is being initialized with a value that is never read and
-> it is being updated later with a new value. The initialization is
-> redundant and can be removed.
+On 11-06-21, 14:46, Biju Das wrote:
+> Add device tree binding document for RZ/G2L USB PHY control driver.
 
-Applied, thanks
+Rob ?
+
+> 
+> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+> Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  .../phy/renesas,rzg2l-usbphyctrl.yaml         | 50 +++++++++++++++++++
+>  1 file changed, 50 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
+> new file mode 100644
+> index 000000000000..5fd316a2e79e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
+> @@ -0,0 +1,50 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/renesas,rzg2l-usbphyctrl.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Renesas RZ/G2L USB2.0 PHY Control
+> +
+> +maintainers:
+> +  - Biju Das <biju.das.jz@bp.renesas.com>
+> +
+> +description:
+> +  The RZ/G2L USB2.0 PHY Control mainly controls reset and power down of the
+> +  USB/PHY.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - renesas,r9a07g044-usbphyctrl # RZ/G2{L,LC}
+> +      - const: renesas,rzg2l-usbphyctrl
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  '#phy-cells':
+> +    # see phy-bindings.txt in the same directory
+> +    const: 1
+> +    description: |
+> +      The phandle's argument in the PHY specifier is the phy reset control bit
+> +      of usb phy control.
+> +      0 = Port 1 Phy reset
+> +      1 = Port 2 Phy reset
+> +    enum: [ 0, 1 ]
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - '#phy-cells'
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    usbphyctrl@11c40000 {
+> +        compatible = "renesas,r9a07g044-usbphyctrl",
+> +                     "renesas,rzg2l-usbphyctrl";
+> +        reg = <0x11c40000 0x10000>;
+> +        #phy-cells = <1>;
+> +    };
+> -- 
+> 2.17.1
 
 -- 
 ~Vinod
