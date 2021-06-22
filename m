@@ -2,86 +2,86 @@ Return-Path: <SRS0=dFK9=LQ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-10.7 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4A7DAC49EA2
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 16:59:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 595DCC48BE5
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 19:57:45 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 146AD61369
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 16:59:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 146AD61369
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 040EB610C7
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 19:57:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 040EB610C7
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gBHkM/obMlR1EF1fi1fEdtxaXQBtEuC3IUYBjxQ2ImY=; b=iwwWSnYyfzaHWA
-	DamZISJBS+wSfF2XlPS29mxcAJ3oU45QTaP+pBW+07rYFOKQBvraxR3vJn5oUlq4S1Ig63DCuPKeZ
-	YgmpHTUR9808XViWItULIscpOhBfaSHxPWQSmvrd5CTSnsWtRnG1uxLeA1cyaFlPMiy+5gL4VuXey
-	m8yc3c4rqI0W63vtZQp5lSqbNCE/fQ4cm9x8vgAXVbeO5ujMNA4L4T7cn+JHzcrt8InN7zg2tmohr
-	0bbuPoTfi+CF5KQWoyvrYDKNLMEWAJa9PUi1pMDEym0rU2EF6r4kgXHPM6h+vjoSlM8p4Pg/XLn7C
-	h5NTd8sYdQPVYWcoZYHA==;
+	List-Owner; bh=drnpGNRYSCzHRhGbzFG9o9rIhfGCTJ/R/CTSyLyZQ5s=; b=iYwUExGdWeRMVT
+	NtXRcMmJt2YWNos3ugySw1nVP3zn4qO3FgwnE97sojG3sKAhlt1Td/Bj6Rt3zcm9xu3keerP/BYJj
+	rti961yNYbVvUSvNKC8glnqXKPWUNtaVm8P6Bz6H8uOclbDVIDQqbGVNeD2ElOK3VVm16yr8lYFYE
+	qeFWhYH1vyTfLM8el9dfBXQKYLO/kUz7kMWOOoEA1ydeIwwfi13flc6gMx9qqPAM5w97VpVH0ZF+Y
+	xqcgYL58p6W53V/L8+DdVUoiX9dPxQB+Ud2TgWoF8HVG7d4rPrho/QfRXhR5r9Dd5zI8uDCIAS1B6
+	DhizKbLFkpVkBJ55m+tQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvjjo-007yzt-Ii; Tue, 22 Jun 2021 16:59:00 +0000
-Received: from mail-il1-f174.google.com ([209.85.166.174])
+	id 1lvmWm-008GyE-BV; Tue, 22 Jun 2021 19:57:44 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvjjm-007yzC-6o
- for linux-phy@lists.infradead.org; Tue, 22 Jun 2021 16:58:59 +0000
-Received: by mail-il1-f174.google.com with SMTP id q9so5388972ilj.3
- for <linux-phy@lists.infradead.org>; Tue, 22 Jun 2021 09:58:57 -0700 (PDT)
+ id 1lvmWk-008Gxi-Bk; Tue, 22 Jun 2021 19:57:43 +0000
+Received: by mail-ej1-x634.google.com with SMTP id my49so234832ejc.7;
+ Tue, 22 Jun 2021 12:57:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Eovzw/udn4hicrC407R2X9SrTc2QGxyjor98KY9344o=;
+ b=ofg0zEesjw/TVIggXvcIPH9DhGxXKSu3YWaBmok3qYhCzDJdLDF2FsMeqpMBwexpQ/
+ ksHDL089XVMVKt9O40sZVVDvQBckA/2cpF9IeuFFXqS4ubOEH3x1LiIXWt8x5IdqEw2n
+ rVm53TetQoqR93n+1YkQuSikga5VtiWvaGy+qQg5lQkmI1y9gFFwmxC17kfi+TejkrGV
+ 6JS26EHtHAtIs2d54h/qG0RYACCtShPOI2ByFu6zYIdaDcQ9n6pfJPTaAw8zqNCk4YE6
+ t8BGqlqrkWWaTQN2Gk3MI9chqPSmFQC0tIYlhYPAykP7D7bGVQ+rOC4+OH97GwnxU6Tu
+ uwBA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=LsZRslTqg7fuj2glyUnRDUtW0t7V3r4Eh+jP25psiYA=;
- b=FS5Me/Y6GSwhQlZSpJzFiuGGJx4PDDpFbpPzrs6/0XM9FW2J+IpA0G8bmH9Wf68SvL
- eZBoqMdF1q+ObkEoM8A5654TixMTg/npmfnCudkXafzsedlu6nOpxPuhRWPpsyGUz/8g
- kam2ynZbytfjKaCtbermol87SO0hPlXQ2bu+9NoZB0S7Sx4vXhAa/iDUYvrNAJwzpImz
- k5RGvDaMx6hEjUmeeQxR6hRmWGLwmavJ4BjvlkcW69mR4XIUV6oVlqrgRM6ELiB769u7
- iRNeB4Z5t13sXtx+90D6jV3p6dTYBPqIJOJf1ZMI7WKSjFfLO1ao6TSxLzSvXStHMBdf
- 0Vow==
-X-Gm-Message-State: AOAM532SyWL5n6L/vQUpLy4mrtD3+hY/8hyLlVYbTXV40yXx12syE+cR
- Ng9KWP72e/H5GI3tL+BM7w==
-X-Google-Smtp-Source: ABdhPJzgjRJsYlROHHbtiBHKPUccSnwLseG1lY6GPKVUd6HQM/6j52GqK8QKMC64yih29uRWItX9wQ==
-X-Received: by 2002:a92:3f01:: with SMTP id m1mr3416158ila.122.1624381137433; 
- Tue, 22 Jun 2021 09:58:57 -0700 (PDT)
-Received: from robh.at.kernel.org ([64.188.179.248])
- by smtp.gmail.com with ESMTPSA id k21sm360710ios.0.2021.06.22.09.58.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Jun 2021 09:58:56 -0700 (PDT)
-Received: (nullmailer pid 3843418 invoked by uid 1000);
- Tue, 22 Jun 2021 16:58:51 -0000
-Date: Tue, 22 Jun 2021 10:58:51 -0600
-From: Rob Herring <robh@kernel.org>
-To: Biju Das <biju.das.jz@bp.renesas.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Chris Paterson <Chris.Paterson2@renesas.com>,
- Biju Das <biju.das@bp.renesas.com>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-renesas-soc@vger.kernel.org
-Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L USB
- PHY Control bindings
-Message-ID: <20210622165851.GA3840386@robh.at.kernel.org>
-References: <20210621093943.12143-1-biju.das.jz@bp.renesas.com>
- <20210621093943.12143-2-biju.das.jz@bp.renesas.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Eovzw/udn4hicrC407R2X9SrTc2QGxyjor98KY9344o=;
+ b=m3eMXls8X1rQ3Rh1SbveEQ2X1D/fL/z8IneQu1dpLNXMT0SPOXKsOiF5LdvGyKpK+q
+ 1jbXByn/Yg5HpANWYVLKH86/o5Oddc+9Ba/zoq6kWhDsKM2xAMQNa1QUg6flT7QbL2tW
+ 1o9+CS2u8aVynxKR435saefahasRXPUJ4JTDvTeISbAzuz2n7RjImwKe9B5rsgTir9UK
+ i75Y6LuL8rC2JjQuqC/KaQUa/c3m8FUhW3pgbXpnumm3O076FeAmLlYklcFpfyzAY0+N
+ aiSn2jp4MrRwGqQmVCykjFU9Iz15VNxOUjnQevV27m38UqlDNKvlK2sse+zdrqIaazBh
+ hw+w==
+X-Gm-Message-State: AOAM5323o2Jq/ehqir0DmMcaHwmjegcKLLN+IZVoZTYZ/22VCHg81212
+ 5BPicJe61IKTN+zB6M7uxL7fkKzn4j7w4kEZGUiFpBqQhZo=
+X-Google-Smtp-Source: ABdhPJyKd7e5C4Ph84g4B35RZoEdjwc6rb5o8Q7KdW9xfBBwAEDRGr7WOP7Jo/YB2xiUfT0KiK2lMC5guhRIKZ2smks=
+X-Received: by 2002:a17:906:f188:: with SMTP id
+ gs8mr5734432ejb.527.1624391859989; 
+ Tue, 22 Jun 2021 12:57:39 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210621093943.12143-2-biju.das.jz@bp.renesas.com>
+References: <20210604190338.2248295-1-martin.blumenstingl@googlemail.com>
+ <20210604190338.2248295-3-martin.blumenstingl@googlemail.com>
+ <YNAvItt8BQH1QmQT@vkoul-mobl>
+In-Reply-To: <YNAvItt8BQH1QmQT@vkoul-mobl>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Tue, 22 Jun 2021 21:57:28 +0200
+Message-ID: <CAFBinCAOi0EuucaQcJvgzV3o9fu=26u2ivAiQVidrmXTzQRQfg@mail.gmail.com>
+Subject: Re: [PATCH 2/2] phy: amlogic: Add a new driver for the HDMI TX PHY on
+ Meson8/8b/8m2
+To: Vinod Koul <vkoul@kernel.org>
+Cc: robh+dt@kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org, kishon@ti.com, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210622_095858_300489_1E614AB6 
-X-CRM114-Status: GOOD (  17.67  )
+X-CRM114-CacheID: sfid-20210622_125742_464518_51F1C378 
+X-CRM114-Status: GOOD (  19.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,100 +98,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 21, 2021 at 10:39:33AM +0100, Biju Das wrote:
-> Add device tree binding document for RZ/G2L USB PHY control driver.
-> 
-> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
-> Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
-> V1->V2:
->  * Add clock properties
-> ---
->  .../phy/renesas,rzg2l-usbphyctrl.yaml         | 65 +++++++++++++++++++
->  1 file changed, 65 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
-> new file mode 100644
-> index 000000000000..8e8ba43f595d
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
-> @@ -0,0 +1,65 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/renesas,rzg2l-usbphyctrl.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Renesas RZ/G2L USB2.0 PHY Control
-> +
-> +maintainers:
-> +  - Biju Das <biju.das.jz@bp.renesas.com>
-> +
-> +description:
-> +  The RZ/G2L USB2.0 PHY Control mainly controls reset and power down of the
-> +  USB/PHY.
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - enum:
-> +          - renesas,r9a07g044-usbphyctrl # RZ/G2{L,LC}
-> +      - const: renesas,rzg2l-usbphyctrl
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  '#phy-cells':
-> +    # see phy-bindings.txt in the same directory
-> +    const: 1
-> +    description: |
-> +      The phandle's argument in the PHY specifier is the phy reset control bit
-> +      of usb phy control.
-> +      0 = Port 1 Phy reset
-> +      1 = Port 2 Phy reset
-> +    enum: [ 0, 1 ]
+Hi Vinod,
 
-You already have the const, so this doesn't do anything.
+thanks for taking the time to review this!
 
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - '#phy-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/r9a07g044-cpg.h>
-> +
-> +    usbphyctrl@11c40000 {
+On Mon, Jun 21, 2021 at 8:18 AM Vinod Koul <vkoul@kernel.org> wrote:
+>
+> On 04-06-21, 21:03, Martin Blumenstingl wrote:
+> > Amlogic Meson8/8b/8m2 have a built-in HDMI PHY in the HHI register
+> > region. Unfortunately only few register bits are documented. For
+> > HHI_HDMI_PHY_CNTL0 the magic numbers are taken from the 3.10 vendor
+> > kernel.
+> >
+> > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> > ---
+> >  drivers/phy/amlogic/Kconfig              |  11 ++
+> >  drivers/phy/amlogic/Makefile             |   1 +
+> >  drivers/phy/amlogic/phy-meson8-hdmi-tx.c | 150 +++++++++++++++++++++++
+> >  3 files changed, 162 insertions(+)
+> >  create mode 100644 drivers/phy/amlogic/phy-meson8-hdmi-tx.c
+> >
+> > diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
+> > index db5d0cd757e3..e6c3a2a8b769 100644
+> > --- a/drivers/phy/amlogic/Kconfig
+> > +++ b/drivers/phy/amlogic/Kconfig
+> > @@ -2,6 +2,17 @@
+> >  #
+> >  # Phy drivers for Amlogic platforms
+> >  #
+> > +config PHY_MESON8_HDMI_TX
+> > +     tristate "Meson8, Meson8b and Meson8m2 HDMI TX PHY driver"
+> > +     default ARCH_MESON
+> > +     depends on (ARCH_MESON && ARM) || COMPILE_TEST
+>
+> depends on ARM seems redundant..
+config ARCH_MESON exists in arch/arm as well as arch/arm64
+my idea was to hide it from the 64-bit SoCs since it's not used there
 
-usb-phy@...
+While reading your comment I spotted something for myself:
+I think "default ARCH_MESON" should not be there.
 
-> +        compatible = "renesas,r9a07g044-usbphyctrl",
-> +                     "renesas,rzg2l-usbphyctrl";
-> +        reg = <0x11c40000 0x10000>;
-> +        clocks = <&cpg CPG_MOD R9A07G044_USB_PCLK>;
-> +        resets = <&cpg R9A07G044_USB_PCLK>;
-> +        power-domains = <&cpg>;
-> +        #phy-cells = <1>;
-> +    };
-> -- 
-> 2.17.1
-> 
-> 
+> > + * Meson8, Meson8b and Meson8m2 HDMI TX PHY.
+> > + *
+> > + * Copyright (C) 2020 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+>
+> 2021..
+good catch, I'll fix this in v2
+
+
+Best regards,
+Martin
 
 -- 
 linux-phy mailing list
