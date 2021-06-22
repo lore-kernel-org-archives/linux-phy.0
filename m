@@ -4,17 +4,18 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BDE53C2B9F4
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 20:01:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5D10AC48BDF
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 20:12:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8043F610C7
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 20:01:07 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8043F610C7
+	by mail.kernel.org (Postfix) with ESMTPS id 1A3AC6109E
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jun 2021 20:12:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1A3AC6109E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,58 +24,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SFQI3k4k6ZTT4ACHMlG6A8cIRG8Rq5ERs78HA0pByf8=; b=uhAH/qmjstuw0y
-	5G3JeOil+tHx0/XSoEaglNZ7AgiJI/z8CBX8+00S4vSHkhtyQVL6Aqruzpekv0QZQ5v05s9JPP8O/
-	SjeKulecTKBC01p2C20ktn4+7mBXByDJ+Rv3+vSXb6lFoHzOqGDFOyKeU11+8ge3bJv9BTazs4Tyq
-	O+4TTlCEDAO8eDlzpg5C7wAc7KJobmjQVhsyIqGhwxcPXVPxzbKtMNMsPXNu4mJTbr+s/aQmU21vR
-	QwVXImdBW407WHX7zyHmaWeHhdYARHvaqDn7OGiFuRCXFbwV+udL2KMyrnO5zye5+6KXmrFow9fUP
-	sIPwfNszWXcP71VbeQ4Q==;
+	List-Owner; bh=mW8H37fCJTBfT6ET7NtAfsN/EcUXqmMGlETEuIaxaQE=; b=tw+em+K11BbPH6
+	8daOj/RIsMrI0EWdSr8qhH/4T0tIS/bpqr2OEd1gnSMXzMJgADRqgylns4q+oYgJ5QHjmGK/40dLl
+	DkctZhe0QkNAszl/n3DZpIIKGlJJGcZnYW69oRpmUXmuLmnC0X3Ty2qENyFxHSJY+Y8yr08Dh5f0Q
+	qoWEdP1YrsZJrL3cUUbPsrQDD4xmWrDjARJSItQmzwUWys3POxWlVrai/5ClGW8yLDuydTynfnjBP
+	ZpWVuH3UQUg5UFzdzI7YBKCYSK92e1Zfu5sRhTOeLRjZifiE+yKxD8haBNqdZcaU4D2p4IaJyIXsw
+	VQ47qvR64T7QVA1X+yhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvma3-008HNm-1H; Tue, 22 Jun 2021 20:01:07 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1lvmkl-008KFQ-J0; Tue, 22 Jun 2021 20:12:11 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvma0-008HN2-HQ; Tue, 22 Jun 2021 20:01:05 +0000
-Received: by mail-ej1-x635.google.com with SMTP id ji1so273524ejc.4;
- Tue, 22 Jun 2021 13:01:04 -0700 (PDT)
+ id 1lvmkh-008KED-Vl; Tue, 22 Jun 2021 20:12:09 +0000
+Received: by mail-ed1-x533.google.com with SMTP id s6so396821edu.10;
+ Tue, 22 Jun 2021 13:12:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Zf4vdgRI2eIvOyP4BfdsN5wqUDVZRwFofOZUaIYATtY=;
- b=Xg5E90d+x7IHvd/rCJj3o+qjOEM4/AqGVdQHwicqleR2GFmKMJHRY9cvZgzHw86/if
- tznrosDerhJy+e7zX7Mx5kJmlnmmU5NF7vNhlzJ5dymzT2wGhQiVyDdlXdDYPL58wpTa
- BSNCwXlew5vXQ3W3lXJn5DO+f3JucPqUu1BYh3aEezggPgSfaEiiXXbWr0YlcBVsu5go
- 6nxrn5NW+fUFsh8NFcnVEh0+8mBDjxibwRtGGDaZjQNLCYK1yTTJ8DjYbw2HA6o4LIQu
- ho0jE/spAvLFFsIAk3PUZwld3AuKaV58T5AydE6JNGqqRXq42T+FKerU/2wRvAF9G7rX
- Qtog==
+ :cc; bh=x32YDuCNYMIMWiusaAMc7PppyDkWuVh9XTNpn/BCcpQ=;
+ b=BVWcNCtQ4is0MBgfGJQ+u0YjZxicJsGPzkwdc9vxUNSbSFWNcKLZw9aS8L9VTwoMng
+ 5wVZHg0BjK1WPhnEpuCI0f/oVS0iBoem0SRuYCxn/sw43fqs2GlFa+851hEpIABucYSp
+ NGLRq3KJK8C1J+p3Z0iBqqC48GwvlcAje6NdaafN24SAbViQQ73uZrM4r+JAoIX26/mK
+ /lCdftyAfcYiJUDaGm1aFDYfktGqPbJMRofn7i9EEeRjucyQRTbsLpKwVr7jrIrNe+VF
+ fOLRAMsgWTJxZtSChOqRG1V73VsWlrXfOSu9u6DvouSU9pQJOsqX9zw7+Fve/RRej9QS
+ A5AQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Zf4vdgRI2eIvOyP4BfdsN5wqUDVZRwFofOZUaIYATtY=;
- b=jJ1r8LWjcDDZW1Tbr9UKqzsLIvjDcNQCXoeOTTvKk35/3sKKqIhoDEEmgb34aK0hIX
- O+e5YF3c8UzRyYh5zCzzoxopI7v83lwVZHjUkl1+gns46GnkyBr8Qw27OyFSRsdNIzty
- ySHIhGBeP0EVBq0mMFv5yv4p3Hb2uFHdAKNbLinvor/VNuqP/7Q0wn0DZsfa2bTx9yNf
- NxhNwKPpm/iRvOOAY1S+0e0kG5BSKW2XXlMEDjZsmKUr3MDX4QuHL5S3ihtqNmdi5bJr
- 92zWEmH9Sw+zuMgbSJlXYlTu8QfE+9I+89a6WcStnvIF06KiGXw6qXgdEN7gCUof2tqU
- P3zQ==
-X-Gm-Message-State: AOAM533JJVsifi2ZqGiPUSJynN7AfL4HCqHqY1D3Rx0eDDjZ+/15lX4N
- nlwy1Pl1Ne9je5uQ5+DF9/YQjBVnDwD3gazi2LQ=
-X-Google-Smtp-Source: ABdhPJzvh7nsvk4PVuaKFHZXXafU6Hb6v8/HVjM/U5isfltZa2k5+fZ9AxpjVdjuvx1dttC8PnkMnC39zlrovwF3pH8=
-X-Received: by 2002:a17:906:64c8:: with SMTP id
- p8mr5646217ejn.428.1624392060989; 
- Tue, 22 Jun 2021 13:01:00 -0700 (PDT)
+ bh=x32YDuCNYMIMWiusaAMc7PppyDkWuVh9XTNpn/BCcpQ=;
+ b=OTRMTGw0QMfucdCQjfJkSn3AU3Jo35bPDNbCz/hdUltYyl+0WrqphcNpdLVa/jj+WA
+ bYJ7Ru3baGW/H0sOcVBczMIwv0LcrqerWcNWh/vfGImoTUr1Xqq2RIWZRphV4WHeBWAe
+ mMGLIVghqUKyEmxuF6mgfL7xk4JxluS1CLssGha3gGX4x0986rqnEP29BKTDdhbvaDUA
+ u+l606hwEWanYdzjlIm6cJc1VAde36pe+lryhb/ck/oqgYpQnQgHUsgxba5d015SDOgx
+ ndj1BiRSKhM/6M4tS0akkkPSy1ajTk/kycLtT68t+MWElD97xXvQunerEMjQk92RnooR
+ U0cQ==
+X-Gm-Message-State: AOAM533e5p1AIPxooODZHdypgYn+wycZQewa3KUcgNY5urnzdXk6f4Gd
+ k8IHv226ZYh/UD8cChEcoBX5KdhIQk0Z9IeTSF0=
+X-Google-Smtp-Source: ABdhPJxzgiSFYuAF6bcGf2ZGpBCK4YxwOEs6nOAZgcWJxDPcDT203mzVcUzx3TCooP4yABmGdttrQ+s/KNqNmrNKgNE=
+X-Received: by 2002:a05:6402:2694:: with SMTP id
+ w20mr7479552edd.287.1624392726470; 
+ Tue, 22 Jun 2021 13:12:06 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210617194154.2397-1-linux.amoon@gmail.com>
- <20210617194154.2397-8-linux.amoon@gmail.com>
- <CAFBinCC0KScn6cJ36ZB_=TRncOOCXJHWwR3s=o3TobH=yOrGJA@mail.gmail.com>
- <CANAwSgRi7UcS22QKZRRhwYvB3Dyk0ChowX+KByEsxP35ezjtKw@mail.gmail.com>
-In-Reply-To: <CANAwSgRi7UcS22QKZRRhwYvB3Dyk0ChowX+KByEsxP35ezjtKw@mail.gmail.com>
+ <20210617194154.2397-7-linux.amoon@gmail.com>
+ <CAFBinCCE+6G7QtDoxfbcZVVRf-MDX-epSo=_k_PJZgWX+_Whvg@mail.gmail.com>
+ <CANAwSgRqixugUr-t2OheLBVwD=EOkaLqxnGkT-Bx=p_A4Nyr8Q@mail.gmail.com>
+ <CAFBinCALsnpbJGEb4LBLd_jy3E8fOZAQaacz-P7ijfkeyYg2dA@mail.gmail.com>
+ <CANAwSgRABOyWYJPrrw64Wa6j2D94T4tybn7MHGCTbBowt7UncA@mail.gmail.com>
+In-Reply-To: <CANAwSgRABOyWYJPrrw64Wa6j2D94T4tybn7MHGCTbBowt7UncA@mail.gmail.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 22 Jun 2021 22:00:50 +0200
-Message-ID: <CAFBinCD1+FTx59kVn7w=RurZVK48S3+pdXYjjW_LEQtTEr87mg@mail.gmail.com>
-Subject: Re: [RFCv1 7/8] phy: amlogic: meson8b-usb2: Power off the PHY by
- putting it into reset mode.
+Date: Tue, 22 Jun 2021 22:11:55 +0200
+Message-ID: <CAFBinCD91eYNXSqnmDKoAvJHWqqRbXVjnaq9RuRNCnip9kKqkw@mail.gmail.com>
+Subject: Re: [RFCv1 6/8] phy: amlogic: meson8b-usb2: Use phy reset callback
+ function
 To: Anand Moon <linux.amoon@gmail.com>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>, 
@@ -84,8 +87,8 @@ Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  linux-amlogic@lists.infradead.org, 
  Linux Kernel <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210622_130104_622807_4B1F3D55 
-X-CRM114-Status: GOOD (  20.98  )
+X-CRM114-CacheID: sfid-20210622_131208_107969_D9F6BFBD 
+X-CRM114-Status: GOOD (  21.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,51 +107,66 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Anand,
 
-On Mon, Jun 21, 2021 at 9:15 AM Anand Moon <linux.amoon@gmail.com> wrote:
+On Mon, Jun 21, 2021 at 9:16 AM Anand Moon <linux.amoon@gmail.com> wrote:
+[...]
+> Ok Thanks for the inputs. got your point.
 >
-> Hi Martin,
+> I was also looking into Amlogic source code for reset. (aml_cbus_update_bits)
+> [0] https://github.com/khadas/linux/blob/khadas-vims-4.9.y/drivers/amlogic/usb/phy/phy-aml-new-usb.c
+> is there some feature to iomap the USB with cbus?
+for that specific code: that's what we do inside drivers/reset/reset-meson.c
+Amlogic's vendor kernel uses an increment of 4 bytes per value, so
+0x1102 translates to 0x4408
+
+then in mainline's meson8b.dtsi we have:
+    compatible = "amlogic,meson8b-reset";
+    reg = <0x4404 0x9c>;
+as you can see 0x4408 is part of the reset controller node.
+
+next in include/dt-bindings/reset/amlogic,meson8b-reset.h we have:
+    #define RESET_USB_OTG                 34
+
+the register used for reset line 34 is translated using:
+    0x4404 (first register) + 4 (4 * reset line / 32 = 1) = 0x4408
+then the bit inside this register is translated using:
+    reset line % 32 = 2
+
+that's how we express aml_cbus_update_bits(0x1102, 0x1<<2, 0x1<<2); in
+the mainline kernel (by going through the reset subsystem)
+
+[...]
+> > > > > -       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, NULL);
+> > > > > +       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, "phy");
+> > > > I think this breaks compatibility with existing .dtbs and our
+> > > > dt-bindings (as we're not documenting a "reset-names" property).
+> > > > What is the goal of this one?
+> > > >
+> > >
+> > > OK, If we pass NULL over here there is the possibility
+> > > USB phy will not get registered.
+> > I don't understand why - with NULL everything is working fine for me.
+> > Also no matter which name you give to the reset line (in reset-names),
+> > it will be the same reset line in all cases. If it's the same reset
+> > line before and after: why is this needed?
+> >
+> I need to investigate this reset feature. With my setup with current changes
+> after I update the below.
+> -       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, "phy");
+> +       priv->reset = devm_reset_control_get_optional_shared(&pdev->dev, NULL);
+>         if (PTR_ERR(priv->reset) == -EPROBE_DEFER)
+>                 return PTR_ERR(priv->reset);
 >
-> On Fri, 18 Jun 2021 at 04:07, Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
-> >
-> > Hi Anand,
-> >
-> > On Thu, Jun 17, 2021 at 9:44 PM Anand Moon <linux.amoon@gmail.com> wrote:
-> > [...]
-> > > @@ -245,8 +250,6 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
-> > >         regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_FSEL_MASK,
-> > >                            0x5 << REG_CTRL_FSEL_SHIFT);
-> > >         /* reset the PHY */
-> > > -       regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET,
-> > > -                          REG_CTRL_POWER_ON_RESET);
-> > The vendor driver uses the following sequence for the power on reset:
-> > - set the power on reset bit
-> > - wait 500us
-> > - clear the power on reset bit
-> > - wait 500us
-> >
-> > With your change we now:
-> > - wait 500us
-> > - clear the power on reset bit
-> > - wait 500us
-> >
-> > I don't know if this is sufficient to bring the PHY into a well-defined state.
-> > Maybe it works, maybe it doesn't reset at all in this case - I don't
-> > know how to verify this though.
-> >
-> Initially, I tried to some bit mask code to resolve this but it failed,
-> So no harm in keeping the original changes.
-yes, I feel more comfortable with that
-
-> There is another parameter REG_CTRL_PORT_RESET to be considered.
-none of the vendor kernels that I have sets or clears this bit explicitly
-I agree that the name seems related, but due to lack of an example or
-documentation how/when to use this bit I suggest we don't touch it for
-now
+> Reset will break the USB initialization, see below output.
+interesting, I have not seen that USB problem before and neither is
+Kernel CI seeing it: [0]
+Is it only happening with this patch or did you also see it before?
 
 
-Best rergards,
+Best regards,
 Martin
+
+
+[0] https://storage.staging.kernelci.org/next/master/next-20210617/arm/multi_v7_defconfig+ltp-ima/gcc-8/lab-baylibre/baseline-meson8b-odroidc1.html
 
 -- 
 linux-phy mailing list
