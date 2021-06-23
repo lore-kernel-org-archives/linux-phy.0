@@ -2,83 +2,142 @@ Return-Path: <SRS0=CyPL=LR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PULL_REQUEST,
-	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 19F8DC48BC2
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 07:43:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9C085C48BE5
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 08:02:37 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CB3B6611AC
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 07:43:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CB3B6611AC
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 4D954611BF
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 08:02:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4D954611BF
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=renesas.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=st1Cn7kLrhd+Z1Ngv/lRz5kGI+BWf48Lfoy+hJORNG8=; b=300uSyb/m20Xz7
-	zi+wEeCpMCB3SGhPL/7TvqAWYivW1atbDNFLIleXYXStIDuAXSXgf0Vpv4kmIfUQx80eiIFsDZgZp
-	AI2vSh+YLGq7xFxJjH2wHsFoKQlgHNjrdUvph6sgbahASmwfh1SmgCPHO9sNk+DCKQDViBwGMkp1p
-	X82Fpxw97H04+oxsDh41G5sn0ggqEHX4ODRp0mxNHfRh3ZQEuNV1w2tb6uevI/jp7+j7EwiqGlKNH
-	QzYAZnodKjsc9M2Wv02wallcTFLN1Bj5fyhoJWc9nZM519gsK18EKtvtkR+tzgh8HTgaLuXifC6v+
-	G7rKG2CG0oi7iEtJwXfw==;
+	List-Owner; bh=6Hc01pRdhDj6PYrjclktX+bDHG5EcHs00/ep4oQYqUw=; b=XCaSdd69YE09iw
+	L5FYnGpZ//ifc3pYXpye/3xf/EhoyjB/pdO0VCBem91Zb45R/m5ZvpzFDq7x4e01FbVuoscLevOdD
+	UheUMBrNW/XSbWnF/OGz6CS/W5R9aXmnt4VjSLWYnplG/o5vc+51D+nghGSyZonMbcYf3rd2gXA74
+	EA2QrBSbSjZuFB7UhHkk5QkTgIyfFqb89iuTfKB3IPbKmuVFsJ89EQj+UEbYwfl/iHoICI+3gF4W+
+	Xk+DjbBORgyw2BVvRFZ20a+lXIUmobq9XgHjtWCWY3KEnUeZ6Dm0dFn0bQmY0h/q0SRuqyVHbx1S8
+	LT5V5/nPKVX0SkACNhiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvxXp-009q2C-8r; Wed, 23 Jun 2021 07:43:33 +0000
-Received: from mail-vk1-xa30.google.com ([2607:f8b0:4864:20::a30])
+	id 1lvxqG-009tJp-RE; Wed, 23 Jun 2021 08:02:36 +0000
+Received: from mail-eopbgr1410099.outbound.protection.outlook.com
+ ([40.107.141.99] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvxXl-009q0u-Ro
- for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 07:43:31 +0000
-Received: by mail-vk1-xa30.google.com with SMTP id f2so323255vkc.0
- for <linux-phy@lists.infradead.org>; Wed, 23 Jun 2021 00:43:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TZFZ3Qf8H+XBIa/oMisZw/D3Im/ahJP0cwpid0U6HpQ=;
- b=evyDOdVUL1vKeraZPbu3NIBKCJQBy9XLmCOqpla+U9XapwVrklQH9J71PfiGp00kHO
- eniZFbVjF6Ehznv42jnyGHVUPDXz2drD8VB1IGIJ2Rc8Pyv9qgB7MT2lC4z3iH9ONVA9
- nQOc+nonFaFSp4VsoRYPKoIyHDcFc/T3DetIP1yU+BEy9+H4JjksUz9IkYfFuALZYCvR
- 3dRTnEKijkcPnUJK4FRX0j2UvqlbgiuyDOk3d5Bz9hcIIaRDgZRNZchbcEBRPMFYvve8
- Z5KGWY+sckgu8gD0B9phkRlcjUQhR1dEUOmqQCeTRLkrmYQXOru6XrVvlTObd7ZxbbWq
- nGcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=TZFZ3Qf8H+XBIa/oMisZw/D3Im/ahJP0cwpid0U6HpQ=;
- b=rsDJvBWJscmBA3izPaC934RyeM+LENuuaMc7sVwKo7QqkhFmJ+LwLx3wKs8WC54umh
- uu2xVvl1ghXaZ2Rd4xgW5ShDSJcU/VsPqMT75y7TpgvpGLjy8vmBs+mMhWVGZk2KV+M/
- dL472JCpB7cIpscw8aiblyyNl1ksdBFTZrMu2fgAAVMk+oAL5x7iCEUOkA1l5LcdCocz
- RQ6Ub4bLjV5CcqLTOt8PMvv1iD5/1dtU2hGrVB/QQS+J+qp7+CBYgUF7H9Jr3dfLF5j5
- DaOnikMKwQWNZN1yVRVNd7WI97uNcyrT9pu8PYY6S2VcqlSif5d/hd0nz+ZvRTTnQNlz
- rlTw==
-X-Gm-Message-State: AOAM532+93flsJ+7SPJ4Rt4NuqPUDwwCi8Hu7VxuAmEm5HpZp9/oK/5n
- YQMrnzvlJWk1ndiSxNAowUq/xFtZdFV9tdV4FaQ=
-X-Google-Smtp-Source: ABdhPJyPkjbAwuzy5EfZ9X+hciMT78zICSfqEwCYGFxexmdHDyDnl6ZlOok2f/Fsv79wCJnWSa8C6Q/ODtUcCiPOReE=
-X-Received: by 2002:a1f:fecc:: with SMTP id l195mr19530608vki.21.1624434208862; 
- Wed, 23 Jun 2021 00:43:28 -0700 (PDT)
+ id 1lvxqC-009tI4-Ox
+ for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 08:02:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=eGOAGRgx0uTH0dG+M9ndCeJtyDgBjieHJR6YzAiKuhPO2jISfUjxWJ0AnQgtENMz9GUbQZj80OcTpUrzRK3nYQTYp/tZXoQmmrC11P7yfpudMeyCkCaESdWCt5n6Tsyxeg4rt3Vgpoh8KxuamO6YMBG5TUGPGEsnv6BJ/fR9x3bn5xMsl0HKOmLQr5u2g7XNMJIHrZZLIJq8AeYEbI1/gIfz/LThUulx8yRoQSnvFRwRRW5R52Adjfmr1mUfixfS1YLw7EJDT+H0CVLo89oD3WJz7C2zTOefwVEiaLvGqXShtsQetj8WWkQ5il3nHQAvFmK/SgHkqTxdNc582CnksA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1SdmGdNz76of6CI0dciZ/EUCnjh9ivPMPAxX8ARDbRc=;
+ b=AL4WX+hZ0SLBogL0BkbaaMDO5ZNi0mHtFAe0Mm6F+QM5pImMgIvz6ouLfjjzAGOJAcj7uKjGcCRsdNOqRtNBkaY0e9CgkX7Whdb/jf45llxiEKqOZrLo/droi7s6uDKQ9wz8LbfLq0zg+Dd67ko5CwH8Em+AFDgIW9MyRqiPzMHFM9jYBkB3HAjigeLLpN7B4OKUXGTl+JTVQdAkY+o7/vDNo5HXyYnx8YvwZqQnJe7KciQZOJivJTwo7uD/LUfDkCbJFZQLGlYj5lnjk5qEXeK8YBlap+zDrUsKWp1EhGI+EieCTfLDGtFWNbYuyd5mWmj3w8CgtUXAg4F99e8ncQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1SdmGdNz76of6CI0dciZ/EUCnjh9ivPMPAxX8ARDbRc=;
+ b=pGXz/4ckOFZOI3Gj9vG4sBvFjsBoPjrPYV04FkbFm5g1WbJlyO/Kq2q1mlheIRXPxUEHNoyAqWrfGtsgIErSI/4r0T6fc5EYNB0aCOS1cwA7G1BJd2+XVOuXhjl6KEqUiIKsWbtPc7Hzy1JkwBso3KON1QbfvzJ5FgHFMwGtd6o=
+Received: from TY2PR01MB3692.jpnprd01.prod.outlook.com (2603:1096:404:d5::22)
+ by TYAPR01MB5611.jpnprd01.prod.outlook.com (2603:1096:404:8052::6)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4242.21; Wed, 23 Jun
+ 2021 08:02:28 +0000
+Received: from TY2PR01MB3692.jpnprd01.prod.outlook.com
+ ([fe80::4c5d:66ee:883a:72a5]) by TY2PR01MB3692.jpnprd01.prod.outlook.com
+ ([fe80::4c5d:66ee:883a:72a5%6]) with mapi id 15.20.4242.024; Wed, 23 Jun 2021
+ 08:02:28 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Biju Das <biju.das.jz@bp.renesas.com>
+CC: Biju Das <biju.das.jz@bp.renesas.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, Geert
+ Uytterhoeven <geert+renesas@glider.be>, Chris Paterson
+ <Chris.Paterson2@renesas.com>, Biju Das <biju.das@bp.renesas.com>, Prabhakar
+ Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: RE: [PATCH v2 10/11] phy: renesas: phy-rcar-gen3-usb2: Add OTG
+ support for RZ/G2L
+Thread-Topic: [PATCH v2 10/11] phy: renesas: phy-rcar-gen3-usb2: Add OTG
+ support for RZ/G2L
+Thread-Index: AQHXZoFzMLd0tBacEkKq+oksmDKkQqshLxKg
+Date: Wed, 23 Jun 2021 08:02:28 +0000
+Message-ID: <TY2PR01MB369203283E466150FD9E1DD0D8089@TY2PR01MB3692.jpnprd01.prod.outlook.com>
+References: <20210621093943.12143-1-biju.das.jz@bp.renesas.com>
+ <20210621093943.12143-11-biju.das.jz@bp.renesas.com>
+In-Reply-To: <20210621093943.12143-11-biju.das.jz@bp.renesas.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: bp.renesas.com; dkim=none (message not signed)
+ header.d=none; bp.renesas.com; dmarc=none action=none header.from=renesas.com; 
+x-originating-ip: [124.210.22.195]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7f2d2af2-b6c2-4d5b-21c4-08d9361d3ed5
+x-ms-traffictypediagnostic: TYAPR01MB5611:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TYAPR01MB561146E1670EF5F2140F5658D8089@TYAPR01MB5611.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3513;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: fwUuPpbyLuzWk58N5gyMLzmBckBTDOzisIwU5luLf3vhvSm1IsAu3LU+C97YPzCCUbMhAK4p5rvOLimGmb7wlQRZt6Ss7vYjr8ebsmWM/Ly52Sfrc2yzdVvOexDqd/P6tpKTxneVO302F6RQlDxWxiI16nKkgbKKFMBgYieVe/kJP0/BBudrXMCtItaG7CLc1hSwSp0dHUJsDIIVixNBaKuwr+eAiA/qjP/1o347C6OAixwN4zE+FNA2Jg7mUmkox2XCPTcRGwAoObk0CfVQBQCzu6lXOOQ+LqpE3i4uPQ21KWNiqIf/69JaKZkjWzNlLjFjylzhYvzfnLjUjYPwJ6/I24wdtiQjN197/Ajn81CQderOkK+UPjM7Te8LoxulhelY0iFOKTZhs0hgdg210bwhweZAdJKCfx5/Am7bTWdDGk17qrMj4plaZ7fbEi6kBvkDxHPJfOgJQuCyygadR4rcmwhqgsxIiWdDFdryk8Ni+pDbmmYG/4TFsKHIGv3FTaU8Sem0LomifXPGvXfUPhia6PbDhWErlKQfeEx31EoCOSWVzOG9hJ7eIltoMR5jsz3AVg2v+8qgvdqL/Wx8P3fadpzQsNI3nvMT/wXjN4dhdSk2Yz0Z7SgnCbizauyS4oK1VDpuNpUPPYB0RM06wg==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:TY2PR01MB3692.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(376002)(346002)(136003)(396003)(39860400002)(366004)(5660300002)(122000001)(2906002)(38100700002)(64756008)(6506007)(76116006)(52536014)(66556008)(66946007)(66476007)(66446008)(8676002)(316002)(8936002)(83380400001)(9686003)(26005)(107886003)(6862004)(7696005)(4326008)(54906003)(86362001)(71200400001)(33656002)(478600001)(55016002)(186003)(55236004);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?lZJr7S1pea66uuN4K77htYQL9wRu1lu9iUEm5oIhWO6QKa4MEupyOTc9WaEo?=
+ =?us-ascii?Q?NIGCkNACvoWdh+QCwnWiyVKz82lzb+TtI/jX3NQjPL7Mp7ZMBYTcnu2sbcfv?=
+ =?us-ascii?Q?cne1FTdLFSDj6GdvDLAWEqEv+6IpXGtLSzA9UGY9u8ioZxGnfL/AqhZ4Pt9W?=
+ =?us-ascii?Q?vCRJqg5PJ2UF5I5iXML2oXW/GGvjjDuUazUNUkemser2ZhwI+PfBcIiKkdUs?=
+ =?us-ascii?Q?4/2Ah1vziKuypf1BT04P4YTypndfyFyDiFHqx79rO636HniEQ0+AIjb9Q7A/?=
+ =?us-ascii?Q?1+t4xFQZ198c2atBGeHcMbfgAJpbP4go42mXxl4KzF25GF8qZEjqKEpz9OmH?=
+ =?us-ascii?Q?Vr5QXv7DxbMuPNkE2XNRJYJLU7niQo0GWIwc0bznRYqg74ro0nZYhHwoiupj?=
+ =?us-ascii?Q?jRWWqzVKHdAzpXTJ/u/d5gqOOZPL9Djtzg46+mMm4WXcuhnTmcvmVszJTpCB?=
+ =?us-ascii?Q?Y6w8ZpzUElp8obJtt8Y5z/iYwAKoqVtrHYT0dnD93co/3jS4HkURPcrXVx87?=
+ =?us-ascii?Q?BBJp5SFNFY+QNVCSxQxub22Q66KLlURH7N2fxI4wDYRij9Yp/ByUk17CQD7F?=
+ =?us-ascii?Q?JfZXksMKt6dSqzJSiF18DwwE4uliYjTRV2yICZqd9jTAE0LX+sZfYySVDj4T?=
+ =?us-ascii?Q?/7QsfqZkIex5NPzlumh5Ggs1jNDABiamDA95EXJnB8kMFa+ppN/v9rVoZe7X?=
+ =?us-ascii?Q?VELkrvRPdCQJoSDqnZDl3wttQmJlz0lABK4P8yeOVYPZeislcfv2T1Ns4KEh?=
+ =?us-ascii?Q?6xXcA1amg9xGfM3Wr4FolYxL92YESz5+67wapsVb+YZyhIbKMYW16bWn3r9I?=
+ =?us-ascii?Q?bd92y5YYtupNIWY9+EZd+WGyvuhkk+NYnxDLDEliXM5T7mcME1Y7qI+6TZGH?=
+ =?us-ascii?Q?nkNcT8knSuSZhBLR/jlE/bOLtvcetzOoNXfdM0BiSPyOgv+c8yD+SQ0EcreY?=
+ =?us-ascii?Q?0pyS/c7F37ure18AMT9AMT/NcVQy2ZZzsJw4wLVpVrtJHgp0pqp1kNAinPSM?=
+ =?us-ascii?Q?CTpfcICieyu9SZ7pPqpIDGyZUdIIwBFU87Rm0ZrP6WIjeVomiaBwHysUywj6?=
+ =?us-ascii?Q?jLPWcKnjH2T58d0sEYbu979UeS/L7POacl3ublQ3bKsb9bNFV7+h2XNaWsLp?=
+ =?us-ascii?Q?ohI/ex9TcmfPjhLjbt1nlttPMILMbTyzMn0XlOJDeC6m7qu4jd5dqxezT7K5?=
+ =?us-ascii?Q?V9XC7rTsVWVXAfGJZZhseuIkIiXjsUiptgNlKZLba+bHiQEhOf8VmWPWwzV+?=
+ =?us-ascii?Q?9qXbFAVXcqxEB9fT22UGJ4JWOzNq/3XEZ8QZmY/sopeEBafREGIr9l8FSQgL?=
+ =?us-ascii?Q?T5tcrtyZqjd6A8ySsPUKJX+N?=
 MIME-Version: 1.0
-References: <YNLRn/5JkyYhYwxi@matsya> <YNLhBZokBed/jxNC@kroah.com>
- <CAMhs-H8hV8Lv2B3vCcCqgWmpg3jbhLF8kna2SoFbSd5xV3ARXw@mail.gmail.com>
- <YNLkYPa/+Gs88loj@kroah.com>
-In-Reply-To: <YNLkYPa/+Gs88loj@kroah.com>
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Date: Wed, 23 Jun 2021 09:43:17 +0200
-Message-ID: <CAMhs-H-dvbenJbuA-rvnzsW_85Rp+Ox8yW3+0g7M8=C7tTO3dA@mail.gmail.com>
-Subject: Re: [GIT PULL]: Generic phy updates for v5.14
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Linux Phy <linux-phy@lists.infradead.org>, 
- LKML <linux-kernel@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY2PR01MB3692.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7f2d2af2-b6c2-4d5b-21c4-08d9361d3ed5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Jun 2021 08:02:28.4493 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: zjR5C1oy+izpUi4SEUruWF/IKdqQ7sBGFdIXwvfjVX9yv8uOGpW4azX3OEn8yScHM6Xw51VRW4btrG+MlXjHLllNXBMI5HlVGsNix6sbwVoRruVAq7A/e91TZ44JK3dt
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB5611
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210623_004329_953048_DBE8F341 
-X-CRM114-Status: GOOD (  28.80  )
+X-CRM114-CacheID: sfid-20210623_010232_857118_5BB03400 
+X-CRM114-Status: GOOD (  15.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,78 +154,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Greg,
+Hi Biju-san,
 
-On Wed, Jun 23, 2021 at 9:36 AM Greg KH <gregkh@linuxfoundation.org> wrote:
->
-> On Wed, Jun 23, 2021 at 09:29:06AM +0200, Sergio Paracuellos wrote:
-> > Hi Greg,
-> >
-> > On Wed, Jun 23, 2021 at 9:21 AM Greg KH <gregkh@linuxfoundation.org> wrote:
-> > >
-> > > On Wed, Jun 23, 2021 at 11:45:59AM +0530, Vinod Koul wrote:
-> > > > Hello Greg,
-> > > >
-> > > > Please pull to receive Generic phy subsystem updates for v5.14
-> > > >
-> > > > The following changes since commit 6efb943b8616ec53a5e444193dccf1af9ad627b5:
-> > > >
-> > > >   Linux 5.13-rc1 (2021-05-09 14:17:44 -0700)
-> > > >
-> > > > are available in the Git repository at:
-> > > >
-> > > >   git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-for-5.14
-> > > >
-> > > > for you to fetch changes up to f7eedcb8539ddcbb6fe7791f1b4ccf43f905c72f:
-> > > >
-> > > >   phy: ti: dm816x: Fix the error handling path in 'dm816x_usb_phy_probe() (2021-06-21 12:04:18 +0530)
-> > > >
-> > > > ----------------------------------------------------------------
-> > > > phy-for-5.14
-> > > >
-> > > >   - Updates:
-> > > >         - Yaml conversion for renesas,rcar-gen3 pcie phy and
-> > > >         rockchip-usb-phy bindings
-> > > >         - Support for devm_phy_get() taking NULL phy name
-> > > >
-> > > >   - New support:
-> > > >       - PCIe phy for Qualcomm IPQ60xx
-> > > >       - PCIe phy for Qualcomm SDX55
-> > > >       - USB phy for RK3308
-> > > >       - CAN transceivers phy for TI TCAN104x
-> > > >         - Innosilicon-based CSI dphy for rockchip
-> > >
-> > > Why is PHY_MT7621_PCI only y/n?  Shouldn't this be able to be built as a
-> > > module?
-> > >
-> > > The USB phy enables this driver, which now forces me to build it into my
-> > > kernel, which does not seem like a wise idea.  I'm not sure which commit
-> > > in this series does this, but that isn't a good thing.
-> > >
-> > > Ah, it's 6eded551cefe ("phy: ralink: Kconfig: convert mt7621-pci-phy
-> > > into 'bool'"), why is that needed?  We are working to turn more code
-> > > into modules, not force them to be built in, this feels like the wrong
-> > > way to go :(
-> >
-> > This was turned into bool to automatically be included if CONFIG_PCI_MT7621
-> > is set. This should be the only requirement to add this phy driver for
-> > real hardware since it has nothing to do if there is no
-> > CONFIG_PCI_MT7621. That's why Kconfig is now:
-> >
-> > depends on (RALINK && OF && PCI_MT7621) || COMPILE_TEST
-> > Am I missing something here???
->
-> It is forcing it to be built into the kernel, why can it not just be a
-> module?  You took that ability away here by making the value a 'bool'.
+Thank you for the patch!
 
-I see. Thanks for clarification and sorry for the inconvenience.
+> From: Biju Das, Sent: Monday, June 21, 2021 6:40 PM
+> 
+> This patch adds OTG support for RZ/G2L SoC.
+> 
+> RZ/G2L USB2.0 phy is compatible with rcar gen3, but it uses
+> line ctrl register for OTG_ID pin changes. Apart from this
+> it uses a different OTG-BC interrupt bit for device recognition.
+> 
+> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+> Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  drivers/phy/renesas/phy-rcar-gen3-usb2.c | 63 ++++++++++++++++++------
+>  1 file changed, 48 insertions(+), 15 deletions(-)
+> 
+> diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> index fbc55232120e..aff0749be65d 100644
+> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+<snip>
+> @@ -627,6 +653,7 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+>  	if (IS_ERR(channel->base))
+>  		return PTR_ERR(channel->base);
+> 
+> +	channel->obint_enable_bits = USB2_OBINT_SESSVLDCHG | USB2_OBINT_IDDIGCHG;
 
-Thanks,
-    Sergio Paracuellos
->
-> thanks,
->
-> greg k-h
+Please use USB2_OBINT_BITS instead of USB2_OBINT_SESSVLDCHG | USB2_OBINT_IDDIGCHG.
+
+Sorry, I thought we needed more update when I sent an email before,
+but I have this comment only now.
+
+Best regards,
+Yoshihiro Shimoda
+
 
 -- 
 linux-phy mailing list
