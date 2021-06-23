@@ -2,20 +2,20 @@ Return-Path: <SRS0=CyPL=LR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_PULL_REQUEST,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS autolearn=unavailable
+X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PULL_REQUEST,
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D4C13C48BC2
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 07:35:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5AC28C49EAF
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 07:36:08 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9E69E611AC
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 07:35:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9E69E611AC
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 2EDC4611AC
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 07:36:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2EDC4611AC
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linuxfoundation.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -23,47 +23,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dFZKyZBGiLuo9m+wdu2oSVjt28oyNMNJkGGJw/SLkJ8=; b=2QO4WCSi/pabW8
-	WYC24baWg3euyNbt9y6Yf1tvVZanc1md5BwnnzvtTB92tB8+cGyBrq2nnBX+HUuTZiGq2YcLUCkT3
-	noQgXUpJnH/hoCz0HaoWjy5X/YODSL8GyelEFi8BoNGnXG+olhzaW35YqoDddAZcBsD57xlhYTZ6u
-	6FDyBfVsXVbVDpqfGXdrpjoUS7rFF1W9XSsLUwHZ7kDQdOsOmJ5D7fFpsLX6yogICmb2yQkvTQIe6
-	KhPBtQCJzflFXl7sLHmkkSTwIK143IvnhDSxTvChnu4vJwU+jO4gxvgKmXDZD2sQzsLzY/uvdPU9F
-	zfAhkxQTmV5NFzwvQ2Ww==;
+	List-Owner; bh=yVcKtynRGQ6mQFSFBUDJ7u1XxO7jrrljoLL4ayeYLZY=; b=3FiZ+5folqv8Rp
+	yZTVBBeBNyodHXOmh850d19KIC4CbUAUIXaMuA2CTUU+u7iCj/4Ipvy99iajavWmesSHF/Ccbc+st
+	B41+TQPH27e/mkiEtU5IagHi8mzeAYtqRgDbxVUKVca87rC+FR9fGV+e5YKq+OWWKpkyeQXit9F9s
+	myX/I1sHRWeLF8iJ9ykROw7W5qUnWh0RK7rc+/9G9hoD1BK3eDRzGUsSS5CCkNOnS8Rdyv1drRkUp
+	dwU02yamXVazghLax4dFeRWykPqzoTzGbA0BMi9L5Ndw4QqwrJOYtCzNDRnQQh/MVR1CEZZgZDZ0O
+	I7gBkRrpH7M7gD1j0gdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvxQN-009n4l-6P; Wed, 23 Jun 2021 07:35:51 +0000
+	id 1lvxQd-009nBv-NA; Wed, 23 Jun 2021 07:36:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvxQK-009n3v-5q
- for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 07:35:49 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 04F536128A;
- Wed, 23 Jun 2021 07:35:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1624433747;
- bh=pCOhVJN/mvleiRbdksd7EMIoZK9+lmr+dtQTNulvelw=;
+ id 1lvxQZ-009n8C-Oa
+ for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 07:36:06 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id DDCA06137D;
+ Wed, 23 Jun 2021 07:36:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+ s=korg; t=1624433763;
+ bh=XBAuxXOkzaaLdcKTXSUZTtN+nXd9vRcx+VfqSOqorYs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MjhbzRFvwHvypgQZoJh5SxzpMVOS+MbnMFxQH6BZ6fspyIZpjteJhlTekt6oyhSvp
- N13atBa15MCb3ULaLM3fJe2BDYGygXhjVo7MEreOX4Ltp7yKk//J4dlY75QnfkW8cj
- c1laWpwl1fAGavsgwXPkbd/AvX/oyTqYgU/spWBpsm2mcgaWQSd7UK5AUZyfj0skVj
- 8eMcjYR7NgQZa2nRCa5X7mNqo4NaOaTtSH5xRJbAKxy1cC6CF58FPPZiRqYLoXV6V9
- Zt5lpqRbSqLgc0BPl0Tecr9hQPyHfk9gEnLaf7N2gBBMMDymQRJ4noOpRhelYjioy1
- AyWOb8IOAG5jQ==
-Date: Wed, 23 Jun 2021 13:05:44 +0530
-From: Vinod Koul <vkoul@kernel.org>
+ b=BoHUugxI2FaRuGoc7FsziX5spMrlXKCo0+ysKbJGJUAcSpWJFC1RFkZhdzKzZHVAd
+ 0oGtidCpXlbUUClgY37cLiSwj1BXBqrM0qRVZV4aMwgcNRGJsbt0oke252ITM9wJh9
+ UK1TJYWaNeoD9bVpngioFBrzDdMLW8vMUgZ3Gbbc=
+Date: Wed, 23 Jun 2021 09:36:00 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
 To: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Cc: Greg KH <gregkh@linuxfoundation.org>,
- Linux Phy <linux-phy@lists.infradead.org>,
+Cc: Vinod Koul <vkoul@kernel.org>, Linux Phy <linux-phy@lists.infradead.org>,
  LKML <linux-kernel@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
 Subject: Re: [GIT PULL]: Generic phy updates for v5.14
-Message-ID: <YNLkUNrqIV13NtMI@matsya>
+Message-ID: <YNLkYPa/+Gs88loj@kroah.com>
 References: <YNLRn/5JkyYhYwxi@matsya> <YNLhBZokBed/jxNC@kroah.com>
  <CAMhs-H8hV8Lv2B3vCcCqgWmpg3jbhLF8kna2SoFbSd5xV3ARXw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <CAMhs-H8hV8Lv2B3vCcCqgWmpg3jbhLF8kna2SoFbSd5xV3ARXw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210623_003548_289486_EA56F816 
-X-CRM114-Status: GOOD (  24.23  )
+X-CRM114-CacheID: sfid-20210623_003603_858675_56FF88D4 
+X-CRM114-Status: GOOD (  24.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,7 +76,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-06-21, 09:29, Sergio Paracuellos wrote:
+On Wed, Jun 23, 2021 at 09:29:06AM +0200, Sergio Paracuellos wrote:
 > Hi Greg,
 > 
 > On Wed, Jun 23, 2021 at 9:21 AM Greg KH <gregkh@linuxfoundation.org> wrote:
@@ -128,11 +124,7 @@ On 23-06-21, 09:29, Sergio Paracuellos wrote:
 > > into 'bool'"), why is that needed?  We are working to turn more code
 > > into modules, not force them to be built in, this feels like the wrong
 > > way to go :(
-
-Agree, I should have _not_ picked this, sorry.
-
-I am reverting this commit and sending updated series shortly
-
+> 
 > This was turned into bool to automatically be included if CONFIG_PCI_MT7621
 > is set. This should be the only requirement to add this phy driver for
 > real hardware since it has nothing to do if there is no
@@ -141,11 +133,12 @@ I am reverting this commit and sending updated series shortly
 > depends on (RALINK && OF && PCI_MT7621) || COMPILE_TEST
 > Am I missing something here???
 
-Yes a module can also be added. I think you should select PHY_MT7621_PCI
-in the PCI_MT7621 Kconfig
+It is forcing it to be built into the kernel, why can it not just be a
+module?  You took that ability away here by making the value a 'bool'.
 
--- 
-~Vinod
+thanks,
+
+greg k-h
 
 -- 
 linux-phy mailing list
