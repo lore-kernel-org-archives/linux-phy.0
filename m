@@ -4,144 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3FA13C4743C
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 15:46:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 91042C48BC2
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 22:23:28 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E5D1061185
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 15:46:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E5D1061185
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bp.renesas.com
+	by mail.kernel.org (Postfix) with ESMTPS id 1F3EB610A0
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 22:23:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1F3EB610A0
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zhqfff+6BPpkNGj9w57s9SqUbnBCd2kuGZU6p1OwUbM=; b=0Cp7kM4Zgfq7U0
-	98+oY9J1UcX+5wzYTHa9aiqcQdobgcnXPOyF2zvxDvAz78r374oRaduoceKiqByw+WNn9noROSm4y
-	2pvHthwBVeV9Do07Pb+j8C68gp9rjn42HEJoU4iEw0rIXsIQE7fSC/LS+aXxbEFZ5eu0qPOvwrAPd
-	zIqhFVYKaxKDBf4gbOKilUU+rK6UPtsfHctePQXZHIFQltTqHkkiOrsfqDPbKfP2axOiMfm4UOopk
-	dEbfrBxTUH8SVpJxUeXX4bb8B+vZpINLqiNN81gxmSWaQP+K5S0cmuZnEqhUFqu81clSjh5SYF824
-	NlDubXi7aXB+4R3Kf83Q==;
+	List-Owner; bh=86a82uyxzEi3RPzABZ3KxKGyvlcpKA0HM6UJF36kCQw=; b=r5qlQwvI5+dPHa
+	dY/ZvAZRbBcFUOGcGxfgSxnm3pyzSDmKK2RvE1PILPKEQUJFLA+JG7INkasEl7sVlUctUjJvwdc7u
+	6IVJpIiTOpffd0W8hd8Mry+VJe0JXxc8bGnW4UNjq538DCQcZLXAb8TmJ/wfxPWSAeBE/feyA02ia
+	9xK6rGvUfCycpcEG1xNBAmY0kzN+eyMqYZONQV7/OaNn+YTloAkPyoulsgN5GwQi5LlNkP792hPJE
+	wP7AmKYtD0mOtcjlioKf9TsTG0QHbQ9hHfAe66dg427Rw0m1tUg1ReOLcPiNkMtltm1KXGrQCgj2/
+	/4xZ9ETT4qfxN9OpwWwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lw54m-00BAWL-E9; Wed, 23 Jun 2021 15:46:04 +0000
-Received: from mail-eopbgr1400109.outbound.protection.outlook.com
- ([40.107.140.109] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1lwBHL-00C5KV-Jv; Wed, 23 Jun 2021 22:23:27 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lw54i-00BAUx-Sr
- for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 15:46:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=dWisEBA50tGEJw+YdxwjxVoM3WPC1LQSKOFwGkZlUrbh1sdvVrm3BiGsZKI6qtv80nrdrAdKUb2wf1Xx263cvbGSL0PES4Qxn+aPBp8H2a+PcvgP8DqGRGEUZeP068S10aT0jbaVYpT6cngnY9lstLHZSeBtdZGjoN9KkIsOXLJsq98sGJRr5a64DYEcJOL58fzCHY4DadWMEb52zm3hdZV1wItfOFEW/qabO2+SNZ9SvKgEKNSFWp8wnQGrHgG4nQS/ZGoXq2xx1WcqYqw/fBsyUsUz5Y0HQZzu23gGkAzBmMRkDNg0dScrhSLrkE5Q1cP2Gv6N600RwN5IQSObUw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2g4zSX0SBftPpw1FFJPgZIc+UMp5vbxPtm1HK7RDMCY=;
- b=iy1R0TT68REWyE/x0oadC7WJjhrsIfvOCTHWlMW6yQWdrgMD1W5mfKq39EIfzmIUtXrxjUuOg2LF7YQRN1MFaU1TqqyunxdSbAUp+be93KFqe81FwDjrwj2xpAafwoyvPxO3YuTlj8b1nAKN3gMF/QPwA3rGEdGlL+Vu4JMODd+HuWGl350W8K0nPr4f0txP9EpryK2piW4fP5j9k04ik0MG2GCQz+Yj1zeuvZ5+rKFBuU2iAQu84vhKRuUno4vuxyi83mvvM/z2P7C3QXxTY6+yF/E17Wm5zYQPOUP4cWo40AcVlOkDiQLcqmH/saxgIvhAeQkvFlGhuqv/MqREKg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2g4zSX0SBftPpw1FFJPgZIc+UMp5vbxPtm1HK7RDMCY=;
- b=E7ZkVFqszb8q8iT/+gW2eRXr5yznjFqOht+YnbcyYLT5luusv7vEyAEPhntBARb4jCEI6QIuxve2v4QfZIBLeuy2dQIrPqkps1jKpIOo8fz2qzEvLklvtcBfk4enpMFVxeWuh94Pg5CvqWBxcc1N3W0jBP8iqvpxgSiW6PSbQDE=
-Received: from OS0PR01MB5922.jpnprd01.prod.outlook.com (2603:1096:604:bb::5)
- by OS3PR01MB6209.jpnprd01.prod.outlook.com (2603:1096:604:f3::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4264.18; Wed, 23 Jun
- 2021 15:45:57 +0000
-Received: from OS0PR01MB5922.jpnprd01.prod.outlook.com
- ([fe80::b834:5e50:2ce8:9ae0]) by OS0PR01MB5922.jpnprd01.prod.outlook.com
- ([fe80::b834:5e50:2ce8:9ae0%3]) with mapi id 15.20.4242.025; Wed, 23 Jun 2021
- 15:45:56 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Rob Herring <robh@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Geert Uytterhoeven
- <geert+renesas@glider.be>, Chris Paterson <Chris.Paterson2@renesas.com>, Biju
- Das <biju.das@bp.renesas.com>, Prabhakar Mahadev Lad
- <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>
-Subject: RE: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L USB
- PHY Control bindings
-Thread-Topic: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L USB
- PHY Control bindings
-Thread-Index: AQHXZoFkEsylYGbSPUy+XB9R+DfKg6sgQr2AgAFYKgCAAAvXAIAAFwGw
-Date: Wed, 23 Jun 2021 15:45:56 +0000
-Message-ID: <OS0PR01MB5922742488532EC506334AC786089@OS0PR01MB5922.jpnprd01.prod.outlook.com>
-References: <20210621093943.12143-1-biju.das.jz@bp.renesas.com>
- <20210621093943.12143-2-biju.das.jz@bp.renesas.com>
- <20210622165851.GA3840386@robh.at.kernel.org>
- <OS0PR01MB5922ECC2B573F1F8E170744F86089@OS0PR01MB5922.jpnprd01.prod.outlook.com>
- <CAL_JsqK_6_LUD-ffkDCuDEds2RiYftJfynZyPN4io3Lt3MnQ4g@mail.gmail.com>
-In-Reply-To: <CAL_JsqK_6_LUD-ffkDCuDEds2RiYftJfynZyPN4io3Lt3MnQ4g@mail.gmail.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=bp.renesas.com;
-x-originating-ip: [193.141.219.20]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 47bddc56-113d-4251-99d9-08d9365dfdc7
-x-ms-traffictypediagnostic: OS3PR01MB6209:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OS3PR01MB620948DB49EC5924A27C034E86089@OS3PR01MB6209.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: W0u0zSBDsVxleh5nZTY+Jg6ApykDOOGQiiMaNu42wi7KVbFXRx1oUGEJ8vp1GKhI5QmMjduwFrdScxWY0VMUMM/uTTZcMmDnw3B3IYU+51F7pO7IZ9cm0fFKkhsKdQslrKfh8IVQ4c/ZI3cIv58IKhmGJkcvCMtlhsr2vyv/kyWNQu+UsTHdrUi3n5h6saVmpoBlr4xWPOGnUpm7HoxtkpyumLQmSbC3rkoRvm/CaX2+HvNm1KrbWdboaK/SamOSP8svz6Haiz4TZGttvPd88HFarwdVSqlOOUztS3bVQwAUsNOU+fv3R620rop6deWmzNmgroih17pGaxEklfJX062GOdapUtrRe55V0wxg0M18fOYWkxNe5YZLGiHFRSHDYZkh3BrbmxDcFHMTvjsQQK5jsHPnIyOYVeJEf6UEXBbYwlPxvc4t/0n0p0EXwgUDdH7VpVabJY9PD/olmWzZBBSsRlyWVh0csbA6rU7slwCjm54/3hgWVSaoEWKO6zj+zdbQ3gUU4rwtG5Y13IOM0i0g3eX4Km6y/rJzQhKDqWOv83EN2OxqkGLh84z3t4oz3RliSqo4AYq68NObvYB43x4dxV1ctaDHrF7IUbUuEvzPatTzxKEQ0ehVoceHZDHWwXp9YCM39WLKwmEONj2qECg5x4mdaSsaPWcEv5a3mY1HKGDtXvW9qqmIJKPCoCVmw6g8Qs/RqrTXXESZWWOqmL6//jgg2QI3JQ0wdsk5sj4=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:OS0PR01MB5922.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(396003)(39850400004)(346002)(376002)(136003)(366004)(316002)(76116006)(64756008)(478600001)(66556008)(8936002)(66446008)(52536014)(33656002)(8676002)(66946007)(5660300002)(9686003)(66476007)(83380400001)(53546011)(186003)(26005)(6506007)(122000001)(86362001)(55016002)(38100700002)(2906002)(6916009)(4326008)(7696005)(54906003)(45080400002)(71200400001);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?E0br1skGpYM5qz9sXlzG3ecazlTmds0OWD3k0PbGRxLVQzcvOYYa0HyFdr3K?=
- =?us-ascii?Q?OknHC745opGMi2qWS4u3rdpRgPtdlBBHaW83AXys4ppSyb76IPLlruvXEmTI?=
- =?us-ascii?Q?N1xYOLP+OzRkXwIrDc1QuqIyco2cS6AX0vo/8MpzxuW0+Z1Zvy6LNsKIiZ1Q?=
- =?us-ascii?Q?JxFwBybXOsMGLLBFCweAEvMpP5AJmEeMwILU5kNhZslMOq4TXnWMgKwJFwWp?=
- =?us-ascii?Q?L4WPG0DGokPPRbsryGEuKLErXiekCXb4etapEFUraVwSOJ/UYpaZtoPi8Eio?=
- =?us-ascii?Q?04VfIVDV6kEZmB5YuWnND19PxqrHNYSj5NKaCXrfal5S37TQcKHeKAN3jL+u?=
- =?us-ascii?Q?yKuJE5Q7FkHPydFEW/Y+UT72H564i8cDTDMf4Lg/AJjzpGH4OG+3/mXt7I/x?=
- =?us-ascii?Q?/EfmBkLs3fndL09v901Bo2no2MGwHOZu5v1KNcGv9DhYv6CwCgEjRWlD2Wwr?=
- =?us-ascii?Q?I785A5dPZ0fOkFRXatv/Tq3IfpvCOH/XE3Dc0ZlvBX5jW5xN7Bh80OitTGAa?=
- =?us-ascii?Q?GXJVOOUFLLcu8MDQBO4Lr+tLg75Kuw6PqxzsnvhrIeWWgIV49noqUfKx4fXB?=
- =?us-ascii?Q?BrE6olMmjWH22OawzlRVAO/NUuOZreyFehuJBU6t7CPZgBmT3ordYQTtFNKP?=
- =?us-ascii?Q?cTy25sAt8XMKSNh8XfKjE8KgoyWkYeNzF6nfimOhXvpEdl6GtUwiKMMAr1as?=
- =?us-ascii?Q?fu4GwAbS7tUx/8BncHw/cJl4o6DB4bOJlBUC9CzUCUKQQ6o7IchYjZ+11CiT?=
- =?us-ascii?Q?0CowTX1Qz7lcm8t8fWzSKJMW1vy6No16JrzUh6zHJa+CQe7o2j5t7JpHlTQ1?=
- =?us-ascii?Q?TB5SXXkbmQtXBf/RFijdPdxmA+EEd6L5+L69wFOFyKIPo6ejGfyGPccfvIe2?=
- =?us-ascii?Q?cymYragDVpiontRsnFB1pcZ26CMWyn7pAdhL+FOMbLbWxpQCJxctfGeucNYe?=
- =?us-ascii?Q?Z3FIwBPwlAHVU0bxJ0lrOzWb+3tcdbV+dGB3leQOHKYew5QqC3nC0BTHyEYj?=
- =?us-ascii?Q?8vGzmutI9rtsNEFKv+TYbzlS4wtPbsKd1Q/Dn10BZx2JPN0LlFVDD8p0yrjV?=
- =?us-ascii?Q?DeOK152ycZgosvMUqA/XDLxTBtvxj+FWpEnYi1Ka7Ks1oAgZUunhr6ccqbfO?=
- =?us-ascii?Q?fWp48pNYAwHvUG8NUc2gl3OSR3MVAnIkhSEB718w3F1P9jkTCUq/W2CEYAiI?=
- =?us-ascii?Q?aSGlZTXj5xULcXJAjzhddtqMFfhB0wS3YuIWdvOAZS7Xevi/39wqqgsiq/r7?=
- =?us-ascii?Q?3z2YGFTz3eUPgO4N5ef4l3zRGjGW6I8ltE1yexvKJZ5HyvPHh233xmBT4kXv?=
- =?us-ascii?Q?WJudyXbs71MvwlhizOoN8YqM?=
+ id 1lwBH5-00C5Ir-MM; Wed, 23 Jun 2021 22:23:16 +0000
+Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
+ [62.78.145.57])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id CFEFF5A1;
+ Thu, 24 Jun 2021 00:23:05 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1624486986;
+ bh=veFFZSszQ862R1/8cm/SinKD4NXadBHftwARlaPsSe8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=a8inAFKvUl/8dgdFPFPrIIwdPce/AA81ebZcFp7qOqKU/epQEfPNkqXxmS8Exm3cO
+ H9posXCLJTp/fOsEVFU5PsQFIB0+oGX9mDQZjupt06aMQeaN2fgv50A06Cl2x01i9c
+ 3tT+vzkddBEhiq24rdpC4RauLryrUyX4CDwmIAxE=
+Date: Thu, 24 Jun 2021 01:22:36 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Cc: Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Tomasz Figa <t.figa@samsung.com>, Fancy Fang <chen.fang@nxp.com>,
+ devicetree@vger.kernel.org,
+ Francis Laniel <francis.laniel@amarulasolutions.com>,
+ Matteo Lisi <matteo.lisi@engicam.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Robert Foss <robert.foss@linaro.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Milco Pratesi <milco.pratesi@engicam.com>,
+ Anthony Brandon <anthony@amarulasolutions.com>,
+ linux-phy@lists.infradead.org, linux-amarula@amarulasolutions.com,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [RFC PATCH 2/9] drm: bridge: Add Samsung SEC MIPI DSIM bridge
+ driver
+Message-ID: <YNO0LHNVSWjrh1ZS@pendragon.ideasonboard.com>
+References: <20210621072424.111733-1-jagan@amarulasolutions.com>
+ <20210621072424.111733-3-jagan@amarulasolutions.com>
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: OS0PR01MB5922.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 47bddc56-113d-4251-99d9-08d9365dfdc7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Jun 2021 15:45:56.2352 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: aFPk2NImz3HhNFFBjvt3/9EYnhGXKRXXUv+iSPW8PaJYIQBLFyqH8xz7cZNcn6FoZ/+eQbU8TrGzKfSkWRRPOWspybGXjEDG1Du541xhUR0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS3PR01MB6209
+Content-Disposition: inline
+In-Reply-To: <20210621072424.111733-3-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210623_084601_030980_96E7A906 
-X-CRM114-Status: GOOD (  35.47  )
+X-CRM114-CacheID: sfid-20210623_152312_322927_52D916A1 
+X-CRM114-Status: GOOD (  27.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,200 +90,1617 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
+Hi Jagan,
 
-Thanks for the feedback.
+Thank you for the patch.
 
-> Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L
-> USB PHY Control bindings
+On Mon, Jun 21, 2021 at 12:54:17PM +0530, Jagan Teki wrote:
+> Samsung SEC MIPI DSIM Bridge controller is MIPI DSI bridge
+> available in NXP's i.MX8M Mini and Nano Processors.
 > 
-> On Wed, Jun 23, 2021 at 7:38 AM Biju Das <biju.das.jz@bp.renesas.com>
-> wrote:
-> >
-> > Hi Rob,
-> >
-> > Thanks for the feedback.
-> >
-> > > Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document
-> > > RZ/G2L USB PHY Control bindings
-> > >
-> > > On Mon, Jun 21, 2021 at 10:39:33AM +0100, Biju Das wrote:
-> > > > Add device tree binding document for RZ/G2L USB PHY control driver.
-> > > >
-> > > > Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
-> > > > Reviewed-by: Lad Prabhakar
-> > > > <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > > > ---
-> > > > V1->V2:
-> > > >  * Add clock properties
-> > > > ---
-> > > >  .../phy/renesas,rzg2l-usbphyctrl.yaml         | 65
-> +++++++++++++++++++
-> > > >  1 file changed, 65 insertions(+)
-> > > >  create mode 100644
-> > > > Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yam
-> > > > l
-> > > >
-> > > > diff --git
-> > > > a/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.y
-> > > > aml
-> > > > b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.y
-> > > > aml
-> > > > new file mode 100644
-> > > > index 000000000000..8e8ba43f595d
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyct
-> > > > +++ rl.y
-> > > > +++ aml
-> > > > @@ -0,0 +1,65 @@
-> > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML
-> > > > +1.2
-> > > > +---
-> > > > +$id:
-> > > > +https://jpn01.safelinks.protection.outlook.com/?url=http%3A%2F%2F
-> > > > +devi
-> > > > +cetree.org%2Fschemas%2Fphy%2Frenesas%2Crzg2l-usbphyctrl.yaml%23&a
-> > > > +mp;d
-> > > > +ata=04%7C01%7Cbiju.das.jz%40bp.renesas.com%7Cc6bbf5f6ce334eaa722a
-> > > > +08d9
-> > > > +359f07ad%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C63759977942
-> > > > +1910
-> > > > +039%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiL
-> > > > +CJBT
-> > > > +iI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=Jcf6Om4DehifCe1KO1rmt5
-> > > > +LxTB
-> > > > +6jtGoQLD1MoqWGM%2F0%3D&amp;reserved=0
-> > > > +$schema:
-> > > > +https://jpn01.safelinks.protection.outlook.com/?url=http%3A%2F%2F
-> > > > +devi
-> > > > +cetree.org%2Fmeta-
-> schemas%2Fcore.yaml%23&amp;data=04%7C01%7Cbiju.das.
-> > > > +jz%40bp.renesas.com%7Cc6bbf5f6ce334eaa722a08d9359f07ad%7C53d82571
-> > > > +da19
-> > > > +47e49cb4625a166a4a2a%7C0%7C0%7C637599779421910039%7CUnknown%7CTWF
-> > > > +pbGZ
-> > > > +sb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6
-> > > > +Mn0%
-> > > > +3D%7C1000&amp;sdata=LlqPRLf9%2BGrEdSapxCFhwxVKcXTVh9ECr%2FXPN0SIz
-> > > > +i4%3
-> > > > +D&amp;reserved=0
-> > > > +
-> > > > +title: Renesas RZ/G2L USB2.0 PHY Control
-> > > > +
-> > > > +maintainers:
-> > > > +  - Biju Das <biju.das.jz@bp.renesas.com>
-> > > > +
-> > > > +description:
-> > > > +  The RZ/G2L USB2.0 PHY Control mainly controls reset and power
-> > > > +down of the
-> > > > +  USB/PHY.
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    items:
-> > > > +      - enum:
-> > > > +          - renesas,r9a07g044-usbphyctrl # RZ/G2{L,LC}
-> > > > +      - const: renesas,rzg2l-usbphyctrl
-> > > > +
-> > > > +  reg:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  clocks:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  resets:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  power-domains:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  '#phy-cells':
-> > > > +    # see phy-bindings.txt in the same directory
-> > > > +    const: 1
-> > > > +    description: |
-> > > > +      The phandle's argument in the PHY specifier is the phy
-> > > > + reset
-> > > control bit
-> > > > +      of usb phy control.
-> > > > +      0 = Port 1 Phy reset
-> > > > +      1 = Port 2 Phy reset
-> > > > +    enum: [ 0, 1 ]
-> > >
-> > > You already have the const, so this doesn't do anything.
-> >
-> > OK, will take out const.
+> Add bridge driver for it.
 > 
-> No, 'const' is correct. This is the value of '#phy-cells', not the
-> contents (we don't have a way to express schema for that).
-
-OK.
-
+> Cc: Andrzej Hajda <a.hajda@samsung.com>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: Robert Foss <robert.foss@linaro.org>
+> Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> ---
+>  drivers/gpu/drm/bridge/Kconfig    |   15 +
+>  drivers/gpu/drm/bridge/Makefile   |    1 +
+>  drivers/gpu/drm/bridge/sec-dsim.c | 1535 +++++++++++++++++++++++++++++
+>  3 files changed, 1551 insertions(+)
+>  create mode 100644 drivers/gpu/drm/bridge/sec-dsim.c
 > 
-> > > > +required:
-> > > > +  - compatible
-> > > > +  - reg
-> > > > +  - clocks
-> > > > +  - '#phy-cells'
-> > > > +
-> > > > +additionalProperties: false
-> > > > +
-> > > > +examples:
-> > > > +  - |
-> > > > +    #include <dt-bindings/clock/r9a07g044-cpg.h>
-> > > > +
-> > > > +    usbphyctrl@11c40000 {
-> > >
-> > > usb-phy@...
-> >
-> > The IP is called USBPHY control. It mainly controls reset and power down
-> of the USB2.0/PHY.
-> 
-> Sounds like it should be using the reset binding...
+> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+> index 19109c0b5481..a183eb165a35 100644
+> --- a/drivers/gpu/drm/bridge/Kconfig
+> +++ b/drivers/gpu/drm/bridge/Kconfig
+> @@ -189,6 +189,21 @@ config DRM_PARADE_PS8640
+>  	  The PS8640 is a high-performance and low-power
+>  	  MIPI DSI to eDP converter
+>  
+> +config DRM_SEC_MIPI_DSIM
+> +	tristate "Samsung SEC MIPI DSIM Bridge controller"
+> +	depends on DRM
+> +	depends on COMMON_CLK
+> +	depends on OF && HAS_IOMEM
+> +	select DRM_KMS_HELPER
+> +	select DRM_MIPI_DSI
+> +	select DRM_PANEL_BRIDGE
+> +	select GENERIC_PHY_MIPI_DPHY
+> +	select MFD_SYSCON
+> +	select REGMAP_MMIO
+> +	help
+> +	  This enables the Samsung SEC MIPI DSIM Bridge controller as
+> +	  for example found on NXP's i.MX8M Mini and Nano Processors.
+> +
+>  config DRM_SIL_SII8620
+>  	tristate "Silicon Image SII8620 HDMI/MHL bridge"
+>  	depends on OF
+> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
+> index 88e4edf81087..ff802a4ffe65 100644
+> --- a/drivers/gpu/drm/bridge/Makefile
+> +++ b/drivers/gpu/drm/bridge/Makefile
+> @@ -12,6 +12,7 @@ obj-$(CONFIG_DRM_MEGACHIPS_STDPXXXX_GE_B850V3_FW) += megachips-stdpxxxx-ge-b850v
+>  obj-$(CONFIG_DRM_NXP_PTN3460) += nxp-ptn3460.o
+>  obj-$(CONFIG_DRM_PARADE_PS8622) += parade-ps8622.o
+>  obj-$(CONFIG_DRM_PARADE_PS8640) += parade-ps8640.o
+> +obj-$(CONFIG_DRM_SEC_MIPI_DSIM) += sec-dsim.o
+>  obj-$(CONFIG_DRM_SIL_SII8620) += sil-sii8620.o
+>  obj-$(CONFIG_DRM_SII902X) += sii902x.o
+>  obj-$(CONFIG_DRM_SII9234) += sii9234.o
+> diff --git a/drivers/gpu/drm/bridge/sec-dsim.c b/drivers/gpu/drm/bridge/sec-dsim.c
+> new file mode 100644
+> index 000000000000..5b6645bb94e7
+> --- /dev/null
+> +++ b/drivers/gpu/drm/bridge/sec-dsim.c
+> @@ -0,0 +1,1535 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Samsung SEC MIPI DSIM Bridge
+> + *
+> + * Copyright (C) 2018 NXP
+> + * Copyright (c) 2014 Samsung Electronics Co., Ltd
+> + * Copyright (C) 2021 Amarula Solutions(India)
+> + *
+> + * Based on the drivers/gpu/drm/exynos/exynos_drm_dsi.c
+> + *
+> + * Authors:
+> + * Tomasz Figa <t.figa@samsung.com>
+> + * Andrzej Hajda <a.hajda@samsung.com>
+> + * Fancy Fang <chen.fang@nxp.com>
+> + * Jagan Teki <jagan@amarulasolutions.com>
+> + */
+> +
+> +#include <asm/unaligned.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +#include <linux/completion.h>
+> +#include <linux/delay.h>
+> +#include <linux/module.h>
+> +#include <linux/of_device.h>
+> +#include <linux/of_graph.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/regmap.h>
+> +
+> +#include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_bridge.h>
+> +#include <drm/drm_mipi_dsi.h>
+> +#include <drm/drm_panel.h>
+> +#include <drm/drm_of.h>
+> +#include <drm/drm_print.h>
+> +
+> +#include <video/mipi_display.h>
+> +
+> +#define DRIVER_NAME			"sec-dsim"
+> +
+> +/* dsim registers */
+> +#define DSIM_VERSION			0x00
+> +#define DSIM_STATUS			0x04
+> +#define DSIM_RGB_STATUS			0x08
+> +#define DSIM_SWRST			0x0c
+> +#define DSIM_CLKCTRL			0x10
+> +#define DSIM_TIMEOUT			0x14
+> +#define DSIM_CONFIG			0x18
+> +#define DSIM_ESCMODE			0x1c
+> +#define DSIM_MDRESOL			0x20
+> +#define DSIM_MVPORCH			0x24
+> +#define DSIM_MHPORCH			0x28
+> +#define DSIM_MSYNC			0x2c
+> +#define DSIM_SDRESOL			0x30
+> +#define DSIM_INTSRC			0x34
+> +#define DSIM_INTMSK			0x38
+> +#define DSIM_PKTHDR			0x3c
+> +#define DSIM_PAYLOAD			0x40
+> +#define DSIM_RXFIFO			0x44
+> +#define DSIM_FIFOTHLD			0x48
+> +#define DSIM_FIFOCTRL			0x4c
+> +#define DSIM_MEMACCHR			0x50
+> +#define DSIM_MULTI_PKT			0x78
+> +#define DSIM_PLLCTRL_1G			0x90
+> +#define DSIM_PLLCTRL			0x94
+> +#define DSIM_PLLCTRL1			0x98
+> +#define DSIM_PLLCTRL2			0x9c
+> +#define DSIM_PLLTMR			0xa0
 
-This IP has reset, clock control , connection control , clock status and power down setting registers.
-Currenty we are using reset registers for turning ON USB/PHY block.
+Looking at the register set, it seems to match the Exynos 5433,
+supported by drivers/gpu/drm/exynos/exynos_drm_dsi.c. Can we leverage
+that driver instead of adding a new one for the same IP core ?
 
-Since it has extra registers I thought of modelling it as a phy device. But we could model as reset device as well.
-But it has extra functionalities apart from reset.
+> +
+> +/* register bit fields */
+> +#define STATUS_PLLSTABLE		BIT(31)
+> +#define STATUS_SWRSTRLS			BIT(20)
+> +#define STATUS_TXREADYHSCLK		BIT(10)
+> +#define STATUS_ULPSCLK			BIT(9)
+> +#define STATUS_STOPSTATECLK		BIT(8)
+> +
+> +#define CLKCTRL_TXREQUESTHSCLK		BIT(31)
+> +#define CLKCTRL_ESCCLKEN		BIT(28)
+> +#define CLKCTRL_PLLBYPASS		BIT(27)
+> +#define CLKCTRL_BYTECLKSRC_MASK		GENMASK(26, 25)
+> +#define CLKCTRL_BYTECLKSRC(x)		FIELD_PREP(CLKCTRL_BYTECLKSRC_MASK, (x))
+> +#define CLKCTRL_BYTECLKEN		BIT(24)
+> +#define CLKCTRL_LANEESCDATAEN_MASK	GENMASK(23, 20)
+> +#define CLKCTRL_LANEESCDATAEN(x)	FIELD_PREP(CLKCTRL_LANEESCDATAEN_MASK, (x))
+> +#define CLKCTRL_LANEESCCLKEN		BIT(19)
+> +#define CLKCTRL_ESCPRESCALER_MASK	GENMASK(15, 0)
+> +#define CLKCTRL_ESCPRESCALER(x)		FIELD_PREP(CLKCTRL_ESCPRESCALER_MASK, (x))
+> +
+> +#define TIMEOUT_BTAOUT_MASK		GENMASK(23, 16)
+> +#define TIMEOUT_BTAOUT(x)		FIELD_PREP(TIMEOUT_BTAOUT_MASK, (x))
+> +#define TIMEOUT_LPDRTOUT_MASK		GENMASK(15, 0)
+> +#define TIMEOUT_LPDRTOUT(x)		FIELD_PREP(TIMEOUT_LPDRTOUT_MASK, (x))
+> +
+> +#define CONFIG_NON_CONTINUOUS_CLOCK_LANE	BIT(31)
+> +#define CONFIG_CLKLANE_STOP_START	BIT(30)
+> +#define CONFIG_MFLUSH_VS		BIT(29)
+> +#define CONFIG_EOT_R03			BIT(28)
+> +#define CONFIG_SYNCINFORM		BIT(27)
+> +#define CONFIG_BURSTMODE		BIT(26)
+> +#define CONFIG_VIDEOMODE		BIT(25)
+> +#define CONFIG_AUTOMODE			BIT(24)
+> +#define CONFIG_HSEDISABLEMODE		BIT(23)
+> +#define CONFIG_HFPDISABLEMODE		BIT(22)
+> +#define CONFIG_HBPDISABLEMODE		BIT(21)
+> +#define CONFIG_HSADISABLEMODE		BIT(20)
+> +
+> +#define CONFIG_MAINPIXFORMAT_MASK	GENMASK(14, 12)
+> +#define CONFIG_MAINPIXFORMAT(x)		FIELD_PREP(CONFIG_MAINPIXFORMAT_MASK, (x))
+> +#define CONFIG_NUMOFDATLANE_MASK	GENMASK(6, 5)
+> +#define CONFIG_NUMOFDATLANE(x)		FIELD_PREP(CONFIG_NUMOFDATLANE_MASK, (x))
+> +#define CONFIG_LANEEN_MASK		GENMASK(4, 0)
+> +#define CONFIG_LANEEN(x)		FIELD_PREP(GENMASK(4, 1), (x))
+> +#define CONFIG_CLKLANEEN		BIT(0)
+> +
+> +#define ESCMODE_STOPSTATE_CN_MASK	GENMASK(31, 21)
+> +#define ESCMODE_STOPSTATE_CN(x)		FIELD_PREP(ESCMODE_STOPSTATE_CN_MASK, (x))
+> +#define ESCMODE_CMDLPDT			BIT(7)
+> +
+> +#define MDRESOL_MAINSTANDBY		BIT(31)
+> +#define MVPORCH_MAINVRESOL_MASK		GENMASK(27, 16)
+> +#define MVPORCH_MAINVRESOL(x)		FIELD_PREP(MVPORCH_MAINVRESOL_MASK, (x))
+> +#define MVPORCH_MAINHRESOL_MASK		GENMASK(11, 0)
+> +#define MVPORCH_MAINHRESOL(x)		FIELD_PREP(MVPORCH_MAINHRESOL_MASK, (x))
+> +#define MVPORCH_CMDALLOW_MASK		GENMASK(31, 28)
+> +#define MVPORCH_CMDALLOW(x)		FIELD_PREP(MVPORCH_CMDALLOW_MASK, (x))
+> +#define MVPORCH_STABLEVFP_MASK		GENMASK(26, 16)
+> +#define MVPORCH_STABLEVFP(x)		FIELD_PREP(MVPORCH_STABLEVFP_MASK, (x))
+> +#define MVPORCH_MAINVBP_MASK		GENMASK(10, 0)
+> +#define MVPORCH_MAINVBP(x)		FIELD_PREP(MVPORCH_MAINVBP_MASK, (x))
+> +#define MVPORCH_MAINHFP_MASK		GENMASK(31, 16)
+> +#define MVPORCH_MAINHFP(x)		FIELD_PREP(MVPORCH_MAINHFP_MASK, (x))
+> +#define MVPORCH_MAINHBP_MASK		GENMASK(15, 0)
+> +#define MVPORCH_MAINHBP(x)		FIELD_PREP(MVPORCH_MAINHBP_MASK, (x))
+> +#define MVPORCH_MAINVSA_MASK		GENMASK(31, 22)
+> +#define MVPORCH_MAINVSA(x)		FIELD_PREP(MVPORCH_MAINVSA_MASK, (x))
+> +#define MVPORCH_MAINHSA_MASK		GENMASK(15, 0)
+> +#define MVPORCH_MAINHSA(x)		FIELD_PREP(MVPORCH_MAINHSA_MASK, (x))
+> +
+> +#define INTSRC_PLLSTABLE		BIT(31)
+> +#define INTSRC_SWRSTRELEASE		BIT(30)
+> +#define INTSRC_SFRPLFIFOEMPTY		BIT(29)
+> +#define INTSRC_SFRPHFIFOEMPTY		BIT(28)
+> +#define INTSRC_FRAMEDONE		BIT(24)
+> +#define INTSRC_LPDRTOUT			BIT(21)
+> +#define INTSRC_TATOUT			BIT(20)
+> +#define INTSRC_RXDATDONE		BIT(18)
+> +#define INTSRC_RXTE			BIT(17)
+> +#define INTSRC_RXACK			BIT(16)
+> +#define INTSRC_MASK			(INTSRC_PLLSTABLE	|	\
+> +					 INTSRC_SWRSTRELEASE	|	\
+> +					 INTSRC_SFRPLFIFOEMPTY	|	\
+> +					 INTSRC_SFRPHFIFOEMPTY	|	\
+> +					 INTSRC_FRAMEDONE	|	\
+> +					 INTSRC_LPDRTOUT	|	\
+> +					 INTSRC_TATOUT		|	\
+> +					 INTSRC_RXDATDONE	|	\
+> +					 INTSRC_RXTE		|	\
+> +					 INTSRC_RXACK)
+> +
+> +#define INTMSK_MSKPLLSTABLE		BIT(31)
+> +#define INTMSK_MSKSWRELEASE		BIT(30)
+> +#define INTMSK_MSKSFRPLFIFOEMPTY	BIT(29)
+> +#define INTMSK_MSKSFRPHFIFOEMPTY	BIT(28)
+> +#define INTMSK_MSKFRAMEDONE		BIT(24)
+> +#define INTMSK_MSKLPDRTOUT		BIT(21)
+> +#define INTMSK_MSKTATOUT		BIT(20)
+> +#define INTMSK_MSKRXDATDONE		BIT(18)
+> +#define INTMSK_MSKRXTE			BIT(17)
+> +#define INTMSK_MSKRXACK			BIT(16)
+> +
+> +#define PKTHDR_DATA1_MASK		GENMASK(23, 16)
+> +#define PKTHDR_DATA1(x)			FIELD_PREP(PKTHDR_DATA1_MASK, (x))
+> +#define PKTHDR_DATA1_GET(x)		FIELD_GET(PKTHDR_DATA1_MASK, (x))
+> +#define PKTHDR_WC_MASK			GENMASK(23, 8)
+> +#define PKTHDR_WC_GET(x)		FIELD_GET(PKTHDR_WC_MASK, (x))
+> +#define PKTHDR_DATA0_MASK		GENMASK(15, 8)
+> +#define PKTHDR_DATA0(x)			FIELD_PREP(PKTHDR_DATA0_MASK, (x))
+> +#define PKTHDR_DATA0_GET(x)		FIELD_GET(PKTHDR_DATA0_MASK, (x))
+> +#define PKTHDR_DI_MASK			GENMASK(7, 0)
+> +#define PKTHDR_DI(x)			FIELD_PREP(PKTHDR_DI_MASK, (x))
+> +#define PKTHDR_DT_MASK			GENMASK(5, 0)
+> +#define PKTHDR_DT_GET(x)		FIELD_GET(PKTHDR_DT_MASK, (x))
+> +
+> +#define FIFOCTRL_FULLRX			BIT(25)
+> +#define FIFOCTRL_EMPTYRX		BIT(24)
+> +#define FIFOCTRL_FULLHSFR		BIT(23)
+> +#define FIFOCTRL_EMPTYHSFR		BIT(22)
+> +#define FIFOCTRL_FULLLSFR		BIT(21)
+> +#define FIFOCTRL_EMPTYLSFR		BIT(20)
+> +#define FIFOCTRL_FULLHMAIN		BIT(11)
+> +#define FIFOCTRL_EMPTYHMAIN		BIT(10)
+> +#define FIFOCTRL_FULLLMAIN		BIT(9)
+> +#define FIFOCTRL_EMPTYLMAIN		BIT(8)
+> +#define FIFOCTRL_NINITRX		BIT(4)
+> +#define FIFOCTRL_NINITSFR		BIT(3)
+> +#define FIFOCTRL_NINITI80		BIT(2)
+> +#define FIFOCTRL_NINITSUB		BIT(1)
+> +#define FIFOCTRL_NINITMAIN		BIT(0)
+> +#define FIFOCTRL_INIT_MASK		GENMASK(4, 0)
+> +
+> +#define PLLCTRL_PLLEN			BIT(23)
+> +#define PLLCTRL_PMS_P_MASK		GENMASK(18, 14)
+> +#define PLLCTRL_PMS_P(x)		FIELD_PREP(PLLCTRL_PMS_P_MASK, (x))
+> +#define PLLCTRL_PMS_M_MASK		GENMASK(12, 4)
+> +#define PLLCTRL_PMS_M(x)		FIELD_PREP(PLLCTRL_PMS_M_MASK, (x))
+> +#define PLLCTRL_PMS_S_MASK		GENMASK(2, 1)
+> +#define PLLCTRL_PMS_S(x)		FIELD_PREP(PLLCTRL_PMS_S_MASK, (x))
+> +
+> +/* dsim all irqs index */
+> +#define PLLSTABLE			1
+> +#define SWRSTRELEASE			2
+> +#define SFRPLFIFOEMPTY			3
+> +#define SFRPHFIFOEMPTY			4
+> +#define SYNCOVERRIDE			5
+> +#define BUSTURNOVER			6
+> +#define FRAMEDONE			7
+> +#define LPDRTOUT			8
+> +#define TATOUT				9
+> +#define RXDATDONE			10
+> +#define RXTE				11
+> +#define RXACK				12
+> +#define ERRRXECC			13
+> +#define ERRRXCRC			14
+> +#define ERRESC3				15
+> +#define ERRESC2				16
+> +#define ERRESC1				17
+> +#define ERRESC0				18
+> +#define ERRSYNC3			19
+> +#define ERRSYNC2			20
+> +#define ERRSYNC1			21
+> +#define ERRSYNC0			22
+> +#define ERRCONTROL3			23
+> +#define ERRCONTROL2			24
+> +#define ERRCONTROL1			25
+> +#define ERRCONTROL0			26
+> +
+> +#define MIPI_FIFO_TIMEOUT		msecs_to_jiffies(250)
+> +
+> +#define DSIM_HFP_PKT_OVERHEAD		6
+> +#define DSIM_HBP_PKT_OVERHEAD		6
+> +#define DSIM_HSA_PKT_OVERHEAD		6
+> +
+> +struct sec_dsim_plat_data {
+> +	unsigned int version;
+> +	unsigned int pll_timer;
+> +	unsigned int max_freq_hz;
+> +	unsigned int esc_stop_state_cnt;
+> +};
+> +
+> +struct sec_dsim {
+> +	struct mipi_dsi_host host;
+> +	struct drm_bridge bridge;
+> +	struct drm_bridge *panel_bridge;
+> +	struct device *dev;
+> +
+> +	struct clk *clk_phy_ref;
+> +	struct clk *clk_bus;
+> +	struct phy *phy;
+> +
+> +	struct regmap *regmap;
+> +	struct drm_display_mode mode;
+> +	int irq;
+> +	unsigned int pll_clk_hz;
+> +	unsigned int burst_clk_hz;
+> +	unsigned int esc_clk_hz;
+> +	unsigned int lanes;
+> +	unsigned int channel;
+> +	enum mipi_dsi_pixel_format format;
+> +	unsigned long mode_flags;
+> +
+> +	struct completion pll_stable;
+> +	struct completion ph_tx_done;
+> +	struct completion pl_tx_done;
+> +	struct completion rx_done;
+> +	const struct sec_dsim_plat_data *pdata;
+> +};
+> +
+> +static const struct regmap_config sec_dsim_regmap_config = {
+> +	.reg_bits = 8,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +	.max_register = DSIM_PLLTMR,
+> +	.name = DRIVER_NAME,
+> +};
+> +
+> +static inline struct sec_dsim *host_to_dsim(struct mipi_dsi_host *host)
+> +{
+> +	return container_of(host, struct sec_dsim, host);
+> +}
+> +
+> +static inline struct sec_dsim *bridge_to_dsim(struct drm_bridge *bridge)
+> +{
+> +	return container_of(bridge, struct sec_dsim, bridge);
+> +}
+> +
+> +/* used for CEA standard modes */
+> +struct dsim_hblank_par {
+> +	char *name;		/* drm display mode name */
+> +	int vrefresh;
+> +	int hfp_wc;
+> +	int hbp_wc;
+> +	int hsa_wc;
+> +	int lanes;
+> +};
+> +
+> +#define DSIM_HBLANK_PARAM(nm, vf, hfp, hbp, hsa, num)	\
+> +	.name	  = (nm),				\
+> +	.vrefresh = (vf),				\
+> +	.hfp_wc   = (hfp),				\
+> +	.hbp_wc   = (hbp),				\
+> +	.hsa_wc   = (hsa),				\
+> +	.lanes	  = (num)
+> +
+> +static const struct dsim_hblank_par hblank_4lanes[] = {
+> +	/* {  88, 148, 44 } */
+> +	{ DSIM_HBLANK_PARAM("1920x1080", 60,  60, 105,  27, 4), },
+> +	/* { 528, 148, 44 } */
+> +	{ DSIM_HBLANK_PARAM("1920x1080", 50, 390, 105,  27, 4), },
+> +	/* {  88, 148, 44 } */
+> +	{ DSIM_HBLANK_PARAM("1920x1080", 30,  60, 105,  27, 4), },
+> +	/* { 110, 220, 40 } */
+> +	{ DSIM_HBLANK_PARAM("1280x720",  60,  78, 159,  24, 4), },
+> +	/* { 440, 220, 40 } */
+> +	{ DSIM_HBLANK_PARAM("1280x720",  50, 324, 159,  24, 4), },
+> +	/* {  16,  60, 62 } */
+> +	{ DSIM_HBLANK_PARAM("720x480",   60,   6,  39,  40, 4), },
+> +	/* {  12,  68, 64 } */
+> +	{ DSIM_HBLANK_PARAM("720x576",   50,   3,  45,  42, 4), },
+> +	/* {  16,  48, 96 } */
+> +	{ DSIM_HBLANK_PARAM("640x480",   60,   6,  30,  66, 4), },
+> +};
+> +
+> +static const struct dsim_hblank_par hblank_2lanes[] = {
+> +	/* {  88, 148, 44 } */
+> +	{ DSIM_HBLANK_PARAM("1920x1080", 30, 114, 210,  60, 2), },
+> +	/* { 110, 220, 40 } */
+> +	{ DSIM_HBLANK_PARAM("1280x720",  60, 159, 320,  40, 2), },
+> +	/* { 440, 220, 40 } */
+> +	{ DSIM_HBLANK_PARAM("1280x720",  50, 654, 320,  40, 2), },
+> +	/* {  16,  60, 62 } */
+> +	{ DSIM_HBLANK_PARAM("720x480",   60,  16,  66,  88, 2), },
+> +	/* {  12,  68, 64 } */
+> +	{ DSIM_HBLANK_PARAM("720x576",   50,  12,  96,  72, 2), },
+> +	/* {  16,  48, 96 } */
+> +	{ DSIM_HBLANK_PARAM("640x480",   60,  18,  66, 138, 2), },
+> +};
+> +
+> +static
+> +const struct dsim_hblank_par *sec_dsim_get_hblank_par(struct sec_dsim *dsim)
+> +{
+> +	struct drm_display_mode *mode = &dsim->mode;
+> +	const struct dsim_hblank_par *hpar, *hblank;
+> +	int i, size;
+> +
+> +	if (unlikely(!mode->name))
+> +		return NULL;
+> +
+> +	switch (dsim->lanes) {
+> +	case 2:
+> +		hblank = hblank_2lanes;
+> +		size   = ARRAY_SIZE(hblank_2lanes);
+> +		break;
+> +	case 4:
+> +		hblank = hblank_4lanes;
+> +		size   = ARRAY_SIZE(hblank_4lanes);
+> +		break;
+> +	default:
+> +		DRM_DEV_ERROR(dsim->dev,
+> +			      "No hblank data for mode %s with %d lanes\n",
+> +			      mode->name, dsim->lanes);
+> +		return NULL;
+> +	}
+> +
+> +	for (i = 0; i < size; i++) {
+> +		hpar = &hblank[i];
+> +
+> +		if (!strcmp(mode->name, hpar->name)) {
+> +			if (drm_mode_vrefresh(mode) != hpar->vrefresh)
+> +				continue;
+> +
+> +			/* found */
+> +			return hpar;
+> +		}
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+> +static void dsim_write(struct sec_dsim *dsim, unsigned int reg, u32 val)
+> +{
+> +	int ret;
+> +
+> +	ret = regmap_write(dsim->regmap, reg, val);
+> +	if (ret < 0)
+> +		DRM_DEV_ERROR(dsim->dev,
+> +			      "failed to write sec dsim reg 0x%x: %d\n",
+> +			      reg, ret);
+> +}
+> +
+> +static u32 dsim_read(struct sec_dsim *dsim, u32 reg)
+> +{
+> +	unsigned int val;
+> +	int ret;
+> +
+> +	ret = regmap_read(dsim->regmap, reg, &val);
+> +	if (ret < 0)
+> +		DRM_DEV_ERROR(dsim->dev,
+> +			      "failed to read sec dsim reg 0x%x: %d\n",
+> +			      reg, ret);
+> +
+> +	return val;
+> +}
+> +
+> +static void __maybe_unused sec_dsim_irq_mask(struct sec_dsim *dsim,
+> +						  int irq_idx)
+> +{
+> +	uint32_t intmsk;
+> +
+> +	intmsk = dsim_read(dsim, DSIM_INTMSK);
+> +
+> +	switch (irq_idx) {
+> +	case PLLSTABLE:
+> +		intmsk |= INTMSK_MSKPLLSTABLE;
+> +		break;
+> +	case SWRSTRELEASE:
+> +		intmsk |= INTMSK_MSKSWRELEASE;
+> +		break;
+> +	case SFRPLFIFOEMPTY:
+> +		intmsk |= INTMSK_MSKSFRPLFIFOEMPTY;
+> +		break;
+> +	case SFRPHFIFOEMPTY:
+> +		intmsk |= INTMSK_MSKSFRPHFIFOEMPTY;
+> +		break;
+> +	case FRAMEDONE:
+> +		intmsk |= INTMSK_MSKFRAMEDONE;
+> +		break;
+> +	case LPDRTOUT:
+> +		intmsk |= INTMSK_MSKLPDRTOUT;
+> +		break;
+> +	case TATOUT:
+> +		intmsk |= INTMSK_MSKTATOUT;
+> +		break;
+> +	case RXDATDONE:
+> +		intmsk |= INTMSK_MSKRXDATDONE;
+> +		break;
+> +	case RXTE:
+> +		intmsk |= INTMSK_MSKRXTE;
+> +		break;
+> +	case RXACK:
+> +		intmsk |= INTMSK_MSKRXACK;
+> +		break;
+> +	default:
+> +		/* unsupported irq */
+> +		return;
+> +	}
+> +
+> +	dsim_write(dsim, DSIM_INTMSK, intmsk);
+> +}
+> +
+> +static void sec_dsim_irq_unmask(struct sec_dsim *dsim,
+> +				     int irq_idx)
+> +{
+> +	uint32_t intmsk;
+> +
+> +	intmsk = dsim_read(dsim, DSIM_INTMSK);
+> +
+> +	switch (irq_idx) {
+> +	case PLLSTABLE:
+> +		intmsk &= ~INTMSK_MSKPLLSTABLE;
+> +		break;
+> +	case SWRSTRELEASE:
+> +		intmsk &= ~INTMSK_MSKSWRELEASE;
+> +		break;
+> +	case SFRPLFIFOEMPTY:
+> +		intmsk &= ~INTMSK_MSKSFRPLFIFOEMPTY;
+> +		break;
+> +	case SFRPHFIFOEMPTY:
+> +		intmsk &= ~INTMSK_MSKSFRPHFIFOEMPTY;
+> +		break;
+> +	case FRAMEDONE:
+> +		intmsk &= ~INTMSK_MSKFRAMEDONE;
+> +		break;
+> +	case LPDRTOUT:
+> +		intmsk &= ~INTMSK_MSKLPDRTOUT;
+> +		break;
+> +	case TATOUT:
+> +		intmsk &= ~INTMSK_MSKTATOUT;
+> +		break;
+> +	case RXDATDONE:
+> +		intmsk &= ~INTMSK_MSKRXDATDONE;
+> +		break;
+> +	case RXTE:
+> +		intmsk &= ~INTMSK_MSKRXTE;
+> +		break;
+> +	case RXACK:
+> +		intmsk &= ~INTMSK_MSKRXACK;
+> +		break;
+> +	default:
+> +		/* unsupported irq */
+> +		return;
+> +	}
+> +
+> +	dsim_write(dsim, DSIM_INTMSK, intmsk);
+> +}
+> +
+> +/* write 1 clear irq */
+> +static void sec_dsim_irq_clear(struct sec_dsim *dsim,
+> +				    int irq_idx)
+> +{
+> +	uint32_t intsrc = 0;
+> +
+> +	switch (irq_idx) {
+> +	case PLLSTABLE:
+> +		intsrc |= INTSRC_PLLSTABLE;
+> +		break;
+> +	case SWRSTRELEASE:
+> +		intsrc |= INTSRC_SWRSTRELEASE;
+> +		break;
+> +	case SFRPLFIFOEMPTY:
+> +		intsrc |= INTSRC_SFRPLFIFOEMPTY;
+> +		break;
+> +	case SFRPHFIFOEMPTY:
+> +		intsrc |= INTSRC_SFRPHFIFOEMPTY;
+> +		break;
+> +	case FRAMEDONE:
+> +		intsrc |= INTSRC_FRAMEDONE;
+> +		break;
+> +	case LPDRTOUT:
+> +		intsrc |= INTSRC_LPDRTOUT;
+> +		break;
+> +	case TATOUT:
+> +		intsrc |= INTSRC_TATOUT;
+> +		break;
+> +	case RXDATDONE:
+> +		intsrc |= INTSRC_RXDATDONE;
+> +		break;
+> +	case RXTE:
+> +		intsrc |= INTSRC_RXTE;
+> +		break;
+> +	case RXACK:
+> +		intsrc |= INTSRC_RXACK;
+> +		break;
+> +	default:
+> +		/* unsupported irq */
+> +		return;
+> +	}
+> +
+> +	dsim_write(dsim, DSIM_INTSRC, intsrc);
+> +}
+> +
+> +static void sec_dsim_irq_init(struct sec_dsim *dsim)
+> +{
+> +	sec_dsim_irq_unmask(dsim, PLLSTABLE);
+> +	sec_dsim_irq_unmask(dsim, SWRSTRELEASE);
+> +}
+> +
+> +static irqreturn_t sec_dsim_irq_handler(int irq, void *data)
+> +{
+> +	uint32_t intsrc, status;
+> +	struct sec_dsim *dsim = data;
+> +
+> +	intsrc = dsim_read(dsim, DSIM_INTSRC);
+> +	status = dsim_read(dsim, DSIM_STATUS);
+> +
+> +	if (WARN_ON(!intsrc)) {
+> +		DRM_DEV_ERROR(dsim->dev, "interrupt is not from dsim\n");
+> +		return IRQ_NONE;
+> +	}
+> +
+> +	if (WARN_ON(!(intsrc & INTSRC_MASK))) {
+> +		dev_warn(dsim->dev, "unenable irq happens: %#x\n", intsrc);
+> +		/* just clear irqs */
+> +		dsim_write(dsim, DSIM_INTSRC, intsrc);
+> +		return IRQ_NONE;
+> +	}
+> +
+> +	if (intsrc & INTSRC_PLLSTABLE) {
+> +		WARN_ON(!(status & STATUS_PLLSTABLE));
+> +		sec_dsim_irq_clear(dsim, PLLSTABLE);
+> +		complete(&dsim->pll_stable);
+> +	}
+> +
+> +	if (intsrc & INTSRC_SWRSTRELEASE)
+> +		sec_dsim_irq_clear(dsim, SWRSTRELEASE);
+> +
+> +	if (intsrc & INTSRC_SFRPLFIFOEMPTY) {
+> +		sec_dsim_irq_clear(dsim, SFRPLFIFOEMPTY);
+> +		complete(&dsim->pl_tx_done);
+> +	}
+> +
+> +	if (intsrc & INTSRC_SFRPHFIFOEMPTY) {
+> +		sec_dsim_irq_clear(dsim, SFRPHFIFOEMPTY);
+> +		complete(&dsim->ph_tx_done);
+> +	}
+> +
+> +	if (WARN_ON(intsrc & INTSRC_LPDRTOUT)) {
+> +		sec_dsim_irq_clear(dsim, LPDRTOUT);
+> +		dev_warn(dsim->dev, "LP RX timeout\n");
+> +	}
+> +
+> +	if (WARN_ON(intsrc & INTSRC_TATOUT)) {
+> +		sec_dsim_irq_clear(dsim, TATOUT);
+> +		dev_warn(dsim->dev, "Turns around Acknowledge timeout\n");
+> +	}
+> +
+> +	if (intsrc & INTSRC_RXDATDONE) {
+> +		sec_dsim_irq_clear(dsim, RXDATDONE);
+> +		complete(&dsim->rx_done);
+> +	}
+> +
+> +	if (intsrc & INTSRC_RXTE) {
+> +		sec_dsim_irq_clear(dsim, RXTE);
+> +		DRM_DEV_DEBUG(dsim->dev, "TE Rx trigger received\n");
+> +	}
+> +
+> +	if (intsrc & INTSRC_RXACK) {
+> +		sec_dsim_irq_clear(dsim, RXACK);
+> +		DRM_DEV_DEBUG(dsim->dev, "ACK Rx trigger received\n");
+> +	}
+> +
+> +	return IRQ_HANDLED;
+> +}
+> +
+> +static void sec_dsim_config_cmd_lpm(struct sec_dsim *dsim, bool enable)
+> +{
+> +	u32 reg;
+> +
+> +	reg = dsim_read(dsim, DSIM_ESCMODE);
+> +
+> +	if (enable)
+> +		reg |= ESCMODE_CMDLPDT;
+> +	else
+> +		reg &= ~ESCMODE_CMDLPDT;
+> +
+> +	dsim_write(dsim, DSIM_ESCMODE, reg);
+> +}
+> +
+> +static void sec_dsim_write_pl_to_sfr_fifo(struct sec_dsim *dsim,
+> +					  const void *payload,
+> +					  size_t length)
+> +{
+> +	uint32_t pl_data;
+> +
+> +	if (!length)
+> +		return;
+> +
+> +	while (length >= 4) {
+> +		pl_data = get_unaligned_le32(payload);
+> +		dsim_write(dsim, DSIM_PAYLOAD, pl_data);
+> +		payload += 4;
+> +		length -= 4;
+> +	}
+> +
+> +	pl_data = 0;
+> +	switch (length) {
+> +	case 3:
+> +		pl_data |= ((u8 *)payload)[2] << 16;
+> +		/* fallthrough */
+> +	case 2:
+> +		pl_data |= ((u8 *)payload)[1] << 8;
+> +		/* fallthrough */
+> +	case 1:
+> +		pl_data |= ((u8 *)payload)[0];
+> +		dsim_write(dsim, DSIM_PAYLOAD, pl_data);
+> +		break;
+> +	}
+> +}
+> +
+> +static void sec_dsim_write_ph_to_sfr_fifo(struct sec_dsim *dsim,
+> +					       void *header,
+> +					       bool use_lpm)
+> +{
+> +	u32 reg;
+> +
+> +	reg = dsim_read(dsim, DSIM_PKTHDR);
+> +
+> +	reg &= ~PKTHDR_DATA1_MASK;
+> +	reg |= PKTHDR_DATA1(((u8 *)header)[2]);	/* WC MSB */
+> +	reg &= ~PKTHDR_DATA0_MASK;
+> +	reg |= PKTHDR_DATA0(((u8 *)header)[1]);	/* WC LSB  */
+> +	reg &= ~PKTHDR_DI_MASK;
+> +	reg |= PKTHDR_DI(((u8 *)header)[0]);	/* Data ID */
+> +	dsim_write(dsim, DSIM_PKTHDR, reg);
+> +}
+> +
+> +static int sec_dsim_read_pl_from_sfr_fifo(struct sec_dsim *dsim,
+> +					       void *payload,
+> +					       size_t length)
+> +{
+> +	uint8_t data_type;
+> +	uint16_t word_count = 0;
+> +	uint32_t reg, ph, pl;
+> +
+> +	reg = dsim_read(dsim, DSIM_FIFOCTRL);
+> +
+> +	if (WARN_ON(reg & FIFOCTRL_EMPTYRX))
+> +		return -EINVAL;
+> +
+> +	ph = dsim_read(dsim, DSIM_RXFIFO);
+> +	data_type = PKTHDR_DT_GET(ph);
+> +	switch (data_type) {
+> +	case MIPI_DSI_RX_ACKNOWLEDGE_AND_ERROR_REPORT:
+> +		DRM_DEV_ERROR(dsim->dev,
+> +			      "peripheral report error: (0-7)%lx, (8-15)%lx\n",
+> +			      PKTHDR_DATA0_GET(ph), PKTHDR_DATA1_GET(ph));
+> +		return -EPROTO;
+> +	case MIPI_DSI_RX_DCS_SHORT_READ_RESPONSE_2BYTE:
+> +	case MIPI_DSI_RX_GENERIC_SHORT_READ_RESPONSE_2BYTE:
+> +		if (!WARN_ON(length < 2)) {
+> +			((u8 *)payload)[1] = PKTHDR_DATA1_GET(ph);
+> +			word_count++;
+> +		}
+> +		/* fall through */
+> +	case MIPI_DSI_RX_DCS_SHORT_READ_RESPONSE_1BYTE:
+> +	case MIPI_DSI_RX_GENERIC_SHORT_READ_RESPONSE_1BYTE:
+> +		((u8 *)payload)[0] = PKTHDR_DATA0_GET(ph);
+> +		word_count++;
+> +		length = word_count;
+> +		break;
+> +	case MIPI_DSI_RX_DCS_LONG_READ_RESPONSE:
+> +	case MIPI_DSI_RX_GENERIC_LONG_READ_RESPONSE:
+> +		word_count = PKTHDR_WC_GET(ph);
+> +		if (word_count > length) {
+> +			DRM_DEV_ERROR(dsim->dev, "invalid receive buffer length\n");
+> +			return -EINVAL;
+> +		}
+> +
+> +		length = word_count;
+> +
+> +		while (word_count >= 4) {
+> +			pl = dsim_read(dsim, DSIM_RXFIFO);
+> +			((u8 *)payload)[0] = pl & 0xff;
+> +			((u8 *)payload)[1] = (pl >> 8)  & 0xff;
+> +			((u8 *)payload)[2] = (pl >> 16) & 0xff;
+> +			((u8 *)payload)[3] = (pl >> 24) & 0xff;
+> +			payload += 4;
+> +			word_count -= 4;
+> +		}
+> +
+> +		if (word_count > 0) {
+> +			pl = dsim_read(dsim, DSIM_RXFIFO);
+> +
+> +			switch (word_count) {
+> +			case 3:
+> +				((u8 *)payload)[2] = (pl >> 16) & 0xff;
+> +				/* fall through */
+> +			case 2:
+> +				((u8 *)payload)[1] = (pl >> 8) & 0xff;
+> +				/* fall through */
+> +			case 1:
+> +				((u8 *)payload)[0] = pl & 0xff;
+> +				break;
+> +			}
+> +		}
+> +
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	return length;
+> +}
+> +
+> +static ssize_t sec_dsim_host_transfer(struct mipi_dsi_host *host,
+> +					   const struct mipi_dsi_msg *msg)
+> +{
+> +	int ret;
+> +	bool use_lpm;
+> +	struct mipi_dsi_packet packet;
+> +	struct sec_dsim *dsim = host_to_dsim(host);
+> +
+> +	if ((msg->rx_buf && !msg->rx_len) || (msg->rx_len && !msg->rx_buf))
+> +		return -EINVAL;
+> +
+> +	ret = mipi_dsi_create_packet(&packet, msg);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dsim->dev, "failed to create dsi packet: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	/* need to read data from peripheral */
+> +	if (unlikely(msg->rx_buf))
+> +		reinit_completion(&dsim->rx_done);
+> +
+> +	/* config LPM for CMD TX */
+> +	use_lpm = msg->flags & MIPI_DSI_MSG_USE_LPM ? true : false;
+> +	sec_dsim_config_cmd_lpm(dsim, use_lpm);
+> +
+> +	if (packet.payload_length) {		/* Long Packet case */
+> +		reinit_completion(&dsim->pl_tx_done);
+> +
+> +		/* write packet payload */
+> +		sec_dsim_write_pl_to_sfr_fifo(dsim,
+> +						   packet.payload,
+> +						   packet.payload_length);
+> +
+> +		/* write packet header */
+> +		sec_dsim_write_ph_to_sfr_fifo(dsim,
+> +						   packet.header,
+> +						   use_lpm);
+> +
+> +		ret = wait_for_completion_timeout(&dsim->ph_tx_done,
+> +						  MIPI_FIFO_TIMEOUT);
+> +		if (!ret) {
+> +			DRM_DEV_ERROR(dsim->dev, "wait payload tx done time out\n");
+> +			return -EBUSY;
+> +		}
+> +	} else {
+> +		reinit_completion(&dsim->ph_tx_done);
+> +
+> +		/* write packet header */
+> +		sec_dsim_write_ph_to_sfr_fifo(dsim,
+> +						   packet.header,
+> +						   use_lpm);
+> +
+> +		ret = wait_for_completion_timeout(&dsim->ph_tx_done,
+> +						  MIPI_FIFO_TIMEOUT);
+> +		if (!ret) {
+> +			DRM_DEV_ERROR(dsim->dev, "wait pkthdr tx done time out\n");
+> +			return -EBUSY;
+> +		}
+> +	}
+> +
+> +	/* read packet payload */
+> +	if (unlikely(msg->rx_buf)) {
+> +		ret = wait_for_completion_timeout(&dsim->rx_done,
+> +						  MIPI_FIFO_TIMEOUT);
+> +		if (!ret) {
+> +			DRM_DEV_ERROR(dsim->dev, "wait rx done time out\n");
+> +			return -EBUSY;
+> +		}
+> +
+> +		ret = sec_dsim_read_pl_from_sfr_fifo(dsim,
+> +							  msg->rx_buf,
+> +							  msg->rx_len);
+> +		if (ret < 0)
+> +			return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int sec_dsim_host_attach(struct mipi_dsi_host *host,
+> +				struct mipi_dsi_device *device)
+> +{
+> +	struct sec_dsim *dsim = host_to_dsim(host);
+> +
+> +	dsim->lanes	 = device->lanes;
+> +	dsim->channel	 = device->channel;
+> +	dsim->format	 = device->format;
+> +	dsim->mode_flags = device->mode_flags;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct mipi_dsi_host_ops sec_dsim_host_ops = {
+> +	.attach   = sec_dsim_host_attach,
+> +	.transfer = sec_dsim_host_transfer,
+> +};
+> +
+> +static void sec_dsim_video_mode(struct sec_dsim *dsim)
+> +{
+> +	struct drm_display_mode *mode = &dsim->mode;
+> +	unsigned int bpp = mipi_dsi_pixel_format_to_bpp(dsim->format);
+> +	const struct dsim_hblank_par *hpar = NULL;
+> +	unsigned int hfp, hbp, hsa, vfp, vbp, vsa;
+> +	unsigned int hfp_wc, hbp_wc, hsa_wc, wc;
+> +	unsigned int reg;
+> +
+> +	hfp = mode->hsync_start - mode->hdisplay;
+> +	hbp = mode->htotal - mode->hsync_end;
+> +	hsa = mode->hsync_end - mode->hsync_start;
+> +	vfp = mode->vsync_start - mode->vdisplay;
+> +	vbp = mode->vtotal - mode->vsync_end;
+> +	vsa = mode->vsync_end - mode->vsync_start;
+> +
+> +	if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
+> +		hpar = sec_dsim_get_hblank_par(dsim);
+> +		if (!hpar)
+> +			DRM_DEV_DEBUG(dsim->dev,
+> +				      "No pre-exist hpar can be used\n");
+> +	}
+> +
+> +	/* vertical porch */
+> +	reg = dsim_read(dsim, DSIM_MVPORCH);
+> +
+> +	reg &= ~MVPORCH_MAINVBP_MASK;
+> +	reg |= MVPORCH_MAINVBP(vbp);
+> +	reg &= ~MVPORCH_STABLEVFP_MASK;
+> +	reg |= MVPORCH_STABLEVFP(vfp);
+> +	reg &= ~MVPORCH_CMDALLOW_MASK;
+> +	reg |= MVPORCH_CMDALLOW(0x0);
+> +	dsim_write(dsim, DSIM_MVPORCH, reg);
+> +
+> +	if (!hpar) {
+> +		wc = DIV_ROUND_UP(hfp * (bpp >> 3), dsim->lanes);
+> +		hfp_wc = wc > DSIM_HFP_PKT_OVERHEAD ?
+> +			 wc - DSIM_HFP_PKT_OVERHEAD : hfp;
+> +		wc = DIV_ROUND_UP(hbp * (bpp >> 3), dsim->lanes);
+> +		hbp_wc = wc > DSIM_HBP_PKT_OVERHEAD ?
+> +			 wc - DSIM_HBP_PKT_OVERHEAD : hbp;
+> +	} else {
+> +		hfp_wc = hpar->hfp_wc;
+> +		hbp_wc = hpar->hbp_wc;
+> +	}
+> +
+> +	/* horizontal porch */
+> +	reg = dsim_read(dsim, DSIM_MHPORCH);
+> +
+> +	reg &= ~MVPORCH_MAINHBP_MASK;
+> +	reg |= MVPORCH_MAINHBP(hbp_wc);
+> +	reg &= ~MVPORCH_MAINHFP_MASK;
+> +	reg |= MVPORCH_MAINHFP(hfp_wc);
+> +	dsim_write(dsim, DSIM_MHPORCH, reg);
+> +
+> +	if (!hpar) {
+> +		wc = DIV_ROUND_UP(hsa * (bpp >> 3), dsim->lanes);
+> +		hsa_wc = wc > DSIM_HSA_PKT_OVERHEAD ?
+> +			 wc - DSIM_HSA_PKT_OVERHEAD : hsa;
+> +	} else {
+> +		hsa_wc = hpar->hsa_wc;
+> +	}
+> +
+> +	/* sync area */
+> +	reg = dsim_read(dsim, DSIM_MSYNC);
+> +
+> +	reg &= ~MVPORCH_MAINHSA_MASK;
+> +	reg |= MVPORCH_MAINHSA(hsa_wc);
+> +	reg &= ~MVPORCH_MAINVSA_MASK;
+> +	reg |= MVPORCH_MAINVSA(vsa);
+> +	dsim_write(dsim, DSIM_MSYNC, reg);
+> +}
+> +
+> +static void sec_dsim_display_mode(struct sec_dsim *dsim)
+> +{
+> +	struct drm_display_mode *mode = &dsim->mode;
+> +	u32 reg;
+> +
+> +	if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO)
+> +		sec_dsim_video_mode(dsim);
+> +
+> +	/* image resolution */
+> +	reg = dsim_read(dsim, DSIM_MDRESOL);
+> +
+> +	reg &= ~MVPORCH_MAINHRESOL_MASK;
+> +	reg |= MVPORCH_MAINHRESOL(mode->hdisplay);
+> +	reg &= ~MVPORCH_MAINVRESOL_MASK;
+> +	reg |= MVPORCH_MAINVRESOL(mode->vdisplay);
+> +
+> +	dsim_write(dsim, DSIM_MDRESOL, reg);
+> +}
+> +
+> +static void sec_dsim_config_bridge(struct sec_dsim *dsim)
+> +{
+> +	const struct sec_dsim_plat_data *pdata = dsim->pdata;
+> +	u32 reg;
+> +
+> +	reg = dsim_read(dsim, DSIM_CONFIG);
+> +
+> +	if (dsim->mode_flags & MIPI_DSI_CLOCK_NON_CONTINUOUS) {
+> +		reg |= CONFIG_NON_CONTINUOUS_CLOCK_LANE;
+> +		reg |= CONFIG_CLKLANE_STOP_START;
+> +	}
+> +
+> +	if (!(dsim->mode_flags & MIPI_DSI_MODE_VSYNC_FLUSH))
+> +		reg |= CONFIG_MFLUSH_VS;
+> +
+> +	/* disable EoT packets in HS mode */
+> +	if (!(dsim->mode_flags & MIPI_DSI_MODE_EOT_PACKET))
+> +		reg |= CONFIG_EOT_R03;
+> +
+> +	if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO) {
+> +		reg |= CONFIG_VIDEOMODE;
+> +
+> +		if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO_BURST)
+> +			reg |= CONFIG_BURSTMODE;
+> +
+> +		else if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
+> +			reg |= CONFIG_SYNCINFORM;
+> +
+> +		if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO_AUTO_VERT)
+> +			reg |= CONFIG_AUTOMODE;
+> +
+> +		if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO_HSE)
+> +			reg |= CONFIG_HSEDISABLEMODE;
+> +
+> +		if (!(dsim->mode_flags & MIPI_DSI_MODE_VIDEO_HFP))
+> +			reg |= CONFIG_HFPDISABLEMODE;
+> +
+> +		if (!(dsim->mode_flags & MIPI_DSI_MODE_VIDEO_HBP))
+> +			reg |= CONFIG_HBPDISABLEMODE;
+> +
+> +		if (!(dsim->mode_flags & MIPI_DSI_MODE_VIDEO_HSA))
+> +			reg |= CONFIG_HSADISABLEMODE;
+> +	}
+> +
+> +	/* pixel format */
+> +	reg &= ~CONFIG_MAINPIXFORMAT_MASK;
+> +	if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO) {
+> +		switch (dsim->format) {
+> +		case MIPI_DSI_FMT_RGB565:
+> +			reg |= CONFIG_MAINPIXFORMAT(0x4);
+> +			break;
+> +		case MIPI_DSI_FMT_RGB666_PACKED:
+> +			reg |= CONFIG_MAINPIXFORMAT(0x5);
+> +			break;
+> +		case MIPI_DSI_FMT_RGB666:
+> +			reg |= CONFIG_MAINPIXFORMAT(0x6);
+> +			break;
+> +		case MIPI_DSI_FMT_RGB888:
+> +			reg |= CONFIG_MAINPIXFORMAT(0x7);
+> +			break;
+> +		default:
+> +			reg |= CONFIG_MAINPIXFORMAT(0x7);
+> +			break;
+> +		}
+> +	}
+> +
+> +	/* number of data lanes */
+> +	reg &= ~CONFIG_NUMOFDATLANE_MASK;
+> +	reg |= CONFIG_NUMOFDATLANE(dsim->lanes - 1);
+> +
+> +	/* enable data, clock lane */
+> +	reg &= ~CONFIG_LANEEN_MASK;
+> +	reg |= CONFIG_LANEEN(BIT(dsim->lanes) - 1);
+> +	reg |= CONFIG_CLKLANEEN;
+> +
+> +	dsim_write(dsim, DSIM_CONFIG, reg);
+> +
+> +	/* escape mode */
+> +	reg = dsim_read(dsim, DSIM_ESCMODE);
+> +
+> +	reg &= ~ESCMODE_STOPSTATE_CN_MASK;
+> +	reg |= ESCMODE_STOPSTATE_CN(pdata->esc_stop_state_cnt);
+> +	dsim_write(dsim, DSIM_ESCMODE, reg);
+> +
+> +	/* timeout */
+> +	reg = dsim_read(dsim, DSIM_TIMEOUT);
+> +
+> +	reg &= ~TIMEOUT_LPDRTOUT_MASK;
+> +	reg |= TIMEOUT_LPDRTOUT(0xffff);
+> +	reg &= ~TIMEOUT_BTAOUT_MASK;
+> +	reg |= TIMEOUT_BTAOUT(0xff);
+> +	dsim_write(dsim, DSIM_TIMEOUT, reg);
+> +}
+> +
+> +#ifndef MHZ
+> +#define MHZ	(1000*1000)
+> +#endif
+> +
+> +static unsigned long sec_dsim_pll_find_pms(struct sec_dsim *dsim,
+> +					   unsigned long fin,
+> +					   unsigned long fout,
+> +					   u8 *p, u16 *m, u8 *s)
+> +{
+> +	const struct sec_dsim_plat_data *pdata = dsim->pdata;
+> +	unsigned long best_freq = 0;
+> +	u32 min_delta = 0xffffffff;
+> +	u8 p_min, p_max;
+> +	u8 _p, best_p;
+> +	u16 _m, best_m;
+> +	u8 _s, best_s;
+> +
+> +	p_min = DIV_ROUND_UP(fin, (12 * MHZ));
+> +	p_max = fin / (6 * MHZ);
+> +
+> +	for (_p = p_min; _p <= p_max; ++_p) {
+> +		for (_s = 0; _s <= 5; ++_s) {
+> +			u64 tmp;
+> +			u32 delta;
+> +
+> +			tmp = (u64)fout * (_p << _s);
+> +			do_div(tmp, fin);
+> +			_m = tmp;
+> +			if (_m < 41 || _m > 125)
+> +				continue;
+> +
+> +			tmp = (u64)_m * fin;
+> +			do_div(tmp, _p);
+> +			if (tmp < 500 * MHZ || tmp > pdata->max_freq_hz * MHZ)
+> +				continue;
+> +
+> +			tmp = (u64)_m * fin;
+> +			do_div(tmp, _p << _s);
+> +
+> +			delta = abs(fout - tmp);
+> +			if (delta < min_delta) {
+> +				best_p = _p;
+> +				best_m = _m;
+> +				best_s = _s;
+> +				min_delta = delta;
+> +				best_freq = tmp;
+> +			}
+> +		}
+> +	}
+> +
+> +	if (best_freq) {
+> +		*p = best_p;
+> +		*m = best_m;
+> +		*s = best_s;
+> +	}
+> +
+> +	return best_freq;
+> +}
+> +
+> +static unsigned long sec_dsim_set_pll(struct sec_dsim *dsim)
+> +{
+> +	unsigned long fin, fout, freq;
+> +	u8 p, s;
+> +	u16 m;
+> +	u32 reg;
+> +
+> +	fin = dsim->pll_clk_hz;
+> +	freq = dsim->burst_clk_hz;
+> +	fout = sec_dsim_pll_find_pms(dsim, fin, freq, &p, &m, &s);
+> +	if (!fout) {
+> +		DRM_DEV_ERROR(dsim->dev,
+> +			      "failed to find PLL PMS for requested frequency\n");
+> +		return 0;
+> +	}
+> +	DRM_DEV_DEBUG(dsim->dev,
+> +		      "PLL freq %lu, (p %d, m %d, s %d)\n", fout, p, m, s);
+> +
+> +	reg = PLLCTRL_PLLEN | PLLCTRL_PMS_P(p) | PLLCTRL_PMS_M(m) | PLLCTRL_PMS_S(s);
+> +
+> +	dsim_write(dsim, DSIM_PLLCTRL, reg);
+> +
+> +	regmap_read_poll_timeout(dsim->regmap, DSIM_STATUS, reg,
+> +				 reg & STATUS_PLLSTABLE, 0, 1000);
+> +	return fout;
+> +}
+> +
+> +static int sec_dsim_enable_clock(struct sec_dsim *dsim)
+> +{
+> +	const struct sec_dsim_plat_data *pdata = dsim->pdata;
+> +	unsigned long hs_clk, byte_clk, esc_clk;
+> +	unsigned long esc_div;
+> +	u32 reg;
+> +
+> +	/* pll timer */
+> +	dsim_write(dsim, DSIM_PLLTMR, pdata->pll_timer);
+> +
+> +	/* pll control */
+> +	hs_clk = sec_dsim_set_pll(dsim);
+> +	if (!hs_clk) {
+> +		DRM_DEV_ERROR(dsim->dev, "failed to configure DSI PLL\n");
+> +		return -EFAULT;
+> +	}
+> +
+> +	byte_clk = hs_clk / 8;
+> +	esc_div = DIV_ROUND_UP(byte_clk, dsim->esc_clk_hz);
+> +	esc_clk = byte_clk / esc_div;
+> +
+> +	if (esc_clk > 20 * MHZ) {
+> +		++esc_div;
+> +		esc_clk = byte_clk / esc_div;
+> +	}
+> +
+> +	DRM_DEV_DEBUG(dsim->dev,
+> +		      "PLL: hs_clk = %lu, byte_clk = %lu, esc_clk = %lu, esc_div = %lu\n",
+> +		      hs_clk, byte_clk, esc_clk, esc_div);
+> +
+> +	/* clk control */
+> +	reg = dsim_read(dsim, DSIM_CLKCTRL);
+> +
+> +	reg |= CLKCTRL_TXREQUESTHSCLK;
+> +	reg |= CLKCTRL_ESCCLKEN;
+> +	reg &= ~CLKCTRL_PLLBYPASS;
+> +	reg &= ~CLKCTRL_BYTECLKSRC_MASK;
+> +	reg |= CLKCTRL_BYTECLKEN;
+> +	reg &= ~CLKCTRL_LANEESCDATAEN_MASK;
+> +	reg |= CLKCTRL_LANEESCDATAEN(BIT(dsim->lanes) - 1);
+> +	reg |= CLKCTRL_LANEESCCLKEN;
+> +	reg &= ~CLKCTRL_ESCPRESCALER_MASK;
+> +	reg |= CLKCTRL_ESCPRESCALER(esc_div);
+> +
+> +	dsim_write(dsim, DSIM_CLKCTRL, reg);
+> +
+> +	return 0;
+> +}
+> +
+> +static void sec_dsim_fifo_enable(struct sec_dsim *dsim, bool enable)
+> +{
+> +	u32 reg;
+> +
+> +	reg = dsim_read(dsim, DSIM_FIFOCTRL);
+> +
+> +	reg &= ~FIFOCTRL_INIT_MASK;
+> +	dsim_write(dsim, DSIM_FIFOCTRL, reg);
+> +	udelay(500);
+> +
+> +	if (!enable)
+> +		return;
+> +
+> +	reg |= FIFOCTRL_NINITRX	|
+> +	       FIFOCTRL_NINITSFR |
+> +	       FIFOCTRL_NINITI80 |
+> +	       FIFOCTRL_NINITSUB |
+> +	       FIFOCTRL_NINITMAIN;
+> +	dsim_write(dsim, DSIM_FIFOCTRL, reg);
+> +	udelay(500);
+> +}
+> +
+> +static void sec_dsim_set_display(struct sec_dsim *dsim, bool enable)
+> +{
+> +	u32 reg;
+> +
+> +	reg = dsim_read(dsim, DSIM_MDRESOL);
+> +
+> +	if (enable)
+> +		reg |= MDRESOL_MAINSTANDBY;
+> +	else
+> +		reg &= ~MDRESOL_MAINSTANDBY;
+> +	dsim_write(dsim, DSIM_MDRESOL, reg);
+> +}
+> +
+> +static void sec_dsim_bridge_enable(struct drm_bridge *bridge)
+> +{
+> +	struct sec_dsim *dsim = bridge_to_dsim(bridge);
+> +	int ret;
+> +
+> +	/* enable bridge clocks */
+> +	clk_prepare_enable(dsim->clk_bus);
+> +	clk_prepare_enable(dsim->clk_phy_ref);
+> +
+> +	/* initialize the irq */
+> +	sec_dsim_irq_init(dsim);
+> +
+> +	/* configure the bridge */
+> +	sec_dsim_config_bridge(dsim);
+> +
+> +	/* enable fifo control */
+> +	sec_dsim_fifo_enable(dsim, true);
+> +
+> +	/* configure the display mode */
+> +	sec_dsim_display_mode(dsim);
+> +
+> +	/* config dsim pll */
+> +	ret = sec_dsim_enable_clock(dsim);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dsim->dev, "failed to enable clock: %d\n", ret);
+> +		return;
+> +	}
+> +
+> +	/* power on the dphy */
+> +	ret = phy_init(dsim->phy);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dsim->dev, "failed to init phy %d\n", ret);
+> +		return;
+> +	}
+> +
+> +	/* power on the dphy */
+> +	ret = phy_power_on(dsim->phy);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dsim->dev, "failed to enable phy %d\n", ret);
+> +		return;
+> +	}
+> +
+> +	/* enable data transfer */
+> +	sec_dsim_set_display(dsim, true);
+> +}
+> +
+> +static void sec_dsim_disable_clock(struct sec_dsim *dsim)
+> +{
+> +	u32 reg;
+> +
+> +	/* clk control */
+> +	reg = dsim_read(dsim, DSIM_CLKCTRL);
+> +
+> +	reg &= ~CLKCTRL_TXREQUESTHSCLK;
+> +	reg &= ~CLKCTRL_BYTECLKEN;
+> +	reg &= ~CLKCTRL_ESCCLKEN;
+> +	reg &= ~CLKCTRL_LANEESCDATAEN_MASK;
+> +	reg &= ~CLKCTRL_LANEESCCLKEN;
+> +	dsim_write(dsim, DSIM_CLKCTRL, reg);
+> +
+> +	/* pll control */
+> +	reg  = dsim_read(dsim, DSIM_PLLCTRL);
+> +
+> +	reg &= ~PLLCTRL_PLLEN;
+> +	dsim_write(dsim, DSIM_PLLCTRL, reg);
+> +}
+> +
+> +static void sec_dsim_bridge_disable(struct drm_bridge *bridge)
+> +{
+> +	struct sec_dsim *dsim = bridge_to_dsim(bridge);
+> +
+> +	/* disable data transfer */
+> +	sec_dsim_set_display(dsim, false);
+> +
+> +	/* disable bridge clocks */
+> +	sec_dsim_disable_clock(dsim);
+> +
+> +	/* disable fifo control */
+> +	sec_dsim_fifo_enable(dsim, false);
+> +
+> +	/* power off the phy */
+> +	phy_power_off(dsim->phy);
+> +
+> +	/* exit the phy */
+> +	phy_exit(dsim->phy);
+> +
+> +	/* disable bridge clock */
+> +	clk_disable_unprepare(dsim->clk_phy_ref);
+> +	clk_disable_unprepare(dsim->clk_bus);
+> +}
+> +
+> +static bool sec_dsim_bridge_mode_fixup(struct drm_bridge *bridge,
+> +				       const struct drm_display_mode *mode,
+> +				       struct drm_display_mode *adjusted_mode)
+> +{
+> +	adjusted_mode->flags |= (DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC);
+> +	adjusted_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
+> +
+> +	return true;
+> +}
+> +
+> +static void sec_dsim_bridge_mode_set(struct drm_bridge *bridge,
+> +				     const struct drm_display_mode *mode,
+> +				     const struct drm_display_mode *adjusted_mode)
+> +{
+> +	struct sec_dsim *dsim = bridge_to_dsim(bridge);
+> +
+> +	drm_mode_copy(&dsim->mode, adjusted_mode);
+> +}
+> +
+> +static int sec_dsim_bridge_attach(struct drm_bridge *bridge,
+> +				  enum drm_bridge_attach_flags flags)
+> +{
+> +	struct sec_dsim *dsim = bridge_to_dsim(bridge);
+> +	struct drm_bridge *panel_bridge;
+> +	struct drm_panel *panel;
+> +	int ret;
+> +
+> +	ret = drm_of_find_panel_or_bridge(dsim->dev->of_node, 1, 0, &panel,
+> +					  &panel_bridge);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (panel) {
+> +		panel_bridge = drm_panel_bridge_add(panel);
+> +		if (IS_ERR(panel_bridge))
+> +			return PTR_ERR(panel_bridge);
+> +	}
+> +	dsim->panel_bridge = panel_bridge;
+> +
+> +	if (!dsim->panel_bridge)
+> +		return -EPROBE_DEFER;
+> +
+> +	return drm_bridge_attach(bridge->encoder, dsim->panel_bridge, bridge,
+> +				 flags);
+> +}
+> +
+> +static void sec_dsim_bridge_detach(struct drm_bridge *bridge)
+> +{
+> +	struct sec_dsim *dsim = bridge_to_dsim(bridge);
+> +
+> +	drm_of_panel_bridge_remove(dsim->dev->of_node, 1, 0);
+> +}
+> +
+> +static const struct drm_bridge_funcs sec_dsim_bridge_funcs = {
+> +	.enable		= sec_dsim_bridge_enable,
+> +	.disable	= sec_dsim_bridge_disable,
+> +	.mode_set	= sec_dsim_bridge_mode_set,
+> +	.mode_fixup	= sec_dsim_bridge_mode_fixup,
+> +	.attach		= sec_dsim_bridge_attach,
+> +	.detach		= sec_dsim_bridge_detach,
+> +};
+> +
+> +static const struct drm_bridge_timings sec_dsim_bridge_timings = {
+> +	.input_bus_flags = DRM_BUS_FLAG_DE_LOW,
+> +};
+> +
+> +static const struct sec_dsim_plat_data imx8mm_mipi_dsim_plat_data = {
+> +	.version		= 0x1060200,
+> +	.pll_timer		= 500,
+> +	.max_freq_hz		= 2100,
+> +	.esc_stop_state_cnt	= 0xf,
+> +};
+> +
+> +static const struct of_device_id sec_dsim_dt_ids[] = {
+> +	{
+> +		.compatible = "fsl,imx8mm-sec-dsim",
+> +		.data = &imx8mm_mipi_dsim_plat_data,
+> +	},
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, sec_dsim_dt_ids);
+> +
+> +static int sec_dsim_parse_dt(struct sec_dsim *dsim)
+> +{
+> +	struct platform_device *pdev = to_platform_device(dsim->dev);
+> +	struct device *dev = dsim->dev;
+> +	struct device_node *node = dev->of_node;
+> +	struct clk *clk;
+> +	void __iomem *base;
+> +	u32 value;
+> +	int irq;
+> +	int ret;
+> +
+> +	base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(base))
+> +		return PTR_ERR(base);
+> +
+> +	dsim->regmap = devm_regmap_init_mmio(dev, base, &sec_dsim_regmap_config);
+> +	if (IS_ERR(dsim->regmap)) {
+> +		ret = PTR_ERR(dsim->regmap);
+> +		DRM_DEV_ERROR(dev, "failed to create sec dsim regmap: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	dsim->phy = devm_phy_get(dev, "dphy");
+> +	if (IS_ERR(dsim->phy)) {
+> +		DRM_DEV_ERROR(dev, "failed to get dsim phy\n");
+> +		return PTR_ERR(dsim->phy);
+> +	}
+> +
+> +	clk = devm_clk_get(dev, "bus");
+> +	if (IS_ERR(clk)) {
+> +		ret = PTR_ERR(clk);
+> +		DRM_DEV_ERROR(dev, "failed to get bus clock: %d\n", ret);
+> +		return ret;
+> +	}
+> +	dsim->clk_bus = clk;
+> +
+> +	clk = devm_clk_get(dev, "phy_ref");
+> +	if (IS_ERR(clk)) {
+> +		ret = PTR_ERR(clk);
+> +		DRM_DEV_ERROR(dev, "failed to get phy_ref clock: %d\n", ret);
+> +		return ret;
+> +	}
+> +	dsim->clk_phy_ref = clk;
+> +
+> +	irq = platform_get_irq(pdev, 0);
+> +	if (irq < 0)
+> +		return -ENODEV;
+> +
+> +	ret = devm_request_irq(dev, irq, sec_dsim_irq_handler, 0, dev_name(dev), dsim);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dev, "failed to request dsim irq: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	if (!of_property_read_u32(node, "samsung,pll-clock-frequency", &value))
+> +		dsim->pll_clk_hz = value;
+> +
+> +	if (!of_property_read_u32(node, "samsung,burst-clock-frequency", &value))
+> +		dsim->burst_clk_hz = value;
+> +
+> +	if (!of_property_read_u32(node, "samsung,esc-clock-frequency", &value))
+> +		dsim->esc_clk_hz = value;
+> +
+> +	init_completion(&dsim->pll_stable);
+> +	init_completion(&dsim->ph_tx_done);
+> +	init_completion(&dsim->pl_tx_done);
+> +	init_completion(&dsim->rx_done);
+> +
+> +	return 0;
+> +}
+> +
+> +static int sec_dsim_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	const struct of_device_id *of_id;
+> +	struct sec_dsim *dsim;
+> +	int version;
+> +	int ret;
+> +
+> +	dsim = devm_kzalloc(dev, sizeof(*dsim), GFP_KERNEL);
+> +	if (!dsim) {
+> +		DRM_DEV_ERROR(dev, "failed to allocate dsim\n");
+> +		return -ENOMEM;
+> +	}
+> +
+> +	of_id = of_match_device(sec_dsim_dt_ids, dev);
+> +	if (!of_id)
+> +		return -ENODEV;
+> +
+> +	dsim->pdata = of_id->data;
+> +	dsim->dev = dev;
+> +
+> +	ret = sec_dsim_parse_dt(dsim);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dev, "failed to parse dt: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	version = dsim_read(dsim, DSIM_VERSION);
+> +	WARN_ON(version != dsim->pdata->version);
+> +	DRM_DEV_INFO(dev, "DSIM version number is %#x\n", version);
+> +
+> +	dsim->host.ops = &sec_dsim_host_ops;
+> +	dsim->host.dev = dsim->dev;
+> +
+> +	ret = mipi_dsi_host_register(&dsim->host);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dev, "failed to register mipi dsi host: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	dsim->bridge.driver_private = dsim;
+> +	dsim->bridge.funcs = &sec_dsim_bridge_funcs;
+> +	dsim->bridge.of_node = dev->of_node;
+> +	dsim->bridge.timings = &sec_dsim_bridge_timings;
+> +
+> +	dev_set_drvdata(dev, dsim);
+> +
+> +	drm_bridge_add(&dsim->bridge);
+> +
+> +	return 0;
+> +}
+> +
+> +static int sec_dsim_remove(struct platform_device *pdev)
+> +{
+> +	struct sec_dsim *dsim = platform_get_drvdata(pdev);
+> +
+> +	mipi_dsi_host_unregister(&dsim->host);
+> +	drm_bridge_remove(&dsim->bridge);
+> +
+> +	return 0;
+> +}
+> +
+> +struct platform_driver sec_dsim_driver = {
+> +	.probe    = sec_dsim_probe,
+> +	.remove   = sec_dsim_remove,
+> +	.driver   = {
+> +		.name = DRIVER_NAME,
+> +		.of_match_table = sec_dsim_dt_ids,
+> +	},
+> +};
+> +
+> +module_platform_driver(sec_dsim_driver);
+> +
+> +MODULE_AUTHOR("Jagan Teki <jagan@amarulasolutions.com>");
+> +MODULE_DESCRIPTION("Samsung SEC MIPI DSIM Bridge driver");
+> +MODULE_LICENSE("GPL v2");
 
-So what do you propose here? Model as a reset device or phy device since it is related to phy?
-Please share your opinion on this.
-
+-- 
 Regards,
-Biju
 
-> >
-> > So not sure usb-phy is right one here ? I prefer usb-phy-ctrl instead.
-> Is it ok? Please let me know.
-> 
-> A node with #phy-cells should use the standard phy node names unless it
-> has other controls. 
-
-Apart from reset, it has other controls like  clock control , connection control , clock status and powerdown setting registers.
-
-Cheers,
-Biju
-
-As I said, this doesn't seem to be a phy, so using
-> #phy-cells here is what seems wrong.
-> 
-> > > > +        compatible = "renesas,r9a07g044-usbphyctrl",
-> > > > +                     "renesas,rzg2l-usbphyctrl";
-> > > > +        reg = <0x11c40000 0x10000>;
-> > > > +        clocks = <&cpg CPG_MOD R9A07G044_USB_PCLK>;
-> > > > +        resets = <&cpg R9A07G044_USB_PCLK>;
-> > > > +        power-domains = <&cpg>;
-> 
-> Also, are these all resources of the usbphyctrl block and not just
-> resources you happen to want in the driver? For example, the power-domain
-> should be the power island that this block resides in.
-> 
-> > > > +        #phy-cells = <1>;
-> > > > +    };
-> > > > --
-> > > > 2.17.1
-> > > >
-> > > >
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
