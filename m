@@ -2,19 +2,20 @@ Return-Path: <SRS0=CyPL=LR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D6918C4743C
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 14:13:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7907BC4743C
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 14:29:43 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 98AAB6101D
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 14:13:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 98AAB6101D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 4A7DC6115A
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 14:29:43 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4A7DC6115A
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=linux-m68k.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -22,53 +23,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=66fhYgHKZb4s1bag4eERCpuQdezZvsTji3F0RlhVzIo=; b=pGQnWwa09/gdxI
-	GgQIig7HWOxLVRaJ9S/uZy3qL2EwosPgTGvaNuMHyTGAtOdsYdLvGsRKKqb4KzBZXlo7S250zd9yl
-	ADRdT2/pnGSe/zOLWh6PxT/XVX6xNKShnxlRB5FAk65H8yWM+LAh7y3n057LgCe+fHpMw8Yw1zOtu
-	/g7m941aB9Y5StGL7JJutDz4jOzvkKTB2H4Hmc4GzxMIHtnwrnQFgCZwq1SsaOthFPC/2qSur2TiB
-	LdNGuAKEzJFnZYYRew2dBcnIpqQyfK4sn0k4EBKQzG9faf3J4xVUVIbbzic9GpuWadZVL+fxU1pFi
-	QbjqqwnYeGyAeK64vWdA==;
+	List-Owner; bh=Kthmguq/t+fpnbk9oPeL1IFVHEjXPRiSoGo/HX00wlY=; b=MpJ82QeIEOZu2H
+	xhgHE3Iko08ZhBt0UOuK+HAJg2Lds6v7/vLoW6KyHbrKzYy/sdV+zTWfS430ZnD3RiP1WOw1ZEuE8
+	oVDXFEIT4/zyweIijybSdY0k12l12LBjNwE7MgXmNAcT1ihBiLwB23YROua/MWo+t/EXd/NKQD3Dn
+	WvjNCVVfGnfAWXZxQEmhoFbBR8VbQaQWBrbibH0LdvTdRoqcR8xVGGHQRLMinOjf8eNsDc7pKH2VP
+	QgCNguVGf+sxguGV7SWWPHRbBrKsUdBjDjxK3/R0FSKhNiLTXGIGYv1pWmfoMPzVOXL2/xO8rViFV
+	XrUF9V3sYcuSJCWJ7SNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lw3d2-00Axga-4E; Wed, 23 Jun 2021 14:13:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1lw3ss-00B01s-Rl; Wed, 23 Jun 2021 14:29:42 +0000
+Received: from mail-vk1-f170.google.com ([209.85.221.170])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lw3cy-00Axfe-Ca
- for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 14:13:18 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 09F94610C7
- for <linux-phy@lists.infradead.org>; Wed, 23 Jun 2021 14:13:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1624457596;
- bh=2D9bXMvM+JmMYhWz55X1lQn63XVa0lNjGb8sbsPeUlI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=e1NaCKVSyFS1N6pMZhNWdW9qczwx1qgT9qQOMG9kGt0vbXJmg7rnMN+Oo/pl+hbpw
- 6f5EXxJCRsWEd4TvsXAm3wf+SmmWjh1bjRCqhZfcWc9kHglKc64Hit6Mp8c2XXev8D
- q+Swu+5mPd8Ty6gmBOVQvBH0An/BhT46xYDVkXnip3lztUJGZQYtJ7o42GtB7fwtek
- gS+b1Za7CUGdZHQD5z4WuaCOEI8uYdNppZLc7Fp+09K5Kw7Qh3SgAiho7wLmonlNyD
- n+Qmhw4BGETjGmXCpk2MiDPgM6wKtq0kvnW0n3NsLcpJzMn5Fqv+7CwaKQqv1diMjO
- qzwFnlGSXLTqw==
-Received: by mail-ej1-f51.google.com with SMTP id gn32so4304337ejc.2
- for <linux-phy@lists.infradead.org>; Wed, 23 Jun 2021 07:13:15 -0700 (PDT)
-X-Gm-Message-State: AOAM530evcMpjHHv/miDM0tiehFI6BTAb3mCKZvjPDYa+JGg7CNey/AK
- IeLy2Qu0TMPIqNX6kety/Vt4o2pW/55XV69kdQ==
-X-Google-Smtp-Source: ABdhPJxJXNM8p40jL+1hduziK5Lfzt6kOH+YKNP84M1NQTiMMnmsEQwdG6ThBH+2icXPIffhLBoOqvfAupbq/dOrDHM=
-X-Received: by 2002:a17:906:1951:: with SMTP id
- b17mr233230eje.468.1624457594568; 
- Wed, 23 Jun 2021 07:13:14 -0700 (PDT)
+ id 1lw3sg-00AzzY-C8
+ for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 14:29:32 +0000
+Received: by mail-vk1-f170.google.com with SMTP id b64so328616vkh.12
+ for <linux-phy@lists.infradead.org>; Wed, 23 Jun 2021 07:29:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4zLP8Lzz+0qOLc6xIklg3T8AfAgg7V88EpKSHAjjsNY=;
+ b=MJH2zODLXQHcTMsxEyJSDM2ijs3H8OdJpqHQdW7MKS5SYaMpPkx3dOU2uSYhK2AdFK
+ EsYrgTTkO8piJKEuqudcg4bfBLjhXsOmWdVjP2jFCvDlPhDC4NJilQO5BmZPVoHcaQxr
+ cvONJ/2cNmbqWLkWgdbP+774j8hrr/iQo0EP5KD1+Rmhg0ggrOuN8yyJQRc8GFqe5yWl
+ 34qVDVGjpaENL8NeRb5G4NkL4fvKFXl+y235ct2KMXGleFaebY9/LH1Gm/WvNiBTnHJs
+ yikrlK6J/+qoFwKutNlZBo/r2ERnROoTpfj3BcPmo5BP08U3vhi/qjnaA7RZP8Va6tiM
+ eeiA==
+X-Gm-Message-State: AOAM533ZZ3I0PeFebd+ptmGEvfCnhUsPVAk2LfwOMvYHbHgIKD5mWA9R
+ 8cZxkzkm6YO0KAyAjShOA4/Jzku9QkB+nL7/vXo=
+X-Google-Smtp-Source: ABdhPJwKQtxd9FI1MugpOvBaepnBWwy2HkNEuTC9CSN+34BNYMxIsa2iKwG2XysCM5/jB0JFoMhjcf0gJS7M4lhpZXo=
+X-Received: by 2002:a1f:1a41:: with SMTP id a62mr337115vka.5.1624458566857;
+ Wed, 23 Jun 2021 07:29:26 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210621093943.12143-1-biju.das.jz@bp.renesas.com>
  <20210621093943.12143-2-biju.das.jz@bp.renesas.com>
  <20210622165851.GA3840386@robh.at.kernel.org>
  <OS0PR01MB5922ECC2B573F1F8E170744F86089@OS0PR01MB5922.jpnprd01.prod.outlook.com>
-In-Reply-To: <OS0PR01MB5922ECC2B573F1F8E170744F86089@OS0PR01MB5922.jpnprd01.prod.outlook.com>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 23 Jun 2021 08:13:02 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqK_6_LUD-ffkDCuDEds2RiYftJfynZyPN4io3Lt3MnQ4g@mail.gmail.com>
-Message-ID: <CAL_JsqK_6_LUD-ffkDCuDEds2RiYftJfynZyPN4io3Lt3MnQ4g@mail.gmail.com>
+ <CAL_JsqK_6_LUD-ffkDCuDEds2RiYftJfynZyPN4io3Lt3MnQ4g@mail.gmail.com>
+In-Reply-To: <CAL_JsqK_6_LUD-ffkDCuDEds2RiYftJfynZyPN4io3Lt3MnQ4g@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 23 Jun 2021 16:29:15 +0200
+Message-ID: <CAMuHMdV0YrdUL6WGBTwxi1jQvakfmKNTB-8dv1LcAqMz-w356g@mail.gmail.com>
 Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L USB
  PHY Control bindings
-To: Biju Das <biju.das.jz@bp.renesas.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+To: Rob Herring <robh@kernel.org>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
  "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
@@ -78,8 +78,8 @@ Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
  "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210623_071316_502211_58DC37BE 
-X-CRM114-Status: GOOD (  28.33  )
+X-CRM114-CacheID: sfid-20210623_072930_452113_60A26E4F 
+X-CRM114-Status: GOOD (  21.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,148 +96,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 23, 2021 at 7:38 AM Biju Das <biju.das.jz@bp.renesas.com> wrote:
->
-> Hi Rob,
->
-> Thanks for the feedback.
->
-> > Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L
-> > USB PHY Control bindings
-> >
-> > On Mon, Jun 21, 2021 at 10:39:33AM +0100, Biju Das wrote:
-> > > Add device tree binding document for RZ/G2L USB PHY control driver.
+Hi Rob,
+
+On Wed, Jun 23, 2021 at 4:13 PM Rob Herring <robh@kernel.org> wrote:
+> On Wed, Jun 23, 2021 at 7:38 AM Biju Das <biju.das.jz@bp.renesas.com> wrote:
+> > > Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L
+> > > USB PHY Control bindings
 > > >
-> > > Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
-> > > Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > > ---
-> > > V1->V2:
-> > >  * Add clock properties
-> > > ---
-> > >  .../phy/renesas,rzg2l-usbphyctrl.yaml         | 65 +++++++++++++++++++
-> > >  1 file changed, 65 insertions(+)
-> > >  create mode 100644
-> > > Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
-> > >
-> > > diff --git
-> > > a/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
-> > > b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.yaml
-> > > new file mode 100644
-> > > index 000000000000..8e8ba43f595d
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.y
-> > > +++ aml
-> > > @@ -0,0 +1,65 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML 1.2
-> > > +---
-> > > +$id:
-> > > +https://jpn01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevi
-> > > +cetree.org%2Fschemas%2Fphy%2Frenesas%2Crzg2l-usbphyctrl.yaml%23&amp;d
-> > > +ata=04%7C01%7Cbiju.das.jz%40bp.renesas.com%7Cc6bbf5f6ce334eaa722a08d9
-> > > +359f07ad%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C637599779421910
-> > > +039%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBT
-> > > +iI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=Jcf6Om4DehifCe1KO1rmt5LxTB
-> > > +6jtGoQLD1MoqWGM%2F0%3D&amp;reserved=0
-> > > +$schema:
-> > > +https://jpn01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevi
-> > > +cetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=04%7C01%7Cbiju.das.
-> > > +jz%40bp.renesas.com%7Cc6bbf5f6ce334eaa722a08d9359f07ad%7C53d82571da19
-> > > +47e49cb4625a166a4a2a%7C0%7C0%7C637599779421910039%7CUnknown%7CTWFpbGZ
-> > > +sb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%
-> > > +3D%7C1000&amp;sdata=LlqPRLf9%2BGrEdSapxCFhwxVKcXTVh9ECr%2FXPN0SIzi4%3
-> > > +D&amp;reserved=0
-> > > +
-> > > +title: Renesas RZ/G2L USB2.0 PHY Control
-> > > +
-> > > +maintainers:
-> > > +  - Biju Das <biju.das.jz@bp.renesas.com>
-> > > +
-> > > +description:
-> > > +  The RZ/G2L USB2.0 PHY Control mainly controls reset and power down
-> > > +of the
-> > > +  USB/PHY.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    items:
-> > > +      - enum:
-> > > +          - renesas,r9a07g044-usbphyctrl # RZ/G2{L,LC}
-> > > +      - const: renesas,rzg2l-usbphyctrl
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  clocks:
-> > > +    maxItems: 1
-> > > +
-> > > +  resets:
-> > > +    maxItems: 1
-> > > +
-> > > +  power-domains:
-> > > +    maxItems: 1
-> > > +
-> > > +  '#phy-cells':
-> > > +    # see phy-bindings.txt in the same directory
-> > > +    const: 1
-> > > +    description: |
-> > > +      The phandle's argument in the PHY specifier is the phy reset
-> > control bit
-> > > +      of usb phy control.
-> > > +      0 = Port 1 Phy reset
-> > > +      1 = Port 2 Phy reset
-> > > +    enum: [ 0, 1 ]
-> >
-> > You already have the const, so this doesn't do anything.
+> > > On Mon, Jun 21, 2021 at 10:39:33AM +0100, Biju Das wrote:
+> > > > Add device tree binding document for RZ/G2L USB PHY control driver.
+> > > >
+> > > > Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+> > > > Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+
+> > > > +        compatible = "renesas,r9a07g044-usbphyctrl",
+> > > > +                     "renesas,rzg2l-usbphyctrl";
+> > > > +        reg = <0x11c40000 0x10000>;
+> > > > +        clocks = <&cpg CPG_MOD R9A07G044_USB_PCLK>;
+> > > > +        resets = <&cpg R9A07G044_USB_PCLK>;
+> > > > +        power-domains = <&cpg>;
 >
-> OK, will take out const.
+> Also, are these all resources of the usbphyctrl block and not just
+> resources you happen to want in the driver? For example, the
+> power-domain should be the power island that this block resides in.
 
-No, 'const' is correct. This is the value of '#phy-cells', not the
-contents (we don't have a way to express schema for that).
+It's a clock domain, not a power area: the block goes into power-save
+mode by stopping the module clock controlled by the CPG.
 
-> > > +required:
-> > > +  - compatible
-> > > +  - reg
-> > > +  - clocks
-> > > +  - '#phy-cells'
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +    #include <dt-bindings/clock/r9a07g044-cpg.h>
-> > > +
-> > > +    usbphyctrl@11c40000 {
-> >
-> > usb-phy@...
->
-> The IP is called USBPHY control. It mainly controls reset and power down of the USB2.0/PHY.
+Gr{oetje,eeting}s,
 
-Sounds like it should be using the reset binding...
+                        Geert
 
->
-> So not sure usb-phy is right one here ? I prefer usb-phy-ctrl instead. Is it ok? Please let me know.
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-A node with #phy-cells should use the standard phy node names unless
-it has other controls. As I said, this doesn't seem to be a phy, so
-using #phy-cells here is what seems wrong.
-
-> > > +        compatible = "renesas,r9a07g044-usbphyctrl",
-> > > +                     "renesas,rzg2l-usbphyctrl";
-> > > +        reg = <0x11c40000 0x10000>;
-> > > +        clocks = <&cpg CPG_MOD R9A07G044_USB_PCLK>;
-> > > +        resets = <&cpg R9A07G044_USB_PCLK>;
-> > > +        power-domains = <&cpg>;
-
-Also, are these all resources of the usbphyctrl block and not just
-resources you happen to want in the driver? For example, the
-power-domain should be the power island that this block resides in.
-
-> > > +        #phy-cells = <1>;
-> > > +    };
-> > > --
-> > > 2.17.1
-> > >
-> > >
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
