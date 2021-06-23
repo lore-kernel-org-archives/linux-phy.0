@@ -2,77 +2,70 @@ Return-Path: <SRS0=CyPL=LR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-12.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 56CC3C48BC2
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 793C9C4743C
 	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 10:11:52 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 22D5161166
+	by mail.kernel.org (Postfix) with ESMTPS id 41C9261220
 	for <linux-phy@archiver.kernel.org>; Wed, 23 Jun 2021 10:11:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 22D5161166
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 41C9261220
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YIhauI46xrcF7NyY5pGv2tXrsGz9rMvt/UtVpWCQoc4=; b=bCkrbKyL0EKFPE
-	ZeCX2qHEnxRh3Kay2ET4IeXzHNhkEFsrBfVJKEzVoQCx+L06DJkXnijoRWcmdekQkY8zPH2US/Pmj
-	owpkuDUxT8pwuYzYYfEVdsY6SUZe9LnR/42wPbYhJDhjXVEZQlBoCc6VUwquL7oqwwFT/uNhUvWYY
-	p/TErIqX9ddOl8K9aRFygmaPAzDBVVrGqRx/KSBDZP/lmwRLteFjMM+L16sG/Ga/2DexESFV5a416
-	eawZ5yn1G6gf8ELOldwnbA/pMf4spx/ufA+oMpzWHOfTzdKw/BNIlToICYKIQu33w/dpEpYdacYqv
-	m7IE7nKZMzNoLJElUdsg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=a0QEg9VgdBfmW03pDA4YKm3ywCz5ftNm/iHxBogMEtQ=; b=AZD0bl05YEKDks
+	abHypK0zXs1hoTzDIY4Va4hBWN8AlgMc3JY76CMjnVdSbeNQlgiSkZh3zWFhx4+JqGDRR0hovAtSL
+	9BlSDtrjG0IqoVybEu4/NWJDiB6dhzqj1MaQtu2Xr5a4/tmlnzg5UnWit4YBeY9YY37aWG/z5NVfZ
+	k79iJgJXh88yj13J5EGgUiVJFMDF0BnLoZ2B6PsyyEbbun2+etiY89o7DnrEsESxyge9Z9LUJZ8qb
+	/c+FxEPnMpF4W7jOfkdBOgbe6QJS4rBPsKSIoRFvI7Md+QHZXoR3U0yt18ck1vODfjo3s2pDGBBFV
+	6cbeRJ521gBE3V6a5+7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lvzrL-00AHfK-M8; Wed, 23 Jun 2021 10:11:51 +0000
+	id 1lvzrL-00AHfO-PY; Wed, 23 Jun 2021 10:11:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lvzr4-00AHVj-BK
- for linux-phy@lists.infradead.org; Wed, 23 Jun 2021 10:11:38 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 8F9C861289;
+ id 1lvzr4-00AHVZ-9q; Wed, 23 Jun 2021 10:11:37 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 8017D611AD;
  Wed, 23 Jun 2021 10:11:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=k20201202; t=1624443093;
- bh=kNW8d6FYZrp5TtEV5EAD/yTf6uEn3NfrV8G5pXUZGlA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OVc4nPA4POXg+vjYZHThwRLWCR7/+2z2H1niAaSSVYDeHP2JoQwDc+l7wYCtlOmQq
- 7KJPGgfPe3bL/4QK9ylPB6aBGcuwYFEtcShL5w3F+3/5poiHBYdoioFaARqdr+Qn6M
- ZnNkCGfTI+RQth2EPMQN9UEjn55q4ZBrxSBQkDgxyJ0NSHZtiSLlVaqEDN4XBp9/hr
- 2r3Y2frSlNE3U3Q4TOPVL2ffOGROBJ22eM2EbPH7smy8+U8S7I5Zind+9lqZ3a83TY
- LrOZQKJ7c54zSryUSvfvdTPiHNsdL3rksqQ6ceAGqI5/XB4RlMufFjQ/3W51lPueb7
- nA828WdDTVCSw==
+ bh=PTk8qF9sCzGm1VCM1jUzPQ75hDfSjU7UhDG0wpTdkAs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=u/BlZi//ZEwXJ1K7hfctkcaocgcL2db4fg0wagf0wa95oJhq96rceAxSm4pKAYoLM
+ Qh9+rpQMHYlwJsiqmXIEJV8OYe+pASV3v6t3A7kXDswXvS/i1q/f6UkNX2SJzEDfOK
+ XZTVNy4Vl6FpqWtiLOwpQB68v7ny2zqrCzv1bR7Yv8xCp1IF6s+pcdB3q7RaiUOckt
+ dtV/neNCw6Y/ufkjktd03V2lmVJMNFDoqepKPiZrLQe3xT97oESh1lHsX/G9rZ1S3K
+ W+/ksiYh9+9bzyVVnDYRTHkhMsjI7XkmYEXgtnwURZobUvLJkkYsOQWs/s+J6Qc87J
+ kAn1ulvlvOWkQ==
 Received: by mail.kernel.org with local (Exim 4.94.2)
  (envelope-from <mchehab@kernel.org>)
- id 1lvzr1-002pFf-7e; Wed, 23 Jun 2021 12:11:31 +0200
+ id 1lvzr1-002pFQ-2O; Wed, 23 Jun 2021 12:11:31 +0200
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
  Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Alex Dewar <alex.dewar90@gmail.com>, Atul Gopinathan <leoatul12@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Yu Chen <chenyu56@huawei.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-staging@lists.linux.dev, linux-usb@vger.kernel.org,
- Rob Herring <robh@kernel.org>
-Subject: [PATCH v6 4/8] phy: phy-hi3670-usb3: move driver from staging into phy
-Date: Wed, 23 Jun 2021 12:11:26 +0200
-Message-Id: <fbdfbb4579e5f0b5b1c5f3f81d7a71b897d86b67.1624442566.git.mchehab+huawei@kernel.org>
+ linux-staging@lists.linux.dev
+Subject: [PATCH v6 0/8]Move Hisilicon 6421v600 SPMI and USB drivers out of
+ staging
+Date: Wed, 23 Jun 2021 12:11:22 +0200
+Message-Id: <cover.1624442566.git.mchehab+huawei@kernel.org>
 X-Mailer: git-send-email 2.31.1
-In-Reply-To: <cover.1624442566.git.mchehab+huawei@kernel.org>
-References: <cover.1624442566.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210623_031134_510994_07679DE9 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20210623_031134_418239_A59F2F00 
+X-CRM114-Status: GOOD (  16.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,127 +82,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The phy USB3 driver for Hisilicon 970 (hi3670) is ready
-for mainstream. Mode it from staging into the main driver's
-phy/ directory.
+Note: the previous series is at:
+        https://lore.kernel.org/lkml/cover.1616695231.git.mchehab+huawei@kernel.org/
 
-Acked-by: Rob Herring <robh@kernel.org>
-Acked-By: Vinod Koul <vkoul@kernel.org>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
- .../bindings/phy/hisilicon,hi3670-usb3.yaml           |  0
- MAINTAINERS                                           |  9 ++++++++-
- drivers/phy/hisilicon/Kconfig                         | 10 ++++++++++
- drivers/phy/hisilicon/Makefile                        |  1 +
- .../hikey9xx => phy/hisilicon}/phy-hi3670-usb3.c      |  0
- drivers/staging/hikey9xx/Kconfig                      | 11 -----------
- drivers/staging/hikey9xx/Makefile                     |  2 --
- 7 files changed, 19 insertions(+), 14 deletions(-)
+Hi Greg,
+
+Those are the remaining patches that are needed for the USB to work
+with Hikey970.
+
+This series address the comments made on v5. Sorry for taking so long to
+return back on this. Got sidetracked by other unrelated stuff.
+
+Changes from v5:
+
+- Some changes at DT to comply with Rob Herring's feedback;
+- a couple of cleanups at the phy-hi3670-usb3;
+- Vinod's ack added to patch 4;
+- Several cleanups at hi6421-spmi-pmic.c, in order to address
+  Lee Jones feedbacks.
+
+On this series, I opted to keep using "gpios" for the DT IRQ gpios needed
+by the PMIC driver, as this is the string expected by of_get_gpio(), and
+it is the most common pattern for IRQ gpios. If required, I'll send a
+followup patch changing it to use, instead, the of_get_named_gpio_flags()
+variant.
+
+Mauro Carvalho Chehab (8):
+  staging: phy-hi3670-usb3: do a some minor cleanups
+  staging: hisi-spmi-controller: rename spmi-channel property
+  staging: phy-hi3670-usb3: do some additional cleanups
+  phy: phy-hi3670-usb3: move driver from staging into phy
+  spmi: hisi-spmi-controller: move driver from staging
+  mfd: hi6421-spmi-pmic: move driver from staging
+  dts: hisilicon: add support for the PMIC found on Hikey 970
+  dts: hisilicon: add support for USB3 on Hikey 970
+
+ .../mfd}/hisilicon,hi6421-spmi-pmic.yaml      |   7 +-
+ .../bindings/phy/hisilicon,hi3670-usb3.yaml   |   0
+ .../spmi}/hisilicon,hisi-spmi-controller.yaml |  10 +-
+ MAINTAINERS                                   |  23 +++-
+ .../boot/dts/hisilicon/hi3670-hikey970.dts    | 129 +++++++++++++++---
+ arch/arm64/boot/dts/hisilicon/hi3670.dtsi     |  56 ++++++++
+ .../boot/dts/hisilicon/hikey970-pmic.dtsi     |  87 ++++++++++++
+ drivers/mfd/Kconfig                           |  16 +++
+ drivers/mfd/Makefile                          |   1 +
+ .../hikey9xx => mfd}/hi6421-spmi-pmic.c       |  89 +++++++-----
+ drivers/phy/hisilicon/Kconfig                 |  10 ++
+ drivers/phy/hisilicon/Makefile                |   1 +
+ .../hisilicon}/phy-hi3670-usb3.c              |  19 +--
+ drivers/spmi/Kconfig                          |   9 ++
+ drivers/spmi/Makefile                         |   1 +
+ .../hikey9xx => spmi}/hisi-spmi-controller.c  |   2 +-
+ drivers/staging/Kconfig                       |   2 -
+ drivers/staging/Makefile                      |   1 -
+ drivers/staging/hikey9xx/Kconfig              |  41 ------
+ drivers/staging/hikey9xx/Makefile             |   6 -
+ drivers/staging/hikey9xx/TODO                 |   5 -
+ 21 files changed, 383 insertions(+), 132 deletions(-)
+ rename {drivers/staging/hikey9xx => Documentation/devicetree/bindings/mfd}/hisilicon,hi6421-spmi-pmic.yaml (93%)
  rename drivers/staging/hikey9xx/phy-hi3670-usb3.yaml => Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml (100%)
- rename drivers/{staging/hikey9xx => phy/hisilicon}/phy-hi3670-usb3.c (100%)
+ rename {drivers/staging/hikey9xx => Documentation/devicetree/bindings/spmi}/hisilicon,hisi-spmi-controller.yaml (89%)
+ create mode 100644 arch/arm64/boot/dts/hisilicon/hikey970-pmic.dtsi
+ rename drivers/{staging/hikey9xx => mfd}/hi6421-spmi-pmic.c (76%)
+ rename drivers/{staging/hikey9xx => phy/hisilicon}/phy-hi3670-usb3.c (98%)
+ rename drivers/{staging/hikey9xx => spmi}/hisi-spmi-controller.c (99%)
+ delete mode 100644 drivers/staging/hikey9xx/Kconfig
+ delete mode 100644 drivers/staging/hikey9xx/Makefile
+ delete mode 100644 drivers/staging/hikey9xx/TODO
 
-diff --git a/drivers/staging/hikey9xx/phy-hi3670-usb3.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-similarity index 100%
-rename from drivers/staging/hikey9xx/phy-hi3670-usb3.yaml
-rename to Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 8c5ee008301a..6e01424234eb 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -18859,7 +18859,7 @@ L:	linux-usb@vger.kernel.org
- S:	Maintained
- F:	drivers/usb/roles/intel-xhci-usb-role-switch.c
- 
--USB IP DRIVER FOR HISILICON KIRIN
-+USB IP DRIVER FOR HISILICON KIRIN 960
- M:	Yu Chen <chenyu56@huawei.com>
- M:	Binghui Wang <wangbinghui@hisilicon.com>
- L:	linux-usb@vger.kernel.org
-@@ -18867,6 +18867,13 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/phy/hisilicon,hi3660-usb3.yaml
- F:	drivers/phy/hisilicon/phy-hi3660-usb3.c
- 
-+USB IP DRIVER FOR HISILICON KIRIN 970
-+M:	Mauro Carvalho Chehab <mchehab@kernel.org>
-+L:	linux-usb@vger.kernel.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/hisilicon,hi3670-usb3.yaml
-+F:	drivers/phy/hisilicon/phy-kirin970-usb3.c
-+
- USB ISP116X DRIVER
- M:	Olav Kongas <ok@artecdesign.ee>
- L:	linux-usb@vger.kernel.org
-diff --git a/drivers/phy/hisilicon/Kconfig b/drivers/phy/hisilicon/Kconfig
-index 1c73053bcc98..4d008cfc279c 100644
---- a/drivers/phy/hisilicon/Kconfig
-+++ b/drivers/phy/hisilicon/Kconfig
-@@ -23,6 +23,16 @@ config PHY_HI3660_USB
- 
- 	  To compile this driver as a module, choose M here.
- 
-+config PHY_HI3670_USB
-+	tristate "hi3670 USB PHY support"
-+	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
-+	select GENERIC_PHY
-+	select MFD_SYSCON
-+	help
-+	  Enable this to support the HISILICON HI3670 USB PHY.
-+
-+	  To compile this driver as a module, choose M here.
-+
- config PHY_HISTB_COMBPHY
- 	tristate "HiSilicon STB SoCs COMBPHY support"
- 	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
-diff --git a/drivers/phy/hisilicon/Makefile b/drivers/phy/hisilicon/Makefile
-index 92e874ae9c74..51729868145b 100644
---- a/drivers/phy/hisilicon/Makefile
-+++ b/drivers/phy/hisilicon/Makefile
-@@ -1,6 +1,7 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_PHY_HI6220_USB)		+= phy-hi6220-usb.o
- obj-$(CONFIG_PHY_HI3660_USB)		+= phy-hi3660-usb3.o
-+obj-$(CONFIG_PHY_HI3670_USB)		+= phy-hi3670-usb3.o
- obj-$(CONFIG_PHY_HISTB_COMBPHY)		+= phy-histb-combphy.o
- obj-$(CONFIG_PHY_HISI_INNO_USB2)	+= phy-hisi-inno-usb2.o
- obj-$(CONFIG_PHY_HIX5HD2_SATA)		+= phy-hix5hd2-sata.o
-diff --git a/drivers/staging/hikey9xx/phy-hi3670-usb3.c b/drivers/phy/hisilicon/phy-hi3670-usb3.c
-similarity index 100%
-rename from drivers/staging/hikey9xx/phy-hi3670-usb3.c
-rename to drivers/phy/hisilicon/phy-hi3670-usb3.c
-diff --git a/drivers/staging/hikey9xx/Kconfig b/drivers/staging/hikey9xx/Kconfig
-index c4dc1016edf2..3ceda03f2864 100644
---- a/drivers/staging/hikey9xx/Kconfig
-+++ b/drivers/staging/hikey9xx/Kconfig
-@@ -1,16 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0
- 
--# to be placed at drivers/phy
--config PHY_HI3670_USB
--	tristate "hi3670 USB PHY support"
--	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
--	select GENERIC_PHY
--	select MFD_SYSCON
--	help
--	  Enable this to support the HISILICON HI3670 USB PHY.
--
--	  To compile this driver as a module, choose M here.
--
- # to be placed at drivers/spmi
- config SPMI_HISI3670
- 	tristate "Hisilicon 3670 SPMI Controller"
-diff --git a/drivers/staging/hikey9xx/Makefile b/drivers/staging/hikey9xx/Makefile
-index 9103735d8377..42d486104525 100644
---- a/drivers/staging/hikey9xx/Makefile
-+++ b/drivers/staging/hikey9xx/Makefile
-@@ -1,6 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0
- 
--obj-$(CONFIG_PHY_HI3670_USB)		+= phy-hi3670-usb3.o
--
- obj-$(CONFIG_SPMI_HISI3670)		+= hisi-spmi-controller.o
- obj-$(CONFIG_MFD_HI6421_SPMI)		+= hi6421-spmi-pmic.o
 -- 
 2.31.1
+
 
 
 -- 
