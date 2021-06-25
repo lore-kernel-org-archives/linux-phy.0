@@ -2,20 +2,22 @@ Return-Path: <SRS0=Mo6n=LT=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no
+X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,NICE_REPLY_A,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=unavailable
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B00E2C2B9F4
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:54:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 73BA3C2B9F4
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:59:46 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7FF3D61459
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:54:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7FF3D61459
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=canonical.com
+	by mail.kernel.org (Postfix) with ESMTPS id 4891F61425
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:59:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4891F61425
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -24,93 +26,78 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zi9QBYRQc5XHBYPY8HKPG4ax7siYhSFMg+/fhqDtEqI=; b=CwomkL012dM7VUT6yP/jBFB+7I
-	LjB0a0xzWdQr6MCFCM3jJAHX3MDjbheRZ9uWzHUReDZ+PXhGkrxI9VKoO6zPJQ5+F4w2N8JnwVZpv
-	LGgK5ffnNwC3eVz09YrfVv+u06InzCmsJ732thlYgcUswyvvOBIUG5PbGxf9/fWJVrxWtNAM14YF5
-	cio6Z316Wy2jIBZUxAWaedRAsxNWkQicosYFAjBGOShUcinMxFGiAlFFu1VtXPjc+/1aD2qsAPdtG
-	cvGaToksW60zwD4jYdq+LlcqGWuDSmBadC9xsGR19+ZZxodWefJd/vZQU2/j0iz8kYv6QyMww3Fvs
-	vN12Mi0A==;
+	bh=GmQsn8+kpcpV+1YuY1rusOr6nSB4zRnE4iuelBxmjG0=; b=mwV1NYCRJvV0Qyh0Bg4DvVE9bL
+	Q7GEbHAWnNF8bw301S83H6p582whLHiMZeCyozrXjef3OrUpuMcdsbBJur/kZpo2ybyxsx4TDM6CD
+	E+OPMAKjPkyWRl+uPNP2dv6R6uBUTAuu0csLMxbq18MmMqS8Cpx+8S1oZKYv/TMDX5EKuc2E0VqFz
+	yIKTHW/7z+c7ED0c71xwIeBKNgPd23vEfADaUHV4y0mqr5mEKsYMI5LtZ4hXHAH9zbWbmmUfLuHb4
+	IoPx4RF5/O1MJPpjBgz33zD6c5i0nCgztzl3RqL4egQz0Zvwj0xl6914fLHblV1USBEzVSB1APJpP
+	NWrbAwyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lwjU7-0018pa-QT; Fri, 25 Jun 2021 10:54:55 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1lwjYm-001Ac5-L3; Fri, 25 Jun 2021 10:59:44 +0000
+Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lwj4F-000xjl-3t
- for linux-phy@lists.infradead.org; Fri, 25 Jun 2021 10:28:12 +0000
-Received: from mail-lf1-f72.google.com ([209.85.167.72])
- by youngberry.canonical.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
- (envelope-from <krzysztof.kozlowski@canonical.com>)
- id 1lwj4D-0003UO-If
- for linux-phy@lists.infradead.org; Fri, 25 Jun 2021 10:28:09 +0000
-Received: by mail-lf1-f72.google.com with SMTP id
- o16-20020a0565120510b029032f0b0fc9f1so118986lfb.23
- for <linux-phy@lists.infradead.org>; Fri, 25 Jun 2021 03:28:09 -0700 (PDT)
+ id 1lwjEY-001206-Fv
+ for linux-phy@lists.infradead.org; Fri, 25 Jun 2021 10:38:52 +0000
+Received: by mail-ej1-x636.google.com with SMTP id hc16so14240173ejc.12
+ for <linux-phy@lists.infradead.org>; Fri, 25 Jun 2021 03:38:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=1/eMB3oQaBdiNnJ8Y7zIUo7wsM74vurfSXPEhMmhvYs=;
+ b=S6gTqGkyCpj6tWjYvKcj2hxMaFjtOKlftr3pLPzXRS/qJMKpoizgtjxrHLuQxGyBBZ
+ aT+hsLuIanjKqN3JJMjY+BCLS+82VHoQ6qRB1LVP6z+LNVcUa5pH3yZVEbtj8GJybIdD
+ bS37wQRe8oGOis5ty6gaRv9w+PTZjBHOK3sYQdf7LcJceHoSPGFcPRTUXiBqK8HPK4VK
+ 8vWIbCcmtjkoSNn4ueDCqm2+ustdOXgQZOWKdh+TK6dcrjwPBkLDR5yb8A9phu8wBjr3
+ dM27CY1v/c36Ucb7Ss/8dy/xYpQYRf8coz2svmF38P6cI4dBxGirXcxYelHzfCEXC7F8
+ 7nxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=ooQ/bpan+0/tVSYEdf4mZkzEEyxm1PiIoniVSmhDjiE=;
- b=lJZqWe4YXAnAQ/quOtDL0RoXFSSkYGoZIYAWVYxL57rtYfmvBX396O3331w6tdei6i
- qjTo/zhwjew5VdfYgjGz17+/bgNs8rkBX7V/1+Y99w5eHcMd7L4+jNPGJJMpF4UlpfoQ
- ISdhAdAVox3phrUO4VNgc3z3fzsHo47HFwRL/wlPOaPE5gSlqF7SZwrtYtcgkU4Cm1Hh
- SxTwCpb79N3ABkIpmT7q9oHCepy3B+epU8/xMzZew+zoAGAhff3BOTDjbIx6uezfn4bl
- mUu4IX44+x6bcYVoYhc5uyeM5REpoghVZCDE7DVJjE9VO+qtrhyEeYSSLJSiU4TV91yX
- 8juw==
-X-Gm-Message-State: AOAM533FQEOdR+FxD/+B7Kl3rqgkM3IylBlaiY5UqRPR7jkeavavJQuo
- EMHRXpaJVl5UKDFMaZRfb+hWEsLlmbL3okRx52IzbVUeKvMyih/ZTNUYL2YBz/L5yR9S92JKl04
- 0gqQoPlzWsWWeiV/h9QpWKoYIJAkyfZXTfQXEh50IWnE=
-X-Received: by 2002:aa7:dad2:: with SMTP id x18mr2475704eds.319.1624616878339; 
- Fri, 25 Jun 2021 03:27:58 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJy3cVNg6WpHcCXQbDGMr5Bh35AfaEmUsyMepbsDA9xjQrFf3dK49GpbzPfo/R2byKacwC1C9g==
-X-Received: by 2002:aa7:dad2:: with SMTP id x18mr2475662eds.319.1624616878073; 
- Fri, 25 Jun 2021 03:27:58 -0700 (PDT)
-Received: from [192.168.1.115] (xdsl-188-155-177-222.adslplus.ch.
- [188.155.177.222])
- by smtp.gmail.com with ESMTPSA id p18sm2712783edu.8.2021.06.25.03.27.57
+ bh=1/eMB3oQaBdiNnJ8Y7zIUo7wsM74vurfSXPEhMmhvYs=;
+ b=Z9mTHV95DC0bE5sT2lzAV2DbT05d2fkAV4VbObwUUMnLxfEe6loMsagzrpu+3YkqrU
+ 6Kb0CcdtrP1QQp3r6a+O9GccU2jLLoq862vOw5cXfS9XkNWJeN4vI3QvA8cecUl2NJDe
+ 6b5qPPLcD5GZQF1hdjZAq4oOVoGTYUW6rBIUalkpjBEHYhu1+h4YFtxZJRaGULxg6m3p
+ IaxUttdV0GV0xz1hlilTwqI9vyreJgorDGx3WJyPvNc8rBhzbF5N3033XkUYQRm/o4LH
+ wYJiV//ITCuHMdfyYDnq7DLs1Kd3X2pccnVplnWChWtIknvWz+v827LmM5sBgPTiuIA8
+ +jFQ==
+X-Gm-Message-State: AOAM532D0U7iYO/FgKeZ6VqI2ypu9ZMsnCJNT+2uBZYaJyf1Kg+OR64Y
+ MOD3GIt6ZN/EgZWHJJQax7M=
+X-Google-Smtp-Source: ABdhPJy3Xru8aPPdjqoS2npd604GtoiksX0HIHMgARWGwYa+NMWrAjYQPNV4yRdyiJty+RcEM1364Q==
+X-Received: by 2002:a17:906:3a8e:: with SMTP id
+ y14mr10204723ejd.153.1624617528371; 
+ Fri, 25 Jun 2021 03:38:48 -0700 (PDT)
+Received: from [192.168.74.106] (178-169-161-196.razgrad.ddns.bulsat.com.
+ [178.169.161.196])
+ by smtp.gmail.com with ESMTPSA id h24sm2492325ejf.20.2021.06.25.03.38.46
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 25 Jun 2021 03:27:57 -0700 (PDT)
-Subject: Re: [RFC PATCH 2/9] drm: bridge: Add Samsung SEC MIPI DSIM bridge
- driver
-To: Jagan Teki <jagan@amarulasolutions.com>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Fabio Estevam <festevam@gmail.com>,
- Michael Tretter <m.tretter@pengutronix.de>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
- Francis Laniel <francis.laniel@amarulasolutions.com>,
- Matteo Lisi <matteo.lisi@engicam.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Robert Foss <robert.foss@linaro.org>, Andrzej Hajda <a.hajda@samsung.com>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Milco Pratesi <milco.pratesi@engicam.com>,
- Anthony Brandon <anthony@amarulasolutions.com>,
- linux-phy@lists.infradead.org, Fancy Fang <chen.fang@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, NXP Linux Team <linux-imx@nxp.com>
-References: <20210621072424.111733-1-jagan@amarulasolutions.com>
- <20210621072424.111733-3-jagan@amarulasolutions.com>
- <YNO0LHNVSWjrh1ZS@pendragon.ideasonboard.com>
- <CAOMZO5Ahbu4mohtMDOQOv_y5B_TDesbdYEUZTF1RL7_y-bS+RA@mail.gmail.com>
- <CAMty3ZAtObU-bf6FuxvSBaZn2cotj_NxASW9g9on-kBJ7iW3OA@mail.gmail.com>
- <YNR37NWkxq0mZyq5@pendragon.ideasonboard.com>
- <fdd446c6-c8ce-9dae-f7ac-e06241f76250@canonical.com>
- <CAMty3ZCEQeRi53yuLYyWVU8o=Lo2ZKy+kgjU+9PC33QJEq2LQg@mail.gmail.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-Message-ID: <ff421d53-7308-7959-ea4a-9cf94efe63b2@canonical.com>
-Date: Fri, 25 Jun 2021 12:27:56 +0200
+ Fri, 25 Jun 2021 03:38:47 -0700 (PDT)
+Subject: Re: [PATCH v1 3/3] phy: qcom-qusb2: Add configuration for SM4250 and
+ SM6115
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Manu Gautam
+ <mgautam@codeaurora.org>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+ phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
+References: <20210622203240.559979-1-iskren.chernev@gmail.com>
+ <20210622203240.559979-4-iskren.chernev@gmail.com> <YNKshSbsf5d5Uyew@yoga>
+From: Iskren Chernev <iskren.chernev@gmail.com>
+Message-ID: <d42b6bfd-4010-29d2-1701-41979e19d987@gmail.com>
+Date: Fri, 25 Jun 2021 13:38:46 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.8.1
+ Thunderbird/78.11.0
 MIME-Version: 1.0
-In-Reply-To: <CAMty3ZCEQeRi53yuLYyWVU8o=Lo2ZKy+kgjU+9PC33QJEq2LQg@mail.gmail.com>
+In-Reply-To: <YNKshSbsf5d5Uyew@yoga>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210625_032811_185477_08E91F96 
-X-CRM114-Status: GOOD (  22.47  )
+X-CRM114-CacheID: sfid-20210625_033850_606207_8C7546E9 
+X-CRM114-Status: GOOD (  19.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,66 +114,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/06/2021 12:08, Jagan Teki wrote:
-> Hi Krzysztof,
+
+
+On 6/23/21 6:37 AM, Bjorn Andersson wrote:
+> On Tue 22 Jun 15:32 CDT 2021, Iskren Chernev wrote:
 > 
-> On Fri, Jun 25, 2021 at 2:51 PM Krzysztof Kozlowski
-> <krzysztof.kozlowski@canonical.com> wrote:
+>> The SM4250 and SM6115 uses the same register layout as MSM8996, but the
+>> tune sequence is a bit different.
 >>
->> On Thu, 24 Jun 2021 at 14:19, Laurent Pinchart
->> <laurent.pinchart@ideasonboard.com> wrote:
->>>
->>> Hi Jagan,
->>>
->>> On Thu, Jun 24, 2021 at 05:42:43PM +0530, Jagan Teki wrote:
->>>> On Thu, Jun 24, 2021 at 8:18 AM Fabio Estevam wrote:
->>>>> On Wed, Jun 23, 2021 at 7:23 PM Laurent Pinchart wrote:
->>>>>
->>>>>> Looking at the register set, it seems to match the Exynos 5433,
->>>>>> supported by drivers/gpu/drm/exynos/exynos_drm_dsi.c. Can we leverage
->>>>>> that driver instead of adding a new one for the same IP core ?
->>>>>
->>>>> Yes. there was an attempt from Michael in this direction:
->>>>> https://patchwork.kernel.org/project/dri-devel/cover/20200911135413.3654800-1-m.tretter@pengutronix.de/
->>>>
->>>> Thanks for the reference, I will check it out and see I can send any
->>>> updated versions wrt my i.MX8MM platform.
->>>
->>> Thanks.
->>>
->>> I had a brief look at the exynos driver, and I think it should be turned
->>> into a DRM bridge as part of this rework to be used with the i.MX8MM.
->>>
->>> Is there someone from Samsung who could assist, at least to test the
->>> changes ?
+> 
+> Didn't review the initialization sequence, but it's different from the
+> existing ones so adding a new compatible and init_tbl seems to be the
+> right choice.
+
+Here is the init sequence I'm using [1]
+
+[1] https://github.com/OnePlusOSS/android_kernel_oneplus_sm4250/blob/oneplus/SM4250_Q_10.0/arch/arm64/boot/dts/vendor/20882/bengal-qrd.dtsi#L130
+
+> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> 
+> Regards,
+> Bjorn
+> 
+>> Signed-off-by: Iskren Chernev <iskren.chernev@gmail.com>
+>> ---
+>>  drivers/phy/qualcomm/phy-qcom-qusb2.c | 34 +++++++++++++++++++++++++++
+>>  1 file changed, 34 insertions(+)
 >>
->> Yes, I mentioned few guys in reply to PHY. Around the DRM drivers you
->> can get in touch with:
->> Inki Dae <inki.dae@samsung.com>
->> Seung-Woo Kim <sw0312.kim@samsung.com>
->> Marek Szyprowski <m.szyprowski@samsung.com>
->> Andrzej Hajda <a.hajda@samsung.com>
-> 
-> Thanks for the information.
-> 
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+>> index 8f1bf7e2186b..3c1d3b71c825 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+>> @@ -219,6 +219,22 @@ static const struct qusb2_phy_init_tbl msm8998_init_tbl[] = {
+>>  	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_DIGITAL_TIMERS_TWO, 0x19),
+>>  };
+>>  
+>> +static const struct qusb2_phy_init_tbl sm6115_init_tbl[] = {
+>> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE1, 0xf8),
+>> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE2, 0x53),
+>> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE3, 0x81),
+>> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE4, 0x17),
+>> +
+>> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_TUNE, 0x30),
+>> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_USER_CTL1, 0x79),
+>> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_USER_CTL2, 0x21),
+>> +
+>> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TEST2, 0x14),
+>> +
+>> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_AUTOPGM_CTL1, 0x9f),
+>> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_PWR_CTRL, 0x00),
+>> +};
+>> +
+>>  static const unsigned int qusb2_v2_regs_layout[] = {
+>>  	[QUSB2PHY_PLL_CORE_INPUT_OVERRIDE] = 0xa8,
+>>  	[QUSB2PHY_PLL_STATUS]		= 0x1a0,
+>> @@ -342,6 +358,18 @@ static const struct qusb2_phy_cfg sdm660_phy_cfg = {
+>>  	.autoresume_en	 = BIT(3),
+>>  };
+>>  
+>> +static const struct qusb2_phy_cfg sm6115_phy_cfg = {
+>> +	.tbl		= sm6115_init_tbl,
+>> +	.tbl_num	= ARRAY_SIZE(sm6115_init_tbl),
+>> +	.regs		= msm8996_regs_layout,
+>> +
+>> +	.has_pll_test	= true,
+>> +	.se_clk_scheme_default = true,
+>> +	.disable_ctrl	= (CLAMP_N_EN | FREEZIO_N | POWER_DOWN),
+>> +	.mask_core_ready = PLL_LOCKED,
+>> +	.autoresume_en	 = BIT(3),
+>> +};
+>> +
+>>  static const char * const qusb2_phy_vreg_names[] = {
+>>  	"vdda-pll", "vdda-phy-dpdm",
+>>  };
+>> @@ -888,6 +916,12 @@ static const struct of_device_id qusb2_phy_of_match_table[] = {
+>>  	}, {
+>>  		.compatible	= "qcom,sdm660-qusb2-phy",
+>>  		.data		= &sdm660_phy_cfg,
+>> +	}, {
+>> +		.compatible	= "qcom,sm4250-qusb2-phy",
+>> +		.data		= &sm6115_phy_cfg,
+>> +	}, {
+>> +		.compatible	= "qcom,sm6115-qusb2-phy",
+>> +		.data		= &sm6115_phy_cfg,
+>>  	}, {
+>>  		/*
+>>  		 * Deprecated. Only here to support legacy device
+>> -- 
+>> 2.31.1
 >>
->> The easiest testing of the display stack would be on Hardkernel's Odroid
->> XU4 (https://www.hardkernel.com/shop/odroid-xu4-special-price/) however
->> you will not test the DSI/DSIM directly (it has only HDMI port).
-> 
-> Look like I found one board with Exynos5430 with DSI. Does this SoC is
-> same as mainline Exynos5433?
-
-No, Exynos5430 is ARMv7. Looks like improvement over Exynos5422.
-Exynos5422 has a very good support in mainline while Exynso5430 was
-never touched at all.
-
-Exynos5433 is ARMv8, although many things are shared with 5422. About
-DSI I have no clue.
-
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
