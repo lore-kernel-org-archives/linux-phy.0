@@ -2,147 +2,115 @@ Return-Path: <SRS0=Mo6n=LT=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+X-Spam-Status: No, score=-5.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5DE94C2B9F4
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:43:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B00E2C2B9F4
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:54:56 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E18CC61446
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:43:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E18CC61446
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bp.renesas.com
+	by mail.kernel.org (Postfix) with ESMTPS id 7FF3D61459
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Jun 2021 10:54:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7FF3D61459
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=canonical.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+6UW4eAGgDEsu6cS9HGQaOSGCu45K/oeGT4yZ7zKTo0=; b=IGYxBDEKMxYq3z
-	RfTJEXp4GZkpeG42/JoPrONGl2MxYMDC2Xnhs2BX8EEwaUQhZEgTzgfnd4VczujJZ1X93YeTq8cBl
-	4SBxMst397VbY3GH3K+5/g7sHzAAeesAwi2jAVx9UlMiNrcQpcihBjq46xZfVG5oiYwv5Y24CZNsB
-	uMk3mnKxQ5xJRIdcxgxiefxEu+lQRmqUwM4QhBKZ9MYzCaC4DXrkd8LvgKL9JauT1nwBX20SOf/Tu
-	Js2Zcw07fpUezV2zl72hqBxPfjnohP7rqc61Z7gbRikJkymbuZbAvC+r02KmFGcN2G7KFciUGNpOE
-	aM5D4is7NxvVEYvVLXOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zi9QBYRQc5XHBYPY8HKPG4ax7siYhSFMg+/fhqDtEqI=; b=CwomkL012dM7VUT6yP/jBFB+7I
+	LjB0a0xzWdQr6MCFCM3jJAHX3MDjbheRZ9uWzHUReDZ+PXhGkrxI9VKoO6zPJQ5+F4w2N8JnwVZpv
+	LGgK5ffnNwC3eVz09YrfVv+u06InzCmsJ732thlYgcUswyvvOBIUG5PbGxf9/fWJVrxWtNAM14YF5
+	cio6Z316Wy2jIBZUxAWaedRAsxNWkQicosYFAjBGOShUcinMxFGiAlFFu1VtXPjc+/1aD2qsAPdtG
+	cvGaToksW60zwD4jYdq+LlcqGWuDSmBadC9xsGR19+ZZxodWefJd/vZQU2/j0iz8kYv6QyMww3Fvs
+	vN12Mi0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lwjIa-0014kq-29; Fri, 25 Jun 2021 10:43:00 +0000
-Received: from mail-eopbgr1400092.outbound.protection.outlook.com
- ([40.107.140.92] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1lwjU7-0018pa-QT; Fri, 25 Jun 2021 10:54:55 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lwioe-000sRj-8c
- for linux-phy@lists.infradead.org; Fri, 25 Jun 2021 10:12:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LprOxfWBe+RRYVpX59K/4+kvs2+Rxu5h0jKKUed+FaZMe1/X9AtYh+ByHIY6klKxgZBv8glCCrHKxp98zYFB6sT43DlZlNW1ajaPr5k1b1CG5WlKeJpfyTmAJBeVXZqBrc7WYDvn6sdfButFCHhNNQXbFRIvFA4QphIYJU4WDvo+ANK2K8o1NhpeDV+upwZ29D4prw33uXj3mw73aKMyP4J6WOqTQILc9bSBnKcecLVarr4ibtrzciXMkhjA6BQ63lVAZ7wIWrrRy1eroYZ+ChxIb5r/DLRZY1yL1kTSIe3rAusY9E2gG3XbmnBbsv6fj04z3Ij5XyMyZUTdq9Eg5g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bQyaMDAKxChLi6MlTj/DK287NVjGG4ElbYKRiuht4S0=;
- b=f7gK093n1YWqFVFWtEEKdUxjqE54tPyveXx8XmcBX39e7kyC+ppVaJ0jKko/kIL4ELBR/nQRkaIPkNfgT8qp3oTAGAUkIL+Oi6vAdqATX2DCj5hjo9RG2vqIChWXzaQZokUuT9pAh6g4BqlXrVvYRNFpgkqS0xm5kWiKb8vv6sJfyt3r2xisOIWK5MZDVo3CNARDxhGjdW5OMfNV/ZTy8f6zu99XM4Cu70Xp5kG2hFieSW2T/0hOrEzjtOumarOkaP3npiL25wB1Whmef1BBMOPAPfkGk+6V6oB/RCTUgpyRdPOm+M/BdRvN9gnVymEG0dC1CWE7HCOTnEOcVByaDA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bQyaMDAKxChLi6MlTj/DK287NVjGG4ElbYKRiuht4S0=;
- b=r1V5t4BMoB77LiLDPuo/cL9wiBDGUJxxsi5WKDkgf++PTmxf7bTNM0etuqPoscMdgoa74u2qbNZa430w1xvLjOwU/vGS/GEGsodEV5LlMlvUaLwAG74V/b5pq652Rf83Z3pAOx+tVEH9sP36/mJO6oNC0SySaX+2B2Zxb3wJgcY=
-Received: from OS0PR01MB5922.jpnprd01.prod.outlook.com (2603:1096:604:bb::5)
- by OSAPR01MB2675.jpnprd01.prod.outlook.com (2603:1096:604:8::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4264.18; Fri, 25 Jun
- 2021 10:11:59 +0000
-Received: from OS0PR01MB5922.jpnprd01.prod.outlook.com
- ([fe80::b834:5e50:2ce8:9ae0]) by OS0PR01MB5922.jpnprd01.prod.outlook.com
- ([fe80::b834:5e50:2ce8:9ae0%3]) with mapi id 15.20.4264.019; Fri, 25 Jun 2021
- 10:11:59 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Rob Herring <robh@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Geert Uytterhoeven
- <geert+renesas@glider.be>, Chris Paterson <Chris.Paterson2@renesas.com>, Biju
- Das <biju.das@bp.renesas.com>, Prabhakar Mahadev Lad
- <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>
-Subject: RE: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L USB
- PHY Control bindings
-Thread-Topic: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L USB
- PHY Control bindings
-Thread-Index: AQHXZoFkEsylYGbSPUy+XB9R+DfKg6sgQr2AgAFYKgCAAAvXAIAAFwGwgAK5rAA=
-Date: Fri, 25 Jun 2021 10:11:58 +0000
-Message-ID: <OS0PR01MB59227E0C129668A5FFF861E186069@OS0PR01MB5922.jpnprd01.prod.outlook.com>
-References: <20210621093943.12143-1-biju.das.jz@bp.renesas.com>
- <20210621093943.12143-2-biju.das.jz@bp.renesas.com>
- <20210622165851.GA3840386@robh.at.kernel.org>
- <OS0PR01MB5922ECC2B573F1F8E170744F86089@OS0PR01MB5922.jpnprd01.prod.outlook.com>
- <CAL_JsqK_6_LUD-ffkDCuDEds2RiYftJfynZyPN4io3Lt3MnQ4g@mail.gmail.com>
- <OS0PR01MB5922742488532EC506334AC786089@OS0PR01MB5922.jpnprd01.prod.outlook.com>
-In-Reply-To: <OS0PR01MB5922742488532EC506334AC786089@OS0PR01MB5922.jpnprd01.prod.outlook.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=bp.renesas.com;
-x-originating-ip: [193.141.219.20]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d8a33852-e07a-4104-a59c-08d937c1ab4f
-x-ms-traffictypediagnostic: OSAPR01MB2675:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OSAPR01MB26756A78C50BBDE64B46750786069@OSAPR01MB2675.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: EBk51oV9/rmbfRdq57Jgdk4S2vAVgeGuqUKhTtI/LAP0j+pEcMI9lfqRs2sGysJmKjQibs0p9sNiZoo+b66Xh6G4PSRU0ai6mfYh17gpRBYFTkUYdvoKk0UoHENapzFpXJNMcZZqGKiNoWdhpK+17XAKlEBHxMm93nnbUZHx1+jxrT9VUZ/7pACD9QLtlXyDv3dQwJ3K518CJB0Q2HogWktkVD0hTzYN/lZetxj9b6arS/IjSRXtxJbBgOyBHn98aQvQG3rjjv/6NKKrfLUqAwISEx3BODdM/sZ8T4gTp7GjGe085XAUNOUpElPzGQXNBCO2U1NP6tJ2H0ek8KE4FYztKIlfArY4wGHIgme7rB4r9RzYX5eXM6H3jKMtlcgi5h/gPc1uvFmHjSDAx4l7BBq7xNnPqdEZ6Gt2eApTWIhk9w5d2s0fBR6tfRfsOOo7vb4RjNa6LeFRh6a1G5PemxGELYWRJKZve3ZWSmM68InOxzVub+wX8dFWc4qS1zHq9QzSWnGKxIVj2KBY/oVmKHoyMB1HuU8TuzHFOLEuu0pk0ZCtCdACuIrJgXnpHdYE/Q6A0qdBKwIZezJGXU6yJAcl/T9q3EKF3GteozDbXFpE4Cx4i0oblghW1i+7h65mjHZxyf15i1Zz41Srq3MCFv53Pudu5rb82ebtx3oWFRAtdy//53UxYmKDyvQynBcZrXwYrw7h+4rO3GFp04Hao02kXnKzi3+60U2PULONk2A=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:OS0PR01MB5922.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(136003)(396003)(39860400002)(366004)(346002)(376002)(71200400001)(66476007)(64756008)(66446008)(52536014)(5660300002)(2906002)(4326008)(7696005)(83380400001)(66556008)(54906003)(316002)(38100700002)(76116006)(122000001)(66946007)(186003)(478600001)(9686003)(6916009)(55016002)(8676002)(8936002)(53546011)(45080400002)(26005)(86362001)(33656002)(6506007);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?QSSBjeaoS0d+cDjgY+coafO5HSKgIQ6m0Tf8BdrkG6Btq7v57h+RYW8f+DgI?=
- =?us-ascii?Q?XiBNOlyk55BJAkpjo3hHFwiwtglCkS08nFPQQ3uunBzo8qJ3ATdqBzbcIwrJ?=
- =?us-ascii?Q?EE+mHzrGepZ4fyrsYBKFpiaCbXuVQgBhxrVZL82PCPoj/I/t9M/ji7OBsyUk?=
- =?us-ascii?Q?Z3z5CkTzkLlJ2VThax72F6x0Q6aUUS+xtyjT8Rn71fFvLUkVydaCannuATXb?=
- =?us-ascii?Q?ttzDCbOBMrzFufAx3Uyra0r5r5q3SABn1YkU4z21ERkEkhzjuq0Gs2VL5lcK?=
- =?us-ascii?Q?TJ62h0xmR/RftwBOiQbDrugCZ2Sv6BmU52NkP8kyMu+02CYZvlkroKAOnQdX?=
- =?us-ascii?Q?1+7n2lLIZAvQVUFnq/2CxsaCmIZx4+EaCiuQguQ4Ds1pRXTR/oO2N+DW8jsw?=
- =?us-ascii?Q?aY40v53uG77xrc68GXsUNaIFsoeIVe1jCk7lJXDsMI+E9ENGsIMvlRxpNX+/?=
- =?us-ascii?Q?5QefTyanTykXrf64vKtKtpQO8ptIQfXLcrmNLVxgHh2TKaDxVNRNzJ/yAUvc?=
- =?us-ascii?Q?dkWr+EJ1IwuXZH87QHjDxJEN8Bkq0BHUhrq8ORMQL2GGzcaK2mUqtSPJLTcy?=
- =?us-ascii?Q?Xw25ZdhT4RjrYl3+Xr07/ezW1Zjw4tV3wy0uCQ34DIyOUqqVVgRKsiA5peFY?=
- =?us-ascii?Q?z4c2nnT6BM7dBFk8s9q3Vhz/FL0d8zZ7QjL8tgBOg3tIczBGSmHY03jwevx5?=
- =?us-ascii?Q?mABbqMIXLF4d1MFumy9C3DjymZpDG8Q/TQ2McyR25sdfpvSmT7RdsYBNoFsU?=
- =?us-ascii?Q?1kjmigKX//7fY2odGN/zuX0rjTQx5/FZikYyWIRYSDQXCX0OyqfPs09GbFgM?=
- =?us-ascii?Q?3TrBBIfB49ABOshlBTP7EbdrLdNBHapDH+Itxn9CBCziyTFnOLymxcT/fKlM?=
- =?us-ascii?Q?6ab81JwG2t//Mmt7QdfXS2E0dFzVMiaEDrHGQPW/yVhW069vwKjGwESaxBrz?=
- =?us-ascii?Q?5Ssm47sF+K0HtUv1xTUAdkNOedfVp/ccm1CUj7IL2M7S6Ef6jSk3Frz/6fUD?=
- =?us-ascii?Q?1m9teI23klDgYgCUlJkkouogZDfynTlFZu2IuAy9miCCA+EO3YlcqFWlkpqE?=
- =?us-ascii?Q?RPNwpCY4Ba/TS6En36wEI6iEluTHN+GpfrN9QDaWMWF2GXScWI606mZajzvU?=
- =?us-ascii?Q?wbYB9KvCih5G6i+trmSbnSA2Xhfunahu2J/vf3T82oDpShss7CeOwAij76UY?=
- =?us-ascii?Q?IFDp2vGq2bRTN3dUu+FLDtFBWGt8LvvFWBL3LLkaAC0uljHjFDUuxLz5YqPo?=
- =?us-ascii?Q?FtVB9JjlNf0qKfqQQka1tvS36Y1lrd9nGIVmvq9UHZbRLljkI2/FG1zouZze?=
- =?us-ascii?Q?li8v5neRxlmgu5RerSNcmwBD?=
+ id 1lwj4F-000xjl-3t
+ for linux-phy@lists.infradead.org; Fri, 25 Jun 2021 10:28:12 +0000
+Received: from mail-lf1-f72.google.com ([209.85.167.72])
+ by youngberry.canonical.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
+ (envelope-from <krzysztof.kozlowski@canonical.com>)
+ id 1lwj4D-0003UO-If
+ for linux-phy@lists.infradead.org; Fri, 25 Jun 2021 10:28:09 +0000
+Received: by mail-lf1-f72.google.com with SMTP id
+ o16-20020a0565120510b029032f0b0fc9f1so118986lfb.23
+ for <linux-phy@lists.infradead.org>; Fri, 25 Jun 2021 03:28:09 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=ooQ/bpan+0/tVSYEdf4mZkzEEyxm1PiIoniVSmhDjiE=;
+ b=lJZqWe4YXAnAQ/quOtDL0RoXFSSkYGoZIYAWVYxL57rtYfmvBX396O3331w6tdei6i
+ qjTo/zhwjew5VdfYgjGz17+/bgNs8rkBX7V/1+Y99w5eHcMd7L4+jNPGJJMpF4UlpfoQ
+ ISdhAdAVox3phrUO4VNgc3z3fzsHo47HFwRL/wlPOaPE5gSlqF7SZwrtYtcgkU4Cm1Hh
+ SxTwCpb79N3ABkIpmT7q9oHCepy3B+epU8/xMzZew+zoAGAhff3BOTDjbIx6uezfn4bl
+ mUu4IX44+x6bcYVoYhc5uyeM5REpoghVZCDE7DVJjE9VO+qtrhyEeYSSLJSiU4TV91yX
+ 8juw==
+X-Gm-Message-State: AOAM533FQEOdR+FxD/+B7Kl3rqgkM3IylBlaiY5UqRPR7jkeavavJQuo
+ EMHRXpaJVl5UKDFMaZRfb+hWEsLlmbL3okRx52IzbVUeKvMyih/ZTNUYL2YBz/L5yR9S92JKl04
+ 0gqQoPlzWsWWeiV/h9QpWKoYIJAkyfZXTfQXEh50IWnE=
+X-Received: by 2002:aa7:dad2:: with SMTP id x18mr2475704eds.319.1624616878339; 
+ Fri, 25 Jun 2021 03:27:58 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJy3cVNg6WpHcCXQbDGMr5Bh35AfaEmUsyMepbsDA9xjQrFf3dK49GpbzPfo/R2byKacwC1C9g==
+X-Received: by 2002:aa7:dad2:: with SMTP id x18mr2475662eds.319.1624616878073; 
+ Fri, 25 Jun 2021 03:27:58 -0700 (PDT)
+Received: from [192.168.1.115] (xdsl-188-155-177-222.adslplus.ch.
+ [188.155.177.222])
+ by smtp.gmail.com with ESMTPSA id p18sm2712783edu.8.2021.06.25.03.27.57
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 25 Jun 2021 03:27:57 -0700 (PDT)
+Subject: Re: [RFC PATCH 2/9] drm: bridge: Add Samsung SEC MIPI DSIM bridge
+ driver
+To: Jagan Teki <jagan@amarulasolutions.com>
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ Michael Tretter <m.tretter@pengutronix.de>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ Francis Laniel <francis.laniel@amarulasolutions.com>,
+ Matteo Lisi <matteo.lisi@engicam.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Robert Foss <robert.foss@linaro.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Milco Pratesi <milco.pratesi@engicam.com>,
+ Anthony Brandon <anthony@amarulasolutions.com>,
+ linux-phy@lists.infradead.org, Fancy Fang <chen.fang@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, NXP Linux Team <linux-imx@nxp.com>
+References: <20210621072424.111733-1-jagan@amarulasolutions.com>
+ <20210621072424.111733-3-jagan@amarulasolutions.com>
+ <YNO0LHNVSWjrh1ZS@pendragon.ideasonboard.com>
+ <CAOMZO5Ahbu4mohtMDOQOv_y5B_TDesbdYEUZTF1RL7_y-bS+RA@mail.gmail.com>
+ <CAMty3ZAtObU-bf6FuxvSBaZn2cotj_NxASW9g9on-kBJ7iW3OA@mail.gmail.com>
+ <YNR37NWkxq0mZyq5@pendragon.ideasonboard.com>
+ <fdd446c6-c8ce-9dae-f7ac-e06241f76250@canonical.com>
+ <CAMty3ZCEQeRi53yuLYyWVU8o=Lo2ZKy+kgjU+9PC33QJEq2LQg@mail.gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+Message-ID: <ff421d53-7308-7959-ea4a-9cf94efe63b2@canonical.com>
+Date: Fri, 25 Jun 2021 12:27:56 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.8.1
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: OS0PR01MB5922.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d8a33852-e07a-4104-a59c-08d937c1ab4f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jun 2021 10:11:58.9336 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DaDE0ShlF14xhujc65/qONoXjxtGvVNseBQrTA9qnD2z+L6oXHlyOIREnqVxSJeMU/Bb2p33BOaTj6ala6liOIFp6JLzlB8m+T3WaQi9chM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSAPR01MB2675
+In-Reply-To: <CAMty3ZCEQeRi53yuLYyWVU8o=Lo2ZKy+kgjU+9PC33QJEq2LQg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210625_031204_467466_1B3020D7 
-X-CRM114-Status: GOOD (  42.07  )
+X-CRM114-CacheID: sfid-20210625_032811_185477_08E91F96 
+X-CRM114-Status: GOOD (  22.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,231 +127,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
+On 25/06/2021 12:08, Jagan Teki wrote:
+> Hi Krzysztof,
+> 
+> On Fri, Jun 25, 2021 at 2:51 PM Krzysztof Kozlowski
+> <krzysztof.kozlowski@canonical.com> wrote:
+>>
+>> On Thu, 24 Jun 2021 at 14:19, Laurent Pinchart
+>> <laurent.pinchart@ideasonboard.com> wrote:
+>>>
+>>> Hi Jagan,
+>>>
+>>> On Thu, Jun 24, 2021 at 05:42:43PM +0530, Jagan Teki wrote:
+>>>> On Thu, Jun 24, 2021 at 8:18 AM Fabio Estevam wrote:
+>>>>> On Wed, Jun 23, 2021 at 7:23 PM Laurent Pinchart wrote:
+>>>>>
+>>>>>> Looking at the register set, it seems to match the Exynos 5433,
+>>>>>> supported by drivers/gpu/drm/exynos/exynos_drm_dsi.c. Can we leverage
+>>>>>> that driver instead of adding a new one for the same IP core ?
+>>>>>
+>>>>> Yes. there was an attempt from Michael in this direction:
+>>>>> https://patchwork.kernel.org/project/dri-devel/cover/20200911135413.3654800-1-m.tretter@pengutronix.de/
+>>>>
+>>>> Thanks for the reference, I will check it out and see I can send any
+>>>> updated versions wrt my i.MX8MM platform.
+>>>
+>>> Thanks.
+>>>
+>>> I had a brief look at the exynos driver, and I think it should be turned
+>>> into a DRM bridge as part of this rework to be used with the i.MX8MM.
+>>>
+>>> Is there someone from Samsung who could assist, at least to test the
+>>> changes ?
+>>
+>> Yes, I mentioned few guys in reply to PHY. Around the DRM drivers you
+>> can get in touch with:
+>> Inki Dae <inki.dae@samsung.com>
+>> Seung-Woo Kim <sw0312.kim@samsung.com>
+>> Marek Szyprowski <m.szyprowski@samsung.com>
+>> Andrzej Hajda <a.hajda@samsung.com>
+> 
+> Thanks for the information.
+> 
+>>
+>> The easiest testing of the display stack would be on Hardkernel's Odroid
+>> XU4 (https://www.hardkernel.com/shop/odroid-xu4-special-price/) however
+>> you will not test the DSI/DSIM directly (it has only HDMI port).
+> 
+> Look like I found one board with Exynos5430 with DSI. Does this SoC is
+> same as mainline Exynos5433?
 
-> Subject: RE: [PATCH v2 01/11] dt-bindings: phy: renesas: Document RZ/G2L
-> USB PHY Control bindings
-> 
-> Hi Rob,
-> 
-> Thanks for the feedback.
-> 
-> > Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document
-> > RZ/G2L USB PHY Control bindings
-> >
-> > On Wed, Jun 23, 2021 at 7:38 AM Biju Das <biju.das.jz@bp.renesas.com>
-> > wrote:
-> > >
-> > > Hi Rob,
-> > >
-> > > Thanks for the feedback.
-> > >
-> > > > Subject: Re: [PATCH v2 01/11] dt-bindings: phy: renesas: Document
-> > > > RZ/G2L USB PHY Control bindings
-> > > >
-> > > > On Mon, Jun 21, 2021 at 10:39:33AM +0100, Biju Das wrote:
-> > > > > Add device tree binding document for RZ/G2L USB PHY control
-> driver.
-> > > > >
-> > > > > Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
-> > > > > Reviewed-by: Lad Prabhakar
-> > > > > <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > > > > ---
-> > > > > V1->V2:
-> > > > >  * Add clock properties
-> > > > > ---
-> > > > >  .../phy/renesas,rzg2l-usbphyctrl.yaml         | 65
-> > +++++++++++++++++++
-> > > > >  1 file changed, 65 insertions(+)  create mode 100644
-> > > > > Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl.y
-> > > > > am
-> > > > > l
-> > > > >
-> > > > > diff --git
-> > > > > a/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl
-> > > > > .y
-> > > > > aml
-> > > > > b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphyctrl
-> > > > > .y
-> > > > > aml
-> > > > > new file mode 100644
-> > > > > index 000000000000..8e8ba43f595d
-> > > > > --- /dev/null
-> > > > > +++ b/Documentation/devicetree/bindings/phy/renesas,rzg2l-usbphy
-> > > > > +++ ct
-> > > > > +++ rl.y
-> > > > > +++ aml
-> > > > > @@ -0,0 +1,65 @@
-> > > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML
-> > > > > +1.2
-> > > > > +---
-> > > > > +$id:
-> > > > > +https://jpn01.safelinks.protection.outlook.com/?url=http%3A%2F%
-> > > > > +2F
-> > > > > +devi
-> > > > > +cetree.org%2Fschemas%2Fphy%2Frenesas%2Crzg2l-usbphyctrl.yaml%23
-> > > > > +&a
-> > > > > +mp;d
-> > > > > +ata=04%7C01%7Cbiju.das.jz%40bp.renesas.com%7Cc6bbf5f6ce334eaa72
-> > > > > +2a
-> > > > > +08d9
-> > > > > +359f07ad%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C637599779
-> > > > > +42
-> > > > > +1910
-> > > > > +039%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzI
-> > > > > +iL
-> > > > > +CJBT
-> > > > > +iI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=Jcf6Om4DehifCe1KO1rm
-> > > > > +t5
-> > > > > +LxTB
-> > > > > +6jtGoQLD1MoqWGM%2F0%3D&amp;reserved=0
-> > > > > +$schema:
-> > > > > +https://jpn01.safelinks.protection.outlook.com/?url=http%3A%2F%
-> > > > > +2F
-> > > > > +devi
-> > > > > +cetree.org%2Fmeta-
-> > schemas%2Fcore.yaml%23&amp;data=04%7C01%7Cbiju.das.
-> > > > > +jz%40bp.renesas.com%7Cc6bbf5f6ce334eaa722a08d9359f07ad%7C53d825
-> > > > > +71
-> > > > > +da19
-> > > > > +47e49cb4625a166a4a2a%7C0%7C0%7C637599779421910039%7CUnknown%7CT
-> > > > > +WF
-> > > > > +pbGZ
-> > > > > +sb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVC
-> > > > > +I6
-> > > > > +Mn0%
-> > > > > +3D%7C1000&amp;sdata=LlqPRLf9%2BGrEdSapxCFhwxVKcXTVh9ECr%2FXPN0S
-> > > > > +Iz
-> > > > > +i4%3
-> > > > > +D&amp;reserved=0
-> > > > > +
-> > > > > +title: Renesas RZ/G2L USB2.0 PHY Control
-> > > > > +
-> > > > > +maintainers:
-> > > > > +  - Biju Das <biju.das.jz@bp.renesas.com>
-> > > > > +
-> > > > > +description:
-> > > > > +  The RZ/G2L USB2.0 PHY Control mainly controls reset and power
-> > > > > +down of the
-> > > > > +  USB/PHY.
-> > > > > +
-> > > > > +properties:
-> > > > > +  compatible:
-> > > > > +    items:
-> > > > > +      - enum:
-> > > > > +          - renesas,r9a07g044-usbphyctrl # RZ/G2{L,LC}
-> > > > > +      - const: renesas,rzg2l-usbphyctrl
-> > > > > +
-> > > > > +  reg:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  clocks:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  resets:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  power-domains:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  '#phy-cells':
-> > > > > +    # see phy-bindings.txt in the same directory
-> > > > > +    const: 1
-> > > > > +    description: |
-> > > > > +      The phandle's argument in the PHY specifier is the phy
-> > > > > + reset
-> > > > control bit
-> > > > > +      of usb phy control.
-> > > > > +      0 = Port 1 Phy reset
-> > > > > +      1 = Port 2 Phy reset
-> > > > > +    enum: [ 0, 1 ]
-> > > >
-> > > > You already have the const, so this doesn't do anything.
-> > >
-> > > OK, will take out const.
-> >
-> > No, 'const' is correct. This is the value of '#phy-cells', not the
-> > contents (we don't have a way to express schema for that).
-> 
-> OK.
-> 
-> >
-> > > > > +required:
-> > > > > +  - compatible
-> > > > > +  - reg
-> > > > > +  - clocks
-> > > > > +  - '#phy-cells'
-> > > > > +
-> > > > > +additionalProperties: false
-> > > > > +
-> > > > > +examples:
-> > > > > +  - |
-> > > > > +    #include <dt-bindings/clock/r9a07g044-cpg.h>
-> > > > > +
-> > > > > +    usbphyctrl@11c40000 {
-> > > >
-> > > > usb-phy@...
-> > >
-> > > The IP is called USBPHY control. It mainly controls reset and power
-> > > down
-> > of the USB2.0/PHY.
-> >
-> > Sounds like it should be using the reset binding...
+No, Exynos5430 is ARMv7. Looks like improvement over Exynos5422.
+Exynos5422 has a very good support in mainline while Exynso5430 was
+never touched at all.
 
-OK, Will model this as a reset binding. Since the IP mainly controls reset and power down
-Of the USB2.0/PHY. So it is better to have reset binding.
+Exynos5433 is ARMv8, although many things are shared with 5422. About
+DSI I have no clue.
 
-Regards,
-Biju
 
-> This IP has reset, clock control , connection control , clock status and
-> power down setting registers.
-> Currenty we are using reset registers for turning ON USB/PHY block.
-> 
-> Since it has extra registers I thought of modelling it as a phy device.
-> But we could model as reset device as well.
-> But it has extra functionalities apart from reset.
-> 
-> So what do you propose here? Model as a reset device or phy device since
-> it is related to phy?
-> Please share your opinion on this.
-> 
-> Regards,
-> Biju
-> 
-> > >
-> > > So not sure usb-phy is right one here ? I prefer usb-phy-ctrl instead.
-> > Is it ok? Please let me know.
-> >
-> > A node with #phy-cells should use the standard phy node names unless
-> > it has other controls.
-> 
-> Apart from reset, it has other controls like  clock control , connection
-> control , clock status and powerdown setting registers.
-> 
-> Cheers,
-> Biju
-> 
-> As I said, this doesn't seem to be a phy, so using
-> > #phy-cells here is what seems wrong.
-> >
-> > > > > +        compatible = "renesas,r9a07g044-usbphyctrl",
-> > > > > +                     "renesas,rzg2l-usbphyctrl";
-> > > > > +        reg = <0x11c40000 0x10000>;
-> > > > > +        clocks = <&cpg CPG_MOD R9A07G044_USB_PCLK>;
-> > > > > +        resets = <&cpg R9A07G044_USB_PCLK>;
-> > > > > +        power-domains = <&cpg>;
-> >
-> > Also, are these all resources of the usbphyctrl block and not just
-> > resources you happen to want in the driver? For example, the
-> > power-domain should be the power island that this block resides in.
-> >
-> > > > > +        #phy-cells = <1>;
-> > > > > +    };
-> > > > > --
-> > > > > 2.17.1
-> > > > >
-> > > > >
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
