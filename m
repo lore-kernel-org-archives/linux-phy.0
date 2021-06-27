@@ -2,73 +2,75 @@ Return-Path: <SRS0=Q81u=LV=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-8.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 833A2C49EB9
-	for <linux-phy@archiver.kernel.org>; Sun, 27 Jun 2021 18:58:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A8094C49EBA
+	for <linux-phy@archiver.kernel.org>; Sun, 27 Jun 2021 18:58:02 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 495FF619A1
-	for <linux-phy@archiver.kernel.org>; Sun, 27 Jun 2021 18:58:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 495FF619A1
+	by mail.kernel.org (Postfix) with ESMTPS id 77029619A3
+	for <linux-phy@archiver.kernel.org>; Sun, 27 Jun 2021 18:58:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 77029619A3
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=B2uwlrI+z8zDND872sfI/rT01WzbBIdX6bRWBpw5+Y0=; b=tWDZ66+Yv5iIuJ
-	22JDeKFEZBgZcTv/1U7JQ3yyUy3VlCOL//Msymncf4Zwsb2YGfqaNxRAd8iL7VMDN7LE1u4OjGOAa
-	evDHchiSTGgBGhNNThwWupBCcaSk7vkIlPPTTggrRUFk+EMk2bxPO3ANWdMlrefsqGrs53S2DOQKn
-	O+J6wALMYAM/IfmLT26MO15ripNvvKt46zVkSGwI/ZXZd1CJ0WNXCDMLKJLg3dNzAcJHaM/pPAKMZ
-	OScS7n0LhuDU25kAS6g+IJO01IBYWQiD7H9B98NOyxl9Eu2DCBfwH3jBbjVRNyWBzYvUYphEdMB9l
-	tm8HHZYINoSoxVDB522g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y9JJXtW28kWsqoxPzPdQHyGp0il5/AfeRjYmVKyonbE=; b=YppEcHJT9dhiRH
+	GVc8BYjCcFtCW6gAgiiepyHAeFUKy+cIscmU1KXbV6zoIpbqdrR7ETPEfVLHP/SBCw0L3XN2pOzj6
+	T94f7KMeejmPzpGAWFlvO5qvlCUSzr7HmAQOfnwEqrvhHGV/mWgSsaYlx/odbfRWLhVLQxopvyl/4
+	mvOdWVCKqmv/wsM0u0I0ajrQBidAW6X4l8YfjxqNVgWY7iKmT2hRZbUFmL5iMW6CUS5hjg00UATy0
+	LJtXc/Ya1HwuxhS8JtTffdFNo7tAWtB1LgG/M6ZwSbJj1C38d4dsatwfpA1Mehk8QgpOmZSRSabSz
+	vi1BPALWhn71QVyFnWDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lxZyi-0060HM-P9; Sun, 27 Jun 2021 18:58:00 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1lxZyj-0060I2-UP; Sun, 27 Jun 2021 18:58:01 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lxZyd-0060FU-MC
- for linux-phy@lists.infradead.org; Sun, 27 Jun 2021 18:57:59 +0000
-Received: by mail-wr1-x434.google.com with SMTP id j2so17896238wrs.12
- for <linux-phy@lists.infradead.org>; Sun, 27 Jun 2021 11:57:54 -0700 (PDT)
+ id 1lxZyh-0060GC-20
+ for linux-phy@lists.infradead.org; Sun, 27 Jun 2021 18:58:00 +0000
+Received: by mail-wm1-x331.google.com with SMTP id
+ v20-20020a05600c2154b02901dcefb16af0so9476777wml.5
+ for <linux-phy@lists.infradead.org>; Sun, 27 Jun 2021 11:57:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=M/3/joTnhRd17fCBvR7XJw02bsdVZrFj5dA6ttjMmdo=;
- b=L7wp89raLmw2Qhvg8cJyD+vjhtQp9x60n5BoouREW91gbZqyVqpX2yJd8YNlrF0FpK
- fY7Zy1yZhMUk8D21USjI+XjmPFkXVCEgvJ7APRKoeCMk3WYX4krWXvo0NMwJTIyVzkuh
- 6xM6RVzM5duxFlEb+f7fYZqrJpAjtLVWL2VDgLybOflPcPTFqqFH4Q83q9Cs4SOYDA6J
- okRlWL5Jb5+AysEfv98Re033KkkkY/MCjPKl68xfewRoDPLrvXZn8WiXF1oKgvNpVaLe
- 4548stdjNIV/yn5w/v3uPpuoIvvaxtDimQusO/JovK8fMybBGwL8YqKuzK7xDtTmYOLt
- pe7g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=WV89p0Dh9gFyvzsassxs03sxu1k2bjjeRxKtJF5OFHo=;
+ b=r/FZHPU5TX09KIVaCfM9qyyo+peXe9RLGnjeSfKAMdkrItxgE9ofpNzg+AcKCNA5sz
+ ainW9i0slya2f7w0LzdA9M/vfhK6EqE+Nz9HeKmcuTwqjuL8rqS91NMUsKnB+u6dQU7E
+ lGQtyDP745holSf+DztMl8SRbBgTeiJPEESS+/hP7DFpS3dp6fzSStlFyyMMZtGbwEe/
+ rGKDVMxz8pu2RHaCNfHiXU0b0+60ia8P+B6Flyy0QXo8F096RpAmzp2uxULD3eg6QOyx
+ 557x2ur4ux/HtHU45+TD22qbCVGU7B5sx0WcKFp97MV1teEukaanMhdcklz9YUdHlWCt
+ 1kiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=M/3/joTnhRd17fCBvR7XJw02bsdVZrFj5dA6ttjMmdo=;
- b=YwAyS10cQuyBHFg+XePda8ppJ7o7Z6WGFd/LtoRCKubtleRn6qsFeicTfwU+JiuXmQ
- t7h5wuTuzcykWwExSk6hXoL91vRpXG/E46v/Now9En/3cYO2Tw6vaGk6F6+jAz3x+Hz9
- 6i45FgJfEpPJ5ruqWsCDYPrsL3J0aQm4uT6wSakLf5o8YYPJfl8xolQXBCZy4aPugieT
- BmDlDIDOyqc+nGGnEQ0SlpzM05YOQMtUBrfoYHl7cF8wXRobW50PMKbo1bSDRKZGpvAl
- 4Nwc1LN+3+RQVboEBu0q9yc1lDQT+azYQPmrtgpwR0QSBNdwplAIc1SRR52Bi8DdmrLP
- xFxQ==
-X-Gm-Message-State: AOAM5329NR0zPNqvBlp+SAKPL7qb0aAQp28/0skcfzN6WNymS2VcrJyk
- 3BzfipVtR8pMKw2Ua6phO5E=
-X-Google-Smtp-Source: ABdhPJykFvXVZYIxBISkFs/2/ZDJTHrGDO7IOLNgjL/04Qhbm/69bPZ322YUI3TVd5AwaTBZyGtdTA==
-X-Received: by 2002:a5d:5685:: with SMTP id f5mr15391725wrv.101.1624820273454; 
- Sun, 27 Jun 2021 11:57:53 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=WV89p0Dh9gFyvzsassxs03sxu1k2bjjeRxKtJF5OFHo=;
+ b=T6/clQCmZoPDvgT2FRy4JDHLSg85iBRvsDabg0NQPURPq6rmQ2T0VYIsz+jQ5NPqHO
+ s9YHles0mR3V5oytoTMR3A7HRKPE4gLN1OvZd2ZACaBnlRf95sELIurCbSXM+SB1MjmM
+ AlqyXNtd3BIsoh2lSbrucQrMkUujGZtufQYCowNa2XgEYV74LHXuOG/QaHH9NAuQYgou
+ 1ehC1wuk41YrNxGgFEMY3Dx88YEj1HICqWzkRkYsfM1Y8mHsPM6LEHMhSMzFxUW5pKUr
+ 7lmLRHcJJ+2zucCfWxqvCYVp8vAZDN6a0Gqcuo7Ie2W8Nv9CZyy+IWGxYOfEkBoskftW
+ KvBQ==
+X-Gm-Message-State: AOAM532selG0Ew6Ap1CdpRYZf+iz8TDq9b8LGs2bYblYR49jYaAUfj58
+ d0EFWLZgpwDUFUkcJeGTv+M=
+X-Google-Smtp-Source: ABdhPJxZBXH4OwU+1hiA4jfv4zG3+2Hi4cZND0kX1kzYG49lBMk5OFZjP+Qqr6rW4KzCV4xiqM1K2g==
+X-Received: by 2002:a1c:4d07:: with SMTP id o7mr22141772wmh.97.1624820277600; 
+ Sun, 27 Jun 2021 11:57:57 -0700 (PDT)
 Received: from localhost (178-169-161-196.razgrad.ddns.bulsat.com.
  [178.169.161.196])
- by smtp.gmail.com with ESMTPSA id a4sm4022812wru.55.2021.06.27.11.57.52
+ by smtp.gmail.com with ESMTPSA id g7sm8755840wmq.27.2021.06.27.11.57.56
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 27 Jun 2021 11:57:52 -0700 (PDT)
+ Sun, 27 Jun 2021 11:57:57 -0700 (PDT)
 From: Iskren Chernev <iskren.chernev@gmail.com>
 To: Bjorn Andersson <bjorn.andersson@linaro.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -80,14 +82,17 @@ Cc: Andy Gross <agross@kernel.org>,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
  phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
  Iskren Chernev <iskren.chernev@gmail.com>
-Subject: [PATCH v2 0/3] Add USB HS support for SM4250/6115
-Date: Sun, 27 Jun 2021 21:57:47 +0300
-Message-Id: <20210627185750.693222-1-iskren.chernev@gmail.com>
+Subject: [PATCH v2 2/3] dt-bindings: phy: qcom,
+ qusb2: document sm6115 compatible
+Date: Sun, 27 Jun 2021 21:57:49 +0300
+Message-Id: <20210627185750.693222-3-iskren.chernev@gmail.com>
 X-Mailer: git-send-email 2.32.0
+In-Reply-To: <20210627185750.693222-1-iskren.chernev@gmail.com>
+References: <20210627185750.693222-1-iskren.chernev@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210627_115755_770888_5A9C0330 
-X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-CacheID: sfid-20210627_115759_143227_4236FA44 
+X-CRM114-Status: UNSURE (   8.47  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,33 +110,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB controller found on SM4250/6115 is dwc3 (phy v1), very similar to
-existing supported phys (like msm8996), with slighly different tune seq.
+This compatible string is for the HS USB PHY on sm4250/6115 platforms.
 
-PS1: I know the series is already in usb-next, I can make a new series that
-will remove the 4250 compat from the existing code (but it would be 3 commits
-as well), let me know how to proceed.
+Signed-off-by: Iskren Chernev <iskren.chernev@gmail.com>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-PS2: I kept the Bjorn Reviewed-by, because I'm only removing the compat string,
-which he agreed to, in a similar setting https://lkml.org/lkml/2021/6/25/351
-
-v1: https://lkml.org/lkml/2021/6/22/1183
-
-Changes from v1:
-- remove 4250 compat, both platforms will share one dtsi
-
-Iskren Chernev (3):
-  dt-bindings: usb: qcom,dwc3: Add bindings for sm6115
-  dt-bindings: phy: qcom,qusb2: document sm6115 compatible
-  phy: qcom-qusb2: Add configuration for SM6115
-
- .../bindings/phy/qcom,qusb2-phy.yaml          |  1 +
- .../devicetree/bindings/usb/qcom,dwc3.yaml    |  1 +
- drivers/phy/qualcomm/phy-qcom-qusb2.c         | 31 +++++++++++++++++++
- 3 files changed, 33 insertions(+)
-
-
-base-commit: e71e3a48a7e89fa71fb70bf4602367528864d2ff
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+index 9f9cf07b7d45..3110d3a0331b 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+@@ -23,6 +23,7 @@ properties:
+               - qcom,msm8998-qusb2-phy
+               - qcom,sdm660-qusb2-phy
+               - qcom,ipq6018-qusb2-phy
++              - qcom,sm6115-qusb2-phy
+       - items:
+           - enum:
+               - qcom,sc7180-qusb2-phy
 -- 
 2.32.0
 
