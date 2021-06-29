@@ -1,170 +1,89 @@
-Return-Path: <SRS0=N+1x=LW=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=MgL9=LX=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	MSGID_FROM_MTA_HEADER,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_SANE_1 autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7D750C2B9F4
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Jun 2021 08:20:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C6331C11F64
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 00:46:26 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 34FE461A0F
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Jun 2021 08:20:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 34FE461A0F
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=kontron.de
+	by mail.kernel.org (Postfix) with ESMTPS id 9102361CFF
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 00:46:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9102361CFF
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QuvPrIBETaEtccYmRSempcl/4gAMdkf3DutCqFreZ5k=; b=lsDfR08NpS4PDi5CSycWkTHHVZ
-	/aSSAt3x6mswZbjXjObQ1DN4wMwmT8Bamm+MXe1LSN3bb4oFwQUoIAnpoqp8yStK0m9xdc/HuAWCi
-	lgyQuaDHXfC0qBGPzjuQF1SGEHoXdiRJSVJPvdsupk3tKWLHIB7D8VHWGyyVpOQSfeYiPjlkF+aJI
-	Sbv0Xh+qWC/owJq/Zexjs3uQ0Yig+65gqRYrp+EqRALgL4H/OGoU0y3fCM592oWL5EArXZTmtZfQ6
-	BWYLaw65lgr6zSKRIQih0Y87lGovHwml9qk9LWhNzHWIZbOjHmEPkSramWsyyYP+OzgBUViPGaAoP
-	fr3pAxUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GWg1GerRHSgq69bWxytzHG9HOYaQ+i83VatCxzQHySw=; b=seXE+Phhx+S+4n
+	INPveV3yDOjuFjX3ClRTUQbl7ATd1+tjMiv6mkl5d26btwMHkITn5XlhqxDxYedZsLOg9Qdd+8jsr
+	g/hoTgzH7pI94537dAvXV7xnATXkzwFt9i9dvz5Y9KI7OrDkL/GuQJZ7o3X/hBlyL+OjUhaDHPMtD
+	1BT/uTaNOOp/hhrvYoGMuRXcsKx+Y/LN7Lb2+o9pQaVhPHgZqaDhFgQ31WuqxumWZLMOL/qrm4W3R
+	QpeUQyQao1E2inYKJr1eNLDNKOgp0q1y82hTn4LxmI/4IOo7huQk2NCaTqaRaLwFubx7tu5hDZGrt
+	HXnWKPt7rqnZlhD1a8ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lxmUr-007MTS-Na; Mon, 28 Jun 2021 08:20:01 +0000
-Received: from mail-vi1eur05on2138.outbound.protection.outlook.com
- ([40.107.21.138] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1ly1tS-009S5p-35; Tue, 29 Jun 2021 00:46:26 +0000
+Received: from mail-ot1-x32c.google.com ([2607:f8b0:4864:20::32c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lxmUo-007MRi-IO; Mon, 28 Jun 2021 08:20:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EbSYOIWq8wohgMxBl+d08+MoSDDy1EFAhAoGXztvtumAU1pX1Je8ROisK5pGQmgsaiDnrcbiSEizY+3rkoGejTHIIxUcdXs8G0qFv4GbIhpBC2GMQhfud4D2/gAr7UtB+ei8Vsslg1/wm1BMzcopfUSX4Ab+L2AExQnBV6W7ChbRndoSaGsDRj1+6JQlzg08GSXGYKPpKD6gnFURMrKCYbxCYDkpk03X3vnJewiQpHBQ/DQaePjENA4bEi+6x0KN5IZFSMrawXnYAKOSSLp0VqWxdNXCz3knSw0ibN+7V+M8rnAWjAtKz5lPz3ga+XmJ1ZweWafjHMlmsrZKNJ6F6Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zVVhrH6lejGU7I8biVfkuUrExWYlRFNR/bFqOTmmSGQ=;
- b=cSC5GHEg8Uotp/zRRvdbyhzMGaI0vWtC0yfwty1uhfEDUpac5kXOzX7tXuLvWJ6YOtwlDGKaYzJ+E3yTC9aKOcIoX7oQBTMAAeZ9lDox9ozmOlR/QPSrOk7cCFbv7F+54gmYh7BlPwQskLrAyYmu9JD8jZ/Sj2iVqRBqG5NB8ydUPfnwtWMYLZGXZOVGiOmF2lbf3a2huY0+9qfzw1oq0UQH/o/o29OqBINPtX2Ri25tpcTTbvJ0Gh95MwVRLc0f6IdBy5hUiigD6I8ivMbAmIfdMEHKmxBuD+V68CoDH073VgsOJwTvNjhWQ90RBbdFqljZPjxnkyDsuw7+vhIT0A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=kontron.de; dmarc=pass action=none header.from=kontron.de;
- dkim=pass header.d=kontron.de; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysnt.onmicrosoft.com; 
- s=selector2-mysnt-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zVVhrH6lejGU7I8biVfkuUrExWYlRFNR/bFqOTmmSGQ=;
- b=bOZq38GyM4qp4OYJu/pA759BIS2K/bxu5+uVYwcTPOpukQeZkHXPWXyjkcV7199Xaax8cO95kxA7xxzWQlTKa4whWdZg/GmWMUvfMcv7G/KC8n/K4k3HDDJjzSQAFixAIC7v9OHKmAx5omHHQE2ZoAK6zvVf/hYvW+pYmDAtLaA=
-Authentication-Results: intel.com; dkim=none (message not signed)
- header.d=none;intel.com; dmarc=none action=none header.from=kontron.de;
-Received: from AM0PR10MB2963.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:208:157::14)
- by AM0PR10MB2530.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:208:dd::28)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4264.24; Mon, 28 Jun
- 2021 08:19:52 +0000
-Received: from AM0PR10MB2963.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::1133:8761:6cc9:9703]) by AM0PR10MB2963.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::1133:8761:6cc9:9703%5]) with mapi id 15.20.4264.026; Mon, 28 Jun 2021
- 08:19:52 +0000
-Subject: Re: [RFC PATCH 2/9] drm: bridge: Add Samsung SEC MIPI DSIM bridge
- driver
-To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Fabio Estevam <festevam@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Michael Tretter <m.tretter@pengutronix.de>
-Cc: Jagan Teki <jagan@amarulasolutions.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
- Francis Laniel <francis.laniel@amarulasolutions.com>,
- Matteo Lisi <matteo.lisi@engicam.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Tomasz Figa <t.figa@samsung.com>, linux-kernel
- <linux-kernel@vger.kernel.org>, Robert Foss <robert.foss@linaro.org>,
- Andrzej Hajda <a.hajda@samsung.com>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Milco Pratesi <milco.pratesi@engicam.com>,
- Anthony Brandon <anthony@amarulasolutions.com>,
- linux-phy@lists.infradead.org, Fancy Fang <chen.fang@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, NXP Linux Team <linux-imx@nxp.com>,
- "marex@denx.de" <marex@denx.de>, Daniel Vetter <daniel.vetter@intel.com>
-References: <20210621072424.111733-1-jagan@amarulasolutions.com>
- <20210621072424.111733-3-jagan@amarulasolutions.com>
- <YNO0LHNVSWjrh1ZS@pendragon.ideasonboard.com>
- <CAOMZO5Ahbu4mohtMDOQOv_y5B_TDesbdYEUZTF1RL7_y-bS+RA@mail.gmail.com>
- <2decfea3-3659-2a3b-7706-326c97f57f8e@canonical.com>
-From: Frieder Schrempf <frieder.schrempf@kontron.de>
-Message-ID: <3aa47f60-94ab-cf0f-3777-3a872dd0e6d4@kontron.de>
-Date: Mon, 28 Jun 2021 10:19:50 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.8.1
-In-Reply-To: <2decfea3-3659-2a3b-7706-326c97f57f8e@canonical.com>
-Content-Language: en-US
-X-Originating-IP: [80.147.118.32]
-X-ClientProxiedBy: AM0PR03CA0011.eurprd03.prod.outlook.com
- (2603:10a6:208:14::24) To AM0PR10MB2963.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:208:157::14)
+ id 1ly1tQ-009S5E-65
+ for linux-phy@lists.infradead.org; Tue, 29 Jun 2021 00:46:25 +0000
+Received: by mail-ot1-x32c.google.com with SMTP id
+ d21-20020a9d72d50000b02904604cda7e66so19107453otk.7
+ for <linux-phy@lists.infradead.org>; Mon, 28 Jun 2021 17:46:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0d8zbMo9V9zxdFiDSYDzc1ZZBoiwj8ZiodSoR+dBxQM=;
+ b=hsKiwYalAxSUUx0v4gCd+27Xm+6jJ1qMca4RdjGuvuWKXA3RkC7jz+ANVpJIuK9dZO
+ u/WUDE0UkBa1c87HasMLvLXWv1/amOE5I4VXyT6M1hn1hrZFQ8lLbhW2wvtzRGBwh5Ka
+ ZQP5zSMJtZZ9BCyOLQpM0obhVYOKMg4b9/XzD/3BpHON/FevDsC8IuuY/wSFAvBnda+P
+ QN6GYs1t0/8hebF2eCVrVailE+SY6Vnvu0/3VY+gN2EKQo4QMdSga5WTo9AzKggoOQZ9
+ qidM2Z0wGjKLKw7sZd5BRg5K9enoTRJYaE5Qj/CvCHAGbx5e0nsqhbcVrHKHiUrFJuOS
+ 9udw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0d8zbMo9V9zxdFiDSYDzc1ZZBoiwj8ZiodSoR+dBxQM=;
+ b=WFajk9UEE6PPL6AhAoes6vvLonorjSFYI1pkSPcAlS4n8IqaoiGP08TWBh1u+xc+zv
+ AstD1i4hpx4FsC8M7+bp8hDo+GPM1PUbkiyJFToUrMwf4xmMibtTym6DfNysG3Bqke2D
+ pOeQvpA6BojIxmibdYqLwbdMcUbNJXT5kmMtMIVYrtqqkpV4wnQLVaJPgQN5odJB/r1B
+ tXhYHmD/naOsbYQPweJzmTnUsmY/jPgFsVoW2soOb5J7IzqmOfFuuClk40leqsswpV32
+ 3UCt7p718qWG1faZpGGSTphvwnNfzO5vriZBmwRPVEPOgFuGJUcIGnbsyz9RKSMY2WwP
+ KHGg==
+X-Gm-Message-State: AOAM5307hlrfzlo5SNNuYR79mXDzdX+d5qqhfNuMJuwvQlKAMd/cFBFf
+ s8+OTT7fD89q8LM2rPZU58WaUw==
+X-Google-Smtp-Source: ABdhPJygaGlBx4cJgfr4jOjytIOq6ewXtnUVJFP6+ftbUl4R7nxAOyT4TP5jOpwN0V0HHguQifak2g==
+X-Received: by 2002:a9d:6087:: with SMTP id m7mr2014551otj.318.1624927583076; 
+ Mon, 28 Jun 2021 17:46:23 -0700 (PDT)
+Received: from localhost.localdomain
+ (104-57-184-186.lightspeed.austtx.sbcglobal.net. [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id f3sm2671979ote.74.2021.06.28.17.46.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 28 Jun 2021 17:46:22 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Manu Gautam <mgautam@codeaurora.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] dt-bindings: phy: qcom,qmp: Add sc8180x PCIe compatible
+Date: Mon, 28 Jun 2021 17:45:08 -0700
+Message-Id: <20210629004509.1788286-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.29.2
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.30.119] (80.147.118.32) by
- AM0PR03CA0011.eurprd03.prod.outlook.com (2603:10a6:208:14::24) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4264.19 via Frontend Transport; Mon, 28 Jun 2021 08:19:51 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 4eab4633-9a68-42d7-0c95-08d93a0d8119
-X-MS-TrafficTypeDiagnostic: AM0PR10MB2530:
-X-Microsoft-Antispam-PRVS: <AM0PR10MB2530006F347498FFDF8DC6FDE9039@AM0PR10MB2530.EURPRD10.PROD.OUTLOOK.COM>
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: +F4ti6up/FG+jaljV4jRzhK+k6PcwAKPGoq8eOUnL0Kxbzi6O3ScAlCyN6vz/iteRSPNP8I7cmu7dlSet6vnStcKiIp3SBaRGWvj2yv+0KUG8iBaxNmze66Sv0U411mCr+gYJw93leli0wcLscaJK2GCYPGhsFKgMt5j7r8tGTWpNe9fTlltil1zW/Vy9wcDLZPOW6hFL84Zv2AAZEzKETjBlCA/UqayjzPQtdClbP9h5m61hcrp7ZLU+/XEeLjekmEFHmD21QcaOOPSwm/kv1lo3W+pMKy0he7fwrxTy9twJJYBdlksaJLlhXi4X1U2pBpHjJ+b1R1pqxrOoQymbTJ5FTvP60Opze8XXylxjIq39Gj5ND+cSVMsVE5lghKtzVoysaOQijX/EHA/lqIZ3W67gdkMJ9QhDxDSPMoA1jBftZGQsz+E+JmoofAI8UTm3yFRUF1XyqSQQ4JoZCCfw/8cHHnjoHHASLHdCSJHoxzk7dThMhI8D6RZBLs1L3IOI0vyKbZjggYn5J1TCiGx6r423boQUMwSkvf0MA9iOR9ciPKnR8tglUZnO1x04wu0F9DGatnaCNj324Wh+VV/FwjkuSCVw29oZq2Wf2LfyC3de46kxzVuQO/17lhfmuYX9qk3DsAJNTntrmFoSq1bqfg2cwr/DdXp8gK9DOiOdT+pnw9DXjnGdGWbTMxfD7HWk0ZthvHtlECcxwNHSPVLspk02Uruw/E62mxEM/srpD9fyQAhkzj8r9EygU25Pk+mzvujqFkZQLbsrvupVc00CXEtC6pTt7AZahj2qZ3g1CF0ZF3xT6+qGJz+g2FD2SdMfexnlqUG+c3IXEj0VdA8jdUJKhvGKks5zrU/yFBtWGU=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR10MB2963.EURPRD10.PROD.OUTLOOK.COM; PTR:; CAT:NONE;
- SFS:(4636009)(376002)(346002)(396003)(39850400004)(136003)(366004)(54906003)(6486002)(316002)(31696002)(16576012)(8936002)(110136005)(8676002)(66946007)(53546011)(86362001)(31686004)(38100700002)(5660300002)(2616005)(956004)(45080400002)(66476007)(66556008)(186003)(44832011)(4326008)(36756003)(478600001)(2906002)(966005)(16526019)(26005)(7416002)(43740500002)(45980500001);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?OVpWVGpIVjBXdGpIc2pIL04vVXU0R2wzUjRmVHhuQlByUUgvV1Bsam5Vdk5r?=
- =?utf-8?B?YmJBaSs5bkpudXBNOStVQklkUklsMEZyT3piTWdFdkE4ekQyb3c4bmkySUxO?=
- =?utf-8?B?R0o2NnFWRHhuandlNTIwMjNtMXlrUnNsdUdXN255eDhuSTc4U2xLTndJMURK?=
- =?utf-8?B?Q1lwTkJncC9meEZOK0QwY2h2VVpzalNMdFRNS040SUh1REhpWmNqbzBkc2I2?=
- =?utf-8?B?aHE2cmtGc01VQXB3dkFTWUN2TEppelRHYXppcjYzZjNpdnRJNEZGVU50SmxQ?=
- =?utf-8?B?ajNMUUZlMksydzlPaWk4bWFoSlZRMG93a211Q2VpUmo0SWdoZlBkcVBXdDU5?=
- =?utf-8?B?ZmZ0TjVSb1RxN0lKRmVmemtQTnUvaVM3UjlOL3VBYnJkbjFpVTRtd1hIU28v?=
- =?utf-8?B?VXpmNFBFaHlhemlpSklxZWo2K1dYVWxadTAvU21xNHRVYk5laGpZOEpEcHVm?=
- =?utf-8?B?OFExT0RUZUJnR0l1TFJLbzY5QzRnSFh4d0F4OTVQMGJVV0pPL29qYUFEajZs?=
- =?utf-8?B?TkplWmVVTENSZE5ZZUZrRktRd0I0OWxWSFpJR05YYWJwZ3NHR2VkdmoxMDZz?=
- =?utf-8?B?eW40djN5UWx4aUJoSm9YRk5hdGZwdFFhS0NCanhlSzE0M2lXanM4MHd0eCtP?=
- =?utf-8?B?QVBUeUN0cWJRSE9xZElES1hLbElTUExxTFZldExNcjJPTjB3YjUraVA4TnVQ?=
- =?utf-8?B?WTBwRlVTS2d5TkhwL09TOGYvWnJ2K2lrVmhaeGFrV1F3YmhNWVpjdDFjTk9h?=
- =?utf-8?B?cTlXUWJJYnIrQm84V0VSMlE0UVZjcldIbU9yOHpIbTBwS0gxQWljZzRDZmlk?=
- =?utf-8?B?OENVcHp2ZjNjRS9nZ0lucWlheXpIekRhdnpxRTdwZVNaZFMrQVoxOWc5QzBo?=
- =?utf-8?B?eVBibXZFV3JMc3cyQy95M2dEeFlJdE83U00wZVlHZEJiaVJOalp2NUVHR1pI?=
- =?utf-8?B?RE1zWlF3NFlBRlg5OWJWZUNyanJlcVBPSkpEMkdIcjdlRnpvSXkxWHdOMmVY?=
- =?utf-8?B?d0JjNSt1UlgzdjllRFZ5K05OY1E5SGRGQmp2ZysxMFlyK2NxdWZaT25FTS9L?=
- =?utf-8?B?aktpNWhnNW84b3JDaTh3ZzUrS2RiYnVRMlRYZGRTRFdjY2R3ZnIxeGNnemhT?=
- =?utf-8?B?N3BIUkk3VElsNzZVTjl2VVplZWFQN3NmWWVTWXVpQnVkblcyWmxIVnpWZ2Zh?=
- =?utf-8?B?aGFYb1NyL04yRURyZVExUXBVdVpFSm1SNTM0WnlRTjlqMnR4bzdXNUdBMitX?=
- =?utf-8?B?T25BSHhBZndrcnBBRXlMUmNYenRzdGZVcFkwYk5tTC9HM1JmUnA2MVBVd0Zx?=
- =?utf-8?B?UmVNOGM0ekdiY2pxV21jSjhjODNGVm1EMkhqbm1NMHZkd3lHdmY0cXRtVEE1?=
- =?utf-8?B?QkY0V1kyVDdaaXIrbTdyTGNuRXN1Qk4rNnRISVRldXo1U2ZhMGgvMm1Vb0Vu?=
- =?utf-8?B?ZlF5c3c3czh4YlZhU05ac3lJNDVrRDZVOG9BM3dhTzl1TmQxaWs1bm5xdHRj?=
- =?utf-8?B?UktnUWFEWHg1MFBHTXpMRnlKcFhjRE13T01XU2dkbWRQejVTbHh5U2d4WXJm?=
- =?utf-8?B?TnVIUkR0VlRzQ0FnOUFsNzZmSGJmSHcreU9nRlk1UHVWcjNxbmg3VUI4NHUv?=
- =?utf-8?B?MFRlaGFxN290ZmNJWi9sWDhibGo4TzNadmpvclU4SVRiOEl3Nnp2aG5qSDNX?=
- =?utf-8?B?dkdvaUZpVTlDQTB0dllkVE1xOW1vempHcmt5ZVB1aFVnSkNrc0N5OHZrcExk?=
- =?utf-8?Q?Rp+nJYdtnn6/HgaBc+vdsShcKrenSyX6KxQmZ57?=
-X-OriginatorOrg: kontron.de
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4eab4633-9a68-42d7-0c95-08d93a0d8119
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR10MB2963.EURPRD10.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jun 2021 08:19:52.6223 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 8c9d3c97-3fd9-41c8-a2b1-646f3942daf1
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: cbrBObOvOii+IWZihJITJ02Z7eZkfqQNAnR6NjZkyDHN36kPHL1f4qzoeZGmm28+dUvI6W3RcYDA+0enM/k/OcV2KYShP5lOfq7fbsJy1U4=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR10MB2530
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210628_011958_731895_0F89E08B 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20210628_174624_266740_64448272 
+X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,42 +100,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Jagan,
+Add a compatible for the sc8180x PCIe PHY.
 
-On 24.06.21 10:30, Krzysztof Kozlowski wrote:
-> On 24/06/2021 04:48, Fabio Estevam wrote:
->> Hi Jagan/Laurent,
->>
->> On Wed, Jun 23, 2021 at 7:23 PM Laurent Pinchart
->> <laurent.pinchart@ideasonboard.com> wrote:
->>
->>> Looking at the register set, it seems to match the Exynos 5433,
->>> supported by drivers/gpu/drm/exynos/exynos_drm_dsi.c. Can we leverage
->>> that driver instead of adding a new one for the same IP core ?
->>
->> Yes. there was an attempt from Michael in this direction:
->> https://eur04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fproject%2Fdri-devel%2Fcover%2F20200911135413.3654800-1-m.tretter%40pengutronix.de%2F&amp;data=04%7C01%7Cfrieder.schrempf%40kontron.de%7C52db05459ef0462d5a9b08d936eab1ba%7C8c9d3c973fd941c8a2b1646f3942daf1%7C0%7C0%7C637601203901391193%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=LTYk9kpUeB9bgfRITQT6wIij3XTOIk37AHXbzQ2UI4Y%3D&amp;reserved=0
-> 
-> That's the proper direction (maybe as Marek suggested - sharing common
-> code like for Analogix DP), not duplicating a driver.
-> 
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Just to make sure that you are aware of the previous patches and discussions here are some additional pointers:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+index f0497b8623ad..242560ff52a4 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+@@ -27,6 +27,7 @@ properties:
+       - qcom,msm8998-qmp-ufs-phy
+       - qcom,msm8998-qmp-usb3-phy
+       - qcom,sc7180-qmp-usb3-phy
++      - qcom,sc8180x-qmp-pcie-phy
+       - qcom,sc8180x-qmp-ufs-phy
+       - qcom,sc8180x-qmp-usb3-phy
+       - qcom,sdm845-qhp-pcie-phy
+@@ -326,6 +327,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,sc8180x-qmp-pcie-phy
+               - qcom,sdm845-qhp-pcie-phy
+               - qcom,sdm845-qmp-pcie-phy
+               - qcom,sdx55-qmp-pcie-phy
+-- 
+2.29.2
 
-* i.MX8MM glue code from Marek (+ Cc): [1]
-* DPHY driver from Marek: [2]
-* General discussion about driver implementation: [3]
-* Daniel's (+ Cc) suggested direction to move forward: [4]
-
-It looks like you already did a fork of the Exynos driver, so your approach might be generally in line with what Daniel suggested.
-
-Best regards
-Frieder
-
-[1] https://patchwork.kernel.org/project/linux-arm-kernel/patch/20201005134250.527153-3-marex@denx.de/
-[2] https://patchwork.kernel.org/project/linux-arm-kernel/patch/20201003225020.164358-1-marex@denx.de/
-[3] https://patchwork.kernel.org/project/dri-devel/patch/20200911135413.3654800-11-m.tretter@pengutronix.de/
-[4] https://patchwork.kernel.org/project/dri-devel/patch/20200911135413.3654800-11-m.tretter@pengutronix.de/#23995147
 
 -- 
 linux-phy mailing list
