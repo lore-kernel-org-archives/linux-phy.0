@@ -2,90 +2,148 @@ Return-Path: <SRS0=MgL9=LX=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UPPERCASE_50_75,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 03C64C11F66
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 00:46:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CE9CEC11F66
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 07:25:04 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BCC3461CFF
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 00:46:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org BCC3461CFF
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id 9091B61DD6
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 07:25:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9091B61DD6
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oss.nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uGWDX8a+ivyGT9qK0SUtL/g0SjChrwVKyQF0nuMDpl8=; b=OAuxUREIHS0P3E
-	mVarldMEmupajG4L6HuOB71eKJrtH9WBX7X9AdWfPzGH0fyC43BD1ZE2eRExQKQqNBiF8X6cIhhVy
-	0UOEoQ5G6rweVbCWGYFUiPaTqNlQn45Hv5GZrcNHjs1+ZKBAF8+5cJC9JPMVqiu/Y09BrgnGFhMXx
-	mRjRCNY+iBnPJYi3JdiJz7vtwZknSMmdHIGRLxNcoM4JDOpF60t3kR0+TvrQ1BEcAQO4vzhCB/hBa
-	P7go0HB2EiT5ujtG+0d6LDFwg+Ahp7QKtU1tA7EZcLcFZ7C5jIUiJMryaIR6AZ0ORMT22ZXyRsncm
-	+C3zM1s+umHy5G109LSA==;
+	List-Owner; bh=rjngNABTTFq2Bn8n4TtFfBs7QtJbH/efwcz5nLOrwWo=; b=0KLa+B4ys8Ax7t
+	zTr6owS+nROVikOMSCL3UggRpeEiJYGefR0ZkzKTL4rfjg6SR1qyYZQtmxsuKPxL93ApVvereGp1J
+	bKvm3Pb3nsfR5kS6VBQ0A+XQ79dySDjHtihFP9904Bv3n5QJwi0GnUAE/rC5r0qO6ULY7HV1H84G/
+	kuZo608fTMCKVbAStCqWHA0zjt3ntbhe8BCxpqZQYQ0uzAG+3ImnkTSIxO6L0r8KAG7VHgq3kF0g7
+	hbuRENyAqlqkvKjlCSPFbBD7D6RqmX4b+//CzHkkv/uzxi3qI/kEa9+/aCjWj4iSjCcbCAQl2dOI+
+	loBGqgZHcohMT87d3y9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ly1tT-009S66-6Q; Tue, 29 Jun 2021 00:46:27 +0000
-Received: from mail-oi1-x236.google.com ([2607:f8b0:4864:20::236])
+	id 1ly87E-00A2Lx-4M; Tue, 29 Jun 2021 07:25:04 +0000
+Received: from mail-db8eur05on2062b.outbound.protection.outlook.com
+ ([2a01:111:f400:7e1a::62b]
+ helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ly1tQ-009S5M-RW
- for linux-phy@lists.infradead.org; Tue, 29 Jun 2021 00:46:26 +0000
-Received: by mail-oi1-x236.google.com with SMTP id 11so16089947oid.3
- for <linux-phy@lists.infradead.org>; Mon, 28 Jun 2021 17:46:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=k/lfuQQg61ZaHC5qnN0epkerx6BqWbZmy+dWSW56u7g=;
- b=MRrFko5vXv99rKivbMBhOMsrb+Kt4548QYyErh/iam9BLXcnClr2PWJSjauBqDyz90
- 1jehtnKAeyln+q4S3GRlzcQYrlzfJdzaaIng8nfnFpA6wRa+0PVCHlDZ/1gXIKlfSKrR
- sYa2oTmaG7ZukAPogMu80z1AqrfWOjf1ipG/xZH7GnXeTNI5+ciBGQUUXjiJ/KFAxUlL
- 3KWpIdV3RE0todSh4bKsXNTHfnLDzoQSjTQOiTr51VFTaQiv1G3DQO+fGK6JhKVQEp6N
- 069ZojNAgcfi4OO6vVpGMpNituWgcfCOGOy+eDwGPpbc7p2rB7+KaKrEsHCEHgMkrBHW
- usOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=k/lfuQQg61ZaHC5qnN0epkerx6BqWbZmy+dWSW56u7g=;
- b=TOQ9dzjN10JTRpVHycH7PqgpVZ1sZkjf6jIYtXChba6zhwDM3Qwlko8YZBoZs75ebd
- j/pGcBoWl20Im50iZjpyFlUkUZGgthwV0fP3FZh4WB5J2p6iHEPxihRvy7c5pntCEY6q
- Ag2r4xRfeLghLZDVQQQPJD+6EbsdMGIQ+iRb7wiAfqWMYaElJ0NnkO999hsyL9BjgNmJ
- R4IuRUo7KZdVPLeDRKskNGBU1R2BTLcAIkKzYMBUgwf7hLE5Nl7T8GLfkcinfz4oTIZh
- KR415rB0lbfZB+BpjZW9Wc7rG+gjFhPgRhJ/mwxSLDDdYlzOyKgGBTKBOc6Y7jt1aXtt
- rKxQ==
-X-Gm-Message-State: AOAM5310Nm7NCo/tDU7xW09ozHODVzmh5zfIYJQm/TdS2w9zzdYtz2Yh
- xDeuyf/SvjH17zRL5egSAa8CRw==
-X-Google-Smtp-Source: ABdhPJwvjvY+hLYh+UMOhZC9CoNmZC0Mii23q2casw2afOrjmjC0qWQ2jfxtIy8Sm2Z73oSIfz6AYQ==
-X-Received: by 2002:a05:6808:20a2:: with SMTP id
- s34mr3167059oiw.175.1624927583884; 
- Mon, 28 Jun 2021 17:46:23 -0700 (PDT)
-Received: from localhost.localdomain
- (104-57-184-186.lightspeed.austtx.sbcglobal.net. [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id f3sm2671979ote.74.2021.06.28.17.46.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Jun 2021 17:46:23 -0700 (PDT)
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Manu Gautam <mgautam@codeaurora.org>
-Cc: Rob Herring <robh+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] phy: qcom-qmp: Add sc8180x PCIe support
-Date: Mon, 28 Jun 2021 17:45:09 -0700
-Message-Id: <20210629004509.1788286-2-bjorn.andersson@linaro.org>
-X-Mailer: git-send-email 2.29.2
-In-Reply-To: <20210629004509.1788286-1-bjorn.andersson@linaro.org>
-References: <20210629004509.1788286-1-bjorn.andersson@linaro.org>
+ id 1ly870-00A2KU-Jc; Tue, 29 Jun 2021 07:24:52 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=lDGZTco9/o3N+EamKuaH5EUFeeMCti7TsClOopCThaPCGv6qfAGq9plrTrhtgQWQl0aZbVksumizytvCGGGsGG4mR7b++1B4Yb4hYIY6BZVZWNqDwzVnnWfMxV9QfpwSq3VrIfIkzs/BFGt6RD4xGe0rW+KLHR9214fVjMEeL3cdWfDLr2PXR3wpB5ZMZ6ltnQQrDik0xh/c5mLNLKFik2I0KgZRwoX3NIZrviIoX4o8jq2JbHjfpzdbZcxYlv2BKshQ9IEQjcj3v4Ixn7OhtyQbrbI8tYtL2y+BEINNBAIs25AeNmfLQbPy5UHLFpgAKTTNoQnYuOJBMKPQ8jkV0g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4uisSBlKsVHh6C6tw6WfaBRfXEVGp6VAWGrxTLpmrss=;
+ b=TyV6vEATNN7H5gcDlFuUgMwlEr+jHHsIQRPPftKvsSyGKh75TmCwlJRmJb3ElIInuguOt89cO5RNEQ9bP7gtegctvYLWGJvBJnvMfVj//Gw/scsO34yhWrAP5Rk6ALAqMG/gY6PE77Y26yHghxGWNPqltlnRPQxdcbncbgLbMPXrUQEghEdOu4QvyoX9DgtrpW/cHUHjT/rWOyCnF/Y4FE7zpdSCKzgtsA8FeY7IBRwMJM9V4z/YvkIpdvMCWPU8RI4ZAyZfzFuVSGvH4eF2OmXaq4S332l7TB3p43IOjArHAWo8MIAGO41m/DRCLGZSzts0pZ8YYBfu+N/UgRzT4w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4uisSBlKsVHh6C6tw6WfaBRfXEVGp6VAWGrxTLpmrss=;
+ b=cykY6VR86NP3XrQSvFWq+vTARwDIaEOmCplhHv+3fZ156K8AYIZiHyZr/tX7V3NYz5MEWrTGqE6iYdDlakdwJxqKgIdoeFbIaG3DS1376aa9ACqqW8bB5Q6CKEp0XAGg1HfyivyRgwO/EiEsSmThbSR389FB1BzawBO8Dooj6go=
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
+ by DB7PR04MB4762.eurprd04.prod.outlook.com (2603:10a6:10:16::25) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4264.20; Tue, 29 Jun
+ 2021 07:10:04 +0000
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::c445:d742:eb76:86dd]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::c445:d742:eb76:86dd%9]) with mapi id 15.20.4264.026; Tue, 29 Jun 2021
+ 07:10:04 +0000
+From: "Peng Fan (OSS)" <peng.fan@oss.nxp.com>
+To: Jagan Teki <jagan@amarulasolutions.com>, Shawn Guo <shawnguo@kernel.org>, 
+ Sascha Hauer <s.hauer@pengutronix.de>, Tomasz Figa <t.figa@samsung.com>,
+ Fancy Fang <chen.fang@nxp.com>
+CC: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "dri-devel@lists.freedesktop.org"
+ <dri-devel@lists.freedesktop.org>, "linux-phy@lists.infradead.org"
+ <linux-phy@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-amarula@amarulasolutions.com" <linux-amarula@amarulasolutions.com>,
+ Anthony Brandon <anthony@amarulasolutions.com>, Francis Laniel
+ <francis.laniel@amarulasolutions.com>, Matteo Lisi <matteo.lisi@engicam.com>, 
+ Milco Pratesi <milco.pratesi@engicam.com>
+Subject: RE: [RFC PATCH 0/9] arm64: imx8mm: Add MIPI DSI support
+Thread-Topic: [RFC PATCH 0/9] arm64: imx8mm: Add MIPI DSI support
+Thread-Index: AQHXZm6BrEMFEqCnfUmVVsyYC57skqsqm4mg
+Date: Tue, 29 Jun 2021 07:10:04 +0000
+Message-ID: <DB6PR0402MB2760C13BBF36FF98E4F4635988029@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+References: <20210621072424.111733-1-jagan@amarulasolutions.com>
+In-Reply-To: <20210621072424.111733-1-jagan@amarulasolutions.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: amarulasolutions.com; dkim=none (message not signed)
+ header.d=none;amarulasolutions.com; dmarc=none action=none
+ header.from=oss.nxp.com;
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 5e1f4aaf-1319-4c9d-40d1-08d93acceb16
+x-ms-traffictypediagnostic: DB7PR04MB4762:
+x-ms-exchange-sharedmailbox-routingagent-processed: True
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB47621F29EF4B9178954E3CD1C9029@DB7PR04MB4762.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: N7/scxZU6AfaTly/cEVGhSDMCTT9iAy/If/kRlfXz1mStFB6sejGO2+DUaItZ5y3oPvg6dbRZxy4h99Tn2gx8JHKb0qvPW2v3dHuYR2zsAFPyjGbclAHG05D8lnjFU5V8Wx5sWoiFko8+twVUjzqqUKSRQAyL60JmXIC8o+aodB5z3wqqAHrkGExui9ZJNvxetwssKhqmv1u5tDF5FWNWSxYa83C3kaN6dRFFlHeC9fNQrmNFlEtRltutHgX56ZmnfS9Wq6GYgDEA4lOBC7ejol4zDpiF6IjuE00LNw9FCaMYQzL8Kk/RJl0FK/82s87+9uG6aU/41X111xRJLM5S9MuaT6QAowr+7B599aS4GIdSHUgz2i4onqSh8GYuJkL6XFH3AbXERPmZtKy3c2fmgHFWKQxctNnGQwEbDDvqrQO663nScbg9lE+MOGJ67XtX2GoePVCuJydSUSzOOzxT/WPW+ctdEp4PCnQo8n5U8oeqN63jVihye8XwGjkMQipjLxbO90xsaKMz6++Al/rI6sWlIayvqn12pVd6WjlFroZ56hNiqXdfzzHwM+GDGyUZS77k5zdr9ANFznQ3ZzPyzBZt8Q/ikx7Wuvk6tgysSDlbfjRck8ePgm6frGMx5ryfgNtJ8aysQ8rDmlkEwgZuEC1oVuXFdVyyz7a/JYZ014ftw/DbostAhS1TtGa25aRBINsUIVvvKWyQliFw90buWZ78ec5hMmZB5Wm1bx74tAkR94Z4qr2+gGwOwVWSZUuIGJOKqcegq7WjFqsi2sTeLA027cEfD86gfKywCZ6C8VE+Szdgj6okfy76qk6A0VZ
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(346002)(366004)(396003)(39860400002)(376002)(136003)(86362001)(26005)(76116006)(8676002)(7416002)(2906002)(9686003)(4326008)(55016002)(71200400001)(186003)(966005)(66946007)(5660300002)(38100700002)(64756008)(45080400002)(316002)(478600001)(52536014)(8936002)(83380400001)(122000001)(110136005)(66556008)(6506007)(54906003)(66476007)(33656002)(66446008)(7696005)(32563001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?MWdizohVjxjsCMb7zLthhlQQ12UYphisauXOY2urC++yPPlNK9F/TXAZ7tzm?=
+ =?us-ascii?Q?2ZkD58SZY6W73Z7Ss+XOia/Bcx2BjdnduXOQvUjEmTaefpEN2OMeKO5trYF5?=
+ =?us-ascii?Q?1UPfDm05MFIx/gWwTvMf4YTjsyP3k5ezfWlNk633xANHzCCnS9zxuPzDPTvG?=
+ =?us-ascii?Q?kUS9iKf9PFQJEd/i6CMDIOLbT92u94wBW1penqwUYqawcNku8hhhIxmDPsdX?=
+ =?us-ascii?Q?ddfD9PVA0U2y7U08HeDkCRq1aqkTdPaDE3lP9Z5ha73qpjDGj8VbquiRNBbc?=
+ =?us-ascii?Q?cmoelumyxDnFxLtKtELczoKuLLK0FTzDkqrLXvAltgYMWM1koCrBqhTWmtMN?=
+ =?us-ascii?Q?X8w1zQnu0qvlFF8pfaCX6cLvbuEg8ZYRG3Szf6kMk7zrYY5v2fbrHRCIhVta?=
+ =?us-ascii?Q?KZf8TM1mTl/2CKhclcPgEADqaA8sJoQvgLEnjbn2FED6tPV8YF48kG+Xf0u8?=
+ =?us-ascii?Q?+yy22ZJUOiKO9CHJKDxaQAQtHYOOSLT4phRBPKV66JsC12p/NgI1jGOhxC9B?=
+ =?us-ascii?Q?AINJJU9wBBrHMVzydAHANRGxTpP5NeSTFAz11+rqJMSymhbF81BUncI8ad2z?=
+ =?us-ascii?Q?oxddV0k5IScL3eVFLXwe+3sRdUCT6S5YNKqcvWBWWaVh1IXPs8YY8C54y5xe?=
+ =?us-ascii?Q?nEFnl9pT47lzI8ydLxWtQi/RdUEu5QcwotnDtOVTA/9OE61krg+iAWB62+PC?=
+ =?us-ascii?Q?mg19QPgesT89IU2G3yKnosulPcM7E13JOc/QI4i+ts+vhR+rKEhf7ufB5y7d?=
+ =?us-ascii?Q?tyEESk+OK7jljSU28whAmQFKEYA4WUSfJx/bqZJyIxU4GiDhXBtFG+9geGHV?=
+ =?us-ascii?Q?v3sq5yTDOF2/O7Z2n3zhpkvRCnGVMf48EyUW7+0UdrbvRfDzJncoTcVPZ+Le?=
+ =?us-ascii?Q?7V+CwcLxZGRwJtPMu5RnrgE8vyWsRRdrJpDz8SA91S+keGZHqh1Z8LxeP1t9?=
+ =?us-ascii?Q?S9iiyBIKiY1uSKatv4JKU++EsWCxRhMOn3EVdzzod+rMNlFSVaDyNT8WzceS?=
+ =?us-ascii?Q?Ig+mHOxWmeHyU2FRTHTdtdhe5MTxqYLFYMs9LJXWuDt1rQnc/5x1Iun1+lHv?=
+ =?us-ascii?Q?wpmNaeJVWCsGH3qkx4/Cek3gak+IMynN8qXQoA/QYrZrhhqu6YbjeuetKob1?=
+ =?us-ascii?Q?GZfWkfpczuHAUznzRzcbmFWJoA6Q7CGoyKqKvTh4gXnCq6aNKngkhzm80Ogz?=
+ =?us-ascii?Q?JKvLdWMzGwpRL7+ktZOu442ufWYzW+V1BREzA5JnZ8oChAjP/aV0GTNNs4rl?=
+ =?us-ascii?Q?IF8QPg4B92B7NVQlQ+7sGmPeVnY/AxLPJA6CgYFyMINmUzw6xODAYwQaIBqi?=
+ =?us-ascii?Q?aOLw6z369pE7WkqY2yzc1QCi?=
 MIME-Version: 1.0
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DB6PR0402MB2760.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5e1f4aaf-1319-4c9d-40d1-08d93acceb16
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Jun 2021 07:10:04.0299 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: rh2FB7EJzaA8YjyXLP+GD7HzhLFx1O7Lfw7HmaiE/aW9waDHWRr6hYJXY7JlA70tk3cVoYDIv/7vGqS1GrTosg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4762
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210628_174624_931964_FA7E504A 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20210629_002450_688773_B08CCAB5 
+X-CRM114-Status: GOOD (  17.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,182 +160,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Qualcomm SC8180x platform has 4 PCIe controllers and PHYs, typically
-used to connect things such as a modem or NVME storage device. Add the
-programming sequence to get the PHYs up and running.
+Hi Jagan,
 
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp.c | 140 ++++++++++++++++++++++++++++
- 1 file changed, 140 insertions(+)
+> Subject: [RFC PATCH 0/9] arm64: imx8mm: Add MIPI DSI support
+> 
+> This series support MIPI DSI on i.MX8MM.
+> 
+> It worked directly with existing mxsfb driver but the SEC DSIM timings has to
+> be validate and tested through all platforms, ie reason I'm sending it as RFC.
+> 
+> Tested on Engicam i.Core MX8M Mini SoM.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index b772ad4bf23d..8556d08ebe60 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -2035,6 +2035,113 @@ static const struct qmp_phy_init_tbl qmp_v4_dp_tx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_TX_EMP_POST1_LVL, 0x20),
- };
- 
-+static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_SELECT, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CORECLK_DIV_MODE1, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP_EN, 0x42),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE1_MODE0, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE2_MODE1, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE1_MODE1, 0xb4),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE_MAP, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_HSCLK_SEL, 0x11),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START3_MODE0, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START2_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START1_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP2_MODE0, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP1_MODE0, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DEC_START_MODE1, 0x68),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START3_MODE1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START2_MODE1, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START1_MODE1, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP2_MODE1, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP1_MODE1, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_HSCLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CP_CTRL_MODE0, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_CCTRL_MODE0, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CP_CTRL_MODE1, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_CCTRL_MODE1, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1e),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xca),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0xa2),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_BUF_ENABLE, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_EN_CENTER, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE1_MODE0, 0xde),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE2_MODE0, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE2_MODE1, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_ENABLE1, 0x90),
-+};
-+
-+static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_tx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V4_TX_RCV_DETECT_LVL_2, 0x12),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_TX_LANE_MODE_1, 0x5),
-+};
-+
-+static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_rx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_CNTRL, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_ENABLES, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_DEGLITCH_CNTRL, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL1, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL2, 0x6e),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL3, 0x6e),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL4, 0x4a),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DFE_EN_TIMER, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7f),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CONTROLS, 0x70),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_VGA_CAL_CNTRL1, 0x54),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_VGA_CAL_CNTRL2, 0x37),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_LOW, 0xd4),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH, 0x54),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH2, 0xdb),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH3, 0x39),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH4, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_LOW, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH, 0xe4),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH2, 0xec),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH3, 0x39),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH4, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_LOW, 0x7f),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH2, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH3, 0xdb),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH4, 0x75),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_HIGH, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_LOW, 0xc0),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_AUX_DATA_TCOARSE_TFINE, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RCLK_AUXDATA_SEL, 0xc0),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DCC_CTRL1, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_GM_CAL, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FO_GAIN, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_GAIN, 0x03),
-+};
-+
-+static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_SIGDET_LVL, 0xaa),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RATE_SLEW_CNTRL1, 0x0b),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_REFGEN_REQ_CONFIG1, 0x0d),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_EQ_CONFIG5, 0x01),
-+};
-+
-+static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_pcs_misc_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_INT_AUX_CLK_CONFIG1, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_PRESET_P10_PRE, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_PRESET_P10_POST, 0x58),
-+	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
-+};
-+
- static const struct qmp_phy_init_tbl sm8250_qmp_pcie_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0x08),
- 	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_SELECT, 0x34),
-@@ -3440,6 +3547,36 @@ static const struct qmp_phy_combo_cfg sc8180x_usb3dpphy_cfg = {
- 	.dp_cfg			= &sc8180x_dpphy_cfg,
- };
- 
-+static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
-+	.type = PHY_TYPE_PCIE,
-+	.nlanes = 1,
-+
-+	.serdes_tbl		= sm8250_qmp_pcie_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
-+	.tx_tbl			= sc8180x_qmp_pcie_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_tx_tbl),
-+	.rx_tbl			= sc8180x_qmp_pcie_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_rx_tbl),
-+	.pcs_tbl		= sc8180x_qmp_pcie_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_tbl),
-+	.pcs_misc_tbl		= sc8180x_qmp_pcie_pcs_misc_tbl,
-+	.pcs_misc_tbl_num	= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_misc_tbl),
-+	.clk_list		= sdm845_pciephy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
-+	.reset_list		= sdm845_pciephy_reset_l,
-+	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= sm8250_pcie_regs_layout,
-+
-+	.start_ctrl		= PCS_START | SERDES_START,
-+	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-+
-+	.has_pwrdn_delay	= true,
-+	.pwrdn_delay_min	= 995,		/* us */
-+	.pwrdn_delay_max	= 1005,		/* us */
-+};
-+
- static const struct qmp_phy_cfg sm8150_usb3_uniphy_cfg = {
- 	.type			= PHY_TYPE_USB3,
- 	.nlanes			= 1,
-@@ -5272,6 +5409,9 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
- 		/* It's a combo phy */
-+	}, {
-+		.compatible = "qcom,sc8180x-qmp-pcie-phy",
-+		.data = &sc8180x_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,sc8180x-qmp-ufs-phy",
- 		.data = &sm8150_ufsphy_cfg,
--- 
-2.29.2
+Thanks for the work.
+
+> 
+> patch 1: dt-bindings for SEC MIPI DSIM
+> 
+> patch 2: SEC MIPI DSIM bridge driver
+> 
+> patch 3: dt-bindings for SEC DSIM DPHY
+> 
+> patch 4: SEC DSIM DPHY driver
+> 
+> patch 5: MIPI DPHY reset enable in blk-ctl
+> 
+> patch 6: display mix blk ctl node
+> 
+> patch 7: eLCDIF node
+> 
+> patch 8: MIPI DSI pipeline nodes
+> 
+> patch 9: Enable LVDS panel on EDIMM2.2
+> 
+> Note:
+> - all these patches on top of Peng Fan's blk-ctl driver.
+
+Would you please update to use V8 patchset?
+
+And the dtb:
+https://patchwork.kernel.org/project/linux-arm-kernel/
+patch/20210604111005.6804-1-peng.fan@oss.nxp.com/
+
+Thanks,
+Peng.
+
+> - anyone interest, please have a look on this repo
+> 
+> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.
+> com%2Fopenedev%2Flinux%2Fcommits%2Fimx8mm&amp;data=04%7C01%7
+> Cpeng.fan%40nxp.com%7C8185c94655404000316208d93485a285%7C686ea
+> 1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637598570833578734%7CU
+> nknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI
+> 6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=HKAHBv4YM0G6mVV3bq
+> oPOyNb2mQTH03YSBU8RnrJmlE%3D&amp;reserved=0
+> 
+> Any inputs?
+> Jagan.
+> 
+> Jagan Teki (9):
+>   dt-bindings: display: bridge: Add Samsung SEC MIPI DSIM bindings
+>   drm: bridge: Add Samsung SEC MIPI DSIM bridge driver
+>   dt-bindings: phy: Add SEC DSIM DPHY bindings
+>   phy: samsung: Add SEC DSIM DPHY driver
+>   soc: imx8mm: blk-ctl: Add MIPI DPHY reset enable
+>   arm64: dts: imx8mm: Add display mix blk ctl
+>   arm64: dts: imx8mm: Add eLCDIF node support
+>   arm64: dts: imx8mm: Add MIPI DSI pipeline
+>   arm64: dts: imx8mm-icore: Enable LVDS panel for EDIMM2.2
+> 
+>  .../display/bridge/samsung,sec-dsim.yaml      |  184 ++
+>  .../bindings/phy/samsung,sec-dsim-dphy.yaml   |   56 +
+>  .../freescale/imx8mm-icore-mx8mm-edimm2.2.dts |   90 +
+>  arch/arm64/boot/dts/freescale/imx8mm.dtsi     |  104 ++
+>  drivers/gpu/drm/bridge/Kconfig                |   15 +
+>  drivers/gpu/drm/bridge/Makefile               |    1 +
+>  drivers/gpu/drm/bridge/sec-dsim.c             | 1535
+> +++++++++++++++++
+>  drivers/phy/samsung/Kconfig                   |    9 +
+>  drivers/phy/samsung/Makefile                  |    1 +
+>  drivers/phy/samsung/phy-sec-dsim-dphy.c       |  236 +++
+>  drivers/soc/imx/blk-ctl-imx8mm.c              |    4 +
+>  include/dt-bindings/power/imx8mm-power.h      |    5 +-
+>  12 files changed, 2238 insertions(+), 2 deletions(-)  create mode 100644
+> Documentation/devicetree/bindings/display/bridge/samsung,sec-dsim.yaml
+>  create mode 100644
+> Documentation/devicetree/bindings/phy/samsung,sec-dsim-dphy.yaml
+>  create mode 100644 drivers/gpu/drm/bridge/sec-dsim.c  create mode
+> 100644 drivers/phy/samsung/phy-sec-dsim-dphy.c
+> 
+> --
+> 2.25.1
 
 
 -- 
