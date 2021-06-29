@@ -1,93 +1,95 @@
-Return-Path: <SRS0=MgL9=LX=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=FOTy=LY=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AE302C11F67
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 18:21:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2E05DC11F67
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Jun 2021 03:30:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 793B561DE4
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Jun 2021 18:21:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 793B561DE4
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
+	by mail.kernel.org (Postfix) with ESMTPS id E2C0461D04
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Jun 2021 03:30:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E2C0461D04
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mWnJ4AESVRZzJQYSwwTUVkDOVmq8HZ5OrTAsKOyyu+g=; b=WPFApkoB6ccyvL
-	8JFW94GTlkCjttOkiIx+5rA40GTmkpzziCvEYptQ9deUtWIlzO7tDHGaeQKNZ86pErD9nVG6PvFr2
-	iApd3gAmrV1lSz9iJsy7/sfdGvBeGBCYUKtsvLhawrai6q9MpdrDZmIjf8TSY6J20zkh3QQ7gzYg1
-	iC5F0GvbhcSn5Jc+7BBq0CIYpRcM3htvVEGlgVCvN03Y02vHw1B5gFmDRAZnf8gcjSbcdn38UfxG7
-	lzQPJJyfDl+SSACCVHmi+APzkPODpwKPhABaynYzIpUQ8jFZVvk321cF1mLSIKMEzDKyslhL6X5e7
-	9UBqq7VjjY6uIVI8pfwg==;
+	List-Owner; bh=KPskAEtOBamh+Phccrk6brNo0fNU0gDWjcK8QRG1zDU=; b=oQB8s5VDnyNe/M
+	PWLG22rRG+PaZTzgTIO9b61WklOm9i8LqgrOkHgh16ixxBrKBMdb6HglblG/9UWShfZJDkrmOor6q
+	JYNDylq4QD/S+0RU4LHxjprhdQIkaISCcAc2ipDZ9x0i2kKCm1XjPMB1o1tLkLnRVEK7OadNaMgHI
+	OTDUrhF3oe45WEp3CtlOFH3Nc7bFQvb9IrrV9kxRR+N0VaxRdIV2al6zBnFCfL1jiQOuX2b6WpM4I
+	/ww5p0vzJHDUB1LYfoGRjjFzwpUiTEUZwLFfJnCyuwbbihExDt0swFBIBlKkxRfyLlAzRPHcFi+H7
+	0YeAmKhDl9+xVl5OmLiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lyIML-00Bohm-0j; Tue, 29 Jun 2021 18:21:21 +0000
-Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
+	id 1lyQvk-00Cgcf-6w; Wed, 30 Jun 2021 03:30:28 +0000
+Received: from mail-vs1-xe2e.google.com ([2607:f8b0:4864:20::e2e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lyILx-00BoaL-Dz; Tue, 29 Jun 2021 18:20:59 +0000
-Received: by mail-ed1-x532.google.com with SMTP id w17so17045075edd.10;
- Tue, 29 Jun 2021 11:20:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=h0zp9c8GYaiYKUAv6eUT71QHbk6kPshdSqicnQkyE6Q=;
- b=GrqadTrRLB1OVbXTgLZ0P82nA1TBRs/l2MN3GRvhnSYuPRq/H3zpCF1MRX7nxKN08V
- HhbFjFNMlAeFW+NSEsnSabrZVMfLa6p7urTMraGuxuabRcMLGmDKozGEEsPMJ9TR5TnZ
- +lNGazmW4Y/IkGfe4zIqhihhU7VU9khmzdJA7O+2bQNkjtvqjSTd+CulzsSBtLgANBye
- vfY6Pt8wtJdh6w7W0VzRMBFDFdaOZnaJOC7zx5qhPsb9PnTTu7K06EwKoqvupG8PATCs
- zsLdY60UccbpYwwPnHcOsXiQgCPWhHur4kVKl+oBokgegYtNFaQD/Rnv5jiqb9ySNwke
- QS6Q==
+ id 1lyFMj-00BPh4-Vm
+ for linux-phy@lists.infradead.org; Tue, 29 Jun 2021 15:09:35 +0000
+Received: by mail-vs1-xe2e.google.com with SMTP id e26so10933165vsh.7
+ for <linux-phy@lists.infradead.org>; Tue, 29 Jun 2021 08:09:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Ei8DhtlygzR0YzhvSAOeJxbaayqBzli32veTEMkT6ts=;
+ b=KgCSN8MP8fJ6RDcn54L6DX3FgWWGlkmkFcMOPl4oYjR+d58BcJXY+kdqECuBlpC2q/
+ Zc9QzTM1DWkzKtufY4WNCpGcAk64qpkwDRDcSfo9xZUr1kY9tINWtT/fq8jSrFqi9DN2
+ zOZQDMuYG9BN2JbnQkr0pw3IKy8XsYEBMqOptpxnNb4ajTfOWiuQe9SXHmUXJ28Dbpg8
+ XLg54I0B0EkIlkUJAcEeHvS8TIRh7JEWrlfZYDW4dbWJuS923h+HF3c4OEZb2VJ2xw+g
+ krVEM/e0zj4PMxRLeHZPi814CtN/d0ZpQW931V6gCvWNUOSMCWPDJMahFGL6G2woinRi
+ 5ApA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=h0zp9c8GYaiYKUAv6eUT71QHbk6kPshdSqicnQkyE6Q=;
- b=NYYTMnbs6yo+kvSBKj2ixNNZeNqp3573vFdZa5YNbO6ap/6ITea+GgothEHLweC3RA
- LUiF05A9yG+vRg6YbRivXAXtkTI5J5CF1ja/8Up6Q5olVNiuJbguDeh1Ul+28yM6TbPE
- sfR7VnUX2hXdQ+IuaCDY5t1CzW/W3C31QCcJet1eOHWsxA9XGfZ41fDCUOz0OmkI115p
- 9SFDNQ/t1z196LHjZ/dluzy5/uonL9MwFTmLn8nqzE3opk1abIX+uVzrpYBAb2L7c+u5
- 62aLYFiyw53PX2dlC4Bl9tgxk2qiT8zTB8olPpSj8YE1osNRPhUSICuNea5Py95tGqyl
- j5HA==
-X-Gm-Message-State: AOAM531WZfKTN0IfaS+Wb2jU/XbHWa18rZ0mFrhmbmgA+Ib/wlI4cXH+
- MUoeAKmCksfSZ5U4pq59GVQ=
-X-Google-Smtp-Source: ABdhPJxd3rITz9Rmq4AnFZFiP+aFgBj8RiN+lMf0hdEoCzeVQixzQC8yslUroVWHRPPIAnXyr1BYAg==
-X-Received: by 2002:a50:f692:: with SMTP id d18mr41389020edn.202.1624990855557; 
- Tue, 29 Jun 2021 11:20:55 -0700 (PDT)
-Received: from localhost.localdomain
- (dynamic-2a01-0c23-c0d8-f500-f22f-74ff-fe21-0725.c23.pool.telefonica.de.
- [2a01:c23:c0d8:f500:f22f:74ff:fe21:725])
- by smtp.googlemail.com with ESMTPSA id v5sm11565678edt.55.2021.06.29.11.20.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 29 Jun 2021 11:20:54 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: robh+dt@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org
-Cc: kishon@ti.com, vkoul@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: [PATCH v2 2/2] phy: amlogic: Add a new driver for the HDMI TX PHY on
- Meson8/8b/8m2
-Date: Tue, 29 Jun 2021 20:20:47 +0200
-Message-Id: <20210629182047.893415-3-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.32.0
-In-Reply-To: <20210629182047.893415-1-martin.blumenstingl@googlemail.com>
-References: <20210629182047.893415-1-martin.blumenstingl@googlemail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Ei8DhtlygzR0YzhvSAOeJxbaayqBzli32veTEMkT6ts=;
+ b=sL1w1RaABS2203qCpzxY4cdFSv7h45nyNi1iC65+q2Z3ZeKmSc/4UCKSJGPu/1iM4n
+ x+U4kypfWY5dPm2mIjo+HxcQLfTikY4NVSTgBLZ0o5wBfTHj5JzzGesHsDgQuyVNUxy5
+ HX5n5AHuzFuUQwNWXm0ifEA5LzOigBnh6LO0XzGg5K1tTTF1AW8KuDGCa+aJpDFFwaPG
+ sbq+/tcely6V1jDIuJ5AaPHyUNXjXVa9f1Z5iumWzb5X3mYNRVk46w4KBx11F1/5XFM2
+ wWNhrGx84T5kuu7ipUV6EtOfQ75eJPKkGLFZv8+W/PAOSf2VZWayaoEO9QdIcQycNEex
+ bA9A==
+X-Gm-Message-State: AOAM531mmtPJ4y633pIX1hG2w/2b9hOTpgrTPTEWPwfQlYCfpQku+1GC
+ OOVQMTyM/bKyU/gpZcJptb23Ap83fuMIcJGyqVO2PA==
+X-Google-Smtp-Source: ABdhPJwL/Tz4unVTR5YW3TPwtQhdejHIVarPlrmHY5dQZ9xC87opBGYtDHlgJBwMv9bg3bGpYPV+Vy5yzTNslaeT0ZM=
+X-Received: by 2002:a05:6102:3a70:: with SMTP id
+ bf16mr26199022vsb.48.1624979372186; 
+ Tue, 29 Jun 2021 08:09:32 -0700 (PDT)
 MIME-Version: 1.0
+References: <20210603182242.25733-1-rashmi.a@intel.com>
+In-Reply-To: <20210603182242.25733-1-rashmi.a@intel.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 29 Jun 2021 17:08:55 +0200
+Message-ID: <CAPDyKFpr=jjcjK=c7-cifYdGBw7ywmLsuJWw=bE8ZYqGuiUSfA@mail.gmail.com>
+Subject: =?UTF-8?B?UmU6IFvigJxQQVRDSOKAnSAwLzJdIFtLTUJdIG1tYyBjbG9jay1mcmVxdWVuY3kgcHJvcA==?=
+ =?UTF-8?B?ZXJ0eSB1cGRhdGUgYW5k?=
+To: rashmi.a@intel.com
+Cc: linux-drivers-review-request@eclists.intel.com, 
+ Michal Simek <michal.simek@xilinx.com>, linux-mmc <linux-mmc@vger.kernel.org>, 
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, 
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Kishon <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
+ linux-phy@lists.infradead.org, Mark Gross <mgross@linux.intel.com>, 
+ kris.pan@linux.intel.com, furong.zhou@intel.com, 
+ mallikarjunappa.sangannavar@intel.com, 
+ Adrian Hunter <adrian.hunter@intel.com>, mahesh.r.vaidya@intel.com, 
+ nandhini.srikandan@intel.com, 
+ "Raja Subramanian, Lakshmi Bai" <lakshmi.bai.raja.subramanian@intel.com>
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210629_112057_519108_CD0B5598 
-X-CRM114-Status: GOOD (  25.66  )
+X-CRM114-CacheID: sfid-20210629_080934_051274_1C98EBE7 
+X-CRM114-Status: GOOD (  15.31  )
+X-Mailman-Approved-At: Tue, 29 Jun 2021 20:30:26 -0700
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,221 +106,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Amlogic Meson8/8b/8m2 have a built-in HDMI PHY in the HHI register
-region. Unfortunately only few register bits are documented. For
-HHI_HDMI_PHY_CNTL0 the magic numbers are taken from the 3.10 vendor
-kernel.
+On Thu, 3 Jun 2021 at 20:22, <rashmi.a@intel.com> wrote:
+>
+> From: Rashmi A <rashmi.a@intel.com>
+>
+> Patch1: If clock-frequency property is set and it is not the same as the
+>         current clock rate of clk_xin(base clock frequency), set clk_xin
+>         to use the provided clock rate.
+>
+> Patch2: Since the EMMC clock in KMB was changed from 200Mhz to 175Mhz in
+>         FIP,there were some warnings introduced, as the frequency values
+>         being checked was still wrt 200Mhz in code. Hence, the frequency
+>         checks are now updated based on the current 175Mhz EMMC clock
+>         changed in FIP.
+>
+> Review comments from Adrian Hunter have been incorporated.
+> Above 2  patches are tested with Keem Bay evaluation module board.
+>
+> Please help to review this patch set.
+>
+>
+> Rashmi A (2):
+>   mmc: sdhci-of-arasan: Use clock-frequency property to update clk_xin
+>   phy: intel: Fix for warnings due to EMMC clock 175Mhz change in FIP
+>
+>  drivers/mmc/host/sdhci-of-arasan.c         | 14 ++++++++++++--
+>  drivers/phy/intel/phy-intel-keembay-emmc.c |  3 ++-
+>  2 files changed, 14 insertions(+), 3 deletions(-)
+>
+> --
+> 2.17.1
+>
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/phy/amlogic/Kconfig              |  10 ++
- drivers/phy/amlogic/Makefile             |   1 +
- drivers/phy/amlogic/phy-meson8-hdmi-tx.c | 162 +++++++++++++++++++++++
- 3 files changed, 173 insertions(+)
- create mode 100644 drivers/phy/amlogic/phy-meson8-hdmi-tx.c
+Applied for fixes, thanks!
 
-diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-index db5d0cd757e3..486ca23aba32 100644
---- a/drivers/phy/amlogic/Kconfig
-+++ b/drivers/phy/amlogic/Kconfig
-@@ -2,6 +2,16 @@
- #
- # Phy drivers for Amlogic platforms
- #
-+config PHY_MESON8_HDMI_TX
-+	tristate "Meson8, Meson8b and Meson8m2 HDMI TX PHY driver"
-+	depends on (ARCH_MESON && ARM) || COMPILE_TEST
-+	depends on OF
-+	select MFD_SYSCON
-+	help
-+	  Enable this to support the HDMI TX PHYs found in Meson8,
-+	  Meson8b and Meson8m2 SoCs.
-+	  If unsure, say N.
-+
- config PHY_MESON8B_USB2
- 	tristate "Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver"
- 	default ARCH_MESON
-diff --git a/drivers/phy/amlogic/Makefile b/drivers/phy/amlogic/Makefile
-index 8fa07fbd0d92..c0886c850bb0 100644
---- a/drivers/phy/amlogic/Makefile
-+++ b/drivers/phy/amlogic/Makefile
-@@ -1,4 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0-only
-+obj-$(CONFIG_PHY_MESON8_HDMI_TX)		+= phy-meson8-hdmi-tx.o
- obj-$(CONFIG_PHY_MESON8B_USB2)			+= phy-meson8b-usb2.o
- obj-$(CONFIG_PHY_MESON_GXL_USB2)		+= phy-meson-gxl-usb2.o
- obj-$(CONFIG_PHY_MESON_G12A_USB2)		+= phy-meson-g12a-usb2.o
-diff --git a/drivers/phy/amlogic/phy-meson8-hdmi-tx.c b/drivers/phy/amlogic/phy-meson8-hdmi-tx.c
-new file mode 100644
-index 000000000000..ba5a4de54811
---- /dev/null
-+++ b/drivers/phy/amlogic/phy-meson8-hdmi-tx.c
-@@ -0,0 +1,162 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Meson8, Meson8b and Meson8m2 HDMI TX PHY.
-+ *
-+ * Copyright (C) 2021 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/bits.h>
-+#include <linux/clk.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/property.h>
-+#include <linux/regmap.h>
-+
-+#define HHI_HDMI_PHY_CNTL0				0x0
-+	#define HHI_HDMI_PHY_CNTL0_HDMI_CTL1		GENMASK(31, 16)
-+	#define HHI_HDMI_PHY_CNTL0_HDMI_CTL0		GENMASK(15, 0)
-+
-+#define HHI_HDMI_PHY_CNTL1				0x4
-+	#define HHI_HDMI_PHY_CNTL1_CLOCK_ENABLE		BIT(1)
-+	#define HHI_HDMI_PHY_CNTL1_SOFT_RESET		BIT(0)
-+
-+#define HHI_HDMI_PHY_CNTL2				0x8
-+
-+struct phy_meson8_hdmi_tx_priv {
-+	struct regmap		*hhi;
-+	struct clk		*tmds_clk;
-+	unsigned int		reg_offset;
-+};
-+
-+static int phy_meson8_hdmi_tx_init(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+
-+	return clk_prepare_enable(priv->tmds_clk);
-+}
-+
-+static int phy_meson8_hdmi_tx_exit(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+
-+	clk_disable_unprepare(priv->tmds_clk);
-+
-+	return 0;
-+}
-+
-+static int phy_meson8_hdmi_tx_power_on(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+	unsigned int i;
-+	u16 hdmi_ctl0;
-+
-+	if (clk_get_rate(priv->tmds_clk) >= 2970UL * 1000 * 1000)
-+		hdmi_ctl0 = 0x1e8b;
-+	else
-+		hdmi_ctl0 = 0x4d0b;
-+
-+	regmap_write(priv->hhi, priv->reg_offset + HHI_HDMI_PHY_CNTL0,
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL1, 0x08c3) |
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL0, hdmi_ctl0));
-+
-+	regmap_write(priv->hhi, priv->reg_offset + HHI_HDMI_PHY_CNTL1, 0x0);
-+
-+	/* Reset three times, just like the vendor driver does */
-+	for (i = 0; i < 3; i++) {
-+		regmap_write(priv->hhi, priv->reg_offset + HHI_HDMI_PHY_CNTL1,
-+			     HHI_HDMI_PHY_CNTL1_CLOCK_ENABLE |
-+			     HHI_HDMI_PHY_CNTL1_SOFT_RESET);
-+		usleep_range(1000, 2000);
-+
-+		regmap_write(priv->hhi, priv->reg_offset + HHI_HDMI_PHY_CNTL1,
-+			     HHI_HDMI_PHY_CNTL1_CLOCK_ENABLE);
-+		usleep_range(1000, 2000);
-+	}
-+
-+	return 0;
-+}
-+
-+static int phy_meson8_hdmi_tx_power_off(struct phy *phy)
-+{
-+	struct phy_meson8_hdmi_tx_priv *priv = phy_get_drvdata(phy);
-+
-+	regmap_write(priv->hhi, priv->reg_offset + HHI_HDMI_PHY_CNTL0,
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL1, 0x0841) |
-+		     FIELD_PREP(HHI_HDMI_PHY_CNTL0_HDMI_CTL0, 0x8d00));
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops phy_meson8_hdmi_tx_ops = {
-+	.init		= phy_meson8_hdmi_tx_init,
-+	.exit		= phy_meson8_hdmi_tx_exit,
-+	.power_on	= phy_meson8_hdmi_tx_power_on,
-+	.power_off	= phy_meson8_hdmi_tx_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int phy_meson8_hdmi_tx_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np = pdev->dev.of_node;
-+	struct phy_meson8_hdmi_tx_priv *priv;
-+	struct phy_provider *phy_provider;
-+	struct phy *phy;
-+	u32 reg[2];
-+	int ret;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	ret = device_property_read_u32_array(&pdev->dev, "reg", reg,
-+					     ARRAY_SIZE(reg));
-+	if (ret)
-+		return dev_err_probe(&pdev->dev, ret,
-+				     "Failed to parse the 'reg' property\n");
-+
-+	priv->reg_offset = reg[0];
-+
-+	priv->hhi = syscon_node_to_regmap(np->parent);
-+	if (IS_ERR(priv->hhi))
-+		return PTR_ERR(priv->hhi);
-+
-+	priv->tmds_clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(priv->tmds_clk))
-+		return PTR_ERR(priv->tmds_clk);
-+
-+	phy = devm_phy_create(&pdev->dev, np, &phy_meson8_hdmi_tx_ops);
-+	if (IS_ERR(phy))
-+		return PTR_ERR(phy);
-+
-+	phy_set_drvdata(phy, priv);
-+
-+	phy_provider = devm_of_phy_provider_register(&pdev->dev,
-+						     of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id phy_meson8_hdmi_tx_of_match[] = {
-+	{ .compatible = "amlogic,meson8-hdmi-tx-phy" },
-+	{ .compatible = "amlogic,meson8b-hdmi-tx-phy" },
-+	{ .compatible = "amlogic,meson8m2-hdmi-tx-phy" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, phy_meson8_hdmi_tx_of_match);
-+
-+static struct platform_driver phy_meson8_hdmi_tx_driver = {
-+	.probe	= phy_meson8_hdmi_tx_probe,
-+	.driver	= {
-+		.name		= "phy-meson8-hdmi-tx",
-+		.of_match_table	= phy_meson8_hdmi_tx_of_match,
-+	},
-+};
-+module_platform_driver(phy_meson8_hdmi_tx_driver);
-+
-+MODULE_AUTHOR("Martin Blumenstingl <martin.blumenstingl@googlemail.com>");
-+MODULE_DESCRIPTION("Meson8, Meson8b and Meson8m2 HDMI TX PHY driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.32.0
-
+Kind regards
+Uffe
 
 -- 
 linux-phy mailing list
