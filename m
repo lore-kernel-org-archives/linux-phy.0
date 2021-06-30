@@ -2,94 +2,69 @@ Return-Path: <SRS0=FOTy=LY=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2E05DC11F67
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Jun 2021 03:30:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D3A03C11F65
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Jun 2021 07:31:32 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E2C0461D04
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Jun 2021 03:30:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E2C0461D04
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id A80A161D03
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Jun 2021 07:31:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A80A161D03
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bp.renesas.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KPskAEtOBamh+Phccrk6brNo0fNU0gDWjcK8QRG1zDU=; b=oQB8s5VDnyNe/M
-	PWLG22rRG+PaZTzgTIO9b61WklOm9i8LqgrOkHgh16ixxBrKBMdb6HglblG/9UWShfZJDkrmOor6q
-	JYNDylq4QD/S+0RU4LHxjprhdQIkaISCcAc2ipDZ9x0i2kKCm1XjPMB1o1tLkLnRVEK7OadNaMgHI
-	OTDUrhF3oe45WEp3CtlOFH3Nc7bFQvb9IrrV9kxRR+N0VaxRdIV2al6zBnFCfL1jiQOuX2b6WpM4I
-	/ww5p0vzJHDUB1LYfoGRjjFzwpUiTEUZwLFfJnCyuwbbihExDt0swFBIBlKkxRfyLlAzRPHcFi+H7
-	0YeAmKhDl9+xVl5OmLiQ==;
+	List-Owner; bh=ngx8VDNcSAvGI0O683+qFa1TiUYYetnhpk6fuc0oedo=; b=RuTyip8crG1n+P
+	jX1IJbyszQCuGKcHhBAJ6yV9EvyLz+DxzJlE3HoQq0hp0Sp2LHmqxCuSbbUy1T2QFRWkWHZGX6Hvt
+	TGrM2mtOpK95uCtvMu1iJE36w5gh8xBQf0foxzKJSGmBKazlW5Ja3rEfoldXO+/TI8PT5f+GtaoLf
+	ayUXYlSw9u0o+vFQvpeOXH3taE3Wqi/wLWXRJvf9GqF0TuCtNtFHm+WcnWX5Jn3x+i9hyJQ7NGSSa
+	2SvC8qlqy6iWySsYmeol8NrJpWX5FfiMQibKB8ohtkvnyf7V9IIN4x0Ra4kZSbHC/pYkGNZqdmzDz
+	9UjY/vuvVA7j9jMC+3nw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lyQvk-00Cgcf-6w; Wed, 30 Jun 2021 03:30:28 +0000
-Received: from mail-vs1-xe2e.google.com ([2607:f8b0:4864:20::e2e])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lyFMj-00BPh4-Vm
- for linux-phy@lists.infradead.org; Tue, 29 Jun 2021 15:09:35 +0000
-Received: by mail-vs1-xe2e.google.com with SMTP id e26so10933165vsh.7
- for <linux-phy@lists.infradead.org>; Tue, 29 Jun 2021 08:09:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Ei8DhtlygzR0YzhvSAOeJxbaayqBzli32veTEMkT6ts=;
- b=KgCSN8MP8fJ6RDcn54L6DX3FgWWGlkmkFcMOPl4oYjR+d58BcJXY+kdqECuBlpC2q/
- Zc9QzTM1DWkzKtufY4WNCpGcAk64qpkwDRDcSfo9xZUr1kY9tINWtT/fq8jSrFqi9DN2
- zOZQDMuYG9BN2JbnQkr0pw3IKy8XsYEBMqOptpxnNb4ajTfOWiuQe9SXHmUXJ28Dbpg8
- XLg54I0B0EkIlkUJAcEeHvS8TIRh7JEWrlfZYDW4dbWJuS923h+HF3c4OEZb2VJ2xw+g
- krVEM/e0zj4PMxRLeHZPi814CtN/d0ZpQW931V6gCvWNUOSMCWPDJMahFGL6G2woinRi
- 5ApA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Ei8DhtlygzR0YzhvSAOeJxbaayqBzli32veTEMkT6ts=;
- b=sL1w1RaABS2203qCpzxY4cdFSv7h45nyNi1iC65+q2Z3ZeKmSc/4UCKSJGPu/1iM4n
- x+U4kypfWY5dPm2mIjo+HxcQLfTikY4NVSTgBLZ0o5wBfTHj5JzzGesHsDgQuyVNUxy5
- HX5n5AHuzFuUQwNWXm0ifEA5LzOigBnh6LO0XzGg5K1tTTF1AW8KuDGCa+aJpDFFwaPG
- sbq+/tcely6V1jDIuJ5AaPHyUNXjXVa9f1Z5iumWzb5X3mYNRVk46w4KBx11F1/5XFM2
- wWNhrGx84T5kuu7ipUV6EtOfQ75eJPKkGLFZv8+W/PAOSf2VZWayaoEO9QdIcQycNEex
- bA9A==
-X-Gm-Message-State: AOAM531mmtPJ4y633pIX1hG2w/2b9hOTpgrTPTEWPwfQlYCfpQku+1GC
- OOVQMTyM/bKyU/gpZcJptb23Ap83fuMIcJGyqVO2PA==
-X-Google-Smtp-Source: ABdhPJwL/Tz4unVTR5YW3TPwtQhdejHIVarPlrmHY5dQZ9xC87opBGYtDHlgJBwMv9bg3bGpYPV+Vy5yzTNslaeT0ZM=
-X-Received: by 2002:a05:6102:3a70:: with SMTP id
- bf16mr26199022vsb.48.1624979372186; 
- Tue, 29 Jun 2021 08:09:32 -0700 (PDT)
-MIME-Version: 1.0
-References: <20210603182242.25733-1-rashmi.a@intel.com>
-In-Reply-To: <20210603182242.25733-1-rashmi.a@intel.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 29 Jun 2021 17:08:55 +0200
-Message-ID: <CAPDyKFpr=jjcjK=c7-cifYdGBw7ywmLsuJWw=bE8ZYqGuiUSfA@mail.gmail.com>
-Subject: =?UTF-8?B?UmU6IFvigJxQQVRDSOKAnSAwLzJdIFtLTUJdIG1tYyBjbG9jay1mcmVxdWVuY3kgcHJvcA==?=
- =?UTF-8?B?ZXJ0eSB1cGRhdGUgYW5k?=
-To: rashmi.a@intel.com
-Cc: linux-drivers-review-request@eclists.intel.com, 
- Michal Simek <michal.simek@xilinx.com>, linux-mmc <linux-mmc@vger.kernel.org>, 
- Linux ARM <linux-arm-kernel@lists.infradead.org>, 
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Kishon <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
- linux-phy@lists.infradead.org, Mark Gross <mgross@linux.intel.com>, 
- kris.pan@linux.intel.com, furong.zhou@intel.com, 
- mallikarjunappa.sangannavar@intel.com, 
- Adrian Hunter <adrian.hunter@intel.com>, mahesh.r.vaidya@intel.com, 
- nandhini.srikandan@intel.com, 
- "Raja Subramanian, Lakshmi Bai" <lakshmi.bai.raja.subramanian@intel.com>
-X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
+	id 1lyUh2-00D4KU-3E; Wed, 30 Jun 2021 07:31:32 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172]
+ helo=relmlie6.idc.renesas.com)
+ by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1lyUgX-00D40B-EE
+ for linux-phy@lists.infradead.org; Wed, 30 Jun 2021 07:31:02 +0000
+X-IronPort-AV: E=Sophos;i="5.83,311,1616425200"; d="scan'208";a="85884706"
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+ by relmlie6.idc.renesas.com with ESMTP; 30 Jun 2021 16:31:00 +0900
+Received: from localhost.localdomain (unknown [10.226.93.82])
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id E618441DBA50;
+ Wed, 30 Jun 2021 16:30:57 +0900 (JST)
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Rob Herring <robh+dt@kernel.org>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Chris Paterson <Chris.Paterson2@renesas.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org
+Subject: [PATCH v3 07/11] dt-bindings: phy: renesas,
+ usb2-phy: Document RZ/G2L phy bindings
+Date: Wed, 30 Jun 2021 08:30:09 +0100
+Message-Id: <20210630073013.22415-8-biju.das.jz@bp.renesas.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20210630073013.22415-1-biju.das.jz@bp.renesas.com>
+References: <20210630073013.22415-1-biju.das.jz@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210629_080934_051274_1C98EBE7 
-X-CRM114-Status: GOOD (  15.31  )
-X-Mailman-Approved-At: Tue, 29 Jun 2021 20:30:26 -0700
+X-CRM114-CacheID: sfid-20210630_003101_630401_9CA46FBE 
+X-CRM114-Status: UNSURE (   5.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,47 +76,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 3 Jun 2021 at 20:22, <rashmi.a@intel.com> wrote:
->
-> From: Rashmi A <rashmi.a@intel.com>
->
-> Patch1: If clock-frequency property is set and it is not the same as the
->         current clock rate of clk_xin(base clock frequency), set clk_xin
->         to use the provided clock rate.
->
-> Patch2: Since the EMMC clock in KMB was changed from 200Mhz to 175Mhz in
->         FIP,there were some warnings introduced, as the frequency values
->         being checked was still wrt 200Mhz in code. Hence, the frequency
->         checks are now updated based on the current 175Mhz EMMC clock
->         changed in FIP.
->
-> Review comments from Adrian Hunter have been incorporated.
-> Above 2  patches are tested with Keem Bay evaluation module board.
->
-> Please help to review this patch set.
->
->
-> Rashmi A (2):
->   mmc: sdhci-of-arasan: Use clock-frequency property to update clk_xin
->   phy: intel: Fix for warnings due to EMMC clock 175Mhz change in FIP
->
->  drivers/mmc/host/sdhci-of-arasan.c         | 14 ++++++++++++--
->  drivers/phy/intel/phy-intel-keembay-emmc.c |  3 ++-
->  2 files changed, 14 insertions(+), 3 deletions(-)
->
-> --
-> 2.17.1
->
+Document USB phy bindings for RZ/G2L SoC.
 
-Applied for fixes, thanks!
+RZ/G2L USB2.0 phy uses line ctrl register for OTG_ID pin changes. Apart
+from this it uses a different OTG-BC interrupt bit for device recognition.
 
-Kind regards
-Uffe
+Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+---
+v2->v3
+ * Created a new compatible for RZ/G2L as per Geert's suggestion.
+ * Added resets required properties for RZ/G2L SoC.
+---
+ .../bindings/phy/renesas,usb2-phy.yaml         | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+index d5dc5a3cdceb..a7e585ff28dc 100644
+--- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+@@ -30,6 +30,9 @@ properties:
+               - renesas,usb2-phy-r8a77995 # R-Car D3
+           - const: renesas,rcar-gen3-usb2-phy
+ 
++      - items:
++          - const: renesas,usb2-phy-r9a07g044 # RZ/G2{L,LC}
++
+   reg:
+     maxItems: 1
+ 
+@@ -91,6 +94,21 @@ required:
+   - clocks
+   - '#phy-cells'
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: renesas,usb2-phy-r9a07g044
++    then:
++      properties:
++        resets:
++          items:
++            - description: USB phy reset
++            - description: reset of USB 2.0 host side
++      required:
++        - resets
++
+ additionalProperties: false
+ 
+ examples:
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
