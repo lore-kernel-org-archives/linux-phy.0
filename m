@@ -2,94 +2,132 @@ Return-Path: <SRS0=i3rj=L7=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS autolearn=unavailable
+X-Spam-Status: No, score=-13.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 395A5C07E96
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Jul 2021 00:51:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 89F62C07E9C
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Jul 2021 00:58:05 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E93DC61CAC
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Jul 2021 00:51:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E93DC61CAC
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id 557C361CB0
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Jul 2021 00:58:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 557C361CB0
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=samsung.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b40qfFmqHmtCtzUlBxvl7u1JIOE2GaVz8Kx2zOqn26s=; b=gpIKHl8CAPld3I
-	albSexDVGbv7TCyNafDa4qw21mXzOTKUZyWNco0aO8I5EuEF3F0l7VgKyWSIH4A3whTqQUeHnHiJi
-	Ly4Ryozx9XuZ9+0GWl6Wg79jjeZeQYG25EwaMZgtSmg6vDZCwBL47+idqtY9OldLtlXvdDZRo579D
-	mQWoUTbq/92L9sNpBmsyRxE6V7tfmVw77IL/Fk5DlaYgJc3HIf2iVVpU2PjPd68CG485ncwDrVfsU
-	UsoqZwK9836f+Mq2nRf+xe3Z3/dOTzxVxkC16l8bYJ/DjjxlPaBASRP2pgWsZ1zxRH6ugSSiWIKMd
-	p35Fx4uqqhrsbHHf7DCw==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=cBTHBnuTYGehVpYoF5/lkFUGvLNmLvOmv40L9HSNCpE=; b=X3UKG9afXlyElQ
+	c7LS20PuXwVMSUnUNZqHaQg6ox8HXcGtspEr7JLYR2I1HSuPOvrcwjhhRcG73erXF7DmTvN3MDNrO
+	4TbdwH5Z0qbi5DMrrOArxBf1gFlKoEW9+yxYUksiKX0UirLd3UCiuijtHqPpR1owpTmDXKIhnOS11
+	AsrHpRWsVe3muIRryyb+jkxN76e9LFoUICGdw1kEIi7OgkilhBGTYuhhrstzpvi1Wl6OJuCaSeds7
+	kfdEL+wpZx5nt76LaCGyX2FDgYrOiW1gUh1NW68IN86j6Ff1FDNgy82np0ZoMheubvmS33qi8P6Mi
+	pP1UOL0WzIYZXpn7aRKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m0vn3-00D7SV-Fe; Wed, 07 Jul 2021 00:51:49 +0000
-Received: from mail-oi1-x230.google.com ([2607:f8b0:4864:20::230])
+	id 1m0vt6-00D7e5-SU; Wed, 07 Jul 2021 00:58:04 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m0vn1-00D7SB-Cg
- for linux-phy@lists.infradead.org; Wed, 07 Jul 2021 00:51:49 +0000
-Received: by mail-oi1-x230.google.com with SMTP id u11so1475396oiv.1
- for <linux-phy@lists.infradead.org>; Tue, 06 Jul 2021 17:51:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=s1ffWoDxY3VEBE1q35gustTBk0aEjDRruN7MtUPHf+s=;
- b=Ra+wCD0SHtYTko26/J1Cue0W0aDrFn9aSunhan4jY+Ku4VPvSN9WRXcMbnD4rhZnSK
- 2QthozXeQcedU9GrmFB43j/jrN0Yjq4HftOf6+yzt+f/zGbx0dyhzSd3tWUdv7JTdBDF
- JzKV+Wwmrvusajw20DvOwGvBXYlZX0YHiojWzy/Q5dgdAG5cGWx3u2koM/EQsJrjcGZf
- Z+w+R2NM5WOr7inBdRWwVg4npDKnw7TAa0YLPv+dwNjlJ2GBJcCvl24SgjfrAmBeKE0p
- NuHc5VZ3iIFXyEW7emO3v17J7GAWUueRKgYUse/4iNJLtUeqyooAfzPdiWCbsD8SuYFp
- pqfQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=s1ffWoDxY3VEBE1q35gustTBk0aEjDRruN7MtUPHf+s=;
- b=oghdiBsqVJMymQ309FNp4dduSxvDtdu5u6utU3rmEwK3dMtgn4qlZaUEU+Zn7GQP7P
- vTNMMjO6T5O+6alerX8LFw6WPs/v5zVm+vMaFt/1rR05iFhGdTZsVoJo7Wej/cCayPoa
- gxQaVSNils7XdewklHbRCM8F/x/liJbF3ESD5tYwWugGE3wnpxpZZACE1RCjhDBFLCh9
- EW0zfLUxz574Qbl5c4BKEgn/CeHtxeIknzmftEelZBzuZBnCONnCQLs4oe6UWnWrthZ0
- kPU5FbiWmXUOan4ox2ei47f8l/jD9zAKfrtJ/ykx7e4MGxTXOnDmEWTaoqsrfpMuKCMk
- PnlQ==
-X-Gm-Message-State: AOAM531sLajSJ+ND4cZF7Q7RUV9BMt8Omw1QTlF9CmcqosGHfwiV58d8
- SSzzXda4WDLGSR/II/k+n6LoLA==
-X-Google-Smtp-Source: ABdhPJyNJiVNErijMnayY3hae/x4q3f+pLPIXDHbJM0FyfNJpF2vVd7vubXKnUQzaS4QdbPu0Hl1pg==
-X-Received: by 2002:aca:3a55:: with SMTP id h82mr2706375oia.59.1625619106268; 
- Tue, 06 Jul 2021 17:51:46 -0700 (PDT)
-Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
- [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id s131sm3745306oib.52.2021.07.06.17.51.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 06 Jul 2021 17:51:45 -0700 (PDT)
-Date: Tue, 6 Jul 2021 17:50:23 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Cc: vkoul@kernel.org, kishon@ti.com, agross@kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- robh+dt@kernel.org, jonathan@marek.ca,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Wesley Cheng <wcheng@codeaurora.org>
-Subject: Re: [PATCH 2/2] phy: qcom-qmp: Register as a typec switch for
- orientation detection
-Message-ID: <YOT6T3YZSz1EysuO@ripper>
-References: <20210706230702.299047-1-bryan.odonoghue@linaro.org>
- <20210706230702.299047-3-bryan.odonoghue@linaro.org>
- <YOTuh2hYp7IC+4rt@yoga>
- <9f213505-c118-b6fd-676b-1bafd83d8380@linaro.org>
+ id 1m0vt3-00D7d1-Iv
+ for linux-phy@lists.infradead.org; Wed, 07 Jul 2021 00:58:03 +0000
+Received: from epcas2p4.samsung.com (unknown [182.195.41.56])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20210707005757epoutp0213829d138d50387ab9afb0794504621f~PXE1gLTGi1560415604epoutp02t
+ for <linux-phy@lists.infradead.org>; Wed,  7 Jul 2021 00:57:57 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20210707005757epoutp0213829d138d50387ab9afb0794504621f~PXE1gLTGi1560415604epoutp02t
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1625619477;
+ bh=hKMJ46ELWx/naLIWXo/b2OhB5uXVCUJqH18tApq/yx8=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=pwo5MjWk6u3B80UwpvBMcQhwEkgokEVR8NwxyKs3nPFuoCpjMIItsgDLJE0AJINoD
+ s6ieUe9NXEu5LWKXRc+G8iFkobkuFYvPe/mEZs35VI6NevvRdR8KvKlEi9a6bE+Bkp
+ IAvdfIM3MSkrWS0uX4OeOWj90Fxsz/r2v0BgWWBY=
+Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
+ epcas2p1.samsung.com (KnoxPortal) with ESMTP id
+ 20210707005757epcas2p1a79dfc4d0cf2835d38ddd4a6b5c107ef~PXE1DQCpR0255202552epcas2p15;
+ Wed,  7 Jul 2021 00:57:57 +0000 (GMT)
+Received: from epsmges2p2.samsung.com (unknown [182.195.40.183]) by
+ epsnrtp4.localdomain (Postfix) with ESMTP id 4GKLcy5wk2z4x9Q2; Wed,  7 Jul
+ 2021 00:57:54 +0000 (GMT)
+Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
+ epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ D7.16.09541.21CF4E06; Wed,  7 Jul 2021 09:57:54 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas2p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20210707005753epcas2p2a31c4c7bb025d494017323d27cfc1cff~PXEx2AlPA1229012290epcas2p27;
+ Wed,  7 Jul 2021 00:57:53 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20210707005753epsmtrp23a6cbe775305da47de8b0536731083d4~PXEx1Pswd3000130001epsmtrp2s;
+ Wed,  7 Jul 2021 00:57:53 +0000 (GMT)
+X-AuditID: b6c32a46-63f81a8000002545-6b-60e4fc12c7b3
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ EF.CC.08289.11CF4E06; Wed,  7 Jul 2021 09:57:53 +0900 (KST)
+Received: from localhost.localdomain (unknown [10.229.9.51]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20210707005753epsmtip2761646269352b547fe76e59a65257b32~PXExm0K3R2568225682epsmtip2V;
+ Wed,  7 Jul 2021 00:57:53 +0000 (GMT)
+From: Chanho Park <chanho61.park@samsung.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Marek Szyprowski <m.szyprowski@samsung.com>, Jaehoon Chung
+ <jh80.chung@samsung.com>, Alim Akhtar <alim.akhtar@samsung.com>,
+ linux-phy@lists.infradead.org, Chanho Park <chanho61.park@samsung.com>
+Subject: [PATCH v4 0/2] Support exynosautov9 ufs phy driver
+Date: Wed,  7 Jul 2021 09:57:51 +0900
+Message-Id: <20210707005753.52042-1-chanho61.park@samsung.com>
+X-Mailer: git-send-email 2.32.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9f213505-c118-b6fd-676b-1bafd83d8380@linaro.org>
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrPKsWRmVeSWpSXmKPExsWy7bCmqa7QnycJBpd69SwezNvGZnF5v7bF
+ jV9trBYXnvawWZw/v4HdYsKqbywWa4/cZbfYeecEswOHx6ZVnWwem5fUe/RtWcXocfzGdqYA
+ lqgcm4zUxJTUIoXUvOT8lMy8dFsl7+B453hTMwNDXUNLC3MlhbzE3FRbJRefAF23zBygK5QU
+ yhJzSoFCAYnFxUr6djZF+aUlqQoZ+cUltkqpBSk5BYaGBXrFibnFpXnpesn5uVaGBgZGpkCV
+ CTkZn/b8ZS94yVnx7MQ51gbGn+xdjJwcEgImEgfu/mADsYUEdjBK3PpQ08XIBWR/YpRY/XU/
+ M4TzmVFi9quJjDAdnzv+MEIkdjFKXJ13ggmi/SOjxITlsSA2m4CuxJbnr8AaRASKJD6tfcgE
+ 0sAscIpR4v21g8wgCWEBa4mTnZvBilgEVCX61z1lBbF5Bewk1u9/yAyxTV7i1LKDTBBxQYmT
+ M5+wgNjMQPHmrbPBzpMQOMcuMe3ICagGF4mLl5+xQtjCEq+Ob4F6VEri87u9bBAN3YwSrY/+
+ QyVWM0p0NvpA2PYSv6ZvAWrmANqgKbF+lz6IKSGgLHHkFtRePomOw3/ZIcK8Eh1tQhCN6hIH
+ tk9ngbBlJbrnfIa6wEPi4pJjrJDwiZXY8+Ys0wRG+VlIvpmF5JtZCHsXMDKvYhRLLSjOTU8t
+ NiowQo7UTYzglKjltoNxytsPeocYmTgYDzFKcDArifDW+TxJEOJNSaysSi3Kjy8qzUktPsRo
+ CgzficxSosn5wKScVxJvaGpkZmZgaWphamZkoSTOy8F+KEFIID2xJDU7NbUgtQimj4mDU6qB
+ Kfb96cIgqxitn9dFmS+bHEtTPHBlge/BrRvnXL6vW6K0TfMF84KNPA80pHkmP918yKGUk/3U
+ yQaPyS9rpp//PK1+ej13Q3FKwlqppe4FsXXlbts+b3uuYdNus1FjWia/0Otp/hzWZnfy/59e
+ WWlVz3kz60nj1E2SKoEaD3kneOQn81S2c3/b+5vh0McJ8mecVh/zdTDoKE5ZU3F+z3TlHl77
+ jl4rmVtyRTG/tl/61LFvXYvNhg36H6f+Wbxe4ntmZN8MxRNKIbe7Tyh9aN9Qudjkw+w1c44f
+ 9Xj3KV+5rPnU6cWNa5SWTJivdGcvz3bGffM7DLav7ObUOrPTZk2y8FypmNy6lvgj5d/X+u99
+ KqjEUpyRaKjFXFScCADM/WQsEgQAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrPLMWRmVeSWpSXmKPExsWy7bCSvK7gnycJBkc3m1g8mLeNzeLyfm2L
+ G7/aWC0uPO1hszh/fgO7xYRV31gs1h65y26x884JZgcOj02rOtk8Ni+p9+jbsorR4/iN7UwB
+ LFFcNimpOZllqUX6dglcGZ/2/GUveMlZ8ezEOdYGxp/sXYycHBICJhKfO/4wdjFycQgJ7GCU
+ WNqzixEiISvx7N0OqCJhifstR1ghit4zSpxceY4VJMEmoCux5fkrsAYRgRKJ67P/MoMUMQuc
+ Y5S4fP0pG0hCWMBa4mTnZrAiFgFVif51T8GaeQXsJNbvf8gMsUFe4tSyg0wQcUGJkzOfsIDY
+ zEDx5q2zmScw8s1CkpqFJLWAkWkVo2RqQXFuem6xYYFRXmq5XnFibnFpXrpecn7uJkZwmGpp
+ 7WDcs+qD3iFGJg7GQ4wSHMxKIrx1Pk8ShHhTEiurUovy44tKc1KLDzFKc7AoifNe6DoZLySQ
+ nliSmp2aWpBaBJNl4uCUamCyeFiRJPLtoJaX5XnzO5xNPC37mmtrnVNm3Jl5epth/b2Ea0+7
+ P6QvO/ZExvWJ/1aDw3mybFqvu5h3J+wKi7saeqbxQfkNVp8Xm85tO5sRZ5rwrUBUoTTeLtu5
+ bv6SdSs+t4T+W7Pp4yuLRbl3BU+tWtrZ55uR5JfjetfX49atiofnOk8J+mxTErh3o7KXgXVL
+ 7JPP6r/qGc0ft56OE1uw1uS+3FL/qKer80xeM6yrNRfu3PUty0qbdf7Glia5zCf/DrX+2JXI
+ ff56ld7sn5e286z7Y2leKZoewWX+QHLpvoVbL2ikJ3InbXlx/6sD89n4JdUFiTzpa7bvbZNX
+ tFBa7aTr/lw3c+vuheoF/SJKLMUZiYZazEXFiQDyITk0wgIAAA==
+X-CMS-MailID: 20210707005753epcas2p2a31c4c7bb025d494017323d27cfc1cff
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20210707005753epcas2p2a31c4c7bb025d494017323d27cfc1cff
+References: <CGME20210707005753epcas2p2a31c4c7bb025d494017323d27cfc1cff@epcas2p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210706_175147_542295_EE197BA2 
-X-CRM114-Status: GOOD (  22.10  )
+X-CRM114-CacheID: sfid-20210706_175802_121897_69ADBAE8 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,66 +144,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue 06 Jul 17:35 PDT 2021, Bryan O'Donoghue wrote:
+This patchset introduces ExynosAuto v9 SoC ufs phy driver as Generic PHY
+driver framework. According to Krzysztof's suggestion, this patchset
+moves phy-exynos7-ufs header to c source file.
 
-> On 07/07/2021 01:00, Bjorn Andersson wrote:
-> > In order to perform link training on 4 lanes we need to reset the
-> > PHY_MODE_CTRL with only DP_MODE.
-> 
-> We're only the two lanes for USB on sm8250 and at the moment only USB works
-> - not dp on 8250.
-> 
-> Perhaps you've discovered why the DP times out on 8250..
-> 
+Changes from v3:
+- correct header inclusion as suggested by Krzysztof
 
-The way this problem manifest itself in my testing (on sc8180x) is that
-the 3rd lane fails to complete link training, although it wasn't
-completely obvious from the kernel prints until you look at the
-implementation.
+Changes from v2:
+- Removed Change-id in commit message.
 
-I don't know if you're still struggling with the AUX timeout, but if
-you're past that this would be a strong candidate. That said, if you set
-data-lanes = <0 1> in your DP node then it won't attempt to go 4 lanes
-and wouldn't hit this problem.
+Changes from v1:
+- squashed "custom PHY_TRSV_CH_OFFSET support" patch
+- use "exynosautov9" instead of "exynosauto" to avoid confusion with
+  exynosauto 8890
+- move phy-exynos7-ufs.h to phy-exynos7-ufs.c
+- s/exynosauto/exynosautov9/g
 
-> > In my efforts on sc8180x I skipped the disable/enable in switch_set() (I
-> > believe because I didn't have the init_count check...) and then in
-> > qcom_qmp_phy_configure_dp_mode() I issue a reset when we're heading to 4
-> > lanes. Perhaps we can do the disable/enable and achieve the same thing,
-> > but as written here you won't get 4 lanes...
-> > 
-> > I will do some more testing.
-> 
-> Do you have a commit I can cherry pick ? Might be worth testing out with
-> tcpm + dp on the sm8250 if its working for you on sc8180x
-> 
+Chanho Park (2):
+  phy: samsung-ufs: move phy-exynos7-ufs header
+  phy: samsung-ufs: support exynosauto ufs phy driver
 
-I dumped my hack-branch on github a while ago and have been working on
-cleaning this up to get the patches out:
+ .../bindings/phy/samsung,ufs-phy.yaml         |  1 +
+ drivers/phy/samsung/Makefile                  |  4 +-
+ .../{phy-exynos7-ufs.h => phy-exynos7-ufs.c}  |  8 +--
+ drivers/phy/samsung/phy-exynosautov9-ufs.c    | 67 +++++++++++++++++++
+ drivers/phy/samsung/phy-samsung-ufs.c         |  3 +
+ drivers/phy/samsung/phy-samsung-ufs.h         | 13 +++-
+ 6 files changed, 86 insertions(+), 10 deletions(-)
+ rename drivers/phy/samsung/{phy-exynos7-ufs.h => phy-exynos7-ufs.c} (93%)
+ create mode 100644 drivers/phy/samsung/phy-exynosautov9-ufs.c
 
-https://github.com/andersson/kernel/commits/wip/sc8180x-edp-dp-nvme-sdx55-dump
+-- 
+2.32.0
 
-Unfortunately I extended my testing and realized that DPMS doesn't work
-reliably.
-
-With my MST hub (and single monitor) I often hit a security violation
-when accessing REG_DP_STATE_CTRL when powering down the display, unless
-I have drm.debug=511 (i.e. changing the timing of things). With the more
-favourable timing DPMS on/off works nicely.
-
-With my direct type-c/dp cable I can reliably power down the display,
-but resuming it generally fails immediately - the monitor is waking up,
-and then goes back to sleep (probably because the software has given up
-on me already).
-
-Trying to debug these two issues currently.
-
-Connecting, disconnecting and reconnecting the cable works reliably
-though, so once upstream boots again I intend to send out most of my
-cleaned up patches.
-
-Regards,
-Bjorn
 
 -- 
 linux-phy mailing list
