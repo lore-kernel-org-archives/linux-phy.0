@@ -2,91 +2,84 @@ Return-Path: <SRS0=EZuF=MA=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5049EC07E96
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 12:48:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9A6C2C07E96
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 13:47:28 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 11F1861450
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 12:48:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 11F1861450
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=marvell.com
+	by mail.kernel.org (Postfix) with ESMTPS id 2491F613D1
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 13:47:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2491F613D1
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=armlinux.org.uk
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5SeOF3nNgRJjHQ9nuZpsHsVKfl5UBs4nk4WhJo4T00c=; b=Krw5/uf/G6gUCD
-	Sqn6CVFyUv/q2KmvZZpUJOBathtxJtLvVqlrfZDy3WcsjfFJYf6JTU850NUPs9XcfDS3E4WKzEWgi
-	CcjHg680E8DIh4uA/k7JUxJBWTbCLBJR+mniEUk+7F3uYufIHIYsDLjVMNwwNQWVEyG//rinM/VmL
-	0BjhNyZrhUm/IPsHL5lD6ln+JY/DJp1Sckq7A6DzaYF1mbhKjpJ/eDIXDJ8XIOnXUVE66cVfOZLwU
-	w8fqec1+SyrBW0nX9l4qtWxglvFXMy6CGxZIOKcUgz4VH21oLLdf8l8YknzOThd8HxsPccZIc5U74
-	v80Z2g0xtWa1vnXC0U7w==;
+	List-Owner; bh=THPgPCPf5D0rs2SpkZil5MnbAn7M59rcA+iOJNsy7hk=; b=IHEjyjLxwm8hUL
+	e4YUs6hXdDzaDQJS2CtM80JXA18ww8vjb4ZimLZhkHqk1SmlKbKT4p/dioD8gIBddhnGvlLNx0KgF
+	yvWsvOQKDHRc+CjSo/4vBm7llq2bz/jlySkkhS7Nk9opHGpsnA0V2hF/D+JAyc1bhYYcoFapkUBuC
+	I7Xd/6PBqQDIdSYivgKp0sq9ANrqXONk9qXDDM8Q8+S5sA+a2y1m2Rre9zN+Q+pnRCyg2O/iaiHmc
+	5fyIaL+ymfG95Qkq+2lg8L+UHH27xN78IW9f4Ui2bkd2HUH/TwSh0GxZvxrXiUj2InJKj91uC8KQy
+	Aslr8pN1ufQuYiXlIr4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m1TS6-00Gw92-Dx; Thu, 08 Jul 2021 12:48:26 +0000
-Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
- helo=mx0b-0016f401.pphosted.com)
+	id 1m1UND-00H7zz-EA; Thu, 08 Jul 2021 13:47:27 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m1TQW-00GvQD-8p; Thu, 08 Jul 2021 12:46:49 +0000
-Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
- by mx0a-0016f401.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 168Ceqoe011583; Thu, 8 Jul 2021 05:46:45 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-type; s=pfpt0220; bh=99JQtymiKQrVpD4JR6FItTIu++DbzZ98gvUQfXoeGvw=;
- b=GrD8qTIFsbWqGOUAY08T/9gPEarqSGdWOWqKRUWqzD42+JmzzU50ZYqN4QRR9jOE1t3m
- +gwcWn6KfQnFwKBb+tFhYpfivSVMEQUslqZOpZRZXKwJATBCrxxUgNzRebeTk++iyWiy
- od5O6wSV884KdACNpc351nPQ0izvlWhYHAaFh2Mz/xe3GQ4Uq1oOWCJmlU7zZlBOGQ9+
- 0yEAYvXqQf1kNHHnemr2N9uK0Wm0vLH1DRrd5qHZfrVHTZjhKenhhMlLhrDH6b2PwPp+
- qGlBMUWBXMeyf87HfAQsAf73xTewyJJTOdDpiJQfbJ0HZ3nNSbP0VsDD3amwxLspokhD yA== 
-Received: from dc5-exch02.marvell.com ([199.233.59.182])
- by mx0a-0016f401.pphosted.com with ESMTP id 39nrnu1y2h-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 08 Jul 2021 05:46:44 -0700
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.18;
- Thu, 8 Jul 2021 05:46:43 -0700
-Received: from maili.marvell.com (10.69.176.80) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server id 15.0.1497.18 via Frontend
- Transport; Thu, 8 Jul 2021 05:46:43 -0700
-Received: from octopus.marvell.com (octopus.marvell.com [10.5.24.3])
- by maili.marvell.com (Postfix) with ESMTP id 6091A3F7076;
- Thu,  8 Jul 2021 05:46:39 -0700 (PDT)
-From: <kostap@marvell.com>
-To: <miquel.raynal@bootlin.com>, <kishon@ti.com>, <vkoul@kernel.org>,
- <robh+dt@kernel.org>, <andrew@lunn.ch>, <gregory.clement@bootlin.com>,
- <sebastian.hesselbarth@gmail.com>, <vladimir.vid@sartura.hr>,
- <luka.kovacic@sartura.hr>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>
-CC: <mw@semihalf.com>, <jaz@semihalf.com>, <nadavh@marvell.com>,
- <stefanc@marvell.com>, <bpeled@marvell.com>, Konstantin Porotchkin
- <kostap@marvell.com>
-Subject: [PATCH v7 5/5] arch/arm64: dts: change 10gbase-kr to 10gbase-r in
- Armada
-Date: Thu, 8 Jul 2021 15:46:12 +0300
-Message-ID: <20210708124612.30742-6-kostap@marvell.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20210708124612.30742-1-kostap@marvell.com>
+ id 1m1UNA-00H7z9-FI; Thu, 08 Jul 2021 13:47:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=1onv7D7UfHyZd8wp8ojsjToOmTb+gozwlqpKz22PFwA=; b=TpZkE+0BQeQej1Agy5fZqyTFT
+ hFSYwtGsK8Pl+xngd8lz79GnwL+3yN0X+W+qtFrhv+pJFh8XZlBfSZuIBUCUkcn/IiKtdPYXJQMtx
+ HMs/fl7rkKdoPTLQuJt4psYINCtusbYYLmROGLujLQMGzhzSIFHGo7lBZAs0pKDgBkxQZN/+db2V4
+ t+Cafd1TchDzzeDobP+gzHLGTXklXgsDW/faAZsdni5GlC0svTdFPk+UUfYlUXdapHTEF7b1ul3HQ
+ VLcyNW8Ti3U1KRU3mpIABO7RaBFtDydNHcb1eNMyLFrHyC1QPWsOfw8PsCOE+gOIz7btAG7bPnDVM
+ 9/d2T69mA==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:45872)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1m1UN0-0000jh-7e; Thu, 08 Jul 2021 14:47:14 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1m1UMw-0003wE-ER; Thu, 08 Jul 2021 14:47:10 +0100
+Date: Thu, 8 Jul 2021 14:47:10 +0100
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: kostap@marvell.com
+Cc: miquel.raynal@bootlin.com, kishon@ti.com, vkoul@kernel.org,
+ robh+dt@kernel.org, andrew@lunn.ch, gregory.clement@bootlin.com,
+ sebastian.hesselbarth@gmail.com, vladimir.vid@sartura.hr,
+ luka.kovacic@sartura.hr, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, mw@semihalf.com,
+ jaz@semihalf.com, nadavh@marvell.com, stefanc@marvell.com,
+ bpeled@marvell.com
+Subject: Re: [PATCH v7 5/5] arch/arm64: dts: change 10gbase-kr to 10gbase-r
+ in Armada
+Message-ID: <20210708134710.GW22278@shell.armlinux.org.uk>
 References: <20210708124612.30742-1-kostap@marvell.com>
+ <20210708124612.30742-6-kostap@marvell.com>
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: onuq7hqDIA-RESX5kacIpAsN7ZBZYY2x
-X-Proofpoint-GUID: onuq7hqDIA-RESX5kacIpAsN7ZBZYY2x
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.391, 18.0.790
- definitions=2021-07-08_06:2021-07-08,
- 2021-07-08 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20210708124612.30742-6-kostap@marvell.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210708_054648_437725_0BD75DCD 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20210708_064724_554838_1BB136DE 
+X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,112 +96,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Konstantin Porotchkin <kostap@marvell.com>
+On Thu, Jul 08, 2021 at 03:46:12PM +0300, kostap@marvell.com wrote:
+> From: Konstantin Porotchkin <kostap@marvell.com>
+> 
+> Change all 10G port modes in Armada family device trees from
+> 10gbase-kr to 10gbase-r
+> 
+> Signed-off-by: Konstantin Porotchkin <kostap@marvell.com>
+> Suggested-by: Russell King <linux@armlinux.org.uk>
 
-Change all 10G port modes in Armada family device trees from
-10gbase-kr to 10gbase-r
+Please change the "suggested-by" to:
+Suggested-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 
-Signed-off-by: Konstantin Porotchkin <kostap@marvell.com>
-Suggested-by: Russell King <linux@armlinux.org.uk>
----
- arch/arm64/boot/dts/marvell/armada-7040-db.dts | 2 +-
- arch/arm64/boot/dts/marvell/armada-8040-db.dts | 4 ++--
- arch/arm64/boot/dts/marvell/cn9130-crb.dtsi    | 2 +-
- arch/arm64/boot/dts/marvell/cn9130-db.dtsi     | 2 +-
- arch/arm64/boot/dts/marvell/cn9131-db.dtsi     | 2 +-
- arch/arm64/boot/dts/marvell/cn9132-db.dtsi     | 2 +-
- 6 files changed, 7 insertions(+), 7 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/marvell/armada-7040-db.dts b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-index 51f3e2907597..cd326fe224ce 100644
---- a/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-@@ -282,7 +282,7 @@
- &cp0_eth0 {
- 	status = "okay";
- 	/* Network PHY */
--	phy-mode = "10gbase-kr";
-+	phy-mode = "10gbase-r";
- 	/* Generic PHY, providing serdes lanes */
- 	phys = <&cp0_comphy2 0>;
- 
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-db.dts b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-index e39e1efc95b6..f2e8e0df8865 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-@@ -195,7 +195,7 @@
- 
- &cp0_eth0 {
- 	status = "okay";
--	phy-mode = "10gbase-kr";
-+	phy-mode = "10gbase-r";
- 
- 	fixed-link {
- 		speed = <10000>;
-@@ -348,7 +348,7 @@
- 
- &cp1_eth0 {
- 	status = "okay";
--	phy-mode = "10gbase-kr";
-+	phy-mode = "10gbase-r";
- 
- 	fixed-link {
- 		speed = <10000>;
-diff --git a/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi b/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi
-index 75933477324a..9f0efcdacdf1 100644
---- a/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi
-+++ b/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi
-@@ -202,7 +202,7 @@
- &cp0_eth0 {
- 	/* This port is connected to 88E6393X switch */
- 	status = "okay";
--	phy-mode = "10gbase-kr";
-+	phy-mode = "10gbase-r";
- 	managed = "in-band-status";
- 	phys = <&cp0_comphy4 0>;
- };
-diff --git a/arch/arm64/boot/dts/marvell/cn9130-db.dtsi b/arch/arm64/boot/dts/marvell/cn9130-db.dtsi
-index 39fc90716454..2cd4bb09e8ff 100644
---- a/arch/arm64/boot/dts/marvell/cn9130-db.dtsi
-+++ b/arch/arm64/boot/dts/marvell/cn9130-db.dtsi
-@@ -126,7 +126,7 @@
- /* SLM-1521-V2, CON9 */
- &cp0_eth0 {
- 	status = "okay";
--	phy-mode = "10gbase-kr";
-+	phy-mode = "10gbase-r";
- 	/* Generic PHY, providing serdes lanes */
- 	phys = <&cp0_comphy4 0>;
- 	managed = "in-band-status";
-diff --git a/arch/arm64/boot/dts/marvell/cn9131-db.dtsi b/arch/arm64/boot/dts/marvell/cn9131-db.dtsi
-index daddab638fb8..f995b1bcda01 100644
---- a/arch/arm64/boot/dts/marvell/cn9131-db.dtsi
-+++ b/arch/arm64/boot/dts/marvell/cn9131-db.dtsi
-@@ -85,7 +85,7 @@
- /* CON50 */
- &cp1_eth0 {
- 	status = "okay";
--	phy-mode = "10gbase-kr";
-+	phy-mode = "10gbase-r";
- 	/* Generic PHY, providing serdes lanes */
- 	phys = <&cp1_comphy4 0>;
- 	managed = "in-band-status";
-diff --git a/arch/arm64/boot/dts/marvell/cn9132-db.dtsi b/arch/arm64/boot/dts/marvell/cn9132-db.dtsi
-index 5948de6b4638..3f1795fb4fe7 100644
---- a/arch/arm64/boot/dts/marvell/cn9132-db.dtsi
-+++ b/arch/arm64/boot/dts/marvell/cn9132-db.dtsi
-@@ -103,7 +103,7 @@
- /* SLM-1521-V2, CON9 */
- &cp2_eth0 {
- 	status = "disabled";
--	phy-mode = "10gbase-kr";
-+	phy-mode = "10gbase-r";
- 	/* Generic PHY, providing serdes lanes */
- 	phys = <&cp2_comphy4 0>;
- 	managed = "in-band-status";
+Reviewed-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 -- 
-2.17.1
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
