@@ -5,16 +5,16 @@ X-Spam-Level:
 X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3420EC07E96
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 12:48:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5049EC07E96
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 12:48:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E61D161584
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 12:47:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E61D161584
+	by mail.kernel.org (Postfix) with ESMTPS id 11F1861450
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 12:48:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 11F1861450
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=marvell.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,45 +23,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gvYiWhRK3kGO+TWvIPXk9DBXU/T1X4Y7Zj52zesyabY=; b=z46d/YQgGnupyZ
-	y2ZY0H21i1hQiuaO0BuuS0K+mfOHQG3uWf09oyicIsT6CBlgl+wiMB+L/xWyM03VsYorCHPqxIoeq
-	sC8yrY7uq4Hf4un7c5mYTTnT6rvkdv0bDKzITtYated3KaTrkWN08IArnBHX35BW9nDmOYtlt7JIh
-	cVpoxkir/Vixq62SMawnNppnlZ8IbZgMYqQZpO8t+tZyjB01mwMog9e1TjapWyH69LZmUKH8lHhVw
-	nvyJphtERoAsUB7MMLL5di5EwBKz/fM7GslBgMgr574T2n7k9f2/XyJYFgfIC9/+/S8Sj5UooJyIO
-	TL6rUKjmeEs7Bn9hQb4w==;
+	List-Owner; bh=5SeOF3nNgRJjHQ9nuZpsHsVKfl5UBs4nk4WhJo4T00c=; b=Krw5/uf/G6gUCD
+	Sqn6CVFyUv/q2KmvZZpUJOBathtxJtLvVqlrfZDy3WcsjfFJYf6JTU850NUPs9XcfDS3E4WKzEWgi
+	CcjHg680E8DIh4uA/k7JUxJBWTbCLBJR+mniEUk+7F3uYufIHIYsDLjVMNwwNQWVEyG//rinM/VmL
+	0BjhNyZrhUm/IPsHL5lD6ln+JY/DJp1Sckq7A6DzaYF1mbhKjpJ/eDIXDJ8XIOnXUVE66cVfOZLwU
+	w8fqec1+SyrBW0nX9l4qtWxglvFXMy6CGxZIOKcUgz4VH21oLLdf8l8YknzOThd8HxsPccZIc5U74
+	v80Z2g0xtWa1vnXC0U7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m1TRf-00GvwK-BA; Thu, 08 Jul 2021 12:47:59 +0000
+	id 1m1TS6-00Gw92-Dx; Thu, 08 Jul 2021 12:48:26 +0000
 Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
  helo=mx0b-0016f401.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m1TQS-00GvOR-8N; Thu, 08 Jul 2021 12:46:46 +0000
+ id 1m1TQW-00GvQD-8p; Thu, 08 Jul 2021 12:46:49 +0000
 Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
  by mx0a-0016f401.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 168CfHjs011949; Thu, 8 Jul 2021 05:46:40 -0700
+ 168Ceqoe011583; Thu, 8 Jul 2021 05:46:45 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
- content-type : content-transfer-encoding; s=pfpt0220;
- bh=q0uHQSnmIUwPJEruthAl8tsRDnpmyDAxgo+KyTJEQQQ=;
- b=BJOWrjQEElZ+64TCN1F+FcDDaTziVOiKAsUJxT8AdGiyOHc7CyrRkqiGzKIy4R+Hg4cQ
- SsPEj5jGr7X7BFJfN5/laBuLZmRQC6DUBE4+C+66xSqXO15UuqYoCMqatNveI0CTLW2t
- ah9Zx0FXM4bMNPYZ76ZROPWuJ4WcH10R8xNfJ5kTY9Boja1RMLYxgWuZBBVY6phDhMZW
- 51QAUuZSJNC4lPO947zE9phe+hZgpISe3Fm8UF8G2M0hEWgMjvCWzibdVHaFOREsL8jE
- WE/C7cvxB3L580ql8rcMJMXEAsPx3gtq/5oTHNhu2P36suilbQeQTLWq8SYiui84Eh53 pg== 
+ content-type; s=pfpt0220; bh=99JQtymiKQrVpD4JR6FItTIu++DbzZ98gvUQfXoeGvw=;
+ b=GrD8qTIFsbWqGOUAY08T/9gPEarqSGdWOWqKRUWqzD42+JmzzU50ZYqN4QRR9jOE1t3m
+ +gwcWn6KfQnFwKBb+tFhYpfivSVMEQUslqZOpZRZXKwJATBCrxxUgNzRebeTk++iyWiy
+ od5O6wSV884KdACNpc351nPQ0izvlWhYHAaFh2Mz/xe3GQ4Uq1oOWCJmlU7zZlBOGQ9+
+ 0yEAYvXqQf1kNHHnemr2N9uK0Wm0vLH1DRrd5qHZfrVHTZjhKenhhMlLhrDH6b2PwPp+
+ qGlBMUWBXMeyf87HfAQsAf73xTewyJJTOdDpiJQfbJ0HZ3nNSbP0VsDD3amwxLspokhD yA== 
 Received: from dc5-exch02.marvell.com ([199.233.59.182])
- by mx0a-0016f401.pphosted.com with ESMTP id 39nrnu1y22-1
+ by mx0a-0016f401.pphosted.com with ESMTP id 39nrnu1y2h-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 08 Jul 2021 05:46:40 -0700
-Received: from DC5-EXCH01.marvell.com (10.69.176.38) by DC5-EXCH02.marvell.com
+ Thu, 08 Jul 2021 05:46:44 -0700
+Received: from DC5-EXCH02.marvell.com (10.69.176.39) by DC5-EXCH02.marvell.com
  (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.18;
- Thu, 8 Jul 2021 05:46:39 -0700
-Received: from maili.marvell.com (10.69.176.80) by DC5-EXCH01.marvell.com
- (10.69.176.38) with Microsoft SMTP Server id 15.0.1497.18 via Frontend
- Transport; Thu, 8 Jul 2021 05:46:38 -0700
+ Thu, 8 Jul 2021 05:46:43 -0700
+Received: from maili.marvell.com (10.69.176.80) by DC5-EXCH02.marvell.com
+ (10.69.176.39) with Microsoft SMTP Server id 15.0.1497.18 via Frontend
+ Transport; Thu, 8 Jul 2021 05:46:43 -0700
 Received: from octopus.marvell.com (octopus.marvell.com [10.5.24.3])
- by maili.marvell.com (Postfix) with ESMTP id DBB7E3F7065;
- Thu,  8 Jul 2021 05:46:34 -0700 (PDT)
+ by maili.marvell.com (Postfix) with ESMTP id 6091A3F7076;
+ Thu,  8 Jul 2021 05:46:39 -0700 (PDT)
 From: <kostap@marvell.com>
 To: <miquel.raynal@bootlin.com>, <kishon@ti.com>, <vkoul@kernel.org>,
  <robh+dt@kernel.org>, <andrew@lunn.ch>, <gregory.clement@bootlin.com>,
@@ -72,21 +71,22 @@ To: <miquel.raynal@bootlin.com>, <kishon@ti.com>, <vkoul@kernel.org>,
 CC: <mw@semihalf.com>, <jaz@semihalf.com>, <nadavh@marvell.com>,
  <stefanc@marvell.com>, <bpeled@marvell.com>, Konstantin Porotchkin
  <kostap@marvell.com>
-Subject: [PATCH v7 4/5] arm64: dts: add support for Marvell cn9130-crb platform
-Date: Thu, 8 Jul 2021 15:46:11 +0300
-Message-ID: <20210708124612.30742-5-kostap@marvell.com>
+Subject: [PATCH v7 5/5] arch/arm64: dts: change 10gbase-kr to 10gbase-r in
+ Armada
+Date: Thu, 8 Jul 2021 15:46:12 +0300
+Message-ID: <20210708124612.30742-6-kostap@marvell.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20210708124612.30742-1-kostap@marvell.com>
 References: <20210708124612.30742-1-kostap@marvell.com>
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: QKUaGsa_6DkGRRjBS6gOZ_pDB692jkbB
-X-Proofpoint-GUID: QKUaGsa_6DkGRRjBS6gOZ_pDB692jkbB
+X-Proofpoint-ORIG-GUID: onuq7hqDIA-RESX5kacIpAsN7ZBZYY2x
+X-Proofpoint-GUID: onuq7hqDIA-RESX5kacIpAsN7ZBZYY2x
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.391, 18.0.790
  definitions=2021-07-08_06:2021-07-08,
  2021-07-08 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210708_054644_362664_E87A5453 
-X-CRM114-Status: GOOD (  20.70  )
+X-CRM114-CacheID: sfid-20210708_054648_437725_0BD75DCD 
+X-CRM114-Status: GOOD (  14.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,177 +98,119 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogS29uc3RhbnRpbiBQb3JvdGNoa2luIDxrb3N0YXBAbWFydmVsbC5jb20+CgpUaGUgTWFy
-dmVsbCByZWZlcmVuY2UgcGxhdGZvcm0gQ045MTMwLUNSQiBpcyBhIHNtYWxsIGZvcm0gZmFjdG9y
-CmJvYXJkIGluIGEgbWV0YWwgY2FzZS4gVGhlIHBsYXRmb3JtIGlzIGJhc2VkIG9uIENOOTEzMCBT
-b0Mgd2l0aAphZGRpdGlvbiBvZiA4IEdpZ2FiaXQgcG9ydHMgU09ITyBFdGhlcm5ldCBzd2l0Y2gu
-ClRoZSByZWZlcmVuY2UgcGxhdGZvcm0gZmVhdHVyZXMgdGhlIGZvbGxvd2luZzoKKiBVcCB0byA0
-IENQVSBjb3JlcyBBUk12OCBDb3J0ZXgtQTcyIENQVQoqIENQVSBjb3JlIG9wZXJhdGluZyBzcGVl
-ZCBvZiB1cCB0byAyLjJHSHoKKiBERFI0IERJTU0g4oCTIDhHQiA2NGJpdCtFQ0MgQCAyNDAwTWh6
-LgoqIDF4IGVNTUMgOEdCIGRldmljZQoqIDF4IHVTRCBjYXJkIDQgYml0cyBwb3J0IG9uIENQCiog
-MXggMTI4TUIgU1BJIE5PUiBmbGFzaCBtZW1vcnkKKiAxeCBVU0IgMy4wIEhvc3QgcG9ydCAoVHlw
-ZSBBKQoqIDF4IFNBVEEgR2VuMyB2aWEgTS4yCiogMXggVVNCIDMuMCB2aWEgTS4yCiogMXggU0lN
-IGNhcmQgc2xvdAoqIDF4IDFHIEV0aGVybmV0IHBvcnQgdmlhIFJHTUlJCiogMXggMTBHIHN3aXRj
-aCBwb3J0IG92ZXIgU0ZQKyBjb25uZWN0b3IKKiA4eCAxRyBwb3J0cyB0aHJvdWdoIDg4RTYzOTNY
-IHN3aXRjaCB2aWEgWEZJCiogMXggMi41Ry8xRy8xMDBNLzEwTSBwb3J0IHZpYSBIU19TR01JSQoq
-IDF4IFBDSSBFeHByZXNzIChQQ0llKXgxIEdlbiAzLjAKKiAxeCBQQ0kgRXhwcmVzcyAoUENJZSl4
-NCBHZW4gMy4wIHZpYSBOVk1lIE0uMgoqIEpUQUcgcG9ydAoKVGhlIENSQiBib2FyZCB1c2VzIE1D
-UDIzMDE3IGkyYyBwaW4gY29udHJvbGxlciB0aGF0IGRyaXZlcyB0aGUKb25ib2FyZCBlTU1DIGFi
-ZCBVU0IgMywwIHBvcnQgcG93ZXIgbGluZXMuClRoZSBmb2xsb3dpbmcgY29uZmlndXJhdGlvbiBz
-aG91bGQgYmUgZW5hYmxlZCBmb3IgdGhpcyBjb250cm9sbGVyCnN1cHBvcnQ6CkNPTkZJR19QSU5D
-VFJMX01DUDIzUzA4PXkKClRoZSBwbGFmb3JtIHN1cHBvcnRzIHR3byBIVyBjb25maWd1cmF0aW9u
-cyAtICJBIiBhbmQgIkIiCkNOOTEzMC1DUkItQQoqIEFQLU1QUCBjb25maWd1cmF0aW9uOiBTRElP
-LCBVQVJUCiogQ1AwIFNlcmRlcyBjb25maWd1cmF0aW9uOgoJKiBMYW5lMC0zOiBOVk1lIChQQ0ll
-IHg0KQoJKiBMYW5lNDogWEZJCgkqIExhbmU1OiBIU19TR01JSQoKMi4gQ045MTMwLUNSQi1CCiog
-QVAtTVBQIGNvbmZpZ3VyYXRpb246IFNESU8sIFVBUlQKKiBDUDAtTVBQIGNvbmZpZ3VyYXRpb246
-IFJHTUlJLCBTRElPLCBJMkMwLCBJMkMxLCBTTUksIFhTTUkKKiBDUDAgU2VyZGVzIGNvbmZpZ3Vy
-YXRpb246CgkqIExhbmUwOiBQQ0llIHgxCgkqIExhbmUxOiBVU0IzXzAgeDEKCSogTGFuZTI6IFNB
-VEEgeDEKCSogTGFuZTM6IFVTQjNfMSB4MQoJKiBMYW5lNDogWEZJCgkqIExhbmU1OiBIU19TR01J
-SQoKU2lnbmVkLW9mZi1ieTogS29uc3RhbnRpbiBQb3JvdGNoa2luIDxrb3N0YXBAbWFydmVsbC5j
-b20+Ci0tLQogYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL01ha2VmaWxlICAgICAgICAgfCAg
-IDIgKwogYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2NuOTEzMC1jcmItQS5kdHMgfCAgMzgg
-KysrKwogYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2NuOTEzMC1jcmItQi5kdHMgfCAgNDYg
-KysrKwogYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2NuOTEzMC1jcmIuZHRzaSAgfCAyMjIg
-KysrKysrKysrKysrKysrKysrKysKIDQgZmlsZXMgY2hhbmdlZCwgMzA4IGluc2VydGlvbnMoKykK
-IGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybTY0L2Jvb3QvZHRzL21hcnZlbGwvY245MTMwLWNy
-Yi1BLmR0cwogY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9j
-bjkxMzAtY3JiLUIuZHRzCiBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm02NC9ib290L2R0cy9t
-YXJ2ZWxsL2NuOTEzMC1jcmIuZHRzaQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMv
-bWFydmVsbC9NYWtlZmlsZSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9NYWtlZmlsZQpp
-bmRleCA1ZTM5Zjk3NzRlNjguLmM2ODZhOGRkM2NhNSAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9i
-b290L2R0cy9tYXJ2ZWxsL01ha2VmaWxlCisrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVs
-bC9NYWtlZmlsZQpAQCAtMjEsMyArMjEsNSBAQCBkdGItJChDT05GSUdfQVJDSF9NVkVCVSkgKz0g
-Y245MTMxLWRiLmR0YgogZHRiLSQoQ09ORklHX0FSQ0hfTVZFQlUpICs9IGNuOTEzMS1kYi1CLmR0
-YgogZHRiLSQoQ09ORklHX0FSQ0hfTVZFQlUpICs9IGNuOTEzMi1kYi5kdGIKIGR0Yi0kKENPTkZJ
-R19BUkNIX01WRUJVKSArPSBjbjkxMzItZGItQi5kdGIKK2R0Yi0kKENPTkZJR19BUkNIX01WRUJV
-KSArPSBjbjkxMzAtY3JiLUEuZHRiCitkdGItJChDT05GSUdfQVJDSF9NVkVCVSkgKz0gY245MTMw
-LWNyYi1CLmR0YgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2NuOTEz
-MC1jcmItQS5kdHMgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL21hcnZlbGwvY245MTMwLWNyYi1BLmR0
-cwpuZXcgZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLmE3YjZkZmJhOGFmNQot
-LS0gL2Rldi9udWxsCisrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9jbjkxMzAtY3Ji
-LUEuZHRzCkBAIC0wLDAgKzEsMzggQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwt
-Mi4wKworLyoKKyAqIENvcHlyaWdodCAoQykgMjAyMCBNYXJ2ZWxsIEludGVybmF0aW9uYWwgTHRk
-LgorICovCisKKyNpbmNsdWRlICJjbjkxMzAtY3JiLmR0c2kiCisKKy8geworCW1vZGVsID0gIk1h
-cnZlbGwgQXJtYWRhIENOOTEzMC1DUkItQSI7Cit9OworCismY3AwX3BjaWUwIHsKKwlzdGF0dXMg
-PSAib2theSI7CisJbnVtLWxhbmVzID0gPDQ+OworCW51bS12aWV3cG9ydCA9IDw4PjsKKwkvKiBH
-ZW5lcmljIFBIWSwgcHJvdmlkaW5nIHNlcmRlcyBsYW5lcyAqLworCXBoeXMgPSA8JmNwMF9jb21w
-aHkwIDAKKwkJJmNwMF9jb21waHkxIDAKKwkJJmNwMF9jb21waHkyIDAKKwkJJmNwMF9jb21waHkz
-IDA+OworCWlvbW11LW1hcCA9CisJCTwweDAgICAmc21tdSAweDQ4MCAweDIwPiwKKwkJPDB4MTAw
-ICZzbW11IDB4NGEwIDB4MjA+LAorCQk8MHgyMDAgJnNtbXUgMHg0YzAgMHgyMD47CisJaW9tbXUt
-bWFwLW1hc2sgPSA8MHgwMzFmPjsKK307CisKKyZjcDBfdXNiM18wIHsKKwlzdGF0dXMgPSAib2th
-eSI7CisJdXNiLXBoeSA9IDwmY3AwX3VzYjNfMF9waHkwPjsKKwlwaHktbmFtZXMgPSAidXNiIjsK
-K307CisKKyZjcDBfdXNiM18xIHsKKwlzdGF0dXMgPSAib2theSI7CisJdXNiLXBoeSA9IDwmY3Aw
-X3VzYjNfMF9waHkxPjsKKwlwaHktbmFtZXMgPSAidXNiIjsKK307CmRpZmYgLS1naXQgYS9hcmNo
-L2FybTY0L2Jvb3QvZHRzL21hcnZlbGwvY245MTMwLWNyYi1CLmR0cyBiL2FyY2gvYXJtNjQvYm9v
-dC9kdHMvbWFydmVsbC9jbjkxMzAtY3JiLUIuZHRzCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4
-IDAwMDAwMDAwMDAwMC4uMDkwNGNiMDMwOWFlCi0tLSAvZGV2L251bGwKKysrIGIvYXJjaC9hcm02
-NC9ib290L2R0cy9tYXJ2ZWxsL2NuOTEzMC1jcmItQi5kdHMKQEAgLTAsMCArMSw0NiBAQAorLy8g
-U1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjArCisvKgorICogQ29weXJpZ2h0IChDKSAy
-MDIwIE1hcnZlbGwgSW50ZXJuYXRpb25hbCBMdGQuCisgKi8KKworI2luY2x1ZGUgImNuOTEzMC1j
-cmIuZHRzaSIKKworLyB7CisJbW9kZWwgPSAiTWFydmVsbCBBcm1hZGEgQ045MTMwLUNSQi1CIjsK
-K307CisKKyZjcDBfcGNpZTAgeworCXN0YXR1cyA9ICJva2F5IjsKKwludW0tbGFuZXMgPSA8MT47
-CisJbnVtLXZpZXdwb3J0ID0gPDg+OworCS8qIEdlbmVyaWMgUEhZLCBwcm92aWRpbmcgc2VyZGVz
-IGxhbmVzICovCisJcGh5cyA9IDwmY3AwX2NvbXBoeTAgMD47CisJaW9tbXUtbWFwID0KKwkJPDB4
-MCAgICZzbW11IDB4NDgwIDB4MjA+LAorCQk8MHgxMDAgJnNtbXUgMHg0YTAgMHgyMD4sCisJCTww
-eDIwMCAmc21tdSAweDRjMCAweDIwPjsKKwlpb21tdS1tYXAtbWFzayA9IDwweDAzMWY+OworfTsK
-KworJmNwMF9zYXRhMCB7CisJc3RhdHVzID0gIm9rYXkiOworCXNhdGEtcG9ydEAwIHsKKwkJc3Rh
-dHVzID0gIm9rYXkiOworCQkvKiBHZW5lcmljIFBIWSwgcHJvdmlkaW5nIHNlcmRlcyBsYW5lcyAq
-LworCQlwaHlzID0gPCZjcDBfY29tcGh5MiAwPjsKKwl9OworfTsKKworJmNwMF91c2IzXzAgewor
-CXN0YXR1cyA9ICJva2F5IjsKKwl1c2ItcGh5ID0gPCZjcDBfdXNiM18wX3BoeTA+OworCXBoeS1u
-YW1lcyA9ICJ1c2IiOworCXBoeXMgPSA8JmNwMF9jb21waHkxIDA+OworfTsKKworJmNwMF91c2Iz
-XzEgeworCXN0YXR1cyA9ICJva2F5IjsKKwl1c2ItcGh5ID0gPCZjcDBfdXNiM18wX3BoeTE+Owor
-CXBoeS1uYW1lcyA9ICJ1c2IiOworCXBoeXMgPSA8JmNwMF9jb21waHkzIDE+OworfTsKZGlmZiAt
-LWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9jbjkxMzAtY3JiLmR0c2kgYi9hcmNo
-L2FybTY0L2Jvb3QvZHRzL21hcnZlbGwvY245MTMwLWNyYi5kdHNpCm5ldyBmaWxlIG1vZGUgMTAw
-NjQ0CmluZGV4IDAwMDAwMDAwMDAwMC4uNzU5MzM0NzczMjRhCi0tLSAvZGV2L251bGwKKysrIGIv
-YXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2NuOTEzMC1jcmIuZHRzaQpAQCAtMCwwICsxLDIy
-MiBAQAorLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjArCisvKgorICogQ29weXJp
-Z2h0IChDKSAyMDIwIE1hcnZlbGwgSW50ZXJuYXRpb25hbCBMdGQuCisgKi8KKworI2luY2x1ZGUg
-ImNuOTEzMC5kdHNpIiAvKiBpbmNsdWRlIFNvQyBkZXZpY2UgdHJlZSAqLworCisjaW5jbHVkZSA8
-ZHQtYmluZGluZ3MvZ3Bpby9ncGlvLmg+CisKKy8geworCWNob3NlbiB7CisJCXN0ZG91dC1wYXRo
-ID0gInNlcmlhbDA6MTE1MjAwbjgiOworCX07CisKKwlhbGlhc2VzIHsKKwkJaTJjMCA9ICZjcDBf
-aTJjMDsKKwkJZXRoZXJuZXQwID0gJmNwMF9ldGgwOworCQlldGhlcm5ldDEgPSAmY3AwX2V0aDE7
-CisJCWV0aGVybmV0MiA9ICZjcDBfZXRoMjsKKwl9OworCisJbWVtb3J5QDAwMDAwMDAwIHsKKwkJ
-ZGV2aWNlX3R5cGUgPSAibWVtb3J5IjsKKwkJcmVnID0gPDB4MCAweDAgMHgwIDB4ODAwMDAwMDA+
-OworCX07CisKKwlhcDBfcmVnX21tY192Y2NxOiBhcDBfbW1jX3ZjY3FAMCB7CisJCWNvbXBhdGli
-bGUgPSAicmVndWxhdG9yLWdwaW8iOworCQlyZWd1bGF0b3ItbmFtZSA9ICJhcDBfbW1jX3ZjY3Ei
-OworCQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwxODAwMDAwPjsKKwkJcmVndWxhdG9yLW1h
-eC1taWNyb3ZvbHQgPSA8MzMwMDAwMD47CisJCWdwaW9zID0gPCZleHBhbmRlcjAgNSBHUElPX0FD
-VElWRV9ISUdIPjsKKwkJc3RhdGVzID0gPDE4MDAwMDAgMHgxCisJCQkgIDMzMDAwMDAgMHgwPjsK
-Kwl9OworCisJY3AwX3JlZ191c2IzX3ZidXMxOiBjcDBfdXNiM192YnVzQDEgeworCQljb21wYXRp
-YmxlID0gInJlZ3VsYXRvci1maXhlZCI7CisJCXJlZ3VsYXRvci1uYW1lID0gImNwMC14aGNpMS12
-YnVzIjsKKwkJcmVndWxhdG9yLW1pbi1taWNyb3ZvbHQgPSA8NTAwMDAwMD47CisJCXJlZ3VsYXRv
-ci1tYXgtbWljcm92b2x0ID0gPDUwMDAwMDA+OworCQllbmFibGUtYWN0aXZlLWhpZ2g7CisJCWdw
-aW8gPSA8JmV4cGFuZGVyMCA4IEdQSU9fQUNUSVZFX0hJR0g+OworCX07CisKKwljcDBfdXNiM18w
-X3BoeTA6IGNwMF91c2IzX3BoeTAgeworCQljb21wYXRpYmxlID0gInVzYi1ub3AteGNlaXYiOwor
-CX07CisKKwljcDBfdXNiM18wX3BoeTE6IGNwMF91c2IzX3BoeTEgeworCQljb21wYXRpYmxlID0g
-InVzYi1ub3AteGNlaXYiOworCQl2Y2Mtc3VwcGx5ID0gPCZjcDBfcmVnX3VzYjNfdmJ1czE+Owor
-CX07CisKKwljcDBfcmVnX3NkX3ZjY3E6IGNwMF9zZF92Y2NxQDAgeworCQljb21wYXRpYmxlID0g
-InJlZ3VsYXRvci1ncGlvIjsKKwkJcmVndWxhdG9yLW5hbWUgPSAiY3AwX3NkX3ZjY3EiOworCQly
-ZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwxODAwMDAwPjsKKwkJcmVndWxhdG9yLW1heC1taWNy
-b3ZvbHQgPSA8MzMwMDAwMD47CisJCWdwaW9zID0gPCZjcDBfZ3BpbzIgMTggR1BJT19BQ1RJVkVf
-SElHSD47CisJCXN0YXRlcyA9IDwxODAwMDAwIDB4MQorCQkJICAzMzAwMDAwIDB4MD47CisJfTsK
-KworCWNwMF9yZWdfc2RfdmNjOiBjcDBfc2RfdmNjQDAgeworCQljb21wYXRpYmxlID0gInJlZ3Vs
-YXRvci1maXhlZCI7CisJCXJlZ3VsYXRvci1uYW1lID0gImNwMF9zZF92Y2MiOworCQlyZWd1bGF0
-b3ItbWluLW1pY3Jvdm9sdCA9IDwzMzAwMDAwPjsKKwkJcmVndWxhdG9yLW1heC1taWNyb3ZvbHQg
-PSA8MzMwMDAwMD47CisJCWdwaW8gPSA8JmNwMF9ncGlvMiAxOSBHUElPX0FDVElWRV9ISUdIPjsK
-KwkJZW5hYmxlLWFjdGl2ZS1oaWdoOworCQlyZWd1bGF0b3ItYWx3YXlzLW9uOworCX07Cit9Owor
-CismdWFydDAgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKy8qIG9uLWJvYXJkIGVNTUMgVTYg
-Ki8KKyZhcF9zZGhjaTAgeworCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7CisJYnVzLXdpZHRo
-ID0gPDg+OworCXN0YXR1cyA9ICJva2F5IjsKKwltbWMtZGRyLTFfOHY7CisJdnFtbWMtc3VwcGx5
-ID0gPCZhcDBfcmVnX21tY192Y2NxPjsKK307CisKKyZjcDBfc3lzY29uMCB7CisJY3AwX3BpbmN0
-cmw6IHBpbmN0cmwgeworCQljb21wYXRpYmxlID0gIm1hcnZlbGwsY3AxMTUtc3RhbmRhbG9uZS1w
-aW5jdHJsIjsKKworCQljcDBfaTJjMF9waW5zOiBjcDAtaTJjLXBpbnMtMCB7CisJCQltYXJ2ZWxs
-LHBpbnMgPSAibXBwMzciLCAibXBwMzgiOworCQkJbWFydmVsbCxmdW5jdGlvbiA9ICJpMmMwIjsK
-KwkJfTsKKwkJY3AwX2kyYzFfcGluczogY3AwLWkyYy1waW5zLTEgeworCQkJbWFydmVsbCxwaW5z
-ID0gIm1wcDM1IiwgIm1wcDM2IjsKKwkJCW1hcnZlbGwsZnVuY3Rpb24gPSAiaTJjMSI7CisJCX07
-CisJCWNwMF9zZGhjaV9jZF9waW5zX2NyYjogY3AwLXNkaGNpLWNkLXBpbnMtY3JiIHsKKwkJCW1h
-cnZlbGwscGlucyA9ICJtcHA1NSI7CisJCQltYXJ2ZWxsLGZ1bmN0aW9uID0gImdwaW8iOworCQl9
-OworCQljcDBfc2RoY2lfcGluczogY3AwLXNkaGktcGlucy0wIHsKKwkJCW1hcnZlbGwscGlucyA9
-ICJtcHA1NiIsICJtcHA1NyIsICJtcHA1OCIsCisJCQkJICAgICAgICJtcHA1OSIsICJtcHA2MCIs
-ICJtcHA2MSI7CisJCQltYXJ2ZWxsLGZ1bmN0aW9uID0gInNkaW8iOworCQl9OworCQljcDBfc3Bp
-MF9waW5zOiBjcDAtc3BpLXBpbnMtMCB7CisJCQltYXJ2ZWxsLHBpbnMgPSAibXBwMTMiLCAibXBw
-MTQiLCAibXBwMTUiLCAibXBwMTYiOworCQkJbWFydmVsbCxmdW5jdGlvbiA9ICJzcGkxIjsKKwkJ
-fTsKKwl9OworfTsKKworJmNwMF9pMmMwIHsKKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwor
-CXBpbmN0cmwtMCA9IDwmY3AwX2kyYzBfcGlucz47CisJc3RhdHVzID0gIm9rYXkiOworCWNsb2Nr
-LWZyZXF1ZW5jeSA9IDwxMDAwMDA+OworCWV4cGFuZGVyMDogbWNwMjN4MTdAMjAgeworCQljb21w
-YXRpYmxlID0gIm1pY3JvY2hpcCxtY3AyMzAxNyI7CisJCWdwaW8tY29udHJvbGxlcjsKKwkJI2dw
-aW8tY2VsbHMgPSA8Mj47CisJCXJlZyA9IDwweDIwPjsKKwkJc3RhdHVzID0gIm9rYXkiOworCX07
-Cit9OworCismY3AwX2kyYzEgeworCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7CisJcGluY3Ry
-bC0wID0gPCZjcDBfaTJjMV9waW5zPjsKKwljbG9jay1mcmVxdWVuY3kgPSA8MTAwMDAwPjsKKwlz
-dGF0dXMgPSAib2theSI7Cit9OworCisKKyZjcDBfc2RoY2kwIHsKKwlwaW5jdHJsLW5hbWVzID0g
-ImRlZmF1bHQiOworCXBpbmN0cmwtMCA9IDwmY3AwX3NkaGNpX3BpbnMKKwkJICAgICAmY3AwX3Nk
-aGNpX2NkX3BpbnNfY3JiPjsKKwlidXMtd2lkdGggPSA8ND47CisJY2QtZ3Bpb3MgPSA8JmNwMF9n
-cGlvMiAyMyBHUElPX0FDVElWRV9ISUdIPjsKKwl2cW1tYy1zdXBwbHkgPSA8JmNwMF9yZWdfc2Rf
-dmNjcT47CisJdm1tYy1zdXBwbHkgPSA8JmNwMF9yZWdfc2RfdmNjPjsKKwlzdGF0dXMgPSAib2th
-eSI7Cit9OworCismY3AwX3NwaTEgeworCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7CisJcGlu
-Y3RybC0wID0gPCZjcDBfc3BpMF9waW5zPjsKKwlyZWcgPSA8MHg3MDA2ODAgMHg1MD4sCQkvKiBj
-b250cm9sICovCisJICAgICAgPDB4MjAwMDAwMCAweDEwMDAwMDA+OwkvKiBDUzAgKi8KKwlzdGF0
-dXMgPSAib2theSI7CisKKwlzcGktZmxhc2hAMCB7CisJCSNhZGRyZXNzLWNlbGxzID0gPDB4MT47
-CisJCSNzaXplLWNlbGxzID0gPDB4MT47CisJCWNvbXBhdGlibGUgPSAiamVkZWMsc3BpLW5vciI7
-CisJCXJlZyA9IDwweDA+OworCQkvKiBPbi1ib2FyZCBNVVggZG9lcyBub3QgYWxsb3cgaGlnaGVy
-IGZyZXF1ZW5jaWVzICovCisJCXNwaS1tYXgtZnJlcXVlbmN5ID0gPDQwMDAwMDAwPjsKKworCQlw
-YXJ0aXRpb25zIHsKKwkJCWNvbXBhdGlibGUgPSAiZml4ZWQtcGFydGl0aW9ucyI7CisJCQkjYWRk
-cmVzcy1jZWxscyA9IDwxPjsKKwkJCSNzaXplLWNlbGxzID0gPDE+OworCisJCQlwYXJ0aXRpb25A
-MCB7CisJCQkJbGFiZWwgPSAiVS1Cb290IjsKKwkJCQlyZWcgPSA8MHgwIDB4MjAwMDAwPjsKKwkJ
-CX07CisKKwkJCXBhcnRpdGlvbkA0MDAwMDAgeworCQkJCWxhYmVsID0gIkZpbGVzeXN0ZW0iOwor
-CQkJCXJlZyA9IDwweDIwMDAwMCAweGUwMDAwMD47CisJCQl9OworCQl9OworCX07Cit9OworCism
-Y3AwX21kaW8geworCXN0YXR1cyA9ICJva2F5IjsKKwlwaHkwOiBldGhlcm5ldC1waHlAMCB7CisJ
-CXJlZyA9IDwwPjsKKwl9OworfTsKKworJmNwMF94bWRpbyB7CisJc3RhdHVzID0gIm9rYXkiOwor
-CW5iYXNldF9waHkwOiBldGhlcm5ldC1waHlAMCB7CisJCWNvbXBhdGlibGUgPSAiZXRoZXJuZXQt
-cGh5LWllZWU4MDIuMy1jNDUiOworCQlyZWcgPSA8MD47CisJfTsKK307CisKKyZjcDBfZXRoZXJu
-ZXQgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZjcDBfZXRoMCB7CisJLyogVGhpcyBwb3J0
-IGlzIGNvbm5lY3RlZCB0byA4OEU2MzkzWCBzd2l0Y2ggKi8KKwlzdGF0dXMgPSAib2theSI7CisJ
-cGh5LW1vZGUgPSAiMTBnYmFzZS1rciI7CisJbWFuYWdlZCA9ICJpbi1iYW5kLXN0YXR1cyI7CisJ
-cGh5cyA9IDwmY3AwX2NvbXBoeTQgMD47Cit9OworCismY3AwX2V0aDEgeworCXN0YXR1cyA9ICJv
-a2F5IjsKKwlwaHkgPSA8JnBoeTA+OworCXBoeS1tb2RlID0gInJnbWlpLWlkIjsKK307CisKKyZj
-cDBfZXRoMiB7CisJLyogVGhpcyBwb3J0IHVzZXMgIjI1MDBiYXNlLXQiIHBoeS1tb2RlICovCisJ
-c3RhdHVzID0gImRpc2FibGVkIjsKKwlwaHkgPSA8Jm5iYXNldF9waHkwPjsKKwlwaHlzID0gPCZj
-cDBfY29tcGh5NSAyPjsKK307CisKLS0gCjIuMTcuMQoKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
-aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+From: Konstantin Porotchkin <kostap@marvell.com>
+
+Change all 10G port modes in Armada family device trees from
+10gbase-kr to 10gbase-r
+
+Signed-off-by: Konstantin Porotchkin <kostap@marvell.com>
+Suggested-by: Russell King <linux@armlinux.org.uk>
+---
+ arch/arm64/boot/dts/marvell/armada-7040-db.dts | 2 +-
+ arch/arm64/boot/dts/marvell/armada-8040-db.dts | 4 ++--
+ arch/arm64/boot/dts/marvell/cn9130-crb.dtsi    | 2 +-
+ arch/arm64/boot/dts/marvell/cn9130-db.dtsi     | 2 +-
+ arch/arm64/boot/dts/marvell/cn9131-db.dtsi     | 2 +-
+ arch/arm64/boot/dts/marvell/cn9132-db.dtsi     | 2 +-
+ 6 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/marvell/armada-7040-db.dts b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
+index 51f3e2907597..cd326fe224ce 100644
+--- a/arch/arm64/boot/dts/marvell/armada-7040-db.dts
++++ b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
+@@ -282,7 +282,7 @@
+ &cp0_eth0 {
+ 	status = "okay";
+ 	/* Network PHY */
+-	phy-mode = "10gbase-kr";
++	phy-mode = "10gbase-r";
+ 	/* Generic PHY, providing serdes lanes */
+ 	phys = <&cp0_comphy2 0>;
+ 
+diff --git a/arch/arm64/boot/dts/marvell/armada-8040-db.dts b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
+index e39e1efc95b6..f2e8e0df8865 100644
+--- a/arch/arm64/boot/dts/marvell/armada-8040-db.dts
++++ b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
+@@ -195,7 +195,7 @@
+ 
+ &cp0_eth0 {
+ 	status = "okay";
+-	phy-mode = "10gbase-kr";
++	phy-mode = "10gbase-r";
+ 
+ 	fixed-link {
+ 		speed = <10000>;
+@@ -348,7 +348,7 @@
+ 
+ &cp1_eth0 {
+ 	status = "okay";
+-	phy-mode = "10gbase-kr";
++	phy-mode = "10gbase-r";
+ 
+ 	fixed-link {
+ 		speed = <10000>;
+diff --git a/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi b/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi
+index 75933477324a..9f0efcdacdf1 100644
+--- a/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi
++++ b/arch/arm64/boot/dts/marvell/cn9130-crb.dtsi
+@@ -202,7 +202,7 @@
+ &cp0_eth0 {
+ 	/* This port is connected to 88E6393X switch */
+ 	status = "okay";
+-	phy-mode = "10gbase-kr";
++	phy-mode = "10gbase-r";
+ 	managed = "in-band-status";
+ 	phys = <&cp0_comphy4 0>;
+ };
+diff --git a/arch/arm64/boot/dts/marvell/cn9130-db.dtsi b/arch/arm64/boot/dts/marvell/cn9130-db.dtsi
+index 39fc90716454..2cd4bb09e8ff 100644
+--- a/arch/arm64/boot/dts/marvell/cn9130-db.dtsi
++++ b/arch/arm64/boot/dts/marvell/cn9130-db.dtsi
+@@ -126,7 +126,7 @@
+ /* SLM-1521-V2, CON9 */
+ &cp0_eth0 {
+ 	status = "okay";
+-	phy-mode = "10gbase-kr";
++	phy-mode = "10gbase-r";
+ 	/* Generic PHY, providing serdes lanes */
+ 	phys = <&cp0_comphy4 0>;
+ 	managed = "in-band-status";
+diff --git a/arch/arm64/boot/dts/marvell/cn9131-db.dtsi b/arch/arm64/boot/dts/marvell/cn9131-db.dtsi
+index daddab638fb8..f995b1bcda01 100644
+--- a/arch/arm64/boot/dts/marvell/cn9131-db.dtsi
++++ b/arch/arm64/boot/dts/marvell/cn9131-db.dtsi
+@@ -85,7 +85,7 @@
+ /* CON50 */
+ &cp1_eth0 {
+ 	status = "okay";
+-	phy-mode = "10gbase-kr";
++	phy-mode = "10gbase-r";
+ 	/* Generic PHY, providing serdes lanes */
+ 	phys = <&cp1_comphy4 0>;
+ 	managed = "in-band-status";
+diff --git a/arch/arm64/boot/dts/marvell/cn9132-db.dtsi b/arch/arm64/boot/dts/marvell/cn9132-db.dtsi
+index 5948de6b4638..3f1795fb4fe7 100644
+--- a/arch/arm64/boot/dts/marvell/cn9132-db.dtsi
++++ b/arch/arm64/boot/dts/marvell/cn9132-db.dtsi
+@@ -103,7 +103,7 @@
+ /* SLM-1521-V2, CON9 */
+ &cp2_eth0 {
+ 	status = "disabled";
+-	phy-mode = "10gbase-kr";
++	phy-mode = "10gbase-r";
+ 	/* Generic PHY, providing serdes lanes */
+ 	phys = <&cp2_comphy4 0>;
+ 	managed = "in-band-status";
+-- 
+2.17.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
