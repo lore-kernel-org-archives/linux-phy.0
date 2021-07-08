@@ -2,84 +2,73 @@ Return-Path: <SRS0=EZuF=MA=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_NONE,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9A6C2C07E96
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 13:47:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5475DC07E96
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 15:50:51 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2491F613D1
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 13:47:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2491F613D1
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=armlinux.org.uk
+	by mail.kernel.org (Postfix) with ESMTPS id 1072561621
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jul 2021 15:50:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1072561621
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=THPgPCPf5D0rs2SpkZil5MnbAn7M59rcA+iOJNsy7hk=; b=IHEjyjLxwm8hUL
-	e4YUs6hXdDzaDQJS2CtM80JXA18ww8vjb4ZimLZhkHqk1SmlKbKT4p/dioD8gIBddhnGvlLNx0KgF
-	yvWsvOQKDHRc+CjSo/4vBm7llq2bz/jlySkkhS7Nk9opHGpsnA0V2hF/D+JAyc1bhYYcoFapkUBuC
-	I7Xd/6PBqQDIdSYivgKp0sq9ANrqXONk9qXDDM8Q8+S5sA+a2y1m2Rre9zN+Q+pnRCyg2O/iaiHmc
-	5fyIaL+ymfG95Qkq+2lg8L+UHH27xN78IW9f4Ui2bkd2HUH/TwSh0GxZvxrXiUj2InJKj91uC8KQy
-	Aslr8pN1ufQuYiXlIr4A==;
+	List-Owner; bh=2c33BTSLmOsq3TBSksEljVqwo9MqLNwh0QhVJfa8lv8=; b=1OFSmwqO/3JGCF
+	UP/Ep8MWy50HimAu988csN53PH5x4g4pMnIktbOxYCuQlPKBBWxQNk/1HmcDfySegvZBU92J4Rrqw
+	1CfaSkKrTX5h8NUGYwhSDK0jm3VUXUweITY2oCCLfmgrBD5u7Ya/N0futuZr6EqowmWkjUIUPkp6m
+	3i5yyQZKoKC1po7VtD7cLwCFLhtm4mBO8FYbpHqumxiP2Z2pnZYXjwXWDx4ngnDCsA7+OXwDfOQJ/
+	A6DFKCY3eYomyODyCBi4ECaGZcs1er5uvXt1iluUuKmDBzqD8oeEdgT9ExgMBWSX29hK/+u25VOde
+	MMhJ7FSq6Sl73sPqm0GQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m1UND-00H7zz-EA; Thu, 08 Jul 2021 13:47:27 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1m1WIc-00HJsV-JH; Thu, 08 Jul 2021 15:50:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m1UNA-00H7z9-FI; Thu, 08 Jul 2021 13:47:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1onv7D7UfHyZd8wp8ojsjToOmTb+gozwlqpKz22PFwA=; b=TpZkE+0BQeQej1Agy5fZqyTFT
- hFSYwtGsK8Pl+xngd8lz79GnwL+3yN0X+W+qtFrhv+pJFh8XZlBfSZuIBUCUkcn/IiKtdPYXJQMtx
- HMs/fl7rkKdoPTLQuJt4psYINCtusbYYLmROGLujLQMGzhzSIFHGo7lBZAs0pKDgBkxQZN/+db2V4
- t+Cafd1TchDzzeDobP+gzHLGTXklXgsDW/faAZsdni5GlC0svTdFPk+UUfYlUXdapHTEF7b1ul3HQ
- VLcyNW8Ti3U1KRU3mpIABO7RaBFtDydNHcb1eNMyLFrHyC1QPWsOfw8PsCOE+gOIz7btAG7bPnDVM
- 9/d2T69mA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:45872)
- by pandora.armlinux.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <linux@armlinux.org.uk>)
- id 1m1UN0-0000jh-7e; Thu, 08 Jul 2021 14:47:14 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1m1UMw-0003wE-ER; Thu, 08 Jul 2021 14:47:10 +0100
-Date: Thu, 8 Jul 2021 14:47:10 +0100
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: kostap@marvell.com
-Cc: miquel.raynal@bootlin.com, kishon@ti.com, vkoul@kernel.org,
- robh+dt@kernel.org, andrew@lunn.ch, gregory.clement@bootlin.com,
- sebastian.hesselbarth@gmail.com, vladimir.vid@sartura.hr,
- luka.kovacic@sartura.hr, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, mw@semihalf.com,
- jaz@semihalf.com, nadavh@marvell.com, stefanc@marvell.com,
- bpeled@marvell.com
-Subject: Re: [PATCH v7 5/5] arch/arm64: dts: change 10gbase-kr to 10gbase-r
- in Armada
-Message-ID: <20210708134710.GW22278@shell.armlinux.org.uk>
-References: <20210708124612.30742-1-kostap@marvell.com>
- <20210708124612.30742-6-kostap@marvell.com>
+ id 1m1WID-00HJiS-Hh; Thu, 08 Jul 2021 15:50:29 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 99971616EA;
+ Thu,  8 Jul 2021 15:50:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1625759423;
+ bh=uCwa8ScPFO0U2r/s3wua3LONDVtbY/hwWP8xPNq4Iw4=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=QkAceOckiRR6IJtjS3hcBguwcAMkbGO+QQ46rN95bMUXVvPG3wtECROAM0q1CNJX8
+ BQ9urF579EYmxkHJj0T5ozj8v51kCtFWUI0BJqwMlttanq4gdoyPZt05JkLrIGCOBQ
+ MvN66bNxthL6I76HwPZJETb0i3gvwXCNDY8yMqi3Ha1Ka6xKGRIu9ud7fxbrbp7QnP
+ JPULNG6V2G65oUc8z2n1B5WuCszlhh8C/K2MGFWtGEK4aBQncMiEocm9LPol2PrDrV
+ 8LKFTOu6KFNVbZ6lkkJIQ8epvrGqRpg6OFkYhnEHzFac6xTmlic0S99dQTGDQXP7KY
+ aUsQy5w1QtxEQ==
+Received: by mail.kernel.org with local (Exim 4.94.2)
+ (envelope-from <mchehab@kernel.org>)
+ id 1m1WI4-008VVF-Iy; Thu, 08 Jul 2021 17:50:16 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Wei Xu <xuwei5@hisilicon.com>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH RFC 5/7] bindings: phy: add bindings for Hikey 960 PCIe PHY
+Date: Thu,  8 Jul 2021 17:50:12 +0200
+Message-Id: <28b9aa4d2d182d4705d7837c9165ae7b5bd8d141.1625758732.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.31.1
+In-Reply-To: <cover.1625758732.git.mchehab+huawei@kernel.org>
+References: <cover.1625758732.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210708124612.30742-6-kostap@marvell.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210708_064724_554838_1BB136DE 
-X-CRM114-Status: UNSURE (   7.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210708_085025_721058_81B6B329 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,22 +85,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 08, 2021 at 03:46:12PM +0300, kostap@marvell.com wrote:
-> From: Konstantin Porotchkin <kostap@marvell.com>
-> 
-> Change all 10G port modes in Armada family device trees from
-> 10gbase-kr to 10gbase-r
-> 
-> Signed-off-by: Konstantin Porotchkin <kostap@marvell.com>
-> Suggested-by: Russell King <linux@armlinux.org.uk>
+Document the bindings for Hikey 960 (hi3660) PCIe PHY
+interface, supported via the pcie-kirin driver.
 
-Please change the "suggested-by" to:
-Suggested-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+---
+ .../phy/hisilicon,phy-hi3660-pcie.yaml        | 70 +++++++++++++++++++
+ arch/arm64/boot/dts/hisilicon/hi3660.dtsi     | 11 +--
+ 2 files changed, 76 insertions(+), 5 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3660-pcie.yaml
 
-Reviewed-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
+diff --git a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3660-pcie.yaml b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3660-pcie.yaml
+new file mode 100644
+index 000000000000..e91a38450461
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3660-pcie.yaml
+@@ -0,0 +1,70 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/hisilicon,phy-hi3660-pcie.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Hisilicon Kirin960 PCIe PHY
++
++maintainers:
++  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
++
++description: |+
++  Bindings for PCIe PHY on HiSilicon Kirin 960.
++
++properties:
++  compatible:
++    const: hisilicon,hi960-pcie-phy
++
++  "#phy-cells":
++    const: 0
++
++  reg:
++    maxItems: 1
++    description: PHY Control registers
++
++  reg-names:
++    const: phy
++
++  clocks:
++    items:
++      - description: PCIe PHY clock
++      - description: PCIe APB PHY clock
++
++  clock-names:
++    items:
++      - const: pcie_phy_ref
++      - const: pcie_apb_phy
++
++  reset-gpios:
++    description: PCI PERST reset GPIO(s)
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - clock-names
++  - reset-gpios
++
++additionalProperties: false
++
++examples:
++  - |
++    bus {
++      #address-cells = <2>;
++      #size-cells = <2>;
++
++      pcie_phy: pcie-phy@f3f2000 {
++        compatible = "hisilicon,hi960-pcie-phy";
++        reg = <0x0 0xf3f20000 0x0 0x40000>;
++        reg-names = "phy";
++        clocks = <&crg_ctrl HI3660_PCIEPHY_REF>,
++                 <&crg_ctrl HI3660_PCLK_GATE_PCIE_PHY>;
++        clock-names = "pcie_phy_ref", "pcie_apb_phy";
++        reset-gpios = <&gpio11 1 0 >;
++        #phy-cells = <0>;
++      };
++    };
++...
+diff --git a/arch/arm64/boot/dts/hisilicon/hi3660.dtsi b/arch/arm64/boot/dts/hisilicon/hi3660.dtsi
+index 3a589fa4ca81..96c978db12dc 100644
+--- a/arch/arm64/boot/dts/hisilicon/hi3660.dtsi
++++ b/arch/arm64/boot/dts/hisilicon/hi3660.dtsi
+@@ -1006,8 +1006,10 @@ pcie_phy: pcie-phy@f3f2000 {
+ 			reg = <0x0 0xf3f20000 0x0 0x40000>;
+ 			reg-names = "phy";
+ 			clocks = <&crg_ctrl HI3660_PCIEPHY_REF>,
+-				 <&crg_ctrl HI3660_PCLK_GATE_PCIE_PHY>;
+-			clock-names = "pcie_phy_ref", "pcie_apb_phy";
++				 <&crg_ctrl HI3660_PCLK_GATE_PCIE_PHY>,
++				 <&crg_ctrl HI3660_ACLK_GATE_PCIE>;
++			clock-names = "pcie_phy_ref", "pcie_apb_phy",
++				      "pcie_aclk";
+ 			reset-gpios = <&gpio11 1 0 >;
+ 			#phy-cells = <0>;
+ 		};
+@@ -1040,9 +1042,8 @@ &gic GIC_SPI 284 IRQ_TYPE_LEVEL_HIGH>,
+ 					<0x0 0 0 4
+ 					 &gic GIC_SPI 285 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&crg_ctrl HI3660_CLK_GATE_PCIEAUX>,
+-				 <&crg_ctrl HI3660_PCLK_GATE_PCIE_SYS>,
+-				 <&crg_ctrl HI3660_ACLK_GATE_PCIE>;
+-			clock-names = "pcie_aux", "pcie_apb_sys", "pcie_aclk";
++				 <&crg_ctrl HI3660_PCLK_GATE_PCIE_SYS>;
++			clock-names = "pcie_aux", "pcie_apb_sys";
+ 		};
+ 
+ 		/* UFS */
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
+2.31.1
+
 
 -- 
 linux-phy mailing list
