@@ -2,71 +2,73 @@ Return-Path: <SRS0=210v=MB=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-12.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D033AC07E99
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jul 2021 10:42:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 10FB8C07E9B
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jul 2021 10:42:19 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 94FA1613D1
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jul 2021 10:42:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 94FA1613D1
+	by mail.kernel.org (Postfix) with ESMTPS id CE724613D1
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jul 2021 10:42:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CE724613D1
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=n0bNwfrPcOYbJqm+aclQ6qq06Gwy9P9ZxfjqgalAiUE=; b=TCX+z/vxEEENWn
-	sQIGMKps6pD/YfQMWDqPSbs9Hni5erp6nTZ9TSxcs8tG2RX8zmB249ifZbOmqXkeQEfL53/Svpa7N
-	cncBrmAwCCBdpwQLtKbqJZZXlrGySdlQh8fVR2p7kzysnSaLhoC5WaP2Pd0emMOAywo1zKLnEpo9o
-	FqpVyKSn/dPynyIhdPSOEAyAWLIg1LVRMSb4ODIWT+wHlo4OCau87iOrSaOf2YXTBWkYuBknUTBsZ
-	fRBCe7R7mxpBkySHZN+tb2IEztRciZ9GVn4jOA9xVVbvy3BwwdDHqJSd3rNgI7ncg0XV78d7vXQdM
-	Sj3wyfIMw6LK5fkTI7UA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uRoWiWgxj2RkFufYHzUVWVIqCWZksM7khJQgXcm9bY8=; b=cUrD8A+hysksNg
+	6dTxiGUCmRkMssFCVluT/ufP+qaGyYmRxPhF3QFi40D7rPcKk22Hl//SjQ+dohBLVoqo/6+Gs5qGJ
+	dkqajiCykoc+frcOh3bbV3liS0NF9wg8CJysZP1LqhJdgt1NvHr7DTd9aVujJgYr4jZ9MFs3Ch54f
+	2YZ47cz7YLaIsMGLlSFlrpK4PdB12ftoDnKZnoZwtFjhc6Fv8FfPG7WfZ+SIQMb+zRgIBnCLy2vqp
+	2te/CzSfCK78/2qdufNHMz9hu5RYtc59p69Gs7ANoBqrqb3jPzEc7hIa8p+vGvjcEranSqAoJgRUr
+	uQEKaB5zGVPB6EgKSGag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m1nxQ-001Zen-3Q; Fri, 09 Jul 2021 10:42:08 +0000
+	id 1m1nxa-001Zga-C1; Fri, 09 Jul 2021 10:42:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m1nx9-001ZVn-Je; Fri, 09 Jul 2021 10:41:53 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 390F5613D6;
- Fri,  9 Jul 2021 10:41:51 +0000 (UTC)
+ id 1m1nxA-001ZXu-HM
+ for linux-phy@lists.infradead.org; Fri, 09 Jul 2021 10:41:57 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 41C08613D1;
+ Fri,  9 Jul 2021 10:41:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1625827311;
- bh=LIIAa/aqK4HB8FJB22iEgxigFKB0TfOTlDkd+ACAaEQ=;
- h=From:To:Cc:Subject:Date:From;
- b=l+AHKjtkC4zwuTRSoEPGei9fYxI51Dc8P8waNHA4MdpkUCBKqdWWk2+p2JofNH372
- AKD0zhy6ejV+UUO2ZEqD8Xr58XkRDTmx1J2an3JG6Rb5rtWbKcelyRmGTAWSpp1OAw
- s1vIKZJaHa13/cmHYiu6nk61+Yv7ekJM5lqTRf2rcmKKF+kCM32erCLOvk82/GGufA
- +0YCG6sCyJ3XKBBIh6J0lTUG2O9FSb5hco2KeV8/WN5ctCCHcbmlyMDsUeSqI/xoek
- aqumwamXfIfXiu1p/B3Y2FUfZzqHuCVKAq2ICK2dhriFSYiNtcD/16+LvyjscR3iWn
- 2+MY7cCM889FA==
+ s=k20201202; t=1625827312;
+ bh=wfUzRS73CLi9JPmsY6swuZBS9fgBSlej69+zvdJdWm8=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=G4rvgZ9KIBB02ZiO9k2bdylxw5yOPJ8ex4N36xKUXh2pQbJJwtBcACu1K5V+atOmo
+ KjyV2goEuIRO1YgM6R/VaStOsA6y9wFdzht2wa18Vlin7iNeaKuWTbnMWY/jQ2VFvr
+ y1dQElerIpgLvVfzRPqpIOZehXUHSEwQHi0d+IealJhZ/MirSD98i65UwOAlkBn8n1
+ MxGNPSN5Wbvy0luUSDVNWrZL0NzpwrPeaucdJckd6sQhS9ZY2Rqu02f74F+duiz5aA
+ 39OIecn0D04FCMhBDWmqLI88VJ9b+QY+AF+W0OVVqebK0bNeJzi2C33WpgJeZ53jyn
+ 2IUIJ1XcuF1+w==
 Received: by mail.kernel.org with local (Exim 4.94.2)
  (envelope-from <mchehab@kernel.org>)
- id 1m1nx7-00B5FP-3x; Fri, 09 Jul 2021 12:41:49 +0200
+ id 1m1nx7-00B5FV-6z; Fri, 09 Jul 2021 12:41:49 +0200
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 To: Manivannan Sadhasivam <mani@kernel.org>,
 	Rob Herring <robh@kernel.org>
 Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
  Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
- Binghui Wang <wangbinghui@hisilicon.com>, Rob Herring <robh+dt@kernel.org>,
- Xiaowei Song <songxiaowei@hisilicon.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: [PATCH v3 0/9] Add support for Hikey 970 PCIe
-Date: Fri,  9 Jul 2021 12:41:36 +0200
-Message-Id: <cover.1625826353.git.mchehab+huawei@kernel.org>
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH v3 2/9] dt-bindings: phy: add bindings for Hikey 970 PCIe PHY
+Date: Fri,  9 Jul 2021 12:41:38 +0200
+Message-Id: <efa7981b73e4885158baa8085ac9420e5f1ac182.1625826353.git.mchehab+huawei@kernel.org>
 X-Mailer: git-send-email 2.31.1
+In-Reply-To: <cover.1625826353.git.mchehab+huawei@kernel.org>
+References: <cover.1625826353.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210709_034151_753399_47415014 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20210709_034152_642429_254FF564 
+X-CRM114-Status: GOOD (  11.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,117 +85,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-As requested by Rob Herring, this series split the PHY part into a separate driver.
-Then, it adds support for Kirin 970 on a single patch.
+Document the bindings for Hikey 960 (hi3660) PCIe PHY
+interface, supported via the pcie-kirin driver.
 
-With this change, the PHY-specific device tree bindings for Kirin 960 moved
-to its own PHY properties.
-
-Manivannan,
-
-Please notice that the last two patches are marked as co-developed:
-
-	phy: hisilicon: add driver for Kirin 970 PCIe PHY
-	arm64: dts: hisilicon: Add support for HiKey 970 PCIe controller hardware
-
-The first one contains the code you submitted in the past adding
-support for Kirin 970 at the pcie-kirin driver, modified by me and
-moved to a separate driver.
-
-The second one is the DTS file, also modified by me in order to split the PHY
-properties from the PCIe ones.
-
-Please send your SoB to confirm that both changes are OK for you.
-
-Tested on Hikey970:
-
-  $ lspci
-  00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
-  01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-  02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-  02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-  02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-  02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-  02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-  06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
-
-  $ ethtool enp6s0
-  Settings for enp6s0:
-	Supported ports: [ TP	 MII ]
-	Supported link modes:   10baseT/Half 10baseT/Full
-	                        100baseT/Half 100baseT/Full
-	                        1000baseT/Half 1000baseT/Full
-	Supported pause frame use: Symmetric Receive-only
-	Supports auto-negotiation: Yes
-	Supported FEC modes: Not reported
-	Advertised link modes:  10baseT/Half 10baseT/Full
-	                        100baseT/Half 100baseT/Full
-	                        1000baseT/Half 1000baseT/Full
-	Advertised pause frame use: Symmetric Receive-only
-	Advertised auto-negotiation: Yes
-	Advertised FEC modes: Not reported
-	Link partner advertised link modes:  10baseT/Half 10baseT/Full
-	                                     100baseT/Half 100baseT/Full
-	Link partner advertised pause frame use: Symmetric Receive-only
-	Link partner advertised auto-negotiation: Yes
-	Link partner advertised FEC modes: Not reported
-	Speed: 100Mb/s
-	Duplex: Full
-	Auto-negotiation: on
-	master-slave cfg: preferred slave
-	master-slave status: slave
-	Port: Twisted Pair
-	PHYAD: 0
-	Transceiver: external
-	MDI-X: Unknown
-  netlink error: Operation not permitted
-	Link detected: yes
-
-Partially tested on Hikey 960[1]:
-
-  $ lspci
-  00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3660 (rev 01)
-
-[1] The Hikey 960 doesn't come with any internal PCIe device.
-    Its hardware supports just an external device via a M.2 slot that
-    doesn't support SATA. I ordered a NVMe device to test, but the vendor
-    is currently out of supply. It should take 4-5 weeks to arrive here. I'll
-    run an extra test on it once it arrives.
-
-Manivannan Sadhasivam (1):
-  arm64: dts: hisilicon: Add support for HiKey 970 PCIe controller
-    hardware
-
-Mauro Carvalho Chehab (8):
-  dt-bindings: phy: add bindings for Hikey 960 PCIe PHY
-  dt-bindings: phy: add bindings for Hikey 970 PCIe PHY
-  dt-bindings: PCI: kirin: fix compatible string
-  dt-bindings: PCI: kirin: drop PHY properties
-  phy: hisilicon: add a PHY driver for Kirin 960
-  PCI: kirin: drop the PHY logic from the driver
-  PCI: kirin: use regmap for APB registers
-  phy: hisilicon: add driver for Kirin 970 PCIe PHY
-
- .../devicetree/bindings/pci/kirin-pcie.txt    |  21 +-
- .../phy/hisilicon,phy-hi3660-pcie.yaml        |  82 ++
- .../phy/hisilicon,phy-hi3670-pcie.yaml        | 101 ++
- arch/arm64/boot/dts/hisilicon/hi3660.dtsi     |  29 +-
- arch/arm64/boot/dts/hisilicon/hi3670.dtsi     |  72 ++
- .../boot/dts/hisilicon/hikey970-pmic.dtsi     |   1 -
- drivers/pci/controller/dwc/pcie-kirin.c       | 298 ++----
- drivers/phy/hisilicon/Kconfig                 |  20 +
- drivers/phy/hisilicon/Makefile                |   2 +
- drivers/phy/hisilicon/phy-hi3660-pcie.c       | 325 +++++++
- drivers/phy/hisilicon/phy-hi3670-pcie.c       | 892 ++++++++++++++++++
- 11 files changed, 1572 insertions(+), 271 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3660-pcie.yaml
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+---
+ .../phy/hisilicon,phy-hi3670-pcie.yaml        | 101 ++++++++++++++++++
+ 1 file changed, 101 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
- create mode 100644 drivers/phy/hisilicon/phy-hi3660-pcie.c
- create mode 100644 drivers/phy/hisilicon/phy-hi3670-pcie.c
 
+diff --git a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+new file mode 100644
+index 000000000000..eddf2f2b6382
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+@@ -0,0 +1,101 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/hisilicon,phy-hi3670-pcie.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Hisilicon Kirin970 PCIe PHY
++
++maintainers:
++  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
++
++description: |+
++  Bindings for PCIe PHY on HiSilicon Kirin 970.
++
++properties:
++  compatible:
++    const: hisilicon,hi970-pcie-phy
++
++  "#phy-cells":
++    const: 0
++
++  reg:
++    maxItems: 1
++    description: PHY Control registers
++
++  reg-names:
++    const: phy
++
++  phy-supply:
++    description: The PCIe PHY power supply
++
++  clocks:
++    items:
++      - description: PCIe PHY clock
++      - description: PCIe AUX clock
++      - description: PCIe APB PHY clock
++      - description: PCIe APB SYS clock
++      - description: PCIe ACLK clock
++
++  clock-names:
++    items:
++      - const: pcie_phy_ref
++      - const: pcie_aux
++      - const: pcie_apb_phy
++      - const: pcie_apb_sys
++      - const: pcie_aclk
++
++  reset-gpios:
++    description: PCI PERST reset GPIOs
++    maxItems: 4
++
++  clkreq-gpios:
++    description: Clock request GPIOs
++    maxItems: 3
++
++  hisilicon,eye-diagram-param:
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    description: Eye diagram for phy.
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - clock-names
++  - reset-gpios
++  - clkreq-gpios
++  - hisilicon,eye-diagram-param
++  - phy-supply
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/hi3670-clock.h>
++
++    bus {
++      #address-cells = <2>;
++      #size-cells = <2>;
++      pcie_phy: pcie-phy@fc000000 {
++        compatible = "hisilicon,hi970-pcie-phy";
++        reg = <0x0 0xfc000000 0x0 0x80000>;
++        reg-names = "phy";
++        #phy-cells = <0>;
++        phy-supply = <&ldo33>;
++        clocks = <&crg_ctrl HI3670_CLK_GATE_PCIEPHY_REF>,
++                 <&crg_ctrl HI3670_CLK_GATE_PCIEAUX>,
++                 <&crg_ctrl HI3670_PCLK_GATE_PCIE_PHY>,
++                 <&crg_ctrl HI3670_PCLK_GATE_PCIE_SYS>,
++                 <&crg_ctrl HI3670_ACLK_GATE_PCIE>;
++        clock-names = "pcie_phy_ref", "pcie_aux",
++                      "pcie_apb_phy", "pcie_apb_sys", "pcie_aclk";
++        reset-gpios = <&gpio7 0 0 >, <&gpio25 2 0 >,
++                      <&gpio3 1 0 >, <&gpio27 4 0 >;
++        clkreq-gpios = <&gpio20 6 0 >, <&gpio27 3 0 >, <&gpio17 0 0 >;
++        hisilicon,eye-diagram-param = <0xFFFFFFFF 0xFFFFFFFF
++                                       0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF>;
++      };
++    };
++...
 -- 
 2.31.1
-
 
 
 -- 
