@@ -1,99 +1,73 @@
-Return-Path: <SRS0=210v=MB=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=ueBc=MC=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A48ECC07E99
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jul 2021 17:36:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D947EC11F6E
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Jul 2021 02:28:53 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 394EB613C3
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jul 2021 17:36:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 394EB613C3
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=canonical.com
+	by mail.kernel.org (Postfix) with ESMTPS id B3FD5613B7
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Jul 2021 02:28:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B3FD5613B7
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1IkA4pBKjfpyqqAXpEwK1XAie2Jii0jAWDNsifdF8wQ=; b=MnC5g/OBcztPsEHZLq1gpekHN+
-	99TT05LrR8HGFp1xE+anonwm4RH8wRhrsUzGN1lhlLMgjJ5imbqK06ljmFtOGzsMzClZDqG5uw1/8
-	EOmdjojwvM6GzC6lNt5AdqN8AVLGnpOA6dlIQpz1C6Xmq82u9xNuPOAxqyi8gp4LA4qIXdyx+h/Ug
-	QDdvv9z5ipID1ZvJcRB6PLPNQbO0Z2HSV1rMeEuhrQ+H+iWn+KozULkW/5flDdUj/x4pFaf6aBa5N
-	RHG6LAtVhbAmId6Y2A+I/3M66q4G0ze3MtUpcJ9+2VqkIRoGaHZo7jtwEEUQIIezlWqtYV4lMaCCt
-	CayGGl/w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qsvvQcXe1KCTKh+YVfkNKdcwCVsfRU4drQMv5KZiiQo=; b=tKPgqQnhO8v4h0
+	+tvM2GB3H3xdFX0/eRoC+doU/Yb2/HKO6Ve91cBx7MDwjXx3NKvVtfmHa0aT5et/6QGRdFakdeTTz
+	5MYTlfJKAB3dg+JtDczoLWADoLmhhiElT3yULy1pWJr5qnCGcfBN+CoB9VVX0csojDF2ZmFLK9U7C
+	6yvYJocHIQ4XKRTqtzgimw6/LwchmJ22LRBGi69hXlk4Cl3/uUcahkSA8oY7xBxzaxLYvC2OSRZhE
+	XF1Obi0C19BuKFrtQ/TaEVIpoNNjf6o42HdamAvdz8aBUe9E8iFkpNn0WofrWvGkWyMFPw2n94p9D
+	YuVvPiDOCIHObY/vbj0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m1uQf-002DeN-MO; Fri, 09 Jul 2021 17:36:45 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1m22jc-002qn1-SJ; Sat, 10 Jul 2021 02:28:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m1uQc-002De0-D5
- for linux-phy@lists.infradead.org; Fri, 09 Jul 2021 17:36:44 +0000
-Received: from mail-wr1-f71.google.com ([209.85.221.71])
- by youngberry.canonical.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
- (envelope-from <krzysztof.kozlowski@canonical.com>)
- id 1m1uQb-0003Bq-3r
- for linux-phy@lists.infradead.org; Fri, 09 Jul 2021 17:36:41 +0000
-Received: by mail-wr1-f71.google.com with SMTP id
- p4-20020a5d63840000b0290126f2836a61so3255560wru.6
- for <linux-phy@lists.infradead.org>; Fri, 09 Jul 2021 10:36:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=/+y8FHDHGWx9Oj1qSBy3/4qOab1o6ziTF1tVPPbs0Pw=;
- b=lHPMdUH4Dm6X/GCLQeOu37nQo78idyILD02IxFD/l+THVi3kv6GWY6oq1zXXz/yRu+
- 41oJUBRD+y6fp4AT8PuRWcs70ng8F94l+pu4P8iIS+5xiXDQTmlHBaNyAl7Usa5J4WSS
- TJFkQNuP94Gjh+eT3tSEpv93vEFltR78L8A36rCIz6RJYlyoYU6iVyPmqoSQyasJX9Is
- p0OUPVsGRv1JBJKCCdVxugkoSrM2kZ+KhHKHxKdivbk1VNiH1vOqAoBN26U0KfR00m7j
- 61K29/Qhh5Ava9JqdgRh9qMOYxtIBLwybI1M81llCEztnISAerxw5jMd44zyReCtLXYV
- JjSg==
-X-Gm-Message-State: AOAM533mAki/um+FNaiaOX2BNxdIjTZK0FFdl187poqon5wuyZlPvwE5
- XAw0qPYT8DpOfswV6fF8F1uWBBZoijH5RLldccvd39/2hhllqHCOyeVrOEVeZ5CxBKqIvSYs5IV
- XnwnKn/bV5mgBmprIieAo1r0LPzEQ/IuiKl+vDETjJl4=
-X-Received: by 2002:a05:600c:3399:: with SMTP id
- o25mr40575349wmp.3.1625852200549; 
- Fri, 09 Jul 2021 10:36:40 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJx+rZ3QuWBCpQlKFMOdJ4cGmzZaTHEUswiFz+CvvsT0dAPn+ePGRGZihSwAcImvPuqifYWDGA==
-X-Received: by 2002:a05:600c:3399:: with SMTP id
- o25mr40575315wmp.3.1625852200178; 
- Fri, 09 Jul 2021 10:36:40 -0700 (PDT)
-Received: from [192.168.3.211] (xdsl-188-155-177-222.adslplus.ch.
- [188.155.177.222])
- by smtp.gmail.com with ESMTPSA id a9sm5712401wrv.37.2021.07.09.10.36.39
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 09 Jul 2021 10:36:39 -0700 (PDT)
-Subject: Re: [PATCH v5 1/2] phy: samsung-ufs: move phy-exynos7-ufs header
-To: Chanho Park <chanho61.park@samsung.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Marek Szyprowski <m.szyprowski@samsung.com>,
- Jaehoon Chung <jh80.chung@samsung.com>, Alim Akhtar
- <alim.akhtar@samsung.com>, linux-phy@lists.infradead.org
-References: <20210709094524.110193-1-chanho61.park@samsung.com>
- <CGME20210709100037epcas2p2be75773648d859ec29d96a901b6d9a5c@epcas2p2.samsung.com>
- <20210709094524.110193-2-chanho61.park@samsung.com>
- <4e2adf91-9495-17f8-0e65-169346f9583d@canonical.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-Message-ID: <9b097613-3d54-65f8-ffb2-123b266fc29b@canonical.com>
-Date: Fri, 9 Jul 2021 19:36:39 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.11.0
+ id 1m22fF-002oHX-D6
+ for linux-phy@lists.infradead.org; Sat, 10 Jul 2021 02:24:22 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 2D70C61419;
+ Sat, 10 Jul 2021 02:24:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1625883861;
+ bh=nro3MGa7h3qaKoTs4yw4efAa7zU3Ahe3U9SERvsOMXQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=YIxfmYMUeKdfMAIdgx4bWlvMri3OdC057+uCtM/+0rryuXlpxIj48HRpRDy7pm9wK
+ zwWHU+gurv+KZZivqMPPovZ4wJcjxJP5UbaCfLWM/onfhXll5AxP/I0d//6Y7H2InE
+ 9EnIxISSNJXu6nB3rV+VlFCtd0Idc9xnRRg1lALyXRuXdjQ0UDhIzc6W34K+OiRN38
+ y71+LITiZiDhQQ4kGf8HfAeBAhNpIN70TjvAdGPjMXwludQpV+DCTukgNOR/KhM8xY
+ CdqNW+sViKXviL8ah3aE45NeL0ziHHunDpZ6btTfgqSGGapMGd3e0YBavGNFhNvGeY
+ T7dOFEkRpPIhA==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Rashmi A <rashmi.a@intel.com>, Adrian Hunter <adrian.hunter@intel.com>,
+ Vinod Koul <vkoul@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Sasha Levin <sashal@kernel.org>, linux-phy@lists.infradead.org
+Subject: [PATCH AUTOSEL 5.12 102/104] phy: intel: Fix for warnings due to EMMC
+ clock 175Mhz change in FIP
+Date: Fri,  9 Jul 2021 22:21:54 -0400
+Message-Id: <20210710022156.3168825-102-sashal@kernel.org>
+X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20210710022156.3168825-1-sashal@kernel.org>
+References: <20210710022156.3168825-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <4e2adf91-9495-17f8-0e65-169346f9583d@canonical.com>
-Content-Language: en-US
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210709_103642_500523_62953E18 
-X-CRM114-Status: GOOD (  15.39  )
+X-CRM114-CacheID: sfid-20210709_192421_559444_AF300ED1 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,45 +84,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/07/2021 19:31, Krzysztof Kozlowski wrote:
-> On 09/07/2021 11:45, Chanho Park wrote:
->> Instead of using exynos7 ufs definition in phy-exynos7-ufs.h, we should
->> put it into phy-exynos7-ufs.c to be included different objects or units.
->>
->> Suggested-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
->> Signed-off-by: Chanho Park <chanho61.park@samsung.com>
->> ---
->>  drivers/phy/samsung/Makefile                              | 4 +++-
->>  .../phy/samsung/{phy-exynos7-ufs.h => phy-exynos7-ufs.c}  | 8 ++------
->>  drivers/phy/samsung/phy-samsung-ufs.h                     | 5 ++++-
->>  3 files changed, 9 insertions(+), 8 deletions(-)
->>  rename drivers/phy/samsung/{phy-exynos7-ufs.h => phy-exynos7-ufs.c} (93%)
->>
->> diff --git a/drivers/phy/samsung/Makefile b/drivers/phy/samsung/Makefile
->> index 3959100fe8a2..68518ae30c1b 100644
->> --- a/drivers/phy/samsung/Makefile
->> +++ b/drivers/phy/samsung/Makefile
->> @@ -2,7 +2,9 @@
->>  obj-$(CONFIG_PHY_EXYNOS_DP_VIDEO)	+= phy-exynos-dp-video.o
->>  obj-$(CONFIG_PHY_EXYNOS_MIPI_VIDEO)	+= phy-exynos-mipi-video.o
->>  obj-$(CONFIG_PHY_EXYNOS_PCIE)		+= phy-exynos-pcie.o
->> -obj-$(CONFIG_PHY_SAMSUNG_UFS)		+= phy-samsung-ufs.o
->> +obj-$(CONFIG_PHY_SAMSUNG_UFS)		+= phy-exynos-ufs.o
->> +phy-exynos-ufs-y			+= phy-samsung-ufs.o
->> +phy-exynos-ufs-y			+= phy-exynos7-ufs.o
-> 
-> How does it support module builds? The previous code was working fine
-> when built as module. Maybe I miss something, but I don't see the need
-> for this change.
+From: Rashmi A <rashmi.a@intel.com>
 
-Ah, I see now, your previous patch was creating separate modules. Makes
-sens, thanks!
+[ Upstream commit 2f2b73a29d2aabf5ad0150856c3e5cb6e04dcfc1 ]
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+Since the EMMC clock was changed from 200Mhz to 175Mhz in FIP,
+there were some warnings introduced, as the frequency values
+being checked was still wrt 200Mhz in code. Hence, the frequency
+checks are now updated based on the current 175Mhz EMMC clock changed
+in FIP.
 
+Spamming kernel log msg:
+"phy phy-20290000.mmc_phy.2: Unsupported rate: 43750000"
 
-Best regards,
-Krzysztof
+Signed-off-by: Rashmi A <rashmi.a@intel.com>
+Reviewed-by: Adrian Hunter <adrian.hunter@intel.com>
+Acked-By: Vinod Koul <vkoul@kernel.org>
+Link: https://lore.kernel.org/r/20210603182242.25733-3-rashmi.a@intel.com
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/phy/intel/phy-intel-keembay-emmc.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/intel/phy-intel-keembay-emmc.c b/drivers/phy/intel/phy-intel-keembay-emmc.c
+index eb7c635ed89a..0eb11ac7c2e2 100644
+--- a/drivers/phy/intel/phy-intel-keembay-emmc.c
++++ b/drivers/phy/intel/phy-intel-keembay-emmc.c
+@@ -95,7 +95,8 @@ static int keembay_emmc_phy_power(struct phy *phy, bool on_off)
+ 	else
+ 		freqsel = 0x0;
+ 
+-	if (mhz < 50 || mhz > 200)
++	/* Check for EMMC clock rate*/
++	if (mhz > 175)
+ 		dev_warn(&phy->dev, "Unsupported rate: %d MHz\n", mhz);
+ 
+ 	/*
+-- 
+2.30.2
+
 
 -- 
 linux-phy mailing list
