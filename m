@@ -2,70 +2,81 @@ Return-Path: <SRS0=iZVT=ME=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 77449C07E9C
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jul 2021 16:52:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 29156C07E99
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jul 2021 20:12:58 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4944C61152
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jul 2021 16:52:38 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4944C61152
+	by mail.kernel.org (Postfix) with ESMTPS id DD34261248
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jul 2021 20:12:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DD34261248
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=pJJ/GQ/mcvPB5M1R/aWYrPDSaBeCdZSKEBvHqbQsuVw=; b=WHS2uoknAvm3XB
-	VC+B2DL8QmCe5Gxmi29DmQ5Cr+CO+OmE4f6Lz4cnixLwhzgmnf4zXrPVeH51tWhX5Gz7+92zLYyop
-	sU/RVOtl4KKUPjhVYkq9ej5e7Qh4ZgAPiOjqAyv6GQgCo+3iSvH2XtWAHj34tjJFt4EoDAwo0+iDv
-	l+OPz+DwpqV21ezVZmqpZpf/fibb4/KJ5f5Hk59u+wYPItC6OCzNSaC9qBtQCcagYOw8TVG40zzJp
-	DN02lvs8TLOw9iysDQRbhtXvXcfTOgpI/M3kilnLD0n8BLG64UilZGoSEhfMyKRdVJ7CbR/JnikuD
-	XzOOIbWfLEOpUQgz39Lw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eQHNcotWwikXvlVC6dZIJDMCbYdjNmC+debzMOgNX80=; b=hfh4lcz2HaM6Hv
+	CDMIlt7Aj5uwWxRFPm9NzIQaY7bDqWgviH+ubtrzyjPl46b6+eZaiWXBvzdp21rb8EUA59CcVSGwN
+	RlfdqoktzhgGUmnfmnJHbfkYEP9KaE8uAK1nGM0G5URUyTIDBHam9CxeAd/VfpZPE6VjhDKSdazBs
+	8tI/uOyNHGV/AQ7umGxx4xTJtfEAJ5zPvn15qOqUtl1alIPiFoDFYhqDeNNHkVE5t5vgIHS878mWt
+	HeySnjR8qUlynF6aPngRo0GIHGM/z3hzihIg+qLeSxS2gHQKTbEP+aXfsQENrMa6f4xqeKCtznPEe
+	JXNlOg3KouznO8dzadIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m2zAb-007znC-Qt; Mon, 12 Jul 2021 16:52:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1m32IT-008Lxz-C5; Mon, 12 Jul 2021 20:12:57 +0000
+Received: from mail-il1-f169.google.com ([209.85.166.169])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m2zAN-007zjx-S6; Mon, 12 Jul 2021 16:52:25 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 9114B60FF3;
- Mon, 12 Jul 2021 16:52:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1626108742;
- bh=7PA9T4ztHxOhgBCB8sQ5ExrO4Ozk846zDZeaKJ8RHac=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=RWyIORS+4H5zY6ZjBkzga+X1zqSL1ArvZninJVErcXMIjFZvLaMjB6ivhxTgqPMW0
- ubGYbLe2Ww++YTj+qIJseRu6fAgPZrGYrk7LxBfKcdhfNglXAMqLQge2mK3ogHr8Rt
- 17ScldlFy755U7xlEdfO/w+tdKhFgiVS8zpmNMFA0d1HuoR/Y5DrOgIweUTbkLKysD
- hb6xY6hVnViQsg6if5Y3/XMyWm3EK35yJEN2DW9PHtEvTb+sRfV7vFh3UajtWyRpWm
- emMfS9JAVvqxB9gRFLf8FN3NVLYstmywcDVZNJTiTX4fL9HGoPRNdXfFfth4HhrV30
- RVW15PvWgF3og==
-Date: Mon, 12 Jul 2021 11:52:21 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Cc: Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- linuxarm@huawei.com, mauro.chehab@huawei.com,
- Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
- Binghui Wang <wangbinghui@hisilicon.com>, Rob Herring <robh+dt@kernel.org>,
- Xiaowei Song <songxiaowei@hisilicon.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 0/9] Add support for Hikey 970 PCIe
-Message-ID: <20210712165221.GA1654345@bjorn-Precision-5520>
+ id 1m32IP-008Lvz-QZ; Mon, 12 Jul 2021 20:12:55 +0000
+Received: by mail-il1-f169.google.com with SMTP id p3so844170ilg.8;
+ Mon, 12 Jul 2021 13:12:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=tXKPZzwXcZV9/HhIQdnNlNgejKZgtrP4Woag5BXnZA8=;
+ b=fasYGd55DX3tNXdlFT7W9qsw/3ABF79MxLQztL78NxTvIebkjITkmm6+0m5oJ5pmpm
+ PLW8IBlyKfusHqoYyX4dm3YkQI7opDbKd/uur2XPqsgtTLxM+28Q6nOC7W92CVsyZyRD
+ laHiKdYfJtTwmn9ieDOJUBdlBnqbqnhJmAf/XkI0GuC2Xc8mD2yN2+4wo+ptoptc2u+1
+ iSWTokGFAuWRAx47AKy11Zup/BosJDA+z4fkkFfFDBG+wag0REBhVqH0Tfd+mZM5U12J
+ 8/q1phe7+XXW9ACsDVUdZVwYLBRdo1wx4P8SPFFkweSJs6MnM7xal0zwuyXha61QkykS
+ XSqA==
+X-Gm-Message-State: AOAM533BaIy03IK7HJZrV4igu/8ujNvDsSt6gy6EMbgz2PuisJIkTxnm
+ tTCg8t+kDGUAooMvYjeGhQ==
+X-Google-Smtp-Source: ABdhPJwEiRi1fPrJ1vXs/JakffS9HIKIXv05lezYQORSM3cPk//aDIffadrxDcsjEBtl/OQj9SenMA==
+X-Received: by 2002:a92:dd02:: with SMTP id n2mr376597ilm.259.1626120772614;
+ Mon, 12 Jul 2021 13:12:52 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+ by smtp.gmail.com with ESMTPSA id u16sm8177345iob.41.2021.07.12.13.12.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 12 Jul 2021 13:12:51 -0700 (PDT)
+Received: (nullmailer pid 2410180 invoked by uid 1000);
+ Mon, 12 Jul 2021 20:12:49 -0000
+Date: Mon, 12 Jul 2021 14:12:49 -0600
+From: Rob Herring <robh@kernel.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Cc: linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: mediatek: tphy: add support
+ hardware version 3
+Message-ID: <20210712201249.GA2410138@robh.at.kernel.org>
+References: <1624070839-1233-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cover.1625826353.git.mchehab+huawei@kernel.org>
+In-Reply-To: <1624070839-1233-1-git-send-email-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210712_095223_958433_5F897C70 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210712_131253_909222_5E5A8833 
+X-CRM114-Status: GOOD (  14.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,35 +93,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 09, 2021 at 12:41:36PM +0200, Mauro Carvalho Chehab wrote:
-> ...
-> Manivannan Sadhasivam (1):
->   arm64: dts: hisilicon: Add support for HiKey 970 PCIe controller
->     hardware
+On Sat, 19 Jun 2021 10:47:17 +0800, Chunfeng Yun wrote:
+> The PHYA architecture is updated, and doesn't support slew rate
+> calibration anymore on 7nm or advanced process, add a new version
+> number to support it.
+> Due to the FreqMeter bank is not used but reserved, it's backward
+> with v2 until now.
+> For mt8195, no function changes when use generic v2 or v3 compatible,
+> but prefer to use v3's compatible, it will not waste the time to
+> calibrate the slew rate, and also correspond with hardware version.
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> v2: add more commit log suggested by Rob
+> ---
+>  .../devicetree/bindings/phy/mediatek,tphy.yaml     | 14 +++++++++-----
+>  1 file changed, 9 insertions(+), 5 deletions(-)
+> 
 
-FWIW, this didn't apply cleanly for me to v5.14-rc1.
-
-> Mauro Carvalho Chehab (8):
->   dt-bindings: phy: add bindings for Hikey 960 PCIe PHY
->   dt-bindings: phy: add bindings for Hikey 970 PCIe PHY
->   dt-bindings: PCI: kirin: fix compatible string
->   dt-bindings: PCI: kirin: drop PHY properties
->   phy: hisilicon: add a PHY driver for Kirin 960
-
->   PCI: kirin: drop the PHY logic from the driver
->   PCI: kirin: use regmap for APB registers
-
-If/when you repost this, please update these subject lines to match the
-historical style:
-
-  PCI: kirin: Drop PHY logic from the driver
-  PCI: kirin: Use regmap for APB registers
-
-Also, please update subject lines, commit logs, Kconfig menu and help
-text, comments, etc throughout to capitalize "HiKey" and "HiSilicon"
-as the vendor does.
-
->   phy: hisilicon: add driver for Kirin 970 PCIe PHY
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
