@@ -2,93 +2,92 @@ Return-Path: <SRS0=EtwH=MF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4719DC07E95
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 19:47:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 01E1CC07E95
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 20:35:34 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EF6BC611AC
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 19:47:34 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EF6BC611AC
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=roeck-us.net
+	by mail.kernel.org (Postfix) with ESMTPS id C0CD06128E
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 20:35:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C0CD06128E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yabW67ho8Qt7cr1zSlziVWK7ZkzfzCWIpSCUHCKEw4I=; b=lIgCR7PYM9tdsh
-	ytxEHm9RJ3nKeTI0naUYde13VWAH/POnMcKXzGjB6tbYSMoesrWdsrKjvwV+uXOhG0ibmpGQVl9hA
-	hQNFNRSinXjizN2ZWmfAQ3EwYNDqc6wYXXyvokMBolxggwIRatyUeJJGbWIQbZG1gmMO4KMFGhNKc
-	VobTfCFppY3LPZ+6pwp/fOlbJuaU0BCRdPhz6XS4syIpyl9kUIjy0gC4i5HQ5sWKhbEW5OW2Ngz0d
-	BdicmkOV4V+oh6gfAZtwihp26IM9Zv8oypom7nfNZqd5Hx574NA1xpRjMmT1vAEGyvGQXbQxuov+k
-	bRRWtNQyCzIxVQ7hcPWg==;
+	List-Owner; bh=vUqmJFRLenEiTEm1PiRkLrSSYSEzQO0iAWOv37g8gxY=; b=1Kqkv1zXhLZmMe
+	3WPl5IiZhS/VAk1Qigw/D0ezsl6u+sm1Yc0YvNGBNlUoMlAo/tx17iFHS3z1dBhZygh+E3EheZK01
+	l6+4EEs9+DaoVqsvG4yOAwTOX5nZkaW3LuFStm4qDrEmPLiatX+HZz/rHqBmt9Ww0bxw/3BQmKZ0d
+	OuAguIU/gfFBr1maSgwkuCkdC9uCpqPP7zyuFG8PoFcFXaRClpRk3qWVeND50G2R1G9I9t++9GdpP
+	mYAS6BpiRnMfQfQGgWZtRG1IOrwLA0FYFeiIf7ERxpzRUw3s+vAtJwWrR0/D9LMmjXST10/x0HdAV
+	PviZMaNS18xtKCsEg6gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m3ONS-00BGJL-Gr; Tue, 13 Jul 2021 19:47:34 +0000
-Received: from mail-oo1-xc2f.google.com ([2607:f8b0:4864:20::c2f])
+	id 1m3P7t-00BJzW-95; Tue, 13 Jul 2021 20:35:33 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m3ONQ-00BGIv-4n
- for linux-phy@lists.infradead.org; Tue, 13 Jul 2021 19:47:34 +0000
-Received: by mail-oo1-xc2f.google.com with SMTP id
- j4-20020a4ac5440000b029025992521cf0so5699982ooq.7
- for <linux-phy@lists.infradead.org>; Tue, 13 Jul 2021 12:47:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=gFfhK+dHl3bp85B3Vs5e1G4mkaJcqFiMp7hidA4VQrc=;
- b=BJmVlR1nnMOFCY+tUM1CE6tc2PG13DjPOxDGJMy1r8fqHaZq82NV6qcdvRnCKucF8J
- 7GgazHIovzhsAxB3T8iNpmHulOK5K4yKN0HnR81eklObsjZcMno2w4pOUt/v6tUjl+aS
- hrojfdWrIOMXGSCpTdI3XwDEe0XJITFFXcOYpE/67rOOikqGZK5zSACVPUZ24VhW1dzb
- xy7dkF9xy925O4Oec/kYN/JjMV6qCUki3ZE2oNuhLEYt2wMvLOopF/qYRXrVtx6Pt7ps
- gFADR3MpwUdU9Q/4LJFbSC/L7D8owh0MfMFnOdn6t6OiiSBR5g7nSUafY9BllSEFAjt4
- NtZw==
+ id 1m3P7q-00BJyW-3M; Tue, 13 Jul 2021 20:35:31 +0000
+Received: by mail-ed1-x529.google.com with SMTP id ca14so18052488edb.2;
+ Tue, 13 Jul 2021 13:35:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=lz1iNRVmJl/8c02nO6mcAo+x0LUik5FJFjS42Nicby8=;
+ b=I93Jw38f4suLZLxrcS11ROvBezOGU4JjFfcwHEGortMfxkTfN8UAqSPN2szzMQAE1d
+ er50D8stbzEiVr8XMg/kJF9abJbF/jEILEq+03llk6uLCKV4l6mvLKVURuLRWX5jDO1N
+ 6lZUTJqBPyMJnqbGgBCap5EmeHutNScznEb6M3SAf+4+1tCA2UZ+C1I0JvqBECH2O2uo
+ Habw2ErqzBpxlKBIy5n7bDd40kv1SiqUqkdD5kFy2Ri+Ds5oprwISZsx66w577mnLpwx
+ f7wx0iZY+ozU/lpPvIjZdZkdG8/gJ2Z613VMV3zROZv0ZkbAXj2hjH/7wovNCCu/34CS
+ zeFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to;
- bh=gFfhK+dHl3bp85B3Vs5e1G4mkaJcqFiMp7hidA4VQrc=;
- b=ZyFNdgmLv9kz5xEraq1aWyAhKoiDplYsMI/RLVstKs/0KGs9WxI8M2Zd9wI8xlQxLp
- 49/w6jGgiZ0CZLuAxqdVXVzVp6LPq+MysQTI8THP3sG3VrRBFNp5Whc2Wqnz2JstY8tY
- Hw6trS4qLtMjcTnwa1LjJqCTB7thrwAQ0M4aG3DIJwqDE6/dzyhSqrNs1zkPd/k8o6K3
- WuM64kQZEeTclZuuAgV3slwnScvL27p4/u1n62Vh0r9OgR+NPoZXuEST5YO2NZpJvxp9
- vtu81cfVgPQ9Bzr9rMysrycdjPDk9jevAHey7YD7D5BbDdUCXjrSFoy9zx6HEXa8jKbc
- F82Q==
-X-Gm-Message-State: AOAM531zz0aC1s1NOzRUvcGWBZ6rURmO5kgboU87D8fxXpZPPVHtRn84
- +S11Gh1+VBXBDifU9ty2R6w=
-X-Google-Smtp-Source: ABdhPJwkEc7sB0iELYLZ2JAZlpTbL1bO3oOf9KlA2BmVUOlsJn3J/w0ElwyTXh+7Bj4/wyIfXrSMsw==
-X-Received: by 2002:a4a:ce8f:: with SMTP id f15mr1553204oos.68.1626205650505; 
- Tue, 13 Jul 2021 12:47:30 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id 2sm3983500ota.58.2021.07.13.12.47.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 13 Jul 2021 12:47:30 -0700 (PDT)
-Date: Tue, 13 Jul 2021 12:47:28 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Rob Herring <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Saravanan Sekar <sravanhome@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Troy Kisky <troy.kisky@boundarydevices.com>,
- linux-hwmon@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-spi@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: Move fixed string 'patternProperties' to
- 'properties'
-Message-ID: <20210713194728.GA3229000@roeck-us.net>
-References: <20210713193514.690894-1-robh@kernel.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lz1iNRVmJl/8c02nO6mcAo+x0LUik5FJFjS42Nicby8=;
+ b=e5j2kjMaz2HSSiN20fWhRSgWSS7Hb/BnPvZBDi++1tF90NxhHGD2I7SqrfcKTEAD1F
+ SVpWEjaRlJEK/pueTqX9ziu2qxsUhfLJLNTWEA/elSti/VCpVn5AyFEq3xj5XdLH30z2
+ CQt3C7CYGteKgrDvG8yBYUO3eh1Ipk59UpjtLS5PF5dlZ5lwTbvJfWxTOQntDvKCDS3v
+ EtRL9zQxFo6IHe1UrMbaKiUIShKq6sUSty7ORDljY4h6/OSYW9GaVaIZ2jngfDeySjWY
+ fXd1O6hjCggMzZ+MCNE3wzbAScB5/352KiU6YQHDgnYXFr/j4HCVUkZViiGmMZZSCu8s
+ AQrw==
+X-Gm-Message-State: AOAM532gJ8XHS/N6L/ZTr6ICBdp6oZhyABGjVe0KlXDoclEYEYYlq1Iu
+ mXf5wB+IdKb+VTSX9lKevxIU9Jq3eTyG27q7x7c=
+X-Google-Smtp-Source: ABdhPJxtOwqdJeTKPSUanACIrHdPw1eVvCe+a/6kJEv5H4LVBcI1ek6HLhA0gFT9a/FkLDXR9ho5PMGWfIoQ2V5HXnU=
+X-Received: by 2002:a05:6402:190c:: with SMTP id
+ e12mr8137065edz.176.1626208528146; 
+ Tue, 13 Jul 2021 13:35:28 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210713193514.690894-1-robh@kernel.org>
+References: <20210713055227.1142-1-linux.amoon@gmail.com>
+ <20210713055227.1142-2-linux.amoon@gmail.com>
+ <CAFBinCD3ahpNQhP_jWZ3-4nXx8OqZOAANCpTN3BrsULRbYZHVw@mail.gmail.com>
+ <CANAwSgTh02qg=cMT8tpHcEfAs5yW2vHQ7tPOkvuKXos_fOmh8A@mail.gmail.com>
+In-Reply-To: <CANAwSgTh02qg=cMT8tpHcEfAs5yW2vHQ7tPOkvuKXos_fOmh8A@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Tue, 13 Jul 2021 22:35:17 +0200
+Message-ID: <CAFBinCC-kD-MW+bwqCZH5AjYDhxWa_pN2WEnHuiZpx=RhUdROQ@mail.gmail.com>
+Subject: Re: [PATCHv1 1/3] ARM: dts: meson8b: odroidc1: Add usb phy power node
+To: Anand Moon <linux.amoon@gmail.com>
+Cc: linux-phy@lists.infradead.org, 
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-amlogic@lists.infradead.org, 
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Matt Corallo <oc2udbzfd@mattcorallo.com>, 
+ Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>, 
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+ Emiliano Ingrassia <ingrassia@epigenesys.com>,
+ devicetree <devicetree@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210713_124732_244760_7EDB337B 
-X-CRM114-Status: GOOD (  23.10  )
+X-CRM114-CacheID: sfid-20210713_133530_203514_76B6D1E7 
+X-CRM114-Status: GOOD (  29.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,241 +104,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 13, 2021 at 01:35:14PM -0600, Rob Herring wrote:
-> There's no need for fixed strings to be under 'patternProperties', so move
-> them under 'properties' instead.
-> 
-> Cc: Jean Delvare <jdelvare@suse.com>
-> Cc: Guenter Roeck <linux@roeck-us.net>
-> Cc: Kishon Vijay Abraham I <kishon@ti.com>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Cc: Saravanan Sekar <sravanhome@gmail.com>
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: Jagan Teki <jagan@amarulasolutions.com>
-> Cc: Troy Kisky <troy.kisky@boundarydevices.com>
-> Cc: linux-hwmon@vger.kernel.org
-> Cc: linux-phy@lists.infradead.org
-> Cc: linux-spi@vger.kernel.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  .../devicetree/bindings/hwmon/adt7475.yaml    | 22 ++++----
+Hi Anand,
 
-Acked-by: Guenter Roeck <linux@roeck-us.net>
+On Tue, Jul 13, 2021 at 8:45 PM Anand Moon <linux.amoon@gmail.com> wrote:
+>
+> Hi Martin,
+>
+> Thanks for reviewing the changes,
+>
+> On Tue, 13 Jul 2021 at 20:35, Martin Blumenstingl
+> <martin.blumenstingl@googlemail.com> wrote:
+> >
+> > Hi Anand,
+> >
+> > On Tue, Jul 13, 2021 at 7:53 AM Anand Moon <linux.amoon@gmail.com> wrote:
+> > >
+> > > Add missing usb phy power node for phy mode fix below warning.
+> > >
+> > > [    1.253149] phy phy-c1108820.phy.0: Looking up phy-supply from device tree
+> > > [    1.253166] phy phy-c1108820.phy.0: Looking up phy-supply property
+> > >                 in node /soc/cbus@c1100000/phy@8820 failed
+> > I did some testing on my own Odroid-C1+ and this patch is not doing
+> > anything for me.
+> > more information below.
+> Some device node for USB will have
+The mistake I made before is considering USB VBUS as PHY power supply.
+I believe the USB PHY is actually powered by the AVDD18_USB_ADC and
+USB33_VDDIOH signals. See the S905 datasheet [0], page 25
+These are 1.8V and 3.3V signals while you are adding a 5V regulator.
 
->  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 56 +++++++++----------
->  .../bindings/regulator/mps,mpq7920.yaml       |  6 +-
->  .../regulator/nxp,pf8x00-regulator.yaml       |  3 +-
->  .../bindings/spi/spi-controller.yaml          | 32 +++++------
->  5 files changed, 60 insertions(+), 59 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/hwmon/adt7475.yaml b/Documentation/devicetree/bindings/hwmon/adt7475.yaml
-> index ad0ec9f35bd8..7d9c083632b9 100644
-> --- a/Documentation/devicetree/bindings/hwmon/adt7475.yaml
-> +++ b/Documentation/devicetree/bindings/hwmon/adt7475.yaml
-> @@ -39,17 +39,7 @@ properties:
->    reg:
->      maxItems: 1
->  
-> -patternProperties:
-> -  "^adi,bypass-attenuator-in[0-4]$":
-> -    description: |
-> -      Configures bypassing the individual voltage input attenuator. If
-> -      set to 1 the attenuator is bypassed if set to 0 the attenuator is
-> -      not bypassed. If the property is absent then the attenuator
-> -      retains it's configuration from the bios/bootloader.
-> -    $ref: /schemas/types.yaml#/definitions/uint32
-> -    enum: [0, 1]
-> -
-> -  "^adi,pwm-active-state$":
-> +  adi,pwm-active-state:
->      description: |
->        Integer array, represents the active state of the pwm outputs If set to 0
->        the pwm uses a logic low output for 100% duty cycle. If set to 1 the pwm
-> @@ -61,6 +51,16 @@ patternProperties:
->        enum: [0, 1]
->        default: 1
->  
-> +patternProperties:
-> +  "^adi,bypass-attenuator-in[0-4]$":
-> +    description: |
-> +      Configures bypassing the individual voltage input attenuator. If
-> +      set to 1 the attenuator is bypassed if set to 0 the attenuator is
-> +      not bypassed. If the property is absent then the attenuator
-> +      retains it's configuration from the bios/bootloader.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    enum: [0, 1]
-> +
->  required:
->    - compatible
->    - reg
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> index 5272b6f284ba..dcd63908aeae 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> @@ -77,6 +77,34 @@ properties:
->        Type-C spec states minimum CC pin debounce of 100 ms and maximum
->        of 200 ms. However, some solutions might need more than 200 ms.
->  
-> +  refclk-dig:
-> +    type: object
-> +    description: |
-> +      WIZ node should have subnode for refclk_dig to select the reference
-> +      clock source for the reference clock used in the PHY and PMA digital
-> +      logic.
-> +    properties:
-> +      clocks:
-> +        minItems: 2
-> +        maxItems: 4
-> +        description: Phandle to two (Torrent) or four (Sierra) clock nodes representing
-> +          the inputs to refclk_dig
-> +
-> +      "#clock-cells":
-> +        const: 0
-> +
-> +      assigned-clocks:
-> +        maxItems: 1
-> +
-> +      assigned-clock-parents:
-> +        maxItems: 1
-> +
-> +    required:
-> +      - clocks
-> +      - "#clock-cells"
-> +      - assigned-clocks
-> +      - assigned-clock-parents
-> +
->  patternProperties:
->    "^pll[0|1]-refclk$":
->      type: object
-> @@ -121,34 +149,6 @@ patternProperties:
->        - clocks
->        - "#clock-cells"
->  
-> -  "^refclk-dig$":
-> -    type: object
-> -    description: |
-> -      WIZ node should have subnode for refclk_dig to select the reference
-> -      clock source for the reference clock used in the PHY and PMA digital
-> -      logic.
-> -    properties:
-> -      clocks:
-> -        minItems: 2
-> -        maxItems: 4
-> -        description: Phandle to two (Torrent) or four (Sierra) clock nodes representing
-> -          the inputs to refclk_dig
-> -
-> -      "#clock-cells":
-> -        const: 0
-> -
-> -      assigned-clocks:
-> -        maxItems: 1
-> -
-> -      assigned-clock-parents:
-> -        maxItems: 1
-> -
-> -    required:
-> -      - clocks
-> -      - "#clock-cells"
-> -      - assigned-clocks
-> -      - assigned-clock-parents
-> -
->    "^serdes@[0-9a-f]+$":
->      type: object
->      description: |
-> diff --git a/Documentation/devicetree/bindings/regulator/mps,mpq7920.yaml b/Documentation/devicetree/bindings/regulator/mps,mpq7920.yaml
-> index 12b8963615c3..c2e8c54e5311 100644
-> --- a/Documentation/devicetree/bindings/regulator/mps,mpq7920.yaml
-> +++ b/Documentation/devicetree/bindings/regulator/mps,mpq7920.yaml
-> @@ -36,12 +36,12 @@ properties:
->            switching frequency must be one of following corresponding value
->            1.1MHz, 1.65MHz, 2.2MHz, 2.75MHz
->  
-> -    patternProperties:
-> -      "^ldo[1-4]$":
-> +      ldortc:
->          type: object
->          $ref: regulator.yaml#
->  
-> -      "^ldortc$":
-> +    patternProperties:
-> +      "^ldo[1-4]$":
->          type: object
->          $ref: regulator.yaml#
->  
-> diff --git a/Documentation/devicetree/bindings/regulator/nxp,pf8x00-regulator.yaml b/Documentation/devicetree/bindings/regulator/nxp,pf8x00-regulator.yaml
-> index 8761437ed8ad..aabf50f5b39e 100644
-> --- a/Documentation/devicetree/bindings/regulator/nxp,pf8x00-regulator.yaml
-> +++ b/Documentation/devicetree/bindings/regulator/nxp,pf8x00-regulator.yaml
-> @@ -83,7 +83,8 @@ properties:
->  
->          unevaluatedProperties: false
->  
-> -      "^vsnvs$":
-> +    properties:
-> +      vsnvs:
->          type: object
->          $ref: regulator.yaml#
->          description:
-> diff --git a/Documentation/devicetree/bindings/spi/spi-controller.yaml b/Documentation/devicetree/bindings/spi/spi-controller.yaml
-> index faef4f6f55b8..8246891602e7 100644
-> --- a/Documentation/devicetree/bindings/spi/spi-controller.yaml
-> +++ b/Documentation/devicetree/bindings/spi/spi-controller.yaml
-> @@ -79,22 +79,7 @@ properties:
->      description:
->        The SPI controller acts as a slave, instead of a master.
->  
-> -allOf:
-> -  - if:
-> -      not:
-> -        required:
-> -          - spi-slave
-> -    then:
-> -      properties:
-> -        "#address-cells":
-> -          const: 1
-> -    else:
-> -      properties:
-> -        "#address-cells":
-> -          const: 0
-> -
-> -patternProperties:
-> -  "^slave$":
-> +  slave:
->      type: object
->  
->      properties:
-> @@ -105,6 +90,7 @@ patternProperties:
->      required:
->        - compatible
->  
-> +patternProperties:
->    "^.*@[0-9a-f]+$":
->      type: object
->  
-> @@ -180,6 +166,20 @@ patternProperties:
->        - compatible
->        - reg
->  
-> +allOf:
-> +  - if:
-> +      not:
-> +        required:
-> +          - spi-slave
-> +    then:
-> +      properties:
-> +        "#address-cells":
-> +          const: 1
-> +    else:
-> +      properties:
-> +        "#address-cells":
-> +          const: 0
-> +
->  additionalProperties: true
->  
->  examples:
-> -- 
-> 2.27.0
-> 
+[...]
+> > > +               /*
+> > > +                * signal name from schematics: USB_POWER
+> > > +                */
+> > Just a few lines below you're saying that the name from the schematics is PWREN
+> > If this patch is getting another round then please clarify the actual
+> > signal name, or name both signals if the schematics is actually using
+> > both names.
+> >
+> As per the schematics.
+> PWREN ---> GPIOAO.BIT5      gpio pin control
+> USB_POWER ---> P5V0          power source regulator.
+ah, thanks for clarifying this
+my suggestion is to put that exact paragraph into the comment to avoid confusion
+
+[...]
+> > Can you please give this a try on your Odroid-C1 as well?
+> > The conclusion from my own testing is that GPIOAO_5 doesn't seem to be
+> > related to USB1 (host-only) because if it was then inverting the
+> > polarity (from active high to active low) should result in a change.
+> >
+>
+> Ok I have modified as per above but not changes in gpio polarity
+> from active high to active low. see below.
+>
+> # Odroid C1
+> [alarm@archl-c1e ~]$ sudo cat /sys/kernel/debug/gpio | grep USB
+>  gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
+>  gpio-1954 (USB_OTG_PWREN       |regulator-usbp_pwr_e) out hi
+>
+> # Odroid C2
+> [alarm@archl-c2lm ~]$  sudo cat /sys/kernel/debug/gpio | grep usb
+>  gpio-501 (USB HUB nRESET      |usb-hub-reset       ) out hi
+>  gpio-502 (USB OTG Power En    |regulator-usb-pwrs  ) out hi
+that's strange, my result is different
+
+  gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
+  enable-active-high;
+gives me:
+  # grep USB_OTG_PWREN /sys/kernel/debug/gpio
+  gpio-418 (USB_OTG_PWREN       |regulator-usb-pwr-en) out hi
+
+  gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_LOW>;
+gives me:
+  # grep USB_OTG_PWREN /sys/kernel/debug/gpio
+  gpio-418 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo ACTIVE LOW
+
+Did you remove the "enable-active-high;" in your "active low" test?
+GPIO polarity for regulators is managed with that flag, not just with
+GPIO_ACTIVE_{HIGH,LOW}
+
+[...]
+> > >  &usb1_phy {
+> > >         status = "okay";
+> > > +       phy-supply = <&usb_pwr_en>;
+> > From the schematics it seems that this is not the PHY supply (which I
+> > admittedly have used incorrectly for VBUS before).
+> > In the schematics that I have (odroid-c1+_rev0.4_20150615.pdf) it
+> > seems to be enabling VBUS.
+> > So in that case a vbus-supply property should be used inside &usb1 instead.
+> >
+> As per the debug log I have added this since core phy looking for this property
+Let's discuss the results with different polarities first, then we can
+also discuss the rest.
+
+
+Best regards,
+Martin
 
 -- 
 linux-phy mailing list
