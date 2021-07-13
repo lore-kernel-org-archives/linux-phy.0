@@ -2,19 +2,20 @@ Return-Path: <SRS0=EtwH=MF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-10.8 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0EBE0C11F67
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 15:05:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3B460C07E95
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 15:10:34 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C4F2060FEB
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 15:05:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C4F2060FEB
+	by mail.kernel.org (Postfix) with ESMTPS id F3F4D6128C
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 15:10:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F3F4D6128C
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,55 +24,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=es0Sp5tqr14/Pr0yZ1oudTCtdQPLYHDJfvNwP2g/OWc=; b=tz1ZmMX2OVEwEq
-	Zy1ytY7NtTVyLxcaeCKy2o7uGFw7BENhrNhLYK4pX9fGoTYH2J5wpYNKxXiHWLoDbMza7xxDwxpdN
-	nRHFi5nfPrZSchBhqRZto4xwPAWaVxo+KfJMinYgXRK/Gdut5wRrmQGq1LDiGxggfw2DNua9RwfLb
-	okZcnGYaO0n1kpcXMQ7rRyzJVpXxukVq16Y3P3FU4S2hhEWH+Y2beak9o8ONIJ2jBj+nPQhNiQjml
-	UVCge3gD7SkHccKo72e4rCZQkCY4tqUDgEZmDm6yQujrgEyKD6FL0QrVsT1PazI0PnhPO5ImxUGPs
-	JcvwiJtLRg/fsxA/kI6A==;
+	List-Owner; bh=AL4k7n0uVFxElN96sf9dSeCBTggz5bILJW3qSXcfecs=; b=K08uv0h3UkAroF
+	ojnvROJawnyYdp3UQPdqGl8knMYJIsdVKIfUOH3dq1VaX/YGgxGya60YBR0n5Do8Y5FWyu91a07+2
+	WVBwxA6E3arBu06zNlptNnsPsT0w4syYsR8xgf07mppaLCnawksMU0cTAiKiLeqPZY5wOqZW+73ar
+	fdClRPnxRzwEorkL6CsAk6UEacvYtQn8J6owWsYJgS+WwjTd0qN2hVxZPijXm3s2RUImm/Rq9me3b
+	A57oYMcloMic6UuQWt82pXhRNep3ftLyPPPvQ3AHJfI0wjvjQ0Csl4SFCANB+buPCeyXcH21SvnVX
+	Nm8YU8B3R+bCiybrV1aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m3JyZ-00Ak2E-Aj; Tue, 13 Jul 2021 15:05:35 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1m3K3N-00AkWm-Gl; Tue, 13 Jul 2021 15:10:33 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m3JyW-00Ak1Z-DN; Tue, 13 Jul 2021 15:05:33 +0000
-Received: by mail-ej1-x632.google.com with SMTP id ga14so27074834ejc.6;
- Tue, 13 Jul 2021 08:05:31 -0700 (PDT)
+ id 1m3K3K-00AkUe-FE; Tue, 13 Jul 2021 15:10:31 +0000
+Received: by mail-ed1-x529.google.com with SMTP id x17so2314493edd.12;
+ Tue, 13 Jul 2021 08:10:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ptYYbRcdUaGqdzjLb3H+jJHCNcFhan2Bn1jayE6LcgA=;
- b=tR4yp7Ihp42EXJJMuoVskTTc7jSbKuQ1cG9vgRJq/Wjm2L10WeHGPy9UodxhFg61zQ
- kGuNIUIpKCw43MydIDf/k+CcF1m/qBnE74E21xSHwd2IPV5opjL7sI7pRpm48zEAKgLE
- tEXaSINY+9K2Stknhk98Cz3Acu+vaEMrP16oiUXDrPGOIzzlIy1QbgBmO75UBuEED5jk
- OK78wAZ4vAEBz35ltw2+Ky4jVUvmVOE14vXxKhhsqsdzjKPsIuyErV7ENTGlNa1LlXEf
- QXZifY8cu3c+tEOHXaR8etdeb73QxFO7mfTwT8w/i4UgGfgGKqiFTPbrRFvx9W5sC+z+
- er+g==
+ :cc; bh=GXSApPPLGUhhXM/V78f8wajJ1bbfuwFyK0zy0kRxBqA=;
+ b=tLM2bZBt40bgP5Vo+Gh6dkRxvT+9Sr8VSaJWjxsi90cSlMfCWM90/OhXLI6uHq7BtK
+ RpjBkoU29VPD7/3V5PLHRn4dGaWEy22WHP4FX3DMYZYT50UyPrKKZ8g2+Q1C8JPfP4OI
+ 4Kmw+o23DEBPHF/VRXclj+xENv2LnWhMDnV/OsjbkihotRXXfd+vdYhIxKYt/OCrtItf
+ aKVw6fB4kh/6ZDsK35gAKPc//Ibd4gHwno4abwP2H6BPrhpPP8anuS7FOl72RwJ+BbA2
+ DVy6NBq6+XZzdj85xrqyZ/LYLvOjoysbhEzBfDiidmeZAGNXiOFGhA1UEvWyZNBgSbDB
+ E4DA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ptYYbRcdUaGqdzjLb3H+jJHCNcFhan2Bn1jayE6LcgA=;
- b=fpAG6S5s5kp5Jh0oy/6Ex+MsiV2FUuDs+Umq8g8psNvXAC42eAzvpMWDixFCexUQI3
- XTdKKTch29FCgMK07oezaSLGGgCO5dDHEJrP+lDUPvOxBYpmYl5FjCNjXhf09J7e4PLM
- snKbRnsp+t0sjsVXeovvFp8UhIjuMSX75jOGSFruh4HuHXh6DVKkHf8onSjlyELxBhtd
- TM+Qx8oPGPQheGu0BfWt+31YxxFmfUT6QGCz4GIJ/Gz/ZAHQGbs11FVjfq6uOXIj1re1
- 9/greRnk3Xr+BehnjwXZ/A04L3nh0+OFSMh0ONY2ciW/P9UDsdXBo+K9+w/8K1zuzedb
- ulLg==
-X-Gm-Message-State: AOAM531wDmu3Ecls4aPfY+2HPqRN67YaI1Wsz4YBfcwYyGQY/ulxd29J
- xBzbUCC7VHC2EkM0xyAKQ0flMmDqJK212GSQV7ju9sEU43c=
-X-Google-Smtp-Source: ABdhPJytC12yD22WmJvejZr+l30Aph+KR6/YMsim0nlX0u0TaTNOQ0fJCRXXHrVCZIngCK6Q1hF59pqYFsVrvSC5vyA=
-X-Received: by 2002:a17:907:207b:: with SMTP id
- qp27mr6219579ejb.258.1626188730833; 
- Tue, 13 Jul 2021 08:05:30 -0700 (PDT)
+ bh=GXSApPPLGUhhXM/V78f8wajJ1bbfuwFyK0zy0kRxBqA=;
+ b=EP6fHsvHgT1P1X42+MFt2kwyu0wxIGWzDedmXY+1X94yrcsFW0yehTxM3UhyECg8tQ
+ 8LlImSr1BGWDFUuw9A9P8GDSejnfg+fAGcwmWM7xE7AfpYpFaB51UWd09pyoElfxqK/k
+ GyaBB7248pp7QWS11W+Ifwec2SFVUu7NepslOZ3D7WXP6avYwGdFY5HbsuMtonwumHMu
+ 3uX/xuSDn+hXSMRqIj5djny25Edd5CPwOmTpT2Vab4WnKUiLROnph5xk5D65dxjL5wvo
+ rUt9obmiUi+79Nd0brKJm2fJkEGKMAf62RpTOfegTkvDu9m4X3OCUFUzJstV0us+e2ET
+ N8kw==
+X-Gm-Message-State: AOAM53034qOP3iPX7yIoHIHER4pOJLKhFRqCBBCbwB3QnSkYgQOjD8lh
+ MkOXCNVMq9Ds/QOlfEB6eb0xDRtfQeQ1tFyBPfQ=
+X-Google-Smtp-Source: ABdhPJzCxYkRS51Xrr9LI81R5hzAdh5tZIviK3d3m2EE0Sh2KMgNVn6R7JxtZZxPw8xNgGZ3DtaTSVLMPZOFuUzzmYk=
+X-Received: by 2002:a50:fb04:: with SMTP id d4mr6302757edq.143.1626189026249; 
+ Tue, 13 Jul 2021 08:10:26 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210713055227.1142-1-linux.amoon@gmail.com>
- <20210713055227.1142-2-linux.amoon@gmail.com>
-In-Reply-To: <20210713055227.1142-2-linux.amoon@gmail.com>
+ <20210713055227.1142-3-linux.amoon@gmail.com>
+In-Reply-To: <20210713055227.1142-3-linux.amoon@gmail.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 13 Jul 2021 17:05:20 +0200
-Message-ID: <CAFBinCD3ahpNQhP_jWZ3-4nXx8OqZOAANCpTN3BrsULRbYZHVw@mail.gmail.com>
-Subject: Re: [PATCHv1 1/3] ARM: dts: meson8b: odroidc1: Add usb phy power node
+Date: Tue, 13 Jul 2021 17:10:15 +0200
+Message-ID: <CAFBinCC9rR1F7Fgg5sao4h3qtFZU6OTTJMgmSJMibyBv0nGjMQ@mail.gmail.com>
+Subject: Re: [PATCHv1 2/3] phy: amlogic: meson8b-usb2: Power off the PHY by
+ putting it into reset mode
 To: Anand Moon <linux.amoon@gmail.com>
 Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
  linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org, 
@@ -81,8 +82,9 @@ Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  Vinod Koul <vkoul@kernel.org>, 
  Emiliano Ingrassia <ingrassia@epigenesys.com>, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210713_080532_511721_6ED36821 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20210713_081030_552595_ECBE0988 
+X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,54 +101,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Anand,
-
 On Tue, Jul 13, 2021 at 7:53 AM Anand Moon <linux.amoon@gmail.com> wrote:
 >
-> Add missing usb phy power node for phy mode fix below warning.
+> Power off the PHY by putting it into reset mode.
 >
-> [    1.253149] phy phy-c1108820.phy.0: Looking up phy-supply from device tree
-> [    1.253166] phy phy-c1108820.phy.0: Looking up phy-supply property
->                 in node /soc/cbus@c1100000/phy@8820 failed
-I did some testing on my own Odroid-C1+ and this patch is not doing
-anything for me.
-more information below.
-
-[...]
-> +               /*
-> +                * signal name from schematics: USB_POWER
-> +                */
-Just a few lines below you're saying that the name from the schematics is PWREN
-If this patch is getting another round then please clarify the actual
-signal name, or name both signals if the schematics is actually using
-both names.
-
-[...]
-> +               gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
-> +               enable-active-high;
-I booted my Odroid-C1+ with this and USB was working fine.
-Then I replaced these two lines with:
-  gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_LOW>;
-and I found that USB is still working.
-
-Can you please give this a try on your Odroid-C1 as well?
-The conclusion from my own testing is that GPIOAO_5 doesn't seem to be
-related to USB1 (host-only) because if it was then inverting the
-polarity (from active high to active low) should result in a change.
-
-[...]
->  &usb1_phy {
->         status = "okay";
-> +       phy-supply = <&usb_pwr_en>;
-From the schematics it seems that this is not the PHY supply (which I
-admittedly have used incorrectly for VBUS before).
-In the schematics that I have (odroid-c1+_rev0.4_20150615.pdf) it
-seems to be enabling VBUS.
-So in that case a vbus-supply property should be used inside &usb1 instead.
+> Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+based on code from the vendor kernel [0] this gets my:
+Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 
-Best regards,
-Martin
+[0] https://github.com/endlessm/linux-meson/blob/0672f0b61eb92ba63c91d858a678d2c3a0bba06a/drivers/amlogic/usb/dwc_otg/310/dwc_otg_attr.c#L706
 
 -- 
 linux-phy mailing list
