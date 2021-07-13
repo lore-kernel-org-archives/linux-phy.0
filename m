@@ -2,21 +2,20 @@ Return-Path: <SRS0=EtwH=MF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E00C3C11F68
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 05:53:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 276AEC11F69
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 06:28:49 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id AF50E61004
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 05:53:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org AF50E61004
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id A24446128C
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jul 2021 06:28:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A24446128C
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -24,72 +23,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2gX/L27iImolSq3ky0kl97+4LCOhlWyn/4LMPw9wUF0=; b=vVOd7m8Ci6Xz+d
-	XH/xs6GaOi3i7IrSW9aNBywNCvIJIcPaBCGsB7RPJLZKCifhGjCXmL4Yab7ubZvVod9sCaklWbXjq
-	mhIZ/rSicU8oqmGTOAnL9NJXBX5OF4nTZ/hjzM9tHVXRJNuYGoIeFVLy+t1Q+bYuehm3vd7D7l1HC
-	CPURJ96PVvVr38wGOe+4bZ/WEcovtb6SRRYeDlHwisH4PAAChfOnrxSATEXN1Sxe3zy3Vx4VPEGQY
-	fC/Rw+0NBBkUDv28iaQrOXYdoS94dLRaHuaz8RUBohlKGF0hLynggJsMUdt5/vORQFX3aG3JBB2v5
-	Fjr8+DgPfQyQJBi+yIHg==;
+	List-Owner; bh=p2YI+8mRMxabk2Wn9Zfb4WdzKYInRdn+ZtNHE69raN0=; b=gkaPdlHWPjG+1Y
+	g0iAMHma67roUOo7GGZpFdrrM2kMq2OvGjyIlpX4V+ofPhl9trUa9U5pf8odqUWyzBpYSZlfQQtfe
+	9gRMYe8PKvsngnZJaiEWBpa1ou3QVylu8qKZWmjeI4fZ/5hqTVFMvCiIj5StX4o+KwZDfF325/683
+	SbRksyrk5qkggmQiaPsz2eZMJsFwhCX0SFMaWeI0orbPI3keu3QQy/j1nHwT4YBOqoQ67jrFqGeKI
+	O0iyHaeij4UKuLrjVo1/yXRNjWdE4g4SW+BT91fqqCjPMru06TspYrXG82Z3SGhWC4VmYXT8FlzWR
+	Pze5wxg4xYkSfj8N+L+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m3BMS-009BiN-3q; Tue, 13 Jul 2021 05:53:40 +0000
-Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
+	id 1m3BuS-009Gmn-4U; Tue, 13 Jul 2021 06:28:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m3BMO-009BgK-NL; Tue, 13 Jul 2021 05:53:38 +0000
-Received: by mail-pf1-x432.google.com with SMTP id a127so18542039pfa.10;
- Mon, 12 Jul 2021 22:53:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=xqebAial/PxUvQ3x7+4RUByyPvCTdM4/Zaewy8REn3g=;
- b=rBIoJZjfWAT0sRt0CuW/uq1rjG98twshMCwuo4VaQt6XMH78VOKYuwbYlZD2OvKgfC
- WA+Orzbash1JXWVYc0LdD905jDTo2UNkKue11N0vhizpwQ1+hnchElQEiJBRU4v6SNjt
- Mp932YetKM2iQLa5Nj/9O4vS6T72OamP4Gp0oLWthTjgZqMEn8Hqaxfw3XHgTdWLAhZJ
- vNOAFY6WkHQWtbg4rtTy9EVA/q3m0LRP78HkRgMFtqdlBlTwDRm300n2ERdzYDs/3G9W
- dA1Ba+NjXPXtME0rbYx3pBJjluJAjATB5KWc6iP4PSMQA1ewHyFDULGomor4s9LVEIhQ
- v9XA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=xqebAial/PxUvQ3x7+4RUByyPvCTdM4/Zaewy8REn3g=;
- b=qASb18DU4kf8B8UkyhMbxLbpzDcu3Gvo3H6rDrHzfVItenteVCbmPp7DQvD5+ie5Rs
- 4SmamRBYKJR4q5GR23N9+LNGgP1B64tritbZF0zKTM6eWukNMwS5e+6Isd4+jSUa+uid
- PlnHRSrpmRHx06lyG7RhEd8Nrw22cBAY2CeVNA+ndhrpO4Crr1OnISW4mubfJrnx3T55
- /Ozi0VOjGg7SlkZqdcDNE93rVqEBHX36zDKPl038UDdUnQwA5dPUgJmNs26a90eDyUva
- bgN/Oj7T15MHmK318S0iqk1sLZVfaRf/ipBRWHDzZ+FellpoQbzx/280Z4/16f+m7vKi
- s0fA==
-X-Gm-Message-State: AOAM5317zYF6IOyj18/xuGPG3zVmOlyq6X/LLBOUEtkQCoV0yCrraGUw
- gRvhWE817p5uqzMYdOhavEW4mK5zphc=
-X-Google-Smtp-Source: ABdhPJyIw7eqiXGaYJ6UUi8zfg205/gHaSO1yNYTVWBN8ejx2F1ONjtA2jg18NkFnJE8nk+PVkgMIA==
-X-Received: by 2002:a62:5105:0:b029:305:324:17ae with SMTP id
- f5-20020a6251050000b0290305032417aemr2832898pfb.28.1626155616030; 
- Mon, 12 Jul 2021 22:53:36 -0700 (PDT)
-Received: from archl-c2lm.. ([103.51.72.31])
- by smtp.gmail.com with ESMTPSA id x19sm17755198pfa.104.2021.07.12.22.53.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 12 Jul 2021 22:53:35 -0700 (PDT)
-From: Anand Moon <linux.amoon@gmail.com>
-To: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
-Cc: Anand Moon <linux.amoon@gmail.com>,
- Matt Corallo <oc2udbzfd@mattcorallo.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Emiliano Ingrassia <ingrassia@epigenesys.com>, devicetree@vger.kernel.org
-Subject: [PATCHv1 3/3] phy: amlogic: meson8b-usb2: don't log an error on
- -EPROBE_DEFER
-Date: Tue, 13 Jul 2021 05:52:15 +0000
-Message-Id: <20210713055227.1142-4-linux.amoon@gmail.com>
-X-Mailer: git-send-email 2.32.0
-In-Reply-To: <20210713055227.1142-1-linux.amoon@gmail.com>
-References: <20210713055227.1142-1-linux.amoon@gmail.com>
+ id 1m3BuP-009GjJ-Ht
+ for linux-phy@lists.infradead.org; Tue, 13 Jul 2021 06:28:47 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 1E2B5611AB;
+ Tue, 13 Jul 2021 06:28:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1626157725;
+ bh=se9640ubWAMBXq29BIJQe5nQYy9uHVZjbLlOIKUMhLo=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=uStJlKToM2PjoN3BxTnmKgBTyyKyT36OYj7HUwAqTBXD2yupJfQ2NHHScIAyukCHr
+ g3GMxasYYy8CCLaaBFBXY1GfDEDXnCDiZ3xzqe58dAWmyXqQUI0Bk4Fo8g+PPjFD3b
+ qEr/Pse6bnWIWsULrsHx8oWtcmTXY33W+XjY3kXeEaieM8Op94xwSmbASTxbDZu1em
+ 3ZOhsaCGz84cY8YUowhOpJx9XhfizZGlWQe8T2X0AV+8m1aFb2SijApMsXqiKpGIEm
+ 3ORvckVxMzGm41ZCBd3pkTpOPmZd9gVg6S5PdOkO+suBz/F2AzPk5hdG5K9COrrjSF
+ vHR6qnSa9T2+Q==
+Received: by mail.kernel.org with local (Exim 4.94.2)
+ (envelope-from <mchehab@kernel.org>)
+ id 1m3BuM-005yPb-RS; Tue, 13 Jul 2021 08:28:42 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ "Manivannan Sadhasivam" <mani@kernel.org>, "Rob Herring" <robh@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH v5 2/8] dt-bindings: phy: Add bindings for HiKey 970 PCIe PHY
+Date: Tue, 13 Jul 2021 08:28:35 +0200
+Message-Id: <baa7e71e13953b28a11fffdcef35195099feb7fd.1626157454.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.31.1
+In-Reply-To: <cover.1626157454.git.mchehab+huawei@kernel.org>
+References: <cover.1626157454.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210712_225336_790574_4113C353 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20210712_232845_662751_DE279AC9 
+X-CRM114-Status: GOOD (  10.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,38 +85,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-devm_phy_create can return -EPROBE_DEFER if the phy-supply is not ready
-yet. Silence this warning as the driver framework will re-attempt
-registering the PHY. Use dev_err_probe() for phy resources to indicate
-the deferral reason when waiting for the resource to come up.
+Document the bindings for HiKey 970 (hi3670) PCIe PHY
+interface, supported via the pcie-kirin driver.
 
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 ---
-[0] https://patchwork.kernel.org/project/linux-amlogic/patch/20210617194154.2397-9-linux.amoon@gmail.com/
----
----
- drivers/phy/amlogic/phy-meson8b-usb2.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../phy/hisilicon,phy-hi3670-pcie.yaml        | 101 ++++++++++++++++++
+ 1 file changed, 101 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
 
-diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-index 2aad45c55494..cf10bed40528 100644
---- a/drivers/phy/amlogic/phy-meson8b-usb2.c
-+++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-@@ -277,8 +277,8 @@ static int phy_meson8b_usb2_probe(struct platform_device *pdev)
- 
- 	phy = devm_phy_create(&pdev->dev, NULL, &phy_meson8b_usb2_ops);
- 	if (IS_ERR(phy)) {
--		dev_err(&pdev->dev, "failed to create PHY\n");
--		return PTR_ERR(phy);
-+		return dev_err_probe(&pdev->dev, PTR_ERR(phy),
-+				     "failed to create PHY\n");
- 	}
- 
- 	phy_set_drvdata(phy, priv);
+diff --git a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+new file mode 100644
+index 000000000000..976ab6fe7b0a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+@@ -0,0 +1,101 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/hisilicon,phy-hi3670-pcie.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: HiSilicon Kirin970 PCIe PHY
++
++maintainers:
++  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
++
++description: |+
++  Bindings for PCIe PHY on HiSilicon Kirin 970.
++
++properties:
++  compatible:
++    const: hisilicon,hi970-pcie-phy
++
++  "#phy-cells":
++    const: 0
++
++  reg:
++    maxItems: 1
++    description: PHY Control registers
++
++  reg-names:
++    const: phy
++
++  phy-supply:
++    description: The PCIe PHY power supply
++
++  clocks:
++    items:
++      - description: PCIe PHY clock
++      - description: PCIe AUX clock
++      - description: PCIe APB PHY clock
++      - description: PCIe APB SYS clock
++      - description: PCIe ACLK clock
++
++  clock-names:
++    items:
++      - const: pcie_phy_ref
++      - const: pcie_aux
++      - const: pcie_apb_phy
++      - const: pcie_apb_sys
++      - const: pcie_aclk
++
++  reset-gpios:
++    description: PCI PERST reset GPIOs
++    maxItems: 4
++
++  clkreq-gpios:
++    description: Clock request GPIOs
++    maxItems: 3
++
++  hisilicon,eye-diagram-param:
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    description: Eye diagram for phy.
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - clock-names
++  - reset-gpios
++  - clkreq-gpios
++  - hisilicon,eye-diagram-param
++  - phy-supply
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/hi3670-clock.h>
++
++    bus {
++      #address-cells = <2>;
++      #size-cells = <2>;
++      pcie_phy: pcie-phy@fc000000 {
++        compatible = "hisilicon,hi970-pcie-phy";
++        reg = <0x0 0xfc000000 0x0 0x80000>;
++        reg-names = "phy";
++        #phy-cells = <0>;
++        phy-supply = <&ldo33>;
++        clocks = <&crg_ctrl HI3670_CLK_GATE_PCIEPHY_REF>,
++                 <&crg_ctrl HI3670_CLK_GATE_PCIEAUX>,
++                 <&crg_ctrl HI3670_PCLK_GATE_PCIE_PHY>,
++                 <&crg_ctrl HI3670_PCLK_GATE_PCIE_SYS>,
++                 <&crg_ctrl HI3670_ACLK_GATE_PCIE>;
++        clock-names = "pcie_phy_ref", "pcie_aux",
++                      "pcie_apb_phy", "pcie_apb_sys", "pcie_aclk";
++        reset-gpios = <&gpio7 0 0 >, <&gpio25 2 0 >,
++                      <&gpio3 1 0 >, <&gpio27 4 0 >;
++        clkreq-gpios = <&gpio20 6 0 >, <&gpio27 3 0 >, <&gpio17 0 0 >;
++        hisilicon,eye-diagram-param = <0xFFFFFFFF 0xFFFFFFFF
++                                       0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF>;
++      };
++    };
++...
 -- 
-2.32.0
+2.31.1
 
 
 -- 
