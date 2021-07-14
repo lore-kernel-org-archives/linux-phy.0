@@ -2,92 +2,74 @@ Return-Path: <SRS0=Fvr8=MG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-11.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A415DC07E9A
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jul 2021 17:25:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BAC25C07E9A
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jul 2021 17:42:37 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6BFA1613BE
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jul 2021 17:25:34 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6BFA1613BE
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 89EC3613CB
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jul 2021 17:42:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 89EC3613CB
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mgsXT0TdQB8lRRbI/yhiOrAewaItZ2efs6j7Pg/aU1A=; b=03SkC5p0sB2zqO
-	zT64IagFbNJgGvwI/kGPx7LNKdnOn9ZyhzdrHV6hyAhi0LiPF8HoAydcW+kbQLaZKZoysJ869O0Y7
-	xexsHZE5k07QH45XET5JuUpFjulGd8u1KnstGR5g8+USuJeepjBN2npFHjanOoa0FzwUEG8mHM8De
-	A3Vk61g4ffh5xyxXmMy+FQQXy4nTU+8V3NMnNRFziStNPn2PmiZqA8RkgTQI5YyEzUoyMgXDCu/ui
-	J3pckQzWZVxS+JFephz0GPwTBI24O4zykbMs49N+prqEPbFNHx0AyzFS28pMS2jnJapi/q5R8TO+E
-	WM8qFgO1gxWQGOK413LA==;
+	List-Owner; bh=orxTKcQh4igJI2/6OMfRHwI+m/qDTE7VkAlol9R9u6Q=; b=c6G2llBAVm0wJo
+	lUdsRTso10p5keTx8HZRu4XWDcSxmmjuJtfkvKoBsPT/8WpbCZRfMpwvmAndMVMkhJqaMAGGr7HIQ
+	rGUEi/Of/xKSWiGOpbGrAP10EYbOq5Y/dQEsazSPAcoAhS/QfqiCxwRP2G2PrNOd7H90yTFl0MyMp
+	2S2N6z0DS2ns5Z3JSDALYHzzvWam0mkwAtgLY0+C9y1om3yLsSHCDIpI2qzPEq5LFyjZkx+MG2VXa
+	GPBH0tyIPU+rOkRKhl5CAyxv4uyD9efyl5mEed0inKPOwOxzSaxaJPZ1sypTauUP9npVIP0U9FbHi
+	QpwutJ1ixrouT4YfMF7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m3idZ-00EHuO-Tq; Wed, 14 Jul 2021 17:25:33 +0000
-Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+	id 1m3iu5-00ELCB-23; Wed, 14 Jul 2021 17:42:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m3idX-00EHt4-07; Wed, 14 Jul 2021 17:25:32 +0000
-Received: by mail-ed1-x52f.google.com with SMTP id ca14so4214781edb.2;
- Wed, 14 Jul 2021 10:25:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HDdCuzsEIRQEbRqLmbLMr2Fppo157cgcX7veAgVnwEU=;
- b=TzmPBxh3FWomK3cu+C3DIxWGyEoanH1pzsFzSntP9kxCNDpVNaQUiFLNee1Box43iM
- ZDUfQ4JNpb+CHvvX2upwIg4eje5SwmM2gXT/44LFl30KM7u6isNs5LMqO9VIke3uOb0g
- cwajO1CNW13jcCD5XQBTIk6dIu9K3zcYHBf+/qnSmWxUfk+IbQaKi6HSjS35dIWesMap
- TcSWXjoLOcwXeIpqQOkzkGnQEzZw35lbiuZLr3OB7Wu7941jqf2+RLiRKkrKFSp+i3Kf
- PHWXqWEFoF5Cn8+OiOVwy7M+BPZs33r5xpHhX5RXa9rdaqSZGO3gfBuw3cqEDQYy2BTU
- hCOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HDdCuzsEIRQEbRqLmbLMr2Fppo157cgcX7veAgVnwEU=;
- b=N0O0Xg024RjzcY+2LdH0EjepBE6QQXa9UbcN6iv71ah8wguPLdKKFFat+qFxXLCLFh
- i7q7DJX5nBXI446w1M7gEkKTg4o7/n+0cB4mh6gyb1KhRyEcfY+XTVTlqwvl8aVGvCir
- djpBKq8167Nb3ehqx1fSGA9d5meB4qFi856irnahLmJwzgicrLgYRLciq+F5Go8P1Oit
- pdLMKNfnDY9xJyMA+0foAxINP+8pZIlF8t1Qf92g1b+3kuoGZkgZT+wLQRAPOfEcQ8h8
- JRU+MfuEfI/NMrntvH6BrGRDFmEyEYhIGraEzppp7usx7eYIhiPYJbWJ7qXmx6ayW7zS
- Dlzg==
-X-Gm-Message-State: AOAM532nz4u0V3gimlYkF6ZwF4H4ZchIBRQ1I4M17dHE4EazD+DTq2eV
- q68STJoYbskioOsziDzaXaPiyKFWzTStmYwiX0Q=
-X-Google-Smtp-Source: ABdhPJzcmA22NEs/yt9L3GEI+PYHcmiGVgaPU9Jc2/SrrPTJMDEJEyCfK4ZSeMMHL6UYvAFdyJyUbjgshPbU8UU7qRU=
-X-Received: by 2002:aa7:d344:: with SMTP id m4mr15199160edr.184.1626283527708; 
- Wed, 14 Jul 2021 10:25:27 -0700 (PDT)
+ id 1m3iu1-00ELAR-Mr
+ for linux-phy@lists.infradead.org; Wed, 14 Jul 2021 17:42:35 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 84F8E613AB;
+ Wed, 14 Jul 2021 17:42:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1626284553;
+ bh=TkCzfR8l+WPsOeYqxQfU5E9hJqIQYCL4keS+qZTCaUE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Xn8MwWL+QbFcwRBdQbnIVVEdQdQxZ9Rxbe8Z+VWr9PrdXi3BUYwJPIGq85wnPVltZ
+ zgDpxKPPwPOwpMhWm+Oq8NpcYL6ct9E5sGOjE879izdAIWdjKeMuaDtxZ0N2JWSxRl
+ /zvcXr0KMw7oLyzAKTFi0t91khx5uoPXTjddOBtD7fYqkEILdJTu3+7hcQsHqHMYeq
+ McFKAoYYM0JFIGB5NjNdHTXcZUMfJSvr6QywTd9AdzLquifr1f5Al6tHNXgI00gGq+
+ 3jkaU1Cee9llFcyaE15yQl7SPj0DcbTz8/WYkaTbK/6CmzHvGNQxCNNw8skKKUcySx
+ 37cU3w0sGS7MQ==
+Date: Wed, 14 Jul 2021 23:12:25 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Cc: Rob Herring <robh@kernel.org>, Bjorn Helgaas <helgaas@kernel.org>,
+ linuxarm@huawei.com, mauro.chehab@huawei.com,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v5 2/8] dt-bindings: phy: Add bindings for HiKey 970 PCIe
+ PHY
+Message-ID: <20210714174225.GA8988@workstation>
+References: <cover.1626157454.git.mchehab+huawei@kernel.org>
+ <baa7e71e13953b28a11fffdcef35195099feb7fd.1626157454.git.mchehab+huawei@kernel.org>
+ <20210714022649.GA1324196@robh.at.kernel.org>
+ <20210714091435.322d68b1@coco.lan>
 MIME-Version: 1.0
-References: <20210713055227.1142-1-linux.amoon@gmail.com>
- <20210713055227.1142-2-linux.amoon@gmail.com>
- <CAFBinCD3ahpNQhP_jWZ3-4nXx8OqZOAANCpTN3BrsULRbYZHVw@mail.gmail.com>
- <CANAwSgTh02qg=cMT8tpHcEfAs5yW2vHQ7tPOkvuKXos_fOmh8A@mail.gmail.com>
- <CAFBinCC-kD-MW+bwqCZH5AjYDhxWa_pN2WEnHuiZpx=RhUdROQ@mail.gmail.com>
- <CANAwSgTf4sjoufrZuK-EjE=+yA8zSoVbqhEyNhJJFBLUCOVZmQ@mail.gmail.com>
-In-Reply-To: <CANAwSgTf4sjoufrZuK-EjE=+yA8zSoVbqhEyNhJJFBLUCOVZmQ@mail.gmail.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Wed, 14 Jul 2021 22:55:15 +0530
-Message-ID: <CANAwSgR5nNN3D+NZjqNNjyp=rVYE=RG2icnJAc=5F23xSh9Bvg@mail.gmail.com>
-Subject: Re: [PATCHv1 1/3] ARM: dts: meson8b: odroidc1: Add usb phy power node
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: linux-phy@lists.infradead.org, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-amlogic@lists.infradead.org, 
- Linux Kernel <linux-kernel@vger.kernel.org>,
- Matt Corallo <oc2udbzfd@mattcorallo.com>, 
- Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Emiliano Ingrassia <ingrassia@epigenesys.com>,
- devicetree <devicetree@vger.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20210714091435.322d68b1@coco.lan>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210714_102531_091478_55025C93 
-X-CRM114-Status: GOOD (  36.96  )
+X-CRM114-CacheID: sfid-20210714_104233_864022_5CAE17AA 
+X-CRM114-Status: GOOD (  20.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,133 +86,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Martin.
+Hi Mauro,
 
-On Wed, 14 Jul 2021 at 17:29, Anand Moon <linux.amoon@gmail.com> wrote:
->
-> Hi Martin,
->
-> On Wed, 14 Jul 2021 at 02:05, Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
-> >
-> > Hi Anand,
-> >
-> > On Tue, Jul 13, 2021 at 8:45 PM Anand Moon <linux.amoon@gmail.com> wrote:
-> > >
-> > > Hi Martin,
-> > >
-> > > Thanks for reviewing the changes,
-> > >
-> > > On Tue, 13 Jul 2021 at 20:35, Martin Blumenstingl
-> > > <martin.blumenstingl@googlemail.com> wrote:
-> > > >
-> > > > Hi Anand,
-> > > >
-> > > > On Tue, Jul 13, 2021 at 7:53 AM Anand Moon <linux.amoon@gmail.com> wrote:
-> > > > >
-> > > > > Add missing usb phy power node for phy mode fix below warning.
-> > > > >
-> > > > > [    1.253149] phy phy-c1108820.phy.0: Looking up phy-supply from device tree
-> > > > > [    1.253166] phy phy-c1108820.phy.0: Looking up phy-supply property
-> > > > >                 in node /soc/cbus@c1100000/phy@8820 failed
-> > > > I did some testing on my own Odroid-C1+ and this patch is not doing
-> > > > anything for me.
-> > > > more information below.
-> > > Some device node for USB will have
-> > The mistake I made before is considering USB VBUS as PHY power supply.
-> > I believe the USB PHY is actually powered by the AVDD18_USB_ADC and
-> > USB33_VDDIOH signals. See the S905 datasheet [0], page 25
-> > These are 1.8V and 3.3V signals while you are adding a 5V regulator.
-> >
-> OK, thanks.
-> > [...]
-> > > > > +               /*
-> > > > > +                * signal name from schematics: USB_POWER
-> > > > > +                */
-> > > > Just a few lines below you're saying that the name from the schematics is PWREN
-> > > > If this patch is getting another round then please clarify the actual
-> > > > signal name, or name both signals if the schematics is actually using
-> > > > both names.
-> > > >
-> > > As per the schematics.
-> > > PWREN ---> GPIOAO.BIT5      gpio pin control
-> > > USB_POWER ---> P5V0          power source regulator.
-> > ah, thanks for clarifying this
-> > my suggestion is to put that exact paragraph into the comment to avoid confusion
-> >
-> > [...]
-> > > > Can you please give this a try on your Odroid-C1 as well?
-> > > > The conclusion from my own testing is that GPIOAO_5 doesn't seem to be
-> > > > related to USB1 (host-only) because if it was then inverting the
-> > > > polarity (from active high to active low) should result in a change.
-> > > >
-> > >
-> > > Ok I have modified as per above but not changes in gpio polarity
-> > > from active high to active low. see below.
-> > >
-> > > # Odroid C1
-> > > [alarm@archl-c1e ~]$ sudo cat /sys/kernel/debug/gpio | grep USB
-> > >  gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
-> > >  gpio-1954 (USB_OTG_PWREN       |regulator-usbp_pwr_e) out hi
-> > >
-> > > # Odroid C2
-> > > [alarm@archl-c2lm ~]$  sudo cat /sys/kernel/debug/gpio | grep usb
-> > >  gpio-501 (USB HUB nRESET      |usb-hub-reset       ) out hi
-> > >  gpio-502 (USB OTG Power En    |regulator-usb-pwrs  ) out hi
-> > that's strange, my result is different
-> >
-> >   gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
-> >   enable-active-high;
-> > gives me:
-> >   # grep USB_OTG_PWREN /sys/kernel/debug/gpio
-> >   gpio-418 (USB_OTG_PWREN       |regulator-usb-pwr-en) out hi
-> >
-> >   gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_LOW>;
-> > gives me:
-> >   # grep USB_OTG_PWREN /sys/kernel/debug/gpio
-> >   gpio-418 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo ACTIVE LOW
-> This gpio pin number dose not match the gpio pin on Odroid c1+, see below.
-> >
-> > Did you remove the "enable-active-high;" in your "active low" test?
-> No
-> > GPIO polarity for regulators is managed with that flag, not just with
-> > GPIO_ACTIVE_{HIGH,LOW}
->
-> It's just with changes the following, below
-> +++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
-> @@ -47,7 +47,7 @@ usb_pwr_en: regulator-usb-pwr-en {
->                 /*
->                  * signal name from schematics: PWREN
->                  */
-> -               gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
-> +               gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_LOW>;
->                 enable-active-high;
->         };
->
+On Wed, Jul 14, 2021 at 09:14:35AM +0200, Mauro Carvalho Chehab wrote:
+> Em Tue, 13 Jul 2021 20:26:49 -0600
+> Rob Herring <robh@kernel.org> escreveu:
+> 
+> > On Tue, Jul 13, 2021 at 08:28:35AM +0200, Mauro Carvalho Chehab wrote:
+> 
+> > > +  reset-gpios:
+> > > +    description: PCI PERST reset GPIOs
+> > > +    maxItems: 4  
+> > 
+> > Hiding the 4 ports in the phy?
+> 
+> Rob,
+> 
+> I'm not trying to hide anything.
+> 
+> There are several differences with regards to how PERST# is handled between
+> HiKey 960 and HiKey 970.
+> 
+> From hardware perspective, you can see the schematics of both boards:
+> 
+> 	https://github.com/96boards/documentation/raw/master/consumer/hikey/hikey960/hardware-docs/HiKey960_SoC_Reference_Manual.pdf
+> 	https://www.96boards.org/documentation/consumer/hikey/hikey970/hardware-docs/files/hikey970-schematics.pdf
+> 
+> The 960 PHY has the SoC directly connected to a PCIE M.2 slot 
+> (model 10130616) without any external bridge chipset. It uses a single 
+> GPIO (GPIO 089) for the PERST# signal, connected via a voltage converter
+> (from 1.8V to 3.3V).
+> 
+> 	$ lspci
+> 	00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3660 (rev 01)
+> 
+> The 970 PHY has an external PCI bridge chipset (PLX Technology PEX 8606).
+> Besides the bridge, the hardware comes with an Ethernet PCI adapter, a
+> M.2 slot and a mini-PCIe connector. Each one with its own PERST# signal,
+> mapped to different GPIO pins, and each one using its own voltage
+> converter.
+> 
+> 	$ lspci
+> 	00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
+> 	01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+> 	02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+> 	02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+> 	02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+> 	02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+> 	02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+> 	06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
+> 
+> On other words, there are 4 GPIOs mapped to different PERST# pins in
+> the hardware:
+> 
+> - GPIO 56 is connected to the PERST# pin at PEX 8606;
+> - GPIO 25 is connected to the PERST# pin at the M.2 slot;
+> - GPIO 220 is connected to the PERST# pin at the PCIe mini slot;
+> - GPIO 203 is connected to the PERST# pin at the Ethernet chipset.
+> 
+> Maybe due to different electrical requirements, the hardware design
+> use different GPIOs instead of feeding them altogether.
+> 
+> Anyway, the fact is that the PHY on 970 has 4 different GPIOs that are
+> need in order for the hardware to work. and this is specific to this
+> particular PHY.
+> 
 
-Can you give these small changes a try,
-$ git diff
-diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts
-b/arch/arm/boot/dts/meson8b-odroidc1.dts
-index 748f4c6a050a..066523f14074 100644
---- a/arch/arm/boot/dts/meson8b-odroidc1.dts
-+++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
-@@ -47,8 +47,9 @@ usb_pwr_en: regulator-usb-pwr-en {
-                /*
-                 * signal name from schematics: PWREN
-                 */
--               gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
-+               gpio = <&gpio_ao GPIOAO_5 GPIO_OPEN_DRAIN>;
-                enable-active-high;
-+               regulator-always-on;
-        };
+I'm not sure about this. That fact that the PCIe device's PERST# signal
+wired to different GPIOs doesn't mean that those GPIOs belong to the PHY.
+Those GPIOs should be independent of the PCIe core controlled manually
+by the driver.
 
-[alarm@archl-c1e ~]$ sudo cat /sys/kernel/debug/gpio | grep usb
- gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
- gpio-1954 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo
+I think this issue is somewhat similar to the one we are dealing on the
+Qcom platforms [1] where each PCIe device uses a different GPIO and voltage
+config to operate. And those need to be active for the link training to
+succeed.
 
-Thanks
--Anand
+So perhaps we should aim for a common solution? The GPIO and voltage
+layout should be described in DT for each port exposed by the SoC/board.
+
+Thanks,
+Mani
+
+[1] https://lkml.org/lkml/2021/6/21/1524
 
 -- 
 linux-phy mailing list
