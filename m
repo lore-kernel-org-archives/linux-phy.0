@@ -2,73 +2,78 @@ Return-Path: <SRS0=8kN2=MH=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-11.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_2 autolearn=unavailable autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
+	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4B17BC07E96
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 06:37:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9D631C07E96
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 06:48:50 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 09E9E6136E
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 06:37:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 09E9E6136E
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 5E06761362
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 06:48:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5E06761362
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nnvk38iTNPS8gb7VAE2ZGWtD01yPi4LgyvcV6IifxGA=; b=yEyEEDruXU+giB
-	Kkkd7BTRhHu0JlMYKcbl8DXDZdONvY7n1dIW2EskCZPQVMP8XLbLWAhQaoOaCNGQ1ea879uEsnBNO
-	b9qFLPF6h7T7ZsG+6wI1x70BXjQNtCRAojcS/cXeJzREwSxUTwuMs43iAXP12egkGrK+P3hbib1nf
-	+ONS2WkAOCsHEsW3cfTy6ue9erFE5/O1EJjexpwcNhbp9Kb25dGpmpByhl+/GVR3cIFnTj0CAPO16
-	r70FjvWOfZQ5hs81GBW09fG8Linopb1+VmVl9q2cKD7UTfpzdJExNbdyUa9/qnPbgDRGOLrdWbEPP
-	7oKySVcQIPSvPQqzeZVw==;
+	List-Owner; bh=XqHeKh1GPlRhZVtL4ys2jI1TC9NrBLQuR/StA0HsDJ8=; b=r6qBXvUz6LUUw3
+	hp60lXUdF0NCZ83w8Z5AEibMf1Zi2Plu2x1pE3Gqb/LPm8Ix/hvkwBv4tIMMruzlZ0nfeQkJzqAg7
+	9eEVwo+78pUXlxW4K35fLDT45exC7+x2GnB4r7+lndgRBtRs5lX7k9NvMsjwN+UINCD3Aw5r9n8QK
+	l4HGdfAmJPhuJrkxPw6Fiyc1Brpz/gG2lghz9qMjkkq4Jbd1kdYw0JLKo6wBGfBp4zgkb/1oxmNAe
+	Tesch5G1bOwW4akhboRJpvZi7T/jL22SJBd9BvnSMXZ0tNCS2WCtvGkjy+jB7wIG2FJ+nw2BJGsW4
+	5Iw+YgCW45dYugFSMUrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m3uzm-00HHse-ID; Thu, 15 Jul 2021 06:37:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1m3vAv-00HJ9u-Sn; Thu, 15 Jul 2021 06:48:49 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m3uzi-00HHrq-UI
- for linux-phy@lists.infradead.org; Thu, 15 Jul 2021 06:37:16 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 3239561260;
- Thu, 15 Jul 2021 06:37:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1626331034;
- bh=aGEHrV/rpUEWOWqAEiPjKe1RFXbQnO8o1vEWbtoEo2k=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=oNw/G78O5xC1KuhLj+qCVJEpH+CFRpYOdthOg0zjDVlekWBXddUuaiQj8WOpr7Esr
- snM3V6EsInLhXStQPK8Tuj+4dw0LaYKpXRNpZ7UKrcvTV/kq5itm+goOeZ+AxWmucz
- uGG9tay/iSlRRedM4j+FtZfjZwGuZzBXGQF+4K5+PSHHm9pux24kjVrMs8C81S6/mI
- rTB9MQXjXYqFt8r1aH7gSSB9R0WEdHZHNtNhvvB33+PKIoJfJzM4SuNuYQNfw+cD54
- WR7AqcZ4bkqJ0zct6z8fgH9rOnNmbkrauOEsemP+eVkHHmektR+YHy9PlixaYeHtjd
- pQf3myhfIJjRg==
-Date: Thu, 15 Jul 2021 08:37:09 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Rob Herring <robh@kernel.org>, Bjorn Helgaas <helgaas@kernel.org>,
- linuxarm@huawei.com, mauro.chehab@huawei.com, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 2/8] dt-bindings: phy: Add bindings for HiKey 970
- PCIe PHY
-Message-ID: <20210715083709.35dade89@coco.lan>
-In-Reply-To: <20210714174225.GA8988@workstation>
-References: <cover.1626157454.git.mchehab+huawei@kernel.org>
- <baa7e71e13953b28a11fffdcef35195099feb7fd.1626157454.git.mchehab+huawei@kernel.org>
- <20210714022649.GA1324196@robh.at.kernel.org>
- <20210714091435.322d68b1@coco.lan>
- <20210714174225.GA8988@workstation>
-X-Mailer: Claws Mail 3.17.8 (GTK+ 2.24.33; x86_64-redhat-linux-gnu)
+ id 1m3vAh-00HJ5N-99; Thu, 15 Jul 2021 06:48:36 +0000
+X-UUID: 9a8a799dc9eb4427b0b7b72b54cbe9d7-20210714
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=IF3uVjQ/ywZg0sFEpIqfcmfR7FbloG4Gv+OJZDMAreI=; 
+ b=DnrlpGTUXea0uZ3m5++4DrBdlIqzMrKe8aIn/UKgCrVPdZuqvbqDAT+wwTxdiDRaCHM66B+OivZMZkzL4r8ijP9UmPlk86ohMlob1/iVjzhe1YO7KxWo9mZ75HPBSmr8R5ukapoJBRP/Jo571KdEFLilKNuhrZ0/xLVELuQ11wU=;
+X-UUID: 9a8a799dc9eb4427b0b7b72b54cbe9d7-20210714
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1231443301; Wed, 14 Jul 2021 23:48:32 -0700
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 14 Jul 2021 23:48:31 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 15 Jul 2021 14:48:29 +0800
+Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 15 Jul 2021 14:48:28 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ "Rob Herring" <robh+dt@kernel.org>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Eddie Hung
+ <eddie.hung@mediatek.com>
+Subject: [PATCH v3 2/3] phy: phy-mtk-tphy: support new hardware version
+Date: Thu, 15 Jul 2021 14:48:21 +0800
+Message-ID: <1626331702-27825-2-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1626331702-27825-1-git-send-email-chunfeng.yun@mediatek.com>
+References: <1626331702-27825-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210714_233715_072656_91789DB5 
-X-CRM114-Status: GOOD (  30.74  )
+X-CRM114-CacheID: sfid-20210714_234835_384655_59914F79 
+X-CRM114-Status: GOOD (  17.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,140 +90,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Mani,
+The PHYA arch is updated, and doesn't support slew rate calibrate
+anymore on 7nm or advanced process, add a new version number to
+support it.
+Note: the FreqMeter bank is not used but reserved.
 
-Em Wed, 14 Jul 2021 23:12:25 +0530
-Manivannan Sadhasivam <mani@kernel.org> escreveu:
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v2~3: no changes
+---
+ drivers/phy/mediatek/phy-mtk-tphy.c | 40 +++++++++++++++++++++--------
+ 1 file changed, 29 insertions(+), 11 deletions(-)
 
-> Hi Mauro,
-> 
-> On Wed, Jul 14, 2021 at 09:14:35AM +0200, Mauro Carvalho Chehab wrote:
-> > Em Tue, 13 Jul 2021 20:26:49 -0600
-> > Rob Herring <robh@kernel.org> escreveu:
-> >   
-> > > On Tue, Jul 13, 2021 at 08:28:35AM +0200, Mauro Carvalho Chehab wrote:  
-> >   
-> > > > +  reset-gpios:
-> > > > +    description: PCI PERST reset GPIOs
-> > > > +    maxItems: 4    
-> > > 
-> > > Hiding the 4 ports in the phy?  
-> > 
-> > Rob,
-> > 
-> > I'm not trying to hide anything.
-> > 
-> > There are several differences with regards to how PERST# is handled between
-> > HiKey 960 and HiKey 970.
-> > 
-> > From hardware perspective, you can see the schematics of both boards:
-> > 
-> > 	https://github.com/96boards/documentation/raw/master/consumer/hikey/hikey960/hardware-docs/HiKey960_SoC_Reference_Manual.pdf
-> > 	https://www.96boards.org/documentation/consumer/hikey/hikey970/hardware-docs/files/hikey970-schematics.pdf
-> > 
-> > The 960 PHY has the SoC directly connected to a PCIE M.2 slot 
-> > (model 10130616) without any external bridge chipset. It uses a single 
-> > GPIO (GPIO 089) for the PERST# signal, connected via a voltage converter
-> > (from 1.8V to 3.3V).
-> > 
-> > 	$ lspci
-> > 	00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3660 (rev 01)
-> > 
-> > The 970 PHY has an external PCI bridge chipset (PLX Technology PEX 8606).
-> > Besides the bridge, the hardware comes with an Ethernet PCI adapter, a
-> > M.2 slot and a mini-PCIe connector. Each one with its own PERST# signal,
-> > mapped to different GPIO pins, and each one using its own voltage
-> > converter.
-> > 
-> > 	$ lspci
-> > 	00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
-> > 	01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-> > 	02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-> > 	02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-> > 	02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-> > 	02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-> > 	02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-> > 	06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
-> > 
-> > On other words, there are 4 GPIOs mapped to different PERST# pins in
-> > the hardware:
-> > 
-> > - GPIO 56 is connected to the PERST# pin at PEX 8606;
-> > - GPIO 25 is connected to the PERST# pin at the M.2 slot;
-> > - GPIO 220 is connected to the PERST# pin at the PCIe mini slot;
-> > - GPIO 203 is connected to the PERST# pin at the Ethernet chipset.
-> > 
-> > Maybe due to different electrical requirements, the hardware design
-> > use different GPIOs instead of feeding them altogether.
-> > 
-> > Anyway, the fact is that the PHY on 970 has 4 different GPIOs that are
-> > need in order for the hardware to work. and this is specific to this
-> > particular PHY.
-> >   
-> 
-> I'm not sure about this. That fact that the PCIe device's PERST# signal
-> wired to different GPIOs doesn't mean that those GPIOs belong to the PHY.
-> Those GPIOs should be independent of the PCIe core controlled manually
-> by the driver.
-> 
-> I think this issue is somewhat similar to the one we are dealing on the
-> Qcom platforms [1] where each PCIe device uses a different GPIO and voltage
-> config to operate. And those need to be active for the link training to
-> succeed.
-> 
-> So perhaps we should aim for a common solution? The GPIO and voltage
-> layout should be described in DT for each port exposed by the SoC/board.
-
-It doesn't seem to be the same case. In the case of Hikey 970[1], it uses
-one pullup for each GPIO to convert from 1V8 to the voltage needed by
-each chipset. There's no regulators envolved: the output voltage is
-fixed. From the diagram, it seems that PEX8606 uses 2V5 (via U2602), while 
-the other 3 GPIOs (M.2, PCIe mini and Ethernet) use 3V3. Interesting
-enough, the layout uses a separate gate chip for Ethernet (U3107),
-while both M.2 and PCIe mini use two ports at the same gate chip (U2801).
-
-[1] https://www.96boards.org/documentation/consumer/hikey/hikey970/hardware-docs/files/hikey970-schematics.pdf
-
-I can think on a couple of reasons why the hardware designers opted to
-use 4 different GPIOs:
-
-- the PCIe external bridge required a lower voltage;
-- the current drained by each output port could be different;
-- the chips used by the pullup could have some sort of protection to
-  minimize the risk of damaging the hardware due to a bad contact
-  and/or short circuit (for M.2 and PCIe mini connectors).
-
-In any case, from DT perspective, the only thing that makes sense to
-expose are the 4 GPIOs used by the PERST# signal, as the output voltages
-and max currents are fixed.
-
-Conceptually, IMO, such pullup logic can be considered as part of 
-the physical layer, but, as Rob pointed, all PCIe devices need to
-have PERST#. So, they could be just mapped as gpio-resets at the
-PCIe OF node.
-
-In summary, IMO, mapping those 4 GPIOs via DT can be done by
-either:
-
-1. Place all of them at the PCIe OF node;
-2. Place all of them at the PHY OF node;
-3. Place one of them at the PCIe, and the other three at PHY.
-
-IMO, (3) is messier. So, I would go either for (1) or (2). Between them,
-I don't have any preferences, as both would work.
-
-Right now, pci-bus.yaml doesn't allow (1), as it limits reset-gpios
-to a maximum of 1 item, but this is easily fixable, but it requires
-a patch against https://github.com/devicetree-org/dt-schema to raise
-MaxItems to at least 4.
-
-Rob,
-
-Among the above alternatives, what do you prefer?
-
-Thanks,
-Mauro
-
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index 731c483a04de..42a1174da6cc 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -27,7 +27,8 @@
+ #define SSUSB_SIFSLV_V1_U3PHYD		0x000
+ #define SSUSB_SIFSLV_V1_U3PHYA		0x200
+ 
+-/* version V2 sub-banks offset base address */
++/* version V2/V3 sub-banks offset base address */
++/* V3: U2FREQ is not used anymore, but reserved */
+ /* u2 phy banks */
+ #define SSUSB_SIFSLV_V2_MISC		0x000
+ #define SSUSB_SIFSLV_V2_U2FREQ		0x100
+@@ -270,6 +271,7 @@
+ enum mtk_phy_version {
+ 	MTK_PHY_V1 = 1,
+ 	MTK_PHY_V2,
++	MTK_PHY_V3,
+ };
+ 
+ struct mtk_phy_pdata {
+@@ -330,6 +332,10 @@ static void hs_slew_rate_calibrate(struct mtk_tphy *tphy,
+ 	int fm_out;
+ 	u32 tmp;
+ 
++	/* HW V3 doesn't support slew rate cal anymore */
++	if (tphy->pdata->version == MTK_PHY_V3)
++		return;
++
+ 	/* use force value */
+ 	if (instance->eye_src)
+ 		return;
+@@ -878,7 +884,7 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
+ 		writel(tmp, com + U3P_U2PHYBC12C);
+ 	}
+ 
+-	if (instance->eye_src) {
++	if (tphy->pdata->version < MTK_PHY_V3 && instance->eye_src) {
+ 		tmp = readl(com + U3P_USBPHYACR5);
+ 		tmp &= ~PA5_RG_U2_HSTX_SRCTRL;
+ 		tmp |= PA5_RG_U2_HSTX_SRCTRL_VAL(instance->eye_src);
+@@ -1042,11 +1048,15 @@ static struct phy *mtk_phy_xlate(struct device *dev,
+ 		return ERR_PTR(-EINVAL);
+ 	}
+ 
+-	if (tphy->pdata->version == MTK_PHY_V1) {
++	switch (tphy->pdata->version) {
++	case MTK_PHY_V1:
+ 		phy_v1_banks_init(tphy, instance);
+-	} else if (tphy->pdata->version == MTK_PHY_V2) {
++		break;
++	case MTK_PHY_V2:
++	case MTK_PHY_V3:
+ 		phy_v2_banks_init(tphy, instance);
+-	} else {
++		break;
++	default:
+ 		dev_err(dev, "phy version is not supported\n");
+ 		return ERR_PTR(-EINVAL);
+ 	}
+@@ -1075,6 +1085,10 @@ static const struct mtk_phy_pdata tphy_v2_pdata = {
+ 	.version = MTK_PHY_V2,
+ };
+ 
++static const struct mtk_phy_pdata tphy_v3_pdata = {
++	.version = MTK_PHY_V3,
++};
++
+ static const struct mtk_phy_pdata mt8173_pdata = {
+ 	.avoid_rx_sen_degradation = true,
+ 	.version = MTK_PHY_V1,
+@@ -1086,6 +1100,7 @@ static const struct of_device_id mtk_tphy_id_table[] = {
+ 	{ .compatible = "mediatek,mt8173-u3phy", .data = &mt8173_pdata },
+ 	{ .compatible = "mediatek,generic-tphy-v1", .data = &tphy_v1_pdata },
+ 	{ .compatible = "mediatek,generic-tphy-v2", .data = &tphy_v2_pdata },
++	{ .compatible = "mediatek,generic-tphy-v3", .data = &tphy_v3_pdata },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, mtk_tphy_id_table);
+@@ -1129,12 +1144,15 @@ static int mtk_tphy_probe(struct platform_device *pdev)
+ 		}
+ 	}
+ 
+-	tphy->src_ref_clk = U3P_REF_CLK;
+-	tphy->src_coef = U3P_SLEW_RATE_COEF;
+-	/* update parameters of slew rate calibrate if exist */
+-	device_property_read_u32(dev, "mediatek,src-ref-clk-mhz",
+-		&tphy->src_ref_clk);
+-	device_property_read_u32(dev, "mediatek,src-coef", &tphy->src_coef);
++	if (tphy->pdata->version < MTK_PHY_V3) {
++		tphy->src_ref_clk = U3P_REF_CLK;
++		tphy->src_coef = U3P_SLEW_RATE_COEF;
++		/* update parameters of slew rate calibrate if exist */
++		device_property_read_u32(dev, "mediatek,src-ref-clk-mhz",
++					 &tphy->src_ref_clk);
++		device_property_read_u32(dev, "mediatek,src-coef",
++					 &tphy->src_coef);
++	}
+ 
+ 	port = 0;
+ 	for_each_child_of_node(np, child_np) {
+-- 
+2.18.0
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
