@@ -2,138 +2,95 @@ Return-Path: <SRS0=8kN2=MH=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,MSGID_FROM_MTA_HEADER,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-5.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E1DB0C07E96
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 08:27:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E61C2C07E96
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 10:24:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 99B1A6120A
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 08:27:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 99B1A6120A
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id AA863600CD
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jul 2021 10:24:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org AA863600CD
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jp9fEf0f5908YfAXijRxVm/RDTaeqVBxS2SFgMLtGhk=; b=qJyld9CdMtjp86
-	2vH9GMOCjAPORbl1Oe98GUQSd/eNSn4PJpQaNMQ0wb1S59pqNzLfQwuXHt8b66KlL9K+it6n+L+mK
-	Gi7CPGvzKd166S4lJTRFX1D+5mxtLOkA5SOBi3eLaemgvnSyPtNiFRpjHQ2zJT6+DBJUBDWLN1XkP
-	7/R1r9DlX9YVZmNxeD8TwUi6IzBthB1sPh0WmU3fraSm+rOOWTGVAPRrQ17kw56UfDKkGalH7kyXG
-	DLU4Z7A4MiCs/Aslyfs+vLfM5WEy0qD9HlpfQ5BtvH9uLcoNB2tQuWAoPR+doTY1zFKHwcJY55wL9
-	0NtIDn6SfN6GrnOIynEg==;
+	List-Owner; bh=nSePogIjsBu7J1eWQa0mg8atK5l90PWr4UkkJ08w/dc=; b=r7kc6k/EbelDCN
+	6qn/OYTPGcSYCPyQfDR6A0naUhOUxRHxZrRiMGXxr0jsEosOF7TgD4kHXNHSDWLUafGtZ3McXpM/A
+	WC880c6Tj1CaPuG7am/pH2DReaVKCxdJFxIu2HYpDH2M6dfnIMCv7Blpsj4Q3GBjI/lDvmQVqZviW
+	Z7nzfrGmHD0XTb4up4YaQpQHhdZvIJxGXaEDyEDxA6k/iLEMMtnSA9QOVxFGLtthF0PN9cgtvmOs6
+	uY6LRhDx0QI/oumZaQFmyqKz/ooMmVwM9dJbqLPEbf7a2xlotlu6VH+0iJcYSLmMFmoT3qe0mXP4D
+	iAu4GyO41nti69hzTZMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m3wii-00HVIQ-38; Thu, 15 Jul 2021 08:27:48 +0000
-Received: from mail-eopbgr50064.outbound.protection.outlook.com ([40.107.5.64]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1m3yXR-000Qp1-4b; Thu, 15 Jul 2021 10:24:17 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m3whj-00HV4O-8y; Thu, 15 Jul 2021 08:26:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YZ4wFkwfEsqImOJKI7sGcCqFFVLMvTy6ibWPftOJEua7NEntGcv/l7mLA1Hcj4jON1BaYjWvrZy4sZcWAJ8ZGX1JgzcRn33yfAhCimxQub809K4ZZ2QkcLaX3yZDGgwRNI/EY0u8LrDCPT91pnATMF9WboHwE08BuflcG53QOUNOkXdSmxUW84Y+SSCj2fXGqrW3sxBkBpLg47KiSA9khwCl3wLOGcKw8uWnOtHKPHxr8FPGwsw0do0OziXm926mpSdiAqVu9mVhoeF2ypDLz55CRkfwBNlXGo2tnaCD855t79TiuHgK7Z3KgbwFIuzNOdcfZzGeiXZQDRtCy21Yaw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5DIDt7yPQ2gDUawmSqmWb3PstRR2PrLiPs+oEMEc8ZI=;
- b=fsi8QeNbOHifhcZUDHHHEWnHsXkxh+gXPW2i0CaKdwXRZ340/4Kcezya8Gv/YoyCtyzxKVLfVAZiw/rtEvIPj/2UAvJozrP0L4t2lw6C8anBJ0omA7uUSrohm971wB4cH0yXrhygUEnffLHs8pUEtdzZXNaV5JSc6I8E/3H36gt3+E48ldcml3Qf9hmpZkx02Owkbkcf7gEog/Z+RcRQZNtHKTpeiXB1KiJV1Wc244ty4yM7Mlpioz7RLvI4CoOGaACd22S5cnX52vkIYG96+3d4zGhugQxSD8CEYSJWO6heVT1RL54uDAy7jQCjR1fZmj4Z9SOsGF1lUWrh1HF5IA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5DIDt7yPQ2gDUawmSqmWb3PstRR2PrLiPs+oEMEc8ZI=;
- b=rUTXRFl/rR3e8K/6XUcRo4qswv0bii/NJTfDeyVaQTcGKANFVLKKiva8UuOsBgm0TmIi4v6CEuu8xNauY67jAjgu2cu9bwqz2cmWccpUsUtcEza8z9dqmIY5riYiGnu7Dhx6Qm9sqm1RNlM6yIJIottH9837tCVrc1WuyfgnWRQ=
-Authentication-Results: vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=none action=none header.from=nxp.com;
-Received: from DB9PR04MB8477.eurprd04.prod.outlook.com (2603:10a6:10:2c3::11)
- by DU2PR04MB8582.eurprd04.prod.outlook.com (2603:10a6:10:2d9::24)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4331.23; Thu, 15 Jul
- 2021 08:26:44 +0000
-Received: from DB9PR04MB8477.eurprd04.prod.outlook.com
- ([fe80::9daa:ab21:f749:36d2]) by DB9PR04MB8477.eurprd04.prod.outlook.com
- ([fe80::9daa:ab21:f749:36d2%9]) with mapi id 15.20.4308.027; Thu, 15 Jul 2021
- 08:26:44 +0000
-From: Dong Aisheng <aisheng.dong@nxp.com>
-To: devicetree@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- kernel@pengutronix.de, aisheng.dong@nxp.com, dongas86@gmail.com,
- robh+dt@kernel.org, shawnguo@kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Li Jun <jun.li@nxp.com>, linux-phy@lists.infradead.org
-Subject: [PATCH 4/7] dt-bindings: phy: imx8mq-usb-phy: convert to json schema
-Date: Thu, 15 Jul 2021 16:25:33 +0800
-Message-Id: <20210715082536.1882077-5-aisheng.dong@nxp.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20210715082536.1882077-1-aisheng.dong@nxp.com>
-References: <20210715082536.1882077-1-aisheng.dong@nxp.com>
-X-ClientProxiedBy: SG2PR02CA0083.apcprd02.prod.outlook.com
- (2603:1096:4:90::23) To DB9PR04MB8477.eurprd04.prod.outlook.com
- (2603:10a6:10:2c3::11)
+ id 1m3yXO-000QoT-Jh; Thu, 15 Jul 2021 10:24:15 +0000
+Received: by mail-ej1-x631.google.com with SMTP id dt7so8400971ejc.12;
+ Thu, 15 Jul 2021 03:24:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=3O5J6rqGF6JMDu06boGyrc4Tj9mnTxeHjN3XsbyGvrs=;
+ b=q6ZL3uQIevdhZUbDj15RHAlCF1aS0Duaxre+LA3t4f29x1/wHfR62boo6p5nebMWzc
+ m8N6n2foBvI4j5z4tsNI+rfuAr585Spa2jGvsS2v2zJ/8D5cA1WWs6g7yrV9V2pcUxQl
+ kfxe5qWaqfDfdovV5Va4lTP5m7SO6YcVYZmSv5HPu3HxUT1U8OUCqEHfJK+9jwT0nyzr
+ L/N7hGA/7ZPQ+tN7udZKDr9hqxq621/SD+olWyJz4RDnkAIBgeqdBpIkRy5XydnuLq/v
+ UJx/KfGe9+32bvVzdaiLNmBQd7N4re2dgjMjnZoN5kknEvEniBsSp7Hc76d8u7w8gkQc
+ oVBQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3O5J6rqGF6JMDu06boGyrc4Tj9mnTxeHjN3XsbyGvrs=;
+ b=VSRNqdjU+8Z/bVjkuAAQEo+FAwFuEo8sDVHzRleSGSsmn4WO/FRixjU+1rZVpvUvvq
+ wnfSkr6ITik/mOhNOtaC+3TdeFg/l7gyjjLssgyArIdpFSj10U1CE/twf98leVaRV+HW
+ Lu8FA88Q5wfaQMP9wAKWWLMny02dQ7YrqUzU527DqI8L95847+xkwRphXWCNYHabQrm5
+ mtXCjBpeeXZHKWPE2HzlpLicVb4h9JVCozxE7EtXB5vPwehtFjGGiZ7zKc0oy79PM4CD
+ o/bv606by6Ylfi3hJQB2JLbmMOgIUA6/ZJsj+2TLnEqYXETSDOeIc4/xRilyYUApyi/R
+ rl5g==
+X-Gm-Message-State: AOAM533eTDxXdv5ASRP7+P5w6vpR7F5p3C2hVkhldqGOTaziCClQdMqs
+ ePPWtN4DlnpsdO394TUKR6QLVFPe1RucNOBIT60=
+X-Google-Smtp-Source: ABdhPJylikKFjvKIyxFG5Ozacn86GpWtIUI198XuwTYlxY4CemQ1wYGJNseEMr5sYfAje7CcLtrI9SVLi3YgKnYSYsM=
+X-Received: by 2002:a17:907:3c16:: with SMTP id
+ gh22mr4844903ejc.158.1626344652261; 
+ Thu, 15 Jul 2021 03:24:12 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.66) by
- SG2PR02CA0083.apcprd02.prod.outlook.com (2603:1096:4:90::23) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4331.22 via Frontend Transport; Thu, 15 Jul 2021 08:26:40 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: d38cd31f-b0f9-4b2d-a65c-08d9476a4768
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8582:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DU2PR04MB85820274F6B13D91BC5E66A580129@DU2PR04MB8582.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 4uA82xEDPpVxspEDFD3EEg9Ep19CS08iMrmX/pwZQE5Wg5rIydH/gDQHTgZ8ihXHZRek/Qwt6eq1sw7T6zBtu2RZBO9hrXyKmEUBHque4IfgXuGbv4ZTn3TOlJH/j3oMcsuuJiONAitsHwR66bw9GkoY8VwssssLn2fwl0jGEr5RGO3GKkAn3+nv5YygULg0r8Zgk8Y8NYK8bqhtOtNbvQrX2N9QcgWfoZbpPHaDIqP1pQ50e3WGPT8ZWYV4HACSTtU8+uXhzw0sxH4SLYeaY6LFw0XrSQYccGPdht6UgzTXuFEmuFv3LQ2/J71nmPJJ5scIYjUa1f99m66jVxSeT/A82MGkxxRzWXqfJNbNikTmragdsMOUZ44/a3n5XCirSUcyd9LEqS1Awx23FJ7MudrJjqmzdC5xSojjoRmKpWq/O90lmegnFBCNSozMlnlNpJAQJD8TA5xsYWm32jYaSZfqzQAsdFznNDK8KvY6uOQvK1onKrsj7tgGK4rmlPPXBB/vp10Wx6m+9MFqynJ+VvwuhE0Rwqi8FvTlM25EcYiDADi+z4KO3DYl0N51pDgKwMD/ST1+dLyeO5db3jyQY21qxkX43LyHX1aeebLQuw0vZ1RXnUtsSyr20r01X8RqPx84sJ+7sPlZ/oywgUb5Dudzn9fQ9p9ACrK9qNQEaxZc/XQtvkHpOdno53GuRPiM44ZdRP5UkWx30AwabjMJzrUqNpH2nesgPyfO8W2P8y2fn0v92tItWjBb/RGTqwEagX7jTrsObyxXgI3PkXgwIcXGeGlt+1bm6jk0Z+oNKqCJVtV1gXkyeggiWlxx5UihMcftap+ixLHClq5H1mSTv22/VQ8hzJayOnwt+U5MTCw=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB9PR04MB8477.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(54906003)(66556008)(5660300002)(66476007)(966005)(36756003)(478600001)(1076003)(8676002)(66946007)(26005)(186003)(6486002)(956004)(316002)(8936002)(52116002)(2616005)(4326008)(38350700002)(6512007)(38100700002)(86362001)(6666004)(83380400001)(6916009)(2906002)(6506007)(32563001);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?eFYobmR1QS/Ra+P4gLNcZxQAhHmDVhPQxOQWZxaptcGUlEpKe7TsNujDzpzC?=
- =?us-ascii?Q?UvejoB5/kIFtin6VKcwoHs8fCw7rfTtgTsieKy4qY5Dmx+wH35ulcA9lTO3C?=
- =?us-ascii?Q?ur5lc/j/mpKsVfnPUyQcWuFNcXgwW9l23rjtJ/0K7z6T3ckbJTA90qyagMxp?=
- =?us-ascii?Q?QqSJUa1oiCY1PiEycTLoXfhpuOyOXDJFtwe6IsNdBqhO1hiYyYjdsF396sCx?=
- =?us-ascii?Q?LL9LyCLr5E3ym1NknMg9kQRfQ7JgEDvABeRlLgRkDYmGgG0LfNiO+Lqd1pZx?=
- =?us-ascii?Q?TsCVoIEl9FOqISBH8wR2y2G/OFSmYQRjrm833IwqCg3PSZp5jaexWyEId+9w?=
- =?us-ascii?Q?ZAAo7hXwvsFkJahUmwRfHI0s5LoJGswTNfDroWccKEGFC8kISwC0S7nYSfnw?=
- =?us-ascii?Q?QbC7BbKbJNAj+WmVN4x21bYMDc3pMsb9jVBJz6LXnUUDMJFai1+DacNIIAtU?=
- =?us-ascii?Q?iJ3E7XILDyd2r9tpvQlJJEEyT1Vlu7ZuFYYonUNbq9FhrtegnPtRVIFAL75t?=
- =?us-ascii?Q?+PF7EBFuQRMrJEnv1xOENUX+MyjFFhbzos+MEetzgWp50N5sJNoKmUi0BbBZ?=
- =?us-ascii?Q?clgPA7kCi1ECSn3TXb+87i1u0LOu8nqIA9h2jHH2v9SKdCDO0e9fl2FubMZ4?=
- =?us-ascii?Q?TrxkxVkH8bMnTZIsGUTIEsvV4TGZqXrx+FDAj5vsoX6ZWHdqXDQHCU7kDIej?=
- =?us-ascii?Q?kLkQcKdAf+/o++kQNtt8bwUSCFLtsP8xESxfHjcAKbAaewRcpb5gWVjq0jgk?=
- =?us-ascii?Q?wyGHLICKIE6TrIhFMqifmQRUhWzXV78JXOXcCQK5oGe4vUtHIUDSTLBFBwis?=
- =?us-ascii?Q?3U6O4Fbx8GoB1Q/z14J4cfkdY8LM1Em7Aey2sC7cCn5QzMnurC3XjVF6VFI0?=
- =?us-ascii?Q?h0dIT6t6rvFTSQ3GGoDq3HT9g9EbiyLi2EfL7EidcRQnBwgKlTRojLE9xR6c?=
- =?us-ascii?Q?5eF0NAFg4zJTVqwXvcSMvkgjInBQwKx7f78fq0Up4So9Uf4+f/le+gpPyqpc?=
- =?us-ascii?Q?6D4h+HQtqLlMM5UDz5owzBex1rKGJRTHUlc4jTMH2OciuSxQCyYLds9Cc6O0?=
- =?us-ascii?Q?Fi6aVSFpzt0KYl617whOWHk+d2/owGru7nfKzjFmHJjULD4FH1DlUDhgL6mB?=
- =?us-ascii?Q?Jodns25XP1RtFiCtRHN4LQNAwFszrFCS7l4M7Wg1e0IsdVH/E5ir5ccNqvHa?=
- =?us-ascii?Q?52LH9h5RcBzs7PF10zZxytEiqcKVx+879ewGJ79pCynIVt9njKZzi5D7RJj3?=
- =?us-ascii?Q?KAX1MvpiLSeolvLB8IMZpn78oPgH8BjuNxqK4GykX6QzeS6WaZd53rlsZy7n?=
- =?us-ascii?Q?fzmwQJT1IETWt1PhYgbEa8j5?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d38cd31f-b0f9-4b2d-a65c-08d9476a4768
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR04MB8477.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Jul 2021 08:26:44.1484 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: VKk8na2Gpdeu9J5FKME1kT0aTpV8pOkS+tN+O2UI3cfcrRNCNn++72/5TdGBKFfFSeizSnhIRL8Gtd3yVVi4aw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB8582
+References: <20210713055227.1142-1-linux.amoon@gmail.com>
+ <20210713055227.1142-2-linux.amoon@gmail.com>
+ <CAFBinCD3ahpNQhP_jWZ3-4nXx8OqZOAANCpTN3BrsULRbYZHVw@mail.gmail.com>
+ <CANAwSgTh02qg=cMT8tpHcEfAs5yW2vHQ7tPOkvuKXos_fOmh8A@mail.gmail.com>
+ <CAFBinCC-kD-MW+bwqCZH5AjYDhxWa_pN2WEnHuiZpx=RhUdROQ@mail.gmail.com>
+ <CANAwSgTf4sjoufrZuK-EjE=+yA8zSoVbqhEyNhJJFBLUCOVZmQ@mail.gmail.com>
+ <CANAwSgR5nNN3D+NZjqNNjyp=rVYE=RG2icnJAc=5F23xSh9Bvg@mail.gmail.com>
+ <CAFBinCBtZDRH_xTn3hUBbAPNGrut2cbEQOSuEN1vwObP1Ns5qw@mail.gmail.com>
+In-Reply-To: <CAFBinCBtZDRH_xTn3hUBbAPNGrut2cbEQOSuEN1vwObP1Ns5qw@mail.gmail.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Thu, 15 Jul 2021 15:54:01 +0530
+Message-ID: <CANAwSgTowgbjLm56oH553ji8G8SiLVKyb3oaQzrR=hAp5t78Zw@mail.gmail.com>
+Subject: Re: [PATCHv1 1/3] ARM: dts: meson8b: odroidc1: Add usb phy power node
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: linux-phy@lists.infradead.org, 
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-amlogic@lists.infradead.org, 
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Matt Corallo <oc2udbzfd@mattcorallo.com>, 
+ Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>, 
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+ Emiliano Ingrassia <ingrassia@epigenesys.com>,
+ devicetree <devicetree@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210715_012647_346750_1457014E 
-X-CRM114-Status: GOOD (  13.70  )
+X-CRM114-CacheID: sfid-20210715_032414_697615_FE8E4F7F 
+X-CRM114-Status: GOOD (  32.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,109 +107,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert to jason schema.
+Hi Martin,
 
-Cc: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Li Jun <jun.li@nxp.com>
-Cc: linux-phy@lists.infradead.org
-Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
----
- .../bindings/phy/fsl,imx8mq-usb-phy.txt       | 20 -------
- .../bindings/phy/fsl,imx8mq-usb-phy.yaml      | 53 +++++++++++++++++++
- 2 files changed, 53 insertions(+), 20 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+On Thu, 15 Jul 2021 at 05:00, Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+>
+> Hi Anand,
+>
+> On Wed, Jul 14, 2021 at 7:25 PM Anand Moon <linux.amoon@gmail.com> wrote:
+> [...]
+> > Can you give these small changes a try,
+> > $ git diff
+> > diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts
+> > b/arch/arm/boot/dts/meson8b-odroidc1.dts
+> > index 748f4c6a050a..066523f14074 100644
+> > --- a/arch/arm/boot/dts/meson8b-odroidc1.dts
+> > +++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
+> > @@ -47,8 +47,9 @@ usb_pwr_en: regulator-usb-pwr-en {
+> >                 /*
+> >                  * signal name from schematics: PWREN
+> >                  */
+> > -               gpio = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
+> > +               gpio = <&gpio_ao GPIOAO_5 GPIO_OPEN_DRAIN>;
+> >                 enable-active-high;
+> > +               regulator-always-on;
+> >         };
+> >
+> > [alarm@archl-c1e ~]$ sudo cat /sys/kernel/debug/gpio | grep usb
+> >  gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
+> >  gpio-1954 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo
+> I can reproduce the /sys/kernel/debug/gpio output with this patch
+>
+> Still USB works for me regardless of whether USB_OTG_PWREN is HIGH or LOW
+> This is something that is not possible if the regulator is really
+> connected on the board like you are describing in this patch.
+> If this .dts change was correct then I would expect that USB is
+> breaking when inverting the GPIO polarity.
+>
+> I am using the "inverted GPIO polarity" approach to find the Ethernet
+> PHY reset GPIO when working on boards for which I don't have the
+> schematics:
+Thanks for the hint,
+> 1) make an assumption of which GPIO to use
+> 2) try with GPIO_ACTIVE_LOW -> PHY should be detected
+> 3) change it to GPIO_ACTIVE_HIGH -> PHY should not be found anymore
+> (because it's in reset)
+> 4) before submitting the board.dts upstream I of course change it back
+> to GPIO_ACTIVE_LOW
 
-diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.txt b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.txt
-deleted file mode 100644
-index 7c70f2ad9942..000000000000
---- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.txt
-+++ /dev/null
-@@ -1,20 +0,0 @@
--* Freescale i.MX8MQ USB3 PHY binding
--
--Required properties:
--- compatible:	Should be "fsl,imx8mq-usb-phy" or "fsl,imx8mp-usb-phy"
--- #phys-cells:	must be 0 (see phy-bindings.txt in this directory)
--- reg:		The base address and length of the registers
--- clocks:	phandles to the clocks for each clock listed in clock-names
--- clock-names:	must contain "phy"
--
--Optional properties:
--- vbus-supply: A phandle to the regulator for USB VBUS.
--
--Example:
--	usb3_phy0: phy@381f0040 {
--		compatible = "fsl,imx8mq-usb-phy";
--		reg = <0x381f0040 0x40>;
--		clocks = <&clk IMX8MQ_CLK_USB1_PHY_ROOT>;
--		clock-names = "phy";
--		#phy-cells = <0>;
--	};
-diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-new file mode 100644
-index 000000000000..2936f3510a6a
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-@@ -0,0 +1,53 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/fsl,imx8mq-usb-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Freescale i.MX8MQ USB3 PHY binding
-+
-+maintainers:
-+  - Li Jun <jun.li@nxp.com>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - fsl,imx8mq-usb-phy
-+      - fsl,imx8mp-usb-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    items:
-+      - const: phy
-+
-+  vbus-supply:
-+    description:
-+      A phandle to the regulator for USB VBUS.
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+  - clocks
-+  - clock-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/imx8mq-clock.h>
-+    usb3_phy0: phy@381f0040 {
-+        compatible = "fsl,imx8mq-usb-phy";
-+        reg = <0x381f0040 0x40>;
-+        clocks = <&clk IMX8MQ_CLK_USB1_PHY_ROOT>;
-+        clock-names = "phy";
-+        #phy-cells = <0>;
-+    };
--- 
-2.25.1
+Yes I am going to changes this to GPIO_ACTIVE_LOW in the next version.
+These dts changes just assist in power through PHY to USB ports.
+After going through the previous email I got this working see below.
 
+[alarm@archl-c1e linux-amlogic-5.y-devel]$ sudo cat
+/sys/kernel/debug/gpio | grep usb
+ gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
+ gpio-1954 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo ACTIVE LOW
+
+>
+> If during step 3) the PHY is still found then I know that it's not the
+> correct GPIO.
+> I am seeing the same behavior with this USB regulator. My
+> interpretation of this is: either you are not using the right GPIO or
+> the GPIO is not related to &usb1 (or it's PHY).
+>
+With reference to the schematic  odroid-c1+_rev0.4_20160226
+section USB HOST POWER ---- MP62551DGT-LF-Z
+Both USB POWER and PWREN help control the power to USB Ports.
+
+>
+> Best regards,
+> Martin
+
+Thanks
+-Anand
 
 -- 
 linux-phy mailing list
