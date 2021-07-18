@@ -2,21 +2,20 @@ Return-Path: <SRS0=OrRW=MK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 19ADDC636CB
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 13:29:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3F467C636C8
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 19:09:54 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C30F86100B
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 13:29:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C30F86100B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id EA6A16101E
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 19:09:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EA6A16101E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -24,58 +23,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52h+iNKA9C+GCcdPK30k4Z0BluKTvZiKwwVeAW1qY10=; b=2xu3b0+gqcDRqT
-	6wfUQoWtzrlrgSbwZbsdeN6kW2dTecFJ48uBl+Gjr6PX2aps3W/utvOCWL3ij6lrdMWLM1mkdAtRv
-	i1u3LnAXMH1BdsUl+B2O6hQZa/TRHOEHNK6CD2SE02Hl5pPh3GPk61kDtBonYv8Otr34S9q2InfRj
-	BkM6DDADV2es3m2P/NJ8Z5PeZ+0fMAyUO/HTC3De280pX9HVpObvuj9QroorZgicP2S22HdSZUcaX
-	tIi1AyvpWYHjHorNllHTSmdNyN2jJ1E5fy66t0R81PoIOFhrVh43Vz5rewZFaxSkbycbY0xCCun+x
-	AQAtOEL6v+rCZr8fOWAg==;
+	List-Owner; bh=eGGpNHcd6GUTDLQmAr8CE1KW6h8oWNmSf9CZUsEy5qA=; b=QB/jGSD+SwapzI
+	ubSBBqQ1CP2R1uCqRq3wxeoYbtSr8ceYhQSoKEsZHxe8hKhdyVjIGAKVIqDaVD8zxL5GiN9vMAb87
+	d4Res+XZ0vs/lVm9oL9pylgXH0SWc8mzSZlk80pZCmX6UJ6NJe5/WIVx2oK+wTh01xq/jiQp5ABC0
+	mewag97hzZduoV2kw7f6/ssMupRknG/sJDzQPu6bu5+7ip2is2q96D5ifiNVew4eFdCDmx1x6qg2a
+	G1WNEHpY1Y49OR13/AQlGILkZ2DDzGsqLTnoAzK3vDbQchleqE1FmxWBK4PHMT1ZhvOTskvFrkQ+4
+	0pZXYtM04N1/wHZdZA3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m56re-007kr8-AF; Sun, 18 Jul 2021 13:29:50 +0000
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	id 1m5CAj-007x3m-8z; Sun, 18 Jul 2021 19:09:53 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m56rb-007kqI-3W; Sun, 18 Jul 2021 13:29:49 +0000
-Received: by mail-ej1-x631.google.com with SMTP id ga14so23448670ejc.6;
- Sun, 18 Jul 2021 06:29:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1m5CAf-007x3G-Gy; Sun, 18 Jul 2021 19:09:51 +0000
+Received: by mail-ej1-x632.google.com with SMTP id bu12so24620646ejb.0;
+ Sun, 18 Jul 2021 12:09:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=F+GajXwhgygQihBR6CcfbVvipYuLdp/hO1wlWRx3C4o=;
- b=epVQx7eGz4knpWvr7qZWRgg+cqOklLV7+27B09/6U4PeysPvhgeCr7GEThu8TciKeV
- jMcOe6OfHsQbnqcuY0CFuROZvXYtPbkwyf2cYxlgkZEDHPx9mY7TfHGTXc55tpZZyt/u
- tZXzRoRQX01f8ZXj8NITZLVrb3ma+/NRwOhjUAsVCwKQes++SKgIauY9ZxcqwLnlrpJF
- m64yJ+o0M5d0Y3tM+f6aky/SzhRVYctiKAxm1Tqq6iEr4ENuydE3lAGmcfO+8rkMKfV5
- NFmMk34PZWUKUntNN056JTlHayqo9YZsdOvhTOM6dgNmCs3KufnyCma067HYODkKuOpe
- BdnA==
+ :cc; bh=U82uzeomBrhPOCBHAYxh8jyMr6tQJdWYTR0Qx4qRmNU=;
+ b=Z4P9CQ6iqomziZz/jcl8opJbfqVVp4QoErkY0tPbuDTM/fA3u6SKEBQaW6pTbeTQ/p
+ mUhDtIRbfCKXUmilIilYI1qx3lbxnXDC/wBXuEa0wzYcsnzfQefrrYic1xCrOBhJ4zb3
+ A5SVH+no/knap8mKmC2rTwuCeKDXYbpdoA5xJMvV5cKQ8N1JUMEHJdAPxKPe6SjUjp97
+ 5fDrnjRh1WH5m6lxoBc9vG4jwOgwbNoUt0ilDbqd/jl+8nT+5/2yRUKBYedoPukwBNID
+ naId4kB0HDF4anvmkhYO4W8MKD2p22K8bhipJ5MOxk/zepqdwTj0udQ3yo4U3cKN1DHz
+ I0rA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=F+GajXwhgygQihBR6CcfbVvipYuLdp/hO1wlWRx3C4o=;
- b=o6KuLefwmwgW5pDEvXqQSbsiz2dnWbfEaW97HSEnJo2pTmGmmaHy3zpcWIVTtkB5TS
- tzQ6jOCAJJWD1wrhwHXGL5449KF+wO1W9PCMn6l/W/1P3rtPLElLTtfHkmE+kCyhTjw0
- dUlCu4PdJaPLMTMfYmhXY+Uc65hWbohrJLUhuY1hPFJyQpMSVgKbpAoDZap9RiDx+uQS
- 91SyVzdfiQqVNcYJDMJlMsHfk1oEA1VwWrQF079FJx3+T4Fs4tJ6694S8tkXJ2Enma4b
- edel6WduuD7W8t6HV+c2qvhgmgZuAGJLUgp9QH0fruQN9i9i3juRTNLvLTc9nRepHd32
- /qTA==
-X-Gm-Message-State: AOAM531fwBh+3SnjfEhKoOuboOW6s91iy0Pt1V29a633kL7dbkSJY/hM
- SCO5Cfosk4PyjZxbSJytWd29QsfxiResVLZdriI=
-X-Google-Smtp-Source: ABdhPJwS/Bq94eKEXLwFfTRLtdIbpjGeihkXh/74VjCZ03gcU5phaJC7V8CIx4og+agmjbpKLMIIhFH/RciLujuTosw=
-X-Received: by 2002:a17:907:3c16:: with SMTP id
- gh22mr23059755ejc.158.1626614985575; 
- Sun, 18 Jul 2021 06:29:45 -0700 (PDT)
+ bh=U82uzeomBrhPOCBHAYxh8jyMr6tQJdWYTR0Qx4qRmNU=;
+ b=bXeTjH+iPIIDc3Pda6qogHtwjIQi6zZx+y4WQ3yf8XpxVlzGyOy71mqfjVuBFXl3k/
+ CY9rzrAbQb66C1GQiNd2P/vhpDHYXAabPt9uHL7vtebY4Iph6NLfHwX/LQXbwGUnqJnc
+ PSrMpFG60ZyvYcG8dPHZ869Okd/nj7HFqFcDrjTMFv5ofaA7PGFv921hJb88wXQHIc9K
+ KNW5LkdCxCA/d2qVbFuKsv1FGOq8+d6ikhPD2D1iKakt/K2Z2z0O4klZ36vTSuxBkZDI
+ zgXZ5O7hGX8o31tQgbTwgxOO/3/vya/nvj+SNXGfyTvswge1wZOp3pB6eOtLkVNcgc1e
+ 0H4Q==
+X-Gm-Message-State: AOAM533bl9lLp34JkA+4DnEsufMCQhnew9UzhokFA4i5ho+Q1I3heWdC
+ iKbWCciP3ckrxe3/0x6dUSMioOXXax0HWdyghDA=
+X-Google-Smtp-Source: ABdhPJxCpf5X8w6uhmCTyQt3HmLgZRZ90bPCajWh6ucfIM0czJC6hy4B0HLA2V8pZTDlfoFe/M+4rg775D2dxfW+4E0=
+X-Received: by 2002:a17:907:9719:: with SMTP id
+ jg25mr16476100ejc.362.1626635387829; 
+ Sun, 18 Jul 2021 12:09:47 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210716103651.1455-1-linux.amoon@gmail.com>
  <20210716103651.1455-2-linux.amoon@gmail.com>
  <CAFBinCDeqauw_V-Vn9cat9HaCXj6HEMz6G+G+VbqCNtGEFGYzg@mail.gmail.com>
  <CANAwSgQ5PDGUWMH-jxnz5wwutUVniTn7RAe=4J=8-jbmqxYRRg@mail.gmail.com>
  <CAFBinCBhg+dije+3DvV_V_kqHv9q+r4EPxXCYFti6KuA4mK7KQ@mail.gmail.com>
-In-Reply-To: <CAFBinCBhg+dije+3DvV_V_kqHv9q+r4EPxXCYFti6KuA4mK7KQ@mail.gmail.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Sun, 18 Jul 2021 18:59:34 +0530
-Message-ID: <CANAwSgT9-5zGr67aGzBmW6WDBfeiAvjv_zv2UbRC+YbgAGg==A@mail.gmail.com>
+ <CANAwSgT9-5zGr67aGzBmW6WDBfeiAvjv_zv2UbRC+YbgAGg==A@mail.gmail.com>
+ <CAFBinCCGA0b=LVjbQood+iN+DHLodY0RJ-GrSOcgdzrDFJ25pQ@mail.gmail.com>
+In-Reply-To: <CAFBinCCGA0b=LVjbQood+iN+DHLodY0RJ-GrSOcgdzrDFJ25pQ@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sun, 18 Jul 2021 21:09:36 +0200
+Message-ID: <CAFBinCAohjxcsY3D1rdAiYVGL+==cnjzZxg1GmYxSNVhxSTDoA@mail.gmail.com>
 Subject: Re: [PATCHv2 1/4] ARM: dts: meson8b: odroidc1: Add usb phy power node
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: Anand Moon <linux.amoon@gmail.com>
 Cc: linux-phy@lists.infradead.org, 
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  linux-amlogic@lists.infradead.org, 
@@ -87,8 +89,8 @@ Cc: linux-phy@lists.infradead.org,
  Emiliano Ingrassia <ingrassia@epigenesys.com>,
  devicetree <devicetree@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210718_062947_245761_9A1C0800 
-X-CRM114-Status: GOOD (  55.03  )
+X-CRM114-CacheID: sfid-20210718_120949_611929_E0F39ADE 
+X-CRM114-Status: GOOD (  27.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,197 +107,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Martin,
+Hi Anand,
 
-Thanks for your valuable feedback,
-
-On Sun, 18 Jul 2021 at 17:07, Martin Blumenstingl
+On Sun, Jul 18, 2021 at 4:01 PM Martin Blumenstingl
 <martin.blumenstingl@googlemail.com> wrote:
->
-> Hi Anand,
->
-> On Sun, Jul 18, 2021 at 5:38 AM Anand Moon <linux.amoon@gmail.com> wrote:
-> [...]
-> > > > enable input power to USB ports, set it to Active Low.
-> > > >
-> > > > [    1.253149] phy phy-c1108820.phy.0: Looking up phy-supply from device tree
-> > > > [    1.253166] phy phy-c1108820.phy.0: Looking up phy-supply property
-> > > >                 in node /soc/cbus@c1100000/phy@8820 failed
-> > > high prio:
-> > > Can you please describe how I can test this patch?
-> > > My concern is that previously I have tested your patch with ACTIVE_LOW
-> > > and ACTIVE_HIGH polarity.
-> > > In both cases USB is working and I cannot observe any change (apart
-> > > from this debug message being gone).
-> > >
-> > > In the Odroid-C1 schematics (page 1) GPIOAO.BIT5 is connected to USB_OTG *only*.
-> > > I cannot give my Acked-/Reviewed-/Tested-by without a description of
-> > > how I can actually test the GPIO potion of this patch.
-> This question is still open.
-> Even with all your explanations below I am missing a way to verify if
-> GPIOAO_5 is the correct GPIO to use.
-
-From the schematics [1]
-https://dn.odroid.com/S805/Schematics/odroid-c1+_rev0.4_20160226.pdf
-
-You could find references to PWREN  <--- GPIOAO.BIT5
-The second reference is USB HOST Power Switch
-The third reference is USB HOST POWER.
-
-Hope I am clean in my thought process now.
-.
->
-> > > [...]
-> > > > +               /*
-> > > > +                * signal name from schematics: PWREN - GPIOAO.BIT5
-> > > > +                */
-> > > > +               gpios = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
-> > > low prio:
-> > > Even though it's strictly not necessary I think this is confusing to read.
-> > > Since there's no "enable-active-high" property the GPIO will be
-> > > considered as "active low".
-> > > My suggestion is to change GPIO_ACTIVE_HIGH to GPIO_ACTIVE_LOW
-> > >
-> > My apologies, I might have sent the wrong set of patches its
-> > GPIO_ACTIVE_LOW I meant
-> > I have formatted with and in the course of testing and verifying It
-> > might have got SKIPPED.
-> > I didn't do this intentionally it happen with a mistake with my two
-> > repositories.
-> > I don't intend to repeat my mistake, again and again, *sorry for the trouble*.
-> no worries, that's why I mentioned that it's low priority
->
-> > > Also if you have any extra information since you last pinged me on IRC
-> > > then it would be great if you could document it.
-> > > I am referring to these IRC message, where you are stating that the
-> > > correct polarity should be "active high":
-> > > <armoon> xdarklight I have a question on USB GPIO Polarity on Odroid C1+
-> >  > <armoon> As per the
-> > > https://dn.odroid.com/S805/Schematics/odroid-c1+_rev0.4_20160226.pdf
-> > > <armoon> MP62551DGT-LF IC controls the power for the USB PORTS
-> > > <armoon> https://www.mouser.com/datasheet/2/277/MP62550-1384050.pdf is
-> > > MP62551DGT datasheet
-> > > <armoon> As per the data sheet in section ORDERING INFORMATION  Active
-> > > enable signal is set below MP62551DGT Active High
-> > >
+[...]
+> > From the schematics [1]
+> > https://dn.odroid.com/S805/Schematics/odroid-c1+_rev0.4_20160226.pdf
 > >
-> > [1] https://www.mouser.com/datasheet/2/277/MP62550-1384050.pdf
+> > You could find references to PWREN  <--- GPIOAO.BIT5
+> > The second reference is USB HOST Power Switch
+> > The third reference is USB HOST POWER.
 > >
-> > I have read the datasheets MP62551DGT EN*  pin its Enable input. Active Low:
-> >        *EN I Enable input. Active Low: (MP62550), Active High: (MP62551).*
-> >
-> > I have tested with ACTIVE_LOW and followed all the steps invalidating
-> >  this with debugfs output.
-> >
-> > Last login: Tue Jul 13 00:02:49 2021 from 10.0.0.14
-> > [alarm@archl-c1e ~]$ sudo cat /sys/kernel/debug/gpio | grep usb
-> >  gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
-> >  gpio-1954 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo ACTIVE LOW
-> This means that whatever is configured in the .dts is also showing up
-> in debugfs.
-> It doesn't mean that the correct GPIO or polarity is used -> that is
-> why I want to understand how to actually test this patch.
-> Technically I can write a patch that makes GPIOAO_13 (which is
-> connected to the status LED) show up as being used by
-> regulator-usb-pwr-en in debugfs.
-
-Yep, you are correct, If I used GPIOAO_13 wrong pin, it will not
-enable the USB power. See below.
-[alarm@archl-c1e ~]$ sudo cat /sys/kernel/debug/gpio | grep usb
- gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
-
-So correct way with  gpios = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_LOW>;
-
-[alarm@archl-c1e linux-amlogic-5.y-devel]$ sudo cat
-/sys/kernel/debug/gpio | grep usb
- gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
- gpio-1954 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo ACTIVE LOW
-
-The reason for USB ports has power without this patch is applied.
-Please check schematics S805 USB2 SDB
-USB_VDD33 is powered with VDDIO_AO3V3 regulator directly along with SD CARD.
-
+> > Hope I am clean in my thought process now.
+> Can you please point out the page numbers for me?
 >
-> [...]
-> > > >  &usb1_phy {
-> > > >         status = "okay";
-> > > > +       phy-supply = <&usb_pwr_en>;
-> > > medium priority:
-> > > I have raised the following concern in one of my previous emails on this topic:
-> > > > The mistake I made before is considering USB VBUS as PHY power supply.
-> > > > I believe the USB PHY is actually powered by the AVDD18_USB_ADC and
-> > > > USB33_VDDIOH signals. See the S905 datasheet [0], page 25
-> > > > These are 1.8V and 3.3V signals while you are adding a 5V regulator.
-> > > you replied with:
-> > > > OK, thanks.
-> > > so I don't understand what "OK, thanks" means.
-> > > If it means "Martin, you are wrong" then please provide a description
-> > > so I can also learn something!
-> >
-> > Yes, I understood your inputs. But from the logs below is seen to
-> > looking for phy-supply
-> This sentence is correct
->
-> > This is the reason I went ahead with phy-supply as the core phy node
-> > needs this property.
-> This sentence is not correct
-> From drivers/phy/phy-core.c:
->     phy->pwr = regulator_get_optional(&phy->dev, "phy");
->
-> As you can see, the "phy-supply" regulator is marked as optional in
-> the PHY subsystem.
-> This matches with
-> Documentation/devicetree/bindings/phy/phy-bindings.txt where
-> "phy-supply" is marked as an optional property.
->
-> > Please check below commit
-> > e841ec956e53 ("ARM64: dts: meson-gxbb-odroidc2: fix usb1 power supply")
-> That commit is from 2017. You'll also find some commits where I am
-> also using the phy-supply property (I didn't know better back then).
-> However, in 2018 things changed when the dwc2 driver gained a
-> vbus-supply property in commit 531ef5ebea9639 ("usb: dwc2: add support
-> for host mode external vbus supply")
-OK.
-> So for new .dts support phy-supply should not be used anymore for VBUS
-> because phy-supply (described as "Phandle to a regulator that provides
-> power to the PHY." in
-> Documentation/devicetree/bindings/phy/phy-bindings.txt) and
-> vbus-supply are two different things.
->
+> What I am seeing on page 1 is:
+> GPIOAO_5 (called GPIOAO.BIT5) is connected as an INPUT to the USB_OTG
+> PWREN signal (that's the green box with the label "USB_OTG.SchDoc"
+> above it).
+I unfortunately missed your question on IRC on this topic:
+<armoon> xdarklight: just want to understand the confusion on PWREN,
+either is INPUT / OTPUT to usb hub am I correct
+My understanding of the INPUT/OUTPUT direction in the Odroid-C1
+schematics (which you linked) above is that the arrow direction shows
+whether it's an input or output.
+For example (all on page one):
+- HDMI_HPD is an input to the Meson8b SoC, arrow direction is: HDMI => S805
+- IR_IN is an input to the Meson8b SoC, arrow direction is: S805 <=
+GPIOAO.BIT7 IR_IN
+- PWM is an output, arrow direction is: S805 => PWM.C VCCK_PWM
+- 3.3V/1.8V switch for the SD card is an output, arrow direction is:
+S805 => GPIOAO.BIT3 TF_3V3N_1V8_EN
 
-It just came to my notice your email on this issue sees below.
-[0] https://patchwork.kernel.org/project/linux-usb/patch/20190306212431.5779-1-martin.blumenstingl@googlemail.com/
-[1] https://patchwork.kernel.org/patch/10868515/
-[2] https://git.openwrt.org/?p=openwrt/openwrt.git;a=commitdiff;h=d8b475212bbf9e5f80c1c923a9701dca5ceb23e2
+That tells me: the arrow direction shows which connections are inputs
+or outputs.
+Some pins can be input and output at the same time (HDMI_CEC). But
+let's keep it simple for now any only look at inputs/output.
 
-From the openwrt commit  d8b475212bbf9e5f80c1c923a9701dca5ceb23e2
-and binding yaml  [3]
-https://elixir.bootlin.com/linux/latest/source/Documentation/devicetree/bindings/usb/dwc2.yaml#L87
+Based on this information I am looking at the arrow direction for
+USB_OTG: GPIOAO.BIT5 PWREN <= S805
+So this confirms that GPIOAO_5 is an output to the SoC.
+Please note though that this part is not linked with any USB host
+connector, it's only linked to the USB OTG path.
 
-USB DWC2 power is linked to vbus-supply, so it should be moved to usb node.
-Now I am getting your point correctly.
+For the next part the S805 SoC is not involved:
+USB1 USB_HOST_PWR_SW PWREN <= PWREN USB_HUB_GL852G
+USB2 USB_HOST_PWR_SW PWREN <= PWREN USB_HUB_GL852G
+This tells me that the PWREN signal for the two USB_HOST_PWR_SW (USB
+host power switches / current limiters) is driven by the GL852G USB
+hub.
 
-[    1.260460] dwc2 c90c0000.usb: Looking up vusb_d-supply property in
-node /soc/usb@c90c0000 failed
-[    1.260490] dwc2 c90c0000.usb: supply vusb_d not found, using dummy regulator
-[    1.260606] dwc2 c90c0000.usb: Looking up vusb_a-supply from device tree
-[    1.260620] dwc2 c90c0000.usb: Looking up vusb_a-supply property in
-node /soc/usb@c90c0000 failed
-[    1.260641] dwc2 c90c0000.usb: supply vusb_a not found, using dummy regulator
-[    1.260717] dwc2 c90c0000.usb: registering common handler for irq35
-[    1.260772] dwc2 c90c0000.usb: Looking up vbus-supply from device tree
-[    1.260784] dwc2 c90c0000.usb: Looking up vbus-supply property in
-node /soc/usb@c90c0000 failed
+The GL852G USB hub datasheet [0] mentions on page 14:
+pin name: PWREN1#~4
+I/O type: O (which stands for: OUTPUT)
+description: Active low. Power enable output for DSPORT1~4 PWREN1# is
+the only power-enable output for GANG mode.
+This seems to confirm my understanding of the Odroid-C1 schematics,
+where the PWREN signal of the current limiters is coming from the USB
+hub (so the Meson8b SoC is not involved directly).
 
-Thanks for the input, I will update the vbus-supply in the next
-version to USB nodes.
+<armoon> sorry I am not the expert in schematics interpretation, but
+what I understand is PWREN (GPIOAO.BIT5) is input signal to
+MP62551DGT-LF-Z which controls the VBUS signal power to USB HUB to pin
+V5 on GL852G IC
+That part is unfortunately hard to say because the author of the
+Odroid-C1 schematics decided to two different signals called PWREN.
+Now it's not clear if this refers to the USB_OTG PWREN or USB_HOST
+PWREN signal.
+Based on page 1 I *assume* that it's linked to the USB_HOST PWREN signal.
 
->
-> Best regards,
-> Martin
+<armoon> plz check the GL852G power section.        it has 5V Power
+input. It need be NC if using external regulator
+<armoon> 5V and V33 are the regulator for GL852G IC HUB,
+Looking at page 27 of the Odroid-C1 schematics I can see that PSELF,
+PGANG, V33, AVDD1, AVDD2, AVDD3 and DVDD are supplied by a 3.3V power
+supply called HUB_AVDD.
+V5 is a 5V signal which is not connected (there's a red cross next to it).
 
-Thanks
--Anand
+<armoon> I feel setting GPIOAO.BIT5 setting to Active Low just enable
+the 5V via external regulator MP62551DGT-LF-Z
+My understanding is that GPIOAO.BIT5 enables or disables VBUS for the
+USB_OTG port (&usb1 in our .dts)
+See page 28 of the schematics, the RT9715EGB power switch uses a PWREN
+signal for it's ENABLE pin based on page 1 of the schematics.
+MP62551DGT-LF-Z would then be getting it's PWREN signal from the GL852G hub.
+
+Having different power switches for USB HOST and USB OTG makes sense
+because for USB OTG the VBUS signal needs to be disabled when in
+peripheral/device mode (for example when connecting the Odroid-C1 via
+micro-USB cable to a computer).
+
+<armoon> I don't know much on internal IC signal apart from this, may
+be I need to check with the board designer Odroid / Hardkernel for
+more details
+That would be great actually. Unfortunately Brian Kim's email address
+(which you had Cc'ed in the beginning of this conversation) is not
+valid anymore.
+If you have any other contact at Hardkernel then it would be great if
+you could add them to the loop so they can clear our questions.
+
+
+Best regards,
+Martin
+
+
+[0] https://datasheet.lcsc.com/szlcsc/Genesys-Logic-GL852G-HHG12_C136618.pdf
 
 -- 
 linux-phy mailing list
