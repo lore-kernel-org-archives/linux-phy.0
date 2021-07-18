@@ -2,146 +2,92 @@ Return-Path: <SRS0=OrRW=MK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E11EDC636CA
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 08:29:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7E7AAC636CA
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 11:37:21 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 82A5961179
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 08:29:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 82A5961179
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bp.renesas.com
+	by mail.kernel.org (Postfix) with ESMTPS id 2336A61184
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Jul 2021 11:37:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2336A61184
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tut1Tb28sCe9t67tt9YQPLmtmd1kUkh7DeF2wfUdGaU=; b=XC/QeBoYk/ymGq
-	4erXDsPKR2OZarVR9Mnd3zrhWQB+zNCzsBYwdX7aYDNU+Z9/5HVtIJu21Y354wzX/oRkhPIezUBFc
-	mr2R4NXug+J2etkP2wUkbqEGoihIB9bJTaGfRDNUACWfOh5S5cMwNop4/Su5wXdC1gZNdo/8Z3hyw
-	uHOPVWvQgprHhBCsGLISQhlxeOG0P7L06sc/SRu6OmlTkbt7REzv2tIFnygNtdOALxM0peaLRcqQJ
-	hA5vayc4R4R62BxIT5fpbh78EXUB4kriX241cJkdn+Cf4oKJ9otAwzaVcVBTaQC3B03vZW5NtFTxt
-	+fPnI4eNsNb3S5ZrA8YQ==;
+	List-Owner; bh=1hT60VCWicaR+ardEhisBB/EuRi4wEhdodB5Fn10BUw=; b=hSA30RhhVHmWtG
+	PqcwBJbJsBKiXCzuzU9U3tcLBefV48XYUYpA1bXsZDJ5iQf/2jBTF/OZalECpoSUSLBpyLQtAYk+9
+	n/706NmnDYGxdlRWHk545V3r4fAHAjrc/e2t8zFWKqV5B5ZZsohyyjS+Fj7H5RgbTlUh00QUmGcbI
+	w9NxxW6Ohcol5itG3JX+QrEm9GN6OohM7c6P5PFrjDJeHDLXv5jvjfbJW0btlLJmUDtmfFelZfIhJ
+	FiFf7PqDHuD1r5YCVYKHeBOsw6+XChYBb3BrqNSHzSc1GH/OEHgxRaIg7DuKiBwIEHICQPSkuxFbu
+	iO/znWOpTPFbWB4hX+rQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m52Am-007Tsv-Jc; Sun, 18 Jul 2021 08:29:16 +0000
-Received: from mail-eopbgr1400113.outbound.protection.outlook.com
- ([40.107.140.113] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1m556m-007dDb-JS; Sun, 18 Jul 2021 11:37:20 +0000
+Received: from mail-ed1-x52c.google.com ([2a00:1450:4864:20::52c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m52Aj-007TsC-0n
- for linux-phy@lists.infradead.org; Sun, 18 Jul 2021 08:29:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EkOdKVTokM4NOjusAi7Fw0EC/bXcmlEN9wcuyX1CR8Q3g1CB6SjRD+dZJ79rHVqc+mixQ9bAIHvGQEkC5mtZ6W4ZNbL+TkWzdabQREz/WTSqdkcQPiEqt9+j5jsH3FxycPsUSKH9OiK0ftgrIgN+yhVz4kQlxZF2apFltBbnp/KlvXdLwKAT+aHcIILTMl0/+xFmZNu2eqXC7kTZFRk35w8aa5usJ1Fp2hPxXpeqj5A040YaQoWXgasHhB6Cfm7Zvdy6B1Ys44iv7iAOIogj4wI6HG16W3eH8k/oI+5Cq6thu20MT7Scg//WRec4IiiWTJQlnjCV28jVX8UVsrHeEQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DzbfzjplJ0RYVfEZ7CX8r/zs75spZ5bDIaYAGHgFxYE=;
- b=S1ow0G7lzLRRRx1icUful6oJNfk9Xxokpl1Z/5m9lg33aT6oKgBQqPKl92DHKA9/85KBx5lacY454VJEbEXjJJ8Fegj/TID1WeRRY8l155plG36EgzKzpsWSM+xPC4uBpNP6HGnEDqeNj2h+X54XQPwU+128UqO/Nr5iysgMdpjvj4m3y86gYTTLIRQcRZKeNw5NBMrsLAnK6QftRmSs96iUcUh5UKPIdYblqEd/T7MrFImcLoDM30hmdcHxFtru3yMXzJNxZy2ve5GjWRPWmLH3lbdfxK64urc3e6plu8GaUDU8IY+WuWxYQ4Ogv2IFabyo4f3xJaunLDbS7DyJWA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+ id 1m556j-007dDA-73; Sun, 18 Jul 2021 11:37:19 +0000
+Received: by mail-ed1-x52c.google.com with SMTP id l26so19451392eda.10;
+ Sun, 18 Jul 2021 04:37:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DzbfzjplJ0RYVfEZ7CX8r/zs75spZ5bDIaYAGHgFxYE=;
- b=WPWERbHQHXc2OFS1fQ0nysJC/BqudMQz6jPudLIg8dlf87nIAqhhmGU67+ID025RifMBpc01q0Md8hbUTna/9BZ6gEJKuLsTdpvZ/VlPBaA6iSS+AFdATy67xanl5EHzG047BBUqGgmqXBQfwfwss1Yyc572BulnPgTPgSrtUCY=
-Received: from OS0PR01MB5922.jpnprd01.prod.outlook.com (2603:1096:604:bb::5)
- by OSAPR01MB2530.jpnprd01.prod.outlook.com (2603:1096:604:3::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4331.21; Sun, 18 Jul
- 2021 08:29:02 +0000
-Received: from OS0PR01MB5922.jpnprd01.prod.outlook.com
- ([fe80::c6f:e31f:eaa9:60fe]) by OS0PR01MB5922.jpnprd01.prod.outlook.com
- ([fe80::c6f:e31f:eaa9:60fe%9]) with mapi id 15.20.4331.031; Sun, 18 Jul 2021
- 08:29:02 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Rob Herring <robh@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, "open
- list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Chris Paterson <Chris.Paterson2@renesas.com>, Biju Das
- <biju.das@bp.renesas.com>, Prabhakar Mahadev Lad
- <prabhakar.mahadev-lad.rj@bp.renesas.com>, Linux-Renesas
- <linux-renesas-soc@vger.kernel.org>
-Subject: RE: [PATCH v3 07/11] dt-bindings: phy: renesas,usb2-phy: Document
- RZ/G2L phy bindings
-Thread-Topic: [PATCH v3 07/11] dt-bindings: phy: renesas,usb2-phy: Document
- RZ/G2L phy bindings
-Thread-Index: AQHXbYHhglWpoTGXsUeqWuHX3BdNeassSd4AgBbHkICABXCBgA==
-Date: Sun, 18 Jul 2021 08:29:01 +0000
-Message-ID: <OS0PR01MB592257F7A3D1460D0DD2123A86E09@OS0PR01MB5922.jpnprd01.prod.outlook.com>
-References: <20210630073013.22415-1-biju.das.jz@bp.renesas.com>
- <20210630073013.22415-8-biju.das.jz@bp.renesas.com>
- <CAMuHMdWbhY9i+WvV77LVNYhLBLQBVCojgEwM93A-pvFf9Eab1g@mail.gmail.com>
- <20210714212135.GA3539572@robh.at.kernel.org>
-In-Reply-To: <20210714212135.GA3539572@robh.at.kernel.org>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 41961b29-0ca4-4759-627a-08d949c61932
-x-ms-traffictypediagnostic: OSAPR01MB2530:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OSAPR01MB25305E7D7DEDF44ACBF746DC86E09@OSAPR01MB2530.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: eLRPNDiPcK9Zq+su0CwB8XdMDyLzz3PGeomrZtA/H3seootITwLEDwLt2i3uBSlYd9+z3sn/DiPpK9alKnpYxKJMVUiOvJnLtIf38tYWcz/zs8LzohihYl8PejOlm3dck/ZuqPDKqQoXnEZ5idipaktzBUO0MyXqhFMxBJ7fnp4PlJP/ofiPe1M3bfk0aiJqwq0JiOeBDt0PJX44P91mU4k9PzbuGGTF2emnr95qSBafKUHm+m/96pt6G8lTGBuyyMgxQcrItz9RDs5/xpf2EkU3HZQ2IxI5+wNozWKTetOKx9QIWRsv+Z2L22oGdup+yq72DlliooW6+ERaRAz1Ej7NIny7xSD8fQjxpfM21jS+hf2HjIBmU9IX4nC0AtCrFuL8a7xxRlJuWqou6QlLG8Ay33b3KsaCt0+E3GwgTatv9mD3Ayq77PF0pMoSc4fUxNCYk2/P1WPiRt5R0+enZ/2vEWE1hT5X87bYRSEkQWYzU5i7MBGlqUiGmhY/+ZR3jkCRa3FBsr8ucHNiEVXl32bJNrHSt3Xdni5vqZLVdkArgzpB08sKX5fOzZKfnDIWeB5gNGEwouLepI/OC5nTAU+VXVuSTv/b0Sb2kYR4hwBM+QLXn+8q7tJcrGQpzrUa39GukDyAnd4zLKT9otgdJqNPnvoqHwCIdMiMMC83fvDsTq7u7S1R9v7HD5odZcFp1mT3m8XOf9YWIqqZqvA5Dw==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:OS0PR01MB5922.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(64756008)(2906002)(66446008)(66556008)(66476007)(7696005)(33656002)(4326008)(508600001)(6506007)(53546011)(54906003)(71200400001)(186003)(122000001)(38100700002)(9686003)(55016002)(5660300002)(110136005)(316002)(86362001)(52536014)(8676002)(83380400001)(26005)(8936002)(76116006)(66946007)(38070700004);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?olWlebEyV5kHrvy4LMtC2bPfB75gIWlADsVoW/HYVV4ldeNCxNyMi0AUL1Hp?=
- =?us-ascii?Q?x/f/UBVgDCQxhTGPEsWy3yIj8X+NUc5qRjuoVbI7htLCizebOomxCkv8mgNt?=
- =?us-ascii?Q?cUmzRgQnxTIGFFzFc7YRNyd+yYh7xeGA7ZhOkSrG6Qt4AOLowXurw13iyLlG?=
- =?us-ascii?Q?RgNS/CIRrFhCyr8LtsMZChwiOwaaoJULSveVoBoAn+SlLbh9SK/nEzwTS6dA?=
- =?us-ascii?Q?2NeB9zSQ7aD/qjPtzn6LPrDjC4IlyHzfoetNBxEhIoq8GKZ19QaEEqXvIFq+?=
- =?us-ascii?Q?3aNNmsr3mKlMOSnFjMucHiN4SWtsGlC0pvDYR4PMUSYjndRIOMsGiaPRPt/E?=
- =?us-ascii?Q?gHYAKGK0EJYEXd0QksW6YmUPuJk01gxULqjnBqtb1S7y6pGHAkRXARU4kGnW?=
- =?us-ascii?Q?LFUjRfjbYzfI7eUYJlrKv2H64RFNsxZfMsP2xPyelTN5qf6THqTqjHEq/gsG?=
- =?us-ascii?Q?Bpy5FydLDwCfYmFexzyzGG9mYfZzOs0hblI8H4PQmBR7x1MHTk+3+lh84La/?=
- =?us-ascii?Q?TbIH5PkNFvQQ2lf0LC3T9NhUheuHTloxnhclh9TRezKpgssX5qOGG9zmSuNW?=
- =?us-ascii?Q?vNGNYAXsELMrsWNd4aee6oKiem754JTAghTP2gDEjtj2msUJOBegdrPFx0QD?=
- =?us-ascii?Q?/TlM5B58yoJYwpn3vEMoDLsr6fIMkwFYb9LbmcFHtzWgOvuBf1dI0nREcIZT?=
- =?us-ascii?Q?Akx/5BqSolOfmulq0qzKwBwzPcXwy0L0Sd+7zL2JCS+wx0dceMpkm4kGagqU?=
- =?us-ascii?Q?6hP/+Ufd8cW6YLtGhZt2UFZGFSiwm80awxHVHAYEJirrWXVM2YnHv/mmHBXD?=
- =?us-ascii?Q?d+CwPQrxlMM4mhHkngawIr8uHtkzbm5hW6vyV4es78UZXsDt0mzK6gUSoy6f?=
- =?us-ascii?Q?+klyKUNML8kdbyrhX8C2iH0AzT1G4jgCXVp/oTX82GYImrAIfIg3k79l84NM?=
- =?us-ascii?Q?A8Nh3Nk2yUrgOMJySnvsAjOsuIvd2JANgXa+jcBpQCpw8EwdTmaMHI4jwzCn?=
- =?us-ascii?Q?9lzNciFKACWSa47CKLk3swiXKO3N9a02cBroQcsMXorKagR1XB2qH2H2/IlD?=
- =?us-ascii?Q?bWI9n8um/YwvBEcM8r5kscK7aCfCSwTSbtd8oF9gDciDMlI8S9uzLfUjs0f7?=
- =?us-ascii?Q?eUG//qP40wSWmiBvnri8yyVHGr4iTEbB59OQD6R76DiNXHMPPkIzEQq99OWT?=
- =?us-ascii?Q?HsAtQFo/JJVa7Kj9nHnYVchXZxzbcrGvzQD6/hD7rn7lWW1A8D7vnTZh9GE4?=
- =?us-ascii?Q?0I5PrdWTvWiw/PB1+v4wf3oY7M9so7+w29JHV+3HT+Z78g0yPVr7KTNohZ3L?=
- =?us-ascii?Q?3he5bKWl+Y/qBR/HYLzhXUeL?=
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PHSGuty7B6YPbzNEfZoQuX908EWj8TjgLEyoDQArPbY=;
+ b=hJN18CfEEkE/cugKeyj1SYBW9Lg5TNVKdTNTlRgKfefOOwd+8cUuqSF5m68G4ybP//
+ s/OCkyiVN7fnU9rqcM3mfuFrz+xFO/6Yahq/b111SZjy5ZDrcsadiuRjAI2oyeMQ/uFF
+ 5/qsw4Rxg8sZV/FlBbVJGIMhM3/03emT/Swyq+/wQTnQfrFNEpbvAOwhdl0CewD20nEn
+ ebH1Swh4DuumFGxN16wEtKQvTdepIF5y1nihDHVURMSgUAth82OSNVdCMMZLRmpGJF1d
+ WeMgAdarlVc6rZJWBunOgC121EbH5PigtP9tFc4ieseqO8XAN4feZabeK/U7Yve1Ow/W
+ iTJg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PHSGuty7B6YPbzNEfZoQuX908EWj8TjgLEyoDQArPbY=;
+ b=k9JVvJFwbN20hrDy5swIrjvN5/utceCNE/IN8uRohOvXM6nSCUVXzGrhTW4Hmwzzvx
+ h55/4dczac2TI9uP7aIg5M6l7BqWTXZ6X/nLDyxNw0fP+WPIY8Z/sp9rqwJHiriwrvSc
+ Vbth7JnANM6+DXwuNF1i4bBfWLYwVDHSnqYtIg/FWFXf/S+CIO1NVVCZ8lvIzqxkuyv6
+ 4aNPxpUSxCOkaJikUsYIbvncRaKaFcbHXwbDClWNYKHvy60DGMxR6lis+2KCMdUuw9TS
+ aAPhhmFbIYBLPHiQPIxx96lagjd1T8U21dD1s9FGW3reiOEGrnvVlI6jkZeSyQysF2rE
+ CfTQ==
+X-Gm-Message-State: AOAM5308E2bdi8MWEv0gCpz8+3zf4YZAR6T9LLWWDuEPHh9fE2jIMkGY
+ Zcal8Bhx4go4D0xnrnli8J9pUZhdv+k4y6RvF3g=
+X-Google-Smtp-Source: ABdhPJyZ/uIBWh6k8oyyLLVMxBTrqWfesWZ/ycTiPYUPmALnvu5NB4epSQ/odsfu7AvpOsOBet5S+b9cfadOkPgjV4k=
+X-Received: by 2002:aa7:c74e:: with SMTP id c14mr28017980eds.40.1626608235749; 
+ Sun, 18 Jul 2021 04:37:15 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: OS0PR01MB5922.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 41961b29-0ca4-4759-627a-08d949c61932
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jul 2021 08:29:02.0060 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: LTqOtMIsiY4k4EuQwrx9+3of84DAmQhLigxZ92x2C2/nv/xiG12qDtAT0Mwo0jrzQuGU3NJBZkPwyVXVRIJXrrN2BGQAMzzqKhQCZYfxN6M=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSAPR01MB2530
+References: <20210716103651.1455-1-linux.amoon@gmail.com>
+ <20210716103651.1455-2-linux.amoon@gmail.com>
+ <CAFBinCDeqauw_V-Vn9cat9HaCXj6HEMz6G+G+VbqCNtGEFGYzg@mail.gmail.com>
+ <CANAwSgQ5PDGUWMH-jxnz5wwutUVniTn7RAe=4J=8-jbmqxYRRg@mail.gmail.com>
+In-Reply-To: <CANAwSgQ5PDGUWMH-jxnz5wwutUVniTn7RAe=4J=8-jbmqxYRRg@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sun, 18 Jul 2021 13:37:04 +0200
+Message-ID: <CAFBinCBhg+dije+3DvV_V_kqHv9q+r4EPxXCYFti6KuA4mK7KQ@mail.gmail.com>
+Subject: Re: [PATCHv2 1/4] ARM: dts: meson8b: odroidc1: Add usb phy power node
+To: Anand Moon <linux.amoon@gmail.com>
+Cc: linux-phy@lists.infradead.org, 
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-amlogic@lists.infradead.org, 
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Matt Corallo <oc2udbzfd@mattcorallo.com>, 
+ Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>, 
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+ Emiliano Ingrassia <ingrassia@epigenesys.com>,
+ Brian Kim <brian.kim@hardkernel.com>, 
+ devicetree <devicetree@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210718_012913_117794_437B29A2 
-X-CRM114-Status: GOOD (  21.74  )
+X-CRM114-CacheID: sfid-20210718_043717_323895_54FD6BB2 
+X-CRM114-Status: GOOD (  42.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,87 +104,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
+Hi Anand,
 
-> -----Original Message-----
-> Subject: Re: [PATCH v3 07/11] dt-bindings: phy: renesas,usb2-phy: Document
-> RZ/G2L phy bindings
-> 
-> On Wed, Jun 30, 2021 at 11:29:36AM +0200, Geert Uytterhoeven wrote:
-> > Hi Biju,
+On Sun, Jul 18, 2021 at 5:38 AM Anand Moon <linux.amoon@gmail.com> wrote:
+[...]
+> > > enable input power to USB ports, set it to Active Low.
+> > >
+> > > [    1.253149] phy phy-c1108820.phy.0: Looking up phy-supply from device tree
+> > > [    1.253166] phy phy-c1108820.phy.0: Looking up phy-supply property
+> > >                 in node /soc/cbus@c1100000/phy@8820 failed
+> > high prio:
+> > Can you please describe how I can test this patch?
+> > My concern is that previously I have tested your patch with ACTIVE_LOW
+> > and ACTIVE_HIGH polarity.
+> > In both cases USB is working and I cannot observe any change (apart
+> > from this debug message being gone).
 > >
-> > Thanks for your patch!
-> >
-> > On Wed, Jun 30, 2021 at 9:31 AM Biju Das <biju.das.jz@bp.renesas.com>
-> wrote:
-> > > Document USB phy bindings for RZ/G2L SoC.
-> > >
-> > > RZ/G2L USB2.0 phy uses line ctrl register for OTG_ID pin changes.
-> > > Apart from this it uses a different OTG-BC interrupt bit for device
-> recognition.
-> >
-> > Nothing about resets? But see below...
-> >
-> > >
-> > > Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
-> > > Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > > ---
-> > > v2->v3
-> > >  * Created a new compatible for RZ/G2L as per Geert's suggestion.
-> > >  * Added resets required properties for RZ/G2L SoC.
-> > > ---
-> > >  .../bindings/phy/renesas,usb2-phy.yaml         | 18
-> ++++++++++++++++++
-> > >  1 file changed, 18 insertions(+)
-> > >
-> > > diff --git
-> > > a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-> > > b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-> > > index d5dc5a3cdceb..a7e585ff28dc 100644
-> > > --- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-> > > +++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-> > > @@ -30,6 +30,9 @@ properties:
-> > >                - renesas,usb2-phy-r8a77995 # R-Car D3
-> > >            - const: renesas,rcar-gen3-usb2-phy
-> > >
-> > > +      - items:
-> > > +          - const: renesas,usb2-phy-r9a07g044 # RZ/G2{L,LC}
-> > > +
-> > >    reg:
-> > >      maxItems: 1
-> > >
-> > > @@ -91,6 +94,21 @@ required:
-> > >    - clocks
-> > >    - '#phy-cells'
-> > >
-> > > +allOf:
-> > > +  - if:
-> > > +      properties:
-> > > +        compatible:
-> > > +          contains:
-> > > +            const: renesas,usb2-phy-r9a07g044
-> > > +    then:
-> > > +      properties:
-> > > +        resets:
-> > > +          items:
-> > > +            - description: USB phy reset
-> > > +            - description: reset of USB 2.0 host side
-> >
-> > Do you need the second reset?
-> > Looking at your .dtsi patch, the second reset is shared with
-> > ehci/ohci, so perhaps it makes sense to drop it from the phy node?
-> 
-> The existing binding has the host reset (and peripheral, but no phy
-> reset). Was that a mistake too? Smells like collecting resources the
-> driver happens to want, not what the h/w connections are.
+> > In the Odroid-C1 schematics (page 1) GPIOAO.BIT5 is connected to USB_OTG *only*.
+> > I cannot give my Acked-/Reviewed-/Tested-by without a description of
+> > how I can actually test the GPIO potion of this patch.
+This question is still open.
+Even with all your explanations below I am missing a way to verify if
+GPIOAO_5 is the correct GPIO to use.
 
-On that SoC's there is no USBPHY control IP to control the reset. But PHY
-is part of either host block or peripheral block. On RZ/G2L as well PHY is
-part of Host block but we have dedicated IP to control the reset.
+> > [...]
+> > > +               /*
+> > > +                * signal name from schematics: PWREN - GPIOAO.BIT5
+> > > +                */
+> > > +               gpios = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_HIGH>;
+> > low prio:
+> > Even though it's strictly not necessary I think this is confusing to read.
+> > Since there's no "enable-active-high" property the GPIO will be
+> > considered as "active low".
+> > My suggestion is to change GPIO_ACTIVE_HIGH to GPIO_ACTIVE_LOW
+> >
+> My apologies, I might have sent the wrong set of patches its
+> GPIO_ACTIVE_LOW I meant
+> I have formatted with and in the course of testing and verifying It
+> might have got SKIPPED.
+> I didn't do this intentionally it happen with a mistake with my two
+> repositories.
+> I don't intend to repeat my mistake, again and again, *sorry for the trouble*.
+no worries, that's why I mentioned that it's low priority
 
-Regards,
-Biju
+> > Also if you have any extra information since you last pinged me on IRC
+> > then it would be great if you could document it.
+> > I am referring to these IRC message, where you are stating that the
+> > correct polarity should be "active high":
+> > <armoon> xdarklight I have a question on USB GPIO Polarity on Odroid C1+
+>  > <armoon> As per the
+> > https://dn.odroid.com/S805/Schematics/odroid-c1+_rev0.4_20160226.pdf
+> > <armoon> MP62551DGT-LF IC controls the power for the USB PORTS
+> > <armoon> https://www.mouser.com/datasheet/2/277/MP62550-1384050.pdf is
+> > MP62551DGT datasheet
+> > <armoon> As per the data sheet in section ORDERING INFORMATION  Active
+> > enable signal is set below MP62551DGT Active High
+> >
+>
+> [1] https://www.mouser.com/datasheet/2/277/MP62550-1384050.pdf
+>
+> I have read the datasheets MP62551DGT EN*  pin its Enable input. Active Low:
+>        *EN I Enable input. Active Low: (MP62550), Active High: (MP62551).*
+>
+> I have tested with ACTIVE_LOW and followed all the steps invalidating
+>  this with debugfs output.
+>
+> Last login: Tue Jul 13 00:02:49 2021 from 10.0.0.14
+> [alarm@archl-c1e ~]$ sudo cat /sys/kernel/debug/gpio | grep usb
+>  gpio-1953 (USB_HUB_RST_N       |usb-hub-reset       ) out hi
+>  gpio-1954 (USB_OTG_PWREN       |regulator-usb-pwr-en) out lo ACTIVE LOW
+This means that whatever is configured in the .dts is also showing up
+in debugfs.
+It doesn't mean that the correct GPIO or polarity is used -> that is
+why I want to understand how to actually test this patch.
+Technically I can write a patch that makes GPIOAO_13 (which is
+connected to the status LED) show up as being used by
+regulator-usb-pwr-en in debugfs.
 
+[...]
+> > >  &usb1_phy {
+> > >         status = "okay";
+> > > +       phy-supply = <&usb_pwr_en>;
+> > medium priority:
+> > I have raised the following concern in one of my previous emails on this topic:
+> > > The mistake I made before is considering USB VBUS as PHY power supply.
+> > > I believe the USB PHY is actually powered by the AVDD18_USB_ADC and
+> > > USB33_VDDIOH signals. See the S905 datasheet [0], page 25
+> > > These are 1.8V and 3.3V signals while you are adding a 5V regulator.
+> > you replied with:
+> > > OK, thanks.
+> > so I don't understand what "OK, thanks" means.
+> > If it means "Martin, you are wrong" then please provide a description
+> > so I can also learn something!
+>
+> Yes, I understood your inputs. But from the logs below is seen to
+> looking for phy-supply
+This sentence is correct
+
+> This is the reason I went ahead with phy-supply as the core phy node
+> needs this property.
+This sentence is not correct
+From drivers/phy/phy-core.c:
+    phy->pwr = regulator_get_optional(&phy->dev, "phy");
+
+As you can see, the "phy-supply" regulator is marked as optional in
+the PHY subsystem.
+This matches with
+Documentation/devicetree/bindings/phy/phy-bindings.txt where
+"phy-supply" is marked as an optional property.
+
+> Please check below commit
+> e841ec956e53 ("ARM64: dts: meson-gxbb-odroidc2: fix usb1 power supply")
+That commit is from 2017. You'll also find some commits where I am
+also using the phy-supply property (I didn't know better back then).
+However, in 2018 things changed when the dwc2 driver gained a
+vbus-supply property in commit 531ef5ebea9639 ("usb: dwc2: add support
+for host mode external vbus supply")
+So for new .dts support phy-supply should not be used anymore for VBUS
+because phy-supply (described as "Phandle to a regulator that provides
+power to the PHY." in
+Documentation/devicetree/bindings/phy/phy-bindings.txt) and
+vbus-supply are two different things.
+
+
+Best regards,
+Martin
 
 -- 
 linux-phy mailing list
