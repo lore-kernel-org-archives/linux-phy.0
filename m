@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-13.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2CA0BC07E9D
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jul 2021 12:29:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 50CFBC07E9B
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jul 2021 12:30:36 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D19C46113B
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jul 2021 12:29:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D19C46113B
+	by mail.kernel.org (Postfix) with ESMTPS id 1ED9B6113B
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jul 2021 12:30:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1ED9B6113B
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bp.renesas.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,26 +23,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=U1nNbuWqZ/XTP3ebjxUMai32J+DDPWUhbI8lROZJPnY=; b=OGJ/pJWXBAWvpk
-	xsw+VlY4fms56WrSbkX3JJHpHXRnQpQehdWWm1uDt3NVzAPuz6gVP+/kww9WKhUGJ7+PP9Lwaf+VL
-	X+nq2R2D/6ZavWLLoBUSDMvhnZPdLtGV8AZQrZneHHcgE34XtWX3cf09OWJxc99Xz/JJDmYQlrNoj
-	oh+RwovxiSWHesyjOH7JFdsg8RKLe+N32L4ywxpcdxBMipfjudHu5WmY1p1SLvrgqaV0YVxdqfSmx
-	yS2CHMKDFwReFajzHGte9wFlRnSvVlpbiLrhW95skAnSuwWmcMm+NlRg+xHf+tgg60GmGEr0dt12R
-	+4buCvIspStRQYxJK5DQ==;
+	List-Owner; bh=U1nNbuWqZ/XTP3ebjxUMai32J+DDPWUhbI8lROZJPnY=; b=riLqRuIeVO/0bi
+	vBZgeHvHTYg+3MQUBr6oauSdSrrD9R4xWySy0wIb+fcOYT4S8L6eKOfn0tyMGz/ZyPGLlT6g3sQme
+	WV6tvpZTiQR7d87IIDVVA9Kxy0VDBYNuzUUqCLQxVtIxT61WcFjed2OPDVy9d0y2qI99MtqZnSwvw
+	w1bpJKBMz0jDAIdRmBfoM6iw5uqjrIiEVUy/QIGZCmjtIuOHVPMHppGxcSxewXYxLT3ISJbctWPsh
+	gXFAm5f2/Wb3pDQGhea3OBWzBSSIbpqlBQfJJt80nl7NJdLoi7EN9zRwlMH3tamlVyt0vjKy5Fd4t
+	56aTsCCLALaHOu1PI3sw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m5SOY-009btS-Ct; Mon, 19 Jul 2021 12:29:14 +0000
+	id 1m5SPr-009c76-Lb; Mon, 19 Jul 2021 12:30:35 +0000
 Received: from relmlor2.renesas.com ([210.160.252.172]
  helo=relmlie6.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m5SOW-009bsy-1U
- for linux-phy@lists.infradead.org; Mon, 19 Jul 2021 12:29:14 +0000
-X-IronPort-AV: E=Sophos;i="5.84,252,1620658800"; d="scan'208";a="88078206"
+ id 1m5SPo-009c6L-Vq
+ for linux-phy@lists.infradead.org; Mon, 19 Jul 2021 12:30:34 +0000
+X-IronPort-AV: E=Sophos;i="5.84,252,1620658800"; d="scan'208";a="88078285"
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie6.idc.renesas.com with ESMTP; 19 Jul 2021 21:24:07 +0900
+ by relmlie6.idc.renesas.com with ESMTP; 19 Jul 2021 21:25:26 +0900
 Received: from localhost.localdomain (unknown [10.226.92.6])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id C05F242218EC;
- Mon, 19 Jul 2021 21:24:04 +0900 (JST)
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id CDE024221AFD;
+ Mon, 19 Jul 2021 21:25:23 +0900 (JST)
 From: Biju Das <biju.das.jz@bp.renesas.com>
 To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
  Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
@@ -54,11 +54,11 @@ Cc: Biju Das <biju.das.jz@bp.renesas.com>,
  Biju Das <biju.das@bp.renesas.com>,
  Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
 Subject: [PATCH v4 00/10] Add USB2.0 support
-Date: Mon, 19 Jul 2021 13:24:02 +0100
-Message-Id: <20210719122402.6781-1-biju.das.jz@bp.renesas.com>
+Date: Mon, 19 Jul 2021 13:25:21 +0100
+Message-Id: <20210719122521.6855-1-biju.das.jz@bp.renesas.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210719_052912_228733_9EA46C20 
+X-CRM114-CacheID: sfid-20210719_053033_173436_154C137D 
 X-CRM114-Status: GOOD (  10.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
