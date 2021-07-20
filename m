@@ -2,70 +2,66 @@ Return-Path: <SRS0=vk77=MM=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-13.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 39B52C07E95
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 11:13:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 201D9C07E95
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 11:41:58 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F3FB5611C1
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 11:13:38 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F3FB5611C1
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id E497A61164
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 11:41:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E497A61164
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=intel.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9xpCm907GVQiTVaGOoEKJv7lt3pIIM54TphCLBh04Ig=; b=XooH1r/0/DHoRi
-	N4QbI+Czwg+TpFhwuPlOthOie8QgIHSrtrxE40hgjqUYSx/Jo/Nam+YT7CH6ZwV602d3vn/69Yokt
-	42QLp+fTvbRA8gweXGP+pULyEySuauSQRFtg2mDJvAKRA68F2j9z1rEViBb17aBxIiDfa8aS1dgPg
-	dvKggefGHC89fu5ybA9mjtJtsPhdjkwY/AWnyufCHTMI05dzNGNmC2rrjPKki3W8N+QoqARjEO7zv
-	vQ/GaWnswu3Kgn4p9gM/hC3CdAgYQ6kdPJZQzpqYkNwra25PQ31tRhroBNN9q0njDQWh9LYhLRyxm
-	1V1fL6Eg5M4M5ZgHmcQQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uJtSNU9ul4piOKD19Tli69A+8tPQd0YNc55Jy0+5zog=; b=ZRiAIBGYVUA1NG
+	qfqmNeWpI+1I+TAlypp73iuGW/58Tqltv48rtiO0wnAzCvY0LUKmS2bNAAuwrJ8IHhg2NbEoOrh/f
+	dBYr2KJQ/uTlnTO0rSbw+fTJqj0AxfQIF0DptB6d7o10ZBd4mlPgEqQsD+BDlbCFuKk/sL5TeTQCJ
+	LDZ4b15I8dmasTvBfjL+XTXWiJUshpxoM/K+5wfibjf1xl6RgsGh4Y9mOxMj5BX62mimOH8yUcG80
+	V5pl1JpvE/aR4no5tdBwTR2JCc/mUiFu7Gf0XHdTcmzUiiGOcz6C0aBn8OQPjhfzCdzKblVktKmC5
+	Ng5xiCmy/UjiynYtkwrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m5ngw-00Cc9H-Gu; Tue, 20 Jul 2021 11:13:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1m5o8L-00CgTl-F7; Tue, 20 Jul 2021 11:41:57 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m5ngt-00Cc8n-1J
- for linux-phy@lists.infradead.org; Tue, 20 Jul 2021 11:13:36 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 30280611C1;
- Tue, 20 Jul 2021 11:13:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1626779614;
- bh=fmBwW8Li4hgDrcThHoLLPiO1tGcbVR6ZLJpqVthqQYE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OfMryIwPyec+Hs0ektEufBDL0Z+epQHyk53UWGmS1Q/58aLxFLQZhe5Ytfpbnrh4E
- lOUaALMY4RCxGvknOERRxUprP9yKFGaz9ox7NdV1DJXe2lqmKNmFY9Gq9b87NjaMCa
- 42y9t3Wz3q1ob0QIS8T74iZknB5V4G/0NbGcmLcDjXzJnUUkRSwXAYknWjB00+ZuxK
- DdnUZ4TQXjreh86GKbQjbmJquCH+40WRfNGaLJWKL1o7EDNSoTiBfngzeUg7l2q4kf
- UDozNiCDRaN2+RHFziFAlrdfmYMF4wdW91652O9Fch58XzixGgj9uMzm11bh0uq67v
- ZRSdqwsBobHSw==
-Date: Tue, 20 Jul 2021 16:43:31 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Chanho Park <chanho61.park@samsung.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Jaehoon Chung <jh80.chung@samsung.com>,
- Alim Akhtar <alim.akhtar@samsung.com>, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 0/2] Support exynosautov9 ufs phy driver
-Message-ID: <YPav26UGCp22sdUI@matsya>
-References: <CGME20210709100037epcas2p4893e64c9007777d054b59b2688a9dba8@epcas2p4.samsung.com>
- <20210709094524.110193-1-chanho61.park@samsung.com>
+ id 1m5o88-00CgRp-EL; Tue, 20 Jul 2021 11:41:45 +0000
+X-IronPort-AV: E=McAfee;i="6200,9189,10050"; a="211218049"
+X-IronPort-AV: E=Sophos;i="5.84,254,1620716400"; d="scan'208";a="211218049"
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 20 Jul 2021 04:41:39 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.84,254,1620716400"; d="scan'208";a="510723689"
+Received: from coresw01.iind.intel.com ([10.223.252.64])
+ by fmsmga002.fm.intel.com with ESMTP; 20 Jul 2021 04:41:34 -0700
+From: rashmi.a@intel.com
+To: linux-drivers-review-request@eclists.intel.com, michal.simek@xilinx.com,
+ ulf.hansson@linaro.org, linux-mmc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kishon@ti.com, vkoul@kernel.org, andriy.shevchenko@linux.intel.com,
+ linux-phy@lists.infradead.org
+Cc: mgross@linux.intel.com, kris.pan@linux.intel.com, furong.zhou@intel.com,
+ mallikarjunappa.sangannavar@intel.com, adrian.hunter@intel.com,
+ mahesh.r.vaidya@intel.com, nandhini.srikandan@intel.com,
+ kenchappa.demakkanavar@intel.com, rashmi.a@intel.com
+Subject: =?utf-8?q?=5B=E2=80=9CPATCH=E2=80=9D=200/3=5D=20Add=20support=20for=20eMMC=20PHY=20on=20Intel=20Thunder=20Bay?=
+Date: Tue, 20 Jul 2021 17:11:30 +0530
+Message-Id: <20210720114133.8936-1-rashmi.a@intel.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210709094524.110193-1-chanho61.park@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210720_041335_152314_7BEDD42F 
-X-CRM114-Status: UNSURE (   4.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210720_044144_568049_5AB88F4C 
+X-CRM114-Status: GOOD (  10.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,15 +78,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09-07-21, 18:45, Chanho Park wrote:
-> This patchset introduces ExynosAuto v9 SoC ufs phy driver as Generic PHY
-> driver framework. According to Krzysztof's suggestion, this patchset
-> moves phy-exynos7-ufs header to c source file.
+From: Rashmi A <rashmi.a@intel.com>
 
-Applied, thanks
+This patch set enables the support for eMMC PHY on the Intel Thunder Bay
+SoC.
+
+Patch 1 Holds the relevant Device Tree bindings documentation
+        and listings of new files in MAINTAINERS file
+Patch 2 Adds support for eMMC Intel Thunder Bay
+Patch 3 Adds Thunder Bay eMMC PHY support
+
+The review comments from Adrian Hunter, Kris Pan, Furong Zhou and Mark
+Gross have been incorporated.
+
+Please help to review this patch set
+
+Thanks
+
+Rashmi A (3):
+  dt-bindings: phy: intel: Add Thunder Bay eMMC PHY bindings
+  mmc: sdhci-of-arasan: Add intel Thunder Bay SOC support to the arasan
+    eMMC driver
+  phy: intel: Add Thunder Bay eMMC PHY support
+
+ .../phy/intel,phy-thunderbay-emmc.yaml        |  49 ++
+ MAINTAINERS                                   |   7 +
+ drivers/mmc/host/sdhci-of-arasan.c            |  29 +-
+ drivers/phy/intel/Kconfig                     |  10 +
+ drivers/phy/intel/Makefile                    |   1 +
+ drivers/phy/intel/phy-intel-thunderbay-emmc.c | 500 ++++++++++++++++++
+ 6 files changed, 595 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/intel,phy-thunderbay-emmc.yaml
+ create mode 100644 drivers/phy/intel/phy-intel-thunderbay-emmc.c
 
 -- 
-~Vinod
+2.17.1
+
 
 -- 
 linux-phy mailing list
