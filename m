@@ -2,18 +2,18 @@ Return-Path: <SRS0=vk77=MM=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIM_INVALID,
-	DKIM_SIGNED,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-5.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7EE63C636C8
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 10:42:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 39B52C07E95
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 11:13:39 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 508B1611CE
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 10:42:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 508B1611CE
+	by mail.kernel.org (Postfix) with ESMTPS id F3FB5611C1
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jul 2021 11:13:38 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F3FB5611C1
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,48 +22,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/JXo7fSSC/8C5JhjVnZlwiKAJykop2mPYMAnjnY25B8=; b=0fiDPli07SqZIM
-	UMXxxrBJlb8c7pjAZnDie02VNHBWKcM/zNjEB5usWkPWpdRDzZrWNp5by2aqYrjGrYefxNfUE6HEQ
-	AgbMPTllzRs2vb0qYA+9D6csW52+mN5A0QW5N80kzMy2EMTPIuN6qmm24yd03R9dV9WzXse0+yVZo
-	qm+O1Ge6JoYGYTntgnTCKY/2VG+XpLWyPpaJZg8ZwmRTDWLS+Sv6i37Tvy7vDyjhruVru0JoT9qt+
-	Z6qG06XGxxBhRsLGzzDJFqIgW6fezLPevv/PfiBrbfqRyLNlvs2k0cnJYFA4Qd+S4p5cREe+l4lPz
-	KCtYivf+zbA0hBmJtzvA==;
+	List-Owner; bh=9xpCm907GVQiTVaGOoEKJv7lt3pIIM54TphCLBh04Ig=; b=XooH1r/0/DHoRi
+	N4QbI+Czwg+TpFhwuPlOthOie8QgIHSrtrxE40hgjqUYSx/Jo/Nam+YT7CH6ZwV602d3vn/69Yokt
+	42QLp+fTvbRA8gweXGP+pULyEySuauSQRFtg2mDJvAKRA68F2j9z1rEViBb17aBxIiDfa8aS1dgPg
+	dvKggefGHC89fu5ybA9mjtJtsPhdjkwY/AWnyufCHTMI05dzNGNmC2rrjPKki3W8N+QoqARjEO7zv
+	vQ/GaWnswu3Kgn4p9gM/hC3CdAgYQ6kdPJZQzpqYkNwra25PQ31tRhroBNN9q0njDQWh9LYhLRyxm
+	1V1fL6Eg5M4M5ZgHmcQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m5nCe-00CYmQ-SP; Tue, 20 Jul 2021 10:42:20 +0000
+	id 1m5ngw-00Cc9H-Gu; Tue, 20 Jul 2021 11:13:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m5nCc-00CYle-EA
- for linux-phy@lists.infradead.org; Tue, 20 Jul 2021 10:42:19 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 5287B61186;
- Tue, 20 Jul 2021 10:42:17 +0000 (UTC)
+ id 1m5ngt-00Cc8n-1J
+ for linux-phy@lists.infradead.org; Tue, 20 Jul 2021 11:13:36 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 30280611C1;
+ Tue, 20 Jul 2021 11:13:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1626777738;
- bh=M4jlSJ3UNzpr+mylozsLVwswTXGvtSsFEMeKSMl3c5o=;
+ s=k20201202; t=1626779614;
+ bh=fmBwW8Li4hgDrcThHoLLPiO1tGcbVR6ZLJpqVthqQYE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZNiZZtNLAPyZJfy/2ntlt8NyM/cVcy0jo0IcptDzXh5fEALfIqk3zXq4p/DClF4Hu
- v+wwlqDtEeHQyPhMJMm7TDjaqBzbRpuyCRXZ2AKDS7g6DMqlhe1SMFCAF7ChTk1c96
- FZ/ESN2JifAFCiZbenYF9lq9XtYiBDn/ElZWjTWylSPE+KouN80yMEpsPKFxDDEb4T
- G+5rQ2io9tiMYBKEwATG/e1QOuYE1hKQ6hc1hD5vk/FO02FGp2rfcCby3uz1TKbga8
- nUW5mFLpqldVrL9MNFjuY3QJo8ZnfPXJXljPquaDkwl/X6LlqLtEAgHEwYLjmbQQTz
- oD6xZOoiJAebA==
-Date: Tue, 20 Jul 2021 16:12:14 +0530
+ b=OfMryIwPyec+Hs0ektEufBDL0Z+epQHyk53UWGmS1Q/58aLxFLQZhe5Ytfpbnrh4E
+ lOUaALMY4RCxGvknOERRxUprP9yKFGaz9ox7NdV1DJXe2lqmKNmFY9Gq9b87NjaMCa
+ 42y9t3Wz3q1ob0QIS8T74iZknB5V4G/0NbGcmLcDjXzJnUUkRSwXAYknWjB00+ZuxK
+ DdnUZ4TQXjreh86GKbQjbmJquCH+40WRfNGaLJWKL1o7EDNSoTiBfngzeUg7l2q4kf
+ UDozNiCDRaN2+RHFziFAlrdfmYMF4wdW91652O9Fch58XzixGgj9uMzm11bh0uq67v
+ ZRSdqwsBobHSw==
+Date: Tue, 20 Jul 2021 16:43:31 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Ahmad Zainie <wan.ahmad.zainie.wan.mohamad@intel.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: phy: Rename Intel Keem Bay USB PHY
- bindings
-Message-ID: <YPaohpd+QorBLmTu@matsya>
-References: <91235a64185f7446fc58e638d77691078d3114d1.1626255556.git.geert+renesas@glider.be>
+To: Chanho Park <chanho61.park@samsung.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v5 0/2] Support exynosautov9 ufs phy driver
+Message-ID: <YPav26UGCp22sdUI@matsya>
+References: <CGME20210709100037epcas2p4893e64c9007777d054b59b2688a9dba8@epcas2p4.samsung.com>
+ <20210709094524.110193-1-chanho61.park@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <91235a64185f7446fc58e638d77691078d3114d1.1626255556.git.geert+renesas@glider.be>
+In-Reply-To: <20210709094524.110193-1-chanho61.park@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210720_034218_538506_AF937952 
-X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-CacheID: sfid-20210720_041335_152314_7BEDD42F 
+X-CRM114-Status: UNSURE (   4.82  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,10 +82,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-07-21, 11:42, Geert Uytterhoeven wrote:
-> This is the only file not using the "intel,keembay-*" pattern.
-> Fortunately the actual compatible value is already following the
-> standard scheme.
+On 09-07-21, 18:45, Chanho Park wrote:
+> This patchset introduces ExynosAuto v9 SoC ufs phy driver as Generic PHY
+> driver framework. According to Krzysztof's suggestion, this patchset
+> moves phy-exynos7-ufs header to c source file.
 
 Applied, thanks
 
