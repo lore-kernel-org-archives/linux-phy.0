@@ -2,75 +2,74 @@ Return-Path: <SRS0=xi9z=MN=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-23.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-18.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BD5D9C12002
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:39:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E420DC12002
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:40:04 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7D1E3610D2
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:39:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7D1E3610D2
+	by mail.kernel.org (Postfix) with ESMTPS id AE05A61242
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:40:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org AE05A61242
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YBZ6dnYfaLj4nUWdHOOp+2vSJcdlecJ+dNjObH+cs7c=; b=OeDFi8PAKGEyV4
-	8Y83mxBsTqoU8oIVaIAaLwAQ0FYJ/fLC0LARNBOq1mmj5UdKuGmK2Fb1F7jL+dpEvE/wENGbjMsac
-	mEL/DG8fSK1mL5SvDlYlpphk1mFfSmnZuN2ayOygsuO2ws7VriTz2ZqT4jztyvuhDMQHhIhJSpLuI
-	wSzYe1NGwTM9ek/3Hav3NjMSFSBhzXTDy/buIYmoxnOXMcPaVPvXsedSXL7ezS/s921isOt43hHzo
-	0+sQSn9XPGDJpcQsJ7R1CfQn17UIpCyuUgNOyiAT61n7hvD1ar/vjl1fxc/OWIPIlXW3AF5TXOD4c
-	JEDmZgbf/pDTzk94z0gw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8w8yJtJrDXjdG6dU/mpveX9NzBpVcvImGkBIotze0PE=; b=NUeD0um0/XqkOt
+	brddHR4EBv7GHEhb4FGZ5JMOZ/RNdFIs1l/iZNPcJKwHlzGHsuE0HHhrYx/Ck5EK2bFM84IdjLqK5
+	nio1zyEjzupXkSMqZCwHPNk1ya5S+LLj0Dj9VYPu0x2IkpIUJ/9cXN191z/iO5TxnYDZ4b9noeDhP
+	7a02lfZY7/bkE4NkOy0QS9j9ri+EYNiMZ1EpC9n/TKf4Rx2PkBuF9A+0Nk8VNTSEmysbjepKfv0m5
+	f6ZeZ4DoA/athn3LNUhI2Rt/fSRAuqtQgYDbClX3k07SM6NKLGJcom0VYHWvVIqNXyA/3qO6zG052
+	+EoHy+wjLFDNVDkZGqEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m67lf-00EwOn-0W; Wed, 21 Jul 2021 08:39:51 +0000
+	id 1m67ls-00EwT6-1Y; Wed, 21 Jul 2021 08:40:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m67lA-00EwD9-NB; Wed, 21 Jul 2021 08:39:25 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 73441611C1;
+ id 1m67lA-00EwD1-Oz; Wed, 21 Jul 2021 08:39:27 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 7008660D07;
  Wed, 21 Jul 2021 08:39:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=k20201202; t=1626856759;
- bh=UiGm31iNvtZ99MxpzCURtzkORD4wRkDpyBs+z354Skc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=UtxQCWdBRZWDky07nm1s0kA3QWg+5PTN9Vz4d5pLJr49ovk8Vo5aGmd5khMIpyIvU
- PySZgKlEja2/mUSUBfdnJ39BoepAkiTcC52s660cFip94zJNELiSze44jbP/VGQgzC
- qYqgggffENGpn3sWUxNhDo6i7jqjEeLEO06JMEdpYsrjPuJZ0h41Bt7CWOLLYPCv3r
- FBYZ8sVSu4GW5SdSSZ+7HvTnDCfNKHECECTKgYXIYYEMu33DGQMgoPb66pyXKuArce
- P5UoxTRVtg+r0gwk2WhMjdkxf5KK6xO6CWrAoUs1hhUtXwz+cE981RBWZTcABNHgYL
- CbqyDSG3IhqvA==
+ bh=Qq1imSQJcW+JM2nPOv5o8/qLfHa/MxqP6bvtnPhpMCo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=hU4hNYT+8MFbXA+BTSuShi3SLjQNCMAiHF31H+H9FPuocqkjhSoCZMfN8Uo0c/6mp
+ hKMNBQ7iCGlHjdGzJL+FyNh0AtQQdtbgaIAYfOGVTO0+1sLp6YFfv1XbUMgz5ncgoX
+ sKOMKvi+DHZsVu5dcFa0I7X36275ujGS6CGhucRskdnkdD3M3wfXtv4o6Ihn0fqI/y
+ pjuzUmqWEoG4zvLYp3+8P91X9rmaul476JUlWzjEr8zkfEz1UFQIOPWQ5BB91mQgiS
+ VXe/bPKTr9cJp/Puq4kGg4EIpHReGWA4YgeQseQM5d01uCnOnB8eeGMaV2wejNSs7I
+ nkUhMQW0QsaqA==
 Received: by mail.kernel.org with local (Exim 4.94.2)
  (envelope-from <mchehab@kernel.org>)
- id 1m67l5-0022dv-Om; Wed, 21 Jul 2021 10:39:15 +0200
+ id 1m67l5-0022dG-66; Wed, 21 Jul 2021 10:39:15 +0200
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
  Rob Herring <robh@kernel.org>
 Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
  Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Wei Xu <xuwei5@hisilicon.com>, devicetree@vger.kernel.org,
+ =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+ Binghui Wang <wangbinghui@hisilicon.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Xiaowei Song <songxiaowei@hisilicon.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: [PATCH v7 10/10] phy-hi3670-pcie: Move reset-gpios to the PCIe DT
- schema
-Date: Wed, 21 Jul 2021 10:39:12 +0200
-Message-Id: <25f0d338b301157d4b0fe8ab97db542635dff562.1626855713.git.mchehab+huawei@kernel.org>
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH v7 00/10] Add support for Hikey 970 PCIe
+Date: Wed, 21 Jul 2021 10:39:02 +0200
+Message-Id: <cover.1626855713.git.mchehab+huawei@kernel.org>
 X-Mailer: git-send-email 2.31.1
-In-Reply-To: <cover.1626855713.git.mchehab+huawei@kernel.org>
-References: <cover.1626855713.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210721_013920_836236_EB827A90 
-X-CRM114-Status: GOOD (  20.69  )
+X-CRM114-CacheID: sfid-20210721_013921_032526_2852E079 
+X-CRM114-Status: GOOD (  22.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,187 +86,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PHY interface as found on HiKey 970 uses 4 reset-gpios
-instead of just one. That seems to be due to electrical
-requirements, as, on HiKey 970, the PERST# signal is
-provided via one GPIO per connected/available PCIe device:
+This series depends on this one:
+	https://lore.kernel.org/lkml/cover.1626515862.git.mchehab+huawei@kernel.org/
 
-- GPIO 56 has a pullup logic from 1V8 to 2V5
-  connected to a PCIe bridge chip (PEX 8606);
-- GPIO 25 has a pullup logic from 1V8 to 3V3
-  connected to the PERST# pin at the M.2 slot;
-- GPIO 220 has a pullup logic from 1V8 to 3V3
-  connected to the PERST# pin at the PCIe mini slot;
-- GPIO 203 has a pullup logic from 1V8 to 3V3
-  connected to the PERST# pin at the Ethernet chipset.
+It is available, with its patch dependencies against v5.14-rc1 at:
+	https://github.com/mchehab/linux/commits/pcie-alternate
 
-Originally, this was mapped via the PHY interface, but, as such
-design may also be used with different hardware, remap this
-to use the pcie-bus DT schema.
+This series add support at the pcie-kirin dirver for it to use a separate PHY driver.
 
-This patch depends on a DT schema patch submitted at:
-	https://github.com/devicetree-org/dt-schema/pull/56
+Yet, in order to preserve the existing DT schema for Kirin 960, it keeps the
+Kirin 960 PHY inside the pci driver. I tried to find a way to split it while keeping
+the DT schema backward-compatible, but currently the PHY core doesn't allow
+that, as it relies on a "phy" property at the pcie node in order to recognize the
+PHY driver.
 
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Once the pci-kiring is modified to support an external PHY driver, add a
+Kirin 970 PHY and add the needed properties for the HiKey 970 board to
+detect the PCIe.
+
+It should be noticed that the HiKey 970 design uses 4 different GPIO pins, one 
+for each PERST# signal for each PCIe bus device:
+
+    - GPIO 56 has a pullup logic from 1V8 to 2V5
+      connected to a PCIe bridge chip (PEX 8606);
+    - GPIO 25 has a pullup logic from 1V8 to 3V3
+      connected to the PERST# pin at the M.2 slot;
+    - GPIO 220 has a pullup logic from 1V8 to 3V3
+      connected to the PERST# pin at the PCIe mini slot;
+    - GPIO 203 has a pullup logic from 1V8 to 3V3
+      connected to the PERST# pin at the Ethernet chipset.
+
+At the first versions, those were mapped as part of the pci-bus, but the
+pci-bus.yaml schema only allows a single PERST# GPIO. So, on v5, those
+were moved to the PHY DT schema. However, as Rob complained, on this
+version, I opted to add a separate patch (the last one) that moves those
+back to the PCIe of-node. 
+
+If such patch 09/09 is accepted, then this patch for the DT schema should 
+also be accepted:
+
+   https://github.com/devicetree-org/dt-schema/pull/56
+
+Tested on Hikey970:
+
+  $ lspci
+  00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
+  01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
+
+  $ ethtool enp6s0
+  Settings for enp6s0:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Supported pause frame use: Symmetric Receive-only
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Advertised pause frame use: Symmetric Receive-only
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	master-slave cfg: preferred slave
+	master-slave status: slave
+	Port: Twisted Pair
+	PHYAD: 0
+	Transceiver: external
+	MDI-X: Unknown
+  netlink error: Operation not permitted
+	Link detected: yes
+
+Also tested  that Hikey 960 keeps being supported:
+
+  $ lspci
+  00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3660 (rev 01)
+
 ---
- .../phy/hisilicon,phy-hi3670-pcie.yaml        |  7 ---
- arch/arm64/boot/dts/hisilicon/hi3670.dtsi     |  5 +-
- drivers/phy/hisilicon/phy-hi3670-pcie.c       | 54 ++++++++++---------
- 3 files changed, 31 insertions(+), 35 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
-index a5ea13332cac..86767c53bc91 100644
---- a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
-+++ b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
-@@ -42,10 +42,6 @@ properties:
-       - const: apb_sys
-       - const: aclk
- 
--  reset-gpios:
--    description: PCI PERST reset GPIOs
--    maxItems: 4
--
-   clkreq-gpios:
-     description: Clock request GPIOs
-     maxItems: 3
-@@ -60,7 +56,6 @@ required:
-   - reg
-   - clocks
-   - clock-names
--  - reset-gpios
-   - clkreq-gpios
-   - hisilicon,eye-diagram-param
-   - phy-supply
-@@ -86,8 +81,6 @@ examples:
-                  <&crg_ctrl HI3670_ACLK_GATE_PCIE>;
-         clock-names = "phy_ref", "aux",
-                       "apb_phy", "apb_sys", "aclk";
--        reset-gpios = <&gpio7 0 0 >, <&gpio25 2 0 >,
--                      <&gpio3 1 0 >, <&gpio27 4 0 >;
-         clkreq-gpios = <&gpio20 6 0 >, <&gpio27 3 0 >, <&gpio17 0 0 >;
-         hisilicon,eye-diagram-param = <0xFFFFFFFF 0xFFFFFFFF
-                                        0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF>;
-diff --git a/arch/arm64/boot/dts/hisilicon/hi3670.dtsi b/arch/arm64/boot/dts/hisilicon/hi3670.dtsi
-index 6dfcfcfeedae..a07790c76b72 100644
---- a/arch/arm64/boot/dts/hisilicon/hi3670.dtsi
-+++ b/arch/arm64/boot/dts/hisilicon/hi3670.dtsi
-@@ -687,9 +687,6 @@ pcie_phy: pcie-phy@fc000000 {
- 				      "apb_phy", "apb_sys",
- 				      "aclk";
- 
--			reset-gpios = <&gpio7 0 0 >, <&gpio25 2 0 >,
--				      <&gpio3 1 0 >, <&gpio27 4 0 >;
--
- 			clkreq-gpios = <&gpio20 6 0 >, <&gpio27 3 0 >,
- 				       <&gpio17 0 0 >;
- 
-@@ -729,6 +726,8 @@ &gic GIC_SPI 283 IRQ_TYPE_LEVEL_HIGH>,
- 					 &gic GIC_SPI 284 IRQ_TYPE_LEVEL_HIGH>,
- 					<0x0 0 0 4
- 					 &gic GIC_SPI 285 IRQ_TYPE_LEVEL_HIGH>;
-+			reset-gpios = <&gpio7 0 0 >, <&gpio25 2 0 >,
-+				      <&gpio3 1 0 >, <&gpio27 4 0 >;
- 		};
- 
- 		/* UFS */
-diff --git a/drivers/phy/hisilicon/phy-hi3670-pcie.c b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-index 0bc0203e9140..82cc5fc4eac2 100644
---- a/drivers/phy/hisilicon/phy-hi3670-pcie.c
-+++ b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-@@ -553,11 +553,13 @@ static int hi3670_pcie_noc_power(struct hi3670_pcie_phy *phy, bool enable)
- 	return 0;
- }
- 
--static int hi3670_pcie_get_apb(struct hi3670_pcie_phy *phy)
-+static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
- {
- 	struct device_node *pcie_port;
- 	struct device *dev = phy->dev;
- 	struct device *pcie_dev;
-+	char name[32];
-+	int i;
- 
- 	pcie_port = of_get_child_by_name(dev->parent->of_node, "pcie");
- 	if (!pcie_port) {
-@@ -586,6 +588,27 @@ static int hi3670_pcie_get_apb(struct hi3670_pcie_phy *phy)
- 		return -ENODEV;
- 	}
- 
-+	/* perst reset gpios */
-+	phy->n_gpio_resets = of_gpio_named_count(pcie_dev->of_node,
-+						 "reset-gpios");
-+	if (phy->n_gpio_resets > MAX_GPIO_RESETS) {
-+		dev_err(dev, "Too many GPIO resets!\n");
-+		return -EINVAL;
-+	}
-+	for (i = 0; i < phy->n_gpio_resets; i++) {
-+		phy->gpio_id_reset[i] = of_get_named_gpio(pcie_dev->of_node,
-+							  "reset-gpios", i);
-+		if (phy->gpio_id_reset[i] < 0)
-+			return phy->gpio_id_reset[i];
-+
-+		sprintf(name, "pcie_perst_%d", i);
-+
-+		phy->reset_names[i] = devm_kstrdup_const(dev, name,
-+							 GFP_KERNEL);
-+		if (!phy->reset_names[i])
-+			return -ENOMEM;
-+	}
-+
- 	return 0;
- }
- 
-@@ -644,16 +667,17 @@ static int hi3670_pcie_phy_init(struct phy *generic_phy)
- 	int ret;
- 
- 	/*
--	 * The code under hi3670_pcie_get_apb() need to access the
--	 * DWC APB registers. So, get them from
--	 * the pcie driver's regmap (see pcie-kirin regmap).
-+	 * The code under hi3670_pcie_get_resources_from_pcie() need to
-+	 * access the reset-gpios and the APB registers, both from the
-+	 * pcie-kirin driver.
- 	 *
-+	 * The APB is obtained via the pcie driver's regmap
- 	 * Such kind of resource can only be obtained during the PCIe
- 	 * power_on sequence, as the code inside pcie-kirin needs to
- 	 * be already probed, as it needs to register the APB regmap.
- 	 */
- 
--	ret = hi3670_pcie_get_apb(phy);
-+	ret = hi3670_pcie_get_resources_from_pcie(phy);
- 	if (ret)
- 		return ret;
- 
-@@ -800,26 +824,6 @@ static int hi3670_pcie_phy_get_resources(struct hi3670_pcie_phy *phy,
- 	if (IS_ERR(phy->base))
- 		return PTR_ERR(phy->base);
- 
--	/* perst reset gpios */
--	phy->n_gpio_resets = of_gpio_named_count(np, "reset-gpios");
--	if (phy->n_gpio_resets > MAX_GPIO_RESETS) {
--		dev_err(dev, "Too many GPIO resets!\n");
--		return -EINVAL;
--	}
--	for (i = 0; i < phy->n_gpio_resets; i++) {
--		phy->gpio_id_reset[i] = of_get_named_gpio(dev->of_node,
--							  "reset-gpios", i);
--		if (phy->gpio_id_reset[i] < 0)
--			return phy->gpio_id_reset[i];
--
--		sprintf(name, "pcie_perst_%d", i);
--
--		phy->reset_names[i] = devm_kstrdup_const(dev, name,
--							 GFP_KERNEL);
--		if (!phy->reset_names[i])
--			return -ENOMEM;
--	}
--
- 	/* clock request gpios */
- 	phy->n_gpio_clkreq = of_gpio_named_count(np, "clkreq-gpios");
- 	if (phy->n_gpio_clkreq > MAX_GPIO_CLKREQ) {
+v7:
+- Moved kirin_pcie_match to be closer to the probe function;
+- Improved patch description for:
+	"PCI: kirin: add support for a PHY layer"
+- Added missing MODULE_*() macros on both PCI and PHY drivers;
+- Fixed a warning at hisilicon,phy-hi3670-pcie.yaml reported by
+  Rob Herring's bot.
+
+v6:
+- Use an alternative approach, in order to keep the Kirin 960 PHY internal to 
+  the driver, in order to not break the DT schema. The PHY-specific code
+  were made self-contained at pcie-kirin, in order to make easier to split
+  it in the future, if needed.
+
+v5:
+- added "static" to hi3670_pcie_get_eyeparam() declaration on patch 6/8
+
+v4:
+
+- dropped the DTS patch, as it depends on a PMIC-related patch series;
+- minor changes at the patch description;
+- HiKey and HiSilicon are now using the preferred CamelCase format.
+
+
+Manivannan Sadhasivam (1):
+  arm64: dts: HiSilicon: Add support for HiKey 970 PCIe controller
+    hardware
+
+Mauro Carvalho Chehab (9):
+  PCI: kirin: Reorganize the PHY logic inside the driver
+  PCI: kirin: Add support for a PHY layer
+  PCI: kirin: Use regmap for APB registers
+  PCI: kirin: Add MODULE_* macros
+  dt-bindings: PCI: kirin: Fix compatible string
+  dt-bindings: phy: Add bindings for HiKey 970 PCIe PHY
+  phy: HiSilicon: Add driver for Kirin 970 PCIe PHY
+  dt-bindings: PCI: kirin-pcie.txt: Convert it to yaml
+  phy-hi3670-pcie: Move reset-gpios to the PCIe DT schema
+
+ .../bindings/pci/hisilicon,kirin-pcie.yaml    |  87 ++
+ .../devicetree/bindings/pci/kirin-pcie.txt    |  50 -
+ .../devicetree/bindings/pci/snps,dw-pcie.yaml |   2 +-
+ .../phy/hisilicon,phy-hi3670-pcie.yaml        |  88 ++
+ MAINTAINERS                                   |   2 +-
+ arch/arm64/boot/dts/hisilicon/hi3670.dtsi     |  70 ++
+ .../boot/dts/hisilicon/hikey970-pmic.dtsi     |   1 -
+ drivers/pci/controller/dwc/pcie-kirin.c       | 413 +++++---
+ drivers/phy/hisilicon/Kconfig                 |  10 +
+ drivers/phy/hisilicon/Makefile                |   1 +
+ drivers/phy/hisilicon/phy-hi3670-pcie.c       | 902 ++++++++++++++++++
+ 11 files changed, 1429 insertions(+), 197 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/hisilicon,kirin-pcie.yaml
+ delete mode 100644 Documentation/devicetree/bindings/pci/kirin-pcie.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+ create mode 100644 drivers/phy/hisilicon/phy-hi3670-pcie.c
+
 -- 
 2.31.1
+
 
 
 -- 
