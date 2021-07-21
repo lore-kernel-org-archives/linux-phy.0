@@ -2,101 +2,79 @@ Return-Path: <SRS0=xi9z=MN=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-18.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
+	USER_AGENT_SANE_2 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BA678C636CE
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 03:02:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CADF6C12002
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 03:18:06 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 850C4610A0
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 03:02:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 850C4610A0
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=flygoat.com
+	by mail.kernel.org (Postfix) with ESMTPS id 5EE3A611CE
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 03:18:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5EE3A611CE
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f2uToxhi/uwpiz99kgVgib9cnL88Mht3V4NrCzl5xSQ=; b=nQJGrIh4rBBzoU
-	3RviH3DiXS/fIlpyF0mdzZT41I0SvMZqvz+DSvHcBiEhAy3qWjd3PVvz0HIq/QxgdpmpMYhckt1t7
-	WpAda5+oqOhJ3m9VIR7Zzg4eWkZP08YjBq1ZVz2SPnLbiDeWYQGXrQNpCKPrygryprA9tOEb6XpqQ
-	IKk3Q/dt2pxXUFdmiGGlfxFCwCk0KJxUd+t3o8hgKRPNuAfrsiuGFFo4SXqu252Yta8NbW+S9/YIa
-	wctuHkAFDpfcAyS8r4k+zZFxpdwWroIRw+7e45YT/3y8AtV/v4n6w8KG2mCBMHQjx6I5km4RuWKe7
-	oIllGtwKKV3KOWEz/Gkg==;
+	List-Owner; bh=Al9r56gjtNDmu6eQWqHXOPGvTNv/Vr+9+dP/LCpmAxw=; b=ItD5sopaWNMGFE
+	lojF3QpP+b4vmML3iXl7TCrHyO/65N+YHNCPlYdPys5ItDyRMBzyzoW70E3m6m+ojWb7mHIxoCjgU
+	YyNAAAyXT8CP57JW+hr3rDSH7pfBrxBAhtNwOOYd6IFoXfaUL4yp1gAosZo9M7fWGms8GyJRuS5i6
+	juQOz1AVlS7zMCdEr7nFj8laOLteKhd79rzXiupFobrM9NyRz28PhtBbQUZcrE3wSFMHEJZY+1UuE
+	mYwHNX+ww2dKb+suApGIR4MYxFx06BFpStzJeqka5SK8fOB8Ecekh5rY+yXvtIEwcdps8DqbNXseN
+	GqxGw5OhgHSnKwlbHw1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m62VZ-00ENUM-38; Wed, 21 Jul 2021 03:02:53 +0000
-Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
+	id 1m62kH-00EOBi-Sm; Wed, 21 Jul 2021 03:18:05 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m62VW-00ENTo-JO
- for linux-phy@lists.infradead.org; Wed, 21 Jul 2021 03:02:51 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 722CE2B004FC;
- Tue, 20 Jul 2021 23:02:49 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 20 Jul 2021 23:02:50 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
- from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=juuqFtaoRobQQ
- sYNJO/H9QK58gSnRD3PdI9BHJOIPdI=; b=N3V4TmMuagRkUZ8V5vQ0mdpd46Zzb
- yYWMtJKFJoojLwgSATkjuDZ3ekBCPfMH23gt2FqRXDuimT8sqBjuG6jPvovxKurG
- W/QB5TNCNX+X88P5piqPckJn6UaZNHo81jj/8dbjO3ExyrB5h3p0uO9Qluic9Vag
- 2qjNoD3as4UMqbRRjwxiDcpbJBudomKkx4CyvQkteS03oTjzeY4adVxdXm67Q0r9
- c71xuF5lGGz+AVBdIjoB1Yy14UcrrbWafJ9tZd3sRx6pE6NiebZADfrjE76yy6M+
- mKee7YoF3afZSv+vy48SLb+YBoDIp3i5M71tTvohoN4EEWUKUZVL9QuIQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=juuqFtaoRobQQsYNJO/H9QK58gSnRD3PdI9BHJOIPdI=; b=Ah7eMR7f
- DbcWHT/5QGSJCGVe1cyzMPCMLZTDS5DmJhrIvemBcakIffHvaVy1HNpFztTzntjr
- rouvpfgk9k7R4ONIoD7luqJbyqD+eY8FKjDilm9RTGi4A96wH8kYG1sWSQ2xNBmp
- Pd6zDis4D+xEzjMTzF4ZispFlSSukqVJDX/ShQGmwqHcUqTvTSVOZW4ueHahfy7N
- u+FS8bC20Y5Un5ddX8M552NXwbojEgrRBuNuUv9zhjEEY26Di+jRBM2nKppKg0sD
- N6KVuwV+o3FXPoagtXDsY499iV1pLQmZPknDq81rgjuCJiLHJRWzYdXxypcJ1hav
- Cl593vFSkoHnuA==
-X-ME-Sender: <xms:WI73YH5un-vJVw7sFD3QrpHhSSXmo6ySkWnZsZneFaPyr0LRHJnkbQ>
- <xme:WI73YM5bRfjwcMO7Il36rlfv2iDSEfaJ9yG7L9ceVLjzGH90gbvHHPjFP8HEIcdtG
- a2jDukyv7rKrMau8t0>
-X-ME-Received: <xmr:WI73YOeCS0MAQkpxpW6wePjHoE0hj4BEZvjOwQ69UmHXuL8B3O23c_sVPGSmRkJY-S40PGeRgS4S>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrfeefgdehiecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
- ertddtnecuhfhrohhmpeflihgrgihunhcujggrnhhguceojhhirgiguhhnrdihrghnghes
- fhhlhihgohgrthdrtghomheqnecuggftrfgrthhtvghrnhepjeeihffgteelkeelffduke
- dtheevudejvdegkeekjeefhffhhfetudetgfdtffeunecuvehluhhsthgvrhfuihiivgep
- udenucfrrghrrghmpehmrghilhhfrhhomhepjhhirgiguhhnrdihrghnghesfhhlhihgoh
- grthdrtghomh
-X-ME-Proxy: <xmx:WY73YIKymcKrByOFVQ7T_4Wvr_LvzbI6A6GGjEGmuzOWltq85wJuag>
- <xmx:WY73YLKR7XlsU12E0BojPWj_pmWnyQ5o8zKpNsZPENpaQ9Gh-f9wag>
- <xmx:WY73YByRC4jhYajC3l3coqO_dzeMrAwI-RM2IBqN2Kx3a5I6cra_ZQ>
- <xmx:WY73YID0gyUfaSUGCoo1JT5tohEig7qivS52czNkXCJaVmyIdl5dZogTyl0>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 20 Jul 2021 23:02:44 -0400 (EDT)
-From: Jiaxun Yang <jiaxun.yang@flygoat.com>
-To: linux-mips@vger.kernel.org
-Cc: tsbogend@alpha.franken.de, mturquette@baylibre.com,
- daniel.lezcano@linaro.org, linus.walleij@linaro.org, vkoul@kernel.org,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, Jiaxun Yang <jiaxun.yang@flygoat.com>
-Subject: [PATCH v3 9/9] MIPS: Make a alias for pistachio_defconfig
-Date: Wed, 21 Jul 2021 11:01:34 +0800
-Message-Id: <20210721030134.10562-10-jiaxun.yang@flygoat.com>
-X-Mailer: git-send-email 2.32.0
-In-Reply-To: <20210721030134.10562-1-jiaxun.yang@flygoat.com>
-References: <20210721030134.10562-1-jiaxun.yang@flygoat.com>
+ id 1m62kD-00EOB8-0x; Wed, 21 Jul 2021 03:18:04 +0000
+X-UUID: f2e56929d602480b972140346321820c-20210720
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=zmxQjGdFqyA3uAn2rxS3iv5n86oQfg1uYDVx+P9Idkw=; 
+ b=dCrK3PEuV/ySoCzadrRvVWS8ZzeqDGMbyiU+yI2yPC5/wuneOvT/lD6TctsTrLWbOpkUG1jeU3b/P/MTfDHtmvb+Y0E1uyhD1nk9KxqBLkw/ymxurTFK8FM6b/jts4aj8FnbC7LWkqDTCpfdnunh0H8JAVwaKbpBuGZHSx6w0Ds=;
+X-UUID: f2e56929d602480b972140346321820c-20210720
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1733128277; Tue, 20 Jul 2021 20:17:52 -0700
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 20 Jul 2021 20:17:51 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs06n1.mediatek.inc
+ (172.21.101.129) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Wed, 21 Jul 2021 11:17:49 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 21 Jul 2021 11:17:48 +0800
+Message-ID: <1626837468.4247.3.camel@mhfsdcap03>
+Subject: Re: [PATCH v3 3/3] phy: phy-mtk-tphy: add support mt8195
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, Eddie Hung <eddie.hung@mediatek.com>
+Date: Wed, 21 Jul 2021 11:17:48 +0800
+In-Reply-To: <YPaIYI70823rK68w@matsya>
+References: <1626331702-27825-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1626331702-27825-3-git-send-email-chunfeng.yun@mediatek.com>
+ <YPaIYI70823rK68w@matsya>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210720_200250_697278_2497E35C 
-X-CRM114-Status: UNSURE (   5.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210720_201801_122461_4ED122DD 
+X-CRM114-Status: GOOD (  25.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,33 +91,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-For those who miss the old defconfig, make a alias to generic
-kernel.
+On Tue, 2021-07-20 at 13:55 +0530, Vinod Koul wrote:
+> On 15-07-21, 14:48, Chunfeng Yun wrote:
+> > The controller is designed to use use PLL integer mode, but
+> > in fact used fractional mode for some ones on mt8195, this
+> > causes signal degradation (e.g. eye diagram test fail), fix
+> > it by switching PLL to 26Mhz from default 48Mhz to improve
+> > signal quality.
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> > v2~3: no changes
+> > ---
+> >  drivers/phy/mediatek/phy-mtk-tphy.c | 52 +++++++++++++++++++++++++++++
+> >  1 file changed, 52 insertions(+)
+> > 
+> > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > index 42a1174da6cc..c3dc1763a7eb 100644
+> > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > @@ -41,6 +41,8 @@
+> >  
+> >  #define U3P_USBPHYACR0		0x000
+> >  #define PA0_RG_U2PLL_FORCE_ON		BIT(15)
+> > +#define PA0_USB20_PLL_PREDIV		GENMASK(7, 6)
+> > +#define PA0_USB20_PLL_PREDIV_VAL(x)	((0x3 & (x)) << 6)
+> >  #define PA0_RG_USB20_INTR_EN		BIT(5)
+> >  
+> >  #define U3P_USBPHYACR1		0x004
+> > @@ -52,6 +54,8 @@
+> >  #define PA1_RG_TERM_SEL_VAL(x)	((0x7 & (x)) << 8)
+> >  
+> >  #define U3P_USBPHYACR2		0x008
+> > +#define PA2_RG_U2PLL_BW			GENMASK(21, 19)
+> > +#define PA2_RG_U2PLL_BW_VAL(x)		((0x7 & (x)) << 19)
+> >  #define PA2_RG_SIF_U2PLL_FORCE_EN	BIT(18)
+> >  
+> >  #define U3P_USBPHYACR5		0x014
+> > @@ -73,6 +77,14 @@
+> >  #define P2C_USB20_GPIO_MODE		BIT(8)
+> >  #define P2C_U2_GPIO_CTR_MSK	(P2C_RG_USB20_GPIO_CTL | P2C_USB20_GPIO_MODE)
+> >  
+> > +#define U3P_U2PHYA_RESV		0x030
+> > +#define P2R_RG_U2PLL_FBDIV_26M		0x1bb13b
+> > +#define P2R_RG_U2PLL_FBDIV_48M		0x3c0000
+> > +
+> > +#define U3P_U2PHYA_RESV1	0x044
+> > +#define P2R_RG_U2PLL_REFCLK_SEL	BIT(5)
+> > +#define P2R_RG_U2PLL_FRA_EN		BIT(3)
+> > +
+> >  #define U3D_U2PHYDCR0		0x060
+> >  #define P2C_RG_SIF_U2PLL_FORCE_ON	BIT(24)
+> >  
+> > @@ -277,6 +289,12 @@ enum mtk_phy_version {
+> >  struct mtk_phy_pdata {
+> >  	/* avoid RX sensitivity level degradation only for mt8173 */
+> >  	bool avoid_rx_sen_degradation;
+> > +	/*
+> > +	 * u2phy should use integer mode instead of fractional mode of
+> > +	 * 48M PLL, fix it by switching PLL to 26M from default 48M
+> > +	 * for mt8195
+> > +	 */
+> > +	bool sw_pll_48m_to_26m;
+> >  	enum mtk_phy_version version;
+> >  };
+> >  
+> > @@ -456,6 +474,33 @@ static void u3_phy_instance_init(struct mtk_tphy *tphy,
+> >  	dev_dbg(tphy->dev, "%s(%d)\n", __func__, instance->index);
+> >  }
+> >  
+> > +static void u2_phy_pll_26m_set(struct mtk_tphy *tphy,
+> > +	struct mtk_phy_instance *instance)
+> > +{
+> > +	struct u2phy_banks *u2_banks = &instance->u2_banks;
+> > +	void __iomem *com = u2_banks->com;
+> > +	u32 tmp;
+> > +
+> > +	if (!tphy->pdata->sw_pll_48m_to_26m)
+> > +		return;
+> > +
+> > +	tmp = readl(com + U3P_USBPHYACR0);
+> > +	tmp &= ~PA0_USB20_PLL_PREDIV;
+> > +	tmp |= PA0_USB20_PLL_PREDIV_VAL(0);
+> > +	writel(tmp, com + U3P_USBPHYACR0);
+> > +
+> > +	tmp = readl(com + U3P_USBPHYACR2);
+> > +	tmp &= ~PA2_RG_U2PLL_BW;
+> > +	tmp |= PA2_RG_U2PLL_BW_VAL(3);
+> > +	writel(tmp, com + U3P_USBPHYACR2);
+> > +
+> > +	writel(P2R_RG_U2PLL_FBDIV_26M, com + U3P_U2PHYA_RESV);
+> > +
+> > +	tmp = readl(com + U3P_U2PHYA_RESV1);
+> > +	tmp |= P2R_RG_U2PLL_FRA_EN | P2R_RG_U2PLL_REFCLK_SEL;
+> > +	writel(tmp, com + U3P_U2PHYA_RESV1);
+> > +}
+> > +
+> >  static void u2_phy_instance_init(struct mtk_tphy *tphy,
+> >  	struct mtk_phy_instance *instance)
+> >  {
+> > @@ -941,6 +986,7 @@ static int mtk_phy_init(struct phy *phy)
+> >  
+> >  	switch (instance->type) {
+> >  	case PHY_TYPE_USB2:
+> > +		u2_phy_pll_26m_set(tphy, instance);
+> 
+> should this not be set only for MTK_PHY_V3?
+Workaround only for mt8195, HW will fix it for others (V3)
 
-Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
----
-v2: Fix typo 'xilfpga
----
- arch/mips/Makefile | 3 +++
- 1 file changed, 3 insertions(+)
+Thanks
 
-diff --git a/arch/mips/Makefile b/arch/mips/Makefile
-index 258234c35a09..c299c6ae91af 100644
---- a/arch/mips/Makefile
-+++ b/arch/mips/Makefile
-@@ -563,6 +563,9 @@ sead3micro_defconfig-y		:= micro32r2el_defconfig BOARDS=sead-3
- legacy_defconfigs		+= xilfpga_defconfig
- xilfpga_defconfig-y		:= 32r2el_defconfig BOARDS=xilfpga
- 
-+legacy_defconfigs		+= pistachio_defconfig
-+pistachio_defconfig-y		:= 32r2el_defconfig BOARDS=marduk
-+
- .PHONY: $(legacy_defconfigs)
- $(legacy_defconfigs):
- 	$(Q)$(MAKE) -f $(srctree)/Makefile $($@-y)
--- 
-2.32.0
-
+> 
+> >  		u2_phy_instance_init(tphy, instance);
+> >  		u2_phy_props_set(tphy, instance);
+> >  		break;
+> > @@ -1094,10 +1140,16 @@ static const struct mtk_phy_pdata mt8173_pdata = {
+> >  	.version = MTK_PHY_V1,
+> >  };
+> >  
+> > +static const struct mtk_phy_pdata mt8195_pdata = {
+> > +	.sw_pll_48m_to_26m = true,
+> > +	.version = MTK_PHY_V3,
+> > +};
+> > +
+> >  static const struct of_device_id mtk_tphy_id_table[] = {
+> >  	{ .compatible = "mediatek,mt2701-u3phy", .data = &tphy_v1_pdata },
+> >  	{ .compatible = "mediatek,mt2712-u3phy", .data = &tphy_v2_pdata },
+> >  	{ .compatible = "mediatek,mt8173-u3phy", .data = &mt8173_pdata },
+> > +	{ .compatible = "mediatek,mt8195-tphy", .data = &mt8195_pdata },
+> >  	{ .compatible = "mediatek,generic-tphy-v1", .data = &tphy_v1_pdata },
+> >  	{ .compatible = "mediatek,generic-tphy-v2", .data = &tphy_v2_pdata },
+> >  	{ .compatible = "mediatek,generic-tphy-v3", .data = &tphy_v3_pdata },
+> > -- 
+> > 2.18.0
+> 
 
 -- 
 linux-phy mailing list
