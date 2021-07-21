@@ -2,106 +2,73 @@ Return-Path: <SRS0=xi9z=MN=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-11.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-18.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 36B5CC07E9B
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:07:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7B463C07E9B
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:39:39 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E7520611C1
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:07:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E7520611C1
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=flygoat.com
+	by mail.kernel.org (Postfix) with ESMTPS id 1339261221
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jul 2021 08:39:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1339261221
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qwPUE36+SyKYcSbMyioLMice4FOXtUq25ivB1au+UnY=; b=Ui7nYPRRFROdFG3ZxfP2Ed1npM
-	L28G7W96DkjCKY5kUckJl3cT8QX4bkfbV41DBXMm4pG0JHr2yPyKAqMItzJ2dPrOE/4Ujr7U+T4+P
-	qWVtu7yH6qRo1p9v73/DNcSNrq3M0K8SuM+qvDC7wlkMNYiUag3dINicqri61eDkyrisgULoZn2Tt
-	uNocvoJ8a3HykMXNeV7/67L2zukPB+J0IXVHuEmbPtX7CHuyyLlcTg+CrYHVOUSDw71g80w0Ia6xn
-	fNcbSgJcQnLMNCsjXtXSqZ3V1Oj1+Df5XoceqcfN+2Dfe04MhDz+ac8eel0jtSazsE43kWqu4Jacs
-	qWJ6NQUw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o8yMHDD5s7irtc/UzNb1sBqoTc4p6Q/jq7WJGfzmpnE=; b=gp6Eiv6traE2ZK
+	Rga9PcKSk9CgAzli0sKu0lrAqZmbMPZpBjZV7DD6ATYcZlzt88PuJ3f/6mScBUk/yRzZfjw2jSy/V
+	QoJpAmhKMZTfJqouurY2en9IXKRKdaqHrJA/+USAWaB9+r6d1es225zRzZFucuh8Xw4U3EzUUNiMr
+	7mXnB3/1akIcGEH5Oz5wsCGggO1n9uZiBH/aFno4AhEXDKVsSNQ9rHBx7I7u6+izeZaSvUsohn3ld
+	OPjt8oy6m4g3DsO27OOHUfde7z8Pd7WJQrURbwgfBlZukGNgnvRBbkWS8dWARys9NxFdrO/9mS1nI
+	TEib1pTCLsJk9DdMr4/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m67Gm-00EpbT-FF; Wed, 21 Jul 2021 08:07:56 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1m67lS-00EwL4-J2; Wed, 21 Jul 2021 08:39:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m67Gk-00Epaq-2c
- for linux-phy@lists.infradead.org; Wed, 21 Jul 2021 08:07:56 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 7752E5816C2;
- Wed, 21 Jul 2021 04:07:50 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Wed, 21 Jul 2021 04:07:50 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
- subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=j
- cTcJFK6RU0wnly1MKmSN+cQxU1sZbkEd7ssG8698Yc=; b=KzormehXExLlrKO+O
- gqVt3aO1w4Lz9Hunt7BCbyj55jNe4j7XUh0cF5Dif9E3hAJjfCSh8HeMO+7o5qH+
- KvTp470rRZvwPAAEVhUr6ahKNmA1UwRCnhQcZ9vP+CLBnn8Xw2XPqdBx+prxplcM
- uOsdRpcBAJwHQcOEogvrL9g+Skz5D9iREnFeNl3OP8bFMOj66jU1lBGxrTmtU547
- rRPLcbJfipo7qJ8iZljY9l3CSQWTSNO2szh1pyTnQXd4nLjA8jlm1S9fHQX/khuN
- 0YEUGp+i8p9sQ7Kac1E46PxAih8mRCLRtamwNXB6b7mER/KxewyGoZope65CDs/l
- AbR0A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm3; bh=jcTcJFK6RU0wnly1MKmSN+cQxU1sZbkEd7ssG8698
- Yc=; b=BbRS8LDx6ldKX0qJl3jdMQ/VbvQP/8SXJBX5qZWSTC5hOQIH9mJlNAV+u
- DUKxFb71b9bEpkIuWhecwJ/1r5tZYJdYp4rbioNl9OJ6gO5/M9cs23lVBFyNFLod
- l/BcwOQ9fOp80hDf9MKg3EPpk4zS+CRFVDcfsAc/yPSBqRK3/e8CRggUQ6OnnAkz
- 98v1vNZqmZZMLQ6ja4dCXfzsBBwqqkOw28SQzv6D3UQ3f4InALIY7RKRYRw5CPpY
- V1/m2piWAno6+j2ujxNKWxvwTl5YgTxFmMbtAoQfSQK6bkzGxyY2Bb+3RtSXYYE4
- BiAnQVpddEiRMk8EO+AcaG0Lcf8XA==
-X-ME-Sender: <xms:1NX3YEGLpbej2wOCUkXWy8OlGamIQkUOPW1aqY_wgg3PO-BC9BJMtA>
- <xme:1NX3YNXMevLE5xaOExLVBtC8F220tODKaNq5Mh8b6BfqU1lX-LventwIvvLACP8mH
- MHUGf6CTgOYl7sM5yU>
-X-ME-Received: <xmr:1NX3YOLsDBSfykORa24MZE6NSRs7ogOVOiwqT5-vqw1-5yNlxAh2jzdXwpssbEu8>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrfeefgdduudekucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefuvfhfhffkffgfgggjtgfgsehtke
- ertddtfeejnecuhfhrohhmpeflihgrgihunhcujggrnhhguceojhhirgiguhhnrdihrghn
- ghesfhhlhihgohgrthdrtghomheqnecuggftrfgrthhtvghrnhepieekgefhvdfftedttd
- eugefhtdfhudeitedttddvvdelhfeuhfetueefteefvefgnecuffhomhgrihhnpehgihht
- qdhstghmrdgtohhmpdhgihhthhhusgdrtghomhdpkhgvrhhnvghlrdhorhhgpdhgihhthh
- husghushgvrhgtohhnthgvnhhtrdgtohhmpddtuddrohhrghenucevlhhushhtvghrufhi
- iigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehjihgrgihunhdrhigrnhhgsehflh
- ihghhorghtrdgtohhm
-X-ME-Proxy: <xmx:1NX3YGFUj8cEy0GcQZRq6T4yxA1Cu098uWxI3fTMTFvpg0CEFJ5ijA>
- <xmx:1NX3YKXXheHhwrwRJlKFwKuYOA5C5XffxMWr3lNL3vOx-RbHFMZhZw>
- <xmx:1NX3YJOrvajIWXC3aHUsQQxMFp59fgGcFG_yUMtwaow7ljNTZKqEoA>
- <xmx:1tX3YGRPFoNDCVJ8-oWT3wZWQ6WxkEnOLkaEX8Fc6Tf8u5fjFK6DnQ>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 21 Jul 2021 04:07:44 -0400 (EDT)
-Subject: Re: [PATCH v3 8/9] MIPS: Retire MACH_PISTACHIO
-To: linux-mips@vger.kernel.org
-Cc: kbuild-all@lists.01.org, tsbogend@alpha.franken.de,
- mturquette@baylibre.com, daniel.lezcano@linaro.org,
- linus.walleij@linaro.org, vkoul@kernel.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
+ id 1m67lA-00EwD3-Ku
+ for linux-phy@lists.infradead.org; Wed, 21 Jul 2021 08:39:22 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 7BC6D6120D;
+ Wed, 21 Jul 2021 08:39:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1626856759;
+ bh=eT62F16m4fmnu9+ZtQ5I8OSRvrVJgO8LuBY471amLVk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Br++L+BMZpXlfIiTwaiiu5mB4JjjUqyv6G64sI0V1bbQyS9c+PeZ0m7ZhzDuddfcf
+ w3au81XBOfLEPCPavw40MZC1PdGN922M25MJaMAvcw4w/3WoRxzPh0iVbbN4oAMebN
+ bvwpBsPghVG1CtVYDrwfuNXJdeNwOyMCvQEmEdObHqx07TDW72HWe7vILxB9qrARCm
+ d6P+AS3tsD3qBsyu1mfKn/vihaIU2hB/tQMVLU4htAVv3sVz4tbOP7uSrbnxciigJ6
+ FUaKlhcQIweW7Aay5dm6UnwsNqO0BMHjNTozFZIFvwCvilYRnKBRBy7BEu4acJrYZx
+ dzQzuwCB6hyKQ==
+Received: by mail.kernel.org with local (Exim 4.94.2)
+ (envelope-from <mchehab@kernel.org>)
+ id 1m67l5-0022de-GT; Wed, 21 Jul 2021 10:39:15 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Rob Herring <robh@kernel.org>
+Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org
-References: <20210721030134.10562-9-jiaxun.yang@flygoat.com>
- <202107211525.XDjCm5PW-lkp@intel.com>
-From: Jiaxun Yang <jiaxun.yang@flygoat.com>
-Message-ID: <edb62a45-5071-8fd2-92b8-4c030adaa658@flygoat.com>
-Date: Wed, 21 Jul 2021 16:07:42 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.12.0
+Subject: [PATCH v7 06/10] dt-bindings: phy: Add bindings for HiKey 970 PCIe PHY
+Date: Wed, 21 Jul 2021 10:39:08 +0200
+Message-Id: <946f2426bc542638240980931eae924c57f2ba27.1626855713.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.31.1
+In-Reply-To: <cover.1626855713.git.mchehab+huawei@kernel.org>
+References: <cover.1626855713.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <202107211525.XDjCm5PW-lkp@intel.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210721_010754_266776_FB16C0A3 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20210721_013920_758412_106AAC18 
+X-CRM114-Status: GOOD (  11.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,105 +80,126 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T29wcywgd2lsbCBmaXggaW4gdjQuCgpUaGFua3MsCgrlnKggMjAyMS83LzIxIOS4i+WNiDM6MTUs
-IGtlcm5lbCB0ZXN0IHJvYm90IOWGmemBkzoKPiBIaSBKaWF4dW4sCj4KPiBJIGxvdmUgeW91ciBw
-YXRjaCEgWWV0IHNvbWV0aGluZyB0byBpbXByb3ZlOgo+Cj4gW2F1dG8gYnVpbGQgdGVzdCBFUlJP
-UiBvbiByb2JoL2Zvci1uZXh0XQo+IFthbHNvIGJ1aWxkIHRlc3QgRVJST1Igb24gY2xrL2Nsay1u
-ZXh0IGxpbnVzL21hc3RlciB2NS4xNC1yYzIgbmV4dC0yMDIxMDcyMF0KPiBbSWYgeW91ciBwYXRj
-aCBpcyBhcHBsaWVkIHRvIHRoZSB3cm9uZyBnaXQgdHJlZSwga2luZGx5IGRyb3AgdXMgYSBub3Rl
-Lgo+IEFuZCB3aGVuIHN1Ym1pdHRpbmcgcGF0Y2gsIHdlIHN1Z2dlc3QgdG8gdXNlICctLWJhc2Un
-IGFzIGRvY3VtZW50ZWQgaW4KPiBodHRwczovL2dpdC1zY20uY29tL2RvY3MvZ2l0LWZvcm1hdC1w
-YXRjaF0KPgo+IHVybDogICAgaHR0cHM6Ly9naXRodWIuY29tLzBkYXktY2kvbGludXgvY29tbWl0
-cy9KaWF4dW4tWWFuZy9NSVBTLU1pZ3JhdGUtcGlzdGFjaGlvLXRvLWdlbmVyaWMta2VybmVsLzIw
-MjEwNzIxLTExMDczMgo+IGJhc2U6ICAgaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xp
-bnV4L2tlcm5lbC9naXQvcm9iaC9saW51eC5naXQgZm9yLW5leHQKPiBjb25maWc6IG1pcHMtcmFu
-ZGNvbmZpZy1yMDI2LTIwMjEwNzIwIChhdHRhY2hlZCBhcyAuY29uZmlnKQo+IGNvbXBpbGVyOiBt
-aXBzNjQtbGludXgtZ2NjIChHQ0MpIDEwLjMuMAo+IHJlcHJvZHVjZSAodGhpcyBpcyBhIFc9MSBi
-dWlsZCk6Cj4gICAgICAgICAgd2dldCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20v
-aW50ZWwvbGtwLXRlc3RzL21hc3Rlci9zYmluL21ha2UuY3Jvc3MgLU8gfi9iaW4vbWFrZS5jcm9z
-cwo+ICAgICAgICAgIGNobW9kICt4IH4vYmluL21ha2UuY3Jvc3MKPiAgICAgICAgICAjIGh0dHBz
-Oi8vZ2l0aHViLmNvbS8wZGF5LWNpL2xpbnV4L2NvbW1pdC83ODE1ZjZhZWFmNTVlNGI2YjlkZTk4
-NDU1ZjY4YzE4NWE1YWM1OTE2Cj4gICAgICAgICAgZ2l0IHJlbW90ZSBhZGQgbGludXgtcmV2aWV3
-IGh0dHBzOi8vZ2l0aHViLmNvbS8wZGF5LWNpL2xpbnV4Cj4gICAgICAgICAgZ2l0IGZldGNoIC0t
-bm8tdGFncyBsaW51eC1yZXZpZXcgSmlheHVuLVlhbmcvTUlQUy1NaWdyYXRlLXBpc3RhY2hpby10
-by1nZW5lcmljLWtlcm5lbC8yMDIxMDcyMS0xMTA3MzIKPiAgICAgICAgICBnaXQgY2hlY2tvdXQg
-NzgxNWY2YWVhZjU1ZTRiNmI5ZGU5ODQ1NWY2OGMxODVhNWFjNTkxNgo+ICAgICAgICAgICMgc2F2
-ZSB0aGUgYXR0YWNoZWQgLmNvbmZpZyB0byBsaW51eCBidWlsZCB0cmVlCj4gICAgICAgICAgQ09N
-UElMRVJfSU5TVEFMTF9QQVRIPSRIT01FLzBkYXkgQ09NUElMRVI9Z2NjLTEwLjMuMCBtYWtlLmNy
-b3NzIEFSQ0g9bWlwcwo+Cj4gSWYgeW91IGZpeCB0aGUgaXNzdWUsIGtpbmRseSBhZGQgZm9sbG93
-aW5nIHRhZyBhcyBhcHByb3ByaWF0ZQo+IFJlcG9ydGVkLWJ5OiBrZXJuZWwgdGVzdCByb2JvdCA8
-bGtwQGludGVsLmNvbT4KPgo+IEFsbCBlcnJvcnMgKG5ldyBvbmVzIHByZWZpeGVkIGJ5ID4+KToK
-Pgo+Pj4gYXJjaC9taXBzL0tjb25maWc6MTA2MjogY2FuJ3Qgb3BlbiBmaWxlICJhcmNoL21pcHMv
-cGlzdGFjaGlvL0tjb25maWciCj4gLS0KPj4+IGFyY2gvbWlwcy9LY29uZmlnOjEwNjI6IGNhbid0
-IG9wZW4gZmlsZSAiYXJjaC9taXBzL3Bpc3RhY2hpby9LY29uZmlnIgo+ICAgICBtYWtlWzNdOiAq
-KiogW3NjcmlwdHMva2NvbmZpZy9NYWtlZmlsZTo3Nzogc3luY2NvbmZpZ10gRXJyb3IgMQo+ICAg
-ICBtYWtlWzJdOiAqKiogW01ha2VmaWxlOjYyNjogc3luY2NvbmZpZ10gRXJyb3IgMgo+ICAgICBt
-YWtlWzFdOiAqKiogW01ha2VmaWxlOjczNTogaW5jbHVkZS9jb25maWcvYXV0by5jb25mLmNtZF0g
-RXJyb3IgMgo+ICAgICBtYWtlWzFdOiBGYWlsZWQgdG8gcmVtYWtlIG1ha2VmaWxlICdpbmNsdWRl
-L2NvbmZpZy9hdXRvLmNvbmYuY21kJy4KPiAgICAgbWFrZVsxXTogRmFpbGVkIHRvIHJlbWFrZSBt
-YWtlZmlsZSAnaW5jbHVkZS9jb25maWcvYXV0by5jb25mJy4KPiAgICAgbWFrZVsxXTogVGFyZ2V0
-ICdtb2R1bGVzX3ByZXBhcmUnIG5vdCByZW1hZGUgYmVjYXVzZSBvZiBlcnJvcnMuCj4gICAgIG1h
-a2U6ICoqKiBbTWFrZWZpbGU6MjIwOiBfX3N1Yi1tYWtlXSBFcnJvciAyCj4gICAgIG1ha2U6IFRh
-cmdldCAnbW9kdWxlc19wcmVwYXJlJyBub3QgcmVtYWRlIGJlY2F1c2Ugb2YgZXJyb3JzLgo+IC0t
-Cj4+PiBhcmNoL21pcHMvS2NvbmZpZzoxMDYyOiBjYW4ndCBvcGVuIGZpbGUgImFyY2gvbWlwcy9w
-aXN0YWNoaW8vS2NvbmZpZyIKPiAgICAgbWFrZVsyXTogKioqIFtzY3JpcHRzL2tjb25maWcvTWFr
-ZWZpbGU6Nzc6IG9sZGRlZmNvbmZpZ10gRXJyb3IgMQo+ICAgICBtYWtlWzFdOiAqKiogW01ha2Vm
-aWxlOjYyNjogb2xkZGVmY29uZmlnXSBFcnJvciAyCj4gICAgIG1ha2U6ICoqKiBbTWFrZWZpbGU6
-MjIwOiBfX3N1Yi1tYWtlXSBFcnJvciAyCj4gICAgIG1ha2U6IFRhcmdldCAnb2xkZGVmY29uZmln
-JyBub3QgcmVtYWRlIGJlY2F1c2Ugb2YgZXJyb3JzLgo+IC0tCj4+PiBhcmNoL21pcHMvS2NvbmZp
-ZzoxMDYyOiBjYW4ndCBvcGVuIGZpbGUgImFyY2gvbWlwcy9waXN0YWNoaW8vS2NvbmZpZyIKPiAg
-ICAgbWFrZVszXTogKioqIFtzY3JpcHRzL2tjb25maWcvTWFrZWZpbGU6Nzc6IHN5bmNjb25maWdd
-IEVycm9yIDEKPiAgICAgbWFrZVsyXTogKioqIFtNYWtlZmlsZTo2MjY6IHN5bmNjb25maWddIEVy
-cm9yIDIKPiAgICAgbWFrZVsxXTogKioqIFtNYWtlZmlsZTo3MzU6IGluY2x1ZGUvY29uZmlnL2F1
-dG8uY29uZi5jbWRdIEVycm9yIDIKPiAgICAgbWFrZVsxXTogRmFpbGVkIHRvIHJlbWFrZSBtYWtl
-ZmlsZSAnaW5jbHVkZS9jb25maWcvYXV0by5jb25mLmNtZCcuCj4gICAgIG1ha2VbMV06IEZhaWxl
-ZCB0byByZW1ha2UgbWFrZWZpbGUgJ2luY2x1ZGUvY29uZmlnL2F1dG8uY29uZicuCj4gICAgIG1h
-a2VbMV06IFRhcmdldCAncHJlcGFyZScgbm90IHJlbWFkZSBiZWNhdXNlIG9mIGVycm9ycy4KPiAg
-ICAgbWFrZTogKioqIFtNYWtlZmlsZToyMjA6IF9fc3ViLW1ha2VdIEVycm9yIDIKPiAgICAgbWFr
-ZTogVGFyZ2V0ICdwcmVwYXJlJyBub3QgcmVtYWRlIGJlY2F1c2Ugb2YgZXJyb3JzLgo+Cj4KPiB2
-aW0gKzEwNjIgYXJjaC9taXBzL0tjb25maWcKPgo+IF4xZGExNzdlNGMzZjQxNSBMaW51cyBUb3J2
-YWxkcyAgIDIwMDUtMDQtMTYgIDEwNTAKPiBlOGM3YzQ4MjM0NzU3NGUgUmFsZiBCYWVjaGxlICAg
-ICAyMDA4LTA5LTE2ICAxMDUxICBzb3VyY2UgImFyY2gvbWlwcy9hbGNoZW15L0tjb25maWciCj4g
-M2IxMjMwOGYzMzM3YzA5IFNlcmdleSBSeWF6YW5vdiAgMjAxNC0xMC0yOSAgMTA1MiAgc291cmNl
-ICJhcmNoL21pcHMvYXRoMjUvS2NvbmZpZyIKPiBkNGE2N2Q5ZGM4YTVhODAgR2Fib3IgSnVob3Mg
-ICAgICAyMDExLTAxLTA0ICAxMDUzICBzb3VyY2UgImFyY2gvbWlwcy9hdGg3OS9LY29uZmlnIgo+
-IGE2NTZmZmNiYzdhOThhOCBIYXVrZSBNZWhydGVucyAgIDIwMTEtMDctMjMgIDEwNTQgIHNvdXJj
-ZSAiYXJjaC9taXBzL2JjbTQ3eHgvS2NvbmZpZyIKPiBlNzMwMGQwNGJkMDgwOWUgTWF4aW1lIEJp
-em9uICAgICAyMDA5LTA4LTE4ICAxMDU1ICBzb3VyY2UgImFyY2gvbWlwcy9iY202M3h4L0tjb25m
-aWciCj4gODk0NWUzN2UxMDNiMTY1IEtldmluIENlcm5la2VlICAgMjAxNC0xMi0yNSAgMTA1NiAg
-c291cmNlICJhcmNoL21pcHMvYm1pcHMvS2NvbmZpZyIKPiBlZWQwZWFiZDEyZWYwNjEgUGF1bCBC
-dXJ0b24gICAgICAyMDE2LTEwLTA1ICAxMDU3ICBzb3VyY2UgImFyY2gvbWlwcy9nZW5lcmljL0tj
-b25maWciCj4gYTEwM2U5Yjk1MWY5MDk0IFBhdWwgQ2VyY3VlaWwgICAgMjAyMC0wOS0wNiAgMTA1
-OCAgc291cmNlICJhcmNoL21pcHMvaW5nZW5pYy9LY29uZmlnIgo+IDVlODNkNDMwNTQ2N2M0MyBS
-YWxmIEJhZWNobGUgICAgIDIwMDUtMTAtMjkgIDEwNTkgIHNvdXJjZSAiYXJjaC9taXBzL2phenov
-S2NvbmZpZyIKPiA4ZWM2ZDkzNTA4ZjcwNWQgSm9obiBDcmlzcGluICAgICAyMDExLTAzLTMwICAx
-MDYwICBzb3VyY2UgImFyY2gvbWlwcy9sYW50aXEvS2NvbmZpZyIKPiAyNTcyZjAwZGI4YTY4YmIg
-Sm9zaHVhIEhlbmRlcnNvbiAyMDE2LTAxLTEzICAxMDYxICBzb3VyY2UgImFyY2gvbWlwcy9waWMz
-Mi9LY29uZmlnIgo+IGFmMGNmYjJjNDRlZTVjZCBFemVxdWllbCBHYXJjaWEgIDIwMTUtMDgtMDYg
-QDEwNjIgIHNvdXJjZSAiYXJjaC9taXBzL3Bpc3RhY2hpby9LY29uZmlnIgo+IGFlMmI1YmI2NTcw
-NDgxYiBKb2huIENyaXNwaW4gICAgIDIwMTMtMDEtMjAgIDEwNjMgIHNvdXJjZSAiYXJjaC9taXBz
-L3JhbGluay9LY29uZmlnIgo+IDI5YzQ4Njk5NDZmOTE4MiBSYWxmIEJhZWNobGUgICAgIDIwMDUt
-MDItMDcgIDEwNjQgIHNvdXJjZSAiYXJjaC9taXBzL3NnaS1pcDI3L0tjb25maWciCj4gMzhiMThm
-NzI1ODc0MjI0IFJhbGYgQmFlY2hsZSAgICAgMjAwNS0wMi0wMyAgMTA2NSAgc291cmNlICJhcmNo
-L21pcHMvc2lieXRlL0tjb25maWciCj4gMjJiMWQ3MDdmZmM5OWZhIEF0c3VzaGkgTmVtb3RvICAg
-MjAwOC0wNy0xMSAgMTA2NiAgc291cmNlICJhcmNoL21pcHMvdHh4OS9LY29uZmlnIgo+IDVlODNk
-NDMwNTQ2N2M0MyBSYWxmIEJhZWNobGUgICAgIDIwMDUtMTAtMjkgIDEwNjcgIHNvdXJjZSAiYXJj
-aC9taXBzL3ZyNDF4eC9LY29uZmlnIgo+IGE4NmM3ZjcyNDU0YzRlOCBEYXZpZCBEYW5leSAgICAg
-IDIwMDgtMTItMTEgIDEwNjggIHNvdXJjZSAiYXJjaC9taXBzL2Nhdml1bS1vY3Rlb24vS2NvbmZp
-ZyIKPiA3MWUyZjRkZDVhNjViZDggSmlheHVuIFlhbmcgICAgICAyMDE5LTEwLTIwICAxMDY5ICBz
-b3VyY2UgImFyY2gvbWlwcy9sb29uZ3NvbjJlZi9LY29uZmlnIgo+IDMwYWQyOWJiNDg4ODFlZSBI
-dWFjYWkgQ2hlbiAgICAgIDIwMTUtMDQtMjEgIDEwNzAgIHNvdXJjZSAiYXJjaC9taXBzL2xvb25n
-c29uMzIvS2NvbmZpZyIKPiAzMGFkMjliYjQ4ODgxZWUgSHVhY2FpIENoZW4gICAgICAyMDE1LTA0
-LTIxICAxMDcxICBzb3VyY2UgImFyY2gvbWlwcy9sb29uZ3NvbjY0L0tjb25maWciCj4gN2YwNThl
-ODUyYjIyOWVjIEpheWFjaGFuZHJhbiBDICAgMjAxMS0wNS0wNyAgMTA3MiAgc291cmNlICJhcmNo
-L21pcHMvbmV0bG9naWMvS2NvbmZpZyIKPiAzOGIxOGY3MjU4NzQyMjQgUmFsZiBCYWVjaGxlICAg
-ICAyMDA1LTAyLTAzICAxMDczCj4KPiAtLS0KPiAwLURBWSBDSSBLZXJuZWwgVGVzdCBTZXJ2aWNl
-LCBJbnRlbCBDb3Jwb3JhdGlvbgo+IGh0dHBzOi8vbGlzdHMuMDEub3JnL2h5cGVya2l0dHkvbGlz
-dC9rYnVpbGQtYWxsQGxpc3RzLjAxLm9yZwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
-dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Document the bindings for HiKey 970 (hi3670) PCIe PHY
+interface, supported via the pcie-kirin driver.
+
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+---
+ .../phy/hisilicon,phy-hi3670-pcie.yaml        | 95 +++++++++++++++++++
+ 1 file changed, 95 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+
+diff --git a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+new file mode 100644
+index 000000000000..a5ea13332cac
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+@@ -0,0 +1,95 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/hisilicon,phy-hi3670-pcie.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: HiSilicon Kirin970 PCIe PHY
++
++maintainers:
++  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
++
++description: |+
++  Bindings for PCIe PHY on HiSilicon Kirin 970.
++
++properties:
++  compatible:
++    const: hisilicon,hi970-pcie-phy
++
++  "#phy-cells":
++    const: 0
++
++  reg:
++    maxItems: 1
++    description: PHY Control registers
++
++  phy-supply:
++    description: The PCIe PHY power supply
++
++  clocks:
++    items:
++      - description: PCIe PHY clock
++      - description: PCIe AUX clock
++      - description: PCIe APB PHY clock
++      - description: PCIe APB SYS clock
++      - description: PCIe ACLK clock
++
++  clock-names:
++    items:
++      - const: phy_ref
++      - const: aux
++      - const: apb_phy
++      - const: apb_sys
++      - const: aclk
++
++  reset-gpios:
++    description: PCI PERST reset GPIOs
++    maxItems: 4
++
++  clkreq-gpios:
++    description: Clock request GPIOs
++    maxItems: 3
++
++  hisilicon,eye-diagram-param:
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    description: Eye diagram for phy.
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - reset-gpios
++  - clkreq-gpios
++  - hisilicon,eye-diagram-param
++  - phy-supply
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/hi3670-clock.h>
++
++    soc {
++      #address-cells = <2>;
++      #size-cells = <2>;
++      pcie_phy: pcie-phy@fc000000 {
++        compatible = "hisilicon,hi970-pcie-phy";
++        reg = <0x0 0xfc000000 0x0 0x80000>;
++        #phy-cells = <0>;
++        phy-supply = <&ldo33>;
++        clocks = <&crg_ctrl HI3670_CLK_GATE_PCIEPHY_REF>,
++                 <&crg_ctrl HI3670_CLK_GATE_PCIEAUX>,
++                 <&crg_ctrl HI3670_PCLK_GATE_PCIE_PHY>,
++                 <&crg_ctrl HI3670_PCLK_GATE_PCIE_SYS>,
++                 <&crg_ctrl HI3670_ACLK_GATE_PCIE>;
++        clock-names = "phy_ref", "aux",
++                      "apb_phy", "apb_sys", "aclk";
++        reset-gpios = <&gpio7 0 0 >, <&gpio25 2 0 >,
++                      <&gpio3 1 0 >, <&gpio27 4 0 >;
++        clkreq-gpios = <&gpio20 6 0 >, <&gpio27 3 0 >, <&gpio17 0 0 >;
++        hisilicon,eye-diagram-param = <0xFFFFFFFF 0xFFFFFFFF
++                                       0xFFFFFFFF 0xFFFFFFFF 0xFFFFFFFF>;
++      };
++    };
+-- 
+2.31.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
