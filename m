@@ -2,86 +2,71 @@ Return-Path: <SRS0=SrD0=MO=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-18.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2FD87C6377B
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 03:09:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 209C4C6377D
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 08:58:56 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F217D61221
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 03:09:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F217D61221
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id DC80E6138C
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 08:58:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DC80E6138C
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UdXtCBGwDxGV68TChaRQn/12f1XocpSlbKeFM28szpg=; b=JdLwSBA/rMhjTh
-	c42pXTNEpRxwtMRN0IlAnskuntCT9BneqTpniwPaxKEhlIjb5tKPFKBMbTnYIO5eBfiLIribUVWYl
-	Sox5Ul2bHAQpI7w6CtZQIWRw1N8P96+3l8c3fr76C+f17id8nfnvPxecHH9qPDKI5kT5ACdLmPByd
-	6bl8JgrSvwjTTTvZpj+6ibcgPSpf0SCctKqfTJaeErSIvzD/lhQWtglnsirtIFXiTt+CsitrvjQ9c
-	ER/HE8IwT/E9xHxhmjRrBPpAbplxiqaXnWjPFo21MtvvSTX2ccg+C7Zw5HfJ5ue0JiQHeZH5l2frp
-	PGQRkQWys/OXyFdykRnQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Uf/QkxDPca4PTqqQCPGjAOmmYEfyG0OZU0Sq8hY8Tl4=; b=VNrhKumg6WTuxA
+	jQMmvSAcm+Fj+BSKZdNb2j8XhcAMEus85IYqsUwosPRiJdXUxumXjeVzl39Yjn4n04z8P1CDC/69T
+	zcd6TaRKxKmhAJW7GbnIeKfly47wUDLdoAviRimJl+cBc9/EoErtUCUuOOKkKcjui8dSFLZokZM9c
+	VFgawdVsSiWgPPYoHYmpPwXuTRfd4cNo+yFu3N8Pq10EvL0sIfnJnTlsWwUEj30B3nvuc90320Wuw
+	LDLZvS2ZcdlQJeuG3J6BVPCHaoIGJzFjVAL49n5GXJsLK8xfBPV0Sg5RcEXIYW84X5rWzquh3TCLJ
+	WCxM9abExZwx62Jax4cw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m6P5S-0006BF-FX; Thu, 22 Jul 2021 03:09:26 +0000
-Received: from mail-oi1-x22a.google.com ([2607:f8b0:4864:20::22a])
+	id 1m6UXd-000mSY-Dh; Thu, 22 Jul 2021 08:58:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m6P5O-0006A1-Uu
- for linux-phy@lists.infradead.org; Thu, 22 Jul 2021 03:09:24 +0000
-Received: by mail-oi1-x22a.google.com with SMTP id a132so5133960oib.6
- for <linux-phy@lists.infradead.org>; Wed, 21 Jul 2021 20:09:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=HRxzdd2cU7TP9bQqkyvQP8mNDhcOMiq0kQRkrXwpMGA=;
- b=TXmr/lgi204QkWG+FfHEX0vyriVt1FZRxWyDpqRqBBz79fVsD+ov/vOCkb/OM0ew7x
- BqnljLROkw9X90VtrP8cJbTNGzvsWpEVRQtgBZacB7j+le0LPXH3fE88KzL+zBBwehmc
- /Mf8lQvkMowAe25kBVoC4Bs9K4sJFz9vVE+/xFROPVezM1wbfe5LJUtasHo5hENZ9yGd
- ezvp8GoVaQGx8Syd+SDHjJ2VG0gZcjCSlYRMg47S+ksVp7rcTpfmzd8FSX4gnRSdHOum
- iA+6wf/ELim3n81a7+yry7F2YhqIFTPpiZTJ2FWKINrA1YcDuk3MaWElmu9nBb+GepWu
- eFPQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=HRxzdd2cU7TP9bQqkyvQP8mNDhcOMiq0kQRkrXwpMGA=;
- b=Bgt3PgjpgTqXuzF8wJ7Xge2O2JhAfPuNJm7hPqFqE5fk32rBV7jiwZxmdmyKGf6h0V
- xi728B1Pu6VHg5Yl7ZB0RtkrD1Ll9pGA9FrI/TFDSc05D7CxUDv4+5KbcJDKVAj5Rfdw
- JfhUf3kK4JAyniJy9hvNO2Oz6o+F2OJmIkzKd5Y/aKfKYlmegRQ7N/HgtIaVeNvwX8b9
- 6qnh9lARis6D4ZQg1EYmQXkA8ExJ4OE2csa2vkhTLNkXJ+iY0sxBy1YxfWS4Bry+0fZg
- xDdWbruBXU/WG6f7ATERfiyeOYHYYwzqsyFfAX+khquYDg/YLSJ2zBHg1RPkc1kNr9qB
- bZwQ==
-X-Gm-Message-State: AOAM533m+ARs9mKRjYLPCEmdRAZFau9pSuAgRjd6uJNJyD6RRldPzPFy
- MMIvPvpDLK3IuMMaX7tNGs7FUQ==
-X-Google-Smtp-Source: ABdhPJyiHR6tqUP1L+4umx32f2vdjjcDm0+i3iT+RDo7C7N7HBVCkOR23PEO5rdRPJO+jJ8+eGy4+Q==
-X-Received: by 2002:aca:5f8b:: with SMTP id t133mr4346676oib.15.1626923361903; 
- Wed, 21 Jul 2021 20:09:21 -0700 (PDT)
-Received: from localhost.localdomain
- (104-57-184-186.lightspeed.austtx.sbcglobal.net. [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id v11sm2488909ott.68.2021.07.21.20.09.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Jul 2021 20:09:21 -0700 (PDT)
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Stephen Boyd <swboyd@chromium.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: qmp: Provide unique clock names for DP clocks
-Date: Wed, 21 Jul 2021 20:07:38 -0700
-Message-Id: <20210722030738.3385821-1-bjorn.andersson@linaro.org>
-X-Mailer: git-send-email 2.29.2
+ id 1m6UXO-000mOa-AI; Thu, 22 Jul 2021 08:58:39 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id BADE76138C;
+ Thu, 22 Jul 2021 08:58:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1626944317;
+ bh=5+Ds4MASIrWRq99HNYMoMBFeXjK14QuDwTvs3AcKaRQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HafYTP8ZiVw5V5Hkj03a5d00l6UZsBR8huXdlff2hbxNqNk29wjIL/YTjf3xiM1SJ
+ PfzbZhi9vrxFqH0puM8PbnH/Xt5FZxACyBXPaketVObl2mDlcR0bHW+c3tHthswCC4
+ 8RxHOJU3ZME5XKnZ4r0v8iZBDAXYyML5md/eElDnN3jg+Z1Kjmn7wAZBsIp51wXLsG
+ IMMXeU/tEUL+vA9PAhZMfda1SFYKDBdG8S9zAwBstCLKCEVHtJO72dXkHz4x+d4VME
+ L0Ovff6IbIUDQWo0wcwToFzPCShQ85AwWaidGjGhqne2NAGbUwYCaLwRLUu1IufnFx
+ aIf7Ckeq/jvog==
+Date: Thu, 22 Jul 2021 14:28:33 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Eddie Hung <eddie.hung@mediatek.com>
+Subject: Re: [PATCH v3 3/3] phy: phy-mtk-tphy: add support mt8195
+Message-ID: <YPkzOWY0G4MFk7Nu@matsya>
+References: <1626331702-27825-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1626331702-27825-3-git-send-email-chunfeng.yun@mediatek.com>
+ <YPaIYI70823rK68w@matsya> <1626837468.4247.3.camel@mhfsdcap03>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1626837468.4247.3.camel@mhfsdcap03>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210721_200923_040011_FB461D96 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20210722_015838_436451_6926AECF 
+X-CRM114-Status: GOOD (  24.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,59 +83,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB/DP combo PHY exposes the "qmp_dp_phy_pll_link_clk" and
-"qmp_dp_phy_pll_vco_div_clk" clocks, that are consumed by the display
-clock controller. But for boards with multiple enabled QMP USB/DP combo
-instances the hard coded names collides - and hence only the first
-probed device is allowed to register.
+On 21-07-21, 11:17, Chunfeng Yun wrote:
+> On Tue, 2021-07-20 at 13:55 +0530, Vinod Koul wrote:
+> > On 15-07-21, 14:48, Chunfeng Yun wrote:
+> > > The controller is designed to use use PLL integer mode, but
+> > > in fact used fractional mode for some ones on mt8195, this
+> > > causes signal degradation (e.g. eye diagram test fail), fix
+> > > it by switching PLL to 26Mhz from default 48Mhz to improve
+> > > signal quality.
+> > > 
+> > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > ---
+> > > v2~3: no changes
+> > > ---
+> > >  drivers/phy/mediatek/phy-mtk-tphy.c | 52 +++++++++++++++++++++++++++++
+> > >  1 file changed, 52 insertions(+)
+> > > 
+> > > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > index 42a1174da6cc..c3dc1763a7eb 100644
+> > > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > > @@ -41,6 +41,8 @@
+> > >  
+> > >  #define U3P_USBPHYACR0		0x000
+> > >  #define PA0_RG_U2PLL_FORCE_ON		BIT(15)
+> > > +#define PA0_USB20_PLL_PREDIV		GENMASK(7, 6)
+> > > +#define PA0_USB20_PLL_PREDIV_VAL(x)	((0x3 & (x)) << 6)
+> > >  #define PA0_RG_USB20_INTR_EN		BIT(5)
+> > >  
+> > >  #define U3P_USBPHYACR1		0x004
+> > > @@ -52,6 +54,8 @@
+> > >  #define PA1_RG_TERM_SEL_VAL(x)	((0x7 & (x)) << 8)
+> > >  
+> > >  #define U3P_USBPHYACR2		0x008
+> > > +#define PA2_RG_U2PLL_BW			GENMASK(21, 19)
+> > > +#define PA2_RG_U2PLL_BW_VAL(x)		((0x7 & (x)) << 19)
+> > >  #define PA2_RG_SIF_U2PLL_FORCE_EN	BIT(18)
+> > >  
+> > >  #define U3P_USBPHYACR5		0x014
+> > > @@ -73,6 +77,14 @@
+> > >  #define P2C_USB20_GPIO_MODE		BIT(8)
+> > >  #define P2C_U2_GPIO_CTR_MSK	(P2C_RG_USB20_GPIO_CTL | P2C_USB20_GPIO_MODE)
+> > >  
+> > > +#define U3P_U2PHYA_RESV		0x030
+> > > +#define P2R_RG_U2PLL_FBDIV_26M		0x1bb13b
+> > > +#define P2R_RG_U2PLL_FBDIV_48M		0x3c0000
+> > > +
+> > > +#define U3P_U2PHYA_RESV1	0x044
+> > > +#define P2R_RG_U2PLL_REFCLK_SEL	BIT(5)
+> > > +#define P2R_RG_U2PLL_FRA_EN		BIT(3)
+> > > +
+> > >  #define U3D_U2PHYDCR0		0x060
+> > >  #define P2C_RG_SIF_U2PLL_FORCE_ON	BIT(24)
+> > >  
+> > > @@ -277,6 +289,12 @@ enum mtk_phy_version {
+> > >  struct mtk_phy_pdata {
+> > >  	/* avoid RX sensitivity level degradation only for mt8173 */
+> > >  	bool avoid_rx_sen_degradation;
+> > > +	/*
+> > > +	 * u2phy should use integer mode instead of fractional mode of
+> > > +	 * 48M PLL, fix it by switching PLL to 26M from default 48M
+> > > +	 * for mt8195
+> > > +	 */
+> > > +	bool sw_pll_48m_to_26m;
+> > >  	enum mtk_phy_version version;
+> > >  };
+> > >  
+> > > @@ -456,6 +474,33 @@ static void u3_phy_instance_init(struct mtk_tphy *tphy,
+> > >  	dev_dbg(tphy->dev, "%s(%d)\n", __func__, instance->index);
+> > >  }
+> > >  
+> > > +static void u2_phy_pll_26m_set(struct mtk_tphy *tphy,
+> > > +	struct mtk_phy_instance *instance)
+> > > +{
+> > > +	struct u2phy_banks *u2_banks = &instance->u2_banks;
+> > > +	void __iomem *com = u2_banks->com;
+> > > +	u32 tmp;
+> > > +
+> > > +	if (!tphy->pdata->sw_pll_48m_to_26m)
+> > > +		return;
+> > > +
+> > > +	tmp = readl(com + U3P_USBPHYACR0);
+> > > +	tmp &= ~PA0_USB20_PLL_PREDIV;
+> > > +	tmp |= PA0_USB20_PLL_PREDIV_VAL(0);
+> > > +	writel(tmp, com + U3P_USBPHYACR0);
+> > > +
+> > > +	tmp = readl(com + U3P_USBPHYACR2);
+> > > +	tmp &= ~PA2_RG_U2PLL_BW;
+> > > +	tmp |= PA2_RG_U2PLL_BW_VAL(3);
+> > > +	writel(tmp, com + U3P_USBPHYACR2);
+> > > +
+> > > +	writel(P2R_RG_U2PLL_FBDIV_26M, com + U3P_U2PHYA_RESV);
+> > > +
+> > > +	tmp = readl(com + U3P_U2PHYA_RESV1);
+> > > +	tmp |= P2R_RG_U2PLL_FRA_EN | P2R_RG_U2PLL_REFCLK_SEL;
+> > > +	writel(tmp, com + U3P_U2PHYA_RESV1);
+> > > +}
+> > > +
+> > >  static void u2_phy_instance_init(struct mtk_tphy *tphy,
+> > >  	struct mtk_phy_instance *instance)
+> > >  {
+> > > @@ -941,6 +986,7 @@ static int mtk_phy_init(struct phy *phy)
+> > >  
+> > >  	switch (instance->type) {
+> > >  	case PHY_TYPE_USB2:
+> > > +		u2_phy_pll_26m_set(tphy, instance);
+> > 
+> > should this not be set only for MTK_PHY_V3?
+> Workaround only for mt8195, HW will fix it for others (V3)
 
-Given that clocks are no longer reference globally by name and it's
-possible to replace the hard coded names by something unique, but still
-user friendly.
+Pls document that in comments here
 
-The two new clock names are based on dev_name() and results in names
-such as "88ee000.phy::link_clk" and "88ee000.phy::vco_div_clk".
-
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index b7f2e36d7960..61707d99a9eb 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -5213,6 +5213,7 @@ static int phy_dp_clks_register(struct qcom_qmp *qmp, struct qmp_phy *qphy,
- {
- 	struct clk_init_data init = { };
- 	struct qmp_phy_dp_clks *dp_clks;
-+	char name[64];
- 	int ret;
- 
- 	dp_clks = devm_kzalloc(qmp->dev, sizeof(*dp_clks), GFP_KERNEL);
-@@ -5222,15 +5223,17 @@ static int phy_dp_clks_register(struct qcom_qmp *qmp, struct qmp_phy *qphy,
- 	dp_clks->qphy = qphy;
- 	qphy->dp_clks = dp_clks;
- 
-+	snprintf(name, sizeof(name), "%s::link_clk", dev_name(qmp->dev));
- 	init.ops = &qcom_qmp_dp_link_clk_ops;
--	init.name = "qmp_dp_phy_pll_link_clk";
-+	init.name = name;
- 	dp_clks->dp_link_hw.init = &init;
- 	ret = devm_clk_hw_register(qmp->dev, &dp_clks->dp_link_hw);
- 	if (ret)
- 		return ret;
- 
-+	snprintf(name, sizeof(name), "%s::vco_div_clk", dev_name(qmp->dev));
- 	init.ops = &qcom_qmp_dp_pixel_clk_ops;
--	init.name = "qmp_dp_phy_pll_vco_div_clk";
-+	init.name = name;
- 	dp_clks->dp_pixel_hw.init = &init;
- 	ret = devm_clk_hw_register(qmp->dev, &dp_clks->dp_pixel_hw);
- 	if (ret)
 -- 
-2.29.2
-
+~Vinod
 
 -- 
 linux-phy mailing list
