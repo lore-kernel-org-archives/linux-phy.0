@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-5.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
 	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 19152C63793
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 09:09:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7F841C63793
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 09:10:49 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DB18861279
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 09:09:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DB18861279
+	by mail.kernel.org (Postfix) with ESMTPS id 4A64F61001
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Jul 2021 09:10:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4A64F61001
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,50 +22,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ICMnz+TogB8hlVJbGTXe7+9lhvkcQhqTI3cY/BrO6Sw=; b=Vugp8Q8V3B30ae
-	o32GhUCDNiRMqH97GQuxMoEhttVLz3pOuCgVWgoilHb5xq9ajSMtjAzd9hKexqV+v/BLk8n0kxITa
-	4xhGCbnrC0ORkPJFwKqmNA7Vp7CxIujQ5+gKnEo57TYMON49mgUT3Lp9XDy7gwXLGqK6kpYZ3Prd4
-	gs53tMK31Bg9EX/e8WXSBL7eBVY4VUvdEI5PirWcUm6I3SQAAMbzOfsEjWRSEGqXUSv0AzKM8CViv
-	kRIdpe4SOrLxprt6SDVDTJEjHQr/QfFvCJlkVDgIn6TBQKrj1ttq0yxupaNvccOIyFW2O9wjpOlOp
-	7qbDRohWxdWCAbJIphDw==;
+	List-Owner; bh=WIuhZt9G6hIZcDMHc14AwLHZhVRKnBphjHiT3NoaSnk=; b=KlLdL4vpNAHbJK
+	Ebez00hrAHmFNCxSfknHpTyKKqHACcMu6pDpC1hNilbQ8MmomqUOQvBSsLG8H0ICcbKXka4xHQE1k
+	Qgyfutk5x1cCe/XftL4DWMrziVGWGYq4UlcLumMn8NFCYmaS8NfkA2V0uPpzAI7pFIr1X+onAYbDa
+	N4r+B5JS5Ddfnd0KDCzTn4YabOvQ/LBxUPvtbCW4R3dxQW65M5+FIn2aTbrQGej0IsATxPgGPd7E7
+	US2doCFnVxA6isPWBignHS9TB0eAclawu1IXflYBubIkcJ5kvv4x80JkUQTqTCT3SdPqK885c3muy
+	eL/6fbNqXMZz482efHkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m6Uhb-000o3E-DS; Thu, 22 Jul 2021 09:09:11 +0000
+	id 1m6UjA-000oVx-Rk; Thu, 22 Jul 2021 09:10:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m6UhM-000nz8-EE; Thu, 22 Jul 2021 09:08:57 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 4F5A16124B;
- Thu, 22 Jul 2021 09:08:55 +0000 (UTC)
+ id 1m6Uj7-000oV4-Pn
+ for linux-phy@lists.infradead.org; Thu, 22 Jul 2021 09:10:47 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 77A616008E;
+ Thu, 22 Jul 2021 09:10:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1626944936;
- bh=5vl/tvBRm8U2+bS0nYWt65GcpJ17JVUvMxzOOfaQelU=;
+ s=k20201202; t=1626945045;
+ bh=UFRJTyfDU5ERSeJesOqndphPGq72ZxFE2ZfifURN+3A=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=N6vj8RcXEityaBeLrN9dCcMrpbv3KCQM13vyJ+fXj1Nu18kUOoe/WHYJmFcIM1ZZ1
- 9Y13djBPuWAC/CVzRf8C7AFC+OvvRyV38PnpV6N6zNnLI0LPC0wRWz7ypiw1x0JDs9
- LLb4v0c5CtA3XCqgFaLoLN67QB2qWhSgeCF4eTv1vY/+L8D2mEp7n2+kLm0E6y360q
- nijVU7dYbHm+Js6ZLeT+vVf2qWJ2WZmNwwubLxN24oVflmVVSCEqXDPPxl9sNofASc
- 3TkTZD0F3OvEnFAIYn+hYpEtIbOWVKsHu5LZECH6Tim4UYK3X5jQ67f6VwEoQKmRIM
- 5ogINrgxuaWLA==
-Date: Thu, 22 Jul 2021 14:38:52 +0530
+ b=BSErgSXc3zIsanJlbIjWVuGFwc6SVUyPtmQ+AN6t5x7jkKjscQNYahvKperrjR25f
+ 4L7rcX4jPE63oqQt3BZwo+NFZyFqibwNm9kAkCXca6R+bUTOMoWA8TJkm1zWbhHfIz
+ 4x+YUeHATUI1+M2yjvNDMz8jvYTHDq6ss58Ie6+2CxXdl7+aGCwmrzLWdVJdOfa05m
+ zf7p/gn8PlLeJ+cwylepkdC5/T4jPQ8HiMzVOrJCo0slQ12nZV9W/cQYsRy4a4yPhH
+ NdQqTWXPKKQtRYt4o+6WRW8DdB/QFxRqtHxyA9J8qEuJbl59a2Xm5Acn7ZE+Fx2N8X
+ gOZfYmVZK1Jiw==
+Date: Thu, 22 Jul 2021 14:40:41 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: robh+dt@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
- kishon@ti.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 2/2] phy: amlogic: Add a new driver for the HDMI TX
- PHY on Meson8/8b/8m2
-Message-ID: <YPk1pNi3CyzB2Jf4@matsya>
-References: <20210629182047.893415-1-martin.blumenstingl@googlemail.com>
- <20210629182047.893415-3-martin.blumenstingl@googlemail.com>
- <YPaLKwEKcDLWwztM@matsya>
- <CAFBinCCJ5DjvjkfjYg7SveDB0bvJ-XV6BwcF_yEeUqxRN9awiQ@mail.gmail.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, kernel test robot <lkp@intel.com>
+Subject: Re: [PATCH] phy: qcom-qmp: Fix sc8180x PCIe definition
+Message-ID: <YPk2ERxHcJ7YgW4X@matsya>
+References: <20210721163029.2813497-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAFBinCCJ5DjvjkfjYg7SveDB0bvJ-XV6BwcF_yEeUqxRN9awiQ@mail.gmail.com>
+In-Reply-To: <20210721163029.2813497-1-bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210722_020856_557877_95AEA48A 
-X-CRM114-Status: GOOD (  31.16  )
+X-CRM114-CacheID: sfid-20210722_021045_896349_337AFD05 
+X-CRM114-Status: UNSURE (   5.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,83 +79,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21-07-21, 00:08, Martin Blumenstingl wrote:
-> Hi Vinod,
-> 
-> On Tue, Jul 20, 2021 at 10:37 AM Vinod Koul <vkoul@kernel.org> wrote:
-> [...]
-> > > +     if (clk_get_rate(priv->tmds_clk) >= 2970UL * 1000 * 1000)
-> > > +             hdmi_ctl0 = 0x1e8b;
-> > > +     else
-> > > +             hdmi_ctl0 = 0x4d0b;
-> >
-> > magic numbers..? I guess these are register offsets, would be better to
-> > define..
-> Unfortunately these are register values, not offsets
-> The only "documentation" I have is:
-> - documentation for the bits/bit-fields in these registers [0]
-> - some reference code with magic values from the vendor BSP: [1]
-> 
-> HDMI_CTL0/HDMI_CTL1 (the names from the datasheet) is not very
-> specific and I could not find any other explanation on what the values
-> mean.
-> That's why I cannot offer more than these magic values (same situation
-> for your finding below).
+On 21-07-21, 09:30, Bjorn Andersson wrote:
+> A copy paste error was snuck into the patch going upstream that made the
+> SC8180x PCIe PHY use the SM8250 serdes table, but while this works
+> there's some differences in the tables (and the SC8180x was left
+> dangling). So correct the SC8180x definition to use the SC8180x serdes
+> table.
 
-Ok, Can you add a comment that register documentation not available ...
-
-
-> > > +     ret = device_property_read_u32_array(&pdev->dev, "reg", reg,
-> > > +                                          ARRAY_SIZE(reg));
-> >
-> > we have reg as single property, why array with 2 entries here?
-> My thought when Rob requested a "reg" property in the dt-bindings was
-> that I should use offset and size.
-> I am not validating the size here, which would be in reg[1].
-> If it's fine for Rob as well then I'll switch the dt-bindings to just
-> have the offset inside the reg property.
-
-So the property is reg address and size. Two would imply you are using
-two reg values.
-
-So I would recommend to use:
-        reg_offset = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-
-and skip this reg array.
-
-
-> 
-> [...]
-> > > +static const struct of_device_id phy_meson8_hdmi_tx_of_match[] = {
-> > > +     { .compatible = "amlogic,meson8-hdmi-tx-phy" },
-> > > +     { .compatible = "amlogic,meson8b-hdmi-tx-phy" },
-> > > +     { .compatible = "amlogic,meson8m2-hdmi-tx-phy" },
-> > > +     { /* sentinel */ }
-> >
-> > I see that all three are handled similarly, no difference!
-> So far this is correct, they're all treated the same.
-> However, it happened to me (multiple times) in the past that later on
-> I would spot a difference hidden in the vendor BSP.
-> One example is commit f004be596c28f9 ("phy: amlogic: meson8b-usb2: Add
-> a compatible string for Meson8m2").
-> I know that other parts of the graphics pipeline are different on
-> Meson8 compared to the other two SoCs (because Meson8b/Meson8m2 have
-> some reset lines which need to be toggled after updating the video
-> clocks. these resets don't exist on Meson8).
-> So I decided to play safe and add compatible strings for every SoC so
-> I can easily handle any differences in the future (in case I find
-> any).
-
-Correct, that is why you need to *keep* the SoC specific compatible and
-document them. But use a generic one when you don't have any delta
-
-Above would become:
-        { .compatible = "amlogic,meson8-hdmi" },
-
-with DTS specifying:
-        compatible = "amlogic,meson8-hdmi-tx-phy", "amlogic,meson8-hdmi";
-
-That way if required you can always use the specific one
+Applied, thanks
 
 -- 
 ~Vinod
