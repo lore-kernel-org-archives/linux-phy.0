@@ -2,20 +2,20 @@ Return-Path: <SRS0=Vlgz=MP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-18.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-13.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5C7F9C432BE
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:25:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id EA804C4338F
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:26:13 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 18F0660ED3
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:25:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 18F0660ED3
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=infradead.org
+	by mail.kernel.org (Postfix) with ESMTPS id 8805D60EBE
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:26:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 8805D60EBE
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=flygoat.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -23,30 +23,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SdqBxovyhv4FFoHJj4ZccEFSxNSMPkp5FJMKPCLMYn4=; b=mC2jcQ0Qom9Pok
-	aGdVZ8S1xtbpOVuIKqH32LRpbSEoS7je5AteziAi1wAzD65+29QZTCiJ8osfQ2MDMmciHPqSKymLX
-	cLIzjoBOpENhdHxs6Ag9L8ga3Hif/bTIUpWbYoHstQPAD4W97ZDHDSwHOmvTT5YgPk2IgDe5J7eaV
-	U0at9Tnoc5nJXzYysUFGQZ9IRwov+dOJnGYRf489J56WRdJTElwwf5l9NbE2O+aQl1T03F/cMcrLL
-	uOayZVvk6jgelqNNVABVgrfQnxk6TkljsnF4ZBVCHBDJ35uGtVciSKv5jqsXxEkguydzVRDLlnk0e
-	HPrVjZu5TvbezEkdpCJg==;
+	List-Owner; bh=o2Ea9Uk/eH4aQ5mpmmtfe1lob4j6z2cGC9RdXgxM35M=; b=LCDksWeGJRKCJ7
+	fRMiD0q1UjSW32x1qFlWwTM+DQksQYuJouZ2z4z1xStxheL0cqieTd823m86Ekki1+YqoJWogIgLR
+	wRyaUXcXGCJwdMOv1QIc0tR5sxKsU/SDG7bcvV0kLH7aAAuXYOB/1BaL7KnN6Xm+9GyCAZsPeKfig
+	Ul3qna5zCqVIHyJUs90s1SQVY2DB7OnxZVPT+mDad81ZLt48+HhWKzni6Z6pyXwtXn4DJRyTwPaoT
+	qWfvNjP9AIxOBIeguKnZoE93b8NBj963KMNFqrX2p2kfFhptPTraYTcYeANo7NKSFAQxewX0DhU31
+	M9gmEcuUmHAtu8ljl+Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m6ksp-0035nQ-KB; Fri, 23 Jul 2021 02:25:51 +0000
-Received: from [2601:1c0:6280:3f0::aefb] (helo=bombadil.infradead.org)
- by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m6ksn-0035n7-6M; Fri, 23 Jul 2021 02:25:49 +0000
-From: Randy Dunlap <rdunlap@infradead.org>
-To: linux-kernel@vger.kernel.org
-Cc: Randy Dunlap <rdunlap@infradead.org>, kernel test robot <lkp@intel.com>,
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-msm@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
-Subject: [PATCH] phy: qualcomm: phy-qcom-usb-hs: repair non-kernel-doc comment
-Date: Thu, 22 Jul 2021 19:25:48 -0700
-Message-Id: <20210723022548.25695-1-rdunlap@infradead.org>
-X-Mailer: git-send-email 2.26.2
+	id 1m6ktA-0035pQ-Of; Fri, 23 Jul 2021 02:26:12 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1m6kt7-0035oE-MO
+ for linux-phy@lists.infradead.org; Fri, 23 Jul 2021 02:26:11 +0000
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+ by mailnew.nyi.internal (Postfix) with ESMTP id EF8395808BF;
+ Thu, 22 Jul 2021 22:26:02 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute6.internal (MEProxy); Thu, 22 Jul 2021 22:26:02 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=piA92a2BDHjHVta7hxYES50nPA
+ VoWHmEd4CMr4Jw8yE=; b=O8i9iPg61BaVTDHJ+7F+p+K4obNfEWnV06plnrbs9V
+ gz59nVBrnMGyyl4ydd+J6VQ0J4TL/YghErBXWSzSNMq3046Nbubiv+JZ0q6P6nFq
+ AEo2wseY7rd/ysKnq402bSfCZCWUbAyt0fDZZK2XdgrlD+bIvOI1uXMaVHk5BKkv
+ V20slIVEOaXATSB/LIQT0Ei3uVztAsXDia8PWZD9nNDmCSPs6sDvCvzfHVUHWEyd
+ 26qdkHb4CU1E1c87S4+J7ZeD4CjW7JvfgRn9tdbeWnUdVVQOBjUWZKS3Wav+BQ8n
+ OEvtgqRfualemWnGtmNNynV40m828rbL5mFIN8QGMrbw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=piA92a2BDHjHVta7h
+ xYES50nPAVoWHmEd4CMr4Jw8yE=; b=ZQ6hpGobMwmOQxd1rEYvmPe5JHMCNGCeA
+ nj0uOGapBXCKamXa7S9hx4ZDYMkNOeR31RrVUxnfBZok9j0uCYNfBlrowDEGn7eS
+ lD0Nn+HSnzb6f9LtqwZP5ov12KjhSfJTKab8FnIwrMjiqvCmqmVCF9jI8Qztqsbn
+ NFzdvGFIHg9Ls31RGrbGkmrV0Toa6PWq+ThyZCuMV4bbMCOrY0+2o2iOKwTzkj7b
+ qgtsh+/UUZKdUwo3XhksbnRbpuCbzwJHX7B3lGRPN66yV1Hd0OK2ERfEOfobhozh
+ x8CpBN1BhSxe+o1BA5/qIfBTgaINJGnT8mc+kxKUvTEEJwp5avMgA==
+X-ME-Sender: <xms:uij6YA-berd2T20nD87zdunn_9Al21zaSp3J7v0CcuKYS37EEGWI4A>
+ <xme:uij6YIubTYKKjM7bKFzjLLiUQLMQaFMiQZnG4CLzW1b84jxKyFyUqNIpCKEOMgfmR
+ Uhs_Ph9UL3Mz2yt-mw>
+X-ME-Received: <xmr:uij6YGB0ThpkdKp1pRLlKp9_BbCWtIAzRT6Vl8P1Ug_MnydkuF6j6vTIpYEVafLNsXMlKqwIjFxg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrfeejgdehhecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
+ dtnecuhfhrohhmpeflihgrgihunhcujggrnhhguceojhhirgiguhhnrdihrghnghesfhhl
+ hihgohgrthdrtghomheqnecuggftrfgrthhtvghrnhepgeffjeeitdegieeujedvvdeije
+ etkeefueevteeltdeiheffgfeuffduiefgtedvnecuffhomhgrihhnpedtuddrohhrghen
+ ucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehjihgrgi
+ hunhdrhigrnhhgsehflhihghhorghtrdgtohhm
+X-ME-Proxy: <xmx:uij6YAc5WX1sUpH0A6_9XYJ2magHEth3mi_UxIOnZ9WcTdWSHs-UOQ>
+ <xmx:uij6YFNW8WirigQDIVu5EwN_Qz_zJ26lGiSNrcjU9pS0RGSfc_rb4A>
+ <xmx:uij6YKnvupEuFHbKZ4Y1BuqcA43yIH0xTvcXo5MYo0lfhb-AiNpIRQ>
+ <xmx:uij6YGEj9lVbGfrGG17fkIQTPbnvoVjYu-5pUSV1D4Hw7ZKBA9iXZQ>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
+ 22 Jul 2021 22:25:57 -0400 (EDT)
+From: Jiaxun Yang <jiaxun.yang@flygoat.com>
+To: linux-mips@vger.kernel.org
+Cc: tsbogend@alpha.franken.de, mturquette@baylibre.com,
+ daniel.lezcano@linaro.org, linus.walleij@linaro.org, vkoul@kernel.org,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, Jiaxun Yang <jiaxun.yang@flygoat.com>
+Subject: [PATCH v4 0/9] MIPS: Migrate pistachio to generic kernel
+Date: Fri, 23 Jul 2021 10:25:34 +0800
+Message-Id: <20210723022543.4095-1-jiaxun.yang@flygoat.com>
+X-Mailer: git-send-email 2.32.0
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20210722_192609_846008_5B9C71A5 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,35 +110,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix errant use of "/**" to begin a comment although the comment
-is not kernel-doc notation. Just use "/*" instead.
+I'm lucky enough to get a Creator CI40 board from dusts.
+This patchset move it to gerneic kernel to reduce maintenance burden.
+It have been tested with SD Card boot.
 
-Fixes this kernel-doc warning:
+--
+v2: Minor fixes
+v3: Typo fixes and 0day testbot warning fix (Thanks to Sergei!)
+v4: 01.org warning fix
 
-drivers/phy/qualcomm/phy-qcom-usb-hs.c:3: warning: This comment starts with '/**', but isn't a kernel-doc comment. Refer Documentation/doc-guide/kernel-doc.rst
-    * Copyright (C) 2016 Linaro Ltd
+Jiaxun Yang (9):
+  MIPS: generic: Allow generating FIT image for Marduk board
+  MIPS: DTS: Pistachio add missing cpc and cdmm
+  clk: pistachio: Make it selectable for generic MIPS kernel
+  clocksource/drivers/pistachio: Make it selectable for MIPS
+  phy: pistachio-usb: Depend on MIPS || COMPILE_TEST
+  pinctrl: pistachio: Make it as an option
+  MIPS: config: generic: Add config for Marduk board
+  MIPS: Retire MACH_PISTACHIO
+  MIPS: Make a alias for pistachio_defconfig
 
-Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-Reported-by: kernel test robot <lkp@intel.com>
-Cc: Andy Gross <agross@kernel.org>
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org
-Cc: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: linux-phy@lists.infradead.org
----
- drivers/phy/qualcomm/phy-qcom-usb-hs.c |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/mips/Kbuild.platforms                    |   1 -
+ arch/mips/Kconfig                             |  30 --
+ arch/mips/Makefile                            |   3 +
+ arch/mips/boot/dts/Makefile                   |   2 +-
+ arch/mips/boot/dts/img/Makefile               |   3 +-
+ arch/mips/boot/dts/img/pistachio.dtsi         |  10 +
+ arch/mips/configs/generic/board-marduk.config |  53 +++
+ arch/mips/configs/pistachio_defconfig         | 316 ------------------
+ arch/mips/generic/Kconfig                     |   6 +
+ arch/mips/generic/Platform                    |   1 +
+ arch/mips/generic/board-marduk.its.S          |  22 ++
+ arch/mips/pistachio/Kconfig                   |  14 -
+ arch/mips/pistachio/Makefile                  |   2 -
+ arch/mips/pistachio/Platform                  |   6 -
+ arch/mips/pistachio/init.c                    | 125 -------
+ arch/mips/pistachio/irq.c                     |  24 --
+ arch/mips/pistachio/time.c                    |  55 ---
+ drivers/clk/Kconfig                           |   1 +
+ drivers/clk/Makefile                          |   2 +-
+ drivers/clk/pistachio/Kconfig                 |   8 +
+ drivers/clocksource/Kconfig                   |   3 +-
+ drivers/phy/Kconfig                           |   2 +-
+ drivers/pinctrl/Kconfig                       |   5 +-
+ 23 files changed, 114 insertions(+), 580 deletions(-)
+ create mode 100644 arch/mips/configs/generic/board-marduk.config
+ delete mode 100644 arch/mips/configs/pistachio_defconfig
+ create mode 100644 arch/mips/generic/board-marduk.its.S
+ delete mode 100644 arch/mips/pistachio/Kconfig
+ delete mode 100644 arch/mips/pistachio/Makefile
+ delete mode 100644 arch/mips/pistachio/Platform
+ delete mode 100644 arch/mips/pistachio/init.c
+ delete mode 100644 arch/mips/pistachio/irq.c
+ delete mode 100644 arch/mips/pistachio/time.c
+ create mode 100644 drivers/clk/pistachio/Kconfig
 
---- linux-next-20210722.orig/drivers/phy/qualcomm/phy-qcom-usb-hs.c
-+++ linux-next-20210722/drivers/phy/qualcomm/phy-qcom-usb-hs.c
-@@ -1,5 +1,5 @@
- // SPDX-License-Identifier: GPL-2.0-only
--/**
-+/*
-  * Copyright (C) 2016 Linaro Ltd
-  */
- #include <linux/module.h>
+-- 
+2.32.0
+
 
 -- 
 linux-phy mailing list
