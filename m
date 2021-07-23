@@ -2,91 +2,82 @@ Return-Path: <SRS0=Vlgz=MP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 263CEC41537
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 16:13:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 361FCC4338F
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 22:51:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BF85860F41
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 16:13:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BF85860F41
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id EFE7D60F41
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 22:51:16 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org EFE7D60F41
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YiWBXQu/L01r5k9RX85Br/toO/coCGwDsVIMW80X42M=; b=cW+OSMY9P8ygcH
-	w32Ltj/EVWI2qRW8nSGupbQop6V8+Y/6gDT7qUmTMlkgzbuZ8fQb/SNL9toCY/ty+BUCYmgP7geUH
-	g0PBrjsRbQ8e8dK8klZeS5hz+TA89vn0upMFdP+pnuSpH9FRRTQUjh4SgJtZXBF4GosZgWtxYB+oB
-	MagKsrol7zt7Z+J8ZFml1QXhV8KS1XuNwPJLSE/Ojw4GH/+rL7m3ZaoB7rhEYa/Nc7MyaHMl9I6PM
-	4PpZPYZ6WO33xZ8GEYmX3ZrR9SAjJP94qDW9/qkA3GkaFD3D8byLsAeEjDxC7boUcvn7g2jVTFmGT
-	TjSsSzhc5Nbch5q+A7Vw==;
+	List-Owner; bh=DfnVXFEDJ+VXpQW2deA0AlU9LsWSQdr8KRSqan5yido=; b=r92HcWqvgirNK/
+	vYtQMX5UedfViuemDjmqpprRMsvOonx7X28iw6rmQd2m8Q1UKi9Y046nkjNLhQng54VQswSeXp/MC
+	hjKCYgU7vCi7jCtLyLQ0yrq3JbkSt2Sqk6P31CBug+x1Je5FoL86VDNW7lN1BfC5fNVYtQD5P5lqy
+	a55hyijYw+1qtqNADZDCv6vfzOf+IU/IO7P0Xx/2613MOWi/FzLhEKT+xQ3c/gl9t2fI6c3R1prNK
+	RqgVkcDS3fULlGcTpRNK4X7USRnJqphTsv21yqGsuMurj/toSSwlzYRdhvaByDMoOsahqGf86N/Xu
+	3ZD1DMAILXPGnEsXercA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m6xoD-005KEc-AS; Fri, 23 Jul 2021 16:13:57 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1m740i-006Iwf-Gx; Fri, 23 Jul 2021 22:51:16 +0000
+Received: from mail-il1-f175.google.com ([209.85.166.175])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m6xoB-005KEA-I8
- for linux-phy@lists.infradead.org; Fri, 23 Jul 2021 16:13:56 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id d18so2929020lfb.6
- for <linux-phy@lists.infradead.org>; Fri, 23 Jul 2021 09:13:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZG8EM0ibWzAiSvgD/0B7tPbf0jFZ6hKm+43FjwPiK0k=;
- b=rlD9kU3EsUgSAXXwAp5ElP1YPzxO3q0z7M6zy8r9F8vzIGyuKKeFnlfR9ePbi3O+MU
- iKrGUnx/6N3cB1WpOZ3l8JtjE9kKvbBMcWMS/7maqJLonFHGN4PMWzQzYUYx0S8sf0TZ
- fRm7+ki8JlaKrLWfiuAWY1vq+4PhJc2PsEviDvGe6iOMTui96hfNscclgm+3wlXss7Iz
- QloERXBZuBfrXWAaeZsHGAF3yuWj8k0znpzgm0Bg31Fr/VQJ+dU3lm1pyEknTf2xdyIQ
- aJeXg082bW/eiNMFNYX4m/WuwYqi151M+Np4xmVwExaBSvO//B5JCmj+UIgUgMhnG4ls
- S59A==
+ id 1m740V-006Itj-K5
+ for linux-phy@lists.infradead.org; Fri, 23 Jul 2021 22:51:05 +0000
+Received: by mail-il1-f175.google.com with SMTP id y4so3005551ilp.0
+ for <linux-phy@lists.infradead.org>; Fri, 23 Jul 2021 15:51:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZG8EM0ibWzAiSvgD/0B7tPbf0jFZ6hKm+43FjwPiK0k=;
- b=c7iN7MGaGMRhbe6mWQ9Lof0kTCnCGpyqdRhkOS4Iq8b5uCx2o10WRcumHUU7Vobz5g
- fb0YT7r9vfEBeCPSK4d8GIPRUxf2na8D7S7jec21ZnkVgcZEeq3U50WoK0IeUIwgw7PN
- vxoH8e92txXvuUNH4gYY1J/sRS5OAVxMvwJhr8tKq3wpRNduT+jaZskZ76UrlhAhC8ac
- IulFEY5k5KMnf1sg+Tz22uDBNZMSLiAxOMC/Pd9LtxmG29tvu6wQ7kh1G6Ke9eLantuy
- MlR0E8zAyeaIkXhKQKk7XDprSsaqnZT3lYeInx7GT3jhWBwPH7OEokHK2vJl6yLsPcsW
- DSOA==
-X-Gm-Message-State: AOAM531UxbsuQklFTKhXUgNmcAWszdlOzUOFDbnxT0MEAapFBdW2+hNU
- vK0QvSWINK0JQ6aJVvgr3UaoOUuBx4Ri6tlsylP02A==
-X-Google-Smtp-Source: ABdhPJxugAzgYOKChCqv3cRo/aKnwy4Bq+Q7V7eWSMFB1s+HkNGhWLe4KTH/emdsfmJ5hrY2eynft8sPj9YUAjJjH8k=
-X-Received: by 2002:a05:6512:3696:: with SMTP id
- d22mr3678649lfs.586.1627056830723; 
- Fri, 23 Jul 2021 09:13:50 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Tn97+CizsFw2IJizFnnktOYs6q+YNVabHNC6r+3R/Zw=;
+ b=Xl1I1difxVsOE5GiBSS/08qLCIqlr62iIT5CtpHvood3kK7Kx+h9pfFsvJWB8Mb90c
+ BbYDrLN+ZRiqEP/ypkyFM1ChXOkhSH8x13hWpa1cgqHytAkwRnbDDQyA40RHgfvcvPFS
+ xmfstVnLFPyuFRjZIGn0cjdmuQk1sOHMV0IhpFBedAVy1kHOVw37h/Lm6yUuaMqMYf4U
+ 4E4UNT6SKpHBWIORXo8BRz4g6VgbCLQTu+2LlaucL7VwSU6x53S4zISl5K3lcoo8rMrv
+ 16lDWdSeXFV3YdQYy5Uyp746gPdA1720MXT+dzWIOMJsguMPhiZCmHtHDja3GnSxIeeQ
+ CNnw==
+X-Gm-Message-State: AOAM530krOEsZFobhORSRjDdaqB/cUnewZluI3VziaDfDBpgHNWWoQUl
+ /G3jt5kk+wA0Breb9aU/PA==
+X-Google-Smtp-Source: ABdhPJyWShSD1k207DyYfCj8OBuahycWaQiiSDzxKTCbPLcLTn2vz5vRXmhkh0na1/i4ybC1Yi4P6g==
+X-Received: by 2002:a92:cf03:: with SMTP id c3mr4924149ilo.195.1627080663062; 
+ Fri, 23 Jul 2021 15:51:03 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+ by smtp.gmail.com with ESMTPSA id m184sm18795821ioa.17.2021.07.23.15.51.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 23 Jul 2021 15:51:02 -0700 (PDT)
+Received: (nullmailer pid 2750265 invoked by uid 1000);
+ Fri, 23 Jul 2021 22:50:59 -0000
+Date: Fri, 23 Jul 2021 16:50:59 -0600
+From: Rob Herring <robh@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ linuxarm@huawei.com, mauro.chehab@huawei.com,
+ Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v7 06/10] dt-bindings: phy: Add bindings for HiKey 970
+ PCIe PHY
+Message-ID: <20210723225059.GA2727093@robh.at.kernel.org>
+References: <cover.1626855713.git.mchehab+huawei@kernel.org>
+ <946f2426bc542638240980931eae924c57f2ba27.1626855713.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-References: <20210627045631.2882-1-jiaxun.yang@flygoat.com>
- <20210627045631.2882-7-jiaxun.yang@flygoat.com>
-In-Reply-To: <20210627045631.2882-7-jiaxun.yang@flygoat.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 23 Jul 2021 18:13:39 +0200
-Message-ID: <CACRpkdZkvSg___ZxdE639SMbTs5rJbjHBq-HkTCuv0e645Rssg@mail.gmail.com>
-Subject: Re: [PATCH 6/9] pinctrl: pistachio: Make it as a option
-To: Jiaxun Yang <jiaxun.yang@flygoat.com>
-Cc: linux-mips@vger.kernel.org, 
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Michael Turquette <mturquette@baylibre.com>, 
- Daniel Lezcano <daniel.lezcano@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>, 
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-phy@lists.infradead.org, 
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <946f2426bc542638240980931eae924c57f2ba27.1626855713.git.mchehab+huawei@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210723_091355_655969_E2367C8F 
-X-CRM114-Status: UNSURE (   7.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210723_155103_704745_0F03199D 
+X-CRM114-Status: GOOD (  18.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,16 +94,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Jun 27, 2021 at 6:57 AM Jiaxun Yang <jiaxun.yang@flygoat.com> wrote:
+On Wed, Jul 21, 2021 at 10:39:08AM +0200, Mauro Carvalho Chehab wrote:
+> Document the bindings for HiKey 970 (hi3670) PCIe PHY
+> interface, supported via the pcie-kirin driver.
+> 
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>  .../phy/hisilicon,phy-hi3670-pcie.yaml        | 95 +++++++++++++++++++
+>  1 file changed, 95 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+> new file mode 100644
+> index 000000000000..a5ea13332cac
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
+> @@ -0,0 +1,95 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/hisilicon,phy-hi3670-pcie.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: HiSilicon Kirin970 PCIe PHY
+> +
+> +maintainers:
+> +  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> +
+> +description: |+
+> +  Bindings for PCIe PHY on HiSilicon Kirin 970.
+> +
+> +properties:
+> +  compatible:
+> +    const: hisilicon,hi970-pcie-phy
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  reg:
+> +    maxItems: 1
+> +    description: PHY Control registers
+> +
+> +  phy-supply:
+> +    description: The PCIe PHY power supply
+> +
+> +  clocks:
+> +    items:
+> +      - description: PCIe PHY clock
+> +      - description: PCIe AUX clock
+> +      - description: PCIe APB PHY clock
+> +      - description: PCIe APB SYS clock
+> +      - description: PCIe ACLK clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: phy_ref
+> +      - const: aux
+> +      - const: apb_phy
+> +      - const: apb_sys
+> +      - const: aclk
+> +
+> +  reset-gpios:
+> +    description: PCI PERST reset GPIOs
+> +    maxItems: 4
+> +
+> +  clkreq-gpios:
+> +    description: Clock request GPIOs
+> +    maxItems: 3
 
-> So it will be avilable for generic MIPS kernel.
->
-> Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
+Again, this will not work. 
 
-Is this solved, or should I apply this patch?
+It boils down to this fails to describe how the GPIOs are connected 
+which is the point of GPIOs in DT. This in no way captures the hierarchy 
+of devices. While you may be lucky that you can just assert or 
+deassert all the lines at one time, that's not likely to work in a 
+more complicated case (such as having to power up/down each device).
 
-Yours,
-Linus Walleij
+I realize the right solution is more complex, but that's the only way to 
+handle this in a host bridge and board independent way.
+
+If you want the simple solution, just configure all these GPIOs in 
+firmware before Linux boots.
+
+Rob
 
 -- 
 linux-phy mailing list
