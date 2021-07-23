@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-18.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B1908C4320A
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:26:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C92CCC4338F
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:26:24 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 743E860EBF
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:26:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 743E860EBF
+	by mail.kernel.org (Postfix) with ESMTPS id 8DE3760ED4
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jul 2021 02:26:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 8DE3760ED4
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=flygoat.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,49 +23,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9PFZZ9BtArlVLqxQm+TyEsQKBepEDD5mXzYkWV4QEKU=; b=XBe731BwCHaASh
-	qUC3dO+lPZ6IUXLsU776XM23oVcXg553H4jvbBAHPo1TOiSsgh87NICyx1E/2sElXy77BW0qkT0Tj
-	n+Iwp24D9hXhDwlUHsxdcCDxVQjKePC1zjzL0FtBYEVwdWbTY8qNtN8QAas2ifBmgRnL5dBS5MlVS
-	jhcUDEBGl1hB3PyM0MTbQZSHhl+j1gyhgp1rMLVdp68eqkGWmepYAQOGUriALZfQ3MGsJxrBX9lDS
-	zjWIzx8C7ogblNNjHkZNt53/VgR9xaLTdyFnUrg0R0gcXun1rqb2YCDfUDcmODxeSLFWwAKqwBqef
-	ril2O9+Jr6b7SHG0ONAA==;
+	List-Owner; bh=787guaXomFoCLpbufei3rjNJUhJfSNllOdhkw7yeaeM=; b=QKclHe0rfNTMz6
+	W82QbwSvQeu94m8Jxtzzh8FEKiBh3yzXQEkmtotNvII+Ha297QJwkSqXE7TgOmjcvpL8Bw1dYwFDL
+	wxkgb4t7GRCgNrH3PZgqSkWBAsqthaiFw4ihXEQOw5RL5HL0zJFCAyOrpsC8YTkZSFPwXTHdqqgqJ
+	f4sDjtrDH3qvNjSx7LJDRlqZUqOnhk3XBWaHpJqkOBH4k5G6bghKraBrBlLjcCndYZ1ldeBma8hzf
+	7R7D4JAKotDMNvzZrYTurvjFqksIPPxYkynD0+F+eUqS65NJoXkjNaXqFlFJ9oXTep8JBAPHMjhke
+	SmvVom1/ZzBAMCJtVdbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m6ktF-0035qH-07; Fri, 23 Jul 2021 02:26:17 +0000
+	id 1m6ktM-0035rI-3v; Fri, 23 Jul 2021 02:26:24 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m6ktC-0035ph-MA
- for linux-phy@lists.infradead.org; Fri, 23 Jul 2021 02:26:16 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 1984E5808BF;
- Thu, 22 Jul 2021 22:26:14 -0400 (EDT)
+ id 1m6ktJ-0035qp-9X
+ for linux-phy@lists.infradead.org; Fri, 23 Jul 2021 02:26:22 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
+ by mailnew.nyi.internal (Postfix) with ESMTP id AB3D65808BF;
+ Thu, 22 Jul 2021 22:26:20 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Thu, 22 Jul 2021 22:26:14 -0400
+ by compute2.internal (MEProxy); Thu, 22 Jul 2021 22:26:20 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=1LK9TbzR4mbFW
- wxa2DMjASOGjEHNStV5ARumpu+hHTQ=; b=K3niiI7nviZHrP86ME1O1xBYRVGeD
- +MqkCrTUxIJtYPF/CCqLdAqPe9Xn/+/V3vM6KKlL2uxDNy4yN/4LogsBB5B6Rq/5
- xCz8U+YxEpcTbmvJ89K0sCIEkUNanasBvSQUAdeRF+upZZ+ALECgRcU53amTqNF8
- 8p4KNcsAF794KjDoWXWAnt3cpr78ZhqwFjfTyyeRq4t5WTEFUlJAn+5OulJOSNJL
- PwSHpTI2j4Qww+vLGu01mRmxF3kb6JZcaP7+1y34GpSQ9abJtZn03pHiAFQG8Bby
- 5Wdt+VarEUBHm/kCD7YOuyShK0m9EBEbwiCrVhy10BRjAltXBAHUgzZ2A==
+ :mime-version:content-transfer-encoding; s=fm2; bh=GDs/JfNH4KsVD
+ SUz8zkXViG0OizllYpknHVtjbEEgAA=; b=Kr+InkXUKZdJ916Poj6gB6jHkRKBV
+ F1EYWHM4KUJxlO2C1twPaFZ6k+3AneXL1SnAlb9wMkh7l2v0gDFrdMdUBx/HCyyx
+ Rfy6ng9h3ig6JgkXDVYqStMI4hUob+TeOEB+deUiceIX3dqTnpwQoqofY0IcnfBH
+ IDwf/BxjkUMz4LWeHYFc7gC/mAEu6wVmiKmYwZp/wwRJ1QvcgLiGkKdCJAr4Gm+4
+ QPBcnBlopVV0pGMa2NgU+z7K+5G/X25SriVSsqXKZk1QMfiE0oCunKQF0lNiZDb6
+ aVa5yWylqb2XW8HFlhGhtiTdHHzXorj0qwEiUHRYxmgDWkBcYke2bjVBA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=1LK9TbzR4mbFWwxa2DMjASOGjEHNStV5ARumpu+hHTQ=; b=weGEHQ86
- t7crtvQOhWpcuocflyzIAub0CuDHSNdhvZBNwd48XRoP0AeH04PQTQVRS+QLOuG0
- sim2EgEGxkK9eB4muHnkkGx91sSpv7l1vluTpeJH1IZEcIyzuSPzQr7jF0zxQhJC
- 5D4frud4+0spcxPk9FtA9Lpr1+S+i5DI18uLGj6rKzrsE+AIQC9uf3v9Qw/L435Y
- sBSc0dnvUoWxfC6y6YI0cVmXTH7rfEd+DpffRuORfw3Pjmx+3BWPNLxP6XdvzpFP
- aPssIIjeAfl6X7ZisrAIFju9+I3D+2aJ+gZxoUqIVLAWu+ujT1bnG7BbaokN4rwr
- e8WDqSjX33WfsQ==
-X-ME-Sender: <xms:xSj6YBIgCA_PPEH9DoPztQVX62f4zBrzJlm_YSum9XpBIVfVrHBWHw>
- <xme:xSj6YNLv0yf5GIJfE44GwJbL8jRhGh_jq_DqXvlyeIzHKvKG7PZn9VqWNH2-lXqbV
- 0p16xY9MXk-wriWvpk>
-X-ME-Received: <xmr:xSj6YJsgrId8lOXiSu3nRMGdtol4htNxaFkap_pdJxZykMqTjXo-ErsjbxvfDjORv8toq1To54ch>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrfeejgdehgecutefuodetggdotefrodftvf
+ fm3; bh=GDs/JfNH4KsVDSUz8zkXViG0OizllYpknHVtjbEEgAA=; b=PT5mhDuF
+ c2wWzcQ3jcECQs1sns9qwiA+atQamoOI2RKYjsW4lkACyTA8nfqUXPK0rgkRiJ33
+ oxPygByKgXKNQuwvaN3sawvja1orHpuSAvZnXkFCd+Gk37oFBr75wumPrIhcFdQb
+ gFF9+7inLj5754Nfy0Tr+8ihy2o2Cbep4heK3ASZv5ew8jAugVkn7lvKlU5NyGUw
+ Ljow8S8dFH5KEDNGSk5RgBU92RRvCFmhQ40emcXC9vE8PNpkOAENvRjfw+bnWzyE
+ Th4a8G5eahQIoA8YV3qXYSEwez6jZFoh18GfQJQMsRqmfzw90fnv5jm1pKjPaYHH
+ wMncsHv/jToAbw==
+X-ME-Sender: <xms:yij6YBvqFBklcT521djTYoh9kCUKR4k5YGjM3GgI8g2GZJNoYHDR6w>
+ <xme:yij6YKcLFvu5aQbIjDTCJxmQ8BKPoZ-0kmkzvJardh8fc75C291V5qvPe0vSuwQrk
+ SHBXEHH5Juo5hzCPHY>
+X-ME-Received: <xmr:yij6YExYLz5MGJE8Xu3_YYygK3nUEZwTzUX9KxzL_qjgHcnMUFUu9mIgwwu8nWeeL-JWqVYWoRET>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrfeejgdehhecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
  ertddtnecuhfhrohhmpeflihgrgihunhcujggrnhhguceojhhirgiguhhnrdihrghnghes
@@ -73,12 +73,12 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrfeejgdehgecutefuodetggdote
  dtheevudejvdegkeekjeefhffhhfetudetgfdtffeunecuvehluhhsthgvrhfuihiivgep
  tdenucfrrghrrghmpehmrghilhhfrhhomhepjhhirgiguhhnrdihrghnghesfhhlhihgoh
  grthdrtghomh
-X-ME-Proxy: <xmx:xSj6YCaQXCeM-XsXJPvu9gfNkkLHmiayN9PD08-2XHCYxlh6Phb_9w>
- <xmx:xSj6YIZIN__sr9ZswRenhwkSYIR-2AuXgUYMkf6x-pxKXUPgUrwkDA>
- <xmx:xSj6YGDhIOapfPOmu5rDn3kTeAURkYmWlziFSbDoJDC5CMiirE8D4A>
- <xmx:xij6YFQIuehLzi9HkD-0G6sc0sbI0arF8xXjpdUL5Sxvt1RaLaoQfA>
+X-ME-Proxy: <xmx:yij6YINMcJZRjhp-Txb60-LaK23m0IIfsq3fg30DxYeAd6G3lFtDpA>
+ <xmx:yij6YB8KllG6Zmf_8Xll_8WLh2BW6Nd6xvnw88wEIa7Ud3emxVQ-gg>
+ <xmx:yij6YIXFdEGRUwDUCZqyt0V4zPRPBC2n_vr1WGVvMuw1ZesBpRzhmQ>
+ <xmx:zCj6YC1in6k1v35NRXaoqmKtEyskQ2KXufGOhof_23UDX7pP8AF0hw>
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
- 22 Jul 2021 22:26:08 -0400 (EDT)
+ 22 Jul 2021 22:26:14 -0400 (EDT)
 From: Jiaxun Yang <jiaxun.yang@flygoat.com>
 To: linux-mips@vger.kernel.org
 Cc: tsbogend@alpha.franken.de, mturquette@baylibre.com,
@@ -86,17 +86,17 @@ Cc: tsbogend@alpha.franken.de, mturquette@baylibre.com,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, Jiaxun Yang <jiaxun.yang@flygoat.com>
-Subject: [PATCH v4 2/9] MIPS: DTS: Pistachio add missing cpc and cdmm
-Date: Fri, 23 Jul 2021 10:25:36 +0800
-Message-Id: <20210723022543.4095-3-jiaxun.yang@flygoat.com>
+Subject: [PATCH v4 3/9] clk: pistachio: Make it selectable for generic MIPS
+ kernel
+Date: Fri, 23 Jul 2021 10:25:37 +0800
+Message-Id: <20210723022543.4095-4-jiaxun.yang@flygoat.com>
 X-Mailer: git-send-email 2.32.0
 In-Reply-To: <20210723022543.4095-1-jiaxun.yang@flygoat.com>
 References: <20210723022543.4095-1-jiaxun.yang@flygoat.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210722_192614_833011_B8CEEFC5 
-X-CRM114-Status: UNSURE (   7.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210722_192621_448304_119CFB76 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,41 +113,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CPC and CDMM addresses are adjustable and we should tell kernel
-how to place them in devicetree.
-
-Note that MACH_PISTACHIO code hardcoded CDMM base to 0x1bdd0000,
-however it will collide with GIC address range. As we don't have
-any CDMM device on this platform it won't be a problem.
-I found another spare range, 0x1bdf0000~0x1be00000 to place CDMM
-instead.
+We're moving pistachio to generic MIPS kernel. The clk driver
+should be avilable to the generic MIPS kernel.
 
 Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
 ---
- arch/mips/boot/dts/img/pistachio.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+v2: Depend on MIPS || COMPILE_TEST
+---
+ drivers/clk/Kconfig           | 1 +
+ drivers/clk/Makefile          | 2 +-
+ drivers/clk/pistachio/Kconfig | 8 ++++++++
+ 3 files changed, 10 insertions(+), 1 deletion(-)
+ create mode 100644 drivers/clk/pistachio/Kconfig
 
-diff --git a/arch/mips/boot/dts/img/pistachio.dtsi b/arch/mips/boot/dts/img/pistachio.dtsi
-index dc3b7909de73..b1db8b8f446f 100644
---- a/arch/mips/boot/dts/img/pistachio.dtsi
-+++ b/arch/mips/boot/dts/img/pistachio.dtsi
-@@ -900,6 +900,16 @@ timer {
- 		};
- 	};
- 
-+	cpc: cpc@1bde0000 {
-+		compatible = "mti,mips-cpc";
-+		reg = <0x1bde0000 0x10000>;
-+	};
+diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
+index e80918be8e9c..18d31b654d02 100644
+--- a/drivers/clk/Kconfig
++++ b/drivers/clk/Kconfig
+@@ -389,6 +389,7 @@ source "drivers/clk/mediatek/Kconfig"
+ source "drivers/clk/meson/Kconfig"
+ source "drivers/clk/mstar/Kconfig"
+ source "drivers/clk/mvebu/Kconfig"
++source "drivers/clk/pistachio/Kconfig"
+ source "drivers/clk/qcom/Kconfig"
+ source "drivers/clk/ralink/Kconfig"
+ source "drivers/clk/renesas/Kconfig"
+diff --git a/drivers/clk/Makefile b/drivers/clk/Makefile
+index 5f06879d7fe9..7339a9eabeb4 100644
+--- a/drivers/clk/Makefile
++++ b/drivers/clk/Makefile
+@@ -97,7 +97,7 @@ obj-y					+= mstar/
+ obj-y					+= mvebu/
+ obj-$(CONFIG_ARCH_MXS)			+= mxs/
+ obj-$(CONFIG_COMMON_CLK_NXP)		+= nxp/
+-obj-$(CONFIG_MACH_PISTACHIO)		+= pistachio/
++obj-$(CONFIG_COMMON_CLK_PISTACHIO)	+= pistachio/
+ obj-$(CONFIG_COMMON_CLK_PXA)		+= pxa/
+ obj-$(CONFIG_COMMON_CLK_QCOM)		+= qcom/
+ obj-y					+= ralink/
+diff --git a/drivers/clk/pistachio/Kconfig b/drivers/clk/pistachio/Kconfig
+new file mode 100644
+index 000000000000..d00f7b4a25fc
+--- /dev/null
++++ b/drivers/clk/pistachio/Kconfig
+@@ -0,0 +1,8 @@
++# SPDX-License-Identifier: GPL-2.0
 +
-+	cdmm: cdmm@1bdf0000 {
-+		compatible = "mti,mips-cdmm";
-+		reg = <0x1bdf0000 0x10000>;
-+	};
-+
- 	usb_phy: usb-phy {
- 		compatible = "img,pistachio-usb-phy";
- 		clocks = <&clk_core CLK_USB_PHY>;
++config COMMON_CLK_PISTACHIO
++	bool "Support for IMG Pistachio SoC clock controllers"
++	depends on MIPS || COMPILE_TEST
++	help
++	  Support for the IMG Pistachio SoC clock controller.
++	  Say Y if you want to include clock support.
 -- 
 2.32.0
 
