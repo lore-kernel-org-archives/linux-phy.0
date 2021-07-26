@@ -4,78 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EAAA7C4338F
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Jul 2021 21:37:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 99554C4338F
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Jul 2021 22:28:41 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id A7FD060F8F
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Jul 2021 21:37:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A7FD060F8F
+	by mail.kernel.org (Postfix) with ESMTPS id 5244A60F90
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Jul 2021 22:28:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 5244A60F90
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=72Dax6Gtf3JXltupMejntvR3Lm28KW9bTHXX0wtB5i4=; b=TLTwy4gN7eOEMB
-	tvK2+prnS6h0XIppOtC0CH32d8uJDlKkEl+Vkm/MoOUxK3b3cHyT9lVKp35r/RpnnNMIAGDTKM4zI
-	n64hPXKT/hYaxb6q3azVCG3PrnAH8ukC5KU3o/QLqpf65nuWDDgcVfdnqP4xuaSGZ85Fin0GMkviV
-	R0ZPjUGcUhet842gD44Y1dfeHG4HCLH7oynKBCdniPifveHBjPVPS+ehRcRaDXL/E4CMTjFQWFNy4
-	rAab99VBxOtvZy9ZTvJldFpx15j8r6GfyS0shbz5b6JEdvZhQWPhOfU/VktooJaICfJ8c41lLOg6u
-	1tFHXRwBUNGE7wWQBEUw==;
+	List-Owner; bh=qstjz8oCiCYpXcVksOEAj3Qw5oqQC/wP35x1Lou84xY=; b=Sf0ErYnlj8uaVk
+	BadQMyD7A7Iu3+uJMI8j40tg+qlhPAgNHqgwCyLOGyRHz8VZQPCjDr5FwxDje3FDF7n6U7YBaRv29
+	Vv1PuJKAJyb3XAOKzfKJ4V8X9Z+7arMvzClz1I2zGIeGVYoXiQ+WSwMroMcD1dV64XTqeFTRqt8xV
+	R9XD+jzt73LU/EDSjltJhr+mkvjRgvYIz7JZ4I+Mur4yIrUrHQDmn0wkB8y3lLNB3LB3oWbG/fymU
+	wMBCPUdCp86nnouQb9bnS7siZF3cBYqVDG394bEO0mAC6mX+TilD93XFKyL8Joe7TdF1QlLK4v3T5
+	XJyNXOXfkHwbmY1xrX6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m88IE-00CVNM-6l; Mon, 26 Jul 2021 21:37:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1m895U-00CZuP-SE; Mon, 26 Jul 2021 22:28:40 +0000
+Received: from mail-il1-f174.google.com ([209.85.166.174])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m88IA-00CVM6-Il
- for linux-phy@lists.infradead.org; Mon, 26 Jul 2021 21:37:44 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id D5851601FD
- for <linux-phy@lists.infradead.org>; Mon, 26 Jul 2021 21:37:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1627335461;
- bh=ZcD1WIUawkgfZBZNJkhH1ow7d5Z+9PDDwa+G0n8VIiQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=KJnqnNJYnWv0LSnGGTj1LylZDrejJA4pdMcQO7crVj2z+7mz8MMJJ7QpEw7woFU5Q
- ZHPZsDpL35XzwCHh8z0f51DdUdVZ/MxTZeODlrEO/lZ8SehzDQ0PmJxK5PFzHDTpuI
- us4EayQnWX+hAs+ujaGjKxHSdTzqGEcDMzjSh1COyBbsreVXic4YvN2tWWdIXDAYL6
- bKJLnEV2bqISTsSc3SsaU8pm/HrlmfSQjjk3uwvZkbQr9z9rvGOAtxj5h2801mx4kA
- MsOX3e0FgK/fmbTMGGTI+4qU03oSS5tKmwt0bavTO+L4WqTZeTd182o0crjSnNnQ1k
- UyZRqGLLINuKw==
-Received: by mail-ed1-f44.google.com with SMTP id x90so6162941ede.8
- for <linux-phy@lists.infradead.org>; Mon, 26 Jul 2021 14:37:41 -0700 (PDT)
-X-Gm-Message-State: AOAM530V9WsaopOOxOGf3GhHp+fV2LbTbZtoj/m0huuMhZWhZYWcRoXp
- Y62e1kpu/6byt4yF1g3SDKs9pYC2xG5zUg1N7Q==
-X-Google-Smtp-Source: ABdhPJwnjb7lf4erlIvyRSX6CIXgqla4rWiINStqd3VbaIdW9hnyj9zPEA2nNnYWOD02YZlWelOmFPMdXwGo3H7z3R4=
-X-Received: by 2002:aa7:cb19:: with SMTP id s25mr24307258edt.194.1627335460433; 
- Mon, 26 Jul 2021 14:37:40 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1626855713.git.mchehab+huawei@kernel.org>
- <946f2426bc542638240980931eae924c57f2ba27.1626855713.git.mchehab+huawei@kernel.org>
- <20210723225059.GA2727093@robh.at.kernel.org>
- <20210724021244.780297ee@coco.lan>
-In-Reply-To: <20210724021244.780297ee@coco.lan>
+ id 1m895Q-00CZta-NY
+ for linux-phy@lists.infradead.org; Mon, 26 Jul 2021 22:28:39 +0000
+Received: by mail-il1-f174.google.com with SMTP id l11so10458057iln.4
+ for <linux-phy@lists.infradead.org>; Mon, 26 Jul 2021 15:28:35 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=WvABWR+id8JI6mFKNCOCSmYsuyn1aqKwrjc3vQZKHkA=;
+ b=Th4ERqi8I0LPivT9Ec9HT4MQL8VPQl9apMhs+uaJmnTRYVOyQlcdphg/BvpcG2oNOI
+ qExBgraTTMx+goOP9604aqVEPn+ZZQSSwD1jOsZ1flhiMHIdMqyTjbdB0X0fIX+3pZwC
+ QGfze/yH/R5+nBXt9ZX3i591SnRAPzEG9ygUgXEUj9+weFqS5ULie/46a1CS2dcYw774
+ A3qc2bTmzFjpgcKwpcn5NHP8ysm91jsnKH4PXKi6j+u4fuX4chgRzXXGN2PdEGwNqhrj
+ uqPvPfn1ZhXuxtYCJ+vJ4L/5OPeaMsnYl1H8g0glDt8tcUxs1IujcfAHKtv25w827pGg
+ X4ig==
+X-Gm-Message-State: AOAM53163jZLXfnf44DHkGcLBU1nEOMLZT0Z0CWykQhIcPCVsSJINqOg
+ rOp1Z1JRiObAt/NxPD/5xQ==
+X-Google-Smtp-Source: ABdhPJyBSojUTUlep1WXALG4h+Hu7/OjYnYxDIS2b2U2Khb4FzzLNwu9aKul65VF01z530WGYaFU0w==
+X-Received: by 2002:a92:d302:: with SMTP id x2mr14526829ila.161.1627338514755; 
+ Mon, 26 Jul 2021 15:28:34 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+ by smtp.gmail.com with ESMTPSA id u10sm726453iop.15.2021.07.26.15.28.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 26 Jul 2021 15:28:33 -0700 (PDT)
+Received: (nullmailer pid 987983 invoked by uid 1000);
+ Mon, 26 Jul 2021 22:28:30 -0000
+Date: Mon, 26 Jul 2021 16:28:30 -0600
 From: Rob Herring <robh@kernel.org>
-Date: Mon, 26 Jul 2021 15:37:28 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLA7Z908SQKkZpyEcCvpkWsW3pa42eajpxCSkbUy4rv9g@mail.gmail.com>
-Message-ID: <CAL_JsqLA7Z908SQKkZpyEcCvpkWsW3pa42eajpxCSkbUy4rv9g@mail.gmail.com>
-Subject: Re: [PATCH v7 06/10] dt-bindings: phy: Add bindings for HiKey 970
- PCIe PHY
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
- Linuxarm <linuxarm@huawei.com>, mauro.chehab@huawei.com, 
- Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-phy@lists.infradead.org
+To: Biju Das <biju.das.jz@bp.renesas.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Chris Paterson <Chris.Paterson2@renesas.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH v4 06/10] dt-bindings: phy: renesas,usb2-phy: Document
+ RZ/G2L phy bindings
+Message-ID: <20210726222830.GB981051@robh.at.kernel.org>
+References: <20210719121938.6532-1-biju.das.jz@bp.renesas.com>
+ <20210719121938.6532-7-biju.das.jz@bp.renesas.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210719121938.6532-7-biju.das.jz@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210726_143742_704878_5AD4FA78 
-X-CRM114-Status: GOOD (  46.00  )
+X-CRM114-CacheID: sfid-20210726_152836_811758_42C1D245 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,161 +98,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 23, 2021 at 6:12 PM Mauro Carvalho Chehab
-<mchehab+huawei@kernel.org> wrote:
->
-> Em Fri, 23 Jul 2021 16:50:59 -0600
-> Rob Herring <robh@kernel.org> escreveu:
->
-> > On Wed, Jul 21, 2021 at 10:39:08AM +0200, Mauro Carvalho Chehab wrote:
-> > > Document the bindings for HiKey 970 (hi3670) PCIe PHY
-> > > interface, supported via the pcie-kirin driver.
-> > >
-> > > Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> > > ---
-> > >  .../phy/hisilicon,phy-hi3670-pcie.yaml        | 95 +++++++++++++++++++
-> > >  1 file changed, 95 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
-> > > new file mode 100644
-> > > index 000000000000..a5ea13332cac
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/phy/hisilicon,phy-hi3670-pcie.yaml
-> > > @@ -0,0 +1,95 @@
-> > > +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/phy/hisilicon,phy-hi3670-pcie.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: HiSilicon Kirin970 PCIe PHY
-> > > +
-> > > +maintainers:
-> > > +  - Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> > > +
-> > > +description: |+
-> > > +  Bindings for PCIe PHY on HiSilicon Kirin 970.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    const: hisilicon,hi970-pcie-phy
-> > > +
-> > > +  "#phy-cells":
-> > > +    const: 0
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +    description: PHY Control registers
-> > > +
-> > > +  phy-supply:
-> > > +    description: The PCIe PHY power supply
-> > > +
-> > > +  clocks:
-> > > +    items:
-> > > +      - description: PCIe PHY clock
-> > > +      - description: PCIe AUX clock
-> > > +      - description: PCIe APB PHY clock
-> > > +      - description: PCIe APB SYS clock
-> > > +      - description: PCIe ACLK clock
-> > > +
-> > > +  clock-names:
-> > > +    items:
-> > > +      - const: phy_ref
-> > > +      - const: aux
-> > > +      - const: apb_phy
-> > > +      - const: apb_sys
-> > > +      - const: aclk
-> > > +
-> > > +  reset-gpios:
-> > > +    description: PCI PERST reset GPIOs
-> > > +    maxItems: 4
-> > > +
-> > > +  clkreq-gpios:
-> > > +    description: Clock request GPIOs
-> > > +    maxItems: 3
-> >
-> > Again, this will not work.
->
-> Just to be sure: you're talking about the PERST# gpios (e. g. reset-gpios)
-> here, right?
+On Mon, Jul 19, 2021 at 01:19:34PM +0100, Biju Das wrote:
+> Document USB phy bindings for RZ/G2L SoC.
+> 
+> RZ/G2L USB2.0 phy uses line ctrl register for OTG_ID pin changes. It uses
+> a different OTG-BC interrupt bit for device recognition. Apart from this,
+> the PHY reset is controlled by USBPHY control IP and Document reset is a
+> required property.
+> 
+> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+> Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+> v3->v4:
+>  * Removed second reset
+>  * Added family specific compatible string.
+> v2->v3
+>  * Created a new compatible for RZ/G2L as per Geert's suggestion.
+>  * Added resets required properties for RZ/G2L SoC.
+> ---
+>  .../bindings/phy/renesas,usb2-phy.yaml        | 19 +++++++++++++++++++
+>  1 file changed, 19 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> index d5dc5a3cdceb..151158d7a224 100644
+> --- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> @@ -30,6 +30,11 @@ properties:
+>                - renesas,usb2-phy-r8a77995 # R-Car D3
+>            - const: renesas,rcar-gen3-usb2-phy
+>  
+> +      - items:
+> +          - enum:
+> +              - renesas,usb2-phy-r9a07g044 # RZ/G2{L,LC}
+> +          - const: renesas,rzg2l-usb2-phy  # RZ/G2L family
+> +
+>    reg:
+>      maxItems: 1
+>  
+> @@ -91,6 +96,20 @@ required:
+>    - clocks
+>    - '#phy-cells'
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: renesas,rzg2l-usb2-phy
+> +    then:
+> +      properties:
+> +        resets:
+> +          description: |
+> +            USB/PHY reset associated with the port.
 
-Both that and CLKREQ.
+You don't need 'properties' part here. Just 'required'.
 
-> > It boils down to this fails to describe how the GPIOs are connected
-> > which is the point of GPIOs in DT. This in no way captures the hierarchy
-> > of devices. While you may be lucky that you can just assert or
-> > deassert all the lines at one time, that's not likely to work in a
-> > more complicated case (such as having to power up/down each device).
->
-> There's no way to power up/down each device, as they all share the
-> same regulator line (LDO33). So, when this is powered on, all PCI
-> devices are powered at the same time.
-
-I understand that for your board, but you could easily have a power
-supply per device (or multiple supplies per device).
-
-> The original DT had names for each reset-gpio, but this was just
-> informative, as the only possible way for this hardware to work is
-> to send the PERST# signal via all GPIOs at the same time.
-
-What's the timing requirement here? I doubt 'at the same time' is the
-actual h/w requirement. My guess is it is before the PCI bus scan if
-you don't have any hook before each child bus is scanned.
-
-> Ok, we might overdesign the DT, in order to consider a non-existent
-> scenario where it would be possible to power on and reset the devices
-> in separate, but I can't think on a way to do that, except by maybe
-> creating virtual phy (or pcie) DT nodes, one for each combination of
-> regulator + PERST#, and have separate drivers for each one. Such kind
-> of scenario only makes sense when each PCIe device can be powered on
-> independently (which is not the case here).
-
-If someone made hikey970 with the topology you have, then someone can
-just as easily make a different topology and one that doesn't work
-with the assumptions you've made. We're only going to see more and
-more embedded boards with multiple PCI devices.
-
-> If you have a better idea, I'm all ears.
-
-There's already a spec for populating PCI devices in DT. It's existed
-for over 20 years with OpenFirmware[1]. It's not widely used on FDT
-systems because most cases to date are just a single device attached
-and they don't have extra things needing to be described in DT. There
-are a few, but not many examples in the tree of PCI devices with DT
-nodes. That's the only way to generically describe the topology you
-have.
-
-While I haven't seen another case exactly like yours yet, there are
-frequent cases of PCI devices (and other discoverable buses) that have
-extra resources that are not discoverable. And some of those need
-control before the device can be discovered. I see various
-work-arounds to the problem, but describing the devices in DT is the
-right way. It's only going to get solved if the work-arounds are
-rejected. I care more that the DT binding is correct and less if the
-kernel side is clean. The kernel implementation can evolve, the DT
-cannot.
-
-> > I realize the right solution is more complex, but that's the only way to
-> > handle this in a host bridge and board independent way.
-> >
-> > If you want the simple solution, just configure all these GPIOs in
-> > firmware before Linux boots.
->
-> This won't work. The PERST# signal should be sent after initializing
-> the PCIe + PHY and powering up the PEX8606 PCIe bridge chipset
-> (via LDO33). That happens when the PCIe driver is loaded.
-
-Only because you have no hooks for handling PERST# on devices
-downstream of the PEX8606. Surely a sequence like this would work:
-deassert root PERST# (to PEX8606), scan root bus, find and init PCIe
-bridge, deassert PEX8606 child bus(es) PERST#, scan child bus(es),
-find and init child devices. I think the .add_bus() hook could work
-for you. IIRC, that's called before a child bus is scanned.
-
-Rob
-
-[1] https://www.devicetree.org/open-firmware/home.html#OFDbussupps
+> +      required:
+> +        - resets
+> +
+>  additionalProperties: false
+>  
+>  examples:
+> -- 
+> 2.17.1
+> 
+> 
 
 -- 
 linux-phy mailing list
