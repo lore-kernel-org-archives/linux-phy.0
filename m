@@ -2,67 +2,81 @@ Return-Path: <SRS0=JCKM=MT=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	UNWANTED_LANGUAGE_BODY,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A10BFC4320A
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Jul 2021 18:57:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 001AAC4320A
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Jul 2021 22:18:01 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 50FAB60FC0
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Jul 2021 18:57:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 50FAB60FC0
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bp.renesas.com
+	by mail.kernel.org (Postfix) with ESMTPS id BED4E60F6E
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Jul 2021 22:18:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BED4E60F6E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fmyUQUnnaFZwEdEWagcfagSgmmUMGeUO5Qi1nPsU++8=; b=tDBpYaL/W7gbHf
-	e9yTzQrl3+YQ7MLRFrjv4rzPAQTy+hOMCChUUdJmrCWghEGdnbIAj1d3huoSxXmqaNfd0/YEZiKhw
-	UW2+qakeZbbctAUqm0Kp7KFd99CBv9gtE86SBJ++N2waUw4JuZmgJ6gKQwRXd+fXcGnjOgwJK2Umj
-	9aYBQJ8/pSodzZvucdCvZd5a4HX3ZGbwNzx9KV2/DNS9Ygt2mBjOhyFMB4JCjVwkgsVQkzXuvfuv8
-	hO9qCLaty4ZGHHa8nYlQYNwz+koxyW+g95tICio4Xfg+9pmi0A6PIcus/8g9aOLBgBwe97xsSbB34
-	9YVHqJAgfo3aD+DV6fgg==;
+	List-Owner; bh=84lHnU3giUDOJzyAQrUV8/MyaTuxxo/HMSyYBu5xjh4=; b=O3TZf6oTjVx+q8
+	6Pzps+BZtTbpjxL2YlSpQncn/KiDMmYCDO4eqtPNSRIyNePgPdjBqiL2DS0u0kAnN47VwMYe7Mnsm
+	yxe9njr7MpWGs/x3AwbeuwsrPBYBPDMnfWx7HyeY0gSIeew6m1jhbrJkfR3upTFZkr/n8Gtw2zTdm
+	aBpTQlN+ZkH2Y0bOqCnbFbLomxLciIP0JOnMHr5vwfD5QWw58af/T2UtN3mXcf0Tztu1Mf9CwuoF+
+	q6utLOFyoVxF/F0+w+kykrBbv/0Hg5oOXNueXZrc9KVLurIh9dq4B/dgBWGqtAvR4yzGarPB3lulb
+	dZ13ke+wyY8vBnwXl9+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m8SGP-00G3rR-RA; Tue, 27 Jul 2021 18:57:13 +0000
-Received: from relmlor2.renesas.com ([210.160.252.172]
- helo=relmlie6.idc.renesas.com)
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m8SEy-00G3Be-Un
- for linux-phy@lists.infradead.org; Tue, 27 Jul 2021 18:55:47 +0000
-X-IronPort-AV: E=Sophos;i="5.84,274,1620658800"; d="scan'208";a="88899501"
-Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
- by relmlie6.idc.renesas.com with ESMTP; 28 Jul 2021 03:55:44 +0900
-Received: from localhost.localdomain (unknown [10.226.92.236])
- by relmlir5.idc.renesas.com (Postfix) with ESMTP id 0DBCB400B9EB;
- Wed, 28 Jul 2021 03:55:41 +0900 (JST)
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Cc: Biju Das <biju.das.jz@bp.renesas.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-renesas-soc@vger.kernel.org, linux-phy@lists.infradead.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Chris Paterson <Chris.Paterson2@renesas.com>,
- Biju Das <biju.das@bp.renesas.com>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: [PATCH v5 3/6] phy: renesas: phy-rcar-gen3-usb2: Add USB2.0 PHY
- support for RZ/G2L
-Date: Tue, 27 Jul 2021 19:55:24 +0100
-Message-Id: <20210727185527.19907-4-biju.das.jz@bp.renesas.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20210727185527.19907-1-biju.das.jz@bp.renesas.com>
-References: <20210727185527.19907-1-biju.das.jz@bp.renesas.com>
+	id 1m8VOj-00GVkR-89; Tue, 27 Jul 2021 22:18:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1m8VOf-00GVjI-IU
+ for linux-phy@lists.infradead.org; Tue, 27 Jul 2021 22:17:59 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id AC68560FA0
+ for <linux-phy@lists.infradead.org>; Tue, 27 Jul 2021 22:17:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1627424276;
+ bh=NTx2AmyGC2otSjSs47CuSipTZNW0kKqQ1vQxftaHk4A=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Q/7sSe4oHU/CTPp80Dk3jddqbKeLpeVtJTMwJbDHTa5/VKBhx/nZkQHEbnyTobEc1
+ q2WzaXZhV5V2zjYqkP3U7/VXHaxmzm2/A1G0XkrfsxaVoSM/UwxO+yl7nVJF00sqGk
+ d7AD5UzHRa1NjI84Hxoz+s+efE47CeQgKrZgiph2mNdwJC7m3pwY0KcKdxRyftWz+1
+ F63gNsi7C/7FbTmapOVHpRS0LWCTWtUe0EH3Crgn6TlVtRtS438i2w2ahGL9/Qq8cd
+ mguUY59Nehy7ydcOZ205/5jbvzpVfSGzQ+Do9F1ImBnjdZ5cMqu1QH+qflSUWEVI6f
+ cQ05kefvWSwJQ==
+Received: by mail-ed1-f43.google.com with SMTP id b7so515456edu.3
+ for <linux-phy@lists.infradead.org>; Tue, 27 Jul 2021 15:17:56 -0700 (PDT)
+X-Gm-Message-State: AOAM532KA1VMsI4hnhNEG2O7xBOTEA80vDrJTurAw4bOkxMQmyQsK9JK
+ mpaCE8EzQ/ffZ8kkqsViQ/yDyTeAAcLZ6KIFUQ==
+X-Google-Smtp-Source: ABdhPJyNP8M8aAQKXxx5tCub5TYW/KAfNDMcwrn6O2Dj7lhqKvX7EyCiM+Atq5P85EUfEBlNdMu/b2yTd8MfL06uTNo=
+X-Received: by 2002:aa7:cb19:: with SMTP id s25mr30783265edt.194.1627424275171; 
+ Tue, 27 Jul 2021 15:17:55 -0700 (PDT)
+MIME-Version: 1.0
+References: <cover.1626855713.git.mchehab+huawei@kernel.org>
+ <946f2426bc542638240980931eae924c57f2ba27.1626855713.git.mchehab+huawei@kernel.org>
+ <20210723225059.GA2727093@robh.at.kernel.org>
+ <20210724021244.780297ee@coco.lan>
+ <CAL_JsqLA7Z908SQKkZpyEcCvpkWsW3pa42eajpxCSkbUy4rv9g@mail.gmail.com>
+ <20210727015020.403bbf73@coco.lan> <20210727085205.5aafb5c9@coco.lan>
+In-Reply-To: <20210727085205.5aafb5c9@coco.lan>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 27 Jul 2021 16:17:43 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+5raGQAK5T4SoC=Jfzsbov-y4u-rdJ3DJt+ryYOK8q2w@mail.gmail.com>
+Message-ID: <CAL_Jsq+5raGQAK5T4SoC=Jfzsbov-y4u-rdJ3DJt+ryYOK8q2w@mail.gmail.com>
+Subject: Re: [PATCH v7 06/10] dt-bindings: phy: Add bindings for HiKey 970
+ PCIe PHY
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+ Linuxarm <linuxarm@huawei.com>, mauro.chehab@huawei.com, 
+ Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210727_115545_376042_65EA2405 
-X-CRM114-Status: GOOD (  20.08  )
+X-CRM114-CacheID: sfid-20210727_151757_688902_0A7FE184 
+X-CRM114-Status: GOOD (  24.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,257 +88,185 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch adds USB2.0 PHY support for RZ/G2L SoC.
+On Tue, Jul 27, 2021 at 12:52 AM Mauro Carvalho Chehab
+<mchehab+huawei@kernel.org> wrote:
+>
+> Em Tue, 27 Jul 2021 01:50:20 +0200
+> Mauro Carvalho Chehab <mchehab+huawei@kernel.org> escreveu:
+>
+> > Em Mon, 26 Jul 2021 15:37:28 -0600
+> > Rob Herring <robh@kernel.org> escreveu:
+> >
+>
+> > > > > > +  reset-gpios:
+> > > > > > +    description: PCI PERST reset GPIOs
+> > > > > > +    maxItems: 4
+> > > > > > +
+> > > > > > +  clkreq-gpios:
+> > > > > > +    description: Clock request GPIOs
+> > > > > > +    maxItems: 3
+> > > > >
+> > > > > Again, this will not work.
+> > > >
+> > > > Just to be sure: you're talking about the PERST# gpios (e. g. reset-gpios)
+> > > > here, right?
+> > >
+> > > Both that and CLKREQ.
+>
+> The original DT from the downstream version (found at Linaro's tree)
+> has:
+>
+>         pcie@f4000000 {
+>                 compatible = "hisilicon,hikey970";
+> ...
+>                 switch,reset-gpios = <&gpio7 0 0 >;
+>                 eth,reset-gpios = <&gpio25 2 0 >;
+>                 m_2,reset-gpios = <&gpio3 1 0 >;
+>                 mini1,reset-gpios = <&gpio27 4 0 >;
+>
+>                 eth,clkreq-gpios = <&gpio20 6 0 >;
+>                 m_2,clkreq-gpios = <&gpio27 3 0 >;
+>                 mini1,clkreq-gpios = <&gpio17 0 0 >;
+>         };
+>
+> So, if we're willing to have a single reset-gpios for the PCIe
+> interface, in order to follow the current pci-bus.yaml schema,
+> this would probably be:
+>
+>         reset-gpios = <&gpio7 0 0 >;
+>
+> which maps to the PEX8606 PCIe bridge chip.
+>
+> With that, DT still need to point a per-slot clkreq and
+> reset-gpio.
+>
+> One alternative would be to map it as either 3 PCI or PHY
+> child nodes. E. g. something like this:
+>
+>         pcie@f4000000 {
+>                 compatible = "hisilicon,kirin970-pcie";
+> ...
+>                 reset-gpios = <&gpio7 0 0 >;
+>
+>                 slot {
+>                         eth {
+>                                 reset-gpios = <&gpio25 2 0>;
+>                                 clkreq-gpios = <&gpio20 6 0>;
+>                         };
+>                         m2 {
+>                                 reset-gpios = <&gpio3 1 0>;
+>                                 clkreq-gpios = <&gpio27 3 0>;
+>                         };
+>                         mini1 {
+>                                 reset-gpios = <&gpio27 4 0>;
+>                                 clkreq-gpios = <&gpio17 0 0>;
+>                         };
+>                 };
+>         };
+>
+>
+> Placing the child nodes ("slot"?) at the pci bus properties makes more
+> sense to me, but placing them at the PHY node has the advantage of
+> only affecting Kirin 970.
+>
+> In either case, if each child would need a different power supply,
+> it won't be hard to add a "slot-supply" property later on.
+>
+> Would something like that be acceptable for you?
 
-We need to use a different compatible string due to some differences
-with R-Car Gen3 USB2.0 PHY. It uses line ctrl register for OTG_ID
-pin changes and different OTG-BC interrupt bit for device recognition.
+On the right track, but there's already a definition for what child
+devices look like in pci2_1.pdf. I think you want something like this:
 
-Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
-Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
----
- v4->v5:
-  * Updated commit description Add OTG support-> Add USB2.0 PHY support.
- v3->v4:
-  * using family compatible instead of SoC specific.
- v3:
-  * Made seperate compatible for RZ/G2L.
-  * Extended rcar_gen3_phy_usb2_match_table[].data to support RZ/G2L.
----
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 97 ++++++++++++++++++------
- 1 file changed, 73 insertions(+), 24 deletions(-)
+pcie@f4000000 { // RP: Bus 0, Device 0
+    compatible = "hisilicon,kirin970-pcie";
+    ...
+    reset-gpios = <&gpio7 0 0>;  // PERST to switch
 
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index fbc55232120e..9de617ca9daa 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -64,6 +64,7 @@
- /* VBCTRL */
- #define USB2_VBCTRL_OCCLREN		BIT(16)
- #define USB2_VBCTRL_DRVVBUSSEL		BIT(8)
-+#define USB2_VBCTRL_VBOUT		BIT(0)
- 
- /* LINECTRL1 */
- #define USB2_LINECTRL1_DPRPD_EN		BIT(19)
-@@ -78,6 +79,10 @@
- #define USB2_ADPCTRL_IDPULLUP		BIT(5)	/* 1 = ID sampling is enabled */
- #define USB2_ADPCTRL_DRVVBUS		BIT(4)
- 
-+/*  RZ/G2L specific */
-+#define USB2_OBINT_IDCHG_EN		BIT(0)
-+#define USB2_LINECTRL1_USB2_IDMON	BIT(0)
-+
- #define NUM_OF_PHYS			4
- enum rcar_gen3_phy_index {
- 	PHY_INDEX_BOTH_HC,
-@@ -112,9 +117,16 @@ struct rcar_gen3_chan {
- 	struct mutex lock;	/* protects rphys[...].powered */
- 	enum usb_dr_mode dr_mode;
- 	int irq;
-+	u32 obint_enable_bits;
- 	bool extcon_host;
- 	bool is_otg_channel;
- 	bool uses_otg_pins;
-+	bool soc_no_adp_ctrl;
-+};
-+
-+struct rcar_gen3_phy_drv_data {
-+	const struct phy_ops *phy_usb2_ops;
-+	bool no_adp_ctrl;
- };
- 
- /*
-@@ -172,14 +184,22 @@ static void rcar_gen3_set_linectrl(struct rcar_gen3_chan *ch, int dp, int dm)
- static void rcar_gen3_enable_vbus_ctrl(struct rcar_gen3_chan *ch, int vbus)
- {
- 	void __iomem *usb2_base = ch->base;
--	u32 val = readl(usb2_base + USB2_ADPCTRL);
-+	u32 vbus_ctrl_reg = USB2_ADPCTRL;
-+	u32 vbus_ctrl_val = USB2_ADPCTRL_DRVVBUS;
-+	u32 val;
- 
- 	dev_vdbg(ch->dev, "%s: %08x, %d\n", __func__, val, vbus);
-+	if (ch->soc_no_adp_ctrl) {
-+		vbus_ctrl_reg = USB2_VBCTRL;
-+		vbus_ctrl_val = USB2_VBCTRL_VBOUT;
-+	}
-+
-+	val = readl(usb2_base + vbus_ctrl_reg);
- 	if (vbus)
--		val |= USB2_ADPCTRL_DRVVBUS;
-+		val |= vbus_ctrl_val;
- 	else
--		val &= ~USB2_ADPCTRL_DRVVBUS;
--	writel(val, usb2_base + USB2_ADPCTRL);
-+		val &= ~vbus_ctrl_val;
-+	writel(val, usb2_base + vbus_ctrl_reg);
- }
- 
- static void rcar_gen3_control_otg_irq(struct rcar_gen3_chan *ch, int enable)
-@@ -188,9 +208,9 @@ static void rcar_gen3_control_otg_irq(struct rcar_gen3_chan *ch, int enable)
- 	u32 val = readl(usb2_base + USB2_OBINTEN);
- 
- 	if (ch->uses_otg_pins && enable)
--		val |= USB2_OBINT_BITS;
-+		val |= ch->obint_enable_bits;
- 	else
--		val &= ~USB2_OBINT_BITS;
-+		val &= ~ch->obint_enable_bits;
- 	writel(val, usb2_base + USB2_OBINTEN);
- }
- 
-@@ -252,6 +272,9 @@ static bool rcar_gen3_check_id(struct rcar_gen3_chan *ch)
- 	if (!ch->uses_otg_pins)
- 		return (ch->dr_mode == USB_DR_MODE_HOST) ? false : true;
- 
-+	if (ch->soc_no_adp_ctrl)
-+		return !!(readl(ch->base + USB2_LINECTRL1) & USB2_LINECTRL1_USB2_IDMON);
-+
- 	return !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_IDDIG);
- }
- 
-@@ -376,16 +399,17 @@ static void rcar_gen3_init_otg(struct rcar_gen3_chan *ch)
- 	      USB2_LINECTRL1_DMRPD_EN | USB2_LINECTRL1_DM_RPD;
- 	writel(val, usb2_base + USB2_LINECTRL1);
- 
--	val = readl(usb2_base + USB2_VBCTRL);
--	val &= ~USB2_VBCTRL_OCCLREN;
--	writel(val | USB2_VBCTRL_DRVVBUSSEL, usb2_base + USB2_VBCTRL);
--	val = readl(usb2_base + USB2_ADPCTRL);
--	writel(val | USB2_ADPCTRL_IDPULLUP, usb2_base + USB2_ADPCTRL);
--
-+	if (!ch->soc_no_adp_ctrl) {
-+		val = readl(usb2_base + USB2_VBCTRL);
-+		val &= ~USB2_VBCTRL_OCCLREN;
-+		writel(val | USB2_VBCTRL_DRVVBUSSEL, usb2_base + USB2_VBCTRL);
-+		val = readl(usb2_base + USB2_ADPCTRL);
-+		writel(val | USB2_ADPCTRL_IDPULLUP, usb2_base + USB2_ADPCTRL);
-+	}
- 	msleep(20);
- 
- 	writel(0xffffffff, usb2_base + USB2_OBINTSTA);
--	writel(USB2_OBINT_BITS, usb2_base + USB2_OBINTEN);
-+	writel(ch->obint_enable_bits, usb2_base + USB2_OBINTEN);
- 
- 	rcar_gen3_device_recognition(ch);
- }
-@@ -397,9 +421,9 @@ static irqreturn_t rcar_gen3_phy_usb2_irq(int irq, void *_ch)
- 	u32 status = readl(usb2_base + USB2_OBINTSTA);
- 	irqreturn_t ret = IRQ_NONE;
- 
--	if (status & USB2_OBINT_BITS) {
-+	if (status & ch->obint_enable_bits) {
- 		dev_vdbg(ch->dev, "%s: %08x\n", __func__, status);
--		writel(USB2_OBINT_BITS, usb2_base + USB2_OBINTSTA);
-+		writel(ch->obint_enable_bits, usb2_base + USB2_OBINTSTA);
- 		rcar_gen3_device_recognition(ch);
- 		ret = IRQ_HANDLED;
- 	}
-@@ -535,26 +559,45 @@ static const struct phy_ops rz_g1c_phy_usb2_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static const struct rcar_gen3_phy_drv_data rcar_gen3_phy_usb2_data = {
-+	.phy_usb2_ops = &rcar_gen3_phy_usb2_ops,
-+	.no_adp_ctrl = false,
-+};
-+
-+static const struct rcar_gen3_phy_drv_data rz_g1c_phy_usb2_data = {
-+	.phy_usb2_ops = &rz_g1c_phy_usb2_ops,
-+	.no_adp_ctrl = false,
-+};
-+
-+static const struct rcar_gen3_phy_drv_data rz_g2l_phy_usb2_data = {
-+	.phy_usb2_ops = &rcar_gen3_phy_usb2_ops,
-+	.no_adp_ctrl = true,
-+};
-+
- static const struct of_device_id rcar_gen3_phy_usb2_match_table[] = {
- 	{
- 		.compatible = "renesas,usb2-phy-r8a77470",
--		.data = &rz_g1c_phy_usb2_ops,
-+		.data = &rz_g1c_phy_usb2_data,
- 	},
- 	{
- 		.compatible = "renesas,usb2-phy-r8a7795",
--		.data = &rcar_gen3_phy_usb2_ops,
-+		.data = &rcar_gen3_phy_usb2_data,
- 	},
- 	{
- 		.compatible = "renesas,usb2-phy-r8a7796",
--		.data = &rcar_gen3_phy_usb2_ops,
-+		.data = &rcar_gen3_phy_usb2_data,
- 	},
- 	{
- 		.compatible = "renesas,usb2-phy-r8a77965",
--		.data = &rcar_gen3_phy_usb2_ops,
-+		.data = &rcar_gen3_phy_usb2_data,
-+	},
-+	{
-+		.compatible = "renesas,rzg2l-usb2-phy",
-+		.data = &rz_g2l_phy_usb2_data,
- 	},
- 	{
- 		.compatible = "renesas,rcar-gen3-usb2-phy",
--		.data = &rcar_gen3_phy_usb2_ops,
-+		.data = &rcar_gen3_phy_usb2_data,
- 	},
- 	{ /* sentinel */ },
- };
-@@ -608,10 +651,10 @@ static enum usb_dr_mode rcar_gen3_get_dr_mode(struct device_node *np)
- 
- static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- {
-+	const struct rcar_gen3_phy_drv_data *phy_data;
- 	struct device *dev = &pdev->dev;
- 	struct rcar_gen3_chan *channel;
- 	struct phy_provider *provider;
--	const struct phy_ops *phy_usb2_ops;
- 	int ret = 0, i;
- 
- 	if (!dev->of_node) {
-@@ -627,6 +670,7 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 	if (IS_ERR(channel->base))
- 		return PTR_ERR(channel->base);
- 
-+	channel->obint_enable_bits = USB2_OBINT_BITS;
- 	/* get irq number here and request_irq for OTG in phy_init */
- 	channel->irq = platform_get_irq_optional(pdev, 0);
- 	channel->dr_mode = rcar_gen3_get_dr_mode(dev->of_node);
-@@ -653,16 +697,21 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 	 * And then, phy-core will manage runtime pm for this device.
- 	 */
- 	pm_runtime_enable(dev);
--	phy_usb2_ops = of_device_get_match_data(dev);
--	if (!phy_usb2_ops) {
-+
-+	phy_data = of_device_get_match_data(dev);
-+	if (!phy_data) {
- 		ret = -EINVAL;
- 		goto error;
- 	}
- 
-+	channel->soc_no_adp_ctrl = phy_data->no_adp_ctrl;
-+	if (phy_data->no_adp_ctrl)
-+		channel->obint_enable_bits = USB2_OBINT_IDCHG_EN;
-+
- 	mutex_init(&channel->lock);
- 	for (i = 0; i < NUM_OF_PHYS; i++) {
- 		channel->rphys[i].phy = devm_phy_create(dev, NULL,
--							phy_usb2_ops);
-+							phy_data->phy_usb2_ops);
- 		if (IS_ERR(channel->rphys[i].phy)) {
- 			dev_err(dev, "Failed to create USB2 PHY\n");
- 			ret = PTR_ERR(channel->rphys[i].phy);
--- 
-2.17.1
+    pcie@0 { // PCIe switch: Bus 1, Device 0
+        reg = <0 0 0 0 0>;
+        compatible = "pciclass,0604";
+        device_type = "pci";
 
+        pcie@1 { // NC (Can omit this node)
+            reg = <0x80 0 0 0 0>;
+            compatible = "pciclass,0604";
+            device_type = "pci";
+        };
+
+        pcie@4 { // M.2
+            reg = <0x200 0 0 0 0>;
+            compatible = "pciclass,0604";
+            device_type = "pci";
+            reset-gpios = <&gpio7 1 0>; // PERST to M.2 slot
+       };
+
+        pcie@5 { // Mini
+            reg = <0x280 0 0 0 0>;
+            compatible = "pciclass,0604";
+            device_type = "pci";
+            reset-gpios = <&gpio7 2 0>; // PERST to Mini slot
+        };
+
+        pcie@7 { // Ethernet
+            reg = <0x380 0 0 0 0>;
+            compatible = "pciclass,0604";
+            device_type = "pci";
+            reset-gpios = <&gpio7 3 0>; // PERST to Ethernet
+
+            ethernet@0 {
+                reg = <0 0 0 0 0>;
+                local-mac-address = [ 00 01 02 03 04 05 06 ];
+            };
+        };
+
+        pcie@9 { // NC
+            reg = <0x480 0 0 0 0>;
+            compatible = "pciclass,0604";
+            device_type = "pci";
+       };
+};
+
+This is based on what you previously sent:
+00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
+01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI
+Express Gen 2 (5.0 GT/s) Switch (rev ba)
+02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI
+Express Gen 2 (5.0 GT/s) Switch (rev ba)
+02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI
+Express Gen 2 (5.0 GT/s) Switch (rev ba)
+02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI
+Express Gen 2 (5.0 GT/s) Switch (rev ba)
+02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI
+Express Gen 2 (5.0 GT/s) Switch (rev ba)
+02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI
+Express Gen 2 (5.0 GT/s) Switch (rev ba)
+06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd.
+RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
+
+A few notes:
+I left out #size-cells, #address-cells, and ranges for brevity.
+
+I'm not completely sure I've got the bridges mapped to the right
+functions on Hikey970. That's my best guess looking at the schematics.
+You should be able to confirm which bridge is the parent bridge for
+ethernet at least.
+
+The compatible strings aren't strictly needed. Linux doesn't look at them.
+
+There's a pretty complete example in:
+arch/mips/boot/dts/loongson/loongson64-2k1000.dtsi
+
+The simplest Linux implementation to handle the above is just walk the
+child nodes and get all the 'reset-gpios' properties. That's not the
+implementation I think we should have though. We should handle the
+GPIO as each bridge is probed and children scanned.
+
+Rob
 
 -- 
 linux-phy mailing list
