@@ -2,80 +2,87 @@ Return-Path: <SRS0=alUI=MU=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
-	URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-8.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1375EC4338F
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 08:09:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 40AFBC4338F
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 12:26:48 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D231260F41
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 08:09:22 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D231260F41
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
+	by mail.kernel.org (Postfix) with ESMTPS id 1407B60F9C
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 12:26:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1407B60F9C
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C6EFbJaJlbQB0/DMuGs91cVqQguB+OkHO/qz47nVwDk=; b=AfB+DCDKousonj
-	QzuayL7qHQMhIOdJFK0PPcPQcqF63e0rfaKeJlfPMUh2SQh2qdZo9FY8TU3uwQTf1QX0IJrQeWPLS
-	UZ3knjNwDau7GWpJZHkC+ovf+fMTc/+1w7EnHIB98jDwvR0enKozSOobmULbCPFO/W19wyd1Jxq5n
-	exZSkPgw6mWlZ48MGcX25kmNeF4ICnTFsgyRu0VSovWvWSEucEYk4SsqSCkgQw45kFNk6QDw7YBE+
-	RETZOGm0mtCqG4BQnJCh3J4vAJ2x8XJ3y4d4Qb9jz326uOPUrd1wASQGB3KCNQgo0Lv4NfO5cxdiP
-	rtBvhBkqo8pEnKTlwiBQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bVKYA0DUa+pE7KdBWUpEdyP2ZvQngXCqLHeWEv/oLUg=; b=MnwZYvadU4WCmk
+	q4zRqrRMphw0gexR7HPYn1MJeIZYAQ/+Zyv7nh3J4zRGrymv0YeWaUk6aJwf8UFFGqhLW9ZM1VQTj
+	vwSzvlwyukFYll3K5EKGzo5U+hsp6dh7TdwmTsTXWVwdh3eia3KB/Opz0REVa3C7lFTccbhv1hlRp
+	qf+hL8b4g33qRFKd8h3viBdRhExUEgr9syt1WfYMf7tfCFCyTNDXCnijD8LBDjN8sCR0eEuv193Rc
+	0dnLZEwTkQmEpJpug46lks0jd33DQQ9iml5oGeuXOWr701HYBTeXLCVxQBCN1CjiHPJ7/1OZQ5D7z
+	UpN5WCXck+9ikUWJbgAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m8ed0-00HTTu-CA; Wed, 28 Jul 2021 08:09:22 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1m8ie7-000cn0-JL; Wed, 28 Jul 2021 12:26:47 +0000
+Received: from mail-qt1-x82b.google.com ([2607:f8b0:4864:20::82b])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m8ecx-00HTSz-9h; Wed, 28 Jul 2021 08:09:20 +0000
-X-UUID: f0d0e51dd3ce4077b933d95c83c335cd-20210728
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=zkv3ZJSwUizpM3tS8XRyVZqivVjKNezuvbvBRN3iCHI=; 
- b=oDzXW7xoHDP/+6DlEk6MY7St+ZO9ept+al/oqF1I7u6hJ0tWzYnapm/5GGlsTUnjiAZIBj36xmSu7ecGy4yi8lykcJxgh2VQxmQU2MmCS835g+GdtoTLsBK6lstj6vlagcYWFbyhnXyIm8UGm7QxYPK2MLtd+9wp9ctSt8hNfcM=;
-X-UUID: f0d0e51dd3ce4077b933d95c83c335cd-20210728
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1010062068; Wed, 28 Jul 2021 01:09:16 -0700
-Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 28 Jul 2021 00:59:13 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 28 Jul 2021 15:59:12 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 28 Jul 2021 15:59:10 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Philipp Zabel <p.zabel@pengutronix.de>, Matthias Brugger
- <matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <dri-devel@lists.freedesktop.org>, Eddie Hung <eddie.hung@mediatek.com>
-Subject: [PATCH 9/9] phy: phy-mtk-mipi-dsi: convert to
- devm_platform_ioremap_resource
-Date: Wed, 28 Jul 2021 15:58:31 +0800
-Message-ID: <1627459111-2907-9-git-send-email-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
-References: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
+ id 1m8idh-000cec-4F; Wed, 28 Jul 2021 12:26:22 +0000
+Received: by mail-qt1-x82b.google.com with SMTP id m11so1161251qtx.7;
+ Wed, 28 Jul 2021 05:26:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1cpOBZXZl+X9zh9reb80OTm+Y4W8Zt/c3AvDZt4KISo=;
+ b=vJXvb2Jmlbm70+yCmjiFIleraKYYYJ+oFk0cRA5lKzzVnAChhB3QFlFl0bUDpkHvfX
+ 53r0RALch+rrgQJM1zkvkguosuCN/W1V2Q9uHeVBjXZD8xK0bO93xihBguGNVexr/Jeh
+ QTCxKj50OMfwF3ak0WF9eXh8Q7RRqC5N+p1zhgGbNU9Bp2WaYBeBsv2EkpyLvdBRsH0W
+ JYino0wZ7Or+Qfw8WYdAnX3tfOVHpjl3rLktWochoOAQovvHx8piGe1m2ESF0ZhDd6gH
+ iMAX7E8FC2NVR9lIfLnEZCboTWg9yatSJoNW85DnzbmYxzlBIKxqtasQKSy/WYXjaFj1
+ huIA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1cpOBZXZl+X9zh9reb80OTm+Y4W8Zt/c3AvDZt4KISo=;
+ b=j36PE+ixWtjm8Z8AW9YvAAyjOBXiJIRjUIwaRWMTUGcpXDkBNO6/UW5QTtu73EPfxE
+ w4UiNHxW5Q0QXYAnoEvyUdAvRlAvwt/vqdYn2A7Kt4905LuualKUoqmfZ9q2WKRndD+7
+ x7EYEAitrqvslVVF8NJo5AGOfgBhsCGqZhG+gig/n4VPssfTVOqEiH2lnlark5v71xzp
+ 05BRhReM3KTJyzPVFkehTikQ4vbC+hmACTA7a8xNBDC6QMEbHk47IGYMRP5BGLC/ghH8
+ ZPO1Cl54FT7l7glj9a9QCGv3pjpj5mPQqxQkTgdgJq0ag8YFLu7lhqU2NIZIb04kCkQg
+ 2PfQ==
+X-Gm-Message-State: AOAM533z+W5jwOR1F9JUgg8wnmM6LkIV5wGe2YdUq/zlmaE9bm5pER7l
+ kGNtkRL3nWkzcJShb2mG0og=
+X-Google-Smtp-Source: ABdhPJxZ0V3Jp5j7jIzfzpXOPbo0SByMp8ZIPkpmvH3SLHeS+IK/TXItGd/fCc0GPVXtnhnIL5OTRw==
+X-Received: by 2002:a05:622a:1828:: with SMTP id
+ t40mr23729089qtc.276.1627475177902; 
+ Wed, 28 Jul 2021 05:26:17 -0700 (PDT)
+Received: from master-laptop.sparksnet ([2601:153:980:85b1:b58:2ae8:d75f:660a])
+ by smtp.gmail.com with ESMTPSA id z9sm2842972qtn.54.2021.07.28.05.26.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 28 Jul 2021 05:26:17 -0700 (PDT)
+From: Peter Geis <pgwipeout@gmail.com>
+To: Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Peter Geis <pgwipeout@gmail.com>
+Subject: [RFC PATCH 0/9] phy-rockchip-inno-usb2: support rk356x usb2phy
+Date: Wed, 28 Jul 2021 08:25:57 -0400
+Message-Id: <20210728122606.697619-1-pgwipeout@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210728_010919_387601_6B195D6A 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20210728_052621_218217_B15ABEA9 
+X-CRM114-Status: GOOD (  10.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,41 +99,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use devm_platform_ioremap_resource to simplify code
+Good Morning,
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
- drivers/phy/mediatek/phy-mtk-mipi-dsi.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+This is my series to support the usb2 phy devices on the rk356x.
+The rk356x phy has a single muxed interrupt and has moved the usb2phy
+nodes out of the grf and into their own nodes.
+The phy needs to tie back into the grf for register control, similar to
+the rv1108.
+By moving the phys into their own nodes, they now have full
+#address_cells = 2 register addresses, but they still reside below the 32bit
+mmio range.
 
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-index 61c942fbf4a1..28ad9403c441 100644
---- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-@@ -130,7 +130,6 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct mtk_mipi_tx *mipi_tx;
--	struct resource *mem;
- 	const char *ref_clk_name;
- 	struct clk *ref_clk;
- 	struct clk_init_data clk_init = {
-@@ -148,11 +147,9 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
- 
- 	mipi_tx->driver_data = of_device_get_match_data(dev);
- 
--	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	mipi_tx->regs = devm_ioremap_resource(dev, mem);
--	if (IS_ERR(mipi_tx->regs)) {
-+	mipi_tx->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(mipi_tx->regs))
- 		return PTR_ERR(mipi_tx->regs);
--	}
- 
- 	ref_clk = devm_clk_get(dev, NULL);
- 	if (IS_ERR(ref_clk)) {
+This driver series only supports the host configuration for the rk356x.
+I have have tested it on the following:
+rk3566 - Pine64 Quartz64 Model A
+rk3399 - Pine64 Rockpro64
+
+Please provide feedback and comments as you see fit.
+
+Peter Geis (9):
+  dt-bindings: soc: rockchip: add rk3568-usb2phy-grf
+  dt-bindings: phy: phy-rockchip-inno-usb2: add rk3568 documentation
+  dt-bindings: usb: generic-ohci: increase maximum clocks
+  phy: phy-rockchip-inno-usb2: support #address_cells = 2
+  phy: phy-rockchip-inno-usb2: support standalone phy nodes
+  phy: phy-rockchip-inno-usb2: support muxed interrupts
+  phy: phy-rockchip-inno-usb2: add rk3568 support
+  arm64: dts: rockchip: add usb2 nodes to rk3568 device tree
+  arm64: dts: rockchip: add Quartz64-A usb2 support
+
+ .../bindings/phy/phy-rockchip-inno-usb2.yaml  |   8 +-
+ .../devicetree/bindings/soc/rockchip/grf.yaml |   1 +
+ .../devicetree/bindings/usb/generic-ohci.yaml |   2 +-
+ .../boot/dts/rockchip/rk3566-quartz64-a.dts   |  52 ++++
+ arch/arm64/boot/dts/rockchip/rk356x.dtsi      |  97 +++++++
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 259 ++++++++++++++----
+ 6 files changed, 360 insertions(+), 59 deletions(-)
+
 -- 
-2.18.0
+2.25.1
+
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
