@@ -5,16 +5,17 @@ X-Spam-Level:
 X-Spam-Status: No, score=-17.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
-	URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E8B50C432BE
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 07:59:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9647BC4320A
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 07:59:56 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 935BA60FC0
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 07:59:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 935BA60FC0
+	by mail.kernel.org (Postfix) with ESMTPS id 59B6B60FC0
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 07:59:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 59B6B60FC0
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,38 +24,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fqkge4fEidWgGX6oilRUVa8FFYu1+96TsZVEBMvv9jI=; b=ougRl5koSIcxg3
-	Hxcyt6W65rfQTirkEtvsImfFC1tHxVjsLTw1im6UavEQYyUpWSS3PVqFcR3149K15s8lHSIaApgGZ
-	MC7emtukWUziSRaMNySNC51HfVVjI982pyCs6c6VJsSV1yLpKMvZ7GMVarB26ixh7zm0x8SkBcV+y
-	NmndDmXM2Bwfh3Hlu1SHq1FDbsLCF2GInbSqpF+WwSl0++APvbZos5PY5gUXVh6taUa9zU7d7cajx
-	WOuN9yc0mvVNIpLDRQkB9QThqdfnkrLa82exgeyNpT/AAUpSSt7jxihVOitquep0WIjJzjSo1jG7R
-	cJUD/PhMLYXq/YdAH63w==;
+	List-Owner; bh=m/6V92HtCAKsQZX2EKKKiHgH74B9vg9Rw7RRs13rzrA=; b=x2fclrQZnFgGl8
+	T1uuwoyzOtycKl4L7+uuTNTe9dizzyu1PWDHkF1U4wp4lmiTe9ulm9CLcOgTgjeg8+B0EXjhdcKju
+	g8tYtibP9jE8tOfataJF6fFQqeEW3kTPe2JgKo/P4VnIgT3zxlwnTGsMWQp3f2/a0gS9oE+0f3aPr
+	YXjeGP06uGhrTfYCHkHK6sMd2y7nHsje2b95bTX/wovyCuOb5FC472IrafVCZxJPNUF6stnsKC7uR
+	W8EG0NROdMprT848v9fyLYNgifBSYA5kf44GvKkTluzRkHIFHoa+3BQsE5J6ZC8+nntAMg2b20Vyi
+	1uzBMqDmMu/biC4eUkOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m8eTd-00HPjW-2z; Wed, 28 Jul 2021 07:59:41 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1m8eTr-00HPq3-Qy; Wed, 28 Jul 2021 07:59:55 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m8eTA-00HPRt-1N; Wed, 28 Jul 2021 07:59:13 +0000
-X-UUID: f2607cf8a5c445589addc5b1d82f6bd5-20210728
+ id 1m8eTG-00HPVU-69; Wed, 28 Jul 2021 07:59:20 +0000
+X-UUID: af95aec13ab0424b9d83e6e5874532cb-20210728
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=Gs4P3d9sOZuvkwDo9y8uyfE3bKIK5jKgIasGESrnUGw=; 
- b=goeOi54K1qbclmGUUuWuhL4ygWitMfQk1mUV75mtJ6855guQXTCPbF2lQgwd0PRK/OF35YgvXsp43LT7UVf959d7V9oSs3B7Hn39fIf5Bbhe4RhsLIT8N5EkOAz+8tHKqBKscckiYiBcUqm6SznJCu58yIwXre0LjGhqY+bGlnc=;
-X-UUID: f2607cf8a5c445589addc5b1d82f6bd5-20210728
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ bh=aRtx51kvv9bqZaKnWKbokdAeOQtkzfxo0sTNLR3QBJg=; 
+ b=swV2CgBrOQZdtbS0J4oF/oJ7S1asIXvMStG7WAtIEUNPBn+aPtftGRXXNUgqJnOCQUgZoqLauPUC927vPXBpw0pWiN/HR1ILOWAl5co6dknAx7MdZwEz8q+SlECMW0+Bu88zoA8msBIKZnehKW4/oZvL9dDkWXXXUcgzBTjlzM0=;
+X-UUID: af95aec13ab0424b9d83e6e5874532cb-20210728
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 658259098; Wed, 28 Jul 2021 00:59:09 -0700
-Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ with ESMTP id 350767861; Wed, 28 Jul 2021 00:59:11 -0700
+Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 28 Jul 2021 00:59:08 -0700
+ 15.0.1497.2; Wed, 28 Jul 2021 00:59:09 -0700
 Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 28 Jul 2021 15:59:06 +0800
+ mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 28 Jul 2021 15:59:08 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas10.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 28 Jul 2021 15:59:05 +0800
+ Transport; Wed, 28 Jul 2021 15:59:07 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Chun-Kuang Hu <chunkuang.hu@kernel.org>
@@ -64,17 +65,17 @@ CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
  <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
  <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <dri-devel@lists.freedesktop.org>, Eddie Hung <eddie.hung@mediatek.com>
-Subject: [PATCH 4/9] phy: phy-mtk-tphy: print error log using child device
-Date: Wed, 28 Jul 2021 15:58:26 +0800
-Message-ID: <1627459111-2907-4-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH 6/9] phy: phy-mtk-ufs: use clock bulk to get clocks
+Date: Wed, 28 Jul 2021 15:58:28 +0800
+Message-ID: <1627459111-2907-6-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210728_005912_106567_500F598B 
-X-CRM114-Status: GOOD (  12.89  )
+X-CRM114-CacheID: sfid-20210728_005918_354296_227E2017 
+X-CRM114-Status: GOOD (  14.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,55 +92,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Print error log using child devices instead of parent device.
+Use clock bulk helpers to get/enable/disable clocks
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
- drivers/phy/mediatek/phy-mtk-tphy.c | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ drivers/phy/mediatek/phy-mtk-ufs.c | 44 ++++++++----------------------
+ 1 file changed, 11 insertions(+), 33 deletions(-)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index a6502058a1a5..9d4b34298137 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -1278,6 +1278,7 @@ static int mtk_tphy_probe(struct platform_device *pdev)
- 	for_each_child_of_node(np, child_np) {
- 		struct mtk_phy_instance *instance;
- 		struct clk_bulk_data *clks;
-+		struct device *subdev;
- 		struct phy *phy;
+diff --git a/drivers/phy/mediatek/phy-mtk-ufs.c b/drivers/phy/mediatek/phy-mtk-ufs.c
+index 769b00b038d8..a6af06941203 100644
+--- a/drivers/phy/mediatek/phy-mtk-ufs.c
++++ b/drivers/phy/mediatek/phy-mtk-ufs.c
+@@ -31,11 +31,12 @@
+ #define FRC_CDR_ISO_EN              BIT(19)
+ #define CDR_ISO_EN                  BIT(20)
  
- 		instance = devm_kzalloc(dev, sizeof(*instance), GFP_KERNEL);
-@@ -1295,16 +1296,17 @@ static int mtk_tphy_probe(struct platform_device *pdev)
- 			goto put_child;
- 		}
++#define UFSPHY_CLKS_CNT    2
++
+ struct ufs_mtk_phy {
+ 	struct device *dev;
+ 	void __iomem *mmio;
+-	struct clk *mp_clk;
+-	struct clk *unipro_clk;
++	struct clk_bulk_data clks[UFSPHY_CLKS_CNT];
+ };
  
-+		subdev = &phy->dev;
- 		retval = of_address_to_resource(child_np, 0, &res);
- 		if (retval) {
--			dev_err(dev, "failed to get address resource(id-%d)\n",
-+			dev_err(subdev, "failed to get address resource(id-%d)\n",
- 				port);
- 			goto put_child;
- 		}
+ static inline u32 mphy_readl(struct ufs_mtk_phy *phy, u32 reg)
+@@ -74,20 +75,11 @@ static struct ufs_mtk_phy *get_ufs_mtk_phy(struct phy *generic_phy)
+ static int ufs_mtk_phy_clk_init(struct ufs_mtk_phy *phy)
+ {
+ 	struct device *dev = phy->dev;
++	struct clk_bulk_data *clks = phy->clks;
  
--		instance->port_base = devm_ioremap_resource(&phy->dev, &res);
-+		instance->port_base = devm_ioremap_resource(subdev, &res);
- 		if (IS_ERR(instance->port_base)) {
--			dev_err(dev, "failed to remap phy regs\n");
-+			dev_err(subdev, "failed to remap phy regs\n");
- 			retval = PTR_ERR(instance->port_base);
- 			goto put_child;
- 		}
-@@ -1317,7 +1319,7 @@ static int mtk_tphy_probe(struct platform_device *pdev)
- 		clks = instance->clks;
- 		clks[0].id = "ref";     /* digital (& analog) clock */
- 		clks[1].id = "da_ref";  /* analog clock */
--		retval = devm_clk_bulk_get_optional(&phy->dev, TPHY_CLKS_CNT, clks);
-+		retval = devm_clk_bulk_get_optional(subdev, TPHY_CLKS_CNT, clks);
- 		if (retval)
- 			goto put_child;
+-	phy->unipro_clk = devm_clk_get(dev, "unipro");
+-	if (IS_ERR(phy->unipro_clk)) {
+-		dev_err(dev, "failed to get clock: unipro");
+-		return PTR_ERR(phy->unipro_clk);
+-	}
+-
+-	phy->mp_clk = devm_clk_get(dev, "mp");
+-	if (IS_ERR(phy->mp_clk)) {
+-		dev_err(dev, "failed to get clock: mp");
+-		return PTR_ERR(phy->mp_clk);
+-	}
+-
+-	return 0;
++	clks[0].id = "unipro";
++	clks[1].id = "mp";
++	return devm_clk_bulk_get(dev, UFSPHY_CLKS_CNT, clks);
+ }
  
+ static void ufs_mtk_phy_set_active(struct ufs_mtk_phy *phy)
+@@ -150,26 +142,13 @@ static int ufs_mtk_phy_power_on(struct phy *generic_phy)
+ 	struct ufs_mtk_phy *phy = get_ufs_mtk_phy(generic_phy);
+ 	int ret;
+ 
+-	ret = clk_prepare_enable(phy->unipro_clk);
+-	if (ret) {
+-		dev_err(phy->dev, "unipro_clk enable failed %d\n", ret);
+-		goto out;
+-	}
+-
+-	ret = clk_prepare_enable(phy->mp_clk);
+-	if (ret) {
+-		dev_err(phy->dev, "mp_clk enable failed %d\n", ret);
+-		goto out_unprepare_unipro_clk;
+-	}
++	ret = clk_bulk_prepare_enable(UFSPHY_CLKS_CNT, phy->clks);
++	if (ret)
++		return ret;
+ 
+ 	ufs_mtk_phy_set_active(phy);
+ 
+ 	return 0;
+-
+-out_unprepare_unipro_clk:
+-	clk_disable_unprepare(phy->unipro_clk);
+-out:
+-	return ret;
+ }
+ 
+ static int ufs_mtk_phy_power_off(struct phy *generic_phy)
+@@ -178,8 +157,7 @@ static int ufs_mtk_phy_power_off(struct phy *generic_phy)
+ 
+ 	ufs_mtk_phy_set_deep_hibern(phy);
+ 
+-	clk_disable_unprepare(phy->unipro_clk);
+-	clk_disable_unprepare(phy->mp_clk);
++	clk_bulk_disable_unprepare(UFSPHY_CLKS_CNT, phy->clks);
+ 
+ 	return 0;
+ }
 -- 
 2.18.0
 -- 
