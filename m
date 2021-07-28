@@ -5,17 +5,16 @@ X-Spam-Level:
 X-Spam-Status: No, score=-17.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
-	URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable autolearn_force=no
-	version=3.4.0
+	URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9647BC4320A
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 760C4C4338F
 	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 07:59:56 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 59B6B60FC0
+	by mail.kernel.org (Postfix) with ESMTPS id 3E45460F9E
 	for <linux-phy@archiver.kernel.org>; Wed, 28 Jul 2021 07:59:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 59B6B60FC0
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3E45460F9E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,38 +23,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m/6V92HtCAKsQZX2EKKKiHgH74B9vg9Rw7RRs13rzrA=; b=x2fclrQZnFgGl8
-	T1uuwoyzOtycKl4L7+uuTNTe9dizzyu1PWDHkF1U4wp4lmiTe9ulm9CLcOgTgjeg8+B0EXjhdcKju
-	g8tYtibP9jE8tOfataJF6fFQqeEW3kTPe2JgKo/P4VnIgT3zxlwnTGsMWQp3f2/a0gS9oE+0f3aPr
-	YXjeGP06uGhrTfYCHkHK6sMd2y7nHsje2b95bTX/wovyCuOb5FC472IrafVCZxJPNUF6stnsKC7uR
-	W8EG0NROdMprT848v9fyLYNgifBSYA5kf44GvKkTluzRkHIFHoa+3BQsE5J6ZC8+nntAMg2b20Vyi
-	1uzBMqDmMu/biC4eUkOA==;
+	List-Owner; bh=gEfTcpM76bozxDGtkr7cTa6ZS2kb1Zz1UbTo+qyJT/M=; b=eJtI3G+RcM6b60
+	TVkIZW3SNbrgaIe3DATrSjn4wZwxOgs2y3j2Lypnz77ADRr8CYBQicWq9GdX/NzSlpRnvn7MKLoAy
+	sLKvZI+HgSP6OyYxgZnhy1Xq7DpOXTPb66fOCD27G1Gc9hddR972I7ycfosQZDqTet1fbVUl/q3xF
+	aMjJHKpUdPAqo+nJ6RR24owMP4HAYgt/5GllvBJIxlaW/Bc5rG8ge0pefzPzw3G1vCWVA/7IT4gwW
+	3s3kT8LcLJlZy5/jDN2I6OyA/d/ULIyjK8Kqolj2A2FUk5OUxtRldLQEnTxAHf1vveN/R6LaeRCyu
+	k2bxs7/WhXfax1h6bRhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m8eTr-00HPq3-Qy; Wed, 28 Jul 2021 07:59:55 +0000
+	id 1m8eTr-00HPpv-Ml; Wed, 28 Jul 2021 07:59:55 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m8eTG-00HPVU-69; Wed, 28 Jul 2021 07:59:20 +0000
-X-UUID: af95aec13ab0424b9d83e6e5874532cb-20210728
+ id 1m8eTG-00HPV5-6I; Wed, 28 Jul 2021 07:59:19 +0000
+X-UUID: ffb5e7a879ff46a4970cb4f1573d94f0-20210728
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=aRtx51kvv9bqZaKnWKbokdAeOQtkzfxo0sTNLR3QBJg=; 
- b=swV2CgBrOQZdtbS0J4oF/oJ7S1asIXvMStG7WAtIEUNPBn+aPtftGRXXNUgqJnOCQUgZoqLauPUC927vPXBpw0pWiN/HR1ILOWAl5co6dknAx7MdZwEz8q+SlECMW0+Bu88zoA8msBIKZnehKW4/oZvL9dDkWXXXUcgzBTjlzM0=;
-X-UUID: af95aec13ab0424b9d83e6e5874532cb-20210728
+ bh=N0E6PwoUvQeCHYfc4LgyqrAk0cc9oQULb9Zg0B3rNWk=; 
+ b=p2R9xwMGt/l6ERv/R1AAKhwghdzNDvTg2ph/jvR+MIktgSSX3cpgp+lNq/dHjCm7CM9y1OOOh7XyisM6S0DxOCaJp64rYWKo7L/DT1Qpk+/hFj1spt7j+XqsOKSPQoFWHGr0mqxicUxq+mu6Q2Y2GK/sHO9L+lPpqQDIwo1/wVM=;
+X-UUID: ffb5e7a879ff46a4970cb4f1573d94f0-20210728
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 350767861; Wed, 28 Jul 2021 00:59:11 -0700
+ with ESMTP id 1212730281; Wed, 28 Jul 2021 00:59:11 -0700
 Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 28 Jul 2021 00:59:09 -0700
+ 15.0.1497.2; Wed, 28 Jul 2021 00:59:10 -0700
 Received: from mtkcas10.mediatek.inc (172.21.101.39) by
  mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 28 Jul 2021 15:59:08 +0800
+ 15.0.1497.2; Wed, 28 Jul 2021 15:59:09 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas10.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 28 Jul 2021 15:59:07 +0800
+ Transport; Wed, 28 Jul 2021 15:59:08 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Chun-Kuang Hu <chunkuang.hu@kernel.org>
@@ -65,17 +64,18 @@ CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
  <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
  <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <dri-devel@lists.freedesktop.org>, Eddie Hung <eddie.hung@mediatek.com>
-Subject: [PATCH 6/9] phy: phy-mtk-ufs: use clock bulk to get clocks
-Date: Wed, 28 Jul 2021 15:58:28 +0800
-Message-ID: <1627459111-2907-6-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH 7/9] phy: phy-mtk-hdmi: convert to
+ devm_platform_ioremap_resource
+Date: Wed, 28 Jul 2021 15:58:29 +0800
+Message-ID: <1627459111-2907-7-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210728_005918_354296_227E2017 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20210728_005918_359173_F00E7070 
+X-CRM114-Status: GOOD (  12.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,97 +92,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use clock bulk helpers to get/enable/disable clocks
+Use devm_platform_ioremap_resource to simplify code
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
- drivers/phy/mediatek/phy-mtk-ufs.c | 44 ++++++++----------------------
- 1 file changed, 11 insertions(+), 33 deletions(-)
+ drivers/phy/mediatek/phy-mtk-hdmi.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-ufs.c b/drivers/phy/mediatek/phy-mtk-ufs.c
-index 769b00b038d8..a6af06941203 100644
---- a/drivers/phy/mediatek/phy-mtk-ufs.c
-+++ b/drivers/phy/mediatek/phy-mtk-ufs.c
-@@ -31,11 +31,12 @@
- #define FRC_CDR_ISO_EN              BIT(19)
- #define CDR_ISO_EN                  BIT(20)
- 
-+#define UFSPHY_CLKS_CNT    2
-+
- struct ufs_mtk_phy {
- 	struct device *dev;
- 	void __iomem *mmio;
--	struct clk *mp_clk;
--	struct clk *unipro_clk;
-+	struct clk_bulk_data clks[UFSPHY_CLKS_CNT];
- };
- 
- static inline u32 mphy_readl(struct ufs_mtk_phy *phy, u32 reg)
-@@ -74,20 +75,11 @@ static struct ufs_mtk_phy *get_ufs_mtk_phy(struct phy *generic_phy)
- static int ufs_mtk_phy_clk_init(struct ufs_mtk_phy *phy)
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+index 8ad8f717ef43..5fb4217fb8e0 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.c
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+@@ -100,7 +100,6 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
  {
- 	struct device *dev = phy->dev;
-+	struct clk_bulk_data *clks = phy->clks;
+ 	struct device *dev = &pdev->dev;
+ 	struct mtk_hdmi_phy *hdmi_phy;
+-	struct resource *mem;
+ 	struct clk *ref_clk;
+ 	const char *ref_clk_name;
+ 	struct clk_init_data clk_init = {
+@@ -116,11 +115,9 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
+ 	if (!hdmi_phy)
+ 		return -ENOMEM;
  
--	phy->unipro_clk = devm_clk_get(dev, "unipro");
--	if (IS_ERR(phy->unipro_clk)) {
--		dev_err(dev, "failed to get clock: unipro");
--		return PTR_ERR(phy->unipro_clk);
+-	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	hdmi_phy->regs = devm_ioremap_resource(dev, mem);
+-	if (IS_ERR(hdmi_phy->regs)) {
++	hdmi_phy->regs = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(hdmi_phy->regs))
+ 		return PTR_ERR(hdmi_phy->regs);
 -	}
--
--	phy->mp_clk = devm_clk_get(dev, "mp");
--	if (IS_ERR(phy->mp_clk)) {
--		dev_err(dev, "failed to get clock: mp");
--		return PTR_ERR(phy->mp_clk);
--	}
--
--	return 0;
-+	clks[0].id = "unipro";
-+	clks[1].id = "mp";
-+	return devm_clk_bulk_get(dev, UFSPHY_CLKS_CNT, clks);
- }
  
- static void ufs_mtk_phy_set_active(struct ufs_mtk_phy *phy)
-@@ -150,26 +142,13 @@ static int ufs_mtk_phy_power_on(struct phy *generic_phy)
- 	struct ufs_mtk_phy *phy = get_ufs_mtk_phy(generic_phy);
- 	int ret;
- 
--	ret = clk_prepare_enable(phy->unipro_clk);
--	if (ret) {
--		dev_err(phy->dev, "unipro_clk enable failed %d\n", ret);
--		goto out;
--	}
--
--	ret = clk_prepare_enable(phy->mp_clk);
--	if (ret) {
--		dev_err(phy->dev, "mp_clk enable failed %d\n", ret);
--		goto out_unprepare_unipro_clk;
--	}
-+	ret = clk_bulk_prepare_enable(UFSPHY_CLKS_CNT, phy->clks);
-+	if (ret)
-+		return ret;
- 
- 	ufs_mtk_phy_set_active(phy);
- 
- 	return 0;
--
--out_unprepare_unipro_clk:
--	clk_disable_unprepare(phy->unipro_clk);
--out:
--	return ret;
- }
- 
- static int ufs_mtk_phy_power_off(struct phy *generic_phy)
-@@ -178,8 +157,7 @@ static int ufs_mtk_phy_power_off(struct phy *generic_phy)
- 
- 	ufs_mtk_phy_set_deep_hibern(phy);
- 
--	clk_disable_unprepare(phy->unipro_clk);
--	clk_disable_unprepare(phy->mp_clk);
-+	clk_bulk_disable_unprepare(UFSPHY_CLKS_CNT, phy->clks);
- 
- 	return 0;
- }
+ 	ref_clk = devm_clk_get(dev, "pll_ref");
+ 	if (IS_ERR(ref_clk)) {
 -- 
 2.18.0
 -- 
