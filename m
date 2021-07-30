@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2747FC4338F
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Jul 2021 16:23:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 17699C432BE
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Jul 2021 16:25:01 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DE80F60F4A
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Jul 2021 16:23:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org DE80F60F4A
+	by mail.kernel.org (Postfix) with ESMTPS id DA66860F3A
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Jul 2021 16:25:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org DA66860F3A
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,48 +23,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6XtNTT6hgx7avxAjEBk790xWojBfs+hAgKaxdFMYQ04=; b=LgLIMWYAgiTG+q
-	pcfdZv4T7BmmkoU/XN4ILVfkcHneKw70SeX8ED5mjGQQM9tHRLOdPz3T8C/R6YDaicTBXQCH1vl02
-	jigXNsX/jgzifOt9hq+RHAq/riwtqEt/lNXZCyKNUhq/ESw1RMCe7bPSyYLQInXhhdxqw7Z1KDYQv
-	dtNABfM1J+20qr3mNYL8OMlHL2B449Ps7kWxzMn+wEgrK+9Hce4jKa2N/08GEI7kVta1CUT4/xoyK
-	bpu5zV4CH9I5g8e2BJHO6tkpECid1bTAne0KN0r00c9oo2K+eDUa2mSAIij0cQ35fK9xWC8/BgXRb
-	/q3kDP1p90jXPqwqoAcw==;
+	List-Owner; bh=GNap78LhI8VeeV08LZMbxMo+S+oeCdfMF2arbfibosQ=; b=hm4lb+Kiybllq2
+	1DizW3hlzEynJi/41xdYwhaUzatj+KmdgqjxVcfvVuIFnPEdRRuogBHxDajvJIY1nVwUtEc8TqUgm
+	ZTTT6asFq//jQPgjwm92cBiQelz8IiLXGCsRg0hIeQwDtTfY7BnZ+Z03O0OhaQa9F3giBniw6gn5C
+	tpPSYokFAAqc8VnZU5CjuNEH3etG9ldHT09lvwzklnvlZUBvCTTQivTn5uSMBjT6IxGT9ojDeGb73
+	g8VRBgq6xAAUiYNW7tvwfZZ4uZAAs+nDG4tEMq+Fudyp1pNs+VLXDuwRkWYN49ILhuwkD9Wh1MXtP
+	tN04R0r7BAWZDxnBwKZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m9VIP-009Twz-Dy; Fri, 30 Jul 2021 16:23:37 +0000
+	id 1m9VJk-009UIq-CN; Fri, 30 Jul 2021 16:25:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m9VIA-009TuS-K9; Fri, 30 Jul 2021 16:23:24 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id C199760F94;
- Fri, 30 Jul 2021 16:23:21 +0000 (UTC)
+ id 1m9VJT-009UDI-Hr; Fri, 30 Jul 2021 16:24:44 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 372A56101C;
+ Fri, 30 Jul 2021 16:24:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1627662201;
- bh=FW5LB4/droceMkapj9/opDRSSB08Hj67ZWxOidv6Bak=;
+ s=k20201202; t=1627662283;
+ bh=rJGnm55O1tNTXXwwxOhfbNirfLkXYq7zue02n7Tdz6g=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=pi4Pi51yNSIBNhSaMwGePr9C1LErMMOjm7VEeu4XA+T1AoBJXCXLGmB8IrxI1e9M9
- nQnmJWRnj1dEdcCOyUhUASV58lg6mp8Q9Ch3HUwvo+M1dye9AB0F+qXy56B2fcuIL/
- 7yekJ7i6GVA27N22fvtF6si8l9zFY4GT5rxgQq2NQAS5Dq0oMzhdZOivz31N74h7Nk
- aHOOn63rsKKmynnbkepxhaPwWuzDvmlg+3JxANOZXAENVNOzRAfw28Hod0z5Ejznzw
- M68M4cIHmzUAo0PYkJMwhcdiiHP27Sm3RhbIw2ew0QAaHWd8z7SZn4SYwA/sDM82Ju
- Son813H1X1wtg==
-Received: by mail-ed1-f46.google.com with SMTP id y7so11716313eda.5;
- Fri, 30 Jul 2021 09:23:21 -0700 (PDT)
-X-Gm-Message-State: AOAM5300HV2HR/WAa+sJ9SsoHeFIVBpRysKp0NiD6XWaAotEbN1OsLf5
- ilbXjAEPOk6Y4ITDHq9q6Kk3lcisvfwR2EScyg==
-X-Google-Smtp-Source: ABdhPJzMdtcUi1zO0dPd4SSrt2q34Yx/1YxBJlURSGlVXMthQEd0rhojXPsJpfAwWhNd3aUVC/s1oj1cE69g15qMsjo=
-X-Received: by 2002:a05:6402:718:: with SMTP id
- w24mr3884876edx.49.1627662200337; 
- Fri, 30 Jul 2021 09:23:20 -0700 (PDT)
+ b=oiGzBHlg862uFecdCPxiopLytEgtT9H1q/AcThot49jQjIX0/d5bVk+dLn37KqRGH
+ BEJyH+6mdVrVF0tRLmWiO7o1PbM8jL0YVqZBN0Q4rgb8dRbSi6L1bRLPH1ocjzoirT
+ cp4r77MxFGSCqexTnykNH+UpxKj1SWzfg2c9j4wGfiHUB1Zsgm0+hrqZHFv/k3w0EC
+ brPZJ9F45MuY4VagEY4q4F5W3wJwcH4JZaEQn+s4lzkoQYAkZNpNUCoRGdaKecfPhc
+ mB7/zX7jbSUiVl6llFHL6nxGTUpZIzevCYu5z12RyOwZTDTUa7hkbcCp+FiAIJlPj0
+ rjsgnSxSRyVKg==
+Received: by mail-ed1-f53.google.com with SMTP id j2so13912820edp.11;
+ Fri, 30 Jul 2021 09:24:43 -0700 (PDT)
+X-Gm-Message-State: AOAM531xXx4zcLHlUSH+CgcPwPbg3EwQ+KO3z1OcUZl4tQPLF5gqtNJK
+ 5bTXLy/VUD2KPAjA4p8wXE9eeW4GogIIlswE3w==
+X-Google-Smtp-Source: ABdhPJyA06qzYSh+f7EEVqAUfFRLkrZuqD1G+Hvft9QlGEOSN9ieg2X5H3Hxms9/ORgFt0VU+fGNT3l+kVqqUAMyCdw=
+X-Received: by 2002:a50:d71e:: with SMTP id t30mr3917906edi.72.1627662281812; 
+ Fri, 30 Jul 2021 09:24:41 -0700 (PDT)
 MIME-Version: 1.0
 References: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
- <1627459111-2907-7-git-send-email-chunfeng.yun@mediatek.com>
-In-Reply-To: <1627459111-2907-7-git-send-email-chunfeng.yun@mediatek.com>
+ <1627459111-2907-8-git-send-email-chunfeng.yun@mediatek.com>
+In-Reply-To: <1627459111-2907-8-git-send-email-chunfeng.yun@mediatek.com>
 From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Sat, 31 Jul 2021 00:23:09 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_95Qpv-RjxzWteQ-+p=P0siC2c0vAQdkx-V7bfCwgn34g@mail.gmail.com>
-Message-ID: <CAAOTY_95Qpv-RjxzWteQ-+p=P0siC2c0vAQdkx-V7bfCwgn34g@mail.gmail.com>
-Subject: Re: [PATCH 7/9] phy: phy-mtk-hdmi: convert to
- devm_platform_ioremap_resource
+Date: Sat, 31 Jul 2021 00:24:31 +0800
+X-Gmail-Original-Message-ID: <CAAOTY_8XCeWbiHziB9=2EdUFmOg1m6eOi1qTN1QppqRKaS07xA@mail.gmail.com>
+Message-ID: <CAAOTY_8XCeWbiHziB9=2EdUFmOg1m6eOi1qTN1QppqRKaS07xA@mail.gmail.com>
+Subject: Re: [PATCH 8/9] phy: phy-mtk-mipi-dsi: remove dummy assignment of
+ error number
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
  Chun-Kuang Hu <chunkuang.hu@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
@@ -77,8 +76,8 @@ Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  DRI Development <dri-devel@lists.freedesktop.org>,
  Eddie Hung <eddie.hung@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210730_092322_715546_76E6BE24 
-X-CRM114-Status: GOOD (  15.33  )
+X-CRM114-CacheID: sfid-20210730_092443_659001_B7971629 
+X-CRM114-Status: GOOD (  13.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,31 +95,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 SGksIENodW5mZW5nOgoKQ2h1bmZlbmcgWXVuIDxjaHVuZmVuZy55dW5AbWVkaWF0ZWsuY29tPiDm
-lrwgMjAyMeW5tDfmnIgyOOaXpSDpgLHkuIkg5LiL5Y2IMzo1OeWvq+mBk++8mgo+Cj4gVXNlIGRl
-dm1fcGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZSB0byBzaW1wbGlmeSBjb2RlCgpBY2tlZC1ieTog
+lrwgMjAyMeW5tDfmnIgyOOaXpSDpgLHkuIkg5LiL5Y2IMzo1OeWvq+mBk++8mgo+Cj4gUmV0dXJu
+IHRoZSBlcnJvciBudW1iZXIgZGlyZWN0bHkgd2l0aG91dCBhc3NpZ25tZW50CgpBY2tlZC1ieTog
 Q2h1bi1LdWFuZyBIdSA8Y2h1bmt1YW5nLmh1QGtlcm5lbC5vcmc+Cgo+Cj4gU2lnbmVkLW9mZi1i
 eTogQ2h1bmZlbmcgWXVuIDxjaHVuZmVuZy55dW5AbWVkaWF0ZWsuY29tPgo+IC0tLQo+ICBkcml2
-ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWkuYyB8IDcgKystLS0tLQo+ICAxIGZpbGUgY2hh
-bmdlZCwgMiBpbnNlcnRpb25zKCspLCA1IGRlbGV0aW9ucygtKQo+Cj4gZGlmZiAtLWdpdCBhL2Ry
-aXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS5jIGIvZHJpdmVycy9waHkvbWVkaWF0ZWsv
-cGh5LW10ay1oZG1pLmMKPiBpbmRleCA4YWQ4ZjcxN2VmNDMuLjVmYjQyMTdmYjhlMCAxMDA2NDQK
-PiAtLS0gYS9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWhkbWkuYwo+ICsrKyBiL2RyaXZl
-cnMvcGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS5jCj4gQEAgLTEwMCw3ICsxMDAsNiBAQCBzdGF0
-aWMgaW50IG10a19oZG1pX3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+
-ICB7Cj4gICAgICAgICBzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmcGRldi0+ZGV2Owo+ICAgICAgICAg
-c3RydWN0IG10a19oZG1pX3BoeSAqaGRtaV9waHk7Cj4gLSAgICAgICBzdHJ1Y3QgcmVzb3VyY2Ug
-Km1lbTsKPiAgICAgICAgIHN0cnVjdCBjbGsgKnJlZl9jbGs7Cj4gICAgICAgICBjb25zdCBjaGFy
-ICpyZWZfY2xrX25hbWU7Cj4gICAgICAgICBzdHJ1Y3QgY2xrX2luaXRfZGF0YSBjbGtfaW5pdCA9
-IHsKPiBAQCAtMTE2LDExICsxMTUsOSBAQCBzdGF0aWMgaW50IG10a19oZG1pX3BoeV9wcm9iZShz
-dHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAgICAgICAgaWYgKCFoZG1pX3BoeSkKPiAg
-ICAgICAgICAgICAgICAgcmV0dXJuIC1FTk9NRU07Cj4KPiAtICAgICAgIG1lbSA9IHBsYXRmb3Jt
-X2dldF9yZXNvdXJjZShwZGV2LCBJT1JFU09VUkNFX01FTSwgMCk7Cj4gLSAgICAgICBoZG1pX3Bo
-eS0+cmVncyA9IGRldm1faW9yZW1hcF9yZXNvdXJjZShkZXYsIG1lbSk7Cj4gLSAgICAgICBpZiAo
-SVNfRVJSKGhkbWlfcGh5LT5yZWdzKSkgewo+ICsgICAgICAgaGRtaV9waHktPnJlZ3MgPSBkZXZt
-X3BsYXRmb3JtX2lvcmVtYXBfcmVzb3VyY2UocGRldiwgMCk7Cj4gKyAgICAgICBpZiAoSVNfRVJS
-KGhkbWlfcGh5LT5yZWdzKSkKPiAgICAgICAgICAgICAgICAgcmV0dXJuIFBUUl9FUlIoaGRtaV9w
-aHktPnJlZ3MpOwo+IC0gICAgICAgfQo+Cj4gICAgICAgICByZWZfY2xrID0gZGV2bV9jbGtfZ2V0
-KGRldiwgInBsbF9yZWYiKTsKPiAgICAgICAgIGlmIChJU19FUlIocmVmX2NsaykpIHsKPiAtLQo+
-IDIuMTguMAo+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1waHkK
+ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLW1pcGktZHNpLmMgfCA2ICsrLS0tLQo+ICAxIGZpbGUg
+Y2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+Cj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstbWlwaS1kc2kuYyBiL2RyaXZlcnMvcGh5L21l
+ZGlhdGVrL3BoeS1tdGstbWlwaS1kc2kuYwo+IGluZGV4IDAxY2YzMTYzMzAxOS4uNjFjOTQyZmJm
+NGExIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstbWlwaS1kc2ku
+Ywo+ICsrKyBiL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstbWlwaS1kc2kuYwo+IEBAIC0y
+MDMsMTAgKzIwMyw4IEBAIHN0YXRpYyBpbnQgbXRrX21pcGlfdHhfcHJvYmUoc3RydWN0IHBsYXRm
+b3JtX2RldmljZSAqcGRldikKPiAgICAgICAgIHBoeV9zZXRfZHJ2ZGF0YShwaHksIG1pcGlfdHgp
+Owo+Cj4gICAgICAgICBwaHlfcHJvdmlkZXIgPSBkZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3Rl
+cihkZXYsIG9mX3BoeV9zaW1wbGVfeGxhdGUpOwo+IC0gICAgICAgaWYgKElTX0VSUihwaHlfcHJv
+dmlkZXIpKSB7Cj4gLSAgICAgICAgICAgICAgIHJldCA9IFBUUl9FUlIocGh5X3Byb3ZpZGVyKTsK
+PiAtICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKPiAtICAgICAgIH0KPiArICAgICAgIGlmIChJ
+U19FUlIocGh5X3Byb3ZpZGVyKSkKPiArICAgICAgICAgICAgICAgcmV0dXJuIFBUUl9FUlIocGh5
+X3Byb3ZpZGVyKTsKPgo+ICAgICAgICAgbWlwaV90eC0+ZGV2ID0gZGV2Owo+Cj4gLS0KPiAyLjE4
+LjAKPgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
