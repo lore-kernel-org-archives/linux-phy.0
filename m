@@ -1,84 +1,69 @@
-Return-Path: <SRS0=wp9D=MW=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Vb9z=MY=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-6.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_2 autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5234CC4338F
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Jul 2021 16:25:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AC8F0C4338F
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Aug 2021 16:55:15 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 18D8F60EE2
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Jul 2021 16:25:58 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 18D8F60EE2
+	by mail.kernel.org (Postfix) with ESMTPS id 70415610A8
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Aug 2021 16:55:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 70415610A8
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b+iHdAwazMt1r4o/v1mO2HJj1Tk94myuUgsdXjTgcQk=; b=jwiT9ZnaVASrBR
-	CySdk2xoXnRCAU4DAVkJxFOQ0nY6Eo1eKvazlvlEV1Y9BFvvNbRcu+9OJv5Cizz95SVmCgqlZUCV3
-	Ktq53PtIa0aKHLFypt3azJcNcUs9VZS1x+D7OQpFrVLoLL5ctj+mUOxkQfBX50DbM42WNFqAJ/BGI
-	Nnb1hqlsokjZmcnvPARkF3dR6EnPUMG8iF84kpc4HaYvtAmyhACZDta1RCM6OswVm+ZYc5e6Ctw9x
-	YIx5R7ZrU/R1x8ZgV45A9sBHu4w7U1WeSla+Qod2FBEwMwML+nDEJTg+p60ZNSEFDahzzg1Seg3IC
-	dmytwFjOiq6pAX+Lt18Q==;
+	List-Owner; bh=pO49HRtj6/qyL1xHMwDm5WJfAvIcyn2kkqv790mGhNw=; b=mc8gX2A9OpyENE
+	Pl5YC3ZK3PgG86LDBzfZVdP5BQdsDJIrx0pe7uEmQtmA3U0WF7waSYLHrGG8eMdZz8EfQniWfufvD
+	n6uli5wBabTEu5zCZqKrZD1SaP8gkt2DhcC6tUp643K44zmQiHtxPNgVWQ0vzpWKX6JVKrsGI01XK
+	oCoRr+XrYQ5NHuHybPtAENHvPCMzNGxD+XlWHQormJvOOGYh2XFKhNVreSgSdxCjzQ2DGxqR5E21L
+	jtK4l2QMK+ViEgAVgO3hJ09Ct9/humIBkeD8/TeNeKxpMAU+pB1NZ5ZRRZkFjDzimaiknLWwgUGev
+	fikVWejBY3WaNPjcMp7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m9VKf-009UfW-HW; Fri, 30 Jul 2021 16:25:57 +0000
+	id 1mAEk6-00DuZC-W3; Sun, 01 Aug 2021 16:55:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m9VKK-009UWi-Fr; Fri, 30 Jul 2021 16:25:37 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 2C34361042;
- Fri, 30 Jul 2021 16:25:36 +0000 (UTC)
+ id 1mAEk3-00DuYj-S8
+ for linux-phy@lists.infradead.org; Sun, 01 Aug 2021 16:55:13 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id BC51B60EE9;
+ Sun,  1 Aug 2021 16:55:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1627662336;
- bh=sA63E+oqJJ7UWdv9uF5sfRhQ4j6Gx9VX+xOpdEdo6h0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=jS9BFccOPTpKkCjJFTCBO88F3DMk2jMCRhK5QLV98IdkyJEYmWlVu2687SC1u+k/Y
- fjZbpEiAHibvKnttArOqEu2LzesWS7xeTlvTq4jNS30COCDt8qjQzLOSTtSWv/Aa0x
- XtwrqpL6Kx+8m3x1IBYfsNOo256Uu5JRBU6r8bgZcjlC/rk7Nf+qlKOb9EobGPA1Gb
- S6NAsJnD9lbiirauTk8rFXJIlvRXyXNDo1Ch4G+ZeHoLIaesAidiGp91wZIGcDdtde
- Nn4tjlBX4lTDcO5FVG8L4+Tpa1FKXmGqpH6Cwyh07jM2tNIcwbkQqjLVrYEITzrOer
- GxNFMn8eJKapQ==
-Received: by mail-ej1-f54.google.com with SMTP id gs8so17701297ejc.13;
- Fri, 30 Jul 2021 09:25:36 -0700 (PDT)
-X-Gm-Message-State: AOAM532pwmN3yB3Xe3JLUJBGMjm6i6MkhiY6kfOa1arNApz5IvJ/05QU
- PsyDQsIMwgKi5Qjaxg6x1osgrg731Y+vwuMfpg==
-X-Google-Smtp-Source: ABdhPJzUHXufwkXoss/77m4sQYQ/EZIV/apB3ArXywXGuhy8awJUzO6fvBpnf0vnZmbGVPevzW+1OUX0QTzvPondd38=
-X-Received: by 2002:a17:906:2497:: with SMTP id
- e23mr3371194ejb.194.1627662334694; 
- Fri, 30 Jul 2021 09:25:34 -0700 (PDT)
+ s=k20201202; t=1627836910;
+ bh=t0F14vvjAbS4suu+eRLbQ6noEGxXjuGG6u4ukmGqh6E=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=jRK5hsfv4Q6r3RUtHh4pyi4copIhvH6jbUo5DSq6T6Ki2cDN6SxK9S/xOYMw5HuM4
+ yXX7ca6ZtTailRC+RpMXG5ZEt8ZahdFo0mKdP3q48ALNXSu3saxQcfEAAJzS8uudaC
+ Zw+3lcnySqlv8h4qRplaYL1EPDPLvpK/deQKfpxjcO5B2zpDo311ATs8cG/hXcinJN
+ dcE4pVsT34V1p7cRi4/U2tMWfbKhuGT/TNtRAtgVeDQpwGAHmZzZikey+ukHskqV2J
+ ND0yrMwcn0S9H1fRddsXUgTIh5vzbDe1YAcgCqrkygDjXh+vGKHdo02c1Oclzy6BJ+
+ 1YU0FpdD5eLJw==
+Date: Sun, 1 Aug 2021 18:55:00 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Rob
+ Herring <robh@kernel.org>
+Cc: Krzysztof =?UTF-8?B?V2lsY3p5xYRza2k=?= <kw@linux.com>, Binghui Wang
+ <wangbinghui@hisilicon.com>, Xiaowei Song <songxiaowei@hisilicon.com>,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH v8 00/11] Add support for Hikey 970 PCIe
+Message-ID: <20210801185500.7fbb1849@coco.lan>
+In-Reply-To: <cover.1627637745.git.mchehab+huawei@kernel.org>
+References: <cover.1627637745.git.mchehab+huawei@kernel.org>
+X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.30; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-References: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
- <1627459111-2907-9-git-send-email-chunfeng.yun@mediatek.com>
-In-Reply-To: <1627459111-2907-9-git-send-email-chunfeng.yun@mediatek.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Sat, 31 Jul 2021 00:25:23 +0800
-X-Gmail-Original-Message-ID: <CAAOTY__fG3Q9RGfONw4kmgdAnxuZ4bAbD9PaggPSPyfB+5p==A@mail.gmail.com>
-Message-ID: <CAAOTY__fG3Q9RGfONw4kmgdAnxuZ4bAbD9PaggPSPyfB+5p==A@mail.gmail.com>
-Subject: Re: [PATCH 9/9] phy: phy-mtk-mipi-dsi: convert to
- devm_platform_ioremap_resource
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>, 
- Linux ARM <linux-arm-kernel@lists.infradead.org>, 
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- linux-phy@lists.infradead.org, 
- DTML <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Eddie Hung <eddie.hung@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210730_092536_611536_1CDC5B3E 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20210801_095512_005567_F5C87432 
+X-CRM114-Status: GOOD (  10.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,37 +75,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksIENodW5mZW5nOgoKQ2h1bmZlbmcgWXVuIDxjaHVuZmVuZy55dW5AbWVkaWF0ZWsuY29tPiDm
-lrwgMjAyMeW5tDfmnIgyOOaXpSDpgLHkuIkg5LiL5Y2IMzo1OeWvq+mBk++8mgo+Cj4gVXNlIGRl
-dm1fcGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZSB0byBzaW1wbGlmeSBjb2RlCgpBY2tlZC1ieTog
-Q2h1bi1LdWFuZyBIdSA8Y2h1bmt1YW5nLmh1QGtlcm5lbC5vcmc+Cgo+Cj4gU2lnbmVkLW9mZi1i
-eTogQ2h1bmZlbmcgWXVuIDxjaHVuZmVuZy55dW5AbWVkaWF0ZWsuY29tPgo+IC0tLQo+ICBkcml2
-ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLW1pcGktZHNpLmMgfCA3ICsrLS0tLS0KPiAgMSBmaWxl
-IGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgNSBkZWxldGlvbnMoLSkKPgo+IGRpZmYgLS1naXQg
-YS9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLW1pcGktZHNpLmMgYi9kcml2ZXJzL3BoeS9t
-ZWRpYXRlay9waHktbXRrLW1pcGktZHNpLmMKPiBpbmRleCA2MWM5NDJmYmY0YTEuLjI4YWQ5NDAz
-YzQ0MSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLW1pcGktZHNp
-LmMKPiArKysgYi9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLW1pcGktZHNpLmMKPiBAQCAt
-MTMwLDcgKzEzMCw2IEBAIHN0YXRpYyBpbnQgbXRrX21pcGlfdHhfcHJvYmUoc3RydWN0IHBsYXRm
-b3JtX2RldmljZSAqcGRldikKPiAgewo+ICAgICAgICAgc3RydWN0IGRldmljZSAqZGV2ID0gJnBk
-ZXYtPmRldjsKPiAgICAgICAgIHN0cnVjdCBtdGtfbWlwaV90eCAqbWlwaV90eDsKPiAtICAgICAg
-IHN0cnVjdCByZXNvdXJjZSAqbWVtOwo+ICAgICAgICAgY29uc3QgY2hhciAqcmVmX2Nsa19uYW1l
-Owo+ICAgICAgICAgc3RydWN0IGNsayAqcmVmX2NsazsKPiAgICAgICAgIHN0cnVjdCBjbGtfaW5p
-dF9kYXRhIGNsa19pbml0ID0gewo+IEBAIC0xNDgsMTEgKzE0Nyw5IEBAIHN0YXRpYyBpbnQgbXRr
-X21pcGlfdHhfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPgo+ICAgICAgICAg
-bWlwaV90eC0+ZHJpdmVyX2RhdGEgPSBvZl9kZXZpY2VfZ2V0X21hdGNoX2RhdGEoZGV2KTsKPgo+
-IC0gICAgICAgbWVtID0gcGxhdGZvcm1fZ2V0X3Jlc291cmNlKHBkZXYsIElPUkVTT1VSQ0VfTUVN
-LCAwKTsKPiAtICAgICAgIG1pcGlfdHgtPnJlZ3MgPSBkZXZtX2lvcmVtYXBfcmVzb3VyY2UoZGV2
-LCBtZW0pOwo+IC0gICAgICAgaWYgKElTX0VSUihtaXBpX3R4LT5yZWdzKSkgewo+ICsgICAgICAg
-bWlwaV90eC0+cmVncyA9IGRldm1fcGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZShwZGV2LCAwKTsK
-PiArICAgICAgIGlmIChJU19FUlIobWlwaV90eC0+cmVncykpCj4gICAgICAgICAgICAgICAgIHJl
-dHVybiBQVFJfRVJSKG1pcGlfdHgtPnJlZ3MpOwo+IC0gICAgICAgfQo+Cj4gICAgICAgICByZWZf
-Y2xrID0gZGV2bV9jbGtfZ2V0KGRldiwgTlVMTCk7Cj4gICAgICAgICBpZiAoSVNfRVJSKHJlZl9j
-bGspKSB7Cj4gLS0KPiAyLjE4LjAKPgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Em Fri, 30 Jul 2021 11:50:03 +0200
+Mauro Carvalho Chehab <mchehab+huawei@kernel.org> escreveu:
+
+> On this version, the DT bindings were split on a separate patch series:
+> 	https://lore.kernel.org/lkml/cover.1627637448.git.mchehab+huawei@kernel.org/
+> 
+> The patches here should apply cleanly on the top of v5.14-rc1.
+> 
+> patch1 contains a PHY for Kirin 970 PCIe.
+> 
+> The remaining patches add support for Kirin 970 at the pcie-kirin driver, and
+> add the needed logic to compile it as module and to allow to dynamically
+> remove the driver in runtime.
+> 
+> Tested on HiKey970:
+> 
+>   # lspci -D -PP
+>   0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
+>   0000:00:00.0/01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+>   0000:00:00.0/01:00.0/02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+>   0000:00:00.0/01:00.0/02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+>   0000:00:00.0/01:00.0/02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+>   0000:00:00.0/01:00.0/02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+>   0000:00:00.0/01:00.0/02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+>   0000:00:00.0/01:00.0/02:01.0/03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a809
+>   0000:00:00.0/01:00.0/02:07.0/06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
+
+
+As a reference, this is HiKey970 with both M.2 and mini-PCIe slots with
+devices:
+
+# lspci -D -PP
+0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
+0000:00:00.0/01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+0000:00:00.0/01:00.0/02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+0000:00:00.0/01:00.0/02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+0000:00:00.0/01:00.0/02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+0000:00:00.0/01:00.0/02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+0000:00:00.0/01:00.0/02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+0000:00:00.0/01:00.0/02:01.0/03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a809
+0000:00:00.0/01:00.0/02:05.0/05:00.0 Network controller: Intel Corporation Centrino Advanced-N + WiMAX 6250 [Kilmer Peak] (rev 5e)
+0000:00:00.0/01:00.0/02:07.0/06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
+
+Regards,
+Mauro
+
+Thanks,
+Mauro
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
