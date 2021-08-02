@@ -1,69 +1,86 @@
-Return-Path: <SRS0=Vb9z=MY=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=RY/A=MZ=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-6.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_2 autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AC8F0C4338F
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Aug 2021 16:55:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 806B2C432BE
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Aug 2021 20:55:51 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 70415610A8
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Aug 2021 16:55:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 70415610A8
+	by mail.kernel.org (Postfix) with ESMTPS id 508D260F48
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Aug 2021 20:55:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 508D260F48
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pO49HRtj6/qyL1xHMwDm5WJfAvIcyn2kkqv790mGhNw=; b=mc8gX2A9OpyENE
-	Pl5YC3ZK3PgG86LDBzfZVdP5BQdsDJIrx0pe7uEmQtmA3U0WF7waSYLHrGG8eMdZz8EfQniWfufvD
-	n6uli5wBabTEu5zCZqKrZD1SaP8gkt2DhcC6tUp643K44zmQiHtxPNgVWQ0vzpWKX6JVKrsGI01XK
-	oCoRr+XrYQ5NHuHybPtAENHvPCMzNGxD+XlWHQormJvOOGYh2XFKhNVreSgSdxCjzQ2DGxqR5E21L
-	jtK4l2QMK+ViEgAVgO3hJ09Ct9/humIBkeD8/TeNeKxpMAU+pB1NZ5ZRRZkFjDzimaiknLWwgUGev
-	fikVWejBY3WaNPjcMp7g==;
+	List-Owner; bh=nGGwDZ4YqlS9uEnLeRSi7/+XASalmmo6p4elaLcDT5Y=; b=sAYwrln6TzIgl2
+	MDtXIDDN0ofyuCzQK89ZicIKqi6ag094gbSAW46tIAMf5lJ1t02pzYRmXPKQrjmbReyQ1RwwMGMel
+	jV1ED7t0GA72SafPP7w1djuEkuNLj2iHKscVly9TjWZIML/+P3abM9Iuup7pktuaYVc/dcNMt0fsX
+	KGQvcQWyMM2jf3AboCdwFHSjHN8aiQXv9B2jUkoJ1SSFlyT1mbArw8P6mHu8oyOl+xskK4S92c+5q
+	Xy1yGFLaVXLWVzqK2LROX1V4s5Mt3AnbHrRoAMrCodEUGKcJVFpOPlHDDHhh/NsmpLJEwicK8jEqG
+	b/M2eOOgEWwez3oaD91Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mAEk6-00DuZC-W3; Sun, 01 Aug 2021 16:55:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mAeyU-000DED-Sx; Mon, 02 Aug 2021 20:55:50 +0000
+Received: from mail-io1-f47.google.com ([209.85.166.47])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mAEk3-00DuYj-S8
- for linux-phy@lists.infradead.org; Sun, 01 Aug 2021 16:55:13 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id BC51B60EE9;
- Sun,  1 Aug 2021 16:55:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1627836910;
- bh=t0F14vvjAbS4suu+eRLbQ6noEGxXjuGG6u4ukmGqh6E=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=jRK5hsfv4Q6r3RUtHh4pyi4copIhvH6jbUo5DSq6T6Ki2cDN6SxK9S/xOYMw5HuM4
- yXX7ca6ZtTailRC+RpMXG5ZEt8ZahdFo0mKdP3q48ALNXSu3saxQcfEAAJzS8uudaC
- Zw+3lcnySqlv8h4qRplaYL1EPDPLvpK/deQKfpxjcO5B2zpDo311ATs8cG/hXcinJN
- dcE4pVsT34V1p7cRi4/U2tMWfbKhuGT/TNtRAtgVeDQpwGAHmZzZikey+ukHskqV2J
- ND0yrMwcn0S9H1fRddsXUgTIh5vzbDe1YAcgCqrkygDjXh+vGKHdo02c1Oclzy6BJ+
- 1YU0FpdD5eLJw==
-Date: Sun, 1 Aug 2021 18:55:00 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Rob
- Herring <robh@kernel.org>
-Cc: Krzysztof =?UTF-8?B?V2lsY3p5xYRza2k=?= <kw@linux.com>, Binghui Wang
- <wangbinghui@hisilicon.com>, Xiaowei Song <songxiaowei@hisilicon.com>,
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH v8 00/11] Add support for Hikey 970 PCIe
-Message-ID: <20210801185500.7fbb1849@coco.lan>
-In-Reply-To: <cover.1627637745.git.mchehab+huawei@kernel.org>
-References: <cover.1627637745.git.mchehab+huawei@kernel.org>
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.30; x86_64-redhat-linux-gnu)
+ id 1mAeyT-000DDb-0E
+ for linux-phy@lists.infradead.org; Mon, 02 Aug 2021 20:55:50 +0000
+Received: by mail-io1-f47.google.com with SMTP id y200so21871076iof.1
+ for <linux-phy@lists.infradead.org>; Mon, 02 Aug 2021 13:55:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Gg1BvQRuyVDkBMaHEC+x+cCkCoIuykzg2HO8zEzWVkU=;
+ b=Wt2okZJ19NbspWbPQSF//y6oBWEG9fbAgQX7E8jbxz74KI+lLtE5eVaUGjvb36qx7V
+ if312WCjOuoj8Z9BT67tk28Po9Lpix6VWf6RGD1+/qGngAUhmkQ0JLnr88OR47Z6snum
+ 2Ng/nNlIrULzgTdcd1nQhP+PsjuqZL7pwIqappsDHdKUSDTfDs6m/CNrgWfY+fdMGvn/
+ QRWIi/vJEzwno5K+3ZfDEUr4X+57kgwxmz2atZFySu34yvjao+caeuqWhOFFPwUixhr1
+ E/suGVLicF7T6W8HCQFYY5/Aneujqi//1ZraVN6RUlxeO6DgtjK99hST0b8BsKSW0Dqw
+ mw9w==
+X-Gm-Message-State: AOAM533Cn+BeOizeY69WkzgtdBjl61P+Rm5URIryJu2HYc4v0BgOQ1u4
+ 1CDkRvng0UXv9H8ALUYlgw==
+X-Google-Smtp-Source: ABdhPJxyfELgaOHxtqFMAFc4cSJAkj0asz918/5SVNfc7XxjOCOUwylMbjXvVZyv5bDwIGqVg6tCHQ==
+X-Received: by 2002:a5e:8d03:: with SMTP id m3mr2402340ioj.200.1627937748437; 
+ Mon, 02 Aug 2021 13:55:48 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+ by smtp.gmail.com with ESMTPSA id t26sm7810751iob.19.2021.08.02.13.55.46
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Aug 2021 13:55:47 -0700 (PDT)
+Received: (nullmailer pid 1594532 invoked by uid 1000);
+ Mon, 02 Aug 2021 20:55:45 -0000
+Date: Mon, 2 Aug 2021 14:55:45 -0600
+From: Rob Herring <robh@kernel.org>
+To: Biju Das <biju.das.jz@bp.renesas.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-renesas-soc@vger.kernel.org,
+ linux-phy@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Chris Paterson <Chris.Paterson2@renesas.com>, Vinod Koul <vkoul@kernel.org>,
+ devicetree@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: Re: [PATCH v5 2/6] dt-bindings: phy: renesas,usb2-phy: Document
+ RZ/G2L phy bindings
+Message-ID: <YQhb0Ygfod+K9Xf6@robh.at.kernel.org>
+References: <20210727185527.19907-1-biju.das.jz@bp.renesas.com>
+ <20210727185527.19907-3-biju.das.jz@bp.renesas.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210727185527.19907-3-biju.das.jz@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210801_095512_005567_F5C87432 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20210802_135549_091329_64FBC8AD 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,54 +97,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Em Fri, 30 Jul 2021 11:50:03 +0200
-Mauro Carvalho Chehab <mchehab+huawei@kernel.org> escreveu:
-
-> On this version, the DT bindings were split on a separate patch series:
-> 	https://lore.kernel.org/lkml/cover.1627637448.git.mchehab+huawei@kernel.org/
+On Tue, 27 Jul 2021 19:55:23 +0100, Biju Das wrote:
+> Document USB phy bindings for RZ/G2L SoC.
 > 
-> The patches here should apply cleanly on the top of v5.14-rc1.
+> RZ/G2L USB2.0 phy uses line ctrl register for OTG_ID pin changes. It uses
+> a different OTG-BC interrupt bit for device recognition. Apart from this,
+> the PHY reset is controlled by USBPHY control IP and Document reset is a
+> required property.
 > 
-> patch1 contains a PHY for Kirin 970 PCIe.
+> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+> Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+> v4->v5:
+>  * Removed 'properties' and just used 'required' for RZ/G2L SoC.
+> v3->v4:
+>  * Removed second reset
+>  * Added family specific compatible string.
+> v2->v3
+>  * Created a new compatible for RZ/G2L as per Geert's suggestion.
+>  * Added resets required properties for RZ/G2L SoC.
+> ---
+>  .../devicetree/bindings/phy/renesas,usb2-phy.yaml | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
 > 
-> The remaining patches add support for Kirin 970 at the pcie-kirin driver, and
-> add the needed logic to compile it as module and to allow to dynamically
-> remove the driver in runtime.
-> 
-> Tested on HiKey970:
-> 
->   # lspci -D -PP
->   0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
->   0000:00:00.0/01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:01.0/03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a809
->   0000:00:00.0/01:00.0/02:07.0/06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
 
-
-As a reference, this is HiKey970 with both M.2 and mini-PCIe slots with
-devices:
-
-# lspci -D -PP
-0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
-0000:00:00.0/01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-0000:00:00.0/01:00.0/02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-0000:00:00.0/01:00.0/02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-0000:00:00.0/01:00.0/02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-0000:00:00.0/01:00.0/02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-0000:00:00.0/01:00.0/02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
-0000:00:00.0/01:00.0/02:01.0/03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a809
-0000:00:00.0/01:00.0/02:05.0/05:00.0 Network controller: Intel Corporation Centrino Advanced-N + WiMAX 6250 [Kilmer Peak] (rev 5e)
-0000:00:00.0/01:00.0/02:07.0/06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
-
-Regards,
-Mauro
-
-Thanks,
-Mauro
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
