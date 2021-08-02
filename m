@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 806B2C432BE
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Aug 2021 20:55:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A6B12C432BE
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Aug 2021 21:33:57 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 508D260F48
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Aug 2021 20:55:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 508D260F48
+	by mail.kernel.org (Postfix) with ESMTPS id 6F90860EB2
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Aug 2021 21:33:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6F90860EB2
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,64 +23,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nGGwDZ4YqlS9uEnLeRSi7/+XASalmmo6p4elaLcDT5Y=; b=sAYwrln6TzIgl2
-	MDtXIDDN0ofyuCzQK89ZicIKqi6ag094gbSAW46tIAMf5lJ1t02pzYRmXPKQrjmbReyQ1RwwMGMel
-	jV1ED7t0GA72SafPP7w1djuEkuNLj2iHKscVly9TjWZIML/+P3abM9Iuup7pktuaYVc/dcNMt0fsX
-	KGQvcQWyMM2jf3AboCdwFHSjHN8aiQXv9B2jUkoJ1SSFlyT1mbArw8P6mHu8oyOl+xskK4S92c+5q
-	Xy1yGFLaVXLWVzqK2LROX1V4s5Mt3AnbHrRoAMrCodEUGKcJVFpOPlHDDHhh/NsmpLJEwicK8jEqG
-	b/M2eOOgEWwez3oaD91Q==;
+	List-Owner; bh=1GODhcyAQ2IFVrB6c/fiSnCF177NjsWbFm5rEEGSlK0=; b=n5xyM4bjz3q+c4
+	1hTnI0PxBb7/soF61is8tpP9f+214jAJHeroarhf3+s+fy17ieFTxG7mQhBPjZMP/exNONobcn/NB
+	b9TTQ3IooFU45ukxh0/TFwCFljP/Byf0CBpAX/2+nMZtUNxEWahitk39Ztye/TjHeFionW8mppnGd
+	+JNT+M4ZP+8838Ol9voaPfvPfUc/fm9daWMBTO1B3f/rThsolY9h75ovFcVnHG6yL2RP19vzDDbsH
+	V1ZYVGUpcjT1bbE3oFV4QA96+KUvhz0WQkSQsDMIIoHpUcmAXT/n0ch+NE4M3ygNDq8GS5pp38Zfk
+	ZRvoOFrkIMykAlMk1gAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mAeyU-000DED-Sx; Mon, 02 Aug 2021 20:55:50 +0000
-Received: from mail-io1-f47.google.com ([209.85.166.47])
+	id 1mAfZM-000IGk-Tu; Mon, 02 Aug 2021 21:33:56 +0000
+Received: from mail-il1-f173.google.com ([209.85.166.173])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mAeyT-000DDb-0E
- for linux-phy@lists.infradead.org; Mon, 02 Aug 2021 20:55:50 +0000
-Received: by mail-io1-f47.google.com with SMTP id y200so21871076iof.1
- for <linux-phy@lists.infradead.org>; Mon, 02 Aug 2021 13:55:48 -0700 (PDT)
+ id 1mAfZ9-000IDA-4s; Mon, 02 Aug 2021 21:33:44 +0000
+Received: by mail-il1-f173.google.com with SMTP id f8so14521262ilr.4;
+ Mon, 02 Aug 2021 14:33:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=Gg1BvQRuyVDkBMaHEC+x+cCkCoIuykzg2HO8zEzWVkU=;
- b=Wt2okZJ19NbspWbPQSF//y6oBWEG9fbAgQX7E8jbxz74KI+lLtE5eVaUGjvb36qx7V
- if312WCjOuoj8Z9BT67tk28Po9Lpix6VWf6RGD1+/qGngAUhmkQ0JLnr88OR47Z6snum
- 2Ng/nNlIrULzgTdcd1nQhP+PsjuqZL7pwIqappsDHdKUSDTfDs6m/CNrgWfY+fdMGvn/
- QRWIi/vJEzwno5K+3ZfDEUr4X+57kgwxmz2atZFySu34yvjao+caeuqWhOFFPwUixhr1
- E/suGVLicF7T6W8HCQFYY5/Aneujqi//1ZraVN6RUlxeO6DgtjK99hST0b8BsKSW0Dqw
- mw9w==
-X-Gm-Message-State: AOAM533Cn+BeOizeY69WkzgtdBjl61P+Rm5URIryJu2HYc4v0BgOQ1u4
- 1CDkRvng0UXv9H8ALUYlgw==
-X-Google-Smtp-Source: ABdhPJxyfELgaOHxtqFMAFc4cSJAkj0asz918/5SVNfc7XxjOCOUwylMbjXvVZyv5bDwIGqVg6tCHQ==
-X-Received: by 2002:a5e:8d03:: with SMTP id m3mr2402340ioj.200.1627937748437; 
- Mon, 02 Aug 2021 13:55:48 -0700 (PDT)
+ bh=wLC52aVmhVqOoSJPVdgHBVvoFp1F65OwU5dq/ORkoP8=;
+ b=jNfWqA7Vv0Gk76CdJNoLR3CzMi4HqViKG0JootOjQfjYCfjmLbbaS/+rexBxEXVoJc
+ Rjz/jBgyZbqf0X4pdzJ8bH/XBxO1pnDLIZmnaOJWX8haRH5lrr7nxZEh5tbBN1K/ebQC
+ tLafV2V8xUEDIEBjcMwcZ+teeOZl01iVbPNfPpQOKcSpfhJBv7mLCs6cxDHL/0tyNtjN
+ sJpx+aHS+4uDZio9XRqV1NTNYp1RSQBEGYR53Pe7tfzpsmnr1tFMVWTt+NAbvvcDSJE9
+ h6E73Z6LFnmf/7mHIUXi/KjhTbM6FvYbhKBu69G7H0cMNcAfYiPvGyWLeFlR3X9OlPxB
+ QwPw==
+X-Gm-Message-State: AOAM531psGmdT+O/DV7xXuq2r2O9HKamYJCEFsWy+74JMv2t7uR2BfTN
+ 7QQT00t04pEFuTbXC62K0w==
+X-Google-Smtp-Source: ABdhPJygm1FsYa2OLberNAFdX6BFy+261rfNgtOBH/qYn8FKixCDRx1Jt1immveovcKjithPmbWfnQ==
+X-Received: by 2002:a05:6e02:1bc7:: with SMTP id
+ x7mr1130854ilv.116.1627940021943; 
+ Mon, 02 Aug 2021 14:33:41 -0700 (PDT)
 Received: from robh.at.kernel.org ([64.188.179.248])
- by smtp.gmail.com with ESMTPSA id t26sm7810751iob.19.2021.08.02.13.55.46
+ by smtp.gmail.com with ESMTPSA id v1sm1142730ilm.57.2021.08.02.14.33.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Aug 2021 13:55:47 -0700 (PDT)
-Received: (nullmailer pid 1594532 invoked by uid 1000);
- Mon, 02 Aug 2021 20:55:45 -0000
-Date: Mon, 2 Aug 2021 14:55:45 -0600
+ Mon, 02 Aug 2021 14:33:41 -0700 (PDT)
+Received: (nullmailer pid 1653417 invoked by uid 1000);
+ Mon, 02 Aug 2021 21:33:39 -0000
+Date: Mon, 2 Aug 2021 15:33:39 -0600
 From: Rob Herring <robh@kernel.org>
-To: Biju Das <biju.das.jz@bp.renesas.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-renesas-soc@vger.kernel.org,
- linux-phy@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Chris Paterson <Chris.Paterson2@renesas.com>, Vinod Koul <vkoul@kernel.org>,
- devicetree@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v5 2/6] dt-bindings: phy: renesas,usb2-phy: Document
- RZ/G2L phy bindings
-Message-ID: <YQhb0Ygfod+K9Xf6@robh.at.kernel.org>
-References: <20210727185527.19907-1-biju.das.jz@bp.renesas.com>
- <20210727185527.19907-3-biju.das.jz@bp.renesas.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, linux-phy@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH 1/9] dt-bindings: phy: mediatek: tphy: support type
+ switch by pericfg
+Message-ID: <YQhks7ca6Gr5gAPC@robh.at.kernel.org>
+References: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210727185527.19907-3-biju.das.jz@bp.renesas.com>
+In-Reply-To: <1627459111-2907-1-git-send-email-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210802_135549_091329_64FBC8AD 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20210802_143343_226343_3884FED3 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,31 +97,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 27 Jul 2021 19:55:23 +0100, Biju Das wrote:
-> Document USB phy bindings for RZ/G2L SoC.
+On Wed, 28 Jul 2021 15:58:23 +0800, Chunfeng Yun wrote:
+> Add support type switch by pericfg register between USB3, PCIe,
+> SATA, SGMII, this is used to replace the way through efuse or
+> jumper.
 > 
-> RZ/G2L USB2.0 phy uses line ctrl register for OTG_ID pin changes. It uses
-> a different OTG-BC interrupt bit for device recognition. Apart from this,
-> the PHY reset is controlled by USBPHY control IP and Document reset is a
-> required property.
-> 
-> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
-> Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 > ---
-> v4->v5:
->  * Removed 'properties' and just used 'required' for RZ/G2L SoC.
-> v3->v4:
->  * Removed second reset
->  * Added family specific compatible string.
-> v2->v3
->  * Created a new compatible for RZ/G2L as per Geert's suggestion.
->  * Added resets required properties for RZ/G2L SoC.
-> ---
->  .../devicetree/bindings/phy/renesas,usb2-phy.yaml | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
+>  .../devicetree/bindings/phy/mediatek,tphy.yaml   | 16 ++++++++++++++++
+>  1 file changed, 16 insertions(+)
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
