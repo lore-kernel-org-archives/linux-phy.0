@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B9EF7C432BE
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:10:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0A3BCC4320A
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:10:04 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 889F960E52
+	by mail.kernel.org (Postfix) with ESMTPS id CCA4960E52
 	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:10:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 889F960E52
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org CCA4960E52
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=tkos.co.il
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,23 +23,23 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YiIYeOHbNURzjSxnV7XnpnwddaRyOjh62Tys1i9RfWY=; b=bLEAEmlw7On/qa
-	vOTU5I5uY6qgzoJJeD7fVNUrO9ZoT/8WM994by/xG6pFqvXMETPYe6EK0mUVMInuaD6y44BJ70hbX
-	Ib/vsajsJ9E0/9nKRQ98PEw/qX9siO61e0HJ+WX1eyApvr2lSMN5ea/0oH4nG1uAHjksEMW0aADGQ
-	6J+5M6Lrc3x7zcs/WxYYfqIvUkua8E+mq1EOta8J7GQzrJkYQBlPuiKVkWbSNIJWOLvQ0NHInCmq/
-	jPDqfh4mR+ULSoxM0+NLqSCvCIcK6J4DC2H0EM7SMJCdtejr5JXXhI+ifvvh6R3GtlJJQskwNw2Wp
-	f9jOYQ7esucGlNw+62QA==;
+	List-Owner; bh=PoG77/Brk++XZtctGZPRt50IJ+reTYNdH+xoSxJ+5gU=; b=jN8fkpduh7+79G
+	TJ5MH76w6VNN87PcjkuXWw/GFrFLOIIExZInHAeMd5qEDi6HYAtFWqsbiHK6YijAdN69HEWgXjMjP
+	GIDkWLu2bjBalmIy6Kc/SgyKJsX2chrVezrHA5Ew/LoXmHmvtSoQmsOiGYw3edPZ3K4M02kuDsrAr
+	+rXj7V72WVc3hdrBNrt+9RSRF8QFqF1KvzSyjt9i4S/Mi47OIuW+1K393dchXdj3tuQMmAjfSMOFD
+	ErlgEppbHL3ZwZaeMRPdqC7wS79WkLnimuYU491p80WyeKf3IQpd/YXBBXlVoihZ/7y2U9xi/a9hN
+	eeAOwvKdQhJisQIYme0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mBHas-006L1K-Kb; Wed, 04 Aug 2021 14:10:02 +0000
+	id 1mBHat-006L1a-53; Wed, 04 Aug 2021 14:10:03 +0000
 Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mBHXR-006Imu-Tr; Wed, 04 Aug 2021 14:06:34 +0000
+ id 1mBHXR-006Iko-Ef; Wed, 04 Aug 2021 14:06:34 +0000
 Received: from tarshish.tkos.co.il (unknown [10.0.8.3])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id 5C530440EBB;
- Wed,  4 Aug 2021 17:06:06 +0300 (IDT)
+ by mx.tkos.co.il (Postfix) with ESMTPS id E4DB3440EB0;
+ Wed,  4 Aug 2021 17:06:04 +0300 (IDT)
 From: Baruch Siach <baruch@tkos.co.il>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Andy Gross <agross@kernel.org>,
@@ -51,17 +51,16 @@ Cc: Baruch Siach <baruch@tkos.co.il>, Kathiravan T <kathirav@codeaurora.org>,
  linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
  devicetree@vger.kernel.org
-Subject: [PATCH v2 5/6] dt-bindings: usb: qcom,dwc3: add binding for IPQ6018
-Date: Wed,  4 Aug 2021 17:05:09 +0300
-Message-Id: <24ce7c1258790b35a08e14a1e79a9447c3fed354.1628085910.git.baruch@tkos.co.il>
+Subject: [PATCH v2 3/6] dt-bindings: usb: dwc3: add reference clock period
+Date: Wed,  4 Aug 2021 17:05:07 +0300
+Message-Id: <22f62c59471e128b681a731997a9416ab2e91acf.1628085910.git.baruch@tkos.co.il>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <3d86f45004fe2fcbae0a2cd197df81a1fd076a1e.1628085910.git.baruch@tkos.co.il>
 References: <3d86f45004fe2fcbae0a2cd197df81a1fd076a1e.1628085910.git.baruch@tkos.co.il>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210804_070630_333664_64CCC855 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210804_070629_835278_199DEAC3 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,25 +77,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add compatible string for Qualcomm IPQ6018 SoC.
+Document the snps,ref-clock-period property that describes reference
+clock period when it deviates from the default set value.
 
 Signed-off-by: Baruch Siach <baruch@tkos.co.il>
 ---
- Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/usb/snps,dwc3.yaml | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-index 4e6451789806..55ed4b4c7f51 100644
---- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-@@ -13,6 +13,7 @@ properties:
-   compatible:
-     items:
-       - enum:
-+          - qcom,ipq6018-dwc3
-           - qcom,msm8996-dwc3
-           - qcom,msm8998-dwc3
-           - qcom,sc7180-dwc3
+diff --git a/Documentation/devicetree/bindings/usb/snps,dwc3.yaml b/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
+index 41416fbd92aa..c8027d2852cd 100644
+--- a/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
+@@ -252,6 +252,15 @@ properties:
+     minimum: 0
+     maximum: 0x3f
+ 
++  snps,ref-clock-period:
++    description:
++      Value for REFCLKPER field of GUCTL register for post-silicon reference
++      clock period in nanoseconds, when the hardware set default does not match
++      the actual clock.
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 1
++    maximum: 0x3ff
++
+   snps,rx-thr-num-pkt-prd:
+     description:
+       Periodic ESS RX packet threshold count (host mode only). Set this and
 -- 
 2.30.2
 
