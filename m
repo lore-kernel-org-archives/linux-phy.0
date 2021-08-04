@@ -2,72 +2,73 @@ Return-Path: <SRS0=XorX=M3=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EFF48C4338F
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:31:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E7920C43214
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 16:03:16 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BA2EC60F94
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:31:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BA2EC60F94
+	by mail.kernel.org (Postfix) with ESMTPS id BBF366104F
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 16:03:16 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BBF366104F
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-reply-to:
-	Date:Subject:Cc:To:From:References:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kqowRR71NHFkf4pa/1CCFunrrTxDbS+cMQCTHw+4Xp4=; b=WHoECtNuNPMl4Z
-	Au1bRZmrxotZa7ilW7kzOz5osv/veccq5gqZ8llFyC7JocHRvtJKHH3fyhlJ1O7EE/vpteLXUNqDG
-	jsJASCge3uxuGAGA/aj1UQTMDBK/DrQztvWgCJIncaCSEzi6M4K7/6/gxuinncvQ71dIgmmI5jj1R
-	oisiYcZ7bYrjdHUioAOKHDnkkxgbsXYTi1xtDxdfHLAszA94qLzD5z5aEfECWc/62YTMDgqE+iIGv
-	L+IszFEWY1/xlWtvCoJeldN5WK7LjezbEmcD7dvFFxzwVYXsQrkLf6AT/jb1sN3RCo9sAxM07YQ9I
-	8AcMSgMSi1OiZ9wgP18w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ol4IPuXFIQXy7OMRp4enVKfMOTuOhA+q9DChkAUl51U=; b=kO21sGqcHnl9Lx
+	QyMq+Bj8bhRbDu68wgqWFpAeic/6ONEq9fNta5QYXtzdcHxhOUiTJnUBqjhuIGL3NTs44Wixiiho/
+	nDyXuAXmaJQSaj3XK94JF1T0fiLTnrLpDA7UOEEn0DhhTU8ujcWpbzeWdK4lqEXIcO88QbdVF+fch
+	IPvDw2/yaZ6PIKECFCftkyzyKuFlhPEEHRWp0PjYXOZqaw8OGF3s8KBefjSS2EnyoFzrcKZwNyYQu
+	mkmkaWZJ62Q2eBeG22ZuDkbwHmsSw4y+tQH1GJ83Pxn181bu+PJ/f+jkWYp2EjcbccBuL8z59LnIx
+	nEpaVyLWwhoW3EvIWZYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mBHw1-006RO8-7c; Wed, 04 Aug 2021 14:31:53 +0000
+	id 1mBJMS-006hpP-1I; Wed, 04 Aug 2021 16:03:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mBHvk-006RJ6-6h; Wed, 04 Aug 2021 14:31:37 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id ACEB160F35;
- Wed,  4 Aug 2021 14:31:32 +0000 (UTC)
+ id 1mBJMM-006hkc-Pv
+ for linux-phy@lists.infradead.org; Wed, 04 Aug 2021 16:03:12 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 63DB761002;
+ Wed,  4 Aug 2021 16:03:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1628087495;
- bh=eYtxiCOL6Sv7h7R130RHKETBBse3R3y5RSeyOc221j0=;
- h=References:From:To:Cc:Subject:Date:In-reply-to:From;
- b=NDSrdXRBJX76rRp606Dq1f5kJeIUWzJOtgMrOr0Sa9MVC1GjDzsA81KdBdHrdPwtU
- ceF2MDSfIsTgzTBaig8VJlWyTpY6DYQqsWgmLLX5UTyGlMUjvOREsvim8cF00kWZTb
- 5HW7WPfZSuObcHtj2c2tzYSJAn81XhapM2pUaaRrYWx7kuNN/zi7g3gnv7Rsl4Rfwm
- UjKuvaLKRBJkOYnZPBjAVgWXP2HXDsYRkSfR5oaowEQm8P9FsNQ9jIAHkp+buqI+01
- z7sDxEbSgjC0IqmoGXcTIkewuOAco3ip5EYI7k2n0rQ556DmYwTNy4PT6KWo3mPFO6
- 1F1dWxB2pnbvA==
-References: <3d86f45004fe2fcbae0a2cd197df81a1fd076a1e.1628085910.git.baruch@tkos.co.il>
- <0e99e3d453547ad2a8f4541090a03f3c80b80332.1628085910.git.baruch@tkos.co.il>
- <87lf5h5mc2.fsf@kernel.org> <87v94lxpb0.fsf@tarshish>
-User-agent: mu4e 1.6.1; emacs 27.2
-From: Felipe Balbi <balbi@kernel.org>
-To: Baruch Siach <baruch@tkos.co.il>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>, Balaji
- Prakash J <bjagadee@codeaurora.org>, Kathiravan T
- <kathirav@codeaurora.org>, Jack Pham <jackp@codeaurora.org>, Thinh Nguyen
- <Thinh.Nguyen@synopsys.com>, linux-arm-msm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 4/6] usb: dwc3: reference clock period configuration
-Date: Wed, 04 Aug 2021 17:30:42 +0300
-In-reply-to: <87v94lxpb0.fsf@tarshish>
-Message-ID: <87im0l5lj1.fsf@kernel.org>
+ s=k20201202; t=1628092990;
+ bh=Y2C1L5U0SUZAqLMzWt93tWKBQx0TR0CWZaFJWmkji9M=;
+ h=From:To:Cc:Subject:Date:From;
+ b=IoULW2IJrz1OneVDGlbnYwVYteeO0F0G89hllsWtWhEYqHSdIXxV/Juqxk7SPs+gg
+ vpf8uUJoI4NPsEDvU+nFM4ekb83QO4P9RrztLi4w2VWLo1OnWAdH64LEBwdf3kdGms
+ vjjhZCwGDYi67zaIZYO+j/0wFxfIKXPniUHf/R2zIXEjG8QAPF6cuqdpPfwIoHBAkV
+ oYrkV+1M0OMpLNMoX9qR8WpMTrE3OvqHEL3Ld12t3GmKM+vXDygTsDYqqKHwzdgrxs
+ MZpLBoJ4Kx2aT2UN1COT0p0NSs+Qwl9N7hgv75/8SImD9BnsMnGnKGxVpuX9tUhN8p
+ zgyHw+sYVudjA==
+Received: by mail.kernel.org with local (Exim 4.94.2)
+ (envelope-from <mchehab@kernel.org>)
+ id 1mBJMK-000PzI-9M; Wed, 04 Aug 2021 18:03:08 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>
+Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Rob Herring <robh@kernel.org>,
+ =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+ Binghui Wang <wangbinghui@hisilicon.com>,
+ Xiaowei Song <songxiaowei@hisilicon.com>, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH v9 00/11] Add support for Hikey 970 PCIe
+Date: Wed,  4 Aug 2021 18:02:56 +0200
+Message-Id: <cover.1628092716.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.31.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210804_073136_307716_BB376759 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20210804_090310_918440_E55E5ED6 
+X-CRM114-Status: GOOD (  10.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,39 +85,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The DT schema used by this series got merged at:
 
-Hi,
+	https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git/log/?h=dt/next
 
-Baruch Siach <baruch@tkos.co.il> writes:
-> Hi Felipe,
->
-> On Wed, Aug 04 2021, Felipe Balbi wrote:
->> Baruch Siach <baruch@tkos.co.il> writes:
->>> @@ -1371,6 +1398,8 @@ static void dwc3_get_properties(struct dwc3 *dwc)
->>>  				    &dwc->hsphy_interface);
->>>  	device_property_read_u32(dev, "snps,quirk-frame-length-adjustment",
->>>  				 &dwc->fladj);
->>> +	device_property_read_u32(dev, "snps,ref-clock-period",
->>> +				 &dwc->ref_clk_per);
->>
->> I wonder if it would make more sense to pass an actual clock reference
->> here. If valid, then reconfigure the period to the value returned by
->> clk_get_rate(). It would avoid yet another DT binding. If we make the
->> clock optional, then we won't affect any other platforms. The clock
->> itself could be a regular fixed clock node.
->
-> Thinh Nguyen asked to add a dedicated DT property. He explained that
-> clk_get_rate() does not work for PCI hosted dwc3. This is the most
-> complete summary of the discussion:
+The series should apply cleanly on the top of v5.14-rc1.
 
-Hence the "optional" :-)
+patch1 contains a PHY for Kirin 970 PCIe.
 
-Or, perhaps, Thinh wants to use this for internal FPGA-based validation?
+The remaining patches add support for Kirin 970 at the pcie-kirin driver, and
+add the needed logic to compile it as module and to allow to dynamically
+remove the driver in runtime.
 
-In that case, I'm okay with the property.
+Tested on HiKey970:
+
+  # lspci -D -PP
+  0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
+  0000:00:00.0/01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:01.0/03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a809
+  0000:00:00.0/01:00.0/02:07.0/06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
+
+Tested on HiKey960:
+
+  # lspci -D 
+  0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3660 (rev 01)
+
+---
+
+v9:
+  - Did some cleanups at patches 1 and 5
+
+Mauro Carvalho Chehab (11):
+  phy: HiSilicon: Add driver for Kirin 970 PCIe PHY
+  PCI: kirin: Reorganize the PHY logic inside the driver
+  PCI: kirin: Add support for a PHY layer
+  PCI: kirin: Use regmap for APB registers
+  PCI: kirin: Add support for bridge slot DT schema
+  PCI: kirin: Add Kirin 970 compatible
+  PCI: kirin: Add MODULE_* macros
+  PCI: kirin: Allow building it as a module
+  PCI: kirin: Add power_off support for Kirin 960 PHY
+  PCI: kirin: fix poweroff sequence
+  PCI: kirin: Allow removing the driver
+
+ drivers/pci/controller/dwc/Kconfig      |   2 +-
+ drivers/pci/controller/dwc/pcie-kirin.c | 646 ++++++++++++++-----
+ drivers/phy/hisilicon/Kconfig           |  10 +
+ drivers/phy/hisilicon/Makefile          |   1 +
+ drivers/phy/hisilicon/phy-hi3670-pcie.c | 801 ++++++++++++++++++++++++
+ 5 files changed, 1312 insertions(+), 148 deletions(-)
+ create mode 100644 drivers/phy/hisilicon/phy-hi3670-pcie.c
 
 -- 
-balbi
+2.31.1
+
+
 
 -- 
 linux-phy mailing list
