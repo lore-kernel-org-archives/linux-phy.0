@@ -5,16 +5,16 @@ X-Spam-Level:
 X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 08086C4338F
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B9EF7C432BE
 	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:10:03 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BD5FB60E52
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:10:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BD5FB60E52
+	by mail.kernel.org (Postfix) with ESMTPS id 889F960E52
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Aug 2021 14:10:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 889F960E52
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=tkos.co.il
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,44 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q5GIz6G93mpMcJm5knMu5gg+gEXW0O0u85Xf4D20t9Y=; b=PUvifhhUEXj7w6
-	DJ+cSCDXWccbyG/MivYzIqC+6yW/qZbSjf5morDHqOiKHA0EyfvSumBH4h+aEijzu6750YVNoVzca
-	POXKNdr22QMe2YybFxhZ0Ub8e+zWxZiezb4KrBzI/UZfrt5cAPaFuyD9vh37/J6KQWPDXrOpxtgXf
-	Id4MqetB3G9gMTG1wUV76MTiUYEWt7yhrp6IR9n4r6mMLYHoXOm2ftp4IZXaYE1DoeUWaN6T0V1iH
-	tkZ82IEjB2O/hmW7WuLIo1rcR5FqEtInCtzeTHmZ1vk4oTfvsxrcmFH+wl/N8TW8QaUVeG48j/a5M
-	fPwqTDkkFkay3HjjQVBQ==;
+	List-Owner; bh=YiIYeOHbNURzjSxnV7XnpnwddaRyOjh62Tys1i9RfWY=; b=bLEAEmlw7On/qa
+	vOTU5I5uY6qgzoJJeD7fVNUrO9ZoT/8WM994by/xG6pFqvXMETPYe6EK0mUVMInuaD6y44BJ70hbX
+	Ib/vsajsJ9E0/9nKRQ98PEw/qX9siO61e0HJ+WX1eyApvr2lSMN5ea/0oH4nG1uAHjksEMW0aADGQ
+	6J+5M6Lrc3x7zcs/WxYYfqIvUkua8E+mq1EOta8J7GQzrJkYQBlPuiKVkWbSNIJWOLvQ0NHInCmq/
+	jPDqfh4mR+ULSoxM0+NLqSCvCIcK6J4DC2H0EM7SMJCdtejr5JXXhI+ifvvh6R3GtlJJQskwNw2Wp
+	f9jOYQ7esucGlNw+62QA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mBHas-006L0Z-3A; Wed, 04 Aug 2021 14:10:02 +0000
+	id 1mBHas-006L1K-Kb; Wed, 04 Aug 2021 14:10:02 +0000
 Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mBHXR-006Ilx-Dg; Wed, 04 Aug 2021 14:06:34 +0000
+ id 1mBHXR-006Imu-Tr; Wed, 04 Aug 2021 14:06:34 +0000
 Received: from tarshish.tkos.co.il (unknown [10.0.8.3])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id 9B1F4440EB8;
- Wed,  4 Aug 2021 17:06:05 +0300 (IDT)
+ by mx.tkos.co.il (Postfix) with ESMTPS id 5C530440EBB;
+ Wed,  4 Aug 2021 17:06:06 +0300 (IDT)
 From: Baruch Siach <baruch@tkos.co.il>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Felipe Balbi <balbi@kernel.org>, Rob Herring <robh+dt@kernel.org>
-Cc: Balaji Prakash J <bjagadee@codeaurora.org>,
- Baruch Siach <baruch@tkos.co.il>, Kathiravan T <kathirav@codeaurora.org>,
+Cc: Baruch Siach <baruch@tkos.co.il>, Kathiravan T <kathirav@codeaurora.org>,
+ Balaji Prakash J <bjagadee@codeaurora.org>,
  Jack Pham <jackp@codeaurora.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
  linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
  devicetree@vger.kernel.org
-Subject: [PATCH v2 4/6] usb: dwc3: reference clock period configuration
-Date: Wed,  4 Aug 2021 17:05:08 +0300
-Message-Id: <0e99e3d453547ad2a8f4541090a03f3c80b80332.1628085910.git.baruch@tkos.co.il>
+Subject: [PATCH v2 5/6] dt-bindings: usb: qcom,dwc3: add binding for IPQ6018
+Date: Wed,  4 Aug 2021 17:05:09 +0300
+Message-Id: <24ce7c1258790b35a08e14a1e79a9447c3fed354.1628085910.git.baruch@tkos.co.il>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <3d86f45004fe2fcbae0a2cd197df81a1fd076a1e.1628085910.git.baruch@tkos.co.il>
 References: <3d86f45004fe2fcbae0a2cd197df81a1fd076a1e.1628085910.git.baruch@tkos.co.il>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210804_070630_015498_BD07351B 
-X-CRM114-Status: GOOD (  14.66  )
+X-CRM114-CacheID: sfid-20210804_070630_333664_64CCC855 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,123 +78,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Balaji Prakash J <bjagadee@codeaurora.org>
+Add compatible string for Qualcomm IPQ6018 SoC.
 
-Set reference clock period when it differs from dwc3 default hardware
-set.
-
-Tested (USB2 only) on IPQ6010 SoC based board with 24 MHz reference
-clock while hardware default is 19.2 MHz.
-
-Signed-off-by: Balaji Prakash J <bjagadee@codeaurora.org>
-[ baruch: rewrite commit message; drop GFLADJ code; remove 'quirk-' from
-  property name; mention tested hardware ]
 Signed-off-by: Baruch Siach <baruch@tkos.co.il>
 ---
-v2:
+ Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-  Remove snps,quirk-ref-clock-adjustment; not needed for tested hardware
-
-  Rename DT property to snps,ref-clock-period (Thinh Nguyen)
-
-  Use FIELD_PREP() (Bjorn Andersson)
----
- drivers/usb/dwc3/core.c | 29 +++++++++++++++++++++++++++++
- drivers/usb/dwc3/core.h |  6 ++++++
- 2 files changed, 35 insertions(+)
-
-diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
-index ba74ad7f6995..7ec5bfb5fc11 100644
---- a/drivers/usb/dwc3/core.c
-+++ b/drivers/usb/dwc3/core.c
-@@ -26,6 +26,7 @@
- #include <linux/acpi.h>
- #include <linux/pinctrl/consumer.h>
- #include <linux/reset.h>
-+#include <linux/bitfield.h>
- 
- #include <linux/usb/ch9.h>
- #include <linux/usb/gadget.h>
-@@ -351,6 +352,29 @@ static void dwc3_frame_length_adjustment(struct dwc3 *dwc)
- 	}
- }
- 
-+/**
-+ * dwc3_ref_clk_period - Reference clock period configuration
-+ *		Default reference clock period depends on hardware
-+ *		configuration. For systems with reference clock that differs
-+ *		from the default, this will set clock period in DWC3_GUCTL
-+ *		register.
-+ * @dwc: Pointer to our controller context structure
-+ * @ref_clk_per: reference clock period in ns
-+ */
-+static void dwc3_ref_clk_period(struct dwc3 *dwc)
-+{
-+	u32 reg;
-+
-+	if (dwc->ref_clk_per == 0)
-+		return;
-+
-+	reg = dwc3_readl(dwc->regs, DWC3_GUCTL);
-+	reg &= ~DWC3_GUCTL_REFCLKPER_MASK;
-+	reg |=  FIELD_PREP(DWC3_GUCTL_REFCLKPER_MASK, dwc->ref_clk_per);
-+	dwc3_writel(dwc->regs, DWC3_GUCTL, reg);
-+}
-+
-+
- /**
-  * dwc3_free_one_event_buffer - Frees one event buffer
-  * @dwc: Pointer to our controller context structure
-@@ -1011,6 +1035,9 @@ static int dwc3_core_init(struct dwc3 *dwc)
- 	/* Adjust Frame Length */
- 	dwc3_frame_length_adjustment(dwc);
- 
-+	/* Adjust Reference Clock Period */
-+	dwc3_ref_clk_period(dwc);
-+
- 	dwc3_set_incr_burst_type(dwc);
- 
- 	usb_phy_set_suspend(dwc->usb2_phy, 0);
-@@ -1371,6 +1398,8 @@ static void dwc3_get_properties(struct dwc3 *dwc)
- 				    &dwc->hsphy_interface);
- 	device_property_read_u32(dev, "snps,quirk-frame-length-adjustment",
- 				 &dwc->fladj);
-+	device_property_read_u32(dev, "snps,ref-clock-period",
-+				 &dwc->ref_clk_per);
- 
- 	dwc->dis_metastability_quirk = device_property_read_bool(dev,
- 				"snps,dis_metastability_quirk");
-diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
-index 5991766239ba..1e4e21ea9d97 100644
---- a/drivers/usb/dwc3/core.h
-+++ b/drivers/usb/dwc3/core.h
-@@ -386,6 +386,10 @@
- #define DWC3_GFLADJ_30MHZ_SDBND_SEL		BIT(7)
- #define DWC3_GFLADJ_30MHZ_MASK			0x3f
- 
-+/* Global User Control Register*/
-+#define DWC3_GUCTL_REFCLKPER_MASK		0xffc00000
-+#define DWC3_GUCTL_REFCLKPER_SEL		22
-+
- /* Global User Control Register 2 */
- #define DWC3_GUCTL2_RST_ACTBITLATER		BIT(14)
- 
-@@ -969,6 +973,7 @@ struct dwc3_scratchpad_array {
-  * @regs: base address for our registers
-  * @regs_size: address space size
-  * @fladj: frame length adjustment
-+ * @ref_clk_per: reference clock period configuration
-  * @irq_gadget: peripheral controller's IRQ number
-  * @otg_irq: IRQ number for OTG IRQs
-  * @current_otg_role: current role of operation while using the OTG block
-@@ -1141,6 +1146,7 @@ struct dwc3 {
- 	struct power_supply	*usb_psy;
- 
- 	u32			fladj;
-+	u32			ref_clk_per;
- 	u32			irq_gadget;
- 	u32			otg_irq;
- 	u32			current_otg_role;
+diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+index 4e6451789806..55ed4b4c7f51 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+@@ -13,6 +13,7 @@ properties:
+   compatible:
+     items:
+       - enum:
++          - qcom,ipq6018-dwc3
+           - qcom,msm8996-dwc3
+           - qcom,msm8998-dwc3
+           - qcom,sc7180-dwc3
 -- 
 2.30.2
 
