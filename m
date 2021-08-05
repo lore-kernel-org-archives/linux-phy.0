@@ -2,75 +2,92 @@ Return-Path: <SRS0=nKrG=M4=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C15F2C4338F
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Aug 2021 07:58:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DB291C4338F
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Aug 2021 09:17:57 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 87A1B6105A
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Aug 2021 07:58:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 87A1B6105A
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id A92316104F
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Aug 2021 09:17:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A92316104F
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C89L0bmn7didyUB7Vn7Tth+vSACdNBKAoJ6bPvfp9LE=; b=1FW4oktO7ATbAS
-	xEi0M6Pzd22JEk1F42H1AXG2eRRGBgZ3HtsZO3Sp2JidwlXSFWqtUNRmjEpyPFSLExlSoon2dspU1
-	pUj0OIls++MSQzrRVRqXIdSlPusYKXFqDTAjfHX6SH6cZpZIVDWUrermzHm1JHutCyVKLlykEeoqs
-	cD0y4cxQoMLMMJNwXm5dsf6dEPmmpkWUXZsH65ky/MhiuJ7j8388Mr7hUAScFL49jLQzd0eZZNQYx
-	/vj+jR2RCz1ezhCOfXNmiOnP6V+2rqfzOOOc8aFmW3oxcv/UjH8EnVUgCUyJ2XYuJOYK7KfjnrElu
-	Nz2VWhn50ROtAhm9yRrw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kY5MHKx9ePzh2fIds6jT4kvmxAHeWgoWCmoIfsnkdOY=; b=QqFy4RcAdFmOFF
+	oWId1rYr+aMTcS1NRxFGYLSAAltx+7iNXZQQIM+yUjhQvxjQ6pSHLG7xt6npm6V+1UzA2H455UVIG
+	/XYlsAwk3owJNh5f2Mo7ZGPOBOZEiR/d3mUhZ7mTSlOjEByCbZVd1kCe4LftQSWc0Po3/2zybNA8l
+	SNwahJoaLtMVZMn9RKTNlO9W1GuwqG8Tv1w3FqyM3BOa6gayqBvjThg8qsxbutKqhjLkuLC7fa0Gt
+	OVhS+Aog5qWEGGk2p1g9UXvdYA5EhnRRCWRRyMPcl/8kzdwvLJwtvk1Ltx2XXoZpV2Jxba+qmdrKC
+	ugQTEzhijG5RvmX6HuRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mBYHL-008X39-0x; Thu, 05 Aug 2021 07:58:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mBZVl-008q8O-4V; Thu, 05 Aug 2021 09:17:57 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mBYHH-008X12-EM
- for linux-phy@lists.infradead.org; Thu, 05 Aug 2021 07:58:57 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 5C0FD6104F;
- Thu,  5 Aug 2021 07:58:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1628150334;
- bh=VLknsodvrM25ND+q2Zj+641W3Gv+7CB4psNdhS3kxz0=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=VqhbEXN5PI6DwUvKqtkn10XVO4YuIhff+eXWTy/yKXc2ryKsB2ee4ld53RF3jkXiV
- wfNL+0fiIj85UnbD6dOm3jv8FemjEV5wmYRhL2oRRG7FYDMmmsb9lHHQEOYe7dVyFk
- l67GzvhfmmJsTRbgdEtvP0+ja5y7TqMG6YNPlGKGjx0OwwH8gKRsQOMC32nk5yu5uc
- yf98mveCx4kZ/VL53vaQWam1C0obOVcxw2yW3Zs2MTTFuOUufowYDX9IwEfTFLzW5v
- aSe0rAn3UuuXdWONRxFuDb3ZcfFN7JG4XYHuG8peANPnUSelyFhuIjvLxyHzlMtlvw
- guyAgaus/K/wQ==
-Date: Thu, 5 Aug 2021 09:58:48 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Rob Herring <robh@kernel.org>, Linuxarm <linuxarm@huawei.com>,
- mauro.chehab@huawei.com
-Cc: Binghui Wang <wangbinghui@hisilicon.com>, Gustavo Pimentel
- <gustavo.pimentel@synopsys.com>, Jingoo Han <jingoohan1@gmail.com>, Xiaowei
- Song <songxiaowei@hisilicon.com>, devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, PCI
- <linux-pci@vger.kernel.org>, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 0/4] DT schema changes for HiKey970 PCIe hardware to
- work
-Message-ID: <20210805095848.464cf85c@coco.lan>
-In-Reply-To: <20210805094612.2bc2c78f@coco.lan>
-References: <cover.1627965261.git.mchehab+huawei@kernel.org>
- <CAL_JsqLjw=+szXWJjGe86tMc51NA-5j=jVSXUAWuKeZRuJNJUg@mail.gmail.com>
- <20210804085045.3dddbb9c@coco.lan>
- <YQrARd7wgYS1nywt@robh.at.kernel.org>
- <20210805094612.2bc2c78f@coco.lan>
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.30; x86_64-redhat-linux-gnu)
+ id 1mBZVO-008pxl-JS
+ for linux-phy@lists.infradead.org; Thu, 05 Aug 2021 09:17:36 +0000
+Received: by mail-wm1-x336.google.com with SMTP id n11so2874920wmd.2
+ for <linux-phy@lists.infradead.org>; Thu, 05 Aug 2021 02:17:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kCcVZEkYGRKFKKDWnwfipeEmkrP7zTh5P/d+2TB0cUM=;
+ b=CecqXqs6u0MwWRSNJzmPq7ZV9p5HS1nJTgxLI1+KshvG77X4R7GDcvsBNos2j+7GPI
+ OhxZg8ddcYi/Ospo5gRFQefQAjBmlTY75Bh3VQ4c47DVKruUvGaLLXk7+tGv4sVq3neH
+ RQhvSRahFuwTeqiQuH9gexX/J7QYVKaE8FHdOYBLQHshHFfxOF2OqkWcBoeruiDPQ6Dw
+ xPOua4v2s0dNKzrTX940Ocr3o6FsmBi7e/w5tTSwrpiRw/UHeO6+aO5ZYB3IOPbBrbNy
+ 5jpgXPcMephl4nYOj5jg8xJ7kIfVxVSiHfIRN6URaO2YQUNtTbreY4u/lXVFltT/8mCC
+ 2zxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kCcVZEkYGRKFKKDWnwfipeEmkrP7zTh5P/d+2TB0cUM=;
+ b=aynMXTPA0/mUTyVAPSmZgE3+Qc9i+vqZazMkeJU+EUJhexrhWVWpcTp7a25WvWerEY
+ wOOvkiNSU4MIKyRzk4m2naIpF5KYblpqYQOhYYmAPJn2QuW1x+7/9vbXwCBe8AaR8VvM
+ ueS6zmIfR802rM78UGxAMJ0D0VaadsQvMfqyyzn44L4n3//qBQpK23PZ1Zxsg4iOYj8G
+ VwEryFUEwkOG4mAWgYpDOV0juxzUtfsSTfTDi8rm9bwJ10byJ9wjJ8C/4MQ4JSObfRRx
+ G5d+Rp5xCxVWZsYXpE3NdXTDKKM2xLG+O3YgotherpHGOc+teqa6WmIOWf6VYt9LA214
+ 5VVA==
+X-Gm-Message-State: AOAM531OFKUOYVLXVW196kcXIuRm5gHyy26ZRCLi3+yHEpHqUgUbWn8n
+ sBenruizUlRHTb1vGTsOR6o=
+X-Google-Smtp-Source: ABdhPJw15xqh1brrWI8Pf+be3kDcHP2cDuDoXwAt8GH1TssNeJErGCOUrxxWHyXbeJuwraVEQA2/5Q==
+X-Received: by 2002:a7b:c779:: with SMTP id x25mr13865095wmk.88.1628155052199; 
+ Thu, 05 Aug 2021 02:17:32 -0700 (PDT)
+Received: from localhost (178-169-161-196.razgrad.ddns.bulsat.com.
+ [178.169.161.196])
+ by smtp.gmail.com with ESMTPSA id l5sm6238776wrc.90.2021.08.05.02.17.30
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 05 Aug 2021 02:17:31 -0700 (PDT)
+From: Iskren Chernev <iskren.chernev@gmail.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Manu Gautam <mgautam@codeaurora.org>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, phone-devel@vger.kernel.org,
+ ~postmarketos/upstreaming@lists.sr.ht,
+ Iskren Chernev <iskren.chernev@gmail.com>
+Subject: [PATCH v1 0/2] Add UFS PHY support for SM6115/4250
+Date: Thu,  5 Aug 2021 12:17:25 +0300
+Message-Id: <20210805091727.942471-1-iskren.chernev@gmail.com>
+X-Mailer: git-send-email 2.32.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210805_005855_618725_17B88F5E 
-X-CRM114-Status: GOOD (  28.53  )
+X-CRM114-CacheID: sfid-20210805_021734_732012_FAB0490E 
+X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,134 +104,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Em Thu, 5 Aug 2021 09:46:12 +0200
-Mauro Carvalho Chehab <mchehab+huawei@kernel.org> escreveu:
+The UFS PHY found on SM6115/4250 is named v3-660, found on cheaper qcom devices
+(possibly starting with sdm660), but up until recently wasn't used much due to
+prevalence of sdhc port for internal storage/sdcard.
 
-> Em Wed, 4 Aug 2021 10:28:53 -0600
-> Rob Herring <robh@kernel.org> escreveu:
-> 
-> > On Wed, Aug 04, 2021 at 08:50:45AM +0200, Mauro Carvalho Chehab wrote:  
-> > > Em Tue, 3 Aug 2021 16:11:42 -0600
-> > > Rob Herring <robh+dt@kernel.org> escreveu:
-> > >     
-> > > > On Mon, Aug 2, 2021 at 10:39 PM Mauro Carvalho Chehab
-> > > > <mchehab+huawei@kernel.org> wrote:    
-> > > > >
-> > > > > Hi Rob,
-> > > > >
-> > > > > That's the third version of the DT bindings for Kirin 970 PCIE and its
-> > > > > corresponding PHY.
-> > > > >
-> > > > > It is identical to v2, except by:
-> > > > >         -          pcie@7,0 { // Lane 7: Ethernet
-> > > > >         +          pcie@7,0 { // Lane 6: Ethernet      
-> > > > 
-> > > > Can you check whether you have DT node links in sysfs for the PCI
-> > > > devices? If you don't, then something is wrong still in the topology
-> > > > or the PCI core is failing to set the DT node pointer in struct
-> > > > device. Though you don't rely on that currently, we want the topology
-> > > > to match. It's possible this never worked on arm/arm64 as mainly
-> > > > powerpc relied on this.
-> > > >
-> > > > I'd like some way to validate the DT matches the PCI topology. We
-> > > > could have a tool that generates the DT structure based on the PCI
-> > > > topology.    
-> > > 
-> > > The of_node node link is on those places:
-> > > 
-> > > 	$ find /sys/devices/platform/soc/f4000000.pcie/ -name of_node
-> > > 	/sys/devices/platform/soc/f4000000.pcie/of_node
-> > > 	/sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/of_node
-> > > 	/sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/pci_bus/0000:01/of_node
-> > > 	/sys/devices/platform/soc/f4000000.pcie/pci0000:00/pci_bus/0000:00/of_node    
-> > 
-> > Looks like we're missing some... 
-> > 
-> > It's not immediately obvious to me what's wrong here. Only the root 
-> > bus is getting it's DT node set. The relevant code is pci_scan_device(), 
-> > pci_set_of_node() and pci_set_bus_of_node(). Give me a few days to try 
-> > to reproduce and debug it.  
-> 
-> I added a printk on both pci_set_*of_node() functions:
-> 
-> 	[    4.872991]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
-> 	[    4.913806]  (null): pci_set_of_node: of_node: /soc/pcie@f4000000
-> 	[    4.978102] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-> 	[    4.990622]  (null): pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-> 	[    5.052383] pci_bus 0000:02: pci_set_bus_of_node: of_node: (null)
-> 	[    5.059263]  (null): pci_set_of_node: of_node: (null)
-> 	[    5.085552]  (null): pci_set_of_node: of_node: (null)
-> 	[    5.112073]  (null): pci_set_of_node: of_node: (null)
-> 	[    5.138320]  (null): pci_set_of_node: of_node: (null)
-> 	[    5.164673]  (null): pci_set_of_node: of_node: (null)
-> 	[    5.233759] pci_bus 0000:03: pci_set_bus_of_node: of_node: (null)
-> 	[    5.240539]  (null): pci_set_of_node: of_node: (null)
-> 	[    5.310545] pci_bus 0000:04: pci_set_bus_of_node: of_node: (null)
-> 	[    5.324719] pci_bus 0000:05: pci_set_bus_of_node: of_node: (null)
-> 	[    5.338914] pci_bus 0000:06: pci_set_bus_of_node: of_node: (null)
-> 	[    5.345516]  (null): pci_set_of_node: of_node: (null)
-> 	[    5.415795] pci_bus 0000:07: pci_set_bus_of_node: of_node: (null)
+The name is a bit misleading, because most of the registers found on v3-660
+don't share much in common with v3.
 
-The enclosed patch makes the above a clearer:
+The register values/sequences are taken from OnePlus repo [1].
 
-	[    4.800975]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
-	[    4.855983] pci 0000:00:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000
-	[    4.879169] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-	[    4.900602] pci 0000:01:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-	[    4.953086] pci_bus 0000:02: pci_set_bus_of_node: of_node: (null)
-	[    4.968821] pci 0000:02:01.0: pci_set_of_node: of_node: (null)
-	[    5.003538] pci 0000:02:04.0: pci_set_of_node: of_node: (null)
-	[    5.041348] pci 0000:02:05.0: pci_set_of_node: of_node: (null)
-	[    5.092770] pci 0000:02:07.0: pci_set_of_node: of_node: (null)
-	[    5.118298] pci 0000:02:09.0: pci_set_of_node: of_node: (null)
-	[    5.178215] pci_bus 0000:03: pci_set_bus_of_node: of_node: (null)
-	[    5.198433] pci 0000:03:00.0: pci_set_of_node: of_node: (null)
-	[    5.233330] pci_bus 0000:04: pci_set_bus_of_node: of_node: (null)
-	[    5.247071] pci_bus 0000:05: pci_set_bus_of_node: of_node: (null)
-	[    5.260898] pci_bus 0000:06: pci_set_bus_of_node: of_node: (null)
-	[    5.293764] pci 0000:06:00.0: pci_set_of_node: of_node: (null)
-	[    5.332808] pci_bus 0000:07: pci_set_bus_of_node: of_node: (null)
+[1] https://github.com/OnePlusOSS/android_kernel_oneplus_sm4250
 
-> 
-> It sounds that the parent is missing when pci_set_bus_of_node() is
-> called on some places. I'll try to identify why.
-> 
-> Thanks,
-> Mauro
+Iskren Chernev (2):
+  dt-bindings: phy: qcom,qmp: Add SM6115 UFS PHY bindings
+  phy: qcom-qmp: Add support for SM6115 UFS phy
 
-Thanks,
-Mauro
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp.c           | 124 ++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.h           | 153 ++++++++++++++++++
+ 3 files changed, 278 insertions(+)
 
-[PATCH] pci: setup PCI before setting the OF node
 
-With this change, it is easier to add a debug printk at
-pci_set_of_node() in order to address possible issues.
-
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-
-diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
-index 79177ac37880..c5dfc1afb1d3 100644
---- a/drivers/pci/probe.c
-+++ b/drivers/pci/probe.c
-@@ -2374,15 +2374,14 @@ static struct pci_dev *pci_scan_device(struct pci_bus *bus, int devfn)
- 	dev->vendor = l & 0xffff;
- 	dev->device = (l >> 16) & 0xffff;
- 
--	pci_set_of_node(dev);
--
- 	if (pci_setup_device(dev)) {
--		pci_release_of_node(dev);
- 		pci_bus_put(dev->bus);
- 		kfree(dev);
- 		return NULL;
- 	}
- 
-+	pci_set_of_node(dev);
-+
- 	return dev;
- }
- 
-
+base-commit: 8d4b477da1a807199ca60e0829357ce7aa6758d5
+-- 
+2.32.0
 
 
 -- 
