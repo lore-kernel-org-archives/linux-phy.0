@@ -2,71 +2,97 @@ Return-Path: <SRS0=N/27=M5=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.9 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,
+	SPF_PASS,UPPERCASE_50_75,URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id F1C9AC4338F
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 13:17:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 96B6AC43214
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 16:09:22 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B410D60F43
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 13:17:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B410D60F43
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 4CC9F611BF
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 16:09:22 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 4CC9F611BF
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GEVdOgymMJPRC4lbIWDAThs0BQYqaRiE0hRRf8gR4gI=; b=u0xwC31KujFIUH
-	T62Q48k+nXO+8yG67Z1c9rKPvafENhL2itFTKtaPYLYHW1ekHSilCXwxrNMjY31qkb73CkCy8BUi1
-	YX/A+ieQYw02DWX3iWlLVDhju/9UfQEZ92Ics3ykxS3uYoTNn3ph4HuXOl4LRi+U0JIWjGlnRJ7zZ
-	N5xMO5f4ClAe0a9eAjIjU0bC49XiGKg30whhJDYukopIo06LU/BdRM9QXNSpIQ6fbrXgKd53diKQA
-	zry2oo8RwjWWoJDSUoBzM4yU+hxOQz1RqHl+RgtAQFiT8jXIXt1MsgGsXwagyutttwcPoMcz6Yddg
-	h/kgjN0axaiHCvam3ECw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wB9Ac/mJHWtK8mXm0+Kax0cr00aPR1fUuFu9q6WLD8M=; b=LLvajSkh83uO56VA6Eb4FSAJ7v
+	ZDdkN6L1HpFAKTiXjmIQbEAzyrz7160hiLUoyZ7Yi5FII25weOrpjCAr7loLUTTyRZP1Z4TuzELuy
+	Y7jSgH0LPkjRaoFcdWsldRoEqD/K9sZ/xk2uXSAYlZA9p8fQcfTDy0Jhm49I4B/3qpQ5rCDT2rg9J
+	q4Yb/tbgpeUSmInQPQgzPfFKWVqBnlys7PseG0ZGhJaa5kr0M1tM6N0jsNve839N+yb6cI1pauuWY
+	5QitL0V28VDFazR1XpfoNwDLg2XtO4CajeuNkPfFu32C40ZeNj+bU2ZtG2ksw34lPIF1OhjIayIsA
+	PSouBMjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mBzjP-00CapH-1w; Fri, 06 Aug 2021 13:17:47 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mC2PR-00CwgD-N0; Fri, 06 Aug 2021 16:09:21 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mBzjK-00CaoU-1N
- for linux-phy@lists.infradead.org; Fri, 06 Aug 2021 13:17:45 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 97FDC610FB;
- Fri,  6 Aug 2021 13:17:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1628255861;
- bh=1Z7LeDLFF5o7wMGR7j6uGiu9CbMJ/5b/kBdkKapBM2o=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z6aOhBvVE95DQ5TDZZRAEVrvHVt+JWyLemQ+ii70p+RwZMPY5SNy2o85TR2vpeC7S
- RTKSlYqOpQJc81+WkXJwpdv6aeE3hF+hoe6UrgS/HsJL163Yk2XHRveLWxDYLcZL4A
- cA731tXahQBaZgnKAnb04eYdcv+28zGp7KrV5N2TvHuKi2JHB178bpVwpgv2XBAv4V
- EwAmMZH9bVfUOTxDPY00APqyZ6SZwKiVx1rHVo79yb2S4xh4OleOB6m8w5qXDRUpgO
- sP6cTyXXos1HHaQ5Mz5zdUYJm0wnm22kWShrQl7u7WvLBy9xi38IJ70jX7MdBznfgV
- fTmcHx+Zz5FPg==
-Date: Fri, 6 Aug 2021 18:47:37 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, linuxarm@huawei.com,
- mauro.chehab@huawei.com, Rob Herring <robh@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Manivannan Sadhasivam <mani@kernel.org>,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v9 01/11] phy: HiSilicon: Add driver for Kirin 970 PCIe PHY
-Message-ID: <YQ02cc1dtqQBlT4/@matsya>
-References: <cover.1628092716.git.mchehab+huawei@kernel.org>
- <90aada2f51b58c162e199faf823ba887e50f1dc6.1628092716.git.mchehab+huawei@kernel.org>
+ id 1mC2PO-00CwfR-I4
+ for linux-phy@lists.infradead.org; Fri, 06 Aug 2021 16:09:20 +0000
+Received: by mail-wr1-x435.google.com with SMTP id b11so11755213wrx.6
+ for <linux-phy@lists.infradead.org>; Fri, 06 Aug 2021 09:09:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=UkovV5Mdm34kfjLhrBJxDW6rWpVAnpOVBBkBNhBbuBw=;
+ b=eUgzGME8cdzduHUfwOOm8zmY6zIpxSdy7wmhhLgEUjxbJkIvpULnEky10lk3FtMrvl
+ UZ6OHlCzag61IYqQIa0te1mFl73r577/eKNRY7SPqCCQvXof0ffSUPDVD5dbvpLwIQ31
+ 55/gThTCnOon28rJpumeNyma17HjuZM8zpe0xSA/ihojSbvIHUWnWWi84bX8fcIjYKeU
+ /PRi8jCkciZ3W+GISHav2cOLzDDOBhmVU1pfT0J9vesnFECohhma72930IzR6ko9Dwjf
+ bwWv57N7Q5h5tmST8s8vgZVQbv71IwsbQzo+zRxWDgwjyjWvyRQxIGYbGTAf07NHQrM/
+ Bd5g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=UkovV5Mdm34kfjLhrBJxDW6rWpVAnpOVBBkBNhBbuBw=;
+ b=PGl4OAUWIYzJ38Gw+h3QyepxT+y9nMFeXER/TcBm2BGn1lynHZeM5ke6w+hz5StN7I
+ +Tm3vLNAb/5QaT6PZMCBr95X3HY1g64yXMHyOpBPhQyG9tiy7Bx8mDbAkC5mjeC14+8f
+ fgthCMmA1QyQLGPOnX7Kzaijy8zTeGPj07UyGFQGSCy3tmxwIbVp8F3xuUO3Ptz36Qm7
+ xRMPKtNkqQ59mFlZyYu6N7ZRWTtS6NwZdA5FSHA64zIKE+eIEgDdr7ylsCiXLUdEYfl0
+ TudgGoJ1s64qMOLjne0d8cXqWL8mtuPzNPLngfTPiIrKZfVbkRmi8wnzwfTZ0TY6Pr4n
+ HmeQ==
+X-Gm-Message-State: AOAM531r6fRRboqNFpSO5LowYqMaAiAUp3gplOPfUe82Q+vbkpLsMIZX
+ L1ckqgd3vVlABOA9ysj9S/c=
+X-Google-Smtp-Source: ABdhPJzXPeu96xDIdWfZqFZE0cPJQ7eYsvH3bXXQ4Y+i8LIO+dH45v/7KIhttjndGg/S5+JUQVmkNA==
+X-Received: by 2002:adf:e6c4:: with SMTP id y4mr11556445wrm.220.1628266156141; 
+ Fri, 06 Aug 2021 09:09:16 -0700 (PDT)
+Received: from [192.168.74.110] (178-169-161-196.razgrad.ddns.bulsat.com.
+ [178.169.161.196])
+ by smtp.gmail.com with ESMTPSA id f17sm11813515wrt.18.2021.08.06.09.09.14
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 06 Aug 2021 09:09:15 -0700 (PDT)
+Subject: Re: [PATCH v1 2/2] phy: qcom-qmp: Add support for SM6115 UFS phy
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Manu Gautam <mgautam@codeaurora.org>, Rob Herring <robh+dt@kernel.org>,
+ devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ phone-devel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
+References: <20210805091727.942471-1-iskren.chernev@gmail.com>
+ <20210805091727.942471-3-iskren.chernev@gmail.com> <YQ0xrgDjxXeNecAS@matsya>
+From: Iskren Chernev <iskren.chernev@gmail.com>
+Message-ID: <86fcdc11-9f2c-0aa0-ebab-a26fa9ac2aca@gmail.com>
+Date: Fri, 6 Aug 2021 19:09:13 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.12.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <90aada2f51b58c162e199faf823ba887e50f1dc6.1628092716.git.mchehab+huawei@kernel.org>
+In-Reply-To: <YQ0xrgDjxXeNecAS@matsya>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210806_061742_165124_31837AC2 
-X-CRM114-Status: UNSURE (   8.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210806_090918_662574_61D40736 
+X-CRM114-Status: GOOD (  12.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,54 +109,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04-08-21, 18:02, Mauro Carvalho Chehab wrote:
 
-> +/* define ie,oe cfg */
-> +#define IO_IE_EN_HARD_BYPASS         (0x1 << 27)
-> +#define IO_OE_EN_HARD_BYPASS         (0x1 << 11)
-> +#define IO_HARD_CTRL_DEBOUNCE_BYPASS (0x1 << 10)
-> +#define IO_OE_GT_MODE                (0x2 << 7)
-> +#define DEBOUNCE_WAITCFG_IN          (0xf << 20)
-> +#define DEBOUNCE_WAITCFG_OUT         (0xf << 13)
 
-Why not use BIT() or GENMASK for these?
+On 8/6/21 3:57 PM, Vinod Koul wrote:
+> On 05-08-21, 12:17, Iskren Chernev wrote:
+> 
+>> +/* Only for QMP V3 660 PHY - QSERDES COM registers*/
+>> +#define QSERDES_V3_660_COM_ATB_SEL1			0x000
+>> +#define QSERDES_V3_660_COM_ATB_SEL2			0x004
+>> +#define QSERDES_V3_660_COM_FREQ_UPDATE			0x008
+>> +#define QSERDES_V3_660_COM_BG_TIMER			0x00c
+>> +#define QSERDES_V3_660_COM_SSC_EN_CENTER		0x010
+>> +#define QSERDES_V3_660_COM_SSC_ADJ_PER1			0x014
+>> +#define QSERDES_V3_660_COM_SSC_ADJ_PER2			0x018
+>> +#define QSERDES_V3_660_COM_SSC_PER1			0x01c
+>> +#define QSERDES_V3_660_COM_SSC_PER2			0x020
+>> +#define QSERDES_V3_660_COM_SSC_STEP_SIZE1		0x024
+>> +#define QSERDES_V3_660_COM_SSC_STEP_SIZE2		0x028
+>> +#define QSERDES_V3_660_COM_POST_DIV			0x02c
+>> +#define QSERDES_V3_660_COM_POST_DIV_MUX			0x030
+>> +#define QSERDES_V3_660_COM_BIAS_EN_CLKBUFLR_EN		0x034
+>> +#define QSERDES_V3_660_COM_CLK_ENABLE1			0x038
+>> +#define QSERDES_V3_660_COM_SYS_CLK_CTRL			0x03c
+>> +#define QSERDES_V3_660_COM_SYSCLK_BUF_ENABLE		0x040
+>> +#define QSERDES_V3_660_COM_PLL_EN			0x044
+>> +#define QSERDES_V3_660_COM_PLL_IVCO			0x048
+>> +#define QSERDES_V3_660_COM_LOCK_CMP1_MODE0		0x04c
+>> +#define QSERDES_V3_660_COM_LOCK_CMP2_MODE0		0x050
+>> +#define QSERDES_V3_660_COM_LOCK_CMP3_MODE0		0x054
+>> +#define QSERDES_V3_660_COM_LOCK_CMP1_MODE1		0x058
+>> +#define QSERDES_V3_660_COM_LOCK_CMP2_MODE1		0x05c
+>> +#define QSERDES_V3_660_COM_LOCK_CMP3_MODE1		0x060
+>> +#define QSERDES_V3_660_COM_CMD_RSVD0			0x064
+>> +#define QSERDES_V3_660_COM_EP_CLOCK_DETECT_CTRL		0x068
+>> +#define QSERDES_V3_660_COM_SYSCLK_DET_COMP_STATUS	0x06c
+>> +#define QSERDES_V3_660_COM_BG_TRIM			0x070
+>> +#define QSERDES_V3_660_COM_CLK_EP_DIV			0x074
+>> +#define QSERDES_V3_660_COM_CP_CTRL_MODE0		0x078
+>> +#define QSERDES_V3_660_COM_CP_CTRL_MODE1		0x07c
+>> +#define QSERDES_V3_660_COM_CMN_RSVD1			0x080
+>> +#define QSERDES_V3_660_COM_PLL_RCTRL_MODE0		0x084
+>> +#define QSERDES_V3_660_COM_PLL_RCTRL_MODE1		0x088
+>> +#define QSERDES_V3_660_COM_CMN_RSVD2			0x08c
+>> +#define QSERDES_V3_660_COM_PLL_CCTRL_MODE0		0x090
+>> +#define QSERDES_V3_660_COM_PLL_CCTRL_MODE1		0x094
+>> +#define QSERDES_V3_660_COM_CMN_RSVD3			0x098
+>> +#define QSERDES_V3_660_COM_PLL_CNTRL			0x09c
+>> +#define QSERDES_V3_660_COM_PHASE_SEL_CTRL		0x0a0
+>> +#define QSERDES_V3_660_COM_PHASE_SEL_DC			0x0a4
+>> +#define QSERDES_V3_660_COM_BIAS_EN_CTRL_BY_PSM		0x0a8
+>> +#define QSERDES_V3_660_COM_SYSCLK_EN_SEL		0x0ac
+>> +#define QSERDES_V3_660_COM_CML_SYSCLK_SEL		0x0b0
+>> +#define QSERDES_V3_660_COM_RESETSM_CNTRL		0x0b4
+>> +#define QSERDES_V3_660_COM_RESETSM_CNTRL2		0x0b8
+>> +#define QSERDES_V3_660_COM_RESTRIM_CTRL			0x0bc
+>> +#define QSERDES_V3_660_COM_RESTRIM_CTRL2		0x0c0
+>> +#define QSERDES_V3_660_COM_LOCK_CMP_EN			0x0c8
+>> +#define QSERDES_V3_660_COM_LOCK_CMP_CFG			0x0cc
+>> +#define QSERDES_V3_660_COM_DEC_START_MODE0		0x0d0
+>> +#define QSERDES_V3_660_COM_DEC_START_MODE1		0x0d4
+>> +#define QSERDES_V3_660_COM_VCOCAL_DEADMAN_CTRL		0x0d8
+>> +#define QSERDES_V3_660_COM_DIV_FRAC_START1_MODE0	0x0dc
+>> +#define QSERDES_V3_660_COM_DIV_FRAC_START2_MODE0	0x0e0
+>> +#define QSERDES_V3_660_COM_DIV_FRAC_START3_MODE0	0x0e4
+>> +#define QSERDES_V3_660_COM_DIV_FRAC_START1_MODE1	0x0e8
+>> +#define QSERDES_V3_660_COM_DIV_FRAC_START2_MODE1	0x0ec
+>> +#define QSERDES_V3_660_COM_DIV_FRAC_START3_MODE1	0x0f0
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_MINVAL1		0x0f4
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_MINVAL2		0x0f8
+>> +#define QSERDES_V3_660_COM_CMN_RSVD4			0x0fc
+>> +#define QSERDES_V3_660_COM_INTEGLOOP_INITVAL		0x100
+>> +#define QSERDES_V3_660_COM_INTEGLOOP_EN			0x104
+>> +#define QSERDES_V3_660_COM_INTEGLOOP_GAIN0_MODE0	0x108
+>> +#define QSERDES_V3_660_COM_INTEGLOOP_GAIN1_MODE0	0x10c
+>> +#define QSERDES_V3_660_COM_INTEGLOOP_GAIN0_MODE1	0x110
+>> +#define QSERDES_V3_660_COM_INTEGLOOP_GAIN1_MODE1	0x114
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_MAXVAL1		0x118
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_MAXVAL2		0x11c
+>> +#define QSERDES_V3_660_COM_RES_TRIM_CONTROL2		0x120
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_CTRL		0x124
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_MAP			0x128
+>> +#define QSERDES_V3_660_COM_VCO_TUNE1_MODE0		0x12c
+>> +#define QSERDES_V3_660_COM_VCO_TUNE2_MODE0		0x130
+>> +#define QSERDES_V3_660_COM_VCO_TUNE1_MODE1		0x134
+>> +#define QSERDES_V3_660_COM_VCO_TUNE2_MODE1		0x138
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_INITVAL1		0x13c
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_INITVAL2		0x140
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_TIMER1		0x144
+>> +#define QSERDES_V3_660_COM_VCO_TUNE_TIMER2		0x148
+>> +#define QSERDES_V3_660_COM_SAR				0x14c
+>> +#define QSERDES_V3_660_COM_SAR_CLK			0x150
+>> +#define QSERDES_V3_660_COM_SAR_CODE_OUT_STATUS		0x154
+>> +#define QSERDES_V3_660_COM_SAR_CODE_READY_STATUS	0x158
+>> +#define QSERDES_V3_660_COM_CMN_STATUS			0x15c
+>> +#define QSERDES_V3_660_COM_RESET_SM_STATUS		0x160
+>> +#define QSERDES_V3_660_COM_RESTRIM_CODE_STATUS		0x164
+>> +#define QSERDES_V3_660_COM_PLLCAL_CODE1_STATUS		0x168
+>> +#define QSERDES_V3_660_COM_PLLCAL_CODE2_STATUS		0x16c
+>> +#define QSERDES_V3_660_COM_BG_CTRL			0x170
+>> +#define QSERDES_V3_660_COM_CLK_SELECT			0x174
+>> +#define QSERDES_V3_660_COM_HSCLK_SEL			0x178
+>> +#define QSERDES_V3_660_COM_INTEGLOOP_BINCODE_STATUS	0x17c
+>> +#define QSERDES_V3_660_COM_PLL_ANALOG			0x180
+>> +#define QSERDES_V3_660_COM_CORECLK_DIV			0x184
+>> +#define QSERDES_V3_660_COM_SW_RESET			0x188
+>> +#define QSERDES_V3_660_COM_CORE_CLK_EN			0x18c
+>> +#define QSERDES_V3_660_COM_C_READY_STATUS		0x190
+>> +#define QSERDES_V3_660_COM_CMN_CONFIG			0x194
+>> +#define QSERDES_V3_660_COM_CMN_RATE_OVERRIDE		0x198
+>> +#define QSERDES_V3_660_COM_SVS_MODE_CLK_SEL		0x19c
+>> +#define QSERDES_V3_660_COM_DEBUG_BUS0			0x1a0
+>> +#define QSERDES_V3_660_COM_DEBUG_BUS1			0x1a4
+>> +#define QSERDES_V3_660_COM_DEBUG_BUS2			0x1a8
+>> +#define QSERDES_V3_660_COM_DEBUG_BUS3			0x1ac
+>> +#define QSERDES_V3_660_COM_DEBUG_BUS_SEL		0x1b0
+>> +#define QSERDES_V3_660_COM_CMN_MISC1			0x1b4
+>> +#define QSERDES_V3_660_COM_CORECLK_DIV_MODE1		0x1bc
+>> +#define QSERDES_V3_660_COM_CMN_RSVD5			0x1c0
+> 
+> why are these registers 660 specific and not V3 like we have for
+> other generations..? Quick looks with V3 regs tells me that seem
+> similar....
+>
 
-> +/* Registers in PCIePHY */
-> +static inline void hi3670_apb_phy_writel(struct hi3670_pcie_phy *phy,
-> +					 u32 val, u32 reg)
-> +{
-> +	writel(val, phy->base + 0x40000 + reg);
+Well, I looked at them for a long time and the only thing that is similar
+are the first few QSERDES registers from COM_ATB_SEL1=0x000 to
+COM_BIAS_EN_CLKBUFLR_EN=0x034. Everything else is different. So I can re-use
+the V3 for the similar regs, but they are 10%, so I figured instead of combing
+through all of the sequences to save 10% of the constants and make it slightly
+less readable just use new constants.
 
-magic 0x40000?
+Let me know if I should reuse the 14 regs from V3.
 
-> +}
-> +
-> +static inline u32 hi3670_apb_phy_readl(struct hi3670_pcie_phy *phy, u32 reg)
-> +{
-> +	return readl(phy->base + 0x40000 + reg);
-> +}
-> +
-> +static inline void kirin_apb_natural_phy_writel(struct hi3670_pcie_phy *phy,
-> +						u32 val, u32 reg)
-> +{
-> +	writel(val, phy->base + reg * 4);
-
-why * 4 ..?
-
-> +static void hi3670_pcie_set_eyeparam(struct hi3670_pcie_phy *phy)
-> +{
-> +	u32 val;
-> +
-> +	val = kirin_apb_natural_phy_readl(phy, RAWLANEN_DIG_PCS_XF_TX_OVRD_IN_1);
-> +
-> +	if (phy->eye_param[1] != EYEPARAM_NOCFG) {
-> +		val &= (~0xf00);
-> +		val |= (phy->eye_param[1] << 8) | (0x1 << 12);
-> +	}
-
-again too many magic numbers, Do check FIELD_GET/PREP macros for these?
--- 
-~Vinod
+Regards,
+Iskren
 
 -- 
 linux-phy mailing list
