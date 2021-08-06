@@ -1,97 +1,75 @@
-Return-Path: <SRS0=nKrG=M4=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=N/27=M5=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DC87AC4338F
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Aug 2021 18:18:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 83064C4338F
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 10:18:28 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9C2D061154
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Aug 2021 18:18:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9C2D061154
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 37A1E6108D
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 10:18:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 37A1E6108D
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDt49Yf+74If+jz5IakB5gnU7qWGnxLkr7Sr9/7YzjQ=; b=Wz+UQ/YSdnPt4e
-	jjdpctP/JJ166hA873eFtNQtUsO6kbMdUhWRGcFR20MKoFXfg7gtzRANxN5E5Edy2sFHDW36fUcy/
-	/08vwwWvWOueWHPW13XeZNyiM3ct3oWHRBtTS/xbORPElZ2c857GeFY6c+vFC8/Zjt4WcgNA2qZIS
-	BXlxCvk9SKRySaPzuEHGfIZXzJD5HKWpXkMbRMAObcDTOiKPKx7vVf+GfYozGNDQyfG3cQdySUGfy
-	jd0IuN+IBis/bMkBc7JjFOb5//9YHJNooziFEZbCbJcvG7XGfU1w/tLecgzP6pIX7Jjvti3SqYYHr
-	YtGFRJZ2Qt0Q9WEVOpBw==;
+	List-Owner; bh=5NCAEfMEM02qZOuaI9PC4TgZ6em9YrrNdbKMUl15tjg=; b=bHYJMYeZwQMWOB
+	3cNPZ8cell5pkin6Zjm5lcWbSeg8up8hnVQVCcqYh5x6JiB4eblQ+Qx8DP9CzyqfJnJUEDTBnxD4U
+	VUAYydfhKEjsGJFDPLB4WSU3hEt0ki497xnTS00KheCfJ/1MR3eIchhlpa95FpuNCjiWPkZN4AXbs
+	B9az1YLZIS71U1gEn5pbqvS/1v+ziNsE/ZOxkbXJNyBH/DrDxpd+A8Ny0W8EzpGzkjf1u3ttWuMzk
+	w/YWsAs42NEqOYIYUJSSbrA223OuuCqZluz2wwwYOfNZoP8fod1HH4lgKMPa/595Wx3TdjpGuGgTc
+	Qw91EiKxkHBvY+R1h+gQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mBhwy-00AWD4-Sk; Thu, 05 Aug 2021 18:18:36 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1mBwvr-00C6jd-Im; Fri, 06 Aug 2021 10:18:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mBhwv-00AWCV-Vq; Thu, 05 Aug 2021 18:18:35 +0000
-Received: by mail-ed1-x536.google.com with SMTP id cf5so9687810edb.2;
- Thu, 05 Aug 2021 11:18:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ojNM9xV3H+nI1/a7NsvJNdRoof5hRfKC/9tKy/ZhcHw=;
- b=olqN3ikMo81rNz4+DbVRQ5Gbl0vu0cGksnagpE9AgmSSecjhUJyB2hL20W+uRwdVkZ
- cmeZCYW7JCSZ/NYW0/792UKXVObEHntrwM0GTVFi4UwIV/gNTlp2HXmft1lA96HTWIuY
- bunfazBEz48qFAV19PJIS6M7B1NmkQhrW5o9iWBSgv8YZr7zlXEkqZ/758h1kjTJSA6H
- 4CpzFlazcO/6PiXkUUJuP6CNMezIy0+raIkR6RrivKelpHFimF71gUxhmbtION74UFwD
- wwtoNDpw3trioZGMrWgBU0Alwn86VCLubOfleCkMpfO6DnO9roiE3VkgzfqqkB8qIhqp
- Am9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ojNM9xV3H+nI1/a7NsvJNdRoof5hRfKC/9tKy/ZhcHw=;
- b=JRmn0az4pskKPGiCNFqFzkzNM4EBpYdr26BggSQXYUwATRCRByM3Pw78Bxu7SLNX4e
- zsg3z3aR8kHsV4JoQFJdAtqx2+S4XiMwx4GwuU1ebL88BUEKW3SYKfHmCzq0BcZ26x+M
- KmQwLTql2JOxNWuLea5xnxFpoMpUsV6acYXEdlTcPUM6U247bA6iZW2vYuldyIq34ZJP
- LeliwYxs0JS26bDqhW2vKxQKH+17IrF8E0/spQTUiV6UcRpaxKmInT3xg2hrNf78NLeJ
- vP0ZFzKc27xwKEods5gzkNs8IlVM60YvcLSSX3xjPRYZ8Lk2G0MzIGnSuQKx2muLEpfc
- Qq3g==
-X-Gm-Message-State: AOAM531E9YuiqiPepTWYw2p/9arsmi46PoQqdRG2+eq4DbjGJ3zagJxp
- gGh6BQ79hBe7SeoW9JVtOFX8J+vs3FxkCEbUZjE=
-X-Google-Smtp-Source: ABdhPJxAQxK02kP1hoG/1FTsH5hCNBUCJGicnRD8GVaXqj7qpLOmlEdfipZjtgyGJx3opxXShvtRUFnXaflfYi8bGXY=
-X-Received: by 2002:a05:6402:cae:: with SMTP id
- cn14mr8314025edb.31.1628187511800; 
- Thu, 05 Aug 2021 11:18:31 -0700 (PDT)
+ id 1mBwvo-00C6j6-Ni
+ for linux-phy@lists.infradead.org; Fri, 06 Aug 2021 10:18:26 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 1BA5860E97;
+ Fri,  6 Aug 2021 10:18:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1628245104;
+ bh=Ip01cdoo3exxtjwMtvNqg+Q3tg6d6FumHeook5Pxp7E=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=sUAtowA2iX/Wyhsl8xAF/CF7753yJkVMiV//WcPD1OvQep1r2M3ecSErhYefHwzzr
+ 1UUxkD2fF6fcqT62we5T+STQmArhfnTnJpmgQZgUK04Y+tpJUu681YOfdJ8swhMgRG
+ vRTXydK92fK4LRx4vAdMVjN/iKD5WrLawTqkRaA70498g0P0DfoCal3AN92NkWR2ql
+ TkcD2qFAgYZipdnrnn/jOVTTNfFXD/ReZ/jdevkH2WWgQ8/tmqJCTeizV0ksDI1tWH
+ 6Hk3oqnZURkTcss15YUQSCj0AJlZEW03FYB+dsAAbK5lKYdNpASFh6luTewv+MJ/4O
+ uRVgcJ52a2POg==
+Date: Fri, 6 Aug 2021 15:48:14 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Pratyush Yadav <p.yadav@ti.com>
+Cc: Nikhil Devshatwar <nikhil.nd@ti.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Peter Chen <peter.chen@nxp.com>, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH v3 2/7] phy: cdns-dphy: Prepare for Rx support
+Message-ID: <YQ0MZqI36bz1Jp87@matsya>
+References: <20210624184108.21312-1-p.yadav@ti.com>
+ <20210624184108.21312-3-p.yadav@ti.com>
 MIME-Version: 1.0
-References: <20210716103651.1455-1-linux.amoon@gmail.com>
- <20210716103651.1455-2-linux.amoon@gmail.com>
- <CAFBinCDeqauw_V-Vn9cat9HaCXj6HEMz6G+G+VbqCNtGEFGYzg@mail.gmail.com>
- <CANAwSgQ5PDGUWMH-jxnz5wwutUVniTn7RAe=4J=8-jbmqxYRRg@mail.gmail.com>
- <CAFBinCBhg+dije+3DvV_V_kqHv9q+r4EPxXCYFti6KuA4mK7KQ@mail.gmail.com>
- <CANAwSgT9-5zGr67aGzBmW6WDBfeiAvjv_zv2UbRC+YbgAGg==A@mail.gmail.com>
- <CAFBinCCGA0b=LVjbQood+iN+DHLodY0RJ-GrSOcgdzrDFJ25pQ@mail.gmail.com>
- <CAFBinCAohjxcsY3D1rdAiYVGL+==cnjzZxg1GmYxSNVhxSTDoA@mail.gmail.com>
- <CAFBinCAP_DDvPLn4h1yQKEdU_x1ovokHUTPeq3vNV_sDF8PcWg@mail.gmail.com>
-In-Reply-To: <CAFBinCAP_DDvPLn4h1yQKEdU_x1ovokHUTPeq3vNV_sDF8PcWg@mail.gmail.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Thu, 5 Aug 2021 23:48:20 +0530
-Message-ID: <CANAwSgS2vi7hZqX0LWxNTvk-3aN=n1fEErj4Zt0_4CCpZGyRkg@mail.gmail.com>
-Subject: Re: [PATCHv2 1/4] ARM: dts: meson8b: odroidc1: Add usb phy power node
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: linux-phy@lists.infradead.org, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-amlogic@lists.infradead.org, 
- Linux Kernel <linux-kernel@vger.kernel.org>,
- Matt Corallo <oc2udbzfd@mattcorallo.com>, 
- Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Emiliano Ingrassia <ingrassia@epigenesys.com>,
- devicetree <devicetree@vger.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20210624184108.21312-3-p.yadav@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210805_111834_068554_3136873B 
-X-CRM114-Status: GOOD (  34.21  )
+X-CRM114-CacheID: sfid-20210806_031824_847446_920F84E3 
+X-CRM114-Status: GOOD (  25.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,85 +86,210 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Martin,
+On 25-06-21, 00:11, Pratyush Yadav wrote:
+> The Rx programming sequence differs from the Tx programming sequence.
+> Currently only Tx mode is supported. Move all the Tx related parts into
+> a set of Tx-specific hooks that are then called by the main PHY
+> framework hooks. This way when Rx support is added all that is needed to
+> be done is to plug in the Rx hooks.
+> 
+> The clocks "psm" and "pll_ref" are not used by the Rx path so make them
+> optional in the probe and then check if they exist in the power_on()
+> hook.
+> 
+> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> ---
+> 
+> (no changes since v1)
+> 
+>  drivers/phy/cadence/cdns-dphy.c | 140 ++++++++++++++++++++++++--------
+>  1 file changed, 104 insertions(+), 36 deletions(-)
+> 
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index ba042e39cfaf..8656f2102a91 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -75,6 +75,11 @@ struct cdns_dphy;
+>  struct cdns_dphy_ops {
+>  	int (*probe)(struct cdns_dphy *dphy);
+>  	void (*remove)(struct cdns_dphy *dphy);
+> +	int (*power_on)(struct cdns_dphy *dphy);
+> +	int (*power_off)(struct cdns_dphy *dphy);
+> +	int (*validate)(struct cdns_dphy *dphy, enum phy_mode mode, int submode,
+> +			union phy_configure_opts *opts);
+> +	int (*configure)(struct cdns_dphy *dphy, union phy_configure_opts *opts);
+>  	void (*set_psm_div)(struct cdns_dphy *dphy, u8 div);
+>  	void (*set_clk_lane_cfg)(struct cdns_dphy *dphy,
+>  				 enum cdns_dphy_clk_lane_cfg cfg);
+> @@ -86,12 +91,18 @@ struct cdns_dphy_ops {
+>  struct cdns_dphy {
+>  	struct cdns_dphy_cfg cfg;
+>  	void __iomem *regs;
+> +	struct device *dev;
+>  	struct clk *psm_clk;
+>  	struct clk *pll_ref_clk;
+>  	const struct cdns_dphy_ops *ops;
+>  	struct phy *phy;
+>  };
+>  
+> +struct cdns_dphy_driver_data {
+> +	const struct cdns_dphy_ops *tx;
+> +	const struct cdns_dphy_ops *rx;
+> +};
+> +
+>  static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
+>  				     struct cdns_dphy_cfg *cfg,
+>  				     struct phy_configure_opts_mipi_dphy *opts,
+> @@ -199,20 +210,9 @@ static void cdns_dphy_ref_set_psm_div(struct cdns_dphy *dphy, u8 div)
+>  	       dphy->regs + DPHY_PSM_CFG);
+>  }
+>  
+> -/*
+> - * This is the reference implementation of DPHY hooks. Specific integration of
+> - * this IP may have to re-implement some of them depending on how they decided
+> - * to wire things in the SoC.
+> - */
+> -static const struct cdns_dphy_ops ref_dphy_ops = {
+> -	.get_wakeup_time_ns = cdns_dphy_ref_get_wakeup_time_ns,
+> -	.set_pll_cfg = cdns_dphy_ref_set_pll_cfg,
+> -	.set_psm_div = cdns_dphy_ref_set_psm_div,
+> -};
+> -
+> -static int cdns_dphy_config_from_opts(struct phy *phy,
+> -				      struct phy_configure_opts_mipi_dphy *opts,
+> -				      struct cdns_dphy_cfg *cfg)
+> +static int cdns_dphy_tx_config_from_opts(struct phy *phy,
+> +					 struct phy_configure_opts_mipi_dphy *opts,
+> +					 struct cdns_dphy_cfg *cfg)
+>  {
+>  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+>  	unsigned int dsi_hfp_ext = 0;
+> @@ -232,24 +232,13 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
+>  	return 0;
+>  }
+>  
+> -static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
+> -			      union phy_configure_opts *opts)
+> +static int cdns_dphy_tx_configure(struct cdns_dphy *dphy,
+> +				  union phy_configure_opts *opts)
+>  {
+>  	struct cdns_dphy_cfg cfg = { 0 };
+> -
+> -	if (mode != PHY_MODE_MIPI_DPHY)
+> -		return -EINVAL;
+> -
+> -	return cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
+> -}
+> -
+> -static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+> -{
+> -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> -	struct cdns_dphy_cfg cfg = { 0 };
+>  	int ret;
+>  
+> -	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
+> +	ret = cdns_dphy_tx_config_from_opts(dphy->phy, &opts->mipi_dphy, &cfg);
+>  	if (ret)
+>  		return ret;
+>  
+> @@ -279,9 +268,21 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  	return 0;
+>  }
+>  
+> -static int cdns_dphy_power_on(struct phy *phy)
+> +static int cdns_dphy_tx_validate(struct cdns_dphy *dphy, enum phy_mode mode,
+> +				 int submode, union phy_configure_opts *opts)
+>  {
+> -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	struct cdns_dphy_cfg cfg = { 0 };
+> +
+> +	if (submode != PHY_MIPI_DPHY_SUBMODE_TX)
+> +		return -EINVAL;
+> +
+> +	return cdns_dphy_tx_config_from_opts(dphy->phy, &opts->mipi_dphy, &cfg);
+> +}
+> +
+> +static int cdns_dphy_tx_power_on(struct cdns_dphy *dphy)
+> +{
+> +	if (!dphy->psm_clk || !dphy->pll_ref_clk)
+> +		return -EINVAL;
+>  
+>  	clk_prepare_enable(dphy->psm_clk);
+>  	clk_prepare_enable(dphy->pll_ref_clk);
+> @@ -293,16 +294,77 @@ static int cdns_dphy_power_on(struct phy *phy)
+>  	return 0;
+>  }
+>  
+> -static int cdns_dphy_power_off(struct phy *phy)
+> +static int cdns_dphy_tx_power_off(struct cdns_dphy *dphy)
+>  {
+> -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> -
+>  	clk_disable_unprepare(dphy->pll_ref_clk);
+>  	clk_disable_unprepare(dphy->psm_clk);
+>  
+>  	return 0;
+>  }
+>  
+> +static const struct cdns_dphy_ops tx_ref_dphy_ops = {
+> +	.power_on = cdns_dphy_tx_power_on,
+> +	.power_off = cdns_dphy_tx_power_off,
+> +	.validate = cdns_dphy_tx_validate,
+> +	.configure = cdns_dphy_tx_configure,
+> +	.get_wakeup_time_ns = cdns_dphy_ref_get_wakeup_time_ns,
+> +	.set_pll_cfg = cdns_dphy_ref_set_pll_cfg,
+> +	.set_psm_div = cdns_dphy_ref_set_psm_div,
+> +};
+> +
+> +/*
+> + * This is the reference implementation of DPHY hooks. Specific integration of
+> + * this IP may have to re-implement some of them depending on how they decided
+> + * to wire things in the SoC.
+> + */
+> +static const struct cdns_dphy_driver_data ref_dphy_ops = {
+> +	.tx = &tx_ref_dphy_ops,
+> +};
+> +
+> +static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
+> +			      union phy_configure_opts *opts)
+> +{
+> +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +
+> +	if (mode != PHY_MODE_MIPI_DPHY)
+> +		return -EINVAL;
+> +
+> +	if (dphy->ops->validate)
+> +		return dphy->ops->validate(dphy, mode, submode, opts);
+> +
+> +	return 0;
+> +}
+> +
+> +static int cdns_dphy_power_on(struct phy *phy)
+> +{
+> +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +
+> +	if (dphy->ops->power_on)
+> +		return dphy->ops->power_on(dphy);
+> +
+> +	return 0;
+> +}
+> +
+> +static int cdns_dphy_power_off(struct phy *phy)
+> +{
+> +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +
+> +	if (dphy->ops->power_off)
+> +		return dphy->ops->power_off(dphy);
+> +
+> +	return 0;
+> +}
 
-On Thu, 5 Aug 2021 at 03:28, Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> On Sun, Jul 18, 2021 at 9:09 PM Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
-> >
-> > Hi Anand,
-> >
-> > On Sun, Jul 18, 2021 at 4:01 PM Martin Blumenstingl
-> > <martin.blumenstingl@googlemail.com> wrote:
-> > [...]
-> > > > From the schematics [1]
-> > > > https://dn.odroid.com/S805/Schematics/odroid-c1+_rev0.4_20160226.pdf
-> > > >
-> > > > You could find references to PWREN  <--- GPIOAO.BIT5
-> > > > The second reference is USB HOST Power Switch
-> > > > The third reference is USB HOST POWER.
-> > > >
-> > > > Hope I am clean in my thought process now.
-> > > Can you please point out the page numbers for me?
-> > >
-> > > What I am seeing on page 1 is:
-> > > GPIOAO_5 (called GPIOAO.BIT5) is connected as an INPUT to the USB_OTG
-> > > PWREN signal (that's the green box with the label "USB_OTG.SchDoc"
-> > > above it).
-> > I unfortunately missed your question on IRC on this topic:
-> > <armoon> xdarklight: just want to understand the confusion on PWREN,
-> > either is INPUT / OTPUT to usb hub am I correct
-> > My understanding of the INPUT/OUTPUT direction in the Odroid-C1
-> > schematics (which you linked) above is that the arrow direction shows
-> > whether it's an input or output.
-> > For example (all on page one):
-> > - HDMI_HPD is an input to the Meson8b SoC, arrow direction is: HDMI => S805
-> > - IR_IN is an input to the Meson8b SoC, arrow direction is: S805 <=
-> > GPIOAO.BIT7 IR_IN
-> > - PWM is an output, arrow direction is: S805 => PWM.C VCCK_PWM
-> > - 3.3V/1.8V switch for the SD card is an output, arrow direction is:
-> > S805 => GPIOAO.BIT3 TF_3V3N_1V8_EN
-> >
-> > That tells me: the arrow direction shows which connections are inputs
-> > or outputs.
-> > Some pins can be input and output at the same time (HDMI_CEC). But
-> > let's keep it simple for now any only look at inputs/output.
-> >
-> > Based on this information I am looking at the arrow direction for
-> > USB_OTG: GPIOAO.BIT5 PWREN <= S805
-> > So this confirms that GPIOAO_5 is an output to the SoC.
-> > Please note though that this part is not linked with any USB host
-> > connector, it's only linked to the USB OTG path.
-> >
-> > For the next part the S805 SoC is not involved:
-> > USB1 USB_HOST_PWR_SW PWREN <= PWREN USB_HUB_GL852G
-> > USB2 USB_HOST_PWR_SW PWREN <= PWREN USB_HUB_GL852G
-> > This tells me that the PWREN signal for the two USB_HOST_PWR_SW (USB
-> > host power switches / current limiters) is driven by the GL852G USB
-> > hub.
-> Hardkernel team responded on the Odroid forums to the request from Anand:
-> "Power-Enable signal to the USB load switch ICs is connected to the
-> USB hub controller.
-> It is not connected the CPU GPIO."
->
-> The regulator from Anand's patch is therefore connected to the micro USB port.
-> This means that the patch needs updating in case Anand wants to have
-> it included.
->
+why do you need a dphy specific power_on/off only to call internal
+ops..? If there is no additional logic lets drop this and continue the
+phy ops for this
 
-Yes, I will send a corrected version of the patches soon.
-
->
-> Best regards,
-> Martin
->
->
-> [0] https://forum.odroid.com/viewtopic.php?p=332217#p332217
-
-Thanks
--Anand
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
