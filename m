@@ -1,86 +1,104 @@
-Return-Path: <SRS0=N/27=M5=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=z3Ad=M6=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-13.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 8FE2FC4338F
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 20:00:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1F3B1C432BE
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Aug 2021 03:06:30 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4F47C61167
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Aug 2021 20:00:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 4F47C61167
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id D321161181
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Aug 2021 03:06:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D321161181
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=flygoat.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rkAP1P6rnK0JT2Es/t7Y2Cdl3B7/S1ENZi0H2ksU/iI=; b=dDI7npdNWx5gPA
-	I7jrutGfe9yH2oADIiNmI8XMcoKcSbrhwzv6S5r4Io/asSbApbKDesZC4GZIgSgF/wszn72WB+bIw
-	lm/Q8wFf1k/mX1EcQsrLhc2LlA0mV/nyeochMtQATq0OcvlFkY3UTDqcdYoqUmQvTPGKQLUa5SOEv
-	D9gmHz1pHKIoTmwm0spRXn3eY95Dh0jNGvadlLrukaKN82zNz5FGHcxwbN+PpgXZCwO4TpbEnhFNh
-	Eqsfe1eUyEcyp876Z6Z6ndZ3ArPF2rqjZXe2ze4/7W1wuY0O5BE1dL3YTbR6HKgAuhIF1A3DWe9kI
-	iF99t+KXbSvHTQy7deGA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0c3oUenajIlWQ2KgndhRaqkp5HoVNOSkE1fnGddW1hs=; b=h7Qdpux2oh/3ujzXnacVBhuXiv
+	dGcaAAdk2HGEqiwg+DNWF0Z798sZgDsGzW6TJ033f+GC7MzkW7sM4tvTCFvh6l6DnUvLHbAxq2lqv
+	HNIIGDAzcb6M2nMlFksWw/9W8S9rNxDEe/heYVi/l8nwFAeAQjXeWnPJDAvHjUenFV2J23IpJ4DOB
+	bNzAWtuT1Cbt/lzQqqfKhHUUsuGrmGzsictHMSyUOKNXaWCZ0Je64rtj4wK/l9kLrvMrZg7PHZWG0
+	kUlrDueiaeJWq46xlf8PFmw6apotkvFe6mePKzQBATn5uUhpDqdaZo9K/oSFdReqcPU1DzQAJ+YxP
+	UdI1ruAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mC60r-00DP1b-Jp; Fri, 06 Aug 2021 20:00:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mCCfN-00E42q-5m; Sat, 07 Aug 2021 03:06:29 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mC60c-00DOsW-07; Fri, 06 Aug 2021 19:59:59 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 8CB5561167;
- Fri,  6 Aug 2021 19:59:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1628279997;
- bh=UqVKLug64Y4PSY9jX3pZI+5Ny/f/MK1K8tRFuFCfIcE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WRfD/kZjjUvo7RJtlbHRvoYZrFlgi+kOi3Bt13z5T+6J9G+9uOW0qD5DXQsFvg0ow
- grhKMFnbQvRmxznTEq0wpNHEqxLN1qTPdsHPeSNT9mb4gec986nDpN4/kUBlv1PjVV
- Jw4IkpnNGw90XtP2PJ1SZK+3CTnhMOhnZbxvKXCmZxnW7xfbRIyBEUvmSdJKOzeSUn
- ib5mmv7EGoC9ErrGyOkVRmzJnivM9d3TISMp/MPdeDl49S8sMNAAjx06FooJ+WW1Dz
- dzL2iNZTDQKdeQMLcG9qwF6ryBL0GG2G+CGmBg2u9+M73p5oit6U5/MZxU2vekCVx1
- NtmNIIi0ePsyw==
-Received: by mail-ed1-f52.google.com with SMTP id y7so14648641eda.5;
- Fri, 06 Aug 2021 12:59:57 -0700 (PDT)
-X-Gm-Message-State: AOAM532SUYiBVQjikyVDPXt0ZqdO67CzHVdQGqc6eE6iIdfwXNuotO6V
- oEt3ty+Y6qxtBVlAVJDZ+oBOsnH4+u7Nxo6Fsg==
-X-Google-Smtp-Source: ABdhPJz+E0OEuJndsCm2YSbEUXUzlIlGlq0qlb1skxBmctqYc2VbHUieNbcaIln7cAxq7HYGzjQeRBnuJq5qJ972iHM=
-X-Received: by 2002:a05:6402:2043:: with SMTP id
- bc3mr15137346edb.62.1628279996090; 
- Fri, 06 Aug 2021 12:59:56 -0700 (PDT)
+ id 1mCCfK-00E40g-4q
+ for linux-phy@lists.infradead.org; Sat, 07 Aug 2021 03:06:27 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id DAFAE580BAE;
+ Fri,  6 Aug 2021 23:06:20 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Fri, 06 Aug 2021 23:06:20 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
+ subject:to:cc:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=l
+ 5p2iTVXgItyA1T83tXDocQvr6XRmME6ifZj532EGj0=; b=ljQo8afraSpQx/8id
+ 7CfoqpVwr8D62kyoo+MmGoVRUnd7/sVr39no7ZD9FxDbScJUYMDGilPpIYuoeGRE
+ iViJVfbVuJKClJbc70CdAd0Pm4Q44wngl36n8hmh37pPVHmCYNkONNEEQ7ziQpTI
+ Fy9yEX42caoqcnF+WaK6B0Roead9Bah5qBw/eBadsFvdbwgNjMrC7ELdaAi4FMho
+ tkBEtqbhDgWIUqb6ncXXqWTVd2NkVAUxVZuX6r9u9+xpGcGAi/oLiAa9jx5d4szu
+ biGrYy2p3ZizaZ8nInGLezYBQQ3Q4ISWs+MX6SGqe8fP2pYeBUykmOYXfNev2wFI
+ 9FHmA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm3; bh=l5p2iTVXgItyA1T83tXDocQvr6XRmME6ifZj532EG
+ j0=; b=MAEjfhjWn1aASr/8ov+9UITytKgDUETYzwVTeyrVRxcghYJZVFked+5Xe
+ DPdIY+uNqUnb8vc+FkoeMalFSigI56uKsJneK1USC4coefv7enUjqiOyFGhPxl7d
+ apeOTAlJ5dIIQoBHXPwc1j6I6AFjJo3uNokf56XDguP7vAVP3l6JLqm90KrqWwyP
+ ptmBucuPiesKznlC2iBXkZAmwzcas8JIvha/3VA2gv0quYES1Cd09DIqba+p8IGf
+ GiD1Uh1nXiIbOZ+yiRaDsatg1A7Keap3+ZV0WqI3AquKY0nHZvZeFOmxuNpAq6+m
+ Tp1ThMWa4YcFEc9QmEMkKo6IB55xw==
+X-ME-Sender: <xms:q_gNYXcRaawms8kHh0Fhufa6Rg_lbEyhojb71ihthde-eDRrb1yzxQ>
+ <xme:q_gNYdN1F2Lg1rO_Me241_I9Ht2Ng7LokAo4dw_6ll_-x7np0wvFRlSKGxrCy-kzH
+ kuOtEDq-nI4bBoQkB0>
+X-ME-Received: <xmr:q_gNYQgVvWe-sUDHlTZgTw9w7iWEW1ZeG-bI_ko2LxWpOO35NeOKQRRxDzVfmdSMUlDxTUSKh08L6XB7Qpw4a1HmayXH>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrjedvgdeifecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecunecujfgurhepuffvfhfhkffffgggjggtgfesthekre
+ dttdeftfenucfhrhhomheplfhirgiguhhnucgjrghnghcuoehjihgrgihunhdrhigrnhhg
+ sehflhihghhorghtrdgtohhmqeenucggtffrrghtthgvrhhnpeefheefudeugfeugeejtd
+ fhuedujeekvddvhfeludfhvdektdeileeikefghfetvdenucffohhmrghinheptddurdho
+ rhhgnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepjh
+ hirgiguhhnrdihrghnghesfhhlhihgohgrthdrtghomh
+X-ME-Proxy: <xmx:q_gNYY-QqqTmDgQMAnUiOh5h1mz-9gtQT3SStK--fIjPSwwq-Y2bOA>
+ <xmx:q_gNYTvLl9zeL7EGfx2USxvw7Fxk4rr9vLeUC1e18cTYilUhcqhUZg>
+ <xmx:q_gNYXEmg1J142dHKaUE_wPP8ilpddMI_uTDpVNVqWELobG5_IbvDg>
+ <xmx:rPgNYRLzUGI2CGhop4vWf8WG9tid9-nQmmjW6SgEsD80URuttonnJA>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
+ 6 Aug 2021 23:06:15 -0400 (EDT)
+Subject: Re: [PATCH v4 0/9] MIPS: Migrate pistachio to generic kernel
+To: linux-mips@vger.kernel.org
+Cc: tsbogend@alpha.franken.de, mturquette@baylibre.com,
+ daniel.lezcano@linaro.org, linus.walleij@linaro.org, vkoul@kernel.org,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org
+References: <20210723022543.4095-1-jiaxun.yang@flygoat.com>
+From: Jiaxun Yang <jiaxun.yang@flygoat.com>
+Message-ID: <1bb80cdf-f7d5-f99f-a4f3-635552df916b@flygoat.com>
+Date: Sat, 7 Aug 2021 11:06:12 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.12.0
 MIME-Version: 1.0
-References: <cover.1620203062.git.baruch@tkos.co.il>
- <e17461407cf4bb79fed5925ec81196a0b84e7827.1620203062.git.baruch@tkos.co.il>
-In-Reply-To: <e17461407cf4bb79fed5925ec81196a0b84e7827.1620203062.git.baruch@tkos.co.il>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 6 Aug 2021 13:59:44 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKOGo4eXKA7FZK7AQQ24MDDbg2-ngUQF9CJK=8eH_pxHQ@mail.gmail.com>
-Message-ID: <CAL_JsqKOGo4eXKA7FZK7AQQ24MDDbg2-ngUQF9CJK=8eH_pxHQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/6] PCI: qcom: add support for IPQ60xx PCIe controller
-To: Baruch Siach <baruch@tkos.co.il>
-Cc: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, 
- Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
- Kathiravan T <kathirav@codeaurora.org>, 
- Bjorn Helgaas <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Jingoo Han <jingoohan1@gmail.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>, 
- Robert Marko <robert.marko@sartura.hr>, devicetree@vger.kernel.org, 
- linux-phy@lists.infradead.org, PCI <linux-pci@vger.kernel.org>, 
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- linux-tegra <linux-tegra@vger.kernel.org>
+In-Reply-To: <20210723022543.4095-1-jiaxun.yang@flygoat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210806_125958_120120_3859B56F 
-X-CRM114-Status: GOOD (  31.04  )
+X-CRM114-CacheID: sfid-20210806_200626_299795_68FD2187 
+X-CRM114-Status: GOOD (  14.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,267 +110,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="gbk"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, May 5, 2021 at 3:18 AM Baruch Siach <baruch@tkos.co.il> wrote:
->
-> From: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
->
-> IPQ60xx series of SoCs have one port of PCIe gen 3. Add support for that
-> platform.
->
-> The code is based on downstream Codeaurora kernel v5.4. Split out the
-> DBI registers access part from .init into .post_init. DBI registers are
-> only accessible after phy_power_on().
->
-> Signed-off-by: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
-> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
-> ---
-> v2:
->   * Drop ATU configuration; rely on common code instead
->
->   * Use more common register macros
->
->   * Use bulk clk and reset APIs
-> ---
->  drivers/pci/controller/dwc/pcie-designware.h |   1 +
->  drivers/pci/controller/dwc/pcie-qcom.c       | 150 +++++++++++++++++++
->  2 files changed, 151 insertions(+)
->
-> diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
-> index ceb359b6e6a6..346462c74a3e 100644
-> --- a/drivers/pci/controller/dwc/pcie-designware.h
-> +++ b/drivers/pci/controller/dwc/pcie-designware.h
-> @@ -76,6 +76,7 @@
->
->  #define GEN3_RELATED_OFF                       0x890
->  #define GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL   BIT(0)
-> +#define GEN3_RELATED_OFF_RXEQ_RGRDLESS_RXTS    BIT(13)
->  #define GEN3_RELATED_OFF_GEN3_EQ_DISABLE       BIT(16)
->  #define GEN3_RELATED_OFF_RATE_SHADOW_SEL_SHIFT 24
->  #define GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK  GENMASK(25, 24)
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index 8a7a300163e5..93766aee3e7c 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -52,6 +52,10 @@
->  #define PCIE20_PARF_DBI_BASE_ADDR              0x168
->  #define PCIE20_PARF_SLV_ADDR_SPACE_SIZE                0x16C
->  #define PCIE20_PARF_MHI_CLOCK_RESET_CTRL       0x174
-> +#define AHB_CLK_EN                             BIT(0)
-> +#define MSTR_AXI_CLK_EN                                BIT(1)
-> +#define BYPASS                                 BIT(4)
-> +
->  #define PCIE20_PARF_AXI_MSTR_WR_ADDR_HALT      0x178
->  #define PCIE20_PARF_AXI_MSTR_WR_ADDR_HALT_V2   0x1A8
->  #define PCIE20_PARF_LTSSM                      0x1B0
-> @@ -94,6 +98,12 @@
->  #define SLV_ADDR_SPACE_SZ                      0x10000000
->
->  #define PCIE20_LNK_CONTROL2_LINK_STATUS2       0xa0
-> +#define PCIE_CAP_CURR_DEEMPHASIS               BIT(16)
-
-Isn't this a standard register field?
-
-> +#define SPEED_GEN1                             0x1
-> +#define SPEED_GEN2                             0x2
-> +#define SPEED_GEN3                             0x3
-
-And these?
-
-There's already some common DWC code for setting the link speed.
-
-> +#define AXI_CLK_RATE                           200000000
-> +#define RCHNG_CLK_RATE                         100000000
->
->  #define DEVICE_TYPE_RC                         0x4
->
-> @@ -168,6 +178,11 @@ struct qcom_pcie_resources_2_7_0 {
->         struct clk *pipe_clk;
->  };
->
-> +struct qcom_pcie_resources_2_9_0 {
-> +       struct clk_bulk_data clks[5];
-> +       struct reset_control *rst;
-> +};
-> +
->  union qcom_pcie_resources {
->         struct qcom_pcie_resources_1_0_0 v1_0_0;
->         struct qcom_pcie_resources_2_1_0 v2_1_0;
-> @@ -175,6 +190,7 @@ union qcom_pcie_resources {
->         struct qcom_pcie_resources_2_3_3 v2_3_3;
->         struct qcom_pcie_resources_2_4_0 v2_4_0;
->         struct qcom_pcie_resources_2_7_0 v2_7_0;
-> +       struct qcom_pcie_resources_2_9_0 v2_9_0;
->  };
->
->  struct qcom_pcie;
-> @@ -1266,6 +1282,130 @@ static void qcom_pcie_post_deinit_2_7_0(struct qcom_pcie *pcie)
->         clk_disable_unprepare(res->pipe_clk);
->  }
->
-> +static int qcom_pcie_get_resources_2_9_0(struct qcom_pcie *pcie)
-> +{
-> +       struct qcom_pcie_resources_2_9_0 *res = &pcie->res.v2_9_0;
-> +       struct dw_pcie *pci = pcie->pci;
-> +       struct device *dev = pci->dev;
-> +       int ret;
-> +
-> +       res->clks[0].id = "iface";
-> +       res->clks[1].id = "axi_m";
-> +       res->clks[2].id = "axi_s";
-> +       res->clks[3].id = "axi_bridge";
-> +       res->clks[4].id = "rchng";
-> +
-> +       ret = devm_clk_bulk_get(dev, ARRAY_SIZE(res->clks), res->clks);
-> +       if (ret < 0)
-> +               return ret;
-> +
-> +       res->rst = devm_reset_control_array_get_exclusive(dev);
-> +       if (IS_ERR(res->rst))
-> +               return PTR_ERR(res->rst);
-> +
-> +       return 0;
-> +}
-> +
-> +static void qcom_pcie_deinit_2_9_0(struct qcom_pcie *pcie)
-> +{
-> +       struct qcom_pcie_resources_2_9_0 *res = &pcie->res.v2_9_0;
-> +
-> +       clk_bulk_disable_unprepare(ARRAY_SIZE(res->clks), res->clks);
-> +}
-> +
-> +static int qcom_pcie_init_2_9_0(struct qcom_pcie *pcie)
-> +{
-> +       struct qcom_pcie_resources_2_9_0 *res = &pcie->res.v2_9_0;
-> +       struct device *dev = pcie->pci->dev;
-> +       int ret;
-> +
-> +       ret = reset_control_assert(res->rst);
-> +       if (ret) {
-> +               dev_err(dev, "reset assert failed (%d)\n", ret);
-> +               return ret;
-> +       }
-> +
-> +       usleep_range(2000, 2500);
-> +
-> +       ret = reset_control_deassert(res->rst);
-> +       if (ret) {
-> +               dev_err(dev, "reset deassert failed (%d)\n", ret);
-> +               return ret;
-> +       }
-> +
-> +       /*
-> +        * Don't have a way to see if the reset has completed.
-> +        * Wait for some time.
-> +        */
-> +       usleep_range(2000, 2500);
-> +
-> +       ret = clk_bulk_prepare_enable(ARRAY_SIZE(res->clks), res->clks);
-> +       if (ret)
-> +               goto err_reset;
-> +
-> +       return 0;
-> +
-> +       /*
-> +        * Not checking for failure, will anyway return
-> +        * the original failure in 'ret'.
-> +        */
-> +err_reset:
-> +       reset_control_assert(res->rst);
-> +
-> +       return ret;
-> +}
-> +
-> +static int qcom_pcie_post_init_2_9_0(struct qcom_pcie *pcie)
-> +{
-> +       struct dw_pcie *pci = pcie->pci;
-> +       u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
-> +       u32 val;
-> +       int i;
-> +
-> +       writel(SLV_ADDR_SPACE_SZ,
-> +               pcie->parf + PCIE20_v3_PARF_SLV_ADDR_SPACE_SIZE);
-> +
-> +       val = readl(pcie->parf + PCIE20_PARF_PHY_CTRL);
-> +       val &= ~BIT(0);
-> +       writel(val, pcie->parf + PCIE20_PARF_PHY_CTRL);
-> +
-> +       writel(0, pcie->parf + PCIE20_PARF_DBI_BASE_ADDR);
-> +
-> +       writel(DEVICE_TYPE_RC, pcie->parf + PCIE20_PARF_DEVICE_TYPE);
-> +       writel(BYPASS | MSTR_AXI_CLK_EN | AHB_CLK_EN,
-> +               pcie->parf + PCIE20_PARF_MHI_CLOCK_RESET_CTRL);
-> +       writel(GEN3_RELATED_OFF_RXEQ_RGRDLESS_RXTS
-> +               | GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL,
-> +               pci->dbi_base + GEN3_RELATED_OFF);
-> +
-> +       writel(MST_WAKEUP_EN | SLV_WAKEUP_EN | MSTR_ACLK_CGC_DIS
-> +               | SLV_ACLK_CGC_DIS | CORE_CLK_CGC_DIS |
-> +               AUX_PWR_DET | L23_CLK_RMV_DIS | L1_CLK_RMV_DIS,
-> +               pcie->parf + PCIE20_PARF_SYS_CTRL);
-> +
-> +       writel(0, pcie->parf + PCIE20_PARF_Q2A_FLUSH);
-> +
-> +       dw_pcie_dbi_ro_wr_en(pci);
-> +       writel(PCIE_CAP_LINK1_VAL, pci->dbi_base + offset + PCI_EXP_SLTCAP);
-> +
-> +       /* Configure PCIe link capabilities for ASPM */
-> +       val = readl(pci->dbi_base + offset + PCI_EXP_LNKCAP);
-> +       val &= ~PCI_EXP_LNKCAP_ASPMS;
-> +       writel(val, pci->dbi_base + offset + PCI_EXP_LNKCAP);
-> +
-> +       writel(PCI_EXP_DEVCTL2_COMP_TMOUT_DIS, pci->dbi_base + offset +
-> +                       PCI_EXP_DEVCTL2);
-> +
-> +       writel(PCIE_CAP_CURR_DEEMPHASIS | SPEED_GEN3,
-> +                       pci->dbi_base + offset + PCI_EXP_DEVCTL2);
-
-Doesn't this overwrite the prior register write?
-
-> +
-> +       for (i = 0;i < 256;i++)
-> +               writel(0x0, pcie->parf + PCIE20_PARF_BDF_TO_SID_TABLE_N
-> +                               + (4 * i));
-> +
-> +       return 0;
-> +}
-> +
->  static int qcom_pcie_link_up(struct dw_pcie *pci)
->  {
->         u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
-> @@ -1456,6 +1596,15 @@ static const struct qcom_pcie_ops ops_1_9_0 = {
->         .config_sid = qcom_pcie_config_sid_sm8250,
->  };
->
-> +/* Qcom IP rev.: 2.9.0  Synopsys IP rev.: 5.00a */
-> +static const struct qcom_pcie_ops ops_2_9_0 = {
-> +       .get_resources = qcom_pcie_get_resources_2_9_0,
-> +       .init = qcom_pcie_init_2_9_0,
-> +       .post_init = qcom_pcie_post_init_2_9_0,
-> +       .deinit = qcom_pcie_deinit_2_9_0,
-> +       .ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
-> +};
-> +
->  static const struct dw_pcie_ops dw_pcie_ops = {
->         .link_up = qcom_pcie_link_up,
->         .start_link = qcom_pcie_start_link,
-> @@ -1555,6 +1704,7 @@ static const struct of_device_id qcom_pcie_match[] = {
->         { .compatible = "qcom,pcie-qcs404", .data = &ops_2_4_0 },
->         { .compatible = "qcom,pcie-sdm845", .data = &ops_2_7_0 },
->         { .compatible = "qcom,pcie-sm8250", .data = &ops_1_9_0 },
-> +       { .compatible = "qcom,pcie-ipq6018", .data = &ops_2_9_0 },
->         { }
->  };
->
-> --
-> 2.30.2
->
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgrU2iAyMDIxLzcvMjMgyc/O5zEwOjI1LCBKaWF4dW4gWWFuZyDQtLXAOgo+IEknbSBsdWNreSBl
+bm91Z2ggdG8gZ2V0IGEgQ3JlYXRvciBDSTQwIGJvYXJkIGZyb20gZHVzdHMuCj4gVGhpcyBwYXRj
+aHNldCBtb3ZlIGl0IHRvIGdlcm5laWMga2VybmVsIHRvIHJlZHVjZSBtYWludGVuYW5jZSBidXJk
+ZW4uCj4gSXQgaGF2ZSBiZWVuIHRlc3RlZCB3aXRoIFNEIENhcmQgYm9vdC4KCkhpIFRob21hcywK
+CkZvciB0aGUgc2VyaWVzLCB0aGUgcGluY3RybCBvbmUgaGF2ZSBiZWVuIGFwcGxpZWQgYnkgc3Vi
+c3lzdGVtIAptYWludGFpbmVyIGFuZApyZXN0cyBoYXZlIGJlZW4gYWNrZWQgYnkgc3Vic3lzdGVt
+IG1haW50YWluZXJzLCBjb3VsZCB5b3UgcGxlYXNlIGFwcGx5IHRoZW0KdG8gTUlQUyB0cmVlPwoK
+VGhhbmtzLgoKLSBKaWF4dW4KCj4KPiAtLQo+IHYyOiBNaW5vciBmaXhlcwo+IHYzOiBUeXBvIGZp
+eGVzIGFuZCAwZGF5IHRlc3Rib3Qgd2FybmluZyBmaXggKFRoYW5rcyB0byBTZXJnZWkhKQo+IHY0
+OiAwMS5vcmcgd2FybmluZyBmaXgKPgo+IEppYXh1biBZYW5nICg5KToKPiAgICBNSVBTOiBnZW5l
+cmljOiBBbGxvdyBnZW5lcmF0aW5nIEZJVCBpbWFnZSBmb3IgTWFyZHVrIGJvYXJkCj4gICAgTUlQ
+UzogRFRTOiBQaXN0YWNoaW8gYWRkIG1pc3NpbmcgY3BjIGFuZCBjZG1tCj4gICAgY2xrOiBwaXN0
+YWNoaW86IE1ha2UgaXQgc2VsZWN0YWJsZSBmb3IgZ2VuZXJpYyBNSVBTIGtlcm5lbAo+ICAgIGNs
+b2Nrc291cmNlL2RyaXZlcnMvcGlzdGFjaGlvOiBNYWtlIGl0IHNlbGVjdGFibGUgZm9yIE1JUFMK
+PiAgICBwaHk6IHBpc3RhY2hpby11c2I6IERlcGVuZCBvbiBNSVBTIHx8IENPTVBJTEVfVEVTVAo+
+ICAgIHBpbmN0cmw6IHBpc3RhY2hpbzogTWFrZSBpdCBhcyBhbiBvcHRpb24KPiAgICBNSVBTOiBj
+b25maWc6IGdlbmVyaWM6IEFkZCBjb25maWcgZm9yIE1hcmR1ayBib2FyZAo+ICAgIE1JUFM6IFJl
+dGlyZSBNQUNIX1BJU1RBQ0hJTwo+ICAgIE1JUFM6IE1ha2UgYSBhbGlhcyBmb3IgcGlzdGFjaGlv
+X2RlZmNvbmZpZwo+Cj4gICBhcmNoL21pcHMvS2J1aWxkLnBsYXRmb3JtcyAgICAgICAgICAgICAg
+ICAgICAgfCAgIDEgLQo+ICAgYXJjaC9taXBzL0tjb25maWcgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIHwgIDMwIC0tCj4gICBhcmNoL21pcHMvTWFrZWZpbGUgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgfCAgIDMgKwo+ICAgYXJjaC9taXBzL2Jvb3QvZHRzL01ha2VmaWxlICAgICAgICAg
+ICAgICAgICAgIHwgICAyICstCj4gICBhcmNoL21pcHMvYm9vdC9kdHMvaW1nL01ha2VmaWxlICAg
+ICAgICAgICAgICAgfCAgIDMgKy0KPiAgIGFyY2gvbWlwcy9ib290L2R0cy9pbWcvcGlzdGFjaGlv
+LmR0c2kgICAgICAgICB8ICAxMCArCj4gICBhcmNoL21pcHMvY29uZmlncy9nZW5lcmljL2JvYXJk
+LW1hcmR1ay5jb25maWcgfCAgNTMgKysrCj4gICBhcmNoL21pcHMvY29uZmlncy9waXN0YWNoaW9f
+ZGVmY29uZmlnICAgICAgICAgfCAzMTYgLS0tLS0tLS0tLS0tLS0tLS0tCj4gICBhcmNoL21pcHMv
+Z2VuZXJpYy9LY29uZmlnICAgICAgICAgICAgICAgICAgICAgfCAgIDYgKwo+ICAgYXJjaC9taXBz
+L2dlbmVyaWMvUGxhdGZvcm0gICAgICAgICAgICAgICAgICAgIHwgICAxICsKPiAgIGFyY2gvbWlw
+cy9nZW5lcmljL2JvYXJkLW1hcmR1ay5pdHMuUyAgICAgICAgICB8ICAyMiArKwo+ICAgYXJjaC9t
+aXBzL3Bpc3RhY2hpby9LY29uZmlnICAgICAgICAgICAgICAgICAgIHwgIDE0IC0KPiAgIGFyY2gv
+bWlwcy9waXN0YWNoaW8vTWFrZWZpbGUgICAgICAgICAgICAgICAgICB8ICAgMiAtCj4gICBhcmNo
+L21pcHMvcGlzdGFjaGlvL1BsYXRmb3JtICAgICAgICAgICAgICAgICAgfCAgIDYgLQo+ICAgYXJj
+aC9taXBzL3Bpc3RhY2hpby9pbml0LmMgICAgICAgICAgICAgICAgICAgIHwgMTI1IC0tLS0tLS0K
+PiAgIGFyY2gvbWlwcy9waXN0YWNoaW8vaXJxLmMgICAgICAgICAgICAgICAgICAgICB8ICAyNCAt
+LQo+ICAgYXJjaC9taXBzL3Bpc3RhY2hpby90aW1lLmMgICAgICAgICAgICAgICAgICAgIHwgIDU1
+IC0tLQo+ICAgZHJpdmVycy9jbGsvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgICAgICAgIHwg
+ICAxICsKPiAgIGRyaXZlcnMvY2xrL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICAgICAgICB8
+ICAgMiArLQo+ICAgZHJpdmVycy9jbGsvcGlzdGFjaGlvL0tjb25maWcgICAgICAgICAgICAgICAg
+IHwgICA4ICsKPiAgIGRyaXZlcnMvY2xvY2tzb3VyY2UvS2NvbmZpZyAgICAgICAgICAgICAgICAg
+ICB8ICAgMyArLQo+ICAgZHJpdmVycy9waHkvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgICAg
+ICAgIHwgICAyICstCj4gICBkcml2ZXJzL3BpbmN0cmwvS2NvbmZpZyAgICAgICAgICAgICAgICAg
+ICAgICAgfCAgIDUgKy0KPiAgIDIzIGZpbGVzIGNoYW5nZWQsIDExNCBpbnNlcnRpb25zKCspLCA1
+ODAgZGVsZXRpb25zKC0pCj4gICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9taXBzL2NvbmZpZ3Mv
+Z2VuZXJpYy9ib2FyZC1tYXJkdWsuY29uZmlnCj4gICBkZWxldGUgbW9kZSAxMDA2NDQgYXJjaC9t
+aXBzL2NvbmZpZ3MvcGlzdGFjaGlvX2RlZmNvbmZpZwo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFy
+Y2gvbWlwcy9nZW5lcmljL2JvYXJkLW1hcmR1ay5pdHMuUwo+ICAgZGVsZXRlIG1vZGUgMTAwNjQ0
+IGFyY2gvbWlwcy9waXN0YWNoaW8vS2NvbmZpZwo+ICAgZGVsZXRlIG1vZGUgMTAwNjQ0IGFyY2gv
+bWlwcy9waXN0YWNoaW8vTWFrZWZpbGUKPiAgIGRlbGV0ZSBtb2RlIDEwMDY0NCBhcmNoL21pcHMv
+cGlzdGFjaGlvL1BsYXRmb3JtCj4gICBkZWxldGUgbW9kZSAxMDA2NDQgYXJjaC9taXBzL3Bpc3Rh
+Y2hpby9pbml0LmMKPiAgIGRlbGV0ZSBtb2RlIDEwMDY0NCBhcmNoL21pcHMvcGlzdGFjaGlvL2ly
+cS5jCj4gICBkZWxldGUgbW9kZSAxMDA2NDQgYXJjaC9taXBzL3Bpc3RhY2hpby90aW1lLmMKPiAg
+IGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2Nsay9waXN0YWNoaW8vS2NvbmZpZwo+CgoKLS0g
+CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
