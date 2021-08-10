@@ -2,19 +2,19 @@ Return-Path: <SRS0=zCth=NB=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-9.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E8CD7C4338F
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 07:33:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7D87FC4338F
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 08:52:38 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9BA1161051
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 07:33:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9BA1161051
+	by mail.kernel.org (Postfix) with ESMTPS id 3526460234
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 08:52:38 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3526460234
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=intel.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,96 +23,89 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jn3WgMffVuxr50z7hyKGfTp4oP9J+/aM3A2zvDsHiS8=; b=Klw4LkjKzc/1Sg
-	LxaakJMRQpxTbPrcmr4r/CkOVnmc2VCvIGsyGDT71aAFY19Nql27yFXdBM/wDqV/Oo29xguZBr/jP
-	7yyahXDDMo7cORnZNaeMJGWP5AU1s92lZeL/ery+4ZWtPaz+cMbfumAvmPgNz+ulaqBciB+9NmHms
-	c6Myt8iGE5UXnntsgUUTDfxu22k0e25p6a9fR25uMkBKldg5GXWeJ9tU6l25DxcYV5f4OC0yy9kv9
-	rDY3tiGd/OOiGUnsF0DIEhnykV02Coy5TFM9iYwzdoivASAD4y42c9Pn7cZ+zxkJmnF5fbv1CN7Ta
-	OuJk+SafnIkDdhOaFIuw==;
+	List-Owner; bh=guH8UuzMR0RawkNEHUQf5osZgL9aoORHeMeaVtZaCn8=; b=UXNg8Ij7HdlrcT
+	18JxC2tJlxoUkKgsGRHOkeY3OcIm2c4SxKG23Sj4HhY9YaSeB+4eH84lf2Bb4p2BaUWQoh+94tlU+
+	sJvtdSSu9j/GjECFGAaYKUrk4oI/uJ95DtotpCUtU/L/qHfB8ORC42lClqAjp8Cb7ww5L0PBa6Akt
+	faf4sItlWg3mEz4gI0E3TSQh3Hykj+/GCV1SviugLgr/StxKfxrngEJiX2TM+UU/tG52mwl8t7ekv
+	GW6w1u6qnDGupulp4EIBhn2FfVZLUuWAH4cILc4CfU11nT8rWWEUvl2JWXW3H3nHqdZ0CEI2pQNZW
+	9RPt81M2PTmxV9bZKUEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mDMGE-002kG3-2I; Tue, 10 Aug 2021 07:33:18 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1mDNUz-003A87-Js; Tue, 10 Aug 2021 08:52:37 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mDMG0-002kEE-Lt; Tue, 10 Aug 2021 07:33:06 +0000
-X-IronPort-AV: E=McAfee;i="6200,9189,10070"; a="300440582"
-X-IronPort-AV: E=Sophos;i="5.84,309,1620716400"; d="scan'208";a="300440582"
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 10 Aug 2021 00:32:59 -0700
+ id 1mDNUB-0039sB-VX; Tue, 10 Aug 2021 08:51:51 +0000
+X-IronPort-AV: E=McAfee;i="6200,9189,10070"; a="202033190"
+X-IronPort-AV: E=Sophos;i="5.84,310,1620716400"; d="scan'208";a="202033190"
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 10 Aug 2021 01:51:46 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.84,309,1620716400"; d="scan'208";a="506034541"
-Received: from fmsmsx604.amr.corp.intel.com ([10.18.126.84])
- by fmsmga004.fm.intel.com with ESMTP; 10 Aug 2021 00:32:59 -0700
-Received: from fmsmsx611.amr.corp.intel.com (10.18.126.91) by
- fmsmsx604.amr.corp.intel.com (10.18.126.84) with Microsoft SMTP Server
+X-IronPort-AV: E=Sophos;i="5.84,310,1620716400"; d="scan'208";a="503054896"
+Received: from fmsmsx605.amr.corp.intel.com ([10.18.126.85])
+ by orsmga001.jf.intel.com with ESMTP; 10 Aug 2021 01:51:45 -0700
+Received: from fmsmsx610.amr.corp.intel.com (10.18.126.90) by
+ fmsmsx605.amr.corp.intel.com (10.18.126.85) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2242.10; Tue, 10 Aug 2021 00:32:59 -0700
-Received: from fmsmsx609.amr.corp.intel.com (10.18.126.89) by
- fmsmsx611.amr.corp.intel.com (10.18.126.91) with Microsoft SMTP Server
+ 15.1.2242.4; Tue, 10 Aug 2021 01:51:45 -0700
+Received: from fmsedg602.ED.cps.intel.com (10.1.192.136) by
+ fmsmsx610.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2242.10; Tue, 10 Aug 2021 00:32:59 -0700
-Received: from fmsedg601.ED.cps.intel.com (10.1.192.135) by
- fmsmsx609.amr.corp.intel.com (10.18.126.89) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2242.10 via Frontend Transport; Tue, 10 Aug 2021 00:32:59 -0700
-Received: from NAM12-MW2-obe.outbound.protection.outlook.com (104.47.66.46) by
- edgegateway.intel.com (192.55.55.70) with Microsoft SMTP Server
+ 15.1.2242.10 via Frontend Transport; Tue, 10 Aug 2021 01:51:45 -0700
+Received: from NAM12-BN8-obe.outbound.protection.outlook.com (104.47.55.177)
+ by edgegateway.intel.com (192.55.55.71) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.1.2242.10; Tue, 10 Aug 2021 00:32:59 -0700
+ 15.1.2242.10; Tue, 10 Aug 2021 01:51:45 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AS+SFFI5icUiCUUU9imSGLLht52QK3vAPrbDkrrvY3uHFrkx6e8ssMonDeveeTjeFTEtF3uEzhXgZEhrYfnIA87/8hWVvWqJz4b+ARBJr1zuDcn4KfToZMqEp2LCXwq7CDfioAuwR/xkfts5/op/3jcVMClFvVgNP4DU5UBkyvdfUDzfoyZQNwhbOV6CGzFuGk6qyohCD3gaHuaoUIWRAnlZ/dxzPNUkgdFwotP5tZ3LTpWhumgUKhBL+eKu5Rft7lJYBZZeczWI5sQIC8OzL2T9BbSKktZgUjgIZ6XDbbr3FJdsb4Gh3Kvs+ESd3kvJoM460dZbASnjN/qPDDSO7w==
+ b=R94sLDZ0qguoNgHwaqfchYYDRIEzkxDGzbhgEUveaOc3codkzSWpturVZerpNotXfoVhHdhSdms8sJmHo5C22AVy53C2X9cpnyK7mHOKVAdslSmFRenA+PdVWznpPuR7BBW3T8R3YBLpc6UKD5N4Vcpg9nINOAUW7V+CzS7R/3wRCs4mCVLfuigXMv6L38hYuwoglHPaZZinkBs/I59xw+Qr9ol0kYYjOVjzuwf7xOzcM6+w8/AfIw62rU/BlGMbYQ9OTXU6z96taVCqQrQ8kEIo14GzmvNgRuMDDSJe+ICt9ICVoghkjq9sPlpW1G9l5QD8Wf0quJUH9Pjby1dRsg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8Rk6R02vV7zVqwpAU5MGdPoQnOECUitoo/zO++gPcyA=;
- b=heq44OmdaZIkhF7xJHQGVPkL1ZuJsKYEqSASU6pMrsvvjsWb5qPGVNpefP4bzB/LpFXvuETdCJsnz/uWkcpFE/MNN8T4sSEg+tU7M7P67nYqZk+1mNDqJMz3xUwgExjohjjalmJqP9ykYCJGPReDFda6jHSPMI8on86WqDj+iqN0e8AzckEGkhCCsiCl3GDAliHtalqxYZQZfmRK+g3EyuScDPRtrovl1VgZFk3RG1/zRFUGS7N+iWh0mT0pAeWNnh7bwO0hv5IbixGHV0OV25Zu9ohCqcchgJzdy/zRTrY87v8wn62qd2WM3GsCcWqiliufj0WBOD55kxGIXNIORQ==
+ bh=opcplViBRLmmvaUJuRpj0bWrelJisFN3RG96ouQNAOU=;
+ b=UWXLfznSYIG2h9hIrVczGLfT/iNpBaubjcnhh7VZNZFcm645atYQgRAVPlYk22iHFyfXv8jcQRyT1Oy+JdSEVeqSz/aGKKAS5oo7aUM7jhQrkMOfEFPTuwHsDj3agmjNMnkKcbcoIlrLQE8NoT/rIiCuuULSU6nDt0ClzwbZRxuGuc3LC8HGp/XyT9gxJef/oGWG3Fn3d6FliGcoYmKTBFDNgS9mH//AlZA7WJOD8SmlMfjfBKsG7Q3jOlKL6/p5FpkZVjJSSx+pDSwzI1Fv8AgLnjlQixN00uUf65O2DabjPlDBB3ZeQ2KnJMK6Xb17jDuVO6DlLPZ1y2ox0D9WgA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
  dkim=pass header.d=intel.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intel.onmicrosoft.com; 
  s=selector2-intel-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8Rk6R02vV7zVqwpAU5MGdPoQnOECUitoo/zO++gPcyA=;
- b=Ti+pR7v/c1uiHFow+ZCUFXQNbx4RtAzjzRX+ktfBO8lAXqoITzeL8PB/dgKbZdb8kgb+CXCoVunClIsvLV5Xp7YVPrYweqmiqVA5fHfoJDKMCJyLfFXOoxsZPtGpoaXhb6SnceGIQULljHJF7iniap44cr9yqdlVlqTvUA5v+VI=
+ bh=opcplViBRLmmvaUJuRpj0bWrelJisFN3RG96ouQNAOU=;
+ b=MTY2y/deKT17Qx5usVkgOg+wnYDimpu+sc2xh2dx1zjSgoBcxZNNo4g33v4Y8XJPPmIo1B/oAFKkWPnqVDTQ/YMR/H1CuGURjdjFk3/MpD7o4QZ0JSnkyGDeJWphpSSuxszr89bMr4rQWOgjRMavkVmZnw+mSeAXoKl36loctjw=
 Received: from MWHPR11MB1789.namprd11.prod.outlook.com (2603:10b6:300:108::13)
- by MWHPR1101MB2320.namprd11.prod.outlook.com (2603:10b6:301:53::19)
- with Microsoft SMTP Server (version=TLS1_2,
+ by MWHPR11MB1485.namprd11.prod.outlook.com (2603:10b6:301:d::18) with
+ Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4394.15; Tue, 10 Aug
- 2021 07:32:56 +0000
+ 2021 08:51:41 +0000
 Received: from MWHPR11MB1789.namprd11.prod.outlook.com
  ([fe80::b81c:ee06:fc82:5fc3]) by MWHPR11MB1789.namprd11.prod.outlook.com
  ([fe80::b81c:ee06:fc82:5fc3%7]) with mapi id 15.20.4394.023; Tue, 10 Aug 2021
- 07:32:55 +0000
+ 08:51:41 +0000
 From: "A, Rashmi" <rashmi.a@intel.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-CC: Vinod Koul <vkoul@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
- linux-mmc <linux-mmc@vger.kernel.org>, Linux ARM
- <linux-arm-kernel@lists.infradead.org>, Linux Kernel Mailing List
- <linux-kernel@vger.kernel.org>, Kishon <kishon@ti.com>, Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>, "linux-phy@lists.infradead.org"
- <linux-phy@lists.infradead.org>, Mark Gross <mgross@linux.intel.com>,
- "kris.pan@linux.intel.com" <kris.pan@linux.intel.com>, "Zhou, Furong"
- <furong.zhou@intel.com>, "Sangannavar, Mallikarjunappa"
- <mallikarjunappa.sangannavar@intel.com>, "Hunter, Adrian"
- <adrian.hunter@intel.com>, "Vaidya, Mahesh R" <mahesh.r.vaidya@intel.com>,
- "Srikandan, Nandhini" <nandhini.srikandan@intel.com>, "Demakkanavar,
- Kenchappa" <kenchappa.demakkanavar@intel.com>
-Subject: RE: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay SOC
- support to the arasan eMMC driver
-Thread-Topic: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay SOC
- support to the arasan eMMC driver
-Thread-Index: AQHXhQzRAwmHks3vwkaXAOpN1lCV0KtmfYEAgAQx92CAADsqAIAAJ6HwgAATgwCAAUGykA==
-Date: Tue, 10 Aug 2021 07:32:55 +0000
-Message-ID: <MWHPR11MB17898D0E3A0A4DD993AD7E948CF79@MWHPR11MB1789.namprd11.prod.outlook.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: "linux-drivers-review-request@eclists.intel.com"
+ <linux-drivers-review-request@eclists.intel.com>, "michal.simek@xilinx.com"
+ <michal.simek@xilinx.com>, "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, 
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "kishon@ti.com" <kishon@ti.com>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "mgross@linux.intel.com" <mgross@linux.intel.com>, "kris.pan@linux.intel.com"
+ <kris.pan@linux.intel.com>, "Zhou, Furong" <furong.zhou@intel.com>,
+ "Sangannavar, Mallikarjunappa" <mallikarjunappa.sangannavar@intel.com>,
+ "Hunter, Adrian" <adrian.hunter@intel.com>, "Vaidya, Mahesh R"
+ <mahesh.r.vaidya@intel.com>, "Srikandan, Nandhini"
+ <nandhini.srikandan@intel.com>, "Demakkanavar, Kenchappa"
+ <kenchappa.demakkanavar@intel.com>
+Subject: RE: [PATCH 3/3] phy: intel: Add Thunder Bay eMMC PHY support
+Thread-Topic: [PATCH 3/3] phy: intel: Add Thunder Bay eMMC PHY support
+Thread-Index: AQHXhQzXjwy/r1dxVUyvCxQxq0i4Z6tmdgyAgAYGjGA=
+Date: Tue, 10 Aug 2021 08:51:40 +0000
+Message-ID: <MWHPR11MB1789393D5B868B0DBF6FC0A28CF79@MWHPR11MB1789.namprd11.prod.outlook.com>
 References: <20210730063309.8194-1-rashmi.a@intel.com>
- <20210730063309.8194-3-rashmi.a@intel.com>
- <CAPDyKFqZ-H3+OnYyyY7y611YrRAAMFq+W65DMfM4wSNvY_fzjA@mail.gmail.com>
- <MWHPR11MB17891909766F5295AF34B0578CF69@MWHPR11MB1789.namprd11.prod.outlook.com>
- <YRDqQvKQ71/824Lu@matsya>
- <MWHPR11MB1789D2B707B39CB42322C73A8CF69@MWHPR11MB1789.namprd11.prod.outlook.com>
- <CAPDyKFp5HcCfsoLgBc=D9RKOrVY2SuV3FKsFCVT2=WaxZBsNiA@mail.gmail.com>
-In-Reply-To: <CAPDyKFp5HcCfsoLgBc=D9RKOrVY2SuV3FKsFCVT2=WaxZBsNiA@mail.gmail.com>
+ <20210730063309.8194-4-rashmi.a@intel.com> <YQ0td9y5+RNFxWZs@matsya>
+In-Reply-To: <YQ0td9y5+RNFxWZs@matsya>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -120,68 +113,61 @@ X-MS-TNEF-Correlator:
 dlp-reaction: no-action
 dlp-version: 11.5.1.3
 dlp-product: dlpe-windows
-authentication-results: linaro.org; dkim=none (message not signed)
- header.d=none;linaro.org; dmarc=none action=none header.from=intel.com;
+authentication-results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=intel.com;
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f97adb86-6712-4554-c3b6-08d95bd11210
-x-ms-traffictypediagnostic: MWHPR1101MB2320:
+x-ms-office365-filtering-correlation-id: 2ff7391f-283e-4b42-cc34-08d95bdc128d
+x-ms-traffictypediagnostic: MWHPR11MB1485:
 x-ld-processed: 46c98d88-e344-4ed4-8496-4ed7712e255d,ExtAddr
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MWHPR1101MB23206CC8B09AC99D735A30858CF79@MWHPR1101MB2320.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-microsoft-antispam-prvs: <MWHPR11MB1485DCB434E58C75DEF1CAC18CF79@MWHPR11MB1485.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wRqKKfZlFMWIk/GbLu7C7lko10QIGg7ExyBQ0KQYRkiEwL68d1e20dXtjx+deUuLe5pd7Sj5No5dUuYg9Di434xK6Sb/3e3vvB9/Px47gjzmbE+YpwdblS3SZ5EJWLD4hkzHD+hqXdAa5HUoG497qPmtVtS1lVmCXujnvBSvvXSwK/p0jcSclRJk91n3g2GwznyOvu73pL6TESJg2xcjwxPeEPAOpQiKr0i7ipcqE0SZQ228uIU05A2/0953lC5LviT0ndq67KUbDCXd0LaTo3rFE9KyY+Z9hvuYCOOiNRtyWkB1XrlSEsdHT3A5iLbFAWpnZZJQFTTQbCqVhho2Ij8Ba7cLm3A3L5VsGnUD3G9wX/7xDAxh/W9kUAH3pbrxT1i4A0Frz8LS0/DnhOfH1x1TuI2an2zqiZuILAVBgKzzzET0i853DyR5g84cgO9mOhaH6tzPTKnkeQbBoFz4R5TfjwqS9xL1F3wFbadEdIchiPTEHBLKBcrnOSvnZN9CnHlFG1fxcS8oDAm+LUcWDvqKb6gKBHbbmwvpUA+IbaAj7/JX5pUXtAGd0pIkbnojWmry8tR/cn6EU2q/f3KVQ9qnYGf0BbRARv86sH9uSbdH95+LxL3Y6KnJJrUH2RsSstmIY6XM7CPZSb0/Ijb/Ew3Zre31ktlGRyVhGiUVWVPEmBthtWIU6xgvrrr0/Wve1b4fIN7ml5wOcc/CrMrMGQ==
+x-microsoft-antispam-message-info: zAfytoKpvp33S7e5YqVDWGl4oNLavsa5WiUiyHxQP8Q4RhmC9cr1czIPfjGM6XPoLMkwO/oFYZ6kK/DOKtzeX3MXEGx+l2KVIVWAZ+lB8oetjQMzCKBw1wFiF1k/I7umkIjUD8h6O7+oD15di9qDNnHRqzlaKgGUsgyut4kxC/1n853K7ClGtHElGqEVyKDr3P3+b37FQtlxEwTgeLHDm6Ic+QG+FBpHDA+YJ4QgmtRvOK0aJ4kN/vBia9/7A8OcTHf6P99fqMsejn1f6RpnCxfKpg9ayy5lM0aEpA9xUB6hWKpRT2ibp6b3S5z95vfBSioZx9+ral/heQw/iUO5RxRXV9uo07yX77dwwdysSShL8j+GZWxp5FAMFD/T2yAx+Neio17wrNRf7roTglYoZge9C2QT+zf68ePSbSuM6cssxg/DD2CHDgwxupVsE6r6GyNczd75bnrvhIPPVZojqaKVpuD55hwvUVx0m80TVhlTvoJqJwmvno/4vvchrlHM7iCPO43V+phNmfkL83BTIhlUx5reznBiWdGpWu1DrXWnWRuBtiZvwNXLV7kabFuiVN2MlE353ScvoAdf4gR5IUXcYHBQWP3SaUDJuKd3rxLd/RgDG2nBSDwdHa2eRzU4u0QGBH37QzfU75I10NtgN7zvcW/aikVo4FET43rcsX/frvb5iVUC2U3qolkWWJVebBevj6zp78JavjRlgtb2tg==
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:MWHPR11MB1789.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(136003)(366004)(346002)(376002)(396003)(39860400002)(4326008)(478600001)(76116006)(2906002)(64756008)(66946007)(66476007)(66556008)(66446008)(26005)(54906003)(7696005)(86362001)(53546011)(316002)(83380400001)(6506007)(6916009)(33656002)(186003)(8676002)(38100700002)(71200400001)(7416002)(5660300002)(38070700005)(122000001)(52536014)(9686003)(55016002)(8936002);
+ SFS:(4636009)(366004)(346002)(39860400002)(396003)(136003)(376002)(52536014)(6916009)(54906003)(38100700002)(316002)(478600001)(7696005)(8936002)(6506007)(53546011)(33656002)(8676002)(5660300002)(122000001)(66556008)(7416002)(186003)(2906002)(26005)(55016002)(9686003)(86362001)(4326008)(66946007)(76116006)(71200400001)(66476007)(38070700005)(83380400001)(64756008)(66446008);
  DIR:OUT; SFP:1102; 
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?VXhvTmtYMThhRk1kWE9lUEs0NFo4N3pVVXZTSi95bEF1S0RuV2xmSG5JMDdw?=
- =?utf-8?B?UXp6dm9ia2ppWTNYWlYwYVRMODZFTHd2Y3hJMVlIbzVTdDBrZUY2WnMyMi9P?=
- =?utf-8?B?T1RybFJPVVNQOUNXYXhGL0k0OGlhQjNvdXRRMGpjcWVSMVZCMHExS1ViUUJz?=
- =?utf-8?B?b3lUVmF4RlRwK1B4MExBNnRGQmt1ZGFtRktwMzJRL0dWcGpvU1RmNzBNTEFK?=
- =?utf-8?B?a3lqQzhkdHQ3TXdYOUhUZEZhRmpoYWVLZHg2WVhhd3kvZDRqS2htaXpub0pT?=
- =?utf-8?B?dTY1cnR3UDBIZS9wN255TldBdngzNlg2Ty9IWmdkQmIrdEtsbm41TDVCUjQw?=
- =?utf-8?B?WGFBTkxsMEpkKzVYZnlWU2JTWE5lVWx3VlhvQ3k4aUFnMDdUWWJzZEFpeXVX?=
- =?utf-8?B?NzJwMmxLcVBhSDBUZHdVQ1ZPVnlEUDg2a2RrN29OdjVtdDFLR0ZTODEyeFI1?=
- =?utf-8?B?RkdLZWRkdTBIbWg2ME1DdGFFM2MwMTZqMUtlMHZET1dYYmhocHIzOHB1U0lv?=
- =?utf-8?B?VUN1b1BmTUNINEptbjQrWm1iOUxua2QvZVlrUVYrTkhNcnNmZUUyanRCTGtX?=
- =?utf-8?B?RVBucVFvOEg4dTNKZ05Zck01bEI1ZEVWME94c29FVmM5SFEvNUYyNFQxZUhh?=
- =?utf-8?B?citvd0FoeWZSQmorZnJpNysyK210QUl4VkJqWVE1QU1LZ2Nld3lqanlPK0RN?=
- =?utf-8?B?YTRpczBreG8xb0txQ21pK2k2Ri9CSTRHQXZYb0JwU2dDMFVLb1c2MDdYT0ph?=
- =?utf-8?B?NjhsTFh5Qy9kV3VZNStFdjBMRVI1dzBUd2NYR2puUnJBNGwvM0xBQUVUbW9M?=
- =?utf-8?B?MUlWdGFudit1TVB0UTMvQ0hzdGlNN0t6eldIQnB5dXJUZ1gwcEYzWFpXd2lu?=
- =?utf-8?B?dm5oTWtGaWFxNEtvVXp0MURyWitORUQzSC9KbTVSTTBPQTFZTy9yVFhVZmE0?=
- =?utf-8?B?NWE5ZU1wc2JmekxyQTNOSUkwZm5VSU1NRVRTUlIreUtaN3R6TlN4MlYydnJj?=
- =?utf-8?B?Q0tKRDE5OEl0WDNSd2s4Qm91eU8vSjNmTlM5Y3o1YnRQMkNiaHVaeXBaTzh2?=
- =?utf-8?B?SW01bzkwNmZpaWpsVmMwUDYwaEM3d1VXN0RUY29FWHg4TnlmM29YWGg1WGlC?=
- =?utf-8?B?dXAwTHdwM0JpZUNicDJaK0Q4d0MxUFBacWlVQVJuSGxqZjVZUjZ2em1VeVZU?=
- =?utf-8?B?ZUxDNWlMSUVTTXBPNWJBZXlPZjdjS0Q5WUxOaXloSDdlUWpsWlBQZERhVUpI?=
- =?utf-8?B?S3d0cS8razZzTTZ3M2kxY202cmdYZzdrcjRSNXh6cDl0ejlJajlnYVZpQUp3?=
- =?utf-8?B?OSt1L1QzNlkyMTQ4cXc2WXZWOTdGcGJOMmJzVTQ5eFp0eTZuZ0NML3BIK1Vk?=
- =?utf-8?B?czM2cHFTZnJlWTk1WEU5cjVuS295WmsyMmVFOHhxL2tkbUZWZHBsTjFIU1pj?=
- =?utf-8?B?S2phbGlSaDN0djVYRVVKdjFCUUFlcm5sL3lROCticnQ2OU9kWjZ5dFFnSmIx?=
- =?utf-8?B?MUkxeDdQK2RrZTBob21yQWdHSnM4WSszaWwzUTh2M0NiZ05sc3lVdExaTksw?=
- =?utf-8?B?MSs4SlpodHYwSk5LL3JqTEVaRTJ5RXM5NVEvcmd2ZDFRUy9CZ3lRZzhUbTZZ?=
- =?utf-8?B?MnowaGxFVmtGbDFlZ0JBMGhMc05rcFVmQmdTcytuWE8xUGFqQW1xYThwdVBy?=
- =?utf-8?B?ZW8vUTdjM2RvRTZGbG5QOFZZblQyNm1kOXNORUEwU3VDeUNSNmNlTC9maHVa?=
- =?utf-8?Q?iigAR+83gytSjZS+DbIXE1BNMWRk1UQhNwaTwt/?=
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?ezDaDwZb8WBcwNrqezfAfgnhgQji7Qf6JtKEw7933bBn147MFj+UZGIkkkTc?=
+ =?us-ascii?Q?7PZFbuF79xsJLJHCKetrUAbMOByzEJiS8u1bJaSq5WvVbXHA+Ao1c3ot5W7V?=
+ =?us-ascii?Q?kYn/VgRpxTX/wz3FX9dGXT7RtlGSP8EgwFQRdGMF6gpEVXyCbH+E59ZKNs7M?=
+ =?us-ascii?Q?TSd9GzVMByyRRQd2md0AehgD9wUuusNtra/BxZ050BtiRzU1m0u6vXEkhz+N?=
+ =?us-ascii?Q?o0UjTWm00tFUwOgYUO5g9oxvbJ0FZ5HSSxLmN9NS7qENfcpvqXWumOYUikFI?=
+ =?us-ascii?Q?eubEH34prR4QtqFa5Qb6FsuJL4s1Gm68qb4Yo/aavejlIN6xSj11UOVXIWFQ?=
+ =?us-ascii?Q?QZp0KztpWewM2lo9HqfrEBjRCfsXjTVl4oD6iMbrPtOyRn0k2jXaPKfGwfhj?=
+ =?us-ascii?Q?cCBZMPgJVx3N/yeWt1RkOSn1sS2x51ybh3Ny7bBejVYWJu5vOhIniCGiciVV?=
+ =?us-ascii?Q?N41DvNnz1uVZKy+hL/Y0dztUhR5YJLxx+WeZfSnAjk22e+WTKD/ORW1Hdg8N?=
+ =?us-ascii?Q?xypA/xVYfGq0KIVpidIN1ilrS1GXoMZrtjB3mm07/Fr4ydE2+AuGqZ5PsBOv?=
+ =?us-ascii?Q?Zcm03IsPMAEKic8Cubp+0RIrpDNJ5ArYGiu5VnNp3CdTgmlsDUE5mMyYYw0e?=
+ =?us-ascii?Q?cXnkUUOlnTyqH7+ZFqbG9Zsj6CfSnk0Fjmof4TAUpSvRd1/hI4aQ4VW20kLq?=
+ =?us-ascii?Q?kZ+03bB2FcRwEyyQqYlR4YszxGtUR7mYeuc1zGsfHDMYA3+5noDzJewqUm3e?=
+ =?us-ascii?Q?55Yre1mKiVHpR0fdLK+TN+VvOI0IMf6saVOtZEPhyO3V7DAU+IHtLvc3HG5B?=
+ =?us-ascii?Q?nX5oBY0XW9xEKZZLHIMvmbIUxCfXrR515UIya9N2F5PDVGE+TAK2cuvNwyTX?=
+ =?us-ascii?Q?9Nk8ZspnqBnAXB/EaedsgzGtoozpcrrLBJOYGPVWBb3IvFt8IDi/ubVjc0S4?=
+ =?us-ascii?Q?yT7LAbU7V0XI/NlmBJ0I9gQ9L29h2AZhW9AnGvVYPyUjs3Gfqno/5uVoITCE?=
+ =?us-ascii?Q?tSJEBZ1wYEvQibeA4NKK1ggXgnEFck8JGOSvB5oU3V7pFAASHw0QLXDYlUKW?=
+ =?us-ascii?Q?vEBw0TkVBgx60L8XjmkF1F/1GnKX7Rz3KRu0OPKlaQ3dQCV6o5NU83m6pz6/?=
+ =?us-ascii?Q?rEMohobjlmb5dMfLs3rjGD41/LYPP6buXFB03MGb51zHc5HHXp5rwjOSfLM9?=
+ =?us-ascii?Q?LOtCyr8FfYY8oXp8qCbM97g0s2E0G1k0T3/YaNaeJWsr9X8q7mTl6dArxA6g?=
+ =?us-ascii?Q?vW8UM//QOqlDkcNaui1KSqQe1ROqUI4wA9B82dcmN9x3rfZbWga5gibAtD0u?=
+ =?us-ascii?Q?nQZn6XUZa0GhNMuvYRpPWTXn?=
 MIME-Version: 1.0
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: MWHPR11MB1789.namprd11.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f97adb86-6712-4554-c3b6-08d95bd11210
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Aug 2021 07:32:55.6138 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2ff7391f-283e-4b42-cc34-08d95bdc128d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Aug 2021 08:51:40.7793 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 46c98d88-e344-4ed4-8496-4ed7712e255d
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: POiiUJU9VuGhZqsOZ1Gx7/usgT1qnjAsS82vnc7zLdacbGod3xVsPAjC6a41gXdB/a0wItKHosfINnApLOSfvQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR1101MB2320
+X-MS-Exchange-CrossTenant-userprincipalname: CIw4xN1f0JMYJF1tbzzlPsdx2EJI12SXrgV2WsYwGiLXpLemdQ5Yam3c/r/L3CfpkT4ZzXn07f8H/b6d4YV79g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1485
 X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210810_003304_789133_0B6A0283 
-X-CRM114-Status: GOOD (  22.71  )
+X-CRM114-CacheID: sfid-20210810_015148_243905_C18BCB78 
+X-CRM114-Status: GOOD (  28.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -201,78 +187,222 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 > -----Original Message-----
-> From: Ulf Hansson <ulf.hansson@linaro.org>
-> Sent: Monday, August 9, 2021 5:43 PM
+> From: Vinod Koul <vkoul@kernel.org>
+> Sent: Friday, August 6, 2021 6:09 PM
 > To: A, Rashmi <rashmi.a@intel.com>
-> Cc: Vinod Koul <vkoul@kernel.org>; Michal Simek
-> <michal.simek@xilinx.com>; linux-mmc <linux-mmc@vger.kernel.org>; Linux
-> ARM <linux-arm-kernel@lists.infradead.org>; Linux Kernel Mailing List <linux-
-> kernel@vger.kernel.org>; Kishon <kishon@ti.com>; Andy Shevchenko
-> <andriy.shevchenko@linux.intel.com>; linux-phy@lists.infradead.org; Mark
-> Gross <mgross@linux.intel.com>; kris.pan@linux.intel.com; Zhou, Furong
+> Cc: linux-drivers-review-request@eclists.intel.com; michal.simek@xilinx.com;
+> ulf.hansson@linaro.org; linux-mmc@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; kishon@ti.com;
+> andriy.shevchenko@linux.intel.com; linux-phy@lists.infradead.org;
+> mgross@linux.intel.com; kris.pan@linux.intel.com; Zhou, Furong
 > <furong.zhou@intel.com>; Sangannavar, Mallikarjunappa
 > <mallikarjunappa.sangannavar@intel.com>; Hunter, Adrian
 > <adrian.hunter@intel.com>; Vaidya, Mahesh R
 > <mahesh.r.vaidya@intel.com>; Srikandan, Nandhini
 > <nandhini.srikandan@intel.com>; Demakkanavar, Kenchappa
 > <kenchappa.demakkanavar@intel.com>
-> Subject: Re: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay SOC
-> support to the arasan eMMC driver
+> Subject: Re: [PATCH 3/3] phy: intel: Add Thunder Bay eMMC PHY support
 > 
-> On Mon, 9 Aug 2021 at 13:17, A, Rashmi <rashmi.a@intel.com> wrote:
-> >
-> >
-> >
-> > > -----Original Message-----
-> > > From: Vinod Koul <vkoul@kernel.org>
-> > > Sent: Monday, August 9, 2021 2:12 PM
-> > > To: A, Rashmi <rashmi.a@intel.com>
-> > > Cc: Ulf Hansson <ulf.hansson@linaro.org>; Michal Simek
-> > > <michal.simek@xilinx.com>; linux-mmc <linux-mmc@vger.kernel.org>;
-> > > Linux ARM <linux-arm-kernel@lists.infradead.org>; Linux Kernel
-> > > Mailing List <linux- kernel@vger.kernel.org>; Kishon
-> > > <kishon@ti.com>; Andy Shevchenko
-> > > <andriy.shevchenko@linux.intel.com>; linux-phy@lists.infradead.org;
-> > > Mark Gross <mgross@linux.intel.com>; kris.pan@linux.intel.com; Zhou,
-> > > Furong <furong.zhou@intel.com>; Sangannavar, Mallikarjunappa
-> > > <mallikarjunappa.sangannavar@intel.com>; Hunter, Adrian
-> > > <adrian.hunter@intel.com>; Vaidya, Mahesh R
-> > > <mahesh.r.vaidya@intel.com>; Srikandan, Nandhini
-> > > <nandhini.srikandan@intel.com>; Demakkanavar, Kenchappa
-> > > <kenchappa.demakkanavar@intel.com>
-> > > Subject: Re: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay
-> > > SOC support to the arasan eMMC driver
-> > >
-> > > On 09-08-21, 05:16, A, Rashmi wrote:
-> > >
-> > > > >
-> > > > > Rashmi, is it safe to apply this separately from the phy driver/dt
-> changes?
-> > > > > Then I can queue this via my mmc tree, if you like.
-> > > > No, the phy driver/dt changes must go together with "mmc:
-> > > > sdhci-of-
-> > > arasan: Add intel Thunder Bay SOC support to the arasan eMMC driver"
-> > > patch.
-> > >
-> > > Why is that?
-> > >
-> > > What could happen, emmc driver will complain about phy not found and
-> > > bail right?
-> > This is right, but ideally both mmc:phy and mmc: sdhci-of-arasan
-> > driver code changes should go together
+> On 30-07-21, 12:03, rashmi.a@intel.com wrote:
 > 
-> If patches are well written and can be standalone, we (maintainers) ideally
-> prefer to queue things on a per subsystem basis, because it's just easier.
+> > diff --git a/drivers/phy/intel/Kconfig b/drivers/phy/intel/Kconfig
+> > index ac42bb2fb394..18a3cc5b98c0 100644
+> > --- a/drivers/phy/intel/Kconfig
+> > +++ b/drivers/phy/intel/Kconfig
+> > @@ -46,3 +46,13 @@ config PHY_INTEL_LGM_EMMC
+> >  	select GENERIC_PHY
+> >  	help
+> >  	  Enable this to support the Intel EMMC PHY
+> > +
+> > +config PHY_INTEL_THUNDERBAY_EMMC
 > 
-> That said, I also noticed that a new compatible string was added,
-> "intel,thunderbay-sdhci-5.1". This needs to be documented in
-> Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml, in a separate
-> patch, preceding $subject patch.
+> Alphabetical sort please
 > 
-I acknowledge your comments. I will submit a separate patch to document device tree bindings. After that mmc: sdhci-of-arasan driver patch could be queued.
+> > +        tristate "Intel Thunder Bay eMMC PHY driver"
+> > +        depends on OF && (ARCH_THUNDERBAY || COMPILE_TEST)
+> > +        select GENERIC_PHY
+> > +        help
+> > +	  This option enables support for Intel Thunder Bay SoC eMMC PHY.
+> > +
+> > +	  To compile this driver as a module, choose M here: the module
+> > +	  will be called phy-intel-thunderbay-emmc.ko.
+> > diff --git a/drivers/phy/intel/Makefile b/drivers/phy/intel/Makefile
+> > index 14550981a707..6a4db3ee7393 100644
+> > --- a/drivers/phy/intel/Makefile
+> > +++ b/drivers/phy/intel/Makefile
+> > @@ -1,5 +1,6 @@
+> >  # SPDX-License-Identifier: GPL-2.0
+> >  obj-$(CONFIG_PHY_INTEL_KEEMBAY_EMMC)	+= phy-intel-
+> keembay-emmc.o
+> > +obj-$(CONFIG_PHY_INTEL_THUNDERBAY_EMMC)	+= phy-intel-
+> thunderbay-emmc.o
+> 
+> here as well
+I will reorder the entry in Makefile. The Kconfig entries are in alphabetical order. Let me know if I am missing something.
 
-Regards
-Rashmi
+-Rashmi
+> 
+> > +static int thunderbay_emmc_phy_power(struct phy *phy, bool power_on)
+> > +{
+> > +	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
+> > +	unsigned int freqsel = FREQSEL_200M_170M;
+> > +	unsigned long rate;
+> > +	static int lock;
+> > +	u32 val;
+> > +	int ret;
+> > +
+> > +	/* Disable DLL */
+> > +	rate = clk_get_rate(tbh_phy->emmcclk);
+> > +	switch (rate) {
+> > +	case 200000000:
+> > +	/* lock dll only when it is used, i.e only if SEL_DLY_TXCLK/RXCLK are 0
+> */
+> > +		update_reg(tbh_phy, PHY_CFG_0, DLL_EN_MASK,
+> DLL_EN_SHIFT, 0x0);
+> 
+> pls keep the same indent for comment and code!
+Acknowledged
+
+-Rashmi
+> 
+> > +		break;
+> > +	/* dll lock not required for other frequencies */
+> > +	case 50000000 ... 52000000:
+> > +	case 400000:
+> > +	default:
+> > +		break;
+> > +	}
+> > +
+> > +	if (!power_on)
+> > +		return 0;
+> 
+> should this not be the first thing you check...
+During phy power on/off condition, dll should be disabled first. So power_on check is made after disabling dll.
+
+-Rashmi
+> 
+> > +
+> > +	rate = clk_get_rate(tbh_phy->emmcclk);
+> > +	switch (rate) {
+> > +	case 170000001 ... 200000000:
+> > +		freqsel = FREQSEL_200M_170M;
+> > +		break;
+> > +	case 140000001 ... 170000000:
+> > +		freqsel = FREQSEL_170M_140M;
+> > +		break;
+> > +	case 110000001 ... 140000000:
+> > +		freqsel = FREQSEL_140M_110M;
+> > +		break;
+> > +	case 80000001 ... 110000000:
+> > +		freqsel = FREQSEL_110M_80M;
+> > +		break;
+> > +	case 50000000 ... 80000000:
+> > +		freqsel = FREQSEL_80M_50M;
+> > +		break;
+> > +	case 250000001 ... 275000000:
+> > +		freqsel = FREQSEL_275M_250M;
+> > +		break;
+> > +	case 225000001 ... 250000000:
+> > +		freqsel = FREQSEL_250M_225M;
+> > +		break;
+> > +	case 200000001 ... 225000000:
+> > +		freqsel = FREQSEL_225M_200M;
+> > +		break;
+> > +	default:
+> > +		break;
+> > +	}
+> > +
+> > +	if (rate > 200000000)
+> > +	/* only the upper limit is considered as the clock rate may fall low
+> during init */
+> > +		dev_warn(&phy->dev, "Unsupported rate: %lu\n", rate);
+> 
+> here as well! (checkpatch --strict should have told you so)
+I will follow the proper alignment, though check-patch script didn't show any warnings.
+
+-Rashmi
+> 
+> > +static int thunderbay_emmc_phy_power_on(struct phy *phy) {
+> > +	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
+> > +	unsigned long rate;
+> > +
+> > +	/* Overwrite capability bits configurable in bootloader */
+> > +	update_reg(tbh_phy, CTRL_CFG_0,
+> > +		   SUPPORT_HS_MASK, SUPPORT_HS_SHIFT, 0x1);
+> > +	update_reg(tbh_phy, CTRL_CFG_0,
+> > +		   SUPPORT_8B_MASK, SUPPORT_8B_SHIFT, 0x1);
+> > +	update_reg(tbh_phy, CTRL_CFG_1,
+> > +		   SUPPORT_SDR50_MASK, SUPPORT_SDR50_SHIFT, 0x1);
+> > +	update_reg(tbh_phy, CTRL_CFG_1,
+> > +		   SUPPORT_DDR50_MASK, SUPPORT_DDR50_SHIFT, 0x1);
+> > +	update_reg(tbh_phy, CTRL_CFG_1,
+> > +		   SUPPORT_SDR104_MASK, SUPPORT_SDR104_SHIFT, 0x1);
+> > +	update_reg(tbh_phy, CTRL_CFG_1,
+> > +		   SUPPORT_HS400_MASK, SUPPORT_HS400_SHIFT, 0x1);
+> > +	update_reg(tbh_phy, CTRL_CFG_1,
+> > +		   SUPPORT_64B_MASK, SUPPORT_64B_SHIFT, 0x1);
+> > +
+> > +	if (tbh_phy->phy_power_sts == PHY_UNINITIALIZED) {
+> > +	/* Indicates initialization, so settings to be done for init , same as
+> 400KHZ setting */
+> > +		update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_TXCLK_MASK,
+> > +SEL_DLY_TXCLK_SHIFT, 0x1);
+> 
+> inconsistent indent here too!
+> 
+> > +		update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_RXCLK_MASK,
+> SEL_DLY_RXCLK_SHIFT, 0x1);
+> > +		update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_ENA_MASK,
+> ITAP_DLY_ENA_SHIFT, 0x0);
+> > +		update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_SEL_MASK,
+> ITAP_DLY_SEL_SHIFT, 0x0);
+> > +		update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_ENA_MASK,
+> OTAP_DLY_ENA_SHIFT, 0x0);
+> > +		update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_SEL_MASK,
+> OTAP_DLY_SEL_SHIFT, 0);
+> > +		update_reg(tbh_phy, PHY_CFG_0, DLL_TRIM_ICP_MASK,
+> DLL_TRIM_ICP_SHIFT, 0);
+> > +		update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
+> DR_TY_SHIFT, 0x1);
+> > +
+> > +	} else if (tbh_phy->phy_power_sts == PHY_INITIALIZED) {
+> > +		/* Indicates actual clock setting */
+> > +		rate = clk_get_rate(tbh_phy->emmcclk);
+> > +		switch (rate) {
+> > +		case 200000000:
+> > +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_TXCLK_MASK,
+> > +				   SEL_DLY_TXCLK_SHIFT, 0x0);
+> > +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_RXCLK_MASK,
+> > +				   SEL_DLY_RXCLK_SHIFT, 0x0);
+> > +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_ENA_MASK,
+> > +				   ITAP_DLY_ENA_SHIFT, 0x0);
+> > +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_SEL_MASK,
+> > +				   ITAP_DLY_SEL_SHIFT, 0x0);
+> > +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_ENA_MASK,
+> > +				   OTAP_DLY_ENA_SHIFT, 0x1);
+> > +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_SEL_MASK,
+> > +				   OTAP_DLY_SEL_SHIFT, 2);
+> > +			update_reg(tbh_phy, PHY_CFG_0,
+> DLL_TRIM_ICP_MASK,
+> > +				   DLL_TRIM_ICP_SHIFT, 0x8);
+> > +			update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
+> > +				   DR_TY_SHIFT, 0x1);
+> > +			/* For HS400 only */
+> > +			update_reg(tbh_phy, PHY_CFG_2, SEL_STRB_MASK,
+> > +				   SEL_STRB_SHIFT, STRB);
+> > +			break;
+> 
+> pls give a empty line after break, helps to read the code
+Acknowledged
+
+-Rashmi
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
