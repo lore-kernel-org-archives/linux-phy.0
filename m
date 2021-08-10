@@ -2,96 +2,186 @@ Return-Path: <SRS0=zCth=NB=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3B38CC4338F
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 03:37:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E8CD7C4338F
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 07:33:18 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DFF2060ED8
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 03:37:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org DFF2060ED8
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id 9BA1161051
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 07:33:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9BA1161051
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=intel.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+B3f8ETHV6gtAG6FIt1vgAl6LIEaCqAnai46R93xJtw=; b=D3EuU5cJc/eqQY
-	CGoPIyEQ6hvmESzrEscXGhy1PuuRGk5+FjBzHCGVmxJXXiRpbdmvvSP1FVntHh6YyYLd8/yWxqf3E
-	3l9gkquDAx1aKqiUhA6A9gNsGC/avo266gsJaW2MrF1zMnjIC65tM0nQFlwhD78TcYnNf56/cVg+d
-	YpZEm1nhgZibF/kHsRAewnI52gMEa8zGsWitGVFaQ9K/0P44WDbpznKcBeM1gvJmLZh7YALfoR1+N
-	CYTgXIB8EDv8yahxvJX+N++iFmED7qfF7TjtePvXpqmh1gayZ20jCf7+FSNISNTEevyLgFgKBu46A
-	3o21xgR8QnemeiPufx3g==;
+	List-Owner; bh=Jn3WgMffVuxr50z7hyKGfTp4oP9J+/aM3A2zvDsHiS8=; b=Klw4LkjKzc/1Sg
+	LxaakJMRQpxTbPrcmr4r/CkOVnmc2VCvIGsyGDT71aAFY19Nql27yFXdBM/wDqV/Oo29xguZBr/jP
+	7yyahXDDMo7cORnZNaeMJGWP5AU1s92lZeL/ery+4ZWtPaz+cMbfumAvmPgNz+ulaqBciB+9NmHms
+	c6Myt8iGE5UXnntsgUUTDfxu22k0e25p6a9fR25uMkBKldg5GXWeJ9tU6l25DxcYV5f4OC0yy9kv9
+	rDY3tiGd/OOiGUnsF0DIEhnykV02Coy5TFM9iYwzdoivASAD4y42c9Pn7cZ+zxkJmnF5fbv1CN7Ta
+	OuJk+SafnIkDdhOaFIuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mDIZe-002KxP-AE; Tue, 10 Aug 2021 03:37:06 +0000
-Received: from mail-oi1-x235.google.com ([2607:f8b0:4864:20::235])
+	id 1mDMGE-002kG3-2I; Tue, 10 Aug 2021 07:33:18 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mDIZZ-002Kwb-HG
- for linux-phy@lists.infradead.org; Tue, 10 Aug 2021 03:37:05 +0000
-Received: by mail-oi1-x235.google.com with SMTP id u10so26953266oiw.4
- for <linux-phy@lists.infradead.org>; Mon, 09 Aug 2021 20:36:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=eTjxoRBCQf02cbggSfOkoEwcbBOIkEA4E5gk33oPnVc=;
- b=HI+OeeQMtFnPj3845sY6EwA1BoQN7PnMqX4s0kBeaQEy962s9e+m/V8O1/tsu5xs1I
- bddJOLO4l8wk5180sqxqoxp62aRFAM2baGVKrC4P/y3KRBVhjdJRsymDBL+60PrfM4Ja
- mZIbL1Hu1/uDpQ5c/qYcIY5bH3moOyO6Eyg7LR2+0Jzww+2RQTzDxHIXLs0JFhhYGXUo
- FxdLENJvCsVPWKnMc6mS+kE8iycdYnVrPjbprWb54i23OVLalKrDeRipM776pBngwAQI
- 5BhyJuiinLxKB70SapQTYKjtAFtKvneJrzJ2kIVAnoqeKEAFIixrGJ8oewiMS+7WHN6f
- DNhg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=eTjxoRBCQf02cbggSfOkoEwcbBOIkEA4E5gk33oPnVc=;
- b=KEeEBiBcXATGbnJH6yoRqc6VP46AldfmcXz4T+oj/pCwsogeeDJzsfLwGd/Ou1IVyK
- zoQf1ZXVDOBaIhlLWYi+yojNzb1DZPD4Jl/AogIRt4crKE2nW91sb9A0XMcC8eHUrvaf
- oEfoLgb0D/YEPbgwJzA8gHzEHfw8YjKGd7BTb72IdyT/pba1BxpiuBU99PhIcPu6OwMW
- IhsdaJxdWLrWc2AkB32MQZNTmO/sCpKlrK441XnKp6R1vP5hEnuAHis/o/7NFycVo4sz
- o/ibLX38CFsetjNczx/iHNDXotehzy/W2cXZpothlEA8sZjWkf02gJ0z21FSYhkwuuIW
- y7Kw==
-X-Gm-Message-State: AOAM532SRVBZwcpq0Z322Zrs5q6uP8781HPlWJhsKrB7RDUHVzlHtmKB
- ret23IyFX4lslZXolOIvjEaN3A==
-X-Google-Smtp-Source: ABdhPJwKehZHzcNRMXQY8NdGSws5hczPtVMVLb1J3K4obntfjmhpHUTzFkDBPgDMATv7wErZVOd5Jg==
-X-Received: by 2002:a05:6808:4a:: with SMTP id
- v10mr11504245oic.171.1628566618843; 
- Mon, 09 Aug 2021 20:36:58 -0700 (PDT)
-Received: from builder.lan (104-57-184-186.lightspeed.austtx.sbcglobal.net.
- [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id n67sm3466362oib.44.2021.08.09.20.36.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Aug 2021 20:36:58 -0700 (PDT)
-Date: Mon, 9 Aug 2021 22:36:56 -0500
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: sbillaka@codeaurora.org
-Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Rob Clark <robdclark@gmail.com>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Stephen Boyd <swboyd@chromium.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, kalyan_t@codeaurora.org,
- abhinavk@codeaurora.org
-Subject: Re: [PATCH 2/2] phy: qcom: Introduce new eDP PHY driver
-Message-ID: <YRH0WFvWmemHIHqc@builder.lan>
-References: <20210511041930.592483-1-bjorn.andersson@linaro.org>
- <20210511041930.592483-2-bjorn.andersson@linaro.org>
- <7708925ad4d973b4e5f291cdcbdbe406@codeaurora.org>
+ id 1mDMG0-002kEE-Lt; Tue, 10 Aug 2021 07:33:06 +0000
+X-IronPort-AV: E=McAfee;i="6200,9189,10070"; a="300440582"
+X-IronPort-AV: E=Sophos;i="5.84,309,1620716400"; d="scan'208";a="300440582"
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 10 Aug 2021 00:32:59 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.84,309,1620716400"; d="scan'208";a="506034541"
+Received: from fmsmsx604.amr.corp.intel.com ([10.18.126.84])
+ by fmsmga004.fm.intel.com with ESMTP; 10 Aug 2021 00:32:59 -0700
+Received: from fmsmsx611.amr.corp.intel.com (10.18.126.91) by
+ fmsmsx604.amr.corp.intel.com (10.18.126.84) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2242.10; Tue, 10 Aug 2021 00:32:59 -0700
+Received: from fmsmsx609.amr.corp.intel.com (10.18.126.89) by
+ fmsmsx611.amr.corp.intel.com (10.18.126.91) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2242.10; Tue, 10 Aug 2021 00:32:59 -0700
+Received: from fmsedg601.ED.cps.intel.com (10.1.192.135) by
+ fmsmsx609.amr.corp.intel.com (10.18.126.89) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2242.10 via Frontend Transport; Tue, 10 Aug 2021 00:32:59 -0700
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (104.47.66.46) by
+ edgegateway.intel.com (192.55.55.70) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2242.10; Tue, 10 Aug 2021 00:32:59 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AS+SFFI5icUiCUUU9imSGLLht52QK3vAPrbDkrrvY3uHFrkx6e8ssMonDeveeTjeFTEtF3uEzhXgZEhrYfnIA87/8hWVvWqJz4b+ARBJr1zuDcn4KfToZMqEp2LCXwq7CDfioAuwR/xkfts5/op/3jcVMClFvVgNP4DU5UBkyvdfUDzfoyZQNwhbOV6CGzFuGk6qyohCD3gaHuaoUIWRAnlZ/dxzPNUkgdFwotP5tZ3LTpWhumgUKhBL+eKu5Rft7lJYBZZeczWI5sQIC8OzL2T9BbSKktZgUjgIZ6XDbbr3FJdsb4Gh3Kvs+ESd3kvJoM460dZbASnjN/qPDDSO7w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8Rk6R02vV7zVqwpAU5MGdPoQnOECUitoo/zO++gPcyA=;
+ b=heq44OmdaZIkhF7xJHQGVPkL1ZuJsKYEqSASU6pMrsvvjsWb5qPGVNpefP4bzB/LpFXvuETdCJsnz/uWkcpFE/MNN8T4sSEg+tU7M7P67nYqZk+1mNDqJMz3xUwgExjohjjalmJqP9ykYCJGPReDFda6jHSPMI8on86WqDj+iqN0e8AzckEGkhCCsiCl3GDAliHtalqxYZQZfmRK+g3EyuScDPRtrovl1VgZFk3RG1/zRFUGS7N+iWh0mT0pAeWNnh7bwO0hv5IbixGHV0OV25Zu9ohCqcchgJzdy/zRTrY87v8wn62qd2WM3GsCcWqiliufj0WBOD55kxGIXNIORQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
+ dkim=pass header.d=intel.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intel.onmicrosoft.com; 
+ s=selector2-intel-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8Rk6R02vV7zVqwpAU5MGdPoQnOECUitoo/zO++gPcyA=;
+ b=Ti+pR7v/c1uiHFow+ZCUFXQNbx4RtAzjzRX+ktfBO8lAXqoITzeL8PB/dgKbZdb8kgb+CXCoVunClIsvLV5Xp7YVPrYweqmiqVA5fHfoJDKMCJyLfFXOoxsZPtGpoaXhb6SnceGIQULljHJF7iniap44cr9yqdlVlqTvUA5v+VI=
+Received: from MWHPR11MB1789.namprd11.prod.outlook.com (2603:10b6:300:108::13)
+ by MWHPR1101MB2320.namprd11.prod.outlook.com (2603:10b6:301:53::19)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4394.15; Tue, 10 Aug
+ 2021 07:32:56 +0000
+Received: from MWHPR11MB1789.namprd11.prod.outlook.com
+ ([fe80::b81c:ee06:fc82:5fc3]) by MWHPR11MB1789.namprd11.prod.outlook.com
+ ([fe80::b81c:ee06:fc82:5fc3%7]) with mapi id 15.20.4394.023; Tue, 10 Aug 2021
+ 07:32:55 +0000
+From: "A, Rashmi" <rashmi.a@intel.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+CC: Vinod Koul <vkoul@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
+ linux-mmc <linux-mmc@vger.kernel.org>, Linux ARM
+ <linux-arm-kernel@lists.infradead.org>, Linux Kernel Mailing List
+ <linux-kernel@vger.kernel.org>, Kishon <kishon@ti.com>, Andy Shevchenko
+ <andriy.shevchenko@linux.intel.com>, "linux-phy@lists.infradead.org"
+ <linux-phy@lists.infradead.org>, Mark Gross <mgross@linux.intel.com>,
+ "kris.pan@linux.intel.com" <kris.pan@linux.intel.com>, "Zhou, Furong"
+ <furong.zhou@intel.com>, "Sangannavar, Mallikarjunappa"
+ <mallikarjunappa.sangannavar@intel.com>, "Hunter, Adrian"
+ <adrian.hunter@intel.com>, "Vaidya, Mahesh R" <mahesh.r.vaidya@intel.com>,
+ "Srikandan, Nandhini" <nandhini.srikandan@intel.com>, "Demakkanavar,
+ Kenchappa" <kenchappa.demakkanavar@intel.com>
+Subject: RE: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay SOC
+ support to the arasan eMMC driver
+Thread-Topic: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay SOC
+ support to the arasan eMMC driver
+Thread-Index: AQHXhQzRAwmHks3vwkaXAOpN1lCV0KtmfYEAgAQx92CAADsqAIAAJ6HwgAATgwCAAUGykA==
+Date: Tue, 10 Aug 2021 07:32:55 +0000
+Message-ID: <MWHPR11MB17898D0E3A0A4DD993AD7E948CF79@MWHPR11MB1789.namprd11.prod.outlook.com>
+References: <20210730063309.8194-1-rashmi.a@intel.com>
+ <20210730063309.8194-3-rashmi.a@intel.com>
+ <CAPDyKFqZ-H3+OnYyyY7y611YrRAAMFq+W65DMfM4wSNvY_fzjA@mail.gmail.com>
+ <MWHPR11MB17891909766F5295AF34B0578CF69@MWHPR11MB1789.namprd11.prod.outlook.com>
+ <YRDqQvKQ71/824Lu@matsya>
+ <MWHPR11MB1789D2B707B39CB42322C73A8CF69@MWHPR11MB1789.namprd11.prod.outlook.com>
+ <CAPDyKFp5HcCfsoLgBc=D9RKOrVY2SuV3FKsFCVT2=WaxZBsNiA@mail.gmail.com>
+In-Reply-To: <CAPDyKFp5HcCfsoLgBc=D9RKOrVY2SuV3FKsFCVT2=WaxZBsNiA@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+dlp-reaction: no-action
+dlp-version: 11.5.1.3
+dlp-product: dlpe-windows
+authentication-results: linaro.org; dkim=none (message not signed)
+ header.d=none;linaro.org; dmarc=none action=none header.from=intel.com;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f97adb86-6712-4554-c3b6-08d95bd11210
+x-ms-traffictypediagnostic: MWHPR1101MB2320:
+x-ld-processed: 46c98d88-e344-4ed4-8496-4ed7712e255d,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MWHPR1101MB23206CC8B09AC99D735A30858CF79@MWHPR1101MB2320.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wRqKKfZlFMWIk/GbLu7C7lko10QIGg7ExyBQ0KQYRkiEwL68d1e20dXtjx+deUuLe5pd7Sj5No5dUuYg9Di434xK6Sb/3e3vvB9/Px47gjzmbE+YpwdblS3SZ5EJWLD4hkzHD+hqXdAa5HUoG497qPmtVtS1lVmCXujnvBSvvXSwK/p0jcSclRJk91n3g2GwznyOvu73pL6TESJg2xcjwxPeEPAOpQiKr0i7ipcqE0SZQ228uIU05A2/0953lC5LviT0ndq67KUbDCXd0LaTo3rFE9KyY+Z9hvuYCOOiNRtyWkB1XrlSEsdHT3A5iLbFAWpnZZJQFTTQbCqVhho2Ij8Ba7cLm3A3L5VsGnUD3G9wX/7xDAxh/W9kUAH3pbrxT1i4A0Frz8LS0/DnhOfH1x1TuI2an2zqiZuILAVBgKzzzET0i853DyR5g84cgO9mOhaH6tzPTKnkeQbBoFz4R5TfjwqS9xL1F3wFbadEdIchiPTEHBLKBcrnOSvnZN9CnHlFG1fxcS8oDAm+LUcWDvqKb6gKBHbbmwvpUA+IbaAj7/JX5pUXtAGd0pIkbnojWmry8tR/cn6EU2q/f3KVQ9qnYGf0BbRARv86sH9uSbdH95+LxL3Y6KnJJrUH2RsSstmIY6XM7CPZSb0/Ijb/Ew3Zre31ktlGRyVhGiUVWVPEmBthtWIU6xgvrrr0/Wve1b4fIN7ml5wOcc/CrMrMGQ==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MWHPR11MB1789.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(136003)(366004)(346002)(376002)(396003)(39860400002)(4326008)(478600001)(76116006)(2906002)(64756008)(66946007)(66476007)(66556008)(66446008)(26005)(54906003)(7696005)(86362001)(53546011)(316002)(83380400001)(6506007)(6916009)(33656002)(186003)(8676002)(38100700002)(71200400001)(7416002)(5660300002)(38070700005)(122000001)(52536014)(9686003)(55016002)(8936002);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?VXhvTmtYMThhRk1kWE9lUEs0NFo4N3pVVXZTSi95bEF1S0RuV2xmSG5JMDdw?=
+ =?utf-8?B?UXp6dm9ia2ppWTNYWlYwYVRMODZFTHd2Y3hJMVlIbzVTdDBrZUY2WnMyMi9P?=
+ =?utf-8?B?T1RybFJPVVNQOUNXYXhGL0k0OGlhQjNvdXRRMGpjcWVSMVZCMHExS1ViUUJz?=
+ =?utf-8?B?b3lUVmF4RlRwK1B4MExBNnRGQmt1ZGFtRktwMzJRL0dWcGpvU1RmNzBNTEFK?=
+ =?utf-8?B?a3lqQzhkdHQ3TXdYOUhUZEZhRmpoYWVLZHg2WVhhd3kvZDRqS2htaXpub0pT?=
+ =?utf-8?B?dTY1cnR3UDBIZS9wN255TldBdngzNlg2Ty9IWmdkQmIrdEtsbm41TDVCUjQw?=
+ =?utf-8?B?WGFBTkxsMEpkKzVYZnlWU2JTWE5lVWx3VlhvQ3k4aUFnMDdUWWJzZEFpeXVX?=
+ =?utf-8?B?NzJwMmxLcVBhSDBUZHdVQ1ZPVnlEUDg2a2RrN29OdjVtdDFLR0ZTODEyeFI1?=
+ =?utf-8?B?RkdLZWRkdTBIbWg2ME1DdGFFM2MwMTZqMUtlMHZET1dYYmhocHIzOHB1U0lv?=
+ =?utf-8?B?VUN1b1BmTUNINEptbjQrWm1iOUxua2QvZVlrUVYrTkhNcnNmZUUyanRCTGtX?=
+ =?utf-8?B?RVBucVFvOEg4dTNKZ05Zck01bEI1ZEVWME94c29FVmM5SFEvNUYyNFQxZUhh?=
+ =?utf-8?B?citvd0FoeWZSQmorZnJpNysyK210QUl4VkJqWVE1QU1LZ2Nld3lqanlPK0RN?=
+ =?utf-8?B?YTRpczBreG8xb0txQ21pK2k2Ri9CSTRHQXZYb0JwU2dDMFVLb1c2MDdYT0ph?=
+ =?utf-8?B?NjhsTFh5Qy9kV3VZNStFdjBMRVI1dzBUd2NYR2puUnJBNGwvM0xBQUVUbW9M?=
+ =?utf-8?B?MUlWdGFudit1TVB0UTMvQ0hzdGlNN0t6eldIQnB5dXJUZ1gwcEYzWFpXd2lu?=
+ =?utf-8?B?dm5oTWtGaWFxNEtvVXp0MURyWitORUQzSC9KbTVSTTBPQTFZTy9yVFhVZmE0?=
+ =?utf-8?B?NWE5ZU1wc2JmekxyQTNOSUkwZm5VSU1NRVRTUlIreUtaN3R6TlN4MlYydnJj?=
+ =?utf-8?B?Q0tKRDE5OEl0WDNSd2s4Qm91eU8vSjNmTlM5Y3o1YnRQMkNiaHVaeXBaTzh2?=
+ =?utf-8?B?SW01bzkwNmZpaWpsVmMwUDYwaEM3d1VXN0RUY29FWHg4TnlmM29YWGg1WGlC?=
+ =?utf-8?B?dXAwTHdwM0JpZUNicDJaK0Q4d0MxUFBacWlVQVJuSGxqZjVZUjZ2em1VeVZU?=
+ =?utf-8?B?ZUxDNWlMSUVTTXBPNWJBZXlPZjdjS0Q5WUxOaXloSDdlUWpsWlBQZERhVUpI?=
+ =?utf-8?B?S3d0cS8razZzTTZ3M2kxY202cmdYZzdrcjRSNXh6cDl0ejlJajlnYVZpQUp3?=
+ =?utf-8?B?OSt1L1QzNlkyMTQ4cXc2WXZWOTdGcGJOMmJzVTQ5eFp0eTZuZ0NML3BIK1Vk?=
+ =?utf-8?B?czM2cHFTZnJlWTk1WEU5cjVuS295WmsyMmVFOHhxL2tkbUZWZHBsTjFIU1pj?=
+ =?utf-8?B?S2phbGlSaDN0djVYRVVKdjFCUUFlcm5sL3lROCticnQ2OU9kWjZ5dFFnSmIx?=
+ =?utf-8?B?MUkxeDdQK2RrZTBob21yQWdHSnM4WSszaWwzUTh2M0NiZ05sc3lVdExaTksw?=
+ =?utf-8?B?MSs4SlpodHYwSk5LL3JqTEVaRTJ5RXM5NVEvcmd2ZDFRUy9CZ3lRZzhUbTZZ?=
+ =?utf-8?B?MnowaGxFVmtGbDFlZ0JBMGhMc05rcFVmQmdTcytuWE8xUGFqQW1xYThwdVBy?=
+ =?utf-8?B?ZW8vUTdjM2RvRTZGbG5QOFZZblQyNm1kOXNORUEwU3VDeUNSNmNlTC9maHVa?=
+ =?utf-8?Q?iigAR+83gytSjZS+DbIXE1BNMWRk1UQhNwaTwt/?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7708925ad4d973b4e5f291cdcbdbe406@codeaurora.org>
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR11MB1789.namprd11.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f97adb86-6712-4554-c3b6-08d95bd11210
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Aug 2021 07:32:55.6138 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: POiiUJU9VuGhZqsOZ1Gx7/usgT1qnjAsS82vnc7zLdacbGod3xVsPAjC6a41gXdB/a0wItKHosfINnApLOSfvQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR1101MB2320
+X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210809_203701_747141_BD0D6956 
-X-CRM114-Status: GOOD (  26.06  )
+X-CRM114-CacheID: sfid-20210810_003304_789133_0B6A0283 
+X-CRM114-Status: GOOD (  22.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,131 +198,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon 09 Aug 22:15 CDT 2021, sbillaka@codeaurora.org wrote:
-> On 2021-05-11 09:49, Bjorn Andersson wrote:
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c
-[..]
-> > +#define DP_PHY_AUX_CFG0				0x0020
-> > +#define DP_PHY_AUX_CFG1				0x0024
-> > +#define DP_PHY_AUX_CFG2				0x0028
-> > +#define DP_PHY_AUX_CFG3				0x002c
-> > +#define DP_PHY_AUX_CFG4				0x0030
-> > +#define DP_PHY_AUX_CFG5				0x0034
-> > +#define DP_PHY_AUX_CFG6				0x0038
-> > +#define DP_PHY_AUX_CFG7				0x003c
-> > +#define DP_PHY_AUX_CFG8				0x0040
-> > +#define DP_PHY_AUX_CFG9				0x0044
+
+
+> -----Original Message-----
+> From: Ulf Hansson <ulf.hansson@linaro.org>
+> Sent: Monday, August 9, 2021 5:43 PM
+> To: A, Rashmi <rashmi.a@intel.com>
+> Cc: Vinod Koul <vkoul@kernel.org>; Michal Simek
+> <michal.simek@xilinx.com>; linux-mmc <linux-mmc@vger.kernel.org>; Linux
+> ARM <linux-arm-kernel@lists.infradead.org>; Linux Kernel Mailing List <linux-
+> kernel@vger.kernel.org>; Kishon <kishon@ti.com>; Andy Shevchenko
+> <andriy.shevchenko@linux.intel.com>; linux-phy@lists.infradead.org; Mark
+> Gross <mgross@linux.intel.com>; kris.pan@linux.intel.com; Zhou, Furong
+> <furong.zhou@intel.com>; Sangannavar, Mallikarjunappa
+> <mallikarjunappa.sangannavar@intel.com>; Hunter, Adrian
+> <adrian.hunter@intel.com>; Vaidya, Mahesh R
+> <mahesh.r.vaidya@intel.com>; Srikandan, Nandhini
+> <nandhini.srikandan@intel.com>; Demakkanavar, Kenchappa
+> <kenchappa.demakkanavar@intel.com>
+> Subject: Re: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay SOC
+> support to the arasan eMMC driver
 > 
-> The DP_PHY_AUX_CFG0 offset for sc8180x eDP phy is 0x0024.
-> Some of the eDP PHY offset addresses are shifted by 4 address locations,
-> compared to the DP QMP PHY offset addresses for sc8180x.
-> The DP_PHY_AUX_CFG* offsets for this eDP phy driver are as below:
+> On Mon, 9 Aug 2021 at 13:17, A, Rashmi <rashmi.a@intel.com> wrote:
+> >
+> >
+> >
+> > > -----Original Message-----
+> > > From: Vinod Koul <vkoul@kernel.org>
+> > > Sent: Monday, August 9, 2021 2:12 PM
+> > > To: A, Rashmi <rashmi.a@intel.com>
+> > > Cc: Ulf Hansson <ulf.hansson@linaro.org>; Michal Simek
+> > > <michal.simek@xilinx.com>; linux-mmc <linux-mmc@vger.kernel.org>;
+> > > Linux ARM <linux-arm-kernel@lists.infradead.org>; Linux Kernel
+> > > Mailing List <linux- kernel@vger.kernel.org>; Kishon
+> > > <kishon@ti.com>; Andy Shevchenko
+> > > <andriy.shevchenko@linux.intel.com>; linux-phy@lists.infradead.org;
+> > > Mark Gross <mgross@linux.intel.com>; kris.pan@linux.intel.com; Zhou,
+> > > Furong <furong.zhou@intel.com>; Sangannavar, Mallikarjunappa
+> > > <mallikarjunappa.sangannavar@intel.com>; Hunter, Adrian
+> > > <adrian.hunter@intel.com>; Vaidya, Mahesh R
+> > > <mahesh.r.vaidya@intel.com>; Srikandan, Nandhini
+> > > <nandhini.srikandan@intel.com>; Demakkanavar, Kenchappa
+> > > <kenchappa.demakkanavar@intel.com>
+> > > Subject: Re: [PATCH 2/3] mmc: sdhci-of-arasan: Add intel Thunder Bay
+> > > SOC support to the arasan eMMC driver
+> > >
+> > > On 09-08-21, 05:16, A, Rashmi wrote:
+> > >
+> > > > >
+> > > > > Rashmi, is it safe to apply this separately from the phy driver/dt
+> changes?
+> > > > > Then I can queue this via my mmc tree, if you like.
+> > > > No, the phy driver/dt changes must go together with "mmc:
+> > > > sdhci-of-
+> > > arasan: Add intel Thunder Bay SOC support to the arasan eMMC driver"
+> > > patch.
+> > >
+> > > Why is that?
+> > >
+> > > What could happen, emmc driver will complain about phy not found and
+> > > bail right?
+> > This is right, but ideally both mmc:phy and mmc: sdhci-of-arasan
+> > driver code changes should go together
 > 
-> #define DP_PHY_AUX_CFG0                         0x0024
-> #define DP_PHY_AUX_CFG1                         0x0028
-> #define DP_PHY_AUX_CFG2                         0x002c
-> #define DP_PHY_AUX_CFG3                         0x0030
-> #define DP_PHY_AUX_CFG4                         0x0034
-> #define DP_PHY_AUX_CFG5                         0x0038
-> #define DP_PHY_AUX_CFG6                         0x003c
-> #define DP_PHY_AUX_CFG7                         0x0040
-> #define DP_PHY_AUX_CFG8                         0x0044
-> #define DP_PHY_AUX_CFG9                         0x0048
+> If patches are well written and can be standalone, we (maintainers) ideally
+> prefer to queue things on a per subsystem basis, because it's just easier.
 > 
-
-I noticed this as well. During development I just used the numbers
-directly in the code and I must have screwed up as I replaced them with
-defined - and somehow missed this in the testing before posting.
-
-Sorry about that.
-
-[..]
-> > +static int qcom_edp_phy_init(struct phy *phy)
-> > +{
-> > +	struct qcom_edp *edp = phy_get_drvdata(phy);
-> > +	int ret;
-> > +
-> > +	ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ret = clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
-> > +	if (ret)
-> > +		goto out_disable_supplies;
+> That said, I also noticed that a new compatible string was added,
+> "intel,thunderbay-sdhci-5.1". This needs to be documented in
+> Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml, in a separate
+> patch, preceding $subject patch.
 > 
-> I think the number of clk and regulator resources can vary based on
-> platform.
-> 
+I acknowledge your comments. I will submit a separate patch to document device tree bindings. After that mmc: sdhci-of-arasan driver patch could be queued.
 
-If that's the case we should replace the ARRAY_SIZE() with an integer.
-But I prefer to wait with that until the number actually is variable.
-
-[..]
-> > +static int qcom_edp_phy_probe(struct platform_device *pdev)
-> > +{
-> > +	struct phy_provider *phy_provider;
-> > +	struct device *dev = &pdev->dev;
-> > +	struct qcom_edp *edp;
-> > +	int ret;
-> > +
-> > +	edp = devm_kzalloc(dev, sizeof(*edp), GFP_KERNEL);
-> > +	if (!edp)
-> > +		return -ENOMEM;
-> > +
-> > +	edp->dev = dev;
-> > +
-> > +	edp->edp = devm_platform_ioremap_resource(pdev, 0);
-> > +	if (IS_ERR(edp->edp))
-> > +		return PTR_ERR(edp->edp);
-> > +
-> > +	edp->tx0 = devm_platform_ioremap_resource(pdev, 1);
-> > +	if (IS_ERR(edp->tx0))
-> > +		return PTR_ERR(edp->tx0);
-> > +
-> > +	edp->tx1 = devm_platform_ioremap_resource(pdev, 2);
-> > +	if (IS_ERR(edp->tx1))
-> > +		return PTR_ERR(edp->tx1);
-> > +
-> > +	edp->pll = devm_platform_ioremap_resource(pdev, 3);
-> > +	if (IS_ERR(edp->pll))
-> > +		return PTR_ERR(edp->pll);
-> > +
-> > +	edp->clks[0].id = "aux";
-> > +	edp->clks[1].id = "cfg_ahb";
-> > +	ret = devm_clk_bulk_get(dev, ARRAY_SIZE(edp->clks), edp->clks);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	edp->supplies[0].supply = "vdda-phy";
-> > +	edp->supplies[1].supply = "vdda-pll";
-> > +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(edp->supplies),
-> > edp->supplies);
-> > +	if (ret)
-> > +		return ret;
-> 
-> I believe, the combination of the number of regulator and clk resources may
-> vary based on the platform.
-> I think we should not fail probe if all these resources are not present in
-> the device tree file.
-> I think, these resources can be optional. We can get these resources if they
-> are present in the device tree file and enable them as required.
-> 
-
-It's quite helpful to the DTS writer to actually encode in the driver
-which resources the driver expects and provide useful error messages
-when these expectations aren't met - so I think in line with most other
-drivers this should be decided based on the compatible.
-
-What clocks and regulators do you have on sc7280?
-
-
-Thanks for the feedback, I see that I have a few more pieces of feedback
-from others that I need to incorporate. I'll make sure to do that and
-repost this patch shortly.
-
-Regards,
-Bjorn
-
+Regards
+Rashmi
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
