@@ -2,20 +2,19 @@ Return-Path: <SRS0=zCth=NB=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 55509C43214
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 13:28:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id F0304C43214
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 13:45:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 230EE60F25
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 13:28:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 230EE60F25
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id AE98561058
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Aug 2021 13:45:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org AE98561058
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -23,69 +22,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o2qQ9YZrWSENZVLr+fehWdUttaq9UweR23yP74Oei4E=; b=zWinVWnJHyaOVx
-	w5N5XXU509iUq2EpBvaWr0Ky/ik7Dzc85tOZgG1G4RywF07KlsZWoIN85kCq14GlNgro5wkqnxuvO
-	x6wrvzICXiS//Z/sCNMilb9k2kSxmr/o8WxeWlhpH5QbxzzFq08g+rh1Y7fdbG3vdO9rAy7S9HYBI
-	nbUDCXfOZ6jplFliyMFJkjTL2xHXPivTEKwszblzOyFKAzX0IIVC+wZpTdZkhmpBIb/c+xhPw4DsE
-	e1CDXsmZOg2a3XmpSWoyIMlOuFf2cp4mSi6AvMheNEaf1eLHMCI4m1h7d6X8aRNmhtXxMOFhB8m7V
-	ccOHWMHeWpTKLoS2WphQ==;
+	List-Owner; bh=ymR7xosrr4oOgJVrMCzpxX6/aRDFXH7Pjn7hCskeQYs=; b=cta0weB+hBFCkY
+	BLKFhfDBeqF94nUN1dGl8cFqO9kNl3vSkM7nxFfhYpxOxyCf/SE3sjW77tdT4QYvmBQ8ttMja0dIa
+	1j30YGd0+CyEM5k+hF0IBVSPs6vx6OLBEky/QP2N1PE7SxN2+eEgNgaUstFE9MhD9Hzs53Hhm6QkO
+	CWXAYJqeJkEyroEpQ0WH+9W8iUo2CE2Ib4Ve9B8hZciO6zWg3UGiCXmeDD0PHQ3uAk8eizetaIA6Q
+	BWnYNiHtj7DspbvcIjWJdxXLVS8WZpaqhoZEUorbCkUFlEV2P5iSAZLx4fqdO8wPoMO6c0rSHnpUm
+	BWVJKXhAyX+0wP1uDpHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mDRni-003xyO-IH; Tue, 10 Aug 2021 13:28:14 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1mDS43-0042o3-4M; Tue, 10 Aug 2021 13:45:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mDRnd-003xwA-3C
- for linux-phy@lists.infradead.org; Tue, 10 Aug 2021 13:28:13 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id n17so16250472lft.13
- for <linux-phy@lists.infradead.org>; Tue, 10 Aug 2021 06:28:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=txwmknRtly19dwG2TwLijdSUyS9aLwYWp1obTuXBfoc=;
- b=uZbA+1J935R3usprafc8LRUQw8doPbVfcapR1X2WEhOvM+EX7M63d5ZsO0VAvsVNZS
- xc3FivfT6ubgZbfMXKz52jSnsZIMXiSe+40kgwcbMhimzux+MtLWI03TsIxYPR8J+FXy
- Fg5ItgR5ZgUAVtjsevhX75vxMeq6H4bInYp3SkK3AbY468I630NCUa9R16uQJpzFZaVl
- wSQXu0x1FHzzpXqhzKbQ58q8eGA3P6T88AslMArgdP9Yv7k4KPId9rJKhKVQ0lnvZMgF
- JJiyC3XFKOXLI7k7TQbwnJZ6QDbjb2mbVHMVLbZcReEvjhfrU1stahisnFI79GDgAQW9
- +JTA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=txwmknRtly19dwG2TwLijdSUyS9aLwYWp1obTuXBfoc=;
- b=oV21uefqRdHVbAdYCHYZazMAHpMDae40k6ezrqBLoPf/7y8uR3xkJrEW1USosAedKk
- OEBb8bhPpeRE17+b7Lt6/6u+pwhjF8CbDILz3gRBFaLIe2ZrMUm0GaUYGvPvBLJI6SrJ
- W6qxr3R7YfbiHMum9r1F9ek459gCqI0FAgJa8q5a+Og96e7l0fVNY9AAwkKwPa6+d1Y+
- gZPbOlSU/WuKhIGGax9m2ic7Hs+5/936myrDr1sFDj5EOH1U8FlVO1JgIPoU0oT6YPaB
- yAkE0gA4DD4SJh1jBm2jxpjLx96P4VAy8siBIPfkUuV84YBKXCnzI+fBsNOCrTSUkW74
- oOsw==
-X-Gm-Message-State: AOAM530GS1z2F/51jNCnQ++w/jiIWNxAoBKEnqGtpedrtRowBUNYUHpX
- /4b7CWuz69EDPqcCMdsdrBxwpSJ8rsEFJ+0WQhHGew==
-X-Google-Smtp-Source: ABdhPJwobs4y7d/rU3nBa6u5h3FCXzTiFu5hBR5q/ktt76N9parIbFxpmpXXOJKBBwsROkKpvYnYcohfRvGFRZM7pmY=
-X-Received: by 2002:ac2:5d4a:: with SMTP id w10mr22073687lfd.529.1628602087498; 
- Tue, 10 Aug 2021 06:28:07 -0700 (PDT)
+ id 1mDS40-0042n1-Cj
+ for linux-phy@lists.infradead.org; Tue, 10 Aug 2021 13:45:06 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id F2F0661075
+ for <linux-phy@lists.infradead.org>; Tue, 10 Aug 2021 13:45:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1628603104;
+ bh=XXmAXd3p36rAaU81rDuiZCBuwh8VgKdMWqSCSrpQ6EY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=cY2g7WsSxz/A7kZuDaRX/q6ySCOQ02FiYOFtOp5pcX4vkmdv7wc3gLpCo+LmhS9G8
+ bDBW+uLzJYQdnF4Kba1UfuVNPUW1Ze3uhuSso1ZRT1Kaf9lMO+/G/EheP5goGNzCkA
+ eXCMtagq2XkNpJRZfrC93L+/JW9s39eQf/1JdrwlmOb92W3Re/7COX2ni6AyisZo2j
+ iWu5/E6uOAzFAg2Uwj5Q8fN2t5IpPPUuckvbyizY6U5VC61Ee0vRUepNMkCtZSIkAh
+ RMAuygQ5MkQkjCfDY8OtqnPWoB5p22MIKVEJ3kSgX1ISaIkRNA8YtMJo0594MG7t19
+ 7ULXMjdXKouXA==
+Received: by mail-ed1-f49.google.com with SMTP id z11so30299344edb.11
+ for <linux-phy@lists.infradead.org>; Tue, 10 Aug 2021 06:45:03 -0700 (PDT)
+X-Gm-Message-State: AOAM533dtgPjgX497hq3TDlLXs6rHuT6cDsCTE/TfHRRXQY/EogYmLhB
+ rjB1ioYFRl70CLgLdwnDzHUGcmRb137aeqbmwQ==
+X-Google-Smtp-Source: ABdhPJwvwN+HBuGQuOy7dWI2MkKiqMCqMXNxlC15g0PMiB5BLSLJhhlMz3gNLX+MXvESFHTd8S98qqADv5cvRbIONKM=
+X-Received: by 2002:a05:6402:291d:: with SMTP id
+ ee29mr5180674edb.289.1628603102436; 
+ Tue, 10 Aug 2021 06:45:02 -0700 (PDT)
 MIME-Version: 1.0
-References: <20210723022543.4095-1-jiaxun.yang@flygoat.com>
- <20210723022543.4095-7-jiaxun.yang@flygoat.com>
-In-Reply-To: <20210723022543.4095-7-jiaxun.yang@flygoat.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 10 Aug 2021 15:27:56 +0200
-Message-ID: <CACRpkdYVcCW2yD_Xva+cog7i5C=YokMw+52i7iq0Nj2vVbWacA@mail.gmail.com>
-Subject: Re: [PATCH v4 6/9] pinctrl: pistachio: Make it as an option
-To: Jiaxun Yang <jiaxun.yang@flygoat.com>
-Cc: linux-mips@vger.kernel.org, 
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Michael Turquette <mturquette@baylibre.com>, 
- Daniel Lezcano <daniel.lezcano@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>, 
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-phy@lists.infradead.org, 
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>
+References: <cover.1627965261.git.mchehab+huawei@kernel.org>
+ <CAL_JsqLjw=+szXWJjGe86tMc51NA-5j=jVSXUAWuKeZRuJNJUg@mail.gmail.com>
+ <20210804085045.3dddbb9c@coco.lan> <YQrARd7wgYS1nywt@robh.at.kernel.org>
+ <20210805094612.2bc2c78f@coco.lan> <20210805095848.464cf85c@coco.lan>
+ <CAL_JsqKso=z8LG3ViaggyS1k+1T2F5aAhP3_RNhumQoUUD+bbg@mail.gmail.com>
+ <20210810114211.01df0246@coco.lan>
+In-Reply-To: <20210810114211.01df0246@coco.lan>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 10 Aug 2021 07:44:50 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKtXoFeJO6_13U+VsSXNGX_1TQvwOyQYRk5JUgBhvQChA@mail.gmail.com>
+Message-ID: <CAL_JsqKtXoFeJO6_13U+VsSXNGX_1TQvwOyQYRk5JUgBhvQChA@mail.gmail.com>
+Subject: Re: [PATCH v3 0/4] DT schema changes for HiKey970 PCIe hardware to
+ work
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Cc: Linuxarm <linuxarm@huawei.com>, mauro.chehab@huawei.com, 
+ Binghui Wang <wangbinghui@hisilicon.com>, 
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Jingoo Han <jingoohan1@gmail.com>, 
+ Xiaowei Song <songxiaowei@hisilicon.com>, devicetree@vger.kernel.org, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ PCI <linux-pci@vger.kernel.org>, linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210810_062809_194380_4FB46DF9 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210810_064504_539220_0051BF24 
+X-CRM114-Status: GOOD (  35.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,18 +96,249 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 23, 2021 at 4:26 AM Jiaxun Yang <jiaxun.yang@flygoat.com> wrote:
-
-> So it will be avilable for generic MIPS kernel.
+On Tue, Aug 10, 2021 at 3:42 AM Mauro Carvalho Chehab
+<mchehab+huawei@kernel.org> wrote:
 >
-> Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
-> --
-> v3: Depend on OF as well
+> Em Fri, 6 Aug 2021 10:23:35 -0600
+> Rob Herring <robh@kernel.org> escreveu:
+>
+> > On Thu, Aug 5, 2021 at 1:58 AM Mauro Carvalho Chehab
+> > <mchehab+huawei@kernel.org> wrote:
+> > >
+> > > Em Thu, 5 Aug 2021 09:46:12 +0200
+> > > Mauro Carvalho Chehab <mchehab+huawei@kernel.org> escreveu:
+> > >
+> > > > Em Wed, 4 Aug 2021 10:28:53 -0600
+> > > > Rob Herring <robh@kernel.org> escreveu:
+> > > >
+> > > > > On Wed, Aug 04, 2021 at 08:50:45AM +0200, Mauro Carvalho Chehab wrote:
+> > > > > > Em Tue, 3 Aug 2021 16:11:42 -0600
+> > > > > > Rob Herring <robh+dt@kernel.org> escreveu:
+> > > > > >
+> > > > > > > On Mon, Aug 2, 2021 at 10:39 PM Mauro Carvalho Chehab
+> > > > > > > <mchehab+huawei@kernel.org> wrote:
+> > > > > > > >
+> > > > > > > > Hi Rob,
+> > > > > > > >
+> > > > > > > > That's the third version of the DT bindings for Kirin 970 PCIE and its
+> > > > > > > > corresponding PHY.
+> > > > > > > >
+> > > > > > > > It is identical to v2, except by:
+> > > > > > > >         -          pcie@7,0 { // Lane 7: Ethernet
+> > > > > > > >         +          pcie@7,0 { // Lane 6: Ethernet
+> > > > > > >
+> > > > > > > Can you check whether you have DT node links in sysfs for the PCI
+> > > > > > > devices? If you don't, then something is wrong still in the topology
+> > > > > > > or the PCI core is failing to set the DT node pointer in struct
+> > > > > > > device. Though you don't rely on that currently, we want the topology
+> > > > > > > to match. It's possible this never worked on arm/arm64 as mainly
+> > > > > > > powerpc relied on this.
+> > > > > > >
+> > > > > > > I'd like some way to validate the DT matches the PCI topology. We
+> > > > > > > could have a tool that generates the DT structure based on the PCI
+> > > > > > > topology.
+> > > > > >
+> > > > > > The of_node node link is on those places:
+> > > > > >
+> > > > > >   $ find /sys/devices/platform/soc/f4000000.pcie/ -name of_node
+> > > > > >   /sys/devices/platform/soc/f4000000.pcie/of_node
+> > > > > >   /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/of_node
+> > > > > >   /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/pci_bus/0000:01/of_node
+> > > > > >   /sys/devices/platform/soc/f4000000.pcie/pci0000:00/pci_bus/0000:00/of_node
+> > > > >
+> > > > > Looks like we're missing some...
+> > > > >
+> > > > > It's not immediately obvious to me what's wrong here. Only the root
+> > > > > bus is getting it's DT node set. The relevant code is pci_scan_device(),
+> > > > > pci_set_of_node() and pci_set_bus_of_node(). Give me a few days to try
+> > > > > to reproduce and debug it.
+> > > >
+> > > > I added a printk on both pci_set_*of_node() functions:
+> > > >
+> > > >       [    4.872991]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
+> > > >       [    4.913806]  (null): pci_set_of_node: of_node: /soc/pcie@f4000000
+> > > >       [    4.978102] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+> > > >       [    4.990622]  (null): pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+> > > >       [    5.052383] pci_bus 0000:02: pci_set_bus_of_node: of_node: (null)
+> > > >       [    5.059263]  (null): pci_set_of_node: of_node: (null)
+> > > >       [    5.085552]  (null): pci_set_of_node: of_node: (null)
+> > > >       [    5.112073]  (null): pci_set_of_node: of_node: (null)
+> > > >       [    5.138320]  (null): pci_set_of_node: of_node: (null)
+> > > >       [    5.164673]  (null): pci_set_of_node: of_node: (null)
+> > > >       [    5.233759] pci_bus 0000:03: pci_set_bus_of_node: of_node: (null)
+> > > >       [    5.240539]  (null): pci_set_of_node: of_node: (null)
+> > > >       [    5.310545] pci_bus 0000:04: pci_set_bus_of_node: of_node: (null)
+> > > >       [    5.324719] pci_bus 0000:05: pci_set_bus_of_node: of_node: (null)
+> > > >       [    5.338914] pci_bus 0000:06: pci_set_bus_of_node: of_node: (null)
+> > > >       [    5.345516]  (null): pci_set_of_node: of_node: (null)
+> > > >       [    5.415795] pci_bus 0000:07: pci_set_bus_of_node: of_node: (null)
+> > >
+> > > The enclosed patch makes the above a clearer:
+> > >
+> > >         [    4.800975]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
+> > >         [    4.855983] pci 0000:00:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000
+> > >         [    4.879169] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+> > >         [    4.900602] pci 0000:01:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+> > >         [    4.953086] pci_bus 0000:02: pci_set_bus_of_node: of_node: (null)
+> >
+> > I believe the issue is we need another bridge node in the DT
+> > hierarchy. What we have is:
+> >
+> > Bus 0 is node /soc/pcie@f4000000
+> > Bus 1 is device 0 on bus 0 is node /soc/pcie@f4000000/pcie@0,0
+> > Bus 2 is device 0 on bus 1 in node ... whoops, there's no device 0
+> > under /soc/pcie@f4000000/pcie@0,0
+> >
+> > So we need the hierarchy to be: /soc/pcie@f4000000/pcie@0/pcie@0/pcie@{1,5,7}
+>
+> Adding a child pcie@0 produces the following output from my debug
+> patches:
 
-Acked-by: Linus Walleij <linus.walleij@linaro.org>
+You removed your changes to the PCI code other than the debug print?
+>
+> [    4.984278]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
+> [    5.042992] pci 0000:00:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000
+> [    5.083738] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+> [    5.124377] pci 0000:01:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+> [    5.168395] pci_bus 0000:02: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+> [    5.200719] pci 0000:02:01.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
 
-Yours,
-Linus Walleij
+This should not happen. The devfn doesn't match.
+
+> [    5.247777] pci 0000:02:04.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+> [    5.276768] pci 0000:02:05.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+> [    5.305018] pci 0000:02:07.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+> [    5.333093] pci 0000:02:09.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+> [    5.395620] pci_bus 0000:03: pci_set_bus_of_node: of_node: (null)
+> [    5.416333] pci 0000:03:00.0: pci_set_of_node: of_node: (null)
+> [    5.451353] pci_bus 0000:04: pci_set_bus_of_node: of_node: (null)
+> [    5.473970] pci_bus 0000:05: pci_set_bus_of_node: of_node: (null)
+> [    5.487765] pci_bus 0000:06: pci_set_bus_of_node: of_node: (null)
+> [    5.530219] pci 0000:06:00.0: pci_set_of_node: of_node: (null)
+> [    5.560896] pci_bus 0000:07: pci_set_bus_of_node: of_node: (null)
+>
+> It produces the following sysfs nodes:
+>
+>         $ find /sys/devices/platform/soc/f4000000.pcie/ -name of_node
+>         /sys/devices/platform/soc/f4000000.pcie/of_node
+>         /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/of_node
+>         /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/of_node
+>         /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/pci_bus/0000:02/of_node
+>         /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/pci_bus/0000:01/of_node
+>         /sys/devices/platform/soc/f4000000.pcie/pci0000:00/pci_bus/0000:00/of_node
+>
+>
+> I'm enclosing the DT schema I'm using.
+>
+>
+>
+> Thanks,
+> Mauro
+>
+> ---
+>
+>                 pcie@f4000000 {
+>                         compatible = "hisilicon,kirin970-pcie";
+>                         reg = <0x0 0xf4000000 0x0 0x1000000>,
+>                               <0x0 0xfc180000 0x0 0x1000>,
+>                               <0x0 0xf5000000 0x0 0x2000>;
+>                         reg-names = "dbi", "apb", "config";
+>                         bus-range = <0x00 0xff>;
+>                         #address-cells = <3>;
+>                         #size-cells = <2>;
+>                         device_type = "pci";
+>                         phys = <&pcie_phy>;
+>                         ranges = <0x02000000 0x0 0x00000000
+>                                   0x0 0xf6000000
+>                                   0x0 0x02000000>;
+>                         num-lanes = <1>;
+>                         #interrupt-cells = <1>;
+>                         interrupts = <GIC_SPI 283 IRQ_TYPE_LEVEL_HIGH>;
+>                         interrupt-names = "msi";
+>                         interrupt-map-mask = <0 0 0 7>;
+>                         interrupt-map = <0x0 0 0 1
+>                                          &gic GIC_SPI 282 IRQ_TYPE_LEVEL_HIGH>,
+>                                         <0x0 0 0 2
+>                                          &gic GIC_SPI 283 IRQ_TYPE_LEVEL_HIGH>,
+>                                         <0x0 0 0 3
+>                                          &gic GIC_SPI 284 IRQ_TYPE_LEVEL_HIGH>,
+>                                         <0x0 0 0 4
+>                                          &gic GIC_SPI 285 IRQ_TYPE_LEVEL_HIGH>;
+>                         reset-gpios = <&gpio7 0 0>;
+>                         hisilicon,clken-gpios = <&gpio27 3 0>, <&gpio17 0 0>,
+>                                                 <&gpio20 6 0>;
+>                         pcie@0,0 { // Lane 0: PCIe switch: Bus 1, Device 0
+>                                 reg = <0x80 0 0 0 0>;
+
+s/0x80/0/
+
+>                                 compatible = "pciclass,0604";
+>                                 device_type = "pci";
+>                                 #address-cells = <3>;
+>                                 #size-cells = <2>;
+>                                 ranges;
+>                                 bus-range = <0x01 0xff>;
+>                                 msi-parent = <&its_pcie>;
+>
+>                                 pcie@0,0 { // Lane 0: upstream
+>                                         reg = <0x010000 0 0 0 0>;
+
+While technically correct having the bus# in the address, that doesn't
+work for FDT since we don't know the bus assignment. So we should just
+use 0.
+
+>                                         compatible = "pciclass,0604";
+>                                         device_type = "pci";
+>                                         #address-cells = <3>;
+>                                         #size-cells = <2>;
+>                                         ranges;
+>                                 };
+>                                 pcie@1,0 { // Lane 4: M.2
+
+These 3 nodes (1, 5, 7) need to be child nodes of the above node.
+
+>                                         reg = <0x010800 0 0 0 0>;
+
+Just 0x800
+
+>                                         compatible = "pciclass,0604";
+>                                         device_type = "pci";
+>                                         reset-gpios = <&gpio3 1 0>;
+>                                         #address-cells = <3>;
+>                                         #size-cells = <2>;
+>                                         ranges;
+>                                 };
+>
+>                                 pcie@5,0 { // Lane 5: Mini PCIe
+>                                         reg = <0x012800 0 0 0 0>;
+
+0x2800
+
+>                                         compatible = "pciclass,0604";
+>                                         device_type = "pci";
+>                                         reset-gpios = <&gpio27 4 0 >;
+>                                         #address-cells = <3>;
+>                                         #size-cells = <2>;
+>                                         ranges;
+>                                 };
+>
+>                                 pcie@7,0 { // Lane 6: Ethernet
+>                                         reg = <0x013800 0 0 0 0>;
+
+0x3800
+
+>                                         compatible = "pciclass,0604";
+>                                         device_type = "pci";
+>                                         reset-gpios = <&gpio25 2 0 >;
+>                                         #address-cells = <3>;
+>                                         #size-cells = <2>;
+>                                         ranges;
+>                                 };
+>                         };
+>                 };
+>
+>
+>
 
 -- 
 linux-phy mailing list
