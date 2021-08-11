@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-6.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
 	URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E409EC4338F
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 06:47:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B5B2FC4338F
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 07:11:25 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9E15060FA0
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 06:47:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9E15060FA0
+	by mail.kernel.org (Postfix) with ESMTPS id 77C9D601FE
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 07:11:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 77C9D601FE
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,32 +22,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FAc2YyRZp5/b1pLfBsgZNv9StKvD/vF/V7ExbD2gUS4=; b=hgKJVfu0HLdMxR
-	dbmuKa6Coy9XR0AR6EOmu7g3klZGg/s7Oqi/Ki4Xg5me1htUGHnpCyuSVxABczyx2U+QKiU+1Ze0E
-	hhRwvLpniQlHesXgseF6xiET7/HhtwsDz3S9zEdbs8TqWaXbqzcpFT9dauDf1I3mZrHjG4oniSylh
-	/6zOdwTiFMJiXVH+/51+cnK+lkGoCcVWG4CMBoy6/SPK/wbrUx8HP1wZwXItnOCxfwlpPNiCQQbbh
-	L9Xd2UrGTXIc/faPGAVtVPW5/MN9ITUoYAxtqixgz2zvNB9JRTlU6GLukrWMOqtfLrwHj+J8yMkXt
-	Eda6Jz8JvWRS9FNQqkzg==;
+	List-Owner; bh=YjsR3C6/8Yolkd7dX8Coe4AP8fGJtsP7Z2forhIhG2Q=; b=A0wjLKHiXaJ3NG
+	i1qTq1xtc0JFHy1u2lEAfyV5qgPX2heGDd+r0LTiQJyWEcl11LK8RJW2yuR7E4jiF6YzpWTrArBGU
+	FP+70fIRLyEJnS3eb1NeKQmIXeTFA9M+uuqIYfV190bqBqlzTWriPDlE7spNygoUEAUf4tzK/O2cg
+	NV/9FflvemqVYhEVxUlPTdKRKLjZI8x8QmULyZYgAtlv9gSSY6rLVeP7Q8lDPP42u8ymMBmW2cyVj
+	ComNM2Dxphbll6j8WfDZWNWpK2fdI4jO6mQ3sM2tsJ93PO+Cjy+Mm5AxJm9izCTTL21/jPoKIqs1L
+	Si4zqKEyYWulPd6Kw1yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mDi16-005lJ3-Va; Wed, 11 Aug 2021 06:47:08 +0000
+	id 1mDiOa-005rUJ-UQ; Wed, 11 Aug 2021 07:11:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mDi0t-005lFI-Or
- for linux-phy@lists.infradead.org; Wed, 11 Aug 2021 06:46:57 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id B30CD6056C;
- Wed, 11 Aug 2021 06:46:51 +0000 (UTC)
+ id 1mDiOW-005rT2-VS
+ for linux-phy@lists.infradead.org; Wed, 11 Aug 2021 07:11:23 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 3130360EE2;
+ Wed, 11 Aug 2021 07:11:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1628664415;
- bh=cQZ5Ceo92fMCjMoNepYyMcCXXNTel21pdVZSy1necE8=;
+ s=k20201202; t=1628665880;
+ bh=EVbsI4fhrFB4IvjQ0v5yd/Um+sEgvjmFm320FTAuwvY=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=qdv/OdiGLopkL3HLUtMTkU/J55Jq5uVtPc+rOe2OqCI1vFdaj/fWhCo0PlrudoKyS
- mn4T/GtTI6Mmu2FZSuwSez46llplA0WUkMZA+fdPH4dz0nA5YInlnFjNa+83qPleBa
- dXa0/YgrSV/HsXseq7ianHJbfDxkTR5o5ItPHvnf/8sPWw8zqJ0CXb0HOG6+3wyoqM
- E9YLbZmUrB/4kiYoBV4647gUoHq7TZkT//rMo68UMFhNc+Sv504DDZUFMDg6HMabMA
- JMS/rlWHXtPuGbOj5bB+LQUu6Q+WO9ciKe3H9/WpZFB2CLLJNJkBw54osbhbassMD0
- 1QIWqV2SXli+A==
-Date: Wed, 11 Aug 2021 08:46:48 +0200
+ b=teLwpVm+SMKy2J46UduWEy4L1Y9Upce+tpb3pfdM+K6WJbCbJvn3RJbp06tQQ3+Vz
+ Ir12vnTDJdpEpASUq8KwfFNbNyK6Bt0xlL22glT3I3UNe24d3tAbzOu3aiOTzqpvEJ
+ Sx1A0qq98f2+00ByhjZxtJBLdyUw7W6R3je1bRIy/CkHDQXN0SlRwwu8FumzttEwxA
+ LpQaqr7HKMdAVUOx7PqxjtmQ+gxjQmaQ6BU/UIy1q4Eu5teykIdrJa9wy1M8YCzGiA
+ qRJd7uEEI9/VI83nwNVXGHZdjuENi4VaLBV3964DscBbJCZOeOJmNGz55Sv4d15WTd
+ EyOSR4B3DePAg==
+Date: Wed, 11 Aug 2021 09:11:15 +0200
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 To: Rob Herring <robh@kernel.org>
 Cc: Linuxarm <linuxarm@huawei.com>, mauro.chehab@huawei.com, Binghui Wang
@@ -58,8 +58,8 @@ Cc: Linuxarm <linuxarm@huawei.com>, mauro.chehab@huawei.com, Binghui Wang
  <linux-pci@vger.kernel.org>, linux-phy@lists.infradead.org
 Subject: Re: [PATCH v3 0/4] DT schema changes for HiKey970 PCIe hardware to
  work
-Message-ID: <20210811084648.66ddff29@coco.lan>
-In-Reply-To: <CAL_JsqL-R=kTugNAC-C1gfSm6Xnb0Nw_iLcRki8aQMNQjcLN6A@mail.gmail.com>
+Message-ID: <20210811091115.03b36daa@coco.lan>
+In-Reply-To: <CAL_JsqKr9csV5fPZxD=kRRB5W6RCjHz0VsP6-nx0RQt8mgVJ5w@mail.gmail.com>
 References: <cover.1627965261.git.mchehab+huawei@kernel.org>
  <CAL_JsqLjw=+szXWJjGe86tMc51NA-5j=jVSXUAWuKeZRuJNJUg@mail.gmail.com>
  <20210804085045.3dddbb9c@coco.lan>
@@ -71,12 +71,12 @@ References: <cover.1627965261.git.mchehab+huawei@kernel.org>
  <CAL_JsqKtXoFeJO6_13U+VsSXNGX_1TQvwOyQYRk5JUgBhvQChA@mail.gmail.com>
  <20210810162054.1aa84b84@coco.lan>
  <CAL_JsqL-R=kTugNAC-C1gfSm6Xnb0Nw_iLcRki8aQMNQjcLN6A@mail.gmail.com>
+ <CAL_JsqKr9csV5fPZxD=kRRB5W6RCjHz0VsP6-nx0RQt8mgVJ5w@mail.gmail.com>
 X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.30; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210810_234655_947051_0219F33B 
-X-CRM114-Status: UNSURE (   6.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210811_001121_111874_55403BC5 
+X-CRM114-Status: GOOD (  21.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,142 +93,220 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Em Tue, 10 Aug 2021 11:13:48 -0600
+Em Tue, 10 Aug 2021 11:52:34 -0600
 Rob Herring <robh@kernel.org> escreveu:
 
-> > > >                                         compatible = "pciclass,0604";
-> > > >                                         device_type = "pci";
-> > > >                                         #address-cells = <3>;
-> > > >                                         #size-cells = <2>;
-> > > >                                         ranges;
-> > > >                                 };
-> > > >                                 pcie@1,0 { // Lane 4: M.2  
+> > > > >                         pcie@0,0 { // Lane 0: PCIe switch: Bus 1, Device 0
+> > > > >                                 reg = <0x80 0 0 0 0>;  
+> > > >
+> > > > s/0x80/0/
+> > > >  
+> > > > >                                 compatible = "pciclass,0604";
+> > > > >                                 device_type = "pci";
+> > > > >                                 #address-cells = <3>;
+> > > > >                                 #size-cells = <2>;
+> > > > >                                 ranges;
+> > > > >                                 bus-range = <0x01 0xff>;
+> > > > >                                 msi-parent = <&its_pcie>;
+> > > > >
+> > > > >                                 pcie@0,0 { // Lane 0: upstream
+> > > > >                                         reg = <0x010000 0 0 0 0>;  
+> > > >
+> > > > While technically correct having the bus# in the address, that doesn't
+> > > > work for FDT since we don't know the bus assignment. So we should just
+> > > > use 0.  
 > > >
-> > > These 3 nodes (1, 5, 7) need to be child nodes of the above node.  
+> > > Using 0 causes DTB compilation to produce a warning, due to the
+> > > bus-range.  
 > 
-> This was the main issue.
+> What's the warning? 'bus-range' should be optional.
 
-Ok, placing 1, 5, 7 as child nodes of 0 worked, with the attached
-DT schema:
-
-
-	$ ls -l $(find /sys/devices/platform/soc/f4000000.pcie/ -name of_node)
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/of_node -> ../../../../firmware/devicetree/base/soc/pcie@f4000000
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:01.0/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:01.0/pci_bus/0000:03/of_node -> ../../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:05.0/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:05.0/pci_bus/0000:05/of_node -> ../../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:07.0/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:07.0/pci_bus/0000:06/of_node -> ../../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/of_node -> ../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/pci_bus/0000:02/of_node -> ../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/of_node -> ../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/pci_bus/0000:01/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0
-	lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/pci_bus/0000:00/of_node -> ../../../../../../../firmware/devicetree/base/soc/pcie@f4000000
-
-The logs also seem OK on my eyes:
-
-	[    3.911082]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
-	[    4.001104] pci 0000:00:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000
-	[    4.043609] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-	[    4.076756] pci 0000:01:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-	[    4.120652] pci_bus 0000:02: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.150766] pci 0000:02:01.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.196413] pci 0000:02:04.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.238896] pci 0000:02:05.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.280116] pci 0000:02:07.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.309821] pci 0000:02:09.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.370830] pci_bus 0000:03: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
-	[    4.382345] pci_bus 0000:04: pci_set_bus_of_node: of_node: (null)
-	[    4.411966] pci_bus 0000:05: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
-	[    4.439898] pci_bus 0000:06: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-	[    4.491616] pci 0000:06:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-	[    4.519907] pci_bus 0000:07: pci_set_bus_of_node: of_node: (null)
-
-Thanks,
-Mauro
-
+With this DT schema (simplified to show only relevant bits):
 
 		pcie@f4000000 {
-			compatible = "hisilicon,kirin970-pcie";
-			reg = <0x0 0xf4000000 0x0 0x1000000>,
-			      <0x0 0xfc180000 0x0 0x1000>,
-			      <0x0 0xf5000000 0x0 0x2000>;
-			reg-names = "dbi", "apb", "config";
 			bus-range = <0x00 0xff>;
-			#address-cells = <3>;
-			#size-cells = <2>;
-			device_type = "pci";
-			phys = <&pcie_phy>;
-			ranges = <0x02000000 0x0 0x00000000
-				  0x0 0xf6000000
-				  0x0 0x02000000>;
-			num-lanes = <1>;
-			#interrupt-cells = <1>;
-			interrupts = <GIC_SPI 283 IRQ_TYPE_LEVEL_HIGH>;
-			interrupt-names = "msi";
-			interrupt-map-mask = <0 0 0 7>;
-			interrupt-map = <0x0 0 0 1
-					 &gic GIC_SPI 282 IRQ_TYPE_LEVEL_HIGH>,
-					<0x0 0 0 2
-					 &gic GIC_SPI 283 IRQ_TYPE_LEVEL_HIGH>,
-					<0x0 0 0 3
-					 &gic GIC_SPI 284 IRQ_TYPE_LEVEL_HIGH>,
-					<0x0 0 0 4
-					 &gic GIC_SPI 285 IRQ_TYPE_LEVEL_HIGH>;
-			reset-gpios = <&gpio7 0 0>;
-			hisilicon,clken-gpios = <&gpio27 3 0>, <&gpio17 0 0>,
-						<&gpio20 6 0>;
 			pcie@0,0 { // Lane 0: PCIe switch: Bus 1, Device 0
-				reg = <0x80 0 0 0 0>;
-				compatible = "pciclass,0604";
-				device_type = "pci";
-				#address-cells = <3>;
-				#size-cells = <2>;
-				ranges;
 				bus-range = <0x01 0xff>;
-				msi-parent = <&its_pcie>;
-
 				pcie@0,0 { // Lane 0: upstream
-					reg = <0x010000 0 0 0 0>;
-					compatible = "pciclass,0604";
-					device_type = "pci";
-					#address-cells = <3>;
-					#size-cells = <2>;
-					ranges;
-
+					reg = <0x0000 0 0 0 0>;
 					pcie@1,0 { // Lane 4: M.2
-						reg = <0x010800 0 0 0 0>;
-						compatible = "pciclass,0604";
-						device_type = "pci";
-						reset-gpios = <&gpio3 1 0>;
-						#address-cells = <3>;
-						#size-cells = <2>;
-						ranges;
+						reg = <0x0800 0 0 0 0>;
 					};
 
 					pcie@5,0 { // Lane 5: Mini PCIe
-						reg = <0x012800 0 0 0 0>;
-						compatible = "pciclass,0604";
-						device_type = "pci";
-						reset-gpios = <&gpio27 4 0 >;
-						#address-cells = <3>;
-						#size-cells = <2>;
-						ranges;
+						reg = <0x2800 0 0 0 0>;
 					};
 
 					pcie@7,0 { // Lane 6: Ethernet
-						reg = <0x013800 0 0 0 0>;
-						compatible = "pciclass,0604";
-						device_type = "pci";
-						reset-gpios = <&gpio25 2 0 >;
-						#address-cells = <3>;
-						#size-cells = <2>;
-						ranges;
+						reg = <0x3800 0 0 0 0>;
 					};
 				};
 			};
 		};
+
+
+This is the compilation warning:
+	$ make dtbs
+	arch/arm64/boot/dts/hisilicon/hi3670.dtsi:735.5-29: Warning (pci_device_bus_num): /soc/pcie@f4000000/pcie@0,0/pcie@0,0:bus-range: PCI bus number 0 out of range, expected (1 - 1)
+
+This is solved by changing:
+				pcie@0,0 { // Lane 0: upstream
+					reg = <0x0000 0 0 0 0>;
+to:
+				pcie@0,0 { // Lane 0: upstream
+					reg = <0x010000 0 0 0 0>;
+
+
+
+> 
+> > > Without the bus-range, there will be runtime warnings,
+> > > as this will be assigned as bus 1.  
+> >
+> > Okay, that might be something we need to fix.  
+> 
+> Actually, I don't see how there's a problem. First, the only place we
+> read 'bus-range' is of_pci_parse_bus_range() and that's only called
+> for the host bridge. Any other occurrence of 'bus-range' should be
+> ignored. The only place we read 'reg' is of_pci_get_devfn() and we
+> mask just the devfn bits.
+> 
+> >            [    4.992572] pci_bus 0000:00: root bus resource [bus 00-01]  
+> 
+> I don't see any way this can happen other than pcie@f4000000 node
+> containing 'bus-range = <0 1>;'. It comes from
+> pci_host_bridge.windows.
+
+Yeah, you're right. On the first versions, 'bus-range = <0 1>;' was used,
+just like:
+	arch/arm64/boot/dts/hisilicon/hi3660.dtsi
+
+(I have a fixup patch fixing the warning on Kirin 960 due to that)
+
+Ok, I did another test here: if I drop both dma-range, it will output:
+
+	[    3.778028] kirin-pcie f4000000.pcie:   No bus range found for /soc/pcie@f4000000, using [bus 00-ff]
+
+But no conflict warnings. So, I guess dropping bus-range and the explicit
+bus 1 setting at "reg" is a clean approach.
+
+As a reference, this is the dmesg log here (with OF debug turned on):
+
+# dmesg|grep -i pci
+[    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.14.0-rc1+ root=UUID=646147e1-d186-44cc-b0d2-60c42f8dcc6d ro drm.debug=0x6 earlycon=pl011,0xfff32000,115200 console=tty0 console=ttyAMA6,115200n8 root=/dev/sdd12 rootwait rw quiet efi=noruntime drm.debug=0x06 "dyndbg=file drivers/pci/of.c +p;  drivers/gpu/* +p; file drivers/pci/of.c +p;  drivers/spmi/* +p; file drivers/pci/of.c +p;  drivers/mfd/* +p; file drivers/pci/of.c +p;  drivers/regulator/* +p; file drivers/pci/of.c +p;  drivers/usb/core/hub.c +p" no_console_suspend loglevel=9 kernel.panic=5
+[    0.000000] Unknown command line parameters: BOOT_IMAGE=/boot/vmlinuz-5.14.0-rc1+ dyndbg=file drivers/pci/of.c +p;  drivers/gpu/* +p; file drivers/pci/of.c +p;  drivers/spmi/* +p; file drivers/pci/of.c +p;  drivers/mfd/* +p; file drivers/pci/of.c +p;  drivers/regulator/* +p; file drivers/pci/of.c +p;  drivers/usb/core/hub.c +p
+[    0.725101] PCI: CLS 0 bytes, default 64
+[    1.520828] ehci-pci: EHCI PCI platform driver
+[    1.521022] ohci-pci: OHCI PCI platform driver
+[    2.204793]     dyndbg=file drivers/pci/of.c +p;  drivers/gpu/* +p; file drivers/pci/of.c +p;  drivers/spmi/* +p; file drivers/pci/of.c +p;  drivers/mfd/* +p; file drivers/pci/of.c +p;  drivers/regulator/* +p; file drivers/pci/of.c +p;  drivers/usb/core/hub.c +p
+[    3.767252] kirin-pcie f4000000.pcie: host bridge /soc/pcie@f4000000 ranges:
+[    3.778028] kirin-pcie f4000000.pcie:   No bus range found for /soc/pcie@f4000000, using [bus 00-ff]
+[    3.792466] kirin-pcie f4000000.pcie: Parsing ranges property...
+[    3.801919] kirin-pcie f4000000.pcie:      MEM 0x00f6000000..0x00f7ffffff -> 0x0000000000
+[    3.813680] kirin-pcie f4000000.pcie: invalid resource
+[    3.822189] kirin-pcie f4000000.pcie: iATU unroll: enabled
+[    3.831159] kirin-pcie f4000000.pcie: Detected iATU regions: 8 outbound, 8 inbound
+[    3.943155] kirin-pcie f4000000.pcie: Link up
+[    3.956821]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
+[    3.979143] kirin-pcie f4000000.pcie: PCI host bridge to bus 0000:00
+[    3.989441] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    3.998050] pci_bus 0000:00: root bus resource [mem 0xf6000000-0xf7ffffff] (bus address [0x00000000-0x01ffffff])
+[    4.011965] pci 0000:00:00.0: [19e5:3670] type 01 class 0x060400
+[    4.021177] pci 0000:00:00.0: reg 0x10: [mem 0xf6000000-0xf6ffffff]
+[    4.031041] pci 0000:00:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000
+[    4.041362] pci 0000:00:00.0: supports D1 D2
+[    4.049191] pci 0000:00:00.0: PME# supported from D0 D1 D2 D3hot
+[    4.059554] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+[    4.071133] pci 0000:01:00.0: [10b5:8606] type 01 class 0x060400
+[    4.080831] pci 0000:01:00.0: reg 0x10: [mem 0xf6000000-0xf601ffff]
+[    4.103511] pci 0000:01:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
+[    4.115403] pci 0000:01:00.0: PME# supported from D0 D3hot D3cold
+[    4.139816] pci 0000:01:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    4.157297] pci_bus 0000:02: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+[    4.172380] pci 0000:02:01.0: [10b5:8606] type 01 class 0x060400
+[    4.182279] pci 0000:02:01.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+[    4.197047] pci 0000:02:01.0: PME# supported from D0 D3hot D3cold
+[    4.207583] pci 0000:02:04.0: [10b5:8606] type 01 class 0x060400
+[    4.217659] pci 0000:02:04.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+[    4.234551] pci 0000:02:04.0: PME# supported from D0 D3hot D3cold
+[    4.254284] pci 0000:02:05.0: [10b5:8606] type 01 class 0x060400
+[    4.267668] pci 0000:02:05.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+[    4.282530] pci 0000:02:05.0: PME# supported from D0 D3hot D3cold
+[    4.295077] pci 0000:02:07.0: [10b5:8606] type 01 class 0x060400
+[    4.306032] pci 0000:02:07.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+[    4.320927] pci 0000:02:07.0: PME# supported from D0 D3hot D3cold
+[    4.333414] pci 0000:02:09.0: [10b5:8606] type 01 class 0x060400
+[    4.340439] pci 0000:02:09.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
+[    4.350084] pci 0000:02:09.0: PME# supported from D0 D3hot D3cold
+[    4.358150] pci 0000:02:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    4.366379] pci 0000:02:04.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    4.374515] pci 0000:02:05.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    4.382682] pci 0000:02:07.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    4.390834] pci 0000:02:09.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    4.399079] pci_bus 0000:03: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
+[    4.409309] pci 0000:03:00.0: [144d:a809] type 00 class 0x010802
+[    4.415564] pci 0000:03:00.0: reg 0x10: [mem 0xf6000000-0xf6003fff 64bit]
+[    4.422769] pci 0000:03:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
+[    4.433782] pci 0000:03:00.0: 4.000 Gb/s available PCIe bandwidth, limited by 5.0 GT/s PCIe x1 link at 0000:00:00.0 (capable of 31.504 Gb/s with 8.0 GT/s PCIe x4 link)
+[    4.449954] pci_bus 0000:03: busn_res: [bus 03-ff] end is updated to 03
+[    4.456836] pci_bus 0000:04: pci_set_bus_of_node: of_node: (null)
+[    4.457918] pci_bus 0000:04: busn_res: [bus 04-ff] end is updated to 04
+[    4.478895] pci_bus 0000:05: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
+[    4.491772] pci_bus 0000:05: busn_res: [bus 05-ff] end is updated to 05
+[    4.503438] pci_bus 0000:06: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
+[    4.529140] pci 0000:06:00.0: [10ec:8168] type 00 class 0x020000
+[    4.535374] pci 0000:06:00.0: reg 0x10: [io  0x0000-0x00ff]
+[    4.541229] pci 0000:06:00.0: reg 0x18: [mem 0xf7000000-0xf7000fff 64bit]
+[    4.548194] pci 0000:06:00.0: reg 0x20: [mem 0xf7200000-0xf7203fff 64bit pref]
+[    4.561063] pci 0000:06:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
+[    4.582075] pci 0000:06:00.0: supports D1 D2
+[    4.586357] pci 0000:06:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    4.594727] pci_bus 0000:06: busn_res: [bus 06-ff] end is updated to 06
+[    4.601538] pci_bus 0000:07: pci_set_bus_of_node: of_node: (null)
+[    4.608473] pci_bus 0000:07: busn_res: [bus 07-ff] end is updated to 07
+[    4.615124] pci_bus 0000:02: busn_res: [bus 02-ff] end is updated to 07
+[    4.621810] pci 0000:00:00.0: BAR 0: assigned [mem 0xf6000000-0xf6ffffff]
+[    4.628606] pci 0000:00:00.0: BAR 14: assigned [mem 0xf7000000-0xf72fffff]
+[    4.628610] pci 0000:00:00.0: BAR 15: assigned [mem 0xf7300000-0xf73fffff pref]
+[    4.642813] pci 0000:00:00.0: BAR 13: no space for [io  size 0x1000]
+[    4.649174] pci 0000:00:00.0: BAR 13: failed to assign [io  size 0x1000]
+[    4.661518] pci 0000:01:00.0: BAR 14: assigned [mem 0xf7000000-0xf71fffff]
+[    4.669074] pci 0000:01:00.0: BAR 15: assigned [mem 0xf7300000-0xf73fffff 64bit pref]
+[    4.677066] pci 0000:01:00.0: BAR 0: assigned [mem 0xf7200000-0xf721ffff]
+[    4.683891] pci 0000:01:00.0: BAR 13: no space for [io  size 0x1000]
+[    4.690252] pci 0000:01:00.0: BAR 13: failed to assign [io  size 0x1000]
+[    4.690266] pci 0000:02:01.0: BAR 14: assigned [mem 0xf7000000-0xf70fffff]
+[    4.690270] pci 0000:02:07.0: BAR 14: assigned [mem 0xf7100000-0xf71fffff]
+[    4.710728] pci 0000:02:07.0: BAR 15: assigned [mem 0xf7300000-0xf73fffff 64bit pref]
+[    4.727780] pci 0000:02:07.0: BAR 13: no space for [io  size 0x1000]
+[    4.727783] pci 0000:02:07.0: BAR 13: failed to assign [io  size 0x1000]
+[    4.727790] pci 0000:03:00.0: BAR 0: assigned [mem 0xf7000000-0xf7003fff 64bit]
+[    4.727904] pci 0000:02:01.0: PCI bridge to [bus 03]
+[    4.753165] pci 0000:02:01.0:   bridge window [mem 0xf7000000-0xf70fffff]
+[    4.769738] pci 0000:02:04.0: PCI bridge to [bus 04]
+[    4.774843] pci 0000:02:05.0: PCI bridge to [bus 05]
+[    4.779959] pci 0000:06:00.0: BAR 4: assigned [mem 0xf7300000-0xf7303fff 64bit pref]
+[    4.787839] pci 0000:06:00.0: BAR 2: assigned [mem 0xf7100000-0xf7100fff 64bit]
+[    4.795273] pci 0000:06:00.0: BAR 0: no space for [io  size 0x0100]
+[    4.801543] pci 0000:06:00.0: BAR 0: failed to assign [io  size 0x0100]
+[    4.808159] pci 0000:02:07.0: PCI bridge to [bus 06]
+[    4.813166] pci 0000:02:07.0:   bridge window [mem 0xf7100000-0xf71fffff]
+[    4.819981] pci 0000:02:07.0:   bridge window [mem 0xf7300000-0xf73fffff 64bit pref]
+[    4.827782] pci 0000:02:09.0: PCI bridge to [bus 07]
+[    4.832871] pci 0000:01:00.0: PCI bridge to [bus 02-07]
+[    4.838138] pci 0000:01:00.0:   bridge window [mem 0xf7000000-0xf71fffff]
+[    4.844952] pci 0000:01:00.0:   bridge window [mem 0xf7300000-0xf73fffff 64bit pref]
+[    4.852751] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    4.857980] pci 0000:00:00.0:   bridge window [mem 0xf7000000-0xf72fffff]
+[    4.864770] pci 0000:00:00.0:   bridge window [mem 0xf7300000-0xf73fffff pref]
+[    4.881547] pcieport 0000:00:00.0: PME: Signaling with IRQ 58
+[    4.888905] pcieport 0000:00:00.0: AER: enabled with IRQ 58
+[    4.895013] pcieport 0000:01:00.0: enabling device (0000 -> 0002)
+[    4.903260] pcieport 0000:02:01.0: enabling device (0000 -> 0002)
+[    4.914761] pcieport 0000:02:07.0: enabling device (0000 -> 0002)
+[    4.928984] nvme nvme0: pci function 0000:03:00.0
+
+Thanks,
+Mauro
 
 -- 
 linux-phy mailing list
