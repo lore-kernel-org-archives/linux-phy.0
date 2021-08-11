@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-15.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 946B3C4338F
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 17:33:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8C92EC4338F
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 17:36:45 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 21B246101D
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 17:33:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 21B246101D
+	by mail.kernel.org (Postfix) with ESMTPS id 3CEFC6101D
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 17:36:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3CEFC6101D
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,67 +23,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l9EeKEchGhNc8a3Il/ShMb0L5wjBL1dOpXLjQ3MSghk=; b=iKAbVa9oSfp8Q2
-	r6p5uP2lPtfwqFFXY0at8F2Kz2sjviykootT8UkfdPH1VWFXRxgMM9QrvAMOOV0Bz1FhQxZp0LmZL
-	N2gBd7e9dHrZ4SoMP02b4hGuSzSxeCYqSBxG/KsRgGJUwKiPY191KluqTNOGTD6Wrz4TGS/9mxkYo
-	WJkD0HGd3zmeWZNscsSIflWE29Qx2Q7nn6H2++CtUPcJqfj6qy1dKCn1yVXc6B20+pRd8cZtj9WeZ
-	Dcgjk+RuGW141hrc/vKuXduMu4KfQGlvufwUSnpUG2w8RFzYrgVa9OakeqJ5ExNXtY3vyWofUC/VE
-	KM3zKTL6FkMdahSQNKJA==;
+	List-Owner; bh=wQfVRizU0rdsKDNlml7wec6GSXmXqggbrVGfZIptDLs=; b=hnR66J0dSJMsUH
+	KL/uXyuzFUl2l0UPhsxzurlAmuWUBGFSMv39bmZocVUf/6n7PpQiYF/N3ZmMqUIlRxCilnE9KQSmB
+	laZZEYB8JmCJwwm/mhG0AzGOSI4hOidPG78vDdN7QA7TlDhOfqNthJmj4IjcSkJyjMPX8q3GJTOCl
+	AirGEejhTnje8eeqAcuzpeKZOWPCMLye6QXmYS560X8H894HQAOxStOqedIPyGdEmv62o+tQYbIYF
+	6DmUCUuH16+GPludHX8EEysPe7L+u8jxvluguQTmHEavEzad36gOeQ5SoDfUzsJ7AQd4whsLFAYRM
+	EYFd7fNAqTmedEj5m/KQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mDs70-007nVh-HM; Wed, 11 Aug 2021 17:33:54 +0000
+	id 1mDs9k-007nlA-LG; Wed, 11 Aug 2021 17:36:44 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mDs6v-007nUp-4s
- for linux-phy@lists.infradead.org; Wed, 11 Aug 2021 17:33:52 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 17BHXd6Q065439;
- Wed, 11 Aug 2021 12:33:39 -0500
+ id 1mDs9f-007njN-28
+ for linux-phy@lists.infradead.org; Wed, 11 Aug 2021 17:36:42 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 17BHaXqS066293;
+ Wed, 11 Aug 2021 12:36:33 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1628703219;
- bh=jCRIDe9QQKhtLw6g6OT1V4EEeU0fj0X1geCk79hTYi8=;
+ s=ti-com-17Q1; t=1628703393;
+ bh=koHOYMd3d54ErCB2QIMgjsSyIsfpTXR12oRVDmM0CQI=;
  h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=y/IEQjAQuGU4HkasYthDYpgPyTF8LehdSxGG0HgdOIrSPix6MW1KEn5ieL4argU5/
- 1zJmB097AAYAlfvPemnecablD2yjgoK2GVUoegsVpbJjV3bACEHa64zJq/CRSyffif
- Emv5HXoSwuZd0bDNKXr+rF90YdkxCKgwxTjaCtG8=
-Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 17BHXdw5085739
+ b=TVRvh+ba2DClIx7rkBokgHjhGu87O7rf2h2WdB11e0gQ8kz586rIYf/kQ2UDx6Usf
+ uevzzZTCNBWN6LmdueWQeQE0N1gulKkIU8n3bMWgagdoAc5bz5Bo9JBn4EXwFYRQ1s
+ w5MPkhuK/AeRkWY7Zl95Ed3OLs3W6lo+UipHQI+s=
+Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 17BHaXWN014969
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 11 Aug 2021 12:33:39 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ Wed, 11 Aug 2021 12:36:33 -0500
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Wed, 11
- Aug 2021 12:33:38 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ Aug 2021 12:36:33 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Wed, 11 Aug 2021 12:33:38 -0500
+ Frontend Transport; Wed, 11 Aug 2021 12:36:33 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 17BHXbwu104060;
- Wed, 11 Aug 2021 12:33:38 -0500
-Date: Wed, 11 Aug 2021 23:03:37 +0530
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 17BHaWlY013939;
+ Wed, 11 Aug 2021 12:36:32 -0500
+Date: Wed, 11 Aug 2021 23:06:31 +0530
 From: Pratyush Yadav <p.yadav@ti.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Nikhil Devshatwar <nikhil.nd@ti.com>, Tomi Valkeinen
- <tomi.valkeinen@ideasonboard.com>, Laurent Pinchart
- <laurent.pinchart@ideasonboard.com>, Paul Kocialkowski
- <paul.kocialkowski@bootlin.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>,
- Peter Chen <peter.chen@nxp.com>, <linux-kernel@vger.kernel.org>,
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+CC: Vinod Koul <vkoul@kernel.org>, Nikhil Devshatwar <nikhil.nd@ti.com>, Tomi
+ Valkeinen <tomi.valkeinen@ideasonboard.com>, Laurent Pinchart
+ <laurent.pinchart@ideasonboard.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, <linux-kernel@vger.kernel.org>,
  <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v3 4/7] phy: cdns-dphy: Add Rx support
-Message-ID: <20210811173335.ndrlzgepradfj4ij@ti.com>
+Subject: Re: [PATCH v3 1/7] phy: Distinguish between Rx and Tx for MIPI D-PHY
+ with submodes
+Message-ID: <20210811173629.gse5qmzezlh2ua7g@ti.com>
 References: <20210624184108.21312-1-p.yadav@ti.com>
- <20210624184108.21312-5-p.yadav@ti.com> <YQ0Z2wYQYAFn2KCY@matsya>
+ <20210624184108.21312-2-p.yadav@ti.com>
+ <YQ0Y4ueALPNEAoMI@aptenodytes>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YQ0Z2wYQYAFn2KCY@matsya>
+In-Reply-To: <YQ0Y4ueALPNEAoMI@aptenodytes>
 User-Agent: NeoMutt/20171215
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210811_103349_375958_D3D21561 
-X-CRM114-Status: GOOD (  32.48  )
+X-CRM114-CacheID: sfid-20210811_103639_231485_CEAB993D 
+X-CRM114-Status: GOOD (  29.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,186 +99,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/08/21 04:45PM, Vinod Koul wrote:
-> On 25-06-21, 00:11, Pratyush Yadav wrote:
-> > The Cadence DPHY can be used to receive image data over the CSI-2
-> > protocol. Add support for Rx mode. The programming sequence differs from
-> > the Tx mode so it is added as a separate set of hooks to isolate the two
-> > paths.
+On 06/08/21 01:11PM, Paul Kocialkowski wrote:
+> Hi,
+> 
+> On Fri 25 Jun 21, 00:11, Pratyush Yadav wrote:
+> > From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 > > 
-> > The PHY is in Tx mode by default and it needs to be set in Rx mode by
-> > setting the submode to PHY_MIPI_DPHY_SUBMODE_RX in the set_mode()
-> > callback.
+> > As some D-PHY controllers support both Rx and Tx mode, we need a way for
+> > users to explicitly request one or the other. For instance, Rx mode can
+> > be used along with MIPI CSI-2 while Tx mode can be used with MIPI DSI.
 > > 
+> > Introduce new MIPI D-PHY PHY submodes to use with PHY_MODE_MIPI_DPHY.
+> > The default (zero value) is kept to Tx so only the rkisp1 driver, which
+> > uses D-PHY in Rx mode, needs to be adapted.
+> 
+> After some thinking and discussions, it appears that using the submode is
+> probably not the best way to distinguish between rx and tx. This is because
+> rx/tx is more of a specification of the hardware component than a run-time
+> descision. Indeed the D-PHY blocks are usually dedicated to an associated
+> controller (DSI or CSI-2) and thus each instance is either meant for tx or
+> rx use.
+
+Ok. IIRC Laurent also brought this point up earlier as well. At that 
+time I took the allwinner DPHY as an example of a DPHY that can run in 
+both modes.
+
+The Cadence DPHY also supports both Rx and Tx modes but I don't know if 
+both can be implemented at the same time, if that would even make any 
+sense.
+
+> 
+> As a result I will be using the allwinner,direction string property in
+> device-tree instead of the submode, with values of either "rx" or "tx".
+> I suppose you can do something similar if you agree it makes more sense.
+
+Wouldn't a different compatible a better idea?
+
+> 
+> Cheers,
+> 
+> Paul
+>  
+> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 > > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > 
 > > ---
 > > 
-> > Changes in v3:
-> > - Use a table to select the band.
-> > - Use a table to poll the data lane ready bits.
-> > - Multiply the DPHY HS clock rate by 2 to get the bit rate since the
-> >   clock is DDR.
+> > (no changes since v1)
 > > 
-> >  drivers/phy/cadence/cdns-dphy.c | 174 ++++++++++++++++++++++++++++++++
-> >  1 file changed, 174 insertions(+)
+> >  include/linux/phy/phy-mipi-dphy.h | 13 +++++++++++++
+> >  1 file changed, 13 insertions(+)
 > > 
-> > diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> > index 7d5f7b333893..7534ec957dc5 100644
-> > --- a/drivers/phy/cadence/cdns-dphy.c
-> > +++ b/drivers/phy/cadence/cdns-dphy.c
-> > @@ -1,11 +1,14 @@
-> >  // SPDX-License-Identifier: GPL-2.0+
-> >  /*
-> >   * Copyright: 2017-2018 Cadence Design Systems, Inc.
-> > + * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com/
-> >   */
+> > diff --git a/include/linux/phy/phy-mipi-dphy.h b/include/linux/phy/phy-mipi-dphy.h
+> > index a877ffee845d..0f57ef46a8b5 100644
+> > --- a/include/linux/phy/phy-mipi-dphy.h
+> > +++ b/include/linux/phy/phy-mipi-dphy.h
+> > @@ -6,6 +6,19 @@
+> >  #ifndef __PHY_MIPI_DPHY_H_
+> >  #define __PHY_MIPI_DPHY_H_
 > >  
-> >  #include <linux/bitops.h>
-> > +#include <linux/bitfield.h>
-> >  #include <linux/clk.h>
-> >  #include <linux/io.h>
-> > +#include <linux/iopoll.h>
-> >  #include <linux/module.h>
-> >  #include <linux/of_address.h>
-> >  #include <linux/of_device.h>
-> > @@ -25,10 +28,14 @@
-> >  #define DPHY_PMA_RCLK(reg)		(0x600 + (reg))
-> >  #define DPHY_PMA_RDATA(lane, reg)	(0x700 + ((lane) * 0x100) + (reg))
-> >  #define DPHY_PCS(reg)			(0xb00 + (reg))
-> > +#define DPHY_ISO(reg)			(0xc00 + (reg))
-> >  
-> >  #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
-> >  #define DPHY_CMN_SSM_EN			BIT(0)
-> > +#define DPHY_CMN_RX_BANDGAP_TIMER_MASK	GENMASK(8, 1)
-> >  #define DPHY_CMN_TX_MODE_EN		BIT(9)
-> > +#define DPHY_CMN_RX_MODE_EN		BIT(10)
-> > +#define DPHY_CMN_RX_BANDGAP_TIMER	0x14
-> >  
-> >  #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
-> >  #define DPHY_CMN_PWM_DIV(x)		((x) << 20)
-> > @@ -45,10 +52,27 @@
-> >  #define DPHY_CMN_OPDIV_FROM_REG		BIT(6)
-> >  #define DPHY_CMN_OPDIV(x)		((x) << 7)
-> >  
-> > +#define DPHY_BAND_CFG			DPHY_PCS(0x0)
-> > +#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
-> > +#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
+> > +/**
+> > + * enum phy_mipi_dphy_submode - MIPI D-PHY sub-mode
+> > + *
+> > + * A MIPI D-PHY can be used to transmit or receive data.
+> > + * Since some controllers can support both, the direction to enable is specified
+> > + * with the PHY sub-mode. Transmit is assumed by default with phy_set_mode.
+> > + */
 > > +
-> >  #define DPHY_PSM_CFG			DPHY_PCS(0x4)
-> >  #define DPHY_PSM_CFG_FROM_REG		BIT(0)
-> >  #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
-> >  
-> > +#define DPHY_POWER_ISLAND_EN_DATA	DPHY_PCS(0x8)
-> > +#define DPHY_POWER_ISLAND_EN_DATA_VAL	0xaaaaaaaa
-> > +#define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
-> > +#define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
-> > +
-> > +#define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
-> > +#define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
-> > +#define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
-> > +#define DPHY_ISO_DL_CTRL_L2		DPHY_ISO(0x30)
-> > +#define DPHY_ISO_DL_CTRL_L3		DPHY_ISO(0x3c)
-> > +#define DPHY_ISO_LANE_READY_BIT		0
-> > +#define DPHY_ISO_LANE_READY_TIMEOUT_MS	100UL
-> > +
-> >  #define DSI_HBP_FRAME_OVERHEAD		12
-> >  #define DSI_HSA_FRAME_OVERHEAD		14
-> >  #define DSI_HFP_FRAME_OVERHEAD		6
-> > @@ -57,6 +81,9 @@
-> >  #define DSI_NULL_FRAME_OVERHEAD		6
-> >  #define DSI_EOT_PKT_SIZE		4
-> >  
-> > +#define DPHY_LANES_MIN			1
-> > +#define DPHY_LANES_MAX			4
-> > +
-> >  struct cdns_dphy_cfg {
-> >  	u8 pll_ipdiv;
-> >  	u8 pll_opdiv;
-> > @@ -103,6 +130,22 @@ struct cdns_dphy_driver_data {
-> >  	const struct cdns_dphy_ops *rx;
-> >  };
-> >  
-> > +struct cdns_dphy_rx_band {
-> > +	unsigned int min_rate;
-> > +	unsigned int max_rate;
+> > +enum phy_mipi_dphy_submode {
+> > +	PHY_MIPI_DPHY_SUBMODE_TX = 0,
+> > +	PHY_MIPI_DPHY_SUBMODE_RX,
 > > +};
 > > +
-> > +/* Order of bands is important since the index is the band number. */
-> > +struct cdns_dphy_rx_band bands[] = {
-> > +	{80, 100}, {100, 120}, {120, 160}, {160, 200}, {200, 240},
-> > +	{240, 280}, {280, 320}, {320, 360}, {360, 400}, {400, 480},
-> > +	{480, 560}, {560, 640}, {640, 720}, {720, 800}, {800, 880},
-> > +	{880, 1040}, {1040, 1200}, {1200, 1350}, {1350, 1500}, {1500, 1750},
-> > +	{1750, 2000}, {2000, 2250}, {2250, 2500}
-> > +};
-> > +
-> > +int num_bands = ARRAY_SIZE(bands);
-> > +
-> >  static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
-> >  				     struct cdns_dphy_cfg *cfg,
-> >  				     struct phy_configure_opts_mipi_dphy *opts,
-> > @@ -312,6 +355,135 @@ static const struct cdns_dphy_ops tx_ref_dphy_ops = {
-> >  	.set_psm_div = cdns_dphy_ref_set_psm_div,
-> >  };
-> >  
-> > +static int cdns_dphy_rx_power_on(struct cdns_dphy *dphy)
-> > +{
-> > +	/* Start RX state machine. */
-> > +	writel(DPHY_CMN_SSM_EN | DPHY_CMN_RX_MODE_EN |
-> > +	       FIELD_PREP(DPHY_CMN_RX_BANDGAP_TIMER_MASK,
-> > +			  DPHY_CMN_RX_BANDGAP_TIMER),
-> > +	       dphy->regs + DPHY_CMN_SSM);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_rx_power_off(struct cdns_dphy *dphy)
-> > +{
-> > +	writel(0, dphy->regs + DPHY_CMN_SSM);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_rx_get_band_ctrl(unsigned long hs_clk_rate)
-> > +{
-> > +	unsigned int rate;
-> > +	int i;
-> > +
-> > +	rate = hs_clk_rate / 1000000UL;
-> > +	/* Since CSI-2 clock is DDR, the bit rate is twice the clock rate. */
-> > +	rate *= 2;
-> > +
-> > +	if (rate < bands[0].min_rate || rate >= bands[num_bands - 1].max_rate)
-> > +		return -EOPNOTSUPP;
-> > +
-> > +	for (i = 0; i < num_bands; i++) {
-> > +		if (rate >= bands[i].min_rate && rate < bands[i].max_rate)
-> > +			return i;
-> > +	}
-> > +
-> > +	/* Unreachable. */
-> > +	WARN(1, "Reached unreachable code.");
-> > +	return -EINVAL;
-> > +}
-> > +
-> > +static int cdns_dphy_rx_wait_for_bit(void __iomem *addr, unsigned int bit)
-> > +{
-> > +	u32 val;
-> > +
-> > +	return readl_relaxed_poll_timeout(addr, val, val & BIT(bit), 10,
-> > +					  DPHY_ISO_LANE_READY_TIMEOUT_MS * 1000);
+> >  /**
+> >   * struct phy_configure_opts_mipi_dphy - MIPI D-PHY configuration set
+> >   *
+> > -- 
+> > 2.30.0
+> > 
 > 
-> this looks wrong, val is not initialized, so what/when is condition to
-> be met..?
-
-The readl_relaxed_poll_timeout() macro puts the value returned by 
-readl() into val. That value is then used for testing the condition. See 
-read_poll_timeout() in iopoll.h to see what the macro eventually expands 
-to.
-
 > -- 
-> ~Vinod
+> Paul Kocialkowski, Bootlin
+> Embedded Linux and kernel engineering
+> https://bootlin.com
+
+
 
 -- 
 Regards,
