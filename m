@@ -1,89 +1,87 @@
-Return-Path: <SRS0=OGPc=NC=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=qRVw=ND=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 43BAFC4320A
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 17:40:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BA11AC4338F
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Aug 2021 00:23:59 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F1D0E6101D
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Aug 2021 17:40:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org F1D0E6101D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 68CBE6105A
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Aug 2021 00:23:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 68CBE6105A
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8c33eJ5Fg1JXJappQOUpSJ8LHOLe1wQrCnHEh7Cy6qM=; b=UcoBocNIRF6a0N
-	WAc7HHATfPWSYD8ejBhTrrsbr9oAcu/2qNdRSgm5QcOJyqdz1lqa3WP1q6knxkj6VDCgRoyRKvM2n
-	MNgGFonb0EZIJmme6bmf4i/N0X48lQBR4JYxubXIH4L5L3dXZzAnv6fbqZZTwR1fSa+CacO8nMAtQ
-	uB0aS7AXqiQCB5AZ/XOM4TmQO8CTCm0Eon/iGtR5avM7l/s9pLZdI/X1MCjVHVACACFF/gVaCkHIf
-	Kq1BDcjtXYhs29kjJ0ru5xqMJhbkNc4PE+MZNS87Kz4AyGwwNuGIAMVp4LXhn+kXVtlcaSmCFw+X+
-	lqF1Eem8JCFLLewgJv/g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
+	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Dwb5fZ7lszatSzgLru7Qr82WHYSP55l7GZr3c0SVTus=; b=cDcXrFgDn+zplVyTLWO0u1eXAB
+	PkxGh6oym1RKtThcF9S0OhP4qP7uC9/4sIbsCsrRWR4zX8NMDIUcjf/Lalx7LEHpotgsM9NoPAv+x
+	SGYBN1oYvI5zPfaiFJM/pehhSCas2erLIMt50F/575jADYvmlSYtej/EwNtjhOj0Y36LC3WuIcRtT
+	2u/N0fuopWGqfYccpDBmnRv0NHlGhqP4S+csZ4NXKURpyYhkPuReiN1oMBmjXAy04FouZLaUqDTl9
+	vGAiCLLkgjHy+zvh/oQkgrWMgeZ0K1TmswH91vn9UOjrl/cTOq8lOyF2nATWSgw8iZE5SBCLzayOW
+	+/iSSPKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mDsCy-007oGZ-DC; Wed, 11 Aug 2021 17:40:04 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1mDyVq-008MnQ-Mz; Thu, 12 Aug 2021 00:23:58 +0000
+Received: from so254-9.mailgun.net ([198.61.254.9])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mDsCt-007oFM-3m
- for linux-phy@lists.infradead.org; Wed, 11 Aug 2021 17:40:02 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 17BHdqsY001365;
- Wed, 11 Aug 2021 12:39:52 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1628703592;
- bh=EeqwQHMJVVet/Wz81B1nnj8xO0XYMvcfTM+AUUBD22w=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=Y336EmtNzCHVUy1vovyPDMJlPfn4UUvmg77xOneQ5Tv6khStEGOHh03HbHIDVfkcr
- hvyDzGLmIARtMjjPmBDRZRviDTlSCsML83G5gM/hGkeGHgj2Jw7s5u0i3IrFzw3eOv
- X/obi81BB4EAqwdt6VIczImPAJSpzp0g60ABwGrs=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 17BHdqHb018479
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 11 Aug 2021 12:39:52 -0500
-Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Wed, 11
- Aug 2021 12:39:52 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Wed, 11 Aug 2021 12:39:52 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 17BHdpJ2029437;
- Wed, 11 Aug 2021 12:39:51 -0500
-Date: Wed, 11 Aug 2021 23:09:50 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Nikhil Devshatwar <nikhil.nd@ti.com>, Tomi Valkeinen
- <tomi.valkeinen@ideasonboard.com>, Laurent Pinchart
- <laurent.pinchart@ideasonboard.com>, Paul Kocialkowski
- <paul.kocialkowski@bootlin.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>,
- Peter Chen <peter.chen@nxp.com>, <linux-kernel@vger.kernel.org>,
- <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v3 2/7] phy: cdns-dphy: Prepare for Rx support
-Message-ID: <20210811173948.cezk6zu366c3huhw@ti.com>
-References: <20210624184108.21312-1-p.yadav@ti.com>
- <20210624184108.21312-3-p.yadav@ti.com> <YQ0MZqI36bz1Jp87@matsya>
+ id 1mDyVk-008Mmi-FD
+ for linux-phy@lists.infradead.org; Thu, 12 Aug 2021 00:23:57 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1628727833; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=S5P1m+2rHcJaZXtc+bwHwQAAyB1CBhwMZ3Rpzh2V//I=;
+ b=Yt8kHUf65bKHv0tw8j8r3hMqRilUO3EtnYOct28DddBbHqG5cWnsKd9jNMTxmE58dYhxI6j3
+ RU/JdiiqkypsHHcXWzVLmkE02p0yH66o/J7nLTM1tJmWUgnSrhzFcdusXH3OHMdl92HSLKNN
+ pveProKBysfmp03bSZ/9+5gM8xc=
+X-Mailgun-Sending-Ip: 198.61.254.9
+X-Mailgun-Sid: WyIzOTQzOCIsICJsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZyIsICJiZTllNGEiXQ==
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n03.prod.us-east-1.postgun.com with SMTP id
+ 61146a1191487ad520868012 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Thu, 12 Aug 2021 00:23:45
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 48AADC433D3; Thu, 12 Aug 2021 00:23:44 +0000 (UTC)
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: sbillaka)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 20B53C433F1;
+ Thu, 12 Aug 2021 00:23:43 +0000 (UTC)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YQ0MZqI36bz1Jp87@matsya>
-User-Agent: NeoMutt/20171215
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Date: Thu, 12 Aug 2021 05:53:43 +0530
+From: sbillaka@codeaurora.org
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Rob Clark
+ <robdclark@gmail.com>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kalyan_t@codeaurora.org,
+ abhinavk@codeaurora.org
+Subject: Re: [PATCH 2/2] phy: qcom: Introduce new eDP PHY driver
+In-Reply-To: <YRH0WFvWmemHIHqc@builder.lan>
+References: <20210511041930.592483-1-bjorn.andersson@linaro.org>
+ <20210511041930.592483-2-bjorn.andersson@linaro.org>
+ <7708925ad4d973b4e5f291cdcbdbe406@codeaurora.org>
+ <YRH0WFvWmemHIHqc@builder.lan>
+Message-ID: <04267264ac7904733552d6ca02a6797b@codeaurora.org>
+X-Sender: sbillaka@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210811_103959_311453_64D1075A 
-X-CRM114-Status: GOOD (  33.14  )
+X-CRM114-CacheID: sfid-20210811_172353_724826_EC16E9AA 
+X-CRM114-Status: GOOD (  30.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,228 +93,148 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/08/21 03:48PM, Vinod Koul wrote:
-> On 25-06-21, 00:11, Pratyush Yadav wrote:
-> > The Rx programming sequence differs from the Tx programming sequence.
-> > Currently only Tx mode is supported. Move all the Tx related parts into
-> > a set of Tx-specific hooks that are then called by the main PHY
-> > framework hooks. This way when Rx support is added all that is needed to
-> > be done is to plug in the Rx hooks.
-> > 
-> > The clocks "psm" and "pll_ref" are not used by the Rx path so make them
-> > optional in the probe and then check if they exist in the power_on()
-> > hook.
-> > 
-> > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > ---
-> > 
-> > (no changes since v1)
-> > 
-> >  drivers/phy/cadence/cdns-dphy.c | 140 ++++++++++++++++++++++++--------
-> >  1 file changed, 104 insertions(+), 36 deletions(-)
-> > 
-> > diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> > index ba042e39cfaf..8656f2102a91 100644
-> > --- a/drivers/phy/cadence/cdns-dphy.c
-> > +++ b/drivers/phy/cadence/cdns-dphy.c
-> > @@ -75,6 +75,11 @@ struct cdns_dphy;
-> >  struct cdns_dphy_ops {
-> >  	int (*probe)(struct cdns_dphy *dphy);
-> >  	void (*remove)(struct cdns_dphy *dphy);
-> > +	int (*power_on)(struct cdns_dphy *dphy);
-> > +	int (*power_off)(struct cdns_dphy *dphy);
-> > +	int (*validate)(struct cdns_dphy *dphy, enum phy_mode mode, int submode,
-> > +			union phy_configure_opts *opts);
-> > +	int (*configure)(struct cdns_dphy *dphy, union phy_configure_opts *opts);
-> >  	void (*set_psm_div)(struct cdns_dphy *dphy, u8 div);
-> >  	void (*set_clk_lane_cfg)(struct cdns_dphy *dphy,
-> >  				 enum cdns_dphy_clk_lane_cfg cfg);
-> > @@ -86,12 +91,18 @@ struct cdns_dphy_ops {
-> >  struct cdns_dphy {
-> >  	struct cdns_dphy_cfg cfg;
-> >  	void __iomem *regs;
-> > +	struct device *dev;
-> >  	struct clk *psm_clk;
-> >  	struct clk *pll_ref_clk;
-> >  	const struct cdns_dphy_ops *ops;
-> >  	struct phy *phy;
-> >  };
-> >  
-> > +struct cdns_dphy_driver_data {
-> > +	const struct cdns_dphy_ops *tx;
-> > +	const struct cdns_dphy_ops *rx;
-> > +};
-> > +
-> >  static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
-> >  				     struct cdns_dphy_cfg *cfg,
-> >  				     struct phy_configure_opts_mipi_dphy *opts,
-> > @@ -199,20 +210,9 @@ static void cdns_dphy_ref_set_psm_div(struct cdns_dphy *dphy, u8 div)
-> >  	       dphy->regs + DPHY_PSM_CFG);
-> >  }
-> >  
-> > -/*
-> > - * This is the reference implementation of DPHY hooks. Specific integration of
-> > - * this IP may have to re-implement some of them depending on how they decided
-> > - * to wire things in the SoC.
-> > - */
-> > -static const struct cdns_dphy_ops ref_dphy_ops = {
-> > -	.get_wakeup_time_ns = cdns_dphy_ref_get_wakeup_time_ns,
-> > -	.set_pll_cfg = cdns_dphy_ref_set_pll_cfg,
-> > -	.set_psm_div = cdns_dphy_ref_set_psm_div,
-> > -};
-> > -
-> > -static int cdns_dphy_config_from_opts(struct phy *phy,
-> > -				      struct phy_configure_opts_mipi_dphy *opts,
-> > -				      struct cdns_dphy_cfg *cfg)
-> > +static int cdns_dphy_tx_config_from_opts(struct phy *phy,
-> > +					 struct phy_configure_opts_mipi_dphy *opts,
-> > +					 struct cdns_dphy_cfg *cfg)
-> >  {
-> >  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> >  	unsigned int dsi_hfp_ext = 0;
-> > @@ -232,24 +232,13 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
-> >  	return 0;
-> >  }
-> >  
-> > -static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
-> > -			      union phy_configure_opts *opts)
-> > +static int cdns_dphy_tx_configure(struct cdns_dphy *dphy,
-> > +				  union phy_configure_opts *opts)
-> >  {
-> >  	struct cdns_dphy_cfg cfg = { 0 };
-> > -
-> > -	if (mode != PHY_MODE_MIPI_DPHY)
-> > -		return -EINVAL;
-> > -
-> > -	return cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
-> > -}
-> > -
-> > -static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
-> > -{
-> > -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > -	struct cdns_dphy_cfg cfg = { 0 };
-> >  	int ret;
-> >  
-> > -	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
-> > +	ret = cdns_dphy_tx_config_from_opts(dphy->phy, &opts->mipi_dphy, &cfg);
-> >  	if (ret)
-> >  		return ret;
-> >  
-> > @@ -279,9 +268,21 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
-> >  	return 0;
-> >  }
-> >  
-> > -static int cdns_dphy_power_on(struct phy *phy)
-> > +static int cdns_dphy_tx_validate(struct cdns_dphy *dphy, enum phy_mode mode,
-> > +				 int submode, union phy_configure_opts *opts)
-> >  {
-> > -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > +	struct cdns_dphy_cfg cfg = { 0 };
-> > +
-> > +	if (submode != PHY_MIPI_DPHY_SUBMODE_TX)
-> > +		return -EINVAL;
-> > +
-> > +	return cdns_dphy_tx_config_from_opts(dphy->phy, &opts->mipi_dphy, &cfg);
-> > +}
-> > +
-> > +static int cdns_dphy_tx_power_on(struct cdns_dphy *dphy)
-> > +{
-> > +	if (!dphy->psm_clk || !dphy->pll_ref_clk)
-> > +		return -EINVAL;
-> >  
-> >  	clk_prepare_enable(dphy->psm_clk);
-> >  	clk_prepare_enable(dphy->pll_ref_clk);
-> > @@ -293,16 +294,77 @@ static int cdns_dphy_power_on(struct phy *phy)
-> >  	return 0;
-> >  }
-> >  
-> > -static int cdns_dphy_power_off(struct phy *phy)
-> > +static int cdns_dphy_tx_power_off(struct cdns_dphy *dphy)
-> >  {
-> > -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > -
-> >  	clk_disable_unprepare(dphy->pll_ref_clk);
-> >  	clk_disable_unprepare(dphy->psm_clk);
-> >  
-> >  	return 0;
-> >  }
-> >  
-> > +static const struct cdns_dphy_ops tx_ref_dphy_ops = {
-> > +	.power_on = cdns_dphy_tx_power_on,
-> > +	.power_off = cdns_dphy_tx_power_off,
-> > +	.validate = cdns_dphy_tx_validate,
-> > +	.configure = cdns_dphy_tx_configure,
-> > +	.get_wakeup_time_ns = cdns_dphy_ref_get_wakeup_time_ns,
-> > +	.set_pll_cfg = cdns_dphy_ref_set_pll_cfg,
-> > +	.set_psm_div = cdns_dphy_ref_set_psm_div,
-> > +};
-> > +
-> > +/*
-> > + * This is the reference implementation of DPHY hooks. Specific integration of
-> > + * this IP may have to re-implement some of them depending on how they decided
-> > + * to wire things in the SoC.
-> > + */
-> > +static const struct cdns_dphy_driver_data ref_dphy_ops = {
-> > +	.tx = &tx_ref_dphy_ops,
-> > +};
-> > +
-> > +static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
-> > +			      union phy_configure_opts *opts)
-> > +{
-> > +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > +
-> > +	if (mode != PHY_MODE_MIPI_DPHY)
-> > +		return -EINVAL;
-> > +
-> > +	if (dphy->ops->validate)
-> > +		return dphy->ops->validate(dphy, mode, submode, opts);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_power_on(struct phy *phy)
-> > +{
-> > +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > +
-> > +	if (dphy->ops->power_on)
-> > +		return dphy->ops->power_on(dphy);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_power_off(struct phy *phy)
-> > +{
-> > +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > +
-> > +	if (dphy->ops->power_off)
-> > +		return dphy->ops->power_off(dphy);
-> > +
-> > +	return 0;
-> > +}
+On 2021-08-10 09:06, Bjorn Andersson wrote:
+> On Mon 09 Aug 22:15 CDT 2021, sbillaka@codeaurora.org wrote:
+>> On 2021-05-11 09:49, Bjorn Andersson wrote:
+>> > diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c
+> [..]
+>> > +#define DP_PHY_AUX_CFG0				0x0020
+>> > +#define DP_PHY_AUX_CFG1				0x0024
+>> > +#define DP_PHY_AUX_CFG2				0x0028
+>> > +#define DP_PHY_AUX_CFG3				0x002c
+>> > +#define DP_PHY_AUX_CFG4				0x0030
+>> > +#define DP_PHY_AUX_CFG5				0x0034
+>> > +#define DP_PHY_AUX_CFG6				0x0038
+>> > +#define DP_PHY_AUX_CFG7				0x003c
+>> > +#define DP_PHY_AUX_CFG8				0x0040
+>> > +#define DP_PHY_AUX_CFG9				0x0044
+>> 
+>> The DP_PHY_AUX_CFG0 offset for sc8180x eDP phy is 0x0024.
+>> Some of the eDP PHY offset addresses are shifted by 4 address 
+>> locations,
+>> compared to the DP QMP PHY offset addresses for sc8180x.
+>> The DP_PHY_AUX_CFG* offsets for this eDP phy driver are as below:
+>> 
+>> #define DP_PHY_AUX_CFG0                         0x0024
+>> #define DP_PHY_AUX_CFG1                         0x0028
+>> #define DP_PHY_AUX_CFG2                         0x002c
+>> #define DP_PHY_AUX_CFG3                         0x0030
+>> #define DP_PHY_AUX_CFG4                         0x0034
+>> #define DP_PHY_AUX_CFG5                         0x0038
+>> #define DP_PHY_AUX_CFG6                         0x003c
+>> #define DP_PHY_AUX_CFG7                         0x0040
+>> #define DP_PHY_AUX_CFG8                         0x0044
+>> #define DP_PHY_AUX_CFG9                         0x0048
+>> 
 > 
-> why do you need a dphy specific power_on/off only to call internal
-> ops..? If there is no additional logic lets drop this and continue the
-> phy ops for this
+> I noticed this as well. During development I just used the numbers
+> directly in the code and I must have screwed up as I replaced them with
+> defined - and somehow missed this in the testing before posting.
+> 
+> Sorry about that.
+> 
+> [..]
+>> > +static int qcom_edp_phy_init(struct phy *phy)
+>> > +{
+>> > +	struct qcom_edp *edp = phy_get_drvdata(phy);
+>> > +	int ret;
+>> > +
+>> > +	ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
+>> > +	if (ret)
+>> > +		return ret;
+>> > +
+>> > +	ret = clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
+>> > +	if (ret)
+>> > +		goto out_disable_supplies;
+>> 
+>> I think the number of clk and regulator resources can vary based on
+>> platform.
+>> 
+> 
+> If that's the case we should replace the ARRAY_SIZE() with an integer.
+> But I prefer to wait with that until the number actually is variable.
+> 
+> [..]
+>> > +static int qcom_edp_phy_probe(struct platform_device *pdev)
+>> > +{
+>> > +	struct phy_provider *phy_provider;
+>> > +	struct device *dev = &pdev->dev;
+>> > +	struct qcom_edp *edp;
+>> > +	int ret;
+>> > +
+>> > +	edp = devm_kzalloc(dev, sizeof(*edp), GFP_KERNEL);
+>> > +	if (!edp)
+>> > +		return -ENOMEM;
+>> > +
+>> > +	edp->dev = dev;
+>> > +
+>> > +	edp->edp = devm_platform_ioremap_resource(pdev, 0);
+>> > +	if (IS_ERR(edp->edp))
+>> > +		return PTR_ERR(edp->edp);
+>> > +
+>> > +	edp->tx0 = devm_platform_ioremap_resource(pdev, 1);
+>> > +	if (IS_ERR(edp->tx0))
+>> > +		return PTR_ERR(edp->tx0);
+>> > +
+>> > +	edp->tx1 = devm_platform_ioremap_resource(pdev, 2);
+>> > +	if (IS_ERR(edp->tx1))
+>> > +		return PTR_ERR(edp->tx1);
+>> > +
+>> > +	edp->pll = devm_platform_ioremap_resource(pdev, 3);
+>> > +	if (IS_ERR(edp->pll))
+>> > +		return PTR_ERR(edp->pll);
+>> > +
+>> > +	edp->clks[0].id = "aux";
+>> > +	edp->clks[1].id = "cfg_ahb";
+>> > +	ret = devm_clk_bulk_get(dev, ARRAY_SIZE(edp->clks), edp->clks);
+>> > +	if (ret)
+>> > +		return ret;
+>> > +
+>> > +	edp->supplies[0].supply = "vdda-phy";
+>> > +	edp->supplies[1].supply = "vdda-pll";
+>> > +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(edp->supplies),
+>> > edp->supplies);
+>> > +	if (ret)
+>> > +		return ret;
+>> 
+>> I believe, the combination of the number of regulator and clk 
+>> resources may
+>> vary based on the platform.
+>> I think we should not fail probe if all these resources are not 
+>> present in
+>> the device tree file.
+>> I think, these resources can be optional. We can get these resources 
+>> if they
+>> are present in the device tree file and enable them as required.
+>> 
+> 
+> It's quite helpful to the DTS writer to actually encode in the driver
+> which resources the driver expects and provide useful error messages
+> when these expectations aren't met - so I think in line with most other
+> drivers this should be decided based on the compatible.
+> 
+> What clocks and regulators do you have on sc7280?
 
-I don't clearly understand what you are trying to say. The internal ops 
-(dphy->ops) are DPHY-specific. So for example, you might have different 
-power on/off sequences for Rx and Tx mode DPHYs. You would then 
-implement different power_on() and power_off() hooks for those and store 
-them in dphy->ops. How else would you handle this?
+We have only one clock (edp refclk) and one regulator (phy-0p9) for 
+sc7280.
 
 > 
-> -- 
-> ~Vinod
+> 
+> Thanks for the feedback, I see that I have a few more pieces of 
+> feedback
+> from others that I need to incorporate. I'll make sure to do that and
+> repost this patch shortly.
 
--- 
-Regards,
-Pratyush Yadav
-Texas Instruments Inc.
+Okay. Thank you.
+
+> 
+> Regards,
+> Bjorn
 
 -- 
 linux-phy mailing list
