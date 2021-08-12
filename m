@@ -2,82 +2,72 @@ Return-Path: <SRS0=qRVw=ND=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-6.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 40401C4320E
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Aug 2021 07:50:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 373B6C4338F
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Aug 2021 08:14:01 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EE9976044F
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Aug 2021 07:50:16 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org EE9976044F
+	by mail.kernel.org (Postfix) with ESMTPS id EA3A26103E
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Aug 2021 08:14:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org EA3A26103E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bRmdp/rnW00NOoPIETtxKM4V9a9XfDd5TfjwIF35e7I=; b=aEBk3DIPPd/Cs0
-	SAN+Cflx43hoHGM8NjgLEyxyEy/JEX1rd4Z20RYjRChBc8H6Cok5KokONJE7RbVV8uZIqaoh797TY
-	qXwf68npHDWaB8N7eJH/7FU6VBWLRiY+f8zMHgAll6r9m4t5zoUgtwyxK0sFch6cB/zwkeeIJAG9r
-	ptp47iPkLgNhPcaXipJ5IoAwY5JZkqIG3i6k2As0cxGelk8aT7dioTGL3UzkzvPkkSIvlLwUqXIrY
-	Uq6Mg9P/2uabBCmFYSYiMR6q8bn5F5e2ifjoTtMGYe1O0pFzEoY/QQjSxgUNM8qoj1BwxnjvGWi1g
-	9OxhXlZQJ9lr7xQqTQwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1EblEqBk5ywKyujfdSS2rMQhFb6uizJ+Hh/cqNZ51+I=; b=RUnZATcW5AB4fu
+	XpoKlrwH4B0bik1ANv4MQgXej7eHlnAM61s/fODpQKv1pgPzrel+ddm0+xfgJAk3malLzsnpOAseW
+	rK5g0dYyffS0SOJ6nxFbLEJ3t04AEyQ6fhOhYpBtemoUNDdZ8VBynWBvmDDOuU5TF9l6zDabhMfeK
+	wXfQSqjRDCuHHxfZW1y9ZUYDXhfkQfaDO5MnrBTOH5MQ8C653NsOf3jlfPu/gJlBJDlbCWfpAn4fj
+	URMxPM2ckznwKtOp4ZctkRDfccaT8XCO146ooMNMraJf8kWNA/xBakrl71DlpIvezLPDuF+Vd5C4T
+	0Al3Rr5JBhdn3I6T+olA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mE5Tj-008z9E-MC; Thu, 12 Aug 2021 07:50:15 +0000
+	id 1mE5qh-00950r-I8; Thu, 12 Aug 2021 08:13:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mE5Rl-008ynh-Jq
- for linux-phy@lists.infradead.org; Thu, 12 Aug 2021 07:48:15 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 8C84D6044F;
- Thu, 12 Aug 2021 07:48:09 +0000 (UTC)
+ id 1mE5fW-0091mu-BP
+ for linux-phy@lists.infradead.org; Thu, 12 Aug 2021 08:02:28 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 7F5B26103E;
+ Thu, 12 Aug 2021 08:02:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1628754492;
- bh=CyN2mPCfM3j2Hf8s0RQ6ZOCusox6Uwiz3cxbwisUK9Y=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=goj28NmLw6K0aBCSpjhlakd71Ui8aT3P15TAEq2tRX5UTYN1tRSFfRaYn+K3GgStT
- 4RCKyHlC+KxRt7hGwtV1Te26766lX1BlM/gtI9qrzdMXx1rCF1Um0+q4Fezf3EZZZo
- sV0jKC5L50UdUuf9eI1zsomfFO3gUUDK1G9GDdw74dWM2DgZmPbbgOVdDBGk//ZBf0
- Pda/nW3TK7tqoreMNpQN1rCoAeLYP1AqX8RRZcwwyAtHwvMfI8Po920ZltkkibORwj
- pKPSojrC05WkoRuMAzby2Bf3wmHJ0eKHK0DpOMAz6flMtpvrW1+KWkE9jjcSP1T+gs
- c/bXmY0z6piiw==
-Date: Thu, 12 Aug 2021 09:48:06 +0200
+ s=k20201202; t=1628755345;
+ bh=0xWGFcLzUWDh9TpyGptikfq/gqtzq/wUyMbGsf4HPqU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=lx++LT8xe57SJghG2hVUuUD1LixkP47bHlJ/aI+FjBMkEPKKLf0RZ5ojLh6DBjuJ4
+ qyWVl2wZm7fS77yp3DQsjZwuA2eNEjs9v1n0zukbGs66mq9dcbGWdlcp0fZL0Upfn2
+ R/hVwIM5P5iYtvRer/oLwijVh36LA4V36Acm1bFE40rGUCejIqTd9S0fp+9sjK5E02
+ tWUVfAohkLoMTa2wuN9bqJx+M0ZJ7JeOIc8vBcvf6K7fnZsR2JN9BnDxXooh0N2MWd
+ ajcGB4vaXSivPVTvNTGJ6r+p2y5ejzbFqocpfzBzv4Er1xwmRSqFrgeqgUCYA3lqrT
+ DPogf1EcSLmFg==
+Received: by mail.kernel.org with local (Exim 4.94.2)
+ (envelope-from <mchehab@kernel.org>)
+ id 1mE5fT-00DZCe-G2; Thu, 12 Aug 2021 10:02:23 +0200
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: Linuxarm <linuxarm@huawei.com>, mauro.chehab@huawei.com, Binghui Wang
- <wangbinghui@hisilicon.com>, Gustavo Pimentel
- <gustavo.pimentel@synopsys.com>, Jingoo Han <jingoohan1@gmail.com>, Xiaowei
- Song <songxiaowei@hisilicon.com>, devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, PCI
- <linux-pci@vger.kernel.org>, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 0/4] DT schema changes for HiKey970 PCIe hardware to
- work
-Message-ID: <20210812094806.3a6de2a5@coco.lan>
-In-Reply-To: <CAL_JsqLg-jD1P3oGDocMaeHWQc+9kLr3gEdantRNUScUq5xsQw@mail.gmail.com>
-References: <cover.1627965261.git.mchehab+huawei@kernel.org>
- <CAL_JsqLjw=+szXWJjGe86tMc51NA-5j=jVSXUAWuKeZRuJNJUg@mail.gmail.com>
- <20210804085045.3dddbb9c@coco.lan>
- <YQrARd7wgYS1nywt@robh.at.kernel.org>
- <20210805094612.2bc2c78f@coco.lan>
- <20210805095848.464cf85c@coco.lan>
- <CAL_JsqKso=z8LG3ViaggyS1k+1T2F5aAhP3_RNhumQoUUD+bbg@mail.gmail.com>
- <20210810114211.01df0246@coco.lan>
- <CAL_JsqKtXoFeJO6_13U+VsSXNGX_1TQvwOyQYRk5JUgBhvQChA@mail.gmail.com>
- <20210810162054.1aa84b84@coco.lan>
- <CAL_JsqL-R=kTugNAC-C1gfSm6Xnb0Nw_iLcRki8aQMNQjcLN6A@mail.gmail.com>
- <20210811084648.66ddff29@coco.lan>
- <CAL_JsqLg-jD1P3oGDocMaeHWQc+9kLr3gEdantRNUScUq5xsQw@mail.gmail.com>
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.30; x86_64-redhat-linux-gnu)
+To: Vinod Koul <vkoul@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>
+Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+ Binghui Wang <wangbinghui@hisilicon.com>, Rob Herring <robh@kernel.org>,
+ Xiaowei Song <songxiaowei@hisilicon.com>, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH v11 00/11] Add support for Hikey 970 PCIe
+Date: Thu, 12 Aug 2021 10:02:11 +0200
+Message-Id: <cover.1628755058.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.31.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210812_004813_786780_9035F9FC 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20210812_010226_500560_1A71B080 
+X-CRM114-Status: GOOD (  11.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,118 +84,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Em Wed, 11 Aug 2021 22:13:32 -0500
-Rob Herring <robh@kernel.org> escreveu:
+The DT schema used by this series got merged at:
 
-> On Wed, Aug 11, 2021 at 1:46 AM Mauro Carvalho Chehab
-> <mchehab+huawei@kernel.org> wrote:
-> >
-> > Em Tue, 10 Aug 2021 11:13:48 -0600
-> > Rob Herring <robh@kernel.org> escreveu:
-> >  
-> > > > > >                                         compatible = "pciclass,0604";
-> > > > > >                                         device_type = "pci";
-> > > > > >                                         #address-cells = <3>;
-> > > > > >                                         #size-cells = <2>;
-> > > > > >                                         ranges;
-> > > > > >                                 };
-> > > > > >                                 pcie@1,0 { // Lane 4: M.2  
-> > > > >
-> > > > > These 3 nodes (1, 5, 7) need to be child nodes of the above node.  
-> > >
-> > > This was the main issue.  
-> >
-> > Ok, placing 1, 5, 7 as child nodes of 0 worked, with the attached
-> > DT schema:
-> >
-> >
-> >         $ ls -l $(find /sys/devices/platform/soc/f4000000.pcie/ -name of_node)
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/of_node -> ../../../../firmware/devicetree/base/soc/pcie@f4000000
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:01.0/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:01.0/pci_bus/0000:03/of_node -> ../../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:05.0/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:05.0/pci_bus/0000:05/of_node -> ../../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:07.0/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/0000:02:07.0/pci_bus/0000:06/of_node -> ../../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/of_node -> ../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/pci_bus/0000:02/of_node -> ../../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0/pcie@0,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/of_node -> ../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/0000:00:00.0/pci_bus/0000:01/of_node -> ../../../../../../../../firmware/devicetree/base/soc/pcie@f4000000/pcie@0,0
-> >         lrwxrwxrwx 1 root root 0 ago 11 08:43 /sys/devices/platform/soc/f4000000.pcie/pci0000:00/pci_bus/0000:00/of_node -> ../../../../../../../firmware/devicetree/base/soc/pcie@f4000000  
-> 
-> This all looks right to me, but...
-> 
-> > The logs also seem OK on my eyes:
-> >
-> >         [    3.911082]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
-> >         [    4.001104] pci 0000:00:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000
-> >         [    4.043609] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-> >         [    4.076756] pci 0000:01:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-> >         [    4.120652] pci_bus 0000:02: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-> >         [    4.150766] pci 0000:02:01.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-> >         [    4.196413] pci 0000:02:04.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-> >         [    4.238896] pci 0000:02:05.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-> >         [    4.280116] pci 0000:02:07.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-> >         [    4.309821] pci 0000:02:09.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0  
-> 
-> ...these do not.
+	https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git/log/?h=dt/next
 
-For the above:
+Version 11 was modified to reflect this patch:
 
-	s/of_node:/BUS of_node:/
+	https://lore.kernel.org/lkml/655e21422a14620ae2d55335eb72bcaa66f5384d.1628754620.git.mchehab+huawei@kernel.org/T/#u
 
-The debug printk is misleading. It is actually printing the BUS of_node:
+Which contains a fix to the DT schema meant to make it produce the right sysfs
+of_node devnodes.
 
-	void pci_set_of_node(struct pci_dev *dev)
-	{
-		dev_dbg(&dev->dev, "%s: of_node: %pOF\n",
-			__func__, dev->bus->dev.of_node);
+The series should apply cleanly on the top of v5.14-rc1.
 
-		if (!dev->bus->dev.of_node)
-			return;
-	...
+patch1 contains a PHY for Kirin 970 PCIe.
 
-If I move it to the right place, e. g.:
+The remaining patches add support for Kirin 970 at the pcie-kirin driver, and
+add the needed logic to compile it as module and to allow to dynamically
+remove the driver in runtime.
 
-	void pci_set_of_node(struct pci_dev *dev)
-	{
-		if (!dev->bus->dev.of_node) {
-			dev_dbg(&dev->dev, "%s: BUS of_node is null\n",
-				__func__, dev->bus->dev.of_node);
-			return;
-		}
-		dev->dev.of_node = of_pci_find_child_device(dev->bus->dev.of_node,
-							    dev->devfn);
-		if (dev->dev.of_node)
-			dev->dev.fwnode = &dev->dev.of_node->fwnode;
+Tested on HiKey970:
 
-		dev_dbg(&dev->dev, "%s: of_node: %pOF\n",
-			__func__, dev->dev.of_node);
-	}
+  # lspci -D -PP
+  0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
+  0000:00:00.0/01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
+  0000:00:00.0/01:00.0/02:01.0/03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a809
+  0000:00:00.0/01:00.0/02:07.0/06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
 
-It will produce:
+Tested on HiKey960:
 
-	[    4.155771]  (null): pci_set_bus_of_node: of_node: /soc/pcie@f4000000
-	[    4.208740] pci 0000:00:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-	[    4.236759] pci_bus 0000:01: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0
-	[    4.257899] pci 0000:01:00.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.310350] pci_bus 0000:02: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0
-	[    4.337784] pci 0000:02:01.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
-	[    4.370998] pci 0000:02:04.0: pci_set_of_node: of_node: (null)
-	[    4.391459] pci 0000:02:05.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
-	[    4.415378] pci 0000:02:07.0: pci_set_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-	[    4.439420] pci 0000:02:09.0: pci_set_of_node: of_node: (null)
-	[    4.494288] pci_bus 0000:03: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@1,0
-	[    4.511394] pci_bus 0000:04: pci_set_bus_of_node: of_node: (null)
-	[    4.525084] pci_bus 0000:05: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@5,0
-	[    4.542173] pci_bus 0000:06: pci_set_bus_of_node: of_node: /soc/pcie@f4000000/pcie@0,0/pcie@0,0/pcie@7,0
-	[    4.578575] pci 0000:06:00.0: pci_set_of_node: of_node: (null)
-	[    4.612159] pci_bus 0000:07: pci_set_bus_of_node: of_node: (null)
+  # lspci -D 
+  0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3660 (rev 01)
 
-Which reflects the PCIe topology.
+---
 
-Thanks,
-Mauro
+v11:
+  - patch 5 changed to use the right PCIe topology
+  - all other patches are identical to v10.
+
+v10:
+  - patch 1: dropped magic numbers from PHY driver
+  - patch 5: allow pcie child nodes without reset-gpios
+  - all other patches are identical to v9.
+
+v9:
+  - Did some cleanups at patches 1 and 5
+
+Mauro Carvalho Chehab (11):
+  phy: HiSilicon: Add driver for Kirin 970 PCIe PHY
+  PCI: kirin: Reorganize the PHY logic inside the driver
+  PCI: kirin: Add support for a PHY layer
+  PCI: kirin: Use regmap for APB registers
+  PCI: kirin: Add support for bridge slot DT schema
+  PCI: kirin: Add Kirin 970 compatible
+  PCI: kirin: Add MODULE_* macros
+  PCI: kirin: Allow building it as a module
+  PCI: kirin: Add power_off support for Kirin 960 PHY
+  PCI: kirin: fix poweroff sequence
+  PCI: kirin: Allow removing the driver
+
+ drivers/pci/controller/dwc/Kconfig      |   2 +-
+ drivers/pci/controller/dwc/pcie-kirin.c | 644 ++++++++++++++----
+ drivers/phy/hisilicon/Kconfig           |  10 +
+ drivers/phy/hisilicon/Makefile          |   1 +
+ drivers/phy/hisilicon/phy-hi3670-pcie.c | 857 ++++++++++++++++++++++++
+ 5 files changed, 1366 insertions(+), 148 deletions(-)
+ create mode 100644 drivers/phy/hisilicon/phy-hi3670-pcie.c
+
+-- 
+2.31.1
+
+
 
 -- 
 linux-phy mailing list
