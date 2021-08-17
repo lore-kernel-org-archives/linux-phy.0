@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
 	URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 41824C4338F
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 09:21:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 582F4C4338F
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 09:22:08 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0E6DA60FA0
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 09:21:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0E6DA60FA0
+	by mail.kernel.org (Postfix) with ESMTPS id 2B71A60720
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 09:22:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 2B71A60720
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,39 +23,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ivgUv45wJSjrWk5Qoq4LrOedv4/tjzFNDs7P9bQt9LU=; b=Cg3lhKyDJ9Xa0W
-	W9DKrptVFp/I7Y8/fHu1R7IcBctyP42Q1dnwDKqNnl9fEoWBhbmrg58R4nvQBBzDgswcNjfIw5XfZ
-	zphl0SrW0ABe0p5PQRFKahgx7Yi1CwW3p4u5rAm0gsS8wZiXhObnYh9FQ3j6agj3Unw3TuFXlKdjq
-	Eo3zasGDil7nasFx/PmUH0gsVmO8MgX58BQsTa2ENra6ecDuaaKXtF/hHk/yLhMFT9/1m8RV1LcLa
-	8uPwJIdCqR3s5db0EAlT/eQm8bNv89+vnBtnl4GkRvMhgoNkhOZn077bm5QZH7/k2jNs28l5QlRJ/
-	nuYxx0tvQqMkQuMJac6w==;
+	List-Owner; bh=XhHpenJMZxD0MgICF+3MGsVRY1JsPiHYXxspihhFYJs=; b=ZBAv23KeZzWqk7
+	pyY/R/dSC1DEk62BF3jbZGYYrPOZur3H3XL3ZRSOOIa2jQ+Eb+1RwvmmdpBtJHeWU5BobUgz6NMgL
+	4ZoJ0iPqjAVOJtXdV2W3GauwFzGIBi73xaf9+8hW6IXTx2bHFINhEV4C1ZnMDtOG7k+sw+pbu9mWB
+	+1udc90tVhjMpAuoNtl+Oqm7u8AUgVCDBdd/TE/OkEVlkK4iKsYk2y7DlWk4JTk8q9TfG0RD5ggV9
+	UbcOB5SP1D/RA+blqKd8SRrVtrKBAJ2WZ9uE+fk78CzOki7e2vOCQGOAX+9/jXFvS74xQFhgxg1Z6
+	Qf6Wot9OKLicSDh/ZgGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mFvHx-001mJx-DO; Tue, 17 Aug 2021 09:21:41 +0000
+	id 1mFvIN-001man-HB; Tue, 17 Aug 2021 09:22:07 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mFvGe-001lgM-Gu; Tue, 17 Aug 2021 09:20:22 +0000
-X-UUID: 789b150263c54c818e0c9d284a3be60f-20210817
+ id 1mFvGg-001lfj-T8; Tue, 17 Aug 2021 09:20:24 +0000
+X-UUID: 3e5ca1edca83488682e504af341d70eb-20210817
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=RCQ6cCkWbGhkGv24I7XjpOZJA1HazIihj0TawiE0SOs=; 
- b=s5qOL6F3+aC7HU23/owLgUB9emHFlWd4FJ5CoWsOcy1yuT79fjqqk5CL9eQirZK1IL1F1V3nT9aZ2ZMPgd3hpwpXpLWo5CBrMebRMcqz1gcAqN4I5IDBqg0r70FYu+o8t+eTQI9EQgx8rmM8IcVtnb589JkZQX0tnLcX51jreUg=;
-X-UUID: 789b150263c54c818e0c9d284a3be60f-20210817
+ bh=NOUzC49GD8capnqXTpXsuWwyLUeV3CyNjNWsUxOhiMA=; 
+ b=Mf1AO3tPDEO1beIjsD8jxmn7sQIxUFjFPtf9Au22e9P+xxU1rRbDWdW3lOa91jGYF8X+/qBotUM/O4/0uyy5Hq3duVNCAKZ4TuI5STGdGwkevN5tPcEt5fl0DB2X7TEACZfkrPTNHcR9Ph+3VpzKikrxHMM19X7ZwD0wXSOUCog=;
+X-UUID: 3e5ca1edca83488682e504af341d70eb-20210817
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 854680026; Tue, 17 Aug 2021 02:20:16 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ with ESMTP id 1538634402; Tue, 17 Aug 2021 02:20:16 -0700
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 17 Aug 2021 02:20:15 -0700
+ 15.0.1497.2; Tue, 17 Aug 2021 02:20:14 -0700
 Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Tue, 17 Aug 2021 17:20:14 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 17 Aug 2021 17:20:13 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas11.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 17 Aug 2021 17:20:13 +0800
+ Transport; Tue, 17 Aug 2021 17:20:12 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Vinod Koul <vkoul@kernel.org>
 CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
@@ -65,18 +64,18 @@ CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
  <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
  <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <dri-devel@lists.freedesktop.org>, Stanley Chu <stanley.chu@mediatek.com>
-Subject: [PATCH v3 8/9] phy: phy-mtk-mipi-dsi: remove dummy assignment of
- error number
-Date: Tue, 17 Aug 2021 17:19:46 +0800
-Message-ID: <1629191987-20774-8-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH v3 7/9] phy: phy-mtk-hdmi: convert to
+ devm_platform_ioremap_resource
+Date: Tue, 17 Aug 2021 17:19:45 +0800
+Message-ID: <1629191987-20774-7-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1629191987-20774-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1629191987-20774-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210817_022020_641327_E83FCAE3 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20210817_022023_003161_145F60F4 
+X-CRM114-Status: GOOD (  12.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,7 +92,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Return the error number directly without assignment
+Use devm_platform_ioremap_resource to simplify code
 
 Acked-by: Chun-Kuang Hu <chunkuang.hu@kernel.org>
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
@@ -101,26 +100,35 @@ Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 v3: no changes
 v2: add acked-by CK
 ---
- drivers/phy/mediatek/phy-mtk-mipi-dsi.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ drivers/phy/mediatek/phy-mtk-hdmi.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-index 01cf31633019..61c942fbf4a1 100644
---- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-@@ -203,10 +203,8 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
- 	phy_set_drvdata(phy, mipi_tx);
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+index 8ad8f717ef43..5fb4217fb8e0 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.c
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+@@ -100,7 +100,6 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct mtk_hdmi_phy *hdmi_phy;
+-	struct resource *mem;
+ 	struct clk *ref_clk;
+ 	const char *ref_clk_name;
+ 	struct clk_init_data clk_init = {
+@@ -116,11 +115,9 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
+ 	if (!hdmi_phy)
+ 		return -ENOMEM;
  
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
--	if (IS_ERR(phy_provider)) {
--		ret = PTR_ERR(phy_provider);
--		return ret;
+-	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	hdmi_phy->regs = devm_ioremap_resource(dev, mem);
+-	if (IS_ERR(hdmi_phy->regs)) {
++	hdmi_phy->regs = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(hdmi_phy->regs))
+ 		return PTR_ERR(hdmi_phy->regs);
 -	}
-+	if (IS_ERR(phy_provider))
-+		return PTR_ERR(phy_provider);
  
- 	mipi_tx->dev = dev;
- 
+ 	ref_clk = devm_clk_get(dev, "pll_ref");
+ 	if (IS_ERR(ref_clk)) {
 -- 
 2.18.0
 -- 
