@@ -1,93 +1,94 @@
-Return-Path: <SRS0=FSiF=NE=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Ei7n=NI=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UPPERCASE_50_75,
-	URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable autolearn_force=no
+X-Spam-Status: No, score=-8.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 05267C432BE
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Aug 2021 20:14:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6929DC4338F
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 04:17:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B55DC610FA
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Aug 2021 20:14:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B55DC610FA
+	by mail.kernel.org (Postfix) with ESMTPS id 020E660F35
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 04:17:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 020E660F35
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K5WdY5msgmDN2pzqNO5jqgXU4uoJa3SH1wqoU2ukkC4=; b=Mw5DetdQUDnLcC
-	UbNquEYjrcUlK0YTpbI1P48oTJ+6nlSISXBSZo5eZ8P7Ynpl+ZwTYTE0n+XOAFTu9c/qvkA+yQlVh
-	eDH/dNnXOuolCGLbVG0ixZWNz2n95nEplaicyWIRs7pvWSKBEunxHsLra7DJv00NxoehNjcGfL2+0
-	uvHMnRvEF1q+d4vMbNHiYLiE3xCdo0fO3vyw1QUtv9ZHAFs3RmJTxR4vEzTyzCAhKax7b28nzLji7
-	SGO8ipe+bebIzycFs4hirEinxhyCdeoA1Hz8esfaLLpJuIKNKXvi1QWSYupQuzCf4WSMvOfdLf0bz
-	3OynQ8gKlvyortkWq/zA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WA0CV/OiOc1vmKOoUkuCdrtoh9QdqPASF8DkHr7iMVI=; b=pFMTbdy7xvC2fN
+	b7MDemYU04WAOmqwllAcHOl1RbJDkEWsrodx2bxU9uExkuhnNFE/49Ymm2o2HXnE6ur0M62UnRQ09
+	oES9q0XcvFuwSv0cQO8x0N4yuFw5L6Pz9jA1S3dN13Z7qlMF+mTS+4ubt8HI47qEr3p40jic7axu4
+	gUPB4JfHloN7dLopEjRy0UqyvbE2S3TCCVrQO/5fKWJL10VqzUHjNqhAYV26OKwTwfLNKwVe3F0Ro
+	hT9GxXKUSmOmNSfz0zdZNtSkPFHA82yKRTzp6emHx2Rk95puO2WIS4hjqL5sVq2gI1nVYovwV8luO
+	/70nz+4jzUYsZoJAE92Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mEdZD-00DXZt-9P; Fri, 13 Aug 2021 20:14:11 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1mFqXW-001520-Cq; Tue, 17 Aug 2021 04:17:26 +0000
+Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mEdZA-00DXII-0m
- for linux-phy@lists.infradead.org; Fri, 13 Aug 2021 20:14:10 +0000
-Received: by mail-wr1-x430.google.com with SMTP id k29so14775594wrd.7
- for <linux-phy@lists.infradead.org>; Fri, 13 Aug 2021 13:12:06 -0700 (PDT)
+ id 1mFqXT-00151C-2l; Tue, 17 Aug 2021 04:17:24 +0000
+Received: by mail-pj1-x102b.google.com with SMTP id mq3so443601pjb.5;
+ Mon, 16 Aug 2021 21:17:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=d6IWnqqri2wDhkTitGHZov7Examla6NeWq9QtSSNw3o=;
- b=lsedj2YAOFyMQOkE2oiIUaYzJbcDZ+ix4rIT5ZgzJmxVPUZn3e8Grl0k/snnDGooi3
- TlOvMy3Foz5LFuFxLd6S+NuRq5cngGGx4I22zCcQDrcIwLVP30sd88QNHAUlJAVaGPO5
- dvviCM5GEzUseBDFPrayHEBn1crdcgTziZVRvvxnEuuYM9AUx4iXgf+i2SNpLsgfhIdQ
- s0e3D6iVlDmVM2Ix84If2fYPqS/vnTf81GjAjLqUi+4TUOZ0LnrYzHW42IYBAasabnrr
- xfC09XIRhewuELCT4Y+k9X0jDlZIk3d6xvjRMuO5BHDZ3gys+UT/l40UdAVLK3OPJ1ta
- 35mg==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bqqKFEqy6bW/3jaVqfILOBhErn5KinwFdoaG08aeYTU=;
+ b=GegebCJ5kKpRuiPtzMuG/9/Oizma9N2aGsdKhuGiQdC7wUiRVR1it6CtyNIc96rUr7
+ 1Lrv7n2SoUcRo+zrgud1QzHI/S0+BM9EKdV1dWmlrq1uwJxcwfeJQxvy3pLlsNSIMcTG
+ xg1oWpegNMAoB7YYtWTgVXZHUg58hyrj4IZ4iY5mpZ0bZazAz4eFsNooZjOo7iBAbThg
+ 7HpAbMBXtv2CXfVxxOs9YmRuPOxFRdU3q3o6KZ0QeHqAwg7StwEI9lEiUFGlI3fRDuwi
+ MjhP+iXf+gIGtZ0TtT8KVdW9vLUEtDDgiyhLwaYRs+TliqPSl2yFJRNKE5nDb3Blnm/d
+ nLTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=d6IWnqqri2wDhkTitGHZov7Examla6NeWq9QtSSNw3o=;
- b=DDQov4dNNHvoPSasyai+uOb2qjrK4W4rdhvlDFgGDtq7JyWtbS2p+KHClAzQWwYbvg
- irGw/IbvqK03ess08luTq6/tzfcfu/3ObXfxor5W3pqGh2lFqLIOVLjP5e9VnXEXrphn
- GrEHzIh++eJSNZHwfgTJ1tqQnegf7bZtedhUrDf2qQXzXngOsFZvyJ6LfCiwpOMGctCb
- HO2meMRrB51n8r9vPUwhi1CPNqMlX7iemUbcgeMWg36zpjWkygCIOYPCTDoceDTxxQn9
- EptkA0VIwZI1FPELADMv0hH/FDPY77Sk36y1PaiE3YSZ/Hce4hjnRUWcGop6GPKM/cah
- XFww==
-X-Gm-Message-State: AOAM532jclOZ9TwJbHig7sDpfNjkqMvqXGBBMLzI6fI9EuyceXrWjxLg
- yseYmZpFpGKzhT6WYd+ZdyE=
-X-Google-Smtp-Source: ABdhPJzFXcrRdgsZmhPJtxdD3LXYSC+LoE9ZK6qG/966j2t3QoDNFhIMNW1IEZW506axL7mJnbU0pA==
-X-Received: by 2002:a5d:5550:: with SMTP id g16mr5067864wrw.336.1628885525646; 
- Fri, 13 Aug 2021 13:12:05 -0700 (PDT)
-Received: from localhost ([91.92.14.102])
- by smtp.gmail.com with ESMTPSA id g35sm2555939wmp.9.2021.08.13.13.12.04
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 13 Aug 2021 13:12:05 -0700 (PDT)
-From: Iskren Chernev <iskren.chernev@gmail.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, phone-devel@vger.kernel.org,
- ~postmarketos/upstreaming@lists.sr.ht,
- Iskren Chernev <iskren.chernev@gmail.com>
-Subject: [PATCH v2 2/2] phy: qcom-qmp: Add support for SM6115 UFS phy
-Date: Fri, 13 Aug 2021 23:11:51 +0300
-Message-Id: <20210813201151.974512-3-iskren.chernev@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bqqKFEqy6bW/3jaVqfILOBhErn5KinwFdoaG08aeYTU=;
+ b=ObHRWRoT8ys0VJrTzsg+pf/IuFfuzrre+RnVvh3+C4KNFiy7IZh8hjq2sAow1wZY4x
+ mmIrgfexusP8KwyQO39YvusM/d1bYwn4X5t+Sy39uEoKONyIGG2Zb6fawiOlJuzTmo4i
+ IciX6f5l760InXcAVOD0j8vOT1g4raBYltlwomaKpzm6kUQaUsNnqnH4OwbOHe5LzpSW
+ IF+U3CF+NR2M1MwQTHeZNXasQFVgQ1nNxPzcNA/WbbsHHho5ReH41BkTOfkuCEPW85/j
+ aBFOuRvUNs0MCqTUbZU/YFKK7XxEF5Lh4urHMfJz56DM8wTqjT6ZSwVDLayOhJpHmelN
+ YEDw==
+X-Gm-Message-State: AOAM530wXNiMbweb/KgkgXOgijprFFVH9BNvfnKpDDMIFQxCgV/odj9E
+ QzZfcHLXwrLSNYgRVbrQlS6i6lNe4cRQxg==
+X-Google-Smtp-Source: ABdhPJxghMRfCc22t7YGDNctHOJGp0NKyTLbKYqjB+T8eXlM0tsqvm0YCsdT7rjc0rp9Hu3gT+3axA==
+X-Received: by 2002:aa7:8116:0:b029:346:8678:ce26 with SMTP id
+ b22-20020aa781160000b02903468678ce26mr1646306pfi.15.1629173841355; 
+ Mon, 16 Aug 2021 21:17:21 -0700 (PDT)
+Received: from archl-on1.. ([103.51.72.143])
+ by smtp.gmail.com with ESMTPSA id g11sm705676pfo.166.2021.08.16.21.17.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Aug 2021 21:17:20 -0700 (PDT)
+From: Anand Moon <linux.amoon@gmail.com>
+To: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org
+Cc: Anand Moon <linux.amoon@gmail.com>,
+ Matt Corallo <oc2udbzfd@mattcorallo.com>, Rob Herring <robh+dt@kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Emiliano Ingrassia <ingrassia@epigenesys.com>,
+ Brian Kim <brian.kim@hardkernel.com>
+Subject: [PATCHv3 0/6] Meson-8b and Meson-gxbb Fix some missing code
+Date: Tue, 17 Aug 2021 09:45:34 +0530
+Message-Id: <20210817041548.1276-1-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.32.0
-In-Reply-To: <20210813201151.974512-1-iskren.chernev@gmail.com>
-References: <20210813201151.974512-1-iskren.chernev@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210813_131408_153580_9AAA61F7 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20210816_211723_185774_54E7AF1A 
+X-CRM114-Status: GOOD (  13.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,355 +105,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the tables and constants for init sequences for UFS QMP phy found in
-SM4250/6115 SoC. The phy is a variation of the v3 phy found on sdm845
-called v3-660 (possibly first occurrence in the sdm660).
+On Odroid C1+ and Odroid C2 USB feature is broken
 
-There are a few similar registers with the v3 phy (notably the first
-SERDES ones), the rest are different.
+It's being observed the after initiation of USB phy
+the USB port goes in to suspend state, If we pass usbcore.autosuspend=-1
+via command line USB hotplug seen to be working.
 
-Signed-off-by: Iskren Chernev <iskren.chernev@gmail.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp.c | 124 +++++++++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp.h | 134 ++++++++++++++++++++++++++++
- 2 files changed, 258 insertions(+)
+Another issue I observed is increase of USB interrupts event
+even if there is not much activity on USB ports.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index 2195f8ac393b..a7f6c281f035 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -234,6 +234,11 @@ static const unsigned int sdm845_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_READY_STATUS]		= 0x160,
- };
- 
-+static const unsigned int sm6115_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
-+	[QPHY_START_CTRL]		= 0x00,
-+	[QPHY_PCS_READY_STATUS]		= 0x168,
-+};
-+
- static const unsigned int sm8250_pcie_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_SW_RESET]			= 0x00,
- 	[QPHY_START_CTRL]		= 0x44,
-@@ -1329,6 +1334,97 @@ static const struct qmp_phy_init_tbl qmp_v3_usb3_uniphy_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_REFGEN_REQ_CONFIG2, 0x60),
- };
- 
-+static const struct qmp_phy_init_tbl sm6115_ufsphy_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_CMN_CONFIG, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_SYSCLK_EN_SEL, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_COM_SYS_CLK_CTRL, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_HSCLK_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_CORECLK_DIV, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_CORECLK_DIV_MODE1, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP_EN, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_RESETSM_CNTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP_CFG, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE_TIMER1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE_TIMER2, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE_MAP, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_SVS_MODE_CLK_SEL, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DIV_FRAC_START2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DIV_FRAC_START3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE1_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP1_MODE0, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP2_MODE0, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DEC_START_MODE1, 0x98),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DIV_FRAC_START1_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DIV_FRAC_START2_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_DIV_FRAC_START3_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_CP_CTRL_MODE1, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_PLL_CCTRL_MODE1, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_INTEGLOOP_GAIN0_MODE1, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_INTEGLOOP_GAIN1_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE1_MODE1, 0xd6),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE2_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP1_MODE1, 0x32),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP2_MODE1, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_LOCK_CMP3_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE_INITVAL1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE_INITVAL2, 0x00),
-+
-+	/* Rate B */
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_COM_VCO_TUNE_MAP, 0x44),
-+};
-+
-+static const struct qmp_phy_init_tbl sm6115_ufsphy_tx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_TX_HIGHZ_TRANSCEIVER_BIAS_DRVR_EN, 0x45),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_TX_LANE_MODE, 0x06),
-+};
-+
-+static const struct qmp_phy_init_tbl sm6115_ufsphy_rx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_SIGDET_LVL, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_SIGDET_CNTRL, 0x0F),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_RX_INTERFACE_MODE, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_SIGDET_DEGLITCH_CNTRL, 0x1E),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_UCDR_FASTLOCK_FO_GAIN, 0x0B),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_RX_TERM_BW, 0x5B),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_RX_EQ_GAIN1_LSB, 0xFF),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_RX_EQ_GAIN1_MSB, 0x3F),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_RX_EQ_GAIN2_LSB, 0xFF),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_RX_EQ_GAIN2_MSB, 0x3F),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_RX_EQU_ADAPTOR_CNTRL2, 0x0D),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_UCDR_SVS_SO_GAIN_HALF, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_UCDR_SVS_SO_GAIN_QUARTER, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_UCDR_SVS_SO_GAIN, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V3_660_RX_UCDR_SO_SATURATION_ENABLE, 0x5B),
-+};
-+
-+static const struct qmp_phy_init_tbl sm6115_ufsphy_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_RX_PWM_GEAR_BAND, 0x15),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_RX_SIGDET_CTRL2, 0x6d),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_TX_LARGE_AMP_DRV_LVL, 0x0f),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_TX_SMALL_AMP_DRV_LVL, 0x02),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_RX_MIN_STALL_NOCONFIG_TIME_CAP, 0x28),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_RX_SYM_RESYNC_CTRL, 0x03),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_TX_LARGE_AMP_POST_EMP_LVL, 0x12),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_TX_SMALL_AMP_POST_EMP_LVL, 0x0f),
-+	QMP_PHY_INIT_CFG(QPHY_V3_660_PCS_RX_MIN_HIBERN8_TIME, 0x9a), /* 8 us */
-+};
-+
- static const struct qmp_phy_init_tbl sdm845_ufsphy_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_SYS_CLK_CTRL, 0x02),
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x04),
-@@ -3396,6 +3492,31 @@ static const struct qmp_phy_cfg sdm845_ufsphy_cfg = {
- 	.no_pcs_sw_reset	= true,
- };
- 
-+static const struct qmp_phy_cfg sm6115_ufsphy_cfg = {
-+	.type			= PHY_TYPE_UFS,
-+	.nlanes			= 1,
-+
-+	.serdes_tbl		= sm6115_ufsphy_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_serdes_tbl),
-+	.tx_tbl			= sm6115_ufsphy_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_tx_tbl),
-+	.rx_tbl			= sm6115_ufsphy_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_rx_tbl),
-+	.pcs_tbl		= sm6115_ufsphy_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sm6115_ufsphy_pcs_tbl),
-+	.clk_list		= sdm845_ufs_phy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sdm845_ufs_phy_clk_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= sm6115_ufsphy_regs_layout,
-+
-+	.start_ctrl		= SERDES_START,
-+	.pwrdn_ctrl		= SW_PWRDN,
-+
-+	.is_dual_lane_phy	= false,
-+	.no_pcs_sw_reset	= true,
-+};
-+
- static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
- 	.type			= PHY_TYPE_PCIE,
- 	.nlanes			= 1,
-@@ -5395,6 +5516,9 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,msm8998-qmp-usb3-phy",
- 		.data = &msm8998_usb3phy_cfg,
-+	}, {
-+		.compatible = "qcom,sm6115-qmp-ufs-phy",
-+		.data = &sm6115_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8150-qmp-ufs-phy",
- 		.data = &sm8150_ufsphy_cfg,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index 6592b58b13f6..fde1bff16e27 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -280,6 +280,8 @@
- #define QSERDES_V3_COM_SSC_PER2				0x020
- #define QSERDES_V3_COM_SSC_STEP_SIZE1			0x024
- #define QSERDES_V3_COM_SSC_STEP_SIZE2			0x028
-+#define QSERDES_V3_COM_POST_DIV				0x02c
-+#define QSERDES_V3_COM_POST_DIV_MUX			0x030
- #define QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN		0x034
- # define QSERDES_V3_COM_BIAS_EN				0x0001
- # define QSERDES_V3_COM_BIAS_EN_MUX			0x0002
-@@ -291,6 +293,7 @@
- #define QSERDES_V3_COM_CLK_ENABLE1			0x038
- #define QSERDES_V3_COM_SYS_CLK_CTRL			0x03c
- #define QSERDES_V3_COM_SYSCLK_BUF_ENABLE		0x040
-+#define QSERDES_V3_COM_PLL_EN				0x044
- #define QSERDES_V3_COM_PLL_IVCO				0x048
- #define QSERDES_V3_COM_LOCK_CMP1_MODE0			0x098
- #define QSERDES_V3_COM_LOCK_CMP2_MODE0			0x09c
-@@ -348,6 +351,100 @@
- #define QSERDES_V3_COM_DEBUG_BUS_SEL			0x178
- #define QSERDES_V3_COM_CMN_MODE				0x184
- 
-+/* Only for QMP V3 660 PHY - QSERDES COM registers*/
-+#define QSERDES_V3_660_COM_LOCK_CMP1_MODE0		0x04c
-+#define QSERDES_V3_660_COM_LOCK_CMP2_MODE0		0x050
-+#define QSERDES_V3_660_COM_LOCK_CMP3_MODE0		0x054
-+#define QSERDES_V3_660_COM_LOCK_CMP1_MODE1		0x058
-+#define QSERDES_V3_660_COM_LOCK_CMP2_MODE1		0x05c
-+#define QSERDES_V3_660_COM_LOCK_CMP3_MODE1		0x060
-+#define QSERDES_V3_660_COM_CMD_RSVD0			0x064
-+#define QSERDES_V3_660_COM_EP_CLOCK_DETECT_CTRL		0x068
-+#define QSERDES_V3_660_COM_SYSCLK_DET_COMP_STATUS	0x06c
-+#define QSERDES_V3_660_COM_BG_TRIM			0x070
-+#define QSERDES_V3_660_COM_CLK_EP_DIV			0x074
-+#define QSERDES_V3_660_COM_CP_CTRL_MODE0		0x078
-+#define QSERDES_V3_660_COM_CP_CTRL_MODE1		0x07c
-+#define QSERDES_V3_660_COM_CMN_RSVD1			0x080
-+#define QSERDES_V3_660_COM_PLL_RCTRL_MODE0		0x084
-+#define QSERDES_V3_660_COM_PLL_RCTRL_MODE1		0x088
-+#define QSERDES_V3_660_COM_CMN_RSVD2			0x08c
-+#define QSERDES_V3_660_COM_PLL_CCTRL_MODE0		0x090
-+#define QSERDES_V3_660_COM_PLL_CCTRL_MODE1		0x094
-+#define QSERDES_V3_660_COM_CMN_RSVD3			0x098
-+#define QSERDES_V3_660_COM_PLL_CNTRL			0x09c
-+#define QSERDES_V3_660_COM_PHASE_SEL_CTRL		0x0a0
-+#define QSERDES_V3_660_COM_PHASE_SEL_DC			0x0a4
-+#define QSERDES_V3_660_COM_BIAS_EN_CTRL_BY_PSM		0x0a8
-+#define QSERDES_V3_660_COM_SYSCLK_EN_SEL		0x0ac
-+#define QSERDES_V3_660_COM_CML_SYSCLK_SEL		0x0b0
-+#define QSERDES_V3_660_COM_RESETSM_CNTRL		0x0b4
-+#define QSERDES_V3_660_COM_RESETSM_CNTRL2		0x0b8
-+#define QSERDES_V3_660_COM_RESTRIM_CTRL			0x0bc
-+#define QSERDES_V3_660_COM_RESTRIM_CTRL2		0x0c0
-+#define QSERDES_V3_660_COM_LOCK_CMP_EN			0x0c8
-+#define QSERDES_V3_660_COM_LOCK_CMP_CFG			0x0cc
-+#define QSERDES_V3_660_COM_DEC_START_MODE0		0x0d0
-+#define QSERDES_V3_660_COM_DEC_START_MODE1		0x0d4
-+#define QSERDES_V3_660_COM_VCOCAL_DEADMAN_CTRL		0x0d8
-+#define QSERDES_V3_660_COM_DIV_FRAC_START1_MODE0	0x0dc
-+#define QSERDES_V3_660_COM_DIV_FRAC_START2_MODE0	0x0e0
-+#define QSERDES_V3_660_COM_DIV_FRAC_START3_MODE0	0x0e4
-+#define QSERDES_V3_660_COM_DIV_FRAC_START1_MODE1	0x0e8
-+#define QSERDES_V3_660_COM_DIV_FRAC_START2_MODE1	0x0ec
-+#define QSERDES_V3_660_COM_DIV_FRAC_START3_MODE1	0x0f0
-+#define QSERDES_V3_660_COM_VCO_TUNE_MINVAL1		0x0f4
-+#define QSERDES_V3_660_COM_VCO_TUNE_MINVAL2		0x0f8
-+#define QSERDES_V3_660_COM_CMN_RSVD4			0x0fc
-+#define QSERDES_V3_660_COM_INTEGLOOP_INITVAL		0x100
-+#define QSERDES_V3_660_COM_INTEGLOOP_EN			0x104
-+#define QSERDES_V3_660_COM_INTEGLOOP_GAIN0_MODE0	0x108
-+#define QSERDES_V3_660_COM_INTEGLOOP_GAIN1_MODE0	0x10c
-+#define QSERDES_V3_660_COM_INTEGLOOP_GAIN0_MODE1	0x110
-+#define QSERDES_V3_660_COM_INTEGLOOP_GAIN1_MODE1	0x114
-+#define QSERDES_V3_660_COM_VCO_TUNE_MAXVAL1		0x118
-+#define QSERDES_V3_660_COM_VCO_TUNE_MAXVAL2		0x11c
-+#define QSERDES_V3_660_COM_RES_TRIM_CONTROL2		0x120
-+#define QSERDES_V3_660_COM_VCO_TUNE_CTRL		0x124
-+#define QSERDES_V3_660_COM_VCO_TUNE_MAP			0x128
-+#define QSERDES_V3_660_COM_VCO_TUNE1_MODE0		0x12c
-+#define QSERDES_V3_660_COM_VCO_TUNE2_MODE0		0x130
-+#define QSERDES_V3_660_COM_VCO_TUNE1_MODE1		0x134
-+#define QSERDES_V3_660_COM_VCO_TUNE2_MODE1		0x138
-+#define QSERDES_V3_660_COM_VCO_TUNE_INITVAL1		0x13c
-+#define QSERDES_V3_660_COM_VCO_TUNE_INITVAL2		0x140
-+#define QSERDES_V3_660_COM_VCO_TUNE_TIMER1		0x144
-+#define QSERDES_V3_660_COM_VCO_TUNE_TIMER2		0x148
-+#define QSERDES_V3_660_COM_SAR				0x14c
-+#define QSERDES_V3_660_COM_SAR_CLK			0x150
-+#define QSERDES_V3_660_COM_SAR_CODE_OUT_STATUS		0x154
-+#define QSERDES_V3_660_COM_SAR_CODE_READY_STATUS	0x158
-+#define QSERDES_V3_660_COM_CMN_STATUS			0x15c
-+#define QSERDES_V3_660_COM_RESET_SM_STATUS		0x160
-+#define QSERDES_V3_660_COM_RESTRIM_CODE_STATUS		0x164
-+#define QSERDES_V3_660_COM_PLLCAL_CODE1_STATUS		0x168
-+#define QSERDES_V3_660_COM_PLLCAL_CODE2_STATUS		0x16c
-+#define QSERDES_V3_660_COM_BG_CTRL			0x170
-+#define QSERDES_V3_660_COM_CLK_SELECT			0x174
-+#define QSERDES_V3_660_COM_HSCLK_SEL			0x178
-+#define QSERDES_V3_660_COM_INTEGLOOP_BINCODE_STATUS	0x17c
-+#define QSERDES_V3_660_COM_PLL_ANALOG			0x180
-+#define QSERDES_V3_660_COM_CORECLK_DIV			0x184
-+#define QSERDES_V3_660_COM_SW_RESET			0x188
-+#define QSERDES_V3_660_COM_CORE_CLK_EN			0x18c
-+#define QSERDES_V3_660_COM_C_READY_STATUS		0x190
-+#define QSERDES_V3_660_COM_CMN_CONFIG			0x194
-+#define QSERDES_V3_660_COM_CMN_RATE_OVERRIDE		0x198
-+#define QSERDES_V3_660_COM_SVS_MODE_CLK_SEL		0x19c
-+#define QSERDES_V3_660_COM_DEBUG_BUS0			0x1a0
-+#define QSERDES_V3_660_COM_DEBUG_BUS1			0x1a4
-+#define QSERDES_V3_660_COM_DEBUG_BUS2			0x1a8
-+#define QSERDES_V3_660_COM_DEBUG_BUS3			0x1ac
-+#define QSERDES_V3_660_COM_DEBUG_BUS_SEL		0x1b0
-+#define QSERDES_V3_660_COM_CMN_MISC1			0x1b4
-+#define QSERDES_V3_660_COM_CORECLK_DIV_MODE1		0x1bc
-+#define QSERDES_V3_660_COM_CMN_RSVD5			0x1c0
-+
- /* Only for QMP V3 PHY - TX registers */
- #define QSERDES_V3_TX_BIST_MODE_LANENO			0x000
- #define QSERDES_V3_TX_CLKBUF_ENABLE			0x008
-@@ -380,6 +477,10 @@
- #define QSERDES_V3_TX_TX_INTERFACE_MODE			0x0c4
- #define QSERDES_V3_TX_VMODE_CTRL1			0x0f0
- 
-+/* Only for QMP V3 660 PHY - TX registers */
-+#define QSERDES_V3_660_TX_HIGHZ_TRANSCEIVER_BIAS_DRVR_EN	0x068
-+#define QSERDES_V3_660_TX_LANE_MODE				0x094
-+
- /* Only for QMP V3 PHY - RX registers */
- #define QSERDES_V3_RX_UCDR_FO_GAIN			0x008
- #define QSERDES_V3_RX_UCDR_SO_GAIN_HALF			0x00c
-@@ -411,6 +512,24 @@
- #define QSERDES_V3_RX_RX_MODE_00			0x164
- #define QSERDES_V3_RX_RX_MODE_01			0x168
- 
-+/* Only for QMP V3 660 PHY - RX registers */
-+#define QSERDES_V3_660_RX_UCDR_SVS_SO_GAIN_HALF		0x030
-+#define QSERDES_V3_660_RX_UCDR_SVS_SO_GAIN_QUARTER	0x034
-+#define QSERDES_V3_660_RX_UCDR_SVS_SO_GAIN_EIGHTH	0x038
-+#define QSERDES_V3_660_RX_UCDR_SVS_SO_GAIN		0x03c
-+#define QSERDES_V3_660_RX_UCDR_FASTLOCK_FO_GAIN		0x040
-+#define QSERDES_V3_660_RX_UCDR_SO_SATURATION_ENABLE	0x048
-+#define QSERDES_V3_660_RX_RX_TERM_BW			0x090
-+#define QSERDES_V3_660_RX_RX_EQ_GAIN1_LSB		0x0c4
-+#define QSERDES_V3_660_RX_RX_EQ_GAIN1_MSB		0x0c8
-+#define QSERDES_V3_660_RX_RX_EQ_GAIN2_LSB		0x0cc
-+#define QSERDES_V3_660_RX_RX_EQ_GAIN2_MSB		0x0d0
-+#define QSERDES_V3_660_RX_RX_EQU_ADAPTOR_CNTRL2		0x0d8
-+#define QSERDES_V3_660_RX_SIGDET_CNTRL			0x114
-+#define QSERDES_V3_660_RX_SIGDET_LVL			0x118
-+#define QSERDES_V3_660_RX_SIGDET_DEGLITCH_CNTRL		0x11c
-+#define QSERDES_V3_660_RX_RX_INTERFACE_MODE		0x12c
-+
- /* Only for QMP V3 PHY - PCS registers */
- #define QPHY_V3_PCS_POWER_DOWN_CONTROL			0x004
- #define QPHY_V3_PCS_TXMGN_V0				0x00c
-@@ -473,6 +592,21 @@
- #define QPHY_V3_PCS_REFGEN_REQ_CONFIG1			0x20c
- #define QPHY_V3_PCS_REFGEN_REQ_CONFIG2			0x210
- 
-+/* Only for QMP V3 660 PHY - PCS registers */
-+#define QPHY_V3_660_PCS_PHY_START			0x000
-+#define QPHY_V3_660_PCS_POWER_DOWN_CONTROL		0x004
-+#define QPHY_V3_660_PCS_TX_LARGE_AMP_DRV_LVL		0x034
-+#define QPHY_V3_660_PCS_TX_LARGE_AMP_POST_EMP_LVL	0x038
-+#define QPHY_V3_660_PCS_TX_SMALL_AMP_DRV_LVL		0x03c
-+#define QPHY_V3_660_PCS_TX_SMALL_AMP_POST_EMP_LVL	0x040
-+#define QPHY_V3_660_PCS_RX_MIN_STALL_NOCONFIG_TIME_CAP	0x0cc
-+#define QPHY_V3_660_PCS_LINECFG_DISABLE			0x138
-+#define QPHY_V3_660_PCS_RX_SYM_RESYNC_CTRL		0x13c
-+#define QPHY_V3_660_PCS_RX_MIN_HIBERN8_TIME		0x140
-+#define QPHY_V3_660_PCS_RX_SIGDET_CTRL2			0x148
-+#define QPHY_V3_660_PCS_RX_PWM_GEAR_BAND		0x154
-+#define QPHY_V3_660_PCS_PCS_READY_STATUS		0x168
-+
- /* Only for QMP V3 PHY - PCS_MISC registers */
- #define QPHY_V3_PCS_MISC_CLAMP_ENABLE			0x0c
- #define QPHY_V3_PCS_MISC_OSC_DTCT_CONFIG2		0x2c
+$ cat /proc/interrupts | grep usb
+ 35:   26462800          0          0          0     GIC-0  63 Level
+			c90c0000.usb, dwc2_hsotg:usb1
+8
+Changes added power node to usb phy and small code cleanup
+in usb phy.
+
+
+Previous version RFC.
+[0] https://patchwork.kernel.org/project/linux-amlogic/cover/20210617194154.2397-1-linux.amoon@gmail.com/
+Dopped the reorder of code changes as of now.
+
+V1 > changes Fixed the GPIO input signal on Odroid C1+/C2
+     New patch added to fix Odroid C2.
+
+[1] https://lore.kernel.org/linux-devicetree/20210716103651.1455-1-linux.amoon@gmail.com/
+
+V2 > changes Fixed the GPIO polarity for Odroid C1
+     fix the power source from phy-supply to vbus-supply 
+     added new patches to fix resolve some issues.
+
+Thanks
+-Anand
+
+Anand Moon (6):
+  ARM: dts: meson8b: odroidc1: Add usb phy power node
+  ARM: dts: meson8b: odroidc1: Set usb power source to always on
+  arm64: dts: amlogic: odroidc2: Fix the chip enable signal for usb
+    power
+  arm64: dts: amlogic: odroidc2: use vbus-supply for power source for
+    usb nodes
+  phy: amlogic: meson8b-usb2: Power off the PHY by putting it into reset
+    mode
+  phy: amlogic: meson8b-usb2: don't log an error on -EPROBE_DEFER
+
+ arch/arm/boot/dts/meson8b-odroidc1.dts        | 21 ++++++++++++++++++-
+ .../boot/dts/amlogic/meson-gxbb-odroidc2.dts  | 10 ++++-----
+ drivers/phy/amlogic/phy-meson8b-usb2.c        |  8 +++++--
+ 3 files changed, 30 insertions(+), 9 deletions(-)
+
 -- 
 2.32.0
 
