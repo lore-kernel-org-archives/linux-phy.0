@@ -8,14 +8,14 @@ X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 37217C4338F
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 04:18:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 54952C432BE
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 04:18:42 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 018FD60F35
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 04:18:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 018FD60F35
+	by mail.kernel.org (Postfix) with ESMTPS id 241B960F35
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Aug 2021 04:18:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 241B960F35
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,52 +24,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xjk5cvBOdL8zvSLst0kj5VufwyhBGJpDYceS7RhggNo=; b=jzuzO6TjaLGc98
-	5iVwgf5+eUBjKJDmbNoCzTyYjD19OUXSuJF9Nyf2w849VpLAKtlGZ4x4EGLGmNiiBXgL7djj6G+zX
-	oO2g2I0Z+V76W1g8xtSfM1oytHiF2lN2RYjBuNeXO3lgPs9MHbO7Ei82r6znZy4+BkN0LZmMtyu8A
-	o9EC9XZOlGC8/4A8WFx7/CIc7QSONnLrmd3IjRNjE79u/TFQYVzztNXr1zbSicp7pNJecFAO+i0AX
-	OZ+nofrYCBnD88J2e14EfXw3XflmjVKPBosYIySbjmAdWJzc+vF5JXW9at3ZasXym24DwugD5ZEWS
-	DYvRWSuMg8rNWjgtWgTA==;
+	List-Owner; bh=lGOwChDs6fYq0D+b/ueTok8sXKsF2nDKxeZzP8EYAjk=; b=rV2nqK0DJvvSlD
+	qxdbjcmW4aaWfJx9lvBO0iKg67TGAwvkhS3XFq2eucSwpqve8wV6lTVBZJU3F76D6sDZ6o9ycl+Q4
+	obuiQochloZMEq7VfcFtRhuAdzlUAZxoa9IoZPSlDSPmFd+orL1P25yjWFX4d3uNEt3oWU0alIp4t
+	aNyE/lhM1oHcHAGvrGp4z0RspXmXI/mP9PVHRmOUFJuD/h8oLDOJpqFf3DKWHbpyzeUiBQ52r0kDV
+	hIZdmrzMszip2H7iUGBH7/XPe4skQjeiwpyet5vgVydW9xzD4DRzqKNxw7QjUBsZyAiCtw4RsqUKf
+	/DmWFTJqn9rvAhkbfmCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mFqYM-0015HE-FR; Tue, 17 Aug 2021 04:18:18 +0000
-Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
+	id 1mFqYj-0015SL-EP; Tue, 17 Aug 2021 04:18:41 +0000
+Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mFqYG-0015Du-4j; Tue, 17 Aug 2021 04:18:13 +0000
-Received: by mail-pj1-x1034.google.com with SMTP id
- hv22-20020a17090ae416b0290178c579e424so4138430pjb.3; 
- Mon, 16 Aug 2021 21:18:12 -0700 (PDT)
+ id 1mFqYX-0015KE-07; Tue, 17 Aug 2021 04:18:30 +0000
+Received: by mail-pl1-x634.google.com with SMTP id a5so23309095plh.5;
+ Mon, 16 Aug 2021 21:18:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qmVeyhKiZb0zIqPGmwLOmayId0eC03bF22fmrGDOy0E=;
- b=jmymeSrHo7vr4RSmMpg+BEmhKUQli6sFp0rFo9D3+E89ww7eYY+HbdlJrUxWxftooa
- BFTOAVErFz90/swbCz5EBMx8JO63ei9tsXSZpZ8KiWT9Msp96N1CwKJ6V9v0NspRpX4v
- x2zRy0eZ1AZ2EZoNgGTQsnVVpjtMU8qkAasHRWpADvgiRj+KxQMW1ex0eEoYR2E7Cf/c
- ejupe1OeSlL73y7DCERI7g0OApZ9mJrizuwBmlLKj657fC4qxsYwGxuxhPnNZb1g3M9I
- UL/YkduJuvzi5nZSLfq6DUir/v8ABjrpKHo4Y21l7i2064zRNicPImwRrGrIGhqR64ah
- m0WA==
+ bh=/De+hbEmJZRZ6r7uVfFxTcLTqZUJMY0uXYnWBmH2jqY=;
+ b=UPAVPx813tLu01hoTQDKKDPD4TQMFuDerro+n95jRRkWNy/RT0SO9DflqJSdOXEpo8
+ NF945T3KYbr2dkLX7mCJrv7oCbijYqRDHaaGyMnJAsNhPak4th2ei+E7Fx/hS4KXN17u
+ 9Bfr/UD9Ljtn0WCNc8MIlqC0XMbkiSx2HxBediZuEJLik+RtWAcjsSIaacEN3TjxETqM
+ 5Pjlfvj/l/d2CcCrQqXYRj0uiAIO378u913DdfIfKVZaYqz5sFVbHUQWYDkVgVc44bxA
+ 955YSQk32VnaKwoPsd81yupWYX4H7s0Ycddn8ref6yXZUkWdwAZdb2fzYlvDPWU1ucyO
+ bV9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qmVeyhKiZb0zIqPGmwLOmayId0eC03bF22fmrGDOy0E=;
- b=ACoiun/rKCCWripCokYHDQjskFZKpRrJEyzaDKNMgsfLlqr0NFXWbpEOJu/OY6MML7
- gSKqjzDNnLid/4IIm3nu/DW3eptp6f5CFNQr2crgEloPGHuUK9H7KfIJdb9mXmSlNSeN
- Pf2R2eR/DM/G2gBqv2FIQkdGgd1ai/6B513QJh9r0u97+JacDC8scaXwOdjo4hHUc9yn
- DmuxZfR0dbH6E62j0o77Q35fVNHJpsLog8lLyHhFK3OCMpavqulm+vUSMtLQpC80uR85
- RmnJJOP4gzGluJwL3afw4K7lZvE1b0lPIccWjpYcf6mWIz0kAY9GdF2RaA1DM2HuyL1T
- 7Jnw==
-X-Gm-Message-State: AOAM532uba/y5AuJrBPFqrBSjEjtT5zKhvvpUflqmIb1uaGvBatAgcN6
- kJqmiaq2r7pJcKwViQ4g2R8bLigAprGTHw==
-X-Google-Smtp-Source: ABdhPJzJKgheXvAVNXiCHRktmaDbDCjw9+UQXMmXIXMck1UzOs34Ekk2v5ohhN6ywg/uss/MLZ55fw==
-X-Received: by 2002:a17:90a:ce0a:: with SMTP id
- f10mr1461562pju.71.1629173891353; 
- Mon, 16 Aug 2021 21:18:11 -0700 (PDT)
+ bh=/De+hbEmJZRZ6r7uVfFxTcLTqZUJMY0uXYnWBmH2jqY=;
+ b=pKQe20spHwyKwuwUQOe7CtSKMRDq7KH5MkF+Wvlykxg5WQEYRLCndRD8vPEpbMPrZY
+ KJ0z9Jjkx5KZBllf9gVeQhruK32MrT0VSnSegCK4QGJUJ62W295sU0lmhaei34yFgTF+
+ zMNJoQj5crFbodNxsQzef1l5lHgBcVoCmSrrKOMyCqx4GjNDW1xUky7rrTp7ZZDOEmhj
+ lgoWA24qAj7AeqdD3hCv3QW1Z0HPLC8mYJLByTI010mYHrM7G3DTR67aiJWb50asj6kG
+ TV40K4pyox/sByaJw4yHTxMK6mMLQ46k9Ywtevaz2ELOZnr/TgvJQr7W0wqkhQFO8ITQ
+ vljg==
+X-Gm-Message-State: AOAM531WVvbcWU4OjN5O99HPaVfmhQ1iZE1CMz7JaFua/+esu4RjXrJ0
+ CC3iW8BAp+QGl/mdq3c1bLi4fsoga3AUAg==
+X-Google-Smtp-Source: ABdhPJywvJvBG8K/pH/TB32oj8Wb9Zx5SLgjCuvw5NL08QMtDpkX72qoocsfu3ggRwCUPivhw60K4A==
+X-Received: by 2002:a17:902:7294:b029:12d:2434:6d26 with SMTP id
+ d20-20020a1709027294b029012d24346d26mr1359556pll.59.1629173903805; 
+ Mon, 16 Aug 2021 21:18:23 -0700 (PDT)
 Received: from archl-on1.. ([103.51.72.143])
- by smtp.gmail.com with ESMTPSA id g11sm705676pfo.166.2021.08.16.21.18.06
+ by smtp.gmail.com with ESMTPSA id g11sm705676pfo.166.2021.08.16.21.18.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Aug 2021 21:18:11 -0700 (PDT)
+ Mon, 16 Aug 2021 21:18:23 -0700 (PDT)
 From: Anand Moon <linux.amoon@gmail.com>
 To: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
@@ -82,17 +81,17 @@ Cc: Anand Moon <linux.amoon@gmail.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Emiliano Ingrassia <ingrassia@epigenesys.com>,
  Brian Kim <brian.kim@hardkernel.com>
-Subject: [PATCHv3 4/6] arm64: dts: amlogic: odroidc2: use vbus-supply for
- power source for usb nodes
-Date: Tue, 17 Aug 2021 09:45:38 +0530
-Message-Id: <20210817041548.1276-5-linux.amoon@gmail.com>
+Subject: [PATCHv3 5/6] phy: amlogic: meson8b-usb2: Power off the PHY by
+ putting it into reset mode
+Date: Tue, 17 Aug 2021 09:45:39 +0530
+Message-Id: <20210817041548.1276-6-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.32.0
 In-Reply-To: <20210817041548.1276-1-linux.amoon@gmail.com>
 References: <20210817041548.1276-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210816_211812_237019_56B87046 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20210816_211829_099564_48C4771D 
+X-CRM114-Status: GOOD (  10.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,43 +108,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use vbus-supply instead of phy-supply as power source for dwc2
-nodes. Drop vbus-supply for usb0 node, as it will handle later.
-
-Fixes: e841ec956e53 ("ARM64: dts: meson-gxbb-odroidc2:
-       fix usb1 power supply")
+Power off the PHY by putting it into reset mode.
 
 Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
-New patch in this series.
+v2 - None
 ---
- arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/phy/amlogic/phy-meson8b-usb2.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-index 3f4f16a5dedd..01bbfc4c091e 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-@@ -400,12 +400,10 @@ &uart_AO {
+diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
+index 03c061dd5f0d..2aad45c55494 100644
+--- a/drivers/phy/amlogic/phy-meson8b-usb2.c
++++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
+@@ -219,6 +219,10 @@ static int phy_meson8b_usb2_power_off(struct phy *phy)
+ 	clk_disable_unprepare(priv->clk_usb);
+ 	clk_disable_unprepare(priv->clk_usb_general);
  
- &usb0_phy {
- 	status = "disabled";
--	phy-supply = <&usb_otg_pwr>;
- };
++	/* power off the PHY by putting it into reset mode */
++	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET,
++			   REG_CTRL_POWER_ON_RESET);
++
+ 	return 0;
+ }
  
- &usb1_phy {
- 	status = "okay";
--	phy-supply = <&usb_otg_pwr>;
- };
- 
- &usb0 {
-@@ -414,4 +412,5 @@ &usb0 {
- 
- &usb1 {
- 	status = "okay";
-+	vbus-supply = <&usb_otg_pwr>;
- };
 -- 
 2.32.0
 
