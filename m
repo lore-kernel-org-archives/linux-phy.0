@@ -2,88 +2,85 @@ Return-Path: <SRS0=LI2T=NO=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-16.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A69BAC4320E
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Aug 2021 08:57:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 504E3C4338F
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Aug 2021 22:43:53 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6B2E961262
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Aug 2021 08:57:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6B2E961262
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 19F3D6136F
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Aug 2021 22:43:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 19F3D6136F
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EMgcqEeMT6M/XsHsNqRDdEv9vnQqSVxCAuFJKD41bIY=; b=p4siPLbY0HqpCz
-	4VrM7qsJaCVpo4aKECjviTxsk7zqqyH7GDkyVKtHgJ1cHJXiKNqIW1++ixQ4cw9DljawcqfqIrpga
-	UDCLvrXI+G0MMzpKjrpczJOygvLCcOLCRCHlfx5G5NwidlYr84Naz8jgwIp153E+D1P9fQXj4t5/C
-	t9woNQno696LaOYgSjsUjSlcGRMzrYeRRnHz7knG19ppd/8/SZNXupf2FWMPoQI4p+LRBQr0u17oU
-	3RSD/BgtdnhPpk4TeP6C2n8rxmKK+Nv1EqcW4l85HtokQ/POj874Q7fXytCDMMKmhPnkGC6A77E1H
-	2JAiQomtP45YHyMQWVmA==;
+	List-Owner; bh=cbDkwTbv4XyJv8H1T+SNdkU2sCIdblmn5MhwvY9Y3ZI=; b=ZwjA8hqOXHnYhG
+	Ys4efsvc0XAD7JhH+Cn3DPgxN22uoI67PK+R3deoOaJyllQXr3JOzf8Wk9ubKIqlCkoMuY9cN4l1y
+	u38jEthS0qtrau7JnFjLaOiWMupzwCZ7YoGM2Bp0xC2Dp7xbEkkgATNJRhVaGIYgMtQAsrS0xrT/P
+	ZF9wwDUVuv2KitT6xPquXDKTIneS/2ckO5BTPuHtMtXAA7lpACZ3zegDGvdreOg5zpYy37owxwcxa
+	baUn1mWl+iufNSwpXwKoQ8r0iiGK70ge15Lk49RRSCTiNjU9/rk+g7CObAhLbWOng7cMu+Ym2nRC5
+	kug+WfStDTb2+3ZUDJ9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mI5lp-00G1Jt-Op; Mon, 23 Aug 2021 08:57:29 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1mIIfY-000tQ0-J5; Mon, 23 Aug 2021 22:43:52 +0000
+Received: from mail-ot1-f51.google.com ([209.85.210.51])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mI5lk-00G1IZ-Bf
- for linux-phy@lists.infradead.org; Mon, 23 Aug 2021 08:57:28 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 17N8vDGO002694;
- Mon, 23 Aug 2021 03:57:13 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1629709033;
- bh=WloqbnoEgD5ql7FAIG/QNvP+kEgv6SzH3rX8/cmaMwM=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=oJ3vKalrlrkfmdFJtoMkV/PpPiKQfUFgvp2hauydg3fQ5dg+YFYTReTUAC5pSKpwF
- QmQzcYmzV82yn6jJl90ZE7+YH240pooT/EV+70dpaGso/v3V4+i9CXX5Po9naQw2k3
- 5kcW6hVIGp1oEjCqzPsQSoXRJJewOTnNqZjOeLTs=
-Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 17N8vDHH021842
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 23 Aug 2021 03:57:13 -0500
-Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2; Mon, 23
- Aug 2021 03:57:13 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2176.2 via
- Frontend Transport; Mon, 23 Aug 2021 03:57:13 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 17N8vCp7095969;
- Mon, 23 Aug 2021 03:57:13 -0500
-Date: Mon, 23 Aug 2021 14:27:12 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
+ id 1mIIfV-000tOW-6K
+ for linux-phy@lists.infradead.org; Mon, 23 Aug 2021 22:43:51 +0000
+Received: by mail-ot1-f51.google.com with SMTP id
+ i8-20020a056830402800b0051afc3e373aso29462040ots.5
+ for <linux-phy@lists.infradead.org>; Mon, 23 Aug 2021 15:43:47 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Gx5tRxni4JPjQJdOKA2ckEH891YFidYtWQTg4z4AvhU=;
+ b=s1fDjJKTXYXU4GAY4z4IrChZJ1bZKvKfjp9FwnNQ4G/lbNjoxc9UkZoCr0B4RUT5fZ
+ kS1Dy9zuCWUR7uclTnPUkmuWQ8O6VUCNd2rtbcw7KlVqbLBAHHOsI0mg7TbXnPBlq9nJ
+ UFzaCsxU5S+Chua3uDqxXAk2AyPyufODhpFpW5LOqyzJlmvaDSSV1H/Llnf0fx0QT5I0
+ zJJ+ETC+GCyJdYBf9NMVmdXx6e76s9HZlKw/Cmh6KIC2pw0rlHkftPXnyVE2jIYGL49X
+ mJ2SXV5inUALTrNA8CCTuAIAyM6yvB242J2wF7SqowZIw9rfcV7EYMaA6qIKt+UDC9Im
+ zmvQ==
+X-Gm-Message-State: AOAM5336Z4UafihQZNHNMblWRDUbGFwBlL7eFshazS5EIhmwj8ZHkWJj
+ 1iVGbHJlV55+lMnQ9Qlq7w==
+X-Google-Smtp-Source: ABdhPJx15/z0Ao9IpjV+6RPw4A0UFJc4gWmgZ9kjjdmXvWPq6T7IMhFJ8QZpn+vMmsNCFF5lL6pYIw==
+X-Received: by 2002:a05:6808:56:: with SMTP id v22mr669163oic.49.1629758626884; 
+ Mon, 23 Aug 2021 15:43:46 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id e7sm3182070oom.26.2021.08.23.15.43.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Aug 2021 15:43:46 -0700 (PDT)
+Received: (nullmailer pid 2881591 invoked by uid 1000);
+ Mon, 23 Aug 2021 22:43:45 -0000
+Date: Mon, 23 Aug 2021 17:43:45 -0500
+From: Rob Herring <robh@kernel.org>
 To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-CC: Vinod Koul <vkoul@kernel.org>, Paul Kocialkowski
- <paul.kocialkowski@bootlin.com>, Tomi Valkeinen
- <tomi.valkeinen@ideasonboard.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- Nikhil Devshatwar <nikhil.nd@ti.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v4 4/6] phy: dt-bindings: cdns,dphy: make clocks optional
-Message-ID: <20210823085710.mr4iz3fop62efcyj@ti.com>
+Cc: Pratyush Yadav <p.yadav@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, Nikhil Devshatwar <nikhil.nd@ti.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v4 6/6] phy: dt-bindings: cdns,dphy: add Rx DPHY compatible
+Message-ID: <YSQkoVTjemx+nFpS@robh.at.kernel.org>
 References: <20210820190346.18550-1-p.yadav@ti.com>
- <20210820190346.18550-5-p.yadav@ti.com>
- <YSL8mH8hd/PzyRRo@pendragon.ideasonboard.com>
+ <20210820190346.18550-7-p.yadav@ti.com>
+ <YSL9lkLB0wKk9sem@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YSL8mH8hd/PzyRRo@pendragon.ideasonboard.com>
-User-Agent: NeoMutt/20171215
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <YSL9lkLB0wKk9sem@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210823_015724_685434_6B2DBEDE 
-X-CRM114-Status: GOOD (  18.82  )
+X-CRM114-CacheID: sfid-20210823_154349_323627_5D599972 
+X-CRM114-Status: GOOD (  20.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,61 +97,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/08/21 04:40AM, Laurent Pinchart wrote:
+On Mon, Aug 23, 2021 at 04:44:54AM +0300, Laurent Pinchart wrote:
 > Hi Pratyush,
 > 
 > Thank you for the patch.
 > 
-> On Sat, Aug 21, 2021 at 12:33:44AM +0530, Pratyush Yadav wrote:
-> > The clocks are not used by the DPHY when used in Rx mode so make them
-> > optional.
+> On Sat, Aug 21, 2021 at 12:33:46AM +0530, Pratyush Yadav wrote:
+> > The DPHY is treated to be in Tx mode by default. Add a new compatible
+> > for Rx mode DPHYs.
 > > 
 > > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > Acked-by: Rob Herring <robh@kernel.org>
 > > 
 > > ---
 > > 
-> > (no changes since v3)
+> > Changes in v4:
+> > - New in v4.
 > > 
-> > Changes in v3:
-> > - Add Rob's Ack.
-> > 
-> > Changes in v2:
-> > - Re-order subject prefixes.
-> > 
-> >  Documentation/devicetree/bindings/phy/cdns,dphy.yaml | 2 --
-> >  1 file changed, 2 deletions(-)
+> >  Documentation/devicetree/bindings/phy/cdns,dphy.yaml | 3 ++-
+> >  1 file changed, 2 insertions(+), 1 deletion(-)
 > > 
 > > diff --git a/Documentation/devicetree/bindings/phy/cdns,dphy.yaml b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-> > index b90a58773bf2..3bb5be05e825 100644
+> > index d5a5e1f0b671..48b6a841152e 100644
 > > --- a/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
 > > +++ b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-> > @@ -33,8 +33,6 @@ properties:
-> >  required:
-> >    - compatible
-> >    - reg
-> > -  - clocks
-> > -  - clock-names
-> 
-> Could you turn this into a conditional requirement based on the compat
-> string, as the clocks are needed in the TX case ?
-
-Ok, will do.
-
-> 
-> >    - "#phy-cells"
+> > @@ -11,8 +11,9 @@ maintainers:
 > >  
-> >  additionalProperties: false
+> >  properties:
+> >    compatible:
+> > -    items:
+> > +    oneOf:
+> >        - const: cdns,dphy
+> > +      - const: cdns,dphy-rx
 > 
-> -- 
-> Regards,
+> It's customary to use an enum instead:
 > 
-> Laurent Pinchart
+>   compatibles:
+>     enum:
+>       - cdns,dphy
+>       - cdns,dphy-tx
+> 
+> I don't know if Rob has a preference for consistency (or for any other
+> reason). In either case,
 
--- 
-Regards,
-Pratyush Yadav
-Texas Instruments Inc.
+Yes, use enum.
+
+Rob
 
 -- 
 linux-phy mailing list
