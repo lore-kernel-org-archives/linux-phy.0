@@ -2,79 +2,81 @@ Return-Path: <SRS0=C1RB=NR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E3476C4320A
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Aug 2021 12:41:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D72ECC432BE
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Aug 2021 13:26:21 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id AD75A610A4
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Aug 2021 12:41:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org AD75A610A4
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=rock-chips.com
+	by mail.kernel.org (Postfix) with ESMTPS id A328B610C9
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Aug 2021 13:26:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A328B610C9
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jeID4vnZ2zh11Awih6uF0cbFD2mXUVw35SYbZ2fu2Zc=; b=HuiYL4yK32uNoj
-	H9fHgN5/vnxQ4nWK7hCvgYq8WoWiaO6NDGj56LA3oWUu+7p/B4/1AF/yXGVm36ISqW+zofvxhjfyx
-	zlBQMs0Dr2ICuzV2bRSYlqymgdCWJeytHyuofjBP7z5HQXh6y/lcpJuHUqnIA0NsgillnPVT7daBL
-	TU/NE2jHiNkrcH0C+dVuTvHofJcML6I6OOwWwj75iRec2P/Nq9eJUKLlaXxHFRyrF93w7gqvBUqRW
-	Q0tw1dk8U5j/GJaPgB3rt7hgBFakDSWfm+mQueeXSY4cB3mgE0KQtuMERNvGHWdTTPAr//rg7vgH3
-	3maeuhiAiNewLUYcKqNg==;
+	List-Owner; bh=5sCgi8JgpclyDzsQt8+IFpz/+Ur1HyhCy5KPKpOj7Hk=; b=FYnUkhlAGFYi79
+	zcqkDZa8v/3Y3XeG8JWk6jDNW1JHQ4LeN5sp1AtizK1InKCPMhUBVbRzBzykVL4oyKWQUrcYKc8NQ
+	U8XpEFwGzZXGBuBhm5TmUMiT6uZFLiA2xbMHd/J2YqYBk9jETorulxYea8HZR3AuhAYUknNjLkzei
+	k0hfztRxgF6EFs4jV83odzMNNGgGV0lkJr5VF888gn1OuBhmfWeBrB97cc8XkrtA78e0jgsCULF+K
+	uoe5dyarW6vDUUeWild/z0Qefv2xsI3uWor1lxnx+wInCKDtafDi0CM+wSyJy5mJpHFVPu28xi1Ek
+	AOs+GqWwhL1fO1ladhmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mJEhB-00A7tn-Sa; Thu, 26 Aug 2021 12:41:25 +0000
-Received: from lucky1.263xmail.com ([211.157.147.135])
+	id 1mJFOf-00AEtf-5n; Thu, 26 Aug 2021 13:26:21 +0000
+Received: from mail-oi1-f181.google.com ([209.85.167.181])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mJEeq-00A6zy-Nf; Thu, 26 Aug 2021 12:39:06 +0000
-Received: from localhost (unknown [192.168.167.235])
- by lucky1.263xmail.com (Postfix) with ESMTP id 06472B2CBA;
- Thu, 26 Aug 2021 20:38:51 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P32763T139761010153216S1629981525980003_; 
- Thu, 26 Aug 2021 20:38:51 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <873f58238d50a8cc07e4d0550ef12971>
-X-RL-SENDER: yifeng.zhao@rock-chips.com
-X-SENDER: zyf@rock-chips.com
-X-LOGIN-NAME: yifeng.zhao@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-RCPT-COUNT: 12
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-System-Flag: 0
-From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-To: heiko@sntech.de,
-	robh+dt@kernel.org
-Cc: devicetree@vger.kernel.org, vkoul@kernel.org,
- michael.riesch@wolfvision.net, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, kishon@ti.com, p.zabel@pengutronix.de,
- Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Subject: [PATCH v1 1/3] dt-bindings: phy: rockchip: Add Naneng combo PHY
- bindings
-Date: Thu, 26 Aug 2021 20:38:42 +0800
-Message-Id: <20210826123844.8464-2-yifeng.zhao@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20210826123844.8464-1-yifeng.zhao@rock-chips.com>
+ id 1mJFOT-00AEqo-Qf; Thu, 26 Aug 2021 13:26:13 +0000
+Received: by mail-oi1-f181.google.com with SMTP id 6so4498830oiy.8;
+ Thu, 26 Aug 2021 06:26:09 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
+ :message-id;
+ bh=MVwvIDZK2/7Y4951WHMhhdQzU7LUf/3BWIAcj7PEAtg=;
+ b=fykYuwSaNSOsTdE+CES+oENQRTIKPH8u4nOHIbwG9swzMmhcxyDPBAHpfhDXI4+Rxa
+ JFb4jYKUYAsnMPCzlwZ6Msxz548Vdh8qFH86bf/mEk0Le2o+Dwx3KvZcGQIunbG7EK7c
+ vmG6fmfUf4Zu6LmmvU2fOsXFdhC4hNplk6k+T1Dm4tfpYn4filxUSX0hFVhRKxIqMcXN
+ S40fjvdv2akn7H8UoKGDQX2Qetc70GZ/Th0U907pwS8YjlEo6QMn8uRgd/Xsw5czSW34
+ uKbwLysZ++27IIBH64rgHM7QHqhh43Yc+rjgAca1UFI+TScxILC7Rw4TGUGInGfyaIcP
+ xJOA==
+X-Gm-Message-State: AOAM531dW/maTztuDa0kvwRNBOg2WdBQAfHXA8bYgTxd6ttsqVUQkV03
+ tL1XQ0jjCwhmqqOd0N/uUw==
+X-Google-Smtp-Source: ABdhPJxQgh36d/Z8oPQJ2kZdPSroKU7uJI2G1etE76FJfI7pF24X/EZtJ5/N57d2bHja0Z6MHeT+MA==
+X-Received: by 2002:aca:b808:: with SMTP id i8mr10141154oif.62.1629984368953; 
+ Thu, 26 Aug 2021 06:26:08 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id x1sm554628otu.8.2021.08.26.06.26.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 26 Aug 2021 06:26:07 -0700 (PDT)
+Received: (nullmailer pid 1033392 invoked by uid 1000);
+ Thu, 26 Aug 2021 13:26:01 -0000
+From: Rob Herring <robh@kernel.org>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Cc: linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-phy@lists.infradead.org, vkoul@kernel.org, heiko@sntech.de,
+ michael.riesch@wolfvision.net, kishon@ti.com, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, p.zabel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20210826123844.8464-2-yifeng.zhao@rock-chips.com>
 References: <20210826123844.8464-1-yifeng.zhao@rock-chips.com>
+ <20210826123844.8464-2-yifeng.zhao@rock-chips.com>
+Subject: Re: [PATCH v1 1/3] dt-bindings: phy: rockchip: Add Naneng combo PHY
+ bindings
+Date: Thu, 26 Aug 2021 08:26:01 -0500
+Message-Id: <1629984361.449016.1033391.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210826_053901_320595_0B3615D0 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20210826_062609_952166_D4E4CA98 
+X-CRM114-Status: GOOD (  11.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,125 +94,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the compatible strings for the Naneng combo PHY found on rockchip SoC.
+On Thu, 26 Aug 2021 20:38:42 +0800, Yifeng Zhao wrote:
+> Add the compatible strings for the Naneng combo PHY found on rockchip SoC.
+> 
+> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+> ---
+> 
+>  .../phy/phy-rockchip-naneng-combphy.yaml      | 100 ++++++++++++++++++
+>  1 file changed, 100 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+> 
 
-Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
----
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
 
- .../phy/phy-rockchip-naneng-combphy.yaml      | 100 ++++++++++++++++++
- 1 file changed, 100 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+yamllint warnings/errors:
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-new file mode 100644
-index 000000000000..69908614609c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-@@ -0,0 +1,100 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/phy-rockchip-naneng-combphy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip SoC Naneng Combo Phy Device Tree Bindings
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - rockchip,rk3568-naneng-combphy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    minItems: 1
-+    items:
-+      - description: reference clock
-+      - description: apb clock
-+      - description: pipe clock
-+
-+  clock-names:
-+    minItems: 1
-+    items:
-+      - const: ref
-+      - const: apb
-+      - const: pipe
-+
-+  '#phy-cells':
-+    const: 1
-+
-+  resets:
-+    minItems: 1
-+    items:
-+      - description: exclusive apb reset line
-+      - description: exclusive PHY reset line
-+
-+  reset-names:
-+    minItems: 1
-+    items:
-+      - const: combphy-apb
-+      - const: combphy
-+
-+  rockchip,pipe-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Some additional phy settings are access through GRF regs.
-+
-+  rockchip,pipe-phy-grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Some additional pipe settings are access through GRF regs.
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - '#phy-cells'
-+  - resets
-+  - reset-names
-+  - rockchip,pipe-grf
-+  - rockchip,pipe-phy-grf
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+
-+    #include <dt-bindings/clock/rk3568-cru.h>
-+
-+    pipegrf: syscon@fdc50000 {
-+      compatible = "rockchip,rk3568-pipegrf", "syscon";
-+      reg = <0xfdc50000 0x1000>;
-+    };
-+
-+    pipe_phy_grf0: syscon@fdc70000 {
-+      compatible = "rockchip,pipe-phy-grf", "syscon";
-+      reg = <0xfdc70000 0x1000>;
-+    };
-+
-+    combphy0_us: phy@fe820000 {
-+      compatible = "rockchip,rk3568-naneng-combphy";
-+      reg = <0xfe820000 0x100>;
-+      #phy-cells = <1>;
-+      clocks = <&pmucru CLK_PCIEPHY0_REF>, <&cru PCLK_PIPEPHY0>,
-+        <&cru PCLK_PIPE>;
-+      clock-names = "ref", "apb", "pipe";
-+      assigned-clocks = <&pmucru CLK_PCIEPHY0_REF>;
-+      assigned-clock-rates = <100000000>;
-+      resets = <&cru SRST_P_PIPEPHY0>, <&cru SRST_PIPEPHY0>;
-+      reset-names = "combphy-apb", "combphy";
-+      rockchip,pipe-grf = <&pipegrf>;
-+      rockchip,pipe-phy-grf = <&pipe_phy_grf0>;
-+    };
--- 
-2.17.1
+dtschema/dtc warnings/errors:
+Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.example.dt.yaml:0:0: /example-0/syscon@fdc50000: failed to match any schema with compatible: ['rockchip,rk3568-pipegrf', 'syscon']
+Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.example.dt.yaml:0:0: /example-0/syscon@fdc70000: failed to match any schema with compatible: ['rockchip,pipe-phy-grf', 'syscon']
 
+doc reference errors (make refcheckdocs):
 
+See https://patchwork.ozlabs.org/patch/1521096
+
+This check can fail if there are any dependencies. The base for a patch
+series is generally the most recent rc1.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit.
 
 
 -- 
