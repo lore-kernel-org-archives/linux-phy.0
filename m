@@ -2,19 +2,20 @@ Return-Path: <SRS0=dQyd=NT=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AEA43C432BE
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Aug 2021 16:00:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A2C54C432BE
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Aug 2021 16:07:13 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7787960E78
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Aug 2021 16:00:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 7787960E78
+	by mail.kernel.org (Postfix) with ESMTPS id 6DE7E60E93
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Aug 2021 16:07:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6DE7E60E93
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,56 +24,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gZkxjFg6BqMas40Jgu6/PkgNhgD5nrJaY8ilbbJfWfE=; b=RapI0Pred2sPRu
-	ujKzTPXf9d714HNi0o4SwF/IwHfp7I0VC2fnZOpIPGXArr5Fp31LWawfBH6XvNgtScRXjOOkuQMdA
-	dzNJdUKu1zP0yAoqVH8osQW7nZy4ObkTw3F0vWCEUBkg0Jxgok5cjJqIwNM4e6d6cORBBMze0hVSj
-	TvraUul782/DrQ8pXeq6U+iEeejKg9IC5Kz0mYBbtwoZOrx7lMzeZWq7W4L7E/CVjvXv8yOAE68ao
-	iVR2XuA8cjUtWRQ5XjOe9A344atVzCRSsKQlYounIbnaU6IzSIm5WzANujFWFnriCrjyJXvDNR+yH
-	uJ4sotTCZf9SQcfcoZYw==;
+	List-Owner; bh=7rVnLu6cbhLiKKB4DxVMILrvhGl7tkjd2kyR6j2WI6U=; b=DGxPmgYESXoxTj
+	jZgB5gqKY0UkZEAIP8AOil+tSVJBTkAN8WaGvNhghKFxVLeXckALumT7P3ZK5m/bChB1z/FZuDioT
+	gNonUG2LLQQg9BIz9+i+Uz/4C6pYauzBnRajQHi6d+BOzzzliN0xHEkCkw92wQqzNTFoBWziHpxFR
+	PTJ1RZjWNpG5NRtYNX8f2wBJ0BvjT+Orgo40s+xJVQRuJN9fmPOUk3vBeMe1SoyWW8NZY6nWjEC6h
+	Dasgw1wkoaa10vDIZ3EOEwY2za5AsxPz8/QIAwTZq03aV2NbUA25LBhROtVpD+RamONlUuIG/QOOR
+	18bn9qwqeD/RnXcn1vLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mK0lC-00ESL8-WC; Sat, 28 Aug 2021 16:00:47 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1mK0rQ-00ETRJ-Vk; Sat, 28 Aug 2021 16:07:13 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mK0l7-00ESIp-9x; Sat, 28 Aug 2021 16:00:45 +0000
-Received: by mail-ej1-x629.google.com with SMTP id ia27so20740160ejc.10;
- Sat, 28 Aug 2021 09:00:40 -0700 (PDT)
+ id 1mK0rM-00ETPo-2v; Sat, 28 Aug 2021 16:07:12 +0000
+Received: by mail-ej1-x631.google.com with SMTP id me10so20750337ejb.11;
+ Sat, 28 Aug 2021 09:07:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=q+Lu3zsplYuNKF2IF+QmpVTl2y5bBSCP+aSg8wuwsiw=;
- b=HF+xsgvsnrJrPToIAqza2r4D+a2I4uKoEWs4qUPB9ZtxE2lP61oybEuf71lmwwsehc
- chY8Av/MqB3ykfHwW0Ja5AxiiZmS4/DeXKkolm4txdYKhEzQZ5l138XMO3+VGsgrn+CR
- qwuu/5OM9ZpeW453SAUOh2G0AL+xSwJflEuEAGZTKZRElo1NZcF6YyQ3H8TiHqZmsX9W
- cIp2roGNC2b7of6WssIXw6mppEIUbFl7OvHHsaudDCz6Zt2sFliwpt/O0M5kPzE1zl1N
- 756MlwT00hoeEpixvex5O9YwQCeeFTh1XN4lFUY34JKFo2eSz4EfQNcOSLu2WHn5h/N7
- mH3A==
+ :cc; bh=LL6/XDkELtJGzj7bv+EahXfdLznXO7JwuHps8bbcfhg=;
+ b=IxCiQofbwWRdmlbWjkVYx9X0EwfA39yCRnGNeY1wQV8OrMMlSQWxSls8SpJMz++KMN
+ qXEBGA4rb0o4u786EA2smvODJVR/pu2m2Au85UJFLjaA9aedW+LGw+1DZiU2bT2pb2XA
+ R8iSXn/xB5WrENK+gXk2EfZTYPq3CZInmY18qzufbFgrOvw7NOa5wWIVKgsnX+gfYPgp
+ VKXeZfubEYmLnF6CEVopa/vYmHqVOilZuXIfInX8N2S1BZkmqOE4cd+dSmWV4sdhJeUR
+ K4f3we13o6+kHoJleAleDR3KNs3gLhTmFxmhzlJ8pIowJqL53kq5azuBv0pwWdt2y3ps
+ d9Mg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=q+Lu3zsplYuNKF2IF+QmpVTl2y5bBSCP+aSg8wuwsiw=;
- b=lnDk1agitAQ53KVq5Rl1ZzmMCQuNtvlvBFbtXKjZ5tKKH7GctGFdEeY19CKiu4NQns
- HR8D/2cXwvGHBLPxb1RVBgmtUXW3sgEfY3DPd4ecv8xtaYfCA13ZdNtxlBPuQrslw2Qd
- orlOHey8nRqVv4udMcBwNRonyeej5P67FttnC6rN1z1/c2gburkgUp+6NR98XDou90qg
- 8uqz7ypbHQOha75uGeyIgdax+bmc7bEMJv2eCPTeAwUh852reMduTVK05bLN0y0/mibG
- 45vnVm1OTsJERZyzOP/PUdwRzVEWdtPPELHkW4Vz9EjtiY6LDSYYa9T4rj5uoND7T5Rw
- 4eWw==
-X-Gm-Message-State: AOAM532GYyupcE1UAnrj4v7rZlqD0Wv95K++KVg4wuVSfUFkKhxrW8k3
- GmGyvgylSoyzdeOKD7ECQNC5P8iIoQjP2B1GKpA=
-X-Google-Smtp-Source: ABdhPJwD2vEA5j8yQQHHv0y4xe5OPRu0rQ5pLqz4tIRsU3/TzhWBp80jORvSGA8DCjkphVreH8wjKsmX3LcpVwfxUqE=
+ bh=LL6/XDkELtJGzj7bv+EahXfdLznXO7JwuHps8bbcfhg=;
+ b=gcDF9muLX/LVF1RRpwqwNg7q0swkFAtVxsGTV/MGGQN6bTSL4yi7CYz8fI9GqCumiC
+ bBBSS6/n8dK8hw/GT/XWCNk9XukxE9VfYyj46UYzCoNhKqYq3veWI4UBqzlqqsZCiJas
+ wFBxVe+n7hD66xpw1f898bLo+hTr7LIreL98mBw2ffEZvTsGS4gt6OapJzM9S+xxh0mj
+ LrsB7eZ/zVuQWJ/Agkeb5ioNpozbMtFycROO2rc6QpQQJ3Dcu0WWfi+a+G458k91ns/9
+ LUET3mdfAkvefQAq9a6UnGbifyj9s7UxDmzXKD2gXP5lWkrlLIOuB9eoJXTX5O5PWbIO
+ 5toA==
+X-Gm-Message-State: AOAM530HTAZxzL/KXVB84Q2I/hy3Pn6ot9iH05Rp24IYeq7JQqZgBvUE
+ yEWyB27kALFiuLbjcJRoKXTswl3hLYThMchK3TUhqdFAlDo=
+X-Google-Smtp-Source: ABdhPJyPZVzHL76lGJOroGS4GEkuoeintMbGC3iDT8wzVLyfCWlNhiw7RFWxKmQZ7hYxPdW7PTXctCG+cmMAPDPpHeM=
 X-Received: by 2002:a17:906:369a:: with SMTP id
- a26mr15768976ejc.539.1630166438950; 
- Sat, 28 Aug 2021 09:00:38 -0700 (PDT)
+ a26mr15801598ejc.539.1630166826553; 
+ Sat, 28 Aug 2021 09:07:06 -0700 (PDT)
 MIME-Version: 1.0
 References: <20210817041548.1276-1-linux.amoon@gmail.com>
- <20210817041548.1276-4-linux.amoon@gmail.com>
-In-Reply-To: <20210817041548.1276-4-linux.amoon@gmail.com>
+ <20210817041548.1276-5-linux.amoon@gmail.com>
+In-Reply-To: <20210817041548.1276-5-linux.amoon@gmail.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 28 Aug 2021 18:00:28 +0200
-Message-ID: <CAFBinCAx33SnuL8n1GF8nz2Q4giNR8tsWxjU32X0wsb6kR_nhw@mail.gmail.com>
-Subject: Re: [PATCHv3 3/6] arm64: dts: amlogic: odroidc2: Fix the chip enable
- signal for usb power
+Date: Sat, 28 Aug 2021 18:06:55 +0200
+Message-ID: <CAFBinCDDASbbwBWdPnzq4352yepamD-ziG09Ki=BvjZ9xMLXdQ@mail.gmail.com>
+Subject: Re: [PATCHv3 4/6] arm64: dts: amlogic: odroidc2: use vbus-supply for
+ power source for usb nodes
 To: Anand Moon <linux.amoon@gmail.com>
 Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
  linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org, 
@@ -80,12 +81,10 @@ Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>, 
  Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Emiliano Ingrassia <ingrassia@epigenesys.com>,
- Brian Kim <brian.kim@hardkernel.com>
+ Emiliano Ingrassia <ingrassia@epigenesys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210828_090041_407323_6C7F1670 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210828_090708_236683_813960B0 
+X-CRM114-Status: GOOD (  10.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,25 +103,31 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Anand,
 
-On Tue, Aug 17, 2021 at 6:17 AM Anand Moon <linux.amoon@gmail.com> wrote:
+On Tue, Aug 17, 2021 at 6:18 AM Anand Moon <linux.amoon@gmail.com> wrote:
 >
-> Fix the chip enable signal changing from Active High to Active Low
-> to enable input power to USB power. Also updated signal name as per
-> the schematics.
-according to [0] (page 12) Odroid-C2 uses an "RT9715EGB" for USB OTG power
-The datasheet for that power switch [1] mentions on page page 1 that
-the "E" stands for "E : 1.1A/Active High"
+> Use vbus-supply instead of phy-supply as power source for dwc2
+> nodes. Drop vbus-supply for usb0 node, as it will handle later.
+This is more of a question than a review comment:
+Do you think that the USB power setup on Odroid-C1 and Odroid-C2 is
+different or the same?
+On Odroid-C1 we know that only the PWREN signal which goes to the
+Micro-USB connector is configurable while VBUS for the USB host ports
+is always enabled.
 
-Can you please elaborate how you have tested this to confirm that
-active low is the correct polarity?
+> Fixes: e841ec956e53 ("ARM64: dts: meson-gxbb-odroidc2:
+>        fix usb1 power supply")
+>
+most Linux commits which I have seen don't use a blank line here
+Also I think it's recommended not to break the "Fixes" tag into
+multiple lines, even if the text is long
+see [0] for example
 
 
 Best regards,
 Martin
 
 
-[0] https://dn.odroid.com/S905/Schematic/odroid-c2_rev0.1_20150930.pdf
-[1] https://www.richtek.com/assets/product_file/RT9715/DS9715-03.pdf
+[0] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=425bec0032f59eeee12520085cd054fac09cc66e
 
 -- 
 linux-phy mailing list
