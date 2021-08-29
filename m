@@ -1,90 +1,64 @@
-Return-Path: <SRS0=dQyd=NT=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=/UzO=NU=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-12.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A2C54C432BE
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Aug 2021 16:07:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2E0B7C4320A
+	for <linux-phy@archiver.kernel.org>; Sun, 29 Aug 2021 18:25:06 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6DE7E60E93
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Aug 2021 16:07:13 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6DE7E60E93
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
+	by mail.kernel.org (Postfix) with ESMTPS id AB95E60F23
+	for <linux-phy@archiver.kernel.org>; Sun, 29 Aug 2021 18:25:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org AB95E60F23
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=intel.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7rVnLu6cbhLiKKB4DxVMILrvhGl7tkjd2kyR6j2WI6U=; b=DGxPmgYESXoxTj
-	jZgB5gqKY0UkZEAIP8AOil+tSVJBTkAN8WaGvNhghKFxVLeXckALumT7P3ZK5m/bChB1z/FZuDioT
-	gNonUG2LLQQg9BIz9+i+Uz/4C6pYauzBnRajQHi6d+BOzzzliN0xHEkCkw92wQqzNTFoBWziHpxFR
-	PTJ1RZjWNpG5NRtYNX8f2wBJ0BvjT+Orgo40s+xJVQRuJN9fmPOUk3vBeMe1SoyWW8NZY6nWjEC6h
-	Dasgw1wkoaa10vDIZ3EOEwY2za5AsxPz8/QIAwTZq03aV2NbUA25LBhROtVpD+RamONlUuIG/QOOR
-	18bn9qwqeD/RnXcn1vLw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=42OCjPxjF2xWKMlUWFdmWBDR6XKYWlTtdgwziwqosNI=; b=h42zlbmv6vYKA2
+	wKiJgQjwdpoBJJCNXc5/Rj+en0cDoJBBb3xMuLK3xobQEl5cBydPSPBwpMOa15H5IY1lkhboDKVH/
+	g4fDJBaMrYOVkhBPBaUaUQ648TrHLC5p74ZIYQOTK4kmPLQRPGUB+l7e+EH1EdZH/4LDfY+HfxeL3
+	UwoRjb8iSyG/nOsU+k7lDeOLkYQktESfFRBIlOlRDSvLUdiLdSVwc8jUm3ZmC8s9i5neIVNkdeIa+
+	NaEiXvm1myEm8ES5aiBpLB40WndhYpRDfrMYdUyILvaus5h2eT599y9SqZcjGwuRgBBssxTN0kmUn
+	UP5hDqBREfTBeLdShnqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mK0rQ-00ETRJ-Vk; Sat, 28 Aug 2021 16:07:13 +0000
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	id 1mKPUP-00FsLF-24; Sun, 29 Aug 2021 18:25:05 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mK0rM-00ETPo-2v; Sat, 28 Aug 2021 16:07:12 +0000
-Received: by mail-ej1-x631.google.com with SMTP id me10so20750337ejb.11;
- Sat, 28 Aug 2021 09:07:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LL6/XDkELtJGzj7bv+EahXfdLznXO7JwuHps8bbcfhg=;
- b=IxCiQofbwWRdmlbWjkVYx9X0EwfA39yCRnGNeY1wQV8OrMMlSQWxSls8SpJMz++KMN
- qXEBGA4rb0o4u786EA2smvODJVR/pu2m2Au85UJFLjaA9aedW+LGw+1DZiU2bT2pb2XA
- R8iSXn/xB5WrENK+gXk2EfZTYPq3CZInmY18qzufbFgrOvw7NOa5wWIVKgsnX+gfYPgp
- VKXeZfubEYmLnF6CEVopa/vYmHqVOilZuXIfInX8N2S1BZkmqOE4cd+dSmWV4sdhJeUR
- K4f3we13o6+kHoJleAleDR3KNs3gLhTmFxmhzlJ8pIowJqL53kq5azuBv0pwWdt2y3ps
- d9Mg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LL6/XDkELtJGzj7bv+EahXfdLznXO7JwuHps8bbcfhg=;
- b=gcDF9muLX/LVF1RRpwqwNg7q0swkFAtVxsGTV/MGGQN6bTSL4yi7CYz8fI9GqCumiC
- bBBSS6/n8dK8hw/GT/XWCNk9XukxE9VfYyj46UYzCoNhKqYq3veWI4UBqzlqqsZCiJas
- wFBxVe+n7hD66xpw1f898bLo+hTr7LIreL98mBw2ffEZvTsGS4gt6OapJzM9S+xxh0mj
- LrsB7eZ/zVuQWJ/Agkeb5ioNpozbMtFycROO2rc6QpQQJ3Dcu0WWfi+a+G458k91ns/9
- LUET3mdfAkvefQAq9a6UnGbifyj9s7UxDmzXKD2gXP5lWkrlLIOuB9eoJXTX5O5PWbIO
- 5toA==
-X-Gm-Message-State: AOAM530HTAZxzL/KXVB84Q2I/hy3Pn6ot9iH05Rp24IYeq7JQqZgBvUE
- yEWyB27kALFiuLbjcJRoKXTswl3hLYThMchK3TUhqdFAlDo=
-X-Google-Smtp-Source: ABdhPJyPZVzHL76lGJOroGS4GEkuoeintMbGC3iDT8wzVLyfCWlNhiw7RFWxKmQZ7hYxPdW7PTXctCG+cmMAPDPpHeM=
-X-Received: by 2002:a17:906:369a:: with SMTP id
- a26mr15801598ejc.539.1630166826553; 
- Sat, 28 Aug 2021 09:07:06 -0700 (PDT)
-MIME-Version: 1.0
-References: <20210817041548.1276-1-linux.amoon@gmail.com>
- <20210817041548.1276-5-linux.amoon@gmail.com>
-In-Reply-To: <20210817041548.1276-5-linux.amoon@gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 28 Aug 2021 18:06:55 +0200
-Message-ID: <CAFBinCDDASbbwBWdPnzq4352yepamD-ziG09Ki=BvjZ9xMLXdQ@mail.gmail.com>
-Subject: Re: [PATCHv3 4/6] arm64: dts: amlogic: odroidc2: use vbus-supply for
- power source for usb nodes
-To: Anand Moon <linux.amoon@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org, 
- devicetree@vger.kernel.org, Matt Corallo <oc2udbzfd@mattcorallo.com>, 
- Rob Herring <robh+dt@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Emiliano Ingrassia <ingrassia@epigenesys.com>
+ id 1mKPUC-00FsIb-Ez; Sun, 29 Aug 2021 18:24:53 +0000
+X-IronPort-AV: E=McAfee;i="6200,9189,10091"; a="218212253"
+X-IronPort-AV: E=Sophos;i="5.84,361,1620716400"; d="scan'208";a="218212253"
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 29 Aug 2021 11:24:49 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.84,361,1620716400"; d="scan'208";a="445519073"
+Received: from coresw01.iind.intel.com ([10.106.46.194])
+ by orsmga002.jf.intel.com with ESMTP; 29 Aug 2021 11:24:44 -0700
+From: rashmi.a@intel.com
+To: michal.simek@xilinx.com, ulf.hansson@linaro.org, linux-mmc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kishon@ti.com, vkoul@kernel.org, andriy.shevchenko@linux.intel.com,
+ linux-phy@lists.infradead.org
+Cc: mgross@linux.intel.com, kris.pan@linux.intel.com, furong.zhou@intel.com,
+ mallikarjunappa.sangannavar@intel.com, adrian.hunter@intel.com,
+ mahesh.r.vaidya@intel.com, nandhini.srikandan@intel.com, rashmi.a@intel.com
+Subject: [PATCH v2 0/4] Add support of eMMC PHY for Intel Thunder Bay
+Date: Sun, 29 Aug 2021 23:54:39 +0530
+Message-Id: <20210829182443.30802-1-rashmi.a@intel.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210828_090708_236683_813960B0 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20210829_112452_587381_33B3BE86 
+X-CRM114-Status: GOOD (  11.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,38 +70,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Anand,
+From: Rashmi A <rashmi.a@intel.com>
 
-On Tue, Aug 17, 2021 at 6:18 AM Anand Moon <linux.amoon@gmail.com> wrote:
->
-> Use vbus-supply instead of phy-supply as power source for dwc2
-> nodes. Drop vbus-supply for usb0 node, as it will handle later.
-This is more of a question than a review comment:
-Do you think that the USB power setup on Odroid-C1 and Odroid-C2 is
-different or the same?
-On Odroid-C1 we know that only the PWREN signal which goes to the
-Micro-USB connector is configurable while VBUS for the USB host ports
-is always enabled.
-
-> Fixes: e841ec956e53 ("ARM64: dts: meson-gxbb-odroidc2:
->        fix usb1 power supply")
->
-most Linux commits which I have seen don't use a blank line here
-Also I think it's recommended not to break the "Fixes" tag into
-multiple lines, even if the text is long
-see [0] for example
+This patch set enables the support for eMMC PHY on the Intel Thunder 
+Bay SoC. eMMC PHY is based on arasan phy.
+ 
+Patch 1 Adds arasan sdhci support for eMMC in Intel Thunder Bay.
+Patch 2 Adds arasan sdhci dt bindings.
+Patch 3 Holds the device tree binding documentation for eMMC PHY
+	and listings of new files in MAINTAINERS file.
+Patch 4 Holds the eMMC PHY driver.
 
 
-Best regards,
-Martin
+Rashmi A (4):
+  mmc: sdhci-of-arasan: Add intel Thunder Bay SOC support to the arasan
+    eMMC driver
+  dt-bindings: mmc: Add bindings for Intel Thunder Bay SoC
+  dt-bindings: phy: intel: Add Thunder Bay eMMC PHY bindings
+  phy: intel: Add Thunder Bay eMMC PHY support
 
+ .../devicetree/bindings/mmc/arasan,sdhci.yaml |  25 +
+ .../phy/intel,phy-thunderbay-emmc.yaml        |  46 ++
+ MAINTAINERS                                   |   7 +
+ drivers/mmc/host/sdhci-of-arasan.c            |  29 +-
+ drivers/phy/intel/Kconfig                     |  10 +
+ drivers/phy/intel/Makefile                    |   1 +
+ drivers/phy/intel/phy-intel-thunderbay-emmc.c | 512 ++++++++++++++++++
+ 7 files changed, 629 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/intel,phy-thunderbay-emmc.yaml
+ create mode 100644 drivers/phy/intel/phy-intel-thunderbay-emmc.c
 
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=425bec0032f59eeee12520085cd054fac09cc66e
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
