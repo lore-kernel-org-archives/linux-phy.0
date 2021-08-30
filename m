@@ -2,94 +2,89 @@ Return-Path: <SRS0=KiND=NV=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A3EF3C432BE
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 18:09:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A0E64C432BE
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 19:37:31 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6CB1560FD9
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 18:09:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6CB1560FD9
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 67CA460F91
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 19:37:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 67CA460F91
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jCRV8Gwu9gdGHV7AfDZbRoRcAsVv+y4DSIRJqan++24=; b=ndV6dOUkXAlKu8
-	Ha0f4nXRdhNk7W/fexNmPjTgJBOZilYfL3WQ85x12pt2G5aU3GUdMu3AHsXBKP00STF9M8WgqoaPK
-	6FAXz1r1YyoVwDxd9S8AwZA8oC4DCH2jImkmQR8DlGWiC8eCA+2qDZYH31/ARCfQK6R6IUT4jsfQi
-	B3/ebFhtmOEvdJkWnU7z/gPNboW59ohGwIEocByrtclZy08fLPSElTg/6eQmFBI4fxASdpSCi16tg
-	Ijcz+NnYB8v/HIHfxWeuxXsXLzLDoY0gBfD6v5RtDHpAZmkLUZl+dS2t/GXfjdQcUcFMMVmv2WRxK
-	bghkcm5IimkSihbqMicw==;
+	List-Owner; bh=8c11SVxJGYTbDnQKt53HzZMmFlOP1os6S7ITZc7UWq8=; b=o45bYYdAobx7bk
+	KGmSqigKD6wW03HkJpQ1nCCKRtGB2y5CYVbfqLiozSSEqY8a81/RLMLwXAEqhuIvJUVLMKvmyzvl1
+	rkPkl4qwhmwjuY6SfXcg0a0mK6hF2KbWYhYmxhWKDF0agRZX1w4CuEjrOovzmOEmBkEFd8sWtpi4M
+	JF5dutSSw4vrv7wqO+GYU90wKJnpIvfnmLwsCcQASOgbs8PyiBiHrY7P2vHDJxkhtrMe/eLdd83qJ
+	bCogrLICjCTSv0fwP+qtxpIjX5uRUqssg7ncqLwsyTc7/qAVGPlNclQAgO8nnOhct8I5YgMjlFehL
+	NFaB8FPngtW+YY7LrV4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mKlj0-000HsZ-NS; Mon, 30 Aug 2021 18:09:38 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1mKn62-000Rh4-Vb; Mon, 30 Aug 2021 19:37:30 +0000
+Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mKlhp-000HPH-6V; Mon, 30 Aug 2021 18:08:27 +0000
-Received: by mail-lf1-x129.google.com with SMTP id p38so33115744lfa.0;
- Mon, 30 Aug 2021 11:08:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=tNH9p1ySBp4UZ8l/t50r11EkpzeUvSvC0XpafPg6xs0=;
- b=CLXnwhdy6MXOOs8SpSpXTbPLfWqbua6tNBBcKMjLuz7YVXiC+rV5E1AskEoFwqy/lN
- KP6W0T7UEpHHgWRXeBIrkzMRgryNt4IPSHo9U5QRFLi1boBUIljgImhpaciXL3bo6yzb
- Rsr2pN144ecPzwBy5yD6tJqEbHN5SJJPsGn2k/6eUrkJuz6OWgg3jbublEV8KjUGyW9U
- UUzzKckWEhRMhB6FFrUt2aukzQ3Ny+FJqmeC1htOq9olg4giDoAT2bTPhoKTr+5ZOc1X
- 9LD42iEuP/dEq+cY8t3iDKapUdIVN4DVUpFq02KsOMX8Vu8Z6gGIS9Vx8C4wW9nT5vBe
- sHEw==
+ id 1mKn5x-000Rg1-UJ; Mon, 30 Aug 2021 19:37:30 +0000
+Received: by mail-ed1-x532.google.com with SMTP id eb14so14060969edb.8;
+ Mon, 30 Aug 2021 12:37:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uTABDWDNLKg61M+R3vjb71MHbfemSFy2AY4zPlg2nE8=;
+ b=bXr0Gort95NFKAp8VD/ml/V5CY8ZNac0oRXnVY1cowlNNobODHOf9Q0XPK7aaT0DjW
+ 8W2RbQj1Wvp+hIQiJt8IseE4/rdqjErLk6nXxYtNWhV+BYcTUpskIFQfq88hd1/VCRhC
+ 9Ztb0O9/Zm8SvSkxtjtZmGAYuuWa4VDPIzB8eIypxit4AmFVdH34RZaa2FeWqn5W6ERV
+ Ebdrl627h+zc2GVqSWVFeoCbyxKKPCtz/rkNZyFPENOBI3UdGrXGa8plkc1h8SocErpV
+ 46tJnV6jsw0QLZ1jomda7K+zd3IZE+bfZ6fdvdSsA4YLJXFgl9IKJ2HwBeLzhRh2Z9Pp
+ mbgw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=tNH9p1ySBp4UZ8l/t50r11EkpzeUvSvC0XpafPg6xs0=;
- b=H9knZEB9pM/RCpWFjXIuADIT1XJP/9HuTD84CU0RTb+BMSS+ENgttXvub/3Epz5q8R
- tY/pZtQGHp3J599QuhJtz8qAEf6vJ9ZvaimGNL1PcDoDXydyAHz5ATdnR7Gw2baiDCiC
- n6EmnL4nATQ5HqypKmV++u9dv9IH9nl7ePgL5mmkX7kU73GlPrO7gneDs/PZQu/7JdFR
- pw03ds5P9iLx/U2LB6ZY0ujYTT+jSLv86hQWRd6bO6qbMeh5lo0xhn7/SGKkVA3OyGld
- J5oCVBlebvJVrnoAP1TUtj6rlIqwLpsJNgVNzhMPfOIYQASx5nGkjtDMi12Lu7xZcJfP
- 0+yQ==
-X-Gm-Message-State: AOAM533AdfoMvVfN4Fxr/BiChyAeQF4SdjK5pYud59mm5eH+WuV4YOnY
- qQL/O3/HBx9+FkTGD/cAjXcPglQsZLj7ug==
-X-Google-Smtp-Source: ABdhPJwTZpqAdQiLuqh/W2bvYOZGd89ApOpWRv3Rc3552s1pAqdwg4dWbJ1Wln0Ax5lv0G8GDWFORQ==
-X-Received: by 2002:ac2:58ce:: with SMTP id u14mr18518005lfo.59.1630346903521; 
- Mon, 30 Aug 2021 11:08:23 -0700 (PDT)
-Received: from localhost (37-145-211-218.broadband.corbina.ru.
- [37.145.211.218])
- by smtp.gmail.com with ESMTPSA id q189sm1859345ljb.68.2021.08.30.11.08.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Aug 2021 11:08:23 -0700 (PDT)
-From: Mikhail Rudenko <mike.rudenko@gmail.com>
-To: linux-phy@lists.infradead.org
-Cc: linux-media@vger.kernel.org, Mikhail Rudenko <mike.rudenko@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Johan Jonker <jbx6244@gmail.com>, Marc Zyngier <maz@kernel.org>,
- Helen Koike <helen.koike@collabora.com>,
- Elaine Zhang <zhangqing@rock-chips.com>,
- Shunqian Zheng <zhengsq@rock-chips.com>,
- Robin Murphy <robin.murphy@arm.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v1 5/5] arm64: dts: rockchip: add mipi-dphy-tx1rx1 for rk3399
-Date: Mon, 30 Aug 2021 21:07:54 +0300
-Message-Id: <20210830180758.251390-6-mike.rudenko@gmail.com>
-X-Mailer: git-send-email 2.33.0
-In-Reply-To: <20210830180758.251390-1-mike.rudenko@gmail.com>
-References: <20210830180758.251390-1-mike.rudenko@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uTABDWDNLKg61M+R3vjb71MHbfemSFy2AY4zPlg2nE8=;
+ b=LogNCul6R3e9/XjdOqiOio5c+pVoCmNPYxb/SMniNepEbhsVz+BB5MtAo/hNF9hUAu
+ UpE3Ukvzdb5MnGuc25X3IlX7r6ldI/8WW0hLeWs+u5MGPDB7lx3toED6zt4OMogCabs0
+ lYaund4cBjhh4f3lxKJSL1wpcBOcMvNW+Fa6n4WlmyaG+tlqxWOSQFG0mExZiBcLkdvb
+ mehuyaqyWHJTDZrmAFJ0+uUhZDSsAsmFqqKxsdLcwCSl+ZQNTxZ4gNk4MlRJEFKbyzH/
+ wPMJywFlFgFioUsA30rCYaJqBGGoOVkjSr4j05dTdv7hzTHMqng7qcutl9zOjNxUPdXh
+ 4OmQ==
+X-Gm-Message-State: AOAM531dKzeUEoX3btQcCF0CJNkC8TQ8/oL484iReNMebooKNQBO4dYU
+ gYFcDNYOY5oXuVzSELTxHdAUvqafZ+nb9ylHONE=
+X-Google-Smtp-Source: ABdhPJy7qBuvqTVzY7sOAt7tXWrtZHlRPjJ+Pze/MoPqHbrn7gFn2XmnEqO3Omk3qalVhBFRXosf5B1OJ7USzraT1sY=
+X-Received: by 2002:a05:6402:313c:: with SMTP id
+ dd28mr25477809edb.179.1630352243401; 
+ Mon, 30 Aug 2021 12:37:23 -0700 (PDT)
 MIME-Version: 1.0
+References: <20210817041548.1276-1-linux.amoon@gmail.com>
+ <20210817041548.1276-2-linux.amoon@gmail.com>
+ <c7f6213b-5ddc-881c-1aea-9cc7b03e6a4f@baylibre.com>
+In-Reply-To: <c7f6213b-5ddc-881c-1aea-9cc7b03e6a4f@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Mon, 30 Aug 2021 21:37:12 +0200
+Message-ID: <CAFBinCBeNMET2tvH0h6HF3dR+xBb59hifQyaoXigUs3UGkS+KQ@mail.gmail.com>
+Subject: Re: [PATCHv3 1/6] ARM: dts: meson8b: odroidc1: Add usb phy power node
+To: Neil Armstrong <narmstrong@baylibre.com>
+Cc: Anand Moon <linux.amoon@gmail.com>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ Matt Corallo <oc2udbzfd@mattcorallo.com>, Rob Herring <robh+dt@kernel.org>, 
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+ Emiliano Ingrassia <ingrassia@epigenesys.com>,
+ Brian Kim <brian.kim@hardkernel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210830_110825_281181_4E14B124 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20210830_123726_041918_99B6B4B7 
+X-CRM114-Status: GOOD (  18.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,42 +101,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add DT node for RX mode of RK3399 TX1RX1 D-PHY.
+Hi Neil,
 
-Signed-off-by: Mikhail Rudenko <mike.rudenko@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+On Mon, Aug 30, 2021 at 9:45 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> Hi,
+>
+> On 17/08/2021 06:15, Anand Moon wrote:
+> > Add missing usb phy power node for usb node fix below warning.
+> > P5V0 regulator supply input voltage range to USB host controller.
+> > As described in the C1+ schematics, GPIO GPIOAO_5 is used to
+> > enable input power to USB ports, set it to Active Low.
+> >
+> > [    1.260772] dwc2 c90c0000.usb: Looking up vbus-supply from device tree
+> > [    1.260784] dwc2 c90c0000.usb: Looking up vbus-supply property in
+> >               mode /soc/usb@c90c0000 failed
+>
+> First of all, DT is not here to fix boot message.
+Anand mentioned elsewhere that this is a debug/info message
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 3871c7fd83b0..2e4513275a87 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1902,6 +1902,21 @@ mipi1_in_vopl: endpoint@1 {
- 		};
- 	};
- 
-+	mipi_dphy_tx1rx1: mipi-dphy-tx1rx1@ff968000 {
-+		compatible = "rockchip,rk3399-mipi-dphy-tx1rx1";
-+		reg = <0x0 0xff968000 0x0 0x8000>;
-+		clocks = <&cru SCLK_MIPIDPHY_REF>,
-+			<&cru SCLK_DPHY_TX1RX1_CFG>,
-+			<&cru PCLK_VIO_GRF>,
-+			<&cru PCLK_MIPI_DSI1>;
-+		clock-names = "dphy-ref", "dphy-cfg",
-+			"grf", "dsi";
-+		rockchip,grf = <&grf>;
-+		power-domains = <&power RK3399_PD_VIO>;
-+		#phy-cells = <0>;
-+		status = "disabled";
-+	};
-+
- 	edp: edp@ff970000 {
- 		compatible = "rockchip,rk3399-edp";
- 		reg = <0x0 0xff970000 0x0 0x8000>;
--- 
-2.33.0
+> Finally, I looked at the Odroid-C1 schematics and the GPIOAO.BIT5 is an input
+> to the S805, and the PWREN signal is controlled by the USB Hub so this regulator
+> should not be added at all.
+I think there's a misunderstanding because there's two PWREN signals
+with different meanings.
+The PWREN signal for the USB host ports is hard-wired and not
+connected to the SoC at all.
+The PWREN signal for the Micro-USB port (which Anand is adding here)
+is controlled by GPIOAO_5. odroid-c1+_rev0.4_20150615.pdf [0] shows it
+as an input to "USB_OTG" on page 1. "USB_OTG" consists of a power
+switch and the connector itself as shown on page 28.
 
+Personally I think that the change from Anand itself is good.
+If you feel otherwise then please speak up.
+As I pointed out three smaller changes I am hoping that Anand will
+re-send the updated patch anyways. At that point he can also add the
+changes from your feedback.
+
+
+Best regards,
+Martin
+
+
+[0] https://dn.odroid.com/S805/Schematics/odroid-c1+_rev0.4_20150615.pdf
 
 -- 
 linux-phy mailing list
