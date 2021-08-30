@@ -1,66 +1,104 @@
-Return-Path: <SRS0=/UzO=NU=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=KiND=NV=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EFDD4C432BE
-	for <linux-phy@archiver.kernel.org>; Sun, 29 Aug 2021 18:25:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 86969C432BE
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 07:45:46 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B38376023D
-	for <linux-phy@archiver.kernel.org>; Sun, 29 Aug 2021 18:25:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B38376023D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=intel.com
+	by mail.kernel.org (Postfix) with ESMTPS id 4CFBE6023F
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 07:45:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 4CFBE6023F
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6iR9sxSIcw0ra/ZdzJdMBZvdWYr+SWopQAz7nYanNkw=; b=k46kikJLBGHJlp
-	yqUdEWzh55oSSNcCnFLAZv5A35zEKva5f5YApRDmL9eDXQkqHxX9/swf2TspiSf2mVgUMbQCPD6ay
-	uvcI/9aMy1dZbCuUpn551wmZt6WVY3TzLLSparrmMvtdHyridIBVFnCK+tfaqKlymEBxuYwJykuWz
-	n67ClmO8vE+bPZOYEfsVUsRZcZzf46ksTHbXbjPrPiaUf7iAmQNr3kIPL2PiqVirBj2Qr3Hwzz4Oz
-	bQ0PAwaKmAtdL74aLrGufiJaSP4/0poNFVtVympnzPvy/2uyG8GEWNvEnQ3nX51PRKWRLSEANLzuU
-	RnXpzBEifDgI8xXJaAGg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=hZT0apxtTH0EnidtyBoANqdsB4yXxE8ZJafptvQrnPk=; b=Sqf8Tz3QmrTHBvheNeFmD32f8L
+	85TZ+Rxy8TX8wUi0fIhkeVWImcdqxmSIA0FigsAe+mVUlIcBh5WIVZhlFH7nO2FuKa/mB9rsL1Zam
+	QyLxKrB8OdAcL49UWPYOAyfA1dapnhYe5BhEYIp0YBPMAE3RkvUu93iFW3AB6fKS0arb6ETp7ojrj
+	00wWfG7SpH1FaBYVzGAcMXmB1vhYp2zKNYRquBYlpl96buSC7qDWq4/Kdj4XsB+ahzP/HhrubU5na
+	+GfvQOIy4Bkuob+SXnhudyK2CBa4Z/1xppNEgZNPuRSf1rspRYfEjmG2YEq7aBylAdYprZlFvU1gy
+	K1sqa0xQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mKPV6-00FsSg-6b; Sun, 29 Aug 2021 18:25:48 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1mKbzF-00GeQo-Pt; Mon, 30 Aug 2021 07:45:45 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mKPUU-00FsLy-0M; Sun, 29 Aug 2021 18:25:12 +0000
-X-IronPort-AV: E=McAfee;i="6200,9189,10091"; a="279184973"
-X-IronPort-AV: E=Sophos;i="5.84,361,1620716400"; d="scan'208";a="279184973"
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 29 Aug 2021 11:25:08 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.84,361,1620716400"; d="scan'208";a="445519113"
-Received: from coresw01.iind.intel.com ([10.106.46.194])
- by orsmga002.jf.intel.com with ESMTP; 29 Aug 2021 11:25:03 -0700
-From: rashmi.a@intel.com
-To: michal.simek@xilinx.com, ulf.hansson@linaro.org, linux-mmc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kishon@ti.com, vkoul@kernel.org, andriy.shevchenko@linux.intel.com,
- linux-phy@lists.infradead.org
-Cc: mgross@linux.intel.com, kris.pan@linux.intel.com, furong.zhou@intel.com,
- mallikarjunappa.sangannavar@intel.com, adrian.hunter@intel.com,
- mahesh.r.vaidya@intel.com, nandhini.srikandan@intel.com, rashmi.a@intel.com
-Subject: [PATCH v2 4/4] phy: intel: Add Thunder Bay eMMC PHY support
-Date: Sun, 29 Aug 2021 23:54:43 +0530
-Message-Id: <20210829182443.30802-5-rashmi.a@intel.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20210829182443.30802-1-rashmi.a@intel.com>
-References: <20210829182443.30802-1-rashmi.a@intel.com>
+ id 1mKbyz-00GeMZ-KW
+ for linux-phy@lists.infradead.org; Mon, 30 Aug 2021 07:45:33 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id h13so21108316wrp.1
+ for <linux-phy@lists.infradead.org>; Mon, 30 Aug 2021 00:45:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=JmmtJ+a+mV12UNw1rZr4wpix3L8Nuoi+h1F+J6JIITU=;
+ b=jgDIyApDbeuxGB4yb1kORYbMRMQKQ4DPtMap5Rcl3Wkw0Et/Z2++NHx+0M5LT1KQwv
+ r0pGok1bF5nZVO9Cw1uVYplSp+nb1LyfdaC6ZU74/80lgIJQTc619hruPhEBrIgkAb8t
+ KJ9jY8J4udNnfndgInbSFlP1wlYHU5HJHEus8mThb296XKldMQp/TiSlOqycbF2D79KS
+ zk4GjcQ8x+v/7tQnFqMrPlt/JTEclApC5w/n8U9BYgCInWILNu8EqOPEOYjRLJCtvJws
+ lCxZ4zfuOd2TbEtZ9UqElX9UbAVU/muPliuvvy49R8t9iJ6oSlamhTm65wvB1RvAu9IG
+ wTzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=JmmtJ+a+mV12UNw1rZr4wpix3L8Nuoi+h1F+J6JIITU=;
+ b=PaB+vMjPsbXBoRe0f4LBXGXVPYdgymZWnfIc4CLAucXz/xeZvmnTGJWo2yaiGUQ5Nj
+ jS60Lv1rmSjw5z46VhlmDPT2dfLO2428SCJP3JlheFGccwAaaGvtZ4RSa+ev6WxTh8vp
+ fpjTqr0fHCA8sQYKL8kLzWg82eGuLBFhdMIOd74WA+6Ti5c97UGDyBF1rgkdvZxBsE8h
+ l+XN9yKDKwnPLS4tT9a41jM6PG6QyVLb7kpml4+cG/OBMniFX08VrwssSP88DOkotQQ5
+ CLtapGOBXH4QBiZ2woo67qymKp4aJHygLNPWaF+yUguweAT+Hv/riM03N3jzxO3v1vXz
+ /c0g==
+X-Gm-Message-State: AOAM5312V2vuAqeu9Nj9PgFwHSNz5ZXFwnV3LYx0bjmy3kWJzYjM+DAQ
+ 7gsqNfbFp/fDFT1jlGvih6oqKw==
+X-Google-Smtp-Source: ABdhPJx0KFabuLNOqRvUQkIv6P6jI44f7L82OW4/X1oIRfnWJn1JU1qIsaCvVIKvykvKmrvlL81w4g==
+X-Received: by 2002:adf:ec8b:: with SMTP id z11mr24464082wrn.122.1630309527740; 
+ Mon, 30 Aug 2021 00:45:27 -0700 (PDT)
+Received: from ?IPv6:2001:861:44c0:66c0:2ecd:4eac:486d:7a1?
+ ([2001:861:44c0:66c0:2ecd:4eac:486d:7a1])
+ by smtp.gmail.com with ESMTPSA id n8sm14723382wra.24.2021.08.30.00.45.26
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 30 Aug 2021 00:45:27 -0700 (PDT)
+Subject: Re: [PATCHv3 1/6] ARM: dts: meson8b: odroidc1: Add usb phy power node
+To: Anand Moon <linux.amoon@gmail.com>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Cc: Matt Corallo <oc2udbzfd@mattcorallo.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Rob Herring <robh+dt@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Emiliano Ingrassia <ingrassia@epigenesys.com>,
+ Brian Kim <brian.kim@hardkernel.com>
+References: <20210817041548.1276-1-linux.amoon@gmail.com>
+ <20210817041548.1276-2-linux.amoon@gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Organization: Baylibre
+Message-ID: <c7f6213b-5ddc-881c-1aea-9cc7b03e6a4f@baylibre.com>
+Date: Mon, 30 Aug 2021 09:45:26 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.11.0
+MIME-Version: 1.0
+In-Reply-To: <20210817041548.1276-2-linux.amoon@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210829_112510_180939_F6FF7899 
-X-CRM114-Status: GOOD (  28.89  )
+X-CRM114-CacheID: sfid-20210830_004529_756372_CDD986DB 
+X-CRM114-Status: GOOD (  24.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,573 +110,105 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Rashmi A <rashmi.a@intel.com>
+Hi,
 
-Add support of eMMC PHY for Intel Thunder Bay SoC,
-uses the Arasan eMMC phy
+On 17/08/2021 06:15, Anand Moon wrote:
+> Add missing usb phy power node for usb node fix below warning.
+> P5V0 regulator supply input voltage range to USB host controller.
+> As described in the C1+ schematics, GPIO GPIOAO_5 is used to
+> enable input power to USB ports, set it to Active Low.
+> 
+> [    1.260772] dwc2 c90c0000.usb: Looking up vbus-supply from device tree
+> [    1.260784] dwc2 c90c0000.usb: Looking up vbus-supply property in
+> 		mode /soc/usb@c90c0000 failed
 
-Signed-off-by: Rashmi A <rashmi.a@intel.com>
-Reviewed-by: Adrian Hunter <adrian.hunter@intel.com>
----
- drivers/phy/intel/Kconfig                     |  10 +
- drivers/phy/intel/Makefile                    |   1 +
- drivers/phy/intel/phy-intel-thunderbay-emmc.c | 512 ++++++++++++++++++
- 3 files changed, 523 insertions(+)
- create mode 100644 drivers/phy/intel/phy-intel-thunderbay-emmc.c
+First of all, DT is not here to fix boot message.
 
-diff --git a/drivers/phy/intel/Kconfig b/drivers/phy/intel/Kconfig
-index ac42bb2fb394..18a3cc5b98c0 100644
---- a/drivers/phy/intel/Kconfig
-+++ b/drivers/phy/intel/Kconfig
-@@ -46,3 +46,13 @@ config PHY_INTEL_LGM_EMMC
- 	select GENERIC_PHY
- 	help
- 	  Enable this to support the Intel EMMC PHY
-+
-+config PHY_INTEL_THUNDERBAY_EMMC
-+        tristate "Intel Thunder Bay eMMC PHY driver"
-+        depends on OF && (ARCH_THUNDERBAY || COMPILE_TEST)
-+        select GENERIC_PHY
-+        help
-+	  This option enables support for Intel Thunder Bay SoC eMMC PHY.
-+
-+	  To compile this driver as a module, choose M here: the module
-+	  will be called phy-intel-thunderbay-emmc.ko.
-diff --git a/drivers/phy/intel/Makefile b/drivers/phy/intel/Makefile
-index 14550981a707..b7321d56b0bb 100644
---- a/drivers/phy/intel/Makefile
-+++ b/drivers/phy/intel/Makefile
-@@ -3,3 +3,4 @@ obj-$(CONFIG_PHY_INTEL_KEEMBAY_EMMC)	+= phy-intel-keembay-emmc.o
- obj-$(CONFIG_PHY_INTEL_KEEMBAY_USB)	+= phy-intel-keembay-usb.o
- obj-$(CONFIG_PHY_INTEL_LGM_COMBO)	+= phy-intel-lgm-combo.o
- obj-$(CONFIG_PHY_INTEL_LGM_EMMC)	+= phy-intel-lgm-emmc.o
-+obj-$(CONFIG_PHY_INTEL_THUNDERBAY_EMMC) += phy-intel-thunderbay-emmc.o
-diff --git a/drivers/phy/intel/phy-intel-thunderbay-emmc.c b/drivers/phy/intel/phy-intel-thunderbay-emmc.c
-new file mode 100644
-index 000000000000..385659dd87be
---- /dev/null
-+++ b/drivers/phy/intel/phy-intel-thunderbay-emmc.c
-@@ -0,0 +1,512 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Intel ThunderBay eMMC PHY driver
-+ *
-+ * Copyright (C) 2021 Intel Corporation
-+ *
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+
-+/* eMMC/SD/SDIO core/phy configuration registers */
-+#define CTRL_CFG_0	0x00
-+#define CTRL_CFG_1	0x04
-+#define CTRL_PRESET_0	0x08
-+#define CTRL_PRESET_1	0x0c
-+#define CTRL_PRESET_2	0x10
-+#define CTRL_PRESET_3	0x14
-+#define CTRL_PRESET_4	0x18
-+#define CTRL_CFG_2	0x1c
-+#define CTRL_CFG_3	0x20
-+#define PHY_CFG_0	0x24
-+#define PHY_CFG_1	0x28
-+#define PHY_CFG_2	0x2c
-+#define PHYBIST_CTRL	0x30
-+#define SDHC_STAT3	0x34
-+#define PHY_STAT	0x38
-+#define PHYBIST_STAT_0	0x3c
-+#define PHYBIST_STAT_1	0x40
-+#define EMMC_AXI        0x44
-+
-+/* CTRL_PRESET_3 */
-+#define CTRL_PRESET3_MASK	GENMASK(31, 0)
-+#define CTRL_PRESET3_SHIFT	0
-+
-+/* CTRL_CFG_0 bit fields */
-+#define SUPPORT_HS_MASK		BIT(26)
-+#define SUPPORT_HS_SHIFT	26
-+
-+#define SUPPORT_8B_MASK		BIT(24)
-+#define SUPPORT_8B_SHIFT	24
-+
-+/* CTRL_CFG_1 bit fields */
-+#define SUPPORT_SDR50_MASK	BIT(28)
-+#define SUPPORT_SDR50_SHIFT	28
-+#define SLOT_TYPE_MASK		GENMASK(27, 26)
-+#define SLOT_TYPE_OFFSET	26
-+#define SUPPORT_64B_MASK	BIT(24)
-+#define SUPPORT_64B_SHIFT	24
-+#define SUPPORT_HS400_MASK	BIT(2)
-+#define SUPPORT_HS400_SHIFT	2
-+#define SUPPORT_DDR50_MASK	BIT(1)
-+#define SUPPORT_DDR50_SHIFT	1
-+#define SUPPORT_SDR104_MASK	BIT(0)
-+#define SUPPORT_SDR104_SHIFT	0
-+
-+/* PHY_CFG_0 bit fields */
-+#define SEL_DLY_TXCLK_MASK      BIT(29)
-+#define SEL_DLY_TXCLK_SHIFT	29
-+#define SEL_DLY_RXCLK_MASK      BIT(28)
-+#define SEL_DLY_RXCLK_SHIFT	28
-+
-+#define OTAP_DLY_ENA_MASK	BIT(27)
-+#define OTAP_DLY_ENA_SHIFT	27
-+#define OTAP_DLY_SEL_MASK	GENMASK(26, 23)
-+#define OTAP_DLY_SEL_SHIFT	23
-+#define ITAP_CHG_WIN_MASK	BIT(22)
-+#define ITAP_CHG_WIN_SHIFT	22
-+#define ITAP_DLY_ENA_MASK	BIT(21)
-+#define ITAP_DLY_ENA_SHIFT	21
-+#define ITAP_DLY_SEL_MASK	GENMASK(20, 16)
-+#define ITAP_DLY_SEL_SHIFT	16
-+#define RET_ENB_MASK		BIT(15)
-+#define RET_ENB_SHIFT		15
-+#define RET_EN_MASK		BIT(14)
-+#define RET_EN_SHIFT		14
-+#define DLL_IFF_MASK		GENMASK(13, 11)
-+#define DLL_IFF_SHIFT		11
-+#define DLL_EN_MASK		BIT(10)
-+#define DLL_EN_SHIFT		10
-+#define DLL_TRIM_ICP_MASK	GENMASK(9, 6)
-+#define DLL_TRIM_ICP_SHIFT	6
-+#define RETRIM_EN_MASK		BIT(5)
-+#define RETRIM_EN_SHIFT		5
-+#define RETRIM_MASK		BIT(4)
-+#define RETRIM_SHIFT		4
-+#define DR_TY_MASK		GENMASK(3, 1)
-+#define DR_TY_SHIFT		1
-+#define PWR_DOWN_MASK		BIT(0)
-+#define PWR_DOWN_SHIFT		0
-+
-+/* PHY_CFG_1 bit fields */
-+#define REN_DAT_MASK		GENMASK(19, 12)
-+#define REN_DAT_SHIFT		12
-+#define REN_CMD_MASK		BIT(11)
-+#define REN_CMD_SHIFT		11
-+#define REN_STRB_MASK		BIT(10)
-+#define REN_STRB_SHIFT		10
-+#define PU_STRB_MASK		BIT(20)
-+#define PU_STRB_SHIFT		20
-+
-+/* PHY_CFG_2 bit fields */
-+#define CLKBUF_MASK		GENMASK(24, 21)
-+#define CLKBUF_SHIFT		21
-+#define SEL_STRB_MASK		GENMASK(20, 13)
-+#define SEL_STRB_SHIFT		13
-+#define SEL_FREQ_MASK		GENMASK(12, 10)
-+#define SEL_FREQ_SHIFT		10
-+
-+/* PHY_STAT bit fields */
-+#define CAL_DONE		BIT(6)
-+#define DLL_RDY			BIT(5)
-+
-+#define OTAP_DLY		0x0
-+#define ITAP_DLY		0x0
-+#define STRB			0x33
-+
-+/* From ACS_eMMC51_16nFFC_RO1100_Userguide_v1p0.pdf p17 */
-+#define FREQSEL_200M_170M	0x0
-+#define FREQSEL_170M_140M	0x1
-+#define FREQSEL_140M_110M	0x2
-+#define FREQSEL_110M_80M	0x3
-+#define FREQSEL_80M_50M		0x4
-+#define FREQSEL_275M_250M	0x5
-+#define FREQSEL_250M_225M	0x6
-+#define FREQSEL_225M_200M	0x7
-+
-+/* Phy power status */
-+#define PHY_UNINITIALIZED	0
-+#define PHY_INITIALIZED		1
-+
-+/*
-+ * During init(400KHz) phy_settings will be called with 200MHZ clock
-+ * To avoid incorrectly setting the phy for init(400KHZ) "phy_power_sts" is used.
-+ * When actual clock is set always phy is powered off once and then powered on.
-+ * (sdhci_arasan_set_clock). That feature will be used to identify whether the
-+ * settings are for init phy_power_on or actual clock phy_power_on
-+ * 0 --> init settings
-+ * 1 --> actual settings
-+ */
-+
-+struct thunderbay_emmc_phy {
-+	void __iomem    *reg_base;
-+	struct clk      *emmcclk;
-+	int phy_power_sts;
-+};
-+
-+static inline void update_reg(struct thunderbay_emmc_phy *tbh_phy, u32 offset,
-+			      u32 mask, u32 shift, u32 val)
-+{
-+	u32 tmp;
-+
-+	tmp = readl(tbh_phy->reg_base + offset);
-+	tmp &= ~mask;
-+	tmp |= val << shift;
-+	writel(tmp, tbh_phy->reg_base + offset);
-+}
-+
-+static int thunderbay_emmc_phy_power(struct phy *phy, bool power_on)
-+{
-+	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
-+	unsigned int freqsel = FREQSEL_200M_170M;
-+	unsigned long rate;
-+	static int lock;
-+	u32 val;
-+	int ret;
-+
-+	/* Disable DLL */
-+	rate = clk_get_rate(tbh_phy->emmcclk);
-+	switch (rate) {
-+	case 200000000:
-+		/* lock dll only when it is used, i.e only if SEL_DLY_TXCLK/RXCLK are 0 */
-+		update_reg(tbh_phy, PHY_CFG_0, DLL_EN_MASK, DLL_EN_SHIFT, 0x0);
-+		break;
-+
-+	/* dll lock not required for other frequencies */
-+	case 50000000 ... 52000000:
-+	case 400000:
-+	default:
-+		break;
-+	}
-+
-+	if (!power_on)
-+		return 0;
-+
-+	rate = clk_get_rate(tbh_phy->emmcclk);
-+	switch (rate) {
-+	case 170000001 ... 200000000:
-+		freqsel = FREQSEL_200M_170M;
-+		break;
-+
-+	case 140000001 ... 170000000:
-+		freqsel = FREQSEL_170M_140M;
-+		break;
-+
-+	case 110000001 ... 140000000:
-+		freqsel = FREQSEL_140M_110M;
-+		break;
-+
-+	case 80000001 ... 110000000:
-+		freqsel = FREQSEL_110M_80M;
-+		break;
-+
-+	case 50000000 ... 80000000:
-+		freqsel = FREQSEL_80M_50M;
-+		break;
-+
-+	case 250000001 ... 275000000:
-+		freqsel = FREQSEL_275M_250M;
-+		break;
-+
-+	case 225000001 ... 250000000:
-+		freqsel = FREQSEL_250M_225M;
-+		break;
-+
-+	case 200000001 ... 225000000:
-+		freqsel = FREQSEL_225M_200M;
-+		break;
-+	default:
-+		break;
-+	}
-+	/* Clock rate is checked against upper limit. It may fall low during init */
-+	if (rate > 200000000)
-+		dev_warn(&phy->dev, "Unsupported rate: %lu\n", rate);
-+
-+	udelay(5);
-+
-+	if (lock == 0) {
-+		/* PDB will be done only once per boot */
-+		update_reg(tbh_phy, PHY_CFG_0, PWR_DOWN_MASK,
-+			   PWR_DOWN_SHIFT, 0x1);
-+		lock = 1;
-+		/*
-+		 * According to the user manual, it asks driver to wait 5us for
-+		 * calpad busy trimming. However it is documented that this value is
-+		 * PVT(A.K.A. process, voltage and temperature) relevant, so some
-+		 * failure cases are found which indicates we should be more tolerant
-+		 * to calpad busy trimming.
-+		 */
-+		ret = readl_poll_timeout(tbh_phy->reg_base + PHY_STAT,
-+					 val, (val & CAL_DONE), 10, 50);
-+		if (ret) {
-+			dev_err(&phy->dev, "caldone failed, ret=%d\n", ret);
-+			return ret;
-+		}
-+	}
-+	rate = clk_get_rate(tbh_phy->emmcclk);
-+	switch (rate) {
-+	case 200000000:
-+		/* Set frequency of the DLL operation */
-+		update_reg(tbh_phy, PHY_CFG_2, SEL_FREQ_MASK, SEL_FREQ_SHIFT, freqsel);
-+
-+		/* Enable DLL */
-+		update_reg(tbh_phy, PHY_CFG_0, DLL_EN_MASK, DLL_EN_SHIFT, 0x1);
-+
-+		/*
-+		 * After enabling analog DLL circuits docs say that we need 10.2 us if
-+		 * our source clock is at 50 MHz and that lock time scales linearly
-+		 * with clock speed. If we are powering on the PHY and the card clock
-+		 * is super slow (like 100kHz) this could take as long as 5.1 ms as
-+		 * per the math: 10.2 us * (50000000 Hz / 100000 Hz) => 5.1 ms
-+		 * hopefully we won't be running at 100 kHz, but we should still make
-+		 * sure we wait long enough.
-+		 *
-+		 * NOTE: There appear to be corner cases where the DLL seems to take
-+		 * extra long to lock for reasons that aren't understood. In some
-+		 * extreme cases we've seen it take up to over 10ms (!). We'll be
-+		 * generous and give it 50ms.
-+		 */
-+		ret = readl_poll_timeout(tbh_phy->reg_base + PHY_STAT,
-+					 val, (val & DLL_RDY), 10, 50 * USEC_PER_MSEC);
-+		if (ret) {
-+			dev_err(&phy->dev, "dllrdy failed, ret=%d\n", ret);
-+			return ret;
-+		}
-+		break;
-+
-+	default:
-+		break;
-+	}
-+	return 0;
-+}
-+
-+static int thunderbay_emmc_phy_init(struct phy *phy)
-+{
-+	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
-+
-+	tbh_phy->emmcclk = clk_get(&phy->dev, "emmcclk");
-+
-+	return PTR_ERR_OR_ZERO(tbh_phy->emmcclk);
-+}
-+
-+static int thunderbay_emmc_phy_exit(struct phy *phy)
-+{
-+	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
-+
-+	clk_put(tbh_phy->emmcclk);
-+
-+	return 0;
-+}
-+
-+static int thunderbay_emmc_phy_power_on(struct phy *phy)
-+{
-+	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
-+	unsigned long rate;
-+
-+	/* Overwrite capability bits configurable in bootloader */
-+	update_reg(tbh_phy, CTRL_CFG_0,
-+		   SUPPORT_HS_MASK, SUPPORT_HS_SHIFT, 0x1);
-+	update_reg(tbh_phy, CTRL_CFG_0,
-+		   SUPPORT_8B_MASK, SUPPORT_8B_SHIFT, 0x1);
-+	update_reg(tbh_phy, CTRL_CFG_1,
-+		   SUPPORT_SDR50_MASK, SUPPORT_SDR50_SHIFT, 0x1);
-+	update_reg(tbh_phy, CTRL_CFG_1,
-+		   SUPPORT_DDR50_MASK, SUPPORT_DDR50_SHIFT, 0x1);
-+	update_reg(tbh_phy, CTRL_CFG_1,
-+		   SUPPORT_SDR104_MASK, SUPPORT_SDR104_SHIFT, 0x1);
-+	update_reg(tbh_phy, CTRL_CFG_1,
-+		   SUPPORT_HS400_MASK, SUPPORT_HS400_SHIFT, 0x1);
-+	update_reg(tbh_phy, CTRL_CFG_1,
-+		   SUPPORT_64B_MASK, SUPPORT_64B_SHIFT, 0x1);
-+
-+	if (tbh_phy->phy_power_sts == PHY_UNINITIALIZED) {
-+		/* Indicates initialization, settings for init, same as 400KHZ setting */
-+		update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_TXCLK_MASK, SEL_DLY_TXCLK_SHIFT, 0x1);
-+		update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_RXCLK_MASK, SEL_DLY_RXCLK_SHIFT, 0x1);
-+		update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_ENA_MASK, ITAP_DLY_ENA_SHIFT, 0x0);
-+		update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_SEL_MASK, ITAP_DLY_SEL_SHIFT, 0x0);
-+		update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_ENA_MASK, OTAP_DLY_ENA_SHIFT, 0x0);
-+		update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_SEL_MASK, OTAP_DLY_SEL_SHIFT, 0);
-+		update_reg(tbh_phy, PHY_CFG_0, DLL_TRIM_ICP_MASK, DLL_TRIM_ICP_SHIFT, 0);
-+		update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK, DR_TY_SHIFT, 0x1);
-+
-+	} else if (tbh_phy->phy_power_sts == PHY_INITIALIZED) {
-+		/* Indicates actual clock setting */
-+		rate = clk_get_rate(tbh_phy->emmcclk);
-+		switch (rate) {
-+		case 200000000:
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_TXCLK_MASK,
-+				   SEL_DLY_TXCLK_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_RXCLK_MASK,
-+				   SEL_DLY_RXCLK_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_ENA_MASK,
-+				   ITAP_DLY_ENA_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_SEL_MASK,
-+				   ITAP_DLY_SEL_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_ENA_MASK,
-+				   OTAP_DLY_ENA_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_SEL_MASK,
-+				   OTAP_DLY_SEL_SHIFT, 2);
-+			update_reg(tbh_phy, PHY_CFG_0, DLL_TRIM_ICP_MASK,
-+				   DLL_TRIM_ICP_SHIFT, 0x8);
-+			update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
-+				   DR_TY_SHIFT, 0x1);
-+			/* For HS400 only */
-+			update_reg(tbh_phy, PHY_CFG_2, SEL_STRB_MASK,
-+				   SEL_STRB_SHIFT, STRB);
-+			break;
-+
-+		case 50000000 ... 52000000:
-+			/* For both HS and DDR52 this setting works */
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_TXCLK_MASK,
-+				   SEL_DLY_TXCLK_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_RXCLK_MASK,
-+				   SEL_DLY_RXCLK_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_ENA_MASK,
-+				   ITAP_DLY_ENA_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_SEL_MASK,
-+				   ITAP_DLY_SEL_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_ENA_MASK,
-+				   OTAP_DLY_ENA_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_SEL_MASK,
-+				   OTAP_DLY_SEL_SHIFT, 4);
-+			update_reg(tbh_phy, PHY_CFG_0, DLL_TRIM_ICP_MASK,
-+				   DLL_TRIM_ICP_SHIFT, 0x8);
-+			update_reg(tbh_phy, PHY_CFG_0,
-+				   DR_TY_MASK, DR_TY_SHIFT, 0x1);
-+			break;
-+
-+		case 400000:
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_TXCLK_MASK,
-+				   SEL_DLY_TXCLK_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_RXCLK_MASK,
-+				   SEL_DLY_RXCLK_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_ENA_MASK,
-+				   ITAP_DLY_ENA_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_SEL_MASK,
-+				   ITAP_DLY_SEL_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_ENA_MASK,
-+				   OTAP_DLY_ENA_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_SEL_MASK,
-+				   OTAP_DLY_SEL_SHIFT, 0);
-+			update_reg(tbh_phy, PHY_CFG_0, DLL_TRIM_ICP_MASK,
-+				   DLL_TRIM_ICP_SHIFT, 0);
-+			update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK, DR_TY_SHIFT, 0x1);
-+			break;
-+
-+		default:
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_TXCLK_MASK,
-+				   SEL_DLY_TXCLK_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_RXCLK_MASK,
-+				   SEL_DLY_RXCLK_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_ENA_MASK,
-+				   ITAP_DLY_ENA_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_SEL_MASK,
-+				   ITAP_DLY_SEL_SHIFT, 0x0);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_ENA_MASK,
-+				   OTAP_DLY_ENA_SHIFT, 0x1);
-+			update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_SEL_MASK,
-+				   OTAP_DLY_SEL_SHIFT, 2);
-+			update_reg(tbh_phy, PHY_CFG_0, DLL_TRIM_ICP_MASK,
-+				   DLL_TRIM_ICP_SHIFT, 0x8);
-+			update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
-+				   DR_TY_SHIFT, 0x1);
-+			break;
-+		}
-+		/* Reset, init seq called without phy_power_off, this indicates init seq */
-+		tbh_phy->phy_power_sts = PHY_UNINITIALIZED;
-+	}
-+
-+	update_reg(tbh_phy, PHY_CFG_0, RETRIM_EN_MASK, RETRIM_EN_SHIFT, 0x1);
-+	update_reg(tbh_phy, PHY_CFG_0, RETRIM_MASK, RETRIM_SHIFT, 0x0);
-+
-+	return thunderbay_emmc_phy_power(phy, 1);
-+}
-+
-+static int thunderbay_emmc_phy_power_off(struct phy *phy)
-+{
-+	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
-+
-+	tbh_phy->phy_power_sts = PHY_INITIALIZED;
-+
-+	return thunderbay_emmc_phy_power(phy, 0);
-+}
-+
-+static const struct phy_ops thunderbay_emmc_phy_ops = {
-+	.init		= thunderbay_emmc_phy_init,
-+	.exit		= thunderbay_emmc_phy_exit,
-+	.power_on	= thunderbay_emmc_phy_power_on,
-+	.power_off	= thunderbay_emmc_phy_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static const struct of_device_id thunderbay_emmc_phy_of_match[] = {
-+	{ .compatible = "intel,thunderbay-emmc-phy",
-+		(void *)&thunderbay_emmc_phy_ops },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, thunderbay_emmc_phy_of_match);
-+
-+static int thunderbay_emmc_phy_probe(struct platform_device *pdev)
-+{
-+	struct thunderbay_emmc_phy *tbh_phy;
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	const struct of_device_id *id;
-+	struct phy *generic_phy;
-+	struct resource *res;
-+
-+	if (!dev->of_node)
-+		return -ENODEV;
-+
-+	tbh_phy = devm_kzalloc(dev, sizeof(*tbh_phy), GFP_KERNEL);
-+	if (!tbh_phy)
-+		return -ENOMEM;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	tbh_phy->reg_base = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(tbh_phy->reg_base)) {
-+		dev_err(&pdev->dev, "region map failed\n");
-+		return PTR_ERR(tbh_phy->reg_base);
-+	}
-+
-+	tbh_phy->phy_power_sts = PHY_UNINITIALIZED;
-+	id = of_match_node(thunderbay_emmc_phy_of_match, pdev->dev.of_node);
-+	if (!id) {
-+		dev_err(dev, "failed to get match_node\n");
-+		return -EINVAL;
-+	}
-+
-+	generic_phy = devm_phy_create(dev, dev->of_node, id->data);
-+	if (IS_ERR(generic_phy)) {
-+		dev_err(dev, "failed to create PHY\n");
-+		return PTR_ERR(generic_phy);
-+	}
-+
-+	phy_set_drvdata(generic_phy, tbh_phy);
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static struct platform_driver thunderbay_emmc_phy_driver = {
-+	.probe		 = thunderbay_emmc_phy_probe,
-+	.driver		 = {
-+		.name	 = "thunderbay-emmc-phy",
-+		.of_match_table = thunderbay_emmc_phy_of_match,
-+	},
-+};
-+module_platform_driver(thunderbay_emmc_phy_driver);
-+
-+MODULE_AUTHOR("Nandhini S <nandhini.srikandan@intel.com>");
-+MODULE_AUTHOR("Rashmi A <rashmi.a@intel.com>");
-+MODULE_DESCRIPTION("Intel Thunder Bay eMMC PHY driver");
-+MODULE_LICENSE("GPL v2");
-+
--- 
-2.17.1
+Secondly, if the vbus-supply is optional, the message should be removed from
+the driver/regulator core instead.
+
+Finally, I looked at the Odroid-C1 schematics and the GPIOAO.BIT5 is an input
+to the S805, and the PWREN signal is controlled by the USB Hub so this regulator
+should not be added at all.
+
+Neil
+
+> 
+> Fixes: 2eb79a4d15ff (ARM: dts: meson: enabling the USB Host
+> 		controller on Odroid-C1/C1+ board)
+> 
+> Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> ---
+> V2 > changes gpio polarity ACTIVE_HIGH to ACTIVE_LOW.
+>      Fix the source power from phy-supply to vbus-supply.
+> 
+> [1] https://lore.kernel.org/linux-devicetree/20210716103651.1455-2-linux.amoon@gmail.com/
+> 
+> V1 > Fix the Input GPIO polarity from HIGH to LOW.
+> 
+> previous version
+> [0] https://patchwork.kernel.org/project/linux-amlogic/patch/20190113181808.5768-1-linux.amoon@gmail.com
+> 
+> changes fix the vbus-suppy to phy-supply, drop enable usb0
+> 
+>     USB_PWR                       2    1      0 unknown  5000mV     0mA  5000mV  5000mV
+>        phy-c1108820.phy.0-phy     2                                 0mA     0mV     0mV
+> ---
+>  arch/arm/boot/dts/meson8b-odroidc1.dts | 19 ++++++++++++++++++-
+>  1 file changed, 18 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts b/arch/arm/boot/dts/meson8b-odroidc1.dts
+> index c440ef94e082..30ec6a7f20c7 100644
+> --- a/arch/arm/boot/dts/meson8b-odroidc1.dts
+> +++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
+> @@ -32,6 +32,23 @@ emmc_pwrseq: emmc-pwrseq {
+>  		reset-gpios = <&gpio BOOT_9 GPIO_ACTIVE_LOW>;
+>  	};
+>  
+> +	usb_pwr_en: regulator-usb-pwr-en {
+> +		compatible = "regulator-fixed";
+> +
+> +		regulator-name = "USB_OTG_PWR";
+> +
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +		/*
+> +		 * signal name from schematics: USB_POWER - P5V0
+> +		 */
+> +		vin-supply = <&p5v0>;
+> +		/*
+> +		 * signal name from schematics: PWREN - GPIOAO.BIT5
+> +		 */
+> +		gpios = <&gpio_ao GPIOAO_5 GPIO_ACTIVE_LOW>;
+> +	};
+> +
+>  	leds {
+>  		compatible = "gpio-leds";
+>  		blue {
+> @@ -119,7 +136,6 @@ vcc_3v3: regulator-vcc-3v3 {
+>  		regulator-name = "VCC3V3";
+>  		regulator-min-microvolt = <3300000>;
+>  		regulator-max-microvolt = <3300000>;
+> -
+>  		vin-supply = <&p5v0>;
+
+As martin said, only a single functional change per patch please, this line removal should go in another patch.
+
+>  	};
+>  
+> @@ -382,4 +398,5 @@ &usb1_phy {
+>  
+>  &usb1 {
+>  	status = "okay";
+> +	vbus-supply = <&usb_pwr_en>;
+>  };
+> 
 
 
 -- 
