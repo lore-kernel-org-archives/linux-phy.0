@@ -2,89 +2,62 @@ Return-Path: <SRS0=KiND=NV=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-16.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,
+	UNWANTED_LANGUAGE_BODY,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A0E64C432BE
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 19:37:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6BF69C432BE
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 20:45:15 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 67CA460F91
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 19:37:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 67CA460F91
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
+	by mail.kernel.org (Postfix) with ESMTPS id BB5D660FC0
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Aug 2021 20:45:14 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BB5D660FC0
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=sntech.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8c11SVxJGYTbDnQKt53HzZMmFlOP1os6S7ITZc7UWq8=; b=o45bYYdAobx7bk
-	KGmSqigKD6wW03HkJpQ1nCCKRtGB2y5CYVbfqLiozSSEqY8a81/RLMLwXAEqhuIvJUVLMKvmyzvl1
-	rkPkl4qwhmwjuY6SfXcg0a0mK6hF2KbWYhYmxhWKDF0agRZX1w4CuEjrOovzmOEmBkEFd8sWtpi4M
-	JF5dutSSw4vrv7wqO+GYU90wKJnpIvfnmLwsCcQASOgbs8PyiBiHrY7P2vHDJxkhtrMe/eLdd83qJ
-	bCogrLICjCTSv0fwP+qtxpIjX5uRUqssg7ncqLwsyTc7/qAVGPlNclQAgO8nnOhct8I5YgMjlFehL
-	NFaB8FPngtW+YY7LrV4A==;
+	List-Owner; bh=Gfty5ubX2jrX8P1xN098BNmyH1tTf5VuXef8XHNmZ7Y=; b=Nd6WwgRSRxkGVw
+	FsLF54jwjB7BvhsLq75Cy2wlWzHFP01NmmHBRPNRjX3LSbbuj38+DtDF5QyVBB8HuE2J0RTR7zTJ9
+	F5b7ibd/WvXwo2mAXbtG1dpkKx+Iswhkf1RR397cyVtfF+y560JNBa/UBVwt2v5wsacXqjJ5hYTry
+	3eufboeD+PzjT7O0TxPrGrTlWmB2xPHOXBL2TmXIp7qcVXzjsYqaWJYsrX6ojpR2ERoHpPpueJ12e
+	wf/pxYoDZ7IC+0eOOXQip3nQbLHwYDyrqCnyChzTYTNfakoLN7UrL4C1hcSKik+mG/hFUaynpYG0y
+	fB6lpUTfQE1DGdsvfRdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mKn62-000Rh4-Vb; Mon, 30 Aug 2021 19:37:30 +0000
-Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
+	id 1mKo9a-000XRf-88; Mon, 30 Aug 2021 20:45:14 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mKn5x-000Rg1-UJ; Mon, 30 Aug 2021 19:37:30 +0000
-Received: by mail-ed1-x532.google.com with SMTP id eb14so14060969edb.8;
- Mon, 30 Aug 2021 12:37:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uTABDWDNLKg61M+R3vjb71MHbfemSFy2AY4zPlg2nE8=;
- b=bXr0Gort95NFKAp8VD/ml/V5CY8ZNac0oRXnVY1cowlNNobODHOf9Q0XPK7aaT0DjW
- 8W2RbQj1Wvp+hIQiJt8IseE4/rdqjErLk6nXxYtNWhV+BYcTUpskIFQfq88hd1/VCRhC
- 9Ztb0O9/Zm8SvSkxtjtZmGAYuuWa4VDPIzB8eIypxit4AmFVdH34RZaa2FeWqn5W6ERV
- Ebdrl627h+zc2GVqSWVFeoCbyxKKPCtz/rkNZyFPENOBI3UdGrXGa8plkc1h8SocErpV
- 46tJnV6jsw0QLZ1jomda7K+zd3IZE+bfZ6fdvdSsA4YLJXFgl9IKJ2HwBeLzhRh2Z9Pp
- mbgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uTABDWDNLKg61M+R3vjb71MHbfemSFy2AY4zPlg2nE8=;
- b=LogNCul6R3e9/XjdOqiOio5c+pVoCmNPYxb/SMniNepEbhsVz+BB5MtAo/hNF9hUAu
- UpE3Ukvzdb5MnGuc25X3IlX7r6ldI/8WW0hLeWs+u5MGPDB7lx3toED6zt4OMogCabs0
- lYaund4cBjhh4f3lxKJSL1wpcBOcMvNW+Fa6n4WlmyaG+tlqxWOSQFG0mExZiBcLkdvb
- mehuyaqyWHJTDZrmAFJ0+uUhZDSsAsmFqqKxsdLcwCSl+ZQNTxZ4gNk4MlRJEFKbyzH/
- wPMJywFlFgFioUsA30rCYaJqBGGoOVkjSr4j05dTdv7hzTHMqng7qcutl9zOjNxUPdXh
- 4OmQ==
-X-Gm-Message-State: AOAM531dKzeUEoX3btQcCF0CJNkC8TQ8/oL484iReNMebooKNQBO4dYU
- gYFcDNYOY5oXuVzSELTxHdAUvqafZ+nb9ylHONE=
-X-Google-Smtp-Source: ABdhPJy7qBuvqTVzY7sOAt7tXWrtZHlRPjJ+Pze/MoPqHbrn7gFn2XmnEqO3Omk3qalVhBFRXosf5B1OJ7USzraT1sY=
-X-Received: by 2002:a05:6402:313c:: with SMTP id
- dd28mr25477809edb.179.1630352243401; 
- Mon, 30 Aug 2021 12:37:23 -0700 (PDT)
+ id 1mKo9X-000XQV-Cs; Mon, 30 Aug 2021 20:45:13 +0000
+Received: from ip5f5a6e92.dynamic.kabel-deutschland.de ([95.90.110.146]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1mKo9Q-0001Q1-8y; Mon, 30 Aug 2021 22:45:04 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: linux-phy@lists.infradead.org, Mikhail Rudenko <mike.rudenko@gmail.com>
+Cc: linux-media@vger.kernel.org, Mikhail Rudenko <mike.rudenko@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v1 1/5] phy: phy-rockchip-dphy-rx0: refactor for tx1rx1
+ addition
+Date: Mon, 30 Aug 2021 22:45:03 +0200
+Message-ID: <6474995.6kXVAnRFRJ@diego>
+In-Reply-To: <20210830180758.251390-2-mike.rudenko@gmail.com>
+References: <20210830180758.251390-1-mike.rudenko@gmail.com>
+ <20210830180758.251390-2-mike.rudenko@gmail.com>
 MIME-Version: 1.0
-References: <20210817041548.1276-1-linux.amoon@gmail.com>
- <20210817041548.1276-2-linux.amoon@gmail.com>
- <c7f6213b-5ddc-881c-1aea-9cc7b03e6a4f@baylibre.com>
-In-Reply-To: <c7f6213b-5ddc-881c-1aea-9cc7b03e6a4f@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 30 Aug 2021 21:37:12 +0200
-Message-ID: <CAFBinCBeNMET2tvH0h6HF3dR+xBb59hifQyaoXigUs3UGkS+KQ@mail.gmail.com>
-Subject: Re: [PATCHv3 1/6] ARM: dts: meson8b: odroidc1: Add usb phy power node
-To: Neil Armstrong <narmstrong@baylibre.com>
-Cc: Anand Moon <linux.amoon@gmail.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
- Matt Corallo <oc2udbzfd@mattcorallo.com>, Rob Herring <robh+dt@kernel.org>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Emiliano Ingrassia <ingrassia@epigenesys.com>,
- Brian Kim <brian.kim@hardkernel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210830_123726_041918_99B6B4B7 
-X-CRM114-Status: GOOD (  18.27  )
+X-CRM114-CacheID: sfid-20210830_134511_499108_30C45FAA 
+X-CRM114-Status: GOOD (  21.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,49 +74,155 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Neil,
+Hi Mikhail,
 
-On Mon, Aug 30, 2021 at 9:45 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> Hi,
->
-> On 17/08/2021 06:15, Anand Moon wrote:
-> > Add missing usb phy power node for usb node fix below warning.
-> > P5V0 regulator supply input voltage range to USB host controller.
-> > As described in the C1+ schematics, GPIO GPIOAO_5 is used to
-> > enable input power to USB ports, set it to Active Low.
-> >
-> > [    1.260772] dwc2 c90c0000.usb: Looking up vbus-supply from device tree
-> > [    1.260784] dwc2 c90c0000.usb: Looking up vbus-supply property in
-> >               mode /soc/usb@c90c0000 failed
->
-> First of all, DT is not here to fix boot message.
-Anand mentioned elsewhere that this is a debug/info message
+Am Montag, 30. August 2021, 20:07:50 CEST schrieb Mikhail Rudenko:
+> In order to accommodate for rk3399 tx1rx1 addition, make
+> enable/disable function calls indirect via function pointers in
+> rk_dphy_drv_data. Also rename rk_dphy_write and rk_dphy_enable to
+> avoid naming clashes.
 
-> Finally, I looked at the Odroid-C1 schematics and the GPIOAO.BIT5 is an input
-> to the S805, and the PWREN signal is controlled by the USB Hub so this regulator
-> should not be added at all.
-I think there's a misunderstanding because there's two PWREN signals
-with different meanings.
-The PWREN signal for the USB host ports is hard-wired and not
-connected to the SoC at all.
-The PWREN signal for the Micro-USB port (which Anand is adding here)
-is controlled by GPIOAO_5. odroid-c1+_rev0.4_20150615.pdf [0] shows it
-as an input to "USB_OTG" on page 1. "USB_OTG" consists of a power
-switch and the connector itself as shown on page 28.
+You're a bit too late to the party :-( .
 
-Personally I think that the change from Anand itself is good.
-If you feel otherwise then please speak up.
-As I pointed out three smaller changes I am hoping that Anand will
-re-send the updated patch anyways. At that point he can also add the
-changes from your feedback.
+The tx1rx1 dphy is living _inside_ the 2nd DSI controller and is
+configured through it. 
+
+So having the same peripheral in the dts with different compatibles
+does break the devicetree-describes-hardware-not-Linux-implementation-details
+paradigm.
+
+Therefore my approach was to handle the switch between tx and rx modes
+inside the dsi driver. This got merged for 5.15 as well, see [0] [1].
+
+So sadly this series is somewhat obsolete, but you should find the
+building blocks for camera support in linux-next already.
 
 
-Best regards,
-Martin
+Regards
+Heiko
 
 
-[0] https://dn.odroid.com/S805/Schematics/odroid-c1+_rev0.4_20150615.pdf
+
+
+[0] https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=71f68fe7f12182ed968cfbbd1ef018721e4dee30
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=68e0277204c733dff19073686e2ac48239b06fbc
+
+
+> 
+> Signed-off-by: Mikhail Rudenko <mike.rudenko@gmail.com>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-dphy-rx0.c | 38 +++++++++++++-------
+>  1 file changed, 25 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-dphy-rx0.c b/drivers/phy/rockchip/phy-rockchip-dphy-rx0.c
+> index 4df9476ef2a9..72145cdfb036 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-dphy-rx0.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-dphy-rx0.c
+> @@ -138,12 +138,17 @@ static const struct dphy_reg rk3399_grf_dphy_regs[] = {
+>  	[GRF_DPHY_RX0_TESTDOUT] = PHY_REG(RK3399_GRF_SOC_STATUS1, 8, 0),
+>  };
+>  
+> +struct rk_dphy;
+> +
+>  struct rk_dphy_drv_data {
+>  	const char * const *clks;
+>  	unsigned int num_clks;
+>  	const struct hsfreq_range *hsfreq_ranges;
+>  	unsigned int num_hsfreq_ranges;
+>  	const struct dphy_reg *regs;
+> +
+> +	void (*enable)(struct rk_dphy *priv);
+> +	void (*disable)(struct rk_dphy *priv);
+>  };
+>  
+>  struct rk_dphy {
+> @@ -170,7 +175,7 @@ static inline void rk_dphy_write_grf(struct rk_dphy *priv,
+>  	regmap_write(priv->grf, reg->offset, val);
+>  }
+>  
+> -static void rk_dphy_write(struct rk_dphy *priv, u8 test_code, u8 test_data)
+> +static void rk_dphy_write_mipi_rx(struct rk_dphy *priv, u8 test_code, u8 test_data)
+>  {
+>  	rk_dphy_write_grf(priv, GRF_DPHY_RX0_TESTDIN, test_code);
+>  	rk_dphy_write_grf(priv, GRF_DPHY_RX0_TESTEN, 1);
+> @@ -186,7 +191,7 @@ static void rk_dphy_write(struct rk_dphy *priv, u8 test_code, u8 test_data)
+>  	rk_dphy_write_grf(priv, GRF_DPHY_RX0_TESTCLK, 1);
+>  }
+>  
+> -static void rk_dphy_enable(struct rk_dphy *priv)
+> +static void rk_dphy_enable_rx(struct rk_dphy *priv)
+>  {
+>  	rk_dphy_write_grf(priv, GRF_DPHY_RX0_FORCERXMODE, 0);
+>  	rk_dphy_write_grf(priv, GRF_DPHY_RX0_FORCETXSTOPMODE, 0);
+> @@ -206,22 +211,27 @@ static void rk_dphy_enable(struct rk_dphy *priv)
+>  	usleep_range(100, 150);
+>  
+>  	/* set clock lane */
+> -	/* HS hsfreq_range & lane 0  settle bypass */
+> -	rk_dphy_write(priv, CLOCK_LANE_HS_RX_CONTROL, 0);
+> +	/* HS hsfreq_range & lane 0	 settle bypass */
+> +	rk_dphy_write_mipi_rx(priv, CLOCK_LANE_HS_RX_CONTROL, 0);
+>  	/* HS RX Control of lane0 */
+> -	rk_dphy_write(priv, LANE0_HS_RX_CONTROL, priv->hsfreq << 1);
+> +	rk_dphy_write_mipi_rx(priv, LANE0_HS_RX_CONTROL, priv->hsfreq << 1);
+>  	/* HS RX Control of lane1 */
+> -	rk_dphy_write(priv, LANE1_HS_RX_CONTROL, priv->hsfreq << 1);
+> +	rk_dphy_write_mipi_rx(priv, LANE1_HS_RX_CONTROL, priv->hsfreq << 1);
+>  	/* HS RX Control of lane2 */
+> -	rk_dphy_write(priv, LANE2_HS_RX_CONTROL, priv->hsfreq << 1);
+> +	rk_dphy_write_mipi_rx(priv, LANE2_HS_RX_CONTROL, priv->hsfreq << 1);
+>  	/* HS RX Control of lane3 */
+> -	rk_dphy_write(priv, LANE3_HS_RX_CONTROL, priv->hsfreq << 1);
+> +	rk_dphy_write_mipi_rx(priv, LANE3_HS_RX_CONTROL, priv->hsfreq << 1);
+>  	/* HS RX Data Lanes Settle State Time Control */
+> -	rk_dphy_write(priv, LANES_THS_SETTLE_CONTROL,
+> -		      THS_SETTLE_COUNTER_THRESHOLD);
+> +	rk_dphy_write_mipi_rx(priv, LANES_THS_SETTLE_CONTROL,
+> +			  THS_SETTLE_COUNTER_THRESHOLD);
+>  
+>  	/* Normal operation */
+> -	rk_dphy_write(priv, 0x0, 0);
+> +	rk_dphy_write_mipi_rx(priv, 0x0, 0);
+> +}
+> +
+> +static void rk_dphy_disable_rx(struct rk_dphy *priv)
+> +{
+> +	rk_dphy_write_grf(priv, GRF_DPHY_RX0_ENABLE, 0);
+>  }
+>  
+>  static int rk_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+> @@ -266,7 +276,7 @@ static int rk_dphy_power_on(struct phy *phy)
+>  	if (ret)
+>  		return ret;
+>  
+> -	rk_dphy_enable(priv);
+> +	priv->drv_data->enable(priv);
+>  
+>  	return 0;
+>  }
+> @@ -275,7 +285,7 @@ static int rk_dphy_power_off(struct phy *phy)
+>  {
+>  	struct rk_dphy *priv = phy_get_drvdata(phy);
+>  
+> -	rk_dphy_write_grf(priv, GRF_DPHY_RX0_ENABLE, 0);
+> +	priv->drv_data->disable(priv);
+>  	clk_bulk_disable(priv->drv_data->num_clks, priv->clks);
+>  	return 0;
+>  }
+> @@ -310,6 +320,8 @@ static const struct rk_dphy_drv_data rk3399_mipidphy_drv_data = {
+>  	.hsfreq_ranges = rk3399_mipidphy_hsfreq_ranges,
+>  	.num_hsfreq_ranges = ARRAY_SIZE(rk3399_mipidphy_hsfreq_ranges),
+>  	.regs = rk3399_grf_dphy_regs,
+> +	.enable = rk_dphy_enable_rx,
+> +	.disable = rk_dphy_disable_rx,
+>  };
+>  
+>  static const struct of_device_id rk_dphy_dt_ids[] = {
+> 
+
+
+
+
 
 -- 
 linux-phy mailing list
