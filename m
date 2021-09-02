@@ -1,82 +1,86 @@
-Return-Path: <SRS0=bWLT=NW=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=/D6Q=NY=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-12.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 15651C432BE
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Aug 2021 21:33:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3CBE9C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Sep 2021 18:56:02 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D85C061026
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Aug 2021 21:33:38 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D85C061026
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id E7AE360F11
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Sep 2021 18:56:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E7AE360F11
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hq5nJm/kxCRG+UGLpHteSOZzY3yh7T+UWkR5YgOlWXY=; b=TKOnDLBIxGzokY
-	QCS/TxrDBtOFovPKZuNkFRNhFLImObYo48VvYSPL27jKb4qQ62jMgr/ro77D4zn6OhvFL7k6+gA+u
-	7kgArXUt3o6UIfrvmTLH/dMbZXpSOtJ3bB0mneOV0kawTf++LmpDlA++ZRSDNhX/k9YrJ+kSLIz35
-	qRMuXAhb83vi5WyQx34dzduLG+7rAbekU7u8rD5qGbLCRsb+VOEYlRQjWcKMpFZxKRh3aBNC2Sch0
-	UOx6w033502pW0cTaBPUdty3o8Gr9LTwajraPihf/O60Pvv/zpwXHz+x3yUxY98wUqvDMCj5jMD6A
-	1n4mL0rzUoloUoh7uu9A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EPsPkpuFEFpuWAi0i4EnH243Zzl5Ze2fvlxyv8wfTz0=; b=x9WfA0/7Q+Uai4
+	fdy5xdkqyzZbjFiAer43PaT2/S/EamdqYRT7kZeYWXj6tLH3WXuQQ3QoKBVydPSwDIgYQDPfALxHs
+	cThidFWhHKcAXCPHSEYDKLwOz3GfRiIUjcwWAMLfWKiG5KHrzI7nYEQ519+eehSE2sxjfJ/V1jP1y
+	a81zk7v1Cz0VostwwbPFRBc4V94StkWbhpc9uJ2vDOmP1jVaWYV8/9HqfTZgAMChfzH8KDJHaYcy9
+	a3oUswz6/KLFNlcPZcdY8+Zz1zIQ3ENhtChWpCflKqiH1WNX1ii2p+IqZyFzE32Np0ohywxd36EYA
+	bGwdtwzWim+WKOm1t7EQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mLBNy-003Ec2-Do; Tue, 31 Aug 2021 21:33:38 +0000
-Received: from mail-ot1-f49.google.com ([209.85.210.49])
+	id 1mLrsX-00AJdn-7u; Thu, 02 Sep 2021 18:56:01 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mLBNw-003EbK-8o; Tue, 31 Aug 2021 21:33:37 +0000
-Received: by mail-ot1-f49.google.com with SMTP id
- 107-20020a9d0bf4000000b0051b8be1192fso939029oth.7; 
- Tue, 31 Aug 2021 14:33:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=DEpQtIcbExJAxj5xWJXZXM2lHBBB0XQwgkBGvLg9dOE=;
- b=STwzW3aGlClGskTC4R5W5215Xa2e/a76kUNmqER/o1H3Ornh2HJGK+uvQdbwigKnBN
- sGdRYYfDiznngOvyU9cDZLCfKaVphNmfbgmv3bQPpxCad73rRe10P69Rxk75yxeyYVAI
- 56+haRyMsn2nK3u1HIZsjPEn1s80ynD5U9h3K8aMfsf78SbhWqepmc2nT4WH1lzqSZBK
- Ho+8gol6QXzOMc3VDq60gF8WdYH3PbG69HSqo2f/Mso08PBP8fq6UR3JjTQImgEBwEjt
- CBOqUIfbPOEa5TeyI7jYWRn6dCK9sl19W2MnMePAt5RfX7c0/j1aQTGX9HJQajS4YlWO
- I/bQ==
-X-Gm-Message-State: AOAM530xkQ4Egm2kf9vFWXeHWVPhUKMVENqCqGsdUZZZI2Dd4NB21UQ7
- mWuFB6HPH1iBhM4Qws8dwA==
-X-Google-Smtp-Source: ABdhPJxGqyVnBtagDTjCeybHyJZZcO2XDDl1qVwChkvfIfIOVQCqHzcY9vD9BRXlCYPbqdWGaP7XtA==
-X-Received: by 2002:a9d:2782:: with SMTP id c2mr25865678otb.323.1630445613196; 
- Tue, 31 Aug 2021 14:33:33 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id 186sm3929809ood.39.2021.08.31.14.33.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Aug 2021 14:33:32 -0700 (PDT)
-Received: (nullmailer pid 682925 invoked by uid 1000);
- Tue, 31 Aug 2021 21:33:32 -0000
-Date: Tue, 31 Aug 2021 16:33:32 -0500
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Cc: linux-phy@lists.infradead.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- robh+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org,
- kishon@ti.com, linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: rockchip: remove usb-phy fallback
- string for rk3066a/rk3188
-Message-ID: <YS6gLG+M4dP+rkl6@robh.at.kernel.org>
-References: <20210828111218.10026-1-jbx6244@gmail.com>
+ id 1mLrsU-00AJco-Ct
+ for linux-phy@lists.infradead.org; Thu, 02 Sep 2021 18:56:00 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 182ItmCI116551;
+ Thu, 2 Sep 2021 13:55:48 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1630608948;
+ bh=y8LCb+YTT5nCF8UWI/R0EGK5b0c+FB4dHQffz0z42Qk=;
+ h=From:To:CC:Subject:Date;
+ b=vZwP79W3uiivn5yItQcYak/+rMIeV1GFwV5tQTBd4drIJR8fg6kmSrgV5AFwgbNHy
+ aWxqt+SZC0uxXlATz9O/7fbLHm7JXhoKNrg95lXEbW6Ox162pNk18RfWpWjFR2wWcM
+ F6T7lOimGrdrxOAXrx/G4XBGAvKX5NdQ4UmxPdmI=
+Received: from DLEE111.ent.ti.com (dlee111.ent.ti.com [157.170.170.22])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 182Itm0L003409
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 2 Sep 2021 13:55:48 -0500
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Thu, 2
+ Sep 2021 13:55:48 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Thu, 2 Sep 2021 13:55:48 -0500
+Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 182Itiao017156;
+ Thu, 2 Sep 2021 13:55:44 -0500
+From: Pratyush Yadav <p.yadav@ti.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Vignesh Raghavendra <vigneshr@ti.com>, Tomi Valkeinen
+ <tomi.valkeinen@ideasonboard.com>, Laurent Pinchart
+ <laurent.pinchart@ideasonboard.com>, Nikhil Devshatwar <nikhil.nd@ti.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>, Chunfeng Yun
+ <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Pratyush Yadav <p.yadav@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>
+Subject: [PATCH v5 0/6] Rx mode support for Cadence DPHY
+Date: Fri, 3 Sep 2021 00:25:37 +0530
+Message-ID: <20210902185543.18875-1-p.yadav@ti.com>
+X-Mailer: git-send-email 2.33.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210828111218.10026-1-jbx6244@gmail.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210831_143336_359113_2D5038F4 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20210902_115558_607683_223BF405 
+X-CRM114-Status: GOOD (  17.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,21 +97,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 28 Aug 2021 13:12:17 +0200, Johan Jonker wrote:
-> With the conversion of rockchip-usb-phy.yaml a long time used fallback
-> string for rk3066a/rk3188 was added. The linux driver doesn't do much with
-> the GRF phy address range, however the u-boot driver rockchip_usb2_phy.c
-> does. The bits in GRF_UOC0_CON2 for rk3066a/rk3188 and rk3288 for example
-> don't match. Remove the usb-phy fallback string for rk3066a/rk3188
-> to prevent possible strange side effects.
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  .../devicetree/bindings/phy/rockchip-usb-phy.yaml     | 11 ++++-------
->  1 file changed, 4 insertions(+), 7 deletions(-)
-> 
+Hi,
 
-Acked-by: Rob Herring <robh@kernel.org>
+This series adds support for Rx mode on Cadence DPHY driver. It has been
+split off from [0] to facilitate easier merging. I have still kept the
+version number to maintain continuity with the previous patches. This
+series also includes conversion to YAML binding.
+
+Tested on TI's J721E with OV5640 sensor.
+
+[0] https://patchwork.linuxtv.org/project/linux-media/list/?series=5526&state=%2A&archive=both
+
+Changes in v5:
+- Based on Laurent's suggestion, add cdns_dphy_info which contains the
+  phy_ops and cdns_dphy_tx_ops (renamed from cdns_dphy_ops). This lets us
+  get rid of the phy ops wrappers.
+- Move probe() and remove() into cdns_dphy_common_ops() since they can
+  be used by both modes. Drop the check in power_on().
+- Get the clocks in the tx ops probe to make sure they are mandatory for
+  Tx mode but not for Rx mode.
+- Use the new cdns_dphy_info to specify PHY ops.
+- Re-order include in alphabetical order.
+- Make bands const.
+- Drop num_bands.
+- Make i, lanes unsigned.
+- Drop the maximum check in cdns_dphy_rx_get_band_ctrl(). Let the loop
+  complete and return -EOPNOTSUPP when we reach the end.
+- Drop the "rate < bands[i].min_rate" check since the bands are in
+  ascending order.
+- Move data_lane_ctrl to start of function and make it static const.
+- Make clocks a required property based on the compatible.
+- Use enum instead.
+
+Changes in v4:
+- Instead of having both Rx and Tx modes in the same driver data, keep
+  them separate since the op selection is based on compatible now. For
+  that reason, the cdns_dphy_driver_data struct is no longer needed.
+- Rename ref_dphy_ops to tx_ref_dphy_ops to clarify their purpose.
+- Drop submode checks in validate() hook.
+- Drop the submode parts. Use a different compatible for the Rx ops.
+- Make bands and num_bands static.
+- Drop the submode patches. Use a different compatible for Rx mode DPHY
+instead.
+
+Changes in v3:
+- Use a table to select the band.
+- Use a table to poll the data lane ready bits.
+- Multiply the DPHY HS clock rate by 2 to get the bit rate since the
+  clock is DDR.
+- Add Rob's R-by.
+
+Changes in v2:
+- Drop reg description.
+- Add a description for each DPHY clock.
+- Rename dphy@... to phy@... in example.
+- Add Laurent's R-by.
+- Re-order subject prefixes.
+- Re-order subject prefixes.
+- Add power-domain to the example.
+- Add Laurent's R-by.
+- Re-order subject prefixes.
+
+Pratyush Yadav (6):
+  phy: cdns-dphy: Prepare for Rx support
+  phy: cdns-dphy: Add Rx support
+  phy: dt-bindings: Convert Cadence DPHY binding to YAML
+  phy: dt-bindings: cdns,dphy: make clocks optional for Rx mode
+  phy: dt-bindings: cdns,dphy: add power-domains property
+  phy: dt-bindings: cdns,dphy: add Rx DPHY compatible
+
+ .../devicetree/bindings/phy/cdns,dphy.txt     |  20 -
+ .../devicetree/bindings/phy/cdns,dphy.yaml    |  66 ++++
+ drivers/phy/cadence/cdns-dphy.c               | 351 +++++++++++++++---
+ 3 files changed, 356 insertions(+), 81 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
+
+-- 
+2.33.0
+
 
 -- 
 linux-phy mailing list
