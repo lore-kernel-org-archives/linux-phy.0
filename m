@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4E16DC433F5
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Sep 2021 16:48:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8D4CEC433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Sep 2021 19:02:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1D764610C9
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Sep 2021 16:48:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1D764610C9
+	by mail.kernel.org (Postfix) with ESMTPS id 5628161101
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Sep 2021 19:02:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 5628161101
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,68 +23,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I+ywtBK99vt6VmLp7iLGcFNtD2CEV4s6k/PpZR/sDyY=; b=vcdt/rSHuUERra
-	gB3PI+3hA8vcsUKsw6+ompMzA0kGEBzHOM4cn84H6xdG+T7twsDIoCYNiyM0jaXRueUF0QztqOqpV
-	ihSoJaLrhN8nfOIyQgVQaGZe95etvC7Y+GvG075XKi2mtAulRK//T4Qof4WOBqEjJBMff36yorz6G
-	QgssMmYaWIX4N+y5h62+HYxQqmrXaovMpZuS/WrYt//UnyRPB3YVC/uWmUY9OyesrKSBMJjUn/HtO
-	zuVSICBromoxCtzQI70JqAv5jlVBvE6NE2aWkirMr4//P3UlZE86jPwzcAGoIESzH3IH1qBLoAghZ
-	8VoAJiHvm14zxDKYMtSg==;
+	List-Owner; bh=lwhlWZCRIYUGM0ZebUq7qfhUEcInWfRqX55YFb21v/g=; b=1wvBoChozxA5bq
+	WHm5gd/C1houacdMf6rP+b6vgD9P5ZNCZW1nOPPYrFQIzgB5Q5yavO/TKB6xhL2PEF7X5anlh5XQ/
+	Gxo23SVn+vQm9rn5LW/N5x8/M8vkXszT1rGB8nTcWQWas/GoeWrbrjAgLTFXaqH//0ZFlnFt0M0u9
+	DMA5trEwkdxjpFDPsMVuGKj5x0EgB6X2j0F3NsbI1ag7rN8p0Du7FwzNI8kBozF6aRYzWc9kY5ugn
+	Vig494DT+EjMwfXmuwdCdb5+4uy+Ic/1AckoYKFIbTmiNEh4gOVDhPFzX8ul4jurytuUUp5BlmJVg
+	qBVHNYQlV9eSV/o2xzKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mNeGk-004GBJ-Ko; Tue, 07 Sep 2021 16:48:22 +0000
-Received: from mail-oo1-f49.google.com ([209.85.161.49])
+	id 1mNgMU-004Var-TT; Tue, 07 Sep 2021 19:02:26 +0000
+Received: from mail-oo1-f43.google.com ([209.85.161.43])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mNeGL-004Fxm-1h; Tue, 07 Sep 2021 16:47:58 +0000
-Received: by mail-oo1-f49.google.com with SMTP id
- e206-20020a4a55d7000000b00291379cb2baso3101757oob.9; 
- Tue, 07 Sep 2021 09:47:56 -0700 (PDT)
+ id 1mNgMR-004VZP-Uc
+ for linux-phy@lists.infradead.org; Tue, 07 Sep 2021 19:02:25 +0000
+Received: by mail-oo1-f43.google.com with SMTP id
+ g4-20020a4ab044000000b002900bf3b03fso100751oon.1
+ for <linux-phy@lists.infradead.org>; Tue, 07 Sep 2021 12:02:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=MHz/eO25vUr8S8mSE9bsSa7gCQmBbjrMFcMGbCUHb6o=;
- b=APKVkB3WdE5+VXLQ8JLUPPqwJETyzdHIF4JMIQ5OXhA1i/U6LMka3CElfhyBHTjKpd
- t+8/ss/4GyCKDiWvwJShjkuYATO5tOOIBnEQeNZeuxxvwiTWtAfvnv221tlQsWWLPDjh
- hKfqO5CbptiQg+/F66rg9gfLZ8Qs0EqfA6TczHvpDBsAtqUDLDAtPhJWz0Hwaz177FXt
- 5X1FDRRx9WJLeyhwihco9ADogwzVTNEgKLXsA1ILJma89FuSpeL2G8oJ9OdxOOGxFZLZ
- JJEvv6H9fmHuTOKgYhh7IYr93qqnK4o7WStzZYYu9t3PoGrmdzi6iiFA45lB7FZBn5f8
- FuTQ==
-X-Gm-Message-State: AOAM533p7WQ+CbrSQ4ldsAz0TNvs8xjRwq833rxM6RUazAH8JLt/edZ2
- ghjRua/qHp9oXNuPTVvnCA==
-X-Google-Smtp-Source: ABdhPJzZ4nyNi1E0Szx6UheqtQBDEqBMRmGhaKeXZHBzgMHg0LqsypWDXSEu8Z0dH05M0/talFPCXA==
-X-Received: by 2002:a4a:e923:: with SMTP id a3mr641201ooe.45.1631033275700;
- Tue, 07 Sep 2021 09:47:55 -0700 (PDT)
+ bh=Uf9oAMweWSvXHeUJ78rjsUAw0orQH67zgtFYqz1QUvI=;
+ b=XMMevEtkwldxR1twjD6XmkzmRXJuV5Fgj0MzLYrC3+q9xVVGBMS1rv2WL9uhqZwpxc
+ Z/4LRqoLAnGIWe9JB39Egl9WKcaJtZP5l7Wd+x4CeQxmHHN1c3yrgkcu7FeDAfupYr63
+ gQlU1bDsoEGIHdocJPjkiV2/vZJtOsRV8w3hjz3UPcjWe+wGFeNQulBE/07ahyCPeQ1z
+ MxloqTUaat2GB9Hq8QgioKp6OHXwZwJlxpoJ2RCYx+AIWFIVId0xteEd6cT81KvG/9ij
+ eUw6npVQRZYRE7MylLyzS4A6thyEkH/l5oT3qn7gaDA0v+6zrRS6vc/THAWeyV8cqvKT
+ EWwA==
+X-Gm-Message-State: AOAM530rtnBj+LU0CSM5B6y0+qIRzR+IzlUmCvcFPO2ztOCt/R8i07Q/
+ RegkSiU6QbbDdoH5UGb/vQ==
+X-Google-Smtp-Source: ABdhPJzzEU9OPNW0P0QTHLeD3TNxPLYcOxjSNkaHogHMEA8afDB76z0jrTVRTxpd0RpUYsiQFZRXLg==
+X-Received: by 2002:a4a:db68:: with SMTP id o8mr1124351ood.98.1631041342612;
+ Tue, 07 Sep 2021 12:02:22 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id z18sm2234069oib.27.2021.09.07.09.47.54
+ by smtp.gmail.com with ESMTPSA id b24sm2280646oic.33.2021.09.07.12.02.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 07 Sep 2021 09:47:54 -0700 (PDT)
-Received: (nullmailer pid 4137367 invoked by uid 1000);
- Tue, 07 Sep 2021 16:47:53 -0000
-Date: Tue, 7 Sep 2021 11:47:53 -0500
+ Tue, 07 Sep 2021 12:02:21 -0700 (PDT)
+Received: (nullmailer pid 162836 invoked by uid 1000);
+ Tue, 07 Sep 2021 19:02:20 -0000
+Date: Tue, 7 Sep 2021 14:02:20 -0500
 From: Rob Herring <robh@kernel.org>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: David Airlie <airlied@linux.ie>, Matthias Brugger <matthias.bgg@gmail.com>,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-kernel@lists.infradead.org,
- CK Hu <ck.hu@mediatek.com>, linux-kernel@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, linux-mediatek@lists.infradead.org,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Jitao shi <jitao.shi@mediatek.com>, linux-phy@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>
-Subject: Re: [PATCH 4/4] dt-bindings: display: mediatek: add MT8195 hdmi
- bindings
-Message-ID: <YTeXuVdyh+VMGdl7@robh.at.kernel.org>
-References: <20210907083723.7725-1-granquet@baylibre.com>
- <20210907083723.7725-5-granquet@baylibre.com>
- <1631026304.913177.3958449.nullmailer@robh.at.kernel.org>
+To: Pratyush Yadav <p.yadav@ti.com>
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Nikhil Devshatwar <nikhil.nd@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH v5 4/6] phy: dt-bindings: cdns, dphy: make clocks optional
+ for Rx mode
+Message-ID: <YTe3PDnhtBcRj9ti@robh.at.kernel.org>
+References: <20210902185543.18875-1-p.yadav@ti.com>
+ <20210902185543.18875-5-p.yadav@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1631026304.913177.3958449.nullmailer@robh.at.kernel.org>
+In-Reply-To: <20210902185543.18875-5-p.yadav@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210907_094757_149456_A30DA042 
-X-CRM114-Status: GOOD (  15.07  )
+X-CRM114-CacheID: sfid-20210907_120224_028660_E9C42218 
+X-CRM114-Status: GOOD (  12.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,37 +99,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 07, 2021 at 09:51:44AM -0500, Rob Herring wrote:
-> On Tue, 07 Sep 2021 10:37:21 +0200, Guillaume Ranquet wrote:
-> > Add Mediatek HDMI and HDMI-DDC bindings for MT8195 SoC.
-> > 
-> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> > ---
-> >  .../mediatek/mediatek,mt8195-hdmi-ddc.yaml    | 46 +++++++++
-> >  .../mediatek/mediatek,mt8195-hdmi.yaml        | 99 +++++++++++++++++++
-> >  2 files changed, 145 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,mt8195-hdmi-ddc.yaml
-> >  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,mt8195-hdmi.yaml
-> > 
+On Fri, 03 Sep 2021 00:25:41 +0530, Pratyush Yadav wrote:
+> The clocks are not used by the DPHY when used in Rx mode so make them
+> optional for it by using a conditional based on compatible.
 > 
-> My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-> on your patch (DT_CHECKER_FLAGS is new in v5.13):
+> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 > 
-> yamllint warnings/errors:
+> ---
 > 
-> dtschema/dtc warnings/errors:
-> Documentation/devicetree/bindings/display/mediatek/mediatek,mt8195-hdmi.example.dts:19:18: fatal error: dt-bindings/clock/mt8195-clk.h: No such file or directory
->    19 |         #include <dt-bindings/clock/mt8195-clk.h>
->       |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-> compilation terminated.
-> make[1]: *** [scripts/Makefile.lib:379: Documentation/devicetree/bindings/display/mediatek/mediatek,mt8195-hdmi.example.dt.yaml] Error 1
-> make[1]: *** Waiting for unfinished jobs....
-> make: *** [Makefile:1438: dt_binding_check] Error 2
+> Changes in v5:
+> - Make clocks a required property based on the compatible.
+> 
+> Changes in v3:
+> - Add Rob's Ack.
+> 
+> Changes in v2:
+> - Re-order subject prefixes.
+> 
+>  .../devicetree/bindings/phy/cdns,dphy.yaml          | 13 +++++++++++--
+>  1 file changed, 11 insertions(+), 2 deletions(-)
+> 
 
-Last I checked this is still not upstream. I'd suggest you adjust the 
-example to not need this header.
-
-Rob
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
