@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2AA1BC4332F
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C950CC43217
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:51 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id ED53361155
+	by mail.kernel.org (Postfix) with ESMTPS id 98F1361157
 	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org ED53361155
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 98F1361157
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,44 +23,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UCoJwPNulXdEJhV5GKapF1Z7451QLBusT8h6owX/HlQ=; b=p1azwFl/SwI5oS
-	ztYI3kKFLwwFAm5pPEx/k+2dbtzrDLW55+Inh95Jt/JAwqlFlbFmn3TRdZBWgcKVkv+4n29E0Pu3T
-	BDITEJF7YvdNGbqDlUTh3dQeBs+G0TNMQrDa0FPJaq2PH8Nn6pVdPiQ7E6B7wzS9MsjnTPwXHGPyo
-	YOKbndswrhK/snnBgAf3Shn6qR9AnD6YbjABPcf3o2GLfMVsSsF1uiKlOtFL7rpbeSMe5b8aSGVrM
-	tsaSHS4XYKRRmj7jIz30Ez7ArSJMEAxpQiEQ4g66oTae7T0UOn311SLy2xg4wUs1ia005je5ye4Rb
-	a+dmjL1if+3y35vp3Wuw==;
+	List-Owner; bh=XgZCB5y8Sofl8ppRGIvmvWn52SKcD9xXbfD7OyCURBM=; b=0VENZV/w/9x3He
+	/FGvP0FE25xbBcCvry9zaF4+I+LecNs+kFFZpkCjbxxepq/TZxPJ4wVLr0heVD/ByWDc5+nURnHtH
+	XK/UWgXPBMjL0tkfupqP627n+xoLc1SFDs82pkkRTbytVAsZfaGF8YnI6GnzncIZvy5yeDiPBESpd
+	zrMTYbXHUZXaxjCNZmeVOOc9gpfCUOEQQmECOzt2HKbpblJ8k7uHBcdz28vXlzhQ+258dI9uA2W4g
+	ZahcPfw7pdnskJ4ZqG5++nzMQWkr8q5UKxrPLNppPHupwgxuvzaFhbd9zzYL08VXLS/EfOieWF7Wm
+	M2M8VaFqDfOmwE1KC9kA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mNwi7-006hka-7b; Wed, 08 Sep 2021 12:29:51 +0000
+	id 1mNwi6-006hkI-Pq; Wed, 08 Sep 2021 12:29:50 +0000
 Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mNwhz-006heh-CD
- for linux-phy@lists.infradead.org; Wed, 08 Sep 2021 12:29:49 +0000
+ id 1mNwhz-006hek-P0
+ for linux-phy@lists.infradead.org; Wed, 08 Sep 2021 12:29:48 +0000
 Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
- by mx0a-0014ca01.pphosted.com (8.16.1.2/8.16.0.43) with SMTP id 1886dfYW030276;
- Wed, 8 Sep 2021 05:29:42 -0700
+ by mx0a-0014ca01.pphosted.com (8.16.1.2/8.16.0.43) with SMTP id 1886dluE030522;
+ Wed, 8 Sep 2021 05:29:43 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=proofpoint;
- bh=dN1H3/Pon1Y9WEDQfDoHUvfloP9gMocl2sA/vBwFrIk=;
- b=Zs5N5ur11r1B/WvIGT5P1ZHsU+vAZlIXyWuIOsVJszAWEBQNcpJsDSEo9kt/Wxjx3+C0
- RxD5uRsDGl6968S9SLG2hICmAs8jSZGK/Q3IqotBWZXkoLlUFRWTdEbzDbF/wiuAT6w3
- /zvjEKOvkho4GjSwyO+5SUIskK/NzdS8wWI5SqGOTlyxCf8CggkTbt15kCEQ/fj9bEos
- 0dn/gobt8KxxB3sV89PBp+Qx4+W8ai3SSekQBEymKqM51S43P31KH7qpJ22lMj9Acvm9
- kiOcmSmmEHqgMW923/oqQcoVQouxBgvXrh6+6GDUZq9EH+3rzPmWXVZc9sJHDBzFoTuv tw== 
-Received: from nam11-dm6-obe.outbound.protection.outlook.com
- (mail-dm6nam11lp2169.outbound.protection.outlook.com [104.47.57.169])
- by mx0a-0014ca01.pphosted.com with ESMTP id 3axcn5b0x9-1
+ bh=QVW5zowOOqNka9NgAk8b1lOpt/DRuhTeb2B8vX5LFxU=;
+ b=bDWWvwBzhGuEwA/SfcmwdFQGDwn3HjKV/MeVQOFIA/ZFDXFpa0MwshhY2BWT79gLkG3Y
+ 4Y0lpua/hI5VLTUHZd9KdEVuGj8UZRPL2UKeK1mnQHR3M+xsjL9+lqnWkwvBLSOO68Lr
+ w104rW1w6uKNXK7+Abyu79ncoq6yjxid/x4oR0zoOIeGceQCSppXr8ysSNDIlVkeMAqJ
+ 0Ewi3M2m6cHnZjYhPcVznBf+qEvuBM3mwG98lD5IsdZzVrg1mwsURJQIGgLmzVnqGQXz
+ 9S0pGrWfQAW9ZFs1x4ND4gRumX1mR1cnNdRE9ynvBx2qANSLTXXq1kyNaevegNmhYhdr kw== 
+Received: from nam12-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam12lp2173.outbound.protection.outlook.com [104.47.59.173])
+ by mx0a-0014ca01.pphosted.com with ESMTP id 3axcn5b0xc-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 08 Sep 2021 05:29:41 -0700
+ Wed, 08 Sep 2021 05:29:42 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=anZuZ52icJQ2y+ckNB3nfBAddK8vHSB1mjqTQClt3DRhTWHezwxklbck3X5ZUyOpeA2AKm7EyY8tLK1v8qJ4PMEu5AjBKkGTdU9e4u1c7qAvg76ZBz9hVQI6AvFE2KUF94GICyEfQC2IiZ7WYlF7eigbAAKMA64XAvmOSpgcInlCmUs4cxGsAMgDIL51qItoCgXJm8FxJVqCOW7X4CdhDrYP9ObE/0V+noUG0U6NMJFk/GMyCAWQO+3kVgj5/KctU3oBC/Y6zAJIfJuflRznuQ2VwpakA2REogcMfq7Rdrx0MXN5J54vccovAY0Yw/hIeU4lKwCrKc/4J0HaX0KRbw==
+ b=dFjODxd6xoIVM1Mm55nQj325Vai5bm3RTD8fnx4UC0HbRnK0ejPrmVJNeqexRCLTEydKTmbYylVqvsCQuwRi/wHrzgJskdmToN6OB+OBmgaWUZ2nzupkBXwySbkazli3Dot+gpnIahqzL+KeIP76yJQ9ZllaFE8tY5YBnaDvHqpONBnHTg2wDBz+kpCs21kRGz5kuX+1kb2n5MJMKMo6qTIFQ+uqyqR6vX60EQodDKsPr8vXvgeMbFrd3YDdqmQJE9rXXbXTnZqCmDhX4PBnziFjKy8dg/ruQZ3UzuXOcv2YUT1EvFe8h9NzivuxDo3K9rXiag4iqkz6yB3ZHF6/XQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
- bh=dN1H3/Pon1Y9WEDQfDoHUvfloP9gMocl2sA/vBwFrIk=;
- b=ODYP3pAUPlbevxcUCw9OjjJYioYqwugy57QIW5B8ZAVjOrOeOXtU5fBB62prZOuKiNt8EUi46QAVDXcKECBRII+Xu+JLVDO/AFM8K25bYLzgXVQQzmX75ktETIj//Wj8n1b5jPhsXiPQI5l4vPY34Wj9K8vOdcO4fsNf11+nqztB7kG2to75iZfToIspU/xS/SvOS9jKovfIcund/4b+Bgsm13baUtrSUIVmFWveW1j9E4yJiqF9fVUz7KiladscRJua8an5OgmwgubXa729ONPuTFKKzYmsg5yYEB210ygwKBPs6gaNUfrNYc0jZSJt8AFdXQI1kvVrDJXLcV7AyQ==
+ bh=QVW5zowOOqNka9NgAk8b1lOpt/DRuhTeb2B8vX5LFxU=;
+ b=ftFZfgKYbi60BCNoU+o2l9UPNSJt0NdUtQIh6xCs/OOFWDLvibYlnV8zBYpga2JFrL3mxz3UwE/r5Bx3QLH2OliQ+7w7Gf3gmLsEUyRm3e+BLXJRNGO6ra3jl66IM9VSRePK2q7qT3K8bIpFbXxlignXz6Xa4To2My1nUSmsJcxK5Oul/8Gc4aTade+Mo5M+0VtXKmfuUsspho9Go14BT+jTlZ7tU6e3LpHDmGHFcQgc5Xg3YDHbCk4OuwPUQ5eU4hVgzvPehCSi6LyHVtl7IWqB4k7xzay9NVY07XSP8WlQ3ejFR3fs+icTcY5bTJVu2ZYhOPScPCeeB3L2/BNSsQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  158.140.1.148) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
  dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
@@ -68,16 +68,16 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dN1H3/Pon1Y9WEDQfDoHUvfloP9gMocl2sA/vBwFrIk=;
- b=SSZ4F1FQG4Ow/KIEDbChy7uG4wf/OegQHTA+8NH7iazmEHo0Ss3jWfLNl+puifdbLjIQVgL3pSBB4Eh4QRJqOS+RR97nMluGUEcx3EddqSg4pZYEDgTywBr2n/jjFiToXjt0SCngI97hK39OouimyJPY5CsVwerekAOMvytJGyU=
-Received: from CO2PR04CA0081.namprd04.prod.outlook.com (2603:10b6:102:1::49)
- by SN4PR0701MB3677.namprd07.prod.outlook.com (2603:10b6:803:4a::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4478.21; Wed, 8 Sep
+ bh=QVW5zowOOqNka9NgAk8b1lOpt/DRuhTeb2B8vX5LFxU=;
+ b=zt/yNTmqlpwAmHJzwv+zDOoF7pcuLeU7KDvWZSTB1IOM84kQnPAKWQO8e3SSFuHbE/neQC+DAOi+vR9tqAJF+sA18zt6QfUOBhuv7SMkWSEaaLInoVBgEe/kGVlUGP2Nijw9E1lo07dJg/Xp3XrEyw+7XtH0hNiLs7co1oDHC0c=
+Received: from BN9PR03CA0860.namprd03.prod.outlook.com (2603:10b6:408:13d::25)
+ by BN8PR07MB6194.namprd07.prod.outlook.com (2603:10b6:408:ba::26)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4500.14; Wed, 8 Sep
  2021 12:29:39 +0000
-Received: from MW2NAM12FT066.eop-nam12.prod.protection.outlook.com
- (2603:10b6:102:1:cafe::8b) by CO2PR04CA0081.outlook.office365.com
- (2603:10b6:102:1::49) with Microsoft SMTP Server (version=TLS1_2,
+Received: from BN8NAM12FT014.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:408:13d:cafe::9d) by BN9PR03CA0860.outlook.office365.com
+ (2603:10b6:408:13d::25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4500.14 via Frontend
  Transport; Wed, 8 Sep 2021 12:29:39 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.148)
@@ -87,14 +87,14 @@ Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
  158.140.1.148 as permitted sender) receiver=protection.outlook.com;
  client-ip=158.140.1.148; helo=sjmaillnx2.cadence.com;
 Received: from sjmaillnx2.cadence.com (158.140.1.148) by
- MW2NAM12FT066.mail.protection.outlook.com (10.13.181.212) with Microsoft SMTP
+ BN8NAM12FT014.mail.protection.outlook.com (10.13.183.44) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4500.6 via Frontend Transport; Wed, 8 Sep 2021 12:29:38 +0000
+ 15.20.4500.6 via Frontend Transport; Wed, 8 Sep 2021 12:29:39 +0000
 Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
  by sjmaillnx2.cadence.com (8.14.4/8.14.4) with ESMTP id
- 188CTX9N026939
+ 188CTX9P026939
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 8 Sep 2021 05:29:36 -0700
+ Wed, 8 Sep 2021 05:29:37 -0700
 X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
 Received: from maileu5.global.cadence.com (10.160.110.202) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
@@ -107,10 +107,10 @@ Received: from vleu-orange.cadence.com (10.160.88.83) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
  15.0.1497.2 via Frontend Transport; Wed, 8 Sep 2021 14:29:32 +0200
 Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
- by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 188CTWjl010276;
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 188CTWxI010292;
  Wed, 8 Sep 2021 14:29:32 +0200
 Received: (from sjakhade@localhost)
- by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 188CTWa5010275;
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 188CTWN6010291;
  Wed, 8 Sep 2021 14:29:32 +0200
 From: Swapnil Jakhade <sjakhade@cadence.com>
 To: <vkoul@kernel.org>, <kishon@ti.com>, <robh+dt@kernel.org>,
@@ -118,10 +118,10 @@ To: <vkoul@kernel.org>, <kishon@ti.com>, <robh+dt@kernel.org>,
  <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
 CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <lokeshvutla@ti.com>,
  <a-govindraju@ti.com>
-Subject: [PATCH v2 02/15] phy: cadence: Sierra: Prepare driver to add support
- for multilink configurations
-Date: Wed, 8 Sep 2021 14:29:17 +0200
-Message-ID: <20210908122930.10224-3-sjakhade@cadence.com>
+Subject: [PATCH v2 06/15] phy: cadence: Sierra: Rename some regmap variables
+ to be in sync with Sierra documentation
+Date: Wed, 8 Sep 2021 14:29:21 +0200
+Message-ID: <20210908122930.10224-7-sjakhade@cadence.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20210908122930.10224-1-sjakhade@cadence.com>
 References: <20210908122930.10224-1-sjakhade@cadence.com>
@@ -129,30 +129,30 @@ MIME-Version: 1.0
 X-OrganizationHeadersPreserved: maileu3.global.cadence.com
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 2759c751-b298-4a82-ce40-08d972c45319
-X-MS-TrafficTypeDiagnostic: SN4PR0701MB3677:
-X-Microsoft-Antispam-PRVS: <SN4PR0701MB3677F1D92FB5D4E0B71F669AC5D49@SN4PR0701MB3677.namprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:595;
+X-MS-Office365-Filtering-Correlation-Id: 09992880-a930-4495-7ab9-08d972c453a0
+X-MS-TrafficTypeDiagnostic: BN8PR07MB6194:
+X-Microsoft-Antispam-PRVS: <BN8PR07MB61947BC3EA3FDBEEBECEA3EDC5D49@BN8PR07MB6194.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:534;
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: QIiUSykQ3ayDo4QDiqWRFupn1zQaEYqkvLfTpMKXZ2JS8VVDEfZk140FlfBg7hWz/12B9hLQmTjyRWSqrt1oQLT+t7tU3v7ehqRjge4IOf4t6VVxLMUZf10MS1B7O2Pck4mtmJJ7LsHk1kAOQ77gs93gIhZ+7sjyftuV6UKUmVR0zYdBBB7pXK/ipUOMvb7J5ciA6rERDjwltCyfPkINTiXtke9cM6moClSb+RMojFLwIlUZ+FXlQJMwpM2RWpj6qNIv6n/pQOxxyZcp/FAyDS0SGnMlSXctytCPlLdgc8Qy0LVLPFNK1WMvEcQ5XOKUGLkEPmaJBZyjxjuTgAphK1tF2CJz26zHrB3Z5ma98FvzYw85WumFmU/nunVIOw72R5z4UtYAlw9P1SPbwKdTrQBDW5van13wXAftVmtUjAYeypdAZsGGBYz01wjxrSOS9Jcai+HA0kAZEhO/KVvqVc9yw40UZg5bKoavQqnQNi0qULPDfFqiUX9/Li8yuvxd092vaQvIT5YVi37EH/r8rbTuCE6VURTDNcIUWc89/b0JK81fqTO9R4VfN2WhPDBZmbZFPBk1lXMIGQRKXqGXalI6x9YKmXuhT0SoLaRGplmDfb6y7fHraa+bS5BNTRlAvhSolm+wbLQFNk2NJdUyuNXSGmKwO9lm2gsVdWA7vyFn+hKol9MOwtnoypx/EbbGhhm7gZwI0SNJTOuPQEsgrBKfS3hgl3QbPsH5737r8/E=
+X-Microsoft-Antispam-Message-Info: a4RjDDDMW9++mpgajIdiPKZVgE3wsAZBuA0woxPp1a+mqPpBFi+Vz+1pRkdBVUde0BF0qYAbnEIHaUFMdIlYyxK8Y2ZpUI2hFlfnrXWskx5b/BuB5akoxFMcy+Wu1VDx9i5cabMD6/jvpZOLeN1CYwzYJTCOShzxbB/xHAfF93p9PAjJq/lggVuSKkuOcrk1gQtKWoCCv3d81VXa6dIMFYPHUIp4xoanxxcUhDTQ5FZsUWEnFB7/bOvxrmzi7HVLlsKf08DFJ7CT1QiVwlNygrZ80JfGDM3Yn6kOryfOtdJjfAFpiwLNhJveHvgsMHNFi41tZl6Q5fKnO8ri6WhcteToGy4qpGkTSTdXkJKsxHQ4+aNpueIblUICUB+8mjg5opieti1kqK9nSIBP34FHXMN23pl8zAR4dEneXhcdCtLb4Lh4cZR2YAslpjLsvRJgrFcYbhK5rNSgOVG8xiAHARK2KbRlVMNaIXbl3rsZlNsyhSR/VO9y1vFHlakbZ03uCl1Y74lLxziioeGA71JR0ohWeeOKtE5onp9LWqlAhaJ/WBkwtKbnI9NF/QsRROlweSJkh64O/mbUVS1JdSTLSTrh4E7jJLH8XZVmhYsu81OwI7POAWkSF21YeUHQiV9+kAkl45L0WSrQ4eJAzZfbZ/aKsUC0HfZEgGfm7vsL9+F1YjFIjG2B8wpISoeuY7SUJgNVvW2cdIn3QoudKY2RR5JplF3du91fzbcc58pwsuE=
 X-Forefront-Antispam-Report: CIP:158.140.1.148; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:CAL; SFV:NSPM; H:sjmaillnx2.cadence.com; PTR:unknown.Cadence.COM; CAT:NONE;
- SFS:(4636009)(136003)(396003)(39860400002)(346002)(376002)(36092001)(46966006)(36840700001)(26005)(6666004)(4326008)(86362001)(186003)(83380400001)(1076003)(36756003)(316002)(5660300002)(82310400003)(2616005)(82740400003)(54906003)(70206006)(478600001)(110136005)(70586007)(426003)(19627235002)(8676002)(8936002)(42186006)(7636003)(356005)(336012)(36860700001)(47076005)(2906002);
+ SFS:(4636009)(376002)(136003)(396003)(39860400002)(346002)(36092001)(46966006)(36840700001)(36860700001)(82310400003)(26005)(5660300002)(8936002)(186003)(478600001)(8676002)(336012)(426003)(2616005)(1076003)(86362001)(83380400001)(47076005)(36756003)(110136005)(4326008)(42186006)(70206006)(316002)(2906002)(54906003)(6666004)(70586007)(356005)(7636003)(82740400003);
  DIR:OUT; SFP:1101; 
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Sep 2021 12:29:38.2432 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2759c751-b298-4a82-ce40-08d972c45319
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Sep 2021 12:29:39.0419 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 09992880-a930-4495-7ab9-08d972c453a0
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.148];
  Helo=[sjmaillnx2.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: MW2NAM12FT066.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: BN8NAM12FT014.eop-nam12.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN4PR0701MB3677
-X-Proofpoint-ORIG-GUID: K_PN2rx0s05muwID7M9DZvtpgy6wHH-H
-X-Proofpoint-GUID: K_PN2rx0s05muwID7M9DZvtpgy6wHH-H
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR07MB6194
+X-Proofpoint-ORIG-GUID: ka15s2M_ZxFWP4XzCMdyVrA-Gr77Q3bU
+X-Proofpoint-GUID: ka15s2M_ZxFWP4XzCMdyVrA-Gr77Q3bU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.391,FMLib:17.0.607.475
  definitions=2021-09-08_06,2021-09-07_02,2020-04-07_01
@@ -163,8 +163,8 @@ X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
  adultscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2109030001 definitions=main-2109080079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210908_052944_015045_888247C8 
-X-CRM114-Status: GOOD (  24.84  )
+X-CRM114-CacheID: sfid-20210908_052944_025936_0E89A9A4 
+X-CRM114-Status: GOOD (  19.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,290 +181,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Sierra driver currently supports single link configurations only. Prepare
-driver to support multilink multiprotocol configurations along with
-different SSC modes.
+No functional change. Rename some regmap variables as mentioned in Sierra
+register description documentation.
 
 Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 ---
- drivers/phy/cadence/phy-cadence-sierra.c | 195 ++++++++++++++++-------
- 1 file changed, 139 insertions(+), 56 deletions(-)
+ drivers/phy/cadence/phy-cadence-sierra.c | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index 54d1c63932ac..7e0f36dabc95 100644
+index 31e5d428dc03..a426b12447a7 100644
 --- a/drivers/phy/cadence/phy-cadence-sierra.c
 +++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -23,6 +23,9 @@
- #include <dt-bindings/phy/phy.h>
- #include <dt-bindings/phy/phy-cadence.h>
+@@ -145,8 +145,9 @@
+ #define SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG		0x14F
+ #define SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG		0x150
  
-+#define NUM_SSC_MODE		3
-+#define NUM_PHY_TYPE		3
-+
- /* PHY register offsets */
- #define SIERRA_COMMON_CDB_OFFSET			0x0
- #define SIERRA_MACRO_ID_REG				0x0
-@@ -217,9 +220,21 @@ static const int pll_mux_parent_index[][SIERRA_NUM_CMN_PLLC_PARENTS] = {
+-#define SIERRA_PHY_CONFIG_CTRL_OFFSET(block_offset)	\
+-				      (0xc000 << (block_offset))
++/* PHY PCS common registers */
++#define SIERRA_PHY_PCS_COMMON_OFFSET(block_offset)	\
++				     (0xc000 << (block_offset))
+ #define SIERRA_PHY_PLL_CFG				0xe
  
- static u32 cdns_sierra_pll_mux_table[] = { 0, 1 };
- 
-+enum cdns_sierra_phy_type {
-+	TYPE_NONE,
-+	TYPE_PCIE,
-+	TYPE_USB
-+};
-+
-+enum cdns_sierra_ssc_mode {
-+	NO_SSC,
-+	EXTERNAL_SSC,
-+	INTERNAL_SSC
-+};
-+
- struct cdns_sierra_inst {
- 	struct phy *phy;
--	u32 phy_type;
-+	enum cdns_sierra_phy_type phy_type;
- 	u32 num_lanes;
- 	u32 mlane;
- 	struct reset_control *lnk_rst;
-@@ -230,18 +245,19 @@ struct cdns_reg_pairs {
- 	u32 off;
+ #define SIERRA_MACRO_ID					0x00007364
+@@ -275,7 +276,7 @@ struct cdns_sierra_phy {
+ 	struct reset_control *phy_rst;
+ 	struct reset_control *apb_rst;
+ 	struct regmap *regmap_lane_cdb[SIERRA_MAX_LANES];
+-	struct regmap *regmap_phy_config_ctrl;
++	struct regmap *regmap_phy_pcs_common_cdb;
+ 	struct regmap *regmap_common_cdb;
+ 	struct regmap_field *macro_id_type;
+ 	struct regmap_field *phy_pll_cfg_1;
+@@ -346,8 +347,8 @@ static const struct regmap_config cdns_sierra_common_cdb_config = {
+ 	.reg_read = cdns_regmap_read,
  };
  
-+struct cdns_sierra_vals {
-+	const struct cdns_reg_pairs *reg_pairs;
-+	u32 num_regs;
-+};
-+
- struct cdns_sierra_data {
--		u32 id_value;
--		u8 block_offset_shift;
--		u8 reg_offset_shift;
--		u32 pcie_cmn_regs;
--		u32 pcie_ln_regs;
--		u32 usb_cmn_regs;
--		u32 usb_ln_regs;
--		const struct cdns_reg_pairs *pcie_cmn_vals;
--		const struct cdns_reg_pairs *pcie_ln_vals;
--		const struct cdns_reg_pairs *usb_cmn_vals;
--		const struct cdns_reg_pairs *usb_ln_vals;
-+	u32 id_value;
-+	u8 block_offset_shift;
-+	u8 reg_offset_shift;
-+	struct cdns_sierra_vals *pma_cmn_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
-+					     [NUM_SSC_MODE];
-+	struct cdns_sierra_vals *pma_ln_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
-+					    [NUM_SSC_MODE];
- };
- 
- struct cdns_regmap_cdb_context {
-@@ -341,10 +357,14 @@ static int cdns_sierra_phy_init(struct phy *gphy)
- {
- 	struct cdns_sierra_inst *ins = phy_get_drvdata(gphy);
- 	struct cdns_sierra_phy *phy = dev_get_drvdata(gphy->dev.parent);
-+	const struct cdns_sierra_data *init_data = phy->init_data;
-+	struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
-+	enum cdns_sierra_phy_type phy_type = ins->phy_type;
-+	enum cdns_sierra_ssc_mode ssc = EXTERNAL_SSC;
-+	const struct cdns_reg_pairs *reg_pairs;
- 	struct regmap *regmap;
-+	u32 num_regs;
- 	int i, j;
--	const struct cdns_reg_pairs *cmn_vals, *ln_vals;
--	u32 num_cmn_regs, num_ln_regs;
- 
- 	/* Initialise the PHY registers, unless auto configured */
- 	if (phy->autoconf)
-@@ -352,28 +372,26 @@ static int cdns_sierra_phy_init(struct phy *gphy)
- 
- 	clk_set_rate(phy->input_clks[CMN_REFCLK_DIG_DIV], 25000000);
- 	clk_set_rate(phy->input_clks[CMN_REFCLK1_DIG_DIV], 25000000);
--	if (ins->phy_type == PHY_TYPE_PCIE) {
--		num_cmn_regs = phy->init_data->pcie_cmn_regs;
--		num_ln_regs = phy->init_data->pcie_ln_regs;
--		cmn_vals = phy->init_data->pcie_cmn_vals;
--		ln_vals = phy->init_data->pcie_ln_vals;
--	} else if (ins->phy_type == PHY_TYPE_USB3) {
--		num_cmn_regs = phy->init_data->usb_cmn_regs;
--		num_ln_regs = phy->init_data->usb_ln_regs;
--		cmn_vals = phy->init_data->usb_cmn_vals;
--		ln_vals = phy->init_data->usb_ln_vals;
--	} else {
--		return -EINVAL;
--	}
- 
--	regmap = phy->regmap_common_cdb;
--	for (j = 0; j < num_cmn_regs ; j++)
--		regmap_write(regmap, cmn_vals[j].off, cmn_vals[j].val);
-+	/* PMA common registers configurations */
-+	pma_cmn_vals = init_data->pma_cmn_vals[phy_type][TYPE_NONE][ssc];
-+	if (pma_cmn_vals) {
-+		reg_pairs = pma_cmn_vals->reg_pairs;
-+		num_regs = pma_cmn_vals->num_regs;
-+		regmap = phy->regmap_common_cdb;
-+		for (i = 0; i < num_regs; i++)
-+			regmap_write(regmap, reg_pairs[i].off, reg_pairs[i].val);
-+	}
- 
--	for (i = 0; i < ins->num_lanes; i++) {
--		for (j = 0; j < num_ln_regs ; j++) {
-+	/* PMA TX lane registers configurations */
-+	pma_ln_vals = init_data->pma_ln_vals[phy_type][TYPE_NONE][ssc];
-+	if (pma_ln_vals) {
-+		reg_pairs = pma_ln_vals->reg_pairs;
-+		num_regs = pma_ln_vals->num_regs;
-+		for (i = 0; i < ins->num_lanes; i++) {
- 			regmap = phy->regmap_lane_cdb[i + ins->mlane];
--			regmap_write(regmap, ln_vals[j].off, ln_vals[j].val);
-+			for (j = 0; j < num_regs; j++)
-+				regmap_write(regmap, reg_pairs[j].off, reg_pairs[j].val);
- 		}
+-static const struct regmap_config cdns_sierra_phy_config_ctrl_config = {
+-	.name = "sierra_phy_config_ctrl",
++static const struct regmap_config cdns_sierra_phy_pcs_cmn_cdb_config = {
++	.name = "sierra_phy_pcs_cmn_cdb",
+ 	.reg_stride = 1,
+ 	.fast_io = true,
+ 	.reg_write = cdns_regmap_write,
+@@ -689,7 +690,7 @@ static int cdns_regfield_init(struct cdns_sierra_phy *sp)
+ 		sp->cmn_refrcv_refclk_termen_preg[i] = field;
  	}
  
-@@ -583,15 +601,28 @@ static int cdns_sierra_clk_register(struct cdns_sierra_phy *sp)
- static int cdns_sierra_get_optional(struct cdns_sierra_inst *inst,
- 				    struct device_node *child)
- {
-+	u32 phy_type;
-+
- 	if (of_property_read_u32(child, "reg", &inst->mlane))
- 		return -EINVAL;
+-	regmap = sp->regmap_phy_config_ctrl;
++	regmap = sp->regmap_phy_pcs_common_cdb;
+ 	field = devm_regmap_field_alloc(dev, regmap, phy_pll_cfg_1);
+ 	if (IS_ERR(field)) {
+ 		dev_err(dev, "PHY_PLL_CFG_1 reg field init failed\n");
+@@ -741,14 +742,14 @@ static int cdns_regmap_init_blocks(struct cdns_sierra_phy *sp,
+ 	}
+ 	sp->regmap_common_cdb = regmap;
  
- 	if (of_property_read_u32(child, "cdns,num-lanes", &inst->num_lanes))
- 		return -EINVAL;
+-	block_offset = SIERRA_PHY_CONFIG_CTRL_OFFSET(block_offset_shift);
++	block_offset = SIERRA_PHY_PCS_COMMON_OFFSET(block_offset_shift);
+ 	regmap = cdns_regmap_init(dev, base, block_offset, reg_offset_shift,
+-				  &cdns_sierra_phy_config_ctrl_config);
++				  &cdns_sierra_phy_pcs_cmn_cdb_config);
+ 	if (IS_ERR(regmap)) {
+-		dev_err(dev, "Failed to init PHY config and control regmap\n");
++		dev_err(dev, "Failed to init PHY PCS common CDB regmap\n");
+ 		return PTR_ERR(regmap);
+ 	}
+-	sp->regmap_phy_config_ctrl = regmap;
++	sp->regmap_phy_pcs_common_cdb = regmap;
  
--	if (of_property_read_u32(child, "cdns,phy-type", &inst->phy_type))
-+	if (of_property_read_u32(child, "cdns,phy-type", &phy_type))
- 		return -EINVAL;
- 
-+	switch (phy_type) {
-+	case PHY_TYPE_PCIE:
-+		inst->phy_type = TYPE_PCIE;
-+		break;
-+	case PHY_TYPE_USB3:
-+		inst->phy_type = TYPE_USB;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
  	return 0;
  }
- 
-@@ -1006,6 +1037,16 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_ext_ssc[] = {
- 	{0x44CC, SIERRA_CREQ_EQ_OPEN_EYE_THRESH_PREG}
- };
- 
-+static struct cdns_sierra_vals pcie_100_ext_ssc_cmn_vals = {
-+	.reg_pairs = cdns_pcie_cmn_regs_ext_ssc,
-+	.num_regs = ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
-+};
-+
-+static struct cdns_sierra_vals pcie_100_ext_ssc_ln_vals = {
-+	.reg_pairs = cdns_pcie_ln_regs_ext_ssc,
-+	.num_regs = ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
-+};
-+
- /* refclk100MHz_20b_USB_cmn_pll_ext_ssc */
- static const struct cdns_reg_pairs cdns_usb_cmn_regs_ext_ssc[] = {
- 	{0x2085, SIERRA_CMN_PLLLC_LF_COEFF_MODE1_PREG},
-@@ -1113,32 +1154,74 @@ static const struct cdns_reg_pairs cdns_usb_ln_regs_ext_ssc[] = {
- 	{0x4243, SIERRA_RXBUFFER_DFECTRL_PREG}
- };
- 
-+static struct cdns_sierra_vals usb_100_ext_ssc_cmn_vals = {
-+	.reg_pairs = cdns_usb_cmn_regs_ext_ssc,
-+	.num_regs = ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
-+};
-+
-+static struct cdns_sierra_vals usb_100_ext_ssc_ln_vals = {
-+	.reg_pairs = cdns_usb_ln_regs_ext_ssc,
-+	.num_regs = ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
-+};
-+
- static const struct cdns_sierra_data cdns_map_sierra = {
--	SIERRA_MACRO_ID,
--	0x2,
--	0x2,
--	ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
--	ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
--	ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
--	ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
--	cdns_pcie_cmn_regs_ext_ssc,
--	cdns_pcie_ln_regs_ext_ssc,
--	cdns_usb_cmn_regs_ext_ssc,
--	cdns_usb_ln_regs_ext_ssc,
-+	.id_value = SIERRA_MACRO_ID,
-+	.block_offset_shift = 0x2,
-+	.reg_offset_shift = 0x2,
-+	.pma_cmn_vals = {
-+		[TYPE_PCIE] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
-+			},
-+		},
-+		[TYPE_USB] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
-+			},
-+		},
-+	},
-+	.pma_ln_vals = {
-+		[TYPE_PCIE] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
-+			},
-+		},
-+		[TYPE_USB] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
-+			},
-+		},
-+	},
- };
- 
- static const struct cdns_sierra_data cdns_ti_map_sierra = {
--	SIERRA_MACRO_ID,
--	0x0,
--	0x1,
--	ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
--	ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
--	ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
--	ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
--	cdns_pcie_cmn_regs_ext_ssc,
--	cdns_pcie_ln_regs_ext_ssc,
--	cdns_usb_cmn_regs_ext_ssc,
--	cdns_usb_ln_regs_ext_ssc,
-+	.id_value = SIERRA_MACRO_ID,
-+	.block_offset_shift = 0x0,
-+	.reg_offset_shift = 0x1,
-+	.pma_cmn_vals = {
-+		[TYPE_PCIE] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
-+			},
-+		},
-+		[TYPE_USB] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
-+			},
-+		},
-+	},
-+	.pma_ln_vals = {
-+		[TYPE_PCIE] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
-+			},
-+		},
-+		[TYPE_USB] = {
-+			[TYPE_NONE] = {
-+				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
-+			},
-+		},
-+	},
- };
- 
- static const struct of_device_id cdns_sierra_id_table[] = {
 -- 
 2.26.1
 
