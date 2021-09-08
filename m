@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C950CC43217
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2F2F7C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:53 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 98F1361157
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 98F1361157
+	by mail.kernel.org (Postfix) with ESMTPS id ED8FA61153
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org ED8FA61153
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,44 +23,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XgZCB5y8Sofl8ppRGIvmvWn52SKcD9xXbfD7OyCURBM=; b=0VENZV/w/9x3He
-	/FGvP0FE25xbBcCvry9zaF4+I+LecNs+kFFZpkCjbxxepq/TZxPJ4wVLr0heVD/ByWDc5+nURnHtH
-	XK/UWgXPBMjL0tkfupqP627n+xoLc1SFDs82pkkRTbytVAsZfaGF8YnI6GnzncIZvy5yeDiPBESpd
-	zrMTYbXHUZXaxjCNZmeVOOc9gpfCUOEQQmECOzt2HKbpblJ8k7uHBcdz28vXlzhQ+258dI9uA2W4g
-	ZahcPfw7pdnskJ4ZqG5++nzMQWkr8q5UKxrPLNppPHupwgxuvzaFhbd9zzYL08VXLS/EfOieWF7Wm
-	M2M8VaFqDfOmwE1KC9kA==;
+	List-Owner; bh=nmV3651irkIYyhulClaeuLAl7214bbdCsTyEvF5mc1k=; b=bvgSWJWckg+lCb
+	Yi4d8FQHTPFJR1vaiXP5IPRFnGNAeK/K6kF/wojc/7mAKspK8ti8IxEmrUdTE/jBb6Cxg9Ows72fc
+	XknX+jEbuntixJa7cP50UJp2H0ZLfu7OJu0wmjsDoEPzsykXPnoUrJ2LFjgq8AyXyAKGgYUM8Ah/n
+	xWsxpuBok3iteQ6XGasSKpd2+eYKlVbhtH71f1nAwY5aDYOI+9oO8EpFhig9m9UxUgiLDGolzJ+kC
+	m8u44K3SGDSyv5fS4H9zPR0XSM0K+CTXsLj8hhLg1y25sFSfzhoYXyZ6tzOw3WDeypld8H0z/PDGL
+	eKcIPXgwU3uFXR5J6pIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mNwi6-006hkI-Pq; Wed, 08 Sep 2021 12:29:50 +0000
-Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
+	id 1mNwi8-006hlf-DF; Wed, 08 Sep 2021 12:29:52 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mNwhz-006hek-P0
- for linux-phy@lists.infradead.org; Wed, 08 Sep 2021 12:29:48 +0000
-Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
- by mx0a-0014ca01.pphosted.com (8.16.1.2/8.16.0.43) with SMTP id 1886dluE030522;
+ id 1mNwi1-006hgB-CF
+ for linux-phy@lists.infradead.org; Wed, 08 Sep 2021 12:29:50 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.1.2/8.16.0.43) with SMTP id 1886da2B016872;
  Wed, 8 Sep 2021 05:29:43 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=proofpoint;
- bh=QVW5zowOOqNka9NgAk8b1lOpt/DRuhTeb2B8vX5LFxU=;
- b=bDWWvwBzhGuEwA/SfcmwdFQGDwn3HjKV/MeVQOFIA/ZFDXFpa0MwshhY2BWT79gLkG3Y
- 4Y0lpua/hI5VLTUHZd9KdEVuGj8UZRPL2UKeK1mnQHR3M+xsjL9+lqnWkwvBLSOO68Lr
- w104rW1w6uKNXK7+Abyu79ncoq6yjxid/x4oR0zoOIeGceQCSppXr8ysSNDIlVkeMAqJ
- 0Ewi3M2m6cHnZjYhPcVznBf+qEvuBM3mwG98lD5IsdZzVrg1mwsURJQIGgLmzVnqGQXz
- 9S0pGrWfQAW9ZFs1x4ND4gRumX1mR1cnNdRE9ynvBx2qANSLTXXq1kyNaevegNmhYhdr kw== 
-Received: from nam12-dm6-obe.outbound.protection.outlook.com
- (mail-dm6nam12lp2173.outbound.protection.outlook.com [104.47.59.173])
- by mx0a-0014ca01.pphosted.com with ESMTP id 3axcn5b0xc-1
+ bh=uqIgky/rbQuIkkOs6iK63hUpt+kph4GnPEZB8fzM014=;
+ b=mX4o1/qVJeubaxqU6d4yJivpvzMCqNiS2n9Ex/A9O1OSDIDXeCJRc6Hh8oCcZSwxNkON
+ z6AVmU0gn2X/R6t8bqt5nW1SCbd6l72xvL06ckYcwE9A6/3pEscKptXdy+Jj067lWlbb
+ moyakHXvj48t7/kGUAboHTSs2+Wm/t8b65jty+CPGhoLVBRAxlv4YEUG7fAi6W8D50DB
+ rXxFphNytfucUkcREqQFE4GrI/NasSuI+Q1AvUDWpOqGcv296zEjcx0imfXIwlBODLGO
+ CAsmWDXplGbx6mkM4/yRT2RSdqEbFTtGFtyqfDQ7oHNq05odEiSyx9/0aNM1W8urMEuF Uw== 
+Received: from nam04-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam08lp2047.outbound.protection.outlook.com [104.47.73.47])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 3axcp9k480-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 08 Sep 2021 05:29:42 -0700
+ Wed, 08 Sep 2021 05:29:43 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=dFjODxd6xoIVM1Mm55nQj325Vai5bm3RTD8fnx4UC0HbRnK0ejPrmVJNeqexRCLTEydKTmbYylVqvsCQuwRi/wHrzgJskdmToN6OB+OBmgaWUZ2nzupkBXwySbkazli3Dot+gpnIahqzL+KeIP76yJQ9ZllaFE8tY5YBnaDvHqpONBnHTg2wDBz+kpCs21kRGz5kuX+1kb2n5MJMKMo6qTIFQ+uqyqR6vX60EQodDKsPr8vXvgeMbFrd3YDdqmQJE9rXXbXTnZqCmDhX4PBnziFjKy8dg/ruQZ3UzuXOcv2YUT1EvFe8h9NzivuxDo3K9rXiag4iqkz6yB3ZHF6/XQ==
+ b=Njl3DuQ1D+unOnnGevtM19MwaycIKGqeU1UdyZWfiLEP90/96LlzE1XU99RXATiVQ1hQNPd5E2PNcz9jShNMbeGCz6glEfMVYYMZU791Kos/7LMTlZ2w94f4TRsTMAxVoWIaxz4bvbbL2p5mKE3zDhrRaWcdWw3TFCrjuHf+tXmzPnOSRHnEvD9oRYolwFwILVoUWJkhPHk9iARKW0iTx4m2/LM83gF53tW6lJQ9ppCSndz8DIezmAU+pWBW93ty9WkT8jADt8x3lVQan3vZPegXzpY9/j63ay7xBodWlWBBcJBr0aEzlCmUz8kpfIpCq5GeYqnWFC1PrioIW6WAoA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
- bh=QVW5zowOOqNka9NgAk8b1lOpt/DRuhTeb2B8vX5LFxU=;
- b=ftFZfgKYbi60BCNoU+o2l9UPNSJt0NdUtQIh6xCs/OOFWDLvibYlnV8zBYpga2JFrL3mxz3UwE/r5Bx3QLH2OliQ+7w7Gf3gmLsEUyRm3e+BLXJRNGO6ra3jl66IM9VSRePK2q7qT3K8bIpFbXxlignXz6Xa4To2My1nUSmsJcxK5Oul/8Gc4aTade+Mo5M+0VtXKmfuUsspho9Go14BT+jTlZ7tU6e3LpHDmGHFcQgc5Xg3YDHbCk4OuwPUQ5eU4hVgzvPehCSi6LyHVtl7IWqB4k7xzay9NVY07XSP8WlQ3ejFR3fs+icTcY5bTJVu2ZYhOPScPCeeB3L2/BNSsQ==
+ bh=uqIgky/rbQuIkkOs6iK63hUpt+kph4GnPEZB8fzM014=;
+ b=GCMuKXm73Eqv5V+r3NS9V0bQnP+onijwUlnFyI4GsvxFG5VBNO498jCchyHufV8ZAFnvGZNxb/02fpjs4mqRWzaZMtnsnzfqYUYTeL8Jlx/WDmEvP9JxROvGWjcbm1+KeBK7tYiykVMxVG4Elwl5F6rXGSS6S00FQSPHom9Y5gMFPMAaqkSoG8W2dT2OGPWsm/kcZWpBmGxy6+EHOrR+McrTkaYu+QJXG6TCTaYTvOvNZrdQXROoUgVxG1O1QNUrGHh2SuRKUGjjsWe8gWip0+4UqHb1GnQiDEOqU2LUj6QM6cqvpGq+vhnKXWTwAYlf3fhiNTM9G09i+h6MT2qnXQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  158.140.1.148) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
  dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
@@ -68,18 +69,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QVW5zowOOqNka9NgAk8b1lOpt/DRuhTeb2B8vX5LFxU=;
- b=zt/yNTmqlpwAmHJzwv+zDOoF7pcuLeU7KDvWZSTB1IOM84kQnPAKWQO8e3SSFuHbE/neQC+DAOi+vR9tqAJF+sA18zt6QfUOBhuv7SMkWSEaaLInoVBgEe/kGVlUGP2Nijw9E1lo07dJg/Xp3XrEyw+7XtH0hNiLs7co1oDHC0c=
-Received: from BN9PR03CA0860.namprd03.prod.outlook.com (2603:10b6:408:13d::25)
- by BN8PR07MB6194.namprd07.prod.outlook.com (2603:10b6:408:ba::26)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4500.14; Wed, 8 Sep
- 2021 12:29:39 +0000
-Received: from BN8NAM12FT014.eop-nam12.prod.protection.outlook.com
- (2603:10b6:408:13d:cafe::9d) by BN9PR03CA0860.outlook.office365.com
- (2603:10b6:408:13d::25) with Microsoft SMTP Server (version=TLS1_2,
+ bh=uqIgky/rbQuIkkOs6iK63hUpt+kph4GnPEZB8fzM014=;
+ b=KdbNe4NGkqttkFP4afXNyhENcg0NDLAsI5vgE//ZNGqyW2aGSf7mWdiyvPD/FTf9VHiY6hCR9tUlfjYGdZTNZ4ov3qJ08+QWtTkMJM+xutQUekRLeXDT34LbpWsWZT9cAa0fHzc3whEw/9LvI9g9DOOQpyrhqwqQfSk706Imgjs=
+Received: from DM6PR06CA0071.namprd06.prod.outlook.com (2603:10b6:5:54::48) by
+ BL3PR07MB8955.namprd07.prod.outlook.com (2603:10b6:208:33a::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4478.25; Wed, 8 Sep
+ 2021 12:29:40 +0000
+Received: from DM6NAM12FT033.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:5:54:cafe::64) by DM6PR06CA0071.outlook.office365.com
+ (2603:10b6:5:54::48) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4500.14 via Frontend
- Transport; Wed, 8 Sep 2021 12:29:39 +0000
+ Transport; Wed, 8 Sep 2021 12:29:37 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.148)
  smtp.mailfrom=cadence.com; kernel.org; dkim=none (message not signed)
  header.d=none;kernel.org; dmarc=pass action=none header.from=cadence.com;
@@ -87,30 +88,26 @@ Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
  158.140.1.148 as permitted sender) receiver=protection.outlook.com;
  client-ip=158.140.1.148; helo=sjmaillnx2.cadence.com;
 Received: from sjmaillnx2.cadence.com (158.140.1.148) by
- BN8NAM12FT014.mail.protection.outlook.com (10.13.183.44) with Microsoft SMTP
+ DM6NAM12FT033.mail.protection.outlook.com (10.13.179.14) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4500.6 via Frontend Transport; Wed, 8 Sep 2021 12:29:39 +0000
+ 15.20.4500.6 via Frontend Transport; Wed, 8 Sep 2021 12:29:36 +0000
 Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
  by sjmaillnx2.cadence.com (8.14.4/8.14.4) with ESMTP id
- 188CTX9P026939
+ 188CTX9L026939
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 8 Sep 2021 05:29:37 -0700
+ Wed, 8 Sep 2021 05:29:35 -0700
 X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
-Received: from maileu5.global.cadence.com (10.160.110.202) by
+Received: from maileu3.global.cadence.com (10.160.88.99) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Wed, 8 Sep 2021 14:29:32 +0200
-Received: from maileu3.global.cadence.com (10.160.88.99) by
- maileu5.global.cadence.com (10.160.110.202) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.1.2176.2; Wed, 8 Sep 2021 14:29:32 +0200
 Received: from vleu-orange.cadence.com (10.160.88.83) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
  15.0.1497.2 via Frontend Transport; Wed, 8 Sep 2021 14:29:32 +0200
 Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
- by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 188CTWxI010292;
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 188CTWl6010280;
  Wed, 8 Sep 2021 14:29:32 +0200
 Received: (from sjakhade@localhost)
- by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 188CTWN6010291;
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 188CTW9L010279;
  Wed, 8 Sep 2021 14:29:32 +0200
 From: Swapnil Jakhade <sjakhade@cadence.com>
 To: <vkoul@kernel.org>, <kishon@ti.com>, <robh+dt@kernel.org>,
@@ -118,10 +115,10 @@ To: <vkoul@kernel.org>, <kishon@ti.com>, <robh+dt@kernel.org>,
  <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
 CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <lokeshvutla@ti.com>,
  <a-govindraju@ti.com>
-Subject: [PATCH v2 06/15] phy: cadence: Sierra: Rename some regmap variables
- to be in sync with Sierra documentation
-Date: Wed, 8 Sep 2021 14:29:21 +0200
-Message-ID: <20210908122930.10224-7-sjakhade@cadence.com>
+Subject: [PATCH v2 03/15] dt-bindings: phy: cadence-torrent: Rename SSC macros
+ to use generic names
+Date: Wed, 8 Sep 2021 14:29:18 +0200
+Message-ID: <20210908122930.10224-4-sjakhade@cadence.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20210908122930.10224-1-sjakhade@cadence.com>
 References: <20210908122930.10224-1-sjakhade@cadence.com>
@@ -129,42 +126,43 @@ MIME-Version: 1.0
 X-OrganizationHeadersPreserved: maileu3.global.cadence.com
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 09992880-a930-4495-7ab9-08d972c453a0
-X-MS-TrafficTypeDiagnostic: BN8PR07MB6194:
-X-Microsoft-Antispam-PRVS: <BN8PR07MB61947BC3EA3FDBEEBECEA3EDC5D49@BN8PR07MB6194.namprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:534;
+X-MS-Office365-Filtering-Correlation-Id: b143d85a-9a78-4ecb-b86c-08d972c45245
+X-MS-TrafficTypeDiagnostic: BL3PR07MB8955:
+X-Microsoft-Antispam-PRVS: <BL3PR07MB8955110CDA27879531872EEFC5D49@BL3PR07MB8955.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:7691;
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: a4RjDDDMW9++mpgajIdiPKZVgE3wsAZBuA0woxPp1a+mqPpBFi+Vz+1pRkdBVUde0BF0qYAbnEIHaUFMdIlYyxK8Y2ZpUI2hFlfnrXWskx5b/BuB5akoxFMcy+Wu1VDx9i5cabMD6/jvpZOLeN1CYwzYJTCOShzxbB/xHAfF93p9PAjJq/lggVuSKkuOcrk1gQtKWoCCv3d81VXa6dIMFYPHUIp4xoanxxcUhDTQ5FZsUWEnFB7/bOvxrmzi7HVLlsKf08DFJ7CT1QiVwlNygrZ80JfGDM3Yn6kOryfOtdJjfAFpiwLNhJveHvgsMHNFi41tZl6Q5fKnO8ri6WhcteToGy4qpGkTSTdXkJKsxHQ4+aNpueIblUICUB+8mjg5opieti1kqK9nSIBP34FHXMN23pl8zAR4dEneXhcdCtLb4Lh4cZR2YAslpjLsvRJgrFcYbhK5rNSgOVG8xiAHARK2KbRlVMNaIXbl3rsZlNsyhSR/VO9y1vFHlakbZ03uCl1Y74lLxziioeGA71JR0ohWeeOKtE5onp9LWqlAhaJ/WBkwtKbnI9NF/QsRROlweSJkh64O/mbUVS1JdSTLSTrh4E7jJLH8XZVmhYsu81OwI7POAWkSF21YeUHQiV9+kAkl45L0WSrQ4eJAzZfbZ/aKsUC0HfZEgGfm7vsL9+F1YjFIjG2B8wpISoeuY7SUJgNVvW2cdIn3QoudKY2RR5JplF3du91fzbcc58pwsuE=
+X-Microsoft-Antispam-Message-Info: 8yCzMdebdjPlvtx5QyS+bDAY1WUWB7SdyW6/ifa/cb4z/Z0Rab0IAQ19IZFRg033S44/drAN7Om6i5S/AzSZN7jiGfzYaHH5w5cm5sCtRW4GIcYaUaGXkOOf3QZ3CqVAMlvpkAvDkEcniAYUG37HJJzNTefprp/E2QZpkFOD0vqD9/MuLroBLn01EMuCdMBkMz7S7Kczv3pGs8Xy7TznvWLfUju6byIg5sChGjJGFt5sem3gQFJcxeKxIqFU1WpBod9FZFaIJl4WuyKZ5C9WB2jY7+5wG3qvYHvmLdSFB+TBVwVtbxe3vAOgnZP8pdP9HmnOTZaC1Ahfym+Qbu8b9KF5lTH8zyxwf5EgJn2oDyK3j43muUXG+CnMB8TXxu3NNaGvyz6zt5KgopuUDFdeD2EjeFoLFvehU+tE97x62X0x+wJgMQ7C9WEP4A64ZHiTxoc/83GN+wI6XN6xl2pVVx4JaVeV+EJnEB5WBzdh93O1ztf85nG36vhd+icBLxg7o/a4STwm9TsopyaLezCwx4qJJWM49IiK95ToyT53lTmVao8QJlxK9F7gG/SDiPnyybX9UQdmXoTXGpv9wMbSsZKW5FY1g78pwrtlfMVG1TIUiT/d+3U6GT34VzLUzyd0NGUBt3gNbMU0yhsXycR3AD7lVSOdGkqYVBmBTrAq5MarPG2VuOoSrHBIqBfw98NoGboEmlbEWU20B0UATHNrYMOt3FHhuOt+yN4SVd3jW4ktEluKGnPLn15Y2JjhGxkt
 X-Forefront-Antispam-Report: CIP:158.140.1.148; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:CAL; SFV:NSPM; H:sjmaillnx2.cadence.com; PTR:unknown.Cadence.COM; CAT:NONE;
- SFS:(4636009)(376002)(136003)(396003)(39860400002)(346002)(36092001)(46966006)(36840700001)(36860700001)(82310400003)(26005)(5660300002)(8936002)(186003)(478600001)(8676002)(336012)(426003)(2616005)(1076003)(86362001)(83380400001)(47076005)(36756003)(110136005)(4326008)(42186006)(70206006)(316002)(2906002)(54906003)(6666004)(70586007)(356005)(7636003)(82740400003);
+ SFS:(4636009)(346002)(396003)(136003)(376002)(39860400002)(36092001)(36840700001)(46966006)(2616005)(82740400003)(316002)(83380400001)(86362001)(186003)(70206006)(26005)(356005)(8676002)(36860700001)(42186006)(8936002)(336012)(54906003)(110136005)(7636003)(47076005)(1076003)(2906002)(5660300002)(70586007)(6666004)(478600001)(82310400003)(4326008)(36756003)(426003)(41533002);
  DIR:OUT; SFP:1101; 
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Sep 2021 12:29:39.0419 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 09992880-a930-4495-7ab9-08d972c453a0
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Sep 2021 12:29:36.8223 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b143d85a-9a78-4ecb-b86c-08d972c45245
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.148];
  Helo=[sjmaillnx2.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN8NAM12FT014.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: DM6NAM12FT033.eop-nam12.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR07MB6194
-X-Proofpoint-ORIG-GUID: ka15s2M_ZxFWP4XzCMdyVrA-Gr77Q3bU
-X-Proofpoint-GUID: ka15s2M_ZxFWP4XzCMdyVrA-Gr77Q3bU
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL3PR07MB8955
+X-Proofpoint-GUID: tov-EPriBHnISyWTZcCqC0viPKFwE4ef
+X-Proofpoint-ORIG-GUID: tov-EPriBHnISyWTZcCqC0viPKFwE4ef
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.391,FMLib:17.0.607.475
  definitions=2021-09-08_06,2021-09-07_02,2020-04-07_01
 X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
- score=0 suspectscore=0
- malwarescore=0 phishscore=0 mlxlogscore=999 spamscore=0 impostorscore=0
- priorityscore=1501 lowpriorityscore=0 mlxscore=0 clxscore=1015
- adultscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2109030001 definitions=main-2109080079
+ score=0
+ priorityscore=1501 impostorscore=0 malwarescore=0 suspectscore=0
+ mlxlogscore=833 spamscore=0 phishscore=0 adultscore=0 bulkscore=0
+ clxscore=1015 mlxscore=0 lowpriorityscore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.12.0-2109030001
+ definitions=main-2109080080
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210908_052944_025936_0E89A9A4 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20210908_052945_584321_B0898866 
+X-CRM114-Status: GOOD (  17.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,78 +179,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-No functional change. Rename some regmap variables as mentioned in Sierra
-register description documentation.
+Rename SSC macros to use generic names instead of PHY specific names,
+so that they can be used to specify SSC modes for both Torrent and
+Sierra. Renaming the macros should not affect the things as these are
+not being used in any DTS file yet.
 
 Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 ---
- drivers/phy/cadence/phy-cadence-sierra.c | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ .../devicetree/bindings/phy/phy-cadence-torrent.yaml      | 4 ++--
+ include/dt-bindings/phy/phy-cadence.h                     | 8 ++++----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index 31e5d428dc03..a426b12447a7 100644
---- a/drivers/phy/cadence/phy-cadence-sierra.c
-+++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -145,8 +145,9 @@
- #define SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG		0x14F
- #define SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG		0x150
+diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+index bd9ae11c9994..2fec9e54ad0e 100644
+--- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+@@ -202,7 +202,7 @@ examples:
+                 #phy-cells = <0>;
+                 cdns,phy-type = <PHY_TYPE_PCIE>;
+                 cdns,num-lanes = <2>;
+-                cdns,ssc-mode = <TORRENT_SERDES_NO_SSC>;
++                cdns,ssc-mode = <CDNS_SERDES_NO_SSC>;
+             };
  
--#define SIERRA_PHY_CONFIG_CTRL_OFFSET(block_offset)	\
--				      (0xc000 << (block_offset))
-+/* PHY PCS common registers */
-+#define SIERRA_PHY_PCS_COMMON_OFFSET(block_offset)	\
-+				     (0xc000 << (block_offset))
- #define SIERRA_PHY_PLL_CFG				0xe
+             phy@2 {
+@@ -211,7 +211,7 @@ examples:
+                 #phy-cells = <0>;
+                 cdns,phy-type = <PHY_TYPE_SGMII>;
+                 cdns,num-lanes = <1>;
+-                cdns,ssc-mode = <TORRENT_SERDES_NO_SSC>;
++                cdns,ssc-mode = <CDNS_SERDES_NO_SSC>;
+             };
+         };
+     };
+diff --git a/include/dt-bindings/phy/phy-cadence.h b/include/dt-bindings/phy/phy-cadence.h
+index 4652bcb86265..abc4ff81aa7b 100644
+--- a/include/dt-bindings/phy/phy-cadence.h
++++ b/include/dt-bindings/phy/phy-cadence.h
+@@ -6,11 +6,11 @@
+ #ifndef _DT_BINDINGS_CADENCE_SERDES_H
+ #define _DT_BINDINGS_CADENCE_SERDES_H
  
- #define SIERRA_MACRO_ID					0x00007364
-@@ -275,7 +276,7 @@ struct cdns_sierra_phy {
- 	struct reset_control *phy_rst;
- 	struct reset_control *apb_rst;
- 	struct regmap *regmap_lane_cdb[SIERRA_MAX_LANES];
--	struct regmap *regmap_phy_config_ctrl;
-+	struct regmap *regmap_phy_pcs_common_cdb;
- 	struct regmap *regmap_common_cdb;
- 	struct regmap_field *macro_id_type;
- 	struct regmap_field *phy_pll_cfg_1;
-@@ -346,8 +347,8 @@ static const struct regmap_config cdns_sierra_common_cdb_config = {
- 	.reg_read = cdns_regmap_read,
- };
+-/* Torrent */
+-#define TORRENT_SERDES_NO_SSC		0
+-#define TORRENT_SERDES_EXTERNAL_SSC	1
+-#define TORRENT_SERDES_INTERNAL_SSC	2
++#define CDNS_SERDES_NO_SSC		0
++#define CDNS_SERDES_EXTERNAL_SSC	1
++#define CDNS_SERDES_INTERNAL_SSC	2
  
--static const struct regmap_config cdns_sierra_phy_config_ctrl_config = {
--	.name = "sierra_phy_config_ctrl",
-+static const struct regmap_config cdns_sierra_phy_pcs_cmn_cdb_config = {
-+	.name = "sierra_phy_pcs_cmn_cdb",
- 	.reg_stride = 1,
- 	.fast_io = true,
- 	.reg_write = cdns_regmap_write,
-@@ -689,7 +690,7 @@ static int cdns_regfield_init(struct cdns_sierra_phy *sp)
- 		sp->cmn_refrcv_refclk_termen_preg[i] = field;
- 	}
++/* Torrent */
+ #define CDNS_TORRENT_REFCLK_DRIVER      0
  
--	regmap = sp->regmap_phy_config_ctrl;
-+	regmap = sp->regmap_phy_pcs_common_cdb;
- 	field = devm_regmap_field_alloc(dev, regmap, phy_pll_cfg_1);
- 	if (IS_ERR(field)) {
- 		dev_err(dev, "PHY_PLL_CFG_1 reg field init failed\n");
-@@ -741,14 +742,14 @@ static int cdns_regmap_init_blocks(struct cdns_sierra_phy *sp,
- 	}
- 	sp->regmap_common_cdb = regmap;
- 
--	block_offset = SIERRA_PHY_CONFIG_CTRL_OFFSET(block_offset_shift);
-+	block_offset = SIERRA_PHY_PCS_COMMON_OFFSET(block_offset_shift);
- 	regmap = cdns_regmap_init(dev, base, block_offset, reg_offset_shift,
--				  &cdns_sierra_phy_config_ctrl_config);
-+				  &cdns_sierra_phy_pcs_cmn_cdb_config);
- 	if (IS_ERR(regmap)) {
--		dev_err(dev, "Failed to init PHY config and control regmap\n");
-+		dev_err(dev, "Failed to init PHY PCS common CDB regmap\n");
- 		return PTR_ERR(regmap);
- 	}
--	sp->regmap_phy_config_ctrl = regmap;
-+	sp->regmap_phy_pcs_common_cdb = regmap;
- 
- 	return 0;
- }
+ /* Sierra */
 -- 
 2.26.1
 
