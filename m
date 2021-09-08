@@ -1,87 +1,168 @@
-Return-Path: <SRS0=iYEg=N5=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=U4XZ=N6=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 23D5EC433F5
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Sep 2021 19:04:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8BDB6C433FE
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:48 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E094861108
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Sep 2021 19:03:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E094861108
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 4A3EA61155
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Sep 2021 12:29:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 4A3EA61155
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIJGd8nzlahZfjJNw3/Kuy16YEtopsSn49giJdjnymo=; b=BvnLkLxJdfgUup
-	4xQo9WNY9MNn85rrw0kFMDDtQ3auUizCea75KkB4DLMs2gmYzHeHtE+OoxZTLqtx50qG/2aW+HwiJ
-	4ob5vrAdwO2bfFQ8JfdnCwHML/j7SPAuyjC92WhYbB0YGNgtE1/efiQcHwwAm2EPReRlnopW39kcQ
-	0f+jS/K+gFDVMfoPVjy4vfGKklzV3NyNxbaPqqh92q440D3rxNli1S45eIDNem3EFRIxW47OvYbrf
-	lbq5Ycs67yKtTj5dcaiGgs0maT0llANMplUYJlbunaoIPgp6Of+G6E2mRN98c57X/PkzE3qC0J2XI
-	SdlGpwahLwjmryd72MhQ==;
+	List-Owner; bh=A/rZabwOv4v/q9242QEXjo8yrTw8lYnDXTNfF8Sp7/c=; b=tYBYqH/TMr+UOa
+	VSBYfC0WOz8rPdTW19fCZU7B+ReImK9zrLa5yB/fTeKhbufFMC/pWvZQnjKAhFGgeW785bgQrfgBI
+	u3oBqv2BWyw47XaFZ5rdbg5ce39BoommCrPaPzDqym10eekaNhMeKx6ztgrz/FqxmXP9ezIKsNWLP
+	tvJ1rD0g2iZ4eXu2ItAtEl+NSwpZilTaJ89JYgRUejAguGyErp4ZJlHH6HHQDQwsem0NIIWN4Vxkj
+	TVakIVAxmxITOxSdJAkDyRKvSTaUFNuN759ibxx7d0XJhRMVoJTKla7FCaJ5Mcj5GnkdTRUSK2KiC
+	FnXDAkfUZGpHsr+ri3pg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mNgNz-004VpM-Eb; Tue, 07 Sep 2021 19:03:59 +0000
-Received: from mail-oi1-f178.google.com ([209.85.167.178])
+	id 1mNwi3-006hhT-Q2; Wed, 08 Sep 2021 12:29:47 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mNgNw-004VoZ-Uq
- for linux-phy@lists.infradead.org; Tue, 07 Sep 2021 19:03:58 +0000
-Received: by mail-oi1-f178.google.com with SMTP id w144so139509oie.13
- for <linux-phy@lists.infradead.org>; Tue, 07 Sep 2021 12:03:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=UdQQQExBHiPR6qIP5oY8gqjMFJjYP3y1rT1TQorSqZY=;
- b=V/DmqnR2MxbvC7fiAuMoj3T1WFZ4T85Uw9XsC9VdUEoiLF1+lFHg+XzcjzgujSysV5
- uioeCd61iJJFrKvTdhZOz9H8hHwAY64WL6rKUR89QaT3GeUqaZU3tz82OYD845sHJcGD
- 1BgEOBLHO8gQJ14ZQ6N+xrMLZiCClSrVbcpZ56LNMZGb+c+LjtlQOSSObWdQsbBkAhsW
- F9bjdZ5nTt+9SrwMKAlchL711x/BlhggF60GuazXRnZkCFJAnKzFrw8MMAeYlbhS/PA1
- 7rcu9pdqMX0xFh451vfTQ0aUvC9A9YplpaFshTO70MJJ+h1hVzXx4kEsZdEg/bmAt6zk
- pMLA==
-X-Gm-Message-State: AOAM533WDF3m9iaLQ4FNOS/JgPzYK0HZfmDnzR2g/CmO7QJtMREWrF00
- bjml0A66qO0gOtrtfhNjTQ==
-X-Google-Smtp-Source: ABdhPJyuZ8CDEvv85V5xxEoQU6PojBqj9F3XU3VxctkZMnSq2K+26cFrvDhXC+jeh8QmrJJjPBgWSw==
-X-Received: by 2002:aca:be56:: with SMTP id o83mr4090913oif.51.1631041435623; 
- Tue, 07 Sep 2021 12:03:55 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id m16sm2379853oop.3.2021.09.07.12.03.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 07 Sep 2021 12:03:54 -0700 (PDT)
-Received: (nullmailer pid 165371 invoked by uid 1000);
- Tue, 07 Sep 2021 19:03:53 -0000
-Date: Tue, 7 Sep 2021 14:03:53 -0500
-From: Rob Herring <robh@kernel.org>
-To: Pratyush Yadav <p.yadav@ti.com>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
- Nikhil Devshatwar <nikhil.nd@ti.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v5 6/6] phy: dt-bindings: cdns,dphy: add Rx DPHY compatible
-Message-ID: <YTe3mUFPhkI910AG@robh.at.kernel.org>
-References: <20210902185543.18875-1-p.yadav@ti.com>
- <20210902185543.18875-7-p.yadav@ti.com>
+ id 1mNwhz-006hed-1D
+ for linux-phy@lists.infradead.org; Wed, 08 Sep 2021 12:29:46 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.1.2/8.16.0.43) with SMTP id 1886da7t016869;
+ Wed, 8 Sep 2021 05:29:40 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=proofpoint;
+ bh=a6i4dMHOxB4UyRk0dA5AgBiPjjno9r9bCtqGLqula6M=;
+ b=kLWEMXtn+vHnEC6lKntYpy1qB40Un5zCqeGMzp92WtgZo0sT4imUdmFUO9lDeRzw2nog
+ EWo92tA490BzSmVkSP5ndQUIZuYts7p4f3alOfZcfypM89X5O53FUkJUZgZ1u6vj4j8j
+ FFHQQUmqb23dW1JDF1BaevhHlobrQqP3oGUMfserU+szdzvhY3SqYB5Lgq5YT72SalCM
+ P+a8pRwHQybNtLI620/LuNoXI8pnmGLlRx4Qny6WaHyv8n7QsQDb+jebE6FATxZQJ1OY
+ wvByf/uYwPu2pUpReqIlkRfregQaPn6g6sMacxAUmQyLZlTAMaM74GM9fV71T/0H+CbE Qw== 
+Received: from nam12-bn8-obe.outbound.protection.outlook.com
+ (mail-bn8nam12lp2175.outbound.protection.outlook.com [104.47.55.175])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 3axcp9k47t-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 08 Sep 2021 05:29:40 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=OjCOb69/k8zvYS+1T4ssPQZ1y4QpYz8BLCFSR0U5UBORs9pAXGVYNk7lEgkiwJAjSR7/eoHq6eEBk9o5GG7Ky2JIJBqkBentPYoVhCCjLJ2jIER5B6A/2mLxEytBx1pQ7QQexXCbzwaF8d9H7u5L9Pm0IVwuUlklOI6IM+QgvRZ0pp8GImmLoNVsXO9NeLerShGksLK2sirsPqlTRReAwmEVzi0vf9w8vsdStd+KgqiCQqfrT7+Z1Cr78hUyDE/7yC4plsXyMYZ8oUd/YAk2ToKD0RUli6V2spnuYCNCEVvkh9dZ86kDGP+uPQpkaWyukzgLeURGeg668M2wZYZHYQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
+ bh=a6i4dMHOxB4UyRk0dA5AgBiPjjno9r9bCtqGLqula6M=;
+ b=bfEquEZK+/ub5qZmAN0IZ+Qgh4C+nFM+1LUziMojzMSFjUqrrqhqht/pmePzU+gdR4POXFzOw687n8RQ+8qDQvpF7MSpoE+3fppY+jn9J1JSXmjEKg4QA7aoAybXO5Kkz/Zswl5V5KIROC8rmbMl7C3lEgOWmZJgHv95Q7voj6RnQbjBfxjdtnKbI1vXVfTkSLVm2YOioxVinpnMQ/URWZCEKlHkc7X8M1iFc8Td4uA1GYJkPrmqLX9XLnlQGLpdV1hPjvtMSn4ov5vr5tAliw057DvSoFx4+5wzn5Cgple69YelC6B7S8Zqtkt4IzYYizYz8rmMIytjeX27rt3Sjw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 158.140.1.148) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=a6i4dMHOxB4UyRk0dA5AgBiPjjno9r9bCtqGLqula6M=;
+ b=R5/2znWWDrlxpssUKzoo1J/foESnrtOtr4kAK5jaQnAD2m9TjOEvkzPLzjb9nOsFYL+qO3oyzADziDd4e05HkinCLqH+KvyvwDPWmFu8figq0Rf5lf6Sx9a3uDz6W/UrelUGw04D9QTkyQgCFozhf4DnFIPEa+F8FzVIAkSk1P4=
+Received: from MWHPR21CA0025.namprd21.prod.outlook.com (2603:10b6:300:129::11)
+ by MN2PR07MB5920.namprd07.prod.outlook.com (2603:10b6:208:aa::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4500.14; Wed, 8 Sep
+ 2021 12:29:38 +0000
+Received: from MW2NAM12FT021.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:300:129:cafe::15) by MWHPR21CA0025.outlook.office365.com
+ (2603:10b6:300:129::11) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4523.3 via Frontend
+ Transport; Wed, 8 Sep 2021 12:29:38 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.148)
+ smtp.mailfrom=cadence.com; kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=pass action=none header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 158.140.1.148 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.140.1.148; helo=sjmaillnx2.cadence.com;
+Received: from sjmaillnx2.cadence.com (158.140.1.148) by
+ MW2NAM12FT021.mail.protection.outlook.com (10.13.180.88) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4500.6 via Frontend Transport; Wed, 8 Sep 2021 12:29:37 +0000
+Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
+ by sjmaillnx2.cadence.com (8.14.4/8.14.4) with ESMTP id
+ 188CTX9M026939
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 8 Sep 2021 05:29:36 -0700
+X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
+Received: from maileu3.global.cadence.com (10.160.88.99) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 8 Sep 2021 14:29:32 +0200
+Received: from vleu-orange.cadence.com (10.160.88.83) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2 via Frontend Transport; Wed, 8 Sep 2021 14:29:32 +0200
+Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 188CTWxA010288;
+ Wed, 8 Sep 2021 14:29:32 +0200
+Received: (from sjakhade@localhost)
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 188CTWxx010287;
+ Wed, 8 Sep 2021 14:29:32 +0200
+From: Swapnil Jakhade <sjakhade@cadence.com>
+To: <vkoul@kernel.org>, <kishon@ti.com>, <robh+dt@kernel.org>,
+ <p.zabel@pengutronix.de>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
+CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <lokeshvutla@ti.com>,
+ <a-govindraju@ti.com>
+Subject: [PATCH v2 05/15] phy: cadence: Sierra: Add support to get SSC type
+ from device tree
+Date: Wed, 8 Sep 2021 14:29:20 +0200
+Message-ID: <20210908122930.10224-6-sjakhade@cadence.com>
+X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20210908122930.10224-1-sjakhade@cadence.com>
+References: <20210908122930.10224-1-sjakhade@cadence.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210902185543.18875-7-p.yadav@ti.com>
+X-OrganizationHeadersPreserved: maileu3.global.cadence.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 0bd53d6e-154f-48c2-decb-08d972c45275
+X-MS-TrafficTypeDiagnostic: MN2PR07MB5920:
+X-Microsoft-Antispam-PRVS: <MN2PR07MB5920D6866FD801E4AE7907F8C5D49@MN2PR07MB5920.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:206;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: rlNCsWRv9yGM9FCprkHGyNKxc1ObVUYEDxUxgT7eiPBhiUAz0N3qhCjaWib13oFQOyRLkrePl4Vi0tywxYqbMcl7XHlCSDk9CQN9bvqSTgvWlxODcjY9yg2Y2kCObXNWIMnfL8LaCz/jyCb63gyC64O+WlhqIlvevToIBL0mnTOHbzP0iW10p/T87pCdBm4p8iaGnRYjy9DiI1kaXa3VQijmlSJO81+ZCJvtKxNK37t58XwX0O9DGOeQ/dX/XtlLHKKtP09CLRUPLvlP1pauwkoIAgyV1JEIpgezLLaMPKx3yt10jVhADba7MHnoBVR8wnXNGK0LssGrt8sNksDfDz5bBGx07baCz9kkgp0cOdjS69q3f2fnUIYXFA4U1KG3dZF5ZW6MrLqLf/KVAoPgjzj2OLSKm91/3OLtLQwu6EuIJxwrslxroUj5CjRxHj6DLqHNUJMLQzXaPEwf97lNbIVtAhn3lWX4ba/EtmojcJEEwJaVzAQFnyGuXw5uvvu8i6Rq3LesMVr33Rq+KwLJuthw8kXX+20QM2C/y+twlxDD1OZqtVHmr+k/7XxYiDVvHg0ngqJLLrKX4rxvrnV0NFF7t8oN40Z0MDoSctPxLN2GiLJDnhe+Lt0H4gqL9wy542yFQT+lR+FIwlB4mcnS9Fd2fS5tAeVFRwtOOMUipwgfLF1jjEURoVIyikIuu3anXFrvwQigBMMgLav31R9R82W2Lr1i9xQcM1d6/hXJipk=
+X-Forefront-Antispam-Report: CIP:158.140.1.148; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:sjmaillnx2.cadence.com; PTR:unknown.Cadence.COM; CAT:NONE;
+ SFS:(4636009)(346002)(136003)(39860400002)(376002)(396003)(36092001)(36840700001)(46966006)(426003)(2906002)(2616005)(47076005)(36860700001)(8676002)(86362001)(82310400003)(83380400001)(478600001)(336012)(316002)(42186006)(110136005)(4326008)(82740400003)(7636003)(54906003)(186003)(36756003)(26005)(356005)(70586007)(70206006)(8936002)(6666004)(5660300002)(1076003);
+ DIR:OUT; SFP:1101; 
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Sep 2021 12:29:37.1699 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0bd53d6e-154f-48c2-decb-08d972c45275
+X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.148];
+ Helo=[sjmaillnx2.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: MW2NAM12FT021.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR07MB5920
+X-Proofpoint-GUID: 6kQnyNtqOG5czOKbJZDw8IadQKcRgAdl
+X-Proofpoint-ORIG-GUID: 6kQnyNtqOG5czOKbJZDw8IadQKcRgAdl
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.391,FMLib:17.0.607.475
+ definitions=2021-09-08_06,2021-09-07_02,2020-04-07_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0
+ priorityscore=1501 impostorscore=0 malwarescore=0 suspectscore=0
+ mlxlogscore=999 spamscore=0 phishscore=0 adultscore=0 bulkscore=0
+ clxscore=1015 mlxscore=0 lowpriorityscore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.12.0-2109030001
+ definitions=main-2109080080
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210907_120357_035124_644231E2 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20210908_052944_015564_72CE8003 
+X-CRM114-Status: GOOD (  16.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,27 +179,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 03 Sep 2021 00:25:43 +0530, Pratyush Yadav wrote:
-> The DPHY is treated to be in Tx mode by default. Add a new compatible
-> for Rx mode DPHYs.
-> 
-> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> 
-> ---
-> 
-> Changes in v5:
-> - Use enum instead.
-> - Add Laurent's R-by.
-> 
-> Changes in v4:
-> - New in v4.
-> 
->  Documentation/devicetree/bindings/phy/cdns,dphy.yaml | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
+Add support to get SSC type from DT.
 
-Acked-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+---
+ drivers/phy/cadence/phy-cadence-sierra.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index 7e0f36dabc95..31e5d428dc03 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -238,6 +238,7 @@ struct cdns_sierra_inst {
+ 	u32 num_lanes;
+ 	u32 mlane;
+ 	struct reset_control *lnk_rst;
++	enum cdns_sierra_ssc_mode ssc_mode;
+ };
+ 
+ struct cdns_reg_pairs {
+@@ -360,7 +361,7 @@ static int cdns_sierra_phy_init(struct phy *gphy)
+ 	const struct cdns_sierra_data *init_data = phy->init_data;
+ 	struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
+ 	enum cdns_sierra_phy_type phy_type = ins->phy_type;
+-	enum cdns_sierra_ssc_mode ssc = EXTERNAL_SSC;
++	enum cdns_sierra_ssc_mode ssc = ins->ssc_mode;
+ 	const struct cdns_reg_pairs *reg_pairs;
+ 	struct regmap *regmap;
+ 	u32 num_regs;
+@@ -623,6 +624,9 @@ static int cdns_sierra_get_optional(struct cdns_sierra_inst *inst,
+ 		return -EINVAL;
+ 	}
+ 
++	inst->ssc_mode = EXTERNAL_SSC;
++	of_property_read_u32(child, "cdns,ssc-mode", &inst->ssc_mode);
++
+ 	return 0;
+ }
+ 
+-- 
+2.26.1
+
 
 -- 
 linux-phy mailing list
