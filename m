@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6E472C41535
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 75900C4167E
 	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:42:58 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 07FEA61263
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:42:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 07FEA61263
+	by mail.kernel.org (Postfix) with ESMTPS id 4864061208
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:42:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 4864061208
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,21 +23,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FSz6Y39jrtQMKwbSNseWlgKK05przI1cqJKJZN2RhU4=; b=thLcX4bOobNPBL
-	2bqKXhCJPsEcYvfR68UKTd/H60Z10zF8k5P5oLkPNmgA2DcdwfoI9PpI3YiFf/C1ulaMZxAtGQcl0
-	6AQUzHesbtcKRuSAqUlsZxTFzVGzNdmpztVMhMSCgh4CEyvgQo4IoijzKAoFKXW6ZdUD9QJlaqtlZ
-	PuOKGvAd0GIioVwoF25TC3G35XwzheGOpzSQY8QfCCYcjQBSAwg5EMc5HQLKpo4xWGiEpVgeUjwmm
-	jQt0XUlETmNgJqCGZ3K/XuDoJrjAAlQYj97xreR9GthWACLp2/y3YPVs0lH7nOUnvp2h4wOyxVNfy
-	XxLrGbaX1GhEf/EIJzow==;
+	List-Owner; bh=8/Mf7OGoezIK6LgaB3cv9liPyYwt1J6fzKvriv+O0Xw=; b=MIWAgjwhH4cJTj
+	XXHfSpB4xsVSKZKwXDtYeRDr5HpS/gg6a2c1FHW3ZE52EKoXy8kS0tDcE5S7p4HA2dFx+tqKQLm2y
+	UNUoSyANJpMc05MjS0Ux9HEhjFP5VXnbSZxqhLtyPdZuJMDVt1sKjnipU6COCYJg8d38igHY63rDX
+	RFVKud9fuW62uyr8FElQAy3riC5/TlXWUK5oWYxVu/ley2AjdYyGdFdFATDAoLLTIkaviE/Kjy5GN
+	v+YjisgyOWAANY1QIXCOFtvyEq9Dub4qsgHzM0YYgqtqlcDf5Rxq/neFTO9OHkNQLl9AqYC2fq8QA
+	/JFSFel67uCWG/OYwTvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mOlUH-00DMF1-AL; Fri, 10 Sep 2021 18:42:57 +0000
+	id 1mOlUH-00DMF6-Gy; Fri, 10 Sep 2021 18:42:57 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mOlTh-00DLqZ-NW; Fri, 10 Sep 2021 18:42:23 +0000
+ id 1mOlTh-00DLqg-Ot; Fri, 10 Sep 2021 18:42:23 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 24D2D240004;
- Fri, 10 Sep 2021 18:42:14 +0000 (UTC)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id B6AEE240006;
+ Fri, 10 Sep 2021 18:42:15 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -54,16 +54,17 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH 01/22] clk: sunxi-ng: v3s: Make the ISP PLL clock public
-Date: Fri, 10 Sep 2021 20:41:26 +0200
-Message-Id: <20210910184147.336618-2-paul.kocialkowski@bootlin.com>
+Subject: [PATCH 02/22] ARM: dts: sun8i: v3s: Parent the CSI module clock to
+ the ISP PLL
+Date: Fri, 10 Sep 2021 20:41:27 +0200
+Message-Id: <20210910184147.336618-3-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.32.0
 In-Reply-To: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
 References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210910_114221_906743_767A0309 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20210910_114221_955881_58040DC4 
+X-CRM114-Status: GOOD (  13.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,43 +81,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In order to reparent the CSI module clock to the ISP PLL via
-device-tree, export the ISP PLL clock declaration in the public
-device-tree header.
+At reset time, the CSI module clock is parented to the video PLL, which
+is used by the display engine. While the CSI module clock needs to be
+clocked at precisely 297 MHz, the display engine will need to adjust its
+clock usage depending on the display pixel rate.
 
-Details regarding why the CSI module clock is best parented to the ISP
-PLL are provided in the related commit.
+As a result, the video PLL may be reconfigured to fit the need of the
+display engine, which will break the CSI hardware.
+
+A good way to work around this is to reparent the CSI module clock to
+the ISP PLL (like it is done in the Allwinner SDK). Do this using the
+device-tree assigned-clock properties.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- drivers/clk/sunxi-ng/ccu-sun8i-v3s.h      | 1 -
- include/dt-bindings/clock/sun8i-v3s-ccu.h | 1 +
- 2 files changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/sun8i-v3s.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h
-index 108eeeedcbf7..48e7e2b9fcf8 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h
-@@ -23,7 +23,6 @@
- #define CLK_PLL_DDR0		8
- #define CLK_PLL_PERIPH0		9
- #define CLK_PLL_PERIPH0_2X	10
--#define CLK_PLL_ISP		11
- #define CLK_PLL_PERIPH1		12
- /* Reserve one number for not implemented and not used PLL_DDR1 */
+diff --git a/arch/arm/boot/dts/sun8i-v3s.dtsi b/arch/arm/boot/dts/sun8i-v3s.dtsi
+index 776913b3f85f..a77b63362a1d 100644
+--- a/arch/arm/boot/dts/sun8i-v3s.dtsi
++++ b/arch/arm/boot/dts/sun8i-v3s.dtsi
+@@ -622,6 +622,9 @@ csi1: camera@1cb4000 {
+ 			clock-names = "bus", "mod", "ram";
+ 			resets = <&ccu RST_BUS_CSI>;
+ 			status = "disabled";
++
++			assigned-clocks = <&ccu CLK_CSI1_SCLK>;
++			assigned-clock-parents = <&ccu CLK_PLL_ISP>;
+ 		};
  
-diff --git a/include/dt-bindings/clock/sun8i-v3s-ccu.h b/include/dt-bindings/clock/sun8i-v3s-ccu.h
-index 014ac6123d17..75f15e2d5404 100644
---- a/include/dt-bindings/clock/sun8i-v3s-ccu.h
-+++ b/include/dt-bindings/clock/sun8i-v3s-ccu.h
-@@ -46,6 +46,7 @@
- #ifndef _DT_BINDINGS_CLK_SUN8I_V3S_H_
- #define _DT_BINDINGS_CLK_SUN8I_V3S_H_
- 
-+#define CLK_PLL_ISP		11
- #define CLK_CPU			14
- 
- #define CLK_BUS_CE		20
+ 		gic: interrupt-controller@1c81000 {
 -- 
 2.32.0
 
