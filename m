@@ -1,68 +1,69 @@
-Return-Path: <SRS0=ow7y=N7=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=5sx/=OA=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
 X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BE095C433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Sep 2021 07:16:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6E472C41535
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:42:58 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6BF9460724
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Sep 2021 07:16:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6BF9460724
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=huawei.com
+	by mail.kernel.org (Postfix) with ESMTPS id 07FEA61263
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:42:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 07FEA61263
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dVMbY+Qsz7b1VDxM4bpUm6PQ4QWYQn+K+csMNxrg6A4=; b=byZpYRe6hY/ZMw
-	KmO1OY//s5hqB4bmeymbViqI+OleEL7FHyI6CEFJ12QyVJoQ+DqU7jS5Z8ui5pJfkrVavpSG9M3Hl
-	6UsAl5uvPEwV8om/vlobsqB3m5UsZB4wbhY1At24yCdELJx8VvHJMQzPSd1j8f4P/0ugu4h9hBzB7
-	Pk5dhtOSxeAVwlU8suchSR0dsFA80JaV2LB7/0RXF7aSQOn23B0MnGEQq0hJsRs5EKWCcn/aLxwzU
-	VmLrRA6vHpU0JzfXvpKBfcSuBKtuXDtEx3lHTPsnOFNFfadWnP5beI31tHsGPfCbyzALKufarU/oh
-	rsvSOWZ3ZokHYiraJm5Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FSz6Y39jrtQMKwbSNseWlgKK05przI1cqJKJZN2RhU4=; b=thLcX4bOobNPBL
+	2bqKXhCJPsEcYvfR68UKTd/H60Z10zF8k5P5oLkPNmgA2DcdwfoI9PpI3YiFf/C1ulaMZxAtGQcl0
+	6AQUzHesbtcKRuSAqUlsZxTFzVGzNdmpztVMhMSCgh4CEyvgQo4IoijzKAoFKXW6ZdUD9QJlaqtlZ
+	PuOKGvAd0GIioVwoF25TC3G35XwzheGOpzSQY8QfCCYcjQBSAwg5EMc5HQLKpo4xWGiEpVgeUjwmm
+	jQt0XUlETmNgJqCGZ3K/XuDoJrjAAlQYj97xreR9GthWACLp2/y3YPVs0lH7nOUnvp2h4wOyxVNfy
+	XxLrGbaX1GhEf/EIJzow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mOEIl-008R2v-Uj; Thu, 09 Sep 2021 07:16:51 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187])
+	id 1mOlUH-00DMF1-AL; Fri, 10 Sep 2021 18:42:57 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mOEIi-008R2E-SS
- for linux-phy@lists.infradead.org; Thu, 09 Sep 2021 07:16:50 +0000
-Received: from dggemv704-chm.china.huawei.com (unknown [172.30.72.57])
- by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4H4qzM4SjPzVrxx;
- Thu,  9 Sep 2021 15:15:43 +0800 (CST)
-Received: from dggpeml500017.china.huawei.com (7.185.36.243) by
- dggemv704-chm.china.huawei.com (10.3.19.47) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2308.8; Thu, 9 Sep 2021 15:16:36 +0800
-Received: from huawei.com (10.175.103.91) by dggpeml500017.china.huawei.com
- (7.185.36.243) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2308.8; Thu, 9 Sep 2021
- 15:16:36 +0800
-From: Yang Yingliang <yangyingliang@huawei.com>
-To: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-CC: <vkoul@kernel.org>, <steen.hegelund@microchip.com>
-Subject: [PATCH] phy: Sparx5 Eth SerDes: Fix return value check in
- sparx5_serdes_probe()
-Date: Thu, 9 Sep 2021 15:21:49 +0800
-Message-ID: <20210909072149.2934047-1-yangyingliang@huawei.com>
-X-Mailer: git-send-email 2.25.1
+ id 1mOlTh-00DLqZ-NW; Fri, 10 Sep 2021 18:42:23 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 24D2D240004;
+ Fri, 10 Sep 2021 18:42:14 +0000 (UTC)
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev
+Cc: Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: [PATCH 01/22] clk: sunxi-ng: v3s: Make the ISP PLL clock public
+Date: Fri, 10 Sep 2021 20:41:26 +0200
+Message-Id: <20210910184147.336618-2-paul.kocialkowski@bootlin.com>
+X-Mailer: git-send-email 2.32.0
+In-Reply-To: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
+References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.175.103.91]
-X-ClientProxiedBy: dggems706-chm.china.huawei.com (10.3.19.183) To
- dggpeml500017.china.huawei.com (7.185.36.243)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210909_001649_185652_0D576A17 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20210910_114221_906743_767A0309 
+X-CRM114-Status: GOOD (  12.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,36 +80,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In case of error, the function devm_ioremap() returns NULL
-pointer not ERR_PTR(). The IS_ERR() test in the return value
-check should be replaced with NULL test.
+In order to reparent the CSI module clock to the ISP PLL via
+device-tree, export the ISP PLL clock declaration in the public
+device-tree header.
 
-Fixes: 2ff8a1eeb5aa ("phy: Add Sparx5 ethernet serdes PHY driver")
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
+Details regarding why the CSI module clock is best parented to the ISP
+PLL are provided in the related commit.
+
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- drivers/phy/microchip/sparx5_serdes.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/clk/sunxi-ng/ccu-sun8i-v3s.h      | 1 -
+ include/dt-bindings/clock/sun8i-v3s-ccu.h | 1 +
+ 2 files changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
-index 4076580fc2cd..ab1b0986aa67 100644
---- a/drivers/phy/microchip/sparx5_serdes.c
-+++ b/drivers/phy/microchip/sparx5_serdes.c
-@@ -2475,10 +2475,10 @@ static int sparx5_serdes_probe(struct platform_device *pdev)
- 		return -EINVAL;
- 	}
- 	iomem = devm_ioremap(priv->dev, iores->start, resource_size(iores));
--	if (IS_ERR(iomem)) {
-+	if (!iomem) {
- 		dev_err(priv->dev, "Unable to get serdes registers: %s\n",
- 			iores->name);
--		return PTR_ERR(iomem);
-+		return -ENOMEM;
- 	}
- 	for (idx = 0; idx < ARRAY_SIZE(sparx5_serdes_iomap); idx++) {
- 		struct sparx5_serdes_io_resource *iomap = &sparx5_serdes_iomap[idx];
+diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h
+index 108eeeedcbf7..48e7e2b9fcf8 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h
++++ b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.h
+@@ -23,7 +23,6 @@
+ #define CLK_PLL_DDR0		8
+ #define CLK_PLL_PERIPH0		9
+ #define CLK_PLL_PERIPH0_2X	10
+-#define CLK_PLL_ISP		11
+ #define CLK_PLL_PERIPH1		12
+ /* Reserve one number for not implemented and not used PLL_DDR1 */
+ 
+diff --git a/include/dt-bindings/clock/sun8i-v3s-ccu.h b/include/dt-bindings/clock/sun8i-v3s-ccu.h
+index 014ac6123d17..75f15e2d5404 100644
+--- a/include/dt-bindings/clock/sun8i-v3s-ccu.h
++++ b/include/dt-bindings/clock/sun8i-v3s-ccu.h
+@@ -46,6 +46,7 @@
+ #ifndef _DT_BINDINGS_CLK_SUN8I_V3S_H_
+ #define _DT_BINDINGS_CLK_SUN8I_V3S_H_
+ 
++#define CLK_PLL_ISP		11
+ #define CLK_CPU			14
+ 
+ #define CLK_BUS_CE		20
 -- 
-2.25.1
+2.32.0
 
 
 -- 
