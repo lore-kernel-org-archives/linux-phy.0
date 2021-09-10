@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 332A9C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:46:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 15F41C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:46:42 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EA69261251
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:46:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org EA69261251
+	by mail.kernel.org (Postfix) with ESMTPS id D0805611BD
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:46:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D0805611BD
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,21 +23,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/3x7LdhgE2jawo2hkTOmk1cTv3Zw5neZfBHrdzd0+cQ=; b=gc4BHia18qdhNU
-	PxrdgFIacP11I1IYh/O3M8GVUelJupr3Et7xl/w/bh7u8rOXMqYp5Sz5qvGTb1xVZPaqtO0rHos8Z
-	fcXh/DpL6rGhirbQbleD64ZkJaHsupTlycGYUlvWj4nf4q28CqwJqmT3wqr2lTtq5YXxhDt3izL5y
-	gutKfQehvgyL+SB4WlcnZpX7wKIDOr3kmMXx69hBWWyLrXrd0Afv0TgGZdU1sLMtT5n9QffY5Veuf
-	t6dGYYx8/fv0eRzuHTEIOYUA+HJgvqSETs0cdW0E0WGkhWnHzrqLGE7bwSMo1sKfrxByQX9dDtdA/
-	Y/Q1IraXWrwvOstfwPfQ==;
+	List-Owner; bh=YKT3BSOz+hBYZoJiexZRfL7akewBvOW4R/7ZAbXhkPw=; b=pUWIYp6im1WdM/
+	YXDHzMFQU6gDDeY6rcCQjXEai2+6xPv38gtePm95jBtfEmbI52ZexeplTxTkO1ItTfPKowLRnXdzP
+	cV6KTjQs8csHwprqjlDg7jddbbUrgVy5oXvLQEhvjs+tyl7RnvH0YajqIE/vD6lfs4TvjtesuVsaw
+	nDKuwzJsCtWVIYL/6+FeuOCddiMAnBs4YuPnvC0UIoSqsBrU7QYgYWDRNXbvN3EW97wowLZeej4Rm
+	n7Ia9whJ+/sitN5Bsw9oB2tcBrVmFH3Fad9dc1zAvFusdJarjuwoK/Sx5ObpbbMz5MObYR8NIq9vu
+	L2BYtWNBdWEH8yp4Aghg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mOlXP-00DNva-Bv; Fri, 10 Sep 2021 18:46:11 +0000
+	id 1mOlXt-00DOCE-6t; Fri, 10 Sep 2021 18:46:41 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mOlTq-00DLy5-De; Fri, 10 Sep 2021 18:42:32 +0000
+ id 1mOlTs-00DLyc-4U; Fri, 10 Sep 2021 18:42:34 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 6C89A240008;
- Fri, 10 Sep 2021 18:42:27 +0000 (UTC)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id F04F024000E;
+ Fri, 10 Sep 2021 18:42:28 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -53,17 +53,19 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH 09/22] ARM: dts: sun8i: v3s: Add nodes for MIPI CSI-2 support
-Date: Fri, 10 Sep 2021 20:41:34 +0200
-Message-Id: <20210910184147.336618-10-paul.kocialkowski@bootlin.com>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: [PATCH 10/22] dt-bindings: media: Add Allwinner A83T MIPI CSI-2
+ bindings documentation
+Date: Fri, 10 Sep 2021 20:41:35 +0200
+Message-Id: <20210910184147.336618-11-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.32.0
 In-Reply-To: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
 References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210910_114230_839152_923FAEE5 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20210910_114232_525097_095BA3C4 
+X-CRM114-Status: GOOD (  12.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,115 +82,155 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-MIPI CSI-2 is supported on the V3s with an A31-based MIPI CSI-2 bridge
-controller. The controller uses a separate D-PHY, which is the same
-that is otherwise used for MIPI DSI, but used in Rx mode.
-
-On the V3s, the CSI0 controller is dedicated to MIPI CSI-2 as it does
-not have access to any parallel interface pins.
-
-Add all the necessary nodes (CSI0, MIPI CSI-2 bridge and D-PHY) to
-support the MIPI CSI-2 interface.
-
-Note that a fwnode graph link is created between CSI0 and MIPI CSI-2
-even when no sensor is connected. This will result in a probe failure
-for the controller as long as no sensor is connected but this is fine
-since no other interface is available.
+This introduces YAML bindings documentation for the Allwinner A83T
+MIPI CSI-2 controller.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- arch/arm/boot/dts/sun8i-v3s.dtsi | 72 ++++++++++++++++++++++++++++++++
- 1 file changed, 72 insertions(+)
+ .../media/allwinner,sun8i-a83t-mipi-csi2.yaml | 133 ++++++++++++++++++
+ 1 file changed, 133 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
 
-diff --git a/arch/arm/boot/dts/sun8i-v3s.dtsi b/arch/arm/boot/dts/sun8i-v3s.dtsi
-index a77b63362a1d..ec7fa6459547 100644
---- a/arch/arm/boot/dts/sun8i-v3s.dtsi
-+++ b/arch/arm/boot/dts/sun8i-v3s.dtsi
-@@ -612,6 +612,34 @@ spi0: spi@1c68000 {
- 			#size-cells = <0>;
- 		};
- 
-+		csi0: camera@1cb0000 {
-+			compatible = "allwinner,sun8i-v3s-csi";
-+			reg = <0x01cb0000 0x1000>;
-+			interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_CSI>,
-+				 <&ccu CLK_CSI1_SCLK>,
-+				 <&ccu CLK_DRAM_CSI>;
-+			clock-names = "bus", "mod", "ram";
-+			resets = <&ccu RST_BUS_CSI>;
-+			status = "disabled";
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
+new file mode 100644
+index 000000000000..0d41681bb8b2
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
+@@ -0,0 +1,133 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/allwinner,sun8i-a83t-mipi-csi2.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+			assigned-clocks = <&ccu CLK_CSI1_SCLK>;
-+			assigned-clock-parents = <&ccu CLK_PLL_ISP>;
++title: Allwinner A83T MIPI CSI-2 Device Tree Bindings
 +
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
++maintainers:
++  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 +
-+				port@1 {
-+					reg = <1>;
++properties:
++  compatible:
++    const: allwinner,sun8i-a83t-mipi-csi2
 +
-+					csi0_in_mipi_csi2: endpoint {
-+						remote-endpoint = <&mipi_csi2_out_csi0>;
-+					};
-+				};
-+			};
-+		};
++  reg:
++    maxItems: 1
 +
- 		csi1: camera@1cb4000 {
- 			compatible = "allwinner,sun8i-v3s-csi";
- 			reg = <0x01cb4000 0x3000>;
-@@ -637,5 +665,49 @@ gic: interrupt-controller@1c81000 {
- 			#interrupt-cells = <3>;
- 			interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
- 		};
++  interrupts:
++    maxItems: 1
 +
-+		mipi_csi2: csi@1cb1000 {
-+			compatible = "allwinner,sun8i-v3s-mipi-csi2",
-+				     "allwinner,sun6i-a31-mipi-csi2";
-+			reg = <0x01cb1000 0x1000>;
-+			interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_CSI>,
-+				 <&ccu CLK_CSI1_SCLK>;
-+			clock-names = "bus", "mod";
-+			resets = <&ccu RST_BUS_CSI>;
-+			status = "disabled";
++  clocks:
++    items:
++      - description: Bus Clock
++      - description: Module Clock
++      - description: MIPI-specific Clock
++      - description: Misc CSI Clock
 +
-+			phys = <&dphy>;
-+			phy-names = "dphy";
++  clock-names:
++    items:
++      - const: bus
++      - const: mod
++      - const: mipi
++      - const: misc
 +
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
++  resets:
++    maxItems: 1
 +
-+				mipi_csi2_in: port@0 {
-+					reg = <0>;
-+				};
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
 +
-+				mipi_csi2_out: port@1 {
-+					reg = <1>;
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description: Input port, connect to a MIPI CSI-2 sensor
 +
-+					mipi_csi2_out_csi0: endpoint {
-+						remote-endpoint = <&csi0_in_mipi_csi2>;
-+					};
-+				};
-+			};
-+		};
++        properties:
++          reg:
++            const: 0
 +
-+		dphy: d-phy@1cb2000 {
-+			compatible = "allwinner,sun6i-a31-mipi-dphy";
-+			reg = <0x01cb2000 0x1000>;
-+			clocks = <&ccu CLK_BUS_CSI>,
-+				 <&ccu CLK_MIPI_CSI>;
-+			clock-names = "bus", "mod";
-+			resets = <&ccu RST_BUS_CSI>;
-+			allwinner,direction = "rx";
-+			status = "disabled";
-+			#phy-cells = <0>;
-+		};
- 	};
- };
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
++
++            properties:
++              clock-lanes:
++                maxItems: 1
++
++              data-lanes:
++                minItems: 1
++                maxItems: 4
++
++            required:
++              - data-lanes
++
++        additionalProperties: false
++
++      port@1:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description: Output port, connect to a CSI controller
++
++        properties:
++          reg:
++            const: 1
++
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
++
++        additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/sun8i-a83t-ccu.h>
++    #include <dt-bindings/reset/sun8i-a83t-ccu.h>
++
++    mipi_csi2: csi@1cb1000 {
++        compatible = "allwinner,sun8i-a83t-mipi-csi2";
++        reg = <0x01cb1000 0x1000>;
++        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&ccu CLK_BUS_CSI>,
++                 <&ccu CLK_CSI_SCLK>,
++                 <&ccu CLK_MIPI_CSI>,
++                 <&ccu CLK_CSI_MISC>;
++        clock-names = "bus", "mod", "mipi", "misc";
++        resets = <&ccu RST_BUS_CSI>;
++
++        ports {
++            #address-cells = <1>;
++            #size-cells = <0>;
++
++            mipi_csi2_in: port@0 {
++                reg = <0>;
++
++                mipi_csi2_in_ov8865: endpoint {
++                    data-lanes = <1 2 3 4>;
++
++                    remote-endpoint = <&ov8865_out_mipi_csi2>;
++                };
++            };
++
++            mipi_csi2_out: port@1 {
++                reg = <1>;
++
++                mipi_csi2_out_csi: endpoint {
++                    remote-endpoint = <&csi_in_mipi_csi2>;
++                };
++            };
++        };
++    };
++
++...
 -- 
 2.32.0
 
