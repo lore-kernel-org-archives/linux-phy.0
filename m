@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 35DE5C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:43:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 10473C433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:43:56 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E38AC6124D
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:43:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E38AC6124D
+	by mail.kernel.org (Postfix) with ESMTPS id C41776124E
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Sep 2021 18:43:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C41776124E
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,21 +23,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0AJNGUC7UUbqTTgMGbuVDTt7oByyV4pN5nqtiyU1dyw=; b=wM5xkafIY2mCQe
-	8d3wCR5XIyzbPphimKuip3OY32XmUoORWwHI+jye6vWkl8dha1i9i1Vx5VZJ431yI1ePju3Xxibic
-	0MTjRjaXmd1jr0CVwdiqiY0fphou1peLLupGskwMQS4ch5aUJ0gEd/2WcqlM7FIoq4LNoRuVMjPQ2
-	M1Vd2cGZ6Bb9hfVnS5XTsj4issDn9da/9KPUPqVHZXYaPnkSQgjki9SeR1+M5WqXqZBQ60g+NSwma
-	UAkDS9w/nkFMXI+5pv1yOYWPjZJKiST7uXh3cxY1AG+8MpRn2VqsyKw37qJDSNxHfs32HPLzXvSSG
-	mYhO87ItucmH3y+3rnAw==;
+	List-Owner; bh=jR9bLQoMfrtpeymU/9HP8CoJH/fICGKDq0qcjO8SbiM=; b=tdNxZ7gIYkGd4w
+	UvLB/apx4SGTOLQNSgHwYfLhvAuQOvic+wzimNLGpbAcMG9Ps+cH16I1sXB7+wW4YoZejUT3Mud+m
+	pH4TJqcCwQ34pSutJCbUhoaPGogsQsop89geJrRPxls2+FeSv1ISr4HPo+/31ZY+aR3zeE7MPk7yN
+	ArvRO0kElwSem8I433b5+0T6KMU+20Lz7f6bo91UAIfPJj+RA5DjnsBOIMxPilxd/8umtXNcxXwXD
+	qeqDZ8aJIWPkaQAGcHd2qvxCuHRim3JUx7WhofF2UUnzV4ahGZehal2gK+Hidpz/VmAm8er51w14J
+	KN4Q+bGDj68PiI2ftB3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mOlUl-00DMOT-7m; Fri, 10 Sep 2021 18:43:27 +0000
+	id 1mOlVD-00DMaD-6s; Fri, 10 Sep 2021 18:43:55 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mOlTi-00DLrs-2j; Fri, 10 Sep 2021 18:42:25 +0000
+ id 1mOlTj-00DLtf-RX; Fri, 10 Sep 2021 18:42:25 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 0B94724000B;
- Fri, 10 Sep 2021 18:42:18 +0000 (UTC)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id A4711240005;
+ Fri, 10 Sep 2021 18:42:20 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -53,18 +53,19 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH 04/22] phy: allwinner: phy-sun6i-mipi-dphy: Support D-PHY Rx
- mode for MIPI CSI-2
-Date: Fri, 10 Sep 2021 20:41:29 +0200
-Message-Id: <20210910184147.336618-5-paul.kocialkowski@bootlin.com>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: [PATCH 05/22] dt-bindings: media: sun6i-a31-csi: Add MIPI CSI-2 input
+ port
+Date: Fri, 10 Sep 2021 20:41:30 +0200
+Message-Id: <20210910184147.336618-6-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.32.0
 In-Reply-To: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
 References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210910_114222_436914_071C1CD1 
-X-CRM114-Status: GOOD (  20.42  )
+X-CRM114-CacheID: sfid-20210910_114224_225183_BAF715C6 
+X-CRM114-Status: GOOD (  15.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,259 +82,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Allwinner A31 D-PHY supports both Rx and Tx modes. While the latter
-is already supported and used for MIPI DSI this adds support for the
-former, to be used with MIPI CSI-2.
+The A31 CSI controller supports two distinct input interfaces:
+parallel and an external MIPI CSI-2 bridge. The parallel interface
+is often connected to a set of hardware pins while the MIPI CSI-2
+bridge is an internal FIFO-ish link. As a result, these two inputs
+are distinguished as two different ports.
 
-This implementation is inspired by Allwinner's V3s Linux SDK
-implementation, which was used as a documentation base.
+Note that only one of the two may be present on a controller instance.
+For example, the V3s has one controller dedicated to MIPI-CSI2 and one
+dedicated to parallel.
 
-It uses the direction dt property to distinguish between tx and rx
-directions.
+Update the binding with an explicit ports node that holds two distinct
+port nodes: one for parallel input and one for MIPI CSI-2.
+
+This is backward-compatible with the single-port approach that was
+previously taken for representing the parallel interface port, which
+stays enumerated as fwnode port 0.
+
+Note that additional ports may be added in the future, especially to
+support feeding the CSI controller's output to the ISP.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Acked-by: Maxime Ripard <mripard@kernel.org>
 ---
- drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 166 +++++++++++++++++++-
- 1 file changed, 162 insertions(+), 4 deletions(-)
+ .../media/allwinner,sun6i-a31-csi.yaml        | 75 +++++++++++++++----
+ 1 file changed, 62 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-index f0bc87d654d4..3900f1650851 100644
---- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-+++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-@@ -24,6 +24,14 @@
- #define SUN6I_DPHY_TX_CTL_REG		0x04
- #define SUN6I_DPHY_TX_CTL_HS_TX_CLK_CONT	BIT(28)
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
+index 8b568072a069..f4a686b77a38 100644
+--- a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
++++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
+@@ -61,6 +61,49 @@ properties:
  
-+#define SUN6I_DPHY_RX_CTL_REG		0x08
-+#define SUN6I_DPHY_RX_CTL_EN_DBC	BIT(31)
-+#define SUN6I_DPHY_RX_CTL_RX_CLK_FORCE	BIT(24)
-+#define SUN6I_DPHY_RX_CTL_RX_D3_FORCE	BIT(23)
-+#define SUN6I_DPHY_RX_CTL_RX_D2_FORCE	BIT(22)
-+#define SUN6I_DPHY_RX_CTL_RX_D1_FORCE	BIT(21)
-+#define SUN6I_DPHY_RX_CTL_RX_D0_FORCE	BIT(20)
-+
- #define SUN6I_DPHY_TX_TIME0_REG		0x10
- #define SUN6I_DPHY_TX_TIME0_HS_TRAIL(n)		(((n) & 0xff) << 24)
- #define SUN6I_DPHY_TX_TIME0_HS_PREPARE(n)	(((n) & 0xff) << 16)
-@@ -44,12 +52,29 @@
- #define SUN6I_DPHY_TX_TIME4_HS_TX_ANA1(n)	(((n) & 0xff) << 8)
- #define SUN6I_DPHY_TX_TIME4_HS_TX_ANA0(n)	((n) & 0xff)
+     additionalProperties: false
  
-+#define SUN6I_DPHY_RX_TIME0_REG		0x30
-+#define SUN6I_DPHY_RX_TIME0_HS_RX_SYNC(n)	(((n) & 0xff) << 24)
-+#define SUN6I_DPHY_RX_TIME0_HS_RX_CLK_MISS(n)	(((n) & 0xff) << 16)
-+#define SUN6I_DPHY_RX_TIME0_LP_RX(n)		(((n) & 0xff) << 8)
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
 +
-+#define SUN6I_DPHY_RX_TIME1_REG		0x34
-+#define SUN6I_DPHY_RX_TIME1_RX_DLY(n)		(((n) & 0xfff) << 20)
-+#define SUN6I_DPHY_RX_TIME1_LP_RX_ULPS_WP(n)	((n) & 0xfffff)
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description: Parallel input port, connect to a parallel sensor
 +
-+#define SUN6I_DPHY_RX_TIME2_REG		0x38
-+#define SUN6I_DPHY_RX_TIME2_HS_RX_ANA1(n)	(((n) & 0xff) << 8)
-+#define SUN6I_DPHY_RX_TIME2_HS_RX_ANA0(n)	((n) & 0xff)
++        properties:
++          reg:
++            const: 0
 +
-+#define SUN6I_DPHY_RX_TIME3_REG		0x40
-+#define SUN6I_DPHY_RX_TIME3_LPRST_DLY(n)	(((n) & 0xffff) << 16)
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
 +
- #define SUN6I_DPHY_ANA0_REG		0x4c
- #define SUN6I_DPHY_ANA0_REG_PWS			BIT(31)
- #define SUN6I_DPHY_ANA0_REG_DMPC		BIT(28)
- #define SUN6I_DPHY_ANA0_REG_DMPD(n)		(((n) & 0xf) << 24)
- #define SUN6I_DPHY_ANA0_REG_SLV(n)		(((n) & 7) << 12)
- #define SUN6I_DPHY_ANA0_REG_DEN(n)		(((n) & 0xf) << 8)
-+#define SUN6I_DPHY_ANA0_REG_SFB(n)		(((n) & 3) << 2)
++            properties:
++              bus-width:
++                enum: [ 8, 10, 12, 16 ]
++
++              pclk-sample: true
++              hsync-active: true
++              vsync-active: true
++
++            required:
++              - bus-width
++
++        additionalProperties: false
++
++      port@1:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description: MIPI CSI-2 bridge input port
++
++        properties:
++          reg:
++            const: 1
++
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
++
++        additionalProperties: false
++
+ required:
+   - compatible
+   - reg
+@@ -89,19 +132,25 @@ examples:
+                       "ram";
+         resets = <&ccu RST_BUS_CSI>;
  
- #define SUN6I_DPHY_ANA1_REG		0x50
- #define SUN6I_DPHY_ANA1_REG_VTTMODE		BIT(31)
-@@ -84,6 +109,11 @@
- 
- #define SUN6I_DPHY_DBG5_REG		0xf4
- 
-+enum sun6i_dphy_direction {
-+	SUN6I_DPHY_DIRECTION_TX,
-+	SUN6I_DPHY_DIRECTION_RX,
-+};
+-        port {
+-            /* Parallel bus endpoint */
+-            csi1_ep: endpoint {
+-                remote-endpoint = <&adv7611_ep>;
+-                bus-width = <16>;
+-
+-                /*
+-                 * If hsync-active/vsync-active are missing,
+-                 * embedded BT.656 sync is used.
+-                 */
+-                 hsync-active = <0>; /* Active low */
+-                 vsync-active = <0>; /* Active low */
+-                 pclk-sample = <1>;  /* Rising */
++        ports {
++            #address-cells = <1>;
++            #size-cells = <0>;
 +
- struct sun6i_dphy {
- 	struct clk				*bus_clk;
- 	struct clk				*mod_clk;
-@@ -92,6 +122,8 @@ struct sun6i_dphy {
- 
- 	struct phy				*phy;
- 	struct phy_configure_opts_mipi_dphy	config;
++            port@0 {
++                reg = <0>;
++                /* Parallel bus endpoint */
++                csi1_ep: endpoint {
++                    remote-endpoint = <&adv7611_ep>;
++                    bus-width = <16>;
 +
-+	enum sun6i_dphy_direction		direction;
- };
- 
- static int sun6i_dphy_init(struct phy *phy)
-@@ -119,9 +151,8 @@ static int sun6i_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
- 	return 0;
- }
- 
--static int sun6i_dphy_power_on(struct phy *phy)
-+static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
- {
--	struct sun6i_dphy *dphy = phy_get_drvdata(phy);
- 	u8 lanes_mask = GENMASK(dphy->config.lanes - 1, 0);
- 
- 	regmap_write(dphy->regs, SUN6I_DPHY_TX_CTL_REG,
-@@ -211,12 +242,129 @@ static int sun6i_dphy_power_on(struct phy *phy)
- 	return 0;
- }
- 
-+static int sun6i_dphy_rx_power_on(struct sun6i_dphy *dphy)
-+{
-+	/* Physical clock rate is actually half of symbol rate with DDR. */
-+	unsigned long mipi_symbol_rate = dphy->config.hs_clk_rate;
-+	unsigned long dphy_clk_rate;
-+	unsigned int rx_dly;
-+	unsigned int lprst_dly;
-+	u32 value;
-+
-+	dphy_clk_rate = clk_get_rate(dphy->mod_clk);
-+	if (!dphy_clk_rate)
-+		return -EINVAL;
-+
-+	/* Hardcoded timing parameters from the Allwinner BSP. */
-+	regmap_write(dphy->regs, SUN6I_DPHY_RX_TIME0_REG,
-+		     SUN6I_DPHY_RX_TIME0_HS_RX_SYNC(255) |
-+		     SUN6I_DPHY_RX_TIME0_HS_RX_CLK_MISS(255) |
-+		     SUN6I_DPHY_RX_TIME0_LP_RX(255));
-+
-+	/*
-+	 * Formula from the Allwinner BSP, with hardcoded coefficients
-+	 * (probably internal divider/multiplier).
-+	 */
-+	rx_dly = 8 * (unsigned int)(dphy_clk_rate / (mipi_symbol_rate / 8));
-+
-+	/*
-+	 * The Allwinner BSP has an alternative formula for LP_RX_ULPS_WP:
-+	 * lp_ulps_wp_cnt = lp_ulps_wp_ms * lp_clk / 1000
-+	 * but does not use it and hardcodes 255 instead.
-+	 */
-+	regmap_write(dphy->regs, SUN6I_DPHY_RX_TIME1_REG,
-+		     SUN6I_DPHY_RX_TIME1_RX_DLY(rx_dly) |
-+		     SUN6I_DPHY_RX_TIME1_LP_RX_ULPS_WP(255));
-+
-+	/* HS_RX_ANA0 value is hardcoded in the Allwinner BSP. */
-+	regmap_write(dphy->regs, SUN6I_DPHY_RX_TIME2_REG,
-+		     SUN6I_DPHY_RX_TIME2_HS_RX_ANA0(4));
-+
-+	/*
-+	 * Formula from the Allwinner BSP, with hardcoded coefficients
-+	 * (probably internal divider/multiplier).
-+	 */
-+	lprst_dly = 4 * (unsigned int)(dphy_clk_rate / (mipi_symbol_rate / 2));
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_RX_TIME3_REG,
-+		     SUN6I_DPHY_RX_TIME3_LPRST_DLY(lprst_dly));
-+
-+	/* Analog parameters are hardcoded in the Allwinner BSP. */
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG,
-+		     SUN6I_DPHY_ANA0_REG_PWS |
-+		     SUN6I_DPHY_ANA0_REG_SLV(7) |
-+		     SUN6I_DPHY_ANA0_REG_SFB(2));
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA1_REG,
-+		     SUN6I_DPHY_ANA1_REG_SVTT(4));
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG,
-+		     SUN6I_DPHY_ANA4_REG_DMPLVC |
-+		     SUN6I_DPHY_ANA4_REG_DMPLVD(1));
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA2_REG,
-+		     SUN6I_DPHY_ANA2_REG_ENIB);
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG,
-+		     SUN6I_DPHY_ANA3_EN_LDOR |
-+		     SUN6I_DPHY_ANA3_EN_LDOC |
-+		     SUN6I_DPHY_ANA3_EN_LDOD);
-+
-+	/*
-+	 * Delay comes from the Allwinner BSP, likely for internal regulator
-+	 * ramp-up.
-+	 */
-+	udelay(3);
-+
-+	value = SUN6I_DPHY_RX_CTL_EN_DBC | SUN6I_DPHY_RX_CTL_RX_CLK_FORCE;
-+
-+	/*
-+	 * Rx data lane force-enable bits are used as regular RX enable by the
-+	 * Allwinner BSP.
-+	 */
-+	if (dphy->config.lanes >= 1)
-+		value |= SUN6I_DPHY_RX_CTL_RX_D0_FORCE;
-+	if (dphy->config.lanes >= 2)
-+		value |= SUN6I_DPHY_RX_CTL_RX_D1_FORCE;
-+	if (dphy->config.lanes >= 3)
-+		value |= SUN6I_DPHY_RX_CTL_RX_D2_FORCE;
-+	if (dphy->config.lanes == 4)
-+		value |= SUN6I_DPHY_RX_CTL_RX_D3_FORCE;
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_RX_CTL_REG, value);
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_GCTL_REG,
-+		     SUN6I_DPHY_GCTL_LANE_NUM(dphy->config.lanes) |
-+		     SUN6I_DPHY_GCTL_EN);
-+
-+	return 0;
-+}
-+
-+static int sun6i_dphy_power_on(struct phy *phy)
-+{
-+	struct sun6i_dphy *dphy = phy_get_drvdata(phy);
-+
-+	switch (dphy->direction) {
-+	case SUN6I_DPHY_DIRECTION_TX:
-+		return sun6i_dphy_tx_power_on(dphy);
-+	case SUN6I_DPHY_DIRECTION_RX:
-+		return sun6i_dphy_rx_power_on(dphy);
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
- static int sun6i_dphy_power_off(struct phy *phy)
- {
- 	struct sun6i_dphy *dphy = phy_get_drvdata(phy);
- 
--	regmap_update_bits(dphy->regs, SUN6I_DPHY_ANA1_REG,
--			   SUN6I_DPHY_ANA1_REG_VTTMODE, 0);
-+	regmap_write(dphy->regs, SUN6I_DPHY_GCTL_REG, 0);
-+
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA0_REG, 0);
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA1_REG, 0);
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA2_REG, 0);
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG, 0);
-+	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG, 0);
- 
- 	return 0;
- }
-@@ -253,7 +401,9 @@ static int sun6i_dphy_probe(struct platform_device *pdev)
- {
- 	struct phy_provider *phy_provider;
- 	struct sun6i_dphy *dphy;
-+	const char *direction;
- 	void __iomem *regs;
-+	int ret;
- 
- 	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
- 	if (!dphy)
-@@ -290,6 +440,14 @@ static int sun6i_dphy_probe(struct platform_device *pdev)
- 		return PTR_ERR(dphy->phy);
- 	}
- 
-+	dphy->direction = SUN6I_DPHY_DIRECTION_TX;
-+
-+	ret = of_property_read_string(pdev->dev.of_node, "allwinner,direction",
-+				      &direction);
-+
-+	if (!ret && !strncmp(direction, "rx", 2))
-+		dphy->direction = SUN6I_DPHY_DIRECTION_RX;
-+
- 	phy_set_drvdata(dphy->phy, dphy);
- 	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
- 
++                    /*
++                     * If hsync-active/vsync-active are missing,
++                     * embedded BT.656 sync is used.
++                     */
++                     hsync-active = <0>; /* Active low */
++                     vsync-active = <0>; /* Active low */
++                     pclk-sample = <1>;  /* Rising */
++                };
+             };
+         };
+     };
 -- 
 2.32.0
 
