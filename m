@@ -1,96 +1,71 @@
-Return-Path: <SRS0=+Cw6=OB=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=BhbR=OD=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
 X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=unavailable autolearn_force=no version=3.4.0
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 61E02C433EF
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Sep 2021 02:54:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D14A5C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 07:45:00 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0C04D610C9
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Sep 2021 02:54:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0C04D610C9
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=csie.org
+	by mail.kernel.org (Postfix) with ESMTPS id 6545360F6F
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 07:45:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6545360F6F
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date
-	:From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BUhM5/a609A7gdGRoQkHpirD8XEvQL3ndqjto5hiqEc=; b=IJOBIXs7195VZH
-	S4hjW69RYZ+eMWV+6NBBNQbwNlZ9B+SN4vcNdlg4sxbJJuMwy8XCSsambHBFs6zuOQWrox4iiFn4y
-	6ihh4XZOaKTxKoOvD4f3K/zBLx9OyRMP8jO/3tDSQnCxweLk++8NOd+eZR/4Fq9NTH/i7cAr4GPgy
-	TNhRCrFwVwoT7fdRhFi3iKkY9BXMj6PTd6ccP4jReYceRzCvmaK83XEKSlbuPp4F4LO+YAhJchxbe
-	ACEc6Tap6vTZBgaYTPO2+KzPC3W6YAcBq10mebEFrGnsen+m+kKCQjk43itHFPW1uWdQCY4fODmD3
-	aSUtqakbxzzykdjUEUOA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=MNa6RrtIe9MT7XUW909vT75gpFaS2J+JYbzAyReqlGM=; b=quXZp1upaDUyipF1X4vE/fqn/C
+	MAZAYgB4M9usQ8AkMcjr3TonOywGVBhtbCtRXVm0GV5WCswIkKv3M/H8/b5pAU0BrOQ/DiCeHbTVY
+	9L6a86QSKxcprUurvu9JeQ+iBvXDsODSErxrn2LIQnIS8Q1IwB5+HtXwnKjRGcdObRVsFNh0Zt2+H
+	4U0ZoS7ByHtjYdfvOBVghSGN3QoslC/SzbKI93UTtpYuB2c88otDq7OoLuZ1FsWrR5tkEuKWfPTy0
+	CqTnZraZ+R1fRO4q9s8GtvZG0mqqrtQ2ShbQ//T/WXMnVbCpChmYUjz3eeJmTbCOuGbi570RZ3VoB
+	5S25++0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mOt9s-00EBLc-Ii; Sat, 11 Sep 2021 02:54:24 +0000
-Received: from mail-lf1-f54.google.com ([209.85.167.54])
+	id 1mPgeB-000Y5M-Ue; Mon, 13 Sep 2021 07:44:59 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mOt9f-00EBJZ-Gn; Sat, 11 Sep 2021 02:54:12 +0000
-Received: by mail-lf1-f54.google.com with SMTP id h16so7992131lfk.10;
- Fri, 10 Sep 2021 19:54:09 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
- :from:date:message-id:subject:to:cc;
- bh=HrzUj2kOKfp3nelOA5Rh3JYBH3kW210KP3kKzozo3hQ=;
- b=CJ2b2h2sCw6L4UXmhQWIydSpI3OW43GP8smh4sWBm+IWyGLFkENMk8DebGDgZBgTyL
- +RdkqjHFfZuXyNtaQqc0RUHxu0GHBuGk9TdTAfAphFNEr1ZyWdrtEr+bNMzu6b7qi5Du
- i8kuXq4DU5Gm7BiwvYivMg2FTHKSeyrKBcUe088UNXcO+6WghKov6WnZWvKX5duenAQH
- vZsMFjuyc5yxhxDkjKijFhHCToc1RA7JV20DM5Kmuu6hzBULdTRvkjJytJ1A7FEDI9qu
- XNDh88tYGQX4BStbqO5e01+Jhu+NMZ6auMBxv78TGBNXskOGIkO/DlZCj/kB4IkQ2nKV
- iSOQ==
-X-Gm-Message-State: AOAM5319HHVoem/5YOoQgaw/OGoI6mjPZjQ0WdEliPZ5EA6r4erZ+/ot
- qXiZOUN6qAW0OKoAhpK5xQ+e+qeX3z4kHg==
-X-Google-Smtp-Source: ABdhPJyzASs2y+6y9JfSnd6mwoMNF8UQFY/4sfaCQy9REzE4/tM2Zi/CL5vVvFTAiLY6j8Z+zOlIXw==
-X-Received: by 2002:a19:7101:: with SMTP id m1mr573796lfc.156.1631328847855;
- Fri, 10 Sep 2021 19:54:07 -0700 (PDT)
-Received: from mail-lf1-f52.google.com (mail-lf1-f52.google.com.
- [209.85.167.52])
- by smtp.gmail.com with ESMTPSA id p5sm56126lfr.72.2021.09.10.19.54.07
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 10 Sep 2021 19:54:07 -0700 (PDT)
-Received: by mail-lf1-f52.google.com with SMTP id l11so8039682lfe.1;
- Fri, 10 Sep 2021 19:54:07 -0700 (PDT)
-X-Received: by 2002:ac2:482d:: with SMTP id 13mr583877lft.120.1631328846840;
- Fri, 10 Sep 2021 19:54:06 -0700 (PDT)
-MIME-Version: 1.0
-References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
- <20210910184147.336618-14-paul.kocialkowski@bootlin.com>
-In-Reply-To: <20210910184147.336618-14-paul.kocialkowski@bootlin.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Sat, 11 Sep 2021 10:53:55 +0800
-X-Gmail-Original-Message-ID: <CAGb2v66OHJREEg1Djkk=VyY0yUr5JE8Fp+xsb40wCk6E56bH8A@mail.gmail.com>
-Message-ID: <CAGb2v66OHJREEg1Djkk=VyY0yUr5JE8Fp+xsb40wCk6E56bH8A@mail.gmail.com>
-Subject: Re: [PATCH NOT FOR MERGE 13/22] ARM: dts: sun8i: a83t: Add MIPI CSI-2
- controller node
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Cc: Linux Media Mailing List <linux-media@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-sunxi@lists.linux.dev, 
- linux-kernel <linux-kernel@vger.kernel.org>, linux-phy@lists.infradead.org, 
- linux-clk <linux-clk@vger.kernel.org>, linux-staging@lists.linux.dev, 
- Yong Deng <yong.deng@magewell.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>, 
+ id 1mPgdr-000Xzv-D7; Mon, 13 Sep 2021 07:44:42 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 6AD0F100018;
+ Mon, 13 Sep 2021 07:44:23 +0000 (UTC)
+Date: Mon, 13 Sep 2021 09:44:22 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Samuel Holland <samuel@sholland.org>
+Cc: Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, 
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Helen Koike <helen.koike@collabora.com>, 
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev
+Subject: Re: [PATCH 09/22] ARM: dts: sun8i: v3s: Add nodes for MIPI CSI-2
+ support
+Message-ID: <YT8BVo61qL1jq/er@aptenodytes>
+References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
+ <20210910184147.336618-10-paul.kocialkowski@bootlin.com>
+ <483288cb-d9fa-4581-7986-d15c4aa27769@sholland.org>
+MIME-Version: 1.0
+In-Reply-To: <483288cb-d9fa-4581-7986-d15c4aa27769@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210910_195411_587191_407C6290 
-X-CRM114-Status: GOOD (  21.00  )
+X-CRM114-CacheID: sfid-20210913_004439_774876_6D71A34C 
+X-CRM114-Status: GOOD (  25.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,76 +77,186 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@csie.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3405981014294425693=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-On Sat, Sep 11, 2021 at 2:42 AM Paul Kocialkowski
-<paul.kocialkowski@bootlin.com> wrote:
->
-> MIPI CSI-2 is supported on the A83T with a dedicated controller that
-> covers both the protocol and D-PHY. It can be connected to the CSI
-> interface as a V4L2 subdev through the fwnode graph.
->
-> This is not done by default since connecting the bridge without a
-> subdev attached to it will cause a failure on the CSI driver.
->
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+--===============3405981014294425693==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="QZVQzP+VTAJydr5U"
+Content-Disposition: inline
 
-I believe you tagged the wrong patch to not be merged? AFAICT it
-should be the next patch that hooks up OV8865, not this one.
 
-> ---
->  arch/arm/boot/dts/sun8i-a83t.dtsi | 26 ++++++++++++++++++++++++++
->  1 file changed, 26 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
-> index ac97eac91349..1fa51f7ef063 100644
-> --- a/arch/arm/boot/dts/sun8i-a83t.dtsi
-> +++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
-> @@ -1064,6 +1064,32 @@ csi: camera@1cb0000 {
->                         status = "disabled";
->                 };
->
-> +               mipi_csi2: csi@1cb1000 {
-> +                       compatible = "allwinner,sun8i-a83t-mipi-csi2";
-> +                       reg = <0x01cb1000 0x1000>;
-> +                       interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-> +                       clocks = <&ccu CLK_BUS_CSI>,
-> +                                <&ccu CLK_CSI_SCLK>,
-> +                                <&ccu CLK_MIPI_CSI>,
-> +                                <&ccu CLK_CSI_MISC>;
-> +                       clock-names = "bus", "mod", "mipi", "misc";
-> +                       resets = <&ccu RST_BUS_CSI>;
-> +                       status = "disabled";
-> +
-> +                       ports {
-> +                               #address-cells = <1>;
-> +                               #size-cells = <0>;
-> +
-> +                               mipi_csi2_in: port@0 {
-> +                                       reg = <0>;
-> +                               };
-> +
-> +                               mipi_csi2_out: port@1 {
-> +                                       reg = <1>;
-> +                               };
-> +                       };
-> +               };
-> +
->                 hdmi: hdmi@1ee0000 {
->                         compatible = "allwinner,sun8i-a83t-dw-hdmi";
->                         reg = <0x01ee0000 0x10000>;
-> --
-> 2.32.0
->
->
+--QZVQzP+VTAJydr5U
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Samuel,
+
+On Fri 10 Sep 21, 21:32, Samuel Holland wrote:
+> On 9/10/21 1:41 PM, Paul Kocialkowski wrote:
+> > MIPI CSI-2 is supported on the V3s with an A31-based MIPI CSI-2 bridge
+> > controller. The controller uses a separate D-PHY, which is the same
+> > that is otherwise used for MIPI DSI, but used in Rx mode.
+> >=20
+> > On the V3s, the CSI0 controller is dedicated to MIPI CSI-2 as it does
+> > not have access to any parallel interface pins.
+> >=20
+> > Add all the necessary nodes (CSI0, MIPI CSI-2 bridge and D-PHY) to
+> > support the MIPI CSI-2 interface.
+> >=20
+> > Note that a fwnode graph link is created between CSI0 and MIPI CSI-2
+> > even when no sensor is connected. This will result in a probe failure
+> > for the controller as long as no sensor is connected but this is fine
+> > since no other interface is available.
+> >=20
+> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > ---
+> >  arch/arm/boot/dts/sun8i-v3s.dtsi | 72 ++++++++++++++++++++++++++++++++
+> >  1 file changed, 72 insertions(+)
+> >=20
+> > diff --git a/arch/arm/boot/dts/sun8i-v3s.dtsi b/arch/arm/boot/dts/sun8i=
+-v3s.dtsi
+> > index a77b63362a1d..ec7fa6459547 100644
+> > --- a/arch/arm/boot/dts/sun8i-v3s.dtsi
+> > +++ b/arch/arm/boot/dts/sun8i-v3s.dtsi
+> > @@ -612,6 +612,34 @@ spi0: spi@1c68000 {
+> >  			#size-cells =3D <0>;
+> >  		};
+> > =20
+> > +		csi0: camera@1cb0000 {
+> > +			compatible =3D "allwinner,sun8i-v3s-csi";
+> > +			reg =3D <0x01cb0000 0x1000>;
+> > +			interrupts =3D <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
+> > +			clocks =3D <&ccu CLK_BUS_CSI>,
+> > +				 <&ccu CLK_CSI1_SCLK>,
+> > +				 <&ccu CLK_DRAM_CSI>;
+> > +			clock-names =3D "bus", "mod", "ram";
+> > +			resets =3D <&ccu RST_BUS_CSI>;
+> > +			status =3D "disabled";
+> > +
+> > +			assigned-clocks =3D <&ccu CLK_CSI1_SCLK>;
+> > +			assigned-clock-parents =3D <&ccu CLK_PLL_ISP>;
+> > +
+> > +			ports {
+> > +				#address-cells =3D <1>;
+> > +				#size-cells =3D <0>;
+> > +
+> > +				port@1 {
+> > +					reg =3D <1>;
+> > +
+> > +					csi0_in_mipi_csi2: endpoint {
+> > +						remote-endpoint =3D <&mipi_csi2_out_csi0>;
+> > +					};
+> > +				};
+> > +			};
+> > +		};
+> > +
+> >  		csi1: camera@1cb4000 {
+> >  			compatible =3D "allwinner,sun8i-v3s-csi";
+> >  			reg =3D <0x01cb4000 0x3000>;
+>=20
+> All of the new nodes should be added above this one, to maintain unit
+> address order.
+
+Good catch, this was an overlook on my side.
+
+Thanks,
+
+Paul
+
+> Regards,
+> Samuel
+>=20
+> > @@ -637,5 +665,49 @@ gic: interrupt-controller@1c81000 {
+> >  			#interrupt-cells =3D <3>;
+> >  			interrupts =3D <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_=
+HIGH)>;
+> >  		};
+> > +
+> > +		mipi_csi2: csi@1cb1000 {
+> > +			compatible =3D "allwinner,sun8i-v3s-mipi-csi2",
+> > +				     "allwinner,sun6i-a31-mipi-csi2";
+> > +			reg =3D <0x01cb1000 0x1000>;
+> > +			interrupts =3D <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
+> > +			clocks =3D <&ccu CLK_BUS_CSI>,
+> > +				 <&ccu CLK_CSI1_SCLK>;
+> > +			clock-names =3D "bus", "mod";
+> > +			resets =3D <&ccu RST_BUS_CSI>;
+> > +			status =3D "disabled";
+> > +
+> > +			phys =3D <&dphy>;
+> > +			phy-names =3D "dphy";
+> > +
+> > +			ports {
+> > +				#address-cells =3D <1>;
+> > +				#size-cells =3D <0>;
+> > +
+> > +				mipi_csi2_in: port@0 {
+> > +					reg =3D <0>;
+> > +				};
+> > +
+> > +				mipi_csi2_out: port@1 {
+> > +					reg =3D <1>;
+> > +
+> > +					mipi_csi2_out_csi0: endpoint {
+> > +						remote-endpoint =3D <&csi0_in_mipi_csi2>;
+> > +					};
+> > +				};
+> > +			};
+> > +		};
+> > +
+> > +		dphy: d-phy@1cb2000 {
+> > +			compatible =3D "allwinner,sun6i-a31-mipi-dphy";
+> > +			reg =3D <0x01cb2000 0x1000>;
+> > +			clocks =3D <&ccu CLK_BUS_CSI>,
+> > +				 <&ccu CLK_MIPI_CSI>;
+> > +			clock-names =3D "bus", "mod";
+> > +			resets =3D <&ccu RST_BUS_CSI>;
+> > +			allwinner,direction =3D "rx";
+> > +			status =3D "disabled";
+> > +			#phy-cells =3D <0>;
+> > +		};
+> >  	};
+> >  };
+> >=20
+>=20
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--QZVQzP+VTAJydr5U
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmE/AVYACgkQ3cLmz3+f
+v9EFwAgAlLhO92v/X6G6gs1EKL/Ve3k5WVgSYDcp38cxhVkn9TYIx+u97xSfyDLC
+P5PABn2O8tERf6e7U1NBmqr64vSzvziaRmeLo6co6sdLEJuNvk4wrp3/9U7+dp/Q
+9Pp/tPxadAO4SKID7BW5UKTEzWqzGlsGJf/6p83oKzwWtBCTBXTfK0PjkmESPFy8
+kTX1gqi9/Pe0oiWH0PRZJIZzPYDP8PpRNPQNxhPlXivuSnDLFwNAhaSXrMvqOnl2
+/Y+tpSRPXTKGPqjIAzRn3G2fTveiHMw0fTLwVgcZqqNIK4dACeQLJYNdSxjTMORZ
+J1xWZQdStHkESCp9DRxlxV8TLbiItg==
+=95oz
+-----END PGP SIGNATURE-----
+
+--QZVQzP+VTAJydr5U--
+
+
+--===============3405981014294425693==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3405981014294425693==--
+
