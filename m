@@ -2,19 +2,19 @@ Return-Path: <SRS0=BhbR=OD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-9.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=ham autolearn_force=no version=3.4.0
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B46A4C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 08:09:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D8E0EC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 08:17:38 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 68EB160FDA
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 08:09:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 68EB160FDA
+	by mail.kernel.org (Postfix) with ESMTPS id 59A2160FC0
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 08:17:38 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 59A2160FC0
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cerno.tech
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,62 +23,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uYj9+NmFqYnNV3S+91HtpGCjcbKa6mOF/dGy8jYevBI=; b=pX5hgeaRwi77xja9MEapd2ebcB
-	IYLHTFutmwTb8H+UgZXcR1R5gqzK0QLulPCgWMli94OcuOeTCzzJ8arKlcGkgxnlYTdqlC5ANElkd
-	SIg4oP5luUG6Uec/YBuU/7cGYpQ+O0SgJdBzuF5t0mzjbksOjfeNPzYEjk3EKAwSnVKuS6HQmDbMy
-	EbdLaR9WkDf6VOuvLWaTxXMqXZEq0Q5Pdv1Oryq0QbB8y7KcR0dPk//+M/wQoM5uQ0w1fEii+Xesc
-	h3NNirXltuCKIqCnmJ0aLZDiDFgIzg6eC3TxVz6/MKacqpL+02iy4GTNM2jk/qkkZVkpC8MwHZ6nF
-	EL17JTsg==;
+	bh=rBsEKe6UxTiF0D2nmfD0JqLZQbzTQr96jr5ipZqGssw=; b=S8MSqba8RBwnSpEZRbgsCdqtXB
+	TgD/rccWxkxsiT+W/pqTNSItmtbMTOR4sT1Mq9/ncx6VyTDoNrycj2bDyZAD6+XIP5QTzhKD8LQRM
+	LPnNQ6JekIvJgC7iEFHNHNkC3nNduqiRuQbX9TZnD5a0QHcC0NH0NCDFhnHvXCzrMMW5tzPFOvaK0
+	BBYmZHl0yOiFg5QBB1L11U69rRJY8U5JUaDgtGWh1H6Rl2ITJgU8JHHk/Ip+Vw8i93zND1CwDnpvY
+	acpUmVvkhYIbF/8z/pn10/J21Imj0MfxvvEvhDGsriasEDg0A9xRcUA/HAlNBSEDihsIGyQk/4RQX
+	y1xZ9XUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mPh2I-000dxq-VU; Mon, 13 Sep 2021 08:09:54 +0000
+	id 1mPh9l-000goE-Pj; Mon, 13 Sep 2021 08:17:37 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mPh22-000dtk-Hc; Mon, 13 Sep 2021 08:09:40 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id A4E95580B92;
- Mon, 13 Sep 2021 04:09:36 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 13 Sep 2021 04:09:36 -0400
+ id 1mPh9M-000gZP-Ui; Mon, 13 Sep 2021 08:17:15 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 9631F580B75;
+ Mon, 13 Sep 2021 04:17:11 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute2.internal (MEProxy); Mon, 13 Sep 2021 04:17:11 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=taTDVVgNHDmxrDI6auoBpwRlTeV
- 9nCDLqv3i8d33BxY=; b=IGzL8uXiUHJvU4ElPo2UTotQSCdYJodtrUCmQzGxwjp
- mdVwMcEPzcmsnj5SFfxsj0eLESNAU1mx9pZL3gbnJfilNMK2XFw+Mx8tQjOvYJAB
- HQS7+8WanabvwpkIOyxucn+lGIEwA8ks11lx3sY7unSFsJdaJDMKB2c4AiutuEKV
- MPLwacvmqwDuy+sEPO1CDLG7emoKIByIDDkFE6uNmDgxIvjsK+gcniBK/z0ZUJ54
- OxvD6J3rEaK+okvbcNeuK6KBRSDIxmc+R8equbb54wOGmh+jGqGWWJBQnGrMLYhN
- Hm4Ct70kgnXh/0u5J9MZXunokWwKYyJIOWV/x+1dKkQ==
+ :content-type:in-reply-to; s=fm3; bh=LfsxPMaIAkjFAolr1YO0jdkBTkA
+ SxQKSZB3Inh4PV88=; b=Iw769SMlc9Hc8sWUZevD469xuhrgj74nKPZttihMbEE
+ DWemQ6Sl61z/n/MkQc0cyP5Vug1e+vdTkMtqM5L+M7wrgFLG34LHldBknuiRsvUo
+ edjf++/223EowstTkqYw4YcVxNog99wYqkJ8iY721wWpyRyrB78BFaulrYvSrAv4
+ zaKaGlRcDUSRx4MABs88OB2n+lDoG+DY/93QA69KG05W033W9hBK15IjSeU362pl
+ TWd+XdGDlBQuwqCAJU90SWJFtdcpnTzL5eDPkaDaKPHP9t95hsZsj52XJS7JPTkl
+ rJ90FRv0sCFRrVJe1cddLFHtx2rFX4CJcExcPqt5IWA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=taTDVV
- gNHDmxrDI6auoBpwRlTeV9nCDLqv3i8d33BxY=; b=rk8FOzd7VEkTxSSi3R6HL1
- ABEIcR2qjr8ifv0r32ZRJRkcTHa5BoFClOUqBbDdpiyHT2VscnEKCavciWg4E91Q
- 6KlL4GCULyhuq2WX1yUFhIKxdAOXQb9jtt3F6nGDFAHX8uB44uIxpqkbWUfhq7bz
- WbDjwQZ79Tsfkvy+xn0RaC06GF/RB1YwQiNMJ2Qm4Uo4fXctOTyZulnUhn+D9/hh
- maA4oHof99Tc2yB3CT5F0Uun2SKoyhiCnLvlOD3PlcyY2k982AVg/cGqTozlX29O
- HKQ0Xed/bTcjQrdU1AekKqEIwAloAnrjtuJeBAryQ5APUgBFD/Me5W+BHc9g0Jrw
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=LfsxPM
+ aIAkjFAolr1YO0jdkBTkASxQKSZB3Inh4PV88=; b=rmALdPeLVpMm48citIobyL
+ GhLS5q1khENgaWJRSOCdlbf7H3sys/oIe+h7iQkgfC8nmzeXrXG+F+mtPelrYJ5C
+ 4xJyuVya+jeHrn/qNk8N9Zs8vs7Frd7DOLoLVODtPy78dLPxk5FxsTASxYXXBOBr
+ WJhRG8eVoJSBtp+DIAoRasfgjVC4bP8cFmdq4M61zE3TyygNhAdBhFHzzerZV2hf
+ rI9KoIb0AAyRJMGRBPZNf48kuV/4yScosDHQUpB5ZDjBo16Uj4RmyAipBFtC3GZN
+ gjYagHNlU2BrRg4XcPobh2yy1YX6RQWDU9GFWbnMkWZAt+VTxTnX4LVXAxviuIqg
  ==
-X-ME-Sender: <xms:PQc_YSTQtcIjV2_ZfcZJwSps85cN4OM9X9qiIVDnjq326Kp5Xclp8Q>
- <xme:PQc_YXwTkKEC0juq2cq4ICaAvdsF9xvcGeFa335Z8ctY6_pc7_I7uBrCVlWwPgbE6
- sgBnjd1dut7AniTgIw>
-X-ME-Received: <xmr:PQc_Yf0LirGJRGp-USmNCkWvg9p3dHFMCHgMHra5l4R5MfKb_TS3EcN2CfPBWXWypOKJSQ3SGzwp0kjSxxRtS8l8Oi1n7aBse275>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudegjecutefuodetggdotefrodftvfcurf
- hrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecuuegr
- ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
- hrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgvucft
- ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtthgvrh
- hnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeguden
- ucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigih
- hmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:PQc_YeDUq1Y6mGRnuOcfa-r1FhJBCZdr7Pz1AHTKDr9ZZnZ1DuSYEA>
- <xmx:PQc_YbinLgNC1M1pzP0_rDM2gS_nroIjGFODlQ913fQeVRukaSnNIQ>
- <xmx:PQc_YapVE_Q7VE3OvMdFP9NQ3KbLwX-nXpWvAsf_2poMqi0rtrqRgg>
- <xmx:QAc_YY0rzQCz3_zmrtV5nTMmxXxhQ3eEV9SatvZ0JMKxiZP360kkWQ>
+X-ME-Sender: <xms:Bgk_YZxEnE51tbpKR02-UxcV3nk9DSfqKmQKFNrzI8YRQFCOTknShg>
+ <xme:Bgk_YZR6862h2-LcguWk5d269tvbhSf1PDKdj1xQH5-eBqAkE3yjO2D92x8LR3DyK
+ hCnP8sIQLR4jpDQTPM>
+X-ME-Received: <xmr:Bgk_YTWBnCCcCo06JmQaZYbv7_uj8FVafVbRIRoe12aMrJwhOP4aI6Kv4EJAVF9qOrPt_NvWQ56LTnQuE8s1P-oS4eYaM716EX91>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudegjedgtdduucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmh
+ grgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:Bgk_YbgNeNbE305-RHthxhkztMo3uE0hjoXmUYAG5IgDDHoa3qroRw>
+ <xmx:Bgk_YbDrVJ8JhP2UsMTMve9suyFU77vne8j2bBlbbeLdXD7xWdCfJQ>
+ <xmx:Bgk_YUIWD4oc2vTdbLVzgxxdH1VOCo-RuybpFjH6ZhjRwEHnuCbw1g>
+ <xmx:Bwk_YT69NjFV11iZiB_RLJOO932JsLg98NeC2fmzzM1W2Op9Kt55Nw>
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 13 Sep 2021 04:09:33 -0400 (EDT)
-Date: Mon, 13 Sep 2021 10:09:31 +0200
+ 13 Sep 2021 04:17:09 -0400 (EDT)
+Date: Mon, 13 Sep 2021 10:17:07 +0200
 From: Maxime Ripard <maxime@cerno.tech>
 To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
@@ -94,18 +94,17 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 05/22] dt-bindings: media: sun6i-a31-csi: Add MIPI CSI-2
- input port
-Message-ID: <20210913080931.opbtx45sxqu52jxe@gilmour>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH 15/22] media: sunxi: Remove the sun6i-csi driver
+ implementation
+Message-ID: <20210913081707.3pjcfuwan46pbdep@gilmour>
 References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
- <20210910184147.336618-6-paul.kocialkowski@bootlin.com>
+ <20210910184147.336618-16-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <20210910184147.336618-6-paul.kocialkowski@bootlin.com>
+In-Reply-To: <20210910184147.336618-16-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210913_010938_710733_C0FA3DD0 
-X-CRM114-Status: GOOD (  27.18  )
+X-CRM114-CacheID: sfid-20210913_011713_347505_EDC9554E 
+X-CRM114-Status: GOOD (  30.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,175 +116,103 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5686886623142910327=="
+Content-Type: multipart/mixed; boundary="===============7469252582023059873=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5686886623142910327==
+--===============7469252582023059873==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="upsk4eai2egrf6nm"
+	protocol="application/pgp-signature"; boundary="qx7qqsz6t7rnfx4y"
 Content-Disposition: inline
 
 
---upsk4eai2egrf6nm
+--qx7qqsz6t7rnfx4y
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, Sep 10, 2021 at 08:41:30PM +0200, Paul Kocialkowski wrote:
-> The A31 CSI controller supports two distinct input interfaces:
-> parallel and an external MIPI CSI-2 bridge. The parallel interface
-> is often connected to a set of hardware pins while the MIPI CSI-2
-> bridge is an internal FIFO-ish link. As a result, these two inputs
-> are distinguished as two different ports.
+On Fri, Sep 10, 2021 at 08:41:40PM +0200, Paul Kocialkowski wrote:
+> As described in the commit adding support for the new sun6i-csi driver,
+> a complete rewrite was necessary to support the Allwinner A31 ISP as
+> well as fix a number of issues with the current implementation.
 >=20
-> Note that only one of the two may be present on a controller instance.
-> For example, the V3s has one controller dedicated to MIPI-CSI2 and one
-> dedicated to parallel.
->=20
-> Update the binding with an explicit ports node that holds two distinct
-> port nodes: one for parallel input and one for MIPI CSI-2.
->=20
-> This is backward-compatible with the single-port approach that was
-> previously taken for representing the parallel interface port, which
-> stays enumerated as fwnode port 0.
->=20
-> Note that additional ports may be added in the future, especially to
-> support feeding the CSI controller's output to the ISP.
+> Farewell and thanks for all the pixels!
 >=20
 > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Acked-by: Maxime Ripard <mripard@kernel.org>
-> ---
->  .../media/allwinner,sun6i-a31-csi.yaml        | 75 +++++++++++++++----
->  1 file changed, 62 insertions(+), 13 deletions(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-=
-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.=
-yaml
-> index 8b568072a069..f4a686b77a38 100644
-> --- a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
-> +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
-> @@ -61,6 +61,49 @@ properties:
-> =20
->      additionalProperties: false
-> =20
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        description: Parallel input port, connect to a parallel sensor
-> +
-> +        properties:
-> +          reg:
-> +            const: 0
-> +
-> +          endpoint:
-> +            $ref: video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +
-> +            properties:
-> +              bus-width:
-> +                enum: [ 8, 10, 12, 16 ]
-> +
-> +              pclk-sample: true
-> +              hsync-active: true
-> +              vsync-active: true
-> +
-> +            required:
-> +              - bus-width
-> +
-> +        additionalProperties: false
 
-You don't have to duplicate the entire definition there, you can just
-reference port:
+For completeness, this is what the other commit log mentions:
 
-$ref: #/properties/port
+> While adapting the sun6i-csi driver for MIPI CSI-2 support was
+> possible, it became clear that adding support for the ISP required
+> very heavy changes to the driver which were quite hard to break down
+> into a series of subsequent changes.
 
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        description: MIPI CSI-2 bridge input port
-> +
-> +        properties:
-> +          reg:
-> +            const: 1
-> +
-> +          endpoint:
-> +            $ref: video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +
-> +        additionalProperties: false
-> +
+> The first major difficulty comes from the lack of v4l2 subdev that
+> acts a bridge, separate from the video node representing the DMA
+> engine. To support the ISP, only parts of the hardware must be
+> configured (excluding aspects related to the DMA output), which made
+> the separation a hard requirement.
 
-port@0 is required?
+> Another significant difficulty was the specific dance that is required
+> to have both the ISP and CSI device be part of the same media device.
+> Because the ISP and CSI are two different hardware blocks, they have
+> two distinct drivers that will each try to register their own v4l2
+> and media devices, resulting in two distinct pipelines. When the ISP
+> is in use, we actually want the CSI driver to register with the ISP's
+> v4l2 and media devices while keeping the ability to register its own
+> when the ISP is not in use. This is done by:
+> 1. Having the CSI driver check whether the ISP is available, using
+>    sun6i_csi_isp_detect();
+> 2. If not, it can register when its own async subdevs are ready, using
+>    sun6i_csi_v4l2_complete();
+> 3. If so, it will register its bridge as an async subdev which will
+>    be picked-up by the ISP driver (from the fwnode graph link);
+> 4. When the subdev becomes bound to the ISP's v4l2 device, we can
+>    then access that device (and the associated media device) to
+>    complete registration of the capture video node, using
+>    sun6i_csi_isp_complete();
+> Besides the logic rework, other issues were identified and resolved:
+> - The sync mechanism for buffer flipping was based on the frame done
+>   interrupt, which is too late (next frame is already being processed).
+>   This lead to requiring 3 buffers to start and writing two addresses
+>   when starting. Using vsync as a sync point seems to be the correct
+>   approach and allows using only two buffers without tearing;
+> - Using devm_regmap_init_mmio_clk was incorrect since the reset also
+>   comes into play;
+> - Some register definitions were inverted compared to their actual
+>   effect (which was inherited from the Allwinner documentation and
+>   code): comments were added where relevant;
+> - The deprecated v4l2_async_notifier_parse_fwnode_endpoints() helper
+>   is no longer used by the driver;
 
-And at the top-level, either ports or port are required too
+With that being said, NAK.
 
->  required:
->    - compatible
->    - reg
-> @@ -89,19 +132,25 @@ examples:
->                        "ram";
->          resets =3D <&ccu RST_BUS_CSI>;
-> =20
-> -        port {
-> -            /* Parallel bus endpoint */
-> -            csi1_ep: endpoint {
-> -                remote-endpoint =3D <&adv7611_ep>;
-> -                bus-width =3D <16>;
-> -
-> -                /*
-> -                 * If hsync-active/vsync-active are missing,
-> -                 * embedded BT.656 sync is used.
-> -                 */
-> -                 hsync-active =3D <0>; /* Active low */
-> -                 vsync-active =3D <0>; /* Active low */
-> -                 pclk-sample =3D <1>;  /* Rising */
-> +        ports {
-> +            #address-cells =3D <1>;
-> +            #size-cells =3D <0>;
-> +
-> +            port@0 {
-> +                reg =3D <0>;
-> +                /* Parallel bus endpoint */
-> +                csi1_ep: endpoint {
-> +                    remote-endpoint =3D <&adv7611_ep>;
-> +                    bus-width =3D <16>;
-> +
-> +                    /*
-> +                     * If hsync-active/vsync-active are missing,
-> +                     * embedded BT.656 sync is used.
-> +                     */
-> +                     hsync-active =3D <0>; /* Active low */
-> +                     vsync-active =3D <0>; /* Active low */
-> +                     pclk-sample =3D <1>;  /* Rising */
-> +                };
->              };
->          };
->      };
+Having heavy changes to a driver is completely fine, and is kind of
+expected really with such a big change. Breaking all possibility of
+bisection and throwing away years of stabilization and maintenance
+isn't.
 
-I'd keep the original example and add one with the CSI bridge
+And all those small bug fixes you mention at the end are just that:
+small bug fixes that can be done on the current driver just fine too.
 
 Maxime
 
---upsk4eai2egrf6nm
+--qx7qqsz6t7rnfx4y
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYT8HOwAKCRDj7w1vZxhR
-xVPgAQCQRGZo6oa4WL9v6n8HncVFzdZFDZEb8Opb0Dfte4y9OAEAtplvq/ByItS7
-9+yO+N8K3cQCS/R7oD/8qvWHosfT/AM=
-=t9Py
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYT8JAwAKCRDj7w1vZxhR
+xW80AQCzT1oqLXHmMJV4J378rDLxly3+QLuNLMF+HS7LpVSZ5AEAxuTn0WIx3q7k
+rXKUJwy3GnQot8aoogsuY7kqOfSWQQk=
+=Gphx
 -----END PGP SIGNATURE-----
 
---upsk4eai2egrf6nm--
+--qx7qqsz6t7rnfx4y--
 
 
---===============5686886623142910327==
+--===============7469252582023059873==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -296,5 +223,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============5686886623142910327==--
+--===============7469252582023059873==--
 
