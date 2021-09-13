@@ -2,19 +2,19 @@ Return-Path: <SRS0=BhbR=OD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5FD76C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 07:54:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 36337C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 08:00:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2722B60FC0
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 07:54:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 2722B60FC0
+	by mail.kernel.org (Postfix) with ESMTPS id F01FE60FBF
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Sep 2021 08:00:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org F01FE60FBF
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cerno.tech
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,48 +23,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=peOSSupqJXrXIiyvkTju3xacj27W4KRRxm8LSNRYj48=; b=U14y4VMwzfqRj0ARY1+ci7WPwX
-	sLnEHAsq+ZLXi0Bzy+TyC4mJwwQm2azDrtoGBtmOS6pQrAClEkbQpF+3Pu2xKZE6D5zTbie1RRACT
-	eTk3bABVEvU8in4kZAQcYSz9ewnnqXDtVM7EGFeu96hKxq+Qd11o0vt3X4RrhVKrj84wsXMdvfs+o
-	vnWkUFOt1HqNy4yf1S7UadNh52EdlD8Gki2JpVGX5BXfl8U8dtda0krTE3M7xGjolBL3CcgXi92po
-	3hSPgUJSO0ST2NnyLDN7p598gNMB+LQ0hWTsl+jJV8G10t83GYS/U5zksEbmdXWPyvRKVa7dQRxCd
-	Wu61BnNw==;
+	bh=3mISQQ6bBbwkyvjqVWBcxzbf7HqiAIo/uNXFVoHLBZc=; b=vXSJy20Oz4lonbx4/qpN8SdYxy
+	ReusRIirsZrnHJ/QtFKO2AfL2dQmOEdHebIH2bBjKTxulnCeCmqpatE+g9/qsRv4NpCEvRDICf56I
+	r6WOfgjdeEVKyQzUjbGfGPZGQgSaco+R+5w4vI+dSSx8RStQd+TNRAawqQYgeqPZbuVE7z5ZevP8y
+	knSolHOK0o37LIdhI2QalE5dsn+k8Efsis4EdJttWULY1CCEMsDEmog83wHrAMoiUEDJPhcNC4q9n
+	YBYFchOIZh42OGwg7M6tkzBZl3SRG9T6xcVeB/QP8FGXiF41t5TY9Y06D9lPETWoZDtkCpCMyTRxJ
+	UDbsXZfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mPgnY-000azE-KE; Mon, 13 Sep 2021 07:54:40 +0000
+	id 1mPgtA-000bvA-FI; Mon, 13 Sep 2021 08:00:28 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mPgnK-000auT-M5; Mon, 13 Sep 2021 07:54:28 +0000
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailnew.nyi.internal (Postfix) with ESMTP id BCC0E580B19;
- Mon, 13 Sep 2021 03:54:21 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute6.internal (MEProxy); Mon, 13 Sep 2021 03:54:21 -0400
+ id 1mPgsw-000brO-Il; Mon, 13 Sep 2021 08:00:15 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+ by mailnew.nyi.internal (Postfix) with ESMTP id D68ED580BA6;
+ Mon, 13 Sep 2021 04:00:12 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute1.internal (MEProxy); Mon, 13 Sep 2021 04:00:12 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=H8iC8iHH15qxrWE5p36hpaSNhVm
- Drj/cFBvDF2mQy2E=; b=UCfz2XtPhqhQXdFg6bLxKSpWTWtfkqIOg2guL+fXvKA
- Wcj8/ouyHsRZ2ZHZXxWkf5xBKf6EX71bJkf/399vs4ctj0s/vD6p8TP8Zo9cKfMb
- f8nQ9kMWaVKfaR2dBzFZQ77Yz7VSXQ59S5mqjLEslbHo9VllCnLshbv+ynNle7gU
- 5lI7nAKGcFk3gYj1IAVs+bOBKjuFm+UdM/9NrwmlLSggIMQY85+wvmsyvY99uujL
- OVIg0EZjOko0OZthW8+bfP2kHkKZhMfGEfpJmIn38C4ntfryqB/xb99J0v8ENOyL
- 6x9/xDWbxYkqOf/PkLeTqtT1WFyZTDkCeWL/a2wE6ng==
+ :content-type:in-reply-to; s=fm3; bh=5KctZymCVDfBbbqZeIg1vSzdvRQ
+ cUgB6DsYANohsJVA=; b=mXWyWuAp48xiZDzrTAc2Ci/voVfMr7DycEpE6nHqN+7
+ SyskAgtRGUO8uVeQ0uS3oSEsbzfgkDVEdNmrYxm87McNyl/qKn779f8fJka3sVDe
+ QMuW8OG8L7qqPy+WJvB1bKMAIrvnuJkh1XYFzVw3A8cTEVl9lknGUBBTmPLaCPX/
+ SG/c6CVKUaiN0OU8CnCkRoo4KnH7lkbm4vYPz6wkt6YxcKgrn0PgHrFlUgMCg8li
+ wKyWbNW1rlSLW9REhH3ij/wkEOHQvu64FF3dfu2wHbRzUMZwLEs6zTezfguM2uOM
+ XfuN9yVMBlqCEzJDz1sz1SsfH/XsHHc1kh5ApiiEr/w==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=H8iC8i
- HH15qxrWE5p36hpaSNhVmDrj/cFBvDF2mQy2E=; b=nELtx7Ev2gebBVUNhEEN+m
- Cf5eZIoXUV3lQ+EMzuH94Xo8HlKTUEf1mYwKaoooBH0CPzaUvEygsKgbnTAA2Tme
- I9lKc6uP7dQOawMGp6kE0RZ5RofgBbeVyUva8j+3HAyqZxSfx1qui0km3xyxOhct
- qgstkYSYWcQNiJFcNX8Af4EGFVrcmteFwJLud30Qn54AJw1StUl2fLymPUpyq4q/
- TFMqaoDjUWjTQG9WgS+a7+09XD+LmaRU460/QhcXrExjRmg6G9rXlVi08urHV47x
- Cd+zIvrQYIEeja0zJAQ3lQzjdyTwvMKd3wS8QTCqjB4Wl1wF5EKGfQecfo8k2Kdg
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=5KctZy
+ mCVDfBbbqZeIg1vSzdvRQcUgB6DsYANohsJVA=; b=ZV2H732J1iScZT6gd2qLJd
+ K7MUyXL8qOcss7510l55l7uPTwO4+AFPtKt2sRV0fFAEV741ylaKp1D1yC7lJ5Pb
+ xx6cj+oYyerS3svLfFF5UDMq6QphpFoGpOMUe8ew66Ut8mAabf/Vy/uwOCGcN2Ew
+ kdLP2qvawkDp/sT3zhNwsshm/l9QJzfKmq1bTBvUPYratAq/k/wncjT77MgU8oFb
+ 4+tg/0aJCUv77jFkWeYEk/zoCcJ+gAzm4hqEbPHBwTN7GUoruYdXoT0tAJKiGp0v
+ 5L8zIf2LpmgCh2O+G9nD75AfDcC9fyClmb2HFdsh7Z6ySCxL1Hl+BtRz9ZGgTJWg
  ==
-X-ME-Sender: <xms:qwM_YSb2_yyHGTFILvfkS5qEZ5gNxUFrH039nCy2LqcC94W4CjxBGw>
- <xme:qwM_YVYOIEfRBp5oXNHGQD5K7RT7jlhmJGRxrsEzWk_M2lEsx-G-Ja-8Ahq6pjfYx
- 43GcNOII36jP8RTXkM>
-X-ME-Received: <xmr:qwM_Yc-2L9iHoeRfv2AuUXDhCod8wYzL8UCI77i4J9LNVbs1yCzQlKwig1sstlUeehRMupesSZjpxl8y44EDuyA5qbelzGeO7LzY>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudegiedguddvgecutefuodetggdotefrod
+X-ME-Sender: <xms:CgU_YdHVc2uZZS6ApachfUIYHUEWPXTNLf-c8E2xyThpaT823nR_qw>
+ <xme:CgU_YSXsDXWShgxT9v4CuT6IZ8M9alySpM6BUOkOcDL1kuD-JExiQ08AEIpwqO5Gr
+ 2gIBtJCwmI3znqzwZQ>
+X-ME-Received: <xmr:CgU_YfIhkxjOoO9wQ_0GBFuw9h_BCkIYtgaqkjkJ8656SxbMPpzElHOj0L8Q9qouBVM2oUi8BJ3fuahSg7OWmb7AkvvjbrRirbr9>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudegiedguddviecutefuodetggdotefrod
  ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
  necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
  enucfjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihi
@@ -72,13 +72,13 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudegiedguddvgecutefuodetgg
  htthgvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheei
  heegudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
  hmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:qwM_YUo8RjhvzG1itXj-wb4NbexHe3mO6PZO9nrUu3St7r4v1NPFKQ>
- <xmx:qwM_YdrrjQxCRyoocyi3XVLb1LVaZ8rWke5r3pYhH0dXc59CODjplA>
- <xmx:qwM_YSTkMdTh6OyqL4MyRtkEwblNxGRqtOrTll-QHrlCFe96Qgvg8w>
- <xmx:rQM_YSiHQeCrBXAszl-g_7wRnf5eToxq8Xy16SfZF1xTIf-eFYQsJA>
+X-ME-Proxy: <xmx:CgU_YTFMIBNInP6m7pR-wQMuI11dsD0UVSr2MuRh5CAiHSqwHQc5Xw>
+ <xmx:CgU_YTU7pCBouPuWRkvt6X6GPYwCpCIOi_Cu5Zj0LLag8fSC4gKdFA>
+ <xmx:CgU_YeNv4X7zgFTu5QOOh9soN3DJkY5HwLxERuGaXyiKBaskv5U0aA>
+ <xmx:DAU_YaOr_cXyZCSyz5X8pgt0Gs5uIcvPvKW7vWF7tbUUI1eYITVeaQ>
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 13 Sep 2021 03:54:18 -0400 (EDT)
-Date: Mon, 13 Sep 2021 09:54:17 +0200
+ 13 Sep 2021 04:00:10 -0400 (EDT)
+Date: Mon, 13 Sep 2021 10:00:08 +0200
 From: Maxime Ripard <maxime@cerno.tech>
 To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
@@ -95,15 +95,16 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH 01/22] clk: sunxi-ng: v3s: Make the ISP PLL clock public
-Message-ID: <20210913075417.ampb2jt4quftpqzj@gilmour>
+Subject: Re: [PATCH 03/22] dt-bindings: sun6i-a31-mipi-dphy: Add optional
+ direction property
+Message-ID: <20210913080008.2rxa22ifisuu3dwn@gilmour>
 References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
- <20210910184147.336618-2-paul.kocialkowski@bootlin.com>
+ <20210910184147.336618-4-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <20210910184147.336618-2-paul.kocialkowski@bootlin.com>
+In-Reply-To: <20210910184147.336618-4-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210913_005426_829886_CD5126A6 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20210913_010014_722670_1A8FFE51 
+X-CRM114-Status: GOOD (  20.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,58 +116,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7153796871023527778=="
+Content-Type: multipart/mixed; boundary="===============5569073618837656456=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============7153796871023527778==
+--===============5569073618837656456==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="3eyvvraksbaukjuq"
+	protocol="application/pgp-signature"; boundary="plwlvxpmeueswtsh"
 Content-Disposition: inline
 
 
---3eyvvraksbaukjuq
+--plwlvxpmeueswtsh
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Fri, Sep 10, 2021 at 08:41:26PM +0200, Paul Kocialkowski wrote:
-> In order to reparent the CSI module clock to the ISP PLL via
-> device-tree, export the ISP PLL clock declaration in the public
-> device-tree header.
+On Fri, Sep 10, 2021 at 08:41:28PM +0200, Paul Kocialkowski wrote:
+> The Allwinner A31 MIPI D-PHY block supports both tx and rx directions,
+> although each instance of the block is meant to be used in one
+> direction only. There will typically be one instance for MIPI DSI and
+> one for MIPI CSI-2 (it seems unlikely to ever see a shared instance).
+>=20
+> Describe the direction with a new allwinner,direction property.
+> For backwards compatibility, the property is optional and tx mode
+> should be assumed by default.
+>=20
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> ---
+>  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml  | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mi=
+pi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mi=
+pi-dphy.yaml
+> index d0b541a461f3..303bbaf3b915 100644
+> --- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy=
+=2Eyaml
+> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy=
+=2Eyaml
+> @@ -37,6 +37,18 @@ properties:
+>    resets:
+>      maxItems: 1
+> =20
+> +  allwinner,direction:
+> +    $ref: '/schemas/types.yaml#/definitions/string'
+> +    description: |
+> +      Direction of the D-PHY:
+> +      - "rx" for receiving (e.g. when used with MIPI CSI-2);
+> +      - "tx" for transmitting (e.g. when used with MIPI DSI).
+> +
+> +      When the property is missing, "tx" direction is assumed.
 
-You use clk_set_rate_exclusive in the ISP driver on the module clock so
-it should prevent what you're mentioning from happening.
+You can provide this using default
 
-If it doesn't, then clk_set_rate_exclusive has a bug and should be
-fixed.
+> +    oneOf:
+> +      - const: tx
+> +      - const: rx
+> +
 
-Either way, using assigned-clock-parents is not a good solution here
-either, it only makes sure that this is the case when probe is run.
-
-> Details regarding why the CSI module clock is best parented to the ISP
-> PLL are provided in the related commit.
-
-This is relevant to this commit too and "the related commit" is far too
-blurry when you consider the entire Linux git history.
+enum?
 
 Maxime
 
---3eyvvraksbaukjuq
+--plwlvxpmeueswtsh
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYT8DqQAKCRDj7w1vZxhR
-xTZvAQCBM99MGd6qVMOuUH5pAUXkNRCjmqWYffeGxv1bEMviLgEA9/VMtVKq1DGw
-cYRuC53YO5a08nIT5L/y26XC1yd/CAg=
-=3hm0
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYT8FCAAKCRDj7w1vZxhR
+xTNDAQCPDHJy9LqbeRURRvet4O2w4sY/pZRkFMEFBTWRcJx96wEAwyE5qCAE+Raj
+2amKab2gQdIlMNDalPPxP/cPci2YlwY=
+=fgQq
 -----END PGP SIGNATURE-----
 
---3eyvvraksbaukjuq--
+--plwlvxpmeueswtsh--
 
 
---===============7153796871023527778==
+--===============5569073618837656456==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -177,5 +204,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============7153796871023527778==--
+--===============5569073618837656456==--
 
