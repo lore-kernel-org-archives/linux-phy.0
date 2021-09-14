@@ -2,18 +2,19 @@ Return-Path: <SRS0=TOd0=OE=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 00DB4C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 07:51:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 17E08C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 08:04:48 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B8CEA61355
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 07:51:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B8CEA61355
+	by mail.kernel.org (Postfix) with ESMTPS id BEA7E610A6
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 08:04:47 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BEA7E610A6
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,22 +23,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dRw9ba0iRgXZITPhOxwPWsgWwAUwJGWUUXPHzNajq9U=; b=I6NTLX7uuLERC+wxectlyGt7r9
-	2TsgJx5zHgQ/iSn9R43NzWHeTYHtO58D813u22r7aNoL1m+MNRuAJYYa2ONPj51QGX8mDppQmIv4o
-	+eIN4aJsavS9cpGq37kFoXmDzEK9cYQEpyWeTuvbwut/sy9uTVwiMTBUOmmZ0brRoFoKNqBz+vV3g
-	0lstclLzjI3pJ6bS6uQkVh9yMqOnTjg3weh9204ZlcK3zVvB28WjWfLuuW1FhZiMc7uMWnc8AtfuX
-	YPLlKSdJ6Dx/kKBLB8j+TyaGXXPwa+mXeW5kYUWsBJDK49LsEYIurPQ2Fyv9HUx7Od+/f35ZxmPj+
-	rj0BQ0GQ==;
+	bh=nuieNt3qT0gXFMP9sEC5Q4WkhJVqHkTePiiJVxvwzHI=; b=mV0S2o2484554bEsMTceNDPh4d
+	xRdfv2Tmk39HIb2SbIr0r8ry0RkRYt3X5L1YgCRjr94NNsQYBFPoWGXxKsXvAiZk+kK1IuLQnf2mv
+	CftfVhpT1FneJdhmcWtHNzDyUMeVOLQHQYtESE/xMF/TFmiPjpH9NJIaKwP8+g5aQWUlQ4eAC7iW+
+	GOP7UJGwFDaOcc8DbB8hqHvR62aV208Z1JspJhr/qpJJDv7F7k4x/PO2UtX9nhiFUpNISII4GM2dZ
+	IOmHYi0rkVJBl+MbU6POH88JCTBrBCQPceKad3kBN5gQGJzpUHsZiOXERcqss0WgNLBVgpGkcgGLo
+	gvgMbOQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQ3Di-004ZVr-8z; Tue, 14 Sep 2021 07:51:10 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1mQ3Qt-004c8R-9i; Tue, 14 Sep 2021 08:04:47 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQ3DU-004ZPo-Bi; Tue, 14 Sep 2021 07:50:58 +0000
+ id 1mQ3Qf-004c5H-Kp; Tue, 14 Sep 2021 08:04:35 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 07B6E4000C;
- Tue, 14 Sep 2021 07:50:41 +0000 (UTC)
-Date: Tue, 14 Sep 2021 09:50:41 +0200
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 7D13424000B;
+ Tue, 14 Sep 2021 08:04:26 +0000 (UTC)
+Date: Tue, 14 Sep 2021 10:04:25 +0200
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: Maxime Ripard <maxime@cerno.tech>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
@@ -54,17 +55,17 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH 20/22] staging: media: Add support for the Allwinner A31
- ISP
-Message-ID: <YUBUUQxBaGUkjzMP@aptenodytes>
+Subject: Re: [PATCH 15/22] media: sunxi: Remove the sun6i-csi driver
+ implementation
+Message-ID: <YUBXiSrQjccLoa8b@aptenodytes>
 References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
- <20210910184147.336618-21-paul.kocialkowski@bootlin.com>
- <20210913083135.v7q7joux2xckat62@gilmour>
+ <20210910184147.336618-16-paul.kocialkowski@bootlin.com>
+ <20210913081707.3pjcfuwan46pbdep@gilmour>
 MIME-Version: 1.0
-In-Reply-To: <20210913083135.v7q7joux2xckat62@gilmour>
+In-Reply-To: <20210913081707.3pjcfuwan46pbdep@gilmour>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210914_005056_704698_D242C86D 
-X-CRM114-Status: GOOD (  32.21  )
+X-CRM114-CacheID: sfid-20210914_010433_987097_996DBC3A 
+X-CRM114-Status: GOOD (  46.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,75 +77,115 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1222359522873278354=="
+Content-Type: multipart/mixed; boundary="===============0635242507395513078=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============1222359522873278354==
+--===============0635242507395513078==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="N+QqgaOnVGg+nb5A"
+	protocol="application/pgp-signature"; boundary="4F826WXvoEFTgwkk"
 Content-Disposition: inline
 
 
---N+QqgaOnVGg+nb5A
+--4F826WXvoEFTgwkk
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-On Mon 13 Sep 21, 10:31, Maxime Ripard wrote:
-> On Fri, Sep 10, 2021 at 08:41:45PM +0200, Paul Kocialkowski wrote:
-> > Some Allwinner platforms come with an Image Signal Processor, which
-> > supports various features in order to enhance and transform data
-> > received by image sensors into good-looking pictures. In most cases,
-> > the data is raw bayer, which gets internally converted to RGB and
-> > finally YUV, which is what the hardware produces.
+On Mon 13 Sep 21, 10:17, Maxime Ripard wrote:
+> On Fri, Sep 10, 2021 at 08:41:40PM +0200, Paul Kocialkowski wrote:
+> > As described in the commit adding support for the new sun6i-csi driver,
+> > a complete rewrite was necessary to support the Allwinner A31 ISP as
+> > well as fix a number of issues with the current implementation.
 > >=20
-> > This driver supports ISPs that are similar to the A31 ISP, which was
-> > the first standalone ISP found in Allwinner platforms. Simpler ISP
-> > blocks were found in the A10 and A20, where they are tied to a CSI
-> > controller. Newer generations of Allwinner SoCs (starting with the
-> > H6, H616, etc) come with a new camera subsystem and revised ISP.
-> > Even though these previous and next-generation ISPs are somewhat
-> > similar to the A31 ISP, they have enough significant differences to
-> > be out of the scope of this driver.
+> > Farewell and thanks for all the pixels!
 > >=20
-> > While the ISP supports many features, including 3A and many
-> > enhancement blocks, this implementation is limited to the following:
-> > - V3s (V3/S3) platform support;
-> > - Bayer media bus formats as input;
-> > - Semi-planar YUV (NV12/NV21) as output;
-> > - Debayering with per-component gain and offset configuration;
-> > - 2D noise filtering with configurable coefficients.
-> >=20
-> > Since many features are missing from the associated uAPI, the driver
-> > is aimed to integrate staging until all features are properly
-> > described.
+> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 >=20
-> We can add new features/interfaces to a !staging driver. Why do you
-> think staging is required?
-
-This is true for the driver but not so much for the uAPI, so it seems that
-the uAPI must be added to staging in some way. Then I'm not sure it makes s=
-ense
-to have a !staging driver that depends on a staging uAPI.
-
-Besides that, I added it to staging because that's the process that was
-followed by rkisp1, which is a very similar case.
-
-> > On the technical side, it uses the v4l2 and media controller APIs,
-> > with a video node for capture, a processor subdev and a video node
-> > for parameters submission. A specific uAPI structure and associated
-> > v4l2 meta format are used to configure parameters of the supported
-> > modules.
+> For completeness, this is what the other commit log mentions:
 >=20
-> This meta format needs to be documented
+> > While adapting the sun6i-csi driver for MIPI CSI-2 support was
+> > possible, it became clear that adding support for the ISP required
+> > very heavy changes to the driver which were quite hard to break down
+> > into a series of subsequent changes.
+>=20
+> > The first major difficulty comes from the lack of v4l2 subdev that
+> > acts a bridge, separate from the video node representing the DMA
+> > engine. To support the ISP, only parts of the hardware must be
+> > configured (excluding aspects related to the DMA output), which made
+> > the separation a hard requirement.
+>=20
+> > Another significant difficulty was the specific dance that is required
+> > to have both the ISP and CSI device be part of the same media device.
+> > Because the ISP and CSI are two different hardware blocks, they have
+> > two distinct drivers that will each try to register their own v4l2
+> > and media devices, resulting in two distinct pipelines. When the ISP
+> > is in use, we actually want the CSI driver to register with the ISP's
+> > v4l2 and media devices while keeping the ability to register its own
+> > when the ISP is not in use. This is done by:
+> > 1. Having the CSI driver check whether the ISP is available, using
+> >    sun6i_csi_isp_detect();
+> > 2. If not, it can register when its own async subdevs are ready, using
+> >    sun6i_csi_v4l2_complete();
+> > 3. If so, it will register its bridge as an async subdev which will
+> >    be picked-up by the ISP driver (from the fwnode graph link);
+> > 4. When the subdev becomes bound to the ISP's v4l2 device, we can
+> >    then access that device (and the associated media device) to
+> >    complete registration of the capture video node, using
+> >    sun6i_csi_isp_complete();
+> > Besides the logic rework, other issues were identified and resolved:
+> > - The sync mechanism for buffer flipping was based on the frame done
+> >   interrupt, which is too late (next frame is already being processed).
+> >   This lead to requiring 3 buffers to start and writing two addresses
+> >   when starting. Using vsync as a sync point seems to be the correct
+> >   approach and allows using only two buffers without tearing;
+> > - Using devm_regmap_init_mmio_clk was incorrect since the reset also
+> >   comes into play;
+> > - Some register definitions were inverted compared to their actual
+> >   effect (which was inherited from the Allwinner documentation and
+> >   code): comments were added where relevant;
+> > - The deprecated v4l2_async_notifier_parse_fwnode_endpoints() helper
+> >   is no longer used by the driver;
+>=20
+> With that being said, NAK.
+>=20
+> Having heavy changes to a driver is completely fine, and is kind of
+> expected really with such a big change. Breaking all possibility of
+> bisection and throwing away years of stabilization and maintenance
+> isn't.
+>=20
+> And all those small bug fixes you mention at the end are just that:
+> small bug fixes that can be done on the current driver just fine too.
 
-You're right, there should probably be a pixfmt-meta-sun6i-isp.rst
-documentation file. I guess it should live along in the staging driver
-directory for now and be destaged later.
+I understand that this looks like we're trashing all the work that was
+done previously by removing the current driver and adding the new one
+but the logic for deciding what to write into registers was carefully
+preserved from the original driver to make sure that the works of
+stabilization and maintenance are not lost.
+
+However I would understand that my good promise on this is not enough,
+so perhaps I could provide a combinatory verification that the same set
+of mbus/pixel formats end up with the same thing being written into
+registers.
+
+In addition I understand that it will be necessary to split the changes
+up into small commits to clarify the transition path between the two
+drivers. So I will do my best to split things up.
+
+Does that seem like an agreeable plan or do you see other things that
+would be blockers?
+
+My initial thought was that it would be much easier to review the driver as=
+ a
+rewrite, but I'm not too surprised I was wrong. To be honest it was nearly
+impossible to actually have the initial development happen as sequential st=
+eps
+and I preferred to allocate my time on other tasks than splitting the chang=
+es
+into these sequential steps.
 
 Cheers,
 
@@ -155,25 +196,25 @@ Paul Kocialkowski, Bootlin
 Embedded Linux and kernel engineering
 https://bootlin.com
 
---N+QqgaOnVGg+nb5A
+--4F826WXvoEFTgwkk
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmFAVFEACgkQ3cLmz3+f
-v9FMhAf/bAGGMJm3PCVKPQFBMmTnl7dcHX2eA24BUWY8e+zsCMmd7A74imEjZUXg
-xURaGLaWc3WVje8tq2idWiyGMIZOLPwlJBI2mhTnZaJiMhTxBN4NvURssuHyu+e6
-lnvOUXXALN2oJPBoBVaTYuqMyECYxsWCjUjZG5XgASjlSIHZDH0jDkGAqfuOeRlB
-r8dVEMjS/sWtBlLOp6Mw1Z1Rc8w3fEj5++D5bXd/aOGYavZeo2/2yn6cOoVsRsf3
-abhdRCEy7tVL5hyb6HGD4CPkIcZtMcvVvxomiX5f7fVCba5iuexjdgzaugg/fsYi
-0IMX9Lr/PmNJ9/5VNbHg7nfhhZcF/g==
-=3ZW0
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmFAV4kACgkQ3cLmz3+f
+v9EieQf/XPAbDZuMl6e9vh2/5Nk+xAsVjNUg2fI21tKCjVq3m//gtD27CcUkhInC
+/G37OLndkoQ/8UhNaymnU7ld3rKjsn+xU/DN8dySK2QXx+MCeEP0Ffni9mDuXy4b
+AOc+1/s1HUOLwkRpQ0HgeCjEkYAbSwe8QV3RR7QCMG+qqFiKmfWPZgserIZKKjFz
+VxyI/KP3M3BRr5eXJrpUaKkar+7iXmv2nrPBpdIeLpOYC62oIVg+24nvNrAC7NG4
+8J28VSDGgprknJQn8eHEycrX4LfSQJNhjiVWnpsO3HDXaDggSYs3Ev9w+IoJy+Mf
+9N31yTCNwZS9MT4W296c4FMLFekjKA==
+=oC/H
 -----END PGP SIGNATURE-----
 
---N+QqgaOnVGg+nb5A--
+--4F826WXvoEFTgwkk--
 
 
---===============1222359522873278354==
+--===============0635242507395513078==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -184,5 +225,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============1222359522873278354==--
+--===============0635242507395513078==--
 
