@@ -5,16 +5,16 @@ X-Spam-Level:
 X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B0C31C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 809FFC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:52 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7E805610D1
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 7E805610D1
+	by mail.kernel.org (Postfix) with ESMTPS id 2E5A260FD7
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 2E5A260FD7
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,44 +23,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CGmqRGGqIW4tiK/8pJUiVYvSIQbmCWF3LJEPJhVm5ek=; b=T+WO0c9YbcjicL
-	Cr5JKSQRLIKfW+Tr3L2LqwpartmVbfmbMaTfVaogDywMYojvHu0wQmRGxqZSuLQjqUx+envsPjvtC
-	AZB2Y2XFF2LtOhWlkgVx58shpgU0R8A4Q1pFOPk7364Evti2Ky5b0y2e2BTetvw4R059rLa0C5Va5
-	wlM0ENFNUX5+exs1IwM+bIBF1X/ud/enr9ZqnXy8DvZCcuoOOitjhWaKa+Ao4tD5oCKmJ//r/XNj4
-	S0Q6UQFgbIX6dIrF4K9ROu3LE6Y22IU/XGLgBASqC3oe6D73LSisMPVq2nMGpgHt2sn+aJlQbWm79
-	MvX5McYCCmdzlZsgn7mA==;
+	List-Owner; bh=k2rAvbBHY9H21VSprEHwWigya6Dh/pM7cyzb2u3+QQo=; b=XWCycZMXjNZyht
+	V9nP+2I9rlZPBL3mWbYA2fGyyBGdAHDFn42MbB0RaF+WjF4OgbCH4uifkpntWrkmf01G5k75NhkFz
+	Dl6uRd20i/dSj31ztTMQ1lGZJ4lwPmYb2KMgBjKt2I6tv61E7/c8R+FWrRERDhpbfPz+DpXd7YnhD
+	YYUQsyQXxLgIkllu8Cf5CAncc9q+DcNKeDbtxLB7/1kR18PyRGdjT7p12GOHXyDl4ANgN7qxRpxg4
+	9KPPIh38LuMY/De5HM9OgXsugCeyiuMY0nQzixP1tEHHQ0CA/7xsBVy8MKy6HHAvtIIC8hcp4QhMZ
+	2RekwPLQPKbSbA8kLLNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQ9oN-0064Jp-11; Tue, 14 Sep 2021 14:53:27 +0000
+	id 1mQ9ol-0064P6-Km; Tue, 14 Sep 2021 14:53:51 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQ9oJ-0064H1-DA; Tue, 14 Sep 2021 14:53:25 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 18EBDmRc000377; 
- Tue, 14 Sep 2021 16:53:14 +0200
+ id 1mQ9oJ-0064HC-Ep; Tue, 14 Sep 2021 14:53:26 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 18E9q9bR028980; 
+ Tue, 14 Sep 2021 16:53:15 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding : content-type; s=selector1;
- bh=AZCLz9Qu7aCsRJuQKx+MRmvklKYmjkNGSFeQSH6HK7E=;
- b=7YgEirfsW4gL9xghOgQBQn03x4o91OTOrVMfDrCNwKIcZXZgRybbzUs6/+A4ywV6dgW1
- Uk0RbE5SB+iuebs0Sk7MOkJru6TbQN/mCvVoSIg6B3XpOVSAEHya2v/E2vbXzH6+kD9A
- 8kQ+8EElp9l1nmWO4VLPAZSHDLNNG/jf71lCKNQyX4dEjcYIiGhNqVKS5FTKJuXAHaZC
- 1oSeBlM+x4Jr1ttNa2oDppvh3SGh1EptNJfSYTSdw/m32QzeW623JLCN6Ur3goNIwUKt
- SstGAUFiXIHaI77zIOvenqHBJgOvAzcPu3jShg23I+X5ZW/WZRcr062TrLMJt8+fFFRr /A== 
+ bh=0kyulV/QAQFe1BM1vxrQ6332HG6oh1bSHie4c4xuKWA=;
+ b=l77sdX1m8XbfsGMZ5OP0qUJ3TEwIc0qZWSmBxbemcZa9q15X5WHj6W5G5XP1VJkvsIZB
+ NfSJZZdhPvKZDoKOkdZfkyQnKI6+ha8QBF34SLkVMY2SaB9IMR+2idzInIozbyYV4nbi
+ DSSZtdtDWfDR2Tr4Dg4qaplRiqBkPVagWuS1uJjhfvL5zX2VSlhvBaxIM/Va8R4g7Y3e
+ nuJMulC7KNWryQJopGyFmMOk0Teq2up66Jf8zFIVX82ZdG+JkKwoaUiOrcqFxlQkGfVg
+ iiQdHTHjMKjr2hX3mOTlFcXYyJMhVLJHYEPzYzoNQDQ0aNRPRuxHbg+xGykjshNl7S7Q Tg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3b2tpah6jm-1
+ by mx07-00178001.pphosted.com with ESMTP id 3b2sg19mpf-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 14 Sep 2021 16:53:14 +0200
+ Tue, 14 Sep 2021 16:53:15 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 01EDC100034;
- Tue, 14 Sep 2021 16:53:14 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1BC5210002A;
+ Tue, 14 Sep 2021 16:53:15 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E4C2121A229;
- Tue, 14 Sep 2021 16:53:13 +0200 (CEST)
-Received: from localhost (10.75.127.45) by SFHDAG2NODE2.st.com (10.75.127.5)
- with Microsoft SMTP Server (TLS) id 15.0.1497.18; Tue, 14 Sep 2021 16:53:13
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0F27421A229;
+ Tue, 14 Sep 2021 16:53:15 +0200 (CEST)
+Received: from localhost (10.75.127.46) by SFHDAG2NODE2.st.com (10.75.127.5)
+ with Microsoft SMTP Server (TLS) id 15.0.1497.18; Tue, 14 Sep 2021 16:53:15
  +0200
 From: Amelie Delaunay <amelie.delaunay@foss.st.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
@@ -70,22 +70,23 @@ CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
  <amelie.delaunay@foss.st.com>
-Subject: [PATCH 1/3] phy: stm32: restore utmi switch on resume
-Date: Tue, 14 Sep 2021 16:52:54 +0200
-Message-ID: <20210914145256.243869-2-amelie.delaunay@foss.st.com>
+Subject: [PATCH 2/3] dt-bindings: phy: phy-stm32-usbphyc: add st,
+ phy-tuning optional property
+Date: Tue, 14 Sep 2021 16:52:55 +0200
+Message-ID: <20210914145256.243869-3-amelie.delaunay@foss.st.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20210914145256.243869-1-amelie.delaunay@foss.st.com>
 References: <20210914145256.243869-1-amelie.delaunay@foss.st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG2NODE2.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG2NODE2.st.com
  (10.75.127.5)
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.391,FMLib:17.0.607.475
- definitions=2021-09-14_06,2021-09-14_01,2020-04-07_01
+ definitions=2021-09-14_03,2021-09-14_01,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210914_075323_750939_89CAE600 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20210914_075323_814279_82AD562E 
+X-CRM114-Status: GOOD (  17.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,47 +103,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-UTMI switch value can be lost during suspend/resume, depending on the power
-state reached.
-This patch adds resume function to usbphyc, to reconfigure utmi switch
-after suspend.
+This patch adds the description of a new optional property for usbphyc phy
+sub nodes. st,phy-tuning contains all phy tuning parameters to apply on the
+phy.
 
 Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
 ---
- drivers/phy/st/phy-stm32-usbphyc.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ .../bindings/phy/phy-stm32-usbphyc.yaml       | 68 +++++++++++++++++++
+ 1 file changed, 68 insertions(+)
 
-diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
-index 937a14fa7448..083593aea53a 100644
---- a/drivers/phy/st/phy-stm32-usbphyc.c
-+++ b/drivers/phy/st/phy-stm32-usbphyc.c
-@@ -598,6 +598,18 @@ static int stm32_usbphyc_remove(struct platform_device *pdev)
- 	return 0;
- }
+diff --git a/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml b/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
+index 3329f1d33a4f..0fa184ea54db 100644
+--- a/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-stm32-usbphyc.yaml
+@@ -81,6 +81,60 @@ patternProperties:
+         properties:
+           vbus-supply: true
  
-+static int __maybe_unused stm32_usbphyc_resume(struct device *dev)
-+{
-+	struct stm32_usbphyc *usbphyc = dev_get_drvdata(dev);
++      st,phy-tuning:
++        $ref: /schemas/types.yaml#/definitions/phandle
++        description:
++          It can be necessary to adjust the PHY settings to compensate parasitics, which can be due
++          to USB connector/receptacle, routing, ESD protection component,... Here is the list of
++          all optional parameters to tune the interface of the PHY (HS for High-Speed, FS for Full-
++          Speed, LS for Low-Speed)
++            * st,current-boost, <1> current boosting of 1mA
++                                <2> current boosting of 2mA
++            * st,no-lsfs-fb-cap, disables the LS/FS feedback capacitor
++            * st,hs-slew-ctrl, slows the HS driver slew rate by 10%
++            * st,hs-dc-level, <0> = decreases the HS driver DC level by 5 to 7mV
++                              <1> = increases the HS driver DC level by 5 to 7mV
++                              <2> = increases the HS driver DC level by 10 to 14mV
++            * st,fs-rftime-tuning, enables the FS rise/fall tuning option
++            * st,hs-rftime-reduction, enables the HS rise/fall reduction feature
++            * st,hs-current-trim, controls HS driver current trimming for choke
++                                  <0> = 18.87 mA target current / nominal + 0%
++                                  <1> = 19.165 mA target current / nominal + 1.56%
++                                  <2> = 19.46 mA target current / nominal + 3.12%
++                                  <3> = 19.755 mA target current / nominal + 4.68%
++                                  <4> = 20.05 mA target current / nominal + 6.24%
++                                  <5> = 20.345 mA target current / nominal + 7.8%
++                                  <6> = 20.64 mA target current / nominal + 9.36%
++                                  <7> = 20.935 mA target current / nominal + 10.92%
++                                  <8> = 21.23 mA target current / nominal + 12.48%
++                                  <9> = 21.525 mA target current / nominal + 14.04%
++                                  <10> = 21.82 mA target current / nominal + 15.6%
++                                  <11> = 22.115 mA target current / nominal + 17.16%
++                                  <12> = 22.458 mA target current / nominal + 19.01%
++                                  <13> = 22.755 mA target current / nominal + 20.58%
++                                  <14> = 23.052 mA target current / nominal + 22.16%
++                                  <15> = 23.348 mA target current / nominal + 23.73%
++            * st,hs-impedance-trim, controls HS driver impedance tuning for choke
++                                    <0> = no impedance offset
++                                    <1> = reduces the impedance by 2 ohms
++                                    <2> = reduces the impedance by 4 ohms
++                                    <3> = reduces the impedance by 6 ohms
++            * st,squelch-level, adjusts the squelch DC threshold value
++                                <0> = no shift in threshold
++                                <1> = threshold shift by +7 mV
++                                <2> = threshold shift by -5 mV
++                                <3> = threshold shift by +14 mV
++            * st,hs-rx-gain-eq, enables the HS Rx gain equalizer
++            * st,hs-rx-offset, adjusts the HS Rx offset
++                               <0> = no offset
++                               <1> = offset of +5 mV
++                               <2> = offset of +10 mV
++                               <3> = offset of -5 mV
++            * st,no-hs-ftime-ctrl, disables the HS fall time control of single ended signals
++                                   during pre-emphasis
++            * st,no-lsfs-sc, disables the short circuit protection in LS/FS driver
++            * st,hs-tx-staggering, enables the basic staggering in HS Tx mode
 +
-+	if (usbphyc->switch_setup >= 0)
-+		stm32_usbphyc_switch_setup(usbphyc, usbphyc->switch_setup);
+     allOf:
+       - if:
+           properties:
+@@ -122,6 +176,18 @@ examples:
+   - |
+     #include <dt-bindings/clock/stm32mp1-clks.h>
+     #include <dt-bindings/reset/stm32mp1-resets.h>
 +
-+	return 0;
-+}
++    usb_phy_tuning: usb-phy-tuning {
++        st,hs-dc-level = <2>;
++        st,fs-rftime-tuning;
++        st,hs-rftime-reduction;
++        st,hs-current-trim = <15>;
++        st,hs-impedance-trim = <1>;
++        st,squelch-level = <3>;
++        st,hs-rx-offset = <2>;
++        st,no-lsfs-sc;
++    };
 +
-+static SIMPLE_DEV_PM_OPS(stm32_usbphyc_pm_ops, NULL, stm32_usbphyc_resume);
-+
- static const struct of_device_id stm32_usbphyc_of_match[] = {
- 	{ .compatible = "st,stm32mp1-usbphyc", },
- 	{ },
-@@ -610,6 +622,7 @@ static struct platform_driver stm32_usbphyc_driver = {
- 	.driver = {
- 		.of_match_table = stm32_usbphyc_of_match,
- 		.name = "stm32-usbphyc",
-+		.pm = &stm32_usbphyc_pm_ops,
- 	}
- };
- module_platform_driver(stm32_usbphyc_driver);
+     usbphyc: usbphyc@5a006000 {
+         compatible = "st,stm32mp1-usbphyc";
+         reg = <0x5a006000 0x1000>;
+@@ -137,6 +203,7 @@ examples:
+             reg = <0>;
+             phy-supply = <&vdd_usb>;
+             #phy-cells = <0>;
++            st,phy-tuning = <&usb_phy_tuning>;
+             connector {
+                 compatible = "usb-a-connector";
+                 vbus-supply = <&vbus_sw>;
+@@ -147,6 +214,7 @@ examples:
+             reg = <1>;
+             phy-supply = <&vdd_usb>;
+             #phy-cells = <1>;
++            st,phy-tuning = <&usb_phy_tuning>;
+         };
+     };
+ ...
 -- 
 2.25.1
 
