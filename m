@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7058DC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 07:40:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 58873C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 07:43:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2087A60238
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 07:40:07 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 2087A60238
+	by mail.kernel.org (Postfix) with ESMTPS id 09C0F61166
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 07:43:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 09C0F61166
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,22 +23,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Xv5lQW8MvI7vqFIa2fa3KQqNcUqVk4c0i+cEjLkDFNM=; b=bbO43270hZLw8khAecNtkuKe9R
-	brgrhdLMmItR8Qt7E4J7Tt4aXpvSDJ00vg+ySLaRk2xX2E/RPdIEmwDeHO7OmmSB7tf8zUP4eiilY
-	JS6Rg2uIxhcZACG3dMBrxudrQGDqKlT8Dvg/b7uyrcimbNql8nXMR34EbIQXFmlk/tq14+WKZCDXa
-	f6R3dbeJlQAmaGEd1TweRZ763Gi6T9jsGUL1J4JgzpxT4WsgpgXIj4+5VpSeXahGad3A5nZdrqwNf
-	pteSY+l0/wuc6k+TAtcUzWpTm80vGVE+wj9lv61yPVxQ3yV3vEk0ldIeeqAE+AboirCc/qUNrpazF
-	3yCqyH1g==;
+	bh=xN2I76qsqCRrvU8ofqpYev0YOm13Vaf9jxq7IOzDrNw=; b=r53yqdDigwHVfTuwKMuX6sQWiu
+	VRj07/wdFVEoWkF1mY0k4PoC5RbFyolLGoHbtX2SNo5Zi+LDojejT9aCV1JBrjVku1HTm4MYbWVuk
+	it/2DwBEp4XV2bjXhXdcaS/6z2CVKKSclyy0K73pJY0h4uPps6DyhZuf/ZxZrzdh/PvEkOPX6vOHO
+	bAyPbUAgD/+wU4pGYO4VTrzIFiOUL4f2MTR/EukloK2WYc+5q1Z70dNmTGOLlLia+68VOonKUQjuX
+	AFfcKQCA0sRSQPGRMUM5ds8+rfUgJJRuW9zdXPpOFNtkOHLYHDSyEfaNpgeLsKQeSfjziE5nXdtdC
+	2S59sxzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQ330-004Wr8-Mb; Tue, 14 Sep 2021 07:40:06 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1mQ36G-004XiW-Ij; Tue, 14 Sep 2021 07:43:28 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQ32m-004Wkj-B7; Tue, 14 Sep 2021 07:39:54 +0000
+ id 1mQ362-004Xfv-8N; Tue, 14 Sep 2021 07:43:16 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id A31FD100009;
- Tue, 14 Sep 2021 07:39:44 +0000 (UTC)
-Date: Tue, 14 Sep 2021 09:39:44 +0200
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id E429820000B;
+ Tue, 14 Sep 2021 07:43:08 +0000 (UTC)
+Date: Tue, 14 Sep 2021 09:43:08 +0200
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: Maxime Ripard <maxime@cerno.tech>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
@@ -54,18 +54,19 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH 03/22] dt-bindings: sun6i-a31-mipi-dphy: Add optional
- direction property
-Message-ID: <YUBRwNxIuU0+/CyS@aptenodytes>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 05/22] dt-bindings: media: sun6i-a31-csi: Add MIPI CSI-2
+ input port
+Message-ID: <YUBSjBMUk+nQSzRz@aptenodytes>
 References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
- <20210910184147.336618-4-paul.kocialkowski@bootlin.com>
- <20210913080008.2rxa22ifisuu3dwn@gilmour>
+ <20210910184147.336618-6-paul.kocialkowski@bootlin.com>
+ <20210913080931.opbtx45sxqu52jxe@gilmour>
 MIME-Version: 1.0
-In-Reply-To: <20210913080008.2rxa22ifisuu3dwn@gilmour>
+In-Reply-To: <20210913080931.opbtx45sxqu52jxe@gilmour>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210914_003952_697180_441B8232 
-X-CRM114-Status: GOOD (  25.61  )
+X-CRM114-CacheID: sfid-20210914_004314_612242_AE64DD56 
+X-CRM114-Status: GOOD (  34.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,73 +78,171 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2516363892628573356=="
+Content-Type: multipart/mixed; boundary="===============5722861618954892687=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2516363892628573356==
+--===============5722861618954892687==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="3sJ9a4xR7kppdInQ"
+	protocol="application/pgp-signature"; boundary="sgIICy+NNUkr1U2H"
 Content-Disposition: inline
 
 
---3sJ9a4xR7kppdInQ
+--sgIICy+NNUkr1U2H
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-On Mon 13 Sep 21, 10:00, Maxime Ripard wrote:
-> On Fri, Sep 10, 2021 at 08:41:28PM +0200, Paul Kocialkowski wrote:
-> > The Allwinner A31 MIPI D-PHY block supports both tx and rx directions,
-> > although each instance of the block is meant to be used in one
-> > direction only. There will typically be one instance for MIPI DSI and
-> > one for MIPI CSI-2 (it seems unlikely to ever see a shared instance).
+On Mon 13 Sep 21, 10:09, Maxime Ripard wrote:
+> On Fri, Sep 10, 2021 at 08:41:30PM +0200, Paul Kocialkowski wrote:
+> > The A31 CSI controller supports two distinct input interfaces:
+> > parallel and an external MIPI CSI-2 bridge. The parallel interface
+> > is often connected to a set of hardware pins while the MIPI CSI-2
+> > bridge is an internal FIFO-ish link. As a result, these two inputs
+> > are distinguished as two different ports.
 > >=20
-> > Describe the direction with a new allwinner,direction property.
-> > For backwards compatibility, the property is optional and tx mode
-> > should be assumed by default.
+> > Note that only one of the two may be present on a controller instance.
+> > For example, the V3s has one controller dedicated to MIPI-CSI2 and one
+> > dedicated to parallel.
+> >=20
+> > Update the binding with an explicit ports node that holds two distinct
+> > port nodes: one for parallel input and one for MIPI CSI-2.
+> >=20
+> > This is backward-compatible with the single-port approach that was
+> > previously taken for representing the parallel interface port, which
+> > stays enumerated as fwnode port 0.
+> >=20
+> > Note that additional ports may be added in the future, especially to
+> > support feeding the CSI controller's output to the ISP.
 > >=20
 > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > Reviewed-by: Rob Herring <robh@kernel.org>
+> > Acked-by: Maxime Ripard <mripard@kernel.org>
 > > ---
-> >  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml  | 12 ++++++++++++
-> >  1 file changed, 12 insertions(+)
+> >  .../media/allwinner,sun6i-a31-csi.yaml        | 75 +++++++++++++++----
+> >  1 file changed, 62 insertions(+), 13 deletions(-)
 > >=20
-> > diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-=
-mipi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-=
-mipi-dphy.yaml
-> > index d0b541a461f3..303bbaf3b915 100644
-> > --- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dp=
-hy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dp=
-hy.yaml
-> > @@ -37,6 +37,18 @@ properties:
-> >    resets:
-> >      maxItems: 1
+> > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a3=
+1-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-cs=
+i.yaml
+> > index 8b568072a069..f4a686b77a38 100644
+> > --- a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.y=
+aml
+> > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.y=
+aml
+> > @@ -61,6 +61,49 @@ properties:
 > > =20
-> > +  allwinner,direction:
-> > +    $ref: '/schemas/types.yaml#/definitions/string'
-> > +    description: |
-> > +      Direction of the D-PHY:
-> > +      - "rx" for receiving (e.g. when used with MIPI CSI-2);
-> > +      - "tx" for transmitting (e.g. when used with MIPI DSI).
+> >      additionalProperties: false
+> > =20
+> > +  ports:
+> > +    $ref: /schemas/graph.yaml#/properties/ports
 > > +
-> > +      When the property is missing, "tx" direction is assumed.
+> > +    properties:
+> > +      port@0:
+> > +        $ref: /schemas/graph.yaml#/$defs/port-base
+> > +        description: Parallel input port, connect to a parallel sensor
+> > +
+> > +        properties:
+> > +          reg:
+> > +            const: 0
+> > +
+> > +          endpoint:
+> > +            $ref: video-interfaces.yaml#
+> > +            unevaluatedProperties: false
+> > +
+> > +            properties:
+> > +              bus-width:
+> > +                enum: [ 8, 10, 12, 16 ]
+> > +
+> > +              pclk-sample: true
+> > +              hsync-active: true
+> > +              vsync-active: true
+> > +
+> > +            required:
+> > +              - bus-width
+> > +
+> > +        additionalProperties: false
 >=20
-> You can provide this using default
+> You don't have to duplicate the entire definition there, you can just
+> reference port:
+>=20
+> $ref: #/properties/port
 
-Understood.
+And that would reference the local (previous) definition of the port node?
+Sounds like a good thing indeed.
 
-> > +    oneOf:
-> > +      - const: tx
-> > +      - const: rx
+> > +      port@1:
+> > +        $ref: /schemas/graph.yaml#/$defs/port-base
+> > +        description: MIPI CSI-2 bridge input port
+> > +
+> > +        properties:
+> > +          reg:
+> > +            const: 1
+> > +
+> > +          endpoint:
+> > +            $ref: video-interfaces.yaml#
+> > +            unevaluatedProperties: false
+> > +
+> > +        additionalProperties: false
 > > +
 >=20
-> enum?
+> port@0 is required?
 
-Ah yes, enum feels like a better fit!
+It shouldn't be required. Does that call for a change here?
+
+> And at the top-level, either ports or port are required too
+
+Yes I guess that is true. Should that be a required+oneOf type of thing?
+
+> >  required:
+> >    - compatible
+> >    - reg
+> > @@ -89,19 +132,25 @@ examples:
+> >                        "ram";
+> >          resets =3D <&ccu RST_BUS_CSI>;
+> > =20
+> > -        port {
+> > -            /* Parallel bus endpoint */
+> > -            csi1_ep: endpoint {
+> > -                remote-endpoint =3D <&adv7611_ep>;
+> > -                bus-width =3D <16>;
+> > -
+> > -                /*
+> > -                 * If hsync-active/vsync-active are missing,
+> > -                 * embedded BT.656 sync is used.
+> > -                 */
+> > -                 hsync-active =3D <0>; /* Active low */
+> > -                 vsync-active =3D <0>; /* Active low */
+> > -                 pclk-sample =3D <1>;  /* Rising */
+> > +        ports {
+> > +            #address-cells =3D <1>;
+> > +            #size-cells =3D <0>;
+> > +
+> > +            port@0 {
+> > +                reg =3D <0>;
+> > +                /* Parallel bus endpoint */
+> > +                csi1_ep: endpoint {
+> > +                    remote-endpoint =3D <&adv7611_ep>;
+> > +                    bus-width =3D <16>;
+> > +
+> > +                    /*
+> > +                     * If hsync-active/vsync-active are missing,
+> > +                     * embedded BT.656 sync is used.
+> > +                     */
+> > +                     hsync-active =3D <0>; /* Active low */
+> > +                     vsync-active =3D <0>; /* Active low */
+> > +                     pclk-sample =3D <1>;  /* Rising */
+> > +                };
+> >              };
+> >          };
+> >      };
+>=20
+> I'd keep the original example and add one with the CSI bridge
+
+Understood, will do.
 
 Thanks,
 
@@ -154,25 +253,25 @@ Paul Kocialkowski, Bootlin
 Embedded Linux and kernel engineering
 https://bootlin.com
 
---3sJ9a4xR7kppdInQ
+--sgIICy+NNUkr1U2H
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmFAUb8ACgkQ3cLmz3+f
-v9G6MQf+LFXtO+lLmczqO2FeIZ57ZBvDX1arKZiS0kXZP+nN3Y+7FjpJoF5qxpPd
-M7yIhPccBdpJshGqMhFh4swhZeM2tgml5hQfLhXYWKObKp1UZXcfCQ9uQ0b6jX7l
-pE94RTNuf7KUOalTc7SIIKEHGcCtelN2QP5QkN9dCVIQx/QR2LQPweh1Pyrejgnc
-k8rktdvc9Fta19KFbvjC8ni1WFQfsZs0h3jo6xoMrC8w1cVEVvQ8dTkljzRJ+k4W
-DFDBlmrHneE+pgmpDsHM9L2kKcYm/7EsKPc3KWkwQwTZ7QS220qH42+rDnpXtH8l
-Z5HvmxYSzkOVIahP4X1VEmzWLeQ7rg==
-=+9YF
+iQEyBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmFAUowACgkQ3cLmz3+f
+v9HVfQf3ceKXmCCS1bAycLVMI86R8GkWo5vt/v5Osg8D3oUZIE/KwelraqzS+rGn
+ZbqrtgjJQvxP/0WvM6ARVoMbU6KD37vSJSmVuGgGrbRhn3S4IJo3xOykxctr9/nL
+wVwca3ymBipsiLU3adCbz1BhLYYzBTr8OXiJ/0NnZ3Gl8BMUetBSA8nd78E4gca1
+PaY5+87njZqG8rfMO/yozuLLxnujfsDcyC97xiE1Fgflqn31q6wBWOZpmnhTkvEM
+Y0WCR60gnaXkNKjPsoAXfGUa4gZO0rOR8U+Ppwf2LmyOZUqd+Nf8J6h8rsD6pLIO
+b929E1fCp//Ou0qD6zu6MSDjQq5R
+=c8hO
 -----END PGP SIGNATURE-----
 
---3sJ9a4xR7kppdInQ--
+--sgIICy+NNUkr1U2H--
 
 
---===============2516363892628573356==
+--===============5722861618954892687==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -183,5 +282,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============2516363892628573356==--
+--===============5722861618954892687==--
 
