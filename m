@@ -2,70 +2,178 @@ Return-Path: <SRS0=TOd0=OE=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
-	version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,MSGID_FROM_MTA_HEADER,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 17E08C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 08:04:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BFFDEC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 11:01:10 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BEA7E610A6
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 08:04:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BEA7E610A6
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
+	by mail.kernel.org (Postfix) with ESMTPS id 7F73361107
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 11:01:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 7F73361107
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oracle.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nuieNt3qT0gXFMP9sEC5Q4WkhJVqHkTePiiJVxvwzHI=; b=mV0S2o2484554bEsMTceNDPh4d
-	xRdfv2Tmk39HIb2SbIr0r8ry0RkRYt3X5L1YgCRjr94NNsQYBFPoWGXxKsXvAiZk+kK1IuLQnf2mv
-	CftfVhpT1FneJdhmcWtHNzDyUMeVOLQHQYtESE/xMF/TFmiPjpH9NJIaKwP8+g5aQWUlQ4eAC7iW+
-	GOP7UJGwFDaOcc8DbB8hqHvR62aV208Z1JspJhr/qpJJDv7F7k4x/PO2UtX9nhiFUpNISII4GM2dZ
-	IOmHYi0rkVJBl+MbU6POH88JCTBrBCQPceKad3kBN5gQGJzpUHsZiOXERcqss0WgNLBVgpGkcgGLo
-	gvgMbOQA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YwBo7bnNw8ZU8ON5ZS+cUXzQBeUgXLn4Odj0dLt8buY=; b=h3pD/PtxWtmHJV
+	dtoHuaihGkYqf//BpABmrVWPxTJmYMI2jilKBCeXbyYor/Oz3puZNhis7O7QnHp63D1OBj6M8fx+8
+	gOVwT53/QMaz72Mhzi9x/nX2NeyQsS9zj0qTzOIhFCqcCt0mMPme0QPXOY7F2k9oZ4ragh4cn/YDn
+	pNGF2vmOoJIzb9XEPmigEja7ZSSfLrSjo4nncALjQn0OZI1UJJ7yT7LrA/GRQUMrbuM0MSDS7r1h0
+	E+zY0qWfFkQQIQAH2wvwBbYDcTL/1ENGbPut92YjeYHZdrbfHUtlv3/UUG2lxcOoCLR6krQ+ULN2w
+	5DXuJSwTtzX+qy5wJa6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQ3Qt-004c8R-9i; Tue, 14 Sep 2021 08:04:47 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1mQ6BZ-005LQl-W5; Tue, 14 Sep 2021 11:01:10 +0000
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQ3Qf-004c5H-Kp; Tue, 14 Sep 2021 08:04:35 +0000
-Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 7D13424000B;
- Tue, 14 Sep 2021 08:04:26 +0000 (UTC)
-Date: Tue, 14 Sep 2021 10:04:25 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH 15/22] media: sunxi: Remove the sun6i-csi driver
- implementation
-Message-ID: <YUBXiSrQjccLoa8b@aptenodytes>
-References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
- <20210910184147.336618-16-paul.kocialkowski@bootlin.com>
- <20210913081707.3pjcfuwan46pbdep@gilmour>
+ id 1mQ6BW-005LNf-IR
+ for linux-phy@lists.infradead.org; Tue, 14 Sep 2021 11:01:08 +0000
+Received: from pps.filterd (m0246629.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 18E9cqWd024470; 
+ Tue, 14 Sep 2021 11:00:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : content-type : mime-version; s=corp-2021-07-09;
+ bh=3r+yEkqFN9rJOF4SCghUFrF5WHcmgaMF0c0pV2MCDvM=;
+ b=uSp1nHkJdJSQ2nqfybUrNAHfUIUcmVRJl1ISupr+HRshh28omI05sRyNjece67fM+qHQ
+ JcYaSTDOAJ489vhz7CblJI8hp6X+Vd24fWR845eHLeRC2fR3RpNLm4ZH33mTR9wd0R2p
+ ybjpjgpHVvPw0ida/Fyxgu/f2K21EGtfNiLjNutX1Vlqqr/f/yDs3v3eAYDXkWKGcZ3f
+ a+FPkyLRL6xgvgatgW4l7GWd5U0EVCtvK3Z2EQ3sO8QvaC24nxp5Fz0h1y0DbyZK5NMF
+ NoH2RSnPILhHDnMLpf5fOAt2zpyNjyk71DS9kZRYNOMETyzpUVaGlDr1hlnxTth/7S+S Qg== 
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : content-type : mime-version; s=corp-2020-01-29;
+ bh=3r+yEkqFN9rJOF4SCghUFrF5WHcmgaMF0c0pV2MCDvM=;
+ b=XvIX2i0YnN84KbO3F6MKJbulDvrAHPyduzVzxFlRzJ3jYHqs4OKSTXY6oWU8UvIWWkih
+ lonA2ojAyR6qF8fKhYb6qOjdUeLNvHIhDdb9nV37nzqD5bfWcmTBxwxNiBWPZTw58COW
+ 8v1FNikVfHoh400wx41a9IqUZo3JYmtsnSr9u6cvDQlT+vS765dUQQ26HcvwK5MxABzj
+ IGr2B+tK42b2Pdm+Lp/00+mC3QwM8wJ2c30TyVDNCEH+Fu530ub5Y1pJOMnomhr8cHnP
+ kcUx/5c9GYVw4C1/ZC42mArXLFqiYGowA2YrsjB/Gp5PJ27cbeTMxFehlGmd5oHE7SLb Ow== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by mx0b-00069f02.pphosted.com with ESMTP id 3b2pyg8sem-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 14 Sep 2021 11:00:52 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 18EB0Y5h018246;
+ Tue, 14 Sep 2021 11:00:51 GMT
+Received: from nam04-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam08lp2045.outbound.protection.outlook.com [104.47.73.45])
+ by aserp3030.oracle.com with ESMTP id 3b0jgcxafd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 14 Sep 2021 11:00:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Nw2ES8BJZGY15n88jGecjceh3QUPy5ibvb/BJa2gDCcfr9cQDKvADgjzqmOcvIh/yy3kIQy7jn5NDk03QtnQ6y1D3uxjTc+nsNO6s/5PoVoALu6Lg6PnLWG+J7XXKDaXn8H6z3dnevHcolURo2WpX5b8H66ridI6Cm5jUPsgcHc1er3yZlz2itnNk9g3wq7b8vkNmJu+nxvu6bq7DkoJNrqmZX7kPuxyKIC/ahtXxOCV2/PlHhnYgxkbi7Vwi0pj3xWjtsE6B9qLmx8yRqKQFARYJx+tcbX3skJyIa8XWrdb/9gZaC/oXVFhuITqvlYUTQZn3k+iSk10Yy7+cW4fRg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
+ bh=3r+yEkqFN9rJOF4SCghUFrF5WHcmgaMF0c0pV2MCDvM=;
+ b=QlSVaIgwx/aT+RjeSIxfyI6Vkbn0ZWwuBMduJBaWsTr09GnUQ7kPMqyDOS5MZ5DR1v5NMNFESc5dpPWzB4TOEKMox1oLdBrc09KqwTKyONuw7cPaM4xVch7RtVyL8GTKNDy83GnaZIoWwfpVBw9zC6AyBXDICDaS/g2kdUe9TeFgsOMZ8STxveQC/VW/v9pLOggVCQH/8iLwVZD5NzWVYHZs818IEZQ1lQ0TGqEKuKUzRx0UADHEdU2Whlrg8KYKBeA8HGaYcleSqvz7imttZplA3pcGgsyg8hJa0upSu8uKyGMWFAH4G80BkecaDYGrVuKeNYXKl0HA9Sbyb+Sr1Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3r+yEkqFN9rJOF4SCghUFrF5WHcmgaMF0c0pV2MCDvM=;
+ b=coVBH43KRpW6lWn2vPVZthmR+bFCRowr5pS6bV7865TbmdLMC+nLOIdsXz7qIE9aNy11VNYr4EqREodYw8f2/UXW3oTYf8sP0kjqrPuOUlmHAUq9Aq4zBMm3mVM+NBSZafHk33XPLmj+3lpV0bapxxRPxFn9bm48fB6TaWdII0o=
+Authentication-Results: ti.com; dkim=none (message not signed)
+ header.d=none;ti.com; dmarc=none action=none header.from=oracle.com;
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28) by MWHPR10MB1294.namprd10.prod.outlook.com
+ (2603:10b6:300:20::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4500.14; Tue, 14 Sep
+ 2021 11:00:49 +0000
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::5820:e42b:73d7:4268]) by MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::5820:e42b:73d7:4268%7]) with mapi id 15.20.4500.019; Tue, 14 Sep 2021
+ 11:00:49 +0000
+Date: Tue, 14 Sep 2021 14:00:38 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>
+Cc: Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
+ kernel-janitors@vger.kernel.org
+Subject: [PATCH] phy: ti: gmii-sel: check of_get_address() for failure
+Message-ID: <20210914110038.GB11657@kili>
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-ClientProxiedBy: ZR0P278CA0002.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:16::12) To MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28)
 MIME-Version: 1.0
-In-Reply-To: <20210913081707.3pjcfuwan46pbdep@gilmour>
+Received: from kili (62.8.83.99) by ZR0P278CA0002.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:16::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4523.14 via Frontend
+ Transport; Tue, 14 Sep 2021 11:00:46 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 79bb56c8-625b-479b-a46e-08d9776ee8fd
+X-MS-TrafficTypeDiagnostic: MWHPR10MB1294:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <MWHPR10MB1294FBA6FE644FB89FB42ABD8EDA9@MWHPR10MB1294.namprd10.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1201;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: uLOr5jQNXZ/OLl/OLsNjbija385LOhPypiAQUIGLQIIupL4QfgGxNEyfVH7qPiy/8LUMlCc4/tuQ5h8LTC4vWboncXvfl08Cwpa0qKkrm7hmOeVfANnt+RhSCCfEaQU4Ryi4v1ano+XO3KpMEpysTl9qpTTD51BrIZOj2t69+Ao12NmvhjxCZ4GNdqxqjPX726Wj/G5KTNt8suL/Gmgcv8/5Dbn2YxbZx4EtIH64Saovh7v84f+VuG/9kOyR0c+5/yWIO4iJ4qCfOCvqbs3yFUgKGpP7s0JxWQNNJOKZNUG9BAQTx7jwePo/ZnKYUa1cKsehoG5ARAyVBkVcKc3uEyzxadR2aMzgUTfJLD24KDjNTeDoeJ5PC+nDqQ9IiMK0ax+yWZYUN+h9jvHGfrtOFlqCq3x57McDAy3nNPE6/6J8kAZcUWhbes+nShzSenD+Lnla2ScMaUHa3rF67fq60ec6MpvzWFHS6P3Pt7cLE18Q65Ostzw+PNAN5qlmBhDX7HA1q2ovqnKcuThVEWcmqiZVf+eq02lDnFXz1E/kwtrg0Xw5dj2cGq4Co66fQZJCW0i4Z0QXw1Ksa0BIosXkdnGv856eCOT4GLmD8TWuRkTaSQm/hwbJh3rn8SsyWzZUa5f8aGVCfhzFYuF+hpYKoLoAPuY6NrNQiKa5sX+ztbRbi0Z3faAf+rUJqzQmRCV/FlbAGvtopKoPH6Msa2P4Uw==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MWHPR1001MB2365.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(396003)(136003)(366004)(346002)(376002)(39860400002)(33716001)(6496006)(44832011)(4744005)(9686003)(6666004)(186003)(52116002)(5660300002)(38350700002)(8676002)(38100700002)(956004)(66946007)(66476007)(9576002)(66556008)(55016002)(478600001)(8936002)(2906002)(110136005)(26005)(316002)(86362001)(33656002)(4326008)(1076003);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Rirck7M4aIYeDHqNcbUYICVMxLx7AjQReYFPfbq60O5ub3sZxXXBUMRL25U5?=
+ =?us-ascii?Q?pfhNyTM3hP+O4591CjEdyWnWdRYNBvlOm5k61LIN8RSmcZqdsqtJg/akJI0H?=
+ =?us-ascii?Q?uFhiaNpB4iAQt2UMR47y2eqI2IIdQx3ibegqz4oiDi/n9FS4BkXsQ6FLgK0X?=
+ =?us-ascii?Q?IVlHUhgB3BrbKczkm5ej/wi3NsYXkyR7nC9rksoN1STIPBzN8OQShuY8ZNcS?=
+ =?us-ascii?Q?fNXpho8yYmUoYn02PL0KGaGqS6GhYqSK+rQmJHF5V2vxkQs2SD1aMfuUkv+w?=
+ =?us-ascii?Q?Ki7RHgcOfRGiuSUqOlYhu6s126JboPG9Q9zeu6hzmLhATnaZwd4xxtx/dnb5?=
+ =?us-ascii?Q?fFrwW83A871hOKbUOTHYGxrjR/6ypts1wBPK+6LkaaCM7y2dpkoWGeikJZmc?=
+ =?us-ascii?Q?1riGpGqhSXU0VPo1DWADyMf5znVC2r0yeQtBvMZ9IqTSrnsl7r9DMwul4lBL?=
+ =?us-ascii?Q?OJAJk70KZAup+QEcJpITodQc9FRvioMwFYtasKxm2TayoQxpQoC8tAy6ca3b?=
+ =?us-ascii?Q?vrl03S5Sfjfi+FP+xgvjPv3fc/Kdswba+D+dql1EWD6vn6Nx3ffndrMmryZj?=
+ =?us-ascii?Q?sSR4n0vEXaYLBpN4UcCKu8SUtz6h5qL7FuDXNmEDI4CLnAu1MrQmjbt6wAn5?=
+ =?us-ascii?Q?U+A4ZJKaT0YHqE2Z1O9nXmi0AjPYqjn6d05M1uLpf5KFnNLAILg1aJE0U4+P?=
+ =?us-ascii?Q?bLhw3zY7mUT6KiuptEBZ+yWvCyNQQI8X4A50PWvL5nRfCG3Wrhu1JrhDdoWp?=
+ =?us-ascii?Q?B1KqQumSrmCp7JRz6s35QOZivcvPf2cPL4bW8W8SIeRnUga13QpanSAVdckw?=
+ =?us-ascii?Q?KYQZplvHzUhzwH1beDrSqGtnkQ/HVNjOVra1sEcT+DuA6yqo73dIvtmYRE8j?=
+ =?us-ascii?Q?kHnvemOXXI+/rWp+VG7sLC1sxN04XFNSf3JEJtW8Jl1U7hCkqK+phdqAEhn0?=
+ =?us-ascii?Q?nAmnCIG7VRy3mVZQJpKYgzm7GqtQSJQmsKqKMa5ihT5ZYkRiFHUyiR5V0gpT?=
+ =?us-ascii?Q?aVV3zGigBKXMcwLQikKFifAZfAr7hzsa767K+vm9K26x/CJFijNH/5+Lg/vj?=
+ =?us-ascii?Q?9gPv4U5vGBzlyqTGvtChKQYP2v321WRT39f45ALyC71cJGmFSpZ3XYxldIHZ?=
+ =?us-ascii?Q?iE8tg6FoMJl9WBgHugPqy9lpLKcpRLwttU2wEJPTGEUt2CYnvd4AGZFBq6ra?=
+ =?us-ascii?Q?AZjgSyYkWEYBCIiTNLM8dW0gDA4s/W5YV6m3b52nZFSHwht8BJfHzXrjALEq?=
+ =?us-ascii?Q?FvR3p4vFYnBB1/xFaa0AniDgZcAl6DbIJ7WjIibmdP+PUKiJ89uxjgETT3Rd?=
+ =?us-ascii?Q?Co2S13bnONHCltQYPWtTZcHq?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 79bb56c8-625b-479b-a46e-08d9776ee8fd
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2365.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2021 11:00:48.9849 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: ldxd+7n3+ZY+4LFoVds9jsmlo89vx0JahuSAzaxC6jSCsjFPuwFO7/c5ERw5+zxDmlBY4zALIHN1hiwWUCZHWBigduq+p6ZP2iocZ26DZ9U=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR10MB1294
+X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10106
+ signatures=668682
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ mlxscore=0
+ mlxlogscore=999 adultscore=0 bulkscore=0 spamscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2109030001 definitions=main-2109140068
+X-Proofpoint-GUID: nzxzI2KA9Pup0XraIoBS6i8nDeL1P1zv
+X-Proofpoint-ORIG-GUID: nzxzI2KA9Pup0XraIoBS6i8nDeL1P1zv
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210914_010433_987097_996DBC3A 
-X-CRM114-Status: GOOD (  46.13  )
+X-CRM114-CacheID: sfid-20210914_040106_718927_7542C0A9 
+X-CRM114-Status: GOOD (  13.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,153 +185,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0635242507395513078=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Smatch complains that if of_get_address() returns NULL, then "size"
+isn't initialized.  Also it would lead to an Oops.
 
---===============0635242507395513078==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="4F826WXvoEFTgwkk"
-Content-Disposition: inline
+Fixes: 7f78322cdd67 ("phy: ti: gmii-sel: retrieve ports number and base offset from dt")
+Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+---
+ drivers/phy/ti/phy-gmii-sel.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
+diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+index 5fd2e8a08bfc..d0ab69750c6b 100644
+--- a/drivers/phy/ti/phy-gmii-sel.c
++++ b/drivers/phy/ti/phy-gmii-sel.c
+@@ -320,6 +320,8 @@ static int phy_gmii_sel_init_ports(struct phy_gmii_sel_priv *priv)
+ 		u64 size;
+ 
+ 		offset = of_get_address(dev->of_node, 0, &size, NULL);
++		if (!offset)
++			return -EINVAL;
+ 		priv->num_ports = size / sizeof(u32);
+ 		if (!priv->num_ports)
+ 			return -EINVAL;
+-- 
+2.20.1
 
---4F826WXvoEFTgwkk
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Mon 13 Sep 21, 10:17, Maxime Ripard wrote:
-> On Fri, Sep 10, 2021 at 08:41:40PM +0200, Paul Kocialkowski wrote:
-> > As described in the commit adding support for the new sun6i-csi driver,
-> > a complete rewrite was necessary to support the Allwinner A31 ISP as
-> > well as fix a number of issues with the current implementation.
-> >=20
-> > Farewell and thanks for all the pixels!
-> >=20
-> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
->=20
-> For completeness, this is what the other commit log mentions:
->=20
-> > While adapting the sun6i-csi driver for MIPI CSI-2 support was
-> > possible, it became clear that adding support for the ISP required
-> > very heavy changes to the driver which were quite hard to break down
-> > into a series of subsequent changes.
->=20
-> > The first major difficulty comes from the lack of v4l2 subdev that
-> > acts a bridge, separate from the video node representing the DMA
-> > engine. To support the ISP, only parts of the hardware must be
-> > configured (excluding aspects related to the DMA output), which made
-> > the separation a hard requirement.
->=20
-> > Another significant difficulty was the specific dance that is required
-> > to have both the ISP and CSI device be part of the same media device.
-> > Because the ISP and CSI are two different hardware blocks, they have
-> > two distinct drivers that will each try to register their own v4l2
-> > and media devices, resulting in two distinct pipelines. When the ISP
-> > is in use, we actually want the CSI driver to register with the ISP's
-> > v4l2 and media devices while keeping the ability to register its own
-> > when the ISP is not in use. This is done by:
-> > 1. Having the CSI driver check whether the ISP is available, using
-> >    sun6i_csi_isp_detect();
-> > 2. If not, it can register when its own async subdevs are ready, using
-> >    sun6i_csi_v4l2_complete();
-> > 3. If so, it will register its bridge as an async subdev which will
-> >    be picked-up by the ISP driver (from the fwnode graph link);
-> > 4. When the subdev becomes bound to the ISP's v4l2 device, we can
-> >    then access that device (and the associated media device) to
-> >    complete registration of the capture video node, using
-> >    sun6i_csi_isp_complete();
-> > Besides the logic rework, other issues were identified and resolved:
-> > - The sync mechanism for buffer flipping was based on the frame done
-> >   interrupt, which is too late (next frame is already being processed).
-> >   This lead to requiring 3 buffers to start and writing two addresses
-> >   when starting. Using vsync as a sync point seems to be the correct
-> >   approach and allows using only two buffers without tearing;
-> > - Using devm_regmap_init_mmio_clk was incorrect since the reset also
-> >   comes into play;
-> > - Some register definitions were inverted compared to their actual
-> >   effect (which was inherited from the Allwinner documentation and
-> >   code): comments were added where relevant;
-> > - The deprecated v4l2_async_notifier_parse_fwnode_endpoints() helper
-> >   is no longer used by the driver;
->=20
-> With that being said, NAK.
->=20
-> Having heavy changes to a driver is completely fine, and is kind of
-> expected really with such a big change. Breaking all possibility of
-> bisection and throwing away years of stabilization and maintenance
-> isn't.
->=20
-> And all those small bug fixes you mention at the end are just that:
-> small bug fixes that can be done on the current driver just fine too.
-
-I understand that this looks like we're trashing all the work that was
-done previously by removing the current driver and adding the new one
-but the logic for deciding what to write into registers was carefully
-preserved from the original driver to make sure that the works of
-stabilization and maintenance are not lost.
-
-However I would understand that my good promise on this is not enough,
-so perhaps I could provide a combinatory verification that the same set
-of mbus/pixel formats end up with the same thing being written into
-registers.
-
-In addition I understand that it will be necessary to split the changes
-up into small commits to clarify the transition path between the two
-drivers. So I will do my best to split things up.
-
-Does that seem like an agreeable plan or do you see other things that
-would be blockers?
-
-My initial thought was that it would be much easier to review the driver as=
- a
-rewrite, but I'm not too surprised I was wrong. To be honest it was nearly
-impossible to actually have the initial development happen as sequential st=
-eps
-and I preferred to allocate my time on other tasks than splitting the chang=
-es
-into these sequential steps.
-
-Cheers,
-
-Paul
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---4F826WXvoEFTgwkk
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmFAV4kACgkQ3cLmz3+f
-v9EieQf/XPAbDZuMl6e9vh2/5Nk+xAsVjNUg2fI21tKCjVq3m//gtD27CcUkhInC
-/G37OLndkoQ/8UhNaymnU7ld3rKjsn+xU/DN8dySK2QXx+MCeEP0Ffni9mDuXy4b
-AOc+1/s1HUOLwkRpQ0HgeCjEkYAbSwe8QV3RR7QCMG+qqFiKmfWPZgserIZKKjFz
-VxyI/KP3M3BRr5eXJrpUaKkar+7iXmv2nrPBpdIeLpOYC62oIVg+24nvNrAC7NG4
-8J28VSDGgprknJQn8eHEycrX4LfSQJNhjiVWnpsO3HDXaDggSYs3Ev9w+IoJy+Mf
-9N31yTCNwZS9MT4W296c4FMLFekjKA==
-=oC/H
------END PGP SIGNATURE-----
-
---4F826WXvoEFTgwkk--
-
-
---===============0635242507395513078==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0635242507395513078==--
-
