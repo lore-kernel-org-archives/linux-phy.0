@@ -2,112 +2,88 @@ Return-Path: <SRS0=TOd0=OE=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+X-Spam-Status: No, score=-12.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 201A4C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 12:08:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B04C0C433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D24F260ED8
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 12:08:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D24F260ED8
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cerno.tech
+	by mail.kernel.org (Postfix) with ESMTPS id 6C765610A6
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6C765610A6
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4GaiYDSTZEQQIMelQnf8Rs8n/VWuwSHefv84oAk9t/s=; b=nxdBcGVLyIXtbUpMA2tYryJHSR
-	EPafIdgaZbEcEUULrrulDSKDmcVYFSmINkUONrKsPldaEGtgPSzUpSmvvtynQr5puCCeeVGlyOupq
-	oGPM85kID6qPgJ8g6xBVXwuqTM3MdbTU5MDXmoq0WXaF7Q0kLVgaxrG5wDvo0e1FIRLwXPw8VhJqf
-	ZTc+7jt4ijGtTQIM1ALq9QG+Q5uumS4n+Bih3jZmPB2OjSbGX0RciYI+tGpG6k6CdAEJRFx+A8wAk
-	oekSjnawNi4M/iyZb4VSij7NLcY7NOyEsqgp1rgFoFYYEiRQvFA490mN8haPE/2juzHZ7pYY7VnX1
-	4bC2mtYQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C+pappBT0atdzCc+fnYTZ80XcIAedeDzx3wXzK4dfok=; b=KG0cikDl6gaqDL
+	EIx5X8AjLVvPk8jZVAFq3lgWCuy4GsJ0GP18x+zsgph5/PEoN0BkzeTiUFw3WZsMfIQinYzRSHk6v
+	IhhUXK8VjxBsWxNzaWurEeWfLmDxy4UAwAnf4vfpaSqseZ05G5yJPVriKuGkc1VHNhOK5ee3+3+PZ
+	G6uuWjS6ey/7LBeL9m2j8SqTeT9ll2IhGLK7k9CanAjQbzlDTVdI+/6Nu5ueSsyWQEA9v3QUaC45g
+	LJV1LuzMqAuKqt1P8NeUdlCl9fsevt7SdsPOFC1RMeuIrCFnBMqgeL8aoefyhzm0C1T9oQNaNT2/a
+	rJG8OjltLwju8IwIERJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQ7EJ-005YEa-CI; Tue, 14 Sep 2021 12:08:03 +0000
-Received: from wnew4-smtp.messagingengine.com ([64.147.123.18])
+	id 1mQ9oM-0064Jg-S7; Tue, 14 Sep 2021 14:53:26 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQ7E4-005YBm-Hu; Tue, 14 Sep 2021 12:07:50 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 661922B01379;
- Tue, 14 Sep 2021 08:07:46 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 14 Sep 2021 08:07:47 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=BS95iNxDHg5IOU2+CDcWqYE/6lG
- WFlRvAAVzj9l4DcI=; b=XD0+gQOXZbokDOzAZ6flaxp1i3L29WmBNgvS1Iax+5y
- tsCM8t450uG5+RRc7xYNnAZju6OG5oxHlE87g3dz6IA/5AZAJZ9ieDc5CFsVBP8J
- UoBhlPs0o3Yzz2JkZM5T09E0j5wlMAY4LXAx1tycjB0wn3r9m9VSRtZnUr8IhwdZ
- qgB/QgS9zlUj8CNgvt+nBK+ynRBhOikrLj3pvUpootJKV3K6ARUGsYm61Lc0zInB
- k77qW8Ttx8A/wmqmhnthJFZWdQntKS8o0a2V0YyD7x4I190U+zQkIlfi6RWsAjlD
- GcjswuV7jTYPP9ujh/SSpZaxq5F5KBGtTDKW+8i7yjQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=BS95iN
- xDHg5IOU2+CDcWqYE/6lGWFlRvAAVzj9l4DcI=; b=KuRS788U0D00PNM0rHpJOb
- paqmhCQq/lTNWXqchtoymYAiUr/aHBjKWnjwESbx6+wXIJeKvarfuqe40r/Eo+IC
- UtLey5pD9YswkZGbwxb6iTGksHQIdQwGkDJJtvyIIyPQJrG9sceNofxIi99njlUd
- QZ6WoKRkmC8P+T44zr6uXJMUxqwjiCjseXhuOylMAfyw+LD00O0spSZfR7W2O3ca
- FuTWM00Nv/PBVHbmfN9Wd8QIIi+YcS5yn/PBPBFOmgMJ7rxV85jnxE6hhrQ18qmk
- lB7PYwwv4QBj7OsiW95ac6T6Edqm5dC1MXqY/sBjdEr3HB9chrqiWZr+U2OWlv/Q
- ==
-X-ME-Sender: <xms:j5BAYQgogg9sngRVjbTllDyGz7_Kw68pQmB09t8RMJtmGL--F_6WtQ>
- <xme:j5BAYZBXuKmNNkVESltB9bCqWSLLgqlFKLfzVei9eSTuVId4NwCTviiUD1Slz3kAW
- SI0QzJz6MaoHj_xqx8>
-X-ME-Received: <xmr:j5BAYYEASXI7suVY92ZYBFAlV-f55ITFV58C4ljccexpd4S1KCpHW9ndY45IMhSRrZ-FqZ5BjCqSkjRBmFlIsninoT6MsBQwK4gA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudegledggeejucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepffetteevieejteeuhfffgeektefghfeileehhedtuddutefhhfejtddvtddu
- ledvnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdrohhrghenucevlhhushhtvghruf
- hiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdr
- thgvtghh
-X-ME-Proxy: <xmx:j5BAYRSJWNm5GuLVrGpo9E_Arz34Zw8bK4nebFcVEEdapol1o0KCyw>
- <xmx:j5BAYdwZjghzUaDfTNUNN3dvAN2ZCuaKDbXLmTpQWN-GaQr10aWZ0Q>
- <xmx:j5BAYf5Gc2_Bmqj5UMvNQiwkXWWIAaJMHbzI0vj8bCM7XQ4EpkDZIg>
- <xmx:kpBAYepHMCq04u8C3mlL2dWZog89syeFPfOKB36rETkDZP8WxmfuL8_Onp4>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 14 Sep 2021 08:07:43 -0400 (EDT)
-Date: Tue, 14 Sep 2021 14:07:41 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH 17/22] dt-bindings: media: Add Allwinner A31 ISP bindings
- documentation
-Message-ID: <20210914120741.gmrqdlev2p7r6f5l@gilmour>
-References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
- <20210910184147.336618-18-paul.kocialkowski@bootlin.com>
- <20210913081808.esgqvz4eeatp4hkp@gilmour>
- <YUBS1sdHKUMZx6gx@aptenodytes>
+ id 1mQ9oJ-0064H2-7E; Tue, 14 Sep 2021 14:53:25 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 18EBDrHY000403; 
+ Tue, 14 Sep 2021 16:53:14 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=selector1;
+ bh=+qFVp4UXzkSb0mMkpWZLVTLTNn7vjALA3GybZVUT//I=;
+ b=h1L0OUknaHle3dCsARhQ1qyqg2RaznxiQUGVKwjzkVE1esr8DbMjZWUkzYBtcsZ8FgGe
+ OQxSh/+/4OKF6Saxyki18O/fNnN28uVC7ZxTnRmV7Um+WMgedZCvOgjPr3JMgGx107jp
+ NBxSOfqpyxeSIIV/g+J4iVTxlKDiAv+1zeiHd8xbw7fVr9mv+GoJKxd19MlIw/dNt+K0
+ gQ67n7Z/F45TMRWfVwUhu0sPiwvUCIacaeDovBuP8YP6x0irhat6mCfUiV46U0SpB8de
+ 1rdcaAUTSxLpSa5dC7hP4p6gH1e5NwRHmCbhXjEdGLLejEsh6hhDd1JdieIjsxhrW7QE cA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3b2tpah6jk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 14 Sep 2021 16:53:14 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EB60C10002A;
+ Tue, 14 Sep 2021 16:53:12 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D83A421A229;
+ Tue, 14 Sep 2021 16:53:12 +0200 (CEST)
+Received: from localhost (10.75.127.47) by SFHDAG2NODE2.st.com (10.75.127.5)
+ with Microsoft SMTP Server (TLS) id 15.0.1497.18; Tue, 14 Sep 2021 16:53:12
+ +0200
+From: Amelie Delaunay <amelie.delaunay@foss.st.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
+ <amelie.delaunay@foss.st.com>
+Subject: [PATCH 0/3] phy: stm32: add phy tuning support
+Date: Tue, 14 Sep 2021 16:52:53 +0200
+Message-ID: <20210914145256.243869-1-amelie.delaunay@foss.st.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <YUBS1sdHKUMZx6gx@aptenodytes>
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG2NODE2.st.com
+ (10.75.127.5)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.391,FMLib:17.0.607.475
+ definitions=2021-09-14_06,2021-09-14_01,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210914_050748_677800_405BFAD1 
-X-CRM114-Status: GOOD (  21.84  )
+X-CRM114-CacheID: sfid-20210914_075323_723059_5DB381BE 
+X-CRM114-Status: GOOD (  11.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,168 +95,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0875927426242974880=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This series brings phy tuning to stm32-usbphyc with a new optional
+device tree property st,phy-tuning, the elements of which
+(st,phy-tuning node properties) are also optional.
+A prior patch add resume routine, which is used to restore UTMI
+switch and phy tuning configuration, as they can be reset if
+deep low power state is achieved.
 
---===============0875927426242974880==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="gqq67qthp5eyfcss"
-Content-Disposition: inline
+Amelie Delaunay (3):
+  phy: stm32: restore utmi switch on resume
+  dt-bindings: phy: phy-stm32-usbphyc: add st,phy-tuning optional
+    property
+  phy: stm32: add phy tuning support
 
+ .../bindings/phy/phy-stm32-usbphyc.yaml       |  68 ++++++
+ drivers/phy/st/phy-stm32-usbphyc.c            | 208 ++++++++++++++++++
+ 2 files changed, 276 insertions(+)
 
---gqq67qthp5eyfcss
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+-- 
+2.25.1
 
-On Tue, Sep 14, 2021 at 09:44:22AM +0200, Paul Kocialkowski wrote:
-> Hi,
->=20
-> On Mon 13 Sep 21, 10:18, Maxime Ripard wrote:
-> > On Fri, Sep 10, 2021 at 08:41:42PM +0200, Paul Kocialkowski wrote:
-> > > This introduces YAML bindings documentation for the Allwinner A31 Ima=
-ge
-> > > Signal Processor (ISP).
-> > >=20
-> > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > ---
-> > >  .../media/allwinner,sun6i-a31-csi.yaml        |   2 +-
-> > >  .../media/allwinner,sun6i-a31-isp.yaml        | 111 ++++++++++++++++=
-++
-> > >  2 files changed, 112 insertions(+), 1 deletion(-)
-> > >  create mode 100644 Documentation/devicetree/bindings/media/allwinner=
-,sun6i-a31-isp.yaml
-> > >=20
-> > > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-=
-a31-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-=
-csi.yaml
-> > > index f4a686b77a38..c60f6b5403fa 100644
-> > > --- a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi=
-=2Eyaml
-> > > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi=
-=2Eyaml
-> > > @@ -1,4 +1,4 @@
-> > > -# SPDX-License-Identifier: GPL-2.0
-> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > >  %YAML 1.2
-> > >  ---
-> > >  $id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-csi.yam=
-l#
-> > > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-=
-a31-isp.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-=
-isp.yaml
-> > > new file mode 100644
-> > > index 000000000000..a0f82f150e90
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp=
-=2Eyaml
-> > > @@ -0,0 +1,111 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-isp.yam=
-l#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Allwinner A31 Image Signal Processor Driver (ISP) Device Tree=
- Bindings
-> > > +
-> > > +maintainers:
-> > > +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    enum:
-> > > +      - allwinner,sun6i-a31-isp
-> > > +      - allwinner,sun8i-v3s-isp
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  interrupts:
-> > > +    maxItems: 1
-> > > +
-> > > +  clocks:
-> > > +    items:
-> > > +      - description: Bus Clock
-> > > +      - description: Module Clock
-> > > +      - description: DRAM Clock
-> > > +
-> > > +  clock-names:
-> > > +    items:
-> > > +      - const: bus
-> > > +      - const: mod
-> > > +      - const: ram
-> > > +
-> > > +  resets:
-> > > +    maxItems: 1
-> > > +
-> > > +  ports:
-> > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > +
-> > > +    properties:
-> > > +      port@0:
-> > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > +        description: CSI0 input port
-> > > +
-> > > +        properties:
-> > > +          reg:
-> > > +            const: 0
-> > > +
-> > > +          endpoint:
-> > > +            $ref: video-interfaces.yaml#
-> > > +            unevaluatedProperties: false
-> > > +
-> > > +        additionalProperties: false
-> > > +
-> > > +      port@1:
-> > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > +        description: CSI1 input port
-> > > +
-> > > +        properties:
-> > > +          reg:
-> > > +            const: 0
-> > > +
-> > > +          endpoint:
-> > > +            $ref: video-interfaces.yaml#
-> > > +            unevaluatedProperties: false
-> > > +
-> > > +        additionalProperties: false
-> >=20
-> > port@0 and port@1 required?
->=20
-> I'd say just one of them, does that make sense?
-
-Don't we have some SoC with both? If so, we should have an anyOf here.
-
-maxime
-
---gqq67qthp5eyfcss
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYUCQjQAKCRDj7w1vZxhR
-xZnQAP0T5rrW8HglxlUdmhQBMd2gsP7z48fcaN5uOKJXVZgVogD9FAslehFY8qhg
-xTl+YmcTWItiWy/6SBH6p5vjuNGCHQk=
-=ePfT
------END PGP SIGNATURE-----
-
---gqq67qthp5eyfcss--
-
-
---===============0875927426242974880==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0875927426242974880==--
-
