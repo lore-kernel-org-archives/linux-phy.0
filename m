@@ -1,91 +1,87 @@
-Return-Path: <SRS0=TOd0=OE=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=DVIa=OF=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-17.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 94B7FC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B52C3C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 03:51:44 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3EFB26113B
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Sep 2021 14:53:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3EFB26113B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
+	by mail.kernel.org (Postfix) with ESMTPS id 79B1960F25
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 03:51:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 79B1960F25
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=psSHc27Zb3PcyBjhQaFVLYddsjFRdlJN+Xzx3Y/Ckt0=; b=CEro+Vt+mTLh01
-	vAGLkscDO2DSlN/RMorCiKoYLjZwE/YWfxQvUiaDPCt3s79eWx/JBeDlZRPW7bTbGmU+Ju68X1/4y
-	Gqu/b9iCkU3y0EUzmyzp/SzuXMdkAGbwEIh++4QJ1pJGPXMNIT9E7cdcgrFEWQ9Ivp6HF4SzfQnbs
-	Yc6cbQshat08MendMWgGHCPCeRJ6yx/uj3I6blyQ/1p/XL1HzPABiTVRyUXOf2saEOTX1TYZY+UVS
-	h06rGjzITEbUl1iiB/Jh6ItfAswKJy4lhyAxCBEkm4GWpj3viGnrDVj0lSSZKHRBA4E946kqIjuk/
-	BbpixL2ivMskViXcrfig==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=VODXIgu3QxIEi/SUZOzLNGGQove0IKD2G8KSr3n0Br8=; b=Aforqbr74yU44zbvpTGNWCUP1y
+	ZZUu6VjD8YrXtpqYUgVCJ+2gbc00ynyjU1k/nmgaK9YBH0hdKSFbou+WIDWmKpolmGOfhnQ/7lWms
+	rA4HJlG7dBLO8FQElJEQRcZeokF4u55eStxdoVEMYP6ohsmy4ybTvrdsC4vlKjiC70mSpEnOBfq62
+	Wc0xtPG4Q71hGVe2r/Oz9sDGmhhlF1vL1S/NkF3g4NnnAaPwjI4COlUHpggV0y4zxWmatWu5NVdDB
+	ufMmNKuyyiQ5QEuJ4KZ/hmD2Pjs79LTPyhw2VVjV8VcbKSLwddEtm/83i7i6mvwU45gIyEBWt385o
+	+iID34Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQ9ol-0064PB-P2; Tue, 14 Sep 2021 14:53:51 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1mQLxX-0080CE-R0; Wed, 15 Sep 2021 03:51:43 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQ9oK-0064HN-E0; Tue, 14 Sep 2021 14:53:26 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 18E9qBZq029006; 
- Tue, 14 Sep 2021 16:53:16 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding : content-type; s=selector1;
- bh=+XHamXQdZi2kEmdvcKwNfgbw0cyJVN5+1tLl4re1/3I=;
- b=xzMWf8WoRQl1+FMG4OAUg6PS3w0tfs6Xl1KNw2d7icdIlr3gCjDYI0fvo2rbz+xh/MrL
- YKk1ckJxdbbYOkPYgxqyHdrTZ2FS7fOFhyR4pXvAr7HJX91xnk0iOyBJUwigR6HCjjgq
- wuzGfuS2zf2RzuLbxBggCcJct3Sglhmv7MPTU9wteYhs5tlAEFXMFqQ+8EWqraleLON7
- z5ZQ/fYOwRbQRqGlkZVITCyuyWtksXzWFICjwA1kIWkFlopJi9LzS0iyo5oPDryAM7s0
- pbQ46nfyC8vdFIQyUH+uXCCxdhSsnSJql2xJGNvBUYC82APZ0tnbJkPoko34g4O06hCu hg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3b2sg19mpg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 14 Sep 2021 16:53:16 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4E3BA10002A;
- Tue, 14 Sep 2021 16:53:16 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4124F21A229;
- Tue, 14 Sep 2021 16:53:16 +0200 (CEST)
-Received: from localhost (10.75.127.46) by SFHDAG2NODE2.st.com (10.75.127.5)
- with Microsoft SMTP Server (TLS) id 15.0.1497.18; Tue, 14 Sep 2021 16:53:16
- +0200
-From: Amelie Delaunay <amelie.delaunay@foss.st.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Alexandre Torgue
- <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
- <amelie.delaunay@foss.st.com>
-Subject: [PATCH 3/3] phy: stm32: add phy tuning support
-Date: Tue, 14 Sep 2021 16:52:56 +0200
-Message-ID: <20210914145256.243869-4-amelie.delaunay@foss.st.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20210914145256.243869-1-amelie.delaunay@foss.st.com>
-References: <20210914145256.243869-1-amelie.delaunay@foss.st.com>
+ id 1mQLxU-0080Av-JU
+ for linux-phy@lists.infradead.org; Wed, 15 Sep 2021 03:51:42 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 18F3pZDf019328;
+ Tue, 14 Sep 2021 22:51:35 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1631677895;
+ bh=0/DzyW1aTj0CujHkJ0bEl7T6yiNv8PfN/vXyA4LrYtY=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=nUeob6WsxUrTWfaC+yKmSe3UZ7TxJJ0mx0e99paHwFBRIrx/5KRsBMTOvrE/Ylprk
+ ncAi1qPmgZjvPxGtZV4WptWa2B2flHEmWSezxczzgtF5bgEDG2zVbJGvkQ7u1hVuog
+ SA7pcofEkQHXhzvw33Zg1WpsuoflR+nWoPIdU1pU=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 18F3pZw6039433
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 14 Sep 2021 22:51:35 -0500
+Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Tue, 14
+ Sep 2021 22:51:35 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Tue, 14 Sep 2021 22:51:35 -0500
+Received: from [10.250.232.217] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 18F3pVj9109416;
+ Tue, 14 Sep 2021 22:51:32 -0500
+Subject: Re: [PATCH 1/5] phy: cadence-torrent: Migrate to clk_hw based
+ registration and OF APIs
+To: Swapnil Jakhade <sjakhade@cadence.com>, <vkoul@kernel.org>,
+ <robh+dt@kernel.org>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
+CC: <mparab@cadence.com>, <lokeshvutla@ti.com>, <a-govindraju@ti.com>
+References: <20210908182628.28364-1-sjakhade@cadence.com>
+ <20210908182628.28364-2-sjakhade@cadence.com>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <e6c0b780-d5d5-f641-7e9f-d2c917eb4b51@ti.com>
+Date: Wed, 15 Sep 2021 09:21:30 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.11.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG2NODE2.st.com
- (10.75.127.5)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.391,FMLib:17.0.607.475
- definitions=2021-09-14_03,2021-09-14_01,2020-04-07_01
+In-Reply-To: <20210908182628.28364-2-sjakhade@cadence.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210914_075324_804066_D97F2C6C 
-X-CRM114-Status: GOOD (  23.24  )
+X-CRM114-CacheID: sfid-20210914_205140_849736_CF69BB03 
+X-CRM114-Status: GOOD (  20.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,267 +98,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-It can be necessary to adjust the phys settings to compensate parasitics.
-This patch adds support of the new optional property st,phy-tuning to
-configure the tune interface of the phys of stm32-usbphyc.
-Properties of st,phy-tuning phandle are also optional, that's why each
-property is skipped if not found (-EINVAL).
-Phy tuning is restored on resume because if deep low power state is
-achieved, phy tuning configuration is reset.
+Hi Swapnil,
 
-Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
----
- drivers/phy/st/phy-stm32-usbphyc.c | 195 +++++++++++++++++++++++++++++
- 1 file changed, 195 insertions(+)
+On 08/09/21 11:56 pm, Swapnil Jakhade wrote:
+> Use clk_hw based provider APIs to register clks.
 
-diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
-index 083593aea53a..fb7ad7b8e815 100644
---- a/drivers/phy/st/phy-stm32-usbphyc.c
-+++ b/drivers/phy/st/phy-stm32-usbphyc.c
-@@ -20,6 +20,7 @@
- #define STM32_USBPHYC_PLL	0x0
- #define STM32_USBPHYC_MISC	0x8
- #define STM32_USBPHYC_MONITOR(X) (0x108 + ((X) * 0x100))
-+#define STM32_USBPHYC_TUNE(X)	(0x10C + ((X) * 0x100))
- #define STM32_USBPHYC_VERSION	0x3F4
- 
- /* STM32_USBPHYC_PLL bit fields */
-@@ -41,6 +42,83 @@
- #define STM32_USBPHYC_MON_SEL_LOCKP 0x1F
- #define STM32_USBPHYC_MON_OUT_LOCKP BIT(3)
- 
-+/* STM32_USBPHYC_TUNE bit fields */
-+#define INCURREN		BIT(0)
-+#define INCURRINT		BIT(1)
-+#define LFSCAPEN		BIT(2)
-+#define HSDRVSLEW		BIT(3)
-+#define HSDRVDCCUR		BIT(4)
-+#define HSDRVDCLEV		BIT(5)
-+#define HSDRVCURINCR		BIT(6)
-+#define FSDRVRFADJ		BIT(7)
-+#define HSDRVRFRED		BIT(8)
-+#define HSDRVCHKITRM		GENMASK(12, 9)
-+#define HSDRVCHKZTRM		GENMASK(14, 13)
-+#define OTPCOMP			GENMASK(19, 15)
-+#define SQLCHCTL		GENMASK(21, 20)
-+#define HDRXGNEQEN		BIT(22)
-+#define HSRXOFF			GENMASK(24, 23)
-+#define HSFALLPREEM		BIT(25)
-+#define SHTCCTCTLPROT		BIT(26)
-+#define STAGSEL			BIT(27)
-+
-+enum boosting_vals {
-+	BOOST_1_MA = 1,
-+	BOOST_2_MA,
-+	BOOST_MAX,
-+};
-+
-+enum dc_level_vals {
-+	DC_MINUS_5_TO_7_MV,
-+	DC_PLUS_5_TO_7_MV,
-+	DC_PLUS_10_TO_14_MV,
-+	DC_MAX,
-+};
-+
-+enum current_trim {
-+	CUR_NOMINAL,
-+	CUR_PLUS_1_56_PCT,
-+	CUR_PLUS_3_12_PCT,
-+	CUR_PLUS_4_68_PCT,
-+	CUR_PLUS_6_24_PCT,
-+	CUR_PLUS_7_8_PCT,
-+	CUR_PLUS_9_36_PCT,
-+	CUR_PLUS_10_92_PCT,
-+	CUR_PLUS_12_48_PCT,
-+	CUR_PLUS_14_04_PCT,
-+	CUR_PLUS_15_6_PCT,
-+	CUR_PLUS_17_16_PCT,
-+	CUR_PLUS_19_01_PCT,
-+	CUR_PLUS_20_58_PCT,
-+	CUR_PLUS_22_16_PCT,
-+	CUR_PLUS_23_73_PCT,
-+	CUR_MAX,
-+};
-+
-+enum impedance_trim {
-+	IMP_NOMINAL,
-+	IMP_MINUS_2_OHMS,
-+	IMP_MINUS_4_OMHS,
-+	IMP_MINUS_6_OHMS,
-+	IMP_MAX,
-+};
-+
-+enum squelch_level {
-+	SQLCH_NOMINAL,
-+	SQLCH_PLUS_7_MV,
-+	SQLCH_MINUS_5_MV,
-+	SQLCH_PLUS_14_MV,
-+	SQLCH_MAX,
-+};
-+
-+enum rx_offset {
-+	NO_RX_OFFSET,
-+	RX_OFFSET_PLUS_5_MV,
-+	RX_OFFSET_PLUS_10_MV,
-+	RX_OFFSET_MINUS_5_MV,
-+	RX_OFFSET_MAX,
-+};
-+
- /* STM32_USBPHYC_VERSION bit fields */
- #define MINREV			GENMASK(3, 0)
- #define MAJREV			GENMASK(7, 4)
-@@ -60,6 +138,7 @@ struct stm32_usbphyc_phy {
- 	struct regulator *vbus;
- 	u32 index;
- 	bool active;
-+	u32 tune;
- };
- 
- struct stm32_usbphyc {
-@@ -375,6 +454,111 @@ static int stm32_usbphyc_clk48_register(struct stm32_usbphyc *usbphyc)
- 	return ret;
- }
- 
-+static void stm32_usbphyc_phy_tuning(struct stm32_usbphyc *usbphyc,
-+				     struct device_node *np, u32 index)
-+{
-+	struct stm32_usbphyc_phy *usbphyc_phy = usbphyc->phys[index];
-+	struct device_node *tune_np;
-+	u32 reg = STM32_USBPHYC_TUNE(index);
-+	u32 otpcomp, val;
-+	int ret;
-+
-+	/* st,phy-tuning is optional so skip phy tuning if not found */
-+	tune_np = of_parse_phandle(np, "st,phy-tuning", 0);
-+	if (!tune_np)
-+		return;
-+
-+	/* Backup OTP compensation code */
-+	otpcomp = FIELD_GET(OTPCOMP, readl_relaxed(usbphyc->base + reg));
-+
-+	ret = of_property_read_u32(tune_np, "st,current-boost", &val);
-+	if (ret != -EINVAL) {
-+		if (!ret && val < BOOST_MAX) {
-+			val = (val == BOOST_2_MA) ? 1 : 0;
-+			usbphyc_phy->tune |= INCURREN | FIELD_PREP(INCURRINT, val);
-+		} else {
-+			dev_warn(usbphyc->dev, "phy%d: invalid st,current-boost value\n", index);
-+		}
-+	}
-+
-+	if (!of_property_read_bool(tune_np, "st,no-lsfs-fb-cap"))
-+		usbphyc_phy->tune |= LFSCAPEN;
-+
-+	if (of_property_read_bool(tune_np, "st,hs-slew-ctrl"))
-+		usbphyc_phy->tune |= HSDRVSLEW;
-+
-+	ret = of_property_read_u32(tune_np, "st,hs-dc-level", &val);
-+	if (ret != -EINVAL) {
-+		if (!ret && val < DC_MAX) {
-+			if (val == DC_MINUS_5_TO_7_MV) {
-+				usbphyc_phy->tune |= HSDRVDCCUR;
-+			} else {
-+				val = (val == DC_PLUS_10_TO_14_MV) ? 1 : 0;
-+				usbphyc_phy->tune |= HSDRVCURINCR | FIELD_PREP(HSDRVDCLEV, val);
-+			}
-+		} else {
-+			dev_warn(usbphyc->dev, "phy%d: invalid st,hs-dc-level value\n", index);
-+		}
-+	}
-+
-+	if (of_property_read_bool(tune_np, "st,fs-rftime-tuning"))
-+		usbphyc_phy->tune |= FSDRVRFADJ;
-+
-+	if (of_property_read_bool(tune_np, "st,hs-rftime-reduction"))
-+		usbphyc_phy->tune |= HSDRVRFRED;
-+
-+	ret = of_property_read_u32(tune_np, "st,hs-current-trim", &val);
-+	if (ret != -EINVAL) {
-+		if (!ret && val < CUR_MAX)
-+			usbphyc_phy->tune |= FIELD_PREP(HSDRVCHKITRM, val);
-+		else
-+			dev_warn(usbphyc->dev, "phy%d: invalid st,hs-current-trim value\n", index);
-+	}
-+
-+	ret = of_property_read_u32(tune_np, "st,hs-impedance-trim", &val);
-+	if (ret != -EINVAL) {
-+		if (!ret && val < IMP_MAX)
-+			usbphyc_phy->tune |= FIELD_PREP(HSDRVCHKZTRM, val);
-+		else
-+			dev_warn(usbphyc->dev, "phy%d: invalid hs-impedance-trim value\n", index);
-+	}
-+
-+	ret = of_property_read_u32(tune_np, "st,squelch-level", &val);
-+	if (ret != -EINVAL) {
-+		if (!ret && val < SQLCH_MAX)
-+			usbphyc_phy->tune |= FIELD_PREP(SQLCHCTL, val);
-+		else
-+			dev_warn(usbphyc->dev, "phy%d: invalid st,squelch-level value\n", index);
-+	}
-+
-+	if (of_property_read_bool(tune_np, "st,hs-rx-gain-eq"))
-+		usbphyc_phy->tune |= HDRXGNEQEN;
-+
-+	ret = of_property_read_u32(tune_np, "st,hs-rx-offset", &val);
-+	if (ret != -EINVAL) {
-+		if (!ret && val < RX_OFFSET_MAX)
-+			usbphyc_phy->tune |= FIELD_PREP(HSRXOFF, val);
-+		else
-+			dev_warn(usbphyc->dev, "phy%d: invalid st,hs-rx-offset value\n", index);
-+	}
-+
-+	if (of_property_read_bool(tune_np, "st,no-hs-ftime-ctrl"))
-+		usbphyc_phy->tune |= HSFALLPREEM;
-+
-+	if (!of_property_read_bool(tune_np, "st,no-lsfs-sc"))
-+		usbphyc_phy->tune |= SHTCCTCTLPROT;
-+
-+	if (of_property_read_bool(tune_np, "st,hs-tx-staggering"))
-+		usbphyc_phy->tune |= STAGSEL;
-+
-+	of_node_put(tune_np);
-+
-+	/* Restore OTP compensation code */
-+	usbphyc_phy->tune |= FIELD_PREP(OTPCOMP, otpcomp);
-+
-+	writel_relaxed(usbphyc_phy->tune, usbphyc->base + reg);
-+}
-+
- static void stm32_usbphyc_switch_setup(struct stm32_usbphyc *usbphyc,
- 				       u32 utmi_switch)
- {
-@@ -550,6 +734,9 @@ static int stm32_usbphyc_probe(struct platform_device *pdev)
- 			usbphyc->phys[port]->vbus = NULL;
- 		}
- 
-+		/* Configure phy tuning */
-+		stm32_usbphyc_phy_tuning(usbphyc, child, index);
-+
- 		port++;
- 	}
- 
-@@ -601,10 +788,18 @@ static int stm32_usbphyc_remove(struct platform_device *pdev)
- static int __maybe_unused stm32_usbphyc_resume(struct device *dev)
- {
- 	struct stm32_usbphyc *usbphyc = dev_get_drvdata(dev);
-+	struct stm32_usbphyc_phy *usbphyc_phy;
-+	int port;
- 
- 	if (usbphyc->switch_setup >= 0)
- 		stm32_usbphyc_switch_setup(usbphyc, usbphyc->switch_setup);
- 
-+	for (port = 0; port < usbphyc->nphys; port++) {
-+		usbphyc_phy = usbphyc->phys[port];
-+		if (usbphyc_phy->tune)
-+			writel_relaxed(usbphyc_phy->tune, usbphyc->base + STM32_USBPHYC_TUNE(port));
-+	}
-+
- 	return 0;
- }
- 
--- 
-2.25.1
+Please explain the reasoning for moving to clk_hw based API.
 
+Thanks,
+Kishon
+> 
+> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+> ---
+>  drivers/phy/cadence/phy-cadence-torrent.c | 30 ++++++++++++++---------
+>  1 file changed, 19 insertions(+), 11 deletions(-)
+> 
+> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+> index 415ace64adc5..ecb1aa883c05 100644
+> --- a/drivers/phy/cadence/phy-cadence-torrent.c
+> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
+> @@ -235,6 +235,8 @@
+>  #define PHY_PMA_CMN_CTRL2		0x0001U
+>  #define PHY_PMA_PLL_RAW_CTRL		0x0003U
+>  
+> +#define CDNS_TORRENT_OUTPUT_CLOCKS	1
+> +
+>  static const char * const clk_names[] = {
+>  	[CDNS_TORRENT_REFCLK_DRIVER] = "refclk-driver",
+>  };
+> @@ -333,8 +335,7 @@ struct cdns_torrent_phy {
+>  	struct regmap_field *phy_pma_pll_raw_ctrl;
+>  	struct regmap_field *phy_reset_ctrl;
+>  	struct regmap_field *phy_pcs_iso_link_ctrl_1[MAX_NUM_LANES];
+> -	struct clk *clks[CDNS_TORRENT_REFCLK_DRIVER + 1];
+> -	struct clk_onecell_data clk_data;
+> +	struct clk_hw_onecell_data *clk_hw_data;
+>  };
+>  
+>  enum phy_powerstate {
+> @@ -1659,8 +1660,9 @@ static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy *cdns_ph
+>  	const char *parent_name;
+>  	struct regmap *regmap;
+>  	char clk_name[100];
+> +	struct clk_hw *hw;
+>  	struct clk *clk;
+> -	int i;
+> +	int i, ret;
+>  
+>  	derived_refclk = devm_kzalloc(dev, sizeof(*derived_refclk), GFP_KERNEL);
+>  	if (!derived_refclk)
+> @@ -1706,11 +1708,12 @@ static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy *cdns_ph
+>  
+>  	derived_refclk->hw.init = init;
+>  
+> -	clk = devm_clk_register(dev, &derived_refclk->hw);
+> -	if (IS_ERR(clk))
+> -		return PTR_ERR(clk);
+> +	hw = &derived_refclk->hw;
+> +	ret = devm_clk_hw_register(dev, hw);
+> +	if (ret)
+> +		return ret;
+>  
+> -	cdns_phy->clks[CDNS_TORRENT_REFCLK_DRIVER] = clk;
+> +	cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER] = hw;
+>  
+>  	return 0;
+>  }
+> @@ -2188,18 +2191,23 @@ static int cdns_torrent_clk_register(struct cdns_torrent_phy *cdns_phy)
+>  {
+>  	struct device *dev = cdns_phy->dev;
+>  	struct device_node *node = dev->of_node;
+> +	struct clk_hw_onecell_data *data;
+>  	int ret;
+>  
+> +	data = devm_kzalloc(dev, struct_size(data, hws, CDNS_TORRENT_OUTPUT_CLOCKS), GFP_KERNEL);
+> +	if (!data)
+> +		return -ENOMEM;
+> +
+> +	data->num = CDNS_TORRENT_OUTPUT_CLOCKS;
+> +	cdns_phy->clk_hw_data = data;
+> +
+>  	ret = cdns_torrent_derived_refclk_register(cdns_phy);
+>  	if (ret) {
+>  		dev_err(dev, "failed to register derived refclk\n");
+>  		return ret;
+>  	}
+>  
+> -	cdns_phy->clk_data.clks = cdns_phy->clks;
+> -	cdns_phy->clk_data.clk_num = CDNS_TORRENT_REFCLK_DRIVER + 1;
+> -
+> -	ret = of_clk_add_provider(node, of_clk_src_onecell_get, &cdns_phy->clk_data);
+> +	ret = of_clk_add_hw_provider(node, of_clk_hw_onecell_get, data);
+>  	if (ret) {
+>  		dev_err(dev, "Failed to add clock provider: %s\n", node->name);
+>  		return ret;
+> 
 
 -- 
 linux-phy mailing list
