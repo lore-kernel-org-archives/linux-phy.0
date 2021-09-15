@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-17.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
 	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B52C3C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 03:51:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8184AC433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 03:55:59 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 79B1960F25
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 03:51:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 79B1960F25
+	by mail.kernel.org (Postfix) with ESMTPS id 44A0160F25
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 03:55:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 44A0160F25
 Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,64 +24,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VODXIgu3QxIEi/SUZOzLNGGQove0IKD2G8KSr3n0Br8=; b=Aforqbr74yU44zbvpTGNWCUP1y
-	ZZUu6VjD8YrXtpqYUgVCJ+2gbc00ynyjU1k/nmgaK9YBH0hdKSFbou+WIDWmKpolmGOfhnQ/7lWms
-	rA4HJlG7dBLO8FQElJEQRcZeokF4u55eStxdoVEMYP6ohsmy4ybTvrdsC4vlKjiC70mSpEnOBfq62
-	Wc0xtPG4Q71hGVe2r/Oz9sDGmhhlF1vL1S/NkF3g4NnnAaPwjI4COlUHpggV0y4zxWmatWu5NVdDB
-	ufMmNKuyyiQ5QEuJ4KZ/hmD2Pjs79LTPyhw2VVjV8VcbKSLwddEtm/83i7i6mvwU45gIyEBWt385o
-	+iID34Gg==;
+	bh=Ot4q4Cc+kTP+n3+A7DLZyEZtEiV4aU55eMBP3gDDEiA=; b=rTKUkJaLVZcN/rI0HrGN31Xr26
+	Seu92nAELMXEYrwYoKlp0OP5v/NNqXPUPh/LvRvcZs8G95WP9DaN/7EMV3li1RQUGZvxoB0ZFvbI1
+	/F+OxZieeG6XnXjqIwLIHKmy6eqi8TpzHExl69t2PVpQqkFR2dO1LvAIfPPTl3g2RWvKwszCMLKFe
+	eK4VlHmBkBIuJUyeAl58bXWGNuCdqVgnfLiQEFG/04pZECQ897aFOfv+rgXrfSysVeVUXCAfdj33B
+	8sXqxCN9JxhXJWGulPeY263rreIE0/y91lIzMTvAAMFgEaIdYG758V8BTUSIjn/S8F/qXENCzwrpP
+	CtivpX5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQLxX-0080CE-R0; Wed, 15 Sep 2021 03:51:43 +0000
+	id 1mQM1e-0081Hc-OL; Wed, 15 Sep 2021 03:55:58 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQLxU-0080Av-JU
- for linux-phy@lists.infradead.org; Wed, 15 Sep 2021 03:51:42 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 18F3pZDf019328;
- Tue, 14 Sep 2021 22:51:35 -0500
+ id 1mQM1c-0081H2-7Q
+ for linux-phy@lists.infradead.org; Wed, 15 Sep 2021 03:55:58 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 18F3trWQ020925;
+ Tue, 14 Sep 2021 22:55:53 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1631677895;
- bh=0/DzyW1aTj0CujHkJ0bEl7T6yiNv8PfN/vXyA4LrYtY=;
+ s=ti-com-17Q1; t=1631678153;
+ bh=NOWf3Tw8nMIlDygnj/QSqgpmbmyCG8WVn2RlCuUiO+s=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=nUeob6WsxUrTWfaC+yKmSe3UZ7TxJJ0mx0e99paHwFBRIrx/5KRsBMTOvrE/Ylprk
- ncAi1qPmgZjvPxGtZV4WptWa2B2flHEmWSezxczzgtF5bgEDG2zVbJGvkQ7u1hVuog
- SA7pcofEkQHXhzvw33Zg1WpsuoflR+nWoPIdU1pU=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 18F3pZw6039433
+ b=myBKNqNIc4Vy/AXf6edo9Ki+y2c6mpWxY0q4BApw5Mu7vyTi9rfa/YZG1R+Un0KOl
+ 9cqek7oRP3w+GVnfkd6S8YSa6tkPzCTudPOISHWcLBeQmor7iKbYV2QnZ2in1t+J6A
+ MV7YjYn+EmH5gI1Rs5tn1qXTgfOr4XzoJGDrwkZg=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 18F3troO064145
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 14 Sep 2021 22:51:35 -0500
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 14 Sep 2021 22:55:53 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Tue, 14
- Sep 2021 22:51:35 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ Sep 2021 22:55:52 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Tue, 14 Sep 2021 22:51:35 -0500
+ Frontend Transport; Tue, 14 Sep 2021 22:55:52 -0500
 Received: from [10.250.232.217] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 18F3pVj9109416;
- Tue, 14 Sep 2021 22:51:32 -0500
-Subject: Re: [PATCH 1/5] phy: cadence-torrent: Migrate to clk_hw based
- registration and OF APIs
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 18F3tmu7069566;
+ Tue, 14 Sep 2021 22:55:49 -0500
+Subject: Re: [PATCH 3/5] phy: cadence-torrent: Add support for derived
+ reference clock output
 To: Swapnil Jakhade <sjakhade@cadence.com>, <vkoul@kernel.org>,
  <robh+dt@kernel.org>, <linux-phy@lists.infradead.org>,
  <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
 CC: <mparab@cadence.com>, <lokeshvutla@ti.com>, <a-govindraju@ti.com>
 References: <20210908182628.28364-1-sjakhade@cadence.com>
- <20210908182628.28364-2-sjakhade@cadence.com>
+ <20210908182628.28364-4-sjakhade@cadence.com>
 From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <e6c0b780-d5d5-f641-7e9f-d2c917eb4b51@ti.com>
-Date: Wed, 15 Sep 2021 09:21:30 +0530
+Message-ID: <48b7b8c0-5550-623f-ae28-caf99b17cee3@ti.com>
+Date: Wed, 15 Sep 2021 09:25:47 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.11.0
 MIME-Version: 1.0
-In-Reply-To: <20210908182628.28364-2-sjakhade@cadence.com>
+In-Reply-To: <20210908182628.28364-4-sjakhade@cadence.com>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210914_205140_849736_CF69BB03 
-X-CRM114-Status: GOOD (  20.43  )
+X-CRM114-CacheID: sfid-20210914_205556_420152_D337898C 
+X-CRM114-Status: GOOD (  24.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,97 +101,197 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 Hi Swapnil,
 
 On 08/09/21 11:56 pm, Swapnil Jakhade wrote:
-> Use clk_hw based provider APIs to register clks.
-
-Please explain the reasoning for moving to clk_hw based API.
-
-Thanks,
-Kishon
+> Update the reference clock driver implementation where cmn_refclk_<p/m>
+> is configured to output the reference clock. cmn_refclk_p/m will output
+> either derived or received reference clock based on the selection. So,
+> all these clocks should be modelled separately. Model the derived
+> reference clock here as a first step to support reference clock driver.
 > 
+
+Will AM64 work after this patch? Since you are removing bunch of configurations
+here, would it affect git bisectability?
+
+Thanks
+Kishon
+
 > Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 > ---
->  drivers/phy/cadence/phy-cadence-torrent.c | 30 ++++++++++++++---------
->  1 file changed, 19 insertions(+), 11 deletions(-)
+>  drivers/phy/cadence/phy-cadence-torrent.c | 78 +++++++++--------------
+>  1 file changed, 31 insertions(+), 47 deletions(-)
 > 
 > diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-> index 415ace64adc5..ecb1aa883c05 100644
+> index ecb1aa883c05..6dceb12e88c4 100644
 > --- a/drivers/phy/cadence/phy-cadence-torrent.c
 > +++ b/drivers/phy/cadence/phy-cadence-torrent.c
-> @@ -235,6 +235,8 @@
+> @@ -235,10 +235,11 @@
 >  #define PHY_PMA_CMN_CTRL2		0x0001U
 >  #define PHY_PMA_PLL_RAW_CTRL		0x0003U
 >  
-> +#define CDNS_TORRENT_OUTPUT_CLOCKS	1
-> +
+> -#define CDNS_TORRENT_OUTPUT_CLOCKS	1
+> +#define CDNS_TORRENT_OUTPUT_CLOCKS	2
+>  
 >  static const char * const clk_names[] = {
 >  	[CDNS_TORRENT_REFCLK_DRIVER] = "refclk-driver",
->  };
-> @@ -333,8 +335,7 @@ struct cdns_torrent_phy {
->  	struct regmap_field *phy_pma_pll_raw_ctrl;
->  	struct regmap_field *phy_reset_ctrl;
->  	struct regmap_field *phy_pcs_iso_link_ctrl_1[MAX_NUM_LANES];
-> -	struct clk *clks[CDNS_TORRENT_REFCLK_DRIVER + 1];
-> -	struct clk_onecell_data clk_data;
-> +	struct clk_hw_onecell_data *clk_hw_data;
+> +	[CDNS_TORRENT_DERIVED_REFCLK] = "refclk-der",
 >  };
 >  
->  enum phy_powerstate {
-> @@ -1659,8 +1660,9 @@ static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy *cdns_ph
+>  static const struct reg_field phy_pll_cfg =
+> @@ -261,23 +262,8 @@ static const struct reg_field phy_pcs_iso_link_ctrl_1 =
+>  
+>  static const struct reg_field phy_pipe_cmn_ctrl1_0 = REG_FIELD(PHY_PIPE_CMN_CTRL1, 0, 0);
+>  
+> -#define REFCLK_OUT_NUM_CMN_CONFIG	5
+> -
+> -enum cdns_torrent_refclk_out_cmn {
+> -	CMN_CDIAG_REFCLK_OVRD_4,
+> -	CMN_CDIAG_REFCLK_DRV0_CTRL_1,
+> -	CMN_CDIAG_REFCLK_DRV0_CTRL_4,
+> -	CMN_CDIAG_REFCLK_DRV0_CTRL_5,
+> -	CMN_CDIAG_REFCLK_DRV0_CTRL_6,
+> -};
+> -
+> -static const struct reg_field refclk_out_cmn_cfg[] = {
+> -	[CMN_CDIAG_REFCLK_OVRD_4]	= REG_FIELD(CMN_CDIAG_REFCLK_OVRD, 4, 4),
+> -	[CMN_CDIAG_REFCLK_DRV0_CTRL_1]	= REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 1, 1),
+> -	[CMN_CDIAG_REFCLK_DRV0_CTRL_4]	= REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 4, 4),
+> -	[CMN_CDIAG_REFCLK_DRV0_CTRL_5]  = REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 5, 5),
+> -	[CMN_CDIAG_REFCLK_DRV0_CTRL_6]	= REG_FIELD(CMN_CDIAG_REFCLK_DRV0_CTRL, 6, 6),
+> -};
+> +static const struct reg_field cmn_cdiag_refclk_ovrd_4 =
+> +				REG_FIELD(CMN_CDIAG_REFCLK_OVRD, 4, 4);
+>  
+>  enum cdns_torrent_phy_type {
+>  	TYPE_NONE,
+> @@ -330,6 +316,8 @@ struct cdns_torrent_phy {
+>  	struct regmap *regmap_phy_pcs_lane_cdb[MAX_NUM_LANES];
+>  	struct regmap *regmap_dptx_phy_reg;
+>  	struct regmap_field *phy_pll_cfg;
+> +	struct regmap_field *phy_pipe_cmn_ctrl1_0;
+> +	struct regmap_field *cmn_cdiag_refclk_ovrd_4;
+>  	struct regmap_field *phy_pma_cmn_ctrl_1;
+>  	struct regmap_field *phy_pma_cmn_ctrl_2;
+>  	struct regmap_field *phy_pma_pll_raw_ctrl;
+> @@ -348,7 +336,7 @@ enum phy_powerstate {
+>  struct cdns_torrent_derived_refclk {
+>  	struct clk_hw		hw;
+>  	struct regmap_field	*phy_pipe_cmn_ctrl1_0;
+> -	struct regmap_field	*cmn_fields[REFCLK_OUT_NUM_CMN_CONFIG];
+> +	struct regmap_field	*cmn_cdiag_refclk_ovrd_4;
+>  	struct clk_init_data	clk_data;
+>  };
+>  
+> @@ -1618,11 +1606,7 @@ static int cdns_torrent_derived_refclk_enable(struct clk_hw *hw)
+>  {
+>  	struct cdns_torrent_derived_refclk *derived_refclk = to_cdns_torrent_derived_refclk(hw);
+>  
+> -	regmap_field_write(derived_refclk->cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_6], 0);
+> -	regmap_field_write(derived_refclk->cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_4], 1);
+> -	regmap_field_write(derived_refclk->cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_5], 1);
+> -	regmap_field_write(derived_refclk->cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_1], 0);
+> -	regmap_field_write(derived_refclk->cmn_fields[CMN_CDIAG_REFCLK_OVRD_4], 1);
+> +	regmap_field_write(derived_refclk->cmn_cdiag_refclk_ovrd_4, 1);
+>  	regmap_field_write(derived_refclk->phy_pipe_cmn_ctrl1_0, 1);
+>  
+>  	return 0;
+> @@ -1633,6 +1617,7 @@ static void cdns_torrent_derived_refclk_disable(struct clk_hw *hw)
+>  	struct cdns_torrent_derived_refclk *derived_refclk = to_cdns_torrent_derived_refclk(hw);
+>  
+>  	regmap_field_write(derived_refclk->phy_pipe_cmn_ctrl1_0, 0);
+> +	regmap_field_write(derived_refclk->cmn_cdiag_refclk_ovrd_4, 0);
+>  }
+>  
+>  static int cdns_torrent_derived_refclk_is_enabled(struct clk_hw *hw)
+> @@ -1640,7 +1625,7 @@ static int cdns_torrent_derived_refclk_is_enabled(struct clk_hw *hw)
+>  	struct cdns_torrent_derived_refclk *derived_refclk = to_cdns_torrent_derived_refclk(hw);
+>  	int val;
+>  
+> -	regmap_field_read(derived_refclk->phy_pipe_cmn_ctrl1_0, &val);
+> +	regmap_field_read(derived_refclk->cmn_cdiag_refclk_ovrd_4, &val);
+>  
+>  	return !!val;
+>  }
+> @@ -1655,21 +1640,19 @@ static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy *cdns_ph
+>  {
+>  	struct cdns_torrent_derived_refclk *derived_refclk;
+>  	struct device *dev = cdns_phy->dev;
+> -	struct regmap_field *field;
+>  	struct clk_init_data *init;
 >  	const char *parent_name;
->  	struct regmap *regmap;
+> -	struct regmap *regmap;
 >  	char clk_name[100];
-> +	struct clk_hw *hw;
+>  	struct clk_hw *hw;
 >  	struct clk *clk;
-> -	int i;
-> +	int i, ret;
+> -	int i, ret;
+> +	int ret;
 >  
 >  	derived_refclk = devm_kzalloc(dev, sizeof(*derived_refclk), GFP_KERNEL);
 >  	if (!derived_refclk)
-> @@ -1706,11 +1708,12 @@ static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy *cdns_ph
+>  		return -ENOMEM;
+>  
+>  	snprintf(clk_name, sizeof(clk_name), "%s_%s", dev_name(dev),
+> -		 clk_names[CDNS_TORRENT_REFCLK_DRIVER]);
+> +		 clk_names[CDNS_TORRENT_DERIVED_REFCLK]);
+>  
+>  	clk = devm_clk_get_optional(dev, "phy_en_refclk");
+>  	if (IS_ERR(clk)) {
+> @@ -1688,23 +1671,8 @@ static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy *cdns_ph
+>  	init->flags = 0;
+>  	init->name = clk_name;
+>  
+> -	regmap = cdns_phy->regmap_phy_pcs_common_cdb;
+> -	field = devm_regmap_field_alloc(dev, regmap, phy_pipe_cmn_ctrl1_0);
+> -	if (IS_ERR(field)) {
+> -		dev_err(dev, "phy_pipe_cmn_ctrl1_0 reg field init failed\n");
+> -		return PTR_ERR(field);
+> -	}
+> -	derived_refclk->phy_pipe_cmn_ctrl1_0 = field;
+> -
+> -	regmap = cdns_phy->regmap_common_cdb;
+> -	for (i = 0; i < REFCLK_OUT_NUM_CMN_CONFIG; i++) {
+> -		field = devm_regmap_field_alloc(dev, regmap, refclk_out_cmn_cfg[i]);
+> -		if (IS_ERR(field)) {
+> -			dev_err(dev, "CMN reg field init failed\n");
+> -			return PTR_ERR(field);
+> -		}
+> -		derived_refclk->cmn_fields[i] = field;
+> -	}
+> +	derived_refclk->phy_pipe_cmn_ctrl1_0 = cdns_phy->phy_pipe_cmn_ctrl1_0;
+> +	derived_refclk->cmn_cdiag_refclk_ovrd_4 = cdns_phy->cmn_cdiag_refclk_ovrd_4;
 >  
 >  	derived_refclk->hw.init = init;
 >  
-> -	clk = devm_clk_register(dev, &derived_refclk->hw);
-> -	if (IS_ERR(clk))
-> -		return PTR_ERR(clk);
-> +	hw = &derived_refclk->hw;
-> +	ret = devm_clk_hw_register(dev, hw);
-> +	if (ret)
-> +		return ret;
+> @@ -1713,7 +1681,7 @@ static int cdns_torrent_derived_refclk_register(struct cdns_torrent_phy *cdns_ph
+>  	if (ret)
+>  		return ret;
 >  
-> -	cdns_phy->clks[CDNS_TORRENT_REFCLK_DRIVER] = clk;
-> +	cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER] = hw;
+> -	cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER] = hw;
+> +	cdns_phy->clk_hw_data->hws[CDNS_TORRENT_DERIVED_REFCLK] = hw;
 >  
 >  	return 0;
 >  }
-> @@ -2188,18 +2191,23 @@ static int cdns_torrent_clk_register(struct cdns_torrent_phy *cdns_phy)
->  {
->  	struct device *dev = cdns_phy->dev;
->  	struct device_node *node = dev->of_node;
-> +	struct clk_hw_onecell_data *data;
->  	int ret;
->  
-> +	data = devm_kzalloc(dev, struct_size(data, hws, CDNS_TORRENT_OUTPUT_CLOCKS), GFP_KERNEL);
-> +	if (!data)
-> +		return -ENOMEM;
-> +
-> +	data->num = CDNS_TORRENT_OUTPUT_CLOCKS;
-> +	cdns_phy->clk_hw_data = data;
-> +
->  	ret = cdns_torrent_derived_refclk_register(cdns_phy);
->  	if (ret) {
->  		dev_err(dev, "failed to register derived refclk\n");
->  		return ret;
+> @@ -1768,6 +1736,22 @@ static int cdns_torrent_regfield_init(struct cdns_torrent_phy *cdns_phy)
 >  	}
+>  	cdns_phy->phy_pll_cfg = field;
 >  
-> -	cdns_phy->clk_data.clks = cdns_phy->clks;
-> -	cdns_phy->clk_data.clk_num = CDNS_TORRENT_REFCLK_DRIVER + 1;
-> -
-> -	ret = of_clk_add_provider(node, of_clk_src_onecell_get, &cdns_phy->clk_data);
-> +	ret = of_clk_add_hw_provider(node, of_clk_hw_onecell_get, data);
->  	if (ret) {
->  		dev_err(dev, "Failed to add clock provider: %s\n", node->name);
->  		return ret;
+> +	regmap = cdns_phy->regmap_phy_pcs_common_cdb;
+> +	field = devm_regmap_field_alloc(dev, regmap, phy_pipe_cmn_ctrl1_0);
+> +	if (IS_ERR(field)) {
+> +		dev_err(dev, "phy_pipe_cmn_ctrl1_0 reg field init failed\n");
+> +		return PTR_ERR(field);
+> +	}
+> +	cdns_phy->phy_pipe_cmn_ctrl1_0 = field;
+> +
+> +	regmap = cdns_phy->regmap_common_cdb;
+> +	field = devm_regmap_field_alloc(dev, regmap, cmn_cdiag_refclk_ovrd_4);
+> +	if (IS_ERR(field)) {
+> +		dev_err(dev, "cmn_cdiag_refclk_ovrd_4 reg field init failed\n");
+> +		return PTR_ERR(field);
+> +	}
+> +	cdns_phy->cmn_cdiag_refclk_ovrd_4 = field;
+> +
+>  	regmap = cdns_phy->regmap_phy_pma_common_cdb;
+>  	field = devm_regmap_field_alloc(dev, regmap, phy_pma_cmn_ctrl_1);
+>  	if (IS_ERR(field)) {
 > 
 
 -- 
