@@ -2,86 +2,79 @@ Return-Path: <SRS0=DVIa=OF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-9.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=3.4.0
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0FF56C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 15:13:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A2077C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 19:52:16 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C8E9161029
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 15:13:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C8E9161029
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 5B0786105A
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Sep 2021 19:52:16 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 5B0786105A
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linux.intel.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OkkMgjIfEedTJdGdcJ0Xq3Fk0zQMHjAzCOW+UqVPsp0=; b=Ny7aWR3YfiYSAri3qC5kJKGTvK
-	W8AsI8VNKBdHwgYQAlply3C5ATTxmNOfBUi1uyQUXYEllnD/iL/kOEaRmkbaO41Szsbcjyf4QvaFF
-	GejaGMvaKxBNys/riC5r/qYsN/bcrryUAdDj2ZWcx0qQl6LLqF0ufR98DoIJ/JVXJCrtNoHzgB9Oh
-	BJGBUq/sRhqMW4n8NLMfmteST+rM1vBoLu7qcqx+m20xacddgot8aWtrDLzaqPdz8yok997W9cJyZ
-	YkECbKdFVneNCWl7b8OSGpfpfdavALAqBmUd23C5FOtZzlCA9NDWm0rIV9XOCWUd9XOiNQhCHfZFI
-	GADUMjmg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eQO7reiHeJQAVCaCB8ntYm5XkjqKR/BhAg7MSTR144k=; b=XVXtAlW/kXjk2I
+	vqi1/OtOZeMLWgisr5yTxlrHbVnHmliN4YcaMR2/+9gDPJLj4eRpXSpwilhFnOx5T5S95Kzo9AWjh
+	E+cEns96exqVn6zk41w7LN1ZK8GkNxgbDn54q8fdWNNA57q9vOwxDYWxYS8rJ79fZCVd+zxThuNv4
+	1uVQnfyxPxDvsMuUQJ733uqwWPGHCxCzi2SjovP+3d2A1J7WvWgZnMVToPdAMP02/sUUg8K29F2KE
+	bcW0csrICmnEQmXyz7HHc8xPtu2bxabebduX97F6+5BWa5Ns7fNO/tBi3PoRsB6hQvMotjXNyh2TY
+	Ks6fZN5292ABISW4qS2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQWbd-009Nln-DA; Wed, 15 Sep 2021 15:13:49 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1mQax5-009nWR-Nl; Wed, 15 Sep 2021 19:52:15 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQWbZ-009Njg-5d
- for linux-phy@lists.infradead.org; Wed, 15 Sep 2021 15:13:48 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 18FFDgfu010872;
- Wed, 15 Sep 2021 10:13:42 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1631718822;
- bh=SlLW5Xj9oEORlw+AqDDG6RwUyumDe2hRBZ/TEGWdrAk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=oW+UKS9jUXsaPDuvtDIvrmYFBC0Mbko/rPwKdslsIrPnVMTrHt2EI2Ji8oP9BvWBD
- lHJihiWrRf8p42J/BKScYw+ZbZyyvEoS2jm3a/b/TqNuYlqaA8TMOoXI14D/w7kz5J
- x+V/GGO9BdoUIMguesLi0W3VWSaeDtRhSQaicUrs=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 18FFDfPW069214
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 15 Sep 2021 10:13:41 -0500
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Wed, 15
- Sep 2021 10:13:41 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Wed, 15 Sep 2021 10:13:41 -0500
-Received: from [10.250.232.51] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 18FFDbjn106503;
- Wed, 15 Sep 2021 10:13:38 -0500
-Subject: Re: [PATCH v2 00/15] PHY: Add support for multilink configurations in
- Cadence Sierra PHY driver
-To: Swapnil Jakhade <sjakhade@cadence.com>, <vkoul@kernel.org>,
- <kishon@ti.com>, <robh+dt@kernel.org>, <p.zabel@pengutronix.de>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>
-CC: <mparab@cadence.com>, <lokeshvutla@ti.com>
-References: <20210908122930.10224-1-sjakhade@cadence.com>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <23a8f4d9-3467-1cf5-eec7-a4d33fe03458@ti.com>
-Date: Wed, 15 Sep 2021 20:43:37 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.13.0
+ id 1mQaws-009nUP-9S; Wed, 15 Sep 2021 19:52:04 +0000
+X-IronPort-AV: E=McAfee;i="6200,9189,10108"; a="222076193"
+X-IronPort-AV: E=Sophos;i="5.85,296,1624345200"; d="scan'208";a="222076193"
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 15 Sep 2021 12:51:59 -0700
+X-IronPort-AV: E=Sophos;i="5.85,296,1624345200"; d="scan'208";a="482468324"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by orsmga008-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 15 Sep 2021 12:51:55 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 42E0920656; Wed, 15 Sep 2021 22:51:53 +0300 (EEST)
+Date: Wed, 15 Sep 2021 22:51:53 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: Maxime Ripard <maxime@cerno.tech>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-staging@lists.linux.dev, Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH 15/22] media: sunxi: Remove the sun6i-csi driver
+ implementation
+Message-ID: <YUJO2cG/46vOkuBe@paasikivi.fi.intel.com>
+References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
+ <20210910184147.336618-16-paul.kocialkowski@bootlin.com>
+ <20210913081707.3pjcfuwan46pbdep@gilmour>
+ <YUBXiSrQjccLoa8b@aptenodytes>
 MIME-Version: 1.0
-In-Reply-To: <20210908122930.10224-1-sjakhade@cadence.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <YUBXiSrQjccLoa8b@aptenodytes>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210915_081345_359417_912EFC1C 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20210915_125202_414633_DAF35A39 
+X-CRM114-Status: GOOD (  54.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,59 +91,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Paul, Maxime,
 
-On 08/09/21 5:59 pm, Swapnil Jakhade wrote:
-> Cadence Sierra PHY is a multiprotocol PHY supporting different multilink
-> PHY configurations. This patch series extends functionality of Sierra PHY
-> driver by adding features like support for multilink multiprotocol
-> configurations, derived reference clock etc.
+On Tue, Sep 14, 2021 at 10:04:25AM +0200, Paul Kocialkowski wrote:
+> Hi,
 > 
-> The changes have been validated on TI J721E platform.
+> On Mon 13 Sep 21, 10:17, Maxime Ripard wrote:
+> > On Fri, Sep 10, 2021 at 08:41:40PM +0200, Paul Kocialkowski wrote:
+> > > As described in the commit adding support for the new sun6i-csi driver,
+> > > a complete rewrite was necessary to support the Allwinner A31 ISP as
+> > > well as fix a number of issues with the current implementation.
+> > > 
+> > > Farewell and thanks for all the pixels!
+> > > 
+> > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > 
+> > For completeness, this is what the other commit log mentions:
+> > 
+> > > While adapting the sun6i-csi driver for MIPI CSI-2 support was
+> > > possible, it became clear that adding support for the ISP required
+> > > very heavy changes to the driver which were quite hard to break down
+> > > into a series of subsequent changes.
+> > 
+> > > The first major difficulty comes from the lack of v4l2 subdev that
+> > > acts a bridge, separate from the video node representing the DMA
+> > > engine. To support the ISP, only parts of the hardware must be
+> > > configured (excluding aspects related to the DMA output), which made
+> > > the separation a hard requirement.
+> > 
+> > > Another significant difficulty was the specific dance that is required
+> > > to have both the ISP and CSI device be part of the same media device.
+> > > Because the ISP and CSI are two different hardware blocks, they have
+> > > two distinct drivers that will each try to register their own v4l2
+> > > and media devices, resulting in two distinct pipelines. When the ISP
+> > > is in use, we actually want the CSI driver to register with the ISP's
+> > > v4l2 and media devices while keeping the ability to register its own
+> > > when the ISP is not in use. This is done by:
+> > > 1. Having the CSI driver check whether the ISP is available, using
+> > >    sun6i_csi_isp_detect();
+> > > 2. If not, it can register when its own async subdevs are ready, using
+> > >    sun6i_csi_v4l2_complete();
+> > > 3. If so, it will register its bridge as an async subdev which will
+> > >    be picked-up by the ISP driver (from the fwnode graph link);
+> > > 4. When the subdev becomes bound to the ISP's v4l2 device, we can
+> > >    then access that device (and the associated media device) to
+> > >    complete registration of the capture video node, using
+> > >    sun6i_csi_isp_complete();
+> > > Besides the logic rework, other issues were identified and resolved:
+> > > - The sync mechanism for buffer flipping was based on the frame done
+> > >   interrupt, which is too late (next frame is already being processed).
+> > >   This lead to requiring 3 buffers to start and writing two addresses
+> > >   when starting. Using vsync as a sync point seems to be the correct
+> > >   approach and allows using only two buffers without tearing;
+> > > - Using devm_regmap_init_mmio_clk was incorrect since the reset also
+> > >   comes into play;
+> > > - Some register definitions were inverted compared to their actual
+> > >   effect (which was inherited from the Allwinner documentation and
+> > >   code): comments were added where relevant;
+> > > - The deprecated v4l2_async_notifier_parse_fwnode_endpoints() helper
+> > >   is no longer used by the driver;
+> > 
+> > With that being said, NAK.
+> > 
+> > Having heavy changes to a driver is completely fine, and is kind of
+> > expected really with such a big change. Breaking all possibility of
+> > bisection and throwing away years of stabilization and maintenance
+> > isn't.
+> > 
+> > And all those small bug fixes you mention at the end are just that:
+> > small bug fixes that can be done on the current driver just fine too.
 > 
-> Version History:
+> I understand that this looks like we're trashing all the work that was
+> done previously by removing the current driver and adding the new one
+> but the logic for deciding what to write into registers was carefully
+> preserved from the original driver to make sure that the works of
+> stabilization and maintenance are not lost.
 > 
-> v2:
->    - Added a new patch 3/15 to rename the SSC macros for dt-bindings
->      to use generic names. These macros are not yet used in any DTS file.
+> However I would understand that my good promise on this is not enough,
+> so perhaps I could provide a combinatory verification that the same set
+> of mbus/pixel formats end up with the same thing being written into
+> registers.
 > 
-> Swapnil Jakhade (15):
->   phy: cadence: Sierra: Use of_device_get_match_data() to get driver
->     data
->   phy: cadence: Sierra: Prepare driver to add support for multilink
->     configurations
->   dt-bindings: phy: cadence-torrent: Rename SSC macros to use generic
->     names
->   dt-bindings: phy: cadence-sierra: Add binding to specify SSC mode
->   phy: cadence: Sierra: Add support to get SSC type from device tree
->   phy: cadence: Sierra: Rename some regmap variables to be in sync with
->     Sierra documentation
->   phy: cadence: Sierra: Add PHY PCS common register configurations
->   phy: cadence: Sierra: Check cmn_ready assertion during PHY power on
->   phy: cadence: Sierra: Check PIPE mode PHY status to be ready for
->     operation
->   phy: cadence: Sierra: Update single link PCIe register configuration
->   phy: cadence: Sierra: Fix to get correct parent for mux clocks
->   phy: cadence: Sierra: Add support for PHY multilink configurations
->   phy: cadence: Sierra: Add PCIe + QSGMII PHY multilink configuration
->   dt-bindings: phy: cadence-sierra: Add clock ID for derived reference
->     clock
->   phy: cadence: Sierra: Add support for derived reference clock output
+> In addition I understand that it will be necessary to split the changes
+> up into small commits to clarify the transition path between the two
+> drivers. So I will do my best to split things up.
 > 
+> Does that seem like an agreeable plan or do you see other things that
+> would be blockers?
 
-for the complete series,
+Please do refactor the patches into reviewable chunks that make sense on
+their own. I'd see the result being the same driver but with additional
+patches fixing bugs, doing some or more refactoring and adding new
+functionality. Please use -C100 -M100 if there's a need to rename files,
+and preferrably do so in separate patches.
 
-Reviewed-by: Aswath Govindraju <a-govindraju@ti.com>
+See e.g. patches to the smiapp driver that turned it into a CCS driver:
 
-Thanks,
-Aswath
+	git log 2db8166f739e75c1269d7e8afe8da68e70098810..b24cc2a18c50e4e315abc76a86b26b4c49652f79~ -- drivers/media/i2c/smiapp
+	git log drivers/media/i2c/ccs
 
->  .../bindings/phy/phy-cadence-sierra.yaml      |    9 +
->  .../bindings/phy/phy-cadence-torrent.yaml     |    4 +-
->  drivers/phy/cadence/phy-cadence-sierra.c      | 1299 +++++++++++++++--
->  include/dt-bindings/phy/phy-cadence.h         |    9 +-
->  4 files changed, 1226 insertions(+), 95 deletions(-)
+Usually bugfixes are best put first.
+
 > 
+> My initial thought was that it would be much easier to review the driver as a
+> rewrite, but I'm not too surprised I was wrong. To be honest it was nearly
+> impossible to actually have the initial development happen as sequential steps
+> and I preferred to allocate my time on other tasks than splitting the changes
+> into these sequential steps.
 
+This isn't really unusual when you're changing an existing driver:
+sometimes you have to implement what you want to achieve in whole, and only
+then figure out how to split it into something that can be reviewed. Often
+the end result will look different than what you arrived with on the first
+time.
+
+-- 
+Kind regards,
+
+Sakari Ailus
 
 -- 
 linux-phy mailing list
