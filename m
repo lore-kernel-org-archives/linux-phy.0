@@ -2,20 +2,19 @@ Return-Path: <SRS0=0wW3=OG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-4.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BCEDCC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Sep 2021 10:23:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2BC2DC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Sep 2021 16:30:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4DAB76120D
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Sep 2021 10:23:07 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 4DAB76120D
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
+	by mail.kernel.org (Postfix) with ESMTPS id EBAB76135A
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Sep 2021 16:30:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org EBAB76135A
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cerno.tech
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -23,41 +22,89 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EFm+uef/uIdSMCoC4sbmsse5PXO3fTS8R7BWMbtiyxg=; b=bfHl1MynRYRqxnlVtjPTN/GRnE
-	NBnXT91wdnsjJyvQCMjwVfq8OQys49tLgyILUlnfqeSpN9wILnFRD79wAu0rYb9ITKOQ8bJOXmtkZ
-	NfANupY9hO7Cv9/xnrrC7sR1jmUEJH31EVokVFrpQYGchsVz6DODbV20AM6A0UIf820KiWX8TyU86
-	EXxfDnRF/daOz6S9j/MoagYLpVwGSrA7t+sPSFuWEj5ZmBvifPYkpX6QlgfWbtXgSNn7H8rn4/Ij1
-	t0s4ZsUuwir/Bbmg23i7t9nm8Mn6p85P8iCpB9BElBY8XxGMYVL7YPsX26VjCtMv75G9UbxwjwhuY
-	gjIEPIdA==;
+	bh=ugLNhx7EbcDfVhiZDWOtRrb4c/0KFr8YTInuLxMdUrs=; b=NM6+PRVrQRUsSRFGm+3Kn43cbR
+	ZARs8oXr5r+sWbnzl42Y4WdNh+lvDZCB5s5KoZCiS9Z+CzjfS0is1htzTBz4ZdIsxo0ifhZzfQlxH
+	KEBOtxbUeS5fqcV1lSRV97GZj74FLBGPNvMnU78dEz41onfxVcIR5z9RQde0EMosN4RMgvTYou5cT
+	0DiDfiNbxQ51rSbAhO0qX86eUulx4M6T5JrYL3if8GBFizeAYyI6jX4d/S4HyZpLakylb29S/1vlG
+	XXuwlVUGWStjWK7RzV/fRwzIxuVUQDJRdfvhBGoflMekeGgT7QnW28P8zBfUDVv2CWIYh2JX4MkMt
+	cn8xwK+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mQoXq-00Aq5q-MH; Thu, 16 Sep 2021 10:23:06 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1mQuHM-00Bfv1-EW; Thu, 16 Sep 2021 16:30:28 +0000
+Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mQoXl-00Aq4z-Pf
- for linux-phy@lists.infradead.org; Thu, 16 Sep 2021 10:23:04 +0000
-Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 7A71F40004;
- Thu, 16 Sep 2021 10:22:55 +0000 (UTC)
-Date: Thu, 16 Sep 2021 12:22:54 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Pratyush Yadav <p.yadav@ti.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ id 1mQuH4-00Bfnx-Te; Thu, 16 Sep 2021 16:30:12 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+ by mailnew.west.internal (Postfix) with ESMTP id B62142B00B18;
+ Thu, 16 Sep 2021 12:30:07 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute1.internal (MEProxy); Thu, 16 Sep 2021 12:30:09 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=Lqt0we4A/T0SHYBhw0ZBiteVrFa
+ e9rbK0EPrRuFl3oY=; b=LnIWuareiS2jP4nnsunZoVLeH91/ijKlwjtNs0JMLTq
+ W5SkajmnGWk707CsLe1azxnZa8myH4n+bFwA8ckwnQjA8EphQZ0JCTbh4Y6K4n92
+ g2g1F/E53xOP06kQjsn+JOMXRyEu2S88ZzuGGJQxDVYZTatLErit5ewiKV6u2BdI
+ lsdp1cZ5a3HMBapmFj07mGRW4hl42aMEFuzE7fU2OxArRkU7uz0Iikxns502WK2A
+ VurLq8I/YfExtRjENhb9CeCKHxLmcZVIj9cZsKuRCnd2TZcIYlaMPv+7tJ16zeKO
+ lv+MK8f24hm/KgC6L9xe5JnBP56ZQ7rQAeA2NIPzziw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=Lqt0we
+ 4A/T0SHYBhw0ZBiteVrFae9rbK0EPrRuFl3oY=; b=hzcmiTskzfJ0LpViQyTC36
+ ukeBnRV3kVOlWsu8LkC8k3TIb0V6CrrFJkdx5Op//6RBN8W6uLa83Op2gJZ5M6bA
+ 5CKZYAMI8pT3jB91IQObI/Zwdf7H9RY3lcqQvuTZhmouwzJmpjnAINJFQk9RZqCP
+ oU/PuigbRr66lGhsqy7F+GrdxXBtRVpmg3VbU/sccLOyqg5GIWO6uiqOk+75rKvi
+ GRDXS8VgLCMv6LllYt39AjMMPv/a9ZRqCUaBNHwX4nrPHQB95LHjWGSY5fpeEy9C
+ I78PdIa9tVQJn/iwGijd8nj+guRXbXSpCIkz5ojHdqqkHjRo0hnQ5vsB7RyPdKEA
+ ==
+X-ME-Sender: <xms:DHFDYefc5hj8gi4dxWD0LPwIZ-7eCAuChRgl45hXKphK3maJmwnwXg>
+ <xme:DHFDYYO0rUPS9nmSFSqwpcxqfQ_pQUfnIXBaWh_gKPlov19Nv09H08sl9fMbW8jej
+ x4FLS8PBE-WDjuxu1Q>
+X-ME-Received: <xmr:DHFDYfjlR9vtTu4VW1DUC-1go9vAGAgiu4mdYnnLPoc-sg8jUE3667OYC6LwQ6eKgLK2bp65AsiHYahP4-YRGqqoixLRb-JI6Ggs>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudehgedgleeiucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmh
+ grgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:DHFDYb8mvUuKkKkddxegg6gItiZ5TjT8Cc64Qf7pAUHPtYmMU-xSjA>
+ <xmx:DHFDYavdsMaQrdk1zzZdfVtKrlwD3fDdTKdBvT-bzXktew1v5aVQpw>
+ <xmx:DHFDYSGgAKXuaQV93QNJ2A44fGIJFswzUnmo5pe6HbLIx8qSeTi1UA>
+ <xmx:D3FDYVkgEXJK3xiJFUwFzoVSyYi_MlOVvwBGpewYBcsbvogO0Rptf9nzLW8>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
+ 16 Sep 2021 12:30:03 -0400 (EDT)
+Date: Thu, 16 Sep 2021 18:30:00 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Nikhil Devshatwar <nikhil.nd@ti.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 2/6] phy: cdns-dphy: Add Rx support
-Message-ID: <YUMa/ocoQ9l3JDe6@aptenodytes>
-References: <20210902185543.18875-1-p.yadav@ti.com>
- <20210902185543.18875-3-p.yadav@ti.com>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH 01/22] clk: sunxi-ng: v3s: Make the ISP PLL clock public
+Message-ID: <20210916163000.6ezo6muhq23bewyi@gilmour>
+References: <20210910184147.336618-1-paul.kocialkowski@bootlin.com>
+ <20210910184147.336618-2-paul.kocialkowski@bootlin.com>
+ <20210913075417.ampb2jt4quftpqzj@gilmour>
+ <YT8RnzVqLebtPMD+@aptenodytes>
 MIME-Version: 1.0
-In-Reply-To: <20210902185543.18875-3-p.yadav@ti.com>
+In-Reply-To: <YT8RnzVqLebtPMD+@aptenodytes>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210916_032302_167025_98820AAB 
-X-CRM114-Status: GOOD (  39.83  )
+X-CRM114-CacheID: sfid-20210916_093011_226853_A0DE1D18 
+X-CRM114-Status: GOOD (  28.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,372 +116,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5208592133071886579=="
+Content-Type: multipart/mixed; boundary="===============5608603067172378064=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5208592133071886579==
+--===============5608603067172378064==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Bd8Tu5xeLZcdEGbq"
+	protocol="application/pgp-signature"; boundary="6h7nudibxh245pvl"
 Content-Disposition: inline
 
 
---Bd8Tu5xeLZcdEGbq
-Content-Type: text/plain; charset=utf-8
+--6h7nudibxh245pvl
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Hi,
+Salut Paul,
 
-On Fri 03 Sep 21, 00:25, Pratyush Yadav wrote:
-> The Cadence DPHY can be used to receive image data over the CSI-2
-> protocol. Add support for Rx mode. The programming sequence differs from
-> the Tx mode so it is added as a separate set of hooks to isolate the two
-> paths. The mode in which the DPHY has to be used is selected based on
-> the compatible.
-
-I just realized that I didn't follow-up on a previous revision on the debate
-about using the phy sub-mode to distinguish between rx/tx.
-
-I see that you've been using a dedicated compatible, but I'm not sure this =
-is a
-good fit either. My understanding is that the compatible should describe a =
-group
-of register-compatible revisions of a hardware component, not how the hardw=
-are
-is used specifically. I guess the distinction between rx/tx falls under
-the latter rather than the former.
-
-I just sent out a patch in my Allwinner MIPI CSI-2+ISP series adding
-a specific direction property:
-- https://lists.infradead.org/pipermail/linux-phy/2021-September/001420.html
-- https://lists.infradead.org/pipermail/linux-phy/2021-September/001421.html
-
-Which I feel is a more appropriate solution to implement the distinction.
-
-What do you think?
-
-Cheers,
-
-Paul
-=20
-> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+On Mon, Sep 13, 2021 at 10:53:51AM +0200, Paul Kocialkowski wrote:
+> On Mon 13 Sep 21, 09:54, Maxime Ripard wrote:
+> > On Fri, Sep 10, 2021 at 08:41:26PM +0200, Paul Kocialkowski wrote:
+> > > In order to reparent the CSI module clock to the ISP PLL via
+> > > device-tree, export the ISP PLL clock declaration in the public
+> > > device-tree header.
+> >=20
+> > You use clk_set_rate_exclusive in the ISP driver on the module clock so
+> > it should prevent what you're mentioning from happening.
 >=20
-> ---
+> It does, but then it breaks display support entirely (because the DRM
+> driver doesn't use clk_set_rate_exclusive).
 >=20
-> Changes in v5:
-> - Use the new cdns_dphy_info to specify PHY ops.
-> - Re-order include in alphabetical order.
-> - Make bands const.
-> - Drop num_bands.
-> - Make i, lanes unsigned.
-> - Drop the maximum check in cdns_dphy_rx_get_band_ctrl(). Let the loop
->   complete and return -EOPNOTSUPP when we reach the end.
-> - Drop the "rate < bands[i].min_rate" check since the bands are in
->   ascending order.
-> - Move data_lane_ctrl to start of function and make it static const.
->=20
-> Changes in v4:
-> - Drop the submode parts. Use a different compatible for the Rx ops.
-> - Make bands and num_bands static.
->=20
-> Changes in v3:
-> - Use a table to select the band.
-> - Use a table to poll the data lane ready bits.
-> - Multiply the DPHY HS clock rate by 2 to get the bit rate since the
->   clock is DDR.
->=20
->  drivers/phy/cadence/cdns-dphy.c | 182 ++++++++++++++++++++++++++++++++
->  1 file changed, 182 insertions(+)
->=20
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-d=
-phy.c
-> index e2c2b27c6539..9a4c1c684e9a 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -1,11 +1,14 @@
->  // SPDX-License-Identifier: GPL-2.0+
->  /*
->   * Copyright: 2017-2018 Cadence Design Systems, Inc.
-> + * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.co=
-m/
->   */
-> =20
-> +#include <linux/bitfield.h>
->  #include <linux/bitops.h>
->  #include <linux/clk.h>
->  #include <linux/io.h>
-> +#include <linux/iopoll.h>
->  #include <linux/module.h>
->  #include <linux/of_address.h>
->  #include <linux/of_device.h>
-> @@ -25,10 +28,14 @@
->  #define DPHY_PMA_RCLK(reg)		(0x600 + (reg))
->  #define DPHY_PMA_RDATA(lane, reg)	(0x700 + ((lane) * 0x100) + (reg))
->  #define DPHY_PCS(reg)			(0xb00 + (reg))
-> +#define DPHY_ISO(reg)			(0xc00 + (reg))
-> =20
->  #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
->  #define DPHY_CMN_SSM_EN			BIT(0)
-> +#define DPHY_CMN_RX_BANDGAP_TIMER_MASK	GENMASK(8, 1)
->  #define DPHY_CMN_TX_MODE_EN		BIT(9)
-> +#define DPHY_CMN_RX_MODE_EN		BIT(10)
-> +#define DPHY_CMN_RX_BANDGAP_TIMER	0x14
-> =20
->  #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
->  #define DPHY_CMN_PWM_DIV(x)		((x) << 20)
-> @@ -45,10 +52,27 @@
->  #define DPHY_CMN_OPDIV_FROM_REG		BIT(6)
->  #define DPHY_CMN_OPDIV(x)		((x) << 7)
-> =20
-> +#define DPHY_BAND_CFG			DPHY_PCS(0x0)
-> +#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
-> +#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
-> +
->  #define DPHY_PSM_CFG			DPHY_PCS(0x4)
->  #define DPHY_PSM_CFG_FROM_REG		BIT(0)
->  #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
-> =20
-> +#define DPHY_POWER_ISLAND_EN_DATA	DPHY_PCS(0x8)
-> +#define DPHY_POWER_ISLAND_EN_DATA_VAL	0xaaaaaaaa
-> +#define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
-> +#define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
-> +
-> +#define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
-> +#define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
-> +#define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
-> +#define DPHY_ISO_DL_CTRL_L2		DPHY_ISO(0x30)
-> +#define DPHY_ISO_DL_CTRL_L3		DPHY_ISO(0x3c)
-> +#define DPHY_ISO_LANE_READY_BIT		0
-> +#define DPHY_ISO_LANE_READY_TIMEOUT_MS	100UL
-> +
->  #define DSI_HBP_FRAME_OVERHEAD		12
->  #define DSI_HSA_FRAME_OVERHEAD		14
->  #define DSI_HFP_FRAME_OVERHEAD		6
-> @@ -57,6 +81,9 @@
->  #define DSI_NULL_FRAME_OVERHEAD		6
->  #define DSI_EOT_PKT_SIZE		4
-> =20
-> +#define DPHY_LANES_MIN			1
-> +#define DPHY_LANES_MAX			4
-> +
->  struct cdns_dphy_cfg {
->  	u8 pll_ipdiv;
->  	u8 pll_opdiv;
-> @@ -105,6 +132,20 @@ struct cdns_dphy {
->  	struct phy *phy;
->  };
-> =20
-> +struct cdns_dphy_rx_band {
-> +	unsigned int min_rate;
-> +	unsigned int max_rate;
-> +};
-> +
-> +/* Order of bands is important since the index is the band number. */
-> +static const struct cdns_dphy_rx_band bands[] =3D {
-> +	{80, 100}, {100, 120}, {120, 160}, {160, 200}, {200, 240},
-> +	{240, 280}, {280, 320}, {320, 360}, {360, 400}, {400, 480},
-> +	{480, 560}, {560, 640}, {640, 720}, {720, 800}, {800, 880},
-> +	{880, 1040}, {1040, 1200}, {1200, 1350}, {1350, 1500}, {1500, 1750},
-> +	{1750, 2000}, {2000, 2250}, {2250, 2500}
-> +};
-> +
->  static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
->  				     struct cdns_dphy_cfg *cfg,
->  				     struct phy_configure_opts_mipi_dphy *opts,
-> @@ -360,6 +401,145 @@ static const struct cdns_dphy_info tx_ref_info =3D {
->  	.tx_ops =3D &tx_ref_dphy_ops,
->  };
-> =20
-> +static int cdns_dphy_rx_power_on(struct phy *phy)
-> +{
-> +	struct cdns_dphy *dphy =3D phy_get_drvdata(phy);
-> +
-> +	/* Start RX state machine. */
-> +	writel(DPHY_CMN_SSM_EN | DPHY_CMN_RX_MODE_EN |
-> +	       FIELD_PREP(DPHY_CMN_RX_BANDGAP_TIMER_MASK,
-> +			  DPHY_CMN_RX_BANDGAP_TIMER),
-> +	       dphy->regs + DPHY_CMN_SSM);
-> +
-> +	return 0;
-> +}
-> +
-> +static int cdns_dphy_rx_power_off(struct phy *phy)
-> +{
-> +	struct cdns_dphy *dphy =3D phy_get_drvdata(phy);
-> +
-> +	writel(0, dphy->regs + DPHY_CMN_SSM);
-> +
-> +	return 0;
-> +}
-> +
-> +static int cdns_dphy_rx_get_band_ctrl(unsigned long hs_clk_rate)
-> +{
-> +	unsigned int rate, i;
-> +
-> +	rate =3D hs_clk_rate / 1000000UL;
-> +	/* Since CSI-2 clock is DDR, the bit rate is twice the clock rate. */
-> +	rate *=3D 2;
-> +
-> +	if (rate < bands[0].min_rate)
-> +		return -EOPNOTSUPP;
-> +
-> +	for (i =3D 0; i < ARRAY_SIZE(bands); i++) {
-> +		if (rate < bands[i].max_rate)
-> +			return i;
-> +	}
-> +
-> +	return -EOPNOTSUPP;
-> +}
-> +
-> +static int cdns_dphy_rx_wait_for_bit(void __iomem *addr, unsigned int bi=
-t)
-> +{
-> +	u32 val;
-> +
-> +	return readl_relaxed_poll_timeout(addr, val, val & BIT(bit), 10,
-> +					  DPHY_ISO_LANE_READY_TIMEOUT_MS * 1000);
-> +}
-> +
-> +static int cdns_dphy_rx_wait_lane_ready(struct cdns_dphy *dphy,
-> +					unsigned int lanes)
-> +{
-> +	static const u32 data_lane_ctrl[] =3D {DPHY_ISO_DL_CTRL_L0,
-> +					     DPHY_ISO_DL_CTRL_L1,
-> +					     DPHY_ISO_DL_CTRL_L2,
-> +					     DPHY_ISO_DL_CTRL_L3};
-> +	void __iomem *reg =3D dphy->regs;
-> +	unsigned int i;
-> +	int ret;
-> +
-> +	/* Data lanes. Minimum one lane is mandatory. */
-> +	if (lanes < DPHY_LANES_MIN || lanes > DPHY_LANES_MAX)
-> +		return -EINVAL;
-> +
-> +	/* Clock lane */
-> +	ret =3D cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_CL_CTRL_L,
-> +					DPHY_ISO_LANE_READY_BIT);
-> +	if (ret)
-> +		return ret;
-> +
-> +	for (i =3D 0; i < lanes; i++) {
-> +		ret =3D cdns_dphy_rx_wait_for_bit(reg + data_lane_ctrl[i],
-> +						DPHY_ISO_LANE_READY_BIT);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int cdns_dphy_rx_configure(struct phy *phy,
-> +				  union phy_configure_opts *opts)
-> +{
-> +	struct cdns_dphy *dphy =3D phy_get_drvdata(phy);
-> +	unsigned int reg;
-> +	int band_ctrl, ret;
-> +
-> +	band_ctrl =3D cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-> +	if (band_ctrl < 0)
-> +		return band_ctrl;
-> +
-> +	reg =3D FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
-> +	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
-> +	writel(reg, dphy->regs + DPHY_BAND_CFG);
-> +
-> +	/*
-> +	 * Set the required power island phase 2 time. This is mandated by DPHY
-> +	 * specs.
-> +	 */
-> +	reg =3D DPHY_POWER_ISLAND_EN_DATA_VAL;
-> +	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_DATA);
-> +	reg =3D DPHY_POWER_ISLAND_EN_CLK_VAL;
-> +	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_CLK);
-> +
-> +	ret =3D cdns_dphy_rx_wait_lane_ready(dphy, opts->mipi_dphy.lanes);
-> +	if (ret) {
-> +		dev_err(dphy->dev, "DPHY wait for lane ready timeout\n");
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int cdns_dphy_rx_validate(struct phy *phy, enum phy_mode mode,
-> +				 int submode, union phy_configure_opts *opts)
-> +{
-> +	int ret;
-> +
-> +	if (mode !=3D PHY_MODE_MIPI_DPHY)
-> +		return -EINVAL;
-> +
-> +	ret =3D cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	return phy_mipi_dphy_config_validate(&opts->mipi_dphy);
-> +}
-> +
-> +static const struct phy_ops rx_ref_phy_ops =3D {
-> +	.power_on =3D cdns_dphy_rx_power_on,
-> +	.power_off =3D cdns_dphy_rx_power_off,
-> +	.configure =3D cdns_dphy_rx_configure,
-> +	.validate =3D cdns_dphy_rx_validate,
-> +};
-> +
-> +static const struct cdns_dphy_info rx_ref_info =3D {
-> +	.phy_ops =3D &rx_ref_phy_ops,
-> +};
-> +
->  static int cdns_dphy_probe(struct platform_device *pdev)
->  {
->  	struct phy_provider *phy_provider;
-> @@ -417,6 +597,7 @@ static int cdns_dphy_remove(struct platform_device *p=
-dev)
-> =20
->  static const struct of_device_id cdns_dphy_of_match[] =3D {
->  	{ .compatible =3D "cdns,dphy", .data =3D &tx_ref_info },
-> +	{ .compatible =3D "cdns,dphy-rx", .data =3D &rx_ref_info },
->  	{ /* sentinel */ },
->  };
->  MODULE_DEVICE_TABLE(of, cdns_dphy_of_match);
-> @@ -432,5 +613,6 @@ static struct platform_driver cdns_dphy_platform_driv=
-er =3D {
->  module_platform_driver(cdns_dphy_platform_driver);
-> =20
->  MODULE_AUTHOR("Maxime Ripard <maxime.ripard@bootlin.com>");
-> +MODULE_AUTHOR("Pratyush Yadav <p.yadav@ti.com>");
->  MODULE_DESCRIPTION("Cadence MIPI D-PHY Driver");
->  MODULE_LICENSE("GPL");
-> --=20
-> 2.33.0
->=20
+> The bottomline is that using the same PLL for both display and camera
+> easily results in conflicts.
 
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+The commit log should reflect that then
 
---Bd8Tu5xeLZcdEGbq
+> > If it doesn't, then clk_set_rate_exclusive has a bug and should be
+> > fixed.
+> >=20
+> > Either way, using assigned-clock-parents is not a good solution here
+> > either, it only makes sure that this is the case when probe is run.
+>=20
+> I'm not sure what could provide better guarantees. There is a clock
+> parenting API (in the clock framework) which may, but this implies
+> providing the parent clock to the driver which seems way out of line
+> since this is a platform-specific matter that should certainly not
+> be handled by the driver.
+>=20
+> I also tried hardcoding the reparenting bit in the CCU driver, but
+> this felt less clean than doing it in device-tree.
+>=20
+> What do you think?
+
+This is essentially policy, and putting it in the DT fails for the
+reason we already discussed, but also if we ever want to change it for
+example to optimize it a bit. In this case, we would have to deal with
+the old and new DT, and the possible consequences.
+
+So yeah, hardcoding it in the clock driver seems like a more sensible
+choice.
+
+Maxime
+
+--6h7nudibxh245pvl
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmFDGv4ACgkQ3cLmz3+f
-v9GWUgf/e7Ws3n2t3VUskH++a+unsKBA07AoxAvmm3MVdB8F2RKYTxMvDy0plU/G
-ouM+iKEWKsa7sar7tKDLYGPzy/nuCaOt+pj9zETbwhdHHJf6Bxuzc9iyi/pscZvi
-F5QaLbpNW3Yb0HZ157WSz4crYTlRgtua6h3vLwObQTPYeAbRHM3oarVfs5wRBT0h
-OLwFle5wsCpXu6yqstxsrb7meEhykRNY8wDFt217ZohiO6yrTKKmp5wIYDjEiIEL
-T1Zxroeprbl2QzFqZbbu3GfKe4EXbjqFwWPBqjeNZGp/34/B7n8MA/j2af/Z5xZw
-c2FFSAeYAXronv8pKyWK+5eGETsm3w==
-=BPwq
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYUNxCAAKCRDj7w1vZxhR
+xTHSAP94s1QU8mIU0mn77banRpkH0ZGKIUjPYygrvhOgdlCSegD/UryBgzqTDNlY
+omqVVtLWlYLTj9NQE+yJaYV+lXE3oQo=
+=K8KU
 -----END PGP SIGNATURE-----
 
---Bd8Tu5xeLZcdEGbq--
+--6h7nudibxh245pvl--
 
 
---===============5208592133071886579==
+--===============5608603067172378064==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -445,5 +204,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============5208592133071886579==--
+--===============5608603067172378064==--
 
