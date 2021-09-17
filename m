@@ -2,65 +2,67 @@ Return-Path: <SRS0=IqhD=OH=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-12.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 465F1C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Sep 2021 02:55:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3D499C433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Sep 2021 02:56:25 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0972C611C0
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Sep 2021 02:55:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0972C611C0
+	by mail.kernel.org (Postfix) with ESMTPS id 0C6E5611EE
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Sep 2021 02:56:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0C6E5611EE
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eMoYWa70T63oh7T8lhlRQAiACPLMaHj/Qw/8nKavtyo=; b=OvhUH5mO8+CMGS
-	BEm+nIaNlZCE90ysvs0tNcOrPBeXaiORoDpdqOhgixTNrOIiEn3SXtX9MlRKvIIcF5TeHBR0aRQzj
-	Y52rsHRFbWAYnZXLVOsKObQPQHs8nNNQcLm7/CnI3B1A1upwR46v12x0A51N1ETexwwXaiEQW1nyq
-	+CnVIlI+4NKEhemRcEK3pyn+aetPdmRBgQIjWmYAu4wC4R49RLJhxXcchGC/3uiA666ADC2GEI4o/
-	DMM+yWLTZScU1X5nGKC0LoBNcaEy2PuNSvGhw6wK//bQ6qVNlspYeQEsyp7tYYI0UcwovoMGSNSvB
-	iPGbzeEjEa29Ydak3rNQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z4xaYOrDuMm8fsqU8BbCse1NcP7q6vYbuvdcLn5aYDU=; b=Rh8g7YHlPQ5Yew
+	mwDv6Nz2kXlk/Rswj5mXA6G9oF3AE9v06GYzf/EO8FuIOTNKR5s16poy6QBIcJAnvI3ZE1GWV1JD1
+	Zp6gQb9SY59vITpydKMGBziaCBsvSVYxTe8gPXpNfDxT7Z2kEn/2mlbY/jsnqfOiNM+WBcAs4A60B
+	YWbpjNCIwSIdFwJ2rCqM2mVIS9p3UYTX/g9gbU5wGVZRUy7mymDMsn/zy2Et+LwrUJ0yM9IF5jirN
+	NZPQk3fgge8auHyPtQTRM/PrxY4YXs6bbLelWg65VfNzZbe5sB8vti8C7lU1mxU7cpYWyFUC8XPE7
+	MglnnENix+u5SalGjdcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mR42M-00D3eT-EE; Fri, 17 Sep 2021 02:55:38 +0000
+	id 1mR436-00D41E-Ep; Fri, 17 Sep 2021 02:56:24 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mR41F-00D35e-Iw; Fri, 17 Sep 2021 02:54:35 +0000
+ id 1mR41F-00D36x-MO; Fri, 17 Sep 2021 02:54:36 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E777F1A12BC;
- Fri, 17 Sep 2021 04:54:25 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 53C0E1A1293;
+ Fri, 17 Sep 2021 04:54:28 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com
  (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AF7621A125F;
- Fri, 17 Sep 2021 04:54:25 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 006E51A125F;
+ Fri, 17 Sep 2021 04:54:28 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 2CE3A183AC94;
- Fri, 17 Sep 2021 10:54:24 +0800 (+08)
+ by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 635AA183AC94;
+ Fri, 17 Sep 2021 10:54:26 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: l.stach@pengutronix.de, kishon@ti.com, vkoul@kernel.org, robh@kernel.org,
  galak@kernel.crashing.org, shawnguo@kernel.org
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com
-Subject: [PATCH 0/4] add the imx8 pcie phy driver support
-Date: Fri, 17 Sep 2021 10:30:59 +0800
-Message-Id: <1631845863-24249-1-git-send-email-hongxing.zhu@nxp.com>
+ kernel@pengutronix.de, linux-imx@nxp.com,
+ Richard Zhu <hongxing.zhu@nxp.com>
+Subject: [PATCH 2/4] dt-bindings: phy: add imx8 pcie phy driver support
+Date: Fri, 17 Sep 2021 10:31:01 +0800
+Message-Id: <1631845863-24249-3-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1631845863-24249-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1631845863-24249-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210916_195429_816339_42FE108A 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210916_195429_926797_3C6F778C 
+X-CRM114-Status: GOOD (  11.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,32 +80,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-refer to the discussion [1] when try to enable i.MX8MM PCIe support,
-one standalone PCIe PHY driver should be seperated from i.MX PCIe
-driver when enable i.MX8MM PCIe support.
+Add dt-binding for the standalone i.MX8 PCIe PHY driver.
 
-This patch-set adds the standalone PCIe PHY driver suport, and as a
-preparatory to add the i.MX8MM PCIe support later.
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+---
+ .../bindings/phy/fsl,imx8-pcie-phy.yaml       | 66 +++++++++++++++++++
+ 1 file changed, 66 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
 
-The PCIe works on i.MX8MM EVK board based the the blkctrl power driver
-[2] and this PHY driver patch-set.
-
-[1] https://patchwork.ozlabs.org/project/linux-pci/patch/20210510141509.929120-3-l.stach@pengutronix.de/
-[2] https://patchwork.kernel.org/project/linux-arm-kernel/cover/20210910202640.980366-1-l.stach@pengutronix.de/
-
-[PATCH 1/4] dt-bindings: phy: phy-imx8-pcie: Add binding for the pad
-[PATCH 2/4] dt-bindings: phy: add imx8 pcie phy driver support
-[PATCH 3/4] arm64: dts: imx8mm: add the pcie phy support
-[PATCH 4/4] phy: freescale: pcie: initialize the imx8 pcie standalone
-
-Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  66 ++++++++++++++++++++++++++++++++
-arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi                |   4 ++
-arch/arm64/boot/dts/freescale/imx8mm.dtsi                    |  12 ++++++
-drivers/phy/freescale/Kconfig                                |   9 +++++
-drivers/phy/freescale/Makefile                               |   1 +
-drivers/phy/freescale/phy-fsl-imx8-pcie.c                    | 167 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-include/dt-bindings/phy/phy-imx8-pcie.h                      |  14 +++++++
-7 files changed, 273 insertions(+)
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
+new file mode 100644
+index 000000000000..2a81a17f1779
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
+@@ -0,0 +1,66 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/fsl,imx8-pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX8 SoC series PCIe PHY Device Tree Bindings
++
++maintainers:
++  - Richard Zhu <hongxing.zhu@nxp.com>
++
++properties:
++  "#phy-cells":
++    const: 0
++
++  compatible:
++    enum:
++      - fsl,imx8mm-pcie-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: PHY module clock
++
++  clock-names:
++    items:
++      - const: phy
++
++  fsl,refclk-pad-mode:
++    description:
++      Specifies the mode of the refclk pad used. It can be NO_USED(PHY
++      refclock is derived from SoC internal source), INPUT(PHY refclock
++      is provided externally via the refclk pad) or OUTPUT(PHY refclock
++      is derived from SoC internal source and provided on the refclk pad).
++      Refer include/dt-bindings/phy/phy-imx8-pcie.h for the constants
++      to be used.
++    enum: [ 0, 1, 2 ]
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - fsl,refclk-pad-mode
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx8mm-clock.h>
++
++    pcie_phy: pcie-phy@32f00000 {
++            compatible = "fsl,imx8mm-pcie-phy";
++            reg = <0x32f00000 0x10000>;
++            clocks = <&clk IMX8MM_CLK_PCIE1_PHY>;
++            clock-names = "phy";
++            assigned-clocks = <&clk IMX8MM_CLK_PCIE1_PHY>;
++            assigned-clock-rates = <100000000>;
++            assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_100M>;
++            fsl,refclk-pad-mode = <1>;
++            #phy-cells = <0>;
++    };
++...
+-- 
+2.25.1
 
 
 -- 
