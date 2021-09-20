@@ -2,94 +2,71 @@ Return-Path: <SRS0=0RCf=OK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-5.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B4F9DC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 19:26:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 48517C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 20:31:32 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6FA526121D
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 19:26:24 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6FA526121D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=googlemail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 07797610A8
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 20:31:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 07797610A8
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5uHn6PjD23UOR1Lyce537maRagWsJG9VKe+Ea8Hyu6g=; b=QBSOagubpD42Fx
-	AI1rkaqvHAGgSzz8T91It0oZMvHcuhZrLpY001PsN+y0rkLd6gSUU/aAIV/W9kpSkJI6+C8F+G23e
-	peeAiudWy2r5nMkIouRNs9mIiGYciGjC7axP76pC7srTgS14ZC3SY5CcrMLe2j3BqcaEswY7vLwCw
-	apYkA5FyJdE1Y/HIkwT+UeUFcTNntlvIKcH4flQvGlpakbR90xD1MRh5nfa3enKnk/bJGl8PYmUip
-	wtrbDIogkvdoEdubtOP5v3k5gQgDj5pH6z9F29t9iQDI25xbAbf98HxwcBjGfoRdbmA+Z1A7NkNt/
-	Iv9hrbqRDLo1CNFOSEtA==;
+	List-Owner; bh=SLcRmZSZhqRKBd4S24mt8P2ANMs2L37EMWGTEeZJDFg=; b=m6bgl7AlzTVC0E
+	i41ug5Q2TPnqOnl7RHuPRxbK+xJDeARQw1d2OW7Hlxwta+3iw9l6V/D48hpXotnozb1s3pNSAJ9Jt
+	FdhQL6qT2n1MEQTvDZ9r9L47wgU3eqp3D11d82DGPI+2XRN9lw6bxxdYe9LduBxOmTrJk7ukEcXQn
+	t41e88FqqTIsoQf+351ajvM2AyncfvCxAe+NIF1mH/dxPc+UL7amD09xukV2yDOwXxX3ovIOdUNQs
+	Mhi1ABnMthwzm6Siyrc4Cjofc05s7SLfMbK/OopcDEN3WFNrSAas8Dwvi34/+m5phPZErrmBJF5n7
+	AA2jgQWSiONsJZ0bxd2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mSOvn-002v7D-VS; Mon, 20 Sep 2021 19:26:23 +0000
-Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+	id 1mSPwp-0032eY-I4; Mon, 20 Sep 2021 20:31:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mSOvl-002v6m-RA; Mon, 20 Sep 2021 19:26:23 +0000
-Received: by mail-ed1-x52f.google.com with SMTP id v5so64251051edc.2;
- Mon, 20 Sep 2021 12:26:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20210112;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RJWnZekTUMSnBRk/CtZe/v9CvFL/Hwr4JrpVx75Cmtk=;
- b=ZdiTJXLL9mgXbyU5Qnw0VxfH6+FlkVxGLpvKOkpbK2L5XLuH1ISSVM2i5YsSzv538d
- Y3zLxEWtL52DZlUT9ehwoPZ9aMiO8iSp5Zlt9m2H9QdyEZ9GvSTTXd1gH8aT1BmtkyZF
- bWNEyJhSpyHwgkLwM9Z0Dnh1wfi1UQCUmPhdAwR6Z0ucyryHZ/2f4IqUNl0QsnJs7jHK
- 9c30JmQqxVlas0u3kN0dg0NklDnWDz7IwkWoKBgVT4khJYCCWqwWDsgU9KF/wfCWmmZy
- wVHzUDGDkelDhFf8NRZXfzNN3vgmCtSczIr3bJDAIfDxRWnn2FOK1sO7Xkn8AWvETb4k
- wGtw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RJWnZekTUMSnBRk/CtZe/v9CvFL/Hwr4JrpVx75Cmtk=;
- b=zS7Gvv5ecm6QvtbVKfj6wG4e26WR8P5wsqxnNGIKKqPqkqym+YDytzvbo4I6lMEhcK
- 4zvRJF3w8pIzf5o3nrvlVYmOhs/xZCijlsBVZlU4kjovZtuJhZ/RPcbismd1HZGrJCB8
- WpU1wqN+UCrpLsw00OauTVwO8kYnPiKJJYh5F6QOkwNq9g0uszSHruuGp/beTAwC6jlg
- I36Z89W1C/8uQVlUlnkcMW8NRUD3GWDc3yEPI9NbyBZopLAntAI/KnsTDleG9RuHA0CU
- q48V9BSrKpBzTxx9MSqTODjtfJv8xpQLdI4HT0zloFQ3z6isiGH/4WmOGTSAyDTl9YUz
- YAUw==
-X-Gm-Message-State: AOAM5319ZPWmx4j4C8bUPcxJw/lqI3kTAUkiIdpMXbRj8Nccf0CJqKfP
- pI99viEcDs/2KZh5b/JodnYh0TgZmrJMlfyk1+iwejHJ
-X-Google-Smtp-Source: ABdhPJwdPfnVeY2p6IsWhgrDuynL1Mi9SZtZIeW/NWNfEuNbq4u5cqaYdIMy2elkx0SvapDlMWXEb9a6p2wF4K3n4I8=
-X-Received: by 2002:a17:906:e105:: with SMTP id
- gj5mr29600783ejb.408.1632165979872; 
- Mon, 20 Sep 2021 12:26:19 -0700 (PDT)
+ id 1mSPwm-0032eC-U9
+ for linux-phy@lists.infradead.org; Mon, 20 Sep 2021 20:31:30 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id B7039610A0;
+ Mon, 20 Sep 2021 20:31:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1632169888;
+ bh=10ZL7PgHe9lbjtgAcJZmau9cDawPBD9XsDzRb/RyzN8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=V+/6CwVtDaudm8b/th6Nq7PIALw6HsqHtIajFBJVNKHbPDxgfLzRcp3lL7NXBH7FG
+ ZfIVcH8WEeQ+8fFj+T4ItZDL0Aerbwktyhe3LayI3SNOA9pAT9jdfVWQb4PPrtyXjU
+ C135f2loKqstaEwB28AiE5xL5Tq2QDidS5WrEBq1u2fOY/ThaG6v9SRPRRouc5T11b
+ rZLl5WpATkbnCLH6FlapL7Jb4r73M8dT5svcT0zlqqsKVsr93Gfbs7vn30IAqBxcWx
+ DBSUbDivrQRVnjJU9UJ4+H7BSgDWC5mFy3iVvOf9Kv6HqpIldaLoEyICZp+JJRWXYL
+ 3kGBUVAaT4eLQ==
+Date: Mon, 20 Sep 2021 13:31:26 -0700
+From: Jakub Kicinski <kuba@kernel.org>
+To: Horatiu Vultur <horatiu.vultur@microchip.com>
+Cc: <davem@davemloft.net>, <robh+dt@kernel.org>, <andrew@lunn.ch>,
+ <linux@armlinux.org.uk>, <f.fainelli@gmail.com>,
+ <alexandre.belloni@bootlin.com>, <vladimir.oltean@nxp.com>,
+ <UNGLinuxDriver@microchip.com>, <netdev@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <linux-pm@vger.kernel.org>
+Subject: Re: [RFC PATCH net-next 12/12] net: lan966x: add ethtool
+ configuration and statistics
+Message-ID: <20210920133126.642449aa@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+In-Reply-To: <20210920095218.1108151-13-horatiu.vultur@microchip.com>
+References: <20210920095218.1108151-1-horatiu.vultur@microchip.com>
+ <20210920095218.1108151-13-horatiu.vultur@microchip.com>
 MIME-Version: 1.0
-References: <20210817041548.1276-1-linux.amoon@gmail.com>
- <20210817041548.1276-2-linux.amoon@gmail.com>
- <c7f6213b-5ddc-881c-1aea-9cc7b03e6a4f@baylibre.com>
- <CAFBinCBeNMET2tvH0h6HF3dR+xBb59hifQyaoXigUs3UGkS+KQ@mail.gmail.com>
- <2b07b3de-cee5-c570-8fde-6a4c684122d6@baylibre.com>
- <CANAwSgRNp8UtU+Yy4smwZ5POTWTU+xN1mrf_cH7Pu9yX5HU=VA@mail.gmail.com>
-In-Reply-To: <CANAwSgRNp8UtU+Yy4smwZ5POTWTU+xN1mrf_cH7Pu9yX5HU=VA@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 20 Sep 2021 21:26:08 +0200
-Message-ID: <CAFBinCDmNt+aXRE4xFZdegOUs8BqJiTPF3+DQ-buvWWXrQLkdw@mail.gmail.com>
-Subject: Re: [PATCHv3 1/6] ARM: dts: meson8b: odroidc1: Add usb phy power node
-To: Anand Moon <linux.amoon@gmail.com>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-amlogic@lists.infradead.org, 
- Linux Kernel <linux-kernel@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>, 
- Matt Corallo <oc2udbzfd@mattcorallo.com>, Rob Herring <robh+dt@kernel.org>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Emiliano Ingrassia <ingrassia@epigenesys.com>,
- Brian Kim <brian.kim@hardkernel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210920_122621_938390_AE268427 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20210920_133129_041119_6DB84D80 
+X-CRM114-Status: UNSURE (   4.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,20 +83,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Anand,
+On Mon, 20 Sep 2021 11:52:18 +0200 Horatiu Vultur wrote:
+> +static void lan966x_get_eth_mac_stats(struct net_device *dev,
+> +				      struct ethtool_eth_mac_stats *mac_stats)
 
-On Tue, Aug 31, 2021 at 10:48 PM Anand Moon <linux.amoon@gmail.com> wrote:
-[...]
-> After enabling CONFIG_REGULATOR_DEBUG, with this patch applied
-> I still not getting the USB regulator to enable.
-> Do you see different output at your end?
-I don't have much time for testing and debugging currently but I'll
-put it on my TODO-list
-Until either of us has found the issue I suggest not merging this patch.
-
-
-Best regards,
-Martin
+Great to see this API used, please also consider adding RMON stats
+since the seem to be present.
 
 -- 
 linux-phy mailing list
