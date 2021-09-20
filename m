@@ -2,19 +2,18 @@ Return-Path: <SRS0=0RCf=OK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-10.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-5.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 31201C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 13:46:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0CCE6C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 13:54:42 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E949860F23
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 13:46:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E949860F23
+	by mail.kernel.org (Postfix) with ESMTPS id 8921D61019
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 13:54:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 8921D61019
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=armlinux.org.uk
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,41 +22,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d+I5d65qHwOCtBojfeqHiMgSLAPa4rcRxw9a5ahMwMo=; b=QNe0PU2hAg/RmO
-	CPj1k8jOiawakdbv9xeeSqZlAbrd1PzDeG6NN4OFlvwNb9pDpoBfDZc8UHkIv3G4yE5zlZUxWeIUT
-	9zULpelgvDM7M8YAmyrYt34acA9QnyvBip/FZnkmdeawEmcbS0+yDRQ+gZYeOe5fBDEe/TBA5dWXn
-	X+JH80y9iQfezu34F5fROWlntrKhIwVSoVzMy/hasw/dati6k5VSYeqzrfgjxCIEjFSUlUe4VkCz1
-	+B6abG7J0iSDA5GbXw0fzr2KNvPOrJ3IgFvDcTaWumwwtwtCXgfVodrXr/cqV35RFmcTGbek2BODM
-	cL64BdcD8Fz7jbY2D9zQ==;
+	List-Owner; bh=KqXylPSEg7sQEMof6OaEcsaIP60ZouRw7va+sJDZYE4=; b=3XpSlkh2wyjkQs
+	wzCuNSFTY7v93p6eo86042BbfrgBuMAcbmtRnFcZBdLS5xeby1pAG9iw7kAHe3HMn3x3XBYEQ6u3q
+	egAl8XIbdkDfRxyhkz7LY0MBN6KdD/hVCxCkSA64ZPMqJbkTO5X5BBqP2VWhZhPpK9E9pjlNwuuc5
+	n7yipksKmccA1L+ppn6HWQdkpET9fWc9V7edpBshiFfNeidmHnLB4AqAinuQRDx5uogIPr0A2ab75
+	fFnOGHTfDUivf0t34nXSCxStbvuode6VfCirx+FX8ggV0oKiGznqj5npkQriMpBmGDFutilaUgjVY
+	tVgQYTLxIPoJ7JjAdh5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mSJd3-001peV-EW; Mon, 20 Sep 2021 13:46:41 +0000
+	id 1mSJkn-001qXR-2i; Mon, 20 Sep 2021 13:54:41 +0000
 Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mSJcz-001pdh-SB
- for linux-phy@lists.infradead.org; Mon, 20 Sep 2021 13:46:39 +0000
+ id 1mSJkj-001qWF-IC
+ for linux-phy@lists.infradead.org; Mon, 20 Sep 2021 13:54:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=nQzyMh+urw6WUq63Kn0aHKa2iC8R1rXkh2yrDjrMkFU=; b=ZtekXSxH/omWRqKFHxlbKlQMOW
- brX242NaJfTMBSEoVKrT7YY/LTCjbmCsTctOcpy8dC7VsR0dakTf7n+gLDPf2Uu3oZH6SZAGdVvUB
- FeW6lssjgs/H6RAc1VNYlP0mfVpntOVBs92+JlJo4T8J28uWtDxMDiRYBZxCSKp1Y5rguDhtn001+
- 7eX35WKbNrPhMNed9vElTPaxpY/By8aFMra1A2UPptlsZ0lW+IdhI6f0bJsNYioksIuHNK8UU0F9e
- P5z/p+10BzTk+fa2JkEX2kgm+FG6wHpgT97fhwYMlseC44DlltJ0P7CnOGBCfl6QcflGJNy8BZCVS
- MszGurwA==;
+ bh=Ml6l0rn52QlsFUnOCfmpKHL/TyYLnkrCtmGMxVRDliA=; b=yd65DEFZ25sB3j/ggV0Xl+wDsh
+ phEeQ/Xfp/Ie5T4Emv+TWwNaWVoIe7ZNgyAEWfMmTDNu/nY+MHAGAEoBfMPigvGdh1DQg0FmtdtKK
+ Oo2gOJYUvAqfda08B9g5n6BcoOnN6GGYZvkfenUxmMojG/0LY0BEUw+F5FfCQnmjKl6zvZFrW4B71
+ WaWkKs0Tu8dwAfsYwfsNoYbGoew4mMDznzGpfzGjTMvLToDfCfSioUQc4o9AI4b7FKTbZJ5KQqU/7
+ 8T9bAiwzoFOGh2xqQsFW5OQkA2wWLKZisi0iVvUUy5BmkaZ2S0UdPdm2kyaPawR1DIUaI/NfBR+Md
+ 0+j7LgZw==;
 Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:54672)
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:54674)
  by pandora.armlinux.org.uk with esmtpsa (TLS1.3) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
  (envelope-from <linux@armlinux.org.uk>)
- id 1mSJcs-0001fR-P1; Mon, 20 Sep 2021 14:46:30 +0100
+ id 1mSJkb-0001fr-D8; Mon, 20 Sep 2021 14:54:29 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1mSJcs-0002LG-31; Mon, 20 Sep 2021 14:46:30 +0100
-Date: Mon, 20 Sep 2021 14:46:30 +0100
+ id 1mSJkY-0002LQ-Tm; Mon, 20 Sep 2021 14:54:26 +0100
+Date: Mon, 20 Sep 2021 14:54:26 +0100
 From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Horatiu Vultur <horatiu.vultur@microchip.com>
 Cc: davem@davemloft.net, kuba@kernel.org, robh+dt@kernel.org,
@@ -66,17 +65,16 @@ Cc: davem@davemloft.net, kuba@kernel.org, robh+dt@kernel.org,
  netdev@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-pm@vger.kernel.org
-Subject: Re: [RFC PATCH net-next 09/12] net: lan966x: add the basic lan966x
- driver
-Message-ID: <YUiQtrIodmyAZ476@shell.armlinux.org.uk>
+Subject: Re: [RFC PATCH net-next 10/12] net: lan966x: add port module support
+Message-ID: <YUiSkpRvvL0fvija@shell.armlinux.org.uk>
 References: <20210920095218.1108151-1-horatiu.vultur@microchip.com>
- <20210920095218.1108151-10-horatiu.vultur@microchip.com>
+ <20210920095218.1108151-11-horatiu.vultur@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210920095218.1108151-10-horatiu.vultur@microchip.com>
+In-Reply-To: <20210920095218.1108151-11-horatiu.vultur@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210920_064637_958053_873736C0 
-X-CRM114-Status: GOOD (  14.65  )
+X-CRM114-CacheID: sfid-20210920_065437_653990_593862F1 
+X-CRM114-Status: GOOD (  14.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,85 +91,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 20, 2021 at 11:52:15AM +0200, Horatiu Vultur wrote:
-> diff --git a/drivers/net/ethernet/microchip/lan966x/lan966x_main.c b/drivers/net/ethernet/microchip/lan966x/lan966x_main.c
-> new file mode 100644
-> index 000000000000..2984f510ae27
-> --- /dev/null
-> +++ b/drivers/net/ethernet/microchip/lan966x/lan966x_main.c
-> @@ -0,0 +1,350 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +
-> +#include <asm/memory.h>
-> +#include <linux/module.h>
-> +#include <linux/if_bridge.h>
-> +#include <linux/iopoll.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/of_net.h>
-> +#include <linux/reset.h>
-> +
-> +#include "lan966x_main.h"
-> +
-> +#define READL_SLEEP_US			10
-> +#define READL_TIMEOUT_US		100000000
-> +
-> +#define IO_RANGES 2
-> +
-> +static const struct of_device_id lan966x_match[] = {
-> +	{ .compatible = "microchip,lan966x-switch" },
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(of, mchp_lan966x_match);
-> +
-> +struct lan966x_main_io_resource {
-> +	enum lan966x_target id;
-> +	phys_addr_t offset;
-> +	int range;
-> +};
-> +
-> +static const struct lan966x_main_io_resource lan966x_main_iomap[] =  {
-> +	{ TARGET_CPU,                   0xc0000, 0 }, /* 0xe00c0000 */
-> +	{ TARGET_ORG,                         0, 1 }, /* 0xe2000000 */
-> +	{ TARGET_GCB,                    0x4000, 1 }, /* 0xe2004000 */
-> +	{ TARGET_QS,                     0x8000, 1 }, /* 0xe2008000 */
-> +	{ TARGET_CHIP_TOP,              0x10000, 1 }, /* 0xe2010000 */
-> +	{ TARGET_REW,                   0x14000, 1 }, /* 0xe2014000 */
-> +	{ TARGET_SYS,                   0x28000, 1 }, /* 0xe2028000 */
-> +	{ TARGET_HSIO,                  0x2c000, 1 }, /* 0xe202c000 */
-> +	{ TARGET_DEV,                   0x34000, 1 }, /* 0xe2034000 */
-> +	{ TARGET_DEV +  1,              0x38000, 1 }, /* 0xe2038000 */
-> +	{ TARGET_DEV +  2,              0x3c000, 1 }, /* 0xe203c000 */
-> +	{ TARGET_DEV +  3,              0x40000, 1 }, /* 0xe2040000 */
-> +	{ TARGET_DEV +  4,              0x44000, 1 }, /* 0xe2044000 */
-> +	{ TARGET_DEV +  5,              0x48000, 1 }, /* 0xe2048000 */
-> +	{ TARGET_DEV +  6,              0x4c000, 1 }, /* 0xe204c000 */
-> +	{ TARGET_DEV +  7,              0x50000, 1 }, /* 0xe2050000 */
-> +	{ TARGET_QSYS,                 0x100000, 1 }, /* 0xe2100000 */
-> +	{ TARGET_AFI,                  0x120000, 1 }, /* 0xe2120000 */
-> +	{ TARGET_ANA,                  0x140000, 1 }, /* 0xe2140000 */
-> +};
-> +
-> +static int lan966x_create_targets(struct platform_device *pdev,
-> +				  struct lan966x *lan966x)
+On Mon, Sep 20, 2021 at 11:52:16AM +0200, Horatiu Vultur wrote:
+> +static void lan966x_cleanup_ports(struct lan966x *lan966x)
 > +{
-> +	struct resource *iores[IO_RANGES];
-> +	void __iomem *iomem[IO_RANGES];
-> +	void __iomem *begin[IO_RANGES];
-> +	int idx;
+> +	struct lan966x_port *port;
+> +	int portno;
 > +
-> +	for (idx = 0; idx < IO_RANGES; idx++) {
-> +		iores[idx] = platform_get_resource(pdev, IORESOURCE_MEM,
-> +						   idx);
-> +		iomem[idx] = devm_ioremap(&pdev->dev,
-> +					  iores[idx]->start,
-> +					  resource_size(iores[idx]));
+> +	for (portno = 0; portno < lan966x->num_phys_ports; portno++) {
+> +		port = lan966x->ports[portno];
+> +		if (!port)
+> +			continue;
+> +
+> +		if (port->phylink) {
+> +			rtnl_lock();
+> +			lan966x_port_stop(port->dev);
+> +			rtnl_unlock();
+> +			port->phylink = NULL;
 
-This is buggy. If platform_get_resource() returns NULL, you will oops
-the kernel.
+This leaks the phylink structure. You need to call phylink_destroy().
 
-In any case, this code will be ripe for janitor patching. Please
-consider using devm_platform_ioremap_resource() now, before someone
-converts your code to use this function.
+>  static int lan966x_probe_port(struct lan966x *lan966x, u8 port,
+>  			      phy_interface_t phy_mode)
+>  {
+>  	struct lan966x_port *lan966x_port;
+> +	struct phylink *phylink;
+> +	struct net_device *dev;
+> +	int err;
+>  
+>  	if (port >= lan966x->num_phys_ports)
+>  		return -EINVAL;
+>  
+> -	lan966x_port = devm_kzalloc(lan966x->dev, sizeof(*lan966x_port),
+> -				    GFP_KERNEL);
+> +	dev = devm_alloc_etherdev_mqs(lan966x->dev,
+> +				      sizeof(struct lan966x_port), 8, 1);
+> +	if (!dev)
+> +		return -ENOMEM;
+>  
+> +	SET_NETDEV_DEV(dev, lan966x->dev);
+> +	lan966x_port = netdev_priv(dev);
+> +	lan966x_port->dev = dev;
+>  	lan966x_port->lan966x = lan966x;
+>  	lan966x_port->chip_port = port;
+>  	lan966x_port->pvid = PORT_PVID;
+>  	lan966x->ports[port] = lan966x_port;
+>  
+> +	dev->max_mtu = ETH_MAX_MTU;
+> +
+> +	dev->netdev_ops = &lan966x_port_netdev_ops;
+> +	dev->needed_headroom = IFH_LEN * sizeof(u32);
+> +
+> +	err = register_netdev(dev);
+> +	if (err) {
+> +		dev_err(lan966x->dev, "register_netdev failed\n");
+> +		goto err_register_netdev;
+> +	}
+
+register_netdev() publishes the network device.
+
+> +
+> +	lan966x_port->phylink_config.dev = &lan966x_port->dev->dev;
+> +	lan966x_port->phylink_config.type = PHYLINK_NETDEV;
+> +	lan966x_port->phylink_config.pcs_poll = true;
+> +
+> +	phylink = phylink_create(&lan966x_port->phylink_config,
+> +				 lan966x_port->fwnode,
+> +				 phy_mode,
+> +				 &lan966x_phylink_mac_ops);
+
+phylink_create() should always be called _prior_ to the network device
+being published. In any case...
+
+> +	if (IS_ERR(phylink))
+> +		return PTR_ERR(phylink);
+
+If this fails, this function returns an error, but leaves the network
+device published - which is a bug in itself.
+
+> +static void lan966x_phylink_mac_link_down(struct phylink_config *config,
+> +					  unsigned int mode,
+> +					  phy_interface_t interface)
+> +{
+
+Hmm? Shouldn't this do something?
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
