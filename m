@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
 	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A02BFC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 23:56:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BA117C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 23:57:39 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5FB3760F6E
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 23:56:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 5FB3760F6E
+	by mail.kernel.org (Postfix) with ESMTPS id 7FFAE61221
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Sep 2021 23:57:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 7FFAE61221
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,62 +22,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PPUrXGG/62M7mKuFtp0VbocNSFTcTP93J2/H6mjcxs0=; b=hJYPx/RGcmcbn6
-	cg+iAOSh0WrY1M2pwHTC+XZvUCG7gf1hTK2rSb74XGnSeFRqkCRiR+2/P0DdZGYXLf6XHB7C2j9xg
-	ineYoXXAI0OD+/X9TzOryNh9yNud+ypkZYnYuMCSpXaQwqSO7OqLFXsMZzGfpa0H92zwh8EB/K4Y0
-	uqMTbj5CsoZ7ixkchrkD3p9UdscMWcl0FjH+Tz3TiOskMAZL8763wVKhLnzXVVUc+cTazBegyH5mv
-	AwFu8x+7vGsc1Nb0Kv2x5tJldFKFS78peMC6t80NnuY3Uyb3gRvAyULeiOQxyWsEV8j9gqRQEeK57
-	o4A7RhN1eo3KrXdeSoBw==;
+	List-Owner; bh=5rE+rlbIQfJ4loYgnitx5MD6DqWz6JNNF0AGK6t6JJI=; b=YLYhu0CHaH0RPE
+	QoBiqkoLSB8S4abJzPOsz7rGR28AuI4KkDtlVQfDzDQ4r/QjQOhZpmCKvVYx6Q42eL3/8aYUyeNbB
+	HjYmBj+Se2zThGCI0D4j6fOeqFqnSe89ttL+Qu0xr3qElcSg935nIi1QxCAwrafcOvHaxf4k3X+Wr
+	yB3lgKYWImyNg/P80rpgrAZG7zgkqIjJgbd0vlPJabnGWD5veLqu5TYdvQkhX+vv/iFPfjso0gmnj
+	cyk6zR3WqQ53bheKtmmpIz1V/d113ittANKvIuCBqMAG+9m183KrISrvM1ROWOP4Jy3Tz7Ux501GJ
+	yvoXpnAQH6cnnuKnqT6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mST9A-003MA1-UB; Mon, 20 Sep 2021 23:56:28 +0000
-Received: from mail-oi1-f176.google.com ([209.85.167.176])
+	id 1mSTAJ-003MQJ-23; Mon, 20 Sep 2021 23:57:39 +0000
+Received: from mail-ot1-f48.google.com ([209.85.210.48])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mST98-003M9G-6n
- for linux-phy@lists.infradead.org; Mon, 20 Sep 2021 23:56:27 +0000
-Received: by mail-oi1-f176.google.com with SMTP id u22so18909242oie.5
- for <linux-phy@lists.infradead.org>; Mon, 20 Sep 2021 16:56:25 -0700 (PDT)
+ id 1mSTAG-003MOr-18
+ for linux-phy@lists.infradead.org; Mon, 20 Sep 2021 23:57:37 +0000
+Received: by mail-ot1-f48.google.com with SMTP id
+ l16-20020a9d6a90000000b0053b71f7dc83so25925017otq.7
+ for <linux-phy@lists.infradead.org>; Mon, 20 Sep 2021 16:57:35 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=c93NXpgi+p5XaCllWBXTLuYEA3fNOgZcX/nvr8ucDT8=;
- b=54XXivy4lpHDobFNzDJ6Dtx2dci3MjWXl1w49jCCUvS5cFL7lAbkudZ6ivLu28fIHw
- qXyKYCF6g+Jqd30jURCRrq58vdYE2OIiYZSef/0BBeOy9ZvggFvicPAAjevywllaIhjb
- y8DolA5Ff7C3P/tw7O/tOSINbSywj0vtjWk3kp1JuvflFKeChFCdhZRg8DgUn9ZcH8lY
- yvrwS31lW0KAhpwhuFW15H6W3AOWs2YXQ/9f1O3xkLJd9X+nDcOAu37X/yxS0NrXmZs6
- Xr7qzgxJ0wrhKiL2tZx2qE1VPpX/d9VzTaaNufO1O7VU+1BeW5QEkJd89scbC9GEynO7
- WaKQ==
-X-Gm-Message-State: AOAM5312Ez41OGnUg3aKdRckeM0RUqKsjJeU+B4E7Ww6EADCG+5xujxC
- bdZNFhRgFWrQtf83eb1Ifg==
-X-Google-Smtp-Source: ABdhPJxbShQYydLWhlk/xGNiMTT7AzAb2ftOT6Bl3SAFnSA368SVgvPwj9OmarpSNVanmN5IIk0uVA==
-X-Received: by 2002:aca:afcc:: with SMTP id y195mr1309932oie.71.1632182185308; 
- Mon, 20 Sep 2021 16:56:25 -0700 (PDT)
+ bh=27FPWfQ3xHskA0+KKGpEItqvWnJm7YpWtLApCe/IIEw=;
+ b=qVIf7rsBPWDvOMIHm2jfCgtvp6DmjnuTZAKKYvhWBNjzMlpAMBX3VTrR24pCdy4HNo
+ qLeSsy21+l1BzTuI6mWUpb495FdJd/jKsvrSjRtF6In2NOC7zsZr57a08n7VnysfDz5B
+ GjlNpTjcWHJbznfrD03F8zyzzhMvFSvZgPJdTq/1buunAG+/VZitpUXe8+HcHV6y/7us
+ dy00NK7AevFpK+3d+TPyn0k3SoigU1CJAfPPcZ21Vb7ddlWB1Je8qM6+Mys5e377cQ2v
+ //cftwWFseWQLB1AjrQLDgmN35F/GM1FF06HY+DbcUtBQ55swFDC7JXJFEWlq4RXyuOB
+ R1eA==
+X-Gm-Message-State: AOAM532gQt+tncWfbJ5Uwiqm+ETtPGzv2pIcWP5rXy+A2jqod8wwUNH8
+ kiNWVxhvYj9c+gMy2XCvsQ==
+X-Google-Smtp-Source: ABdhPJwH1+emzRzbD1Bt/8Y858uJ63SylbkiAwBXBK0v0HNJg8rphZaH6+hhSCA0wMbfVImO+bLvKQ==
+X-Received: by 2002:a9d:6206:: with SMTP id g6mr8049570otj.62.1632182255103;
+ Mon, 20 Sep 2021 16:57:35 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id a11sm3462634oiw.36.2021.09.20.16.56.23
+ by smtp.gmail.com with ESMTPSA id 9sm183706oir.10.2021.09.20.16.57.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Sep 2021 16:56:24 -0700 (PDT)
-Received: (nullmailer pid 1068768 invoked by uid 1000);
- Mon, 20 Sep 2021 23:56:23 -0000
-Date: Mon, 20 Sep 2021 18:56:23 -0500
+ Mon, 20 Sep 2021 16:57:34 -0700 (PDT)
+Received: (nullmailer pid 1071008 invoked by uid 1000);
+ Mon, 20 Sep 2021 23:57:33 -0000
+Date: Mon, 20 Sep 2021 18:57:33 -0500
 From: Rob Herring <robh@kernel.org>
 To: Swapnil Jakhade <sjakhade@cadence.com>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- p.zabel@pengutronix.de, lokeshvutla@ti.com, a-govindraju@ti.com, kishon@ti.com,
- linux-phy@lists.infradead.org, robh+dt@kernel.org, vkoul@kernel.org,
- mparab@cadence.com
-Subject: Re: [PATCH v2 03/15] dt-bindings: phy: cadence-torrent: Rename SSC
- macros to use generic names
-Message-ID: <YUkfp/sARPD3i82R@robh.at.kernel.org>
+Cc: mparab@cadence.com, devicetree@vger.kernel.org, a-govindraju@ti.com,
+ linux-phy@lists.infradead.org, vkoul@kernel.org, p.zabel@pengutronix.de,
+ linux-kernel@vger.kernel.org, kishon@ti.com, robh+dt@kernel.org,
+ lokeshvutla@ti.com
+Subject: Re: [PATCH v2 04/15] dt-bindings: phy: cadence-sierra: Add binding
+ to specify SSC mode
+Message-ID: <YUkf7SsrR7fw76y9@robh.at.kernel.org>
 References: <20210908122930.10224-1-sjakhade@cadence.com>
- <20210908122930.10224-4-sjakhade@cadence.com>
+ <20210908122930.10224-5-sjakhade@cadence.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210908122930.10224-4-sjakhade@cadence.com>
+In-Reply-To: <20210908122930.10224-5-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210920_165626_297473_24C7E09C 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20210920_165736_121481_EC8AA394 
+X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,20 +96,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 08 Sep 2021 14:29:18 +0200, Swapnil Jakhade wrote:
-> Rename SSC macros to use generic names instead of PHY specific names,
-> so that they can be used to specify SSC modes for both Torrent and
-> Sierra. Renaming the macros should not affect the things as these are
-> not being used in any DTS file yet.
+On Wed, 08 Sep 2021 14:29:19 +0200, Swapnil Jakhade wrote:
+> Add binding to specify Spread Spectrum Clocking mode used.
 > 
 > Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
 > ---
->  .../devicetree/bindings/phy/phy-cadence-torrent.yaml      | 4 ++--
->  include/dt-bindings/phy/phy-cadence.h                     | 8 ++++----
->  2 files changed, 6 insertions(+), 6 deletions(-)
+>  .../devicetree/bindings/phy/phy-cadence-sierra.yaml      | 9 +++++++++
+>  1 file changed, 9 insertions(+)
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
