@@ -2,85 +2,82 @@ Return-Path: <SRS0=p6f2=OM=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-20.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
-	version=3.4.0
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 322B2C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 16:19:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 72EDDC433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 19:25:45 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E263661168
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 16:19:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E263661168
+	by mail.kernel.org (Postfix) with ESMTPS id 3EF6360FE8
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 19:25:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3EF6360FE8
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KPr/STP8uEDXQT9WNLnMCHPHl07r301XdTjOtUOvfJU=; b=CsL4r54ymGPYR2
-	tAMV5UZuOZIyUfkUSfshMuz+elm5kEuiW6/P00T2ki7l1pK9pZZlNZlWHILonEQ70pkcfXOoVyaCN
-	Qiyt3gK5CnEn8v6yaVpyJZOfXxuPHcSETkKUemYvD06NFa+da4/mGn3sj5k1zPY2HwFbQFEFUW3pQ
-	31kswtfp8I/nKFCKrkrkeN45m4YzfGcaWaJgm/fvwAbj3/gBQjaz2VsxTMny5uubWgm1GMF9lfwX4
-	ybB4BvkoDSqWpPJXbKsnAkDfbPJByJhUovtqdTQ0+ZXoq18gLLwiIJALU/UmOiUd8K2i4t8vm6ZAt
-	IzQei5WBs6XBjV0qPZjg==;
+	List-Owner; bh=wtEHt/ywj+Edm63fcqMg6adj5Y5q7QAMgg2NkNn1vns=; b=MYdLG7m6QF2SA7
+	kj5E8AMab0tJci+7ehiTLhq09Vb69lfsMQYykVkP6P3tanNYs7hCQYksTog/ss/lIXRwlGdtjzazE
+	OuOCciFVwh7t9opKLLArREahEf0x1oZ6V83CAFyeyqAXGiI0MDunz0wo9Hs+qKG4LoXaxB+y1y7fW
+	axjx1yhvy20XEsGhCNk8pNUEVukY6m5eLIca7buDCE2vLedDrUF0jgoqeS4pGloRFR1M9OgeThCqE
+	M+VwQgTYWs/xoCZDv7LgM7wbNG9tMbdIS89muISySxh8fKEVOoQ9Xfsv5oNhK0NG/1tr6Z31E3Xfv
+	w/UXWaoHbBYO/adtmxpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mT4xi-0096Vd-G0; Wed, 22 Sep 2021 16:19:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mT7sG-009URm-PG; Wed, 22 Sep 2021 19:25:44 +0000
+Received: from mail-ot1-f51.google.com ([209.85.210.51])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mT4xR-0096RF-Hp; Wed, 22 Sep 2021 16:18:55 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id DE93B61247;
- Wed, 22 Sep 2021 16:18:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1632327532;
- bh=hBAsvrZV+yB9m6NQkJEZNKVRMGBNiMFtAVk+tAPOY9Q=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=tvBDjXnxpOCJ0Q2yUYHVlM4RcUAK7bmcQrWaf8cpMP0CpMj4/OPX4tjAAbr01BJ6x
- hgFDhOzlOqA/hPGrQBVZ2ZjI9u2NDeJMI9z+yYYStOmB5YlB8aaaQBcfZnEsTTwq20
- BhW6M4sFyWb//tBKLuZ8vV/nTpl2f5hjQ4x7rq3g8qL4lQwsNG/AJVtoKTbG3C2BTg
- lMLlVqkgoDP3ZMrOvMIIjJ5/JHJS6GL0kEPH0Tt9QItD9mWS3XLH3u9zhEsHFKNjfC
- roXWTs2IpYgemMSg1fHCgnGhgewzQPuXb6AvhgzVSCmHiTtNXE2BNYcy2Hk3bdx3fS
- nkHEsWWaYdU2A==
-Received: by mail-ed1-f46.google.com with SMTP id co2so11826881edb.8;
- Wed, 22 Sep 2021 09:18:52 -0700 (PDT)
-X-Gm-Message-State: AOAM531VNQ8MGWhL5Ra+VJK86dhbHUQDcK4cqa8/NTp8q/XS04g6z2pr
- 525Ho21hqcvOAUSbvilAOtgmUWf+W2irDJTI+Q==
-X-Google-Smtp-Source: ABdhPJz8tVsKtk6yn9u+71rcMAgS0BuyzKIk3KLCLhFxiOLPm8SNwNUm1S5K8ylJ5RD8JjnCsHo+3ja0ifSpdXbFmNM=
-X-Received: by 2002:a17:906:3181:: with SMTP id 1mr455229ejy.388.1632327531346; 
- Wed, 22 Sep 2021 09:18:51 -0700 (PDT)
+ id 1mT7sE-009UQj-0e; Wed, 22 Sep 2021 19:25:43 +0000
+Received: by mail-ot1-f51.google.com with SMTP id
+ 77-20020a9d0ed3000000b00546e10e6699so5106205otj.2; 
+ Wed, 22 Sep 2021 12:25:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=ROfX8dif1hOUK6DTEujZ26PCAYYwnvSwl8YAfygyhQw=;
+ b=GgbnewtfbzEY8zL2psQtedSsfKv0vldb2IE8K3dLFn0TkByuSNg2o2y4jO5athVFXT
+ DTB8q9CKrkCoJSRkHxBrZLr/loJt0V6z+wQ4pUy2KuOoFFuuJPZX5J87hLqxdIuTeW0Q
+ fVn6Yn0TJA1lhob+/mABuNJZor+nEFHBhmMMttDxIxmPUI/R8PvRcVnar7tXnDeohH9n
+ IqV/MNcEts3BfLtL2Z7RbG5PTCf+jXGGnO/ve+XaycB4WY7/dM3QTZIrbLo3fG9K6jkw
+ G3mV7ZVS4Df043vp1zJE5dCZ3+KD5mIsXp/z2sDLusk84uasHvy+Xt9r62ljQ2nGDFfe
+ s1VA==
+X-Gm-Message-State: AOAM5328xZPTkJ6d/+UNFSjrl0DmN6ixBmkGtO5HlUmMOGkX0PPFcCS+
+ BAt30thaE4vWZ38Cwlcrxw==
+X-Google-Smtp-Source: ABdhPJwZcbzkZsQL7s7jpvYc1l7WP+b15tHJqpXusBvQkj9+ALginWqlD3++GJrT2Tc8lFf6Q003vw==
+X-Received: by 2002:a9d:411e:: with SMTP id o30mr730096ote.97.1632338739773;
+ Wed, 22 Sep 2021 12:25:39 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id j8sm737011ooc.21.2021.09.22.12.25.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 22 Sep 2021 12:25:39 -0700 (PDT)
+Received: (nullmailer pid 1143320 invoked by uid 1000);
+ Wed, 22 Sep 2021 19:25:38 -0000
+Date: Wed, 22 Sep 2021 14:25:38 -0500
+From: Rob Herring <robh@kernel.org>
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: l.stach@pengutronix.de, kishon@ti.com, vkoul@kernel.org,
+ galak@kernel.crashing.org, shawnguo@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
+Subject: Re: [PATCH 1/4] dt-bindings: phy: phy-imx8-pcie: Add binding for the
+ pad modes of imx8 pcie phy
+Message-ID: <YUuDMjBGWfNsMf2n@robh.at.kernel.org>
+References: <1631845863-24249-1-git-send-email-hongxing.zhu@nxp.com>
+ <1631845863-24249-2-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
-References: <20210907083723.7725-1-granquet@baylibre.com>
- <20210907083723.7725-5-granquet@baylibre.com>
- <1631026304.913177.3958449.nullmailer@robh.at.kernel.org>
-In-Reply-To: <1631026304.913177.3958449.nullmailer@robh.at.kernel.org>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Thu, 23 Sep 2021 00:18:40 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_8dpL2q4H9wHOusCtODAHos_rL2_p8BGhsGEkAFLeV1FQ@mail.gmail.com>
-Message-ID: <CAAOTY_8dpL2q4H9wHOusCtODAHos_rL2_p8BGhsGEkAFLeV1FQ@mail.gmail.com>
-Subject: Re: [PATCH 4/4] dt-bindings: display: mediatek: add MT8195 hdmi
- bindings
-To: Rob Herring <robh@kernel.org>
-Cc: Guillaume Ranquet <granquet@baylibre.com>, David Airlie <airlied@linux.ie>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- DRI Development <dri-devel@lists.freedesktop.org>, 
- DTML <devicetree@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, 
- Linux ARM <linux-arm-kernel@lists.infradead.org>, CK Hu <ck.hu@mediatek.com>, 
- linux-kernel <linux-kernel@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
- Daniel Vetter <daniel@ffwll.ch>, Jitao shi <jitao.shi@mediatek.com>,
- linux-phy@lists.infradead.org, 
- Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Content-Disposition: inline
+In-Reply-To: <1631845863-24249-2-git-send-email-hongxing.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210922_091853_664491_C013F3B6 
-X-CRM114-Status: GOOD (  18.71  )
+X-CRM114-CacheID: sfid-20210922_122542_109842_70121385 
+X-CRM114-Status: GOOD (  15.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,53 +89,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksIEd1aWxsYXVtZToKClJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+IOaWvCAyMDIx5bm0
-OeaciDfml6Ug6YCx5LqMIOS4i+WNiDEwOjUx5a+r6YGT77yaCj4KPiBPbiBUdWUsIDA3IFNlcCAy
-MDIxIDEwOjM3OjIxICswMjAwLCBHdWlsbGF1bWUgUmFucXVldCB3cm90ZToKPiA+IEFkZCBNZWRp
-YXRlayBIRE1JIGFuZCBIRE1JLUREQyBiaW5kaW5ncyBmb3IgTVQ4MTk1IFNvQy4KCk1vdmUgdGhp
-cyBwYXRjaCBiZWZvcmUgdGhlIGRyaXZlciBwYXRjaCB3aGljaCByZWZlciB0byB0aGlzIHBhdGNo
-LgoKPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBHdWlsbGF1bWUgUmFucXVldCA8Z3JhbnF1ZXRAYmF5
-bGlicmUuY29tPgo+ID4gLS0tCj4gPiAgLi4uL21lZGlhdGVrL21lZGlhdGVrLG10ODE5NS1oZG1p
-LWRkYy55YW1sICAgIHwgNDYgKysrKysrKysrCj4gPiAgLi4uL21lZGlhdGVrL21lZGlhdGVrLG10
-ODE5NS1oZG1pLnlhbWwgICAgICAgIHwgOTkgKysrKysrKysrKysrKysrKysrKwo+ID4gIDIgZmls
-ZXMgY2hhbmdlZCwgMTQ1IGluc2VydGlvbnMoKykKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgRG9j
-dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvbWVkaWF0ZWsvbWVkaWF0ZWss
-bXQ4MTk1LWhkbWktZGRjLnlhbWwKCkkgdGhpbmsgdGhpcyBmaWxlIHNob3VsZCBiZSBtZXJnZWQg
-aW50byBtZWRpYXRlayxoZG1pLWRkYy55YW1sIFsxXS4KClsxXSBodHRwczovL2dpdC5rZXJuZWwu
-b3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJlZS9Eb2N1
-bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9tZWRpYXRlay9tZWRpYXRlayxo
-ZG1pLWRkYy55YW1sP2g9djUuMTUtcmMyCgo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9tZWRpYXRlay9tZWRpYXRlayxtdDgx
-OTUtaGRtaS55YW1sCgpJIHRoaW5rIHRoaXMgZmlsZSBzaG91bGQgYmUgbWVyZ2VkIGludG8gbWVk
-aWF0ZWssaGRtaS55YW1sIFsyXS4KClsyXSBodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20v
-bGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJlZS9Eb2N1bWVudGF0aW9uL2Rl
-dmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9tZWRpYXRlay9tZWRpYXRlayxoZG1pLnlhbWw/aD12
-NS4xNS1yYzIKClJlZ2FyZHMsCkNodW4tS3VhbmcuCgo+ID4KPgo+IE15IGJvdCBmb3VuZCBlcnJv
-cnMgcnVubmluZyAnbWFrZSBEVF9DSEVDS0VSX0ZMQUdTPS1tIGR0X2JpbmRpbmdfY2hlY2snCj4g
-b24geW91ciBwYXRjaCAoRFRfQ0hFQ0tFUl9GTEFHUyBpcyBuZXcgaW4gdjUuMTMpOgo+Cj4geWFt
-bGxpbnQgd2FybmluZ3MvZXJyb3JzOgo+Cj4gZHRzY2hlbWEvZHRjIHdhcm5pbmdzL2Vycm9yczoK
-PiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9tZWRpYXRlay9tZWRp
-YXRlayxtdDgxOTUtaGRtaS5leGFtcGxlLmR0czoxOToxODogZmF0YWwgZXJyb3I6IGR0LWJpbmRp
-bmdzL2Nsb2NrL210ODE5NS1jbGsuaDogTm8gc3VjaCBmaWxlIG9yIGRpcmVjdG9yeQo+ICAgIDE5
-IHwgICAgICAgICAjaW5jbHVkZSA8ZHQtYmluZGluZ3MvY2xvY2svbXQ4MTk1LWNsay5oPgo+ICAg
-ICAgIHwgICAgICAgICAgICAgICAgICBefn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fgo+
-IGNvbXBpbGF0aW9uIHRlcm1pbmF0ZWQuCj4gbWFrZVsxXTogKioqIFtzY3JpcHRzL01ha2VmaWxl
-LmxpYjozNzk6IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L21lZGlh
-dGVrL21lZGlhdGVrLG10ODE5NS1oZG1pLmV4YW1wbGUuZHQueWFtbF0gRXJyb3IgMQo+IG1ha2Vb
-MV06ICoqKiBXYWl0aW5nIGZvciB1bmZpbmlzaGVkIGpvYnMuLi4uCj4gbWFrZTogKioqIFtNYWtl
-ZmlsZToxNDM4OiBkdF9iaW5kaW5nX2NoZWNrXSBFcnJvciAyCj4KPiBkb2MgcmVmZXJlbmNlIGVy
-cm9ycyAobWFrZSByZWZjaGVja2RvY3MpOgo+Cj4gU2VlIGh0dHBzOi8vcGF0Y2h3b3JrLm96bGFi
-cy5vcmcvcGF0Y2gvMTUyNTE3MAo+Cj4gVGhpcyBjaGVjayBjYW4gZmFpbCBpZiB0aGVyZSBhcmUg
-YW55IGRlcGVuZGVuY2llcy4gVGhlIGJhc2UgZm9yIGEgcGF0Y2gKPiBzZXJpZXMgaXMgZ2VuZXJh
-bGx5IHRoZSBtb3N0IHJlY2VudCByYzEuCj4KPiBJZiB5b3UgYWxyZWFkeSByYW4gJ21ha2UgZHRf
-YmluZGluZ19jaGVjaycgYW5kIGRpZG4ndCBzZWUgdGhlIGFib3ZlCj4gZXJyb3IocyksIHRoZW4g
-bWFrZSBzdXJlICd5YW1sbGludCcgaXMgaW5zdGFsbGVkIGFuZCBkdC1zY2hlbWEgaXMgdXAgdG8K
-PiBkYXRlOgo+Cj4gcGlwMyBpbnN0YWxsIGR0c2NoZW1hIC0tdXBncmFkZQo+Cj4gUGxlYXNlIGNo
-ZWNrIGFuZCByZS1zdWJtaXQuCj4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Fri, Sep 17, 2021 at 10:31:00AM +0800, Richard Zhu wrote:
+> Add binding for reference clock PAD modes of the i.MX8 PCIe PHY.
+> 
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+> ---
+>  include/dt-bindings/phy/phy-imx8-pcie.h | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
+>  create mode 100644 include/dt-bindings/phy/phy-imx8-pcie.h
+> 
+> diff --git a/include/dt-bindings/phy/phy-imx8-pcie.h b/include/dt-bindings/phy/phy-imx8-pcie.h
+> new file mode 100644
+> index 000000000000..fe198a0cc12c
+> --- /dev/null
+> +++ b/include/dt-bindings/phy/phy-imx8-pcie.h
+> @@ -0,0 +1,14 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+
+Perhaps this should match the dts files license...
+
+> +/*
+> + * This header provides constants for i.MX8 PCIe.
+> + */
+> +
+> +#ifndef _DT_BINDINGS_IMX8_PCIE_H
+> +#define _DT_BINDINGS_IMX8_PCIE_H
+> +
+> +/* Reference clock PAD mode */
+> +#define IMX8_PCIE_REFCLK_PAD_NO_USED	0
+> +#define IMX8_PCIE_REFCLK_PAD_INPUT	1
+> +#define IMX8_PCIE_REFCLK_PAD_OUTPUT	2
+> +
+> +#endif /* _DT_BINDINGS_IMX8_PCIE_H */
+> -- 
+> 2.25.1
+> 
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
