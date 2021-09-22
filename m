@@ -6,14 +6,14 @@ X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
 	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3C9A7C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 20:53:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3B969C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 21:16:43 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1175C6112F
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 20:53:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1175C6112F
+	by mail.kernel.org (Postfix) with ESMTPS id 091FC61107
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 21:16:43 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 091FC61107
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -22,64 +22,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+EclCIa/RtgcGSue2NgpA/blj1cMsYN1G3lR8GmZc50=; b=stJHSeIONX8Kxj
-	R5wy4sShUOgZ72+sur40OBb5Z2gyACs1ihCJXK11kMgzRM3rrygkhnjpkkjoKdDLovDIBD5L3C0sq
-	GGbZrvKhj8oKyDlbG5CG1+E9j7YARoQQW5F0OQ5LYSdbDIuiw21LqU/DQAQilA/I1mkw8tdlIMoJx
-	VigE5+PexJ5jAWKZquS/h0pBnfBtY9kRUWVIiG/0LZlr5RWaCvL3gl3Yy5OOVIlztQFEujQeNc0IC
-	uGGL7SJhnWGbKmDGn2jILEYzWEyvQvJG3GgoUWHl9FTh1QVUaWDYXhKUue1/HjWNS0OqMzSpfgUi0
-	RGNMu35hDb1j0t6cT4KA==;
+	List-Owner; bh=+tqVQ+vYlVuFz/pEKUy846INIcHf/rzv1UaFPrr9Vqw=; b=Chg3fIixwVquQe
+	8T7eWiuhPn5vkzoz39bdLWywkLzsqhcyJzW3+tid720/tOr75orc5OY3MUEd0Y7NUNZ3QSIB4cvx/
+	Nxw6FyRaBiN6CT6h1YvnVdDf898ZDPt0cn7jKH9gjwthdwKcOHDvq2IwuiqWoJ0UwSlgty6GaECj3
+	SrNM/VfiYVd8P4QE9t5noLZlzlSxy6FFTMA7oyrTkxQaqU0t4ggVHS6nyY12xmOuRx/CslF3JRch5
+	6gwsNICQilKzGTU9BT53Co6U/BSfOkGGPEywHJypQGjrvaI1X0m3r5kzUSi64mQCV+SmutT3PEYC9
+	F9wptwu7HopofX7wVXgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mT9FV-009dEF-Ie; Wed, 22 Sep 2021 20:53:49 +0000
-Received: from mail-oi1-f173.google.com ([209.85.167.173])
+	id 1mT9be-009fa0-Hs; Wed, 22 Sep 2021 21:16:42 +0000
+Received: from mail-oi1-f172.google.com ([209.85.167.172])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mT9FS-009dDF-Qd
- for linux-phy@lists.infradead.org; Wed, 22 Sep 2021 20:53:48 +0000
-Received: by mail-oi1-f173.google.com with SMTP id x124so6425869oix.9
- for <linux-phy@lists.infradead.org>; Wed, 22 Sep 2021 13:53:46 -0700 (PDT)
+ id 1mT9bc-009fZU-N5
+ for linux-phy@lists.infradead.org; Wed, 22 Sep 2021 21:16:41 +0000
+Received: by mail-oi1-f172.google.com with SMTP id y201so6591017oie.3
+ for <linux-phy@lists.infradead.org>; Wed, 22 Sep 2021 14:16:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=7UQgPbHiiI5fROteq8Hvll/XjdnlIJK9D0aOFIIzhqQ=;
- b=mU02D6rmpDCsMvAfIj1v6+g91WXQBAqu4s14HfU8J+fzCXtxwWMb0liAXKlUeKDSr5
- D//JhXyHm6gtCD3tNobP6KrJXBF9eE1/0T3RJ8ppU7IeQasQlNtsGM52xsX3VZaGisPp
- rhTou/aijU1GXCb3ZFIxzX5Wac1muIAB05aUS8RgEacsMUife2nOIVdsWbQYUfiTT15M
- PLNOlVddrSSXzH/vBzEo55pGSmZkwwek/z+h4Qplvse4Ldklfe2N4szlynkPI0Rsz/VI
- lQN1gdjW6Q3y9le3t19fGwH+oNDdELw0NoZtYK5knTy/1QZrPg+qU2p8col+QDyUWBiR
- iyLw==
-X-Gm-Message-State: AOAM530TfAQIzaW29a+8UFI4+KYH3iqFLGVs9fZoSGXp6pxtG8AwdrnZ
- Sn8XBxPhJUU5jWNkyo2tQw==
-X-Google-Smtp-Source: ABdhPJwS6+PnDPVLGjmSDm2lajZEue3vo99r/gZh6GWIc5NC9a7fkexwjqMNrK2Fvx+5LHXUA+TFPw==
-X-Received: by 2002:a05:6808:aaa:: with SMTP id
- r10mr6338506oij.75.1632344026237; 
- Wed, 22 Sep 2021 13:53:46 -0700 (PDT)
+ bh=Kh4Ghm6qYxW1QP5eDOkkCFbtlvfqc6r3kIiF78R6ML4=;
+ b=72TocbIbsU/OdQ4X3EsJSnMEOJtHbFxiGNoDgL7VkjPUXSaGSfZeFmFkqY/g+i6Rdd
+ 7e73prdeVVJdcrnh2v3G734mDnqiKzaspMDomYM610xFlW4kI6JV07FTm6/TKyxSacDa
+ 8LBeuv2ZMIQqdwHC26b631Wl89Rzn/AT21I65O0Oq57xVMjNqMpn2mN4s4yuNinQJUEx
+ ou8JOoi/AIl7WKjPF67UvkjztT3bfSPQTUE/KleSEoD+5dMzlQMWYFwkuxpKYAnCEndu
+ xANd6gPA3H8TxjLNvHp90UGGxrd2UDcj/cbZlEblXADxQxOiOCZhLCinAbJdM/1J/cNw
+ vhTw==
+X-Gm-Message-State: AOAM532o/FMq73bFateJqJbwX5d5oYrvkk255lHt/LkZoPZPVspxkOS8
+ o3rpDd0cr/4L1zAZk49TMMQro4gJpA==
+X-Google-Smtp-Source: ABdhPJwKzojWvsxGCdpvga72I3IhSMl5L8xtOQdbUXjk42Y7eW8ZDGoiKlWf+b/oOud7SP6AAwzn/Q==
+X-Received: by 2002:a05:6808:2110:: with SMTP id
+ r16mr1011645oiw.117.1632345398451; 
+ Wed, 22 Sep 2021 14:16:38 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id y83sm780487oia.47.2021.09.22.13.53.45
+ by smtp.gmail.com with ESMTPSA id k4sm792618oic.48.2021.09.22.14.16.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Sep 2021 13:53:45 -0700 (PDT)
-Received: (nullmailer pid 1275452 invoked by uid 1000);
- Wed, 22 Sep 2021 20:53:44 -0000
-Date: Wed, 22 Sep 2021 15:53:44 -0500
+ Wed, 22 Sep 2021 14:16:37 -0700 (PDT)
+Received: (nullmailer pid 1308640 invoked by uid 1000);
+ Wed, 22 Sep 2021 21:16:36 -0000
+Date: Wed, 22 Sep 2021 16:16:36 -0500
 From: Rob Herring <robh@kernel.org>
 To: Shawn Guo <shawn.guo@linaro.org>
-Cc: Loic Poulain <loic.poulain@linaro.org>, linux-arm-msm@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Manu Gautam <mgautam@codeaurora.org>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,qusb2: Add compatible for
- QCM2290
-Message-ID: <YUuX2KBf7+6YFcVA@robh.at.kernel.org>
-References: <20210919031110.25064-1-shawn.guo@linaro.org>
- <20210919031110.25064-2-shawn.guo@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: phy: qcom,qusb2: Update maintainer email
+Message-ID: <YUudNLH6wsgQVk/c@robh.at.kernel.org>
+References: <20210919033519.29559-1-shawn.guo@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210919031110.25064-2-shawn.guo@linaro.org>
+In-Reply-To: <20210919033519.29559-1-shawn.guo@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210922_135346_908602_5EB941B7 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20210922_141640_795130_A3BE2009 
+X-CRM114-Status: UNSURE (   8.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,13 +94,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 19 Sep 2021 11:11:09 +0800, Shawn Guo wrote:
-> Add compatible for QUSB2 PHY on QCM2290 platform.
+On Sun, 19 Sep 2021 11:35:19 +0800, Shawn Guo wrote:
+> Manu's codeaurora.org email address bounces.  Before he comes
+> back with his new email, fill Vinod's address in there.
 > 
 > Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
 > ---
->  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 1 +
->  1 file changed, 1 insertion(+)
+>  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
 Acked-by: Rob Herring <robh@kernel.org>
