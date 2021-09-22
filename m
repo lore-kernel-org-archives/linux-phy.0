@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-18.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3F318C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 13:06:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id ACD0CC433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 13:06:54 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E8E6861215
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 13:05:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E8E6861215
+	by mail.kernel.org (Postfix) with ESMTPS id 77F1E60F6D
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 13:06:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 77F1E60F6D
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baidu.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,49 +23,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ip9/dgOB999MQiCLaX8302QUzh+GRDm0ueMepCOwiSE=; b=Xp3G/0xdbkr1Qf
-	UXBz/8iFRPX22Wc7o9oaKMzpSHdkMJEda6xYEp0h53SY8FAv+einuyFiA3pyi1K05UVmk0yAmrnzP
-	Wkys11MaAIfTrTdRLXx7BwItnV3szzozNd5XJTtZTQ5EzlOtWWR7ZlLFnh9l3kewXuMHU9AhSyaUg
-	geXoIbzKm2hk+IasP4rsoz9oBp0c+/vD2crJtcgUSIvf15ekPsZM1O2ELbjkrhdBkxUcwy9vNxKJZ
-	ikuzWL7Dsq9UXYKByouqjcxGjL7yn/YmWpumvvDnoXatxgrs7L4wa4LdpgnRt0xbsNEImy0gL6Nhb
-	T2ULDcqnSNIABpshSb8g==;
+	List-Owner; bh=MG9f4OeWJYn/0RQozIpXIdcgElfIUN/+DggR+UmQvQ8=; b=fEnF/bbKWKjGXC
+	Mu9qLKzK6MYw/rf1/CwfRPORhDHU0VbA+6BLWKjSDDMROtkPFT2t8YhiV9n55KXX8e1L7R1IxVc6z
+	AAeeD2G87lso+SykvHT5PN1Np88c+3mFofD3oTBAedYcHng3TJlvlV2U383xxXUGv8IaSf61GJaph
+	WXFv0KixaLRZ+iXm80EpAVgpyCPHCDUW2JmU1DaIJq24Fq9eb2Fkh9202Dp8OI2+vo5enJ9BolF4D
+	fEaX3k8Qpli6DtTrlOiIa75DhrvhxqMvbki0ntPtyBDolPG9jw3aNXvMfTMzXCL1eNoA4tNJMpkHq
+	iBZyyve+nq0D8Z6KyhgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mT1wl-008Wf2-6u; Wed, 22 Sep 2021 13:05:59 +0000
-Received: from mx22.baidu.com ([220.181.50.185] helo=baidu.com)
+	id 1mT1xd-008X2a-TE; Wed, 22 Sep 2021 13:06:53 +0000
+Received: from mx24.baidu.com ([111.206.215.185] helo=baidu.com)
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mT1rR-008UQt-UT
- for linux-phy@lists.infradead.org; Wed, 22 Sep 2021 13:00:31 +0000
-Received: from BJHW-Mail-Ex03.internal.baidu.com (unknown [10.127.64.13])
- by Forcepoint Email with ESMTPS id F28FCEE13D26D10CED01;
- Wed, 22 Sep 2021 21:00:23 +0800 (CST)
+ id 1mT1rU-008UU3-Ij; Wed, 22 Sep 2021 13:00:34 +0000
+Received: from BJHW-Mail-Ex05.internal.baidu.com (unknown [10.127.64.15])
+ by Forcepoint Email with ESMTPS id 720D3FAF1D7B11E54F0B;
+ Wed, 22 Sep 2021 21:00:31 +0800 (CST)
 Received: from BJHW-MAIL-EX27.internal.baidu.com (10.127.64.42) by
- BJHW-Mail-Ex03.internal.baidu.com (10.127.64.13) with Microsoft SMTP Server
+ BJHW-Mail-Ex05.internal.baidu.com (10.127.64.15) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.2308.14; Wed, 22 Sep 2021 21:00:23 +0800
+ 15.1.2308.14; Wed, 22 Sep 2021 21:00:31 +0800
 Received: from LAPTOP-UKSR4ENP.internal.baidu.com (172.31.63.8) by
  BJHW-MAIL-EX27.internal.baidu.com (10.127.64.42) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.2308.14; Wed, 22 Sep 2021 21:00:23 +0800
+ 15.1.2308.14; Wed, 22 Sep 2021 21:00:30 +0800
 From: Cai Huoqing <caihuoqing@baidu.com>
 To: <caihuoqing@baidu.com>
-CC: Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>, "Vinod
- Koul" <vkoul@kernel.org>, <linux-arm-msm@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] phy: qcom-qmp: Make use of the helper function
+CC: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, <linux-phy@lists.infradead.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-rockchip@lists.infradead.org>, 
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH] phy: rockchip-inno-usb2: Make use of the helper function
  devm_add_action_or_reset()
-Date: Wed, 22 Sep 2021 21:00:16 +0800
-Message-ID: <20210922130017.692-1-caihuoqing@baidu.com>
+Date: Wed, 22 Sep 2021 21:00:23 +0800
+Message-ID: <20210922130024.745-1-caihuoqing@baidu.com>
 X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
 X-Originating-IP: [172.31.63.8]
 X-ClientProxiedBy: BJHW-Mail-Ex09.internal.baidu.com (10.127.64.32) To
  BJHW-MAIL-EX27.internal.baidu.com (10.127.64.42)
+X-Baidu-BdMsfe-DateCheck: 1_BJHW-Mail-Ex05_2021-09-22 21:00:31:487
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210922_060030_210665_F74E990B 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210922_060032_858655_410C272F 
+X-CRM114-Status: GOOD (  10.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,39 +89,39 @@ to simplify the error handling, reduce the code.
 
 Signed-off-by: Cai Huoqing <caihuoqing@baidu.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp.c | 12 ++----------
- 1 file changed, 2 insertions(+), 10 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 11 ++---------
+ 1 file changed, 2 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index f14032170b1c..084e3d96264e 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -5154,11 +5154,7 @@ static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
- 	 * Roll a devm action because the clock provider is the child node, but
- 	 * the child node is not actually a device.
- 	 */
--	ret = devm_add_action(qmp->dev, phy_clk_release_provider, np);
--	if (ret)
--		phy_clk_release_provider(np);
--
--	return ret;
-+	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
- }
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 4f569d9307b9..1938365abbb3 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -321,7 +321,7 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
+ 	struct device_node *node = rphy->dev->of_node;
+ 	struct clk_init_data init;
+ 	const char *clk_name;
+-	int ret;
++	int ret = 0;
  
- /*
-@@ -5350,11 +5346,7 @@ static int phy_dp_clks_register(struct qcom_qmp *qmp, struct qmp_phy *qphy,
- 	 * Roll a devm action because the clock provider is the child node, but
- 	 * the child node is not actually a device.
- 	 */
--	ret = devm_add_action(qmp->dev, phy_clk_release_provider, np);
--	if (ret)
--		phy_clk_release_provider(np);
--
--	return ret;
-+	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
- }
+ 	init.flags = 0;
+ 	init.name = "clk_usbphy_480m";
+@@ -352,15 +352,8 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
+ 	if (ret < 0)
+ 		goto err_clk_provider;
  
- static const struct phy_ops qcom_qmp_phy_gen_ops = {
+-	ret = devm_add_action(rphy->dev, rockchip_usb2phy_clk480m_unregister,
+-			      rphy);
+-	if (ret < 0)
+-		goto err_unreg_action;
+-
+-	return 0;
++	return devm_add_action_or_reset(rphy->dev, rockchip_usb2phy_clk480m_unregister, rphy);
+ 
+-err_unreg_action:
+-	of_clk_del_provider(node);
+ err_clk_provider:
+ 	clk_unregister(rphy->clk480m);
+ err_ret:
 -- 
 2.25.1
 
