@@ -2,92 +2,90 @@ Return-Path: <SRS0=p6f2=OM=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-12.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,FSL_HELO_FAKE,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	UNWANTED_LANGUAGE_BODY autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-10.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CDAA3C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 07:58:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2A7E9C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 08:23:08 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8B84760FA0
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 07:58:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 8B84760FA0
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id EEF02611B0
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Sep 2021 08:23:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org EEF02611B0
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=microchip.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R02umAEwzUQi/373BMJZY14APeGAUurhLseXzjuaHsQ=; b=mFt9loMtcrFotV
-	FYquqLP80yv5aUfi4HiYnT0MaiDCR9tpPVBSZOMpH458kCXiKjxnVInxMRr2dWGB77kNjFZ1db9BU
-	P4vq6B9Aaf6uNyc7AGu9ZJzwNSgDQjAsLtsF5zg9ndVAO97jxfJRr9A9TxgbTAZN7u/jLL53kJCSQ
-	wMttMJfHlg/xgYBefSe0qYcqTecFP+QyxpdmWkE/pkkO/A/WzPZFb4MWM75yN4petaUUPGSKmWgmx
-	/N7W0box2ICYBODuSxuKIuh5yA9i2g6AKrl848ALY3DiagPld9qM0YBJQ8JRRaqqw3UmhjQCItAYd
-	hh78HOa2YBCakfzDPwkg==;
+	List-Owner; bh=WbKDbvy/7SL7Qk6QVUIf0Eqk9uyJPrWuP38WWOjqVFw=; b=JjZLHmNzwy2IsY
+	z1KO+vk+QPR3DUvlRGlkHLLEUv0S22A+sDFcCje6Ix3b/ijdlXxs17lh5bIZJclQrNDqhwxTJMAqZ
+	FbryEjGB9DVNGI9jfq7Q7yW3mnlvWw7JJw/LglVnK2O0ZpvWZmQrp2s/EfFjAIW+ScqVt5IN3BC3W
+	G+yefGU3bM0Y10Gjp7iEX8gLwix2QXnaxypgwgs4jKs09ywyK2W5b3iFjHaT6X3r2rxp486kcizfC
+	sG4R8lWcXrMIiQZ/iWncw7gBszPzz5a4VRmUxiZDj6DENEZAVMAb0rrzkM88BSCeHE2T7OHWliWfv
+	3GK6rzQbn4yr95hk8isw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mSx8l-007Nt8-1M; Wed, 22 Sep 2021 07:58:03 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1mSxX1-007SIG-Es; Wed, 22 Sep 2021 08:23:07 +0000
+Received: from esa.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mSx8i-007Nrj-VR
- for linux-phy@lists.infradead.org; Wed, 22 Sep 2021 07:58:02 +0000
-Received: by mail-wr1-x436.google.com with SMTP id w17so4033029wrv.10
- for <linux-phy@lists.infradead.org>; Wed, 22 Sep 2021 00:58:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=pTwG/Hf7HzNaqV1sAamZUStET5SYdFqViNRz8U2mk2E=;
- b=JfJK3l20DCNb/99A9fYyIQXSAIjb+hemWs3MZt9Lhd7rRCqhl7ldE0RvRnE4kMY+In
- Sv8b1tjrG+DnEtRUkh3pQm5JnAZtdlZjXltEbJBeqWMzUtqfKpjPVFZKE532pCg6cAB4
- QRWFaqZwx6La4vUqstVNZ1IvBnfK8NF7OIIpuSXV8gw4FiOsgcu7lpAJ9p0zCV3jQyhy
- BdU5kB2BmLv1sbkms4rl7iNwRtvc1qUiiBwLWO0a4ddmBdxO/BuwmzX7XSkUkvgM7Gf5
- qhXn0ixur6ILuctBUc8vg6qXCD95RX3mnTdBcXo/VspJZar8yuJaiAKBkPQ827Dq/uDN
- 59cQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=pTwG/Hf7HzNaqV1sAamZUStET5SYdFqViNRz8U2mk2E=;
- b=v4fpCGgrvf7/3abu8J1eUip/SDyxoqmqh7R7r4aVOX3qpP6RQuSK3/C8T5tYk0N79J
- OY7H46CxbdYPc6SR3G2931LVs0MsTB2JU6FHSswJknwAqfkbDiVpI8D4KjfDBxVnNMBC
- q7+F9bjjsmXX04X2ToqU4D/tc5uHAyjifFYeSiEilRsMETkG4svJUEJKeSGx0TwKRAeV
- x1LZ4JDOGGZGJphr+mddORyQVFWGaoZm82c1fdavZKf4brTRjbKZmIzNL+FgTJ0Gsea+
- NG59PhaGXKdoPThw47ykCbe3hI/0OwzGf3pTYq1cs3dEgJzibYw7ZFigjJsCGSrHP5i5
- /6Fw==
-X-Gm-Message-State: AOAM532CzC8LeY8TmRHvrVnqXTOMgUPAGBad6er5MRFRrMqqU7l0Au1q
- eLEAlXUDiEw56IohvgsUolAX9g==
-X-Google-Smtp-Source: ABdhPJzMhlF+CnvZ3h2+XCxqTxQb7Zb12UPZb5Ead7lHJdRW9ES/PA6ks9vw03Mu0Ij8gWaCLXDREQ==
-X-Received: by 2002:a1c:7f11:: with SMTP id a17mr9009019wmd.166.1632297479781; 
- Wed, 22 Sep 2021 00:57:59 -0700 (PDT)
-Received: from google.com ([95.148.6.233])
- by smtp.gmail.com with ESMTPSA id v8sm1348824wrt.12.2021.09.22.00.57.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 22 Sep 2021 00:57:59 -0700 (PDT)
-Date: Wed, 22 Sep 2021 08:57:57 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, devicetree@vger.kernel.org,
- =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
-Subject: Re: [PATCH 3/4] dt-bindings: mfd: brcm,cru: add USB 2.0 PHY
-Message-ID: <YUriBVIH/n0p2H+D@google.com>
-References: <20210913080024.6951-1-zajec5@gmail.com>
- <20210913080024.6951-3-zajec5@gmail.com>
+ id 1mSxWy-007SFW-4G
+ for linux-phy@lists.infradead.org; Wed, 22 Sep 2021 08:23:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1632298984; x=1663834984;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=xjW/845tnWGlXhM5QyPda/qgpHmpay631ISWld/+EpU=;
+ b=L8Cuz3hkzOr+ypjGCSbVF2SONiPrptX6LVU+9RLf1bfyYjGm/EbvMvUm
+ A+EdN+o2x184gCG+P2dKIjsmhKacFwRIIfWwp56COnbGCF16UMTCYgszR
+ doccI19yEua8cm9m1iflXIUo7TRc/zYNSUYey50NfebRm35iTS77hq+Yn
+ TdexP0jRPNCApRbFOiaLxKW+tIL/cIKBPAKCmPnSwcYgPA+mJtnq/JMjd
+ xh4d00n74su/CQwSLadtRvFJyuDQTiILxnD6OlgPQV3KqbKM/7MF5HEe5
+ csWv7TfrMD7//DyH+HomLonP92PbYGEFmcW0TBPiZappw1RnNxrEwoxQ6 Q==;
+IronPort-SDR: Io11DU1oxCoW9DJBhO9Z0Tpvl9wTYnln0Mf/81sY/iYrOHQnGAb5KM0qJ/dXkef68bAa+ShXJb
+ gMwGJXFfqocdln2uBliOmoA9IhRUxCUF/6WQdCvea6NEG0+oKRGxap7tvtsvCaFv+RwhCbbPeg
+ SuTRI6u1DTzynxEshLUjcaF91oH/1wdA/Z0Ld3i9AsAXSC6KZ3gbstMZ/2sZKFaWPK8cxZGrcK
+ GLtZt0ZZOxUgOY9EGKqsEXD4cb+iIMaztN0cAFVVJ/FMUd1Fe9q3MZr/KPdTuE8jwf1bBx6IBH
+ 6TbVug5MtabHNU5QekKfZfPt
+X-IronPort-AV: E=Sophos;i="5.85,313,1624345200"; d="scan'208";a="132701188"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 22 Sep 2021 01:22:55 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2176.14; Wed, 22 Sep 2021 01:22:50 -0700
+Received: from localhost (10.10.115.15) by chn-vm-ex03.mchp-main.com
+ (10.10.85.151) with Microsoft SMTP Server id 15.1.2176.14 via Frontend
+ Transport; Wed, 22 Sep 2021 01:22:49 -0700
+Date: Wed, 22 Sep 2021 10:24:18 +0200
+From: Horatiu Vultur <horatiu.vultur@microchip.com>
+To: Andrew Lunn <andrew@lunn.ch>
+CC: <davem@davemloft.net>, <kuba@kernel.org>, <robh+dt@kernel.org>,
+ <linux@armlinux.org.uk>, <f.fainelli@gmail.com>,
+ <alexandre.belloni@bootlin.com>, <vladimir.oltean@nxp.com>,
+ <UNGLinuxDriver@microchip.com>, <netdev@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <linux-pm@vger.kernel.org>
+Subject: Re: [RFC PATCH net-next 01/12] net: mdio: mscc-miim: Fix the mdio
+ controller
+Message-ID: <20210922082418.xagkhx2aw2yxfwg7@soft-dev3-1.localhost>
+References: <20210920095218.1108151-1-horatiu.vultur@microchip.com>
+ <20210920095218.1108151-2-horatiu.vultur@microchip.com>
+ <YUh15ieAzBiCVeX9@lunn.ch>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210913080024.6951-3-zajec5@gmail.com>
+In-Reply-To: <YUh15ieAzBiCVeX9@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210922_005801_059086_68C48F9A 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210922_012304_295179_FBF5883E 
+X-CRM114-Status: GOOD (  16.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,19 +97,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCAxMyBTZXAgMjAyMSwgUmFmYcWCIE1pxYJlY2tpIHdyb3RlOgoKPiBGcm9tOiBSYWZh
-xYIgTWnFgmVja2kgPHJhZmFsQG1pbGVja2kucGw+Cj4gCj4gTm9ydGhzdGFyJ3MgVVNCIDIuMCBQ
-SFkgaXMgcGFydCBvZiB0aGUgQ1JVIE1GRC4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBSYWZhxYIgTWnF
-gmVja2kgPHJhZmFsQG1pbGVja2kucGw+Cj4gLS0tCj4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L21mZC9icmNtLGNydS55YW1sICAgICAgICAgfCAxNSArKysrKysrKysrKysrKy0KPiAgMSBmaWxl
-IGNoYW5nZWQsIDE0IGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKCkFwcGxpZWQsIHRoYW5r
-cy4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KU2VuaW9yIFRlY2huaWNhbCBMZWFkIC0gRGV2
-ZWxvcGVyIFNlcnZpY2VzCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBB
-cm0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+The 09/20/2021 13:52, Andrew Lunn wrote:
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+> 
+> On Mon, Sep 20, 2021 at 11:52:07AM +0200, Horatiu Vultur wrote:
+> > According to the documentation the second resource is optional. But the
+> > blamed commit ignores that and if the resource is not there it just
+> > fails.
+> >
+> > This patch reverts that to still allow the second resource to be
+> > optional because other SoC have the some MDIO controller and doesn't
+> > need to second resource.
+> >
+> > Fixes: 672a1c394950 ("net: mdio: mscc-miim: Make use of the helper function devm_platform_ioremap_resource()")
+> > Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
+
+Hi Andrew,
+> 
+> Hi Moratiu
+> 
+> The script kiddies might come long and 'fix' this again. Maybe
+> consider adding devm_platform_ioremap_resource_optional(), following
+> the pattern of other _optional() API calls. Otherwise add a comment.
+
+Initially I think I will go with the comment. Because this patch
+actually needs to go on net.
+
+> 
+>     Andrew
+
+-- 
+/Horatiu
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
