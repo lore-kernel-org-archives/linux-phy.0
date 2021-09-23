@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-18.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
 	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D2059C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 02:50:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7C415C433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 02:51:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 838AC610D1
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 02:50:58 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 838AC610D1
+	by mail.kernel.org (Postfix) with ESMTPS id 4D0EA61107
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 02:51:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 4D0EA61107
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baidu.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,48 +23,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3EbNaNrWcFZwgpbYS+U3TSD02oG/8JhibspPhnQXFG4=; b=o0e2YpQj087Q3f
-	TUgd4csNlJlEQJoBSmC2tsiiJGve1dZGlwIqmsqAkk4PPIhqQR5baz/YohHdzBBZT0abMWcmApVHZ
-	kJp3L0WRi7kF0nd8Uvic1x9MElmr11jYieAIUm3fLTTD7a+E/YOJX5yliSeqpIKewUGt2Hv8FkcfD
-	MGmdk/t8hVG/Xxbp7/HhqR0/pXaEiEc0GJAVbhRP66yBretUPGLyIiIYyfLpMfBzOrRqyGoXkKIbP
-	lS8QTIXYhkCZFyWEy63K0rXgZZTqlWzELxMaz4xVmw/v8f/ZP9ooVaxiiBhP9xf1DeojlopSYUrV0
-	foSwhtmtTjLlUWJxV+kg==;
+	List-Owner; bh=+uIytSF1Y40Nx8sme5T+/A0lNqHmBUhcWFZRH3MRiYM=; b=cItY+X0etL/BHV
+	JuaQQHDHL08DHSUPdsSRQ3cdXokC+myb6f8lFv1i3sITpWIhqlD8qARGy67yepsZdx8jQELj24Znx
+	1wEl0ObTZXjSjuuq5IBqe0BPePUQ2hKBjmDo6fYUY6ntuK1yWRRmiTMVkFm8jC2Qwugi9fxyGt3yb
+	M5/9mb/KWjTDnEEtNRzIZoYR5fmPiLQ+kSGSHaPK2aQZrB/bjtp8bX5QUvWBErHAjs2uPTXiV25SK
+	SxbOTWli6CO/LSABH1n1fRyUVA1/+MISStDXkXumPdr9HYwUwyZCc/VrxEcWWXmtKWwkC8DnVLUwk
+	ctl+AO8NPlXzod/peHaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mTEp8-00A7OF-2I; Thu, 23 Sep 2021 02:50:58 +0000
+	id 1mTEpL-00A7Qs-RG; Thu, 23 Sep 2021 02:51:11 +0000
 Received: from mx24.baidu.com ([111.206.215.185] helo=baidu.com)
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mTEp1-00A7N0-Bs
- for linux-phy@lists.infradead.org; Thu, 23 Sep 2021 02:50:52 +0000
-Received: from BC-Mail-Ex25.internal.baidu.com (unknown [172.31.51.19])
- by Forcepoint Email with ESMTPS id 34C8DDF904D700366A42;
- Thu, 23 Sep 2021 10:50:50 +0800 (CST)
+ id 1mTEp9-00A7Oa-Cd; Thu, 23 Sep 2021 02:51:00 +0000
+Received: from BC-Mail-Ex24.internal.baidu.com (unknown [172.31.51.18])
+ by Forcepoint Email with ESMTPS id 12C8927A6B80D3209585;
+ Thu, 23 Sep 2021 10:50:58 +0800 (CST)
 Received: from BJHW-MAIL-EX27.internal.baidu.com (10.127.64.42) by
- BC-Mail-Ex25.internal.baidu.com (172.31.51.19) with Microsoft SMTP Server
+ BC-Mail-Ex24.internal.baidu.com (172.31.51.18) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.2242.12; Thu, 23 Sep 2021 10:50:49 +0800
+ 15.1.2242.12; Thu, 23 Sep 2021 10:50:57 +0800
 Received: from LAPTOP-UKSR4ENP.internal.baidu.com (172.31.63.8) by
  BJHW-MAIL-EX27.internal.baidu.com (10.127.64.42) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.2308.14; Thu, 23 Sep 2021 10:50:49 +0800
+ 15.1.2308.14; Thu, 23 Sep 2021 10:50:57 +0800
 From: Cai Huoqing <caihuoqing@baidu.com>
 To: <caihuoqing@baidu.com>
-CC: Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>, "Vinod
- Koul" <vkoul@kernel.org>, <linux-arm-msm@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] phy: qualcomm: Kconfig: Add configuration menu for Qualcomm
+CC: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, <linux-phy@lists.infradead.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-rockchip@lists.infradead.org>, 
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH] phy: rockchip: Kconfig: Add configuration menu for Rockchip
  phy drivers
-Date: Thu, 23 Sep 2021 10:50:43 +0800
-Message-ID: <20210923025044.401-1-caihuoqing@baidu.com>
+Date: Thu, 23 Sep 2021 10:50:50 +0800
+Message-ID: <20210923025051.454-1-caihuoqing@baidu.com>
 X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
 X-Originating-IP: [172.31.63.8]
 X-ClientProxiedBy: BC-Mail-Ex31.internal.baidu.com (172.31.51.25) To
  BJHW-MAIL-EX27.internal.baidu.com (10.127.64.42)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210922_195051_625416_ABD0B8FA 
-X-CRM114-Status: UNSURE (   6.55  )
+X-CRM114-CacheID: sfid-20210922_195059_684171_2D5FE960 
+X-CRM114-Status: UNSURE (   7.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,31 +81,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Adding a configuration menu to hold many Qualcomm phy drivers
+Adding a configuration menu to hold many Rockchip phy drivers
 helps to make the menu display more concise.
 
 Signed-off-by: Cai Huoqing <caihuoqing@baidu.com>
 ---
- drivers/phy/qualcomm/Kconfig | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/phy/rockchip/Kconfig | 24 ++++++++++++++----------
+ 1 file changed, 14 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index 7f6fcb8ec5ba..40391fab644f 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -2,6 +2,8 @@
+diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+index e812adad7242..8b6dd594f43e 100644
+--- a/drivers/phy/rockchip/Kconfig
++++ b/drivers/phy/rockchip/Kconfig
+@@ -2,16 +2,18 @@
  #
- # Phy drivers for Qualcomm and Atheros platforms
+ # Phy drivers for Rockchip platforms
  #
-+menu "PHY drivers for Qualcomm and Atheros platforms"
++menu "PHY drivers for Rockchip platforms"
++	depends on ARCH_ROCKCHIP || COMPILE_TEST
 +
- config PHY_ATH79_USB
- 	tristate "Atheros AR71XX/9XXX USB PHY driver"
- 	depends on OF && (ATH79 || COMPILE_TEST)
-@@ -114,3 +116,5 @@ config PHY_QCOM_IPQ806X_USB
- 	  This option enables support for the Synopsis PHYs present inside the
- 	  Qualcomm USB3.0 DWC3 controller on ipq806x SoC. This driver supports
- 	  both HS and SS PHY controllers.
+ config PHY_ROCKCHIP_DP
+ 	tristate "Rockchip Display Port PHY Driver"
+-	depends on ARCH_ROCKCHIP && OF
++	depends on OF
+ 	select GENERIC_PHY
+ 	help
+ 	  Enable this to support the Rockchip Display Port PHY.
+ 
+ config PHY_ROCKCHIP_DPHY_RX0
+ 	tristate "Rockchip MIPI Synopsys DPHY RX0 driver"
+-	depends on ARCH_ROCKCHIP || COMPILE_TEST
+ 	select GENERIC_PHY_MIPI_DPHY
+ 	select GENERIC_PHY
+ 	help
+@@ -23,14 +25,14 @@ config PHY_ROCKCHIP_DPHY_RX0
+ 
+ config PHY_ROCKCHIP_EMMC
+ 	tristate "Rockchip EMMC PHY Driver"
+-	depends on ARCH_ROCKCHIP && OF
++	depends on OF
+ 	select GENERIC_PHY
+ 	help
+ 	  Enable this to support the Rockchip EMMC PHY.
+ 
+ config PHY_ROCKCHIP_INNO_HDMI
+ 	tristate "Rockchip INNO HDMI PHY Driver"
+-	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
++	depends on OF
+ 	depends on COMMON_CLK
+ 	depends on HAS_IOMEM
+ 	select GENERIC_PHY
+@@ -39,7 +41,7 @@ config PHY_ROCKCHIP_INNO_HDMI
+ 
+ config PHY_ROCKCHIP_INNO_USB2
+ 	tristate "Rockchip INNO USB2PHY Driver"
+-	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
++	depends on OF
+ 	depends on COMMON_CLK
+ 	depends on EXTCON
+ 	depends on USB_SUPPORT
+@@ -50,7 +52,7 @@ config PHY_ROCKCHIP_INNO_USB2
+ 
+ config PHY_ROCKCHIP_INNO_CSIDPHY
+ 	tristate "Rockchip Innosilicon MIPI CSI PHY driver"
+-	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
++	depends on OF
+ 	select GENERIC_PHY
+ 	select GENERIC_PHY_MIPI_DPHY
+ 	help
+@@ -59,7 +61,7 @@ config PHY_ROCKCHIP_INNO_CSIDPHY
+ 
+ config PHY_ROCKCHIP_INNO_DSIDPHY
+ 	tristate "Rockchip Innosilicon MIPI/LVDS/TTL PHY driver"
+-	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
++	depends on OF
+ 	select GENERIC_PHY
+ 	select GENERIC_PHY_MIPI_DPHY
+ 	help
+@@ -68,7 +70,7 @@ config PHY_ROCKCHIP_INNO_DSIDPHY
+ 
+ config PHY_ROCKCHIP_PCIE
+ 	tristate "Rockchip PCIe PHY Driver"
+-	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
++	depends on OF
+ 	depends on HAS_IOMEM
+ 	select GENERIC_PHY
+ 	select MFD_SYSCON
+@@ -77,7 +79,7 @@ config PHY_ROCKCHIP_PCIE
+ 
+ config PHY_ROCKCHIP_TYPEC
+ 	tristate "Rockchip TYPEC PHY Driver"
+-	depends on OF && (ARCH_ROCKCHIP || COMPILE_TEST)
++	depends on OF
+ 	select EXTCON
+ 	select GENERIC_PHY
+ 	select RESET_CONTROLLER
+@@ -86,7 +88,9 @@ config PHY_ROCKCHIP_TYPEC
+ 
+ config PHY_ROCKCHIP_USB
+ 	tristate "Rockchip USB2 PHY Driver"
+-	depends on ARCH_ROCKCHIP && OF
++	depends on OF
+ 	select GENERIC_PHY
+ 	help
+ 	  Enable this to support the Rockchip USB 2.0 PHY.
 +
 +endmenu
 -- 
