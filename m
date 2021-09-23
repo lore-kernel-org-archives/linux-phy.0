@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-15.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 72939C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:07:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6C67FC433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:18:19 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 39C7B60F44
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:07:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 39C7B60F44
+	by mail.kernel.org (Postfix) with ESMTPS id 334316109E
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:18:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 334316109E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,68 +23,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nqHgjorMU2X3WXKsxakXQoq3dUieTUW/sxzDKHXl788=; b=K6I+x6jGoLaKtu
-	PpOneVNHqCQZDlwurfLGaGpdcVPpp8RzIVSi6QIQ97dktqzhp+XbgVPhvHpOPpdukGkkGcADp/Kx9
-	UPXu45wtTCUdFpl2VdhD/eGMloFZFlYovv71MaOxi8T97gdx3Z3iwtrX7ROVUFQN7DNNeE9Av8Koc
-	MJrSmAEIwOhpEEtFC30stRC0LjyauX6OeWW4PXLP6HiLjG/fz7sHrq8q3yTImLA/yW+16YBgYz32a
-	VNhxe6cBwuxa3gWLhaGAomQBwuQcZngzG4T3dUzTFaNjp6pNNnyfO++hKPyX+WEiBHmF+rCh3X1X+
-	aI0Z93b/5cM6z7QqMi/g==;
+	List-Owner; bh=kQpNY5LF2dmkvWfbesBFTa1KXz2yo0Ez/jfWaPoeMCI=; b=NFbi7XFGg9FXEZ
+	FkOWdTiDQ8dx0XjWW0aPQIE2IzTFFutagUwIqeyGRYxExZISUzBrzUyxePnm8ygS3FaFtAmdcxq3j
+	GBy6qHor0r4NimOUUrGLgIENNO0wTe7Xa8079z2mb0KcsgetGeMTtmDbKYxwGJNLakTxqzy+OHnk1
+	qwF8QBjbrR9FHx0sSLvOsfCeVUNiLVkSnMm1l92aJd5w3tWp2ickaZqDYq3SX804oUxwnuCipu2Yv
+	SN2i0sr0TvXSH74xtka6U5Cj6gpDcG8YGlq6oMHRLvN0CPtA+mP3h8eAk8bmy0mYZsowfdzBi2pvO
+	LyXD1LXHxqqbJmsVjZBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mTPNp-00Blwk-P9; Thu, 23 Sep 2021 14:07:29 +0000
-Received: from mail-oi1-x22d.google.com ([2607:f8b0:4864:20::22d])
+	id 1mTPYI-00BoVj-OP; Thu, 23 Sep 2021 14:18:18 +0000
+Received: from mail-oi1-x235.google.com ([2607:f8b0:4864:20::235])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mTPNm-00Blvx-J3
- for linux-phy@lists.infradead.org; Thu, 23 Sep 2021 14:07:28 +0000
-Received: by mail-oi1-x22d.google.com with SMTP id u22so9808029oie.5
- for <linux-phy@lists.infradead.org>; Thu, 23 Sep 2021 07:07:25 -0700 (PDT)
+ id 1mTPY5-00BoTD-9s
+ for linux-phy@lists.infradead.org; Thu, 23 Sep 2021 14:18:06 +0000
+Received: by mail-oi1-x235.google.com with SMTP id s69so9771026oie.13
+ for <linux-phy@lists.infradead.org>; Thu, 23 Sep 2021 07:18:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=rl01Ta80Yr4ByQxSLkYQ7H+fLAzMAWO93dhfRjw2UBs=;
- b=r7u1PwpwArC9EAvuU3cKy1s11clM2dr6mzAczapPC7cfvKFhrz8nAQMlomqzRe1N2k
- 68ElptbGuwomurTUpjy0/gJRS4hU0mmdTsmgriUoyh8WKA+SLGeJC1Jcb4bSSIyjWE5P
- NfgM9Vedp9PZoOlu5pc7vayw8N1RIbOIuxExmuGIIrtqiYa9F5kL+vhPQUPRs2uz4Sc+
- 2RhtSZsRuuzsm5RnlCGdSEJJB7s8Rkb+xTdE2YT7ZZR5KZ/2yQ2gPv+aMA8pNErHFRZZ
- YTyU6+xa3FLABE2GFpQz7LxvdlXSBvNhY/M0MH5i+VCt7ynf+/VN1QQ/BHc5DVcoxoES
- ZzGA==
+ bh=qtSma9q9BqHYrVg9rCdNIMKY6V64T/6gLqQcxTokY2M=;
+ b=PYEK0I2XVXfutbxezOSYeATdb6rGXwAQHfSEx+N+ml8euVsQ8kga/0pN+nOjlvvY/w
+ UgJZvbGfxXV0iwfmvBl5e0XNqLt9EDs9AKmhmJrnhmvadPJGnbmXN+FrQyyFL6afSo1D
+ phey5q9KL58F/BEuggCvEAymjdshEo8iSFy2wF0hunrH3RlkfbIKgM8sbuD6g/2XEMhL
+ zwdACGRNdghy0ZPg+e9B4Tq5FLw0Z32dEjeLt7F2rfc3GQ7VbeG34OmfJrnlZQXNPiKi
+ /ksnhOEMiFL/K4NKcBRrb6U9lwIQcNRfL/BkBMJdtDS3m2q+4hRRUoa3r83F4fYAHmd4
+ VEFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=rl01Ta80Yr4ByQxSLkYQ7H+fLAzMAWO93dhfRjw2UBs=;
- b=hiVYmxO++b2W0KyByxGjkwo7YvmThuVk3PLnuH5O7iMnn3ot2uJskhODqID5AXkpBG
- 9BTv+5I4rhi2/wqb9GlAIvazHkGVYUDeKpqXW37PXeuJbcH5W+yR3EbItpP1nEcK1uMq
- P/sga1nDN2pKrMaycuM6Wu0b8Bv93JV2aT0sfTrGvGE9ZoQJvI4ItwjaL5jt3bwevTez
- px3uSjgyLBCexL/Y0EO0XBX6LQsRgdOoPr6QYl2d/wqqtiJMM1n64ZNAkwvTR+DaCUUd
- bg52Udkr/Za3Lxl9lgCry4z7l/ow0hgeVfvK5N6mZF38wK4jORIzxTOUet8c5oM90ymI
- 2DcQ==
-X-Gm-Message-State: AOAM532llLOtPydK0gmPGcwU8T8LkHarXclZKa2xdxS/YhOHY0g7bHGI
- utiT5XnS8mKv4mbwVwXim5zhnA==
-X-Google-Smtp-Source: ABdhPJylXh2NQzqJ/PBHEG9jhjm+DJT6YzzUeNPQGad7rheR/BDfVigl0ZRlbVf7Q2A+tNrZQzi6SQ==
-X-Received: by 2002:a05:6808:2113:: with SMTP id
- r19mr12357957oiw.69.1632406045189; 
- Thu, 23 Sep 2021 07:07:25 -0700 (PDT)
+ bh=qtSma9q9BqHYrVg9rCdNIMKY6V64T/6gLqQcxTokY2M=;
+ b=26ZvOHdJG1n2x/ieMTZR+XSZpKyYWRx1/xP8ZmdOqwDDopuLMD5JGVRw2gv/wCjEar
+ tWCffq2WN54Iur6GVDqienfRKghmYT28IDrAeW0sHunGUeY9bVeiVak+LXrD+nNs4jtQ
+ 9qin8hVcC4cPCjfSgOspg5exdaJwU04X72seMoomNvzRMAXL8IJVQGSV5NMeW7Bnf3px
+ /p7rI/Shd33IyLP7bOcL36Ln3yZWToXkzNLqycnHHRu2mklvFryPTEoHHLrsRHKHoDXW
+ S//p9VKk8y0+Ybg/4D+Yyb8s8JbkV9J/cWGE2f5QwkXccAjHZtHnYVDL0XaVX11I1HYC
+ HsqA==
+X-Gm-Message-State: AOAM532W7L4mJ6gDfyxR6S4xVGCm1gFK1NdcPOFfUMV2HVtb7qPACIR/
+ axwvlZI2hjsOCNridk2H1QuKiIV5G5VO0Q==
+X-Google-Smtp-Source: ABdhPJxsgwpyvgQak9HZi9WjKrznb7X1aRRESpUMtD9ho2g2JDLxjinqTHA6WvSWzVpXGwyE2g0KnA==
+X-Received: by 2002:a05:6808:14d6:: with SMTP id
+ f22mr12790454oiw.132.1632406683800; 
+ Thu, 23 Sep 2021 07:18:03 -0700 (PDT)
 Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
  [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id r23sm1275221otu.54.2021.09.23.07.07.24
+ by smtp.gmail.com with ESMTPSA id g5sm1401986oof.29.2021.09.23.07.18.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 23 Sep 2021 07:07:24 -0700 (PDT)
-Date: Thu, 23 Sep 2021 07:08:05 -0700
+ Thu, 23 Sep 2021 07:18:03 -0700 (PDT)
+Date: Thu, 23 Sep 2021 07:18:43 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
  Vinod Koul <vkoul@kernel.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
 Subject: Re: [PATCH v2] phy: qcom-qusb2: Fix a memory leak on probe
-Message-ID: <YUyKRTemi7A1bqTE@ripper>
+Message-ID: <YUyMw9QqjKFMOEf1@ripper>
 References: <20210922233548.2150244-1-vladimir.zapolskiy@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20210922233548.2150244-1-vladimir.zapolskiy@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210923_070726_678342_365C12CD 
-X-CRM114-Status: GOOD (  24.19  )
+X-CRM114-CacheID: sfid-20210923_071805_406279_C5F079AC 
+X-CRM114-Status: GOOD (  24.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,6 +139,20 @@ On Wed 22 Sep 16:35 PDT 2021, Vladimir Zapolskiy wrote:
 > * fixed a memory leak in case of reading a zero value and return,
 > * corrected the fixed commit, the memory leak is present before a rename.
 > 
+
+Should have read your two replies in opposite order and missed your
+reason for not going to the newer API and the fact that v1 still leaks
+the memory if the read value is 0.
+
+
+So, this looks good and as you said, we should follow up with a cleanup
+by replacing the nvmem_cell_read().
+
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+Thanks,
+Bjorn
+
 >  drivers/phy/qualcomm/phy-qcom-qusb2.c | 16 ++++++++++------
 >  1 file changed, 10 insertions(+), 6 deletions(-)
 > 
@@ -166,24 +180,6 @@ On Wed 22 Sep 16:35 PDT 2021, Vladimir Zapolskiy wrote:
 > +	}
 > +	hstx_trim = val[0];
 > +	kfree(val);
-
-I don't see any additional value added by the introduction of
-"hstx_trim", compared to v1.
-
-However, it certainly makes sense if you change this to:
-
-ret = nvmem_cell_read_u8(qphy->cell, NULL, &hstx_trim);
-if (ret < 0 || !hstx_trim) {
-	dev_dbg(dev, "failed to read a valid hs-tx trim value\n");
-	return;
-}
-
-
-In which case you don't need the kfree(), and you can drop "val"...
-
-Regards,
-Bjorn
-
 > +	if (!hstx_trim) {
 >  		dev_dbg(dev, "failed to read a valid hs-tx trim value\n");
 >  		return;
