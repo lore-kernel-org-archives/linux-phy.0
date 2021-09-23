@@ -2,20 +2,20 @@ Return-Path: <SRS0=xaqD=ON=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-15.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A7FF3C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 12:53:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 72939C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:07:30 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6CA7961019
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 12:53:07 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6CA7961019
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 39C7B60F44
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:07:30 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 39C7B60F44
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -23,64 +23,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VF6icA2AbJVOKMRu6X7ufVu4XXmz2TPvptuSusXjZ+Y=; b=R7ryy34UMuiML7
-	oQGYdMUEadlUNDJw0YR5y2UekIZQ+ynAGtVZpk0RYGrCsBCNwAhze3fDJap5BTdT4en/B4VLxjvlj
-	ZbKxFI3w2Yw4MJdsskJItQqUMRLCHIsOzrr1XhyQaA3ty4D4kqjHSNwcI4YcpRxD9jvba9GlZNrQk
-	NQNoD28iANR/YkKfKsp6IJj761MWW+GkcyoKJf13LSHLoiYxZir3o7KfmBUd2zHHxslpvMHBc/7v/
-	uGrm+JQ8hedWmIaFOKtu8rjX2jBBtueBSPfeipRkl1cT3UGRKhWW6dC0HOR2Kfw7yVGW7+XVhadSO
-	FjrZkL+tu1V2aBJiqEgA==;
+	List-Owner; bh=nqHgjorMU2X3WXKsxakXQoq3dUieTUW/sxzDKHXl788=; b=K6I+x6jGoLaKtu
+	PpOneVNHqCQZDlwurfLGaGpdcVPpp8RzIVSi6QIQ97dktqzhp+XbgVPhvHpOPpdukGkkGcADp/Kx9
+	UPXu45wtTCUdFpl2VdhD/eGMloFZFlYovv71MaOxi8T97gdx3Z3iwtrX7ROVUFQN7DNNeE9Av8Koc
+	MJrSmAEIwOhpEEtFC30stRC0LjyauX6OeWW4PXLP6HiLjG/fz7sHrq8q3yTImLA/yW+16YBgYz32a
+	VNhxe6cBwuxa3gWLhaGAomQBwuQcZngzG4T3dUzTFaNjp6pNNnyfO++hKPyX+WEiBHmF+rCh3X1X+
+	aI0Z93b/5cM6z7QqMi/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mTODq-00BU6S-VM; Thu, 23 Sep 2021 12:53:06 +0000
-Received: from mail-ot1-f54.google.com ([209.85.210.54])
+	id 1mTPNp-00Blwk-P9; Thu, 23 Sep 2021 14:07:29 +0000
+Received: from mail-oi1-x22d.google.com ([2607:f8b0:4864:20::22d])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mTODn-00BU5v-PV
- for linux-phy@lists.infradead.org; Thu, 23 Sep 2021 12:53:05 +0000
-Received: by mail-ot1-f54.google.com with SMTP id
- g62-20020a9d2dc4000000b0054752cfbc59so2647694otb.1
- for <linux-phy@lists.infradead.org>; Thu, 23 Sep 2021 05:53:03 -0700 (PDT)
+ id 1mTPNm-00Blvx-J3
+ for linux-phy@lists.infradead.org; Thu, 23 Sep 2021 14:07:28 +0000
+Received: by mail-oi1-x22d.google.com with SMTP id u22so9808029oie.5
+ for <linux-phy@lists.infradead.org>; Thu, 23 Sep 2021 07:07:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=rl01Ta80Yr4ByQxSLkYQ7H+fLAzMAWO93dhfRjw2UBs=;
+ b=r7u1PwpwArC9EAvuU3cKy1s11clM2dr6mzAczapPC7cfvKFhrz8nAQMlomqzRe1N2k
+ 68ElptbGuwomurTUpjy0/gJRS4hU0mmdTsmgriUoyh8WKA+SLGeJC1Jcb4bSSIyjWE5P
+ NfgM9Vedp9PZoOlu5pc7vayw8N1RIbOIuxExmuGIIrtqiYa9F5kL+vhPQUPRs2uz4Sc+
+ 2RhtSZsRuuzsm5RnlCGdSEJJB7s8Rkb+xTdE2YT7ZZR5KZ/2yQ2gPv+aMA8pNErHFRZZ
+ YTyU6+xa3FLABE2GFpQz7LxvdlXSBvNhY/M0MH5i+VCt7ynf+/VN1QQ/BHc5DVcoxoES
+ ZzGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=T5pin4HBy/8oX+1D69jVpHUNgiCC1/7/deC2d6STVN4=;
- b=zyMsrNtCsfqa7IRV9x68xUD7/M05esOFQxzDx799W8jY35LDbmloN+DupLHFAA0Xff
- c+kisyQukfcz573KbovQLZqw+Y4mLUeEfkhVo2A1tBLwqAr1xS1TGz/f/W771ESNPPiW
- VLV6KeiPKmpScSef9ImdrwNgtU/+b7hvLG/44whuWr8T6FSuAqLlFGNWk56RRgjcjJ00
- LbBbFTIl+Ivu9xR6mzPhxfNhmfbmRNJ6aR3SOKwAEGuu08mfGZE4Lga3fRfidP97djMO
- 0BJX5KrEGld2ClVkFAdn6EvAUM7/wNqyC83iUs27+GNSMDS92DAAAhx7YdOzBi8V8Tek
- 4hGQ==
-X-Gm-Message-State: AOAM533/RCRVU1EXXOYhzT3tV4SJGGtc0S4hUBBZPbhzsoXI475xLPoH
- ik1dfXAVo7ZLDdHPmvBEXnlzogkLjQ==
-X-Google-Smtp-Source: ABdhPJx8/3hAVrRwReb56QdQatIrscxOfd4EPLlBYorNiziE9+o4Y1SN5nI078poAoT3V7CJC59j4w==
-X-Received: by 2002:a9d:77d4:: with SMTP id w20mr3929655otl.321.1632401582959; 
- Thu, 23 Sep 2021 05:53:02 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id 14sm1262633oiy.53.2021.09.23.05.53.01
+ bh=rl01Ta80Yr4ByQxSLkYQ7H+fLAzMAWO93dhfRjw2UBs=;
+ b=hiVYmxO++b2W0KyByxGjkwo7YvmThuVk3PLnuH5O7iMnn3ot2uJskhODqID5AXkpBG
+ 9BTv+5I4rhi2/wqb9GlAIvazHkGVYUDeKpqXW37PXeuJbcH5W+yR3EbItpP1nEcK1uMq
+ P/sga1nDN2pKrMaycuM6Wu0b8Bv93JV2aT0sfTrGvGE9ZoQJvI4ItwjaL5jt3bwevTez
+ px3uSjgyLBCexL/Y0EO0XBX6LQsRgdOoPr6QYl2d/wqqtiJMM1n64ZNAkwvTR+DaCUUd
+ bg52Udkr/Za3Lxl9lgCry4z7l/ow0hgeVfvK5N6mZF38wK4jORIzxTOUet8c5oM90ymI
+ 2DcQ==
+X-Gm-Message-State: AOAM532llLOtPydK0gmPGcwU8T8LkHarXclZKa2xdxS/YhOHY0g7bHGI
+ utiT5XnS8mKv4mbwVwXim5zhnA==
+X-Google-Smtp-Source: ABdhPJylXh2NQzqJ/PBHEG9jhjm+DJT6YzzUeNPQGad7rheR/BDfVigl0ZRlbVf7Q2A+tNrZQzi6SQ==
+X-Received: by 2002:a05:6808:2113:: with SMTP id
+ r19mr12357957oiw.69.1632406045189; 
+ Thu, 23 Sep 2021 07:07:25 -0700 (PDT)
+Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id r23sm1275221otu.54.2021.09.23.07.07.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 23 Sep 2021 05:53:02 -0700 (PDT)
-Received: (nullmailer pid 2834023 invoked by uid 1000);
- Thu, 23 Sep 2021 12:53:01 -0000
-Date: Thu, 23 Sep 2021 07:53:01 -0500
-From: Rob Herring <robh@kernel.org>
-To: Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: davem@davemloft.net, kuba@kernel.org, andrew@lunn.ch, linux@armlinux.org.uk,
- f.fainelli@gmail.com, alexandre.belloni@bootlin.com, vladimir.oltean@nxp.com,
- UNGLinuxDriver@microchip.com, netdev@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pm@vger.kernel.org
-Subject: Re: [RFC PATCH net-next 08/12] dt-bindings: net: lan966x: Add
- lan966x-switch bindings
-Message-ID: <YUx4rQtEw4fquxs0@robh.at.kernel.org>
-References: <20210920095218.1108151-1-horatiu.vultur@microchip.com>
- <20210920095218.1108151-9-horatiu.vultur@microchip.com>
+ Thu, 23 Sep 2021 07:07:24 -0700 (PDT)
+Date: Thu, 23 Sep 2021 07:08:05 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2] phy: qcom-qusb2: Fix a memory leak on probe
+Message-ID: <YUyKRTemi7A1bqTE@ripper>
+References: <20210922233548.2150244-1-vladimir.zapolskiy@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210920095218.1108151-9-horatiu.vultur@microchip.com>
+In-Reply-To: <20210922233548.2150244-1-vladimir.zapolskiy@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210923_055303_879704_C7747623 
-X-CRM114-Status: GOOD (  17.46  )
+X-CRM114-CacheID: sfid-20210923_070726_678342_365C12CD 
+X-CRM114-Status: GOOD (  24.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,151 +101,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 20, 2021 at 11:52:14AM +0200, Horatiu Vultur wrote:
-> Document the lan966x switch device driver bindings
+On Wed 22 Sep 16:35 PDT 2021, Vladimir Zapolskiy wrote:
+
+> On success nvmem_cell_read() returns a pointer to a dynamically allocated
+> buffer, and therefore it shall be freed after usage.
 > 
-> Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
+> The issue is reported by kmemleak:
+> 
+>   # cat /sys/kernel/debug/kmemleak
+>   unreferenced object 0xffff3b3803e4b280 (size 128):
+>     comm "kworker/u16:1", pid 107, jiffies 4294892861 (age 94.120s)
+>     hex dump (first 32 bytes):
+>       00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>       00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>     backtrace:
+>       [<000000007739afdc>] __kmalloc+0x27c/0x41c
+>       [<0000000071c0fbf8>] nvmem_cell_read+0x40/0xe0
+>       [<00000000e803ef1f>] qusb2_phy_init+0x258/0x5bc
+>       [<00000000fc81fcfa>] phy_init+0x70/0x110
+>       [<00000000e3d48a57>] dwc3_core_soft_reset+0x4c/0x234
+>       [<0000000027d1dbd4>] dwc3_core_init+0x68/0x990
+>       [<000000001965faf9>] dwc3_probe+0x4f4/0x730
+>       [<000000002f7617ca>] platform_probe+0x74/0xf0
+>       [<00000000a2576cac>] really_probe+0xc4/0x470
+>       [<00000000bc77f2c5>] __driver_probe_device+0x11c/0x190
+>       [<00000000130db71f>] driver_probe_device+0x48/0x110
+>       [<0000000019f36c2b>] __device_attach_driver+0xa4/0x140
+>       [<00000000e5812ff7>]  bus_for_each_drv+0x84/0xe0
+>       [<00000000f4bac574>] __device_attach+0xe4/0x1c0
+>       [<00000000d3beb631>] device_initial_probe+0x20/0x30
+>       [<000000008019b9db>] bus_probe_device+0xa4/0xb0
+> 
+> Fixes: ca04d9d3e1b1 ("phy: qcom-qusb2: New driver for QUSB2 PHY on Qcom chips")
+> Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 > ---
->  .../net/microchip,lan966x-switch.yaml         | 114 ++++++++++++++++++
->  1 file changed, 114 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/net/microchip,lan966x-switch.yaml
+> Changes from v1 to v2:
+> * fixed a memory leak in case of reading a zero value and return,
+> * corrected the fixed commit, the memory leak is present before a rename.
 > 
-> diff --git a/Documentation/devicetree/bindings/net/microchip,lan966x-switch.yaml b/Documentation/devicetree/bindings/net/microchip,lan966x-switch.yaml
-> new file mode 100644
-> index 000000000000..53d72a65c168
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/net/microchip,lan966x-switch.yaml
-> @@ -0,0 +1,114 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/net/microchip,lan966x-switch.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Microchip Lan966x Ethernet switch controller
-> +
-> +maintainers:
-> +  - Horatiu Vultur <horatiu.vultur@microchip.com>
-> +  - UNGLinuxDriver@microchip.com
-> +
-> +description: |
-> +  The Lan966x Enterprise Ethernet switch family provides a rich set of
-> +  Enterprise switching features such as advanced TCAM-based VLAN and
-> +  QoS processing enabling delivery of differentiated services, and
-> +  security through TCAM-based frame processing using versatile content
-> +  aware processor (VCAP).
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^switch@[0-9a-f]+$"
-> +
-> +  compatible:
-> +    const: microchip,lan966x-switch
-> +
-> +  reg:
-> +    items:
-> +      - description: cpu target
-> +      - description: devices target
-> +      - description: general control block target
-> +
-> +  reg-names:
-> +    items:
-> +      - const: cpu
-> +      - const: devices
-> +      - const: gcb
-> +
-> +  interrupts:
-> +    minItems: 1
+>  drivers/phy/qualcomm/phy-qcom-qusb2.c | 16 ++++++++++------
+>  1 file changed, 10 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+> index 3c1d3b71c825..f1d97fbd1331 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+> @@ -561,7 +561,7 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
+>  {
+>  	struct device *dev = &qphy->phy->dev;
+>  	const struct qusb2_phy_cfg *cfg = qphy->cfg;
+> -	u8 *val;
+> +	u8 *val, hstx_trim;
+>  
+>  	/* efuse register is optional */
+>  	if (!qphy->cell)
+> @@ -575,7 +575,13 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
+>  	 * set while configuring the phy.
+>  	 */
+>  	val = nvmem_cell_read(qphy->cell, NULL);
+> -	if (IS_ERR(val) || !val[0]) {
+> +	if (IS_ERR(val)) {
+> +		dev_dbg(dev, "failed to read a valid hs-tx trim value\n");
+> +		return;
+> +	}
+> +	hstx_trim = val[0];
+> +	kfree(val);
 
-Don't need minItems unless it is less than number of entries for 
-'items'.
+I don't see any additional value added by the introduction of
+"hstx_trim", compared to v1.
 
-> +    items:
-> +      - description: register based extraction
-> +
-> +  interrupt-names:
-> +    minItems: 1
-> +    items:
-> +      - const: xtr
-> +
-> +  mac-address: true
-> +
-> +  ethernet-ports:
-> +    type: object
-> +    patternProperties:
-> +      "^port@[0-9a-f]+$":
+However, it certainly makes sense if you change this to:
 
-ethernet-port is preferred on new bindings.
+ret = nvmem_cell_read_u8(qphy->cell, NULL, &hstx_trim);
+if (ret < 0 || !hstx_trim) {
+	dev_dbg(dev, "failed to read a valid hs-tx trim value\n");
+	return;
+}
 
-> +        type: object
-> +
-> +        properties:
-> +          '#address-cells':
-> +            const: 1
-> +          '#size-cells':
-> +            const: 0
-> +
-> +          reg:
-> +            description: Switch port number
-> +
-> +          phy-mode:
-> +            description:
-> +              This specifies the interface used by the Ethernet SerDes towards
-> +              the PHY or SFP.
-> +
-> +          phy-handle:
-> +            description:
-> +              phandle of a Ethernet PHY.
-> +
-> +        required:
-> +          - reg
-> +          - phy-mode
-> +          - phy-handle
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - reg-names
-> +  - interrupts
-> +  - interrupt-names
-> +  - ethernet-ports
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    switch: switch@600000000 {
 
-Drop unused labels.
+In which case you don't need the kfree(), and you can drop "val"...
 
-> +      compatible = "microchip,lan966x-switch";
-> +      reg =  <0 0x401000>,
-> +             <0x10004000 0x7fc000>,
-> +             <0x11010000 0xaf0000>;
-> +      reg-names = "cpu", "devices", "gcb";
-> +      interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
-> +      interrupt-names = "xtr";
-> +      ethernet-ports {
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +
-> +        port0: port@0 {
-> +          reg = <0>;
-> +          phy-handle = <&phy0>;
-> +          phy-mode = "gmii";
-> +        };
-> +      };
-> +    };
-> +
-> +...
-> +#  vim: set ts=2 sw=2 sts=2 tw=80 et cc=80 ft=yaml :
+Regards,
+Bjorn
 
-Ummm, no.
-
+> +	if (!hstx_trim) {
+>  		dev_dbg(dev, "failed to read a valid hs-tx trim value\n");
+>  		return;
+>  	}
+> @@ -583,12 +589,10 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
+>  	/* Fused TUNE1/2 value is the higher nibble only */
+>  	if (cfg->update_tune1_with_efuse)
+>  		qusb2_write_mask(qphy->base, cfg->regs[QUSB2PHY_PORT_TUNE1],
+> -				 val[0] << HSTX_TRIM_SHIFT,
+> -				 HSTX_TRIM_MASK);
+> +				 hstx_trim << HSTX_TRIM_SHIFT, HSTX_TRIM_MASK);
+>  	else
+>  		qusb2_write_mask(qphy->base, cfg->regs[QUSB2PHY_PORT_TUNE2],
+> -				 val[0] << HSTX_TRIM_SHIFT,
+> -				 HSTX_TRIM_MASK);
+> +				 hstx_trim << HSTX_TRIM_SHIFT, HSTX_TRIM_MASK);
+>  }
+>  
+>  static int qusb2_phy_set_mode(struct phy *phy,
 > -- 
-> 2.31.1
-> 
+> 2.33.0
 > 
 
 -- 
