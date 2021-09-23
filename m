@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-15.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1BD4EC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:44:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 20B35C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 15:04:13 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DA4EF610D1
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 14:44:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org DA4EF610D1
+	by mail.kernel.org (Postfix) with ESMTPS id E43A761216
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Sep 2021 15:04:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E43A761216
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,64 +23,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cNUb2fLqYM7L4PUpuOZRBXmHTXGWkohDt5CqDAEuy1I=; b=Iw3h1/+OwrqF+J
-	gmDVDFm7pSnvWDgPeZIwlb5hsNOdnzij+Lqz7TzqVJjRfKMdGv2dOmEPuqvBfczTVtb1w1Vghyq4J
-	OyYQOe3dIybtS2xXLF3V9c1Ir8jcvbf1uTvWjLPBgkMz8rGXBM+Fb6qRAzP0y0tF5fzj37qYBJhCc
-	aytXJFDPBAGnzP9qZQjDBVuccVO0GMvbfBod5bC246SfhTyQBFP5zhK5ao0eE88zrKttLaVZlJE/w
-	lrTHVdPSFdDINCC8QKAj0u+SiwAA8vDcVCIYiue+IspWpvVVjieKeR7Q/VGrXtf0fowyn6kVk3zeS
-	nRJJtdfqXavoT+sH/ABg==;
+	List-Owner; bh=8lQn27aUmqy50J8LfCiuoJah7By0QlUjbDexMCZQiVI=; b=bnQnoOKn4xIjAP
+	IVmMQFi2z8cISVNITg0/DEDdXPRxHRigBsVcg5x1sAx0kUQ6/1hWxQQT2sR3638YQXaJTB4kL5vhN
+	mFah0sYaPDHhlcM7OtS4jvTCiFfonRn6KwY6vX0TxsP+TTSJ1yY5MpIO3VHikeAC2iKB7hxNkmq3K
+	eYILQYbxQqlqmrPpxiPjtAKZ8Fm923nes+5T8BEGIn/+ErtwOrJOyao1P/JeCVIRZ4p97hey0KcLV
+	cBlI21TwaspaqZ6YWXSdrwZgkBgQ5yaMN6rhiPONdMT86IbzdDYSx6D5KxV1TAn6Kw1/5xMuNLyjY
+	lm1Ph1xmNMZ0oVQ+KAYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mTPxP-00BtEw-BZ; Thu, 23 Sep 2021 14:44:15 +0000
+	id 1mTQGh-00Byvz-OG; Thu, 23 Sep 2021 15:04:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mTPx3-00Bt62-Te; Thu, 23 Sep 2021 14:43:55 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id E3064611C6;
- Thu, 23 Sep 2021 14:43:52 +0000 (UTC)
+ id 1mTQEH-00BxPJ-QM
+ for linux-phy@lists.infradead.org; Thu, 23 Sep 2021 15:01:43 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 0D62D60F56
+ for <linux-phy@lists.infradead.org>; Thu, 23 Sep 2021 15:01:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1632408232;
- bh=oURGTTytXYO9QjY9AXVDK9+v2UgnhEYRmFXbtjUBCPY=;
+ s=k20201202; t=1632409301;
+ bh=UKPoJ1KZE1z8ljuJANQ6+sZBWeEk8dHbYbTuzdUR2ww=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=IqJelMFvIdSrGeKWQEpseMJZyvfKvG8nhw0D67Pqr1T4dx3e8s5XBVjhu4z7CLyz1
- ISVa5lYUFRW6rpV/HmgulkJRWuu8gkPZkPIObCCXJzdiuYuw62fCgc+iFiG2UthVN4
- 7lUdcY/SdUHaSd/k0YwH4grVtLKXnD8T5aqd5zQcM4hLhicFTEQmZuRzU3bfnhKp5F
- /cZjOxYEdhZu2RUH+MhvSWqemoPe1Rdq0O2RdXFY0tLQuohjPohJojWR1RaVBu66Vs
- afbJuJuRmlUB7Gq8fNL5i6ROtK0kJyd211BEvbCSpJBgDxc0dl8QnMn66k8J+1WKEy
- +hMT3iB8PxDhA==
-Received: by mail-ed1-f54.google.com with SMTP id v10so19947622edj.10;
- Thu, 23 Sep 2021 07:43:52 -0700 (PDT)
-X-Gm-Message-State: AOAM530RYxceP66JibEMaEiOcCfpaGJRkj1ArfTkcR3wzerY4rGXxJAg
- ruqRnH1N55reaOaJfwWFRsolddeK4Q6r0TYGiA==
-X-Google-Smtp-Source: ABdhPJyeC+hTvMr/QmcLda9a4Xl1Ej0dWEJuusrQlBBef8Ak7tpatznMOhMs/se7nVqhINdPZeyF7Lamk7xM0n5f+zY=
-X-Received: by 2002:a05:6402:b23:: with SMTP id
- bo3mr6082099edb.145.1632408230595; 
- Thu, 23 Sep 2021 07:43:50 -0700 (PDT)
+ b=n8UNhKCHocNI4Vd6NVdaxwcFAvLZr0M+BjoWW+BH2J2WuJgC9FiKTTf6eVgjCUiSi
+ owGd6ofoeH3iAIh0t1jQ32QQGuQuh+l8sIketk4PnL1Zg0PcfDAU4IhT21oM+9Hsbz
+ i+REr4N4h6lxSnzTxVoCCYN7szueEQlBiXYt8Z1veFo5XtgwKebmTFdPTyMBMhuX6G
+ vh0zhlMnY182wEf7eR8Ood6HnwP5//E4xjv//YBOTCvBXwOt5N/RI7qP9d7jgCNguN
+ 9hrIob1Z4rWjZzEcDJn/Obxuv07MdK2MEvM4FcMVpcDJN9y1cA62O8s9lesiL32QCx
+ Sy9wqhz/MgXYA==
+Received: by mail-ed1-f53.google.com with SMTP id u27so24317347edi.9
+ for <linux-phy@lists.infradead.org>; Thu, 23 Sep 2021 08:01:40 -0700 (PDT)
+X-Gm-Message-State: AOAM530eoSBfvthfuJL70EGxXHsyS8Lzr71Xrrd/fpgTdofSHGpMGvZS
+ W4K15wVeNyRcLrK2z4iQbD1B3lDu0vRSWYDXHA==
+X-Google-Smtp-Source: ABdhPJwz3cvRPhk3j1bboE+QzjGu9L+JPMytRrsRcFKcPa7XTZo0ubf39qz2rIVfw8AMAHTTNj4aJeUftfPkDZLKP+s=
+X-Received: by 2002:a17:906:abd1:: with SMTP id
+ kq17mr5338261ejb.390.1632409276680; 
+ Thu, 23 Sep 2021 08:01:16 -0700 (PDT)
 MIME-Version: 1.0
-References: <1631845863-24249-1-git-send-email-hongxing.zhu@nxp.com>
- <1631845863-24249-2-git-send-email-hongxing.zhu@nxp.com>
- <YUuDMjBGWfNsMf2n@robh.at.kernel.org>
- <AS8PR04MB86766122EB2D851844FC7D7C8CA39@AS8PR04MB8676.eurprd04.prod.outlook.com>
-In-Reply-To: <AS8PR04MB86766122EB2D851844FC7D7C8CA39@AS8PR04MB8676.eurprd04.prod.outlook.com>
-From: Rob Herring <robh@kernel.org>
-Date: Thu, 23 Sep 2021 09:43:38 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJJhSB1ZYUU_nB+U+1yr0kbWQLeO1CUs5PCQ85MEOb=Og@mail.gmail.com>
-Message-ID: <CAL_JsqJJhSB1ZYUU_nB+U+1yr0kbWQLeO1CUs5PCQ85MEOb=Og@mail.gmail.com>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: phy-imx8-pcie: Add binding for the
- pad modes of imx8 pcie phy
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>, 
- "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>
+References: <20210913080024.6951-1-zajec5@gmail.com>
+ <20210913080024.6951-3-zajec5@gmail.com>
+ <YUriBVIH/n0p2H+D@google.com>
+In-Reply-To: <YUriBVIH/n0p2H+D@google.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 23 Sep 2021 10:01:05 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+a9nKvMwzTPxCvF421cGw7CtAqHZxT=E6oO1twJ41d5Q@mail.gmail.com>
+Message-ID: <CAL_Jsq+a9nKvMwzTPxCvF421cGw7CtAqHZxT=E6oO1twJ41d5Q@mail.gmail.com>
+Subject: Re: [PATCH 3/4] dt-bindings: mfd: brcm,cru: add USB 2.0 PHY
+To: Lee Jones <lee.jones@linaro.org>
+Cc: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-phy@lists.infradead.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ devicetree@vger.kernel.org, =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210923_074354_061415_B7C83967 
-X-CRM114-Status: GOOD (  20.95  )
+X-CRM114-CacheID: sfid-20210923_080141_956320_1E0BCE06 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,62 +87,19 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 23, 2021 at 12:56 AM Richard Zhu <hongxing.zhu@nxp.com> wrote:
->
->
-> > -----Original Message-----
-> > From: Rob Herring <robh@kernel.org>
-> > Sent: Thursday, September 23, 2021 3:26 AM
-> > To: Richard Zhu <hongxing.zhu@nxp.com>
-> > Cc: l.stach@pengutronix.de; kishon@ti.com; vkoul@kernel.org;
-> > galak@kernel.crashing.org; shawnguo@kernel.org;
-> > linux-phy@lists.infradead.org; devicetree@vger.kernel.org;
-> > linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
-> > kernel@pengutronix.de; dl-linux-imx <linux-imx@nxp.com>
-> > Subject: Re: [PATCH 1/4] dt-bindings: phy: phy-imx8-pcie: Add binding for the
-> > pad modes of imx8 pcie phy
-> >
-> > On Fri, Sep 17, 2021 at 10:31:00AM +0800, Richard Zhu wrote:
-> > > Add binding for reference clock PAD modes of the i.MX8 PCIe PHY.
-> > >
-> > > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> > > ---
-> > >  include/dt-bindings/phy/phy-imx8-pcie.h | 14 ++++++++++++++
-> > >  1 file changed, 14 insertions(+)
-> > >  create mode 100644 include/dt-bindings/phy/phy-imx8-pcie.h
-> > >
-> > > diff --git a/include/dt-bindings/phy/phy-imx8-pcie.h
-> > b/include/dt-bindings/phy/phy-imx8-pcie.h
-> > > new file mode 100644
-> > > index 000000000000..fe198a0cc12c
-> > > --- /dev/null
-> > > +++ b/include/dt-bindings/phy/phy-imx8-pcie.h
-> > > @@ -0,0 +1,14 @@
-> > > +/* SPDX-License-Identifier: GPL-2.0 */
-> >
-> > Perhaps this should match the dts files license...
-> >
-> Hi Rob:
-> What's the means of the "dts files license"?
-
-You include this into .dts files and those are dual licensed. The
-licenses should match (or be compatible).
-
-> I'm not clear understand that.
-> I found that there are almost similar "/* SPDX-License-Identifier: GPL-2.0 */" license contained in the files of the /include/dt-bindings/phy folder.
-
-Yes, licenses are a mess. But what other files in
-include/dt-bindings/phy have don't matter. Where you use this file is
-what matters.
-
-Rob
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBTZXAgMjIsIDIwMjEgYXQgMjo1OCBBTSBMZWUgSm9uZXMgPGxlZS5qb25lc0BsaW5h
+cm8ub3JnPiB3cm90ZToKPgo+IE9uIE1vbiwgMTMgU2VwIDIwMjEsIFJhZmHFgiBNacWCZWNraSB3
+cm90ZToKPgo+ID4gRnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgo+ID4K
+PiA+IE5vcnRoc3RhcidzIFVTQiAyLjAgUEhZIGlzIHBhcnQgb2YgdGhlIENSVSBNRkQuCj4gPgo+
+ID4gU2lnbmVkLW9mZi1ieTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgo+ID4g
+LS0tCj4gPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvbWZkL2JyY20sY3J1LnlhbWwgICAgICAg
+ICB8IDE1ICsrKysrKysrKysrKysrLQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxNCBpbnNlcnRpb25z
+KCspLCAxIGRlbGV0aW9uKC0pCj4KPiBBcHBsaWVkLCB0aGFua3MuCgpIb3BlZnVsbHkgdGhpcyB3
+b3JrcyB3aXRob3V0IHBhdGNoIDI/Pz8KClJvYgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
