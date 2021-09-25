@@ -1,104 +1,90 @@
-Return-Path: <SRS0=OBTU=OO=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Pu2M=OP=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-18.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 775D8C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Sep 2021 13:28:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C4130C433F5
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Sep 2021 17:42:15 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 33FB361029
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Sep 2021 13:28:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 33FB361029
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=canonical.com
+	by mail.kernel.org (Postfix) with ESMTPS id 8701461251
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Sep 2021 17:42:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 8701461251
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gNnWuvchcanMnfeVb/Mey2P0tUhqF+IhBYpTkMRstmM=; b=BXDgW4hu9kP1Yr
-	YU8ca3/VKgNhkKpBf71VKyvbmIS+hHRws8Axm7v0ohnQyshr76YP51bdEvoqy5Hf/IKk0RZBWuBL6
-	9DkUJWUzCwQouDbJfKZvpIF0By0PdQOEpeZBtMtBch+jvp+ngPxQ9hbbAJJrnibw+rAr+g9/eeIsq
-	fFBTjQ3LdzwhY8+maQWtd0nGb1B6nMHCJG0qYQz430MmGbNWSmWNk3epsPsJ5zasooVgHf/Qdf5sE
-	pdMkSgqvfQFvBgohlJkWQP2/bO96yJAhfZbKDSYXB5bXsz+Itzu4O7IRRO0ncc9jIemOCChwR90od
-	2NEq4bLozqHd3UfDkSlA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3Z6oqTMO/jucHGpTXlPM34KLZfbE+34DxXtvVixcsfg=; b=YBtZPs7hYlNiaE
+	2ywA/PxwgGf60Yja0JgPWpri3ajm2HqfI9oAK02s0fklzuIoQxvRP1Qe31QG7hluAbzTjmtx2jkrL
+	AHyegRapfOxYA6bOh1rmjsl8OMQQXm93XIfHwEyHnakQHpr0cBdd/mexlx3PqzsF6nUrtzraTH/lX
+	lqBZI/HgsuH9VoPeaWf/xWtRYgZyjruc4le1XfYlud8ZlUbpit0teA7t8AR8xoohKP/krAZ+uEXZw
+	c5TW70s/OVu77lwva/t4EmAaw7n13sxcFasSviJ53BlZdQlzQrfFEt0GmsmkaxgqHz1YGWnXBxRN6
+	T6JWY2brNd0Vt4R8sB1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mTlFR-00EaLr-Ll; Fri, 24 Sep 2021 13:28:17 +0000
-Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
+	id 1mUBgl-00Gzcv-3y; Sat, 25 Sep 2021 17:42:15 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mTlEu-00Ea7m-2K
- for linux-phy@lists.infradead.org; Fri, 24 Sep 2021 13:27:46 +0000
-Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
- [209.85.221.69])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id EFE9B4079F
- for <linux-phy@lists.infradead.org>; Fri, 24 Sep 2021 13:27:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
- s=20210705; t=1632490058;
- bh=9lxNX9SoiwZF5dcOxctnI5jIG4IwRTL7ipvDb0MgSb8=;
- h=From:To:Subject:Date:Message-Id:MIME-Version;
- b=v8CpYBEPpAENeXtFgA21wA/RtdkDHBM46CTyL+PJTmAzB3tqTLjRj+gFU8uv/A0uv
- 8wIjIkUT/lw2VHeaWVQgROkT8UHY0uVGqjaay8dOF+71oZ8kXqeh5L6B9oy6u6RSGc
- re/NZCRX6V7nOPVqLYbHkCsReftHa/lufvPJIzeTgFMLZi3erkwAjhAu9K37J++BVw
- 47wU3rvjM5AN5f85B4U+jPytLiTeGUEHP033LCWtwxvUAzM1ytCUmUlhMYFsL4neF+
- WJ0MFKnATiyA2D0qhMGIhvr9g1eNRBkCw1IfCNHl4/10F3unOa2A+ItEgBFZaIxZmR
- TI+aQl1iUlxjg==
-Received: by mail-wr1-f69.google.com with SMTP id
- f11-20020adfc98b000000b0015fedc2a8d4so8148934wrh.0
- for <linux-phy@lists.infradead.org>; Fri, 24 Sep 2021 06:27:38 -0700 (PDT)
+ id 1mUBgi-00GzcK-8N; Sat, 25 Sep 2021 17:42:13 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id ee50so49544123edb.13;
+ Sat, 25 Sep 2021 10:42:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=IeR6I78v07QTr7GwuPjqPsC9KmUX8D77z/xH6y8yFI8=;
+ b=IRAqRPzgfb+l3oosTcNuCrp/+4E0gI9cN8XAOxGuWL0Q86mesco1wT35ZtwEjsPg7O
+ mVrG1YDvsUYZw33ZU0BzxOPLenOe+00qlat4v4mAl2f2FD7a3CAar45txxjbowsFXy6n
+ cuG9C1NRRPeu+40lWz/N154oiu18PwHQJqe/xXBOmVFfqrCpkA2qjjehQ1IBDLhQYbXm
+ RLRbbiW7YweqJRdWVgGHYujen/b2CvdlCsQ6hemxWRVWz7/CTkEWaSsji86pMxchJ0jk
+ DoY9/T+PJJUEqfXgfoQk9WRCDeYiBg3zDLg2mIA+Ytwpig5Oxw45in0XnQyMSuHMbKvu
+ WkCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9lxNX9SoiwZF5dcOxctnI5jIG4IwRTL7ipvDb0MgSb8=;
- b=z7mFvuyTEoP3oOp/XV0k2vaTpbuffx9XCMHBSkt/tfrY8AT12/J18FKjZmNFZJS2IM
- m4lXG1q+pEzViQK7yz1qok5PhQw1OKrxazCu75E9acsuUMRt332AeoLYMBrzN64AxMjx
- IOC/Nz7mLjCRiDoYJxhXJbFA47JndeNe21f6Mvgdbc9vXwAmdFApOdI05wBnZvo0ek3k
- vba3ICoEc/B+04ynI0+5siXPWNHVY04FoJ/DicqRBxJqZjUdLZBYGHSenrE87exje+kh
- B+WvZtYBZyrSJUSMMaDp3UAY6yw/HZMyBl3U4bAKi1+r6JB23THzreqV2fnl2x0KPag4
- XGgA==
-X-Gm-Message-State: AOAM532MoA90UFc+9atjbf++7iKzEo82zGZmFnOg2SjG1qo7bYQOxcTK
- v5gGUMD2wNbsAtycNinjIrUH1iH4ZOxDa0XzUb85eWWb6eXSGN/fybk4SjPEHgzT1NRw8RKZw45
- WDPCrAqXjbv7LaQQiIKXAokfBRpVB6l5Ndpf08wYxsq8=
-X-Received: by 2002:a5d:58cd:: with SMTP id o13mr11753126wrf.416.1632490058489; 
- Fri, 24 Sep 2021 06:27:38 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJxjGdcj1FCIMyVG6GWQ+ezHpaSa3jvvTO0U6+mzqQ5umN+Qve67heywragH63BpP0dQDzzy9w==
-X-Received: by 2002:a5d:58cd:: with SMTP id o13mr11753098wrf.416.1632490058315; 
- Fri, 24 Sep 2021 06:27:38 -0700 (PDT)
-Received: from localhost.localdomain
- (lk.84.20.244.219.dc.cable.static.lj-kabel.net. [84.20.244.219])
- by smtp.gmail.com with ESMTPSA id s2sm30386wru.3.2021.09.24.06.27.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 24 Sep 2021 06:27:37 -0700 (PDT)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
- "James E.J. Bottomley" <jejb@linux.ibm.com>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Jaehoon Chung <jh80.chung@samsung.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
- Chanho Park <chanho61.park@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: [PATCH 1/2] phy: samsung: unify naming and describe driver in KConfig
-Date: Fri, 24 Sep 2021 15:26:57 +0200
-Message-Id: <20210924132658.109814-1-krzysztof.kozlowski@canonical.com>
-X-Mailer: git-send-email 2.30.2
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=IeR6I78v07QTr7GwuPjqPsC9KmUX8D77z/xH6y8yFI8=;
+ b=iwFnQK7Auh7Hxsq+KnSif6LZBSJWN/2aJ2ugeGttosjWQS1QDKfnPR/fIepbiHWKo3
+ Q0LotfP/sep8SlBeOZuYQdhZ58MP5vMUHxV6DgSNMC1s1VAxQ7i2Cllp+oigLxCEekYM
+ lqAskCnhg2ZkgQI1Slc0X/7uJYbEvlCiBXPErFmIPv2fff+6D14ByGfXdaLM40ZRoNhF
+ zcptUUzabXLur1oIeYccE9+6jlckPegmz5YduZ4xNLpajXIDEqrrgRkJLROAkpfRQQsq
+ oX/4/Ae2J3TCfvluPmAKrUkymMnI85ZvYk3b2UOZpyXpaIYKvD+NMJyZJDHFOus5FmaT
+ SoMA==
+X-Gm-Message-State: AOAM532h8Flx4hqwCHbEqAQxNwrMxVxn8XXfMUQJiUf8Yr5pFomhwvhO
+ bqSqsesvvljZmcFrNTSTMEQnNjisKZ7ax9bcyu4=
+X-Google-Smtp-Source: ABdhPJw4TvWMdEO0MgDEFaxjkEHiKZXec68E1FwOLvkbn3swXGq+JhkZppepiqKsD9J2+Mhv0mlMjMZvOL7r42tie7U=
+X-Received: by 2002:a05:6402:319a:: with SMTP id
+ di26mr12638279edb.84.1632591730983; 
+ Sat, 25 Sep 2021 10:42:10 -0700 (PDT)
 MIME-Version: 1.0
+References: <20210817041548.1276-1-linux.amoon@gmail.com>
+ <20210817041548.1276-2-linux.amoon@gmail.com>
+ <c7f6213b-5ddc-881c-1aea-9cc7b03e6a4f@baylibre.com>
+ <CAFBinCBeNMET2tvH0h6HF3dR+xBb59hifQyaoXigUs3UGkS+KQ@mail.gmail.com>
+ <2b07b3de-cee5-c570-8fde-6a4c684122d6@baylibre.com>
+ <CANAwSgRNp8UtU+Yy4smwZ5POTWTU+xN1mrf_cH7Pu9yX5HU=VA@mail.gmail.com>
+ <CAFBinCDmNt+aXRE4xFZdegOUs8BqJiTPF3+DQ-buvWWXrQLkdw@mail.gmail.com>
+In-Reply-To: <CAFBinCDmNt+aXRE4xFZdegOUs8BqJiTPF3+DQ-buvWWXrQLkdw@mail.gmail.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Sat, 25 Sep 2021 23:11:58 +0530
+Message-ID: <CANAwSgTcTCNWD3QTt4-c8BeAbFxDewbZewaSouggPuK9cpSXog@mail.gmail.com>
+Subject: Re: [PATCHv3 1/6] ARM: dts: meson8b: odroidc1: Add usb phy power node
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-amlogic@lists.infradead.org, 
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ devicetree <devicetree@vger.kernel.org>, 
+ Matt Corallo <oc2udbzfd@mattcorallo.com>, Rob Herring <robh+dt@kernel.org>, 
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+ Emiliano Ingrassia <ingrassia@epigenesys.com>,
+ Brian Kim <brian.kim@hardkernel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210924_062744_281248_3FBDE524 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20210925_104212_339575_BFEE781D 
+X-CRM114-Status: GOOD (  18.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,57 +101,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-We use everywhere "Samsung" and "Exynos", not the uppercase versions.
-Describe better which driver applies to which SoC, to make configuring
-kernel for Samsung SoC easier.
+Hi Martin,
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
----
- drivers/phy/samsung/Kconfig | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+On Tue, 21 Sept 2021 at 00:56, Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+>
+> Hi Anand,
+>
+> On Tue, Aug 31, 2021 at 10:48 PM Anand Moon <linux.amoon@gmail.com> wrote:
+> [...]
+> > After enabling CONFIG_REGULATOR_DEBUG, with this patch applied
+> > I still not getting the USB regulator to enable.
+> > Do you see different output at your end?
+> I don't have much time for testing and debugging currently but I'll
+> put it on my TODO-list
+> Until either of us has found the issue I suggest not merging this patch.
+>
+Ok no problem.
 
-diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
-index e20d2fcc9fe7..3ccaabf2850a 100644
---- a/drivers/phy/samsung/Kconfig
-+++ b/drivers/phy/samsung/Kconfig
-@@ -30,16 +30,16 @@ config PHY_EXYNOS_PCIE
- 	  This driver provides PHY interface for Exynos PCIe controller.
- 
- config PHY_SAMSUNG_UFS
--	tristate "SAMSUNG SoC series UFS PHY driver"
-+	tristate "Exynos SoC series UFS PHY driver"
- 	depends on OF && (ARCH_EXYNOS || COMPILE_TEST)
- 	select GENERIC_PHY
- 	help
--	  Enable this to support the Samsung UFS PHY driver for
--	  Samsung SoCs. This driver provides the interface for UFS
--	  host controller to do PHY related programming.
-+	  Enable this to support the Samsung Exynos SoC UFS PHY driver for
-+	  Samsung Exynos SoCs. This driver provides the interface for UFS host
-+	  controller to do PHY related programming.
- 
- config PHY_SAMSUNG_USB2
--	tristate "Samsung USB 2.0 PHY driver"
-+	tristate "S5P/Exynos SoC series USB 2.0 PHY driver"
- 	depends on HAS_IOMEM
- 	depends on USB_EHCI_EXYNOS || USB_OHCI_EXYNOS || USB_DWC2 || COMPILE_TEST
- 	select GENERIC_PHY
-@@ -47,9 +47,9 @@ config PHY_SAMSUNG_USB2
- 	default ARCH_EXYNOS
- 	help
- 	  Enable this to support the Samsung USB 2.0 PHY driver for Samsung
--	  SoCs. This driver provides the interface for USB 2.0 PHY. Support
--	  for particular PHYs will be enabled based on the SoC type in addition
--	  to this driver.
-+	  S5Pv210 and Exynos SoCs. This driver provides the interface for USB
-+	  2.0 PHY. Support for particular PHYs will be enabled based on the SoC
-+	  type in addition to this driver.
- 
- config PHY_EXYNOS4210_USB2
- 	bool
--- 
-2.30.2
+Basically, I have just roughly gone through the architecture of
+Amlogic's OTG framework.
+Below is the global configuration registers for DWC2 OTG framer work
 
+[0] https://github.com/hardkernel/linux/blob/odroidc-3.10.y/drivers/amlogic/usb/dwc_otg/310/dwc_otg_regs.h#L66-L151
+
+Within some configurations, it helps tune the power for vbus and interrupt
+For example
+[1] https://github.com/hardkernel/linux/blob/odroidc-3.10.y/drivers/amlogic/usb/dwc_otg/310/dwc_otg_attr.c#L666-L717
+
+Amlogic basically used the mode parameter to external tune the DWC2 driver
+it could help more fine-tuning the driver.
+
+[2] https://github.com/hardkernel/linux/blob/odroidc-3.10.y/drivers/amlogic/usb/dwc_otg/310/dwc_otg_driver.c#L1461-L1703
+
+I feel we need to identify many more PHY tuning parameters to make the
+USB work correctly.
+
+
+
+
+
+
+Thanks
+-Anand
+
+>
+> Best regards,
+> Martin
 
 -- 
 linux-phy mailing list
