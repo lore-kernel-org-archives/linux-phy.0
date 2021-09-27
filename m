@@ -1,64 +1,85 @@
-Return-Path: <SRS0=8nB1=OQ=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=YzZ0=OR=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5BCEFC433FE
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Sep 2021 08:04:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B6C8CC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Sep 2021 04:49:10 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1F47061039
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Sep 2021 08:04:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1F47061039
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id 851DF6113D
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Sep 2021 04:49:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 851DF6113D
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mnE346iIs1sChm/kXIgF2Jx9vWjdBTvHLAr8ZnZith0=; b=loZVNcchC5FQvs
-	9oSJqTou1wLU4gsw4Ptp66l7e9flg5sAsCC6rb9h8mAzN/aKtrQIlidF4txAXZiVrXUyeB++98tFP
-	jec5q8+T8xt2b9v0N32d6ul6DrT3Gk4M9iwVZR9F4bnz0j5/xOtxoH/qHvxsofReRn5dhHf0ueQF3
-	Sken0R6ozrUePzIGd808unf18Lr8vpFe+hilw1rTKEBZC5XB4GmVun9SnD4VoevbG6F9MY6O1aLpk
-	Z/EhoW7n2999HLqZdHOuqS8AnfvqavHU8yAXSNXIUvNUDmCCcg2no6VG7vQFiwsTQ71ucjajYg0bl
-	79GCMi2hX+P/1HoyS6mg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g/4Cb680ulHjU2Bsj8DXAhsyNs0U4BAjP6pin+GH0pY=; b=vHyizh5IdcsGFb
+	u/XG+O+1AZzsTS38IG13bzWER1BJ2JcoqUfyKDz60hr9Ff8mYJbREUIuzWAnu/4p03dOGSuSItEkD
+	5dHcPpiGssg1cRSn7RIB+UoMbHFTPnFZ8jYzV6mqVcVvk2BCJZzehq55QdKry6I+j1TA2yWj2TQuG
+	ho5knb8xmSifqhx+UTsJLjhzFW7L2FQbRPjndCMqTDmvP2ZXe+pEWRnUMzjtST6yemxVUKjS7rV61
+	Pl6B6xABajdhbg33tqRzXngDzRC5XdXZyyVVmtnTEckRTtg0ujUJaB3UditOr+K0BPKD3ha/FX2v7
+	wN7Aefqfvm/TESxws+kQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mUP9L-0009oh-JC; Sun, 26 Sep 2021 08:04:39 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1mUiZh-001Yk1-Uu; Mon, 27 Sep 2021 04:49:09 +0000
+Received: from mail-pj1-x1029.google.com ([2607:f8b0:4864:20::1029])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mUP8Q-0009Zk-Rh; Sun, 26 Sep 2021 08:03:46 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A3893201A0B;
- Sun, 26 Sep 2021 10:03:41 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com
- (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3D1E8201A03;
- Sun, 26 Sep 2021 10:03:41 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id F379F183AD14;
- Sun, 26 Sep 2021 16:03:39 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: l.stach@pengutronix.de, kishon@ti.com, vkoul@kernel.org, robh@kernel.org,
- galak@kernel.crashing.org, shawnguo@kernel.org
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com,
- Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v2 4/4] phy: freescale: pcie: initialize the imx8 pcie
- standalone phy driver
-Date: Sun, 26 Sep 2021 15:39:43 +0800
-Message-Id: <1632641983-1455-5-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1632641983-1455-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1632641983-1455-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1mUiZe-001YjK-NL
+ for linux-phy@lists.infradead.org; Mon, 27 Sep 2021 04:49:08 +0000
+Received: by mail-pj1-x1029.google.com with SMTP id k23so11569797pji.0
+ for <linux-phy@lists.infradead.org>; Sun, 26 Sep 2021 21:49:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=VCLJxOMghD8RaVbA5dWN+yrWOdqhM/FitAV43QdnWcA=;
+ b=v4HWkol1Zq2VhH4qtQtAVKhBp7KIbVoceST9LFQCBxkv5ECnN3dX4CfY7bPWod1Rtq
+ tKg77idmeZtxwyenmots5LLnqoUaHUaBhc+7ctWVnzBaOLr6HcH0Oixi2feVWeQdbaE1
+ NxvHcpNxWWbjTJ0THXDepb6qIDTtiG3VLVglRMPB4fs3eGiD8t32VSZom1cohHRDOQzB
+ ttJI6ckSJVfTGaPAUbCRnQ9uhTc9vu0h9r8GV1vRcM/TrBZCrUDKIF+i6fYajSYdnpgk
+ KhYC8xqA0DqP0QymE8eRlf875rb16Ib6/FpRj6Vt9Gbyp+xXWifPabTnoADgG67KoLpy
+ Nlhw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=VCLJxOMghD8RaVbA5dWN+yrWOdqhM/FitAV43QdnWcA=;
+ b=6hs/ethNfLy9J4xy5HjFAfLet0WHKGW2z6onAi+9qawnfQgHT/Rg2k6ArYKdwGfDwB
+ kDaE4f97bSTgUuhQxKr84ZMW0VkhYEh6pf9H+quARlST1oVnjf8E5eVJuglLj1xd7fDE
+ Jv4lPWffUWsVwt1jQwQ7RUlvQscxgg+84Fi/CruazOuejmIBaP00DUz9/baprlzGXLRa
+ pqxrn02t+GTXiFbIcjiqAj1zqYuxcY+xWcwhLdIO4EbDkPlXQMOleFNw2sGFnk/PATIK
+ kNCAlX8XoqURzl8JCkgTh2Ec4i46B3QkX6PVATNA4VfJm8fvJlP/hB0eQiNaoI5KgVvU
+ txdA==
+X-Gm-Message-State: AOAM530+3TnY5LTOfKzemNXGFhOElLO9qbfm4UaBOzLJd7DoG4VrLivY
+ rIaHjYHb1lsP0MHHNMsP9836+Q==
+X-Google-Smtp-Source: ABdhPJwYodALpHMpng2H+jCiibiIx/t6qGhMZwNj8Bl+wKK+zEAM+9zWZtFnqmIdlCoxV1/V66vOZA==
+X-Received: by 2002:a17:90a:b382:: with SMTP id
+ e2mr11819780pjr.119.1632718145282; 
+ Sun, 26 Sep 2021 21:49:05 -0700 (PDT)
+Received: from localhost.localdomain (80.251.214.228.16clouds.com.
+ [80.251.214.228])
+ by smtp.gmail.com with ESMTPSA id o8sm14550651pjh.19.2021.09.26.21.49.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 26 Sep 2021 21:49:04 -0700 (PDT)
+From: Shawn Guo <shawn.guo@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Manu Gautam <mgautam@codeaurora.org>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@somainline.org>,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
+ Jami Kettunen <jamipkettunen@gmail.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Shawn Guo <shawn.guo@linaro.org>
+Subject: [PATCH 0/3] Add missing vdd-supply for QUSB2 PHY
+Date: Mon, 27 Sep 2021 12:48:21 +0800
+Message-Id: <20210927044824.30246-1-shawn.guo@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210926_010343_472826_18532162 
-X-CRM114-Status: GOOD (  20.79  )
+X-CRM114-CacheID: sfid-20210926_214906_796022_7CDB315D 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,221 +97,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the standalone i.MX8 PCIe PHY driver.
-Some reset bits should be manipulated between PHY configurations and
-status check(internal PLL is locked or not).
-So, do the PHY configuration in the phy_calibrate().
-And check the PHY is ready or not in the phy_init().
+The series adds missing vdd-supply for QUSB2 PHY which is required for
+digital circuit.  The driver works right now likely because firmware
+already sets it up.  Add it to bindings, driver and DTS that miss the
+supply.
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
----
- drivers/phy/freescale/Kconfig             |   9 ++
- drivers/phy/freescale/Makefile            |   1 +
- drivers/phy/freescale/phy-fsl-imx8-pcie.c | 167 ++++++++++++++++++++++
- 3 files changed, 177 insertions(+)
- create mode 100644 drivers/phy/freescale/phy-fsl-imx8-pcie.c
+It should not cause problem for existing DTBs:
+- SC7180, SDM630, SDM845 based platforms already specified vdd-supply
+  in the DTBs.
+- MSM8996 and MSM8998 platform DTBs miss vdd-supply, but dummy regulator
+  will ensure QUSB2 PHY driver works as before on these platforms.
 
-diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-index 320630ffe3cd..da078a676fbc 100644
---- a/drivers/phy/freescale/Kconfig
-+++ b/drivers/phy/freescale/Kconfig
-@@ -14,3 +14,12 @@ config PHY_MIXEL_MIPI_DPHY
- 	help
- 	  Enable this to add support for the Mixel DSI PHY as found
- 	  on NXP's i.MX8 family of SOCs.
-+
-+config PHY_FSL_IMX8_PCIE
-+	tristate "Freescale i.MX8 PCIE PHY"
-+	depends on OF && HAS_IOMEM
-+	select GENERIC_PHY
-+	default ARCH_MXC
-+	help
-+	  Enable this to add support for the PCIE PHY as found on i.MX8
-+	  family of SOCs.
-diff --git a/drivers/phy/freescale/Makefile b/drivers/phy/freescale/Makefile
-index 1d02e3869b45..9fd467b58621 100644
---- a/drivers/phy/freescale/Makefile
-+++ b/drivers/phy/freescale/Makefile
-@@ -1,3 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_PHY_FSL_IMX8MQ_USB)	+= phy-fsl-imx8mq-usb.o
- obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
-+obj-$(CONFIG_PHY_FSL_IMX8_PCIE)		+= phy-fsl-imx8-pcie.o
-diff --git a/drivers/phy/freescale/phy-fsl-imx8-pcie.c b/drivers/phy/freescale/phy-fsl-imx8-pcie.c
-new file mode 100644
-index 000000000000..ff47d6b83686
---- /dev/null
-+++ b/drivers/phy/freescale/phy-fsl-imx8-pcie.c
-@@ -0,0 +1,167 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2021 NXP
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/delay.h>
-+#include <linux/module.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <dt-binding/phy/phy-fsl-imx8-pcie.h>
-+
-+#define IMX8MM_PCIE_PHY_CMN_REG061	0x184
-+#define  ANA_PLL_CLK_OUT_TO_EXT_IO_EN	BIT(0)
-+#define IMX8MM_PCIE_PHY_CMN_REG062	0x188
-+#define  ANA_PLL_CLK_OUT_TO_EXT_IO_SEL	BIT(3)
-+#define IMX8MM_PCIE_PHY_CMN_REG063	0x18C
-+#define  AUX_PLL_REFCLK_SEL_SYS_PLL	GENMASK(7, 6)
-+#define IMX8MM_PCIE_PHY_CMN_REG064	0x190
-+#define  ANA_AUX_RX_TX_SEL_TX		BIT(7)
-+#define  ANA_AUX_RX_TERM_GND_EN		BIT(3)
-+#define  ANA_AUX_TX_TERM		BIT(2)
-+#define IMX8MM_PCIE_PHY_CMN_REG065	0x194
-+#define  ANA_AUX_RX_TERM		(BIT(7) | BIT(4))
-+#define  ANA_AUX_TX_LVL			GENMASK(3, 0)
-+#define IMX8MM_PCIE_PHY_CMN_REG75	0x1D4
-+#define  PCIE_PHY_CMN_REG75_PLL_DONE	0x3
-+#define PCIE_PHY_TRSV_REG5		0x414
-+#define  PCIE_PHY_TRSV_REG5_GEN1_DEEMP	0x2D
-+#define PCIE_PHY_TRSV_REG6		0x418
-+#define  PCIE_PHY_TRSV_REG6_GEN2_DEEMP	0xF
-+
-+struct imx8_pcie_phy {
-+	u32		refclk_pad_mode;
-+	void __iomem	*base;
-+	struct clk	*clk;
-+	struct phy	*phy;
-+};
-+
-+static int imx8_pcie_phy_init(struct phy *phy)
-+{
-+	int ret;
-+	u32 val;
-+	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
-+
-+	ret = readl_poll_timeout(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG75,
-+				 val, val == PCIE_PHY_CMN_REG75_PLL_DONE,
-+				 10, 20000);
-+	return ret;
-+}
-+
-+static int imx8_pcie_phy_cal(struct phy *phy)
-+{
-+	u32 value, pad_mode;
-+	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
-+
-+	pad_mode = imx8_phy->refclk_pad_mode;
-+	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT) {
-+		/* Configure the pad as input */
-+		value = readl(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-+		writel(value & ~ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-+	} else if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT) {
-+		/* Configure the PHY to output the refclock via pad */
-+		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-+		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
-+		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
-+		value = ANA_AUX_RX_TX_SEL_TX | ANA_AUX_TX_TERM;
-+		writel(value | ANA_AUX_RX_TERM_GND_EN,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG064);
-+		writel(ANA_AUX_RX_TERM | ANA_AUX_TX_LVL,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG065);
-+	}
-+
-+	/* Tune PHY de-emphasis setting to pass PCIe compliance. */
-+	writel(PCIE_PHY_TRSV_REG5_GEN1_DEEMP,
-+	       imx8_phy->base + PCIE_PHY_TRSV_REG5);
-+	writel(PCIE_PHY_TRSV_REG6_GEN2_DEEMP,
-+	       imx8_phy->base + PCIE_PHY_TRSV_REG6);
-+
-+	return 0;
-+}
-+
-+static int imx8_pcie_phy_power_on(struct phy *phy)
-+{
-+	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
-+
-+	return clk_prepare_enable(imx8_phy->clk);
-+}
-+
-+static int imx8_pcie_phy_power_off(struct phy *phy)
-+{
-+	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
-+
-+	clk_disable_unprepare(imx8_phy->clk);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops imx8_pcie_phy_ops = {
-+	.init		= imx8_pcie_phy_init,
-+	.calibrate	= imx8_pcie_phy_cal,
-+	.power_on	= imx8_pcie_phy_power_on,
-+	.power_off	= imx8_pcie_phy_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int imx8_pcie_phy_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	struct imx8_pcie_phy *imx8_phy;
-+	struct resource *res;
-+
-+	imx8_phy = devm_kzalloc(dev, sizeof(*imx8_phy), GFP_KERNEL);
-+	if (!imx8_phy)
-+		return -ENOMEM;
-+
-+	/* get PHY refclk pad mode */
-+	of_property_read_u32(np, "fsl,refclk-pad-mode",
-+			     &imx8_phy->refclk_pad_mode);
-+
-+	imx8_phy->clk = devm_clk_get(dev, "phy");
-+	if (IS_ERR(imx8_phy->clk)) {
-+		dev_err(dev, "failed to get imx pcie phy clock\n");
-+		return PTR_ERR(imx8_phy->clk);
-+	}
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	imx8_phy->base = devm_ioremap_resource(dev, res);
-+	if (IS_ERR(imx8_phy->base))
-+		return PTR_ERR(imx8_phy->base);
-+
-+	imx8_phy->phy = devm_phy_create(dev, NULL, &imx8_pcie_phy_ops);
-+	if (IS_ERR(imx8_phy->phy))
-+		return PTR_ERR(imx8_phy->phy);
-+
-+	phy_set_drvdata(imx8_phy->phy, imx8_phy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id imx8_pcie_phy_of_match[] = {
-+	{.compatible = "fsl,imx8mm-pcie-phy",},
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
-+
-+static struct platform_driver imx8_pcie_phy_driver = {
-+	.probe	= imx8_pcie_phy_probe,
-+	.driver = {
-+		.name	= "imx8-pcie-phy",
-+		.of_match_table	= imx8_pcie_phy_of_match,
-+	}
-+};
-+module_platform_driver(imx8_pcie_phy_driver);
-+
-+MODULE_DESCRIPTION("FSL IMX8 PCIE PHY driver");
-+MODULE_LICENSE("GPL");
+
+Shawn Guo (3):
+  dt-bindings: phy: qcom,qusb2: Add missing vdd-supply
+  phy: qcom-qusb2: Add missing vdd supply
+  arm64: dts: qcom: Add missing vdd-supply for QUSB2 PHY
+
+ Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 6 ++++++
+ arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi              | 2 ++
+ arch/arm64/boot/dts/qcom/msm8996-sony-xperia-tone.dtsi    | 1 +
+ arch/arm64/boot/dts/qcom/msm8998-clamshell.dtsi           | 1 +
+ arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi      | 1 +
+ drivers/phy/qualcomm/phy-qcom-qusb2.c                     | 2 +-
+ 6 files changed, 12 insertions(+), 1 deletion(-)
+
 -- 
-2.25.1
+2.17.1
 
 
 -- 
