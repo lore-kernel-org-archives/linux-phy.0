@@ -2,69 +2,72 @@ Return-Path: <SRS0=m7K2=OS=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 75D3DC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 07:34:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 72579C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 08:44:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3A263611CC
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 07:34:34 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3A263611CC
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 08EBE60F12
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 08:44:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 08EBE60F12
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=pengutronix.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HaFN0EZjntA9cnX1etIAIrYo5EOhrrff47zairHbhB0=; b=to4gQqf07S2CIA
-	hTsUhYXc981gA66ES81V2oravptQ+k+fGuRXwLFD7zzQ7w0EFMOc6MVgZ9CHD2Qi9uQoQ7yonWumq
-	Pfo7kdby9Zu77zJJPihY0wa6qYvi4GCK7LtTRtoFHSpetwp+bzabnZaGeWUabkO5yUAlK2xhcrD3H
-	894uHqQWCw5TC9oplC8EttgTDVqNLDm7FGzQ6gbgyL3mZPVhhUIrpweKEhnd4JyQf4XNlWwsI3hpZ
-	+WKPqLsj177ghMHpj8vWdozHcBGt5aY3Wn3IxH+v/NVEC+tE/MBGKcJqvH03ESxWQ1uZ1HK2vjhsH
-	7BkFlMW5X0kE12mvfSCg==;
+	List-Owner; bh=WRKiDjhcPxsVhtP4b+P56ZolzeeLBDoX5841Mt+IaQc=; b=GvV/g4HpoI/Bjo
+	IYkKAanWNN0dYQn5/WoCy52ekrP1JjLNK5EO7uSxls8x6HU/H2VlNbECFs2CTrHLLHVuFvPF6vbdm
+	Kzq8SuAj4wEhKgL81T8cyb9mOznFRGomkBlcW1Xi1Ks8T/u1go+nIsnC6NuWFQL/M6ENJB2ilHj2E
+	FTRtvPIT2cfXSrlJB5QF01eD3XqY8vRonuLxQ82wtKBaZ8Pevr57Cgy/yid8t5zFcI19dqxDPYqSJ
+	hfS5AOXmfCCHSephyL6XeWKArQMdaOJvfgIrsLLe+ExlIivg0PWHhhEf2eLVCdfkBotn8RJL1QCgH
+	0PJ/KVKvIHksWHaNLV7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mV7dJ-0060v4-Mj; Tue, 28 Sep 2021 07:34:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mV8ih-006IkF-IE; Tue, 28 Sep 2021 08:44:11 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mV7dD-0060q6-Av
- for linux-phy@lists.infradead.org; Tue, 28 Sep 2021 07:34:32 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 46526611CB;
- Tue, 28 Sep 2021 07:34:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1632814466;
- bh=1xY122QSGXS1crEHyHtaDgNnDMdVb/obGPlP4jBlV/8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kdZnbKFlqqxbtGstMur6y8/Fy2non+UZUWd9L9opaW6DrDC6aysbPFemRwKplfSuR
- yUFsvNnRf5wVGGnn/Nb2yl0NhXc0E5z1+AkzPe5UAwWHVy198RkwnEKqRWEMWZyc9t
- nWlJvJJMOqtsgEvG8Q5Q6hJJ9+BFG+FXgUvuyiCJ24QLFcBGoq7PfMk/hwZxmrUT/x
- E0NZsPNTW5JWYgpJXAK59EkvuyywtUMlwGRBBhC2qq2STmOmH/DDRYTKSy4ChfkEZc
- ZBWfBZruYg/wg1ZzSPrAJuhlLH0y0jk3di4VrmySJd1H0HVCJmavhUVITBbX9GkIr/
- px07dLjGRsHWg==
-Received: by mail.kernel.org with local (Exim 4.94.2)
- (envelope-from <mchehab@kernel.org>)
- id 1mV7dA-000RPb-A1; Tue, 28 Sep 2021 09:34:24 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Bjorn Helgaas <bhelgaas@google.com>
-Cc: linuxarm@huawei.com, mauro.chehab@huawei.com,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: [PATCH v12 01/11] phy: HiSilicon: Add driver for Kirin 970 PCIe PHY
-Date: Tue, 28 Sep 2021 09:34:11 +0200
-Message-Id: <b7a4ff41b57d861b003f1a00cae81f3d226fbe18.1632814194.git.mchehab+huawei@kernel.org>
-X-Mailer: git-send-email 2.31.1
-In-Reply-To: <cover.1632814194.git.mchehab+huawei@kernel.org>
-References: <cover.1632814194.git.mchehab+huawei@kernel.org>
+ id 1mV8id-006IfQ-Db
+ for linux-phy@lists.infradead.org; Tue, 28 Sep 2021 08:44:10 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1mV8iS-00022c-EN; Tue, 28 Sep 2021 10:43:56 +0200
+Message-ID: <2126add7b505fb27c4eb3fef459ac925b20818f8.camel@pengutronix.de>
+Subject: Re: [PATCH v2 4/4] phy: freescale: pcie: initialize the imx8 pcie
+ standalone phy driver
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Richard Zhu <hongxing.zhu@nxp.com>, "kishon@ti.com" <kishon@ti.com>, 
+ "vkoul@kernel.org"
+ <vkoul@kernel.org>, "robh@kernel.org" <robh@kernel.org>, 
+ "galak@kernel.crashing.org"
+ <galak@kernel.crashing.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>,  dl-linux-imx <linux-imx@nxp.com>
+Date: Tue, 28 Sep 2021 10:43:54 +0200
+In-Reply-To: <AS8PR04MB867694A628587150731B57D48CA89@AS8PR04MB8676.eurprd04.prod.outlook.com>
+References: <1632641983-1455-1-git-send-email-hongxing.zhu@nxp.com>
+ <1632641983-1455-5-git-send-email-hongxing.zhu@nxp.com>
+ <c9d57b1fb86173cc7ccbd391af4b18aaed6cd1ac.camel@pengutronix.de>
+ <AS8PR04MB867694A628587150731B57D48CA89@AS8PR04MB8676.eurprd04.prod.outlook.com>
+User-Agent: Evolution 3.40.4 (3.40.4-1.fc34) 
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210928_003427_452955_B0674C77 
-X-CRM114-Status: GOOD (  22.07  )
+X-CRM114-CacheID: sfid-20210928_014407_837195_0A740928 
+X-CRM114-Status: GOOD (  54.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,918 +79,213 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Kirin 970 PHY is somewhat similar to the Kirin 960, but it
-does a lot more. Add the needed bits for PCIe to start working on
-HiKey 970 boards.
-
-Co-developed-by: Manivannan Sadhasivam <mani@kernel.org>
-Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
-
-To mailbombing on a large number of people, only mailing lists were C/C on the cover.
-See [PATCH v12 00/11] at: https://lore.kernel.org/all/cover.1632814194.git.mchehab+huawei@kernel.org/
-
- drivers/phy/hisilicon/Kconfig           |  10 +
- drivers/phy/hisilicon/Makefile          |   1 +
- drivers/phy/hisilicon/phy-hi3670-pcie.c | 845 ++++++++++++++++++++++++
- 3 files changed, 856 insertions(+)
- create mode 100644 drivers/phy/hisilicon/phy-hi3670-pcie.c
-
-diff --git a/drivers/phy/hisilicon/Kconfig b/drivers/phy/hisilicon/Kconfig
-index 4d008cfc279c..d3b92c288554 100644
---- a/drivers/phy/hisilicon/Kconfig
-+++ b/drivers/phy/hisilicon/Kconfig
-@@ -33,6 +33,16 @@ config PHY_HI3670_USB
- 
- 	  To compile this driver as a module, choose M here.
- 
-+config PHY_HI3670_PCIE
-+	tristate "hi3670 PCIe PHY support"
-+	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
-+	select GENERIC_PHY
-+	select MFD_SYSCON
-+	help
-+	  Enable this to support the HiSilicon hi3670 PCIe PHY.
-+
-+	  To compile this driver as a module, choose M here.
-+
- config PHY_HISTB_COMBPHY
- 	tristate "HiSilicon STB SoCs COMBPHY support"
- 	depends on (ARCH_HISI && ARM64) || COMPILE_TEST
-diff --git a/drivers/phy/hisilicon/Makefile b/drivers/phy/hisilicon/Makefile
-index 51729868145b..4029d3813b1e 100644
---- a/drivers/phy/hisilicon/Makefile
-+++ b/drivers/phy/hisilicon/Makefile
-@@ -2,6 +2,7 @@
- obj-$(CONFIG_PHY_HI6220_USB)		+= phy-hi6220-usb.o
- obj-$(CONFIG_PHY_HI3660_USB)		+= phy-hi3660-usb3.o
- obj-$(CONFIG_PHY_HI3670_USB)		+= phy-hi3670-usb3.o
-+obj-$(CONFIG_PHY_HI3670_PCIE)		+= phy-hi3670-pcie.o
- obj-$(CONFIG_PHY_HISTB_COMBPHY)		+= phy-histb-combphy.o
- obj-$(CONFIG_PHY_HISI_INNO_USB2)	+= phy-hisi-inno-usb2.o
- obj-$(CONFIG_PHY_HIX5HD2_SATA)		+= phy-hix5hd2-sata.o
-diff --git a/drivers/phy/hisilicon/phy-hi3670-pcie.c b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-new file mode 100644
-index 000000000000..c64c6679b1b9
---- /dev/null
-+++ b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-@@ -0,0 +1,845 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * PCIe phy driver for Kirin 970
-+ *
-+ * Copyright (C) 2017 HiSilicon Electronics Co., Ltd.
-+ *		https://www.huawei.com
-+ * Copyright (C) 2021 Huawei Technologies Co., Ltd.
-+ *		https://www.huawei.com
-+ *
-+ * Authors:
-+ *	Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-+ *	Manivannan Sadhasivam <mani@kernel.org>
-+ *
-+ * Based on:
-+ *	https://lore.kernel.org/lkml/4c9d6581478aa966698758c0420933f5defab4dd.1612335031.git.mchehab+huawei@kernel.org/
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/gpio.h>
-+#include <linux/kernel.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of_gpio.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#define AXI_CLK_FREQ				207500000
-+#define REF_CLK_FREQ				100000000
-+
-+/* PCIe CTRL registers */
-+#define SOC_PCIECTRL_CTRL7_ADDR			0x01c
-+#define SOC_PCIECTRL_CTRL12_ADDR		0x030
-+#define SOC_PCIECTRL_CTRL20_ADDR		0x050
-+#define SOC_PCIECTRL_CTRL21_ADDR		0x054
-+
-+#define PCIE_OUTPUT_PULL_BITS			GENMASK(3, 0)
-+#define SOC_PCIECTRL_CTRL20_2P_MEM_CTRL		0x02605550
-+#define SOC_PCIECTRL_CTRL21_DEFAULT		0x20000070
-+#define PCIE_PULL_UP_SYS_AUX_PWR_DET		BIT(10)
-+#define PCIE_OUTPUT_PULL_DOWN			BIT(1)
-+
-+/* PCIe PHY registers */
-+#define SOC_PCIEPHY_CTRL0_ADDR			0x000
-+#define SOC_PCIEPHY_CTRL1_ADDR			0x004
-+#define SOC_PCIEPHY_CTRL38_ADDR			0x0098
-+#define SOC_PCIEPHY_STATE0_ADDR			0x400
-+
-+#define RAWLANEN_DIG_PCS_XF_TX_OVRD_IN_1	0xc004
-+#define SUP_DIG_LVL_OVRD_IN			0x003c
-+#define LANEN_DIG_ASIC_TX_OVRD_IN_1		0x4008
-+#define LANEN_DIG_ASIC_TX_OVRD_IN_2		0x400c
-+
-+#define PCIEPHY_RESET_BIT			BIT(17)
-+#define PCIEPHY_PIPE_LINE0_RESET_BIT		BIT(19)
-+#define PCIE_TXDETECT_RX_FAIL			BIT(2)
-+#define PCIE_CLK_SOURCE				BIT(8)
-+#define PCIE_IS_CLOCK_STABLE			BIT(19)
-+#define PCIE_PULL_DOWN_PHY_TEST_POWERDOWN	BIT(22)
-+#define PCIE_DEASSERT_CONTROLLER_PERST		BIT(2)
-+
-+#define EYEPARAM_NOCFG				0xffffffff
-+#define EYE_PARM0_MASK				GENMASK(8, 6)
-+#define EYE_PARM1_MASK				GENMASK(11, 8)
-+#define EYE_PARM2_MASK				GENMASK(5, 0)
-+#define EYE_PARM3_MASK				GENMASK(12, 7)
-+#define EYE_PARM4_MASK				GENMASK(14, 9)
-+#define EYE_PARM0_EN				BIT(9)
-+#define EYE_PARM1_EN				BIT(12)
-+#define EYE_PARM2_EN				BIT(6)
-+#define EYE_PARM3_EN				BIT(13)
-+#define EYE_PARM4_EN				BIT(15)
-+
-+/* hi3670 pciephy register */
-+#define APB_PHY_START_ADDR			0x40000
-+#define SOC_PCIEPHY_MMC1PLL_CTRL1		0xc04
-+#define SOC_PCIEPHY_MMC1PLL_CTRL16		0xC40
-+#define SOC_PCIEPHY_MMC1PLL_CTRL17		0xC44
-+#define SOC_PCIEPHY_MMC1PLL_CTRL20		0xC50
-+#define SOC_PCIEPHY_MMC1PLL_CTRL21		0xC54
-+#define SOC_PCIEPHY_MMC1PLL_STAT0		0xE00
-+
-+#define CRGPERIPH_PEREN12			0x470
-+#define CRGPERIPH_PERDIS12			0x474
-+#define CRGPERIPH_PCIECTRL0			0x800
-+
-+#define PCIE_FNPLL_FBDIV_MASK			GENMASK(27, 16)
-+#define PCIE_FNPLL_FRACDIV_MASK			GENMASK(23, 0)
-+#define PCIE_FNPLL_POSTDIV1_MASK		GENMASK(10, 8)
-+#define PCIE_FNPLL_POSTDIV2_MASK		GENMASK(14, 12)
-+#define PCIE_FNPLL_PLL_MODE_MASK		BIT(25)
-+
-+#define PCIE_FNPLL_DLL_EN			BIT(27)
-+#define PCIE_FNPLL_FBDIV			0xd0
-+#define PCIE_FNPLL_FRACDIV			0x555555
-+#define PCIE_FNPLL_POSTDIV1			0x5
-+#define PCIE_FNPLL_POSTDIV2			0x4
-+#define PCIE_FNPLL_PLL_MODE			0x0
-+
-+#define PCIE_PHY_MMC1PLL			0x20
-+#define PCIE_PHY_CHOOSE_FNPLL			BIT(27)
-+#define PCIE_PHY_MMC1PLL_DISABLE		BIT(0)
-+#define PCIE_PHY_PCIEPL_BP			BIT(16)
-+
-+/* define ie,oe cfg */
-+#define IO_OE_HARD_GT_MODE			BIT(1)
-+#define IO_IE_EN_HARD_BYPASS			BIT(27)
-+#define IO_OE_EN_HARD_BYPASS			BIT(11)
-+#define IO_HARD_CTRL_DEBOUNCE_BYPASS		BIT(10)
-+#define IO_OE_GT_MODE				BIT(8)
-+#define DEBOUNCE_WAITCFG_IN			GENMASK(23, 20)
-+#define DEBOUNCE_WAITCFG_OUT			GENMASK(16, 13)
-+
-+#define IO_HP_DEBOUNCE_GT			(BIT(12) | BIT(15))
-+#define IO_PHYREF_SOFT_GT_MODE			BIT(14)
-+#define IO_REF_SOFT_GT_MODE			BIT(13)
-+#define IO_REF_HARD_GT_MODE			BIT(0)
-+
-+/* noc power domain */
-+#define NOC_POWER_IDLEREQ_1			0x38c
-+#define NOC_POWER_IDLE_1			0x394
-+#define NOC_PW_MASK				0x10000
-+#define NOC_PW_SET_BIT				0x1
-+
-+#define NUM_EYEPARAM				5
-+
-+/* info located in sysctrl */
-+#define SCTRL_PCIE_CMOS_OFFSET			0x60
-+#define SCTRL_PCIE_CMOS_BIT			0x10
-+#define SCTRL_PCIE_ISO_OFFSET			0x44
-+#define SCTRL_PCIE_ISO_BIT			0x30
-+#define SCTRL_PCIE_HPCLK_OFFSET			0x190
-+#define SCTRL_PCIE_HPCLK_BIT			0x184000
-+#define SCTRL_PCIE_OE_OFFSET			0x14a
-+#define PCIE_DEBOUNCE_PARAM			0xf0f400
-+#define PCIE_OE_BYPASS				GENMASK(29, 28)
-+
-+/* peri_crg ctrl */
-+#define CRGCTRL_PCIE_ASSERT_OFFSET		0x88
-+#define CRGCTRL_PCIE_ASSERT_BIT			0x8c000000
-+
-+#define FNPLL_HAS_LOCKED			BIT(4)
-+
-+/* Time for delay */
-+#define TIME_CMOS_MIN		100
-+#define TIME_CMOS_MAX		105
-+#define PIPE_CLK_STABLE_TIME	100
-+#define PLL_CTRL_WAIT_TIME	200
-+#define NOC_POWER_TIME		100
-+
-+struct hi3670_pcie_phy {
-+	struct device	*dev;
-+	void __iomem	*base;
-+	struct regmap	*apb;
-+	struct regmap	*crgctrl;
-+	struct regmap	*sysctrl;
-+	struct regmap	*pmctrl;
-+	struct clk	*apb_sys_clk;
-+	struct clk	*apb_phy_clk;
-+	struct clk	*phy_ref_clk;
-+	struct clk	*aclk;
-+	struct clk	*aux_clk;
-+	u32		eye_param[NUM_EYEPARAM];
-+};
-+
-+/* Registers in PCIePHY */
-+static inline void hi3670_apb_phy_writel(struct hi3670_pcie_phy *phy, u32 val,
-+					 u32 reg)
-+{
-+	writel(val, phy->base + APB_PHY_START_ADDR + reg);
-+}
-+
-+static inline u32 hi3670_apb_phy_readl(struct hi3670_pcie_phy *phy, u32 reg)
-+{
-+	return readl(phy->base + APB_PHY_START_ADDR + reg);
-+}
-+
-+static inline void hi3670_apb_phy_updatel(struct hi3670_pcie_phy *phy,
-+					  u32 val, u32 mask, u32 reg)
-+{
-+	u32 regval;
-+
-+	regval = hi3670_apb_phy_readl(phy, reg);
-+	regval &= ~mask;
-+	regval |= val;
-+	hi3670_apb_phy_writel(phy, regval, reg);
-+}
-+
-+static inline void kirin_apb_natural_phy_writel(struct hi3670_pcie_phy *phy,
-+						u32 val, u32 reg)
-+{
-+	writel(val, phy->base + reg);
-+}
-+
-+static inline u32 kirin_apb_natural_phy_readl(struct hi3670_pcie_phy *phy,
-+					      u32 reg)
-+{
-+	return readl(phy->base + reg);
-+}
-+
-+static void hi3670_pcie_phy_oe_enable(struct hi3670_pcie_phy *phy, bool enable)
-+{
-+	u32 val;
-+
-+	regmap_read(phy->sysctrl, SCTRL_PCIE_OE_OFFSET, &val);
-+	val |= PCIE_DEBOUNCE_PARAM;
-+	if (enable)
-+		val &= ~PCIE_OE_BYPASS;
-+	else
-+		val |= PCIE_OE_BYPASS;
-+	regmap_write(phy->sysctrl, SCTRL_PCIE_OE_OFFSET, val);
-+}
-+
-+static void hi3670_pcie_get_eyeparam(struct hi3670_pcie_phy *phy)
-+{
-+	struct device *dev = phy->dev;
-+	struct device_node *np;
-+	int ret, i;
-+
-+	np = dev->of_node;
-+
-+	ret = of_property_read_u32_array(np, "hisilicon,eye-diagram-param",
-+					 phy->eye_param, NUM_EYEPARAM);
-+	if (!ret)
-+		return;
-+
-+	/* There's no optional eye_param property. Set array to default */
-+	for (i = 0; i < NUM_EYEPARAM; i++)
-+		phy->eye_param[i] = EYEPARAM_NOCFG;
-+}
-+
-+static void hi3670_pcie_set_eyeparam(struct hi3670_pcie_phy *phy)
-+{
-+	u32 val;
-+
-+	val = kirin_apb_natural_phy_readl(phy, RAWLANEN_DIG_PCS_XF_TX_OVRD_IN_1);
-+
-+	if (phy->eye_param[1] != EYEPARAM_NOCFG) {
-+		val &= ~EYE_PARM1_MASK;
-+		val |= FIELD_PREP(EYE_PARM1_MASK, phy->eye_param[1]);
-+		val |= EYE_PARM1_EN;
-+	}
-+	kirin_apb_natural_phy_writel(phy, val,
-+				     RAWLANEN_DIG_PCS_XF_TX_OVRD_IN_1);
-+
-+	val = kirin_apb_natural_phy_readl(phy, LANEN_DIG_ASIC_TX_OVRD_IN_2);
-+	val &= ~(EYE_PARM2_MASK | EYE_PARM3_MASK);
-+	if (phy->eye_param[2] != EYEPARAM_NOCFG) {
-+		val |= FIELD_PREP(EYE_PARM2_MASK, phy->eye_param[2]);
-+		val |= EYE_PARM2_EN;
-+	}
-+
-+	if (phy->eye_param[3] != EYEPARAM_NOCFG) {
-+		val |= FIELD_PREP(EYE_PARM3_MASK, phy->eye_param[3]);
-+		val |= EYE_PARM3_EN;
-+	}
-+
-+	kirin_apb_natural_phy_writel(phy, val, LANEN_DIG_ASIC_TX_OVRD_IN_2);
-+
-+	val = kirin_apb_natural_phy_readl(phy, SUP_DIG_LVL_OVRD_IN);
-+	if (phy->eye_param[0] != EYEPARAM_NOCFG) {
-+		val &= ~EYE_PARM0_MASK;
-+		val |= FIELD_PREP(EYE_PARM0_MASK, phy->eye_param[0]);
-+		val |= EYE_PARM0_EN;
-+	}
-+	kirin_apb_natural_phy_writel(phy, val, SUP_DIG_LVL_OVRD_IN);
-+
-+	val = kirin_apb_natural_phy_readl(phy, LANEN_DIG_ASIC_TX_OVRD_IN_1);
-+	if (phy->eye_param[4] != EYEPARAM_NOCFG) {
-+		val &= ~EYE_PARM4_MASK;
-+		val |= FIELD_PREP(EYE_PARM4_MASK, phy->eye_param[4]);
-+		val |= EYE_PARM4_EN;
-+	}
-+	kirin_apb_natural_phy_writel(phy, val, LANEN_DIG_ASIC_TX_OVRD_IN_1);
-+}
-+
-+static void hi3670_pcie_natural_cfg(struct hi3670_pcie_phy *phy)
-+{
-+	u32 val;
-+
-+	/* change 2p mem_ctrl */
-+	regmap_write(phy->apb, SOC_PCIECTRL_CTRL20_ADDR,
-+		     SOC_PCIECTRL_CTRL20_2P_MEM_CTRL);
-+
-+	regmap_read(phy->apb, SOC_PCIECTRL_CTRL7_ADDR, &val);
-+	val |= PCIE_PULL_UP_SYS_AUX_PWR_DET;
-+	regmap_write(phy->apb, SOC_PCIECTRL_CTRL7_ADDR, val);
-+
-+	/* output, pull down */
-+	regmap_read(phy->apb, SOC_PCIECTRL_CTRL12_ADDR, &val);
-+	val &= ~PCIE_OUTPUT_PULL_BITS;
-+	val |= PCIE_OUTPUT_PULL_DOWN;
-+	regmap_write(phy->apb, SOC_PCIECTRL_CTRL12_ADDR, val);
-+
-+	/* Handle phy_reset and lane0_reset to HW */
-+	hi3670_apb_phy_updatel(phy, PCIEPHY_RESET_BIT,
-+			       PCIEPHY_PIPE_LINE0_RESET_BIT | PCIEPHY_RESET_BIT,
-+			       SOC_PCIEPHY_CTRL1_ADDR);
-+
-+	/* fix chip bug: TxDetectRx fail */
-+	hi3670_apb_phy_updatel(phy, PCIE_TXDETECT_RX_FAIL, PCIE_TXDETECT_RX_FAIL,
-+			       SOC_PCIEPHY_CTRL38_ADDR);
-+}
-+
-+static void hi3670_pcie_pll_init(struct hi3670_pcie_phy *phy)
-+{
-+	hi3670_apb_phy_updatel(phy, PCIE_PHY_CHOOSE_FNPLL, PCIE_PHY_CHOOSE_FNPLL,
-+			       SOC_PCIEPHY_MMC1PLL_CTRL1);
-+
-+	hi3670_apb_phy_updatel(phy,
-+			       FIELD_PREP(PCIE_FNPLL_FBDIV_MASK, PCIE_FNPLL_FBDIV),
-+			       PCIE_FNPLL_FBDIV_MASK,
-+			       SOC_PCIEPHY_MMC1PLL_CTRL16);
-+
-+	hi3670_apb_phy_updatel(phy,
-+			       FIELD_PREP(PCIE_FNPLL_FRACDIV_MASK, PCIE_FNPLL_FRACDIV),
-+			       PCIE_FNPLL_FRACDIV_MASK, SOC_PCIEPHY_MMC1PLL_CTRL17);
-+
-+	hi3670_apb_phy_updatel(phy,
-+			       PCIE_FNPLL_DLL_EN |
-+			       FIELD_PREP(PCIE_FNPLL_POSTDIV1_MASK, PCIE_FNPLL_POSTDIV1) |
-+			       FIELD_PREP(PCIE_FNPLL_POSTDIV2_MASK, PCIE_FNPLL_POSTDIV2) |
-+			       FIELD_PREP(PCIE_FNPLL_PLL_MODE_MASK, PCIE_FNPLL_PLL_MODE),
-+			       PCIE_FNPLL_POSTDIV1_MASK |
-+			       PCIE_FNPLL_POSTDIV2_MASK |
-+			       PCIE_FNPLL_PLL_MODE_MASK | PCIE_FNPLL_DLL_EN,
-+			       SOC_PCIEPHY_MMC1PLL_CTRL20);
-+
-+	hi3670_apb_phy_writel(phy, PCIE_PHY_MMC1PLL,
-+			      SOC_PCIEPHY_MMC1PLL_CTRL21);
-+}
-+
-+static int hi3670_pcie_pll_ctrl(struct hi3670_pcie_phy *phy, bool enable)
-+{
-+	struct device *dev = phy->dev;
-+	u32 val;
-+	int time = PLL_CTRL_WAIT_TIME;
-+
-+	if (enable) {
-+		/* pd = 0 */
-+		hi3670_apb_phy_updatel(phy, 0, PCIE_PHY_MMC1PLL_DISABLE,
-+				       SOC_PCIEPHY_MMC1PLL_CTRL16);
-+
-+		/* choose FNPLL */
-+		val = hi3670_apb_phy_readl(phy, SOC_PCIEPHY_MMC1PLL_STAT0);
-+		while (!(val & FNPLL_HAS_LOCKED)) {
-+			if (!time) {
-+				dev_err(dev, "wait for pll_lock timeout\n");
-+				return -EINVAL;
-+			}
-+			time--;
-+			udelay(1);
-+			val = hi3670_apb_phy_readl(phy, SOC_PCIEPHY_MMC1PLL_STAT0);
-+		}
-+
-+		hi3670_apb_phy_updatel(phy, 0, PCIE_PHY_PCIEPL_BP,
-+				       SOC_PCIEPHY_MMC1PLL_CTRL20);
-+
-+	} else {
-+		hi3670_apb_phy_updatel(phy,
-+				       PCIE_PHY_MMC1PLL_DISABLE,
-+				       PCIE_PHY_MMC1PLL_DISABLE,
-+				       SOC_PCIEPHY_MMC1PLL_CTRL16);
-+
-+		hi3670_apb_phy_updatel(phy, PCIE_PHY_PCIEPL_BP,
-+				       PCIE_PHY_PCIEPL_BP,
-+				       SOC_PCIEPHY_MMC1PLL_CTRL20);
-+	}
-+
-+	return 0;
-+}
-+
-+static void hi3670_pcie_hp_debounce_gt(struct hi3670_pcie_phy *phy, bool open)
-+{
-+	if (open)
-+		/* gt_clk_pcie_hp/gt_clk_pcie_debounce open */
-+		regmap_write(phy->crgctrl, CRGPERIPH_PEREN12,
-+			     IO_HP_DEBOUNCE_GT);
-+	else
-+		/* gt_clk_pcie_hp/gt_clk_pcie_debounce close */
-+		regmap_write(phy->crgctrl, CRGPERIPH_PERDIS12,
-+			     IO_HP_DEBOUNCE_GT);
-+}
-+
-+static void hi3670_pcie_phyref_gt(struct hi3670_pcie_phy *phy, bool open)
-+{
-+	unsigned int val;
-+
-+	regmap_read(phy->crgctrl, CRGPERIPH_PCIECTRL0, &val);
-+
-+	if (open)
-+		val &= ~IO_OE_HARD_GT_MODE; /* enable hard gt mode */
-+	else
-+		val |= IO_OE_HARD_GT_MODE; /* disable hard gt mode */
-+
-+	regmap_write(phy->crgctrl, CRGPERIPH_PCIECTRL0, val);
-+
-+	/* disable soft gt mode */
-+	regmap_write(phy->crgctrl, CRGPERIPH_PERDIS12, IO_PHYREF_SOFT_GT_MODE);
-+}
-+
-+static void hi3670_pcie_oe_ctrl(struct hi3670_pcie_phy *phy, bool en_flag)
-+{
-+	unsigned int val;
-+
-+	regmap_read(phy->crgctrl, CRGPERIPH_PCIECTRL0, &val);
-+
-+	/* set ie cfg */
-+	val |= IO_IE_EN_HARD_BYPASS;
-+
-+	/* set oe cfg */
-+	val &= ~IO_HARD_CTRL_DEBOUNCE_BYPASS;
-+
-+	/* set phy_debounce in&out time */
-+	val |= (DEBOUNCE_WAITCFG_IN | DEBOUNCE_WAITCFG_OUT);
-+
-+	/* select oe_gt_mode */
-+	val |= IO_OE_GT_MODE;
-+
-+	if (en_flag)
-+		val &= ~IO_OE_EN_HARD_BYPASS;
-+	else
-+		val |= IO_OE_EN_HARD_BYPASS;
-+
-+	regmap_write(phy->crgctrl, CRGPERIPH_PCIECTRL0, val);
-+}
-+
-+static void hi3670_pcie_ioref_gt(struct hi3670_pcie_phy *phy, bool open)
-+{
-+	unsigned int val;
-+
-+	if (open) {
-+		regmap_write(phy->apb, SOC_PCIECTRL_CTRL21_ADDR,
-+			     SOC_PCIECTRL_CTRL21_DEFAULT);
-+
-+		hi3670_pcie_oe_ctrl(phy, true);
-+
-+		/* en hard gt mode */
-+		regmap_read(phy->crgctrl, CRGPERIPH_PCIECTRL0, &val);
-+		val &= ~IO_REF_HARD_GT_MODE;
-+		regmap_write(phy->crgctrl, CRGPERIPH_PCIECTRL0, val);
-+
-+		/* disable soft gt mode */
-+		regmap_write(phy->crgctrl, CRGPERIPH_PERDIS12,
-+			     IO_REF_SOFT_GT_MODE);
-+
-+	} else {
-+		/* disable hard gt mode */
-+		regmap_read(phy->crgctrl, CRGPERIPH_PCIECTRL0, &val);
-+		val |= IO_REF_HARD_GT_MODE;
-+		regmap_write(phy->crgctrl, CRGPERIPH_PCIECTRL0, val);
-+
-+		/* disable soft gt mode */
-+		regmap_write(phy->crgctrl, CRGPERIPH_PERDIS12,
-+			     IO_REF_SOFT_GT_MODE);
-+
-+		hi3670_pcie_oe_ctrl(phy, false);
-+	}
-+}
-+
-+static int hi3670_pcie_allclk_ctrl(struct hi3670_pcie_phy *phy, bool clk_on)
-+{
-+	struct device *dev = phy->dev;
-+	int ret = 0;
-+
-+	if (!clk_on)
-+		goto close_clocks;
-+
-+	/* choose 100MHz clk src: Bit[8]==1 pad, Bit[8]==0 pll */
-+	hi3670_apb_phy_updatel(phy, 0, PCIE_CLK_SOURCE,
-+			       SOC_PCIEPHY_CTRL1_ADDR);
-+
-+	hi3670_pcie_pll_init(phy);
-+
-+	ret = hi3670_pcie_pll_ctrl(phy, true);
-+	if (ret) {
-+		dev_err(dev, "Failed to enable pll\n");
-+		return -EINVAL;
-+	}
-+	hi3670_pcie_hp_debounce_gt(phy, true);
-+	hi3670_pcie_phyref_gt(phy, true);
-+	hi3670_pcie_ioref_gt(phy, true);
-+
-+	ret = clk_set_rate(phy->aclk, AXI_CLK_FREQ);
-+	if (ret) {
-+		dev_err(dev, "Failed to set rate\n");
-+		goto close_clocks;
-+	}
-+
-+	return 0;
-+
-+close_clocks:
-+	hi3670_pcie_ioref_gt(phy, false);
-+	hi3670_pcie_phyref_gt(phy, false);
-+	hi3670_pcie_hp_debounce_gt(phy, false);
-+
-+	hi3670_pcie_pll_ctrl(phy, false);
-+
-+	return ret;
-+}
-+
-+static bool is_pipe_clk_stable(struct hi3670_pcie_phy *phy)
-+{
-+	struct device *dev = phy->dev;
-+	u32 val;
-+	u32 time = PIPE_CLK_STABLE_TIME;
-+	u32 pipe_clk_stable = PCIE_IS_CLOCK_STABLE;
-+
-+	val = hi3670_apb_phy_readl(phy, SOC_PCIEPHY_STATE0_ADDR);
-+	while (val & pipe_clk_stable) {
-+		mdelay(1);
-+		if (!time) {
-+			dev_err(dev, "PIPE clk is not stable\n");
-+			return false;
-+		}
-+		time--;
-+		val = hi3670_apb_phy_readl(phy, SOC_PCIEPHY_STATE0_ADDR);
-+	}
-+
-+	return true;
-+}
-+
-+static int hi3670_pcie_noc_power(struct hi3670_pcie_phy *phy, bool enable)
-+{
-+	struct device *dev = phy->dev;
-+	u32 time = NOC_POWER_TIME;
-+	unsigned int val = NOC_PW_MASK;
-+	int rst;
-+
-+	if (enable)
-+		val = NOC_PW_MASK | NOC_PW_SET_BIT;
-+	else
-+		val = NOC_PW_MASK;
-+	rst = enable ? 1 : 0;
-+
-+	regmap_write(phy->pmctrl, NOC_POWER_IDLEREQ_1, val);
-+
-+	time = NOC_POWER_TIME;
-+	regmap_read(phy->pmctrl, NOC_POWER_IDLE_1, &val);
-+	while ((val & NOC_PW_SET_BIT) != rst) {
-+		udelay(10);
-+		if (!time) {
-+			dev_err(dev, "Failed to reverse noc power-status\n");
-+			return -EINVAL;
-+		}
-+		time--;
-+		regmap_read(phy->pmctrl, NOC_POWER_IDLE_1, &val);
-+	}
-+
-+	return 0;
-+}
-+
-+static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
-+{
-+	struct device_node *pcie_port;
-+	struct device *dev = phy->dev;
-+	struct device *pcie_dev;
-+
-+	pcie_port = of_get_child_by_name(dev->parent->of_node, "pcie");
-+	if (!pcie_port) {
-+		dev_err(dev, "no pcie node found in %s\n",
-+			dev->parent->of_node->full_name);
-+		return -ENODEV;
-+	}
-+
-+	pcie_dev = bus_find_device_by_of_node(&platform_bus_type, pcie_port);
-+	if (!pcie_dev) {
-+		dev_err(dev, "Didn't find pcie device\n");
-+		return -ENODEV;
-+	}
-+
-+	/*
-+	 * We might just use NULL instead of the APB name, as the
-+	 * pcie-kirin currently registers directly just one regmap (although
-+	 * the DWC driver register other regmaps).
-+	 *
-+	 * Yet, it sounds safer to warrant that it will be accessing the
-+	 * right regmap. So, let's use the named version.
-+	 */
-+	phy->apb = dev_get_regmap(pcie_dev, "kirin_pcie_apb");
-+	if (!phy->apb) {
-+		dev_err(dev, "Failed to get APB regmap\n");
-+		return -ENODEV;
-+	}
-+
-+	return 0;
-+}
-+
-+static int kirin_pcie_clk_ctrl(struct hi3670_pcie_phy *phy, bool enable)
-+{
-+	int ret = 0;
-+
-+	if (!enable)
-+		goto close_clk;
-+
-+	ret = clk_set_rate(phy->phy_ref_clk, REF_CLK_FREQ);
-+	if (ret)
-+		return ret;
-+
-+	ret = clk_prepare_enable(phy->phy_ref_clk);
-+	if (ret)
-+		return ret;
-+
-+	ret = clk_prepare_enable(phy->apb_sys_clk);
-+	if (ret)
-+		goto apb_sys_fail;
-+
-+	ret = clk_prepare_enable(phy->apb_phy_clk);
-+	if (ret)
-+		goto apb_phy_fail;
-+
-+	ret = clk_prepare_enable(phy->aclk);
-+	if (ret)
-+		goto aclk_fail;
-+
-+	ret = clk_prepare_enable(phy->aux_clk);
-+	if (ret)
-+		goto aux_clk_fail;
-+
-+	return 0;
-+
-+close_clk:
-+	clk_disable_unprepare(phy->aux_clk);
-+aux_clk_fail:
-+	clk_disable_unprepare(phy->aclk);
-+aclk_fail:
-+	clk_disable_unprepare(phy->apb_phy_clk);
-+apb_phy_fail:
-+	clk_disable_unprepare(phy->apb_sys_clk);
-+apb_sys_fail:
-+	clk_disable_unprepare(phy->phy_ref_clk);
-+
-+	return ret;
-+}
-+
-+static int hi3670_pcie_phy_init(struct phy *generic_phy)
-+{
-+	struct hi3670_pcie_phy *phy = phy_get_drvdata(generic_phy);
-+	int ret;
-+
-+	/*
-+	 * The code under hi3670_pcie_get_resources_from_pcie() need to
-+	 * access the reset-gpios and the APB registers, both from the
-+	 * pcie-kirin driver.
-+	 *
-+	 * The APB is obtained via the pcie driver's regmap
-+	 * Such kind of resource can only be obtained during the PCIe
-+	 * power_on sequence, as the code inside pcie-kirin needs to
-+	 * be already probed, as it needs to register the APB regmap.
-+	 */
-+
-+	ret = hi3670_pcie_get_resources_from_pcie(phy);
-+	if (ret)
-+		return ret;
-+
-+	return 0;
-+}
-+
-+static int hi3670_pcie_phy_power_on(struct phy *generic_phy)
-+{
-+	struct hi3670_pcie_phy *phy = phy_get_drvdata(generic_phy);
-+	int val, ret;
-+
-+	/* Power supply for Host */
-+	regmap_write(phy->sysctrl, SCTRL_PCIE_CMOS_OFFSET, SCTRL_PCIE_CMOS_BIT);
-+	usleep_range(TIME_CMOS_MIN, TIME_CMOS_MAX);
-+
-+	hi3670_pcie_phy_oe_enable(phy, true);
-+
-+	ret = kirin_pcie_clk_ctrl(phy, true);
-+	if (ret)
-+		return ret;
-+
-+	/* ISO disable, PCIeCtrl, PHY assert and clk gate clear */
-+	regmap_write(phy->sysctrl, SCTRL_PCIE_ISO_OFFSET, SCTRL_PCIE_ISO_BIT);
-+	regmap_write(phy->crgctrl, CRGCTRL_PCIE_ASSERT_OFFSET,
-+		     CRGCTRL_PCIE_ASSERT_BIT);
-+	regmap_write(phy->sysctrl, SCTRL_PCIE_HPCLK_OFFSET,
-+		     SCTRL_PCIE_HPCLK_BIT);
-+
-+	hi3670_pcie_natural_cfg(phy);
-+
-+	ret = hi3670_pcie_allclk_ctrl(phy, true);
-+	if (ret)
-+		goto disable_clks;
-+
-+	/* pull down phy_test_powerdown signal */
-+	hi3670_apb_phy_updatel(phy, 0, PCIE_PULL_DOWN_PHY_TEST_POWERDOWN,
-+			       SOC_PCIEPHY_CTRL0_ADDR);
-+
-+	/* deassert controller perst_n */
-+	regmap_read(phy->apb, SOC_PCIECTRL_CTRL12_ADDR, &val);
-+	val |= PCIE_DEASSERT_CONTROLLER_PERST;
-+	regmap_write(phy->apb, SOC_PCIECTRL_CTRL12_ADDR, val);
-+	udelay(10);
-+
-+	ret = is_pipe_clk_stable(phy);
-+	if (!ret)
-+		goto disable_clks;
-+
-+	hi3670_pcie_set_eyeparam(phy);
-+
-+	ret = hi3670_pcie_noc_power(phy, false);
-+	if (ret)
-+		goto disable_clks;
-+
-+	return 0;
-+
-+disable_clks:
-+	kirin_pcie_clk_ctrl(phy, false);
-+	return ret;
-+}
-+
-+static int hi3670_pcie_phy_power_off(struct phy *generic_phy)
-+{
-+	struct hi3670_pcie_phy *phy = phy_get_drvdata(generic_phy);
-+
-+	hi3670_pcie_phy_oe_enable(phy, false);
-+
-+	hi3670_pcie_allclk_ctrl(phy, false);
-+
-+	/* Drop power supply for Host */
-+	regmap_write(phy->sysctrl, SCTRL_PCIE_CMOS_OFFSET, 0);
-+
-+	/*
-+	 * FIXME: The enabled clocks should be disabled here by calling
-+	 * kirin_pcie_clk_ctrl(phy, false);
-+	 * However, some clocks used at Kirin 970 should be marked as
-+	 * CLK_IS_CRITICAL at clk-hi3670 driver, as powering such clocks off
-+	 * cause an Asynchronous SError interrupt, which produces panic().
-+	 * While clk-hi3670 is not fixed, we cannot risk disabling clocks here.
-+	 */
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops hi3670_phy_ops = {
-+	.init		= hi3670_pcie_phy_init,
-+	.power_on	= hi3670_pcie_phy_power_on,
-+	.power_off	= hi3670_pcie_phy_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int hi3670_pcie_phy_get_resources(struct hi3670_pcie_phy *phy,
-+					 struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+
-+	/* syscon */
-+	phy->crgctrl = syscon_regmap_lookup_by_compatible("hisilicon,hi3670-crgctrl");
-+	if (IS_ERR(phy->crgctrl))
-+		return PTR_ERR(phy->crgctrl);
-+
-+	phy->sysctrl = syscon_regmap_lookup_by_compatible("hisilicon,hi3670-sctrl");
-+	if (IS_ERR(phy->sysctrl))
-+		return PTR_ERR(phy->sysctrl);
-+
-+	phy->pmctrl = syscon_regmap_lookup_by_compatible("hisilicon,hi3670-pmctrl");
-+	if (IS_ERR(phy->sysctrl))
-+		return PTR_ERR(phy->sysctrl);
-+
-+	/* clocks */
-+	phy->phy_ref_clk = devm_clk_get(dev, "phy_ref");
-+	if (IS_ERR(phy->phy_ref_clk))
-+		return PTR_ERR(phy->phy_ref_clk);
-+
-+	phy->aux_clk = devm_clk_get(dev, "aux");
-+	if (IS_ERR(phy->aux_clk))
-+		return PTR_ERR(phy->aux_clk);
-+
-+	phy->apb_phy_clk = devm_clk_get(dev, "apb_phy");
-+	if (IS_ERR(phy->apb_phy_clk))
-+		return PTR_ERR(phy->apb_phy_clk);
-+
-+	phy->apb_sys_clk = devm_clk_get(dev, "apb_sys");
-+	if (IS_ERR(phy->apb_sys_clk))
-+		return PTR_ERR(phy->apb_sys_clk);
-+
-+	phy->aclk = devm_clk_get(dev, "aclk");
-+	if (IS_ERR(phy->aclk))
-+		return PTR_ERR(phy->aclk);
-+
-+	/* registers */
-+	phy->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(phy->base))
-+		return PTR_ERR(phy->base);
-+
-+	hi3670_pcie_get_eyeparam(phy);
-+
-+	return 0;
-+}
-+
-+static int hi3670_pcie_phy_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct hi3670_pcie_phy *phy;
-+	struct phy *generic_phy;
-+	int ret;
-+
-+	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
-+	if (!phy)
-+		return -ENOMEM;
-+
-+	phy->dev = dev;
-+
-+	ret = hi3670_pcie_phy_get_resources(phy, pdev);
-+	if (ret)
-+		return ret;
-+
-+	generic_phy = devm_phy_create(dev, dev->of_node, &hi3670_phy_ops);
-+	if (IS_ERR(generic_phy)) {
-+		dev_err(dev, "failed to create PHY\n");
-+		return PTR_ERR(generic_phy);
-+	}
-+
-+	phy_set_drvdata(generic_phy, phy);
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id hi3670_pcie_phy_match[] = {
-+	{
-+		.compatible = "hisilicon,hi970-pcie-phy",
-+	},
-+	{},
-+};
-+
-+static struct platform_driver hi3670_pcie_phy_driver = {
-+	.probe	= hi3670_pcie_phy_probe,
-+	.driver = {
-+		.of_match_table	= hi3670_pcie_phy_match,
-+		.name		= "hi3670_pcie_phy",
-+		.suppress_bind_attrs = true,
-+	}
-+};
-+builtin_platform_driver(hi3670_pcie_phy_driver);
-+
-+MODULE_DEVICE_TABLE(of, hi3670_pcie_phy_match);
-+MODULE_DESCRIPTION("PCIe phy driver for Kirin 970");
-+MODULE_AUTHOR("Mauro Carvalho Chehab <mchehab@kernel.org>");
-+MODULE_AUTHOR("Manivannan Sadhasivam <mani@kernel.org>");
-+MODULE_LICENSE("GPL v2");
--- 
-2.31.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgUmljaGFyZCwKCkFtIERpZW5zdGFnLCBkZW0gMjguMDkuMjAyMSB1bSAwNzowOSArMDAwMCBz
+Y2hyaWViIFJpY2hhcmQgWmh1Ogo+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiA+IEZy
+b206IEx1Y2FzIFN0YWNoIDxsLnN0YWNoQHBlbmd1dHJvbml4LmRlPgo+ID4gU2VudDogTW9uZGF5
+LCBTZXB0ZW1iZXIgMjcsIDIwMjEgNDo0MyBQTQo+ID4gVG86IFJpY2hhcmQgWmh1IDxob25neGlu
+Zy56aHVAbnhwLmNvbT47IGtpc2hvbkB0aS5jb207IHZrb3VsQGtlcm5lbC5vcmc7Cj4gPiByb2Jo
+QGtlcm5lbC5vcmc7IGdhbGFrQGtlcm5lbC5jcmFzaGluZy5vcmc7IHNoYXduZ3VvQGtlcm5lbC5v
+cmcKPiA+IENjOiBsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZzsgZGV2aWNldHJlZUB2Z2Vy
+Lmtlcm5lbC5vcmc7Cj4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7IGxp
+bnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7Cj4gPiBrZXJuZWxAcGVuZ3V0cm9uaXguZGU7IGRs
+LWxpbnV4LWlteCA8bGludXgtaW14QG54cC5jb20+Cj4gPiBTdWJqZWN0OiBSZTogW1BBVENIIHYy
+IDQvNF0gcGh5OiBmcmVlc2NhbGU6IHBjaWU6IGluaXRpYWxpemUgdGhlIGlteDggcGNpZQo+ID4g
+c3RhbmRhbG9uZSBwaHkgZHJpdmVyCj4gPiAKPiA+IEFtIFNvbm50YWcsIGRlbSAyNi4wOS4yMDIx
+IHVtIDE1OjM5ICswODAwIHNjaHJpZWIgUmljaGFyZCBaaHU6Cj4gPiA+IEFkZCB0aGUgc3RhbmRh
+bG9uZSBpLk1YOCBQQ0llIFBIWSBkcml2ZXIuCj4gPiA+IFNvbWUgcmVzZXQgYml0cyBzaG91bGQg
+YmUgbWFuaXB1bGF0ZWQgYmV0d2VlbiBQSFkgY29uZmlndXJhdGlvbnMgYW5kCj4gPiA+IHN0YXR1
+cyBjaGVjayhpbnRlcm5hbCBQTEwgaXMgbG9ja2VkIG9yIG5vdCkuCj4gPiA+IFNvLCBkbyB0aGUg
+UEhZIGNvbmZpZ3VyYXRpb24gaW4gdGhlIHBoeV9jYWxpYnJhdGUoKS4KPiA+ID4gQW5kIGNoZWNr
+IHRoZSBQSFkgaXMgcmVhZHkgb3Igbm90IGluIHRoZSBwaHlfaW5pdCgpLgo+ID4gCj4gPiBJIHdv
+dWxkIHJlYWxseSBsaWtlIHRvIHNlZSB0aGUgUENJZSBjb250cm9sbGVyIGRyaXZlciBzaWRlIG9m
+IHRoaXMgYWxzbywgYXMgaXQncyBoYXJkCj4gPiB0byByZXZpZXcgc3RhbmRhbG9uZS4gRm9yIGV4
+YW1wbGUgSSdtIG5vdCBzdXJlIGlmIHNvbWUgb2YgdGhvc2UgcmVzZXQgYml0cwo+ID4gc2hvdWxk
+IGFsc28gYmUgZHJpdmVuIGZyb20gdGhlIFBIWSBkcml2ZXIsIGV2ZW4gaWYgdGhleSBhcmUgY3Vy
+cmVudGx5IGhvb2tlZAo+ID4gdXAgdG8gdGhlIGNvbnRyb2xsZXIgZHJpdmVyLgo+ID4gCj4gPiBB
+bHNvIEkgdGhpbmsgdGhlIElPTVVYIEdQUiByZWdpc3RlciBoYW5kbGluZyBiZWxvbmdzIGluIHRo
+ZSBQSFkgZHJpdmVyLCBhcyBpdCdzCj4gPiBjb25maWd1cmluZyB0aGUgcmVmZXJlbmNlIGNsb2Nr
+IHJvdXRpbmcuCj4gPiAKPiBbUmljaGFyZCBaaHVdIFNvcnJ5IHRvIGJyaW5nIGluY29udmVuaWVu
+Y2UgdG8geW91LiBJIHdvdWxkIHNlbmQgb3V0IHRoZSB2Mwo+IMKgcGF0Y2gtc2V0IGFuZCB0aGUg
+aS5NWDhNTSBQQ0llIGNvbnRyb2xsZXIgZHJpdmVyIHBhdGNoZXMgYWZ0ZXIgSSdtIGJhY2sgZnJv
+bSB0aGUKPiDCoG5hdGlvbmFsIGhvbGlkYXkgdG9tb3Jyb3coYWJvdXQgb25lIHdlZWspLiAKCk5v
+IHByb2JsZW0uIDopIEknbSBqdXN0IHBvaW50aW5nIG91dCB0aGF0IEkgcHJvYmFibHkgd29uJ3Qg
+YmUgYWJsZSB0bwppbnZlc3QgbW9yZSB0aW1lIHJldmlld2luZyB0aGlzIGJlZm9yZSBJIGNhbiBn
+ZXQgdGhlIGZ1bGwgcGljdHVyZS4KCj4gQWx0aG91Z2ggbW9zdCBvZiB0aGUgSU9NVVggR1BSIGJp
+dHMgYXJlIHJlbGF0ZWQgdG8gUEhZLCBidXQgdGhlcmUgYXJlIHNvbWUgYml0cyBhcmUKPiDCoGRl
+ZmluZWQgb25seSBmb3IgY29udHJvbGxlci4gRm9yIGV4YW1wbGUsIHRoZSBkZXZpY2VfdHlwZSBv
+ZiB0aGUgY29udHJvbGxlciwgdGhlIGNsa3JlcSMKPiDCoHNpZ25hbCBjb250cm9sIGluIEwxU1Ms
+IGFuZCBzbyBvbi4gV2UgY2FuJ3QgZW5jYXBzdWxhdGUgYWxsIHRoZSBHUFIgYml0cyBzZXR0aW5n
+IGludG8gUEhZIGRyaXZlci4KPiBTbywgaXQncyBiZXR0ZXIgdG8gbGV0IGNvbnRyb2xsZXIgZHJp
+dmVyIHRvIGhhbmRsZSB0aGUgZ2VuZXJhbCByZWdpc3RlciBiaXRzIG1hbmlwdWxhdGlvbnMuCj4g
+SG93IGRvIHlvdSB0aGluayBhYm91dCB0aGF0PwoKSSBzdGlsbCB0aGluayB3ZSBzaG91bGQgc3Bs
+aXQgdGhlIGRyaXZlcnMgYWxvbmcgdGhlIGZ1bmN0aW9uYWwKYm91bmRhcmllcy4gSXQncyBxdWl0
+ZSBjb25mdXNpbmcgYW5kIHByb2JhYmx5IGdvaW5nIHRvIGJlIGEgbWFpbnRlbmFuY2UKaXNzdWVz
+IHdoZW4gc29tZSBvZiB0aGUgUEhZIGhhbmRsaW5nIGJpdHMgYXJlIHN0aWxsIGxvY2F0ZWQgaW4g
+dGhlCmNvbnRyb2xsZXIgZHJpdmVyLCB3aGlsZSB3ZSBoYXZlIGEgc2VwYXJhdGUgUEhZIGRyaXZl
+ci4KCkFzIHRoZSBHUFIgcmVnaW9uIGlzIGhhbmRsZWQgYnkgYSByZWdtYXAgd2Ugc2hvdWxkIGhh
+dmUgbm8gaXNzdWVzCmFjY2Vzc2luZyBldmVuIHRoZSBzYW1lIHJlZ2lzdGVyIGZyb20gZGlmZmVy
+ZW50IGRyaXZlcnMuIFNvIG15IHZvdGUgaXMKb24gbW92aW5nIHRoZSBHUFIgYml0cyByZWxhdGVk
+IHRvIFBIWSBjbG9ja2luZyB0byB0aGlzIGRyaXZlci4KCj4gCj4gPiA+IAo+ID4gPiBTaWduZWQt
+b2ZmLWJ5OiBSaWNoYXJkIFpodSA8aG9uZ3hpbmcuemh1QG54cC5jb20+Cj4gPiA+IC0tLQo+ID4g
+PiDCoGRyaXZlcnMvcGh5L2ZyZWVzY2FsZS9LY29uZmlnICAgICAgICAgICAgIHwgICA5ICsrCj4g
+PiA+IMKgZHJpdmVycy9waHkvZnJlZXNjYWxlL01ha2VmaWxlICAgICAgICAgICAgfCAgIDEgKwo+
+ID4gPiDCoGRyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDgtcGNpZS5jIHwgMTY3Cj4g
+PiA+ICsrKysrKysrKysrKysrKysrKysrKysKPiA+ID4gwqAzIGZpbGVzIGNoYW5nZWQsIDE3NyBp
+bnNlcnRpb25zKCspCj4gPiA+IMKgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvcGh5L2ZyZWVz
+Y2FsZS9waHktZnNsLWlteDgtcGNpZS5jCj4gPiAKPiA+IEZyb20gd2hhdCBJIGtub3csIHRoZXJl
+IGFyZSBzZXZlcmFsIHF1aXRlIGRpZmZlcmVudCBQQ0llIFBIWXMgdXNlZCBpbiB0aGUKPiA+IGRp
+ZmZlcmVudCBpLk1YOCB2YXJpYW50cy4gSSdtIG5vdCBzdXJlIGlmIHdlIHdhbnQgdG8gc3R1ZmYg
+dGhlbSBhbGwgaW50byBvbmUgZmlsZS4KPiA+IEkgZ3Vlc3Mgd2Ugc2hvdWxkIGJlIG1vcmUgc3Bl
+Y2lmaWMgaGVyZSBhbmQgY2FsbCB0aGlzIGlteDhtLXBoeSwgb3IgZXZlbgo+ID4gaW14OG1tLXBo
+eS4KPiBbUmljaGFyZCBaaHVdIEdvb2Qgc3VnZ2VzdGlvbnMsIEkgdGhpbmsgaW14OG0tcGh5IGlz
+IGJldHRlciwgc2luY2UgdGhlIGkuTVg4TVEvTU0vTVAKPiDCoGhhdmUgdGhlIHNpbWlsYXIgYXJj
+aGl0ZWN0dXJlIG9mIHRoZSBQQ0llIFBIWSBpbXBsZW1lbnRhdGlvbi4KPiAKPiA+IAo+ID4gPiAK
+PiA+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9LY29uZmlnCj4gPiA+IGIv
+ZHJpdmVycy9waHkvZnJlZXNjYWxlL0tjb25maWcgaW5kZXggMzIwNjMwZmZlM2NkLi5kYTA3OGE2
+NzZmYmMKPiA+ID4gMTAwNjQ0Cj4gPiA+IC0tLSBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9LY29u
+ZmlnCj4gPiA+ICsrKyBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9LY29uZmlnCj4gPiA+IEBAIC0x
+NCwzICsxNCwxMiBAQCBjb25maWcgUEhZX01JWEVMX01JUElfRFBIWQo+ID4gPiDCoAloZWxwCj4g
+PiA+IMKgCSAgRW5hYmxlIHRoaXMgdG8gYWRkIHN1cHBvcnQgZm9yIHRoZSBNaXhlbCBEU0kgUEhZ
+IGFzIGZvdW5kCj4gPiA+IMKgCSAgb24gTlhQJ3MgaS5NWDggZmFtaWx5IG9mIFNPQ3MuCj4gPiA+
+ICsKPiA+ID4gK2NvbmZpZyBQSFlfRlNMX0lNWDhfUENJRQo+ID4gPiArCXRyaXN0YXRlICJGcmVl
+c2NhbGUgaS5NWDggUENJRSBQSFkiCj4gPiA+ICsJZGVwZW5kcyBvbiBPRiAmJiBIQVNfSU9NRU0K
+PiA+ID4gKwlzZWxlY3QgR0VORVJJQ19QSFkKPiA+ID4gKwlkZWZhdWx0IEFSQ0hfTVhDCj4gPiA+
+ICsJaGVscAo+ID4gPiArCSAgRW5hYmxlIHRoaXMgdG8gYWRkIHN1cHBvcnQgZm9yIHRoZSBQQ0lF
+IFBIWSBhcyBmb3VuZCBvbiBpLk1YOAo+ID4gPiArCSAgZmFtaWx5IG9mIFNPQ3MuCj4gPiA+IGRp
+ZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvTWFrZWZpbGUKPiA+ID4gYi9kcml2ZXJz
+L3BoeS9mcmVlc2NhbGUvTWFrZWZpbGUgaW5kZXggMWQwMmUzODY5YjQ1Li45ZmQ0NjdiNTg2MjEK
+PiA+ID4gMTAwNjQ0Cj4gPiA+IC0tLSBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9NYWtlZmlsZQo+
+ID4gPiArKysgYi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvTWFrZWZpbGUKPiA+ID4gQEAgLTEsMyAr
+MSw0IEBACj4gPiA+IMKgIyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMC1vbmx5Cj4g
+PiA+IMKgb2JqLSQoQ09ORklHX1BIWV9GU0xfSU1YOE1RX1VTQikJKz0gcGh5LWZzbC1pbXg4bXEt
+dXNiLm8KPiA+ID4gwqBvYmotJChDT05GSUdfUEhZX01JWEVMX01JUElfRFBIWSkJKz0gcGh5LWZz
+bC1pbXg4LW1pcGktZHBoeS5vCj4gPiA+ICtvYmotJChDT05GSUdfUEhZX0ZTTF9JTVg4X1BDSUUp
+CQkrPSBwaHktZnNsLWlteDgtcGNpZS5vCj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9m
+cmVlc2NhbGUvcGh5LWZzbC1pbXg4LXBjaWUuYwo+ID4gPiBiL2RyaXZlcnMvcGh5L2ZyZWVzY2Fs
+ZS9waHktZnNsLWlteDgtcGNpZS5jCj4gPiA+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiA+IGlu
+ZGV4IDAwMDAwMDAwMDAwMC4uZmY0N2Q2YjgzNjg2Cj4gPiA+IC0tLSAvZGV2L251bGwKPiA+ID4g
+KysrIGIvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtaW14OC1wY2llLmMKPiA+ID4gQEAg
+LTAsMCArMSwxNjcgQEAKPiA+ID4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4w
+Kwo+ID4gPiArLyoKPiA+ID4gKyAqIENvcHlyaWdodCAyMDIxIE5YUAo+ID4gPiArICovCj4gPiA+
+ICsKPiA+ID4gKyNpbmNsdWRlIDxsaW51eC9jbGsuaD4KPiA+ID4gKyNpbmNsdWRlIDxsaW51eC9p
+by5oPgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L2lvcG9sbC5oPgo+ID4gPiArI2luY2x1ZGUgPGxp
+bnV4L2RlbGF5Lmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gPiA+ICsjaW5j
+bHVkZSA8bGludXgvcGh5L3BoeS5oPgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2Rl
+dmljZS5oPgo+ID4gPiArI2luY2x1ZGUgPGR0LWJpbmRpbmcvcGh5L3BoeS1mc2wtaW14OC1wY2ll
+Lmg+Cj4gPiA+ICsKPiA+ID4gKyNkZWZpbmUgSU1YOE1NX1BDSUVfUEhZX0NNTl9SRUcwNjEJMHgx
+ODQKPiA+ID4gKyNkZWZpbmUgIEFOQV9QTExfQ0xLX09VVF9UT19FWFRfSU9fRU4JQklUKDApCj4g
+PiA+ICsjZGVmaW5lIElNWDhNTV9QQ0lFX1BIWV9DTU5fUkVHMDYyCTB4MTg4Cj4gPiA+ICsjZGVm
+aW5lICBBTkFfUExMX0NMS19PVVRfVE9fRVhUX0lPX1NFTAlCSVQoMykKPiA+ID4gKyNkZWZpbmUg
+SU1YOE1NX1BDSUVfUEhZX0NNTl9SRUcwNjMJMHgxOEMKPiA+ID4gKyNkZWZpbmUgIEFVWF9QTExf
+UkVGQ0xLX1NFTF9TWVNfUExMCUdFTk1BU0soNywgNikKPiA+ID4gKyNkZWZpbmUgSU1YOE1NX1BD
+SUVfUEhZX0NNTl9SRUcwNjQJMHgxOTAKPiA+ID4gKyNkZWZpbmUgIEFOQV9BVVhfUlhfVFhfU0VM
+X1RYCQlCSVQoNykKPiA+ID4gKyNkZWZpbmUgIEFOQV9BVVhfUlhfVEVSTV9HTkRfRU4JCUJJVCgz
+KQo+ID4gPiArI2RlZmluZSAgQU5BX0FVWF9UWF9URVJNCQlCSVQoMikKPiA+ID4gKyNkZWZpbmUg
+SU1YOE1NX1BDSUVfUEhZX0NNTl9SRUcwNjUJMHgxOTQKPiA+ID4gKyNkZWZpbmUgIEFOQV9BVVhf
+UlhfVEVSTQkJKEJJVCg3KSB8IEJJVCg0KSkKPiA+ID4gKyNkZWZpbmUgIEFOQV9BVVhfVFhfTFZM
+CQkJR0VOTUFTSygzLCAwKQo+ID4gPiArI2RlZmluZSBJTVg4TU1fUENJRV9QSFlfQ01OX1JFRzc1
+CTB4MUQ0Cj4gPiA+ICsjZGVmaW5lICBQQ0lFX1BIWV9DTU5fUkVHNzVfUExMX0RPTkUJMHgzCj4g
+PiA+ICsjZGVmaW5lIFBDSUVfUEhZX1RSU1ZfUkVHNQkJMHg0MTQKPiA+ID4gKyNkZWZpbmUgIFBD
+SUVfUEhZX1RSU1ZfUkVHNV9HRU4xX0RFRU1QCTB4MkQKPiA+ID4gKyNkZWZpbmUgUENJRV9QSFlf
+VFJTVl9SRUc2CQkweDQxOAo+ID4gPiArI2RlZmluZSAgUENJRV9QSFlfVFJTVl9SRUc2X0dFTjJf
+REVFTVAJMHhGCj4gPiA+ICsKPiA+ID4gK3N0cnVjdCBpbXg4X3BjaWVfcGh5IHsKPiA+ID4gKwl1
+MzIJCXJlZmNsa19wYWRfbW9kZTsKPiA+ID4gKwl2b2lkIF9faW9tZW0JKmJhc2U7Cj4gPiA+ICsJ
+c3RydWN0IGNsawkqY2xrOwo+ID4gPiArCXN0cnVjdCBwaHkJKnBoeTsKPiA+ID4gK307Cj4gPiA+
+ICsKPiA+ID4gK3N0YXRpYyBpbnQgaW14OF9wY2llX3BoeV9pbml0KHN0cnVjdCBwaHkgKnBoeSkg
+ewo+ID4gPiArCWludCByZXQ7Cj4gPiA+ICsJdTMyIHZhbDsKPiA+ID4gKwlzdHJ1Y3QgaW14OF9w
+Y2llX3BoeSAqaW14OF9waHkgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiA+ID4gKwo+ID4gPiAr
+CXJldCA9IHJlYWRsX3BvbGxfdGltZW91dChpbXg4X3BoeS0+YmFzZSArCj4gPiBJTVg4TU1fUENJ
+RV9QSFlfQ01OX1JFRzc1LAo+ID4gPiArCQkJCSB2YWwsIHZhbCA9PSBQQ0lFX1BIWV9DTU5fUkVH
+NzVfUExMX0RPTkUsCj4gPiA+ICsJCQkJIDEwLCAyMDAwMCk7Cj4gPiA+ICsJcmV0dXJuIHJldDsK
+PiA+ID4gK30KPiA+ID4gKwo+ID4gPiArc3RhdGljIGludCBpbXg4X3BjaWVfcGh5X2NhbChzdHJ1
+Y3QgcGh5ICpwaHkpIHsKPiA+ID4gKwl1MzIgdmFsdWUsIHBhZF9tb2RlOwo+ID4gPiArCXN0cnVj
+dCBpbXg4X3BjaWVfcGh5ICppbXg4X3BoeSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ID4gPiAr
+Cj4gPiA+ICsJcGFkX21vZGUgPSBpbXg4X3BoeS0+cmVmY2xrX3BhZF9tb2RlOwo+ID4gPiArCWlm
+IChwYWRfbW9kZSA9PSBJTVg4X1BDSUVfUkVGQ0xLX1BBRF9JTlBVVCkgewo+ID4gPiArCQkvKiBD
+b25maWd1cmUgdGhlIHBhZCBhcyBpbnB1dCAqLwo+ID4gPiArCQl2YWx1ZSA9IHJlYWRsKGlteDhf
+cGh5LT5iYXNlICsKPiA+IElNWDhNTV9QQ0lFX1BIWV9DTU5fUkVHMDYxKTsKPiA+ID4gKwkJd3Jp
+dGVsKHZhbHVlICYgfkFOQV9QTExfQ0xLX09VVF9UT19FWFRfSU9fRU4sCj4gPiA+ICsJCSAgICAg
+ICBpbXg4X3BoeS0+YmFzZSArIElNWDhNTV9QQ0lFX1BIWV9DTU5fUkVHMDYxKTsKPiA+ID4gKwl9
+IGVsc2UgaWYgKHBhZF9tb2RlID09IElNWDhfUENJRV9SRUZDTEtfUEFEX09VVFBVVCkgewo+ID4g
+PiArCQkvKiBDb25maWd1cmUgdGhlIFBIWSB0byBvdXRwdXQgdGhlIHJlZmNsb2NrIHZpYSBwYWQg
+Ki8KPiA+ID4gKwkJd3JpdGVsKEFOQV9QTExfQ0xLX09VVF9UT19FWFRfSU9fRU4sCj4gPiA+ICsJ
+CSAgICAgICBpbXg4X3BoeS0+YmFzZSArIElNWDhNTV9QQ0lFX1BIWV9DTU5fUkVHMDYxKTsKPiA+
+ID4gKwkJd3JpdGVsKEFOQV9QTExfQ0xLX09VVF9UT19FWFRfSU9fU0VMLAo+ID4gPiArCQkgICAg
+ICAgaW14OF9waHktPmJhc2UgKyBJTVg4TU1fUENJRV9QSFlfQ01OX1JFRzA2Mik7Cj4gPiA+ICsJ
+CXdyaXRlbChBVVhfUExMX1JFRkNMS19TRUxfU1lTX1BMTCwKPiA+ID4gKwkJICAgICAgIGlteDhf
+cGh5LT5iYXNlICsgSU1YOE1NX1BDSUVfUEhZX0NNTl9SRUcwNjMpOwo+ID4gPiArCQl2YWx1ZSA9
+IEFOQV9BVVhfUlhfVFhfU0VMX1RYIHwgQU5BX0FVWF9UWF9URVJNOwo+ID4gPiArCQl3cml0ZWwo
+dmFsdWUgfCBBTkFfQVVYX1JYX1RFUk1fR05EX0VOLAo+ID4gPiArCQkgICAgICAgaW14OF9waHkt
+PmJhc2UgKyBJTVg4TU1fUENJRV9QSFlfQ01OX1JFRzA2NCk7Cj4gPiA+ICsJCXdyaXRlbChBTkFf
+QVVYX1JYX1RFUk0gfCBBTkFfQVVYX1RYX0xWTCwKPiA+ID4gKwkJICAgICAgIGlteDhfcGh5LT5i
+YXNlICsgSU1YOE1NX1BDSUVfUEhZX0NNTl9SRUcwNjUpOwo+ID4gPiArCX0KPiA+ID4gKwo+ID4g
+PiArCS8qIFR1bmUgUEhZIGRlLWVtcGhhc2lzIHNldHRpbmcgdG8gcGFzcyBQQ0llIGNvbXBsaWFu
+Y2UuICovCj4gPiA+ICsJd3JpdGVsKFBDSUVfUEhZX1RSU1ZfUkVHNV9HRU4xX0RFRU1QLAo+ID4g
+PiArCSAgICAgICBpbXg4X3BoeS0+YmFzZSArIFBDSUVfUEhZX1RSU1ZfUkVHNSk7Cj4gPiA+ICsJ
+d3JpdGVsKFBDSUVfUEhZX1RSU1ZfUkVHNl9HRU4yX0RFRU1QLAo+ID4gPiArCSAgICAgICBpbXg4
+X3BoeS0+YmFzZSArIFBDSUVfUEhZX1RSU1ZfUkVHNik7Cj4gPiA+ICsKPiA+ID4gKwlyZXR1cm4g
+MDsKPiA+ID4gK30KPiA+ID4gKwo+ID4gPiArc3RhdGljIGludCBpbXg4X3BjaWVfcGh5X3Bvd2Vy
+X29uKHN0cnVjdCBwaHkgKnBoeSkgewo+ID4gPiArCXN0cnVjdCBpbXg4X3BjaWVfcGh5ICppbXg4
+X3BoeSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ID4gPiArCj4gPiA+ICsJcmV0dXJuIGNsa19w
+cmVwYXJlX2VuYWJsZShpbXg4X3BoeS0+Y2xrKTsKPiA+IAo+ID4gRG8gd2UgbmVlZCB0byBlbmFi
+bGUgdGhpcyBjbG9jayB3aGVuIHRoZSByZWZjbG9jayBpcyBzdXBwbGllZCBleHRlcm5hbGx5IHZp
+YQo+ID4gdGhlIHBhZD8KPiA+IAo+IFtSaWNoYXJkIFpodV0gR29vZCBxdWVzdGlvbi4gSSB0aGlu
+ayB0aGlzIGNsb2NrIGlzIG5vdCBuZWVkZWQgYW55bW9yZSBpZiB0aGUgcmVmY2xvY2sgaXMgc291
+cmNlZCBmcm9tIGV4dGVybmFsIE9TQy4KPiBJIGp1c3QgZW5hYmxlIHRoZSBQTEwyXzEwME1oeiBo
+ZXJlLCBzaW5jZSB3aGVuIGludGVybmFsIFBMTCBpcyB1c2VkIGFzIHJlZmNsb2NrLCB0aGUgcGxs
+Ml8xMDBNaHogc2hvdWxkIGJlIHR1cm5lZCBvbi4KPiBTaGFsbCBJIHJlbW92ZSB0aGUgc2V0dGlu
+ZyBhbmQganVzdCBrZWVwIHRoZSBjYWxsYmFjayBmb3IgZnVydGhlciBleHRlbmQgdXNhZ2UoaW50
+ZXJuYWwgUExMIHVzZWQgYXMgcmVmY2xrKT8KPiAKWWVzLCB3ZSBzaG91bGQgYXZvaWQgdHVybmlu
+ZyBvbiBjbG9ja3MgdGhhdCBhcmVuJ3QgbmVlZGVkLiBTbyB0aGUgY2xvY2sKZW5hYmxlIGhlcmUg
+c2hvdWxkIGJlIGRlcGVuZGVudCBvbiB0aGUgcGFkLW1vZGUuIFdoZW4gdGhlIGNsb2NrIGlzCnN1
+cHBsaWVkIGV4dGVybmFsbHkgd2UgZG9uJ3Qgd2FudCB0byBlbmFibGUgdGhlIGludGVybmFsIGNs
+b2NrLgoKUmVnYXJkcywKTHVjYXMKCj4gPiA+ICt9Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBpbnQg
+aW14OF9wY2llX3BoeV9wb3dlcl9vZmYoc3RydWN0IHBoeSAqcGh5KSB7Cj4gPiA+ICsJc3RydWN0
+IGlteDhfcGNpZV9waHkgKmlteDhfcGh5ID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7Cj4gPiA+ICsK
+PiA+ID4gKwljbGtfZGlzYWJsZV91bnByZXBhcmUoaW14OF9waHktPmNsayk7Cj4gPiA+ICsKPiA+
+ID4gKwlyZXR1cm4gMDsKPiA+ID4gK30KPiA+ID4gKwo+ID4gPiArc3RhdGljIGNvbnN0IHN0cnVj
+dCBwaHlfb3BzIGlteDhfcGNpZV9waHlfb3BzID0gewo+ID4gPiArCS5pbml0CQk9IGlteDhfcGNp
+ZV9waHlfaW5pdCwKPiA+ID4gKwkuY2FsaWJyYXRlCT0gaW14OF9wY2llX3BoeV9jYWwsCj4gPiA+
+ICsJLnBvd2VyX29uCT0gaW14OF9wY2llX3BoeV9wb3dlcl9vbiwKPiA+ID4gKwkucG93ZXJfb2Zm
+CT0gaW14OF9wY2llX3BoeV9wb3dlcl9vZmYsCj4gPiA+ICsJLm93bmVyCQk9IFRISVNfTU9EVUxF
+LAo+ID4gPiArfTsKPiA+ID4gKwo+ID4gPiArc3RhdGljIGludCBpbXg4X3BjaWVfcGh5X3Byb2Jl
+KHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpIHsKPiA+ID4gKwlzdHJ1Y3QgcGh5X3Byb3Zp
+ZGVyICpwaHlfcHJvdmlkZXI7Cj4gPiA+ICsJc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYtPmRl
+djsKPiA+ID4gKwlzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wID0gZGV2LT5vZl9ub2RlOwo+ID4gPiAr
+CXN0cnVjdCBpbXg4X3BjaWVfcGh5ICppbXg4X3BoeTsKPiA+ID4gKwlzdHJ1Y3QgcmVzb3VyY2Ug
+KnJlczsKPiA+ID4gKwo+ID4gPiArCWlteDhfcGh5ID0gZGV2bV9remFsbG9jKGRldiwgc2l6ZW9m
+KCppbXg4X3BoeSksIEdGUF9LRVJORUwpOwo+ID4gPiArCWlmICghaW14OF9waHkpCj4gPiA+ICsJ
+CXJldHVybiAtRU5PTUVNOwo+ID4gPiArCj4gPiA+ICsJLyogZ2V0IFBIWSByZWZjbGsgcGFkIG1v
+ZGUgKi8KPiA+ID4gKwlvZl9wcm9wZXJ0eV9yZWFkX3UzMihucCwgImZzbCxyZWZjbGstcGFkLW1v
+ZGUiLAo+ID4gPiArCQkJICAgICAmaW14OF9waHktPnJlZmNsa19wYWRfbW9kZSk7Cj4gPiA+ICsK
+PiA+ID4gKwlpbXg4X3BoeS0+Y2xrID0gZGV2bV9jbGtfZ2V0KGRldiwgInBoeSIpOwo+ID4gPiAr
+CWlmIChJU19FUlIoaW14OF9waHktPmNsaykpIHsKPiA+ID4gKwkJZGV2X2VycihkZXYsICJmYWls
+ZWQgdG8gZ2V0IGlteCBwY2llIHBoeSBjbG9ja1xuIik7Cj4gPiA+ICsJCXJldHVybiBQVFJfRVJS
+KGlteDhfcGh5LT5jbGspOwo+ID4gPiArCX0KPiA+ID4gKwo+ID4gPiArCXJlcyA9IHBsYXRmb3Jt
+X2dldF9yZXNvdXJjZShwZGV2LCBJT1JFU09VUkNFX01FTSwgMCk7Cj4gPiA+ICsJaW14OF9waHkt
+PmJhc2UgPSBkZXZtX2lvcmVtYXBfcmVzb3VyY2UoZGV2LCByZXMpOwo+ID4gPiArCWlmIChJU19F
+UlIoaW14OF9waHktPmJhc2UpKQo+ID4gPiArCQlyZXR1cm4gUFRSX0VSUihpbXg4X3BoeS0+YmFz
+ZSk7Cj4gPiA+ICsKPiA+ID4gKwlpbXg4X3BoeS0+cGh5ID0gZGV2bV9waHlfY3JlYXRlKGRldiwg
+TlVMTCwgJmlteDhfcGNpZV9waHlfb3BzKTsKPiA+ID4gKwlpZiAoSVNfRVJSKGlteDhfcGh5LT5w
+aHkpKQo+ID4gPiArCQlyZXR1cm4gUFRSX0VSUihpbXg4X3BoeS0+cGh5KTsKPiA+ID4gKwo+ID4g
+PiArCXBoeV9zZXRfZHJ2ZGF0YShpbXg4X3BoeS0+cGh5LCBpbXg4X3BoeSk7Cj4gPiA+ICsKPiA+
+ID4gKwlwaHlfcHJvdmlkZXIgPSBkZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3RlcihkZXYsCj4g
+PiA+ICtvZl9waHlfc2ltcGxlX3hsYXRlKTsKPiA+ID4gKwo+ID4gPiArCXJldHVybiBQVFJfRVJS
+X09SX1pFUk8ocGh5X3Byb3ZpZGVyKTsgfQo+ID4gPiArCj4gPiA+ICtzdGF0aWMgY29uc3Qgc3Ry
+dWN0IG9mX2RldmljZV9pZCBpbXg4X3BjaWVfcGh5X29mX21hdGNoW10gPSB7Cj4gPiA+ICsJey5j
+b21wYXRpYmxlID0gImZzbCxpbXg4bW0tcGNpZS1waHkiLH0sCj4gPiA+ICsJeyB9LAo+ID4gPiAr
+fTsKPiA+ID4gK01PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGlteDhfcGNpZV9waHlfb2ZfbWF0Y2gp
+Owo+ID4gPiArCj4gPiA+ICtzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBpbXg4X3BjaWVf
+cGh5X2RyaXZlciA9IHsKPiA+ID4gKwkucHJvYmUJPSBpbXg4X3BjaWVfcGh5X3Byb2JlLAo+ID4g
+PiArCS5kcml2ZXIgPSB7Cj4gPiA+ICsJCS5uYW1lCT0gImlteDgtcGNpZS1waHkiLAo+ID4gPiAr
+CQkub2ZfbWF0Y2hfdGFibGUJPSBpbXg4X3BjaWVfcGh5X29mX21hdGNoLAo+ID4gPiArCX0KPiA+
+ID4gK307Cj4gPiA+ICttb2R1bGVfcGxhdGZvcm1fZHJpdmVyKGlteDhfcGNpZV9waHlfZHJpdmVy
+KTsKPiA+ID4gKwo+ID4gPiArTU9EVUxFX0RFU0NSSVBUSU9OKCJGU0wgSU1YOCBQQ0lFIFBIWSBk
+cml2ZXIiKTsKPiA+ID4gK01PRFVMRV9MSUNFTlNFKCJHUEwiKTsKPiA+IAo+IAoKCgotLSAKbGlu
+dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
