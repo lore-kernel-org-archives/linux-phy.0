@@ -1,89 +1,82 @@
-Return-Path: <SRS0=YzZ0=OR=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=m7K2=OS=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 55B74C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Sep 2021 12:30:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 711BAC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:20:25 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1C2B0610A2
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Sep 2021 12:30:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1C2B0610A2
+	by mail.kernel.org (Postfix) with ESMTPS id 353DD61260
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:20:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 353DD61260
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SgEGZZ7A6Yi66nNU75jOl2iYrMRTYc+nEr235QGbCLg=; b=q3DURTFF6/Ps9E
-	M35Nw1vjNhQYZDqr8u1ZlYOZFDJxr3jSGJaL65I4o6d+4qEa2KGJLn8TVmPhVcTjYECbpjgVSi9Uv
-	Y+8rEz2shOuR3HfD3q/PfAy8LoUBRSSNF1DKzxM6IjDRyH5W9U93S0gB7WKirDnDvArhcjvNkpvg0
-	sxdiEXreAKFRmL+oPcSk+C/IeR6hJ4klBA4aRUJi94JaRJMAVpDUzEy/RiWVcN5TxzAhQQXnGdftY
-	0JkAV5Q1zv5Xy6NzegeBQ8mMrekZILNQzgbyz2UjhJYWbDEjzWsum7lEOtSQsKM5yMF92IeEDWpCj
-	g22UzPkvForHDtzfokLQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jnF9y8GGHCTBKGkdPA5yjcgAq8JQD7W2yyJZ+LdSay8=; b=zAhMnAlmBf0Fk+
+	E5YvPjivGicrKP/2Swe6rLgFZsvhkCTBIw1p1M2kf5hsXH5jY0AW5wlF1bJMI/+RAx6uRM3l4OAbg
+	I3ONCmTF/8UPscoxwpzsEOY57Az9NaF0rDcqxylQZjP0jWAwoevwyJNiJRWkO6Ojlpy/Y73ozB+of
+	ho/4/WuVC8550WPpPZTv+LHftkDTOrFP4SUVbswfuZ+XhUO0/Bcrq56MpX+mYWPCUfR6Y018Dmy5p
+	4FK8cugsHVL+DL1z9eyXF/tJICm1CKsUbwhpFL9zaH5uJNGO6vFLuBzNzapHgjHBKeFVAMPeVvesn
+	VJvSDQU59ygKR/P57iTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mUpmI-002ccP-MO; Mon, 27 Sep 2021 12:30:38 +0000
-Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
+	id 1mV2jI-005FcQ-Ph; Tue, 28 Sep 2021 02:20:24 +0000
+Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mUpmF-002cab-N6
- for linux-phy@lists.infradead.org; Mon, 27 Sep 2021 12:30:37 +0000
-Received: by mail-pf1-x436.google.com with SMTP id s16so15777226pfk.0
- for <linux-phy@lists.infradead.org>; Mon, 27 Sep 2021 05:30:35 -0700 (PDT)
+ id 1mV2jF-005Fb8-As
+ for linux-phy@lists.infradead.org; Tue, 28 Sep 2021 02:20:22 +0000
+Received: by mail-pf1-x431.google.com with SMTP id q23so17578033pfs.9
+ for <linux-phy@lists.infradead.org>; Mon, 27 Sep 2021 19:20:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=8f4/mkuvOY8+rGJAhfbTZe+oZ+Vy38+/mmlJel9bTCg=;
- b=AXX7QOP2Q1nvRSGiamW6NPuaVbis6ad1FY2R1IvUfyzLRQfw5H4803mnONI0YGAezk
- AmJzdh6ytzxtzm1ZOM59WVbDyf8pTs70hWD9VGDyLFQHl+hZlG8M5RFWplYqBn7YkQAo
- ZnZ7gld/iTXdh6q9yEelauiOg7Qrj9sop0PiYSGmh9easDH0xWqyqhBfIA7zOpsz5EW7
- 0oNeIBz5O3aJsMLRhF5SdiauxhaWySzi51Rqh4YNBOlDuw1ohR2LF70tl3JgDBq1tToF
- F2O7sxl1FPn1Sl1vZHK+5ZErQQis64cJpA5vg3UUrMrKITSFPU7QpVVET+eYfh8A9jig
- Kp9Q==
+ h=from:to:cc:subject:date:message-id;
+ bh=kg/GzF/sdW0p0vvfKH2R41tEISnLDtHPzxNdShxqvM8=;
+ b=lnEiCT4W2Vt81xX2B3QBWSajzRS0BHhPdyPDg26pxACWSFyjBXtVsl46QeDm39PLvH
+ 6ddbtIh7sK2NOsWb9ER08iCoqfUFsHxRHOmoGH1lzsLvkUPn0u/n0UIQUvVWQlweW1RB
+ wixpgeD/BVudgMhrgkqqxqq8SHWDqCX9glVYjOhHjVfCjjmeWuPMAVvRoxETd/DU1kq0
+ xQZLQSTvD64o2x1RCjK4gq1pZfp6pVq11nYoNR0BvoeocH9QSvdal6ymhBlZaBp8OFUN
+ a9+Nmn5xcitwz8WrFEUrTdtE/lE6p0ioEPmS7AjxGyE6F32q7+FNO5BL5o9xKUQ6C7cE
+ Qv1Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8f4/mkuvOY8+rGJAhfbTZe+oZ+Vy38+/mmlJel9bTCg=;
- b=5lsmuiYINPiszaqpfijh6NKXCvpx8xE84fJ7If5arRoACpZu6Ggfl/SoTwW23CDp+4
- Y8v2AL0SjGu53VlPdbeKzZI6jK8jgREtcYwqQzHuOsHXy+I468Fi7dwCceSotehs5aPe
- YFKF6lqiEAr09Vl7lBG7MpM3gvr/PMQFGtnyTYpOIO42vsJZxkth4aYkfY9h+dHoB5Ka
- mGwmPWUPDv74kfz624Gm/bK7AhHdMzcpbttJIxgVEYtwwcPdOk/WUjtXOV3ZydyiQjKt
- MUfQ83GlZ8DIdsxbnqn7gHDw+8pI3GxVDjRdS00BIqke1tFu59cokikDAqeXdyytUMvE
- XVLQ==
-X-Gm-Message-State: AOAM531qwVww0I3w+ZxMKGudk7dUayjD7HJ/xzfAB+qi4SQwFERJvWMC
- s0lK2LRtuCvrw1O89I/Hp7jDNg==
-X-Google-Smtp-Source: ABdhPJz8hwwjXyEE+3UAgO2auOFQcmt/X+FhXQFqDRBK1CeNhUWk0j5jHZXuOBEPwkUjIzirW3Ns7w==
-X-Received: by 2002:a65:6187:: with SMTP id c7mr16325588pgv.317.1632745834548; 
- Mon, 27 Sep 2021 05:30:34 -0700 (PDT)
-Received: from dragon (80.251.214.228.16clouds.com. [80.251.214.228])
- by smtp.gmail.com with ESMTPSA id w1sm7208159pfj.147.2021.09.27.05.30.31
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 27 Sep 2021 05:30:34 -0700 (PDT)
-Date: Mon, 27 Sep 2021 20:30:27 +0800
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=kg/GzF/sdW0p0vvfKH2R41tEISnLDtHPzxNdShxqvM8=;
+ b=b3PZFLsIg6xcjLg4xC994G3umYOK6Kd9grUwoDoLh5OOco8KLfqdlzttNZ3MCIkTj1
+ R+Ea3cx3jfup6e/iqut+3CDpwazCovoR6LpbY3A4m81++YU+Fdk5wHWn2BQs6ktQ6ZK6
+ dwBL/2yIL2/XTO0drLLkwHOrA8PDxihUab+JnyB6JVouDJpkcpnli95ZrEo9STolTUED
+ H5m3chxoD5UWUA0VznoCnDAy7E7rSuZythFVzzxI2Ku64U5T8j0gI8cI1qubvHEQ8Tys
+ 2NtUe5GdWuySPEpYi9y117It46XmoWHQMqS+2tN4oz1a2c/lLoqnjb+OB+CVx8a9+zvC
+ Og6A==
+X-Gm-Message-State: AOAM532XL4mVzIhcw7/Fn7r641AUQ3SKmK/rctCew76RXXK5NXw2Xzoh
+ S131YQmkLnZUq0idxmclJkGRWg==
+X-Google-Smtp-Source: ABdhPJwm2OGAXCfz1pcfsnrhgPp8cc3IJ9EYc8O3kZGQEbShcjrda5y+PfksmciTxjhD3HIQPlBtgA==
+X-Received: by 2002:a65:6a0a:: with SMTP id m10mr2429816pgu.82.1632795620400; 
+ Mon, 27 Sep 2021 19:20:20 -0700 (PDT)
+Received: from localhost.localdomain (80.251.214.228.16clouds.com.
+ [80.251.214.228])
+ by smtp.gmail.com with ESMTPSA id u12sm19178729pgi.21.2021.09.27.19.20.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 27 Sep 2021 19:20:19 -0700 (PDT)
 From: Shawn Guo <shawn.guo@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Manu Gautam <mgautam@codeaurora.org>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@somainline.org>,
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@somainline.org>,
  Konrad Dybcio <konrad.dybcio@somainline.org>,
  Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
- Jami Kettunen <jamipkettunen@gmail.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,qusb2: Add missing vdd-supply
-Message-ID: <20210927123026.GG9901@dragon>
-References: <20210927044824.30246-1-shawn.guo@linaro.org>
- <20210927044824.30246-2-shawn.guo@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210927044824.30246-2-shawn.guo@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ Jami Kettunen <jamipkettunen@gmail.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Shawn Guo <shawn.guo@linaro.org>
+Subject: [PATCH v2 0/3] Add missing vdd-supply for QUSB2 PHY
+Date: Tue, 28 Sep 2021 10:19:59 +0800
+Message-Id: <20210928022002.26286-1-shawn.guo@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210927_053035_781684_8DC649F3 
-X-CRM114-Status: GOOD (  15.34  )
+X-CRM114-CacheID: sfid-20210927_192021_399963_8083C61C 
+X-CRM114-Status: GOOD (  10.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,59 +88,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 27, 2021 at 12:48:22PM +0800, Shawn Guo wrote:
-> Besides vdda-pll and vdda-phy-dpdm, vdd-supply is a required supply for
-> PHY digital circuit operation.  Add it for correctness and completeness.
-> 
-> Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> index 48ae604b2194..96e31f582fc9 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> @@ -51,6 +51,10 @@ properties:
->        - const: ref
->        - const: iface
->  
-> +  vdda-supply:
+The series adds missing vdd-supply for QUSB2 PHY which is required for
+digital circuit.  The driver works right now likely because firmware
+already sets it up.  Add it to bindings, driver and DTS that miss the
+supply.
 
-Oops, it should be `vdd-supply`.  Will fix it in v2.
+It should not cause problem for existing DTBs:
+- SC7180, SDM630, SDM845 based platforms already specified vdd-supply
+  in the DTBs.
+- MSM8996 and MSM8998 platform DTBs miss vdd-supply, but dummy regulator
+  will ensure QUSB2 PHY driver works as before on these platforms.
 
-Shawn
+Changes for v2:
+- Correct copy & paste error on vdd-supply name in bindings doc.
 
-> +    description:
-> +      Phandle to 0.9V regulator supply to PHY digital circuit.
-> +
->    vdda-pll-supply:
->      description:
->        Phandle to 1.8V regulator supply to PHY refclk pll block.
-> @@ -157,6 +161,7 @@ required:
->    - "#phy-cells"
->    - clocks
->    - clock-names
-> +  - vdd-supply
->    - vdda-pll-supply
->    - vdda-phy-dpdm-supply
->    - resets
-> @@ -175,6 +180,7 @@ examples:
->                   <&gcc GCC_RX1_USB2_CLKREF_CLK>;
->          clock-names = "cfg_ahb", "ref";
->  
-> +        vdd-supply = <&pm8994_l28>;
->          vdda-pll-supply = <&pm8994_l12>;
->          vdda-phy-dpdm-supply = <&pm8994_l24>;
->  
-> -- 
-> 2.17.1
-> 
+
+Shawn Guo (3):
+  dt-bindings: phy: qcom,qusb2: Add missing vdd-supply
+  phy: qcom-qusb2: Add missing vdd supply
+  arm64: dts: qcom: Add missing vdd-supply for QUSB2 PHY
+
+ Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 6 ++++++
+ arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi              | 2 ++
+ arch/arm64/boot/dts/qcom/msm8996-sony-xperia-tone.dtsi    | 1 +
+ arch/arm64/boot/dts/qcom/msm8998-clamshell.dtsi           | 1 +
+ arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi      | 1 +
+ drivers/phy/qualcomm/phy-qcom-qusb2.c                     | 2 +-
+ 6 files changed, 12 insertions(+), 1 deletion(-)
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
