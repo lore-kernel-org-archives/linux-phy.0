@@ -2,66 +2,67 @@ Return-Path: <SRS0=m7K2=OS=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 711BAC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:20:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 98F84C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:20:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 353DD61260
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:20:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 353DD61260
+	by mail.kernel.org (Postfix) with ESMTPS id 5BBA66135D
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:20:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 5BBA66135D
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jnF9y8GGHCTBKGkdPA5yjcgAq8JQD7W2yyJZ+LdSay8=; b=zAhMnAlmBf0Fk+
-	E5YvPjivGicrKP/2Swe6rLgFZsvhkCTBIw1p1M2kf5hsXH5jY0AW5wlF1bJMI/+RAx6uRM3l4OAbg
-	I3ONCmTF/8UPscoxwpzsEOY57Az9NaF0rDcqxylQZjP0jWAwoevwyJNiJRWkO6Ojlpy/Y73ozB+of
-	ho/4/WuVC8550WPpPZTv+LHftkDTOrFP4SUVbswfuZ+XhUO0/Bcrq56MpX+mYWPCUfR6Y018Dmy5p
-	4FK8cugsHVL+DL1z9eyXF/tJICm1CKsUbwhpFL9zaH5uJNGO6vFLuBzNzapHgjHBKeFVAMPeVvesn
-	VJvSDQU59ygKR/P57iTg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OQiQTXQXk3Nn20yiblwaNSakdTJKdfL1qo8eM/lPgnk=; b=3IWlvk/0aJKlvS
+	flVlVMleoCZx1kNlHDIowcf3adCEX1Yu3WaKb1a2uTWB1jkQZbwILV/XhhdqlZtechssOogsXBSZ7
+	0waqUQxD8VmopcAmPzKQVtAz7akziiXefEEGdd9LyQB9awHu7OM312uvcYNzc17Qt0vOdyuF+O7IF
+	KzzYTbA/arnIdqb/V0E+/5ix5g1doiLqbCRdx0ElSU9lKT0ZtG1DHqKTkCXVtkN6kHEObhC1b1CI2
+	AKz1x6pa6/5ZTVeVEa/ZWwv+nhHEE0FA4k1s7BC+m+m+QZ5FWjWUe2Y9V1ISGEFH/fHMUqT71P+Um
+	H8NGRt9NcxqD1BLpB1MQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mV2jI-005FcQ-Ph; Tue, 28 Sep 2021 02:20:24 +0000
-Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
+	id 1mV2jK-005Fcu-S1; Tue, 28 Sep 2021 02:20:26 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mV2jF-005Fb8-As
- for linux-phy@lists.infradead.org; Tue, 28 Sep 2021 02:20:22 +0000
-Received: by mail-pf1-x431.google.com with SMTP id q23so17578033pfs.9
- for <linux-phy@lists.infradead.org>; Mon, 27 Sep 2021 19:20:21 -0700 (PDT)
+ id 1mV2jI-005Fc3-DX
+ for linux-phy@lists.infradead.org; Tue, 28 Sep 2021 02:20:25 +0000
+Received: by mail-pf1-x436.google.com with SMTP id k17so17612574pff.8
+ for <linux-phy@lists.infradead.org>; Mon, 27 Sep 2021 19:20:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=kg/GzF/sdW0p0vvfKH2R41tEISnLDtHPzxNdShxqvM8=;
- b=lnEiCT4W2Vt81xX2B3QBWSajzRS0BHhPdyPDg26pxACWSFyjBXtVsl46QeDm39PLvH
- 6ddbtIh7sK2NOsWb9ER08iCoqfUFsHxRHOmoGH1lzsLvkUPn0u/n0UIQUvVWQlweW1RB
- wixpgeD/BVudgMhrgkqqxqq8SHWDqCX9glVYjOhHjVfCjjmeWuPMAVvRoxETd/DU1kq0
- xQZLQSTvD64o2x1RCjK4gq1pZfp6pVq11nYoNR0BvoeocH9QSvdal6ymhBlZaBp8OFUN
- a9+Nmn5xcitwz8WrFEUrTdtE/lE6p0ioEPmS7AjxGyE6F32q7+FNO5BL5o9xKUQ6C7cE
- Qv1Q==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=NYqezzVsApLcG6o8A6nHf5azw/hdK7Hyfm4V2m2anYE=;
+ b=ktEgcMjNRerbDRlQjW54gIRGhF9RrTp5S+D9vZR7qXJhk/vYJwKDeewlR70iO4VsmR
+ HShmITge9HqC/yfj4wq6+pqlvXlFf+fM6Znpd68LvZ3M77397J2/5xM9LdJL/C5y7Xt6
+ an0j2Ge9ID6jmgvOsLXLCkBZRffpNPYdu8D5GcS0lK7fIgULZqB4EfgUo2v0OQdqFXzR
+ hIuUq7G9mHjL/p7gUW8SQPz8G1CGymjtuA94xt5YfkJFK40FijiL6VoB7DNmBYaVPyfw
+ nd+C9r19WRK+LUHGf09jyMsJtKxnci9oQt+1+dK9+VABpLgSAexdXIvyjkJo7B1MZONk
+ s61Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=kg/GzF/sdW0p0vvfKH2R41tEISnLDtHPzxNdShxqvM8=;
- b=b3PZFLsIg6xcjLg4xC994G3umYOK6Kd9grUwoDoLh5OOco8KLfqdlzttNZ3MCIkTj1
- R+Ea3cx3jfup6e/iqut+3CDpwazCovoR6LpbY3A4m81++YU+Fdk5wHWn2BQs6ktQ6ZK6
- dwBL/2yIL2/XTO0drLLkwHOrA8PDxihUab+JnyB6JVouDJpkcpnli95ZrEo9STolTUED
- H5m3chxoD5UWUA0VznoCnDAy7E7rSuZythFVzzxI2Ku64U5T8j0gI8cI1qubvHEQ8Tys
- 2NtUe5GdWuySPEpYi9y117It46XmoWHQMqS+2tN4oz1a2c/lLoqnjb+OB+CVx8a9+zvC
- Og6A==
-X-Gm-Message-State: AOAM532XL4mVzIhcw7/Fn7r641AUQ3SKmK/rctCew76RXXK5NXw2Xzoh
- S131YQmkLnZUq0idxmclJkGRWg==
-X-Google-Smtp-Source: ABdhPJwm2OGAXCfz1pcfsnrhgPp8cc3IJ9EYc8O3kZGQEbShcjrda5y+PfksmciTxjhD3HIQPlBtgA==
-X-Received: by 2002:a65:6a0a:: with SMTP id m10mr2429816pgu.82.1632795620400; 
- Mon, 27 Sep 2021 19:20:20 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=NYqezzVsApLcG6o8A6nHf5azw/hdK7Hyfm4V2m2anYE=;
+ b=UgKy2y4ru4Cu65qEkkiCyLMyD5LVX+tVfo7lxDh2DUlaUyd75LbhUZOchC0ofAqVPF
+ ydFlTtaUIvgUqxfV03eReDnAyFA0uBSr6DIzCA699cLSZGkMUGU8k9lTNoqmtcldwRA3
+ 94mYIUQ7zbGXkJBPBy8MU37i1wpwuYCLiTVtODgw2NjFi90tjMr5KYO6UAAmqae21llP
+ 6NjDT6O1eZnelhBKAZ517m6X5dPmZJ0feMrUDcisnD1/KXJhQInlgOA1D63xzhvX03Of
+ xg/y9nz8IkHa1PsQ5XAEG+1UOF2pXox562+5UWMxxcrpPgzSNlTpSaa1FcbaGIrghzfr
+ 9K2Q==
+X-Gm-Message-State: AOAM5327KR52P83KAampUyIY2M8Dod/d9raZCxoRajxPVXi6OyIBUsCX
+ kcA7ktwuOpdswZjG4R0TY7XJqw==
+X-Google-Smtp-Source: ABdhPJxtkhkcETWROWusxFox1a51j3uHtyRo8hzT6t77fL1kJ0MDx4Rzp4PMmrb6aL2EFka98H0kUg==
+X-Received: by 2002:a63:6e03:: with SMTP id j3mr2371457pgc.465.1632795623623; 
+ Mon, 27 Sep 2021 19:20:23 -0700 (PDT)
 Received: from localhost.localdomain (80.251.214.228.16clouds.com.
  [80.251.214.228])
- by smtp.gmail.com with ESMTPSA id u12sm19178729pgi.21.2021.09.27.19.20.17
+ by smtp.gmail.com with ESMTPSA id u12sm19178729pgi.21.2021.09.27.19.20.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 27 Sep 2021 19:20:19 -0700 (PDT)
+ Mon, 27 Sep 2021 19:20:23 -0700 (PDT)
 From: Shawn Guo <shawn.guo@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>
 Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@somainline.org>,
@@ -70,13 +71,16 @@ Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@somainline.org>,
  Jami Kettunen <jamipkettunen@gmail.com>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
  linux-kernel@vger.kernel.org, Shawn Guo <shawn.guo@linaro.org>
-Subject: [PATCH v2 0/3] Add missing vdd-supply for QUSB2 PHY
-Date: Tue, 28 Sep 2021 10:19:59 +0800
-Message-Id: <20210928022002.26286-1-shawn.guo@linaro.org>
+Subject: [PATCH v2 1/3] dt-bindings: phy: qcom,qusb2: Add missing vdd-supply
+Date: Tue, 28 Sep 2021 10:20:00 +0800
+Message-Id: <20210928022002.26286-2-shawn.guo@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20210928022002.26286-1-shawn.guo@linaro.org>
+References: <20210928022002.26286-1-shawn.guo@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210927_192021_399963_8083C61C 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20210927_192024_482679_1FB5C248 
+X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,34 +98,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The series adds missing vdd-supply for QUSB2 PHY which is required for
-digital circuit.  The driver works right now likely because firmware
-already sets it up.  Add it to bindings, driver and DTS that miss the
-supply.
+Besides vdda-pll and vdda-phy-dpdm, vdd-supply is a required supply for
+PHY digital circuit operation.  Add it for correctness and completeness.
 
-It should not cause problem for existing DTBs:
-- SC7180, SDM630, SDM845 based platforms already specified vdd-supply
-  in the DTBs.
-- MSM8996 and MSM8998 platform DTBs miss vdd-supply, but dummy regulator
-  will ensure QUSB2 PHY driver works as before on these platforms.
-
-Changes for v2:
-- Correct copy & paste error on vdd-supply name in bindings doc.
-
-
-Shawn Guo (3):
-  dt-bindings: phy: qcom,qusb2: Add missing vdd-supply
-  phy: qcom-qusb2: Add missing vdd supply
-  arm64: dts: qcom: Add missing vdd-supply for QUSB2 PHY
-
+Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
+---
  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 6 ++++++
- arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi              | 2 ++
- arch/arm64/boot/dts/qcom/msm8996-sony-xperia-tone.dtsi    | 1 +
- arch/arm64/boot/dts/qcom/msm8998-clamshell.dtsi           | 1 +
- arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi      | 1 +
- drivers/phy/qualcomm/phy-qcom-qusb2.c                     | 2 +-
- 6 files changed, 12 insertions(+), 1 deletion(-)
+ 1 file changed, 6 insertions(+)
 
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+index ec9ccaaba098..e49fa4ce18c8 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+@@ -50,6 +50,10 @@ properties:
+       - const: ref
+       - const: iface
+ 
++  vdd-supply:
++    description:
++      Phandle to 0.9V regulator supply to PHY digital circuit.
++
+   vdda-pll-supply:
+     description:
+       Phandle to 1.8V regulator supply to PHY refclk pll block.
+@@ -156,6 +160,7 @@ required:
+   - "#phy-cells"
+   - clocks
+   - clock-names
++  - vdd-supply
+   - vdda-pll-supply
+   - vdda-phy-dpdm-supply
+   - resets
+@@ -174,6 +179,7 @@ examples:
+                  <&gcc GCC_RX1_USB2_CLKREF_CLK>;
+         clock-names = "cfg_ahb", "ref";
+ 
++        vdd-supply = <&pm8994_l28>;
+         vdda-pll-supply = <&pm8994_l12>;
+         vdda-phy-dpdm-supply = <&pm8994_l24>;
+ 
 -- 
 2.17.1
 
