@@ -2,143 +2,139 @@ Return-Path: <SRS0=m7K2=OS=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 25983C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:38:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3A879C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 06:25:55 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DD2616124B
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 02:38:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org DD2616124B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id D4D3E61159
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 06:25:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D4D3E61159
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=samsung.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xa3/K14Dxb3Ltk9puz/TpYhrlhauAuACpTa4N8AL8vo=; b=M/N5/f3Mh1ckDb
-	i4nZGaa8m1vwlDLIReJpLXfObfIEYqYlPsj+HZzumdOVoyV0ATEPWDfrCbRGS0kCtLeQYr84h4tT5
-	87CUjTANx2cLMLa7D2CA/halw1TT7I38Nf4nls1MWNKJ+t0c34yxWsUlRNWHHsrES3EhnRi6jh9wj
-	soPlgVxjBoj9q1jC/XVBgMHQlBFwybT+RMRTi8H2UN7geDY1HG0kni3nGbcIx6GELMgsTtvS1GJ1W
-	rmp/aiGK+BxlovgoToa+ZnqhHEuvMezY75ThUUFa7uxppLha1O5R/lAgilZuI7hEvREvR0R5tLKTz
-	QlfGH17OKvPt9BbIP/Pw==;
+	List-Owner; bh=0OTZUh/c9SkJ5e9PcHeBdfRmE/6Y69wbk36AGswsS3Y=; b=O/MoQh0GJxC6H1
+	hFVl5K2kVTq9jxCOZiblt27PLF0ilkClTXk16KEO/ciphBWSHyuEqqUu0ZLLPLxiQw9vCPeJRfffn
+	PytLbqDJvenSIE6i4fTSHYevR/HrrNoidUscEcprjmgGiSbnpro1nZbnzqTRfgUEuA+tonj4RSPuN
+	iUYHanmTmWOtARHL79hyE9g/NhgE4pkYn0rndAk8cuYxExgiT/E+SIDZRj8J7jD1LKvAPI2teXwfs
+	mtc8Ls+inz/qnyIycb1ro8kqJZkKjH07rGhzVt+eWjGto46asCAmZiPpnV2YPYcJhb9DAdLLSTneZ
+	Z3CubaDgZwNX0dKMvZzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mV319-005KAQ-4V; Tue, 28 Sep 2021 02:38:51 +0000
-Received: from mail-eopbgr50043.outbound.protection.outlook.com ([40.107.5.43]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1mV6Yr-005poq-Su; Tue, 28 Sep 2021 06:25:53 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mV30r-005K3N-I9; Tue, 28 Sep 2021 02:38:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XSoXZZGB1gJCsTfAHSCrqeYQo66bV60A4i7tyZVm4DV7NyUS+ZhBMCVR22wNZkvGCIOf8994xeM5plyKvdmc+Foo7ihCXpzoWtgry22HzMPxvzw3fUQx2R9AtdxYlVlv79IK9mnX8huX4ore6Ou8/hVEJKXa8DQTTRN95LVMXrcwZgS5W2tWXiBlamGk1fUaDO/sN+40Wkz8ZCHDTqOaSho1nfxNI7RNFUIHgoo/FF65yNQk4uPJWUA9aK6qBNjuhN3DmPQcuNkGOriQA6nxvRCXmKiWcvjVoA0c2XhoUTCrnRehd2yfipoJlcKcCby2h+yO1zVdTo7GzvowaPXCww==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
- bh=IQUHOEfySLtWyD7Cl3YTLQMqm57Nz+/24DKq9fxMTqs=;
- b=oR7dtRzGiD9VQiB/gM/UWnQHuTLcHb59Kywavk7ODcnZpTwRi6VCBoW6puwwx/4Vztji72eTrrgkWMrBLWzJvg/pJcxEDhk4UZnRnsjBmDTMGwp1c+rX8EjgcSfmMbSbexQYe9uS9+9YtLTDy0GLjuSETCMiRs4iv81zIvOr5AxTxsEVKG0YMuiZeSe6fZJE9bHdpyHU5kvf1CoHBOMLP3fTwkapU6tqXvDOMVmOG0yvkuOzXtdO51COl9mIrq9UKqXvfU+EUfbrKtSsoGCdsJUZ7CAbjRE3PEiOxG6aDZA86Ek8vgAUpXB0dOrN6u+lvoeebKA2rpKsFs/Y9Ho+4g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=IQUHOEfySLtWyD7Cl3YTLQMqm57Nz+/24DKq9fxMTqs=;
- b=cj3hbsRr2QpmopAg3dcTTHqUod51+eXIGp7sQFIJLI9xNz2BYgNCa2O3APrwMGCbQkOWsn6NlEmFhmAHzn9n303Wvc59Ek1wXH5PZzvyNCHljcCYdEBBVAknu3bEMZYjGgPCJvWQZJK799/tIfzSmFIJXOpFijVFqNNZNnoR8ck=
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
- by AS8PR04MB8546.eurprd04.prod.outlook.com (2603:10a6:20b:421::7)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4544.13; Tue, 28 Sep
- 2021 02:38:30 +0000
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::c5ef:f538:c3e0:c4c2]) by AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::c5ef:f538:c3e0:c4c2%9]) with mapi id 15.20.4544.022; Tue, 28 Sep 2021
- 02:38:30 +0000
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: Lucas Stach <l.stach@pengutronix.de>, "kishon@ti.com" <kishon@ti.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>
-CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>
-Subject: RE: [PATCH v2 3/4] arm64: dts: imx8mm: add the pcie phy support
-Thread-Topic: [PATCH v2 3/4] arm64: dts: imx8mm: add the pcie phy support
-Thread-Index: AQHXsq0Fli4oS7cQWUSBBUQ6eND1Pqu3j8+AgAEua4A=
-Date: Tue, 28 Sep 2021 02:38:30 +0000
-Message-ID: <AS8PR04MB86769FBC49DCB29D557CA5CB8CA89@AS8PR04MB8676.eurprd04.prod.outlook.com>
-References: <1632641983-1455-1-git-send-email-hongxing.zhu@nxp.com>
- <1632641983-1455-4-git-send-email-hongxing.zhu@nxp.com>
- <b7604aa25a5d6746025fadeea42a7cc4b5f884ff.camel@pengutronix.de>
-In-Reply-To: <b7604aa25a5d6746025fadeea42a7cc4b5f884ff.camel@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: pengutronix.de; dkim=none (message not signed)
- header.d=none;pengutronix.de; dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d988bd63-08ab-45bd-c355-08d982290f1c
-x-ms-traffictypediagnostic: AS8PR04MB8546:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AS8PR04MB8546BFFBD2566FC3C44E9D868CA89@AS8PR04MB8546.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: k3P6pbH0LMNnr/1i1va70L1ChEJ2G/nbHs8s31uWk23LvikSaBMaaCeCS2LfpEne0Nmg1rHAhH+PbMcVgH8oCaVKqEpNk2i6bBUCI27/z7Uk5z6urv3SSDbPvSVvpTaJ3nJ3/5jYuQJQgBIo+s3p27BpF+mi6jk1oSQ/k5TkWnmRueGvok8Tbw0P0FOhOdrdp3ymdgbsTTw7XlC8LPh2AXig0Opjx9u0aw/kW91e5QsxV60Ccu6kth0Zg7oG1NHJb6hpMtSE904kgaiEB3tWr90R2Nu3Bmw5GQ8t/1yldDZ1Ji4xa4feA8WFKJgLewFDJpIOxbXchttlkq9PlzZcg8ryAws4AEOSd1+0c1EjP7nFziqAflGyvgvNi7dlMFlD27mhwH8OVow40hjJbnW/daU9GvAfXfyTISYOVae9kCwi1aQR1xvrewRonL4PUPf6vE5OjgoY3bX7ZawW+z0l948xJ56D3NEwkAjjbsFz/PU0zOeObkIvkseKBSxJExEPMDNY/8KI6U2GVcxvTJwYKAR5yl/zbLZKkM6N1EXUzEXkEd0gzSl4z3dHg0AOPJbZctIZLtUhJyToSSOzmFSX/bQz83k+RbLPtRxjs8ewyos4wiB5TLctE+ueiPxQ1EmcOcQN9i4AdkmnHmWHdZhxLDWnBg9J2/vB4R5Imoze89OO282kBylqifAENS9tPsV9GekoXrVySIMaR+BgvjgkkuOp6j2mqy5IRI5b2PAfYKE=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(76116006)(53546011)(52536014)(9686003)(6506007)(55016002)(66946007)(4326008)(66476007)(66446008)(316002)(64756008)(66556008)(8676002)(2906002)(7416002)(7696005)(33656002)(38100700002)(122000001)(5660300002)(86362001)(110136005)(54906003)(26005)(186003)(83380400001)(71200400001)(38070700005)(508600001)(8936002)(32563001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?WXhoOTdmbEVwYnZIZjBlaDlTaXd1Mm5Vc3IwMDVTcTZRTk5JZnhCK1pxazBG?=
- =?utf-8?B?djZETUFDN0NUZjhLMlFpcFhVRUFiY0ZwVFlMOXg1SEY3aGxLbktDRlU4WW5k?=
- =?utf-8?B?WDAySUx0Ti83YlhxdnZ5OFlMSUlBYWFCLzJkYnZtVy9KNWJFS1ZjRFFjT1JE?=
- =?utf-8?B?TCtvU0lhRVBCSmVOSnNYRUw3UlNjM3VCS2M3Z3M0UGZSVDA0OE1qTWt3ODh0?=
- =?utf-8?B?Uk5RY2gvVHdOeGZZMDQ3a2RKbXorT2tkaW5xMS9vMlg4Vm9NcXlDWUFkYkVv?=
- =?utf-8?B?VVhWdVovWmZRSEN1OFBwSGZqWlN2UUNvUkUrR3VsVnJpRnduSzJHMi9tODFu?=
- =?utf-8?B?aUpIM2MxTXV5enhsa0VtN3JISGRrai9VaktHdldCdXdmaFZZc25UakVrR1lH?=
- =?utf-8?B?MUNpdDZQRnh6TkVRU2YxZVBrZFZnUHhpZXRqbnBNV1JsT0RsYXZxc0hNWXQ0?=
- =?utf-8?B?bTk2UE1yb2h4dlRvS3p1bmNka09qQm5WVXFoanIyQ0pvQjBtWXN0cDhTcWty?=
- =?utf-8?B?N3JYYVFuVkR0bm1IcFc1bXV6Qm5nTGUwelprZDBJV05KdDllT3NMaDNaT1l5?=
- =?utf-8?B?dXFiZzg0UisxNXhFN3l3VTdSamxSUlJsYnVDUkZvZ2ZqL1k0d2dUTlF3dGZD?=
- =?utf-8?B?U0xIekZEcm5WUHUwUURCUVJmTGpObEhzNXFMUk0zOEtIYjFoMjFhV2VGMDBH?=
- =?utf-8?B?S002OHc0NHZhM042aC9mR2Nvay9xanE3VytaWDYrWW9oczk4aldYaGFMZTRp?=
- =?utf-8?B?MXhJVjVmRjU3aU9YcTZaNVp0RGpBa1RIZ3JDMEhkVDlJeUtpUmtETWZ3VEp1?=
- =?utf-8?B?NXZwV2ZFaGhzNUVTZWdmcXkyc1JCajlUZ0lJOE9LQnZIVHpCU0w4dHZ4aXZL?=
- =?utf-8?B?MWp5eHk3Z2I4RURUQjJtWjdQMkRqc3NXNWdFWitqZnNFYmdTY1k3VitOTDAx?=
- =?utf-8?B?WFVudHhrZlZ1aWplRzFjM0p3Q0k1UW1PQzRrNzBzaWkzL2hrN0tEVXM0NU9y?=
- =?utf-8?B?VFdnTGxEWkp5U05IUkdpV295YlVQQUZrLzY2ZWQxRHY5dkdvcGxTaTN0NXR0?=
- =?utf-8?B?dVJYM253QkpVd2NMaTRnb2oxdVppOE4vRDAweFA1QXVtOUN5WmhOTjFLaTRV?=
- =?utf-8?B?WVk5NEo5NmxNRXEybkVrd3ZSVGdaNHJ6T0tGWm5ZbHdOSVFTdy9yWC82QnVX?=
- =?utf-8?B?OCtiRjNJVTI4eThTdnNETlNEOVkrRmJXQjlDM1lSWHQwRHFjam95QUNvOFB1?=
- =?utf-8?B?ZjZBc1NySXUxSmxiakUyN0I2Z1BYcnRYa2YzbjVUSTArZnRFMy9BY1Mwa2ZZ?=
- =?utf-8?B?eXM0NGpCU0p4U1g0ZlA1VmFnR0o5a0M0OFdoUzhxMVFXMUVYLzlibXRjOC9Y?=
- =?utf-8?B?Y2d3SktHNEJ3aWp0L1prcXpNU2pmeXBJN3BYN3JpRmowUWJFMENDa2dnVS93?=
- =?utf-8?B?a3RPWVJxQyt0N2l1dUNCeU9oUEFQRGl3VHRVeitaLzVwQWdyVmtMbzV3bCtp?=
- =?utf-8?B?UTJVMnVrOTNpREhhQ2s5RW4ydU02YjRlL3pGVjV6UjNxeXFFVk9uT3krNE5o?=
- =?utf-8?B?WWdDT2ptRVA5QkFHYWxvNmJsckNXQWNvUHYrQVdWb1pJRm5jUEd6amlEOXZ5?=
- =?utf-8?B?WXN6NHZhWWczUDc2dXRTRm9LbkNPTGdwbE5ib0t5ditEcDhmaEI1SnV6UE03?=
- =?utf-8?B?aG45eHg3WkFKZHRxS2wySHJPbmY1emhBSVd2SFpLRUxseVc4S2VoZmZITWND?=
- =?utf-8?Q?g77ZrZiOI6zjdo/lNqWyUGj518gBuywrofsNMK4?=
+ id 1mV6XH-005pPH-MI
+ for linux-phy@lists.infradead.org; Tue, 28 Sep 2021 06:24:17 +0000
+Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
+ by mailout3.samsung.com (KnoxPortal) with ESMTP id
+ 20210928062408epoutp03aab9bb473bcbe2e77f3eb8cd3c557e0c~o6EUwDQTT2946029460epoutp03F
+ for <linux-phy@lists.infradead.org>; Tue, 28 Sep 2021 06:24:08 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
+ 20210928062408epoutp03aab9bb473bcbe2e77f3eb8cd3c557e0c~o6EUwDQTT2946029460epoutp03F
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1632810248;
+ bh=xeRq6f7aZZm1jUyxPNSRDZLM8XpZhSnU5SSvumzsHTA=;
+ h=From:To:In-Reply-To:Subject:Date:References:From;
+ b=MYZPm/ezVLuqENk9oYlkNApdMHDsVjqRRctg7BayB4OZpVQZvE/4jn1joRvmCS9x8
+ TJi2rOI1acW/BtbP7XYAAQkiNydvhkp6Gmmi6VXBZpWBMTUCvneFL2bNxDP8LOVK0W
+ 0fkiS4Fxn35hkv2bAdTfEC7aY7O8Ml2rZor+g4Jw=
+Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
+ epcas5p3.samsung.com (KnoxPortal) with ESMTP id
+ 20210928062408epcas5p3f95c3471bc20de5cc86c0a37b3448395~o6EUC3pda0623806238epcas5p3D;
+ Tue, 28 Sep 2021 06:24:08 +0000 (GMT)
+Received: from epsmges5p1new.samsung.com (unknown [182.195.38.183]) by
+ epsnrtp4.localdomain (Postfix) with ESMTP id 4HJTwj5y6Mz4x9Pv; Tue, 28 Sep
+ 2021 06:23:49 +0000 (GMT)
+Received: from epcas5p3.samsung.com ( [182.195.41.41]) by
+ epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ C1.E4.59762.FE4B2516; Tue, 28 Sep 2021 15:23:43 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20210928061619epcas5p1c6dbb21eed928b95c31ba27d0940e049~o59fv6Bh00284802848epcas5p1H;
+ Tue, 28 Sep 2021 06:16:19 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20210928061619epsmtrp17c2a21e8adbbe72c1fc28468b4f60007~o59fx08Nh2204022040epsmtrp1t;
+ Tue, 28 Sep 2021 06:16:19 +0000 (GMT)
+X-AuditID: b6c32a49-10fff7000000e972-88-6152b4ef4896
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 47.B1.09091.333B2516; Tue, 28 Sep 2021 15:16:19 +0900 (KST)
+Received: from alimakhtar03 (unknown [107.122.12.5]) by epsmtip1.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20210928061617epsmtip1e42469523fccafecd39d509ec12de6c9~o59dewFYc2832328323epsmtip1p;
+ Tue, 28 Sep 2021 06:16:16 +0000 (GMT)
+From: "Alim Akhtar" <alim.akhtar@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzysztof.kozlowski@canonical.com>, "'Kishon
+ Vijay Abraham I'" <kishon@ti.com>, "'Vinod Koul'" <vkoul@kernel.org>, "'Avri
+ Altman'" <avri.altman@wdc.com>, "'James E.J. Bottomley'"
+ <jejb@linux.ibm.com>, "'Martin K. Petersen'" <martin.petersen@oracle.com>,
+ "'Marek Szyprowski'" <m.szyprowski@samsung.com>, "'Jaehoon Chung'"
+ <jh80.chung@samsung.com>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>, "'Chanho
+ Park'" <chanho61.park@samsung.com>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-samsung-soc@vger.kernel.org>
+In-Reply-To: <20210924132658.109814-2-krzysztof.kozlowski@canonical.com>
+Subject: RE: [PATCH 2/2] scsi: ufs: exynos: unify naming
+Date: Tue, 28 Sep 2021 11:46:15 +0530
+Message-ID: <001a01d7b430$5a0cd7e0$0e2687a0$@samsung.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d988bd63-08ab-45bd-c355-08d982290f1c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Sep 2021 02:38:30.7184 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: RKJeFV15wUp9fMBWXmh+j+UwIxE7k+anjoRRip2/4VltCr3KQHvGWqzl32VISmMi47PzsQwDp2/hPknfID04CA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8546
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQFtLCv5cHlar/5GPmzeVUgTJn39qgHxE3ZwAhOAiEusbeOaEA==
+Content-Language: en-us
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrHJsWRmVeSWpSXmKPExsWy7bCmpu77LUGJBt1btC1e/rzKZnF5v7bF
+ ohvbmCxu/GpjtbjwtIfNYuPbH0wWmx5fY7W4vGsOm8WEVd9YLGac38dk0X19B5vF2iN32S2W
+ H//HZLHzzglmBz6PWQ29bB6bVnWyeUxYdIDRY/OSeo+PT2+xePRtWcXocfzGdiaPz5vkPNoP
+ dDMFcEZl22SkJqakFimk5iXnp2TmpdsqeQfHO8ebmhkY6hpaWpgrKeQl5qbaKrn4BOi6ZeYA
+ 3a6kUJaYUwoUCkgsLlbSt7Mpyi8tSVXIyC8usVVKLUjJKTAp0CtOzC0uzUvXy0stsTI0MDAy
+ BSpMyM6Yu3Y2S8EqwYp5t7tZGhhv8XUxcnJICJhIbO7Yzt7FyMUhJLCbUWL5ni2MEM4nRokD
+ 964zQTjfGCVmTGhmgmnpP3WVFSKxl1Hi4oQbbCAJIYGXjBKnbwuA2GwCuhI7FreBxUUE7rNI
+ XL0mDWJzCnhIdLR8ZO5i5OAQFrCQOPqdFSTMIqAqcXbxX2YQm1fAUuL9owusELagxMmZT1hA
+ bGYBeYntb+cwQ9ygIPHz6TJWiPFOEuennmeCqBGXeHn0CNg7EgI3OCSm3ZjPCNHgInH563Q2
+ CFtY4tXxLewQtpTEy/42dpB7JASyJXp2GUOEaySWzjvGAmHbSxy4MocFpIRZQFNi/S59iLCs
+ xNRT66DW8kn0/n4CDR5eiR3zYGxVieZ3V6HGSEtM7O5mhbA9JDZv62WewKg4C8mXs5B8OQvJ
+ N7MQNi9gZFnFKJlaUJybnlpsWmCYl1oOj+7k/NxNjOCEreW5g/Hugw96hxiZOBgPMUpwMCuJ
+ 8Aaz+CcK8aYkVlalFuXHF5XmpBYfYjQFBv1EZinR5HxgzsgriTc0sTQwMTMzM7E0NjNUEuf9
+ +NoyUUggPbEkNTs1tSC1CKaPiYNTqoGpkf9ejf4rxQliH4NbZOb91S1uzWY51lPQ1WCvpXRy
+ qWBq0suVJStu/Hvp8/1l3erfdh1ZTpNOdbcsdz054a3TIo2t3xmdoh7/Vdh58dTHqWsnyNmI
+ vVBaz2HlLn/bPnydAYfB8a2OVpNYb9rHbQrwue683vLoBeUZxxyrqk7/uVudc9euwkO0dR2z
+ wKczh9Ummszv6TJ55/mUTeaCYEn73eM20156S3LfntgzX4GBTzfgd2dExFXXw2f+zTaNuih4
+ s6P1lNX0D5KyX/5NX/o4aH/p+Ro+4QMGdmH3nmfs2xQYdWWNzPb7Ogbtk/50CNYn3g7559gw
+ yejw+0S7nuuPqx6W7b608/apBdaXuGc0KrEUZyQaajEXFScCAH+Emp5hBAAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrFIsWRmVeSWpSXmKPExsWy7bCSnK7x5qBEgz93ZSxe/rzKZnF5v7bF
+ ohvbmCxu/GpjtbjwtIfNYuPbH0wWmx5fY7W4vGsOm8WEVd9YLGac38dk0X19B5vF2iN32S2W
+ H//HZLHzzglmBz6PWQ29bB6bVnWyeUxYdIDRY/OSeo+PT2+xePRtWcXocfzGdiaPz5vkPNoP
+ dDMFcEZx2aSk5mSWpRbp2yVwZcxdO5ulYJVgxbzb3SwNjLf4uhg5OSQETCT6T11l7WLk4hAS
+ 2M0o0b/1GSNEQlri+sYJ7BC2sMTKf8/ZIYqeM0r0LmxmBUmwCehK7FjcxgZiiwi8ZJGY+0oB
+ ougqo8SEjl9gkzgFPCQ6Wj4ydzFycAgLWEgc/Q7WyyKgKnF28V9mEJtXwFLi/aMLrBC2oMTJ
+ mU9YQMqZBfQk2jaCTWEWkJfY/nYOM8Q9ChI/ny5jhVjrJHF+6nkmiBpxiZdHj7BPYBSahWTS
+ LIRJs5BMmoWkYwEjyypGydSC4tz03GLDAsO81HK94sTc4tK8dL3k/NxNjODo1NLcwbh91Qe9
+ Q4xMHIyHGCU4mJVEeINZ/BOFeFMSK6tSi/Lji0pzUosPMUpzsCiJ817oOhkvJJCeWJKanZpa
+ kFoEk2Xi4JRqYLIx9e5+8L+NXytrhXBklfuF1BIJ1av2C6VvlyxLnRy6zz9JuCZXfeZNju/7
+ UkwPKllJs7ktqutK9BeVj/PQ0+G5+FhnNXvesouzmKceS3zlYd53z/eJmsS6Wf7BfpPv2va/
+ rOB92jJlfiIH1+fXlf+P9HxR38hQlpaZqm12b+nmfKXGvS73eBOjj0Twbi5TON/bHPQxtP/2
+ eycrt0VWbTmB+X+zJe79VrynuHXDT6sn7Huj1T7dtVH3/TXfK2x5q9CyLTP2dto0W8XOWcO5
+ yp6x9p98DU9e4fE+Ud3ZLHZymyPfF2u97Y7zZ467sc7IXyjPMf+jneplnXdRLzmN10880jlx
+ a8kHQ+6aw7pKLMUZiYZazEXFiQC5+gWBPQMAAA==
+X-CMS-MailID: 20210928061619epcas5p1c6dbb21eed928b95c31ba27d0940e049
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20210924132744epcas5p4d08879e6109c6c036510a3bf0b6ff06b
+References: <20210924132658.109814-1-krzysztof.kozlowski@canonical.com>
+ <CGME20210924132744epcas5p4d08879e6109c6c036510a3bf0b6ff06b@epcas5p4.samsung.com>
+ <20210924132658.109814-2-krzysztof.kozlowski@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210927_193833_639021_28A46337 
-X-CRM114-Status: GOOD (  19.73  )
+X-CRM114-CacheID: sfid-20210927_232416_240350_7CE15916 
+X-CRM114-Status: GOOD (  12.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,77 +151,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> -----Original Message-----
-> From: Lucas Stach <l.stach@pengutronix.de>
-> Sent: Monday, September 27, 2021 4:35 PM
-> To: Richard Zhu <hongxing.zhu@nxp.com>; kishon@ti.com; vkoul@kernel.org;
-> robh@kernel.org; galak@kernel.crashing.org; shawnguo@kernel.org
-> Cc: linux-phy@lists.infradead.org; devicetree@vger.kernel.org;
-> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
-> kernel@pengutronix.de; dl-linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH v2 3/4] arm64: dts: imx8mm: add the pcie phy support
-> 
-> Am Sonntag, dem 26.09.2021 um 15:39 +0800 schrieb Richard Zhu:
-> > Add the PCIe PHY support on iMX8MM platforms.
-> >
-> > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> > ---
-> >  arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi |  4 ++++
-> >  arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 12 ++++++++++++
-> 
-> This should be split into 2 patches: one for the SoC and one for the EVK board.
-> 
-[Richard Zhu] Okay, would split this patch into 2 patches later. Thanks.
+Hello Krzysztof,
 
-> >  2 files changed, 16 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > index e033d0257b5a..e7f398433486 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > @@ -289,6 +289,10 @@ pca6416: gpio@20 {
-> >  	};
-> >  };
-> >
-> > +&pcie_phy {
-> > +	status = "okay";
-> > +};
-> > +
-> >  &sai3 {
-> >  	pinctrl-names = "default";
-> >  	pinctrl-0 = <&pinctrl_sai3>;
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > index e7648c3b8390..de231d531ba4 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > @@ -998,6 +998,18 @@ usbmisc2: usbmisc@32e50200 {
-> >  				reg = <0x32e50200 0x200>;
-> >  			};
-> >
-> > +			pcie_phy: pcie-phy@32f00000 {
-> > +				compatible = "fsl,imx8mm-pcie-phy";
-> > +				reg = <0x32f00000 0x10000>;
-> > +				clocks = <&clk IMX8MM_CLK_PCIE1_PHY>;
-> > +				clock-names = "phy";
-> > +				assigned-clocks = <&clk IMX8MM_CLK_PCIE1_PHY>;
-> > +				assigned-clock-rates = <100000000>;
-> > +				assigned-clock-parents = <&clk
-> IMX8MM_SYS_PLL2_100M>;
-> > +				#phy-cells = <0>;
-> > +				fsl,refclk-pad-mode = <1>;
-> 
-> Move this to the board DT, as the pad mode is a board level decision.
-> Also use the enum instead of raw value.
-[Richard Zhu] Got that, thanks.
-> 
-> > +				status = "disabled";
-> > +			};
-> >  		};
-> >
-> >  		dma_apbh: dma-controller@33000000 {
-> 
+>-----Original Message-----
+>From: Krzysztof Kozlowski [mailto:krzysztof.kozlowski@canonical.com]
+>Sent: Friday, September 24, 2021 6:57 PM
+>To: Kishon Vijay Abraham I <kishon@ti.com>; Vinod Koul <vkoul@kernel.org>;
+>Alim Akhtar <alim.akhtar@samsung.com>; Avri Altman <avri.altman@wdc.com>;
+>James E.J. Bottomley <jejb@linux.ibm.com>; Martin K. Petersen
+><martin.petersen@oracle.com>; Krzysztof Kozlowski
+><krzysztof.kozlowski@canonical.com>; Marek Szyprowski
+><m.szyprowski@samsung.com>; Jaehoon Chung <jh80.chung@samsung.com>;
+>linux-phy@lists.infradead.org; linux-kernel@vger.kernel.org; linux-
+>scsi@vger.kernel.org; Chanho Park <chanho61.park@samsung.com>; linux-arm-
+>kernel@lists.infradead.org; linux-samsung-soc@vger.kernel.org
+>Subject: [PATCH 2/2] scsi: ufs: exynos: unify naming
+>
+>We use everywhere "Samsung" and "Exynos", not the uppercase versions.
+>
+>Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+>---
+Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
+
+> drivers/scsi/ufs/Kconfig | 10 +++++-----
+> 1 file changed, 5 insertions(+), 5 deletions(-)
+>
+>diff --git a/drivers/scsi/ufs/Kconfig b/drivers/scsi/ufs/Kconfig index
+>565e8aa6319d..af66cb3634a8 100644
+>--- a/drivers/scsi/ufs/Kconfig
+>+++ b/drivers/scsi/ufs/Kconfig
+>@@ -165,14 +165,14 @@ config SCSI_UFS_BSG
+> 	  If unsure, say N.
+>
+> config SCSI_UFS_EXYNOS
+>-	tristate "EXYNOS specific hooks to UFS controller platform driver"
+>+	tristate "Exynos specific hooks to UFS controller platform driver"
+> 	depends on SCSI_UFSHCD_PLATFORM && (ARCH_EXYNOS ||
+>COMPILE_TEST)
+> 	help
+>-	  This selects the EXYNOS specific additions to UFSHCD platform
+driver.
+>-	  UFS host on EXYNOS includes HCI and UNIPRO layer, and associates
+>with
+>-	  UFS-PHY driver.
+>+	  This selects the Samsung Exynos SoC specific additions to UFSHCD
+>+	  platform driver.  UFS host on Samsung Exynos SoC includes HCI and
+>+	  UNIPRO layer, and associates with UFS-PHY driver.
+>
+>-	  Select this if you have UFS host controller on EXYNOS chipset.
+>+	  Select this if you have UFS host controller on Samsung Exynos SoC.
+> 	  If unsure, say N.
+>
+> config SCSI_UFS_CRYPTO
+>--
+>2.30.2
+
+
 
 -- 
 linux-phy mailing list
