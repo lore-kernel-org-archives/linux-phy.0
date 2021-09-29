@@ -2,14 +2,14 @@ Return-Path: <SRS0=Qt1L=OT=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9BB17C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 03:43:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AD143C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 03:43:22 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5D786613D1
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 03:43:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 5D786613D1
+	by mail.kernel.org (Postfix) with ESMTPS id 78010613E6
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 03:43:22 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 78010613E6
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,52 +18,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NiyJ2vIXsulTHGCXaJYluatuFHMlLw9JqQAn9LQKZYE=; b=xzD9UiADBqzvPR
-	1JSUtm+J7Pl8gb+fdJ4p2UwGAZrb/Xkb4XRlC0w0JtkvQHN5GUlO+rrpeNNZdBXBvdwCf/iC1J7BC
-	FoLbSYsk+DpDy/R6zxJxBiywxOSa7QGgzy8PQ6hcQHsHjjmsZIB/CqxLs6eP+1tl7ciqfzvFOaVGn
-	nkSc0SpEBU9Yz0+GshH9sGbLAHda6p4GAlQlvAPudJe8RTha6FaH2MNXlfC7me3oi1wZ7ayxpr+fw
-	CW4E/BWxHUemAvrnI0Ts2UvaaIDMNWMJI/q6VmSgC7fZlmWrwLqiWnyQw4BxKsW4ZAFDFiAQlMtpL
-	Ague3gGjSf5y6ff3ckTA==;
+	List-Owner; bh=OnOlKuebp4hvcVTzwRXnrxmFEhWur9kZuPIQzczzClU=; b=ibysCQYpRUrDBS
+	AJnCpSZhfhuSke9nOsDiqv+RzrXSjCdN/1QIesYCsYnWhKoh+yfY35mWZDkl3Kv5cjxqgyw0SxwRD
+	QQ3EH14/XEgbM3H9dCgiV23jyuttUo3eR9WrbjGAhrRi3P5PAWZBK4ZHTAkWd8lfKqfxCe9pSWexJ
+	deXOvqEcE6/TTchUOTl6MeYOVLS+43Xh43YxOiAsemuMVDOXRLHwCXIrhGzXrNlj2KB1IpIZEr2R4
+	IpDxX5ZgPAZLwcMjXyOzQ2Y2375b5UWSmEQwFx9mrwTpiNDPJhcoe+sTnnVmpuLBU92Ra0v04gKri
+	BMDdh3L/drGUmxHSMs/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mVQV4-009q1j-UB; Wed, 29 Sep 2021 03:43:18 +0000
-Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
+	id 1mVQV8-009q2u-14; Wed, 29 Sep 2021 03:43:22 +0000
+Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mVQV1-009q0K-7p
- for linux-phy@lists.infradead.org; Wed, 29 Sep 2021 03:43:17 +0000
-Received: by mail-pj1-x102f.google.com with SMTP id r7so624579pjo.3
- for <linux-phy@lists.infradead.org>; Tue, 28 Sep 2021 20:43:15 -0700 (PDT)
+ id 1mVQV4-009q1L-CG
+ for linux-phy@lists.infradead.org; Wed, 29 Sep 2021 03:43:20 +0000
+Received: by mail-pl1-x62e.google.com with SMTP id l6so571992plh.9
+ for <linux-phy@lists.infradead.org>; Tue, 28 Sep 2021 20:43:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=RfV6xJ9gwtv5FhoxCV9JP4TEXzUvWIIkaP1YNfoiplg=;
- b=wpJ5HoKtpFs+iztnsiR4mWzmw36GU9OYGvPvr9QgRWowZZxip+C9HVnFoM6KSzl245
- g3mucI2eAKIVABi1s5H4Jy9SvOwiPON17exNpY9lR1XD5g0T5CzNlzLiS1gKB6eRoI/9
- idyIbU5JFX6W7d7hk/ptHc6T6XukfYDx9VEgjo62dQfXazQHHB1BP27tDpzLPLYqQ8mO
- S+yCJ7ba8o3PGqjnwbA2enXyAQd2SERgJLn2DDK2OobF549VA1AcBF7kiXnhF1fTunEd
- ZK+cA4vsxrdU2ml7G9N4lMeFb2IpQULMzqrF6EsIGFBz8MFZmTU3TfXC3k3KWJOQa7xQ
- kPmQ==
+ bh=DdGxFZl6atvUpTyvNvQjUqEOKV5hQQ0OgkqUqC3owd0=;
+ b=Fi/DD7kyMatSKuFi+7rfk5bVggZQufMuuoIsIA8IvDVfpl08QajYjitc2Qtf5idFO8
+ 7nCBmYueDmtm9WkH+ADOeGVFUMOk5n+wHyHGs1ipqeRisjBxjEqVtgEwHIQEJ+HolRyO
+ e1lJK6FKQ3EZumVRY4G/RB5fXMh1JqCXBOcLlciJFc16s84yYJThdi/aHgvau2p26nil
+ m8m3hlEqmA0a82ayBI2UD9Hqx9+6vXP9AbFJ1WszGkvITPK4lE1h2TAQ5XM79hhuCsOx
+ qEdLPfQL4DFwyPxtk91jhGCMLgK20ZYawCJcJl6cLlIkxFbSlWWJWOGilDqf+9t55SGD
+ 16NQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=RfV6xJ9gwtv5FhoxCV9JP4TEXzUvWIIkaP1YNfoiplg=;
- b=NlPSLvk7t7GN0N5+9F+pVZpRl4DoKzkUkX8kQzpaO1eF5VslUJKuAM8nnk/dKp9NAo
- EPZissVAoAJQGp1JxphvS3ilefbqtwIlVzt8PSPBLvvOxU3CCRLE/FIYOJCghGxN8FG6
- u5437x6x8RVS/U0/Fysaf1s+OW8YYsJSG+LN+PjQEC0C27UazjHfksd+DG+nkSXeKsAH
- y1ShU5f/AP1U1YqA7WkNDkAiZ9peH5ufSUOYtDTvJ/3El7dXw2BPly/ZSASPh85IQ0Pa
- /KlbtqX1Tyk45Mfqwk7ml34l+dfSpJsbbAA0ETB5wpISbp81NSFvtf/uegsjd8sF0q+e
- Wxjw==
-X-Gm-Message-State: AOAM531BVgjdGSeNKBWEvIV8rBig2QMzy9ZhJYHtQ+6n1ecMpQl/Nzij
- yd4Te6OggFETlQjzoCvJgNsuPg==
-X-Google-Smtp-Source: ABdhPJyOd3SyfWouTohLQdCuN0kH34e5bXbhbXtQZjP5y4vD5gwzgaMG2hFWYc+xKxlbKeUZ5pNDEw==
-X-Received: by 2002:a17:90a:9912:: with SMTP id
- b18mr4016034pjp.46.1632886994693; 
- Tue, 28 Sep 2021 20:43:14 -0700 (PDT)
+ bh=DdGxFZl6atvUpTyvNvQjUqEOKV5hQQ0OgkqUqC3owd0=;
+ b=P9dfQ9X2k+vEQCwFNASv4lbbmMtxw294UehXDmC2P/m6FvjZEH+lvD2xFbX6fVzQq6
+ GjCZ7Y+SkbyR/BoBJKKaxNoeBQfX9h7VVFSS1HiNsCR0vqYT++HzxK5T3r0VJz93eBy1
+ c7kF06xL6z8SPH6EaDt7u3L1b9IeMqF1MHAf3WBZz+jiFXa1UGs3oLOxb2WMs6Y1H0SG
+ jiy9QB7t2ND/o3MI7mpd4PZJ4lrpPtM3BBpn2ZxIO7+4HmFTqzffcF91i3U5i2q+rxHZ
+ ryYeL7Ho4tKBEYbTc3ZzaOtJi4PDbi8rGceXHN/9S2W1PN6yJCzu1iAcb8WGIzMPe69R
+ uGKw==
+X-Gm-Message-State: AOAM5328pAOTrKIEXPyUqOy6u+ah9AezOk+ID5dcl6xvP6cQbV+E4rJF
+ 88gOQKbEMGHMI4EGWbM2IlmX1g==
+X-Google-Smtp-Source: ABdhPJxR6Q+dwvvAlulmgyy85HyD13UmRB9sM1jEj6BZ+uB9eLjhRF3eW7TOfSIPhRP//vWeWQVfGA==
+X-Received: by 2002:a17:90b:4a44:: with SMTP id
+ lb4mr3915805pjb.140.1632886997283; 
+ Tue, 28 Sep 2021 20:43:17 -0700 (PDT)
 Received: from localhost.localdomain (80.251.214.228.16clouds.com.
  [80.251.214.228])
- by smtp.gmail.com with ESMTPSA id b7sm533032pfb.20.2021.09.28.20.43.12
+ by smtp.gmail.com with ESMTPSA id b7sm533032pfb.20.2021.09.28.20.43.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Sep 2021 20:43:14 -0700 (PDT)
+ Tue, 28 Sep 2021 20:43:16 -0700 (PDT)
 From: Shawn Guo <shawn.guo@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>
@@ -71,15 +71,17 @@ Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  Shawn Guo <shawn.guo@linaro.org>
-Subject: [PATCH 04/10] arm64: dts: qcom: Correct QMP PHY child node name
-Date: Wed, 29 Sep 2021 11:42:47 +0800
-Message-Id: <20210929034253.24570-5-shawn.guo@linaro.org>
+Subject: [PATCH 05/10] arm64: dts: qcom: Drop max-microamp and vddp-ref-clk
+ properties from QMP PHY
+Date: Wed, 29 Sep 2021 11:42:48 +0800
+Message-Id: <20210929034253.24570-6-shawn.guo@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20210929034253.24570-1-shawn.guo@linaro.org>
 References: <20210929034253.24570-1-shawn.guo@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210928_204315_307801_364809EB 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20210928_204318_438948_5FCB060F 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,288 +99,202 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Many child nodes of QMP PHY are named without following bindings schema
-and causing dtbs_check warnings like below.
+The following properties are not supported and causing dtbs_check
+warnings.
 
-phy@1c06000: 'lane@1c06800' does not match any of the regexes: '^phy@[0-9a-f]+$'
-        arch/arm64/boot/dts/qcom/msm8998-asus-novago-tp370ql.dt.yaml
-        arch/arm64/boot/dts/qcom/msm8998-hp-envy-x2.dt.yaml
-        arch/arm64/boot/dts/qcom/msm8998-lenovo-miix-630.dt.yaml
-        arch/arm64/boot/dts/qcom/msm8998-mtp.dt.yaml
-        arch/arm64/boot/dts/qcom/msm8998-oneplus-cheeseburger.dt.yaml
-        arch/arm64/boot/dts/qcom/msm8998-oneplus-dumpling.dt.yaml
+- vdda-phy-max-microamp
+- vdda-pll-max-microamp
+- vddp-ref-clk-max-microamp
+- vddp-ref-clk-always-on
 
-Correct them to fix the warnings.
+Drop them from QMP PHY nodes.
 
 Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/ipq6018.dtsi |  2 +-
- arch/arm64/boot/dts/qcom/ipq8074.dtsi |  4 ++--
- arch/arm64/boot/dts/qcom/msm8996.dtsi | 10 +++++-----
- arch/arm64/boot/dts/qcom/msm8998.dtsi |  6 +++---
- arch/arm64/boot/dts/qcom/sdm845.dtsi  | 10 +++++-----
- arch/arm64/boot/dts/qcom/sm8150.dtsi  |  6 +++---
- arch/arm64/boot/dts/qcom/sm8250.dtsi  | 10 +++++-----
- arch/arm64/boot/dts/qcom/sm8350.dtsi  |  2 +-
- 8 files changed, 25 insertions(+), 25 deletions(-)
+ arch/arm64/boot/dts/qcom/apq8096-ifc6640.dts              | 3 ---
+ arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi                 | 4 ----
+ arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi      | 4 ----
+ arch/arm64/boot/dts/qcom/qrb5165-rb5.dts                  | 2 --
+ arch/arm64/boot/dts/qcom/sa8155p-adp.dts                  | 2 --
+ arch/arm64/boot/dts/qcom/sm8150-hdk.dts                   | 2 --
+ arch/arm64/boot/dts/qcom/sm8150-microsoft-surface-duo.dts | 2 --
+ arch/arm64/boot/dts/qcom/sm8150-mtp.dts                   | 2 --
+ arch/arm64/boot/dts/qcom/sm8250-hdk.dts                   | 2 --
+ arch/arm64/boot/dts/qcom/sm8250-mtp.dts                   | 2 --
+ arch/arm64/boot/dts/qcom/sm8350-hdk.dts                   | 2 --
+ arch/arm64/boot/dts/qcom/sm8350-mtp.dts                   | 2 --
+ 12 files changed, 29 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq6018.dtsi b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-index d2fe58e0eb7a..4583e2953e78 100644
---- a/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-+++ b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-@@ -401,7 +401,7 @@
- 			reset-names = "phy",
- 				      "common";
+diff --git a/arch/arm64/boot/dts/qcom/apq8096-ifc6640.dts b/arch/arm64/boot/dts/qcom/apq8096-ifc6640.dts
+index a57c60070cdc..567b33106556 100644
+--- a/arch/arm64/boot/dts/qcom/apq8096-ifc6640.dts
++++ b/arch/arm64/boot/dts/qcom/apq8096-ifc6640.dts
+@@ -395,9 +395,6 @@
  
--			pcie_phy0: lane@84200 {
-+			pcie_phy0: phy@84200 {
- 				reg = <0x0 0x84200 0x0 0x16c>, /* Serdes Tx */
- 				      <0x0 0x84400 0x0 0x200>, /* Serdes Rx */
- 				      <0x0 0x84800 0x0 0x4f4>; /* PCS: Lane0, COM, PCIE */
-diff --git a/arch/arm64/boot/dts/qcom/ipq8074.dtsi b/arch/arm64/boot/dts/qcom/ipq8074.dtsi
-index 0c7dbdc861c1..2e4e1399e276 100644
---- a/arch/arm64/boot/dts/qcom/ipq8074.dtsi
-+++ b/arch/arm64/boot/dts/qcom/ipq8074.dtsi
-@@ -105,7 +105,7 @@
- 			reset-names = "phy","common";
- 			status = "disabled";
+ 	vdda-phy-supply = <&vreg_l28a_0p925>;
+ 	vdda-pll-supply = <&vreg_l12a_1p8>;
+-
+-	vdda-phy-max-microamp = <18380>;
+-	vdda-pll-max-microamp = <9440>;
+ };
  
--			usb1_ssphy: lane@58200 {
-+			usb1_ssphy: phy@58200 {
- 				reg = <0x00058200 0x130>,       /* Tx */
- 				      <0x00058400 0x200>,     /* Rx */
- 				      <0x00058800 0x1f8>,     /* PCS  */
-@@ -148,7 +148,7 @@
- 			reset-names = "phy","common";
- 			status = "disabled";
+ &venus {
+diff --git a/arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi b/arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi
+index a1d15eab8553..af67c641df4e 100644
+--- a/arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi
+@@ -371,10 +371,6 @@
+ 	vdda-phy-supply = <&vreg_l1a_0p875>;
+ 	vdda-pll-supply = <&vreg_l2a_1p2>;
+ 	vddp-ref-clk-supply = <&vreg_l26a_1p2>;
+-	vdda-phy-max-microamp = <51400>;
+-	vdda-pll-max-microamp = <14600>;
+-	vddp-ref-clk-max-microamp = <100>;
+-	vddp-ref-clk-always-on;
+ };
  
--			usb0_ssphy: lane@78200 {
-+			usb0_ssphy: phy@78200 {
- 				reg = <0x00078200 0x130>,       /* Tx */
- 				      <0x00078400 0x200>,     /* Rx */
- 				      <0x00078800 0x1f8>,     /* PCS  */
-diff --git a/arch/arm64/boot/dts/qcom/msm8996.dtsi b/arch/arm64/boot/dts/qcom/msm8996.dtsi
-index a190ed891a62..a0bf3af47350 100644
---- a/arch/arm64/boot/dts/qcom/msm8996.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8996.dtsi
-@@ -597,7 +597,7 @@
- 			reset-names = "phy", "common", "cfg";
- 			status = "disabled";
+ &usb3 {
+diff --git a/arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi b/arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi
+index 0f5c7828a901..654188027f79 100644
+--- a/arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8998-oneplus-common.dtsi
+@@ -480,10 +480,6 @@
+ 	vdda-phy-supply = <&vreg_l1a_0p875>;
+ 	vdda-pll-supply = <&vreg_l2a_1p2>;
+ 	vddp-ref-clk-supply = <&vreg_l26a_1p2>;
+-	vdda-phy-max-microamp = <51400>;
+-	vdda-pll-max-microamp = <14600>;
+-	vddp-ref-clk-max-microamp = <100>;
+-	vddp-ref-clk-always-on;
+ };
  
--			pciephy_0: lane@35000 {
-+			pciephy_0: phy@35000 {
- 				reg = <0x00035000 0x130>,
- 				      <0x00035200 0x200>,
- 				      <0x00035400 0x1dc>;
-@@ -611,7 +611,7 @@
- 				reset-names = "lane0";
- 			};
+ &usb3 {
+diff --git a/arch/arm64/boot/dts/qcom/qrb5165-rb5.dts b/arch/arm64/boot/dts/qcom/qrb5165-rb5.dts
+index 8ac96f8e79d4..100254489b87 100644
+--- a/arch/arm64/boot/dts/qcom/qrb5165-rb5.dts
++++ b/arch/arm64/boot/dts/qcom/qrb5165-rb5.dts
+@@ -1212,9 +1212,7 @@
+ 	status = "okay";
  
--			pciephy_1: lane@36000 {
-+			pciephy_1: phy@36000 {
- 				reg = <0x00036000 0x130>,
- 				      <0x00036200 0x200>,
- 				      <0x00036400 0x1dc>;
-@@ -624,7 +624,7 @@
- 				reset-names = "lane1";
- 			};
+ 	vdda-phy-supply = <&vreg_l5a_0p88>;
+-	vdda-max-microamp = <89900>;
+ 	vdda-pll-supply = <&vreg_l9a_1p2>;
+-	vdda-pll-max-microamp = <18800>;
+ };
  
--			pciephy_2: lane@37000 {
-+			pciephy_2: phy@37000 {
- 				reg = <0x00037000 0x130>,
- 				      <0x00037200 0x200>,
- 				      <0x00037400 0x1dc>;
-@@ -1746,7 +1746,7 @@
- 			reset-names = "ufsphy";
- 			status = "disabled";
+ &usb_1 {
+diff --git a/arch/arm64/boot/dts/qcom/sa8155p-adp.dts b/arch/arm64/boot/dts/qcom/sa8155p-adp.dts
+index 5ae2ddc65f7e..6f05934b4ccc 100644
+--- a/arch/arm64/boot/dts/qcom/sa8155p-adp.dts
++++ b/arch/arm64/boot/dts/qcom/sa8155p-adp.dts
+@@ -328,9 +328,7 @@
+ 	status = "okay";
  
--			ufsphy_lane: lanes@627400 {
-+			ufsphy_lane: phy@627400 {
- 				reg = <0x627400 0x12c>,
- 				      <0x627600 0x200>,
- 				      <0x627c00 0x1b4>;
-@@ -2600,7 +2600,7 @@
- 			reset-names = "phy", "common";
- 			status = "disabled";
+ 	vdda-phy-supply = <&vreg_l8c_1p2>;
+-	vdda-max-microamp = <87100>;
+ 	vdda-pll-supply = <&vreg_l5a_0p88>;
+-	vdda-pll-max-microamp = <18300>;
+ };
  
--			ssusb_phy_0: lane@7410200 {
-+			ssusb_phy_0: phy@7410200 {
- 				reg = <0x07410200 0x200>,
- 				      <0x07410400 0x130>,
- 				      <0x07410600 0x1a8>;
-diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-index f3bd1197d65e..512003e833b4 100644
---- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-@@ -990,7 +990,7 @@
- 			vdda-phy-supply = <&vreg_l1a_0p875>;
- 			vdda-pll-supply = <&vreg_l2a_1p2>;
+ &usb_1 {
+diff --git a/arch/arm64/boot/dts/qcom/sm8150-hdk.dts b/arch/arm64/boot/dts/qcom/sm8150-hdk.dts
+index 335aa0753fc0..37ddca0f0223 100644
+--- a/arch/arm64/boot/dts/qcom/sm8150-hdk.dts
++++ b/arch/arm64/boot/dts/qcom/sm8150-hdk.dts
+@@ -419,9 +419,7 @@
+ 	status = "okay";
  
--			pciephy: lane@1c06800 {
-+			pciephy: phy@1c06800 {
- 				reg = <0x01c06200 0x128>, <0x01c06400 0x1fc>, <0x01c06800 0x20c>;
- 				#phy-cells = <0>;
+ 	vdda-phy-supply = <&vdda_ufs_2ln_core_1>;
+-	vdda-max-microamp = <90200>;
+ 	vdda-pll-supply = <&vreg_l3c_1p2>;
+-	vdda-pll-max-microamp = <19000>;
+ };
  
-@@ -1062,7 +1062,7 @@
- 			reset-names = "ufsphy";
- 			resets = <&ufshc 0>;
+ &usb_1_hsphy {
+diff --git a/arch/arm64/boot/dts/qcom/sm8150-microsoft-surface-duo.dts b/arch/arm64/boot/dts/qcom/sm8150-microsoft-surface-duo.dts
+index 736da9af44e0..6802097f576f 100644
+--- a/arch/arm64/boot/dts/qcom/sm8150-microsoft-surface-duo.dts
++++ b/arch/arm64/boot/dts/qcom/sm8150-microsoft-surface-duo.dts
+@@ -507,9 +507,7 @@
+ 	status = "okay";
  
--			ufsphy_lanes: lanes@1da7400 {
-+			ufsphy_lanes: phy@1da7400 {
- 				reg = <0x01da7400 0x128>,
- 				      <0x01da7600 0x1fc>,
- 				      <0x01da7c00 0x1dc>,
-@@ -1994,7 +1994,7 @@
- 				 <&gcc GCC_USB3PHY_PHY_BCR>;
- 			reset-names = "phy", "common";
+ 	vdda-phy-supply = <&vdda_ufs_2ln_core_1>;
+-	vdda-max-microamp = <90200>;
+ 	vdda-pll-supply = <&vreg_l3c_1p2>;
+-	vdda-pll-max-microamp = <19000>;
+ };
  
--			usb1_ssphy: lane@c010200 {
-+			usb1_ssphy: phy@c010200 {
- 				reg = <0xc010200 0x128>,
- 				      <0xc010400 0x200>,
- 				      <0xc010c00 0x20c>,
-diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-index 6d7172e6f4c3..ac775189a2e4 100644
---- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-@@ -2059,7 +2059,7 @@
+ &usb_1_hsphy {
+diff --git a/arch/arm64/boot/dts/qcom/sm8150-mtp.dts b/arch/arm64/boot/dts/qcom/sm8150-mtp.dts
+index b484371a6044..46b5cf9a1192 100644
+--- a/arch/arm64/boot/dts/qcom/sm8150-mtp.dts
++++ b/arch/arm64/boot/dts/qcom/sm8150-mtp.dts
+@@ -416,9 +416,7 @@
+ 	status = "okay";
  
- 			status = "disabled";
+ 	vdda-phy-supply = <&vdda_ufs_2ln_core_1>;
+-	vdda-max-microamp = <90200>;
+ 	vdda-pll-supply = <&vreg_l3c_1p2>;
+-	vdda-pll-max-microamp = <19000>;
+ };
  
--			pcie0_lane: lanes@1c06200 {
-+			pcie0_lane: phy@1c06200 {
- 				reg = <0 0x01c06200 0 0x128>,
- 				      <0 0x01c06400 0 0x1fc>,
- 				      <0 0x01c06800 0 0x218>,
-@@ -2169,7 +2169,7 @@
+ &usb_1_hsphy {
+diff --git a/arch/arm64/boot/dts/qcom/sm8250-hdk.dts b/arch/arm64/boot/dts/qcom/sm8250-hdk.dts
+index 47742816ac2f..3b082472062b 100644
+--- a/arch/arm64/boot/dts/qcom/sm8250-hdk.dts
++++ b/arch/arm64/boot/dts/qcom/sm8250-hdk.dts
+@@ -409,9 +409,7 @@
+ 	status = "okay";
  
- 			status = "disabled";
+ 	vdda-phy-supply = <&vreg_l5a_0p88>;
+-	vdda-max-microamp = <89900>;
+ 	vdda-pll-supply = <&vreg_l9a_1p2>;
+-	vdda-pll-max-microamp = <18800>;
+ };
  
--			pcie1_lane: lanes@1c06200 {
-+			pcie1_lane: phy@1c06200 {
- 				reg = <0 0x01c0a800 0 0x800>,
- 				      <0 0x01c0a800 0 0x800>,
- 				      <0 0x01c0b800 0 0x400>;
-@@ -2297,7 +2297,7 @@
- 			reset-names = "ufsphy";
- 			status = "disabled";
+ &usb_1_hsphy {
+diff --git a/arch/arm64/boot/dts/qcom/sm8250-mtp.dts b/arch/arm64/boot/dts/qcom/sm8250-mtp.dts
+index 062b944be91d..5ffbcdd387ba 100644
+--- a/arch/arm64/boot/dts/qcom/sm8250-mtp.dts
++++ b/arch/arm64/boot/dts/qcom/sm8250-mtp.dts
+@@ -647,9 +647,7 @@
+ 	status = "okay";
  
--			ufs_mem_phy_lanes: lanes@1d87400 {
-+			ufs_mem_phy_lanes: phy@1d87400 {
- 				reg = <0 0x01d87400 0 0x108>,
- 				      <0 0x01d87600 0 0x1e0>,
- 				      <0 0x01d87c00 0 0x1dc>,
-@@ -3694,7 +3694,7 @@
- 				 <&gcc GCC_USB3_PHY_PRIM_BCR>;
- 			reset-names = "phy", "common";
+ 	vdda-phy-supply = <&vreg_l5a_0p875>;
+-	vdda-max-microamp = <90200>;
+ 	vdda-pll-supply = <&vreg_l9a_1p2>;
+-	vdda-pll-max-microamp = <19000>;
+ };
  
--			usb_1_ssphy: lanes@88e9200 {
-+			usb_1_ssphy: phy@88e9200 {
- 				reg = <0 0x088e9200 0 0x128>,
- 				      <0 0x088e9400 0 0x200>,
- 				      <0 0x088e9c00 0 0x218>,
-@@ -3727,7 +3727,7 @@
- 				 <&gcc GCC_USB3_PHY_SEC_BCR>;
- 			reset-names = "phy", "common";
+ &usb_1 {
+diff --git a/arch/arm64/boot/dts/qcom/sm8350-hdk.dts b/arch/arm64/boot/dts/qcom/sm8350-hdk.dts
+index 56093e260ddf..be062377c936 100644
+--- a/arch/arm64/boot/dts/qcom/sm8350-hdk.dts
++++ b/arch/arm64/boot/dts/qcom/sm8350-hdk.dts
+@@ -251,9 +251,7 @@
+ 	status = "okay";
  
--			usb_2_ssphy: lane@88eb200 {
-+			usb_2_ssphy: phy@88eb200 {
- 				reg = <0 0x088eb200 0 0x128>,
- 				      <0 0x088eb400 0 0x1fc>,
- 				      <0 0x088eb800 0 0x218>,
-diff --git a/arch/arm64/boot/dts/qcom/sm8150.dtsi b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-index ef0232c2cf45..4e943e4a93c4 100644
---- a/arch/arm64/boot/dts/qcom/sm8150.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-@@ -1692,7 +1692,7 @@
- 			reset-names = "ufsphy";
- 			status = "disabled";
+ 	vdda-phy-supply = <&vreg_l5b_0p88>;
+-	vdda-max-microamp = <91600>;
+ 	vdda-pll-supply = <&vreg_l6b_1p2>;
+-	vdda-pll-max-microamp = <19000>;
+ };
  
--			ufs_mem_phy_lanes: lanes@1d87400 {
-+			ufs_mem_phy_lanes: phy@1d87400 {
- 				reg = <0 0x01d87400 0 0x108>,
- 				      <0 0x01d87600 0 0x1e0>,
- 				      <0 0x01d87c00 0 0x1dc>,
-@@ -3010,7 +3010,7 @@
- 				 <&gcc GCC_USB3_PHY_PRIM_BCR>;
- 			reset-names = "phy", "common";
+ &usb_1 {
+diff --git a/arch/arm64/boot/dts/qcom/sm8350-mtp.dts b/arch/arm64/boot/dts/qcom/sm8350-mtp.dts
+index bd95009c1875..5a8a966c475c 100644
+--- a/arch/arm64/boot/dts/qcom/sm8350-mtp.dts
++++ b/arch/arm64/boot/dts/qcom/sm8350-mtp.dts
+@@ -318,9 +318,7 @@
+ 	status = "okay";
  
--			usb_1_ssphy: lanes@88e9200 {
-+			usb_1_ssphy: phy@88e9200 {
- 				reg = <0 0x088e9200 0 0x200>,
- 				      <0 0x088e9400 0 0x200>,
- 				      <0 0x088e9c00 0 0x218>,
-@@ -3043,7 +3043,7 @@
- 				 <&gcc GCC_USB3_PHY_SEC_BCR>;
- 			reset-names = "phy", "common";
+ 	vdda-phy-supply = <&vreg_l5b_0p88>;
+-	vdda-max-microamp = <91600>;
+ 	vdda-pll-supply = <&vreg_l6b_1p2>;
+-	vdda-pll-max-microamp = <19000>;
+ };
  
--			usb_2_ssphy: lane@88eb200 {
-+			usb_2_ssphy: phy@88eb200 {
- 				reg = <0 0x088eb200 0 0x200>,
- 				      <0 0x088eb400 0 0x200>,
- 				      <0 0x088eb800 0 0x800>,
-diff --git a/arch/arm64/boot/dts/qcom/sm8250.dtsi b/arch/arm64/boot/dts/qcom/sm8250.dtsi
-index 8c15d9fed08f..d5b76ec7b11f 100644
---- a/arch/arm64/boot/dts/qcom/sm8250.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8250.dtsi
-@@ -1463,7 +1463,7 @@
- 
- 			status = "disabled";
- 
--			pcie0_lane: lanes@1c06200 {
-+			pcie0_lane: phy@1c06200 {
- 				reg = <0 0x1c06200 0 0x170>, /* tx */
- 				      <0 0x1c06400 0 0x200>, /* rx */
- 				      <0 0x1c06800 0 0x1f0>, /* pcs */
-@@ -1567,7 +1567,7 @@
- 
- 			status = "disabled";
- 
--			pcie1_lane: lanes@1c0e200 {
-+			pcie1_lane: phy@1c0e200 {
- 				reg = <0 0x1c0e200 0 0x170>, /* tx0 */
- 				      <0 0x1c0e400 0 0x200>, /* rx0 */
- 				      <0 0x1c0ea00 0 0x1f0>, /* pcs */
-@@ -1673,7 +1673,7 @@
- 
- 			status = "disabled";
- 
--			pcie2_lane: lanes@1c16200 {
-+			pcie2_lane: phy@1c16200 {
- 				reg = <0 0x1c16200 0 0x170>, /* tx0 */
- 				      <0 0x1c16400 0 0x200>, /* rx0 */
- 				      <0 0x1c16a00 0 0x1f0>, /* pcs */
-@@ -1750,7 +1750,7 @@
- 			reset-names = "ufsphy";
- 			status = "disabled";
- 
--			ufs_mem_phy_lanes: lanes@1d87400 {
-+			ufs_mem_phy_lanes: phy@1d87400 {
- 				reg = <0 0x01d87400 0 0x108>,
- 				      <0 0x01d87600 0 0x1e0>,
- 				      <0 0x01d87c00 0 0x1dc>,
-@@ -2330,7 +2330,7 @@
- 				 <&gcc GCC_USB3_PHY_SEC_BCR>;
- 			reset-names = "phy", "common";
- 
--			usb_2_ssphy: lanes@88eb200 {
-+			usb_2_ssphy: phy@88eb200 {
- 				reg = <0 0x088eb200 0 0x200>,
- 				      <0 0x088eb400 0 0x200>,
- 				      <0 0x088eb800 0 0x800>;
-diff --git a/arch/arm64/boot/dts/qcom/sm8350.dtsi b/arch/arm64/boot/dts/qcom/sm8350.dtsi
-index 9c44e62a9cd9..b19a3619e56b 100644
---- a/arch/arm64/boot/dts/qcom/sm8350.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8350.dtsi
-@@ -1080,7 +1080,7 @@
- 			reset-names = "ufsphy";
- 			status = "disabled";
- 
--			ufs_mem_phy_lanes: lanes@1d87400 {
-+			ufs_mem_phy_lanes: phy@1d87400 {
- 				reg = <0 0x01d87400 0 0x108>,
- 				      <0 0x01d87600 0 0x1e0>,
- 				      <0 0x01d87c00 0 0x1dc>,
+ &usb_1 {
 -- 
 2.17.1
 
