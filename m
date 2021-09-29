@@ -2,172 +2,82 @@ Return-Path: <SRS0=Qt1L=OT=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A0EE6C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 02:46:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 590E8C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 03:43:09 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 524BB61152
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 02:46:24 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 524BB61152
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oracle.com
+	by mail.kernel.org (Postfix) with ESMTPS id E6DAE613D0
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 03:43:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E6DAE613D0
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	References:Message-ID:From:Subject:Cc:To:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=vFxW9MeodBaZgu/qWpuUSR/ZKafkncHv49+jrMC06I4=; b=0EgAmczfCLg2AKjm3kyjKtzdJd
-	PiBifZkYDZK5epv24FaxGEc5N7DYNYNdTwR+UDIMMl0j7pouOSlT/3k+NiDOy/jRai+DhzffEwUu9
-	XWjSWtJtRuUhk4WRWA9352HAjssCJ2LuvROdsDqZptpYcd+HQLjhfzLmB8dS1X4+9hTqb1H99OMCB
-	/akEjMN9/fwWYoe3EiduFwM8IYkwwwpWQJLiEzk/sZvpVHZwhj7UVcPta7T55GCw7UqSzCIiDb9GR
-	w98AC8ExOWF5S7DEJ20NHX3wjPzyKwMN16yF9tjXrYgkxnVP1USwWt3cSvBZIuMIG4rKCsCrIv0zb
-	wsCt2i6g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YEY4zgBRz0PkqxVzAhBStAulRnX7qdlC250aL9L9z4M=; b=LKD+P2psByanoz
+	YWtOSYoTHQhwtecxWzUuUsBTEpkZUDFLiUUPgdg02k0G+AWxli5AmX1DUNptbEJx1ZW8pDKLaybNE
+	Y/TREgtAI5seiqjYxyELNSD5+Q4b8Vny9FphaRJP6HJ2vAe9CuzE4+/nEVOBZ12COulghgAoJy1Zt
+	MuhQkmaNwtgON1h9VOFkmADOHp4cg7Aa7fk1GJmWraEslD4b04BLOpL8oCn+jCK+reF8zIEQljiWR
+	LEPUmcF+SkmRSKJKlgY+82y0g8DeofcjCcT8/xR/ihxHzphQyEvXtklB/0tkp161gMVtaj7uun2yk
+	GblYc/RBE7MfTyohk1Fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mVPbz-009ifZ-SN; Wed, 29 Sep 2021 02:46:23 +0000
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+	id 1mVQUu-009py5-Gr; Wed, 29 Sep 2021 03:43:08 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mVPbw-009if6-KI; Wed, 29 Sep 2021 02:46:22 +0000
-Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 18T211KI008632; 
- Wed, 29 Sep 2021 02:46:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=to : cc : subject :
- from : message-id : references : date : in-reply-to : content-type :
- mime-version; s=corp-2021-07-09;
- bh=L9xqR4VutLml4twP2ovK+QnNiISVsCYSw+7Q/GzwDR8=;
- b=kdVkym4JhOV+M71YvMHS6/qV8CmsiUCWFIuKPMFKsjhCUPx0D1dvHp3F09CYHIT/Fw0G
- Z3stlgUoKHsMoVKLAX3QVGinOywDD0/IgE6GETzhSXDXtogfXpRFgZWcsXR0hZsuHknS
- vq1hnfa3AI8A4+1OowFYnjm/LvE/ShB4yHiLBsQm5z8mLutOs4RCTQyhaNoxhJzd3UNk
- p+eHls/lOIM0gdcCxhqx5JXDBJ2BatcYiy1Sr514w1yM9UVkYb0KqAKG1urMlVVdQHiZ
- KoGZ/vZyQaQ7eDZZrmVZXmn/TU1FQAcqYqvlvO6jXCHjxFMJoTWJF8YquGm44oxAxzeB ng== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by mx0b-00069f02.pphosted.com with ESMTP id 3bbh6nv3x6-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 29 Sep 2021 02:46:14 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 18T2ewBj114298;
- Wed, 29 Sep 2021 02:46:13 GMT
-Received: from nam12-bn8-obe.outbound.protection.outlook.com
- (mail-bn8nam12lp2175.outbound.protection.outlook.com [104.47.55.175])
- by aserp3030.oracle.com with ESMTP id 3bc4k8m1rh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 29 Sep 2021 02:46:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=G7Buiqih/Hl39JaODCqKM1vBO3+7KRitesbjuOt+t/AN3YQvLyy2fNuWyopGoNYm/+NvhzpAR0hu5G9bs6+yDxf77ZiJ7WXTSUNR8IZ5qicfKho5XSjwauaogeTXoDnEfpFcrpwaL6IQ2ecZuguKCj+RnXyMWQCDpfFD2B7hSWAMGDGddIu54Y2UW34WZF1teRy+GZtxCivuWJF8udsxgOyz2JI252zpTuQFBsTvX6GAhjptKYJvzZHv1GCRA/ocAG2sh73ah8bIeufpowUaVcWMGFAlvJdAsHdQQAU0umDgly5hl1/b5hCgZ4FhpDf2AV0DpqHCUMh0kvekn8lJxg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
- bh=L9xqR4VutLml4twP2ovK+QnNiISVsCYSw+7Q/GzwDR8=;
- b=OpMds3tuEnR/DrOLHC4B545N3IEKgQ20rCcJbTG3v+AdPx1w6ToRCmly9zsP0pCKKNVhKVc15oOoBlqGxmy2qr6tVcuuYtHzXwOHhK7AyUO6mNCTeYOVgu2oL5ZwOiyag1YQCSC4ajeE6Sx0MQIJgiuc01x+9xjF8p6QA9TsZR/zJLr+lEOlxfOBRie4KWrR7MRKPDZBfiD4Zu91AYUHy9fSby/+tgZGN3ITZi2X4BfAVwsVP6D93vrjxepRzSlINaJlSTUYsTyHjFF7Gtbe7/7sosZ9fYJXaM2/farLr7ZpPZdPZAGuwcPrBcmEXfgbayUn2CsMGnOOV+FIj/P4Iw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=L9xqR4VutLml4twP2ovK+QnNiISVsCYSw+7Q/GzwDR8=;
- b=TjUQDY1zxVgciLrzD8OYRCwGBrBeCXtjIJWzaLMFO6xKxUAuG2v1ATmrJYpzQDtEKL/mFf3rwIRrYG7n/pRqy9bw4XH66ooAY0YmOnbBN8vJ0l7KKjKdLknaq1hOBFezSYy6ru0qDNg3qk85hmXUfGj2htffxgkHNpHgkhyr+kg=
-Authentication-Results: canonical.com; dkim=none (message not signed)
- header.d=none;canonical.com; dmarc=none action=none header.from=oracle.com;
-Received: from PH0PR10MB4759.namprd10.prod.outlook.com (2603:10b6:510:3d::12)
- by PH0PR10MB5436.namprd10.prod.outlook.com (2603:10b6:510:e2::13)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4544.18; Wed, 29 Sep
- 2021 02:46:11 +0000
-Received: from PH0PR10MB4759.namprd10.prod.outlook.com
- ([fe80::c0ed:36a0:7bc8:f2dc]) by PH0PR10MB4759.namprd10.prod.outlook.com
- ([fe80::c0ed:36a0:7bc8:f2dc%8]) with mapi id 15.20.4566.014; Wed, 29 Sep 2021
- 02:46:11 +0000
-To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
- "James E.J. Bottomley" <jejb@linux.ibm.com>,
- "Martin K. Petersen" <martin.petersen@oracle.com>, Marek Szyprowski
- <m.szyprowski@samsung.com>,
- Jaehoon Chung <jh80.chung@samsung.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
- Chanho Park <chanho61.park@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 2/2] scsi: ufs: exynos: unify naming
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-Organization: Oracle Corporation
-Message-ID: <yq1czosgkuy.fsf@ca-mkp.ca.oracle.com>
-References: <20210924132658.109814-1-krzysztof.kozlowski@canonical.com>
- <20210924132658.109814-2-krzysztof.kozlowski@canonical.com>
-Date: Tue, 28 Sep 2021 22:46:09 -0400
-In-Reply-To: <20210924132658.109814-2-krzysztof.kozlowski@canonical.com>
- (Krzysztof Kozlowski's message of "Fri, 24 Sep 2021 15:26:58 +0200")
-X-ClientProxiedBy: SN2PR01CA0021.prod.exchangelabs.com (2603:10b6:804:2::31)
- To PH0PR10MB4759.namprd10.prod.outlook.com (2603:10b6:510:3d::12)
-MIME-Version: 1.0
-Received: from ca-mkp.ca.oracle.com (138.3.201.46) by
- SN2PR01CA0021.prod.exchangelabs.com (2603:10b6:804:2::31) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4566.14 via Frontend Transport; Wed, 29 Sep 2021 02:46:11 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 00959295-6452-4f9e-fbca-08d982f34c0a
-X-MS-TrafficTypeDiagnostic: PH0PR10MB5436:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <PH0PR10MB54369BF51C4799EF2DE843E58EA99@PH0PR10MB5436.namprd10.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:4303;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: PVEHSHRlUWeNZZ4Zq2fxT4RRFaps0yezRbEJNeMBxeYnCK53RdeKDkeswQpRMIv+28yScVOtOJvbBfafrIBBpCEgbgVNcVTCUcCDlXw3ZgytcMPmWd3QcsbvbbjvgfEtDKXJqx16YcQYuARtbRaurYcdrMIUD326mIZC6V9K2QeOQM/TI7IOpQk9+pXuZ1uBU1x24VkYevKISbVmPUB/XZTZQzsdi4OqtoMPRlAAUftNe4glkEq9X622Ky+LpmbvSvWFoUuEt+UAfhehxChDxt8t/emK63nHCU2Spsql53uFrWbxox2PefUJIzC6irlotMOuG71mvj9Vkg6qSbj+f3NTzQ2AcDETGy7OVcgNmkDrzPpxt+sERtmnwBGz6HDXHslk5gLzCjNLTCPTDvDHFnXFECjWsDN/XyIsgWWhmyqPZDBbwAh1hP9WPzwyAz47FvU9mJAVKH+8fDr6RMWlB2j+UbzPxlUEf3FOVGUjBS7JyEKaxtsV4ic7h7pC/nJkaZ7dpby1DjV5gU+jTQvkgWo3TiibYmFr8Zydfmc1CzTgeq5v47b2bWub6LvDaDI/mAsgEcz/MjLc1uEjbKujlilVNSge0G5LSwDK80ucpIbuWsfp0Rff+iRzi9UliEkR5ks+olzpcuxzrnmxGDOG4xwdk4/MP8bpHOvFHcwjFyZYInn2XGp9aiLKH6f0NplfQMAarSD80cAh+fuXT+PqvA==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:PH0PR10MB4759.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(366004)(558084003)(7416002)(5660300002)(956004)(508600001)(36916002)(4326008)(26005)(66556008)(66476007)(7696005)(8936002)(52116002)(8676002)(66946007)(55016002)(6916009)(186003)(54906003)(2906002)(38100700002)(38350700002)(316002)(86362001);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?pxHM7dUXMrg54x/kLBh+abyKFZlYPqnB8ntb7EWQ5/Tz+aqnBEPlxuFB1V1k?=
- =?us-ascii?Q?2ES8AiELhhLP4NqT3aljK6pLy/CWtVtl47KoFYyNFW5F+l8p88GHDNQ7IE9j?=
- =?us-ascii?Q?buGp8ZJW9B+7XKQmcBSy4hUg08qywMZWWtbQ2Eu8xoRnob9HIuwv7MeRjXsL?=
- =?us-ascii?Q?FSFWfLN8QwmrZH2s579Cvf8eSIOWjKAKS0dtVA0rJRKM9HykE1cK28TuOOvL?=
- =?us-ascii?Q?Qxfm1sSmEsG0JH0WKOEbPllAgF9zas9Xn55pa7O+XCROeb/TcB24TxTZVYrC?=
- =?us-ascii?Q?pOF385jqUUQwqJCZ1luCrchpYZTQzglf6K84OIIerE9bRPY6p1/5G6rzc5++?=
- =?us-ascii?Q?7SkWtyYXLLkMwQjh3ED6WHK/KLljkl7RDTuq0tKBsOsWP1n4zSPVVYjSHXgR?=
- =?us-ascii?Q?0ov6tqMGfNpTPQbgAzbpQ2/BKXqOapxZf2f75Ek0aZ3jqTH2oil2BZeHN76z?=
- =?us-ascii?Q?wYTYPhTYb/hpbeD+frB3HKosNHfhxxjfcCbvvpBgiTpxg6gzZmEp69h5C1F5?=
- =?us-ascii?Q?GVlhx7s5MvfxQkupJOc7KqYsHlNo3on/l6yZ1NoywFTl6Ks8vGFnAVimjYMX?=
- =?us-ascii?Q?3i46rIu6vgETwDh6a3GP1EOHWeyM+g++Op7TUirZAT5vIWA2g3k2RwyL5Fkt?=
- =?us-ascii?Q?aGH5exo39quAqRm/RAzXeoHhirJMzFWusT4LaTj+fnB6BoDm5Em0EKetGT84?=
- =?us-ascii?Q?z4yLJol3zhgxSSc7pvvnEQ13rdpOZd+3KdyfgEAgGc95wvfluUdsoF362Yqy?=
- =?us-ascii?Q?m3aFLcpnfPsbQbvLEWk5RAvACV3iJScf2RJlE14W7gYuxCnR8/1vcVwHF3M0?=
- =?us-ascii?Q?1ULB2M0Uj70BflXM/nlpWD3LT+7/u8CrIohJIoOUA+UfFEs2V7mk8nf5IF6L?=
- =?us-ascii?Q?zUW6mnDVjU+rDpKQvikx95hNvCBJXqUPZ7o6Q8tJhIzCayS9qTdrZyBjSLFb?=
- =?us-ascii?Q?FtOWRATQZrO+QecMfyn7QOskkctlszUKkFYleRKMbDFbWSqQu7kBFMqgl1fG?=
- =?us-ascii?Q?fvN5yeQjLKZbfTaWSFqyQWy46xMBvh2zA7niNslKWOokoBbYTa/SvAi99G+i?=
- =?us-ascii?Q?e7PNl/NFbLPe+yAXBVvT6WQuGsUCmSdAl0PB1DcIvj8jnVJndKHaQcuJrU/C?=
- =?us-ascii?Q?MjtIaff6XyXk1FyXoaMUg3Uxrs8rG5WPw2mJ8FVLESF27/rIGAzZ+iAbV5SD?=
- =?us-ascii?Q?F7fBlfORlzEV/B5VOlu/kqRj3zQDvRdcgXD5PCsjvLnBS8Z/8qIeLZDj01F6?=
- =?us-ascii?Q?UPNPW+DXrRagCXFGv1mlz535zpDQD2MYNSCc9wsMWHxmK4Whh2oMBACOkhbz?=
- =?us-ascii?Q?UhEbd6k9VDsE+fo86SwILzdX?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 00959295-6452-4f9e-fbca-08d982f34c0a
-X-MS-Exchange-CrossTenant-AuthSource: PH0PR10MB4759.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Sep 2021 02:46:11.6726 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: cjnW/HsrHq6uG4/rbIXVs9klApJj77V9juDikh2TjPGhqJndaoquMdai7r6kppXnqe9/VgsrISZpaElTkZHv9eywIN3/ujkVgyjNdRf2ipI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR10MB5436
-X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10121
- signatures=668683
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- phishscore=0 mlxscore=0
- mlxlogscore=999 malwarescore=0 spamscore=0 bulkscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2109230001
- definitions=main-2109290013
-X-Proofpoint-ORIG-GUID: xwWCDHIS502JbJU9ex_23_iw1LqLoZER
-X-Proofpoint-GUID: xwWCDHIS502JbJU9ex_23_iw1LqLoZER
+ id 1mVQUr-009pxR-UL
+ for linux-phy@lists.infradead.org; Wed, 29 Sep 2021 03:43:07 +0000
+Received: by mail-pl1-x632.google.com with SMTP id l6so571723plh.9
+ for <linux-phy@lists.infradead.org>; Tue, 28 Sep 2021 20:43:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=8EIDIG7He/WdJECyN2rIQHoUkf1zGI2sOfErvrjMF1g=;
+ b=kuWPmsoRK9qCOXQhyxXQGOqOvNquxsxoUC42Bng3blovL6sX9bC2bYDmImOj+8fTp/
+ MySsDJEShHHYqrJpRIpxiCoMuJFm4YwLZ3RXSyz98cml5KghqpxVtVU9x767bZtODKlq
+ lTF5sitYWDL+IZHFJFEVfVv4VdSNTKqwvZl3C4j3sSSAnD1M18Y0UF9B9g+IPmj/88+m
+ lniW+N1kDEJ9Ou2tSr4VYb4yJfEk8da52G9xjrF/lqM0ThI2ej4t7Pvz0lC6P6RrpaAB
+ d8zGgs1PGeTsTBGuzhgQyV9a4SFDxH0TUdfrDpk2UuKvP9c7Tpb68V90EaCqLwxA/QaL
+ fP8Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=8EIDIG7He/WdJECyN2rIQHoUkf1zGI2sOfErvrjMF1g=;
+ b=wFFPT3NnL9vdHDST6w52mCNuIy35iX1fijyV75eiz44Oj+oHtJTuKkcGJ3W5skBpFP
+ qXmBdtkw1I2A5Z1GNLwXtAkl9qKs9U8kKpgu/ZwBmG/w3UEJ1u53uIYlAM9JSq97PHeV
+ HYJuUXZO+19wbvEIiLTEsGSjhF2TrC95wNzanzYCGwz20fULIK5K62eHzpULyTlLPEG6
+ 9jbRsJz5QQ/2N5TBBlNaFaCoxtNrbXIllwXA4i/JPW3jwCCgie2fQyHzzp3VX2gX6l81
+ UUa7NO4Lalnr6jSxxkPNVTKgvI2UilIVQldBJ+Eg+F9er59+EoqWsc+dNGdYB5M3ANcN
+ EOiQ==
+X-Gm-Message-State: AOAM532T2pZ4UIxaTjjjbo311yuI+BdjZUOx1tW+HR2EwkT9M5ZH3pP9
+ zHKRobJtZZk2iSvSiJspMqppRMIitdfcvA==
+X-Google-Smtp-Source: ABdhPJzUqMPiehVu2EGfrsf8/6nW/NInCCQQuRSrplizc06q+EfiDn320mU2cjaSW62oPRAff5W5Rg==
+X-Received: by 2002:a17:90b:2358:: with SMTP id
+ ms24mr2404501pjb.1.1632886984179; 
+ Tue, 28 Sep 2021 20:43:04 -0700 (PDT)
+Received: from localhost.localdomain (80.251.214.228.16clouds.com.
+ [80.251.214.228])
+ by smtp.gmail.com with ESMTPSA id b7sm533032pfb.20.2021.09.28.20.43.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Sep 2021 20:43:03 -0700 (PDT)
+From: Shawn Guo <shawn.guo@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Shawn Guo <shawn.guo@linaro.org>
+Subject: [PATCH 00/10] Make Qualcomm QMP PHY dtbs_check warning free
+Date: Wed, 29 Sep 2021 11:42:43 +0800
+Message-Id: <20210929034253.24570-1-shawn.guo@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210928_194620_907785_0C0A5095 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20210928_204306_026065_58F621CC 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -179,20 +89,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+As I recently add QMP USB3 PHY support for QCM2290 and touch the binding
+doc.  Rob's bot report a huge number of dtbs_check warnings on Qualcomm
+DTS files.  Although none of them is new warning introduced by my
+change, I decided to clean them up.
 
-Krzysztof,
+The first two patches are fixes on QMP PHY binding, and the reset are
+all fixes on Qualcomm DTS.  In the end, with this series, we are QMP PHY
+dtbs_check warning free!
 
-> We use everywhere "Samsung" and "Exynos", not the uppercase versions.
 
-Applied to 5.16/scsi-staging, thanks!
+Shawn Guo (10):
+  dt-bindings: phy: qcom,qmp: '#clock-cells' is not required for parent
+    node
+  dt-bindings: phy: qcom,qmp: IPQ6018 and IPQ8074 PCIe PHY require no
+    supply
+  arm64: dts: qcom: msm8996: Move '#clock-cells' to QMP PHY child node
+  arm64: dts: qcom: Correct QMP PHY child node name
+  arm64: dts: qcom: Drop max-microamp and vddp-ref-clk properties from
+    QMP PHY
+  arm64: dts: qcom: Drop reg-names from QMP PHY nodes
+  arm64: dts: qcom: msm8998-clamshell: Add missing vdda supplies
+  arm64: dts: qcom: Fix IPQ8074 PCIe PHY nodes
+  arm64: dts: qcom: ipq8074-hk01: Add dummy supply for QMP USB3 PHY
+  ARM: dts: qcom: sdx55: Drop '#clock-cells' from QMP PHY node
+
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 57 +++++++++----------
+ arch/arm/boot/dts/qcom-sdx55.dtsi             |  1 -
+ arch/arm64/boot/dts/qcom/apq8096-ifc6640.dts  |  3 -
+ arch/arm64/boot/dts/qcom/ipq6018.dtsi         |  2 +-
+ arch/arm64/boot/dts/qcom/ipq8074-hk01.dts     |  6 ++
+ arch/arm64/boot/dts/qcom/ipq8074.dtsi         | 54 +++++++++++++-----
+ arch/arm64/boot/dts/qcom/msm8996.dtsi         | 14 ++---
+ .../boot/dts/qcom/msm8998-clamshell.dtsi      |  2 +
+ arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi     |  4 --
+ .../boot/dts/qcom/msm8998-oneplus-common.dtsi |  4 --
+ arch/arm64/boot/dts/qcom/msm8998.dtsi         |  8 +--
+ arch/arm64/boot/dts/qcom/qrb5165-rb5.dts      |  2 -
+ arch/arm64/boot/dts/qcom/sa8155p-adp.dts      |  2 -
+ arch/arm64/boot/dts/qcom/sdm845.dtsi          | 11 ++--
+ arch/arm64/boot/dts/qcom/sm8150-hdk.dts       |  2 -
+ .../dts/qcom/sm8150-microsoft-surface-duo.dts |  2 -
+ arch/arm64/boot/dts/qcom/sm8150-mtp.dts       |  2 -
+ arch/arm64/boot/dts/qcom/sm8150.dtsi          |  7 +--
+ arch/arm64/boot/dts/qcom/sm8250-hdk.dts       |  2 -
+ arch/arm64/boot/dts/qcom/sm8250-mtp.dts       |  2 -
+ arch/arm64/boot/dts/qcom/sm8250.dtsi          | 10 ++--
+ arch/arm64/boot/dts/qcom/sm8350-hdk.dts       |  2 -
+ arch/arm64/boot/dts/qcom/sm8350-mtp.dts       |  2 -
+ arch/arm64/boot/dts/qcom/sm8350.dtsi          |  6 +-
+ 24 files changed, 102 insertions(+), 105 deletions(-)
 
 -- 
-Martin K. Petersen	Oracle Linux Engineering
+2.17.1
+
 
 -- 
 linux-phy mailing list
