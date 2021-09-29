@@ -1,85 +1,173 @@
-Return-Path: <SRS0=m7K2=OS=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Qt1L=OT=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 158FCC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 16:35:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A0EE6C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 02:46:24 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C75736124B
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Sep 2021 16:35:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C75736124B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 524BB61152
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Sep 2021 02:46:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 524BB61152
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oracle.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rJ+Ah907t0u4aWJjCxZf7zUxkbxh4zQlMnUystOJO7c=; b=JKNMWtV07XuXRG
-	TyAo0qWvI3ssD+B5ow5ZENopJvKcNuCO2sUFT4h6gCo2PmPf0x+Gm0jmiLYvTr5NsKPtfGiATNNz0
-	oYmUZQb05fFN6I+oT1uMhM8CDV2A+bBOPeHH2r+uq0kFSmZgMSTmlNvU/f5VA1JQyPh4SR87MbLLv
-	SEMFAMOUM61FuhyIjdozRjNJMBh+p6hCSXpfWlh4MGjVq1StbZxsoDt33UXcJAIHNjY/bEIk9Wo3/
-	0GwhPc+K9X34htPoB7tpBKXbkmW2/uxwvU46XC5QFrpvxzCi6iM7HKXdpFnbJLYMlGP0Ai6YKt9Ml
-	rdXkCS5THsfcH87zK8EA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	References:Message-ID:From:Subject:Cc:To:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vFxW9MeodBaZgu/qWpuUSR/ZKafkncHv49+jrMC06I4=; b=0EgAmczfCLg2AKjm3kyjKtzdJd
+	PiBifZkYDZK5epv24FaxGEc5N7DYNYNdTwR+UDIMMl0j7pouOSlT/3k+NiDOy/jRai+DhzffEwUu9
+	XWjSWtJtRuUhk4WRWA9352HAjssCJ2LuvROdsDqZptpYcd+HQLjhfzLmB8dS1X4+9hTqb1H99OMCB
+	/akEjMN9/fwWYoe3EiduFwM8IYkwwwpWQJLiEzk/sZvpVHZwhj7UVcPta7T55GCw7UqSzCIiDb9GR
+	w98AC8ExOWF5S7DEJ20NHX3wjPzyKwMN16yF9tjXrYgkxnVP1USwWt3cSvBZIuMIG4rKCsCrIv0zb
+	wsCt2i6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mVG58-0086KM-DB; Tue, 28 Sep 2021 16:35:50 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1mVPbz-009ifZ-SN; Wed, 29 Sep 2021 02:46:23 +0000
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mVG54-0086JN-H9
- for linux-phy@lists.infradead.org; Tue, 28 Sep 2021 16:35:49 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 18SGZc0E003471;
- Tue, 28 Sep 2021 11:35:38 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1632846938;
- bh=fpI1Kx1T6FBZ5bICzOy4tp1WnCGqRMUYHEJ5kwbOz6A=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=WdfkFXwbsPamEFEih8atqwRXwCz3q0bCYdvfQGwRExTolFKcX5aTPJgyiz/X6Bck0
- K9PuYXpknIhkCU+GQ4kErZ9OwoEGaKch59woVZOhQdqAagydiNY6Q1xDqhh2mureQV
- 5+QWBorD7nn9wJH5i3cP3usSLYOE4oBaJ+qufeG0=
-Received: from DLEE111.ent.ti.com (dlee111.ent.ti.com [157.170.170.22])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 18SGZcnG036389
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 28 Sep 2021 11:35:38 -0500
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE111.ent.ti.com
- (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Tue, 28
- Sep 2021 11:35:38 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Tue, 28 Sep 2021 11:35:38 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 18SGZbNr036224;
- Tue, 28 Sep 2021 11:35:38 -0500
-Date: Tue, 28 Sep 2021 22:05:37 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-CC: Vinod Koul <vkoul@kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>, Tomi
- Valkeinen <tomi.valkeinen@ideasonboard.com>, Laurent Pinchart
- <laurent.pinchart@ideasonboard.com>, Nikhil Devshatwar <nikhil.nd@ti.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v5 2/6] phy: cdns-dphy: Add Rx support
-Message-ID: <20210928163535.2lpifgb23zzlolib@ti.com>
-References: <20210902185543.18875-1-p.yadav@ti.com>
- <20210902185543.18875-3-p.yadav@ti.com>
- <YUMa/ocoQ9l3JDe6@aptenodytes>
- <20210917172809.rjtf7ww7vjcfvey5@ti.com>
+ id 1mVPbw-009if6-KI; Wed, 29 Sep 2021 02:46:22 +0000
+Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 18T211KI008632; 
+ Wed, 29 Sep 2021 02:46:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : message-id : references : date : in-reply-to : content-type :
+ mime-version; s=corp-2021-07-09;
+ bh=L9xqR4VutLml4twP2ovK+QnNiISVsCYSw+7Q/GzwDR8=;
+ b=kdVkym4JhOV+M71YvMHS6/qV8CmsiUCWFIuKPMFKsjhCUPx0D1dvHp3F09CYHIT/Fw0G
+ Z3stlgUoKHsMoVKLAX3QVGinOywDD0/IgE6GETzhSXDXtogfXpRFgZWcsXR0hZsuHknS
+ vq1hnfa3AI8A4+1OowFYnjm/LvE/ShB4yHiLBsQm5z8mLutOs4RCTQyhaNoxhJzd3UNk
+ p+eHls/lOIM0gdcCxhqx5JXDBJ2BatcYiy1Sr514w1yM9UVkYb0KqAKG1urMlVVdQHiZ
+ KoGZ/vZyQaQ7eDZZrmVZXmn/TU1FQAcqYqvlvO6jXCHjxFMJoTWJF8YquGm44oxAxzeB ng== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by mx0b-00069f02.pphosted.com with ESMTP id 3bbh6nv3x6-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 29 Sep 2021 02:46:14 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 18T2ewBj114298;
+ Wed, 29 Sep 2021 02:46:13 GMT
+Received: from nam12-bn8-obe.outbound.protection.outlook.com
+ (mail-bn8nam12lp2175.outbound.protection.outlook.com [104.47.55.175])
+ by aserp3030.oracle.com with ESMTP id 3bc4k8m1rh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 29 Sep 2021 02:46:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=G7Buiqih/Hl39JaODCqKM1vBO3+7KRitesbjuOt+t/AN3YQvLyy2fNuWyopGoNYm/+NvhzpAR0hu5G9bs6+yDxf77ZiJ7WXTSUNR8IZ5qicfKho5XSjwauaogeTXoDnEfpFcrpwaL6IQ2ecZuguKCj+RnXyMWQCDpfFD2B7hSWAMGDGddIu54Y2UW34WZF1teRy+GZtxCivuWJF8udsxgOyz2JI252zpTuQFBsTvX6GAhjptKYJvzZHv1GCRA/ocAG2sh73ah8bIeufpowUaVcWMGFAlvJdAsHdQQAU0umDgly5hl1/b5hCgZ4FhpDf2AV0DpqHCUMh0kvekn8lJxg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
+ bh=L9xqR4VutLml4twP2ovK+QnNiISVsCYSw+7Q/GzwDR8=;
+ b=OpMds3tuEnR/DrOLHC4B545N3IEKgQ20rCcJbTG3v+AdPx1w6ToRCmly9zsP0pCKKNVhKVc15oOoBlqGxmy2qr6tVcuuYtHzXwOHhK7AyUO6mNCTeYOVgu2oL5ZwOiyag1YQCSC4ajeE6Sx0MQIJgiuc01x+9xjF8p6QA9TsZR/zJLr+lEOlxfOBRie4KWrR7MRKPDZBfiD4Zu91AYUHy9fSby/+tgZGN3ITZi2X4BfAVwsVP6D93vrjxepRzSlINaJlSTUYsTyHjFF7Gtbe7/7sosZ9fYJXaM2/farLr7ZpPZdPZAGuwcPrBcmEXfgbayUn2CsMGnOOV+FIj/P4Iw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=L9xqR4VutLml4twP2ovK+QnNiISVsCYSw+7Q/GzwDR8=;
+ b=TjUQDY1zxVgciLrzD8OYRCwGBrBeCXtjIJWzaLMFO6xKxUAuG2v1ATmrJYpzQDtEKL/mFf3rwIRrYG7n/pRqy9bw4XH66ooAY0YmOnbBN8vJ0l7KKjKdLknaq1hOBFezSYy6ru0qDNg3qk85hmXUfGj2htffxgkHNpHgkhyr+kg=
+Authentication-Results: canonical.com; dkim=none (message not signed)
+ header.d=none;canonical.com; dmarc=none action=none header.from=oracle.com;
+Received: from PH0PR10MB4759.namprd10.prod.outlook.com (2603:10b6:510:3d::12)
+ by PH0PR10MB5436.namprd10.prod.outlook.com (2603:10b6:510:e2::13)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4544.18; Wed, 29 Sep
+ 2021 02:46:11 +0000
+Received: from PH0PR10MB4759.namprd10.prod.outlook.com
+ ([fe80::c0ed:36a0:7bc8:f2dc]) by PH0PR10MB4759.namprd10.prod.outlook.com
+ ([fe80::c0ed:36a0:7bc8:f2dc%8]) with mapi id 15.20.4566.014; Wed, 29 Sep 2021
+ 02:46:11 +0000
+To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>, Marek Szyprowski
+ <m.szyprowski@samsung.com>,
+ Jaehoon Chung <jh80.chung@samsung.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
+ Chanho Park <chanho61.park@samsung.com>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH 2/2] scsi: ufs: exynos: unify naming
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+Message-ID: <yq1czosgkuy.fsf@ca-mkp.ca.oracle.com>
+References: <20210924132658.109814-1-krzysztof.kozlowski@canonical.com>
+ <20210924132658.109814-2-krzysztof.kozlowski@canonical.com>
+Date: Tue, 28 Sep 2021 22:46:09 -0400
+In-Reply-To: <20210924132658.109814-2-krzysztof.kozlowski@canonical.com>
+ (Krzysztof Kozlowski's message of "Fri, 24 Sep 2021 15:26:58 +0200")
+X-ClientProxiedBy: SN2PR01CA0021.prod.exchangelabs.com (2603:10b6:804:2::31)
+ To PH0PR10MB4759.namprd10.prod.outlook.com (2603:10b6:510:3d::12)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210917172809.rjtf7ww7vjcfvey5@ti.com>
-User-Agent: NeoMutt/20171215
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Received: from ca-mkp.ca.oracle.com (138.3.201.46) by
+ SN2PR01CA0021.prod.exchangelabs.com (2603:10b6:804:2::31) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4566.14 via Frontend Transport; Wed, 29 Sep 2021 02:46:11 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 00959295-6452-4f9e-fbca-08d982f34c0a
+X-MS-TrafficTypeDiagnostic: PH0PR10MB5436:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <PH0PR10MB54369BF51C4799EF2DE843E58EA99@PH0PR10MB5436.namprd10.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4303;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: PVEHSHRlUWeNZZ4Zq2fxT4RRFaps0yezRbEJNeMBxeYnCK53RdeKDkeswQpRMIv+28yScVOtOJvbBfafrIBBpCEgbgVNcVTCUcCDlXw3ZgytcMPmWd3QcsbvbbjvgfEtDKXJqx16YcQYuARtbRaurYcdrMIUD326mIZC6V9K2QeOQM/TI7IOpQk9+pXuZ1uBU1x24VkYevKISbVmPUB/XZTZQzsdi4OqtoMPRlAAUftNe4glkEq9X622Ky+LpmbvSvWFoUuEt+UAfhehxChDxt8t/emK63nHCU2Spsql53uFrWbxox2PefUJIzC6irlotMOuG71mvj9Vkg6qSbj+f3NTzQ2AcDETGy7OVcgNmkDrzPpxt+sERtmnwBGz6HDXHslk5gLzCjNLTCPTDvDHFnXFECjWsDN/XyIsgWWhmyqPZDBbwAh1hP9WPzwyAz47FvU9mJAVKH+8fDr6RMWlB2j+UbzPxlUEf3FOVGUjBS7JyEKaxtsV4ic7h7pC/nJkaZ7dpby1DjV5gU+jTQvkgWo3TiibYmFr8Zydfmc1CzTgeq5v47b2bWub6LvDaDI/mAsgEcz/MjLc1uEjbKujlilVNSge0G5LSwDK80ucpIbuWsfp0Rff+iRzi9UliEkR5ks+olzpcuxzrnmxGDOG4xwdk4/MP8bpHOvFHcwjFyZYInn2XGp9aiLKH6f0NplfQMAarSD80cAh+fuXT+PqvA==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:PH0PR10MB4759.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(366004)(558084003)(7416002)(5660300002)(956004)(508600001)(36916002)(4326008)(26005)(66556008)(66476007)(7696005)(8936002)(52116002)(8676002)(66946007)(55016002)(6916009)(186003)(54906003)(2906002)(38100700002)(38350700002)(316002)(86362001);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?pxHM7dUXMrg54x/kLBh+abyKFZlYPqnB8ntb7EWQ5/Tz+aqnBEPlxuFB1V1k?=
+ =?us-ascii?Q?2ES8AiELhhLP4NqT3aljK6pLy/CWtVtl47KoFYyNFW5F+l8p88GHDNQ7IE9j?=
+ =?us-ascii?Q?buGp8ZJW9B+7XKQmcBSy4hUg08qywMZWWtbQ2Eu8xoRnob9HIuwv7MeRjXsL?=
+ =?us-ascii?Q?FSFWfLN8QwmrZH2s579Cvf8eSIOWjKAKS0dtVA0rJRKM9HykE1cK28TuOOvL?=
+ =?us-ascii?Q?Qxfm1sSmEsG0JH0WKOEbPllAgF9zas9Xn55pa7O+XCROeb/TcB24TxTZVYrC?=
+ =?us-ascii?Q?pOF385jqUUQwqJCZ1luCrchpYZTQzglf6K84OIIerE9bRPY6p1/5G6rzc5++?=
+ =?us-ascii?Q?7SkWtyYXLLkMwQjh3ED6WHK/KLljkl7RDTuq0tKBsOsWP1n4zSPVVYjSHXgR?=
+ =?us-ascii?Q?0ov6tqMGfNpTPQbgAzbpQ2/BKXqOapxZf2f75Ek0aZ3jqTH2oil2BZeHN76z?=
+ =?us-ascii?Q?wYTYPhTYb/hpbeD+frB3HKosNHfhxxjfcCbvvpBgiTpxg6gzZmEp69h5C1F5?=
+ =?us-ascii?Q?GVlhx7s5MvfxQkupJOc7KqYsHlNo3on/l6yZ1NoywFTl6Ks8vGFnAVimjYMX?=
+ =?us-ascii?Q?3i46rIu6vgETwDh6a3GP1EOHWeyM+g++Op7TUirZAT5vIWA2g3k2RwyL5Fkt?=
+ =?us-ascii?Q?aGH5exo39quAqRm/RAzXeoHhirJMzFWusT4LaTj+fnB6BoDm5Em0EKetGT84?=
+ =?us-ascii?Q?z4yLJol3zhgxSSc7pvvnEQ13rdpOZd+3KdyfgEAgGc95wvfluUdsoF362Yqy?=
+ =?us-ascii?Q?m3aFLcpnfPsbQbvLEWk5RAvACV3iJScf2RJlE14W7gYuxCnR8/1vcVwHF3M0?=
+ =?us-ascii?Q?1ULB2M0Uj70BflXM/nlpWD3LT+7/u8CrIohJIoOUA+UfFEs2V7mk8nf5IF6L?=
+ =?us-ascii?Q?zUW6mnDVjU+rDpKQvikx95hNvCBJXqUPZ7o6Q8tJhIzCayS9qTdrZyBjSLFb?=
+ =?us-ascii?Q?FtOWRATQZrO+QecMfyn7QOskkctlszUKkFYleRKMbDFbWSqQu7kBFMqgl1fG?=
+ =?us-ascii?Q?fvN5yeQjLKZbfTaWSFqyQWy46xMBvh2zA7niNslKWOokoBbYTa/SvAi99G+i?=
+ =?us-ascii?Q?e7PNl/NFbLPe+yAXBVvT6WQuGsUCmSdAl0PB1DcIvj8jnVJndKHaQcuJrU/C?=
+ =?us-ascii?Q?MjtIaff6XyXk1FyXoaMUg3Uxrs8rG5WPw2mJ8FVLESF27/rIGAzZ+iAbV5SD?=
+ =?us-ascii?Q?F7fBlfORlzEV/B5VOlu/kqRj3zQDvRdcgXD5PCsjvLnBS8Z/8qIeLZDj01F6?=
+ =?us-ascii?Q?UPNPW+DXrRagCXFGv1mlz535zpDQD2MYNSCc9wsMWHxmK4Whh2oMBACOkhbz?=
+ =?us-ascii?Q?UhEbd6k9VDsE+fo86SwILzdX?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 00959295-6452-4f9e-fbca-08d982f34c0a
+X-MS-Exchange-CrossTenant-AuthSource: PH0PR10MB4759.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Sep 2021 02:46:11.6726 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: cjnW/HsrHq6uG4/rbIXVs9klApJj77V9juDikh2TjPGhqJndaoquMdai7r6kppXnqe9/VgsrISZpaElTkZHv9eywIN3/ujkVgyjNdRf2ipI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR10MB5436
+X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10121
+ signatures=668683
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ phishscore=0 mlxscore=0
+ mlxlogscore=999 malwarescore=0 spamscore=0 bulkscore=0 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2109230001
+ definitions=main-2109290013
+X-Proofpoint-ORIG-GUID: xwWCDHIS502JbJU9ex_23_iw1LqLoZER
+X-Proofpoint-GUID: xwWCDHIS502JbJU9ex_23_iw1LqLoZER
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210928_093546_735407_6CC83BE6 
-X-CRM114-Status: GOOD (  53.55  )
+X-CRM114-CacheID: sfid-20210928_194620_907785_0C0A5095 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,361 +184,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17/09/21 10:58PM, Pratyush Yadav wrote:
-> +Rob
-> 
-> On 16/09/21 12:22PM, Paul Kocialkowski wrote:
-> > Hi,
-> > 
-> > On Fri 03 Sep 21, 00:25, Pratyush Yadav wrote:
-> > > The Cadence DPHY can be used to receive image data over the CSI-2
-> > > protocol. Add support for Rx mode. The programming sequence differs from
-> > > the Tx mode so it is added as a separate set of hooks to isolate the two
-> > > paths. The mode in which the DPHY has to be used is selected based on
-> > > the compatible.
-> > 
-> > I just realized that I didn't follow-up on a previous revision on the debate
-> > about using the phy sub-mode to distinguish between rx/tx.
-> > 
-> > I see that you've been using a dedicated compatible, but I'm not sure this is a
-> > good fit either. My understanding is that the compatible should describe a group
-> > of register-compatible revisions of a hardware component, not how the hardware
-> > is used specifically. I guess the distinction between rx/tx falls under
-> > the latter rather than the former.
-> 
-> I am not sure if that is the case. For example, we use "ti,am654-ospi" 
-> for Cadence Quadspi controller. The default compatible, "cdns,qspi-nor", 
-> only supports Quad SPI (4 lines). The "ti,am654-ospi" compatible also 
-> supports Octal SPI (8 lines).
-> 
-> In addition, I feel like the Rx DPHY is almost a different type of 
-> device from a Tx DPHY. The programming sequence is completely different, 
-> the clocks required are different, etc. So I think using a different 
-> compatible for Rx mode makes sense.
-> 
-> Rob, what do you think?
 
-Ping. I think my current approach works well. Unless there are any 
-objections I would like this series to move forward please.
+Krzysztof,
 
-> 
-> > 
-> > I just sent out a patch in my Allwinner MIPI CSI-2+ISP series adding
-> > a specific direction property:
-> > - https://lists.infradead.org/pipermail/linux-phy/2021-September/001420.html
-> > - https://lists.infradead.org/pipermail/linux-phy/2021-September/001421.html
-> > 
-> > Which I feel is a more appropriate solution to implement the distinction.
-> > 
-> > What do you think?
-> > 
-> > Cheers,
-> > 
-> > Paul
-> >  
-> > > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > > 
-> > > ---
-> > > 
-> > > Changes in v5:
-> > > - Use the new cdns_dphy_info to specify PHY ops.
-> > > - Re-order include in alphabetical order.
-> > > - Make bands const.
-> > > - Drop num_bands.
-> > > - Make i, lanes unsigned.
-> > > - Drop the maximum check in cdns_dphy_rx_get_band_ctrl(). Let the loop
-> > >   complete and return -EOPNOTSUPP when we reach the end.
-> > > - Drop the "rate < bands[i].min_rate" check since the bands are in
-> > >   ascending order.
-> > > - Move data_lane_ctrl to start of function and make it static const.
-> > > 
-> > > Changes in v4:
-> > > - Drop the submode parts. Use a different compatible for the Rx ops.
-> > > - Make bands and num_bands static.
-> > > 
-> > > Changes in v3:
-> > > - Use a table to select the band.
-> > > - Use a table to poll the data lane ready bits.
-> > > - Multiply the DPHY HS clock rate by 2 to get the bit rate since the
-> > >   clock is DDR.
-> > > 
-> > >  drivers/phy/cadence/cdns-dphy.c | 182 ++++++++++++++++++++++++++++++++
-> > >  1 file changed, 182 insertions(+)
-> > > 
-> > > diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> > > index e2c2b27c6539..9a4c1c684e9a 100644
-> > > --- a/drivers/phy/cadence/cdns-dphy.c
-> > > +++ b/drivers/phy/cadence/cdns-dphy.c
-> > > @@ -1,11 +1,14 @@
-> > >  // SPDX-License-Identifier: GPL-2.0+
-> > >  /*
-> > >   * Copyright: 2017-2018 Cadence Design Systems, Inc.
-> > > + * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com/
-> > >   */
-> > >  
-> > > +#include <linux/bitfield.h>
-> > >  #include <linux/bitops.h>
-> > >  #include <linux/clk.h>
-> > >  #include <linux/io.h>
-> > > +#include <linux/iopoll.h>
-> > >  #include <linux/module.h>
-> > >  #include <linux/of_address.h>
-> > >  #include <linux/of_device.h>
-> > > @@ -25,10 +28,14 @@
-> > >  #define DPHY_PMA_RCLK(reg)		(0x600 + (reg))
-> > >  #define DPHY_PMA_RDATA(lane, reg)	(0x700 + ((lane) * 0x100) + (reg))
-> > >  #define DPHY_PCS(reg)			(0xb00 + (reg))
-> > > +#define DPHY_ISO(reg)			(0xc00 + (reg))
-> > >  
-> > >  #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
-> > >  #define DPHY_CMN_SSM_EN			BIT(0)
-> > > +#define DPHY_CMN_RX_BANDGAP_TIMER_MASK	GENMASK(8, 1)
-> > >  #define DPHY_CMN_TX_MODE_EN		BIT(9)
-> > > +#define DPHY_CMN_RX_MODE_EN		BIT(10)
-> > > +#define DPHY_CMN_RX_BANDGAP_TIMER	0x14
-> > >  
-> > >  #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
-> > >  #define DPHY_CMN_PWM_DIV(x)		((x) << 20)
-> > > @@ -45,10 +52,27 @@
-> > >  #define DPHY_CMN_OPDIV_FROM_REG		BIT(6)
-> > >  #define DPHY_CMN_OPDIV(x)		((x) << 7)
-> > >  
-> > > +#define DPHY_BAND_CFG			DPHY_PCS(0x0)
-> > > +#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
-> > > +#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
-> > > +
-> > >  #define DPHY_PSM_CFG			DPHY_PCS(0x4)
-> > >  #define DPHY_PSM_CFG_FROM_REG		BIT(0)
-> > >  #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
-> > >  
-> > > +#define DPHY_POWER_ISLAND_EN_DATA	DPHY_PCS(0x8)
-> > > +#define DPHY_POWER_ISLAND_EN_DATA_VAL	0xaaaaaaaa
-> > > +#define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
-> > > +#define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
-> > > +
-> > > +#define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
-> > > +#define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
-> > > +#define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
-> > > +#define DPHY_ISO_DL_CTRL_L2		DPHY_ISO(0x30)
-> > > +#define DPHY_ISO_DL_CTRL_L3		DPHY_ISO(0x3c)
-> > > +#define DPHY_ISO_LANE_READY_BIT		0
-> > > +#define DPHY_ISO_LANE_READY_TIMEOUT_MS	100UL
-> > > +
-> > >  #define DSI_HBP_FRAME_OVERHEAD		12
-> > >  #define DSI_HSA_FRAME_OVERHEAD		14
-> > >  #define DSI_HFP_FRAME_OVERHEAD		6
-> > > @@ -57,6 +81,9 @@
-> > >  #define DSI_NULL_FRAME_OVERHEAD		6
-> > >  #define DSI_EOT_PKT_SIZE		4
-> > >  
-> > > +#define DPHY_LANES_MIN			1
-> > > +#define DPHY_LANES_MAX			4
-> > > +
-> > >  struct cdns_dphy_cfg {
-> > >  	u8 pll_ipdiv;
-> > >  	u8 pll_opdiv;
-> > > @@ -105,6 +132,20 @@ struct cdns_dphy {
-> > >  	struct phy *phy;
-> > >  };
-> > >  
-> > > +struct cdns_dphy_rx_band {
-> > > +	unsigned int min_rate;
-> > > +	unsigned int max_rate;
-> > > +};
-> > > +
-> > > +/* Order of bands is important since the index is the band number. */
-> > > +static const struct cdns_dphy_rx_band bands[] = {
-> > > +	{80, 100}, {100, 120}, {120, 160}, {160, 200}, {200, 240},
-> > > +	{240, 280}, {280, 320}, {320, 360}, {360, 400}, {400, 480},
-> > > +	{480, 560}, {560, 640}, {640, 720}, {720, 800}, {800, 880},
-> > > +	{880, 1040}, {1040, 1200}, {1200, 1350}, {1350, 1500}, {1500, 1750},
-> > > +	{1750, 2000}, {2000, 2250}, {2250, 2500}
-> > > +};
-> > > +
-> > >  static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
-> > >  				     struct cdns_dphy_cfg *cfg,
-> > >  				     struct phy_configure_opts_mipi_dphy *opts,
-> > > @@ -360,6 +401,145 @@ static const struct cdns_dphy_info tx_ref_info = {
-> > >  	.tx_ops = &tx_ref_dphy_ops,
-> > >  };
-> > >  
-> > > +static int cdns_dphy_rx_power_on(struct phy *phy)
-> > > +{
-> > > +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > > +
-> > > +	/* Start RX state machine. */
-> > > +	writel(DPHY_CMN_SSM_EN | DPHY_CMN_RX_MODE_EN |
-> > > +	       FIELD_PREP(DPHY_CMN_RX_BANDGAP_TIMER_MASK,
-> > > +			  DPHY_CMN_RX_BANDGAP_TIMER),
-> > > +	       dphy->regs + DPHY_CMN_SSM);
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static int cdns_dphy_rx_power_off(struct phy *phy)
-> > > +{
-> > > +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > > +
-> > > +	writel(0, dphy->regs + DPHY_CMN_SSM);
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static int cdns_dphy_rx_get_band_ctrl(unsigned long hs_clk_rate)
-> > > +{
-> > > +	unsigned int rate, i;
-> > > +
-> > > +	rate = hs_clk_rate / 1000000UL;
-> > > +	/* Since CSI-2 clock is DDR, the bit rate is twice the clock rate. */
-> > > +	rate *= 2;
-> > > +
-> > > +	if (rate < bands[0].min_rate)
-> > > +		return -EOPNOTSUPP;
-> > > +
-> > > +	for (i = 0; i < ARRAY_SIZE(bands); i++) {
-> > > +		if (rate < bands[i].max_rate)
-> > > +			return i;
-> > > +	}
-> > > +
-> > > +	return -EOPNOTSUPP;
-> > > +}
-> > > +
-> > > +static int cdns_dphy_rx_wait_for_bit(void __iomem *addr, unsigned int bit)
-> > > +{
-> > > +	u32 val;
-> > > +
-> > > +	return readl_relaxed_poll_timeout(addr, val, val & BIT(bit), 10,
-> > > +					  DPHY_ISO_LANE_READY_TIMEOUT_MS * 1000);
-> > > +}
-> > > +
-> > > +static int cdns_dphy_rx_wait_lane_ready(struct cdns_dphy *dphy,
-> > > +					unsigned int lanes)
-> > > +{
-> > > +	static const u32 data_lane_ctrl[] = {DPHY_ISO_DL_CTRL_L0,
-> > > +					     DPHY_ISO_DL_CTRL_L1,
-> > > +					     DPHY_ISO_DL_CTRL_L2,
-> > > +					     DPHY_ISO_DL_CTRL_L3};
-> > > +	void __iomem *reg = dphy->regs;
-> > > +	unsigned int i;
-> > > +	int ret;
-> > > +
-> > > +	/* Data lanes. Minimum one lane is mandatory. */
-> > > +	if (lanes < DPHY_LANES_MIN || lanes > DPHY_LANES_MAX)
-> > > +		return -EINVAL;
-> > > +
-> > > +	/* Clock lane */
-> > > +	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_CL_CTRL_L,
-> > > +					DPHY_ISO_LANE_READY_BIT);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	for (i = 0; i < lanes; i++) {
-> > > +		ret = cdns_dphy_rx_wait_for_bit(reg + data_lane_ctrl[i],
-> > > +						DPHY_ISO_LANE_READY_BIT);
-> > > +		if (ret)
-> > > +			return ret;
-> > > +	}
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static int cdns_dphy_rx_configure(struct phy *phy,
-> > > +				  union phy_configure_opts *opts)
-> > > +{
-> > > +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
-> > > +	unsigned int reg;
-> > > +	int band_ctrl, ret;
-> > > +
-> > > +	band_ctrl = cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-> > > +	if (band_ctrl < 0)
-> > > +		return band_ctrl;
-> > > +
-> > > +	reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
-> > > +	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
-> > > +	writel(reg, dphy->regs + DPHY_BAND_CFG);
-> > > +
-> > > +	/*
-> > > +	 * Set the required power island phase 2 time. This is mandated by DPHY
-> > > +	 * specs.
-> > > +	 */
-> > > +	reg = DPHY_POWER_ISLAND_EN_DATA_VAL;
-> > > +	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_DATA);
-> > > +	reg = DPHY_POWER_ISLAND_EN_CLK_VAL;
-> > > +	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_CLK);
-> > > +
-> > > +	ret = cdns_dphy_rx_wait_lane_ready(dphy, opts->mipi_dphy.lanes);
-> > > +	if (ret) {
-> > > +		dev_err(dphy->dev, "DPHY wait for lane ready timeout\n");
-> > > +		return ret;
-> > > +	}
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static int cdns_dphy_rx_validate(struct phy *phy, enum phy_mode mode,
-> > > +				 int submode, union phy_configure_opts *opts)
-> > > +{
-> > > +	int ret;
-> > > +
-> > > +	if (mode != PHY_MODE_MIPI_DPHY)
-> > > +		return -EINVAL;
-> > > +
-> > > +	ret = cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-> > > +	if (ret < 0)
-> > > +		return ret;
-> > > +
-> > > +	return phy_mipi_dphy_config_validate(&opts->mipi_dphy);
-> > > +}
-> > > +
-> > > +static const struct phy_ops rx_ref_phy_ops = {
-> > > +	.power_on = cdns_dphy_rx_power_on,
-> > > +	.power_off = cdns_dphy_rx_power_off,
-> > > +	.configure = cdns_dphy_rx_configure,
-> > > +	.validate = cdns_dphy_rx_validate,
-> > > +};
-> > > +
-> > > +static const struct cdns_dphy_info rx_ref_info = {
-> > > +	.phy_ops = &rx_ref_phy_ops,
-> > > +};
-> > > +
-> > >  static int cdns_dphy_probe(struct platform_device *pdev)
-> > >  {
-> > >  	struct phy_provider *phy_provider;
-> > > @@ -417,6 +597,7 @@ static int cdns_dphy_remove(struct platform_device *pdev)
-> > >  
-> > >  static const struct of_device_id cdns_dphy_of_match[] = {
-> > >  	{ .compatible = "cdns,dphy", .data = &tx_ref_info },
-> > > +	{ .compatible = "cdns,dphy-rx", .data = &rx_ref_info },
-> > >  	{ /* sentinel */ },
-> > >  };
-> > >  MODULE_DEVICE_TABLE(of, cdns_dphy_of_match);
-> > > @@ -432,5 +613,6 @@ static struct platform_driver cdns_dphy_platform_driver = {
-> > >  module_platform_driver(cdns_dphy_platform_driver);
-> > >  
-> > >  MODULE_AUTHOR("Maxime Ripard <maxime.ripard@bootlin.com>");
-> > > +MODULE_AUTHOR("Pratyush Yadav <p.yadav@ti.com>");
-> > >  MODULE_DESCRIPTION("Cadence MIPI D-PHY Driver");
-> > >  MODULE_LICENSE("GPL");
-> > > -- 
-> > > 2.33.0
-> > > 
-> > 
-> > -- 
-> > Paul Kocialkowski, Bootlin
-> > Embedded Linux and kernel engineering
-> > https://bootlin.com
-> 
-> 
-> 
-> -- 
-> Regards,
-> Pratyush Yadav
-> Texas Instruments Inc.
+> We use everywhere "Samsung" and "Exynos", not the uppercase versions.
+
+Applied to 5.16/scsi-staging, thanks!
 
 -- 
-Regards,
-Pratyush Yadav
-Texas Instruments Inc.
+Martin K. Petersen	Oracle Linux Engineering
 
 -- 
 linux-phy mailing list
