@@ -2,14 +2,14 @@ Return-Path: <SRS0=3Sk+=OV=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B89EDC433EF
-	for <linux-phy@archiver.kernel.org>; Fri,  1 Oct 2021 08:17:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A37C8C433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  1 Oct 2021 08:19:55 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 87E6F61A08
-	for <linux-phy@archiver.kernel.org>; Fri,  1 Oct 2021 08:17:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 87E6F61A08
+	by mail.kernel.org (Postfix) with ESMTPS id 74CBB61A8C
+	for <linux-phy@archiver.kernel.org>; Fri,  1 Oct 2021 08:19:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 74CBB61A8C
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,48 +18,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SpwTRuC3FWBeN2+itCm+kw5Wb5lDmbomMAVn6oKeLsE=; b=WGOi1n+X7mpEOr
-	UsEnZSi8QgESbWrZC/u512JMi9mPXYw2+3ckw7DgMXJ5ySOSsigazTAWeH0BkVKAylgPE6Z4lqYIk
-	0yZlUmX22pC6u5rSsIGwMtci97Ks04dIpsi+4FEXK55yREoDt5ylea4kyV7bhte9CkvVL3c3tZfBg
-	wEx0BIlcBJrfhSGVWCgo4YYT5rCJu4uocYVAHAY19rSaFFwEERdqtSS0Yt4u8wvxUQvX+6LM30+Co
-	Z0fVKn14r8DHIq+xpt0TQtaEaKnPNIEFDJbiB/EgPLTbp3pbKASNSzOKdPnfW67wY43GkF9ohAyrk
-	fnQtItPvK47UCGRA+L0A==;
+	List-Owner; bh=U8SYhuXahDpS8oUh7quh9JaIaJLB/PkxTMPnzhYk4c4=; b=L0YlSV8v28ZIDq
+	43fR2+oc3n/d2wLV2E0VqkEtmH2QdXlcb9j3dWLx6rhDrVgOC9A1bANbVl2cykJvNrVXj1FjUVlfn
+	IjBeSXgZyYz+kOJ2rYh2OEI/QQlG3F14qs1w81QKT+YZkBgXz6iv8kwsQX3wINW3/lR/SGQf9vQ/5
+	e5dTo45QRUsv0cKcoEcUYvs/tNKBrHk6u5D/hw8SD1SWZ4EwbvjGlDwXIMOgD/Uu2sCknNaUuvtxR
+	xyZ4XKHSGqn/SH0eTKX4Opf+XB8xYUWyTu8EYycv4lduGQ/sEZu++2V1OuGByve9sFJnqH6We8/3t
+	UVtfi+3USJZdqPcWIpFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mWDjo-00H2LT-10; Fri, 01 Oct 2021 08:17:48 +0000
+	id 1mWDlq-00H3Dk-W3; Fri, 01 Oct 2021 08:19:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mWDjO-00H2AA-AK
- for linux-phy@lists.infradead.org; Fri, 01 Oct 2021 08:17:23 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 0785361A57;
- Fri,  1 Oct 2021 08:17:20 +0000 (UTC)
+ id 1mWDlo-00H3CV-Jc
+ for linux-phy@lists.infradead.org; Fri, 01 Oct 2021 08:19:53 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 393CF61A63;
+ Fri,  1 Oct 2021 08:19:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1633076242;
- bh=b47P8z/W2i1bDRrOsD/Ji/gwBq3k4b2HBXMWS7tzHHg=;
+ s=k20201202; t=1633076392;
+ bh=SXKYoP4v8q0a1PDAzV+UPRkyOgdg+9D+MrmjRdjtW5M=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TZ94LUBtNi1J3Z3D5NGdHA3FC3szbke8YAnGq+3WAzG5r3VmW00Jr9rQTeZz4/5PE
- QCzy5MIYHxj2257fGcuNsigrGml0xL1+9rYrx3wUR0UwvYTJPSgpHKcjsdxBNn4rhh
- rVmHEaXWMpPc0uDG5YBNOM1P+01sruApPJrDtTtL1D80LE5MkhYi1xznbSvbJ7j+S8
- NLVUS3R51+rDWWiK9Fd8pzHHT+e2bfwrBh9SX5yj6lrFz6EdKTw0kxdf7xkCGNXmHP
- L/+OfmDPjl6l1KIRZkb3vkEWVjCnP8f6cz8sxF4CU6AOGoLdYPa2abxk9o4W6uV314
- iubZqr0N2KOqA==
-Date: Fri, 1 Oct 2021 13:47:18 +0530
+ b=X8R0S1Hv/XuLUH6kBia6UAlnKkf8cuhAqoWtqu+sdRZ4gpBdX8os5qki8Et1VmlnZ
+ ZAIjJzT4YjhVK0PwN3fmKoBuDtkMKLBwXQkoz0lxEkxRsEKS8R3L4XTUihjWz6r5NX
+ idFI0FUPmh+Et0tfqYesGHdQhiPh5pfebO2zkq+wGHATg/HPrzBIvuwtca2jDkNRWX
+ A9sX+4HiX/ZFIMHQpMR3PiaT2ck+2NmdP0xjIHt9n7Xd4ZFaSZA5ZuBZ+H1MjidnAn
+ BjmpLjAN6sZv60Xuw9FIDUgQSi3wuWc/wy4BnZQzey8yFW91WGx9/39O4wGdVerS+e
+ Jm5GJMkkWbvcw==
+Date: Fri, 1 Oct 2021 13:49:47 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Shawn Guo <shawnguo@kernel.org>
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Shawn Guo <shawn.guo@linaro.org>
-Subject: Re: [PATCH] dt-bindings: phy: qcom,qmp: Update maintainer email
-Message-ID: <YVbEDnMHx+vte1oh@matsya>
-References: <20210927071639.6225-1-shawnguo@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Cc: Shawn Guo <shawn.guo@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Loic Poulain <loic.poulain@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,qmp: Add QCM2290 USB3 PHY
+Message-ID: <YVbEo4i5T63O+RnC@matsya>
+References: <20210927064829.5752-1-shawn.guo@linaro.org>
+ <20210927064829.5752-2-shawn.guo@linaro.org>
+ <1632745399.282824.3097156.nullmailer@robh.at.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210927071639.6225-1-shawnguo@kernel.org>
+In-Reply-To: <1632745399.282824.3097156.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211001_011722_425067_CEBB2FF9 
-X-CRM114-Status: UNSURE (   4.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211001_011952_698931_381868ED 
+X-CRM114-Status: GOOD (  12.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,13 +78,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27-09-21, 15:16, Shawn Guo wrote:
-> From: Shawn Guo <shawn.guo@linaro.org>
+On 27-09-21, 07:23, Rob Herring wrote:
+> On Mon, 27 Sep 2021 14:48:28 +0800, Shawn Guo wrote:
+> > Add support for USB3 PHY found on Qualcomm QCM2290 SoC.
+> > 
+> > Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
+> > ---
+> >  .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 27 +++++++++++++++++++
+> >  1 file changed, 27 insertions(+)
+> > 
 > 
-> Manu's codeaurora.org email address bounces.  Before he comes
-> back with his new email, fill Vinod's address in there.
+> Running 'make dtbs_check' with the schema in this patch gives the
+> following warnings. Consider if they are expected or the schema is
+> incorrect. These may not be new warnings.
+> 
+> Note that it is not yet a requirement to have 0 warnings for dtbs_check.
+> This will change in the future.
 
-Sure if he is back, will add. Thanks applied now
+Shawn has fixed it at: https://lore.kernel.org/r/20210929034253.24570-1-shawn.guo@linaro.org
+
+I guess you are okay with this patch, if not do let me know...
 
 -- 
 ~Vinod
