@@ -2,64 +2,76 @@ Return-Path: <SRS0=czee=OZ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6332DC433FE
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 09:24:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E9DE0C433F5
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:35:18 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 20465615A6
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 09:24:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 20465615A6
+	by mail.kernel.org (Postfix) with ESMTPS id BC4066124F
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:35:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BC4066124F
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=20gH06G6LMh8sWCiNgDjljns3wrSZxxor6DbO2Q1Llk=; b=4m+8SwDjQEeUCk
-	44Ix50tCVySqVgTi8L4FjaG8us/qDjtG7cvzSdxlayV18IPnB4FoKAwe6gZ1XCPvxR4J0Bf8EAzZl
-	WTzk/9LV0KkzChwJqbHGVg5qiY+ytED9c8v+M1qroQgLeNNABXl1MwZ8mwOyrhDq60GT4CJfSsUz/
-	KeBNF3ZHdaEO5MEZ5q5oHgFOM2KhRIfRqpbhDRJBDn5xqGFXtiP0nuBo//ECMXwJbTw41IHuAQlhd
-	r4yDuufkSiTDGLiRC7jBP17zYa23wbzHCooKoYhkOsK2zn6iGWyP2YawWEOl5RwV5mI8exwOjPG3k
-	yq/02No1Sx3In3yYRvjg==;
+	List-Owner; bh=OmxI/cyjIWMdXYsLelM89QyafQ7ZPctHH7pqmdWlAMo=; b=wBdFhq4JC1eq57
+	mhzqnZx4j3Lf/i88m36Y75L/LE8iA5IEm1sJ9gVElrXFRZvvCY9WOb9hRMvdzJTNLr8UUZah3LSFv
+	U6Xuv/S01NtaGOYx6UvVfmX3Redn4chXZB7bvkejm5DsZPNVTuytG6l10uLICIHLzlnhkFVLZq1b0
+	CJc8eHz/IfhJ5PQQljru2BQJPCEYWoC/mInGXjYhs5eixbxQ7Eamw5e0zhREj8YtsmZfZJXWn0FzF
+	npQ+5YvQUvhHZSo/jdMNEYa50Tuxgo54n93XI/58QWkZ0dtPH+ZAMft3uxG/DPzcdadlFb22S9M+1
+	M5qXQB504zTj1yc9javA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mXgh0-009m7V-Mn; Tue, 05 Oct 2021 09:24:58 +0000
+	id 1mXhn4-00A0TD-B0; Tue, 05 Oct 2021 10:35:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mXggy-009m60-7F
- for linux-phy@lists.infradead.org; Tue, 05 Oct 2021 09:24:57 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 9FF1D6154B;
- Tue,  5 Oct 2021 09:24:53 +0000 (UTC)
+ id 1mXhmr-00A0Qj-Qx; Tue, 05 Oct 2021 10:35:06 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 8B79261131;
+ Tue,  5 Oct 2021 10:35:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1633425895;
- bh=IEdllWxDaEmWx3XyCkSILsBxQd/sSHr6TrZzjfQkKzg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=pIXQ5hiu3AwH8jtQRSWFMo3uXgoRqoh3CQm7L/4LRPlO4UA1+bde5S1JNdZnpFMv6
- 928AVBioWQDkV95uWuX8yWEkjnAdTACm8zuv+tzajp//n7WTh1qRjAGGnoK4V1MkNP
- vzjOMxZrhgvt/sULIVj/WAr7nx5PihNWAQZj4s/BhBTHdVTVmskDdMUG2kNTwZ11ia
- RZGzxthsaYK11QCuow14kFr6+BCwXkGD5DBy6nFAxYZASw5Ln3Nbe9BEPKOWiY2RP6
- iKwBp7qiB9Sm1Ga7bFf1jJxkqOihHcSOwC/+eoABY/aeYMQ3CMUyk0e8Hs4JGPeN+6
- +0oeKMOSn2lpw==
-Date: Tue, 5 Oct 2021 11:24:48 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Bjorn Helgaas <bhelgaas@google.com>
-Cc: linuxarm@huawei.com, mauro.chehab@huawei.com, Krzysztof =?UTF-8?B?V2ls?=
- =?UTF-8?B?Y3p5xYRza2k=?= <kw@linux.com>, Binghui Wang
- <wangbinghui@hisilicon.com>, Rob Herring <robh@kernel.org>, Xiaowei Song
- <songxiaowei@hisilicon.com>, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v12 00/11] Add support for Hikey 970 PCIe
-Message-ID: <20211005112448.2c40dc10@coco.lan>
-In-Reply-To: <cover.1632814194.git.mchehab+huawei@kernel.org>
-References: <cover.1632814194.git.mchehab+huawei@kernel.org>
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.30; x86_64-redhat-linux-gnu)
+ s=k20201202; t=1633430105;
+ bh=tPRSe+sMGLMk0DEatVSdVYaqyhvvz0YMaXtWMarFKAk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=uxPZayo3ns80cG6GBoZnUYwBGG0P4nH/VwSvtxVE5aAyzZqd2hA2UM6B1t1tqRluB
+ kYHmmPOCFhM8lWxYtpdiD3Dw+fAM+8uIlKbN8V8pdblrCH/fGTXtDliHcnoFsXF1Gw
+ zKPQPrD/bPSAoX/bb2PgqO+JvQuAmq/wXf8nYunPutvl52Vt5F13KwDHiFTaZdS5lN
+ 7iyl0DcMtzubUGz9X5I3OTmsS0NYRiVUkA2QCQkLTV35AltcAWD/akKmsEUs71wVJR
+ +dONcCwUHO1Ryo7Zck1dtw2hcsrorcY9gBoT3Zv3e/121OVGiE1ACu3t4BkePxJx7y
+ myL+d6MzeKd8A==
+Date: Tue, 5 Oct 2021 16:05:01 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: "A, Rashmi" <rashmi.a@intel.com>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Michal Simek <michal.simek@xilinx.com>,
+ linux-mmc <linux-mmc@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Kishon <kishon@ti.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ Mark Gross <mgross@linux.intel.com>,
+ "kris.pan@linux.intel.com" <kris.pan@linux.intel.com>,
+ "Zhou, Furong" <furong.zhou@intel.com>,
+ "Sangannavar, Mallikarjunappa" <mallikarjunappa.sangannavar@intel.com>,
+ "Hunter, Adrian" <adrian.hunter@intel.com>,
+ "Vaidya, Mahesh R" <mahesh.r.vaidya@intel.com>,
+ "Srikandan, Nandhini" <nandhini.srikandan@intel.com>
+Subject: Re: [PATCH v2 0/4] Add support of eMMC PHY for Intel Thunder Bay
+Message-ID: <YVwqVRkwAYnoJR6x@matsya>
+References: <20210829182443.30802-1-rashmi.a@intel.com>
+ <CAPDyKFq2VQ=khYnmfsQGPPcpRnxyATVSpwKSZ4MTbKn64rthVA@mail.gmail.com>
+ <DM6PR11MB306560AE06F83FC56B9F89988CAE9@DM6PR11MB3065.namprd11.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <DM6PR11MB306560AE06F83FC56B9F89988CAE9@DM6PR11MB3065.namprd11.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211005_022456_333413_7D721F92 
-X-CRM114-Status: GOOD (  21.16  )
+X-CRM114-CacheID: sfid-20211005_033505_916750_DE5528DD 
+X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,123 +88,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Bjorn,
+On 04-10-21, 06:04, A, Rashmi wrote:
 
-Em Tue, 28 Sep 2021 09:34:10 +0200
-Mauro Carvalho Chehab <mchehab+huawei@kernel.org> escreveu:
+> Applied patch1 and patch2 for next, thus leaving the phy changes in
+> patch3 and patch 4 for Kishon/Vinod to pick up.
+> 
+> Thanks and kind regards
+> Uffe
+> 
+> 
+> Thanks Uffe, 
+> Hi Kishon/Vinod,  
+> 	Please let me know if you have any comments
 
-> The pcie-kirin PCIe driver contains internally a PHY interface for
-> Kirin 960, but it misses support for Kirin 970.
-> 
-> Patch1 contains a PHY for Kirin 970 PCIe.
-> 
-> The remaining patches add support for Kirin 970 at the pcie-kirin driver, and
-> add the needed logic to compile it as module and to allow to dynamically
-> remove the driver in runtime.
-> 
-> Tested on HiKey970:
-> 
->   # lspci -D -PP
->   0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3670 (rev 01)
->   0000:00:00.0/01:00.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:01.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:04.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:05.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:07.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:09.0 PCI bridge: PLX Technology, Inc. PEX 8606 6 Lane, 6 Port PCI Express Gen 2 (5.0 GT/s) Switch (rev ba)
->   0000:00:00.0/01:00.0/02:01.0/03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd Device a809
->   0000:00:00.0/01:00.0/02:07.0/06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 07)
-> 
-> Tested on HiKey960:
-> 
->   # lspci -D 
->   0000:00:00.0 PCI bridge: Huawei Technologies Co., Ltd. Device 3660 (rev 01)
-> 
-> ---
-> 
-> v12:
->   - Change a comment at patch 1 to not use c99 style.
-> 
-> v11:
->   - patch 5 changed to use the right PCIe topology
->   - all other patches are identical to v10.
-> 
-> v10:
->   - patch 1: dropped magic numbers from PHY driver
->   - patch 5: allow pcie child nodes without reset-gpios
->   - all other patches are identical to v9.
-> 
-> v9:
->   - Did some cleanups at patches 1 and 5
-> 
+Need ack from Rob on binding patch
 
-As the DT changes needed by HiKey 970 PCIe support are already upstream:
-
-	commit cfcf126fc6795e843d090d98754391ece55e8b0c
-	Author:     Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-	AuthorDate: Wed Aug 4 09:18:56 2021 +0200
-	Commit:     Rob Herring <robh@kernel.org>
-	CommitDate: Mon Aug 16 16:00:52 2021 -0500
-
-	    dt-bindings: PCI: kirin: Add support for Kirin970
-	    
-	    Add a new compatible, plus the new bindings needed by
-	    HiKey970 board.
-    
-	    Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-	    Link: https://lore.kernel.org/r/875a4571e253040d3885ee1f37467b0bade7361b.1628061310.git.mchehab+huawei@kernel.org
-	    Signed-off-by: Rob Herring <robh@kernel.org>
-
-> 
-> Mauro Carvalho Chehab (11):
->   phy: HiSilicon: Add driver for Kirin 970 PCIe PHY
-
-And the PHY patch was already accepted and merged at today's
-linux-next:
-
-	commit 73075011ffff876de8516a1e583dc41869293da9
-	Author:     Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-	AuthorDate: Tue Sep 28 09:34:11 2021 +0200
-	Commit:     Vinod Koul <vkoul@kernel.org>
-	CommitDate: Fri Oct 1 13:42:18 2021 +0530
-
-	    phy: HiSilicon: Add driver for Kirin 970 PCIe PHY
-    
-	    The Kirin 970 PHY is somewhat similar to the Kirin 960, but it
-	    does a lot more. Add the needed bits for PCIe to start working on
-	    HiKey 970 boards.
-    
-	    Co-developed-by: Manivannan Sadhasivam <mani@kernel.org>
-	    Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
-	    Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-	    Link: https://lore.kernel.org/r/b7a4ff41b57d861b003f1a00cae81f3d226fbe18.1632814194.git.mchehab+huawei@kernel.org
-	    Signed-off-by: Vinod Koul <vkoul@kernel.org>
-
->   PCI: kirin: Reorganize the PHY logic inside the driver
->   PCI: kirin: Add support for a PHY layer
->   PCI: kirin: Use regmap for APB registers
->   PCI: kirin: Add support for bridge slot DT schema
->   PCI: kirin: Add Kirin 970 compatible
->   PCI: kirin: Add MODULE_* macros
->   PCI: kirin: Allow building it as a module
->   PCI: kirin: Add power_off support for Kirin 960 PHY
->   PCI: kirin: fix poweroff sequence
->   PCI: kirin: Allow removing the driver
-
-I guess everything is already satisfying the review feedbacks.
-If so, could you please merge the PCI ones?
-
-> 
->  drivers/pci/controller/dwc/Kconfig      |   2 +-
->  drivers/pci/controller/dwc/pcie-kirin.c | 644 +++++++++++++-----
->  drivers/phy/hisilicon/Kconfig           |  10 +
->  drivers/phy/hisilicon/Makefile          |   1 +
->  drivers/phy/hisilicon/phy-hi3670-pcie.c | 845 ++++++++++++++++++++++++
->  5 files changed, 1354 insertions(+), 148 deletions(-)
->  create mode 100644 drivers/phy/hisilicon/phy-hi3670-pcie.c
-
-Thanks,
-Mauro
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
