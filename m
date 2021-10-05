@@ -2,65 +2,84 @@ Return-Path: <SRS0=czee=OZ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AA403C433FE
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:37:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id F4229C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 15:25:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6D5E16124C
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:37:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6D5E16124C
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id ABBCE61507
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 15:25:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org ABBCE61507
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9F2VnJRoZAiq9lZ8PYjjCXAax6Cue6YNyTOIyUoHDr8=; b=Vs1kP5kR4zbhK7
-	WU4YEI3+3s1JaiCuEjybRtC9eFGA/ly4++R+pwuFPC+BNeNDn9weSIeRxlhf5QZ1vjoo1rsqzuBdD
-	VNf3i/fqp02gnWIGjXgetlDRwIbeJFjLvAcIcE6i6/8yhIsIRzWAaa8uNEF1IVO5PsJIM9rMgkVXY
-	Vmheo/ivmfYeK5a/eB0p5uhKm5E9RO9UYeTPWGzsQtHzJGM6Jfqwb2SRZbBxgUmF/nM6KGjzaRAOM
-	bbmYf7QIk6d8RV0l+wovCETM883amNb63OigBd5zzqmedpXxT+Ho5++kG4wpBW51Z3co9rh7G88V1
-	T4F0Uv5PkArO61QU3i6g==;
+	List-Owner; bh=CGmqRGGqIW4tiK/8pJUiVYvSIQbmCWF3LJEPJhVm5ek=; b=oPV++Xfe7gmywT
+	KuJSMo+eo8VfjGo2owaTEqjgfyuWZLQPLFH+HzGcTTtXlRJGu7KxsP92ODauj5XhNJDm82gFcX6Xb
+	I1fK4kyoVbS3J38D8rT4OBi5qpBgaj5BeSZMoz5O8q96fqPOcYic7BoncvhVD/HKHkxmAD+K0MO2A
+	aZFRgdcBfkhSXNNPSYEN12DjL/sFeBWJiueHHE6V0mOJJZDHHH23wTJXC1dlwqzhbHYtI7MNheKmS
+	OtQw61UBj+yZSEO0/TTWBob27wCTNqZtK75HDAZ5ozCLvN9yGRHWiWwCUUfXzFQkWyncJi5XKUZqO
+	W4Vf2tivYnMzibrUDSqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mXhpW-00A0sh-0Z; Tue, 05 Oct 2021 10:37:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mXmJX-00B3fc-8R; Tue, 05 Oct 2021 15:25:07 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mXhpT-00A0rs-Nj
- for linux-phy@lists.infradead.org; Tue, 05 Oct 2021 10:37:49 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 77BAD6124F;
- Tue,  5 Oct 2021 10:37:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1633430267;
- bh=Wv/SF6G50tw+P67CaN7frd0E2WbmInm7Ve/ayZJ5bdA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ik9VseNoVdNFMsjnX5croDf4AaLO02QYa4ZHgBBTEK4vialF2XDUjVBR3chww9IPJ
- EtL4IHhBhjr5x9n7g6Se7z7JxiTuQDpGUR/EOuySmF2D6aEGIbfkq84ae8QoZbyd6C
- 9OsL4GispnTdlj2f9nXb8PwJCslOTavI1InLY2bxlXIQZ11+bSp3PX2LXmwx4tpj4V
- ZNDfTGphTM+gmFvP+p4Z0yPAMf07YM60o+jvawp/3g0T7hoR6150A9NtYjvVU6a9kk
- 2zZk5kC6x04prVWqm2dGsOOwOoDIJCjY2Op9VpYDtT+Z0d+7ZNv4OMCAyd7BhWPR54
- YV4oLM0Vok8+w==
-Date: Tue, 5 Oct 2021 16:07:43 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vivek Gautam <vivek.gautam@codeaurora.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2] phy: qcom-qusb2: Fix a memory leak on probe
-Message-ID: <YVwq9593hJFc1XaU@matsya>
-References: <20210922233548.2150244-1-vladimir.zapolskiy@linaro.org>
- <YVbYDIUdyTQD6gXq@matsya>
- <56c4530b-2f66-f325-b703-e58e90c3c66a@linaro.org>
+ id 1mXmJU-00B3co-Az; Tue, 05 Oct 2021 15:25:05 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 195EWBAu032067; 
+ Tue, 5 Oct 2021 17:24:58 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-transfer-encoding : content-type; s=selector1;
+ bh=AZCLz9Qu7aCsRJuQKx+MRmvklKYmjkNGSFeQSH6HK7E=;
+ b=ySkPwUjypRwcWCriNC5MwLz0XsGnG0+Xq0ETrBHTUEzEtdgUJU9Z7VFIgVg7eq5PefZS
+ Jar5OJKPqYkb1Kil/8HtuUpYsYXMeML8/ZEwcCQ56/nvbQSpMEnQfOXauUPFmFH/+WXM
+ mn/kmCzjZoWK5EvfUDpxL4sDgAQbsCo1AiNnKjuaGceOv9jEN7YlVWCbytVNCVPrH/qY
+ gWA5PdKU90JScZ5gXcbptDYu9jkdkzXYJ0Dz1uEPktXyFfVuMl//Owt1zH2+eE5+KoKZ
+ 2sdayDdu4t0Jp7a4qLuhKp65NzzIrnwI/tf7tSWgnbmpfZD62S9iCR/ScPY+neTvYyh/ 2A== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3bgdt9uynk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 05 Oct 2021 17:24:58 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A3DAF100034;
+ Tue,  5 Oct 2021 17:24:57 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9BF5C229A8E;
+ Tue,  5 Oct 2021 17:24:57 +0200 (CEST)
+Received: from localhost (10.75.127.45) by SFHDAG2NODE2.st.com (10.75.127.5)
+ with Microsoft SMTP Server (TLS) id 15.0.1497.18; Tue, 5 Oct 2021 17:24:56
+ +0200
+From: Amelie Delaunay <amelie.delaunay@foss.st.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
+ <amelie.delaunay@foss.st.com>
+Subject: [PATCH v2 1/3] phy: stm32: restore utmi switch on resume
+Date: Tue, 5 Oct 2021 17:24:51 +0200
+Message-ID: <20211005152453.89330-2-amelie.delaunay@foss.st.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20211005152453.89330-1-amelie.delaunay@foss.st.com>
+References: <20211005152453.89330-1-amelie.delaunay@foss.st.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <56c4530b-2f66-f325-b703-e58e90c3c66a@linaro.org>
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG2NODE2.st.com
+ (10.75.127.5)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.391,FMLib:17.0.607.475
+ definitions=2021-10-05_02,2021-10-04_01,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211005_033747_833476_1A33EC5F 
-X-CRM114-Status: GOOD (  25.81  )
+X-CRM114-CacheID: sfid-20211005_082504_717631_4664952E 
+X-CRM114-Status: GOOD (  18.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,81 +96,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-10-21, 14:04, Vladimir Zapolskiy wrote:
-> On 10/1/21 12:42 PM, Vinod Koul wrote:
-> > On 23-09-21, 02:35, Vladimir Zapolskiy wrote:
-> > > On success nvmem_cell_read() returns a pointer to a dynamically allocated
-> > > buffer, and therefore it shall be freed after usage.
-> > > 
-> > > The issue is reported by kmemleak:
-> > > 
-> > >    # cat /sys/kernel/debug/kmemleak
-> > >    unreferenced object 0xffff3b3803e4b280 (size 128):
-> > >      comm "kworker/u16:1", pid 107, jiffies 4294892861 (age 94.120s)
-> > >      hex dump (first 32 bytes):
-> > >        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-> > >        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-> > >      backtrace:
-> > >        [<000000007739afdc>] __kmalloc+0x27c/0x41c
-> > >        [<0000000071c0fbf8>] nvmem_cell_read+0x40/0xe0
-> > >        [<00000000e803ef1f>] qusb2_phy_init+0x258/0x5bc
-> > >        [<00000000fc81fcfa>] phy_init+0x70/0x110
-> > >        [<00000000e3d48a57>] dwc3_core_soft_reset+0x4c/0x234
-> > >        [<0000000027d1dbd4>] dwc3_core_init+0x68/0x990
-> > >        [<000000001965faf9>] dwc3_probe+0x4f4/0x730
-> > >        [<000000002f7617ca>] platform_probe+0x74/0xf0
-> > >        [<00000000a2576cac>] really_probe+0xc4/0x470
-> > >        [<00000000bc77f2c5>] __driver_probe_device+0x11c/0x190
-> > >        [<00000000130db71f>] driver_probe_device+0x48/0x110
-> > >        [<0000000019f36c2b>] __device_attach_driver+0xa4/0x140
-> > >        [<00000000e5812ff7>]  bus_for_each_drv+0x84/0xe0
-> > >        [<00000000f4bac574>] __device_attach+0xe4/0x1c0
-> > >        [<00000000d3beb631>] device_initial_probe+0x20/0x30
-> > >        [<000000008019b9db>] bus_probe_device+0xa4/0xb0
-> > > 
-> > > Fixes: ca04d9d3e1b1 ("phy: qcom-qusb2: New driver for QUSB2 PHY on Qcom chips")
-> > > Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-> > > ---
-> > > Changes from v1 to v2:
-> > > * fixed a memory leak in case of reading a zero value and return,
-> > > * corrected the fixed commit, the memory leak is present before a rename.
-> > > 
-> > >   drivers/phy/qualcomm/phy-qcom-qusb2.c | 16 ++++++++++------
-> > >   1 file changed, 10 insertions(+), 6 deletions(-)
-> > > 
-> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > index 3c1d3b71c825..f1d97fbd1331 100644
-> > > --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > @@ -561,7 +561,7 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
-> > >   {
-> > >   	struct device *dev = &qphy->phy->dev;
-> > >   	const struct qusb2_phy_cfg *cfg = qphy->cfg;
-> > > -	u8 *val;
-> > > +	u8 *val, hstx_trim;
-> > >   	/* efuse register is optional */
-> > >   	if (!qphy->cell)
-> > > @@ -575,7 +575,13 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
-> > >   	 * set while configuring the phy.
-> > >   	 */
-> > >   	val = nvmem_cell_read(qphy->cell, NULL);
-> > > -	if (IS_ERR(val) || !val[0]) {
-> > > +	if (IS_ERR(val)) {
-> > > +		dev_dbg(dev, "failed to read a valid hs-tx trim value\n");
-> > 
-> > not an error log..?
-> > 
-> 
-> It's a copy from the existing code, no changes on error but the memory leak fix.
-> 
-> If CONFIG_NVMEM is not set, then nvmem_cell_read() returns ERR_PTR(-EOPNOTSUPP),
-> still it allows to build/run the phy driver, so it seems to be a valid option,
-> please correct me.
+UTMI switch value can be lost during suspend/resume, depending on the power
+state reached.
+This patch adds resume function to usbphyc, to reconfigure utmi switch
+after suspend.
 
-Yes it is not relevant to the leak fix here, so I will apply it
+Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
+---
+ drivers/phy/st/phy-stm32-usbphyc.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
+diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
+index 937a14fa7448..083593aea53a 100644
+--- a/drivers/phy/st/phy-stm32-usbphyc.c
++++ b/drivers/phy/st/phy-stm32-usbphyc.c
+@@ -598,6 +598,18 @@ static int stm32_usbphyc_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static int __maybe_unused stm32_usbphyc_resume(struct device *dev)
++{
++	struct stm32_usbphyc *usbphyc = dev_get_drvdata(dev);
++
++	if (usbphyc->switch_setup >= 0)
++		stm32_usbphyc_switch_setup(usbphyc, usbphyc->switch_setup);
++
++	return 0;
++}
++
++static SIMPLE_DEV_PM_OPS(stm32_usbphyc_pm_ops, NULL, stm32_usbphyc_resume);
++
+ static const struct of_device_id stm32_usbphyc_of_match[] = {
+ 	{ .compatible = "st,stm32mp1-usbphyc", },
+ 	{ },
+@@ -610,6 +622,7 @@ static struct platform_driver stm32_usbphyc_driver = {
+ 	.driver = {
+ 		.of_match_table = stm32_usbphyc_of_match,
+ 		.name = "stm32-usbphyc",
++		.pm = &stm32_usbphyc_pm_ops,
+ 	}
+ };
+ module_platform_driver(stm32_usbphyc_driver);
 -- 
-~Vinod
+2.25.1
+
 
 -- 
 linux-phy mailing list
