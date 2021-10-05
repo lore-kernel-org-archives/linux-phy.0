@@ -2,14 +2,14 @@ Return-Path: <SRS0=czee=OZ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E9DE0C433F5
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:35:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AA403C433FE
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:37:50 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BC4066124F
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:35:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BC4066124F
+	by mail.kernel.org (Postfix) with ESMTPS id 6D5E16124C
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Oct 2021 10:37:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6D5E16124C
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,60 +18,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OmxI/cyjIWMdXYsLelM89QyafQ7ZPctHH7pqmdWlAMo=; b=wBdFhq4JC1eq57
-	mhzqnZx4j3Lf/i88m36Y75L/LE8iA5IEm1sJ9gVElrXFRZvvCY9WOb9hRMvdzJTNLr8UUZah3LSFv
-	U6Xuv/S01NtaGOYx6UvVfmX3Redn4chXZB7bvkejm5DsZPNVTuytG6l10uLICIHLzlnhkFVLZq1b0
-	CJc8eHz/IfhJ5PQQljru2BQJPCEYWoC/mInGXjYhs5eixbxQ7Eamw5e0zhREj8YtsmZfZJXWn0FzF
-	npQ+5YvQUvhHZSo/jdMNEYa50Tuxgo54n93XI/58QWkZ0dtPH+ZAMft3uxG/DPzcdadlFb22S9M+1
-	M5qXQB504zTj1yc9javA==;
+	List-Owner; bh=9F2VnJRoZAiq9lZ8PYjjCXAax6Cue6YNyTOIyUoHDr8=; b=Vs1kP5kR4zbhK7
+	WU4YEI3+3s1JaiCuEjybRtC9eFGA/ly4++R+pwuFPC+BNeNDn9weSIeRxlhf5QZ1vjoo1rsqzuBdD
+	VNf3i/fqp02gnWIGjXgetlDRwIbeJFjLvAcIcE6i6/8yhIsIRzWAaa8uNEF1IVO5PsJIM9rMgkVXY
+	Vmheo/ivmfYeK5a/eB0p5uhKm5E9RO9UYeTPWGzsQtHzJGM6Jfqwb2SRZbBxgUmF/nM6KGjzaRAOM
+	bbmYf7QIk6d8RV0l+wovCETM883amNb63OigBd5zzqmedpXxT+Ho5++kG4wpBW51Z3co9rh7G88V1
+	T4F0Uv5PkArO61QU3i6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mXhn4-00A0TD-B0; Tue, 05 Oct 2021 10:35:18 +0000
+	id 1mXhpW-00A0sh-0Z; Tue, 05 Oct 2021 10:37:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mXhmr-00A0Qj-Qx; Tue, 05 Oct 2021 10:35:06 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 8B79261131;
- Tue,  5 Oct 2021 10:35:04 +0000 (UTC)
+ id 1mXhpT-00A0rs-Nj
+ for linux-phy@lists.infradead.org; Tue, 05 Oct 2021 10:37:49 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 77BAD6124F;
+ Tue,  5 Oct 2021 10:37:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1633430105;
- bh=tPRSe+sMGLMk0DEatVSdVYaqyhvvz0YMaXtWMarFKAk=;
+ s=k20201202; t=1633430267;
+ bh=Wv/SF6G50tw+P67CaN7frd0E2WbmInm7Ve/ayZJ5bdA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uxPZayo3ns80cG6GBoZnUYwBGG0P4nH/VwSvtxVE5aAyzZqd2hA2UM6B1t1tqRluB
- kYHmmPOCFhM8lWxYtpdiD3Dw+fAM+8uIlKbN8V8pdblrCH/fGTXtDliHcnoFsXF1Gw
- zKPQPrD/bPSAoX/bb2PgqO+JvQuAmq/wXf8nYunPutvl52Vt5F13KwDHiFTaZdS5lN
- 7iyl0DcMtzubUGz9X5I3OTmsS0NYRiVUkA2QCQkLTV35AltcAWD/akKmsEUs71wVJR
- +dONcCwUHO1Ryo7Zck1dtw2hcsrorcY9gBoT3Zv3e/121OVGiE1ACu3t4BkePxJx7y
- myL+d6MzeKd8A==
-Date: Tue, 5 Oct 2021 16:05:01 +0530
+ b=ik9VseNoVdNFMsjnX5croDf4AaLO02QYa4ZHgBBTEK4vialF2XDUjVBR3chww9IPJ
+ EtL4IHhBhjr5x9n7g6Se7z7JxiTuQDpGUR/EOuySmF2D6aEGIbfkq84ae8QoZbyd6C
+ 9OsL4GispnTdlj2f9nXb8PwJCslOTavI1InLY2bxlXIQZ11+bSp3PX2LXmwx4tpj4V
+ ZNDfTGphTM+gmFvP+p4Z0yPAMf07YM60o+jvawp/3g0T7hoR6150A9NtYjvVU6a9kk
+ 2zZk5kC6x04prVWqm2dGsOOwOoDIJCjY2Op9VpYDtT+Z0d+7ZNv4OMCAyd7BhWPR54
+ YV4oLM0Vok8+w==
+Date: Tue, 5 Oct 2021 16:07:43 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: "A, Rashmi" <rashmi.a@intel.com>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Michal Simek <michal.simek@xilinx.com>,
- linux-mmc <linux-mmc@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Kishon <kishon@ti.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- Mark Gross <mgross@linux.intel.com>,
- "kris.pan@linux.intel.com" <kris.pan@linux.intel.com>,
- "Zhou, Furong" <furong.zhou@intel.com>,
- "Sangannavar, Mallikarjunappa" <mallikarjunappa.sangannavar@intel.com>,
- "Hunter, Adrian" <adrian.hunter@intel.com>,
- "Vaidya, Mahesh R" <mahesh.r.vaidya@intel.com>,
- "Srikandan, Nandhini" <nandhini.srikandan@intel.com>
-Subject: Re: [PATCH v2 0/4] Add support of eMMC PHY for Intel Thunder Bay
-Message-ID: <YVwqVRkwAYnoJR6x@matsya>
-References: <20210829182443.30802-1-rashmi.a@intel.com>
- <CAPDyKFq2VQ=khYnmfsQGPPcpRnxyATVSpwKSZ4MTbKn64rthVA@mail.gmail.com>
- <DM6PR11MB306560AE06F83FC56B9F89988CAE9@DM6PR11MB3065.namprd11.prod.outlook.com>
+To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vivek Gautam <vivek.gautam@codeaurora.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2] phy: qcom-qusb2: Fix a memory leak on probe
+Message-ID: <YVwq9593hJFc1XaU@matsya>
+References: <20210922233548.2150244-1-vladimir.zapolskiy@linaro.org>
+ <YVbYDIUdyTQD6gXq@matsya>
+ <56c4530b-2f66-f325-b703-e58e90c3c66a@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <DM6PR11MB306560AE06F83FC56B9F89988CAE9@DM6PR11MB3065.namprd11.prod.outlook.com>
+In-Reply-To: <56c4530b-2f66-f325-b703-e58e90c3c66a@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211005_033505_916750_DE5528DD 
-X-CRM114-Status: UNSURE (   8.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211005_033747_833476_1A33EC5F 
+X-CRM114-Status: GOOD (  25.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,20 +77,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04-10-21, 06:04, A, Rashmi wrote:
+On 01-10-21, 14:04, Vladimir Zapolskiy wrote:
+> On 10/1/21 12:42 PM, Vinod Koul wrote:
+> > On 23-09-21, 02:35, Vladimir Zapolskiy wrote:
+> > > On success nvmem_cell_read() returns a pointer to a dynamically allocated
+> > > buffer, and therefore it shall be freed after usage.
+> > > 
+> > > The issue is reported by kmemleak:
+> > > 
+> > >    # cat /sys/kernel/debug/kmemleak
+> > >    unreferenced object 0xffff3b3803e4b280 (size 128):
+> > >      comm "kworker/u16:1", pid 107, jiffies 4294892861 (age 94.120s)
+> > >      hex dump (first 32 bytes):
+> > >        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+> > >        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+> > >      backtrace:
+> > >        [<000000007739afdc>] __kmalloc+0x27c/0x41c
+> > >        [<0000000071c0fbf8>] nvmem_cell_read+0x40/0xe0
+> > >        [<00000000e803ef1f>] qusb2_phy_init+0x258/0x5bc
+> > >        [<00000000fc81fcfa>] phy_init+0x70/0x110
+> > >        [<00000000e3d48a57>] dwc3_core_soft_reset+0x4c/0x234
+> > >        [<0000000027d1dbd4>] dwc3_core_init+0x68/0x990
+> > >        [<000000001965faf9>] dwc3_probe+0x4f4/0x730
+> > >        [<000000002f7617ca>] platform_probe+0x74/0xf0
+> > >        [<00000000a2576cac>] really_probe+0xc4/0x470
+> > >        [<00000000bc77f2c5>] __driver_probe_device+0x11c/0x190
+> > >        [<00000000130db71f>] driver_probe_device+0x48/0x110
+> > >        [<0000000019f36c2b>] __device_attach_driver+0xa4/0x140
+> > >        [<00000000e5812ff7>]  bus_for_each_drv+0x84/0xe0
+> > >        [<00000000f4bac574>] __device_attach+0xe4/0x1c0
+> > >        [<00000000d3beb631>] device_initial_probe+0x20/0x30
+> > >        [<000000008019b9db>] bus_probe_device+0xa4/0xb0
+> > > 
+> > > Fixes: ca04d9d3e1b1 ("phy: qcom-qusb2: New driver for QUSB2 PHY on Qcom chips")
+> > > Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+> > > ---
+> > > Changes from v1 to v2:
+> > > * fixed a memory leak in case of reading a zero value and return,
+> > > * corrected the fixed commit, the memory leak is present before a rename.
+> > > 
+> > >   drivers/phy/qualcomm/phy-qcom-qusb2.c | 16 ++++++++++------
+> > >   1 file changed, 10 insertions(+), 6 deletions(-)
+> > > 
+> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+> > > index 3c1d3b71c825..f1d97fbd1331 100644
+> > > --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
+> > > +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+> > > @@ -561,7 +561,7 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
+> > >   {
+> > >   	struct device *dev = &qphy->phy->dev;
+> > >   	const struct qusb2_phy_cfg *cfg = qphy->cfg;
+> > > -	u8 *val;
+> > > +	u8 *val, hstx_trim;
+> > >   	/* efuse register is optional */
+> > >   	if (!qphy->cell)
+> > > @@ -575,7 +575,13 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
+> > >   	 * set while configuring the phy.
+> > >   	 */
+> > >   	val = nvmem_cell_read(qphy->cell, NULL);
+> > > -	if (IS_ERR(val) || !val[0]) {
+> > > +	if (IS_ERR(val)) {
+> > > +		dev_dbg(dev, "failed to read a valid hs-tx trim value\n");
+> > 
+> > not an error log..?
+> > 
+> 
+> It's a copy from the existing code, no changes on error but the memory leak fix.
+> 
+> If CONFIG_NVMEM is not set, then nvmem_cell_read() returns ERR_PTR(-EOPNOTSUPP),
+> still it allows to build/run the phy driver, so it seems to be a valid option,
+> please correct me.
 
-> Applied patch1 and patch2 for next, thus leaving the phy changes in
-> patch3 and patch 4 for Kishon/Vinod to pick up.
-> 
-> Thanks and kind regards
-> Uffe
-> 
-> 
-> Thanks Uffe, 
-> Hi Kishon/Vinod,  
-> 	Please let me know if you have any comments
-
-Need ack from Rob on binding patch
+Yes it is not relevant to the leak fix here, so I will apply it
 
 -- 
 ~Vinod
