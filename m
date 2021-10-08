@@ -2,67 +2,63 @@ Return-Path: <SRS0=HpPM=O4=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 32498C4332F
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Oct 2021 10:55:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 39929C433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Oct 2021 12:56:04 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id ECF03610CE
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Oct 2021 10:55:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org ECF03610CE
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 0301E61037
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Oct 2021 12:56:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0301E61037
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=392VwXjVHEY6koDRrwRb4MnynGLTAdl/K7djoMvHmz0=; b=f0cXWkssQePtPb
-	y4Sn5G85SlI5czKSd83S8ctbfW0G/3Zlp8h81z1q4UvdH1sMRqYhlipceRV38CbvT9P9bjG0sigIu
-	XWXMOnJsayWiwrHvSQMkdwWFwQnx5dQfsoR6dzs9NzprCTCyBnJMKRpDuUNt8sPnouqeEp4a5aHnB
-	fd4b0k5ehAfvqWnYA8RSrwpNjTe62f/FncAOJ8VMM37mSI0s2HpSDHqCxOeL8EscxX6yNxPQyxgKN
-	qx8F34dnO9SHt3GsQkpq2i6x78r4uKvW2z4YkqN/UuGIYVChZgobfU8OqD1vddk20o8uoXWQLVSvj
-	9bsNnuTdjhciJTcURNNQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9C2Ru1WV/AXf2WZ0/6rPSG8dkjLLeGKLQ+9004tV8Aw=; b=rBECZMbd3mtC2CkQYvK9Xdwbaj
+	9gm3xJwv0ra3AtN1rTqhU7oPBDuZSTB3WAoM9eDfXCIjPO77k+nLE3sSFB1DR0oI9/icKnWC6ykN4
+	Bj05DrWVB8bGHoPpLdP1HmfF1o3LeiGIDAtAjs+oIoq7ceIpY1HJtiEfYYN/gPEzhx2PZ9Mn6tDBm
+	Pp24BUiDR0EOAw5pH/oDADpzPpvN5fSMsMhdMXzxh9Ek9/OgpHBC0zb4JEyz+C637QnfSWm7fjpSt
+	RuxK3EzTStTsZSqwOt2oF0mBNUDY4hKEY1c30VhhxIvzpeHop0+Hv0QOhN9tPWzYKPV29ABFBW4T5
+	+32l/z5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mYnXF-002UMK-Hj; Fri, 08 Oct 2021 10:55:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mYpPv-002pHM-It; Fri, 08 Oct 2021 12:56:03 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mYnXD-002ULw-8s
- for linux-phy@lists.infradead.org; Fri, 08 Oct 2021 10:55:28 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 1F29960560;
- Fri,  8 Oct 2021 10:55:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1633690526;
- bh=Bdl7YH/KFPL6PVC4dXb+EQOjJpjCme92vUaAQ9eoE6I=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=H6SnhBxWmPyVTrr2MNJJepghs+hF+PJfawe9Xn09TbC+0X8DCyUL9QGxrsXzdurcG
- zC3ZTeAHLAVLE75W1WdeMnXgJAWKUQ6fLIfQjllXBWBnpoY+Z5ovGPMf0MWnT5+RXp
- CoL04fk0RYolhfv3erAES2D3Z8tJm1SC3akyultyd0ilCbFTMRoJFeo45T1VtfZLow
- qC3AyVJ3/0BRMHe6rXw9BdlXVNPyGqK3dmCENn5AJdB9eI2aN9qbtjYXvKB8SzcIBO
- fmp+mLQeEDQKd72uQxex1U05lPFAqOFcStterQNN57n8ZMvjTG5at5AXaCPlvKf9zP
- UNAabiGdRXB3w==
-Date: Fri, 8 Oct 2021 12:55:21 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Bjorn Helgaas <helgaas@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- linuxarm@huawei.com, mauro.chehab@huawei.com, Krzysztof =?UTF-8?B?V2ls?=
- =?UTF-8?B?Y3p5xYRza2k=?= <kw@linux.com>, Binghui Wang
- <wangbinghui@hisilicon.com>, Rob Herring <robh@kernel.org>, Xiaowei Song
- <songxiaowei@hisilicon.com>, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v12 00/11] Add support for Hikey 970 PCIe
-Message-ID: <20211008125521.0aa31beb@coco.lan>
-In-Reply-To: <20211007144103.GA23778@lpieralisi>
-References: <20211005112448.2c40dc10@coco.lan>
- <20211005182321.GA1106986@bhelgaas>
- <20211007144103.GA23778@lpieralisi>
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.30; x86_64-redhat-linux-gnu)
+ id 1mYpPs-002pG8-Fm
+ for linux-phy@lists.infradead.org; Fri, 08 Oct 2021 12:56:02 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 11D2D20000F;
+ Fri,  8 Oct 2021 12:55:54 +0000 (UTC)
+Date: Fri, 8 Oct 2021 14:55:54 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Pratyush Yadav <p.yadav@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ Nikhil Devshatwar <nikhil.nd@ti.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH v5 2/6] phy: cdns-dphy: Add Rx support
+Message-ID: <YWA/2o/Df34VDcpp@aptenodytes>
+References: <20210902185543.18875-1-p.yadav@ti.com>
+ <20210902185543.18875-3-p.yadav@ti.com>
+ <YUMa/ocoQ9l3JDe6@aptenodytes>
+ <20210917172809.rjtf7ww7vjcfvey5@ti.com> <YVapVLnGfSBZCDTY@matsya>
+ <YV463gUvYauhDP/l@pendragon.ideasonboard.com>
+ <20211007121436.jkck2cue5zd3rys4@ti.com>
+ <YWAdKTvYzF58oyU/@pendragon.ideasonboard.com>
 MIME-Version: 1.0
+In-Reply-To: <YWAdKTvYzF58oyU/@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211008_035527_374272_C97766C9 
-X-CRM114-Status: GOOD (  19.86  )
+X-CRM114-CacheID: sfid-20211008_055600_847540_107E7D15 
+X-CRM114-Status: GOOD (  39.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,92 +70,154 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============5051331095793162439=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgTG9yZW56bywKCkVtIFRodSwgNyBPY3QgMjAyMSAxNTo0MTowMyArMDEwMApMb3JlbnpvIFBp
-ZXJhbGlzaSA8bG9yZW56by5waWVyYWxpc2lAYXJtLmNvbT4gZXNjcmV2ZXU6Cgo+IE9uIFR1ZSwg
-T2N0IDA1LCAyMDIxIGF0IDAxOjIzOjIxUE0gLTA1MDAsIEJqb3JuIEhlbGdhYXMgd3JvdGU6Cj4g
-PiBbK2NjIExvcmVuem9dCj4gPiAKPiA+IE9uIFR1ZSwgT2N0IDA1LCAyMDIxIGF0IDExOjI0OjQ4
-QU0gKzAyMDAsIE1hdXJvIENhcnZhbGhvIENoZWhhYiB3cm90ZTogIAo+ID4gPiBIaSBCam9ybiwK
-PiA+ID4gCj4gPiA+IEVtIFR1ZSwgMjggU2VwIDIwMjEgMDk6MzQ6MTAgKzAyMDAKPiA+ID4gTWF1
-cm8gQ2FydmFsaG8gQ2hlaGFiIDxtY2hlaGFiK2h1YXdlaUBrZXJuZWwub3JnPiBlc2NyZXZldTog
-IAo+ID4gICAKPiA+ID4gPiAgIFBDSToga2lyaW46IFJlb3JnYW5pemUgdGhlIFBIWSBsb2dpYyBp
-bnNpZGUgdGhlIGRyaXZlcgo+ID4gPiA+ICAgUENJOiBraXJpbjogQWRkIHN1cHBvcnQgZm9yIGEg
-UEhZIGxheWVyCj4gPiA+ID4gICBQQ0k6IGtpcmluOiBVc2UgcmVnbWFwIGZvciBBUEIgcmVnaXN0
-ZXJzCj4gPiA+ID4gICBQQ0k6IGtpcmluOiBBZGQgc3VwcG9ydCBmb3IgYnJpZGdlIHNsb3QgRFQg
-c2NoZW1hCj4gPiA+ID4gICBQQ0k6IGtpcmluOiBBZGQgS2lyaW4gOTcwIGNvbXBhdGlibGUKPiA+
-ID4gPiAgIFBDSToga2lyaW46IEFkZCBNT0RVTEVfKiBtYWNyb3MKPiA+ID4gPiAgIFBDSToga2ly
-aW46IEFsbG93IGJ1aWxkaW5nIGl0IGFzIGEgbW9kdWxlCj4gPiA+ID4gICBQQ0k6IGtpcmluOiBB
-ZGQgcG93ZXJfb2ZmIHN1cHBvcnQgZm9yIEtpcmluIDk2MCBQSFkKPiA+ID4gPiAgIFBDSToga2ly
-aW46IGZpeCBwb3dlcm9mZiBzZXF1ZW5jZQo+ID4gPiA+ICAgUENJOiBraXJpbjogQWxsb3cgcmVt
-b3ZpbmcgdGhlIGRyaXZlciAgCj4gPiA+IAo+ID4gPiBJIGd1ZXNzIGV2ZXJ5dGhpbmcgaXMgYWxy
-ZWFkeSBzYXRpc2Z5aW5nIHRoZSByZXZpZXcgZmVlZGJhY2tzLgo+ID4gPiBJZiBzbywgY291bGQg
-eW91IHBsZWFzZSBtZXJnZSB0aGUgUENJIG9uZXM/ICAKPiA+IAo+ID4gTG9yZW56byB0YWtlcyBj
-YXJlIG9mIHRoZSBuYXRpdmUgaG9zdCBicmlkZ2UgZHJpdmVycywgc28gSSdtIHN1cmUgdGhpcwo+
-ID4gaXMgb24gaGlzIGxpc3QuICBJIGFkZGVkIGhpbSB0byBjYzogaW4gY2FzZSBub3QuICAKPiAK
-PiBJZGVhbGx5IEknZCBsaWtlIHRvIHNlZSB0aGVzZSBwYXRjaGVzIEFDS2VkL1Jldmlldy1lZCBi
-eSB0aGUga2lyaW4KPiBtYWludGFpbmVycyAtIHRoYXQncyB3aGF0IEkgd2FzIHdhaXRpbmcgZm9y
-IGFuZCB0aGF0J3Mgd2hhdCB0aGV5Cj4gYXJlIHRoZXJlIGZvci4KPiAKPiBIYXZpbmcgc2FpZCB0
-aGF0LCBJIHdpbGwga2VlcCBhbiBleWUgb24gdGhpcyBzZXJpZXMgc28gdGhhdCB3ZQo+IGNhbiBo
-b3BlZnVsbHkgcXVldWUgaXQgZm9yIHY1LjE2LgoKTm90IHN1cmUgaWYgeW91IHJlY2VpdmVkIHRo
-ZSBlLW1haWwgZnJvbSBYaWFvd2VpIHdpdGggaGlzIGFjay4KCkF0IGxlYXN0IGhlcmUsIEkgb25s
-eSByZWNlaXZlZCBvbiBteSBpbnRlcm5hbCBlLW1haWwgKHBlcmhhcHMgYmVjYXVzZQp0aGUgb3Jp
-Z2luYWwgZS1tYWlsIHdhcyBiYXNlNjQtZW5jb2RlZCB3aXRoIGdiMjMxMiBjaGFyc2V0KS4gCgpT
-bywgbGV0IG1lIGZvcndhcmQgaGlzIGFuc3dlciB0byB5b3UsIGMvYyB0aGUgbWFpbGluZyBsaXN0
-cy4KClRoYW5rcywKTWF1cm8KCi0tLS0tLS0tIEZvcndhcmRlZCBNZXNzYWdlIC0tLS0tLS0tCkZy
-b206IFNvbmd4aWFvd2VpIChLaXJpbl9EUlYpIDxzb25neGlhb3dlaUBoaXNpbGljb24uY29tPgpU
-bzogTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFsaXNpQGFybS5jb20+LCBCam9ybiBI
-ZWxnYWFzIDxoZWxnYWFzQGtlcm5lbC5vcmc+CkNDOiBNYXVybyBDYXJ2YWxobyBDaGVoYWIgPG1j
-aGVoYWIraHVhd2VpQGtlcm5lbC5vcmc+LCBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUu
-Y29tPiwgTGludXhhcm0gPGxpbnV4YXJtQGh1YXdlaS5jb20+LCBNYXVybyBDYXJ2YWxobyBDaGVo
-YWIgPG1hdXJvLmNoZWhhYkBodWF3ZWkuY29tPiwgS3J6eXN6dG9mIFdpbGN6ecWEc2tpIDxrd0Bs
-aW51eC5jb20+LCBXYW5nYmluZ2h1aSAoQmlnZ2lvLCBLaXJpbl9EUlYpIDx3YW5nYmluZ2h1aUBo
-aXNpbGljb24uY29tPiwgUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4sIGxpbnV4LWtlcm5l
-bEB2Z2VyLmtlcm5lbC5vcmcgPGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc+LCBsaW51eC1w
-Y2lAdmdlci5rZXJuZWwub3JnIDxsaW51eC1wY2lAdmdlci5rZXJuZWwub3JnPiwgbGludXgtcGh5
-QGxpc3RzLmluZnJhZGVhZC5vcmcgPGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnPiwgS29u
-Z2ZlaSA8a29uZ2ZlaUBoaXNpbGljb24uY29tPgpTdWJqZWN0OiBSZTogW1BBVENIIHYxMiAwMC8x
-MV0gQWRkIHN1cHBvcnQgZm9yIEhpa2V5IDk3MCBQQ0llCkRhdGU6IEZyaSwgOCBPY3QgMjAyMSAx
-MTo0NTowNiArMDEwMApNZXNzYWdlLUlEOiA8ZTcxOGRjMDY2MzNlNGY4N2E2YjZlMTYyNmU4YzA5
-OGVAaGlzaWxpY29uLmNvbT4KCkhpIEJqb3JuLAoKQUNLZWQsIGl0IHNlZW1zIG9rIHRvIG1lIGFu
-ZCBCaW5naHVpLgoKVGhhbmtzIGEgbG90LgoKQi4gUi4KCi0tLS0t6YKu5Lu25Y6f5Lu2LS0tLS0K
-5Y+R5Lu25Lq6OiBMb3JlbnpvIFBpZXJhbGlzaSBbbWFpbHRvOmxvcmVuem8ucGllcmFsaXNpQGFy
-bS5jb21dCuWPkemAgeaXtumXtDogMjAyMeW5tDEw5pyIN+aXpSAyMjo0MQrmlLbku7bkuro6IEJq
-b3JuIEhlbGdhYXMgPGhlbGdhYXNAa2VybmVsLm9yZz4K5oqE6YCBOiBNYXVybyBDYXJ2YWxobyBD
-aGVoYWIgPG1jaGVoYWIraHVhd2VpQGtlcm5lbC5vcmc+OyBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fh
-c0Bnb29nbGUuY29tPjsgTGludXhhcm0gPGxpbnV4YXJtQGh1YXdlaS5jb20+OyBNYXVybyBDYXJ2
-YWxobyBDaGVoYWIgPG1hdXJvLmNoZWhhYkBodWF3ZWkuY29tPjsgS3J6eXN6dG9mIFdpbGN6ecWE
-c2tpIDxrd0BsaW51eC5jb20+OyBXYW5nYmluZ2h1aSAoQmlnZ2lvLCBLaXJpbl9EUlYpIDx3YW5n
-YmluZ2h1aUBoaXNpbGljb24uY29tPjsgUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz47IFNv
-bmd4aWFvd2VpIChLaXJpbl9EUlYpIDxzb25neGlhb3dlaUBoaXNpbGljb24uY29tPjsgbGludXgt
-a2VybmVsQHZnZXIua2VybmVsLm9yZzsgbGludXgtcGNpQHZnZXIua2VybmVsLm9yZzsgbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK5Li76aKYOiBSZTogW1BBVENIIHYxMiAwMC8xMV0gQWRk
-IHN1cHBvcnQgZm9yIEhpa2V5IDk3MCBQQ0llCgpPbiBUdWUsIE9jdCAwNSwgMjAyMSBhdCAwMToy
-MzoyMVBNIC0wNTAwLCBCam9ybiBIZWxnYWFzIHdyb3RlOgo+IFsrY2MgTG9yZW56b10KPiAKPiBP
-biBUdWUsIE9jdCAwNSwgMjAyMSBhdCAxMToyNDo0OEFNICswMjAwLCBNYXVybyBDYXJ2YWxobyBD
-aGVoYWIgd3JvdGU6ICAKPiA+IEhpIEJqb3JuLAo+ID4gCj4gPiBFbSBUdWUsIDI4IFNlcCAyMDIx
-IDA5OjM0OjEwICswMjAwCj4gPiBNYXVybyBDYXJ2YWxobyBDaGVoYWIgPG1jaGVoYWIraHVhd2Vp
-QGtlcm5lbC5vcmc+IGVzY3JldmV1OiAgCj4gICAKPiA+ID4gICBQQ0k6IGtpcmluOiBSZW9yZ2Fu
-aXplIHRoZSBQSFkgbG9naWMgaW5zaWRlIHRoZSBkcml2ZXIKPiA+ID4gICBQQ0k6IGtpcmluOiBB
-ZGQgc3VwcG9ydCBmb3IgYSBQSFkgbGF5ZXIKPiA+ID4gICBQQ0k6IGtpcmluOiBVc2UgcmVnbWFw
-IGZvciBBUEIgcmVnaXN0ZXJzCj4gPiA+ICAgUENJOiBraXJpbjogQWRkIHN1cHBvcnQgZm9yIGJy
-aWRnZSBzbG90IERUIHNjaGVtYQo+ID4gPiAgIFBDSToga2lyaW46IEFkZCBLaXJpbiA5NzAgY29t
-cGF0aWJsZQo+ID4gPiAgIFBDSToga2lyaW46IEFkZCBNT0RVTEVfKiBtYWNyb3MKPiA+ID4gICBQ
-Q0k6IGtpcmluOiBBbGxvdyBidWlsZGluZyBpdCBhcyBhIG1vZHVsZQo+ID4gPiAgIFBDSToga2ly
-aW46IEFkZCBwb3dlcl9vZmYgc3VwcG9ydCBmb3IgS2lyaW4gOTYwIFBIWQo+ID4gPiAgIFBDSTog
-a2lyaW46IGZpeCBwb3dlcm9mZiBzZXF1ZW5jZQo+ID4gPiAgIFBDSToga2lyaW46IEFsbG93IHJl
-bW92aW5nIHRoZSBkcml2ZXIgIAo+ID4gCj4gPiBJIGd1ZXNzIGV2ZXJ5dGhpbmcgaXMgYWxyZWFk
-eSBzYXRpc2Z5aW5nIHRoZSByZXZpZXcgZmVlZGJhY2tzLgo+ID4gSWYgc28sIGNvdWxkIHlvdSBw
-bGVhc2UgbWVyZ2UgdGhlIFBDSSBvbmVzPyAgCj4gCj4gTG9yZW56byB0YWtlcyBjYXJlIG9mIHRo
-ZSBuYXRpdmUgaG9zdCBicmlkZ2UgZHJpdmVycywgc28gSSdtIHN1cmUgdGhpcyAKPiBpcyBvbiBo
-aXMgbGlzdC4gIEkgYWRkZWQgaGltIHRvIGNjOiBpbiBjYXNlIG5vdC4gIAoKSWRlYWxseSBJJ2Qg
-bGlrZSB0byBzZWUgdGhlc2UgcGF0Y2hlcyBBQ0tlZC9SZXZpZXctZWQgYnkgdGhlIGtpcmluIG1h
-aW50YWluZXJzIC0gdGhhdCdzIHdoYXQgSSB3YXMgd2FpdGluZyBmb3IgYW5kIHRoYXQncyB3aGF0
-IHRoZXkgYXJlIHRoZXJlIGZvci4KCkhhdmluZyBzYWlkIHRoYXQsIEkgd2lsbCBrZWVwIGFuIGV5
-ZSBvbiB0aGlzIHNlcmllcyBzbyB0aGF0IHdlIGNhbiBob3BlZnVsbHkgcXVldWUgaXQgZm9yIHY1
-LjE2LgoKTG9yZW56bwoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1waHkK
+
+--===============5051331095793162439==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="L5dYWIzivIAnCCEH"
+Content-Disposition: inline
+
+
+--L5dYWIzivIAnCCEH
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Fri 08 Oct 21, 13:27, Laurent Pinchart wrote:
+> Hi Pratyush,
+>=20
+> On Thu, Oct 07, 2021 at 05:44:38PM +0530, Pratyush Yadav wrote:
+> > On 07/10/21 03:10AM, Laurent Pinchart wrote:
+> > > On Fri, Oct 01, 2021 at 11:53:16AM +0530, Vinod Koul wrote:
+> > > > On 17-09-21, 22:58, Pratyush Yadav wrote:
+> > > > > On 16/09/21 12:22PM, Paul Kocialkowski wrote:
+> > > > > > On Fri 03 Sep 21, 00:25, Pratyush Yadav wrote:
+> > > > > > > The Cadence DPHY can be used to receive image data over the C=
+SI-2
+> > > > > > > protocol. Add support for Rx mode. The programming sequence d=
+iffers from
+> > > > > > > the Tx mode so it is added as a separate set of hooks to isol=
+ate the two
+> > > > > > > paths. The mode in which the DPHY has to be used is selected =
+based on
+> > > > > > > the compatible.
+> > > > > >=20
+> > > > > > I just realized that I didn't follow-up on a previous revision =
+on the debate
+> > > > > > about using the phy sub-mode to distinguish between rx/tx.
+> > > > > >=20
+> > > > > > I see that you've been using a dedicated compatible, but I'm no=
+t sure this is a
+> > > > > > good fit either. My understanding is that the compatible should=
+ describe a group
+> > > > > > of register-compatible revisions of a hardware component, not h=
+ow the hardware
+> > > > > > is used specifically. I guess the distinction between rx/tx fal=
+ls under
+> > > > > > the latter rather than the former.
+> > > > >=20
+> > > > > I am not sure if that is the case. For example, we use "ti,am654-=
+ospi"=20
+> > > > > for Cadence Quadspi controller. The default compatible, "cdns,qsp=
+i-nor",=20
+> > > > > only supports Quad SPI (4 lines). The "ti,am654-ospi" compatible =
+also=20
+> > > > > supports Octal SPI (8 lines).
+> > > >=20
+> > > > Those are hardware defaults right?
+> > > >=20
+> > > > > In addition, I feel like the Rx DPHY is almost a different type o=
+f=20
+> > > > > device from a Tx DPHY. The programming sequence is completely dif=
+ferent,=20
+> > > >=20
+> > > > Is that due to direction or something else..?
+> > > >=20
+> > > > > the clocks required are different, etc. So I think using a differ=
+ent=20
+> > > > > compatible for Rx mode makes sense.
+> > > >=20
+> > > > Is the underlaying IP not capable of both TX and RX and in the spec=
+ific
+> > > > situations you are using it as TX and RX.
+> > > >=20
+> > > > I am okay that default being TX but you can use Paul's approach of
+> > > > direction with this to make it better proposal
+> > >=20
+> > >=20
+> > > Given that the RX and TX implementations are very different (it's not=
+ a
+> > > matter of selecting a mode at runtime), I'm actually tempted to
+> > > recommend having two drivers, one for the RX PHY and one for the TX P=
+HY.
+> > > This can only be done with two different compatible strings, which I
+> > > think would be a better approach.
+> >=20
+> > FWIW, I think having different drivers would certainly make things=20
+> > easier to maintain.
+>=20
+> I'm sorry for not having recommended this in the first place.
+>=20
+> Any objection from anyone against going in this direction ?
+
+So apparently there is not a single register that is shared between rx and =
+tx
+and clocks are not the same either so it feels to me like a separate driver
+would be legit. This looks like two distinct IPs sharing the same base addr=
+ess.
+
+Cheers,
+
+Paul
+
+> > > It's unfortunate that the original compatible string didn't contain
+> > > "tx". We could rename it and keep the old one in the driver for backw=
+ard
+> > > compatibility, making things cleaner going forward.
+>=20
+> --=20
+> Regards,
+>=20
+> Laurent Pinchart
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--L5dYWIzivIAnCCEH
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmFgP9oACgkQ3cLmz3+f
+v9Hxvwf/e/A29WlDAhrBrskZq6ow7NWWzWAoCdjdGQl/QDZmIe7f2+93Q97rjSLn
+eiXMvHxgnuvkm4KWlGM7MBEczcwbSfnZKyu48UWYsdGwfkNAvLJEka522u7nhsxY
+j68hda1nI6BpV7tmX4zsQH/kySF/z1Z787q/CoYl7Yq/dYxtNW8L0EDval4kbYQI
+vHu4CXsmFw0ToPPJd0d4wBrD8WEU8wQX6CkNhDIw92RCzMMJu7jy9FRD5/ekF93P
+Bty3NYcL3a9jcNoX82BeFcBbRE+xyJxeCHR8KpBAmgTaVefI3E6aoPQL1L55bN1v
+SuwC4/l8Bq3f03IyIv222HfPQ6rURw==
+=ceu9
+-----END PGP SIGNATURE-----
+
+--L5dYWIzivIAnCCEH--
+
+
+--===============5051331095793162439==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5051331095793162439==--
+
