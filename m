@@ -1,65 +1,74 @@
-Return-Path: <SRS0=HpPM=O4=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=o6wI=O7=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 09C80C433F5
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Oct 2021 17:35:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 37A74C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Oct 2021 06:04:14 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C3FA160FE8
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Oct 2021 17:35:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C3FA160FE8
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=arm.com
+	by mail.kernel.org (Postfix) with ESMTPS id D2B1260EE7
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Oct 2021 06:04:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D2B1260EE7
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=hisilicon.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TyvNcwXJ6KgyYDBZg60S+LhWZ20G6A+Zc6Y2FjwY0ZU=; b=ZDMCuJD9CHDsH0
-	YYgUv3q78CQw5lOOvBrMH9ukPJAo+pSPmKZjgUtA5eb6R1UeV/gWGnlEnVBdDV96lVIUC1dij+4C6
-	GtrAUCMwrCBVWNfpZ5RXC/WXQAGDb1VJgE60bDbrlWGQQg5Fc7u/+PY4Y1zyLKk0JsuYVry3x2VT8
-	63Kh0UbFm0do09zUmwJEB1vW6eQ7JlYlEZzxA7Z5O0UJmOzAjrb12zCT5fhzhM+VwZW1ND1fneimy
-	uulTcAI4VF8H/6GfGrtVTxyK4QsEgsGiEBX+YMzlzIlMf/9lQO4xeDQXUkJubmW3hcXBizoyEX6fD
-	8Q4VYTJo56V0GQZQiQgA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uRfx5KwYtgHJdiTKx7n5to9KQrWCsnoxwlJ6W3TTEc4=; b=IXXcY60DDr5Jy+
+	okBpKIqbrIHhg0uI2fM7l3Y2fpyGVYdnU9Qbci8sAKBiUdHh7C6Htb0Var9qlFfnhRnfYlgqfyOWP
+	DC5IL5qL0hWnNXmCt2IVLZg5y4YoCCAHckerwHLVs3TbHL3lAzt6TNjVIMARU4I3q8CDzFWyb83hH
+	BA4EVhFtUK8akRdw7Tw37JY7eeJQTJ9KEVSf83v0P9BpffZpZjbabqGJsMWyfgVQlVogpYZxANxEs
+	DXIZJnctD9d1MXeHJy+FOtF2gc49CLvDAXjVOFshyGnWG/+SIH2ltwcwZORPgAxYWgE7oyup2fhKP
+	o8HOiSI2VvttI2sSyjOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mYtm2-003ixn-CV; Fri, 08 Oct 2021 17:35:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mYtly-003iwh-Ip
- for linux-phy@lists.infradead.org; Fri, 08 Oct 2021 17:35:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 838C51063;
- Fri,  8 Oct 2021 10:34:59 -0700 (PDT)
-Received: from lpieralisi (e121166-lin.cambridge.arm.com [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F1FC83F766;
- Fri,  8 Oct 2021 10:34:57 -0700 (PDT)
-Date: Fri, 8 Oct 2021 18:34:51 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Cc: Bjorn Helgaas <helgaas@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- linuxarm@huawei.com, mauro.chehab@huawei.com,
- Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
- Binghui Wang <wangbinghui@hisilicon.com>, Rob Herring <robh@kernel.org>,
- Xiaowei Song <songxiaowei@hisilicon.com>,
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org
+	id 1mZoQ1-007tEH-DB; Mon, 11 Oct 2021 06:04:13 +0000
+Received: from szxga02-in.huawei.com ([45.249.212.188])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1mZ1Pf-004RcB-1m
+ for linux-phy@lists.infradead.org; Sat, 09 Oct 2021 01:44:36 +0000
+Received: from dggeml709-chm.china.huawei.com (unknown [172.30.72.57])
+ by szxga02-in.huawei.com (SkyGuard) with ESMTP id 4HR75k4CsKz903F;
+ Sat,  9 Oct 2021 09:39:38 +0800 (CST)
+Received: from dggeme756-chm.china.huawei.com (10.3.19.102) by
+ dggeml709-chm.china.huawei.com (10.3.17.139) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.2308.8; Sat, 9 Oct 2021 09:44:24 +0800
+Received: from dggeme756-chm.china.huawei.com ([10.6.80.68]) by
+ dggeme756-chm.china.huawei.com ([10.6.80.68]) with mapi id 15.01.2308.008;
+ Sat, 9 Oct 2021 09:44:24 +0800
+From: "Songxiaowei (Kirin_DRV)" <songxiaowei@hisilicon.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Mauro Carvalho Chehab
+ <mchehab+huawei@kernel.org>
+CC: Bjorn Helgaas <helgaas@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Linuxarm <linuxarm@huawei.com>, Mauro Carvalho Chehab
+ <mauro.chehab@huawei.com>, =?utf-8?B?S3J6eXN6dG9mIFdpbGN6ecWEc2tp?=
+ <kw@linux.com>, "Wangbinghui (Biggio, Kirin_DRV)"
+ <wangbinghui@hisilicon.com>, Rob Herring <robh@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
 Subject: Re: [PATCH v12 00/11] Add support for Hikey 970 PCIe
-Message-ID: <20211008173451.GA32193@lpieralisi>
-References: <20211005112448.2c40dc10@coco.lan>
- <20211005182321.GA1106986@bhelgaas>
- <20211007144103.GA23778@lpieralisi>
- <20211008125521.0aa31beb@coco.lan>
+Thread-Topic: [PATCH v12 00/11] Add support for Hikey 970 PCIe
+Thread-Index: Ade8q7iJlFQZnl/9QeuKIfdoWRmMGg==
+Date: Sat, 9 Oct 2021 01:44:24 +0000
+Message-ID: <cd22c1e143b94f55a78d969193847812@hisilicon.com>
+Accept-Language: zh-CN, en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.143.62.236]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211008125521.0aa31beb@coco.lan>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-CFilter-Loop: Reflected
+X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211008_103506_758384_F438CEB7 
-X-CRM114-Status: GOOD (  27.51  )
+X-CRM114-CacheID: sfid-20211008_184435_457658_8A091C86 
+X-CRM114-Status: GOOD (  22.04  )
+X-Mailman-Approved-At: Sun, 10 Oct 2021 23:04:12 -0700
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,104 +80,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBPY3QgMDgsIDIwMjEgYXQgMTI6NTU6MjFQTSArMDIwMCwgTWF1cm8gQ2FydmFsaG8g
-Q2hlaGFiIHdyb3RlOgo+IEhpIExvcmVuem8sCj4gCj4gRW0gVGh1LCA3IE9jdCAyMDIxIDE1OjQx
-OjAzICswMTAwCj4gTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFsaXNpQGFybS5jb20+
-IGVzY3JldmV1Ogo+IAo+ID4gT24gVHVlLCBPY3QgMDUsIDIwMjEgYXQgMDE6MjM6MjFQTSAtMDUw
-MCwgQmpvcm4gSGVsZ2FhcyB3cm90ZToKPiA+ID4gWytjYyBMb3JlbnpvXQo+ID4gPiAKPiA+ID4g
-T24gVHVlLCBPY3QgMDUsIDIwMjEgYXQgMTE6MjQ6NDhBTSArMDIwMCwgTWF1cm8gQ2FydmFsaG8g
-Q2hlaGFiIHdyb3RlOiAgCj4gPiA+ID4gSGkgQmpvcm4sCj4gPiA+ID4gCj4gPiA+ID4gRW0gVHVl
-LCAyOCBTZXAgMjAyMSAwOTozNDoxMCArMDIwMAo+ID4gPiA+IE1hdXJvIENhcnZhbGhvIENoZWhh
-YiA8bWNoZWhhYitodWF3ZWlAa2VybmVsLm9yZz4gZXNjcmV2ZXU6ICAKPiA+ID4gICAKPiA+ID4g
-PiA+ICAgUENJOiBraXJpbjogUmVvcmdhbml6ZSB0aGUgUEhZIGxvZ2ljIGluc2lkZSB0aGUgZHJp
-dmVyCj4gPiA+ID4gPiAgIFBDSToga2lyaW46IEFkZCBzdXBwb3J0IGZvciBhIFBIWSBsYXllcgo+
-ID4gPiA+ID4gICBQQ0k6IGtpcmluOiBVc2UgcmVnbWFwIGZvciBBUEIgcmVnaXN0ZXJzCj4gPiA+
-ID4gPiAgIFBDSToga2lyaW46IEFkZCBzdXBwb3J0IGZvciBicmlkZ2Ugc2xvdCBEVCBzY2hlbWEK
-PiA+ID4gPiA+ICAgUENJOiBraXJpbjogQWRkIEtpcmluIDk3MCBjb21wYXRpYmxlCj4gPiA+ID4g
-PiAgIFBDSToga2lyaW46IEFkZCBNT0RVTEVfKiBtYWNyb3MKPiA+ID4gPiA+ICAgUENJOiBraXJp
-bjogQWxsb3cgYnVpbGRpbmcgaXQgYXMgYSBtb2R1bGUKPiA+ID4gPiA+ICAgUENJOiBraXJpbjog
-QWRkIHBvd2VyX29mZiBzdXBwb3J0IGZvciBLaXJpbiA5NjAgUEhZCj4gPiA+ID4gPiAgIFBDSTog
-a2lyaW46IGZpeCBwb3dlcm9mZiBzZXF1ZW5jZQo+ID4gPiA+ID4gICBQQ0k6IGtpcmluOiBBbGxv
-dyByZW1vdmluZyB0aGUgZHJpdmVyICAKPiA+ID4gPiAKPiA+ID4gPiBJIGd1ZXNzIGV2ZXJ5dGhp
-bmcgaXMgYWxyZWFkeSBzYXRpc2Z5aW5nIHRoZSByZXZpZXcgZmVlZGJhY2tzLgo+ID4gPiA+IElm
-IHNvLCBjb3VsZCB5b3UgcGxlYXNlIG1lcmdlIHRoZSBQQ0kgb25lcz8gIAo+ID4gPiAKPiA+ID4g
-TG9yZW56byB0YWtlcyBjYXJlIG9mIHRoZSBuYXRpdmUgaG9zdCBicmlkZ2UgZHJpdmVycywgc28g
-SSdtIHN1cmUgdGhpcwo+ID4gPiBpcyBvbiBoaXMgbGlzdC4gIEkgYWRkZWQgaGltIHRvIGNjOiBp
-biBjYXNlIG5vdC4gIAo+ID4gCj4gPiBJZGVhbGx5IEknZCBsaWtlIHRvIHNlZSB0aGVzZSBwYXRj
-aGVzIEFDS2VkL1Jldmlldy1lZCBieSB0aGUga2lyaW4KPiA+IG1haW50YWluZXJzIC0gdGhhdCdz
-IHdoYXQgSSB3YXMgd2FpdGluZyBmb3IgYW5kIHRoYXQncyB3aGF0IHRoZXkKPiA+IGFyZSB0aGVy
-ZSBmb3IuCj4gPiAKPiA+IEhhdmluZyBzYWlkIHRoYXQsIEkgd2lsbCBrZWVwIGFuIGV5ZSBvbiB0
-aGlzIHNlcmllcyBzbyB0aGF0IHdlCj4gPiBjYW4gaG9wZWZ1bGx5IHF1ZXVlIGl0IGZvciB2NS4x
-Ni4KPiAKPiBOb3Qgc3VyZSBpZiB5b3UgcmVjZWl2ZWQgdGhlIGUtbWFpbCBmcm9tIFhpYW93ZWkg
-d2l0aCBoaXMgYWNrLgoKSSBoYXZlIG5vdCAoYW5kIGl0IGRpZCBub3QgbWFrZSBpdCB0byBsaW51
-eC1wY2kgZWl0aGVyKS4KCj4gQXQgbGVhc3QgaGVyZSwgSSBvbmx5IHJlY2VpdmVkIG9uIG15IGlu
-dGVybmFsIGUtbWFpbCAocGVyaGFwcyBiZWNhdXNlCj4gdGhlIG9yaWdpbmFsIGUtbWFpbCB3YXMg
-YmFzZTY0LWVuY29kZWQgd2l0aCBnYjIzMTIgY2hhcnNldCkuIAo+IAo+IFNvLCBsZXQgbWUgZm9y
-d2FyZCBoaXMgYW5zd2VyIHRvIHlvdSwgYy9jIHRoZSBtYWlsaW5nIGxpc3RzLgoKUGF0Y2hlcyBz
-aG91bGQgYmUgYWNrZWQgd2l0aCB0YWdzIHRoYXQgdG9vbGluZyByZWNvZ25pemUsIHRoaXMKd291
-bGQgaGVscCBtZS4KCj4gVGhhbmtzLAo+IE1hdXJvCj4gCj4gLS0tLS0tLS0gRm9yd2FyZGVkIE1l
-c3NhZ2UgLS0tLS0tLS0KPiBGcm9tOiBTb25neGlhb3dlaSAoS2lyaW5fRFJWKSA8c29uZ3hpYW93
-ZWlAaGlzaWxpY29uLmNvbT4KPiBUbzogTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFs
-aXNpQGFybS5jb20+LCBCam9ybiBIZWxnYWFzIDxoZWxnYWFzQGtlcm5lbC5vcmc+Cj4gQ0M6IE1h
-dXJvIENhcnZhbGhvIENoZWhhYiA8bWNoZWhhYitodWF3ZWlAa2VybmVsLm9yZz4sIEJqb3JuIEhl
-bGdhYXMgPGJoZWxnYWFzQGdvb2dsZS5jb20+LCBMaW51eGFybSA8bGludXhhcm1AaHVhd2VpLmNv
-bT4sIE1hdXJvIENhcnZhbGhvIENoZWhhYiA8bWF1cm8uY2hlaGFiQGh1YXdlaS5jb20+LCBLcnp5
-c3p0b2YgV2lsY3p5xYRza2kgPGt3QGxpbnV4LmNvbT4sIFdhbmdiaW5naHVpIChCaWdnaW8sIEtp
-cmluX0RSVikgPHdhbmdiaW5naHVpQGhpc2lsaWNvbi5jb20+LCBSb2IgSGVycmluZyA8cm9iaEBr
-ZXJuZWwub3JnPiwgbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZyA8bGludXgta2VybmVsQHZn
-ZXIua2VybmVsLm9yZz4sIGxpbnV4LXBjaUB2Z2VyLmtlcm5lbC5vcmcgPGxpbnV4LXBjaUB2Z2Vy
-Lmtlcm5lbC5vcmc+LCBsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZyA8bGludXgtcGh5QGxp
-c3RzLmluZnJhZGVhZC5vcmc+LCBLb25nZmVpIDxrb25nZmVpQGhpc2lsaWNvbi5jb20+Cj4gU3Vi
-amVjdDogUmU6IFtQQVRDSCB2MTIgMDAvMTFdIEFkZCBzdXBwb3J0IGZvciBIaWtleSA5NzAgUENJ
-ZQo+IERhdGU6IEZyaSwgOCBPY3QgMjAyMSAxMTo0NTowNiArMDEwMAo+IE1lc3NhZ2UtSUQ6IDxl
-NzE4ZGMwNjYzM2U0Zjg3YTZiNmUxNjI2ZThjMDk4ZUBoaXNpbGljb24uY29tPgo+IAo+IEhpIEJq
-b3JuLAo+IAo+IEFDS2VkLCBpdCBzZWVtcyBvayB0byBtZSBhbmQgQmluZ2h1aS4KCkZvciBYaWFv
-d2VpOgoKaHR0cHM6Ly93d3cua2VybmVsLm9yZy9kb2MvaHRtbC9sYXRlc3QvcHJvY2Vzcy9zdWJt
-aXR0aW5nLXBhdGNoZXMuaHRtbAoKYW5kIHlvdXIgZW1haWwgbXVzdCBtYWtlIGl0IHRvIHRoZSBt
-YWlsaW5nIGxpc3Q7IGlmIGl0IGRvZXMgbm90Cml0IGRvZXMgbm90IGV4aXN0IGFzIGZhciBhcyBJ
-IGFtIGNvbmNlcm5lZC4gSSB3aWxsIGFwcGx5IHRoZQpBQ0sgbWFudWFsbHkgZm9yIHRoaXMgdGlt
-ZSBidXQgbGV0J3Mga2VlcCB0aGlzIGluIG1pbmQgcGxlYXNlLgoKVGhhbmtzLApMb3JlbnpvCj4g
-Cj4gVGhhbmtzIGEgbG90Lgo+IAo+IEIuIFIuCj4gCj4gLS0tLS3pgq7ku7bljp/ku7YtLS0tLQo+
-IOWPkeS7tuS6ujogTG9yZW56byBQaWVyYWxpc2kgW21haWx0bzpsb3JlbnpvLnBpZXJhbGlzaUBh
-cm0uY29tXQo+IOWPkemAgeaXtumXtDogMjAyMeW5tDEw5pyIN+aXpSAyMjo0MQo+IOaUtuS7tuS6
-ujogQmpvcm4gSGVsZ2FhcyA8aGVsZ2Fhc0BrZXJuZWwub3JnPgo+IOaKhOmAgTogTWF1cm8gQ2Fy
-dmFsaG8gQ2hlaGFiIDxtY2hlaGFiK2h1YXdlaUBrZXJuZWwub3JnPjsgQmpvcm4gSGVsZ2FhcyA8
-YmhlbGdhYXNAZ29vZ2xlLmNvbT47IExpbnV4YXJtIDxsaW51eGFybUBodWF3ZWkuY29tPjsgTWF1
-cm8gQ2FydmFsaG8gQ2hlaGFiIDxtYXVyby5jaGVoYWJAaHVhd2VpLmNvbT47IEtyenlzenRvZiBX
-aWxjennFhHNraSA8a3dAbGludXguY29tPjsgV2FuZ2JpbmdodWkgKEJpZ2dpbywgS2lyaW5fRFJW
-KSA8d2FuZ2JpbmdodWlAaGlzaWxpY29uLmNvbT47IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5v
-cmc+OyBTb25neGlhb3dlaSAoS2lyaW5fRFJWKSA8c29uZ3hpYW93ZWlAaGlzaWxpY29uLmNvbT47
-IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LXBjaUB2Z2VyLmtlcm5lbC5vcmc7
-IGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCj4g5Li76aKYOiBSZTogW1BBVENIIHYxMiAw
-MC8xMV0gQWRkIHN1cHBvcnQgZm9yIEhpa2V5IDk3MCBQQ0llCj4gCj4gT24gVHVlLCBPY3QgMDUs
-IDIwMjEgYXQgMDE6MjM6MjFQTSAtMDUwMCwgQmpvcm4gSGVsZ2FhcyB3cm90ZToKPiA+IFsrY2Mg
-TG9yZW56b10KPiA+IAo+ID4gT24gVHVlLCBPY3QgMDUsIDIwMjEgYXQgMTE6MjQ6NDhBTSArMDIw
-MCwgTWF1cm8gQ2FydmFsaG8gQ2hlaGFiIHdyb3RlOiAgCj4gPiA+IEhpIEJqb3JuLAo+ID4gPiAK
-PiA+ID4gRW0gVHVlLCAyOCBTZXAgMjAyMSAwOTozNDoxMCArMDIwMAo+ID4gPiBNYXVybyBDYXJ2
-YWxobyBDaGVoYWIgPG1jaGVoYWIraHVhd2VpQGtlcm5lbC5vcmc+IGVzY3JldmV1OiAgCj4gPiAg
-IAo+ID4gPiA+ICAgUENJOiBraXJpbjogUmVvcmdhbml6ZSB0aGUgUEhZIGxvZ2ljIGluc2lkZSB0
-aGUgZHJpdmVyCj4gPiA+ID4gICBQQ0k6IGtpcmluOiBBZGQgc3VwcG9ydCBmb3IgYSBQSFkgbGF5
-ZXIKPiA+ID4gPiAgIFBDSToga2lyaW46IFVzZSByZWdtYXAgZm9yIEFQQiByZWdpc3RlcnMKPiA+
-ID4gPiAgIFBDSToga2lyaW46IEFkZCBzdXBwb3J0IGZvciBicmlkZ2Ugc2xvdCBEVCBzY2hlbWEK
-PiA+ID4gPiAgIFBDSToga2lyaW46IEFkZCBLaXJpbiA5NzAgY29tcGF0aWJsZQo+ID4gPiA+ICAg
-UENJOiBraXJpbjogQWRkIE1PRFVMRV8qIG1hY3Jvcwo+ID4gPiA+ICAgUENJOiBraXJpbjogQWxs
-b3cgYnVpbGRpbmcgaXQgYXMgYSBtb2R1bGUKPiA+ID4gPiAgIFBDSToga2lyaW46IEFkZCBwb3dl
-cl9vZmYgc3VwcG9ydCBmb3IgS2lyaW4gOTYwIFBIWQo+ID4gPiA+ICAgUENJOiBraXJpbjogZml4
-IHBvd2Vyb2ZmIHNlcXVlbmNlCj4gPiA+ID4gICBQQ0k6IGtpcmluOiBBbGxvdyByZW1vdmluZyB0
-aGUgZHJpdmVyICAKPiA+ID4gCj4gPiA+IEkgZ3Vlc3MgZXZlcnl0aGluZyBpcyBhbHJlYWR5IHNh
-dGlzZnlpbmcgdGhlIHJldmlldyBmZWVkYmFja3MuCj4gPiA+IElmIHNvLCBjb3VsZCB5b3UgcGxl
-YXNlIG1lcmdlIHRoZSBQQ0kgb25lcz8gIAo+ID4gCj4gPiBMb3JlbnpvIHRha2VzIGNhcmUgb2Yg
-dGhlIG5hdGl2ZSBob3N0IGJyaWRnZSBkcml2ZXJzLCBzbyBJJ20gc3VyZSB0aGlzIAo+ID4gaXMg
-b24gaGlzIGxpc3QuICBJIGFkZGVkIGhpbSB0byBjYzogaW4gY2FzZSBub3QuICAKPiAKPiBJZGVh
-bGx5IEknZCBsaWtlIHRvIHNlZSB0aGVzZSBwYXRjaGVzIEFDS2VkL1Jldmlldy1lZCBieSB0aGUg
-a2lyaW4gbWFpbnRhaW5lcnMgLSB0aGF0J3Mgd2hhdCBJIHdhcyB3YWl0aW5nIGZvciBhbmQgdGhh
-dCdzIHdoYXQgdGhleSBhcmUgdGhlcmUgZm9yLgo+IAo+IEhhdmluZyBzYWlkIHRoYXQsIEkgd2ls
-bCBrZWVwIGFuIGV5ZSBvbiB0aGlzIHNlcmllcyBzbyB0aGF0IHdlIGNhbiBob3BlZnVsbHkgcXVl
-dWUgaXQgZm9yIHY1LjE2Lgo+IAo+IExvcmVuem8KPiAKPiAKCi0tIApsaW51eC1waHkgbWFpbGlu
-ZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Ack-by Xiaowei Song.
+
+> Hi Lorenzo,
+> 
+> Em Thu, 7 Oct 2021 15:41:03 +0100
+> Lorenzo Pieralisi <lorenzo.pieralisi@arm.com> escreveu:
+> 
+> > On Tue, Oct 05, 2021 at 01:23:21PM -0500, Bjorn Helgaas wrote:
+> > > [+cc Lorenzo]
+> > > 
+> > > On Tue, Oct 05, 2021 at 11:24:48AM +0200, Mauro Carvalho Chehab wrote:  
+> > > > Hi Bjorn,
+> > > > 
+> > > > Em Tue, 28 Sep 2021 09:34:10 +0200
+> > > > Mauro Carvalho Chehab <mchehab+huawei@kernel.org> escreveu:  
+> > >   
+> > > > >   PCI: kirin: Reorganize the PHY logic inside the driver
+> > > > >   PCI: kirin: Add support for a PHY layer
+> > > > >   PCI: kirin: Use regmap for APB registers
+> > > > >   PCI: kirin: Add support for bridge slot DT schema
+> > > > >   PCI: kirin: Add Kirin 970 compatible
+> > > > >   PCI: kirin: Add MODULE_* macros
+> > > > >   PCI: kirin: Allow building it as a module
+> > > > >   PCI: kirin: Add power_off support for Kirin 960 PHY
+> > > > >   PCI: kirin: fix poweroff sequence
+> > > > >   PCI: kirin: Allow removing the driver  
+> > > > 
+> > > > I guess everything is already satisfying the review feedbacks.
+> > > > If so, could you please merge the PCI ones?  
+> > > 
+> > > Lorenzo takes care of the native host bridge drivers, so I'm sure this
+> > > is on his list.  I added him to cc: in case not.  
+> > 
+> > Ideally I'd like to see these patches ACKed/Review-ed by the kirin
+> > maintainers - that's what I was waiting for and that's what they
+> > are there for.
+> > 
+> > Having said that, I will keep an eye on this series so that we
+> > can hopefully queue it for v5.16.
+> 
+> Not sure if you received the e-mail from Xiaowei with his ack.
+
+I have not (and it did not make it to linux-pci either).
+
+> At least here, I only received on my internal e-mail (perhaps because
+> the original e-mail was base64-encoded with gb2312 charset). 
+> 
+> So, let me forward his answer to you, c/c the mailing lists.
+
+Patches should be acked with tags that tooling recognize, this
+would help me.
+
+> Thanks,
+> Mauro
+> 
+
+Thanks.
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
