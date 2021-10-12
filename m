@@ -2,84 +2,60 @@ Return-Path: <SRS0=98aa=PA=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3AEC5C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 07:37:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0BB2FC433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 09:06:42 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E165B60D42
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 07:37:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E165B60D42
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id CEC2E61076
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 09:06:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org CEC2E61076
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TqrVXyMlNz6FVJNA2YLthY9UDjyNIFLj85bFPmY/OuE=; b=JIb0Eu4xSjiYe/
-	vWm28LFQ05O3+wqlNl6tm7XeoIwhvkyCf+QY/F3APEmECc1avxhVFxnzjA0I01LWL/6VcU8udFCyy
-	TOcl7PWFEEalAEhCff2oFvwReVln1SkgBJvkgOfbJJUQS3FSKmUg5kj3hB1RfosCVtNYrEGiKepWS
-	DKXWKL43fQT9SzIfc3u3etcW9PK+aFTOBH3Qd/bxLVNW4/3w4pKChpTOFhUzAlQDcgqC+ztNVRKDh
-	oludRgKE8YPc8/fWeSgUiDEb5R/UZgb4Do5SPztpBPWnwwY8oFaEjJGP6IHiicUiDQMuJP1X77iP1
-	jFz6Mu1UzHXhkxwL+/qA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=w5rarEEWYtOOZS/ZIl+0XINCxnXc39z9RXPvfcDX1CI=; b=rjXzKsGdvNH7SV
+	1cmW9qxrTjyTRMShtha4LwAKU0yakS+eZemiiKeFf0xgAQpk8pRF/fwoW09/szhImuZU1vIga2vXR
+	RoXpRp8W3PjKPCMbNTFH/2ARfcdzWA6NwNy5Bl0u2xf5yicfpx+f05uGOYu7ofv0KxOZjha5YHn1U
+	WQA8Kh+9G0aFb6GRbq69eqGk0sJHEXknN+RscoG/RIDKB1nBQvaS4/l7x4dDA6pe6zYD0XZAkzll4
+	saTT2jrXg81W6Sj5a9g/yCwf/2dtRvQKvW/JudQdV3KhN/SeMOrijG3Vs8dRmw+OMDElo/rGg/qUa
+	eOxhQvAktyrFjHV6zcYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1maCLb-00BoTC-E4; Tue, 12 Oct 2021 07:37:15 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1maDk9-00C92s-AH; Tue, 12 Oct 2021 09:06:41 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1maCLI-00BoHe-5q; Tue, 12 Oct 2021 07:36:57 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id u18so83753671lfd.12;
- Tue, 12 Oct 2021 00:36:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=vB9uYdJsN7HfFIh1EPeV/AmLli9Pcmu7LFRCY4ZOmhM=;
- b=hbUYGPANbCGobhRYJTcf/mlq+dyADWC7z6fvhcM3ER2+BCPyQcaZToBU/wADPB7b0N
- 0prHdPAExgBgj1pER9QInpPSAuoEgDCa7xC2H3SEsAY5MXpdzdzFeb6SY7ChaH4S20ep
- MzDiYLrS8OUmL6hL0iVsjVkBb6BfYMX4gPwmr70cr4ozpt075mUoH7ZJEwfhVEpeF/cL
- d8o1FxWcmqIlzLLM5VqhPeYdj2Tet+fPZL13gz/S6PMzU7YUD+3vwawjczx6tKABZ0VV
- WMjxuQkuqMBjcwQtkFXHdfhpZlt0aOfD1zfmOg8xoEpv3TELSYQYi0rL22J95y4Ccw5L
- ugRQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=vB9uYdJsN7HfFIh1EPeV/AmLli9Pcmu7LFRCY4ZOmhM=;
- b=HgvfiVorItQz6wA+f2vxOUGN80GqUisn5aHPieIo60krOGZ+vTOVDGM8IymGM1nojw
- iKYJS0dYDe+faTJU+yW/Qe5LWKMw4mG+xc6vk7Ij1bl0fANDCc1QbpP49rjrbpFuSo1E
- 80jstfIvAKL/jTdYQcTfF9JieKDGHD+2hLoclUrn/0HOm75u2ibKr+K9mEVdWbH00Uzb
- 01Ln0WUJHi9UWAZsb/wZLuhAORtcIZynwbpofli2uzQtNwD/ZFuf1vBONNO+b4xiCzRd
- Xvck1+mua81sPgHPX0AcOrX3CtOVOSGotpJoj9VGniklDAusqMpeiAeZIKn3sp7Igr9I
- zhRA==
-X-Gm-Message-State: AOAM531YpbtgY4wVrzLgdtxi5VrwfsyKTNBMIYBkRSR7sseluasbUHl1
- ALV5XTi2EbPwWlgWC5GRnlg=
-X-Google-Smtp-Source: ABdhPJxmsAtVWTmIwhXUKqHrj680l/Z9xEbT0Q5zkjpkJtxYwr/pmbkLLqsNA5Vua7Wdkm6x2zYrAw==
-X-Received: by 2002:a05:6512:1595:: with SMTP id
- bp21mr7199977lfb.188.1634024213565; 
- Tue, 12 Oct 2021 00:36:53 -0700 (PDT)
-Received: from archbook.localnet (84-72-105-84.dclient.hispeed.ch.
- [84.72.105.84])
- by smtp.gmail.com with ESMTPSA id a14sm951376lfs.26.2021.10.12.00.36.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Oct 2021 00:36:53 -0700 (PDT)
-From: Nicolas Frattaroli <frattaroli.nicolas@gmail.com>
-To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Cc: heiko@sntech.de, robh+dt@kernel.org, linux-rockchip@lists.infradead.org,
- devicetree@vger.kernel.org, vkoul@kernel.org, michael.riesch@wolfvision.net,
+ id 1maDjb-00C8ow-Hf; Tue, 12 Oct 2021 09:06:09 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 753431A1D1C;
+ Tue, 12 Oct 2021 11:06:05 +0200 (CEST)
+Received: from aprdc01srsp001v.ap-rdc01.nxp.com
+ (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3B6C91A1D11;
+ Tue, 12 Oct 2021 11:06:05 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 9B2AE183AD14;
+ Tue, 12 Oct 2021 17:06:03 +0800 (+08)
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: l.stach@pengutronix.de, tharvey@gateworks.com, kishon@ti.com,
+ vkoul@kernel.org, robh@kernel.org, galak@kernel.crashing.org,
+ shawnguo@kernel.org
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, kishon@ti.com, p.zabel@pengutronix.de
-Subject: Re: [PATCH v1 2/3] phy/rockchip: add naneng combo phy for RK3568
-Date: Tue, 12 Oct 2021 09:36:51 +0200
-Message-ID: <1807525.kHsN9XgAzY@archbook>
-In-Reply-To: <20210826123844.8464-3-yifeng.zhao@rock-chips.com>
-References: <20210826123844.8464-1-yifeng.zhao@rock-chips.com>
- <20210826123844.8464-3-yifeng.zhao@rock-chips.com>
-MIME-Version: 1.0
+ kernel@pengutronix.de, linux-imx@nxp.com
+Subject: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie support
+Date: Tue, 12 Oct 2021 16:41:09 +0800
+Message-Id: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211012_003656_291670_388012EA 
-X-CRM114-Status: GOOD (  18.83  )
+X-CRM114-CacheID: sfid-20211012_020607_754913_C3F9D8C8 
+X-CRM114-Status: GOOD (  12.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,151 +67,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Donnerstag, 26. August 2021 14:38:43 CEST Yifeng Zhao wrote:
-> This patch implements a combo phy driver for Rockchip SoCs
-> with NaNeng IP block. This phy can be used as pcie-phy, usb3-phy,
-> sata-phy or sgmii-phy.
-> 
-> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-> ---
-> [...]
-> +static int rockchip_combphy_pcie_init(struct rockchip_combphy_priv *priv)
-> +{
-> +	int ret = 0;
-> +
-> +	if (priv->cfg->combphy_cfg) {
-> +		ret = priv->cfg->combphy_cfg(priv);
-> +		if (ret) {
-> +			dev_err(priv->dev, "failed to init phy for 
-pcie\n");
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static int rockchip_combphy_usb3_init(struct rockchip_combphy_priv *priv)
-> +{
-> +	int ret = 0;
-> +
-> +	if (priv->cfg->combphy_cfg) {
-> +		ret = priv->cfg->combphy_cfg(priv);
-> +		if (ret) {
-> +			dev_err(priv->dev, "failed to init phy for 
-usb3\n");
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static int rockchip_combphy_sata_init(struct rockchip_combphy_priv *priv)
-> +{
-> +	int ret = 0;
-> +
-> +	if (priv->cfg->combphy_cfg) {
-> +		ret = priv->cfg->combphy_cfg(priv);
-> +		if (ret) {
-> +			dev_err(priv->dev, "failed to init phy for 
-sata\n");
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static int rockchip_combphy_sgmii_init(struct rockchip_combphy_priv *priv)
-> +{
-> +	int ret = 0;
-> +
-> +	if (priv->cfg->combphy_cfg) {
-> +		ret = priv->cfg->combphy_cfg(priv);
-> +		if (ret) {
-> +			dev_err(priv->dev, "failed to init phy for 
-sgmii\n");
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static int rockchip_combphy_set_mode(struct rockchip_combphy_priv *priv)
-> +{
-> +	switch (priv->mode) {
-> +	case PHY_TYPE_PCIE:
-> +		rockchip_combphy_pcie_init(priv);
-> +		break;
-> +	case PHY_TYPE_USB3:
-> +		rockchip_combphy_usb3_init(priv);
-> +		break;
-> +	case PHY_TYPE_SATA:
-> +		rockchip_combphy_sata_init(priv);
-> +		break;
-> +	case PHY_TYPE_SGMII:
-> +	case PHY_TYPE_QSGMII:
-> +		return rockchip_combphy_sgmii_init(priv);
-> +	default:
-> +		dev_err(priv->dev, "incompatible PHY type\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
+refer to the discussion [1] when try to enable i.MX8MM PCIe support,
+one standalone PCIe PHY driver should be seperated from i.MX PCIe
+driver when enable i.MX8MM PCIe support.
 
-All of the _init functions appear to be the same except for the error
-string.
+This patch-set adds the standalone PCIe PHY driver suport[1-5], and i.MX8MM
+PCIe support[6-9] to have whole view to review this patch-set.
 
-I think it would be better to just have the init done in _set_mode,
-and then use the switch case statement to show the right error
-message on if (ret).
+The PCIe works on i.MX8MM EVK board based the the blkctrl power driver
+[2] and this PHY driver patch-set.
 
-> [...]
-> +
-> +static int rockchip_combphy_probe(struct platform_device *pdev)
-> +{
-> +	struct phy_provider *phy_provider;
-> +	struct device *dev = &pdev->dev;
-> +	struct rockchip_combphy_priv *priv;
-> +	const struct rockchip_combphy_cfg *phy_cfg;
-> +	struct resource *res;
-> +	int ret;
-> +
-> +	phy_cfg = of_device_get_match_data(dev);
-> +	if (!phy_cfg) {
-> +		dev_err(dev, "No OF match data provided\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> +	if (!priv)
-> +		return -ENOMEM;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	priv->mmio = devm_ioremap_resource(dev, res);
+[1] https://patchwork.ozlabs.org/project/linux-pci/patch/20210510141509.929120-3-l.stach@pengutronix.de/
+[2] https://patchwork.kernel.org/project/linux-arm-kernel/cover/20210910202640.980366-1-l.stach@pengutronix.de/
 
-I think devm_platform_get_and_ioremap_resource is preferred here,
-using it also means you can get rid of res.
+Main changes v2 --> v3:
+- Regarding Lucas' comments.
+ - to have a whole view to review the patches, send out the i.MX8MM PCIe support too.
+ - move the PHY related bits manipulations of the GPR/SRC to standalone PHY driver.
+ - split the dts changes to SOC and board DT, and use the enum instead of raw value.
+ - update the license of the dt-binding header file.
 
-> +	if (IS_ERR(priv->mmio)) {
-> +		ret = PTR_ERR(priv->mmio);
-> +		return ret;
-> +	}
-> +
-> [...]
+Changes v1 --> v2:
+- Update the license of the dt-binding header file to make the license
+  compatible with dts files.
+- Fix the dt_binding_check errors.
 
-Regards,
-Nicolas Frattaroli
+Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml    |   6 +++
+Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  79 +++++++++++++++++++++++++++++
+arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi                |  53 ++++++++++++++++++++
+arch/arm64/boot/dts/freescale/imx8mm.dtsi                    |  46 ++++++++++++++++-
+drivers/pci/controller/dwc/pci-imx6.c                        |  63 ++++++++++++++++++++++-
+drivers/phy/freescale/Kconfig                                |   9 ++++
+drivers/phy/freescale/Makefile                               |   1 +
+drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   | 218 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+include/dt-bindings/phy/phy-imx8-pcie.h                      |  14 ++++++
+9 files changed, 486 insertions(+), 3 deletions(-)
 
-
+[PATCH v3 1/9] dt-bindings: phy: phy-imx8-pcie: Add binding for the
+[PATCH v3 2/9] dt-bindings: phy: add imx8 pcie phy driver support
+[PATCH v3 3/9] arm64: dts: imx8mm: add the pcie phy support
+[PATCH v3 4/9] arm64: dts: imx8mm-evk: add the pcie phy support
+[PATCH v3 5/9] phy: freescale: pcie: initialize the imx8 pcie
+[PATCH v3 6/9] dt-bindings: imx6q-pcie: Add PHY phandles and name
+[PATCH v3 7/9] arm64: dts: imx8mm: add the pcie support
+[PATCH v3 8/9] arm64: dts: imx8mm-evk: add the pcie support on imx8mm
+[PATCH v3 9/9] PCI: imx: add the imx8mm pcie support
 
 -- 
 linux-phy mailing list
