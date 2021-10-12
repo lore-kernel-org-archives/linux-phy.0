@@ -2,79 +2,76 @@ Return-Path: <SRS0=98aa=PA=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CC438C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 00:43:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0AC4FC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 01:59:04 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0AB8660F0F
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 00:43:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0AB8660F0F
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id A15A760FD7
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 01:59:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A15A760FD7
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=mediatek.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FCxhte0wtfepuw47QQhoukRyIirw+4z9Dcjc/FcYcqQ=; b=Nm8+TOSWOOqDka
-	SzelQZG9KSG7ibZG4f8xoSDuiP1w1M3E9NpsNuDGWXyuMcDuZIwPDtpLeyclFJgqEjwmQzLnmwso8
-	WjVE+p293GSXClc7sdSQqd4hVp1NEpWb7FvvnxESKa+vCwCnTXZpZULyu4mGGjI8L8q9mQ/lEtg9E
-	wF5tStAtAbWa07ckvECagrUrwpdusQeSXNpsA18Dd8ju7Uj5lzyIa/d5P90OiJ8fpNi7scAEs4972
-	i54mxzdaACMyqQ5CKtNEhaK9Arph1o73ctro4bOkYUJ+T7bIAB75raJPchokas6MpMYXpeMOt4BKf
-	CnfVxXR15InzcyTgkfVg==;
+	List-Owner; bh=LaDCBqGtJ75YLt/lgy39pfFQzqC/KEHPna3jypp4N/4=; b=yorvFfS3alIHZm
+	8GEkaz0pNnRl5WHWAI5S4xCdazuZAv5Xz5wGdlDDorWFk0dSGwEzL3V6KHcecgPdHeC440tFBWMOC
+	20yaPwBvYyOB/w+bmzWUWPkpaIP0fQ7R3NcZRBvZTVJWdwF+szos96vG8ctdZh7iS6QRMsn1cfCmd
+	2ruW7zMXPT1tik2tI1NJaLrovsBXyejwX6jNId1afxdiEn6l/357kRp8RCPi7trj+CPfgtHwVvq6e
+	IC2arWHbV8v2gj4k+9hmqcplGk+IZtR9I5AeGVZ5vS1sTIphm8m/rVe4i33tBgSIbU0SdGR8plMA2
+	49mxfo8PwMkZflf+zghA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ma5tG-00B5Ro-Hs; Tue, 12 Oct 2021 00:43:34 +0000
-Received: from mail-ot1-f53.google.com ([209.85.210.53])
+	id 1ma74J-00BEek-5j; Tue, 12 Oct 2021 01:59:03 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ma5t2-00B5P0-1z; Tue, 12 Oct 2021 00:43:21 +0000
-Received: by mail-ot1-f53.google.com with SMTP id
- d21-20020a9d4f15000000b0054e677e0ac5so9865768otl.11; 
- Mon, 11 Oct 2021 17:43:19 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=C0veIXD12tRwkmARbIUPpytHwuGDS9GaI5ZCAL0YxtM=;
- b=TwG02KGygVHaFvPLyv0CSivWpiUHOyybw+DTS6i5iShlSDHJzjxyHfoc9SJUIhtq+g
- Fswhlqxp/IB+MuAfcZGth3gC4KMNcrJWr54FS6txrmmvrAuqERfL50jeI8pyc+kVzbxr
- FukRq+ic2DHHCNLSa9qABxMTQrN6pZrrPDr3AluTmXYSuGT6nLY3lYTbS6YzlovFtwWp
- Vq3tgp5b5gjUjI8xk9iPocbZYSIurDzuOzTUOg/kEMJOqKxeFtJBivXdu3yZ5Tb5dc8K
- 1+6bIi4aozwRLaZlnGOuvhWu81xPZ8+g5yhW1aPkCL+4msRKtFhmomrP8MLsl9hifcdJ
- 7qSg==
-X-Gm-Message-State: AOAM533wedO3BOmmEFDasTLUl5AIzLLp6bKQRznp0Ft+CGPNf2Nu2NYC
- W85ry00voyzVVqICvqq4lQ==
-X-Google-Smtp-Source: ABdhPJy8M+f4nFxCTH13TvMUHFxJ1m8soMYBOgZhxmB4w7ZoRNTKIjUDBsh0NAvX07BegYnRBAkEOw==
-X-Received: by 2002:a05:6830:44a9:: with SMTP id
- r41mr678852otv.230.1633999398628; 
- Mon, 11 Oct 2021 17:43:18 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id p15sm1877611otq.59.2021.10.11.17.43.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 Oct 2021 17:43:17 -0700 (PDT)
-Received: (nullmailer pid 1474130 invoked by uid 1000);
- Tue, 12 Oct 2021 00:43:16 -0000
-Date: Mon, 11 Oct 2021 19:43:16 -0500
-From: Rob Herring <robh@kernel.org>
-To: Markus Schneider-Pargmann <msp@baylibre.com>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Sam Ravnborg <sam@ravnborg.org>, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v4 2/7] dt-bindings: mediatek, dp: Add Display Port binding
-Message-ID: <YWTaJOXGgF2bHznv@robh.at.kernel.org>
-References: <20211011094624.3416029-1-msp@baylibre.com>
- <20211011094624.3416029-3-msp@baylibre.com>
+ id 1ma745-00BEcr-FH; Tue, 12 Oct 2021 01:58:51 +0000
+X-UUID: dbb6948833bc4e44b9a48c93aee9615b-20211011
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=uNQhKUvX6znaQDjpBxvpN1tm6No5kIlEywKVEAQ11v4=; 
+ b=N2sDzpN4FSxItgFkjFiL8w+RVbG+Wc/tn8HhWOWcSsszJq/fzguDVtqfFgfGHx/UQUYUc2I2OROVm1sIZml8aUD0LbtkpIj2Ze4VeVHVJ7yD9Yg5LCfnJcs8ZOqvmsMBflb+TQ4tS9V0zAhzgzDUaRURDX5uJcuJLKcpbWezdo4=;
+X-UUID: dbb6948833bc4e44b9a48c93aee9615b-20211011
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1422900323; Mon, 11 Oct 2021 18:58:44 -0700
+Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 11 Oct 2021 18:52:57 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N1.mediatek.inc
+ (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Tue, 12 Oct 2021 09:52:49 +0800
+Received: from mhfsdcap04 (10.17.3.154) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Tue, 12 Oct 2021 09:52:49 +0800
+Message-ID: <0f620925d20a14c8f5f198241e4a136f9d48e206.camel@mediatek.com>
+Subject: Re: [PATCH v1 1/4] dt-bindings: phy: Add binding for Mediatek
+ MT8195 HDMI PHY
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Guillaume Ranquet <granquet@baylibre.com>, <chunkuang.hu@kernel.org>,
+ <p.zabel@pengutronix.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
+ <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>
+CC: <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Date: Tue, 12 Oct 2021 09:52:52 +0800
+In-Reply-To: <20210929094425.745-2-granquet@baylibre.com>
+References: <20210929094425.745-1-granquet@baylibre.com>
+ <20210929094425.745-2-granquet@baylibre.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211011094624.3416029-3-msp@baylibre.com>
+X-TM-SNTS-SMTP: B45878DFBBAE411D00B78F558FF34CA1F8FC152D9CF13DAD6C17EDE2272C44542000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211011_174320_129732_1841C261 
-X-CRM114-Status: GOOD (  18.62  )
+X-CRM114-CacheID: sfid-20211011_185849_544535_BE85B98B 
+X-CRM114-Status: GOOD (  16.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,126 +88,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 11, 2021 at 11:46:19AM +0200, Markus Schneider-Pargmann wrote:
-> This controller is present on several mediatek hardware. Currently
-> mt8195 and mt8395 have this controller without a functional difference,
-> so only one compatible field is added.
+On Wed, 2021-09-29 at 11:44 +0200, Guillaume Ranquet wrote:
+> Add bindings to describe Mediatek MT8195 HDMI PHY
 > 
-> The controller can have two forms, as a normal display port and as an
-> embedded display port.
-> 
-> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 > ---
->  .../display/mediatek/mediatek,dp.yaml         | 89 +++++++++++++++++++
->  1 file changed, 89 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+>  .../phy/mediatek,mtk8195-hdmi-phy.yaml        | 70
+> +++++++++++++++++++
+>  1 file changed, 70 insertions(+)
+>  create mode 100644
+> Documentation/devicetree/bindings/phy/mediatek,mtk8195-hdmi-phy.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,mtk8195-
+> hdmi-phy.yaml
+> b/Documentation/devicetree/bindings/phy/mediatek,mtk8195-hdmi-
+> phy.yaml
 > new file mode 100644
-> index 000000000000..f7a35962c23b
+> index 0000000000000..6b39bb8c9dfe7
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
-> @@ -0,0 +1,89 @@
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,mtk8195-hdmi-
+> phy.yaml
+> @@ -0,0 +1,70 @@
 > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (c) 2020 MediaTek
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
+> +$id: http://devicetree.org/schemas/phy/mediatek,hdmi-phy.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Mediatek Display Port Controller
+> +title: MediaTek High Definition Multimedia Interface (HDMI) PHY
+> binding for mt8195
 > +
 > +maintainers:
-> +  - CK Hu <ck.hu@mediatek.com>
-> +  - Jitao shi <jitao.shi@mediatek.com>
+> +  - Chun-Kuang Hu <chunkuang.hu@kernel.org>
+> +  - Philipp Zabel <p.zabel@pengutronix.de>
+> +  - Chunfeng Yun <chunfeng.yun@mediatek.com>
 > +
 > +description: |
-> +  Device tree bindings for the Mediatek (embedded) Display Port controller
-> +  present on some Mediatek SoCs.
+> +  The HDMI PHY serializes the HDMI encoder's three channel 10-bit
+> parallel
+> +  output and drives the HDMI pads.
 > +
 > +properties:
+> +  $nodename:
+> +    pattern: "^hdmi-phy@[0-9a-f]+$"
+> +
 > +  compatible:
-> +    enum:
-> +      - mediatek,mt8195-edp_tx
-> +      - mediatek,mt8195-dp_tx
-
-Are these blocks different?
-
+> +    - const: mediatek,mt8195-hdmi-phy
 > +
 > +  reg:
 > +    maxItems: 1
 > +
-> +  interrupts:
-> +    maxItems: 1
-> +
 > +  clocks:
 > +    items:
-> +      - description: faxi clock
+> +      - description: PLL reference clock
 > +
 > +  clock-names:
 > +    items:
-> +      - const: faxi
+> +      - const: hdmi_xtal_sel
+No need prefix "hdmi_",
+After you merge mt8195-hdmi-phy driver into phy-mtk-hdmi.c, this
+binding will also be merged into mediatek,hdmi-phy.yaml as suggested by
+Chun-Kuang.
+
+Thanks a lot
+ 
 > +
-> +  power-domains:
-> +    maxItems: 1
+> +  clock-output-names:
+> +    items:
+> +      - const: hdmi_txpll
 > +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Input endpoint of the controller, usually dp_intf
+> +  "#phy-cells":
+> +    const: 0
 > +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Output endpoint of the controller
+> +  "#clock-cells":
+> +    const: 0
 > +
 > +required:
 > +  - compatible
 > +  - reg
-> +  - interrupts
-> +  - ports
+> +  - clocks
+> +  - clock-names
+> +  - clock-output-names
+> +  - "#phy-cells"
+> +  - "#clock-cells"
 > +
 > +additionalProperties: false
 > +
 > +examples:
 > +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/power/mt8195-power.h>
-> +    dp_tx: edp_tx@1c500000 {
-> +        compatible = "mediatek,mt8195-edp_tx";
-> +        reg = <0 0x1c500000 0 0x8000>;
-> +        interrupts = <GIC_SPI 676 IRQ_TYPE_LEVEL_HIGH 0>;
-> +        power-domains = <&spm MT8195_POWER_DOMAIN_EPD_TX>;
-> +        pinctrl-names = "default";
-> +        pinctrl-0 = <&edp_pin>;
-> +        status = "okay";
-
-Don't show status in examples.
-
-> +
-> +        ports {
-> +            #address-cells = <1>;
-> +            #size-cells = <0>;
-> +
-> +            port@0 {
-> +                reg = <0>;
-> +                edp_in: endpoint {
-> +                    remote-endpoint = <&dp_intf0_out>;
-> +                };
-> +            };
-> +            port@1 {
-> +                reg = <1>;
-> +                edp_out: endpoint {
-> +                	remote-endpoint = <&panel_in>;
-> +                };
-> +            };
-> +        };
+> +    hdmi_phy: hdmi-phy@11d5f000 {
+> +        compatible = "mediatek,mt8195-hdmi-phy";
+> +        reg = <0 0x11d5f000 0 0x100>;
+> +        clocks = <&topckgen 77>;
+> +        clock-names = "hdmi_xtal_sel";
+> +        clock-output-names = "hdmi_txpll";
+> +        #clock-cells = <0>;
+> +        #phy-cells = <0>;
 > +    };
-> -- 
-> 2.33.0
-> 
-> 
-
+> +
+> +...
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
