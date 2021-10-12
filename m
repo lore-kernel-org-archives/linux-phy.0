@@ -1,15 +1,15 @@
-Return-Path: <SRS0=o6wI=O7=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=98aa=PA=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0807FC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Oct 2021 23:45:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CC438C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 00:43:35 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CE80960F38
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Oct 2021 23:45:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org CE80960F38
+	by mail.kernel.org (Postfix) with ESMTPS id 0AB8660F0F
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Oct 2021 00:43:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0AB8660F0F
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,62 +18,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c1OWxyBpkHKiP1mExDHZmsIuyiQBuCB8V4Lx7i2mWfw=; b=CUHAhv8XVV6zev
-	MqygwHpcjsg1U/MZPFwKiO2Prbsr1AoJk8rr2fuyReVU+q8vCC5Mkhqu68XKuH99tz5cmcwTDUR/i
-	pwP+nb80hY7F4ifyKKXHyBea4ix0hriGTIHIrgNfXxQ5AGWqC54Yp1UMSvrxDq7S4/XvE1w4kjkq6
-	/7bRW7CsjzWs0jn4Cz+uBP8frSUyAEcxlX5+DvjIKSHoRIphDb5f9KscLrilbQoz9TWDX+QbAP7Bc
-	TpQY00khry6Xa1KbdBevi/+MUVOhuevm3ImrmvmqGMUEontY/vg07Yu9aFpn/PLAoWNGq+h0LQbpy
-	atnTdWkUbkIRfE7oltIA==;
+	List-Owner; bh=FCxhte0wtfepuw47QQhoukRyIirw+4z9Dcjc/FcYcqQ=; b=Nm8+TOSWOOqDka
+	SzelQZG9KSG7ibZG4f8xoSDuiP1w1M3E9NpsNuDGWXyuMcDuZIwPDtpLeyclFJgqEjwmQzLnmwso8
+	WjVE+p293GSXClc7sdSQqd4hVp1NEpWb7FvvnxESKa+vCwCnTXZpZULyu4mGGjI8L8q9mQ/lEtg9E
+	wF5tStAtAbWa07ckvECagrUrwpdusQeSXNpsA18Dd8ju7Uj5lzyIa/d5P90OiJ8fpNi7scAEs4972
+	i54mxzdaACMyqQ5CKtNEhaK9Arph1o73ctro4bOkYUJ+T7bIAB75raJPchokas6MpMYXpeMOt4BKf
+	CnfVxXR15InzcyTgkfVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ma4ya-00B0wD-7V; Mon, 11 Oct 2021 23:45:00 +0000
-Received: from mail-ot1-f46.google.com ([209.85.210.46])
+	id 1ma5tG-00B5Ro-Hs; Tue, 12 Oct 2021 00:43:34 +0000
+Received: from mail-ot1-f53.google.com ([209.85.210.53])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ma4yX-00B0ue-4s; Mon, 11 Oct 2021 23:44:58 +0000
-Received: by mail-ot1-f46.google.com with SMTP id
- s18-20020a0568301e1200b0054e77a16651so6942155otr.7; 
- Mon, 11 Oct 2021 16:44:55 -0700 (PDT)
+ id 1ma5t2-00B5P0-1z; Tue, 12 Oct 2021 00:43:21 +0000
+Received: by mail-ot1-f53.google.com with SMTP id
+ d21-20020a9d4f15000000b0054e677e0ac5so9865768otl.11; 
+ Mon, 11 Oct 2021 17:43:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=dq9+YkMx0GHCeJWvTqnKsmwOPTk7sjGTA6ATq7IokFA=;
- b=IDHapy8uufacRFp8g1ubIdDWN5zhrPKmcsIcB9KL7PAcHZfjkvasPZ3F1eGaPu7qYL
- NJGXqkeEkIBpyHhSHOEV/ShqqBJ1vf39qprq6W71MDbQoHfzONWeDi1Ok+guwoT6gHWK
- ZagsE0tDs37NgXc10B8Hvrjx7rLgEyXwPCuzXjUB73CiHzZ10XsYUIVRYD8Y2w7hdKph
- CHaw1Gv/pZ2eZgb7Ng+lMZwFSMch/e9ZksXRFg9c9KYmm1GBcrXpwWAK6U/FSi96kWWp
- a2elZPcYq0kgJhtlazGcs5XCsw58OUpsTjA3tZfaH+naJ9o0FhDfuSfZCAllyvZ1/nFn
- 6IJA==
-X-Gm-Message-State: AOAM530UCbw5IZxmL7Y6A+MhV8Y8oGJPDiE3VFqGn/hTyfAaA400nR70
- zcpiDT4l+uaAs/8zjfzfwQ==
-X-Google-Smtp-Source: ABdhPJwdGAZLwdNaLgCvThYshN0fgEkSQ3hr7M+UCK9PDK4rr/2YteoPrw9SV/cr4euuY0pIsDg4ZQ==
-X-Received: by 2002:a9d:7114:: with SMTP id n20mr14449501otj.25.1633995894622; 
- Mon, 11 Oct 2021 16:44:54 -0700 (PDT)
+ bh=C0veIXD12tRwkmARbIUPpytHwuGDS9GaI5ZCAL0YxtM=;
+ b=TwG02KGygVHaFvPLyv0CSivWpiUHOyybw+DTS6i5iShlSDHJzjxyHfoc9SJUIhtq+g
+ Fswhlqxp/IB+MuAfcZGth3gC4KMNcrJWr54FS6txrmmvrAuqERfL50jeI8pyc+kVzbxr
+ FukRq+ic2DHHCNLSa9qABxMTQrN6pZrrPDr3AluTmXYSuGT6nLY3lYTbS6YzlovFtwWp
+ Vq3tgp5b5gjUjI8xk9iPocbZYSIurDzuOzTUOg/kEMJOqKxeFtJBivXdu3yZ5Tb5dc8K
+ 1+6bIi4aozwRLaZlnGOuvhWu81xPZ8+g5yhW1aPkCL+4msRKtFhmomrP8MLsl9hifcdJ
+ 7qSg==
+X-Gm-Message-State: AOAM533wedO3BOmmEFDasTLUl5AIzLLp6bKQRznp0Ft+CGPNf2Nu2NYC
+ W85ry00voyzVVqICvqq4lQ==
+X-Google-Smtp-Source: ABdhPJy8M+f4nFxCTH13TvMUHFxJ1m8soMYBOgZhxmB4w7ZoRNTKIjUDBsh0NAvX07BegYnRBAkEOw==
+X-Received: by 2002:a05:6830:44a9:: with SMTP id
+ r41mr678852otv.230.1633999398628; 
+ Mon, 11 Oct 2021 17:43:18 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id r4sm2060017oti.27.2021.10.11.16.44.53
+ by smtp.gmail.com with ESMTPSA id p15sm1877611otq.59.2021.10.11.17.43.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 Oct 2021 16:44:53 -0700 (PDT)
-Received: (nullmailer pid 1392392 invoked by uid 1000);
- Mon, 11 Oct 2021 23:44:53 -0000
-Date: Mon, 11 Oct 2021 18:44:53 -0500
+ Mon, 11 Oct 2021 17:43:17 -0700 (PDT)
+Received: (nullmailer pid 1474130 invoked by uid 1000);
+ Tue, 12 Oct 2021 00:43:16 -0000
+Date: Mon, 11 Oct 2021 19:43:16 -0500
 From: Rob Herring <robh@kernel.org>
 To: Markus Schneider-Pargmann <msp@baylibre.com>
-Cc: Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Sam Ravnborg <sam@ravnborg.org>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- dri-devel@lists.freedesktop.org, Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH v4 1/7] dt-bindings: mediatek,dpintf: Add DP_INTF binding
-Message-ID: <YWTMdewWCNCZy+UE@robh.at.kernel.org>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
+ Sam Ravnborg <sam@ravnborg.org>, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v4 2/7] dt-bindings: mediatek, dp: Add Display Port binding
+Message-ID: <YWTaJOXGgF2bHznv@robh.at.kernel.org>
 References: <20211011094624.3416029-1-msp@baylibre.com>
- <20211011094624.3416029-2-msp@baylibre.com>
+ <20211011094624.3416029-3-msp@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211011094624.3416029-2-msp@baylibre.com>
+In-Reply-To: <20211011094624.3416029-3-msp@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211011_164457_215390_9A895604 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20211011_174320_129732_1841C261 
+X-CRM114-Status: GOOD (  18.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,30 +91,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 11 Oct 2021 11:46:18 +0200, Markus Schneider-Pargmann wrote:
-> DP_INTF is a similar functional block to mediatek,dpi but is different
-> in that it serves the DisplayPort controller on mediatek SoCs and uses
-> different clocks. Therefore this patch creates a new binding file for
-> this functional block.
+On Mon, Oct 11, 2021 at 11:46:19AM +0200, Markus Schneider-Pargmann wrote:
+> This controller is present on several mediatek hardware. Currently
+> mt8195 and mt8395 have this controller without a functional difference,
+> so only one compatible field is added.
+> 
+> The controller can have two forms, as a normal display port and as an
+> embedded display port.
 > 
 > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 > ---
+>  .../display/mediatek/mediatek,dp.yaml         | 89 +++++++++++++++++++
+>  1 file changed, 89 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
 > 
-> Notes:
->     Changes v3 -> v4:
->     - Fixed clock names in the example as the clock patch series is merged into
->       next now
->     - Add missing ports decleration to the example
-> 
->     Changes v1 -> v2:
->     - Move the devicetree binding from mediatek,dpi into its own binding file.
-> 
->  .../display/mediatek/mediatek,dpintf.yaml     | 86 +++++++++++++++++++
->  1 file changed, 86 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpintf.yaml
-> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> new file mode 100644
+> index 000000000000..f7a35962c23b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> @@ -0,0 +1,89 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Mediatek Display Port Controller
+> +
+> +maintainers:
+> +  - CK Hu <ck.hu@mediatek.com>
+> +  - Jitao shi <jitao.shi@mediatek.com>
+> +
+> +description: |
+> +  Device tree bindings for the Mediatek (embedded) Display Port controller
+> +  present on some Mediatek SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - mediatek,mt8195-edp_tx
+> +      - mediatek,mt8195-dp_tx
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Are these blocks different?
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: faxi clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: faxi
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Input endpoint of the controller, usually dp_intf
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Output endpoint of the controller
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/power/mt8195-power.h>
+> +    dp_tx: edp_tx@1c500000 {
+> +        compatible = "mediatek,mt8195-edp_tx";
+> +        reg = <0 0x1c500000 0 0x8000>;
+> +        interrupts = <GIC_SPI 676 IRQ_TYPE_LEVEL_HIGH 0>;
+> +        power-domains = <&spm MT8195_POWER_DOMAIN_EPD_TX>;
+> +        pinctrl-names = "default";
+> +        pinctrl-0 = <&edp_pin>;
+> +        status = "okay";
+
+Don't show status in examples.
+
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                reg = <0>;
+> +                edp_in: endpoint {
+> +                    remote-endpoint = <&dp_intf0_out>;
+> +                };
+> +            };
+> +            port@1 {
+> +                reg = <1>;
+> +                edp_out: endpoint {
+> +                	remote-endpoint = <&panel_in>;
+> +                };
+> +            };
+> +        };
+> +    };
+> -- 
+> 2.33.0
+> 
+> 
 
 -- 
 linux-phy mailing list
