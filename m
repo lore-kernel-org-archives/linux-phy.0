@@ -2,95 +2,78 @@ Return-Path: <SRS0=Q62d=PD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 03FB8C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 09:23:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 62B36C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 12:40:09 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B2CBD61027
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 09:23:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B2CBD61027
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
+	by mail.kernel.org (Postfix) with ESMTPS id 25B806108E
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 12:40:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 25B806108E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=microchip.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:CC:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5Pvwp+Z0SgtT2cPCNm3iYd6mg9mvQRkKS8klLrOqMLI=; b=RuG7y5iMEPDmOEwaGZYcS3ClAR
-	VQW+ip1L6sLcuj3BcaVOdbsyhFlkY0iKjXaltxkEO7PgpY830DsTTjmDh+TY+HhuEdYakm3b01AEQ
-	6rUp38lg9fRTp2s1VIAAzzTMrwePqIS2OEQit8CkvSapW7puUMXbiIbjyHM9S06BNT4hRUm4L0XUh
-	8rRb02KNucridgPuvQ61kTTEC50z/NK02F9nCPtSAMRQ5QgjXjU9smCDdF11u9o6bJuQPy7Vj959O
-	520Nfwm0UzYn7wZLudcOY3HbFvjVgVaU5rO4W0HYzRp2IGLJg9V6qv5esc9AKDbnJFvJyA/E4rgeG
-	/3WdxPpg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+f+UOvt7/yEgzgcE6XMU3r1FpjD/ENxjieIp4VdeOdc=; b=nQSnxhFS9NU1dS
+	oUYhOKAnAxVnOf/vRLuHtbGRwNaYvvmgHAeWH9HPkX89pJ5OOodmmaL3DfHh3yMdsa+TCmDauImQ1
+	YnHTCUlKtoyNA8/qgcmNhWLuTZPxmfMrsIXZ20p73t5Fdn/9VelpszyezxpODYcK33cuuOl/164gZ
+	aWheEvXIoqPIribpcV1GoSFT12hAku+gmvfKoq/F1r0kv5bH4ybjUMmN8m8NFs61wupSkP/XyrkDw
+	k6S31qET88T1bwydnyJ+TX0A2BgljfEL4LSDk02bcJHFoLB7qnEZ07kI1iNV/h7F13t7F+f4LI/aG
+	PI2eCMHH190gGGHUvTng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mbJQv-006FZ5-0a; Fri, 15 Oct 2021 09:23:21 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1mbMVM-006x0Z-I9; Fri, 15 Oct 2021 12:40:08 +0000
+Received: from esa.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mbJEE-006B79-E8; Fri, 15 Oct 2021 09:10:16 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19F3wNkg023305; 
- Fri, 15 Oct 2021 11:10:04 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=selector1;
- bh=55jDz8cmCoHVVJtcQ73gxGXLtyYGCC5pEpIdPTm+4Po=;
- b=13IoANIYmTKKClJtEhb2KFWiODUglhH5zk/NE+rRqn6kXtPNQnZ+3wVDFJjKlsi4MyC+
- pX47v1GlK6v6ZosqUJa1bjYlwtRzGidNGLURozfqDtqcBfVYeK26NEO5W6E5xG+KyOX0
- JyaEkytTs0KyUso/Y3tX1lvBKfOVg/FjgxO7KW+Ju3MgC1BRwdb2GsV9KvlmM9OkaKRm
- GKCQ78iGxAwOwfneybrD7pZBkkVGgxUrD2V5oX6CGTR2OnuSgcUhDZLQuylkfLS3YsVS
- 76LD7/2td65t3ngqAdCY4eaC10gZWiko7mh+aG7zufmI/9k7Kw1oRiwjZjouR8AO0qq9 mA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3bq270ht80-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 15 Oct 2021 11:10:04 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 71762100038;
- Fri, 15 Oct 2021 11:10:03 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6548121BF53;
- Fri, 15 Oct 2021 11:10:03 +0200 (CEST)
-Received: from lmecxl0995.lme.st.com (10.75.127.49) by SFHDAG2NODE2.st.com
- (10.75.127.5) with Microsoft SMTP Server (TLS) id 15.0.1497.18; Fri, 15 Oct
- 2021 11:10:02 +0200
-Subject: Re: [PATCH v2 2/3] dt-bindings: phy: phy-stm32-usbphyc: add optional
- phy tuning properties
-To: Rob Herring <robh@kernel.org>
-CC: "moderated list:ARM/STM32 ARCHITECTURE"
- <linux-stm32@st-md-mailman.stormreply.com>, linux-arm-kernel
- <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Maxime
- Coquelin <mcoquelin.stm32@gmail.com>, <devicetree@vger.kernel.org>
-References: <20211005152453.89330-1-amelie.delaunay@foss.st.com>
- <20211005152453.89330-3-amelie.delaunay@foss.st.com>
- <1633473959.465401.106809.nullmailer@robh.at.kernel.org>
- <491ab475-e7dc-eb71-85aa-6d82543b74db@foss.st.com>
- <CAL_JsqLEPd9_4SgmDh8GakyNxQeuMKhJeGzaLbZSdxDJ_-dZYg@mail.gmail.com>
- <2a07f03d-ffaa-77f6-c223-74bae60eb3f1@foss.st.com>
- <YWhz/AsfDX24iUR3@robh.at.kernel.org>
-From: Amelie DELAUNAY <amelie.delaunay@foss.st.com>
-Message-ID: <5fa1f199-cb51-1ec3-9759-fd4362cdd1ea@foss.st.com>
-Date: Fri, 15 Oct 2021 11:10:02 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.13.0
+ id 1mbMVG-006wuV-TW
+ for linux-phy@lists.infradead.org; Fri, 15 Oct 2021 12:40:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1634301602; x=1665837602;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=62ij9G57oyBa2LbZbUA2DQuKc+bkP7u3EcIzSJwqHlQ=;
+ b=z3waH7FTsNF/al/83Fe533S6iQqCuiwh8zsmsRBB7sRVJ2SflNt7dEra
+ SH7Q9eqaJHYPddSw1G1Z3WTuys85i56biB9yHN6nxsQV2hAhPu1Zg/W3q
+ Vqx9b5st9hKIDycylQNLH90EFaJpeoRJBPNAVTC+6LLGzciYnf0ruf+Jx
+ Ep8TqHcsNJ5DdpRbJNM+99Q2O+g+fD4gInIln73x1XzxovDZ0xVInfGAg
+ WHy+mVg+Jo8ak8edyZwIU35de1XXTYdIcmMhZfvAWkWYdKitwwAN/umQO
+ RpmwE2ICD51Qc+t5UmD3iaJXddDhSX78jWFzBhj/Ee73shZ401xE5kON6 A==;
+IronPort-SDR: KacCpRsrocVRVtW9UKX13c3xumoF8k8BUQxUjsBKhfAwg9eRqM8yLX9U1niRytGHdwCu98UPuF
+ 7kFtE24C+NppyAVsdgDyNTfASYO8VJt/UU5i8Zk3bzvEV3WLE9aXLehIQTMKxm3iWbI0AsvFOC
+ Z6HDjIzLbrtOM49DfV+q16qu+rVGrSVQbm+ZBjQqCa+GBgpKv9fbluCZUa2laZ6nE4BNztRyHK
+ Jj/+TLTh9Sf1aUAP3bZzk3pU5GKPFwkef+gAPGuB5f9SX2FQQSNQUatcSrTGlGSKRCvNQpbBBZ
+ izRQFnx3mdqozUfYXqoQ3uKO
+X-IronPort-AV: E=Sophos;i="5.85,375,1624345200"; d="scan'208";a="73070425"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 Oct 2021 05:39:59 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2176.14; Fri, 15 Oct 2021 05:39:59 -0700
+Received: from soft-dev3-1.microsemi.net (10.10.115.15) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
+ 15.1.2176.14 via Frontend Transport; Fri, 15 Oct 2021 05:39:57 -0700
+From: Horatiu Vultur <horatiu.vultur@microchip.com>
+To: <kishon@ti.com>, <vkoul@kernel.org>, <robh+dt@kernel.org>,
+ <andrew@lunn.ch>, <alexandre.belloni@bootlin.com>,
+ <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+CC: Horatiu Vultur <horatiu.vultur@microchip.com>
+Subject: [PATCH v3 0/3] Add driver for lan966x Serdes driver
+Date: Fri, 15 Oct 2021 14:39:17 +0200
+Message-ID: <20211015123920.176782-1-horatiu.vultur@microchip.com>
+X-Mailer: git-send-email 2.33.0
 MIME-Version: 1.0
-In-Reply-To: <YWhz/AsfDX24iUR3@robh.at.kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG2NODE2.st.com
- (10.75.127.5)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
- definitions=2021-10-15_02,2021-10-14_02,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211015_021015_005000_8255C711 
-X-CRM114-Status: GOOD (  15.39  )
+X-CRM114-CacheID: sfid-20211015_054003_150348_01A3491C 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,34 +85,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This patch serie adds support for Microchip lan966x serdes. The lan966x
+device which contains this serdes has 8 interfaces, consisting of 2
+copper transceivers, 3 Serdes and 2 RGMII interfaces and 2 of the
+Serdes support QSGMII. The driver add the functionality of "muxing" the
+interfaces to different switch ports.
 
-On 10/14/21 8:16 PM, Rob Herring wrote:
-> On Wed, Oct 06, 2021 at 02:58:21PM +0200, Amelie DELAUNAY wrote:
->>
->>
->> On 10/6/21 2:38 PM, Rob Herring wrote:
->>>> Disable child nodes while parent node is already disabled fixes the
->>>> warning. But it means to add status = "okay"; in child nodes everywhere
->>>> usbphyc is enabled.
->>> Presumably, you already have to add phy-supply everywhere.
->>>   >> Is it normal dtbs_check checks in child nodes when parent node is
->> disabled?
->>> I'll look into doing that.
->>
->> Should I wait for your potential dtbs_check update or should I disable child
->> nodes in .dtsi (and enable them along with parent node in .dts using
->> usbphyc) ?
-> 
-> I pushed a fix to dt-validate for this.
+The following table shows which interfaces can be supported by the port.
 
-Thanks!
+PortNumber    Max Speed    Ethernet interface options
+    0            1Gbps       CuPHY, 1G SGMII or QSGMII
+    1            1Gbps       CuPHY, 1G SGMII or QSGMII
+    2          2.5Gbps       2.5G SGMII, QSGMII, RGMII
+    3          2.5Gbps       2.5G SGMII, QSGMII, RGMII
+    4          2.5Gbps       2.5G SGMII, QSGMII
+    5            1Gbps       QSGMII, RGMII
+    6            1Gbps       QSGMII, RGMII
+    7            1Gbps       QSGMII
 
-Amelie
+v2->v3:
+- remove unused includes
+- add missing '...' in microchip,lan966x-serdes.yaml
+- rename lan966x-serdes.h to phy-lan966x-serdes.h
+- Rename CU->PHY and RG->RGMII
+- update commit message for PATCH 2
+
+v1->v2:
+- replace the regmap with iomem
+- update DT bindings
+
+Horatiu Vultur (3):
+  dt-bindings: phy: Add lan966x-serdes binding
+  dt-bindings: phy: Add constants for lan966x serdes
+  phy: Add lan966x ethernet serdes PHY driver
+
+ .../phy/microchip,lan966x-serdes.yaml         |  45 ++
+ drivers/phy/microchip/Kconfig                 |   8 +
+ drivers/phy/microchip/Makefile                |   1 +
+ drivers/phy/microchip/lan966x_serdes.c        | 540 ++++++++++++++++++
+ drivers/phy/microchip/lan966x_serdes_regs.h   | 482 ++++++++++++++++
+ include/dt-bindings/phy/phy-lan966x-serdes.h  |  14 +
+ 6 files changed, 1090 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/microchip,lan966x-serdes.yaml
+ create mode 100644 drivers/phy/microchip/lan966x_serdes.c
+ create mode 100644 drivers/phy/microchip/lan966x_serdes_regs.h
+ create mode 100644 include/dt-bindings/phy/phy-lan966x-serdes.h
+
+-- 
+2.33.0
+
 
 -- 
 linux-phy mailing list
