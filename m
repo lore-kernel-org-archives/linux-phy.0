@@ -2,83 +2,95 @@ Return-Path: <SRS0=Q62d=PD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EA166C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 08:52:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 03FB8C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 09:23:22 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BAB9061053
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 08:52:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BAB9061053
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=microchip.com
+	by mail.kernel.org (Postfix) with ESMTPS id B2CBD61027
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 09:23:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B2CBD61027
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lN7U8lOvM2vnbSFDgrd/uEYM6IjnRKncYEYxkgjta4A=; b=ABQjNEtOTGxmzr
-	uiJp1GTgHGIbZarAVf4IW8N2a74K6I7oPvMOprTdaUIwO6vKJJmYpbVqBqJoH/PW548uJRFm+NW//
-	oIeX7R4xEls8ejJD471SJrMd6QsnTqtTbvtR4ZthkKKX3XWl4samf8eL5PFI2pxauR2UJNBoeh+Vm
-	ebjWMDoH40R77nOM1S6AS83HFjDZpBz8Q1GJ8PTsHK6A7SGnKHwmiv2bD5Pa2EaQMFu5C3BNSe86v
-	1yn2fpTyNVRFRZASnUiMDmx0ZKX3uS+WlxLE9ttT9bclPTIE8wHnA3bg0Wj4F9pOjmlTIOIsxbQcw
-	Mg0nVCtZOeHlRucr5zbg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:CC:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5Pvwp+Z0SgtT2cPCNm3iYd6mg9mvQRkKS8klLrOqMLI=; b=RuG7y5iMEPDmOEwaGZYcS3ClAR
+	VQW+ip1L6sLcuj3BcaVOdbsyhFlkY0iKjXaltxkEO7PgpY830DsTTjmDh+TY+HhuEdYakm3b01AEQ
+	6rUp38lg9fRTp2s1VIAAzzTMrwePqIS2OEQit8CkvSapW7puUMXbiIbjyHM9S06BNT4hRUm4L0XUh
+	8rRb02KNucridgPuvQ61kTTEC50z/NK02F9nCPtSAMRQ5QgjXjU9smCDdF11u9o6bJuQPy7Vj959O
+	520Nfwm0UzYn7wZLudcOY3HbFvjVgVaU5rO4W0HYzRp2IGLJg9V6qv5esc9AKDbnJFvJyA/E4rgeG
+	/3WdxPpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mbIxO-0066Ox-Lj; Fri, 15 Oct 2021 08:52:50 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1mbJQv-006FZ5-0a; Fri, 15 Oct 2021 09:23:21 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mbIZc-005zPO-Hz
- for linux-phy@lists.infradead.org; Fri, 15 Oct 2021 08:28:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1634286495; x=1665822495;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=v2/wdh25geUQc4WZEx7PPWApAsS6DjRgShuqkzLgWjc=;
- b=hrDG7Z3BA5tloCcXlw2pljulWGU8AIRyjrRTJGvO9UYBxhFyOtDfGI0w
- xAeaV40zCqy2U6O8zUqFLwf84jCc3ljbR49eA7MR5Obp27Z1DXxplfSi2
- SW+6SKL3E/zh3jLY5bRg15HppdlajWYFftKjVhu3kgWyT40AepTSJWPq4
- 3oGd9u7i0Tm3jz+NC77oZ9fUkIuOyVzLJqIcYpyRG0oMlcpvO8iqIHjHs
- qOTWL0GF+RtCeMn5/uDnVj52olPNrlMqfT/F5jk6ePBEMIAGkc+BBFpsA
- Pcx74AfTRDBNnT6d/RH3J7aJR1ySn6yje1VfFOuRqOEY0o02Re1hopU5Y g==;
-IronPort-SDR: KvEvlsXEeaAxDadhXz04g9fL5gozd+Ei/bzxt/j+UEvxoFi1y1AJG0Uw6E+MeNOJ5vl6MD1Hvp
- mMN8y8g139k4wc5fT0ZkGWvkhtQaqQXR6YY5f+DYTAAhPhQ6+Hl/5xsDJhzgerTAixnvajXvNE
- 2rQL87E02PjP20uxQi+S8v0QeQkM0I6f6TTh9DMy78i5MxiDJEFhtCly9oiRdPLR4Q6O7eO59M
- ZfTKLYXQXUPyamtVe2rci4z6VTQ2mjEoLHUgtU63lO52IH8zZBRPTAoyulU1PBbGMKXCPh6eII
- DAw39jK2XX8WsABxsnYdS1bx
-X-IronPort-AV: E=Sophos;i="5.85,375,1624345200"; d="scan'208";a="133108709"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 15 Oct 2021 01:28:14 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2176.14; Fri, 15 Oct 2021 01:28:14 -0700
-Received: from localhost (10.10.115.15) by chn-vm-ex02.mchp-main.com
- (10.10.85.144) with Microsoft SMTP Server id 15.1.2176.14 via Frontend
- Transport; Fri, 15 Oct 2021 01:28:14 -0700
-Date: Fri, 15 Oct 2021 10:29:42 +0200
-From: Horatiu Vultur <horatiu.vultur@microchip.com>
+ id 1mbJEE-006B79-E8; Fri, 15 Oct 2021 09:10:16 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19F3wNkg023305; 
+ Fri, 15 Oct 2021 11:10:04 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=55jDz8cmCoHVVJtcQ73gxGXLtyYGCC5pEpIdPTm+4Po=;
+ b=13IoANIYmTKKClJtEhb2KFWiODUglhH5zk/NE+rRqn6kXtPNQnZ+3wVDFJjKlsi4MyC+
+ pX47v1GlK6v6ZosqUJa1bjYlwtRzGidNGLURozfqDtqcBfVYeK26NEO5W6E5xG+KyOX0
+ JyaEkytTs0KyUso/Y3tX1lvBKfOVg/FjgxO7KW+Ju3MgC1BRwdb2GsV9KvlmM9OkaKRm
+ GKCQ78iGxAwOwfneybrD7pZBkkVGgxUrD2V5oX6CGTR2OnuSgcUhDZLQuylkfLS3YsVS
+ 76LD7/2td65t3ngqAdCY4eaC10gZWiko7mh+aG7zufmI/9k7Kw1oRiwjZjouR8AO0qq9 mA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3bq270ht80-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 15 Oct 2021 11:10:04 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 71762100038;
+ Fri, 15 Oct 2021 11:10:03 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6548121BF53;
+ Fri, 15 Oct 2021 11:10:03 +0200 (CEST)
+Received: from lmecxl0995.lme.st.com (10.75.127.49) by SFHDAG2NODE2.st.com
+ (10.75.127.5) with Microsoft SMTP Server (TLS) id 15.0.1497.18; Fri, 15 Oct
+ 2021 11:10:02 +0200
+Subject: Re: [PATCH v2 2/3] dt-bindings: phy: phy-stm32-usbphyc: add optional
+ phy tuning properties
 To: Rob Herring <robh@kernel.org>
-CC: <kishon@ti.com>, <vkoul@kernel.org>, <linux@armlinux.org.uk>,
- <andrew@lunn.ch>, <alexandre.belloni@bootlin.com>,
- <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v2 2/3] dt-bindings: phy: Add binding includes for
- lan966x serdes
-Message-ID: <20211015082942.fpyanrg6on3wgzbp@soft-dev3-1.localhost>
-References: <20211006063523.3962427-1-horatiu.vultur@microchip.com>
- <20211006063523.3962427-3-horatiu.vultur@microchip.com>
- <YWh2J32hZftzIi+F@robh.at.kernel.org>
+CC: "moderated list:ARM/STM32 ARCHITECTURE"
+ <linux-stm32@st-md-mailman.stormreply.com>, linux-arm-kernel
+ <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Maxime
+ Coquelin <mcoquelin.stm32@gmail.com>, <devicetree@vger.kernel.org>
+References: <20211005152453.89330-1-amelie.delaunay@foss.st.com>
+ <20211005152453.89330-3-amelie.delaunay@foss.st.com>
+ <1633473959.465401.106809.nullmailer@robh.at.kernel.org>
+ <491ab475-e7dc-eb71-85aa-6d82543b74db@foss.st.com>
+ <CAL_JsqLEPd9_4SgmDh8GakyNxQeuMKhJeGzaLbZSdxDJ_-dZYg@mail.gmail.com>
+ <2a07f03d-ffaa-77f6-c223-74bae60eb3f1@foss.st.com>
+ <YWhz/AsfDX24iUR3@robh.at.kernel.org>
+From: Amelie DELAUNAY <amelie.delaunay@foss.st.com>
+Message-ID: <5fa1f199-cb51-1ec3-9759-fd4362cdd1ea@foss.st.com>
+Date: Fri, 15 Oct 2021 11:10:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.13.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YWh2J32hZftzIi+F@robh.at.kernel.org>
+In-Reply-To: <YWhz/AsfDX24iUR3@robh.at.kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG2NODE2.st.com
+ (10.75.127.5)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
+ definitions=2021-10-15_02,2021-10-14_02,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211015_012816_699037_9E95E4C9 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20211015_021015_005000_8255C711 
+X-CRM114-Status: GOOD (  15.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,62 +102,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The 10/14/2021 13:25, Rob Herring wrote:
 
+On 10/14/21 8:16 PM, Rob Herring wrote:
+> On Wed, Oct 06, 2021 at 02:58:21PM +0200, Amelie DELAUNAY wrote:
+>>
+>>
+>> On 10/6/21 2:38 PM, Rob Herring wrote:
+>>>> Disable child nodes while parent node is already disabled fixes the
+>>>> warning. But it means to add status = "okay"; in child nodes everywhere
+>>>> usbphyc is enabled.
+>>> Presumably, you already have to add phy-supply everywhere.
+>>>   >> Is it normal dtbs_check checks in child nodes when parent node is
+>> disabled?
+>>> I'll look into doing that.
+>>
+>> Should I wait for your potential dtbs_check update or should I disable child
+>> nodes in .dtsi (and enable them along with parent node in .dts using
+>> usbphyc) ?
 > 
-> On Wed, Oct 06, 2021 at 08:35:22AM +0200, Horatiu Vultur wrote:
-> > Add include bindings for lan966x serdes
-> >
-> > Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
-> > ---
-> >  include/dt-bindings/phy/lan966x_serdes.h | 14 ++++++++++++++
-> >  1 file changed, 14 insertions(+)
-> >  create mode 100644 include/dt-bindings/phy/lan966x_serdes.h
-> >
-> > diff --git a/include/dt-bindings/phy/lan966x_serdes.h b/include/dt-bindings/phy/lan966x_serdes.h
-> > new file mode 100644
-> > index 000000000000..06e529473475
-> > --- /dev/null
-> > +++ b/include/dt-bindings/phy/lan966x_serdes.h
-> > @@ -0,0 +1,14 @@
-> > +/* SPDX-License-Identifier: (GPL-2.0 OR MIT) */
-> > +
-> > +#ifndef __LAN966X_SERDES_H__
-> > +#define __LAN966X_SERDES_H__
-> > +
-> > +#define CU(x)                (x)
-> > +#define CU_MAX               CU(2)
-> > +#define SERDES6G(x)  (CU_MAX + 1 + (x))
-> > +#define SERDES6G_MAX SERDES6G(3)
-> > +#define RG(x)                (SERDES6G_MAX + 1 + (x))
-> > +#define RG_MAX               RG(2)
-> > +#define SERDES_MAX   (RG_MAX + 1)
-> 
-> I'm guessing these are used for the phy cells? If so, I can't figure out
-> how and I shouldn't have to search the driver to figure it out.
+> I pushed a fix to dt-validate for this.
 
-These are just some constatns to be able to select between the
-integrated PHYs, RGMII, SerDes interfaces. Because these interfaces
-needs to be muxed according to the HW.
+Thanks!
 
-This is something similar with the Ocelot Serdes where there are only
-2 Serdes types.
-
-> 
-> What's CU? What's RG?
-
-Cu - copper PHY
-RG - RGMII
-
-I will create a new version where I will improve the log message.
-
--- 
-/Horatiu
+Amelie
 
 -- 
 linux-phy mailing list
