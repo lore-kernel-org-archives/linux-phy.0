@@ -1,80 +1,132 @@
-Return-Path: <SRS0=ayEg=PC=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Q62d=PD=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CE4E4C4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Oct 2021 18:25:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A0ED0C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 08:08:34 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9D7B5611EE
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Oct 2021 18:25:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9D7B5611EE
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 6BE4461027
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Oct 2021 08:08:34 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6BE4461027
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=vivo.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rZBnU9U3RBqC4Jvf3gg76TKgXYoUrfg2yWUNBllYrO0=; b=xKYZWZqAmmA7dx
-	3Ft81ujSTvi7rhqFjfV4S2zxCeKGN9aRURT+L/raMESfPP4O+bivmVLQbDB3nd8+l9dQHpnc8RrZr
-	eNaylty1witbc7MLtEhTUbGdwCYNYR9Y9b/8VQ0R02StlRZgZJIYIiTVXz7Ew2Q8yv9JmBE3sQW3C
-	B6sJy9kwNzYLKmuwOLO7kYIsm8z8qbJ2nA1c/9t0qKed4D23k59d/KGBaGQilnHUfV1Nrhwxe+Z48
-	P/JA1BytfVciFDzwPtpgir6Zu0AvQtK62mgAsWs33WW2HY85j1fgcN+bWHAaM+ENITu9X47V6QDtK
-	m4j4qks4RNUWvu5q4JIA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+5IGUv8Cri4zBJeyTYfJyzbYpQN2HmRhpVQ266rT/0g=; b=iDRAEhwsNbvkhs
+	oVk8t2s0GYKm+OeS8C8k6k+/lM82DV5WPzxmjOOhY+FxiFnnyDXW11DhNWQI7xmPxpMpyJNhIJXS3
+	r9b26LmJiqMq9fG9P/2mMs/L3coASskY7Bgo+62UefgF9jAbrfq/ZxZMG9HRWvLlhQ9umecD0gBiP
+	Kf2rSGURKU9eJIomTUV4eswuKw0wAbsr1vwUxbmCUFgvve41MNh63VOVMgre8Db4vH/7FiCgBYFQn
+	YsQPonESn6JmJkal/sgMg7ZYQ1FyJ6WhF6p9y5LSdn+jfxde0pD6k1yPNoCM6NMR8mVt5NCOhf/De
+	gNhhHknTeXr4bOwbqePQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mb5QL-0047Fw-59; Thu, 14 Oct 2021 18:25:49 +0000
-Received: from mail-oo1-f50.google.com ([209.85.161.50])
+	id 1mbIGX-005s7d-9C; Fri, 15 Oct 2021 08:08:33 +0000
+Received: from mail-eopbgr1300120.outbound.protection.outlook.com
+ ([40.107.130.120] helo=APC01-HK2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mb5QI-0047ET-PQ
- for linux-phy@lists.infradead.org; Thu, 14 Oct 2021 18:25:48 +0000
-Received: by mail-oo1-f50.google.com with SMTP id
- i1-20020a4ab241000000b002b7069d0e88so2174293ooo.5
- for <linux-phy@lists.infradead.org>; Thu, 14 Oct 2021 11:25:46 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=lSGLR+TPyWEX+bgb5ym/EJSPMQUo+T6pVt3I38VRg4o=;
- b=BfEyjorRWAQwL2h9DAMYXS1fPJRMjDjfIgAvTm0NgjKalg/b5ElB1dSfubptDDHL+f
- yYve6upQwYRRg0cbgCvkjWNJwesKmgZb5lrKqfvMseXl86SFlSvAr3YBe19+dKf9eR8U
- HHP6Cy/iGbfofKzqOoYGrV4NkSuagRuzDOvnS4H39rZWwXZS2ZlcTqXInPlAXPmsLnLV
- 1odVdMgFXdh/4+UTRfiLvpKP22qB8CSZXOoCILaWujh4PcVFb4kyvV+ejtLEwW4Vu24K
- MQ3WJh+GK682pCQTE/TfU/RLr2xWgruTYaQMnWSfzw0+iaX5PraB7Y9XNTeUGi1p+RZf
- 2m8A==
-X-Gm-Message-State: AOAM533lwmxM6uOPdydFGJ3KLOOpkCNL5AG9LMr2YcABe+FZjZLcXpmY
- o4DWgRlDBMvVg+kV9IQsvrtlacPp7w==
-X-Google-Smtp-Source: ABdhPJxLbALqLdT/j1AMxSBA5iiUC9rkNODbqRwV6pXrXLNHuI+NpwW64OXR+/SyLkK9muFRv4cd3g==
-X-Received: by 2002:a05:6820:514:: with SMTP id
- m20mr5538063ooj.66.1634235945371; 
- Thu, 14 Oct 2021 11:25:45 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id e25sm571055oot.38.2021.10.14.11.25.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 Oct 2021 11:25:44 -0700 (PDT)
-Received: (nullmailer pid 3677639 invoked by uid 1000);
- Thu, 14 Oct 2021 18:25:43 -0000
-Date: Thu, 14 Oct 2021 13:25:43 -0500
-From: Rob Herring <robh@kernel.org>
-To: Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: kishon@ti.com, vkoul@kernel.org, linux@armlinux.org.uk, andrew@lunn.ch,
- alexandre.belloni@bootlin.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 2/3] dt-bindings: phy: Add binding includes for
- lan966x serdes
-Message-ID: <YWh2J32hZftzIi+F@robh.at.kernel.org>
-References: <20211006063523.3962427-1-horatiu.vultur@microchip.com>
- <20211006063523.3962427-3-horatiu.vultur@microchip.com>
+ id 1mbIAh-005pu9-6r
+ for linux-phy@lists.infradead.org; Fri, 15 Oct 2021 08:02:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Bfo7ZPf4QjW+P/PYmR8rDrjKgvrxHO4o6niEJFrKwPirA+6CtB7WcNGc1M85bECWp+nba56pSuGLgW34GIPpyIk9OdTCqpG3dxX3iVCDsqSQg8HLHCHEp45+A/AL+XmnhoFiQEdxnu91WUEWqpX6xgHtdHv0DILzho05iPY+QuLdr2YQDHLiPjZFfeuE8FpmnoK52bt8JDqMKrhXerzDLaeT5e28RAzcDh8R+tRzz5iJR8uU1KtiSaNy+QvtjIEu65EL+m9CNxIaUfH/UCGVSVGZUYHTinjbP7uEsrrUKLJjvpKQOjMYiU+Nc7uJ613uMLZw3e7Zyj0Rn7vpefSThA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Tkd+leT8vf7gUfOfNF8FsZ5g5p6I+5D18M8HiUZ+vus=;
+ b=gQCKserErms9n2LkuOqQDp4M1ZzFRzTrzlDiIIlTBo+7A9jbL3C/UJlv6FoWjmNuTzMH3bcaOW+88bPcwvsAObutOAzRVKi50frZro4xdprLUujDMA4d4BD9Jt77XJiJ5ELwSw4O3NPSAeumZn8oPuVVYYbV8WUzFYaKv+wjWVfn6BnKmrdtW7AEQa/umt83ylmJf6905L72mqc0qzCldnfNxgbMvflmpVFcKv9X8p9dV8mll41Pte4HprutyieH0gBdWLg3z9Unu8+/iEXqgr0/UmRKy1LPca3OsKTGuAWSYBb/88jvleUNyZlOw/6imjGShwLtauwS1/3VSAAg2w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
+ dkim=pass header.d=vivo.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo0.onmicrosoft.com; 
+ s=selector2-vivo0-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Tkd+leT8vf7gUfOfNF8FsZ5g5p6I+5D18M8HiUZ+vus=;
+ b=Yqz9XKVhuItkWP/vNq1OazFv0DGl6iM97oEfd1PQ4SZRGWeJOtY2Xp2S/8euoXYk9iMJJLoWLMQu8IrinmDMjvKS93b7g/3TiFPgH59bq8lQiHIP2LrJY/RP09Ql5moPEj561KkUM1vOvU0fDHp4VwUmTzE0Tln8/w2J5u44g0w=
+Authentication-Results: ti.com; dkim=none (message not signed)
+ header.d=none;ti.com; dmarc=none action=none header.from=vivo.com;
+Received: from SG2PR06MB3367.apcprd06.prod.outlook.com (2603:1096:4:78::19) by
+ SG2PR06MB3191.apcprd06.prod.outlook.com (2603:1096:4:6b::14) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4587.25; Fri, 15 Oct 2021 08:02:27 +0000
+Received: from SG2PR06MB3367.apcprd06.prod.outlook.com
+ ([fe80::fc12:4e1b:cc77:6c0]) by SG2PR06MB3367.apcprd06.prod.outlook.com
+ ([fe80::fc12:4e1b:cc77:6c0%6]) with mapi id 15.20.4608.017; Fri, 15 Oct 2021
+ 08:02:27 +0000
+From: Wan Jiabing <wanjiabing@vivo.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Wan Jiabing <wanjiabing@vivo.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Cc: kael_w@yeah.net
+Subject: [PATCH] phy: hisilicon: Add of_node_put() in phy-hisi-inno-usb2
+Date: Fri, 15 Oct 2021 04:01:51 -0400
+Message-Id: <20211015080154.16016-1-wanjiabing@vivo.com>
+X-Mailer: git-send-email 2.20.1
+X-ClientProxiedBy: SG2PR0601CA0006.apcprd06.prod.outlook.com (2603:1096:3::16)
+ To SG2PR06MB3367.apcprd06.prod.outlook.com
+ (2603:1096:4:78::19)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211006063523.3962427-3-horatiu.vultur@microchip.com>
+Received: from localhost.localdomain (218.213.202.190) by
+ SG2PR0601CA0006.apcprd06.prod.outlook.com (2603:1096:3::16) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4608.15 via Frontend Transport; Fri, 15 Oct 2021 08:02:26 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: e0237720-f743-4957-07ce-08d98fb22114
+X-MS-TrafficTypeDiagnostic: SG2PR06MB3191:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <SG2PR06MB3191A76CDAA17C1E8722FC13ABB99@SG2PR06MB3191.apcprd06.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:255;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: nKIYo+vNAFDZ6eRNTWVKIM8aX2s9bKQtTC4dMwJpuyXLkCMN7z69u3Pz9pABLsA1gU7INQjifyGvWGUC1qIN3X7i1KspEJSlKuqUalbpgsVQySa1aE0P5LxxZkdrNbgqi+sfCf0feZyHg7cls3Foh2fUCWLRcrj+2Dz65PQLGaDWw9CPbzEYEH9CScfR0AvcxCv5cMQxeCwG08yF771rVFmeGlI04DXvfkGJuWWaBdxIz/J5GHQLasZmNepa6EZlfOLq3rQOZB2MGOB/eIsS6Z1tonJ/JmeSXMTk+omWd7qlW5PuJnKItmI2Q5tiWAsY+Z1KrG0XGJ2/XgfDjEmlutD+L7lQdZNvEmSsuDwUc5fOn+I0umXWv80SwJZOpNLVp/ZcLNhjBzrjQ0bIozWf48OZ//JlvJxGhQWtGmLI4Pn7QYXDKeJXo1KyuUsciNc1f2xIWxWrJuq/vP9LMBqRJ3+w+NYYVUukDVh9vmZ8NO9nJd9WthvE8bA9IU/qnJi4qlkrX5nYyl0lYR9KNmWZx6PiB6ysOabOjSGynOkXPH94PD3kr4ZAD8LMi3qEbsTeegqMIrCeg2ISfXMamC9kLMDVbRtQVKzDuE8vd9beEJ9oFtrPViIllieY2y02MFZVr3oeics6iyJcZP04F+4dQMb1b7hvIjdFRiA1VtjO/UJkx0V7ualqyz7s8VxIG5OudMmYBMMJdRlR+Ob3r+zuGQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SG2PR06MB3367.apcprd06.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(86362001)(1076003)(66476007)(66556008)(36756003)(186003)(2906002)(26005)(956004)(110136005)(52116002)(316002)(6506007)(8936002)(8676002)(4326008)(66946007)(6512007)(5660300002)(508600001)(6486002)(38350700002)(38100700002)(6666004)(83380400001)(2616005);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?x7s17ndFkEeeYaGaPmSQ5snwMj9eJiSt8tNaZ8GMcsSvVDsNjJ9/kl6qk6Ng?=
+ =?us-ascii?Q?BpAu1wV/uK8fv/paVy/938lU2aDPZJ6fmUzUISs9803/14xG2fUSvfhiWamz?=
+ =?us-ascii?Q?aANKRT5l50aRFZabnN1plEQzHUz9KAoHBGpDIvDvSFgilL2con0XQ5lTo3fs?=
+ =?us-ascii?Q?RmPX4E2VWHqvyVbI0StQ7F8ByiFtgtSn0w+/Q8HENAXJyO7fn93O1GQK4OgK?=
+ =?us-ascii?Q?ffEpjGqo4/fEhNq5QmPj8h7ikxF+d2M2Jsrd5emlzLRxmvzt6EPFFekXyAjZ?=
+ =?us-ascii?Q?wOgEXbShBE7SGLFqRGxKy279wpJsqOepd7mUyMolYDahkJH9e91h3RJrakPq?=
+ =?us-ascii?Q?Iddp5MeDsJQ+WZPDwauiMBCwTfwVH3dVClX6dzxdOEjxUVYi/290xlgDp7k9?=
+ =?us-ascii?Q?FWol90U/NFXNKzDOyfIX98Ew14crDvNDTu5ShYCW7aLrPBq8xnw+hGGGRFLW?=
+ =?us-ascii?Q?lnt3F2dceMVxFlO348+8uN919qQoGPWDkx2WsORquDWur0BXp5mYayxrcYOC?=
+ =?us-ascii?Q?8pvn5FS18rGnjD9ha168uYpqsiCKsgXk1w0m+i45OeyxzKpghABgEwR9uiHs?=
+ =?us-ascii?Q?avl4PEPeOWaMiYInI4KBnVWPMf+NinR76k1Q9ItbH0WRACxwyLm57Urjb5lF?=
+ =?us-ascii?Q?vLQSEhtPTOqeuZ30uGAXIVuYkN0C9s6dyhxb8NVVMcQbeqL2KYTHGEYxKh6b?=
+ =?us-ascii?Q?fn7hdMLUqU2bNNQFpHhPdzdWwtjsz54DZPpRyp6c5aKea8eMzHHrZTKrafB2?=
+ =?us-ascii?Q?ZhJJC8au60Uy3iC2xdEcobZjxhQ8KoLL8DAlkbu124pqbUrE1gVI3VPbPqMP?=
+ =?us-ascii?Q?WsdVLLLc22QtEisZ/wi3ItxGm0szM72wDN18rH6utJP7KM8xqyxuuM7SJicf?=
+ =?us-ascii?Q?c1tXax4L9Xd5tQc2+IS7DbagLYs3Rkz43uKPyzqUzhZzqRU9u11dlxvMzKK/?=
+ =?us-ascii?Q?RsLI39tWBcPJjl5eHf3Un3nRbuNGebtAvczto3c4h12znsLHzbpo0wc0fhjj?=
+ =?us-ascii?Q?HGf7HWsgHBhtvLEGPY5fVRTuA/50iqBJezWbENPbZKtaUn7XTA7yuE5efrMq?=
+ =?us-ascii?Q?aY/8zfXmj7g/e2JHq3nL7ohinPvVvGdfoAZnScP8lfh03Csrn9NFVYzH9Zf6?=
+ =?us-ascii?Q?5MozyaEo3hc+4atBcPDMgszf8gGlBt4uw1/gFIiLFbGlZh/9y3+uhNgF3ghW?=
+ =?us-ascii?Q?MRGm54VyY+tFG38YdVoQc/rIh+inx75nirUrox2HUt69fFmjErBDdt7lMrKf?=
+ =?us-ascii?Q?9fKXxpiyWoILNBYaH6dGGPtPOYpedVkHT4C55A8gXGVCgM5pknhTMKe6tRGL?=
+ =?us-ascii?Q?Q/hjzOUBro1l8UJLb0JMF7RN?=
+X-OriginatorOrg: vivo.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e0237720-f743-4957-07ce-08d98fb22114
+X-MS-Exchange-CrossTenant-AuthSource: SG2PR06MB3367.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Oct 2021 08:02:27.3766 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Jf8wQKLK2kH0iqQZu0AmA+hIDxF9b5eYMSNOd47YUhsDOjm45ULUkiIu5jjc9N+p78X7K0s78gc7iX3xD/LWfQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SG2PR06MB3191
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211014_112546_848834_C6BD0266 
-X-CRM114-Status: GOOD (  14.67  )
+X-CRM114-CacheID: sfid-20211015_010231_300687_420224F5 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,38 +143,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 06, 2021 at 08:35:22AM +0200, Horatiu Vultur wrote:
-> Add include bindings for lan966x serdes
-> 
-> Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
-> ---
->  include/dt-bindings/phy/lan966x_serdes.h | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
->  create mode 100644 include/dt-bindings/phy/lan966x_serdes.h
-> 
-> diff --git a/include/dt-bindings/phy/lan966x_serdes.h b/include/dt-bindings/phy/lan966x_serdes.h
-> new file mode 100644
-> index 000000000000..06e529473475
-> --- /dev/null
-> +++ b/include/dt-bindings/phy/lan966x_serdes.h
-> @@ -0,0 +1,14 @@
-> +/* SPDX-License-Identifier: (GPL-2.0 OR MIT) */
-> +
-> +#ifndef __LAN966X_SERDES_H__
-> +#define __LAN966X_SERDES_H__
-> +
-> +#define CU(x)		(x)
-> +#define CU_MAX		CU(2)
-> +#define SERDES6G(x)	(CU_MAX + 1 + (x))
-> +#define SERDES6G_MAX	SERDES6G(3)
-> +#define RG(x)		(SERDES6G_MAX + 1 + (x))
-> +#define RG_MAX		RG(2)
-> +#define SERDES_MAX	(RG_MAX + 1)
+Fix following coccicheck warning:
+./drivers/phy/hisilicon/phy-hisi-inno-usb2.c:138:1-23: WARNING: Function
+for_each_child_of_node should have of_node_put() before break
 
-I'm guessing these are used for the phy cells? If so, I can't figure out 
-how and I shouldn't have to search the driver to figure it out.
+Early exits from for_each_child_of_node should decrement the
+node reference counter.
 
-What's CU? What's RG?
+Signed-off-by: Wan Jiabing <wanjiabing@vivo.com>
+---
+ drivers/phy/hisilicon/phy-hisi-inno-usb2.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+index 34a6a9a1ceb2..b133ae06757a 100644
+--- a/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
++++ b/drivers/phy/hisilicon/phy-hisi-inno-usb2.c
+@@ -140,14 +140,19 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+ 		struct phy *phy;
+ 
+ 		rst = of_reset_control_get_exclusive(child, NULL);
+-		if (IS_ERR(rst))
++		if (IS_ERR(rst)) {
++			of_node_put(child);
+ 			return PTR_ERR(rst);
++		}
++
+ 		priv->ports[i].utmi_rst = rst;
+ 		priv->ports[i].priv = priv;
+ 
+ 		phy = devm_phy_create(dev, child, &hisi_inno_phy_ops);
+-		if (IS_ERR(phy))
++		if (IS_ERR(phy)) {
++			of_node_put(child);
+ 			return PTR_ERR(phy);
++		}
+ 
+ 		phy_set_bus_width(phy, 8);
+ 		phy_set_drvdata(phy, &priv->ports[i]);
+@@ -155,6 +160,7 @@ static int hisi_inno_phy_probe(struct platform_device *pdev)
+ 
+ 		if (i > INNO_PHY_PORT_NUM) {
+ 			dev_warn(dev, "Support %d ports in maximum\n", i);
++			of_node_put(child);
+ 			break;
+ 		}
+ 	}
+-- 
+2.20.1
+
 
 -- 
 linux-phy mailing list
