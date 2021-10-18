@@ -2,75 +2,88 @@ Return-Path: <SRS0=B4Pq=PG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BE27FC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 12:14:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1E605C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 14:25:02 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 805FB61077
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 12:14:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 805FB61077
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id A9ED460F8F
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 14:25:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A9ED460F8F
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIbr/JzhZuzzDMHN+OYOeTq3BsU8I4fFXkOw8jH09fw=; b=SFATx/IaK64Pyq
-	kT+eHCEE4uW3EtOkehIlcmM4pquGL6eF8tq69gcZ8TlpwMCYuO2ZDWlSJ/0Dy18RxlVYaGfSs0uyy
-	ZPqJeK7CMoJCfOEsAfa/21eYNl3bx8/2HEWMgOG+gQBHSb61LBfiEJK7C0PM8lK+YHZkYWWCmuO93
-	jL97QM3Uv+iF2aM7J5p/Kflqxnd4EGlAN7fibKD6haykPbfyeUP3DwS8x+4RH//RC0RcphAEIbtGa
-	dSReWvj7ffRLwUXbCkJFsobrw1UuQ44/Budl8fjRc7p8z2UbC2h2nAGXLa1BaWgAH2box+pahIPzp
-	UwMOya/63JmXfL3blVWg==;
+	List-Owner; bh=PEsTHfBsPnBUTjo8JTiwS9K0T0ZDBoUvZseFbN8vvMI=; b=YQqQYn8ngE2yVq
+	5JfqYRVFVTT20+ajB8LNZeU4NVnicGTm33rXJep+ZY2k5Z/yu1aCPzdtHazLTbxQCmYFH25y/BwVy
+	2V5BE30yO8p0MflSAKDAsBD6WC1Oxf3TAted5kOu9iXPAxtt/bX71H8ksg8CSv7iTO6wrvecbr/fD
+	K9wFvapcJF2oKym/DctpkUdKAoLEEtOAhcBRTo490x/s4/zux6wM5OxqelmcGrOCAomyg/1UQ/Sl4
+	fxyPPqkz+VWpWgS7o/iWsQ1cTj/TKbZXQlIxQStn/KHtTzPlwkzcK4OMH0N6/byYNtLc9ZEvNtJP6
+	cG055kZI9nC9stDdxI8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mcRWr-00FbBv-Vm; Mon, 18 Oct 2021 12:14:09 +0000
-Received: from mail-oi1-f174.google.com ([209.85.167.174])
+	id 1mcTZV-00G69S-0D; Mon, 18 Oct 2021 14:25:01 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcRWf-00Fb8o-L8; Mon, 18 Oct 2021 12:13:59 +0000
-Received: by mail-oi1-f174.google.com with SMTP id u69so24038073oie.3;
- Mon, 18 Oct 2021 05:13:55 -0700 (PDT)
+ id 1mcTTt-00G3l3-2G
+ for linux-phy@lists.infradead.org; Mon, 18 Oct 2021 14:19:17 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id g25so41600670wrb.2
+ for <linux-phy@lists.infradead.org>; Mon, 18 Oct 2021 07:19:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=rO3u8W1re/ntjdP9B4sW4LejsVx7mXqMR7pW2tEhW4Q=;
+ b=O1+Nn4hkoQfSRaziBOLEs2H+RirbluSCSD2tQr2FERY9FAdMZDgS4CIeefn/xx37rH
+ IAO7Knk0l1HaAtY6Ao88to0IiCogKf3A7qSuF9m6WAs3AOLOfp6VBcEpsFjgIolVmWlo
+ IF3if4zl55WYSoLr+JIK1zCHCSaJKFgnWKgbzV7RNp5zvBKAKdJ18ErF0Ro/f64fPWBb
+ 4H0CTJOn9w0dkOq9zN/9iMra26JvcTahNTop4fNcPzhu3pYg5v/RAMzxx63E4z8hz1Af
+ iXxBddPkSiPkh6BvUsQVcV8D4Zx1xCFgfsP39ah0399lXTwni8cKxn/jDFVvMGN+FFkn
+ JQeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
- :message-id;
- bh=o3tDIMhbFnjnaWFNKY8OECJ7Mjc3HAYXOLncYD0rywA=;
- b=PO9+l/sA9h44/Mvl5iTRbIdKWS9edMEYAkH98+prSwQdEJS5AOSG6DbMvgtDaEikmF
- cTLKwfu/Ygq3gnNL10M74dH2Cilgg+zLqGqSiIdQuAUD/kjX5c53Q2Uw+R2/n2ZVBtS2
- +X8vqIQ8X6Z31tg1b3dCKMGq7yyhDKcUrg6A3K97kF3bomGDuBqnbaUZG5NCcXyhNe7f
- C296fwpdmvF9b9ZVCdGIsiu0YmSJBqa7EbbHCXklokpmTreXm/bLCboOBCddT6/QQ6wF
- 1bI+3rMaKA0/qKsirh6MpdrM84CkKusf78rgkrHh1DEH5/4U/vkwKsRb9BVxRofxQND6
- Xvdw==
-X-Gm-Message-State: AOAM530/imDzIFcVFNR7FyZcbqwi+X3lalPqdhg9LF9ciE7ZOpKJGlhX
- q3Yi/jQmky4lErA2LHKU6g==
-X-Google-Smtp-Source: ABdhPJxV7uU4axirSj0liNe2NLPhByiv9fWa6hEbSEpOSjIoe+pp9Fhp6hojMfVWh0viqHFC56vw7A==
-X-Received: by 2002:aca:a94c:: with SMTP id s73mr28462897oie.93.1634559234829; 
- Mon, 18 Oct 2021 05:13:54 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id s5sm1828281ois.55.2021.10.18.05.13.53
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=rO3u8W1re/ntjdP9B4sW4LejsVx7mXqMR7pW2tEhW4Q=;
+ b=cB1Wxp5hLRriDxtqK+57kRL5J9WPIyRhbgUfHPwAv3hZed65hOxRbm/kP1xUDEROAw
+ oyABSYFjt/ixuzXJc2g9bIT+ZawKl35i28lfzoA1un9p6GWi+bmLk7EoM60q94735/U3
+ O3ifrCVFR/AGTTWGeZcsQaXTOByYNqreNVSB4rhCa+ezm9HPJNDfygkEkKHDczms/hCZ
+ u3XLsAMFztXGuDDQMy3zDeFfVTLf8e+hV8Mm7CjSKpJl+lsrZpi0I1+jJbgD5DVhkWR9
+ l92oYADIR05geITirGkicVPDboddm321N6Qr0DamGudRWUoClmgYLOgGybV7l3cPMrHE
+ pHYw==
+X-Gm-Message-State: AOAM5320+3bGWcdw8/9vItaw8Mf8sFCL1iMAKiwmixbreSmcNY5IWgIk
+ Op4Q3NsefLuPVqW8kkeG40eChw==
+X-Google-Smtp-Source: ABdhPJx6QFnBuYrXhffPsvdEadj2vqw25nodwUVxgLLLJThHk6Zdq74Bt+K0UKskiB3M9DghQfMYMA==
+X-Received: by 2002:adf:eb4f:: with SMTP id u15mr36415532wrn.215.1634566750156; 
+ Mon, 18 Oct 2021 07:19:10 -0700 (PDT)
+Received: from blmsp ([2a02:2454:3e6:c900:5142:5fbb:5821:5dc3])
+ by smtp.gmail.com with ESMTPSA id a2sm12835406wru.82.2021.10.18.07.19.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Oct 2021 05:13:54 -0700 (PDT)
-Received: (nullmailer pid 2074238 invoked by uid 1000);
- Mon, 18 Oct 2021 12:13:53 -0000
-From: Rob Herring <robh@kernel.org>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Masami Hiramatsu <mhiramat@kernel.org>, linux-kernel@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-phy@lists.infradead.org, Rob Herring <robh+dt@kernel.org>
-In-Reply-To: <1634521033-17003-8-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1634521033-17003-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1634521033-17003-8-git-send-email-hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH 7/8] dt-bindings: phy: uniphier-ahci: Add bindings for
- Pro4 SoC
-Date: Mon, 18 Oct 2021 07:13:53 -0500
-Message-Id: <1634559233.449347.2074237.nullmailer@robh.at.kernel.org>
+ Mon, 18 Oct 2021 07:19:09 -0700 (PDT)
+Date: Mon, 18 Oct 2021 16:19:08 +0200
+From: Markus Schneider-Pargmann <msp@baylibre.com>
+To: Rob Herring <robh@kernel.org>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Vinod Koul <vkoul@kernel.org>, Sam Ravnborg <sam@ravnborg.org>,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org
+Subject: Re: [PATCH v4 2/7] dt-bindings: mediatek, dp: Add Display Port binding
+Message-ID: <20211018141908.fuevv2m66fw3xg36@blmsp>
+References: <20211011094624.3416029-1-msp@baylibre.com>
+ <20211011094624.3416029-3-msp@baylibre.com>
+ <YWTaJOXGgF2bHznv@robh.at.kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <YWTaJOXGgF2bHznv@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211018_051357_713344_472D8DFE 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20211018_071913_186459_DD835C67 
+X-CRM114-Status: GOOD (  22.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,48 +95,147 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 18 Oct 2021 10:37:12 +0900, Kunihiko Hayashi wrote:
-> Update AHCI-PHY binding document for UniPhier Pro4 SoC. Pro4 AHCI-PHY
-> needs to control additional reset lines, "pm", "tx", and "rx" and
-> additional I/O clock line "gio".
+Hi Rob,
+
+On Mon, Oct 11, 2021 at 07:43:16PM -0500, Rob Herring wrote:
+> On Mon, Oct 11, 2021 at 11:46:19AM +0200, Markus Schneider-Pargmann wrote:
+> > This controller is present on several mediatek hardware. Currently
+> > mt8195 and mt8395 have this controller without a functional difference,
+> > so only one compatible field is added.
+> > 
+> > The controller can have two forms, as a normal display port and as an
+> > embedded display port.
+> > 
+> > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> > ---
+> >  .../display/mediatek/mediatek,dp.yaml         | 89 +++++++++++++++++++
+> >  1 file changed, 89 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> > new file mode 100644
+> > index 000000000000..f7a35962c23b
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> > @@ -0,0 +1,89 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Mediatek Display Port Controller
+> > +
+> > +maintainers:
+> > +  - CK Hu <ck.hu@mediatek.com>
+> > +  - Jitao shi <jitao.shi@mediatek.com>
+> > +
+> > +description: |
+> > +  Device tree bindings for the Mediatek (embedded) Display Port controller
+> > +  present on some Mediatek SoCs.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - mediatek,mt8195-edp_tx
+> > +      - mediatek,mt8195-dp_tx
 > 
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> ---
->  .../bindings/phy/socionext,uniphier-ahci-phy.yaml    | 20 ++++++++++++++++----
->  1 file changed, 16 insertions(+), 4 deletions(-)
+> Are these blocks different?
+
+Good point, the registers of these blocks are described in its own
+chapter each. Also I do need to distinguish between both in the driver.
+Would you suggest making this distinction differently or keep it as two
+compatibles?
+
 > 
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  interrupts:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    items:
+> > +      - description: faxi clock
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: faxi
+> > +
+> > +  power-domains:
+> > +    maxItems: 1
+> > +
+> > +  ports:
+> > +    $ref: /schemas/graph.yaml#/properties/ports
+> > +    properties:
+> > +      port@0:
+> > +        $ref: /schemas/graph.yaml#/properties/port
+> > +        description: Input endpoint of the controller, usually dp_intf
+> > +
+> > +      port@1:
+> > +        $ref: /schemas/graph.yaml#/properties/port
+> > +        description: Output endpoint of the controller
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - interrupts
+> > +  - ports
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +    #include <dt-bindings/power/mt8195-power.h>
+> > +    dp_tx: edp_tx@1c500000 {
+> > +        compatible = "mediatek,mt8195-edp_tx";
+> > +        reg = <0 0x1c500000 0 0x8000>;
+> > +        interrupts = <GIC_SPI 676 IRQ_TYPE_LEVEL_HIGH 0>;
+> > +        power-domains = <&spm MT8195_POWER_DOMAIN_EPD_TX>;
+> > +        pinctrl-names = "default";
+> > +        pinctrl-0 = <&edp_pin>;
+> > +        status = "okay";
+> 
+> Don't show status in examples.
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+Fixed.
 
-yamllint warnings/errors:
-./Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml:35:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
-./Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml:50:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
-./Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml:56:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+Thank you Rob.
 
-dtschema/dtc warnings/errors:
+Best,
+Markus
 
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/patch/1542355
-
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit.
-
+> 
+> > +
+> > +        ports {
+> > +            #address-cells = <1>;
+> > +            #size-cells = <0>;
+> > +
+> > +            port@0 {
+> > +                reg = <0>;
+> > +                edp_in: endpoint {
+> > +                    remote-endpoint = <&dp_intf0_out>;
+> > +                };
+> > +            };
+> > +            port@1 {
+> > +                reg = <1>;
+> > +                edp_out: endpoint {
+> > +                	remote-endpoint = <&panel_in>;
+> > +                };
+> > +            };
+> > +        };
+> > +    };
+> > -- 
+> > 2.33.0
+> > 
+> > 
 
 -- 
 linux-phy mailing list
