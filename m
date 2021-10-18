@@ -2,80 +2,75 @@ Return-Path: <SRS0=B4Pq=PG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AA31EC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:47:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 87E75C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:49:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7A3F160EB8
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:47:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 7A3F160EB8
+	by mail.kernel.org (Postfix) with ESMTPS id 50A11611EF
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:49:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 50A11611EF
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x54uAHLQZBgcm/AEsrczjFq1abAoGkX3xavD1ZkHKNo=; b=llIks7Yjh3SqnO
-	5gVw6DVxS0jQuu5g6wkFLDXuWntBRBSx1Gdr4NR5w41AN6e+L+8yyH722CVkiyuCEFpY15Iacz3WY
-	22A09Bx/fpygShh/j98zHTJBINS3nxlZI4SR7psDc5Uc6Qchw/ayVxoN/PGbMXrluj962IcqzJZBa
-	gRhgcE7deShMbpc9xRI2cggozwemnnytjMade3DpA37RZN4q+7k/5ydFQUGouK/H2Q8vq276vimx7
-	Icms3bG4HjC3WB8bHPsSt/KB43T73UY52hRxOnEbJb98e9HBOYsRFTWBw6EB4pVr5zEztCa3XWRmt
-	sOJWWSnFbxBh48yvlXjw==;
+	List-Owner; bh=xQSuDINAe1QUTndJq+VIfVfy+VcqXoqhBE3itQw3BFA=; b=FthV7Glq3nqIar
+	bMBCXS3gTcRG6lBmWR3F27qxQ/LqKWLm5PuyYot0/mIWWSVkge9/+gINd2tJkdtoCDtFaGA8VuXnx
+	DCmjE2QVPGn588G5TBnu8QTnGAiegxpAaXRnRs6sYpdwWgxcSmxjgb7Hpn7aSvD9y396XIK4iFarj
+	HKd+0yzdyorvR+3aGXmsL7WsVPtbxJGhFfjMqMm/jQzDHcNZxP5YpcMEyDuNClvvSafkXq4X1aqU2
+	L7i34SeHcI1J/G9DKlHvLCXlI/+uuNTLX3smSVgBgp4WAHfmRIHdrSJpI15GRIwxH/Btk+GI+fYh8
+	43LVqZYdx4wx4n8QJFjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mcYbH-00H74U-O7; Mon, 18 Oct 2021 19:47:11 +0000
-Received: from mail-ot1-f50.google.com ([209.85.210.50])
+	id 1mcYdD-00H7xB-M6; Mon, 18 Oct 2021 19:49:11 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcYKO-00GzxI-AG; Mon, 18 Oct 2021 19:29:45 +0000
-Received: by mail-ot1-f50.google.com with SMTP id
- l24-20020a9d1c98000000b00552a5c6b23cso1128884ota.9; 
- Mon, 18 Oct 2021 12:29:43 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=uxaQFenmJzGwC+IUubS4cWsAXC6ECKn16PE13Pm+TzQ=;
- b=ejrtIwMaFOoWQEfvc9NiUoDnLyNvKZd2dQlJI/CNDyTF09q6+V/d40KNWJkWqj88Gm
- hQ0vne6ZSV+BrT1Ebjg9Zj/UWPhgIG1V9wXNemTplmP43z2Z+PFVkZ9/D3DA9TCHRqq+
- I9Mczn/DwocGkysXF+14N9l/wreF7BnJnxvC2bMnBydjI0jyyeC0qdeBXphICxJ2Xss6
- EOB7gNWireG88A6wmVJ9rnODo+XD/M3KKX9EbSetz0AiHI8Ag2yqKNFCTqSBVWcQMwaN
- JkHGuwU5snAiqlCXYgxRwbNYTVLcRok3Pkyb8Gc8HBAvEhOy97+qsi/GCELWEJkzhD+a
- cqyQ==
-X-Gm-Message-State: AOAM531KYgDxAZjDsCnBnFxltBUbRQDq92B/3pqNQAHoe3TA0NpJHUHj
- 0IwXNk7t8rBn86wTGLchpw==
-X-Google-Smtp-Source: ABdhPJxQt1AtyRJgxbShImCdxQMW79KrP3k81bFkVpuAM4lbP8oIQTaSCyu7Ectm95KWhvJBq11R4Q==
-X-Received: by 2002:a9d:842:: with SMTP id 60mr1466167oty.302.1634585383054;
- Mon, 18 Oct 2021 12:29:43 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id u21sm3104983oiv.25.2021.10.18.12.29.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Oct 2021 12:29:42 -0700 (PDT)
-Received: (nullmailer pid 2805582 invoked by uid 1000);
- Mon, 18 Oct 2021 19:29:41 -0000
-Date: Mon, 18 Oct 2021 14:29:41 -0500
-From: Rob Herring <robh@kernel.org>
-To: Amelie Delaunay <amelie.delaunay@foss.st.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@foss.st.com>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/3] dt-bindings: phy: phy-stm32-usbphyc: add optional
- phy tuning properties
-Message-ID: <YW3LJWOCzZm3jxuJ@robh.at.kernel.org>
-References: <20211015161427.220784-1-amelie.delaunay@foss.st.com>
- <20211015161427.220784-3-amelie.delaunay@foss.st.com>
+ id 1mcYT9-00H3bi-0K; Mon, 18 Oct 2021 19:38:48 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 8F6BC6108E;
+ Mon, 18 Oct 2021 19:38:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1634585926;
+ bh=+lafo2T6te+gWjhQBzL22he7ufSIIGdZoxOzENsqwDw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=DzmUOv7eA69aFSAJKeAC/hNoZLKjM2sZMrV0TtnTaTD/zwPjJ5Nk8+Kht0mrv/ZAg
+ H0O1rbvyBt1m6AfDD6EIPjiaaFctaa633hxpF0s5GgAZfH/QCzSIn8rb5uopWlKnyt
+ 5LpOCr3AmgohKZILQLjuCGeOEkf24qrzHXSbP7dL+LIbCTniCCkB0l3j/gUl0O5JrT
+ SlDVt/l4r2Wy/5s4FbFDLAcWGICUKGff3KxenybdtbiBaczpduXXbQ9mD1LK95HA1Q
+ wgn4rF32c9j6alhETh37ZUHokI1nwvvbjqPokiLRMIwrXV25QaW48q7xMeRL08xeUa
+ 90TTSaV28OfuA==
+Received: by mail-ed1-f47.google.com with SMTP id w19so3310686edd.2;
+ Mon, 18 Oct 2021 12:38:46 -0700 (PDT)
+X-Gm-Message-State: AOAM530Q/WMMnBR4p9C+98k/+gy5qWQZ/ubY0t+eR6VHvm/YuCO0klEm
+ yX6gJsblns4c2UhPeKgnmSJV4qMf6KKhrxvlVg==
+X-Google-Smtp-Source: ABdhPJzGdFAfWjzAMWuADPM5EPYzjfE9/sFvO9OlTDhrOb2mbL6H+KG2sXfvp8vOCsyn0d1W4fqaY0LBzO34Ejzirnc=
+X-Received: by 2002:a05:6402:1778:: with SMTP id
+ da24mr46194930edb.318.1634585925034; 
+ Mon, 18 Oct 2021 12:38:45 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211015161427.220784-3-amelie.delaunay@foss.st.com>
+References: <20211011094624.3416029-1-msp@baylibre.com>
+ <20211011094624.3416029-3-msp@baylibre.com>
+ <YWTaJOXGgF2bHznv@robh.at.kernel.org> <20211018141908.fuevv2m66fw3xg36@blmsp>
+In-Reply-To: <20211018141908.fuevv2m66fw3xg36@blmsp>
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 18 Oct 2021 14:38:33 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+QwEPNEztD+yg-UO8gWf_X=E-n0_HMYJsGxteZAZparg@mail.gmail.com>
+Message-ID: <CAL_Jsq+QwEPNEztD+yg-UO8gWf_X=E-n0_HMYJsGxteZAZparg@mail.gmail.com>
+Subject: Re: [PATCH v4 2/7] dt-bindings: mediatek, dp: Add Display Port binding
+To: Markus Schneider-Pargmann <msp@baylibre.com>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Vinod Koul <vkoul@kernel.org>, Sam Ravnborg <sam@ravnborg.org>, 
+ dri-devel <dri-devel@lists.freedesktop.org>, 
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211018_122944_389612_CCFC5CDB 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20211018_123847_119088_C6EC4898 
+X-CRM114-Status: GOOD (  23.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,25 +87,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 15 Oct 2021 18:14:26 +0200, Amelie Delaunay wrote:
-> This patch adds the description of new optional phy tuning properties
-> for usbphyc phy sub nodes.
-> 
-> Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
-> ---
-> Changes in v3:
-> - Use -microamp instead of undocumented -milliamp
-> - Add '|' after 'description:' on each property needing this
-> Changes in v2:
-> - st,phy-tuning property removed
-> - tuning properties are now put directly in each child node
-> - tuning properties are no more free form text and their name reworked
-> ---
->  .../bindings/phy/phy-stm32-usbphyc.yaml       | 129 ++++++++++++++++++
->  1 file changed, 129 insertions(+)
-> 
+On Mon, Oct 18, 2021 at 9:19 AM Markus Schneider-Pargmann
+<msp@baylibre.com> wrote:
+>
+> Hi Rob,
+>
+> On Mon, Oct 11, 2021 at 07:43:16PM -0500, Rob Herring wrote:
+> > On Mon, Oct 11, 2021 at 11:46:19AM +0200, Markus Schneider-Pargmann wrote:
+> > > This controller is present on several mediatek hardware. Currently
+> > > mt8195 and mt8395 have this controller without a functional difference,
+> > > so only one compatible field is added.
+> > >
+> > > The controller can have two forms, as a normal display port and as an
+> > > embedded display port.
+> > >
+> > > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> > > ---
+> > >  .../display/mediatek/mediatek,dp.yaml         | 89 +++++++++++++++++++
+> > >  1 file changed, 89 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> > > new file mode 100644
+> > > index 000000000000..f7a35962c23b
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> > > @@ -0,0 +1,89 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Mediatek Display Port Controller
+> > > +
+> > > +maintainers:
+> > > +  - CK Hu <ck.hu@mediatek.com>
+> > > +  - Jitao shi <jitao.shi@mediatek.com>
+> > > +
+> > > +description: |
+> > > +  Device tree bindings for the Mediatek (embedded) Display Port controller
+> > > +  present on some Mediatek SoCs.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    enum:
+> > > +      - mediatek,mt8195-edp_tx
+> > > +      - mediatek,mt8195-dp_tx
+> >
+> > Are these blocks different?
+>
+> Good point, the registers of these blocks are described in its own
+> chapter each. Also I do need to distinguish between both in the driver.
+> Would you suggest making this distinction differently or keep it as two
+> compatibles?
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+If the registers are all the same, then it should be the same
+compatible. If you still need to distinguish, then you should have a
+panel or connector node that will let you do that.
+
+Also, s/_/-/ in the compatible string.
+
+Rob
 
 -- 
 linux-phy mailing list
