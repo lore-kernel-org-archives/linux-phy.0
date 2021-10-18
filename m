@@ -2,14 +2,14 @@ Return-Path: <SRS0=B4Pq=PG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6BF1AC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:47:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AA31EC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:47:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3A05160EB8
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:47:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3A05160EB8
+	by mail.kernel.org (Postfix) with ESMTPS id 7A3F160EB8
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:47:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 7A3F160EB8
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,60 +18,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A5TFQV+3bsl1pQWCv3mxhvgJtWnEmdvo0oZlh4AcUO8=; b=1MAhjlpDGZ+val
-	mdvn7qBuYSxscM6I6qY7NPSz92pRiNREhy9nr9gMlfZVX7kgEM45U38gTBK9eTXq/BRhXOVujAym1
-	1qEpBghTE+OLR7WVeOYoOg5vw3TMmXPlBwhnc4Glj0yRfiLOfb6c7XnJeuo3ASe3g45hyC2MV4UpI
-	jq4DSkdoZeoDsruHl9jgzw56TEPdIEgLwKucYjSp3SQFGAx+fbCcnoxnoiAMd7X+sAFcfhWHcSIx4
-	k+/LBQL8uM6TnrMEh+x3tl9VdLrP0xQVuCczYIWiG5RjXpQYCP7Mg8uQP5y6fhTjm5sA2SFPIucrK
-	EEJY+m/RZ5Tc8puy4cVg==;
+	List-Owner; bh=x54uAHLQZBgcm/AEsrczjFq1abAoGkX3xavD1ZkHKNo=; b=llIks7Yjh3SqnO
+	5gVw6DVxS0jQuu5g6wkFLDXuWntBRBSx1Gdr4NR5w41AN6e+L+8yyH722CVkiyuCEFpY15Iacz3WY
+	22A09Bx/fpygShh/j98zHTJBINS3nxlZI4SR7psDc5Uc6Qchw/ayVxoN/PGbMXrluj962IcqzJZBa
+	gRhgcE7deShMbpc9xRI2cggozwemnnytjMade3DpA37RZN4q+7k/5ydFQUGouK/H2Q8vq276vimx7
+	Icms3bG4HjC3WB8bHPsSt/KB43T73UY52hRxOnEbJb98e9HBOYsRFTWBw6EB4pVr5zEztCa3XWRmt
+	sOJWWSnFbxBh48yvlXjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mcYbG-00H73T-Ek; Mon, 18 Oct 2021 19:47:10 +0000
-Received: from mail-oi1-f169.google.com ([209.85.167.169])
+	id 1mcYbH-00H74U-O7; Mon, 18 Oct 2021 19:47:11 +0000
+Received: from mail-ot1-f50.google.com ([209.85.210.50])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcYJ9-00GzTM-BM
- for linux-phy@lists.infradead.org; Mon, 18 Oct 2021 19:28:28 +0000
-Received: by mail-oi1-f169.google.com with SMTP id o83so1255995oif.4
- for <linux-phy@lists.infradead.org>; Mon, 18 Oct 2021 12:28:26 -0700 (PDT)
+ id 1mcYKO-00GzxI-AG; Mon, 18 Oct 2021 19:29:45 +0000
+Received: by mail-ot1-f50.google.com with SMTP id
+ l24-20020a9d1c98000000b00552a5c6b23cso1128884ota.9; 
+ Mon, 18 Oct 2021 12:29:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=D0YJTgYqkI0d37F5afRzmNLlaPdJh1d4TAnzCXiblq0=;
- b=gWqOV8iP6yQbhTvfU9/nj/jvvjkPex7qKA0Wz/EJ5eFIUSZTgda4UMyORy3BdvIcIT
- 8bU8Ga86qh+L/T4R6MWea8rluzggnjiY22GNIVYQxC1jUqiywlZYO4vGi4I43ILgRNSa
- bEXg687/A7Kz/rShhK48xUjTNt0o4xkVl5gYtce7wv1ZHyB1D7cE8UxdcyLKLrQi+Dog
- LnBNoMx5LPOGi6sYdN7lKbp7CmHB7RvddXod1QKIqNohgnEiKurGkCEm2q77THIrCZ2g
- CbSmcVnruytObGZFsv/nmkEyiZSNjID99JS0MgFQHeUkY2iYhBH+SKYL91Py05jmeY8Z
- 33Eg==
-X-Gm-Message-State: AOAM530651dEUs/8UGFWPsFaU3WYib+VpKh80ZSkpjth+pq+9g4TANen
- mVDPSXn8haPMb5n2Nk9iRw==
-X-Google-Smtp-Source: ABdhPJxQC0Ll46fRBQVLIW3++nUDa/GFT9GC0+aR+CgO0yRDgNhs3+oQs0oc0WQaswcFQ9Pr0Q7IRw==
-X-Received: by 2002:aca:f302:: with SMTP id r2mr656586oih.90.1634585305918;
- Mon, 18 Oct 2021 12:28:25 -0700 (PDT)
+ bh=uxaQFenmJzGwC+IUubS4cWsAXC6ECKn16PE13Pm+TzQ=;
+ b=ejrtIwMaFOoWQEfvc9NiUoDnLyNvKZd2dQlJI/CNDyTF09q6+V/d40KNWJkWqj88Gm
+ hQ0vne6ZSV+BrT1Ebjg9Zj/UWPhgIG1V9wXNemTplmP43z2Z+PFVkZ9/D3DA9TCHRqq+
+ I9Mczn/DwocGkysXF+14N9l/wreF7BnJnxvC2bMnBydjI0jyyeC0qdeBXphICxJ2Xss6
+ EOB7gNWireG88A6wmVJ9rnODo+XD/M3KKX9EbSetz0AiHI8Ag2yqKNFCTqSBVWcQMwaN
+ JkHGuwU5snAiqlCXYgxRwbNYTVLcRok3Pkyb8Gc8HBAvEhOy97+qsi/GCELWEJkzhD+a
+ cqyQ==
+X-Gm-Message-State: AOAM531KYgDxAZjDsCnBnFxltBUbRQDq92B/3pqNQAHoe3TA0NpJHUHj
+ 0IwXNk7t8rBn86wTGLchpw==
+X-Google-Smtp-Source: ABdhPJxQt1AtyRJgxbShImCdxQMW79KrP3k81bFkVpuAM4lbP8oIQTaSCyu7Ectm95KWhvJBq11R4Q==
+X-Received: by 2002:a9d:842:: with SMTP id 60mr1466167oty.302.1634585383054;
+ Mon, 18 Oct 2021 12:29:43 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id x8sm3143146ota.75.2021.10.18.12.28.24
+ by smtp.gmail.com with ESMTPSA id u21sm3104983oiv.25.2021.10.18.12.29.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Oct 2021 12:28:25 -0700 (PDT)
-Received: (nullmailer pid 2803420 invoked by uid 1000);
- Mon, 18 Oct 2021 19:28:24 -0000
-Date: Mon, 18 Oct 2021 14:28:24 -0500
+ Mon, 18 Oct 2021 12:29:42 -0700 (PDT)
+Received: (nullmailer pid 2805582 invoked by uid 1000);
+ Mon, 18 Oct 2021 19:29:41 -0000
+Date: Mon, 18 Oct 2021 14:29:41 -0500
 From: Rob Herring <robh@kernel.org>
-To: Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: kishon@ti.com, vkoul@kernel.org, andrew@lunn.ch,
- alexandre.belloni@bootlin.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/3] dt-bindings: phy: Add constants for lan966x serdes
-Message-ID: <YW3K2GX+hmkwt3EE@robh.at.kernel.org>
-References: <20211015123920.176782-1-horatiu.vultur@microchip.com>
- <20211015123920.176782-3-horatiu.vultur@microchip.com>
+To: Amelie Delaunay <amelie.delaunay@foss.st.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 2/3] dt-bindings: phy: phy-stm32-usbphyc: add optional
+ phy tuning properties
+Message-ID: <YW3LJWOCzZm3jxuJ@robh.at.kernel.org>
+References: <20211015161427.220784-1-amelie.delaunay@foss.st.com>
+ <20211015161427.220784-3-amelie.delaunay@foss.st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211015123920.176782-3-horatiu.vultur@microchip.com>
+In-Reply-To: <20211015161427.220784-3-amelie.delaunay@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211018_122827_433168_0DE86EAF 
-X-CRM114-Status: GOOD (  15.34  )
+X-CRM114-CacheID: sfid-20211018_122944_389612_CCFC5CDB 
+X-CRM114-Status: GOOD (  11.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,45 +92,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 15, 2021 at 02:39:19PM +0200, Horatiu Vultur wrote:
-> Lan966x has: 2 integrated PHYs, 3 SerDes and 2 RGMII interfaces. Which
-> requires to be muxed based on the HW representation.
+On Fri, 15 Oct 2021 18:14:26 +0200, Amelie Delaunay wrote:
+> This patch adds the description of new optional phy tuning properties
+> for usbphyc phy sub nodes.
 > 
-> So add constants for each interface to be able to distinguish them.
-> 
-> Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
+> Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
 > ---
->  include/dt-bindings/phy/phy-lan966x-serdes.h | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
->  create mode 100644 include/dt-bindings/phy/phy-lan966x-serdes.h
+> Changes in v3:
+> - Use -microamp instead of undocumented -milliamp
+> - Add '|' after 'description:' on each property needing this
+> Changes in v2:
+> - st,phy-tuning property removed
+> - tuning properties are now put directly in each child node
+> - tuning properties are no more free form text and their name reworked
+> ---
+>  .../bindings/phy/phy-stm32-usbphyc.yaml       | 129 ++++++++++++++++++
+>  1 file changed, 129 insertions(+)
 > 
-> diff --git a/include/dt-bindings/phy/phy-lan966x-serdes.h b/include/dt-bindings/phy/phy-lan966x-serdes.h
-> new file mode 100644
-> index 000000000000..8a05f93ecf41
-> --- /dev/null
-> +++ b/include/dt-bindings/phy/phy-lan966x-serdes.h
-> @@ -0,0 +1,14 @@
-> +/* SPDX-License-Identifier: (GPL-2.0 OR MIT) */
-> +
-> +#ifndef __PHY_LAN966X_SERDES_H__
-> +#define __PHY_LAN966X_SERDES_H__
-> +
-> +#define PHY(x)		(x)
-> +#define PHY_MAX		PHY(2)
-> +#define SERDES6G(x)	(PHY_MAX + 1 + (x))
-> +#define SERDES6G_MAX	SERDES6G(3)
-> +#define RGMII(x)	(SERDES6G_MAX + 1 + (x))
-> +#define RGMII_MAX	RGMII(2)
-> +#define SERDES_MAX	(RGMII_MAX + 1)
 
-I still don't understand. #phy-cells description says we have:
-
-<port idx> <serdes idx>
-
-But here it's 3 numbers. How are these defines used to fill in the 2 
-cells?
-
-Rob
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
