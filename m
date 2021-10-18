@@ -2,14 +2,14 @@ Return-Path: <SRS0=B4Pq=PG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6C60FC4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A1B41C43219
 	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 01:42:02 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3C10B61263
+	by mail.kernel.org (Postfix) with ESMTPS id 6EF2C61266
 	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 01:42:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3C10B61263
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6EF2C61266
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=socionext.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,27 +18,27 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T53l+M6jlsr49EgVGYgDuLycWpQWISlejzVa7xCKxl0=; b=coCKWlgt09Dq8Y
-	nY1FpTNsEevVuJiK1i+8o0R+RnnofBML2wXoE9VZorduGdbN64JQrKRL1v0VybiPTkXl3b5ryPuFV
-	h0LsPAi8Te+uxBsMGPDGZTWSl2TJ10jDuBhHvBi4f3OjbY0lvRJ2rYWLqWg+z4BlqR9WnoHFvU5Sv
-	xVrSpPc4KoX4ftWWL5kMw0j/KS6NbQVwTrXex4XQJiuCAxZKoL9w6VNjADO3z7b0hp29BbO8sJqEP
-	l11jwmMa0/g6A4GF7eOMR0zkgz5r1wy0wO24Vr5ACWosRTFJsERgMfGzbEMAugm6/P06oQH8O7wv4
-	yhC6SXglFpYEvorhALtw==;
+	List-Owner; bh=5JKWhETZZ8GTnd8He8/nv7cOOiJpgvpP4MttCMi4/vc=; b=iTjO4+7rs/8mYf
+	FKbwL7AXd36axzdG2DF7D8vm6NnR8gnJmiv2toHQpWvdyINStPI7tALnboKcOjeOS2IxN6+cat3Mk
+	NcvCJR+FZR5gkUgsyrsfo0/lc0v11vOuZ+/cs/RyFyXi1PK7PQAEnRkXX5mQZGl2iy/NNF4j0/d0q
+	jATbHob3KTbd+wElWJrOKFrPcoBqtVRccIFb09v9+4j0peMhAL2+Lxfdwsq1aNNB6YMox9keyaDea
+	HIaDJLH4IDH65YGLSz5eeLUU3KGoba9CkLEoLbkLSYqrsIE2JNdsZfDI2RfnI5t0Rl2Lbaw7kERMW
+	IMVu8aRqPnMbUk0ZzyoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mcHf7-00Dj8d-9g; Mon, 18 Oct 2021 01:42:01 +0000
+	id 1mcHf7-00Dj8w-Jp; Mon, 18 Oct 2021 01:42:01 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcHao-00Dh5M-78; Mon, 18 Oct 2021 01:37:35 +0000
+ id 1mcHal-00Dh6a-SM; Mon, 18 Oct 2021 01:37:33 +0000
 Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 18 Oct 2021 10:37:31 +0900
 Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id F14602058B42;
+ by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id F05C22058B40;
  Mon, 18 Oct 2021 10:37:30 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Mon, 18 Oct 2021 10:37:31 +0900
+ Mon, 18 Oct 2021 10:37:30 +0900
 Received: from plum.e01.socionext.com (unknown [10.212.243.119])
- by kinkan2.css.socionext.com (Postfix) with ESMTP id 72331AB192;
+ by kinkan2.css.socionext.com (Postfix) with ESMTP id 466B0B62B7;
  Mon, 18 Oct 2021 10:37:30 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
@@ -46,15 +46,15 @@ To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: [PATCH 7/8] dt-bindings: phy: uniphier-ahci: Add bindings for Pro4 SoC
-Date: Mon, 18 Oct 2021 10:37:12 +0900
-Message-Id: <1634521033-17003-8-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH 6/8] phy: uniphier-pcie: Add dual-phy support for NX1 SoC
+Date: Mon, 18 Oct 2021 10:37:11 +0900
+Message-Id: <1634521033-17003-7-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1634521033-17003-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1634521033-17003-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211017_183734_447109_58D0F801 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20211017_183732_095045_A2D62B83 
+X-CRM114-Status: GOOD (  18.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,62 +72,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Update AHCI-PHY binding document for UniPhier Pro4 SoC. Pro4 AHCI-PHY
-needs to control additional reset lines, "pm", "tx", and "rx" and
-additional I/O clock line "gio".
+NX1 SoC supports 2 lanes and has dual-phy. Should set appropriate
+configuration values to both PHY registers.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- .../bindings/phy/socionext,uniphier-ahci-phy.yaml    | 20 ++++++++++++++++----
- 1 file changed, 16 insertions(+), 4 deletions(-)
+ drivers/phy/socionext/phy-uniphier-pcie.c | 48 ++++++++++++++++++++++---------
+ 1 file changed, 34 insertions(+), 14 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-index 745c525ce6b9..341d9b6a7aa6 100644
---- a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-@@ -16,6 +16,7 @@ maintainers:
- properties:
-   compatible:
-     enum:
-+      - socionext,uniphier-pro4-ahci-phy
-       - socionext,uniphier-pxs2-ahci-phy
-       - socionext,uniphier-pxs3-ahci-phy
+diff --git a/drivers/phy/socionext/phy-uniphier-pcie.c b/drivers/phy/socionext/phy-uniphier-pcie.c
+index 2bd8df619712..035d2496ab0c 100644
+--- a/drivers/phy/socionext/phy-uniphier-pcie.c
++++ b/drivers/phy/socionext/phy-uniphier-pcie.c
+@@ -27,6 +27,7 @@
+ #define TESTI_DAT_MASK		GENMASK(13, 6)
+ #define TESTI_ADR_MASK		GENMASK(5, 1)
+ #define TESTI_WR_EN		BIT(0)
++#define TESTIO_PHY_SHIFT	16
  
-@@ -30,6 +31,9 @@ properties:
+ #define PCL_PHY_TEST_O		0x2004
+ #define TESTO_DAT_MASK		GENMASK(7, 0)
+@@ -65,43 +66,57 @@ struct uniphier_pciephy_priv {
  
-   clock-names:
-     oneOf:
-+      - items:          # for Pro4
-+        - const: gio
-+        - const: link
-       - items:          # for PXs2
-           - const: link
-       - items:          # for others
-@@ -37,12 +41,20 @@ properties:
-           - const: phy
+ struct uniphier_pciephy_soc_data {
+ 	bool is_legacy;
++	bool is_dual_phy;
+ 	void (*set_phymode)(struct regmap *regmap);
+ };
  
-   resets:
--    maxItems: 2
-+    minItems: 2
-+    maxItems: 5
+ static void uniphier_pciephy_testio_write(struct uniphier_pciephy_priv *priv,
+-					  u32 data)
++					  int id, u32 data)
+ {
++	if (id)
++		data <<= TESTIO_PHY_SHIFT;
++
+ 	/* need to read TESTO twice after accessing TESTI */
+ 	writel(data, priv->base + PCL_PHY_TEST_I);
+ 	readl(priv->base + PCL_PHY_TEST_O);
+ 	readl(priv->base + PCL_PHY_TEST_O);
+ }
  
-   reset-names:
--    items:
--      - const: link
--      - const: phy
-+    oneOf:
-+      - items:          # for Pro4
-+        - const: gio
-+        - const: link
-+        - const: pm
-+        - const: tx
-+        - const: rx
-+      - items:          # for others
-+        - const: link
-+        - const: phy
++static u32 uniphier_pciephy_testio_read(struct uniphier_pciephy_priv *priv, int id)
++{
++	u32 val = readl(priv->base + PCL_PHY_TEST_O);
++
++	if (id)
++		val >>= TESTIO_PHY_SHIFT;
++
++	return val & TESTO_DAT_MASK;
++}
++
+ static void uniphier_pciephy_set_param(struct uniphier_pciephy_priv *priv,
+-				       u32 reg, u32 mask, u32 param)
++				       int id, u32 reg, u32 mask, u32 param)
+ {
+ 	u32 val;
  
- required:
-   - compatible
+ 	/* read previous data */
+ 	val  = FIELD_PREP(TESTI_DAT_MASK, 1);
+ 	val |= FIELD_PREP(TESTI_ADR_MASK, reg);
+-	uniphier_pciephy_testio_write(priv, val);
+-	val = readl(priv->base + PCL_PHY_TEST_O) & TESTO_DAT_MASK;
++	uniphier_pciephy_testio_write(priv, id, val);
++	val = uniphier_pciephy_testio_read(priv, id);
+ 
+ 	/* update value */
+ 	val &= ~mask;
+ 	val |= mask & param;
+ 	val = FIELD_PREP(TESTI_DAT_MASK, val);
+ 	val |= FIELD_PREP(TESTI_ADR_MASK, reg);
+-	uniphier_pciephy_testio_write(priv, val);
+-	uniphier_pciephy_testio_write(priv, val | TESTI_WR_EN);
+-	uniphier_pciephy_testio_write(priv, val);
++	uniphier_pciephy_testio_write(priv, id, val);
++	uniphier_pciephy_testio_write(priv, id, val | TESTI_WR_EN);
++	uniphier_pciephy_testio_write(priv, id, val);
+ 
+ 	/* read current data as dummy */
+ 	val  = FIELD_PREP(TESTI_DAT_MASK, 1);
+ 	val |= FIELD_PREP(TESTI_ADR_MASK, reg);
+-	uniphier_pciephy_testio_write(priv, val);
+-	readl(priv->base + PCL_PHY_TEST_O);
++	uniphier_pciephy_testio_write(priv, id, val);
++	uniphier_pciephy_testio_read(priv, id);
+ }
+ 
+ static void uniphier_pciephy_assert(struct uniphier_pciephy_priv *priv)
+@@ -127,7 +142,7 @@ static int uniphier_pciephy_init(struct phy *phy)
+ {
+ 	struct uniphier_pciephy_priv *priv = phy_get_drvdata(phy);
+ 	u32 val;
+-	int ret;
++	int ret, id;
+ 
+ 	ret = clk_prepare_enable(priv->clk);
+ 	if (ret)
+@@ -155,14 +170,16 @@ static int uniphier_pciephy_init(struct phy *phy)
+ 	if (priv->data->is_legacy)
+ 		return 0;
+ 
+-	uniphier_pciephy_set_param(priv, PCL_PHY_R00,
++	for (id = 0; id < (priv->data->is_dual_phy ? 2 : 1); id++) {
++		uniphier_pciephy_set_param(priv, id, PCL_PHY_R00,
+ 				   RX_EQ_ADJ_EN, RX_EQ_ADJ_EN);
+-	uniphier_pciephy_set_param(priv, PCL_PHY_R06, RX_EQ_ADJ,
++		uniphier_pciephy_set_param(priv, id, PCL_PHY_R06, RX_EQ_ADJ,
+ 				   FIELD_PREP(RX_EQ_ADJ, RX_EQ_ADJ_VAL));
+-	uniphier_pciephy_set_param(priv, PCL_PHY_R26, VCO_CTRL,
++		uniphier_pciephy_set_param(priv, id, PCL_PHY_R26, VCO_CTRL,
+ 				   FIELD_PREP(VCO_CTRL, VCO_CTRL_INIT_VAL));
+-	uniphier_pciephy_set_param(priv, PCL_PHY_R28, VCOPLL_CLMP,
++		uniphier_pciephy_set_param(priv, PCL_PHY_R28, VCOPLL_CLMP,
+ 				   FIELD_PREP(VCOPLL_CLMP, VCOPLL_CLMP_VAL));
++	}
+ 	usleep_range(1, 10);
+ 
+ 	uniphier_pciephy_deassert(priv);
+@@ -282,15 +299,18 @@ static const struct uniphier_pciephy_soc_data uniphier_pro5_data = {
+ 
+ static const struct uniphier_pciephy_soc_data uniphier_ld20_data = {
+ 	.is_legacy = false,
++	.is_dual_phy = false,
+ 	.set_phymode = uniphier_pciephy_ld20_setmode,
+ };
+ 
+ static const struct uniphier_pciephy_soc_data uniphier_pxs3_data = {
+ 	.is_legacy = false,
++	.is_dual_phy = false,
+ };
+ 
+ static const struct uniphier_pciephy_soc_data uniphier_nx1_data = {
+ 	.is_legacy = false,
++	.is_dual_phy = true,
+ 	.set_phymode = uniphier_pciephy_nx1_setmode,
+ };
+ 
 -- 
 2.7.4
 
