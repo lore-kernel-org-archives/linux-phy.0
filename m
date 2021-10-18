@@ -2,75 +2,80 @@ Return-Path: <SRS0=B4Pq=PG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 87E75C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:49:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id ACB9CC4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:51:06 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 50A11611EF
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:49:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 50A11611EF
+	by mail.kernel.org (Postfix) with ESMTPS id 76B7C6115A
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 19:51:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 76B7C6115A
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xQSuDINAe1QUTndJq+VIfVfy+VcqXoqhBE3itQw3BFA=; b=FthV7Glq3nqIar
-	bMBCXS3gTcRG6lBmWR3F27qxQ/LqKWLm5PuyYot0/mIWWSVkge9/+gINd2tJkdtoCDtFaGA8VuXnx
-	DCmjE2QVPGn588G5TBnu8QTnGAiegxpAaXRnRs6sYpdwWgxcSmxjgb7Hpn7aSvD9y396XIK4iFarj
-	HKd+0yzdyorvR+3aGXmsL7WsVPtbxJGhFfjMqMm/jQzDHcNZxP5YpcMEyDuNClvvSafkXq4X1aqU2
-	L7i34SeHcI1J/G9DKlHvLCXlI/+uuNTLX3smSVgBgp4WAHfmRIHdrSJpI15GRIwxH/Btk+GI+fYh8
-	43LVqZYdx4wx4n8QJFjw==;
+	List-Owner; bh=0S69lOAnr9RTXcW3669diBbP8cEhWgaZlInBtFfkb+E=; b=j5IWbfIUUsNAM5
+	1lPuoyzkNfvQXSCt5/Tq/qpNPYtBotYEipeqQ1mb3HK2J91ep0o5Waep1IckPYoOmJrJDZ+MUNQD1
+	wvbny5xReiauj5r9vXnrQM+c5W8HGG71FIdKYfNI1Bxafa10bPrOjqLaPXo6DvfTURKBT8znSHI0l
+	B+VgXf4atjMcLDCzaPR2fOnz95NO4lB0wLMaFf05Bm5Sh0wbJmTDtO2IPHMCgfiVNyjNo3TNxWnWa
+	c/8XknJ410rKbiIZPGkjPi3zs6ham9dHFtKAfU4/RMyhKrq2wsGy7xFn6kDQ75Rsj7RrtkcAnGlqW
+	WDKfw9ve1G5W7AadQOJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mcYdD-00H7xB-M6; Mon, 18 Oct 2021 19:49:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mcYf3-00H8jZ-Rg; Mon, 18 Oct 2021 19:51:05 +0000
+Received: from mail-ot1-f43.google.com ([209.85.210.43])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcYT9-00H3bi-0K; Mon, 18 Oct 2021 19:38:48 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 8F6BC6108E;
- Mon, 18 Oct 2021 19:38:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1634585926;
- bh=+lafo2T6te+gWjhQBzL22he7ufSIIGdZoxOzENsqwDw=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=DzmUOv7eA69aFSAJKeAC/hNoZLKjM2sZMrV0TtnTaTD/zwPjJ5Nk8+Kht0mrv/ZAg
- H0O1rbvyBt1m6AfDD6EIPjiaaFctaa633hxpF0s5GgAZfH/QCzSIn8rb5uopWlKnyt
- 5LpOCr3AmgohKZILQLjuCGeOEkf24qrzHXSbP7dL+LIbCTniCCkB0l3j/gUl0O5JrT
- SlDVt/l4r2Wy/5s4FbFDLAcWGICUKGff3KxenybdtbiBaczpduXXbQ9mD1LK95HA1Q
- wgn4rF32c9j6alhETh37ZUHokI1nwvvbjqPokiLRMIwrXV25QaW48q7xMeRL08xeUa
- 90TTSaV28OfuA==
-Received: by mail-ed1-f47.google.com with SMTP id w19so3310686edd.2;
- Mon, 18 Oct 2021 12:38:46 -0700 (PDT)
-X-Gm-Message-State: AOAM530Q/WMMnBR4p9C+98k/+gy5qWQZ/ubY0t+eR6VHvm/YuCO0klEm
- yX6gJsblns4c2UhPeKgnmSJV4qMf6KKhrxvlVg==
-X-Google-Smtp-Source: ABdhPJzGdFAfWjzAMWuADPM5EPYzjfE9/sFvO9OlTDhrOb2mbL6H+KG2sXfvp8vOCsyn0d1W4fqaY0LBzO34Ejzirnc=
-X-Received: by 2002:a05:6402:1778:: with SMTP id
- da24mr46194930edb.318.1634585925034; 
- Mon, 18 Oct 2021 12:38:45 -0700 (PDT)
-MIME-Version: 1.0
-References: <20211011094624.3416029-1-msp@baylibre.com>
- <20211011094624.3416029-3-msp@baylibre.com>
- <YWTaJOXGgF2bHznv@robh.at.kernel.org> <20211018141908.fuevv2m66fw3xg36@blmsp>
-In-Reply-To: <20211018141908.fuevv2m66fw3xg36@blmsp>
+ id 1mcYd2-00H7rY-GO
+ for linux-phy@lists.infradead.org; Mon, 18 Oct 2021 19:49:02 +0000
+Received: by mail-ot1-f43.google.com with SMTP id
+ l10-20020a056830154a00b00552b74d629aso1224161otp.5
+ for <linux-phy@lists.infradead.org>; Mon, 18 Oct 2021 12:49:00 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=AAoBj4y4weGMfJE/H2YUzE461Zo+UYbwtItvsEO1Bq0=;
+ b=V9XNUWP0LEN5KqikdLcROGPAxGn+LX1LJLGtV8gdOYHswfGA9ocdyO11B0l27fynCO
+ KEg/9/NlTNi2AIca/aTfAyEHu9BYPFJZDho2TAF2+DKnPWkLF+RffmiO22caw19rC6R8
+ rQXwHm3ZZ7R535ix76s2djo/82bnoQQbkZVzWzsLkbZol3U+vKE8mpMaCJpxZjzoRRHW
+ 69NHrmVIUmePq3XdERkpCoYTX5YCTVlJWTjOnw+AD/yIoIOwpbEU2P18gNp1/HYl9kNQ
+ +/Inwf9Bfg2KGqJt7X+EpzeY3thmYouXSp77EdryNnq/I0ERaQB5oAsBXIF2m23APtip
+ z5DA==
+X-Gm-Message-State: AOAM531H8xmBwnL5Qx2fePhjrj4QSUWZ/Niw2TH/PtwrjB8mPwjfFOj/
+ zsPMYKopVsk3rBCDM2ZoGQ==
+X-Google-Smtp-Source: ABdhPJzO339HRKj4AW98yudKu8l33V+dVFUqkR3/vATJbubDlMODK604QfCtHQumP/dOc5zpMWb41g==
+X-Received: by 2002:a05:6830:1e08:: with SMTP id
+ s8mr1515560otr.305.1634586539491; 
+ Mon, 18 Oct 2021 12:48:59 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id e59sm3222734ote.14.2021.10.18.12.48.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 Oct 2021 12:48:59 -0700 (PDT)
+Received: (nullmailer pid 2836064 invoked by uid 1000);
+ Mon, 18 Oct 2021 19:48:58 -0000
+Date: Mon, 18 Oct 2021 14:48:58 -0500
 From: Rob Herring <robh@kernel.org>
-Date: Mon, 18 Oct 2021 14:38:33 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+QwEPNEztD+yg-UO8gWf_X=E-n0_HMYJsGxteZAZparg@mail.gmail.com>
-Message-ID: <CAL_Jsq+QwEPNEztD+yg-UO8gWf_X=E-n0_HMYJsGxteZAZparg@mail.gmail.com>
-Subject: Re: [PATCH v4 2/7] dt-bindings: mediatek, dp: Add Display Port binding
-To: Markus Schneider-Pargmann <msp@baylibre.com>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Vinod Koul <vkoul@kernel.org>, Sam Ravnborg <sam@ravnborg.org>, 
- dri-devel <dri-devel@lists.freedesktop.org>, 
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, abhinavk@codeaurora.org,
+ Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Introduce Qualcomm eDP/DP PHY
+ binding
+Message-ID: <YW3PqhQHauDYRlwN@robh.at.kernel.org>
+References: <20211016232128.2341395-1-bjorn.andersson@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20211016232128.2341395-1-bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211018_123847_119088_C6EC4898 
-X-CRM114-Status: GOOD (  23.35  )
+X-CRM114-CacheID: sfid-20211018_124900_591876_39AC1A62 
+X-CRM114-Status: GOOD (  18.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,68 +92,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 18, 2021 at 9:19 AM Markus Schneider-Pargmann
-<msp@baylibre.com> wrote:
->
-> Hi Rob,
->
-> On Mon, Oct 11, 2021 at 07:43:16PM -0500, Rob Herring wrote:
-> > On Mon, Oct 11, 2021 at 11:46:19AM +0200, Markus Schneider-Pargmann wrote:
-> > > This controller is present on several mediatek hardware. Currently
-> > > mt8195 and mt8395 have this controller without a functional difference,
-> > > so only one compatible field is added.
-> > >
-> > > The controller can have two forms, as a normal display port and as an
-> > > embedded display port.
-> > >
-> > > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> > > ---
-> > >  .../display/mediatek/mediatek,dp.yaml         | 89 +++++++++++++++++++
-> > >  1 file changed, 89 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
-> > > new file mode 100644
-> > > index 000000000000..f7a35962c23b
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
-> > > @@ -0,0 +1,89 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Mediatek Display Port Controller
-> > > +
-> > > +maintainers:
-> > > +  - CK Hu <ck.hu@mediatek.com>
-> > > +  - Jitao shi <jitao.shi@mediatek.com>
-> > > +
-> > > +description: |
-> > > +  Device tree bindings for the Mediatek (embedded) Display Port controller
-> > > +  present on some Mediatek SoCs.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    enum:
-> > > +      - mediatek,mt8195-edp_tx
-> > > +      - mediatek,mt8195-dp_tx
-> >
-> > Are these blocks different?
->
-> Good point, the registers of these blocks are described in its own
-> chapter each. Also I do need to distinguish between both in the driver.
-> Would you suggest making this distinction differently or keep it as two
-> compatibles?
+On Sat, Oct 16, 2021 at 04:21:27PM -0700, Bjorn Andersson wrote:
+> Introduce a binding for the eDP/DP PHY hardware block found in several
+> different Qualcomm platforms.
+> 
+> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> ---
+> 
+> Changes since v2:
+> - None
+> 
+>  .../devicetree/bindings/phy/qcom,edp-phy.yaml | 69 +++++++++++++++++++
+>  1 file changed, 69 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> new file mode 100644
+> index 000000000000..c258e4f7e332
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> @@ -0,0 +1,69 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/phy/qcom,edp-phy.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Qualcomm DP/eDP PHY
+> +
+> +maintainers:
+> +  - Bjorn Andersson <bjorn.andersson@linaro.org>
+> +
+> +description:
+> +  The Qualcomm DP/eDP PHY is found in a number of Qualcomm platform and
+> +  provides the physical interface for DisplayPort and Embedded Display Port.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - qcom,sc8180x-dp-phy
+> +      - qcom,sc8180x-edp-phy
 
-If the registers are all the same, then it should be the same
-compatible. If you still need to distinguish, then you should have a
-panel or connector node that will let you do that.
+Is there a difference between DP and eDP?
 
-Also, s/_/-/ in the compatible string.
+Perhaps note what that is if so.
 
-Rob
+> +
+> +  reg:
+> +    items:
+> +      - description: PHY base register block
+> +      - description: tx0 register block
+> +      - description: tx1 register block
+> +      - description: PLL register block
+> +
+> +  clocks:
+> +    maxItems: 2
+> +
+> +  clock-names:
+> +    items:
+> +      - const: aux
+> +      - const: cfg_ahb
+> +
+> +  "#clock-cells":
+> +    const: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - "#clock-cells"
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    phy@aec2a00 {
+> +      compatible = "qcom,sc8180x-edp-phy";
+> +      reg = <0x0aec2a00 0x1c0>,
+> +            <0x0aec2200 0xa0>,
+> +            <0x0aec2600 0xa0>,
+> +            <0x0aec2000 0x19c>;
+> +
+> +      clocks = <&dispcc 0>, <&dispcc 1>;
+> +      clock-names = "aux", "cfg_ahb";
+> +
+> +      #clock-cells = <1>;
+> +      #phy-cells = <0>;
+> +    };
+> +...
+> -- 
+> 2.29.2
+> 
+> 
 
 -- 
 linux-phy mailing list
