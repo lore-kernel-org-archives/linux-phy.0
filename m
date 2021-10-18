@@ -2,14 +2,14 @@ Return-Path: <SRS0=B4Pq=PG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BCA18C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 01:42:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 03BC1C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 01:42:02 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 82D5361250
+	by mail.kernel.org (Postfix) with ESMTPS id C72EC61264
 	for <linux-phy@archiver.kernel.org>; Mon, 18 Oct 2021 01:42:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 82D5361250
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C72EC61264
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=socionext.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,27 +18,27 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Peb399zranXdJ4hOFnYS82ASkQFKTHY3b1sxT2wiqZ0=; b=mt8lrYRd6LtUk5
-	4nLL7cC/MnPCPlUztKIgW/Z4xPRd6B8+ZUnOnx4SS4Jqa31Tn1cUxMUZMaLBWi0eWMKRP1F2wY4s8
-	5ffWB3tyhk3pWKdUq9FCahUaY0wSGcVLvBfF0i4WpDimu+cGes1AUyRs3pV/DvTpaJ0a91vgtVoR3
-	kSGJiQ4m1++RtQxlVea9WNp/P0wwW8d/s1bKCK5xiwAEoV+RTzOcXt7NNyBo0ilnMaURI7lUdZTW9
-	PU/uqqgAqTkkNpN44MPKv5Kz6s0r0GNYazLlvmRS7k+bkLY0T8qdZkR8jJgfP8vqKzvTRmFBaEuJZ
-	0gI6aco0AXFxwAt10z5w==;
+	List-Owner; bh=185r410P2m4sGLGLuiH8DO7hk+ux0snuYfGbuTBbsIM=; b=g15uBSAGHE6RxH
+	7F5ZsQSO3lcnn3vyw58AwvzUGVYMdGue8OTdpZ0HAZ6wWP0yMxCyJsSx8422QSuVzcizM47tIsDE7
+	zo5CfSn9fLVzyHB1LqfiYQdJtFWFiEF7u62eNKWAcDOgjvbuoYVD743TJuEBaTpO929rEaUehD2Dt
+	bambON9a0sZLrkXVIpYbG+Mvh+06Bg2dpbGmiS/amVV59Xb+VLEGQfV9A2UQAoiuCHkcqEuRSJYu0
+	FpAKrJDJnwefq392E+LTWOjQGTmo5OJZ1o49jRM26CXKLFcUzMgZlfv81WeMXH4nrQz6BH4kk49Nd
+	3QSwqxADJ3sXgrS9xQAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mcHf6-00Dj8C-OF; Mon, 18 Oct 2021 01:42:00 +0000
+	id 1mcHf7-00Dj8S-0f; Mon, 18 Oct 2021 01:42:01 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcHam-00Dh5M-8c; Mon, 18 Oct 2021 01:37:33 +0000
-Received: from unknown (HELO kinkan2-ex.css.socionext.com) ([172.31.9.52])
+ id 1mcHam-00Dh7C-NW; Mon, 18 Oct 2021 01:37:34 +0000
+Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 18 Oct 2021 10:37:30 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan2-ex.css.socionext.com (Postfix) with ESMTP id 45FCF2059034;
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id 735862058B40;
  Mon, 18 Oct 2021 10:37:30 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
  Mon, 18 Oct 2021 10:37:30 +0900
 Received: from plum.e01.socionext.com (unknown [10.212.243.119])
- by kinkan2.css.socionext.com (Postfix) with ESMTP id A6C9AAB192;
+ by kinkan2.css.socionext.com (Postfix) with ESMTP id DA0C0B62B7;
  Mon, 18 Oct 2021 10:37:29 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
@@ -46,15 +46,16 @@ To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: [PATCH 3/8] dt-bindings: phy: uniphier-pcie: Add bindings for NX1 SoC
-Date: Mon, 18 Oct 2021 10:37:08 +0900
-Message-Id: <1634521033-17003-4-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH 4/8] phy: uniphier-pcie: Add compatible string and
+ SoC-dependent data for NX1 SoC
+Date: Mon, 18 Oct 2021 10:37:09 +0900
+Message-Id: <1634521033-17003-5-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1634521033-17003-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1634521033-17003-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211017_183732_463992_AE8381BB 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20211017_183732_927773_07D5116F 
+X-CRM114-Status: GOOD (  15.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,25 +73,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Update PCIe-PHY binding document for UniPhier NX1 SoC.
+Add basic support for UniPhier NX1 SoC. This includes a compatible string,
+SoC-dependent data, and a function that set to 2-lane mode.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/socionext/phy-uniphier-pcie.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml
-index 3e0566899041..fbb71d6dd531 100644
---- a/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml
-@@ -19,6 +19,7 @@ properties:
-       - socionext,uniphier-pro5-pcie-phy
-       - socionext,uniphier-ld20-pcie-phy
-       - socionext,uniphier-pxs3-pcie-phy
-+      - socionext,uniphier-nx1-pcie-phy
+diff --git a/drivers/phy/socionext/phy-uniphier-pcie.c b/drivers/phy/socionext/phy-uniphier-pcie.c
+index 6bdbd1f214dd..fde8aac5f4b6 100644
+--- a/drivers/phy/socionext/phy-uniphier-pcie.c
++++ b/drivers/phy/socionext/phy-uniphier-pcie.c
+@@ -39,6 +39,10 @@
+ #define SG_USBPCIESEL		0x590
+ #define SG_USBPCIESEL_PCIE	BIT(0)
  
-   reg:
-     maxItems: 1
++/* SC */
++#define SC_US3SRCSEL		0x2244
++#define SC_US3SRCSEL_2LANE	GENMASK(9, 8)
++
+ #define PCL_PHY_R00		0
+ #define   RX_EQ_ADJ_EN		BIT(3)		/* enable for EQ adjustment */
+ #define PCL_PHY_R06		6
+@@ -261,6 +265,12 @@ static void uniphier_pciephy_ld20_setmode(struct regmap *regmap)
+ 			   SG_USBPCIESEL_PCIE, SG_USBPCIESEL_PCIE);
+ }
+ 
++static void uniphier_pciephy_nx1_setmode(struct regmap *regmap)
++{
++	regmap_update_bits(regmap, SC_US3SRCSEL,
++			   SC_US3SRCSEL_2LANE, SC_US3SRCSEL_2LANE);
++}
++
+ static const struct uniphier_pciephy_soc_data uniphier_pro5_data = {
+ 	.is_legacy = true,
+ };
+@@ -274,6 +284,11 @@ static const struct uniphier_pciephy_soc_data uniphier_pxs3_data = {
+ 	.is_legacy = false,
+ };
+ 
++static const struct uniphier_pciephy_soc_data uniphier_nx1_data = {
++	.is_legacy = false,
++	.set_phymode = uniphier_pciephy_nx1_setmode,
++};
++
+ static const struct of_device_id uniphier_pciephy_match[] = {
+ 	{
+ 		.compatible = "socionext,uniphier-pro5-pcie-phy",
+@@ -287,6 +302,10 @@ static const struct of_device_id uniphier_pciephy_match[] = {
+ 		.compatible = "socionext,uniphier-pxs3-pcie-phy",
+ 		.data = &uniphier_pxs3_data,
+ 	},
++	{
++		.compatible = "socionext,uniphier-nx1-pcie-phy",
++		.data = &uniphier_nx1_data,
++	},
+ 	{ /* sentinel */ },
+ };
+ MODULE_DEVICE_TABLE(of, uniphier_pciephy_match);
 -- 
 2.7.4
 
