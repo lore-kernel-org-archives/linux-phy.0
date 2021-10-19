@@ -2,66 +2,59 @@ Return-Path: <SRS0=JtrO=PH=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9EC4FC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 18:08:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6A3D7C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 23:59:00 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6B26D61373
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 18:08:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6B26D61373
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 31CD061004
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 23:59:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 31CD061004
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=socionext.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pNT31Z7W8YBjT0oR7vkEjOgzBfcIuDUeR0MggMseybA=; b=hz/s0vYB1JQs0s
-	XPOfrpRWCR7VPL1XZa1OyygvUVW5j6xoDaIdGrIfb8iYSJdtzauTotUaVjbS1eIooz/VlkBp1B01P
-	KsOySqG5jWoOpjUA4gKCPp5kUyzJQAZkoRQvhRdZTxCO6djdMjZr6ZW4siKIiltUVTfuNMyPpshSj
-	HK2sj5gs1q/3GCzZerhqSH0eEja6O7yCQ5h7eeVJEjE7Lho40yje0vUL9EXS2tiHucr/8g7jZvWCl
-	KohntwiKBwjvEp3/DKbMCeR/kRBo8vy3YGuVNfWHbNpnm1Jgi5BCqg+X6PIhB61exQ5RyhI6HPmmn
-	5HM0gDZllhE07fEA22Yg==;
+	List-Owner; bh=ghlsepGcyNTxjHKx5KdqFfQqaik5sVDVETIocaQgoQs=; b=jg1fr1XM2OjlMt
+	BEGv+iTGWJXvkU61e09/f+nZ2KzR+bnfc0pON9IS4IcSB3WQFL6O2XVIcpefdqcXAo2BGhJygpJAU
+	CVbKBrVdkXvQAKDSiTX1kxPcvtvHZ8ZlPshLUmcYw+1cUrPt0DBIbLu0M/KYbS+P2pG5XOY/RzTGw
+	9Mhcb9lw6gegxEfwczSq2JJhCKWxdSz4ooXM9EsONBc4A1jg59CR6ETfdzNNW4zGsY9HEHb99iIMq
+	QaP6Q7tlglkJ3AKRznS8GHPGN+rKy3HSB4oKyh9f6u0+iQ7fMnOSP/uqYe1UKTxONoGRf0ur15jMK
+	EpdyIMDWR+1HvHU+139A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mctWp-002NAJ-Ou; Tue, 19 Oct 2021 18:07:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mctWm-002N8Z-Nj
- for linux-phy@lists.infradead.org; Tue, 19 Oct 2021 18:07:58 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 8A16860FC2;
- Tue, 19 Oct 2021 18:07:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1634666876;
- bh=ugfD5oilf5sZAV+LUYkHhfUlgC/YPCB6tjBtG4YOD0M=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uvnnD4OI+qKD9QmyuovZJzI+yKN041k3a+/rJK6zsDyjiEMQbOJxl2ZuDLF0TmQqn
- wv9NtGeXIpRbKp12+JvTnxuKGAiBbYDAnAGtBmfMFLRD5eCl6wTGX4ASH6fx+/zFyG
- VE26MCWV+Vaf1/OCJjC7diB4pSAStOI3wz3V/vjB9XWvsUDWasgD985mbJ5Anb7Xe3
- 6ZDMjK1kObcgNkLaGzfEqQCtYyuLX8o2CaR2O+twDHxzuoNmjhfg7oxgHXAOT0IA5x
- u3RD3xBZG7NiQqS62YYd7r2EbImtIl80PpBNFzpVYDa3UeqrOVS5tXnX+eNtOC/q+p
- hOfjaY+MpsZKQ==
-Date: Tue, 19 Oct 2021 23:37:52 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Shawn Guo <shawn.guo@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 02/10] dt-bindings: phy: qcom,qmp: IPQ6018 and IPQ8074
- PCIe PHY require no supply
-Message-ID: <YW8JeJ6C9SzcGaqS@matsya>
-References: <20210929034253.24570-1-shawn.guo@linaro.org>
- <20210929034253.24570-3-shawn.guo@linaro.org>
- <YVvx9jEGS3g9LD8X@matsya> <YVxzdiVKWOF9AVVV@ripper>
- <YV62USm8pSvAKdvo@matsya>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YV62USm8pSvAKdvo@matsya>
+	id 1mcz0V-002zzc-Kj; Tue, 19 Oct 2021 23:58:59 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1mcz06-002zoZ-Pi; Tue, 19 Oct 2021 23:58:36 +0000
+Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 20 Oct 2021 08:58:32 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id EDBA7206E701;
+ Wed, 20 Oct 2021 08:58:31 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Wed, 20 Oct 2021 08:58:31 +0900
+Received: from plum.e01.socionext.com (unknown [10.212.243.119])
+ by kinkan2.css.socionext.com (Postfix) with ESMTP id 4E2E7B62AC;
+ Wed, 20 Oct 2021 08:58:31 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Masami Hiramatsu <mhiramat@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: [PATCH v2 2/8] phy: uniphier-usb3: Add compatible string for NX1 SoC
+Date: Wed, 20 Oct 2021 08:58:02 +0900
+Message-Id: <1634687888-23900-3-git-send-email-hayashi.kunihiko@socionext.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1634687888-23900-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1634687888-23900-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211019_110756_835943_43A9ABCC 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20211019_165834_973642_B899A542 
+X-CRM114-Status: GOOD (  13.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,41 +66,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Shawn,
+Add basic support for UniPhier NX1 SoC. This includes a compatible string
+and the same SoC-dependent data as LD20/PXs3 SoCs.
 
-On 07-10-21, 14:26, Vinod Koul wrote:
-> On 05-10-21, 08:47, Bjorn Andersson wrote:
-> > On Mon 04 Oct 23:34 PDT 2021, Vinod Koul wrote:
-> > 
-> > > On 29-09-21, 11:42, Shawn Guo wrote:
-> > > > The qmp-phy driver suggests that 'vdda-phy-supply' and 'vdda-pll-supply'
-> > > > are not required for IPQ6018 and IPQ8074 QMP PCIe PHY.  Update the
-> > > > bindings to reflect it.
-> > > > 
-> > > > While at it, also correct the clock properies for IPQ8074 QMP PCIe PHY.
-> > > > And as the result, 'qcom,ipq8074-qmp-pcie-phy' and
-> > > > 'qcom,ipq6018-qmp-pcie-phy' share the same clock, reset and supply
-> > > > bindings.
-> > > 
-> > > Acked-By: Vinod Koul <vkoul@kernel.org>
-> > > 
-> > 
-> > I think it's better if you take the two dt-bindings through your tree,
-> > so we avoid any potential merge conflicts related to possible other
-> > changes.
-> 
-> Okay picked up the binding patches
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+---
+ drivers/phy/socionext/phy-uniphier-usb3hs.c | 4 ++++
+ drivers/phy/socionext/phy-uniphier-usb3ss.c | 4 ++++
+ 2 files changed, 8 insertions(+)
 
-This failed to apply for me, can you please rebase and send
-
-Thanks
+diff --git a/drivers/phy/socionext/phy-uniphier-usb3hs.c b/drivers/phy/socionext/phy-uniphier-usb3hs.c
+index a9bc74121f38..8c8673df0084 100644
+--- a/drivers/phy/socionext/phy-uniphier-usb3hs.c
++++ b/drivers/phy/socionext/phy-uniphier-usb3hs.c
+@@ -447,6 +447,10 @@ static const struct of_device_id uniphier_u3hsphy_match[] = {
+ 		.compatible = "socionext,uniphier-pxs3-usb3-hsphy",
+ 		.data = &uniphier_pxs3_data,
+ 	},
++	{
++		.compatible = "socionext,uniphier-nx1-usb3-hsphy",
++		.data = &uniphier_pxs3_data,
++	},
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, uniphier_u3hsphy_match);
+diff --git a/drivers/phy/socionext/phy-uniphier-usb3ss.c b/drivers/phy/socionext/phy-uniphier-usb3ss.c
+index 6700645bcbe6..7ce611c2088b 100644
+--- a/drivers/phy/socionext/phy-uniphier-usb3ss.c
++++ b/drivers/phy/socionext/phy-uniphier-usb3ss.c
+@@ -328,6 +328,10 @@ static const struct of_device_id uniphier_u3ssphy_match[] = {
+ 		.compatible = "socionext,uniphier-pxs3-usb3-ssphy",
+ 		.data = &uniphier_ld20_data,
+ 	},
++	{
++		.compatible = "socionext,uniphier-nx1-usb3-ssphy",
++		.data = &uniphier_ld20_data,
++	},
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, uniphier_u3ssphy_match);
 -- 
-~Vinod
+2.7.4
+
 
 -- 
 linux-phy mailing list
