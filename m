@@ -2,14 +2,14 @@ Return-Path: <SRS0=JtrO=PH=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 71161C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 18:07:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9EC4FC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 18:08:00 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2C1B8604AC
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 18:07:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 2C1B8604AC
+	by mail.kernel.org (Postfix) with ESMTPS id 6B26D61373
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Oct 2021 18:08:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6B26D61373
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,49 +18,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PtKb1k/giXMvdHOZl8702Cxjc5cZE1NftGivK5/nQCc=; b=DbTZIk3cMxQtKZ
-	XoqFevc652TufjENROM7Ey4VrHoSEtKKjSMK7uhdDKZ9HTE2LjOTYVM0BiPBshH22w0DimsYyJoLJ
-	dhomq96QO9SoPLIDbtHi1EChLMfhfHuCNLsCvNIXpL51G8M4O45Y3jDsSfj0nbbEQhGa6AW0qSzmS
-	nDBKv7848GpPocj6A1oXrz4sNu3Gaz8vSYDzLDqmBvj82EROgz1RiFsw/PrB8X8Ua/ZaDlQbWGHOs
-	VxG6w2RMekEP8EW10aXER6MGQllCvVFZg1r63BmXAAgohdApSPQ8O2kLgtzPIS260iO0s1fBPde6/
-	6LDI6BTzznCn1R9hjVJw==;
+	List-Owner; bh=pNT31Z7W8YBjT0oR7vkEjOgzBfcIuDUeR0MggMseybA=; b=hz/s0vYB1JQs0s
+	XPOfrpRWCR7VPL1XZa1OyygvUVW5j6xoDaIdGrIfb8iYSJdtzauTotUaVjbS1eIooz/VlkBp1B01P
+	KsOySqG5jWoOpjUA4gKCPp5kUyzJQAZkoRQvhRdZTxCO6djdMjZr6ZW4siKIiltUVTfuNMyPpshSj
+	HK2sj5gs1q/3GCzZerhqSH0eEja6O7yCQ5h7eeVJEjE7Lho40yje0vUL9EXS2tiHucr/8g7jZvWCl
+	KohntwiKBwjvEp3/DKbMCeR/kRBo8vy3YGuVNfWHbNpnm1Jgi5BCqg+X6PIhB61exQ5RyhI6HPmmn
+	5HM0gDZllhE07fEA22Yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mctWB-002MrU-Go; Tue, 19 Oct 2021 18:07:19 +0000
+	id 1mctWp-002NAJ-Ou; Tue, 19 Oct 2021 18:07:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mctVh-002Mfc-LI; Tue, 19 Oct 2021 18:06:50 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 674B8604AC;
- Tue, 19 Oct 2021 18:06:48 +0000 (UTC)
+ id 1mctWm-002N8Z-Nj
+ for linux-phy@lists.infradead.org; Tue, 19 Oct 2021 18:07:58 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 8A16860FC2;
+ Tue, 19 Oct 2021 18:07:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1634666809;
- bh=QRHoFOiTZy8VK0r2DCaWi9nxm3sfvfTDB4HypYQ8wpI=;
+ s=k20201202; t=1634666876;
+ bh=ugfD5oilf5sZAV+LUYkHhfUlgC/YPCB6tjBtG4YOD0M=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FIX0YVuaUlmTBhAiYoxYlY5KoMGZnwmQNfKdQl5h0rsGmj4Yh1fdGptzM4zbnhAal
- ulL2npUToEepyrzbf0aNGdrHacL1v/fkl8WlseiQ3gibXbFs70WAtSkN15lepHNPX2
- UV2civm+cGfDyGDAyVW1Gm8wqbbEoOfwEgFsvOhidqOWiytrsdvjpM1151QJdZZ6Cp
- Ut2DS6WjmQSmtYBcKOnHPLknscz0QaMkTppXz3rS9RrNCmHRFwF5B9rLJQrNgoKoy7
- b2m95hkXjwW++ibTmKrOTtLoBTZ41FOFqwkfuJ/p/x8wItNlIYpoy9dkGeZsU17fCN
- yBy2Dg8Kt9kvA==
-Date: Tue, 19 Oct 2021 23:36:45 +0530
+ b=uvnnD4OI+qKD9QmyuovZJzI+yKN041k3a+/rJK6zsDyjiEMQbOJxl2ZuDLF0TmQqn
+ wv9NtGeXIpRbKp12+JvTnxuKGAiBbYDAnAGtBmfMFLRD5eCl6wTGX4ASH6fx+/zFyG
+ VE26MCWV+Vaf1/OCJjC7diB4pSAStOI3wz3V/vjB9XWvsUDWasgD985mbJ5Anb7Xe3
+ 6ZDMjK1kObcgNkLaGzfEqQCtYyuLX8o2CaR2O+twDHxzuoNmjhfg7oxgHXAOT0IA5x
+ u3RD3xBZG7NiQqS62YYd7r2EbImtIl80PpBNFzpVYDa3UeqrOVS5tXnX+eNtOC/q+p
+ hOfjaY+MpsZKQ==
+Date: Tue, 19 Oct 2021 23:37:52 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Amelie Delaunay <amelie.delaunay@foss.st.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com
-Subject: Re: [PATCH v3 0/3] phy: stm32: add phy tuning support
-Message-ID: <YW8JNd82rZyjLoH9@matsya>
-References: <20211015161427.220784-1-amelie.delaunay@foss.st.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Shawn Guo <shawn.guo@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 02/10] dt-bindings: phy: qcom,qmp: IPQ6018 and IPQ8074
+ PCIe PHY require no supply
+Message-ID: <YW8JeJ6C9SzcGaqS@matsya>
+References: <20210929034253.24570-1-shawn.guo@linaro.org>
+ <20210929034253.24570-3-shawn.guo@linaro.org>
+ <YVvx9jEGS3g9LD8X@matsya> <YVxzdiVKWOF9AVVV@ripper>
+ <YV62USm8pSvAKdvo@matsya>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211015161427.220784-1-amelie.delaunay@foss.st.com>
+In-Reply-To: <YV62USm8pSvAKdvo@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211019_110649_756050_9EF567EB 
-X-CRM114-Status: UNSURE (   6.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211019_110756_835943_43A9ABCC 
+X-CRM114-Status: GOOD (  13.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,15 +78,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15-10-21, 18:14, Amelie Delaunay wrote:
-> This series brings phy tuning to stm32-usbphyc with new optional
-> device tree properties.
-> A prior patch add resume routine, which is used to restore UTMI
-> switch and phy tuning configuration, as they can be reset if
-> deep low power state is achieved.
+Hi Shawn,
 
-Applied, thanks
+On 07-10-21, 14:26, Vinod Koul wrote:
+> On 05-10-21, 08:47, Bjorn Andersson wrote:
+> > On Mon 04 Oct 23:34 PDT 2021, Vinod Koul wrote:
+> > 
+> > > On 29-09-21, 11:42, Shawn Guo wrote:
+> > > > The qmp-phy driver suggests that 'vdda-phy-supply' and 'vdda-pll-supply'
+> > > > are not required for IPQ6018 and IPQ8074 QMP PCIe PHY.  Update the
+> > > > bindings to reflect it.
+> > > > 
+> > > > While at it, also correct the clock properies for IPQ8074 QMP PCIe PHY.
+> > > > And as the result, 'qcom,ipq8074-qmp-pcie-phy' and
+> > > > 'qcom,ipq6018-qmp-pcie-phy' share the same clock, reset and supply
+> > > > bindings.
+> > > 
+> > > Acked-By: Vinod Koul <vkoul@kernel.org>
+> > > 
+> > 
+> > I think it's better if you take the two dt-bindings through your tree,
+> > so we avoid any potential merge conflicts related to possible other
+> > changes.
+> 
+> Okay picked up the binding patches
 
+This failed to apply for me, can you please rebase and send
+
+Thanks
 -- 
 ~Vinod
 
