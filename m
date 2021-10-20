@@ -2,15 +2,15 @@ Return-Path: <SRS0=T9my=PI=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 49C1FC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 17:27:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 91AC1C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 17:37:20 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0B2F860F9F
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 17:27:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0B2F860F9F
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id 5FF71600EF
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 17:37:20 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 5FF71600EF
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -18,46 +18,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+A8+JEX5BNQKFQsP17oEVa7cmfElq2kmUAPY6LB42FY=; b=xvN0JK9R7HQmub
-	Ds41wqo5KsUG44WhnPSDs66lwmnpcV/eqUzV0S2CIGAfq3TECeByg54JWIQLKKH8/abCKBP3AQhtR
-	4tYMztClU/nraLyuLK0711FNpU086aZxtyIW6weXQn96indhPth8Ba6C7ByVPnDX/TlCW0S0Po86U
-	1nmmxEwGE+bsHaA0IFGFCPAT5gkmCH9w/OSVjAurmk17Iwj7G+FIyNXj/LhjSEZ/WZ+AHfOM+7LD3
-	W1e/9AQsFJ8owlgSRpBgb8xyEqaN+2ZR2KKy9gQGS9kcTVCdOABvAP8AElvihIi1/lViif7wFMHB0
-	GxaZlrOXM+mcTlQjhTwA==;
+	List-Owner; bh=u7HhBF4y8icY7jOyaM/Ko4+f5923F8Yvr/PFVCCKxmc=; b=h4p+OCgV5HqzEx
+	QmeDZlJhjqbbC9wpWdAqSNm6XU/HTqJd7uQFmTGe3DGBIJ1ZL0i3FdqzXq4Oerp9W3xgQxyQd4fgm
+	twBK3LEduMMFX48kjfspYiDqE+C8dO68Ak7wzTOi3OD2s9U5rRaU5+U3qYSrpalciXUJQEAoqX8Wp
+	vLZli0g76MjT+L5QBSCAd4R/mh81VGBv7JBId6jbykweDmRU+pFbKBeQfrigU06rcZ0B44gci9Mts
+	gXdcdjwST5lczRWvvqoqdiAVw/t1kWSpCCuLcrh+CxakJ7WupQH2/ViKfYfKC5wPhCkyikSQJU7I+
+	3x6liuXT9QQZg/Oh8SdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mdFNM-005JmR-Ij; Wed, 20 Oct 2021 17:27:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mdFWh-005Kiu-RS; Wed, 20 Oct 2021 17:37:19 +0000
+Received: from mail-oi1-x22f.google.com ([2607:f8b0:4864:20::22f])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mdFNJ-005Jld-If
- for linux-phy@lists.infradead.org; Wed, 20 Oct 2021 17:27:38 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 078E360F9F;
- Wed, 20 Oct 2021 17:27:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1634750857;
- bh=tyQDeymI59Y8MZ5eBC3Ad/9unrJV3Xk5ZkBbMyhhpMY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jmEwPqivbWiqRPgwabXQE9M4rlYkApDKdrJyzOpn0tYGhFt1w4gCs18Cdh3mPb/E+
- sqjRRL6MA3KykefzXR4ceq61SgELnhd+KEm40UpFuubFs6UN1d+/1wKlCmKJ77EYhW
- 0ZMXmNubwhg9lqk96AEj0utvopTL0IuMJBzyO14fldVk8fJI02IY2Bdjof0TeibmJX
- 6KwmfGVvSAB2ZF5WZ9eysWjUYWqLupYWM0hXVKfAzFGblvpKG9VfCxl3s8wMA+dFpe
- 8yeQA5YgVVVNxqqM/G2jR+eqS3sNyeJQuu7Rg0p+8DT523FIPsUJN7EA7CnsnLA4uE
- lPcHWDDlKXBGw==
-Date: Wed, 20 Oct 2021 22:57:32 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Dan Carpenter <dan.carpenter@oracle.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- linux-phy@lists.infradead.org, kernel-janitors@vger.kernel.org
-Subject: Re: [PATCH] phy: ti: gmii-sel: check of_get_address() for failure
-Message-ID: <YXBRhOmXRQJDdJoW@matsya>
-References: <20210914110038.GB11657@kili>
+ id 1mdFWf-005KiM-Bw
+ for linux-phy@lists.infradead.org; Wed, 20 Oct 2021 17:37:18 +0000
+Received: by mail-oi1-x22f.google.com with SMTP id bk18so1608562oib.8
+ for <linux-phy@lists.infradead.org>; Wed, 20 Oct 2021 10:37:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=+Q+LEmepn36HSxPt5uJFp1Yk/izN2yIl7NSlQhJHylQ=;
+ b=m0AvpWkfmHJ18/lAG2XLsY9hGW5OCgYp+lOgVrHzZZlOd72L7gdlpZET90ZjjhciSx
+ 6W6lxzK6oYLFF0YpB1gsUOLBqK4k3jn4i6URBFdTt3/NrpbYuJK55hSfA4mbFWi9uGaw
+ UYCPkCWTw9SfBaMWgBSovDpLjJ+D99gpdlNeMV0in5ftGk6n04dP/UP2yiqW6+/BU3Nj
+ 9nDZFQdvgvHWMhdeh2e719BRVfQqJKsU+bkSmwNHx6rsEbH7l/qR5+r5PuDgvmeOaZgY
+ 3/n3zGCubw++ikkyabzk0XU9mvDvQoeDOESYyu056DtgxZOfUEDHbHkjmm0b7VD/+/aW
+ vuhw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=+Q+LEmepn36HSxPt5uJFp1Yk/izN2yIl7NSlQhJHylQ=;
+ b=xJ60la46ARXJvnugSFEQQHmgyH4jwx0uTxlNcmGkQPMp7jNCHIwetsxRSrobdhwK+p
+ cKUBNONisBA3DRxz0Oe7wB5OF5Jgnva8gKXGOFDuATU1bwsPZpT4PwEaQClsJDLIir+H
+ GaMMlALpCWJ7pQbIsvMAqnnvNg4YPk/YGW2jfAlVMFHbQqUEDYS/FtzoTbYxECsC0zks
+ zq9pngMWG9s2z3A7zcW4RaYPKXblRcvchMRysGt42w/anBZXTmr7VQ6veuQJJ0aAcBe2
+ vS3DCOp3eCwgAypaHdH2EwNDi5GUcr23EoARBSq9VEadmElZdJwYAy51/UCquDFPXxbJ
+ foVA==
+X-Gm-Message-State: AOAM532ep9J4tqgo9dAiNYNggNbzIEnt5Nk4+N2Rg2r7NBVDrP4FHkT4
+ TQe/C0A/1Q0u8uVKBYv9FrjM1g==
+X-Google-Smtp-Source: ABdhPJyRbztnB2Ozs88Qk+LtJ2QkLpy4F9RdjwJFGHpAra+QXJr7m0CvofFuHpnSY7lOjm2tumY5eQ==
+X-Received: by 2002:a05:6808:2127:: with SMTP id
+ r39mr298456oiw.124.1634751435769; 
+ Wed, 20 Oct 2021 10:37:15 -0700 (PDT)
+Received: from ripper ([2600:1700:a0:3dc8:205:1bff:fec0:b9b3])
+ by smtp.gmail.com with ESMTPSA id l16sm502070oou.7.2021.10.20.10.37.14
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 Oct 2021 10:37:15 -0700 (PDT)
+Date: Wed, 20 Oct 2021 10:38:59 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH] phy: qcom-qmp: another fix for the sc8180x PCIe definition
+Message-ID: <YXBUM/SrGHWonh48@ripper>
+References: <20211020155604.1374530-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210914110038.GB11657@kili>
+In-Reply-To: <20211020155604.1374530-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211020_102737_661954_2DF15FC1 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20211020_103717_440069_61BE410B 
+X-CRM114-Status: GOOD (  15.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,37 +95,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-09-21, 14:00, Dan Carpenter wrote:
-> Smatch complains that if of_get_address() returns NULL, then "size"
-> isn't initialized.  Also it would lead to an Oops.
+On Wed 20 Oct 08:56 PDT 2021, Dmitry Baryshkov wrote:
 
-Applied, thanks
-
+> Commit f839f14e24f2 ("phy: qcom-qmp: Add sc8180x PCIe support") added
+> SC8180X PCIe tables, but used sm8250_qmp_pcie_serdes_tbl as a serdes
+> table because of the copy paste error. Commit bfccd9a71a08 ("phy:
+> qcom-qmp: Fix sc8180x PCIe definition") corrected part of this mistake
+> by pointing serdes_tbl to sc8180x_qmp_pcie_serdes_tbl, however the
+> serdes_tbl_num field was not updated to use sc8180x table. So let's now
+> fix the serdes_tbl_num field too.
 > 
-> Fixes: 7f78322cdd67 ("phy: ti: gmii-sel: retrieve ports number and base offset from dt")
-> Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+> Fixes: bfccd9a71a08 ("phy: qcom-qmp: Fix sc8180x PCIe definition")
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+Damn it...my eyes doesn't like these solid chunks of text.
+Thanks Dmitry.
+
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+Regards,
+Bjorn
+
 > ---
->  drivers/phy/ti/phy-gmii-sel.c | 2 ++
->  1 file changed, 2 insertions(+)
+>  drivers/phy/qualcomm/phy-qcom-qmp.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-> index 5fd2e8a08bfc..d0ab69750c6b 100644
-> --- a/drivers/phy/ti/phy-gmii-sel.c
-> +++ b/drivers/phy/ti/phy-gmii-sel.c
-> @@ -320,6 +320,8 @@ static int phy_gmii_sel_init_ports(struct phy_gmii_sel_priv *priv)
->  		u64 size;
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> index f14032170b1c..06b04606dd7e 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> @@ -3632,7 +3632,7 @@ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+>  	.nlanes = 1,
 >  
->  		offset = of_get_address(dev->of_node, 0, &size, NULL);
-> +		if (!offset)
-> +			return -EINVAL;
->  		priv->num_ports = size / sizeof(u32);
->  		if (!priv->num_ports)
->  			return -EINVAL;
+>  	.serdes_tbl		= sc8180x_qmp_pcie_serdes_tbl,
+> -	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
+> +	.serdes_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_serdes_tbl),
+>  	.tx_tbl			= sc8180x_qmp_pcie_tx_tbl,
+>  	.tx_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_tx_tbl),
+>  	.rx_tbl			= sc8180x_qmp_pcie_rx_tbl,
 > -- 
-> 2.20.1
-
--- 
-~Vinod
+> 2.33.0
+> 
 
 -- 
 linux-phy mailing list
