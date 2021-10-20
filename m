@@ -2,173 +2,83 @@ Return-Path: <SRS0=T9my=PI=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 36BC9C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 11:39:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1B777C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 13:07:09 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F0FAB611B0
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 11:39:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org F0FAB611B0
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	by mail.kernel.org (Postfix) with ESMTPS id D51B16137C
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 13:07:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D51B16137C
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7/aH9Jb6z4T1cpIqgUOsxVlpfb8PMshH8wKF+JqtdxI=; b=Xh3iGTGHKLF1Cg
-	QNWFjw1bQI1NMyPUQX/hb8nKgN17E0BEiyQpCb5SBrwpPuuESjrTdAt5yEuUI80WEH7Rjp260XkXl
-	Wvb2wXHyzYSIIw+MVL8xOcE/oaXkvO23BowGE09DIHwgSOQypoHJxJMluLLWkS+1464vnZk5DTxxz
-	Ra9xYKYQfXhcXXxp7ZiM3EsXNlLPVGuwqwfsGdBHHM7kX0AEes35y42IOoKtYs1MKFm228OfXN1bO
-	56h7L2YMK8bVX74MuB7fXJ/4Kq9NLScyhuqSyCr99XVozT7t/KvSFU9EodygMEABRhd8zdXB+M2m8
-	U96fXlJmPqGPOpDzGe3w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Message-Id:Date:
+	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=7AhHbUn7871a7C7kB1MxZDw7hwysxEIhg6krcTfpxMY=; b=t3qP993t/PVjcO
+	hRnFXdCBb+K64dUVKf2AB8RstnXHFTY7bmWkgAq0EqVsBA8ooY3LyGWogI6xDX0R9YMEoY4GtfNAr
+	4UW1IKqRh5uHKcU8WSKQo46CNaWX6BfE6Siy4KhofSTTLp3lUtYcSHQFBT6cWVJyNWZK4Gqw/Iup8
+	3nEA6is5aXfMMwQpFDaP5hauEcH/YVRgYAjkaTIzVtL4ltyLU/4MYFbBXtIRYJm2vYwrICwpM81Vs
+	LdYl5S0xVWzPYIxG3DGaqSFTle8UJ4UyCwzsG1A0yCsst8CUOFtr1/+ehq3vaRth/3JhRbLZDIQeR
+	0eFb4Wfv0YTF8y27DCdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1md9wa-004LKS-DW; Wed, 20 Oct 2021 11:39:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mdBJE-004a4q-BS; Wed, 20 Oct 2021 13:07:08 +0000
+Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1md9wC-004LBg-A9; Wed, 20 Oct 2021 11:39:17 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4BCC3611B0;
- Wed, 20 Oct 2021 11:39:15 +0000 (UTC)
-Received: from sofa.misterjones.org ([185.219.108.64] helo=why.misterjones.org)
- by disco-boy.misterjones.org with esmtpsa (TLS1.3) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <maz@kernel.org>)
- id 1md9w8-000Q93-UK; Wed, 20 Oct 2021 12:39:13 +0100
-Date: Wed, 20 Oct 2021 12:39:11 +0100
-Message-ID: <878ryoc4dc.wl-maz@kernel.org>
-From: Marc Zyngier <maz@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- patrice.chotard@foss.st.com
-Cc: Rob Herring <robh+dt@kernel.org>,
- maxime coquelin <mcoquelin.stm32@gmail.com>,
- alexandre torgue <alexandre.torgue@foss.st.com>,
- michael turquette <mturquette@baylibre.com>, stephen boyd
- <sboyd@kernel.org>, herbert xu <herbert@gondor.apana.org.au>,
- "david s . miller" <davem@davemloft.net>, david airlie <airlied@linux.ie>,
- daniel vetter <daniel@ffwll.ch>, thierry reding <thierry.reding@gmail.com>,
- sam ravnborg <sam@ravnborg.org>, yannick fertre
- <yannick.fertre@foss.st.com>, philippe cornu <philippe.cornu@foss.st.com>,
- benjamin gaignard <benjamin.gaignard@linaro.org>,
- vinod koul <vkoul@kernel.org>, ohad ben-cohen <ohad@wizery.com>,
- bjorn andersson <bjorn.andersson@linaro.org>,
- baolin wang <baolin.wang7@gmail.com>, jonathan cameron <jic23@kernel.org>,
- lars-peter clausen <lars@metafoo.de>,
- olivier moysan <olivier.moysan@foss.st.com>,
- arnaud pouliquen <arnaud.pouliquen@foss.st.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hugues Fruchet <hugues.fruchet@foss.st.com>,
- Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
- Lee Jones <lee.jones@linaro.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
- Jakub Kicinski <kuba@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linus Walleij <linus.walleij@linaro.org>, Liam Girdwood
- <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>, Matt Mackall
- <mpm@selenic.com>, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J . Wysocki" <rafael@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Amit Kucheria
- <amitk@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
- <linux@roeck-us.net>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Ahmad Fatoum <a.fatoum@pengutronix.de>,
- Jagan Teki <jagan@amarulasolutions.com>, dillon min
- <dillon.minfei@gmail.com>, Marek Vasut <marex@denx.de>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Sebastian Reichel <sre@kernel.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Paul Cercueil <paul@crapouillou.net>,
- Fabien Dessenne <fabien.dessenne@foss.st.com>,
- Christophe Roullier <christophe.roullier@foss.st.com>,
- Gabriel Fernandez <gabriel.fernandez@foss.st.com>,
- Lionel Debieve <lionel.debieve@foss.st.com>,
- Amelie Delaunay <amelie.delaunay@foss.st.com>,
- Pierre-Yves MORDRET <pierre-yves.mordret@foss.st.com>,
- Ludovic Barre <ludovic.barre@foss.st.com>,
- Christophe Kerello <christophe.kerello@foss.st.com>,
- pascal Paillet <p.paillet@foss.st.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Jose Abreu <joabreu@synopsys.com>, Le Ray <erwan.leray@foss.st.com>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-crypto@vger.kernel.org, dri-devel@lists.freedesktop.org,
- dmaengine@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-iio@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-media@vger.kernel.org,
- linux-mtd@lists.infradead.org, netdev@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-rtc@vger.kernel.org, linux-serial@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: Re: dt-bindings: treewide: Update @st.com email address to
- @foss.st.com
-In-Reply-To: <22fb6f19-21eb-dcb5-fa31-bb243d4a7eaf@canonical.com>
-References: <20211020065000.21312-1-patrice.chotard@foss.st.com>
- <22fb6f19-21eb-dcb5-fa31-bb243d4a7eaf@canonical.com>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
- FLIM-LB/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL-LB/10.8 EasyPG/1.0.0 Emacs/27.1
- (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
-X-SA-Exim-Connect-IP: 185.219.108.64
-X-SA-Exim-Rcpt-To: krzysztof.kozlowski@canonical.com,
- patrice.chotard@foss.st.com, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
- alexandre.torgue@foss.st.com, mturquette@baylibre.com, sboyd@kernel.org,
- herbert@gondor.apana.org.au, davem@davemloft.net, airlied@linux.ie,
- daniel@ffwll.ch, thierry.reding@gmail.com, sam@ravnborg.org,
- yannick.fertre@foss.st.com, philippe.cornu@foss.st.com,
- benjamin.gaignard@linaro.org, vkoul@kernel.org, ohad@wizery.com,
- bjorn.andersson@linaro.org, baolin.wang7@gmail.com, jic23@kernel.org,
- lars@metafoo.de, olivier.moysan@foss.st.com, arnaud.pouliquen@foss.st.com,
- tglx@linutronix.de, jassisinghbrar@gmail.com, mchehab@kernel.org,
- hugues.fruchet@foss.st.com, fabrice.gasnier@foss.st.com, lee.jones@linaro.org,
- miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com, kuba@kernel.org,
- srinivas.kandagatla@linaro.org, kishon@ti.com, linus.walleij@linaro.org,
- lgirdwood@gmail.com, broonie@kernel.org, mathieu.poirier@linaro.org,
- mpm@selenic.com, a.zummo@towertech.i
- t, alexandre.belloni@bootlin.com, gregkh@linuxfoundation.org, rafael@kernel.org,
- daniel.lezcano@linaro.org, amitk@kernel.org, rui.zhang@intel.com,
- wim@linux-watchdog.org, linux@roeck-us.net, geert+renesas@glider.be,
- viresh.kumar@linaro.org, a.fatoum@pengutronix.de, jagan@amarulasolutions.com,
- dillon.minfei@gmail.com, marex@denx.de, laurent.pinchart@ideasonboard.com,
- sre@kernel.org, dmitry.torokhov@gmail.com, paul@crapouillou.net,
- fabien.dessenne@foss.st.com, christophe.roullier@foss.st.com,
- gabriel.fernandez@foss.st.com, lionel.debieve@foss.st.com,
- amelie.delaunay@foss.st.com, pierre-yves.mordret@foss.st.com,
- ludovic.barre@foss.st.com, christophe.kerello@foss.st.com,
- p.paillet@foss.st.com, peppe.cavallaro@st.com, joabreu@synopsys.com,
- erwan.leray@foss.st.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-crypto@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- dmaengine@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-iio@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-media@vger.kernel.org,
- linux-mtd@lists.infradead.org, netdev@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-rtc@vger.kernel.org, linux-serial@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-pm@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-watchdog@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+ id 1mdBJC-004a48-AB
+ for linux-phy@lists.infradead.org; Wed, 20 Oct 2021 13:07:07 +0000
+Received: by mail-pg1-x52b.google.com with SMTP id j190so15727302pgd.0
+ for <linux-phy@lists.infradead.org>; Wed, 20 Oct 2021 06:07:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to;
+ bh=cLHt1Q5LZV5kZERGaF5WFeq4nFIY0B4p1p8uZPXEb/E=;
+ b=NeB1wz48puGnb+MMS/pk7h498WOtKopBnXwpEPOZuXpqFjYRxlsZppuF3Q3FbCRC+D
+ l70YhD/l5Ky35Zbkm1yzqOu6i+pC3Nbix/LZCCcHU/fOIiW+Sl+te+R4Gx/uYjd+EdDR
+ gJ+2Oe3yiTbxID5iiB/dQOf0wbguBfuL5KL/iPD/rDjzEMQetFH/B7U6JRKpVBIw+Rb/
+ MQ3MD1EB0/YcUCqZgvmGVrJnx+wE7di5wmI8dzSlU4JMSpnrX7CPnlYLpiVeDmLbu4yk
+ h5kD5D+gJ11Z8PcoeDpxzdMi/Oe3othHCYVZa8yEfkrVT3CJcgHwzSOrwWqHB4i3zUe8
+ DbRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to;
+ bh=cLHt1Q5LZV5kZERGaF5WFeq4nFIY0B4p1p8uZPXEb/E=;
+ b=DZY4JHnU8gabuPzkJw6rzkVigx0QuFwz5sckmdOiA6+kpOFbGB+YPQjQ77dIPqM58p
+ rE5RBJKQ6FMxhlpN76U59v1wu3rM4A/eCNn6vUTRIZo6mQNHiLzUlxRnSbFUndk8O0rx
+ 3n4VD00bC1GXMeOyTFTsIAqiy6rP4DhhSVDn85ZDQcgdpv7CSx6gysCOqcu4e8J85HPM
+ 6LFZhO+tasXbWTLLl08GQUDWdcfJk4TD9gXBI5F44IqnvFxod3gobEGF8Z/OhN5lEj0H
+ oY2smZREVrcnqlTYCIFtMxt2yX/t1weislFrUXtBbAVTvcyrHEtK6bUHxsdz0Mdd6cAG
+ zSOQ==
+X-Gm-Message-State: AOAM530BBXNtZgLDFspu+FMIdxq4bCO1HXKhPD+7q9c49ONGTEB2nfX0
+ /kQKwZEiUOzlk/I6NpOqI+iscWsFizM=
+X-Google-Smtp-Source: ABdhPJykFU+IX6bdVX4DIL0QI08lOvBOF+umL/jmYbqQ6yMOrhzIgmCJJ+HllyDZ4dvVqEx7ZJxmUA==
+X-Received: by 2002:a62:1d14:0:b0:44d:3b0b:d027 with SMTP id
+ d20-20020a621d14000000b0044d3b0bd027mr6278328pfd.60.1634735224249; 
+ Wed, 20 Oct 2021 06:07:04 -0700 (PDT)
+Received: from localhost.localdomain (80.251.214.228.16clouds.com.
+ [80.251.214.228])
+ by smtp.gmail.com with ESMTPSA id q73sm2765784pfc.179.2021.10.20.06.07.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 Oct 2021 06:07:03 -0700 (PDT)
+From: Shawn Guo <shawn.guo@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Shawn Guo <shawn.guo@linaro.org>
+Subject: [PATCH RESEND 02/10] dt-bindings: phy: qcom,
+ qmp: IPQ6018 and IPQ8074 PCIe PHY require no supply
+Date: Wed, 20 Oct 2021 21:06:34 +0800
+Message-Id: <20211020130634.26194-1-shawn.guo@linaro.org>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20210929034253.24570-3-shawn.guo@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211020_043916_422171_C5CDCD74 
-X-CRM114-Status: GOOD (  19.66  )
+X-CRM114-CacheID: sfid-20211020_060706_382371_50B0BAD1 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -180,34 +90,173 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 20 Oct 2021 08:45:02 +0100,
-Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com> wrote:
-> 
-> On 20/10/2021 08:50, patrice.chotard@foss.st.com wrote:
-> > From: Patrice Chotard <patrice.chotard@foss.st.com>
-> > 
-> > Not all @st.com email address are concerned, only people who have
-> > a specific @foss.st.com email will see their entry updated.
-> > For some people, who left the company, remove their email.
-> > 
-> 
-> Please split simple address change from maintainer updates (removal,
-> addition).
-> 
-> Also would be nice to see here explained *why* are you doing this.
+The qmp-phy driver suggests that 'vdda-phy-supply' and 'vdda-pll-supply'
+are not required for IPQ6018 and IPQ8074 QMP PCIe PHY.  Update the
+bindings to reflect it.
 
-And why this can't be done with a single update to .mailmap, like
-anyone else does.
+While at it, also correct the clock properies for IPQ8074 QMP PCIe PHY.
+And as the result, 'qcom,ipq8074-qmp-pcie-phy' and
+'qcom,ipq6018-qmp-pcie-phy' share the same clock, reset and supply
+bindings.
 
-	M.
+Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
+---
+Rebase to resolve conflict during applying.
 
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 55 +++++++++++--------
+ 1 file changed, 31 insertions(+), 24 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+index 99aa2d08dfcb..688a63ca1936 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+@@ -113,8 +113,6 @@ required:
+   - clock-names
+   - resets
+   - reset-names
+-  - vdda-phy-supply
+-  - vdda-pll-supply
+ 
+ additionalProperties: false
+ 
+@@ -147,6 +145,9 @@ allOf:
+           items:
+             - const: phy
+             - const: common
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -173,6 +174,9 @@ allOf:
+           items:
+             - const: phy
+             - const: common
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -201,6 +205,9 @@ allOf:
+             - const: phy
+             - const: common
+             - const: cfg
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -230,6 +237,9 @@ allOf:
+           items:
+             - const: phy
+             - const: common
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -250,6 +260,9 @@ allOf:
+         reset-names:
+           items:
+             - const: ufsphy
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -275,34 +288,16 @@ allOf:
+         reset-names:
+           items:
+             - const: ufsphy
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,ipq8074-qmp-pcie-phy
+-    then:
+-      properties:
+-        clocks:
+-          items:
+-            - description: pipe clk.
+-        clock-names:
+-          items:
+-            - const: pipe_clk
+-        resets:
+-          items:
+-            - description: reset of phy block.
+-            - description: phy common block reset.
+-        reset-names:
+-          items:
+-            - const: phy
+-            - const: common
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+           contains:
+             enum:
+               - qcom,ipq6018-qmp-pcie-phy
++              - qcom,ipq8074-qmp-pcie-phy
+     then:
+       properties:
+         clocks:
+@@ -353,6 +348,9 @@ allOf:
+         reset-names:
+           items:
+             - const: phy
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -384,6 +382,9 @@ allOf:
+           items:
+             - const: phy
+             - const: common
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -411,6 +412,9 @@ allOf:
+           items:
+             - const: phy
+             - const: common
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+   - if:
+       properties:
+         compatible:
+@@ -437,6 +441,9 @@ allOf:
+           items:
+             - const: phy_phy
+             - const: phy
++      required:
++        - vdda-phy-supply
++        - vdda-pll-supply
+ 
+ examples:
+   - |
 -- 
-Without deviation from the norm, progress is not possible.
+2.17.1
+
 
 -- 
 linux-phy mailing list
