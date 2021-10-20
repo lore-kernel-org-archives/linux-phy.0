@@ -2,59 +2,144 @@ Return-Path: <SRS0=T9my=PI=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0B61DC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 00:00:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id F2B3AC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 02:10:48 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id CCF1F61004
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 00:00:58 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org CCF1F61004
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=socionext.com
+	by mail.kernel.org (Postfix) with ESMTPS id 85D3260FD8
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Oct 2021 02:10:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 85D3260FD8
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8xREn8XQjVmNECQIPTuJCfqPaWdb/E2L5pdY5c/VG7E=; b=2a9q7/Ps6W1FsF
-	RjFHBsb5rrummR1XjNbV9KjhQnxdlIURGZC8EZe/5LljQ8uNLcBSJ0eHC3rrrRFSag/wPSmdof4ah
-	eTeXavnTto808DQFYOONsndin6fOeh8aCDS9kB6uqagpIyyRmPflvzlJf7TFf+0RjAL6Cw9/FiXnK
-	JYqjUcwnycD8HpWKix8E/ui7DvPY3F5BjzddAA3QRjKu+M6yjTHKMhvmx5iwR+uEErRO6k5v1ttu3
-	+JGsShaGLwQqxjYKTP1WAiD9p4sh2GJ16x9Kf5eNBMwC4YCb+SONsUYiD1wKSf/33+q3VC28HlHYM
-	II+XYfIBl9slnZPTH+ZA==;
+	List-Owner; bh=ON/SIk+c4zGkIFR6Drkut9iqFtrNETX6wTiBtOAQOhY=; b=jOUYmbWkscu2B7
+	FjYi0iKM11Xoc0LauYJNuWzo4mOg48tRlu+2CIBPCgSuSYNWznFgipE9mrBY3kQ9ApUfLCOmtEaOh
+	ztly7Jaqur09R8d4yGqfK0OBCvuc/m4WR2uabWMPlVnRKLtxXjLXicOjZ0aIjJ5YoT+JY9EMsxKQH
+	Oymc36PZ5xSKq754XQAKS4RYx4/q/6tyfrScbFyRkGarrZ4VnNADpnEhjbiODbN5dc8BpQID893Mq
+	905U+fMMbdTtf0Hj9VP+CBUSLg5ObBnxDKqxugD7FKmlKbwL+YaYyLFtWrsAzThOGAp4Y7yMQsyRT
+	Isg6aS7xRWi2mB8a1aaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mcz2Q-00316N-4k; Wed, 20 Oct 2021 00:00:58 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcz0A-002zoZ-Ri; Tue, 19 Oct 2021 23:58:41 +0000
-Received: from unknown (HELO kinkan2-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 20 Oct 2021 08:58:33 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan2-ex.css.socionext.com (Postfix) with ESMTP id 40BD2206E701;
- Wed, 20 Oct 2021 08:58:33 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Wed, 20 Oct 2021 08:58:33 +0900
-Received: from plum.e01.socionext.com (unknown [10.212.243.119])
- by kinkan2.css.socionext.com (Postfix) with ESMTP id B4510B62AC;
- Wed, 20 Oct 2021 08:58:32 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Masami Hiramatsu <mhiramat@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: [PATCH v2 8/8] phy: uniphier-ahci: Add support for Pro4 SoC
-Date: Wed, 20 Oct 2021 08:58:08 +0900
-Message-Id: <1634687888-23900-9-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1634687888-23900-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1634687888-23900-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1md144-003Ad9-0d; Wed, 20 Oct 2021 02:10:48 +0000
+Received: from mail-eopbgr70043.outbound.protection.outlook.com ([40.107.7.43]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1md140-003AcF-4a; Wed, 20 Oct 2021 02:10:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=UY7I9zJVhTLV3SvNxrrdScln5tMMwkz2LCsunrVBwqyr8aJME3iCPD2/5qFuOnHCRwwZ7rJMjFd554d+MWSazZo0WzWqcKJhdDQEZZ970K1+SLhHEdWJROwkQFyeiI3crNqD9p7Y+k5v8KyAN0FEuf8lRolVrBWiJ+8wswuiWpFhEeAlQbjFiB9Ue4/n4YoSsI3HwMjzjNukdtpTbk1WmJR1hgiOkGxMYRHlhxc2indI/wrz3AE1OAUtyINghwj5tWa+QXTKVlVk+ddfOf0cyKygnU36XutSkSTb8ScG/SiTL3TxLbilO5PhUVGILeK73a2yDhCzoCfeSbLzns+42A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=dZSx6vqIJ8iEmQf21aQ7O1G8Gcju5wy+BqONDnV3wFQ=;
+ b=fBSGpcmUieD7tpIbuLi7IJ2IxydJ/dm1IEf0RzfhDMvgNrL4LhabBlHg/V1MFX0vDz8dVXvDrZ2afHCt9ch3QO+UKA0HyIN/rkscX5xSnFwbaDpS9Ts8pt9Pqj3rNpDJegHz2J3R+cgotnbrYi4SxogZVXRNSrCMJiMRFNJLy8F8Z4UtMgEtbgdv+aTZzf7c0tUEE4nU9pTRPepuwf9gq79srkmCYZG+JBVy9U1avJ6jgVER6S6SRogpSPUZGIb6X7lHUHMu8QYNHbDXmKy35cNlTRJu8qdqje2rpqvmfEW61HLhT4PM+qqepGPe7t36omLqsAjDKM3QmQ1q9gSo6g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dZSx6vqIJ8iEmQf21aQ7O1G8Gcju5wy+BqONDnV3wFQ=;
+ b=caeiz3WXpul8N0pqAxsZ7HwgidgKxcv8I4lR+/dliDQHh5iylerpL+mm0c6+FE3bGH8MbetXhzC7/moT3F8CWj+B/urQ9vEtsjn/FgDj/q10xYWH8FK843xLysCXdXMMH/+GzU++XY2xk3K09xqakBEw3IAXJ3PvBR3HkDmiFms=
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
+ by AS8PR04MB9093.eurprd04.prod.outlook.com (2603:10a6:20b:444::20)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4628.16; Wed, 20 Oct
+ 2021 02:10:32 +0000
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::b059:46c6:685b:e0fc]) by AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::b059:46c6:685b:e0fc%4]) with mapi id 15.20.4608.018; Wed, 20 Oct 2021
+ 02:10:32 +0000
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: "tharvey@gateworks.com" <tharvey@gateworks.com>
+CC: Lucas Stach <l.stach@pengutronix.de>, Kishon Vijay Abraham I
+ <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>, Rob Herring
+ <robh@kernel.org>, "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
+ Shawn Guo <shawnguo@kernel.org>, "linux-phy@lists.infradead.org"
+ <linux-phy@lists.infradead.org>, Device Tree Mailing List
+ <devicetree@vger.kernel.org>, Linux ARM Mailing List
+ <linux-arm-kernel@lists.infradead.org>, open list
+ <linux-kernel@vger.kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>
+Subject: RE: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+ support
+Thread-Topic: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+ support
+Thread-Index: AQHXwf8T9WRZIWT4CUunBVSnJ63L4qvZhp6ggAD4IYCAAKk/cA==
+Date: Wed, 20 Oct 2021 02:10:32 +0000
+Message-ID: <AS8PR04MB8676840D7EDD56D10F9471288CBE9@AS8PR04MB8676.eurprd04.prod.outlook.com>
+References: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
+ <CAJ+vNU2b-=T_gTsRBvdF7SRUZopEFOU_Np8mEJn8bOpn5b5FaA@mail.gmail.com>
+ <AS8PR04MB8676B2AC24E2769D47A1ED478CBD9@AS8PR04MB8676.eurprd04.prod.outlook.com>
+ <CAJ+vNU2AitmxCyam5FArmxAD41QUU=5CF_0JZhm+uzdkRbr7kw@mail.gmail.com>
+In-Reply-To: <CAJ+vNU2AitmxCyam5FArmxAD41QUU=5CF_0JZhm+uzdkRbr7kw@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: fef6b006-1718-4a63-2bca-08d9936ecbba
+x-ms-traffictypediagnostic: AS8PR04MB9093:
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-microsoft-antispam-prvs: <AS8PR04MB909321F3ABFD9D0BC2C7DFF08CBE9@AS8PR04MB9093.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1850;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: /QrULzzEKBtvVwdQHPhsVcekg79kE92XRIVGztRxEUwYhiuufWH6hHO8+RN6NcoEyCumX/iM+w+FwCVGCqyG88TTQpEOgic5cmByb2Oh6NCjC2hGkJm/ebvSOCYWoDwxIQvzecSaVLv7EqABPw8Spmk9YWpgAnbUsDqrjf8bzXitjTw8orY/uZvlpLMKNCQ61RG60dIIvH5wSy2IgY3SALsSZWeiHlmJXnN0z0TODGxbc4Ryc7uvUQwIPV4iD+a13KRa4OPa7FdZn3i9uU/mMu3zHW0RBxtDsjE+QvBAYLVYeJ96eZqKzLPsIJzypT71usd71/z9G6E3n0nqtDYSvqqxvt0t2WByvgPjLkaCeT6lEAARI06A9HTpoywwxJiooYu3aNJmwoyZEE+k/dccIZdsPK8pKiQKwr8ws0wokDiucM3Tc+d2zRNzzs96CNXtYQjYWDd6ealZTWqLxIc9AOfM1yX7hdxm8K2qbBTM/OUv9hbWdVY27AaAo8fmPFIdChfVIyzBt6FdVb6BvuEwHHhxWg96796WLS+5QFym4L6YURKcj1+2NCBfKbshTc/4HKdP/1IpH5NPthMCgvXZpDqBJ6lx2q5hMb/en7IsAXGopHs8YbdteF4tyHVe73SjadK/DOkMQMNz2u6SllZkUuh9vko5wqa1nZ5KHECJgqLyKViDrgxHsG/WS8PXbtDZv4lEFH/3zV0vp5nWvooTfrpVcVR3HusZ+IvgBVLcZclDdu9v7TYW0ZA/GybEUng9ifdfXZWcJVcQ4RRb2Oyk38WarJGXP9/u9CfofxiQ5lZOWoHnEfI9a9+T1diNkyBV
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(84040400005)(5660300002)(6916009)(26005)(8936002)(122000001)(52536014)(186003)(8676002)(71200400001)(53546011)(7696005)(54906003)(6506007)(316002)(55016002)(4326008)(9686003)(38100700002)(966005)(2906002)(33656002)(83380400001)(86362001)(45080400002)(66446008)(76116006)(7416002)(508600001)(64756008)(66946007)(38070700005)(66476007)(66556008)(32563001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?f0U9Pgve9bwxmtpwH8dsrTEA/GwR3E5x2T/zX2jy7GSEbtCU3CXJ3d67vNYo?=
+ =?us-ascii?Q?LLk0Y8ABJXx3uI9PLkKqHiGt56tRd52UYD7YrMYGC0AVxtYkVJVxaCJzhoax?=
+ =?us-ascii?Q?PGtXjVmkgriE9C8LnR7wvv+KSuJGRpZymTDe8BosfiBZb8fERQiJd6G9QFuG?=
+ =?us-ascii?Q?jBcRLZsRbtRIrwyizzeCazNnpWMdxBckMDU1kDqUbWcBrrwrT7sm7rnigbEu?=
+ =?us-ascii?Q?jY+qMK7U2ShSjsMUD6rEpNpUmpOsQKgEdvlWICqKkpzhpN8nHbjDcM50/mRd?=
+ =?us-ascii?Q?ZscrkHQ3fl5zOLdTNIpGQKpzxYqJIfvAHEzRh6lSiU2Pe8wDY3jxW773zOaS?=
+ =?us-ascii?Q?vH+YjZ8vVM6zRHb+YG+PkufUc4pXxI9dX/aYGcJo6yrCQf3dBHfnTijbYNZ5?=
+ =?us-ascii?Q?n+iby6i2uIP1J2pmjuzDQnCZtqkLcMVLgNh85lCObOKwsAZR27zJQar18n0Q?=
+ =?us-ascii?Q?bCEA2xWTK4d5wCm6Tyny1xghXqsAmSfMxpsxnpUJRUbIdYJYx6zwr+qfRJfU?=
+ =?us-ascii?Q?h6S0SFev8fVEM/NbgSJraK5cpcvqo+j99BX48VPzzXe0yvVffHu3jDCpK1V+?=
+ =?us-ascii?Q?lSnwBK87Ot5L4mhdMAs2+mmtde7wvK5Ri51XhxRWT1EpEDSnmMwvcxvOknGt?=
+ =?us-ascii?Q?t8kWjGWLsihcfJYbuFZ2fvuIEsWWXnRN0qTLA7NfrD/40IqMFR8wX7XNwTsJ?=
+ =?us-ascii?Q?rFCvlhgnHnwAEh+IvCxNhaJnsW8Oe65DM2WLPVISIYCznHXhI52dMBWmXPr3?=
+ =?us-ascii?Q?izUkaGN+Sw5Z71RppI/hkL3ivQgHC4Dw6lGeegRsDFXesclUVvQWNOglY/U/?=
+ =?us-ascii?Q?CqmuskaV/Kb4AbThBb/b+fIShGWWGyCoGaGkLe1YGTwPp1tCLThnTw56mPtj?=
+ =?us-ascii?Q?RREkzUko1qtMD3adgiGBTZ7ts0GNjWC4ybNt/RVLxGjujABc2W7LNMUfYnM3?=
+ =?us-ascii?Q?nUeqjC6HJpVFTWGYGRPD6p7lWJ1Y63707+G7KAAhEzj+hqsLfK32HLjqo4EA?=
+ =?us-ascii?Q?wX63BIW7ZI1iV7ULgOsD725jYNhbf09abY2bluwXOhoajMhQHkiBvPIfV0c5?=
+ =?us-ascii?Q?UQ6Zwei6xVYfOCjYqhRKgbg1BuEz+xPqwuH3xSYufFZTyyx3TScAr01jckHh?=
+ =?us-ascii?Q?1EOJtK8fxZy77BBXbY/171cxYbHFzP5twyrtuhr9VdMK/kzg8lEchmwnLg4D?=
+ =?us-ascii?Q?SFr3QY18O1+E7T0fsLb+8v44CZqub5svIy1N2ckYuQO9knFVrUSKIag45sQk?=
+ =?us-ascii?Q?SMii5zMMKPiPVgRll/BI9elMHL2iCXiq4J/bw7y5cAYynmpRMM+iWHK9wFiy?=
+ =?us-ascii?Q?bTiQDbn4Jk4zQQBEN8frj1JtKjJepUyIxRRk1LSar81XEWUgGItQ7NfKj+HE?=
+ =?us-ascii?Q?lvcYMUs1tPljqh99EBg/kPCNOvnYAR24zwWBcOjJmbUD5Q2SuE9RtpKGdefI?=
+ =?us-ascii?Q?7TcEMhNQAa1bs/3h1VV3SOdoNqYjSzMlk78xUDyEQz9l0Nq4hMrHdqvSlpQP?=
+ =?us-ascii?Q?LprK2/ZKXGJmnFDUqOPl/qN+/dJ5uXnTIkmqQEHvsuQohnFOnkBb8S8jJzyn?=
+ =?us-ascii?Q?1bx1FJOEQeNkes5fukSPxfVxf9oaQJw2BDgIHpLYwD4Eu9J2gS5LaZ5rhf2f?=
+ =?us-ascii?Q?jw=3D=3D?=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fef6b006-1718-4a63-2bca-08d9936ecbba
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Oct 2021 02:10:32.2032 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: iNFoN0fGQkxHp//1spLU/F8pU3t747uom/YLpAQ4qtj7AnNiD7LwvlSGrG5FhPrHorM+SX0A8Sne11vrSMk2nA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB9093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211019_165839_188773_C1EB0D67 
-X-CRM114-Status: GOOD (  22.49  )
+X-CRM114-CacheID: sfid-20211019_191044_407393_750F71F4 
+X-CRM114-Status: GOOD (  40.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,328 +151,273 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for PHY interface built into ahci controller implemented
-in UniPhier Pro4 SoC.
+> -----Original Message-----
+> From: Tim Harvey <tharvey@gateworks.com>
+> Sent: Tuesday, October 19, 2021 11:53 PM
+> To: Richard Zhu <hongxing.zhu@nxp.com>
+> Cc: Lucas Stach <l.stach@pengutronix.de>; Kishon Vijay Abraham I
+> <kishon@ti.com>; vkoul@kernel.org; Rob Herring <robh@kernel.org>;
+> galak@kernel.crashing.org; Shawn Guo <shawnguo@kernel.org>;
+> linux-phy@lists.infradead.org; Device Tree Mailing List
+> <devicetree@vger.kernel.org>; Linux ARM Mailing List
+> <linux-arm-kernel@lists.infradead.org>; open list
+> <linux-kernel@vger.kernel.org>; Sascha Hauer <kernel@pengutronix.de>;
+> dl-linux-imx <linux-imx@nxp.com>
+> Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+> support
+> 
+> On Mon, Oct 18, 2021 at 7:10 PM Richard Zhu <hongxing.zhu@nxp.com>
+> wrote:
+> >
+> >
+> > > -----Original Message-----
+> > > From: Tim Harvey <tharvey@gateworks.com>
+> > > Sent: Saturday, October 16, 2021 3:59 AM
+> > > To: Richard Zhu <hongxing.zhu@nxp.com>; Lucas Stach
+> > > <l.stach@pengutronix.de>
+> > > Cc: Kishon Vijay Abraham I <kishon@ti.com>; vkoul@kernel.org; Rob
+> > > Herring <robh@kernel.org>; galak@kernel.crashing.org; Shawn Guo
+> > > <shawnguo@kernel.org>; linux-phy@lists.infradead.org; Device Tree
+> > > Mailing List <devicetree@vger.kernel.org>; Linux ARM Mailing List
+> > > <linux-arm-kernel@lists.infradead.org>; open list
+> > > <linux-kernel@vger.kernel.org>; Sascha Hauer
+> > > <kernel@pengutronix.de>; dl-linux-imx <linux-imx@nxp.com>
+> > > Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm
+> > > pcie support
+> > >
+> > > On Tue, Oct 12, 2021 at 2:06 AM Richard Zhu <hongxing.zhu@nxp.com>
+> > > wrote:
+> > > >
+> > > > refer to the discussion [1] when try to enable i.MX8MM PCIe
+> > > > support, one standalone PCIe PHY driver should be seperated from
+> > > > i.MX PCIe driver when enable i.MX8MM PCIe support.
+> > > >
+> > > > This patch-set adds the standalone PCIe PHY driver suport[1-5],
+> > > > and i.MX8MM PCIe support[6-9] to have whole view to review this
+> patch-set.
+> > > >
+> > > > The PCIe works on i.MX8MM EVK board based the the blkctrl power
+> > > > driver [2] and this PHY driver patch-set.
+> > > >
+> > > > [1]
+> > > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2F
+> > > > patc
+> > > >
+> > >
+> hwork.ozlabs.org%2Fproject%2Flinux-pci%2Fpatch%2F20210510141509.929
+> > > 120
+> > > >
+> > >
+> -3-l.stach%40pengutronix.de%2F&amp;data=04%7C01%7Chongxing.zhu%40
+> > > nxp.c
+> > > >
+> > >
+> om%7C4e3d8ee008d94327f99108d9901634be%7C686ea1d3bc2b4c6fa92cd
+> > > 99c5c3016
+> > > >
+> > >
+> 35%7C0%7C0%7C637699247319711209%7CUnknown%7CTWFpbGZsb3d8ey
+> > > JWIjoiMC4wLj
+> > > >
+> > >
+> AwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp
+> > > ;sdata=
+> > > >
+> > >
+> Z2TZCpdDUSoqrNB1X%2BXdoYNBe3dBDKUgkA4r%2F0TcdOg%3D&amp;reser
+> > > ved=0
+> > > > [2]
+> > > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2F
+> > > > patc
+> > > >
+> > >
+> hwork.kernel.org%2Fproject%2Flinux-arm-kernel%2Fcover%2F202109102026
+> > > 40
+> > > > .980366-1-l.stach%40pengutronix.de%2F&amp;data=04%7C01%7Chon
+> gxin
+> > > g.zhu%
+> > > >
+> > >
+> 40nxp.com%7C4e3d8ee008d94327f99108d9901634be%7C686ea1d3bc2b4c6
+> > > fa92cd99
+> > > >
+> > >
+> c5c301635%7C0%7C0%7C637699247319711209%7CUnknown%7CTWFpbGZ
+> > > sb3d8eyJWIjo
+> > > >
+> > >
+> iMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C10
+> > > 00&amp
+> > > > ;sdata=5h%2By%2FcBW%2BjFkyplUuN1nB5%2BAFHuwCUJBqvRh1RiPY
+> Mo
+> > > %3D&amp;rese
+> > > > rved=0
+> > > >
+> > > > Main changes v2 --> v3:
+> > > > - Regarding Lucas' comments.
+> > > >  - to have a whole view to review the patches, send out the
+> > > > i.MX8MM PCIe
+> > > support too.
+> > > >  - move the PHY related bits manipulations of the GPR/SRC to
+> > > > standalone
+> > > PHY driver.
+> > > >  - split the dts changes to SOC and board DT, and use the enum
+> > > > instead of
+> > > raw value.
+> > > >  - update the license of the dt-binding header file.
+> > > >
+> > > > Changes v1 --> v2:
+> > > > - Update the license of the dt-binding header file to make the license
+> > > >   compatible with dts files.
+> > > > - Fix the dt_binding_check errors.
+> > > >
+> > > > Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml    |   6
+> +++
+> > > > Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  79
+> > > +++++++++++++++++++++++++++++
+> > > > arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi                |
+> 53
+> > > ++++++++++++++++++++
+> > > > arch/arm64/boot/dts/freescale/imx8mm.dtsi                    |
+> > > 46 ++++++++++++++++-
+> > > > drivers/pci/controller/dwc/pci-imx6.c                        |
+> 63
+> > > ++++++++++++++++++++++-
+> > > > drivers/phy/freescale/Kconfig                                |
+> 9
+> > > ++++
+> > > > drivers/phy/freescale/Makefile                               |
+> 1
+> > > +
+> > > > drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   |
+> 218
+> > >
+> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+> > > ++++++++++++++++++
+> > > > include/dt-bindings/phy/phy-imx8-pcie.h                      |
+> 14
+> > > ++++++
+> > > > 9 files changed, 486 insertions(+), 3 deletions(-)
+> > > >
+> > > > [PATCH v3 1/9] dt-bindings: phy: phy-imx8-pcie: Add binding for
+> > > > the [PATCH v3 2/9] dt-bindings: phy: add imx8 pcie phy driver
+> > > > support [PATCH v3 3/9] arm64: dts: imx8mm: add the pcie phy
+> > > > support [PATCH v3 4/9] arm64: dts: imx8mm-evk: add the pcie phy
+> > > > support [PATCH v3 5/9]
+> > > > phy: freescale: pcie: initialize the imx8 pcie [PATCH v3 6/9]
+> > > > dt-bindings: imx6q-pcie: Add PHY phandles and name [PATCH v3 7/9]
+> > > > arm64: dts: imx8mm: add the pcie support [PATCH v3 8/9] arm64: dts:
+> > > > imx8mm-evk: add the pcie support on imx8mm [PATCH v3 9/9] PCI: imx:
+> > > > add the imx8mm pcie support
+> > >
+> > > Richard and Lucas,
+> > >
+> > > Thanks for your collective work on this series!
+> > >
+> > > I have imx8mm-venice boards to test this on both with and without
+> > > PCIe bridges. I've tested this on top of Shawn's imx/for-next (as
+> > > blk-ctl has been merged there) and end up hanging waiting for PHY ready
+> timeout.
+> > [Richard Zhu] Sorry to reply late. I run the tests based on pci/for-next
+> applied the blk-ctl issue by Lucas [2] in commit.
+> > Can you help to make a re-tests?
+> > As I know that the blk-ctl is not merged yet.
+> > Hi Lucas:
+> > Am I right?
+> >
+> 
+> Richard,
+> 
+> v5 of blk-ctl is merged into Shawn's for-next tree.
+> 
+[Richard Zhu] Got that.
+Thanks.
 
-Pro4 SoC distinguishes it from other SoCs as "legacy" SoC, which has GIO
-clock line. And Pro4 AHCI-PHY needs to control additional reset lines
-("pm", "tx", and "rx").
+> > >
+> > > [    1.454308] imx6q-pcie 33800000.pcie:       IO
+> > > 0x001ff80000..0x001ff8ffff -> 0x0
+> > > [    1.466538] imx6q-pcie 33800000.pcie:      MEM
+> > > 0x0018000000..0x001fefffff -> 0x0
+> > > [    1.476344] libphy: fec_enet_mii_bus: probed
+> > > [    1.602631] phy phy-32f00000.pcie-phy.0: phy init failed --> -110
+> > > [    1.608775] imx6q-pcie 33800000.pcie: Waiting for PHY ready
+> timeout!
+> > >
+> > > I can verify that imx8_pcie_phy_probe returns successfully and the
+> > > the phy node (imx6_pcie->phy) was found.
+> > >
+> > > Here is the dt change I made for the imx8mm-venice-gw71xx-0x board
+> > > that has no bridge:
+> > [Richard Zhu] Refer to the changes, the external OSC is used as PCIe REF
+> clock(same to EVK board design), right?
+> 
+> Correct, an ext osc is used like EVK.
+> 
+> I applied v5 blk-ctl and your v3 series on top of pci/next and came up with the
+> same issue. Do you have a git repo I could try to make sure I'm not missing
+> anything?
+> 
+> Also, as Lucas has requested some changes do you have a v4 coming soon that
+> I should wait for to try? I believe this has something to do with the phy reset
+> where some of his changes were requested.
+[Richard Zhu] Unfortunately, I don't have personal git repo. But I think we stand on same base-line.
+I tried on Shawn's next tree with my v3 series today.
+PCIe NVME device works fine on my i.MX8MM EVK board, although there is git-am failure in the last patch when I apply the v3 series.
+Part of the logs:
+"
+root@imx8_all:~# lspci
+00:00.0 PCI bridge: Synopsys, Inc. Device abcd (rev 01)
+01:00.0 Non-Volatile memory controller: Sandisk Corp Device 5002
+root@imx8_all:~# uname -a
+Linux imx8_all 5.15.0-rc1-00091-g8bd7cd1cc7f0-dirty #1 SMP PREEMPT Wed Oct 20 09:22:32 CST 2021 aarch64 aarch64 aarch64 GNU/Linux
+...
+[    1.164144] imx6q-pcie 33800000.pcie: host bridge /soc@0/pcie@33800000 ranges:
+[    1.172114] imx6q-pcie 33800000.pcie:       IO 0x001ff80000..0x001ff8ffff -> 0x0000000000
+[    1.182447] imx6q-pcie 33800000.pcie:      MEM 0x0018000000..0x001fefffff -> 0x0018000000
+[    1.304429] imx6q-pcie 33800000.pcie: invalid resource
+[    1.316305] imx6q-pcie 33800000.pcie: iATU unroll: enabled
+[    1.321799] imx6q-pcie 33800000.pcie: Detected iATU regions: 4 outbound, 4 inbound
+[    1.429803] imx6q-pcie 33800000.pcie: Link up
+[    1.534497] imx6q-pcie 33800000.pcie: Link up
+[    1.538870] imx6q-pcie 33800000.pcie: Link up, Gen2
+[    1.550364] imx6q-pcie 33800000.pcie: Link up
+[    1.550487] imx6q-pcie 33800000.pcie: PCI host bridge to bus 0000:00
+[    1.565545] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.573834] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    1.580055] pci_bus 0000:00: root bus resource [mem 0x18000000-0x1fefffff]
+[    1.586968] pci 0000:00:00.0: [16c3:abcd] type 01 class 0x060400
+[    1.592997] pci 0000:00:00.0: reg 0x10: [mem 0x00000000-0x000fffff]
+[    1.599282] pci 0000:00:00.0: reg 0x38: [mem 0x00000000-0x0000ffff pref]
+[    1.606033] pci 0000:00:00.0: supports D1
+[    1.610053] pci 0000:00:00.0: PME# supported from D0 D1 D3hot D3cold
+[    1.618206] pci 0000:01:00.0: [15b7:5002] type 00 class 0x010802
+[    1.624293] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x00003fff 64bit]
+[    1.631177] pci 0000:01:00.0: reg 0x20: [mem 0x00000000-0x000000ff 64bit]
+[    1.638409] pci 0000:01:00.0: 4.000 Gb/s available PCIe bandwidth, limited by 5.0 GT/s PCIe x1 link at 0000:00:00.0 (capable of 31.504 Gb/s with 8.0 GT/s PCIe x4 link)
+[    1.664931] pci 0000:00:00.0: BAR 0: assigned [mem 0x18000000-0x180fffff]
+[    1.671745] pci 0000:00:00.0: BAR 14: assigned [mem 0x18100000-0x181fffff]
+[    1.678634] pci 0000:00:00.0: BAR 6: assigned [mem 0x18200000-0x1820ffff pref]
+[    1.685873] pci 0000:01:00.0: BAR 0: assigned [mem 0x18100000-0x18103fff 64bit]
+[    1.693222] pci 0000:01:00.0: BAR 4: assigned [mem 0x18104000-0x181040ff 64bit]
+[    1.700577] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    1.705814] pci 0000:00:00.0:   bridge window [mem 0x18100000-0x181fffff]
+[    1.712972] pcieport 0000:00:00.0: PME: Signaling with IRQ 216
+"
+Regarding the log you pasted, it seems that the clock is not feed to PHY properly.
 
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- drivers/phy/socionext/Kconfig             |   2 +-
- drivers/phy/socionext/phy-uniphier-ahci.c | 201 +++++++++++++++++++++++++++++-
- 2 files changed, 198 insertions(+), 5 deletions(-)
+Anyway, let's waiting for the v4 series, then make a try. Thanks for your great help to make the double tests.
 
-diff --git a/drivers/phy/socionext/Kconfig b/drivers/phy/socionext/Kconfig
-index a3970e0f89da..8ae644756352 100644
---- a/drivers/phy/socionext/Kconfig
-+++ b/drivers/phy/socionext/Kconfig
-@@ -43,4 +43,4 @@ config PHY_UNIPHIER_AHCI
- 	select GENERIC_PHY
- 	help
- 	  Enable this to support PHY implemented in AHCI controller
--	  on UniPhier SoCs. This driver supports PXs2 and PXs3 SoCs.
-+	  on UniPhier SoCs. This driver supports Pro4, PXs2 and PXs3 SoCs.
-diff --git a/drivers/phy/socionext/phy-uniphier-ahci.c b/drivers/phy/socionext/phy-uniphier-ahci.c
-index 7427c40bf4ae..28cf3efe0695 100644
---- a/drivers/phy/socionext/phy-uniphier-ahci.c
-+++ b/drivers/phy/socionext/phy-uniphier-ahci.c
-@@ -19,8 +19,9 @@
- struct uniphier_ahciphy_priv {
- 	struct device *dev;
- 	void __iomem  *base;
--	struct clk *clk, *clk_parent;
--	struct reset_control *rst, *rst_parent;
-+	struct clk *clk, *clk_parent, *clk_parent_gio;
-+	struct reset_control *rst, *rst_parent, *rst_parent_gio;
-+	struct reset_control *rst_pm, *rst_tx, *rst_rx;
- 	const struct uniphier_ahciphy_soc_data *data;
- };
- 
-@@ -28,10 +29,30 @@ struct uniphier_ahciphy_soc_data {
- 	int (*init)(struct uniphier_ahciphy_priv *priv);
- 	int (*power_on)(struct uniphier_ahciphy_priv *priv);
- 	int (*power_off)(struct uniphier_ahciphy_priv *priv);
-+	bool is_legacy;
- 	bool is_ready_high;
- 	bool is_phy_clk;
- };
- 
-+/* for Pro4 */
-+#define CKCTRL0				0x0
-+#define CKCTRL0_CK_OFF			BIT(9)
-+#define CKCTRL0_NCY_MASK		GENMASK(8, 4)
-+#define CKCTRL0_NCY5_MASK		GENMASK(3, 2)
-+#define CKCTRL0_PRESCALE_MASK		GENMASK(1, 0)
-+#define CKCTRL1				0x4
-+#define CKCTRL1_LOS_LVL_MASK		GENMASK(20, 16)
-+#define CKCTRL1_TX_LVL_MASK		GENMASK(12, 8)
-+#define RXTXCTRL			0x8
-+#define RXTXCTRL_RX_EQ_VALL_MASK	GENMASK(31, 29)
-+#define RXTXCTRL_RX_DPLL_MODE_MASK	GENMASK(28, 26)
-+#define RXTXCTRL_TX_ATTEN_MASK		GENMASK(14, 12)
-+#define RXTXCTRL_TX_BOOST_MASK		GENMASK(11, 8)
-+#define RXTXCTRL_TX_EDGERATE_MASK	GENMASK(3, 2)
-+#define RXTXCTRL_TX_CKO_EN		BIT(0)
-+#define RSTPWR				0x30
-+#define RSTPWR_RX_EN_VAL		BIT(18)
-+
- /* for PXs2/PXs3 */
- #define CKCTRL				0x0
- #define CKCTRL_P0_READY			BIT(15)
-@@ -50,6 +71,128 @@ struct uniphier_ahciphy_soc_data {
- #define RXCTRL_LOS_BIAS_MASK		GENMASK(10, 8)
- #define RXCTRL_RX_EQ_MASK		GENMASK(2, 0)
- 
-+static int uniphier_ahciphy_pro4_init(struct uniphier_ahciphy_priv *priv)
-+{
-+	u32 val;
-+
-+	/* set phy MPLL parameters */
-+	val = readl(priv->base + CKCTRL0);
-+	val &= ~CKCTRL0_NCY_MASK;
-+	val |= FIELD_PREP(CKCTRL0_NCY_MASK, 0x6);
-+	val &= ~CKCTRL0_NCY5_MASK;
-+	val |= FIELD_PREP(CKCTRL0_NCY5_MASK, 0x2);
-+	val &= ~CKCTRL0_PRESCALE_MASK;
-+	val |= FIELD_PREP(CKCTRL0_PRESCALE_MASK, 0x1);
-+	writel(val, priv->base + CKCTRL0);
-+
-+	/* setup phy control parameters */
-+	val = readl(priv->base + CKCTRL1);
-+	val &= ~CKCTRL1_LOS_LVL_MASK;
-+	val |= FIELD_PREP(CKCTRL1_LOS_LVL_MASK, 0x10);
-+	val &= ~CKCTRL1_TX_LVL_MASK;
-+	val |= FIELD_PREP(CKCTRL1_TX_LVL_MASK, 0x06);
-+	writel(val, priv->base + CKCTRL1);
-+
-+	val = readl(priv->base + RXTXCTRL);
-+	val &= ~RXTXCTRL_RX_EQ_VALL_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_RX_EQ_VALL_MASK, 0x6);
-+	val &= ~RXTXCTRL_RX_DPLL_MODE_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_RX_DPLL_MODE_MASK, 0x3);
-+	val &= ~RXTXCTRL_TX_ATTEN_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_TX_ATTEN_MASK, 0x3);
-+	val &= ~RXTXCTRL_TX_BOOST_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_TX_BOOST_MASK, 0x5);
-+	val &= ~RXTXCTRL_TX_EDGERATE_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_TX_EDGERATE_MASK, 0x0);
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	return 0;
-+}
-+
-+static int uniphier_ahciphy_pro4_power_on(struct uniphier_ahciphy_priv *priv)
-+{
-+	u32 val;
-+	int ret;
-+
-+	/* enable reference clock for phy */
-+	val = readl(priv->base + CKCTRL0);
-+	val &= ~CKCTRL0_CK_OFF;
-+	writel(val, priv->base + CKCTRL0);
-+
-+	/* enable TX clock */
-+	val = readl(priv->base + RXTXCTRL);
-+	val |= RXTXCTRL_TX_CKO_EN;
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	/* wait until RX is ready */
-+	ret = readl_poll_timeout(priv->base + RSTPWR, val,
-+				 !(val & RSTPWR_RX_EN_VAL), 200, 2000);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to check whether Rx is ready\n");
-+		goto out_disable_clock;
-+	}
-+
-+	/* release all reset */
-+	ret = reset_control_deassert(priv->rst_pm);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to release PM reset\n");
-+		goto out_disable_clock;
-+	}
-+
-+	ret = reset_control_deassert(priv->rst_tx);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to release Tx reset\n");
-+		goto out_reset_pm_assert;
-+	}
-+
-+	ret = reset_control_deassert(priv->rst_rx);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to release Rx reset\n");
-+		goto out_reset_tx_assert;
-+	}
-+
-+	return 0;
-+
-+out_reset_tx_assert:
-+	reset_control_assert(priv->rst_tx);
-+out_reset_pm_assert:
-+	reset_control_assert(priv->rst_pm);
-+
-+out_disable_clock:
-+	/* disable TX clock */
-+	val = readl(priv->base + RXTXCTRL);
-+	val &= ~RXTXCTRL_TX_CKO_EN;
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	/* disable reference clock for phy */
-+	val = readl(priv->base + CKCTRL0);
-+	val |= CKCTRL0_CK_OFF;
-+	writel(val, priv->base + CKCTRL0);
-+
-+	return ret;
-+}
-+
-+static int uniphier_ahciphy_pro4_power_off(struct uniphier_ahciphy_priv *priv)
-+{
-+	u32 val;
-+
-+	reset_control_assert(priv->rst_rx);
-+	reset_control_assert(priv->rst_tx);
-+	reset_control_assert(priv->rst_pm);
-+
-+	/* disable TX clock */
-+	val = readl(priv->base + RXTXCTRL);
-+	val &= ~RXTXCTRL_TX_CKO_EN;
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	/* disable reference clock for phy */
-+	val = readl(priv->base + CKCTRL0);
-+	val |= CKCTRL0_CK_OFF;
-+	writel(val, priv->base + CKCTRL0);
-+
-+	return 0;
-+}
-+
- static void uniphier_ahciphy_pxs2_enable(struct uniphier_ahciphy_priv *priv,
- 					 bool enable)
- {
-@@ -142,14 +285,22 @@ static int uniphier_ahciphy_init(struct phy *phy)
- 	struct uniphier_ahciphy_priv *priv = phy_get_drvdata(phy);
- 	int ret;
- 
--	ret = clk_prepare_enable(priv->clk_parent);
-+	ret = clk_prepare_enable(priv->clk_parent_gio);
- 	if (ret)
- 		return ret;
- 
--	ret = reset_control_deassert(priv->rst_parent);
-+	ret = clk_prepare_enable(priv->clk_parent);
-+	if (ret)
-+		goto out_clk_gio_disable;
-+
-+	ret = reset_control_deassert(priv->rst_parent_gio);
- 	if (ret)
- 		goto out_clk_disable;
- 
-+	ret = reset_control_deassert(priv->rst_parent);
-+	if (ret)
-+		goto out_rst_gio_assert;
-+
- 	if (priv->data->init) {
- 		ret = priv->data->init(priv);
- 		if (ret)
-@@ -160,8 +311,12 @@ static int uniphier_ahciphy_init(struct phy *phy)
- 
- out_rst_assert:
- 	reset_control_assert(priv->rst_parent);
-+out_rst_gio_assert:
-+	reset_control_assert(priv->rst_parent_gio);
- out_clk_disable:
- 	clk_disable_unprepare(priv->clk_parent);
-+out_clk_gio_disable:
-+	clk_disable_unprepare(priv->clk_parent_gio);
- 
- 	return ret;
- }
-@@ -171,7 +326,9 @@ static int uniphier_ahciphy_exit(struct phy *phy)
- 	struct uniphier_ahciphy_priv *priv = phy_get_drvdata(phy);
- 
- 	reset_control_assert(priv->rst_parent);
-+	reset_control_assert(priv->rst_parent_gio);
- 	clk_disable_unprepare(priv->clk_parent);
-+	clk_disable_unprepare(priv->clk_parent_gio);
- 
- 	return 0;
- }
-@@ -265,6 +422,28 @@ static int uniphier_ahciphy_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->rst))
- 		return PTR_ERR(priv->rst);
- 
-+	if (priv->data->is_legacy) {
-+		priv->clk_parent_gio = devm_clk_get(dev, "gio");
-+		if (IS_ERR(priv->clk_parent_gio))
-+			return PTR_ERR(priv->clk_parent_gio);
-+		priv->rst_parent_gio =
-+			devm_reset_control_get_shared(dev, "gio");
-+		if (IS_ERR(priv->rst_parent_gio))
-+			return PTR_ERR(priv->rst_parent_gio);
-+
-+		priv->rst_pm = devm_reset_control_get_shared(dev, "pm");
-+		if (IS_ERR(priv->rst_pm))
-+			return PTR_ERR(priv->rst_pm);
-+
-+		priv->rst_tx = devm_reset_control_get_shared(dev, "tx");
-+		if (IS_ERR(priv->rst_tx))
-+			return PTR_ERR(priv->rst_tx);
-+
-+		priv->rst_rx = devm_reset_control_get_shared(dev, "rx");
-+		if (IS_ERR(priv->rst_rx))
-+			return PTR_ERR(priv->rst_rx);
-+	}
-+
- 	phy = devm_phy_create(dev, dev->of_node, &uniphier_ahciphy_ops);
- 	if (IS_ERR(phy)) {
- 		dev_err(dev, "failed to create phy\n");
-@@ -279,9 +458,18 @@ static int uniphier_ahciphy_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct uniphier_ahciphy_soc_data uniphier_pro4_data = {
-+	.init = uniphier_ahciphy_pro4_init,
-+	.power_on  = uniphier_ahciphy_pro4_power_on,
-+	.power_off = uniphier_ahciphy_pro4_power_off,
-+	.is_legacy = true,
-+	.is_phy_clk = false,
-+};
-+
- static const struct uniphier_ahciphy_soc_data uniphier_pxs2_data = {
- 	.power_on  = uniphier_ahciphy_pxs2_power_on,
- 	.power_off = uniphier_ahciphy_pxs2_power_off,
-+	.is_legacy = false,
- 	.is_ready_high = false,
- 	.is_phy_clk = false,
- };
-@@ -290,12 +478,17 @@ static const struct uniphier_ahciphy_soc_data uniphier_pxs3_data = {
- 	.init      = uniphier_ahciphy_pxs3_init,
- 	.power_on  = uniphier_ahciphy_pxs2_power_on,
- 	.power_off = uniphier_ahciphy_pxs2_power_off,
-+	.is_legacy = false,
- 	.is_ready_high = true,
- 	.is_phy_clk = true,
- };
- 
- static const struct of_device_id uniphier_ahciphy_match[] = {
- 	{
-+		.compatible = "socionext,uniphier-pro4-ahci-phy",
-+		.data = &uniphier_pro4_data,
-+	},
-+	{
- 		.compatible = "socionext,uniphier-pxs2-ahci-phy",
- 		.data = &uniphier_pxs2_data,
- 	},
--- 
-2.7.4
-
+BR
+Richard
+> 
+> Best regards,
+> 
+> Tim
 
 -- 
 linux-phy mailing list
