@@ -2,14 +2,14 @@ Return-Path: <SRS0=nTb1=PJ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E1C2CC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:28:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4E956C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:28:46 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id AD9F760F9E
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:28:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org AD9F760F9E
+	by mail.kernel.org (Postfix) with ESMTPS id 0E15B610CF
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:28:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0E15B610CF
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,53 +18,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BCXTpn99JXvSM3zVXLoHve3PEp6k+R3YaGd8M7hJP7A=; b=k9Lh/MQOPJYUfq
-	qHAMu5LDsLpQc7AT6XZr1y+UzPqon600kE8hqteaX0RAIicSfyFGBRXNirJqzt7TX/pubBI+p1Ws/
-	Y1VIFa0BYS8L/3LL9/6R4Iiw+5rDuo++xf2dS2jPqq4NYecLHl1Uw6QiWqSEhw8YxYHT5PoxUAteZ
-	ZjhYrln8wr3WAGHy+J+K+L3GrTOs/+T+tETHlLG7zFQuQT20AGATobdQpvT31ZgTXKKn1CSD/KxJ4
-	dSwclV2NcJfIowrsc8gFX8hi4Uy8qgzFzkeABQu2BZMYi3sJtxxhyxHoBDv4/eq99FUKjHR3UcF7G
-	1oktXP5MuzzX9kvSps9Q==;
+	List-Owner; bh=P7MqATCH+MMv75lbrbVk4QbNB9e328LEidfmvBTV+UI=; b=QnUMUlCABn16yo
+	6SJ+MqRADFjY+Q7GyhnGcKpI5RG1SurnmfGpVq9an6dPjINVsE4UyRjUEJ5ulaIYjWgoUAW2349hs
+	DPZCVGIBx0lNnPrYK3IjgLbUMJvb7x9JwJdsdvbq92lt+rwZi7lqnptljqL4UDmPIQ+p0DI0OeH6g
+	iGrLVZ7oz15eR5oQiUyQYX+xKrgXA97xf9B+veM7ilZ9w9zwIoVHCDzj8BRBVIn56dtqxQ7GVI6Wm
+	O6XSU7L/rR5WMNwlfQ+4N29MtblcB6zcAjzKeHcvR9kZHR9kvEN/JksqauAxk3QnBvmFT13++IZRu
+	YBwOWnbps2vhdv/hEqhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mdUN9-0071E9-1q; Thu, 21 Oct 2021 09:28:27 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1mdUNR-0071Mf-Cn; Thu, 21 Oct 2021 09:28:45 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mdUMC-0070qY-Oa
- for linux-phy@lists.infradead.org; Thu, 21 Oct 2021 09:27:34 +0000
-Received: by mail-wm1-x330.google.com with SMTP id v127so22230692wme.5
- for <linux-phy@lists.infradead.org>; Thu, 21 Oct 2021 02:27:27 -0700 (PDT)
+ id 1mdUMD-0070r6-K1
+ for linux-phy@lists.infradead.org; Thu, 21 Oct 2021 09:27:35 +0000
+Received: by mail-wr1-x432.google.com with SMTP id k7so1861614wrd.13
+ for <linux-phy@lists.infradead.org>; Thu, 21 Oct 2021 02:27:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=YUizT5Wo6QNRZzLKQyX7xAagO6y2u5vlJ1IHIzpEMig=;
- b=8MyqEVx81dV7pE7mPfN/OecXsjb2Qv/SvK1MGn4n2hIQNJ6xMKdEUM7+tSQYLsARc3
- 384KGvuma+/fJGBxypQUfCheMIhkOkkRINw34Pzd0q/SQ6tR4MlMAjs9O5A3OrQOsiRU
- XQn7qlnXHnN2U/PjSlX/4M3Zd3m+z09PEBjntw/9xgPMKCdU1Si1ds056Yb8Dx1rl6rb
- NTVjgk1gQDglYkuxVLUWjuts337Pg5iKRfsw9QdieDjb/xigjd6HO2bazX259Tg7ET2a
- rA6JVukqzDBTeTV+BTOloCEfnGeeWnsh4zYM+WHymrp7JepuIuzfZ1Xb9JeDLn3+BS7/
- O16Q==
+ bh=qeDnF7/0L+8b2rsbo3X+Y/DSsOq81VJxq7sH0PX/jgg=;
+ b=qgsnpx/RZZZIlkg3blRJpx+fNLURtDt3YPM/YyTmYwt96Qk5M6N33kM9QgG8dqlnVm
+ egOrP/QQg3iUi5nQdIGBnk1fWxS2/gHBsp4SXsM85oMcKWZULxEnLGotDjt5KZsflU9g
+ zcYu3ditZ1gI9jdWys9aUHoHDYidVSOUqNIUdYy55QbQk56ZilofrxY80Vz72QQ4QvwU
+ cMgG/47IcJuhNMmFi7Ww5hCFuJ8fgrX24IF3LETQk1UWeJuh9KiQSH3Jvpphi03xraS3
+ FBPgJ4CoGuVbAWTkswA9z+WFXOngKE9A3dn+PiewY0ShQVo32h39om1x/tOeJbb1K40Y
+ +Kkw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=YUizT5Wo6QNRZzLKQyX7xAagO6y2u5vlJ1IHIzpEMig=;
- b=QZpfQxbcefI/0pFEoidPELsd93nuINuNlTHTNGj1lafWeC/mLB33AMO+0vBFkl1sKT
- P5fwe2yfuIOdCvyHOnYBIRy34yHJkMn3/ZO9d80WE5SvdQHt4ntCNg+ijhNx15SJN7s0
- aA5aQRG3z4k/OybnKgB3LxYhVEwVvv9kYal5d59MQowJarrx/fhr5XSLoWw0jhv1TnSM
- PX3lhOq1By0GXenOrkZgjfebd+l+eTdx6WzUFTzuL+wM60ePG+KkIea7sXbWciQgmqut
- YdocFWw+Gfhs6ONQIjDX2opSMTF8qx7zNevPfVMkAqcts/YfgVUmHhvPLO8zxNBAceQB
- b66g==
-X-Gm-Message-State: AOAM5302jKCmdBu0s20I01KOJXiKhqDY1IYDGFOMw+QyUqhfe7akIXUc
- yLoDzIrqeSIwXTSTaFzbOtovxkFbEHS+EQ==
-X-Google-Smtp-Source: ABdhPJz1E+9+oInCY1vqxibaqKskcDP7eWbh3y5SDTdZxzg/MhVoYwSyqQLSyEcMXzma59LSuMGbqw==
-X-Received: by 2002:a05:600c:4111:: with SMTP id
- j17mr19808078wmi.59.1634808446096; 
- Thu, 21 Oct 2021 02:27:26 -0700 (PDT)
+ bh=qeDnF7/0L+8b2rsbo3X+Y/DSsOq81VJxq7sH0PX/jgg=;
+ b=LyurZlVM6KPi3gFkBuUTjqAu+Q/pk2w116U4/3HY2ZSKqdsraYnC89DFIgFMDk7VHw
+ +pjRacTEKChS6k8hAxiLU0O7N3Qm6L/zdvPm2lAQzlMRwyxZ/KpAu5d83KCNrQSuYwYc
+ NXLOazo0fXQtyblcAbpJ1ILtqmn4cwDhvGX4FK3Qp2GB2a5k2/t8xQILX0VKE+bchTTE
+ KxxOOTylwSpnzZ+dhxwW7OWUSXFY6gSf3Qhi042yZCgOxOWqTP2Ps3O3pAF6Z+q7tC/s
+ /GCr1kDXLYLwG91k/B3TxnlLin+JFst0EdI+Rlmigg2+99s/tat4a2hgpnOWFA2/E4sl
+ UYlw==
+X-Gm-Message-State: AOAM533tHdsz8qXqQAYfu8v0j63du1YphyWtr7Vbz2UiY/CvOy7p6zHJ
+ l7ZNFqQoBpVs0ShgJaaJX3fC8A==
+X-Google-Smtp-Source: ABdhPJwejVMxhYU2Zdtnyq+RbFnV+hQV50Qtn36ndWXi79BhR/j5DFjP4gSotD5R7kzCOqhnrev48w==
+X-Received: by 2002:a5d:448e:: with SMTP id j14mr5875355wrq.30.1634808447720; 
+ Thu, 21 Oct 2021 02:27:27 -0700 (PDT)
 Received: from blmsp.lan ([2a02:2454:3e6:c900:5142:5fbb:5821:5dc3])
- by smtp.gmail.com with ESMTPSA id d3sm4538468wrb.36.2021.10.21.02.27.25
+ by smtp.gmail.com with ESMTPSA id d3sm4538468wrb.36.2021.10.21.02.27.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Oct 2021 02:27:25 -0700 (PDT)
+ Thu, 21 Oct 2021 02:27:27 -0700 (PDT)
 From: Markus Schneider-Pargmann <msp@baylibre.com>
 To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
@@ -73,16 +72,16 @@ Cc: Sam Ravnborg <sam@ravnborg.org>, dri-devel@lists.freedesktop.org,
  linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  Markus Schneider-Pargmann <msp@baylibre.com>
-Subject: [PATCH v5 1/7] dt-bindings: mediatek,dpi: Add DP_INTF compatible
-Date: Thu, 21 Oct 2021 11:27:01 +0200
-Message-Id: <20211021092707.3562523-2-msp@baylibre.com>
+Subject: [PATCH v5 3/7] drm/edid: Add cea_sad helpers for freq/length
+Date: Thu, 21 Oct 2021 11:27:03 +0200
+Message-Id: <20211021092707.3562523-4-msp@baylibre.com>
 X-Mailer: git-send-email 2.33.0
 In-Reply-To: <20211021092707.3562523-1-msp@baylibre.com>
 References: <20211021092707.3562523-1-msp@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211021_022728_845097_D3813833 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20211021_022729_673330_59E5FD47 
+X-CRM114-Status: GOOD (  13.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,66 +98,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-DP_INTF is similar to DPI but does not have the exact same feature set
-or register layouts.
+This patch adds two helper functions that extract the frequency and word
+length from a struct cea_sad.
 
-DP_INTF is the sink of the display pipeline that is connected to the
-DisplayPort controller and encoder unit. It takes the same clocks as
-DPI.
+For these helper functions new defines are added that help translate the
+'freq' and 'byte2' fields into real numbers.
 
 Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 ---
 
 Notes:
-    Changes v4 -> v5:
-    - Newly created patch after realizing that the specific clocks for dpintf were
-      the same as engine and pixel clocks.
+    Changes v2 -> v3:
+    - Add DRM_ prefix to the CEA_SAD defines.
+    
+    Changes v1 -> v2:
+    - Use const struct pointers.
+    - Add a check whether the format is actually uncompressed or not.
 
- .../bindings/display/mediatek/mediatek,dpi.yaml       | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ drivers/gpu/drm/drm_edid.c | 74 ++++++++++++++++++++++++++++++++++++++
+ include/drm/drm_edid.h     | 18 ++++++++--
+ 2 files changed, 90 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-index dd2896a40ff0..53acf9a84f7f 100644
---- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-@@ -4,16 +4,16 @@
- $id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
- $schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/gpu/drm/drm_edid.c b/drivers/gpu/drm/drm_edid.c
+index 6325877c5fd6..c134803e18db 100644
+--- a/drivers/gpu/drm/drm_edid.c
++++ b/drivers/gpu/drm/drm_edid.c
+@@ -4666,6 +4666,80 @@ int drm_edid_to_speaker_allocation(struct edid *edid, u8 **sadb)
+ }
+ EXPORT_SYMBOL(drm_edid_to_speaker_allocation);
  
--title: mediatek DPI Controller Device Tree Bindings
-+title: mediatek DPI/DP_INTF Controller Device Tree Bindings
++/**
++ * drm_cea_sad_get_sample_rate - Extract the sample rate from cea_sad
++ * @sad: Pointer to the cea_sad struct
++ *
++ * Extracts the cea_sad frequency field and returns the sample rate in Hz.
++ *
++ * Return: Sample rate in Hz or a negative errno if parsing failed.
++ */
++int drm_cea_sad_get_sample_rate(const struct cea_sad *sad)
++{
++	switch (sad->freq) {
++	case DRM_CEA_SAD_FREQ_32KHZ:
++		return 32000;
++	case DRM_CEA_SAD_FREQ_44KHZ:
++		return 44100;
++	case DRM_CEA_SAD_FREQ_48KHZ:
++		return 48000;
++	case DRM_CEA_SAD_FREQ_88KHZ:
++		return 88200;
++	case DRM_CEA_SAD_FREQ_96KHZ:
++		return 96000;
++	case DRM_CEA_SAD_FREQ_176KHZ:
++		return 176400;
++	case DRM_CEA_SAD_FREQ_192KHZ:
++		return 192000;
++	default:
++		return -EINVAL;
++	}
++}
++EXPORT_SYMBOL(drm_cea_sad_get_sample_rate);
++
++static bool drm_cea_sad_is_uncompressed(const struct cea_sad *sad)
++{
++	switch (sad->format) {
++	case HDMI_AUDIO_CODING_TYPE_STREAM:
++	case HDMI_AUDIO_CODING_TYPE_PCM:
++		return true;
++	default:
++		return false;
++	}
++}
++
++/**
++ * drm_cea_sad_get_uncompressed_word_length - Extract word length
++ * @sad: Pointer to the cea_sad struct
++ *
++ * Extracts the cea_sad byte2 field and returns the word length for an
++ * uncompressed stream.
++ *
++ * Note: This function may only be called for uncompressed audio.
++ *
++ * Return: Word length in bits or a negative errno if parsing failed.
++ */
++int drm_cea_sad_get_uncompressed_word_length(const struct cea_sad *sad)
++{
++	if (!drm_cea_sad_is_uncompressed(sad)) {
++		DRM_WARN("Unable to get the uncompressed word length for a compressed format: %u\n",
++			 sad->format);
++		return -EINVAL;
++	}
++
++	switch (sad->byte2) {
++	case DRM_CEA_SAD_UNCOMPRESSED_WORD_16BIT:
++		return 16;
++	case DRM_CEA_SAD_UNCOMPRESSED_WORD_20BIT:
++		return 20;
++	case DRM_CEA_SAD_UNCOMPRESSED_WORD_24BIT:
++		return 24;
++	default:
++		return -EINVAL;
++	}
++}
++EXPORT_SYMBOL(drm_cea_sad_get_uncompressed_word_length);
++
+ /**
+  * drm_av_sync_delay - compute the HDMI/DP sink audio-video sync delay
+  * @connector: connector associated with the HDMI/DP sink
+diff --git a/include/drm/drm_edid.h b/include/drm/drm_edid.h
+index deccfd39e6db..9d75df652b17 100644
+--- a/include/drm/drm_edid.h
++++ b/include/drm/drm_edid.h
+@@ -361,12 +361,24 @@ struct edid {
  
- maintainers:
-   - CK Hu <ck.hu@mediatek.com>
-   - Jitao shi <jitao.shi@mediatek.com>
+ /* Short Audio Descriptor */
+ struct cea_sad {
+-	u8 format;
++	u8 format; /* See HDMI_AUDIO_CODING_TYPE_* */
+ 	u8 channels; /* max number of channels - 1 */
+-	u8 freq;
++	u8 freq; /* See CEA_SAD_FREQ_* */
+ 	u8 byte2; /* meaning depends on format */
+ };
  
- description: |
--  The Mediatek DPI function block is a sink of the display subsystem and
--  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
--  output bus.
-+  The Mediatek DPI and DP_INTF function blocks are a sink of the display
-+  subsystem and provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a
-+  parallel output bus.
++#define DRM_CEA_SAD_FREQ_32KHZ  BIT(0)
++#define DRM_CEA_SAD_FREQ_44KHZ  BIT(1)
++#define DRM_CEA_SAD_FREQ_48KHZ  BIT(2)
++#define DRM_CEA_SAD_FREQ_88KHZ  BIT(3)
++#define DRM_CEA_SAD_FREQ_96KHZ  BIT(4)
++#define DRM_CEA_SAD_FREQ_176KHZ BIT(5)
++#define DRM_CEA_SAD_FREQ_192KHZ BIT(6)
++
++#define DRM_CEA_SAD_UNCOMPRESSED_WORD_16BIT BIT(0)
++#define DRM_CEA_SAD_UNCOMPRESSED_WORD_20BIT BIT(1)
++#define DRM_CEA_SAD_UNCOMPRESSED_WORD_24BIT BIT(2)
++
+ struct drm_encoder;
+ struct drm_connector;
+ struct drm_connector_state;
+@@ -374,6 +386,8 @@ struct drm_display_mode;
  
- properties:
-   compatible:
-@@ -23,6 +23,7 @@ properties:
-       - mediatek,mt8173-dpi
-       - mediatek,mt8183-dpi
-       - mediatek,mt8192-dpi
-+      - mediatek,mt8195-dpintf
+ int drm_edid_to_sad(struct edid *edid, struct cea_sad **sads);
+ int drm_edid_to_speaker_allocation(struct edid *edid, u8 **sadb);
++int drm_cea_sad_get_sample_rate(const struct cea_sad *sad);
++int drm_cea_sad_get_uncompressed_word_length(const struct cea_sad *sad);
+ int drm_av_sync_delay(struct drm_connector *connector,
+ 		      const struct drm_display_mode *mode);
  
-   reg:
-     maxItems: 1
-@@ -54,7 +55,7 @@ properties:
-     $ref: /schemas/graph.yaml#/properties/port
-     description:
-       Output port node. This port should be connected to the input port of an
--      attached HDMI or LVDS encoder chip.
-+      attached HDMI, LVDS or DisplayPort encoder chip.
- 
- required:
-   - compatible
 -- 
 2.33.0
 
