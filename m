@@ -2,14 +2,14 @@ Return-Path: <SRS0=nTb1=PJ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 467AEC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:29:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 647B0C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:30:08 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E25B5610CF
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:29:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E25B5610CF
+	by mail.kernel.org (Postfix) with ESMTPS id 1D40D610EA
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Oct 2021 09:30:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1D40D610EA
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,54 +18,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vQasrBTPIqrusIcYcDSevtphttU7V8KxvFwD6OPIjgM=; b=kBwJHmTjNEV+8j
-	aFkBIJ7vSSPpK++O6mHpoYQ0HxLsMXyLiRkRIB46up0ohoU4plxUJXrDJWDp9Nub14miKonbEKX0G
-	J/ix/bVSGYIc12ZX/t485+ocTa7cBKWYPz7ldYU/VtiXHfYdRbOz7g7JL3qthhAVIOLZjolZOR9Ah
-	JkWZrWnT/s+hWF3998McWS5VqZghC+vmEfvxPivwE8ad2S9te2vu6GfLZd7xwKDBz1IZ4JEroIT+i
-	ftnaOvO7jXwuprdXeteXFk0zCSWrQnQTqr3s2T+1e1JBlrpaTChoaG7S3VY9jy2OYsQ1+q4+DdIw1
-	DRC5Qk/DaRvV9RXOih7g==;
+	List-Owner; bh=9fyLH1G0LbRdNHwoUduNsQ8X7NWuBJjAN9CR29jatRE=; b=UUBrcR3wm2BWfi
+	RaBHm/2uksQYp9kcNeJxiebHJgVwLA0nbY40JximlwMWOsI8ST+M1J/qqc9kyqvl28Hp8fYTtIWha
+	R8ypI/54gLmZMVJZ4PUzGmVMsgTNhAEXIqaGzyva/jwF1XnNXPu0Hm8hYXb9X/ybhHhIVpwj5Hzs6
+	VOjMvQaxmD7StrCx44SJuYLmPpzRvCblSdY5brp71fQiQVjBolPNHbw5v29URaKwhjxWSe/zhYe2D
+	xM6AIVre670WvpK9R57T8Rdz+M6o5zkOR8yBi6ZuDyL2MmlOgPASeDP2vIxKPRjc6D93JIhHXv9xH
+	h9S2s78ERnXaK9vIAtBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mdUOG-0071mt-68; Thu, 21 Oct 2021 09:29:36 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1mdUOl-007253-Hu; Thu, 21 Oct 2021 09:30:07 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mdUMD-0070t6-P4
- for linux-phy@lists.infradead.org; Thu, 21 Oct 2021 09:27:37 +0000
-Received: by mail-wm1-x333.google.com with SMTP id
- s198-20020a1ca9cf000000b0030d6986ea9fso135151wme.1
- for <linux-phy@lists.infradead.org>; Thu, 21 Oct 2021 02:27:29 -0700 (PDT)
+ id 1mdUMG-0070vM-4H
+ for linux-phy@lists.infradead.org; Thu, 21 Oct 2021 09:27:39 +0000
+Received: by mail-wr1-x433.google.com with SMTP id m22so121465wrb.0
+ for <linux-phy@lists.infradead.org>; Thu, 21 Oct 2021 02:27:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ECgEwlXcpssO++nHCyquDoyB9qW01hH4M38EB8NYkkY=;
- b=pHGqSYcmWBWCpJ6hEiDh1NnMfIfMC1FiNAIUXDNFy745hq3+RnSCoGUP0HrU1zrrcQ
- WUFenPMEfMMBw85bYPSULER7b5RZsZKO7T8lIUfn2XYu+nGYt9JLD2tFmMhSHe4xcLsi
- 891JlLZJb8fBFqiegfVWM7h6Snn8SmZttX095jKN3TbIhKrDgSuNPvwYqN3KiVdnieW2
- 1uUTZJsYPLLBt1JRg/pCBD5aNNoU76exgSW+Au76tk37N4cyLxjpgg7ZHMa9RHw1vk6E
- M/26gnZiAlaBFWWgy+C2T6cHMAbTuAJMvAfKkHhjndWu0L/tY1G5nMHyFGH55bGyj99x
- g9HA==
+ bh=Pv8Y3G8Zoph6zy+pl1OsAMZ1CFZJfVyEtpXibk+msK4=;
+ b=2yAb5S0C2uNS8Ka0gaof/V1ZT2KmblicVDLv6hnPxgljuB4WIrAKUqeOWj1xQUAuwO
+ XfbuUSpIiRCiwt49qfDGk+W3/ggOAdPf4Zvr6ufIAsWcJwc6AeGZRwkkaIH0R/oVLYvq
+ 080UVwKLMjBVsLYi4UCc2EK9F/wnsVk4L4A1bHD/vf8bUBeNwMd1KSAjlT73IN6RWD8O
+ c1VGUIumC4kGPSDksWGhWEDP+NcKqle85oRZiK5+vyXv+0Vn+YE5HEflPsAabxsIwuTk
+ 6kKApwPLZTRlTsTAf8a3RS+KliJqWwLC8CrX75ljHRhlouBbTtWeN7AO27U1wIEsjC0M
+ bfGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ECgEwlXcpssO++nHCyquDoyB9qW01hH4M38EB8NYkkY=;
- b=pu+RrGAeKkcBFulelpxHRDsJlvbyROXab6R4zuqqUsR6a/EiQy80v0PpLAa6c7rxxj
- U0KerzTIuMRG9DVc/Flgkd7crf2Jyx7WAudFHSGbT2fHPi1PX04IF+ZZ1VEkdz1gDH2C
- Xt4Zw8WXqDJBddlK7lCde3ZPhkSkuou+3o7jktqsL5v6Oh1LAKOz51tCfx/TdkX4fWF6
- PcLnzgQMnMS0vaAS7K02MTyU9mwx1kiE5NZce9eJSA/rDz9Fxz/Nhp61OoXDhyhsTUVe
- MN4vCVu1ogsO96Pqr4iHOJ7DIdjRn6LqrMPDiRLsLIkiTkgYas4NnPlhTs7q0YqLfQZm
- s9xQ==
-X-Gm-Message-State: AOAM531bs2BpVW5NKq03/INCLRzvVIk7HoM8KFWCwfL+qct/YM71caXb
- iiPtdHKOiQa9o5EDlrDpQE/CQg==
-X-Google-Smtp-Source: ABdhPJwga9/AGDN7Y49OV14OTQLrpufGCXWupA39O/qxslPWY8You/9jSUac7Fp3La69D7kd70XWgQ==
-X-Received: by 2002:a05:600c:2198:: with SMTP id
- e24mr4387412wme.164.1634808448534; 
- Thu, 21 Oct 2021 02:27:28 -0700 (PDT)
+ bh=Pv8Y3G8Zoph6zy+pl1OsAMZ1CFZJfVyEtpXibk+msK4=;
+ b=EZAQdKGmdoHumoPXl4Ob3Gql07VEkF7F3B851gxmfg4jNkJI92QQrVNQLwgg3yWg31
+ w0ZfsjgUfy1VPa05xLclRMq3cX4fLdlwSM6jJZgFzzvt4zwl6EGFxzxHc90EgGfdJPPG
+ 2BjQ7qXXuRv5RJxlljt+TjxHkT8Zgc7+5NXey7mU8bXcWmfbOa55tUq4jUyiwcyDfk2t
+ DHGC7BRMgwcYJcFs/5qAbaBAK/LV5vyhRY/r+hCj5dYXAD2UXbfW/boCRQK29AzxuhAp
+ rL0qqnDp+7t0KO4Bm1Bq3qFh8VyVwxpOHLI9LtL8bXNV8Q5mSsqtqcjJRjFR5oIO9n6J
+ 3yYQ==
+X-Gm-Message-State: AOAM531K11zTGnJmi4Pv4K3DxlMoTkoe53e4fVR1Za05HkcHwGOF4G7H
+ 7GpNyaS1pLxJHHpYR8wAPi/Yjw==
+X-Google-Smtp-Source: ABdhPJzFFpREYkzdt3DdIp1EXw2ULK75YqYMLyp5Sob9ZYLr/46nmd24EwyKoKA+iZbWVpcRRvRV6Q==
+X-Received: by 2002:a5d:598e:: with SMTP id n14mr6093612wri.187.1634808450164; 
+ Thu, 21 Oct 2021 02:27:30 -0700 (PDT)
 Received: from blmsp.lan ([2a02:2454:3e6:c900:5142:5fbb:5821:5dc3])
- by smtp.gmail.com with ESMTPSA id d3sm4538468wrb.36.2021.10.21.02.27.27
+ by smtp.gmail.com with ESMTPSA id d3sm4538468wrb.36.2021.10.21.02.27.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Oct 2021 02:27:28 -0700 (PDT)
+ Thu, 21 Oct 2021 02:27:29 -0700 (PDT)
 From: Markus Schneider-Pargmann <msp@baylibre.com>
 To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
@@ -74,16 +72,16 @@ Cc: Sam Ravnborg <sam@ravnborg.org>, dri-devel@lists.freedesktop.org,
  linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  Markus Schneider-Pargmann <msp@baylibre.com>
-Subject: [PATCH v5 4/7] video/hdmi: Add audio_infoframe packing for DP
-Date: Thu, 21 Oct 2021 11:27:04 +0200
-Message-Id: <20211021092707.3562523-5-msp@baylibre.com>
+Subject: [PATCH v5 6/7] phy: phy-mtk-dp: Add driver for DP phy
+Date: Thu, 21 Oct 2021 11:27:06 +0200
+Message-Id: <20211021092707.3562523-7-msp@baylibre.com>
 X-Mailer: git-send-email 2.33.0
 In-Reply-To: <20211021092707.3562523-1-msp@baylibre.com>
 References: <20211021092707.3562523-1-msp@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211021_022729_832717_1E5BDE27 
-X-CRM114-Status: GOOD (  18.05  )
+X-CRM114-CacheID: sfid-20211021_022732_201766_66EE2042 
+X-CRM114-Status: GOOD (  24.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,190 +98,299 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Similar to HDMI, DP uses audio infoframes as well which are structured
-very similar to the HDMI ones.
+This is a new driver that supports the integrated DisplayPort phy for
+mediatek SoCs, especially the mt8195. The phy is integrated into the
+DisplayPort controller and will be created by the mtk-dp driver. This
+driver expects a struct regmap to be able to work on the same registers
+as the DisplayPort controller. It sets the device data to be the struct
+phy so that the DisplayPort controller can easily work with it.
 
-This patch adds a helper function to pack the HDMI audio infoframe for
-DP, called hdmi_audio_infoframe_pack_for_dp().
-hdmi_audio_infoframe_pack_only() is split into two parts. One of them
-packs the payload only and can be used for HDMI and DP.
+The driver does not have any devicetree bindings because the datasheet
+does not list the controller and the phy as distinct units.
+
+The interaction with the controller can be covered by the configure
+callback of the phy framework and its displayport parameters.
 
 Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 ---
 
 Notes:
-    Changes v1 -> v2:
-    - Create a define for HB2.
-    - Use struct dp_sdp to pass data in a better way.
+    Changes v3 -> v4:
+    - Split DP controller driver and phy driver into separate patches.
+    - Add entry to MAINTAINERS for this phy driver
 
- drivers/video/hdmi.c        | 83 ++++++++++++++++++++++++++++---------
- include/drm/drm_dp_helper.h |  2 +
- include/linux/hdmi.h        |  7 +++-
- 3 files changed, 72 insertions(+), 20 deletions(-)
+ MAINTAINERS                       |   1 +
+ drivers/phy/mediatek/Kconfig      |   8 ++
+ drivers/phy/mediatek/Makefile     |   1 +
+ drivers/phy/mediatek/phy-mtk-dp.c | 219 ++++++++++++++++++++++++++++++
+ 4 files changed, 229 insertions(+)
+ create mode 100644 drivers/phy/mediatek/phy-mtk-dp.c
 
-diff --git a/drivers/video/hdmi.c b/drivers/video/hdmi.c
-index 947be761dfa4..63e74d9fd210 100644
---- a/drivers/video/hdmi.c
-+++ b/drivers/video/hdmi.c
-@@ -21,6 +21,7 @@
-  * DEALINGS IN THE SOFTWARE.
-  */
+diff --git a/MAINTAINERS b/MAINTAINERS
+index eeb4c70b3d5b..8a47eb628734 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -6276,6 +6276,7 @@ L:	linux-mediatek@lists.infradead.org (moderated for non-subscribers)
+ S:	Supported
+ F:	Documentation/devicetree/bindings/display/mediatek/
+ F:	drivers/gpu/drm/mediatek/
++F:	drivers/phy/mediatek/phy-mtk-dp.c
+ F:	drivers/phy/mediatek/phy-mtk-hdmi*
+ F:	drivers/phy/mediatek/phy-mtk-mipi*
  
-+#include <drm/drm_dp_helper.h>
- #include <linux/bitops.h>
- #include <linux/bug.h>
- #include <linux/errno.h>
-@@ -381,12 +382,34 @@ static int hdmi_audio_infoframe_check_only(const struct hdmi_audio_infoframe *fr
-  *
-  * Returns 0 on success or a negative error code on failure.
-  */
--int hdmi_audio_infoframe_check(struct hdmi_audio_infoframe *frame)
-+int hdmi_audio_infoframe_check(const struct hdmi_audio_infoframe *frame)
- {
- 	return hdmi_audio_infoframe_check_only(frame);
- }
- EXPORT_SYMBOL(hdmi_audio_infoframe_check);
- 
-+static void
-+hdmi_audio_infoframe_pack_payload(const struct hdmi_audio_infoframe *frame,
-+				  u8 *buffer)
-+{
-+	u8 channels;
+diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
+index 55f8e6c048ab..f7ec86059049 100644
+--- a/drivers/phy/mediatek/Kconfig
++++ b/drivers/phy/mediatek/Kconfig
+@@ -55,3 +55,11 @@ config PHY_MTK_MIPI_DSI
+ 	select GENERIC_PHY
+ 	help
+ 	  Support MIPI DSI for Mediatek SoCs.
 +
-+	if (frame->channels >= 2)
-+		channels = frame->channels - 1;
-+	else
-+		channels = 0;
-+
-+	buffer[0] = ((frame->coding_type & 0xf) << 4) | (channels & 0x7);
-+	buffer[1] = ((frame->sample_frequency & 0x7) << 2) |
-+		 (frame->sample_size & 0x3);
-+	buffer[2] = frame->coding_type_ext & 0x1f;
-+	buffer[3] = frame->channel_allocation;
-+	buffer[4] = (frame->level_shift_value & 0xf) << 3;
-+
-+	if (frame->downmix_inhibit)
-+		buffer[4] |= BIT(7);
-+}
-+
- /**
-  * hdmi_audio_infoframe_pack_only() - write HDMI audio infoframe to binary buffer
-  * @frame: HDMI audio infoframe
-@@ -404,7 +427,6 @@ EXPORT_SYMBOL(hdmi_audio_infoframe_check);
- ssize_t hdmi_audio_infoframe_pack_only(const struct hdmi_audio_infoframe *frame,
- 				       void *buffer, size_t size)
- {
--	unsigned char channels;
- 	u8 *ptr = buffer;
- 	size_t length;
- 	int ret;
-@@ -420,28 +442,13 @@ ssize_t hdmi_audio_infoframe_pack_only(const struct hdmi_audio_infoframe *frame,
++config PHY_MTK_DP
++	tristate "MediaTek DP-PHY Driver"
++	depends on ARCH_MEDIATEK || COMPILE_TEST
++	depends on OF
++	select GENERIC_PHY
++	help
++	  Support DisplayPort PHY for Mediatek SoCs.
+diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
+index ace660fbed3a..4ba1e0650434 100644
+--- a/drivers/phy/mediatek/Makefile
++++ b/drivers/phy/mediatek/Makefile
+@@ -3,6 +3,7 @@
+ # Makefile for the phy drivers.
+ #
  
- 	memset(buffer, 0, size);
- 
--	if (frame->channels >= 2)
--		channels = frame->channels - 1;
--	else
--		channels = 0;
--
- 	ptr[0] = frame->type;
- 	ptr[1] = frame->version;
- 	ptr[2] = frame->length;
- 	ptr[3] = 0; /* checksum */
- 
--	/* start infoframe payload */
--	ptr += HDMI_INFOFRAME_HEADER_SIZE;
--
--	ptr[0] = ((frame->coding_type & 0xf) << 4) | (channels & 0x7);
--	ptr[1] = ((frame->sample_frequency & 0x7) << 2) |
--		 (frame->sample_size & 0x3);
--	ptr[2] = frame->coding_type_ext & 0x1f;
--	ptr[3] = frame->channel_allocation;
--	ptr[4] = (frame->level_shift_value & 0xf) << 3;
--
--	if (frame->downmix_inhibit)
--		ptr[4] |= BIT(7);
-+	hdmi_audio_infoframe_pack_payload(frame,
-+					  ptr + HDMI_INFOFRAME_HEADER_SIZE);
- 
- 	hdmi_infoframe_set_checksum(buffer, length);
- 
-@@ -479,6 +486,44 @@ ssize_t hdmi_audio_infoframe_pack(struct hdmi_audio_infoframe *frame,
- }
- EXPORT_SYMBOL(hdmi_audio_infoframe_pack);
- 
-+/**
-+ * hdmi_audio_infoframe_pack_for_dp - Pack a HDMI Audio infoframe for
-+ *                                    displayport
-+ *
-+ * @frame HDMI Audio infoframe
-+ * @sdp secondary data packet for display port. This is filled with the
-+ * appropriate data
-+ * @dp_version Display Port version to be encoded in the header
-+ *
-+ * Packs a HDMI Audio Infoframe to be sent over Display Port. This function
-+ * fills the secondary data packet to be used for Display Port.
-+ *
-+ * Return: Number of total written bytes or a negative errno on failure.
++obj-$(CONFIG_PHY_MTK_DP)		+= phy-mtk-dp.o
+ obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
+ obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
+ obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
+diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
+new file mode 100644
+index 000000000000..296203e319ac
+--- /dev/null
++++ b/drivers/phy/mediatek/phy-mtk-dp.c
+@@ -0,0 +1,219 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2021 BayLibre
++ * Author: Markus Schneider-Pargmann <msp@baylibre.com>
 + */
-+ssize_t
-+hdmi_audio_infoframe_pack_for_dp(const struct hdmi_audio_infoframe *frame,
-+				 struct dp_sdp *sdp, u8 dp_version)
++
++#include <linux/delay.h>
++#include <linux/io.h>
++#include <linux/of.h>
++#include <linux/phy/phy.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
++
++#define PHY_OFFSET 0x1000
++
++#define MTK_DP_PHY_DIG_PLL_CTL_1		(PHY_OFFSET + 0x014)
++# define TPLL_SSC_EN				BIT(3)
++
++#define MTK_DP_PHY_DIG_BIT_RATE			(PHY_OFFSET + 0x03C)
++# define BIT_RATE_RBR				0
++# define BIT_RATE_HBR				1
++# define BIT_RATE_HBR2				2
++# define BIT_RATE_HBR3				3
++
++#define MTK_DP_PHY_DIG_SW_RST			(PHY_OFFSET + 0x038)
++# define DP_GLB_SW_RST_PHYD			BIT(0)
++
++#define MTK_DP_LANE0_DRIVING_PARAM_3		(PHY_OFFSET + 0x138)
++#define MTK_DP_LANE1_DRIVING_PARAM_3		(PHY_OFFSET + 0x238)
++#define MTK_DP_LANE2_DRIVING_PARAM_3		(PHY_OFFSET + 0x338)
++#define MTK_DP_LANE3_DRIVING_PARAM_3		(PHY_OFFSET + 0x438)
++# define XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT	0x10
++# define XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT	(0x14 << 8)
++# define XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT	(0x18 << 16)
++# define XTP_LN_TX_LCTXC0_SW0_PRE3_DEFAULT	(0x20 << 24)
++# define DRIVING_PARAM_3_DEFAULT		(XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT | \
++						 XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT | \
++						 XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT | \
++						 XTP_LN_TX_LCTXC0_SW0_PRE3_DEFAULT)
++
++#define MTK_DP_LANE0_DRIVING_PARAM_4		(PHY_OFFSET + 0x13C)
++#define MTK_DP_LANE1_DRIVING_PARAM_4		(PHY_OFFSET + 0x23C)
++#define MTK_DP_LANE2_DRIVING_PARAM_4		(PHY_OFFSET + 0x33C)
++#define MTK_DP_LANE3_DRIVING_PARAM_4		(PHY_OFFSET + 0x43C)
++# define XTP_LN_TX_LCTXC0_SW1_PRE0_DEFAULT	0x18
++# define XTP_LN_TX_LCTXC0_SW1_PRE1_DEFAULT	(0x1e << 8)
++# define XTP_LN_TX_LCTXC0_SW1_PRE2_DEFAULT	(0x24 << 16)
++# define XTP_LN_TX_LCTXC0_SW2_PRE0_DEFAULT	(0x20 << 24)
++# define DRIVING_PARAM_4_DEFAULT		(XTP_LN_TX_LCTXC0_SW1_PRE0_DEFAULT | \
++						 XTP_LN_TX_LCTXC0_SW1_PRE1_DEFAULT | \
++						 XTP_LN_TX_LCTXC0_SW1_PRE2_DEFAULT | \
++						 XTP_LN_TX_LCTXC0_SW2_PRE0_DEFAULT)
++
++#define MTK_DP_LANE0_DRIVING_PARAM_5		(PHY_OFFSET + 0x140)
++#define MTK_DP_LANE1_DRIVING_PARAM_5		(PHY_OFFSET + 0x240)
++#define MTK_DP_LANE2_DRIVING_PARAM_5		(PHY_OFFSET + 0x340)
++#define MTK_DP_LANE3_DRIVING_PARAM_5		(PHY_OFFSET + 0x440)
++# define XTP_LN_TX_LCTXC0_SW2_PRE1_DEFAULT	0x28
++# define XTP_LN_TX_LCTXC0_SW3_PRE0_DEFAULT	(0x30 << 8)
++# define DRIVING_PARAM_5_DEFAULT		(XTP_LN_TX_LCTXC0_SW2_PRE1_DEFAULT | \
++						 XTP_LN_TX_LCTXC0_SW3_PRE0_DEFAULT)
++
++#define MTK_DP_LANE0_DRIVING_PARAM_6		(PHY_OFFSET + 0x144)
++#define MTK_DP_LANE1_DRIVING_PARAM_6		(PHY_OFFSET + 0x244)
++#define MTK_DP_LANE2_DRIVING_PARAM_6		(PHY_OFFSET + 0x344)
++#define MTK_DP_LANE3_DRIVING_PARAM_6		(PHY_OFFSET + 0x444)
++# define XTP_LN_TX_LCTXCP1_SW0_PRE0_DEFAULT	0x00
++# define XTP_LN_TX_LCTXCP1_SW0_PRE1_DEFAULT	(0x04 << 8)
++# define XTP_LN_TX_LCTXCP1_SW0_PRE2_DEFAULT	(0x08 << 16)
++# define XTP_LN_TX_LCTXCP1_SW0_PRE3_DEFAULT	(0x10 << 24)
++# define DRIVING_PARAM_6_DEFAULT		(XTP_LN_TX_LCTXCP1_SW0_PRE0_DEFAULT | \
++						 XTP_LN_TX_LCTXCP1_SW0_PRE1_DEFAULT | \
++						 XTP_LN_TX_LCTXCP1_SW0_PRE2_DEFAULT | \
++						 XTP_LN_TX_LCTXCP1_SW0_PRE3_DEFAULT)
++
++#define MTK_DP_LANE0_DRIVING_PARAM_7		(PHY_OFFSET + 0x148)
++#define MTK_DP_LANE1_DRIVING_PARAM_7		(PHY_OFFSET + 0x248)
++#define MTK_DP_LANE2_DRIVING_PARAM_7		(PHY_OFFSET + 0x348)
++#define MTK_DP_LANE3_DRIVING_PARAM_7		(PHY_OFFSET + 0x448)
++# define XTP_LN_TX_LCTXCP1_SW1_PRE0_DEFAULT	0x00
++# define XTP_LN_TX_LCTXCP1_SW1_PRE1_DEFAULT	(0x06 << 8)
++# define XTP_LN_TX_LCTXCP1_SW1_PRE2_DEFAULT	(0x0c << 16)
++# define XTP_LN_TX_LCTXCP1_SW2_PRE0_DEFAULT	(0x00 << 24)
++# define DRIVING_PARAM_7_DEFAULT		(XTP_LN_TX_LCTXCP1_SW1_PRE0_DEFAULT | \
++						 XTP_LN_TX_LCTXCP1_SW1_PRE1_DEFAULT | \
++						 XTP_LN_TX_LCTXCP1_SW1_PRE2_DEFAULT | \
++						 XTP_LN_TX_LCTXCP1_SW2_PRE0_DEFAULT)
++
++#define MTK_DP_LANE0_DRIVING_PARAM_8		(PHY_OFFSET + 0x14C)
++#define MTK_DP_LANE1_DRIVING_PARAM_8		(PHY_OFFSET + 0x24C)
++#define MTK_DP_LANE2_DRIVING_PARAM_8		(PHY_OFFSET + 0x34C)
++#define MTK_DP_LANE3_DRIVING_PARAM_8		(PHY_OFFSET + 0x44C)
++# define XTP_LN_TX_LCTXCP1_SW2_PRE1_DEFAULT	0x08
++# define XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT	(0x00 << 8)
++# define DRIVING_PARAM_8_DEFAULT		(XTP_LN_TX_LCTXCP1_SW2_PRE1_DEFAULT | \
++						 XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT)
++
++struct mtk_dp_phy {
++	struct regmap *regs;
++};
++
++static int mtk_dp_phy_init(struct phy *phy)
 +{
-+	int ret;
++	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
++	u32 driving_params[] = {
++		DRIVING_PARAM_3_DEFAULT,
++		DRIVING_PARAM_4_DEFAULT,
++		DRIVING_PARAM_5_DEFAULT,
++		DRIVING_PARAM_6_DEFAULT,
++		DRIVING_PARAM_7_DEFAULT,
++		DRIVING_PARAM_8_DEFAULT
++	};
 +
-+	ret = hdmi_audio_infoframe_check(frame);
-+	if (ret)
-+		return ret;
++	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE0_DRIVING_PARAM_3,
++			  driving_params, ARRAY_SIZE(driving_params));
++	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE1_DRIVING_PARAM_3,
++			  driving_params, ARRAY_SIZE(driving_params));
++	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE2_DRIVING_PARAM_3,
++			  driving_params, ARRAY_SIZE(driving_params));
++	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE3_DRIVING_PARAM_3,
++			  driving_params, ARRAY_SIZE(driving_params));
 +
-+	memset(sdp->db, 0, sizeof(sdp->db));
-+
-+	// Secondary-data packet header
-+	sdp->sdp_header.HB0 = 0;
-+	sdp->sdp_header.HB1 = frame->type;
-+	sdp->sdp_header.HB2 = DP_SDP_AUDIO_INFOFRAME_HB2;
-+	sdp->sdp_header.HB3 = (dp_version & 0x3f) << 2;
-+
-+	hdmi_audio_infoframe_pack_payload(frame, sdp->db);
-+
-+	return frame->length + 4;
++	return 0;
 +}
-+EXPORT_SYMBOL(hdmi_audio_infoframe_pack_for_dp);
 +
- /**
-  * hdmi_vendor_infoframe_init() - initialize an HDMI vendor infoframe
-  * @frame: HDMI vendor infoframe
-diff --git a/include/drm/drm_dp_helper.h b/include/drm/drm_dp_helper.h
-index 1d5b3dbb6e56..9debbcc34b14 100644
---- a/include/drm/drm_dp_helper.h
-+++ b/include/drm/drm_dp_helper.h
-@@ -1524,6 +1524,8 @@ int drm_dp_bw_code_to_link_rate(u8 link_bw);
- #define DP_SDP_VSC_EXT_CEA		0x21 /* DP 1.4 */
- /* 0x80+ CEA-861 infoframe types */
- 
-+#define DP_SDP_AUDIO_INFOFRAME_HB2	0x1b
++static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
++{
++	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
++	u32 val;
 +
- /**
-  * struct dp_sdp_header - DP secondary data packet header
-  * @HB0: Secondary Data Packet ID
-diff --git a/include/linux/hdmi.h b/include/linux/hdmi.h
-index c8ec982ff498..2f4dcc8d060e 100644
---- a/include/linux/hdmi.h
-+++ b/include/linux/hdmi.h
-@@ -336,7 +336,12 @@ ssize_t hdmi_audio_infoframe_pack(struct hdmi_audio_infoframe *frame,
- 				  void *buffer, size_t size);
- ssize_t hdmi_audio_infoframe_pack_only(const struct hdmi_audio_infoframe *frame,
- 				       void *buffer, size_t size);
--int hdmi_audio_infoframe_check(struct hdmi_audio_infoframe *frame);
-+int hdmi_audio_infoframe_check(const struct hdmi_audio_infoframe *frame);
++	if (opts->dp.set_rate) {
++		switch (opts->dp.link_rate) {
++		default:
++			dev_err(&phy->dev,
++				"Implementation error, unknown linkrate %x\n",
++				opts->dp.link_rate);
++			return -EINVAL;
++		case 1620:
++			val = BIT_RATE_RBR;
++			break;
++		case 2700:
++			val = BIT_RATE_HBR;
++			break;
++		case 5400:
++			val = BIT_RATE_HBR2;
++			break;
++		case 8100:
++			val = BIT_RATE_HBR3;
++			break;
++		}
++		regmap_write(dp_phy->regs, MTK_DP_PHY_DIG_BIT_RATE, val);
++	}
 +
-+struct dp_sdp;
-+ssize_t
-+hdmi_audio_infoframe_pack_for_dp(const struct hdmi_audio_infoframe *frame,
-+				 struct dp_sdp *sdp, u8 dp_version);
- 
- enum hdmi_3d_structure {
- 	HDMI_3D_STRUCTURE_INVALID = -1,
++	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_BIT_RATE,
++			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
++
++	return 0;
++}
++
++static int mtk_dp_phy_reset(struct phy *phy)
++{
++	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
++
++	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_SW_RST,
++			   DP_GLB_SW_RST_PHYD, 0);
++	usleep_range(50, 200);
++	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_SW_RST,
++			   DP_GLB_SW_RST_PHYD, 1);
++
++	return 0;
++}
++
++static const struct phy_ops mtk_dp_phy_dev_ops = {
++	.init = mtk_dp_phy_init,
++	.configure = mtk_dp_phy_configure,
++	.reset = mtk_dp_phy_reset,
++	.owner = THIS_MODULE,
++};
++
++static int mtk_dp_phy_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct mtk_dp_phy *dp_phy;
++	struct phy *phy;
++
++	dp_phy = devm_kzalloc(dev, sizeof(*dp_phy), GFP_KERNEL);
++	if (!dp_phy)
++		return -ENOMEM;
++
++	dp_phy->regs = *(struct regmap **)dev->platform_data;
++	if (!dp_phy->regs) {
++		dev_err(dev, "No data passed, requires struct regmap**\n");
++		return -EINVAL;
++	}
++
++	phy = devm_phy_create(dev, NULL, &mtk_dp_phy_dev_ops);
++	if (IS_ERR(phy)) {
++		dev_err(dev, "Failed to create DP PHY: %ld\n", PTR_ERR(phy));
++		return PTR_ERR(phy);
++	}
++	phy_set_drvdata(phy, dp_phy);
++
++	// Set device data to the phy so that mtk-dp can get it easily
++	dev_set_drvdata(dev, phy);
++
++	return 0;
++}
++
++struct platform_driver mtk_dp_phy_driver = {
++	.probe = mtk_dp_phy_probe,
++	.driver = {
++		.name = "mediatek-dp-phy",
++	},
++};
++module_platform_driver(mtk_dp_phy_driver);
++
++MODULE_AUTHOR("Markus Schneider-Pargmann <msp@baylibre.com>");
++MODULE_DESCRIPTION("MediaTek DP PHY Driver");
++MODULE_LICENSE("GPL v2");
 -- 
 2.33.0
 
