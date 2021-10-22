@@ -2,88 +2,93 @@ Return-Path: <SRS0=jE1M=PK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2F98DC433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 13:10:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 29F3CC433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 15:59:44 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DEE01610C8
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 13:10:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org DEE01610C8
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
+	by mail.kernel.org (Postfix) with ESMTPS id BF44160F50
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 15:59:43 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org BF44160F50
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=gateworks.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7W9KczUA/zA8gbK9sN6XCIQzKVdv0WBvTfDUGxLZbt4=; b=EBXLwN+jSRsPgu
-	LOMTFsyikIq1dW1nAmWg2V+xgtzieV0ULY+Rjn5X93Rw0Apf7isjImR5bg0U2bRLKbjSkIcxOdfcR
-	TiO8rJTlUmT91vTjOF/6hftP5aDpWoqWx3b0gkvQBN8irnxXeu6MV0BM2JUZ5ebAc/rG44UbRSdWz
-	9sL9Vf7fKU6NBZCHfb2YIb1/p8Xly1rEfVqnJgUOZXRorFkvuzf0yOd0pLT2ZIjV4JHvtbmzhHpOw
-	VkrazyYPECMiWWYELKlBcfwibVZGZ839rHXF3kIfmVJYqAc5ge3uNxeyEEvS2GROQNSKYJmpbnjft
-	4RcuDSvWvs4wQ9SChsWQ==;
+	List-Owner; bh=zXyymF60RT1SCQy1EWUCTXsATw1Ubpl0UL70H7GVvwM=; b=M92lcfjwPmqmQA
+	HS62rhfLs99pQhlQ94gSGjBjv/lh9QzpdgHOlhO1/5ZVV3N9skmmBKfOLQZ3t5SlBCcV0D9dWayFE
+	rfFGXgOo2xS4pJyeUuTvOLJ8MDXWb2Ys+fXGdDemnokuXyJmoDSxEcGPwUrReOsl/FQhNof6FnnRA
+	qKsL/6LD9xPK62/FujBCwXkObnuIi1zLmST2pHNgwl0RHT+aGvEbeimwErg3O8BHVUuq0Szf0Ianw
+	YWePfJKSG4aWSNAxVIBqVZFInGjAO0XX+ds/YXE8PpzIPMVRQM0quuOcfNv0rwXVfBeYc1B0Nq+Dw
+	WusfYXW5Jl3esUbDdZ6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mduJv-00B2dt-0n; Fri, 22 Oct 2021 13:10:51 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1mdwxL-00BTdM-96; Fri, 22 Oct 2021 15:59:43 +0000
+Received: from mail-pg1-x52c.google.com ([2607:f8b0:4864:20::52c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mduH0-00B1ra-Ok
- for linux-phy@lists.infradead.org; Fri, 22 Oct 2021 13:07:53 +0000
-Received: by mail-wr1-x432.google.com with SMTP id v17so628938wrv.9
- for <linux-phy@lists.infradead.org>; Fri, 22 Oct 2021 06:07:38 -0700 (PDT)
+ id 1mdwx7-00BTaB-MV
+ for linux-phy@lists.infradead.org; Fri, 22 Oct 2021 15:59:31 +0000
+Received: by mail-pg1-x52c.google.com with SMTP id r2so3684099pgl.10
+ for <linux-phy@lists.infradead.org>; Fri, 22 Oct 2021 08:59:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20210112.gappssmtp.com; s=20210112;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=UGjYpSf1suvoAVRlObzio963Ea2jH5VZ7H2sh84EWBI=;
- b=6BpJXt7YtQEcAYjgIiBbsV3sGe9kkzUlhP7LAcmXAjR+O9ozBayImK4hXyJuh+Ubii
- OWZ7yvAoqWKoLaDYVs5Maiz62tJmDhI0tYt/FX5QSy/i9aFn1/QI6WgCTu9lNE3MyxPo
- 6o6TwBtBWCsx2Ol6Yxhz0fNXd9iDruBwVRvZYUwxXbYeEvAUnNWuvfSiAeOURK3TJqoZ
- HXCGME99q0D0mjVrTj7sQHieetc1rLJjnA4XFrJuMleY6NVRRuFeV/ifG5TBk76Y54RU
- zy/sn2vxC5cK4/iNRuA5WP/L21/DBrco+kUXgbTdpVubQMpy8ZfJRPx+hFqAuuSTjrCF
- IqeA==
+ d=gateworks-com.20210112.gappssmtp.com; s=20210112;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=oNbqT/ZIY+2ihfgs1jSUlxf/LlMDPFJWHkiAAlyomrc=;
+ b=QKHmz4eo8IjfcZaNUX6jEBjzLEz70RrzRH28u+7mEl7RFRQOpGn+NH5fghgwkW56mt
+ W7OI5pyZf0EB8XE+qSqAyo3v9SXabBsqrn2Jp/Dr5McSJXS1SeqGjosndpGXLY8Io6xf
+ SvNtUBZV8kI5VWSR9hthdk075oUEglPL/Yu+Vxp7Jvkxu10zT++Mjb0Q8RzibByeNyWr
+ 77LbODiNLC8z+rCopmufb8JR0iFrYph8alMxx3n+2HLvzOU9+LkpFTgvQziBsA7vnbk3
+ 33T/16YVPhGCh61axZJfdFyIH/yBMKzBryltjCtk3LBAXSe+1E7jIutXyCnuSbek3KBC
+ SN9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=UGjYpSf1suvoAVRlObzio963Ea2jH5VZ7H2sh84EWBI=;
- b=bGq+RzNFPobpKwHcImirjiumtPmP6pB/Mfs6NAo9s3MHkTEr3UlA4e+c47Z5G4wIA4
- V6neHRDMHxvUEQ0FBwg1MrFavhug87v4n0UbxTksrPyLduQFfaW6sGsUOMbTElXoQHpt
- eDtyP6varTTc3IxoOWn59woag16T2VjdPKNL9zV9Ip95sG2qpX8JYv5dHubOCSGVp8EX
- V2Ax6Uq4HQwbhY41W3Pry/KBfwGjLdcdbzz538Yagc0kFhD4PKp6uZWEAKXFwQJ7o7Ol
- P3knkJu9Rru9YClUnWFvjepYizHHuCOD5pCNh3YWf8uyTLAd44ybL/rlOtn1+Yia4eHk
- cdsQ==
-X-Gm-Message-State: AOAM531L+2XIPzB3gjjSZz7wPGUgl3VtarJahapLoCxdZn0CBcCLSj5q
- ruIByPq3N45DlAGXo8cPT3JsJA==
-X-Google-Smtp-Source: ABdhPJzU7AOubtWvY0RAtHRDoCIlaQvtCUqfe0GbkGk3JXb6JITNYUnVWGk6+dXfe4eP5aZ3/K7ZtQ==
-X-Received: by 2002:adf:f192:: with SMTP id h18mr15656560wro.33.1634908057568; 
- Fri, 22 Oct 2021 06:07:37 -0700 (PDT)
-Received: from blmsp ([2a02:2454:3e6:c900:5142:5fbb:5821:5dc3])
- by smtp.gmail.com with ESMTPSA id d3sm8164815wrb.36.2021.10.22.06.06.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 Oct 2021 06:07:09 -0700 (PDT)
-Date: Fri, 22 Oct 2021 15:06:36 +0200
-From: Markus Schneider-Pargmann <msp@baylibre.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Rob Herring <robh+dt@kernel.org>, Sam Ravnborg <sam@ravnborg.org>,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-Subject: Re: [PATCH v5 6/7] phy: phy-mtk-dp: Add driver for DP phy
-Message-ID: <20211022130636.ncqisltwsvkkc7cg@blmsp>
-References: <20211021092707.3562523-1-msp@baylibre.com>
- <20211021092707.3562523-7-msp@baylibre.com>
- <YXJIPu/Ax6qeft03@matsya>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=oNbqT/ZIY+2ihfgs1jSUlxf/LlMDPFJWHkiAAlyomrc=;
+ b=CybWPDLnpBvUPXnrEsT/1vua25/oKxOu2RsR747rDDRceIIiwZ0AZxuEYiWhZXv2vW
+ fqAdlGwiG/QHnUuVwtgq6TqnSZv0F+fRCu/QnQ3GN4IoTSCsNZGyBMEY8JIP3JhJbbkw
+ Ij/LgNF3nGksscUWPSt4lbkAKPK3eBNNeriOR8T4YYUW7Z2+hAHQJMSH/tCT9pBLT1o7
+ 2tC6n9xMeOZMz4/tgCmwmU3QvjZp/oFENDyeNg1uPXv7AWpnQi40ExI5IAqS6gKy36wO
+ ZcS8QHZtQHUCPaBSpkFNquy17kbzBynXGOWSSYFe77KwLVVRHQffnv5nKhnA28I3A2yQ
+ rrrQ==
+X-Gm-Message-State: AOAM532ctyMYMD6AZNiPKhfm67F+s0R6hQZJnGa7TGjVY3IoY12xtjbQ
+ kvpyn0LabnTpuif9khZUb6Vw/VnDFfQMfENW81HDNQ==
+X-Google-Smtp-Source: ABdhPJw6ZFNVl6dISzqQDyF5lFaDp4dOWg2DT+bDycOyBgz5C5vDNgKtC0B/bJ3r8tZqkKUvWfK2b6dhaTnRQAevFS0=
+X-Received: by 2002:a63:2bd5:: with SMTP id r204mr391533pgr.407.1634918368326; 
+ Fri, 22 Oct 2021 08:59:28 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YXJIPu/Ax6qeft03@matsya>
+References: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
+ <CAJ+vNU2b-=T_gTsRBvdF7SRUZopEFOU_Np8mEJn8bOpn5b5FaA@mail.gmail.com>
+ <AS8PR04MB8676B2AC24E2769D47A1ED478CBD9@AS8PR04MB8676.eurprd04.prod.outlook.com>
+ <CAJ+vNU2AitmxCyam5FArmxAD41QUU=5CF_0JZhm+uzdkRbr7kw@mail.gmail.com>
+ <AS8PR04MB8676840D7EDD56D10F9471288CBE9@AS8PR04MB8676.eurprd04.prod.outlook.com>
+ <CAJ+vNU2GU5=mM5+2Yg9gAuU0RSdJHWEU_+ykmz-qUWfsOnRJ8g@mail.gmail.com>
+ <AS8PR04MB867624A8A5B6AE27D6A9160F8CBF9@AS8PR04MB8676.eurprd04.prod.outlook.com>
+ <CAJ+vNU1Si_bv0_2j5AU-v_1QtUGqwU_4u=NksAVFFXXkkNC1Sw@mail.gmail.com>
+ <AS8PR04MB8676D9FFB6506A09D104E32A8C809@AS8PR04MB8676.eurprd04.prod.outlook.com>
+In-Reply-To: <AS8PR04MB8676D9FFB6506A09D104E32A8C809@AS8PR04MB8676.eurprd04.prod.outlook.com>
+From: Tim Harvey <tharvey@gateworks.com>
+Date: Fri, 22 Oct 2021 08:59:16 -0700
+Message-ID: <CAJ+vNU0cLd7oex5uUyJenqs229gsgZe_Vpu3uyKGw1=B+Uu5YQ@mail.gmail.com>
+Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+ support
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: Lucas Stach <l.stach@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>, 
+ "vkoul@kernel.org" <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
+ "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
+ Shawn Guo <shawnguo@kernel.org>, 
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+ Device Tree Mailing List <devicetree@vger.kernel.org>, 
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>, 
+ open list <linux-kernel@vger.kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211022_060750_888158_F44E5A3C 
-X-CRM114-Status: GOOD (  47.75  )
+X-CRM114-CacheID: sfid-20211022_085929_810977_1F1F7F71 
+X-CRM114-Status: GOOD (  63.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,360 +105,266 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+On Thu, Oct 21, 2021 at 5:43 PM Richard Zhu <hongxing.zhu@nxp.com> wrote:
+>
+> > -----Original Message-----
+> > From: Tim Harvey <tharvey@gateworks.com>
+> > Sent: Friday, October 22, 2021 12:25 AM
+> > To: Richard Zhu <hongxing.zhu@nxp.com>
+> > Cc: Lucas Stach <l.stach@pengutronix.de>; Kishon Vijay Abraham I
+> > <kishon@ti.com>; vkoul@kernel.org; Rob Herring <robh@kernel.org>;
+> > galak@kernel.crashing.org; Shawn Guo <shawnguo@kernel.org>;
+> > linux-phy@lists.infradead.org; Device Tree Mailing List
+> > <devicetree@vger.kernel.org>; Linux ARM Mailing List
+> > <linux-arm-kernel@lists.infradead.org>; open list
+> > <linux-kernel@vger.kernel.org>; Sascha Hauer <kernel@pengutronix.de>;
+> > dl-linux-imx <linux-imx@nxp.com>
+> > Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+> > support
+> >
+> > On Wed, Oct 20, 2021 at 8:32 PM Richard Zhu <hongxing.zhu@nxp.com>
+> > wrote:
+> > >
+> > > <snipped...>
+> > > >
+> > > > Richard,
+> > > >
+> > > > What is this 'invalid resource' about? I see that with my downstream
+> > > > IMX8MM PCIe driver as well and have been asked about it.
+> > > >
+> > > [Richard Zhu] Hi Tim:
+> > > This complain is caused by the following codes in pcie-designware.c driver.
+> > > I'm not sure that why there is only size assignment after the res valid check,
+> > and do nothing if the res is invalid.
+> > > It seems that it is an expected design logic refer to the later codes.
+> > >                 if (!pci->atu_base) {
+> > >                         struct resource *res =
+> > >
+> > platform_get_resource_byname(pdev, IORESOURCE_MEM, "atu");
+> > >                         if (res)
+> > >                                 pci->atu_size = resource_size(res);
+> > >                         pci->atu_base =
+> > devm_ioremap_resource(dev, res);
+> > >                         if (IS_ERR(pci->atu_base))
+> > >                                 pci->atu_base = pci->dbi_base +
+> > DEFAULT_DBI_ATU_OFFSET;
+> > >                 }
+> > >
+> > > Since the default offset is used on i.MX8MM, the "atu" is not specified in
+> > i.MX8MM PCIe DT node, so there is no real res at all.
+> > > Then, devm_ioremap_resource() would complain the invalid resource.
+> >
+> > I think you are saying a change should be made like this:
+> > diff --git a/drivers/pci/controller/dwc/pcie-designware.c
+> > b/drivers/pci/controller/dwc/pcie-designware.c
+> > index a945f0c0e73d..3254f60d1713 100644
+> > --- a/drivers/pci/controller/dwc/pcie-designware.c
+> > +++ b/drivers/pci/controller/dwc/pcie-designware.c
+> > @@ -671,10 +671,11 @@ void dw_pcie_iatu_detect(struct dw_pcie *pci)
+> >                 if (!pci->atu_base) {
+> >                         struct resource *res =
+> >
+> > platform_get_resource_byname(pdev,
+> > IORESOURCE_MEM, "atu");
+> > -                       if (res)
+> > +                       if (res) {
+> >                                 pci->atu_size = resource_size(res);
+> > -                       pci->atu_base = devm_ioremap_resource(dev,
+> > res);
+> > -                       if (IS_ERR(pci->atu_base))
+> > +                               pci->atu_base =
+> > devm_ioremap_resource(dev, res);
+> > +                       }
+> > +                       if (!pci->atu_base || IS_ERR(pci->atu_base))
+> >                                 pci->atu_base = pci->dbi_base +
+> > DEFAULT_DBI_ATU_OFFSET;
+> >                 }
+> >
+> > so that it looks like this:
+> >                 if (!pci->atu_base) {
+> >                         struct resource *res =
+> >
+> > platform_get_resource_byname(pdev,
+> > IORESOURCE_MEM, "atu");
+> >                         if (res) {
+> >                                 pci->atu_size = resource_size(res);
+> >                                 pci->atu_base =
+> > devm_ioremap_resource(dev, res);
+> >                         }
+> >                         if (!pci->atu_base || IS_ERR(pci->atu_base))
+> >                                 pci->atu_base = pci->dbi_base +
+> > DEFAULT_DBI_ATU_OFFSET;
+> >                 }
+> >
+> > Right?
+> [Richard Zhu] Yes, it is. The res shouldn't be remapped if it is invalid resource memory.
 
-On Fri, Oct 22, 2021 at 10:42:30AM +0530, Vinod Koul wrote:
-> On 21-10-21, 11:27, Markus Schneider-Pargmann wrote:
-> > This is a new driver that supports the integrated DisplayPort phy for
-> > mediatek SoCs, especially the mt8195. The phy is integrated into the
-> > DisplayPort controller and will be created by the mtk-dp driver. This
-> > driver expects a struct regmap to be able to work on the same registers
-> > as the DisplayPort controller. It sets the device data to be the struct
-> > phy so that the DisplayPort controller can easily work with it.
-> > 
-> > The driver does not have any devicetree bindings because the datasheet
-> > does not list the controller and the phy as distinct units.
-> > 
-> > The interaction with the controller can be covered by the configure
-> > callback of the phy framework and its displayport parameters.
-> > 
-> > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> > ---
-> > 
-> > Notes:
-> >     Changes v3 -> v4:
-> >     - Split DP controller driver and phy driver into separate patches.
-> >     - Add entry to MAINTAINERS for this phy driver
-> > 
-> >  MAINTAINERS                       |   1 +
-> >  drivers/phy/mediatek/Kconfig      |   8 ++
-> >  drivers/phy/mediatek/Makefile     |   1 +
-> >  drivers/phy/mediatek/phy-mtk-dp.c | 219 ++++++++++++++++++++++++++++++
-> >  4 files changed, 229 insertions(+)
-> >  create mode 100644 drivers/phy/mediatek/phy-mtk-dp.c
-> > 
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index eeb4c70b3d5b..8a47eb628734 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -6276,6 +6276,7 @@ L:	linux-mediatek@lists.infradead.org (moderated for non-subscribers)
-> >  S:	Supported
-> >  F:	Documentation/devicetree/bindings/display/mediatek/
-> >  F:	drivers/gpu/drm/mediatek/
-> > +F:	drivers/phy/mediatek/phy-mtk-dp.c
-> >  F:	drivers/phy/mediatek/phy-mtk-hdmi*
-> >  F:	drivers/phy/mediatek/phy-mtk-mipi*
-> >  
-> > diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
-> > index 55f8e6c048ab..f7ec86059049 100644
-> > --- a/drivers/phy/mediatek/Kconfig
-> > +++ b/drivers/phy/mediatek/Kconfig
-> > @@ -55,3 +55,11 @@ config PHY_MTK_MIPI_DSI
-> >  	select GENERIC_PHY
-> >  	help
-> >  	  Support MIPI DSI for Mediatek SoCs.
-> > +
-> > +config PHY_MTK_DP
-> > +	tristate "MediaTek DP-PHY Driver"
-> > +	depends on ARCH_MEDIATEK || COMPILE_TEST
-> > +	depends on OF
-> > +	select GENERIC_PHY
-> > +	help
-> > +	  Support DisplayPort PHY for Mediatek SoCs.
-> > diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
-> > index ace660fbed3a..4ba1e0650434 100644
-> > --- a/drivers/phy/mediatek/Makefile
-> > +++ b/drivers/phy/mediatek/Makefile
-> > @@ -3,6 +3,7 @@
-> >  # Makefile for the phy drivers.
-> >  #
-> >  
-> > +obj-$(CONFIG_PHY_MTK_DP)		+= phy-mtk-dp.o
-> >  obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
-> >  obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
-> >  obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
-> > diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-> > new file mode 100644
-> > index 000000000000..296203e319ac
-> > --- /dev/null
-> > +++ b/drivers/phy/mediatek/phy-mtk-dp.c
-> > @@ -0,0 +1,219 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (c) 2021 BayLibre
-> > + * Author: Markus Schneider-Pargmann <msp@baylibre.com>
-> > + */
-> > +
-> > +#include <linux/delay.h>
-> > +#include <linux/io.h>
-> > +#include <linux/of.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +
-> > +#define PHY_OFFSET 0x1000
-> > +
-> > +#define MTK_DP_PHY_DIG_PLL_CTL_1		(PHY_OFFSET + 0x014)
-> > +# define TPLL_SSC_EN				BIT(3)
-> > +
-> > +#define MTK_DP_PHY_DIG_BIT_RATE			(PHY_OFFSET + 0x03C)
-> > +# define BIT_RATE_RBR				0
-> > +# define BIT_RATE_HBR				1
-> > +# define BIT_RATE_HBR2				2
-> > +# define BIT_RATE_HBR3				3
-> > +
-> > +#define MTK_DP_PHY_DIG_SW_RST			(PHY_OFFSET + 0x038)
-> > +# define DP_GLB_SW_RST_PHYD			BIT(0)
-> > +
-> > +#define MTK_DP_LANE0_DRIVING_PARAM_3		(PHY_OFFSET + 0x138)
-> > +#define MTK_DP_LANE1_DRIVING_PARAM_3		(PHY_OFFSET + 0x238)
-> > +#define MTK_DP_LANE2_DRIVING_PARAM_3		(PHY_OFFSET + 0x338)
-> > +#define MTK_DP_LANE3_DRIVING_PARAM_3		(PHY_OFFSET + 0x438)
-> > +# define XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT	0x10
-> > +# define XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT	(0x14 << 8)
-> > +# define XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT	(0x18 << 16)
-> > +# define XTP_LN_TX_LCTXC0_SW0_PRE3_DEFAULT	(0x20 << 24)
-> 
-> Pls use GENMASK() for this?
-> 
-> > +# define DRIVING_PARAM_3_DEFAULT		(XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXC0_SW0_PRE3_DEFAULT)
-> > +
-> > +#define MTK_DP_LANE0_DRIVING_PARAM_4		(PHY_OFFSET + 0x13C)
-> > +#define MTK_DP_LANE1_DRIVING_PARAM_4		(PHY_OFFSET + 0x23C)
-> > +#define MTK_DP_LANE2_DRIVING_PARAM_4		(PHY_OFFSET + 0x33C)
-> > +#define MTK_DP_LANE3_DRIVING_PARAM_4		(PHY_OFFSET + 0x43C)
-> > +# define XTP_LN_TX_LCTXC0_SW1_PRE0_DEFAULT	0x18
-> > +# define XTP_LN_TX_LCTXC0_SW1_PRE1_DEFAULT	(0x1e << 8)
-> > +# define XTP_LN_TX_LCTXC0_SW1_PRE2_DEFAULT	(0x24 << 16)
-> > +# define XTP_LN_TX_LCTXC0_SW2_PRE0_DEFAULT	(0x20 << 24)
-> > +# define DRIVING_PARAM_4_DEFAULT		(XTP_LN_TX_LCTXC0_SW1_PRE0_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXC0_SW1_PRE1_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXC0_SW1_PRE2_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXC0_SW2_PRE0_DEFAULT)
-> > +
-> > +#define MTK_DP_LANE0_DRIVING_PARAM_5		(PHY_OFFSET + 0x140)
-> > +#define MTK_DP_LANE1_DRIVING_PARAM_5		(PHY_OFFSET + 0x240)
-> > +#define MTK_DP_LANE2_DRIVING_PARAM_5		(PHY_OFFSET + 0x340)
-> > +#define MTK_DP_LANE3_DRIVING_PARAM_5		(PHY_OFFSET + 0x440)
-> > +# define XTP_LN_TX_LCTXC0_SW2_PRE1_DEFAULT	0x28
-> > +# define XTP_LN_TX_LCTXC0_SW3_PRE0_DEFAULT	(0x30 << 8)
-> > +# define DRIVING_PARAM_5_DEFAULT		(XTP_LN_TX_LCTXC0_SW2_PRE1_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXC0_SW3_PRE0_DEFAULT)
-> > +
-> > +#define MTK_DP_LANE0_DRIVING_PARAM_6		(PHY_OFFSET + 0x144)
-> > +#define MTK_DP_LANE1_DRIVING_PARAM_6		(PHY_OFFSET + 0x244)
-> > +#define MTK_DP_LANE2_DRIVING_PARAM_6		(PHY_OFFSET + 0x344)
-> > +#define MTK_DP_LANE3_DRIVING_PARAM_6		(PHY_OFFSET + 0x444)
-> > +# define XTP_LN_TX_LCTXCP1_SW0_PRE0_DEFAULT	0x00
-> > +# define XTP_LN_TX_LCTXCP1_SW0_PRE1_DEFAULT	(0x04 << 8)
-> > +# define XTP_LN_TX_LCTXCP1_SW0_PRE2_DEFAULT	(0x08 << 16)
-> > +# define XTP_LN_TX_LCTXCP1_SW0_PRE3_DEFAULT	(0x10 << 24)
-> > +# define DRIVING_PARAM_6_DEFAULT		(XTP_LN_TX_LCTXCP1_SW0_PRE0_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXCP1_SW0_PRE1_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXCP1_SW0_PRE2_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXCP1_SW0_PRE3_DEFAULT)
-> > +
-> > +#define MTK_DP_LANE0_DRIVING_PARAM_7		(PHY_OFFSET + 0x148)
-> > +#define MTK_DP_LANE1_DRIVING_PARAM_7		(PHY_OFFSET + 0x248)
-> > +#define MTK_DP_LANE2_DRIVING_PARAM_7		(PHY_OFFSET + 0x348)
-> > +#define MTK_DP_LANE3_DRIVING_PARAM_7		(PHY_OFFSET + 0x448)
-> > +# define XTP_LN_TX_LCTXCP1_SW1_PRE0_DEFAULT	0x00
-> > +# define XTP_LN_TX_LCTXCP1_SW1_PRE1_DEFAULT	(0x06 << 8)
-> > +# define XTP_LN_TX_LCTXCP1_SW1_PRE2_DEFAULT	(0x0c << 16)
-> > +# define XTP_LN_TX_LCTXCP1_SW2_PRE0_DEFAULT	(0x00 << 24)
-> > +# define DRIVING_PARAM_7_DEFAULT		(XTP_LN_TX_LCTXCP1_SW1_PRE0_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXCP1_SW1_PRE1_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXCP1_SW1_PRE2_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXCP1_SW2_PRE0_DEFAULT)
-> > +
-> > +#define MTK_DP_LANE0_DRIVING_PARAM_8		(PHY_OFFSET + 0x14C)
-> > +#define MTK_DP_LANE1_DRIVING_PARAM_8		(PHY_OFFSET + 0x24C)
-> > +#define MTK_DP_LANE2_DRIVING_PARAM_8		(PHY_OFFSET + 0x34C)
-> > +#define MTK_DP_LANE3_DRIVING_PARAM_8		(PHY_OFFSET + 0x44C)
-> > +# define XTP_LN_TX_LCTXCP1_SW2_PRE1_DEFAULT	0x08
-> > +# define XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT	(0x00 << 8)
-> > +# define DRIVING_PARAM_8_DEFAULT		(XTP_LN_TX_LCTXCP1_SW2_PRE1_DEFAULT | \
-> > +						 XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT)
-> > +
-> > +struct mtk_dp_phy {
-> > +	struct regmap *regs;
-> > +};
-> > +
-> > +static int mtk_dp_phy_init(struct phy *phy)
-> > +{
-> > +	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-> > +	u32 driving_params[] = {
-> > +		DRIVING_PARAM_3_DEFAULT,
-> > +		DRIVING_PARAM_4_DEFAULT,
-> > +		DRIVING_PARAM_5_DEFAULT,
-> > +		DRIVING_PARAM_6_DEFAULT,
-> > +		DRIVING_PARAM_7_DEFAULT,
-> > +		DRIVING_PARAM_8_DEFAULT
-> > +	};
-> > +
-> > +	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE0_DRIVING_PARAM_3,
-> > +			  driving_params, ARRAY_SIZE(driving_params));
-> > +	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE1_DRIVING_PARAM_3,
-> > +			  driving_params, ARRAY_SIZE(driving_params));
-> > +	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE2_DRIVING_PARAM_3,
-> > +			  driving_params, ARRAY_SIZE(driving_params));
-> > +	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE3_DRIVING_PARAM_3,
-> > +			  driving_params, ARRAY_SIZE(driving_params));
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
-> > +{
-> > +	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-> > +	u32 val;
-> > +
-> > +	if (opts->dp.set_rate) {
-> > +		switch (opts->dp.link_rate) {
-> > +		default:
-> > +			dev_err(&phy->dev,
-> > +				"Implementation error, unknown linkrate %x\n",
-> > +				opts->dp.link_rate);
-> > +			return -EINVAL;
-> > +		case 1620:
-> > +			val = BIT_RATE_RBR;
-> > +			break;
-> > +		case 2700:
-> > +			val = BIT_RATE_HBR;
-> > +			break;
-> > +		case 5400:
-> > +			val = BIT_RATE_HBR2;
-> > +			break;
-> > +		case 8100:
-> > +			val = BIT_RATE_HBR3;
-> > +			break;
-> > +		}
-> > +		regmap_write(dp_phy->regs, MTK_DP_PHY_DIG_BIT_RATE, val);
-> > +	}
-> > +
-> > +	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_BIT_RATE,
-> > +			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int mtk_dp_phy_reset(struct phy *phy)
-> > +{
-> > +	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-> > +
-> > +	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_SW_RST,
-> > +			   DP_GLB_SW_RST_PHYD, 0);
-> > +	usleep_range(50, 200);
-> > +	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_SW_RST,
-> > +			   DP_GLB_SW_RST_PHYD, 1);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct phy_ops mtk_dp_phy_dev_ops = {
-> > +	.init = mtk_dp_phy_init,
-> > +	.configure = mtk_dp_phy_configure,
-> > +	.reset = mtk_dp_phy_reset,
-> > +	.owner = THIS_MODULE,
-> > +};
-> > +
-> > +static int mtk_dp_phy_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct mtk_dp_phy *dp_phy;
-> > +	struct phy *phy;
-> > +
-> > +	dp_phy = devm_kzalloc(dev, sizeof(*dp_phy), GFP_KERNEL);
-> > +	if (!dp_phy)
-> > +		return -ENOMEM;
-> > +
-> > +	dp_phy->regs = *(struct regmap **)dev->platform_data;
-> > +	if (!dp_phy->regs) {
-> > +		dev_err(dev, "No data passed, requires struct regmap**\n");
-> > +		return -EINVAL;
-> > +	}
-> 
-> is there a reason to do it this way? Why not set the IORESOURCE_MEM for
-> this device and let the driver map here?
-> 
-> NO clocks?
+Ok, I will submit a patch for that.
 
-As briefly mentioned in the commit message, this phy is not a dedicated
-phy. It is embedded in the DisplayPort controller that is added in patch
-7 of this series. The registerspace of the DisplayPort controller starts
-at offset 0x0, continues with 0x1000 for PHY related functions and goes
-on with encoder related and other registers at 0x2000, 0x3000 and
-0x4000.
+>
+> >
+> > >
+> > > > > [    1.316305] imx6q-pcie 33800000.pcie: iATU unroll: enabled
+> > > > > [    1.321799] imx6q-pcie 33800000.pcie: Detected iATU regions: 4
+> > > > outbound, 4 inbound
+> > > > > [    1.429803] imx6q-pcie 33800000.pcie: Link up
+> > > > > [    1.534497] imx6q-pcie 33800000.pcie: Link up
+> > > > > [    1.538870] imx6q-pcie 33800000.pcie: Link up, Gen2
+> > > > > [    1.550364] imx6q-pcie 33800000.pcie: Link up
+> > > > > [    1.550487] imx6q-pcie 33800000.pcie: PCI host bridge to bus
+> > 0000:00
+> > > > > [    1.565545] pci_bus 0000:00: root bus resource [bus 00-ff]
+> > > > > [    1.573834] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+> > > > > [    1.580055] pci_bus 0000:00: root bus resource [mem
+> > > > 0x18000000-0x1fefffff]
+> > > > > [    1.586968] pci 0000:00:00.0: [16c3:abcd] type 01 class 0x060400
+> > > > > [    1.592997] pci 0000:00:00.0: reg 0x10: [mem
+> > 0x00000000-0x000fffff]
+> > > > > [    1.599282] pci 0000:00:00.0: reg 0x38: [mem
+> > 0x00000000-0x0000ffff
+> > > > pref]
+> > > > > [    1.606033] pci 0000:00:00.0: supports D1
+> > > > > [    1.610053] pci 0000:00:00.0: PME# supported from D0 D1 D3hot
+> > > > D3cold
+> > > > > [    1.618206] pci 0000:01:00.0: [15b7:5002] type 00 class 0x010802
+> > > > > [    1.624293] pci 0000:01:00.0: reg 0x10: [mem
+> > 0x00000000-0x00003fff
+> > > > 64bit]
+> > > > > [    1.631177] pci 0000:01:00.0: reg 0x20: [mem
+> > 0x00000000-0x000000ff
+> > > > 64bit]
+> > > > > [    1.638409] pci 0000:01:00.0: 4.000 Gb/s available PCIe bandwidth,
+> > > > limited by 5.0 GT/s PCIe x1 link at 0000:00:00.0 (capable of 31.504
+> > > > Gb/s with
+> > > > 8.0 GT/s PCIe x4 link)
+> > > > > [    1.664931] pci 0000:00:00.0: BAR 0: assigned [mem
+> > > > 0x18000000-0x180fffff]
+> > > > > [    1.671745] pci 0000:00:00.0: BAR 14: assigned [mem
+> > > > 0x18100000-0x181fffff]
+> > > > > [    1.678634] pci 0000:00:00.0: BAR 6: assigned [mem
+> > > > 0x18200000-0x1820ffff pref]
+> > > > > [    1.685873] pci 0000:01:00.0: BAR 0: assigned [mem
+> > > > 0x18100000-0x18103fff 64bit]
+> > > > > [    1.693222] pci 0000:01:00.0: BAR 4: assigned [mem
+> > > > 0x18104000-0x181040ff 64bit]
+> > > > > [    1.700577] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+> > > > > [    1.705814] pci 0000:00:00.0:   bridge window [mem
+> > > > 0x18100000-0x181fffff]
+> > > > > [    1.712972] pcieport 0000:00:00.0: PME: Signaling with IRQ 216
+> > > > > "
+> > > > > Regarding the log you pasted, it seems that the clock is not feed
+> > > > > to PHY
+> > > > properly.
+> > > > >
+> > > > > Anyway, let's waiting for the v4 series, then make a try. Thanks
+> > > > > for your
+> > > > great help to make the double tests.
+> > > > >
+> > > >
+> > > > My boards do not use CLKREQ# so I do not have that defined in pinmux
+> > > > and I found that if I add MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B
+> > PCIe
+> > > > works on my board but this isn't a solution just a work-around (I
+> > > > have boards that use the only two possible pins for CLKREQ as other
+> > features).
+> > > >
+> > > > Similarly you will find on the imx8mm-evk if you comment out the
+> > > > CLKREQ (which isn't required) the imx8mmevk will end up hanging like my
+> > boards:
+> > > [Richard Zhu] Hi Tim:
+> > > Regarding the SPEC, the CLKREQ# is mandatory required, and should be
+> > configured as an open drain, active low signal.
+> > > And this signal should be driven low by the PCIe M.2 device to request the
+> > REF clock be available(active low).
+> > > So, there is such kind of CLKREQ# pin definition on i.MX8MM EVK board.
+> > >
+> > > Anyway, I think the external OSC circuit should be always running if there is
+> > no CLKREQ# on your HW board design.
+> > >
+> >
+> > The way I understand it is CLKREQ# allows the host to disable the REFCLK
+> > when not needed for power savings so it would seem optional to implement
+> > that and if not implemented should be left unconnected on the card.
+> >
+> [Richard Zhu] No, not that way. Regarding the SPEC, this signal is mandatory required.
+> Especially for the L1ss usages. This signal would be OD(open drain), bi-directional, and might be
+> driven low/high by RC or EP automatically if L1ss modes are enabled.
+> You can make reference to the "ECN_L1_PM_Substates_with_CLKREQ_31_May_2013_Rev10a", or
+> the chapter 5.5 L1 PM Substates of "PCI Express Base Specification, Rev. 4.0 Version 1.0".
+>
 
-As this seems to me to be a single function block (also from what I read
-from the datasheet), I designed the binding documentation so that the
-DisplayPort controller starts at 0x0 and spans all registers. Based on
-that I wanted to share the regmap created in the DisplayPort controller
-with this PHY driver that is a direct child of that driver, similar to
-multi function device drivers.
+CLKREQ is only mandatory if you wish to support clock power
+management. Many boards with a PCI host controller do not support
+this.
 
-That also means that the PHY does not have any clocks it requires as it
-only exists in the context of the DisplayPort controller. I could pass
-the same clocks to the PHY, but the use of these clocks does not make
-any difference.
+> > > > diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+> > > > b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+> > > > index 5ce43daa0c8b..f0023b48f475 100644
+> > > > --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+> > > > +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+> > > > @@ -448,7 +448,9 @@
+> > > >
+> > > >         pinctrl_pcie0: pcie0grp {
+> > > >                 fsl,pins = <
+> > > > +/*
+> > > >
+> > > > MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B    0x61
+> > > > +*/
+> > > >
+> > MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21
+> > > > 0x41
+> > > >                 >;
+> > > >         };
+> > > >
+> > > > I have PCIe working with a driver that I ported from NXP's kernel
+> > > > which differs from your driver in that the PCIe PHY is not
+> > > > abstracted to its own driver so I think this has something to do
+> > > > with the order in which the phy is reset or initialized? The configuration of
+> > gpr14 bits looks correct to me.
+> > > [Richard Zhu] The CLKREQ# PIN definition shouldn't be masked.
+> > > In the NXP's local BSP kernel, I just force CLKREQ# low to level up the HW
+> > compatibility.
+> > > That's might the reason why the PCIe works on your HW board although the
+> > CLKREQ# PIN is not defined.
+> > > This method is a little rude and violate the SPEC, and not recommended
+> > although it levels up the HW compatibility.
+> > > So I drop this method in this series.
+> > >
+> >
+> > Sorry, I don't understand what you are saying here. Is there a change you are
+> > going to make to v4 that will make this work for the evk and my boards? What
+> > is that change exactly?
+> [Richard Zhu] No. What I said above is that the CLKREQ# is forced to be low in NXP
+> local BSP kernel. I guess this might be the reason why your board works.
+>
+> BIT11 and BIT10 of IOMUXC_GPR14 can be used to force the CLKREQ# to be low.
+> Set CLKREQ_OVERRIDE_EN(bit10) 1b1, then write one zero to CLKREQ_OVERRIDE(bit11).
+>
 
-As I don't have a piece of devicetree, I struggled with using phy_get
-as, if I understand it correctly, it uses the devicetree to find the
-correct PHY device?
+Ok, that makes sense. Those bits are not explained well in the
+IMX8MMRM. As my board's external REFCLK is always enabled that must
+gate the clock internally to the host controller block.
 
-Do you have a suggestion on how I could improve this interaction between
-DP controller and PHY? Maybe some driver that I could look at that has
-similar constraints?
+I can confirm that asserting those GPR14 bits does resolve my issue:
 
-Thank you!
+#define IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_VAL    BIT(11)
+#define IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_EN     BIT(10)
 
-Best,
-Markus
+       /*
+        * for boards that do not connect CLKREQ#,
+        * override CLKREQ# and drive it low internally
+        */
+       regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+                          IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_VAL, 0);
+       regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+                          IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_EN, 1);
 
-> 
-> > +
-> > +	phy = devm_phy_create(dev, NULL, &mtk_dp_phy_dev_ops);
-> > +	if (IS_ERR(phy)) {
-> > +		dev_err(dev, "Failed to create DP PHY: %ld\n", PTR_ERR(phy));
-> > +		return PTR_ERR(phy);
-> > +	}
-> > +	phy_set_drvdata(phy, dp_phy);
-> > +
-> > +	// Set device data to the phy so that mtk-dp can get it easily
-> 
-> pls change comment style
-> 
-> also why should mtk-dp do it this way, there is very nice API phy_get()
-> to do that, pls use that..
-> 
-> 
-> > +	dev_set_drvdata(dev, phy);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +struct platform_driver mtk_dp_phy_driver = {
-> 
-> who creates this platform device?
-> 
-> > +	.probe = mtk_dp_phy_probe,
-> > +	.driver = {
-> > +		.name = "mediatek-dp-phy",
-> > +	},
-> > +};
-> > +module_platform_driver(mtk_dp_phy_driver);
-> > +
-> > +MODULE_AUTHOR("Markus Schneider-Pargmann <msp@baylibre.com>");
-> > +MODULE_DESCRIPTION("MediaTek DP PHY Driver");
-> > +MODULE_LICENSE("GPL v2");
-> > -- 
-> > 2.33.0
-> 
-> -- 
-> ~Vinod
+Should this be added as a 'fsl,clkreq-unsupported' flag that needs to
+be set true to implement the above code?
+
+Best regards,
+
+Tim
 
 -- 
 linux-phy mailing list
