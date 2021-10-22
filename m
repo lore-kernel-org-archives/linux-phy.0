@@ -2,98 +2,149 @@ Return-Path: <SRS0=jE1M=PK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 91FDFC433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 04:05:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1130DC433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 04:30:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B909360F6E
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 04:05:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B909360F6E
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
+	by mail.kernel.org (Postfix) with ESMTPS id A10256115B
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 04:30:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A10256115B
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F3Sr3uZKS4+aJ9E5Jq4owxNZJk0UODtAhdz6WK4Zz9k=; b=coujABOOXN3Tp6
-	pNpixUjG4S6bICC/4KlyTfb4UrBR4c4J8BelHApdanyep8WnkS1CfQ4n/2NuRbSdrh36uLR1G00gx
-	d7FmHbJhTYKuftPbc5fM/IG0HpFngQXe+4l7If6F/FjGOSu3C/VKXZM1zO8w6Act/ymv/5OofML9T
-	N5P6OWhplvbGvt7jJpVIdDXs18tvn5x1HxHqQzROVlWvRIUZi0OZVa/QpeYyJvTHGPiIxl8Y7IRIi
-	WKVwGZK7RP+jy14y/MvL53b+Kpr3YgO3N4RF+p8iS2vXgrAslJNLepn1YT6E/DksfiMBtvKhC8uwb
-	fE4Xl1q0f5be1rj9jbGQ==;
+	List-Owner; bh=gRuSsOLkVrtW6WGvYxbRxbAUqQ7ZcpoQc80RqTx3vF4=; b=agCBF0qVK336Wf
+	uerVJADTwgn7w6fsMwClm7BodXpiCcW0Ya9/f9f1kjSGG4btCXiN/oiG2WAHKHw8QbRUibwYsTqcC
+	yEohQGPrtZdl8Z4Nt4AJxHSsqioEimEYWweA5Gtir2PltlnTjMcSWRGg4vVGtWVqscyWrx8tCSJgq
+	gLMIa6KEvbNbYyTJbn2yAb5meYYKBdTQ1lL+H3N1ITjyqTc3wsEyURG2G0R2lusMHWBtpGAQDHNoE
+	1k/g4Vvsvmj6ya/fLZT0e5Znf+qY/BAVrE+A7DrOs+CqUHFrEhAB4g0RqE4Gi0qQDkK42nA/ScE65
+	k5MRjCo2kdINMu83rNpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mdloU-009hrR-5V; Fri, 22 Oct 2021 04:05:50 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1mdmCK-009iHT-4d; Fri, 22 Oct 2021 04:30:28 +0000
+Received: from mail-eopbgr10062.outbound.protection.outlook.com ([40.107.1.62]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mdUMQ-00711h-W7
- for linux-phy@bombadil.infradead.org; Thu, 21 Oct 2021 09:27:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=oxhFBOGZmgRXPor6lbkAlyiOraW8VoAcP/2tZEuRZ/c=; b=NEBXVjecfFewbUUkr1e4icze5n
- +zhIX8/f4W/UyVzScTOyiP8gbqZMFHmnFTxxreuFvq7CqvsypQb48bwMZNN2awsAJZONJ3HYWxFjD
- T54TPCAHI3CxnWi3JFI2I1va+itiPTFVXF4RprJR9iQJC/LIm5iBCYLEsaCZiqmfuynVGpcBdSzHX
- Fl8Cnckp2NMNR43jgQSr7Z9DKYzvCyuLrqtKeEm156GkqBxEbJ30bOfdo+pXH7YJ+hS21kIQfIqe3
- ScdNJhouXewhAQ95bTre0rkmfy4TCLDyRu1dEoDMVoMSwRyVVq8nHGOGGsRKgL+Km296AFMD9qO04
- Czcc1ExQ==;
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
- by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mdUMG-00BHI3-SA
- for linux-phy@lists.infradead.org; Thu, 21 Oct 2021 09:27:41 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id r10so1014759wra.12
- for <linux-phy@lists.infradead.org>; Thu, 21 Oct 2021 02:27:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20210112.gappssmtp.com; s=20210112;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=oxhFBOGZmgRXPor6lbkAlyiOraW8VoAcP/2tZEuRZ/c=;
- b=aeDiMja1rOjQi8pIm6eTaxCekuqU/2mGjpuau/PB+Jj6za5O2NBkLn1cM9tO6A+wjy
- unt4Dm5U7p1nOfV1diJbDKx9AxTl1khL71VjlfoBVtlyKiwOt5FKVIkI+eJ3/DqCTho3
- kqWU8nLPQdjShudL+MhtQIuiM2GLjJ9M86HdFLxuxbIKfi5EqS8mPEIWWyoOcagkBMrG
- mMwny+I4T/5xf2YD7a07G1OLnE11okNO4+YK2yZhgHsZtUYJ+i96dfHuw0Aj7jiXm3FM
- nDofBAdE64u18PFU95yPzikODQheCpPA4Wn5T+SGoIUSnHkjyGIwC1XUTAZV8zlPmSgF
- lIOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=oxhFBOGZmgRXPor6lbkAlyiOraW8VoAcP/2tZEuRZ/c=;
- b=P1zE/pltQ5tKLcIJwEmau7haH8ualh8AjSq3Hp7w7gzlh/LQwBxkwOaS5h614dSXGU
- vR/JT4dveOv4qQCqdEUDD6f3x45B4KfEMo2Lq1OpzoDmp/cUbv0MIawZp0sKTjDkvF9r
- j+U7sp6ZPam7F3jJUGXLdzHggUoWHVZBGZz52xG5N+tT4k7LOzrUAvgd8EvWxSE8irfH
- UeuHMkNS+BhSClleg1kkXOmPwzfkXcIFgmZLytJW3a2GGRqM646sgZavJJ+EsX/ChXNd
- LLepkGgKhEuLbPEPhM780pAEVyW86hFOvIf5Ja83uiVtM3d2JaxvtOPMNGzUTJallo08
- d2ww==
-X-Gm-Message-State: AOAM5319KiL3IXeb49kgTSwUx/E/PWFWCD+nBKqJSkQr1AbMUBqZbfrO
- X2c064M5wdg+TKagOePM9Yv7WA==
-X-Google-Smtp-Source: ABdhPJwyqTzaCN6XidyxWnZOiDWd9DYeAitY073k8ij+wqJVyJT4zmyMTzEfjN0+1wNOje2pWnl9tA==
-X-Received: by 2002:adf:d1c2:: with SMTP id b2mr5989101wrd.73.1634808451233;
- Thu, 21 Oct 2021 02:27:31 -0700 (PDT)
-Received: from blmsp.lan ([2a02:2454:3e6:c900:5142:5fbb:5821:5dc3])
- by smtp.gmail.com with ESMTPSA id d3sm4538468wrb.36.2021.10.21.02.27.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Oct 2021 02:27:30 -0700 (PDT)
-From: Markus Schneider-Pargmann <msp@baylibre.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- Vinod Koul <vkoul@kernel.org>
-Cc: Sam Ravnborg <sam@ravnborg.org>, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- Markus Schneider-Pargmann <msp@baylibre.com>
-Subject: [PATCH v5 7/7] drm/mediatek: Add mt8195 DisplayPort driver
-Date: Thu, 21 Oct 2021 11:27:07 +0200
-Message-Id: <20211021092707.3562523-8-msp@baylibre.com>
-X-Mailer: git-send-email 2.33.0
-In-Reply-To: <20211021092707.3562523-1-msp@baylibre.com>
-References: <20211021092707.3562523-1-msp@baylibre.com>
+ id 1mdmCB-009iGS-K1; Fri, 22 Oct 2021 04:30:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jQt0YptT2285OjD43HTmEVg6F7mMvXewk/X4cNF+NzbrFNadE1slZoRSxYykugx7cVV5CiaeRtj1ANucygRWqoqbJAc1c9cWcAO1l9vUqmfUHlUJZOHlzTE32QHBtQXS/wBDr+VHWXQnPdfl5842+EIIPHM4aCYYpZBbPMEDc+soOPjUjdq9rt5cVk3rb7jGCXgjAp6bLuZBxD3Ba8HSWPtc4Nx9cZruFzLS04x7AXrpzlw9tTZ8JyouN5Rh9Lk/J+2lsr3YtPnySrkWI5cAbVLPJaFRTK4Yat9WFxdz0JUf4/OJTDlPQF0ElLegSYsmCrKz8f/h1R+17uZaObyJPw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=N57cP8yAuv8Z8ClstyPMDIJyWGyKjGM0boLuRBUNuC4=;
+ b=kmVY7KOnzyPkyMubcLGrZ8Y4WPUyPk5HTZOdFC6w1dlLLJ3b+hdFHMzVt1UgqJ4HeTTH3bLbMnrCKaRh3oMwoWUHaHviiHBXe40E1wZfcv9OT12ry54/FbVPPHcbosZ0+g3kNZXprU0RDcjzuUUHb3ycRCZEsC1iFSG2d3GyKRPskTlCXoFMWJx1+OL5wAW8FHF1KZFnDf11bu+d2n/ut7LCv5ISWOMVCMD9MWp1iNDZ7UNYAm1vQk+lGJi8E+6Gn1qfbQaXM4bPp/M4Exog9QPLqOtB/DdDHi2pIjmgz5AVpOuh71PrDppPCjSl+mJGXkzoyXmKgkT9x0v9Kr7TyA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=N57cP8yAuv8Z8ClstyPMDIJyWGyKjGM0boLuRBUNuC4=;
+ b=jz/FosVq3jVNrdtwkeVkPo2dvZDftZt4TSpUgYLVBtME7mbN0dnA2Wf0TA4LAfZBe7sI6rq7HcS6hs7dbxmlA7vs1f35VSgZVqUJxPcmykt4jc/FQpOrAutK9NY/EsrAtQ83YYoF5jBn0p8xw6Uk1VBdkwh8R7dmXtknwAR5DD8=
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
+ by AS8PR04MB8642.eurprd04.prod.outlook.com (2603:10a6:20b:429::24)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4628.18; Fri, 22 Oct
+ 2021 04:30:13 +0000
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::b059:46c6:685b:e0fc]) by AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::b059:46c6:685b:e0fc%4]) with mapi id 15.20.4628.018; Fri, 22 Oct 2021
+ 04:30:13 +0000
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: Lucas Stach <l.stach@pengutronix.de>, "tharvey@gateworks.com"
+ <tharvey@gateworks.com>, "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org"
+ <vkoul@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
+ "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>
+CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>
+Subject: RE: [PATCH v3 5/9] phy: freescale: pcie: initialize the imx8 pcie
+ standalone phy driver
+Thread-Topic: [PATCH v3 5/9] phy: freescale: pcie: initialize the imx8 pcie
+ standalone phy driver
+Thread-Index: AQHXv0hnD6WN1xW1r0GrwUBjOXYAL6vUbfkAgAnmn1A=
+Date: Fri, 22 Oct 2021 04:30:13 +0000
+Message-ID: <AS8PR04MB867663E9186D1CBCFC14BDD28C809@AS8PR04MB8676.eurprd04.prod.outlook.com>
+References: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
+ <1634028078-2387-6-git-send-email-hongxing.zhu@nxp.com>
+ <b01729b54f43c300307fbf71ac8ad7c973e81f34.camel@pengutronix.de>
+In-Reply-To: <b01729b54f43c300307fbf71ac8ad7c973e81f34.camel@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b05eb03f-a64c-4006-c716-08d99514a406
+x-ms-traffictypediagnostic: AS8PR04MB8642:
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-microsoft-antispam-prvs: <AS8PR04MB8642585638D85C5AC8177C578C809@AS8PR04MB8642.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 2YSdHsNy6qmzyEAb4yVWTzM77l9FEiUmjX6z04JEAG6uNhz92JHzLlwaKuA5p84673gO49B2G/A2pcw0fF0KF0S1buejWuohLNs6moW7RmDcvxUrj56LSKTGdXM9BfCayOeyJApaZzQXWa6v/j6UpzsefndQEhNSpUetQtDqGOad4gr7Lo5g4iNdMI1QnJ+J/igkmIHVWkvuCb72Ue/0A4rgqhzObnA7uRqlGOvYcxMaYOb0AhywpODNGKlEtPN7inev+a9KbHBmKs2DCpyZJrJQjghlrrTT45SF3c64kWb64S2CRGWbdJXcM25slQfJEzzg6bYZ3urJenIQdlCEV6sVRqx38M+6At9rkZGMFk5TQpQID8DASrjfTowb8Q1JXw94SVXCcbMBgiH8Mj3mlbIgxcHHPmdfHgNMA6BM+RVf8XRfmij5hiIiclRUB1OIFf52hUGCppeQD/ynj+2AEQm3EAiA2go6vH62S9OWHIoQFBD8gRSvniEBB3mijd4mifqUws3pyD7trZznExS4YKMPfQPeDfnXjBCqeL4EjnZ5uB3wTxOQL2oy2xUsZNiQtQiJrv6jm14F0sGfE0Rc6kBSbyxOe7HkwO2cnOj3/gMqppNOxD4HzuYLiXioKg5lpwJhmee52BquORoQr9b0JvDV24YRUybBJilyK41u26t4LOVeEaUzOfumZt3CiSrsT6pAEjATL1dY6gpPDx73rA==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(5660300002)(30864003)(7416002)(186003)(66446008)(508600001)(7696005)(6506007)(71200400001)(110136005)(8676002)(38100700002)(53546011)(64756008)(66476007)(52536014)(122000001)(26005)(66556008)(66946007)(76116006)(9686003)(38070700005)(33656002)(86362001)(2906002)(4326008)(8936002)(54906003)(55016002)(316002)(83380400001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?RW5INmE0UDFXUUN6dmtsY0Z5V2MyaXJqYlhEVGxJdE5Dd2VmS0FoTTdKcVVk?=
+ =?utf-8?B?VlFURzFwWXR6U0xiS1NncTNSYWlybHp4UG9SaTBkVG5OVGJaZDVlZ0JKKzJa?=
+ =?utf-8?B?KzNrRDcrcEUwYnB3Q29qSUpvYW1Yb2dCMUd0cGlwaDBhTUJZM2g3aWNzTTFK?=
+ =?utf-8?B?NG9vSnFUaFYzaTJwWTZ4N2JIZDR4eU9jdEhSOGhpcjZ1ZUNjbkxKWktycEho?=
+ =?utf-8?B?RkQ2cjVIY2xHMVMwYnNSSHZVanUvdEF6cC9OUGZPa2dndHhNQXQzeDVuemNa?=
+ =?utf-8?B?WHFYei9qeFdQTnpoOXpVV05rYWY5aFhoeUFFdFNSemtOeVpSdzVTWDhaOFhx?=
+ =?utf-8?B?R3pTL2JscGVlL1BTdWhoN0FPWVlKK2w4NmhMUmQxWisxdklaMVQxWmgwRE1T?=
+ =?utf-8?B?OXptR3JIemQxNjNwSkFjRzk3VE1UdXFvWHdSeHpOandRRDlRemNuWFNITXVM?=
+ =?utf-8?B?TkdUWXBaTlRMRHRsOWVlWUw1ZWYrM01iOEFGRUxvZjNKWUhwdnZLbWtGV1dQ?=
+ =?utf-8?B?d3Nha0phU3EwcE9JeE9ycXd4ME43NTlXTjlkQmxGMi9zUUthdGRoZ1F2b3V5?=
+ =?utf-8?B?OCtBejdualdiS05oSzFxaWNrSXFjSDltRnJpMnFRVTVIbklTR1hLbGNIL1h4?=
+ =?utf-8?B?dWFydHRIUU5vUXNoYmhEV2l1QlBwQ3ZnV2xWZGU1N1MxMG85alpOSUZyL0JK?=
+ =?utf-8?B?VFdjVFRtelpIaVhEYVBSampPdlFhaXVtVlgwMS9NN3RrejFabEdybDUxSTZ6?=
+ =?utf-8?B?SjhYZVg2Kyt3enpXTlZpVzM3VjNNd1VRbEVSbkVSamJxejgyNGgvOWRDVWxI?=
+ =?utf-8?B?TDEyem5GdnM1ajJ0SkZQTnVqS0FtelNjTk5wc2dIR2NVcTRMYnhzMkIxeE1h?=
+ =?utf-8?B?K1pTSXNKRi9WTGZsNEd6TFI1STlUejJoWTFVM0RXOFZnaVoxdWZianBrMHda?=
+ =?utf-8?B?RGV5ZitpbU0xSjRGNlZ6Z2RQVURUd25DRm1rOVZnbGJLMVZVam54dmhTaFhi?=
+ =?utf-8?B?akdldS9WUUowNHViT2tsZmREdGZFYnBtckExL0hMNTBRNmxPamVVaTNKSy9N?=
+ =?utf-8?B?MmVYbFBKdDlRdTR6T0JZczFFKzV6allqRGhSd0c0WDlQNlRsVnZtalMxMnVI?=
+ =?utf-8?B?MlNXcnJTOUNqR3ErUkJlclBNeFpNWUFlaDY4MTJMejhmZU90MnQ4S0FYOXRy?=
+ =?utf-8?B?UnF1ZnFuekVnaHhYL2V5dnFRWklKR2lkWEorV3Y4R24yQjRwdnVKTGcxdy9l?=
+ =?utf-8?B?WTRHMGI1RmFPUTF0VE9ZUVp0dG9PVGhzOGxOZjFKWlRYZkcvVG9GR2hid3dP?=
+ =?utf-8?B?MkRNYmNUNkkyV1NCMi8rQ2ZpQUN5MW9EcFZpaW5LUzdaVWRnSlJmeWdqN25Z?=
+ =?utf-8?B?bEduZVJTbkRORUdsa3lLdXRCWWNYNENVN083RkpLSTVFRGxjaEtyT3k5WlZG?=
+ =?utf-8?B?RzNiSFY2ZzdmYlpwTmNmYklrNHhlTWtSemFBYnpJQnNKclJBaVNSNmtGNlE3?=
+ =?utf-8?B?clhUQVVUdkhKSElGT1pESFVNY0JUUkFkNkRKUEJ6dSt0ZTc1QkEzSENGSitU?=
+ =?utf-8?B?VEJ0UmNOcFVGZzRDVXYzcmFkY1lWYUR0ZVdYMGVEZXM0T1J1dzZRbzh2Vkx3?=
+ =?utf-8?B?UVZtZjFLaHM2LzZtM2wwVmk0RlRkdi9Tb3JVZGQwUVVBWE11SVpTUENHRFUw?=
+ =?utf-8?B?TCtSUlZUeEpCdkhYcUphUUZhQjVEck5DZmdFTjEvM2hGbTFxNzJaVUdUUE0x?=
+ =?utf-8?B?cFJsRm04d0xja1l1c2V2MCt4dnNxakgwOGlhNlY2ekJvQ2hVWHluMlV6NlM5?=
+ =?utf-8?B?cTY1NUZCek9YT2NUaFh3ekdUckNac1ZhSnVRQzY2NUQrVitVOHM4RHpFaHBp?=
+ =?utf-8?B?Y1pGbmVSNWNxQzU3MmxOTEhrRmVGWDRDYTZXMEpxbjY4LzJKN2dzaElMVjQr?=
+ =?utf-8?Q?Vo/p0tn0mnI=3D?=
 MIME-Version: 1.0
-X-Mailman-Approved-At: Thu, 21 Oct 2021 21:05:48 -0700
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b05eb03f-a64c-4006-c716-08d99514a406
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Oct 2021 04:30:13.1924 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hongxing.zhu@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8642
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20211021_213019_886104_1C24F705 
+X-CRM114-Status: GOOD (  31.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,3479 +161,328 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch adds a DisplayPort driver for the Mediatek mt8195 SoC and a
-according phy driver mediatek-dp-phy.
+> -----Original Message-----
+> From: Lucas Stach <l.stach@pengutronix.de>
+> Sent: Saturday, October 16, 2021 2:56 AM
+> To: Richard Zhu <hongxing.zhu@nxp.com>; tharvey@gateworks.com;
+> kishon@ti.com; vkoul@kernel.org; robh@kernel.org;
+> galak@kernel.crashing.org; shawnguo@kernel.org
+> Cc: linux-phy@lists.infradead.org; devicetree@vger.kernel.org;
+> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
+> kernel@pengutronix.de; dl-linux-imx <linux-imx@nxp.com>
+> Subject: Re: [PATCH v3 5/9] phy: freescale: pcie: initialize the imx8 pcie
+> standalone phy driver
+> 
+> Am Dienstag, dem 12.10.2021 um 16:41 +0800 schrieb Richard Zhu:
+> > Add the standalone i.MX8 PCIe PHY driver.
+> > Some reset bits should be manipulated between PHY configurations and
+> > status check(internal PLL is locked or not).
+> > So, do the PHY configuration in the phy_calibrate().
+> > And check the PHY is ready or not in the phy_init().
+> >
+> > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+> > ---
+> >  drivers/phy/freescale/Kconfig              |   9 +
+> >  drivers/phy/freescale/Makefile             |   1 +
+> >  drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 218
+> > +++++++++++++++++++++
+> >  3 files changed, 228 insertions(+)
+> >  create mode 100644 drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+> >
+> > diff --git a/drivers/phy/freescale/Kconfig
+> > b/drivers/phy/freescale/Kconfig index 320630ffe3cd..fb08e5242602
+> > 100644
+> > --- a/drivers/phy/freescale/Kconfig
+> > +++ b/drivers/phy/freescale/Kconfig
+> > @@ -14,3 +14,12 @@ config PHY_MIXEL_MIPI_DPHY
+> >  	help
+> >  	  Enable this to add support for the Mixel DSI PHY as found
+> >  	  on NXP's i.MX8 family of SOCs.
+> > +
+> > +config PHY_FSL_IMX8M_PCIE
+> > +	tristate "Freescale i.MX8 PCIE PHY"
+> > +	depends on OF && HAS_IOMEM
+> > +	select GENERIC_PHY
+> > +	default ARCH_MXC
+> 
+> Not sure if we need this default, but if you want to keep it add at least a "&&
+> ARM64" to not enable it on old 32bit i.MX SoCs.
+[Richard Zhu] Add the "&& ARM64" is preferred. Thanks.
+> 
+> > +	help
+> > +	  Enable this to add support for the PCIE PHY as found on
+> > +	  i.MX8M family of SOCs.
+> > diff --git a/drivers/phy/freescale/Makefile
+> > b/drivers/phy/freescale/Makefile index 1d02e3869b45..55d07c742ab0
+> > 100644
+> > --- a/drivers/phy/freescale/Makefile
+> > +++ b/drivers/phy/freescale/Makefile
+> > @@ -1,3 +1,4 @@
+> >  # SPDX-License-Identifier: GPL-2.0-only
+> >  obj-$(CONFIG_PHY_FSL_IMX8MQ_USB)	+= phy-fsl-imx8mq-usb.o
+> >  obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
+> > +obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)	+= phy-fsl-imx8m-pcie.o
+> > diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+> > b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+> > new file mode 100644
+> > index 000000000000..317cf61bff37
+> > --- /dev/null
+> > +++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+> > @@ -0,0 +1,218 @@
+> > +// SPDX-License-Identifier: GPL-2.0+
+> > +/*
+> > + * Copyright 2021 NXP
+> > + */
+> > +
+> > +#include <linux/clk.h>
+> > +#include <linux/io.h>
+> > +#include <linux/iopoll.h>
+> > +#include <linux/delay.h>
+> > +#include <linux/mfd/syscon.h>
+> > +#include <linux/mfd/syscon/imx7-iomuxc-gpr.h>
+> > +#include <linux/module.h>
+> > +#include <linux/phy/phy.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/regmap.h>
+> > +#include <linux/reset.h>
+> > +#include <dt-bindings/phy/phy-imx8-pcie.h>
+> > +
+> > +#define IMX8MM_PCIE_PHY_CMN_REG061	0x184
+> > +#define  ANA_PLL_CLK_OUT_TO_EXT_IO_EN	BIT(0)
+> > +#define IMX8MM_PCIE_PHY_CMN_REG062	0x188
+> > +#define  ANA_PLL_CLK_OUT_TO_EXT_IO_SEL	BIT(3)
+> > +#define IMX8MM_PCIE_PHY_CMN_REG063	0x18C
+> > +#define  AUX_PLL_REFCLK_SEL_SYS_PLL	GENMASK(7, 6)
+> > +#define IMX8MM_PCIE_PHY_CMN_REG064	0x190
+> > +#define  ANA_AUX_RX_TX_SEL_TX		BIT(7)
+> > +#define  ANA_AUX_RX_TERM_GND_EN		BIT(3)
+> > +#define  ANA_AUX_TX_TERM		BIT(2)
+> > +#define IMX8MM_PCIE_PHY_CMN_REG065	0x194
+> > +#define  ANA_AUX_RX_TERM		(BIT(7) | BIT(4))
+> > +#define  ANA_AUX_TX_LVL			GENMASK(3, 0)
+> > +#define IMX8MM_PCIE_PHY_CMN_REG75	0x1D4
+> > +#define  PCIE_PHY_CMN_REG75_PLL_DONE	0x3
+> > +#define PCIE_PHY_TRSV_REG5		0x414
+> > +#define  PCIE_PHY_TRSV_REG5_GEN1_DEEMP	0x2D
+> > +#define PCIE_PHY_TRSV_REG6		0x418
+> > +#define  PCIE_PHY_TRSV_REG6_GEN2_DEEMP	0xF
+> > +
+> > +#define IMX8MM_GPR_PCIE_REF_CLK_SEL	GENMASK(25, 24)
+> > +#define IMX8MM_GPR_PCIE_REF_CLK_PLL
+> 	FIELD_PREP(IMX8MM_GPR_PCIE_REF_CLK_SEL, 0x3)
+> > +#define IMX8MM_GPR_PCIE_REF_CLK_EXT
+> 	FIELD_PREP(IMX8MM_GPR_PCIE_REF_CLK_SEL, 0x2)
+> > +#define IMX8MM_GPR_PCIE_AUX_EN		BIT(19)
+> > +#define IMX8MM_GPR_PCIE_CMN_RST		BIT(18)
+> > +#define IMX8MM_GPR_PCIE_POWER_OFF	BIT(17)
+> > +#define IMX8MM_GPR_PCIE_SSC_EN		BIT(16)
+> > +#define IMX8MM_GPR_PCIE_REF_USE_PAD	BIT(9)
+> > +
+> > +struct imx8_pcie_phy {
+> > +	u32			refclk_pad_mode;
+> 
+> Moving this to the end of the structure will get rid of a hole due to padding.
+[Richard Zhu] Got that, thanks.
 
-It supports both functional units on the mt8195, the embedded
-DisplayPort as well as the external DisplayPort units. It offers
-hot-plug-detection, audio up to 8 channels, and DisplayPort 1.4 with up
-to 4 lanes.
+> 
+> > +	void __iomem		*base;
+> > +	struct clk		*clk;
+> > +	struct phy		*phy;
+> > +	struct regmap		*iomuxc_gpr;
+> > +	struct reset_control	*reset;
+> > +};
+> > +
+> > +static int imx8_pcie_phy_init(struct phy *phy) {
+> > +	int ret;
+> > +	u32 val, pad_mode;
+> > +	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
+> > +
+> > +	reset_control_assert(imx8_phy->reset);
+> > +
+> > +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> > +			   IMX8MM_GPR_PCIE_REF_USE_PAD,
+> > +			   imx8_phy->refclk_pad_mode == 1 ?
+> > +			   IMX8MM_GPR_PCIE_REF_USE_PAD : 0);
+> > +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> > +			   IMX8MM_GPR_PCIE_AUX_EN,
+> > +			   IMX8MM_GPR_PCIE_AUX_EN);
+> > +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> > +			   IMX8MM_GPR_PCIE_POWER_OFF, 0);
+> > +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> > +			   IMX8MM_GPR_PCIE_SSC_EN, 0);
+> > +
+> > +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> > +			   IMX8MM_GPR_PCIE_REF_CLK_SEL,
+> > +			   imx8_phy->refclk_pad_mode == 1 ?
+> > +			   IMX8MM_GPR_PCIE_REF_CLK_EXT :
+> > +			   IMX8MM_GPR_PCIE_REF_CLK_PLL);
+> > +	usleep_range(100, 200);
+> > +
+> > +	/* Do the PHY common block reset */
+> > +	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
+> > +			   IMX8MM_GPR_PCIE_CMN_RST,
+> > +			   IMX8MM_GPR_PCIE_CMN_RST);
+> > +	usleep_range(200, 500);
+> > +
+> > +
+> > +	pad_mode = imx8_phy->refclk_pad_mode;
+> > +	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT) {
+> > +		/* Configure the pad as input */
+> > +		val = readl(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
+> > +		writel(val & ~ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
+> > +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
+> > +	} else if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT) {
+> > +		/* Configure the PHY to output the refclock via pad */
+> > +		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
+> > +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
+> > +		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
+> > +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
+> > +		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
+> > +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
+> > +		val = ANA_AUX_RX_TX_SEL_TX | ANA_AUX_TX_TERM;
+> > +		writel(val | ANA_AUX_RX_TERM_GND_EN,
+> > +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG064);
+> > +		writel(ANA_AUX_RX_TERM | ANA_AUX_TX_LVL,
+> > +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG065);
+> > +	}
+> > +
+> > +	/* Tune PHY de-emphasis setting to pass PCIe compliance. */
+> > +	writel(PCIE_PHY_TRSV_REG5_GEN1_DEEMP,
+> > +	       imx8_phy->base + PCIE_PHY_TRSV_REG5);
+> > +	writel(PCIE_PHY_TRSV_REG6_GEN2_DEEMP,
+> > +	       imx8_phy->base + PCIE_PHY_TRSV_REG6);
+> 
+> I guess those are at least in part board specific. Maybe it would be a good
+> idea to add DT properties to allow each board to specify the actual
+> de-emphasis values?
+[Richard Zhu] Agree. Would use two properties to specified them by HW board.
+Thanks.
 
-The driver creates a child device for the phy. The child device will
-never exist without the parent being active. As they are sharing a
-register range, the parent passes a regmap pointer to the child so that
-both can work with the same register range. The phy driver sets device
-data that is read by the parent to get the phy device that can be used
-to control the phy properties.
+> 
+> > +
+> > +	reset_control_deassert(imx8_phy->reset);
+> > +
+> > +	/* Polling to check the phy is ready or not. */
+> > +	ret = readl_poll_timeout(imx8_phy->base +
+> IMX8MM_PCIE_PHY_CMN_REG75,
+> > +				 val, val == PCIE_PHY_CMN_REG75_PLL_DONE,
+> > +				 10, 20000);
+> > +	return ret;
+> > +}
+> > +
+> > +static int imx8_pcie_phy_power_on(struct phy *phy) {
+> > +	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
+> > +
+> > +	return clk_prepare_enable(imx8_phy->clk);
+> > +}
+> > +
+> > +static int imx8_pcie_phy_power_off(struct phy *phy) {
+> > +	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
+> > +
+> > +	clk_disable_unprepare(imx8_phy->clk);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct phy_ops imx8_pcie_phy_ops = {
+> > +	.init		= imx8_pcie_phy_init,
+> > +	.power_on	= imx8_pcie_phy_power_on,
+> > +	.power_off	= imx8_pcie_phy_power_off,
+> > +	.owner		= THIS_MODULE,
+> > +};
+> > +
+> > +static int imx8_pcie_phy_probe(struct platform_device *pdev) {
+> > +	struct phy_provider *phy_provider;
+> > +	struct device *dev = &pdev->dev;
+> > +	struct device_node *np = dev->of_node;
+> > +	struct imx8_pcie_phy *imx8_phy;
+> > +	struct resource *res;
+> > +
+> > +	imx8_phy = devm_kzalloc(dev, sizeof(*imx8_phy), GFP_KERNEL);
+> > +	if (!imx8_phy)
+> > +		return -ENOMEM;
+> > +
+> > +	/* get PHY refclk pad mode */
+> > +	of_property_read_u32(np, "fsl,refclk-pad-mode",
+> > +			     &imx8_phy->refclk_pad_mode);
+> > +
+> > +	imx8_phy->clk = devm_clk_get(dev, "phy");
+> > +	if (IS_ERR(imx8_phy->clk)) {
+> > +		dev_err(dev, "failed to get imx pcie phy clock\n");
+> > +		return PTR_ERR(imx8_phy->clk);
+> > +	}
+> > +
+> > +	/* Grab GPR config register range */
+> > +	imx8_phy->iomuxc_gpr =
+> > +		 syscon_regmap_lookup_by_compatible("fsl,imx6q-iomuxc-gpr");
+> 
+> I would prefer if we could get the syscon via a phandle and make the GPR
+> register to use another cell of the handle.
+> 
+> That's not really important for the 8MM, where there is only one PCIe PHY,
+> but if we want to retrofit this model to the i.MX8MQ, we need to deal with
+> different GPR offsets for both PHYs and I would like to have this explicit in the
+> DT. Doing the same here would be good for consistency.
+[Richard Zhu] It seems that this is a good idea.
+But I'm not clear about how to do about that.
+IOMUXC_GPR module had been defined with 64Kbytes size and "syscon" compatible.
+On i.MX8MQ, GPR14/15 are used for PCIe0 PHY, and GPR16/17 are used for PCIe1 PHY.
+How to explicit these different offset in the different phandles?
 
-This driver is based on an initial version by
-Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+BR
+Richard
 
-Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
----
-
-Notes:
-    Changes v4 -> v5:
-    - Remove edp_tx compatible and rename the dp_tx compatible to dp-tx.
-    - Detect whether it is edp by checking whether a panel is present.
-    
-    Changes v2 -> v3:
-    - Solve TODOs and add defines for undescribed registers
-    - Remove TODOs that were irrelevant
-    
-    Changes v1 -> v2:
-    - Fix checkpatch --strict suggestions
-    - General cleanups of the code.
-    - Remove all remaining non-atomic functions.
-    - Remove unused includes and sort them.
-    - Remove unused select GENERIC_PHY
-    - Rename phy registers DP_PHY -> MTK_DP_PHY
-    - Replace usage of delays with usleep_range.
-    - Split the phy register accesses into a separate phy driver.
-    - Use a lock to guard access to mtk_dp->edid as it can be allocated/used/freed
-      in different threads
-    - use struct dp_sdp for sdp packets.
-    
-    Changes RFC -> v1:
-    - Removed unused register definitions.
-    - Replaced workqueue with threaded irq.
-    - Removed connector code.
-    - Move to atomic_* drm functions.
-    - General cleanups of the code.
-    - Remove unused select GENERIC_PHY.
-
- drivers/gpu/drm/mediatek/Kconfig       |    7 +
- drivers/gpu/drm/mediatek/Makefile      |    2 +
- drivers/gpu/drm/mediatek/mtk_dp.c      | 2813 ++++++++++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_dp_reg.h  |  535 +++++
- drivers/gpu/drm/mediatek/mtk_drm_drv.c |    1 +
- drivers/gpu/drm/mediatek/mtk_drm_drv.h |    1 +
- 6 files changed, 3359 insertions(+)
- create mode 100644 drivers/gpu/drm/mediatek/mtk_dp.c
- create mode 100644 drivers/gpu/drm/mediatek/mtk_dp_reg.h
-
-diff --git a/drivers/gpu/drm/mediatek/Kconfig b/drivers/gpu/drm/mediatek/Kconfig
-index 2976d21e9a34..029b94c71613 100644
---- a/drivers/gpu/drm/mediatek/Kconfig
-+++ b/drivers/gpu/drm/mediatek/Kconfig
-@@ -28,3 +28,10 @@ config DRM_MEDIATEK_HDMI
- 	select PHY_MTK_HDMI
- 	help
- 	  DRM/KMS HDMI driver for Mediatek SoCs
-+
-+config MTK_DPTX_SUPPORT
-+	tristate "DRM DPTX Support for Mediatek SoCs"
-+	depends on DRM_MEDIATEK
-+	select PHY_MTK_DP
-+	help
-+	  DRM/KMS Display Port driver for Mediatek SoCs.
-diff --git a/drivers/gpu/drm/mediatek/Makefile b/drivers/gpu/drm/mediatek/Makefile
-index 29098d7c8307..d86a6406055e 100644
---- a/drivers/gpu/drm/mediatek/Makefile
-+++ b/drivers/gpu/drm/mediatek/Makefile
-@@ -21,3 +21,5 @@ mediatek-drm-hdmi-objs := mtk_cec.o \
- 			  mtk_hdmi_ddc.o
- 
- obj-$(CONFIG_DRM_MEDIATEK_HDMI) += mediatek-drm-hdmi.o
-+
-+obj-$(CONFIG_MTK_DPTX_SUPPORT) += mtk_dp.o
-diff --git a/drivers/gpu/drm/mediatek/mtk_dp.c b/drivers/gpu/drm/mediatek/mtk_dp.c
-new file mode 100644
-index 000000000000..d93adab2d3c5
---- /dev/null
-+++ b/drivers/gpu/drm/mediatek/mtk_dp.c
-@@ -0,0 +1,2813 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2019 MediaTek Inc.
-+ * Copyright (c) 2021 BayLibre
-+ */
-+
-+#include <drm/drm_atomic_helper.h>
-+#include <drm/drm_bridge.h>
-+#include <drm/drm_crtc.h>
-+#include <drm/drm_dp_helper.h>
-+#include <drm/drm_edid.h>
-+#include <drm/drm_of.h>
-+#include <drm/drm_panel.h>
-+#include <drm/drm_print.h>
-+#include <drm/drm_probe_helper.h>
-+#include <linux/arm-smccc.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/errno.h>
-+#include <linux/kernel.h>
-+#include <linux/of.h>
-+#include <linux/of_irq.h>
-+#include <linux/of_platform.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/regmap.h>
-+#include <sound/hdmi-codec.h>
-+#include <video/videomode.h>
-+
-+#include "mtk_dp_reg.h"
-+
-+#define MTK_DP_AUX_WAIT_REPLY_COUNT		20000
-+#define MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT	3
-+
-+#define MTK_DP_MAX_LANES			4
-+#define MTK_DP_MAX_LINK_RATE			MTK_DP_LINKRATE_HBR3
-+
-+#define MTK_DP_TBC_BUF_READ_START_ADDR		0x08
-+
-+#define MTK_DP_TRAIN_RETRY_LIMIT		8
-+#define MTK_DP_TRAIN_MAX_ITERATIONS		5
-+
-+#define MTK_DP_AUX_WRITE_READ_WAIT_TIME_US	20
-+
-+#define MTK_DP_DP_VERSION_11			0x11
-+
-+enum mtk_dp_state {
-+	MTK_DP_STATE_INITIAL,
-+	MTK_DP_STATE_IDLE,
-+	MTK_DP_STATE_PREPARE,
-+	MTK_DP_STATE_NORMAL,
-+};
-+
-+enum mtk_dp_train_state {
-+	MTK_DP_TRAIN_STATE_STARTUP = 0,
-+	MTK_DP_TRAIN_STATE_CHECKCAP,
-+	MTK_DP_TRAIN_STATE_CHECKEDID,
-+	MTK_DP_TRAIN_STATE_TRAINING_PRE,
-+	MTK_DP_TRAIN_STATE_TRAINING,
-+	MTK_DP_TRAIN_STATE_CHECKTIMING,
-+	MTK_DP_TRAIN_STATE_NORMAL,
-+	MTK_DP_TRAIN_STATE_POWERSAVE,
-+	MTK_DP_TRAIN_STATE_DPIDLE,
-+};
-+
-+struct mtk_dp_timings {
-+	struct videomode vm;
-+
-+	u16 htotal;
-+	u16 vtotal;
-+	u8 frame_rate;
-+	u32 pix_rate_khz;
-+};
-+
-+struct mtk_dp_train_info {
-+	bool tps3;
-+	bool tps4;
-+	bool sink_ssc;
-+	bool cable_plugged_in;
-+	bool cable_state_change;
-+	bool cr_done;
-+	bool eq_done;
-+
-+	// link_rate is in multiple of 0.27Gbps
-+	int link_rate;
-+	int lane_count;
-+
-+	int irq_status;
-+	int check_cap_count;
-+};
-+
-+// Same values as used by the DP Spec for MISC0 bits 1 and 2
-+enum mtk_dp_color_format {
-+	MTK_DP_COLOR_FORMAT_RGB_444     = 0,
-+	MTK_DP_COLOR_FORMAT_YUV_422     = 1,
-+	MTK_DP_COLOR_FORMAT_YUV_444     = 2,
-+	MTK_DP_COLOR_FORMAT_YUV_420     = 3,
-+	MTK_DP_COLOR_FORMAT_YONLY       = 4,
-+	MTK_DP_COLOR_FORMAT_RAW         = 5,
-+	MTK_DP_COLOR_FORMAT_RESERVED    = 6,
-+	MTK_DP_COLOR_FORMAT_DEFAULT     = MTK_DP_COLOR_FORMAT_RGB_444,
-+	MTK_DP_COLOR_FORMAT_UNKNOWN     = 15,
-+};
-+
-+// Multiple of 0.27Gbps
-+enum mtk_dp_linkrate {
-+	MTK_DP_LINKRATE_RBR	=  0x6,
-+	MTK_DP_LINKRATE_HBR	=  0xA,
-+	MTK_DP_LINKRATE_HBR2	= 0x14,
-+	MTK_DP_LINKRATE_HBR25	= 0x19,
-+	MTK_DP_LINKRATE_HBR3	= 0x1E,
-+};
-+
-+// Same values as used for DP Spec MISC0 bits 5,6,7
-+enum mtk_dp_color_depth {
-+	MTK_DP_COLOR_DEPTH_6BIT       = 0,
-+	MTK_DP_COLOR_DEPTH_8BIT       = 1,
-+	MTK_DP_COLOR_DEPTH_10BIT      = 2,
-+	MTK_DP_COLOR_DEPTH_12BIT      = 3,
-+	MTK_DP_COLOR_DEPTH_16BIT      = 4,
-+	MTK_DP_COLOR_DEPTH_UNKNOWN    = 5,
-+};
-+
-+struct mtk_dp_audio_cfg {
-+	int sample_rate;
-+	int word_length_bits;
-+	int channels;
-+};
-+
-+struct mtk_dp_info {
-+	enum mtk_dp_color_depth depth;
-+	enum mtk_dp_color_format format;
-+	struct mtk_dp_audio_cfg audio_caps;
-+	struct mtk_dp_timings timings;
-+};
-+
-+struct mtk_dp {
-+	struct device *dev;
-+	struct platform_device *phy_dev;
-+	struct phy *phy;
-+
-+	struct drm_device *drm_dev;
-+	struct drm_bridge bridge;
-+	struct drm_bridge *next_bridge;
-+	struct drm_dp_aux aux;
-+
-+	struct mutex edid_lock;
-+	struct edid *edid;
-+
-+	u8 rx_cap[DP_RECEIVER_CAP_SIZE];
-+
-+	struct mtk_dp_info info;
-+	enum mtk_dp_state state;
-+
-+	struct mtk_dp_train_info train_info;
-+	enum mtk_dp_train_state train_state;
-+
-+	struct regmap *regs;
-+	struct clk *dp_tx_clk;
-+
-+	bool enabled;
-+	bool audio_enable;
-+
-+	bool has_fec;
-+	struct mutex dp_lock;
-+
-+	struct mutex update_plugged_status_lock;
-+
-+	hdmi_codec_plugged_cb plugged_cb;
-+	struct device *codec_dev;
-+	u8 connector_eld[MAX_ELD_BYTES];
-+};
-+
-+enum mtk_dp_sdp_type {
-+	MTK_DP_SDP_NONE = 0x00,
-+	MTK_DP_SDP_ACM  = 0x01,
-+	MTK_DP_SDP_ISRC = 0x02,
-+	MTK_DP_SDP_AVI  = 0x03,
-+	MTK_DP_SDP_AUI  = 0x04,
-+	MTK_DP_SDP_SPD  = 0x05,
-+	MTK_DP_SDP_MPEG = 0x06,
-+	MTK_DP_SDP_NTSC = 0x07,
-+	MTK_DP_SDP_VSP  = 0x08,
-+	MTK_DP_SDP_VSC  = 0x09,
-+	MTK_DP_SDP_EXT  = 0x0A,
-+	MTK_DP_SDP_PPS0 = 0x0B,
-+	MTK_DP_SDP_PPS1 = 0x0C,
-+	MTK_DP_SDP_PPS2 = 0x0D,
-+	MTK_DP_SDP_PPS3 = 0x0E,
-+	MTK_DP_SDP_DRM  = 0x10,
-+	MTK_DP_SDP_MAX_NUM
-+};
-+
-+struct mtk_dp_sdp_packet {
-+	enum mtk_dp_sdp_type type;
-+	struct dp_sdp sdp;
-+};
-+
-+#define MTK_DP_IEC_CHANNEL_STATUS_LEN 5
-+union mtk_dp_audio_channel_status {
-+	struct {
-+		u8 rev : 1;
-+		u8 is_lpcm : 1;
-+		u8 copy_right : 1;
-+		u8 additional_format_info : 3;
-+		u8 channel_status_mode : 2;
-+		u8 category_code;
-+		u8 src_num : 4;
-+		u8 channel_num : 4;
-+		u8 sampling_freq : 4;
-+		u8 clk_accuracy : 2;
-+		u8 rev2 : 2;
-+		u8 word_len : 4;
-+		u8 original_sampling_freq : 4;
-+	} iec;
-+
-+	u8 buf[MTK_DP_IEC_CHANNEL_STATUS_LEN];
-+};
-+
-+static struct regmap_config mtk_dp_regmap_config = {
-+	.reg_bits	= 32,
-+	.val_bits	= 32,
-+	.reg_stride	= 4,
-+	.max_register	= SEC_OFFSET + 0x90,
-+	.name		= "mtk-dp-registers",
-+};
-+
-+static bool mtk_dp_is_edp(struct mtk_dp *mtk_dp)
-+{
-+	return mtk_dp->next_bridge != NULL;
-+}
-+
-+static struct mtk_dp *mtk_dp_from_bridge(struct drm_bridge *b)
-+{
-+	return container_of(b, struct mtk_dp, bridge);
-+}
-+
-+static u32 mtk_dp_read(struct mtk_dp *mtk_dp, u32 offset)
-+{
-+	u32 read_val;
-+	int ret;
-+
-+	ret = regmap_read(mtk_dp->regs, offset, &read_val);
-+	if (ret) {
-+		dev_err(mtk_dp->dev, "Failed to read register 0x%x: %d\n",
-+			offset, ret);
-+		return 0;
-+	}
-+
-+	return read_val;
-+}
-+
-+static void mtk_dp_write(struct mtk_dp *mtk_dp, u32 offset, u32 val)
-+{
-+	int ret;
-+
-+	ret = regmap_write(mtk_dp->regs, offset, val);
-+	if (ret)
-+		dev_err(mtk_dp->dev,
-+			"Failed to write register 0x%x with value 0x%x: %d\n",
-+			offset, val, ret);
-+}
-+
-+static void mtk_dp_update_bits(struct mtk_dp *mtk_dp, u32 offset, u32 val,
-+			       u32 mask)
-+{
-+	int ret;
-+
-+	ret = regmap_update_bits(mtk_dp->regs, offset, mask, val);
-+	if (ret)
-+		dev_err(mtk_dp->dev,
-+			"Failed to update register 0x%x with value 0x%x, mask 0x%x: %d\n",
-+			offset, val, mask, ret);
-+}
-+
-+static void mtk_dp_bulk_16bit_write(struct mtk_dp *mtk_dp, u32 offset, u8 *buf,
-+				    size_t length)
-+{
-+	int i;
-+	int num_regs = (length + 1) / 2;
-+
-+	// 2 bytes per register
-+	for (i = 0; i < num_regs; i++) {
-+		u32 val = buf[i * 2] |
-+			  (i * 2 + 1 < length ? buf[i * 2 + 1] << 8 : 0);
-+
-+		mtk_dp_write(mtk_dp, offset + i * 4, val);
-+	}
-+}
-+
-+static unsigned long mtk_dp_sip_atf_call(unsigned int cmd, unsigned int para)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_smc(MTK_DP_SIP_CONTROL_AARCH32, cmd, para, 0, 0, 0, 0, 0,
-+		      &res);
-+
-+	pr_debug("[DPTX]%s cmd 0x%x, p1 0x%x, ret 0x%lx-0x%lx", __func__, cmd,
-+		 para, res.a0, res.a1);
-+	return res.a1;
-+}
-+
-+static void mtk_dp_msa_bypass_disable(struct mtk_dp *mtk_dp)
-+{
-+	const u16 bits_to_set = BIT(HTOTAL_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(VTOTAL_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(HSTART_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(VSTART_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(HWIDTH_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(VHEIGHT_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(HSP_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(HSW_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(VSP_SEL_DP_ENC0_P0_SHIFT) |
-+				BIT(VSW_SEL_DP_ENC0_P0_SHIFT);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3030, bits_to_set,
-+			   bits_to_set);
-+}
-+
-+static void mtk_dp_set_msa(struct mtk_dp *mtk_dp)
-+{
-+	struct mtk_dp_timings *timings = &mtk_dp->info.timings;
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3010, timings->htotal,
-+			   HTOTAL_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3018,
-+			   timings->vm.hsync_len + timings->vm.hback_porch,
-+			   HSTART_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3028,
-+			   timings->vm.hsync_len << HSW_SW_DP_ENC0_P0_SHIFT,
-+			   HSW_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3028, 0,
-+			   HSP_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3020, timings->vm.hactive,
-+			   HWIDTH_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3014, timings->vtotal,
-+			   VTOTAL_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_301C,
-+			   timings->vm.vsync_len + timings->vm.vback_porch,
-+			   VSTART_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_302C,
-+			   timings->vm.vsync_len << VSW_SW_DP_ENC0_P0_SHIFT,
-+			   VSW_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_302C, 0,
-+			   VSP_SW_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3024, timings->vm.vactive,
-+			   VHEIGHT_SW_DP_ENC0_P0_MASK);
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3064, timings->vm.hactive,
-+			   HDE_NUM_LAST_DP_ENC0_P0_MASK);
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3154, timings->htotal,
-+			   PGEN_HTOTAL_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3158,
-+			   timings->vm.hfront_porch,
-+			   PGEN_HSYNC_RISING_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_315C, timings->vm.hsync_len,
-+			   PGEN_HSYNC_PULSE_WIDTH_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3160,
-+			   timings->vm.hback_porch + timings->vm.hsync_len,
-+			   PGEN_HFDE_START_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3164, timings->vm.hactive,
-+			   PGEN_HFDE_ACTIVE_WIDTH_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3168, timings->vtotal,
-+			   PGEN_VTOTAL_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_316C,
-+			   timings->vm.vfront_porch,
-+			   PGEN_VSYNC_RISING_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3170, timings->vm.vsync_len,
-+			   PGEN_VSYNC_PULSE_WIDTH_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3174,
-+			   timings->vm.vback_porch + timings->vm.vsync_len,
-+			   PGEN_VFDE_START_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3178, timings->vm.vactive,
-+			   PGEN_VFDE_ACTIVE_WIDTH_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_set_color_format(struct mtk_dp *mtk_dp,
-+				    enum mtk_dp_color_format color_format)
-+{
-+	u32 val;
-+
-+	mtk_dp->info.format = color_format;
-+
-+	// Update MISC0
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3034,
-+			   color_format << DP_TEST_COLOR_FORMAT_SHIFT,
-+			   DP_TEST_COLOR_FORMAT_MASK);
-+
-+	switch (color_format) {
-+	case MTK_DP_COLOR_FORMAT_YUV_422:
-+		val = PIXEL_ENCODE_FORMAT_DP_ENC0_P0_YCBCR422;
-+		break;
-+	case MTK_DP_COLOR_FORMAT_YUV_420:
-+		val = PIXEL_ENCODE_FORMAT_DP_ENC0_P0_YCBCR420;
-+		break;
-+	case MTK_DP_COLOR_FORMAT_YONLY:
-+	case MTK_DP_COLOR_FORMAT_RAW:
-+	case MTK_DP_COLOR_FORMAT_RESERVED:
-+	case MTK_DP_COLOR_FORMAT_UNKNOWN:
-+		drm_warn(mtk_dp->drm_dev, "Unsupported color format: %d\n",
-+			 color_format);
-+		fallthrough;
-+	case MTK_DP_COLOR_FORMAT_RGB_444:
-+	case MTK_DP_COLOR_FORMAT_YUV_444:
-+		val = PIXEL_ENCODE_FORMAT_DP_ENC0_P0_RGB;
-+		break;
-+	}
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_303C, val,
-+			   PIXEL_ENCODE_FORMAT_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_set_color_depth(struct mtk_dp *mtk_dp,
-+				   enum mtk_dp_color_depth color_depth)
-+{
-+	u32 val;
-+
-+	mtk_dp->info.depth = color_depth;
-+
-+	// Update MISC0
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3034,
-+			   color_depth << DP_TEST_BIT_DEPTH_SHIFT,
-+			   DP_TEST_BIT_DEPTH_MASK);
-+
-+	switch (color_depth) {
-+	case MTK_DP_COLOR_DEPTH_6BIT:
-+		val = VIDEO_COLOR_DEPTH_DP_ENC0_P0_6BIT;
-+		break;
-+	case MTK_DP_COLOR_DEPTH_8BIT:
-+		val = VIDEO_COLOR_DEPTH_DP_ENC0_P0_8BIT;
-+		break;
-+	case MTK_DP_COLOR_DEPTH_10BIT:
-+		val = VIDEO_COLOR_DEPTH_DP_ENC0_P0_10BIT;
-+		break;
-+	case MTK_DP_COLOR_DEPTH_12BIT:
-+		val = VIDEO_COLOR_DEPTH_DP_ENC0_P0_12BIT;
-+		break;
-+	case MTK_DP_COLOR_DEPTH_16BIT:
-+		val = VIDEO_COLOR_DEPTH_DP_ENC0_P0_16BIT;
-+		break;
-+	case MTK_DP_COLOR_DEPTH_UNKNOWN:
-+		drm_warn(mtk_dp->drm_dev, "Unsupported color depth %d\n",
-+			 color_depth);
-+		return;
-+	}
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_303C, val,
-+			   VIDEO_COLOR_DEPTH_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_mn_overwrite_disable(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3004, 0,
-+			   VIDEO_M_CODE_SEL_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_set_sram_read_start(struct mtk_dp *mtk_dp, u32 val)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_303C,
-+			   val << SRAM_START_READ_THRD_DP_ENC0_P0_SHIFT,
-+			   SRAM_START_READ_THRD_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_setup_encoder(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_303C,
-+			   BIT(VIDEO_MN_GEN_EN_DP_ENC0_P0_SHIFT),
-+			   VIDEO_MN_GEN_EN_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3040,
-+			   0x20 << SDP_DOWN_CNT_INIT_DP_ENC0_P0_SHIFT,
-+			   SDP_DOWN_CNT_INIT_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3364,
-+			   0x20 << SDP_DOWN_CNT_INIT_IN_HBLANK_DP_ENC1_P0_SHIFT,
-+			   SDP_DOWN_CNT_INIT_IN_HBLANK_DP_ENC1_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3300,
-+			   2 << VIDEO_AFIFO_RDY_SEL_DP_ENC1_P0_SHIFT,
-+			   VIDEO_AFIFO_RDY_SEL_DP_ENC1_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3364,
-+			   4 << FIFO_READ_START_POINT_DP_ENC1_P0_SHIFT,
-+			   FIFO_READ_START_POINT_DP_ENC1_P0_MASK);
-+	mtk_dp_write(mtk_dp, MTK_DP_ENC1_P0_3368,
-+		     1 << VIDEO_SRAM_FIFO_CNT_RESET_SEL_DP_ENC1_P0_SHIFT |
-+			     1 << VIDEO_STABLE_CNT_THRD_DP_ENC1_P0_SHIFT |
-+			     BIT(SDP_DP13_EN_DP_ENC1_P0_SHIFT) |
-+			     1 << BS2BS_MODE_DP_ENC1_P0_SHIFT);
-+}
-+
-+static void mtk_dp_pg_disable(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3038, 0,
-+			   VIDEO_SOURCE_SEL_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_31B0,
-+			   4 << PGEN_PATTERN_SEL_SHIFT, PGEN_PATTERN_SEL_MASK);
-+}
-+
-+static void mtk_dp_audio_setup_channels(struct mtk_dp *mtk_dp,
-+					struct mtk_dp_audio_cfg *cfg)
-+{
-+	u32 channel_enable_bits;
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3324,
-+			   AUDIO_SOURCE_MUX_DP_ENC1_P0_DPRX,
-+			   AUDIO_SOURCE_MUX_DP_ENC1_P0_MASK);
-+
-+	//audio channel count change reset
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_33F4, BIT(9), BIT(9));
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3304,
-+			   AU_PRTY_REGEN_DP_ENC1_P0_MASK,
-+			   AU_PRTY_REGEN_DP_ENC1_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3304,
-+			   AU_CH_STS_REGEN_DP_ENC1_P0_MASK,
-+			   AU_CH_STS_REGEN_DP_ENC1_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3304,
-+			   AUDIO_SAMPLE_PRSENT_REGEN_DP_ENC1_P0_MASK,
-+			   AUDIO_SAMPLE_PRSENT_REGEN_DP_ENC1_P0_MASK);
-+
-+	switch (cfg->channels) {
-+	case 2:
-+		channel_enable_bits = AUDIO_2CH_SEL_DP_ENC0_P0_MASK |
-+				      AUDIO_2CH_EN_DP_ENC0_P0_MASK;
-+		break;
-+	case 8:
-+	default:
-+		channel_enable_bits = AUDIO_8CH_SEL_DP_ENC0_P0_MASK |
-+				      AUDIO_8CH_EN_DP_ENC0_P0_MASK;
-+		break;
-+	}
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3088,
-+			   channel_enable_bits | AU_EN_DP_ENC0_P0_MASK,
-+			   AUDIO_2CH_SEL_DP_ENC0_P0_MASK |
-+			   AUDIO_2CH_EN_DP_ENC0_P0_MASK |
-+			   AUDIO_8CH_SEL_DP_ENC0_P0_MASK |
-+			   AUDIO_8CH_EN_DP_ENC0_P0_MASK |
-+			   AU_EN_DP_ENC0_P0_MASK);
-+
-+	//audio channel count change reset
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_33F4, 0, BIT(9));
-+
-+	//enable audio reset
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_33F4, BIT(0), BIT(0));
-+}
-+
-+static void mtk_dp_audio_channel_status_set(struct mtk_dp *mtk_dp,
-+					    struct mtk_dp_audio_cfg *cfg)
-+{
-+	union mtk_dp_audio_channel_status channel_status;
-+
-+	memset(&channel_status, 0, sizeof(channel_status));
-+
-+	switch (cfg->sample_rate) {
-+	case 32000:
-+		channel_status.iec.sampling_freq = 3;
-+		break;
-+	case 44100:
-+		channel_status.iec.sampling_freq = 0;
-+		break;
-+	case 48000:
-+		channel_status.iec.sampling_freq = 2;
-+		break;
-+	case 88200:
-+		channel_status.iec.sampling_freq = 8;
-+		break;
-+	case 96000:
-+		channel_status.iec.sampling_freq = 0xA;
-+		break;
-+	case 192000:
-+		channel_status.iec.sampling_freq = 0xE;
-+		break;
-+	default:
-+		channel_status.iec.sampling_freq = 0x1;
-+		break;
-+	}
-+
-+	switch (cfg->word_length_bits) {
-+	case 16:
-+		channel_status.iec.word_len = 0x02;
-+		break;
-+	case 20:
-+		channel_status.iec.word_len = 0x03;
-+		break;
-+	case 24:
-+		channel_status.iec.word_len = 0x0B;
-+		break;
-+	}
-+
-+	// IEC 60958 consumer channel status bits
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_308C,
-+			   channel_status.buf[1] << 8 | channel_status.buf[0],
-+			   CH_STATUS_0_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3090,
-+			   channel_status.buf[3] << 8 | channel_status.buf[2],
-+			   CH_STATUS_1_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3094, channel_status.buf[4],
-+			   CH_STATUS_2_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_audio_sdp_asp_set_channels(struct mtk_dp *mtk_dp,
-+					      int channels)
-+{
-+	if (channels != 2 && channels != 8)
-+		channels = 8;
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_312C,
-+			   (channels - 1) << ASP_HB3_DP_ENC0_P0_SHIFT,
-+			   ASP_HB2_DP_ENC0_P0_MASK | ASP_HB3_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_audio_set_divider(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_30BC,
-+			   AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_DIV_2,
-+			   AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_MASK);
-+}
-+
-+static bool mtk_dp_plug_state(struct mtk_dp *mtk_dp)
-+{
-+	return !!(mtk_dp_read(mtk_dp, MTK_DP_TRANS_P0_3414) &
-+		  HPD_DB_DP_TRANS_P0_MASK);
-+}
-+
-+static void mtk_dp_sdp_trigger_packet(struct mtk_dp *mtk_dp,
-+				      enum mtk_dp_sdp_type type)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3280, type,
-+			   SDP_PACKET_TYPE_DP_ENC1_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3280, SDP_PACKET_W_DP_ENC1_P0,
-+			   SDP_PACKET_W_DP_ENC1_P0);
-+}
-+
-+static void mtk_dp_sdp_set_data(struct mtk_dp *mtk_dp, u8 *data_bytes)
-+{
-+	mtk_dp_bulk_16bit_write(mtk_dp, MTK_DP_ENC1_P0_3200, data_bytes, 0x10);
-+}
-+
-+static void mtk_dp_sdp_set_header(struct mtk_dp *mtk_dp,
-+				  enum mtk_dp_sdp_type type,
-+				  struct dp_sdp_header *header)
-+{
-+	u32 db_addr;
-+
-+	switch (type) {
-+	case MTK_DP_SDP_DRM:
-+		db_addr = MTK_DP_ENC0_P0_3138;
-+		break;
-+	case MTK_DP_SDP_PPS0:
-+	case MTK_DP_SDP_PPS1:
-+	case MTK_DP_SDP_PPS2:
-+	case MTK_DP_SDP_PPS3:
-+		db_addr = MTK_DP_ENC0_P0_3130;
-+		break;
-+	default:
-+		db_addr = MTK_DP_ENC0_P0_30D8 + (type - MTK_DP_SDP_ACM) * 8;
-+	}
-+
-+	mtk_dp_bulk_16bit_write(mtk_dp, db_addr, (u8 *)header, 4);
-+}
-+
-+static const u32 mtk_dp_sdp_type_to_reg[MTK_DP_SDP_MAX_NUM] = {
-+	/* MTK_DP_SDP_NONE => */ 0x0,
-+	/* MTK_DP_SDP_ACM  => */ MTK_DP_ENC0_P0_30B4,
-+	/* MTK_DP_SDP_ISRC => */ MTK_DP_ENC0_P0_30B4 + 1,
-+	/* MTK_DP_SDP_AVI  => */ MTK_DP_ENC0_P0_30A4 + 1,
-+	/* MTK_DP_SDP_AUI  => */ MTK_DP_ENC0_P0_30A8,
-+	/* MTK_DP_SDP_SPD  => */ MTK_DP_ENC0_P0_30A8 + 1,
-+	/* MTK_DP_SDP_MPEG => */ MTK_DP_ENC0_P0_30AC,
-+	/* MTK_DP_SDP_NTSC => */ MTK_DP_ENC0_P0_30AC + 1,
-+	/* MTK_DP_SDP_VSP  => */ MTK_DP_ENC0_P0_30B0,
-+	/* MTK_DP_SDP_VSC  => */ MTK_DP_ENC0_P0_30B8,
-+	/* MTK_DP_SDP_EXT  => */ MTK_DP_ENC0_P0_30B0 + 1,
-+	/* MTK_DP_SDP_PPS0 => */ MTK_DP_ENC0_P0_31E8,
-+	/* MTK_DP_SDP_PPS1 => */ MTK_DP_ENC0_P0_31E8,
-+	/* MTK_DP_SDP_PPS2 => */ MTK_DP_ENC0_P0_31E8,
-+	/* MTK_DP_SDP_PPS3 => */ MTK_DP_ENC0_P0_31E8,
-+	/* MTK_DP_SDP_DRM  => */ MTK_DP_ENC0_P0_31DC,
-+};
-+
-+static void mtk_dp_disable_sdp(struct mtk_dp *mtk_dp,
-+			       enum mtk_dp_sdp_type type)
-+{
-+	if (type == MTK_DP_SDP_NONE)
-+		return;
-+
-+	// Disable periodic send
-+	mtk_dp_update_bits(mtk_dp, mtk_dp_sdp_type_to_reg[type], 0, 0xFF);
-+}
-+
-+static void mtk_dp_setup_sdp(struct mtk_dp *mtk_dp,
-+			     struct mtk_dp_sdp_packet *packet)
-+{
-+	mtk_dp_sdp_set_data(mtk_dp, packet->sdp.db);
-+	mtk_dp_sdp_set_header(mtk_dp, packet->type, &packet->sdp.sdp_header);
-+
-+	mtk_dp_disable_sdp(mtk_dp, packet->type);
-+
-+	switch (packet->type) {
-+	case MTK_DP_SDP_NONE:
-+		break;
-+	case MTK_DP_SDP_ISRC:
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_31EC,
-+				   0x1C << ISRC1_HB3_DP_ENC0_P0_SHIFT,
-+				   ISRC1_HB3_DP_ENC0_P0_MASK);
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3280, MTK_DP_SDP_ISRC,
-+				   SDP_PACKET_TYPE_DP_ENC1_P0_MASK);
-+
-+		if (packet->sdp.sdp_header.HB3 & BIT(2))
-+			mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_30BC,
-+					   BIT(ISRC_CONT_DP_ENC0_P0_SHIFT),
-+					   ISRC_CONT_DP_ENC0_P0_MASK);
-+		else
-+			mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_30BC, 0,
-+					   ISRC_CONT_DP_ENC0_P0_MASK);
-+
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3280,
-+				   SDP_PACKET_W_DP_ENC1_P0,
-+				   SDP_PACKET_W_DP_ENC1_P0);
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_30B4,
-+				   5 << ISRC_CFG_DP_ENC0_P0_SHIFT,
-+				   ISRC_CFG_DP_ENC0_P0_MASK);
-+		break;
-+	case MTK_DP_SDP_DRM:
-+		mtk_dp_sdp_trigger_packet(mtk_dp, packet->type);
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_31DC,
-+				   5 << HDR0_CFG_DP_ENC0_P0_SHIFT,
-+				   HDR0_CFG_DP_ENC0_P0_MASK);
-+		break;
-+	case MTK_DP_SDP_ACM:
-+	case MTK_DP_SDP_AVI:
-+	case MTK_DP_SDP_AUI:
-+	case MTK_DP_SDP_SPD:
-+	case MTK_DP_SDP_MPEG:
-+	case MTK_DP_SDP_NTSC:
-+	case MTK_DP_SDP_VSP:
-+	case MTK_DP_SDP_VSC:
-+	case MTK_DP_SDP_EXT:
-+	case MTK_DP_SDP_PPS0:
-+	case MTK_DP_SDP_PPS1:
-+	case MTK_DP_SDP_PPS2:
-+	case MTK_DP_SDP_PPS3:
-+		mtk_dp_sdp_trigger_packet(mtk_dp, packet->type);
-+		// Enable periodic sending
-+		mtk_dp_update_bits(mtk_dp, mtk_dp_sdp_type_to_reg[packet->type],
-+				   0x05, 0xff);
-+		break;
-+	default:
-+		break;
-+	}
-+}
-+
-+static void mtk_dp_sdp_vsc_ext_disable(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_30A0, 0,
-+			   BIT(7) | BIT(8) | BIT(12));
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_328C, 0, BIT(7));
-+}
-+
-+static void mtk_dp_aux_irq_clear(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_write(mtk_dp, MTK_DP_AUX_P0_3640,
-+		     BIT(AUX_400US_TIMEOUT_IRQ_AUX_TX_P0_SHIFT) |
-+		     BIT(AUX_RX_DATA_RECV_IRQ_AUX_TX_P0_SHIFT) |
-+		     BIT(AUX_RX_ADDR_RECV_IRQ_AUX_TX_P0_SHIFT) |
-+		     BIT(AUX_RX_CMD_RECV_IRQ_AUX_TX_P0_SHIFT) |
-+		     BIT(AUX_RX_MCCS_RECV_COMPLETE_IRQ_AUX_TX_P0_SHIFT) |
-+		     BIT(AUX_RX_EDID_RECV_COMPLETE_IRQ_AUX_TX_P0_SHIFT) |
-+		     BIT(AUX_RX_AUX_RECV_COMPLETE_IRQ_AUX_TX_P0_SHIFT));
-+}
-+
-+static void mtk_dp_aux_set_cmd(struct mtk_dp *mtk_dp, u8 cmd, u32 addr)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3644, cmd,
-+			   MCU_REQUEST_COMMAND_AUX_TX_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3648, addr,
-+			   MCU_REQUEST_ADDRESS_LSB_AUX_TX_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_364C, addr >> 16,
-+			   MCU_REQUEST_ADDRESS_MSB_AUX_TX_P0_MASK);
-+}
-+
-+static void mtk_dp_aux_cmd_complete(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3650,
-+			   BIT(MCU_ACK_TRAN_COMPLETE_AUX_TX_P0_SHIFT),
-+			   MCU_ACK_TRAN_COMPLETE_AUX_TX_P0_MASK |
-+				   PHY_FIFO_RST_AUX_TX_P0_MASK |
-+				   MCU_REQ_DATA_NUM_AUX_TX_P0_MASK);
-+}
-+
-+static void mtk_dp_aux_request_ready(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3630,
-+			   BIT(AUX_TX_REQUEST_READY_AUX_TX_P0_SHIFT),
-+			   AUX_TX_REQUEST_READY_AUX_TX_P0_MASK);
-+}
-+
-+static void mtk_dp_aux_fill_write_fifo(struct mtk_dp *mtk_dp, u8 *buf,
-+				       size_t length)
-+{
-+	mtk_dp_bulk_16bit_write(mtk_dp, MTK_DP_AUX_P0_3708, buf, length);
-+}
-+
-+static void mtk_dp_aux_read_rx_fifo(struct mtk_dp *mtk_dp, u8 *buf,
-+				    size_t length, int read_delay)
-+{
-+	int read_pos;
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3620, 0,
-+			   AUX_RD_MODE_AUX_TX_P0_MASK);
-+
-+	for (read_pos = 0; read_pos < length; read_pos++) {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3620,
-+				   BIT(AUX_RX_FIFO_R_PULSE_TX_P0_SHIFT),
-+				   AUX_RX_FIFO_READ_PULSE_TX_P0_MASK);
-+		usleep_range(read_delay, read_delay * 2);
-+		buf[read_pos] =
-+			(u8)(mtk_dp_read(mtk_dp, MTK_DP_AUX_P0_3620) &
-+			     AUX_RX_FIFO_READ_DATA_AUX_TX_P0_MASK >>
-+				     AUX_RX_FIFO_READ_DATA_AUX_TX_P0_SHIFT);
-+	}
-+}
-+
-+static void mtk_dp_aux_set_length(struct mtk_dp *mtk_dp, size_t length)
-+{
-+	if (length > 0) {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3650,
-+				   (length - 1)
-+					   << MCU_REQ_DATA_NUM_AUX_TX_P0_SHIFT,
-+				   MCU_REQ_DATA_NUM_AUX_TX_P0_MASK);
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_362C, 0,
-+				   AUX_NO_LENGTH_AUX_TX_P0_MASK |
-+					   AUX_TX_AUXTX_OV_EN_AUX_TX_P0_MASK |
-+					   AUX_RESERVED_RW_0_AUX_TX_P0_MASK);
-+	} else {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_362C,
-+				   BIT(AUX_NO_LENGTH_AUX_TX_P0_SHIFT),
-+				   AUX_NO_LENGTH_AUX_TX_P0_MASK |
-+					   AUX_TX_AUXTX_OV_EN_AUX_TX_P0_MASK |
-+					   AUX_RESERVED_RW_0_AUX_TX_P0_MASK);
-+	}
-+}
-+
-+static int mtk_dp_aux_wait_for_completion(struct mtk_dp *mtk_dp, bool is_read)
-+{
-+	int wait_reply = MTK_DP_AUX_WAIT_REPLY_COUNT;
-+
-+	while (--wait_reply) {
-+		u32 aux_irq_status;
-+
-+		if (is_read) {
-+			u32 fifo_status =
-+				mtk_dp_read(mtk_dp, MTK_DP_AUX_P0_3618);
-+
-+			if (fifo_status &
-+			    (AUX_RX_FIFO_WRITE_POINTER_AUX_TX_P0_MASK |
-+			     AUX_RX_FIFO_FULL_AUX_TX_P0_MASK)) {
-+				return 0;
-+			}
-+		}
-+
-+		aux_irq_status = mtk_dp_read(mtk_dp, MTK_DP_AUX_P0_3640);
-+		if (aux_irq_status & AUX_RX_RECV_COMPLETE_IRQ_TX_P0_MASK)
-+			return 0;
-+
-+		if (aux_irq_status & AUX_400US_TIMEOUT_IRQ_AUX_TX_P0_MASK)
-+			return -ETIMEDOUT;
-+
-+		usleep_range(1000, 5000);
-+	}
-+
-+	return -ETIMEDOUT;
-+}
-+
-+static int mtk_dp_aux_do_transfer(struct mtk_dp *mtk_dp, bool is_read, u8 cmd,
-+				  u32 addr, u8 *buf, size_t length)
-+{
-+	int ret;
-+	u32 reply_cmd;
-+
-+	if (is_read && (length > DP_AUX_MAX_PAYLOAD_BYTES ||
-+			(cmd == DP_AUX_NATIVE_READ && !length)))
-+		return -EINVAL;
-+
-+	if (!is_read)
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3704,
-+				   BIT(AUX_TX_FIFO_NEW_MODE_EN_AUX_TX_P0_SHIFT),
-+				   AUX_TX_FIFO_NEW_MODE_EN_AUX_TX_P0_MASK);
-+
-+	mtk_dp_aux_cmd_complete(mtk_dp);
-+	mtk_dp_aux_irq_clear(mtk_dp);
-+	usleep_range(MTK_DP_AUX_WRITE_READ_WAIT_TIME_US,
-+		     MTK_DP_AUX_WRITE_READ_WAIT_TIME_US * 2);
-+
-+	mtk_dp_aux_set_cmd(mtk_dp, cmd, addr);
-+	mtk_dp_aux_set_length(mtk_dp, length);
-+
-+	if (!is_read) {
-+		if (length)
-+			mtk_dp_aux_fill_write_fifo(mtk_dp, buf, length);
-+
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3704,
-+				   AUX_TX_FIFO_WRITE_DATA_NEW_MODE_TOGGLE_AUX_TX_P0_MASK,
-+				   AUX_TX_FIFO_WRITE_DATA_NEW_MODE_TOGGLE_AUX_TX_P0_MASK);
-+	}
-+
-+	mtk_dp_aux_request_ready(mtk_dp);
-+
-+	ret = mtk_dp_aux_wait_for_completion(mtk_dp, is_read);
-+
-+	reply_cmd = mtk_dp_read(mtk_dp, MTK_DP_AUX_P0_3624) &
-+		    AUX_RX_REPLY_COMMAND_AUX_TX_P0_MASK;
-+	if (ret || reply_cmd) {
-+		u32 phy_status = mtk_dp_read(mtk_dp, MTK_DP_AUX_P0_3628) &
-+				 AUX_RX_PHY_STATE_AUX_TX_P0_MASK;
-+		if (phy_status != AUX_RX_PHY_STATE_AUX_TX_P0_RX_IDLE) {
-+			drm_err(mtk_dp->drm_dev,
-+				"AUX Rx Aux hang, need SW reset\n");
-+			ret = -EIO;
-+		}
-+
-+		mtk_dp_aux_cmd_complete(mtk_dp);
-+		mtk_dp_aux_irq_clear(mtk_dp);
-+
-+		usleep_range(MTK_DP_AUX_WRITE_READ_WAIT_TIME_US,
-+			     MTK_DP_AUX_WRITE_READ_WAIT_TIME_US * 2);
-+		return ret;
-+	}
-+
-+	if (!length) {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_362C, 0,
-+				   AUX_NO_LENGTH_AUX_TX_P0_MASK |
-+					   AUX_TX_AUXTX_OV_EN_AUX_TX_P0_MASK |
-+					   AUX_RESERVED_RW_0_AUX_TX_P0_MASK);
-+	} else if (is_read) {
-+		int read_delay;
-+
-+		if (cmd == (DP_AUX_I2C_READ | DP_AUX_I2C_MOT) ||
-+		    cmd == DP_AUX_I2C_READ)
-+			read_delay = 500;
-+		else
-+			read_delay = 100;
-+
-+		mtk_dp_aux_read_rx_fifo(mtk_dp, buf, length, read_delay);
-+	}
-+
-+	mtk_dp_aux_cmd_complete(mtk_dp);
-+	mtk_dp_aux_irq_clear(mtk_dp);
-+	usleep_range(MTK_DP_AUX_WRITE_READ_WAIT_TIME_US,
-+		     MTK_DP_AUX_WRITE_READ_WAIT_TIME_US * 2);
-+
-+	return 0;
-+}
-+
-+static bool mtk_dp_set_swing_pre_emphasis(struct mtk_dp *mtk_dp, int lane_num,
-+					  int swing_val, int preemphasis)
-+{
-+	u32 lane_shift = lane_num * DP_TX1_VOLT_SWING_SHIFT;
-+
-+	if (lane_num < 0 || lane_num > 3)
-+		return false;
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_SWING_EMP,
-+			   swing_val << (DP_TX0_VOLT_SWING_SHIFT + lane_shift),
-+			   DP_TX0_VOLT_SWING_MASK << lane_shift);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_SWING_EMP,
-+			   preemphasis << (DP_TX0_PRE_EMPH_SHIFT + lane_shift),
-+			   DP_TX0_PRE_EMPH_MASK << lane_shift);
-+
-+	return true;
-+}
-+
-+static void mtk_dp_reset_swing_pre_emphasis(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_SWING_EMP, 0,
-+			   DP_TX0_VOLT_SWING_MASK | DP_TX1_VOLT_SWING_MASK |
-+				   DP_TX2_VOLT_SWING_MASK |
-+				   DP_TX3_VOLT_SWING_MASK |
-+				   DP_TX0_PRE_EMPH_MASK | DP_TX1_PRE_EMPH_MASK |
-+				   DP_TX2_PRE_EMPH_MASK | DP_TX3_PRE_EMPH_MASK);
-+}
-+
-+static void mtk_dp_fec_enable(struct mtk_dp *mtk_dp, bool enable)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3540,
-+			   enable ? BIT(FEC_EN_DP_TRANS_P0_SHIFT) : 0,
-+			   FEC_EN_DP_TRANS_P0_MASK);
-+}
-+
-+static u32 mtk_dp_swirq_get_clear(struct mtk_dp *mtk_dp)
-+{
-+	u32 irq_status = mtk_dp_read(mtk_dp, MTK_DP_TRANS_P0_35D0) &
-+			 SW_IRQ_FINAL_STATUS_DP_TRANS_P0_MASK;
-+
-+	if (irq_status) {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_35C8, irq_status,
-+				   SW_IRQ_CLR_DP_TRANS_P0_MASK);
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_35C8, 0,
-+				   SW_IRQ_CLR_DP_TRANS_P0_MASK);
-+	}
-+
-+	return irq_status;
-+}
-+
-+static u32 mtk_dp_hwirq_get_clear(struct mtk_dp *mtk_dp)
-+{
-+	u8 irq_status = (mtk_dp_read(mtk_dp, MTK_DP_TRANS_P0_3418) &
-+			 IRQ_STATUS_DP_TRANS_P0_MASK) >>
-+			IRQ_STATUS_DP_TRANS_P0_SHIFT;
-+
-+	if (irq_status) {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3418, irq_status,
-+				   IRQ_CLR_DP_TRANS_P0_MASK);
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3418, 0,
-+				   IRQ_CLR_DP_TRANS_P0_MASK);
-+	}
-+
-+	return irq_status;
-+}
-+
-+static void mtk_dp_hwirq_enable(struct mtk_dp *mtk_dp, bool enable)
-+{
-+	u32 val = 0;
-+
-+	if (!enable)
-+		val = IRQ_MASK_DP_TRANS_P0_DISC_IRQ |
-+		      IRQ_MASK_DP_TRANS_P0_CONN_IRQ |
-+		      IRQ_MASK_DP_TRANS_P0_INT_IRQ;
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3418, val,
-+			   IRQ_MASK_DP_TRANS_P0_MASK);
-+}
-+
-+void mtk_dp_initialize_settings(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_342C,
-+			   XTAL_FREQ_DP_TRANS_P0_DEFAULT,
-+			   XTAL_FREQ_DP_TRANS_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3540,
-+			   BIT(FEC_CLOCK_EN_MODE_DP_TRANS_P0_SHIFT),
-+			   FEC_CLOCK_EN_MODE_DP_TRANS_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_31EC,
-+			   BIT(AUDIO_CH_SRC_SEL_DP_ENC0_P0_SHIFT),
-+			   AUDIO_CH_SRC_SEL_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_304C, 0,
-+			   SDP_VSYNC_RISING_MASK_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_IRQ_MASK, IRQ_MASK_AUX_TOP_IRQ,
-+			   IRQ_MASK_AUX_TOP_IRQ);
-+}
-+
-+static void mtk_dp_initialize_hpd_detect_settings(struct mtk_dp *mtk_dp)
-+{
-+	// Debounce threshold
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3410,
-+			   8 << HPD_DEB_THD_DP_TRANS_P0_SHIFT,
-+			   HPD_DEB_THD_DP_TRANS_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3410,
-+			   (HPD_INT_THD_DP_TRANS_P0_LOWER_500US |
-+			    HPD_INT_THD_DP_TRANS_P0_UPPER_1100US)
-+				   << HPD_INT_THD_DP_TRANS_P0_SHIFT,
-+			   HPD_INT_THD_DP_TRANS_P0_MASK);
-+
-+	// Connect threshold 1.5ms + 5 x 0.1ms = 2ms
-+	// Disconnect threshold 1.5ms + 5 x 0.1ms = 2ms
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3410,
-+			   (5 << HPD_DISC_THD_DP_TRANS_P0_SHIFT) |
-+				   (5 << HPD_CONN_THD_DP_TRANS_P0_SHIFT),
-+			   HPD_DISC_THD_DP_TRANS_P0_MASK |
-+				   HPD_CONN_THD_DP_TRANS_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3430,
-+			   HPD_INT_THD_ECO_DP_TRANS_P0_HIGH_BOUND_EXT,
-+			   HPD_INT_THD_ECO_DP_TRANS_P0_MASK);
-+}
-+
-+static void mtk_dp_initialize_aux_settings(struct mtk_dp *mtk_dp)
-+{
-+	// modify timeout threshold = 1595 [12 : 8]
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_360C, 0x1595,
-+			   AUX_TIMEOUT_THR_AUX_TX_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3658, 0,
-+			   AUX_TX_OV_EN_AUX_TX_P0_MASK);
-+	// 25 for 26M
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3634,
-+			   25 << AUX_TX_OVER_SAMPLE_RATE_AUX_TX_P0_SHIFT,
-+			   AUX_TX_OVER_SAMPLE_RATE_AUX_TX_P0_MASK);
-+	// 13 for 26M
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3614,
-+			   13 << AUX_RX_UI_CNT_THR_AUX_TX_P0_SHIFT,
-+			   AUX_RX_UI_CNT_THR_AUX_TX_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_37C8,
-+			   BIT(MTK_ATOP_EN_AUX_TX_P0_SHIFT),
-+			   MTK_ATOP_EN_AUX_TX_P0_MASK);
-+}
-+
-+static void mtk_dp_initialize_digital_settings(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_304C, 0,
-+			   VBID_VIDEO_MUTE_DP_ENC0_P0_MASK);
-+	mtk_dp_set_color_format(mtk_dp, MTK_DP_COLOR_FORMAT_RGB_444);
-+	mtk_dp_set_color_depth(mtk_dp, MTK_DP_COLOR_DEPTH_8BIT);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3368,
-+			   1 << BS2BS_MODE_DP_ENC1_P0_SHIFT,
-+			   BS2BS_MODE_DP_ENC1_P0_MASK);
-+
-+	// dp tx encoder reset all sw
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3004,
-+			   BIT(DP_TX_ENCODER_4P_RESET_SW_DP_ENC0_P0_SHIFT),
-+			   DP_TX_ENCODER_4P_RESET_SW_DP_ENC0_P0_MASK);
-+	usleep_range(1000, 5000);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3004, 0,
-+			   DP_TX_ENCODER_4P_RESET_SW_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_digital_sw_reset(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_340C,
-+			   BIT(DP_TX_TRANSMITTER_4P_RESET_SW_DP_TRANS_P0_SHIFT),
-+			   DP_TX_TRANSMITTER_4P_RESET_SW_DP_TRANS_P0_MASK);
-+	usleep_range(1000, 5000);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_340C, 0,
-+			   DP_TX_TRANSMITTER_4P_RESET_SW_DP_TRANS_P0_MASK);
-+}
-+
-+static void mtk_dp_set_lanes(struct mtk_dp *mtk_dp, int lanes)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_35F0,
-+			   lanes == 0 ? 0 : BIT(3), BIT(3) | BIT(2));
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3000, lanes,
-+			   LANE_NUM_DP_ENC0_P0_MASK);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_34A4,
-+			   lanes << LANE_NUM_DP_TRANS_P0_SHIFT,
-+			   LANE_NUM_DP_TRANS_P0_MASK);
-+}
-+
-+static int link_rate_to_mb_per_s(struct mtk_dp *mtk_dp,
-+				 enum mtk_dp_linkrate linkrate)
-+{
-+	switch (linkrate) {
-+	default:
-+		drm_err(mtk_dp->drm_dev,
-+			"Implementation error, unknown linkrate %d\n",
-+			linkrate);
-+		fallthrough;
-+	case MTK_DP_LINKRATE_RBR:
-+		return 1620;
-+	case MTK_DP_LINKRATE_HBR:
-+		return 2700;
-+	case MTK_DP_LINKRATE_HBR2:
-+		return 5400;
-+	case MTK_DP_LINKRATE_HBR3:
-+		return 8100;
-+	}
-+}
-+
-+static int mtk_dp_phy_configure(struct mtk_dp *mtk_dp,
-+				 enum mtk_dp_linkrate link_rate, int lane_count)
-+{
-+	int ret;
-+	union phy_configure_opts phy_opts = {
-+		.dp = {
-+			.link_rate = link_rate_to_mb_per_s(mtk_dp, link_rate),
-+			.set_rate = 1,
-+			.lanes = lane_count,
-+			.set_lanes = 1,
-+			.ssc = mtk_dp->train_info.sink_ssc,
-+		}
-+	};
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_PWR_STATE, DP_PWR_STATE_BANDGAP,
-+			   DP_PWR_STATE_MASK);
-+
-+	ret = phy_configure(mtk_dp->phy, &phy_opts);
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_PWR_STATE,
-+			   DP_PWR_STATE_BANDGAP_TPLL_LANE, DP_PWR_STATE_MASK);
-+	return ret;
-+}
-+
-+static void mtk_dp_set_idle_pattern(struct mtk_dp *mtk_dp, bool enable)
-+{
-+	const u32 val = POST_MISC_DATA_LANE0_OV_DP_TRANS_P0_MASK |
-+			POST_MISC_DATA_LANE1_OV_DP_TRANS_P0_MASK |
-+			POST_MISC_DATA_LANE2_OV_DP_TRANS_P0_MASK |
-+			POST_MISC_DATA_LANE3_OV_DP_TRANS_P0_MASK;
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3580, enable ? val : 0, val);
-+}
-+
-+static void mtk_dp_train_set_pattern(struct mtk_dp *mtk_dp, int pattern)
-+{
-+	if (pattern < 0 || pattern > 4) {
-+		drm_err(mtk_dp->drm_dev,
-+			"Implementation error, no such pattern %d\n", pattern);
-+		return;
-+	}
-+
-+	if (pattern == 1) // TPS1
-+		mtk_dp_set_idle_pattern(mtk_dp, false);
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3400,
-+			   pattern ?
-+			   BIT(pattern - 1) << PATTERN1_EN_DP_TRANS_P0_SHIFT :
-+			   0,
-+			   PATTERN1_EN_DP_TRANS_P0_MASK |
-+			   PATTERN2_EN_DP_TRANS_P0_MASK |
-+			   PATTERN3_EN_DP_TRANS_P0_MASK |
-+			   PATTERN4_EN_DP_TRANS_P0_MASK);
-+}
-+
-+static void mtk_dp_set_enhanced_frame_mode(struct mtk_dp *mtk_dp, bool enable)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3000,
-+			   enable ? BIT(ENHANCED_FRAME_EN_DP_ENC0_P0_SHIFT) : 0,
-+			   ENHANCED_FRAME_EN_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_training_set_scramble(struct mtk_dp *mtk_dp, bool enable)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3404,
-+			   enable ? DP_SCR_EN_DP_TRANS_P0_MASK : 0,
-+			   DP_SCR_EN_DP_TRANS_P0_MASK);
-+}
-+
-+static void mtk_dp_video_mute(struct mtk_dp *mtk_dp, bool enable)
-+{
-+	u32 val = BIT(VIDEO_MUTE_SEL_DP_ENC0_P0_SHIFT);
-+
-+	if (enable)
-+		val |= BIT(VIDEO_MUTE_SW_DP_ENC0_P0_SHIFT);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3000, val,
-+			   VIDEO_MUTE_SEL_DP_ENC0_P0_MASK |
-+				   VIDEO_MUTE_SW_DP_ENC0_P0_MASK);
-+
-+	if (mtk_dp_is_edp(mtk_dp))
-+		mtk_dp_sip_atf_call(MTK_DP_SIP_ATF_EDP_VIDEO_UNMUTE, enable);
-+	else
-+		mtk_dp_sip_atf_call(MTK_DP_SIP_ATF_VIDEO_UNMUTE, enable);
-+}
-+
-+static void mtk_dp_audio_mute(struct mtk_dp *mtk_dp, bool mute)
-+{
-+	if (mute) {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3030,
-+				   BIT(VBID_AUDIO_MUTE_SW_DP_ENC0_P0_SHIFT) |
-+				   BIT(VBID_AUDIO_MUTE_SEL_DP_ENC0_P0_SHIFT),
-+				   VBID_AUDIO_MUTE_FLAG_SW_DP_ENC0_P0_MASK |
-+				   VBID_AUDIO_MUTE_FLAG_SEL_DP_ENC0_P0_MASK);
-+
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3088, 0,
-+				   AU_EN_DP_ENC0_P0_MASK);
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_30A4, 0,
-+				   AU_TS_CFG_DP_ENC0_P0_MASK);
-+
-+	} else {
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3030, 0,
-+				   VBID_AUDIO_MUTE_FLAG_SW_DP_ENC0_P0_MASK |
-+				   VBID_AUDIO_MUTE_FLAG_SEL_DP_ENC0_P0_MASK);
-+
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3088,
-+				   BIT(AU_EN_DP_ENC0_P0_SHIFT),
-+				   AU_EN_DP_ENC0_P0_MASK);
-+		// Send one every two frames
-+		mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_30A4, 0x0F,
-+				   AU_TS_CFG_DP_ENC0_P0_MASK);
-+	}
-+}
-+
-+static void mtk_dp_power_enable(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_RESET_AND_PROBE, 0,
-+			   SW_RST_B_PHYD);
-+	usleep_range(10, 200);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_TOP_RESET_AND_PROBE, SW_RST_B_PHYD,
-+			   SW_RST_B_PHYD);
-+}
-+
-+static void mtk_dp_power_disable(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_write(mtk_dp, MTK_DP_TOP_PWR_STATE, 0);
-+	usleep_range(10, 200);
-+	mtk_dp_write(mtk_dp, MTK_DP_0034,
-+		     DA_CKM_CKTX0_EN_FORCE_EN |
-+		     DA_CKM_BIAS_LPF_EN_FORCE_VAL |
-+		     DA_CKM_BIAS_EN_FORCE_VAL |
-+		     DA_XTP_GLB_LDO_EN_FORCE_VAL |
-+		     DA_XTP_GLB_AVD10_ON_FORCE_VAL);
-+	// Disable RX
-+	mtk_dp_write(mtk_dp, MTK_DP_1040, 0);
-+	mtk_dp_write(mtk_dp, MTK_DP_TOP_MEM_PD,
-+		     0x550 | BIT(FUSE_SEL_SHIFT) | BIT(MEM_ISO_EN_SHIFT));
-+}
-+
-+static void mtk_dp_initialize_priv_data(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp->train_info.link_rate = MTK_DP_LINKRATE_HBR2;
-+	mtk_dp->train_info.lane_count = MTK_DP_MAX_LANES;
-+	mtk_dp->train_info.irq_status = 0;
-+	mtk_dp->train_info.cable_plugged_in = false;
-+	mtk_dp->train_info.cable_state_change = false;
-+	mtk_dp->train_state = MTK_DP_TRAIN_STATE_STARTUP;
-+	mtk_dp->state = MTK_DP_STATE_INITIAL;
-+
-+	mtk_dp->info.format = MTK_DP_COLOR_FORMAT_RGB_444;
-+	mtk_dp->info.depth = MTK_DP_COLOR_DEPTH_8BIT;
-+	memset(&mtk_dp->info.timings, 0, sizeof(struct mtk_dp_timings));
-+	mtk_dp->info.timings.frame_rate = 60;
-+
-+	mtk_dp->has_fec = false;
-+	mtk_dp->audio_enable = false;
-+}
-+
-+static void mtk_dp_sdp_set_down_cnt_init(struct mtk_dp *mtk_dp,
-+					 u32 sram_read_start)
-+{
-+	u32 sdp_down_cnt_init = 0;
-+	u32 dc_offset;
-+
-+	if (mtk_dp->info.timings.pix_rate_khz > 0)
-+		sdp_down_cnt_init = sram_read_start *
-+				    mtk_dp->train_info.link_rate * 2700 * 8 /
-+				    (mtk_dp->info.timings.pix_rate_khz * 4);
-+
-+	switch (mtk_dp->train_info.lane_count) {
-+	case 1:
-+		sdp_down_cnt_init = sdp_down_cnt_init > 0x1A ?
-+			sdp_down_cnt_init : 0x1A;  //26
-+		break;
-+	case 2:
-+		// case for LowResolution && High Audio Sample Rate
-+		dc_offset = mtk_dp->info.timings.vtotal <= 525 ?
-+			0x04 : 0x00;
-+		sdp_down_cnt_init = sdp_down_cnt_init > 0x10 ?
-+			sdp_down_cnt_init : 0x10 + dc_offset; //20 or 16
-+		break;
-+	case 4:
-+	default:
-+		sdp_down_cnt_init = sdp_down_cnt_init > 0x06 ?
-+			sdp_down_cnt_init : 0x06; //6
-+		break;
-+	}
-+
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3040,
-+			   sdp_down_cnt_init
-+				   << SDP_DOWN_CNT_INIT_DP_ENC0_P0_SHIFT,
-+			   SDP_DOWN_CNT_INIT_DP_ENC0_P0_MASK);
-+}
-+
-+static void mtk_dp_sdp_set_down_cnt_init_in_hblank(struct mtk_dp *mtk_dp)
-+{
-+	int pix_clk_mhz;
-+	u32 dc_offset;
-+	u32 spd_down_cnt_init = 0;
-+
-+	pix_clk_mhz = mtk_dp->info.format == MTK_DP_COLOR_FORMAT_YUV_420 ?
-+				    mtk_dp->info.timings.pix_rate_khz / 2000 :
-+				    mtk_dp->info.timings.pix_rate_khz / 1000;
-+
-+	switch (mtk_dp->train_info.lane_count) {
-+	case 1:
-+		spd_down_cnt_init = 0x20;
-+		break;
-+	case 2:
-+		dc_offset = (mtk_dp->info.timings.vtotal <= 525) ? 0x14 : 0x00;
-+		spd_down_cnt_init = 0x18 + dc_offset;
-+		break;
-+	case 4:
-+	default:
-+		dc_offset = (mtk_dp->info.timings.vtotal <= 525) ? 0x08 : 0x00;
-+		if (pix_clk_mhz > mtk_dp->train_info.link_rate * 27)
-+			spd_down_cnt_init = 0x8;
-+		else
-+			spd_down_cnt_init = 0x10 + dc_offset;
-+		break;
-+	}
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_ENC1_P0_3364, spd_down_cnt_init,
-+			   SDP_DOWN_CNT_INIT_IN_HBLANK_DP_ENC1_P0_MASK);
-+}
-+
-+static void mtk_dp_setup_tu(struct mtk_dp *mtk_dp)
-+{
-+	u32 sram_read_start = MTK_DP_TBC_BUF_READ_START_ADDR;
-+
-+	if (mtk_dp->train_info.lane_count > 0) {
-+		sram_read_start =
-+			min_t(u32, MTK_DP_TBC_BUF_READ_START_ADDR,
-+			      mtk_dp->info.timings.vm.hactive /
-+				      (mtk_dp->train_info.lane_count *
-+				       4 * 2 * 2));
-+		mtk_dp_set_sram_read_start(mtk_dp, sram_read_start);
-+	}
-+
-+	mtk_dp_setup_encoder(mtk_dp);
-+	mtk_dp_sdp_set_down_cnt_init_in_hblank(mtk_dp);
-+	mtk_dp_sdp_set_down_cnt_init(mtk_dp, sram_read_start);
-+}
-+
-+static void mtk_dp_calculate_pixrate(struct mtk_dp *mtk_dp)
-+{
-+	int target_frame_rate = 60;
-+	int target_pixel_clk;
-+
-+	if (mtk_dp->info.timings.frame_rate > 0) {
-+		target_frame_rate = mtk_dp->info.timings.frame_rate;
-+		target_pixel_clk = (int)mtk_dp->info.timings.htotal *
-+				   (int)mtk_dp->info.timings.vtotal *
-+				   target_frame_rate;
-+	} else if (mtk_dp->info.timings.pix_rate_khz > 0) {
-+		target_pixel_clk = mtk_dp->info.timings.pix_rate_khz * 1000;
-+	} else {
-+		target_pixel_clk = (int)mtk_dp->info.timings.htotal *
-+				   (int)mtk_dp->info.timings.vtotal *
-+				   target_frame_rate;
-+	}
-+
-+	if (target_pixel_clk > 0)
-+		mtk_dp->info.timings.pix_rate_khz = target_pixel_clk / 1000;
-+}
-+
-+static void mtk_dp_set_tx_out(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_msa_bypass_disable(mtk_dp);
-+	mtk_dp_calculate_pixrate(mtk_dp);
-+	mtk_dp_pg_disable(mtk_dp);
-+	mtk_dp_setup_tu(mtk_dp);
-+}
-+
-+static void mtk_dp_edid_free(struct mtk_dp *mtk_dp)
-+{
-+	mutex_lock(&mtk_dp->edid_lock);
-+	kfree(mtk_dp->edid);
-+	mtk_dp->edid = NULL;
-+	mutex_unlock(&mtk_dp->edid_lock);
-+}
-+
-+static void mtk_dp_hpd_sink_event(struct mtk_dp *mtk_dp)
-+{
-+	ssize_t ret;
-+	u8 sink_count;
-+	u8 link_status[DP_LINK_STATUS_SIZE] = {};
-+	u32 sink_count_reg;
-+	u32 link_status_reg;
-+	bool locked;
-+
-+	sink_count_reg = DP_SINK_COUNT_ESI;
-+	link_status_reg = DP_LANE0_1_STATUS_ESI;
-+
-+	ret = drm_dp_dpcd_readb(&mtk_dp->aux, sink_count_reg, &sink_count);
-+	if (ret < 0) {
-+		drm_info(mtk_dp->drm_dev,
-+			 "Read sink count failed: %ld\n", ret);
-+		return;
-+	}
-+
-+	ret = drm_dp_dpcd_readb(&mtk_dp->aux, DP_SINK_COUNT, &sink_count);
-+	if (ret < 0) {
-+		drm_info(mtk_dp->drm_dev,
-+			 "Read DP_SINK_COUNT_ESI failed: %ld\n", ret);
-+		return;
-+	}
-+
-+	ret = drm_dp_dpcd_read(&mtk_dp->aux, link_status_reg, link_status,
-+			       sizeof(link_status));
-+	if (!ret) {
-+		drm_info(mtk_dp->drm_dev, "Read link status failed: %ld\n",
-+			 ret);
-+		return;
-+	}
-+
-+	locked = drm_dp_channel_eq_ok(link_status,
-+				      mtk_dp->train_info.lane_count);
-+	if (!locked && mtk_dp->train_state > MTK_DP_TRAIN_STATE_TRAINING_PRE)
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING_PRE;
-+
-+	if (link_status[1] & DP_REMOTE_CONTROL_COMMAND_PENDING)
-+		drm_dp_dpcd_writeb(&mtk_dp->aux, DP_DEVICE_SERVICE_IRQ_VECTOR,
-+				   DP_REMOTE_CONTROL_COMMAND_PENDING);
-+
-+	if (DP_GET_SINK_COUNT(sink_count) &&
-+	    (link_status[2] & DP_DOWNSTREAM_PORT_STATUS_CHANGED)) {
-+		mtk_dp_edid_free(mtk_dp);
-+		mtk_dp->train_info.check_cap_count = 0;
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKEDID;
-+		msleep(20);
-+	}
-+}
-+
-+static void mtk_dp_sdp_stop_sending(struct mtk_dp *mtk_dp)
-+{
-+	u8 packet_type;
-+
-+	for (packet_type = MTK_DP_SDP_ACM; packet_type < MTK_DP_SDP_MAX_NUM;
-+	     packet_type++)
-+		mtk_dp_disable_sdp(mtk_dp, packet_type);
-+
-+	mtk_dp_sdp_vsc_ext_disable(mtk_dp);
-+}
-+
-+static int mtk_dp_train_hpd_handle(struct mtk_dp *mtk_dp)
-+{
-+	int ret = 0;
-+
-+	if (mtk_dp->train_info.cable_state_change) {
-+		mtk_dp->train_info.cable_state_change = false;
-+
-+		if (!mtk_dp->train_info.cable_plugged_in ||
-+		    !mtk_dp_plug_state(mtk_dp)) {
-+			mtk_dp_video_mute(mtk_dp, true);
-+			mtk_dp_audio_mute(mtk_dp, true);
-+
-+			mtk_dp_initialize_priv_data(mtk_dp);
-+			mtk_dp_set_idle_pattern(mtk_dp, true);
-+			if (mtk_dp->has_fec)
-+				mtk_dp_fec_enable(mtk_dp, false);
-+			mtk_dp_sdp_stop_sending(mtk_dp);
-+			mtk_dp_power_disable(mtk_dp);
-+			clk_disable_unprepare(mtk_dp->dp_tx_clk);
-+
-+			mtk_dp_edid_free(mtk_dp);
-+
-+			ret = -ENODEV;
-+		}
-+	}
-+
-+	return ret;
-+}
-+
-+static void mtk_dp_train_update_swing_pre(struct mtk_dp *mtk_dp, int lanes,
-+					  u8 dpcd_adjust_req[2])
-+{
-+	int lane;
-+
-+	for (lane = 0; lane < lanes; ++lane) {
-+		u8 val;
-+		u8 swing;
-+		u8 preemphasis;
-+		int index = lane / 2;
-+		int shift = lane % 2 ? DP_ADJUST_VOLTAGE_SWING_LANE1_SHIFT : 0;
-+
-+		swing = (dpcd_adjust_req[index] >> shift) &
-+			DP_ADJUST_VOLTAGE_SWING_LANE0_MASK;
-+		preemphasis = ((dpcd_adjust_req[index] >> shift) &
-+			       DP_ADJUST_PRE_EMPHASIS_LANE0_MASK) >>
-+			      DP_ADJUST_PRE_EMPHASIS_LANE0_SHIFT;
-+		val = swing << DP_TRAIN_VOLTAGE_SWING_SHIFT |
-+		      preemphasis << DP_TRAIN_PRE_EMPHASIS_SHIFT;
-+
-+		if (swing == DP_TRAIN_VOLTAGE_SWING_LEVEL_3)
-+			val |= DP_TRAIN_MAX_SWING_REACHED;
-+		if (preemphasis == 3)
-+			val |= DP_TRAIN_MAX_PRE_EMPHASIS_REACHED;
-+
-+		mtk_dp_set_swing_pre_emphasis(mtk_dp, lane, swing, preemphasis);
-+		drm_dp_dpcd_writeb(&mtk_dp->aux, DP_TRAINING_LANE0_SET + lane,
-+				   val);
-+	}
-+
-+	// Wait for the signal to be stable enough
-+	usleep_range(2000, 5000);
-+}
-+
-+static void mtk_dp_read_link_status(struct mtk_dp *mtk_dp,
-+				    u8 link_status[DP_LINK_STATUS_SIZE])
-+{
-+	drm_dp_dpcd_read(&mtk_dp->aux, DP_LANE0_1_STATUS, link_status,
-+			 DP_LINK_STATUS_SIZE);
-+}
-+
-+static int mtk_dp_train_flow(struct mtk_dp *mtk_dp, int target_link_rate,
-+			     int target_lane_count)
-+{
-+	u8 link_status[DP_LINK_STATUS_SIZE] = {};
-+	u8 lane_adjust[2] = {};
-+	bool pass_tps1 = false;
-+	bool pass_tps2_3 = false;
-+	int train_retries;
-+	int status_control;
-+	int iteration_count;
-+	u8 prev_lane_adjust;
-+	u8 val;
-+
-+	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_LINK_BW_SET, target_link_rate);
-+	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_LANE_COUNT_SET,
-+			   target_lane_count | DP_LANE_COUNT_ENHANCED_FRAME_EN);
-+
-+	if (mtk_dp->train_info.sink_ssc)
-+		drm_dp_dpcd_writeb(&mtk_dp->aux, DP_DOWNSPREAD_CTRL,
-+				   DP_SPREAD_AMP_0_5);
-+
-+	train_retries = 0;
-+	status_control = 0;
-+	iteration_count = 1;
-+	prev_lane_adjust = 0xFF;
-+
-+	mtk_dp_set_lanes(mtk_dp, target_lane_count / 2);
-+	mtk_dp_phy_configure(mtk_dp, target_link_rate, target_lane_count);
-+
-+	do {
-+		train_retries++;
-+		if (!mtk_dp->train_info.cable_plugged_in ||
-+		    ((mtk_dp->train_info.irq_status &
-+		      MTK_DP_HPD_DISCONNECT) != 0x0)) {
-+			return -ENODEV;
-+		}
-+
-+		if (mtk_dp->train_state < MTK_DP_TRAIN_STATE_TRAINING)
-+			return -EAGAIN;
-+
-+		if (!pass_tps1)	{
-+			mtk_dp_training_set_scramble(mtk_dp, false);
-+
-+			if (status_control == 0) {
-+				status_control = 1;
-+				mtk_dp_train_set_pattern(mtk_dp, 1);
-+				val = DP_LINK_SCRAMBLING_DISABLE |
-+				      DP_TRAINING_PATTERN_1;
-+				drm_dp_dpcd_writeb(&mtk_dp->aux,
-+						   DP_TRAINING_PATTERN_SET,
-+						   DP_LINK_SCRAMBLING_DISABLE |
-+						   DP_TRAINING_PATTERN_1);
-+				drm_dp_dpcd_read(&mtk_dp->aux,
-+						 DP_ADJUST_REQUEST_LANE0_1,
-+						 lane_adjust,
-+						 sizeof(lane_adjust));
-+				iteration_count++;
-+
-+				mtk_dp_train_update_swing_pre(mtk_dp,
-+							      target_lane_count,
-+							      lane_adjust);
-+			}
-+
-+			drm_dp_link_train_clock_recovery_delay(&mtk_dp->aux,
-+							       mtk_dp->rx_cap);
-+			mtk_dp_read_link_status(mtk_dp, link_status);
-+
-+			if (drm_dp_clock_recovery_ok(link_status,
-+						     target_lane_count)) {
-+				mtk_dp->train_info.cr_done = true;
-+				pass_tps1 = true;
-+				train_retries = 0;
-+				iteration_count = 1;
-+			} else if (prev_lane_adjust == link_status[4]) {
-+				iteration_count++;
-+				if (prev_lane_adjust &
-+				    DP_ADJUST_VOLTAGE_SWING_LANE0_MASK)
-+					break;
-+			} else {
-+				prev_lane_adjust = link_status[4];
-+			}
-+		} else if (pass_tps1 && !pass_tps2_3) {
-+			if (status_control == 1) {
-+				status_control = 2;
-+				if (mtk_dp->train_info.tps4) {
-+					mtk_dp_train_set_pattern(mtk_dp, 4);
-+					val = DP_TRAINING_PATTERN_4;
-+				} else if (mtk_dp->train_info.tps3) {
-+					mtk_dp_train_set_pattern(mtk_dp, 3);
-+					val = DP_LINK_SCRAMBLING_DISABLE |
-+					      DP_TRAINING_PATTERN_3;
-+				} else {
-+					mtk_dp_train_set_pattern(mtk_dp, 2);
-+					val = DP_LINK_SCRAMBLING_DISABLE |
-+					      DP_TRAINING_PATTERN_2;
-+				}
-+				drm_dp_dpcd_writeb(&mtk_dp->aux,
-+						   DP_TRAINING_PATTERN_SET,
-+						   val);
-+
-+				drm_dp_dpcd_read(&mtk_dp->aux,
-+						 DP_ADJUST_REQUEST_LANE0_1,
-+						 lane_adjust,
-+						 sizeof(lane_adjust));
-+
-+				iteration_count++;
-+				mtk_dp_train_update_swing_pre(mtk_dp,
-+							      target_lane_count,
-+							      lane_adjust);
-+			}
-+
-+			drm_dp_link_train_channel_eq_delay(&mtk_dp->aux,
-+							   mtk_dp->rx_cap);
-+
-+			mtk_dp_read_link_status(mtk_dp, link_status);
-+
-+			if (!drm_dp_clock_recovery_ok(link_status,
-+						      target_lane_count)) {
-+				mtk_dp->train_info.cr_done = false;
-+				mtk_dp->train_info.eq_done = false;
-+				break;
-+			}
-+
-+			if (drm_dp_channel_eq_ok(link_status,
-+						 target_lane_count)) {
-+				mtk_dp->train_info.eq_done = true;
-+				pass_tps2_3 = true;
-+				break;
-+			}
-+
-+			if (prev_lane_adjust == link_status[4])
-+				iteration_count++;
-+			else
-+				prev_lane_adjust = link_status[4];
-+		}
-+	} while (train_retries < MTK_DP_TRAIN_RETRY_LIMIT &&
-+		 iteration_count < MTK_DP_TRAIN_MAX_ITERATIONS);
-+
-+	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_TRAINING_PATTERN_SET,
-+			   DP_TRAINING_PATTERN_DISABLE);
-+	mtk_dp_train_set_pattern(mtk_dp, 0);
-+
-+	if (pass_tps2_3) {
-+		mtk_dp->train_info.link_rate = target_link_rate;
-+		mtk_dp->train_info.lane_count = target_lane_count;
-+
-+		mtk_dp_training_set_scramble(mtk_dp, true);
-+
-+		drm_dp_dpcd_writeb(&mtk_dp->aux, DP_LANE_COUNT_SET,
-+				   target_lane_count |
-+					   DP_LANE_COUNT_ENHANCED_FRAME_EN);
-+		mtk_dp_set_enhanced_frame_mode(mtk_dp, true);
-+
-+		return 0;
-+	}
-+
-+	return -ETIMEDOUT;
-+}
-+
-+static void mtk_dp_fec_set_capabilities(struct mtk_dp *mtk_dp)
-+{
-+	u8 fec_capabilities;
-+
-+	drm_dp_dpcd_readb(&mtk_dp->aux, DP_FEC_CAPABILITY, &fec_capabilities);
-+
-+	mtk_dp->has_fec = !!(fec_capabilities & DP_FEC_CAPABLE);
-+	if (!mtk_dp->has_fec)
-+		return;
-+
-+	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_FEC_CONFIGURATION,
-+			   DP_FEC_BIT_ERROR_COUNT | DP_FEC_READY);
-+}
-+
-+static bool mtk_dp_parse_capabilities(struct mtk_dp *mtk_dp)
-+{
-+	u8 buf[DP_RECEIVER_CAP_SIZE] = {};
-+	u8 val;
-+	struct mtk_dp_train_info *train_info = &mtk_dp->train_info;
-+
-+	if (!mtk_dp_plug_state(mtk_dp))
-+		return false;
-+
-+	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_SET_POWER, DP_SET_POWER_D0);
-+	usleep_range(2000, 5000);
-+
-+	drm_dp_dpcd_read(&mtk_dp->aux, DP_DPCD_REV, buf, sizeof(buf));
-+
-+	memcpy(mtk_dp->rx_cap, buf, min(sizeof(mtk_dp->rx_cap), sizeof(buf)));
-+	mtk_dp->rx_cap[DP_TRAINING_AUX_RD_INTERVAL] &= DP_TRAINING_AUX_RD_MASK;
-+
-+	if (buf[DP_DPCD_REV] >= DP_DPCD_REV_14)
-+		mtk_dp_fec_set_capabilities(mtk_dp);
-+
-+	train_info->link_rate =
-+		min_t(int, MTK_DP_MAX_LINK_RATE, buf[DP_MAX_LINK_RATE]);
-+	train_info->lane_count =
-+		min_t(int, MTK_DP_MAX_LANES, drm_dp_max_lane_count(buf));
-+
-+	train_info->tps3 = drm_dp_tps3_supported(buf);
-+	train_info->tps4 = drm_dp_tps4_supported(buf);
-+
-+	train_info->sink_ssc =
-+		!!(buf[DP_MAX_DOWNSPREAD] & DP_MAX_DOWNSPREAD_0_5);
-+
-+	drm_dp_dpcd_readb(&mtk_dp->aux, DP_MSTM_CAP, &val);
-+	if (val & DP_MST_CAP) {
-+		// Clear DP_DEVICE_SERVICE_IRQ_VECTOR_ESI0
-+		drm_dp_dpcd_readb(&mtk_dp->aux,
-+				  DP_DEVICE_SERVICE_IRQ_VECTOR_ESI0, &val);
-+		if (val)
-+			drm_dp_dpcd_writeb(&mtk_dp->aux,
-+					   DP_DEVICE_SERVICE_IRQ_VECTOR_ESI0,
-+					   val);
-+	}
-+
-+	return true;
-+}
-+
-+static int mtk_dp_edid_parse_audio_capabilities(struct mtk_dp *mtk_dp,
-+						struct mtk_dp_audio_cfg *cfg)
-+{
-+	struct cea_sad *sads;
-+	int sad_count;
-+	int i;
-+	int ret = 0;
-+
-+	mutex_lock(&mtk_dp->edid_lock);
-+	if (!mtk_dp->edid) {
-+		mutex_unlock(&mtk_dp->edid_lock);
-+		dev_err(mtk_dp->dev, "EDID not found!\n");
-+		return -EINVAL;
-+	}
-+
-+	sad_count = drm_edid_to_sad(mtk_dp->edid, &sads);
-+	mutex_unlock(&mtk_dp->edid_lock);
-+	if (sad_count <= 0) {
-+		drm_info(mtk_dp->drm_dev, "The SADs is NULL\n");
-+		return 0;
-+	}
-+
-+	for (i = 0; i < sad_count; i++) {
-+		int sample_rate;
-+		int word_length;
-+		// Only PCM supported at the moment
-+		if (sads[i].format != HDMI_AUDIO_CODING_TYPE_PCM)
-+			continue;
-+
-+		sample_rate = drm_cea_sad_get_sample_rate(&sads[i]);
-+		word_length =
-+			drm_cea_sad_get_uncompressed_word_length(&sads[i]);
-+		if (sample_rate <= 0 || word_length <= 0)
-+			continue;
-+
-+		cfg->channels = sads[i].channels;
-+		cfg->word_length_bits = word_length;
-+		cfg->sample_rate = sample_rate;
-+		ret = 1;
-+		break;
-+	}
-+	kfree(sads);
-+
-+	return ret;
-+}
-+
-+static void mtk_dp_train_change_mode(struct mtk_dp *mtk_dp)
-+{
-+	phy_reset(mtk_dp->phy);
-+	mtk_dp_reset_swing_pre_emphasis(mtk_dp);
-+
-+	usleep_range(2000, 5000);
-+}
-+
-+static int mtk_dp_train_start(struct mtk_dp *mtk_dp)
-+{
-+	int ret = 0;
-+	int lane_count;
-+	int link_rate;
-+	int train_limit;
-+	int max_link_rate;
-+	int plug_wait;
-+
-+	for (plug_wait = 7; !mtk_dp_plug_state(mtk_dp) && plug_wait > 0;
-+	     --plug_wait)
-+		usleep_range(1000, 5000);
-+	if (plug_wait == 0) {
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_DPIDLE;
-+		return -ENODEV;
-+	}
-+
-+	link_rate = mtk_dp->rx_cap[1];
-+	lane_count = mtk_dp->rx_cap[2] & 0x1F;
-+
-+	mtk_dp->train_info.link_rate = min(MTK_DP_MAX_LINK_RATE, link_rate);
-+	mtk_dp->train_info.lane_count =
-+		min(MTK_DP_MAX_LANES, lane_count);
-+	link_rate = mtk_dp->train_info.link_rate;
-+	lane_count = mtk_dp->train_info.lane_count;
-+
-+	switch (link_rate) {
-+	case MTK_DP_LINKRATE_RBR:
-+	case MTK_DP_LINKRATE_HBR:
-+	case MTK_DP_LINKRATE_HBR2:
-+	case MTK_DP_LINKRATE_HBR25:
-+	case MTK_DP_LINKRATE_HBR3:
-+		break;
-+	default:
-+		mtk_dp->train_info.link_rate = MTK_DP_LINKRATE_HBR3;
-+		break;
-+	};
-+
-+	max_link_rate = link_rate;
-+	for (train_limit = 0; train_limit <= 6; ++train_limit) {
-+		mtk_dp->train_info.cr_done = false;
-+		mtk_dp->train_info.eq_done = false;
-+
-+		mtk_dp_train_change_mode(mtk_dp);
-+		ret = mtk_dp_train_flow(mtk_dp, link_rate, lane_count);
-+		if (ret == -ENODEV || ret == -EAGAIN)
-+			return ret;
-+
-+		if (!mtk_dp->train_info.cr_done) {
-+			switch (link_rate) {
-+			case MTK_DP_LINKRATE_RBR:
-+				lane_count = lane_count / 2;
-+				link_rate = max_link_rate;
-+				if (lane_count == 0x0) {
-+					mtk_dp->train_state =
-+						MTK_DP_TRAIN_STATE_DPIDLE;
-+					return -EIO;
-+				}
-+				break;
-+			case MTK_DP_LINKRATE_HBR:
-+				link_rate = MTK_DP_LINKRATE_RBR;
-+				break;
-+			case MTK_DP_LINKRATE_HBR2:
-+				link_rate = MTK_DP_LINKRATE_HBR;
-+				break;
-+			case MTK_DP_LINKRATE_HBR3:
-+				link_rate = MTK_DP_LINKRATE_HBR2;
-+				break;
-+			default:
-+				return -EINVAL;
-+			};
-+		} else if (!mtk_dp->train_info.eq_done) {
-+			lane_count /= 2;
-+			if (lane_count == 0)
-+				return -EIO;
-+		} else {
-+			return 0;
-+		}
-+	}
-+
-+	return -ETIMEDOUT;
-+}
-+
-+static int mtk_dp_train_handler(struct mtk_dp *mtk_dp)
-+{
-+	int ret = 0;
-+
-+	ret = mtk_dp_train_hpd_handle(mtk_dp);
-+
-+	if (!mtk_dp->train_info.cable_plugged_in)
-+		return -ENODEV;
-+
-+	if (mtk_dp->train_state == MTK_DP_TRAIN_STATE_NORMAL)
-+		return ret;
-+
-+	switch (mtk_dp->train_state) {
-+	case MTK_DP_TRAIN_STATE_STARTUP:
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKCAP;
-+		break;
-+
-+	case MTK_DP_TRAIN_STATE_CHECKCAP:
-+		if (mtk_dp_parse_capabilities(mtk_dp)) {
-+			mtk_dp->train_info.check_cap_count = 0;
-+			mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKEDID;
-+		} else {
-+			mtk_dp->train_info.check_cap_count++;
-+
-+			if (mtk_dp->train_info.check_cap_count >
-+			    MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT) {
-+				mtk_dp->train_info.check_cap_count = 0;
-+				mtk_dp->train_state = MTK_DP_TRAIN_STATE_DPIDLE;
-+				ret = -ETIMEDOUT;
-+			}
-+		}
-+		break;
-+
-+	case MTK_DP_TRAIN_STATE_CHECKEDID:
-+		{
-+			int caps_found =
-+				mtk_dp_edid_parse_audio_capabilities(mtk_dp,
-+								     &mtk_dp->info.audio_caps);
-+			mtk_dp->audio_enable = caps_found > 0;
-+			if (!mtk_dp->audio_enable)
-+				memset(&mtk_dp->info.audio_caps, 0,
-+				       sizeof(mtk_dp->info.audio_caps));
-+		}
-+
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING_PRE;
-+		break;
-+
-+	case MTK_DP_TRAIN_STATE_TRAINING_PRE:
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING;
-+		break;
-+
-+	case MTK_DP_TRAIN_STATE_TRAINING:
-+		ret = mtk_dp_train_start(mtk_dp);
-+		if (!ret) {
-+			mtk_dp_video_mute(mtk_dp, true);
-+			mtk_dp_audio_mute(mtk_dp, true);
-+			mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKTIMING;
-+			mtk_dp_fec_enable(mtk_dp, mtk_dp->has_fec);
-+		} else if (ret != -EAGAIN) {
-+			mtk_dp->train_state = MTK_DP_TRAIN_STATE_DPIDLE;
-+		}
-+
-+		ret = 0;
-+		break;
-+
-+	case MTK_DP_TRAIN_STATE_CHECKTIMING:
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_NORMAL;
-+		break;
-+	case MTK_DP_TRAIN_STATE_NORMAL:
-+		break;
-+	case MTK_DP_TRAIN_STATE_POWERSAVE:
-+		break;
-+	case MTK_DP_TRAIN_STATE_DPIDLE:
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	return ret;
-+}
-+
-+static void mtk_dp_video_enable(struct mtk_dp *mtk_dp, bool enable)
-+{
-+	if (enable) {
-+		mtk_dp_set_tx_out(mtk_dp);
-+		mtk_dp_video_mute(mtk_dp, false);
-+	} else {
-+		mtk_dp_video_mute(mtk_dp, true);
-+	}
-+}
-+
-+static void mtk_dp_audio_sdp_setup(struct mtk_dp *mtk_dp,
-+				   struct mtk_dp_audio_cfg *cfg)
-+{
-+	struct mtk_dp_sdp_packet packet;
-+	struct hdmi_audio_infoframe frame;
-+
-+	hdmi_audio_infoframe_init(&frame);
-+	frame.coding_type = HDMI_AUDIO_CODING_TYPE_PCM;
-+	frame.channels = cfg->channels;
-+	frame.sample_frequency = cfg->sample_rate;
-+
-+	switch (cfg->word_length_bits) {
-+	case 16:
-+		frame.sample_size = HDMI_AUDIO_SAMPLE_SIZE_16;
-+		break;
-+	case 20:
-+		frame.sample_size = HDMI_AUDIO_SAMPLE_SIZE_20;
-+		break;
-+	case 24:
-+	default:
-+		frame.sample_size = HDMI_AUDIO_SAMPLE_SIZE_24;
-+		break;
-+	}
-+
-+	packet.type = MTK_DP_SDP_AUI;
-+	hdmi_audio_infoframe_pack_for_dp(&frame, &packet.sdp,
-+					 MTK_DP_DP_VERSION_11);
-+
-+	mtk_dp_audio_sdp_asp_set_channels(mtk_dp, cfg->channels);
-+	mtk_dp_setup_sdp(mtk_dp, &packet);
-+}
-+
-+static void mtk_dp_audio_setup(struct mtk_dp *mtk_dp,
-+			       struct mtk_dp_audio_cfg *cfg)
-+{
-+	mtk_dp_audio_sdp_setup(mtk_dp, cfg);
-+	mtk_dp_audio_channel_status_set(mtk_dp, cfg);
-+
-+	mtk_dp_audio_setup_channels(mtk_dp, cfg);
-+	mtk_dp_audio_set_divider(mtk_dp);
-+}
-+
-+static void mtk_dp_video_config(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_mn_overwrite_disable(mtk_dp);
-+
-+	mtk_dp_set_msa(mtk_dp);
-+
-+	mtk_dp_set_color_depth(mtk_dp, mtk_dp->info.depth);
-+	mtk_dp_set_color_format(mtk_dp, mtk_dp->info.format);
-+}
-+
-+static int mtk_dp_state_handler(struct mtk_dp *mtk_dp)
-+{
-+	int ret = 0;
-+
-+	if (!mtk_dp->train_info.cable_plugged_in)
-+		return -ENODEV;
-+
-+	switch (mtk_dp->state) {
-+	case MTK_DP_STATE_INITIAL:
-+		mtk_dp_video_mute(mtk_dp, true);
-+		mtk_dp_audio_mute(mtk_dp, true);
-+		mtk_dp->state = MTK_DP_STATE_IDLE;
-+		break;
-+
-+	case MTK_DP_STATE_IDLE:
-+		if (mtk_dp->train_state == MTK_DP_TRAIN_STATE_NORMAL)
-+			mtk_dp->state = MTK_DP_STATE_PREPARE;
-+		break;
-+
-+	case MTK_DP_STATE_PREPARE:
-+		mtk_dp_video_config(mtk_dp);
-+		mtk_dp_video_enable(mtk_dp, true);
-+
-+		if (mtk_dp->audio_enable) {
-+			mtk_dp_audio_setup(mtk_dp, &mtk_dp->info.audio_caps);
-+			mtk_dp_audio_mute(mtk_dp, false);
-+		}
-+
-+		mtk_dp->state = MTK_DP_STATE_NORMAL;
-+		break;
-+
-+	case MTK_DP_STATE_NORMAL:
-+		if (mtk_dp->train_state != MTK_DP_TRAIN_STATE_NORMAL) {
-+			mtk_dp_video_mute(mtk_dp, true);
-+			mtk_dp_audio_mute(mtk_dp, true);
-+			mtk_dp_sdp_stop_sending(mtk_dp);
-+			mtk_dp->state = MTK_DP_STATE_IDLE;
-+		}
-+		break;
-+
-+	default:
-+		break;
-+	}
-+
-+	return ret;
-+}
-+
-+static void mtk_dp_init_port(struct mtk_dp *mtk_dp)
-+{
-+	mtk_dp_set_idle_pattern(mtk_dp, true);
-+	mtk_dp_initialize_priv_data(mtk_dp);
-+
-+	mtk_dp_initialize_settings(mtk_dp);
-+	mtk_dp_initialize_aux_settings(mtk_dp);
-+	mtk_dp_initialize_digital_settings(mtk_dp);
-+	mtk_dp_update_bits(mtk_dp, MTK_DP_AUX_P0_3690,
-+			   BIT(RX_REPLY_COMPLETE_MODE_AUX_TX_P0_SHIFT),
-+			   RX_REPLY_COMPLETE_MODE_AUX_TX_P0_MASK);
-+	mtk_dp_initialize_hpd_detect_settings(mtk_dp);
-+
-+	mtk_dp_digital_sw_reset(mtk_dp);
-+}
-+
-+static irqreturn_t mtk_dp_hpd_event_thread(int hpd, void *dev)
-+{
-+	struct mtk_dp *mtk_dp = dev;
-+	int event;
-+
-+	event = mtk_dp_plug_state(mtk_dp) ? connector_status_connected :
-+		connector_status_disconnected;
-+
-+	if (event < 0)
-+		return IRQ_HANDLED;
-+
-+	if (mtk_dp->drm_dev)
-+		drm_helper_hpd_irq_event(mtk_dp->bridge.dev);
-+
-+	if (mtk_dp->train_info.irq_status & MTK_DP_HPD_INTERRUPT) {
-+		dev_info(mtk_dp->dev, "MTK_DP_HPD_INTERRUPT\n");
-+		mtk_dp->train_info.irq_status &= ~MTK_DP_HPD_INTERRUPT;
-+		mtk_dp_hpd_sink_event(mtk_dp);
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static irqreturn_t mtk_dp_hpd_isr_handler(struct mtk_dp *mtk_dp)
-+{
-+	bool connected;
-+	u16 swirq_status = mtk_dp_swirq_get_clear(mtk_dp);
-+	u8 hwirq_status =  mtk_dp_hwirq_get_clear(mtk_dp);
-+	struct mtk_dp_train_info *train_info = &mtk_dp->train_info;
-+
-+	train_info->irq_status |= hwirq_status | swirq_status;
-+
-+	if (!train_info->irq_status)
-+		return IRQ_HANDLED;
-+
-+	connected = mtk_dp_plug_state(mtk_dp);
-+	if (connected || !train_info->cable_plugged_in)
-+		train_info->irq_status &= ~MTK_DP_HPD_DISCONNECT;
-+	else if (!connected || train_info->cable_plugged_in)
-+		train_info->irq_status &= ~MTK_DP_HPD_CONNECT;
-+
-+	if (!(train_info->irq_status &
-+	      (MTK_DP_HPD_CONNECT | MTK_DP_HPD_DISCONNECT)))
-+		return IRQ_HANDLED;
-+
-+	if (train_info->irq_status & MTK_DP_HPD_CONNECT) {
-+		train_info->irq_status &= ~MTK_DP_HPD_CONNECT;
-+		train_info->cable_plugged_in = true;
-+	} else {
-+		train_info->irq_status &= ~MTK_DP_HPD_DISCONNECT;
-+		train_info->cable_plugged_in = false;
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_STARTUP;
-+	}
-+	train_info->cable_state_change = true;
-+	return IRQ_WAKE_THREAD;
-+}
-+
-+static irqreturn_t mtk_dp_hpd_event(int hpd, void *dev)
-+{
-+	struct mtk_dp *mtk_dp = dev;
-+	u32 irq_status;
-+
-+	irq_status = mtk_dp_read(mtk_dp, MTK_DP_TOP_IRQ_STATUS);
-+
-+	if (!irq_status)
-+		return IRQ_HANDLED;
-+
-+	if (irq_status & RGS_IRQ_STATUS_TRANSMITTER)
-+		return mtk_dp_hpd_isr_handler(mtk_dp);
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static int mtk_dp_dt_parse_pdata(struct mtk_dp *mtk_dp,
-+				 struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	int ret = 0;
-+	void __iomem *base;
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	mtk_dp->regs = devm_regmap_init_mmio(dev, base, &mtk_dp_regmap_config);
-+	if (IS_ERR(mtk_dp->regs))
-+		return PTR_ERR(mtk_dp->regs);
-+
-+	mtk_dp->dp_tx_clk = devm_clk_get(dev, "faxi");
-+	if (IS_ERR(mtk_dp->dp_tx_clk)) {
-+		ret = PTR_ERR(mtk_dp->dp_tx_clk);
-+		dev_err(dev, "Failed to get dptx clock: %d\n", ret);
-+		mtk_dp->dp_tx_clk = NULL;
-+	}
-+
-+	return 0;
-+}
-+
-+static void mtk_dp_update_plugged_status(struct mtk_dp *mtk_dp)
-+{
-+	bool connected;
-+
-+	mutex_lock(&mtk_dp->update_plugged_status_lock);
-+	connected = mtk_dp_plug_state(mtk_dp);
-+	if (mtk_dp->plugged_cb && mtk_dp->codec_dev)
-+		mtk_dp->plugged_cb(mtk_dp->codec_dev, connected);
-+	mutex_unlock(&mtk_dp->update_plugged_status_lock);
-+}
-+
-+static enum drm_connector_status mtk_dp_bdg_detect(struct drm_bridge *bridge)
-+{
-+	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-+	enum drm_connector_status ret;
-+
-+	ret = mtk_dp_plug_state(mtk_dp) ? connector_status_connected :
-+			connector_status_disconnected;
-+
-+	if (mtk_dp_is_edp(mtk_dp))
-+		return connector_status_connected;
-+
-+	mtk_dp_update_plugged_status(mtk_dp);
-+	return ret;
-+}
-+
-+static struct edid *mtk_dp_get_edid(struct drm_bridge *bridge,
-+				    struct drm_connector *connector)
-+{
-+	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-+	bool enabled = mtk_dp->enabled;
-+	struct edid *new_edid = NULL;
-+
-+	if (!enabled)
-+		drm_bridge_chain_pre_enable(bridge);
-+
-+	if (mtk_dp_plug_state(mtk_dp))
-+		new_edid = drm_get_edid(connector, &mtk_dp->aux.ddc);
-+
-+	if (!enabled)
-+		drm_bridge_chain_post_disable(bridge);
-+
-+	mutex_lock(&mtk_dp->edid_lock);
-+	kfree(mtk_dp->edid);
-+	if (!new_edid)
-+		return NULL;
-+
-+	mtk_dp->edid = drm_edid_duplicate(new_edid);
-+	mutex_unlock(&mtk_dp->edid_lock);
-+
-+	return new_edid;
-+}
-+
-+static ssize_t mtk_dp_aux_transfer(struct drm_dp_aux *mtk_aux,
-+				   struct drm_dp_aux_msg *msg)
-+{
-+	ssize_t err = -EAGAIN;
-+	struct mtk_dp *mtk_dp;
-+	bool is_read;
-+	u8 request;
-+	size_t accessed_bytes = 0;
-+	int ret = 0;
-+
-+	mtk_dp = container_of(mtk_aux, struct mtk_dp, aux);
-+
-+	if (!mtk_dp->train_info.cable_plugged_in ||
-+	    mtk_dp->train_info.irq_status & MTK_DP_HPD_DISCONNECT) {
-+		mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKCAP;
-+		err = -EAGAIN;
-+		goto err;
-+	}
-+
-+	switch (msg->request) {
-+	case DP_AUX_I2C_MOT:
-+	case DP_AUX_I2C_WRITE:
-+	case DP_AUX_NATIVE_WRITE:
-+	case DP_AUX_I2C_WRITE_STATUS_UPDATE:
-+	case DP_AUX_I2C_WRITE_STATUS_UPDATE | DP_AUX_I2C_MOT:
-+		request = msg->request & ~DP_AUX_I2C_WRITE_STATUS_UPDATE;
-+		is_read = false;
-+		break;
-+	case DP_AUX_I2C_READ:
-+	case DP_AUX_NATIVE_READ:
-+	case DP_AUX_I2C_READ | DP_AUX_I2C_MOT:
-+		request = msg->request;
-+		is_read = true;
-+		break;
-+	default:
-+		drm_err(mtk_aux->drm_dev, "invalid aux cmd = %d\n",
-+			msg->request);
-+		err = -EINVAL;
-+		goto err;
-+	}
-+
-+	while (accessed_bytes < msg->size) {
-+		size_t to_access = min_t(size_t, DP_AUX_MAX_PAYLOAD_BYTES,
-+				       msg->size - accessed_bytes);
-+
-+		ret = mtk_dp_aux_do_transfer(mtk_dp, is_read, request,
-+					     msg->address + accessed_bytes,
-+					     msg->buffer + accessed_bytes,
-+					     to_access);
-+		accessed_bytes += to_access;
-+		if (ret) {
-+			drm_info(mtk_dp->drm_dev,
-+				 "Failed to do AUX transfer: %d\n", ret);
-+			break;
-+		}
-+	}
-+
-+err:
-+	if (!ret) {
-+		msg->reply = DP_AUX_NATIVE_REPLY_ACK | DP_AUX_I2C_REPLY_ACK;
-+		ret = msg->size;
-+	} else {
-+		msg->reply = DP_AUX_NATIVE_REPLY_NACK | DP_AUX_I2C_REPLY_NACK;
-+		return err;
-+	}
-+
-+	msg->reply = DP_AUX_NATIVE_REPLY_ACK | DP_AUX_I2C_REPLY_ACK;
-+	return msg->size;
-+}
-+
-+static void mtk_dp_aux_init(struct mtk_dp *mtk_dp)
-+{
-+	drm_dp_aux_init(&mtk_dp->aux);
-+	mtk_dp->aux.name = "aux_mtk_dp";
-+	mtk_dp->aux.transfer = mtk_dp_aux_transfer;
-+}
-+
-+static void mtk_dp_poweroff(struct mtk_dp *mtk_dp)
-+{
-+	mutex_lock(&mtk_dp->dp_lock);
-+
-+	mtk_dp_hwirq_enable(mtk_dp, false);
-+	mtk_dp_power_disable(mtk_dp);
-+	phy_exit(mtk_dp->phy);
-+	clk_disable_unprepare(mtk_dp->dp_tx_clk);
-+
-+	mutex_unlock(&mtk_dp->dp_lock);
-+}
-+
-+static int mtk_dp_poweron(struct mtk_dp *mtk_dp)
-+{
-+	int ret = 0;
-+
-+	mutex_lock(&mtk_dp->dp_lock);
-+
-+	ret = clk_prepare_enable(mtk_dp->dp_tx_clk);
-+	if (ret < 0) {
-+		dev_err(mtk_dp->dev, "Fail to enable clock: %d\n", ret);
-+		goto err;
-+	}
-+	ret = phy_init(mtk_dp->phy);
-+	if (ret) {
-+		dev_err(mtk_dp->dev, "Failed to initialize phy: %d\n", ret);
-+		goto err_phy_init;
-+	}
-+
-+	ret = mtk_dp_phy_configure(mtk_dp, MTK_DP_LINKRATE_RBR, 1);
-+	if (ret) {
-+		dev_err(mtk_dp->dev, "Failed to configure phy: %d\n", ret);
-+		goto err_phy_config;
-+	}
-+
-+	mtk_dp_init_port(mtk_dp);
-+	mtk_dp_power_enable(mtk_dp);
-+	mtk_dp_hwirq_enable(mtk_dp, true);
-+
-+err_phy_config:
-+	phy_exit(mtk_dp->phy);
-+err_phy_init:
-+	clk_disable_unprepare(mtk_dp->dp_tx_clk);
-+err:
-+	mutex_unlock(&mtk_dp->dp_lock);
-+	return ret;
-+}
-+
-+static int mtk_dp_bridge_attach(struct drm_bridge *bridge,
-+				enum drm_bridge_attach_flags flags)
-+{
-+	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-+	int ret;
-+
-+	if (!(flags & DRM_BRIDGE_ATTACH_NO_CONNECTOR)) {
-+		dev_err(mtk_dp->dev, "Driver does not provide a connector!");
-+		return -EINVAL;
-+	}
-+
-+	ret = mtk_dp_poweron(mtk_dp);
-+	if (ret)
-+		return ret;
-+
-+	if (mtk_dp->next_bridge) {
-+		ret = drm_bridge_attach(bridge->encoder, mtk_dp->next_bridge,
-+					&mtk_dp->bridge, flags);
-+		if (ret) {
-+			drm_warn(mtk_dp->drm_dev,
-+				 "Failed to attach external bridge: %d\n", ret);
-+			goto err_bridge_attach;
-+		}
-+	}
-+
-+	mtk_dp->drm_dev = bridge->dev;
-+
-+	return 0;
-+
-+err_bridge_attach:
-+	mtk_dp_poweroff(mtk_dp);
-+	return ret;
-+}
-+
-+static void mtk_dp_bridge_detach(struct drm_bridge *bridge)
-+{
-+	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-+
-+	mtk_dp->drm_dev = NULL;
-+
-+	mtk_dp_poweroff(mtk_dp);
-+}
-+
-+static void mtk_dp_bridge_atomic_disable(struct drm_bridge *bridge,
-+					 struct drm_bridge_state *old_state)
-+{
-+	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-+
-+	mtk_dp->enabled = false;
-+}
-+
-+static void mtk_dp_parse_drm_mode_timings(struct mtk_dp *mtk_dp,
-+					  struct drm_display_mode *mode)
-+{
-+	struct mtk_dp_timings *timings = &mtk_dp->info.timings;
-+
-+	drm_display_mode_to_videomode(mode, &timings->vm);
-+	timings->frame_rate = mode->clock * 1000 / mode->htotal / mode->vtotal;
-+	timings->htotal = mode->htotal;
-+	timings->vtotal = mode->vtotal;
-+}
-+
-+static void mtk_dp_bridge_atomic_enable(struct drm_bridge *bridge,
-+					struct drm_bridge_state *old_state)
-+{
-+	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-+	struct drm_connector *conn;
-+	struct drm_connector_state *conn_state;
-+	struct drm_crtc *crtc;
-+	struct drm_crtc_state *crtc_state;
-+	int ret = 0;
-+	int i;
-+
-+	conn = drm_atomic_get_new_connector_for_encoder(old_state->base.state,
-+							bridge->encoder);
-+	if (!conn) {
-+		drm_err(mtk_dp->drm_dev,
-+			"Can't enable bridge as connector is missing\n");
-+		return;
-+	}
-+
-+	memcpy(mtk_dp->connector_eld, conn->eld, MAX_ELD_BYTES);
-+
-+	conn_state =
-+		drm_atomic_get_new_connector_state(old_state->base.state, conn);
-+	if (!conn_state) {
-+		drm_err(mtk_dp->drm_dev,
-+			"Can't enable bridge as connector state is missing\n");
-+		return;
-+	}
-+
-+	crtc = conn_state->crtc;
-+	if (!crtc) {
-+		drm_err(mtk_dp->drm_dev,
-+			"Can't enable bridge as connector state doesn't have a crtc\n");
-+		return;
-+	}
-+	crtc_state = drm_atomic_get_new_crtc_state(old_state->base.state, crtc);
-+	if (!crtc_state) {
-+		drm_err(mtk_dp->drm_dev,
-+			"Can't enable bridge as crtc state is missing\n");
-+		return;
-+	}
-+
-+	mtk_dp_parse_drm_mode_timings(mtk_dp, &crtc_state->adjusted_mode);
-+
-+	if (!mtk_dp_parse_capabilities(mtk_dp)) {
-+		drm_err(mtk_dp->drm_dev,
-+			"Can't enable bridge as nothing is plugged in\n");
-+		return;
-+	}
-+
-+	//training
-+	for (i = 0; i < 50; i++) {
-+		ret = mtk_dp_train_handler(mtk_dp);
-+		if (ret) {
-+			drm_err(mtk_dp->drm_dev, "Train handler failed %d\n",
-+				ret);
-+			return;
-+		}
-+
-+		ret = mtk_dp_state_handler(mtk_dp);
-+		if (ret) {
-+			drm_err(mtk_dp->drm_dev, "State handler failed %d\n",
-+				ret);
-+			return;
-+		}
-+	}
-+
-+	mtk_dp->enabled = true;
-+}
-+
-+static const struct drm_bridge_funcs mtk_dp_bridge_funcs = {
-+	.atomic_duplicate_state = drm_atomic_helper_bridge_duplicate_state,
-+	.atomic_destroy_state = drm_atomic_helper_bridge_destroy_state,
-+	.atomic_reset = drm_atomic_helper_bridge_reset,
-+	.attach = mtk_dp_bridge_attach,
-+	.detach = mtk_dp_bridge_detach,
-+	.atomic_enable = mtk_dp_bridge_atomic_enable,
-+	.atomic_disable = mtk_dp_bridge_atomic_disable,
-+	.get_edid = mtk_dp_get_edid,
-+	.detect = mtk_dp_bdg_detect,
-+};
-+
-+/*
-+ * HDMI audio codec callbacks
-+ */
-+static int mtk_dp_audio_hw_params(struct device *dev, void *data,
-+				  struct hdmi_codec_daifmt *daifmt,
-+				  struct hdmi_codec_params *params)
-+{
-+	struct mtk_dp *mtk_dp = dev_get_drvdata(dev);
-+	struct mtk_dp_audio_cfg cfg;
-+
-+	if (!mtk_dp->enabled) {
-+		pr_err("%s, DP is not ready!\n", __func__);
-+		return -ENODEV;
-+	}
-+
-+	cfg.channels = params->cea.channels;
-+	cfg.sample_rate = params->sample_rate;
-+	cfg.word_length_bits = 24;
-+
-+	mtk_dp_audio_setup(mtk_dp, &cfg);
-+
-+	return 0;
-+}
-+
-+static int mtk_dp_audio_startup(struct device *dev, void *data)
-+{
-+	struct mtk_dp *mtk_dp = dev_get_drvdata(dev);
-+
-+	mtk_dp_audio_mute(mtk_dp, false);
-+
-+	return 0;
-+}
-+
-+static void mtk_dp_audio_shutdown(struct device *dev, void *data)
-+{
-+	struct mtk_dp *mtk_dp = dev_get_drvdata(dev);
-+
-+	mtk_dp_audio_mute(mtk_dp, true);
-+}
-+
-+static int mtk_dp_audio_get_eld(struct device *dev, void *data, uint8_t *buf,
-+				size_t len)
-+{
-+	struct mtk_dp *mtk_dp = dev_get_drvdata(dev);
-+
-+	if (mtk_dp->enabled)
-+		memcpy(buf, mtk_dp->connector_eld, len);
-+	else
-+		memset(buf, 0, len);
-+
-+	return 0;
-+}
-+
-+static int mtk_dp_audio_hook_plugged_cb(struct device *dev, void *data,
-+					hdmi_codec_plugged_cb fn,
-+					struct device *codec_dev)
-+{
-+	struct mtk_dp *mtk_dp = data;
-+
-+	mutex_lock(&mtk_dp->update_plugged_status_lock);
-+	mtk_dp->plugged_cb = fn;
-+	mtk_dp->codec_dev = codec_dev;
-+	mutex_unlock(&mtk_dp->update_plugged_status_lock);
-+
-+	mtk_dp_update_plugged_status(mtk_dp);
-+
-+	return 0;
-+}
-+
-+static const struct hdmi_codec_ops mtk_dp_audio_codec_ops = {
-+	.hw_params = mtk_dp_audio_hw_params,
-+	.audio_startup = mtk_dp_audio_startup,
-+	.audio_shutdown = mtk_dp_audio_shutdown,
-+	.get_eld = mtk_dp_audio_get_eld,
-+	.hook_plugged_cb = mtk_dp_audio_hook_plugged_cb,
-+	.no_capture_mute = 1,
-+};
-+
-+static int mtk_dp_register_audio_driver(struct device *dev)
-+{
-+	struct mtk_dp *mtk_dp = dev_get_drvdata(dev);
-+	struct hdmi_codec_pdata codec_data = {
-+		.ops = &mtk_dp_audio_codec_ops,
-+		.max_i2s_channels = 8,
-+		.i2s = 1,
-+		.data = mtk_dp,
-+	};
-+	struct platform_device *pdev;
-+
-+	pdev = platform_device_register_data(dev, HDMI_CODEC_DRV_NAME,
-+					     PLATFORM_DEVID_AUTO, &codec_data,
-+					     sizeof(codec_data));
-+	if (IS_ERR(pdev))
-+		return PTR_ERR(pdev);
-+
-+	return 0;
-+}
-+
-+static int mtk_dp_probe(struct platform_device *pdev)
-+{
-+	struct mtk_dp *mtk_dp;
-+	struct device *dev = &pdev->dev;
-+	int ret;
-+	int irq_num = 0;
-+	struct drm_panel *panel = NULL;
-+
-+	mtk_dp = devm_kzalloc(dev, sizeof(*mtk_dp), GFP_KERNEL);
-+	if (!mtk_dp)
-+		return -ENOMEM;
-+
-+	mtk_dp->dev = dev;
-+
-+	irq_num = platform_get_irq(pdev, 0);
-+	if (irq_num < 0) {
-+		dev_err(dev, "failed to request dp irq resource\n");
-+		return -EPROBE_DEFER;
-+	}
-+
-+	ret = drm_of_find_panel_or_bridge(dev->of_node, 1, 0,
-+					  &panel, &mtk_dp->next_bridge);
-+	if (ret == -ENODEV) {
-+		dev_info(dev, "No panel connected in devicetree, continuing as external DP\n");
-+		mtk_dp->next_bridge = NULL;
-+	} else if (ret) {
-+		dev_err(dev, "Failed to find panel or bridge: %d\n",
-+			ret);
-+		return ret;
-+	}
-+
-+	if (panel) {
-+		mtk_dp->next_bridge =
-+			devm_drm_panel_bridge_add(dev, panel);
-+		if (IS_ERR(mtk_dp->next_bridge)) {
-+			ret = PTR_ERR(mtk_dp->next_bridge);
-+			dev_err(dev, "Failed to create bridge: %d\n",
-+				ret);
-+			return -EPROBE_DEFER;
-+		}
-+	}
-+
-+	ret = mtk_dp_dt_parse_pdata(mtk_dp, pdev);
-+	if (ret)
-+		return ret;
-+
-+	mtk_dp_aux_init(mtk_dp);
-+
-+	ret = devm_request_threaded_irq(dev, irq_num, mtk_dp_hpd_event,
-+					mtk_dp_hpd_event_thread,
-+					IRQ_TYPE_LEVEL_HIGH,
-+					dev_name(dev), mtk_dp);
-+	if (ret) {
-+		dev_err(dev, "failed to request mediatek dptx irq\n");
-+		return -EPROBE_DEFER;
-+	}
-+
-+	mutex_init(&mtk_dp->dp_lock);
-+
-+	platform_set_drvdata(pdev, mtk_dp);
-+
-+	if (!mtk_dp_is_edp(mtk_dp)) {
-+		mutex_init(&mtk_dp->update_plugged_status_lock);
-+		ret = mtk_dp_register_audio_driver(dev);
-+		if (ret) {
-+			dev_err(dev, "Failed to register audio driver: %d\n",
-+				ret);
-+			return ret;
-+		}
-+	}
-+
-+	mtk_dp->phy_dev = platform_device_register_data(dev, "mediatek-dp-phy",
-+							PLATFORM_DEVID_AUTO,
-+							&mtk_dp->regs,
-+							sizeof(&mtk_dp->regs));
-+	if (IS_ERR(mtk_dp->phy_dev)) {
-+		dev_err(dev, "Failed to create device mediatek-dp-phy: %ld\n",
-+			PTR_ERR(mtk_dp->phy_dev));
-+		return PTR_ERR(mtk_dp->phy_dev);
-+	}
-+
-+	mtk_dp->phy = dev_get_drvdata(&mtk_dp->phy_dev->dev);
-+	if (IS_ERR(mtk_dp->phy)) {
-+		dev_err(dev, "Failed to get phy: %ld\n", PTR_ERR(mtk_dp->phy));
-+		platform_device_unregister(mtk_dp->phy_dev);
-+		return PTR_ERR(mtk_dp->phy);
-+	}
-+
-+	mtk_dp->bridge.funcs = &mtk_dp_bridge_funcs;
-+	mtk_dp->bridge.of_node = dev->of_node;
-+	if (mtk_dp_is_edp(mtk_dp))
-+		mtk_dp->bridge.type = DRM_MODE_CONNECTOR_eDP;
-+	else
-+		mtk_dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
-+
-+	mtk_dp->bridge.ops = DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
-+			     DRM_BRIDGE_OP_HPD;
-+	drm_bridge_add(&mtk_dp->bridge);
-+
-+	pm_runtime_enable(dev);
-+	pm_runtime_get_sync(dev);
-+
-+	return 0;
-+}
-+
-+static int mtk_dp_remove(struct platform_device *pdev)
-+{
-+	struct mtk_dp *mtk_dp = platform_get_drvdata(pdev);
-+
-+	platform_device_unregister(mtk_dp->phy_dev);
-+
-+	mtk_dp_video_mute(mtk_dp, true);
-+	mtk_dp_audio_mute(mtk_dp, true);
-+
-+	pm_runtime_disable(&pdev->dev);
-+
-+	return 0;
-+}
-+
-+#ifdef CONFIG_PM_SLEEP
-+static int mtk_dp_suspend(struct device *dev)
-+{
-+	struct mtk_dp *mtk_dp = dev_get_drvdata(dev);
-+
-+	mtk_dp_power_disable(mtk_dp);
-+	mtk_dp_hwirq_enable(mtk_dp, false);
-+
-+	pm_runtime_put_sync(dev);
-+
-+	return 0;
-+}
-+
-+static int mtk_dp_resume(struct device *dev)
-+{
-+	struct mtk_dp *mtk_dp = dev_get_drvdata(dev);
-+
-+	pm_runtime_get_sync(dev);
-+
-+	mtk_dp_init_port(mtk_dp);
-+	mtk_dp_power_enable(mtk_dp);
-+	mtk_dp_hwirq_enable(mtk_dp, true);
-+
-+	return 0;
-+}
-+#endif
-+
-+static SIMPLE_DEV_PM_OPS(mtk_dp_pm_ops,
-+		mtk_dp_suspend, mtk_dp_resume);
-+
-+static const struct of_device_id mtk_dp_of_match[] = {
-+	{
-+		.compatible = "mediatek,mt8195-dp-tx",
-+	},
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, mtk_dp_of_match);
-+
-+struct platform_driver mtk_dp_driver = {
-+	.probe = mtk_dp_probe,
-+	.remove = mtk_dp_remove,
-+	.driver = {
-+		.name = "mediatek-drm-dp",
-+		.of_match_table = mtk_dp_of_match,
-+		.pm = &mtk_dp_pm_ops,
-+	},
-+};
-+
-+MODULE_AUTHOR("Jason-JH.Lin <jason-jh.lin@mediatek.com>");
-+MODULE_AUTHOR("Markus Schneider-Pargmann <msp@baylibre.com>");
-+MODULE_DESCRIPTION("MediaTek DisplayPort Driver");
-+MODULE_LICENSE("GPL v2");
-diff --git a/drivers/gpu/drm/mediatek/mtk_dp_reg.h b/drivers/gpu/drm/mediatek/mtk_dp_reg.h
-new file mode 100644
-index 000000000000..dedc63f7cc71
---- /dev/null
-+++ b/drivers/gpu/drm/mediatek/mtk_dp_reg.h
-@@ -0,0 +1,535 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2019 MediaTek Inc.
-+ * Copyright (c) 2021 BayLibre
-+ */
-+#ifndef _MTK_DP_REG_H_
-+#define _MTK_DP_REG_H_
-+
-+#define MTK_DP_SIP_CONTROL_AARCH32 0x82000523
-+# define MTK_DP_SIP_ATF_VIDEO_UNMUTE 0x20
-+# define MTK_DP_SIP_ATF_EDP_VIDEO_UNMUTE 0x21
-+
-+#define TOP_OFFSET		0x2000
-+#define ENC0_OFFSET		0x3000
-+#define ENC1_OFFSET		0x3200
-+#define TRANS_OFFSET		0x3400
-+#define AUX_OFFSET		0x3600
-+#define SEC_OFFSET		0x4000
-+
-+#define MTK_DP_HPD_DISCONNECT	BIT(1)
-+#define MTK_DP_HPD_CONNECT	BIT(2)
-+#define MTK_DP_HPD_INTERRUPT	BIT(3)
-+
-+#define MTK_DP_0034                      0x034
-+# define DA_XTP_GLB_CKDET_EN_FORCE_VAL                                 BIT(15)
-+# define DA_XTP_GLB_CKDET_EN_FORCE_EN                                  BIT(14)
-+# define DA_CKM_INTCKTX_EN_FORCE_VAL                                   BIT(13)
-+# define DA_CKM_INTCKTX_EN_FORCE_EN                                    BIT(12)
-+# define DA_CKM_CKTX0_EN_FORCE_VAL                                     BIT(11)
-+# define DA_CKM_CKTX0_EN_FORCE_EN                                      BIT(10)
-+# define DA_CKM_XTAL_CK_FORCE_VAL                                      BIT(9)
-+# define DA_CKM_XTAL_CK_FORCE_EN                                       BIT(8)
-+# define DA_CKM_BIAS_LPF_EN_FORCE_VAL                                  BIT(7)
-+# define DA_CKM_BIAS_LPF_EN_FORCE_EN                                   BIT(6)
-+# define DA_CKM_BIAS_EN_FORCE_VAL                                      BIT(5)
-+# define DA_CKM_BIAS_EN_FORCE_EN                                       BIT(4)
-+# define DA_XTP_GLB_AVD10_ON_FORCE_VAL                                 BIT(3)
-+# define DA_XTP_GLB_AVD10_ON_FORCE                                     BIT(2)
-+# define DA_XTP_GLB_LDO_EN_FORCE_VAL                                   BIT(1)
-+# define DA_XTP_GLB_LDO_EN_FORCE_EN                                    BIT(0)
-+
-+#define MTK_DP_1040                      0x1040
-+# define RG_DPAUX_RX_VALID_DEGLITCH_EN                                 BIT(2)
-+# define RG_XTP_GLB_CKDET_EN                                           BIT(1)
-+# define RG_DPAUX_RX_EN                                                BIT(0)
-+
-+#define MTK_DP_ENC0_P0_3000              (ENC0_OFFSET + 0x000)
-+# define LANE_NUM_DP_ENC0_P0_MASK                                      0x3
-+# define VIDEO_MUTE_SW_DP_ENC0_P0_MASK                                 0x4
-+# define VIDEO_MUTE_SW_DP_ENC0_P0_SHIFT                                2
-+# define VIDEO_MUTE_SEL_DP_ENC0_P0_MASK                                0x8
-+# define VIDEO_MUTE_SEL_DP_ENC0_P0_SHIFT                               3
-+# define ENHANCED_FRAME_EN_DP_ENC0_P0_MASK                             0x10
-+# define ENHANCED_FRAME_EN_DP_ENC0_P0_SHIFT                            4
-+
-+#define MTK_DP_ENC0_P0_3004              (ENC0_OFFSET + 0x004)
-+# define VIDEO_M_CODE_SEL_DP_ENC0_P0_MASK                              0x100
-+# define VIDEO_M_CODE_SEL_DP_ENC0_P0_SHIFT                             8
-+# define DP_TX_ENCODER_4P_RESET_SW_DP_ENC0_P0_MASK                     0x200
-+# define DP_TX_ENCODER_4P_RESET_SW_DP_ENC0_P0_SHIFT                    9
-+
-+#define MTK_DP_ENC0_P0_3008              (ENC0_OFFSET + 0x008)
-+# define VIDEO_M_CODE_SW_0_DP_ENC0_P0_MASK                             0xffff
-+
-+#define MTK_DP_ENC0_P0_300C              (ENC0_OFFSET + 0x00C)
-+# define VIDEO_M_CODE_SW_1_DP_ENC0_P0_MASK                             0xff
-+
-+#define MTK_DP_ENC0_P0_3010              (ENC0_OFFSET + 0x010)
-+# define HTOTAL_SW_DP_ENC0_P0_MASK                                     0xffff
-+
-+#define MTK_DP_ENC0_P0_3014              (ENC0_OFFSET + 0x014)
-+# define VTOTAL_SW_DP_ENC0_P0_MASK                                     0xffff
-+
-+#define MTK_DP_ENC0_P0_3018              (ENC0_OFFSET + 0x018)
-+# define HSTART_SW_DP_ENC0_P0_MASK                                     0xffff
-+
-+#define MTK_DP_ENC0_P0_301C              (ENC0_OFFSET + 0x01C)
-+# define VSTART_SW_DP_ENC0_P0_MASK                                     0xffff
-+
-+#define MTK_DP_ENC0_P0_3020              (ENC0_OFFSET + 0x020)
-+# define HWIDTH_SW_DP_ENC0_P0_MASK                                     0xffff
-+
-+#define MTK_DP_ENC0_P0_3024              (ENC0_OFFSET + 0x024)
-+# define VHEIGHT_SW_DP_ENC0_P0_MASK                                    0xffff
-+
-+#define MTK_DP_ENC0_P0_3028              (ENC0_OFFSET + 0x028)
-+# define HSW_SW_DP_ENC0_P0_MASK                                        0x7fff
-+# define HSW_SW_DP_ENC0_P0_SHIFT                                       0
-+# define HSP_SW_DP_ENC0_P0_MASK                                        0x8000
-+
-+#define MTK_DP_ENC0_P0_302C              (ENC0_OFFSET + 0x02C)
-+# define VSW_SW_DP_ENC0_P0_MASK                                        0x7fff
-+# define VSW_SW_DP_ENC0_P0_SHIFT                                       0
-+# define VSP_SW_DP_ENC0_P0_MASK                                        0x8000
-+
-+#define MTK_DP_ENC0_P0_3030              (ENC0_OFFSET + 0x030)
-+# define HTOTAL_SEL_DP_ENC0_P0_SHIFT                                   0
-+# define VTOTAL_SEL_DP_ENC0_P0_SHIFT                                   1
-+# define HSTART_SEL_DP_ENC0_P0_SHIFT                                   2
-+# define VSTART_SEL_DP_ENC0_P0_SHIFT                                   3
-+# define HWIDTH_SEL_DP_ENC0_P0_SHIFT                                   4
-+# define VHEIGHT_SEL_DP_ENC0_P0_SHIFT                                  5
-+# define HSP_SEL_DP_ENC0_P0_SHIFT                                      6
-+# define HSW_SEL_DP_ENC0_P0_SHIFT                                      7
-+# define VSP_SEL_DP_ENC0_P0_SHIFT                                      8
-+# define VSW_SEL_DP_ENC0_P0_SHIFT                                      9
-+# define VBID_AUDIO_MUTE_FLAG_SW_DP_ENC0_P0_MASK                       0x800
-+# define VBID_AUDIO_MUTE_SW_DP_ENC0_P0_SHIFT                           11
-+# define VBID_AUDIO_MUTE_FLAG_SEL_DP_ENC0_P0_MASK                      0x1000
-+# define VBID_AUDIO_MUTE_SEL_DP_ENC0_P0_SHIFT                          12
-+
-+#define MTK_DP_ENC0_P0_3034              (ENC0_OFFSET + 0x034)
-+
-+#define MTK_DP_ENC0_P0_3038              (ENC0_OFFSET + 0x038)
-+# define VIDEO_SOURCE_SEL_DP_ENC0_P0_MASK                              0x800
-+# define VIDEO_SOURCE_SEL_DP_ENC0_P0_SHIFT                             11
-+
-+#define MTK_DP_ENC0_P0_303C              (ENC0_OFFSET + 0x03C)
-+# define SRAM_START_READ_THRD_DP_ENC0_P0_MASK                          0x3f
-+# define SRAM_START_READ_THRD_DP_ENC0_P0_SHIFT                         0
-+# define VIDEO_COLOR_DEPTH_DP_ENC0_P0_MASK                             0x700
-+# define VIDEO_COLOR_DEPTH_DP_ENC0_P0_SHIFT                            8
-+# define VIDEO_COLOR_DEPTH_DP_ENC0_P0_16BIT                            (0 << VIDEO_COLOR_DEPTH_DP_ENC0_P0_SHIFT)
-+# define VIDEO_COLOR_DEPTH_DP_ENC0_P0_12BIT                            (1 << VIDEO_COLOR_DEPTH_DP_ENC0_P0_SHIFT)
-+# define VIDEO_COLOR_DEPTH_DP_ENC0_P0_10BIT                            (2 << VIDEO_COLOR_DEPTH_DP_ENC0_P0_SHIFT)
-+# define VIDEO_COLOR_DEPTH_DP_ENC0_P0_8BIT                             (3 << VIDEO_COLOR_DEPTH_DP_ENC0_P0_SHIFT)
-+# define VIDEO_COLOR_DEPTH_DP_ENC0_P0_6BIT                             (4 << VIDEO_COLOR_DEPTH_DP_ENC0_P0_SHIFT)
-+# define PIXEL_ENCODE_FORMAT_DP_ENC0_P0_MASK                           0x7000
-+# define PIXEL_ENCODE_FORMAT_DP_ENC0_P0_SHIFT                          12
-+# define PIXEL_ENCODE_FORMAT_DP_ENC0_P0_RGB                            (0 << PIXEL_ENCODE_FORMAT_DP_ENC0_P0_SHIFT)
-+# define PIXEL_ENCODE_FORMAT_DP_ENC0_P0_YCBCR422                       (1 << PIXEL_ENCODE_FORMAT_DP_ENC0_P0_SHIFT)
-+# define PIXEL_ENCODE_FORMAT_DP_ENC0_P0_YCBCR420                       (2 << PIXEL_ENCODE_FORMAT_DP_ENC0_P0_SHIFT)
-+# define VIDEO_MN_GEN_EN_DP_ENC0_P0_MASK                               0x8000
-+# define VIDEO_MN_GEN_EN_DP_ENC0_P0_SHIFT                              15
-+
-+#define MTK_DP_ENC0_P0_3040              (ENC0_OFFSET + 0x040)
-+# define SDP_DOWN_CNT_INIT_DP_ENC0_P0_MASK                             0xfff
-+# define SDP_DOWN_CNT_INIT_DP_ENC0_P0_SHIFT                            0
-+
-+#define MTK_DP_ENC0_P0_3044              (ENC0_OFFSET + 0x044)
-+# define VIDEO_N_CODE_0_DP_ENC0_P0_MASK                                0xffff
-+
-+#define MTK_DP_ENC0_P0_3048              (ENC0_OFFSET + 0x048)
-+# define VIDEO_N_CODE_1_DP_ENC0_P0_MASK                                0xff
-+
-+#define MTK_DP_ENC0_P0_304C              (ENC0_OFFSET + 0x04C)
-+# define VBID_VIDEO_MUTE_DP_ENC0_P0_MASK                                 0x4
-+# define SDP_VSYNC_RISING_MASK_DP_ENC0_P0_MASK                           0x100
-+
-+#define MTK_DP_ENC0_P0_3050              (ENC0_OFFSET + 0x050)
-+# define VIDEO_N_CODE_MN_GEN_0_DP_ENC0_P0_MASK                           0xffff
-+
-+#define MTK_DP_ENC0_P0_3054              (ENC0_OFFSET + 0x054)
-+# define VIDEO_N_CODE_MN_GEN_1_DP_ENC0_P0_MASK                           0xff
-+
-+#define MTK_DP_ENC0_P0_3064              (ENC0_OFFSET + 0x064)
-+# define HDE_NUM_LAST_DP_ENC0_P0_MASK                                    0xffff
-+
-+#define MTK_DP_ENC0_P0_3088              (ENC0_OFFSET + 0x088)
-+# define AU_EN_DP_ENC0_P0_MASK                                           0x40
-+# define AU_EN_DP_ENC0_P0_SHIFT                                          6
-+# define AUDIO_8CH_EN_DP_ENC0_P0_MASK                                    0x80
-+# define AUDIO_8CH_SEL_DP_ENC0_P0_MASK                                   0x100
-+# define AUDIO_2CH_EN_DP_ENC0_P0_MASK                                    0x4000
-+# define AUDIO_2CH_SEL_DP_ENC0_P0_MASK                                   0x8000
-+
-+#define MTK_DP_ENC0_P0_308C              (ENC0_OFFSET + 0x08C)
-+# define CH_STATUS_0_DP_ENC0_P0_MASK                                     0xffff
-+
-+#define MTK_DP_ENC0_P0_3090              (ENC0_OFFSET + 0x090)
-+# define CH_STATUS_1_DP_ENC0_P0_MASK                                     0xffff
-+
-+#define MTK_DP_ENC0_P0_3094              (ENC0_OFFSET + 0x094)
-+# define CH_STATUS_2_DP_ENC0_P0_MASK                                     0xff
-+
-+#define MTK_DP_ENC0_P0_30A0              (ENC0_OFFSET + 0x0A0)
-+
-+#define MTK_DP_ENC0_P0_30A4              (ENC0_OFFSET + 0x0A4)
-+# define AU_TS_CFG_DP_ENC0_P0_MASK                                       0xff
-+
-+#define MTK_DP_ENC0_P0_30A8              (ENC0_OFFSET + 0x0A8)
-+
-+#define MTK_DP_ENC0_P0_30AC              (ENC0_OFFSET + 0x0AC)
-+
-+#define MTK_DP_ENC0_P0_30B0              (ENC0_OFFSET + 0x0B0)
-+
-+#define MTK_DP_ENC0_P0_30B4              (ENC0_OFFSET + 0x0B4)
-+# define ISRC_CFG_DP_ENC0_P0_MASK                                        0xff00
-+# define ISRC_CFG_DP_ENC0_P0_SHIFT                                       8
-+
-+#define MTK_DP_ENC0_P0_30B8              (ENC0_OFFSET + 0x0B8)
-+
-+#define MTK_DP_ENC0_P0_30BC              (ENC0_OFFSET + 0x0BC)
-+# define ISRC_CONT_DP_ENC0_P0_MASK                                       0x1
-+# define ISRC_CONT_DP_ENC0_P0_SHIFT                                      0
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_MASK                       0x700
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_SHIFT                      8
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_MUL_2 \
-+	(1 << AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_SHIFT)
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_MUL_4 \
-+	(2 << AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_SHIFT)
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_MUL_8 \
-+	(3 << AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_SHIFT)
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_DIV_2 \
-+	(5 << AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_SHIFT)
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_DIV_4 \
-+	(6 << AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_SHIFT)
-+# define AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_DIV_8 \
-+	(7 << AUDIO_M_CODE_MULT_DIV_SEL_DP_ENC0_P0_SHIFT)
-+
-+#define MTK_DP_ENC0_P0_30D8              (ENC0_OFFSET + 0x0D8)
-+
-+#define MTK_DP_ENC0_P0_312C              (ENC0_OFFSET + 0x12C)
-+# define ASP_HB2_DP_ENC0_P0_MASK                                         0xff
-+# define ASP_HB3_DP_ENC0_P0_MASK                                         0xff00
-+# define ASP_HB3_DP_ENC0_P0_SHIFT                                        8
-+
-+#define MTK_DP_ENC0_P0_3130              (ENC0_OFFSET + 0x130)
-+
-+#define MTK_DP_ENC0_P0_3138              (ENC0_OFFSET + 0x138)
-+
-+#define MTK_DP_ENC0_P0_3154              (ENC0_OFFSET + 0x154)
-+# define PGEN_HTOTAL_DP_ENC0_P0_MASK                                     0x3fff
-+
-+#define MTK_DP_ENC0_P0_3158              (ENC0_OFFSET + 0x158)
-+# define PGEN_HSYNC_RISING_DP_ENC0_P0_MASK                               0x3fff
-+
-+#define MTK_DP_ENC0_P0_315C              (ENC0_OFFSET + 0x15C)
-+# define PGEN_HSYNC_PULSE_WIDTH_DP_ENC0_P0_MASK                          0x3fff
-+
-+#define MTK_DP_ENC0_P0_3160              (ENC0_OFFSET + 0x160)
-+# define PGEN_HFDE_START_DP_ENC0_P0_MASK                                 0x3fff
-+
-+#define MTK_DP_ENC0_P0_3164              (ENC0_OFFSET + 0x164)
-+# define PGEN_HFDE_ACTIVE_WIDTH_DP_ENC0_P0_MASK                          0x3fff
-+
-+#define MTK_DP_ENC0_P0_3168              (ENC0_OFFSET + 0x168)
-+# define PGEN_VTOTAL_DP_ENC0_P0_MASK                                     0x1fff
-+
-+#define MTK_DP_ENC0_P0_316C              (ENC0_OFFSET + 0x16C)
-+# define PGEN_VSYNC_RISING_DP_ENC0_P0_MASK                               0x1fff
-+
-+#define MTK_DP_ENC0_P0_3170              (ENC0_OFFSET + 0x170)
-+# define PGEN_VSYNC_PULSE_WIDTH_DP_ENC0_P0_MASK                          0x1fff
-+
-+#define MTK_DP_ENC0_P0_3174              (ENC0_OFFSET + 0x174)
-+# define PGEN_VFDE_START_DP_ENC0_P0_MASK                                 0x1fff
-+
-+#define MTK_DP_ENC0_P0_3178              (ENC0_OFFSET + 0x178)
-+# define PGEN_VFDE_ACTIVE_WIDTH_DP_ENC0_P0_MASK                          0x1fff
-+
-+#define MTK_DP_ENC0_P0_31B0              (ENC0_OFFSET + 0x1B0)
-+# define PGEN_PATTERN_SEL_SHIFT                                          4
-+# define PGEN_PATTERN_SEL_MASK                                           0x0070
-+
-+#define MTK_DP_ENC0_P0_31C8              (ENC0_OFFSET + 0x1C8)
-+# define VSC_EXT_VESA_HB0_DP_ENC0_P0_MASK                                0xff
-+# define VSC_EXT_VESA_HB1_DP_ENC0_P0_MASK                                0xff00
-+# define VSC_EXT_VESA_HB1_DP_ENC0_P0_SHIFT                               8
-+
-+#define MTK_DP_ENC0_P0_31CC              (ENC0_OFFSET + 0x1CC)
-+# define VSC_EXT_VESA_HB2_DP_ENC0_P0_MASK                                0xff
-+# define VSC_EXT_VESA_HB2_DP_ENC0_P0_SHIFT                               0
-+# define VSC_EXT_VESA_HB3_DP_ENC0_P0_MASK                                0xff00
-+
-+#define MTK_DP_ENC0_P0_31D0              (ENC0_OFFSET + 0x1D0)
-+# define VSC_EXT_CEA_HB0_DP_ENC0_P0_MASK                                 0xff
-+# define VSC_EXT_CEA_HB1_DP_ENC0_P0_MASK                                 0xff00
-+# define VSC_EXT_CEA_HB1_DP_ENC0_P0_SHIFT                                8
-+
-+#define MTK_DP_ENC0_P0_31D4              (ENC0_OFFSET + 0x1D4)
-+# define VSC_EXT_CEA_HB2_DP_ENC0_P0_MASK                                 0xff
-+# define VSC_EXT_CEA_HB2_DP_ENC0_P0_SHIFT                                0
-+# define VSC_EXT_CEA_HB3_DP_ENC0_P0_MASK                                 0xff00
-+
-+#define MTK_DP_ENC0_P0_31D8              (ENC0_OFFSET + 0x1D8)
-+# define VSC_EXT_VESA_NUM_DP_ENC0_P0_MASK                                0x3f
-+# define VSC_EXT_VESA_NUM_DP_ENC0_P0_SHIFT                               0
-+# define VSC_EXT_CEA_NUM_DP_ENC0_P0_MASK                                 0x3f00
-+# define VSC_EXT_CEA_NUM_DP_ENC0_P0_SHIFT                                8
-+
-+#define MTK_DP_ENC0_P0_31DC              (ENC0_OFFSET + 0x1DC)
-+# define HDR0_CFG_DP_ENC0_P0_MASK                                        0xff
-+# define HDR0_CFG_DP_ENC0_P0_SHIFT                                       0
-+
-+#define MTK_DP_ENC0_P0_31E8              (ENC0_OFFSET + 0x1E8)
-+
-+#define MTK_DP_ENC0_P0_31EC              (ENC0_OFFSET + 0x1EC)
-+# define AUDIO_CH_SRC_SEL_DP_ENC0_P0_MASK                                0x10
-+# define AUDIO_CH_SRC_SEL_DP_ENC0_P0_SHIFT                               4
-+# define ISRC1_HB3_DP_ENC0_P0_MASK                                       0xff00
-+# define ISRC1_HB3_DP_ENC0_P0_SHIFT                                      8
-+
-+#define MTK_DP_ENC1_P0_3200              (ENC1_OFFSET + 0x000)
-+
-+#define MTK_DP_ENC1_P0_3280              (ENC1_OFFSET + 0x080)
-+# define SDP_PACKET_TYPE_DP_ENC1_P0_MASK                                 0x1f
-+# define SDP_PACKET_W_DP_ENC1_P0                                         0x20
-+# define SDP_PACKET_W_DP_ENC1_P0_MASK                                    0x20
-+# define SDP_PACKET_W_DP_ENC1_P0_SHIFT                                   5
-+
-+#define MTK_DP_ENC1_P0_328C              (ENC1_OFFSET + 0x08C)
-+
-+#define MTK_DP_ENC1_P0_3290              (ENC1_OFFSET + 0x090)
-+
-+#define MTK_DP_ENC1_P0_32A0              (ENC1_OFFSET + 0x0A0)
-+
-+#define MTK_DP_ENC1_P0_32A4              (ENC1_OFFSET + 0x0A4)
-+
-+#define MTK_DP_ENC1_P0_3300              (ENC1_OFFSET + 0x100)
-+# define VIDEO_AFIFO_RDY_SEL_DP_ENC1_P0_MASK                             0x300
-+# define VIDEO_AFIFO_RDY_SEL_DP_ENC1_P0_SHIFT                            8
-+
-+#define MTK_DP_ENC1_P0_3304              (ENC1_OFFSET + 0x104)
-+# define AU_PRTY_REGEN_DP_ENC1_P0_MASK                                   0x100
-+# define AU_CH_STS_REGEN_DP_ENC1_P0_MASK                                 0x200
-+# define AUDIO_SAMPLE_PRSENT_REGEN_DP_ENC1_P0_MASK                       0x1000
-+
-+#define MTK_DP_ENC1_P0_3324              (ENC1_OFFSET + 0x124)
-+# define AUDIO_SOURCE_MUX_DP_ENC1_P0_MASK                                0x300
-+# define AUDIO_SOURCE_MUX_DP_ENC1_P0_SHIFT                               8
-+# define AUDIO_SOURCE_MUX_DP_ENC1_P0_DPRX                                (0 << AUDIO_SOURCE_MUX_DP_ENC1_P0_SHIFT)
-+
-+#define MTK_DP_ENC1_P0_3364              (ENC1_OFFSET + 0x164)
-+# define SDP_DOWN_CNT_INIT_IN_HBLANK_DP_ENC1_P0_MASK                     0xfff
-+# define SDP_DOWN_CNT_INIT_IN_HBLANK_DP_ENC1_P0_SHIFT                    0
-+# define FIFO_READ_START_POINT_DP_ENC1_P0_MASK                           0xf000
-+# define FIFO_READ_START_POINT_DP_ENC1_P0_SHIFT                          12
-+
-+#define MTK_DP_ENC1_P0_3368              (ENC1_OFFSET + 0x168)
-+# define VIDEO_SRAM_FIFO_CNT_RESET_SEL_DP_ENC1_P0_SHIFT                  0
-+# define VIDEO_STABLE_CNT_THRD_DP_ENC1_P0_SHIFT                          4
-+# define SDP_DP13_EN_DP_ENC1_P0_SHIFT                                    8
-+# define BS2BS_MODE_DP_ENC1_P0_MASK                                      0x3000
-+# define BS2BS_MODE_DP_ENC1_P0_SHIFT                                     12
-+
-+#define MTK_DP_ENC1_P0_33F4              (ENC1_OFFSET + 0x1F4)
-+
-+#define MTK_DP_TRANS_P0_3400              (TRANS_OFFSET + 0x000)
-+# define PATTERN1_EN_DP_TRANS_P0_MASK                                        0x1000
-+# define PATTERN1_EN_DP_TRANS_P0_SHIFT                                       12
-+# define PATTERN2_EN_DP_TRANS_P0_MASK                                        0x2000
-+# define PATTERN3_EN_DP_TRANS_P0_MASK                                        0x4000
-+# define PATTERN4_EN_DP_TRANS_P0_MASK                                        0x8000
-+
-+#define MTK_DP_TRANS_P0_3404              (TRANS_OFFSET + 0x004)
-+# define DP_SCR_EN_DP_TRANS_P0_MASK                                          0x1
-+
-+#define MTK_DP_TRANS_P0_340C              (TRANS_OFFSET + 0x00C)
-+# define DP_TX_TRANSMITTER_4P_RESET_SW_DP_TRANS_P0_MASK                      0x2000
-+# define DP_TX_TRANSMITTER_4P_RESET_SW_DP_TRANS_P0_SHIFT                     13
-+
-+#define MTK_DP_TRANS_P0_3410              (TRANS_OFFSET + 0x010)
-+# define HPD_DEB_THD_DP_TRANS_P0_MASK                                        0xf
-+# define HPD_DEB_THD_DP_TRANS_P0_SHIFT                                       0
-+# define HPD_INT_THD_DP_TRANS_P0_MASK                                        0xf0
-+# define HPD_INT_THD_DP_TRANS_P0_SHIFT                                       4
-+# define HPD_INT_THD_DP_TRANS_P0_LOWER_500US                                 (2 << HPD_INT_THD_DP_TRANS_P0_SHIFT)
-+# define HPD_INT_THD_DP_TRANS_P0_UPPER_1100US                                (2 << (HPD_INT_THD_DP_TRANS_P0_SHIFT + 2))
-+# define HPD_DISC_THD_DP_TRANS_P0_MASK                                       0xf00
-+# define HPD_DISC_THD_DP_TRANS_P0_SHIFT                                      8
-+# define HPD_CONN_THD_DP_TRANS_P0_MASK                                       0xf000
-+# define HPD_CONN_THD_DP_TRANS_P0_SHIFT                                      12
-+
-+#define MTK_DP_TRANS_P0_3414              (TRANS_OFFSET + 0x014)
-+# define HPD_DB_DP_TRANS_P0_MASK                                             0x4
-+
-+#define MTK_DP_TRANS_P0_3418              (TRANS_OFFSET + 0x018)
-+# define IRQ_CLR_DP_TRANS_P0_MASK                                            0xf
-+# define IRQ_MASK_DP_TRANS_P0_MASK                                           0xf0
-+# define IRQ_MASK_DP_TRANS_P0_SHIFT                                          4
-+# define IRQ_MASK_DP_TRANS_P0_DISC_IRQ                                       (BIT(1) << IRQ_MASK_DP_TRANS_P0_SHIFT)
-+# define IRQ_MASK_DP_TRANS_P0_CONN_IRQ                                       (BIT(2) << IRQ_MASK_DP_TRANS_P0_SHIFT)
-+# define IRQ_MASK_DP_TRANS_P0_INT_IRQ                                        (BIT(3) << IRQ_MASK_DP_TRANS_P0_SHIFT)
-+# define IRQ_STATUS_DP_TRANS_P0_MASK                                         0xf000
-+# define IRQ_STATUS_DP_TRANS_P0_SHIFT                                        12
-+
-+#define MTK_DP_TRANS_P0_342C              (TRANS_OFFSET + 0x02C)
-+# define XTAL_FREQ_DP_TRANS_P0_DEFAULT                                       0x69
-+# define XTAL_FREQ_DP_TRANS_P0_MASK                                          0xff
-+
-+#define MTK_DP_TRANS_P0_3430              (TRANS_OFFSET + 0x030)
-+# define HPD_INT_THD_ECO_DP_TRANS_P0_MASK                                    0x3
-+# define HPD_INT_THD_ECO_DP_TRANS_P0_HIGH_BOUND_EXT                          BIT(1)
-+
-+#define MTK_DP_TRANS_P0_34A4              (TRANS_OFFSET + 0x0A4)
-+# define LANE_NUM_DP_TRANS_P0_MASK                                           0xc
-+# define LANE_NUM_DP_TRANS_P0_SHIFT                                          2
-+
-+#define MTK_DP_TRANS_P0_3540              (TRANS_OFFSET + 0x140)
-+# define FEC_EN_DP_TRANS_P0_MASK                                             0x1
-+# define FEC_EN_DP_TRANS_P0_SHIFT                                            0
-+# define FEC_CLOCK_EN_MODE_DP_TRANS_P0_MASK                                  0x8
-+# define FEC_CLOCK_EN_MODE_DP_TRANS_P0_SHIFT                                 3
-+
-+#define MTK_DP_TRANS_P0_3580              (TRANS_OFFSET + 0x180)
-+# define POST_MISC_DATA_LANE0_OV_DP_TRANS_P0_MASK                            0x100
-+# define POST_MISC_DATA_LANE1_OV_DP_TRANS_P0_MASK                            0x200
-+# define POST_MISC_DATA_LANE2_OV_DP_TRANS_P0_MASK                            0x400
-+# define POST_MISC_DATA_LANE3_OV_DP_TRANS_P0_MASK                            0x800
-+
-+#define MTK_DP_TRANS_P0_35C4              (TRANS_OFFSET + 0x1C4)
-+# define SW_IRQ_MASK_DP_TRANS_P0_MASK                                        0xffff
-+
-+#define MTK_DP_TRANS_P0_35C8              (TRANS_OFFSET + 0x1C8)
-+# define SW_IRQ_CLR_DP_TRANS_P0_MASK                                         0xffff
-+
-+# define SW_IRQ_STATUS_DP_TRANS_P0_MASK                                      0xffff
-+# define SW_IRQ_STATUS_DP_TRANS_P0_SHIFT                                     0
-+
-+#define MTK_DP_TRANS_P0_35D0              (TRANS_OFFSET + 0x1D0)
-+# define SW_IRQ_FINAL_STATUS_DP_TRANS_P0_MASK                                0xffff
-+
-+#define MTK_DP_TRANS_P0_35F0              (TRANS_OFFSET + 0x1F0)
-+
-+#define MTK_DP_AUX_P0_360C              (AUX_OFFSET + 0x00C)
-+# define AUX_TIMEOUT_THR_AUX_TX_P0_MASK                                      0x1fff
-+
-+#define MTK_DP_AUX_P0_3614              (AUX_OFFSET + 0x014)
-+# define AUX_RX_UI_CNT_THR_AUX_TX_P0_MASK                                    0x7f
-+# define AUX_RX_UI_CNT_THR_AUX_TX_P0_SHIFT                                   0
-+
-+#define MTK_DP_AUX_P0_3618              (AUX_OFFSET + 0x018)
-+# define AUX_RX_FIFO_FULL_AUX_TX_P0_MASK                                     0x200
-+# define AUX_RX_FIFO_WRITE_POINTER_AUX_TX_P0_MASK                            0xf
-+
-+#define MTK_DP_AUX_P0_3620              (AUX_OFFSET + 0x020)
-+# define AUX_RD_MODE_AUX_TX_P0_MASK                                          0x200
-+# define AUX_RX_FIFO_READ_PULSE_TX_P0_MASK                                   0x100
-+# define AUX_RX_FIFO_R_PULSE_TX_P0_SHIFT                                     8
-+# define AUX_RX_FIFO_READ_DATA_AUX_TX_P0_MASK                                0xff
-+# define AUX_RX_FIFO_READ_DATA_AUX_TX_P0_SHIFT                               0
-+
-+#define MTK_DP_AUX_P0_3624              (AUX_OFFSET + 0x024)
-+# define AUX_RX_REPLY_COMMAND_AUX_TX_P0_MASK                                 0xf
-+
-+#define MTK_DP_AUX_P0_3628              (AUX_OFFSET + 0x028)
-+# define AUX_RX_PHY_STATE_AUX_TX_P0_MASK                                     0x3ff
-+# define AUX_RX_PHY_STATE_AUX_TX_P0_SHIFT                                    0
-+# define AUX_RX_PHY_STATE_AUX_TX_P0_RX_IDLE                                  (BIT(1) << AUX_RX_PHY_STATE_AUX_TX_P0_SHIFT)
-+
-+#define MTK_DP_AUX_P0_362C              (AUX_OFFSET + 0x02C)
-+# define AUX_NO_LENGTH_AUX_TX_P0_MASK                                        0x1
-+# define AUX_NO_LENGTH_AUX_TX_P0_SHIFT                                       0
-+# define AUX_TX_AUXTX_OV_EN_AUX_TX_P0_MASK                                   0x2
-+# define AUX_RESERVED_RW_0_AUX_TX_P0_MASK                                    0xfffc
-+
-+#define MTK_DP_AUX_P0_3630              (AUX_OFFSET + 0x030)
-+# define AUX_TX_REQUEST_READY_AUX_TX_P0_MASK                                 0x8
-+# define AUX_TX_REQUEST_READY_AUX_TX_P0_SHIFT                                3
-+
-+#define MTK_DP_AUX_P0_3634              (AUX_OFFSET + 0x034)
-+# define AUX_TX_OVER_SAMPLE_RATE_AUX_TX_P0_MASK                              0xff00
-+# define AUX_TX_OVER_SAMPLE_RATE_AUX_TX_P0_SHIFT                             8
-+
-+#define MTK_DP_AUX_P0_3640              (AUX_OFFSET + 0x040)
-+# define AUX_RX_RECV_COMPLETE_IRQ_TX_P0_MASK                                 0x40
-+# define AUX_RX_AUX_RECV_COMPLETE_IRQ_AUX_TX_P0_SHIFT                        6
-+# define AUX_RX_EDID_RECV_COMPLETE_IRQ_AUX_TX_P0_SHIFT                       5
-+# define AUX_RX_MCCS_RECV_COMPLETE_IRQ_AUX_TX_P0_SHIFT                       4
-+# define AUX_RX_CMD_RECV_IRQ_AUX_TX_P0_SHIFT                                 3
-+# define AUX_RX_ADDR_RECV_IRQ_AUX_TX_P0_SHIFT                                2
-+# define AUX_RX_DATA_RECV_IRQ_AUX_TX_P0_SHIFT                                1
-+# define AUX_400US_TIMEOUT_IRQ_AUX_TX_P0_MASK                                0x1
-+# define AUX_400US_TIMEOUT_IRQ_AUX_TX_P0_SHIFT                               0
-+
-+#define MTK_DP_AUX_P0_3644              (AUX_OFFSET + 0x044)
-+# define MCU_REQUEST_COMMAND_AUX_TX_P0_MASK                                  0xf
-+
-+#define MTK_DP_AUX_P0_3648              (AUX_OFFSET + 0x048)
-+# define MCU_REQUEST_ADDRESS_LSB_AUX_TX_P0_MASK                              0xffff
-+
-+#define MTK_DP_AUX_P0_364C              (AUX_OFFSET + 0x04C)
-+# define MCU_REQUEST_ADDRESS_MSB_AUX_TX_P0_MASK                              0xf
-+
-+#define MTK_DP_AUX_P0_3650              (AUX_OFFSET + 0x050)
-+# define MCU_REQ_DATA_NUM_AUX_TX_P0_MASK                                     0xf000
-+# define MCU_REQ_DATA_NUM_AUX_TX_P0_SHIFT                                    12
-+# define PHY_FIFO_RST_AUX_TX_P0_MASK                                         0x200
-+# define MCU_ACK_TRAN_COMPLETE_AUX_TX_P0_MASK                                0x100
-+# define MCU_ACK_TRAN_COMPLETE_AUX_TX_P0_SHIFT                               8
-+
-+#define MTK_DP_AUX_P0_3658              (AUX_OFFSET + 0x058)
-+# define AUX_TX_OV_EN_AUX_TX_P0_MASK                                         0x1
-+
-+#define MTK_DP_AUX_P0_3690              (AUX_OFFSET + 0x090)
-+# define RX_REPLY_COMPLETE_MODE_AUX_TX_P0_MASK                               0x100
-+# define RX_REPLY_COMPLETE_MODE_AUX_TX_P0_SHIFT                              8
-+
-+#define MTK_DP_AUX_P0_3704              (AUX_OFFSET + 0x104)
-+# define AUX_TX_FIFO_WRITE_DATA_NEW_MODE_TOGGLE_AUX_TX_P0_MASK               0x2
-+# define AUX_TX_FIFO_NEW_MODE_EN_AUX_TX_P0_MASK                              0x4
-+# define AUX_TX_FIFO_NEW_MODE_EN_AUX_TX_P0_SHIFT                             2
-+
-+#define MTK_DP_AUX_P0_3708              (AUX_OFFSET + 0x108)
-+
-+#define MTK_DP_AUX_P0_37C8              (AUX_OFFSET + 0x1C8)
-+# define MTK_ATOP_EN_AUX_TX_P0_MASK                                          0x1
-+# define MTK_ATOP_EN_AUX_TX_P0_SHIFT                                         0
-+
-+#define MTK_DP_TOP_PWR_STATE              (TOP_OFFSET + 0x00)
-+# define DP_PWR_STATE_MASK                                                   0x3
-+# define DP_PWR_STATE_BANDGAP                                                1
-+# define DP_PWR_STATE_BANDGAP_TPLL                                           2
-+# define DP_PWR_STATE_BANDGAP_TPLL_LANE                                      3
-+
-+#define MTK_DP_TOP_SWING_EMP              (TOP_OFFSET + 0x04)
-+# define DP_TX0_VOLT_SWING_MASK                                              0x3
-+# define DP_TX0_VOLT_SWING_SHIFT                                             0
-+# define DP_TX0_PRE_EMPH_MASK                                                0xc
-+# define DP_TX0_PRE_EMPH_SHIFT                                               2
-+# define DP_TX1_VOLT_SWING_MASK                                              0x300
-+# define DP_TX1_VOLT_SWING_SHIFT                                             8
-+# define DP_TX1_PRE_EMPH_MASK                                                0xc00
-+# define DP_TX2_VOLT_SWING_MASK                                              0x30000
-+# define DP_TX2_PRE_EMPH_MASK                                                0xc0000
-+# define DP_TX3_VOLT_SWING_MASK                                              0x3000000
-+# define DP_TX3_PRE_EMPH_MASK                                                0xc000000
-+
-+#define MTK_DP_TOP_RESET_AND_PROBE              (TOP_OFFSET + 0x20)
-+# define SW_RST_B_SHIFT                                           0
-+# define SW_RST_B_PHYD                                            (BIT(4) << SW_RST_B_SHIFT)
-+
-+#define MTK_DP_TOP_IRQ_STATUS              (TOP_OFFSET + 0x28)
-+# define RGS_IRQ_STATUS_SHIFT                                     0
-+# define RGS_IRQ_STATUS_TRANSMITTER                               (BIT(1) << RGS_IRQ_STATUS_SHIFT)
-+
-+#define MTK_DP_TOP_IRQ_MASK              (TOP_OFFSET + 0x2C)
-+# define IRQ_MASK_AUX_TOP_IRQ                                     BIT(2)
-+
-+#define MTK_DP_TOP_MEM_PD              (TOP_OFFSET + 0x38)
-+# define MEM_ISO_EN_SHIFT                                         0
-+# define FUSE_SEL_SHIFT                                           2
-+
-+#endif /*_MTK_DP_REG_H_*/
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index 1ff4e31c8634..65c7ccaaf196 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -672,6 +672,7 @@ static struct platform_driver * const mtk_drm_drivers[] = {
- 	&mtk_disp_ovl_driver,
- 	&mtk_disp_rdma_driver,
- 	&mtk_dpi_driver,
-+	&mtk_dp_driver,
- 	&mtk_drm_platform_driver,
- 	&mtk_dsi_driver,
- };
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-index 3e7d1e6fbe01..8926416f4419 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-@@ -53,6 +53,7 @@ extern struct platform_driver mtk_disp_gamma_driver;
- extern struct platform_driver mtk_disp_ovl_driver;
- extern struct platform_driver mtk_disp_rdma_driver;
- extern struct platform_driver mtk_dpi_driver;
-+extern struct platform_driver mtk_dp_driver;
- extern struct platform_driver mtk_dsi_driver;
- 
- #endif /* MTK_DRM_DRV_H */
--- 
-2.33.0
-
+> 
+> Overall, looks much better than the last submission.
+> 
+> Regards,
+> Lucas
+> 
+> > +	if (IS_ERR(imx8_phy->iomuxc_gpr)) {
+> > +		dev_err(dev, "unable to find iomuxc registers\n");
+> > +		return PTR_ERR(imx8_phy->iomuxc_gpr);
+> > +	}
+> > +
+> > +	imx8_phy->reset = devm_reset_control_get_exclusive(dev, "pciephy");
+> > +	if (IS_ERR(imx8_phy->reset)) {
+> > +		dev_err(dev, "Failed to get PCIEPHY reset control\n");
+> > +		return PTR_ERR(imx8_phy->reset);
+> > +	}
+> > +
+> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > +	imx8_phy->base = devm_ioremap_resource(dev, res);
+> > +	if (IS_ERR(imx8_phy->base))
+> > +		return PTR_ERR(imx8_phy->base);
+> > +
+> > +	imx8_phy->phy = devm_phy_create(dev, NULL, &imx8_pcie_phy_ops);
+> > +	if (IS_ERR(imx8_phy->phy))
+> > +		return PTR_ERR(imx8_phy->phy);
+> > +
+> > +	phy_set_drvdata(imx8_phy->phy, imx8_phy);
+> > +
+> > +	phy_provider = devm_of_phy_provider_register(dev,
+> > +of_phy_simple_xlate);
+> > +
+> > +	return PTR_ERR_OR_ZERO(phy_provider); }
+> > +
+> > +static const struct of_device_id imx8_pcie_phy_of_match[] = {
+> > +	{.compatible = "fsl,imx8mm-pcie-phy",},
+> > +	{ },
+> > +};
+> > +MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
+> > +
+> > +static struct platform_driver imx8_pcie_phy_driver = {
+> > +	.probe	= imx8_pcie_phy_probe,
+> > +	.driver = {
+> > +		.name	= "imx8-pcie-phy",
+> > +		.of_match_table	= imx8_pcie_phy_of_match,
+> > +	}
+> > +};
+> > +module_platform_driver(imx8_pcie_phy_driver);
+> > +
+> > +MODULE_DESCRIPTION("FSL IMX8 PCIE PHY driver");
+> > +MODULE_LICENSE("GPL");
+> 
 
 -- 
 linux-phy mailing list
