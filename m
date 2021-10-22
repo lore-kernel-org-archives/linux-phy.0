@@ -2,94 +2,160 @@ Return-Path: <SRS0=jE1M=PK=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D5B16C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 16:55:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 743B2C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 17:02:59 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9606E611BD
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 16:55:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9606E611BD
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=gateworks.com
+	by mail.kernel.org (Postfix) with ESMTPS id 29C3A61246
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Oct 2021 17:02:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 29C3A61246
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=77fM6mkCcMdR1MZB46hBmCbatZ+WCSfw339O3uZRAgg=; b=mmWwfXaZmKORfi
-	7AsO3ogsTdJtvCODvCW9GZe3Z4DA9hANFlTXD1iom9zX6z07yF5Dg1sJg1VyH4O95G8w1k+fDRsB9
-	JGICvHYS8A7xJ4oAv24b8G3mGccsVHvU0ftYZR9/PArwIV3StIt+xXqT8MWKcKLicbPaG6W6T8y/X
-	PBmmFVFtHYg7fD7B2wP2Bu8ko/Ewk7BpNPvO8qppz6Tqs8LJUBVWjYn8hxgIcINR7xAimF/C9a/jn
-	Vsh2UVMIj20eA3Id6zRKevKI45aCK8xerOU9F+bDSJQATz3KLNdVQtzMCdwY3FNWMuRUErSgwoLD0
-	Kh0zNJTrqdJKqS5ToEHg==;
+	List-Owner; bh=Jie25RC5SbWL5e668oPTGzf6AgxRZcgmr3R7BEFkzfI=; b=g7ybPkzb1TuAqh
+	1ZDEDcRBOgTCGtRT1avBZeJGMqSGGfBqKvrlYuRZROj44KpqrfiKyHwUk2CEXw/+VUpRrb4wEVPZf
+	AhLTf57wo6PLqwagwxLxtlzGY9xTFO6bo+idV/XmyysqdQoFQ8ZgNpV6cnHS11jUo68F1GaACqu2f
+	yCQOp6t9jhtea3Xe/1TMv/RAncQyoav/wPsVdQzpu+bDbKjsUAvmXNOwD9FI2zOZA/yAlH926UWYP
+	fLyW8al/XB70YkiYQJe1ahdzcfp1F+p2njfjAKI6QBrH/3drt333puX8s8mZkaHV/MTwLxlxxo8/a
+	BpwCesnbRFUjrbpHrlmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mdxpH-00BYpe-1R; Fri, 22 Oct 2021 16:55:27 +0000
-Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
+	id 1mdxwY-00Ba50-FW; Fri, 22 Oct 2021 17:02:58 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mdxp2-00BYlY-VX
- for linux-phy@lists.infradead.org; Fri, 22 Oct 2021 16:55:15 +0000
-Received: by mail-pg1-x531.google.com with SMTP id m21so3828390pgu.13
- for <linux-phy@lists.infradead.org>; Fri, 22 Oct 2021 09:55:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gateworks-com.20210112.gappssmtp.com; s=20210112;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XKk5S6zzVsLpJki6KUTEWM/bL8H8tlEpxuGdUAGLl0U=;
- b=ZoDtpaZS4cpVQQOKeR1r9y3j/BXLAxVmG1e5e0/Fgp6xIHmssCQBlBIwARimP9oy47
- ntqMdiGiscx3uY2O31gZfk2+xLzd4uWEEnmg6K+pWUXT8DDGQRq00C+esyx9vv2laA/p
- 82QOLbwdZ3vdRqRY5Pm8XP4RQkTOyefm9NiwZyqE1wFY+EhcFBsyqfSjOonQ/152hAXp
- efmQOxvZUlr9mTsvN/hq2wvxecDZPr06xNX8DUuCtxYwlybn7QJREfbVRiVTZGYyBZbg
- fRq/vLw+yWaYQ/CzrBWolnvIr0X0W9vtvOk5UtTjaXbf3ik2tYn6c2jMbNb+5LHAFotZ
- /SZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XKk5S6zzVsLpJki6KUTEWM/bL8H8tlEpxuGdUAGLl0U=;
- b=ds/6sRQI9UZ1LvYJH7M5XUf9WQNyKYfYrGN0C7IePKTx1Znqj+B5+5Dc2kIEV82MhU
- nv/I8yfd/BDK64KlEs+mZw5pdLvtdXK9dyAgJmmj26LIxoOUPhpny5OATM7s06F1RbSV
- CMknLNr1Jx6o89MsQp3CSqTLm9VGhjN96DWbs4JclDfWeQCKDs6Yw5oXQU+m515dkaO5
- pmNcIdL7pfLRhnmC0jrICua08tz9r/shQp5wY1y90fQFNECHMsxsZQJEMgi4mZA/akld
- UkzBnRCoeohVwn9Ldg+UrdPI3eV6AakCpDsujbVxzHVcARSBuLBobYfI0Ec806esO3Ny
- TV8A==
-X-Gm-Message-State: AOAM530+5GFJxqyUJ89YW2bFdu8BmLgZ6/WoMtKQBL3h1vMgRZZ0fzxX
- IgPXKxAGNUAoI7aiLloiulJcO69YDhT+tdubQTN8fw==
-X-Google-Smtp-Source: ABdhPJzoKPJA+Npi33fozucBU+egiBMqOwtCUaF7Au9zs2T9f9BTF6ZYR/4JNltrZhWa99tRXVV72Zt8wSf2CHsQIJw=
-X-Received: by 2002:a63:788e:: with SMTP id t136mr660555pgc.432.1634921711960; 
- Fri, 22 Oct 2021 09:55:11 -0700 (PDT)
+ id 1mdxwV-00Ba1l-7m
+ for linux-phy@lists.infradead.org; Fri, 22 Oct 2021 17:02:56 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19MEgLoX012879; 
+ Fri, 22 Oct 2021 10:02:53 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=proofpoint;
+ bh=lJ9APA/34eI5B9CvFGyKfrTut9E+AyzRIvFFkYvjYaI=;
+ b=WK+AJ+8GSsC9jv3gPaDSSovJ4ZgLAV3qr7VlQIAXFzuLu/BPi4VGJBVoB/84NtdPgJK3
+ qxVnVwVsi8+L81sZkfWBA2iA1PzLVp+KItZlK9L97u9P8o2cZ+FYVBUU1NzKjMMHSaAR
+ DRc7iqjXU+R8Mj5ak1NR37umV7CyERk+VIboi8XvwjliZgcJPV4zinjIWp3+EEajXf05
+ 9TMuJ498AzDrTDPvYobmsRV8QCq/nhNnAuBLjair06z2VpSh8RChzkk8US9vdfMbDmTL
+ tzWQ2T6t098KutfYTFNpKm/PqpNEjkM8dUo8d/130voWbfrWjYm85bniGyEipoVDC2D6 ig== 
+Received: from nam10-mw2-obe.outbound.protection.outlook.com
+ (mail-mw2nam10lp2109.outbound.protection.outlook.com [104.47.55.109])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 3buya2resn-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 22 Oct 2021 10:02:52 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cmQxkk6HUz8Cxbus/VVePRrNL7/K+HtAGi1F2HaRyDJryzT38Qvx48eYzofXvcMgMTW+gdToWkMS7K6xo7aSgbLNM1iLNWeDqQCav3sjdWiVfdWnKDRy0rfjiEUf+6aHaWjqpzZrLTDE5HIq5euzN0LGxXU26cNwxQOd6r877btGtIjCH7zk1XXAnzw95k8CC3pzQk2+WqLxLZPpy6/KSpAdcXvm/+VvI2VtADj60D2zGWTmeEdCRnc6dRhyVm86Z5S9FVgYQ1/6yEdX7FWo55aO6cNRNel7zynbr+Ad0+61B8iBrSbsOLjuxsuv2FBOwmpYbKhIXG0AscAsc+XlKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=lJ9APA/34eI5B9CvFGyKfrTut9E+AyzRIvFFkYvjYaI=;
+ b=KbVdevJWbqNvSUL/3t6G0In3wWoX0+l1yzWQQAMsXzmlcu3CS5K/vrkN7oUm535nQlImoRAm/8t62U/VtHpb1fB+UZgUIuCH6a0jb+dvWP+DrqrBW+PxH6+qwr4/qzjKZIcZe0/YVPhjwofeFRkI0ozujIDXZAR1cvfSk7X/z6ORj/HoXdxCRTBZVoAEyZZLmMoVpBP0F7zXQ/hZWsgLR527CHNm0jVO22I/0e7LH/Q8tOOaEngnOzlIogaxX/kQBF1/5KwjewZe8U/Wy1Pxoga4aviIex5nZiRcxWvvP8AIIEU7xgi2bDLvannl2oc281pmkoltfTLxjlu8Gqbtqg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 158.140.1.147) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lJ9APA/34eI5B9CvFGyKfrTut9E+AyzRIvFFkYvjYaI=;
+ b=nasjcWWJRUTo8Lc/+baaXr6acQrfPlpXbfOVMeAIdJ7m7wqhTcstQQYxhX3huuAFfvfFAefWaf4OvQq01RC/ZKbvvmdXc3nto/gY8X+gxWGbwY5eprOrM4oZU4Q3dg0icxMuDMEgwVsb8vO2tHzvAQclBu7KsHKGUjI8/KK4qvk=
+Received: from BN6PR19CA0065.namprd19.prod.outlook.com (2603:10b6:404:e3::27)
+ by BYAPR07MB5848.namprd07.prod.outlook.com (2603:10b6:a03:13d::22)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4628.16; Fri, 22 Oct
+ 2021 17:02:50 +0000
+Received: from BN8NAM12FT068.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:404:e3:cafe::67) by BN6PR19CA0065.outlook.office365.com
+ (2603:10b6:404:e3::27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4628.18 via Frontend
+ Transport; Fri, 22 Oct 2021 17:02:49 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.147)
+ smtp.mailfrom=cadence.com; kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=pass action=none header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 158.140.1.147 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.140.1.147; helo=sjmaillnx1.cadence.com;
+Received: from sjmaillnx1.cadence.com (158.140.1.147) by
+ BN8NAM12FT068.mail.protection.outlook.com (10.13.182.160) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4649.8 via Frontend Transport; Fri, 22 Oct 2021 17:02:49 +0000
+Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
+ by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
+ 19MH2iNI008564
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 22 Oct 2021 10:02:48 -0700
+X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
+Received: from maileu3.global.cadence.com (10.160.88.99) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 22 Oct 2021 19:02:38 +0200
+Received: from vleu-orange.cadence.com (10.160.88.83) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2 via Frontend Transport; Fri, 22 Oct 2021 19:02:38 +0200
+Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 19MH2cJL018906;
+ Fri, 22 Oct 2021 19:02:38 +0200
+Received: (from sjakhade@localhost)
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 19MH2c20018905;
+ Fri, 22 Oct 2021 19:02:38 +0200
+From: Swapnil Jakhade <sjakhade@cadence.com>
+To: <vkoul@kernel.org>, <kishon@ti.com>, <robh+dt@kernel.org>,
+ <p.zabel@pengutronix.de>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
+CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <a-govindraju@ti.com>
+Subject: [PATCH v3 05/15] phy: cadence: Sierra: Add support to get SSC type
+ from device tree
+Date: Fri, 22 Oct 2021 19:02:26 +0200
+Message-ID: <20211022170236.18839-6-sjakhade@cadence.com>
+X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20211022170236.18839-1-sjakhade@cadence.com>
+References: <20211022170236.18839-1-sjakhade@cadence.com>
 MIME-Version: 1.0
-References: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
- <CAJ+vNU2b-=T_gTsRBvdF7SRUZopEFOU_Np8mEJn8bOpn5b5FaA@mail.gmail.com>
- <AS8PR04MB8676B2AC24E2769D47A1ED478CBD9@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU2AitmxCyam5FArmxAD41QUU=5CF_0JZhm+uzdkRbr7kw@mail.gmail.com>
- <AS8PR04MB8676840D7EDD56D10F9471288CBE9@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU2GU5=mM5+2Yg9gAuU0RSdJHWEU_+ykmz-qUWfsOnRJ8g@mail.gmail.com>
- <AS8PR04MB867624A8A5B6AE27D6A9160F8CBF9@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU1Si_bv0_2j5AU-v_1QtUGqwU_4u=NksAVFFXXkkNC1Sw@mail.gmail.com>
- <AS8PR04MB8676D9FFB6506A09D104E32A8C809@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU0cLd7oex5uUyJenqs229gsgZe_Vpu3uyKGw1=B+Uu5YQ@mail.gmail.com>
-In-Reply-To: <CAJ+vNU0cLd7oex5uUyJenqs229gsgZe_Vpu3uyKGw1=B+Uu5YQ@mail.gmail.com>
-From: Tim Harvey <tharvey@gateworks.com>
-Date: Fri, 22 Oct 2021 09:55:00 -0700
-Message-ID: <CAJ+vNU0wcQtrKh5W7UZknEiV2o7MKLV90CCrJqGGw=x_VYwMGg@mail.gmail.com>
-Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
- support
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: Lucas Stach <l.stach@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, 
- "vkoul@kernel.org" <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
- Shawn Guo <shawnguo@kernel.org>, 
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
- Device Tree Mailing List <devicetree@vger.kernel.org>, 
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>, 
- open list <linux-kernel@vger.kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>
+X-OrganizationHeadersPreserved: maileu3.global.cadence.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: c9b94849-f9be-46cd-c7dd-08d9957dc719
+X-MS-TrafficTypeDiagnostic: BYAPR07MB5848:
+X-Microsoft-Antispam-PRVS: <BYAPR07MB58486B9BF8110D7D6CC95B56C5809@BYAPR07MB5848.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:206;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: E9W3WRsmItjBZioYQEzF9wiarB79KhRfl+4IreVuHYCBXf5lFQWnWTNaWNs2lHmkP6g4PAqpW67fpkAb1jpOScqtg1LwSSEFhDhEN3Hjs0u2rvrS7B+0KHVyCYa7dX8zqRALOsMh+RStApFKr2SS6tXTVEUshy7G1Mrr9ixgw9mMrLvlVtBAm3Goc6LTUHB8CwGsi5A5cw63KmWO3ep7GeD56c4AacE+wUkAt+x8BeypiU1SzqIfxlpZUhmv9oD4eRF9/JGlVhjuNJ0O/CXBQ1594hAA9nzeEgUq9X9U9VB6V9NJpznzUqJaZiCEOZ4wyiTDwVvm+Iyro9NvavuDmTLGw8t7uxLec/hYpMTAM2ziZ6qXjq7g7pR0iJzfaFqxq3Bov1Xcxcb1qe+tVVf/naqXkfOmdJC3mWhxDffNlUnQUlVG6w88Un12NTyT5Nudw8gLswhpxds0csStamkEmeSAWjJzjb+hj3xaG2hVKzl+DQdgEDHEaNlKZbxCUlSF09+uSa/9wfYtY9GjqCLbbksunQHQtTSoq3VkEjHYCZLQUNrDi7s4LQzFDvTcF1wdVrldVr8nGksv9M7yOG+7NJmOpJGwKpkvZ9g5tz6KRFA4Yt4oPSjYf1fFRd6QoCOIgCfUes52ujyzZU1YLmZB9c5WY5x86PO4617LgKTCKptZ7jr2aqJ+FWvU115jiYAAkzeyaeq4YDbdK8vlDexm20bfFmHh9mw4w78unDLhnTA=
+X-Forefront-Antispam-Report: CIP:158.140.1.147; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:sjmaillnx1.cadence.com; PTR:unknown.Cadence.COM; CAT:NONE;
+ SFS:(4636009)(36092001)(46966006)(36840700001)(508600001)(8936002)(8676002)(7636003)(356005)(5660300002)(54906003)(2616005)(36860700001)(2906002)(47076005)(36756003)(82310400003)(26005)(6666004)(336012)(1076003)(426003)(36906005)(186003)(4326008)(70586007)(86362001)(83380400001)(42186006)(70206006)(110136005)(316002);
+ DIR:OUT; SFP:1101; 
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Oct 2021 17:02:49.1972 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c9b94849-f9be-46cd-c7dd-08d9957dc719
+X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.147];
+ Helo=[sjmaillnx1.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN8NAM12FT068.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR07MB5848
+X-Proofpoint-GUID: w4QcrTSJa9q0K_KP9pRBk3zXBiGgxH5A
+X-Proofpoint-ORIG-GUID: w4QcrTSJa9q0K_KP9pRBk3zXBiGgxH5A
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
+ definitions=2021-10-22_04,2021-10-22_01,2020-04-07_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 mlxscore=0
+ malwarescore=0 impostorscore=0 phishscore=0 clxscore=1015 suspectscore=0
+ lowpriorityscore=0 bulkscore=0 adultscore=0 mlxlogscore=999 spamscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2109230001 definitions=main-2110220098
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211022_095513_041385_E0CC4838 
-X-CRM114-Status: GOOD (  66.81  )
+X-CRM114-CacheID: sfid-20211022_100255_537804_3F1DD41E 
+X-CRM114-Status: GOOD (  15.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,286 +172,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 22, 2021 at 8:59 AM Tim Harvey <tharvey@gateworks.com> wrote:
->
-> On Thu, Oct 21, 2021 at 5:43 PM Richard Zhu <hongxing.zhu@nxp.com> wrote:
-> >
-> > > -----Original Message-----
-> > > From: Tim Harvey <tharvey@gateworks.com>
-> > > Sent: Friday, October 22, 2021 12:25 AM
-> > > To: Richard Zhu <hongxing.zhu@nxp.com>
-> > > Cc: Lucas Stach <l.stach@pengutronix.de>; Kishon Vijay Abraham I
-> > > <kishon@ti.com>; vkoul@kernel.org; Rob Herring <robh@kernel.org>;
-> > > galak@kernel.crashing.org; Shawn Guo <shawnguo@kernel.org>;
-> > > linux-phy@lists.infradead.org; Device Tree Mailing List
-> > > <devicetree@vger.kernel.org>; Linux ARM Mailing List
-> > > <linux-arm-kernel@lists.infradead.org>; open list
-> > > <linux-kernel@vger.kernel.org>; Sascha Hauer <kernel@pengutronix.de>;
-> > > dl-linux-imx <linux-imx@nxp.com>
-> > > Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
-> > > support
-> > >
-> > > On Wed, Oct 20, 2021 at 8:32 PM Richard Zhu <hongxing.zhu@nxp.com>
-> > > wrote:
-> > > >
-> > > > <snipped...>
-> > > > >
-> > > > > Richard,
-> > > > >
-> > > > > What is this 'invalid resource' about? I see that with my downstream
-> > > > > IMX8MM PCIe driver as well and have been asked about it.
-> > > > >
-> > > > [Richard Zhu] Hi Tim:
-> > > > This complain is caused by the following codes in pcie-designware.c driver.
-> > > > I'm not sure that why there is only size assignment after the res valid check,
-> > > and do nothing if the res is invalid.
-> > > > It seems that it is an expected design logic refer to the later codes.
-> > > >                 if (!pci->atu_base) {
-> > > >                         struct resource *res =
-> > > >
-> > > platform_get_resource_byname(pdev, IORESOURCE_MEM, "atu");
-> > > >                         if (res)
-> > > >                                 pci->atu_size = resource_size(res);
-> > > >                         pci->atu_base =
-> > > devm_ioremap_resource(dev, res);
-> > > >                         if (IS_ERR(pci->atu_base))
-> > > >                                 pci->atu_base = pci->dbi_base +
-> > > DEFAULT_DBI_ATU_OFFSET;
-> > > >                 }
-> > > >
-> > > > Since the default offset is used on i.MX8MM, the "atu" is not specified in
-> > > i.MX8MM PCIe DT node, so there is no real res at all.
-> > > > Then, devm_ioremap_resource() would complain the invalid resource.
-> > >
-> > > I think you are saying a change should be made like this:
-> > > diff --git a/drivers/pci/controller/dwc/pcie-designware.c
-> > > b/drivers/pci/controller/dwc/pcie-designware.c
-> > > index a945f0c0e73d..3254f60d1713 100644
-> > > --- a/drivers/pci/controller/dwc/pcie-designware.c
-> > > +++ b/drivers/pci/controller/dwc/pcie-designware.c
-> > > @@ -671,10 +671,11 @@ void dw_pcie_iatu_detect(struct dw_pcie *pci)
-> > >                 if (!pci->atu_base) {
-> > >                         struct resource *res =
-> > >
-> > > platform_get_resource_byname(pdev,
-> > > IORESOURCE_MEM, "atu");
-> > > -                       if (res)
-> > > +                       if (res) {
-> > >                                 pci->atu_size = resource_size(res);
-> > > -                       pci->atu_base = devm_ioremap_resource(dev,
-> > > res);
-> > > -                       if (IS_ERR(pci->atu_base))
-> > > +                               pci->atu_base =
-> > > devm_ioremap_resource(dev, res);
-> > > +                       }
-> > > +                       if (!pci->atu_base || IS_ERR(pci->atu_base))
-> > >                                 pci->atu_base = pci->dbi_base +
-> > > DEFAULT_DBI_ATU_OFFSET;
-> > >                 }
-> > >
-> > > so that it looks like this:
-> > >                 if (!pci->atu_base) {
-> > >                         struct resource *res =
-> > >
-> > > platform_get_resource_byname(pdev,
-> > > IORESOURCE_MEM, "atu");
-> > >                         if (res) {
-> > >                                 pci->atu_size = resource_size(res);
-> > >                                 pci->atu_base =
-> > > devm_ioremap_resource(dev, res);
-> > >                         }
-> > >                         if (!pci->atu_base || IS_ERR(pci->atu_base))
-> > >                                 pci->atu_base = pci->dbi_base +
-> > > DEFAULT_DBI_ATU_OFFSET;
-> > >                 }
-> > >
-> > > Right?
-> > [Richard Zhu] Yes, it is. The res shouldn't be remapped if it is invalid resource memory.
->
-> Ok, I will submit a patch for that.
->
-> >
-> > >
-> > > >
-> > > > > > [    1.316305] imx6q-pcie 33800000.pcie: iATU unroll: enabled
-> > > > > > [    1.321799] imx6q-pcie 33800000.pcie: Detected iATU regions: 4
-> > > > > outbound, 4 inbound
-> > > > > > [    1.429803] imx6q-pcie 33800000.pcie: Link up
-> > > > > > [    1.534497] imx6q-pcie 33800000.pcie: Link up
-> > > > > > [    1.538870] imx6q-pcie 33800000.pcie: Link up, Gen2
-> > > > > > [    1.550364] imx6q-pcie 33800000.pcie: Link up
-> > > > > > [    1.550487] imx6q-pcie 33800000.pcie: PCI host bridge to bus
-> > > 0000:00
-> > > > > > [    1.565545] pci_bus 0000:00: root bus resource [bus 00-ff]
-> > > > > > [    1.573834] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
-> > > > > > [    1.580055] pci_bus 0000:00: root bus resource [mem
-> > > > > 0x18000000-0x1fefffff]
-> > > > > > [    1.586968] pci 0000:00:00.0: [16c3:abcd] type 01 class 0x060400
-> > > > > > [    1.592997] pci 0000:00:00.0: reg 0x10: [mem
-> > > 0x00000000-0x000fffff]
-> > > > > > [    1.599282] pci 0000:00:00.0: reg 0x38: [mem
-> > > 0x00000000-0x0000ffff
-> > > > > pref]
-> > > > > > [    1.606033] pci 0000:00:00.0: supports D1
-> > > > > > [    1.610053] pci 0000:00:00.0: PME# supported from D0 D1 D3hot
-> > > > > D3cold
-> > > > > > [    1.618206] pci 0000:01:00.0: [15b7:5002] type 00 class 0x010802
-> > > > > > [    1.624293] pci 0000:01:00.0: reg 0x10: [mem
-> > > 0x00000000-0x00003fff
-> > > > > 64bit]
-> > > > > > [    1.631177] pci 0000:01:00.0: reg 0x20: [mem
-> > > 0x00000000-0x000000ff
-> > > > > 64bit]
-> > > > > > [    1.638409] pci 0000:01:00.0: 4.000 Gb/s available PCIe bandwidth,
-> > > > > limited by 5.0 GT/s PCIe x1 link at 0000:00:00.0 (capable of 31.504
-> > > > > Gb/s with
-> > > > > 8.0 GT/s PCIe x4 link)
-> > > > > > [    1.664931] pci 0000:00:00.0: BAR 0: assigned [mem
-> > > > > 0x18000000-0x180fffff]
-> > > > > > [    1.671745] pci 0000:00:00.0: BAR 14: assigned [mem
-> > > > > 0x18100000-0x181fffff]
-> > > > > > [    1.678634] pci 0000:00:00.0: BAR 6: assigned [mem
-> > > > > 0x18200000-0x1820ffff pref]
-> > > > > > [    1.685873] pci 0000:01:00.0: BAR 0: assigned [mem
-> > > > > 0x18100000-0x18103fff 64bit]
-> > > > > > [    1.693222] pci 0000:01:00.0: BAR 4: assigned [mem
-> > > > > 0x18104000-0x181040ff 64bit]
-> > > > > > [    1.700577] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
-> > > > > > [    1.705814] pci 0000:00:00.0:   bridge window [mem
-> > > > > 0x18100000-0x181fffff]
-> > > > > > [    1.712972] pcieport 0000:00:00.0: PME: Signaling with IRQ 216
-> > > > > > "
-> > > > > > Regarding the log you pasted, it seems that the clock is not feed
-> > > > > > to PHY
-> > > > > properly.
-> > > > > >
-> > > > > > Anyway, let's waiting for the v4 series, then make a try. Thanks
-> > > > > > for your
-> > > > > great help to make the double tests.
-> > > > > >
-> > > > >
-> > > > > My boards do not use CLKREQ# so I do not have that defined in pinmux
-> > > > > and I found that if I add MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B
-> > > PCIe
-> > > > > works on my board but this isn't a solution just a work-around (I
-> > > > > have boards that use the only two possible pins for CLKREQ as other
-> > > features).
-> > > > >
-> > > > > Similarly you will find on the imx8mm-evk if you comment out the
-> > > > > CLKREQ (which isn't required) the imx8mmevk will end up hanging like my
-> > > boards:
-> > > > [Richard Zhu] Hi Tim:
-> > > > Regarding the SPEC, the CLKREQ# is mandatory required, and should be
-> > > configured as an open drain, active low signal.
-> > > > And this signal should be driven low by the PCIe M.2 device to request the
-> > > REF clock be available(active low).
-> > > > So, there is such kind of CLKREQ# pin definition on i.MX8MM EVK board.
-> > > >
-> > > > Anyway, I think the external OSC circuit should be always running if there is
-> > > no CLKREQ# on your HW board design.
-> > > >
-> > >
-> > > The way I understand it is CLKREQ# allows the host to disable the REFCLK
-> > > when not needed for power savings so it would seem optional to implement
-> > > that and if not implemented should be left unconnected on the card.
-> > >
-> > [Richard Zhu] No, not that way. Regarding the SPEC, this signal is mandatory required.
-> > Especially for the L1ss usages. This signal would be OD(open drain), bi-directional, and might be
-> > driven low/high by RC or EP automatically if L1ss modes are enabled.
-> > You can make reference to the "ECN_L1_PM_Substates_with_CLKREQ_31_May_2013_Rev10a", or
-> > the chapter 5.5 L1 PM Substates of "PCI Express Base Specification, Rev. 4.0 Version 1.0".
-> >
->
-> CLKREQ is only mandatory if you wish to support clock power
-> management. Many boards with a PCI host controller do not support
-> this.
->
-> > > > > diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > index 5ce43daa0c8b..f0023b48f475 100644
-> > > > > --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > @@ -448,7 +448,9 @@
-> > > > >
-> > > > >         pinctrl_pcie0: pcie0grp {
-> > > > >                 fsl,pins = <
-> > > > > +/*
-> > > > >
-> > > > > MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B    0x61
-> > > > > +*/
-> > > > >
-> > > MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21
-> > > > > 0x41
-> > > > >                 >;
-> > > > >         };
-> > > > >
-> > > > > I have PCIe working with a driver that I ported from NXP's kernel
-> > > > > which differs from your driver in that the PCIe PHY is not
-> > > > > abstracted to its own driver so I think this has something to do
-> > > > > with the order in which the phy is reset or initialized? The configuration of
-> > > gpr14 bits looks correct to me.
-> > > > [Richard Zhu] The CLKREQ# PIN definition shouldn't be masked.
-> > > > In the NXP's local BSP kernel, I just force CLKREQ# low to level up the HW
-> > > compatibility.
-> > > > That's might the reason why the PCIe works on your HW board although the
-> > > CLKREQ# PIN is not defined.
-> > > > This method is a little rude and violate the SPEC, and not recommended
-> > > although it levels up the HW compatibility.
-> > > > So I drop this method in this series.
-> > > >
-> > >
-> > > Sorry, I don't understand what you are saying here. Is there a change you are
-> > > going to make to v4 that will make this work for the evk and my boards? What
-> > > is that change exactly?
-> > [Richard Zhu] No. What I said above is that the CLKREQ# is forced to be low in NXP
-> > local BSP kernel. I guess this might be the reason why your board works.
-> >
-> > BIT11 and BIT10 of IOMUXC_GPR14 can be used to force the CLKREQ# to be low.
-> > Set CLKREQ_OVERRIDE_EN(bit10) 1b1, then write one zero to CLKREQ_OVERRIDE(bit11).
-> >
->
-> Ok, that makes sense. Those bits are not explained well in the
-> IMX8MMRM. As my board's external REFCLK is always enabled that must
-> gate the clock internally to the host controller block.
->
-> I can confirm that asserting those GPR14 bits does resolve my issue:
->
-> #define IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_VAL    BIT(11)
-> #define IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_EN     BIT(10)
->
->        /*
->         * for boards that do not connect CLKREQ#,
->         * override CLKREQ# and drive it low internally
->         */
->        regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
->                           IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_VAL, 0);
->        regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
->                           IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_EN, 1);
->
-> Should this be added as a 'fsl,clkreq-unsupported' flag that needs to
-> be set true to implement the above code?
->
+Add support to get SSC type from DT.
 
-Richard,
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Reviewed-by: Aswath Govindraju <a-govindraju@ti.com>
+---
+ drivers/phy/cadence/phy-cadence-sierra.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-Sorry - spoke too soon. My test was flawed as I still was pinmuxing
-CLKREQ in my dt to work around the issue and after removed the above
-did not resolve my issue. The setting of OVERRIDE_EN was wrong above
-(should not be set to '1' but BIT(10) instead) but this code already
-exists in imx6_pcie_enable_ref_clk and is used for IMX8MM per your
-patch so this is not the issue.
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index c82ac6716f5e..4674328574f5 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -238,6 +238,7 @@ struct cdns_sierra_inst {
+ 	u32 num_lanes;
+ 	u32 mlane;
+ 	struct reset_control *lnk_rst;
++	enum cdns_sierra_ssc_mode ssc_mode;
+ };
+ 
+ struct cdns_reg_pairs {
+@@ -360,7 +361,7 @@ static int cdns_sierra_phy_init(struct phy *gphy)
+ 	const struct cdns_sierra_data *init_data = phy->init_data;
+ 	struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
+ 	enum cdns_sierra_phy_type phy_type = ins->phy_type;
+-	enum cdns_sierra_ssc_mode ssc = EXTERNAL_SSC;
++	enum cdns_sierra_ssc_mode ssc = ins->ssc_mode;
+ 	const struct cdns_reg_pairs *reg_pairs;
+ 	struct regmap *regmap;
+ 	u32 num_regs;
+@@ -623,6 +624,9 @@ static int cdns_sierra_get_optional(struct cdns_sierra_inst *inst,
+ 		return -EINVAL;
+ 	}
+ 
++	inst->ssc_mode = EXTERNAL_SSC;
++	of_property_read_u32(child, "cdns,ssc-mode", &inst->ssc_mode);
++
+ 	return 0;
+ }
+ 
+-- 
+2.26.1
 
-What makes my board work is to clear GPR14 bit9 (like the NXP kernel
-does) so I don't think this bit does what we think it does (select
-between internal and ext clk). I think setting it enables clock gating
-via CLKREQ#.
-
-This also points out that perhaps the CLKREQ_OVERRIDE logic should be
-moved to the new phy driver for IMX8MM.
-
-Best regards,
-
-Tim
 
 -- 
 linux-phy mailing list
