@@ -2,14 +2,14 @@ Return-Path: <SRS0=BRk1=PN=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D2109C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:18:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 91FF0C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:20:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id A1AE560724
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:18:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A1AE560724
+	by mail.kernel.org (Postfix) with ESMTPS id 623D260F9C
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:20:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 623D260F9C
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,50 +18,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O5avUO4bx2n34y0pYeOTv7p7frp8S7sOlfyKnBIImB0=; b=ydAZAerAW9qBys
-	bZ1nMjBKJ69jXmDSzM8M+U2mWUmKR8ujx66Q+0QykpFYTn7LEtDzQPncBFiW9IWE0OXHWK3sL7zAG
-	NNmFCTVWKZtX66F44/YrpF/IxO08Fksb0ZShaqDyxWG2tlkxgR+rypw/cG86FjNaps4bw1mlEISKO
-	kd8+kxLBg0b8VIHuSNn8/QBQNHNpPNGtcwsTQArlxHgLxyqbPmT8wCFcvBt1TX2f17Nz73diCt2e/
-	RI5y6XWNB3u2qNRgagSygQR7x/uVKpJFQ2ZWrZTU7dChXhe3pNPDOPmMyKMNkfSEBsyOBI6ZGY4b/
-	wMrrHezKd56ic4uXHxxQ==;
+	List-Owner; bh=sQSYq/wWYJlV3Q1of3G279cf8uPKjBoSiC66FuavGkk=; b=1hxolPtEzpGijO
+	ySzdi6mZvPzLxfmpK8txGcRfzGDpLThVH30Q19ApGuVX8RG/8UXEMxtwLrifkxd0ldCvsZ5Mkc1P6
+	m2NOgFd1bYMLpzHa0XFG4zYhpGFuZD/PQJQ6AzMDL0h3gJWPefdwojV/lyd9HaTiLmUUxUnTKyfQD
+	v5uX/yDGnZgH7KH6tIeLzjQAdShnZPYUTQpbUTXaGI8gigz6f+GZ8pO4i2KvDzNvgSn9RWH6LBvRF
+	XEZkxNScGaKKUy88L8BoYQZh0k4MWVxY3b0l+ZE5U//2wKGhbx1QWl4kh25qEAvriVsQPVk5q9fiT
+	Is316AyfCaDokmS3cj2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1meuFw-00FZUi-8R; Mon, 25 Oct 2021 07:18:52 +0000
+	id 1meuHD-00FZyY-Oy; Mon, 25 Oct 2021 07:20:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1meu8J-00FWhT-9c
- for linux-phy@lists.infradead.org; Mon, 25 Oct 2021 07:11:00 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 12B6860F9C;
- Mon, 25 Oct 2021 07:10:57 +0000 (UTC)
+ id 1meuAb-00FXka-IZ
+ for linux-phy@lists.infradead.org; Mon, 25 Oct 2021 07:13:27 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 4FC236008E;
+ Mon, 25 Oct 2021 07:13:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1635145858;
- bh=wHlKRt1QrjCcx+YMoChVXSYiCfVO9OSjhXh60NOXWK8=;
+ s=k20201202; t=1635146001;
+ bh=ZwPIhP5Fum4SkSbAuDdcea+11cJeBGh0IzPYNZOWN2c=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ETX5aTw5UkAaQv5un4FxUBu/HcCp/zrkxsNdvOPFNy0lueoBk1foSCXRqsW5+ny64
- 3UfHmFBZCPVqX99RHxQzRZ0gvweVig7NnkR9pSh5uZaFOykb9S5Nm+1nUN5mSEU4SO
- 9ZqqEqhcWYEz29jeUqQUwkcXTUE97h0Kv7l/yU7DAgXjBo7FMqJ1HrT5nW0pGV9W4J
- QrvT1M3rNlgSXlDBeRNJ7XrsaWh8bQzTLgGyDBc3y1xXmGjtkSvdRjZQjAsE0xQQe8
- ESOTCsQbChee3GQtzlGFzKE0Z2zIZDdMboPld6SZ8Q8M7ULBfm4SQGmNpjE+FeSatm
- aFJjnvBIdD5lw==
-Date: Mon, 25 Oct 2021 12:40:54 +0530
+ b=lOBd/kIbQHtMM/lhGRgXb34HCMMWKHqZ8O3gcTZGLfZyZhIqBOH0LoqY29N3U9w8m
+ sdxSnBu/xq85wp7NSIOtboRRyyDcWsaEDnhtFYQjfWy45BzicSkhzP5m5WKArR1Eki
+ B1ttumMRqyc4rGUft0G1mlxdoRlCcqBPIdb+7f1XOZS03Adc1ccN0eijLShq1Dibre
+ RZ3WRV+c7oYsL5SinoyLXzHLkhvWVEHoNMhNJ6Ze2mrbOdbs2zeO071v957dIlDTO5
+ eEIiXf8W6UHeMdJfZVIkv8Z2mkbUvbYnwUYPGTmIpEUA7IzR21HGpOSUOtqZhCn1WU
+ Aky5DoH++XHIg==
+Date: Mon, 25 Oct 2021 12:43:17 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- abhinavk@codeaurora.org, Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v3 2/2] phy: qcom: Introduce new eDP PHY driver
-Message-ID: <YXZYfh+yfNFkqY0a@matsya>
-References: <20211016232128.2341395-1-bjorn.andersson@linaro.org>
- <20211016232128.2341395-2-bjorn.andersson@linaro.org>
- <YXGmJFoeXwtTvl7p@matsya> <YXLx7EV7ZiMIxauO@ripper>
+To: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Wesley Cheng <wcheng@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
+ Doug Anderson <dianders@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, quic_pkondeti@quicinc.com,
+ quic_ppratap@quicinc.com
+Subject: Re: [PATCH v2] phy: qcom-snps: Correct the FSEL_MASK
+Message-ID: <YXZZDVIbgkhXFfGi@matsya>
+References: <1635135575-5668-1-git-send-email-quic_c_sanm@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YXLx7EV7ZiMIxauO@ripper>
+In-Reply-To: <1635135575-5668-1-git-send-email-quic_c_sanm@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211025_001059_435716_386220E8 
-X-CRM114-Status: GOOD (  24.94  )
+X-CRM114-CacheID: sfid-20211025_001321_679425_8D9E0A5D 
+X-CRM114-Status: UNSURE (   5.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,66 +82,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22-10-21, 10:16, Bjorn Andersson wrote:
-> On Thu 21 Oct 10:40 PDT 2021, Vinod Koul wrote:
-> 
-> > On 16-10-21, 16:21, Bjorn Andersson wrote:
-> > > Many recent Qualcomm platforms comes with native DP and eDP support.
-> > > This consists of a controller in the MDSS and a QMP-like PHY.
-> > > 
-> > > While similar to the well known QMP block, the eDP PHY only has TX lanes
-> > > and the programming sequences are slightly different. Rather than
-> > > continuing the trend of parameterize the QMP driver to pieces, this
-> > > introduces the support as a new driver.
-> > > 
-> > > The registration of link and pixel clocks are borrowed from the QMP
-> > > driver. The non-DP link frequencies are omitted for now.
-> > > 
-> > > The eDP PHY is very similar to the dedicated (non-USB) DP PHY, but only
-> > > the prior is supported for now.
-> > 
-> > since this is QMP phy, pls add an explanation why common QMP driver
-> > is not used here?
-> 
-> Looked at this again, doesn't the second paragraph answer that?
+On 25-10-21, 09:49, Sandeep Maheswaram wrote:
+> The FSEL_MASK which selects the refclock is defined incorrectly.
+> It should be [4:6] not [5:7]. Due to this incorrect definition, the BIT(7)
+> in USB2_PHY_USB_PHY_HS_PHY_CTRL_COMMON0 is reset which keeps PHY analog
+> blocks ON during suspend.
+> Fix this issue by correctly defining the FSEL_MASK.
 
-Hmmm, somehow this got missed by me! Yes sounds okay
-
-> > > +static int qcom_edp_phy_init(struct phy *phy)
-> > > +{
-> [..]
-> > > +	writel(0x00, edp->edp + DP_PHY_AUX_CFG0);
-> > > +	writel(0x13, edp->edp + DP_PHY_AUX_CFG1);
-> > > +	writel(0x24, edp->edp + DP_PHY_AUX_CFG2);
-> > > +	writel(0x00, edp->edp + DP_PHY_AUX_CFG3);
-> > > +	writel(0x0a, edp->edp + DP_PHY_AUX_CFG4);
-> > > +	writel(0x26, edp->edp + DP_PHY_AUX_CFG5);
-> > > +	writel(0x0a, edp->edp + DP_PHY_AUX_CFG6);
-> > > +	writel(0x03, edp->edp + DP_PHY_AUX_CFG7);
-> > > +	writel(0x37, edp->edp + DP_PHY_AUX_CFG8);
-> > > +	writel(0x03, edp->edp + DP_PHY_AUX_CFG9);
-> > 
-> > In qmp phy we use a table for this, that looks very elegant and I am
-> > sure next rev will have different magic numbers, so should we go the
-> > table approach here on as well..?
-> > 
-> 
-> Comparing the v3 and v4 USB/DP combo phy and this, the only number that
-> differs is CFG_AUX2 and CFG_AUX8.
-> 
-> CFG_AUX8 is 0x37 for eDP and 0xb7 for DP and AUX_CFG2 seems better to
-> mask together, but I don't fully understand the content yet.
-> 
-> I did check two other platforms and they have the same sequence, except
-> one additional bit in AUX_CFG2. There also seem to be a few additional
-> permutations of this value, so I don't think tables are the solution.
-> 
-> 
-> So I think it's better if we leave this as proposed and then
-> parameterize the two individual entries as needed when we go forward -
-> or determine that I missed something.
-
-okay sounds good to me
+Applied, thanks
 
 -- 
 ~Vinod
