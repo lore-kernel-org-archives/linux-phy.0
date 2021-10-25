@@ -2,14 +2,14 @@ Return-Path: <SRS0=BRk1=PN=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 378DCC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:18:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D2109C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:18:53 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EB06F60F9C
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:18:43 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org EB06F60F9C
+	by mail.kernel.org (Postfix) with ESMTPS id A1AE560724
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Oct 2021 07:18:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A1AE560724
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,48 +18,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ykFjRFF/R2qKrtoEVlCkeEqnnbzCFmW3JgW5JV51d5M=; b=AecMtMeyanUBLs
-	/No/eV6VkrWdsLSu5V9CbHsVSMCdr67LkQ2tGQm5KC59okB5uHYHo4qLW1P5sNI8UzKSwQy7/5C1y
-	3ryA82GCYAgJIWK0LMLmWsBbek43gYZr4lMkMWXaBSHE5J3HnkvDiaRmqw17ZN7xCndShC9eWWhzC
-	YVSmvnhfq5Qvp9FCllgypxKAcVMcFk47cGhbYBsysBbE2oUaRBIPr6eM6iMwJUUq8/XWLz7jfZTuZ
-	Rnx8gddc3HO9zOHG576XbpHKGbatYfI0pUPIR/sur7OshrVFn1cugdCZP1Stv6br6eVcCiIVY2Wyg
-	sqPuom7/88f/D51iyKmw==;
+	List-Owner; bh=O5avUO4bx2n34y0pYeOTv7p7frp8S7sOlfyKnBIImB0=; b=ydAZAerAW9qBys
+	bZ1nMjBKJ69jXmDSzM8M+U2mWUmKR8ujx66Q+0QykpFYTn7LEtDzQPncBFiW9IWE0OXHWK3sL7zAG
+	NNmFCTVWKZtX66F44/YrpF/IxO08Fksb0ZShaqDyxWG2tlkxgR+rypw/cG86FjNaps4bw1mlEISKO
+	kd8+kxLBg0b8VIHuSNn8/QBQNHNpPNGtcwsTQArlxHgLxyqbPmT8wCFcvBt1TX2f17Nz73diCt2e/
+	RI5y6XWNB3u2qNRgagSygQR7x/uVKpJFQ2ZWrZTU7dChXhe3pNPDOPmMyKMNkfSEBsyOBI6ZGY4b/
+	wMrrHezKd56ic4uXHxxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1meuFn-00FZQv-9i; Mon, 25 Oct 2021 07:18:43 +0000
+	id 1meuFw-00FZUi-8R; Mon, 25 Oct 2021 07:18:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1meu5K-00FVZX-RN; Mon, 25 Oct 2021 07:07:56 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 907BC60F9C;
- Mon, 25 Oct 2021 07:07:53 +0000 (UTC)
+ id 1meu8J-00FWhT-9c
+ for linux-phy@lists.infradead.org; Mon, 25 Oct 2021 07:11:00 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 12B6860F9C;
+ Mon, 25 Oct 2021 07:10:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1635145674;
- bh=jAvb0Th54ggrdiHBLJ1eMnNsymTI/uXr/s7gfpm+Yw8=;
+ s=k20201202; t=1635145858;
+ bh=wHlKRt1QrjCcx+YMoChVXSYiCfVO9OSjhXh60NOXWK8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dVHSSsU7xk/RWpeonZOIzDd3tH1iEuL0K57WNjrMw8HIdaEFQapbSy7GyinXZcRMC
- QMAQbGyIin6yXie79hHZglXuktnTLHvb1VdBInU8jDuxbhOAAV1ESvBRsXv6PsIODh
- yqjA7Ww8N6rexXAoab2MKkZLaBJvVpyC/o9KIpa9SzvNx+enVFiryjeFqvayjwxAfJ
- XcdYTCKzJykG0SQDcs84oFGhaW723n5nIrZ9EXP90bpVTrypundJhCAsezfm6MSBiA
- u4IfnbBRaQNjtFd3L/1kBFuhszzFjuBoB28RCkL7st+wmZqTW+82qEQj5mudUut4T5
- atMbJ/y7Aun+g==
-Date: Mon, 25 Oct 2021 12:37:50 +0530
+ b=ETX5aTw5UkAaQv5un4FxUBu/HcCp/zrkxsNdvOPFNy0lueoBk1foSCXRqsW5+ny64
+ 3UfHmFBZCPVqX99RHxQzRZ0gvweVig7NnkR9pSh5uZaFOykb9S5Nm+1nUN5mSEU4SO
+ 9ZqqEqhcWYEz29jeUqQUwkcXTUE97h0Kv7l/yU7DAgXjBo7FMqJ1HrT5nW0pGV9W4J
+ QrvT1M3rNlgSXlDBeRNJ7XrsaWh8bQzTLgGyDBc3y1xXmGjtkSvdRjZQjAsE0xQQe8
+ ESOTCsQbChee3GQtzlGFzKE0Z2zIZDdMboPld6SZ8Q8M7ULBfm4SQGmNpjE+FeSatm
+ aFJjnvBIdD5lw==
+Date: Mon, 25 Oct 2021 12:40:54 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Cc: heiko@sntech.de, robh+dt@kernel.org, devicetree@vger.kernel.org,
- michael.riesch@wolfvision.net, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, kishon@ti.com, p.zabel@pengutronix.de
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: rockchip: Add Naneng combo PHY
- bindings
-Message-ID: <YXZXxl8rc7b+i5J8@matsya>
-References: <20211013101938.28061-1-yifeng.zhao@rock-chips.com>
- <20211013101938.28061-2-yifeng.zhao@rock-chips.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ abhinavk@codeaurora.org, Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v3 2/2] phy: qcom: Introduce new eDP PHY driver
+Message-ID: <YXZYfh+yfNFkqY0a@matsya>
+References: <20211016232128.2341395-1-bjorn.andersson@linaro.org>
+ <20211016232128.2341395-2-bjorn.andersson@linaro.org>
+ <YXGmJFoeXwtTvl7p@matsya> <YXLx7EV7ZiMIxauO@ripper>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211013101938.28061-2-yifeng.zhao@rock-chips.com>
+In-Reply-To: <YXLx7EV7ZiMIxauO@ripper>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211025_000754_981393_5AE6B962 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20211025_001059_435716_386220E8 
+X-CRM114-Status: GOOD (  24.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,130 +78,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-10-21, 18:19, Yifeng Zhao wrote:
-> Add the compatible strings for the Naneng combo PHY found on rockchip SoC.
+On 22-10-21, 10:16, Bjorn Andersson wrote:
+> On Thu 21 Oct 10:40 PDT 2021, Vinod Koul wrote:
+> 
+> > On 16-10-21, 16:21, Bjorn Andersson wrote:
+> > > Many recent Qualcomm platforms comes with native DP and eDP support.
+> > > This consists of a controller in the MDSS and a QMP-like PHY.
+> > > 
+> > > While similar to the well known QMP block, the eDP PHY only has TX lanes
+> > > and the programming sequences are slightly different. Rather than
+> > > continuing the trend of parameterize the QMP driver to pieces, this
+> > > introduces the support as a new driver.
+> > > 
+> > > The registration of link and pixel clocks are borrowed from the QMP
+> > > driver. The non-DP link frequencies are omitted for now.
+> > > 
+> > > The eDP PHY is very similar to the dedicated (non-USB) DP PHY, but only
+> > > the prior is supported for now.
+> > 
+> > since this is QMP phy, pls add an explanation why common QMP driver
+> > is not used here?
+> 
+> Looked at this again, doesn't the second paragraph answer that?
 
-Pls cc rob & DT list here!
+Hmmm, somehow this got missed by me! Yes sounds okay
 
+> > > +static int qcom_edp_phy_init(struct phy *phy)
+> > > +{
+> [..]
+> > > +	writel(0x00, edp->edp + DP_PHY_AUX_CFG0);
+> > > +	writel(0x13, edp->edp + DP_PHY_AUX_CFG1);
+> > > +	writel(0x24, edp->edp + DP_PHY_AUX_CFG2);
+> > > +	writel(0x00, edp->edp + DP_PHY_AUX_CFG3);
+> > > +	writel(0x0a, edp->edp + DP_PHY_AUX_CFG4);
+> > > +	writel(0x26, edp->edp + DP_PHY_AUX_CFG5);
+> > > +	writel(0x0a, edp->edp + DP_PHY_AUX_CFG6);
+> > > +	writel(0x03, edp->edp + DP_PHY_AUX_CFG7);
+> > > +	writel(0x37, edp->edp + DP_PHY_AUX_CFG8);
+> > > +	writel(0x03, edp->edp + DP_PHY_AUX_CFG9);
+> > 
+> > In qmp phy we use a table for this, that looks very elegant and I am
+> > sure next rev will have different magic numbers, so should we go the
+> > table approach here on as well..?
+> > 
 > 
-> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-> ---
+> Comparing the v3 and v4 USB/DP combo phy and this, the only number that
+> differs is CFG_AUX2 and CFG_AUX8.
 > 
-> Changes in v2:
-> - Fix dtschema/dtc warnings/errors
+> CFG_AUX8 is 0x37 for eDP and 0xb7 for DP and AUX_CFG2 seems better to
+> mask together, but I don't fully understand the content yet.
 > 
->  .../phy/phy-rockchip-naneng-combphy.yaml      | 98 +++++++++++++++++++
->  1 file changed, 98 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-> new file mode 100644
-> index 000000000000..55ad33d902ec
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-> @@ -0,0 +1,98 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/phy-rockchip-naneng-combphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip SoC Naneng Combo Phy Device Tree Bindings
-> +
-> +maintainers:
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - rockchip,rk3568-naneng-combphy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 1
-> +    items:
-> +      - description: reference clock
-> +      - description: apb clock
-> +      - description: pipe clock
-> +
-> +  clock-names:
-> +    minItems: 1
-> +    items:
-> +      - const: ref
-> +      - const: apb
-> +      - const: pipe
-> +
-> +  '#phy-cells':
-> +    const: 1
-> +
-> +  resets:
-> +    minItems: 1
-> +    items:
-> +      - description: exclusive apb reset line
-> +      - description: exclusive PHY reset line
-> +
-> +  reset-names:
-> +    minItems: 1
-> +    items:
-> +      - const: combphy-apb
-> +      - const: combphy
-> +
-> +  rockchip,pipe-grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Some additional phy settings are access through GRF regs.
-> +
-> +  rockchip,pipe-phy-grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Some additional pipe settings are access through GRF regs.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - '#phy-cells'
-> +  - resets
-> +  - reset-names
-> +  - rockchip,pipe-grf
-> +  - rockchip,pipe-phy-grf
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +
-> +    #include <dt-bindings/clock/rk3568-cru.h>
-> +
-> +    pipegrf: syscon@fdc50000 {
-> +      reg = <0xfdc50000 0x1000>;
-> +    };
-> +
-> +    pipe_phy_grf0: syscon@fdc70000 {
-> +      reg = <0xfdc70000 0x1000>;
-> +    };
-> +
-> +    combphy0_us: phy@fe820000 {
-> +      compatible = "rockchip,rk3568-naneng-combphy";
-> +      reg = <0xfe820000 0x100>;
-> +      #phy-cells = <1>;
-> +      clocks = <&pmucru CLK_PCIEPHY0_REF>, <&cru PCLK_PIPEPHY0>,
-> +        <&cru PCLK_PIPE>;
-> +      clock-names = "ref", "apb", "pipe";
-> +      assigned-clocks = <&pmucru CLK_PCIEPHY0_REF>;
-> +      assigned-clock-rates = <100000000>;
-> +      resets = <&cru SRST_P_PIPEPHY0>, <&cru SRST_PIPEPHY0>;
-> +      reset-names = "combphy-apb", "combphy";
-> +      rockchip,pipe-grf = <&pipegrf>;
-> +      rockchip,pipe-phy-grf = <&pipe_phy_grf0>;
-> +    };
-> -- 
-> 2.17.1
+> I did check two other platforms and they have the same sequence, except
+> one additional bit in AUX_CFG2. There also seem to be a few additional
+> permutations of this value, so I don't think tables are the solution.
 > 
 > 
+> So I think it's better if we leave this as proposed and then
+> parameterize the two individual entries as needed when we go forward -
+> or determine that I missed something.
+
+okay sounds good to me
 
 -- 
 ~Vinod
