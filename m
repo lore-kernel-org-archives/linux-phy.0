@@ -2,85 +2,84 @@ Return-Path: <SRS0=Pm1K=PO=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3DA2DC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Oct 2021 09:37:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CADFEC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Oct 2021 15:48:32 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E9DF360551
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Oct 2021 09:37:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E9DF360551
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id 98DCD60EFE
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Oct 2021 15:48:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 98DCD60EFE
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fgs4dkzLIoZWYUg9gujS2eVEDpLjwAxU1018ApAEYfE=; b=Z1xhS5JmRkz3Ro
-	uFq63abWiqdnq5oWphajj0drOn7fNkvcRzEg901d3VT+3vVqKH8BsYKQ1eRT433k9gA/JB8H18MPT
-	BiMQ9OkLfE0bJxrqlpVlyX0g6CO4NXRuiSwJYomxawsSJ3nD9gwxpWToJCe2qKBf8a98yHZW473hx
-	0BaEs6t0u8PeVUFCtPekgY43zFogfn2ZWcyNfeMoKnFlb13xH6oR7ZuVF1JItUOOhetdSqpv8IDRd
-	goXcetLd/MYlwdt0oGbA2KznHX3Xnqws6S3iFjduKIT8HKwUttMnAePKCfZsPMaobGJjK3q7HfRnC
-	JRb8bno3zc4+7uT7gzpQ==;
+	List-Owner; bh=Dd/Kz28vgizGUYSJ2MQ+1kSbHDKQNGXuAqYUblGmdGc=; b=SF1mHz5/XkkcKp
+	4QfTk4b3vpr4znfpHb2he/6IX4P1CJzpCLLotOlYPuM/IE53UVCihEUEQtSOjd5+BeI3KqhT1fD8j
+	BwK2NzETFKmXr7eV3Tk2WRzyOG8k8bxr+OpFkd9TqiAtpIjJlhUTzdmZfbV6Dd2US5zfpiNQtG0bu
+	Ttqqs0wWPSxvqGMOIrOLtGUaT+l839jn6trxjc4o+FyyUSx4tnVSee0JRRYa7X/gok0pKAl+r407r
+	HBUEphN3zUsDVohB55wM9cjmk5JroHrgDe4O7ogdX8Bs1dFq+Fwmwf5dULczZnz2zyxqI4H9UhCt1
+	a4AGCIa0nDuzEkw5IOHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mfIte-001Jj3-37; Tue, 26 Oct 2021 09:37:30 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1mfOgi-002F00-3A; Tue, 26 Oct 2021 15:48:32 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mfIta-001Jg3-Ij
- for linux-phy@lists.infradead.org; Tue, 26 Oct 2021 09:37:28 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id j2so2976462lfg.3
- for <linux-phy@lists.infradead.org>; Tue, 26 Oct 2021 02:37:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vKFWLSRl10tgQ1BAA/camWrcHhGVWkCvOyqQZ1aZWm4=;
- b=ZXK1k4pBYcr5jb/Oai+oGIp59SN838ETCgJhW3Y5443AzH2W7qh+r6OEzbV1mpp0Fl
- c17lqXzoULzIrV6mvN+acqvEmicr+fsnSErFYlK6f402aE0ptRyjibv5CXx7COz6YZHA
- 0XL5vnsIkF2RehilDw4qzvObqhafZZdgC5SaiNjfeIHA0OpCsUWxJ7l/lqesuZCGLWei
- tS6vHm/FfL1u+v+aLrFNyCgtdiIFFUOErn5utAhXLSiV9P+n42ppsFqvdzSKf8vpH7Ye
- r6v4QBMPp0ilh87yLy7MCNLXz3LmhPQ/01bOpcHNMN3Wkfdt/wBEAUAnwsY+WVz4aQaH
- qTeA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vKFWLSRl10tgQ1BAA/camWrcHhGVWkCvOyqQZ1aZWm4=;
- b=u/ITM1YILG8FnnnXqbLgu15nwAPCu4RkgAq7CqvT+930ON1sHlOv3+OTpkexcxY9po
- bIn07TAMj6OAM6r5TCpReMYCgHX9w7XEyweNHzG2qe52fimxBqaNm3EEUqGzUKUTgBWX
- awJUWeUWGBazmeX05Ivj7jrgp6XWkti3HuoIrs6yD28AxrABwKij7+R3BxqijHYJHr5V
- 8HZc73p1/2v2396GfMM4f90KjO4rzAxA8B/2x1GTPNntPQO4xhTnbktSker3M963szDj
- sO7baOyQmQwBRagPo4Zv4y9Tvf6Q/JyT80pINuQP9xJ94WJMPTCBDiHLGzP/qzk3zQ4a
- vVtw==
-X-Gm-Message-State: AOAM530j8l2LG++SgKnBV+1aaoXjLljSPGbwGb3iTtq3wL2Vi6nxF/Np
- DXV7E37bZ4n8G3pA2UStUSb+jiSZfxk=
-X-Google-Smtp-Source: ABdhPJxhtvBSZIiI+yxopG7DgTgfVaLQi15+YGbGH/tCbj/A+fNOqUTIW8/Y54zRFNqjF0L7oiz4gA==
-X-Received: by 2002:a05:6512:4016:: with SMTP id
- br22mr14257700lfb.132.1635241043910; 
- Tue, 26 Oct 2021 02:37:23 -0700 (PDT)
-Received: from localhost.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
- [194.187.74.233])
- by smtp.gmail.com with ESMTPSA id o9sm600438lfk.292.2021.10.26.02.37.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Oct 2021 02:37:23 -0700 (PDT)
-From: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org,
- =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>
-Subject: [PATCH RESEND] phy: bcm-ns-usb2: support updated DT binding with PHY
- reg space
-Date: Tue, 26 Oct 2021 11:37:16 +0200
-Message-Id: <20211026093716.5567-1-zajec5@gmail.com>
-X-Mailer: git-send-email 2.31.1
+ id 1mfOgf-002Eyh-3r; Tue, 26 Oct 2021 15:48:30 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19QFC8TH014888; 
+ Tue, 26 Oct 2021 17:48:19 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding :
+ content-type; s=selector1;
+ bh=Z4tfzYw9eG2voXHJI5ARvyFBLH00E40u2YN2hzN5tg8=;
+ b=VQ5nMSkpJtvX3Z/QafgaV8pPl1N/XYcPzuK29C80bQRADauKVHjo7m6sWzDeGnp4lzwc
+ EsgMvP0R1RYf9PFNIiW4KyXSFU5LGSzhWspUD7nZ4ix9gW2SK6vME6EzIoPlYooOM5gl
+ Gc/t7t5sxWlj6fjsBJ/qGqKoofNUIEsJU49UxkRDAXD2EwE4JBozoOAu+DqfkG38Camz
+ domycwJsTx+CO1Dogr/3j/CoYkJxnQhpfANweJr34cQCB3uh6XV37O10pybb7+WUQ50Z
+ uBz4Ih1L4MdvlLtOrC8PBJ62o4vv6gRIdJGNyM9dn65mGvGETN4NxoZ7X36sdBn3MMaL dA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3bxm40r8hm-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 26 Oct 2021 17:48:19 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 67987100034;
+ Tue, 26 Oct 2021 17:48:18 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5F39524FDE1;
+ Tue, 26 Oct 2021 17:48:18 +0200 (CEST)
+Received: from localhost (10.75.127.44) by SFHDAG2NODE2.st.com (10.75.127.5)
+ with Microsoft SMTP Server (TLS) id 15.0.1497.18; Tue, 26 Oct 2021 17:48:18
+ +0200
+From: Amelie Delaunay <amelie.delaunay@foss.st.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>, Amelie Delaunay
+ <amelie.delaunay@foss.st.com>
+Subject: [PATCH 1/1] phy: stm32: fix st, slow-hs-slew-rate with st,
+ decrease-hs-slew-rate
+Date: Tue, 26 Oct 2021 17:48:17 +0200
+Message-ID: <20211026154817.198937-1-amelie.delaunay@foss.st.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG2NODE2.st.com
+ (10.75.127.5)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
+ definitions=2021-10-26_04,2021-10-26_01,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211026_023726_669197_1F54FFEE 
-X-CRM114-Status: GOOD (  18.32  )
+X-CRM114-CacheID: sfid-20211026_084829_567498_C27F14C9 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,83 +91,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgoKVXBkYXRlZCBEVCBiaW5k
-aW5nIG1hcHMganVzdCBhIFBIWSdzIHJlZ2lzdGVyIHNwYWNlIGluc3RlYWQgb2YgdGhlIHdob2xl
-CkRNVSBibG9jay4gQWNjZXNzaW5nIGEgY29tbW9uIENSVSByZWcgaXMgaGFuZGxlZCB1c2luZyBz
-eXNjb24gJgpyZWdtYXAuCgpUaGUgb2xkIGJpbmRpbmcgaGFzIGJlZW4gZGVwcmVjYXRlZCBhbmQg
-cmVtYWlucyBzdXBwb3J0ZWQgYXMgYSBmYWxsYmFjawptZXRob2QuCgpTaWduZWQtb2ZmLWJ5OiBS
-YWZhxYIgTWnFgmVja2kgPHJhZmFsQG1pbGVja2kucGw+Ci0tLQpUaGlzIHBhdGNoIGhhcyBiZWVu
-IHByZXZpb3VzbHkgc2VudCBpbiBhIHBhdGNoc2V0IHRvdWNoaW5nIHR3bwpzdWJzeXN0ZW1zOiBQ
-SFkgYW5kIE1GRC4gRm9yIHRoYXQgcmVhc29uIHByb2JhYmx5IGl0IGhhcyBiZWVuIG1pc3NlZC4K
-ClRoaXMgYWRkcyBzdXBwb3J0IGZvciBiaW5kaW5nIGFkZGVkIGluIHRoZSBjb21taXQgNTViOWI3
-NDE3MTJkCigiZHQtYmluZGluZ3M6IHBoeTogYnJjbSxucy11c2IyLXBoeTogYmluZCBqdXN0IGEg
-UEhZIGJsb2NrIikgKGNhbiBiZQpmb3VuZCBpbiBsaW51eC1waHkuZ2l0KS4KLS0tCiBkcml2ZXJz
-L3BoeS9icm9hZGNvbS9waHktYmNtLW5zLXVzYjIuYyB8IDUyICsrKysrKysrKysrKysrKysrKysr
-Ky0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgNDMgaW5zZXJ0aW9ucygrKSwgOSBkZWxldGlvbnMoLSkK
-CmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtLW5zLXVzYjIuYyBiL2Ry
-aXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1iY20tbnMtdXNiMi5jCmluZGV4IDRiMDE1YjhhNzFjMy4u
-OThkMzI3MjlhNDVkIDEwMDY0NAotLS0gYS9kcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtLW5z
-LXVzYjIuYworKysgYi9kcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtLW5zLXVzYjIuYwpAQCAt
-OSwxNyArOSwyMyBAQAogI2luY2x1ZGUgPGxpbnV4L2Nsay5oPgogI2luY2x1ZGUgPGxpbnV4L2Rl
-bGF5Lmg+CiAjaW5jbHVkZSA8bGludXgvZXJyLmg+CisjaW5jbHVkZSA8bGludXgvbWZkL3N5c2Nv
-bi5oPgogI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgogI2luY2x1ZGUgPGxpbnV4L29mX2FkZHJl
-c3MuaD4KICNpbmNsdWRlIDxsaW51eC9vZl9wbGF0Zm9ybS5oPgogI2luY2x1ZGUgPGxpbnV4L3Bo
-eS9waHkuaD4KICNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KKyNpbmNsdWRlIDxs
-aW51eC9yZWdtYXAuaD4KICNpbmNsdWRlIDxsaW51eC9zbGFiLmg+CiAKIHN0cnVjdCBiY21fbnNf
-dXNiMiB7CiAJc3RydWN0IGRldmljZSAqZGV2OwogCXN0cnVjdCBjbGsgKnJlZl9jbGs7CiAJc3Ry
-dWN0IHBoeSAqcGh5OworCXN0cnVjdCByZWdtYXAgKmNsa3NldDsKKwl2b2lkIF9faW9tZW0gKmJh
-c2U7CisKKwkvKiBEZXByZWNhdGVkIGJpbmRpbmcgKi8KIAl2b2lkIF9faW9tZW0gKmRtdTsKIH07
-CiAKQEAgLTI3LDcgKzMzLDYgQEAgc3RhdGljIGludCBiY21fbnNfdXNiMl9waHlfaW5pdChzdHJ1
-Y3QgcGh5ICpwaHkpCiB7CiAJc3RydWN0IGJjbV9uc191c2IyICp1c2IyID0gcGh5X2dldF9kcnZk
-YXRhKHBoeSk7CiAJc3RydWN0IGRldmljZSAqZGV2ID0gdXNiMi0+ZGV2OwotCXZvaWQgX19pb21l
-bSAqZG11ID0gdXNiMi0+ZG11OwogCXUzMiByZWZfY2xrX3JhdGUsIHVzYjJjdGwsIHVzYl9wbGxf
-bmRpdiwgdXNiX3BsbF9wZGl2OwogCWludCBlcnIgPSAwOwogCkBAIC00NCw3ICs0OSwxMCBAQCBz
-dGF0aWMgaW50IGJjbV9uc191c2IyX3BoeV9pbml0KHN0cnVjdCBwaHkgKnBoeSkKIAkJZ290byBl
-cnJfY2xrX29mZjsKIAl9CiAKLQl1c2IyY3RsID0gcmVhZGwoZG11ICsgQkNNQV9ETVVfQ1JVX1VT
-QjJfQ09OVFJPTCk7CisJaWYgKHVzYjItPmJhc2UpCisJCXVzYjJjdGwgPSByZWFkbCh1c2IyLT5i
-YXNlKTsKKwllbHNlCisJCXVzYjJjdGwgPSByZWFkbCh1c2IyLT5kbXUgKyBCQ01BX0RNVV9DUlVf
-VVNCMl9DT05UUk9MKTsKIAogCWlmICh1c2IyY3RsICYgQkNNQV9ETVVfQ1JVX1VTQjJfQ09OVFJP
-TF9VU0JfUExMX1BESVZfTUFTSykgewogCQl1c2JfcGxsX3BkaXYgPSB1c2IyY3RsOwpAQCAtNTgs
-MTUgKzY2LDI0IEBAIHN0YXRpYyBpbnQgYmNtX25zX3VzYjJfcGh5X2luaXQoc3RydWN0IHBoeSAq
-cGh5KQogCXVzYl9wbGxfbmRpdiA9ICgxOTIwMDAwMDAwICogdXNiX3BsbF9wZGl2KSAvIHJlZl9j
-bGtfcmF0ZTsKIAogCS8qIFVubG9jayBETVUgUExMIHNldHRpbmdzIHdpdGggc29tZSBtYWdpYyB2
-YWx1ZSAqLwotCXdyaXRlbCgweDAwMDBlYTY4LCBkbXUgKyBCQ01BX0RNVV9DUlVfQ0xLU0VUX0tF
-WSk7CisJaWYgKHVzYjItPmNsa3NldCkKKwkJcmVnbWFwX3dyaXRlKHVzYjItPmNsa3NldCwgMCwg
-MHgwMDAwZWE2OCk7CisJZWxzZQorCQl3cml0ZWwoMHgwMDAwZWE2OCwgdXNiMi0+ZG11ICsgQkNN
-QV9ETVVfQ1JVX0NMS1NFVF9LRVkpOwogCiAJLyogV3JpdGUgVVNCIDIuMCBQTEwgY29udHJvbCBz
-ZXR0aW5nICovCiAJdXNiMmN0bCAmPSB+QkNNQV9ETVVfQ1JVX1VTQjJfQ09OVFJPTF9VU0JfUExM
-X05ESVZfTUFTSzsKIAl1c2IyY3RsIHw9IHVzYl9wbGxfbmRpdiA8PCBCQ01BX0RNVV9DUlVfVVNC
-Ml9DT05UUk9MX1VTQl9QTExfTkRJVl9TSElGVDsKLQl3cml0ZWwodXNiMmN0bCwgZG11ICsgQkNN
-QV9ETVVfQ1JVX1VTQjJfQ09OVFJPTCk7CisJaWYgKHVzYjItPmJhc2UpCisJCXdyaXRlbCh1c2Iy
-Y3RsLCB1c2IyLT5iYXNlKTsKKwllbHNlCisJCXdyaXRlbCh1c2IyY3RsLCB1c2IyLT5kbXUgKyBC
-Q01BX0RNVV9DUlVfVVNCMl9DT05UUk9MKTsKIAogCS8qIExvY2sgRE1VIFBMTCBzZXR0aW5ncyAq
-LwotCXdyaXRlbCgweDAwMDAwMDAwLCBkbXUgKyBCQ01BX0RNVV9DUlVfQ0xLU0VUX0tFWSk7CisJ
-aWYgKHVzYjItPmNsa3NldCkKKwkJcmVnbWFwX3dyaXRlKHVzYjItPmNsa3NldCwgMCwgMHgwMDAw
-MDAwMCk7CisJZWxzZQorCQl3cml0ZWwoMHgwMDAwMDAwMCwgdXNiMi0+ZG11ICsgQkNNQV9ETVVf
-Q1JVX0NMS1NFVF9LRVkpOwogCiBlcnJfY2xrX29mZjoKIAljbGtfZGlzYWJsZV91bnByZXBhcmUo
-dXNiMi0+cmVmX2Nsayk7CkBAIC05MCwxMCArMTA3LDI3IEBAIHN0YXRpYyBpbnQgYmNtX25zX3Vz
-YjJfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIAkJcmV0dXJuIC1FTk9NRU07
-CiAJdXNiMi0+ZGV2ID0gZGV2OwogCi0JdXNiMi0+ZG11ID0gZGV2bV9wbGF0Zm9ybV9pb3JlbWFw
-X3Jlc291cmNlX2J5bmFtZShwZGV2LCAiZG11Iik7Ci0JaWYgKElTX0VSUih1c2IyLT5kbXUpKSB7
-Ci0JCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIG1hcCBETVUgcmVnc1xuIik7Ci0JCXJldHVybiBQ
-VFJfRVJSKHVzYjItPmRtdSk7CisJaWYgKG9mX2ZpbmRfcHJvcGVydHkoZGV2LT5vZl9ub2RlLCAi
-YnJjbSxzeXNjb24tY2xrc2V0IiwgTlVMTCkpIHsKKwkJdXNiMi0+YmFzZSA9IGRldm1fcGxhdGZv
-cm1faW9yZW1hcF9yZXNvdXJjZShwZGV2LCAwKTsKKwkJaWYgKElTX0VSUih1c2IyLT5iYXNlKSkg
-eworCQkJZGV2X2VycihkZXYsICJGYWlsZWQgdG8gbWFwIGNvbnRyb2wgcmVnXG4iKTsKKwkJCXJl
-dHVybiBQVFJfRVJSKHVzYjItPmJhc2UpOworCQl9CisKKwkJdXNiMi0+Y2xrc2V0ID0gc3lzY29u
-X3JlZ21hcF9sb29rdXBfYnlfcGhhbmRsZShkZXYtPm9mX25vZGUsCisJCQkJCQkJICAgICAgICJi
-cmNtLHN5c2Nvbi1jbGtzZXQiKTsKKwkJaWYgKElTX0VSUih1c2IyLT5jbGtzZXQpKSB7CisJCQlk
-ZXZfZXJyKGRldiwgIkZhaWxlZCB0byBsb29rdXAgY2xrc2V0IHJlZ21hcFxuIik7CisJCQlyZXR1
-cm4gUFRSX0VSUih1c2IyLT5jbGtzZXQpOworCQl9CisJfSBlbHNlIHsKKwkJdXNiMi0+ZG11ID0g
-ZGV2bV9wbGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlX2J5bmFtZShwZGV2LCAiZG11Iik7CisJCWlm
-IChJU19FUlIodXNiMi0+ZG11KSkgeworCQkJZGV2X2VycihkZXYsICJGYWlsZWQgdG8gbWFwIERN
-VSByZWdzXG4iKTsKKwkJCXJldHVybiBQVFJfRVJSKHVzYjItPmRtdSk7CisJCX0KKworCQlkZXZf
-d2FybihkZXYsICJ1c2luZyBkZXByZWNhdGVkIERUIGJpbmRpbmdcbiIpOwogCX0KIAogCXVzYjIt
-PnJlZl9jbGsgPSBkZXZtX2Nsa19nZXQoZGV2LCAicGh5LXJlZi1jbGsiKTsKLS0gCjIuMzEuMQoK
-Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+st,decrease-hs-slew-rate is described in phy-stm32-usbphyc.yaml. Then
+fix the property name in driver.
+
+Fixes: 2f5e9f815a2f ("phy: stm32: add phy tuning support")
+Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
+---
+ drivers/phy/st/phy-stm32-usbphyc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
+index 7df6a63ad37b..e4f4a9be5132 100644
+--- a/drivers/phy/st/phy-stm32-usbphyc.c
++++ b/drivers/phy/st/phy-stm32-usbphyc.c
+@@ -478,7 +478,7 @@ static void stm32_usbphyc_phy_tuning(struct stm32_usbphyc *usbphyc,
+ 	if (!of_property_read_bool(np, "st,no-lsfs-fb-cap"))
+ 		usbphyc_phy->tune |= LFSCAPEN;
+ 
+-	if (of_property_read_bool(np, "st,slow-hs-slew-rate"))
++	if (of_property_read_bool(np, "st,decrease-hs-slew-rate"))
+ 		usbphyc_phy->tune |= HSDRVSLEW;
+ 
+ 	ret = of_property_read_u32(np, "st,tune-hs-dc-level", &val);
+-- 
+2.25.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
