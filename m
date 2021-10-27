@@ -2,14 +2,14 @@ Return-Path: <SRS0=D930=PP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D0B38C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 20:32:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 168A3C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 20:37:22 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9E15B603E5
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 20:32:16 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9E15B603E5
+	by mail.kernel.org (Postfix) with ESMTPS id D6E1360EB4
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 20:37:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D6E1360EB4
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,62 +18,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yO2qEFUdCHkvkKLLcx0uSyc/4hB8Yok0Fb2lm+47gJg=; b=xpzwZNOINtFcmA
-	p4oXUeQrsKFvJNR7fMG8Poo0x+Cf//rMQjbU1KKF4sVAvOd2qG6XZoFfCNmOflZ06+DHkQc2lor61
-	Q0Kt2BuZEYhjPaY4fhr9aV9skyVghe9drvupbvYQg0Isjm/LqrkKGPtFoZuo0S7H/n8FiJAhMEbuF
-	Y5Vb9EX0RjzFZAXU40wZSDX11TiQ/GKO+OvpSZ2cMlmX3nMV04fnwegeg0u0Ah6t3x6sN4wTCEGrW
-	2nPe6ip1nExmqnVEQQZYKybXEQQ9SXEdXj/Wa+bXkfOWQksQZNXtO5tM8en09nSxC4ye8Ylu5gJRc
-	7K/IcuJRLAPGVVHfKM9g==;
+	List-Owner; bh=bT2nrLFo/KTXF+Zt7Qc92sMDAx2algvZNUWYk4R0DXw=; b=I2fSDh1E6PAnlE
+	lr2O0UD5Q0fENzo9TE0dOoujzDy6JgZhsYuispNwbKHrGROalyKYoDbMh0/YENbqttMq113BFlcEa
+	6ZpvYF6QmuzNgnVNHpPK5LIdO9lmh4eSEDvnKyTObLVZQpF9TR2dDJdaeW5uuQ32q4TsBPSMM0CKC
+	iOA68wpc3+iiRyzWU73ToQYUmGQc40veyjFL1gjs/m76wceq+C+nFHmBlV5nPWEc2NDUAA+EqYoVG
+	wko3CUg6q9uPluP0/3pdiC3090Q3XhhNDbgplyG9k6Ah5V8mgmfxXAxKJ/eg1Uybp3W8eNRAh40km
+	ItINKYAy5QsoDEcJqg+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mfpaq-006464-4T; Wed, 27 Oct 2021 20:32:16 +0000
-Received: from mail-oo1-f47.google.com ([209.85.161.47])
+	id 1mfpfl-00656K-DI; Wed, 27 Oct 2021 20:37:21 +0000
+Received: from mail-ot1-f51.google.com ([209.85.210.51])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mfpao-00645S-CY; Wed, 27 Oct 2021 20:32:15 +0000
-Received: by mail-oo1-f47.google.com with SMTP id
- 64-20020a4a0d43000000b002b866fa13eeso1364754oob.2; 
- Wed, 27 Oct 2021 13:32:14 -0700 (PDT)
+ id 1mfpfi-00655D-QF
+ for linux-phy@lists.infradead.org; Wed, 27 Oct 2021 20:37:19 +0000
+Received: by mail-ot1-f51.google.com with SMTP id
+ l16-20020a9d6a90000000b0054e7ab56f27so5363892otq.12
+ for <linux-phy@lists.infradead.org>; Wed, 27 Oct 2021 13:37:18 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=dCyobkqZQkzSalEez4Iq0YBADjfjqmPa1gmyY2RxB7Y=;
- b=8MRWymZXh5UT9hZ9MIqJ5s1iDtMBrjmoX7tU6luU5wb4UgVfrMxdjrc/MBxNaiA8M+
- t4rT1z5d9Da+PpwX9Oc/MzA4gxuKFUlwkZ4FZ9ZjXJ8glNAnXrEE1zXqeOxw30+cg3B8
- Bxn1bymYIkvItV/yvjfyYzsOzfijItmc5i8epjVoYV9lIPRk+aUIhCi8yFToR/vcufb9
- gKVC+yjipaOqFljEQnx1Jh7gQifapmX0xSXN//h3xGQG0Zds9zUcQhimHSG7oMLU5+sx
- +QbWDvMaMO0sX46/loNK/KNncozE8K14urUafw2522y1se1T2dsqWBOGBNN2KKZo8zul
- uZJA==
-X-Gm-Message-State: AOAM531yHXOIxp/aghjXcggLQ0o9rChosrKr0dJ9L31p9klVGst/vNeo
- BmTBYAF/RQ6rWMFPSFptNaVHW1vIHQ==
-X-Google-Smtp-Source: ABdhPJzr5mepQbrAdQc0r1ApS1sM4eCK0NSKmmtkdNXQ+AzNpWS64gF5Sod6uTlShQOc1t94rJ5iyQ==
-X-Received: by 2002:a4a:de10:: with SMTP id y16mr23677617oot.4.1635366733450; 
- Wed, 27 Oct 2021 13:32:13 -0700 (PDT)
+ bh=rX2cDz/wX3SJcEzn8Nu4ObsMyqT3SKyEBfgx7vaoHC0=;
+ b=r13gEwgtotxgtz8eELQwWQIWBgXHgSjaPaCs4srC0o55sy91yo1BtxhpMcIQJ3qNAA
+ N7TmdMcOQmxjJhdDQO65ZOCRe0XbLm8aOQcF3NVcouaIEjCEcApVeoKg32TNZxkZ+TPL
+ inR8oC6UdhC0u4xD1W18a/qvbKnIY0fU3wlSycp8Eo3HJJlpZTlgAqETGTaLpujVnEku
+ DAwNJGGSW/e7EY+i+U4i5ZoJ8oOxWwvrG3tUesE6C6xDz73xuXZuP5Sblad63bC1ywJ8
+ Gu9oMd6Y/RTb4ISYVXpe3/LTYPnQe5MUy5Ldo/6wl9vFIeU9nYWUI8vyLR4OBoppfg/a
+ aesA==
+X-Gm-Message-State: AOAM533LDGDEWzS4N3DlD2GL0l+5a7OvIwEiakbcwWVuMFXbdjDLe3/+
+ CpgKKsajWOkAYhGaQ5PDD4+uk5Rugw==
+X-Google-Smtp-Source: ABdhPJy12B0q9y/jsgaw9j6Z9KG6IRo1plCckYJmB4tG62BmgFFtR7P/gNzCxU8EVI0mHiuMU/KcOw==
+X-Received: by 2002:a05:6830:3114:: with SMTP id
+ b20mr26764249ots.163.1635367037476; 
+ Wed, 27 Oct 2021 13:37:17 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id d18sm364711ook.14.2021.10.27.13.32.12
+ by smtp.gmail.com with ESMTPSA id 38sm365362oti.13.2021.10.27.13.37.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Oct 2021 13:32:12 -0700 (PDT)
-Received: (nullmailer pid 2102331 invoked by uid 1000);
- Wed, 27 Oct 2021 20:32:11 -0000
-Date: Wed, 27 Oct 2021 15:32:11 -0500
+ Wed, 27 Oct 2021 13:37:16 -0700 (PDT)
+Received: (nullmailer pid 2110622 invoked by uid 1000);
+ Wed, 27 Oct 2021 20:37:16 -0000
+Date: Wed, 27 Oct 2021 15:37:16 -0500
 From: Rob Herring <robh@kernel.org>
-To: Markus Schneider-Pargmann <msp@baylibre.com>
-Cc: Sam Ravnborg <sam@ravnborg.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-phy@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, linux-mediatek@lists.infradead.org
-Subject: Re: [PATCH v5 1/7] dt-bindings: mediatek,dpi: Add DP_INTF compatible
-Message-ID: <YXm3S4u8KAWjJfXy@robh.at.kernel.org>
-References: <20211021092707.3562523-1-msp@baylibre.com>
- <20211021092707.3562523-2-msp@baylibre.com>
+To: Horatiu Vultur <horatiu.vultur@microchip.com>
+Cc: devicetree@vger.kernel.org, andrew@lunn.ch, alexandre.belloni@bootlin.com,
+ linux-phy@lists.infradead.org, vkoul@kernel.org, robh+dt@kernel.org,
+ kishon@ti.com, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add lan966x-serdes binding
+Message-ID: <YXm4fIRt4NHo7z0F@robh.at.kernel.org>
+References: <20211020094229.1760793-1-horatiu.vultur@microchip.com>
+ <20211020094229.1760793-2-horatiu.vultur@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211021092707.3562523-2-msp@baylibre.com>
+In-Reply-To: <20211020094229.1760793-2-horatiu.vultur@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211027_133214_449217_7DB50659 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20211027_133718_868451_47401D77 
+X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,24 +91,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 21 Oct 2021 11:27:01 +0200, Markus Schneider-Pargmann wrote:
-> DP_INTF is similar to DPI but does not have the exact same feature set
-> or register layouts.
+On Wed, 20 Oct 2021 11:42:27 +0200, Horatiu Vultur wrote:
+> Document the lan966x ethernet serdes phy driver bindings.
 > 
-> DP_INTF is the sink of the display pipeline that is connected to the
-> DisplayPort controller and encoder unit. It takes the same clocks as
-> DPI.
-> 
-> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
 > ---
-> 
-> Notes:
->     Changes v4 -> v5:
->     - Newly created patch after realizing that the specific clocks for dpintf were
->       the same as engine and pixel clocks.
-> 
->  .../bindings/display/mediatek/mediatek,dpi.yaml       | 11 ++++++-----
->  1 file changed, 6 insertions(+), 5 deletions(-)
+>  .../phy/microchip,lan966x-serdes.yaml         | 59 +++++++++++++++++++
+>  1 file changed, 59 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/microchip,lan966x-serdes.yaml
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
