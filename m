@@ -2,14 +2,14 @@ Return-Path: <SRS0=D930=PP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 69337C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 06:16:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BE9EFC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 06:16:57 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2601F610CB
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 06:16:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 2601F610CB
+	by mail.kernel.org (Postfix) with ESMTPS id 84F39610C7
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 06:16:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 84F39610C7
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -19,69 +19,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=vbVYT0J97NiV01NEOcxCdhxHb4iPZ6QHyziL2RqQczA=; b=EiDY9MzXb1U6Z+MZ64+Gi1Kn1T
-	9WVFCclmBWvayzfarCaj6YwiPZjyDyJoso3qbmGGxVSfY63AfpiQEqZJGHXqkSpXep8b8cyXNsFQb
-	BTSSerHUMOHKbAczQ4g6xu8IljHkf+5nGtNAZA8NH7E+evW9Xt7YKFswilNt0SO1dw0jcX4YP+WI+
-	bx2JhItrY4pIXJWS4n8wGU4JThc/swNaSt5xJ805FI8wxLrzmhza1Tpiv4vDyFVX3+w0yW2CopkpR
-	eKvdokZj/kGzgkLBeF5vth295aWNGODFFz/QIwiyYloj+I9mTL3Z2kCn8Xfg8IYBnhEyrJa1YxE3+
-	Gt43zRoQ==;
+	bh=B236FIPkbwUVefR0MEdvR8iZjo5vA5rKwEeaVyP6+6s=; b=1WygwncjmypADC1D56w84KmHPG
+	e74EZOPNbtzvPBfdsjqPapxAVGvOWOMWrRf2CSN0A0xSnpXhXrBH8t0fWnZNNc7AJutFenGGsK+2x
+	vof72r2I4SPJRVi7Yo2/P3KByME7lCjytXx85x0W9l/t7/IoEjsnOAZrshPyjqn0BZoJ42zoPWxuE
+	HLug359T3v64M9NpN3wm0D4lyZcmb6a2yLreTBJ79/ByEqpvXSSKZGf15RGDT3frI4XPuH+L578uj
+	y3Wrh7UXyw9UMZN6s5mlei3FeY7gniOmckZmnkMWnzR+pK340V2Uh/pkl/rkKK+sM6RYC+4seX8wk
+	mi5ZrbIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mfcEa-003zr5-Kf; Wed, 27 Oct 2021 06:16:24 +0000
+	id 1mfcF6-003zvi-Up; Wed, 27 Oct 2021 06:16:56 +0000
 Received: from mx07-00178001.pphosted.com ([185.132.182.106])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mfcEX-003zqE-NS; Wed, 27 Oct 2021 06:16:23 +0000
+ id 1mfcF3-003zu8-AR; Wed, 27 Oct 2021 06:16:54 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19QIJftj012181; 
- Wed, 27 Oct 2021 08:10:55 +0200
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19QIJReu011037; 
+ Wed, 27 Oct 2021 08:11:51 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
  h=subject : to : cc :
  references : from : message-id : date : mime-version : in-reply-to :
  content-type : content-transfer-encoding; s=selector1;
- bh=q0IzamWoBnMLIIIWgH1c6YZ0YARVpDAlAywCoCd8O6A=;
- b=pLut+GxRqLoEwutxmEsKmT0U9f6n8Czu59GaLbziADOMwtznLgQUZ54Gw0mFG30LzTFI
- mAf8pn9K9k2l9XDGD8kyB8y+cnm5BmAO3YB00+gyy/yFMSCCO5HF8/PQ6lATeCubYrNt
- DdiIwe9I6oNJ1LpNKfJ0tNMiodtkGtIRzCLDVOx9JfwIBUGTkeKgOf8Hru+PdxHSGGIB
- WmjLMAKdFPGg4+kJmvUsa+tgl9tTdDraTeFW116MnoqgEuCPXI2gblkV13eeEpJbnLHW
- 9gSaSeXE68XwgQBNQi7Ez8d68t00m5nmdGyM96U93gZ2aaDRvaLknKJ4aiI1DjaFKmGE dQ== 
+ bh=nT19xZKAS1g6Wr2Uc3j1zTC0eEqLF61U2hb0csAByE8=;
+ b=qpkz848/RtyF6rGQB646MxF7l3lRxh06i/JQDEq4QXdNf0bBls4oIzPKu9hJoks6f/Qu
+ zZ5EPSZzQPRMBZmURzYyXHIGJHoV4pRjFM5QrtfySALfgLuclLRwFWXOohJuaq9ZdXXU
+ 1A/tvhP9HqzAkj7qPpIoRWuTrxgBM2xIlkxBQmQxMEry3YegaYhl15hpEr+uFaZRHM09
+ G2djmdsXb1j1BFg4VMmDFOY0NS6CiVjZ+SJVVgVnIEPs22BxO+HytLu9jDmcsJjCYtyk
+ jzPyozDJ9b4xRK9AsLTKfGq8y+d1KoyRnwgOYG+KGwS3rDJRaK+8FSk1qCrfTltXZ7Qd XQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3bxputjet7-1
+ by mx07-00178001.pphosted.com with ESMTP id 3bxputjf0c-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 27 Oct 2021 08:10:55 +0200
+ Wed, 27 Oct 2021 08:11:51 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6E078100044;
- Wed, 27 Oct 2021 08:10:46 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0ACD410002A;
+ Wed, 27 Oct 2021 08:11:49 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A09DC21810A;
- Wed, 27 Oct 2021 08:10:46 +0200 (CEST)
-Received: from lmecxl0573.lme.st.com (10.75.127.49) by SFHDAG2NODE2.st.com
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E23C3218104;
+ Wed, 27 Oct 2021 08:11:48 +0200 (CEST)
+Received: from lmecxl0573.lme.st.com (10.75.127.51) by SFHDAG2NODE2.st.com
  (10.75.127.5) with Microsoft SMTP Server (TLS) id 15.0.1497.18; Wed, 27 Oct
- 2021 08:10:43 +0200
+ 2021 08:11:45 +0200
 Subject: Re: dt-bindings: treewide: Update @st.com email address to
  @foss.st.com
-To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>, Rob Herring
- <robh+dt@kernel.org>, maxime coquelin <mcoquelin.stm32@gmail.com>,
- "alexandre torgue" <alexandre.torgue@foss.st.com>, michael turquette
- <mturquette@baylibre.com>, stephen boyd <sboyd@kernel.org>, herbert xu
- <herbert@gondor.apana.org.au>, "david s . miller" <davem@davemloft.net>,
- david airlie <airlied@linux.ie>, daniel vetter <daniel@ffwll.ch>, "thierry
- reding" <thierry.reding@gmail.com>, sam ravnborg <sam@ravnborg.org>,
- "yannick fertre" <yannick.fertre@foss.st.com>, philippe cornu
- <philippe.cornu@foss.st.com>, benjamin gaignard
+To: Marc Zyngier <maz@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski@canonical.com>
+CC: Rob Herring <robh+dt@kernel.org>, maxime coquelin
+ <mcoquelin.stm32@gmail.com>,
+ alexandre torgue <alexandre.torgue@foss.st.com>,
+ michael turquette <mturquette@baylibre.com>,
+ stephen boyd <sboyd@kernel.org>, herbert xu <herbert@gondor.apana.org.au>,
+ "david s . miller" <davem@davemloft.net>,
+ david airlie <airlied@linux.ie>, daniel vetter <daniel@ffwll.ch>,
+ thierry reding <thierry.reding@gmail.com>, sam ravnborg <sam@ravnborg.org>,
+ yannick fertre <yannick.fertre@foss.st.com>, "philippe
+ cornu" <philippe.cornu@foss.st.com>, benjamin gaignard
  <benjamin.gaignard@linaro.org>,
  vinod koul <vkoul@kernel.org>, ohad ben-cohen <ohad@wizery.com>,
  bjorn andersson <bjorn.andersson@linaro.org>, baolin wang
  <baolin.wang7@gmail.com>, jonathan cameron <jic23@kernel.org>, "lars-peter
  clausen" <lars@metafoo.de>, olivier moysan <olivier.moysan@foss.st.com>,
  arnaud pouliquen <arnaud.pouliquen@foss.st.com>, Thomas Gleixner
- <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>, Jassi Brar
- <jassisinghbrar@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hugues Fruchet <hugues.fruchet@foss.st.com>, Fabrice Gasnier
- <fabrice.gasnier@foss.st.com>, Lee Jones <lee.jones@linaro.org>, "Miquel
- Raynal" <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>,
- Vignesh Raghavendra <vigneshr@ti.com>, Jakub Kicinski <kuba@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
+ <tglx@linutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ "Mauro Carvalho Chehab" <mchehab@kernel.org>,
+ Hugues Fruchet <hugues.fruchet@foss.st.com>,
+ Fabrice Gasnier <fabrice.gasnier@foss.st.com>, Lee Jones
+ <lee.jones@linaro.org>, Miquel Raynal <miquel.raynal@bootlin.com>, "Richard
+ Weinberger" <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>, "Jakub
+ Kicinski" <kuba@kernel.org>, Srinivas Kandagatla
+ <srinivas.kandagatla@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
  Linus Walleij <linus.walleij@linaro.org>, Liam Girdwood
  <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Mathieu Poirier
  <mathieu.poirier@linaro.org>, Matt Mackall <mpm@selenic.com>, "Alessandro
@@ -107,8 +110,8 @@ To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>, Rob Herring
  Ludovic Barre <ludovic.barre@foss.st.com>,
  Christophe Kerello <christophe.kerello@foss.st.com>, pascal Paillet
  <p.paillet@foss.st.com>, Giuseppe Cavallaro <peppe.cavallaro@st.com>, "Jose
- Abreu" <joabreu@synopsys.com>, Le Ray <erwan.leray@foss.st.com>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ Abreu" <joabreu@synopsys.com>, Le Ray <erwan.leray@foss.st.com>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-clk@vger.kernel.org>,
  <linux-crypto@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
@@ -122,23 +125,24 @@ CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <linux-usb@vger.kernel.org>, <linux-watchdog@vger.kernel.org>
 References: <20211020065000.21312-1-patrice.chotard@foss.st.com>
  <22fb6f19-21eb-dcb5-fa31-bb243d4a7eaf@canonical.com>
+ <878ryoc4dc.wl-maz@kernel.org>
 From: Patrice CHOTARD <patrice.chotard@foss.st.com>
-Message-ID: <e8ddc63b-a0b5-79ae-6aff-19810cf74920@foss.st.com>
-Date: Wed, 27 Oct 2021 08:10:42 +0200
+Message-ID: <82492eb2-5a5e-39a2-a058-5e2ba75323e0@foss.st.com>
+Date: Wed, 27 Oct 2021 08:11:45 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.13.0
 MIME-Version: 1.0
-In-Reply-To: <22fb6f19-21eb-dcb5-fa31-bb243d4a7eaf@canonical.com>
+In-Reply-To: <878ryoc4dc.wl-maz@kernel.org>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG1NODE2.st.com (10.75.127.2) To SFHDAG2NODE2.st.com
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SFHDAG2NODE2.st.com
  (10.75.127.5)
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
  definitions=2021-10-27_01,2021-10-26_01,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211026_231622_093336_CDDD453E 
-X-CRM114-Status: GOOD (  17.67  )
+X-CRM114-CacheID: sfid-20211026_231653_683316_72C4B435 
+X-CRM114-Status: GOOD (  18.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,34 +159,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof
+Hi Marc
 
-On 10/20/21 9:45 AM, Krzysztof Kozlowski wrote:
-> On 20/10/2021 08:50, patrice.chotard@foss.st.com wrote:
->> From: Patrice Chotard <patrice.chotard@foss.st.com>
+On 10/20/21 1:39 PM, Marc Zyngier wrote:
+> On Wed, 20 Oct 2021 08:45:02 +0100,
+> Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com> wrote:
 >>
->> Not all @st.com email address are concerned, only people who have
->> a specific @foss.st.com email will see their entry updated.
->> For some people, who left the company, remove their email.
+>> On 20/10/2021 08:50, patrice.chotard@foss.st.com wrote:
+>>> From: Patrice Chotard <patrice.chotard@foss.st.com>
+>>>
+>>> Not all @st.com email address are concerned, only people who have
+>>> a specific @foss.st.com email will see their entry updated.
+>>> For some people, who left the company, remove their email.
+>>>
 >>
+>> Please split simple address change from maintainer updates (removal,
+>> addition).
+>>
+>> Also would be nice to see here explained *why* are you doing this.
 > 
-> Please split simple address change from maintainer updates (removal,
-> addition).
+> And why this can't be done with a single update to .mailmap, like
+> anyone else does.
 
-ok
-
-> 
-> Also would be nice to see here explained *why* are you doing this.
-
-Our @foss.st.com address are dedicated for upstream activities, 
-i will add a comment about this.
+Thanks for the tips, yes, it will be simpler.
 
 Thanks
 Patrice
 
 > 
-> Best regards,
-> Krzysztof
+> 	M.
 > 
 
 -- 
