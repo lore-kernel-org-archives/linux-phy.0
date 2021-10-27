@@ -1,101 +1,146 @@
-Return-Path: <SRS0=Pm1K=PO=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=D930=PP=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7D7F5C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Oct 2021 16:06:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 07017C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 01:39:20 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3F86B60D43
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Oct 2021 16:06:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3F86B60D43
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=gateworks.com
+	by mail.kernel.org (Postfix) with ESMTPS id B007A6109D
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 01:39:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B007A6109D
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=retv8lnmWa5qiXomS1F2NaSLKyH/0n+Bl1MCKduFirY=; b=Hcw40SLbeA7VMc
-	NNar2rtHDXDqzl3cGYR3oeyLFa72jrAPSALzZMQdWV000goDyiBjY+3LBqeyvjxNtv2I6s4vjIAq5
-	bQ5joS5IzKNw8JW1J2ZQhpyeP8cznjuIJWhJ9cJM7NWfFudRJO6BL+eWflnWraeeDX2RB8ppGVFm9
-	1BAQhiqDujsn2GZvNetP/KzcrhscMj+IPttraDII322jNyv1KGqI/65V+Tj18fA7IWMCix/1bJk2B
-	gDlqypQs45FKB3l8k3mWoBVhnQlZdXLHa1BG6+tQUB+9p6GWJ7Hdt5JfdryBVKRuRH5fFe0urOpPm
-	ITad/CiOb6MzbljVGYbQ==;
+	List-Owner; bh=atA3Mb8bdyRZ7Mjstxaqd4nbDh0rCqKIZplNyqWnjQU=; b=SD0hVGHQUeDGn0
+	HsUxdyhKDn/Qsk+fTzYnzcc2O4iHjmZcN0mUVpkHzhOV4tw5gcRDnniGwSWRhyKwWM7EP6mNF6v2G
+	LCW45r6S4hbymbw0mm8RKiuRR39BuHf6VBq70Vi51Apuq5yx27C13L7nXGTkyPc00np9RkZtiOloN
+	EGuPzIpTb0v6rPKbphqLNkzcwQh3n88ebCby6Tsmylnh2GHfpdQE2ji05D+iMb0rtoCpl8nP1UZkM
+	noU5yMlOFGoV3jI7wEc3DeW+xTermcTfXLmJaORp73m5Z34afi4ddwPZhapYnC4mQdXkXR1zQPuef
+	HkZ0WhpLpk25A5PiDuWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mfOyK-002Ktw-OQ; Tue, 26 Oct 2021 16:06:44 +0000
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
+	id 1mfXuR-003VyA-6B; Wed, 27 Oct 2021 01:39:19 +0000
+Received: from mail-db8eur05on2048.outbound.protection.outlook.com
+ ([40.107.20.48] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mfOxy-002Kmj-BP
- for linux-phy@lists.infradead.org; Tue, 26 Oct 2021 16:06:25 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id o133so14756027pfg.7
- for <linux-phy@lists.infradead.org>; Tue, 26 Oct 2021 09:06:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gateworks-com.20210112.gappssmtp.com; s=20210112;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Vzzd48mJqXCUnXPDz3heCUWFtn2qF6nO/CKO6RYzYbo=;
- b=zGUYf9u/NEHP+VZNUut7iuggLgikNl7ujuN6SaUYlVAil0DHopsotZlRRFMlhEnNET
- dlLSB6WIN66CqyHjulQR7RYK4LoAZpNf8clwSH82aqHr3k5anK/3XQGZJ1vTSZozNzLr
- 9fcxPJy9NuozyI3hD8ibyk6zwftjzTASl2NBj1+zhe62y5cbil1k0UqtYfl2iUs7ysca
- C0U2tslK710391tQjYdBk2CJGsIuDL0xxmJ9qvWo1qeDkeb6244PflgE5bWDjQ8eURCu
- +ftY3cV1pjdl2lvNvKm8/zlF/0k4RzYLS+jJPBChRVxXdddCOVzmAOaBV4lweJeeVAz6
- yOjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Vzzd48mJqXCUnXPDz3heCUWFtn2qF6nO/CKO6RYzYbo=;
- b=j/kw6q8TJsAKLJ4EMdQbmtWNBhwAT15CHEtMJFElvCf4BgiXkxmgf9BuK8gFLJhcj2
- ljgHGDPXQ3PXeP0B76Eos1VZvyluCsx3n1+QQyapIa1XU+/jql1+C3/2K2WM6nNZBg6j
- uP7CCnvK9qVYgq1X7NRJZa/GG2hnhQESULzdVEdMNOwtV8hpXPobkZAhSyOQ5YkTNsJE
- oDcdae5FrThRGD6KmOB2X/24bT2TgsOutVP38QBUgXSdMke5UhIEPQCWmNxplcUCGh4Y
- cOrXyoRQyaqumuUngaWsGbdhQ53OdYtVPC1m7cid+kN+WsLiFzpcGQVZhY3brm40qaiY
- 1mLg==
-X-Gm-Message-State: AOAM533IemmDcYb2bSHV2sNFJE9d17QSRhQRXxk3cKSzF0l9A7UWqUkF
- SsCqz/YO85qAI42QaFnRTZ6MkwANoyFOjh9STljWvg==
-X-Google-Smtp-Source: ABdhPJzwQAYRXBwbvGlrs+WAMhDV5XFF/l8p/Cg4wEfjCA008zHLZSR8kPV7JgvdDHcTs2CaN/jW/XCc4plbAHYA+Fk=
-X-Received: by 2002:a63:788e:: with SMTP id
- t136mr19753833pgc.432.1635264381159; 
- Tue, 26 Oct 2021 09:06:21 -0700 (PDT)
-MIME-Version: 1.0
-References: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
- <CAJ+vNU2b-=T_gTsRBvdF7SRUZopEFOU_Np8mEJn8bOpn5b5FaA@mail.gmail.com>
- <AS8PR04MB8676B2AC24E2769D47A1ED478CBD9@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU2AitmxCyam5FArmxAD41QUU=5CF_0JZhm+uzdkRbr7kw@mail.gmail.com>
- <AS8PR04MB8676840D7EDD56D10F9471288CBE9@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU2GU5=mM5+2Yg9gAuU0RSdJHWEU_+ykmz-qUWfsOnRJ8g@mail.gmail.com>
- <AS8PR04MB867624A8A5B6AE27D6A9160F8CBF9@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU1Si_bv0_2j5AU-v_1QtUGqwU_4u=NksAVFFXXkkNC1Sw@mail.gmail.com>
- <AS8PR04MB8676D9FFB6506A09D104E32A8C809@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU0cLd7oex5uUyJenqs229gsgZe_Vpu3uyKGw1=B+Uu5YQ@mail.gmail.com>
- <CAJ+vNU0wcQtrKh5W7UZknEiV2o7MKLV90CCrJqGGw=x_VYwMGg@mail.gmail.com>
- <AS8PR04MB867697878533A37B72D7E4AA8C839@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <AS8PR04MB867620E1A1E940275CD38B528C839@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <CAJ+vNU1nTYSHPZ1Twmy4k4pKuH7xQy95gTOJXx+mcTMZRfj-TA@mail.gmail.com>
- <AS8PR04MB86767EED0FB08363A80D86508C849@AS8PR04MB8676.eurprd04.prod.outlook.com>
-In-Reply-To: <AS8PR04MB86767EED0FB08363A80D86508C849@AS8PR04MB8676.eurprd04.prod.outlook.com>
-From: Tim Harvey <tharvey@gateworks.com>
-Date: Tue, 26 Oct 2021 09:06:09 -0700
-Message-ID: <CAJ+vNU0YmmmHxS=jo8U=RQFGH6CpabHCJP=xt5F=1HD0552Cvg@mail.gmail.com>
-Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+ id 1mfXuN-003Vx1-WC; Wed, 27 Oct 2021 01:39:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=VhjcxXDSCw7TB+OpMeKwrvcE9/xg9AHLF/fKZGJLMe8OSFE3LSzCU32cf/8hW0kcKBL0ltNrW7gNEBn/kJcP7XGNgJE6qij0K+thO2VpCVg3OwKe7PrlORQQwdz9bqJG7tcuth3gmF+ajQcrn4vHkrl/y3yIQ+XZ4RDXDjBQ0pSsFXoDq46kAZoj5l0f1uaBHXd/fTsFjYfJ3ztN5H97Kd+H5EH3tIHjroW0004PduA4tFMKyQr3JO4/E5e5T7zsD1QHsjRNRTn2D+YHNrSO47Wb0vKkKg/f8SrUEYXEoAS5M10tKYYK5usQtnmh1Oj3lXaxkR/OeyaA3NnPw+LU4g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=2+fK+aS7qdVrOWHzvrlZweX9pRLTh6mnOF0RTF3EH0Q=;
+ b=D86yL/X+5GpHATI+LPt8BFowWqa7r2qATcm/nnCGhHMoxuMe6WUSqcCUqllAYZH+l3mTd1fcjBTgTL+/qo6QZX5Mi+4FhF84umh0GvsaktWnztgZTiNQAdKeszKyy/kfPIRqzvUPR7XdykeUdSKqupkTQWV13cMU/MIBiLuLr3hIiMWmDVmGpzEVImMlQvMxVN2yF6L1VEBrXiiRq78m4qNbNi/lyXoVZahP0Pf0YRjUxqN+ZJ5lKwO6Kcw4bWNO4HcONZRsWW6NnRlQSyF2122v1+EtQPAaQucxo+dIdJp/QY6Y8unrJUroWeba2rohh9j6UYEMXsX/L6KxiXKxiQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=2+fK+aS7qdVrOWHzvrlZweX9pRLTh6mnOF0RTF3EH0Q=;
+ b=f1nnH+BCo9JtZXooLfoNbtnfZoqesEjz8ZTwXDJPMaPmTHFD673MJ+D0MpfTNyERJ8lE5K8M4IqbYgTsSq5oUhVsZu4IZf2Oqqtli1TQFzwmUAIxdXMNDKc8sneQjaE0mQLuhn5JvxYxr/ia3f+Q+Gs0PfTVa0WKRXbZjM7M1VA=
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
+ by AS8PR04MB8484.eurprd04.prod.outlook.com (2603:10a6:20b:34c::12)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4649.13; Wed, 27 Oct
+ 2021 01:39:13 +0000
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::b059:46c6:685b:e0fc]) by AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::b059:46c6:685b:e0fc%5]) with mapi id 15.20.4649.014; Wed, 27 Oct 2021
+ 01:39:13 +0000
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: Marcel Ziswiler <marcel.ziswiler@toradex.com>, "kishon@ti.com"
+ <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>, "robh@kernel.org"
+ <robh@kernel.org>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "tharvey@gateworks.com"
+ <tharvey@gateworks.com>, "galak@kernel.crashing.org"
+ <galak@kernel.crashing.org>
+CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, dl-linux-imx <linux-imx@nxp.com>
+Subject: RE: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
  support
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: Lucas Stach <l.stach@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, 
- "vkoul@kernel.org" <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
- Shawn Guo <shawnguo@kernel.org>, 
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
- Device Tree Mailing List <devicetree@vger.kernel.org>, 
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>, 
- open list <linux-kernel@vger.kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>
+Thread-Topic: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+ support
+Thread-Index: AQHXyoIP9WRZIWT4CUunBVSnJ63L4qvmD1nA
+Date: Wed, 27 Oct 2021 01:39:13 +0000
+Message-ID: <AS8PR04MB8676F26022A5EA033FA5515B8C859@AS8PR04MB8676.eurprd04.prod.outlook.com>
+References: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
+ <6af982786f0136d5f984beaf544e2ba7b7b68d31.camel@toradex.com>
+In-Reply-To: <6af982786f0136d5f984beaf544e2ba7b7b68d31.camel@toradex.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 15c385b9-7fff-4b60-8c88-08d998ea949a
+x-ms-traffictypediagnostic: AS8PR04MB8484:
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-microsoft-antispam-prvs: <AS8PR04MB84842C83EBD2D8A09E9F194E8C859@AS8PR04MB8484.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 9NBIhxbZiPbUqhp+aB/gnD4+mt4j4A2C3NklzeTvOCmijmcQZW3eEPL9ThihWo6463biP9BhVNfKdPGa8vwhCgrH4l54VSzn2RuamqePpUc34zR+Dkj+3o0+4tGhW/OAKAjdAZ3a7Vpjoqdxf+N7H651VHB81jdrgGaj0PJ5PtP1TBi4g5cwME/u6k3PeOZd+WxAnHi6bNKEu2zVnfeWlzA/KddKE5o/15rClkVW6oYu9tVe5zZ5j+8QeIKjOV3bt/NFz5RWYFKVlSe3szSvE3zFpqxEglCXWkmMkLoFSBVGjvXQFc89tHAP5ECyoKVz7ULp7NEOonaD978YocLLdG5a0UtStL5Q+mXIm8Ji6n7O0taELKawiVX+M0N91UUbiBLlot5ANhXcaLAwSD2bluEhkrHAHEIShECCY5qHxffytWRJ8abmffQEALHNFCQ1ghrqA9IaEWECgHphX/hq46e4tqOFnd6abz87MPS5dK1kp9/OsH27OAMRL3ZaEoIcI1PCAF16OrTYLmnTABks/B3j4cVPqsm04zyCspPVAWkPwRcMWwsc2kLyaDrXvZBq9ItuBmPp+MTfG0n6L5dHceUhgUcPJOy0Jh6ZXpTuK1UyT4vALa2TSPQ8jQT9rImVL7W7+xlPgGjNjurG0Vkh57ZOw6tL49z6lnZ8cOlZDNQJUotwzZEbEWb693J88bkaIJvlWqe4GQWhNuUrDtUVoYpGrLMIPs6wFexXK8ycRHrwXcJGNZGM3FfUagRCsBSyRzzRi7XWSSIKrLbOvT2iPp/4aefsEC3/xeJY1qfzZ40t5UgLI51yfupTddvraRLm
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(5660300002)(76116006)(53546011)(8936002)(66446008)(86362001)(186003)(38070700005)(966005)(26005)(7696005)(66476007)(64756008)(7416002)(122000001)(38100700002)(45080400002)(66946007)(4326008)(71200400001)(508600001)(9686003)(6506007)(110136005)(2906002)(54906003)(52536014)(66556008)(8676002)(4001150100001)(33656002)(55016002)(83380400001)(316002)(32563001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?mZXYbOgX8g6+vt1fzvDjj8UoV+I+YACpmITkiS/TUpWeXPcxgnbsCVipEh?=
+ =?iso-8859-1?Q?99LQjVzYECvEe9qoj8VvTpdnCrrjqJfJumol+B3uTjtVA4phceCt2zXpmb?=
+ =?iso-8859-1?Q?ZXE7aECyrL77N2J71cyUlqejKQ6qb1diChkcuuUYiN0x8kfhA8oF7WX3NE?=
+ =?iso-8859-1?Q?8KZojlJyVZvsqdkl+bVtnf7YzilIZLafIpf1OWrmFFoeLJR023WuOerplR?=
+ =?iso-8859-1?Q?aJEwz55vzlt/CwC6YmtcxQnra6OiPhSiTu6tPqzEUbNGydIi9xKkhxADcO?=
+ =?iso-8859-1?Q?g+7CQkCSwinxXH9vTDIAhUrYYT1R1p+pSzyGs5IRbJ/Rmv1Elhe0+JzW2V?=
+ =?iso-8859-1?Q?1V7lvRdrYT0Od0hBQ6Y4t/K1ByENNul24/V4s0LvewgFy9ATJKWKPN8IV4?=
+ =?iso-8859-1?Q?8VmZMF7RTvH/wKq10sqZWkF/BN5ZqBZ0AlQl8eIGYyXBPlMOc5HP6CuG2U?=
+ =?iso-8859-1?Q?gDq8a/18wstFljvHhdvIPyzlw+SwHR/QRzCrc0Hw48uV/d1CN/BVBnOyjC?=
+ =?iso-8859-1?Q?1JtZG9FeF0eGBBEOUQ/amqzhdNTPyW2vmFT0K1kfZ3dGD1YpdaZbm4N3nK?=
+ =?iso-8859-1?Q?Z/CcCv5sxwsoXL/LdxUE4PZz0+7rv7J0d+53ptdkoGsCqNWpnXTjNr95A9?=
+ =?iso-8859-1?Q?shdU3lw7tiTaLkslYeovZFj1YGsigsAQ2dK6n506XUm/uVcn6hdfkZCk5f?=
+ =?iso-8859-1?Q?nepaWlapMSmnAO1kTCsfFTcGJ4owdpugR2VuskwaahyuIHq5QQ8Bcl7kz8?=
+ =?iso-8859-1?Q?ynjL29+XvWgrc75GY5rs79NPv0vag5RtaF7m6VuWpCU1ZxxOctX7ijLUs9?=
+ =?iso-8859-1?Q?mbEHiIxa4MIjTUZzepLn55VEK3ikTdwEWsAnu5uksOuWO6kt8N2CczYqK2?=
+ =?iso-8859-1?Q?hPNI1BksZM+Sf4/cDvB2350Q0pXzx7U0D0+Jn2oJtHcu1WnMyT3YoZguJZ?=
+ =?iso-8859-1?Q?IQct/qZlKCs3GylHWzx/FHddKKNwMyTeHbvUN3K1lr+00MLvek4Sgsdojg?=
+ =?iso-8859-1?Q?TrkLgOj8OtIBHlm2dVHVY/9KIT5OQOckjOaGw6T8XvzGx5u26Sm6HQNCjV?=
+ =?iso-8859-1?Q?SQ10rCRBpsHxTiL8liMgLbplReoBtB6h0v5/8qylFCrgvasBSpylF0nb1/?=
+ =?iso-8859-1?Q?60JPwc430dEw894v8ykq99xH3Qniokvja7pwLlf0RKvSDVTRTcphTAUpMd?=
+ =?iso-8859-1?Q?Rbocso/hGGhliy/hnDyXASvcxHCIiy09NPESA49KQF7iQnIGlECShxxkEA?=
+ =?iso-8859-1?Q?f+9TKICA0JWC1s1nLR0EoeDWFKEgp+VH+FRlWxQXm35gqJ4VvkBjOmjgiH?=
+ =?iso-8859-1?Q?lvBtEkNsTq1kkzlQk6jHQ3o5utrTH5m3X10tF8mprNf77rne8qScKZX5T3?=
+ =?iso-8859-1?Q?0Ni+oYhlToncxaR8dpuSx9wNrlhRSVfFVsJ8X3/7+x/TrP6ThKJUvUFpnA?=
+ =?iso-8859-1?Q?jvu+aZaqrK+i8tXR0Ook1cJi1jhQ73gJY9XFHLAPWq68rEPelAaKsuRAaL?=
+ =?iso-8859-1?Q?BooxH1sUF/fF5v+1sj/vfUdtxrJV5jVb/xXyoc8ywFrUFJOE5y81EwFEWC?=
+ =?iso-8859-1?Q?Sd8BYaqmVdEy8wGaMosWmfEbOaQanvp+A5CK6mAIzfyOarzlS0ibmAZHR1?=
+ =?iso-8859-1?Q?mnExExA5OZHWn4sxflRqumwu/VCLJGrjUEIJV5anmqWV3IlMmHHJznyA?=
+ =?iso-8859-1?Q?=3D=3D?=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 15c385b9-7fff-4b60-8c88-08d998ea949a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Oct 2021 01:39:13.1426 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: R9oCygYlqNrGytRFlSugceXAdQEjrQ6jQI8OQDc9fYGDiYEp9ucWT6aF2ZDMTay9FayvRt64wEtCSORSoqyakw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8484
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211026_090622_558370_EE39781E 
-X-CRM114-Status: GOOD (  76.32  )
+X-CRM114-CacheID: sfid-20211026_183916_071290_7D5211FC 
+X-CRM114-Status: GOOD (  26.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,349 +152,152 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 25, 2021 at 10:41 PM Richard Zhu <hongxing.zhu@nxp.com> wrote:
->
-> > -----Original Message-----
-> > From: Tim Harvey <tharvey@gateworks.com>
-> > Sent: Tuesday, October 26, 2021 1:15 AM
-> > To: Richard Zhu <hongxing.zhu@nxp.com>
-> > Cc: Lucas Stach <l.stach@pengutronix.de>; Kishon Vijay Abraham I
-> > <kishon@ti.com>; vkoul@kernel.org; Rob Herring <robh@kernel.org>;
-> > galak@kernel.crashing.org; Shawn Guo <shawnguo@kernel.org>;
-> > linux-phy@lists.infradead.org; Device Tree Mailing List
-> > <devicetree@vger.kernel.org>; Linux ARM Mailing List
-> > <linux-arm-kernel@lists.infradead.org>; open list
-> > <linux-kernel@vger.kernel.org>; Sascha Hauer <kernel@pengutronix.de>;
-> > dl-linux-imx <linux-imx@nxp.com>
-> > Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
-> > support
+> -----Original Message-----
+> From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> Sent: Tuesday, October 26, 2021 11:57 PM
+> To: kishon@ti.com; vkoul@kernel.org; robh@kernel.org;
+> l.stach@pengutronix.de; shawnguo@kernel.org; tharvey@gateworks.com;
+> galak@kernel.crashing.org; Richard Zhu <hongxing.zhu@nxp.com>
+> Cc: linux-phy@lists.infradead.org; linux-arm-kernel@lists.infradead.org;
+> kernel@pengutronix.de; devicetree@vger.kernel.org;
+> linux-kernel@vger.kernel.org; dl-linux-imx <linux-imx@nxp.com>
+> Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
+> support
+> =
+
+> On Tue, 2021-10-12 at 16:41 +0800, Richard Zhu wrote:
+> > refer to the discussion [1] when try to enable i.MX8MM PCIe support,
+> > one standalone PCIe PHY driver should be seperated from i.MX PCIe
+> > driver when enable i.MX8MM PCIe support.
 > >
-> > On Mon, Oct 25, 2021 at 12:23 AM Richard Zhu <hongxing.zhu@nxp.com>
-> > wrote:
-> > >
-> > > Snipped...
-> > >
-> > > > > > > > > > My boards do not use CLKREQ# so I do not have that
-> > > > > > > > > > defined in pinmux and I found that if I add
-> > > > > > > > > > MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B
-> > > > > > > > PCIe
-> > > > > > > > > > works on my board but this isn't a solution just a
-> > > > > > > > > > work-around (I have boards that use the only two
-> > > > > > > > > > possible pins for CLKREQ as other
-> > > > > > > > features).
-> > > > > > > > > >
-> > > > > > > > > > Similarly you will find on the imx8mm-evk if you comment
-> > > > > > > > > > out the CLKREQ (which isn't required) the imx8mmevk will
-> > > > > > > > > > end up hanging like my
-> > > > > > > > boards:
-> > > > > > > > > [Richard Zhu] Hi Tim:
-> > > > > > > > > Regarding the SPEC, the CLKREQ# is mandatory required, and
-> > > > > > > > > should be
-> > > > > > > > configured as an open drain, active low signal.
-> > > > > > > > > And this signal should be driven low by the PCIe M.2
-> > > > > > > > > device to request the
-> > > > > > > > REF clock be available(active low).
-> > > > > > > > > So, there is such kind of CLKREQ# pin definition on
-> > > > > > > > > i.MX8MM EVK
-> > > > > board.
-> > > > > > > > >
-> > > > > > > > > Anyway, I think the external OSC circuit should be always
-> > > > > > > > > running if there is
-> > > > > > > > no CLKREQ# on your HW board design.
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > The way I understand it is CLKREQ# allows the host to
-> > > > > > > > disable the REFCLK when not needed for power savings so it
-> > > > > > > > would seem optional to implement that and if not implemented
-> > > > > > > > should be left unconnected on
-> > > > > the card.
-> > > > > > > >
-> > > > > > > [Richard Zhu] No, not that way. Regarding the SPEC, this
-> > > > > > > signal is
-> > > > > mandatory required.
-> > > > > > > Especially for the L1ss usages. This signal would be OD(open
-> > > > > > > drain), bi-directional, and might be driven low/high by RC or
-> > > > > > > EP automatically if
-> > > > > L1ss modes are enabled.
-> > > > > > > You can make reference to the
-> > > > > > > "ECN_L1_PM_Substates_with_CLKREQ_31_May_2013_Rev10a", or
-> > the
-> > > > > chapter 5.5 L1 PM Substates of "PCI Express Base Specification, Rev.
-> > > > > 4.0 Version 1.0".
-> > > > > > >
-> > > > > >
-> > > > > > CLKREQ is only mandatory if you wish to support clock power
-> > > > > > management. Many boards with a PCI host controller do not
-> > > > > > support this.
-> > > > [Richard Zhu] Okay, understood.
-> > > >
-> > > > > >
-> > > > > > > > > > diff --git
-> > > > > > > > > > a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > > > > > > b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > > > > > > index 5ce43daa0c8b..f0023b48f475 100644
-> > > > > > > > > > --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > > > > > > +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> > > > > > > > > > @@ -448,7 +448,9 @@
-> > > > > > > > > >
-> > > > > > > > > >         pinctrl_pcie0: pcie0grp {
-> > > > > > > > > >                 fsl,pins = <
-> > > > > > > > > > +/*
-> > > > > > > > > >
-> > > > > > > > > > MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B    0x61
-> > > > > > > > > > +*/
-> > > > > > > > > >
-> > > > > > > > MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21
-> > > > > > > > > > 0x41
-> > > > > > > > > >                 >;
-> > > > > > > > > >         };
-> > > > > > > > > >
-> > > > > > > > > > I have PCIe working with a driver that I ported from
-> > > > > > > > > > NXP's kernel which differs from your driver in that the
-> > > > > > > > > > PCIe PHY is not abstracted to its own driver so I think
-> > > > > > > > > > this has something to do with the order in which the phy
-> > > > > > > > > > is reset or
-> > > > initialized?
-> > > > > > > > > > The configuration of
-> > > > > > > > gpr14 bits looks correct to me.
-> > > > > > > > > [Richard Zhu] The CLKREQ# PIN definition shouldn't be masked.
-> > > > > > > > > In the NXP's local BSP kernel, I just force CLKREQ# low to
-> > > > > > > > > level up the HW
-> > > > > > > > compatibility.
-> > > > > > > > > That's might the reason why the PCIe works on your HW
-> > > > > > > > > board although the
-> > > > > > > > CLKREQ# PIN is not defined.
-> > > > > > > > > This method is a little rude and violate the SPEC, and not
-> > > > > > > > > recommended
-> > > > > > > > although it levels up the HW compatibility.
-> > > > > > > > > So I drop this method in this series.
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > Sorry, I don't understand what you are saying here. Is there
-> > > > > > > > a change you are going to make to v4 that will make this
-> > > > > > > > work for the evk and my boards? What is that change exactly?
-> > > > > > > [Richard Zhu] No. What I said above is that the CLKREQ# is
-> > > > > > > forced to be low in NXP local BSP kernel. I guess this might
-> > > > > > > be the reason why your
-> > > > > board works.
-> > > > > > >
-> > > > > > > BIT11 and BIT10 of IOMUXC_GPR14 can be used to force the
-> > > > > > > CLKREQ# to
-> > > > > be low.
-> > > > > > > Set CLKREQ_OVERRIDE_EN(bit10) 1b1, then write one zero to
-> > > > > CLKREQ_OVERRIDE(bit11).
-> > > > > > >
-> > > > > >
-> > > > > > Ok, that makes sense. Those bits are not explained well in the
-> > > > > > IMX8MMRM. As my board's external REFCLK is always enabled that
-> > > > > > must gate the clock internally to the host controller block.
-> > > > > >
-> > > > > > I can confirm that asserting those GPR14 bits does resolve my issue:
-> > > > > >
-> > > > > > #define IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_VAL    BIT(11)
-> > > > > > #define IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_EN     BIT(10)
-> > > > > >
-> > > > > >        /*
-> > > > > >         * for boards that do not connect CLKREQ#,
-> > > > > >         * override CLKREQ# and drive it low internally
-> > > > > >         */
-> > > > > >        regmap_update_bits(imx8_phy->iomuxc_gpr,
-> > IOMUXC_GPR14,
-> > > > > >
-> > > > > IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_VAL, 0);
-> > > > > >        regmap_update_bits(imx8_phy->iomuxc_gpr,
-> > IOMUXC_GPR14,
-> > > > > >
-> > > > > IMX8MM_GPR_PCIE_CLKREQ_OVERRIDE_EN, 1);
-> > > > [Richard Zhu] regmap bits operations should manipulate according bits.
-> > > > The BIT(10) and BIT(11) should be touched actually.
-> > > >
-> > > > > >
-> > > > > > Should this be added as a 'fsl,clkreq-unsupported' flag that
-> > > > > > needs to be set true to implement the above code?
-> > > > > >
-> > > > >
-> > > > > Richard,
-> > > > >
-> > > > > Sorry - spoke too soon. My test was flawed as I still was
-> > > > > pinmuxing CLKREQ in my dt to work around the issue and after
-> > > > > removed the above did not resolve my issue. The setting of
-> > > > > OVERRIDE_EN was wrong above (should not be set to '1' but BIT(10)
-> > > > > instead) but this code already exists in imx6_pcie_enable_ref_clk
-> > > > > and is used for IMX8MM per your patch so this is not the issue.
-> > > > >
-> > > > > What makes my board work is to clear GPR14 bit9 (like the NXP
-> > > > > kernel
-> > > > > does) so I don't think this bit does what we think it does (select
-> > > > > between internal and ext clk). I think setting it enables clock
-> > > > > gating via
-> > > > CLKREQ#.
-> > > > >
-> > > > > This also points out that perhaps the CLKREQ_OVERRIDE logic should
-> > > > > be moved to the new phy driver for IMX8MM.
-> > > > [Richard Zhu] It sounds reasonable to consider to force the CLKREQ#
-> > > > to be low.
-> > > > I will think about that and add this in later v5 patch-set if nobody
-> > > > has different concerns.
-> > > > Thanks.
-> > > [Richard Zhu] Hi Tim:
-> > > As you mentioned above, the CLKREQ# GPIO PIN is not used for PCIe on
-> > your board, right?
-> > > " (I have boards that use the only two possible pins for CLKREQ as other
-> > features)"
-> > >
-> > > Did the override configuration of the clkreq# will bring unexpected results
-> > for other features on your board?
-> > >
+> > This patch-set adds the standalone PCIe PHY driver suport[1-5], and
+> > i.MX8MM PCIe support[6-9] to have whole view to review this patch-set.
 > >
-> > What I mean is that imx8mm-venice-gw7901.dts uses both I2C4 and UART4
-> > and because I2C4_SCL and UART4_RXD are the only two pads that could be
-> > pinmuxed for CLKREQ# I can't use the workaround of pin muxing it.
+> > The PCIe works on i.MX8MM EVK board based the the blkctrl power driver
+> > [2] and this PHY driver patch-set.
+> =
+
+> Whole series:
+> =
+
+> Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> =
+
+> BTW: I tested it on Verdin iMX8M Mini V1.1B without an external PCIe
+> oscillator aka setting fsl,refclk-pad-mode to
+> IMX8_PCIE_REFCLK_PAD_OUTPUT which worked like a charm. Thanks!
+> =
+
+[Richard Zhu] Thanks for your tests.
+
+Best Regards
+Richard Zhu
+
+> > [1]
+> > https://eur01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Fpatc
 > >
-> > Currently your driver only works on my imx8mm-venice-* boards if I add one
-> > of the following on boards that don't connect those pads (or if I clear
-> > IMX8MM_GPR_PCIE_REF_USE_PAD):
-> > MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B
-> > MX8MM_IOMUXC_UART4_RXD_PCIE1_CLKREQ_B
+> hwork.ozlabs.org%2Fproject%2Flinux-pci%2Fpatch%2F20210510141509.929
+> 120
 > >
-> > Note your 'PCI: imx: add the imx8mm pcie support' patch [1] does enable this
-> > code already in the imx6_pcie_enable_ref_clk function to override REF_CLK
-> > and drive it low:
+> -3-l.stach%40pengutronix.de%2F&amp;data=3D04%7C01%7Chongxing.zhu%40
+> nxp.c
 > >
-> > offset = imx6_pcie_grp_offset(imx6_pcie);
-> > /*
-> > * Set the over ride low and enabled
-> > * make sure that REF_CLK is turned on.
-> > */
-> > regmap_update_bits(imx6_pcie->iomuxc_gpr, offset,
-> >    IMX8MQ_GPR_PCIE_CLK_REQ_OVERRIDE,
-> >    0);
-> > regmap_update_bits(imx6_pcie->iomuxc_gpr, offset,
-> >    IMX8MQ_GPR_PCIE_CLK_REQ_OVERRIDE_EN,
-> >    IMX8MQ_GPR_PCIE_CLK_REQ_OVERRIDE_EN);
+> om%7Cbacb5db20f2d4aa7a4ad08d998993356%7C686ea1d3bc2b4c6fa92cd9
+> 9c5c3016
 > >
-> > So this is already being run and yet my boards still do not work unless I clr
-> > IMX8MM_GPR_PCIE_REF_USE_PAD like this which is what the NXP
-> > downstream driver does:
-> > regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-> > IMX8MM_GPR_PCIE_REF_USE_PAD, 0);
+> 35%7C0%7C0%7C637708606037565160%7CUnknown%7CTWFpbGZsb3d8ey
+> JWIjoiMC4wLj
 > >
-> > This is why I'm not sure that bit does what you think it does... I feel like that
-> > bit enables 'Use CLKREQ# to enable CLK'.
+> AwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp
+> ;sdata=3D
 > >
-> > You tell me the descriptions for GPR14 are wrong in the reference manual.
-> > Please provide correct descriptions for us so we can sort this out.
+> Mmea0v4pP5VzSM%2F8sIStLkwvA0pY0h2lG4Vzvr8Gk%2F4%3D&amp;reserv
+> ed=3D0
+> > [2]
+> > https://eur01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Fpatc
 > >
-> [Richard Zhu] Hi Tim:
-> The BIT9 of GPR14 is used as "GPR_PCIE1_PHY_I_AUX_EN_OVERRIDE_EN"
-> and BIT19 is used as "GPR_PCIE1_PHY_FUNC_I_AUX_EN" on i.MX8MM.
-> I think the two bits descriptions are used to describe the BIT19 and BIT9 together refer to my guess.
-> {GPR_PCIE1_PHY_I_AUX_EN_OVERRIDE_EN(BIT9), GPR_PCIE1_PHY_FUNC_I_AUX_EN(BIT19) }
-> 2'b00: External Reference Clock I/O (for PLL) Disable
-> 2'b01: External Reference Clock I/O (for PLL) Enable
-> 2'b10: External Reference Clock I/O (for PLL) Disable
-> 2'b11: External Reference Clock I/O (for PLL) output is controlled by CLKREQ#
->
-> The option1&3 should be forbidden, since the external REF CLK I/O should be enabled on your board and EVK board.
-> In the option2&4, the BIT19 should be set to be 1'b1.'
->
-> So, regarding my understand, if the CLKREQ# is not pinmuxed in your use case, the IMX8MM_GPR_PCIE_REF_USE_PAD (BIT9) should be 1'b0.
->
+> hwork.kernel.org%2Fproject%2Flinux-arm-kernel%2Fcover%2F202109102026
+> 40
+> > .980366-1-l.stach%40pengutronix.de%2F&amp;data=3D04%7C01%7Chongxin
+> g.zhu%
+> >
+> 40nxp.com%7Cbacb5db20f2d4aa7a4ad08d998993356%7C686ea1d3bc2b4c6
+> fa92cd99
+> >
+> c5c301635%7C0%7C0%7C637708606037565160%7CUnknown%7CTWFpbGZ
+> sb3d8eyJWIjo
+> >
+> iMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C10
+> 00&amp
+> > ;sdata=3D5U%2BP0zL0OskhyB0RtH%2FsBwRn0B1Lb27ZSpjjhFD0wUo%3D&a
+> mp;reserved
+> > =3D0
+> >
+> > Main changes v2 --> v3:
+> > - Regarding Lucas' comments.
+> > =A0- to have a whole view to review the patches, send out the i.MX8MM
+> PCIe support too.
+> > =A0- move the PHY related bits manipulations of the GPR/SRC to standalo=
+ne
+> PHY driver.
+> > =A0- split the dts changes to SOC and board DT, and use the enum instea=
+d of
+> raw value.
+> > =A0- update the license of the dt-binding header file.
+> >
+> > Changes v1 --> v2:
+> > - Update the license of the dt-binding header file to make the license
+> > =A0 compatible with dts files.
+> > - Fix the dt_binding_check errors.
+> >
+> > Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml=A0=A0=A0 |=A0=
+=A0 6
+> +++
+> > Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |=A0 79
+> > +++++++++++++++++++++++++++++
+> >
+> arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 |
+> 53
+> > ++++++++++++++++++++
+> arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > |=A0 46 ++++++++++++++++-
+> drivers/pci/controller/dwc/pci-imx6.c
+> > |=A0 63 ++++++++++++++++++++++-
+> drivers/phy/freescale/Kconfig
+> > |=A0=A0 9 ++++
+> drivers/phy/freescale/Makefile
+> > |=A0=A0 1 +
+> drivers/phy/freescale/phy-fsl-imx8m-pcie.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0=A0=A0 |
+> > 218
+> >
+> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+> ++++++++++++++++++
+> >
+> include/dt-bindings/phy/phy-imx8-pcie.h=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |
+>  14
+> > ++++++
+> > 9 files changed, 486 insertions(+), 3 deletions(-)
+> >
+> > [PATCH v3 1/9] dt-bindings: phy: phy-imx8-pcie: Add binding for the
+> > [PATCH v3 2/9] dt-bindings: phy: add imx8 pcie phy driver support
+> > [PATCH v3 3/9] arm64: dts: imx8mm: add the pcie phy support [PATCH v3
+> > 4/9] arm64: dts: imx8mm-evk: add the pcie phy support [PATCH v3 5/9]
+> > phy: freescale: pcie: initialize the imx8 pcie [PATCH v3 6/9]
+> > dt-bindings: imx6q-pcie: Add PHY phandles and name [PATCH v3 7/9]
+> > arm64: dts: imx8mm: add the pcie support [PATCH v3 8/9] arm64: dts:
+> > imx8mm-evk: add the pcie support on imx8mm [PATCH v3 9/9] PCI: imx:
+> > add the imx8mm pcie support
 
-Richard,
+-- =
 
-Ok, if this is the case then drivers/pci/controller/dwc/pci-imx6.c for
-IMX8MM should not touch GPR14 and '[v3,9/9] PCI: imx: add the imx8mm
-pcie support' should have this on top and squashed:
-diff --git a/drivers/pci/controller/dwc/pci-imx6.c
-b/drivers/pci/controller/dwc/pci-imx6.c
-index 7c89bd1a6441..458d54c8e385 100644
---- a/drivers/pci/controller/dwc/pci-imx6.c
-+++ b/drivers/pci/controller/dwc/pci-imx6.c
-@@ -452,8 +452,12 @@ static int imx6_pcie_enable_ref_clk(struct
-imx6_pcie *imx6_pcie)
-                break;
-        case IMX7D:
-                break;
--       case IMX8MQ:
-        case IMX8MM:
-+               ret = clk_prepare_enable(imx6_pcie->pcie_aux);
-+               if (ret)
-+                       dev_err(dev, "unable to enable pcie_aux clock\n");
-+               break;
-+       case IMX8MQ:
-                ret = clk_prepare_enable(imx6_pcie->pcie_aux);
-                if (ret) {
-                        dev_err(dev, "unable to enable pcie_aux clock\n");
-
-
-And your '[v3,5/9] phy: freescale: pcie: initialize the imx8 pcie
-standalone phy driver' should have this on top and squashed:
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index 317cf61bff37..27ca0b9f1d92 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -43,7 +43,7 @@
- #define IMX8MM_GPR_PCIE_CMN_RST                BIT(18)
- #define IMX8MM_GPR_PCIE_POWER_OFF      BIT(17)
- #define IMX8MM_GPR_PCIE_SSC_EN         BIT(16)
--#define IMX8MM_GPR_PCIE_REF_USE_PAD    BIT(9)
-+#define IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE        BIT(9)
-
- struct imx8_pcie_phy {
-        u32                     refclk_pad_mode;
-@@ -63,12 +63,12 @@ static int imx8_pcie_phy_init(struct phy *phy)
-        reset_control_assert(imx8_phy->reset);
-
-        regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
--                          IMX8MM_GPR_PCIE_REF_USE_PAD,
--                          imx8_phy->refclk_pad_mode == 1 ?
--                          IMX8MM_GPR_PCIE_REF_USE_PAD : 0);
-+                          IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE,
-+                          0);
-        regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-                           IMX8MM_GPR_PCIE_AUX_EN,
--                          IMX8MM_GPR_PCIE_AUX_EN);
-+                          imx8_phy->refclk_pad_mode ==
-IMX8_PCIE_REFCLK_PAD_INPUT ?
-+                          IMX8MM_GPR_PCIE_AUX_EN : 0);
-        regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-                           IMX8MM_GPR_PCIE_POWER_OFF, 0);
-        regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-@@ -76,7 +76,7 @@ static int imx8_pcie_phy_init(struct phy *phy)
-
-        regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
-                           IMX8MM_GPR_PCIE_REF_CLK_SEL,
--                          imx8_phy->refclk_pad_mode == 1 ?
-+                          imx8_phy->refclk_pad_mode ==
-IMX8_PCIE_REFCLK_PAD_INPUT ?
-                           IMX8MM_GPR_PCIE_REF_CLK_EXT :
-                           IMX8MM_GPR_PCIE_REF_CLK_PLL);
-        usleep_range(100, 200);
-
-I tested this and it works both on imx8mm-evk and imx8mm-venice-*
-which both have external clkgen.
-
-However, the above does not set IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE for
-the case where CLKREQ# is connected and thus should be used so I think
-we need to add a property for that to define if CLKREQ# is hooked up
-or not. I tested enabling IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE and as
-expected that worked on the imx8mm-evk which hooks up CLKREQ# but not
-imx8mm-venice which does not hook up CLKREQ#.
-
-What do you think about adding a property for this?
-
-Best regards,
-
-Tim
-
--- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
