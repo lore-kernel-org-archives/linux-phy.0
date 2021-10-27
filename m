@@ -2,145 +2,143 @@ Return-Path: <SRS0=D930=PP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 07017C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 01:39:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 69337C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 06:16:25 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B007A6109D
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 01:39:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B007A6109D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id 2601F610CB
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 06:16:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 2601F610CB
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=atA3Mb8bdyRZ7Mjstxaqd4nbDh0rCqKIZplNyqWnjQU=; b=SD0hVGHQUeDGn0
-	HsUxdyhKDn/Qsk+fTzYnzcc2O4iHjmZcN0mUVpkHzhOV4tw5gcRDnniGwSWRhyKwWM7EP6mNF6v2G
-	LCW45r6S4hbymbw0mm8RKiuRR39BuHf6VBq70Vi51Apuq5yx27C13L7nXGTkyPc00np9RkZtiOloN
-	EGuPzIpTb0v6rPKbphqLNkzcwQh3n88ebCby6Tsmylnh2GHfpdQE2ji05D+iMb0rtoCpl8nP1UZkM
-	noU5yMlOFGoV3jI7wEc3DeW+xTermcTfXLmJaORp73m5Z34afi4ddwPZhapYnC4mQdXkXR1zQPuef
-	HkZ0WhpLpk25A5PiDuWQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vbVYT0J97NiV01NEOcxCdhxHb4iPZ6QHyziL2RqQczA=; b=EiDY9MzXb1U6Z+MZ64+Gi1Kn1T
+	9WVFCclmBWvayzfarCaj6YwiPZjyDyJoso3qbmGGxVSfY63AfpiQEqZJGHXqkSpXep8b8cyXNsFQb
+	BTSSerHUMOHKbAczQ4g6xu8IljHkf+5nGtNAZA8NH7E+evW9Xt7YKFswilNt0SO1dw0jcX4YP+WI+
+	bx2JhItrY4pIXJWS4n8wGU4JThc/swNaSt5xJ805FI8wxLrzmhza1Tpiv4vDyFVX3+w0yW2CopkpR
+	eKvdokZj/kGzgkLBeF5vth295aWNGODFFz/QIwiyYloj+I9mTL3Z2kCn8Xfg8IYBnhEyrJa1YxE3+
+	Gt43zRoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mfXuR-003VyA-6B; Wed, 27 Oct 2021 01:39:19 +0000
-Received: from mail-db8eur05on2048.outbound.protection.outlook.com
- ([40.107.20.48] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1mfcEa-003zr5-Kf; Wed, 27 Oct 2021 06:16:24 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mfXuN-003Vx1-WC; Wed, 27 Oct 2021 01:39:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VhjcxXDSCw7TB+OpMeKwrvcE9/xg9AHLF/fKZGJLMe8OSFE3LSzCU32cf/8hW0kcKBL0ltNrW7gNEBn/kJcP7XGNgJE6qij0K+thO2VpCVg3OwKe7PrlORQQwdz9bqJG7tcuth3gmF+ajQcrn4vHkrl/y3yIQ+XZ4RDXDjBQ0pSsFXoDq46kAZoj5l0f1uaBHXd/fTsFjYfJ3ztN5H97Kd+H5EH3tIHjroW0004PduA4tFMKyQr3JO4/E5e5T7zsD1QHsjRNRTn2D+YHNrSO47Wb0vKkKg/f8SrUEYXEoAS5M10tKYYK5usQtnmh1Oj3lXaxkR/OeyaA3NnPw+LU4g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2+fK+aS7qdVrOWHzvrlZweX9pRLTh6mnOF0RTF3EH0Q=;
- b=D86yL/X+5GpHATI+LPt8BFowWqa7r2qATcm/nnCGhHMoxuMe6WUSqcCUqllAYZH+l3mTd1fcjBTgTL+/qo6QZX5Mi+4FhF84umh0GvsaktWnztgZTiNQAdKeszKyy/kfPIRqzvUPR7XdykeUdSKqupkTQWV13cMU/MIBiLuLr3hIiMWmDVmGpzEVImMlQvMxVN2yF6L1VEBrXiiRq78m4qNbNi/lyXoVZahP0Pf0YRjUxqN+ZJ5lKwO6Kcw4bWNO4HcONZRsWW6NnRlQSyF2122v1+EtQPAaQucxo+dIdJp/QY6Y8unrJUroWeba2rohh9j6UYEMXsX/L6KxiXKxiQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2+fK+aS7qdVrOWHzvrlZweX9pRLTh6mnOF0RTF3EH0Q=;
- b=f1nnH+BCo9JtZXooLfoNbtnfZoqesEjz8ZTwXDJPMaPmTHFD673MJ+D0MpfTNyERJ8lE5K8M4IqbYgTsSq5oUhVsZu4IZf2Oqqtli1TQFzwmUAIxdXMNDKc8sneQjaE0mQLuhn5JvxYxr/ia3f+Q+Gs0PfTVa0WKRXbZjM7M1VA=
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
- by AS8PR04MB8484.eurprd04.prod.outlook.com (2603:10a6:20b:34c::12)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4649.13; Wed, 27 Oct
- 2021 01:39:13 +0000
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc]) by AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc%5]) with mapi id 15.20.4649.014; Wed, 27 Oct 2021
- 01:39:13 +0000
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: Marcel Ziswiler <marcel.ziswiler@toradex.com>, "kishon@ti.com"
- <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>, "robh@kernel.org"
- <robh@kernel.org>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "tharvey@gateworks.com"
- <tharvey@gateworks.com>, "galak@kernel.crashing.org"
- <galak@kernel.crashing.org>
-CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, dl-linux-imx <linux-imx@nxp.com>
-Subject: RE: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
- support
-Thread-Topic: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
- support
-Thread-Index: AQHXyoIP9WRZIWT4CUunBVSnJ63L4qvmD1nA
-Date: Wed, 27 Oct 2021 01:39:13 +0000
-Message-ID: <AS8PR04MB8676F26022A5EA033FA5515B8C859@AS8PR04MB8676.eurprd04.prod.outlook.com>
-References: <1634028078-2387-1-git-send-email-hongxing.zhu@nxp.com>
- <6af982786f0136d5f984beaf544e2ba7b7b68d31.camel@toradex.com>
-In-Reply-To: <6af982786f0136d5f984beaf544e2ba7b7b68d31.camel@toradex.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 15c385b9-7fff-4b60-8c88-08d998ea949a
-x-ms-traffictypediagnostic: AS8PR04MB8484:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-microsoft-antispam-prvs: <AS8PR04MB84842C83EBD2D8A09E9F194E8C859@AS8PR04MB8484.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 9NBIhxbZiPbUqhp+aB/gnD4+mt4j4A2C3NklzeTvOCmijmcQZW3eEPL9ThihWo6463biP9BhVNfKdPGa8vwhCgrH4l54VSzn2RuamqePpUc34zR+Dkj+3o0+4tGhW/OAKAjdAZ3a7Vpjoqdxf+N7H651VHB81jdrgGaj0PJ5PtP1TBi4g5cwME/u6k3PeOZd+WxAnHi6bNKEu2zVnfeWlzA/KddKE5o/15rClkVW6oYu9tVe5zZ5j+8QeIKjOV3bt/NFz5RWYFKVlSe3szSvE3zFpqxEglCXWkmMkLoFSBVGjvXQFc89tHAP5ECyoKVz7ULp7NEOonaD978YocLLdG5a0UtStL5Q+mXIm8Ji6n7O0taELKawiVX+M0N91UUbiBLlot5ANhXcaLAwSD2bluEhkrHAHEIShECCY5qHxffytWRJ8abmffQEALHNFCQ1ghrqA9IaEWECgHphX/hq46e4tqOFnd6abz87MPS5dK1kp9/OsH27OAMRL3ZaEoIcI1PCAF16OrTYLmnTABks/B3j4cVPqsm04zyCspPVAWkPwRcMWwsc2kLyaDrXvZBq9ItuBmPp+MTfG0n6L5dHceUhgUcPJOy0Jh6ZXpTuK1UyT4vALa2TSPQ8jQT9rImVL7W7+xlPgGjNjurG0Vkh57ZOw6tL49z6lnZ8cOlZDNQJUotwzZEbEWb693J88bkaIJvlWqe4GQWhNuUrDtUVoYpGrLMIPs6wFexXK8ycRHrwXcJGNZGM3FfUagRCsBSyRzzRi7XWSSIKrLbOvT2iPp/4aefsEC3/xeJY1qfzZ40t5UgLI51yfupTddvraRLm
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(5660300002)(76116006)(53546011)(8936002)(66446008)(86362001)(186003)(38070700005)(966005)(26005)(7696005)(66476007)(64756008)(7416002)(122000001)(38100700002)(45080400002)(66946007)(4326008)(71200400001)(508600001)(9686003)(6506007)(110136005)(2906002)(54906003)(52536014)(66556008)(8676002)(4001150100001)(33656002)(55016002)(83380400001)(316002)(32563001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?mZXYbOgX8g6+vt1fzvDjj8UoV+I+YACpmITkiS/TUpWeXPcxgnbsCVipEh?=
- =?iso-8859-1?Q?99LQjVzYECvEe9qoj8VvTpdnCrrjqJfJumol+B3uTjtVA4phceCt2zXpmb?=
- =?iso-8859-1?Q?ZXE7aECyrL77N2J71cyUlqejKQ6qb1diChkcuuUYiN0x8kfhA8oF7WX3NE?=
- =?iso-8859-1?Q?8KZojlJyVZvsqdkl+bVtnf7YzilIZLafIpf1OWrmFFoeLJR023WuOerplR?=
- =?iso-8859-1?Q?aJEwz55vzlt/CwC6YmtcxQnra6OiPhSiTu6tPqzEUbNGydIi9xKkhxADcO?=
- =?iso-8859-1?Q?g+7CQkCSwinxXH9vTDIAhUrYYT1R1p+pSzyGs5IRbJ/Rmv1Elhe0+JzW2V?=
- =?iso-8859-1?Q?1V7lvRdrYT0Od0hBQ6Y4t/K1ByENNul24/V4s0LvewgFy9ATJKWKPN8IV4?=
- =?iso-8859-1?Q?8VmZMF7RTvH/wKq10sqZWkF/BN5ZqBZ0AlQl8eIGYyXBPlMOc5HP6CuG2U?=
- =?iso-8859-1?Q?gDq8a/18wstFljvHhdvIPyzlw+SwHR/QRzCrc0Hw48uV/d1CN/BVBnOyjC?=
- =?iso-8859-1?Q?1JtZG9FeF0eGBBEOUQ/amqzhdNTPyW2vmFT0K1kfZ3dGD1YpdaZbm4N3nK?=
- =?iso-8859-1?Q?Z/CcCv5sxwsoXL/LdxUE4PZz0+7rv7J0d+53ptdkoGsCqNWpnXTjNr95A9?=
- =?iso-8859-1?Q?shdU3lw7tiTaLkslYeovZFj1YGsigsAQ2dK6n506XUm/uVcn6hdfkZCk5f?=
- =?iso-8859-1?Q?nepaWlapMSmnAO1kTCsfFTcGJ4owdpugR2VuskwaahyuIHq5QQ8Bcl7kz8?=
- =?iso-8859-1?Q?ynjL29+XvWgrc75GY5rs79NPv0vag5RtaF7m6VuWpCU1ZxxOctX7ijLUs9?=
- =?iso-8859-1?Q?mbEHiIxa4MIjTUZzepLn55VEK3ikTdwEWsAnu5uksOuWO6kt8N2CczYqK2?=
- =?iso-8859-1?Q?hPNI1BksZM+Sf4/cDvB2350Q0pXzx7U0D0+Jn2oJtHcu1WnMyT3YoZguJZ?=
- =?iso-8859-1?Q?IQct/qZlKCs3GylHWzx/FHddKKNwMyTeHbvUN3K1lr+00MLvek4Sgsdojg?=
- =?iso-8859-1?Q?TrkLgOj8OtIBHlm2dVHVY/9KIT5OQOckjOaGw6T8XvzGx5u26Sm6HQNCjV?=
- =?iso-8859-1?Q?SQ10rCRBpsHxTiL8liMgLbplReoBtB6h0v5/8qylFCrgvasBSpylF0nb1/?=
- =?iso-8859-1?Q?60JPwc430dEw894v8ykq99xH3Qniokvja7pwLlf0RKvSDVTRTcphTAUpMd?=
- =?iso-8859-1?Q?Rbocso/hGGhliy/hnDyXASvcxHCIiy09NPESA49KQF7iQnIGlECShxxkEA?=
- =?iso-8859-1?Q?f+9TKICA0JWC1s1nLR0EoeDWFKEgp+VH+FRlWxQXm35gqJ4VvkBjOmjgiH?=
- =?iso-8859-1?Q?lvBtEkNsTq1kkzlQk6jHQ3o5utrTH5m3X10tF8mprNf77rne8qScKZX5T3?=
- =?iso-8859-1?Q?0Ni+oYhlToncxaR8dpuSx9wNrlhRSVfFVsJ8X3/7+x/TrP6ThKJUvUFpnA?=
- =?iso-8859-1?Q?jvu+aZaqrK+i8tXR0Ook1cJi1jhQ73gJY9XFHLAPWq68rEPelAaKsuRAaL?=
- =?iso-8859-1?Q?BooxH1sUF/fF5v+1sj/vfUdtxrJV5jVb/xXyoc8ywFrUFJOE5y81EwFEWC?=
- =?iso-8859-1?Q?Sd8BYaqmVdEy8wGaMosWmfEbOaQanvp+A5CK6mAIzfyOarzlS0ibmAZHR1?=
- =?iso-8859-1?Q?mnExExA5OZHWn4sxflRqumwu/VCLJGrjUEIJV5anmqWV3IlMmHHJznyA?=
- =?iso-8859-1?Q?=3D=3D?=
+ id 1mfcEX-003zqE-NS; Wed, 27 Oct 2021 06:16:23 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19QIJftj012181; 
+ Wed, 27 Oct 2021 08:10:55 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=q0IzamWoBnMLIIIWgH1c6YZ0YARVpDAlAywCoCd8O6A=;
+ b=pLut+GxRqLoEwutxmEsKmT0U9f6n8Czu59GaLbziADOMwtznLgQUZ54Gw0mFG30LzTFI
+ mAf8pn9K9k2l9XDGD8kyB8y+cnm5BmAO3YB00+gyy/yFMSCCO5HF8/PQ6lATeCubYrNt
+ DdiIwe9I6oNJ1LpNKfJ0tNMiodtkGtIRzCLDVOx9JfwIBUGTkeKgOf8Hru+PdxHSGGIB
+ WmjLMAKdFPGg4+kJmvUsa+tgl9tTdDraTeFW116MnoqgEuCPXI2gblkV13eeEpJbnLHW
+ 9gSaSeXE68XwgQBNQi7Ez8d68t00m5nmdGyM96U93gZ2aaDRvaLknKJ4aiI1DjaFKmGE dQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3bxputjet7-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 27 Oct 2021 08:10:55 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6E078100044;
+ Wed, 27 Oct 2021 08:10:46 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A09DC21810A;
+ Wed, 27 Oct 2021 08:10:46 +0200 (CEST)
+Received: from lmecxl0573.lme.st.com (10.75.127.49) by SFHDAG2NODE2.st.com
+ (10.75.127.5) with Microsoft SMTP Server (TLS) id 15.0.1497.18; Wed, 27 Oct
+ 2021 08:10:43 +0200
+Subject: Re: dt-bindings: treewide: Update @st.com email address to
+ @foss.st.com
+To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>, Rob Herring
+ <robh+dt@kernel.org>, maxime coquelin <mcoquelin.stm32@gmail.com>,
+ "alexandre torgue" <alexandre.torgue@foss.st.com>, michael turquette
+ <mturquette@baylibre.com>, stephen boyd <sboyd@kernel.org>, herbert xu
+ <herbert@gondor.apana.org.au>, "david s . miller" <davem@davemloft.net>,
+ david airlie <airlied@linux.ie>, daniel vetter <daniel@ffwll.ch>, "thierry
+ reding" <thierry.reding@gmail.com>, sam ravnborg <sam@ravnborg.org>,
+ "yannick fertre" <yannick.fertre@foss.st.com>, philippe cornu
+ <philippe.cornu@foss.st.com>, benjamin gaignard
+ <benjamin.gaignard@linaro.org>,
+ vinod koul <vkoul@kernel.org>, ohad ben-cohen <ohad@wizery.com>,
+ bjorn andersson <bjorn.andersson@linaro.org>, baolin wang
+ <baolin.wang7@gmail.com>, jonathan cameron <jic23@kernel.org>, "lars-peter
+ clausen" <lars@metafoo.de>, olivier moysan <olivier.moysan@foss.st.com>,
+ arnaud pouliquen <arnaud.pouliquen@foss.st.com>, Thomas Gleixner
+ <tglx@linutronix.de>, Marc Zyngier <maz@kernel.org>, Jassi Brar
+ <jassisinghbrar@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Hugues Fruchet <hugues.fruchet@foss.st.com>, Fabrice Gasnier
+ <fabrice.gasnier@foss.st.com>, Lee Jones <lee.jones@linaro.org>, "Miquel
+ Raynal" <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>,
+ Vignesh Raghavendra <vigneshr@ti.com>, Jakub Kicinski <kuba@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Liam Girdwood
+ <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Mathieu Poirier
+ <mathieu.poirier@linaro.org>, Matt Mackall <mpm@selenic.com>, "Alessandro
+ Zummo" <a.zummo@towertech.it>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, "Rafael J . Wysocki" <rafael@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amitk@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Guenter Roeck <linux@roeck-us.net>, Geert Uytterhoeven
+ <geert+renesas@glider.be>, Viresh Kumar <viresh.kumar@linaro.org>, "Ahmad
+ Fatoum" <a.fatoum@pengutronix.de>, Jagan Teki <jagan@amarulasolutions.com>,
+ dillon min <dillon.minfei@gmail.com>, Marek Vasut <marex@denx.de>, "Laurent
+ Pinchart" <laurent.pinchart@ideasonboard.com>, Sebastian Reichel
+ <sre@kernel.org>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Paul Cercueil <paul@crapouillou.net>,
+ Fabien Dessenne <fabien.dessenne@foss.st.com>,
+ Christophe Roullier <christophe.roullier@foss.st.com>, Gabriel Fernandez
+ <gabriel.fernandez@foss.st.com>,
+ Lionel Debieve <lionel.debieve@foss.st.com>,
+ Amelie Delaunay <amelie.delaunay@foss.st.com>, Pierre-Yves MORDRET
+ <pierre-yves.mordret@foss.st.com>,
+ Ludovic Barre <ludovic.barre@foss.st.com>,
+ Christophe Kerello <christophe.kerello@foss.st.com>, pascal Paillet
+ <p.paillet@foss.st.com>, Giuseppe Cavallaro <peppe.cavallaro@st.com>, "Jose
+ Abreu" <joabreu@synopsys.com>, Le Ray <erwan.leray@foss.st.com>
+CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-clk@vger.kernel.org>,
+ <linux-crypto@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+ <dmaengine@vger.kernel.org>, <linux-remoteproc@vger.kernel.org>,
+ <linux-i2c@vger.kernel.org>, <linux-iio@vger.kernel.org>,
+ <alsa-devel@alsa-project.org>, <linux-media@vger.kernel.org>,
+ <linux-mtd@lists.infradead.org>, <netdev@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <linux-gpio@vger.kernel.org>,
+ <linux-rtc@vger.kernel.org>, <linux-serial@vger.kernel.org>,
+ <linux-spi@vger.kernel.org>, <linux-pm@vger.kernel.org>,
+ <linux-usb@vger.kernel.org>, <linux-watchdog@vger.kernel.org>
+References: <20211020065000.21312-1-patrice.chotard@foss.st.com>
+ <22fb6f19-21eb-dcb5-fa31-bb243d4a7eaf@canonical.com>
+From: Patrice CHOTARD <patrice.chotard@foss.st.com>
+Message-ID: <e8ddc63b-a0b5-79ae-6aff-19810cf74920@foss.st.com>
+Date: Wed, 27 Oct 2021 08:10:42 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.13.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 15c385b9-7fff-4b60-8c88-08d998ea949a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Oct 2021 01:39:13.1426 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: R9oCygYlqNrGytRFlSugceXAdQEjrQ6jQI8OQDc9fYGDiYEp9ucWT6aF2ZDMTay9FayvRt64wEtCSORSoqyakw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8484
+In-Reply-To: <22fb6f19-21eb-dcb5-fa31-bb243d4a7eaf@canonical.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG1NODE2.st.com (10.75.127.2) To SFHDAG2NODE2.st.com
+ (10.75.127.5)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.182.1,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
+ definitions=2021-10-27_01,2021-10-26_01,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211026_183916_071290_7D5211FC 
-X-CRM114-Status: GOOD (  26.52  )
+X-CRM114-CacheID: sfid-20211026_231622_093336_CDDD453E 
+X-CRM114-Status: GOOD (  17.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,152 +150,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> -----Original Message-----
-> From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> Sent: Tuesday, October 26, 2021 11:57 PM
-> To: kishon@ti.com; vkoul@kernel.org; robh@kernel.org;
-> l.stach@pengutronix.de; shawnguo@kernel.org; tharvey@gateworks.com;
-> galak@kernel.crashing.org; Richard Zhu <hongxing.zhu@nxp.com>
-> Cc: linux-phy@lists.infradead.org; linux-arm-kernel@lists.infradead.org;
-> kernel@pengutronix.de; devicetree@vger.kernel.org;
-> linux-kernel@vger.kernel.org; dl-linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH v3 0/9] add the imx8m pcie phy driver and imx8mm pcie
-> support
-> =
+Hi Krzysztof
 
-> On Tue, 2021-10-12 at 16:41 +0800, Richard Zhu wrote:
-> > refer to the discussion [1] when try to enable i.MX8MM PCIe support,
-> > one standalone PCIe PHY driver should be seperated from i.MX PCIe
-> > driver when enable i.MX8MM PCIe support.
-> >
-> > This patch-set adds the standalone PCIe PHY driver suport[1-5], and
-> > i.MX8MM PCIe support[6-9] to have whole view to review this patch-set.
-> >
-> > The PCIe works on i.MX8MM EVK board based the the blkctrl power driver
-> > [2] and this PHY driver patch-set.
-> =
+On 10/20/21 9:45 AM, Krzysztof Kozlowski wrote:
+> On 20/10/2021 08:50, patrice.chotard@foss.st.com wrote:
+>> From: Patrice Chotard <patrice.chotard@foss.st.com>
+>>
+>> Not all @st.com email address are concerned, only people who have
+>> a specific @foss.st.com email will see their entry updated.
+>> For some people, who left the company, remove their email.
+>>
+> 
+> Please split simple address change from maintainer updates (removal,
+> addition).
 
-> Whole series:
-> =
+ok
 
-> Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> =
+> 
+> Also would be nice to see here explained *why* are you doing this.
 
-> BTW: I tested it on Verdin iMX8M Mini V1.1B without an external PCIe
-> oscillator aka setting fsl,refclk-pad-mode to
-> IMX8_PCIE_REFCLK_PAD_OUTPUT which worked like a charm. Thanks!
-> =
+Our @foss.st.com address are dedicated for upstream activities, 
+i will add a comment about this.
 
-[Richard Zhu] Thanks for your tests.
+Thanks
+Patrice
 
-Best Regards
-Richard Zhu
+> 
+> Best regards,
+> Krzysztof
+> 
 
-> > [1]
-> > https://eur01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Fpatc
-> >
-> hwork.ozlabs.org%2Fproject%2Flinux-pci%2Fpatch%2F20210510141509.929
-> 120
-> >
-> -3-l.stach%40pengutronix.de%2F&amp;data=3D04%7C01%7Chongxing.zhu%40
-> nxp.c
-> >
-> om%7Cbacb5db20f2d4aa7a4ad08d998993356%7C686ea1d3bc2b4c6fa92cd9
-> 9c5c3016
-> >
-> 35%7C0%7C0%7C637708606037565160%7CUnknown%7CTWFpbGZsb3d8ey
-> JWIjoiMC4wLj
-> >
-> AwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp
-> ;sdata=3D
-> >
-> Mmea0v4pP5VzSM%2F8sIStLkwvA0pY0h2lG4Vzvr8Gk%2F4%3D&amp;reserv
-> ed=3D0
-> > [2]
-> > https://eur01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Fpatc
-> >
-> hwork.kernel.org%2Fproject%2Flinux-arm-kernel%2Fcover%2F202109102026
-> 40
-> > .980366-1-l.stach%40pengutronix.de%2F&amp;data=3D04%7C01%7Chongxin
-> g.zhu%
-> >
-> 40nxp.com%7Cbacb5db20f2d4aa7a4ad08d998993356%7C686ea1d3bc2b4c6
-> fa92cd99
-> >
-> c5c301635%7C0%7C0%7C637708606037565160%7CUnknown%7CTWFpbGZ
-> sb3d8eyJWIjo
-> >
-> iMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C10
-> 00&amp
-> > ;sdata=3D5U%2BP0zL0OskhyB0RtH%2FsBwRn0B1Lb27ZSpjjhFD0wUo%3D&a
-> mp;reserved
-> > =3D0
-> >
-> > Main changes v2 --> v3:
-> > - Regarding Lucas' comments.
-> > =A0- to have a whole view to review the patches, send out the i.MX8MM
-> PCIe support too.
-> > =A0- move the PHY related bits manipulations of the GPR/SRC to standalo=
-ne
-> PHY driver.
-> > =A0- split the dts changes to SOC and board DT, and use the enum instea=
-d of
-> raw value.
-> > =A0- update the license of the dt-binding header file.
-> >
-> > Changes v1 --> v2:
-> > - Update the license of the dt-binding header file to make the license
-> > =A0 compatible with dts files.
-> > - Fix the dt_binding_check errors.
-> >
-> > Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml=A0=A0=A0 |=A0=
-=A0 6
-> +++
-> > Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |=A0 79
-> > +++++++++++++++++++++++++++++
-> >
-> arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 |
-> 53
-> > ++++++++++++++++++++
-> arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > |=A0 46 ++++++++++++++++-
-> drivers/pci/controller/dwc/pci-imx6.c
-> > |=A0 63 ++++++++++++++++++++++-
-> drivers/phy/freescale/Kconfig
-> > |=A0=A0 9 ++++
-> drivers/phy/freescale/Makefile
-> > |=A0=A0 1 +
-> drivers/phy/freescale/phy-fsl-imx8m-pcie.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 |
-> > 218
-> >
-> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-> ++++++++++++++++++
-> >
-> include/dt-bindings/phy/phy-imx8-pcie.h=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |
->  14
-> > ++++++
-> > 9 files changed, 486 insertions(+), 3 deletions(-)
-> >
-> > [PATCH v3 1/9] dt-bindings: phy: phy-imx8-pcie: Add binding for the
-> > [PATCH v3 2/9] dt-bindings: phy: add imx8 pcie phy driver support
-> > [PATCH v3 3/9] arm64: dts: imx8mm: add the pcie phy support [PATCH v3
-> > 4/9] arm64: dts: imx8mm-evk: add the pcie phy support [PATCH v3 5/9]
-> > phy: freescale: pcie: initialize the imx8 pcie [PATCH v3 6/9]
-> > dt-bindings: imx6q-pcie: Add PHY phandles and name [PATCH v3 7/9]
-> > arm64: dts: imx8mm: add the pcie support [PATCH v3 8/9] arm64: dts:
-> > imx8mm-evk: add the pcie support on imx8mm [PATCH v3 9/9] PCI: imx:
-> > add the imx8mm pcie support
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
