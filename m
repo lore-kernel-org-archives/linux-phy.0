@@ -2,14 +2,14 @@ Return-Path: <SRS0=D930=PP=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D2B0AC433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 21:12:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 14FB5C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 22:04:09 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8AD9D6109F
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 21:12:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 8AD9D6109F
+	by mail.kernel.org (Postfix) with ESMTPS id D92D46109E
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Oct 2021 22:04:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D92D46109E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,63 +18,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E+aiPXQu4Qa5KiFN7I1HcGglckx65+mGg2bUO5ynNJ4=; b=l3hL+7NWMXb79q
-	IvyHaQjJzEM+9VbK9/9hcAXiJj2iPvKbgF8a+/W62uwKkbbNLMBVb5McUIN8KwI/s6KY9fQdYevwv
-	AkWaWjkljbF0194f35zGNoAET1O+EJ8vx/lKuD4dMJlxPpFASLEJYILbBxX/zMNWfHeH4u2qQ5Lfn
-	yFzEAP6noZjbqcA68hD4FL2sflrcah9eSDjwJNTJ3txmxgkcCRCc8KpQD0CY7kcQucxuNj6vONHRN
-	FrzHtykKff3/YPjCG9kXza5PtmEZ5s21diKO77hnGCxhIysaVUT8LFqKP8uX37bLZbFZil7Gd1q3m
-	Ccbrsssrx6UWcGtj+GGA==;
+	List-Owner; bh=9D66pffDNE3uttRbmDidW95InaqTzneDTYUK/h3wH1o=; b=zuOWF6ay7K3Rhd
+	MjRcxXhClMUFkVz8Z7CBlsCiMV1Q02d9f74y2v4OtO9IZoH/RKommaju0eeKQJi4FJYEaENwf8+Fk
+	wFPb5hsWqsCCEJJB6xtMBcKA5K9jJDiJQ6upIF1PE1hCGdB8yncXMQLBd+dEj/QjzYRLNLRaUk2Od
+	X9pW3WhpXD22NA+1shYIQWeiW4nkD1wyJKCYfh3QjdoT22E/SCsbmTi5qXENgzot8ZlHIveDwjy/U
+	04cy5Su9jYAXOId2TVT8F5o4qut4c7aoH7Tie2zIjNygBLFefEGe8CCUCxnzA8Xbub8r0iJo2qw0Y
+	gUVpBV6jKuEubF1EAHOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mfqDc-0069C5-WF; Wed, 27 Oct 2021 21:12:21 +0000
-Received: from mail-oi1-f171.google.com ([209.85.167.171])
+	id 1mfr1k-006MiW-DE; Wed, 27 Oct 2021 22:04:08 +0000
+Received: from mail-oi1-f173.google.com ([209.85.167.173])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mfqDZ-0069BI-Un; Wed, 27 Oct 2021 21:12:19 +0000
-Received: by mail-oi1-f171.google.com with SMTP id o4so5284063oia.10;
- Wed, 27 Oct 2021 14:12:17 -0700 (PDT)
+ id 1mfr1X-006MeO-1z; Wed, 27 Oct 2021 22:03:56 +0000
+Received: by mail-oi1-f173.google.com with SMTP id z126so5439470oiz.12;
+ Wed, 27 Oct 2021 15:03:54 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=k3QbaEEwsED/cBYuJpMYmPOuATHo/hhXNN4M6qAU9G4=;
- b=pJwZFdPb9Im5xwEgMfYPgLIu0HOuPBwedwTUnr3fYsK6aQOuh5BWQx1/CBvxHChCz0
- ymDC+rOCyOP6/r75imE0zHBvnj3058Fb1Ase9NPi1t7qkwl4a9a/L+4vr9PVUP13hGXn
- UwvIGASjzSQYx/Q3p9e9RUxrahTtveQxUeCHk208Bx0VXsZBA5TZ4sLSsm8NaQQQCQmx
- 813xW/WUsx4kNl9icpAFwYin5OZ1UX28knL+usiKierKOfmonK++4mmLnXoK8IFt8lyF
- 3IZBU0fYDzeJxMbK621zjIjZXDlLWGm/kT3dbIphHdzOSEIEjm6OaPdBacXNBNh2dh5x
- 1PQA==
-X-Gm-Message-State: AOAM533XVv198MA70auD3ATNmhTa5t0Sd4l1VlfrX1LfPALUoq/4XYI4
- 4H6J56BjfHxHLmSa3FOZkA==
-X-Google-Smtp-Source: ABdhPJxe2ua1/gV81De27mOC9lJwqcKmxLbHs05qHWaf/qz4cHIdZnnQ1ssNAf0BJpeFxKvm5ffOhg==
-X-Received: by 2002:a05:6808:2189:: with SMTP id
- be9mr40292oib.145.1635369137058; 
- Wed, 27 Oct 2021 14:12:17 -0700 (PDT)
+ bh=HwCdZSodtvLkyfWWv4aoM6TtcXNL3x8BBvrixERndQI=;
+ b=N1ovI4X+hG79dtK7/t908TnGR9NtAwwlMDquPKX9+Ef7JUgYjLX5cOAs1CdgYALSKL
+ wCPeEODM8t9z/tZ8ivyd5jNDWfYyERxpw+n1uNpRPQkXYQWtnxtUFH90ctZPrnN5tiaD
+ DoZ1FvUy4arPXrlyd/cEuXnxdU6c8EFoKmzLIStFqQ+MbyLz4JTF11ZQXj2jzcZZw1Am
+ ZnGX5jaQTRWNv2yUChtyye1NNAjAbCsPiNBtWLjDT5yrsMj0RrepLdkT5feCvQhc1Nug
+ adUkNXpUD6kzDwlp1CWMZrraydHeuhsU3OaPXqVQ4OmcBNacWoON5bD7cz2pfqTAQqA3
+ 1tVA==
+X-Gm-Message-State: AOAM532IMrOGjsna031NpdnSAnyCUXD3LPpVN73cDr3IOOD7kcn1cYeS
+ xaK2QzN9CUEb6/mITonFlg==
+X-Google-Smtp-Source: ABdhPJwhAqhMiSOGICDeao9e3Uvovr/4CVgqZChnKufwCP091o04QifT1B/0u7uUX+ckIH+hwm1Nnw==
+X-Received: by 2002:a05:6808:17a7:: with SMTP id
+ bg39mr180967oib.70.1635372233675; 
+ Wed, 27 Oct 2021 15:03:53 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id l7sm381352oog.22.2021.10.27.14.12.15
+ by smtp.gmail.com with ESMTPSA id j15sm469441ots.58.2021.10.27.15.03.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Oct 2021 14:12:16 -0700 (PDT)
-Received: (nullmailer pid 2169171 invoked by uid 1000);
- Wed, 27 Oct 2021 21:12:15 -0000
-Date: Wed, 27 Oct 2021 16:12:15 -0500
+ Wed, 27 Oct 2021 15:03:52 -0700 (PDT)
+Received: (nullmailer pid 2256435 invoked by uid 1000);
+ Wed, 27 Oct 2021 22:03:51 -0000
+Date: Wed, 27 Oct 2021 17:03:51 -0500
 From: Rob Herring <robh@kernel.org>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: kishon@ti.com, vkoul@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- robh+dt@kernel.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Add the Amlogic Meson8 HDMI TX
- PHY bindings
-Message-ID: <YXnAr0nIuzeKFhLm@robh.at.kernel.org>
-References: <20211020195107.1564533-1-martin.blumenstingl@googlemail.com>
- <20211020195107.1564533-2-martin.blumenstingl@googlemail.com>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Cc: devicetree@vger.kernel.org, kishon@ti.com, heiko@sntech.de,
+ linux-arm-kernel@lists.infradead.org, vkoul@kernel.org, cl@rock-chips.com,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, p.zabel@pengutronix.de, linux-kernel@vger.kernel.org,
+ michael.riesch@wolfvision.net
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: rockchip: Add Naneng combo PHY
+ bindings
+Message-ID: <YXnMxyuH/aGAvYAY@robh.at.kernel.org>
+References: <20211025080632.32063-1-yifeng.zhao@rock-chips.com>
+ <20211025080632.32063-2-yifeng.zhao@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211020195107.1564533-2-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20211025080632.32063-2-yifeng.zhao@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211027_141218_036955_CB7D7534 
-X-CRM114-Status: UNSURE (   9.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211027_150355_118046_B1481A54 
+X-CRM114-Status: GOOD (  10.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,16 +91,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 20 Oct 2021 21:51:06 +0200, Martin Blumenstingl wrote:
-> Amlogic Meson8, Meson8b and Meson8m2 all include an identical (or at
-> least very similar) HDMI TX PHY. The PHY registers are part of the HHI
-> register area.
+On Mon, 25 Oct 2021 16:06:30 +0800, Yifeng Zhao wrote:
+> Add the compatible strings for the Naneng combo PHY found on rockchip SoC.
 > 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 > ---
->  .../phy/amlogic,meson8-hdmi-tx-phy.yaml       | 65 +++++++++++++++++++
->  1 file changed, 65 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml
+> 
+> Changes in v3: None
+> Changes in v2:
+> - Fix dtschema/dtc warnings/errors
+> 
+>  .../phy/phy-rockchip-naneng-combphy.yaml      | 98 +++++++++++++++++++
+>  1 file changed, 98 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
