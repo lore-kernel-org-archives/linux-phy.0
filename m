@@ -2,63 +2,86 @@ Return-Path: <SRS0=1k0B=PQ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A7116C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 07:56:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AB021C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 08:56:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6547C610EA
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 07:56:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6547C610EA
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id 6B254610CF
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 08:56:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6B254610CF
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=microchip.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G/+bgPkxqZ64AIldHXGuKGzpYST55PMLox+X73ucFrY=; b=e4zI2tlp04glay
-	NLQU6HjnZfALsMWPpMsKBJoAkJAUNy/XHxamV05FcXWro8ISc+YPTBVwXt5O7lnu/Bkaoq9p+i4cV
-	7hsuIHa/U2ngkyAM8336wvgBJR18FZxPzhpzos+tdXN/P2D6cfQ8xmXsaGYmp8BrCHj5qrZqN4j96
-	gDKypwH4Ea+f0pVh1OQDqHmLd5FE8hKIrid/+qqE23jnYwD3gFZhDHyg9ihwdKq6eSoYS30GVM/u2
-	KAye0ciF5OD97fAoXgnpSxyMkRfLp0slVyrefwnZDw+KugfouWf5qwhfGmagUsbaWB4jS8W7EF0ux
-	BeWyXP+Hc16SW0+mUjTA==;
+	List-Owner; bh=6eoTCACn0wBFULq58VuzBNwzCs1GRTMBUpAAVpevuc0=; b=SU5udYgHYmyv1C
+	85uMOYYnHyYD2nyswwnrSwGSEm4x6hUSp4BLvTptl9/QNbCxIdlBxsvyTYHySDqaCXl8KHotxbDHk
+	Iro3V0DJx89yW2aEypV3f38BVdV5wccdIYRYznDX3+SvIluC1KAqbmzw98VAHXbM550oAewzxlxuB
+	EnRiJGF9rMlJrVKMukh3uJ4e95VI98QmVUGBW8f+NjUMl/WYmnkQypJi5YxlMOLbXzEvc4/06sTQ9
+	SoTVHywVfK0oE0NQYHmZ/5q09v2hUubEnLxxCG1nPJkkCz9F1vVaEPB3Rgtp8+GHPU02hQxLJzujE
+	ChpSLvFHS9e47uL9Hjow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mg0GW-007BoZ-Kp; Thu, 28 Oct 2021 07:56:00 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1mg1Cl-007KFi-Ti; Thu, 28 Oct 2021 08:56:11 +0000
+Received: from esa.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mg0Ds-007ARQ-AC; Thu, 28 Oct 2021 07:53:18 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 112B21A1E1C;
- Thu, 28 Oct 2021 09:53:15 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com
- (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9C7E31A1E17;
- Thu, 28 Oct 2021 09:53:14 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 45FCA183AC94;
- Thu, 28 Oct 2021 15:53:12 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: l.stach@pengutronix.de, marcel.ziswiler@toradex.com, tharvey@gateworks.com,
- kishon@ti.com, vkoul@kernel.org, robh@kernel.org,
- galak@kernel.crashing.org, shawnguo@kernel.org
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com,
- Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v4 8/8] PCI: imx: Add the imx8mm pcie support
-Date: Thu, 28 Oct 2021 15:27:17 +0800
-Message-Id: <1635406037-20900-9-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1635406037-20900-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1635406037-20900-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1mg1Ci-007KEb-PJ
+ for linux-phy@lists.infradead.org; Thu, 28 Oct 2021 08:56:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1635411368; x=1666947368;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=/0UPLaDhy5BJJ6FFv8PzjnYUUj7i5fsxoZCJyakl5BQ=;
+ b=KaEdy6fZDFPu8zGDdMsfNO6daLSyat2PmDk6eIQxMPFVm7hODq5L/j1n
+ Sv4COFCBzV1JCr8Oui5cP2pIPpgEQ0szp2WrYEd2GwPwNiFQIPzo5C+h9
+ y4AG5dDdMm8Y8oUD5C84YS8tQ5GpoCJady2E0d50kNU7c7wIbwmqloujU
+ ZOnHOvlMtihzfEeK0acXYKC++u/0CZX+RNiz5SoQ8g49XhzDUmGpa+J+7
+ JBjDwknzGuFQd1b6m+BJT6P1LXRlh0w5VEWbE29BfQNG3JNtF1FNiRO3R
+ /Blk0R+bdmtUC37vY6ZuSW3jUtrzRqo/PeUjqwt80drcR/bzqeYFe++kg g==;
+IronPort-SDR: yty8zBVIjgtCtz9mlh4VOpVaraBtaIwXR43SXtqVi4Z2aTxe5IeCShX5JgUlGtfCL0p8NG5/B4
+ WAmFTQytlmG3zIIt4OstqR6SuscnqgoSpaCcIHapXJlBtPO1NpT43z04jXR0ryh7xjwjnHwh3I
+ siW5OEQAOd5ixyb/RRcctAbvbJh3c7mA5jvkqng+8RznHnn5GQ9Tmlo5qO7btwqVy1FPN2bFG0
+ q6QF3vDgAeC7e6TYgHYlxY7x9BpkOFl6ZSGEkpYb1YZa3ZeFMQlaxRFRhcZixtL6PJD6FXRsA2
+ WxCAhz2RtNc8RCDok0IKhoqp
+X-IronPort-AV: E=Sophos;i="5.87,189,1631602800"; d="scan'208";a="149848806"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 28 Oct 2021 01:56:05 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2176.14; Thu, 28 Oct 2021 01:56:05 -0700
+Received: from localhost (10.10.115.15) by chn-vm-ex02.mchp-main.com
+ (10.10.85.144) with Microsoft SMTP Server id 15.1.2176.14 via Frontend
+ Transport; Thu, 28 Oct 2021 01:56:04 -0700
+Date: Thu, 28 Oct 2021 10:57:47 +0200
+From: Horatiu Vultur <horatiu.vultur@microchip.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, <kishon@ti.com>,
+ <robh+dt@kernel.org>, <andrew@lunn.ch>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v3 3/3] phy: Add lan966x ethernet serdes PHY driver
+Message-ID: <20211028085747.hhpbcfaevmt4wrl2@soft-dev3-1.localhost>
+References: <20211015123920.176782-1-horatiu.vultur@microchip.com>
+ <20211015123920.176782-4-horatiu.vultur@microchip.com>
+ <YW8HIHTCVgB+URJ5@matsya>
+ <20211020091733.fxph2pq3xa3byvry@soft-dev3-1.localhost>
+ <YXA3VVUGEjUR4HDC@matsya> <YXA6lZBTeA6aNxVD@piout.net>
+ <YXEEcJHuEdFLPyCU@matsya>
+ <20211021091032.ffaoncg5jjdwdeyg@soft-dev3-1.localhost>
+ <YXGoGtbFeKa+TVk2@matsya>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <YXGoGtbFeKa+TVk2@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211028_005316_692287_B6C64583 
-X-CRM114-Status: GOOD (  19.05  )
+X-CRM114-CacheID: sfid-20211028_015608_861755_9A2622BA 
+X-CRM114-Status: GOOD (  16.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,218 +93,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-i.MX8MM PCIe works mostly like the i.MX8MQ one, but has a different PHY
-and allows to output the internal PHY reference clock via the refclk pad.
-Add the i.MX8MM PCIe support based on the standalone PHY driver.
+The 10/21/2021 23:19, Vinod Koul wrote:
+> 
+> On 21-10-21, 11:10, Horatiu Vultur wrote:
+> > The 10/21/2021 11:40, Vinod Koul wrote:
+> > >
+> > > On 20-10-21, 17:49, Alexandre Belloni wrote:
+> > > > On 20/10/2021 21:05:49+0530, Vinod Koul wrote:
+> > > > > > > > +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+> > > > > > >
+> > > > > > > Any reason why this is dual licensed, why not GPL only?
+> > > > > >
+> > > > > > No reason, I think I copy this from a different file.
+> > > > >
+> > > > > Please have a chat with your lawyers on the correct license this should
+> > > > > have!
+> > > > Dual GPL and MIT was Microsemi's policy, I'm not sure it carried over to
+> > > > Microchip.
+> > >
+> > > That is why they need to talk to someone and decide what license
+> > > applies :)
+> >
+> > I have changed it to be the same as the one on sparx5 because also
+> > sparx5 is a Microchip product. On sparx5 we used:
+> > 'SPDX-License-Identifier: GPL-2.0-or-later'
+> 
+> Has the code been copied/derived from somewhere/auto generated from
+> scripts/tools or entirely written by you?
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
----
- drivers/pci/controller/dwc/pci-imx6.c | 73 ++++++++++++++++++++++++---
- 1 file changed, 66 insertions(+), 7 deletions(-)
+Sorry for late reply, but I was out of office without access to the
+emails.
 
-diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
-index 26f49f797b0f..d8c587b4d54f 100644
---- a/drivers/pci/controller/dwc/pci-imx6.c
-+++ b/drivers/pci/controller/dwc/pci-imx6.c
-@@ -29,6 +29,7 @@
- #include <linux/types.h>
- #include <linux/interrupt.h>
- #include <linux/reset.h>
-+#include <linux/phy/phy.h>
- #include <linux/pm_domain.h>
- #include <linux/pm_runtime.h>
- 
-@@ -49,6 +50,7 @@ enum imx6_pcie_variants {
- 	IMX6QP,
- 	IMX7D,
- 	IMX8MQ,
-+	IMX8MM,
- };
- 
- #define IMX6_PCIE_FLAG_IMX6_PHY			BIT(0)
-@@ -88,6 +90,7 @@ struct imx6_pcie {
- 	struct device		*pd_pcie;
- 	/* power domain for pcie phy */
- 	struct device		*pd_pcie_phy;
-+	struct phy		*phy;
- 	const struct imx6_pcie_drvdata *drvdata;
- };
- 
-@@ -372,6 +375,8 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
- 	case IMX7D:
- 	case IMX8MQ:
- 		reset_control_assert(imx6_pcie->pciephy_reset);
-+		fallthrough;
-+	case IMX8MM:
- 		reset_control_assert(imx6_pcie->apps_reset);
- 		break;
- 	case IMX6SX:
-@@ -407,7 +412,8 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
- 
- static unsigned int imx6_pcie_grp_offset(const struct imx6_pcie *imx6_pcie)
- {
--	WARN_ON(imx6_pcie->drvdata->variant != IMX8MQ);
-+	WARN_ON(imx6_pcie->drvdata->variant != IMX8MQ &&
-+		imx6_pcie->drvdata->variant != IMX8MM);
- 	return imx6_pcie->controller_id == 1 ? IOMUXC_GPR16 : IOMUXC_GPR14;
- }
- 
-@@ -446,6 +452,13 @@ static int imx6_pcie_enable_ref_clk(struct imx6_pcie *imx6_pcie)
- 		break;
- 	case IMX7D:
- 		break;
-+	case IMX8MM:
-+		ret = clk_prepare_enable(imx6_pcie->pcie_aux);
-+		if (ret) {
-+			dev_err(dev, "unable to enable pcie_aux clock\n");
-+			break;
-+		}
-+		break;
- 	case IMX8MQ:
- 		ret = clk_prepare_enable(imx6_pcie->pcie_aux);
- 		if (ret) {
-@@ -522,6 +535,14 @@ static void imx6_pcie_deassert_core_reset(struct imx6_pcie *imx6_pcie)
- 		goto err_ref_clk;
- 	}
- 
-+	switch (imx6_pcie->drvdata->variant) {
-+	case IMX8MM:
-+		if (phy_power_on(imx6_pcie->phy))
-+			dev_err(dev, "unable to power on PHY\n");
-+		break;
-+	default:
-+		break;
-+	}
- 	/* allow the clocks to stabilize */
- 	usleep_range(200, 500);
- 
-@@ -538,6 +559,10 @@ static void imx6_pcie_deassert_core_reset(struct imx6_pcie *imx6_pcie)
- 	case IMX8MQ:
- 		reset_control_deassert(imx6_pcie->pciephy_reset);
- 		break;
-+	case IMX8MM:
-+		if (phy_init(imx6_pcie->phy) != 0)
-+			dev_err(dev, "Waiting for PHY ready timeout!\n");
-+		break;
- 	case IMX7D:
- 		reset_control_deassert(imx6_pcie->pciephy_reset);
- 
-@@ -614,6 +639,8 @@ static void imx6_pcie_configure_type(struct imx6_pcie *imx6_pcie)
- static void imx6_pcie_init_phy(struct imx6_pcie *imx6_pcie)
- {
- 	switch (imx6_pcie->drvdata->variant) {
-+	case IMX8MM:
-+		break;
- 	case IMX8MQ:
- 		/*
- 		 * TODO: Currently this code assumes external
-@@ -753,6 +780,7 @@ static void imx6_pcie_ltssm_enable(struct device *dev)
- 		break;
- 	case IMX7D:
- 	case IMX8MQ:
-+	case IMX8MM:
- 		reset_control_deassert(imx6_pcie->apps_reset);
- 		break;
- 	}
-@@ -871,6 +899,7 @@ static void imx6_pcie_ltssm_disable(struct device *dev)
- 				   IMX6Q_GPR12_PCIE_CTL_2, 0);
- 		break;
- 	case IMX7D:
-+	case IMX8MM:
- 		reset_control_assert(imx6_pcie->apps_reset);
- 		break;
- 	default:
-@@ -930,6 +959,7 @@ static void imx6_pcie_clk_disable(struct imx6_pcie *imx6_pcie)
- 				   IMX7D_GPR12_PCIE_PHY_REFCLK_SEL);
- 		break;
- 	case IMX8MQ:
-+	case IMX8MM:
- 		clk_disable_unprepare(imx6_pcie->pcie_aux);
- 		break;
- 	default:
-@@ -1043,11 +1073,6 @@ static int imx6_pcie_probe(struct platform_device *pdev)
- 	}
- 
- 	/* Fetch clocks */
--	imx6_pcie->pcie_phy = devm_clk_get(dev, "pcie_phy");
--	if (IS_ERR(imx6_pcie->pcie_phy))
--		return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_phy),
--				     "pcie_phy clock source missing or invalid\n");
--
- 	imx6_pcie->pcie_bus = devm_clk_get(dev, "pcie_bus");
- 	if (IS_ERR(imx6_pcie->pcie_bus))
- 		return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_bus),
-@@ -1089,10 +1114,39 @@ static int imx6_pcie_probe(struct platform_device *pdev)
- 			dev_err(dev, "Failed to get PCIE APPS reset control\n");
- 			return PTR_ERR(imx6_pcie->apps_reset);
- 		}
-+		break;
-+	case IMX8MM:
-+		imx6_pcie->pcie_aux = devm_clk_get(dev, "pcie_aux");
-+		if (IS_ERR(imx6_pcie->pcie_aux))
-+			return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_aux),
-+					     "pcie_aux clock source missing or invalid\n");
-+		imx6_pcie->apps_reset = devm_reset_control_get_exclusive(dev,
-+									 "apps");
-+		if (IS_ERR(imx6_pcie->apps_reset)) {
-+			dev_err(dev, "Failed to get PCIE APPS reset control\n");
-+			return PTR_ERR(imx6_pcie->apps_reset);
-+		}
-+
-+		imx6_pcie->phy = devm_phy_get(dev, "pcie-phy");
-+		if (IS_ERR(imx6_pcie->phy)) {
-+			if (PTR_ERR(imx6_pcie->phy) == -EPROBE_DEFER)
-+				return -EPROBE_DEFER;
-+			dev_err(dev, "Failed to get PCIE PHY\n");
-+			return PTR_ERR(imx6_pcie->phy);
-+		}
-+
- 		break;
- 	default:
- 		break;
- 	}
-+	/* Don't fetch the pcie_phy clock, if it has abstract PHY driver */
-+	if (imx6_pcie->phy == NULL) {
-+		imx6_pcie->pcie_phy = devm_clk_get(dev, "pcie_phy");
-+		if (IS_ERR(imx6_pcie->pcie_phy))
-+			return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_phy),
-+					     "pcie_phy clock source missing or invalid\n");
-+	}
-+
- 
- 	/* Grab turnoff reset */
- 	imx6_pcie->turnoff_reset = devm_reset_control_get_optional_exclusive(dev, "turnoff");
-@@ -1202,6 +1256,10 @@ static const struct imx6_pcie_drvdata drvdata[] = {
- 	[IMX8MQ] = {
- 		.variant = IMX8MQ,
- 	},
-+	[IMX8MM] = {
-+		.variant = IMX8MM,
-+		.flags = IMX6_PCIE_FLAG_SUPPORTS_SUSPEND,
-+	},
- };
- 
- static const struct of_device_id imx6_pcie_of_match[] = {
-@@ -1209,7 +1267,8 @@ static const struct of_device_id imx6_pcie_of_match[] = {
- 	{ .compatible = "fsl,imx6sx-pcie", .data = &drvdata[IMX6SX], },
- 	{ .compatible = "fsl,imx6qp-pcie", .data = &drvdata[IMX6QP], },
- 	{ .compatible = "fsl,imx7d-pcie",  .data = &drvdata[IMX7D],  },
--	{ .compatible = "fsl,imx8mq-pcie", .data = &drvdata[IMX8MQ], } ,
-+	{ .compatible = "fsl,imx8mq-pcie", .data = &drvdata[IMX8MQ], },
-+	{ .compatible = "fsl,imx8mm-pcie", .data = &drvdata[IMX8MM], },
- 	{},
- };
- 
+The register file 'lan966x_serdes_regs.h' was autogenerated from some
+internal scripts. Which takes the info from here [1] and generates these
+header files. The reason why we generate them is that is more error proof
+that writting them manually. We are doing the same for sparx5
+registers[2]
+
+The other file 'lan966x_serdes.c' was entirely written by me.
+
+[1] https://github.com/microchip-ung/lan9668_reginfo
+[2] https://elixir.bootlin.com/linux/latest/source/drivers/phy/microchip/sparx5_serdes_regs.h
+
+> 
+> --
+> ~Vinod
+
 -- 
-2.25.1
-
+/Horatiu
 
 -- 
 linux-phy mailing list
