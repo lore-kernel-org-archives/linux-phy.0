@@ -2,14 +2,14 @@ Return-Path: <SRS0=1k0B=PQ=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 74F92C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 07:55:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 72CAFC433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 07:55:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 45A59610C7
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 07:55:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 45A59610C7
+	by mail.kernel.org (Postfix) with ESMTPS id 310F961040
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Oct 2021 07:55:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 310F961040
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,29 +18,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nJ2PIKXy21k6MWZuhRbmEzIQmz52e3EpQ3dAaMpaiBg=; b=rnqlsaJVi6AzNB
-	L5tvJk8XZV2IMattXLj0IedAAXfLaFxhZ8aGq/s1tbD67hbFM+JV1aYK0b+vNXmnlNkvKbXC6jVdr
-	dmtgf2hXvPy7p/dBO/gOd7yJ2zs0VW0B2rnBXiq9giwSJJDwIEch+nJyVK6thAuB4RIeQWQ3BciA4
-	NkwC+l6LZsLWW3skwBxOS9TuJm6TRk5YyJYpCRx9lj6ZNiVfgskmsB6+t7s7a+UMpkz2ZrBCKKC3Q
-	LPXpLtYX3BNiEEaoH2FrClv728G8patzZbm6lwfGaw73Bz69QrVM55yiZWLDG9lC36w2xD/L75qXW
-	PTyG96AtynC8eHXRjVJQ==;
+	List-Owner; bh=d2TM7zepgUhtI0WdcEYxom3iHAPhkvMV09fb3l84uYw=; b=pj4wjSFX1dQiNu
+	nQMR8DNphjK3zvrEE2zAYrj082j85FDj8XUK4NvsZ6fKKodSOgn8CXRyazUJdP11F4DGtQN9Gp6Aj
+	tnAbK0FWELAcI86iu+U5upD+n8A0dNsMH1cBULCZqbTMmY7xFMgz7mxtS1DNprMv/9dzkeARV9JQe
+	0GT6djUyUKukNitXiw7aNHwuvl1cGboBcmT7v4l+vHPK0sesSJy7bkFCXE4du89iIfraqznIf4WU4
+	f8qRDBtInAX8rLEqv+GQCTxxOlWZZlVvD96Z7uODyJh1qVMDiBPrtGvLTa8exbHeuqRnKr1/VPoML
+	DEGKj3+6NqL2tSO222VA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mg0Fh-007BLV-PC; Thu, 28 Oct 2021 07:55:09 +0000
+	id 1mg0Fy-007BUM-Ku; Thu, 28 Oct 2021 07:55:26 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mg0Do-007APf-Hm; Thu, 28 Oct 2021 07:53:14 +0000
+ id 1mg0Dq-007AQY-Ds; Thu, 28 Oct 2021 07:53:16 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 505D11A01F0;
- Thu, 28 Oct 2021 09:53:11 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F0C571A025D;
+ Thu, 28 Oct 2021 09:53:12 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com
  (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 17D211A1E1C;
- Thu, 28 Oct 2021 09:53:11 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B60AD1A020C;
+ Thu, 28 Oct 2021 09:53:12 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 084C6183AC94;
- Thu, 28 Oct 2021 15:53:08 +0800 (+08)
+ by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id A03D4183AD6E;
+ Thu, 28 Oct 2021 15:53:10 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: l.stach@pengutronix.de, marcel.ziswiler@toradex.com, tharvey@gateworks.com,
  kishon@ti.com, vkoul@kernel.org, robh@kernel.org,
@@ -49,16 +49,17 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  kernel@pengutronix.de, linux-imx@nxp.com,
  Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v4 6/8] arm64: dts: imx8mm: Add the pcie support
-Date: Thu, 28 Oct 2021 15:27:15 +0800
-Message-Id: <1635406037-20900-7-git-send-email-hongxing.zhu@nxp.com>
+Subject: [PATCH v4 7/8] arm64: dts: imx8mm-evk: Add the pcie support on imx8mm
+ evk board
+Date: Thu, 28 Oct 2021 15:27:16 +0800
+Message-Id: <1635406037-20900-8-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1635406037-20900-1-git-send-email-hongxing.zhu@nxp.com>
 References: <1635406037-20900-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211028_005312_756112_4064316A 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20211028_005314_807506_C247B07F 
+X-CRM114-Status: UNSURE (   8.40  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,65 +78,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the PCIe support on i.MX8MM platforms.
+Add the PCIe support on iMX8MM EVK boards.
+And set the default reference clock mode.
 
 Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 33 ++++++++++++++++++++++-
- 1 file changed, 32 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi | 55 +++++++++++++++++++
+ 1 file changed, 55 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 0844f3144887..75f4317215ac 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -520,7 +520,7 @@ iomuxc: pinctrl@30330000 {
- 			};
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+index e033d0257b5a..fc1803a8af5b 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+@@ -5,6 +5,7 @@
  
- 			gpr: iomuxc-gpr@30340000 {
--				compatible = "fsl,imx8mm-iomuxc-gpr", "syscon";
-+				compatible = "fsl,imx8mm-iomuxc-gpr", "fsl,imx6q-iomuxc-gpr", "syscon";
- 				reg = <0x30340000 0x10000>;
- 			};
+ /dts-v1/;
  
-@@ -1179,6 +1179,37 @@ gpmi: nand-controller@33002000{
- 			status = "disabled";
++#include <dt-bindings/phy/phy-imx8-pcie.h>
+ #include <dt-bindings/usb/pd.h>
+ #include "imx8mm.dtsi"
+ 
+@@ -30,6 +31,23 @@ status {
  		};
+ 	};
  
-+		pcie0: pcie@33800000 {
-+			compatible = "fsl,imx8mm-pcie";
-+			reg = <0x33800000 0x400000>, <0x1ff00000 0x80000>;
-+			reg-names = "dbi", "config";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			device_type = "pci";
-+			bus-range = <0x00 0xff>;
-+			ranges =  <0x81000000 0 0x00000000 0x1ff80000 0 0x00010000 /* downstream I/O 64KB */
-+				   0x82000000 0 0x18000000 0x18000000 0 0x07f00000>; /* non-prefetchable memory */
-+			num-lanes = <1>;
-+			num-viewport = <4>;
-+			interrupts = <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "msi";
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &gic GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 2 &gic GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 3 &gic GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 4 &gic GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>;
-+			fsl,max-link-speed = <2>;
-+			linux,pci-domain = <0>;
-+			power-domains = <&pgc_pcie>;
-+			resets = <&src IMX8MQ_RESET_PCIE_CTRL_APPS_EN>,
-+				 <&src IMX8MQ_RESET_PCIE_CTRL_APPS_TURNOFF>;
-+			reset-names = "apps", "turnoff";
-+			phys = <&pcie_phy>;
-+			phy-names = "pcie-phy";
-+			status = "disabled";
-+		};
++	pcie0_refclk: pcie0-refclk {
++		compatible = "fixed-clock";
++			#clock-cells = <0>;
++			clock-frequency = <100000000>;
++	};
 +
- 		gpu_3d: gpu@38000000 {
- 			compatible = "vivante,gc";
- 			reg = <0x38000000 0x8000>;
++	reg_pcie0: regulator-pcie {
++		compatible = "regulator-fixed";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_pcie0_reg>;
++		regulator-name = "MPCIE_3V3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		gpio = <&gpio1 5 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++
+ 	reg_usdhc2_vmmc: regulator-usdhc2 {
+ 		compatible = "regulator-fixed";
+ 		pinctrl-names = "default";
+@@ -289,6 +307,30 @@ pca6416: gpio@20 {
+ 	};
+ };
+ 
++&pcie_phy {
++	fsl,refclk-pad-mode = <IMX8_PCIE_REFCLK_PAD_INPUT>;
++	fsl,tx-deemph-gen1 = <0x2D>;
++	fsl,tx-deemph-gen2 = <0xF>;
++	clocks = <&pcie0_refclk>;
++	status = "okay";
++};
++
++&pcie0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pcie0>;
++	reset-gpio = <&gpio4 21 GPIO_ACTIVE_LOW>;
++	clocks = <&clk IMX8MM_CLK_PCIE1_ROOT>, <&clk IMX8MM_CLK_PCIE1_AUX>,
++		 <&pcie0_refclk>;
++	clock-names = "pcie", "pcie_aux", "pcie_bus";
++	assigned-clocks = <&clk IMX8MM_CLK_PCIE1_AUX>,
++			  <&clk IMX8MM_CLK_PCIE1_CTRL>;
++	assigned-clock-rates = <10000000>, <250000000>;
++	assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_50M>,
++				 <&clk IMX8MM_SYS_PLL2_250M>;
++	vpcie-supply = <&reg_pcie0>;
++	status = "okay";
++};
++
+ &sai3 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_sai3>;
+@@ -406,6 +448,19 @@ MX8MM_IOMUXC_I2C3_SDA_I2C3_SDA			0x400001c3
+ 		>;
+ 	};
+ 
++	pinctrl_pcie0: pcie0grp {
++		fsl,pins = <
++			MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B    0x61
++			MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21       0x41
++		>;
++	};
++
++	pinctrl_pcie0_reg: pcie0reggrp {
++		fsl,pins = <
++			MX8MM_IOMUXC_GPIO1_IO05_GPIO1_IO5       0x41
++		>;
++	};
++
+ 	pinctrl_pmic: pmicirqgrp {
+ 		fsl,pins = <
+ 			MX8MM_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x141
 -- 
 2.25.1
 
