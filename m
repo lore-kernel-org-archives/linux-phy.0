@@ -2,59 +2,92 @@ Return-Path: <SRS0=Y3PQ=PR=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 8CC65C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Oct 2021 10:42:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 26297C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Oct 2021 19:18:13 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 519B260F55
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Oct 2021 10:42:05 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 519B260F55
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=socionext.com
+	by mail.kernel.org (Postfix) with ESMTPS id D9DA860F9B
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Oct 2021 19:18:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D9DA860F9B
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=gateworks.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8xREn8XQjVmNECQIPTuJCfqPaWdb/E2L5pdY5c/VG7E=; b=yCScD42czWV7me
-	/UfpQOt+71aa7i5RdTahSZ3WGV3OqTtMtoZFY/gHL0TyMsu8uzoyM6NDbW9FGLCipCvyqfa219Yf4
-	V0SNnaEra04soX4BJIuMfEqBDePwzheMoJ6xAwsMJBzT6TKoVBr/k1YleLg+IYLH4EirRepO3Nv53
-	pqUWsclYcJywf2nYbJ9DRF4tQjmjGGn8wfkOmY6w52zPa3rfXSN3fs5aryuPBSkkslKMX2ROjSUzH
-	XYag+YzUHnDzQmwJd4kzeb81qUYUES2okz+g0zJQcFvtvKIzCI960YchiB/GIHmUWFfv7IpiHIK9n
-	4esU+5YR4KPeFY/Mi92Q==;
+	List-Owner; bh=AGF+g3KNuDX+o7eUQnGR8pHTdHRErMCS4BMdSJ3PdEA=; b=VcvrOsu1hRQ6Eo
+	tVvtrxfqJ2T2yCAUYoLHu/4VoF6Ae5K93D22jpIsFk7isAGnwFh2LOXx3Cihl92N1f1kxekZCrCPp
+	En/EMmw5kFInEJvY4eApQol+HlqkSoxrUsCHajTIA+rEfhu5yqKf7nrSr7brw4ZHq1aHiQxBwH5Yu
+	Ml8HoFdNh2GeC4F2hvDCN28NzLtExTEbS4ApfjJo9WrFYE0pp9RHPtZ7tEBKjzDZsGFD6xb1gVR86
+	ZTwwhKeAgLXroP2PFCEm+IDkqNFuOYat9Z3ZNqTB5oInl9tb9uGY7qrC9wD+inq12pso+FQ1KvHC4
+	a55raSucTbfw4t7pHAFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mgPKm-00AeLB-Lo; Fri, 29 Oct 2021 10:42:04 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mgPI2-00Ad3L-UP; Fri, 29 Oct 2021 10:39:17 +0000
-Received: from unknown (HELO kinkan2-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 29 Oct 2021 19:39:12 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan2-ex.css.socionext.com (Postfix) with ESMTP id 60431203F6D9;
- Fri, 29 Oct 2021 19:39:12 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Fri, 29 Oct 2021 19:39:12 +0900
-Received: from plum.e01.socionext.com (unknown [10.212.243.119])
- by kinkan2.css.socionext.com (Postfix) with ESMTP id D9CF5B62AC;
- Fri, 29 Oct 2021 19:39:11 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Masami Hiramatsu <mhiramat@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: [PATCH v3 8/8] phy: uniphier-ahci: Add support for Pro4 SoC
-Date: Fri, 29 Oct 2021 19:39:07 +0900
-Message-Id: <1635503947-18250-9-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1635503947-18250-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1635503947-18250-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1mgXOG-00BxEh-1d; Fri, 29 Oct 2021 19:18:12 +0000
+Received: from mail-pg1-x52e.google.com ([2607:f8b0:4864:20::52e])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1mgVwF-00Bdo5-Gh
+ for linux-phy@lists.infradead.org; Fri, 29 Oct 2021 17:45:13 +0000
+Received: by mail-pg1-x52e.google.com with SMTP id a9so56487pgg.7
+ for <linux-phy@lists.infradead.org>; Fri, 29 Oct 2021 10:45:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gateworks-com.20210112.gappssmtp.com; s=20210112;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=b0whYJmcB0jB6pJojgKADy8b4ZuzyqAW5Yum6n3qtZM=;
+ b=nQomA4mbZ2UHLPvDns1D/25xRZvNOn1MxebhUEjYX3KEzcK/CsrugvsRPiCkCnGQBt
+ +9SXtjyxAmt3hVInXOIGee4RZxxneF0vz40JgKcpfPMuufvPis87qbtKxLpnYR1+qcZT
+ 74FVbBCqO4yznrAh4b3Qlbw+PieO/GVD85A2/i3UUWLDrrU4sI20wwGTuTdHDu33yXR5
+ XBzdwaqV5nOHTp42Fg+g4JcQSScY4RAT0QNMujZXZyvtKzovDE/CeOZ5kBsaUttd54w2
+ TTmzjow8k++Ali4TTiy2ul8w/pPrpoeDiZpiqYJ0a6EiAdQmSc8UocVwnSgMZ2CDM8yf
+ pB+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=b0whYJmcB0jB6pJojgKADy8b4ZuzyqAW5Yum6n3qtZM=;
+ b=pOkEmA6cuLLFy+/0fZDl7OPJILj5QcG/e+4TS4sGucy6DaJREzacO7ZKZMS7zD5Owx
+ kzX9yomgHVj3ni8SuGgTRYBdiee3iZlopE97hAlc3K9t+IAm5P6P33yHxfoouEO67YMr
+ 1qNghqOoOOWkzs4FsLhJ9B82tVs3hFjjdHHrk+dF1GAgUG2R+0Bc9UTjqKTnh8ZxSqNS
+ Pc2USCsqR7MGpj1+afO9qufAqx2BqTf+9iBvWEl2YCcm/UpjRzi3i6DIDc0ZMRHhXrlE
+ xOb8skVSoQxQglDqvJutnVjfkbvORvevE4r/bJDwH4cT5JMorVl9+DPawMR5Ttti85or
+ m3Qg==
+X-Gm-Message-State: AOAM530bHMG170gGblFy/KX2vUMyey6KLkrrD/hezPOkCTrClUQSdqb6
+ qfkAMuUCoscSUK2RaGSXjWg3hOJnPlY5Y4aAywInbg==
+X-Google-Smtp-Source: ABdhPJylbJBntPJCmTgb6kablqvflLQTyVhPTi/x4VT6rljBmEef/wGDO8GZfqQFTMbSpnM1OQAaXt4NB71LaxX0SUs=
+X-Received: by 2002:aa7:8149:0:b0:44c:916c:1fdb with SMTP id
+ d9-20020aa78149000000b0044c916c1fdbmr12597647pfn.34.1635529508590; Fri, 29
+ Oct 2021 10:45:08 -0700 (PDT)
+MIME-Version: 1.0
+References: <1635406037-20900-1-git-send-email-hongxing.zhu@nxp.com>
+ <1635406037-20900-6-git-send-email-hongxing.zhu@nxp.com>
+ <8e182179c6c60f0b6cf8a89c1b829d8225a055d5.camel@toradex.com>
+ <AS8PR04MB8676A86DE53D6C98456DDC7E8C879@AS8PR04MB8676.eurprd04.prod.outlook.com>
+In-Reply-To: <AS8PR04MB8676A86DE53D6C98456DDC7E8C879@AS8PR04MB8676.eurprd04.prod.outlook.com>
+From: Tim Harvey <tharvey@gateworks.com>
+Date: Fri, 29 Oct 2021 10:44:57 -0700
+Message-ID: <CAJ+vNU0iggqkQgsqKz3Y8KQjZxd2d1aq-ujgG=rRKo6EjcN=0w@mail.gmail.com>
+Subject: Re: [PATCH v4 5/8] phy: freescale: pcie: Initialize the imx8 pcie
+ standalone phy driver
+To: Richard Zhu <hongxing.zhu@nxp.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Cc: "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+ "robh@kernel.org" <robh@kernel.org>, 
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+ "galak@kernel.crashing.org" <galak@kernel.crashing.org>, 
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, 
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211029_033915_289109_1AE43CBA 
-X-CRM114-Status: GOOD (  22.21  )
+X-CRM114-CacheID: sfid-20211029_104511_611617_86F00968 
+X-CRM114-Status: GOOD (  34.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,330 +99,147 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for PHY interface built into ahci controller implemented
-in UniPhier Pro4 SoC.
-
-Pro4 SoC distinguishes it from other SoCs as "legacy" SoC, which has GIO
-clock line. And Pro4 AHCI-PHY needs to control additional reset lines
-("pm", "tx", and "rx").
-
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- drivers/phy/socionext/Kconfig             |   2 +-
- drivers/phy/socionext/phy-uniphier-ahci.c | 201 +++++++++++++++++++++++++++++-
- 2 files changed, 198 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/phy/socionext/Kconfig b/drivers/phy/socionext/Kconfig
-index a3970e0f89da..8ae644756352 100644
---- a/drivers/phy/socionext/Kconfig
-+++ b/drivers/phy/socionext/Kconfig
-@@ -43,4 +43,4 @@ config PHY_UNIPHIER_AHCI
- 	select GENERIC_PHY
- 	help
- 	  Enable this to support PHY implemented in AHCI controller
--	  on UniPhier SoCs. This driver supports PXs2 and PXs3 SoCs.
-+	  on UniPhier SoCs. This driver supports Pro4, PXs2 and PXs3 SoCs.
-diff --git a/drivers/phy/socionext/phy-uniphier-ahci.c b/drivers/phy/socionext/phy-uniphier-ahci.c
-index 7427c40bf4ae..28cf3efe0695 100644
---- a/drivers/phy/socionext/phy-uniphier-ahci.c
-+++ b/drivers/phy/socionext/phy-uniphier-ahci.c
-@@ -19,8 +19,9 @@
- struct uniphier_ahciphy_priv {
- 	struct device *dev;
- 	void __iomem  *base;
--	struct clk *clk, *clk_parent;
--	struct reset_control *rst, *rst_parent;
-+	struct clk *clk, *clk_parent, *clk_parent_gio;
-+	struct reset_control *rst, *rst_parent, *rst_parent_gio;
-+	struct reset_control *rst_pm, *rst_tx, *rst_rx;
- 	const struct uniphier_ahciphy_soc_data *data;
- };
- 
-@@ -28,10 +29,30 @@ struct uniphier_ahciphy_soc_data {
- 	int (*init)(struct uniphier_ahciphy_priv *priv);
- 	int (*power_on)(struct uniphier_ahciphy_priv *priv);
- 	int (*power_off)(struct uniphier_ahciphy_priv *priv);
-+	bool is_legacy;
- 	bool is_ready_high;
- 	bool is_phy_clk;
- };
- 
-+/* for Pro4 */
-+#define CKCTRL0				0x0
-+#define CKCTRL0_CK_OFF			BIT(9)
-+#define CKCTRL0_NCY_MASK		GENMASK(8, 4)
-+#define CKCTRL0_NCY5_MASK		GENMASK(3, 2)
-+#define CKCTRL0_PRESCALE_MASK		GENMASK(1, 0)
-+#define CKCTRL1				0x4
-+#define CKCTRL1_LOS_LVL_MASK		GENMASK(20, 16)
-+#define CKCTRL1_TX_LVL_MASK		GENMASK(12, 8)
-+#define RXTXCTRL			0x8
-+#define RXTXCTRL_RX_EQ_VALL_MASK	GENMASK(31, 29)
-+#define RXTXCTRL_RX_DPLL_MODE_MASK	GENMASK(28, 26)
-+#define RXTXCTRL_TX_ATTEN_MASK		GENMASK(14, 12)
-+#define RXTXCTRL_TX_BOOST_MASK		GENMASK(11, 8)
-+#define RXTXCTRL_TX_EDGERATE_MASK	GENMASK(3, 2)
-+#define RXTXCTRL_TX_CKO_EN		BIT(0)
-+#define RSTPWR				0x30
-+#define RSTPWR_RX_EN_VAL		BIT(18)
-+
- /* for PXs2/PXs3 */
- #define CKCTRL				0x0
- #define CKCTRL_P0_READY			BIT(15)
-@@ -50,6 +71,128 @@ struct uniphier_ahciphy_soc_data {
- #define RXCTRL_LOS_BIAS_MASK		GENMASK(10, 8)
- #define RXCTRL_RX_EQ_MASK		GENMASK(2, 0)
- 
-+static int uniphier_ahciphy_pro4_init(struct uniphier_ahciphy_priv *priv)
-+{
-+	u32 val;
-+
-+	/* set phy MPLL parameters */
-+	val = readl(priv->base + CKCTRL0);
-+	val &= ~CKCTRL0_NCY_MASK;
-+	val |= FIELD_PREP(CKCTRL0_NCY_MASK, 0x6);
-+	val &= ~CKCTRL0_NCY5_MASK;
-+	val |= FIELD_PREP(CKCTRL0_NCY5_MASK, 0x2);
-+	val &= ~CKCTRL0_PRESCALE_MASK;
-+	val |= FIELD_PREP(CKCTRL0_PRESCALE_MASK, 0x1);
-+	writel(val, priv->base + CKCTRL0);
-+
-+	/* setup phy control parameters */
-+	val = readl(priv->base + CKCTRL1);
-+	val &= ~CKCTRL1_LOS_LVL_MASK;
-+	val |= FIELD_PREP(CKCTRL1_LOS_LVL_MASK, 0x10);
-+	val &= ~CKCTRL1_TX_LVL_MASK;
-+	val |= FIELD_PREP(CKCTRL1_TX_LVL_MASK, 0x06);
-+	writel(val, priv->base + CKCTRL1);
-+
-+	val = readl(priv->base + RXTXCTRL);
-+	val &= ~RXTXCTRL_RX_EQ_VALL_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_RX_EQ_VALL_MASK, 0x6);
-+	val &= ~RXTXCTRL_RX_DPLL_MODE_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_RX_DPLL_MODE_MASK, 0x3);
-+	val &= ~RXTXCTRL_TX_ATTEN_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_TX_ATTEN_MASK, 0x3);
-+	val &= ~RXTXCTRL_TX_BOOST_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_TX_BOOST_MASK, 0x5);
-+	val &= ~RXTXCTRL_TX_EDGERATE_MASK;
-+	val |= FIELD_PREP(RXTXCTRL_TX_EDGERATE_MASK, 0x0);
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	return 0;
-+}
-+
-+static int uniphier_ahciphy_pro4_power_on(struct uniphier_ahciphy_priv *priv)
-+{
-+	u32 val;
-+	int ret;
-+
-+	/* enable reference clock for phy */
-+	val = readl(priv->base + CKCTRL0);
-+	val &= ~CKCTRL0_CK_OFF;
-+	writel(val, priv->base + CKCTRL0);
-+
-+	/* enable TX clock */
-+	val = readl(priv->base + RXTXCTRL);
-+	val |= RXTXCTRL_TX_CKO_EN;
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	/* wait until RX is ready */
-+	ret = readl_poll_timeout(priv->base + RSTPWR, val,
-+				 !(val & RSTPWR_RX_EN_VAL), 200, 2000);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to check whether Rx is ready\n");
-+		goto out_disable_clock;
-+	}
-+
-+	/* release all reset */
-+	ret = reset_control_deassert(priv->rst_pm);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to release PM reset\n");
-+		goto out_disable_clock;
-+	}
-+
-+	ret = reset_control_deassert(priv->rst_tx);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to release Tx reset\n");
-+		goto out_reset_pm_assert;
-+	}
-+
-+	ret = reset_control_deassert(priv->rst_rx);
-+	if (ret) {
-+		dev_err(priv->dev, "Failed to release Rx reset\n");
-+		goto out_reset_tx_assert;
-+	}
-+
-+	return 0;
-+
-+out_reset_tx_assert:
-+	reset_control_assert(priv->rst_tx);
-+out_reset_pm_assert:
-+	reset_control_assert(priv->rst_pm);
-+
-+out_disable_clock:
-+	/* disable TX clock */
-+	val = readl(priv->base + RXTXCTRL);
-+	val &= ~RXTXCTRL_TX_CKO_EN;
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	/* disable reference clock for phy */
-+	val = readl(priv->base + CKCTRL0);
-+	val |= CKCTRL0_CK_OFF;
-+	writel(val, priv->base + CKCTRL0);
-+
-+	return ret;
-+}
-+
-+static int uniphier_ahciphy_pro4_power_off(struct uniphier_ahciphy_priv *priv)
-+{
-+	u32 val;
-+
-+	reset_control_assert(priv->rst_rx);
-+	reset_control_assert(priv->rst_tx);
-+	reset_control_assert(priv->rst_pm);
-+
-+	/* disable TX clock */
-+	val = readl(priv->base + RXTXCTRL);
-+	val &= ~RXTXCTRL_TX_CKO_EN;
-+	writel(val, priv->base + RXTXCTRL);
-+
-+	/* disable reference clock for phy */
-+	val = readl(priv->base + CKCTRL0);
-+	val |= CKCTRL0_CK_OFF;
-+	writel(val, priv->base + CKCTRL0);
-+
-+	return 0;
-+}
-+
- static void uniphier_ahciphy_pxs2_enable(struct uniphier_ahciphy_priv *priv,
- 					 bool enable)
- {
-@@ -142,14 +285,22 @@ static int uniphier_ahciphy_init(struct phy *phy)
- 	struct uniphier_ahciphy_priv *priv = phy_get_drvdata(phy);
- 	int ret;
- 
--	ret = clk_prepare_enable(priv->clk_parent);
-+	ret = clk_prepare_enable(priv->clk_parent_gio);
- 	if (ret)
- 		return ret;
- 
--	ret = reset_control_deassert(priv->rst_parent);
-+	ret = clk_prepare_enable(priv->clk_parent);
-+	if (ret)
-+		goto out_clk_gio_disable;
-+
-+	ret = reset_control_deassert(priv->rst_parent_gio);
- 	if (ret)
- 		goto out_clk_disable;
- 
-+	ret = reset_control_deassert(priv->rst_parent);
-+	if (ret)
-+		goto out_rst_gio_assert;
-+
- 	if (priv->data->init) {
- 		ret = priv->data->init(priv);
- 		if (ret)
-@@ -160,8 +311,12 @@ static int uniphier_ahciphy_init(struct phy *phy)
- 
- out_rst_assert:
- 	reset_control_assert(priv->rst_parent);
-+out_rst_gio_assert:
-+	reset_control_assert(priv->rst_parent_gio);
- out_clk_disable:
- 	clk_disable_unprepare(priv->clk_parent);
-+out_clk_gio_disable:
-+	clk_disable_unprepare(priv->clk_parent_gio);
- 
- 	return ret;
- }
-@@ -171,7 +326,9 @@ static int uniphier_ahciphy_exit(struct phy *phy)
- 	struct uniphier_ahciphy_priv *priv = phy_get_drvdata(phy);
- 
- 	reset_control_assert(priv->rst_parent);
-+	reset_control_assert(priv->rst_parent_gio);
- 	clk_disable_unprepare(priv->clk_parent);
-+	clk_disable_unprepare(priv->clk_parent_gio);
- 
- 	return 0;
- }
-@@ -265,6 +422,28 @@ static int uniphier_ahciphy_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->rst))
- 		return PTR_ERR(priv->rst);
- 
-+	if (priv->data->is_legacy) {
-+		priv->clk_parent_gio = devm_clk_get(dev, "gio");
-+		if (IS_ERR(priv->clk_parent_gio))
-+			return PTR_ERR(priv->clk_parent_gio);
-+		priv->rst_parent_gio =
-+			devm_reset_control_get_shared(dev, "gio");
-+		if (IS_ERR(priv->rst_parent_gio))
-+			return PTR_ERR(priv->rst_parent_gio);
-+
-+		priv->rst_pm = devm_reset_control_get_shared(dev, "pm");
-+		if (IS_ERR(priv->rst_pm))
-+			return PTR_ERR(priv->rst_pm);
-+
-+		priv->rst_tx = devm_reset_control_get_shared(dev, "tx");
-+		if (IS_ERR(priv->rst_tx))
-+			return PTR_ERR(priv->rst_tx);
-+
-+		priv->rst_rx = devm_reset_control_get_shared(dev, "rx");
-+		if (IS_ERR(priv->rst_rx))
-+			return PTR_ERR(priv->rst_rx);
-+	}
-+
- 	phy = devm_phy_create(dev, dev->of_node, &uniphier_ahciphy_ops);
- 	if (IS_ERR(phy)) {
- 		dev_err(dev, "failed to create phy\n");
-@@ -279,9 +458,18 @@ static int uniphier_ahciphy_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct uniphier_ahciphy_soc_data uniphier_pro4_data = {
-+	.init = uniphier_ahciphy_pro4_init,
-+	.power_on  = uniphier_ahciphy_pro4_power_on,
-+	.power_off = uniphier_ahciphy_pro4_power_off,
-+	.is_legacy = true,
-+	.is_phy_clk = false,
-+};
-+
- static const struct uniphier_ahciphy_soc_data uniphier_pxs2_data = {
- 	.power_on  = uniphier_ahciphy_pxs2_power_on,
- 	.power_off = uniphier_ahciphy_pxs2_power_off,
-+	.is_legacy = false,
- 	.is_ready_high = false,
- 	.is_phy_clk = false,
- };
-@@ -290,12 +478,17 @@ static const struct uniphier_ahciphy_soc_data uniphier_pxs3_data = {
- 	.init      = uniphier_ahciphy_pxs3_init,
- 	.power_on  = uniphier_ahciphy_pxs2_power_on,
- 	.power_off = uniphier_ahciphy_pxs2_power_off,
-+	.is_legacy = false,
- 	.is_ready_high = true,
- 	.is_phy_clk = true,
- };
- 
- static const struct of_device_id uniphier_ahciphy_match[] = {
- 	{
-+		.compatible = "socionext,uniphier-pro4-ahci-phy",
-+		.data = &uniphier_pro4_data,
-+	},
-+	{
- 		.compatible = "socionext,uniphier-pxs2-ahci-phy",
- 		.data = &uniphier_pxs2_data,
- 	},
--- 
-2.7.4
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBPY3QgMjksIDIwMjEgYXQgMTo0NSBBTSBSaWNoYXJkIFpodSA8aG9uZ3hpbmcuemh1
+QG54cC5jb20+IHdyb3RlOgo+Cj4KPiA+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4gPiBG
+cm9tOiBNYXJjZWwgWmlzd2lsZXIgPG1hcmNlbC56aXN3aWxlckB0b3JhZGV4LmNvbT4KPiA+IFNl
+bnQ6IEZyaWRheSwgT2N0b2JlciAyOSwgMjAyMSA0OjEzIFBNCj4gPiBUbzoga2lzaG9uQHRpLmNv
+bTsgdmtvdWxAa2VybmVsLm9yZzsgcm9iaEBrZXJuZWwub3JnOwo+ID4gbC5zdGFjaEBwZW5ndXRy
+b25peC5kZTsgc2hhd25ndW9Aa2VybmVsLm9yZzsKPiA+IHRoYXJ2ZXlAZ2F0ZXdvcmtzLmNvbTsg
+Z2FsYWtAa2VybmVsLmNyYXNoaW5nLm9yZzsgUmljaGFyZCBaaHUKPiA+IDxob25neGluZy56aHVA
+bnhwLmNvbT4KPiA+IENjOiBsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZzsgbGludXgtYXJt
+LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOwo+ID4ga2VybmVsQHBlbmd1dHJvbml4LmRlOyBk
+ZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZzsKPiA+IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5v
+cmc7IGRsLWxpbnV4LWlteCA8bGludXgtaW14QG54cC5jb20+Cj4gPiBTdWJqZWN0OiBSZTogW1BB
+VENIIHY0IDUvOF0gcGh5OiBmcmVlc2NhbGU6IHBjaWU6IEluaXRpYWxpemUgdGhlIGlteDggcGNp
+ZQo+ID4gc3RhbmRhbG9uZSBwaHkgZHJpdmVyCj4gPgo+ID4gT24gVGh1LCAyMDIxLTEwLTI4IGF0
+IDE1OjI3ICswODAwLCBSaWNoYXJkIFpodSB3cm90ZToKPiA+ID4gQWRkIHRoZSBzdGFuZGFsb25l
+IGkuTVg4IFBDSWUgUEhZIGRyaXZlci4KPiA+ID4KPiA+ID4gU2lnbmVkLW9mZi1ieTogUmljaGFy
+ZCBaaHUgPGhvbmd4aW5nLnpodUBueHAuY29tPgo+ID4gPiBUZXN0ZWQtYnk6IE1hcmNlbCBaaXN3
+aWxlciA8bWFyY2VsLnppc3dpbGVyQHRvcmFkZXguY29tPgo+ID4KPiA+IFVuZm9ydHVuYXRlbHks
+IHRoaXMgdmVyc2lvbiBubyBsb25nZXIgd29ya3MgZm9yIG91cgo+ID4gSU1YOF9QQ0lFX1JFRkNM
+S19QQURfT1VUUFVUIHVzZS1jYXNlLiBGdXJ0aGVyIGNvbW1lbnRzIGluLSBsaW5lZAo+ID4gYmVs
+b3cuCj4gPgo+IFtSaWNoYXJkIFpodV0gU29ycnkgdG8gaGVhciBhYm91dCB0aGF0LiBUaGVuLCBp
+dCBzZWVtcyB0aGF0IHRoaXMgYml0IHNob3VsZCBiZQo+ICBzZXQgYW55d2F5Lgo+IEl0J3MgaGFy
+ZCB0byB1bmRlcnN0YW5kIHRoaXMgYml0IHJlZmVyIHRvIHRoZSBSTSBkb2N1bWVudC4gU2lnaCDi
+mLkuCj4gV291bGQgc2V0IHRoZSBBVVhfRU4gYml0IGxhdGVyLgo+Cj4gPiA+IC0tLQo+ID4gPiAg
+ZHJpdmVycy9waHkvZnJlZXNjYWxlL0tjb25maWcgICAgICAgICAgICAgIHwgICA5ICsKPiA+ID4g
+IGRyaXZlcnMvcGh5L2ZyZWVzY2FsZS9NYWtlZmlsZSAgICAgICAgICAgICB8ICAgMSArCj4gPiA+
+ICBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4bS1wY2llLmMgfCAyMzQKPiA+ID4g
+KysrKysrKysrKysrKysrKysrKysrCj4gPiA+ICAzIGZpbGVzIGNoYW5nZWQsIDI0NCBpbnNlcnRp
+b25zKCspCj4gPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9waHkvZnJlZXNjYWxlL3Bo
+eS1mc2wtaW14OG0tcGNpZS5jCj4gPiA+Cj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9m
+cmVlc2NhbGUvS2NvbmZpZwo+ID4gPiBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9LY29uZmlnIGlu
+ZGV4IDMyMDYzMGZmZTNjZC4uZGU5ZWU3MDIwZjc2Cj4gPiA+IDEwMDY0NAo+ID4gPiAtLS0gYS9k
+cml2ZXJzL3BoeS9mcmVlc2NhbGUvS2NvbmZpZwo+ID4gPiArKysgYi9kcml2ZXJzL3BoeS9mcmVl
+c2NhbGUvS2NvbmZpZwo+ID4gPiBAQCAtMTQsMyArMTQsMTIgQEAgY29uZmlnIFBIWV9NSVhFTF9N
+SVBJX0RQSFkKPiA+ID4gICAgICAgICBoZWxwCj4gPiA+ICAgICAgICAgICBFbmFibGUgdGhpcyB0
+byBhZGQgc3VwcG9ydCBmb3IgdGhlIE1peGVsIERTSSBQSFkgYXMKPiA+IGZvdW5kCj4gPiA+ICAg
+ICAgICAgICBvbiBOWFAncyBpLk1YOCBmYW1pbHkgb2YgU09Dcy4KPiA+ID4gKwo+ID4gPiArY29u
+ZmlnIFBIWV9GU0xfSU1YOE1fUENJRQo+ID4gPiArICAgICAgIHRyaXN0YXRlICJGcmVlc2NhbGUg
+aS5NWDggUENJRSBQSFkiCj4gPgo+ID4gQWJvdmUgZGVzY3JpcHRpb24gaXMgbWlzc2luZyB0aGUg
+TSBhcyBpbiBpLk1YIDhNLgo+IFtSaWNoYXJkIFpodV0gT2theSwgd291bGQgYmUgYWRkZWQgbGF0
+ZXIuCj4gVGhhbmtzLgo+Cj4gPgo+ID4gPiArICAgICAgIGRlcGVuZHMgb24gT0YgJiYgSEFTX0lP
+TUVNCj4gPiA+ICsgICAgICAgc2VsZWN0IEdFTkVSSUNfUEhZCj4gPiA+ICsgICAgICAgZGVmYXVs
+dCBBUkNIX01YQyAmJiBBUk02NAo+ID4gPiArICAgICAgIGhlbHAKPiA+ID4gKyAgICAgICAgIEVu
+YWJsZSB0aGlzIHRvIGFkZCBzdXBwb3J0IGZvciB0aGUgUENJRSBQSFkgYXMgZm91bmQgb24KPiA+
+ID4gKyAgICAgICAgIGkuTVg4TSBmYW1pbHkgb2YgU09Dcy4KPiA+ID4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvcGh5L2ZyZWVzY2FsZS9NYWtlZmlsZQo+ID4gPiBiL2RyaXZlcnMvcGh5L2ZyZWVzY2Fs
+ZS9NYWtlZmlsZSBpbmRleCAxZDAyZTM4NjliNDUuLjU1ZDA3Yzc0MmFiMAo+ID4gPiAxMDA2NDQK
+PiA+ID4gLS0tIGEvZHJpdmVycy9waHkvZnJlZXNjYWxlL01ha2VmaWxlCj4gPiA+ICsrKyBiL2Ry
+aXZlcnMvcGh5L2ZyZWVzY2FsZS9NYWtlZmlsZQo+ID4gPiBAQCAtMSwzICsxLDQgQEAKPiA+ID4g
+ICMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAtb25seQo+ID4gPiAgb2JqLSQoQ09O
+RklHX1BIWV9GU0xfSU1YOE1RX1VTQikgICAgICAgKz0KPiA+IHBoeS1mc2wtaW14OG1xLXVzYi5v
+Cj4gPiA+ICBvYmotJChDT05GSUdfUEhZX01JWEVMX01JUElfRFBIWSkgICAgICArPQo+ID4gcGh5
+LWZzbC1pbXg4LW1pcGktZHBoeS5vCj4gPiA+ICtvYmotJChDT05GSUdfUEhZX0ZTTF9JTVg4TV9Q
+Q0lFKSAgICAgICArPQo+ID4gcGh5LWZzbC1pbXg4bS1wY2llLm8KPiA+ID4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtLXBjaWUuYwo+ID4gPiBiL2RyaXZl
+cnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtLXBjaWUuYwo+ID4gPiBuZXcgZmlsZSBtb2Rl
+IDEwMDY0NAo+ID4gPiBpbmRleCAwMDAwMDAwMDAwMDAuLjRiNDQwMmVhZGRjYwo+ID4gPiAtLS0g
+L2Rldi9udWxsCj4gPiA+ICsrKyBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDht
+LXBjaWUuYwo+ID4gPiBAQCAtMCwwICsxLDIzNCBAQAo+ID4gPiArLy8gU1BEWC1MaWNlbnNlLUlk
+ZW50aWZpZXI6IEdQTC0yLjArCj4gPiA+ICsvKgo+ID4gPiArICogQ29weXJpZ2h0IDIwMjEgTlhQ
+Cj4gPiA+ICsgKi8KPiA+ID4gKwo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L2Nsay5oPgo+ID4gPiAr
+I2luY2x1ZGUgPGxpbnV4L2lvLmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvaW9wb2xsLmg+Cj4g
+PiA+ICsjaW5jbHVkZSA8bGludXgvZGVsYXkuaD4KPiA+ID4gKyNpbmNsdWRlIDxsaW51eC9tZmQv
+c3lzY29uLmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvbWZkL3N5c2Nvbi9pbXg3LWlvbXV4Yy1n
+cHIuaD4KPiA+ID4gKyNpbmNsdWRlIDxsaW51eC9tb2R1bGUuaD4KPiA+ID4gKyNpbmNsdWRlIDxs
+aW51eC9waHkvcGh5Lmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvcGxhdGZvcm1fZGV2aWNlLmg+
+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvcmVnbWFwLmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgv
+cmVzZXQuaD4KPiA+ID4gKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9waHkvcGh5LWlteDgtcGNpZS5o
+Pgo+ID4gPiArCj4gPiA+ICsjZGVmaW5lIElNWDhNTV9QQ0lFX1BIWV9DTU5fUkVHMDYxICAgICAw
+eDE4NCAjZGVmaW5lCj4gPiA+ICtBTkFfUExMX0NMS19PVVRfVE9fRVhUX0lPX0VOICBCSVQoMCkg
+I2RlZmluZQo+ID4gPiArSU1YOE1NX1BDSUVfUEhZX0NNTl9SRUcwNjIgICAgIDB4MTg4ICNkZWZp
+bmUKPiA+ID4gK0FOQV9QTExfQ0xLX09VVF9UT19FWFRfSU9fU0VMIEJJVCgzKSAjZGVmaW5lCj4g
+PiA+ICtJTVg4TU1fUENJRV9QSFlfQ01OX1JFRzA2MyAgICAgMHgxOEMgI2RlZmluZQo+ID4gPiAr
+QVVYX1BMTF9SRUZDTEtfU0VMX1NZU19QTEwgICAgR0VOTUFTSyg3LCA2KSAjZGVmaW5lCj4gPiA+
+ICtJTVg4TU1fUENJRV9QSFlfQ01OX1JFRzA2NCAgICAgMHgxOTAKPiA+ICNkZWZpbmUgIEFOQV9B
+VVhfUlhfVFhfU0VMX1RYCj4gPiA+ICtCSVQoNykKPiA+ICNkZWZpbmUgIEFOQV9BVVhfUlhfVEVS
+TV9HTkRfRU4gICAgICAgICAgICAgICAgQklUKDMpCj4gPiAjZGVmaW5lCj4gPiA+ICtBTkFfQVVY
+X1RYX1RFUk0gICAgICAgICAgICAgICBCSVQoMikgI2RlZmluZQo+ID4gPiArSU1YOE1NX1BDSUVf
+UEhZX0NNTl9SRUcwNjUgICAgIDB4MTk0Cj4gPiAjZGVmaW5lICBBTkFfQVVYX1JYX1RFUk0KPiA+
+ID4gKyhCSVQoNykgfCBCSVQoNCkpCj4gPiAjZGVmaW5lICBBTkFfQVVYX1RYX0xWTAo+ID4gPiAr
+R0VOTUFTSygzLCAwKSAjZGVmaW5lCj4gPiBJTVg4TU1fUENJRV9QSFlfQ01OX1JFRzc1ICAgICAg
+MHgxRDQgI2RlZmluZQo+ID4gPiArUENJRV9QSFlfQ01OX1JFRzc1X1BMTF9ET05FICAgMHgzICNk
+ZWZpbmUKPiA+IFBDSUVfUEhZX1RSU1ZfUkVHNQo+ID4gPiArMHg0MTQgI2RlZmluZSAgUENJRV9Q
+SFlfVFJTVl9SRUc1X0dFTjFfREVFTVAgMHgyRCAjZGVmaW5lCj4gPiA+ICtQQ0lFX1BIWV9UUlNW
+X1JFRzYgICAgICAgICAgICAgMHg0MTggI2RlZmluZQo+ID4gPiArUENJRV9QSFlfVFJTVl9SRUc2
+X0dFTjJfREVFTVAgMHhGCj4gPiA+ICsKPiA+ID4gKyNkZWZpbmUgSU1YOE1NX0dQUl9QQ0lFX1JF
+Rl9DTEtfU0VMICAgIEdFTk1BU0soMjUsIDI0KQo+ID4gI2RlZmluZQo+ID4gPiArSU1YOE1NX0dQ
+Ul9QQ0lFX1JFRl9DTEtfUExMCj4gPiA+ICtGSUVMRF9QUkVQKElNWDhNTV9HUFJfUENJRV9SRUZf
+Q0xLX1NFTCwgMHgzKSAjZGVmaW5lCj4gPiA+ICtJTVg4TU1fR1BSX1BDSUVfUkVGX0NMS19FWFQK
+PiA+ID4gK0ZJRUxEX1BSRVAoSU1YOE1NX0dQUl9QQ0lFX1JFRl9DTEtfU0VMLCAweDIpICNkZWZp
+bmUKPiA+ID4gK0lNWDhNTV9HUFJfUENJRV9BVVhfRU4gICAgICAgICBCSVQoMTkpICNkZWZpbmUK
+PiA+ID4gK0lNWDhNTV9HUFJfUENJRV9DTU5fUlNUICAgICAgICAgICAgICAgIEJJVCgxOCkKPiA+
+ICNkZWZpbmUKPiA+ID4gK0lNWDhNTV9HUFJfUENJRV9QT1dFUl9PRkYgICAgICBCSVQoMTcpICNk
+ZWZpbmUKPiA+IElNWDhNTV9HUFJfUENJRV9TU0NfRU4KPiA+ID4gK0JJVCgxNikgI2RlZmluZQo+
+ID4gSU1YOE1NX0dQUl9QQ0lFX0FVWF9FTl9PVkVSUklERSAgICAgICAgQklUKDkpCj4gPiA+ICsK
+PiA+ID4gK3N0cnVjdCBpbXg4X3BjaWVfcGh5IHsKPiA+ID4gKyAgICAgICB2b2lkIF9faW9tZW0g
+ICAgICAgICAgICAqYmFzZTsKPiA+ID4gKyAgICAgICBzdHJ1Y3QgY2xrICAgICAgICAgICAgICAq
+Y2xrOwo+ID4gPiArICAgICAgIHN0cnVjdCBwaHkgICAgICAgICAgICAgICpwaHk7Cj4gPiA+ICsg
+ICAgICAgc3RydWN0IHJlZ21hcCAgICAgICAgICAgKmlvbXV4Y19ncHI7Cj4gPiA+ICsgICAgICAg
+c3RydWN0IHJlc2V0X2NvbnRyb2wgICAgKnJlc2V0Owo+ID4gPiArICAgICAgIHUzMiAgICAgICAg
+ICAgICAgICAgICAgIHJlZmNsa19wYWRfbW9kZTsKPiA+ID4gKyAgICAgICB1MzIgICAgICAgICAg
+ICAgICAgICAgICB0eF9kZWVtcGhfZ2VuMTsKPiA+ID4gKyAgICAgICB1MzIgICAgICAgICAgICAg
+ICAgICAgICB0eF9kZWVtcGhfZ2VuMjsKPiA+ID4gKyAgICAgICBib29sICAgICAgICAgICAgICAg
+ICAgICBjbGtyZXFfdW51c2VkOyB9Owo+ID4gPiArCj4gPiA+ICtzdGF0aWMgaW50IGlteDhfcGNp
+ZV9waHlfaW5pdChzdHJ1Y3QgcGh5ICpwaHkpIHsKPiA+ID4gKyAgICAgICBpbnQgcmV0Owo+ID4g
+PiArICAgICAgIHUzMiB2YWwsIHBhZF9tb2RlOwo+ID4gPiArICAgICAgIHN0cnVjdCBpbXg4X3Bj
+aWVfcGh5ICppbXg4X3BoeSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ID4gPiArCj4gPiA+ICsg
+ICAgICAgcmVzZXRfY29udHJvbF9hc3NlcnQoaW14OF9waHktPnJlc2V0KTsKPiA+ID4gKwo+ID4g
+PiArICAgICAgIHBhZF9tb2RlID0gaW14OF9waHktPnJlZmNsa19wYWRfbW9kZTsKPiA+ID4gKyAg
+ICAgICAvKiBTZXQgQVVYX0VOX09WRVJSSURFIDEnYjAsIHdoZW4gdGhlIENMS1JFUSMgaXNuJ3QK
+PiA+IGhvb2tlZCAqLwo+ID4gPiArICAgICAgIHJlZ21hcF91cGRhdGVfYml0cyhpbXg4X3BoeS0+
+aW9tdXhjX2dwciwKPiA+IElPTVVYQ19HUFIxNCwKPiA+ID4KPiA+ICsgICAgICAgICAgICAgICAg
+ICAgICAgICAgIElNWDhNTV9HUFJfUENJRV9BVVhfRU5fCj4gPiBPVkVSUklERSwKPiA+ID4gKyAg
+ICAgICAgICAgICAgICAgICAgICAgICAgaW14OF9waHktPmNsa3JlcV91bnVzZWQgPwo+ID4gPiAr
+ICAgICAgICAgICAgICAgICAgICAgICAgICAwIDoKPiA+IElNWDhNTV9HUFJfUENJRV9BVVhfRU5f
+T1ZFUlJJREUpOwo+ID4gPiArICAgICAgIHJlZ21hcF91cGRhdGVfYml0cyhpbXg4X3BoeS0+aW9t
+dXhjX2dwciwKPiA+IElPTVVYQ19HUFIxNCwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAg
+ICAgSU1YOE1NX0dQUl9QQ0lFX0FVWF9FTiwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAg
+ICAgcGFkX21vZGUgPT0KPiA+IElNWDhfUENJRV9SRUZDTEtfUEFEX0lOUFVUID8KPiA+ID4gKyAg
+ICAgICAgICAgICAgICAgICAgICAgICAgSU1YOE1NX0dQUl9QQ0lFX0FVWF9FTiA6Cj4gPiAwKTsK
+PiA+Cj4gPiBWMyBoYWQgSU1YOE1NX0dQUl9QQ0lFX0FVWF9FTiBhbHdheXMgZW5hYmxlZC4gVHVy
+bnMgb3V0IFY0Cj4gPiBzdG9wcGVkIHdvcmtpbmcgZm9yIG91ciBvdXRwdXQgdXNlLWNhc2UgYXMg
+aXQgb25seSBlbmFibGVzIGl0IGZvciB0aGUgaW5wdXQKPiA+IHVzZS1jYXNlLiBJZiBJIGVuYWJs
+ZSB0aGlzIG9uZSBhbHdheXMgaXQgc3RhcnRzIHdvcmtpbmcgYWdhaW4uCj4gW1JpY2hhcmQgWmh1
+XSBTZWUgbXkgY29tbWVudCBhYm92ZS4KPiBTb3JyeSB0byBicmluZyB0aGUgcmVncmVzc2lvbiBv
+biB5b3VyIGJvYXJkLgo+CgpNYXJjZWwsCgpZb3VyIGJvYXJkIGRvZXMgbm90IHVzZSBhbiBleHRl
+cm5hbCBjbGssIGJ1dCBkb2VzIGl0IGhvb2sgdXAgQ0xLUkVRIwpmcm9tIHRoZSBzb2NrZXQgdG8g
+ZWl0aGVyIEkyQzRfU0NMIG9yIFVBUlQ0X1JYRCBhbmQgcGluIG11eGVkIGFzIHN1Y2g/CgpGb3Ig
+bXkgYm9hcmQgdGhhdCB1c2VzIGFuIGV4dGVybmFsIGNsayBhbmQgZG9lcyBub3QgY29ubmVjdCBD
+TEtSRVEjIHRvCnRoZSBJTVg4TU0gSSBuZWVkIHRvIGRpc2FibGUgdGhhdCBiaXQuIEFzIFJpY2hh
+cmQgc2F5cyB3ZSBoYXZlIGludmFsaWQKZG9jdW1lbnRhdGlvbiBmb3IgdGhlc2UgYml0cyB1bmZv
+cnR1bmF0ZWx5IHdoaWNoIGlzIG5vdCBoZWxwaW5nLgoKUmljaGFyZCwgd2hlbiB3ZSBkbyBmaWd1
+cmUgb3V0IHByb3BlciBkb2N1bWVudGF0aW9uIGZvciB0aGVzZSBiaXRzIEkKc3VnZ2VzdCB5b3Ug
+YWxzbyBhZGQgYSBjb21tZW50IGJsb2NrIHJpZ2h0IGFib3ZlIHRoZWlyICNkZWZpbmVzIGluIHRo
+ZQpwaHkgZHJpdmVyIHdpdGggdGhlIGNvcnJlY3QgZG9jdW1lbnRhdGlvbiB0byBhdm9pZCBmdXR1
+cmUgY29uZnVzaW9uLgpOWFAgaGFzIGhhZCBzbyBtYW55IG1pc3Rha2VzIGluIHRoZSB2YXJpb3Vz
+IElNWDhNIFJNJ3MgYW5kIEkgZmVhciB0aGV5CndpbGwgbmV2ZXIgZ2V0IGZpeGVkLgoKQmVzdCBy
+ZWdhcmRzLAoKVGltCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1waHkK
