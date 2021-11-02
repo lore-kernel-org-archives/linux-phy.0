@@ -2,14 +2,14 @@ Return-Path: <SRS0=Fgqk=PV=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 72DE0C433F5
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Nov 2021 16:40:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E32DAC433FE
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Nov 2021 16:41:26 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3771660E90
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Nov 2021 16:40:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3771660E90
+	by mail.kernel.org (Postfix) with ESMTPS id A9D4460EE9
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Nov 2021 16:41:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A9D4460EE9
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,62 +18,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FBx2ddxO8iyajzqiAKhmIu79/ICbwcRzcva84F9L1uA=; b=jsaLFXTVwHqJ6l
-	wPL/nM663uVjoRdHaY1iNGPdM8zcY+knpMefzuCGZvTMu4lFKc67v5mVDGXtOe13SrVVMw1U5J1cg
-	GDEH9Qd4zKQX8kG+nmJnUmLVr5pUufi+kkhICkoZErCNZ16oO25NCCNzyyE3cyV4gxgS7Vh+kr/Nc
-	s1b544P9nWbnoOUMQBbpnWjxyUeTG2BynDKZA+5pxHef+YnpJV+LLdURRwdQVl+700urthp0WwOFA
-	mX6X9ZJ5a4mHBaX/t2oAMIvrEL5GYLOHBABLJPW+xBwhynDWO1nYd7SSkVyA0bZ5yaMc5vHRmwSeK
-	vgubCK3oKwiNNEra5RlQ==;
+	List-Owner; bh=NsKzpEYnzlz78WecrEY2yIb8lanBZrlh05NMf/8kjAU=; b=C+pFNbJjIC9Iwe
+	of5EvN3Rx/wwv8G5fd/9NkM0FVc2YsQu5yIVQiOFdrVSYkOCQr0xStV4m4qQQuMK/C5VCaq7alpG/
+	Yra+AHQaf+D5NW23QLZsOo81m/2ucl9nDDu+e/Ll6AfzbvH/Ccygscnl0fyNztgH/EJZOVixhorse
+	e0mSqhUp91sFxcThQbDDW8I6gGpSFs/TeqJirMlMQkpFdkww/aMWRX2THy0SJEYU1X84+FqG0rnmL
+	bMAnm3wUTp+FsbQlTtjY0fNuMM6M5qER8ZlLj2TtQNXjI3Clhea/R9miECYICQ5LhPb1n0RhYFkQu
+	tcGe7BUs7KRq5uluTC4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mhwq8-002Jwb-Ny; Tue, 02 Nov 2021 16:40:48 +0000
-Received: from mail-ot1-f52.google.com ([209.85.210.52])
+	id 1mhwqk-002K65-6X; Tue, 02 Nov 2021 16:41:26 +0000
+Received: from mail-ot1-f54.google.com ([209.85.210.54])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mhwq5-002JvF-D8; Tue, 02 Nov 2021 16:40:47 +0000
-Received: by mail-ot1-f52.google.com with SMTP id
- v2-20020a05683018c200b0054e3acddd91so30797604ote.8; 
- Tue, 02 Nov 2021 09:40:45 -0700 (PDT)
+ id 1mhwqh-002K54-Qv; Tue, 02 Nov 2021 16:41:24 +0000
+Received: by mail-ot1-f54.google.com with SMTP id
+ 107-20020a9d0a74000000b00553bfb53348so30894404otg.0; 
+ Tue, 02 Nov 2021 09:41:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=e5GlJ8JHBJ/9O+bLCp/KS0OxnO+d96GJAcEfTy+w1v8=;
- b=N04qv7Qlo7oTq3zVwrUFph8wd1rMbG6NC6CizisexC+wWhJ2Gjc2sa0fKuHBi3SJzH
- jSc3ny6rhP1VEs83Vy3fipkntKMFy12LHbyXJq6Rbq6W1S2Ga1BjABYJX0KmqasxcpiE
- zyNChyMGU1Z4dccKzNZ1rrrK9EQZ6CbZNkrFSm+MZ1sIPsKlGkaSv+mfA8WyWlqUyl+c
- ccxoRznUMusv7cZuhdxY9lJxMmvdGLd7Ni125kGAxvcRnlvZGWmmS2nB1Yb3PO3v29GM
- MqMlluNw2aIuKla3kunuRT24t92gDkeMZ92WeriA5E/m/Cud4YTI3rKG+ZwT3BEbK5Ik
- UEyQ==
-X-Gm-Message-State: AOAM530meYmkuaWGxbANhq0PH3h5kreDojtQm+OTf0HmSEkkA98+/dTt
- EjlSeSqjIlHMqzRPtUnwIQ==
-X-Google-Smtp-Source: ABdhPJzE0adcVTqLogDw/8gNDG3NR3Ik4X8ekV4rjvUQCgy7mvTK9W/vxhu/1hcxpHE33/f8ncxwrQ==
-X-Received: by 2002:a9d:847:: with SMTP id 65mr23693262oty.326.1635871244046; 
- Tue, 02 Nov 2021 09:40:44 -0700 (PDT)
+ bh=p4xN9jvUs2HHItSG3zOdut7t8WiHJZSDYDMDaJgMKR0=;
+ b=hoCjbhmHKBfY3XIFOfEC7eEzhWxRt6sRgNVGAJXYlmWomBt5lupNpMnVGyjN3FFvUg
+ 01TVRaO/pien/4xPuav4yh8y7GtRgL78LNTQnbZR7EM/Ra6vNcAd1sWLfkL+nFmys68I
+ Blg54MPMIa+g3ScFU9CBdlfTEDX6wSMKUBX3dNbG/rZ6aGxz/LC7ZIRXzRUpS0RNqldf
+ /b4hc1rBNM64VlBBZNNE7Yy8iT+nqOYDl1q00JYfYtalF1+7JNgMFiVEpu1A7/8OWdXk
+ rmcqmioZl8ZblNF5e8UTDNnXS5YcxoQ2IWcTbWrZ8nAcQjtm9uEF+C1AfNi4Vm+URODr
+ rm5A==
+X-Gm-Message-State: AOAM530vdjPsiFHgf7u4BU6arFrqTDLaA3/zsbxfTWgXjYzM4djvS+pc
+ UfsIzIKi+Lhn3zb18Ymm7g==
+X-Google-Smtp-Source: ABdhPJxgJbDrX4P/USnAKFJxsIIAp3I+zRht84aM87QgsRXfBjioI3ZjPnMCBQ8Ja6zU/xGpsn2srg==
+X-Received: by 2002:a9d:6c0c:: with SMTP id f12mr26004890otq.275.1635871283186; 
+ Tue, 02 Nov 2021 09:41:23 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id bo35sm3941838oib.40.2021.11.02.09.40.42
+ by smtp.gmail.com with ESMTPSA id p124sm3321331oib.35.2021.11.02.09.41.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 02 Nov 2021 09:40:43 -0700 (PDT)
-Received: (nullmailer pid 3033197 invoked by uid 1000);
- Tue, 02 Nov 2021 16:40:42 -0000
-Date: Tue, 2 Nov 2021 11:40:42 -0500
+ Tue, 02 Nov 2021 09:41:22 -0700 (PDT)
+Received: (nullmailer pid 3034467 invoked by uid 1000);
+ Tue, 02 Nov 2021 16:41:21 -0000
+Date: Tue, 2 Nov 2021 11:41:21 -0500
 From: Rob Herring <robh@kernel.org>
 To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: l.stach@pengutronix.de, marcel.ziswiler@toradex.com, tharvey@gateworks.com,
- kishon@ti.com, vkoul@kernel.org, galak@kernel.crashing.org,
- shawnguo@kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com
-Subject: Re: [PATCH v5 2/8] dt-bindings: phy: Add imx8 pcie phy driver support
-Message-ID: <YYFqCptm9m7Onbrv@robh.at.kernel.org>
+Cc: l.stach@pengutronix.de, vkoul@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, galak@kernel.crashing.org, shawnguo@kernel.org,
+ tharvey@gateworks.com, devicetree@vger.kernel.org, linux-imx@nxp.com,
+ kishon@ti.com, linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de,
+ marcel.ziswiler@toradex.com
+Subject: Re: [PATCH v5 3/8] dt-bindings: imx6q-pcie: Add PHY phandles and
+ name properties
+Message-ID: <YYFqMaByELGuWOCu@robh.at.kernel.org>
 References: <1635820355-27009-1-git-send-email-hongxing.zhu@nxp.com>
- <1635820355-27009-3-git-send-email-hongxing.zhu@nxp.com>
+ <1635820355-27009-4-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1635820355-27009-3-git-send-email-hongxing.zhu@nxp.com>
+In-Reply-To: <1635820355-27009-4-git-send-email-hongxing.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211102_094045_474776_FCC20BFC 
-X-CRM114-Status: GOOD (  20.37  )
+X-CRM114-CacheID: sfid-20211102_094123_894548_364BF56F 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,133 +92,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 02, 2021 at 10:32:29AM +0800, Richard Zhu wrote:
-> Add dt-binding for the standalone i.MX8 PCIe PHY driver.
+On Tue, 02 Nov 2021 10:32:30 +0800, Richard Zhu wrote:
+> i.MX8MM PCIe has the PHY. Add a PHY phandle and name properties
+> in the binding document.
 > 
 > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 > Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 > Reviewed-by: Tim Harvey <tharvey@gateworks.com>
 > Tested-by: Tim Harvey <tharvey@gateworks.com>
 > ---
->  .../bindings/phy/fsl,imx8-pcie-phy.yaml       | 95 +++++++++++++++++++
->  1 file changed, 95 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
+>  Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-> new file mode 100644
-> index 000000000000..b9f89e343b0b
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-> @@ -0,0 +1,95 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/fsl,imx8-pcie-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale i.MX8 SoC series PCIe PHY Device Tree Bindings
-> +
-> +maintainers:
-> +  - Richard Zhu <hongxing.zhu@nxp.com>
-> +
-> +properties:
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  compatible:
-> +    enum:
-> +      - fsl,imx8mm-pcie-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: PHY module clock
 
-The description doesn't really add much. Just 'maxItems: 1'.
-
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ref
-> +
-> +  resets:
-> +    items:
-> +      - description: Phandles to PCIe-related reset lines exposed by SRC
-> +          IP block.
-
-More than 1 phandle? The schema says only 1. Again, for only 1, you can 
-use just 'maxItems: 1'.
-
-> +
-> +  reset-names:
-> +    items:
-> +      - const: pciephy
-> +
-> +  fsl,refclk-pad-mode:
-> +    description: |
-> +      Specifies the mode of the refclk pad used. It can be UNUSED(PHY
-> +      refclock is derived from SoC internal source), INPUT(PHY refclock
-> +      is provided externally via the refclk pad) or OUTPUT(PHY refclock
-> +      is derived from SoC internal source and provided on the refclk pad).
-> +      Refer include/dt-bindings/phy/phy-imx8-pcie.h for the constants
-> +      to be used.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    enum: [ 0, 1, 2 ]
-> +
-> +  fsl,tx-deemph-gen1:
-> +    description: Gen1 De-emphasis value (optional required).
-
-Optional or required?
-
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    default: 0
-> +
-> +  fsl,tx-deemph-gen2:
-> +    description: Gen2 De-emphasis value (optional required).
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    default: 0
-> +
-> +  fsl,clkreq-unsupported:
-> +    type: boolean
-> +    description: A boolean property indicating the CLKREQ# signal is
-> +      not supported in the board design (optional)
-> +
-> +required:
-> +  - "#phy-cells"
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - fsl,refclk-pad-mode
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx8mm-clock.h>
-> +    #include <dt-bindings/phy/phy-imx8-pcie.h>
-> +    #include <dt-bindings/reset/imx8mq-reset.h>
-> +
-> +    pcie_phy: pcie-phy@32f00000 {
-> +            compatible = "fsl,imx8mm-pcie-phy";
-> +            reg = <0x32f00000 0x10000>;
-> +            clocks = <&clk IMX8MM_CLK_PCIE1_PHY>;
-> +            clock-names = "ref";
-> +            assigned-clocks = <&clk IMX8MM_CLK_PCIE1_PHY>;
-> +            assigned-clock-rates = <100000000>;
-> +            assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_100M>;
-> +            resets = <&src IMX8MQ_RESET_PCIEPHY>;
-> +            reset-names = "pciephy";
-> +            fsl,refclk-pad-mode = <IMX8_PCIE_REFCLK_PAD_INPUT>;
-> +            #phy-cells = <0>;
-> +    };
-> +...
-> -- 
-> 2.25.1
-> 
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
