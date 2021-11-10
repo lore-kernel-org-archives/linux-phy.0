@@ -2,63 +2,141 @@ Return-Path: <SRS0=44yZ=P5=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4204AC433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Nov 2021 19:45:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E93BAC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Nov 2021 19:50:05 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0F20C61159
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Nov 2021 19:45:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 0F20C61159
+	by mail.kernel.org (Postfix) with ESMTPS id B156061106
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Nov 2021 19:50:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org B156061106
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hjTfOjMaHs0pY4sPbOW4j9K6a2qh8rcoHdyI1pgCycI=; b=nwoYUsZTqbigXH
-	v6wTG5VF35Gjq0M1v0Kp4ebZJLMPqRYM0hvVUtvivtpUmiYXTZ7gKNH4uVn48wWCMlCMn6PUZWBnY
-	l4r+578ujIxozDaKqe+uunvcEJaC5yBPHOd6srndMM2fVxDzHqFs2DyoVudcIScgAa+5Rll+Dg6F5
-	97aCweJ+sQW/yFMNFMg4aAVyRKu1V1jcCUQyBaobv7/rl1ur7pIHb/p+4h8o6mw8PcaXZ/1Tiil0N
-	UTAn2C/p8rGkbwO549RIvL5O71SDMh30Vle6OSqQsZK/ewHgnXlGfG61nTuca+eiNzv2xXV7tDJBQ
-	9e5LlWy3dmTzZaeKfYVg==;
+	List-Owner; bh=vcCsvMYZVyumuA85Eu59S+pUqYODN/bWFx95g+z2yDs=; b=r1y3Sd4rJ7S/uN
+	EDIKM/ecRSw6hZ7MMKvhogQuynpYYZnYZW465xLu1HmREE4Iypil2XC97b32Ll3EIaQhkeUSanRmU
+	k0Od/Kk8TxEct9a8uVivKwKt0GzbPWkRyhKQ5XHmIb0zgbDl1/JC4LsdbTB8fXiD1P+BUgLEgx8nJ
+	Eb4LkZ4yHyKB+ZRLPDSHvJ+cpdrbDOrw+Bt3SPGFSPnj9s51QoJXZdjGj46lW0gnD7G34ow8f/nYs
+	+MFUZzWwsa9qgzj05ZolFtf2Grv5p9AxcONMi0aI1gezyBIN4fhzEFVgpW60bQV2yGgrioo6T9NOc
+	GzffwjYB1dqi4Yp3etiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mktX2-006Bml-I8; Wed, 10 Nov 2021 19:45:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mktbh-006Cpf-7C; Wed, 10 Nov 2021 19:50:05 +0000
+Received: from mail-ot1-f44.google.com ([209.85.210.44])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mktWz-006BlH-JJ
- for linux-phy@lists.infradead.org; Wed, 10 Nov 2021 19:45:14 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id CA89361106;
- Wed, 10 Nov 2021 19:45:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1636573512;
- bh=lCMVFrWs2pqKBwgVHeDo63j1cexn6AwkfVk+cp16e/E=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Yrz1TkMIptmftiaIc1HLpVZjxQIHGXCyIY//qO5SZHbGfL7ysWOtonwPOfv6HwYVt
- F6QuSpW78YDOpjsYA3WYNQBX+N8t+ZZXJ/CypU3a5FCYEuBVb7k3GXjMlvxQtxGFiH
- Y4VxMZEvxe+h6pbRSdMTq/gq3oNBqxBiPFE7fijIUJ3mv1j9D9MDbnQSrjIpabj7kP
- SM5lEcZugOSJmQYe2dvMub1QtCregVTlV2kCty9RuNBWNapF94mLvwwMOcYaX2C+UU
- s/HY7tg2Hh5WUNVlraLYMuLav+h/xEqPATVEl+ncc2PK5lSJvEl7DAA6GZE18sPVxp
- kFLatZCUCvZQg==
-Date: Wed, 10 Nov 2021 20:45:08 +0100
-From: Marek =?UTF-8?B?QmVow7pu?= <kabel@kernel.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- pali@kernel.org
-Subject: Re: [PATCH phy 0/6] Armada 3720 comphy native implementation
-Message-ID: <20211110204508.429a0441@thinkpad>
-In-Reply-To: <20211028184242.22105-1-kabel@kernel.org>
-References: <20211028184242.22105-1-kabel@kernel.org>
-X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
+ id 1mktbR-006CkK-J8; Wed, 10 Nov 2021 19:49:50 +0000
+Received: by mail-ot1-f44.google.com with SMTP id
+ q33-20020a056830442100b0055abeab1e9aso5529660otv.7; 
+ Wed, 10 Nov 2021 11:49:48 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Jffv+4OBBpjkkC43YZCngYWCvEJMwZVhqAxEmFK8L/I=;
+ b=oRqKVVwM9Ixh9G7Jb30gU7bVt7fQob07afgAsaU3oqckZLtehJN2bVKkp+pIuHlCH/
+ 0CjjQ9xH1ErukqNcrxztJuyCG63jcQ+A8hInwxsTKwY/IpQl9afjeDSD3A5kTL1NR0De
+ lp9sE32hAdNDrS5zn1fkl0GVYyQoP3jVA1VipIPF+4SDmMZc6dE9RGFI00rp4hAhhu8L
+ hBqY/NLQY+g/p6i65Kv56mmPF45U3VrJj5lKdnxApV7IB6QJUW8LMMkvnQYVh/grZxNe
+ E++q4+w1Du9z/4QaRJYesQiqVRXDX5uwxI914y12/X7+w2U4cOXNeuF1CgP7DErX9gbM
+ HP8g==
+X-Gm-Message-State: AOAM530woEZNLEf2kEl4Bs9kLlnL6B0/I5JJpKuTZsfjCfvy+FPOES3A
+ HlnRWp2j7Xmi3Ok0HSJuQQ==
+X-Google-Smtp-Source: ABdhPJyfVpmfG+ubS7aEU1ww03RUaTffAeDZHobEFdd7aYoPfW2ZAH5HMpiQ+tL5kGtHFO9Urrh52g==
+X-Received: by 2002:a9d:67c1:: with SMTP id c1mr1412382otn.299.1636573788340; 
+ Wed, 10 Nov 2021 11:49:48 -0800 (PST)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id p14sm130082oov.0.2021.11.10.11.49.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 10 Nov 2021 11:49:47 -0800 (PST)
+Received: (nullmailer pid 1843729 invoked by uid 1000);
+ Wed, 10 Nov 2021 19:49:44 -0000
+Date: Wed, 10 Nov 2021 13:49:44 -0600
+From: Rob Herring <robh@kernel.org>
+To: patrice.chotard@foss.st.com
+Cc: Sebastian Reichel <sre@kernel.org>, dri-devel@lists.freedesktop.org, 
+ thierry reding <thierry.reding@gmail.com>, linux-iio@vger.kernel.org, 
+ Paul Cercueil <paul@crapouillou.net>, herbert xu <herbert@gondor.apana.org.au>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-remoteproc@vger.kernel.org, 
+ linux-rtc@vger.kernel.org, linux-gpio@vger.kernel.org, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>, 
+ linux-mtd@lists.infradead.org, Fabien Dessenne <fabien.dessenne@foss.st.com>, 
+ Pierre-Yves MORDRET <pierre-yves.mordret@foss.st.com>,
+ "david s . miller" <davem@davemloft.net>, 
+ olivier moysan <olivier.moysan@foss.st.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>, 
+ Liam Girdwood <lgirdwood@gmail.com>, linux-clk@vger.kernel.org, 
+ michael turquette <mturquette@baylibre.com>,
+ Linus Walleij <linus.walleij@linaro.org>, 
+ Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, 
+ arnaud pouliquen <arnaud.pouliquen@foss.st.com>,
+ Jassi Brar <jassisinghbrar@gmail.com>, 
+ Viresh Kumar <viresh.kumar@linaro.org>, netdev@vger.kernel.org, 
+ Ahmad Fatoum <a.fatoum@pengutronix.de>,
+ linux-stm32@st-md-mailman.stormreply.com, 
+ linux-pm@vger.kernel.org, Amit Kucheria <amitk@kernel.org>,
+ dmaengine@vger.kernel.org, 
+ linux-usb@vger.kernel.org, dillon min <dillon.minfei@gmail.com>, 
+ yannick fertre <yannick.fertre@foss.st.com>, linux-watchdog@vger.kernel.org, 
+ ohad ben-cohen <ohad@wizery.com>, Le Ray <erwan.leray@foss.st.com>, 
+ "Rafael J . Wysocki" <rafael@kernel.org>, devicetree@vger.kernel.org, 
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>, linux-spi@vger.kernel.org,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, 
+ bjorn andersson <bjorn.andersson@linaro.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
+ linux-i2c@vger.kernel.org, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Jagan Teki <jagan@amarulasolutions.com>, 
+ benjamin gaignard <benjamin.gaignard@linaro.org>,
+ Jakub Kicinski <kuba@kernel.org>, 
+ david airlie <airlied@linux.ie>, alsa-devel@alsa-project.org, 
+ baolin wang <baolin.wang7@gmail.com>,
+ philippe cornu <philippe.cornu@foss.st.com>, 
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>, daniel vetter <daniel@ffwll.ch>,
+ linux-media@vger.kernel.org, 
+ Lee Jones <lee.jones@linaro.org>, maxime coquelin <mcoquelin.stm32@gmail.com>, 
+ Ludovic Barre <ludovic.barre@foss.st.com>, linux-crypto@vger.kernel.org, 
+ Jose Abreu <joabreu@synopsys.com>, linux-kernel@vger.kernel.org, 
+ Alessandro Zummo <a.zummo@towertech.it>, Zhang Rui <rui.zhang@intel.com>, 
+ jonathan cameron <jic23@kernel.org>, Matt Mackall <mpm@selenic.com>, 
+ alexandre torgue <alexandre.torgue@foss.st.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Vignesh Raghavendra <vigneshr@ti.com>, sam ravnborg <sam@ravnborg.org>,
+ Thomas Gleixner <tglx@linutronix.de>, 
+ Marek Vasut <marex@denx.de>, linux-phy@lists.infradead.org, 
+ Guenter Roeck <linux@roeck-us.net>, Richard Weinberger <richard@nod.at>, 
+ Lionel Debieve <lionel.debieve@foss.st.com>, vinod koul <vkoul@kernel.org>, 
+ Marc Zyngier <maz@kernel.org>,
+ Christophe Roullier <christophe.roullier@foss.st.com>, 
+ lars-peter clausen <lars@metafoo.de>, linux-serial@vger.kernel.org, 
+ pascal Paillet <p.paillet@foss.st.com>,
+ Hugues Fruchet <hugues.fruchet@foss.st.com>, 
+ Gabriel Fernandez <gabriel.fernandez@foss.st.com>, 
+ Christophe Kerello <christophe.kerello@foss.st.com>,
+ stephen boyd <sboyd@kernel.org>, 
+ Amelie Delaunay <amelie.delaunay@foss.st.com>, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v3 1/5] dt-bindings: timer: Update maintainers for
+ st,stm32-timer
+Message-ID: <YYwiWGn0ehnD4nDZ@robh.at.kernel.org>
+References: <20211110150144.18272-1-patrice.chotard@foss.st.com>
+ <20211110150144.18272-2-patrice.chotard@foss.st.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20211110150144.18272-2-patrice.chotard@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211110_114513_694201_8D382301 
-X-CRM114-Status: UNSURE (   5.10  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211110_114949_660667_B98B9395 
+X-CRM114-Status: GOOD (  13.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,15 +153,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Kishon,
+On Wed, 10 Nov 2021 16:01:40 +0100, patrice.chotard@foss.st.com wrote:
+> From: Patrice Chotard <patrice.chotard@foss.st.com>
+> 
+> Benjamin has left the company, add Fabrice and myself as maintainers.
+> 
+> Signed-off-by: Patrice Chotard <patrice.chotard@foss.st.com>
+> ---
+>  Documentation/devicetree/bindings/timer/st,stm32-timer.yaml | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
 
-since Miquel gave his Ack for this series, I would like to ask whether
-we could get this merged for 5.16. Theoretically it could still go in.
-Or do we still need to wait for Gregory's Ack?
-
-Thanks.
-
-Marek
+Applied, thanks!
 
 -- 
 linux-phy mailing list
