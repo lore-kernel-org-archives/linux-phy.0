@@ -1,15 +1,15 @@
-Return-Path: <SRS0=44yZ=P5=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Lyxf=P6=lists.infradead.org=linux-phy-bounces+linux-phy=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 73ACCC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Nov 2021 19:55:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1FA24C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Nov 2021 14:25:40 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 25D3D610D2
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Nov 2021 19:55:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 25D3D610D2
+	by mail.kernel.org (Postfix) with ESMTPS id DCBF161183
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Nov 2021 14:25:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org DCBF161183
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -18,123 +18,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b/muIDtk8g3e/AGLxfQFXFPLCjz7va9Cdffqez3TajI=; b=D103ax+94nGimf
-	vmYX2Mq14F84SfNlW4GvH+s45zeHevKsdnmJD6XPEMJ9mmXGnLYAuVphkGXn/XqawIRCIMeBGC4J8
-	cI7hVhHZotpBZztg9rOh3xs74g8zf682YZfCOqTR9Qv3gaalSH2D01wwLmV93NYtvLC34a1Zl1nUq
-	ww1TtiM7w9vtyNAw6ayIBD+tcd6f5kjpqvBFR5Dt4ABeZMR2/UECTSLW0NLRBMN5e2gm90rXxr0gH
-	IZQJ0PyoaayEtIMprQyYo35jK7N/f8ZzlVK7TGDcaO9J/tptLkhs78/ET6L3jdb9B8RFI5KsbA8EL
-	15dxpvNXgau9bFhKj3LA==;
+	List-Owner; bh=l/+IttOfB4CfOZzXB+ThhcCYB+wGkQo94ZiHTrEQ8f0=; b=pw8+HzzMCuF+hq
+	/o+PMq1vC+EJguwetyKVO9oBtO4u3WjB9thfL870tVog4IIG8ag8TUT3n2KNRfDdVA3pmChtJfXGq
+	jCzpOd667ahbX1gFbeKKE+UoZP/mBlGNDxZ24xraHO+I1rTtPm8+1VadWkKD5aVOtIDpM/o/JQEO5
+	AdCavhrTFRcVJul7RCW3vSRWo4hL1Hqy0fbyfxe0sSkUj+OGzZEnuk32fpPJN8rM7eI1R2vVtTdgP
+	egYlRUDA1Filvly+a9IG9dm44wc8LwreP2Ac89iU7QSQpI6fRP0rCJ5sTQD6Rsy/wYqeJzTDFbwvS
+	APBO0XNIKoN5B/8QUYfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mkth9-006FOn-HC; Wed, 10 Nov 2021 19:55:43 +0000
-Received: from mail-ot1-f43.google.com ([209.85.210.43])
+	id 1mlB1H-00890V-Fs; Thu, 11 Nov 2021 14:25:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mktf6-006EdU-TP; Wed, 10 Nov 2021 19:53:38 +0000
-Received: by mail-ot1-f43.google.com with SMTP id
- z2-20020a9d71c2000000b0055c6a7d08b8so5596967otj.5; 
- Wed, 10 Nov 2021 11:53:36 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=rtQL/sbdzpxz6Lu8ElJAZUiYQnGOPRjAvEo183EhEZQ=;
- b=PVxBAEehHcMDizxH1tWCOn4ubK+qIV+c4Qq6odCL1pRa3/u0daHP6iHAAWVyluX3z7
- Pb1X7gths3XZS3iLvfOfYRxEQOB8ddwglCMMejcLku0WODxH43n6klqKC/6hGEg8nqan
- 6q/rRHqIvuLEphCuytJcaf0hLUBfqWNA1F7N1mK8iT4xuwU1ebWy1RZlJk90I5epSaYF
- YTD+Og7HYfZOTQSsynupIw7qc2Diww/V+a+vrjhkomPklRAWVwVZEec+udl6ZfCOHwxn
- 0hgkedLQkw7X4+k672mn6dg4TutTTEol009YrZDarAhWJh2GTzVDMHbuDEjCjvZ66e+e
- RCQA==
-X-Gm-Message-State: AOAM533K9P7GFXpNpl3bFF4gDfKoxu9+7GqYHhck8uA0Rv6KQdpafRiC
- HfMZgD8Oc5c6EVKraAQh6w==
-X-Google-Smtp-Source: ABdhPJzPMoAqV3AUGDDa1G/mcQBg1/+e3vLu75Mv4kA30QovRpmA/hmvXuDtC6I5AysjT0t7pidUQg==
-X-Received: by 2002:a9d:6a4e:: with SMTP id h14mr1449816otn.134.1636574015905; 
- Wed, 10 Nov 2021 11:53:35 -0800 (PST)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id j7sm129827oon.13.2021.11.10.11.53.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Nov 2021 11:53:35 -0800 (PST)
-Received: (nullmailer pid 1864115 invoked by uid 1000);
- Wed, 10 Nov 2021 19:53:32 -0000
-Date: Wed, 10 Nov 2021 13:53:32 -0600
-From: Rob Herring <robh@kernel.org>
-To: patrice.chotard@foss.st.com
-Cc: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
- alexandre torgue <alexandre.torgue@foss.st.com>,
- jonathan cameron <jic23@kernel.org>, 
- Ahmad Fatoum <a.fatoum@pengutronix.de>,
- olivier moysan <olivier.moysan@foss.st.com>, 
- Amelie Delaunay <amelie.delaunay@foss.st.com>, Lee Jones <lee.jones@linaro.org>,
- linux-mtd@lists.infradead.org, linux-watchdog@vger.kernel.org, 
- Jassi Brar <jassisinghbrar@gmail.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>, 
- maxime coquelin <mcoquelin.stm32@gmail.com>, Matt Mackall <mpm@selenic.com>, 
- vinod koul <vkoul@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, 
- baolin wang <baolin.wang7@gmail.com>, linux-spi@vger.kernel.org, 
- david airlie <airlied@linux.ie>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- netdev@vger.kernel.org, 
- Fabrice Gasnier <fabrice.gasnier@foss.st.com>, ohad ben-cohen <ohad@wizery.com>,
- linux-gpio@vger.kernel.org, Jose Abreu <joabreu@synopsys.com>, 
- Le Ray <erwan.leray@foss.st.com>, herbert xu <herbert@gondor.apana.org.au>, 
- michael turquette <mturquette@baylibre.com>, 
- Christophe Kerello <christophe.kerello@foss.st.com>, 
- Gabriel Fernandez <gabriel.fernandez@foss.st.com>,
- Vignesh Raghavendra <vigneshr@ti.com>, 
- Christophe Roullier <christophe.roullier@foss.st.com>,
- linux-serial@vger.kernel.org, 
- Amit Kucheria <amitk@kernel.org>, "Rafael J . Wysocki" <rafael@kernel.org>, 
- Ludovic Barre <ludovic.barre@foss.st.com>,
- "david s . miller" <davem@davemloft.net>, 
- Lionel Debieve <lionel.debieve@foss.st.com>, linux-i2c@vger.kernel.org, 
- linux-remoteproc@vger.kernel.org, Guenter Roeck <linux@roeck-us.net>, 
- thierry reding <thierry.reding@gmail.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, 
- Sebastian Reichel <sre@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- philippe cornu <philippe.cornu@foss.st.com>, linux-rtc@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Hugues Fruchet <hugues.fruchet@foss.st.com>, 
- alsa-devel@alsa-project.org, Zhang Rui <rui.zhang@intel.com>, 
- linux-crypto@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>, 
- Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-iio@vger.kernel.org, 
- pascal Paillet <p.paillet@foss.st.com>, 
- Pierre-Yves MORDRET <pierre-yves.mordret@foss.st.com>, 
- Fabien Dessenne <fabien.dessenne@foss.st.com>, linux-pm@vger.kernel.org, 
- Paul Cercueil <paul@crapouillou.net>, stephen boyd <sboyd@kernel.org>, 
- dillon min <dillon.minfei@gmail.com>, devicetree@vger.kernel.org, 
- yannick fertre <yannick.fertre@foss.st.com>, linux-kernel@vger.kernel.org, 
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>, 
- linux-phy@lists.infradead.org, 
- benjamin gaignard <benjamin.gaignard@linaro.org>,
- sam ravnborg <sam@ravnborg.org>, 
- Jakub Kicinski <kuba@kernel.org>, linux-arm-kernel@lists.infradead.org, 
- Viresh Kumar <viresh.kumar@linaro.org>, Alessandro Zummo <a.zummo@towertech.it>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-clk@vger.kernel.org, 
- linux-stm32@st-md-mailman.stormreply.com, Richard Weinberger <richard@nod.at>, 
- Rob Herring <robh+dt@kernel.org>, Marek Vasut <marex@denx.de>, 
- arnaud pouliquen <arnaud.pouliquen@foss.st.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, Jagan Teki <jagan@amarulasolutions.com>, 
- dmaengine@vger.kernel.org, linux-media@vger.kernel.org, 
- daniel vetter <daniel@ffwll.ch>, Marc Zyngier <maz@kernel.org>, 
- bjorn andersson <bjorn.andersson@linaro.org>,
- lars-peter clausen <lars@metafoo.de>
-Subject: Re: [PATCH v3 2/5] dt-bindings: mfd: timers: Update maintainers for
- st,stm32-timers
-Message-ID: <YYwjPAoCtuM6iycz@robh.at.kernel.org>
-References: <20211110150144.18272-1-patrice.chotard@foss.st.com>
- <20211110150144.18272-3-patrice.chotard@foss.st.com>
+ id 1mlB1E-008907-AM
+ for linux-phy@lists.infradead.org; Thu, 11 Nov 2021 14:25:37 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 5BB226115A;
+ Thu, 11 Nov 2021 14:25:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1636640735;
+ bh=T9fPeI5hSmvm6ah9xqcY0vA6TnA3kEu6/Uv/xwCQeO0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=POwi3UztTyLqUhTRoNXV7ZeKacSz4f+f2Y0uC2Q9IrZuE0W2r2ByRpOGZVZ89VYMY
+ OlIjGvL+LNt7Kcg/ECY9/aJ3/kiL9SgMKoXBkiywTuzFfbB1Eoy13FxCeKoyz9CSIz
+ 923ujzaQ4wNaeaeS5wnySpcjsW2RxalRdZaxutXCNN4mzFWzrjgO2bWl+Sc8z4jdzJ
+ AKqMSfN4RrE9qGJjdquQwX6p1nn4TIpAVjzhcDJMzDlolccDX3k8e+D1hiMfagu9ok
+ HnlqPSh5X1nCTFyj0MH59yzjWGr58uyKOB6qd266mRjqvtrGr4bjnQnyH0pLzmXjNy
+ c3Obx4DNj5JYA==
+Date: Thu, 11 Nov 2021 19:55:29 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-phy@lists.infradead.org, pali@kernel.org
+Subject: Re: [PATCH phy 0/6] Armada 3720 comphy native implementation
+Message-ID: <YY0n2YdocuzVvrhy@matsya>
+References: <20211028184242.22105-1-kabel@kernel.org>
+ <20211110204508.429a0441@thinkpad>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211110150144.18272-3-patrice.chotard@foss.st.com>
+In-Reply-To: <20211110204508.429a0441@thinkpad>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211110_115337_001695_A5E068E7 
-X-CRM114-Status: GOOD (  13.67  )
+X-CRM114-CacheID: sfid-20211111_062536_395545_D823FD74 
+X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,27 +71,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 10 Nov 2021 16:01:41 +0100, patrice.chotard@foss.st.com wrote:
-> From: Patrice Chotard <patrice.chotard@foss.st.com>
-> 
-> Benjamin has left the company, remove his name from maintainers.
-> 
-> Signed-off-by: Patrice Chotard <patrice.chotard@foss.st.com>
-> ---
->  Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml | 1 -
->  1 file changed, 1 deletion(-)
-> 
+On 10-11-21, 20:45, Marek Beh=FAn wrote:
+> Hello Kishon,
+> =
 
-Lee indicated he was going to pick this one up, so:
+> since Miquel gave his Ack for this series, I would like to ask whether
+> we could get this merged for 5.16. Theoretically it could still go in.
+> Or do we still need to wait for Gregory's Ack?
 
-Acked-by: Rob Herring <robh@kernel.org>
+It is too late in the cycle for this. Phy PR was sent up to Greg
+sometime back.. I will review after rc1 is out and do the needful.
 
--- 
+Thanks
+-- =
+
+~Vinod
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
