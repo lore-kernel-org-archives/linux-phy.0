@@ -2,156 +2,75 @@ Return-Path: <SRS0=yge3=P7=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4C0F5C43219
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Nov 2021 07:42:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B2FB9C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Nov 2021 08:40:41 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D46E560FE3
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Nov 2021 07:42:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D46E560FE3
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	by mail.kernel.org (Postfix) with ESMTPS id 3AD6460FE7
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Nov 2021 08:40:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3AD6460FE7
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=pengutronix.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eBtkEIvPT7URp6qYOx7GCh4ROcTlpE0ylQGDs/bqBTw=; b=o6JBzX34tw3u9x
-	oFUwOKQqPfJdtTLU6JYRASWsagRf7d+49iXSNRdtlwX0s5/3WM98C1F29gV65xxIA/hz+9cDukt+n
-	8vT1ZHbRdY42Y0lO1l2cxjYq3SU0pc1wz7VdJOR63+a7NhXhu4BdIhLC+JltYYkdJ58sslk22pAam
-	rQcPyY2cUtUxiNRcMftQOCJMLUrSIbAUL0G4fqFpqNgHw+lkyoQthtrz+Q4fBxfspepnZ/4J1rn+7
-	cMyVOVwswTQyLAYHU1f+nCkHr3rihDGG7xy35iTldSM+RsZ+DDTsS8Y15mx6rfJ5C5TWZL/XB3GVb
-	NBqkV2vv1mvnY4QMGgrw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QcV3oJSzbYFvqHOsDMOlzOGlFfAMKjus79W/HELTR+g=; b=dl+TfXoNdhhr/s466nW0mSJAoX
+	eazmaHVCgzEbPHmiiSciOWoGtrPAIr8e5ZnxMBUNLhIP5AXZ2WqZiYQrXHDPRzUJeFptGkMEy2aWM
+	gXMq/kBVAnVcQlK+fH1BST10710D5guoBNK4sr9ndTo7FABpIAvSpIOJ9/MpSL4qpz15KFwbzP60Z
+	K7QZNNTW4chh3lQBA7je+YYcgOAehLwC3xWrLli+9xuugLvsnAEgasyc65WWbBO9NEMT/5M8JnoDT
+	Es66uwq+60/yMoSVQS/jWxFgzbDw+vROw0tcPltVPN9tDnYDc7MFWXe8F9VkvLGW6/6jaeT17BCN6
+	3fVFIigw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mlRCv-009cIj-Dq; Fri, 12 Nov 2021 07:42:45 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1mlS6y-009jxI-Ny; Fri, 12 Nov 2021 08:40:40 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mlRCt-009cHR-E9
- for linux-phy@lists.infradead.org; Fri, 12 Nov 2021 07:42:44 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id i12so6158930wmq.4
- for <linux-phy@lists.infradead.org>; Thu, 11 Nov 2021 23:42:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=d4YpBbYWP9wG3LFBKWknnju7IW21BdQrAXLAFoUfJjk=;
- b=L0G7vqzIu4OmVtWPcfcfA5NzLtPk2i0H7s2BzObNlHQTFEkm03sqk/2QHQ4kjpk9BH
- XMXouE5QpmwrxFfo6B5ZLvuccwWWhT/w9Ko9Yi7L+7BfDDnicqyRLnT+TM8ck5H5bQEY
- cyD6P6qfh9iWldNqTQR7o5UJ+sXkSMXyDzLNU6kkBq7ka/+ZuUqEk/qcSbQ3GxXC7kiU
- cm9dyledHK9n0gr3crraQGaAfhd3vfTQwfXVu/kwmwojjE1dRCSgNEVgeiJJB70r7ke9
- OYePQHHEPa/usZJXytv516/nCeAGVXFsmZBOHnIcNaOTOhsULeXowN7ikvsxKqOo/gxw
- 3O2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=d4YpBbYWP9wG3LFBKWknnju7IW21BdQrAXLAFoUfJjk=;
- b=kopm3oI6gWCBLA5VnXLYgqa+l+ldq6bdrOCIpsWQA2HLKt54hiFNm3WcuNuyTt66Rd
- OLRrLY/HxZvWBT8xksmFwjopccszkQTq8DDgktNvcga35+etbc3/ZG5mhNg+lTaupGk4
- QTmidI4x8j5D1bBrvs2DZzHpCW3IRGWO2MyP265iO+Gtm3S5QCx5SnrKlTS6l53/E1IU
- Y1jEPDsgwf3RO5h3yUA3zFdrJRlY8bnaPMeBBYlZs0J+BwPWQgzw/Htfte8XYdW7ylNE
- mpm0lQvEpKP5jZM0tymp2ovfALHXl5FlXGRt5b7Pseq0RD2+qIPSvLC+pfJvByTcB1vl
- 2RKQ==
-X-Gm-Message-State: AOAM533Bfp19gXbm2Ttrf5NAHFI0cRInC+AomeMskccFAq4YJpsZsz5x
- xJmQJBm+yd7b9sySjoGsOZiRzg==
-X-Google-Smtp-Source: ABdhPJyYtg+MHn61GMl0MRFqSO/sm1wnHgrm7yORmq7WT7ihtvN7d0mp317CBhRDaom5mAlXGDszmg==
-X-Received: by 2002:a05:600c:2107:: with SMTP id
- u7mr32377342wml.82.1636702961238; 
- Thu, 11 Nov 2021 23:42:41 -0800 (PST)
-Received: from google.com ([95.148.6.174])
- by smtp.gmail.com with ESMTPSA id q8sm4978469wrx.71.2021.11.11.23.42.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 11 Nov 2021 23:42:40 -0800 (PST)
-Date: Fri, 12 Nov 2021 07:42:37 +0000
-From: Lee Jones <lee.jones@linaro.org>
-To: Rob Herring <robh@kernel.org>
-Cc: patrice.chotard@foss.st.com, Mark Brown <broonie@kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- alexandre torgue <alexandre.torgue@foss.st.com>,
- jonathan cameron <jic23@kernel.org>,
- Ahmad Fatoum <a.fatoum@pengutronix.de>,
- olivier moysan <olivier.moysan@foss.st.com>,
- Amelie Delaunay <amelie.delaunay@foss.st.com>,
- linux-mtd@lists.infradead.org, linux-watchdog@vger.kernel.org,
- Jassi Brar <jassisinghbrar@gmail.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- maxime coquelin <mcoquelin.stm32@gmail.com>,
- Matt Mackall <mpm@selenic.com>, vinod koul <vkoul@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- baolin wang <baolin.wang7@gmail.com>, linux-spi@vger.kernel.org,
- david airlie <airlied@linux.ie>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, netdev@vger.kernel.org,
- Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
- ohad ben-cohen <ohad@wizery.com>, linux-gpio@vger.kernel.org,
- Jose Abreu <joabreu@synopsys.com>, Le Ray <erwan.leray@foss.st.com>,
- herbert xu <herbert@gondor.apana.org.au>,
- michael turquette <mturquette@baylibre.com>,
- Christophe Kerello <christophe.kerello@foss.st.com>,
- Gabriel Fernandez <gabriel.fernandez@foss.st.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Christophe Roullier <christophe.roullier@foss.st.com>,
- linux-serial@vger.kernel.org, Amit Kucheria <amitk@kernel.org>,
- "Rafael J . Wysocki" <rafael@kernel.org>,
- Ludovic Barre <ludovic.barre@foss.st.com>,
- "david s . miller" <davem@davemloft.net>,
- Lionel Debieve <lionel.debieve@foss.st.com>,
- linux-i2c@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- Guenter Roeck <linux@roeck-us.net>,
- thierry reding <thierry.reding@gmail.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Sebastian Reichel <sre@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- philippe cornu <philippe.cornu@foss.st.com>, linux-rtc@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Hugues Fruchet <hugues.fruchet@foss.st.com>,
- alsa-devel@alsa-project.org, Zhang Rui <rui.zhang@intel.com>,
- linux-crypto@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- linux-iio@vger.kernel.org, pascal Paillet <p.paillet@foss.st.com>,
- Pierre-Yves MORDRET <pierre-yves.mordret@foss.st.com>,
- Fabien Dessenne <fabien.dessenne@foss.st.com>,
- linux-pm@vger.kernel.org, Paul Cercueil <paul@crapouillou.net>,
- stephen boyd <sboyd@kernel.org>,
- dillon min <dillon.minfei@gmail.com>, devicetree@vger.kernel.org,
- yannick fertre <yannick.fertre@foss.st.com>, linux-kernel@vger.kernel.org,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>, linux-phy@lists.infradead.org,
- benjamin gaignard <benjamin.gaignard@linaro.org>,
- sam ravnborg <sam@ravnborg.org>, Jakub Kicinski <kuba@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-clk@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Richard Weinberger <richard@nod.at>,
- Rob Herring <robh+dt@kernel.org>, Marek Vasut <marex@denx.de>,
- arnaud pouliquen <arnaud.pouliquen@foss.st.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-usb@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Jagan Teki <jagan@amarulasolutions.com>, dmaengine@vger.kernel.org,
- linux-media@vger.kernel.org, daniel vetter <daniel@ffwll.ch>,
- Marc Zyngier <maz@kernel.org>,
- bjorn andersson <bjorn.andersson@linaro.org>,
- lars-peter clausen <lars@metafoo.de>
-Subject: Re: [PATCH v3 2/5] dt-bindings: mfd: timers: Update maintainers for
- st,stm32-timers
-Message-ID: <YY4a7ZxzhNq6Or+t@google.com>
-References: <20211110150144.18272-1-patrice.chotard@foss.st.com>
- <20211110150144.18272-3-patrice.chotard@foss.st.com>
- <YYwjPAoCtuM6iycz@robh.at.kernel.org>
+ id 1mlS6v-009jus-GL
+ for linux-phy@lists.infradead.org; Fri, 12 Nov 2021 08:40:39 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1mlS6o-0007Ca-BP; Fri, 12 Nov 2021 09:40:30 +0100
+Received: from pengutronix.de
+ (2a03-f580-87bc-d400-de63-3764-bcb9-a107.ip6.dokom21.de
+ [IPv6:2a03:f580:87bc:d400:de63:3764:bcb9:a107])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (Client did not present a certificate)
+ (Authenticated sender: mkl-all@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id CF6296AA391;
+ Fri, 12 Nov 2021 08:40:27 +0000 (UTC)
+Date: Fri, 12 Nov 2021 09:40:27 +0100
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: Aswath Govindraju <a-govindraju@ti.com>
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Nishanth Menon <nm@ti.com>,
+ Wolfgang Grandegger <wg@grandegger.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Peter Rosin <peda@axentia.se>
+Subject: Re: [PATCH RFC 2/2] phy: phy-can-transceiver: Add support for
+ setting mux
+Message-ID: <20211112084027.b2t2beqiiodnwjtv@pengutronix.de>
+References: <20211111164313.649-1-a-govindraju@ti.com>
+ <20211111164313.649-3-a-govindraju@ti.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YYwjPAoCtuM6iycz@robh.at.kernel.org>
+In-Reply-To: <20211111164313.649-3-a-govindraju@ti.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211111_234243_609264_D2B5DEB8 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20211112_004037_597653_90FF1BCE 
+X-CRM114-Status: GOOD (  27.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,26 +82,153 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============1815351922064216524=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCAxMCBOb3YgMjAyMSwgUm9iIEhlcnJpbmcgd3JvdGU6Cgo+IE9uIFdlZCwgMTAgTm92
-IDIwMjEgMTY6MDE6NDEgKzAxMDAsIHBhdHJpY2UuY2hvdGFyZEBmb3NzLnN0LmNvbSB3cm90ZToK
-PiA+IEZyb206IFBhdHJpY2UgQ2hvdGFyZCA8cGF0cmljZS5jaG90YXJkQGZvc3Muc3QuY29tPgo+
-ID4gCj4gPiBCZW5qYW1pbiBoYXMgbGVmdCB0aGUgY29tcGFueSwgcmVtb3ZlIGhpcyBuYW1lIGZy
-b20gbWFpbnRhaW5lcnMuCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IFBhdHJpY2UgQ2hvdGFyZCA8
-cGF0cmljZS5jaG90YXJkQGZvc3Muc3QuY29tPgo+ID4gLS0tCj4gPiAgRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL21mZC9zdCxzdG0zMi10aW1lcnMueWFtbCB8IDEgLQo+ID4gIDEg
-ZmlsZSBjaGFuZ2VkLCAxIGRlbGV0aW9uKC0pCj4gPiAKPiAKPiBMZWUgaW5kaWNhdGVkIGhlIHdh
-cyBnb2luZyB0byBwaWNrIHRoaXMgb25lIHVwLCBzbzoKPiAKPiBBY2tlZC1ieTogUm9iIEhlcnJp
-bmcgPHJvYmhAa2VybmVsLm9yZz4KClNpbmNlIHlvdSBhbHJlYWR5IG1lcmdlZCB0aGUgdHJlZXdp
-ZGUgcGF0Y2gsIHlvdSBtYXkgYXMgd2VsbCB0YWtlCnRoaXMgdG9vLiAgV2UnbGwgd29yayB0aHJv
-dWdoIGFueSBjb25mbGljdHMgdGhhdCBtYXkgb2NjdXIgYXMgYQpyZXN1bHQuCgpBY2tlZC1ieTog
-TGVlIEpvbmVzIDxsZWUuam9uZXNAbGluYXJvLm9yZz4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaW
-r10KU2VuaW9yIFRlY2huaWNhbCBMZWFkIC0gRGV2ZWxvcGVyIFNlcnZpY2VzCkxpbmFyby5vcmcg
-4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBcm0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNl
-Ym9vayB8IFR3aXR0ZXIgfCBCbG9nCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+
+--===============1815351922064216524==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="7j22je4qercubawa"
+Content-Disposition: inline
+
+
+--7j22je4qercubawa
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 11.11.2021 22:13:12, Aswath Govindraju wrote:
+> On some boards, for routing CAN signals from controller to transceiver,
+> muxes might need to be set. Therefore, add support for setting the mux by
+> reading the mux-controls property from the device tree node.
+>=20
+> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+> ---
+>  drivers/phy/phy-can-transceiver.c | 21 +++++++++++++++++++++
+>  1 file changed, 21 insertions(+)
+>=20
+> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-tran=
+sceiver.c
+> index 6f3fe37dee0e..3d8da5226e27 100644
+> --- a/drivers/phy/phy-can-transceiver.c
+> +++ b/drivers/phy/phy-can-transceiver.c
+> @@ -10,6 +10,7 @@
+>  #include<linux/module.h>
+>  #include<linux/gpio.h>
+>  #include<linux/gpio/consumer.h>
+> +#include <linux/mux/consumer.h>
+> =20
+>  struct can_transceiver_data {
+>  	u32 flags;
+> @@ -21,13 +22,22 @@ struct can_transceiver_phy {
+>  	struct phy *generic_phy;
+>  	struct gpio_desc *standby_gpio;
+>  	struct gpio_desc *enable_gpio;
+> +	struct mux_control *mux_ctrl;
+>  };
+> =20
+>  /* Power on function */
+>  static int can_transceiver_phy_power_on(struct phy *phy)
+>  {
+> +	int ret;
+>  	struct can_transceiver_phy *can_transceiver_phy =3D phy_get_drvdata(phy=
+);
+> =20
+> +	if (can_transceiver_phy->mux_ctrl) {
+> +		ret =3D mux_control_select(can_transceiver_phy->mux_ctrl, 1);
+
+Hard coding the "1" looks wrong here. I have seen some boards where you
+can select between a CAN-2.0 and a single wire CAN transceiver with a
+mux. So I think we cannot hard code the "1" here.
+
+> +		if (ret) {
+> +			dev_err(&phy->dev, "Failed to select CAN mux: %d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+>  	if (can_transceiver_phy->standby_gpio)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
+>  	if (can_transceiver_phy->enable_gpio)
+> @@ -45,6 +55,8 @@ static int can_transceiver_phy_power_off(struct phy *ph=
+y)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
+>  	if (can_transceiver_phy->enable_gpio)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
+> +	if (can_transceiver_phy->mux_ctrl)
+> +		mux_control_deselect(can_transceiver_phy->mux_ctrl);
+> =20
+>  	return 0;
+>  }
+> @@ -95,6 +107,15 @@ static int can_transceiver_phy_probe(struct platform_=
+device *pdev)
+>  	match =3D of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+>  	drvdata =3D match->data;
+> =20
+> +	if (of_property_read_bool(dev->of_node, "mux-controls")) {
+
+Is this the proper way of doing this? Looks like we need a
+devm_mux_control_get_optional(), which doesn't return a -ENODEV if the
+device doesn't exist.
+
+Cc'ed Peter Rosin.
+
+> +		struct mux_control *control;
+> +
+> +		control =3D devm_mux_control_get(dev, NULL);
+> +		if (IS_ERR(control))
+> +			return PTR_ERR(control);
+
+What about making use of dev_err_probe()?
+
+> +		can_transceiver_phy->mux_ctrl =3D control;
+> +	}
+> +
+>  	phy =3D devm_phy_create(dev, dev->of_node,
+>  			      &can_transceiver_phy_ops);
+>  	if (IS_ERR(phy)) {
+> --=20
+> 2.17.1
+>=20
+>
+
+Regards,
+Marc
+
+--=20
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
+
+--7j22je4qercubawa
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEK3kIWJt9yTYMP3ehqclaivrt76kFAmGOKHgACgkQqclaivrt
+76krsgf9HZyC31LNyXDMlw5iHHC/MjqR3DUT87FwBU5xiFUcgGq6QjNRUKF6b162
+P0VpnrQR3dTA/dZDN4MPfgUZeLxH88QuhcAQAN3PVWU5CQd/njoI/O1Idk7+F1BS
+QyVGGXV2EEMovB9ZD5xqiZ/9uBrrLvv278lHKxhZN6GFR+UV+0PKbOeJWzMmWafx
+6p+ql/gYigs44hYs5WwGHAFiwT5Poisk5qA4E7kzG542PyiKW14+YxyYooBXbCV+
+9Wss9w+3lgdgfDykYmVS961utCwlKwMGcojyxsVCao1+7VuqZb9lT8bMdaX1cqlD
+uexl6a2K8MrvoKwNELhqCjfvp9vIKA==
+=/gnY
+-----END PGP SIGNATURE-----
+
+--7j22je4qercubawa--
+
+
+--===============1815351922064216524==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1815351922064216524==--
+
