@@ -2,87 +2,86 @@ Return-Path: <SRS0=nYWN=QC=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 19399C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Nov 2021 06:32:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 697B0C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Nov 2021 10:30:47 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C584F61AF0
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Nov 2021 06:32:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C584F61AF0
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 225E361BFA
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Nov 2021 10:30:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 225E361BFA
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OXZiqiycXzLiZoWRWgllbeoIkR9tYjIXLXuUVOl2IeM=; b=UXcy4vMTxzjEyxaR5/J/P1jXaW
-	hJfGbbaudirdtauZl6BgrBzWWajsU6HbcXRWcYX/6fgbhQjN7Iphu3yZov8KM/JJAmdj9Z0+Vz1Bs
-	g4QSPsnH8WhHg2fpK30rk+9zNh7DB6M/KwpSlDfq2kH+TwC5HD2lj++c7zELkHn+UKwCL3lNAKRRv
-	3IlADYELjuI86Da6guJnjy4CRekoN/eCz0xSaPpeUy0NCMDaJW4QlmUldOFo69oneAeRhO9QbiN0L
-	yz6t9HzduD4v1gJYNIynqqgziobYps4RifCIDp0p+oyW1vRu6Gm57iUgWrtuHkuTGQ2PokoskMnDR
-	hoLNamjA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:CC:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=vZYKxN4RL47HUFlQoy8sPp02nz6iFVRJUKu819Fa1+s=; b=OgZbgDBwB3bTbZ612jf9juYcJU
+	jfA4eOP0qyKt8yUk5MO89SmsiuirCjGnYnmGuYovqckbIoxqTSkGz0IeAQBsOYGkyoqyt1YP2q0Ba
+	l+aDLQKpb8qf9GDSCvu4DCXZriwV9JCnqj01CWaqssFBxp4WPlggvmAgwzLz802faXYTOvya2P0T1
+	frOAwG7iCZVq3vwN62hggS0pxsf6JIT5kfF3DWjPmWK1fmuP2bCRqq7D6DgQRYrL+WcM723p3b//3
+	XvTUQPfRNZoBSSsvn3Rv6MNMpQWT+B8EGL0AtkhhqSVOaBirGwRJFbXo9lNu0UYbpYYgSsBgM/OSJ
+	5K2zpAOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mmVXG-00ESUw-B1; Mon, 15 Nov 2021 06:32:10 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1mmZG9-00FCTI-Ba; Mon, 15 Nov 2021 10:30:45 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mmVXC-00ESUd-JS
- for linux-phy@lists.infradead.org; Mon, 15 Nov 2021 06:32:08 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AF6VrjL093042;
- Mon, 15 Nov 2021 00:31:53 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1636957913;
- bh=Yp6cJZ8oIsFnm9F73Lzb1xo9cWF3HS71rWFf2uvETQM=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=tb7mjZbvhX+CsniZ8ypDDVMisBYCCgVpSxpZNYMzxisbRqJW2jJ5DAWGz5becJN55
- 60WKLcpd8nNkq9TGJDH/fWXAgeDIDsovEPLfgX2wtGNkrKE39LXARtwJTP8+grxBpH
- UbRraZkSr6uEEAQ+1tOZxWS5srf4bU7qT3a4TspE=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AF6Vr1h097679
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 15 Nov 2021 00:31:53 -0600
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 15
- Nov 2021 00:31:53 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 15 Nov 2021 00:31:53 -0600
-Received: from [10.250.232.124] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AF6VnnP059580;
- Mon, 15 Nov 2021 00:31:49 -0600
-Subject: Re: [PATCH RFC 2/2] phy: phy-can-transceiver: Add support for setting
- mux
-To: Peter Rosin <peda@axentia.se>, Marc Kleine-Budde <mkl@pengutronix.de>
-CC: Vignesh Raghavendra <vigneshr@ti.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Nishanth Menon <nm@ti.com>, Wolfgang Grandegger
- <wg@grandegger.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>,
- <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-References: <20211111164313.649-1-a-govindraju@ti.com>
- <20211111164313.649-3-a-govindraju@ti.com>
- <20211112084027.b2t2beqiiodnwjtv@pengutronix.de>
- <085ec3c0-75c6-f3c2-9999-348098fd88f9@ti.com>
- <f933048c-099f-054a-6563-671cf2a2e2af@axentia.se>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <8be2b770-9c4c-ce41-4c49-27fa30b4afee@ti.com>
-Date: Mon, 15 Nov 2021 12:01:48 +0530
+ id 1mmZBa-00FBJK-Vg; Mon, 15 Nov 2021 10:26:07 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.1.2/8.16.1.2) with ESMTP id 1AF8sjc7006661;
+ Mon, 15 Nov 2021 11:25:53 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=selector1;
+ bh=OBTHaDPVAeUyWjvL19tyCYUzLLTVfgrUYyMf7H/p9Ow=;
+ b=nVlBUXxLNUBPS9t4Q6GA2ogtF7ORLFRmgtuAOJYdbR/1Yr/HSlDuKFG+kXWaZkeKruH0
+ KJeaJqMl2cSNjrGBAVUOrMAOpjqGW69blIda/p6xpOAcQhfC5p6fGuwkhmTN6BR3tsK/
+ BGnn/1hh3SvlCr2F3tUwMpefNweeTDNUuy4duYrQ+8mLrCaG+rbh2otl+a9PNaajWdG/
+ jQrY/JC8O/RdPPGwyTB+DDLU8lRpgabhsgrtFcsiLmi1j0h5Q0OTd7ZcdSmQog1TCjHU
+ VrymE4bszjBgKhiS+QpHj4uNBObsb+6HwK/eNreU+SPWrhCb+MgqqqgfsgZ3V/BXR+Yx Dg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com (PPS) with ESMTPS id 3cbmf40kc9-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 15 Nov 2021 11:25:53 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EB2DA10002A;
+ Mon, 15 Nov 2021 11:25:51 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E1CB02291B8;
+ Mon, 15 Nov 2021 11:25:51 +0100 (CET)
+Received: from lmecxl0995.lme.st.com (10.75.127.47) by SFHDAG2NODE2.st.com
+ (10.75.127.5) with Microsoft SMTP Server (TLS) id 15.0.1497.26; Mon, 15 Nov
+ 2021 11:25:50 +0100
+Subject: Re: [PATCH 1/1] phy: stm32: fix st,slow-hs-slew-rate with
+ st,decrease-hs-slew-rate
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>
+References: <20211026154817.198937-1-amelie.delaunay@foss.st.com>
+From: Amelie DELAUNAY <amelie.delaunay@foss.st.com>
+Message-ID: <d4e76549-4f27-6043-64c1-411261b8a5aa@foss.st.com>
+Date: Mon, 15 Nov 2021 11:25:40 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.13.0
+ Thunderbird/78.14.0
 MIME-Version: 1.0
-In-Reply-To: <f933048c-099f-054a-6563-671cf2a2e2af@axentia.se>
+In-Reply-To: <20211026154817.198937-1-amelie.delaunay@foss.st.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG2NODE2.st.com
+ (10.75.127.5)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
+ definitions=2021-11-15_09,2021-11-12_01,2020-04-07_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211114_223206_829628_EB87FD76 
-X-CRM114-Status: GOOD (  53.36  )
+X-CRM114-CacheID: sfid-20211115_022603_410661_123A9195 
+X-CRM114-Status: GOOD (  20.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,199 +93,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Peter,
+Hi,
 
-On 13/11/21 12:45 am, Peter Rosin wrote:
-> Hi!
-> 
-> On 2021-11-12 14:48, Aswath Govindraju wrote:
->> Hi Marc,
->>
->> On 12/11/21 2:10 pm, Marc Kleine-Budde wrote:
->>> On 11.11.2021 22:13:12, Aswath Govindraju wrote:
->>>> On some boards, for routing CAN signals from controller to transceiver,
->>>> muxes might need to be set. Therefore, add support for setting the mux by
->>>> reading the mux-controls property from the device tree node.
->>>>
->>>> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
->>>> ---
->>>>  drivers/phy/phy-can-transceiver.c | 21 +++++++++++++++++++++
->>>>  1 file changed, 21 insertions(+)
->>>>
->>>> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
->>>> index 6f3fe37dee0e..3d8da5226e27 100644
->>>> --- a/drivers/phy/phy-can-transceiver.c
->>>> +++ b/drivers/phy/phy-can-transceiver.c
->>>> @@ -10,6 +10,7 @@
->>>>  #include<linux/module.h>
->>>>  #include<linux/gpio.h>
->>>>  #include<linux/gpio/consumer.h>
->>>> +#include <linux/mux/consumer.h>
->>>>  
->>>>  struct can_transceiver_data {
->>>>  	u32 flags;
->>>> @@ -21,13 +22,22 @@ struct can_transceiver_phy {
->>>>  	struct phy *generic_phy;
->>>>  	struct gpio_desc *standby_gpio;
->>>>  	struct gpio_desc *enable_gpio;
->>>> +	struct mux_control *mux_ctrl;
->>>>  };
->>>>  
->>>>  /* Power on function */
->>>>  static int can_transceiver_phy_power_on(struct phy *phy)
->>>>  {
->>>> +	int ret;
->>>>  	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
->>>>  
->>>> +	if (can_transceiver_phy->mux_ctrl) {
->>>> +		ret = mux_control_select(can_transceiver_phy->mux_ctrl, 1);
->>>
->>> Hard coding the "1" looks wrong here. I have seen some boards where you
->>> can select between a CAN-2.0 and a single wire CAN transceiver with a
->>> mux. So I think we cannot hard code the "1" here.
->>>
->>
->> Yes, as you mentioned it is not ideal to hard code "1". I feel that, it
->> would be much better to read the state of the mux to be set from the
->> mux-controls property. The issue that I see with this approach is that
->> the current implementation in the mux framework only allows for one
->> argument, which is for indicating the line to be toggled in the mux. If
->> more arguments are added then an error is returned from the
->> "mux_control_get". I am not sure why this limitation was added.
-> 
-> The only current use of the first argument is for mux chips that contain
-> more than one mux control. The limit in the mux core is there since no
-> mux driver need more than this one argument. The number of mux-control
-> property arguments is fixed by the #mux-control-cells property in the
-> mux-control node. I don't see any way to and a new optional mux-control
-> property argument that specifies a specific state. How would that not
-> break all existing users?
-> 
+Kind reminder.
 
-My idea was to use the second argument for reading the state of mux to
-be set after increasing the #mux-control-cells value to 2. I don't think
-this will break the existing mux controller users as the second argument
-was not used till now, would be equivalent to adding an additional feature.
+Regards,
+Amelie
 
-One more question that I had is, if the number of arguments match the
-#mux-control-cells and if the number of arguments are greater than 1 why
-is an error being returned?
-
-> The current mux interface is designed around the idea that you wrap a
-> mux control in a mux (lacking better name) application. There are
-> several such mux applications in the tree, those for I2C, IIO and SPI
-> pops into my head, and that you then tie the end user consumer to this
-> muxing application. The mux state comes as a part of how you have tied
-> the end user consumer to the mux application and is not really something
-> that the mux-control is involved in.
+On 10/26/21 5:48 PM, Amelie Delaunay wrote:
+> st,decrease-hs-slew-rate is described in phy-stm32-usbphyc.yaml. Then
+> fix the property name in driver.
 > 
-> In other words, a mux-control is not really designed to be used directly
-> by a driver that needs only one of the states.
+> Fixes: 2f5e9f815a2f ("phy: stm32: add phy tuning support")
+> Signed-off-by: Amelie Delaunay <amelie.delaunay@foss.st.com>
+> ---
+>   drivers/phy/st/phy-stm32-usbphyc.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> However, I'm not saying that doing so isn't also a useful model. It
-> cetainly sound like it could be. However, the reason it's not done that
-> way is that I did not want to add muxing code to *all* drivers. I.e. it
-> would not be flexible to have to add boilerplate mux code to each and
-> every IIO driver that happen to be connected in a way that a mux has to
-> be in a certain state for the signal to reach the ADC (or whatever).
-> Instead, new IIO channels are created for the appropriate mux states
-> and the IIO mux is connected to the parent IIO channel. When one of the
-> muxed channels is accessed the mux is selected as needed, and the ADC
-> driver needs to know nothing about it. If two muxes need to be in a
-> certain position, you again have no need to "pollute" drivers with
-> double builerplate mux code. Instead, you simply add two levels of
-> muxing to the muxed IIO channel.
+> diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
+> index 7df6a63ad37b..e4f4a9be5132 100644
+> --- a/drivers/phy/st/phy-stm32-usbphyc.c
+> +++ b/drivers/phy/st/phy-stm32-usbphyc.c
+> @@ -478,7 +478,7 @@ static void stm32_usbphyc_phy_tuning(struct stm32_usbphyc *usbphyc,
+>   	if (!of_property_read_bool(np, "st,no-lsfs-fb-cap"))
+>   		usbphyc_phy->tune |= LFSCAPEN;
+>   
+> -	if (of_property_read_bool(np, "st,slow-hs-slew-rate"))
+> +	if (of_property_read_bool(np, "st,decrease-hs-slew-rate"))
+>   		usbphyc_phy->tune |= HSDRVSLEW;
+>   
+>   	ret = of_property_read_u32(np, "st,tune-hs-dc-level", &val);
 > 
-> I think the same is probably true in this case too, and that it would
-> perhaps be better to create a mux application for phys? But I don't know
-> what the phy structure looks like, so I'm not in a position to say for
-> sure if this model fits. But I imagine that phys have providers and
-> consumers and that a mux can be jammed in there in some way and
-> intercept some api such that the needed mux state can be selected when
-> needed.
-> 
-
-Yes, I understand that reading the state of the mux in drivers would not
-be efficient as it would adding the boiler plate code in each of the
-drivers. However, for phys as each of them can be used for a different
-interface, I am not sure if a common mux phy wrapper can be introduced.
-This is reason why I felt that drivers should be allowed to read the
-state of the mux directly, when no mux wrapper application is suitable
-for it.
-
-Thanks,
-Aswath
-
-> Cheers,
-> Peter
-> 
->>
->>>> +		if (ret) {
->>>> +			dev_err(&phy->dev, "Failed to select CAN mux: %d\n", ret);
->>>> +			return ret;
->>>> +		}
->>>> +	}
->>>>  	if (can_transceiver_phy->standby_gpio)
->>>>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
->>>>  	if (can_transceiver_phy->enable_gpio)
->>>> @@ -45,6 +55,8 @@ static int can_transceiver_phy_power_off(struct phy *phy)
->>>>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
->>>>  	if (can_transceiver_phy->enable_gpio)
->>>>  		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
->>>> +	if (can_transceiver_phy->mux_ctrl)
->>>> +		mux_control_deselect(can_transceiver_phy->mux_ctrl);
->>>>  
->>>>  	return 0;
->>>>  }
->>>> @@ -95,6 +107,15 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
->>>>  	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
->>>>  	drvdata = match->data;
->>>>  
->>>> +	if (of_property_read_bool(dev->of_node, "mux-controls")) {
->>>
->>> Is this the proper way of doing this? Looks like we need a
->>> devm_mux_control_get_optional(), which doesn't return a -ENODEV if the
->>> device doesn't exist.
->>>
->>> Cc'ed Peter Rosin.
->>>
->>>> +		struct mux_control *control;
->>>> +
->>>> +		control = devm_mux_control_get(dev, NULL);
->>>> +		if (IS_ERR(control))
->>>> +			return PTR_ERR(control);
->>>
->>> What about making use of dev_err_probe()?
->>>
->>
->> Sure, I will make this change.
->>
->> Thank you for the comments.
->>
->> Regards,
->> Aswath
->>
->>>> +		can_transceiver_phy->mux_ctrl = control;
->>>> +	}
->>>> +
->>>>  	phy = devm_phy_create(dev, dev->of_node,
->>>>  			      &can_transceiver_phy_ops);
->>>>  	if (IS_ERR(phy)) {
->>>> -- 
->>>> 2.17.1
->>>>
->>>>
->>>
->>> Regards,
->>> Marc
->>>
->>
-
 
 -- 
 linux-phy mailing list
