@@ -2,15 +2,15 @@ Return-Path: <SRS0=azk1=QD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 088B1C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 16:43:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 05528C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 18:12:46 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C7D5061391
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 16:43:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C7D5061391
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	by mail.kernel.org (Postfix) with ESMTPS id AB48963225
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 18:12:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org AB48963225
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -18,67 +18,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=07U59pCNFd6scoYMBUIOCre4CjnQ7RolUSvfBnmkxSY=; b=jfNoBdjp6yXGAc
-	IhdRZDyXYd3j+M8E10r9ZgiI/XrHIaFaepxEXLLfXrgfvOmsbTu8Nz2ku+5EPZzKwQqqTFlaWTkwm
-	8ms9MpeZ+LCfsKKUC7UIexagZkQ07fGZq5zRkGyORi85TntNkNgTRq9Jj3KGU7QZGk/9528+W2V5S
-	SBCvFmZeSFvAU/nsaiaNbwBrUxI6cPVVg8m5dDMDWfZmsAEUp3g+uxZQKVJdMflcIGiRJyZgSg712
-	v3ItuEfHpiCWKLkNIi3M9WJiGilX8aCOKet+vh0TD9i5vnDn79FoV+0GnvIG9iQnihJl07nPg9JFj
-	3+jrsN68tFRK2E3cEL+Q==;
+	List-Owner; bh=y+1L7n9yVGHsUv+qbPc6iUB23JH7dhVcWnz+ZNWToNc=; b=Ou54xaMYzX1anw
+	ppqYoVT5I7nJ1FA8gyyXPfuy8ITYoNiyq2fw9Z1mJ/2JLdIuAReLXsRGG21OPkmqDiyFUUNSuMtNu
+	m7xfeYqUxhsPcf3NPHh48qkGvpoIQHRu5gUFdoD++99PuG9fWtG9cX8lMnDOf3fRDD9xdSF6jGUHH
+	OS0Uq7DB5lbLWgU8BQec+sII5ix3GA3QUtdE4Uf905wsD8IKX+0ifBrns4Cl+7sz+KoJT3ijdr9+Y
+	HGN2VQo9+PR/v5GgIqXBC4f1fng7WbKrZ0uaC9t6q8Mt4Nfs3L5edGSD1OEMO7/r9ikFE1x/deuas
+	P8qyFI5PjwUA26nAsS+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mn1Y7-002Okk-CV; Tue, 16 Nov 2021 16:43:11 +0000
-Received: from mail-qv1-xf33.google.com ([2607:f8b0:4864:20::f33])
+	id 1mn2wn-002XMZ-6O; Tue, 16 Nov 2021 18:12:45 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mn1Y4-002Ojg-H9
- for linux-phy@lists.infradead.org; Tue, 16 Nov 2021 16:43:10 +0000
-Received: by mail-qv1-xf33.google.com with SMTP id a24so14191154qvb.5
- for <linux-phy@lists.infradead.org>; Tue, 16 Nov 2021 08:43:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=OBIcYw/n23OIMpLRX1RLZiL+IY8T96dnmnSnvlhsflc=;
- b=TtFCINNE69WzBO0cqgKxZHBKmIiAxvzSwJk5NoyKhCQXH705c/RZ6+6xrJtJifBLBr
- YsoWmaeKiQ4qHX6EBJLe7Rg+kwmYPUFn51JY8J7HM4fL35k1qR7lCrYJHJAzyvGDMMs2
- 5qTD+23czcmaL0jyyrpQbj57BrJcozvOnBUTRx1P6kNT0c62xiFCJRaVMpudnR2dnl2o
- FVyPCt8kFVM8MlZdZgTCYNslXa6QV2kDbNAP/0G85oBtOtfEeVzmqmJzRTG3BIHO74r7
- hgKYzsCCqkkkViIRAQP8iEWyhT3u1ryREdsRvrucdXnkjwL+DXVNPgUtIPwD1+zymT+j
- /R4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=OBIcYw/n23OIMpLRX1RLZiL+IY8T96dnmnSnvlhsflc=;
- b=H7RzlmOCw+0vINGAqiQkfDuKY0osrw908FIQOuANKnMecfZEu2eNSlMGZpWMoZNOV1
- SuvvOcW0VHrf9F+G+YzPdwza67UnWVDi90rdRLORF/XaJN1GBgFDYeJt5PIro08CTy32
- 1UWH8Pb7IjbOjHkysn4MrU4+ZlSesJKeJeWkb0DgX1l0FuVi/+UNLLrEWHY/dfJ5dO72
- f1JKj//m3X+yjItVI8MxgFY7xInSN1V0mktnR9lwjwMFNXOI5vjcfAjLS7O3Bc/5+cHI
- IaCmXdc6iVlwKuJYG7qwtngqCzrxtYXHLzQXlY0OsipGLXUJsBMqhV0r/1qGZQQKV3Fa
- fM7Q==
-X-Gm-Message-State: AOAM533UASG30Xo/3zUykoU+PulsHejuzV4zMowpvmdTb683A27ShmKM
- ckncxt5xnB0jOOrccWiwRRhmBK04JC8=
-X-Google-Smtp-Source: ABdhPJxFwaTkqqf3jm0Z7Z04/7P7173dQIuvHfqSj4tlnmr1yAikdUMYKd9CGj5pxL+lutqFIgMBFg==
-X-Received: by 2002:ad4:446f:: with SMTP id s15mr46781867qvt.1.1637080987588; 
- Tue, 16 Nov 2021 08:43:07 -0800 (PST)
-Received: from shaak (198-48-202-89.cpe.pppoe.ca. [198.48.202.89])
- by smtp.gmail.com with ESMTPSA id 16sm7146497qty.2.2021.11.16.08.43.06
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Nov 2021 08:43:07 -0800 (PST)
-Date: Tue, 16 Nov 2021 11:43:05 -0500
-From: Liam Beguin <liambeguin@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>, Liam Beguin <lvb@xiphos.com>,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 5/6] phy: ti: omap-usb2: Fix the kernel-doc style
-Message-ID: <YZPfmXPAnsK8TH0m@shaak>
-References: <20211116103951.34482-1-vkoul@kernel.org>
- <20211116103951.34482-5-vkoul@kernel.org>
+ id 1mn2wk-002XKt-1E
+ for linux-phy@lists.infradead.org; Tue, 16 Nov 2021 18:12:43 +0000
+Received: (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id EF86A40002;
+ Tue, 16 Nov 2021 18:12:36 +0000 (UTC)
+Date: Tue, 16 Nov 2021 19:12:36 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Horatiu Vultur <horatiu.vultur@microchip.com>
+Cc: Vinod Koul <vkoul@kernel.org>, kishon@ti.com, robh+dt@kernel.org,
+ andrew@lunn.ch, kuba@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH resend v4 0/3] phy: Add driver for lan966x Serdes driver
+Message-ID: <YZP0lPN+TCtBN8ic@piout.net>
+References: <20211116100818.1615762-1-horatiu.vultur@microchip.com>
+ <20211116102151.k3evnn4f2rwsi5nk@soft-dev3-1.localhost>
+ <YZOLyQPsgoOYJZch@matsya>
+ <20211116105601.fauvfv2wzlmcf6jc@soft-dev3-1.localhost>
+ <YZOZZv3NPq2C9NXu@matsya>
+ <20211116115228.5qn4o3gkh26674rw@soft-dev3-1.localhost>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211116103951.34482-5-vkoul@kernel.org>
+In-Reply-To: <20211116115228.5qn4o3gkh26674rw@soft-dev3-1.localhost>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211116_084308_636358_B2C68B42 
-X-CRM114-Status: GOOD (  18.42  )
+X-CRM114-CacheID: sfid-20211116_101242_235625_3121A1FA 
+X-CRM114-Status: GOOD (  22.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,56 +70,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Hello,
 
-On Tue, Nov 16, 2021 at 04:09:50PM +0530, Vinod Koul wrote:
-> The documentation uses incorrect style, so fix that.
+On 16/11/2021 12:52:28+0100, Horatiu Vultur wrote:
+> The 11/16/2021 17:13, Vinod Koul wrote:
+> > EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+> > 
+> > On 16-11-21, 11:56, Horatiu Vultur wrote:
+> > > The 11/16/2021 16:15, Vinod Koul wrote:
+> > > >
+> > > > On 16-11-21, 11:21, Horatiu Vultur wrote:
+> > > > > The 11/16/2021 11:08, Horatiu Vultur wrote:
+> > > > >
+> > > > > Hi Kison, Vinod,
+> > > > >
+> > > > > Can you let me know if you have more comments to this patch series?
+> > > > > Otherwise can you ack on it? Because I would like to have the patches
+> > > > > merged via netdev if that is OK for you.
+> > > >
+> > > > Any reason for merge thru netdev, there is no dependency and now with
+> > > > merge window closed, I can pick this up..
+> > >
+> > > Because I would like to send some patches for the lan966x network driver.
+> > > And these network patches depend on the serdes driver.
+> > 
+> > There cant be a compile time dependency... the network driver can use
+> > the phy apis.. I dont think it is required here... Did I miss something
+> > obvious?
 > 
-> drivers/phy/ti/phy-omap-usb2.c:102: warning: Function parameter or member 'comparator' not described in 'omap_usb2_set_comparator'
+> You are right, there is no compile time dependency and the network
+> driver can use the PHY APIs.
 > 
-> While at it, use a single line for function description
+> But at runtime the network driver will need to configure the serdes
+> using the PHY API to be able to work properly.
 > 
-> Signed-off-by: Vinod Koul <vkoul@kernel.org>
 
-Minor nit below.
+It is fine if it doesn't work at runtime with only one branch, both will
+get merged in linux-next and you can test with that if necessary. I'll
+let both series go through separate trees.
 
-Reviewed-by: Liam Beguin <liambeguin@gmail.com>
 
-> ---
->  drivers/phy/ti/phy-omap-usb2.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
-> index ebceb1520ce8..2102b7f73ffa 100644
-> --- a/drivers/phy/ti/phy-omap-usb2.c
-> +++ b/drivers/phy/ti/phy-omap-usb2.c
-> @@ -89,9 +89,9 @@ static inline void omap_usb_writel(void __iomem *addr, unsigned int offset,
->  }
->  
->  /**
-> - * omap_usb2_set_comparator - links the comparator present in the system with
-> - *	this phy
-> - * @comparator - the companion phy(comparator) for this phy
-> + * omap_usb2_set_comparator - links the comparator present in the system with this phy
-> + *
-> + * @comparator:  the companion phy(comparator) for this phy
-
-There's an extra space after the colon here.
-
-Cheers,
-Liam
-
->   *
->   * The phy companion driver should call this API passing the phy_companion
->   * filled with set_vbus and start_srp to be used by usb phy.
-> -- 
-> 2.31.1
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-phy mailing list
