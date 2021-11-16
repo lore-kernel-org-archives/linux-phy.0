@@ -2,143 +2,64 @@ Return-Path: <SRS0=azk1=QD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D46C9C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 01:40:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A1F1CC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 02:43:16 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9342161A4E
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 01:40:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 9342161A4E
+	by mail.kernel.org (Postfix) with ESMTPS id 645606120E
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 02:43:16 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 645606120E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g1WG0vOmft5JEYh8imUGJ/ycOy7+s3nMVWviuD48Hs8=; b=TW73c9mct2mM0R
-	FSpYX/FLfwVbZYL2FHFy1DMW4brCdn778zynbLOEajZfe6HdrxOLAKzmdynu3nZ8LBLQ/4DuI+B+g
-	fuRrHj0giV44p2aM4XT32nPP5R46TfZronSCWwWt59k8bbtP0zscRi5fS9+JoSB4chbLEnbdoon0Q
-	ghkBPf9oQUlnXifnBfNY89SjJ0YmlhccK+YU+lk9NPhTv1S/t5AEjbRJYKUc1345qAGbmpeN8n/Pl
-	OFpFPgZhaY6dX8WmReeNlic/5tGbDJN12OKPhLkjhb5GagpNMPemeoxjL1bfbRTkXfXUY6wm5AFiq
-	qk4Ooy7yvau0yi2Wwagg==;
+	List-Owner; bh=QyJM92FQWmA8dwC6CDQWaeifWuSQtnOhqmvdtT8WFhw=; b=XZblBfEcnoKsL4
+	k7RPjhIE9VghnYKN9SG7g9z0bNoesHdUKsxjEqwt0TeWGsGAgOqJ+Wc4J93pN1WAdbOYicpVVV4S+
+	TEp77psduJYcu4wTN8x0KpVgLeyVVyG05hWJqfdOZXGgHFNBeHvHB53ZtZTngST+sQNcU6PzCvOLa
+	jyzkosR6MFvk5du6KG+Q1cmun8zLyJYNzdjB3idb7RMYn3tViAIM5cvLP9kAMr/S//LpEglNh9UvU
+	wqMXVS9Cb3Yu5BVL+W+GcNk/KkCmr7hJ4s614Er0G/VVT8zZZVW+VsLXo8vYzVLoZ9ua8p70F+odT
+	fAe3UoTiTOv3Cuz3rwHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mmnSd-00HZxk-4E; Tue, 16 Nov 2021 01:40:35 +0000
-Received: from mail-vi1eur05on2087.outbound.protection.outlook.com
- ([40.107.21.87] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1mmoRH-0005cl-T4; Tue, 16 Nov 2021 02:43:15 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mmnSX-00HZwP-Ju; Tue, 16 Nov 2021 01:40:33 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nhmdI6Jdj4zSmb5nmV5/3OqP0GxYgyHJUCXFwcGj0nE2f/QywKjM+A2GmOpyo2XS1nmRsD84UPzUkMNyqB/gaEJrM06yvE+ySBGggMgFtUaZ+74Ib0SWQyeORk7zEnCo499HpHcelxx71msugS+va0HldT/hqaw8WMoF4I/PtTD+67J8xX6yOZwBYTOcWCATRBlqcNtkMAqE6JuwAVA/cerr2lHiPsPSTrFnpUwQjHofcQLLODUa93ZfqbZIXtSZXvMxl3aG62gyaL+MjiaPBfUQdTDFH+229p6GzBBdtMzMGhmOw8E5If9kI2cIwVmNecq28xr0MltOpa9V6dac1w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1xtIRj5GrfQ/xJqsgFF7FMl8GprPb/LLYM0TbhlXQoY=;
- b=Zb7RT3KM/kWrq2G2nXtipcjQVJSxN+V479Gt64JrnidgvJcnInC11CScnYdEoxPDrFe/VHMUBi7HDE/5YcA7Z8YBn4dO5AzytyqTTSy3u4g4EomOOSf4WMNTXp5E588jmR53QNKBMMDsTFpB2Mtlzi9xc9C5OIP93QmVQMkoqGPauxr+R6/C0L+ozie5YvOOFjhBEMqT1bB3IUFILc33MdHijHfwxmmriaWamEZ1Qo37vmvHuRsWNNFUdsuIdr8JfaenJg05fiERnGJGcxi/rETZwWB16syrJ0gQaekWJnjFDtQToPUIf7dkcTPxfAnA0evO9EWGY2gRmxXgFLGpFQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1xtIRj5GrfQ/xJqsgFF7FMl8GprPb/LLYM0TbhlXQoY=;
- b=iSUxZDK0Vdw76b+vc9/15OJGncc+Am7hlTd8BWYg3HJbEZrmL9NGSubrjMc898lj6Oe8mXXG58kBl1DwTO4pdNOysXRnh8Ulwhc6Ohf4h36RmO7bR/IVyBWDpnJUyrtwFU0xEK8QsOB+l27IORyfuVoWn0l6/I2k1jQg4/WNDyk=
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
- by AS1PR04MB9432.eurprd04.prod.outlook.com (2603:10a6:20b:4d8::17)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4690.15; Tue, 16 Nov
- 2021 01:40:26 +0000
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc]) by AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc%5]) with mapi id 15.20.4690.027; Tue, 16 Nov 2021
- 01:40:26 +0000
-From: Hongxing Zhu <hongxing.zhu@nxp.com>
-To: "tharvey@gateworks.com" <tharvey@gateworks.com>
-CC: Lucas Stach <l.stach@pengutronix.de>, Marcel Ziswiler
- <marcel.ziswiler@toradex.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>, Shawn Guo
- <shawnguo@kernel.org>, "linux-phy@lists.infradead.org"
- <linux-phy@lists.infradead.org>, Device Tree Mailing List
- <devicetree@vger.kernel.org>, Linux ARM Mailing List
- <linux-arm-kernel@lists.infradead.org>, open list
- <linux-kernel@vger.kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>
-Subject: RE: [PATCH v5 0/8] Add the imx8m pcie phy driver and imx8mm pcie
- support
-Thread-Topic: [PATCH v5 0/8] Add the imx8m pcie phy driver and imx8mm pcie
- support
-Thread-Index: AQHX2nQKnAA55lO24Eigwg7jrckmc6wFXtVg
-Date: Tue, 16 Nov 2021 01:40:25 +0000
-Message-ID: <AS8PR04MB86760660BD24E4C2BD98F6318C999@AS8PR04MB8676.eurprd04.prod.outlook.com>
-References: <1635820355-27009-1-git-send-email-hongxing.zhu@nxp.com>
- <CAJ+vNU3r0aC8GrTQ2z5BqsCFCAXP+BWt2ntqsNy8DBd--nxdvQ@mail.gmail.com>
-In-Reply-To: <CAJ+vNU3r0aC8GrTQ2z5BqsCFCAXP+BWt2ntqsNy8DBd--nxdvQ@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b335d7f6-cd1b-41a9-f5de-08d9a8a21064
-x-ms-traffictypediagnostic: AS1PR04MB9432:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-microsoft-antispam-prvs: <AS1PR04MB9432F581CA2774F992FAEC5B8C999@AS1PR04MB9432.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: jqdiSSfd53/qWSaghtCBoT4NaDbkLb399Mpn4MeDIbrv4Om2nbW3A7C5KxDRAf6qAqGpheh1kR7acFOmGD8JKjuqIRhza7L2PuN5kMwK94yRqdkrkGtsTH0tP/s/+tecJep3NlLqadnrzyQ2fjxXzl6hmSGHZaGhQM2MrCs/0Fce3xPpUmzLss1IqmnzGaTojxG6Zq0kBdNCXo4vpltJAcE2pdWmTGZvLfn+efvOSLs/srQ8BsML3fycCnc9YHkYhIFe8L8qe4fv/wGLiTWeEbftpp7DQJYflRr/PR/dSoNHGDDTpNNkT8LTCCVr7+mXgAjHRa9Fsb0KyUQwH30kNxkArKOzVKN+u3fxwOuNrLZyzvDJwfA4bEsANOVuOEKdA7MEHB2uT4t8MrmIH8R9cLq/k5CFyYxjTeVxRkJ16P0Thz0Gz/dk+OcLIKBfQEKxfA7fHot677Ln4Xncs1CIQd1hEkQmg2QtLdH+14/lFGxKMEs0n+F68GuI/pfG0EtO/l/Kg7rjvR0etfpk/lOp4Nbk1U5Fd+lAQCpLyRTfsv4FxQAPMCHHIPaw2HVkWtia8npmkkLLuNSh/j/gmdSqtleWcfiu69Lzx55RkYz0FbHnwk9XTia70c/T58lUyU0ap/vLdwjzUhl/F65dJjJvd4PND8V1Y3oKI7PHnUtFiFiDrLGVWxzKbpD0cGBtwrDTJLKFkiK0Pd46q7x5aOmYCXNPsjoi2c5GJobI3naJx6cBS36QdlFe6jneTG6dot8TVGKnWgRaHR8z2gNYsgHN5IPzV+MFwnjc1z769Phzm4ATcbqePaSJvCiSVSb1h43Snlt/yrEDbMdBSfIXLQSBMxaRtLY+XI6tRzzgF2aFdQM=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(186003)(52536014)(6916009)(26005)(966005)(7696005)(54906003)(8676002)(38100700002)(316002)(5660300002)(83380400001)(45080400002)(508600001)(2906002)(122000001)(8936002)(7416002)(86362001)(71200400001)(4326008)(76116006)(38070700005)(66556008)(64756008)(66446008)(66946007)(53546011)(55016002)(66476007)(44832011)(6506007)(33656002)(9686003)(32563001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?FgoaI9i4yT4TJs9md7ayg/i06mFKMGh42upAw+uFiRDYK15a2oE1YbXwv7Pr?=
- =?us-ascii?Q?lm3aNCDWyQD+w2UZbDGqo/rhJvGATbJR4p8wxV9PF2oAmoVCJpvjsEHYiyUk?=
- =?us-ascii?Q?r+guZV4/r4/ItKyHhv86MYG2kPRiWrikA4YRFQsac5uC+6KLt67R/nfAKuCm?=
- =?us-ascii?Q?/oKnAuy/i4NYY/ahvyHHys/hv9GzNHVWKoEUEbclxNWJnJ9CnFcl/ZAU1BY/?=
- =?us-ascii?Q?6HD8vvIhqGL62oc1zh39JdNKcr/HRrgnEB+LBaTX2Eare8Dw543pj69UEYph?=
- =?us-ascii?Q?lHpNHQ5qyC/ztS1UzhYqfmxwMXiXrJ2dyMnKYXbnJw/P29/gUtHmz88ztKot?=
- =?us-ascii?Q?8aTiAT9YnX5zfe8KCtk3nWWDnxKPisDQ9+pTUAM7Pc2YS9Db6QjtzYMG+AF0?=
- =?us-ascii?Q?dNIMtpswxNkN4TXVXOAkugQGdbnh0jvvOTm0lohzc+GOlk5ZGaIAuSFV0Srx?=
- =?us-ascii?Q?9XHN3f/yc42yBSmM0RevGt8CnX6gZ4S5SXm3aiPzrB7Alloi0eaQv3Jvbv02?=
- =?us-ascii?Q?xOHLNnLKpPYUj1TJ6YfUzOPMW5boZ7XRh5OZOtR6teJzXGYk0CA8tPSicB2F?=
- =?us-ascii?Q?frvIcVpOBcTO81ZLfy/ydksu43xuzkJG3K8W7BlsLCxSkCkg5tRSv/FPdETH?=
- =?us-ascii?Q?/GEYPlOuoDCiRodHLWH29tuA8TgFaTMKh0LbBXBJMdEqk5Fb60TVK+IRvvQY?=
- =?us-ascii?Q?5qi/YyYy1k+zrMcuNacdfZt2Q6XUj1JahMJLcK/nRaSUXIyZiABLM+H6B2ae?=
- =?us-ascii?Q?C5eQWwv9XHT9T1pfp6Efh6PXAKarthHQkoEq9BHBCvfCu9shDP2GkWpFKP2T?=
- =?us-ascii?Q?nOKH3GTCvbPkf/wsyJGVzIUz6L8/4Dq9JT46zIn6wrr1/MSPjwIl4gtRmVYC?=
- =?us-ascii?Q?dsTb+MkaAjFX6IlIxaV86xsKMR7Rq1GNr2tLICMPXE0iXMwsSqk5OpkDuQmz?=
- =?us-ascii?Q?w3ZrkVnZ42W3puV1f810FGfyJ5hd/XNvKia3UHHJ67STFBXHMejrhjKq1wTV?=
- =?us-ascii?Q?h+3hjweQlrJaz3zOIzHguNgMVMdnIDb0joWdYcR4SBbvdrUM2goGigITqUPL?=
- =?us-ascii?Q?ZxO4JOaEKLbr4ETNBdVFzu5QF7V7r/js8ae8iF/Toq9maPp8fK5c6dIdy1ZQ?=
- =?us-ascii?Q?zwDEEJRYk+pS+EC7h7FET7GfjgXm51rZp49zpy2NCBxO1t5i2BVJ1hrveTia?=
- =?us-ascii?Q?gcZWne/dZ6FQLq3G/8/72irpyEsnLW8iHnzj7gLHSOnUvnJQAYbjzX/6ISqM?=
- =?us-ascii?Q?E0O0iFgBM/Cxt0tkF3PnC/j0BsuSwyO3GDYJ0VWzuRzmL5dWkXxOK92Md1SK?=
- =?us-ascii?Q?A7pSlPV75FHOSiEakL+PAB0710Lk+Wp7Dk5y4GGBpJmQ/FEolAfMl3XpS/Mh?=
- =?us-ascii?Q?qXrLv7Z18FTpwCsBKDoJMIOdD20ElF0KLJXvFXl8x5Z4jmQncvirv6/lk4ty?=
- =?us-ascii?Q?/ax3PMUH73GKfG6q5MBnE9+UsgPZP/ctVh5Z8nmvLLoGfsMH233uu34S9G3S?=
- =?us-ascii?Q?BVUCyGCBM0qHKArd6upCuv89gTPuooTLuJLeOda1pyxU+Wdmk9oO9PHOC8JW?=
- =?us-ascii?Q?U52ve6FZaDM3BUJYjGz+OXn44ulbYFvqJG1hSaBIfPFc9VBSNx8zELFBMDGO?=
- =?us-ascii?Q?yQ=3D=3D?=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b335d7f6-cd1b-41a9-f5de-08d9a8a21064
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Nov 2021 01:40:26.0924 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: o4CAvLsOdcYLzVOzOuEtiAtv9Q8a+ANSm+b/JLcKjMkFFE3F857P2TsvaWM5SiCZCoXHOn8j69achlh3mzOgTA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9432
+ id 1mmoR4-0005YJ-F8; Tue, 16 Nov 2021 02:43:03 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1BE6D1A2669;
+ Tue, 16 Nov 2021 03:43:00 +0100 (CET)
+Received: from aprdc01srsp001v.ap-rdc01.nxp.com
+ (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D71A31A124E;
+ Tue, 16 Nov 2021 03:42:59 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 68A51183AD6F;
+ Tue, 16 Nov 2021 10:42:58 +0800 (+08)
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: l.stach@pengutronix.de, marcel.ziswiler@toradex.com, tharvey@gateworks.com,
+ kishon@ti.com, vkoul@kernel.org, robh@kernel.org,
+ galak@kernel.crashing.org, shawnguo@kernel.org
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel@pengutronix.de, linux-imx@nxp.com,
+ Richard Zhu <hongxing.zhu@nxp.com>
+Subject: [PATCH v6 1/8] dt-bindings: phy: phy-imx8-pcie: Add binding for the
+ pad modes of imx8 pcie phy
+Date: Tue, 16 Nov 2021 10:16:09 +0800
+Message-Id: <1637028976-9201-2-git-send-email-hongxing.zhu@nxp.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1637028976-9201-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1637028976-9201-1-git-send-email-hongxing.zhu@nxp.com>
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211115_174029_920088_77E64603 
-X-CRM114-Status: GOOD (  36.59  )
+X-CRM114-CacheID: sfid-20211115_184302_682000_85336BD0 
+X-CRM114-Status: GOOD (  10.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,185 +71,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Add binding for reference clock PAD modes of the i.MX8 PCIe PHY.
 
-> -----Original Message-----
-> From: Tim Harvey <tharvey@gateworks.com>
-> Sent: Tuesday, November 16, 2021 6:56 AM
-> To: Hongxing Zhu <hongxing.zhu@nxp.com>
-> Cc: Lucas Stach <l.stach@pengutronix.de>; Marcel Ziswiler
-> <marcel.ziswiler@toradex.com>; Kishon Vijay Abraham I
-> <kishon@ti.com>; vkoul@kernel.org; Rob Herring <robh@kernel.org>;
-> galak@kernel.crashing.org; Shawn Guo <shawnguo@kernel.org>;
-> linux-phy@lists.infradead.org; Device Tree Mailing List
-> <devicetree@vger.kernel.org>; Linux ARM Mailing List
-> <linux-arm-kernel@lists.infradead.org>; open list
-> <linux-kernel@vger.kernel.org>; Sascha Hauer <kernel@pengutronix.de>;
-> dl-linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH v5 0/8] Add the imx8m pcie phy driver and imx8mm
-> pcie support
-> 
-> On Mon, Nov 1, 2021 at 7:58 PM Richard Zhu <hongxing.zhu@nxp.com>
-> wrote:
-> >
-> > Refer to the discussion [1] when try to enable i.MX8MM PCIe support,
-> > one standalone PCIe PHY driver should be seperated from i.MX PCIe
-> > driver when enable i.MX8MM PCIe support.
-> >
-> > This patch-set adds the standalone PCIe PHY driver suport[1-5], and
-> > i.MX8MM PCIe support[6-8] to have whole view to review this
-> patch-set.
-> >
-> > The PCIe works on i.MX8MM EVK board based the the blkctrl power
-> driver
-> > [2] and this patch-set. And tested by Tim and Marcel on the different
-> > reference clock modes boards.
-> >
-> > [1]
-> >
-> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpa
-> tc
-> >
-> hwork.ozlabs.org%2Fproject%2Flinux-pci%2Fpatch%2F20210510141509.
-> 929120
-> >
-> -3-l.stach%40pengutronix.de%2F&amp;data=04%7C01%7Chongxing.zhu
-> %40nxp.c
-> >
-> om%7C489971db9c0f4308600208d9a88b2b05%7C686ea1d3bc2b4c6fa9
-> 2cd99c5c3016
-> >
-> 35%7C0%7C0%7C637726137953234928%7CUnknown%7CTWFpbGZsb3d
-> 8eyJWIjoiMC4wLj
-> >
-> AwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&
-> amp;sdata=
-> >
-> ltuNZqIAsEH6%2B1KE4cqNOiUul3Ex%2BWmYcyqD%2BFJuUrs%3D&amp;
-> reserved=0
-> > [2]
-> >
-> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpa
-> tc
-> >
-> hwork.kernel.org%2Fproject%2Flinux-arm-kernel%2Fcover%2F20210910
-> 202640
-> > .980366-1-l.stach%40pengutronix.de%2F&amp;data=04%7C01%7Chon
-> gxing.zhu%
-> >
-> 40nxp.com%7C489971db9c0f4308600208d9a88b2b05%7C686ea1d3bc2
-> b4c6fa92cd99
-> >
-> c5c301635%7C0%7C0%7C637726137953234928%7CUnknown%7CTWFp
-> bGZsb3d8eyJWIjo
-> >
-> iMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%
-> 7C3000&amp
-> > ;sdata=MrT3Re3YttE9AoqmGHksTqt4jF4vitRPz5lkgpZqSZ4%3D&amp;res
-> erved=0
-> >
-> > Main changes v4 --> v5:
-> > - Set the AUX_EN always 1b'1, thus it can fix the regression introduced
-> in v4
-> >   series on Marcel's board.
-> > - Use the lower-case letter in the devicetreee refer to Marcel's
-> comments.
-> > - Since the default value of the deemphasis parameters are zero, only
-> set
-> >   the deemphasis registers when the input paramters are none zero.
-> >
-> > Main changes v3 --> v4:
-> > - Update the yaml to fix syntax error, add maxitems and drop
-> > description of phy
-> > - Correct the clock name in PHY DT node.
-> > - Squash the EVK board relalted dts changes into one patch, and drop
-> the
-> >   useless dummy clock and gpio suffix in DT nodes.
-> > - Add board specific de-emphasis parameters as DT properties. Thus
-> each board
-> >   can specify its actual de-emphasis values.
-> > - Update the commit log of PHY driver.
-> > - Remove the useless codes from PCIe driver, since they are moved to
-> > PHY driver
-> > - After the discussion and verification of the CLKREQ# configurations
-> with Tim,
-> >   agree to add an optional boolean property "fsl,clkreq-unsupported",
-> indicates
-> >   the CLKREQ# signal is hooked or not in HW designs.
-> > - Add "Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>" tag,
-> since
-> >   Marcel help to test the v3 patch-set.
-> >
-> > Main changes v2 --> v3:
-> > - Regarding Lucas' comments.
-> >  - to have a whole view to review the patches, send out the i.MX8MM
-> PCIe support too.
-> >  - move the PHY related bits manipulations of the GPR/SRC to
-> standalone PHY driver.
-> >  - split the dts changes to SOC and board DT, and use the enum instead
-> of raw value.
-> >  - update the license of the dt-binding header file.
-> >
-> > Changes v1 --> v2:
-> > - Update the license of the dt-binding header file to make the license
-> >   compatible with dts files.
-> > - Fix the dt_binding_check errors.
-> >
-> > Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml    |   6
-> +++
-> > Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  95
-> ++++++++++++++++++++++++++++++++
-> > arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi                |
-> 55 +++++++++++++++++++
-> > arch/arm64/boot/dts/freescale/imx8mm.dtsi                    |
-> 46 +++++++++++++++-
-> > drivers/pci/controller/dwc/pci-imx6.c                        |
-> 73 ++++++++++++++++++++++---
-> > drivers/phy/freescale/Kconfig                                |
-> 9 ++++
-> > drivers/phy/freescale/Makefile                               |
-> 1 +
-> > drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   |
-> 237
-> +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-> +++++++++++++++++++++
-> > include/dt-bindings/phy/phy-imx8-pcie.h                      |
-> 14 +++++
-> > 9 files changed, 528 insertions(+), 8 deletions(-)
-> >
-> > [PATCH v5 1/8] dt-bindings: phy: phy-imx8-pcie: Add binding for the
-> > [PATCH v5 2/8] dt-bindings: phy: Add imx8 pcie phy driver support
-> > [PATCH v5 3/8] dt-bindings: imx6q-pcie: Add PHY phandles and name
-> > [PATCH v5 4/8] arm64: dts: imx8mm: Add the pcie phy support [PATCH
-> v5
-> > 5/8] phy: freescale: pcie: Initialize the imx8 pcie [PATCH v5 6/8]
-> > arm64: dts: imx8mm: Add the pcie support [PATCH v5 7/8] arm64: dts:
-> > imx8mm-evk: Add the pcie support on imx8mm [PATCH v5 8/8] PCI:
-> imx:
-> > Add the imx8mm pcie support
-> 
-> Richard,
-> 
-> Are you posting a v6 of this series or have we already missed the window
-> for 5.16?
-[Richard Zhu] Hi Tim:
-Thanks for your kindly reminder.
-In my original plan, I prefer to merge the codes refine firstly, then issue
-the v6 patch-set after the rebase.
-https://patchwork.kernel.org/project/linux-arm-kernel/cover/1635747478-25562-1-git-send-email-hongxing.zhu@nxp.com/
-Unfortunately, I don't get ack from Lucas for other four patches.
-Anyway, I would post the v6 patch-set immediately after merge Rob's comments.
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Reviewed-by: Tim Harvey <tharvey@gateworks.com>
+Tested-by: Tim Harvey <tharvey@gateworks.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+ include/dt-bindings/phy/phy-imx8-pcie.h | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 include/dt-bindings/phy/phy-imx8-pcie.h
 
-Best Regards
-Richard Zhu
-> 
-> Best regards,
-> 
-> Tim
+diff --git a/include/dt-bindings/phy/phy-imx8-pcie.h b/include/dt-bindings/phy/phy-imx8-pcie.h
+new file mode 100644
+index 000000000000..8bbe2d6538d8
+--- /dev/null
++++ b/include/dt-bindings/phy/phy-imx8-pcie.h
+@@ -0,0 +1,14 @@
++/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
++/*
++ * This header provides constants for i.MX8 PCIe.
++ */
++
++#ifndef _DT_BINDINGS_IMX8_PCIE_H
++#define _DT_BINDINGS_IMX8_PCIE_H
++
++/* Reference clock PAD mode */
++#define IMX8_PCIE_REFCLK_PAD_UNUSED	0
++#define IMX8_PCIE_REFCLK_PAD_INPUT	1
++#define IMX8_PCIE_REFCLK_PAD_OUTPUT	2
++
++#endif /* _DT_BINDINGS_IMX8_PCIE_H */
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
