@@ -2,63 +2,66 @@ Return-Path: <SRS0=azk1=QD=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D3A8AC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 02:45:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 55DA7C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 09:59:19 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id A256D61BF8
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 02:45:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org A256D61BF8
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id 25F0561C4F
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Nov 2021 09:59:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 25F0561C4F
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xAUDW+XF8XZ+0c0y3vvDojdhsaY+DzvcixE3FrWvMfw=; b=iBwDAO0nYmi2VJ
-	qDIUo10uxlIU4EhlwB+3XPxWQNaJ+uWmuYegglIB1oOzeX8HlyCurNSaUFOCEIYnkHihzdFdhXv01
-	KKJtYQJvfNQ8DsjZFsOsDqjO9ZPdW5LJQvvT+r1VwK8QEdANNJuZJPly/wTVX3lyfMSiiD01gnHo2
-	LTlxpS6ZGtXWznhieXCS1fPy6aiS7b4dAHP3RNOK3r8d9s2g4itKWyeX0CO6wUTBrd7AEoKyy5GAp
-	qFQonbDvRgmPDxEqD7EF7T72JSRTrWhazp0lPH2DJhz9szPrMZIdQZwo7AEwjKtzQFcZWq5e05COZ
-	Xd1D7wGIpKNnJg3Hdshg==;
+	List-Owner; bh=VIWyx/SFsBkLE3dsZ+nKKN2PF0l3iQIPqes0Mwu4zNI=; b=uwTUxUUkMu9yqF
+	9vAJfztEVtWN//RiIIY0QuevJK3wc5ju4Xcq+8ZpgB2elhcBRpA+yFRd5UAmnaip3DItIpaeFkHO4
+	s5DeQaHCiIv9NsfNGkj3DwKrsyJOfbjO75fMa5zwtDYPNRgjUVh6kM1yzOxpj1rWAjb13YciNmJx+
+	w0AsFVY96BzJ1D80VdkE3gjTF0gGonhnhWn7Nd1cJGdW3iIhI5gb/wbjkOZ9H6ZRdvlKW9Xu1Wm1u
+	XHddogq3OHyZjKRuUokmwU/j7sjcmNQZnjCp6w1ENdivs42nK4bETagRFrZhR6SZiXSZhyZbSj/4j
+	wpi0xJ17x9pS9kSdXR1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mmoTf-0006tW-PV; Tue, 16 Nov 2021 02:45:43 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1mmvFG-00136v-LA; Tue, 16 Nov 2021 09:59:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mmoRC-0005ba-Rd; Tue, 16 Nov 2021 02:43:12 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9CB9D201A42;
- Tue, 16 Nov 2021 03:43:09 +0100 (CET)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com
- (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 38F55201A2C;
- Tue, 16 Nov 2021 03:43:09 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 74256183AC4E;
- Tue, 16 Nov 2021 10:43:07 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: l.stach@pengutronix.de, marcel.ziswiler@toradex.com, tharvey@gateworks.com,
- kishon@ti.com, vkoul@kernel.org, robh@kernel.org,
- galak@kernel.crashing.org, shawnguo@kernel.org
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com,
- Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v6 8/8] PCI: imx: Add the imx8mm pcie support
-Date: Tue, 16 Nov 2021 10:16:16 +0800
-Message-Id: <1637028976-9201-9-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1637028976-9201-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1637028976-9201-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1mmvF2-00132z-CB; Tue, 16 Nov 2021 09:59:05 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 2D65B6120F;
+ Tue, 16 Nov 2021 09:59:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1637056744;
+ bh=72HtoTGOJnv1qQ+d/4YD/KC5HfK4DkAfw+y+7wktYf0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Vsj2gGJxGtDVL78WRh9z3uErysp0TtVMznFmvYqHqr0vcB/bPq9Quiu7cjektfttc
+ SImNPjIIhqHmzFmhbXoMftbdi9tfCNIPnYS7wMzNCM5OrGseShZnIhR9EpLqzo3/FS
+ XJEoF6jfkUjUg1KTyzGC2pIXX/5Wj8dqkUyIh+IboIgxNnTmPSWRw7MAP5ZFwQac5Q
+ hilkJed3q0lBMVyI5horwXcOkiAG4Lx+iVP29IajxQYjP5kBWriAge/JdhOkyInOiZ
+ peqI5XrjQV4e07hHoDcJxaX+HZKtFlaQykdHFE6G3Tjc6BSk/uRADhMd2Fhiboj7pw
+ 5pSWch50ectFg==
+Date: Tue, 16 Nov 2021 15:28:59 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Amelie Delaunay <amelie.delaunay@foss.st.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [PATCH 1/1] phy: stm32: fix st,slow-hs-slew-rate with
+ st,decrease-hs-slew-rate
+Message-ID: <YZOA4wQH4Q4fNVTY@matsya>
+References: <20211026154817.198937-1-amelie.delaunay@foss.st.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20211026154817.198937-1-amelie.delaunay@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211115_184311_247287_2E3E483D 
-X-CRM114-Status: GOOD (  19.71  )
+X-CRM114-CacheID: sfid-20211116_015904_451300_A0DBF31B 
+X-CRM114-Status: UNSURE (   5.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,220 +73,19 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-i.MX8MM PCIe works mostly like the i.MX8MQ one, but has a different PHY
-and allows to output the internal PHY reference clock via the refclk pad.
-Add the i.MX8MM PCIe support based on the standalone PHY driver.
+On 26-10-21, 17:48, Amelie Delaunay wrote:
+> st,decrease-hs-slew-rate is described in phy-stm32-usbphyc.yaml. Then
+> fix the property name in driver.
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-Reviewed-by: Tim Harvey <tharvey@gateworks.com>
-Tested-by: Tim Harvey <tharvey@gateworks.com>
----
- drivers/pci/controller/dwc/pci-imx6.c | 73 ++++++++++++++++++++++++---
- 1 file changed, 66 insertions(+), 7 deletions(-)
+Applied, thanks
 
-diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
-index 26f49f797b0f..d8c587b4d54f 100644
---- a/drivers/pci/controller/dwc/pci-imx6.c
-+++ b/drivers/pci/controller/dwc/pci-imx6.c
-@@ -29,6 +29,7 @@
- #include <linux/types.h>
- #include <linux/interrupt.h>
- #include <linux/reset.h>
-+#include <linux/phy/phy.h>
- #include <linux/pm_domain.h>
- #include <linux/pm_runtime.h>
- 
-@@ -49,6 +50,7 @@ enum imx6_pcie_variants {
- 	IMX6QP,
- 	IMX7D,
- 	IMX8MQ,
-+	IMX8MM,
- };
- 
- #define IMX6_PCIE_FLAG_IMX6_PHY			BIT(0)
-@@ -88,6 +90,7 @@ struct imx6_pcie {
- 	struct device		*pd_pcie;
- 	/* power domain for pcie phy */
- 	struct device		*pd_pcie_phy;
-+	struct phy		*phy;
- 	const struct imx6_pcie_drvdata *drvdata;
- };
- 
-@@ -372,6 +375,8 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
- 	case IMX7D:
- 	case IMX8MQ:
- 		reset_control_assert(imx6_pcie->pciephy_reset);
-+		fallthrough;
-+	case IMX8MM:
- 		reset_control_assert(imx6_pcie->apps_reset);
- 		break;
- 	case IMX6SX:
-@@ -407,7 +412,8 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
- 
- static unsigned int imx6_pcie_grp_offset(const struct imx6_pcie *imx6_pcie)
- {
--	WARN_ON(imx6_pcie->drvdata->variant != IMX8MQ);
-+	WARN_ON(imx6_pcie->drvdata->variant != IMX8MQ &&
-+		imx6_pcie->drvdata->variant != IMX8MM);
- 	return imx6_pcie->controller_id == 1 ? IOMUXC_GPR16 : IOMUXC_GPR14;
- }
- 
-@@ -446,6 +452,13 @@ static int imx6_pcie_enable_ref_clk(struct imx6_pcie *imx6_pcie)
- 		break;
- 	case IMX7D:
- 		break;
-+	case IMX8MM:
-+		ret = clk_prepare_enable(imx6_pcie->pcie_aux);
-+		if (ret) {
-+			dev_err(dev, "unable to enable pcie_aux clock\n");
-+			break;
-+		}
-+		break;
- 	case IMX8MQ:
- 		ret = clk_prepare_enable(imx6_pcie->pcie_aux);
- 		if (ret) {
-@@ -522,6 +535,14 @@ static void imx6_pcie_deassert_core_reset(struct imx6_pcie *imx6_pcie)
- 		goto err_ref_clk;
- 	}
- 
-+	switch (imx6_pcie->drvdata->variant) {
-+	case IMX8MM:
-+		if (phy_power_on(imx6_pcie->phy))
-+			dev_err(dev, "unable to power on PHY\n");
-+		break;
-+	default:
-+		break;
-+	}
- 	/* allow the clocks to stabilize */
- 	usleep_range(200, 500);
- 
-@@ -538,6 +559,10 @@ static void imx6_pcie_deassert_core_reset(struct imx6_pcie *imx6_pcie)
- 	case IMX8MQ:
- 		reset_control_deassert(imx6_pcie->pciephy_reset);
- 		break;
-+	case IMX8MM:
-+		if (phy_init(imx6_pcie->phy) != 0)
-+			dev_err(dev, "Waiting for PHY ready timeout!\n");
-+		break;
- 	case IMX7D:
- 		reset_control_deassert(imx6_pcie->pciephy_reset);
- 
-@@ -614,6 +639,8 @@ static void imx6_pcie_configure_type(struct imx6_pcie *imx6_pcie)
- static void imx6_pcie_init_phy(struct imx6_pcie *imx6_pcie)
- {
- 	switch (imx6_pcie->drvdata->variant) {
-+	case IMX8MM:
-+		break;
- 	case IMX8MQ:
- 		/*
- 		 * TODO: Currently this code assumes external
-@@ -753,6 +780,7 @@ static void imx6_pcie_ltssm_enable(struct device *dev)
- 		break;
- 	case IMX7D:
- 	case IMX8MQ:
-+	case IMX8MM:
- 		reset_control_deassert(imx6_pcie->apps_reset);
- 		break;
- 	}
-@@ -871,6 +899,7 @@ static void imx6_pcie_ltssm_disable(struct device *dev)
- 				   IMX6Q_GPR12_PCIE_CTL_2, 0);
- 		break;
- 	case IMX7D:
-+	case IMX8MM:
- 		reset_control_assert(imx6_pcie->apps_reset);
- 		break;
- 	default:
-@@ -930,6 +959,7 @@ static void imx6_pcie_clk_disable(struct imx6_pcie *imx6_pcie)
- 				   IMX7D_GPR12_PCIE_PHY_REFCLK_SEL);
- 		break;
- 	case IMX8MQ:
-+	case IMX8MM:
- 		clk_disable_unprepare(imx6_pcie->pcie_aux);
- 		break;
- 	default:
-@@ -1043,11 +1073,6 @@ static int imx6_pcie_probe(struct platform_device *pdev)
- 	}
- 
- 	/* Fetch clocks */
--	imx6_pcie->pcie_phy = devm_clk_get(dev, "pcie_phy");
--	if (IS_ERR(imx6_pcie->pcie_phy))
--		return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_phy),
--				     "pcie_phy clock source missing or invalid\n");
--
- 	imx6_pcie->pcie_bus = devm_clk_get(dev, "pcie_bus");
- 	if (IS_ERR(imx6_pcie->pcie_bus))
- 		return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_bus),
-@@ -1089,10 +1114,39 @@ static int imx6_pcie_probe(struct platform_device *pdev)
- 			dev_err(dev, "Failed to get PCIE APPS reset control\n");
- 			return PTR_ERR(imx6_pcie->apps_reset);
- 		}
-+		break;
-+	case IMX8MM:
-+		imx6_pcie->pcie_aux = devm_clk_get(dev, "pcie_aux");
-+		if (IS_ERR(imx6_pcie->pcie_aux))
-+			return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_aux),
-+					     "pcie_aux clock source missing or invalid\n");
-+		imx6_pcie->apps_reset = devm_reset_control_get_exclusive(dev,
-+									 "apps");
-+		if (IS_ERR(imx6_pcie->apps_reset)) {
-+			dev_err(dev, "Failed to get PCIE APPS reset control\n");
-+			return PTR_ERR(imx6_pcie->apps_reset);
-+		}
-+
-+		imx6_pcie->phy = devm_phy_get(dev, "pcie-phy");
-+		if (IS_ERR(imx6_pcie->phy)) {
-+			if (PTR_ERR(imx6_pcie->phy) == -EPROBE_DEFER)
-+				return -EPROBE_DEFER;
-+			dev_err(dev, "Failed to get PCIE PHY\n");
-+			return PTR_ERR(imx6_pcie->phy);
-+		}
-+
- 		break;
- 	default:
- 		break;
- 	}
-+	/* Don't fetch the pcie_phy clock, if it has abstract PHY driver */
-+	if (imx6_pcie->phy == NULL) {
-+		imx6_pcie->pcie_phy = devm_clk_get(dev, "pcie_phy");
-+		if (IS_ERR(imx6_pcie->pcie_phy))
-+			return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_phy),
-+					     "pcie_phy clock source missing or invalid\n");
-+	}
-+
- 
- 	/* Grab turnoff reset */
- 	imx6_pcie->turnoff_reset = devm_reset_control_get_optional_exclusive(dev, "turnoff");
-@@ -1202,6 +1256,10 @@ static const struct imx6_pcie_drvdata drvdata[] = {
- 	[IMX8MQ] = {
- 		.variant = IMX8MQ,
- 	},
-+	[IMX8MM] = {
-+		.variant = IMX8MM,
-+		.flags = IMX6_PCIE_FLAG_SUPPORTS_SUSPEND,
-+	},
- };
- 
- static const struct of_device_id imx6_pcie_of_match[] = {
-@@ -1209,7 +1267,8 @@ static const struct of_device_id imx6_pcie_of_match[] = {
- 	{ .compatible = "fsl,imx6sx-pcie", .data = &drvdata[IMX6SX], },
- 	{ .compatible = "fsl,imx6qp-pcie", .data = &drvdata[IMX6QP], },
- 	{ .compatible = "fsl,imx7d-pcie",  .data = &drvdata[IMX7D],  },
--	{ .compatible = "fsl,imx8mq-pcie", .data = &drvdata[IMX8MQ], } ,
-+	{ .compatible = "fsl,imx8mq-pcie", .data = &drvdata[IMX8MQ], },
-+	{ .compatible = "fsl,imx8mm-pcie", .data = &drvdata[IMX8MM], },
- 	{},
- };
- 
 -- 
-2.25.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
