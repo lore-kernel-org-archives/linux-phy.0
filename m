@@ -2,167 +2,64 @@ Return-Path: <SRS0=mYmN=QE=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1E273C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 07:49:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 16D8CC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 07:51:00 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C57AC61361
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 07:49:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C57AC61361
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oracle.com
+	by mail.kernel.org (Postfix) with ESMTPS id D37B463215
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 07:50:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org D37B463215
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ideasonboard.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JTyfoXIC0wnvXowL90R4PCdBhEicmu2c58Vh/fhQDik=; b=mP4nU6ci2zzgMt
-	xG4cprT+746WUlxl5BZBWyA/ed3xUelxSkWA8YMF46UrQs9IEiVyhuCC6NXgtWQNcvaoSo+uo+61i
-	loUcWPImU5o1qthwLIyTaFoJEgrNlG0zeaOuOzsNYPwtvzvqgCQTHq2yb5I+QKFx04t1JiQLNOFQW
-	P4aLUDFYK1tBCkGmb52rc9PnbbskqX4RYLCLjcMdEeFK6KelV4vazUJ+IUIJ/WDFLoaGUpCXN56Cp
-	ZOsVJYOh3jgKASaM8tWgkOEVsJjFThhBiAHGRDVKq8OymajXf4y8BYMLZKashvw1j6KllSoXq0ni4
-	G0ZPo+9WD1iJ+l/H0euA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LEgAW8MYByGvQ+hFKfgEae/OvYsN7sboroSg/g5645k=; b=liq1iWbsM0r/PX
+	UABjFHZ47fIr7f1bBJHnSBP40IrLl+qR0D+BFOeBJS6dQqgr9PDSg1Stq8NIHthBDcaXKUNvrk5+m
+	j6J9xbrGImGRP1dzMCW+RERkOdtozEeQGDAXd4ipyDvICUiSjGJnH3A04IE7ym/tpRWWqKZzEzUCl
+	hXEy8RLmIXSjj78hnnNHEn0prguAvieeowiVq13RHzaFFYeN1cjLfsCMwRlzJhMSfr6zmuLBibNcm
+	Voftw49hdETyqucx+lsMsrLxcPnFNCqUPwCDhtC/UsnmdlZ8m/xBVbtAqTJpUKTxmSZLZvilQ0BOl
+	CRb6J7Ev3yEnoCIGfYGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mnFgm-003rMl-Ae; Wed, 17 Nov 2021 07:49:04 +0000
-Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
+	id 1mnFid-003rcU-Dx; Wed, 17 Nov 2021 07:50:59 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mnFgi-003rMN-Lm
- for linux-phy@lists.infradead.org; Wed, 17 Nov 2021 07:49:03 +0000
-Received: from pps.filterd (m0246617.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 1AH6RSZr031237; 
- Wed, 17 Nov 2021 07:48:58 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : content-type : mime-version; s=corp-2021-07-09;
- bh=1DLqFFz5+qizKN2wfHA1ZnUy02/S+aL7kVz6065cie8=;
- b=gP2iZyP4H6KI29kcZlDSh6Dt46yRTccz+4KCwbyWD9ZJ7vaoBCzQ4Auy0NRRSt2aH04U
- CltELOxe/Jn2p3+jQ0I03f4gmlX5J5NwvX5ps25EHtRWgwuYLX5dt72ol2+uLP7P0YiU
- q5FvIzi1CJ6PGnvuuC5I0pg9GCpBCCzW+Tdoel8Whmk8vg3OvFq6ypNzVu0ykTmIcOta
- M3blE8SEfDto7cP/DMkLGMSGza2/ycIAWym0bKuHkNbcTVYOdI7jB5qb35o6ru2fXF5G
- kZzTIAEyTaS0IPP+p2f9c9KVl/MS44tni3uQZWqgFbg6xUMNrADmNIFgLerXs+PaYTKk SA== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by mx0b-00069f02.pphosted.com with ESMTP id 3cbhv87bmr-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 17 Nov 2021 07:48:58 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.1.2/8.16.1.2) with SMTP id 1AH7eGk4113774;
- Wed, 17 Nov 2021 07:48:57 GMT
-Received: from nam11-bn8-obe.outbound.protection.outlook.com
- (mail-bn8nam11lp2173.outbound.protection.outlook.com [104.47.58.173])
- by userp3030.oracle.com with ESMTP id 3ca2fxd05q-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 17 Nov 2021 07:48:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YuUeWvIGM6mEBXTME2G7cmX2PLCmAcnryf/clYhTMLz6mSkHkWCMU427jK8t+4odZMPoFeWGFBw9W2DshDcDCHFAaUNI0NvCo5hX/Hf0h5mfFOMLhndhRMoyliCxMTEWW3N6NZJD6MByAyV+7svDfY4rmeEvqudoBvpmS40+638PUBG38VGiQt2ejI6+b4/2fjnFF5CTW3Pxc3U/mpyprYyZZKdH2YhoGmvH6zDe/sS9GEWlOrbYDWRKLB2EqyCK8Lqbds9O0nHtkcns1ejCtxSawYWLgCcOlLmosVKJrWUufAsJSj43C+9AV7wxqKNEGBwnJX2JS+hF3M2dR2h+yg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1DLqFFz5+qizKN2wfHA1ZnUy02/S+aL7kVz6065cie8=;
- b=YkrTQ5S1bMyrYzJHOj/Ssp/LbGF1gNIsatnWtPqBQnJ2dui+EaN9jh57CR2wvQomLCI1kQZ/DjMovBOamM+NdDuSIyJgLNIjAAf/3C0UU8TojgA/SRehStHXAjWzm1rqADqSAvkPA6Ic0Xu+2gRXv0atAT++R9l+ovMWYCtTqXD2EfkCEWFSvmtzi9sW8fwrP+dbXjmzAp9cDPuWtAVWMUVDuavhjeCXkSbSKOwvTjPgnVXeQVjdbnUnJGu+y47FsrCBJEZtEpQBDoS+mgrYUYD4XgMNdE2t9xrZl6cUm20qA+jhTd0nue0Xd5Ug3lIiRali1NrHrr7ATne26bb3jw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1DLqFFz5+qizKN2wfHA1ZnUy02/S+aL7kVz6065cie8=;
- b=M/RYdjstTprlVa0G/0Wi+jKRiHUKmuT1arTXjHbfxH4Hf/uxkei+wHFAxhnJlGIY+8M4r/3+qGxGu8qdkukmWd3CWVCiSCWyOzl6J0sZThhT5DRqLEsQh6XPETdZ96l+J/cnKIrsrxBFx4r/2/3BpQjPCWEvI/43AQflayyJB20=
-Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
- (2603:10b6:301:2d::28) by CO1PR10MB4434.namprd10.prod.outlook.com
- (2603:10b6:303:9a::21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4713.19; Wed, 17 Nov
- 2021 07:48:54 +0000
-Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
- ([fe80::d409:11b5:5eb2:6be9]) by MWHPR1001MB2365.namprd10.prod.outlook.com
- ([fe80::d409:11b5:5eb2:6be9%5]) with mapi id 15.20.4690.016; Wed, 17 Nov 2021
- 07:48:54 +0000
-Date: Wed, 17 Nov 2021 10:48:43 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
- linux-phy@lists.infradead.org, kernel-janitors@vger.kernel.org
-Subject: [PATCH] phy: HiSilicon: Fix copy and paste bug in error handling
-Message-ID: <20211117074843.GE5237@kili>
-Content-Disposition: inline
-X-Mailer: git-send-email haha only kidding
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-ClientProxiedBy: ZR0P278CA0022.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:910:1c::9) To MWHPR1001MB2365.namprd10.prod.outlook.com
- (2603:10b6:301:2d::28)
+ id 1mnFiP-003rXH-MF; Wed, 17 Nov 2021 07:50:47 +0000
+Received: from pendragon.ideasonboard.com
+ (117.145-247-81.adsl-dyn.isp.belgacom.be [81.247.145.117])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 3D8A3464;
+ Wed, 17 Nov 2021 08:50:40 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1637135440;
+ bh=ZqtMIdKGSNsSfuUw5T8CaCbr/LHYqL5hUB8UylD3eVU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Guklbz5+OKnxLzXHKcQPRJfU6BmxbLYvX3v8TnOOUmAoN2YVNhzPmUNo8rapf5x9q
+ TV6b2T4vLlBZZIc1DqRN3CiyhJId/lstfnnNmi5FGnZYXZHSGf5rvCbtg9r9EuTH1B
+ BbugkvBXVJ65K4uNDfM/Wfw0h3btt4PbPYGYur8k=
+Date: Wed, 17 Nov 2021 09:50:18 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Liam Beguin <liambeguin@gmail.com>
+Cc: Anurag Kumar Vulisha <anurag.kumar.vulisha@xilinx.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Liam Beguin <lvb@xiphos.com>, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/1] dt-bindings: phy: zynqmp-psgtr: fix USB phy name
+Message-ID: <YZS0Ov0CL9mcrk/l@pendragon.ideasonboard.com>
+References: <20211117003841.2030813-1-lvb@xiphos.com>
 MIME-Version: 1.0
-Received: from kili (102.222.70.114) by ZR0P278CA0022.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:910:1c::9) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4690.26 via Frontend
- Transport; Wed, 17 Nov 2021 07:48:51 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 714ed1b3-84e8-4bfd-2659-08d9a99eb45f
-X-MS-TrafficTypeDiagnostic: CO1PR10MB4434:
-X-Microsoft-Antispam-PRVS: <CO1PR10MB44349C2641EA88642EA9AA538E9A9@CO1PR10MB4434.namprd10.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:3631;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: fo/WPbVkkQNkNBRaKi7F3++O59pHi2QHdWXBOeHuH3uwavYW2iGZC/lLqix1PGDuURD4Ecy91aVDbVufaBk5Oy46tQp5fqXtMvU1kF32MYf+6BVEQf93aiNt6Wox7fSA34do8y42cUqHhwE3od3JBQHvxLh4DqR3VpTGRyXICsDiwvz9J3zwVPoV0AXQuF8/aL+0gPWxp5/3ylw0HEW4JCtvmhc0BFIYCTAf+iflCaY0oeiXGU8lWR1o9mjd1wUXbFWObJGSNvfmNpSxVYtlSm4Bu5O/VjUKYSAqDVGqUhPYJdoZovoRgYAwNewswAseGEBhADoYhUor1TB0c66LWdB7y67Rgn3aB03PnzizIMa6BF41ns8XjhlK986YHrL7szsKgptlJLU9h9DxEKpjJ6xgsYBAqi2MU0zhxEeENB2ZOB3R19QmvRstWJ07T8LLTdFg8tHpnvwz0vkoFJ4XJLJhtexb28YziefYK7aq/xyeSi0mgYxFVPI0GXEWVMHASzSKi4+BIQke0bxRU8puvz5ugeNRG8k/4oPDh3jyJPFZa7EvRqz/SA5bA5k9k3bLr/yvfBfWCG3RzDSEShU3lK0iqaprz37f6s0bsMYYP3j/I5WX5qg1u12RBZmshAUUJbr+xVE0CptjBHFtnddsgcdyK2jDGutZqfBShNc0M+SyGxgvAjI5JTT/FBwaqSAzEj1kWD3W3mFV3bQ24jbg8w==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MWHPR1001MB2365.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(6029001)(366004)(33716001)(956004)(8676002)(44832011)(26005)(52116002)(1076003)(6496006)(83380400001)(186003)(4744005)(4326008)(6666004)(33656002)(66946007)(316002)(54906003)(110136005)(66556008)(2906002)(9576002)(66476007)(9686003)(5660300002)(86362001)(55016002)(8936002)(38350700002)(508600001)(38100700002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?JHcp2kP+xfqdzPQKw4Yb2ptIWcUnMT4VU7uUQceCrhLu/Sinhw/lwiSyOlem?=
- =?us-ascii?Q?vYF8zWSxKKBJb+AwezQneljWQlmiTdvcSsl5OXHD/SnRocUkKCma5RrOfSDp?=
- =?us-ascii?Q?TkzOX1d67fPudreOlkoO/GCpMLhJuM9mvpb/iAPO540uCaXshRjw6L3OqAdl?=
- =?us-ascii?Q?69vVT1gPN+Qd/WRGAhR62Tu+Uhmkq9Ih630p25ZnL3T1acGyQfQp8sWwmhLy?=
- =?us-ascii?Q?TRxiFskoJPem4aipmCCjSBfO6zhVjLbhNvo9t2f+JX4yw7d5jjj2lBFhmqHx?=
- =?us-ascii?Q?Cu1lXIssg309gM3jEGnNi6LosOdG8LoCddLgKTgasbX4w7fnJUkKDT6KmYYc?=
- =?us-ascii?Q?UgFEpkkehqhZ66CpuY9ZpqkvYZe7h1cB+vDOwU6QdbGLmUldSsrN6YqR6R8S?=
- =?us-ascii?Q?c2qc+bOWoj3L9cu3UC4j/kuvtQwIaM6893nMJCqUo/owznZNZCd33fnI/UZy?=
- =?us-ascii?Q?3Far7E43x9JMJZ1zBwCYHsmDDySWCA0BGDSTD71Rd5UOgy63iZFqI09TEfL0?=
- =?us-ascii?Q?9b3k8kr6B0ixVwxbUVfpx6OyYhlNPufDrqjcHuz+g1v2TPOZ6CgRguTMFA1o?=
- =?us-ascii?Q?/E0Xae8UZU2pWpSLo2O6sLd22YHsR31XwUQ5JMrYh8SuGmJULGR97AKYn0FW?=
- =?us-ascii?Q?Kua8Uaska5ANoXE1tw9tpuewUiW9P8rpRlVrbBCubh0aYEtNGut0CWu8M5ZV?=
- =?us-ascii?Q?3D1hj1RzSsnCfwe91uCz4MDtooeY+nwU3YshJsm/QB7Y6w43MLOqc75XmlK5?=
- =?us-ascii?Q?qSPIlhKTBliQ0lFAOGemfZK+VVW4ftHxAtF3avAersEqqfMC2+BjNtw/7anV?=
- =?us-ascii?Q?tx4uL1dx2DMCBy1O2IniucJBxVbC+J6BwuaaqtSvgdzvwh4L+XFbP5UVuscM?=
- =?us-ascii?Q?lObYNynOciyQpxWsT2NCt+tpVtdtsduZm2U75tBbVLCQuHDqQ/qrfJ+JRJBU?=
- =?us-ascii?Q?fFdT3Ii6Qt/R+ZMC1YmdbXOq/iPxgGYg35oiT3tn6rAmMXLejNUsprA+F0Ok?=
- =?us-ascii?Q?3jPllUykJM2szCCzyyyawMA5wU3rA14k6MPmtGrBIdIUUpVEzszzyTTUG2Ja?=
- =?us-ascii?Q?IXD0hfnDjijhX61RFpVDuYZttaDC6xU/T2GDhk2YJYDWdfXB+/Zw3vLvB50p?=
- =?us-ascii?Q?gsQ+bOSzvAN3gHUOEID87668DzT+uHtE1PwZ53dSO3pE7YgDcHpMYP4P/lB6?=
- =?us-ascii?Q?7fY3p33gAbzQ3jnu9mgCH10cOl1jBEI52do2ZuybE9rJy/5Z/uI8krKIi61v?=
- =?us-ascii?Q?DWUw8QIanxSWWlA9If+28nXWDFlsVzUEV4cqi/SvqUxJIJH1MGyjT9rBZx4D?=
- =?us-ascii?Q?7iUPdFFrbrhm28GBnNcddt43LGVqOS9ZKabWsPhmwyuugTS6kKFHf/l1qM+/?=
- =?us-ascii?Q?lFYaPArcpZCh/EbKfDwKBe0hxh27X1QQGqj53HCiHBnMKNxUqw7odwJQgsiI?=
- =?us-ascii?Q?68/2Lenimk4esqTauUdF6UC2VWN/bIVGWlszJnOjCrSqfZRCVuQOhcdSRJdd?=
- =?us-ascii?Q?N2n8IW4WuT2hGgr/G4hKC6Hbn5vgCGRTKk6Oh3MNxHwsl+HpF3YWiwgvvVM6?=
- =?us-ascii?Q?UlRrRlHjwDyyNLY9+QzFV4b0czM6/CGyPVEnvPY2mG5y2KYW/vmpUf3lkdKQ?=
- =?us-ascii?Q?uM9mZ73VfRadAup8kujDu0QeR0UP8KjxvCucwumZufyiZztXY2zQDG4PmH/e?=
- =?us-ascii?Q?srYPbfqjP1yI0nkMAeRjlG/6/zk=3D?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 714ed1b3-84e8-4bfd-2659-08d9a99eb45f
-X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2365.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Nov 2021 07:48:54.6896 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: M6ZM0FYVni69fX9Y/bo3eisjxZ46Uey6fRqh+iNkZV93Lp/MDbntrHxAo9zY8prfTKXCfecznhQtms9kjCsYIi5ZmaCErbkB7b1p2BPDlg4=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1PR10MB4434
-X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10170
- signatures=668683
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- phishscore=0 bulkscore=0
- adultscore=0 mlxlogscore=999 malwarescore=0 mlxscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2110150000
- definitions=main-2111170035
-X-Proofpoint-GUID: oX4-KISubuO9IpMcpCH5JJUnp5z7pFWo
-X-Proofpoint-ORIG-GUID: oX4-KISubuO9IpMcpCH5JJUnp5z7pFWo
+Content-Disposition: inline
+In-Reply-To: <20211117003841.2030813-1-lvb@xiphos.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211116_234900_772163_D95A0638 
-X-CRM114-Status: GOOD (  16.87  )
+X-CRM114-CacheID: sfid-20211116_235045_931238_A4D23BB9 
+X-CRM114-Status: GOOD (  14.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -179,33 +76,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This should check ">pmctrl" instead of "->sysctrl".  This bug could
-potentially lead to a crash if we dereference the error pointer.
+Hi Liam,
 
-Fixes: 73075011ffff ("phy: HiSilicon: Add driver for Kirin 970 PCIe PHY")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
----
- drivers/phy/hisilicon/phy-hi3670-pcie.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Thank you for the patch.
 
-diff --git a/drivers/phy/hisilicon/phy-hi3670-pcie.c b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-index c64c6679b1b9..0ac9634b398d 100644
---- a/drivers/phy/hisilicon/phy-hi3670-pcie.c
-+++ b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-@@ -757,8 +757,8 @@ static int hi3670_pcie_phy_get_resources(struct hi3670_pcie_phy *phy,
- 		return PTR_ERR(phy->sysctrl);
- 
- 	phy->pmctrl = syscon_regmap_lookup_by_compatible("hisilicon,hi3670-pmctrl");
--	if (IS_ERR(phy->sysctrl))
--		return PTR_ERR(phy->sysctrl);
-+	if (IS_ERR(phy->pmctrl))
-+		return PTR_ERR(phy->pmctrl);
- 
- 	/* clocks */
- 	phy->phy_ref_clk = devm_clk_get(dev, "phy_ref");
+On Tue, Nov 16, 2021 at 07:38:41PM -0500, Liam Beguin wrote:
+> PHY_TYPE_USB is undefined and was added as PHY_TYPE_USB2 and
+> PHY_TYPE_USB3 in 2fbbc96d1600 (phy: Add PHY header file for DT x Driver
+> defines, 2014-11-04). Fix documentation to avoid misleading users.
+> 
+> Signed-off-by: Liam Beguin <lvb@xiphos.com>
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+> ---
+>  Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml b/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml
+> index 04d5654efb38..79906519c652 100644
+> --- a/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml
+> +++ b/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml
+> @@ -29,7 +29,7 @@ properties:
+>            - PHY_TYPE_PCIE
+>            - PHY_TYPE_SATA
+>            - PHY_TYPE_SGMII
+> -          - PHY_TYPE_USB
+> +          - PHY_TYPE_USB3
+>        - description: The PHY instance
+>          minimum: 0
+>          maximum: 1 # for DP, SATA or USB
+
 -- 
-2.20.1
+Regards,
 
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
