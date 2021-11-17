@@ -2,15 +2,15 @@ Return-Path: <SRS0=mYmN=QE=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 52761C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 03:38:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D4C37C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 06:39:28 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1840F613A3
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 03:38:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1840F613A3
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id 8E5FD6321B
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Nov 2021 06:39:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 8E5FD6321B
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=intel.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -18,128 +18,156 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fqEQkRuD7enJy8+9gmh6H2OTlkYCZlE95jBOl7tycHo=; b=faobs03PR6v+5t
-	rDzyFswFkT8G4SxFbxDrspuSGdiHOWpvR7pYTQFnXZuuBL3n57iW5NO3juuJV8N0rSpG6k+YBIKJb
-	5sLbrcs7Bns+/2m5NHBL6fwy0dU59Ts4CO835PJVPZinekkdqvXRN3Ot0yqqS1VPAjjXjnvazIgji
-	Ky63+xzgM+R6OJaSc+wjWwQ41ovt5A8cb+eua4PtzYwumI15iFWYDeccpjoCYOiDW7j4tAGQaGh9a
-	iaSuk9te82Ld3YPVTd/0job7/xxqdoYzEUIb1KvwWBb3/9H9PUCbmXKI9+xvVLvm2kLpkvofeYRfo
-	gdVWBo0r+sSbcDuiyZfw==;
+	List-Owner; bh=jNwLxnLDWfuxsFE+g2suPASKuIWnGrxPXZVsgUQI+gU=; b=S7yy8TgDRXbuVm
+	7FVlcW7lBfZbUph/ayUiqRL/AYUutCGzZVdIW6km1a3IIfCAMxIgHa74xW2Rj+NFIHRW1OpRbvED4
+	VLMwsV5+vwLm0q/NUsd6vEo0CXh2s25MOG7+C2jA0TZ7dfcMxOoJ37I+W5uUPIdDvG3zldZ9ypPYM
+	wJnIePW5cMKMnrp4tGTgjtpGQY+zdO76DkN2jgBu2CM4JlIVJr0vT7b3OM3PTVE54pMWbipT7LMYY
+	gMvOmL+Md2avN6Bj/OM/E1QRPV8uql+xqWfXxRixI9fWmBogp8IfrDy7gbTwgeUyj6SEA0pufMkp9
+	2NdF6uxmijyBl21JVjyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mnBmg-003DCT-IE; Wed, 17 Nov 2021 03:38:54 +0000
-Received: from mail-eopbgr150088.outbound.protection.outlook.com
- ([40.107.15.88] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1mnEbQ-003Uwq-35; Wed, 17 Nov 2021 06:39:28 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mnBmd-003DAS-4U; Wed, 17 Nov 2021 03:38:53 +0000
+ id 1mnEb9-003Uv5-Ts; Wed, 17 Nov 2021 06:39:14 +0000
+X-IronPort-AV: E=McAfee;i="6200,9189,10170"; a="294707834"
+X-IronPort-AV: E=Sophos;i="5.87,240,1631602800"; d="scan'208";a="294707834"
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 16 Nov 2021 22:39:03 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.87,240,1631602800"; d="scan'208";a="567890929"
+Received: from orsmsx603.amr.corp.intel.com ([10.22.229.16])
+ by fmsmga004.fm.intel.com with ESMTP; 16 Nov 2021 22:39:02 -0800
+Received: from orsmsx607.amr.corp.intel.com (10.22.229.20) by
+ ORSMSX603.amr.corp.intel.com (10.22.229.16) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2242.12; Tue, 16 Nov 2021 22:39:02 -0800
+Received: from ORSEDG602.ED.cps.intel.com (10.7.248.7) by
+ orsmsx607.amr.corp.intel.com (10.22.229.20) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2242.12 via Frontend Transport; Tue, 16 Nov 2021 22:39:02 -0800
+Received: from NAM11-DM6-obe.outbound.protection.outlook.com (104.47.57.176)
+ by edgegateway.intel.com (134.134.137.103) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2242.12; Tue, 16 Nov 2021 22:39:02 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZLYoeECVi4KzwUoRrplM9leoD9cpCxAEuNFyQqx/rv8FAXvrbWZUqTtIHS4gpAQvpD9s7zSgjePAtJr9lSeiDrGGFWn5cor9xXG5m6DjisBrt1VyEaVmVcKQOSorOS1wg0MhlfT8rxro62uP+gXvgRq8RTtqaO3Gkbv3bRJXGsPOAf93OrU198e0HrHfpwholsplaozbVHkq1WVLfKwPavebwIgG99U9u6NfzvOkjjCjTojJ1hQK5mYCkZt6rj3BePp0rCY6NUTPUnLNGABPDXSpiAJGktj0Etxt2wGFQSy/VqQvrquZh8v5LJoRvRDVKwatvCHKW9zfAJ2IDcd7gA==
+ b=L0XOwkjQgvDnjieIUTYtXv1ioN2sEbNSTYESbXy/YwZ/7mlvMCekaWQwjIctp9bqw1U2icgAWl75hhqAlymjbBelOb57zfjxZDqwpe5z7c62KvNoie7EWVHfWr2EgnWH69qh8YCn1p9V4ATohgOgNVstc0GFWd1fNXEyZTWlU7zFUn+DguBz3GV/WeS7QC7PXygwoxpB9sBK2jQAjYWzkki0kq0dRMIzik3BudTZSIsw4imYd0oeDEKHCZWIVvuqretWs7upHE+EuC6h5hak8Eq2g1Doa4lgxoDGAlFbiSpnuxFATrefQaQCzsh3Lh7rKR4r5BKU10zii1RAiDbcGQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=C70Pj/FcGlJDkdSboShAWcr1w5/UGDxgkTbHkr9aGKU=;
- b=Aur72OBdmM9mfXD3/GE+OnVV9nKd+t6g5xReTP5ACS3hcfGbkGzG2nP+iH+U4jVG1XJR8pNUicT6eBOBCUELZpm4RsoTOHWjFJxZAVV7ey4EPrtEW2XZZkFgUphZH8A6jEAs4kUW/ofBYVWtoOwDJzLdWuXeJTWTRgK8ebfHUocNZEx7eYrCFS34iBmDd+jkECqAXIbui/OhndMlaFvQqeVQnbzx2tvTrB89neWIoJtwwQQW6gaKP3UjjtT7y33i6X/xVPcElAlY+dmYvfN+Lpzq+8yz7L6r4Yc/0c2yalwxpkL3IrpRclk+dy4366oZRTSMojF0X4UC01vzTZ61rA==
+ bh=8R4d2gwEwzTtkdmSPcwNdLeFmnrN9Knz94GbctnvJy0=;
+ b=gkn7d83dtQh1d2gQulrE0mtZxakoOV8O5ai+3FYBxSnvVS2Zw5nIja66P9kkcuzZcZjQep9KsOuW+wpRjhkd5LhoYPigBidlo1Kxe+RPcWBzf52iCKBg/RR3CP/KlnxpF3m9jOmFFZiCeZAfu3Q6BwWu6y9G33CgG8EHuvZJDCeO2M8ope3aEd6QYDfKRCWTGVMUuRcpd2f8/MiFUbgKvdyUu3BOtGsYDHys9QoKva9fyhXopiZZYOZtMf1yBkY/pffnw9sOHfZZ0W50NtAgsFRR2wVSKCrPy28SAEXdqxusQiOXQ3VDoNSrpDtxTTGQXxjjSgXuRRA5V6Y8k1JgXA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
+ dkim=pass header.d=intel.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intel.onmicrosoft.com; 
+ s=selector2-intel-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=C70Pj/FcGlJDkdSboShAWcr1w5/UGDxgkTbHkr9aGKU=;
- b=Puc3TY+P8IibBXb/9C5kA9cuavi+quYlrL8FkVs9z0uPVliMplC0BaM43uRToanI4cAcXds0jzsQfF9ZNLmNPK/bteUXHGBLVNjIXMS5bCMatXtr0vhZzPmgUYqb0NvGOQCu2+dbl4TctTlkPM3q4JSihqoTCr1KczYCEK0UqGU=
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
- by AS8PR04MB8993.eurprd04.prod.outlook.com (2603:10a6:20b:42c::9)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4690.26; Wed, 17 Nov
- 2021 03:38:46 +0000
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc]) by AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc%4]) with mapi id 15.20.4713.019; Wed, 17 Nov 2021
- 03:38:46 +0000
-From: Hongxing Zhu <hongxing.zhu@nxp.com>
-To: "tharvey@gateworks.com" <tharvey@gateworks.com>
-CC: Lucas Stach <l.stach@pengutronix.de>, Marcel Ziswiler
- <marcel.ziswiler@toradex.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>, Shawn Guo
- <shawnguo@kernel.org>, "linux-phy@lists.infradead.org"
- <linux-phy@lists.infradead.org>, Device Tree Mailing List
- <devicetree@vger.kernel.org>, Linux ARM Mailing List
- <linux-arm-kernel@lists.infradead.org>, open list
- <linux-kernel@vger.kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>
-Subject: RE: [PATCH v5 0/8] Add the imx8m pcie phy driver and imx8mm pcie
+ bh=8R4d2gwEwzTtkdmSPcwNdLeFmnrN9Knz94GbctnvJy0=;
+ b=sCYKe4Si0xq/MSAOYX4h9oeZKsUHOoLkf2IIy7DAq/UccgAW+Htr6f3X5vdt8LUYKpURm3J0PZSp/h3udfTh1kotmP+1japsBg2p9NUUshaPtHTMIg93qkQ1BaN2DUdJwqqH9+rNc5N/MgNARPrkBlNiSacTkhL4OADpK1WKEqw=
+Received: from DM6PR11MB3065.namprd11.prod.outlook.com (2603:10b6:5:72::15) by
+ DM6PR11MB3514.namprd11.prod.outlook.com (2603:10b6:5:61::26) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4690.26; Wed, 17 Nov 2021 06:38:59 +0000
+Received: from DM6PR11MB3065.namprd11.prod.outlook.com
+ ([fe80::90de:8816:c93e:3d75]) by DM6PR11MB3065.namprd11.prod.outlook.com
+ ([fe80::90de:8816:c93e:3d75%7]) with mapi id 15.20.4690.027; Wed, 17 Nov 2021
+ 06:38:59 +0000
+From: "A, Rashmi" <rashmi.a@intel.com>
+To: "michal.simek@xilinx.com" <michal.simek@xilinx.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "kishon@ti.com" <kishon@ti.com>,
+ "vkoul@kernel.org" <vkoul@kernel.org>, "andriy.shevchenko@linux.intel.com"
+ <andriy.shevchenko@linux.intel.com>, "linux-phy@lists.infradead.org"
+ <linux-phy@lists.infradead.org>
+CC: "mgross@linux.intel.com" <mgross@linux.intel.com>,
+ "kris.pan@linux.intel.com" <kris.pan@linux.intel.com>, "Zhou, Furong"
+ <furong.zhou@intel.com>, "Sangannavar, Mallikarjunappa"
+ <mallikarjunappa.sangannavar@intel.com>, "Hunter, Adrian"
+ <adrian.hunter@intel.com>, "Vaidya, Mahesh R" <mahesh.r.vaidya@intel.com>,
+ "Srikandan, Nandhini" <nandhini.srikandan@intel.com>
+Subject: RE: [RESEND PATCH v2 4/4] phy: intel: Add Thunder Bay eMMC PHY support
+Thread-Topic: [RESEND PATCH v2 4/4] phy: intel: Add Thunder Bay eMMC PHY
  support
-Thread-Topic: [PATCH v5 0/8] Add the imx8m pcie phy driver and imx8mm pcie
- support
-Thread-Index: AQHX2nQKnAA55lO24Eigwg7jrckmc6wFXtVggAGcAoA=
-Date: Wed, 17 Nov 2021 03:38:46 +0000
-Message-ID: <AS8PR04MB867632F01C9B0524BE994A5F8C9A9@AS8PR04MB8676.eurprd04.prod.outlook.com>
-References: <1635820355-27009-1-git-send-email-hongxing.zhu@nxp.com>
- <CAJ+vNU3r0aC8GrTQ2z5BqsCFCAXP+BWt2ntqsNy8DBd--nxdvQ@mail.gmail.com>
- <AS8PR04MB86760660BD24E4C2BD98F6318C999@AS8PR04MB8676.eurprd04.prod.outlook.com>
-In-Reply-To: <AS8PR04MB86760660BD24E4C2BD98F6318C999@AS8PR04MB8676.eurprd04.prod.outlook.com>
+Thread-Index: AQHXyymXCea7MPcbhU6z+SzK95nwwawHYrRA
+Date: Wed, 17 Nov 2021 06:38:59 +0000
+Message-ID: <DM6PR11MB3065C3329182A196C46DE5F68C9A9@DM6PR11MB3065.namprd11.prod.outlook.com>
+References: <20211027115516.4475-1-rashmi.a@intel.com>
+ <20211027115516.4475-5-rashmi.a@intel.com>
+In-Reply-To: <20211027115516.4475-5-rashmi.a@intel.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
+dlp-reaction: no-action
+dlp-version: 11.6.200.16
+dlp-product: dlpe-windows
 authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
+ header.d=none;dmarc=none action=none header.from=intel.com;
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: cc041854-1247-4e46-7940-08d9a97bc2b9
-x-ms-traffictypediagnostic: AS8PR04MB8993:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-microsoft-antispam-prvs: <AS8PR04MB8993FD9E11ED75E9AF571E258C9A9@AS8PR04MB8993.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-ms-office365-filtering-correlation-id: ca0f6983-6bab-4328-1fda-08d9a994effc
+x-ms-traffictypediagnostic: DM6PR11MB3514:
+x-ld-processed: 46c98d88-e344-4ed4-8496-4ed7712e255d,ExtAddr
+x-microsoft-antispam-prvs: <DM6PR11MB3514F7E1609A01555A7B816D8C9A9@DM6PR11MB3514.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: i8PM9U6f0kACkuKyg51l0GJPIvvE4aYtXJburWaPNChxylTBFVHR2I+Ts948UpckWF+E1eSfyJz3HHMnAWZFu2ZCV6j7P48EFgLjjD3q0sv/f5PaxmibbjeHX8tyM6hBmF0f3eR7dutxqFYV4uz1Rnx3HefOa1PoVoO5zzUEkHOkds+s3WOT5BU8e8h/xN1zK/RTWIxhHLUnzYXrN19FT1SiMFBZtBHkHZSU8Pe7HZltvdzPlD5O6nGdggfVmTLmO7mrVyJQyBQ28U/wIa3+AUdDrhKcIKFQSTH1Wvhi5B7SH6csMQ37KOxJXMO0H22Pr5ugxA0giiXjVOOKPLt7bglHLH3EUvRN9GqRfWI59SdQ7BR2TJtjsCNuMMuX4cH2u6rwwwX5G4emonziGheoQm8GzU+Yy8525WrxNRuw2RWxvwWhk+I0kVk1bzaGAgFy5JSIq6DsUJFTHphT3xN5GJjKdM/jA2S564Eld8h894DyRiEpOd6WzEBgFq1aZ6tKw1TMcpc59aLZw+8VwoSrN1Ah4YUd0XtfYw5kUTSz/SWYeYh+ZTFc11mPLd69ncFbCCi3ukhVwnf7o97SfNUZLzLwthKL/6546JhXjGy/DkDw3PG2xW0EbPLgaa1HUaKkUdWJr6wxVphMQNENDWpElo86XPQ+q4FvQKahHHdES2xJpUeZJoGUBTce+HjfSMWEn7ho2LM7fI1MiLvVoxcLUGWEQerWrt1r97BdHcHMjYW9W5gZjpJhNMfmgGgB9QV2iMLGImkgWmKwgBI/bB4gUeymaTA9PtDwIjc/cJW7uwyYVrpHTbj2Ys4YNCui0eF4h/mWbQPEZp4Fnp3ER4yhXONIE3MVm8lKmBxU/iw0eMs=
+x-microsoft-antispam-message-info: qI0B3/cBW7e+dadzVWI0/Xj6BUI6YjJDP3qjxPFYZi2v/3gOiJw2mWsuZzp1O4HQjOvodVpUADMc/y8o0U0e4UhkWX+Ekamvbq8iRAxkhHvBTprdjU7o8RZJFCi7fWfQDRftmruHXnkKXsnqqI6NP1b24iEIO5dpUBn/khaCfQZ/yC6a6zwvY1f+yz1xK2Mwid4rz/uKXvcuk9YNrcVx9/hJW5obHQZrfikLoz9ueXPJugxXTAbheUDKi4pY08t8QX4BXniR9j5mQH6bJ+6ougKC0sLsBKmo5cQWniQzJj13TyP7+RuuPZF6Eip2HNHsKvUYc+UDwj2wp88kq0ulBCld47UVJDvNSvUftdLQ3N39IjqygC+KQ1+INNTzRMoLnrWAZLsJNCvC+7Bs8Oed3Oq0m9vcG4ONdQV0tJ6Zwgpjy3rpIEt65Wul1ygM1NLC4i3q+Qpc1/2FjS0vkY5gp3uZl0gtFTSCBW7IsIKbLhayupGWuIoT4DdszQ4HYYIaRizYxzUeWP4ZluOjA1/nYSV9CtAcoAiLemEuJag4gUq4y4LnjvkUuZ44MIBPqt8o0gHVnVkl4kxrgx0QuHMK5v+ZtZO8g0Mze6y6UdPvMAWOCWZY58p8GpVvrCBwMg2Iv2nlwrsirvnIHgxeGK8f0pGMg/qOvGQgCoLvcVeQtbWVT2S4Y7u37ifA3Cav3Z4PCAbYfxGN4l65GI/tI3ugByAxhcjVR3rvvZLRbVWvDyQ=
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(52536014)(26005)(4326008)(186003)(45080400002)(8936002)(7696005)(8676002)(71200400001)(5660300002)(44832011)(966005)(53546011)(38100700002)(55016002)(2906002)(122000001)(9686003)(508600001)(33656002)(64756008)(316002)(76116006)(6506007)(66446008)(6916009)(66946007)(83380400001)(7416002)(54906003)(86362001)(66476007)(66556008)(38070700005)(32563001);
- DIR:OUT; SFP:1101; 
+ IPV:NLI; SFV:NSPM; H:DM6PR11MB3065.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(366004)(7696005)(64756008)(66446008)(38070700005)(76116006)(66946007)(66556008)(66476007)(6506007)(53546011)(110136005)(2906002)(54906003)(33656002)(316002)(5660300002)(122000001)(38100700002)(83380400001)(82960400001)(508600001)(7416002)(19627235002)(71200400001)(52536014)(186003)(4326008)(30864003)(8676002)(86362001)(921005)(9686003)(8936002)(55016002)(26005)(579004);
+ DIR:OUT; SFP:1102; 
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?UULDKyWvVsWcXLCEDmH1F2gPGA/9KA7NElyuujJSr07/2EGEucKBOBA7IF5A?=
- =?us-ascii?Q?74B8Oxwx66lhw0oKfBOl933SFexBD3kCvAya82TNsr5MjEBk1SxUNnL9PmN3?=
- =?us-ascii?Q?Qdq1GD3n3Dloa3eqCCTvFdvj9qQMrdUsIyG3kEMZlG52n3ADxt0CVUMha9Tu?=
- =?us-ascii?Q?/A2pXvylj3W2+fiHaMrkMWre7MZwbUB3mycbziL+Daq18PCgZHFyelxcPW8+?=
- =?us-ascii?Q?nJPV/ptJDPReD6m+UjCl1JXsYeS6hEouDg5LRHu4PuFbExx50Tx3C8/o478y?=
- =?us-ascii?Q?oCJBbVq72je0sb2S8Iy0Sib9Fq5hJ4aZnSR5YPs4NSMF7BQVhvof9NwRhNQU?=
- =?us-ascii?Q?D22wzgcCo/T7QaaSiGjJ2inZl2H6qRQhBurdJpNIzoZRhHfC1oyaoXvVirL0?=
- =?us-ascii?Q?bSH9mfX2ShoFw3dUQdrv4h3fEDVi3cDQ6ZW1TSP4ebJfW+43Xy2u9jIWZUHo?=
- =?us-ascii?Q?yQ/NaejHjwsj+3MqH4vfO0E/naBpIqPCm3xNpiv5bbJ8yaUatEQZAt/q94dL?=
- =?us-ascii?Q?6aeO6uCu9jCYe7Aw/65Y5PWSEjpJ8OSHyyH2OEUzB/FAkGHlIgcOvLLLtg2j?=
- =?us-ascii?Q?ZeNbUXWwlLr78EHZxXDTlAcRcEM7xpfymiI2FryP46h6X+0BnqWqKBFp6y08?=
- =?us-ascii?Q?ePxoDjolpu7ZlCcNnx0Z5AdHR9DYgoPvkTdW5mxaF1LzRspyjELtzdrNqQuw?=
- =?us-ascii?Q?e99MJgEpCAyl/Ia6vIR0W8xEGC+gXNgQRFsDIaFozdEOuVdSVhiWB/yg9ahm?=
- =?us-ascii?Q?waDllJgMuxdIhaK/x8f6fo4gIUocb1hxb6Wf4ewemPT+uDK7/jLzBSNPrEDf?=
- =?us-ascii?Q?c3ONWV9TwDRbzFbfzlYqPdheB+3xRQOHRx440pR/rZEYSgMZx2UIZRLLGjFg?=
- =?us-ascii?Q?aocQFhlN3K2ve0pWBnVLaya4SiSwk9AkALM8uZx15vGY3l3ymzA5w9NpHp6h?=
- =?us-ascii?Q?Sm18gXwRSgevP1d7GxN/lFE/4VHCh3q4fZRhv3W0f06S7RfzV73yp7Vuv9yh?=
- =?us-ascii?Q?Vw8oLx3HWhVi3DO4E5dNG+nM1/I4S5GKeyaYOdn4Pr26KIFaVoeLgQYL2NQZ?=
- =?us-ascii?Q?el18X3uINXMOlIf+7+ukhkz0gTH0OuPnZZcW6AZl4wr6iMC5Zu+dSIK/ARyA?=
- =?us-ascii?Q?dEpOJLrXOoxPRFJnsgzQTyFkil/X7+fxnttQJh2e3dIUk/cedmMWq0uB5TYT?=
- =?us-ascii?Q?OYgZ4uF5kNB0Lt8SgJ/cM2A2oFlhhOWbKoZDAun+CwhdUWfAg+l+9Qhg0GXz?=
- =?us-ascii?Q?Q8z293zvkNe/bZSzy6GpgkAYMcUDP6pvaa9Btp0h/xjvQEysJ2nt9z+KWJoy?=
- =?us-ascii?Q?j7ox/rLAhUSuagCTsGfLfd63HiKjGjByLNVzI+UrGdNQYZ6/rcw47lOG60yk?=
- =?us-ascii?Q?ACtFXY3W4tXMXH8ZaslAaYEFfu+fG7PFbfkvsnTABxffjaC8bdbg4QgVb7V0?=
- =?us-ascii?Q?vgw0gcJsvAph/hMd/TFJWOdzjHGYHbJhv5epFleZeEys53EUeVCyPB+OYzgs?=
- =?us-ascii?Q?bfMmPDsCiLfi+LKwklrANI21CmH7rTeo7udOtSz9t7sDYPhw1I0fUsaidGYw?=
- =?us-ascii?Q?KhHH/XTCGM9FxAcOb0hbiSB0UlNb9QHvmxi/GwJ/UU1VNZVc/4/cUi370NOM?=
- =?us-ascii?Q?QA=3D=3D?=
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?Wu5kT8Lhk9Wt8NGl2kv68v+sbWTVch1o3oxY4IAmDtKcEWAzmvdcCq9CjVg3?=
+ =?us-ascii?Q?DaDrh/77+qyBtjCRH8dxsuLRbqB4vHZJdoZN1saxpQR27cW236y8JcVPghwh?=
+ =?us-ascii?Q?cyH+Kp9FcI2ZwPCNVOIbnX6R0uaGMahax5BCyzNmlvTeBS/elsU/9c6A2wDD?=
+ =?us-ascii?Q?k2Cv7f4fN/yZt0m14bR+41s++/x+9ZMyaadAStBUW36hUFcni1xM6kMg7vYr?=
+ =?us-ascii?Q?iwbHBM8xk8+oZpigRGmWFFSlOpWjqwgiLlJNpz88H340mnQuDPpKvZm7c5RS?=
+ =?us-ascii?Q?zHnSCBoCY5Xtq9jKONYzV9s3Vupd4bJfwZN20LjgdRH6QFikDzF7lPSPf6QE?=
+ =?us-ascii?Q?HU8tSOV6lUmLzP3G2jqcVXPvKJ94/BSZWz65NRq6Jbvdi8DQs9TQmsAzy93p?=
+ =?us-ascii?Q?N5W9rJ9+DrcWQnwYZg9PDeAVHy/aoTFiUkDWUW2m2Dq4g/Jrv6P37Iv1GBXk?=
+ =?us-ascii?Q?tmUuSP/sNWCnGt3PtNvf4dDX5yr1tDUwqOw/+py2ih5ZzEB33kuctqw82d+X?=
+ =?us-ascii?Q?ggzreBgfc5b+oFx6E5adapUZVyZoDxRrDnfXY2C0Q2XdDK++dU0GAY3Ovkob?=
+ =?us-ascii?Q?RCX3SfeuiVYESE2yUGmMBysUP7PeVS2N5BCKJvIq8m+S800SiQREL+jBxrXO?=
+ =?us-ascii?Q?ND7ASxeTOsNnGP3C9zh0pKUXF9GyWFLZ/hm4/zigRrLqwsS0lphQEPoLMWhK?=
+ =?us-ascii?Q?VC9Dra+hbStF8q421c/a8Vn5GQJkFIAwyUy7o/qDe/qQrJBZBsM7Q7ez1L3R?=
+ =?us-ascii?Q?HQgpobSJdJ/4MbYQvW94v7282VkP/u5DecHjL0MpdSEe0vPYcCcjRTCYbGGf?=
+ =?us-ascii?Q?9W4cDJY3iFr/NwFs6AgJotwKUwQNagUtAU3ocmuHtkecAKbabJSbYfJ6hNVw?=
+ =?us-ascii?Q?G0WNJBii9aRpaLahNDwM6otI5G9kmsXZm/0WOySGbIf4h2yy5YmB30jG64r/?=
+ =?us-ascii?Q?xP00qjPcDKISbggFGojr7Q++J5AeHgqJwzE//0NCjNNykbdEG4R+Nway1DMq?=
+ =?us-ascii?Q?tSVDYbLiAiGcIG+ZpPSPG0WwKE1hE+546XSyh833uAc0i6+bLzv2z5erUEWI?=
+ =?us-ascii?Q?JlY+ucLc+dQBRC8GYvm0bNV3S+/ZLAqQgQQeDWyiBnpRSM1zMOfDXcMfowKC?=
+ =?us-ascii?Q?4jQMdmQK0BPn5yZXDhX0d6My8qkjrZVQInbxaq4tVFxKmWnM0SwN9thrCuSa?=
+ =?us-ascii?Q?qqr+6cSjXCOuQ4UPurOa5tH8hrmH4imRG+SSVs7fLCnYn7vyGLZYNZnzhTaJ?=
+ =?us-ascii?Q?paqUqu8gix+R4s5QnY2wrllUx6HHZfO8sW9u9LZUAY9tWTUOYtsSaxKN7bhg?=
+ =?us-ascii?Q?9rV7UxPbbNavbzNijO1TP6ksbUdjKJhCDimUKrvPGzC0Ew4Dc7g6fr19Of5G?=
+ =?us-ascii?Q?FskA74QDi3vB06djl4V+6AIqAv3Y8LMMZmrdxQJm5cowOODnNfTAB2+qBwJe?=
+ =?us-ascii?Q?GZ6G/rPglNXNtPIewfqiHDhgNDobznbVUxMzAQ7Ibbiq0PzTOxnxKu9sSp8W?=
+ =?us-ascii?Q?GmPLnZT9/kncRRrvcf8UD4YW0GvTeD3UvJeHJHmlBLLFiSpQbEaKR/qWnMjZ?=
+ =?us-ascii?Q?J91ChW3pV7dkBbn+ij33N0UUOZDJodkY2aPB5LRR7whMKh8F3nqwoWt+8USl?=
+ =?us-ascii?Q?3A=3D=3D?=
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cc041854-1247-4e46-7940-08d9a97bc2b9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Nov 2021 03:38:46.1497 (UTC)
+X-MS-Exchange-CrossTenant-AuthSource: DM6PR11MB3065.namprd11.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ca0f6983-6bab-4328-1fda-08d9a994effc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Nov 2021 06:38:59.4418 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-id: 46c98d88-e344-4ed4-8496-4ed7712e255d
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: A8YCVfipklGv6pFozIbrjJX+vBIHj97mCu36cqn1NA2eoVg5F8mTXLveOAxe/zrGVRypV7qcqj6TAtibBmtbNQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8993
+X-MS-Exchange-CrossTenant-userprincipalname: 47daeHIUkwLg/d68clL6T+53ca9Kk6IhtiBGcMl+SZNlTyEiU9uHj1FecoJfa6yIuDsyTYBnn+/skMS/JfHaYg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3514
+X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211116_193851_362719_432FF1F1 
-X-CRM114-Status: GOOD (  39.96  )
+X-CRM114-CacheID: sfid-20211116_223912_094893_649CAAEA 
+X-CRM114-Status: GOOD (  21.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,208 +184,657 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-<snipped...>
-> > Subject: Re: [PATCH v5 0/8] Add the imx8m pcie phy driver and imx8mm
-> > pcie support
-> >
-> > On Mon, Nov 1, 2021 at 7:58 PM Richard Zhu <hongxing.zhu@nxp.com>
-> > wrote:
-> > >
-> > > Refer to the discussion [1] when try to enable i.MX8MM PCIe support,
-> > > one standalone PCIe PHY driver should be seperated from i.MX PCIe
-> > > driver when enable i.MX8MM PCIe support.
-> > >
-> > > This patch-set adds the standalone PCIe PHY driver suport[1-5], and
-> > > i.MX8MM PCIe support[6-8] to have whole view to review this
-> > patch-set.
-> > >
-> > > The PCIe works on i.MX8MM EVK board based the the blkctrl power
-> > driver
-> > > [2] and this patch-set. And tested by Tim and Marcel on the
-> > > different reference clock modes boards.
-> > >
-> > > [1]
-> > >
-> >
-> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpa
-> > tc
-> > >
-> >
-> hwork.ozlabs.org%2Fproject%2Flinux-pci%2Fpatch%2F20210510141509.
-> > 929120
-> > >
-> >
-> -3-l.stach%40pengutronix.de%2F&amp;data=04%7C01%7Chongxing.zhu
-> > %40nxp.c
-> > >
-> >
-> om%7C489971db9c0f4308600208d9a88b2b05%7C686ea1d3bc2b4c6fa9
-> > 2cd99c5c3016
-> > >
-> >
-> 35%7C0%7C0%7C637726137953234928%7CUnknown%7CTWFpbGZsb3d
-> > 8eyJWIjoiMC4wLj
-> > >
-> >
-> AwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&
-> > amp;sdata=
-> > >
-> >
-> ltuNZqIAsEH6%2B1KE4cqNOiUul3Ex%2BWmYcyqD%2BFJuUrs%3D&amp;
-> > reserved=0
-> > > [2]
-> > >
-> >
-> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpa
-> > tc
-> > >
-> >
-> hwork.kernel.org%2Fproject%2Flinux-arm-kernel%2Fcover%2F20210910
-> > 202640
-> > > .980366-1-l.stach%40pengutronix.de%2F&amp;data=04%7C01%7Ch
-> on
-> > gxing.zhu%
-> > >
-> >
-> 40nxp.com%7C489971db9c0f4308600208d9a88b2b05%7C686ea1d3bc2
-> > b4c6fa92cd99
-> > >
-> >
-> c5c301635%7C0%7C0%7C637726137953234928%7CUnknown%7CTWFp
-> > bGZsb3d8eyJWIjo
-> > >
-> >
-> iMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%
-> > 7C3000&amp
-> > > ;sdata=MrT3Re3YttE9AoqmGHksTqt4jF4vitRPz5lkgpZqSZ4%3D&amp;r
-> es
-> > erved=0
-> > >
-> > > Main changes v4 --> v5:
-> > > - Set the AUX_EN always 1b'1, thus it can fix the regression
-> > > introduced
-> > in v4
-> > >   series on Marcel's board.
-> > > - Use the lower-case letter in the devicetreee refer to Marcel's
-> > comments.
-> > > - Since the default value of the deemphasis parameters are zero,
-> > > only
-> > set
-> > >   the deemphasis registers when the input paramters are none zero.
-> > >
-> > > Main changes v3 --> v4:
-> > > - Update the yaml to fix syntax error, add maxitems and drop
-> > > description of phy
-> > > - Correct the clock name in PHY DT node.
-> > > - Squash the EVK board relalted dts changes into one patch, and drop
-> > the
-> > >   useless dummy clock and gpio suffix in DT nodes.
-> > > - Add board specific de-emphasis parameters as DT properties. Thus
-> > each board
-> > >   can specify its actual de-emphasis values.
-> > > - Update the commit log of PHY driver.
-> > > - Remove the useless codes from PCIe driver, since they are moved to
-> > > PHY driver
-> > > - After the discussion and verification of the CLKREQ#
-> > > configurations
-> > with Tim,
-> > >   agree to add an optional boolean property
-> > > "fsl,clkreq-unsupported",
-> > indicates
-> > >   the CLKREQ# signal is hooked or not in HW designs.
-> > > - Add "Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>"
-> > > tag,
-> > since
-> > >   Marcel help to test the v3 patch-set.
-> > >
-> > > Main changes v2 --> v3:
-> > > - Regarding Lucas' comments.
-> > >  - to have a whole view to review the patches, send out the
-> i.MX8MM
-> > PCIe support too.
-> > >  - move the PHY related bits manipulations of the GPR/SRC to
-> > standalone PHY driver.
-> > >  - split the dts changes to SOC and board DT, and use the enum
-> > > instead
-> > of raw value.
-> > >  - update the license of the dt-binding header file.
-> > >
-> > > Changes v1 --> v2:
-> > > - Update the license of the dt-binding header file to make the license
-> > >   compatible with dts files.
-> > > - Fix the dt_binding_check errors.
-> > >
-> > > Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml    |
-> 6
-> > +++
-> > > Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |
-> 95
-> > ++++++++++++++++++++++++++++++++
-> > > arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
-> |
-> > 55 +++++++++++++++++++
-> > > arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> |
-> > 46 +++++++++++++++-
-> > > drivers/pci/controller/dwc/pci-imx6.c                        |
-> > 73 ++++++++++++++++++++++---
-> > > drivers/phy/freescale/Kconfig
-> |
-> > 9 ++++
-> > > drivers/phy/freescale/Makefile
-> |
-> > 1 +
-> > > drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   |
-> > 237
-> >
-> +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-> > +++++++++++++++++++++
-> > > include/dt-bindings/phy/phy-imx8-pcie.h                      |
-> > 14 +++++
-> > > 9 files changed, 528 insertions(+), 8 deletions(-)
-> > >
-> > > [PATCH v5 1/8] dt-bindings: phy: phy-imx8-pcie: Add binding for the
-> > > [PATCH v5 2/8] dt-bindings: phy: Add imx8 pcie phy driver support
-> > > [PATCH v5 3/8] dt-bindings: imx6q-pcie: Add PHY phandles and name
-> > > [PATCH v5 4/8] arm64: dts: imx8mm: Add the pcie phy support
-> [PATCH
-> > v5
-> > > 5/8] phy: freescale: pcie: Initialize the imx8 pcie [PATCH v5 6/8]
-> > > arm64: dts: imx8mm: Add the pcie support [PATCH v5 7/8] arm64:
-> dts:
-> > > imx8mm-evk: Add the pcie support on imx8mm [PATCH v5 8/8] PCI:
-> > imx:
-> > > Add the imx8mm pcie support
-> >
-> > Richard,
-> >
-> > Are you posting a v6 of this series or have we already missed the
-> > window for 5.16?
-> [Richard Zhu] Hi Tim:
-> Thanks for your kindly reminder.
-> In my original plan, I prefer to merge the codes refine firstly, then issue
-> the v6 patch-set after the rebase.
-> https://patchwork.kernel.org/project/linux-arm-kernel/cover/163574747
-> 8-25562-1-git-send-email-hongxing.zhu@nxp.com/
-> Unfortunately, I don't get ack from Lucas for other four patches.
-> Anyway, I would post the v6 patch-set immediately after merge Rob's
-> comments.
-> 
-> Best Regards
-> Richard Zhu
-> >
-> > Best regards,
-> >
-[Richard Zhu] Hi Tim:
-The V6 patch-set listed below had been issued.
-" https://patchwork.kernel.org/project/linux-phy/cover/1637028976-9201-1-git-send-email-hongxing.zhu@nxp.com/"
-GENERIC PHY FRAMEWORK maintainer Kishon and Vinod had been contained in the
- mail-loop.
-Do you know who I can ping to pick up the PHY part of this patch-set?
 
-Best Regards
-Richard Zhu
-> > Tim
+
+> -----Original Message-----
+> From: A, Rashmi <rashmi.a@intel.com>
+> Sent: Wednesday, October 27, 2021 5:25 PM
+> To: michal.simek@xilinx.com; ulf.hansson@linaro.org; linux-
+> mmc@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> robh+dt@kernel.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; kishon@ti.com; vkoul@kernel.org;
+> andriy.shevchenko@linux.intel.com; linux-phy@lists.infradead.org
+> Cc: mgross@linux.intel.com; kris.pan@linux.intel.com; Zhou, Furong
+> <furong.zhou@intel.com>; Sangannavar, Mallikarjunappa
+> <mallikarjunappa.sangannavar@intel.com>; Hunter, Adrian
+> <adrian.hunter@intel.com>; Vaidya, Mahesh R
+> <mahesh.r.vaidya@intel.com>; Srikandan, Nandhini
+> <nandhini.srikandan@intel.com>; A, Rashmi <rashmi.a@intel.com>
+> Subject: [RESEND PATCH v2 4/4] phy: intel: Add Thunder Bay eMMC PHY
+> support
+> 
+> From: Rashmi A <rashmi.a@intel.com>
+> 
+> Add support of eMMC PHY for Intel Thunder Bay SoC, uses the Arasan eMMC
+> phy
+> 
+> Signed-off-by: Rashmi A <rashmi.a@intel.com>
+> Reviewed-by: Adrian Hunter <adrian.hunter@intel.com>
+> ---
+>  drivers/phy/intel/Kconfig                     |  10 +
+>  drivers/phy/intel/Makefile                    |   1 +
+>  drivers/phy/intel/phy-intel-thunderbay-emmc.c | 511 ++++++++++++++++++
+>  3 files changed, 522 insertions(+)
+>  create mode 100644 drivers/phy/intel/phy-intel-thunderbay-emmc.c
+> 
+> diff --git a/drivers/phy/intel/Kconfig b/drivers/phy/intel/Kconfig index
+> ac42bb2fb394..18a3cc5b98c0 100644
+> --- a/drivers/phy/intel/Kconfig
+> +++ b/drivers/phy/intel/Kconfig
+> @@ -46,3 +46,13 @@ config PHY_INTEL_LGM_EMMC
+>  	select GENERIC_PHY
+>  	help
+>  	  Enable this to support the Intel EMMC PHY
+> +
+> +config PHY_INTEL_THUNDERBAY_EMMC
+> +        tristate "Intel Thunder Bay eMMC PHY driver"
+> +        depends on OF && (ARCH_THUNDERBAY || COMPILE_TEST)
+> +        select GENERIC_PHY
+> +        help
+> +	  This option enables support for Intel Thunder Bay SoC eMMC PHY.
+> +
+> +	  To compile this driver as a module, choose M here: the module
+> +	  will be called phy-intel-thunderbay-emmc.ko.
+> diff --git a/drivers/phy/intel/Makefile b/drivers/phy/intel/Makefile index
+> 14550981a707..b7321d56b0bb 100644
+> --- a/drivers/phy/intel/Makefile
+> +++ b/drivers/phy/intel/Makefile
+> @@ -3,3 +3,4 @@ obj-$(CONFIG_PHY_INTEL_KEEMBAY_EMMC)	+=
+> phy-intel-keembay-emmc.o
+>  obj-$(CONFIG_PHY_INTEL_KEEMBAY_USB)	+= phy-intel-keembay-usb.o
+>  obj-$(CONFIG_PHY_INTEL_LGM_COMBO)	+= phy-intel-lgm-combo.o
+>  obj-$(CONFIG_PHY_INTEL_LGM_EMMC)	+= phy-intel-lgm-emmc.o
+> +obj-$(CONFIG_PHY_INTEL_THUNDERBAY_EMMC) += phy-intel-thunderbay-
+> emmc.o
+> diff --git a/drivers/phy/intel/phy-intel-thunderbay-emmc.c
+> b/drivers/phy/intel/phy-intel-thunderbay-emmc.c
+> new file mode 100644
+> index 000000000000..2d6ea84492f2
+> --- /dev/null
+> +++ b/drivers/phy/intel/phy-intel-thunderbay-emmc.c
+> @@ -0,0 +1,511 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Intel ThunderBay eMMC PHY driver
+> + *
+> + * Copyright (C) 2021 Intel Corporation
+> + *
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/io.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +
+> +/* eMMC/SD/SDIO core/phy configuration registers */
+> +#define CTRL_CFG_0	0x00
+> +#define CTRL_CFG_1	0x04
+> +#define CTRL_PRESET_0	0x08
+> +#define CTRL_PRESET_1	0x0c
+> +#define CTRL_PRESET_2	0x10
+> +#define CTRL_PRESET_3	0x14
+> +#define CTRL_PRESET_4	0x18
+> +#define CTRL_CFG_2	0x1c
+> +#define CTRL_CFG_3	0x20
+> +#define PHY_CFG_0	0x24
+> +#define PHY_CFG_1	0x28
+> +#define PHY_CFG_2	0x2c
+> +#define PHYBIST_CTRL	0x30
+> +#define SDHC_STAT3	0x34
+> +#define PHY_STAT	0x38
+> +#define PHYBIST_STAT_0	0x3c
+> +#define PHYBIST_STAT_1	0x40
+> +#define EMMC_AXI        0x44
+> +
+> +/* CTRL_PRESET_3 */
+> +#define CTRL_PRESET3_MASK	GENMASK(31, 0)
+> +#define CTRL_PRESET3_SHIFT	0
+> +
+> +/* CTRL_CFG_0 bit fields */
+> +#define SUPPORT_HS_MASK		BIT(26)
+> +#define SUPPORT_HS_SHIFT	26
+> +
+> +#define SUPPORT_8B_MASK		BIT(24)
+> +#define SUPPORT_8B_SHIFT	24
+> +
+> +/* CTRL_CFG_1 bit fields */
+> +#define SUPPORT_SDR50_MASK	BIT(28)
+> +#define SUPPORT_SDR50_SHIFT	28
+> +#define SLOT_TYPE_MASK		GENMASK(27, 26)
+> +#define SLOT_TYPE_OFFSET	26
+> +#define SUPPORT_64B_MASK	BIT(24)
+> +#define SUPPORT_64B_SHIFT	24
+> +#define SUPPORT_HS400_MASK	BIT(2)
+> +#define SUPPORT_HS400_SHIFT	2
+> +#define SUPPORT_DDR50_MASK	BIT(1)
+> +#define SUPPORT_DDR50_SHIFT	1
+> +#define SUPPORT_SDR104_MASK	BIT(0)
+> +#define SUPPORT_SDR104_SHIFT	0
+> +
+> +/* PHY_CFG_0 bit fields */
+> +#define SEL_DLY_TXCLK_MASK      BIT(29)
+> +#define SEL_DLY_TXCLK_SHIFT	29
+> +#define SEL_DLY_RXCLK_MASK      BIT(28)
+> +#define SEL_DLY_RXCLK_SHIFT	28
+> +
+> +#define OTAP_DLY_ENA_MASK	BIT(27)
+> +#define OTAP_DLY_ENA_SHIFT	27
+> +#define OTAP_DLY_SEL_MASK	GENMASK(26, 23)
+> +#define OTAP_DLY_SEL_SHIFT	23
+> +#define ITAP_CHG_WIN_MASK	BIT(22)
+> +#define ITAP_CHG_WIN_SHIFT	22
+> +#define ITAP_DLY_ENA_MASK	BIT(21)
+> +#define ITAP_DLY_ENA_SHIFT	21
+> +#define ITAP_DLY_SEL_MASK	GENMASK(20, 16)
+> +#define ITAP_DLY_SEL_SHIFT	16
+> +#define RET_ENB_MASK		BIT(15)
+> +#define RET_ENB_SHIFT		15
+> +#define RET_EN_MASK		BIT(14)
+> +#define RET_EN_SHIFT		14
+> +#define DLL_IFF_MASK		GENMASK(13, 11)
+> +#define DLL_IFF_SHIFT		11
+> +#define DLL_EN_MASK		BIT(10)
+> +#define DLL_EN_SHIFT		10
+> +#define DLL_TRIM_ICP_MASK	GENMASK(9, 6)
+> +#define DLL_TRIM_ICP_SHIFT	6
+> +#define RETRIM_EN_MASK		BIT(5)
+> +#define RETRIM_EN_SHIFT		5
+> +#define RETRIM_MASK		BIT(4)
+> +#define RETRIM_SHIFT		4
+> +#define DR_TY_MASK		GENMASK(3, 1)
+> +#define DR_TY_SHIFT		1
+> +#define PWR_DOWN_MASK		BIT(0)
+> +#define PWR_DOWN_SHIFT		0
+> +
+> +/* PHY_CFG_1 bit fields */
+> +#define REN_DAT_MASK		GENMASK(19, 12)
+> +#define REN_DAT_SHIFT		12
+> +#define REN_CMD_MASK		BIT(11)
+> +#define REN_CMD_SHIFT		11
+> +#define REN_STRB_MASK		BIT(10)
+> +#define REN_STRB_SHIFT		10
+> +#define PU_STRB_MASK		BIT(20)
+> +#define PU_STRB_SHIFT		20
+> +
+> +/* PHY_CFG_2 bit fields */
+> +#define CLKBUF_MASK		GENMASK(24, 21)
+> +#define CLKBUF_SHIFT		21
+> +#define SEL_STRB_MASK		GENMASK(20, 13)
+> +#define SEL_STRB_SHIFT		13
+> +#define SEL_FREQ_MASK		GENMASK(12, 10)
+> +#define SEL_FREQ_SHIFT		10
+> +
+> +/* PHY_STAT bit fields */
+> +#define CAL_DONE		BIT(6)
+> +#define DLL_RDY			BIT(5)
+> +
+> +#define OTAP_DLY		0x0
+> +#define ITAP_DLY		0x0
+> +#define STRB			0x33
+> +
+> +/* From ACS_eMMC51_16nFFC_RO1100_Userguide_v1p0.pdf p17 */
+> +#define FREQSEL_200M_170M	0x0
+> +#define FREQSEL_170M_140M	0x1
+> +#define FREQSEL_140M_110M	0x2
+> +#define FREQSEL_110M_80M	0x3
+> +#define FREQSEL_80M_50M		0x4
+> +#define FREQSEL_275M_250M	0x5
+> +#define FREQSEL_250M_225M	0x6
+> +#define FREQSEL_225M_200M	0x7
+> +
+> +/* Phy power status */
+> +#define PHY_UNINITIALIZED	0
+> +#define PHY_INITIALIZED		1
+> +
+> +/*
+> + * During init(400KHz) phy_settings will be called with 200MHZ clock
+> + * To avoid incorrectly setting the phy for init(400KHZ) "phy_power_sts" is
+> used.
+> + * When actual clock is set always phy is powered off once and then
+> powered on.
+> + * (sdhci_arasan_set_clock). That feature will be used to identify
+> +whether the
+> + * settings are for init phy_power_on or actual clock phy_power_on
+> + * 0 --> init settings
+> + * 1 --> actual settings
+> + */
+> +
+> +struct thunderbay_emmc_phy {
+> +	void __iomem    *reg_base;
+> +	struct clk      *emmcclk;
+> +	int phy_power_sts;
+> +};
+> +
+> +static inline void update_reg(struct thunderbay_emmc_phy *tbh_phy, u32
+> offset,
+> +			      u32 mask, u32 shift, u32 val)
+> +{
+> +	u32 tmp;
+> +
+> +	tmp = readl(tbh_phy->reg_base + offset);
+> +	tmp &= ~mask;
+> +	tmp |= val << shift;
+> +	writel(tmp, tbh_phy->reg_base + offset); }
+> +
+> +static int thunderbay_emmc_phy_power(struct phy *phy, bool power_on) {
+> +	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
+> +	unsigned int freqsel = FREQSEL_200M_170M;
+> +	unsigned long rate;
+> +	static int lock;
+> +	u32 val;
+> +	int ret;
+> +
+> +	/* Disable DLL */
+> +	rate = clk_get_rate(tbh_phy->emmcclk);
+> +	switch (rate) {
+> +	case 200000000:
+> +		/* lock dll only when it is used, i.e only if
+> SEL_DLY_TXCLK/RXCLK are 0 */
+> +		update_reg(tbh_phy, PHY_CFG_0, DLL_EN_MASK,
+> DLL_EN_SHIFT, 0x0);
+> +		break;
+> +
+> +	/* dll lock not required for other frequencies */
+> +	case 50000000 ... 52000000:
+> +	case 400000:
+> +	default:
+> +		break;
+> +	}
+> +
+> +	if (!power_on)
+> +		return 0;
+> +
+> +	rate = clk_get_rate(tbh_phy->emmcclk);
+> +	switch (rate) {
+> +	case 170000001 ... 200000000:
+> +		freqsel = FREQSEL_200M_170M;
+> +		break;
+> +
+> +	case 140000001 ... 170000000:
+> +		freqsel = FREQSEL_170M_140M;
+> +		break;
+> +
+> +	case 110000001 ... 140000000:
+> +		freqsel = FREQSEL_140M_110M;
+> +		break;
+> +
+> +	case 80000001 ... 110000000:
+> +		freqsel = FREQSEL_110M_80M;
+> +		break;
+> +
+> +	case 50000000 ... 80000000:
+> +		freqsel = FREQSEL_80M_50M;
+> +		break;
+> +
+> +	case 250000001 ... 275000000:
+> +		freqsel = FREQSEL_275M_250M;
+> +		break;
+> +
+> +	case 225000001 ... 250000000:
+> +		freqsel = FREQSEL_250M_225M;
+> +		break;
+> +
+> +	case 200000001 ... 225000000:
+> +		freqsel = FREQSEL_225M_200M;
+> +		break;
+> +	default:
+> +		break;
+> +	}
+> +	/* Clock rate is checked against upper limit. It may fall low during init
+> */
+> +	if (rate > 200000000)
+> +		dev_warn(&phy->dev, "Unsupported rate: %lu\n", rate);
+> +
+> +	udelay(5);
+> +
+> +	if (lock == 0) {
+> +		/* PDB will be done only once per boot */
+> +		update_reg(tbh_phy, PHY_CFG_0, PWR_DOWN_MASK,
+> +			   PWR_DOWN_SHIFT, 0x1);
+> +		lock = 1;
+> +		/*
+> +		 * According to the user manual, it asks driver to wait 5us for
+> +		 * calpad busy trimming. However it is documented that this
+> value is
+> +		 * PVT(A.K.A. process, voltage and temperature) relevant, so
+> some
+> +		 * failure cases are found which indicates we should be more
+> tolerant
+> +		 * to calpad busy trimming.
+> +		 */
+> +		ret = readl_poll_timeout(tbh_phy->reg_base + PHY_STAT,
+> +					 val, (val & CAL_DONE), 10, 50);
+> +		if (ret) {
+> +			dev_err(&phy->dev, "caldone failed, ret=%d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+> +	rate = clk_get_rate(tbh_phy->emmcclk);
+> +	switch (rate) {
+> +	case 200000000:
+> +		/* Set frequency of the DLL operation */
+> +		update_reg(tbh_phy, PHY_CFG_2, SEL_FREQ_MASK,
+> SEL_FREQ_SHIFT,
+> +freqsel);
+> +
+> +		/* Enable DLL */
+> +		update_reg(tbh_phy, PHY_CFG_0, DLL_EN_MASK,
+> DLL_EN_SHIFT, 0x1);
+> +
+> +		/*
+> +		 * After enabling analog DLL circuits docs say that we need
+> 10.2 us if
+> +		 * our source clock is at 50 MHz and that lock time scales
+> linearly
+> +		 * with clock speed. If we are powering on the PHY and the
+> card clock
+> +		 * is super slow (like 100kHz) this could take as long as 5.1 ms
+> as
+> +		 * per the math: 10.2 us * (50000000 Hz / 100000 Hz) => 5.1
+> ms
+> +		 * hopefully we won't be running at 100 kHz, but we should
+> still make
+> +		 * sure we wait long enough.
+> +		 *
+> +		 * NOTE: There appear to be corner cases where the DLL
+> seems to take
+> +		 * extra long to lock for reasons that aren't understood. In
+> some
+> +		 * extreme cases we've seen it take up to over 10ms (!). We'll
+> be
+> +		 * generous and give it 50ms.
+> +		 */
+> +		ret = readl_poll_timeout(tbh_phy->reg_base + PHY_STAT,
+> +					 val, (val & DLL_RDY), 10, 50 *
+> USEC_PER_MSEC);
+> +		if (ret) {
+> +			dev_err(&phy->dev, "dllrdy failed, ret=%d\n", ret);
+> +			return ret;
+> +		}
+> +		break;
+> +
+> +	default:
+> +		break;
+> +	}
+> +	return 0;
+> +}
+> +
+> +static int thunderbay_emmc_phy_init(struct phy *phy) {
+> +	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
+> +
+> +	tbh_phy->emmcclk = clk_get(&phy->dev, "emmcclk");
+> +
+> +	return PTR_ERR_OR_ZERO(tbh_phy->emmcclk);
+> +}
+> +
+> +static int thunderbay_emmc_phy_exit(struct phy *phy) {
+> +	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
+> +
+> +	clk_put(tbh_phy->emmcclk);
+> +
+> +	return 0;
+> +}
+> +
+> +static int thunderbay_emmc_phy_power_on(struct phy *phy) {
+> +	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
+> +	unsigned long rate;
+> +
+> +	/* Overwrite capability bits configurable in bootloader */
+> +	update_reg(tbh_phy, CTRL_CFG_0,
+> +		   SUPPORT_HS_MASK, SUPPORT_HS_SHIFT, 0x1);
+> +	update_reg(tbh_phy, CTRL_CFG_0,
+> +		   SUPPORT_8B_MASK, SUPPORT_8B_SHIFT, 0x1);
+> +	update_reg(tbh_phy, CTRL_CFG_1,
+> +		   SUPPORT_SDR50_MASK, SUPPORT_SDR50_SHIFT, 0x1);
+> +	update_reg(tbh_phy, CTRL_CFG_1,
+> +		   SUPPORT_DDR50_MASK, SUPPORT_DDR50_SHIFT, 0x1);
+> +	update_reg(tbh_phy, CTRL_CFG_1,
+> +		   SUPPORT_SDR104_MASK, SUPPORT_SDR104_SHIFT, 0x1);
+> +	update_reg(tbh_phy, CTRL_CFG_1,
+> +		   SUPPORT_HS400_MASK, SUPPORT_HS400_SHIFT, 0x1);
+> +	update_reg(tbh_phy, CTRL_CFG_1,
+> +		   SUPPORT_64B_MASK, SUPPORT_64B_SHIFT, 0x1);
+> +
+> +	if (tbh_phy->phy_power_sts == PHY_UNINITIALIZED) {
+> +		/* Indicates initialization, settings for init, same as 400KHZ
+> setting */
+> +		update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_TXCLK_MASK,
+> SEL_DLY_TXCLK_SHIFT, 0x1);
+> +		update_reg(tbh_phy, PHY_CFG_0, SEL_DLY_RXCLK_MASK,
+> SEL_DLY_RXCLK_SHIFT, 0x1);
+> +		update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_ENA_MASK,
+> ITAP_DLY_ENA_SHIFT, 0x0);
+> +		update_reg(tbh_phy, PHY_CFG_0, ITAP_DLY_SEL_MASK,
+> ITAP_DLY_SEL_SHIFT, 0x0);
+> +		update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_ENA_MASK,
+> OTAP_DLY_ENA_SHIFT, 0x0);
+> +		update_reg(tbh_phy, PHY_CFG_0, OTAP_DLY_SEL_MASK,
+> OTAP_DLY_SEL_SHIFT, 0);
+> +		update_reg(tbh_phy, PHY_CFG_0, DLL_TRIM_ICP_MASK,
+> DLL_TRIM_ICP_SHIFT, 0);
+> +		update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
+> DR_TY_SHIFT, 0x1);
+> +
+> +	} else if (tbh_phy->phy_power_sts == PHY_INITIALIZED) {
+> +		/* Indicates actual clock setting */
+> +		rate = clk_get_rate(tbh_phy->emmcclk);
+> +		switch (rate) {
+> +		case 200000000:
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_TXCLK_MASK,
+> +				   SEL_DLY_TXCLK_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_RXCLK_MASK,
+> +				   SEL_DLY_RXCLK_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_ENA_MASK,
+> +				   ITAP_DLY_ENA_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_SEL_MASK,
+> +				   ITAP_DLY_SEL_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_ENA_MASK,
+> +				   OTAP_DLY_ENA_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_SEL_MASK,
+> +				   OTAP_DLY_SEL_SHIFT, 2);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> DLL_TRIM_ICP_MASK,
+> +				   DLL_TRIM_ICP_SHIFT, 0x8);
+> +			update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
+> +				   DR_TY_SHIFT, 0x1);
+> +			/* For HS400 only */
+> +			update_reg(tbh_phy, PHY_CFG_2, SEL_STRB_MASK,
+> +				   SEL_STRB_SHIFT, STRB);
+> +			break;
+> +
+> +		case 50000000 ... 52000000:
+> +			/* For both HS and DDR52 this setting works */
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_TXCLK_MASK,
+> +				   SEL_DLY_TXCLK_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_RXCLK_MASK,
+> +				   SEL_DLY_RXCLK_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_ENA_MASK,
+> +				   ITAP_DLY_ENA_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_SEL_MASK,
+> +				   ITAP_DLY_SEL_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_ENA_MASK,
+> +				   OTAP_DLY_ENA_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_SEL_MASK,
+> +				   OTAP_DLY_SEL_SHIFT, 4);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> DLL_TRIM_ICP_MASK,
+> +				   DLL_TRIM_ICP_SHIFT, 0x8);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> +				   DR_TY_MASK, DR_TY_SHIFT, 0x1);
+> +			break;
+> +
+> +		case 400000:
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_TXCLK_MASK,
+> +				   SEL_DLY_TXCLK_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_RXCLK_MASK,
+> +				   SEL_DLY_RXCLK_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_ENA_MASK,
+> +				   ITAP_DLY_ENA_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_SEL_MASK,
+> +				   ITAP_DLY_SEL_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_ENA_MASK,
+> +				   OTAP_DLY_ENA_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_SEL_MASK,
+> +				   OTAP_DLY_SEL_SHIFT, 0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> DLL_TRIM_ICP_MASK,
+> +				   DLL_TRIM_ICP_SHIFT, 0);
+> +			update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
+> DR_TY_SHIFT, 0x1);
+> +			break;
+> +
+> +		default:
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_TXCLK_MASK,
+> +				   SEL_DLY_TXCLK_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> SEL_DLY_RXCLK_MASK,
+> +				   SEL_DLY_RXCLK_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_ENA_MASK,
+> +				   ITAP_DLY_ENA_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> ITAP_DLY_SEL_MASK,
+> +				   ITAP_DLY_SEL_SHIFT, 0x0);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_ENA_MASK,
+> +				   OTAP_DLY_ENA_SHIFT, 0x1);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> OTAP_DLY_SEL_MASK,
+> +				   OTAP_DLY_SEL_SHIFT, 2);
+> +			update_reg(tbh_phy, PHY_CFG_0,
+> DLL_TRIM_ICP_MASK,
+> +				   DLL_TRIM_ICP_SHIFT, 0x8);
+> +			update_reg(tbh_phy, PHY_CFG_0, DR_TY_MASK,
+> +				   DR_TY_SHIFT, 0x1);
+> +			break;
+> +		}
+> +		/* Reset, init seq called without phy_power_off, this
+> indicates init seq */
+> +		tbh_phy->phy_power_sts = PHY_UNINITIALIZED;
+> +	}
+> +
+> +	update_reg(tbh_phy, PHY_CFG_0, RETRIM_EN_MASK,
+> RETRIM_EN_SHIFT, 0x1);
+> +	update_reg(tbh_phy, PHY_CFG_0, RETRIM_MASK, RETRIM_SHIFT,
+> 0x0);
+> +
+> +	return thunderbay_emmc_phy_power(phy, 1); }
+> +
+> +static int thunderbay_emmc_phy_power_off(struct phy *phy) {
+> +	struct thunderbay_emmc_phy *tbh_phy = phy_get_drvdata(phy);
+> +
+> +	tbh_phy->phy_power_sts = PHY_INITIALIZED;
+> +
+> +	return thunderbay_emmc_phy_power(phy, 0); }
+> +
+> +static const struct phy_ops thunderbay_emmc_phy_ops = {
+> +	.init		= thunderbay_emmc_phy_init,
+> +	.exit		= thunderbay_emmc_phy_exit,
+> +	.power_on	= thunderbay_emmc_phy_power_on,
+> +	.power_off	= thunderbay_emmc_phy_power_off,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static const struct of_device_id thunderbay_emmc_phy_of_match[] = {
+> +	{ .compatible = "intel,thunderbay-emmc-phy",
+> +		(void *)&thunderbay_emmc_phy_ops },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, thunderbay_emmc_phy_of_match);
+> +
+> +static int thunderbay_emmc_phy_probe(struct platform_device *pdev) {
+> +	struct thunderbay_emmc_phy *tbh_phy;
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +	const struct of_device_id *id;
+> +	struct phy *generic_phy;
+> +	struct resource *res;
+> +
+> +	if (!dev->of_node)
+> +		return -ENODEV;
+> +
+> +	tbh_phy = devm_kzalloc(dev, sizeof(*tbh_phy), GFP_KERNEL);
+> +	if (!tbh_phy)
+> +		return -ENOMEM;
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	tbh_phy->reg_base = devm_ioremap_resource(&pdev->dev, res);
+> +	if (IS_ERR(tbh_phy->reg_base)) {
+> +		dev_err(&pdev->dev, "region map failed\n");
+> +		return PTR_ERR(tbh_phy->reg_base);
+> +	}
+> +
+> +	tbh_phy->phy_power_sts = PHY_UNINITIALIZED;
+> +	id = of_match_node(thunderbay_emmc_phy_of_match, pdev-
+> >dev.of_node);
+> +	if (!id) {
+> +		dev_err(dev, "failed to get match_node\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	generic_phy = devm_phy_create(dev, dev->of_node, id->data);
+> +	if (IS_ERR(generic_phy)) {
+> +		dev_err(dev, "failed to create PHY\n");
+> +		return PTR_ERR(generic_phy);
+> +	}
+> +
+> +	phy_set_drvdata(generic_phy, tbh_phy);
+> +	phy_provider = devm_of_phy_provider_register(dev,
+> +of_phy_simple_xlate);
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static struct platform_driver thunderbay_emmc_phy_driver = {
+> +	.probe		 = thunderbay_emmc_phy_probe,
+> +	.driver		 = {
+> +		.name	 = "thunderbay-emmc-phy",
+> +		.of_match_table = thunderbay_emmc_phy_of_match,
+> +	},
+> +};
+> +module_platform_driver(thunderbay_emmc_phy_driver);
+> +
+> +MODULE_AUTHOR("Nandhini S <nandhini.srikandan@intel.com>");
+> +MODULE_AUTHOR("Rashmi A <rashmi.a@intel.com>");
+> +MODULE_DESCRIPTION("Intel Thunder Bay eMMC PHY driver");
+> +MODULE_LICENSE("GPL v2");
+> --
+> 2.17.1
+
+
+
+Thank you Rob for the review of emmc dt-bindings.
+
+Hi Vinod/Kishon,
+
+Please let me know if there are any comments.
+Looking forward for your acknowledgement for the patch, phy: intel: Add Thunder Bay eMMC PHY support
+
+-Rashmi
+
 
 -- 
 linux-phy mailing list
