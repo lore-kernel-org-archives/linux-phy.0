@@ -2,160 +2,64 @@ Return-Path: <SRS0=n1nF=QF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 49D8AC4332F
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 12:44:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4B765C19775
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 21:03:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 852AB61A8C
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 12:44:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 852AB61A8C
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=axentia.se
+	by mail.kernel.org (Postfix) with ESMTPS id 1910761929
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 21:03:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 1910761929
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=z3ntu.xyz
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oCzQFdbjruJvRHxIuSPKeVobPYlwvkTeRfsYTiOT1XU=; b=UsSkj4FcZLjbl+3YPUavXia2fD
-	gAVYPAEBcEQBRgT1vjjJXp1/vzgfV1v3vvXEZ02yjze54C5ameuJ7JnUxcYvMRdmouybnuMq6FUd6
-	WzDGHMzsjXe5AMVHiPaO5+MJTOoh48XoPntVLc+5UI32rBVwzwcvdycYeYFcUzvRCXvFxY2cloZJ4
-	cJvPiJ1scwG1kcybKPxpa5szrJQBW7Vh5nMfo20vNCdB2lAw3mAKHhsoTY/RmzMV1m/mVyAmcHKby
-	So9wOlCliFKJjHuzoICEfjSk1bsbCBOnQUGYiVwQeaX8WLHQol4CvX1tICtP2rZS7SASkm+B6fUUf
-	PV5G5nzg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y3vucZHykpGhqswOmP5mKKvEJEvEBTuXwstSvEUvseQ=; b=0rau8bz0doc7rd
+	pwnlQmmO2ckBQstCov1yP5z0FS8WL4ioD+UZGMH4sRBdx1Q/0UBm9ePNwfoCUEH50j40rp9tnLrCf
+	EdvMM6SIBGEg5FLAFi501omjQE1uPBI419VlrByhRSY+Z8xIvo489Kd+TvT94yleKEtxx0q6mkDLH
+	Ok2HMSq5jnlEU0xYQ9s7prMoiLPyAUXKSCH6IxGKBk9WUsKdaaX2h1oTAISTErzNFcGK5beAXFUXG
+	47FzZikFp1QXDrw6NFS1egE8b3bTg9+pSEWdPORyU763XC6ZQ80+dFnuwdwNu557MUc1gPDDQLKx6
+	o74lt07/kwzbFrR5jAow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mngly-007mJ0-2w; Thu, 18 Nov 2021 12:44:14 +0000
-Received: from mail-eopbgr50100.outbound.protection.outlook.com
- ([40.107.5.100] helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1mnoYk-008sh2-Kl; Thu, 18 Nov 2021 21:03:06 +0000
+Received: from mail.z3ntu.xyz ([128.199.32.197])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mnglv-007mIV-Eq
- for linux-phy@lists.infradead.org; Thu, 18 Nov 2021 12:44:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=dkXI1fU+UtuN6u4pfE9VtVXA661HDjzYkns8Kxy/1Mz9t0qcFn2PWK2VfTl/lV0HEwIkSjhKcwoOJW9T+kSAbvMt2mT2qYALibSp9YoNwlYhgcOEyQVu3HopOV2cciP1zgGYCkq87hVY9D4+ie6E1z75X0nmPIq78VjAF3TNtg6IlGKXKnG6Qik0ePAVTojqOjtcLBh7/NbHDbOxWXo7jy/gCBuQsaYOuQVG3Nb314/j5j/RZPCNtOH4jjuTtkzDxmuTZm0nvZKwQb0rhQxonTBAaJuF4Y9PoQ/J7vbE0SfqNgyHspr4/YpPI0tOpYkQ7V/EAydECJ43N0rY9OiV3w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wk4fMCdQhfC0Z53R7mCSb8NyexlyUcCmYvAIx70XCjA=;
- b=dWW4z8WsZohCFw18rmkHl2Riq0Ge1hAVNlh1PrriANGk2i1WJHhP0vClnXb/VuUU58xrA0mRrE/zeKlyOBDD1A0jGa/ELVum5CgG0TCV8XN0grIwwxv6zRSTVHgqAT1uSo2X4J1B6K1G7rl7UK6hFrp/RXjpnWcw3IdvdTIPMJRzX+7075lqfGBJuoecKC+TNyn0rT2DCAulARLj7QFuky0Xi8pIT3qBObpM2OfWcBL30G+l50j/ThlBXrTxlFyNkX92Yx3J9r2ai3vv5pAPE2cVHGTJx3j7tJl6XGnsMpbpRBaotTTBXRyTITLk8ttKapJgGmV5qloISscEPrG6YA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wk4fMCdQhfC0Z53R7mCSb8NyexlyUcCmYvAIx70XCjA=;
- b=d4IVWFHDs32vlwbLQ/yuT8ZWoKQLkhCPC/m/XIyGjR1JthFlWizeMgYSvJkHO1dEZdknypQU/+0vMmiHcyMFI1AEkhCc5nAg5i/2UPO+3byqLXfq1YvOp2Y38gohvLYpE1PS3pt7iPShlT11W0p274Fr1Aq/cuGGrb8TfMWm6Z4=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=axentia.se;
-Received: from DB8PR02MB5482.eurprd02.prod.outlook.com (2603:10a6:10:eb::29)
- by DB7PR02MB5241.eurprd02.prod.outlook.com (2603:10a6:10:74::23) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4690.27; Thu, 18 Nov
- 2021 12:44:05 +0000
-Received: from DB8PR02MB5482.eurprd02.prod.outlook.com
- ([fe80::b1d6:d448:8d63:5683]) by DB8PR02MB5482.eurprd02.prod.outlook.com
- ([fe80::b1d6:d448:8d63:5683%6]) with mapi id 15.20.4690.027; Thu, 18 Nov 2021
- 12:44:05 +0000
-Message-ID: <3f13a769-f8ef-dbe8-f2c6-ff197af8eddf@axentia.se>
-Date: Thu, 18 Nov 2021 13:44:02 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.3.0
-Subject: Re: [PATCH RFC 2/2] phy: phy-can-transceiver: Add support for setting
- mux
-Content-Language: en-US
-To: Aswath Govindraju <a-govindraju@ti.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Nishanth Menon <nm@ti.com>,
- Wolfgang Grandegger <wg@grandegger.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-can@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20211111164313.649-1-a-govindraju@ti.com>
- <20211111164313.649-3-a-govindraju@ti.com>
- <20211112084027.b2t2beqiiodnwjtv@pengutronix.de>
- <085ec3c0-75c6-f3c2-9999-348098fd88f9@ti.com>
- <f933048c-099f-054a-6563-671cf2a2e2af@axentia.se>
- <8be2b770-9c4c-ce41-4c49-27fa30b4afee@ti.com>
- <b8b0c7c4-3006-071b-d68f-8b18d24a1f72@axentia.se>
- <f47dc612-adea-4dfb-f2fd-d67b5df6ed50@ti.com>
-From: Peter Rosin <peda@axentia.se>
-Organization: Axentia Technologies AB
-In-Reply-To: <f47dc612-adea-4dfb-f2fd-d67b5df6ed50@ti.com>
-X-ClientProxiedBy: GV3P280CA0056.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:150:9::10) To DB8PR02MB5482.eurprd02.prod.outlook.com
- (2603:10a6:10:eb::29)
+ id 1mnoYg-008sdh-JO
+ for linux-phy@lists.infradead.org; Thu, 18 Nov 2021 21:03:04 +0000
+Received: from localhost.localdomain (ip-213-127-109-54.ip.prioritytelecom.net
+ [213.127.109.54])
+ by mail.z3ntu.xyz (Postfix) with ESMTPSA id 6427BCADFE;
+ Thu, 18 Nov 2021 21:02:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=z3ntu.xyz; s=z3ntu;
+ t=1637269373; bh=hVhf8M1vf/Y7SjzoLmES1H4b9X86FBqukDCU7O27VBg=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=sNAnKr46DkWHRcjSZ88Z0LG2AXaerQPLd7LkLWjypugwTiOUZ0aSG/3v0yk7Sskcz
+ JKX7CoeMzhUo1TAElTagDyYbm1fIcMcozA17/HL2S52HPC7kQLfkpZQgONGEPvrX1F
+ kc+PETY67XiMrQ/RDqnETj6qjvnCJw0c1Gom7M3s=
+From: Luca Weiss <luca@z3ntu.xyz>
+To: linux-arm-msm@vger.kernel.org
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+ Luca Weiss <luca@z3ntu.xyz>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 5/7] dt-bindings: phy: qcom, usb-hs-phy: add MSM8226 compatible
+Date: Thu, 18 Nov 2021 22:02:08 +0100
+Message-Id: <20211118210210.160895-5-luca@z3ntu.xyz>
+X-Mailer: git-send-email 2.34.0
+In-Reply-To: <20211118210210.160895-1-luca@z3ntu.xyz>
+References: <20211118210210.160895-1-luca@z3ntu.xyz>
 MIME-Version: 1.0
-Received: from [192.168.13.3] (185.178.140.238) by
- GV3P280CA0056.SWEP280.PROD.OUTLOOK.COM (2603:10a6:150:9::10) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4713.19 via Frontend Transport; Thu, 18 Nov 2021 12:44:04 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: ab3a9f8e-0ef5-4ef7-51f7-08d9aa911b55
-X-MS-TrafficTypeDiagnostic: DB7PR02MB5241:
-X-Microsoft-Antispam-PRVS: <DB7PR02MB52414DF2738D2B14E1ACE707BC9B9@DB7PR02MB5241.eurprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: AOHwJ+XUMtGcUGrKStanBbLoZqj5LidLZySl7JyOW3dg6P2vWIci+OLOpuPYP5dOKAH/85CH9MIZp8mmWeFPfnBtzieoNCVYBK+9925zFJcJ6mNCOk8tOvzOnWVstV5rcFBZifZye1cOFgvrKIoQDjxbFgWx42ToI+tLcgRBqydqcCxD73B5C924ikJyggSAvmDKrEBn2xdugFOVHi/4YSohuiAa2DlDurPURcFOHN3aRFotUUQ2/dAcwFmGUTTYukpb3p2GAMx+1WUwveQEK5SxQ8UxH0g3RgV8wm90103EJvZpcktoN0PH053/9oPEsdb1cmiW6FNv8B3oSh8Ciwr46hI55hRGAcPzjOpgG/auF1FxrtoORWn7+QDSdYrCHb2MxQW8am3SDQu1XLKRVfmSPCUatRmOoNxwM80X6iPgbD2kDC6rJzBMQYb2aeBkShxacAb/pTAWc/XhTrJdH5wjy1IpMlz/0zMkS1LJIgIae/35/MwTV9B1zZfRV5CkoSI7xweTKZABW5k8Xeo/UCcg/f+wfOser+opk6tLsHp5O64kVlsvHPu5hvdRUByNkXq+MQi5b/iWFx3yfhzPgBsxLz7y8M/QYlDDzL4PfDSRxDDhtpmp+D9JTTuWuX21MpmQ/wT9XXknaYmP+GNv4ja7+BE2b0wY9lTcLzcuWDcG1YD3ISBsWRw8rPHxqCcDHuKikuXSVOW4m+GLxReycbW6gwhF3uCJtm9U7xEX6oc=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB8PR02MB5482.eurprd02.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(39840400004)(396003)(346002)(136003)(376002)(366004)(26005)(2616005)(66556008)(66476007)(31696002)(186003)(6486002)(86362001)(83380400001)(508600001)(7416002)(956004)(54906003)(4326008)(2906002)(36916002)(8936002)(16576012)(110136005)(66946007)(316002)(38100700002)(8676002)(5660300002)(31686004)(36756003)(43740500002)(45980500001);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?eUU4UzJheXJjdW5kSTg0dUNLWkYvOEx0ZzVMMnBFd1p6VmxOcU5uQU5Ya1Zj?=
- =?utf-8?B?L3Vma0RhTGMzRlVkYS9wR012Q25hUE82M2FxUEtvQTNrdTJnaDErL0VoNFFK?=
- =?utf-8?B?OHhLb0lUU0E5MlhaK2lHZDNlc3VzdUNINHZxUnM3TW5qMng0empTVU8xblFh?=
- =?utf-8?B?MXBjeHZML1hKUlk3dVRZU21zV0x1NmFOazdaUU5BL3o5YXEvQ3FCckFxVTZ2?=
- =?utf-8?B?UU1HamJKMTVuMVdxY1k5czRQZHJ6b0J4eXpaamRrc3h6bEpUNFRnS2VZbTll?=
- =?utf-8?B?TXNIUStrZDdoRXhGbzY1OUp5MHR4M0J5Vk9GV2NtanMyZXV4dkErekRxaTk5?=
- =?utf-8?B?SHd6QlRtSkMycUpFVFo5ZXdnVDFCQ2pXaUZ5Q3lqNHJaaHFpdHZweFk0WDNq?=
- =?utf-8?B?T2cwR0tNNElHczAzNFJYSWJCbzlBNG5aRCtZOHI0K0xWQ3BZQ1NMeGhhWE4w?=
- =?utf-8?B?SW9qSDBHZVNXT25TOU0rVUhXTGo2eVR0U2VJd2hoUVNMRWdDUVdUS0R2WENW?=
- =?utf-8?B?UUtyckdRSE91bjVEcW9kZWZpZkViYU03U0dFZk43SExjZk1lcSt2d0ZVcEFl?=
- =?utf-8?B?K2EraVdkd3NyUmJFdEc0dXZ0V0NlajMzVVhZSDNCVDRYSk52eFRyTk9mZVhy?=
- =?utf-8?B?MzZMNFQ2TDJGWWtrS1RlaitFNUM0ODFjNzJRcUYxTDhMQVl5TkpRTHBQMFZQ?=
- =?utf-8?B?UU9ndjRvNzc1QjdyU29PUWRBOXJNakY4NFVtUzc3ZGsxQjgvYjZyNjM1ZzJa?=
- =?utf-8?B?ZER6cG8rZjIwSWd6dWtSNEtSb2JIdHFGTldsVzh5QXQySjREejJYRnJuY3Bn?=
- =?utf-8?B?SDZtcVFNb2NRTG9RVmovSGRaOUNodFd2ODMzSVp1YktZaG9LV0d1UzhHbWFK?=
- =?utf-8?B?ZlJLMUlpZjJyMHNiaytITlJtTTBybHMyckMxRXFBS1VCbEN5NjdQbU5jRDV4?=
- =?utf-8?B?aHVZN3hZMEtBY2hmZGtLbUhkdFZJU3VUWGZBUGJPZldrTkxjV0JYL2xyNU5h?=
- =?utf-8?B?b2ZHc0FVY0ZveGN0QTF4N0JCbmljSHlrWTdRVVVJbVYraC9UbHNvWlRjY01o?=
- =?utf-8?B?ejJJZXF2T1BGdXdwbFVjek54S0c3SHgwMDRGMHFXRDNOekt0YnU1QW5WWXN1?=
- =?utf-8?B?eGNhV05reVJZem9UVE9qTjhkaU44bUFUcFVwSkFVcWZrMGV4aWRQUDBkWEYv?=
- =?utf-8?B?UkJEeHJvVkVkdk10VktKeklNNUFPVk5MS3pjcy9qR3hOTWFNUFc2ZytoUzBi?=
- =?utf-8?B?OWRaa2F3Rm5IVUFNU1o3WU9nRk9YZmFvNHVMV0U4aFdDVFl0TmdRa2gxc0NI?=
- =?utf-8?B?QkxoNlkxRzJYYWNicWZRbGNIU0xWdC8xdThlRFc5UkVBMVY4TkpGMzM4QzhU?=
- =?utf-8?B?WmltdG9SYmQvUTc3SWF1TTE2dWRHaXZNRDVGemY4ZnViYXRIRDJ6NmlqN2w3?=
- =?utf-8?B?MzJIQm0zZFk1MUdkTS9BeXp1UkRLQk15ZGdyM1dlbmZjYzhlSzBib3ltMmh3?=
- =?utf-8?B?c055bXFXSmlWN2ZVYVJOdjVDRzhJUGRyRWNzVVJkQ1Y2ZGEzbUEvb2hYaE9Q?=
- =?utf-8?B?cDZqME9mVEhYVlpmY1hnWFM2TXB3TEJzZkU2VUE5TW5KRDFRekpHT1luVmNj?=
- =?utf-8?B?TmJscmdxZWJRNDJTRmx0Q1VWTFN4VXJWd2tqUVU4V2F0d1RVMEdsQk1peS9m?=
- =?utf-8?B?cFNCeVh4Y2N0SVV0c0hDM3RlSTB4aHJCR2lGdW5uRVNUWjAwOTJPY3BYWnB1?=
- =?utf-8?B?ZE1xMVlhOTdiVTljNUtmdGwwb0UrWlp4ZDI1djZHTUZhYnM0SitXcm9mekRD?=
- =?utf-8?B?YTExNUNRSGt5WVNOeUxZTi96a05rcEhobllFR21CenRpQitBaFJqdGVlMzl6?=
- =?utf-8?B?alNXT0tuSkhTKzB0WU1CaHVnenV5NFNBUFZmN09hN3hiY09TV01weEF3MXJU?=
- =?utf-8?B?SVRRMUthKzZpUFAraXQwbGtqcnZiQkErNi94UVorYUVWUHZIRHM0VmVicDBq?=
- =?utf-8?B?Wk5CVjEzYyt3ODVmV3pqN05LMHpvMys5ZGZLY2JDcVhmK08zWWZibUNZYWJ5?=
- =?utf-8?B?c0hML3F1UXd2WTRTKzVDdW4zQTdDVnhFT3h2cERtbnBWUkJXelo0MXhFcnYw?=
- =?utf-8?Q?mpqc=3D?=
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: ab3a9f8e-0ef5-4ef7-51f7-08d9aa911b55
-X-MS-Exchange-CrossTenant-AuthSource: DB8PR02MB5482.eurprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2021 12:44:05.6561 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 8+wwXPSEQgalJ/I3/YheorSMbk571sRGTfVk+kwJPPye7z6MWQ1EiG6H/Vysqr3G
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR02MB5241
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211118_044411_746494_0CAAB7C1 
-X-CRM114-Status: GOOD (  33.18  )
+X-CRM114-CacheID: sfid-20211118_130302_820102_D4311736 
+X-CRM114-Status: UNSURE (   7.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -172,125 +76,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
->> Ok, I see what you mean now, sorry for being dense. If we allow this then
->> there is a need to add a special value that means all/many states (such as
->> -1 or something such) so that a mux-control can be used simultaneously by
->> drivers "pointing at" a specific state like you want to do, and by the
->> existing "application" style drivers that wraps the whole mux control.
->>
->> I.e. something like this
->>
->> 	mux: mux {
->> 		compatible = "mux-gpio";
->> 		...
->>
->> 		#mux-control-cells = <1>; /* one more than previously */
->> 	};
->>
->> 	phy {
->> 		...
->>
->> 		mux-control = <&mux 3>; /* point to specific state */
->> 	};
->>
->> 	i2c-mux {
->> 		compatible = "i2c-mux-gpmux";
->> 		parent = <&i2c0>
->> 		mux-control = <&mux (-1)>; /* many states needed */
->>
->> 		...
->>
->> 		i2c@1 {
->> 			eeprom@50 {
->> 				...
->> 			};
->> 		};
->>
->> 		i2c@2 {
->> 			...
->> 		};
->> 	};
->>
->> Yes, I realize that accesses to the eeprom cannot happen if the mux is
->> constantly selected and locked in state 3 by the phy, and that a mux with
->> one channel being a phy and other channels being I2C might not be
->> realistic, but the same gpio lines might control several muxes that are
->> used for separate signals solving at least the latter "problem" with this
->> completely made up example. Anyway, the above is in principle, and HW
->> designs are sometimes too weird for words.
->>
-> 
-> This is almost exactly what I was intending to implement except for one
-> more change. The state of the mux will always be represented using the
-> second argument(i.e. #mux-control-cells = <2>).
-> 
-> For example,
-> mux-controls = <&mux 0 1>, <&mux 1 0>;
-> 
-> 
-> With this I think we wouldn't need a special value for all or many states.
+Add a compatible for MSM8226 which also uses the USB HS PHY.
 
-But you do. Several consumers need to be able to point to the same mux
-control. If some of these consumers need one state, and some other need
-all/many, the consumers needing many needs to be able to say that. Listing
-many entries in mux-control = <>; is misleading since then the binding implies
-that you could have different mux controls for each state, which is not
-possible, at least not in the current implementations. It would also be
-wasteful to needlessly establish links to the same mux control multiple
-times, and the binding would cause bloated device trees even if you tried
-to optimize this in the drivers. Therefore, I require a special value so
-that consumers can continue to point at the mux control as a whole, even
-if some other consumers of the same mux control wants to point at a specific
-state.
+Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
+---
+ Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
->>> One more question that I had is, if the number of arguments match the
->>> #mux-control-cells and if the number of arguments are greater than 1 why
->>> is an error being returned?
->>
->> Changing that would require a bindings update anyway, so I simply
->> disallowed it as an error. Not much thought went into the decision,
->> as it couldn't be wrong to do what is being done with the bindings
->> that exist. That said, I have no problem lifting this restriction,
->> if there's a matching bindings update that makes it all fit.
->>
-> 
-> Sure, I think making a change in
-> 
-> Documentation/devicetree/bindings/mux/gpio-mux.yaml, should be good
-> enough I assume.
+diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
+index b3b75c1e6285..6814dccb390c 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
++++ b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
+@@ -9,6 +9,7 @@ PROPERTIES
+                 following:
+ 
+                         "qcom,usb-hs-phy-apq8064"
++                        "qcom,usb-hs-phy-msm8226"
+                         "qcom,usb-hs-phy-msm8916"
+                         "qcom,usb-hs-phy-msm8974"
+ 
+-- 
+2.34.0
 
-Well, the new way to bind has very little to do with this being a gpio
-mux. There is no reason not to allow this way to bind for any of the
-other muxes. That said, the reg-mux binding has this:
-
-  '#mux-control-cells':
-    const: 1
-
-Similarly, the adi,adg792a has explicit wording on how #mux-control-cells
-works (but being a txt binding it is not checked, but that does not matter,
-bindings should be correct). I now notice that this is missing from the
-adi,adgs1408 binding, but that's an oversight.
-
-The mux-controller binding has this:
-  '#mux-control-cells':
-    enum: [ 0, 1 ]
-
-The mux-consumer binding should probably be updated with some words
-on this subject too.
-
-So, all mux bindings need updates when this door is opened. And, in order
-to add this in a compatible way, the old way to bind with 0/1 cells needs
-to continue to both work and be allowed.
-
-I think it is easiest to add something common to the mux-controller
-binding and then have the specific bindings simply inherit it from there
-instead of adding (almost) the same words to all the driver bindings.
-
-Cheers,
-Peter
-
-> Thank you for the comments. I'll post a respin of this series, with the
-> above changes.
 
 -- 
 linux-phy mailing list
