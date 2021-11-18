@@ -2,64 +2,89 @@ Return-Path: <SRS0=n1nF=QF=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 90035C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 02:24:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0AFFCC433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 11:12:25 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 54E2C61AD2
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 02:24:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 54E2C61AD2
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id C566D61A89
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Nov 2021 11:12:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C566D61A89
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xAUDW+XF8XZ+0c0y3vvDojdhsaY+DzvcixE3FrWvMfw=; b=TOfOM/qMZnrHs9
-	/X5JBiTeblCdNhqcbE9dDasbF4yhIGrvEg13uvrcuKLbyh479JPORmFhZ+iqpywKxnagbb0HaPKCI
-	QDPgz3o2p6bV0ct+jwCR5LDCTDpFtO8EHp1pv2JhPcYQSwCGClZd34Ko76XfToycvAzDZvkwL9/CP
-	acMxabSIRs/VhlcvsrlUB5kzOilTx4+ZdjQ7mSC4GKcw0PIpP32Bbbs33nOI4S8CoHkq38397vWda
-	wS/1zsyarVPQ689wCTU6cH3uk1ZAAgsfMtkL4Z/Vu/4fZBsRIdbH5topRBQOMRmqjHGr8ZW2+DhSS
-	VeK9c7ZvwamY97bIhTdQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=IFoP/DKOvnv3FePOhTaFy+kQW9+LqDebXhU77amdwvM=; b=gtWt8RxZ8gJ/AUz5i99fHK1ZTL
+	CGyaYeMvkdPcK/+K5G6w1mSNROVcXNCo5dmPDhJqBHiS84sMBtn920WgGCq+xzj+lnT0E8ltHOVwU
+	kBIN5wobkM5IUC3gEvhKjtk6/FWEGEgIh7rz/KWhplVUbKMUkLqAqJ2t4MGjc2V7y68nLTKiEUiHF
+	31pF26yvBhr/Upql+icYjswTasrqWFAK48a9CBPacWDMQhagTYIVjJ6haeWSROFEE7NDtBgeoj52l
+	ho+CQ0uhUrnMvQTfkvdDhoIvLfjG5Z74YCYN7PTneSd+KQ+oEksZiAod/LCaFmTaffL5SiGLvWlYV
+	qDhAyJ/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mnX6G-006lCI-OC; Thu, 18 Nov 2021 02:24:32 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1mnfL6-007X6L-Bz; Thu, 18 Nov 2021 11:12:24 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mnX3f-006k2i-Ke; Thu, 18 Nov 2021 02:21:53 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 64DA52031B9;
- Thu, 18 Nov 2021 03:21:50 +0100 (CET)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com
- (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0928D2031B2;
- Thu, 18 Nov 2021 03:21:50 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 148F7183AD05;
- Thu, 18 Nov 2021 10:21:48 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com,
- marcel.ziswiler@toradex.com, tharvey@gateworks.com, kishon@ti.com,
- vkoul@kernel.org, robh@kernel.org, galak@kernel.crashing.org,
- shawnguo@kernel.org
-Cc: hongxing.zhu@nxp.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com
-Subject: [PATCH v6 8/8] PCI: imx: Add the imx8mm pcie support
-Date: Thu, 18 Nov 2021 09:54:49 +0800
-Message-Id: <1637200489-11855-9-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1637200489-11855-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1637200489-11855-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1mnfL3-007X4h-8B
+ for linux-phy@lists.infradead.org; Thu, 18 Nov 2021 11:12:23 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AIBC6q7056350;
+ Thu, 18 Nov 2021 05:12:06 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1637233926;
+ bh=V7yPbnnma5Hb1kIJnwWQfhUbAlN9gFoVmGDPT0oyMbg=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=iuwcjZ8hiinhosA151HPSbb/aUkeGKqWRhYsy0OWVrcdCyIoCsynLvnx/z6OE1rQz
+ WJAL26ydS4aGgVA+kXBf4OLQqfSppTIdkX1uQ28TbB8B2UW10uOG4ml1j/hVT56RnG
+ g+UH4XSCZACYDEU5gOfsavJMoLPetQ7v+mtR55jk=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AIBC5e3034846
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 18 Nov 2021 05:12:06 -0600
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Thu, 18
+ Nov 2021 05:12:05 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Thu, 18 Nov 2021 05:12:05 -0600
+Received: from [10.250.232.124] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AIBC1Zj030631;
+ Thu, 18 Nov 2021 05:12:02 -0600
+Subject: Re: [PATCH RFC 2/2] phy: phy-can-transceiver: Add support for setting
+ mux
+To: Peter Rosin <peda@axentia.se>, Marc Kleine-Budde <mkl@pengutronix.de>
+CC: Vignesh Raghavendra <vigneshr@ti.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Nishanth Menon <nm@ti.com>, Wolfgang Grandegger
+ <wg@grandegger.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>,
+ <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+References: <20211111164313.649-1-a-govindraju@ti.com>
+ <20211111164313.649-3-a-govindraju@ti.com>
+ <20211112084027.b2t2beqiiodnwjtv@pengutronix.de>
+ <085ec3c0-75c6-f3c2-9999-348098fd88f9@ti.com>
+ <f933048c-099f-054a-6563-671cf2a2e2af@axentia.se>
+ <8be2b770-9c4c-ce41-4c49-27fa30b4afee@ti.com>
+ <b8b0c7c4-3006-071b-d68f-8b18d24a1f72@axentia.se>
+From: Aswath Govindraju <a-govindraju@ti.com>
+Message-ID: <f47dc612-adea-4dfb-f2fd-d67b5df6ed50@ti.com>
+Date: Thu, 18 Nov 2021 16:42:00 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.13.0
+MIME-Version: 1.0
+In-Reply-To: <b8b0c7c4-3006-071b-d68f-8b18d24a1f72@axentia.se>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211117_182151_983338_A07D13C2 
-X-CRM114-Status: GOOD (  19.55  )
+X-CRM114-CacheID: sfid-20211118_031221_445993_C43AEC41 
+X-CRM114-Status: GOOD (  58.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,219 +96,226 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-i.MX8MM PCIe works mostly like the i.MX8MQ one, but has a different PHY
-and allows to output the internal PHY reference clock via the refclk pad.
-Add the i.MX8MM PCIe support based on the standalone PHY driver.
+Hi Peter,
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-Reviewed-by: Tim Harvey <tharvey@gateworks.com>
-Tested-by: Tim Harvey <tharvey@gateworks.com>
----
- drivers/pci/controller/dwc/pci-imx6.c | 73 ++++++++++++++++++++++++---
- 1 file changed, 66 insertions(+), 7 deletions(-)
+On 18/11/21 2:54 am, Peter Rosin wrote:
+> Hi!
+> 
+> On 2021-11-15 07:31, Aswath Govindraju wrote:
+>> Hi Peter,
+>>
+>> On 13/11/21 12:45 am, Peter Rosin wrote:
+>>> Hi!
+>>>
+>>> On 2021-11-12 14:48, Aswath Govindraju wrote:
+>>>> Hi Marc,
+>>>>
+>>>> On 12/11/21 2:10 pm, Marc Kleine-Budde wrote:
+>>>>> On 11.11.2021 22:13:12, Aswath Govindraju wrote:
+>>>>>> On some boards, for routing CAN signals from controller to transceiver,
+>>>>>> muxes might need to be set. Therefore, add support for setting the mux by
+>>>>>> reading the mux-controls property from the device tree node.
+>>>>>>
+>>>>>> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+>>>>>> ---
+>>>>>>  drivers/phy/phy-can-transceiver.c | 21 +++++++++++++++++++++
+>>>>>>  1 file changed, 21 insertions(+)
+>>>>>>
+>>>>>> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+>>>>>> index 6f3fe37dee0e..3d8da5226e27 100644
+>>>>>> --- a/drivers/phy/phy-can-transceiver.c
+>>>>>> +++ b/drivers/phy/phy-can-transceiver.c
+>>>>>> @@ -10,6 +10,7 @@
+>>>>>>  #include<linux/module.h>
+>>>>>>  #include<linux/gpio.h>
+>>>>>>  #include<linux/gpio/consumer.h>
+>>>>>> +#include <linux/mux/consumer.h>
+>>>>>>  
+>>>>>>  struct can_transceiver_data {
+>>>>>>  	u32 flags;
+>>>>>> @@ -21,13 +22,22 @@ struct can_transceiver_phy {
+>>>>>>  	struct phy *generic_phy;
+>>>>>>  	struct gpio_desc *standby_gpio;
+>>>>>>  	struct gpio_desc *enable_gpio;
+>>>>>> +	struct mux_control *mux_ctrl;
+>>>>>>  };
+>>>>>>  
+>>>>>>  /* Power on function */
+>>>>>>  static int can_transceiver_phy_power_on(struct phy *phy)
+>>>>>>  {
+>>>>>> +	int ret;
+>>>>>>  	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
+>>>>>>  
+>>>>>> +	if (can_transceiver_phy->mux_ctrl) {
+>>>>>> +		ret = mux_control_select(can_transceiver_phy->mux_ctrl, 1);
+>>>>>
+>>>>> Hard coding the "1" looks wrong here. I have seen some boards where you
+>>>>> can select between a CAN-2.0 and a single wire CAN transceiver with a
+>>>>> mux. So I think we cannot hard code the "1" here.
+>>>>>
+>>>>
+>>>> Yes, as you mentioned it is not ideal to hard code "1". I feel that, it
+>>>> would be much better to read the state of the mux to be set from the
+>>>> mux-controls property. The issue that I see with this approach is that
+>>>> the current implementation in the mux framework only allows for one
+>>>> argument, which is for indicating the line to be toggled in the mux. If
+>>>> more arguments are added then an error is returned from the
+>>>> "mux_control_get". I am not sure why this limitation was added.
+>>>
+>>> The only current use of the first argument is for mux chips that contain
+>>> more than one mux control. The limit in the mux core is there since no
+>>> mux driver need more than this one argument. The number of mux-control
+>>> property arguments is fixed by the #mux-control-cells property in the
+>>> mux-control node. I don't see any way to and a new optional mux-control
+>>> property argument that specifies a specific state. How would that not
+>>> break all existing users?
+>>>
+>>
+>> My idea was to use the second argument for reading the state of mux to
+>> be set after increasing the #mux-control-cells value to 2. I don't think
+>> this will break the existing mux controller users as the second argument
+>> was not used till now, would be equivalent to adding an additional feature.
+> 
+> Ok, I see what you mean now, sorry for being dense. If we allow this then
+> there is a need to add a special value that means all/many states (such as
+> -1 or something such) so that a mux-control can be used simultaneously by
+> drivers "pointing at" a specific state like you want to do, and by the
+> existing "application" style drivers that wraps the whole mux control.
+> 
+> I.e. something like this
+> 
+> 	mux: mux {
+> 		compatible = "mux-gpio";
+> 		...
+> 
+> 		#mux-control-cells = <1>; /* one more than previously */
+> 	};
+> 
+> 	phy {
+> 		...
+> 
+> 		mux-control = <&mux 3>; /* point to specific state */
+> 	};
+> 
+> 	i2c-mux {
+> 		compatible = "i2c-mux-gpmux";
+> 		parent = <&i2c0>
+> 		mux-control = <&mux (-1)>; /* many states needed */
+> 
+> 		...
+> 
+> 		i2c@1 {
+> 			eeprom@50 {
+> 				...
+> 			};
+> 		};
+> 
+> 		i2c@2 {
+> 			...
+> 		};
+> 	};
+> 
+> Yes, I realize that accesses to the eeprom cannot happen if the mux is
+> constantly selected and locked in state 3 by the phy, and that a mux with
+> one channel being a phy and other channels being I2C might not be
+> realistic, but the same gpio lines might control several muxes that are
+> used for separate signals solving at least the latter "problem" with this
+> completely made up example. Anyway, the above is in principle, and HW
+> designs are sometimes too weird for words.
+> 
 
-diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
-index 26f49f797b0f..d8c587b4d54f 100644
---- a/drivers/pci/controller/dwc/pci-imx6.c
-+++ b/drivers/pci/controller/dwc/pci-imx6.c
-@@ -29,6 +29,7 @@
- #include <linux/types.h>
- #include <linux/interrupt.h>
- #include <linux/reset.h>
-+#include <linux/phy/phy.h>
- #include <linux/pm_domain.h>
- #include <linux/pm_runtime.h>
- 
-@@ -49,6 +50,7 @@ enum imx6_pcie_variants {
- 	IMX6QP,
- 	IMX7D,
- 	IMX8MQ,
-+	IMX8MM,
- };
- 
- #define IMX6_PCIE_FLAG_IMX6_PHY			BIT(0)
-@@ -88,6 +90,7 @@ struct imx6_pcie {
- 	struct device		*pd_pcie;
- 	/* power domain for pcie phy */
- 	struct device		*pd_pcie_phy;
-+	struct phy		*phy;
- 	const struct imx6_pcie_drvdata *drvdata;
- };
- 
-@@ -372,6 +375,8 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
- 	case IMX7D:
- 	case IMX8MQ:
- 		reset_control_assert(imx6_pcie->pciephy_reset);
-+		fallthrough;
-+	case IMX8MM:
- 		reset_control_assert(imx6_pcie->apps_reset);
- 		break;
- 	case IMX6SX:
-@@ -407,7 +412,8 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
- 
- static unsigned int imx6_pcie_grp_offset(const struct imx6_pcie *imx6_pcie)
- {
--	WARN_ON(imx6_pcie->drvdata->variant != IMX8MQ);
-+	WARN_ON(imx6_pcie->drvdata->variant != IMX8MQ &&
-+		imx6_pcie->drvdata->variant != IMX8MM);
- 	return imx6_pcie->controller_id == 1 ? IOMUXC_GPR16 : IOMUXC_GPR14;
- }
- 
-@@ -446,6 +452,13 @@ static int imx6_pcie_enable_ref_clk(struct imx6_pcie *imx6_pcie)
- 		break;
- 	case IMX7D:
- 		break;
-+	case IMX8MM:
-+		ret = clk_prepare_enable(imx6_pcie->pcie_aux);
-+		if (ret) {
-+			dev_err(dev, "unable to enable pcie_aux clock\n");
-+			break;
-+		}
-+		break;
- 	case IMX8MQ:
- 		ret = clk_prepare_enable(imx6_pcie->pcie_aux);
- 		if (ret) {
-@@ -522,6 +535,14 @@ static void imx6_pcie_deassert_core_reset(struct imx6_pcie *imx6_pcie)
- 		goto err_ref_clk;
- 	}
- 
-+	switch (imx6_pcie->drvdata->variant) {
-+	case IMX8MM:
-+		if (phy_power_on(imx6_pcie->phy))
-+			dev_err(dev, "unable to power on PHY\n");
-+		break;
-+	default:
-+		break;
-+	}
- 	/* allow the clocks to stabilize */
- 	usleep_range(200, 500);
- 
-@@ -538,6 +559,10 @@ static void imx6_pcie_deassert_core_reset(struct imx6_pcie *imx6_pcie)
- 	case IMX8MQ:
- 		reset_control_deassert(imx6_pcie->pciephy_reset);
- 		break;
-+	case IMX8MM:
-+		if (phy_init(imx6_pcie->phy) != 0)
-+			dev_err(dev, "Waiting for PHY ready timeout!\n");
-+		break;
- 	case IMX7D:
- 		reset_control_deassert(imx6_pcie->pciephy_reset);
- 
-@@ -614,6 +639,8 @@ static void imx6_pcie_configure_type(struct imx6_pcie *imx6_pcie)
- static void imx6_pcie_init_phy(struct imx6_pcie *imx6_pcie)
- {
- 	switch (imx6_pcie->drvdata->variant) {
-+	case IMX8MM:
-+		break;
- 	case IMX8MQ:
- 		/*
- 		 * TODO: Currently this code assumes external
-@@ -753,6 +780,7 @@ static void imx6_pcie_ltssm_enable(struct device *dev)
- 		break;
- 	case IMX7D:
- 	case IMX8MQ:
-+	case IMX8MM:
- 		reset_control_deassert(imx6_pcie->apps_reset);
- 		break;
- 	}
-@@ -871,6 +899,7 @@ static void imx6_pcie_ltssm_disable(struct device *dev)
- 				   IMX6Q_GPR12_PCIE_CTL_2, 0);
- 		break;
- 	case IMX7D:
-+	case IMX8MM:
- 		reset_control_assert(imx6_pcie->apps_reset);
- 		break;
- 	default:
-@@ -930,6 +959,7 @@ static void imx6_pcie_clk_disable(struct imx6_pcie *imx6_pcie)
- 				   IMX7D_GPR12_PCIE_PHY_REFCLK_SEL);
- 		break;
- 	case IMX8MQ:
-+	case IMX8MM:
- 		clk_disable_unprepare(imx6_pcie->pcie_aux);
- 		break;
- 	default:
-@@ -1043,11 +1073,6 @@ static int imx6_pcie_probe(struct platform_device *pdev)
- 	}
- 
- 	/* Fetch clocks */
--	imx6_pcie->pcie_phy = devm_clk_get(dev, "pcie_phy");
--	if (IS_ERR(imx6_pcie->pcie_phy))
--		return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_phy),
--				     "pcie_phy clock source missing or invalid\n");
--
- 	imx6_pcie->pcie_bus = devm_clk_get(dev, "pcie_bus");
- 	if (IS_ERR(imx6_pcie->pcie_bus))
- 		return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_bus),
-@@ -1089,10 +1114,39 @@ static int imx6_pcie_probe(struct platform_device *pdev)
- 			dev_err(dev, "Failed to get PCIE APPS reset control\n");
- 			return PTR_ERR(imx6_pcie->apps_reset);
- 		}
-+		break;
-+	case IMX8MM:
-+		imx6_pcie->pcie_aux = devm_clk_get(dev, "pcie_aux");
-+		if (IS_ERR(imx6_pcie->pcie_aux))
-+			return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_aux),
-+					     "pcie_aux clock source missing or invalid\n");
-+		imx6_pcie->apps_reset = devm_reset_control_get_exclusive(dev,
-+									 "apps");
-+		if (IS_ERR(imx6_pcie->apps_reset)) {
-+			dev_err(dev, "Failed to get PCIE APPS reset control\n");
-+			return PTR_ERR(imx6_pcie->apps_reset);
-+		}
-+
-+		imx6_pcie->phy = devm_phy_get(dev, "pcie-phy");
-+		if (IS_ERR(imx6_pcie->phy)) {
-+			if (PTR_ERR(imx6_pcie->phy) == -EPROBE_DEFER)
-+				return -EPROBE_DEFER;
-+			dev_err(dev, "Failed to get PCIE PHY\n");
-+			return PTR_ERR(imx6_pcie->phy);
-+		}
-+
- 		break;
- 	default:
- 		break;
- 	}
-+	/* Don't fetch the pcie_phy clock, if it has abstract PHY driver */
-+	if (imx6_pcie->phy == NULL) {
-+		imx6_pcie->pcie_phy = devm_clk_get(dev, "pcie_phy");
-+		if (IS_ERR(imx6_pcie->pcie_phy))
-+			return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_phy),
-+					     "pcie_phy clock source missing or invalid\n");
-+	}
-+
- 
- 	/* Grab turnoff reset */
- 	imx6_pcie->turnoff_reset = devm_reset_control_get_optional_exclusive(dev, "turnoff");
-@@ -1202,6 +1256,10 @@ static const struct imx6_pcie_drvdata drvdata[] = {
- 	[IMX8MQ] = {
- 		.variant = IMX8MQ,
- 	},
-+	[IMX8MM] = {
-+		.variant = IMX8MM,
-+		.flags = IMX6_PCIE_FLAG_SUPPORTS_SUSPEND,
-+	},
- };
- 
- static const struct of_device_id imx6_pcie_of_match[] = {
-@@ -1209,7 +1267,8 @@ static const struct of_device_id imx6_pcie_of_match[] = {
- 	{ .compatible = "fsl,imx6sx-pcie", .data = &drvdata[IMX6SX], },
- 	{ .compatible = "fsl,imx6qp-pcie", .data = &drvdata[IMX6QP], },
- 	{ .compatible = "fsl,imx7d-pcie",  .data = &drvdata[IMX7D],  },
--	{ .compatible = "fsl,imx8mq-pcie", .data = &drvdata[IMX8MQ], } ,
-+	{ .compatible = "fsl,imx8mq-pcie", .data = &drvdata[IMX8MQ], },
-+	{ .compatible = "fsl,imx8mm-pcie", .data = &drvdata[IMX8MM], },
- 	{},
- };
- 
--- 
-2.25.1
+This is almost exactly what I was intending to implement except for one
+more change. The state of the mux will always be represented using the
+second argument(i.e. #mux-control-cells = <2>).
+
+For example,
+mux-controls = <&mux 0 1>, <&mux 1 0>;
+
+
+With this I think we wouldn't need a special value for all or many states.
+
+>> One more question that I had is, if the number of arguments match the
+>> #mux-control-cells and if the number of arguments are greater than 1 why
+>> is an error being returned?
+> 
+> Changing that would require a bindings update anyway, so I simply
+> disallowed it as an error. Not much thought went into the decision,
+> as it couldn't be wrong to do what is being done with the bindings
+> that exist. That said, I have no problem lifting this restriction,
+> if there's a matching bindings update that makes it all fit.
+> 
+
+Sure, I think making a change in
+
+Documentation/devicetree/bindings/mux/gpio-mux.yaml, should be good
+enough I assume.
+
+
+Thank you for the comments. I'll post a respin of this series, with the
+above changes.
+
+Thanks,
+Aswath
+
+>>> The current mux interface is designed around the idea that you wrap a
+>>> mux control in a mux (lacking better name) application. There are
+>>> several such mux applications in the tree, those for I2C, IIO and SPI
+>>> pops into my head, and that you then tie the end user consumer to this
+>>> muxing application. The mux state comes as a part of how you have tied
+>>> the end user consumer to the mux application and is not really something
+>>> that the mux-control is involved in.
+>>>
+>>> In other words, a mux-control is not really designed to be used directly
+>>> by a driver that needs only one of the states.
+>>>
+>>> However, I'm not saying that doing so isn't also a useful model. It
+>>> cetainly sound like it could be. However, the reason it's not done that
+>>> way is that I did not want to add muxing code to *all* drivers. I.e. it
+>>> would not be flexible to have to add boilerplate mux code to each and
+>>> every IIO driver that happen to be connected in a way that a mux has to
+>>> be in a certain state for the signal to reach the ADC (or whatever).
+>>> Instead, new IIO channels are created for the appropriate mux states
+>>> and the IIO mux is connected to the parent IIO channel. When one of the
+>>> muxed channels is accessed the mux is selected as needed, and the ADC
+>>> driver needs to know nothing about it. If two muxes need to be in a
+>>> certain position, you again have no need to "pollute" drivers with
+>>> double builerplate mux code. Instead, you simply add two levels of
+>>> muxing to the muxed IIO channel.
+>>>
+>>> I think the same is probably true in this case too, and that it would
+>>> perhaps be better to create a mux application for phys? But I don't know
+>>> what the phy structure looks like, so I'm not in a position to say for
+>>> sure if this model fits. But I imagine that phys have providers and
+>>> consumers and that a mux can be jammed in there in some way and
+>>> intercept some api such that the needed mux state can be selected when
+>>> needed.
+>>>
+>>
+>> Yes, I understand that reading the state of the mux in drivers would not
+>> be efficient as it would adding the boiler plate code in each of the
+>> drivers. However, for phys as each of them can be used for a different
+>> interface, I am not sure if a common mux phy wrapper can be introduced.
+>> This is reason why I felt that drivers should be allowed to read the
+>> state of the mux directly, when no mux wrapper application is suitable
+>> for it.
+> 
+> It need not be one grand unifying phy mux, it could be one for each
+> kind of phy interface. But again, I don't know much about how phys
+> work nor their interfaces, not event roughly how many drivers there
+> are etc etc. I have simply never needed to look.
+> 
+> Hmm, wild idea, maybe there could be a mux "application" for pinctrl?
+> I mean such that you could tie pinctrl states to mux states. It doesn't
+> sound like too bad of a match to me?
+> 
+> Cheers,
+> Peter
+> 
 
 
 -- 
