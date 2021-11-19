@@ -2,91 +2,92 @@ Return-Path: <SRS0=M8cc=QG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CC6C1C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 07:42:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C4787C433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 17:18:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 924C461AFF
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 07:42:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 924C461AFF
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
+	by mail.kernel.org (Postfix) with ESMTPS id 6902761A70
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 17:18:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 6902761A70
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CFfhcnJz37Ak3Di6or01v7JKB0EibWq6YK5ZvWU2/Us=; b=DKD0K3Tf3yt5o8GhFHHeGzfvrZ
-	QvS08e4PumY8exgEDLXs9kZ8V9E+K/1iJTc12/tpHWvxgavTdRn2NbsRZ3K3vlyuL5m/lbBDPBYOa
-	nmRI0gmY+6B3lgRSv+gasUTz2llPHR9DmADH7tQmBAWfmGf0swKcI3gxL8qlo2OixFn+5YrCb27YW
-	fFd0rzT5g4HuZdsrTJPNqcGubhUHOZ1/HU5ZRKDUDy0g5IG9zJvYUTpA9jwy/DFGGZmfGw+laoPgt
-	XlIInfPkLoD7iMcERicsPPoWburDLKGg0fmoXswereiDVvJyGhj7rBq0kZCigGKkGJVp7340lUtCl
-	sBp7UTGQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2F3IHtHnwRN8GtsZgOicBsx30UkJqs2pFAv1bANpzsQ=; b=tFaHR+YpGReURFG2kSRgPlHrZ/
+	nNaGLJC06MqiMNOLkEnvK4gTCO1eGeomUikCNRdPpqJ8mxLtLqpBmqosbvHDGRvKKlgUJszwY5UJQ
+	dg3KPxSPLiBeERSA55efUmXX7cAV/+vE2YeQ6qBOxDOt6oJ/h01MWfpcpSaLiFcoPNhxCvDup4Weo
+	gW8nk2S6qxpfZIXe0OEmmOaQTVaPZA8tMfxPmillPMIFRYLJrNI3yLx7R8R0ImM15MCEINoPzElQk
+	u1OecKtSxwMiyt5L92+PGAqLIDA6bm8Sa5FeLalwQLdOAWKTxcILiKEln/zKXgdjLX4Ukbri/DAzs
+	QHN/olSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mnyXl-009e1G-Un; Fri, 19 Nov 2021 07:42:45 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1mo7Ws-00BBPj-EU; Fri, 19 Nov 2021 17:18:26 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mnyXi-009dzg-CX
- for linux-phy@lists.infradead.org; Fri, 19 Nov 2021 07:42:44 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AJ7gXvY026575;
- Fri, 19 Nov 2021 01:42:33 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1637307753;
- bh=aURgQjKNEA+cBJfEgNbo13xu2bl+tUi1w76bXP0DgFs=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=BDM5KBkjzRSem4B3RLN6dG0eUnofCtwkKfHKj+YtTifBzmSnoU9IeH5S36vDBSMzG
- 7tZ972+zOSH4UWUv748WBYXl3T+4Hellk7pP20/lHUcbtGAxhFQkvwDEa6VoATNcrk
- EY4txWdVb9X9LGswmhXUPP+7NDjgnHTh0K+mIXvE=
-Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AJ7gXS8127851
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 19 Nov 2021 01:42:33 -0600
-Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Fri, 19
- Nov 2021 01:42:32 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Fri, 19 Nov 2021 01:42:32 -0600
-Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AJ7gSS2010913;
- Fri, 19 Nov 2021 01:42:29 -0600
-Subject: Re: [PATCH RFC 2/2] phy: phy-can-transceiver: Add support for setting
- mux
-To: Peter Rosin <peda@axentia.se>, Marc Kleine-Budde <mkl@pengutronix.de>
-CC: Vignesh Raghavendra <vigneshr@ti.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Nishanth Menon <nm@ti.com>, Wolfgang Grandegger
- <wg@grandegger.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>,
- <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-References: <20211111164313.649-1-a-govindraju@ti.com>
- <20211111164313.649-3-a-govindraju@ti.com>
- <20211112084027.b2t2beqiiodnwjtv@pengutronix.de>
- <085ec3c0-75c6-f3c2-9999-348098fd88f9@ti.com>
- <f933048c-099f-054a-6563-671cf2a2e2af@axentia.se>
- <8be2b770-9c4c-ce41-4c49-27fa30b4afee@ti.com>
- <b8b0c7c4-3006-071b-d68f-8b18d24a1f72@axentia.se>
- <f47dc612-adea-4dfb-f2fd-d67b5df6ed50@ti.com>
- <3f13a769-f8ef-dbe8-f2c6-ff197af8eddf@axentia.se>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <c4efbcd3-8071-7fd2-0f3a-bc42acdfd2ac@ti.com>
-Date: Fri, 19 Nov 2021 13:12:28 +0530
+ id 1mo7Wq-00BBOb-4C
+ for linux-phy@lists.infradead.org; Fri, 19 Nov 2021 17:18:25 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id a9so19323571wrr.8
+ for <linux-phy@lists.infradead.org>; Fri, 19 Nov 2021 09:18:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=FP9hwialv6yAEl5OHXjo4xWuTQn68GpOH2rXlR/66qQ=;
+ b=MuVMdJD3i6iM7EYol8YYUwOgrVkgeoYnCxECTuxTp1DkJEPyBXogLbS+0BLm/BesNc
+ 5C1njJ+iZK4CmF+o4JS1nsHTp1HZauczmWlX9uTKS47QN/tRrq1CCb6BcUFNaDB6TUJd
+ Oplxn2eTRvF08OVt0TVxP0wg9173tQ3QZyrhcYsqM/7idBy/8QtQbAjZ9gGdnBY3DnU6
+ S+2syCl7sL16NDP2EWzts51NPHYI78qdJHomqglMxIrN2yEJt/KWxyCunP/tR8j8zlJ+
+ YmYEBCu9deEMXB4AojU7nrPhLxPZQS2M1JPc09XLNrpu1l2Vw0IbtJzZQyCoA1ZYaAcm
+ YvFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=FP9hwialv6yAEl5OHXjo4xWuTQn68GpOH2rXlR/66qQ=;
+ b=Oxec3x+779qsldEVLCJfKsLrGYoA3AzLAeNh5CJ19I1uXdqQr7nn4YjYaFwTVvEXGd
+ RRc7TbWwgOpdt5epItSFBsljhPXgcuP1N9zeqfDOdIZdHNksfvRS2t157eT6lgjlpxmT
+ Xc10N2SABhGIwLC44Kc/bhtsG2ATrbi/F/RM1m+kZDNw5zLZm9U3LLB8Bt/6HXufMBI3
+ IfXAF79iVQnUFY6OVVIdiMENfRaZ5ETyBtZ0Ao2IohZcu43iG01rfdD0QgEFUxSMVZg0
+ ke7fu0rNWo7XFORz+URi78wblsU+ihXifxcttsidEQkYqcVAxxEWWP+we25Ia+czvg5P
+ qGVQ==
+X-Gm-Message-State: AOAM531lVa0hCwl8CwO5tV5FuoUYoqK70awgBC0kjNfqqyr6IA1mqz3P
+ 0A2bgqukvWoIz2jqdO8xzhP5xw==
+X-Google-Smtp-Source: ABdhPJz7rGeQ3uY7+i432blgA51XM/NysPQuKduVTwISoTtJKsk/0HgDfWQCa+KDLzxoI19YoqhHKg==
+X-Received: by 2002:a5d:648f:: with SMTP id o15mr9083862wri.381.1637342301747; 
+ Fri, 19 Nov 2021 09:18:21 -0800 (PST)
+Received: from [192.168.86.34]
+ (cpc86377-aztw32-2-0-cust226.18-1.cable.virginm.net. [92.233.226.227])
+ by smtp.googlemail.com with ESMTPSA id t1sm400914wre.32.2021.11.19.09.18.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 19 Nov 2021 09:18:21 -0800 (PST)
+Subject: Re: [PATCH 3/6] nvmem: mtk-efuse: support minimum one byte access
+ stride and granularity
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Rob Herring
+ <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ Eddie Hung <eddie.hung@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, Yz Wu <yz.wu@mediatek.com>
+References: <20211107075646.4366-1-chunfeng.yun@mediatek.com>
+ <20211107075646.4366-3-chunfeng.yun@mediatek.com>
+From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Message-ID: <2ba27f8a-6d10-3a7a-45b2-dbe503c79d47@linaro.org>
+Date: Fri, 19 Nov 2021 17:18:19 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.13.0
 MIME-Version: 1.0
-In-Reply-To: <3f13a769-f8ef-dbe8-f2c6-ff197af8eddf@axentia.se>
+In-Reply-To: <20211107075646.4366-3-chunfeng.yun@mediatek.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211118_234242_596344_4EC88426 
-X-CRM114-Status: GOOD (  49.43  )
+X-CRM114-CacheID: sfid-20211119_091824_186806_B6A13CD7 
+X-CRM114-Status: GOOD (  20.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,180 +99,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Peter,
 
-On 18/11/21 6:14 pm, Peter Rosin wrote:
->>> Ok, I see what you mean now, sorry for being dense. If we allow this then
->>> there is a need to add a special value that means all/many states (such as
->>> -1 or something such) so that a mux-control can be used simultaneously by
->>> drivers "pointing at" a specific state like you want to do, and by the
->>> existing "application" style drivers that wraps the whole mux control.
->>>
->>> I.e. something like this
->>>
->>> 	mux: mux {
->>> 		compatible = "mux-gpio";
->>> 		...
->>>
->>> 		#mux-control-cells = <1>; /* one more than previously */
->>> 	};
->>>
->>> 	phy {
->>> 		...
->>>
->>> 		mux-control = <&mux 3>; /* point to specific state */
->>> 	};
->>>
->>> 	i2c-mux {
->>> 		compatible = "i2c-mux-gpmux";
->>> 		parent = <&i2c0>
->>> 		mux-control = <&mux (-1)>; /* many states needed */
->>>
->>> 		...
->>>
->>> 		i2c@1 {
->>> 			eeprom@50 {
->>> 				...
->>> 			};
->>> 		};
->>>
->>> 		i2c@2 {
->>> 			...
->>> 		};
->>> 	};
->>>
->>> Yes, I realize that accesses to the eeprom cannot happen if the mux is
->>> constantly selected and locked in state 3 by the phy, and that a mux with
->>> one channel being a phy and other channels being I2C might not be
->>> realistic, but the same gpio lines might control several muxes that are
->>> used for separate signals solving at least the latter "problem" with this
->>> completely made up example. Anyway, the above is in principle, and HW
->>> designs are sometimes too weird for words.
->>>
->>
->> This is almost exactly what I was intending to implement except for one
->> more change. The state of the mux will always be represented using the
->> second argument(i.e. #mux-control-cells = <2>).
->>
->> For example,
->> mux-controls = <&mux 0 1>, <&mux 1 0>;
->>
->>
->> With this I think we wouldn't need a special value for all or many states.
+
+On 07/11/2021 07:56, Chunfeng Yun wrote:
+> In order to support nvmem bits property, should support minimum 1 byte
+> read stride and minimum 1 byte read granularity at the same time.
 > 
-> But you do. Several consumers need to be able to point to the same mux
-> control. If some of these consumers need one state, and some other need
-> all/many, the consumers needing many needs to be able to say that. Listing
-> many entries in mux-control = <>; is misleading since then the binding implies
-> that you could have different mux controls for each state, which is not
-> possible, at least not in the current implementations. It would also be
-> wasteful to needlessly establish links to the same mux control multiple
-> times, and the binding would cause bloated device trees even if you tried
-> to optimize this in the drivers. Therefore, I require a special value so
-> that consumers can continue to point at the mux control as a whole, even
-> if some other consumers of the same mux control wants to point at a specific
-> state.
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Applied thanks,
+
+--srini
+
+> ---
+>   drivers/nvmem/mtk-efuse.c | 13 +++++++------
+>   1 file changed, 7 insertions(+), 6 deletions(-)
 > 
-
-
-Understood. One issue that I see is that we certainly can not use the
-first argument for representing state as it will result in errors for
-current users.
-
-I feel that the safest way to go would be by using a second argument to
-represent the state or to represent multiple states can be used by the
-driver. The issue that I see with this approach is that currently the
-fist argument is used to select the line number from the mux and if the
-we use two arguments like this,
-
-mux-controls = <&mux 0 -1>
-
-then this would mean that line nnumber 0 in the mux could use multiple
-states and for a driver to use mutiple lines we would need to add an
-entry for each line which would bloat the code a well increase the
-complexity in the drivers while using devm_mux_get(). So, one solution
-that I could think of is to use a "-1" for the first argument too. This
-would indicate that the driver would need to toggle multiple lines in
-the mux
-
-For example,
-
-1) mux-controls = <&mux -1 3> // the driver would need to set the mux
-lines to 3 for enabling it
-
-2) mux-controls = <&mux -1 -1> //the driver would need to set the mux
-lines and multiple states in the mux
-
-3) mux-controls = <&mux 0 1> // the driver would need to set the zeroth
-mux line to 1
-
-I do see that, going with this method would make <&mux ^\d*$ ^\d*$>(i.e.
-any positive number in the first argument) redundant as it can be
-represented with <&mux -1 *>. However, I think is the only way so that
-existing users will not see issues.
-
-
->>>> One more question that I had is, if the number of arguments match the
->>>> #mux-control-cells and if the number of arguments are greater than 1 why
->>>> is an error being returned?
->>>
->>> Changing that would require a bindings update anyway, so I simply
->>> disallowed it as an error. Not much thought went into the decision,
->>> as it couldn't be wrong to do what is being done with the bindings
->>> that exist. That said, I have no problem lifting this restriction,
->>> if there's a matching bindings update that makes it all fit.
->>>
->>
->> Sure, I think making a change in
->>
->> Documentation/devicetree/bindings/mux/gpio-mux.yaml, should be good
->> enough I assume.
+> diff --git a/drivers/nvmem/mtk-efuse.c b/drivers/nvmem/mtk-efuse.c
+> index 6a537d959f14..e9a375dd84af 100644
+> --- a/drivers/nvmem/mtk-efuse.c
+> +++ b/drivers/nvmem/mtk-efuse.c
+> @@ -19,11 +19,12 @@ static int mtk_reg_read(void *context,
+>   			unsigned int reg, void *_val, size_t bytes)
+>   {
+>   	struct mtk_efuse_priv *priv = context;
+> -	u32 *val = _val;
+> -	int i = 0, words = bytes / 4;
+> +	void __iomem *addr = priv->base + reg;
+> +	u8 *val = _val;
+> +	int i;
+>   
+> -	while (words--)
+> -		*val++ = readl(priv->base + reg + (i++ * 4));
+> +	for (i = 0; i < bytes; i++, val++)
+> +		*val = readb(addr + i);
+>   
+>   	return 0;
+>   }
+> @@ -45,8 +46,8 @@ static int mtk_efuse_probe(struct platform_device *pdev)
+>   	if (IS_ERR(priv->base))
+>   		return PTR_ERR(priv->base);
+>   
+> -	econfig.stride = 4;
+> -	econfig.word_size = 4;
+> +	econfig.stride = 1;
+> +	econfig.word_size = 1;
+>   	econfig.reg_read = mtk_reg_read;
+>   	econfig.size = resource_size(res);
+>   	econfig.priv = priv;
 > 
-> Well, the new way to bind has very little to do with this being a gpio
-> mux. There is no reason not to allow this way to bind for any of the
-> other muxes. That said, the reg-mux binding has this:
-> 
->   '#mux-control-cells':
->     const: 1
-> 
-> Similarly, the adi,adg792a has explicit wording on how #mux-control-cells
-> works (but being a txt binding it is not checked, but that does not matter,
-> bindings should be correct). I now notice that this is missing from the
-> adi,adgs1408 binding, but that's an oversight.
-> 
-> The mux-controller binding has this:
->   '#mux-control-cells':
->     enum: [ 0, 1 ]
-> 
-> The mux-consumer binding should probably be updated with some words
-> on this subject too.
-> 
-> So, all mux bindings need updates when this door is opened. And, in order
-> to add this in a compatible way, the old way to bind with 0/1 cells needs
-> to continue to both work and be allowed.
-> 
-> I think it is easiest to add something common to the mux-controller
-> binding and then have the specific bindings simply inherit it from there
-> instead of adding (almost) the same words to all the driver bindings.
-> 
-
-Understood, I will try to add changes in the common mux-controller
-bindings itself and then reference it in the gpio-mux bindings
-
-Thanks,
-Aswath
-
-> Cheers,
-> Peter
-> 
->> Thank you for the comments. I'll post a respin of this series, with the
->> above changes.
-
 
 -- 
 linux-phy mailing list
