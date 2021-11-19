@@ -2,146 +2,91 @@ Return-Path: <SRS0=M8cc=QG=lists.infradead.org=linux-phy-bounces+linux-phy=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5AF72C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 01:18:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CC6C1C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 07:42:46 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 22C4061260
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 01:18:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 22C4061260
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
+	by mail.kernel.org (Postfix) with ESMTPS id 924C461AFF
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Nov 2021 07:42:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 924C461AFF
+Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=ti.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=81x+z/Xqp/hlcICKwvNC9YGAUE4+/3bwmYpMuY59gbY=; b=Vx8XNeFHfRnLYQ
-	+HpW2Q/1SeE6pIjl1dJZNVFONsRqEdraJDm65qur7RmLXjCZApNnz3zw0zIWdZ3ybCfMARzmPFq1r
-	djk/Q5y9uqSFykihh9he3XitWHNw7zOSXfkJcHtRrDD58z7CLrtzE//pbb4VKbd8IcTKXvHN/kH5c
-	5yjY6RYGvRB5ncW7etd4mh0EA5+1j7HrRb+RXFqNCF6Q/Urbfz2fCJPDeB5OFBlvkb34g69le14Fc
-	20P9yoQSfQPnCixV4Hnwpn3Ker60cRYBVXDTiusLjeHYOF3VJQ7plPq7PfD8MlDYrtuhnpAHHghZU
-	0HQM3ma+bXs1jefx7zvg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=CFfhcnJz37Ak3Di6or01v7JKB0EibWq6YK5ZvWU2/Us=; b=DKD0K3Tf3yt5o8GhFHHeGzfvrZ
+	QvS08e4PumY8exgEDLXs9kZ8V9E+K/1iJTc12/tpHWvxgavTdRn2NbsRZ3K3vlyuL5m/lbBDPBYOa
+	nmRI0gmY+6B3lgRSv+gasUTz2llPHR9DmADH7tQmBAWfmGf0swKcI3gxL8qlo2OixFn+5YrCb27YW
+	fFd0rzT5g4HuZdsrTJPNqcGubhUHOZ1/HU5ZRKDUDy0g5IG9zJvYUTpA9jwy/DFGGZmfGw+laoPgt
+	XlIInfPkLoD7iMcERicsPPoWburDLKGg0fmoXswereiDVvJyGhj7rBq0kZCigGKkGJVp7340lUtCl
+	sBp7UTGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mnsXX-0099v2-H3; Fri, 19 Nov 2021 01:18:07 +0000
-Received: from mail-eopbgr80048.outbound.protection.outlook.com ([40.107.8.48]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1mnyXl-009e1G-Un; Fri, 19 Nov 2021 07:42:45 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mnsXU-0099t4-O2; Fri, 19 Nov 2021 01:18:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Gi7c3W7suPc05x+qWKcOBlDKZrk72vcShQvn156NVHfKMios9NjREZP9Q/rg3i9fDv52XdbE0naHMpy0WdZtyt0jpO91QPPaVF3/2wpI58MSG6/7FUggbZsGwHRG0zOtiX+GZ27O2WQsxpxfwR1kdRhiYE5DZwCtvM3rMBAFoxPUCSdN9Bc118P6kf6JFxgfBkcufKGV/SOCk1OTJZ/IutOXq91LaYAzb6YucWZGqUX121QKN7QSJF4Sh3/WS8pDJCgr0CW/eHLmmUdV0Srp/mcneLPkk+VwfAjax8yGeGn13wMddy9nODn4VfecNzcXaKLkyOKmgSGZAiVGtWFwbg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=BbZn4apwGbYfOTyEQf0jy0R4d8Jsw1alkHp32SNrEPE=;
- b=bPS8ALlyF+PQaO7hWhZ4wti+bc0kLjW95x4TyvpGG/PR/XjdPsYWxkLgQ7WOu2ykOwCMu2X/7Cya9tUb3LPVk7bKkT6mrxKO1nDvHLDKICS2gpN+R7dLDp9ORKaXS4SpYNjdGArV6rEySjj/JAYlzu/sOQ8d4BEeqd+rGzghG3f3QIJ9f8k6Li5tkASTBQcZalF2LwW0p44uh3mFnRwNtfDO9nvjJlFLYGaVkWeY/7GtM8Wh7ftkZyIGhyO3wvv8lKEW8N8tsaSxkq4Vc2CzH9kYyYxmNmW/VHGgUe6dCoiYDQwkHlIC6QxuXHKqECkdrtA10yAiJbL3Lnb8JBjZeA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BbZn4apwGbYfOTyEQf0jy0R4d8Jsw1alkHp32SNrEPE=;
- b=NF8mZBkLjSmsk1sQgBAAyMLB0mv2R6A/uCYmMbGj1/pwYLNoWVODNacj8sHj4Mjz3iuFMn3tC8QozdlJJv8q40/SXrW7H0l8CstAsrq2/qS4GJzmo2Xfgm5LMR5q8+Q79t1whnnfHG7c582y3DMjFtPFOW5Iam2mXEjQL3RvUqE=
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
- by AS8PR04MB9109.eurprd04.prod.outlook.com (2603:10a6:20b:448::17)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4713.19; Fri, 19 Nov
- 2021 01:17:55 +0000
-Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc]) by AS8PR04MB8676.eurprd04.prod.outlook.com
- ([fe80::b059:46c6:685b:e0fc%4]) with mapi id 15.20.4713.024; Fri, 19 Nov 2021
- 01:17:55 +0000
-From: Hongxing Zhu <hongxing.zhu@nxp.com>
-To: Rob Herring <robh@kernel.org>
-CC: "bhelgaas@google.com" <bhelgaas@google.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, "vkoul@kernel.org"
- <vkoul@kernel.org>, "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
- "tharvey@gateworks.com" <tharvey@gateworks.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "kishon@ti.com" <kishon@ti.com>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>
-Subject: RE: [PATCH v6 2/8] dt-bindings: phy: Add imx8 pcie phy driver support
-Thread-Topic: [PATCH v6 2/8] dt-bindings: phy: Add imx8 pcie phy driver support
-Thread-Index: AQHX3CMIaTDMv+OFlEavEB4F1q+e/6wJ9eKAgAAXMKA=
-Date: Fri, 19 Nov 2021 01:17:55 +0000
-Message-ID: <AS8PR04MB86764BE4357EA6FCAD009FD68C9C9@AS8PR04MB8676.eurprd04.prod.outlook.com>
-References: <1637200489-11855-1-git-send-email-hongxing.zhu@nxp.com>
- <1637200489-11855-3-git-send-email-hongxing.zhu@nxp.com>
- <YZbmy8asguINPF4O@robh.at.kernel.org>
-In-Reply-To: <YZbmy8asguINPF4O@robh.at.kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4ac7b605-ab0b-48ad-e1ad-08d9aafa6a70
-x-ms-traffictypediagnostic: AS8PR04MB9109:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-microsoft-antispam-prvs: <AS8PR04MB9109B25C44D810A259BC15118C9C9@AS8PR04MB9109.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:935;
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: JDm4NQxbYEFw300faekduCBgf2AOu8SMpcGUHi82d+ozKvg7iRqBR8W5IgmHyyWfyZo4udhAOHWgiHF4Fl9Pqp9oJpOt6dXqPqNyIcjDj/v/gUcztIXH08zpA9NgU0g36erj/BB97RBUDJAGVEQQqhSuaemswP53YVz4zyrx93ZdsQNdGYXdDWAa4iYKxOZHouS2fICbJ9yoyqxRFjuLCvppocW/FQMHdXqBPRfGJ1FZiYSP8LYmUkO25vE7PhY9yKhYHPKys0JdlPY0LiKhBRCvKFhjnkpgN7VFHunLY+NNcE3dcoV1xJU7qjaw3zY6FNZyAuQijUsrDIbOmdhmuGl4lL3NBILrIPejAEoOtQw39kTSKgAYoOVngi/6mSc0QCbz4Obxe4SWzOluOK5T0UeeUNmC8kBNG+jdNnpCAPvGvU5QXTJcfJaDef94B7pDW2KlhftL2sFaHriD2hZT7EokIrJyrcPTCjeEMTZw+IMSF5b1ydO47VzL5pMcej+z7bdvJjFvb5VHN5PYEIOPHFE9eZ5MWIz3rhhrsB+g6FnaWS6La1x3NKDlnO4xulPYNX7jxhFwIDpk/LukifR39Dn52cYjOPJEDl6a6EV6wIEBxQkQ1VEQjNmM1Je/jDWQlkZ5B2x3EXDCZtBEkY8x7mhoRMBNmK0TtcPUbavu5DVNRbAc0Sc+2z8IK9ITCDdAGFfcL89j4wn+AEp6/2uUPQ==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(122000001)(2906002)(7416002)(38100700002)(38070700005)(4326008)(6916009)(52536014)(508600001)(316002)(54906003)(86362001)(5660300002)(66946007)(8676002)(186003)(71200400001)(66556008)(26005)(66446008)(64756008)(44832011)(83380400001)(76116006)(7696005)(55016002)(33656002)(9686003)(66476007)(6506007)(8936002)(53546011);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?1G71lYFEPlOjwbFULJeF+NpwPbsOC9DKhIHJj/d0+NwpnJIN9TWXaxMhMprA?=
- =?us-ascii?Q?75tZWEv8APybVH9buz1odCvObeO5MBkLUDyo7V+u9EcoaYuSmwmm5qb+cLnw?=
- =?us-ascii?Q?0HsOEnzXH0WJSHgDzn7ES+HcniXAgkVeP6/1ZOsF5iz+JEw5dAiFIwQvPY0f?=
- =?us-ascii?Q?rnvk/QXjOvWxPn9LYdMqaXQOfjNjnfpZTeUAxei61PM61QGCjEcTCTWcF9he?=
- =?us-ascii?Q?VtQoa+RuUv2gQSGbQ9tsmzKK6B3+aKHXCKKJ93ZTwIA3LK6fEiUvIH0PX8DO?=
- =?us-ascii?Q?zgCSgn/SoCuLZ9kCkkDvEIYl9GZ1Z/YlnzLZg2tuVn29yYbBSFEX9O7vmAyD?=
- =?us-ascii?Q?L1JNpz4rtm9SJifSH1pbj289ihD55GUxjz8wgaT/Nm5LpxpQNotuFRaKsUet?=
- =?us-ascii?Q?hgdf4255Jkm9Djxx/L12quZQYo0UWPYlZahpg4Y3z58hwZgfh0jJrdnPUdZ1?=
- =?us-ascii?Q?luLdiHkeLxdVe8fgJUtROps42bszti6aYupibo57bezlbiWmCWeaD5Zq/irE?=
- =?us-ascii?Q?YhhR2+nloSqpb4n2ShihhIlbpVs7h+cP6r5xNNGnGaoLUnqqPq9K/94t4Nu2?=
- =?us-ascii?Q?FzfWU2lxZaAQW1K3OhtMs3k74VSipPvPzE9VEofhdhVkWQCGEa9kLaOHIg7F?=
- =?us-ascii?Q?aumc3wtkU+eoOs8iZCB7I0JaAe20nO0SLbN2rr5VxWWBwBzmdI4g8k6dkvoJ?=
- =?us-ascii?Q?aH/ERjW7NwGKN52uQhgK1qxUWAkA6G3sazoGyUXxUcHsFQ/T8d8fDpBwdqtg?=
- =?us-ascii?Q?hOZVCuYgW6qkEn75S8MMEsQO3NSqe5awqW+y4FF5tyXbv8FmZUc7w/RZL4I0?=
- =?us-ascii?Q?4lunEp4i1UAcam/GdlQckZRGj1beg7JKNZlHE7QwaZc3UTzRLYis+/wZJl+z?=
- =?us-ascii?Q?CkWx12ovWtMWkl9brrelN2KxkioRmZ5ge99UdC+a29/B+m/jseWtrWqPkVx/?=
- =?us-ascii?Q?7TCaqfu4sibClk2ClGFtnukGL0ZKJTKo2cZZ+yjkGal/eHZVUAlldU6Na6QW?=
- =?us-ascii?Q?LlWIlFaeCUcihX4btPBHYGvKpwACIflXd3ZkHAlO4oBeEBaFDyp2sZ4Ttt+R?=
- =?us-ascii?Q?Bkp8jW/DbT7bAfMGvKBbbSpCb98uLY0buR705WQgeSGMUBFqQFniMeFw5ekZ?=
- =?us-ascii?Q?NwQCh9J7HOCElAI3oqnwS+HYIhsCay6kwG5DDFfRWXq4RGV6JpHjziRohrqK?=
- =?us-ascii?Q?sahl5zlogAG0LLeVNpvbihGWHUZGvQZKWfRv8iJEOo8x3GVO0mB5cjONTzx2?=
- =?us-ascii?Q?1rrw3w9bx8F2Joq44jXzKHsOUHWVY+ihbt7VVxklhiTaiCZL/RmcH4xZYfry?=
- =?us-ascii?Q?ex1BqhFw5h/7MO91/Q5mIEPZx8qXx/zrilazmo70kiVFldDyC4oghuwtalGx?=
- =?us-ascii?Q?A1xK3edNKOGJbcADLi4T+9VvDAPmd8RF+QqSCy4WXfizHHF0WcCdTBB/5NjH?=
- =?us-ascii?Q?s2A1JuNsQ/cwVWehoAVg43/vtHe3hCYR0Ycm7mUzien8T1YWsV+ZLn1OLFOE?=
- =?us-ascii?Q?hccsDXs85gV7T7sVPKb5lQF592cJxbGRtRRO15xcmmTlrrnlB59DFqeToqED?=
- =?us-ascii?Q?hetg1HpMlbylWbKLiJ49QNZtrA3CNtuQZumNuhlBOGh+9vGdmR5v/PkXb7gn?=
- =?us-ascii?Q?EQ=3D=3D?=
+ id 1mnyXi-009dzg-CX
+ for linux-phy@lists.infradead.org; Fri, 19 Nov 2021 07:42:44 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AJ7gXvY026575;
+ Fri, 19 Nov 2021 01:42:33 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1637307753;
+ bh=aURgQjKNEA+cBJfEgNbo13xu2bl+tUi1w76bXP0DgFs=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=BDM5KBkjzRSem4B3RLN6dG0eUnofCtwkKfHKj+YtTifBzmSnoU9IeH5S36vDBSMzG
+ 7tZ972+zOSH4UWUv748WBYXl3T+4Hellk7pP20/lHUcbtGAxhFQkvwDEa6VoATNcrk
+ EY4txWdVb9X9LGswmhXUPP+7NDjgnHTh0K+mIXvE=
+Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AJ7gXS8127851
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 19 Nov 2021 01:42:33 -0600
+Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Fri, 19
+ Nov 2021 01:42:32 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Fri, 19 Nov 2021 01:42:32 -0600
+Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AJ7gSS2010913;
+ Fri, 19 Nov 2021 01:42:29 -0600
+Subject: Re: [PATCH RFC 2/2] phy: phy-can-transceiver: Add support for setting
+ mux
+To: Peter Rosin <peda@axentia.se>, Marc Kleine-Budde <mkl@pengutronix.de>
+CC: Vignesh Raghavendra <vigneshr@ti.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Nishanth Menon <nm@ti.com>, Wolfgang Grandegger
+ <wg@grandegger.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>,
+ <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+References: <20211111164313.649-1-a-govindraju@ti.com>
+ <20211111164313.649-3-a-govindraju@ti.com>
+ <20211112084027.b2t2beqiiodnwjtv@pengutronix.de>
+ <085ec3c0-75c6-f3c2-9999-348098fd88f9@ti.com>
+ <f933048c-099f-054a-6563-671cf2a2e2af@axentia.se>
+ <8be2b770-9c4c-ce41-4c49-27fa30b4afee@ti.com>
+ <b8b0c7c4-3006-071b-d68f-8b18d24a1f72@axentia.se>
+ <f47dc612-adea-4dfb-f2fd-d67b5df6ed50@ti.com>
+ <3f13a769-f8ef-dbe8-f2c6-ff197af8eddf@axentia.se>
+From: Aswath Govindraju <a-govindraju@ti.com>
+Message-ID: <c4efbcd3-8071-7fd2-0f3a-bc42acdfd2ac@ti.com>
+Date: Fri, 19 Nov 2021 13:12:28 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.13.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4ac7b605-ab0b-48ad-e1ad-08d9aafa6a70
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Nov 2021 01:17:55.1654 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: wlmIlKKbzpSllhy1RCJ9o1dOkCP7FrBhZ6iCupWxsE4szdtN9max5+i7zTGEHfVPCJvzaN3cxd0Dkm0IJcD8qA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB9109
+In-Reply-To: <3f13a769-f8ef-dbe8-f2c6-ff197af8eddf@axentia.se>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211118_171804_836943_D3CE337B 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20211118_234242_596344_4EC88426 
+X-CRM114-Status: GOOD (  49.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,40 +103,175 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> -----Original Message-----
-> From: Rob Herring <robh@kernel.org>
-> Sent: Friday, November 19, 2021 7:51 AM
-> To: Hongxing Zhu <hongxing.zhu@nxp.com>
-> Cc: bhelgaas@google.com; shawnguo@kernel.org; Marcel Ziswiler
-> <marcel.ziswiler@toradex.com>; l.stach@pengutronix.de;
-> linux-phy@lists.infradead.org; linux-arm-kernel@lists.infradead.org;
-> dl-linux-imx <linux-imx@nxp.com>; devicetree@vger.kernel.org;
-> lorenzo.pieralisi@arm.com; vkoul@kernel.org; linux-pci@vger.kernel.org;
-> galak@kernel.crashing.org; tharvey@gateworks.com;
-> linux-kernel@vger.kernel.org; kishon@ti.com; kernel@pengutronix.de
-> Subject: Re: [PATCH v6 2/8] dt-bindings: phy: Add imx8 pcie phy driver
-> support
-> 
-> On Thu, 18 Nov 2021 09:54:43 +0800, Richard Zhu wrote:
-> > Add dt-binding for the standalone i.MX8 PCIe PHY driver.
-> >
-> > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> > Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> > Reviewed-by: Tim Harvey <tharvey@gateworks.com>
-> > Tested-by: Tim Harvey <tharvey@gateworks.com>
-> > ---
-> >  .../bindings/phy/fsl,imx8-pcie-phy.yaml       | 92
-> +++++++++++++++++++
-> >  1 file changed, 92 insertions(+)
-> >  create mode 100644
-> Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml
-> >
-> 
-> Reviewed-by: Rob Herring <robh@kernel.org>
-[Richard Zhu] Thanks a lot.
+Hi Peter,
 
-Best Regards
-Richard Zhu
+On 18/11/21 6:14 pm, Peter Rosin wrote:
+>>> Ok, I see what you mean now, sorry for being dense. If we allow this then
+>>> there is a need to add a special value that means all/many states (such as
+>>> -1 or something such) so that a mux-control can be used simultaneously by
+>>> drivers "pointing at" a specific state like you want to do, and by the
+>>> existing "application" style drivers that wraps the whole mux control.
+>>>
+>>> I.e. something like this
+>>>
+>>> 	mux: mux {
+>>> 		compatible = "mux-gpio";
+>>> 		...
+>>>
+>>> 		#mux-control-cells = <1>; /* one more than previously */
+>>> 	};
+>>>
+>>> 	phy {
+>>> 		...
+>>>
+>>> 		mux-control = <&mux 3>; /* point to specific state */
+>>> 	};
+>>>
+>>> 	i2c-mux {
+>>> 		compatible = "i2c-mux-gpmux";
+>>> 		parent = <&i2c0>
+>>> 		mux-control = <&mux (-1)>; /* many states needed */
+>>>
+>>> 		...
+>>>
+>>> 		i2c@1 {
+>>> 			eeprom@50 {
+>>> 				...
+>>> 			};
+>>> 		};
+>>>
+>>> 		i2c@2 {
+>>> 			...
+>>> 		};
+>>> 	};
+>>>
+>>> Yes, I realize that accesses to the eeprom cannot happen if the mux is
+>>> constantly selected and locked in state 3 by the phy, and that a mux with
+>>> one channel being a phy and other channels being I2C might not be
+>>> realistic, but the same gpio lines might control several muxes that are
+>>> used for separate signals solving at least the latter "problem" with this
+>>> completely made up example. Anyway, the above is in principle, and HW
+>>> designs are sometimes too weird for words.
+>>>
+>>
+>> This is almost exactly what I was intending to implement except for one
+>> more change. The state of the mux will always be represented using the
+>> second argument(i.e. #mux-control-cells = <2>).
+>>
+>> For example,
+>> mux-controls = <&mux 0 1>, <&mux 1 0>;
+>>
+>>
+>> With this I think we wouldn't need a special value for all or many states.
+> 
+> But you do. Several consumers need to be able to point to the same mux
+> control. If some of these consumers need one state, and some other need
+> all/many, the consumers needing many needs to be able to say that. Listing
+> many entries in mux-control = <>; is misleading since then the binding implies
+> that you could have different mux controls for each state, which is not
+> possible, at least not in the current implementations. It would also be
+> wasteful to needlessly establish links to the same mux control multiple
+> times, and the binding would cause bloated device trees even if you tried
+> to optimize this in the drivers. Therefore, I require a special value so
+> that consumers can continue to point at the mux control as a whole, even
+> if some other consumers of the same mux control wants to point at a specific
+> state.
+> 
+
+
+Understood. One issue that I see is that we certainly can not use the
+first argument for representing state as it will result in errors for
+current users.
+
+I feel that the safest way to go would be by using a second argument to
+represent the state or to represent multiple states can be used by the
+driver. The issue that I see with this approach is that currently the
+fist argument is used to select the line number from the mux and if the
+we use two arguments like this,
+
+mux-controls = <&mux 0 -1>
+
+then this would mean that line nnumber 0 in the mux could use multiple
+states and for a driver to use mutiple lines we would need to add an
+entry for each line which would bloat the code a well increase the
+complexity in the drivers while using devm_mux_get(). So, one solution
+that I could think of is to use a "-1" for the first argument too. This
+would indicate that the driver would need to toggle multiple lines in
+the mux
+
+For example,
+
+1) mux-controls = <&mux -1 3> // the driver would need to set the mux
+lines to 3 for enabling it
+
+2) mux-controls = <&mux -1 -1> //the driver would need to set the mux
+lines and multiple states in the mux
+
+3) mux-controls = <&mux 0 1> // the driver would need to set the zeroth
+mux line to 1
+
+I do see that, going with this method would make <&mux ^\d*$ ^\d*$>(i.e.
+any positive number in the first argument) redundant as it can be
+represented with <&mux -1 *>. However, I think is the only way so that
+existing users will not see issues.
+
+
+>>>> One more question that I had is, if the number of arguments match the
+>>>> #mux-control-cells and if the number of arguments are greater than 1 why
+>>>> is an error being returned?
+>>>
+>>> Changing that would require a bindings update anyway, so I simply
+>>> disallowed it as an error. Not much thought went into the decision,
+>>> as it couldn't be wrong to do what is being done with the bindings
+>>> that exist. That said, I have no problem lifting this restriction,
+>>> if there's a matching bindings update that makes it all fit.
+>>>
+>>
+>> Sure, I think making a change in
+>>
+>> Documentation/devicetree/bindings/mux/gpio-mux.yaml, should be good
+>> enough I assume.
+> 
+> Well, the new way to bind has very little to do with this being a gpio
+> mux. There is no reason not to allow this way to bind for any of the
+> other muxes. That said, the reg-mux binding has this:
+> 
+>   '#mux-control-cells':
+>     const: 1
+> 
+> Similarly, the adi,adg792a has explicit wording on how #mux-control-cells
+> works (but being a txt binding it is not checked, but that does not matter,
+> bindings should be correct). I now notice that this is missing from the
+> adi,adgs1408 binding, but that's an oversight.
+> 
+> The mux-controller binding has this:
+>   '#mux-control-cells':
+>     enum: [ 0, 1 ]
+> 
+> The mux-consumer binding should probably be updated with some words
+> on this subject too.
+> 
+> So, all mux bindings need updates when this door is opened. And, in order
+> to add this in a compatible way, the old way to bind with 0/1 cells needs
+> to continue to both work and be allowed.
+> 
+> I think it is easiest to add something common to the mux-controller
+> binding and then have the specific bindings simply inherit it from there
+> instead of adding (almost) the same words to all the driver bindings.
+> 
+
+Understood, I will try to add changes in the common mux-controller
+bindings itself and then reference it in the gpio-mux bindings
+
+Thanks,
+Aswath
+
+> Cheers,
+> Peter
+> 
+>> Thank you for the comments. I'll post a respin of this series, with the
+>> above changes.
+
 
 -- 
 linux-phy mailing list
