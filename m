@@ -4,77 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 521DCC433EF
-	for <linux-phy@archiver.kernel.org>; Sat, 20 Nov 2021 23:18:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C58E0C433F5
+	for <linux-phy@archiver.kernel.org>; Sat, 20 Nov 2021 23:56:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BB7SgnU4RSmr3T6FZ5072UEstReJDm3SlLyorOV+duA=; b=sDIjcdzQPpQKh8
-	X2hHi9K0nyd2Uq5yFOMPMUqQAgTklprusazuPiTRt24edCY242OnYiehFpaoOkVfq+YqmTabBt83a
-	4GSOWWRzEiELJIsaFWUBSkv/fqtqsqPOWdP1DRju/y2vf5cj45WgWRLyTCZ9AzerSE8ek/YRf6LpR
-	gcKpDxmnkbGw+wNu2Xn12R8KKIFrqpHzqAwD27bB/geE3n0t956Wm6Uz8ibJsbj55GcuqVFa5HKmM
-	5/lknS5ZNRlkQ8+x1+qybD5UdusEozcmofFDKV7RnsxryONyx3wAKu2gX3LD6W+i35CX09Qs7pSqc
-	z7zo+aqEDmaCsu+v8jSQ==;
+	List-Owner; bh=FGRlxJhnTgIZOWg9z6A/ihA38QvOnYfk/hB523/906Y=; b=PGHRPcy/4ta4gy
+	kQeoETm9T3wWrGIMQ6P827Tu0iEY/1OBleosiRXtqjhOTLORYwJdhWPqUsVJw6PBJWEur45Fdiz2P
+	LPHMAbY/JqW3j/WY59tBhwZUqyKDshH2Kapc/nRuTWg4nSAlMILh2f7WMLSrTYrQE6V+yQYH0UZGb
+	5OOf9VD8DW+xQzcqaCaVhMT9U4HV+1Y8a+zJOta1d1dqWFXX5PJF9DxWHJAaDHcUnxijRs0YOmac8
+	5TdY7JlvDB6buYAaZRocsWe0nabZNm+5M5xPpa6wNDNNy3Jr49lrf8RGzv5WUfM2JEtFfWPg4tP1b
+	6lN0FvIAJxWz4zxUa7ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1moZdI-00D31k-7T; Sat, 20 Nov 2021 23:18:56 +0000
-Received: from mail-ot1-x32d.google.com ([2607:f8b0:4864:20::32d])
+	id 1moaD9-00D5GE-Vz; Sat, 20 Nov 2021 23:55:59 +0000
+Received: from mail-ot1-x32b.google.com ([2607:f8b0:4864:20::32b])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1moZdF-00D315-AS
- for linux-phy@lists.infradead.org; Sat, 20 Nov 2021 23:18:54 +0000
-Received: by mail-ot1-x32d.google.com with SMTP id
- h16-20020a9d7990000000b0055c7ae44dd2so22683162otm.10
- for <linux-phy@lists.infradead.org>; Sat, 20 Nov 2021 15:18:52 -0800 (PST)
+ id 1moaD6-00D5FT-QG
+ for linux-phy@lists.infradead.org; Sat, 20 Nov 2021 23:55:58 +0000
+Received: by mail-ot1-x32b.google.com with SMTP id
+ u18-20020a9d7212000000b00560cb1dc10bso22681183otj.11
+ for <linux-phy@lists.infradead.org>; Sat, 20 Nov 2021 15:55:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=JTdASFPiON/L+d5lkfaZYqJlAIfhX4rwz0wsWxjgVA8=;
- b=tml7j6wnym+kcgisdcUDIpnQEFPk3UxKrDQbvjVV1hvRYJqlZQl7ny4mB31t2+VPJi
- nN1Iv+ZMw8Xe5Tg17xNs7Ulb/vFxncG64IDus+jTuZdQCBILJvjqGPxze1SZTyrAv44k
- uGFZ+hd7SDicV32/p11M9sCkwT77720PGzfSmPQ3rfX8QK23/wWYa5UwahIt6GK2k76E
- 9NuucBFx+hCRBWhoHFTU1raaQKbwLvk7rQzN/GRiYuat3f1supiGSosJXiXHEidHEjWA
- kSUvZchh1g109zZEtNiYmQTTXONkwLMOnvzf4IMdo5Cv5TU/mTGPeLm319eG1WEork6R
- //VQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=pSPopdaF+ihVTA4ijju/5cBbM6jMosSNPV3+XmETCpM=;
+ b=I03PNyMyto7mkvu8Y7aNx7YQP6EPgsoLHyseIWYAjUmPpHZ0IADZbYtEU+j7lOgrzT
+ mKVyC/KRKwyq4LkrnTUrtJ9+Aj5ZeN49H30QkvKXNkx0kEiGEGtTn5ElgKAMgI2fLgQ2
+ Ohj9msXoyJMua5NAzq99aBjzACm8bLOXTaOt0cEH1lHRCPes3QFyik3CuJLkkvc7YhjA
+ geXsQFoT/7vS037ckn/sOC2y9ZX0Wnhx2h5Z13rn3mXOEC7Q2qu1qaK5oSlTnpdqBGQT
+ GPpig5RmcdYHyngrUUSAf63sDlJFMKAO/kWACrFbqYK/OOU9smEAo3UHoIiOEU0NxC2n
+ zGmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=JTdASFPiON/L+d5lkfaZYqJlAIfhX4rwz0wsWxjgVA8=;
- b=Rn7D7p2W16U96+Ku2zBGQHWWflfeIKHt5bw0wMTQOlaVLeHAaRgPSGQKj8CsWJWpOC
- +6jaX4Wfx5Q1BS5fK06OCCCEo3XbwVDbQ/o7SM+vx1kZ5dfkAGQn+BgTGeRsAYmmZwmv
- xsBuTJzslKBcRp7DLiQ6/AwFsSnkeSs+OkHZFTUjb07bGLIl8qJdNSET6uZ07pGdkNsx
- fJlwAVx2DTHG8gmpYstKjhM6dXer4MCfbkDmriLT/95OFGnSoqXrLraMaYSeE8Apoh2S
- hhUGL+/LF8kzVVexiDsBp70uGad24yVTyymiQ30H3LPchFvA6OTLUQSYpxpVq7zbmB6N
- 7XeA==
-X-Gm-Message-State: AOAM533kxh2EjWuql/dwXf+G2N8iG0yRuLu2UKJ4gFS95aO6ScQ89W4r
- qGr76lH5JTh0p1Xx1asLwE12JA==
-X-Google-Smtp-Source: ABdhPJxCfOPuy6zRkMW/P7tdeY6/cZb/s/wtObVT7fNz9WLykz27BnFkfbdNxmr3GspyZ0Ftyzh02w==
-X-Received: by 2002:a05:6830:2253:: with SMTP id
- t19mr15175847otd.163.1637450331627; 
- Sat, 20 Nov 2021 15:18:51 -0800 (PST)
-Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=pSPopdaF+ihVTA4ijju/5cBbM6jMosSNPV3+XmETCpM=;
+ b=W6bclL3AIjruMK2T6jMrD6xnN1L76nBYGL56ewUzzIi2K/ts5qDx9M3OFAo6FMx2PU
+ 1QSENQQoFmsOocUwRxFuc8wwMLcRUh8kHj8yN/fIHVSEi7OWEvODtsHqqlKSnE7FuLRD
+ RJENgbiz6sFFHEuXhLVMw10AaIW+0da6fcYICcGUMm5XYbabdPlm9xtRmRPArz5gnCM8
+ fapRjD1pR/fvE9VX0rkxO9tVtT+SV+fGnbxo3SEa3FByswj31aAe8QHvNFgKdfxq1/nq
+ uK6iJYt7ZzNHczlE3zGEsmKplyss2luELL/iK8MLoEehxIwv6OA7GJxYWDOV+kZ+1RxO
+ 0aJA==
+X-Gm-Message-State: AOAM532kULgggRhdby05YTo9Yljtprvm6ZWMixeA6EtcRXtDBk7EdYMD
+ PAPt1f0zrStO3vL7jd7FZppcJQ==
+X-Google-Smtp-Source: ABdhPJztdwDk3EI1NtJbxWSm86apzdx//aaQW+xl4RllMJ2qfqlYFcnF4S+Y6wtBVwqnK3rb95jxDw==
+X-Received: by 2002:a05:6830:1514:: with SMTP id
+ k20mr14061162otp.147.1637452555925; 
+ Sat, 20 Nov 2021 15:55:55 -0800 (PST)
+Received: from builder.lan (104-57-184-186.lightspeed.austtx.sbcglobal.net.
  [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id h6sm801746otb.60.2021.11.20.15.18.50
+ by smtp.gmail.com with ESMTPSA id o26sm828474otj.14.2021.11.20.15.55.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 20 Nov 2021 15:18:51 -0800 (PST)
-Date: Sat, 20 Nov 2021 15:20:37 -0800
+ Sat, 20 Nov 2021 15:55:55 -0800 (PST)
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
- Andy Gross <agross@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Randy Dunlap <rdunlap@infradead.org>
-Subject: Re: [PATCH v2 1/2] phy: qualcomm: ipq806x-usb: Fix kernel-doc style
-Message-ID: <YZmCxaP9dkGAemcF@ripper>
-References: <20211120061531.410771-1-vkoul@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Shawn Guo <shawn.guo@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org,
+ Konrad Dybcio <konrad.dybcio@somainline.org>, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, Jami Kettunen <jamipkettunen@gmail.com>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@somainline.org>,
+ linux-phy@lists.infradead.org
+Subject: Re: (subset) [PATCH v2 3/3] arm64: dts: qcom: Add missing vdd-supply
+ for QUSB2 PHY
+Date: Sat, 20 Nov 2021 17:55:31 -0600
+Message-Id: <163745250542.1078332.12783986325450706739.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.32.0
+In-Reply-To: <20210928022002.26286-4-shawn.guo@linaro.org>
+References: <20210928022002.26286-1-shawn.guo@linaro.org>
+ <20210928022002.26286-4-shawn.guo@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211120061531.410771-1-vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211120_151853_403382_5D7D95F0 
-X-CRM114-Status: GOOD (  18.41  )
+X-CRM114-CacheID: sfid-20211120_155556_871742_B51DE3AC 
+X-CRM114-Status: UNSURE (   5.97  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,87 +98,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri 19 Nov 22:15 PST 2021, Vinod Koul wrote:
-
-> The functions are documented but there were style issues, so fix
-> the style and add missing description for phy_dwc3
+On Tue, 28 Sep 2021 10:20:02 +0800, Shawn Guo wrote:
+> QUSB2 PHY requires vdd-supply for digital circuit operation.  Add it for
+> platforms that miss it.
 > 
-> drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c:130:
-> drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c:174:
-> drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c:212: warning:
-> This comment starts with '/**', but isn't a kernel-doc comment.
-> Refer Documentation/doc-guide/kernel-doc.rst
 > 
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Applied, thanks!
 
-> Reviewed-by: Randy Dunlap <rdunlap@infradead.org>
-> Signed-off-by: Vinod Koul <vkoul@kernel.org>
-> ---
-> 
-> Changes in v2: use () for function names
-> update description of @phy_dwc3
-> 
->  drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c | 26 +++++++++++----------
->  1 file changed, 14 insertions(+), 12 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c b/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c
-> index bfff0c8c9130..fec1da470d26 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c
-> @@ -127,12 +127,13 @@ struct phy_drvdata {
->  };
->  
->  /**
-> - * Write register and read back masked value to confirm it is written
-> + * usb_phy_write_readback() - Write register and read back masked value to
-> + * confirm it is written
->   *
-> - * @base - QCOM DWC3 PHY base virtual address.
-> - * @offset - register offset.
-> - * @mask - register bitmask specifying what should be updated
-> - * @val - value to write.
-> + * @phy_dwc3: QCOM DWC3 phy context
-> + * @offset: register offset.
-> + * @mask: register bitmask specifying what should be updated
-> + * @val: value to write.
->   */
->  static inline void usb_phy_write_readback(struct usb_phy *phy_dwc3,
->  					  u32 offset,
-> @@ -171,11 +172,11 @@ static int wait_for_latch(void __iomem *addr)
->  }
->  
->  /**
-> - * Write SSPHY register
-> + * usb_ss_write_phycreg() - Write SSPHY register
->   *
-> - * @base - QCOM DWC3 PHY base virtual address.
-> - * @addr - SSPHY address to write.
-> - * @val - value to write.
-> + * @phy_dwc3: QCOM DWC3 phy context
-> + * @addr: SSPHY address to write.
-> + * @val: value to write.
->   */
->  static int usb_ss_write_phycreg(struct usb_phy *phy_dwc3,
->  				u32 addr, u32 val)
-> @@ -209,10 +210,11 @@ static int usb_ss_write_phycreg(struct usb_phy *phy_dwc3,
->  }
->  
->  /**
-> - * Read SSPHY register.
-> + * usb_ss_read_phycreg() - Read SSPHY register.
->   *
-> - * @base - QCOM DWC3 PHY base virtual address.
-> - * @addr - SSPHY address to read.
-> + * @phy_dwc3: QCOM DWC3 phy context
-> + * @addr: SSPHY address to read.
-> + * @val: pointer in which read is store.
->   */
->  static int usb_ss_read_phycreg(struct usb_phy *phy_dwc3,
->  			       u32 addr, u32 *val)
-> -- 
-> 2.31.1
-> 
+[3/3] arm64: dts: qcom: Add missing vdd-supply for QUSB2 PHY
+      commit: 5663ca59bb4f1dfd2501f2af0bfdca93c4d47b3a
+
+Best regards,
+-- 
+Bjorn Andersson <bjorn.andersson@linaro.org>
 
 -- 
 linux-phy mailing list
