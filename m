@@ -4,74 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB760C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 13:04:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49EF9C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 13:06:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:Subject:Reply-To:To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kuo8QIGInAWbOHRuQ09lRjuEsVU9c2tD8yxYEHOyt48=; b=cM/1k+RdqLvm+HNBLbr22oTT1J
-	WV1lf67YOlc6VQGli9YnW7fas2BLbkZw+tUuhzt+n4rOQkD11p67A54Tvkadcktyjwt/hDtHs0FdX
-	6+fRspr+Q3uH62wXe+ujNTF5o5NDY3mGRJcAP7QL9I3HUZrhs9Z0thZylRU7eBEO6XoZfjtXnuAG0
-	yMveTTPi8kPp4H2TcH4i5qLyK/iS4HAF4yinvOgnyTPpL8L52VH+31zvkrDyL7j4um1PPgLNgJeU6
-	FjixL0aT7Ax4x0NcDQwss4HqGOKXDrrss8S06agyLU1MemCUSqQEdR2sP7WsUkPERM91L5SPtcLPN
-	gwWn0cNQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=aAWKwv9PvcsEv3SUrzXOp6sVL6DonF+FFv/ndtKh1RU=; b=yEraKoKj0lW3rBRdFpLPZPnu30
+	56wX0SzHU34cf19Bhgquuo760h2FR/mpYsoDka27ZKFyXDbPegPIS2M7BxmeNeA6c0gI6eIzVrM7R
+	6VwD+JfUx/PEamVnIDPAKcxn4NW+KmOaRK4solBePbCoS7St3mXl8FWh/w2WhDaEY3UsaUwpLB65y
+	gAgtZwcSY7wmrtZc8rmGcPoyIuFyj8a7fKiSyyTyI3vkZ2Re0FPhILj3sAQdV00fMj4gf8xrS9rhM
+	q0cVnYLBrdXJzbsQl8aYDyFP2xE3Reu2YcV22m2DosV3GAJ33ubiVG2rEqPU5/EHP+/uDhj65c8dA
+	DCXDKyuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mp8zb-00GZMe-Bo; Mon, 22 Nov 2021 13:04:19 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1mp929-00Ga2B-PD; Mon, 22 Nov 2021 13:06:57 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mp8zY-00GZLI-3J
- for linux-phy@lists.infradead.org; Mon, 22 Nov 2021 13:04:17 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AMD4CfE110222;
- Mon, 22 Nov 2021 07:04:12 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1637586252;
- bh=cgfUQb5H+/q89FEobokpGFktiAaiufefxSB1SXD7M2c=;
- h=Subject:CC:References:From:Date:In-Reply-To;
- b=kjUYxnjlY/l9kWVVKFvafoneBn9Aj9CxTSfdKDAVU/saHvI6fYimjGuIRxO+a+F5S
- wnKfi+FrbMkQg2xl6T4rjxoLOMA0IgMxes+kdqaBnGRc+KY9z6n84frgacY6Du78wS
- /VeV26xcz8TV71FZBEBC098raB8ipnlg6vuOfsJo=
-Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AMD4CCr128275
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 22 Nov 2021 07:04:12 -0600
-Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 22
- Nov 2021 07:04:12 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 22 Nov 2021 07:04:12 -0600
-Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AMD49wq127891;
- Mon, 22 Nov 2021 07:04:09 -0600
-Subject: Re: [PATCH RFC 0/2] CAN TRANSCEIVER: Add support for setting mux
-CC: Vignesh Raghavendra <vigneshr@ti.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Nishanth Menon <nm@ti.com>, Wolfgang Grandegger
- <wg@grandegger.com>, Marc Kleine-Budde <mkl@pengutronix.de>, Vinod Koul
- <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, <linux-can@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20211111164313.649-1-a-govindraju@ti.com>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <cf9c9534-92a8-4c7f-fdb6-43b40768ec65@ti.com>
-Date: Mon, 22 Nov 2021 18:34:08 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ id 1mp925-00Ga0T-Sc
+ for linux-phy@lists.infradead.org; Mon, 22 Nov 2021 13:06:56 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1mp91z-0001ZE-Uu; Mon, 22 Nov 2021 14:06:47 +0100
+Received: from pengutronix.de
+ (2a03-f580-87bc-d400-c7fb-0fe8-e8cb-8e33.ip6.dokom21.de
+ [IPv6:2a03:f580:87bc:d400:c7fb:fe8:e8cb:8e33])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (Client did not present a certificate)
+ (Authenticated sender: mkl-all@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 937536B2CF5;
+ Mon, 22 Nov 2021 13:06:46 +0000 (UTC)
+Date: Mon, 22 Nov 2021 14:06:45 +0100
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: Aswath Govindraju <a-govindraju@ti.com>
+Cc: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Peter Rosin <peda@axentia.se>, Rob Herring <robh+dt@kernel.org>,
+ Wolfgang Grandegger <wg@grandegger.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-can@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH RFC v2 4/4] phy: phy-can-transceiver: Add support for
+ setting mux
+Message-ID: <20211122130645.3dkhzneakbjdcynm@pengutronix.de>
+References: <20211122125624.6431-1-a-govindraju@ti.com>
+ <20211122125624.6431-5-a-govindraju@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <20211111164313.649-1-a-govindraju@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20211122125624.6431-5-a-govindraju@ti.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_050416_229397_94A02949 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20211122_050653_953955_3D15CC61 
+X-CRM114-Status: GOOD (  25.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,39 +76,148 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3397390138749211107=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi all,
 
-On 11/11/21 10:13 pm, Aswath Govindraju wrote:
+--===============3397390138749211107==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="2oqpw7laziakkmvw"
+Content-Disposition: inline
+
+
+--2oqpw7laziakkmvw
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 22.11.2021 18:26:24, Aswath Govindraju wrote:
 > On some boards, for routing CAN signals from controller to transceiver,
 > muxes might need to be set. Therefore, add support for setting the mux by
 > reading the mux-controls property from the device tree node.
-> 
-> Aswath Govindraju (2):
->   dt-bindings: phy: ti,tcan104x-can: Document mux-controls property
->   phy: phy-can-transceiver: Add support for setting mux
-> 
+>=20
+> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+> ---
+>  drivers/phy/phy-can-transceiver.c | 26 ++++++++++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+>=20
+> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-tran=
+sceiver.c
+> index 6f3fe37dee0e..15056b9d68ba 100644
+> --- a/drivers/phy/phy-can-transceiver.c
+> +++ b/drivers/phy/phy-can-transceiver.c
+> @@ -10,6 +10,7 @@
+>  #include<linux/module.h>
+>  #include<linux/gpio.h>
+>  #include<linux/gpio/consumer.h>
+> +#include <linux/mux/consumer.h>
+> =20
+>  struct can_transceiver_data {
+>  	u32 flags;
+> @@ -21,13 +22,23 @@ struct can_transceiver_phy {
+>  	struct phy *generic_phy;
+>  	struct gpio_desc *standby_gpio;
+>  	struct gpio_desc *enable_gpio;
+> +	struct mux_control *mux_ctrl;
+>  };
+> =20
+>  /* Power on function */
+>  static int can_transceiver_phy_power_on(struct phy *phy)
+>  {
+> +	int ret;
+>  	struct can_transceiver_phy *can_transceiver_phy =3D phy_get_drvdata(phy=
+);
+> =20
+> +	if (can_transceiver_phy->mux_ctrl) {
+> +		ret =3D mux_control_select(can_transceiver_phy->mux_ctrl,
+> +					 mux_control_enable_state(can_transceiver_phy->mux_ctrl));
+> +		if (ret) {
+> +			dev_err(&phy->dev, "Failed to select CAN mux: %d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+>  	if (can_transceiver_phy->standby_gpio)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
+>  	if (can_transceiver_phy->enable_gpio)
+> @@ -45,6 +56,8 @@ static int can_transceiver_phy_power_off(struct phy *ph=
+y)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
+>  	if (can_transceiver_phy->enable_gpio)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
+> +	if (can_transceiver_phy->mux_ctrl)
+> +		mux_control_deselect(can_transceiver_phy->mux_ctrl);
+> =20
+>  	return 0;
+>  }
+> @@ -95,6 +108,19 @@ static int can_transceiver_phy_probe(struct platform_=
+device *pdev)
+>  	match =3D of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+>  	drvdata =3D match->data;
+> =20
+> +	if (of_property_read_bool(dev->of_node, "mux-controls")) {
+> +		struct mux_control *control;
+> +		int ret;
+> +
+> +		control =3D devm_mux_control_get(dev, NULL);
+> +		if (IS_ERR(control)) {
+> +			ret =3D PTR_ERR(control);
+> +			dev_err_probe(&pdev->dev, ret, "failed to get mux\n");
+> +			return PTR_ERR(control);
+> +		}
 
-Thank you for the comments. I have posted a v2 for this series after
-making the changes that were requested.
+	if (IS_ERR(control))
+		return dev_err_probe(&pdev, PTR_ERR(control),
+                        "failed to get mux\n");
 
-Link to v2,
-- https://patchwork.kernel.org/project/linux-phy/list/?series=583917
+> +		can_transceiver_phy->mux_ctrl =3D control;
+> +	}
+> +
+>  	phy =3D devm_phy_create(dev, dev->of_node,
+>  			      &can_transceiver_phy_ops);
+>  	if (IS_ERR(phy)) {
+> --=20
+> 2.17.1
+>=20
+>
 
-Thanks,
-Aswath
+regards,
+Marc
 
->  .../bindings/phy/ti,tcan104x-can.yaml         |  6 ++++++
->  drivers/phy/phy-can-transceiver.c             | 21 +++++++++++++++++++
->  2 files changed, 27 insertions(+)
-> 
+--=20
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
+--2oqpw7laziakkmvw
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEK3kIWJt9yTYMP3ehqclaivrt76kFAmGbleIACgkQqclaivrt
+76lZYwf+LCpeXxyv+nkG2BtcQzm3Bz0OFT1tL7ZZVBG71SlA7mhy8apJ5VsSUFoU
+yCyS4DlwBBeaP/nmA8hThpOn/ivCmA1vugtbe7fmJEmW6AAUnZ1cJC0f2080BgXX
+ehVlh2TYvctmj2wgGfhkF0lg6gLmxtQl7gTK/eFL86LajEUFXsqsL2v62fCg7dvk
+eAP/OhlSFpPv6xXh/5FXH22yNTj3qauauk0c0h8U1bZmFEQE7i8bR9gzcaZe1eal
+/qyoMZ4O8t2xOhdLTscZeZ42hGWYXyE3gvS8AT5juLY8VqskwHTq3pCN20tPafbz
+I+iVkVjMyWf+XU5wGMrI0xcqpHSM4A==
+=ZLad
+-----END PGP SIGNATURE-----
+
+--2oqpw7laziakkmvw--
+
+
+--===============3397390138749211107==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3397390138749211107==--
+
