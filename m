@@ -4,75 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1EEBC4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 12:59:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB760C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 13:04:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K6gUMtNK3zJcajhAHJAqXYm6uJyVynSGLgbfKehdKuA=; b=gEeAzFmD6QhJGM
-	eKy3UlUgaVKFovy0kvZ6d+XNDL11DVGcBEZLH9lfIdjZDTBQVnq3jRMx8GGKJLGACxV3Fcs/Bj+Fg
-	UnaSh/ZQonNIZiFmreQ63mrdzgmNTLUv7R7T3Vm5pYHjGxWRG17EJFwb1bs1UmJ5Oyfzq4dH08jle
-	QpLfblOX2b1AbzmNdtaKZmEv+UhIIxegLppBANEGeqMG66/eW2NvJd54xXXg/HyDIy3hmGe7drteL
-	3kGprLnfp0KGmMuvBSv06VqzTQiHTsB8ly4nzLnpI8R41VjBy42X9NFwBabqf6Yfx+qkN6wgvzJhT
-	ALB3ymrznyRhLbcQu3Ug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:CC:Subject:Reply-To:To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=kuo8QIGInAWbOHRuQ09lRjuEsVU9c2tD8yxYEHOyt48=; b=cM/1k+RdqLvm+HNBLbr22oTT1J
+	WV1lf67YOlc6VQGli9YnW7fas2BLbkZw+tUuhzt+n4rOQkD11p67A54Tvkadcktyjwt/hDtHs0FdX
+	6+fRspr+Q3uH62wXe+ujNTF5o5NDY3mGRJcAP7QL9I3HUZrhs9Z0thZylRU7eBEO6XoZfjtXnuAG0
+	yMveTTPi8kPp4H2TcH4i5qLyK/iS4HAF4yinvOgnyTPpL8L52VH+31zvkrDyL7j4um1PPgLNgJeU6
+	FjixL0aT7Ax4x0NcDQwss4HqGOKXDrrss8S06agyLU1MemCUSqQEdR2sP7WsUkPERM91L5SPtcLPN
+	gwWn0cNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mp8ul-00GXVG-V5; Mon, 22 Nov 2021 12:59:19 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1mp8zb-00GZMe-Bo; Mon, 22 Nov 2021 13:04:19 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mp8sP-00GWQL-F8
- for linux-phy@lists.infradead.org; Mon, 22 Nov 2021 12:56:55 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AMCuls8116345;
- Mon, 22 Nov 2021 06:56:47 -0600
+ id 1mp8zY-00GZLI-3J
+ for linux-phy@lists.infradead.org; Mon, 22 Nov 2021 13:04:17 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AMD4CfE110222;
+ Mon, 22 Nov 2021 07:04:12 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1637585807;
- bh=eVWmINi4lrTAVn2s9bs20xrtU+Q+mEUZO+xNmE4+t6I=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=y1yvVryoYzJrK7Rmy9jxlGw6WFPs4QALqtfqOk//IDdtrZ1JZ+/jttiZNDfRsBPm+
- 5cvDIUsLqCz92Ct7I81GUebWqHquPcN8uZm8TchIN3noAFPk+Ky9xoafpqd3244g/R
- GztTF93h+DgeLVrROU9e7ebO7Ea1h/7MfbqFVato=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AMCulL3066716
+ s=ti-com-17Q1; t=1637586252;
+ bh=cgfUQb5H+/q89FEobokpGFktiAaiufefxSB1SXD7M2c=;
+ h=Subject:CC:References:From:Date:In-Reply-To;
+ b=kjUYxnjlY/l9kWVVKFvafoneBn9Aj9CxTSfdKDAVU/saHvI6fYimjGuIRxO+a+F5S
+ wnKfi+FrbMkQg2xl6T4rjxoLOMA0IgMxes+kdqaBnGRc+KY9z6n84frgacY6Du78wS
+ /VeV26xcz8TV71FZBEBC098raB8ipnlg6vuOfsJo=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AMD4CCr128275
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 22 Nov 2021 06:56:47 -0600
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 22 Nov 2021 07:04:12 -0600
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 22
- Nov 2021 06:56:46 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2021 07:04:12 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 22 Nov 2021 06:56:46 -0600
-Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
- (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AMCuQi2109786;
- Mon, 22 Nov 2021 06:56:43 -0600
+ Frontend Transport; Mon, 22 Nov 2021 07:04:12 -0600
+Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AMD49wq127891;
+ Mon, 22 Nov 2021 07:04:09 -0600
+Subject: Re: [PATCH RFC 0/2] CAN TRANSCEIVER: Add support for setting mux
+CC: Vignesh Raghavendra <vigneshr@ti.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Nishanth Menon <nm@ti.com>, Wolfgang Grandegger
+ <wg@grandegger.com>, Marc Kleine-Budde <mkl@pengutronix.de>, Vinod Koul
+ <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, <linux-can@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20211111164313.649-1-a-govindraju@ti.com>
 From: Aswath Govindraju <a-govindraju@ti.com>
-To: 
-CC: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, Aswath
- Govindraju <a-govindraju@ti.com>,
- Peter Rosin <peda@axentia.se>, Rob Herring <robh+dt@kernel.org>,
- Wolfgang Grandegger <wg@grandegger.com>, Marc
- Kleine-Budde <mkl@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: [PATCH RFC v2 3/4] mux: Add support for reading mux enable state from
- DT
-Date: Mon, 22 Nov 2021 18:26:23 +0530
-Message-ID: <20211122125624.6431-4-a-govindraju@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20211122125624.6431-1-a-govindraju@ti.com>
-References: <20211122125624.6431-1-a-govindraju@ti.com>
+Message-ID: <cf9c9534-92a8-4c7f-fdb6-43b40768ec65@ti.com>
+Date: Mon, 22 Nov 2021 18:34:08 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.14.0
 MIME-Version: 1.0
+In-Reply-To: <20211111164313.649-1-a-govindraju@ti.com>
+Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_045653_631067_C593CBA5 
-X-CRM114-Status: GOOD (  17.63  )
+X-CRM114-CacheID: sfid-20211122_050416_229397_94A02949 
+X-CRM114-Status: GOOD (  13.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,98 +88,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In some cases, we might need to provide the state of the mux to be set for
-the operation of a given peripheral. Therefore, pass this information using
-the second argument of the mux-controls property.
+Hi all,
 
-Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
----
+On 11/11/21 10:13 pm, Aswath Govindraju wrote:
+> On some boards, for routing CAN signals from controller to transceiver,
+> muxes might need to be set. Therefore, add support for setting the mux by
+> reading the mux-controls property from the device tree node.
+> 
+> Aswath Govindraju (2):
+>   dt-bindings: phy: ti,tcan104x-can: Document mux-controls property
+>   phy: phy-can-transceiver: Add support for setting mux
+> 
 
-Notes:
-- The function mux_control_get() always return the mux_control for a single
-  line. So, control for mutiple lines cannot be represented in the
-  mux-controls property.
-- For representing multiple lines of control, multiple entries need to be
-  used along with mux-names for reading them.
-- If a device uses both the states of the mux line then #mux-control-cells
-  can be set to 1 and enable_state will not be set in this case.
+Thank you for the comments. I have posted a v2 for this series after
+making the changes that were requested.
 
- drivers/mux/core.c           | 20 ++++++++++++++++++--
- include/linux/mux/consumer.h |  1 +
- include/linux/mux/driver.h   |  1 +
- 3 files changed, 20 insertions(+), 2 deletions(-)
+Link to v2,
+- https://patchwork.kernel.org/project/linux-phy/list/?series=583917
 
-diff --git a/drivers/mux/core.c b/drivers/mux/core.c
-index 22f4709768d1..51140748d2d6 100644
---- a/drivers/mux/core.c
-+++ b/drivers/mux/core.c
-@@ -294,6 +294,18 @@ unsigned int mux_control_states(struct mux_control *mux)
- }
- EXPORT_SYMBOL_GPL(mux_control_states);
- 
-+/**
-+ * mux_control_enable_state() - Query for the enable state.
-+ * @mux: The mux-control to query.
-+ *
-+ * Return: State to be set in the mux to enable a given device
-+ */
-+unsigned int mux_control_enable_state(struct mux_control *mux)
-+{
-+	return mux->enable_state;
-+}
-+EXPORT_SYMBOL_GPL(mux_control_enable_state);
-+
- /*
-  * The mux->lock must be down when calling this function.
-  */
-@@ -481,8 +493,7 @@ struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
- 	if (!mux_chip)
- 		return ERR_PTR(-EPROBE_DEFER);
- 
--	if (args.args_count > 1 ||
--	    (!args.args_count && (mux_chip->controllers > 1))) {
-+	if (!args.args_count && mux_chip->controllers > 1) {
- 		dev_err(dev, "%pOF: wrong #mux-control-cells for %pOF\n",
- 			np, args.np);
- 		put_device(&mux_chip->dev);
-@@ -500,6 +511,11 @@ struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
- 		return ERR_PTR(-EINVAL);
- 	}
- 
-+	if (args.args_count == 2) {
-+		mux_chip->mux[controller].enable_state = args.args[1];
-+		mux_chip->mux[controller].idle_state = !args.args[1];
-+	}
-+
- 	return &mux_chip->mux[controller];
- }
- EXPORT_SYMBOL_GPL(mux_control_get);
-diff --git a/include/linux/mux/consumer.h b/include/linux/mux/consumer.h
-index 7a09b040ac39..cb861eab8aad 100644
---- a/include/linux/mux/consumer.h
-+++ b/include/linux/mux/consumer.h
-@@ -16,6 +16,7 @@ struct device;
- struct mux_control;
- 
- unsigned int mux_control_states(struct mux_control *mux);
-+unsigned int mux_control_enable_state(struct mux_control *mux);
- int __must_check mux_control_select_delay(struct mux_control *mux,
- 					  unsigned int state,
- 					  unsigned int delay_us);
-diff --git a/include/linux/mux/driver.h b/include/linux/mux/driver.h
-index 18824064f8c0..7db378dabdb2 100644
---- a/include/linux/mux/driver.h
-+++ b/include/linux/mux/driver.h
-@@ -48,6 +48,7 @@ struct mux_control {
- 	int cached_state;
- 
- 	unsigned int states;
-+	unsigned int enable_state;
- 	int idle_state;
- 
- 	ktime_t last_change;
--- 
-2.17.1
+Thanks,
+Aswath
+
+>  .../bindings/phy/ti,tcan104x-can.yaml         |  6 ++++++
+>  drivers/phy/phy-can-transceiver.c             | 21 +++++++++++++++++++
+>  2 files changed, 27 insertions(+)
+> 
 
 
 -- 
