@@ -4,33 +4,33 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49EF9C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 13:06:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2DFAC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 13:12:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aAWKwv9PvcsEv3SUrzXOp6sVL6DonF+FFv/ndtKh1RU=; b=yEraKoKj0lW3rBRdFpLPZPnu30
-	56wX0SzHU34cf19Bhgquuo760h2FR/mpYsoDka27ZKFyXDbPegPIS2M7BxmeNeA6c0gI6eIzVrM7R
-	6VwD+JfUx/PEamVnIDPAKcxn4NW+KmOaRK4solBePbCoS7St3mXl8FWh/w2WhDaEY3UsaUwpLB65y
-	gAgtZwcSY7wmrtZc8rmGcPoyIuFyj8a7fKiSyyTyI3vkZ2Re0FPhILj3sAQdV00fMj4gf8xrS9rhM
-	q0cVnYLBrdXJzbsQl8aYDyFP2xE3Reu2YcV22m2DosV3GAJ33ubiVG2rEqPU5/EHP+/uDhj65c8dA
-	DCXDKyuQ==;
+	bh=dTNR3FDZqywbMx83d+zFd/VDggboGRdcoR70SNOUX6c=; b=vgrtp65embeL0nXLBmFJHyWFvQ
+	Z1VVp9J2PBH2Xwdq3SMSM2HzRAt0MnmnIZwf3S7AVbMFETzyHsdavXvMQec86BKODzMq5IvTsP9Nd
+	9/KTsqh7FODEKZJL3yu+rwPK0mCuAnpAIsO3EW3Qr45Jg3e7eKbzxyrIMVnY+twjql8KSWx5YItpD
+	XzmK/omxC8YrYKR0J/vhVN/rUbiwmTFjpgLgvoPdqFS0W8WpjgcP5Utji2UGSEh3S+YjZKPJRPooE
+	U8C0wJjiPhk60P6SPNhzo/Ow09xnwLhEmixpmOZKBHhR8Nbo4iwUUZz8JRs2r2hv4C2z+T0Lr5eAt
+	BUHMOe7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mp929-00Ga2B-PD; Mon, 22 Nov 2021 13:06:57 +0000
+	id 1mp97X-00GbCJ-4C; Mon, 22 Nov 2021 13:12:31 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mp925-00Ga0T-Sc
- for linux-phy@lists.infradead.org; Mon, 22 Nov 2021 13:06:56 +0000
+ id 1mp97U-00GbB1-2v
+ for linux-phy@lists.infradead.org; Mon, 22 Nov 2021 13:12:29 +0000
 Received: from gallifrey.ext.pengutronix.de
  ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <mkl@pengutronix.de>)
- id 1mp91z-0001ZE-Uu; Mon, 22 Nov 2021 14:06:47 +0100
+ id 1mp97P-0002EZ-GO; Mon, 22 Nov 2021 14:12:23 +0100
 Received: from pengutronix.de
  (2a03-f580-87bc-d400-c7fb-0fe8-e8cb-8e33.ip6.dokom21.de
  [IPv6:2a03:f580:87bc:d400:c7fb:fe8:e8cb:8e33])
@@ -38,9 +38,9 @@ Received: from pengutronix.de
  key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
  SHA256) (Client did not present a certificate)
  (Authenticated sender: mkl-all@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id 937536B2CF5;
- Mon, 22 Nov 2021 13:06:46 +0000 (UTC)
-Date: Mon, 22 Nov 2021 14:06:45 +0100
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 1D4826B2CFD;
+ Mon, 22 Nov 2021 13:12:22 +0000 (UTC)
+Date: Mon, 22 Nov 2021 14:12:21 +0100
 From: Marc Kleine-Budde <mkl@pengutronix.de>
 To: Aswath Govindraju <a-govindraju@ti.com>
 Cc: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
@@ -52,7 +52,7 @@ Cc: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
  linux-phy@lists.infradead.org
 Subject: Re: [PATCH RFC v2 4/4] phy: phy-can-transceiver: Add support for
  setting mux
-Message-ID: <20211122130645.3dkhzneakbjdcynm@pengutronix.de>
+Message-ID: <20211122131221.i3djuarw2ae5lbdk@pengutronix.de>
 References: <20211122125624.6431-1-a-govindraju@ti.com>
  <20211122125624.6431-5-a-govindraju@ti.com>
 MIME-Version: 1.0
@@ -63,8 +63,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_050653_953955_3D15CC61 
-X-CRM114-Status: GOOD (  25.16  )
+X-CRM114-CacheID: sfid-20211122_051228_162707_6822736D 
+X-CRM114-Status: GOOD (  25.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,18 +76,18 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3397390138749211107=="
+Content-Type: multipart/mixed; boundary="===============8697205567168563652=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============3397390138749211107==
+--===============8697205567168563652==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="2oqpw7laziakkmvw"
+	protocol="application/pgp-signature"; boundary="gvhvfddsmx63z7gf"
 Content-Disposition: inline
 
 
---2oqpw7laziakkmvw
+--gvhvfddsmx63z7gf
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
@@ -165,23 +165,12 @@ device *pdev)
 > +			dev_err_probe(&pdev->dev, ret, "failed to get mux\n");
 > +			return PTR_ERR(control);
 > +		}
-
-	if (IS_ERR(control))
-		return dev_err_probe(&pdev, PTR_ERR(control),
-                        "failed to get mux\n");
-
 > +		can_transceiver_phy->mux_ctrl =3D control;
 > +	}
-> +
->  	phy =3D devm_phy_create(dev, dev->of_node,
->  			      &can_transceiver_phy_ops);
->  	if (IS_ERR(phy)) {
-> --=20
-> 2.17.1
->=20
->
 
-regards,
+What about adding a devm_mux_control_get_optional(), which doesn't
+return a -ENODEV but a NULL pointer if the device doesn't exist?
+
 Marc
 
 --=20
@@ -190,25 +179,25 @@ Embedded Linux                   | https://www.pengutronix.de  |
 Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
 Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
---2oqpw7laziakkmvw
+--gvhvfddsmx63z7gf
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEK3kIWJt9yTYMP3ehqclaivrt76kFAmGbleIACgkQqclaivrt
-76lZYwf+LCpeXxyv+nkG2BtcQzm3Bz0OFT1tL7ZZVBG71SlA7mhy8apJ5VsSUFoU
-yCyS4DlwBBeaP/nmA8hThpOn/ivCmA1vugtbe7fmJEmW6AAUnZ1cJC0f2080BgXX
-ehVlh2TYvctmj2wgGfhkF0lg6gLmxtQl7gTK/eFL86LajEUFXsqsL2v62fCg7dvk
-eAP/OhlSFpPv6xXh/5FXH22yNTj3qauauk0c0h8U1bZmFEQE7i8bR9gzcaZe1eal
-/qyoMZ4O8t2xOhdLTscZeZ42hGWYXyE3gvS8AT5juLY8VqskwHTq3pCN20tPafbz
-I+iVkVjMyWf+XU5wGMrI0xcqpHSM4A==
-=ZLad
+iQEzBAABCgAdFiEEK3kIWJt9yTYMP3ehqclaivrt76kFAmGblzMACgkQqclaivrt
+76n5jQf/bvjlyjVTxnqe4ORD1NDhaoVzWDGHqD+iyEWl4PyU8w8PINWY7af2oqxO
+XwnfYZxryhwTT1cxdr27EcnnhVU24G4bKu/pm8Bz9EQTTG9CuTR/Eg+PgApzWtYX
+dFQkqq6tLiUgAHsc7QFqGNVNoFxOcE2KCUOFS1jdn3gT07FrvN4M+qTVJQOpAi9c
+SYJ6F8DT3duS45KjWaQuEG6YnCNQTYA2PA2r0Y6/IHqqMvWcApQf+IcdMhztJ7B7
+5rJqAiPKq0OZAN4P2146WYodjO5b1c5aeH1lbjud2Kp3VPCptGX5trm9jEnZhstb
+dLP7NjeZqyixrl63w5bp+7AHqX9SPw==
+=IqZw
 -----END PGP SIGNATURE-----
 
---2oqpw7laziakkmvw--
+--gvhvfddsmx63z7gf--
 
 
---===============3397390138749211107==
+--===============8697205567168563652==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -219,5 +208,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============3397390138749211107==--
+--===============8697205567168563652==--
 
