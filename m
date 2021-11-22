@@ -4,59 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36AF4C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 12:07:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEA29C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Nov 2021 12:59:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I1KriTM/+ybcbMJT3fU+otzwlrTNUp/mUKOanQ4LU8k=; b=FmhBlizqrZl6f7
-	eWFBQsx3qZeiNadJmWdEy3BqlVaYRaPzx5r+sDOpkuulFez0+v+uMr6YKonL6EB/s2DSDSp2QAc2a
-	Ew9sQBnBv8h7ewPKNsoW5yI40T4x2YslxhcLYK90ApZZ55JHHZEKUVZjc/Y+x7BS4LZDXRmrraCO+
-	ZSPPhmVbqKcLxMoeoBcu3bn+t8okcBtwlSoONznPwKbqlp6L1gmlT0NKdUOHy7aPOYkzROMLrAqQS
-	p7jf2ISozfDFTmvNr4kMw27R+SPFD2HabIcJtMRoCNSWFnqKHYNG/Z0+GIekITk0f8hZyIQQzAl8N
-	2XmhjGKG82DPOzQPJb1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4PZtJbV6trJQVR6KCdj0haYS9sRsHN4e/ebKkAm3Uuc=; b=zU7hilemk8G3BP
+	vOtnthZzNB6YbiMdx5WgBXMffpd+akTD8G1rZzQ+y8HJIH8WfUD2jMeUVXIWpfhAMAru2YWLoZZ8f
+	8jzHy4D4EM/nHtsl49iVn4wzqsi0q68mlmB0iUDk1Z0LdZynHis87vLJd8l7HYD7bnGHmRpuXMEOm
+	s8xn4rxXYOVBGR96ylc9kWavH7+5YZJaeH2fd1Y3Ql0BbefXmNohZdenG61oaID/bu+JmHs5AJ72g
+	LhU7UJpbOAetCI9BbaCvDj611crHRaXAsY7uF83RPAZxNmWcKk7Qhz74aoAewQFQO+ZvInF4N7ska
+	+MvHcHFzBVj45R7e1Sjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mp86K-00GFUl-CD; Mon, 22 Nov 2021 12:07:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1mp8uk-00GXUK-SC; Mon, 22 Nov 2021 12:59:18 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mp7bL-00G53N-4k; Mon, 22 Nov 2021 11:35:13 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 38D5360C4A;
- Mon, 22 Nov 2021 11:35:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1637580910;
- bh=fsxiu5OtiKvVSGwLIQuhcHrreWPtheesRrgoLqEG4iI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dlqPWe0KLZL/veZDmsa4GPtvRis/6V0euE04fmcoB83vRtaf6/AWGZ6q+XGgKIFO9
- ucddsnwjto28/ctMGqFWyqKikkv3vsvhiJL0ucmwYvZ7HqcgHEF6uxxqsxaRCBGEPM
- 7/GLJ5DRco3cARJEsotBBnkDKpbFHO02OwHerB/YWgJH1GA9Ts//Z/635BgC7KzOBp
- +EwqE3544TUpMWpOWo/PaHMVLeufcypvGbrhxmF8juXfOfrWhWq181CuttTEtS+o0Z
- +QCC+bTDkvSRNgC3Lrs7SG+7EqIw4YEfXK8/ig/RfdghDHKujiF3q3fYRCEP3gCUWm
- 3BzkQ9oXYCbPQ==
-Date: Mon, 22 Nov 2021 17:05:05 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Rob Herring <robh+dt@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Eddie Hung <eddie.hung@mediatek.com>,
- Andrew-CT Chen <andrew-ct.chen@mediatek.com>, Yz Wu <yz.wu@mediatek.com>
-Subject: Re: [PATCH 5/6] phy: phy-mtk-tphy: add support efuse setting
-Message-ID: <YZuAab3j+flr1xXj@matsya>
-References: <20211107075646.4366-1-chunfeng.yun@mediatek.com>
- <20211107075646.4366-5-chunfeng.yun@mediatek.com>
+ id 1mp8sD-00GWKO-7R
+ for linux-phy@lists.infradead.org; Mon, 22 Nov 2021 12:56:42 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AMCuVHm107907;
+ Mon, 22 Nov 2021 06:56:31 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1637585791;
+ bh=86PCuAHCF1E3Rn+MR0ZWMSwqRPl+D80wX/tnx0rh1cA=;
+ h=From:To:CC:Subject:Date;
+ b=h+12N1QM0Mdro5c0JGHp4oJ7YDV+664DkeHgePiv9nwVY+ntALl4gQW2v3+7foanZ
+ JNCM3Sw+zJqB5zBMWxDKWasT/kFnaISIKGLOtB/DZeOjty4BgXCwgH+PxUHY2aQwqP
+ /ONeYWJydnMg6y5/KRJAxbsLrVmFq7J5DWVy0/k0=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AMCuV5w019714
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 22 Nov 2021 06:56:31 -0600
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 22
+ Nov 2021 06:56:30 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Mon, 22 Nov 2021 06:56:30 -0600
+Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
+ (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AMCuQhx109786;
+ Mon, 22 Nov 2021 06:56:27 -0600
+From: Aswath Govindraju <a-govindraju@ti.com>
+To: 
+CC: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, Aswath
+ Govindraju <a-govindraju@ti.com>,
+ Peter Rosin <peda@axentia.se>, Rob Herring <robh+dt@kernel.org>,
+ Wolfgang Grandegger <wg@grandegger.com>, Marc
+ Kleine-Budde <mkl@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Subject: [PATCH RFC v2 0/4] MUX: Add support for reading enable state from DT
+Date: Mon, 22 Nov 2021 18:26:20 +0530
+Message-ID: <20211122125624.6431-1-a-govindraju@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211107075646.4366-5-chunfeng.yun@mediatek.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_033511_289561_EDBF0DC3 
-X-CRM114-Status: GOOD (  26.02  )
+X-CRM114-CacheID: sfid-20211122_045641_399692_5660E172 
+X-CRM114-Status: GOOD (  11.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,220 +86,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07-11-21, 15:56, Chunfeng Yun wrote:
-> Due to some SoCs have a bit shift issue that will drop a bit for usb3
-> phy or pcie phy, fix it by adding software efuse reading and setting,
-> but only support it optionally for versoin 2/3.
+- The following series of patches add support for reading the state of the
+  mux to be set for enabling given device.
+- As these are RFC patches I have combined them into a single series for
+  better understanding of the reason behind making this change.
 
-s/versoin/version
+Changes since v1:
+- Added support for reading the enable state from DT instead of hardcoding
+  the state to be set to 1.
+- Made relavent changes in the bindings
 
-> 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
->  drivers/phy/mediatek/phy-mtk-tphy.c | 162 ++++++++++++++++++++++++++++
->  1 file changed, 162 insertions(+)
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-> index cdcef865fe9e..3b5b1c266595 100644
-> --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> @@ -12,6 +12,7 @@
->  #include <linux/iopoll.h>
->  #include <linux/mfd/syscon.h>
->  #include <linux/module.h>
-> +#include <linux/nvmem-consumer.h>
->  #include <linux/of_address.h>
->  #include <linux/of_device.h>
->  #include <linux/phy/phy.h>
-> @@ -41,6 +42,9 @@
->  #define SSUSB_SIFSLV_V2_U3PHYD		0x200
->  #define SSUSB_SIFSLV_V2_U3PHYA		0x400
->  
-> +#define U3P_MISC_REG1		0x04
-> +#define MR1_EFUSE_AUTO_LOAD_DIS		BIT(6)
-> +
->  #define U3P_USBPHYACR0		0x000
->  #define PA0_RG_U2PLL_FORCE_ON		BIT(15)
->  #define PA0_USB20_PLL_PREDIV		GENMASK(7, 6)
-> @@ -133,6 +137,8 @@
->  #define P3C_RG_SWRST_U3_PHYD_FORCE_EN	BIT(24)
->  
->  #define U3P_U3_PHYA_REG0	0x000
-> +#define P3A_RG_IEXT_INTR		GENMASK(15, 10)
-> +#define P3A_RG_IEXT_INTR_VAL(x)		((0x3f & (x)) << 10)
->  #define P3A_RG_CLKDRV_OFF		GENMASK(3, 2)
->  #define P3A_RG_CLKDRV_OFF_VAL(x)	((0x3 & (x)) << 2)
->  
-> @@ -187,6 +193,19 @@
->  #define P3D_RG_FWAKE_TH		GENMASK(21, 16)
->  #define P3D_RG_FWAKE_TH_VAL(x)	((0x3f & (x)) << 16)
->  
-> +#define U3P_U3_PHYD_IMPCAL0		0x010
-> +#define P3D_RG_FORCE_TX_IMPEL		BIT(31)
-> +#define P3D_RG_TX_IMPEL			GENMASK(28, 24)
-> +#define P3D_RG_TX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
-> +
-> +#define U3P_U3_PHYD_IMPCAL1		0x014
-> +#define P3D_RG_FORCE_RX_IMPEL		BIT(31)
-> +#define P3D_RG_RX_IMPEL			GENMASK(28, 24)
-> +#define P3D_RG_RX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
-> +
-> +#define U3P_U3_PHYD_RSV			0x054
-> +#define P3D_RG_EFUSE_AUTO_LOAD_DIS	BIT(12)
-> +
->  #define U3P_U3_PHYD_CDR1		0x05c
->  #define P3D_RG_CDR_BIR_LTD1		GENMASK(28, 24)
->  #define P3D_RG_CDR_BIR_LTD1_VAL(x)	((0x1f & (x)) << 24)
-> @@ -307,6 +326,11 @@ struct mtk_phy_pdata {
->  	 * 48M PLL, fix it by switching PLL to 26M from default 48M
->  	 */
->  	bool sw_pll_48m_to_26m;
-> +	/*
-> +	 * Some SoCs (e.g. mt8195) drop a bit when use auto load efuse,
-> +	 * support sw way, also support it for v2/v3 optionally.
-> +	 */
-> +	bool sw_efuse_supported;
->  	enum mtk_phy_version version;
->  };
->  
-> @@ -336,6 +360,10 @@ struct mtk_phy_instance {
->  	struct regmap *type_sw;
->  	u32 type_sw_reg;
->  	u32 type_sw_index;
-> +	u32 efuse_sw_en;
-> +	u32 efuse_intr;
-> +	u32 efuse_tx_imp;
-> +	u32 efuse_rx_imp;
->  	int eye_src;
->  	int eye_vrt;
->  	int eye_term;
-> @@ -1040,6 +1068,130 @@ static int phy_type_set(struct mtk_phy_instance *instance)
->  	return 0;
->  }
->  
-> +static int phy_efuse_get(struct mtk_tphy *tphy, struct mtk_phy_instance *instance)
-> +{
-> +	struct device *dev = &instance->phy->dev;
-> +	int ret = 0;
-> +
-> +	/* tphy v1 doesn't support sw efuse, skip it */
-> +	if (!tphy->pdata->sw_efuse_supported) {
-> +		instance->efuse_sw_en = 0;
-> +		return 0;
-> +	}
-> +
-> +	/* software efuse is optional */
-> +	instance->efuse_sw_en = device_property_read_bool(dev, "nvmem-cells");
-> +	if (!instance->efuse_sw_en)
-> +		return 0;
-> +
-> +	switch (instance->type) {
-> +	case PHY_TYPE_USB2:
-> +		ret = nvmem_cell_read_variable_le_u32(dev, "intr", &instance->efuse_intr);
-> +		if (ret) {
-> +			dev_err(dev, "fail to get u2 intr efuse, %d\n", ret);
-> +			break;
-> +		}
-> +
-> +		/* no efuse, ignore it */
-> +		if (!instance->efuse_intr) {
-> +			dev_warn(dev, "no u2 intr efuse, but dts enable it\n");
-> +			instance->efuse_sw_en = 0;
-> +			break;
-> +		}
+Link to v1,
+- https://patchwork.kernel.org/project/linux-phy/list/?series=578863&state=*
 
-What does this check do...? so a zero value is not valid..?
+Aswath Govindraju (4):
+  dt-bindings: mux: Increase the number of arguments in mux-controls
+  dt-bindings: phy: ti,tcan104x-can: Document mux-controls property
+  mux: Add support for reading mux enable state from DT
+  phy: phy-can-transceiver: Add support for setting mux
 
-> +
-> +		dev_info(dev, "u2 efuse - intr %x\n", instance->efuse_intr);
-
-dev_dbg()?
-
-> +		break;
-
-empty line after break improves readability, pls add
-
-> +	case PHY_TYPE_USB3:
-> +	case PHY_TYPE_PCIE:
-> +		ret = nvmem_cell_read_variable_le_u32(dev, "intr", &instance->efuse_intr);
-> +		if (ret) {
-> +			dev_err(dev, "fail to get u3 intr efuse, %d\n", ret);
-> +			break;
-> +		}
-
-This seems to be common, why not read this before switch?
-
-> +
-> +		ret = nvmem_cell_read_variable_le_u32(dev, "rx_imp", &instance->efuse_rx_imp);
-> +		if (ret) {
-> +			dev_err(dev, "fail to get u3 rx_imp efuse, %d\n", ret);
-> +			break;
-> +		}
-> +
-> +		ret = nvmem_cell_read_variable_le_u32(dev, "tx_imp", &instance->efuse_tx_imp);
-> +		if (ret) {
-> +			dev_err(dev, "fail to get u3 tx_imp efuse, %d\n", ret);
-> +			break;
-> +		}
-> +
-> +		/* no efuse, ignore it */
-> +		if (!instance->efuse_intr &&
-> +		    !instance->efuse_rx_imp &&
-> +		    !instance->efuse_rx_imp) {
-> +			dev_warn(dev, "no u3 intr efuse, but dts enable it\n");
-> +			instance->efuse_sw_en = 0;
-> +			break;
-> +		}
-
-again, zero values are not valid?
-
-> +
-> +		dev_info(dev, "u3 efuse - intr %x, rx_imp %x, tx_imp %x\n",
-> +			 instance->efuse_intr, instance->efuse_rx_imp,
-> +			 instance->efuse_tx_imp);
-
-dbg pls
-
-> +		break;
-> +	default:
-> +		dev_err(dev, "no sw efuse for type %d\n", instance->type);
-> +		ret = -EINVAL;
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static void phy_efuse_set(struct mtk_phy_instance *instance)
-> +{
-> +	struct device *dev = &instance->phy->dev;
-> +	struct u2phy_banks *u2_banks = &instance->u2_banks;
-> +	struct u3phy_banks *u3_banks = &instance->u3_banks;
-> +	u32 tmp;
-> +
-> +	if (!instance->efuse_sw_en)
-> +		return;
-> +
-> +	switch (instance->type) {
-> +	case PHY_TYPE_USB2:
-> +		tmp = readl(u2_banks->misc + U3P_MISC_REG1);
-> +		tmp |= MR1_EFUSE_AUTO_LOAD_DIS;
-> +		writel(tmp, u2_banks->misc + U3P_MISC_REG1);
-> +
-> +		tmp = readl(u2_banks->com + U3P_USBPHYACR1);
-> +		tmp &= ~PA1_RG_INTR_CAL;
-> +		tmp |= PA1_RG_INTR_CAL_VAL(instance->efuse_intr);
-> +		writel(tmp, u2_banks->com + U3P_USBPHYACR1);
-> +		break;
-> +	case PHY_TYPE_USB3:
-> +	case PHY_TYPE_PCIE:
-> +		tmp = readl(u3_banks->phyd + U3P_U3_PHYD_RSV);
-> +		tmp |= P3D_RG_EFUSE_AUTO_LOAD_DIS;
-> +		writel(tmp, u3_banks->phyd + U3P_U3_PHYD_RSV);
-
-add a updatel() macro and use this here and other places?
+ .../devicetree/bindings/mux/gpio-mux.yaml     |  2 +-
+ .../bindings/mux/mux-controller.yaml          |  2 +-
+ .../bindings/phy/ti,tcan104x-can.yaml         |  8 ++++++
+ drivers/mux/core.c                            | 20 ++++++++++++--
+ drivers/phy/phy-can-transceiver.c             | 26 +++++++++++++++++++
+ include/linux/mux/consumer.h                  |  1 +
+ include/linux/mux/driver.h                    |  1 +
+ 7 files changed, 56 insertions(+), 4 deletions(-)
 
 -- 
-~Vinod
+2.17.1
+
 
 -- 
 linux-phy mailing list
