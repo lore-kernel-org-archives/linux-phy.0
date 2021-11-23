@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FFFDC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 05:10:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0FAFC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 05:11:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bqvAsd5kA2Yl+bCkoaAZAn08hKa2PqhHweQ9TF7jfXA=; b=wHXL97LgX6xPNz
-	yUCDeVVj7BiiZvY+ZQPXZ05wkSml2+g8eLQRFrdrByV6H3UE3ErUo2RMK8ePMquMuUe9ry9wX+TZA
-	BmTiFet9SsDt9VrZUIdmLgXOdn4fM/zmb66tewn5P0cOsODGGC6tU01zt9Zq2/xqL+xyjRT3MY5+P
-	KgqXHJFIuLg+7LLciJID+mKRtI8LmueeaE2TVzTqYgIyiic09rW15WjNMAZWH/UUdI05U1MAoEPLx
-	43SL/Mc61bp7aPCxXrGPKZcQxC7Z7ynaeNa+k2HHA6NdP/6tjKNriWg2Q/JDYwcISjJQb0iId4LZM
-	zosuJrERO95HwdAwGMgQ==;
+	List-Owner; bh=QwhUS+JoXkAt9xNqNzhN3W1WlhebVy0Vnv6ubrGa2hU=; b=cEmPiBQLC8bddu
+	RzEaBSusZ2tp/y0di+75svfB9jps6xbt/RIYYi9iQ7KNxmjiWyZ7xCZp/5DV9K7Y24dfWZOryf3Hs
+	DmImBmAulqcRI9yPoxpQ0Zztv6530kT8UwaRvLEgEy5myO3yJvm/kUswJT9ZvbSNNbSLk9L36+MNr
+	GQnuzKY0xBY0yUNvpi/a7kMTxNKPE/TJOkB/jR1R2weP30BC/EtLZoTMJ6WnR7hmBqCk5lDGO0kDU
+	bPBeR9OFfPtjSruRhgUAHj9e4i1m4KFrhwJLtLDsdr9JuiAZGXris6IIS3VRzVdiMhopV9zine/A8
+	RBAfiF3We8j885Zj3h1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mpO4n-000p25-Po; Tue, 23 Nov 2021 05:10:41 +0000
+	id 1mpO62-000p6b-5s; Tue, 23 Nov 2021 05:11:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mpO4k-000p1h-H1
- for linux-phy@lists.infradead.org; Tue, 23 Nov 2021 05:10:39 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 45A8B6056B;
- Tue, 23 Nov 2021 05:10:36 +0000 (UTC)
+ id 1mpO5q-000p5F-1J; Tue, 23 Nov 2021 05:11:47 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id CE1E960187;
+ Tue, 23 Nov 2021 05:11:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1637644238;
- bh=Rpx9dU9uGnI5Tr8daUSRruJAR8SV1hZNZuYPOlZ31Ig=;
+ s=k20201202; t=1637644305;
+ bh=pwCsV32PddfqKxDNCQ85J0Dw/5UwXakf4JnoU0OOMUY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WbR1eSstZWm3zEGjkxa6EfI+E6ur/2hRAL4RiPmwflfHvHbPCu/z1BR3wbouKOkqQ
- uGNDOwHPAYO9fo3gecS+04EMWk1jZV/7BbGCuxKnEUbUZ75sNbVcdmoeCac59Lx4aU
- rKuVVXyGgOoBn8L8XmZOI3uUKNuN+a+wOMKllFefA5hcp75asewgRAR7QxGVk9+ZlI
- yQARh1VD7SyPwOe9Yrq4RQu/BkFYWJz060EWd58wHIPtJwYZ3hMubGdYO7lKr2JmCA
- UlnIdHqQiEdhsMgbXkxwAtUu/PSvyRjxLeaWBt56N53hZxyx/QRSaE67oVfZ9eayTu
- geum2ledSTMsg==
-Date: Tue, 23 Nov 2021 10:40:33 +0530
+ b=PcyE1h4jBIU+Tp4uxwSpOmM48ssx6zW869/ImXd6Il/y9d8BZBBZMSGvE9yJSvekv
+ ZtOHq+cFwi2UNNuuvOm4aFP++h3KtT99rZOZSs/Ch8yOngOgcg4bwtsaWcemBqk3Lg
+ qQ3yZDqrB6+v2ERFCcZAdMm9UJovxPfeMr27AgBBKxyBMYO4EfJW5QIutn8G/NOr89
+ T7agXKRIXin+zee459rS70hovvj3PysssCP3jSrLHAd41/6kDQvOTzPdsFaNBcmH1B
+ 3s4Mou4EAPrkr6W2bGfzJ/J7bTwgzmRedPkr9WYU9d+3QzXS/pTNckoZRM0IY6dhUt
+ Viar+uD2q9edA==
+Date: Tue, 23 Nov 2021 10:41:41 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
+To: Liam Beguin <liambeguin@gmail.com>
+Cc: Anurag Kumar Vulisha <anurag.kumar.vulisha@xilinx.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Liam Beguin <lvb@xiphos.com>, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 1/2] dt-bindings: phy: Introduce Qualcomm eDP PHY
- binding
-Message-ID: <YZx3yfl8lXVTib68@matsya>
-References: <20211103234410.1352424-1-bjorn.andersson@linaro.org>
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/1] dt-bindings: phy: zynqmp-psgtr: fix USB phy name
+Message-ID: <YZx4DfXl+OBxwKKD@matsya>
+References: <20211117003841.2030813-1-lvb@xiphos.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211103234410.1352424-1-bjorn.andersson@linaro.org>
+In-Reply-To: <20211117003841.2030813-1-lvb@xiphos.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_211038_606635_FFEC706F 
-X-CRM114-Status: UNSURE (   5.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211122_211146_150429_841A00A2 
+X-CRM114-Status: GOOD (  13.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,11 +71,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03-11-21, 16:44, Bjorn Andersson wrote:
-> Introduce a binding for the eDP PHY hardware block found in several
-> different Qualcomm platforms.
+On 16-11-21, 19:38, Liam Beguin wrote:
+> PHY_TYPE_USB is undefined and was added as PHY_TYPE_USB2 and
+> PHY_TYPE_USB3 in 2fbbc96d1600 (phy: Add PHY header file for DT x Driver
+> defines, 2014-11-04). Fix documentation to avoid misleading users.
 
-Applied all, thanks
+Applied, thanks
+
+> 
+> Signed-off-by: Liam Beguin <lvb@xiphos.com>
+> ---
+>  Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml b/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml
+> index 04d5654efb38..79906519c652 100644
+> --- a/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml
+> +++ b/Documentation/devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml
+> @@ -29,7 +29,7 @@ properties:
+>            - PHY_TYPE_PCIE
+>            - PHY_TYPE_SATA
+>            - PHY_TYPE_SGMII
+> -          - PHY_TYPE_USB
+> +          - PHY_TYPE_USB3
+>        - description: The PHY instance
+>          minimum: 0
+>          maximum: 1 # for DP, SATA or USB
+> -- 
+> 2.34.0
 
 -- 
 ~Vinod
