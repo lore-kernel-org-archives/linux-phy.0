@@ -4,39 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B7E3C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 07:42:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 498EEC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 07:42:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ERTcLtvHpJRTPqvWuhvfs4qYyC3B/IqCMBy44DlbAvE=; b=lZxHSzqo8jhGpF
-	agBj1Nmh297jRZ5InBvtenZatxwl4oEi08vGUmIubmSG37R721ZcGIkSxRcyTaOb2ZCUIV7et37SL
-	qEZ2D+b0MsnhTDw3cNERb44TOY5CLFfWigDfpisWRCfbxrw3xnhVyq9N7pmuGT7WrYaPTyI9BDtKD
-	WyQWpHznnnFcPDtFNAF+i/KNgoS9YpBolSv3YB8LxC7YesLUYARJASE6zLHJALPvnIdExjLHjrSar
-	fRbLkNh9JI8+2DUaoy1NOyZkqT2DBJZIgMkW7vY0oYtFzy7U03KjLqVfTTeCeNSo9ZYro/k5bSKfZ
-	Hna2LiowujLfhtAoUUPw==;
+	List-Owner; bh=1tCLVlh3UfGQh7hYaORaIIwNci/5jImjDZ6UHY5Qevs=; b=HeJwgXfYyOt1Wv
+	OMTYuhfA3lkjPs12MCCQJH3XRRGP6q1UcRCM41sdSSC+kQytszNNcjA6tbcSCNWfDOdfWQs82akLI
+	lSNjpTpz+OT5kKnTJwjjOY7t946irs8iyOkp0G4KY/VHuw8mdkeUqMyEQk8GWsqbvoDQbbkMqo+Eh
+	8nT2TTxk/fu3U0evCfeyS0lzx6Fn/Wi6qhEa9mHd53H680PEKybXv0QRz1neWV0XLbRI82TeJ373p
+	WysmwWZNIX5MrInNX79T75wpB8I12JpxNhcDpTRLSm36c1FN8zXny9ch0ercJqwC7caKkUAALfwrn
+	8wcJ79s7n+FWBihRfYnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mpQRX-0015BC-E6; Tue, 23 Nov 2021 07:42:19 +0000
+	id 1mpQRn-0015FL-NK; Tue, 23 Nov 2021 07:42:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mpQRK-00158h-Bx; Tue, 23 Nov 2021 07:42:07 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 164016008E;
- Tue, 23 Nov 2021 07:42:04 +0000 (UTC)
+ id 1mpQRW-0015Az-KX; Tue, 23 Nov 2021 07:42:19 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 4D22560E94;
+ Tue, 23 Nov 2021 07:42:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1637653326;
- bh=5YgIFjfpg5vULlmgcdxg7GkWRqrmKmms46EiNLgenCo=;
+ s=k20201202; t=1637653338;
+ bh=TbYdLFnqcgIXjTzcGnFmxKgBN6m6L2wwXqicA4xY4V8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=AaQQXBPvoqz7ayuyT/f+LTzFzcOy9HCyQ8qwJpBjYYayUlaSTnFNPMcf9OVsgiaHf
- yrkZypTtm1wur2ta8jlOK2+JKKweaoEsFsxrz5SHcllS7DXLpoVWBpIS2Axs1ZsjX2
- lCrHjkhV+xipMK15iSJPwZmdLpoube0n2patE4SAqZzUFMn/a/OYORSoCTZO7qz+V0
- DyLAF+5LS/CTxxpDk5XCQv/NG7UapgD7eBaKtjszd99Y7mStqYvWV2RDTGs6hrHLm9
- EwOv9ZbpF3Q7qYNJHKTAewzr/ibIXX5bF88qNL6ba8cuKZqoVLcCOJBxPUEd1aSQu2
- VWgob7HadgfoQ==
-Date: Tue, 23 Nov 2021 13:12:01 +0530
+ b=cJftIbTfBmKJXlMCLrNa00rm63AJmqdB8IvmcPWW+/Te7iAVxKHkknVEPkKJTWn8K
+ DpetsTa7h20T0OPgNiZnAe+1iAQEBGkPN9KyVSroto+fw/3vmtBiOIDFc8nb7o76Wo
+ caysg3jsgfAH/O0lUvLgDy4XxYFY6O6Kjst3VY4cuBKgUKR5Kxh0e8PjiQ12LNs8cq
+ SrVMdHQsPMiMwQ1aY5EQw7l4sF+78bJ6P7BedVKJ9rRj0vB6JKuy10FsU5K4I21Raw
+ +mofe7xTaNJ6AYVhu2P5Ts6RCtxTjukBk2L4AxIGp7mJ3t2hly7uS1COCnGVVGvy1P
+ rEjwwWfevSS/Q==
+Date: Tue, 23 Nov 2021 13:12:14 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: rashmi.a@intel.com
 Cc: michal.simek@xilinx.com, ulf.hansson@linaro.org,
@@ -48,17 +48,16 @@ Cc: michal.simek@xilinx.com, ulf.hansson@linaro.org,
  furong.zhou@intel.com, mallikarjunappa.sangannavar@intel.com,
  adrian.hunter@intel.com, mahesh.r.vaidya@intel.com,
  nandhini.srikandan@intel.com
-Subject: Re: [RESEND PATCH v2 3/4] dt-bindings: phy: intel: Add Thunder Bay
- eMMC PHY bindings
-Message-ID: <YZybSTsMRKkOyfC5@matsya>
+Subject: Re: [RESEND PATCH v2 4/4] phy: intel: Add Thunder Bay eMMC PHY support
+Message-ID: <YZybVkfMCI1durcN@matsya>
 References: <20211027115516.4475-1-rashmi.a@intel.com>
- <20211027115516.4475-4-rashmi.a@intel.com>
+ <20211027115516.4475-5-rashmi.a@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211027115516.4475-4-rashmi.a@intel.com>
+In-Reply-To: <20211027115516.4475-5-rashmi.a@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_234206_449329_949CB8B0 
-X-CRM114-Status: UNSURE (   4.46  )
+X-CRM114-CacheID: sfid-20211122_234218_728305_6678E8D7 
+X-CRM114-Status: UNSURE (   4.55  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,8 +78,8 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 27-10-21, 17:25, rashmi.a@intel.com wrote:
 > From: Rashmi A <rashmi.a@intel.com>
 > 
-> Binding description for Intel Thunder Bay eMMC PHY.
-> Added the newly introduced files into MAINTAINERS file-list
+> Add support of eMMC PHY for Intel Thunder Bay SoC,
+> uses the Arasan eMMC phy
 
 Applied, thanks
 
