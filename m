@@ -4,78 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08794C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 04:30:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E430C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 04:33:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:CC:To:From:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=gtubAuvNSA/yZOSQRg+ZtxMuXop9PwLWr+3PyKxAGj4=; b=rZ7s6KTqH2TRlxdEUTZjTXedfR
-	97U8FDLauiqLFq4HrQz0z63IW/llJhs4OYaNIty4w5c8um/C2aUM1VMi72X45k3B92mjsoIQS6epx
-	nkVXOL1YGlIAqbtJlSwxuK2bgl5HI4FoVwT6AxYnc9G5LgP3otmGEDGi/cFwfX1qjTiyD3tEd2KhT
-	niog4wURLrDgLWKxFgX6vVJCX6Lk8q6VWwmYZ/180ANSgPtbI+V2V+WifbYdpxYkdeoJl0KGKb9IG
-	0cjmaKYt/QENnRS4lXcc6KGQYKP2jlzW4wL8D+CXi8KUcCl68FWOH/lxsfLLCzrQa7/ig2O7l7Mje
-	jqVNeT0A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oPlTlYYESM9YnhSZbbuL5we4DU+YPIutaWh7i6jxojE=; b=O2WBgzAHdjmaCE
+	rhcyCvaaaLpBmbtrWhdC/j1jnaEwo5OgLAjY9zHX89LYCf7t7dTswlu7E2CiAB17FtKiQKUPQmjOM
+	924xF/hpq1K9khbrMgDrQRpR+fX9WgpUb+uF+8ZfiZF7Z36cIWrtzH3X6c06KHX3Gd8nV6m93OorT
+	fLn65+4c4wip4qIP4EMUBKl53YUQx/Y16BH8VG6OX8EUOTew5CsFlFruf65X3pViDija0uNXLWb8Z
+	blheTZgElqxCfwhgaifsVh9/V9FZHWDTHiak3ymsFbcpKv4OTAVY1bAHCJ2gPYadggfO2suEEKqbr
+	6gOPzlF12yg9cXhg5pJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mpNRR-000mHi-Aw; Tue, 23 Nov 2021 04:30:01 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1mpNUT-000mgj-O2; Tue, 23 Nov 2021 04:33:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mpNRN-000mH6-Uc
- for linux-phy@lists.infradead.org; Tue, 23 Nov 2021 04:29:59 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AN4TpoR109260;
- Mon, 22 Nov 2021 22:29:51 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1637641791;
- bh=TwLtHwc2YDR39gbBfCfKWzdQ8tBPva6WD94JAytP1Ms=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=npza0ZrAYyxrlEdF+H83iOFijDRJsq2qnnXGDiR3CLZAfDODRBUGfJmIRVK8mHjA+
- 11xScYq5rfqH62EPVpWV9fZ+o7RLI1QY0J6MV6eDXXvBTWna8jltK5nTR4ZxoIupr4
- JtmcXvI3X7hjCpZk16cFsTV3DLP4IKLBcmlfMeuo=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AN4Tp2m103241
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 22 Nov 2021 22:29:51 -0600
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 22
- Nov 2021 22:29:50 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 22 Nov 2021 22:29:50 -0600
-Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AN4Tkrh095444;
- Mon, 22 Nov 2021 22:29:47 -0600
-Subject: Re: [PATCH RFC v2 3/4] mux: Add support for reading mux enable state
- from DT
-From: Aswath Govindraju <a-govindraju@ti.com>
-To: Peter Rosin <peda@axentia.se>
-CC: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, Rob
- Herring <robh+dt@kernel.org>, Wolfgang Grandegger <wg@grandegger.com>, Marc
- Kleine-Budde <mkl@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>
-References: <20211122125624.6431-1-a-govindraju@ti.com>
- <20211122125624.6431-4-a-govindraju@ti.com>
- <69f73f64-6424-4e3f-9068-195e959b9762@axentia.se>
- <4a506332-2374-b164-5159-5d097ce667a1@ti.com>
-Message-ID: <e442d239-2604-54d8-9d50-97a726747c46@ti.com>
-Date: Tue, 23 Nov 2021 09:59:46 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ id 1mpNUQ-000mfg-Gp
+ for linux-phy@lists.infradead.org; Tue, 23 Nov 2021 04:33:08 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 2EFD86104F;
+ Tue, 23 Nov 2021 04:33:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1637641986;
+ bh=WMJ0SUwHiEh+5VwvYdRoIq8Y62uB4ILz7Td2erOQqiQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=SQw8Dl+gg+/dtJFb+l1ps+/4npWKzUKcHobsgkSiCS4CioAnl3nsxjgC80H4tZmc7
+ UgqmUfrqQq3v5Us6I5ehHDWLlakZwQUiMkApV4tjO7sMrSiHFV91fTEP5RmBLmXNJL
+ wDb1QQ1pty0JC3vPIUEsk35QOwSMz/RHpY3o9BnVAnYsROcD1oLFcZxIFsfRM9xwkg
+ q5bwBxKNb42Z5osk2VLRA0AUgeC0unK2ZjAB4H7ByHeNj5p3OIUoJ4HELKB1ciMjsG
+ Csxvk+2ZzVoXmslJYtUNH+KpBqIyRA/UV5oZnjA/4ZELXnLohnyoyuS6lEKHHzNHpL
+ Uwneq6zvUI4gg==
+Date: Tue, 23 Nov 2021 10:03:01 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Swapnil Jakhade <sjakhade@cadence.com>
+Cc: kishon@ti.com, robh+dt@kernel.org, p.zabel@pengutronix.de,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, mparab@cadence.com, a-govindraju@ti.com
+Subject: Re: [PATCH v3 02/15] phy: cadence: Sierra: Prepare driver to add
+ support for multilink configurations
+Message-ID: <YZxu/Tzo4fdiHKtR@matsya>
+References: <20211022170236.18839-1-sjakhade@cadence.com>
+ <20211022170236.18839-3-sjakhade@cadence.com>
 MIME-Version: 1.0
-In-Reply-To: <4a506332-2374-b164-5159-5d097ce667a1@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20211022170236.18839-3-sjakhade@cadence.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_202958_117483_3B0F934D 
-X-CRM114-Status: GOOD (  41.34  )
+X-CRM114-CacheID: sfid-20211122_203306_636449_F4C6A6C7 
+X-CRM114-Status: GOOD (  23.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,237 +70,304 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Peter,
+On 22-10-21, 19:02, Swapnil Jakhade wrote:
+> Sierra driver currently supports single link configurations only. Prepare
+> driver to support multilink multiprotocol configurations along with
+> different SSC modes.
+> 
+> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+> Reviewed-by: Aswath Govindraju <a-govindraju@ti.com>
+> ---
+>  drivers/phy/cadence/phy-cadence-sierra.c | 195 ++++++++++++++++-------
+>  1 file changed, 139 insertions(+), 56 deletions(-)
+> 
+> diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+> index 54d1c63932ac..c82ac6716f5e 100644
+> --- a/drivers/phy/cadence/phy-cadence-sierra.c
+> +++ b/drivers/phy/cadence/phy-cadence-sierra.c
+> @@ -23,6 +23,9 @@
+>  #include <dt-bindings/phy/phy.h>
+>  #include <dt-bindings/phy/phy-cadence.h>
+>  
+> +#define NUM_SSC_MODE		3
+> +#define NUM_PHY_TYPE		3
+> +
+>  /* PHY register offsets */
+>  #define SIERRA_COMMON_CDB_OFFSET			0x0
+>  #define SIERRA_MACRO_ID_REG				0x0
+> @@ -217,9 +220,21 @@ static const int pll_mux_parent_index[][SIERRA_NUM_CMN_PLLC_PARENTS] = {
+>  
+>  static u32 cdns_sierra_pll_mux_table[] = { 0, 1 };
+>  
+> +enum cdns_sierra_phy_type {
+> +	TYPE_NONE,
 
-On 23/11/21 9:44 am, Aswath Govindraju wrote:
-> Hi Peter,
-> 
-> On 23/11/21 12:29 am, Peter Rosin wrote:
->> Hi!
->>
->> On 2021-11-22 13:56, Aswath Govindraju wrote:
->>> In some cases, we might need to provide the state of the mux to be set for
->>> the operation of a given peripheral. Therefore, pass this information using
->>> the second argument of the mux-controls property.
->>>
->>> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
->>> ---
->>>
->>> Notes:
->>> - The function mux_control_get() always return the mux_control for a single
->>>   line. So, control for mutiple lines cannot be represented in the
->>>   mux-controls property.
->>> - For representing multiple lines of control, multiple entries need to be
->>>   used along with mux-names for reading them.
->>> - If a device uses both the states of the mux line then #mux-control-cells
->>>   can be set to 1 and enable_state will not be set in this case.
->>>
->>>  drivers/mux/core.c           | 20 ++++++++++++++++++--
->>>  include/linux/mux/consumer.h |  1 +
->>>  include/linux/mux/driver.h   |  1 +
->>>  3 files changed, 20 insertions(+), 2 deletions(-)
->>>
->>> diff --git a/drivers/mux/core.c b/drivers/mux/core.c
->>> index 22f4709768d1..51140748d2d6 100644
->>> --- a/drivers/mux/core.c
->>> +++ b/drivers/mux/core.c
->>> @@ -294,6 +294,18 @@ unsigned int mux_control_states(struct mux_control *mux)
->>>  }
->>>  EXPORT_SYMBOL_GPL(mux_control_states);
->>>  
->>> +/**
->>> + * mux_control_enable_state() - Query for the enable state.
->>> + * @mux: The mux-control to query.
->>> + *
->>> + * Return: State to be set in the mux to enable a given device
->>> + */
->>> +unsigned int mux_control_enable_state(struct mux_control *mux)
->>> +{
->>> +	return mux->enable_state;
->>> +}
->>> +EXPORT_SYMBOL_GPL(mux_control_enable_state);
->>> +
->>>  /*
->>>   * The mux->lock must be down when calling this function.
->>>   */
->>> @@ -481,8 +493,7 @@ struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
->>>  	if (!mux_chip)
->>>  		return ERR_PTR(-EPROBE_DEFER);
->>>  
->>> -	if (args.args_count > 1 ||
->>> -	    (!args.args_count && (mux_chip->controllers > 1))) {
->>> +	if (!args.args_count && mux_chip->controllers > 1) {
->>>  		dev_err(dev, "%pOF: wrong #mux-control-cells for %pOF\n",
->>>  			np, args.np);
->>>  		put_device(&mux_chip->dev);
->>> @@ -500,6 +511,11 @@ struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
->>>  		return ERR_PTR(-EINVAL);
->>>  	}
->>>  
->>> +	if (args.args_count == 2) {
->>> +		mux_chip->mux[controller].enable_state = args.args[1];
->>> +		mux_chip->mux[controller].idle_state = !args.args[1];
->>
->> Please leave the idle state alone. The idle state is a property of
->> the mux-control itself, and not the business of any particular
->> consumer. Consumers can only say what state the mux control should
->> have when they have selected the mux-control, and have no say about
->> what state the mux-control has when they do not have it selected.
->> There is no conflict with having the same idle state as the state the
->> mux would normally have. That could even be seen as an optimization,
->> since then there might be no need to operate the mux for most
->> accesses.
->>
-> 
-> Got it. Will not touch idle_state.
-> 
->>> +	}
->>> +
->>>  	return &mux_chip->mux[controller];
->>>  }
->>>  EXPORT_SYMBOL_GPL(mux_control_get);
->>> diff --git a/include/linux/mux/consumer.h b/include/linux/mux/consumer.h
->>> index 7a09b040ac39..cb861eab8aad 100644
->>> --- a/include/linux/mux/consumer.h
->>> +++ b/include/linux/mux/consumer.h
->>> @@ -16,6 +16,7 @@ struct device;
->>>  struct mux_control;
->>>  
->>>  unsigned int mux_control_states(struct mux_control *mux);
->>> +unsigned int mux_control_enable_state(struct mux_control *mux);
->>>  int __must_check mux_control_select_delay(struct mux_control *mux,
->>>  					  unsigned int state,
->>>  					  unsigned int delay_us);
->>> diff --git a/include/linux/mux/driver.h b/include/linux/mux/driver.h
->>> index 18824064f8c0..7db378dabdb2 100644
->>> --- a/include/linux/mux/driver.h
->>> +++ b/include/linux/mux/driver.h
->>> @@ -48,6 +48,7 @@ struct mux_control {
->>>  	int cached_state;
->>>  
->>>  	unsigned int states;
->>> +	unsigned int enable_state;
->>
->> This is the wrong place to store the state you need. The mux_control
->> is a shared resource and can have many consumers. Storing the needed
->> value for exactly one consumer in the mux control is therefore
->> broken. It would get overwritten when consumer #2 (and 3 etc etc)
->> wants to use some other state from the same shared mux control.
->>
-> 
-> Sorry, forgot the distinction that multiple consumers can get the mux
-> and only one can select the mux.
-> 
->> Doing this properly means that you need a new struct tying together
->> a mux-control and a state. With an API looking something like this:
->>
->> struct mux_state {
->> 	struct mux_control *mux;
->> 	unsigned int state;
->> };
->>
->> struct mux_state *mux_state_get(struct device *dev, const char *mux_name)
->> {
->> 	struct mux_state *mux_state = kzalloc(sizeof(*mux_state), GFP_KERNEL);
->>
->> 	if (!mux_state)
->> 		return ERR_PTR(-ENOMEM);
->>
->> 	mux_state->mux = ...; /* mux_control_get(...) perhaps? */
->> 	/* error checking and recovery, etc etc etc */
->> 	mux_state->state = ...;
->>
->> 	return mux_state;
->> }
->>
->> void mux_state_put(struct mux_state *mux_state)
->> {
->> 	mux_control_put(mux_state->mux);
->> 	free(mux_state);
->> }
->>
->> int mux_state_select_delay(struct mux_state *mux_state,
->>  			   unsigned int delay_us)
->> {
->> 	return mux_control_select_delay(mux_state->mux, mux_state->state,
->> 					delay_us);
->> }
->>
->> int mux_state_select(struct mux_state *mux_state)
->> {
->> 	return mux_state_select_delay(mux_state, 0);
->> }
->>
->> int mux_state_try_select_delay(struct mux_state *mux_state)
->> 			       unsigned int delay_us);
->> {
->> 	return mux_control_try_select_delay(mux_state->mux, mux_state->state,
->> 					    delay_us);
->> }
->>
->> int mux_state_try_select(struct mux_state *mux_state)
->> {
->> 	return mux_state_try_select_delay(mux_state, 0);
->> }
->>
->> int mux_state_deselect(struct mux_control *mux)
->> {
->> 	return mux_control_deselect(mux_state->mux);
->> }
->>
->> (written directly in the mail client, never compiled, here be dragons)
->>
->> mux_state_get is obviously the difficult function to write, and
->> the above call to mux_control_get is not appropriate as-is. I
-> 
-> I am sorry but I did not understand why mux_control_get is not
-> appropriate. We should be able to call the function and get the mux right?
-> 
+What does NONE type mean?
 
-Understood why mux_control_get() is not appropriate. There would be no
-way for us to get the information about the state from the DT.
+> +	TYPE_PCIE,
+> +	TYPE_USB
+> +};
+> +
+> +enum cdns_sierra_ssc_mode {
+> +	NO_SSC,
+> +	EXTERNAL_SSC,
+> +	INTERNAL_SSC
+> +};
+> +
+>  struct cdns_sierra_inst {
+>  	struct phy *phy;
+> -	u32 phy_type;
+> +	enum cdns_sierra_phy_type phy_type;
+>  	u32 num_lanes;
+>  	u32 mlane;
+>  	struct reset_control *lnk_rst;
+> @@ -230,18 +245,19 @@ struct cdns_reg_pairs {
+>  	u32 off;
+>  };
+>  
+> +struct cdns_sierra_vals {
+> +	const struct cdns_reg_pairs *reg_pairs;
+> +	u32 num_regs;
+> +};
+> +
+>  struct cdns_sierra_data {
+> -		u32 id_value;
+> -		u8 block_offset_shift;
+> -		u8 reg_offset_shift;
+> -		u32 pcie_cmn_regs;
+> -		u32 pcie_ln_regs;
+> -		u32 usb_cmn_regs;
+> -		u32 usb_ln_regs;
+> -		const struct cdns_reg_pairs *pcie_cmn_vals;
+> -		const struct cdns_reg_pairs *pcie_ln_vals;
+> -		const struct cdns_reg_pairs *usb_cmn_vals;
+> -		const struct cdns_reg_pairs *usb_ln_vals;
+> +	u32 id_value;
+> +	u8 block_offset_shift;
+> +	u8 reg_offset_shift;
+> +	struct cdns_sierra_vals *pma_cmn_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+> +					     [NUM_SSC_MODE];
+> +	struct cdns_sierra_vals *pma_ln_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+> +					    [NUM_SSC_MODE];
 
-Thanks,
-Aswath
+You have defined phy type and ssc, that sounds fine, I am not sure why
+you need a third dimension here? What purpose does it solve?
 
->> think mux_control_get perhaps needs to be refactored into a
->> flexible helper that takes a couple of extra arguments that
->> indicate if you want an optional get and/or a particular state.
->> And then mux_control_get can just be a wrapper around that helper.
->> Adding mux_control_get_optional would be a matter of adding a new
->> wrapper. And the mux_state->mux assignment above would need yet
->> another wrapper for the flexible helper, one that also make the
->> flexible helper return the requested state from the mux-control
->> property.
->>
-> 
-> The problem that I see with the optional apis as wrappers around
-> mux_control_get is the following print in mux_control_get,
-> 
-> dev_err(dev, "%pOF: failed to get mux-control %s(%i)\n",
-> 
-> This gets printed whenever it can't find mux-controls device tree property.
-> 
-> 
-> Thank you providing your comments and reference implementation.
-> 
-> Regards,
-> Aswath
-> 
->> I realize that this might be a big piece to chew, but you want to
->> do something new here, and I think it is best to do it right from
->> the start instead of having weird code that only makes it harder
->> to do it right later. Ad it's not that complicated.
->>
->> Cheers,
->> Peter
->>
->>>  	int idle_state;
->>>  
->>>  	ktime_t last_change;
->>>
-> 
+>  };
+>  
+>  struct cdns_regmap_cdb_context {
+> @@ -341,10 +357,14 @@ static int cdns_sierra_phy_init(struct phy *gphy)
+>  {
+>  	struct cdns_sierra_inst *ins = phy_get_drvdata(gphy);
+>  	struct cdns_sierra_phy *phy = dev_get_drvdata(gphy->dev.parent);
+> +	const struct cdns_sierra_data *init_data = phy->init_data;
+> +	struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
+> +	enum cdns_sierra_phy_type phy_type = ins->phy_type;
+> +	enum cdns_sierra_ssc_mode ssc = EXTERNAL_SSC;
+> +	const struct cdns_reg_pairs *reg_pairs;
+>  	struct regmap *regmap;
+> +	u32 num_regs;
+>  	int i, j;
+> -	const struct cdns_reg_pairs *cmn_vals, *ln_vals;
+> -	u32 num_cmn_regs, num_ln_regs;
+>  
+>  	/* Initialise the PHY registers, unless auto configured */
+>  	if (phy->autoconf)
+> @@ -352,28 +372,26 @@ static int cdns_sierra_phy_init(struct phy *gphy)
+>  
+>  	clk_set_rate(phy->input_clks[CMN_REFCLK_DIG_DIV], 25000000);
+>  	clk_set_rate(phy->input_clks[CMN_REFCLK1_DIG_DIV], 25000000);
+> -	if (ins->phy_type == PHY_TYPE_PCIE) {
+> -		num_cmn_regs = phy->init_data->pcie_cmn_regs;
+> -		num_ln_regs = phy->init_data->pcie_ln_regs;
+> -		cmn_vals = phy->init_data->pcie_cmn_vals;
+> -		ln_vals = phy->init_data->pcie_ln_vals;
+> -	} else if (ins->phy_type == PHY_TYPE_USB3) {
+> -		num_cmn_regs = phy->init_data->usb_cmn_regs;
+> -		num_ln_regs = phy->init_data->usb_ln_regs;
+> -		cmn_vals = phy->init_data->usb_cmn_vals;
+> -		ln_vals = phy->init_data->usb_ln_vals;
+> -	} else {
+> -		return -EINVAL;
+> -	}
+>  
+> -	regmap = phy->regmap_common_cdb;
+> -	for (j = 0; j < num_cmn_regs ; j++)
+> -		regmap_write(regmap, cmn_vals[j].off, cmn_vals[j].val);
+> +	/* PMA common registers configurations */
+> +	pma_cmn_vals = init_data->pma_cmn_vals[phy_type][TYPE_NONE][ssc];
+> +	if (pma_cmn_vals) {
+> +		reg_pairs = pma_cmn_vals->reg_pairs;
+> +		num_regs = pma_cmn_vals->num_regs;
+> +		regmap = phy->regmap_common_cdb;
+> +		for (i = 0; i < num_regs; i++)
+> +			regmap_write(regmap, reg_pairs[i].off, reg_pairs[i].val);
+> +	}
+>  
+> -	for (i = 0; i < ins->num_lanes; i++) {
+> -		for (j = 0; j < num_ln_regs ; j++) {
+> +	/* PMA lane registers configurations */
+> +	pma_ln_vals = init_data->pma_ln_vals[phy_type][TYPE_NONE][ssc];
+> +	if (pma_ln_vals) {
+> +		reg_pairs = pma_ln_vals->reg_pairs;
+> +		num_regs = pma_ln_vals->num_regs;
+> +		for (i = 0; i < ins->num_lanes; i++) {
+>  			regmap = phy->regmap_lane_cdb[i + ins->mlane];
+> -			regmap_write(regmap, ln_vals[j].off, ln_vals[j].val);
+> +			for (j = 0; j < num_regs; j++)
+> +				regmap_write(regmap, reg_pairs[j].off, reg_pairs[j].val);
+>  		}
+>  	}
+>  
+> @@ -583,15 +601,28 @@ static int cdns_sierra_clk_register(struct cdns_sierra_phy *sp)
+>  static int cdns_sierra_get_optional(struct cdns_sierra_inst *inst,
+>  				    struct device_node *child)
+>  {
+> +	u32 phy_type;
+> +
+>  	if (of_property_read_u32(child, "reg", &inst->mlane))
+>  		return -EINVAL;
+>  
+>  	if (of_property_read_u32(child, "cdns,num-lanes", &inst->num_lanes))
+>  		return -EINVAL;
+>  
+> -	if (of_property_read_u32(child, "cdns,phy-type", &inst->phy_type))
+> +	if (of_property_read_u32(child, "cdns,phy-type", &phy_type))
+>  		return -EINVAL;
+>  
+> +	switch (phy_type) {
+> +	case PHY_TYPE_PCIE:
+> +		inst->phy_type = TYPE_PCIE;
+> +		break;
+> +	case PHY_TYPE_USB3:
+> +		inst->phy_type = TYPE_USB;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+>  	return 0;
+>  }
+>  
+> @@ -1006,6 +1037,16 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_ext_ssc[] = {
+>  	{0x44CC, SIERRA_CREQ_EQ_OPEN_EYE_THRESH_PREG}
+>  };
+>  
+> +static struct cdns_sierra_vals pcie_100_ext_ssc_cmn_vals = {
+> +	.reg_pairs = cdns_pcie_cmn_regs_ext_ssc,
+> +	.num_regs = ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
+> +};
+> +
+> +static struct cdns_sierra_vals pcie_100_ext_ssc_ln_vals = {
+> +	.reg_pairs = cdns_pcie_ln_regs_ext_ssc,
+> +	.num_regs = ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
+> +};
+> +
+>  /* refclk100MHz_20b_USB_cmn_pll_ext_ssc */
+>  static const struct cdns_reg_pairs cdns_usb_cmn_regs_ext_ssc[] = {
+>  	{0x2085, SIERRA_CMN_PLLLC_LF_COEFF_MODE1_PREG},
+> @@ -1113,32 +1154,74 @@ static const struct cdns_reg_pairs cdns_usb_ln_regs_ext_ssc[] = {
+>  	{0x4243, SIERRA_RXBUFFER_DFECTRL_PREG}
+>  };
+>  
+> +static struct cdns_sierra_vals usb_100_ext_ssc_cmn_vals = {
+> +	.reg_pairs = cdns_usb_cmn_regs_ext_ssc,
+> +	.num_regs = ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
+> +};
+> +
+> +static struct cdns_sierra_vals usb_100_ext_ssc_ln_vals = {
+> +	.reg_pairs = cdns_usb_ln_regs_ext_ssc,
+> +	.num_regs = ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+> +};
+> +
+>  static const struct cdns_sierra_data cdns_map_sierra = {
+> -	SIERRA_MACRO_ID,
+> -	0x2,
+> -	0x2,
+> -	ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
+> -	ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
+> -	ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
+> -	ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+> -	cdns_pcie_cmn_regs_ext_ssc,
+> -	cdns_pcie_ln_regs_ext_ssc,
+> -	cdns_usb_cmn_regs_ext_ssc,
+> -	cdns_usb_ln_regs_ext_ssc,
+> +	.id_value = SIERRA_MACRO_ID,
+> +	.block_offset_shift = 0x2,
+> +	.reg_offset_shift = 0x2,
+> +	.pma_cmn_vals = {
+> +		[TYPE_PCIE] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
+> +			},
+> +		},
+> +		[TYPE_USB] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+> +			},
+> +		},
+> +	},
+> +	.pma_ln_vals = {
+> +		[TYPE_PCIE] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+> +			},
+> +		},
+> +		[TYPE_USB] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+> +			},
+> +		},
+> +	},
+>  };
+>  
+>  static const struct cdns_sierra_data cdns_ti_map_sierra = {
+> -	SIERRA_MACRO_ID,
+> -	0x0,
+> -	0x1,
+> -	ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
+> -	ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
+> -	ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
+> -	ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+> -	cdns_pcie_cmn_regs_ext_ssc,
+> -	cdns_pcie_ln_regs_ext_ssc,
+> -	cdns_usb_cmn_regs_ext_ssc,
+> -	cdns_usb_ln_regs_ext_ssc,
+> +	.id_value = SIERRA_MACRO_ID,
+> +	.block_offset_shift = 0x0,
+> +	.reg_offset_shift = 0x1,
+> +	.pma_cmn_vals = {
+> +		[TYPE_PCIE] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &pcie_100_ext_ssc_cmn_vals,
+> +			},
+> +		},
+> +		[TYPE_USB] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+> +			},
+> +		},
+> +	},
+> +	.pma_ln_vals = {
+> +		[TYPE_PCIE] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+> +			},
+> +		},
+> +		[TYPE_USB] = {
+> +			[TYPE_NONE] = {
+> +				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+> +			},
+> +		},
+> +	},
+>  };
+>  
+>  static const struct of_device_id cdns_sierra_id_table[] = {
+> -- 
+> 2.26.1
 
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
