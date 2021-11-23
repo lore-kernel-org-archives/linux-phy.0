@@ -4,55 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 807BEC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 07:39:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B7E3C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 07:42:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ENJ9qe0LTNeHqBiiXYCf3khU/NNOtE5spqe7E/F9mxQ=; b=20KtZ8HLE+EXiw
-	qwgkL/GzIMLlgWSCJrr+FoMlgc9mER485wb4VaI4WHN/xnldMx9SfdJjIfhxyaqNC3mq/ic/uP/aR
-	CdPtbnwUwLxH+0MlQ20ya8myIrvV5x5mnUrHbbodIB6VT53EMib7NOJSchVim+HfzwVg+XmU90Tva
-	yViJBmR5VWySEKtGMmMnAC8gKiaEWKzSKTVshKu5RisHlcELE0XTe/yK1ElWwmKlKAwHdcUsr6h2B
-	KwCrcXsaCC8aUSXZ5uj2lukgsgfymZe5rWoulyqpxGBcvFs0H9ht/fHCf5qKPSuVYvX3ht4cu5bzL
-	uhAFshebICBZ/QqPakvQ==;
+	List-Owner; bh=ERTcLtvHpJRTPqvWuhvfs4qYyC3B/IqCMBy44DlbAvE=; b=lZxHSzqo8jhGpF
+	agBj1Nmh297jRZ5InBvtenZatxwl4oEi08vGUmIubmSG37R721ZcGIkSxRcyTaOb2ZCUIV7et37SL
+	qEZ2D+b0MsnhTDw3cNERb44TOY5CLFfWigDfpisWRCfbxrw3xnhVyq9N7pmuGT7WrYaPTyI9BDtKD
+	WyQWpHznnnFcPDtFNAF+i/KNgoS9YpBolSv3YB8LxC7YesLUYARJASE6zLHJALPvnIdExjLHjrSar
+	fRbLkNh9JI8+2DUaoy1NOyZkqT2DBJZIgMkW7vY0oYtFzy7U03KjLqVfTTeCeNSo9ZYro/k5bSKfZ
+	Hna2LiowujLfhtAoUUPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mpQOk-0014cn-U6; Tue, 23 Nov 2021 07:39:26 +0000
+	id 1mpQRX-0015BC-E6; Tue, 23 Nov 2021 07:42:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mpQOj-0014cA-9T
- for linux-phy@lists.infradead.org; Tue, 23 Nov 2021 07:39:26 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id E7B9E60E94;
- Tue, 23 Nov 2021 07:39:23 +0000 (UTC)
+ id 1mpQRK-00158h-Bx; Tue, 23 Nov 2021 07:42:07 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 164016008E;
+ Tue, 23 Nov 2021 07:42:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1637653164;
- bh=SyxAeQw9fyWOIjanhRWuVLtPc7UGBdVPN7fyibQE8EM=;
+ s=k20201202; t=1637653326;
+ bh=5YgIFjfpg5vULlmgcdxg7GkWRqrmKmms46EiNLgenCo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FLns9YHMWZ32JS+1lWSZPCqVHZJS8exzZmtoPNw4L9qM7Wk60R/uU+CrloQ6D5kHp
- 7qdoj0mKTlDXQIMRNh1kPrM8LEDM/2YlBOy0XuC+S/jrcjoLR0P7UbcCylxI4yJkjO
- xrJ4PlOhM/F7zgNuHwF+IoyPvcf3ARYr1YuCuUkFFlpFP0xTJZRLdRAteSxndu40fq
- hBJcHejJDyU54WAsXBUP2m4V5XbsQ0enRHOOmqXq3EXmjp+6Eq1A8cTQdp9OihBCXP
- rzHM3gGI5Zs3UlgQ2DOrQ4DHG+ncgpUsJOz+AFUMres+X+e2AzGF5GOEKy/HrJ58JB
- Ood0Xz1ZhvKow==
-Date: Tue, 23 Nov 2021 13:09:19 +0530
+ b=AaQQXBPvoqz7ayuyT/f+LTzFzcOy9HCyQ8qwJpBjYYayUlaSTnFNPMcf9OVsgiaHf
+ yrkZypTtm1wur2ta8jlOK2+JKKweaoEsFsxrz5SHcllS7DXLpoVWBpIS2Axs1ZsjX2
+ lCrHjkhV+xipMK15iSJPwZmdLpoube0n2patE4SAqZzUFMn/a/OYORSoCTZO7qz+V0
+ DyLAF+5LS/CTxxpDk5XCQv/NG7UapgD7eBaKtjszd99Y7mStqYvWV2RDTGs6hrHLm9
+ EwOv9ZbpF3Q7qYNJHKTAewzr/ibIXX5bF88qNL6ba8cuKZqoVLcCOJBxPUEd1aSQu2
+ VWgob7HadgfoQ==
+Date: Tue, 23 Nov 2021 13:12:01 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: kishon@ti.com, robh+dt@kernel.org, andrew@lunn.ch,
- alexandre.belloni@bootlin.com, kuba@kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH resend v4 0/3] phy: Add driver for lan966x Serdes driver
-Message-ID: <YZyap7IgY/6WIHEE@matsya>
-References: <20211116100818.1615762-1-horatiu.vultur@microchip.com>
+To: rashmi.a@intel.com
+Cc: michal.simek@xilinx.com, ulf.hansson@linaro.org,
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ robh+dt@kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com,
+ andriy.shevchenko@linux.intel.com, linux-phy@lists.infradead.org,
+ mgross@linux.intel.com, kris.pan@linux.intel.com,
+ furong.zhou@intel.com, mallikarjunappa.sangannavar@intel.com,
+ adrian.hunter@intel.com, mahesh.r.vaidya@intel.com,
+ nandhini.srikandan@intel.com
+Subject: Re: [RESEND PATCH v2 3/4] dt-bindings: phy: intel: Add Thunder Bay
+ eMMC PHY bindings
+Message-ID: <YZybSTsMRKkOyfC5@matsya>
+References: <20211027115516.4475-1-rashmi.a@intel.com>
+ <20211027115516.4475-4-rashmi.a@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211116100818.1615762-1-horatiu.vultur@microchip.com>
+In-Reply-To: <20211027115516.4475-4-rashmi.a@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211122_233925_379155_226CBC66 
-X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-CacheID: sfid-20211122_234206_449329_949CB8B0 
+X-CRM114-Status: UNSURE (   4.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -70,24 +76,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-11-21, 11:08, Horatiu Vultur wrote:
-> This patch serie adds support for Microchip lan966x serdes. The lan966x
-> device contains 7 interfaces, consisting of 2 copper transceivers,
-> 3 Serdes and 2 RGMII interfaces. Two of the Serdes support QSGMII.
-> The driver also adds the functionality of "muxing" the interfaces to
-> different logical ports.
+On 27-10-21, 17:25, rashmi.a@intel.com wrote:
+> From: Rashmi A <rashmi.a@intel.com>
 > 
-> The following table shows which interfaces can be supported by the port.
-> 
-> PortNumber    Max Speed    Ethernet interface options
->     0            1Gbps       CuPHY, 1G SGMII or QSGMII
->     1            1Gbps       CuPHY, 1G SGMII or QSGMII
->     2          2.5Gbps       2.5G SGMII, QSGMII, RGMII
->     3          2.5Gbps       2.5G SGMII, QSGMII, RGMII
->     4          2.5Gbps       2.5G SGMII, QSGMII
->     5            1Gbps       QSGMII, RGMII
->     6            1Gbps       QSGMII, RGMII
->     7            1Gbps       QSGMII
+> Binding description for Intel Thunder Bay eMMC PHY.
+> Added the newly introduced files into MAINTAINERS file-list
 
 Applied, thanks
 
