@@ -4,74 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FD3EC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 08:22:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 424E8C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 09:48:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:Subject:Reply-To:To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1EmsgkWrTMZkFTngPYQmcJawFVrOR+cvrYWIl7CEk/k=; b=M7mGgmh9QGTepnGlhMHpUbZ7rr
-	4GaJ2UEUB61Iw1yv2AJv6GmZSSy2o7HdLRZNE78GiZiL+RLShJPndIa8MhyjgcHGiM980lqNct6AB
-	S7Jmx3YAC4UhgJZmysWfYjXyKD/HhWDmjJntkXqSTI0xrEz7JNLRelt9tq+zLLXcO0RhHv62rmOmh
-	aP9D0rXtIhlG4LiC9R++gD8zaXd6lv4fVzltCH/fGydxHcKU5ssw9ZT4+MbB7FeFN37K6+0O6rXX+
-	g2WDWlfkKD4K9DIMbZsBY4wsQ65SI4jx1trrRt+jE55V2S+aV8U3tSdyht1WA7ugn9Qvfvw/VPNZN
-	svcuGN+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UM9DSQ5Udmgsq9Ua3ABn+3xGJweYiUvya0jkKHq7s98=; b=QyC6aRIXHpMD58
+	ooX2Q3DyAEWIK8Kge+YH4mi+Uy0/k0I1zF3zPKe0HxeTSeF125j3CSLH158Hx/Qdw2Png96zVZZ8G
+	h/zC/fI0t51fLPNADLk00NBpFpaKVBK2jUv5cK7w+FORTG8ErstGfAQ/jKvAuFiRrz0TUYgd/8gUc
+	WljOEJYmQMuih2l8mmufU1ubKZ7nxVnZNm4rr6wrwk1q0koi18gbxbgXLI1dEL9enuzcjFRh7cf9e
+	QHWzWmKUznAStJU12IQipDhIwWGYRsaHJMg0xcacypRDffogDNRR7cWwTeqwWboyYKmB1RHFPyE7U
+	NbF7f2LXMqY/zYO97OJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mpR4U-001GQ1-7e; Tue, 23 Nov 2021 08:22:34 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1mpSPi-001XxF-Np; Tue, 23 Nov 2021 09:48:34 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mpQwl-001Dhq-2C
- for linux-phy@lists.infradead.org; Tue, 23 Nov 2021 08:14:37 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1AN8ESHh024421;
- Tue, 23 Nov 2021 02:14:28 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1637655268;
- bh=y5EkiJ7SMkpoSDDEcOeXgHBrlYWqeQNdWDeIJEVvZYk=;
- h=Subject:CC:References:From:Date:In-Reply-To;
- b=mY19MsNzNTLzrQNmAD4U70WVMUmzGu2bPhSaBnORwJOzyAn2lRd35+qIZrpHgje9L
- K+aFWfRsiiIrA7/B0C8OCETvcMbLK+rZ2JPhlZX7Bqjy67cTzPb1xNoQdAYGnvBTG9
- RMsVJ7yBee1vEZds0EkmVk7rfAndG9pMLAI94TRA=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1AN8ES1C006944
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 23 Nov 2021 02:14:28 -0600
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Tue, 23
- Nov 2021 02:14:28 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Tue, 23 Nov 2021 02:14:28 -0600
-Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1AN8EOPw107046;
- Tue, 23 Nov 2021 02:14:25 -0600
-Subject: Re: [PATCH RFC v2 0/4] MUX: Add support for reading enable state from
- DT
-CC: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, Peter
- Rosin <peda@axentia.se>, Rob Herring <robh+dt@kernel.org>, Wolfgang
- Grandegger <wg@grandegger.com>, Marc Kleine-Budde <mkl@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>
-References: <20211122125624.6431-1-a-govindraju@ti.com>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <b9ad641d-e697-fcd7-a113-685d371bb0ba@ti.com>
-Date: Tue, 23 Nov 2021 13:44:23 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ id 1mpSPg-001Xvo-Em
+ for linux-phy@lists.infradead.org; Tue, 23 Nov 2021 09:48:33 +0000
+Received: by mail-lj1-x22e.google.com with SMTP id v15so10053435ljc.0
+ for <linux-phy@lists.infradead.org>; Tue, 23 Nov 2021 01:48:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dVSN1lAh2JYSQsy12qvn/lQZ+n0d63m3tNYMLMaMaKo=;
+ b=EwwaRdedeuwwgVmgDsNw9vF1SK12w3akLpe2HAqi1n9tPIXNRWiOBDRBvsS6XTkziZ
+ V+P0ZVR+EBV9CTDY/pX7nOtVpDFH4yQCVuPtYG8GxQp2Y7b1GOZBepJtpvPts7a8BFns
+ CppePGh0VIKdQLdxuv6RGeqsw3ik3XH31AG/Hq8llIGjH2dpjljIAsR8AUNM7ZHhSnpy
+ S4CZf+ycPvDfbi7Z3N9O+LgbKtzhqoVW4vX3eAi5SaJ+pFKWXPdX8TGYj1dT9Hgv0b+6
+ JbwVZ2IaAM/J8hytIM6att8lOExQUa4WCKSkWaq0wlGGfnVqXYOJxXeDj9RAcSBCaTw7
+ hlBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dVSN1lAh2JYSQsy12qvn/lQZ+n0d63m3tNYMLMaMaKo=;
+ b=Q/DmhqVUvYIYlmk5gwjnxIjCWkZZ7wRfmDf12CT2KuUYckviqw1NxXuKhZD9jmmYGW
+ Rm0xP2pUCIX9IiIitU5qZnNRBNYL3DkZfQST6Cz3GY/DkYSORAnZFBT4CMSj8pR0d7mE
+ Tb3lNsozDMNHXtfvrDyGfGDLh5uBS+cjA4oNTmk0nvJFcM+FOQIBAx9n4VPR750+oHqj
+ Er5mQmCcnxgFIfIUUzubLLhFCxEylkai6lzky7U1HVA4vXzoWneFkW2SqZHjSoMPeCCM
+ jEWsvaNpeKy6C3m/CR14OFnbxc9i/LFSgvFx41tHRxkFwuKFNBWWCeRvyTx6R3Sdnply
+ SfRQ==
+X-Gm-Message-State: AOAM5313mjSpHLjWNMIMeMdTk/t4nzYDLKoo7juk4U81XQsCGZBPKtOB
+ GyT8CvSQqSPczRHn2N47epg=
+X-Google-Smtp-Source: ABdhPJyS4SbYOkNiGCvylFs2IcuoH4kzYXsGjf+gr+czONRTqhB+9fh0yUwp0FDgjE5Y2u1ubpCTmQ==
+X-Received: by 2002:a2e:9b47:: with SMTP id o7mr3703551ljj.346.1637660910346; 
+ Tue, 23 Nov 2021 01:48:30 -0800 (PST)
+Received: from localhost.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
+ [194.187.74.233])
+ by smtp.gmail.com with ESMTPSA id h7sm1233379lfu.253.2021.11.23.01.48.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 23 Nov 2021 01:48:29 -0800 (PST)
+From: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org, Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>
+Subject: [PATCH] phy: bcm-ns-usb2: improve printing ref clk errors
+Date: Tue, 23 Nov 2021 10:48:23 +0100
+Message-Id: <20211123094823.25445-1-zajec5@gmail.com>
+X-Mailer: git-send-email 2.31.1
 MIME-Version: 1.0
-In-Reply-To: <20211122125624.6431-1-a-govindraju@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211123_001435_350378_AD80EC42 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20211123_014832_523928_A3A72E48 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,52 +83,27 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi All,
-
-On 22/11/21 6:26 pm, Aswath Govindraju wrote:
-> - The following series of patches add support for reading the state of the
->   mux to be set for enabling given device.
-> - As these are RFC patches I have combined them into a single series for
->   better understanding of the reason behind making this change.
-> 
-> Changes since v1:
-> - Added support for reading the enable state from DT instead of hardcoding
->   the state to be set to 1.
-> - Made relavent changes in the bindings
-> 
-> Link to v1,
-> - https://patchwork.kernel.org/project/linux-phy/list/?series=578863&state=*
-> 
-> Aswath Govindraju (4):
->   dt-bindings: mux: Increase the number of arguments in mux-controls
->   dt-bindings: phy: ti,tcan104x-can: Document mux-controls property
->   mux: Add support for reading mux enable state from DT
->   phy: phy-can-transceiver: Add support for setting mux
-> 
-
-Thank you for the comments. I have made changes based on the comments
-received and posted a v3 of this series.
-
-Regards,
-Aswath
-
->  .../devicetree/bindings/mux/gpio-mux.yaml     |  2 +-
->  .../bindings/mux/mux-controller.yaml          |  2 +-
->  .../bindings/phy/ti,tcan104x-can.yaml         |  8 ++++++
->  drivers/mux/core.c                            | 20 ++++++++++++--
->  drivers/phy/phy-can-transceiver.c             | 26 +++++++++++++++++++
->  include/linux/mux/consumer.h                  |  1 +
->  include/linux/mux/driver.h                    |  1 +
->  7 files changed, 56 insertions(+), 4 deletions(-)
-> 
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgoKUHJpbnQgYWN0dWFsIGVy
+cm9yIG51bWJlciB0byBoZWxwIGRlYnVnZ2luZyBpc3N1ZXMgYnV0IGFsc28gYXZvaWQKcHJpbnRp
+bmcgLUVQUk9CRV9ERUZFUi4KClNpZ25lZC1vZmYtYnk6IFJhZmHFgiBNacWCZWNraSA8cmFmYWxA
+bWlsZWNraS5wbD4KLS0tCiBkcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtLW5zLXVzYjIuYyB8
+IDggKysrKysrLS0KIDEgZmlsZSBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25z
+KC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbS1ucy11c2IyLmMg
+Yi9kcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtLW5zLXVzYjIuYwppbmRleCA5OGQzMjcyOWE0
+NWQuLjRjYjcwNzg1Y2NiNCAxMDA2NDQKLS0tIGEvZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJj
+bS1ucy11c2IyLmMKKysrIGIvZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbS1ucy11c2IyLmMK
+QEAgLTEzMiw4ICsxMzIsMTIgQEAgc3RhdGljIGludCBiY21fbnNfdXNiMl9wcm9iZShzdHJ1Y3Qg
+cGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCiAJdXNiMi0+cmVmX2NsayA9IGRldm1fY2xrX2dldChk
+ZXYsICJwaHktcmVmLWNsayIpOwogCWlmIChJU19FUlIodXNiMi0+cmVmX2NsaykpIHsKLQkJZGV2
+X2VycihkZXYsICJDbG9jayBub3QgZGVmaW5lZFxuIik7Ci0JCXJldHVybiBQVFJfRVJSKHVzYjIt
+PnJlZl9jbGspOworCQlpbnQgZXJyID0gUFRSX0VSUih1c2IyLT5yZWZfY2xrKTsKKworCQlpZiAo
+ZXJyICE9IC1FUFJPQkVfREVGRVIpCisJCQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBnZXQgcmVm
+IGNsazogJWRcbiIsIGVycik7CisKKwkJcmV0dXJuIGVycjsKIAl9CiAKIAl1c2IyLT5waHkgPSBk
+ZXZtX3BoeV9jcmVhdGUoZGV2LCBOVUxMLCAmb3BzKTsKLS0gCjIuMzEuMQoKCi0tIApsaW51eC1w
+aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
