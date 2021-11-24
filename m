@@ -4,67 +4,162 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8E6DC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Nov 2021 06:54:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA8F0C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Nov 2021 07:32:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TBY0awUGVKYtcesX/k32k2dumRoolkhbDJPBTEVmx10=; b=COz8Z3AFfPqQh8
-	tUaKHgLyL8rHO83Z7khiBz5xF7526rDUjzi5kAzb3oZmimbeHd18glqoemC3dByOU19PJnq7fENDC
-	LWkwAe1HmcSVNTcsNjQgyFCB9bHFcHK0/AcBJU61e3ZJ9x9iaMH2MCoGJ5f3/1RJWU1Y5Pfv6Vt7n
-	k5IjtXB5mP3KkHSCkAyl9Ch/nfI8nyamNXznZqE+x7SCmNDox2M5nrVt1IE60bEP1D1/rrFHHdSQH
-	neBBz0qOSdl99kMHW0MLutlL3MhHRqBVwFMIHcU8fH+DcE95DDgeiPHjtFmVWEBCviUDWhJgWrPiu
-	cMZkrWuvWXu0G34ijOTw==;
+	List-Owner; bh=Jwzm3i0fu+4FO1uG6HW18lgB36kTre3PJym7adr7hQg=; b=sVisvoCe3DuNOJ
+	iTIBGlq5dlMBJy/2rfv38rHF22VuokWd++CT8hoogyoZ0IJvflbPRinG+v4tw24wMr4+oAbrpuN8T
+	J3j7f2sk4vssl+CSVUg5TUWmny11MVAAlIaeSsMKYgEtYiDSGKrd2wo7hOE+dN4k23AJ36nSA1N+u
+	e9IWKBc9MytXhbZ03TE1foU5NA9f9mebG/Aj7RJ4Y/VDe4uubecFIL1cXl3UpeO6NJM/eqFs1VuAE
+	lJvlFkHU7xiINMBmxDbMNygMW8ppfi1245QwDm6w8rNn+bnpQq75Nj74gHl0i7fKnY+MnhkrwjCfZ
+	JYJZOTo6HosxhUMVzy3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mpmAf-0041wT-5H; Wed, 24 Nov 2021 06:54:21 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1mpmlf-0045GS-5H; Wed, 24 Nov 2021 07:32:35 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mpmAb-0041vt-W2; Wed, 24 Nov 2021 06:54:19 +0000
-X-UUID: af83bab278e84dfd8e44c98283301712-20211123
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=OaRtEOGGMmiRn/H3diaADGCQgeom+N8hKNmmNRonjuE=; 
- b=C3EkypPALXr0KI+SwWPYlHk94YwnQ/ez7Sg82+7+2KP7YLW3/CaVJIBBjwMLTbNDM5ZZexo45K+nGNUbMVnRpwtqlif5BQwWOpRPQ6ohupZT/AAQKidjFtiKXMDh/wa4THbBTvYM6Cv+4d4BaUaT2/ES6+6l2SBp6HYz0IOXLv0=;
-X-UUID: af83bab278e84dfd8e44c98283301712-20211123
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1585744849; Tue, 23 Nov 2021 23:54:11 -0700
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 23 Nov 2021 22:54:09 -0800
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 24 Nov 2021 14:54:08 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 24 Nov 2021 14:54:07 +0800
-Message-ID: <1e51d7bf0e77ddb4d558f0a4407dec5cdc1bc35e.camel@mediatek.com>
-Subject: Re: [PATCH 5/6] phy: phy-mtk-tphy: add support efuse setting
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+ id 1mpmlb-0045FJ-CB
+ for linux-phy@lists.infradead.org; Wed, 24 Nov 2021 07:32:33 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.1.2/8.16.1.2) with ESMTP id 1AO2aJGq017039;
+ Tue, 23 Nov 2021 23:32:27 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=proofpoint;
+ bh=TXmADHCjJc/17cES+t4DdzKyqP6mY/YCQLjK3FfbgmE=;
+ b=tNfeQrcVFE684dik12gZA7FWfG+DbjPRvwcdW2hXxIzzmzLFFKATHxEVb/LsdNBQ5nG3
+ hWhn5PmDO1f6Kplk0BdH6zOKaw+OsE9tOp3/7qD+5l0m9ctaX6iDzq1mV0hJzzVAJQ1W
+ q+lj8u9mnb2C3rT7/dYTxrRFhxKoQ9CvVNv02EY7/bpV8+jcAGmB7F4BLeoEb1UHVLew
+ 0CDyUImaDRh9aKN11+GFjMe8GZQgQjDaIgBcPlO2iW6lb6zrWz1gGR95HyelCbYii4FQ
+ jCr3DGNj4WuT+5v+t37bbplqE6sFwQbxiFye0ORdinPZ76yjspq2VFleTWDw1yzF/rvB tQ== 
+Received: from nam10-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam10lp2105.outbound.protection.outlook.com [104.47.58.105])
+ by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3chcrp8nue-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 23 Nov 2021 23:32:26 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=R8gS3S4jAKk8HfB+XbmeDATPlU/4mDs6uduLszPNoS8U+4pxQ5I2Wew472kTy1IdzB5XU7s3fnlBYh+GfsTic8RA73woswgK90T+kPHQnSGfQMOvs6PqHLflGMs5+w2ju0md6B7pCJAHhPniVXIa37JAafEeUwco8Hh9rC0d6Dw8IQdX/EevxwusRPmbJGSI3k2YW678P6nJuSvXWA1zmqp9ClhLGhkOoAxTt60wJTdjPdhyxZH509UeFsN91Vq0A0tyxLSd0oXWNc9oSJprUGy3U9Vf2rlScvWAkPKHWoFI2OhjQU7J1J7t1v6BG+F+PJLe7jXeNfXZ22jhfUmlag==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=TXmADHCjJc/17cES+t4DdzKyqP6mY/YCQLjK3FfbgmE=;
+ b=WzL35OmMzuYVS4TsP4nh4jYxx3VfkBrf419RByErF1gvWfIuvo76OJ2hRd7Q8fkNRxzbicAukqzxkEin78C6j4Z89J+7hbkYY6fzXv9BgRQS+zDuQMJmVdv3jFFtXL+68ZCntNJtaozEQNqB0goyluSdGTZgzytKH5ON8cOYUfrqHTNGqQj1qVTCmHkW7UsPPrKOtmhfStje8TLq9Wv6BIuikwwMdHpbjHEZKKzuc404rUHAhfzp/A1YXyWmnAXpvS2SeYAOrJyAogsfzCo15EDyG2yIKEgz4fR785qN99ck5U9tVPmr3+vdhxLktZd58snlRGTwVPgAFzF9Fnr8uA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cadence.com; dmarc=pass action=none header.from=cadence.com;
+ dkim=pass header.d=cadence.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TXmADHCjJc/17cES+t4DdzKyqP6mY/YCQLjK3FfbgmE=;
+ b=w+7LKvSgeM8uVS0QsGvXsgNhuHOIAvuiKMQi2ajBX2D7K+cQKbuZsIyfP4B1B0rdjFtK441Yyz4lBWlef4ag7r8OYqB29N6xTl1UMEUVn7kS8OL1R0B8To3MApDoFLkFbAEIEzGg9SwSfXPARkN84w+WSwgzlB1dNid5rRfgh1U=
+Received: from DM6PR07MB6154.namprd07.prod.outlook.com (2603:10b6:5:17e::20)
+ by DM6PR07MB7132.namprd07.prod.outlook.com (2603:10b6:5:1e6::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4713.24; Wed, 24 Nov
+ 2021 07:32:24 +0000
+Received: from DM6PR07MB6154.namprd07.prod.outlook.com
+ ([fe80::a15c:c860:703d:3017]) by DM6PR07MB6154.namprd07.prod.outlook.com
+ ([fe80::a15c:c860:703d:3017%7]) with mapi id 15.20.4713.026; Wed, 24 Nov 2021
+ 07:32:24 +0000
+From: Swapnil Kashinath Jakhade <sjakhade@cadence.com>
 To: Vinod Koul <vkoul@kernel.org>
-CC: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Rob Herring
- <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Kishon
- Vijay Abraham I" <kishon@ti.com>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, Eddie Hung
- <eddie.hung@mediatek.com>, Andrew-CT Chen <andrew-ct.chen@mediatek.com>, "Yz
- Wu" <yz.wu@mediatek.com>
-Date: Wed, 24 Nov 2021 14:54:07 +0800
-In-Reply-To: <YZuAab3j+flr1xXj@matsya>
-References: <20211107075646.4366-1-chunfeng.yun@mediatek.com>
- <20211107075646.4366-5-chunfeng.yun@mediatek.com> <YZuAab3j+flr1xXj@matsya>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+CC: "kishon@ti.com" <kishon@ti.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Milind Parab
+ <mparab@cadence.com>, "a-govindraju@ti.com" <a-govindraju@ti.com>
+Subject: RE: [PATCH v3 02/15] phy: cadence: Sierra: Prepare driver to add
+ support for multilink configurations
+Thread-Topic: [PATCH v3 02/15] phy: cadence: Sierra: Prepare driver to add
+ support for multilink configurations
+Thread-Index: AQHXx2anZo4Pol8NYk+Htx3JgA4aZKwQt5iAgAGpyfA=
+Date: Wed, 24 Nov 2021 07:32:23 +0000
+Message-ID: <DM6PR07MB61548F462DD615DFF5C17D02C5619@DM6PR07MB6154.namprd07.prod.outlook.com>
+References: <20211022170236.18839-1-sjakhade@cadence.com>
+ <20211022170236.18839-3-sjakhade@cadence.com> <YZxu/Tzo4fdiHKtR@matsya>
+In-Reply-To: <YZxu/Tzo4fdiHKtR@matsya>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc2pha2hhZGVcYXBwZGF0YVxyb2FtaW5nXDA5ZDg0OWI2LTMyZDMtNGE0MC04NWVlLTZiODRiYTI5ZTM1Ylxtc2dzXG1zZy1hODQxNTE5Zi00Y2Y4LTExZWMtODU4Yy1jOGY3NTA0NDIyZDhcYW1lLXRlc3RcYTg0MTUxYTAtNGNmOC0xMWVjLTg1OGMtYzhmNzUwNDQyMmQ4Ym9keS50eHQiIHN6PSIxMDkyNiIgdD0iMTMyODIyMTI3NDExOTg3NjQzIiBoPSJPRjBZOFVpMFhpUFhrdXF1djltaDJqSEVvMW89IiBpZD0iIiBibD0iMCIgYm89IjEiLz48L21ldGE+
+x-dg-rorf: true
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b09b9d98-cb3a-4903-d3b9-08d9af1c8ef6
+x-ms-traffictypediagnostic: DM6PR07MB7132:
+x-microsoft-antispam-prvs: <DM6PR07MB7132F11B2B2D8EEF8B5EC6BFC5619@DM6PR07MB7132.namprd07.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:632;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: zWD6pmhUluuysgrNf21g1AQNvccllRvi5FROXb0XOCpAd2SzwH2yQhPvwwmGMXidjicQVm1Q9X77MZ93GNvdE3Pf5oiy93dfL2QZjH0YecE/4bvCcSRox9UREB0l6c8bTYNfaAM0yrQcsXO7J02lVuwHJxfoX5oLtoiKy+SXVocAvHyAErG13HQeuGQ7M23ygDhRuQh/BENBi6fR1pDq5upTSGiHdk9bmhMSiOyzdrsSxBzSGBTSNeKyjPqSSPPYScyNFePadrYLz30q8Q6ZSyDCyn+WgeuzTcZZp9If1LWJntYvhk9tapMix/ZAU3/UIJ+1VX5nAanjOooC32Og36vC2jfPHibYw5Ryvez5xqujgHn82uv9NTuLjUa2x59Dy1N/Q2BSTZ2ZCquAkrjwsHHRUKVDhkg2Irs+91Fo0gTSUg4nd88YVKXAnAPkrm+Ciml4ek2Zhyq1HJHbMQYTWtIfRrm6InewPsDptsIuD1BWgMO/oDz+eHktU9G/XlJ205r/+jgf7F8AMzUlb/+1+yrbUjHyOX7FrdOpVJBlAq5r84c+bS5DpaeKnwILP9950OqOZ2XGYJibU3Z8V3dayDJQ/FTdmYYnBDJkGUNpE99OJhEcDpwu83YBZXw22U6sSP2U1Vd96wgfteV2XTYGnNjJJpY4J9UUeiMjQ+pvoeGoJtgCGcQST3R7jsWpPj0pqjQ7htP7nA37GPZalf/CGocgeYkYLV7o+LD8mB6F/p0=
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM6PR07MB6154.namprd07.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(36092001)(52536014)(2906002)(71200400001)(66446008)(66556008)(8936002)(186003)(55016003)(76116006)(4326008)(54906003)(86362001)(66476007)(64756008)(38070700005)(7696005)(5660300002)(26005)(6916009)(122000001)(38100700002)(33656002)(9686003)(83380400001)(508600001)(66946007)(53546011)(30864003)(8676002)(6506007)(316002)(19627235002);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?RqIaSWXkc2OTjRP4/XROOCooYHWslWr3hlMacVL29M/jgUs2Kpat/oUE/p7I?=
+ =?us-ascii?Q?1Kv91iRlHq+iU8dy4HsFOKjCLFDXw59QGqdY3mk0+HiN+oET9mPZOwAFoEdp?=
+ =?us-ascii?Q?MLyE7aq9AWPopKvSxuxfDSBMxKcwyzQImbf9VL9vS5CvZEJhO8cXmPbqiAQG?=
+ =?us-ascii?Q?YvDi624STvq7JZrIKjAMuDSYtmpGi+tSGDBjCAqUuShgNN0EW/S4+P7ziwgV?=
+ =?us-ascii?Q?N8jfEW1iJkTkoGIQ29OT6OY2gsHsxui6zNq+MwrShFuN8nplqIfsET5rQTp4?=
+ =?us-ascii?Q?jXkAQGSbhL3ntaXHmKinQrj44tkBgbRMh5lvjYmGkpgs74oSc0oJDRs3RIig?=
+ =?us-ascii?Q?2qocbPahw35yvuyxi99xK6I0em3BYmajm5/Ex6jTiXWFvIBTTz+Qe1RCAZOg?=
+ =?us-ascii?Q?Fq6cI7pAeAmm7RvBmdLQUBma/o04CTfhvJC2uBC1yR8EZqJ6IcyHLOghZ2cs?=
+ =?us-ascii?Q?+vlg1IP7HYGj4a2y6ytgIWTbSFU2TWKb3YK8GJJVK8j1Ne7izbbIacGS+cSE?=
+ =?us-ascii?Q?Ldm9eG3f4ZeacnGsby2/ppchRKc/IO6YHGVC2HdzJ2StWUtuEfBRgkUItFfm?=
+ =?us-ascii?Q?Od58Aw+5iEdqcPueNz3se0yFKAgWA2RNZOy1hbaefh4ishRV/n/D7ZXzbW+s?=
+ =?us-ascii?Q?q0VuyiMw8Da4H/Wi1uKB21/Ao9HBZzMXD0bWzP41E4eoU2E+z+Xczmctxt5e?=
+ =?us-ascii?Q?yWJyABysCwiLIYtM42v1PPxa3HJGkgBnEY0M268kYMpJ+//Da55xYBL/9VXB?=
+ =?us-ascii?Q?0X1+HpWhoykOuT5+Aitof0nBM4TFuzze7RGgi7CBu2GMaP2/YzOQ8FGcAR9C?=
+ =?us-ascii?Q?rq3m0VUL0AkxrAMA5Cj4tw6mMw/GfjCTZec2hv1Gq7uR7RRYf4AgxLLeKLA+?=
+ =?us-ascii?Q?vtorkl4RdXOR2V7+mcZnS82uT4MkdCqyez1EonNMjglOR6/NAq393TkhwBPb?=
+ =?us-ascii?Q?XPQfPKsY1uqolceZUdC4tcVyJISLTfwi8esNAfc1F0nhUKTXUsjFys4QLBxb?=
+ =?us-ascii?Q?pW/sch7OzSMq64hnks2xMhuAundOlrZK9Rhr6k7jkrWnMHCDdY+EvlbDrk19?=
+ =?us-ascii?Q?Vqp2olqurLAZ1tDzqoNTHjUx6VUhUyB2LrBPhBVZoLpHjKb4ugTc70xIXvwT?=
+ =?us-ascii?Q?LjmcA/LoNF7kstcRgdhoyF2u6zla1h6mre665NYxALcpATJMnxwQRQwGWaiV?=
+ =?us-ascii?Q?6MK5ItCK9oQ7nrTJ/q0gAw2UmyTbtijbOWnWJOJFil/li08afK7Dfo0mDskb?=
+ =?us-ascii?Q?nBUQrT9xCtUdK1GOAvlwUWlkxUKJKsnTiS0d957j/SnoP/XtiClCOsUVPIQd?=
+ =?us-ascii?Q?mOI6JXFi2nUBI/+8sG1QVIixc/cL9h/YhRHV1aXv/TwHluHz7MNUUZtmUh1x?=
+ =?us-ascii?Q?/yRgi1FfGkGwzgGx3WskLBsdF41vI6Y0WKHrkdXyyesY7gU6NrCsUIUKRMIc?=
+ =?us-ascii?Q?gDnHnN6DceHq8oJuewVfwrAR5r/Ep6ItP+Zrai7V/+3zBF9Z+y16iXpZHkmC?=
+ =?us-ascii?Q?4sEyIWQ/5/WhZRGf19gWiHLNjW71tN6YPgb5cpe8I2+dkaeaj4mvHpUTk9LI?=
+ =?us-ascii?Q?94zYRHwWXYODnarlKqJXXrUeCtMjy4Q2HliuNpYA/Zcfyq97UMJIxuBzwFrs?=
+ =?us-ascii?Q?FfEcAtiQo/McFeBKnzawV9rXDq4eMtgtLIq/Ar7ONp+JHA6ZnoITQxYvE6Fj?=
+ =?us-ascii?Q?sgOa5A=3D=3D?=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DM6PR07MB6154.namprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b09b9d98-cb3a-4903-d3b9-08d9af1c8ef6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Nov 2021 07:32:23.8673 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: wRsjNDVtQ2mGIU4C2fR4S33d5fw2XxpPif+527FabiGhPm0qumzK+/Csoxrnut8sfizSojOfy6nyetj8t3Qmhmyogn81YFr6fat65Q2n/2I=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR07MB7132
+X-Proofpoint-GUID: b_9J6O6-AvMNAlL8C0yNZXKDKn1jieCE
+X-Proofpoint-ORIG-GUID: b_9J6O6-AvMNAlL8C0yNZXKDKn1jieCE
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
+ definitions=2021-11-24_02,2021-11-23_01,2020-04-07_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 malwarescore=0
+ mlxlogscore=999 impostorscore=0 lowpriorityscore=0 bulkscore=0 mlxscore=0
+ suspectscore=0 priorityscore=1501 adultscore=0 clxscore=1011 spamscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2110150000 definitions=main-2111240042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211123_225418_064943_6284FFFE 
-X-CRM114-Status: GOOD (  34.29  )
+X-CRM114-CacheID: sfid-20211123_233231_970787_345C1A57 
+X-CRM114-Status: GOOD (  28.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,257 +176,348 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2021-11-22 at 17:05 +0530, Vinod Koul wrote:
-> On 07-11-21, 15:56, Chunfeng Yun wrote:
-> > Due to some SoCs have a bit shift issue that will drop a bit for
-> > usb3
-> > phy or pcie phy, fix it by adding software efuse reading and
-> > setting,
-> > but only support it optionally for versoin 2/3.
+Hi Vinod,
+
+> -----Original Message-----
+> From: Vinod Koul <vkoul@kernel.org>
+> Sent: Tuesday, November 23, 2021 10:03 AM
+> To: Swapnil Kashinath Jakhade <sjakhade@cadence.com>
+> Cc: kishon@ti.com; robh+dt@kernel.org; p.zabel@pengutronix.de; linux-
+> phy@lists.infradead.org; linux-kernel@vger.kernel.org;
+> devicetree@vger.kernel.org; Milind Parab <mparab@cadence.com>; a-
+> govindraju@ti.com
+> Subject: Re: [PATCH v3 02/15] phy: cadence: Sierra: Prepare driver to add
+> support for multilink configurations
 > 
-> s/versoin/version
-Ok
+> EXTERNAL MAIL
 > 
-> > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> 
+> On 22-10-21, 19:02, Swapnil Jakhade wrote:
+> > Sierra driver currently supports single link configurations only.
+> > Prepare driver to support multilink multiprotocol configurations along
+> > with different SSC modes.
+> >
+> > Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+> > Reviewed-by: Aswath Govindraju <a-govindraju@ti.com>
 > > ---
-> >  drivers/phy/mediatek/phy-mtk-tphy.c | 162
-> > ++++++++++++++++++++++++++++
-> >  1 file changed, 162 insertions(+)
-> > 
-> > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > index cdcef865fe9e..3b5b1c266595 100644
-> > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> > @@ -12,6 +12,7 @@
-> >  #include <linux/iopoll.h>
-> >  #include <linux/mfd/syscon.h>
-> >  #include <linux/module.h>
-> > +#include <linux/nvmem-consumer.h>
-> >  #include <linux/of_address.h>
-> >  #include <linux/of_device.h>
-> >  #include <linux/phy/phy.h>
-> > @@ -41,6 +42,9 @@
-> >  #define SSUSB_SIFSLV_V2_U3PHYD		0x200
-> >  #define SSUSB_SIFSLV_V2_U3PHYA		0x400
-> >  
-> > +#define U3P_MISC_REG1		0x04
-> > +#define MR1_EFUSE_AUTO_LOAD_DIS		BIT(6)
+> >  drivers/phy/cadence/phy-cadence-sierra.c | 195
+> > ++++++++++++++++-------
+> >  1 file changed, 139 insertions(+), 56 deletions(-)
+> >
+> > diff --git a/drivers/phy/cadence/phy-cadence-sierra.c
+> > b/drivers/phy/cadence/phy-cadence-sierra.c
+> > index 54d1c63932ac..c82ac6716f5e 100644
+> > --- a/drivers/phy/cadence/phy-cadence-sierra.c
+> > +++ b/drivers/phy/cadence/phy-cadence-sierra.c
+> > @@ -23,6 +23,9 @@
+> >  #include <dt-bindings/phy/phy.h>
+> >  #include <dt-bindings/phy/phy-cadence.h>
+> >
+> > +#define NUM_SSC_MODE		3
+> > +#define NUM_PHY_TYPE		3
 > > +
-> >  #define U3P_USBPHYACR0		0x000
-> >  #define PA0_RG_U2PLL_FORCE_ON		BIT(15)
-> >  #define PA0_USB20_PLL_PREDIV		GENMASK(7, 6)
-> > @@ -133,6 +137,8 @@
-> >  #define P3C_RG_SWRST_U3_PHYD_FORCE_EN	BIT(24)
-> >  
-> >  #define U3P_U3_PHYA_REG0	0x000
-> > +#define P3A_RG_IEXT_INTR		GENMASK(15, 10)
-> > +#define P3A_RG_IEXT_INTR_VAL(x)		((0x3f & (x)) << 10)
-> >  #define P3A_RG_CLKDRV_OFF		GENMASK(3, 2)
-> >  #define P3A_RG_CLKDRV_OFF_VAL(x)	((0x3 & (x)) << 2)
-> >  
-> > @@ -187,6 +193,19 @@
-> >  #define P3D_RG_FWAKE_TH		GENMASK(21, 16)
-> >  #define P3D_RG_FWAKE_TH_VAL(x)	((0x3f & (x)) << 16)
-> >  
-> > +#define U3P_U3_PHYD_IMPCAL0		0x010
-> > +#define P3D_RG_FORCE_TX_IMPEL		BIT(31)
-> > +#define P3D_RG_TX_IMPEL			GENMASK(28, 24)
-> > +#define P3D_RG_TX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
+> >  /* PHY register offsets */
+> >  #define SIERRA_COMMON_CDB_OFFSET			0x0
+> >  #define SIERRA_MACRO_ID_REG				0x0
+> > @@ -217,9 +220,21 @@ static const int
+> > pll_mux_parent_index[][SIERRA_NUM_CMN_PLLC_PARENTS] = {
+> >
+> >  static u32 cdns_sierra_pll_mux_table[] = { 0, 1 };
+> >
+> > +enum cdns_sierra_phy_type {
+> > +	TYPE_NONE,
+> 
+> What does NONE type mean?
+
+TYPE_NONE is used to denote single link configuration.
+e.g. [TYPE_PCIE][TYPE_NONE] denotes single link PCIe configuration.
+
+> 
+> > +	TYPE_PCIE,
+> > +	TYPE_USB
+> > +};
 > > +
-> > +#define U3P_U3_PHYD_IMPCAL1		0x014
-> > +#define P3D_RG_FORCE_RX_IMPEL		BIT(31)
-> > +#define P3D_RG_RX_IMPEL			GENMASK(28, 24)
-> > +#define P3D_RG_RX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
+> > +enum cdns_sierra_ssc_mode {
+> > +	NO_SSC,
+> > +	EXTERNAL_SSC,
+> > +	INTERNAL_SSC
+> > +};
 > > +
-> > +#define U3P_U3_PHYD_RSV			0x054
-> > +#define P3D_RG_EFUSE_AUTO_LOAD_DIS	BIT(12)
-> > +
-> >  #define U3P_U3_PHYD_CDR1		0x05c
-> >  #define P3D_RG_CDR_BIR_LTD1		GENMASK(28, 24)
-> >  #define P3D_RG_CDR_BIR_LTD1_VAL(x)	((0x1f & (x)) << 24)
-> > @@ -307,6 +326,11 @@ struct mtk_phy_pdata {
-> >  	 * 48M PLL, fix it by switching PLL to 26M from default 48M
-> >  	 */
-> >  	bool sw_pll_48m_to_26m;
-> > +	/*
-> > +	 * Some SoCs (e.g. mt8195) drop a bit when use auto load efuse,
-> > +	 * support sw way, also support it for v2/v3 optionally.
-> > +	 */
-> > +	bool sw_efuse_supported;
-> >  	enum mtk_phy_version version;
+> >  struct cdns_sierra_inst {
+> >  	struct phy *phy;
+> > -	u32 phy_type;
+> > +	enum cdns_sierra_phy_type phy_type;
+> >  	u32 num_lanes;
+> >  	u32 mlane;
+> >  	struct reset_control *lnk_rst;
+> > @@ -230,18 +245,19 @@ struct cdns_reg_pairs {
+> >  	u32 off;
 > >  };
-> >  
-> > @@ -336,6 +360,10 @@ struct mtk_phy_instance {
-> >  	struct regmap *type_sw;
-> >  	u32 type_sw_reg;
-> >  	u32 type_sw_index;
-> > +	u32 efuse_sw_en;
-> > +	u32 efuse_intr;
-> > +	u32 efuse_tx_imp;
-> > +	u32 efuse_rx_imp;
-> >  	int eye_src;
-> >  	int eye_vrt;
-> >  	int eye_term;
-> > @@ -1040,6 +1068,130 @@ static int phy_type_set(struct
-> > mtk_phy_instance *instance)
-> >  	return 0;
-> >  }
-> >  
-> > +static int phy_efuse_get(struct mtk_tphy *tphy, struct
-> > mtk_phy_instance *instance)
-> > +{
-> > +	struct device *dev = &instance->phy->dev;
-> > +	int ret = 0;
+> >
+> > +struct cdns_sierra_vals {
+> > +	const struct cdns_reg_pairs *reg_pairs;
+> > +	u32 num_regs;
+> > +};
 > > +
-> > +	/* tphy v1 doesn't support sw efuse, skip it */
-> > +	if (!tphy->pdata->sw_efuse_supported) {
-> > +		instance->efuse_sw_en = 0;
-> > +		return 0;
+> >  struct cdns_sierra_data {
+> > -		u32 id_value;
+> > -		u8 block_offset_shift;
+> > -		u8 reg_offset_shift;
+> > -		u32 pcie_cmn_regs;
+> > -		u32 pcie_ln_regs;
+> > -		u32 usb_cmn_regs;
+> > -		u32 usb_ln_regs;
+> > -		const struct cdns_reg_pairs *pcie_cmn_vals;
+> > -		const struct cdns_reg_pairs *pcie_ln_vals;
+> > -		const struct cdns_reg_pairs *usb_cmn_vals;
+> > -		const struct cdns_reg_pairs *usb_ln_vals;
+> > +	u32 id_value;
+> > +	u8 block_offset_shift;
+> > +	u8 reg_offset_shift;
+> > +	struct cdns_sierra_vals
+> *pma_cmn_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+> > +					     [NUM_SSC_MODE];
+> > +	struct cdns_sierra_vals
+> *pma_ln_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+> > +					    [NUM_SSC_MODE];
+> 
+> You have defined phy type and ssc, that sounds fine, I am not sure why you
+> need a third dimension here? What purpose does it solve?
+
+PHY can be configured to support max 2 protocols simultaneously, so there
+are two PHY_TYPE dimensions.
+
+Thanks & regards,
+Swapnil
+
+> 
+> >  };
+> >
+> >  struct cdns_regmap_cdb_context {
+> > @@ -341,10 +357,14 @@ static int cdns_sierra_phy_init(struct phy
+> > *gphy)  {
+> >  	struct cdns_sierra_inst *ins = phy_get_drvdata(gphy);
+> >  	struct cdns_sierra_phy *phy = dev_get_drvdata(gphy->dev.parent);
+> > +	const struct cdns_sierra_data *init_data = phy->init_data;
+> > +	struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
+> > +	enum cdns_sierra_phy_type phy_type = ins->phy_type;
+> > +	enum cdns_sierra_ssc_mode ssc = EXTERNAL_SSC;
+> > +	const struct cdns_reg_pairs *reg_pairs;
+> >  	struct regmap *regmap;
+> > +	u32 num_regs;
+> >  	int i, j;
+> > -	const struct cdns_reg_pairs *cmn_vals, *ln_vals;
+> > -	u32 num_cmn_regs, num_ln_regs;
+> >
+> >  	/* Initialise the PHY registers, unless auto configured */
+> >  	if (phy->autoconf)
+> > @@ -352,28 +372,26 @@ static int cdns_sierra_phy_init(struct phy
+> > *gphy)
+> >
+> >  	clk_set_rate(phy->input_clks[CMN_REFCLK_DIG_DIV], 25000000);
+> >  	clk_set_rate(phy->input_clks[CMN_REFCLK1_DIG_DIV], 25000000);
+> > -	if (ins->phy_type == PHY_TYPE_PCIE) {
+> > -		num_cmn_regs = phy->init_data->pcie_cmn_regs;
+> > -		num_ln_regs = phy->init_data->pcie_ln_regs;
+> > -		cmn_vals = phy->init_data->pcie_cmn_vals;
+> > -		ln_vals = phy->init_data->pcie_ln_vals;
+> > -	} else if (ins->phy_type == PHY_TYPE_USB3) {
+> > -		num_cmn_regs = phy->init_data->usb_cmn_regs;
+> > -		num_ln_regs = phy->init_data->usb_ln_regs;
+> > -		cmn_vals = phy->init_data->usb_cmn_vals;
+> > -		ln_vals = phy->init_data->usb_ln_vals;
+> > -	} else {
+> > -		return -EINVAL;
+> > -	}
+> >
+> > -	regmap = phy->regmap_common_cdb;
+> > -	for (j = 0; j < num_cmn_regs ; j++)
+> > -		regmap_write(regmap, cmn_vals[j].off, cmn_vals[j].val);
+> > +	/* PMA common registers configurations */
+> > +	pma_cmn_vals = init_data-
+> >pma_cmn_vals[phy_type][TYPE_NONE][ssc];
+> > +	if (pma_cmn_vals) {
+> > +		reg_pairs = pma_cmn_vals->reg_pairs;
+> > +		num_regs = pma_cmn_vals->num_regs;
+> > +		regmap = phy->regmap_common_cdb;
+> > +		for (i = 0; i < num_regs; i++)
+> > +			regmap_write(regmap, reg_pairs[i].off,
+> reg_pairs[i].val);
 > > +	}
+> >
+> > -	for (i = 0; i < ins->num_lanes; i++) {
+> > -		for (j = 0; j < num_ln_regs ; j++) {
+> > +	/* PMA lane registers configurations */
+> > +	pma_ln_vals = init_data->pma_ln_vals[phy_type][TYPE_NONE][ssc];
+> > +	if (pma_ln_vals) {
+> > +		reg_pairs = pma_ln_vals->reg_pairs;
+> > +		num_regs = pma_ln_vals->num_regs;
+> > +		for (i = 0; i < ins->num_lanes; i++) {
+> >  			regmap = phy->regmap_lane_cdb[i + ins->mlane];
+> > -			regmap_write(regmap, ln_vals[j].off, ln_vals[j].val);
+> > +			for (j = 0; j < num_regs; j++)
+> > +				regmap_write(regmap, reg_pairs[j].off,
+> reg_pairs[j].val);
+> >  		}
+> >  	}
+> >
+> > @@ -583,15 +601,28 @@ static int cdns_sierra_clk_register(struct
+> > cdns_sierra_phy *sp)  static int cdns_sierra_get_optional(struct
+> cdns_sierra_inst *inst,
+> >  				    struct device_node *child)
+> >  {
+> > +	u32 phy_type;
 > > +
-> > +	/* software efuse is optional */
-> > +	instance->efuse_sw_en = device_property_read_bool(dev, "nvmem-
-> > cells");
-> > +	if (!instance->efuse_sw_en)
-> > +		return 0;
-> > +
-> > +	switch (instance->type) {
-> > +	case PHY_TYPE_USB2:
-> > +		ret = nvmem_cell_read_variable_le_u32(dev, "intr",
-> > &instance->efuse_intr);
-> > +		if (ret) {
-> > +			dev_err(dev, "fail to get u2 intr efuse, %d\n",
-> > ret);
-> > +			break;
-> > +		}
-> > +
-> > +		/* no efuse, ignore it */
-> > +		if (!instance->efuse_intr) {
-> > +			dev_warn(dev, "no u2 intr efuse, but dts enable
-> > it\n");
-> > +			instance->efuse_sw_en = 0;
-> > +			break;
-> > +		}
-> 
-> What does this check do...? so a zero value is not valid..?
-Yes, because it's also zero for SoC without efuse, prefer to use
-default value instead.
-
-> 
-> > +
-> > +		dev_info(dev, "u2 efuse - intr %x\n", instance-
-> > >efuse_intr);
-> 
-> dev_dbg()?
-We usually use HW auto load way, print this log can help to point out
-that it's specific SoC.
-
-> 
-> > +		break;
-> 
-> empty line after break improves readability, pls add
-Ok
-> 
-> > +	case PHY_TYPE_USB3:
+> >  	if (of_property_read_u32(child, "reg", &inst->mlane))
+> >  		return -EINVAL;
+> >
+> >  	if (of_property_read_u32(child, "cdns,num-lanes", &inst-
+> >num_lanes))
+> >  		return -EINVAL;
+> >
+> > -	if (of_property_read_u32(child, "cdns,phy-type", &inst->phy_type))
+> > +	if (of_property_read_u32(child, "cdns,phy-type", &phy_type))
+> >  		return -EINVAL;
+> >
+> > +	switch (phy_type) {
 > > +	case PHY_TYPE_PCIE:
-> > +		ret = nvmem_cell_read_variable_le_u32(dev, "intr",
-> > &instance->efuse_intr);
-> > +		if (ret) {
-> > +			dev_err(dev, "fail to get u3 intr efuse, %d\n",
-> > ret);
-> > +			break;
-> > +		}
-> 
-> This seems to be common, why not read this before switch?
-It's not used for SGMII or SATA, but not applied until now
-
-> 
-> > +
-> > +		ret = nvmem_cell_read_variable_le_u32(dev, "rx_imp",
-> > &instance->efuse_rx_imp);
-> > +		if (ret) {
-> > +			dev_err(dev, "fail to get u3 rx_imp efuse,
-> > %d\n", ret);
-> > +			break;
-> > +		}
-> > +
-> > +		ret = nvmem_cell_read_variable_le_u32(dev, "tx_imp",
-> > &instance->efuse_tx_imp);
-> > +		if (ret) {
-> > +			dev_err(dev, "fail to get u3 tx_imp efuse,
-> > %d\n", ret);
-> > +			break;
-> > +		}
-> > +
-> > +		/* no efuse, ignore it */
-> > +		if (!instance->efuse_intr &&
-> > +		    !instance->efuse_rx_imp &&
-> > +		    !instance->efuse_rx_imp) {
-> > +			dev_warn(dev, "no u3 intr efuse, but dts enable
-> > it\n");
-> > +			instance->efuse_sw_en = 0;
-> > +			break;
-> > +		}
-> 
-> again, zero values are not valid?
-It's also zero for SoC without efuse, treat it as invalid value
-
-> 
-> > +
-> > +		dev_info(dev, "u3 efuse - intr %x, rx_imp %x, tx_imp
-> > %x\n",
-> > +			 instance->efuse_intr, instance->efuse_rx_imp,
-> > +			 instance->efuse_tx_imp);
-> 
-> dbg pls
-Ok
-> 
+> > +		inst->phy_type = TYPE_PCIE;
+> > +		break;
+> > +	case PHY_TYPE_USB3:
+> > +		inst->phy_type = TYPE_USB;
 > > +		break;
 > > +	default:
-> > +		dev_err(dev, "no sw efuse for type %d\n", instance-
-> > >type);
-> > +		ret = -EINVAL;
+> > +		return -EINVAL;
 > > +	}
 > > +
-> > +	return ret;
-> > +}
+> >  	return 0;
+> >  }
+> >
+> > @@ -1006,6 +1037,16 @@ static const struct cdns_reg_pairs
+> cdns_pcie_ln_regs_ext_ssc[] = {
+> >  	{0x44CC, SIERRA_CREQ_EQ_OPEN_EYE_THRESH_PREG}
+> >  };
+> >
+> > +static struct cdns_sierra_vals pcie_100_ext_ssc_cmn_vals = {
+> > +	.reg_pairs = cdns_pcie_cmn_regs_ext_ssc,
+> > +	.num_regs = ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
+> > +};
 > > +
-> > +static void phy_efuse_set(struct mtk_phy_instance *instance)
-> > +{
-> > +	struct device *dev = &instance->phy->dev;
-> > +	struct u2phy_banks *u2_banks = &instance->u2_banks;
-> > +	struct u3phy_banks *u3_banks = &instance->u3_banks;
-> > +	u32 tmp;
+> > +static struct cdns_sierra_vals pcie_100_ext_ssc_ln_vals = {
+> > +	.reg_pairs = cdns_pcie_ln_regs_ext_ssc,
+> > +	.num_regs = ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
+> > +};
 > > +
-> > +	if (!instance->efuse_sw_en)
-> > +		return;
+> >  /* refclk100MHz_20b_USB_cmn_pll_ext_ssc */  static const struct
+> > cdns_reg_pairs cdns_usb_cmn_regs_ext_ssc[] = {
+> >  	{0x2085, SIERRA_CMN_PLLLC_LF_COEFF_MODE1_PREG},
+> > @@ -1113,32 +1154,74 @@ static const struct cdns_reg_pairs
+> cdns_usb_ln_regs_ext_ssc[] = {
+> >  	{0x4243, SIERRA_RXBUFFER_DFECTRL_PREG}  };
+> >
+> > +static struct cdns_sierra_vals usb_100_ext_ssc_cmn_vals = {
+> > +	.reg_pairs = cdns_usb_cmn_regs_ext_ssc,
+> > +	.num_regs = ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
+> > +};
 > > +
-> > +	switch (instance->type) {
-> > +	case PHY_TYPE_USB2:
-> > +		tmp = readl(u2_banks->misc + U3P_MISC_REG1);
-> > +		tmp |= MR1_EFUSE_AUTO_LOAD_DIS;
-> > +		writel(tmp, u2_banks->misc + U3P_MISC_REG1);
+> > +static struct cdns_sierra_vals usb_100_ext_ssc_ln_vals = {
+> > +	.reg_pairs = cdns_usb_ln_regs_ext_ssc,
+> > +	.num_regs = ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+> > +};
 > > +
-> > +		tmp = readl(u2_banks->com + U3P_USBPHYACR1);
-> > +		tmp &= ~PA1_RG_INTR_CAL;
-> > +		tmp |= PA1_RG_INTR_CAL_VAL(instance->efuse_intr);
-> > +		writel(tmp, u2_banks->com + U3P_USBPHYACR1);
-> > +		break;
-> > +	case PHY_TYPE_USB3:
-> > +	case PHY_TYPE_PCIE:
-> > +		tmp = readl(u3_banks->phyd + U3P_U3_PHYD_RSV);
-> > +		tmp |= P3D_RG_EFUSE_AUTO_LOAD_DIS;
-> > +		writel(tmp, u3_banks->phyd + U3P_U3_PHYD_RSV);
+> >  static const struct cdns_sierra_data cdns_map_sierra = {
+> > -	SIERRA_MACRO_ID,
+> > -	0x2,
+> > -	0x2,
+> > -	ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
+> > -	ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
+> > -	ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
+> > -	ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+> > -	cdns_pcie_cmn_regs_ext_ssc,
+> > -	cdns_pcie_ln_regs_ext_ssc,
+> > -	cdns_usb_cmn_regs_ext_ssc,
+> > -	cdns_usb_ln_regs_ext_ssc,
+> > +	.id_value = SIERRA_MACRO_ID,
+> > +	.block_offset_shift = 0x2,
+> > +	.reg_offset_shift = 0x2,
+> > +	.pma_cmn_vals = {
+> > +		[TYPE_PCIE] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] =
+> &pcie_100_ext_ssc_cmn_vals,
+> > +			},
+> > +		},
+> > +		[TYPE_USB] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] =
+> &usb_100_ext_ssc_cmn_vals,
+> > +			},
+> > +		},
+> > +	},
+> > +	.pma_ln_vals = {
+> > +		[TYPE_PCIE] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+> > +			},
+> > +		},
+> > +		[TYPE_USB] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+> > +			},
+> > +		},
+> > +	},
+> >  };
+> >
+> >  static const struct cdns_sierra_data cdns_ti_map_sierra = {
+> > -	SIERRA_MACRO_ID,
+> > -	0x0,
+> > -	0x1,
+> > -	ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
+> > -	ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
+> > -	ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
+> > -	ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+> > -	cdns_pcie_cmn_regs_ext_ssc,
+> > -	cdns_pcie_ln_regs_ext_ssc,
+> > -	cdns_usb_cmn_regs_ext_ssc,
+> > -	cdns_usb_ln_regs_ext_ssc,
+> > +	.id_value = SIERRA_MACRO_ID,
+> > +	.block_offset_shift = 0x0,
+> > +	.reg_offset_shift = 0x1,
+> > +	.pma_cmn_vals = {
+> > +		[TYPE_PCIE] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] =
+> &pcie_100_ext_ssc_cmn_vals,
+> > +			},
+> > +		},
+> > +		[TYPE_USB] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] =
+> &usb_100_ext_ssc_cmn_vals,
+> > +			},
+> > +		},
+> > +	},
+> > +	.pma_ln_vals = {
+> > +		[TYPE_PCIE] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] = &pcie_100_ext_ssc_ln_vals,
+> > +			},
+> > +		},
+> > +		[TYPE_USB] = {
+> > +			[TYPE_NONE] = {
+> > +				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+> > +			},
+> > +		},
+> > +	},
+> >  };
+> >
+> >  static const struct of_device_id cdns_sierra_id_table[] = {
+> > --
+> > 2.26.1
 > 
-> add a updatel() macro and use this here and other places?
-You mean add macro to set/clear bits?
-If so, I need prepare another patch for this purpose
+> --
+> ~Vinod
 
-Thanks a lot
-
-> 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
