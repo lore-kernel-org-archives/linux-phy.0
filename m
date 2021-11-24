@@ -4,82 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53BC3C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Nov 2021 22:18:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8E6DC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Nov 2021 06:54:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mvrWRmjwczh2egciSsUSB/1yU59gJDUt49nX92p0djo=; b=3X7hUgGd7aNwHMn0v/uo/4LWSi
-	94yuOiOPs2LolQzzKgIdfEMs+94W0UkG9KThceZDCDichUS+VCGQli/FQ9aK48VP7HaeY5OPv0G54
-	j3a1UE7dSgEmDj+/YZiIyhW+Uv+1OB67eqwa5fAXTYhVIeFqJmlm9s7bYm9pa9xVz3cKYg4SiV9wS
-	+czyqFoBong2Z1yaPeHR+PyGFYgoJualdMoI/c8VEEh4xBXYfaGfauMABpdyY+5Abwlh9jC0td9c9
-	ZLqTeErwdGA2KYU3yOYEVe20rmXb8U0CckKjM4ryHl6Gsg+HbRjs4wDo5Y+zLabese/AxSiSoEtYO
-	cU06Nftg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TBY0awUGVKYtcesX/k32k2dumRoolkhbDJPBTEVmx10=; b=COz8Z3AFfPqQh8
+	tUaKHgLyL8rHO83Z7khiBz5xF7526rDUjzi5kAzb3oZmimbeHd18glqoemC3dByOU19PJnq7fENDC
+	LWkwAe1HmcSVNTcsNjQgyFCB9bHFcHK0/AcBJU61e3ZJ9x9iaMH2MCoGJ5f3/1RJWU1Y5Pfv6Vt7n
+	k5IjtXB5mP3KkHSCkAyl9Ch/nfI8nyamNXznZqE+x7SCmNDox2M5nrVt1IE60bEP1D1/rrFHHdSQH
+	neBBz0qOSdl99kMHW0MLutlL3MhHRqBVwFMIHcU8fH+DcE95DDgeiPHjtFmVWEBCviUDWhJgWrPiu
+	cMZkrWuvWXu0G34ijOTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mpe7H-003ZjV-R6; Tue, 23 Nov 2021 22:18:19 +0000
-Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
+	id 1mpmAf-0041wT-5H; Wed, 24 Nov 2021 06:54:21 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mpe7F-003Ziw-A1
- for linux-phy@lists.infradead.org; Tue, 23 Nov 2021 22:18:18 +0000
-Received: by mail-pj1-x1032.google.com with SMTP id
- nh10-20020a17090b364a00b001a69adad5ebso595364pjb.2
- for <linux-phy@lists.infradead.org>; Tue, 23 Nov 2021 14:18:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=RvDcjOyTMcWBvv3Wv0Ug9e+O52/bTAMQKnrDSBN0Oow=;
- b=DgT6NvhWbbPD9v9EdGOxpi5eXlZ7K4CQgN/9bIkun4k6yHuSEuiNUZO/97wr4uFAys
- b3d+Im9F93WrjB1yUEfqYMGeMtfORL8cFUhYbdOLLplLPNRkTC3zhY+iysqlEyBsI05o
- /6oK7cWORmiKQVMtay2ZaQ0aj+mMwjSt77Z2XguHlMzyTYOIFVSAKg0lFRQAgwhODajK
- 6ZIz1pOSjoNsXBJIOYUSjEExbpuKOiOfSyq0iT5YmDerxe9exj8rmFHEQgSIEy641Wle
- prsLC7ulA/rnZIYPKOlWQK/qZ6l0Wxnzo1OH3Xn0tUwcz8bYVVMeDibljZLSSaXjzGZg
- LmJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=RvDcjOyTMcWBvv3Wv0Ug9e+O52/bTAMQKnrDSBN0Oow=;
- b=oyh/AUdWfrYsPnr0heTkfrhqjr2iuLBRr37rZT9r8Nnjb5l2ufCR1lNkUMqzrtuFee
- huK1oIxD9gjdWkoInCVaF1FWsqkneLmU+LCkLpxUPfvxvu9GKJei9zCSkoQbHBzvfGlD
- A5rHuN+DvUrwr5sEHpQjIJyonESuSZ88lt934y9MbmpXD7ckLqK7yy2EOqYI2phehcoe
- gZJg+TQyD9le6kDpM3QYCZfIk6zVFfDTV2S+w9YHjZQvYDiJhG95hxS2nb4E3V7Kfi0h
- zKeEpxHCYAHdoXrDLHIJff9raNLKDqQn2tNm3sxFEepwGGwY2JCAjKupQIJuWQBFeMXm
- zjtQ==
-X-Gm-Message-State: AOAM5313QRhk37XZljGFvXLdv9b7C34/ZzrYMXScx1cKzzPJSgL1Swjq
- yNOJxQv8GjoZtw0gb4jXOk/N2J7H1AQ=
-X-Google-Smtp-Source: ABdhPJyfRFvK7wTPntruyKgRV3yx4jQvjv6pu0OS/XADqSU0TdBETIrr783Lz0W1kOlv7Akp04otMw==
-X-Received: by 2002:a17:90a:e395:: with SMTP id
- b21mr1036625pjz.103.1637705896244; 
- Tue, 23 Nov 2021 14:18:16 -0800 (PST)
-Received: from [10.67.48.245] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id s30sm14734680pfg.17.2021.11.23.14.18.14
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 23 Nov 2021 14:18:15 -0800 (PST)
-Subject: Re: [PATCH V2] phy: bcm-ns-usb2: improve printing ref clk errors
-To: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Cc: linux-phy@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
- =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
-References: <20211123094823.25445-1-zajec5@gmail.com>
- <20211123221521.25323-1-zajec5@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <c9945244-3a5b-8e67-e33b-73d667c35698@gmail.com>
-Date: Tue, 23 Nov 2021 14:18:14 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.13.0
+ id 1mpmAb-0041vt-W2; Wed, 24 Nov 2021 06:54:19 +0000
+X-UUID: af83bab278e84dfd8e44c98283301712-20211123
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=OaRtEOGGMmiRn/H3diaADGCQgeom+N8hKNmmNRonjuE=; 
+ b=C3EkypPALXr0KI+SwWPYlHk94YwnQ/ez7Sg82+7+2KP7YLW3/CaVJIBBjwMLTbNDM5ZZexo45K+nGNUbMVnRpwtqlif5BQwWOpRPQ6ohupZT/AAQKidjFtiKXMDh/wa4THbBTvYM6Cv+4d4BaUaT2/ES6+6l2SBp6HYz0IOXLv0=;
+X-UUID: af83bab278e84dfd8e44c98283301712-20211123
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1585744849; Tue, 23 Nov 2021 23:54:11 -0700
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 23 Nov 2021 22:54:09 -0800
+Received: from mtkcas11.mediatek.inc (172.21.101.40) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 24 Nov 2021 14:54:08 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 24 Nov 2021 14:54:07 +0800
+Message-ID: <1e51d7bf0e77ddb4d558f0a4407dec5cdc1bc35e.camel@mediatek.com>
+Subject: Re: [PATCH 5/6] phy: phy-mtk-tphy: add support efuse setting
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Kishon
+ Vijay Abraham I" <kishon@ti.com>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, Eddie Hung
+ <eddie.hung@mediatek.com>, Andrew-CT Chen <andrew-ct.chen@mediatek.com>, "Yz
+ Wu" <yz.wu@mediatek.com>
+Date: Wed, 24 Nov 2021 14:54:07 +0800
+In-Reply-To: <YZuAab3j+flr1xXj@matsya>
+References: <20211107075646.4366-1-chunfeng.yun@mediatek.com>
+ <20211107075646.4366-5-chunfeng.yun@mediatek.com> <YZuAab3j+flr1xXj@matsya>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-In-Reply-To: <20211123221521.25323-1-zajec5@gmail.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211123_141817_367451_9AAB3F25 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211123_225418_064943_6284FFFE 
+X-CRM114-Status: GOOD (  34.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,16 +76,263 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTEvMjMvMjEgMjoxNSBQTSwgUmFmYcWCIE1pxYJlY2tpIHdyb3RlOgo+IEZyb206IFJhZmHF
-giBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KPiAKPiBJbXByb3ZlIG1lc3NhZ2UgJiB1c2Ug
-ZGV2X2Vycl9wcm9iZSgpIGhlbHBlciB3aGljaCBwcmludHMgYWN0dWFsIGVycm9yCj4gKGhlbHBm
-dWwgZm9yIGRlYnVnZ2luZykgYW5kIGRlYWxzIHdpdGggLUVQUk9CRV9ERUZFUi4KPiAKPiBTaWdu
-ZWQtb2ZmLWJ5OiBSYWZhxYIgTWnFgmVja2kgPHJhZmFsQG1pbGVja2kucGw+CgpSZXZpZXdlZC1i
-eTogRmxvcmlhbiBGYWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+Ci0tIApGbG9yaWFuCgot
-LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Mon, 2021-11-22 at 17:05 +0530, Vinod Koul wrote:
+> On 07-11-21, 15:56, Chunfeng Yun wrote:
+> > Due to some SoCs have a bit shift issue that will drop a bit for
+> > usb3
+> > phy or pcie phy, fix it by adding software efuse reading and
+> > setting,
+> > but only support it optionally for versoin 2/3.
+> 
+> s/versoin/version
+Ok
+> 
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> >  drivers/phy/mediatek/phy-mtk-tphy.c | 162
+> > ++++++++++++++++++++++++++++
+> >  1 file changed, 162 insertions(+)
+> > 
+> > diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > index cdcef865fe9e..3b5b1c266595 100644
+> > --- a/drivers/phy/mediatek/phy-mtk-tphy.c
+> > +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+> > @@ -12,6 +12,7 @@
+> >  #include <linux/iopoll.h>
+> >  #include <linux/mfd/syscon.h>
+> >  #include <linux/module.h>
+> > +#include <linux/nvmem-consumer.h>
+> >  #include <linux/of_address.h>
+> >  #include <linux/of_device.h>
+> >  #include <linux/phy/phy.h>
+> > @@ -41,6 +42,9 @@
+> >  #define SSUSB_SIFSLV_V2_U3PHYD		0x200
+> >  #define SSUSB_SIFSLV_V2_U3PHYA		0x400
+> >  
+> > +#define U3P_MISC_REG1		0x04
+> > +#define MR1_EFUSE_AUTO_LOAD_DIS		BIT(6)
+> > +
+> >  #define U3P_USBPHYACR0		0x000
+> >  #define PA0_RG_U2PLL_FORCE_ON		BIT(15)
+> >  #define PA0_USB20_PLL_PREDIV		GENMASK(7, 6)
+> > @@ -133,6 +137,8 @@
+> >  #define P3C_RG_SWRST_U3_PHYD_FORCE_EN	BIT(24)
+> >  
+> >  #define U3P_U3_PHYA_REG0	0x000
+> > +#define P3A_RG_IEXT_INTR		GENMASK(15, 10)
+> > +#define P3A_RG_IEXT_INTR_VAL(x)		((0x3f & (x)) << 10)
+> >  #define P3A_RG_CLKDRV_OFF		GENMASK(3, 2)
+> >  #define P3A_RG_CLKDRV_OFF_VAL(x)	((0x3 & (x)) << 2)
+> >  
+> > @@ -187,6 +193,19 @@
+> >  #define P3D_RG_FWAKE_TH		GENMASK(21, 16)
+> >  #define P3D_RG_FWAKE_TH_VAL(x)	((0x3f & (x)) << 16)
+> >  
+> > +#define U3P_U3_PHYD_IMPCAL0		0x010
+> > +#define P3D_RG_FORCE_TX_IMPEL		BIT(31)
+> > +#define P3D_RG_TX_IMPEL			GENMASK(28, 24)
+> > +#define P3D_RG_TX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
+> > +
+> > +#define U3P_U3_PHYD_IMPCAL1		0x014
+> > +#define P3D_RG_FORCE_RX_IMPEL		BIT(31)
+> > +#define P3D_RG_RX_IMPEL			GENMASK(28, 24)
+> > +#define P3D_RG_RX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
+> > +
+> > +#define U3P_U3_PHYD_RSV			0x054
+> > +#define P3D_RG_EFUSE_AUTO_LOAD_DIS	BIT(12)
+> > +
+> >  #define U3P_U3_PHYD_CDR1		0x05c
+> >  #define P3D_RG_CDR_BIR_LTD1		GENMASK(28, 24)
+> >  #define P3D_RG_CDR_BIR_LTD1_VAL(x)	((0x1f & (x)) << 24)
+> > @@ -307,6 +326,11 @@ struct mtk_phy_pdata {
+> >  	 * 48M PLL, fix it by switching PLL to 26M from default 48M
+> >  	 */
+> >  	bool sw_pll_48m_to_26m;
+> > +	/*
+> > +	 * Some SoCs (e.g. mt8195) drop a bit when use auto load efuse,
+> > +	 * support sw way, also support it for v2/v3 optionally.
+> > +	 */
+> > +	bool sw_efuse_supported;
+> >  	enum mtk_phy_version version;
+> >  };
+> >  
+> > @@ -336,6 +360,10 @@ struct mtk_phy_instance {
+> >  	struct regmap *type_sw;
+> >  	u32 type_sw_reg;
+> >  	u32 type_sw_index;
+> > +	u32 efuse_sw_en;
+> > +	u32 efuse_intr;
+> > +	u32 efuse_tx_imp;
+> > +	u32 efuse_rx_imp;
+> >  	int eye_src;
+> >  	int eye_vrt;
+> >  	int eye_term;
+> > @@ -1040,6 +1068,130 @@ static int phy_type_set(struct
+> > mtk_phy_instance *instance)
+> >  	return 0;
+> >  }
+> >  
+> > +static int phy_efuse_get(struct mtk_tphy *tphy, struct
+> > mtk_phy_instance *instance)
+> > +{
+> > +	struct device *dev = &instance->phy->dev;
+> > +	int ret = 0;
+> > +
+> > +	/* tphy v1 doesn't support sw efuse, skip it */
+> > +	if (!tphy->pdata->sw_efuse_supported) {
+> > +		instance->efuse_sw_en = 0;
+> > +		return 0;
+> > +	}
+> > +
+> > +	/* software efuse is optional */
+> > +	instance->efuse_sw_en = device_property_read_bool(dev, "nvmem-
+> > cells");
+> > +	if (!instance->efuse_sw_en)
+> > +		return 0;
+> > +
+> > +	switch (instance->type) {
+> > +	case PHY_TYPE_USB2:
+> > +		ret = nvmem_cell_read_variable_le_u32(dev, "intr",
+> > &instance->efuse_intr);
+> > +		if (ret) {
+> > +			dev_err(dev, "fail to get u2 intr efuse, %d\n",
+> > ret);
+> > +			break;
+> > +		}
+> > +
+> > +		/* no efuse, ignore it */
+> > +		if (!instance->efuse_intr) {
+> > +			dev_warn(dev, "no u2 intr efuse, but dts enable
+> > it\n");
+> > +			instance->efuse_sw_en = 0;
+> > +			break;
+> > +		}
+> 
+> What does this check do...? so a zero value is not valid..?
+Yes, because it's also zero for SoC without efuse, prefer to use
+default value instead.
+
+> 
+> > +
+> > +		dev_info(dev, "u2 efuse - intr %x\n", instance-
+> > >efuse_intr);
+> 
+> dev_dbg()?
+We usually use HW auto load way, print this log can help to point out
+that it's specific SoC.
+
+> 
+> > +		break;
+> 
+> empty line after break improves readability, pls add
+Ok
+> 
+> > +	case PHY_TYPE_USB3:
+> > +	case PHY_TYPE_PCIE:
+> > +		ret = nvmem_cell_read_variable_le_u32(dev, "intr",
+> > &instance->efuse_intr);
+> > +		if (ret) {
+> > +			dev_err(dev, "fail to get u3 intr efuse, %d\n",
+> > ret);
+> > +			break;
+> > +		}
+> 
+> This seems to be common, why not read this before switch?
+It's not used for SGMII or SATA, but not applied until now
+
+> 
+> > +
+> > +		ret = nvmem_cell_read_variable_le_u32(dev, "rx_imp",
+> > &instance->efuse_rx_imp);
+> > +		if (ret) {
+> > +			dev_err(dev, "fail to get u3 rx_imp efuse,
+> > %d\n", ret);
+> > +			break;
+> > +		}
+> > +
+> > +		ret = nvmem_cell_read_variable_le_u32(dev, "tx_imp",
+> > &instance->efuse_tx_imp);
+> > +		if (ret) {
+> > +			dev_err(dev, "fail to get u3 tx_imp efuse,
+> > %d\n", ret);
+> > +			break;
+> > +		}
+> > +
+> > +		/* no efuse, ignore it */
+> > +		if (!instance->efuse_intr &&
+> > +		    !instance->efuse_rx_imp &&
+> > +		    !instance->efuse_rx_imp) {
+> > +			dev_warn(dev, "no u3 intr efuse, but dts enable
+> > it\n");
+> > +			instance->efuse_sw_en = 0;
+> > +			break;
+> > +		}
+> 
+> again, zero values are not valid?
+It's also zero for SoC without efuse, treat it as invalid value
+
+> 
+> > +
+> > +		dev_info(dev, "u3 efuse - intr %x, rx_imp %x, tx_imp
+> > %x\n",
+> > +			 instance->efuse_intr, instance->efuse_rx_imp,
+> > +			 instance->efuse_tx_imp);
+> 
+> dbg pls
+Ok
+> 
+> > +		break;
+> > +	default:
+> > +		dev_err(dev, "no sw efuse for type %d\n", instance-
+> > >type);
+> > +		ret = -EINVAL;
+> > +	}
+> > +
+> > +	return ret;
+> > +}
+> > +
+> > +static void phy_efuse_set(struct mtk_phy_instance *instance)
+> > +{
+> > +	struct device *dev = &instance->phy->dev;
+> > +	struct u2phy_banks *u2_banks = &instance->u2_banks;
+> > +	struct u3phy_banks *u3_banks = &instance->u3_banks;
+> > +	u32 tmp;
+> > +
+> > +	if (!instance->efuse_sw_en)
+> > +		return;
+> > +
+> > +	switch (instance->type) {
+> > +	case PHY_TYPE_USB2:
+> > +		tmp = readl(u2_banks->misc + U3P_MISC_REG1);
+> > +		tmp |= MR1_EFUSE_AUTO_LOAD_DIS;
+> > +		writel(tmp, u2_banks->misc + U3P_MISC_REG1);
+> > +
+> > +		tmp = readl(u2_banks->com + U3P_USBPHYACR1);
+> > +		tmp &= ~PA1_RG_INTR_CAL;
+> > +		tmp |= PA1_RG_INTR_CAL_VAL(instance->efuse_intr);
+> > +		writel(tmp, u2_banks->com + U3P_USBPHYACR1);
+> > +		break;
+> > +	case PHY_TYPE_USB3:
+> > +	case PHY_TYPE_PCIE:
+> > +		tmp = readl(u3_banks->phyd + U3P_U3_PHYD_RSV);
+> > +		tmp |= P3D_RG_EFUSE_AUTO_LOAD_DIS;
+> > +		writel(tmp, u3_banks->phyd + U3P_U3_PHYD_RSV);
+> 
+> add a updatel() macro and use this here and other places?
+You mean add macro to set/clear bits?
+If so, I need prepare another patch for this purpose
+
+Thanks a lot
+
+> 
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
