@@ -4,145 +4,154 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A92EFC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Nov 2021 14:07:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4593CC433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Nov 2021 05:07:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=dvPFjHNIuO6BiGTroXoOmThD9XmVdSrtJJ0Z0z5UlqE=; b=X4H5sHqLjnV5RCrEVOXhR58KaE
-	XdLSE9P9YrGmaF+BzssNO34R9H1P7T3rVGA6CLo1c5QvpFMUoopzAySoZ/9MlyIzV/GWLhnM7Ujq4
-	Vu9RwE98it4FZ4BgeEkzQDqbvPZ3xYHK3gyK26gU10ZMV8T1qWf21hFg17bgdNnmR06IlnApmAqg1
-	iybO9iOj1UUgSTrL/MnnVGZqg04IuCS5fSibjHRbYXzJqApJov+yQe0ELk8+1al7FayulfMr8DJy/
-	AQrAZv1m2xg95/dyKkRsFGOWjoFVrCdukh9yZT2oOBZdtNAwmceURDHdjKeokK+i6MAPc/Nr2tgDf
-	v+2rqe0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AZIzcpI9vlPJ09Zh/mvFrK0UdWFAIoSK53ufO60CVxk=; b=rYcdZ0yBiSsSww
+	fzQZJgIrBjnBBshr++97K4D0pnh+eYwTJdBeJe1/AqWNREdJqXX3RlrQVQMPKVbtYigM+4VKlCSlB
+	GtGajZypO4siNa1r3x6aNMjXQUjdgNNX4Q7f5MpCjF5+HDyqkpIoEKb6C1DqGsTykMUBXJNngIWuC
+	vi3f3ee4WnYocTItyRVmTKLSMdcXdBgkn7HSQgCwKGyujXdpfWbZEjAsE1ULF+WGGsBvsw4liNlsV
+	Bx2wD3kVXvQl54EAgnbE2/WsEo9Zp57Q1uoK8eG58+lvBf3kfTWP/Y7DeAhN5DWWH4cDwhnVic4c7
+	/VePTBUnw6zbIYkxRgCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mqFPV-007lYT-2z; Thu, 25 Nov 2021 14:07:37 +0000
-Received: from mail-eopbgr60109.outbound.protection.outlook.com
- ([40.107.6.109] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1mqTS5-009Cw4-Nc; Fri, 26 Nov 2021 05:07:13 +0000
+Received: from mx0b-00622301.pphosted.com ([205.220.175.205])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mqFPQ-007lWf-6d
- for linux-phy@lists.infradead.org; Thu, 25 Nov 2021 14:07:35 +0000
+ id 1mqTS3-009Cvk-81
+ for linux-phy@lists.infradead.org; Fri, 26 Nov 2021 05:07:12 +0000
+Received: from pps.filterd (m0241925.ppops.net [127.0.0.1])
+ by mx0a-00622301.pphosted.com (8.16.1.2/8.16.1.2) with ESMTP id 1AQ50Km8011420;
+ Fri, 26 Nov 2021 05:06:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ambarella.com;
+ h=from : to : cc :
+ subject : date : message-id : content-type : content-transfer-encoding :
+ mime-version; s=com20210415pp;
+ bh=4fJJmtws9XA9A0nrV9I7X1DT4kVBVCOy6NQH9aiXN50=;
+ b=WGr8wKOXTE2uAvpgh2oj46xIaUBW4YDm4dRJSAwYWmPx0z1OYvHVrnKTwwFnND7zle9G
+ lTZgDecjARnANWg25fokKk2ck/GFAx4VPVoalAkXGGksIaQ79yShZIXZpvltNwEHEkaL
+ cGZF4V7Y+PKgZ3bxC3PeznkAg8b8WU0Od0QCIBCn37Hg1SXHoNCqsZ8h7nzNxy/O6w80
+ fOWT16E8LHkRR2OOqKvQFBR0ONVd32/JnQk+tMHL0ur/F/jqiSxEIKo5aGRO1mHUtIJa
+ EG3sYMeVyrYzJLawcXOT7Yhibk8KOT5XuGkoGBoRB8P9Z+P8GNgLp4nGu1XA4/z1QR3U LQ== 
+Received: from nam12-mw2-obe.outbound.protection.outlook.com
+ (mail-mw2nam12lp2042.outbound.protection.outlook.com [104.47.66.42])
+ by mx0a-00622301.pphosted.com (PPS) with ESMTPS id 3cj9nt8a4k-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 26 Nov 2021 05:06:54 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VD1HPPrHgzF0gJrDyqXEQHzpBde58WFltUUUb0BxvHHLR809+D3rFnoni/WNjNzsiDVHuzCziyN+PpLgJvVTOJkbwc9y486s1sIBDtK4vk28NkML+IHFmPkmDir7jXhQglIPORH/8tLKgrALBdXZKg7rHFf3WN1M3oi+E0h2yc0pjU4hNFlRTqentLdcLyA89WFGRiVOYuNvbApD4zGceoYbVCwAl7FhahK3jXId0VsXK15oB7DBW6IPA85v8rUiSmJiIDsB8RUFAXTeIfhwYMaPkqx/4G2hs9vnppBtIK172mOJOc5dYab16gIaQ0NSG5RX4VyiDWX3rj5Z57s5nQ==
+ b=Ir/7o15foW8YMLg8P3pFYMh0YBH0Lx6dDHKjjByt+t4BWXdzmeC48VMHSVDSXNEj7NkBwDqv7/Eh7W6ElpMjn+zwHqmMJxwsAZGxjsWWGa304JshEBSqqdJywnmbyKY2mJO6+VgXJli9SD63huZ+j2Xgz4y7/5v4Qu1wVwEaB8kO2nZN9/ZNrDFy2tZOXAU9X+XL+KydMKS0iaKsrnxzI80qEZy64y1gmfEYcF11MMrbeTISC78E0FCWmuVg6zpAixPEgqcMPhKKOw1cGkWTLAzXJGvJN4USp0erLT93Lw5pp4uG3hmhBstG/YZE15GIp0BuAChJhAyNGTdIzMtwkQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=WdUj6DxSTarx5xrCjuoHe2Cx31QG+h+fAme1K/+ElPw=;
- b=ZcrTM9tHfMRFpDcAP8sav0o1TuhGH9TlDy2I/YLL6ZGTJRslHflBPf5N8qZcAkQ392MqtQMR/d6Ml/1dOHeEaQ3099ExJ3EHTwv/v8jZVxp3BXRZdwRpdOEBwMQ7G6Tpc3DMg5aRmzsJ6j15XO16WkaqqjLVLo64GZE9Xn0OT8iT6PbXkuf0HnIQSJEcesU4yVJrGJelezEviYNb9SMJuJrUL03mC+NaK/kRzmOkUwd3JEW5oiZaVcSbVixBxCMHuU/OxzfRCiK3QBt8Fjeouobhyw/yaxwuMEvyhE6c1NmmPEIr4kWJ43eGyb0N+iXKciTGFEPRISHOJpxXIts2Hw==
+ bh=xd/Wyes+sOYpCN9WtwLpP6QeTiVt91Z99ZeZtHtHY7g=;
+ b=hkkH9jXwdQOEpVj2NNM9OlRbb+Uo6VYIKfWPWevObZskfoHFFx+ljA9GW/TZ+PLst+xzP+jEohBoXNVAMhnapA5r2R87S0263dz2bs2i1pj0cztMwx9wUQ/JTtasViht+jdm5ZjIH0OrGbZN/myD9VQlqHektP77tZwWrWQGoOFrlvmMdYNfgM2MQhJcvnFqRdHHub5B33TSs0zdGUKRYXmVNZhZk3r7zjEPB4e+nL4HeSpwRAKNjFWlGX/qCP5csyvwQEKdqUpx+PGrhqgE1iSgN2ZDLWKnBCdO6OkPsc1iSM/zoLesmtNs6qonIVuUA3/j1gesXjYD0Zc73/I3kg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
+ smtp.mailfrom=ambarella.com; dmarc=pass action=none
+ header.from=ambarella.com; dkim=pass header.d=ambarella.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ambarella.onmicrosoft.com; s=selector1-ambarella-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WdUj6DxSTarx5xrCjuoHe2Cx31QG+h+fAme1K/+ElPw=;
- b=H/mcEQgO8tCqRJ7hFUU1H3EPx9bXxoA1sEqLI9iZZKOq1zFc+/AULt0RooNSq2cJflw2zfvRwmTPr4gtbjCB2mQM90RZMPPB3Izdunp9CSsB2buMMFQ1kPU49+m+rTQPA1WRNC6nMnlSkO4DC31AZHgxVVnoAWeYlFEzyAnstlA=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=axentia.se;
-Received: from DB8PR02MB5482.eurprd02.prod.outlook.com (2603:10a6:10:eb::29)
- by DB7PR02MB4475.eurprd02.prod.outlook.com (2603:10a6:10:68::30) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4713.24; Thu, 25 Nov
- 2021 14:07:25 +0000
-Received: from DB8PR02MB5482.eurprd02.prod.outlook.com
- ([fe80::7519:c72c:98b1:a39]) by DB8PR02MB5482.eurprd02.prod.outlook.com
- ([fe80::7519:c72c:98b1:a39%4]) with mapi id 15.20.4713.027; Thu, 25 Nov 2021
- 14:07:25 +0000
-Message-ID: <a1d9d0c6-e0df-2e06-d8e8-8770a9eb4b4a@axentia.se>
-Date: Thu, 25 Nov 2021 15:07:21 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.3.0
-Subject: Re: [PATCH RFC v3 4/4] phy: phy-can-transceiver: Add support for
- setting mux
-Content-Language: sv-SE
-To: Aswath Govindraju <a-govindraju@ti.com>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>, Nishanth Menon <nm@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-can@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20211123081222.27979-1-a-govindraju@ti.com>
- <20211123081222.27979-5-a-govindraju@ti.com>
-From: Peter Rosin <peda@axentia.se>
-Organization: Axentia Technologies AB
-In-Reply-To: <20211123081222.27979-5-a-govindraju@ti.com>
-X-ClientProxiedBy: GV3P280CA0043.SWEP280.PROD.OUTLOOK.COM (2603:10a6:150:9::7)
- To DB8PR02MB5482.eurprd02.prod.outlook.com
- (2603:10a6:10:eb::29)
+ bh=xd/Wyes+sOYpCN9WtwLpP6QeTiVt91Z99ZeZtHtHY7g=;
+ b=STUwi9+Q/KVlbeFA2F+2r5pQ23kYYHRIG/ITmo1zIJ9iJP4OhbFrG8sDO40P6932LhVI9AV0XwIaIDuzztdUd5Nmja0OCQFuDegaUXwvo+dIzj+pP9v/sH7Tw0E18QEv+cXGv3+NLAzhMCFMJ3W0yAWB74eUKcjHMT+qS5lW/LM=
+Received: from CH2PR19MB4024.namprd19.prod.outlook.com (2603:10b6:610:92::22)
+ by CH2PR19MB3431.namprd19.prod.outlook.com (2603:10b6:610:3a::32)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4734.23; Fri, 26 Nov
+ 2021 05:06:51 +0000
+Received: from CH2PR19MB4024.namprd19.prod.outlook.com
+ ([fe80::8143:f3e0:9fd3:a8e7]) by CH2PR19MB4024.namprd19.prod.outlook.com
+ ([fe80::8143:f3e0:9fd3:a8e7%4]) with mapi id 15.20.4713.027; Fri, 26 Nov 2021
+ 05:06:51 +0000
+From: Li Chen <lchen@ambarella.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Swapnil Jakhade
+ <sjakhade@cadence.com>, "linux-phy@lists.infradead.org"
+ <linux-phy@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+CC: Dan Carpenter <dan.carpenter@oracle.com>
+Subject: [PATCH] Revert "phy: cadence-torrent: Do not configure SERDES if it's
+ already configured"
+Thread-Topic: [PATCH] Revert "phy: cadence-torrent: Do not configure SERDES if
+ it's already configured"
+Thread-Index: Adfigy5UG7A+JRfzRGOjQFvgL0E/Bw==
+Date: Fri, 26 Nov 2021 05:06:51 +0000
+Message-ID: <CH2PR19MB4024BE31FB249744412071F6A0639@CH2PR19MB4024.namprd19.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3f516aff-2183-43af-f396-08d9b09a8eb4
+x-ms-traffictypediagnostic: CH2PR19MB3431:
+x-microsoft-antispam-prvs: <CH2PR19MB343114105529D86148261FDEA0639@CH2PR19MB3431.namprd19.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:57;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: ZN/MuUplEDolrBfbgBgZTHJ1qhs85ZfgkzyXSs2cdZl5/TqrUOD1Kq653EglKUyhkYpdtRfu/r5ur6W73BWNSvsvZXjKmbvp9ZOwXH8ecbgPNR5++5r6nZvTulmzdWsLHeB2LVZaakYijrTKGe/d4PUOcYoCcWxugRkjfBvJhdK2fsNR6JrxVpJhhTriNNTLBfQUIc+kN4PnCEQAj60S3kt1Efm3vlmQA6DpAPaK8q8OIHdvlPjib27/Gc8w8dBIt4Otyv312tn5E50izn+ymg60ymtW+iAbBlFtPPumHNo4cmaAIAaNCinv6V8UdUX6gZrsfeh9uZLm5Ba/Ydc4/9PVKxzyGsYwLJGwZEtpAeHSoFMLnSWbMYag3pHi3BaM5w1nq7NZ413a5LjD8/5ImI3R0CYfoTgb9pJiB+DdgvT7oOC7V5qkSb5Ib0bHWP9KLYD2HoXvNhlxcO+obBnQ4SgbsSkXFURyiL0ZVFOCz/97ZZ2bXtxbAOSgpMIYex/4j3xE+FnKxGJManoPOca4wFF4IQRdD8k2G3b3tb9vI+0FYgeWa5Prx/UHo6gg3kBqQAUL17toK58vVqQoleHDowyvqThEdtNveGsm0a08jhc74hi13uUoD+U1X4hJK9mCcrAfJDr4HW8Tx4sp56TtBQ==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:CH2PR19MB4024.namprd19.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(366004)(33656002)(64756008)(66446008)(6506007)(316002)(88996005)(8676002)(55016003)(66476007)(66556008)(7696005)(66946007)(122000001)(86362001)(26005)(508600001)(4326008)(52536014)(8936002)(38100700002)(186003)(2906002)(9686003)(71200400001)(110136005)(5660300002)(83380400001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?0AYJ+IYQP6ld8VTiigM78Joib2Zo+QlBYVkmOlyjTkKxTh59VATQViXobc7C?=
+ =?us-ascii?Q?0vWBHK8m7Ulo1Y/SMxR38X1YiJFn+cUDj7U2xUb/0rftRlc5fFDyKjdrFwSt?=
+ =?us-ascii?Q?n/m7RFAWlR1Z7Jg4u08Y0NdMK3FPygvSnVtAnj/XIPjtbGrp0/0PrwhxbGcV?=
+ =?us-ascii?Q?Gv1fKjWeWJ5FuzNDxw3GWm2pRe4nho3Nl7vDExl23OxmjYrsaJUVVMjT3pSz?=
+ =?us-ascii?Q?QWzqnbxw6WGZk7C094TmRyNjzF4zzkKx5TG2cfWzawIrUDRWaEtcGZU+S3Ll?=
+ =?us-ascii?Q?fSFLwh4j4KKJVupIk4IY7EGVx//UThhgtX+oBfXQQ/ayGV5lKbYBX/abWpgo?=
+ =?us-ascii?Q?AqcGoGabShBGQf3XJoWLpQRPIUZr27a8s3+h0hWSsKx5pdHzHDKqAw5YGXbA?=
+ =?us-ascii?Q?F+tL2G5YYcYB3BAE5EnpOJd2CDo/Fsk8R65aVxSGT6grBVaqAhb+CLIKXSoT?=
+ =?us-ascii?Q?7jZfAqNFf3Rbw50riyl0xl47EReoyFOlbj1U7dJoMLtgZBUz7OdOJA1lUdYp?=
+ =?us-ascii?Q?TvHrHe+NiysMgSjnPsIPAaPzdg8Crz1M8aU7pM0SveMEOPegsEQM/7TFDo19?=
+ =?us-ascii?Q?unJVyKumcLcI1tOyHxcTOwCWZz8tN/COVnGE8kUhnBTmWGc71X/HcKDWVugz?=
+ =?us-ascii?Q?qbK6vI36Yr3q50ELV0dHcTZzEarSRHVjSwomSTdXwV58sxGmQQttWfvHKVUV?=
+ =?us-ascii?Q?0Ea8AgYRRskxsnLwFEg1kG9qz67ndJp7ldZu0BtVza30KPJAodSwntCeH09D?=
+ =?us-ascii?Q?cfyjBzAn2xTXJA/H5G7smcVwBmaeCOhd7ce0c3aQCJfvJFY6k14ec2mauGlg?=
+ =?us-ascii?Q?+JUFno4SX9+0bwiI+LpHnLKaMkapK7LR0cgvspvsqyk51yzw5C/uJeyfI0TX?=
+ =?us-ascii?Q?25avWm47Q7gKlzdoS6QmkkWhtHLTMdMD6Mu6sKJc6Iep7bVp/xvYBOclx4mO?=
+ =?us-ascii?Q?noHKMr4YKk3BGU6zKpPglN5tLgPgZtne2l06PFPUc6rsq2tGUXOMHQscfaaJ?=
+ =?us-ascii?Q?8OHLeP0SYss30xtbJnPfjTjbagk/8A5RbWIMj6roxrS75J+xKJ6/YgJ/6ETe?=
+ =?us-ascii?Q?uaG7NpuRB1adYd21P59nkj3YwJkUKIUus/q9CD6hfj9ZYF4iQm4AE2NYraaw?=
+ =?us-ascii?Q?jIRagHqRxdFN2R7K0qh9mnB8iEeYW5MXEEgXNzThzqywMPlUjiRyvwShjJ6q?=
+ =?us-ascii?Q?lVVidaeEkEepUP/n2XwldwaszKD8aC0h4c8HDqiodEbHe4UwWalOmJT/RDFB?=
+ =?us-ascii?Q?5yLp6jrIeXKHOWqRhItVf2s4RjE+n0xajdCvp/xzD5+/8BAwGm0U7HqRaljE?=
+ =?us-ascii?Q?WhQJfeKICWzWaLDWCHTvvbJ0XMBWAEDYJOgGpyHXPaQ8BuP5bmYLO8LSO6UW?=
+ =?us-ascii?Q?fIHw8GH8G3G6xzb4/DHLD5u8KUPZknj7DALxo0l7bgqLuQuDgkcqda3nQXPn?=
+ =?us-ascii?Q?fCEu6m9qMdfEY+fnr9hk6TXr2VQRlBqQAyWVy/3HKrHdbxLXiKyiQZXuBq5P?=
+ =?us-ascii?Q?jPi5C9VWU4VRoZ4x6G2zsbz6wcmX+fpmq7tX+SjEtToKD59a6/F3y3iwb5SB?=
+ =?us-ascii?Q?0pQWdWLF6U712/iyJ+eA2un6JtxUVxV72Lm6amsHJYMSvRKsqAlvzS8jntd7?=
+ =?us-ascii?Q?SjXvO3Dpc5hU0F11F5Ur+GI=3D?=
 MIME-Version: 1.0
-Received: from [192.168.13.3] (185.178.140.238) by
- GV3P280CA0043.SWEP280.PROD.OUTLOOK.COM (2603:10a6:150:9::7) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4734.20 via Frontend Transport; Thu, 25 Nov 2021 14:07:23 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 01d79ece-7c37-4a44-a5cb-08d9b01ce820
-X-MS-TrafficTypeDiagnostic: DB7PR02MB4475:
-X-Microsoft-Antispam-PRVS: <DB7PR02MB44752299CFFB6718CF733213BC629@DB7PR02MB4475.eurprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: AGfWycsL+w5DDiHtLrS9TzsJq/zPt76wREIQlTkWZwlETdJ1gQKu8/NSXBTuFjfeIE4DKiJB72iOx4z+tZYVBU0O+KUhRIPteEqlBO/vu2Mt4GBkCBo46K/BhU1Jr8pJyjzz1ZajixmEU2e0ComnpwV3U36HbkEL4fcao64t5CD5Jkt9Pmo0M3fCPqtUrVZ71FNq3BrYvGuxYOdCSrE6M5s0njnwgUlyMgEFwyQXRqqPScyyUBS/ka+7NaAWjuRX85xwhqZkp6v3pMVH6iDfU6l/jVvrNltyyD7uPJUBw1oF7eokadXImDNiApkLqGJuwbmmKulRpkgh0ONz0mnU6gBpwqbKhIFphIpGGEMhCgQt+FcU1TOrRSXN8NDJrnL892qO+PeagJSpCcWSoX6V3V3zOfxf+NiQTg7CkYcarfBgUmieKRELBLqHBrJCzMWeEKKC+dyjH50Cnu9bceyn2xx6ALvW37zZyDk0QR/WAA2W8UVTh3W6cL22AuhhVwIi+6rJPF9/6CjAfTA0u3nZy4Bxtk9FGXVYo5uBmuGehm0/78iOet+TVL4f2PhOX2NfeIJXUH7xOXQ/MnQ7Ep5TtIFrZL0TYmcwU10Bk/z1OEGfqiG/HAXNOcvIjX2rK3fQbvY3yk3inFXnrx4YmAx/OvGABI4yxs5PS9YtyO4q266XMSR+nHi5EOhb2PUki9RWz4c0nq2qr2qnazlNLuGvHpp/cEQl/jXBnb+vBfxn/ulpOGwLjAJ7N/jMOW74F3Wt
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB8PR02MB5482.eurprd02.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(136003)(39830400003)(396003)(376002)(366004)(346002)(956004)(8676002)(6486002)(38100700002)(26005)(186003)(6916009)(508600001)(8936002)(4326008)(2616005)(31696002)(16576012)(54906003)(66556008)(66476007)(316002)(86362001)(66946007)(83380400001)(2906002)(53546011)(5660300002)(36916002)(4001150100001)(36756003)(31686004)(7416002)(45980500001)(43740500002);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?aXFjd2YvU1ZxcFd1N0xxMXlRc0YzSDlFUXVxNGQ2eXNCSEVySG9PSHA2UkMr?=
- =?utf-8?B?QlV1eXB5aVdRQmhoRHNJRTM5eTkzNWZaY21YeXVvaEVKeUtCZUdERVFrM3Bp?=
- =?utf-8?B?Zy91QXQzcmExM0ttcnQ1cllFM3JqN2JsMFpzeVYzOURHS0ZMMmM3bkZLQTJS?=
- =?utf-8?B?LzB1VWJ6b0NrNnI1R2Z3UStVUERYd09QQVZrK2RsNDJuWEtEYW15cnRwZmdw?=
- =?utf-8?B?UHNFK0hLM0FzTUtBOWtjS1VLSSs4RElwTFRFalFUcnhXSE1NRkdiQk1kbGNs?=
- =?utf-8?B?S25ETDU4SE9ycTZ5cTlhZVM5TU1ndjd2WmNDbWU2UHU5a0U0QTBRNjBvSEE5?=
- =?utf-8?B?YUxmeTFUTktlRExxQ3RPZmhtV0pXVXphWU54aWdBYVNWYjF1bUhTTWZWZ0ZN?=
- =?utf-8?B?d29vZEQ1WDlHK3VSYXgvcDB0Z1FuRG04T2tHaUl2N3pSMFVPN0xKL0ZEdzBJ?=
- =?utf-8?B?OVMyVHRRTm9oRDN0M3lKNEVUZEMxdkdvckhzRzFZckpMSWw3VENpMzRqdmg1?=
- =?utf-8?B?MEtzdmpxMlJIM2g0TjdveWdQZTFqZWlUK3R5V0xjUHRLeENGNTRXTTdoL1dK?=
- =?utf-8?B?TnJJS3ZISXQvcGJwVllEWXZ4cGpWc1JydU8zL1lhZkd4bzdXUUVIZSthR005?=
- =?utf-8?B?YmNSM3RSOTI2SU10OTlpS001Z2x5WXEydVZ4OUw5Wk1GVXQ0N1NyV2hYRDR2?=
- =?utf-8?B?MllUdmUwK2R1ZDZpUmJRVVZnQXhRS2o2WGZBZG9NUkUrS0FXVTRFdkljT3g2?=
- =?utf-8?B?dUNma2pkZG40eHU0V3VyQUNKT2lsWTlhRkRadGhpQjRtUHhxVzZjUitkSkJ6?=
- =?utf-8?B?cG5XWGNtdG9lR0ZPRmV3NHZCajBLWkpXVVd2VXdieC9LL2RWbU9NZ05MenBj?=
- =?utf-8?B?dW9ONVZGNWVUekJ4aE9WU0dQUzMrUUEycFNnNzJHVFc1dHR6UWQrNEdpN0Y0?=
- =?utf-8?B?Wll5UmY0Y0duNWp1L2k4amlQTkJZRCtab1cxTU50MVhPS0JJaDhmVk9iQ1Zh?=
- =?utf-8?B?RHVCeml2aUkyckJMZ052Zi9FUk1kWUdiU3lmVmVHdGNiMWNxcGdrNy9tNnMx?=
- =?utf-8?B?dnAwQWZ5T1dqWXp4SkZFNitueENNSnNFazVkT2ZtVUVNbDNZSDJpZ3VuZHdr?=
- =?utf-8?B?K1hlay9wWWQyT2MrSWR6ZW1UR3VnbTJ2c2Y3TjFhOWVVV0IzZmY2VjZnMVF6?=
- =?utf-8?B?Vjd5VzBJRHR4ZjdHYXRSVWdVVWhFdXV6YUZsRGlsQ1RFVms1UlRFbFpWa1Jp?=
- =?utf-8?B?UUp2clUyWldud2xveUQ2eHY2M1pJMWVydmpWSmtOV3NCcWp2RnVwaHQ1UTda?=
- =?utf-8?B?b3c0THNtSE92UDRJQnVUZ3d6T3B0ZXV5YnZhc1lqWlFpTEh3RjZPWE85V2Ir?=
- =?utf-8?B?Yk5lOGJYZ1ZINnR3MEp6dm9iVnp1WVYxaFY1V3NVdit5S2gxbUNwbDUwT21p?=
- =?utf-8?B?RS95UU1oUU5SdTNCcGhCcW93MUVTKzVLdENIY2lhcS9POUlvS1NMemwxK2dT?=
- =?utf-8?B?TTU5bnVVbDVZcEVWVy9YTDFrQll1YTZoL0RZblpwUnJkaEVoUmFjNktQVUJ2?=
- =?utf-8?B?RVVjd1k5TUhaK0V6VG9DbHoxc3ZReTBML0ZFRGV1ZTRmN2RqZXdzeVZ2MS9C?=
- =?utf-8?B?aTl1dFdZQndoeEl3RVpKUlRpeDhFYVZmZTJmajhwSzU5RnMvLzU4OHF6Nk9m?=
- =?utf-8?B?cTVLM005amw1TkdtSVIzcSszUWhOcW1hZ2dtMTBnOXBIQW52c0VXRjJWMTBL?=
- =?utf-8?B?VVdOK0JnWlZ1VUVFc3Z1dWJYbk5teDd1T0U2eExvdzByOXNYYkYrQ1Y2T0tu?=
- =?utf-8?B?OHF2Vkx0SlZVaDlZeEh4TS80ei82VGFZUjNrbFcxaFN0V2tlRGQxcGZ1NEN4?=
- =?utf-8?B?NlZHOGZZUUNxT3kvYXRjeWNUMnZSMGZITTlBVVpTNHorb0o1QkdrVGRmbjB6?=
- =?utf-8?B?WE9jYVRlT3VEa3VxUU90RzkwV1E2M2NHVkxRMDcvaXFWSENLZUFoV3V0aDBS?=
- =?utf-8?B?a1RvTTZ4djducEpiRlNqbjkyWFRCV0dYVVU3UGM3NWhpcS9YYTdVUDExSU5B?=
- =?utf-8?B?dzBiN0NtZXhGSFd1R3VqWkhhb2RPZmZ6WFZ5S0dRUzB3VlVnNUJEWXJtcW80?=
- =?utf-8?Q?SbaA=3D?=
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: 01d79ece-7c37-4a44-a5cb-08d9b01ce820
-X-MS-Exchange-CrossTenant-AuthSource: DB8PR02MB5482.eurprd02.prod.outlook.com
+X-OriginatorOrg: ambarella.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Nov 2021 14:07:25.1181 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5enS8dUIvi7P6oHg1C6PbJA3vBOlJkIf35alPlymiNW2M+qDNqD1h3TyF07EC29L
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR02MB4475
+X-MS-Exchange-CrossTenant-AuthSource: CH2PR19MB4024.namprd19.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3f516aff-2183-43af-f396-08d9b09a8eb4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Nov 2021 05:06:51.3409 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3ccd3c8d-5f7c-4eb4-ae6f-32d8c106402c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Z3rogJiEwMvdyDBv5YlZWzSrvSkkwGUYVdPrETU3YJuVz6RWdmFR8Sn12JBcFKy8gf2d4Re1aX8OyyrRPkn1JQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR19MB3431
+X-Proofpoint-GUID: lRM3idvApzWdXl546VcAohBeg_ykNd1x
+X-Proofpoint-ORIG-GUID: lRM3idvApzWdXl546VcAohBeg_ykNd1x
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
+ definitions=2021-11-26_01,2021-11-25_02,2020-04-07_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0
+ priorityscore=1501 mlxscore=0 adultscore=0 bulkscore=0 suspectscore=0
+ clxscore=1011 malwarescore=0 phishscore=0 lowpriorityscore=0
+ mlxlogscore=999 spamscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2110150000 definitions=main-2111260028
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211125_060732_284389_623ADC3B 
-X-CRM114-Status: GOOD (  27.70  )
+X-CRM114-CacheID: sfid-20211125_210711_507359_C2F70D32 
+X-CRM114-Status: GOOD (  18.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,119 +168,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi!
+This reverts commit
+b69d39f68419("phy: cadence-torrent: Do not configure SERDES if it's already configured")
 
-On 2021-11-23 09:12, Aswath Govindraju wrote:
-> On some boards, for routing CAN signals from controller to transceiver,
-> muxes might need to be set. Therefore, add support for setting the mux by
-> reading the mux-controls property from the device tree node.
-> 
-> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
-> ---
->  drivers/phy/Kconfig               |  1 +
->  drivers/phy/phy-can-transceiver.c | 22 ++++++++++++++++++++++
->  2 files changed, 23 insertions(+)
-> 
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 82b63e60c5a2..300b0f2b5f84 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -64,6 +64,7 @@ config USB_LGM_PHY
->  config PHY_CAN_TRANSCEIVER
->  	tristate "CAN transceiver PHY"
->  	select GENERIC_PHY
-> +	select MULTIPLEXER
->  	help
->  	  This option enables support for CAN transceivers as a PHY. This
->  	  driver provides function for putting the transceivers in various
-> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
-> index 6f3fe37dee0e..6c94e3846410 100644
-> --- a/drivers/phy/phy-can-transceiver.c
-> +++ b/drivers/phy/phy-can-transceiver.c
-> @@ -10,6 +10,7 @@
->  #include<linux/module.h>
->  #include<linux/gpio.h>
->  #include<linux/gpio/consumer.h>
-> +#include <linux/mux/consumer.h>
->  
->  struct can_transceiver_data {
->  	u32 flags;
-> @@ -21,13 +22,22 @@ struct can_transceiver_phy {
->  	struct phy *generic_phy;
->  	struct gpio_desc *standby_gpio;
->  	struct gpio_desc *enable_gpio;
-> +	struct mux_state *mux_state;
->  };
->  
->  /* Power on function */
->  static int can_transceiver_phy_power_on(struct phy *phy)
->  {
-> +	int ret;
->  	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
->  
-> +	if (can_transceiver_phy->mux_state) {
-> +		ret = mux_state_select(can_transceiver_phy->mux_state);
-> +		if (ret) {
-> +			dev_err(&phy->dev, "Failed to select CAN mux: %d\n", ret);
-> +			return ret;
-> +		}
-> +	}
->  	if (can_transceiver_phy->standby_gpio)
->  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
->  	if (can_transceiver_phy->enable_gpio)
-> @@ -45,6 +55,8 @@ static int can_transceiver_phy_power_off(struct phy *phy)
->  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
->  	if (can_transceiver_phy->enable_gpio)
->  		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
-> +	if (can_transceiver_phy->mux_state)
-> +		mux_state_deselect(can_transceiver_phy->mux_state);
+our soc will hang on any regmap field read before reset.
 
-Careful, it is not obvious that you are following the documentation you
-added in patch 3/4
+Signed-off-by: Li Chen <lchen@ambarella.com>
+---
+ drivers/phy/cadence/phy-cadence-torrent.c | 31 +++++++----------------
+ 1 file changed, 9 insertions(+), 22 deletions(-)
 
-+ * Therefore, make sure to call mux_state_deselect() when the operation is
-+ * complete and the mux-control is free for others to use, but do not call
-+ * mux_state_deselect() if mux_state_select() fails.
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index 415ace64adc5c..e57e0b1523aff 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -2031,11 +2031,6 @@ static int cdns_torrent_noop_phy_on(struct phy *phy)
+ 	return 0;
+ }
+ 
+-static const struct phy_ops noop_ops = {
+-	.power_on	= cdns_torrent_noop_phy_on,
+-	.owner		= THIS_MODULE,
+-};
+-
+ static
+ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+ {
+@@ -2282,7 +2277,6 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	struct device_node *child;
+ 	int ret, subnodes, node = 0, i;
+ 	u32 total_num_lanes = 0;
+-	int already_configured;
+ 	u8 init_dp_regmap = 0;
+ 	u32 phy_type;
+ 
+@@ -2321,20 +2315,16 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
+-	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1, &already_configured);
+-
+-	if (!already_configured) {
+-		ret = cdns_torrent_reset(cdns_phy);
+-		if (ret)
+-			goto clk_cleanup;
++	ret = cdns_torrent_reset(cdns_phy);
++	if (ret)
++		goto clk_cleanup;
+ 
+-		ret = cdns_torrent_clk(cdns_phy);
+-		if (ret)
+-			goto clk_cleanup;
++	ret = cdns_torrent_clk(cdns_phy);
++	if (ret)
++		goto clk_cleanup;
+ 
+ 		/* Enable APB */
+-		reset_control_deassert(cdns_phy->apb_rst);
+-	}
++	reset_control_deassert(cdns_phy->apb_rst);
+ 
+ 	for_each_available_child_of_node(dev->of_node, child) {
+ 		struct phy *gphy;
+@@ -2404,10 +2394,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 		of_property_read_u32(child, "cdns,ssc-mode",
+ 				     &cdns_phy->phys[node].ssc_mode);
+ 
+-		if (!already_configured)
+-			gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
+-		else
+-			gphy = devm_phy_create(dev, child, &noop_ops);
++		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
+ 		if (IS_ERR(gphy)) {
+ 			ret = PTR_ERR(gphy);
+ 			goto put_child;
+@@ -2490,7 +2477,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 		goto put_lnk_rst;
+ 	}
+ 
+-	if (cdns_phy->nsubnodes > 1 && !already_configured) {
++	if (cdns_phy->nsubnodes > 1) {
+ 		ret = cdns_torrent_phy_configure_multilink(cdns_phy);
+ 		if (ret)
+ 			goto put_lnk_rst;
+-- 
+2.33.1
+ 
 
-Or, are you absolutely certain that can_transceiver_phy_power_off cannot,
-in any curcumstance, be called without a successful previous call to can_transceiver_phy_power_on? Or that can_transceiver_phy_power_on will
-never ever be called again without a can_transceiver_phy_power_off in
-between the two on calls?
-
-If there is any doubt, you need to remember if you have selected/deselected
-the mux. Maybe this should be remebered inside struct mux_state so that it
-is always safe to call mux_state_select/mux_state_deselect? That's one way
-to solve this difficulty.
-
-But then again, the phy layer might ensure that extra precaution is not
-needed. But it might also be that it for sure is intended that this is solved
-in the phy layer, but that callbacks (or whatever) has been added "after the
-fact" and that an extra "on" or "off" has just been just shrugged at.
-
-Cheers,
-Peter
-
->  
->  	return 0;
->  }
-> @@ -95,6 +107,16 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
->  	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
->  	drvdata = match->data;
->  
-> +	if (of_property_read_bool(dev->of_node, "mux-controls")) {
-> +		struct mux_state *mux_state;
-> +
-> +		mux_state = devm_mux_state_get(dev, NULL);
-> +		if (IS_ERR(mux_state))
-> +			return dev_err_probe(&pdev->dev, PTR_ERR(mux_state),
-> +					     "failed to get mux\n");
-> +		can_transceiver_phy->mux_state = mux_state;
-> +	}
-> +
->  	phy = devm_phy_create(dev, dev->of_node,
->  			      &can_transceiver_phy_ops);
->  	if (IS_ERR(phy)) {
-> 
+**********************************************************************
+This email and attachments contain Ambarella Proprietary and/or Confidential Information and is intended solely for the use of the individual(s) to whom it is addressed. Any unauthorized review, use, disclosure, distribute, copy, or print is prohibited. If you are not an intended recipient, please contact the sender by reply email and destroy all copies of the original message. Thank you.
 
 -- 
 linux-phy mailing list
