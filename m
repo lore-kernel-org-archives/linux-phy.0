@@ -4,81 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6D23C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Nov 2021 12:56:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8457FC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Nov 2021 23:11:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=DHUdHjFf4TCAxtn0d3/Qo49AxfDbEzUa/IkKBXCudG0=; b=WvGz+ybJtjoIJluhiDiTxSrBZL
-	NBLqDCxq/XKd3mIC6dMoWnlxITXjI4sIuCQQVw2KC6xvAtjej4jCiID76/Awa2EboeTQKJzB5uYZ0
-	VxhJg+B27Gw5mWo8Ndq336p+QfNRIZ9xJRTnx2oTNG6DHG4yKFuRQpDitYuYRcf+aFpgVLaaxpvZs
-	fXaEsA5yfDogEYbiYlBDQazakwUh+cCvjr1xxFrcii33SB95c7NMU67+3flYy8pIrKkNFzryG/jAh
-	6W5hH/Nx4A4KruDnfmokdxkDKifJCkSxur8x+Si2OHg1z5IvI1uhx5VqmZi1xrstDkg5Y7aqmGNcA
-	k4jJIzoA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t4nBxeyPB1EM2viOR8PDfceS/MZ6cnKiDXgnSxWPRIo=; b=VYJY6/Jhsguyai
+	kWcWKR2xkweXKxn19DJqBdxBpizpc7FEHoI/SBjyb73tlXxZCsfE1buQXVP2jL0uHVcha1fUi7faA
+	AQ+Wh3AitMUd2XS1awW9mEJH3oNus/b7DnZ+1XJGfNWTqmTCFLdinKZ2drk8xhz4D+cNYYYgHsGt6
+	/xCbYL0cfmdl18InjGVI74oihtrrRYAgBwpap93jWNsS33elZtXiP73k8cEikAv5OKIkbOxTSvAW1
+	tsgnPT6WKK4NLtjHBqPl1IsDPPRNzh6DWtOlB9FHYi6rJ2qsoRtvgWgKAbAfePMNomMj4JL488i3y
+	ZAaCb7TuS4kU0yq3d2TQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mrgCR-000lQ5-5o; Mon, 29 Nov 2021 12:56:03 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1mrpnt-0033RA-VC; Mon, 29 Nov 2021 23:11:21 +0000
+Received: from mail-ot1-f51.google.com ([209.85.210.51])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mrgCN-000lP8-0U
- for linux-phy@lists.infradead.org; Mon, 29 Nov 2021 12:56:01 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1ATCtnAa110837;
- Mon, 29 Nov 2021 06:55:49 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1638190549;
- bh=xpfKTadBXPo99vJqrIrr6yNPN/kKtoRw6ZjKzqOo2hI=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=aE6aURdqJHi/1iX70+u1w8+uoyaES7cZd+u0IG3x0jORKHp8ckasbN8e6FlbNu27x
- pnEHdVPyEInGT7FMjXyVUYcJg9Boj8vRLbFTd/XecWh8HilAKii+qMYUZI8XCxJtXK
- vfr+6PiTOgNWIuiljypMtKczAvr//2qoTnkkKh4E=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1ATCtnjG007961
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 29 Nov 2021 06:55:49 -0600
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 29
- Nov 2021 06:55:48 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 29 Nov 2021 06:55:48 -0600
-Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1ATCth3Q070706;
- Mon, 29 Nov 2021 06:55:44 -0600
-Subject: Re: [PATCH RFC v3 1/4] dt-bindings: mux: Increase the number of
- arguments in mux-controls
-To: Peter Rosin <peda@axentia.se>
-CC: Vignesh Raghavendra <vigneshr@ti.com>, Nishanth Menon <nm@ti.com>, Rob
- Herring <robh+dt@kernel.org>, Wolfgang Grandegger <wg@grandegger.com>, Marc
- Kleine-Budde <mkl@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>
-References: <20211123081222.27979-1-a-govindraju@ti.com>
- <20211123081222.27979-2-a-govindraju@ti.com>
- <24781209-928b-dea4-de0b-b103dac8de82@axentia.se>
- <5f455c4d-5edb-4382-1193-a519a7a227a5@ti.com>
- <f6e8cec9-4d74-dda5-d56a-b55ebfadf30a@axentia.se>
- <46644e9a-a9e9-4cdb-47e3-f42ebf49f805@ti.com>
- <11e3bb89-d706-28c1-b7a5-e61c5cc99c93@axentia.se>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <ef93e2e3-32b7-25de-a800-d0d35c2314f2@ti.com>
-Date: Mon, 29 Nov 2021 18:25:43 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ id 1mrpnr-0033Qa-Fk
+ for linux-phy@lists.infradead.org; Mon, 29 Nov 2021 23:11:20 +0000
+Received: by mail-ot1-f51.google.com with SMTP id
+ w6-20020a9d77c6000000b0055e804fa524so27677683otl.3
+ for <linux-phy@lists.infradead.org>; Mon, 29 Nov 2021 15:11:19 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=1CI0eUCmLQSzhgrbo5fWAeYCuyAN+7MXOdPkvLupzvQ=;
+ b=cS4KqNqK5hw51H/wEK0CELrPHHl2S5ew966TYk/6/U7iFnsIFdBj9wyrAa4lMxrmCI
+ Gj8yupwRed+l9INiC0wFGeCi8atmzTouvQg9ucMMWx1tFLVRZU2eMpi1d4EiCJ7mizWk
+ FlH+/Mydvo163Xs2c1b64+ATjLv/jRtEYsOEdWTgKPHcXC+zcuYc/8fd2aV3yrUvTVJw
+ 855vpA/SHFgV8d/RkwBGTG9z0ovW1muYO17SHoAvg4Bts1e1vZI27isVY59ggj8wvSyx
+ lxzO/JPe+xgDXozX+lw0bqZknfz02pLrrktKm4rLAX2v3cCvB9rqIKzsm5R8N4R2b8gh
+ fLIA==
+X-Gm-Message-State: AOAM530WrFx7HpdtcIGlIImHwz8FH6Eghh40HzivsHrxM1D7VsqUNt/j
+ WQDlWXH50KgdhDO5l4tPXA==
+X-Google-Smtp-Source: ABdhPJyn5bH/NkhCl4fBrap5C9QP/YwnwzPvEx86qJHULHBAR1eU2SZOhwU/cmcgv3daAIYgboM+Rw==
+X-Received: by 2002:a9d:6e06:: with SMTP id e6mr46384951otr.381.1638227478517; 
+ Mon, 29 Nov 2021 15:11:18 -0800 (PST)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id o2sm3502336oik.11.2021.11.29.15.11.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 29 Nov 2021 15:11:17 -0800 (PST)
+Received: (nullmailer pid 786264 invoked by uid 1000);
+ Mon, 29 Nov 2021 23:11:16 -0000
+Date: Mon, 29 Nov 2021 17:11:16 -0600
+From: Rob Herring <robh@kernel.org>
+To: Luca Weiss <luca@z3ntu.xyz>
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-kernel@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH 5/7] dt-bindings: phy: qcom,usb-hs-phy: add MSM8226
+ compatible
+Message-ID: <YaVeFFOyX8mbiNNZ@robh.at.kernel.org>
+References: <20211118210210.160895-1-luca@z3ntu.xyz>
+ <20211118210210.160895-5-luca@z3ntu.xyz>
 MIME-Version: 1.0
-In-Reply-To: <11e3bb89-d706-28c1-b7a5-e61c5cc99c93@axentia.se>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20211118210210.160895-5-luca@z3ntu.xyz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211129_045559_197022_1520BADF 
-X-CRM114-Status: GOOD (  51.02  )
+X-CRM114-CacheID: sfid-20211129_151119_545520_BFBCE027 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,169 +88,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Peter,
-
-On 29/11/21 5:58 pm, Peter Rosin wrote:
-> Hi Aswath,
+On Thu, 18 Nov 2021 22:02:08 +0100, Luca Weiss wrote:
+> Add a compatible for MSM8226 which also uses the USB HS PHY.
 > 
-> On 2021-11-29 10:31, Aswath Govindraju wrote:
->> Hi Peter,
->>
->> On 29/11/21 1:45 pm, Peter Rosin wrote:
->>>
->>>
->>> On 2021-11-29 05:36, Aswath Govindraju wrote:
->>>> Hi Peter,
->>>>
->>>> On 25/11/21 7:05 pm, Peter Rosin wrote:
->>>>> Hi!
->>>>>
->>>>> You need to have some description on how #mux-control-cells now work.
->>>>> The previous description is in mux-consumer.yaml and an update there
->>>>> is needed.
->>>>>
->>>>> However, I have realized that the adg792a binding uses #mux-control-cells
->>>>> to indicate if it should expose its three muxes with one mux-control
->>>>> and operate the muxes in parallel, or if it should be expose three
->>>>> independent mux-controls. So, the approach in this series to always
->>>>> have the #mux-control-cells property fixed at <2> when indicating a
->>>>> state will not work for that binding. And I see no fix for that binding
->>>>> without adding a new property.
->>>>>
->>>>> So, I would like a different approach. Since I dislike how mux-controls
->>>>> -after this series- is not (always) specifying a mux-control like the name
->>>>> says, but instead optionally a specific state, the new property I would
->>>>> like to add is #mux-state-cells such that it would always be one more
->>>>> than #mux-control-cells.
->>>>>
->>>>> 	mux: mux-controller {
->>>>> 		compatible = "gpio-mux";
->>>>> 		#mux-control-cells = <0>;
->>>>> 		#mux-state-cells = <1>;
->>>>>
->>>>> 		mux-gpios = <...>;
->>>>> 	};
->>>>>
->>>>> 	can-phy {
->>>>> 		compatible = "ti,tcan1043";
->>>>> 		...
->>>>> 		mux-states = <&mux 1>;
->>>>> 	};
->>>>>
->>>>> That solves the naming issue, the unused argument for mux-conrtrollers
->>>>> that previously had #mux-control-cells = <0>, and the binding for adg792a
->>>>> need no longer be inconsistent.
->>>>>
->>>>> Or, how should this be solved? I'm sure there are other options...
->>>>>
->>>>
->>>>
->>>> I feel that the new approach using mux-state-cells seems to be
->>>> overpopulating the device tree nodes, when the state can be represented
->>>> using the control cells. I understand that the definition for
->>>> mux-controls is to only specify the control line to be used in a given
->>>> mux. Can't it now be upgraded to also represent the state at which the
->>>> control line has to be set to?
->>>>
->>>> With respect to adg792a, it is inline with the current implementation
->>>> and the only change I think would be required in the driver is,
->>>
->>> No, that does not work. See below.
->>>
->>>>
->>>> diff --git a/drivers/mux/adg792a.c b/drivers/mux/adg792a.c
->>>> index e8fc2fc1ab09..2cd3bb8a40d4 100644
->>>> --- a/drivers/mux/adg792a.c
->>>> +++ b/drivers/mux/adg792a.c
->>>> @@ -73,8 +73,6 @@ static int adg792a_probe(struct i2c_client *i2c)
->>>>         ret = device_property_read_u32(dev, "#mux-control-cells", &cells);
->>>>         if (ret < 0)
->>>>                 return ret;
->>>> -       if (cells >= 2)
->>>> -               return -EINVAL;
->>>>
->>>>         mux_chip = devm_mux_chip_alloc(dev, cells ? 3 : 1, 0);
->>>
->>> When you add cell #2 with the state, the cells variable will end up
->>> as 2 always. Which means that there is no way to alloc one mux
->>> control since "cells ? 3 : 1" will always end up as "3", with no
->>> easy fix.
->>>
->>> So, your approach does not work for this driver.
->>>
->>
->> Sorry, but how is this different from the case of
->>
->> #mux-control-cells = 1
->>
->> If #mux-control-cells is equal to 1 it means the consumer will use a
->> given control line from the mux chip. The same would be the case when we
->> will be using, #mux-control-cells is equal to 2, except we can also
->> provide the state.
->>
->> If the consumer will use all the lines then #mux-control-cells will be
->> set to 0. In this condition the state can't be provided from the DT and
->> the consumer will be controlling the entire mux chip. If
->> #mux-control-cells is greater than 0 then we will not be able to provide
->> multiple lines of control using a single mux-controls entry(mux-controls
->> = <...>;) right? We would have the using multiple mux-controls
->> entries(mux-controls = <...>, <...>;).
-> 
-> I think you misunderstand. The adg792a driver operates the chip in
-> different modes depending on if you specify 0 or 1 cells. With 0,
-> it's not just that the consumer operates three muxes. It is also, and
-> more importantly, that the three muxes are operated in parallel without
-> the consumer doing anything different with the single mux control it
-> sees (even if there are three muxes operated by that single mux
-> control).
-> 
-> That said, yes, you can make it limp along like you describe above.
-> But why should it not be possible to specify a specific state when
-> the adg792a driver operates the muxes in parallel? And yes, you could
-> add some other flag to indicate this mode, but my point is that it
-> is silly to add special cases like this if you don't need to. Since
-> adding a specific state is the new thing, that is what should be
-> added in a way that fits with the old stuff without imposing new
-> flags on that old stuff.
-> 
-> An example: the three muxes in an adg792a chip could be used as
-> two muxes for some I2C bus (SCL and SDA signals) and the third mux
-> for something unrelated. Suppose that you want to operate the adg792a
-> as three parallel muxes so that you mux SCL and SDA simultaneously
-> (as is expected by the i2c-mux-gpmux binding, it only expects one
-> mux control), and that you want to use the third mux as the enable-
-> state for your phy. With your suggested binding you cannot, unless
-> you add a mechanism to make the adg792a driver operate its muxes in
-> parallel even if there are two cells instead of zero. I.e. without
-> that new flag the i2c-mux-gpmux binding needs to see
-> 
-> 	#mux-control-cells = <0>;
-> 
-> while your new phy binding instead needs to see
-> 
-> 	#mux-control-cells = <2>;
-> 
-> And you obviously can't have it both ways.
-> 
-> (Sure, it would not be possible to mux the I2C bus while the phy
-> is enabled in the above example, but there could be some other
-> limitation in place that makes that invalid anyway. And it's just
-> an example anyway...)
-> 
-> A mux-control is potentially a shared resource, and bindings have
-> to take this into account.
+> Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
-Understood. Thank you for the explanation. Will correct the
-implementation and post a respin.
-
-Regards,
-Aswath
-
-> Cheers,
-> Peter
-> 
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
