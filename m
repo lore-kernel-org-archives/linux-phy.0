@@ -4,69 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E130C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Nov 2021 10:23:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C3F4C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Nov 2021 14:01:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ql7F0xaR1NJd3naWJyIQC8ooFg2Ssc/4qYse1vrt9G0=; b=t24UlTvXkApgPJ
-	byPPmug9MmiojyV+1xwwTEmsomAWqkwttxaBI58Eez+/plJwAlaSKhHW+lFzmQa7Ke1IRJJA1qIkx
-	em0KwcoTI7I5ZQsbJF46+Ianb9+meoBovwSXAwSQQYeMnN5IOB+cPqgnlSuE8hiPSKs5yneDxFCtQ
-	BT1xL9egYC4yue1l1OnS8fV6NYvQAqi/0M5CnPe8Wurxxg4W/U9ZVN4Y7H9HSB0DiuJ9AO7pbDBlG
-	BY4Psu0k7w810qPUPy4e8VllyEDLUiMCemWfCRa1zWE7hvNbOeI/CqkcNofNklPl+LkaqTVIY4yTj
-	aGNFB07m2iYFparRRHiw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yo4aLUg58Y/oWu3CTCjUfNjw8BCT+uwNbKkqAzy9zxI=; b=mC5tIhXgW4kAvf
+	Ljo3QDrQWEIEU0pKtgLAeDdMc95uKAaqTnkzQ3xxBsNlWfHWDEX3Wv8JIlPVfk7SGNfq/rSB6TV2N
+	9L6z4LLaMcIAvIwFOEQrourap9/deT5YEl6etud7XQLq4sZsIoU7afsG5pybx7DsSfltd8AtvLu9R
+	FO7nfzal8U9OJmnung1c835K4T0QyTLUYrDDnttdLuatngVpeU854F9nAYmtMNs3GG66fR9t+JIpB
+	w9VIJoLfkdX5tLcx5kyZXEGCxbf5RBaTOl6sTr7Qf8LQHJ8Rjo7UaN0QGE1/QtnaTKWgem0yFhWaD
+	ZZvpOYOJW6nZUhSbeICQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ms0Ii-004aV4-CW; Tue, 30 Nov 2021 10:23:52 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1ms3gp-005StQ-Oi; Tue, 30 Nov 2021 14:00:59 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ms04M-004ViO-Cr
- for linux-phy@lists.infradead.org; Tue, 30 Nov 2021 10:09:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1638266942; x=1669802942;
- h=from:to:cc:subject:date:message-id:mime-version:
- content-transfer-encoding;
- bh=2FwvvqSnok2ooh7zpbRusi+58zDEFAmIqlAKrOG2dMU=;
- b=MD3UGAdjeQSm/dTjc17nK7iFrRBRLP0X9iOwIrLE/ft/BqKxvwK/okUq
- T06OTIc8CxKWY0FoUlui28/+zp9vhJ6RYIlNSw2TyVdG3nBQi42iK22mr
- SyhUPvm+xSTQy7gEGDWpin0tfDa+T82FAQmgu7tbwI4t2a1KXQ/RyaOtM
- ewibL3n9SqwMbNQs7jDlnKu8W4UC7hn0vlqYtmC3IzqDWgRQE2HJVHWkD
- gdxhFGAe5Vpe7f2Axyr+DCxK2UriD7Cuwnmu0DB0dMx1NAvAi2mb2up4D
- JiDkisFuhtD3GoWFsZG3/LWTNToShvP9lUWuDnwn5lamrfbhNmN6yDh7q A==;
-IronPort-SDR: ANvmwIAupJDD9KB0LZfAifUmNYf8kTngsNeZLYi36quUPF4xN39ZIBXIuqO7FjbcahjJIe1Jf3
- CCqOwRkjssHFYhAl5moZc5HBAiaudDcBt2lDTsY2IwqZk6I8Blvp4EvCXa1kA4s53kCJleMh0/
- ad3cZysdsfvm4aM7nh+XR4C9i7xgsxN5TKs5m8eaUjPxT85v6j7z55jp4ni4XYxUhMqkSpOUah
- wvPkqa2OdRNmn9CWMOGEJSxcJUgAHxNYwtOa+X0PMAZZwpR7I1ldiSLcuny1W8rkFy4XZXzv/w
- RB7u/+SgVVNlYp9LuLI681Um
-X-IronPort-AV: E=Sophos;i="5.87,275,1631602800"; d="scan'208";a="138112841"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 30 Nov 2021 03:08:59 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2176.14; Tue, 30 Nov 2021 03:08:59 -0700
-Received: from soft-dev3-1.microsemi.net (10.10.115.15) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.2176.14 via Frontend Transport; Tue, 30 Nov 2021 03:08:58 -0700
-From: Horatiu Vultur <horatiu.vultur@microchip.com>
-To: <kishon@ti.com>, <vkoul@kernel.org>, <linux@armlinux.org.uk>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-CC: Horatiu Vultur <horatiu.vultur@microchip.com>
-Subject: [PATCH] phy: lan966x: Extend lan966x to support multiple phy
+ id 1ms3ge-005SRa-R6
+ for linux-phy@lists.infradead.org; Tue, 30 Nov 2021 14:00:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=o77YFlMZ5q8jKlzGHjL1d9KKHRISLWlW7P0jBZlKEX8=; b=Ybj3uOTYOvCA5/unQ/EcF7kn9j
+ oy1aoZKU4MoIgPKW7hXK23g/+AoLaB2wmi/rLgy1BjG+f8N7yM1EBuvt/o6BjCC6i6ArC0bsxtnYI
+ cREqV7HN9CIHy+dQKRVRHvDGsrJGObudV8SThs5yn9r99flj2+GtqaHbynsL+F49wOeU8YU9BUdeT
+ 5rTls/TXYHDrxqI3+myi10q6MMWQatI7Aj07TTw4k1msp8zUTCPWPQwaqX6voUEKQlz2zlaETQbq9
+ BFSzAcZN9zFS1KRzVJZWQ1QymuRf35s9kd1pxWb3wUlk6owO1ONYlbGKI+9EUXnkbIpySxSdVhQvk
+ mq5bHkAQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:55984)
+ by pandora.armlinux.org.uk with esmtpsa (TLS1.3) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1ms3ec-0006yt-9q; Tue, 30 Nov 2021 13:58:42 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.94.2)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1ms3eb-00076G-8I; Tue, 30 Nov 2021 13:58:41 +0000
+Date: Tue, 30 Nov 2021 13:58:41 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Horatiu Vultur <horatiu.vultur@microchip.com>
+Cc: kishon@ti.com, vkoul@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: lan966x: Extend lan966x to support multiple phy
  interfaces.
-Date: Tue, 30 Nov 2021 11:10:15 +0100
-Message-ID: <20211130101015.164916-1-horatiu.vultur@microchip.com>
-X-Mailer: git-send-email 2.33.0
+Message-ID: <YaYuEb/kinBdXCG+@shell.armlinux.org.uk>
+References: <20211130101015.164916-1-horatiu.vultur@microchip.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20211130101015.164916-1-horatiu.vultur@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211130_020902_551333_68A3595F 
-X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-CacheID: sfid-20211130_060048_904258_867CA2B0 
+X-CRM114-Status: UNSURE (   7.71  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,33 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Currently the driver is supporting only the interfaces QSGMII, SGMII,
-RGMII and GMII. This patch extend the supported interfaces with
-1000BASE-X and 2500BASE-X.
+On Tue, Nov 30, 2021 at 11:10:15AM +0100, Horatiu Vultur wrote:
+> Currently the driver is supporting only the interfaces QSGMII, SGMII,
+> RGMII and GMII. This patch extend the supported interfaces with
+> 1000BASE-X and 2500BASE-X.
+> 
+> Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
 
-Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
----
- drivers/phy/microchip/lan966x_serdes.c | 4 ++++
- 1 file changed, 4 insertions(+)
+Acked-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 
-diff --git a/drivers/phy/microchip/lan966x_serdes.c b/drivers/phy/microchip/lan966x_serdes.c
-index 262bb616b4bb..c0b80a176387 100644
---- a/drivers/phy/microchip/lan966x_serdes.c
-+++ b/drivers/phy/microchip/lan966x_serdes.c
-@@ -392,6 +392,10 @@ static int serdes_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	if (mode != PHY_MODE_ETHERNET)
- 		return -EOPNOTSUPP;
- 
-+	if (submode == PHY_INTERFACE_MODE_1000BASEX ||
-+	    submode == PHY_INTERFACE_MODE_2500BASEX)
-+		submode = PHY_INTERFACE_MODE_SGMII;
-+
- 	for (i = 0; i < ARRAY_SIZE(lan966x_serdes_muxes); i++) {
- 		if (macro->idx != lan966x_serdes_muxes[i].idx ||
- 		    mode != lan966x_serdes_muxes[i].mode ||
+Thanks.
+
 -- 
-2.33.0
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
