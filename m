@@ -4,53 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 536F1C433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Dec 2021 12:44:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54A33C433FE
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Dec 2021 17:57:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8RDDZLG/q2Qyxaokzc3zG4BqOj8Np3fPmhkwk39kcPA=; b=aOSTZMRMRlviA6
-	2MP0Hk/0RS+j4m/kMCahNhWhDrBP1LcNJf917NI/aXgZ351ocJNM/ahWNdfmr0ksL5Eo7GMyji/Gv
-	HPek1Wk4XOnrlVl4ZvOg+JwQmeRsBBqn5Rs+2O0+alhzp2Xh3xydoA5LXKR3eSpDeVXRFLW2TmC7b
-	nKP9XIgnPVA1mWUISX17ZTO/Av1SUsnmj6CjS1ZrnBMh01nWHS0eWr3BlWkKyIkOvubhMVIyRTIb5
-	MdR5LA2OA0xY12FtPq8VNcKvEKTupZd8t5N7QWTE74jmwP0xtW2O9BH10AKOO2F7cWC9rNZbazJGo
-	DCtZKSE6IPdnsy030wFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3V7y2RWun2+/hLlrp1LUs88pYwoNHEdeLp5lNtbOXrY=; b=TfV3I8q62pzfiK
+	oPXGyEyxZ73FQzq5L2SqhI+lFzgHJmczRWWfJh9fE8i22xY/P78zm4933+8KFoy+pmg4wr4w91Onj
+	KmmsW8/QfP0sT35WevhPPxmod+fJClcUiODlwkQPlRlRPOoEp4PHA1CyCoJ7ym0sSHiHq5UeGlFUy
+	Eij5zPFoeT0OThMHeJXh8X8Pkrdl//RcW8Li7nSo+uhEgts06sWkIbbZRHsr85tHAYLaYTfqcAfUi
+	TIg2DVynN5jL+HZzXc5Kp0j4oZorHhTqfQbNV1Y0aOXEeh8dTH5Z+pMvD735guLB5ADvAzEmeZjAQ
+	9pXaaUjxStwdSJzmCqZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1msOyZ-008XVJ-OR; Wed, 01 Dec 2021 12:44:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1msOyL-008XSx-TP; Wed, 01 Dec 2021 12:44:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 553801477;
- Wed,  1 Dec 2021 04:44:27 -0800 (PST)
-Received: from lpieralisi (e121166-lin.cambridge.arm.com [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3E2503F694;
- Wed,  1 Dec 2021 04:44:25 -0800 (PST)
-Date: Wed, 1 Dec 2021 12:44:19 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: l.stach@pengutronix.de, bhelgaas@google.com,
- marcel.ziswiler@toradex.com, tharvey@gateworks.com, kishon@ti.com,
- vkoul@kernel.org, robh@kernel.org, galak@kernel.crashing.org,
- shawnguo@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com
-Subject: Re: [PATCH v6 0/8] Add the imx8m pcie phy driver and imx8mm pcie
- support
-Message-ID: <20211201124419.GA13080@lpieralisi>
-References: <1637200489-11855-1-git-send-email-hongxing.zhu@nxp.com>
+	id 1msTr1-009dOu-Lf; Wed, 01 Dec 2021 17:57:15 +0000
+Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1msTqm-009dJI-Um; Wed, 01 Dec 2021 17:57:02 +0000
+Received: by mail-pg1-x531.google.com with SMTP id j11so14504377pgs.2;
+ Wed, 01 Dec 2021 09:57:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YH7GGCYhB4tao9D+uXBMuduOWm7x34SLXOg19azbyvw=;
+ b=noFtrm6PLX2WhF4tykayOXxTZvaQZaXGwG5u2QkLE173zEZwCAoOPvJOwHoQze75XX
+ 50hrCjYoGEJmx2k2RA057N0mPlyPGirpVxuSBvLFC02PUrX+e+2TaJfvmVbKnctbEyJk
+ +rHyL9rY4mEZf+i7PBRvveaj4HIfJqBgOe0Cn6V5fB7CyvCzcGbN6Am6dasfaOpJYA+o
+ aIBkrDlcwEWKVp+J5FZlhM7ZYXSmuVCCe2ONolZCAF8B+wgxsQcafpPWnZd6gipKUxv4
+ 9WH6KXB4WQkx15+BpmZ+dPiBYK9kJ/pCwEVl2fVj80WMFhs2zkc6dSNUvHQB25A9NaUp
+ uz7Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YH7GGCYhB4tao9D+uXBMuduOWm7x34SLXOg19azbyvw=;
+ b=zkOjXTrFAckEMlhDBgWWSRddSMPpIGSk5q3s0lqafM+vOEAmrEvSKys+WLMOwRbbWy
+ 7X5L83Elj+1JlWiKVWg7TDBe4PoCY8rvJ7y55xomwanPL9ski9gFsUq7Q/pxtQyRve/k
+ 78fvpAW7fHfJZgw4LoZLN1Dx6YhzFatv4KTKzQjHUPYAlqQU+GV/peA3TRXCPpgm/y+P
+ rXjA169lOies3FVvMQRHyy68Jh5p4D6yvaJLqaxkTmpklk1AhpWiipLojAN93xCjxFyZ
+ Bqoa30QyheHI4Fuqy6npGgnLUrXuO3qqBGlWn3H9huSWgk+oiwtkSzRKd5O1/uccedJF
+ oqbg==
+X-Gm-Message-State: AOAM531utzvS0mAMkkjg+KtZFhEkAd7GnkyoZa27PQZsJcjeFAdeI/IG
+ 5YJmwdQGKzp08bieKgsxhOw=
+X-Google-Smtp-Source: ABdhPJwYspeZxsIzy8BwyltvOICyH7yKqgNufLA6pu2F6n6Vt9d21WPjf/klHsf4yrP4cSAz1hGRWw==
+X-Received: by 2002:a63:82c6:: with SMTP id w189mr5959474pgd.491.1638381419822; 
+ Wed, 01 Dec 2021 09:56:59 -0800 (PST)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id j13sm471546pfc.151.2021.12.01.09.56.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 01 Dec 2021 09:56:59 -0800 (PST)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: netdev@vger.kernel.org
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
+ bcm-kernel-feedback-list@broadcom.com (maintainer:BROADCOM IPROC GBIT ETHERNET
+ DRIVER), Doug Berger <opendmb@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
+ BINDINGS), linux-kernel@vger.kernel.org (open list),
+ linux-arm-kernel@lists.infradead.org (moderated list:BROADCOM IPROC ARM
+ ARCHITECTURE), 
+ linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
+Subject: [PATCH net-next v2 0/9] Broadcom DT bindings conversion to YAML
+Date: Wed,  1 Dec 2021 09:56:43 -0800
+Message-Id: <20211201175652.4722-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1637200489-11855-1-git-send-email-hongxing.zhu@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211201_044430_085663_36A6F1CB 
-X-CRM114-Status: GOOD (  27.24  )
+X-CRM114-CacheID: sfid-20211201_095701_031729_D1986D4B 
+X-CRM114-Status: GOOD (  11.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,87 +95,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 18, 2021 at 09:54:41AM +0800, Richard Zhu wrote:
-> Refer to the discussion [1] when try to enable i.MX8MM PCIe support,
-> one standalone PCIe PHY driver should be seperated from i.MX PCIe
-> driver when enable i.MX8MM PCIe support.
-> 
-> This patch-set adds the standalone PCIe PHY driver suport[1-5], and i.MX8MM
-> PCIe support[6-8] to have whole view to review this patch-set.
-> 
-> The PCIe works on i.MX8MM EVK board based the the blkctrl power driver
-> [2] and this patch-set. And tested by Tim and Marcel on the different
-> reference clock modes boards.
-> 
-> [1] https://patchwork.ozlabs.org/project/linux-pci/patch/20210510141509.929120-3-l.stach@pengutronix.de/
-> [2] https://patchwork.kernel.org/project/linux-arm-kernel/cover/20210910202640.980366-1-l.stach@pengutronix.de/
-> 
-> Main changes v5 --> v6:
-> - Add "Reviewed-by: Rob Herring <robh@kernel.org>" into #1 and #3 patches.
-> - Merge Rob's review comments to the #2 patch.
-> 
-> Main changes v4 --> v5:
-> - Set the AUX_EN always 1b'1, thus it can fix the regression introduced in v4
->   series on Marcel's board.
-> - Use the lower-case letter in the devicetreee refer to Marcel's comments.
-> _ Since the default value of the deemphasis parameters are zero, only set
->   the deemphasis registers when the input paramters are none zero.
-> 
-> Main changes v3 --> v4:
-> - Update the yaml to fix syntax error, add maxitems and drop description of phy
-> - Correct the clock name in PHY DT node.
-> - Squash the EVK board relalted dts changes into one patch, and drop the
->   useless dummy clock and gpio suffix in DT nodes.
-> - Add board specific de-emphasis parameters as DT properties. Thus each board
->   can specify its actual de-emphasis values.
-> - Update the commit log of PHY driver.
-> - Remove the useless codes from PCIe driver, since they are moved to PHY driver
-> - After the discussion and verification of the CLKREQ# configurations with Tim,
->   agree to add an optional boolean property "fsl,clkreq-unsupported", indicates
->   the CLKREQ# signal is hooked or not in HW designs.
-> - Add "Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>" tag, since
->   Marcel help to test the v3 patch-set.
-> 
-> Main changes v2 --> v3:
-> - Regarding Lucas' comments.
->  - to have a whole view to review the patches, send out the i.MX8MM PCIe support too.
->  - move the PHY related bits manipulations of the GPR/SRC to standalone PHY driver.
->  - split the dts changes to SOC and board DT, and use the enum instead of raw value.
->  - update the license of the dt-binding header file.
-> 
-> Changes v1 --> v2:
-> - Update the license of the dt-binding header file to make the license
->   compatible with dts files.
-> - Fix the dt_binding_check errors.
-> 
-> Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml    |   6 +++
-> Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  92 +++++++++++++++++++++++++++++++
-> arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi                |  55 +++++++++++++++++++
-> arch/arm64/boot/dts/freescale/imx8mm.dtsi                    |  46 +++++++++++++++-
-> drivers/pci/controller/dwc/pci-imx6.c                        |  73 ++++++++++++++++++++++---
-> drivers/phy/freescale/Kconfig                                |   9 ++++
-> drivers/phy/freescale/Makefile                               |   1 +
-> drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   | 237 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-> include/dt-bindings/phy/phy-imx8-pcie.h                      |  14 +++++
-> 9 files changed, 525 insertions(+), 8 deletions(-)
+Hi all,
 
-Hi Richard,
+This patch series converts 3 Broadcom Ethernet controller Device Tree
+bindings to YAML and the iProc MDIO mux. Please wait for a review from
+Rob before applying, thank you!
 
-I can pull this series into the PCI tree (but not the dts changes
-that should be routed elsewhere) or give an ACK for patch 8, please
-let me know what's the best option.
+Changes in v2;
 
-Thanks,
-Lorenzo
+- converted Northstar 2 PCIe binding to YAML as well
+- fixed DT_CHECKER_FLAGS=-m warnings
+- documented 2500 Mbits/sec for fixed-link
 
-> [PATCH v6 1/8] dt-bindings: phy: phy-imx8-pcie: Add binding for the
-> [PATCH v6 2/8] dt-bindings: phy: Add imx8 pcie phy driver support
-> [PATCH v6 3/8] dt-bindings: imx6q-pcie: Add PHY phandles and name
-> [PATCH v6 4/8] arm64: dts: imx8mm: Add the pcie phy support
-> [PATCH v6 5/8] phy: freescale: pcie: Initialize the imx8 pcie
-> [PATCH v6 6/8] arm64: dts: imx8mm: Add the pcie support
-> [PATCH v6 7/8] arm64: dts: imx8mm-evk: Add the pcie support on imx8mm
-> [PATCH v6 8/8] PCI: imx: Add the imx8mm pcie support
+Florian Fainelli (9):
+  dt-bindings: net: Document 2500Mbits/sec fixed link
+  dt-bindings: net: brcm,unimac-mdio: reg-names is optional
+  dt-bindings: net: brcm,unimac-mdio: Update maintainers for binding
+  dt-bindings: net: Document moca PHY interface
+  dt-bindings: net: Convert GENET binding to YAML
+  dt-bindings: net: Convert AMAC to YAML
+  dt-bindings: net: Convert SYSTEMPORT to YAML
+  dt-bindings: phy: Convert Northstar 2 PCIe PHY to YAML
+  dt-bindings: net: Convert iProc MDIO mux to YAML
+
+ .../devicetree/bindings/net/brcm,amac.txt     |  30 ----
+ .../devicetree/bindings/net/brcm,amac.yaml    |  88 +++++++++++
+ .../devicetree/bindings/net/brcm,bcmgenet.txt | 125 ---------------
+ .../bindings/net/brcm,bcmgenet.yaml           | 145 ++++++++++++++++++
+ .../bindings/net/brcm,mdio-mux-iproc.txt      |  62 --------
+ .../bindings/net/brcm,mdio-mux-iproc.yaml     |  80 ++++++++++
+ .../bindings/net/brcm,systemport.txt          |  38 -----
+ .../bindings/net/brcm,systemport.yaml         |  82 ++++++++++
+ .../bindings/net/brcm,unimac-mdio.yaml        |   3 +-
+ .../bindings/net/ethernet-controller.yaml     |   3 +-
+ .../bindings/phy/brcm,mdio-mux-bus-pci.txt    |  27 ----
+ .../bindings/phy/brcm,ns2-pcie-phy.yaml       |  41 +++++
+ MAINTAINERS                                   |   5 +-
+ 13 files changed, 443 insertions(+), 286 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/net/brcm,amac.txt
+ create mode 100644 Documentation/devicetree/bindings/net/brcm,amac.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/brcm,bcmgenet.txt
+ create mode 100644 Documentation/devicetree/bindings/net/brcm,bcmgenet.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.txt
+ create mode 100644 Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/brcm,systemport.txt
+ create mode 100644 Documentation/devicetree/bindings/net/brcm,systemport.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/brcm,mdio-mux-bus-pci.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/brcm,ns2-pcie-phy.yaml
+
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
