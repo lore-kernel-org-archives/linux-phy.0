@@ -4,63 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76FCDC433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Dec 2021 07:45:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 536F1C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Dec 2021 12:44:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P61KEE/5FJHKhpD4hilo+aVtmWyWVB7ufK5QpLBYxG0=; b=kTL5opY1+Hxq6y
-	VupxgFocuWxdXex5QHh+97VdozlXq1blYs3goHozBRNjnGEvGscDAHv777Cz2t/g+PTT9P6d7G7jx
-	musXvgdOsTr65t/yUK+45k70o5xjxBo7oc1GwHywPz+USR9elIri4Gb8MyIymONJSRBDtRP5GG4sm
-	kImYWPLzJ1WnhWA583P8/NSMeIuDRzJn4eWLek/ZbBm5jY06dMfyGQjugZZC8FJCpw7Y/13frajpm
-	6CKT7eovj6Dtu1AUuwAMyFndm/Hu2oH7/TMVp+opsHGbU3o+9cTQgWamTNVLWZ7K0jCywER59X53A
-	TegtQqBrKB+dMxpTi+Ng==;
+	List-Owner; bh=8RDDZLG/q2Qyxaokzc3zG4BqOj8Np3fPmhkwk39kcPA=; b=aOSTZMRMRlviA6
+	2MP0Hk/0RS+j4m/kMCahNhWhDrBP1LcNJf917NI/aXgZ351ocJNM/ahWNdfmr0ksL5Eo7GMyji/Gv
+	HPek1Wk4XOnrlVl4ZvOg+JwQmeRsBBqn5Rs+2O0+alhzp2Xh3xydoA5LXKR3eSpDeVXRFLW2TmC7b
+	nKP9XIgnPVA1mWUISX17ZTO/Av1SUsnmj6CjS1ZrnBMh01nWHS0eWr3BlWkKyIkOvubhMVIyRTIb5
+	MdR5LA2OA0xY12FtPq8VNcKvEKTupZd8t5N7QWTE74jmwP0xtW2O9BH10AKOO2F7cWC9rNZbazJGo
+	DCtZKSE6IPdnsy030wFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1msKIt-007iiT-Uu; Wed, 01 Dec 2021 07:45:23 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1msKIr-007ih6-1H
- for linux-phy@lists.infradead.org; Wed, 01 Dec 2021 07:45:22 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by sin.source.kernel.org (Postfix) with ESMTPS id 5C03ECE1D6F;
- Wed,  1 Dec 2021 07:45:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65D92C53FD0;
- Wed,  1 Dec 2021 07:45:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1638344717;
- bh=OMSYCijhi9mHPXribUljpaln0YA/jwCKn5SpeihydXo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mGoLqgCvvCewfCJY2gtoPfQBSsed8M9+WrUxAUzeMT19V/UAVCTUUpoireJv5U6OY
- G72PmqKIuxGxc+ypjKQwi179vUuSKzuGCgejL7kY5F/rrjMLXraNhMoWD1yDhKy05T
- hwimgwyaTT4gwZJlE+LSrfCuOK4SJF+GQ3fD+4NtaAEZ8XxZR/nPfDFP5sQn2wUrPb
- Auw1Q5V59AeFqqepsZS3NYHR5BlVkR8/xfxUzoet5P2OsN/g7+4itPuV4vKuGrfmJ5
- 8H/jdCuJLHSgyQOTYUeeKREBlywj4oRBQiNwNQTnziGD+4H29L9Yhz0gKi8GIh8eYr
- YiiR4Cj9ArPtA==
-From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Cc: linux-arm-msm@vger.kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Andy Gross <agross@kernel.org>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Subject: [PATCH 3/3] phy: qcom-qmp: Add SM8450 UFS QMP Phy
-Date: Wed,  1 Dec 2021 13:14:56 +0530
-Message-Id: <20211201074456.3969849-4-vkoul@kernel.org>
-X-Mailer: git-send-email 2.31.1
-In-Reply-To: <20211201074456.3969849-1-vkoul@kernel.org>
-References: <20211201074456.3969849-1-vkoul@kernel.org>
+	id 1msOyZ-008XVJ-OR; Wed, 01 Dec 2021 12:44:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1msOyL-008XSx-TP; Wed, 01 Dec 2021 12:44:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 553801477;
+ Wed,  1 Dec 2021 04:44:27 -0800 (PST)
+Received: from lpieralisi (e121166-lin.cambridge.arm.com [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3E2503F694;
+ Wed,  1 Dec 2021 04:44:25 -0800 (PST)
+Date: Wed, 1 Dec 2021 12:44:19 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: l.stach@pengutronix.de, bhelgaas@google.com,
+ marcel.ziswiler@toradex.com, tharvey@gateworks.com, kishon@ti.com,
+ vkoul@kernel.org, robh@kernel.org, galak@kernel.crashing.org,
+ shawnguo@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel@pengutronix.de, linux-imx@nxp.com
+Subject: Re: [PATCH v6 0/8] Add the imx8m pcie phy driver and imx8mm pcie
+ support
+Message-ID: <20211201124419.GA13080@lpieralisi>
+References: <1637200489-11855-1-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1637200489-11855-1-git-send-email-hongxing.zhu@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211130_234521_453791_D9B4646D 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20211201_044430_085663_36A6F1CB 
+X-CRM114-Status: GOOD (  27.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,76 +67,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SM8450 UFS seems to use same sequence as SM8350, so reuse the sequence
-from SM8450. Add the new clock list for this phy and the new compatible
+On Thu, Nov 18, 2021 at 09:54:41AM +0800, Richard Zhu wrote:
+> Refer to the discussion [1] when try to enable i.MX8MM PCIe support,
+> one standalone PCIe PHY driver should be seperated from i.MX PCIe
+> driver when enable i.MX8MM PCIe support.
+> 
+> This patch-set adds the standalone PCIe PHY driver suport[1-5], and i.MX8MM
+> PCIe support[6-8] to have whole view to review this patch-set.
+> 
+> The PCIe works on i.MX8MM EVK board based the the blkctrl power driver
+> [2] and this patch-set. And tested by Tim and Marcel on the different
+> reference clock modes boards.
+> 
+> [1] https://patchwork.ozlabs.org/project/linux-pci/patch/20210510141509.929120-3-l.stach@pengutronix.de/
+> [2] https://patchwork.kernel.org/project/linux-arm-kernel/cover/20210910202640.980366-1-l.stach@pengutronix.de/
+> 
+> Main changes v5 --> v6:
+> - Add "Reviewed-by: Rob Herring <robh@kernel.org>" into #1 and #3 patches.
+> - Merge Rob's review comments to the #2 patch.
+> 
+> Main changes v4 --> v5:
+> - Set the AUX_EN always 1b'1, thus it can fix the regression introduced in v4
+>   series on Marcel's board.
+> - Use the lower-case letter in the devicetreee refer to Marcel's comments.
+> _ Since the default value of the deemphasis parameters are zero, only set
+>   the deemphasis registers when the input paramters are none zero.
+> 
+> Main changes v3 --> v4:
+> - Update the yaml to fix syntax error, add maxitems and drop description of phy
+> - Correct the clock name in PHY DT node.
+> - Squash the EVK board relalted dts changes into one patch, and drop the
+>   useless dummy clock and gpio suffix in DT nodes.
+> - Add board specific de-emphasis parameters as DT properties. Thus each board
+>   can specify its actual de-emphasis values.
+> - Update the commit log of PHY driver.
+> - Remove the useless codes from PCIe driver, since they are moved to PHY driver
+> - After the discussion and verification of the CLKREQ# configurations with Tim,
+>   agree to add an optional boolean property "fsl,clkreq-unsupported", indicates
+>   the CLKREQ# signal is hooked or not in HW designs.
+> - Add "Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>" tag, since
+>   Marcel help to test the v3 patch-set.
+> 
+> Main changes v2 --> v3:
+> - Regarding Lucas' comments.
+>  - to have a whole view to review the patches, send out the i.MX8MM PCIe support too.
+>  - move the PHY related bits manipulations of the GPR/SRC to standalone PHY driver.
+>  - split the dts changes to SOC and board DT, and use the enum instead of raw value.
+>  - update the license of the dt-binding header file.
+> 
+> Changes v1 --> v2:
+> - Update the license of the dt-binding header file to make the license
+>   compatible with dts files.
+> - Fix the dt_binding_check errors.
+> 
+> Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml    |   6 +++
+> Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |  92 +++++++++++++++++++++++++++++++
+> arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi                |  55 +++++++++++++++++++
+> arch/arm64/boot/dts/freescale/imx8mm.dtsi                    |  46 +++++++++++++++-
+> drivers/pci/controller/dwc/pci-imx6.c                        |  73 ++++++++++++++++++++++---
+> drivers/phy/freescale/Kconfig                                |   9 ++++
+> drivers/phy/freescale/Makefile                               |   1 +
+> drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   | 237 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+> include/dt-bindings/phy/phy-imx8-pcie.h                      |  14 +++++
+> 9 files changed, 525 insertions(+), 8 deletions(-)
 
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
-Co-developed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp.c | 32 +++++++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+Hi Richard,
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index 456a59d8c7d0..a959c97a699f 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -3091,6 +3091,10 @@ static const char * const qmp_v4_sm8250_usbphy_clk_l[] = {
- 	"aux", "ref_clk_src", "com_aux"
- };
- 
-+static const char * const sm8450_ufs_phy_clk_l[] = {
-+	"qref", "ref", "ref_aux",
-+};
-+
- static const char * const sdm845_ufs_phy_clk_l[] = {
- 	"ref", "ref_aux",
- };
-@@ -4087,6 +4091,31 @@ static const struct qmp_phy_cfg sm8350_usb3_uniphy_cfg = {
- 	.pwrdn_delay_max	= POWER_DOWN_DELAY_US_MAX,
- };
- 
-+static const struct qmp_phy_cfg sm8450_ufsphy_cfg = {
-+	.type			= PHY_TYPE_UFS,
-+	.nlanes			= 2,
-+
-+	.serdes_tbl		= sm8350_ufsphy_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_serdes_tbl),
-+	.tx_tbl			= sm8350_ufsphy_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_tx_tbl),
-+	.rx_tbl			= sm8350_ufsphy_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_rx_tbl),
-+	.pcs_tbl		= sm8350_ufsphy_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sm8350_ufsphy_pcs_tbl),
-+	.clk_list		= sm8450_ufs_phy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sm8450_ufs_phy_clk_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= sm8150_ufsphy_regs_layout,
-+
-+	.start_ctrl		= SERDES_START,
-+	.pwrdn_ctrl		= SW_PWRDN,
-+	.phy_status		= PHYSTATUS,
-+
-+	.is_dual_lane_phy	= true,
-+};
-+
- static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
- 	.type			= PHY_TYPE_USB3,
- 	.nlanes			= 1,
-@@ -5745,6 +5774,9 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sm8350-qmp-usb3-uni-phy",
- 		.data = &sm8350_usb3_uniphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm8450-qmp-ufs-phy",
-+		.data = &sm8450_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,qcm2290-qmp-usb3-phy",
- 		.data = &qcm2290_usb3phy_cfg,
--- 
-2.31.1
+I can pull this series into the PCI tree (but not the dts changes
+that should be routed elsewhere) or give an ACK for patch 8, please
+let me know what's the best option.
 
+Thanks,
+Lorenzo
+
+> [PATCH v6 1/8] dt-bindings: phy: phy-imx8-pcie: Add binding for the
+> [PATCH v6 2/8] dt-bindings: phy: Add imx8 pcie phy driver support
+> [PATCH v6 3/8] dt-bindings: imx6q-pcie: Add PHY phandles and name
+> [PATCH v6 4/8] arm64: dts: imx8mm: Add the pcie phy support
+> [PATCH v6 5/8] phy: freescale: pcie: Initialize the imx8 pcie
+> [PATCH v6 6/8] arm64: dts: imx8mm: Add the pcie support
+> [PATCH v6 7/8] arm64: dts: imx8mm-evk: Add the pcie support on imx8mm
+> [PATCH v6 8/8] PCI: imx: Add the imx8mm pcie support
 
 -- 
 linux-phy mailing list
