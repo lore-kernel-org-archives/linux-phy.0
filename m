@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96E7BC2BA4C
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FD38C001B6
 	for <linux-phy@archiver.kernel.org>; Thu,  2 Dec 2021 14:18:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,52 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zeLJICHD18pYQoew6ijbvDQ4l1vqFZLrpYC7f5bNpvQ=; b=YHLm5lp/Xfjz1h
-	PtvbOQRjfJL7QCl9aqmudcpNbSjB1NxaJNmiPxQzFGmRLTeNhrVHauZqi6UDLQeadHB9ht/+/RLBc
-	woTMOBzpr7/0eU5Qn2L6w3TOT8Yoy1/WWLYGEHWu7DmgXkTYJhfXWT4hFOdZvNH488rRxqYY4G7Fv
-	ZMPRj4YBR8aPgyDCilnv1Xh8AlrS1/9CY9FADRWbqonhnsRA2UNAcDpW4nQ9iGklNvO2GK3rDtiTW
-	PH8d0pBAp8GkzQNTCY0oQmaz8cldL9LZOvPNXvesUsBDB+PhU8mn3dBOzpLGYD6tZlcZ9FQ1V59wY
-	6V6P9xWmhirhqdLonAzA==;
+	List-Owner; bh=NiJh1gUgixIMMOA2Es9+6zB+0SLspAUeXwzL7TaGYho=; b=ESwFE0gN5Mmner
+	Mv6tUyrpPE2+APSN2JQ+WhsPpP+vEhV3ZnYUEty74jOTIS7kqrWt54xghCXI+SfMOZtTzRskdyiK0
+	Hh+VUqD8IIoItekoYvS7GScEyDEljD8eeDtO1F2uczki3nj1eAVvXgzghS30Y8qNZig/Z6V6utny/
+	384HGICzr7P8BAX2zwWFiV5aEbmPYqjhKtsRyKIV+xX0Y/3jZDx0nJriyDbS/5+zCiIk421IF/tTG
+	oqB77+t3SKAVV8Y4OZ48cHGRnGhB22f8+7ccRFHb2k3CyAaFoUryb6yWpC6p6of5oditIaFmlbyKI
+	OVtioCrpwuf71TxCyMqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1msmuU-00CWwS-Kg; Thu, 02 Dec 2021 14:18:06 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1msmuU-00CWw3-ED; Thu, 02 Dec 2021 14:18:06 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1msmu4-00CWiE-9I
- for linux-phy@lists.infradead.org; Thu, 02 Dec 2021 14:17:41 +0000
-Received: by mail-lf1-x136.google.com with SMTP id m27so71780385lfj.12
- for <linux-phy@lists.infradead.org>; Thu, 02 Dec 2021 06:17:40 -0800 (PST)
+ id 1msmu2-00CWgD-73
+ for linux-phy@lists.infradead.org; Thu, 02 Dec 2021 14:17:39 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id bi37so71840013lfb.5
+ for <linux-phy@lists.infradead.org>; Thu, 02 Dec 2021 06:17:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=6/zIL8YkV/d4nljUzUQ3EO3Yb/Px31H+9eOQZUkZows=;
- b=yFe3VIuDiF2HeloldqKDVzEA4IYkyMvccBtnEUiRlVCBG+YvE05TW4M2c20kJbDm+s
- 8Sj18A/VD1MiiETWVrxjxSyxttfnozdB6IGJnds1W5Cn/O9WXv8rxwfriZbwimetLoDr
- yZwiO2W4P6C2pHGJP1gdhk4Hfg8OTMwDvgKC6sxee3s0T3L6aXxZG/2kgrFLWxK6UvWi
- PCrby6iTedngcnfU4RpLf1A+eyx2eXeGFOzmPBA3PCR4qnoZ9yLP07LorD5gVz1B3L04
- NvqHvQNn5dto5rbxz3Hrb9sepTZxbNBA6Myik8umQV9ubPqKrCuiHGTdATBBwUWRP/Ps
- clug==
+ bh=L5vH+qkdW0RnnHR8bUSi4DKQOAjuN8wu7Yp/zMOVh1s=;
+ b=NIzojU0X/ljxuVj1vbxH7xSKPgb3mdOQUrz/nRite7KGveqllHiWs/Bb9Z7XEUWZNR
+ 87FLplz+hPLnTDje7Wdbr0s7wiJcwkmR6ZN5WvHyLc6tKtD0wRA9vQGa5zJdKmoeFGrg
+ 8BBPVcMC57VYvRgeJPmzMTk8KvZfH0I3XDUF2eSrlZupwML6x5exTflr9ZJ8XKzWV95m
+ jiq2BzcIbLXf7WYd54W4VFahDJpSq4xsOjCgDLGrvBlT9E403pb7eAQ8yjBe/H2520I8
+ Ejml3phDgez0cGM9OElZT0QfSyKVO75uwXJIzHInxJHYPuHIKyMGEQs1oQKFDKbLEl7m
+ xwpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=6/zIL8YkV/d4nljUzUQ3EO3Yb/Px31H+9eOQZUkZows=;
- b=H/Rj4nbWGoiBPRK70NxHUPFzRMoXftf+7ENN2ebMEzfAdIsCG3rVzqM0eksMvo33oO
- cBR+1r5XcQoz4lA5ZTHR5JqCa/KBhogYFMVEMYl0mTevYdVgkhTGDhdkPi+L+xjkLtVz
- ygA3oy+1sPnbgqdNPnsOIsSoRCdifJqOqqAiwjy5hr4thn0VcHTTdk0NnhQrmmtRx3O0
- BLs76ISn9QtY3+p5temHdrJSMGs3aily1gbuL/+p4oNw04oHpRLijv5rEVSTfKxYTuV3
- 8KFaWoUPB67Djhp9dHxvt3IR9KcgoNaGseeQ/lPRqtTUGrzViKiulxDuoANUB6d13+Xk
- a+hw==
-X-Gm-Message-State: AOAM530ALvfGYvM1aDLoKDOpItF8DikPsdw4mPITOhxfHIsgwwE2CJmq
- tiLTB9Jm605EgNrekld1eK0SbQ==
-X-Google-Smtp-Source: ABdhPJzvu6wYr/1+YToSts0ncZnkplVB8E/G7vfYGcl3krUyERz6LIyDpd3Ry/OriVXwMgIMXaa6Rg==
-X-Received: by 2002:a05:6512:a95:: with SMTP id
- m21mr12552889lfu.574.1638454658759; 
- Thu, 02 Dec 2021 06:17:38 -0800 (PST)
+ bh=L5vH+qkdW0RnnHR8bUSi4DKQOAjuN8wu7Yp/zMOVh1s=;
+ b=q28bs6tJSY885jiWsDndMcJKHrznfxX+7NroB/8YG5LgbfcgWfHg5xQDAiC63uLqQe
+ 0H9NaT/a4HL7venxyWKId0Cqu0PPaixwIDFXbayHsnL0lyhZYMJGHGz0pRRkzLbRBG40
+ +tGoVNx1/vVUy8Qkj+0zz4tzKz4AAZ779mpvcSUKRj/8axXMO4b9Q49bvY1bSuGzRczD
+ g66/WVy8hS2e9VOU/KqjX6S5QNujdv1Y+9ZZ9DqXbw/OEEt9AiMZyGwy6dx+UEZpytQZ
+ ILTITUYJJLdUX+eRJkAoHXoiUcIvbLIv+MZJEI10IGJhpfewIK/SZQMM8n6QhJ4fR0YH
+ tN7g==
+X-Gm-Message-State: AOAM530q1e2eXufis+r0Uey5APGM/Fsp8Upz1hoPbZNSm3UrRmmL3cpe
+ Rs22FvQNis1uNQ+AzVke0QN95g==
+X-Google-Smtp-Source: ABdhPJx+n4sB1Vj7WxsLnv4cwsDX+ECkLjcgtQ8DyCxfzuScPF7JXtQYhCQNxtblxOmvzLyo5hsuEQ==
+X-Received: by 2002:a05:6512:32c8:: with SMTP id
+ f8mr12454410lfg.669.1638454655234; 
+ Thu, 02 Dec 2021 06:17:35 -0800 (PST)
 Received: from eriador.lan ([37.153.55.125])
- by smtp.gmail.com with ESMTPSA id m15sm362487lfg.165.2021.12.02.06.17.37
+ by smtp.gmail.com with ESMTPSA id m15sm362487lfg.165.2021.12.02.06.17.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 02 Dec 2021 06:17:38 -0800 (PST)
+ Thu, 02 Dec 2021 06:17:34 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -69,17 +69,17 @@ Cc: Bjorn Helgaas <bhelgaas@google.com>,
  =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
  linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: [PATCH v1 07/10] arm64: dts: qcom: sm8450: add PCIe0 PHY node
-Date: Thu,  2 Dec 2021 17:17:23 +0300
-Message-Id: <20211202141726.1796793-8-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v1 04/10] PCI: qcom: do not duplicate qcom_pcie_cfg fields in
+ qcom_pcie struct
+Date: Thu,  2 Dec 2021 17:17:20 +0300
+Message-Id: <20211202141726.1796793-5-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.33.0
 In-Reply-To: <20211202141726.1796793-1-dmitry.baryshkov@linaro.org>
 References: <20211202141726.1796793-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211202_061740_385212_F65BBDFB 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211202_061738_320430_5D75F216 
+X-CRM114-Status: GOOD (  15.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,74 +96,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add device tree node for the first PCIe PHY device found on the Qualcomm
-SM8450 platform.
+In preparation to adding more flags to configuration data, use struct
+qcom_pcie_cfg directly inside struct qcom_pcie, rather than duplicating
+all its fields. This would save us from the boilerplate code that just
+copies flags values from one sruct to another one.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sm8450.dtsi | 42 ++++++++++++++++++++++++++--
- 1 file changed, 40 insertions(+), 2 deletions(-)
+ drivers/pci/controller/dwc/pcie-qcom.c | 34 ++++++++++++--------------
+ 1 file changed, 16 insertions(+), 18 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8450.dtsi b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-index 3e1279f5114e..4e825291839a 100644
---- a/arch/arm64/boot/dts/qcom/sm8450.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-@@ -550,8 +550,12 @@ gcc: clock-controller@100000 {
- 			#clock-cells = <1>;
- 			#reset-cells = <1>;
- 			#power-domain-cells = <1>;
--			clock-names = "bi_tcxo", "sleep_clk";
--			clocks = <&rpmhcc RPMH_CXO_CLK>, <&sleep_clk>;
-+			clocks = <&rpmhcc RPMH_CXO_CLK>,
-+				 <&pcie0_lane>,
-+				 <&sleep_clk>;
-+			clock-names = "bi_tcxo",
-+				      "pcie_0_pipe_clk",
-+				      "sleep_clk";
- 		};
+diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+index 3bee901c4df7..64f762cdbc7d 100644
+--- a/drivers/pci/controller/dwc/pcie-qcom.c
++++ b/drivers/pci/controller/dwc/pcie-qcom.c
+@@ -204,8 +204,7 @@ struct qcom_pcie {
+ 	union qcom_pcie_resources res;
+ 	struct phy *phy;
+ 	struct gpio_desc *reset;
+-	const struct qcom_pcie_ops *ops;
+-	unsigned int pipe_clk_need_muxing:1;
++	struct qcom_pcie_cfg cfg;
+ };
  
- 		qupv3_id_0: geniqup@9c0000 {
-@@ -579,6 +583,40 @@ uart7: serial@99c000 {
- 			};
- 		};
+ #define to_qcom_pcie(x)		dev_get_drvdata((x)->dev)
+@@ -229,8 +228,8 @@ static int qcom_pcie_start_link(struct dw_pcie *pci)
+ 	struct qcom_pcie *pcie = to_qcom_pcie(pci);
  
-+		pcie0_phy: phy@1c06000 {
-+			compatible = "qcom,sm8450-qmp-gen3x1-pcie-phy";
-+			reg = <0 0x01c06000 0 0x200>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-+				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-+				 <&gcc GCC_PCIE_0_CLKREF_EN>,
-+				 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
-+			clock-names = "aux", "cfg_ahb", "ref", "refgen";
-+
-+			resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-+			reset-names = "phy";
-+
-+			assigned-clocks = <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
-+			assigned-clock-rates = <100000000>;
-+
-+			status = "disabled";
-+
-+			pcie0_lane: lanes@1c06200 {
-+				reg = <0 0x1c06e00 0 0x200>, /* tx */
-+				      <0 0x1c07000 0 0x200>, /* rx */
-+				      <0 0x1c06200 0 0x200>, /* pcs */
-+				      <0 0x1c06600 0 0x200>; /* pcs_pcie */
-+				clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
-+				clock-names = "pipe0";
-+
-+				#clock-cells = <0>;
-+				#phy-cells = <0>;
-+				clock-output-names = "pcie_0_pipe_clk";
-+			};
-+		};
-+
- 		config_noc: interconnect@1500000 {
- 			compatible = "qcom,sm8450-config-noc";
- 			reg = <0 0x01500000 0 0x1c000>;
+ 	/* Enable Link Training state machine */
+-	if (pcie->ops->ltssm_enable)
+-		pcie->ops->ltssm_enable(pcie);
++	if (pcie->cfg.ops->ltssm_enable)
++		pcie->cfg.ops->ltssm_enable(pcie);
+ 
+ 	return 0;
+ }
+@@ -1176,7 +1175,7 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	if (pcie->pipe_clk_need_muxing) {
++	if (pcie->cfg.pipe_clk_need_muxing) {
+ 		res->pipe_clk_src = devm_clk_get(dev, "pipe_mux");
+ 		if (IS_ERR(res->pipe_clk_src))
+ 			return PTR_ERR(res->pipe_clk_src);
+@@ -1209,7 +1208,7 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
+ 	}
+ 
+ 	/* Set TCXO as clock source for pcie_pipe_clk_src */
+-	if (pcie->pipe_clk_need_muxing)
++	if (pcie->cfg.pipe_clk_need_muxing)
+ 		clk_set_parent(res->pipe_clk_src, res->ref_clk_src);
+ 
+ 	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
+@@ -1287,7 +1286,7 @@ static int qcom_pcie_post_init_2_7_0(struct qcom_pcie *pcie)
+ 	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
+ 
+ 	/* Set pipe clock as clock source for pcie_pipe_clk_src */
+-	if (pcie->pipe_clk_need_muxing)
++	if (pcie->cfg.pipe_clk_need_muxing)
+ 		clk_set_parent(res->pipe_clk_src, res->phy_pipe_clk);
+ 
+ 	return clk_prepare_enable(res->pipe_clk);
+@@ -1387,7 +1386,7 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
+ 
+ 	qcom_ep_reset_assert(pcie);
+ 
+-	ret = pcie->ops->init(pcie);
++	ret = pcie->cfg.ops->init(pcie);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -1395,16 +1394,16 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
+ 	if (ret)
+ 		goto err_deinit;
+ 
+-	if (pcie->ops->post_init) {
+-		ret = pcie->ops->post_init(pcie);
++	if (pcie->cfg.ops->post_init) {
++		ret = pcie->cfg.ops->post_init(pcie);
+ 		if (ret)
+ 			goto err_disable_phy;
+ 	}
+ 
+ 	qcom_ep_reset_deassert(pcie);
+ 
+-	if (pcie->ops->config_sid) {
+-		ret = pcie->ops->config_sid(pcie);
++	if (pcie->cfg.ops->config_sid) {
++		ret = pcie->cfg.ops->config_sid(pcie);
+ 		if (ret)
+ 			goto err;
+ 	}
+@@ -1413,12 +1412,12 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
+ 
+ err:
+ 	qcom_ep_reset_assert(pcie);
+-	if (pcie->ops->post_deinit)
+-		pcie->ops->post_deinit(pcie);
++	if (pcie->cfg.ops->post_deinit)
++		pcie->cfg.ops->post_deinit(pcie);
+ err_disable_phy:
+ 	phy_power_off(pcie->phy);
+ err_deinit:
+-	pcie->ops->deinit(pcie);
++	pcie->cfg.ops->deinit(pcie);
+ 
+ 	return ret;
+ }
+@@ -1562,8 +1561,7 @@ static int qcom_pcie_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 
+-	pcie->ops = pcie_cfg->ops;
+-	pcie->pipe_clk_need_muxing = pcie_cfg->pipe_clk_need_muxing;
++	pcie->cfg = *pcie_cfg;
+ 
+ 	pcie->reset = devm_gpiod_get_optional(dev, "perst", GPIOD_OUT_HIGH);
+ 	if (IS_ERR(pcie->reset)) {
+@@ -1589,7 +1587,7 @@ static int qcom_pcie_probe(struct platform_device *pdev)
+ 		goto err_pm_runtime_put;
+ 	}
+ 
+-	ret = pcie->ops->get_resources(pcie);
++	ret = pcie->cfg.ops->get_resources(pcie);
+ 	if (ret)
+ 		goto err_pm_runtime_put;
+ 
 -- 
 2.33.0
 
