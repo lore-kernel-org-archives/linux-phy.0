@@ -4,72 +4,163 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F14DEC433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Dec 2021 13:10:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38D09C433EF
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Dec 2021 14:13:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dKZHSvVbCFsNtdQXLN1MP8r3aQ/E73mq7sp0zq1k0s4=; b=oUyB7ELsNXHUYp
-	hdgAsH6CNQ95vBQ4JqlRSMXfzyPSu7GU3lQ1dv93dW8PEJNR8OUF0rh7pZorpKK1QvKo9K3ug1vhv
-	E6tygo8N+zqJxK4KOwBQSk1BMg7oE7oJBF7pWOOJWdzUApL2JvRz2HbkxcKQrrbRXnjn19HnhoPER
-	DPGzl6/DqEi197S8uPbuGqUMrLtYqwS3qko7SNo8Ol4NaYQ8lUZ5PWYiLpgnH7jBRLJB65ixTh9MF
-	/VDAHHYyBWHy7myHcP33+3KMCaJa+zmSstu5kWiek53yE8GMSJqXrCjeGlAHL4qQkmMawqqRr3/Af
-	0OcG+0anjCdF5exDWDDg==;
+	List-Owner; bh=r0NIiIfLKv4qzEdiCvCVi/m0DGrzwtrSLJM/tIz4bWg=; b=bPm96L8sIfpzef
+	6aH3YdKQKxlX3qoH4y9UmOlRINB3rNx/86ws39yUfycJmGz8puFJuPVNsMWkzxJQVPjRiV4yiziIu
+	wfVWeZVVVrAW+ghjk19UF/71Re0yNNO5y6fcA3RbWuErKVx/eeAuQhYakakAMnK1QHjEDibLE0idp
+	0tHWe3EsPrXHQAouPN2PvEs6JmDOr5xHnonGm4HJyw+pijU3CI/te+ln5n8Ya0Sa8L40hMUpzTuhx
+	VYfMgWnUU/NdTFPDES/C4Fl+WefxrbqnlnVZ+M1epKBClIfYxTSolZI5oFqQmMwMziW3wY2tJGS23
+	L3C4Alo4MrAIOXtcSnoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mslrE-00CQOJ-FQ; Thu, 02 Dec 2021 13:10:40 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1msmpg-00CVrD-N5; Thu, 02 Dec 2021 14:13:08 +0000
+Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mslrB-00CQNC-C5
- for linux-phy@lists.infradead.org; Thu, 02 Dec 2021 13:10:38 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1B2DAHuC048421;
- Thu, 2 Dec 2021 07:10:17 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1638450617;
- bh=/NgGi4z2UeQc+qcSMlJU+oGJHEz7+dU8GUdgk8XoMWM=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=sgFp+Jl8WOfIyGB5+lRpNatDWq2bOzta78ho3vng5VRO1lhOoRU4uRS7YmjCjqEN+
- d4AQWZv/0Z+nFYmHLL88T3yFMv1Ol6jMry573iKpLW1Tk3QnBoAXpfTWMrSyEpTS6J
- lz0+GsOKGErWypINiFtvtsrHBEckjJfr4UfSc/eQ=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1B2DAHRH040638
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 2 Dec 2021 07:10:17 -0600
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Thu, 2
- Dec 2021 07:10:17 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Thu, 2 Dec 2021 07:10:17 -0600
-Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
- (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1B2DA4Kk031324;
- Thu, 2 Dec 2021 07:10:14 -0600
-From: Aswath Govindraju <a-govindraju@ti.com>
-To: 
-CC: Aswath Govindraju <a-govindraju@ti.com>, Wolfgang Grandegger
- <wg@grandegger.com>, Marc Kleine-Budde <mkl@pengutronix.de>, Kishon Vijay
- Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, <linux-can@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH 2/2] phy: phy-can-transceiver: Add support for setting mux
-Date: Thu, 2 Dec 2021 18:40:02 +0530
-Message-ID: <20211202131002.12217-3-a-govindraju@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20211202131002.12217-1-a-govindraju@ti.com>
-References: <20211202131002.12217-1-a-govindraju@ti.com>
+ id 1msmpd-00CVqS-4h
+ for linux-phy@lists.infradead.org; Thu, 02 Dec 2021 14:13:06 +0000
+Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
+ by mx0a-0014ca01.pphosted.com (8.16.1.2/8.16.1.2) with ESMTP id 1B2DZsst023312;
+ Thu, 2 Dec 2021 06:12:54 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=proofpoint;
+ bh=yw6p0fn6aENJV2sIfXFNi2yulY1kj7S9xRXZ2s/1L9U=;
+ b=WEN0GFgQTgkAxuN7jDw0lz4kNSNyABWF7jVcOVamj3T+1cjw2oes7XymaBuxNx7aTskC
+ d6zWuauSbDU8vNLjVLAX7b1rwe5VT72IqiMAWKEH2m2zwNoqEhFo6wsYLISfQRcCtUmK
+ a4JALHRaCfkSw8VZ4aFWXw53KjbBnTDKYySksH+T6n7BB55vFIxoctsVx2TnpioD1Wwt
+ HpJnD3hMbm+ZSWob554wl1sc41AP4raFfeAdCOZ7G29cfSz0TO9Plcr6YIPAOyLgnK7+
+ 3SsNFiYOMXHufGdb8ahY9HqNIqMd0N+KuczN5jUx9BnRUG9Nfga0UhzuFsvXFZrQPPLn zw== 
+Received: from nam11-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam11lp2170.outbound.protection.outlook.com [104.47.57.170])
+ by mx0a-0014ca01.pphosted.com (PPS) with ESMTPS id 3cpqkmhqs8-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 02 Dec 2021 06:12:54 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jXwGxiNsz4NowGsazbTuiigrZxBa9Eq5lCnCp+qN3nxBWL5pNLh6Tjxxqgh+WjucVLwP0xMuXZ8ENbjXjJQTiVSUwAuvfjXf8No0Of+1hc29lYaFIp28ATDieHHR8PHvyJPNFxfG5tSSuFz5kZVvIQ8GbA4UScazY4wVdV3vk5WAHTJi0fU3V22ynaaULHBl4gNo0Qd1WXi/eAoQJ+gvF+ngV+egdzxu0pz14DU5VDgmIdhunHG9lAMnCE5U2cAqQEDY3EyNoDKe3pmpSalNSGMCq1/x0gJKPqoAZ8fDFW8fmw83PUTN9UBf/pRTDD21WwNff4bpTmHJtVKa1IUr2w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=yw6p0fn6aENJV2sIfXFNi2yulY1kj7S9xRXZ2s/1L9U=;
+ b=Jz0uQU+dF0rn/7G5Ss5hptnNMnFFyHjdckzRkZDy/AXlRe756QuJS7Cijd8BALG9iSwtVcLnTkH2F2quawE72as07Dth/h3GPotZXmOy7jpoGZXnt73/qbm1bXB+SdRTafVqrO03VVJcpCnqna3b4gi5RX0VoBSaVnr4mfsxGxOzssoWjM59f5qNx07FL2MzB4a3lZzAZ0f2+ROIH5w0TaMJXXet0JOEEASax4YNvXPSd3ZH9B8Nu2wPdtthwp54t+IJoxoAZWyzm464Bh1V/V1gwIkHeVSv5rDhZOe5HGuR5JcV8VMal8YBlN5gy/70+l4fc/QK/8iZZCsTgWCcoQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cadence.com; dmarc=pass action=none header.from=cadence.com;
+ dkim=pass header.d=cadence.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yw6p0fn6aENJV2sIfXFNi2yulY1kj7S9xRXZ2s/1L9U=;
+ b=afCratwBlvn5IrlvOxbVlOaA1k1cwRMgnuJJ4qvPrPqv3AQlD5s1pKMNxjgjv4W5X7oPcY7HS8X3eYfro7UdTZoWgn0FFmh3i1zyPZ6RNURhmJRhGUAMtj9qrYhZFusBHbSK2+TXKslw98UDLrC0p2vtiMAiyEMkyyz0GQwKdLk=
+Received: from DM6PR07MB6154.namprd07.prod.outlook.com (2603:10b6:5:17e::20)
+ by DM6PR07MB6489.namprd07.prod.outlook.com (2603:10b6:5:1c6::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4734.23; Thu, 2 Dec
+ 2021 14:12:51 +0000
+Received: from DM6PR07MB6154.namprd07.prod.outlook.com
+ ([fe80::a15c:c860:703d:3017]) by DM6PR07MB6154.namprd07.prod.outlook.com
+ ([fe80::a15c:c860:703d:3017%7]) with mapi id 15.20.4755.014; Thu, 2 Dec 2021
+ 14:12:51 +0000
+From: Swapnil Kashinath Jakhade <sjakhade@cadence.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: "kishon@ti.com" <kishon@ti.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Milind Parab
+ <mparab@cadence.com>, "a-govindraju@ti.com" <a-govindraju@ti.com>
+Subject: RE: [PATCH v3 13/15] phy: cadence: Sierra: Add PCIe + QSGMII PHY
+ multilink configuration
+Thread-Topic: [PATCH v3 13/15] phy: cadence: Sierra: Add PCIe + QSGMII PHY
+ multilink configuration
+Thread-Index: AQHXx2bHmQutwPZ9l0Sv3BSHrxD/16wQu9eAgAG6aaCAAXB/AIALkHAQ
+Date: Thu, 2 Dec 2021 14:12:51 +0000
+Message-ID: <DM6PR07MB61549C25EBF70ED2639FBCF6C5699@DM6PR07MB6154.namprd07.prod.outlook.com>
+References: <20211022170236.18839-1-sjakhade@cadence.com>
+ <20211022170236.18839-14-sjakhade@cadence.com> <YZxyja2xEkpWvStR@matsya>
+ <DM6PR07MB6154FB5EB84B7BE063965619C5619@DM6PR07MB6154.namprd07.prod.outlook.com>
+ <YZ8aygJQoxie+Ddn@matsya>
+In-Reply-To: <YZ8aygJQoxie+Ddn@matsya>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc2pha2hhZGVcYXBwZGF0YVxyb2FtaW5nXDA5ZDg0OWI2LTMyZDMtNGE0MC04NWVlLTZiODRiYTI5ZTM1Ylxtc2dzXG1zZy1lY2Q1ZmY0ZC01Mzc5LTExZWMtODU4ZC1jOGY3NTA0NDIyZDhcYW1lLXRlc3RcZWNkNWZmNGUtNTM3OS0xMWVjLTg1OGQtYzhmNzUwNDQyMmQ4Ym9keS50eHQiIHN6PSIyNDEwIiB0PSIxMzI4MjkyNzk2ODE2NjA1NDQiIGg9IkxXcW11VU05bTExT2Nac2pmUDNiV21TZGpkcz0iIGlkPSIiIGJsPSIwIiBibz0iMSIvPjwvbWV0YT4=
+x-dg-rorf: true
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4f57cf76-3f32-4f9a-10ca-08d9b59dd3dd
+x-ms-traffictypediagnostic: DM6PR07MB6489:
+x-microsoft-antispam-prvs: <DM6PR07MB6489141E03289823E6E914AAC5699@DM6PR07MB6489.namprd07.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4303;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: RLNL8JRoyahrGP6s4O816wq+LeL6heR7a4foaiJDEV93aQsiCXa/HgJs8qIJ05HsfcWqln5hyzbqoMC0VAjA2k11YxGqV1KptK64Z7HO1q+YSu5rz1+wqOtIp1/AHttLc4K4YYYh63i54i2dbrUJRXT+N3K6Ah5blLWgkpyGz765S0UbpZ/mxsiwQLB7wIOg8UztmV3SQ9QEAKw7gA/n93cBXjU+I5cbFtXm3Redub1MMugO7X6o4xnGqgUdFdz8uqRixa1BEWlDAgW4ZABwweXJgIsZSb7F4uz0CjT5cMwAe8v8kKYRVSsL6jOifSbX8UmBfhSaaDorSzAmqMUd/lSmZToSWOLTCyetO4UscF03PlsQf2f7BeyaBjI6BwsgFrQKuTD/+T7LuTU53lXBSxJ7smBkMFfp8TCfLdxwflG+56UnGYQt/jLte4BHmRPjbqfOvqqDrSIw8ITONfGVvdyJc5/gH/tkRsmABr42LA+0H5ODpcRIpTyYE5fi3eK1nrx3ekVGHDIPrb3LDxJuRkjtxw9VGVvK0mG5rRizy6FhvPEXXiDh53OJmXHelCqTIWl0G2aGdV8hzwdOwETPpUu00uBKRSDEGYdCwtyuYuwfBUlsLF4wAa9nNfimZYLTImdPHFTLpT+mTj3gj0K5R2D38+g8fLvUbHE60o9UTGZ4FVAqoLA7gz6jvtNlWBHD5ftMjVTY5YoH+aGb4WBGS7XwzZF170j0OTfA2Q8aiBLXdAr4elpcIGTD9GRw8e8K
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM6PR07MB6154.namprd07.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(36092001)(508600001)(55016003)(33656002)(52536014)(122000001)(2906002)(53546011)(186003)(5660300002)(7696005)(64756008)(76116006)(316002)(66476007)(54906003)(66556008)(66446008)(86362001)(83380400001)(71200400001)(8676002)(4326008)(6916009)(26005)(66946007)(38070700005)(8936002)(6506007)(38100700002)(9686003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?DyaJm5vujDPMe+yer/1OaPkaRoeIXgtyRVB4nYHAK3+yS0WDJ2JuF/aWcNJn?=
+ =?us-ascii?Q?LjLqotj/gusvJpsngTkGpXjuVGrNnUsQkbUyv+GD4/g4ibDVSE2dOPmO/xEx?=
+ =?us-ascii?Q?kIu+tQpkEhlGpHjmNk8caUQ11rGIap2ckDS7DWrWqpjZO4NbNXMFYxC7NTI3?=
+ =?us-ascii?Q?GVHy0f7V2Y15zlbZBuXVVEi/sVjFUUNRoMqms0APVXrUSrYcQ7AIFbOrvYvk?=
+ =?us-ascii?Q?qTzBIOxUGqOF8NMa0VNVrOzZLJUCokcLILm7jsO8uKSgSOWKSL4JVfxwk26Q?=
+ =?us-ascii?Q?wJqtcxdGrBrCqLbsu0ly+Ym+IiLXNFCVLLAjry735LdDAFDGlPH62GQc2OlN?=
+ =?us-ascii?Q?IkYtJEgNyX4ZXj42JLHEXHmHIqJ/Y5u+3feRmNbxwBr9vgusy9GXQoZX9mmq?=
+ =?us-ascii?Q?uU1p8C95YfYfSGKNXOPsOFfphmZuida2D+X8Z78TdgCnDxZbLdspp1ckcF12?=
+ =?us-ascii?Q?1VnjCVM0/jnmAO0GdPUKt2b+4x24eBH4W/ENCtk+A3VGlROdFNeuvs4h/dBQ?=
+ =?us-ascii?Q?V23g7U2ln/YImAje2b1yut863tUWbR3zX1Gh5Qmeb2aqKNYAlji8oI9GAT50?=
+ =?us-ascii?Q?jq9ozfKVASvDPFikRlTXkNMQ89tJCsZ6WSaPpa0wN5cv4U9vWbgD1VeVd5yJ?=
+ =?us-ascii?Q?XjDGToLgKcFVuYm8iI84a6FAbi7CGSYYnB20gN4K/xIPIONWzFi3SRg6B4qN?=
+ =?us-ascii?Q?wHRw9mr+zaxCoWQLjN9PRZdSh10jQMtInCfP8gjWlDxGQsTvCcyMfN/pTeYK?=
+ =?us-ascii?Q?ibW6q0wEg0etpAmDZ5Kb7aDn5iee6hJ25XZv7hIWLFQCQu8nkUH5FwE99X7C?=
+ =?us-ascii?Q?9k6UbvFqSQjuRUoBG7OInZS0KqC6wjuSlByyxz4/DjpYgia9GUNL/5tWGhUr?=
+ =?us-ascii?Q?zVkxiPTF/k5GNdo1roOhqEp0XmXBQjux9qz5uiwvQ4b93Kjj93Qzi+2U3un4?=
+ =?us-ascii?Q?bY16bgjsQ7RQXcPRJMeMR4t4sSKhQggwozQz9pipwg5Kuqvs5rXX7P9/UVtE?=
+ =?us-ascii?Q?utZKz3tETQtPq178cogQhagmfRVhqjw/972T6ndnJQn9E6mirb5il9WK50Te?=
+ =?us-ascii?Q?CH4kwnnCLZ0PXYKMevXrunsM+8psLBCTvovDjFOotPdwf5lkDqCxMRAq0Ljx?=
+ =?us-ascii?Q?T1zbQQeUHFUUsWEKMGB5bBhVZDC1gZkFxzdas5q48jipJAYtyRYP6hOKxapQ?=
+ =?us-ascii?Q?bVTXYyPLFpSK2b6VALztQBILWijcBkiaCC2ZLymfTuchaO3XFFOJoJ+dfSNx?=
+ =?us-ascii?Q?99rYUYk8kSzU/RLmnh3iZMnoSA4nYTU3zoHWMv/31EcmwbEja4UI6TC4H8c9?=
+ =?us-ascii?Q?/b9oaTShhB2F0flhhQLeCc0WjRtdVz+r/9lnuzGsEY97jTQ6Sk7RTOnKl1Hr?=
+ =?us-ascii?Q?KcvuZlvhUWr1+p0tTDMjAQGMFiPfOC3u6AVDMTPKc0c5N8rHEaOD7FDrS1xt?=
+ =?us-ascii?Q?TuOPxAR2qU6SwDJrQzrcT6e66eb9XEfOlVdBEbx9VRVpkamzu8j8aJSMzEXq?=
+ =?us-ascii?Q?20xyt6mvs4lwkOo9AQ6DlEJb0o7Q+82Uwk1TZnJCsOhndGJCbHXpW8pdjF0Q?=
+ =?us-ascii?Q?ty+9C0y6QQfjkQFYHjUX2jN80be+r/32AAbPN9W7ZcpJy+Fgic2lNa7GvC+y?=
+ =?us-ascii?Q?c127ZtRkFSoNZGoDaMW4vlUD+qvW/G2hLtsAzyUdUs81W2TIU0vzYMl50U6p?=
+ =?us-ascii?Q?z27MZg=3D=3D?=
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DM6PR07MB6154.namprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f57cf76-3f32-4f9a-10ca-08d9b59dd3dd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Dec 2021 14:12:51.7929 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: nfEoEw+XLD9n3kO2M2nYhyyZX5TbhsfZer3zjJpYb9AsBlNLi9gWacOPQnUZ0BiOWRF/Xfjq1+NGol8uFaQB4pHYPRkovDvfv1tYrF/ghoE=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR07MB6489
+X-Proofpoint-GUID: AaAx8osbaY56XjqM36YtqeCRcbf2-VUS
+X-Proofpoint-ORIG-GUID: AaAx8osbaY56XjqM36YtqeCRcbf2-VUS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.11.62.513
+ definitions=2021-12-02_08,2021-12-02_01,2021-12-02_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 mlxscore=0
+ bulkscore=0 adultscore=0 phishscore=0 lowpriorityscore=0 suspectscore=0
+ priorityscore=1501 impostorscore=0 spamscore=0 malwarescore=0
+ clxscore=1015 mlxlogscore=632 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2110150000 definitions=main-2112020093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211202_051037_517164_1CCCB914 
-X-CRM114-Status: GOOD (  16.26  )
+X-CRM114-CacheID: sfid-20211202_061305_595668_8CBF8EB2 
+X-CRM114-Status: GOOD (  21.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,92 +177,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On some boards, for routing CAN signals from controller to transceiver,
-muxes might need to be set. Therefore, add support for setting the mux by
-reading the mux-states property from the device tree node.
+Hi Vinod,
 
-Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
----
- drivers/phy/Kconfig               |  1 +
- drivers/phy/phy-can-transceiver.c | 22 ++++++++++++++++++++++
- 2 files changed, 23 insertions(+)
+> -----Original Message-----
+> From: Vinod Koul <vkoul@kernel.org>
+> Sent: Thursday, November 25, 2021 10:41 AM
+> To: Swapnil Kashinath Jakhade <sjakhade@cadence.com>
+> Cc: kishon@ti.com; robh+dt@kernel.org; p.zabel@pengutronix.de; linux-
+> phy@lists.infradead.org; linux-kernel@vger.kernel.org;
+> devicetree@vger.kernel.org; Milind Parab <mparab@cadence.com>; a-
+> govindraju@ti.com
+> Subject: Re: [PATCH v3 13/15] phy: cadence: Sierra: Add PCIe + QSGMII PHY
+> multilink configuration
+> 
+> EXTERNAL MAIL
+> 
+> 
+> On 24-11-21, 07:33, Swapnil Kashinath Jakhade wrote:
+> 
+> > > so this is pcie->qsgmii ->ssc/external/internal ... ok
+> > >
+> > > > +				[NO_SSC] =
+> > > &pcie_100_no_ssc_plllc_cmn_vals,
+> > > > +				[EXTERNAL_SSC] =
+> > > &pcie_100_ext_ssc_plllc_cmn_vals,
+> > > > +				[INTERNAL_SSC] =
+> > > &pcie_100_int_ssc_plllc_cmn_vals,
+> > > > +			},
+> > > >  		},
+> > > >  		[TYPE_USB] = {
+> > > >  			[TYPE_NONE] = {
+> > > >  				[EXTERNAL_SSC] =
+> > > &usb_100_ext_ssc_cmn_vals,
+> > > >  			},
+> > > >  		},
+> > > > +		[TYPE_QSGMII] = {
+> > > > +			[TYPE_PCIE] = {
+> > >
+> > > now it is reverse! qsgmii -> pcie -> ... why?
+> > >
+> > > what is meant by pcie->qsgmii and qsgmii-> pcie?
+> > >
+> >
+> > Multi-protocol configuration is done in 2 phases, each for one protocol.
+> > e.g. for PCIe + QSGMII case,
+> > [TYPE_PCIE][TYPE_QSGMII] will configure common and lane registers for
+> > PCIe and [TYPE_QSGMII][TYPE_PCIE] will configure common and lane
+> registers for QSGMII.
+> 
+> Then it should be always common + protocol or protocol + common, not
+> both please! Pls make an order and stick to it everywhere... If that is not
+> possible, I would like to understand why
+> 
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 82b63e60c5a2..300b0f2b5f84 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -64,6 +64,7 @@ config USB_LGM_PHY
- config PHY_CAN_TRANSCEIVER
- 	tristate "CAN transceiver PHY"
- 	select GENERIC_PHY
-+	select MULTIPLEXER
- 	help
- 	  This option enables support for CAN transceivers as a PHY. This
- 	  driver provides function for putting the transceivers in various
-diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
-index 6f3fe37dee0e..cb91d0e94da7 100644
---- a/drivers/phy/phy-can-transceiver.c
-+++ b/drivers/phy/phy-can-transceiver.c
-@@ -10,6 +10,7 @@
- #include<linux/module.h>
- #include<linux/gpio.h>
- #include<linux/gpio/consumer.h>
-+#include <linux/mux/consumer.h>
- 
- struct can_transceiver_data {
- 	u32 flags;
-@@ -21,13 +22,22 @@ struct can_transceiver_phy {
- 	struct phy *generic_phy;
- 	struct gpio_desc *standby_gpio;
- 	struct gpio_desc *enable_gpio;
-+	struct mux_state *mux_state;
- };
- 
- /* Power on function */
- static int can_transceiver_phy_power_on(struct phy *phy)
- {
-+	int ret;
- 	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
- 
-+	if (can_transceiver_phy->mux_state) {
-+		ret = mux_state_select(can_transceiver_phy->mux_state);
-+		if (ret) {
-+			dev_err(&phy->dev, "Failed to select CAN mux: %d\n", ret);
-+			return ret;
-+		}
-+	}
- 	if (can_transceiver_phy->standby_gpio)
- 		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
- 	if (can_transceiver_phy->enable_gpio)
-@@ -45,6 +55,8 @@ static int can_transceiver_phy_power_off(struct phy *phy)
- 		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
- 	if (can_transceiver_phy->enable_gpio)
- 		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
-+	if (can_transceiver_phy->mux_state)
-+		mux_state_deselect(can_transceiver_phy->mux_state);
- 
- 	return 0;
- }
-@@ -95,6 +107,16 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
- 	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
- 	drvdata = match->data;
- 
-+	if (of_property_read_bool(dev->of_node, "mux-states")) {
-+		struct mux_state *mux_state;
-+
-+		mux_state = devm_mux_state_get(dev, NULL);
-+		if (IS_ERR(mux_state))
-+			return dev_err_probe(&pdev->dev, PTR_ERR(mux_state),
-+					     "failed to get mux\n");
-+		can_transceiver_phy->mux_state = mux_state;
-+	}
-+
- 	phy = devm_phy_create(dev, dev->of_node,
- 			      &can_transceiver_phy_ops);
- 	if (IS_ERR(phy)) {
--- 
-2.17.1
+Could you please elaborate what do you mean by
+" common + protocol or protocol + common, not both please!"?
+The order is same everywhere which is common + lane configuration for protocol 1
+and then for protocol 2. For multiprotocol case, PHY configuration is based on which
+protocols are operating simultaneously. So e.g.
+[TYPE_QSGMII][TYPE_PCIE] -> QSGMII configuration when other protocol is PCIe
+Which might be different than
+[TYPE_QSGMII][TYPE_*] -> QSGMII configuration with other protocol.
 
+Thanks & regards,
+Swapnil
+
+> --
+> ~Vinod
 
 -- 
 linux-phy mailing list
