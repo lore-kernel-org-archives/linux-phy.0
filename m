@@ -4,61 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1085C433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Dec 2021 21:08:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9934C433EF
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Dec 2021 04:12:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yb5nnT/Npx9QETTXlqAYXAi4GJy5q/RaDYCYsBKydMA=; b=tuOBwfucAxdPRu
-	6J9Kxhn9CTaUiLoI85CCvRK0x+kgn3ohOF38wTTO9IRVwH6B0pVfn5bbd6S0arX8lhP3r3bMzMXed
-	VSW93NTlqcXjnN2rKUhSWj0gmemfWHXPGLKBLDZEuuzz5zocVjIftmXO0+DESD5Z2vPwgwUS5bYwg
-	72dl5FYwVejJq6RO1niHSuz5BKzEKEvEqVUZDvFM/dT5SQUEy10G0XR34hgISpMpM61XIc7j78kmD
-	wtOPKlYQhEqwvcRDmcHU14bX13FShDKEy3xc1DQmWwNA9cv4eAgqa/v8wVRPO4AnHYiagnTGCFRhi
-	tjK6mglRZHo8yov5IbMQ==;
+	List-Owner; bh=XvHgBfL/KCIwQWJgKCp1Tvi9kedxXPPZ5ALMJePZBzw=; b=vWlyhHJjmBO0eY
+	vuV6vYulICWmSDbxsazsAZdq3iuvtX2SASDGiUPycxt9x/CGnw6n1Cbe9SE5L2mlYvqt+AQ7mQsum
+	dWwIuOZ6nQpMfp2fk+0Iz5Imxg/79bNcmW9TnFyuH6i6Dyx+vc1MRpq/6xiSHJT69SDHaz4sap6s1
+	a+BHYbsXECBytzQ60MCKzy+OeZSvt2d+eMfZKa550PuTv7RtJpMD8teFgNuE3Tb5r6MgLa9O89Vb7
+	5gdBOgY6gjWqnqPdor6kWqqx2GZLBZTlgArFOs+prSH8qvZ9BEFNIt3F9msu5YNcXCZZpoNFRjhAJ
+	s9qgiFZYD89NtjYXXF+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1msWqC-00AB5g-1y; Wed, 01 Dec 2021 21:08:36 +0000
-Received: from 3.mo583.mail-out.ovh.net ([46.105.40.108])
+	id 1msdSg-00As8B-43; Thu, 02 Dec 2021 04:12:46 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1msWq8-00AB3P-MT
- for linux-phy@lists.infradead.org; Wed, 01 Dec 2021 21:08:34 +0000
-Received: from player796.ha.ovh.net (unknown [10.108.4.54])
- by mo583.mail-out.ovh.net (Postfix) with ESMTP id 46D8D23C6B
- for <linux-phy@lists.infradead.org>; Wed,  1 Dec 2021 21:08:26 +0000 (UTC)
-Received: from milecki.pl (ip-194-187-74-233.konfederacka.maverick.com.pl
- [194.187.74.233]) (Authenticated sender: rafal@milecki.pl)
- by player796.ha.ovh.net (Postfix) with ESMTPSA id 5317F24DA5558;
- Wed,  1 Dec 2021 21:08:17 +0000 (UTC)
-Authentication-Results: garm.ovh; auth=pass
- (GARM-106R0067f55729a-1a8a-45c6-a52a-f5ace8f2f974,
- 738FF6B34265B71E218B6744B181DC2F08F41F15) smtp.auth=rafal@milecki.pl
-X-OVh-ClientIp: 194.187.74.233
-Message-ID: <aeb874ed-179e-5ede-6339-ea4b80b7806f@milecki.pl>
-Date: Wed, 1 Dec 2021 22:08:16 +0100
+ id 1msdSc-00As7I-1V
+ for linux-phy@lists.infradead.org; Thu, 02 Dec 2021 04:12:43 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by sin.source.kernel.org (Postfix) with ESMTPS id 8BE69CE215F;
+ Thu,  2 Dec 2021 04:12:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1738C00446;
+ Thu,  2 Dec 2021 04:12:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1638418357;
+ bh=WrbRr7hfiIN1K0T0/WmtBkJD3RopCcS33dkDOpBXrUE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=SDyM5T68r09ajTEZKtBfOjBS9r9CD+0mzhRhM9YY32oUy3jqqF6MPgMfL/7sdBSq8
+ vwjmSAn1GD30YGO6FNm+LcZj3G+pu73kLJB/uyJBXLNqHIYyMOttxFxMTaltZIrn6s
+ PNsHj+yZ2/bQTG3GS6/UkBy89TeiR+GJzCbKiR0KU+JMhaO6Rd6QyZEcqnQB76ILav
+ DTnle9VaWpmmQa8qwCQDYxhSnDJ3P4l7EBpHRvlq6GDU4UUSz5QTojkkSVIb/3n/gd
+ tcwTTU5VPetky1VhyyntMZg/fnUHWjAI7EXTBantsa1jljLzKa2qq1nJePwcoa71LZ
+ 0euLpIRXsr4CA==
+Date: Thu, 2 Dec 2021 09:42:33 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Greg KH <gregkh@linuxfoundation.org>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+ Linux Phy <linux-phy@lists.infradead.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [GIT PULL]: Generic phy fixes for v5.16
+Message-ID: <YahHsaJVCkxAm+hI@matsya>
+References: <YaB7jK+ADoUQHWjh@matsya>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101
- Thunderbird/95.0
-Subject: Re: [PATCH 3/3] phy: broadcom: Kconfig: Fix PHY_BRCM_USB config option
-To: Al Cooper <alcooperx@gmail.com>, linux-kernel@vger.kernel.org
-Cc: bcm-kernel-feedback-list@broadcom.com,
- Florian Fainelli <f.fainelli@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
- Vinod Koul <vkoul@kernel.org>
-References: <20211201180653.35097-1-alcooperx@gmail.com>
- <20211201180653.35097-4-alcooperx@gmail.com>
-From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
-In-Reply-To: <20211201180653.35097-4-alcooperx@gmail.com>
-X-Ovh-Tracer-Id: 16449679117486041945
-X-VR-SPAMSTATE: OK
-X-VR-SPAMSCORE: -100
-X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedvuddrieefgddugeeiucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurhepkfffgggfuffvfhfhjggtgfesthekredttdefjeenucfhrhhomheptfgrfhgrlhcuofhilhgvtghkihcuoehrrghfrghlsehmihhlvggtkhhirdhplheqnecuggftrfgrthhtvghrnhepjeetledugeejtdevheetieduhefgtedvgefftddvfedvieevjeegleffleegtdeunecukfhppedtrddtrddtrddtpdduleegrddukeejrdejgedrvdeffeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhhouggvpehsmhhtphhouhhtpdhhvghlohepphhlrgihvghrjeeliedrhhgrrdhovhhhrdhnvghtpdhinhgvtheptddrtddrtddrtddpmhgrihhlfhhrohhmpehrrghfrghlsehmihhlvggtkhhirdhplhdprhgtphhtthhopehlihhnuhigqdhphhihsehlihhsthhsrdhinhhfrhgruggvrggurdhorhhg
+Content-Disposition: inline
+In-Reply-To: <YaB7jK+ADoUQHWjh@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211201_130832_921767_38E33063 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211201_201242_487224_EEFA077F 
+X-CRM114-Status: GOOD (  18.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,21 +68,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDEuMTIuMjAyMSAxOTowNiwgQWwgQ29vcGVyIHdyb3RlOgo+IFRoZSBwcmV2aW91cyBjb21t
-aXQgNGI0MDJmYThlMGI3ICgicGh5OiBwaHktYnJjbS11c2I6IHN1cHBvcnQgUEhZIG9uCj4gdGhl
-IEJDTTQ5MDgiKSBhZGRlZCBhIHNlY29uZCAiZGVmYXVsdCIgbGluZSBmb3IgQVJDSF9CQ01fNDkw
-OCBhYm92ZQo+IHRoZSBvcmlnaW5hbCAiZGVmYXVsdCIgbGluZSBmb3IgQVJDSF9CUkNNU1RCLiBX
-aGVuIHR3byAiZGVmYXVsdCIKPiBsaW5lcyBhcmUgdXNlZCwgb25seSB0aGUgZmlyc3QgaXMgdXNl
-ZCBhbmQgdGhpcyBjaGFuZ2Ugc3RvcHBlZAo+IHRoZSBQSFlfQlJDTV9VU0Igb3B0aW9uIGZvciBi
-ZWluZyBlbmFibGVkIGZvciBBUkNIX0JSQ01TVEIuCj4gVGhlIGZpeCBpcyB0byB1c2Ugb25lICJk
-ZWZhdWx0IGxpbmUgd2l0aCAifHwiLgo+IAo+IEZpeGVzOiA0YjQwMmZhOGUwYjcgKCJwaHk6IHBo
-eS1icmNtLXVzYjogc3VwcG9ydCBQSFkgb24gdGhlIEJDTTQ5MDgiKQo+IFNpZ25lZC1vZmYtYnk6
-IEFsIENvb3BlciA8YWxjb29wZXJ4QGdtYWlsLmNvbT4KCkFja2VkLWJ5OiBSYWZhxYIgTWnFgmVj
-a2kgPHJhZmFsQG1pbGVja2kucGw+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+Hi Greg,
+
+On 26-11-21, 11:45, Vinod Koul wrote:
+> Hello Greg,
+> 
+> Please pull to recieve bunch of fixes for generic phy subsystem. These
+> contain mostly kernel-doc warning fixes along with couple of driver
+> fixes.
+> 
+> The following changes since commit fa55b7dcdc43c1aa1ba12bca9d2dd4318c2a0dbf:
+> 
+>   Linux 5.16-rc1 (2021-11-14 13:56:52 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-fixes-5.16
+
+Did you miss this one or something else...
+
+> 
+> for you to fetch changes up to f0ae8685b2858fc1dabf5ea743642abb5f242375:
+> 
+>   phy: HiSilicon: Fix copy and paste bug in error handling (2021-11-23 10:42:13 +0530)
+> 
+> ----------------------------------------------------------------
+> phy: fixes for 5.16
+> 
+> Fixes for:
+>  - kernel-doc warnings for various drivers
+>  - error handling fix for HiSilicon driver
+>  - name fix for zynqmp phy
+>  - property name fix in stm32 phy
+> 
+> ----------------------------------------------------------------
+> Amelie Delaunay (1):
+>       phy: stm32: fix st,slow-hs-slew-rate with st,decrease-hs-slew-rate
+> 
+> Dan Carpenter (1):
+>       phy: HiSilicon: Fix copy and paste bug in error handling
+> 
+> Liam Beguin (1):
+>       dt-bindings: phy: zynqmp-psgtr: fix USB phy name
+> 
+> Randy Dunlap (1):
+>       phy: ti: report 2 non-kernel-doc comments
+> 
+> Vinod Koul (6):
+>       phy: mvebu-cp110-utmi: Fix kernel-doc warns
+>       phy: qualcomm: qmp: Add missing struct documentation
+>       phy: qualcomm: usb-hsic: Fix the kernel-doc warn
+>       phy: ti: tusb1210: Fix the kernel-doc warn
+>       phy: qualcomm: ipq806x-usb: Fix kernel-doc style
+>       phy: ti: omap-usb2: Fix the kernel-doc style
+> 
+>  .../devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml |  2 +-
+>  drivers/phy/hisilicon/phy-hi3670-pcie.c            |  4 ++--
+>  drivers/phy/marvell/phy-mvebu-cp110-utmi.c         |  4 ++--
+>  drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c        | 26 ++++++++++++----------
+>  drivers/phy/qualcomm/phy-qcom-qmp.c                |  3 +++
+>  drivers/phy/qualcomm/phy-qcom-usb-hsic.c           |  2 +-
+>  drivers/phy/st/phy-stm32-usbphyc.c                 |  2 +-
+>  drivers/phy/ti/phy-am654-serdes.c                  |  2 +-
+>  drivers/phy/ti/phy-j721e-wiz.c                     |  2 +-
+>  drivers/phy/ti/phy-omap-usb2.c                     |  6 ++---
+>  drivers/phy/ti/phy-tusb1210.c                      |  2 +-
+>  11 files changed, 30 insertions(+), 25 deletions(-)
+> 
+> Thanks
+> -- 
+> ~Vinod
+
+
+
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
+
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
