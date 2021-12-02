@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9934C433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Dec 2021 04:12:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D10FC433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Dec 2021 04:16:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XvHgBfL/KCIwQWJgKCp1Tvi9kedxXPPZ5ALMJePZBzw=; b=vWlyhHJjmBO0eY
-	vuV6vYulICWmSDbxsazsAZdq3iuvtX2SASDGiUPycxt9x/CGnw6n1Cbe9SE5L2mlYvqt+AQ7mQsum
-	dWwIuOZ6nQpMfp2fk+0Iz5Imxg/79bNcmW9TnFyuH6i6Dyx+vc1MRpq/6xiSHJT69SDHaz4sap6s1
-	a+BHYbsXECBytzQ60MCKzy+OeZSvt2d+eMfZKa550PuTv7RtJpMD8teFgNuE3Tb5r6MgLa9O89Vb7
-	5gdBOgY6gjWqnqPdor6kWqqx2GZLBZTlgArFOs+prSH8qvZ9BEFNIt3F9msu5YNcXCZZpoNFRjhAJ
-	s9qgiFZYD89NtjYXXF+A==;
+	List-Owner; bh=Hy8p+6pu5ym1CyxQ3TIK7Wvc5PZ2Rm+zVUIKFkcnD/U=; b=rM+mQstrZYAh/d
+	DgWXiF9yU4sy+3bjzSp8B/7K3UBNknoJmfLW1i+5a4IXLZYeS5qLdglfpomZuFH5prsVu7zbHpM7u
+	C+eQ9OeL6Vl5YXijv7o9qjHRNZ+2rx2LziDp81p28s6a99JzJzmbRrv0JvLN89Maz5NYRenWjHjc3
+	QXuk2y/YkQdj5X5v4tbGXvjqu1tqAZ/dwz72PlgezRfv36e9uPRR8MD8cwVJooRcerDrg/IAdNxUo
+	NvjsZTXhr0k1IkGjSBs9Q9+dQJwRcqUtSwbD1/zMfhVpln3nq0gLCDTr/qaCGy7PFLTSd6Rf149QH
+	I5SeeJ7Xi1l8YTsCwrAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1msdSg-00As8B-43; Thu, 02 Dec 2021 04:12:46 +0000
+	id 1msdWi-00AsQM-Ka; Thu, 02 Dec 2021 04:16:56 +0000
 Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1msdSc-00As7I-1V
- for linux-phy@lists.infradead.org; Thu, 02 Dec 2021 04:12:43 +0000
+ id 1msdWg-00AsPT-AB
+ for linux-phy@lists.infradead.org; Thu, 02 Dec 2021 04:16:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by sin.source.kernel.org (Postfix) with ESMTPS id 8BE69CE215F;
- Thu,  2 Dec 2021 04:12:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1738C00446;
- Thu,  2 Dec 2021 04:12:36 +0000 (UTC)
+ by sin.source.kernel.org (Postfix) with ESMTPS id 93A0BCE215F;
+ Thu,  2 Dec 2021 04:16:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8650C00446;
+ Thu,  2 Dec 2021 04:16:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1638418357;
- bh=WrbRr7hfiIN1K0T0/WmtBkJD3RopCcS33dkDOpBXrUE=;
+ s=k20201202; t=1638418610;
+ bh=+RSDRSk+DZBd8IvTOld4RRX7yCLeLf4UcqNzqBpipoU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SDyM5T68r09ajTEZKtBfOjBS9r9CD+0mzhRhM9YY32oUy3jqqF6MPgMfL/7sdBSq8
- vwjmSAn1GD30YGO6FNm+LcZj3G+pu73kLJB/uyJBXLNqHIYyMOttxFxMTaltZIrn6s
- PNsHj+yZ2/bQTG3GS6/UkBy89TeiR+GJzCbKiR0KU+JMhaO6Rd6QyZEcqnQB76ILav
- DTnle9VaWpmmQa8qwCQDYxhSnDJ3P4l7EBpHRvlq6GDU4UUSz5QTojkkSVIb/3n/gd
- tcwTTU5VPetky1VhyyntMZg/fnUHWjAI7EXTBantsa1jljLzKa2qq1nJePwcoa71LZ
- 0euLpIRXsr4CA==
-Date: Thu, 2 Dec 2021 09:42:33 +0530
+ b=p75NZUIx0+SwezXkRmtMdh/VdGad1Amify6Wih7k8hCD+tCiB44BMOS3C/9kAyuhd
+ s3WM7gicBS4T+/ecR5XEBYOmlEfdWX7qqEvkAQf05xOJmIMYZSLvVMV71C8iCq8bvl
+ UkDlxIFLKpaeoyWrZ4k64OXdoe+5gKfxyQAdsPXzbLiOXFQSZeH6I1chtXLeSorxQ+
+ BbhWDXJsE2GOKl520KNJaBWdCXqIdQpQQ8eJ7iiXvc9p2mDmjX+lChCbXGu7aSnzix
+ G0H4mfSBJdYwN5dk4bo3PdOg0fOIN8XxiiuHydVLzc4oQRNwGdJaUTdskd45ksUTzo
+ gxOkbUSHVKGEw==
+Date: Thu, 2 Dec 2021 09:46:46 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: LKML <linux-kernel@vger.kernel.org>,
- Linux Phy <linux-phy@lists.infradead.org>,
- Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [GIT PULL]: Generic phy fixes for v5.16
-Message-ID: <YahHsaJVCkxAm+hI@matsya>
-References: <YaB7jK+ADoUQHWjh@matsya>
+To: Zou Wei <zou_wei@huawei.com>
+Cc: nandhini.srikandan@intel.com, rashmi.a@intel.com, kishon@ti.com,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH -next] phy: intel: Remove redundant dev_err call in
+ thunderbay_emmc_phy_probe()
+Message-ID: <YahIrrYOVkwZ/0SE@matsya>
+References: <1637822289-24534-1-git-send-email-zou_wei@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YaB7jK+ADoUQHWjh@matsya>
+In-Reply-To: <1637822289-24534-1-git-send-email-zou_wei@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211201_201242_487224_EEFA077F 
-X-CRM114-Status: GOOD (  18.99  )
+X-CRM114-CacheID: sfid-20211201_201654_567007_74977F7C 
+X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,84 +74,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Greg,
+On 25-11-21, 14:38, Zou Wei wrote:
+> There is a error message within devm_ioremap_resource
+> already, so remove the dev_err call to avoid redundant
+> error message.
 
-On 26-11-21, 11:45, Vinod Koul wrote:
-> Hello Greg,
-> 
-> Please pull to recieve bunch of fixes for generic phy subsystem. These
-> contain mostly kernel-doc warning fixes along with couple of driver
-> fixes.
-> 
-> The following changes since commit fa55b7dcdc43c1aa1ba12bca9d2dd4318c2a0dbf:
-> 
->   Linux 5.16-rc1 (2021-11-14 13:56:52 -0800)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-fixes-5.16
-
-Did you miss this one or something else...
-
-> 
-> for you to fetch changes up to f0ae8685b2858fc1dabf5ea743642abb5f242375:
-> 
->   phy: HiSilicon: Fix copy and paste bug in error handling (2021-11-23 10:42:13 +0530)
-> 
-> ----------------------------------------------------------------
-> phy: fixes for 5.16
-> 
-> Fixes for:
->  - kernel-doc warnings for various drivers
->  - error handling fix for HiSilicon driver
->  - name fix for zynqmp phy
->  - property name fix in stm32 phy
-> 
-> ----------------------------------------------------------------
-> Amelie Delaunay (1):
->       phy: stm32: fix st,slow-hs-slew-rate with st,decrease-hs-slew-rate
-> 
-> Dan Carpenter (1):
->       phy: HiSilicon: Fix copy and paste bug in error handling
-> 
-> Liam Beguin (1):
->       dt-bindings: phy: zynqmp-psgtr: fix USB phy name
-> 
-> Randy Dunlap (1):
->       phy: ti: report 2 non-kernel-doc comments
-> 
-> Vinod Koul (6):
->       phy: mvebu-cp110-utmi: Fix kernel-doc warns
->       phy: qualcomm: qmp: Add missing struct documentation
->       phy: qualcomm: usb-hsic: Fix the kernel-doc warn
->       phy: ti: tusb1210: Fix the kernel-doc warn
->       phy: qualcomm: ipq806x-usb: Fix kernel-doc style
->       phy: ti: omap-usb2: Fix the kernel-doc style
-> 
->  .../devicetree/bindings/phy/xlnx,zynqmp-psgtr.yaml |  2 +-
->  drivers/phy/hisilicon/phy-hi3670-pcie.c            |  4 ++--
->  drivers/phy/marvell/phy-mvebu-cp110-utmi.c         |  4 ++--
->  drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c        | 26 ++++++++++++----------
->  drivers/phy/qualcomm/phy-qcom-qmp.c                |  3 +++
->  drivers/phy/qualcomm/phy-qcom-usb-hsic.c           |  2 +-
->  drivers/phy/st/phy-stm32-usbphyc.c                 |  2 +-
->  drivers/phy/ti/phy-am654-serdes.c                  |  2 +-
->  drivers/phy/ti/phy-j721e-wiz.c                     |  2 +-
->  drivers/phy/ti/phy-omap-usb2.c                     |  6 ++---
->  drivers/phy/ti/phy-tusb1210.c                      |  2 +-
->  11 files changed, 30 insertions(+), 25 deletions(-)
-> 
-> Thanks
-> -- 
-> ~Vinod
-
-
-
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
-
+Applied, thanks
 
 -- 
 ~Vinod
