@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DB33C433EF
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61A2BC433F5
 	for <linux-phy@archiver.kernel.org>; Mon,  6 Dec 2021 18:03:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,51 +12,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WAKfg3eAlcrvEX2O38n/d/tkGsZwvLlISKsjG095GJE=; b=i49zqsVcNsllYP
-	JzsLkP0h+8CDE/JUV+Sns6u3XnVCRG/mtgPOhLbwKCz5INQYhhf21QYO3VRRMtDWWl60vSvnPlFZ5
-	TWxwDiAknw9+IyCtecNHbCwFpqtEqIoNISToe5gKFEqpBD3J+yZI74D8R6+NVfOj9befVGc5BXwiN
-	/6LH9qqIZdR9VKYJ8wXjpetR453nIz3TxzXtElHj9ykCcZRShiuFXyJaVQ87WICveotv1TR4H+k2d
-	LT6ZFFs25TqWnsA7oxDkjCRaJBp/GKVlk8WMdQFnd3cDBbAevQ6byFNH4BP6R7/cLQV9NAE460UL+
-	51BhLPpPinzd2pRipu9A==;
+	List-Owner; bh=LCpswycA38jQR+F2ax2m0eMeZKL89KV7V+tI11b8/nk=; b=Qk5mlJLvas76BT
+	Eqe0oS5vFm1YlQ5oA5TZi2xwWtZ+Sdim5AiDjyX9WLhpvyUzLsK3s/NxPLE3DOiuiffYX2kAmMe0C
+	2LldsS78Bsh+/ckF486F+HMFSGOvbU4L3FofyFXwimXDMzm0zPdEjkH7hF8hfgHcO/gBcdgE5CuTz
+	H808uQDAm/BoLVh3UJ3ricLZ/aa92oUgzO71bJvMFkuWEToumfbZ6/1+k8zMOumYEVJlj9cRMnW77
+	l6tRxeZOfl8diRZF9oZ03D4RFXonD1fGO9KmTyC85vv5arnGm17tU1MoWG/KI6G7uBSMfOVYH7iNc
+	tqv+hS24Ha6FBHIcIN9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1muIKN-005BrX-Sx; Mon, 06 Dec 2021 18:03:03 +0000
-Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
+	id 1muIKN-005Br9-NS; Mon, 06 Dec 2021 18:03:03 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1muIIN-005Ahl-BR; Mon, 06 Dec 2021 18:01:01 +0000
-Received: by mail-pj1-x1034.google.com with SMTP id gt5so8339596pjb.1;
- Mon, 06 Dec 2021 10:00:55 -0800 (PST)
+ id 1muIIM-005AjT-Tv; Mon, 06 Dec 2021 18:01:01 +0000
+Received: by mail-pf1-x436.google.com with SMTP id o4so10841779pfp.13;
+ Mon, 06 Dec 2021 10:00:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=G8eVTKgQ71scTCdgvnAxinAjRWpK2tMB1hMCFM8SGqY=;
- b=okjDkCxyI/nn21Wnpt4nbTNJYmZ5d3WZ1W9wjxHEwSTr8AVMrzCy+bS4EGFyoC4Wzj
- PZsr8skIoCwWNyVG3rkcOtFpySG6kY6Dud7efUYRww8ujsAtcRT67ifW9PicjTVqsyff
- ibgk3KfUrLzTaWPBWT0BW8iZauquv+0+5X/Euoeo5KvPyXxyRpPNsP1Vsbp+/wSGKFuc
- IrixDjbg20zGjuEGu/DeNpfixI1Yt+bJlynj49tvk5yLCnfhDFpDk9y50IUIWvizAnuD
- 1/80sjPAVDcSoyrFJDv7esFff6FbeIU8SpR8jnQgKf61ulLivaxmd80YqDGEAw5lWmR8
- n1Jw==
+ bh=Glli2G3nC8dxP+En8m4e+HBjuVPO66nGVLRacQBgUXs=;
+ b=BvHBJZ6kAfK7nl47VDMesFxySbPQO6zQzYiE6UlcyBljaaWAtdrbJoknjCpXdMqq4p
+ 4jo3fbfkr9c8z0n4XTdWQ1PUg2v1iMWDIR9ScEF5kke67Is1Rw5JioKBhfT5P7OLTZyx
+ ecNFb6fu78ttqbvaXL8HnA/t+akcanXKVKRQiAMKN+kvTYAn9SGRPsXglUJfa+PNutNK
+ n7j8hDkxKFNWwHFvqhBw1+bOTsbJ0e/ARxWUtGIGY41xvSZZeHvvWSO1yahVsmUKbZ2t
+ pewf6zl18kUb5rW6nAyYoSFS1htehKTyH+bxo5DxG715/LzAF78J7CCT56p2qnjh18M+
+ Y8gw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=G8eVTKgQ71scTCdgvnAxinAjRWpK2tMB1hMCFM8SGqY=;
- b=iN8lT5f6xibIbGg8Rj372Uv9ty4qBZPdUdrWnv6ikZaKJnCpnPm2jDnvOf6vBYjDAU
- LE2pn+n4O6Xt589cxPM6zZKn4CvrOoNjSkRkONAnGzV3eA5wS6R1lUVFA1MUrU0dbAsQ
- z2JesGgtBlBo/LvBEmhC5OFGnX0TS2tUT39x4OyOuQ9KmlHbpjoS6I7qACXzcGO6oP4s
- Y2EIGsth+pttDDwNDw6NVNYPyienilV056PRqSjQaP4gdyROsRTPvvblmlGfVHE0Akn4
- ReEDmcoZ0q01rQLKPp1s/je2CuKEgLjcg/tK/NBs0wmqTzj48pGLIUU7JOyJR0sf6zFV
- 1faA==
-X-Gm-Message-State: AOAM532PfeqmItMmp7fU6dDMe/fRDLcst3o3dSD2yqu10zTUriZE4mi6
- Gsf3X/St/kyfs9nrUHj99nM=
-X-Google-Smtp-Source: ABdhPJxRcvSEAMxa/zZAF0moxM14eHcIV7RVRP0bkAR0Z1M1lwu0CF2yEAKcZqA0ICl8+9xvj2tFrw==
-X-Received: by 2002:a17:902:c145:b0:142:50c3:c2a with SMTP id
- 5-20020a170902c14500b0014250c30c2amr45116624plj.32.1638813655037; 
- Mon, 06 Dec 2021 10:00:55 -0800 (PST)
+ bh=Glli2G3nC8dxP+En8m4e+HBjuVPO66nGVLRacQBgUXs=;
+ b=5Fwt0kY2Q6X8ITsJHdZKFXUJsE5ECi00DsWF/gnK656CVQoxHk724c+F4IftBcfNwK
+ Ga6LH+8eZIJ/nCCAH46gqW9r3EyMHdmlimhEYmvvZFbDYvzHaDqxweDw0VN07IDrHtkO
+ Zj8vq2SWhkVFPDF216JCw4s0YbjuchIEjfnw0GvVcnHjCJDAxSUuJXhUNKGQUs+MZT9X
+ bSvePWJVUHCFqxpWV3t0/XAOEuWlKuHvOjtXxY0Y1jKkIwaFG3Uu6vTzB8jbQEyG/4Gl
+ /b1iI1gyH81DxYOc77GIqoFy9kk/T+3rQds7bLPkVm6GN68DxVVnorK9v7NxZERvxCFK
+ Lbpw==
+X-Gm-Message-State: AOAM5316C6Wk23ZGpTVGjG/lI5Rg9spxC/kRD4qZo/FB2ADJYvmvdeh1
+ cixKiXWlX7oR7Z1mq5i7phLJCsy2+sM=
+X-Google-Smtp-Source: ABdhPJxmzy/roEL855bjlUiWdG3HdOmxKdCTk9ikMOP4Sk2AlYiLTxo3zC5DAgec9g5qS7igxtS3Ig==
+X-Received: by 2002:a63:e801:: with SMTP id s1mr6483306pgh.543.1638813657742; 
+ Mon, 06 Dec 2021 10:00:57 -0800 (PST)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id u11sm5444070pfg.120.2021.12.06.10.00.53
+ by smtp.gmail.com with ESMTPSA id u11sm5444070pfg.120.2021.12.06.10.00.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Dec 2021 10:00:54 -0800 (PST)
+ Mon, 06 Dec 2021 10:00:57 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: devicetree@vger.kernel.org
 Cc: Florian Fainelli <f.fainelli@gmail.com>,
@@ -72,18 +71,16 @@ Cc: Florian Fainelli <f.fainelli@gmail.com>,
  linux-arm-kernel@lists.infradead.org (moderated list:BROADCOM IPROC ARM
  ARCHITECTURE), 
  linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
-Subject: [PATCH v3 2/8] dt-bindings: net: brcm,
- unimac-mdio: Update maintainers for binding
-Date: Mon,  6 Dec 2021 10:00:43 -0800
-Message-Id: <20211206180049.2086907-3-f.fainelli@gmail.com>
+Subject: [PATCH v3 4/8] dt-bindings: net: Convert GENET binding to YAML
+Date: Mon,  6 Dec 2021 10:00:45 -0800
+Message-Id: <20211206180049.2086907-5-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20211206180049.2086907-1-f.fainelli@gmail.com>
 References: <20211206180049.2086907-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211206_100059_437097_A3516D99 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211206_100059_010281_7037055A 
+X-CRM114-Status: GOOD (  26.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,26 +92,323 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QWRkIERvdWcgYW5kIG15c2VsZiBhcyBtYWludGFpbmVycyBzaW5jZSB0aGlzIGJpbmRpbmcgaXMg
-dXNlZCBieSB0aGUKR0VORVQgRXRoZXJuZXQgY29udHJvbGxlciBmb3IgaXRzIGludGVybmFsIE1E
-SU8gY29udHJvbGxlci4KClNpZ25lZC1vZmYtYnk6IEZsb3JpYW4gRmFpbmVsbGkgPGYuZmFpbmVs
-bGlAZ21haWwuY29tPgotLS0KIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQv
-YnJjbSx1bmltYWMtbWRpby55YW1sIHwgMiArKwogMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9u
-cygrKQoKZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQv
-YnJjbSx1bmltYWMtbWRpby55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L25ldC9icmNtLHVuaW1hYy1tZGlvLnlhbWwKaW5kZXggY2RhNTJmOTgzNDBmLi4wYmU0MjZlZTFl
-NDQgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvYnJj
-bSx1bmltYWMtbWRpby55YW1sCisrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9uZXQvYnJjbSx1bmltYWMtbWRpby55YW1sCkBAIC03LDYgKzcsOCBAQCAkc2NoZW1hOiBodHRw
-Oi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKIHRpdGxlOiBCcm9hZGNv
-bSBVbmlNQUMgTURJTyBidXMgY29udHJvbGxlcgogCiBtYWludGFpbmVyczoKKyAgLSBEb3VnIEJl
-cmdlciA8b3BlbmRtYkBnbWFpbC5jb20+CisgIC0gRmxvcmlhbiBGYWluZWxsaSA8Zi5mYWluZWxs
-aUBnbWFpbC5jb20+CiAgIC0gUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgogCiBh
-bGxPZjoKLS0gCjIuMjUuMQoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+Convert the GENET binding to YAML, leveraging brcm,unimac-mdio.yaml and
+the standard ethernet-controller.yaml files.
+
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ .../devicetree/bindings/net/brcm,bcmgenet.txt | 125 ---------------
+ .../bindings/net/brcm,bcmgenet.yaml           | 145 ++++++++++++++++++
+ MAINTAINERS                                   |   2 +-
+ 3 files changed, 146 insertions(+), 126 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/net/brcm,bcmgenet.txt
+ create mode 100644 Documentation/devicetree/bindings/net/brcm,bcmgenet.yaml
+
+diff --git a/Documentation/devicetree/bindings/net/brcm,bcmgenet.txt b/Documentation/devicetree/bindings/net/brcm,bcmgenet.txt
+deleted file mode 100644
+index 0b5994fba35f..000000000000
+--- a/Documentation/devicetree/bindings/net/brcm,bcmgenet.txt
++++ /dev/null
+@@ -1,125 +0,0 @@
+-* Broadcom BCM7xxx Ethernet Controller (GENET)
+-
+-Required properties:
+-- compatible: should contain one of "brcm,genet-v1", "brcm,genet-v2",
+-  "brcm,genet-v3", "brcm,genet-v4", "brcm,genet-v5", "brcm,bcm2711-genet-v5" or
+-  "brcm,bcm7712-genet-v5".
+-- reg: address and length of the register set for the device
+-- interrupts and/or interrupts-extended: must be two cells, the first cell
+-  is the general purpose interrupt line, while the second cell is the
+-  interrupt for the ring RX and TX queues operating in ring mode.  An
+-  optional third interrupt cell for Wake-on-LAN can be specified.
+-  See Documentation/devicetree/bindings/interrupt-controller/interrupts.txt
+-  for information on the property specifics.
+-- phy-mode: see ethernet.txt file in the same directory
+-- #address-cells: should be 1
+-- #size-cells: should be 1
+-
+-Optional properties:
+-- clocks: When provided, must be two phandles to the functional clocks nodes
+-  of the GENET block. The first phandle is the main GENET clock used during
+-  normal operation, while the second phandle is the Wake-on-LAN clock.
+-- clock-names: When provided, names of the functional clock phandles, first
+-  name should be "enet" and second should be "enet-wol".
+-
+-- phy-handle: See ethernet.txt file in the same directory; used to describe
+-  configurations where a PHY (internal or external) is used.
+-
+-- fixed-link: When the GENET interface is connected to a MoCA hardware block or
+-  when operating in a RGMII to RGMII type of connection, or when the MDIO bus is
+-  voluntarily disabled, this property should be used to describe the "fixed link".
+-  See Documentation/devicetree/bindings/net/fixed-link.txt for information on
+-  the property specifics
+-
+-Required child nodes:
+-
+-- mdio bus node: this node should always be present regardless of the PHY
+-  configuration of the GENET instance
+-
+-MDIO bus node required properties:
+-
+-- compatible: should contain one of "brcm,genet-mdio-v1", "brcm,genet-mdio-v2"
+-  "brcm,genet-mdio-v3", "brcm,genet-mdio-v4", "brcm,genet-mdio-v5", the version
+-  has to match the parent node compatible property (e.g: brcm,genet-v4 pairs
+-  with brcm,genet-mdio-v4)
+-- reg: address and length relative to the parent node base register address
+-- #address-cells: address cell for MDIO bus addressing, should be 1
+-- #size-cells: size of the cells for MDIO bus addressing, should be 0
+-
+-Ethernet PHY node properties:
+-
+-See Documentation/devicetree/bindings/net/phy.txt for the list of required and
+-optional properties.
+-
+-Internal Gigabit PHY example:
+-
+-ethernet@f0b60000 {
+-	phy-mode = "internal";
+-	phy-handle = <&phy1>;
+-	mac-address = [ 00 10 18 36 23 1a ];
+-	compatible = "brcm,genet-v4";
+-	#address-cells = <0x1>;
+-	#size-cells = <0x1>;
+-	reg = <0xf0b60000 0xfc4c>;
+-	interrupts = <0x0 0x14 0x0>, <0x0 0x15 0x0>;
+-
+-	mdio@e14 {
+-		compatible = "brcm,genet-mdio-v4";
+-		#address-cells = <0x1>;
+-		#size-cells = <0x0>;
+-		reg = <0xe14 0x8>;
+-
+-		phy1: ethernet-phy@1 {
+-			max-speed = <1000>;
+-			reg = <0x1>;
+-			compatible = "ethernet-phy-ieee802.3-c22";
+-		};
+-	};
+-};
+-
+-MoCA interface / MAC to MAC example:
+-
+-ethernet@f0b80000 {
+-	phy-mode = "moca";
+-	fixed-link = <1 0 1000 0 0>;
+-	mac-address = [ 00 10 18 36 24 1a ];
+-	compatible = "brcm,genet-v4";
+-	#address-cells = <0x1>;
+-	#size-cells = <0x1>;
+-	reg = <0xf0b80000 0xfc4c>;
+-	interrupts = <0x0 0x16 0x0>, <0x0 0x17 0x0>;
+-
+-	mdio@e14 {
+-		compatible = "brcm,genet-mdio-v4";
+-		#address-cells = <0x1>;
+-		#size-cells = <0x0>;
+-		reg = <0xe14 0x8>;
+-	};
+-};
+-
+-
+-External MDIO-connected Gigabit PHY/switch:
+-
+-ethernet@f0ba0000 {
+-	phy-mode = "rgmii";
+-	phy-handle = <&phy0>;
+-	mac-address = [ 00 10 18 36 26 1a ];
+-	compatible = "brcm,genet-v4";
+-	#address-cells = <0x1>;
+-	#size-cells = <0x1>;
+-	reg = <0xf0ba0000 0xfc4c>;
+-	interrupts = <0x0 0x18 0x0>, <0x0 0x19 0x0>;
+-
+-	mdio@e14 {
+-		compatible = "brcm,genet-mdio-v4";
+-		#address-cells = <0x1>;
+-		#size-cells = <0x0>;
+-		reg = <0xe14 0x8>;
+-
+-		phy0: ethernet-phy@0 {
+-			max-speed = <1000>;
+-			reg = <0x0>;
+-			compatible = "ethernet-phy-ieee802.3-c22";
+-		};
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/net/brcm,bcmgenet.yaml b/Documentation/devicetree/bindings/net/brcm,bcmgenet.yaml
+new file mode 100644
+index 000000000000..ba9a6d156815
+--- /dev/null
++++ b/Documentation/devicetree/bindings/net/brcm,bcmgenet.yaml
+@@ -0,0 +1,145 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/net/brcm,bcmgenet.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom BCM7xxx Ethernet Controller (GENET) binding
++
++maintainers:
++  - Doug Berger <opendmb@gmail.com>
++  - Florian Fainelli <f.fainelli@gmail.com>
++
++properties:
++  compatible:
++    enum:
++      - brcm,genet-v1
++      - brcm,genet-v2
++      - brcm,genet-v3
++      - brcm,genet-v4
++      - brcm,genet-v5
++      - brcm,bcm2711-genet-v5
++      - brcm,bcm7712-genet-v5
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    minItems: 2
++    items:
++      - description: general purpose interrupt line
++      - description: RX and TX rings interrupt line
++      - description: Wake-on-LAN interrupt line
++
++
++  clocks:
++    minItems: 1
++    items:
++      - description: main clock
++      - description: EEE clock
++      - description: Wake-on-LAN clock
++
++  clock-names:
++    minItems: 1
++    items:
++      - const: enet
++      - const: enet-eee
++      - const: enet-wol
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 1
++
++patternProperties:
++  "^mdio@[0-9a-f]+$":
++    type: object
++    $ref: "brcm,unimac-mdio.yaml"
++
++    description:
++      GENET internal UniMAC MDIO bus
++
++required:
++  - reg
++  - interrupts
++  - phy-mode
++  - "#address-cells"
++  - "#size-cells"
++
++allOf:
++  - $ref: ethernet-controller.yaml
++
++additionalProperties: true
++
++examples:
++  #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++  - |
++    ethernet@f0b60000 {
++        phy-mode = "internal";
++        phy-handle = <&phy1>;
++        mac-address = [ 00 10 18 36 23 1a ];
++        compatible = "brcm,genet-v4";
++        reg = <0xf0b60000 0xfc4c>;
++        interrupts = <0x0 0x14 0x0>, <0x0 0x15 0x0>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++
++        mdio0: mdio@e14 {
++           compatible = "brcm,genet-mdio-v4";
++           #address-cells = <1>;
++           #size-cells = <0>;
++           reg = <0xe14 0x8>;
++
++           phy1: ethernet-phy@1 {
++                max-speed = <1000>;
++                reg = <1>;
++                compatible = "ethernet-phy-ieee802.3-c22";
++           };
++        };
++    };
++
++  - |
++    ethernet@f0b80000 {
++        phy-mode = "moca";
++        fixed-link = <1 0 1000 0 0>;
++        mac-address = [ 00 10 18 36 24 1a ];
++        compatible = "brcm,genet-v4";
++        #address-cells = <1>;
++        #size-cells = <1>;
++        reg = <0xf0b80000 0xfc4c>;
++        interrupts = <0x0 0x16 0x0>, <0x0 0x17 0x0>;
++
++        mdio1: mdio@e14 {
++           compatible = "brcm,genet-mdio-v4";
++           #address-cells = <1>;
++           #size-cells = <0>;
++           reg = <0xe14 0x8>;
++        };
++    };
++
++  - |
++    ethernet@f0ba0000 {
++        phy-mode = "rgmii";
++        phy-handle = <&phy0>;
++        mac-address = [ 00 10 18 36 26 1a ];
++        compatible = "brcm,genet-v4";
++        #address-cells = <1>;
++        #size-cells = <1>;
++        reg = <0xf0ba0000 0xfc4c>;
++        interrupts = <0x0 0x18 0x0>, <0x0 0x19 0x0>;
++
++        mdio2: mdio@e14 {
++           compatible = "brcm,genet-mdio-v4";
++           #address-cells = <1>;
++           #size-cells = <0>;
++           reg = <0xe14 0x8>;
++
++           phy0: ethernet-phy@0 {
++                max-speed = <1000>;
++                reg = <0>;
++                compatible = "ethernet-phy-ieee802.3-c22";
++           };
++        };
++    };
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 7a2345ce8521..5e1064c23f41 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3819,7 +3819,7 @@ M:	Florian Fainelli <f.fainelli@gmail.com>
+ L:	bcm-kernel-feedback-list@broadcom.com
+ L:	netdev@vger.kernel.org
+ S:	Supported
+-F:	Documentation/devicetree/bindings/net/brcm,bcmgenet.txt
++F:	Documentation/devicetree/bindings/net/brcm,bcmgenet.yaml
+ F:	Documentation/devicetree/bindings/net/brcm,unimac-mdio.yaml
+ F:	drivers/net/ethernet/broadcom/genet/
+ F:	drivers/net/ethernet/broadcom/unimac.h
+-- 
+2.25.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
