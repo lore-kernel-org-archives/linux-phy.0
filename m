@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA944C433EF
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEC81C433F5
 	for <linux-phy@archiver.kernel.org>; Mon,  6 Dec 2021 18:04:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JvqYl1XOdskGfw5GOpo2Rsx2cFcNv9C9sqbtHc1QmEQ=; b=Y2XhjU3lRSeCMB
-	vtg08r7vlLyJ8a+MMBocl9bGplQmUPQloJ/uA9Xb4QVIs6ucNRdLhY0xq5Mgg41r3yODXWBcscjP/
-	lioDTAEChbSGXpd9KTlyvWK/DX9WgSY1GN1t7BcGaGfktZmDfIitaBjpExAWXn5UXTJe5fFeqqE65
-	ywZu1n8meqSpwvI/DYXEV5E4+5C0W6ORP+T9obtxdgMqwp3KEE+21mx6GhK3bhYmHPrhzHT1NhsXL
-	KcP9zvwbFBofS/MpVxshfwWrCrzPd6tUsiPjWlhNyqb8xVnJ9bM0oIUgRIN9VLnuj7dEllpRjcSsM
-	mZpwS7L/WaoXDuYV140g==;
+	List-Owner; bh=/SwsEyrpVIPwDnjmXVCHOvQjloiyVdAlaF19OkTnFqs=; b=UolPxGcwDdGMrm
+	dGPa08CJm0pFvDls0u9vHtgB84/Y+mdi3PAvh2nQTFNuns7lea30zpztTMNMDyMo9MGtjIFQBUANL
+	SUY0VDt7whoJ/z3SADCz7xCZ8V0rO0ls/UIIzldfHezjzXCyhscZzwEnh1TuV9YvAzZJw/+SpS0uz
+	MWGJK1HxEVWOfEuamyAYm4ZiwIt8zEYnzruCGun9hcZvy6dzYksJJaUH4zVz0kEFQ/W7zs1jHWChS
+	+e8e4V9+QLr/68sxXAvgPv1HizL0VwSvea4tocyK/ccbOMk90aMSjOnNc1oUPwdHYTiml0NXnHiEi
+	OQ32HOuOXsejtgPwF8sw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1muILz-005CdU-0K; Mon, 06 Dec 2021 18:04:43 +0000
-Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
+	id 1muILz-005CdZ-7S; Mon, 06 Dec 2021 18:04:43 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1muIIR-005An4-97; Mon, 06 Dec 2021 18:01:07 +0000
-Received: by mail-pf1-x42f.google.com with SMTP id p13so10908349pfw.2;
- Mon, 06 Dec 2021 10:01:02 -0800 (PST)
+ id 1muIIS-005An5-KF; Mon, 06 Dec 2021 18:01:07 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id
+ n15-20020a17090a160f00b001a75089daa3so11434655pja.1; 
+ Mon, 06 Dec 2021 10:01:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=bJLAlkJ/cxw+eyGZ9fDi2T+PE+wgI5zX9dIEMcgJMjY=;
- b=Vsbea1qeX+VozmQU+9qsHXe41sBZrrJPx1VjDPnoXmM0p4Ji7o05DdpDm81w20UbIR
- V2IccRSmPAAcWbtnDZhDfBhZk/LmIXgKLWHwIoA4+d5HFaexboja2HLhHzi5q4ceLmTg
- EHSO9Bi6JKYzi8Be1m25k00al8rMKXQ0OlfUIxaPHO0bmZaPE4nTnHi5+n7n3Tdku45x
- FT0+fYe78Vo7OxK6mxTRp6e4QsldZVZ2a37JamIs+dd2WXNK2qUcQn8/9ptji2y8jqhR
- ZHJ2GPC3lvsTy32lFeaiipkM+psg36u/V1kYWMSU0RnN7eA8Z237KzHAGSeUlYA0rqmC
- FLWA==
+ bh=a22elMeKMuvw9kAaeC7xqXjpamRaXXRHV5cJtgBXnMI=;
+ b=FNuLLY+2QfkUYYdnHtv03ga/tmbb/WnbRqvODT34TbvpQz79NTmgr2/ROaxi1KvJiZ
+ qonBJ/pxCvk2g0IPUd6Qpj7sabtCux2WfcYJyghukcUmsUKFoXGNQBd9A0OnYJOttTpx
+ UIdl3MStDRxZsVsDZiX6hKX3+Xf4hhKpQQ8NWpFeS5HZyX6HxKpq76L25dbl/vWYLiNz
+ uqzh+mwcTJ+AkK4uG67QuWo9VRAWujUhAVWThnL38skDly9DrMhLJ0Gh0bcADhdLSleA
+ 5Iv6EqE9Gdii24EzG0q3nm7+KdSW8SoHMsIYrEVp1pzKzPnVP5a7WlBssIkHOB5yKGlL
+ Zu5w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=bJLAlkJ/cxw+eyGZ9fDi2T+PE+wgI5zX9dIEMcgJMjY=;
- b=INadUyA83BfhZy908ZaCegITktjgihCSA4X7avii3142oUxy3LJPKogM/XfYXqCH4a
- JleelJizvVqAIhGlJPUaRO+eqEww4nhWA3KnoZ60yAgY3PB4lBUkfLyKcSw/4HZ3OSfy
- V0S+T2vAOGecf3CWPqbYtTdzeehfBo1R2e6d2Tnz93VBdwTRJcwJIEe0wrO+WTkbjlpg
- 5LQj1skpCFhEZw7x008krvh4bUbjTBmmIalsar3YE3rrZG4L88utkk+/pOusZE56cwKb
- jw5DawP+mggyzowfUIgBqz4b1G7Gu1qpCf7mEfrAAKYLDRcldVxEf7xSKfXgfGXfvb6R
- QA3A==
-X-Gm-Message-State: AOAM530PljADmGYy50jmAp3NXR31pbpjzRuA5s9wpQnnQ8KFmhBrihmX
- f/bOunurk93jrjm3P3D2tOE=
-X-Google-Smtp-Source: ABdhPJxa7mYehzO8+Juz3E+I0lmJ22iyBMG0h0pCrrhWf2iRDU31MS9gaVjwbeU/kbxUjZdIEfuzQg==
-X-Received: by 2002:a63:9144:: with SMTP id l65mr20158872pge.52.1638813661855; 
- Mon, 06 Dec 2021 10:01:01 -0800 (PST)
+ bh=a22elMeKMuvw9kAaeC7xqXjpamRaXXRHV5cJtgBXnMI=;
+ b=Ht8ees2WyTu4EOdzsRDZYTFXKT2eCF0MxexIB3G3z7FGA+72MBZH4bNcedAC1HCzLi
+ 79xhkAhKUNW+UsMmRoAkmHSjbHUKSEAXNLVs0dzzaanH3V9cTVfX5U3NZvxAqn0GquM/
+ QijvrYYmMqF18V5CtP852YR9uXrDxSEbJGEKsuEwCiZ0bhty+P1Xza/+aqBtNxGC9vyL
+ /roP//fbv+LtaK6ANCg8YopNNfHoTfZnoCVnEQhEfWo4qU2tRhGIoQ+VOjpdNr03viHX
+ RPFYGkChuSS1zmwQ+oMQf8zWzb4NHk52vyRnUS7he9Mf+m+TnXZts7YOhPuEJFmZ/Iap
+ tyXQ==
+X-Gm-Message-State: AOAM5323/tRL3/2HufR8oGZ3PH6KmDlzUNGzS+XJ4ImjgTqgFMJw49td
+ pgsy0/YuLfj934JW9JJF4eA=
+X-Google-Smtp-Source: ABdhPJwT0/hSqTiWhbGXegTiFL+l5hd6q19jJHrHzsa1pAOaawNuH4ZZtQfWAqoe9uuW9xXye0+Agg==
+X-Received: by 2002:a17:902:b28b:b0:142:4abc:ac20 with SMTP id
+ u11-20020a170902b28b00b001424abcac20mr45718472plr.88.1638813663456; 
+ Mon, 06 Dec 2021 10:01:03 -0800 (PST)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id u11sm5444070pfg.120.2021.12.06.10.01.00
+ by smtp.gmail.com with ESMTPSA id u11sm5444070pfg.120.2021.12.06.10.01.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Dec 2021 10:01:01 -0800 (PST)
+ Mon, 06 Dec 2021 10:01:03 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: devicetree@vger.kernel.org
 Cc: Florian Fainelli <f.fainelli@gmail.com>,
@@ -71,16 +73,16 @@ Cc: Florian Fainelli <f.fainelli@gmail.com>,
  linux-arm-kernel@lists.infradead.org (moderated list:BROADCOM IPROC ARM
  ARCHITECTURE), 
  linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
-Subject: [PATCH v3 7/8] dt-bindings: phy: Convert Northstar 2 PCIe PHY to YAML
-Date: Mon,  6 Dec 2021 10:00:48 -0800
-Message-Id: <20211206180049.2086907-8-f.fainelli@gmail.com>
+Subject: [PATCH v3 8/8] dt-bindings: net: Convert iProc MDIO mux to YAML
+Date: Mon,  6 Dec 2021 10:00:49 -0800
+Message-Id: <20211206180049.2086907-9-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20211206180049.2086907-1-f.fainelli@gmail.com>
 References: <20211206180049.2086907-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211206_100105_254729_2A47B810 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20211206_100105_236074_2926E5A8 
+X-CRM114-Status: GOOD (  15.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,98 +99,169 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Broadcom Northstar 2 PCIe PHY Device Tree binding to YAML
-and rename it accordingly in the process since it had nothing to do with
-a MDIO mux on the PCI(e) bus. This is a pre-requisite to updating
-another binding file to YAML.
+Conver the Broadcom iProc MDIO mux Device Tree binding to YAML.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../bindings/phy/brcm,mdio-mux-bus-pci.txt    | 27 ------------
- .../bindings/phy/brcm,ns2-pcie-phy.yaml       | 41 +++++++++++++++++++
- 2 files changed, 41 insertions(+), 27 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/brcm,mdio-mux-bus-pci.txt
- create mode 100644 Documentation/devicetree/bindings/phy/brcm,ns2-pcie-phy.yaml
+ .../bindings/net/brcm,mdio-mux-iproc.txt      | 62 --------------
+ .../bindings/net/brcm,mdio-mux-iproc.yaml     | 80 +++++++++++++++++++
+ 2 files changed, 80 insertions(+), 62 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.txt
+ create mode 100644 Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/brcm,mdio-mux-bus-pci.txt b/Documentation/devicetree/bindings/phy/brcm,mdio-mux-bus-pci.txt
+diff --git a/Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.txt b/Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.txt
 deleted file mode 100644
-index 5b51007c6f24..000000000000
---- a/Documentation/devicetree/bindings/phy/brcm,mdio-mux-bus-pci.txt
+index deb9e852ea27..000000000000
+--- a/Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.txt
 +++ /dev/null
-@@ -1,27 +0,0 @@
--* Broadcom NS2 PCIe PHY binding document
+@@ -1,62 +0,0 @@
+-Properties for an MDIO bus multiplexer found in Broadcom iProc based SoCs.
 -
--Required bus properties:
--- reg: MDIO Bus number for the MDIO interface
--- #address-cells: must be 1
--- #size-cells: must be 0
+-This MDIO bus multiplexer defines buses that could be internal as well as
+-external to SoCs and could accept MDIO transaction compatible to C-22 or
+-C-45 Clause. When child bus is selected, one needs to select these two
+-properties as well to generate desired MDIO transaction on appropriate bus.
 -
--Required PHY properties:
--- compatible: should be "brcm,ns2-pcie-phy"
--- reg: MDIO Phy ID for the MDIO interface
--- #phy-cells: must be 0
+-Required properties in addition to the generic multiplexer properties:
 -
--This is a child bus node of "brcm,mdio-mux-iproc" node.
+-MDIO multiplexer node:
+-- compatible: brcm,mdio-mux-iproc.
 -
--Example:
+-Every non-ethernet PHY requires a compatible so that it could be probed based
+-on this compatible string.
 -
--mdio@0 {
--	reg = <0x0>;
--	#address-cells = <1>;
--	#size-cells = <0>;
+-Optional properties:
+-- clocks: phandle of the core clock which drives the mdio block.
 -
--	pci_phy0: pci-phy@0 {
--		compatible = "brcm,ns2-pcie-phy";
--		reg = <0x0>;
--		#phy-cells = <0>;
--	};
--};
-diff --git a/Documentation/devicetree/bindings/phy/brcm,ns2-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/brcm,ns2-pcie-phy.yaml
+-Additional information regarding generic multiplexer properties can be found
+-at- Documentation/devicetree/bindings/net/mdio-mux.yaml
+-
+-
+-for example:
+-		mdio_mux_iproc: mdio-mux@66020000 {
+-			compatible = "brcm,mdio-mux-iproc";
+-			reg = <0x66020000 0x250>;
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-
+-			mdio@0 {
+-				reg = <0x0>;
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				pci_phy0: pci-phy@0 {
+-					compatible = "brcm,ns2-pcie-phy";
+-					reg = <0x0>;
+-					#phy-cells = <0>;
+-				};
+-			};
+-
+-			mdio@7 {
+-				reg = <0x7>;
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				pci_phy1: pci-phy@0 {
+-					compatible = "brcm,ns2-pcie-phy";
+-					reg = <0x0>;
+-					#phy-cells = <0>;
+-				};
+-			};
+-			mdio@10 {
+-				reg = <0x10>;
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-
+-				gphy0: eth-phy@10 {
+-					reg = <0x10>;
+-				};
+-			};
+-		};
+diff --git a/Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.yaml b/Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.yaml
 new file mode 100644
-index 000000000000..70eb48b391c9
+index 000000000000..af96b4fd89d5
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/brcm,ns2-pcie-phy.yaml
-@@ -0,0 +1,41 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++++ b/Documentation/devicetree/bindings/net/brcm,mdio-mux-iproc.yaml
+@@ -0,0 +1,80 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/phy/brcm,ns2-pcie-phy.yaml#
++$id: http://devicetree.org/schemas/net/brcm,mdio-mux-iproc.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Broadcom NS2 PCIe PHY binding document
++title: MDIO bus multiplexer found in Broadcom iProc based SoCs.
 +
 +maintainers:
-+  - Ray Jui <ray.jui@broadcom.com>
-+  - Scott Branden <scott.branden@broadcom.com>
++  - Florian Fainelli <f.fainelli@gmail.com>
++
++description:
++  This MDIO bus multiplexer defines buses that could be internal as well as
++  external to SoCs and could accept MDIO transaction compatible to C-22 or
++  C-45 Clause. When child bus is selected, one needs to select these two
++  properties as well to generate desired MDIO transaction on appropriate bus.
++
++allOf:
++  - $ref: /schemas/net/mdio-mux.yaml#
 +
 +properties:
 +  compatible:
-+    const: brcm,ns2-pcie-phy
++    const: brcm,mdio-mux-iproc
 +
 +  reg:
 +    maxItems: 1
 +
-+  "#phy-cells":
-+    const: 0
++  clocks:
++    maxItems: 1
++    description: core clock driving the MDIO block
++
 +
 +required:
 +  - compatible
 +  - reg
-+  - "#phy-cells"
 +
-+additionalProperties: false
++unevaluatedProperties: false
 +
 +examples:
 +  - |
-+    mdio {
-+       #address-cells = <1>;
-+       #size-cells = <0>;
++    mdio_mux_iproc: mdio-mux@66020000 {
++        compatible = "brcm,mdio-mux-iproc";
++        reg = <0x66020000 0x250>;
++        #address-cells = <1>;
++        #size-cells = <0>;
 +
-+       pci-phy@0 {
-+          compatible = "brcm,ns2-pcie-phy";
-+          reg = <0x0>;
-+          #phy-cells = <0>;
-+       };
++        mdio@0 {
++           reg = <0x0>;
++           #address-cells = <1>;
++           #size-cells = <0>;
++
++           pci_phy0: pci-phy@0 {
++              compatible = "brcm,ns2-pcie-phy";
++              reg = <0x0>;
++              #phy-cells = <0>;
++           };
++        };
++
++        mdio@7 {
++           reg = <0x7>;
++           #address-cells = <1>;
++           #size-cells = <0>;
++
++           pci_phy1: pci-phy@0 {
++              compatible = "brcm,ns2-pcie-phy";
++              reg = <0x0>;
++              #phy-cells = <0>;
++           };
++        };
++
++        mdio@10 {
++           reg = <0x10>;
++           #address-cells = <1>;
++           #size-cells = <0>;
++
++           gphy0: eth-phy@10 {
++              reg = <0x10>;
++           };
++        };
 +    };
 -- 
 2.25.1
