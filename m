@@ -4,66 +4,166 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0B45C433FE
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Dec 2021 19:59:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9A6FC433F5
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Dec 2021 02:35:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=bs4YIgM97cBfHUfjRpLNkWaehqq6NkdscYk73zq/QdE=; b=MY1S8UmLU3kpcE
-	PdDBeC/jqtDxv0VeqvgIN8odeltJphpwhnrZaKBO1qBY7Iv+6NKd1bFQsJQcJxlzlHH24CAVGDdp6
-	GFAbjg+jXSlpX2KbSAjNbjvFyY1ysAus2f+7w1+VWVJ+Asv/ujuBz/INyUXTOZ0wC70+VbCfnt7nh
-	1MIRmRORrK/Fe7Ktrl2gdBPCXtW4qf4ghFDeuoDfplasZIW9bkVrgmLJR34ch634H/hf8RX1QtVh3
-	YSKcZyWQuX5AwNQyMUKhzTCbeTulnIHpI3ZGfMKjMno3zqM3lYc/hgnvKk6xnkbHBEN86PnFpyzL4
-	YbbjQrty/HSaOulKKaqg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	References:Message-ID:From:Subject:Cc:To:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=5s1D09lq9LQt85KZ/p5AR2OWMfE9cXZSzpqmvnETLSU=; b=DwkzSo3P3nDvMVyVUBsVpt0v8J
+	jkHbDyP5jlJBveYiM0L15UaVjvshHomwbP/F7SSXqOnZm9IiJz8WV0SJ9C0QuxNz1iEKPBf9YUrLI
+	atbHKbEZgSbfhyPkBEbU4yDxq97V8gU+SpdInxPumSso+C9WZ7wcSKl/YlrUn7DcniE0HhQyEhhtl
+	DEom1OO7Mt2G9EdMx06KbHC5EZZhH61Q44lAF3uSV08jL92p0jLaNp1Hx6i76aq0Z23mMrXUAPaOJ
+	4/hkZCUN3kQGg8fXrdk/u5hkfspwAxHNDY/b0xu1irP8BDxkBVfSqPAiwuV5yy/+ZkiAsvBAKgYwi
+	7D5njAMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1muK8y-005ajy-2k; Mon, 06 Dec 2021 19:59:24 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1muQKR-006nLZ-7O; Tue, 07 Dec 2021 02:35:39 +0000
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1muK8v-005ain-8w
- for linux-phy@lists.infradead.org; Mon, 06 Dec 2021 19:59:23 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by sin.source.kernel.org (Postfix) with ESMTPS id 52307CE1808;
- Mon,  6 Dec 2021 19:59:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D4CDC341C2;
- Mon,  6 Dec 2021 19:59:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1638820757;
- bh=T4aB3iAFuCBw5bew9OWrYw7I9uaZkV0Nov/YMV/ousQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=hggLGZuJBaglUu21+PxtOArN2IJpgSi1HzE1sLzsyjwdljoC7yy37JsKvtJy0Tx/R
- iFoaNcl/1BNcAqz1uPl/Xvzd7JDoczGU1Uw5wXdQoIZJM4KEKG+kzZ23nyGi3vGXFJ
- zjWXxhS61r//pEakBVNdmdBQFaPICzmVcKWlTbdYIC/289jNK0v8S9FUbhFmhd0hgl
- 9anBPL+p1iE8E1pX8sTzzaDLx9Kgnh1Zt5wPpGaKEDg79lMCh71psuPSBYJBUftXpA
- lwsnk7qN9wPt/a4zUe4yPnF/b5dwavFbn6PspJ08/yFzVy9n/L8guX2Vb3EEHjH0o2
- j73cC02BYNXkQ==
-Date: Mon, 6 Dec 2021 13:59:15 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Stanimir Varbanov <svarbanov@mm-sol.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v1 04/10] PCI: qcom: do not duplicate qcom_pcie_cfg
- fields in qcom_pcie struct
-Message-ID: <20211206195915.GA6596@bhelgaas>
+ id 1muQKO-006nGI-GS
+ for linux-phy@lists.infradead.org; Tue, 07 Dec 2021 02:35:37 +0000
+Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 1B6M56st019273; 
+ Tue, 7 Dec 2021 02:35:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : message-id : references : date : in-reply-to : content-type :
+ mime-version; s=corp-2021-07-09;
+ bh=VXFXs7vESWELA+v1GT6+ejRlmOawDMHhsvOVPUe4JFI=;
+ b=FBn7SS1J0mdX4RGqd/ZZqwfKvwPtRbrVWtqYFi1KctFDpFNZPtHJnqlNnMgAMYyHsOXC
+ 9di4mHtX37O7dbxW7CbEycRph+lsTCskf5gJg1RAVIE0ve4Mrs8U486BM8v+8HqbpmBA
+ jsVlLNzizcki6DigTKSGidRx+XthdPO44brzGHOJHTTewTgndB3hnrSeE39SMIcbxG1k
+ 4R6Md3Dk2yvFbzr3bpnmQ+a5iBB0qbAVpanEIH1suRcAXmXls99zzrf7H6NKqDh4t24x
+ W9NipbSkgXfX3aH1ugwlbFyxbRqVdJ16gihYnATBmcBHnof49NSI1DD95R/u8Jcf66e+ Nw== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by mx0b-00069f02.pphosted.com with ESMTP id 3csbbqmds3-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 07 Dec 2021 02:35:15 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.1.2/8.16.1.2) with SMTP id 1B72GdIJ077251;
+ Tue, 7 Dec 2021 02:35:14 GMT
+Received: from nam11-bn8-obe.outbound.protection.outlook.com
+ (mail-bn8nam11lp2175.outbound.protection.outlook.com [104.47.58.175])
+ by userp3020.oracle.com with ESMTP id 3cr1sn5cyc-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 07 Dec 2021 02:35:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Plgwrsly/BAFmxZ/NY2ScugJzrtczpOkhjtD/vhN4Ew9qikTomlJUzx8IP0XtsSsK5xKgSCOIAmV7W4NdNSNXjaqPFidkAGkCOyfcC8Flw+70Xqbw0XYm2REUEguKIPeQlsDdcuG06zlom47KILlFw8TD7aV2tRhNJoYGUeQ57nBss8s1qoyDHrDc6bVcREldp2bbl6sbf5e4EDJEUHGrpnAEIjMwye/fj0fH7kIgGAmyZNnAmLIbcUdLfZO+N3rNTf0BYjJj9KwWhyGjbwbK6joAQkd2wklKsFTXsnYlK+37aMvAhL5RJ59NhhIemau9zNBwhoOqQPj/XRwfClXeQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=VXFXs7vESWELA+v1GT6+ejRlmOawDMHhsvOVPUe4JFI=;
+ b=lgLPEHwwBvqRZ9zX2eCwnixz1fF2wyOdUtiSX/QeuVuHlc2aTuaAMIC1lH7SY5B5b/cfxH7cKp/jv0vdjsTcxErVoV37vVRL/hm6Rk43A9mmiEplS/0wv0aAl6qqVl9jRbEEwMPXaFJhqYVhYeCQMxIUOMPGfGArdwHWbAup2HzQ6wap0ISmRmQ+xwLiTBayBmzsOmrCW4U3ZEs/Z3gCDvzN8dJg2ivzVBIXR5GHNF9Ljy+5nb2v3vFU0iI3vDohRjNfsccdb2YmboQpIJtw7RNI7bu4Nu0odKIDTscixckCvRcQEaZZF5RvY9AHcukEcUERCM0g2lfdhyum6p7TpQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VXFXs7vESWELA+v1GT6+ejRlmOawDMHhsvOVPUe4JFI=;
+ b=TsYaECSGEUiotxeAGazAUI+9RLHUOM9FfyWI3iGmkoWtBbSsJAo9TFhIiLSBYaI3PFFFv++vFe7lpPxoWmcshUi8NBy84XzJZtfKQOTRYYiqw4Th+vQJxU4EaZhKK+o2zYNvp31pbFoyNUP3eMzQTNSeVW+ArzJfkIU+FJ32Hko=
+Received: from PH0PR10MB4759.namprd10.prod.outlook.com (2603:10b6:510:3d::12)
+ by PH0PR10MB5626.namprd10.prod.outlook.com (2603:10b6:510:f9::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4755.11; Tue, 7 Dec
+ 2021 02:35:12 +0000
+Received: from PH0PR10MB4759.namprd10.prod.outlook.com
+ ([fe80::f4fb:f2ea:bda5:441e]) by PH0PR10MB4759.namprd10.prod.outlook.com
+ ([fe80::f4fb:f2ea:bda5:441e%6]) with mapi id 15.20.4755.022; Tue, 7 Dec 2021
+ 02:35:12 +0000
+To: Vinod Koul <vkoul@kernel.org>
+Cc: "Martin K. Petersen" <martin.petersen@oracle.com>, Kishon Vijay Abraham
+ I <kishon@ti.com>, linux-arm-msm@vger.kernel.org, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/3] scsi|phy: Add SM8450 UFS & Phy support
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+Message-ID: <yq1ilw1uout.fsf@ca-mkp.ca.oracle.com>
+References: <20211201074456.3969849-1-vkoul@kernel.org>
+ <yq135nawg3q.fsf@ca-mkp.ca.oracle.com> <YapW+EY/IeUk1BLz@matsya>
+Date: Mon, 06 Dec 2021 21:35:09 -0500
+In-Reply-To: <YapW+EY/IeUk1BLz@matsya> (Vinod Koul's message of "Fri, 3 Dec
+ 2021 23:12:16 +0530")
+X-ClientProxiedBy: SN1PR12CA0081.namprd12.prod.outlook.com
+ (2603:10b6:802:21::16) To PH0PR10MB4759.namprd10.prod.outlook.com
+ (2603:10b6:510:3d::12)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211202141726.1796793-5-dmitry.baryshkov@linaro.org>
+Received: from ca-mkp.ca.oracle.com (138.3.201.56) by
+ SN1PR12CA0081.namprd12.prod.outlook.com (2603:10b6:802:21::16) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4755.16 via Frontend Transport; Tue, 7 Dec 2021 02:35:11 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 0e05f24c-d933-4fc7-e4f0-08d9b92a31ab
+X-MS-TrafficTypeDiagnostic: PH0PR10MB5626:EE_
+X-Microsoft-Antispam-PRVS: <PH0PR10MB56261F967AEDF9746DBED0FB8E6E9@PH0PR10MB5626.namprd10.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2887;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 58zQ5vhDU3Y53T0xXEfxLFIh9UFAn7q5FVPAp3q1dI5Rxc6NoRPNDYetgFxYEO+uO1cmgnCfLpLrG1rj0pPZKk/hUp8bBlcCGy5/38Pi7tYRPSinPkVP3Z48Lk8dH5EQLejuQZbO2v62El9km7sc3J/gMmAYJzxkexrkKsBfBJkY99LdQbMUxz04MexqS3fQLMpKWbR3uiUuFWU3gM/+0nLoLv0yCmn4v2vgEvdZ+hMBUBTlZcYjjI+qRP/M7dIdUipFCafgXQr18u2P1xbayFnUWJIUNY7aguiqbXQzLcFfk7FDiQfjoaX2M4D98gfxG9KGCm5DuIaAX4+eu7r3AuSUKU4h89/JZVia4lLdS4F1aHe0SjtKLdirGkDQBZKiaNIoLm5fVGAEl0qBzl5ui1iKBVAMEM3zz7cqNEft9p0o9rw5oavVnYGUuAMJVhfjORl2fH1E4ETSlA8LfjxhxOdkCdk7W8bjv0AYsrop1DNGNWbYmtSNiJiFxhXEkX3j/u+2R4ctz4TPYPZ2GEvYOd4pULYrX5f2mwlhh++sabT6TvgNpiUWyORUQIBSAdxs49BQOdHLEcgP5QA1IpsSVllN0/mDIZeGeXSPZ10jWPGBI+csfsXATbgDYLQhQiv3sWU7BA5WM/bV5Gcfu12QNjnfWcIm0ztK6R4xbH+en8hbQyAXHhrDAW2Xej/QuFZbrmLZ/XT2tjam6rdzst0j9A==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:PH0PR10MB4759.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(366004)(4744005)(54906003)(38100700002)(26005)(8676002)(6916009)(86362001)(8936002)(38350700002)(55016003)(5660300002)(66946007)(316002)(508600001)(186003)(4326008)(36916002)(66556008)(52116002)(66476007)(7696005)(2906002)(956004);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?YVQrFvzYGjjLRO5bhfLEqP7NaUHsS5ZRxCgzXaDjM5bisfxyPO8xHlC6RjCP?=
+ =?us-ascii?Q?/sBPzia/ZPiTDmdIhxik0ZPHslLyq+qCc/vXKGF0l2M7obmPPDISEOZsLt1V?=
+ =?us-ascii?Q?7W1ZWk/bVT2Akt2c8HDOoa7zouBRvT7oNkKSTpgCuXvmYxTRBf72GPiRCD9V?=
+ =?us-ascii?Q?5XHND47pjXGDKWjBNnW5mtrEvGFLYEmMXD2Wd1fn8VMfZYeLoNlZVwf64oAB?=
+ =?us-ascii?Q?Qz4Xlj7Ts7y8r2tS2VXqKVcX9rykwudvZcUG65qEf+2GtP6QRicPW4lHfk1I?=
+ =?us-ascii?Q?sqHsV+jI4TcwEBLQocmogrK6nt55uKyRjlfv89bQ8nWkFKYbElLNU0jGbnxj?=
+ =?us-ascii?Q?VxrUcyt+GmslCMr6hPgN9ibzxcLgKtbC2vuNp9AS/xsObbD1PSpBSJCZsIW7?=
+ =?us-ascii?Q?qkXDCH8U1I7c+986tjLn/248b8Mw8KN6GyzzBVySWKyhewKuslgNa6GHTrGD?=
+ =?us-ascii?Q?DISS/lcHR7qUqMnm9Va5ZibgAQab4nzQZSMaikZlRMNBW7LtfSFJxRTbJDtH?=
+ =?us-ascii?Q?uCJsTXHWNLUGrD0Hc/HXWSp8ZkWn0vAJhbxPYwr4UU/Dt6pmVJxEO+HbYOkj?=
+ =?us-ascii?Q?Zp7uNuUQksByHb5p7ATfOJwEGnCwlI8aRNN5+7JX2khjq2FRPZjATE+91KnS?=
+ =?us-ascii?Q?Jji4EMhVOI+IuoROFPhZ1ZNgJ9YtPE2tq8ucEOSWOgcmm+IHIn7wXClNeR2N?=
+ =?us-ascii?Q?VNgrkshca8wRoB7u2wEh8ZurKRJY7ccvdey+lw+ZdF4S06NNDbr1cdLBijax?=
+ =?us-ascii?Q?dSkP3Kq6hYOQ7owms03ts5oOTPd/h/2pPv/XD9ftYZoFm1PKHxtO52sIEjtA?=
+ =?us-ascii?Q?sZllmthsqLnLveWIlQdbxH/EOC/uZFU4/lih/GbjtmUGCVWwxUTPAIdmf4rs?=
+ =?us-ascii?Q?6Xv4pZQ4W8Q6Wy5ryWdYduJv7/+EeBMZDPCzwyfnYkAB6Xiyr+QJk9/vATI6?=
+ =?us-ascii?Q?Q1j4Xb3fzePrOk93QWbgTRcclCjvW8won14lZq0VVk9jalAjE7JXSmS3q7GE?=
+ =?us-ascii?Q?r6kLBOA5G6qb8QYTh5rfeTLgl6XDg9qwLWG/LHPqzNQvH6rx/cC9YUr2gAM5?=
+ =?us-ascii?Q?by+F6L8fHqhyVxBIdXOb3i/a13mhUvW1+co2N6jT/1P0cJDS+5F8yTvw09lU?=
+ =?us-ascii?Q?CBto09VMc3VB4UKcGuiPTaD5Dd/kTBgV4OkxyBO6toW+2wuz5xKp40XNoAwM?=
+ =?us-ascii?Q?UzZRpT1SkoOBgROF+Ve2sdWXaliJIZ0kW2C6L5GUcBp8IFqQTa+L/S4G1eE2?=
+ =?us-ascii?Q?CplL74jFUSH34GniKGzDIUDltqwHiWjKsA+GS5zmTjWqDVO73NyuINGJvEah?=
+ =?us-ascii?Q?P9MrVBfdvWtQxFz+7U10DbEQqGJRi9RqzkPhxuVLolHZVcK5dPl4LFIF+4F9?=
+ =?us-ascii?Q?ZH8WzY2xVQApBFw02Ypa6xnOBpNG+scS1+nBl9iVJ7XbW3FRpSyIhkF77TGl?=
+ =?us-ascii?Q?UXGhroqEqoshyJdl29T6K0C75rOuM9hp1Hkp5h4KggoaLW1d37HfVs8y5AIj?=
+ =?us-ascii?Q?kKs9Fwrh1Zy46F6Pv02jtWXeqYB/RVS9vK04S749LuYDRBsELOOwhyHf+nuz?=
+ =?us-ascii?Q?bjwerz2EemPzTweb1GVH7SvFWu2ruWM1mSdlny22CxQAWns7MN1Wc2E+h5uL?=
+ =?us-ascii?Q?g66udtSQSsyRUZVbFQY3gzeMUFt6JONHeDQQCy0NLIDnRbsPisrEwCt8iD8T?=
+ =?us-ascii?Q?uRg4VA=3D=3D?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0e05f24c-d933-4fc7-e4f0-08d9b92a31ab
+X-MS-Exchange-CrossTenant-AuthSource: PH0PR10MB4759.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Dec 2021 02:35:12.3843 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: QrGgp8+HftMlmUUI2lEQkXNG05X3/9CYzJXPHv7Tv4Fa4KEXsBHEVjhYyjRdbcmijqpANT/vTwThTEFeMhzw+1ofl95Z6Z/KxVgy2v/yRIU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR10MB5626
+X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10190
+ signatures=668683
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=961
+ mlxscore=0 spamscore=0
+ phishscore=0 bulkscore=0 suspectscore=0 malwarescore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2110150000
+ definitions=main-2112070014
+X-Proofpoint-GUID: q4OlCSDti9b2GBVNxMdMPqao3g9aTJh3
+X-Proofpoint-ORIG-GUID: q4OlCSDti9b2GBVNxMdMPqao3g9aTJh3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211206_115921_725507_488C2C99 
-X-CRM114-Status: GOOD (  24.31  )
+X-CRM114-CacheID: sfid-20211206_183536_713582_120BABC3 
+X-CRM114-Status: GOOD (  10.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,180 +180,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 02, 2021 at 05:17:20PM +0300, Dmitry Baryshkov wrote:
-> In preparation to adding more flags to configuration data, use struct
-> qcom_pcie_cfg directly inside struct qcom_pcie, rather than duplicating
-> all its fields. This would save us from the boilerplate code that just
-> copies flags values from one sruct to another one.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  drivers/pci/controller/dwc/pcie-qcom.c | 34 ++++++++++++--------------
->  1 file changed, 16 insertions(+), 18 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index 3bee901c4df7..64f762cdbc7d 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -204,8 +204,7 @@ struct qcom_pcie {
->  	union qcom_pcie_resources res;
->  	struct phy *phy;
->  	struct gpio_desc *reset;
-> -	const struct qcom_pcie_ops *ops;
-> -	unsigned int pipe_clk_need_muxing:1;
-> +	struct qcom_pcie_cfg cfg;
 
-A common strategy is to simply save the pointer to the match data,
-e.g.,
+Vinod,
 
-    struct imx6_pcie {
-      ...
-      const struct imx6_pcie_drvdata *drvdata;
-    };
+>> No objections from me. However, these patches should go through the
+>> DT and phy trees.
+>
+> Ok I can pick these up wearing my phy maintainer hat, can u pls ack
+> it...
 
-    imx6_pcie_probe()
-      imx6_pcie->drvdata = of_device_get_match_data(dev);
-    
+This series doesn't touch anything under SCSI. But it does look OK to
+me, so...
 
-    struct ls_pcie {
-      ...
-      const struct ls_pcie_drvdata *drvdata;
-    };
+Acked-by: Martin K. Petersen <martin.petersen@oracle.com>
 
-    ls_pcie_probe()
-      pcie->drvdata = of_device_get_match_data(dev);
-    
-    
-    struct tegra_pcie {
-      ...
-      const struct tegra_pcie_soc *soc;
-    };
-
-    tegra_pcie_probe()
-      pcie->soc = of_device_get_match_data(dev);
-    
-
-    struct mtk_pcie {
-      ...
-      const struct mtk_pcie_soc *soc;
-    };
-
-    mtk_pcie_probe()
-      pcie->soc = of_device_get_match_data(dev);
-
-Bonus points if you name the pointer the same, e.g., "soc" or maybe
-"drvdata" (although this one is possibly confusing with
-platform_set_drvdata(), which is something different).
-
->  };
->  
->  #define to_qcom_pcie(x)		dev_get_drvdata((x)->dev)
-> @@ -229,8 +228,8 @@ static int qcom_pcie_start_link(struct dw_pcie *pci)
->  	struct qcom_pcie *pcie = to_qcom_pcie(pci);
->  
->  	/* Enable Link Training state machine */
-> -	if (pcie->ops->ltssm_enable)
-> -		pcie->ops->ltssm_enable(pcie);
-> +	if (pcie->cfg.ops->ltssm_enable)
-> +		pcie->cfg.ops->ltssm_enable(pcie);
->  
->  	return 0;
->  }
-> @@ -1176,7 +1175,7 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
->  	if (ret < 0)
->  		return ret;
->  
-> -	if (pcie->pipe_clk_need_muxing) {
-> +	if (pcie->cfg.pipe_clk_need_muxing) {
->  		res->pipe_clk_src = devm_clk_get(dev, "pipe_mux");
->  		if (IS_ERR(res->pipe_clk_src))
->  			return PTR_ERR(res->pipe_clk_src);
-> @@ -1209,7 +1208,7 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
->  	}
->  
->  	/* Set TCXO as clock source for pcie_pipe_clk_src */
-> -	if (pcie->pipe_clk_need_muxing)
-> +	if (pcie->cfg.pipe_clk_need_muxing)
->  		clk_set_parent(res->pipe_clk_src, res->ref_clk_src);
->  
->  	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
-> @@ -1287,7 +1286,7 @@ static int qcom_pcie_post_init_2_7_0(struct qcom_pcie *pcie)
->  	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
->  
->  	/* Set pipe clock as clock source for pcie_pipe_clk_src */
-> -	if (pcie->pipe_clk_need_muxing)
-> +	if (pcie->cfg.pipe_clk_need_muxing)
->  		clk_set_parent(res->pipe_clk_src, res->phy_pipe_clk);
->  
->  	return clk_prepare_enable(res->pipe_clk);
-> @@ -1387,7 +1386,7 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
->  
->  	qcom_ep_reset_assert(pcie);
->  
-> -	ret = pcie->ops->init(pcie);
-> +	ret = pcie->cfg.ops->init(pcie);
->  	if (ret)
->  		return ret;
->  
-> @@ -1395,16 +1394,16 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
->  	if (ret)
->  		goto err_deinit;
->  
-> -	if (pcie->ops->post_init) {
-> -		ret = pcie->ops->post_init(pcie);
-> +	if (pcie->cfg.ops->post_init) {
-> +		ret = pcie->cfg.ops->post_init(pcie);
->  		if (ret)
->  			goto err_disable_phy;
->  	}
->  
->  	qcom_ep_reset_deassert(pcie);
->  
-> -	if (pcie->ops->config_sid) {
-> -		ret = pcie->ops->config_sid(pcie);
-> +	if (pcie->cfg.ops->config_sid) {
-> +		ret = pcie->cfg.ops->config_sid(pcie);
->  		if (ret)
->  			goto err;
->  	}
-> @@ -1413,12 +1412,12 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
->  
->  err:
->  	qcom_ep_reset_assert(pcie);
-> -	if (pcie->ops->post_deinit)
-> -		pcie->ops->post_deinit(pcie);
-> +	if (pcie->cfg.ops->post_deinit)
-> +		pcie->cfg.ops->post_deinit(pcie);
->  err_disable_phy:
->  	phy_power_off(pcie->phy);
->  err_deinit:
-> -	pcie->ops->deinit(pcie);
-> +	pcie->cfg.ops->deinit(pcie);
->  
->  	return ret;
->  }
-> @@ -1562,8 +1561,7 @@ static int qcom_pcie_probe(struct platform_device *pdev)
->  		return -EINVAL;
->  	}
->  
-> -	pcie->ops = pcie_cfg->ops;
-> -	pcie->pipe_clk_need_muxing = pcie_cfg->pipe_clk_need_muxing;
-> +	pcie->cfg = *pcie_cfg;
->  
->  	pcie->reset = devm_gpiod_get_optional(dev, "perst", GPIOD_OUT_HIGH);
->  	if (IS_ERR(pcie->reset)) {
-> @@ -1589,7 +1587,7 @@ static int qcom_pcie_probe(struct platform_device *pdev)
->  		goto err_pm_runtime_put;
->  	}
->  
-> -	ret = pcie->ops->get_resources(pcie);
-> +	ret = pcie->cfg.ops->get_resources(pcie);
->  	if (ret)
->  		goto err_pm_runtime_put;
->  
-> -- 
-> 2.33.0
-> 
+-- 
+Martin K. Petersen	Oracle Linux Engineering
 
 -- 
 linux-phy mailing list
