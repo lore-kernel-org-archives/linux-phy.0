@@ -4,84 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C4B2C433FE
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Dec 2021 13:51:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B960EC433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Dec 2021 14:56:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:Cc:To:From:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OUfi9ExpkI+fOsPYZHux+cnS8N8Vo6nBKx4Jfmiq3ls=; b=icCIeq4RmuZWuQc4BSoIPVnwlg
-	tObWmxmc+jxewQrURIrWYIj8n1dBEc/PJQqNesVuFrg946FrxtIo0RcBS9mvEGrfHNcvY6W+R+9z5
-	wy3AEbh/+NzMOtOC1Mp6QMkOhEBmgfOxiHbUCtfnMZ5l9+QmDDXk7dZd+fPqq5uQKE2+Kef7D6LE6
-	AWlK4/OQSJ5dLIL3oA7dfd4GS3XBj5vWmAveRPsjujYCqc00CGrQX6R+a2PNVL19SOtSB5tj8BsIM
-	ezLXhLsxPCIlQXb4BKqvKgt69jGSDen1eek8pKRIwY/zbjqTyuqEc5ZrFx5SZ0HiSStp/7xUAG5Fh
-	DQ5FcDgg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gPpV/29EFk5ceiMuKuLqBvQZZ8Se+OLjwJA991Y65/Q=; b=4ARnoeBnE1v5ni
+	6Er2jOQJdhOwz3H1Xf16OyDYz8KGEPDB95AvtcyYBcArh9jeN1tJprZCdwzedaMQitH6SRgrRngkh
+	J1MnnW6fqrNMvwdzYeHXoSCeFPkax2Za0TUv41Gi2ed0IKd0N3j7qf7EjhfrmW3CMDTWReRKu2L1V
+	yN/cLtgmj+HQSfs98BG+zlg0NaDXo0OfS0u7EnpRa49jAYvDqpuyWRmtdFv1Tc3Yhd+8KLbs370P9
+	trervoue7XdsKkYr6qL907EJZayJNPaj1mFwwixS7MMWEB4tIifjOJXvJ9e/xF1BDq76wjcOSC4ht
+	7jme/Ccm+mSTMotQLAxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1muasQ-008lQW-Bj; Tue, 07 Dec 2021 13:51:26 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1mubtU-00930K-OO; Tue, 07 Dec 2021 14:56:36 +0000
+Received: from mail-oi1-x235.google.com ([2607:f8b0:4864:20::235])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1muasM-008lO3-Sp; Tue, 07 Dec 2021 13:51:24 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id r11so56929659edd.9;
- Tue, 07 Dec 2021 05:51:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=subject:from:to:cc:references:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=peAAMfNQlavTfkcTPAynnMHwh6U7PTunVQj9NAmKSBU=;
- b=Jn4LFwfmPtWbZ6coXfI5wIcOkFIQ9UoiqoAvrHohsV+th27Yl3Xit80Ym7gHkEvD/D
- x45f9EOsJhF18dlH7ZvghYE8TiachCU/CPCC4C+F8FfXmmNLWUC10OzKb30qtpjkFxpy
- sB39LbFwXJVqmodYOyJP9wb89zuXAm57Mxn4fmGX8gYx4qse/QQdH1m1du+ov0bnegBH
- V66cKTUA/03Rgzqxt7FXtZyjaC/CD872nKWFITzdgJaxsvpr54jaAhUavb1Yb1+HLH11
- pwawY5cqEcFRABZCcsfq4lYrySf+rFa6HOSTLXnfax/Aym5Wq7s6PYwNtgRXqBPotXpG
- 0/Sw==
+ id 1mubOq-008vAc-3p
+ for linux-phy@lists.infradead.org; Tue, 07 Dec 2021 14:24:58 +0000
+Received: by mail-oi1-x235.google.com with SMTP id t23so28067157oiw.3
+ for <linux-phy@lists.infradead.org>; Tue, 07 Dec 2021 06:24:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=vfUP7dJBnmi/OcEPVE2ezJwiVV1EUyQRW+Qu6djHyYk=;
+ b=cKbadL6aJ141eWrYwPOtTIb0RT1sCruIZCJFoP3Mp+GlRexPjDyuc8ORvvqpOGPI1c
+ l0Q/5hwYs4n0G1leCMsw87+GWF6OZpHgo8YIyepUw/4rHrx+431NSShPxQ4XY3okTLa8
+ HwSnvvrIrkX0keGoEVQdundcorMDqQ27ophbgoPuODQ2JZlnfAXNkeajGQs8hTBaOEE+
+ tfNVXSTRb1khLmksktzI+A1fCA7nAeKuYnBaiDuAC7lDS6fudXxOnBhurhdFC+dbdupb
+ HrktztM6Z/tJsuUKo9lz9L63DiAo+6AKFnLGh/Kh9yS9pjnT0scMalVf0onw8bQ6HQ8C
+ /3Ng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:subject:from:to:cc:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=peAAMfNQlavTfkcTPAynnMHwh6U7PTunVQj9NAmKSBU=;
- b=Niy4Qp4k49T98jhWxlE2o9tF4oF5ax7LOyzVb6F4RpIzNrVMcxEcSfE7pgT6Bl6oqL
- QowRZuKcUpGVuETfbaGfkrlwLlIe/isMC916Xr6E351qFGZVaLkumynOIiQn5TQ9ohvN
- NE6sEMBeiNMa2ehXQJb4lWaNdNGgiXHtKWCqiDpaeOhAy/92Tc7J6tuyf1CXVSzjOgz5
- of5hUqTjDA9AVi5caAyeAvXOIdSD4GLsLsWXbKi+uK9tCFuBpE5IFnzcFQdjQj0vwTmh
- SjvUtSac6P/nMdSsf+RgatB4WIhGRjtCuM3Nvjm4U2nzuWvpoPJraTXvR5OGbBV7QbGW
- /PVw==
-X-Gm-Message-State: AOAM530sKVumYZgEveNl9c7Gkml8TZiBWt0lk2F1xUnepLb1YH/Dj7B7
- cJwtmuZuayvhH9vlgIkNwCo=
-X-Google-Smtp-Source: ABdhPJxugsNelYa9OVYYMTg2znmIEsCTwI76eBDj15y8KJTOD/xV3WcgFoO/HGpmTTRJc2vq/CRiIw==
-X-Received: by 2002:a17:906:1290:: with SMTP id
- k16mr52309539ejb.566.1638885080416; 
- Tue, 07 Dec 2021 05:51:20 -0800 (PST)
-Received: from [192.168.2.1] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id
- p26sm10150597edt.94.2021.12.07.05.51.19
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 07 Dec 2021 05:51:20 -0800 (PST)
-Subject: Re: [PATCH v3 2/3] phy/rockchip: add naneng combo phy for RK3568
-From: Johan Jonker <jbx6244@gmail.com>
-To: Yifeng Zhao <yifeng.zhao@rock-chips.com>, heiko@sntech.de,
- robh+dt@kernel.org
-Cc: devicetree@vger.kernel.org, vkoul@kernel.org,
- michael.riesch@wolfvision.net, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, kishon@ti.com, p.zabel@pengutronix.de,
- cl@rock-chips.com
-References: <20211025080632.32063-1-yifeng.zhao@rock-chips.com>
- <20211025080632.32063-3-yifeng.zhao@rock-chips.com>
- <65898b49-87ee-211e-f5ef-39147107ef83@gmail.com>
-Message-ID: <95ba0a5b-8f5a-3351-fc53-33021b2a0111@gmail.com>
-Date: Tue, 7 Dec 2021 14:51:18 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=vfUP7dJBnmi/OcEPVE2ezJwiVV1EUyQRW+Qu6djHyYk=;
+ b=xIWpXayZKQV0B2aixODzm+Lvl1H7wwcIq3Lxy6mNhSq9lhv/sW8fkaC3SWXCngRbzg
+ WSDncq0iXtqvgIbKnRc+nTg0IndRRhpMZZWznRVhbFRRLcYONY6EWMeRo4n4JOUZZKaG
+ +MKDrVWTQ2lEa0hxUXvz9HFPY+SzfngULG6N+MHv950CdkHWNv2dZVufRRo2atFz7/S4
+ aip2wA19oxCoymKSkrGhZAJHweA4aujWuJUVyaS3JEO5Ogn/ffXFN+q6PWQEw3HH6QTQ
+ oc49c5rl9b3v1CMxZHEuZXQ6CWUwBJF2SDeWmJPIgM7nkLcZuYDTC8H9by9NTwmoRA8N
+ 4H5w==
+X-Gm-Message-State: AOAM5326B61lciWMnE3rm5ndkaAxa5Mbw1eBnYgliCvLekUQrHLmTyly
+ FxtHZ/d8Kw2Fe0z7K7TI6kV9AA==
+X-Google-Smtp-Source: ABdhPJydN+P5ZwkGLoLxJVSNSXypXum05RxX0N3o4pvwaY6rUeQx4TwAfDK8+ATcN4/uje330Luq4A==
+X-Received: by 2002:a05:6808:150d:: with SMTP id
+ u13mr5398185oiw.155.1638887094092; 
+ Tue, 07 Dec 2021 06:24:54 -0800 (PST)
+Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id e26sm2672959oog.46.2021.12.07.06.24.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Dec 2021 06:24:53 -0800 (PST)
+Date: Tue, 7 Dec 2021 06:26:18 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Stanimir Varbanov <svarbanov@mm-sol.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof Wilczy??ski <kw@linux.com>, linux-arm-msm@vger.kernel.org,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH v1 02/10] dt-bindings: phy: qcom, qmp: Add SM8450 PCIe PHY
+ bindings
+Message-ID: <Ya9vCkillZqKc6o2@ripper>
+References: <20211202141726.1796793-1-dmitry.baryshkov@linaro.org>
+ <20211202141726.1796793-3-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <65898b49-87ee-211e-f5ef-39147107ef83@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20211202141726.1796793-3-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211207_055122_998261_3AEDA5F8 
-X-CRM114-Status: GOOD (  14.17  )
+X-CRM114-CacheID: sfid-20211207_062456_222399_EBA02DD9 
+X-CRM114-Status: GOOD (  13.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,125 +97,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Thu 02 Dec 06:17 PST 2021, Dmitry Baryshkov wrote:
 
-See question below.
-
-On 11/14/21 12:40 PM, Johan Jonker wrote:
-> Hi Yifeng,
+> There are two different PCIe PHYs on SM8450, one having one lane and
+> another with two lanes. Add DT bindings for the first one. Support for
+> second PCIe host and PHY will be submitted separately.
 > 
-> Some comments. Have a look if it's useful.
+
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> On 10/25/21 10:06 AM, Yifeng Zhao wrote:
->> This patch implements a combo phy driver for Rockchip SoCs
->> with NaNeng IP block. This phy can be used as pcie-phy, usb3-phy,
->> sata-phy or sgmii-phy.
->>
->> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
->> ---
-
->> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-
->> +
->> +#define BIT_WRITEABLE_SHIFT		16
->> +#define REF_CLOCK_24MHz			24000000
->> +#define REF_CLOCK_25MHz			25000000
->> +#define REF_CLOCK_100MHz		100000000
->> +/* RK3568 T22 COMBO PHY REG */
->> +#define RK3568_T22_PHYREG5		0x14
->> +#define T22_PHYREG5_PLL_DIV_MASK	GENMASK(7, 6)
->> +#define T22_PHYREG5_PLL_DIV_SHIFT	6
->> +#define T22_PHYREG5_PLL_DIV_2		1
->> +
-
->> +#define RK3568_T22_PHYREG6		0x18
-
-Multi-PHY_Register007
-Address: Operational Base + offset (0x0018)
-
->> +#define T22_PHYREG6_TX_RTERM_MASK	GENMASK(7, 4)
->> +#define T22_PHYREG6_TX_RTERM_SHIFT	4
->> +#define T22_PHYREG6_TX_RTERM_50OHM	0x8
->> +#define T22_PHYREG6_RX_RTERM_MASK	GENMASK(3, 0)
->> +#define T22_PHYREG6_RX_RTERM_SHIFT	0
->> +#define T22_PHYREG6_RX_RTERM_44OHM	0xF
->> +
->> +#define RK3568_T22_PHYREG7		0x1C
-
-Multi-PHY_Register008
-Address: Operational Base + offset (0x001C)
-
->> +#define T22_PHYREG7_SSC_EN		BIT(4)
-
-See Rockchip RK3568 TRM Part2 V1.0-20210111 page 1957-1958
-
-It looks as if all PHYREG defines add -1 in value? I'm I correct here?
-
-===
-
-SSC_EN
-In U3 and SATA mode, this bit= 1, set SSC on
-In PCIE mode, this bit=0 set SSC off
-
-      If Spread Spectrum Clocking (SSC) is used it is
-      required that a common reference clock is used by the link partners.
-      Most commercially available platforms with PCIe backplanes use
-      SSC to reduce EMI.
-
-Maybe a dumb question for in a possible YAML description:
-Is this above text from the TRM correct?
-Is SSC only used in combination with PCIE instead of U3 and SATA?
-
-===
-
-Johan
-
->> +
->> +#define RK3568_T22_PHYREG10		0x28
->> +#define T22_PHYREG10_SU_TRIM_0_7	0xF0
->> +
->> +#define RK3568_T22_PHYREG11		0x2C
->> +#define T22_PHYREG11_PLL_LPF_ADJ	0x4
->> +
-
->> +#define RK3568_T22_PHYREG12		0x30
-
-Multi-PHY_Register013
-Address: Operational Base + offset (0x0030)
-
->> +#define T22_PHYREG12_RESISTER_MASK	GENMASK(5, 4)
->> +#define T22_PHYREG12_RESISTER_SHIFT	0x4
->> +#define T22_PHYREG12_RESISTER_HIGH_Z	0x3
->> +#define T22_PHYREG12_CKRCV_AMP0		BIT(7)
->> +
->> +#define RK3568_T22_PHYREG13		0x34
->> +#define T22_PHYREG13_CKRCV_AMP1		BIT(0)
->> +
->> +#define RK3568_T22_PHYREG14		0x38
->> +#define T22_PHYREG14_CTLE_EN		BIT(0)
->> +#define T22_PHYREG14_SSC_CNT_MASK	GENMASK(7, 6)
->> +#define T22_PHYREG14_SSC_CNT_SHIFT	6
->> +#define T22_PHYREG14_SSC_CNT_VALUE	0x1
->> +
->> +#define RK3568_T22_PHYREG15		0x3C
->> +#define T22_PHYREG15_SSC_CNT_VALUE	0x5f
->> +
->> +#define RK3568_T22_PHYREG17		0x44
->> +#define T22_PHYREG17_PLL_LOOP		0x32
->> +
->> +#define RK3568_T22_PHYREG31		0x7C
->> +#define T22_PHYREG31_SSC_MASK		GENMASK(7, 4)
->> +#define T22_PHYREG31_SSC_DIR_SHIFT	4
->> +#define T22_PHYREG31_SSC_UPWARD		0
->> +#define T22_PHYREG31_SSC_DOWNWARD	1
->> +#define T22_PHYREG31_SSC_OFFSET_SHIFT	6
->> +#define T22_PHYREG31_SSC_OFFSET_500PPM	1
->> +
->> +#define RK3568_T22_PHYREG32		0x80
->> +#define T22_PHYREG32_PLL_KVCO_MASK	GENMASK(4, 2)
->> +#define T22_PHYREG32_PLL_KVCO_SHIFT	2
->> +#define T22_PHYREG32_PLL_KVCO_VALUE	2
->> +
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> index c59bbca9a900..d18075cb2b5d 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> @@ -50,6 +50,7 @@ properties:
+>        - qcom,sm8350-qmp-ufs-phy
+>        - qcom,sm8350-qmp-usb3-phy
+>        - qcom,sm8350-qmp-usb3-uni-phy
+> +      - qcom,sm8450-qmp-gen3x1-pcie-phy
+>        - qcom,sm8450-qmp-ufs-phy
+>        - qcom,sdx55-qmp-pcie-phy
+>        - qcom,sdx55-qmp-usb3-uni-phy
+> @@ -333,6 +334,7 @@ allOf:
+>                - qcom,sm8250-qmp-gen3x1-pcie-phy
+>                - qcom,sm8250-qmp-gen3x2-pcie-phy
+>                - qcom,sm8250-qmp-modem-pcie-phy
+> +              - qcom,sm8450-qmp-gen3x1-pcie-phy
+>      then:
+>        properties:
+>          clocks:
+> -- 
+> 2.33.0
+> 
 
 -- 
 linux-phy mailing list
