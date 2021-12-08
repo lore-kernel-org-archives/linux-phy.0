@@ -4,75 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46DD1C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Dec 2021 19:28:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D024BC433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Dec 2021 19:29:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OiWkiHuwCohIfErw0+3LhcYDLaGIkNT4MVtKhwEUqt8=; b=hEEheM59QYQU+f
-	//TWMONpknAa+GzWPiLZTOvQuxN04A+DpiRu5dqUrxsTSk5D7Pvduhhs2uImUK7NvEUDSPk1jEwdI
-	lTxYp0P0s27a+7QlTDeyIMoR1+VClf3s/DRdIMdDtm0zqqizVizM9zOyZyVxapUvzEqglTIw1iKi8
-	PHcI4svXhxDKLvEfQ8ZqtdsCzl1QZDXpSkQuLx0CKSWxPjATkdGP+QoPTAsEgzeIsh4ldabstBb/6
-	jqaT8XHL/HdWNxDW+IAf9iqTtiEnmvyYnNMkVvVtDvc+fZfR0vXxZSxfepPUxJDlqEmNHARtd1lOC
-	RWi0axZnopGkxx3Ufpyw==;
+	List-Owner; bh=6SqpJXUx28Wzj+Kg7pKO4sXK0qZbhq3GTehgj75X0n4=; b=vIqUCWHGDzQ6sm
+	dHcFbKgPvDxS8L3QXqInWkkFckcIHZnloGmXShECfe6qSZbCzDPKkbk9HXVrIncUbUzdJmWt0bhRG
+	EW9PeJLpTfXuhKuNxszegKoHz39smjJpgs6I0gWqOpgB1TaiNko9tkCH5wzk+OtHC8xlR0YdSZwtV
+	1huBOFpFV5H7eVturLWhca5vkhlM9jJA1XM57wW2h1aRs0l4C0IDEP3XbeL7Rq0j81DG7KNkC/ycV
+	QtQgdsdqK7xJbe5fYGRkOmpi9r5YsiznvP70u7nhVU73dXQyIAS3rGEYds0njQayrOFC72Q9J4ykB
+	mUq2xhweDmXfpz1ArivQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mv2cL-00E3XN-NV; Wed, 08 Dec 2021 19:28:41 +0000
-Received: from mail-oi1-f169.google.com ([209.85.167.169])
+	id 1mv2cu-00E3kH-76; Wed, 08 Dec 2021 19:29:16 +0000
+Received: from mail-ot1-f54.google.com ([209.85.210.54])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mv2cJ-00E3TL-J2; Wed, 08 Dec 2021 19:28:40 +0000
-Received: by mail-oi1-f169.google.com with SMTP id r26so5480049oiw.5;
- Wed, 08 Dec 2021 11:28:34 -0800 (PST)
+ id 1mv2cr-00E3i7-GU; Wed, 08 Dec 2021 19:29:14 +0000
+Received: by mail-ot1-f54.google.com with SMTP id
+ x19-20020a9d7053000000b0055c8b39420bso3820417otj.1; 
+ Wed, 08 Dec 2021 11:29:12 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=Ei1/bJy2vB9qPW5/d6507cGAxG5aCdrek2IZnuOeREY=;
- b=Zi+6BaLNL3uKc8eB4fXoEF237nkobCP5yb9EbiHR0star0N/NpliR0tam1qFRl+UHK
- YPKiTIVC85JV1PjRo+JcAh3dmPpT50IHKR9EIdNEsdckvxAM67aJe36V9hpOwmfNepUf
- WEnYGLtnqH6hwcc5AVtqC662zQAGL/kV4MmCxxezZIYXNg1hOeTyZLO1C0fiAUFHr8Pa
- KeHPBWZXECzti59y1AwLViKOsOsr8uf+DeEkkOspxeHo1/REoBiZF7naQrvp1HO9zSJk
- 47WJACc2mn0BNHqjfAxt4PAJmFRhL2v5jrMoHFI/KvCd36V1OGvfUzFYZh/ycY3i9kLK
- WrgQ==
-X-Gm-Message-State: AOAM5316sX5JbHEigE1tLz4OKuBWFdMrgNnFUT6rzMTE+p714oEkz2tY
- mUgaOmiqwXcYQimqlP+b2g==
-X-Google-Smtp-Source: ABdhPJwF+jq77ny2CvN0M9DJhRVaukgUgnt5T4DciezsLcCNsXh6daUT1e0/rDKNjYuM9PQSC80Bww==
-X-Received: by 2002:a05:6808:14c4:: with SMTP id
- f4mr1435157oiw.76.1638991713363; 
- Wed, 08 Dec 2021 11:28:33 -0800 (PST)
+ bh=ckCjpw9Wt0QzAlHPhX31N143mOL1S19Il2QDIOPqOCA=;
+ b=MrIDmvR8fbb0LuxtWWKZ/rQdwckb8j05vFLF0GAIeCj6RK8w37/I/Auiupn6oHVKMI
+ 1WkU39JKge4QSq7kG75dbfio1nby03vqOPgSLlnS/kMGSlZGhWo9U6Ez3yX2BC5WFeIg
+ uBLFYMNkdFkWpQHEqf2CTbUPffm85peZDotDzwLmc5lQdVF+C1dB9nI0ZDeYbROvF/YZ
+ y6pl9z/DhH08ObvShD58Q8mGlwCx9zcsHfpxNxKBB0SC1J2QMECHfbju+Cqfh2PgX3dn
+ NwVGhIdRY8iZLHRoaL5zCJLBr8HXLR3MYDSuAcewbxysQxEs3Nczt4+Qbx4t524nlO+M
+ QKSA==
+X-Gm-Message-State: AOAM533TteImRakXhQr5pKf/tPFuEi5XPs0Hb6v6jRCq7clrS2+v/LwO
+ myDKPeNl+KkBeeHU6Q0d4g==
+X-Google-Smtp-Source: ABdhPJx9k/ncHmytLAq0AS/b0iHXxpdv44SwlV2qYC2c7mdCzTDY2wF9gxBcriS93JNqHo6bhF/OkA==
+X-Received: by 2002:a05:6830:453:: with SMTP id
+ d19mr1365276otc.72.1638991752078; 
+ Wed, 08 Dec 2021 11:29:12 -0800 (PST)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id 109sm603156otv.30.2021.12.08.11.28.32
+ by smtp.gmail.com with ESMTPSA id l9sm589939oom.4.2021.12.08.11.29.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Dec 2021 11:28:32 -0800 (PST)
-Received: (nullmailer pid 192567 invoked by uid 1000);
- Wed, 08 Dec 2021 19:28:31 -0000
-Date: Wed, 8 Dec 2021 13:28:31 -0600
+ Wed, 08 Dec 2021 11:29:11 -0800 (PST)
+Received: (nullmailer pid 193603 invoked by uid 1000);
+ Wed, 08 Dec 2021 19:29:10 -0000
+Date: Wed, 8 Dec 2021 13:29:10 -0600
 From: Rob Herring <robh@kernel.org>
 To: Florian Fainelli <f.fainelli@gmail.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Scott Branden <sbranden@broadcom.com>, netdev@vger.kernel.org,
- Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
- Jakub Kicinski <kuba@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+Cc: linux-kernel@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ Vinod Koul <vkoul@kernel.org>, netdev@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Doug Berger <opendmb@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ Kishon Vijay Abraham I <kishon@ti.com>, bcm-kernel-feedback-list@broadcom.com,
  =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>,
- bcm-kernel-feedback-list@broadcom.com, linux-phy@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Doug Berger <opendmb@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v3 1/8] dt-bindings: net: brcm,unimac-mdio: reg-names is
- optional
-Message-ID: <YbEHX3OyNLD/LuPZ@robh.at.kernel.org>
+ devicetree@vger.kernel.org, Scott Branden <sbranden@broadcom.com>,
+ Jakub Kicinski <kuba@kernel.org>, Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v3 2/8] dt-bindings: net: brcm,unimac-mdio: Update
+ maintainers for binding
+Message-ID: <YbEHhk66WwiK3rbC@robh.at.kernel.org>
 References: <20211206180049.2086907-1-f.fainelli@gmail.com>
- <20211206180049.2086907-2-f.fainelli@gmail.com>
+ <20211206180049.2086907-3-f.fainelli@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211206180049.2086907-2-f.fainelli@gmail.com>
+In-Reply-To: <20211206180049.2086907-3-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211208_112839_649590_75545C56 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20211208_112913_591206_ACAE9B64 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,14 +90,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 06 Dec 2021 10:00:42 -0800, Florian Fainelli wrote:
-> The UniMAC MDIO controller integrated into GENET does not provide a
-> reg-names property since it is optional, reflect that in the binding.
+On Mon, 06 Dec 2021 10:00:43 -0800, Florian Fainelli wrote:
+> Add Doug and myself as maintainers since this binding is used by the
+> GENET Ethernet controller for its internal MDIO controller.
 > 
 > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 > ---
->  Documentation/devicetree/bindings/net/brcm,unimac-mdio.yaml | 1 -
->  1 file changed, 1 deletion(-)
+>  Documentation/devicetree/bindings/net/brcm,unimac-mdio.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
 
 Applied, thanks!
