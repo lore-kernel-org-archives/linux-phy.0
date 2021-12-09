@@ -4,133 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2FADC433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Dec 2021 03:21:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EB11C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Dec 2021 04:48:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rKny7IPi+oONTZXlSrpkp2cqPfhrBUyFGEQGnVr38j8=; b=y2Y0P2HetKwotb
-	9uyoXkSpT1y+cNw08YjgYXIuTIYEswA1dqZTFSUUp3Xi8MeErOG4eCh3r7TPoNZSW1gbgoQAJceav
-	V/GwV27xbrGOpdtm88gfimbLBEYQmhiAUKBGmvivqOOKzaYaq3qE/T6RA0NFHQ445fXLsMTNIsazk
-	PRgKJJX8K3U/ORlWoXNCu8AsBthsJBaEYfn5pHfymfaoRyvR2CbasU3fh4D3lj/54JYSBrbP1RdtF
-	znAh9iLQXNNajpqGDL9gB7BPTW6x9A0ftMxDLyK96Uyd4LUxCEDQbeSfBIBtpfb8b7bdI2XECFR1m
-	V947Chwe5uoXzO0ad4SQ==;
+	List-Owner; bh=2iFUuKLyPfgQ/HrqKN5M8DvIzx2eRY+TKpgCzRa3zIw=; b=K9i9oEywxc6NNR
+	UL2zYMwsQwpKb8G7rkCYvl5lsZ0U9X2h5tzLZ4wPHUbrErhX+enazgzqdtUQ8Cu1NZd4B70KyrpFV
+	TtL4H6s0kLFFw5SCLQwbL4xUjfpjYYS9bpeFUGB2e28xIjeEijWintUdjMOPAGRUEoJFUHf8OFDnh
+	z9kln/GWI2Jwpc7nWoenspHjcBq4XKFM9uAmlqnoF9ldS7lhLzuM3Bxxeqv/HOMD0pIaxzeT9dvdc
+	dW8B/YJCMIGPUWCLfG1w1ag2K54vPsnau5Tq7XJ60vvt7vnDWRL8VAThE9hIncD7lTOUySGVqzrmG
+	MaK4EpyAbmom6e0TF1WQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mvA08-00EpRS-BJ; Thu, 09 Dec 2021 03:21:44 +0000
-Received: from mail-eopbgr1300120.outbound.protection.outlook.com
- ([40.107.130.120] helo=APC01-HK2-obe.outbound.protection.outlook.com)
+	id 1mvBML-00EvyC-QR; Thu, 09 Dec 2021 04:48:45 +0000
+Received: from mail-oo1-xc29.google.com ([2607:f8b0:4864:20::c29])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mvA05-00EpPa-Ck
- for linux-phy@lists.infradead.org; Thu, 09 Dec 2021 03:21:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=KRSgwpaOlCFSrq2iwh3NHsArSZyuXTWIyvrvPPn3l7sIeJaIvsWHWXhi9Or4bUQmE0OIODBOgs9AY8go5pTTvSZ/AEN1QEv2U0sj+5JLbjxOJMJtGygQ8N1RvlbsK0yDV8NhjNkCa/44qC8W+7xOMHarxRjs5fS8a9I4+73msd481VH7fOCUCob2nzkrhVWcjC2JDXRSnZcDc9Nnlzj3kVF1pkIWbzaEG6ihzU8kHq/yhjXjAk+I/2QWe70VhmrR5HgmIB3CAV5UReTBGptU98YX7ih5DYB9HS1ctvIjA6C84WMKl8sVfSvAKHUai8OSZwAxZLjP2dQlFRgn8XiTRQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Kd5BMxfJTGZNlZrXgp+uh/YYRXUtwG/9b+9LZ6sr8Y4=;
- b=N9h5u9IRFY/QPIdbxQ28Zf0TQm6ek9s7Q3XdNOJbD/jgdWaMAQ2Q7Wye4OFwHxiRqzDK13/OLivM8W0Je3dOIQLu4RH37RixCauTGrC6DwTW+QA5dKqOPbQIFbqdbROAPx1poqs1WryncODHBapjbnyfPE1zTB5lCQWf2SztgZg+pn73TGD0KZoBU0YCP029tkBEZN2GmPv9/GLyuPYaMYwEj0qeAW6IuBPzHK7q0XAl1dSzlAmGITEJgCE1hL5sEKbm/IhBKSKrhy2MUC2fAInYpjVIrpwl61WzlSN+itBVCLSPIfeHFtZPEBZoVcmtz7w6bIEsuOvWWgF1ea1tWQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
- dkim=pass header.d=vivo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo0.onmicrosoft.com; 
- s=selector2-vivo0-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Kd5BMxfJTGZNlZrXgp+uh/YYRXUtwG/9b+9LZ6sr8Y4=;
- b=Q4D7fQtIO4a8dDas8k1tZeokAjfpqCvQvQIh4/zmcBcJW3LJsTGGAbtpNkVUGcMyzNj3YBrf5GBcrgUR8RdUBC5EQvElcLwoPlRS54UlxYqin3QeMiWEtmCrXnQkrP4oXbYDyYC/TbgzyoWqcj+q4IAVk4hoerh/nNF5lmghQAk=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=vivo.com;
-Received: from HK2PR06MB3492.apcprd06.prod.outlook.com (2603:1096:202:2f::10)
- by HK0PR06MB3140.apcprd06.prod.outlook.com (2603:1096:203:90::10)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4755.21; Thu, 9 Dec
- 2021 03:21:34 +0000
-Received: from HK2PR06MB3492.apcprd06.prod.outlook.com
- ([fe80::8986:b885:90d7:5e61]) by HK2PR06MB3492.apcprd06.prod.outlook.com
- ([fe80::8986:b885:90d7:5e61%3]) with mapi id 15.20.4755.024; Thu, 9 Dec 2021
- 03:21:34 +0000
-From: Guo Zhengkui <guozhengkui@vivo.com>
-To: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-arm-msm@vger.kernel.org (open list:ARM/QUALCOMM SUPPORT),
- linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
- linux-kernel@vger.kernel.org (open list)
-Cc: kernel@vivo.com,
-	Guo Zhengkui <guozhengkui@vivo.com>
-Subject: [PATCH] phy: qcom: use struct_size instead of sizeof
-Date: Thu,  9 Dec 2021 11:21:14 +0800
-Message-Id: <20211209032114.9416-1-guozhengkui@vivo.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20211207131642.5313-1-guozhengkui@vivo.com>
+ id 1mvBMI-00Evwa-KZ
+ for linux-phy@lists.infradead.org; Thu, 09 Dec 2021 04:48:44 +0000
+Received: by mail-oo1-xc29.google.com with SMTP id
+ t9-20020a4a8589000000b002c5c4d19723so1417905ooh.11
+ for <linux-phy@lists.infradead.org>; Wed, 08 Dec 2021 20:48:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=UzPrDz37TsbgctSbF3jQc1Www5xR/uLVIm/OIh4LH2s=;
+ b=pAgQQ1bgUJN66G/xpqk6sN1Ime7Y0O4qp5cVTQJqayrV5KAFuoiw26TORvLt8r4csa
+ EoT2O8NlRQwcYcI9nDJG5UZZZVUM7ObMEvrdQXrCuEPsDb9vpSO97e4ztjc72QBaljaV
+ gdld3FSuEhonRopMY2va2tW0weV284CGbfPGkWVvXMohwl4RWtWTlhxRWzAhRJ5CuSYQ
+ uo/faMw3tvgr/xMpAqlJYB3T8xPHft4qiZQ+fT//xwkTmMg7YB1tzM2fZ2n79Loqohyw
+ g/fGDYCbZDkmqnsydUUi7rGFqjiWWGc7juN7Wh799PrdVt/HfrUS0CUp3tuUhg89Zl+S
+ lYeA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=UzPrDz37TsbgctSbF3jQc1Www5xR/uLVIm/OIh4LH2s=;
+ b=2cJe1RKhiJTXchvmZLhgtDD0ASs7OaOGphyXZIYgun8HYdTBnGV1TpfoA+BPV+vM0O
+ sMtFI/0ozhPTGodwelhtXOfz0uQj3rQaUbttZpu/shy4eFi3qtIxMlD5OaqLcTTxg/e/
+ wOsk8tYZEPTWBM0/QP6tcgMxaD7fKgixGtW12HuQQiYS/8X9UxfAuq4ZPJFFxAvd2IOZ
+ XBH+f5FG8oO4iijqErmO2XHo8J6WfQECccVdKqogGqBioos6zw5WIPN61a0Hwfw20dzs
+ zwnnub5Rammv/cTiz2dEF925UjDlhYw+/AF7/Qk+qxhZvcMzjdsX5hekI3k9Usq+1MYz
+ gdzQ==
+X-Gm-Message-State: AOAM530P85yjmESQ5xsx2NMxYHuuqdg7YGO39ki2C7qVENxrb6uB8+l/
+ 2FW7q71KLw77phkIlUDvLm0HpOxvWEuNCw==
+X-Google-Smtp-Source: ABdhPJzVriX9cyPCHvhpXlfeRj4kbtylQnj9PMKFLon2CWif8CeJ1hyJB5YbK8VCDsdi+6L5U4UZbw==
+X-Received: by 2002:a4a:e155:: with SMTP id p21mr2592272oot.84.1639025321519; 
+ Wed, 08 Dec 2021 20:48:41 -0800 (PST)
+Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id l9sm805883oom.4.2021.12.08.20.48.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Dec 2021 20:48:41 -0800 (PST)
+Date: Wed, 8 Dec 2021 20:50:06 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Guo Zhengkui <guozhengkui@vivo.com>
+Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ "open list:ARM/QUALCOMM SUPPORT" <linux-arm-msm@vger.kernel.org>,
+ "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
+ open list <linux-kernel@vger.kernel.org>, kernel@vivo.com
+Subject: Re: [PATCH] phy: qcom: use struct_size instead of sizeof
+Message-ID: <YbGK/iNJYqtgF1kD@ripper>
 References: <20211207131642.5313-1-guozhengkui@vivo.com>
-X-ClientProxiedBy: HK2PR02CA0156.apcprd02.prod.outlook.com
- (2603:1096:201:1f::16) To HK2PR06MB3492.apcprd06.prod.outlook.com
- (2603:1096:202:2f::10)
+ <20211209032114.9416-1-guozhengkui@vivo.com>
 MIME-Version: 1.0
-Received: from guozhengkui.debian (218.213.202.190) by
- HK2PR02CA0156.apcprd02.prod.outlook.com (2603:1096:201:1f::16) with Microsoft
- SMTP Server (version=TLS1_2, cipher=) via Frontend Transport;
- Thu, 9 Dec 2021 03:21:33 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 6c9f8157-1673-4c86-ebb4-08d9bac3006f
-X-MS-TrafficTypeDiagnostic: HK0PR06MB3140:EE_
-X-Microsoft-Antispam-PRVS: <HK0PR06MB314072C05AA4F71C15C91102C7709@HK0PR06MB3140.apcprd06.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:2089;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: XQKgswVhEYipuChMpVBkrqtSX1y5BZPTJRI9niEPv4Oip5h+p4w6GzQ6uXV6fkhFo+SlmclmErTMB1ZZzsfU5L+0wVG9LoHbRGBL9vy1Z4bepgIUZfd/ZVxxrPIMgn7yolSDTO8+ULlcL3I46XDfKzQ+RQHwWu72/5q9FNkSEL7fZ/REjc/wVByUxWuz5thFWeO8kCUGhDlzvjvNkirjgLmQIaBkRKezkK5XKCXuOldRmlzUZoXYefVOawHPdCH7B4rNhFDX4Lyg3Sv8ezh1aQ2LC+IHQ/QkNVwyMizBC/9dRv5JOb4usP0M5bgtAQBDI+gTl/u213SQNxalCREy7NwiMwZBKHNQ3NeWA9bWnDsTtVKEBDHtxr++tKQsFEgSLBYd3nNyFnHieNB0S4tXGlvyjvQF4DjnpTBkzHiYtO6tzBri7z9lgUlN3u+/9xYyjOfk6+qY6shHjjIwXhHnigu6jotpdDPwMyoP/eQrWK1b3GWSCxaSsRYwxlhOjUcUTBgywpInwaBuTrBMuUvyld8ZOkfkEd5c1ZNK7hQAHC24skVtVfF94dgTAxuGEJOcl1HLMML8m3fVYakcJnZNGmdP6yRsR9KP9VOkFxA/XkBLXy0rcNx4LbrFYxRiUVe/8JcahfhXEqaNW05Td3HkUWr1wznTo4kij/B4LiKgW59uMnNTvnLsKkRMJ2ucQVRedpgjo8BP2Dg1DAW60CGvUg==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:HK2PR06MB3492.apcprd06.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(316002)(1076003)(107886003)(8936002)(2906002)(110136005)(83380400001)(52116002)(4326008)(6486002)(6512007)(5660300002)(6666004)(38350700002)(38100700002)(36756003)(508600001)(956004)(26005)(2616005)(6506007)(186003)(8676002)(4744005)(66476007)(66556008)(66946007)(86362001);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Q8jdjIr7uCzVFSO3HkVObuye5Y67pnr5PX/7iv1/8V/qnw9rh5BrKBOMCY0I?=
- =?us-ascii?Q?tzNONvn2MBRkATCEAOBZ4EjwPcw4czZJR1iCUBs19Oez+t+NIElqoBn5aIYY?=
- =?us-ascii?Q?ZEuVvikrvlG6gh/ldL5K8dFeo4ik5Vce5d9XnoYwwkTNiJHluOOrs/reRTcW?=
- =?us-ascii?Q?GsX1OVtfeXNJK2YepN6o2+77IecaGVA4fs6N6TDGtkHSh5ebTGvWn9m9yFU+?=
- =?us-ascii?Q?iQJ96dl2ptHSZYciFd6PU1C9mU+Oj8nE9ZtC4axEPWJRM98fYOWFUtduUWWk?=
- =?us-ascii?Q?CwFi+CFt0WgsnvG1McWYVpEoMsi2Fak6xhQejAbdkrbSF7oGIJDXLxqUTHpM?=
- =?us-ascii?Q?K6jMtkOGSHClwj9fUIdozqAUu7KzMItcNoc2+JgJA3IKPPzkL4zAc+uocnQx?=
- =?us-ascii?Q?WS31RP90+8DgYeGHAiOVA5QzqP5RzOIw1Dx5QAjt8eJngwMWcGX7hC9p8XK8?=
- =?us-ascii?Q?Gl/2722l9DHB4Ipjr0HmHzjwnIuuNtVHXbvdtYs/C7cRzQqskQcblywZxQ2R?=
- =?us-ascii?Q?Jd9khpMtoARo6LhuQfty30JNpj37D4CLTFvAHJfhjsHOZe1EzGkFbHCRbX8F?=
- =?us-ascii?Q?fSjlmXWKvSFiFq/6JwoUgRc7eh4GO+lzEhYU+h/qqFuN4R0f+ikdsOyk2wmP?=
- =?us-ascii?Q?NG1pI8po/NDl5T0zkQ7cSSE4INrVAO/KGo52H1KNkWnJDPwJngp9Kt4wXK1t?=
- =?us-ascii?Q?w4BRsQ/fkSaxXclqYGbjBlP03Pu8Rbm6lHX0Zz9v5HgRcRYEvcvsu7/gBbPs?=
- =?us-ascii?Q?hSWuKCljkdt0qDiDLkjUCdTodfwYlsEbStS7ACt03ZHLdRkN4aEhZ8EMpbeP?=
- =?us-ascii?Q?NCd87pA8LZfmvBMAPNCmlyccqmk2Y+ext3tl5KdZ+9k6aONjsmby+P2g+Tbu?=
- =?us-ascii?Q?0xNpDz4vv+fT8at3u62/O75ydGkaFgdIkLAQ/kHW0r6Riyeza2oAyb1MFAlV?=
- =?us-ascii?Q?M9wPhvsof1qOsCR/8kfsA13RnpPwPijrrewsoKAg3sNm2MDesCthkaVa5VAp?=
- =?us-ascii?Q?XXCDZQOffTwKcCPqCCI79Pg8QYOI6hpPRNFh8OK1FLPE+f95cD/xqQ2NETGl?=
- =?us-ascii?Q?ss7TAvVdhyl/XBfNcwB5e9sizEFHs3QBpGWgMWhF0LgsgEpUgg960zx5qRFx?=
- =?us-ascii?Q?92bXZ+eD+Gb5YVxzt3HI0OQ05JKQ79tvFZ5CLsCZE0EnRZA+wsp4TWKinf9T?=
- =?us-ascii?Q?nxSSmjK/6YfDk4aaE3yGZWFHdvhVl/2CCI0nePV1T69hY2lPBbqqxlcp4q3s?=
- =?us-ascii?Q?ln5dAlGQdIAf5ps0Y6j0SHu5RSGLi/KpBk8U0CwM8T6zTw7e992y3w+Awje1?=
- =?us-ascii?Q?LRtoAPpUtH01hCYQBMy+LonpXBRXDDE7d+Rk4hlrd9jEsJqjASFXrlew3W5L?=
- =?us-ascii?Q?OEd6rnenqStaave51q3jPGz5GI0RRAYYhU0jukZ9hNNR5t19lGopN4gWQlfd?=
- =?us-ascii?Q?wXkb8KKBaXgtW43VbpJY+ZVYnZshpM5/+bdZ+PZnWMMpYgW7okoIqQxM4+kQ?=
- =?us-ascii?Q?A3yFForndLUSVtXkGxkPw6rQm5faOuNzSiTSvWGmrPL5inRwNfQ4yubLiIp0?=
- =?us-ascii?Q?KBAgc4YoX8WZV5O5N+ohZJ0lL8PPYNOwJQHv2uvgyKDapsLuoZPPh4Y4AStE?=
- =?us-ascii?Q?FcYz3WqYH9fkv+B6mjqmBuM=3D?=
-X-OriginatorOrg: vivo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6c9f8157-1673-4c86-ebb4-08d9bac3006f
-X-MS-Exchange-CrossTenant-AuthSource: HK2PR06MB3492.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Dec 2021 03:21:34.0703 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: v1BR7oZR37Z6AImAQbK4QUpaA4lJVOlRRXHXaFlTLDCyMun0xxDW/eLVLJc52xvy2qBDO63ojp0o+Pyo8QLniA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK0PR06MB3140
+Content-Disposition: inline
+In-Reply-To: <20211209032114.9416-1-guozhengkui@vivo.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211208_192141_599546_A71A3F9B 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211208_204842_748211_9653FC54 
+X-CRM114-Status: GOOD (  15.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,32 +93,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use struct_size() to get the accurate size of `clk_hw_onecell_data`
-with a variable size array, instead of sizeof(data) to get the size
-of a pointer.
+On Wed 08 Dec 19:21 PST 2021, Guo Zhengkui wrote:
 
-Suggested-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Signed-off-by: Guo Zhengkui <guozhengkui@vivo.com>
----
- drivers/phy/qualcomm/phy-qcom-edp.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> Use struct_size() to get the accurate size of `clk_hw_onecell_data`
+> with a variable size array, instead of sizeof(data) to get the size
+> of a pointer.
+> 
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index 17d5653b661d..a8ecd2e8442d 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -571,7 +571,7 @@ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
- 	struct clk_init_data init = { };
- 	int ret;
- 
--	data = devm_kzalloc(edp->dev, sizeof(data), GFP_KERNEL);
-+	data = devm_kzalloc(edp->dev, struct_size(data, hws, 2), GFP_KERNEL);
- 	if (!data)
- 		return -ENOMEM;
- 
--- 
-2.20.1
+Fixes: f199223cb490 ("phy: qcom: Introduce new eDP PHY driver")
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
+Thanks,
+Bjorn
+
+> Suggested-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Signed-off-by: Guo Zhengkui <guozhengkui@vivo.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-edp.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+> index 17d5653b661d..a8ecd2e8442d 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+> @@ -571,7 +571,7 @@ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
+>  	struct clk_init_data init = { };
+>  	int ret;
+>  
+> -	data = devm_kzalloc(edp->dev, sizeof(data), GFP_KERNEL);
+> +	data = devm_kzalloc(edp->dev, struct_size(data, hws, 2), GFP_KERNEL);
+>  	if (!data)
+>  		return -ENOMEM;
+>  
+> -- 
+> 2.20.1
+> 
 
 -- 
 linux-phy mailing list
