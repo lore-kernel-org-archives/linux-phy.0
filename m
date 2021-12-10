@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBCE8C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Dec 2021 11:15:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46F74C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Dec 2021 11:24:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zyo/Yl/56CxxR9fsccfFym08ZthX0ybEkVSTnlSVXiw=; b=vTf46AtQcTvWGw
-	OO5gMD6U4ZWAeAr3LFOLHH7H0sHP8LuIWJJzPQwo+41BUEl2SKY92mrDN0netyfAyZ9gkScCxY9JA
-	xQvMKBGJC4695ZGabGXsaeiWcGYxjUdbevd+RtDtFWYOn/eBq+gOfGeTvD61hXY8ERavGLEW6v8tf
-	s9A0xTJerF0nRqBlalpM/fxC5JJPnCrSU0iNCYfwJetEv9Eyu9x1EwsGHigh8S4vW4QllUdhEqTSU
-	5bUDE3bqfV26KPFoxKg9EtEAN4dtxjo95Q1ToNijYpeGfp8BDh+dydx0CvLPTl71uV3FLHPC7BBe7
-	550kQgE+gOdvQdstQqNQ==;
+	List-Owner; bh=/liqpKyTxwR+FvjoMBDfrhIryrgqKfsprRR0A+ilD2I=; b=ff6g+nHAFpmOWt
+	CPms/OgiUdGzF5RjPBLIDAnvOMnYdEbkX0pXRokCC2DcXY55e+ZoJsNw5Od2/j5bGyiS3vtWD6ixN
+	1lUOBxWYFMA6ZUd+R/3TmDU8WWn72X9XqVkfQ/kmSL71BWwbfs9RgpCcsxDu+Wmg0flSlxCQURqNc
+	MI56m5L411cWJeqOA2aYz5WvDNPAT6mqzaOegnIFqeidpoMxcOHZiHwRZGXuTvKXyEGWnXHDLd5Xy
+	LSXpVcQ01b2xzdV11XnmEi0tWIQgf+KTpSwUEsp22hgKjG9GyQsSuscoJWxXesJTUVb/bNmuOEDzg
+	Wf/a/WPqV276xf+mKQTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mvdsX-001brq-8k; Fri, 10 Dec 2021 11:15:53 +0000
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+	id 1mve0g-001eUj-7r; Fri, 10 Dec 2021 11:24:18 +0000
+Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mvdsU-001bqI-Ps
- for linux-phy@lists.infradead.org; Fri, 10 Dec 2021 11:15:52 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id
- gx15-20020a17090b124f00b001a695f3734aso7291959pjb.0
- for <linux-phy@lists.infradead.org>; Fri, 10 Dec 2021 03:15:48 -0800 (PST)
+ id 1mvdzF-001e41-4s
+ for linux-phy@lists.infradead.org; Fri, 10 Dec 2021 11:22:50 +0000
+Received: by mail-pl1-x62a.google.com with SMTP id u11so6075204plf.3
+ for <linux-phy@lists.infradead.org>; Fri, 10 Dec 2021 03:22:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=qYllIsVSqbDs4dUz+zHNMI4+DHlEEtES2AFLDR4RsZs=;
- b=lJMJZNQwKKu3LXLTLiiAMsOb/MOH+BlpVy5hjylkJ5ZbqhJVb+i9WuizTmYNqqHd8i
- GU+rvIFnESSUy8bcVLcsBqzhh9Xe7ZKHtd66uad0C+bNYUCVUZEXQU2FfQhH64QHf+w2
- DZeQs6EI23KdzoHltL53EfUJLeAwCbNOvO2A9AS4OzfacF6kMvd1ADO9icjkU3oMmLfG
- Ug7mI0GUaQpoLPuBMGo/gfOLKrpONc+ZCH/T+Ss+ffigflymQglRnDhkSdOY3r18eteM
- 4BZDg3PbylTiHWEKQ82AojRHPaVn4EbqpMAFJQkBcq569ZFD3oTvthmgOnuO2rL7h3q/
- LXow==
+ bh=Qxg6DxirLaC6DUB7IKjqDUJ0ykin6MxQpFRl97W03Dg=;
+ b=gi1PGJ0nA5fY2Qybv9z8wfe7bPMKNji2xRTQfRmiL41kKq1vD0m5PpNFc02jRTGqax
+ ozOfu5f638E2y0uKhr8AMCx2jPtBKM2SWktddZ3uPrZjaPAtYEl0S1nyvoNB4vPeXgC5
+ ciaWGIqPoWbUe01Smx6FnCkTzkcBoDNDlcpzUP7US14ArN27IlsZoZdEK0LoVf3VU5KM
+ itg+InpSZtmk8eXILQmxLv4vLIIKObUi25Ti2ZTmDduQOG6TUwzi4BCxecvbsxSbD1Qw
+ IQGG+XvyXLki/USm/yj/reh22qsUxXuZN/iCO7TMCDiv3wbZJjor47ZEgor92h1n3jUW
+ zMrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=qYllIsVSqbDs4dUz+zHNMI4+DHlEEtES2AFLDR4RsZs=;
- b=eaRMw6QwxVcTzghRUVtW2RJXxRFlfqtb47vJsxWOG5YbTiaHhoRKt5Q7fs18YJvC1M
- pvOge9OR9YTlxrPmxyeXI0Qs9DRJXnev4zl0sPCW3nx2SBao5DjPqZjLVmtg8qVj5HKs
- HXgvPPnRSAobGPIxRgT8PCXwV86kqgrxcOJ60bCO2vxSKGQSAwpkh2h+6wAMjw0+YDmF
- uTcA/48pg1STeQg6+VHHboemmnRt5pwvBFnL4oKSyGKQhZ15suYIS/ZHcBBnepQGv/UV
- Ou/f1AG9l0rubpZWor4hR29oPsYQsJC6C1/FdUlkby28G2B/RI+227W0Fzl/i9hRMGw/
- +UFw==
-X-Gm-Message-State: AOAM530hIca12aaRrkhX/jrm8rQlneuCDVl7TwG+fUDeUITO/tdZQC0F
- VfP2+3v0LYji3prReg4OS2Wd
-X-Google-Smtp-Source: ABdhPJzERHijcXGBjTizLrbvJuz4CCYCfVW96LQWzIIDzO445NjwhkHNujDFBQnjjnIQB6Atf/1YQw==
-X-Received: by 2002:a17:902:e842:b0:142:dbc:bade with SMTP id
- t2-20020a170902e84200b001420dbcbademr75107587plg.45.1639134948281; 
- Fri, 10 Dec 2021 03:15:48 -0800 (PST)
+ bh=Qxg6DxirLaC6DUB7IKjqDUJ0ykin6MxQpFRl97W03Dg=;
+ b=GL+YXj8AFWcvz/RNvW+tfqkvF9liQyu3AD9AgtYVh7CYjbG1xR3RRxcPzbh0mhBZng
+ FssYuleEYQyo1l3jF9DL3i1qUsMRsZZhXnvZ3y6RLtdWmeva+obAflWh97hSNs7Nu7O+
+ OSuzwQsMfxqYHrGuNgQ8rAicb9B3mlzkdoOJ5erwHvEoMRedNBepg7Bz2IZW9VfgB7Sr
+ Jz/rGbeZ5W8igVl+usDtnhQ5mfev36DYjl9ayAHYP0pZbFeXVtkICzQuVwbBLFom32/I
+ OStG82zYPk9zv2455q528yyTMKnNt6pqiWzKnNfm/HvMqyfRSVWJyMAJNhu/zHmLmjm9
+ M/WA==
+X-Gm-Message-State: AOAM533giLGAmgIioXFn8uLdQYTzm7vj5aiPZyEKp7pXf3j9nZXzW6to
+ BIm+1YF9lbh4jgKsxKsWqkRh
+X-Google-Smtp-Source: ABdhPJy6Tfp+7r+nz977lZcwgLbQS0hblxm4+TIkxiTlyrDg1PS/Cc9Q1FD3CaUZd6oX+s+ip839fA==
+X-Received: by 2002:a17:90b:1b06:: with SMTP id
+ nu6mr22962669pjb.155.1639135368104; 
+ Fri, 10 Dec 2021 03:22:48 -0800 (PST)
 Received: from thinkpad ([202.21.42.75])
- by smtp.gmail.com with ESMTPSA id s19sm2944131pfu.104.2021.12.10.03.15.43
+ by smtp.gmail.com with ESMTPSA id h15sm3251488pfc.134.2021.12.10.03.22.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Dec 2021 03:15:47 -0800 (PST)
-Date: Fri, 10 Dec 2021 16:45:41 +0530
+ Fri, 10 Dec 2021 03:22:47 -0800 (PST)
+Date: Fri, 10 Dec 2021 16:52:41 +0530
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Andy Gross <agross@kernel.org>,
@@ -72,17 +71,16 @@ Cc: Andy Gross <agross@kernel.org>,
  Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
  linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 04/10] PCI: qcom: Remove redundancy between qcom_pcie
- and qcom_pcie_cfg
-Message-ID: <20211210111541.GD1734@thinkpad>
+Subject: Re: [PATCH v2 05/10] PCI: qcom: Add ddrss_sf_tbu flag
+Message-ID: <20211210112241.GE1734@thinkpad>
 References: <20211208171442.1327689-1-dmitry.baryshkov@linaro.org>
- <20211208171442.1327689-5-dmitry.baryshkov@linaro.org>
+ <20211208171442.1327689-6-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211208171442.1327689-5-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20211208171442.1327689-6-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211210_031550_882204_59134AD2 
-X-CRM114-Status: GOOD (  23.09  )
+X-CRM114-CacheID: sfid-20211210_032249_233193_7850EECE 
+X-CRM114-Status: GOOD (  23.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,157 +97,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 08, 2021 at 08:14:36PM +0300, Dmitry Baryshkov wrote:
-> In preparation to adding more flags to configuration data, use struct
-> qcom_pcie_cfg directly inside struct qcom_pcie, rather than duplicating
-> all its fields. This would save us from the boilerplate code that just
-> copies flags values from one sruct to another one.
+On Wed, Dec 08, 2021 at 08:14:37PM +0300, Dmitry Baryshkov wrote:
+> Qualcomm PCIe driver uses compatible string to check if the ddrss_sf_tbu
+> clock should be used. Since sc7280 support has added flags, switch to
+> the new mechanism to check if this clock should be used.
 > 
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
->  drivers/pci/controller/dwc/pcie-qcom.c | 39 +++++++++++---------------
->  1 file changed, 17 insertions(+), 22 deletions(-)
+>  drivers/pci/controller/dwc/pcie-qcom.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
 > 
 > diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index 1c3d1116bb60..51a0475173fb 100644
+> index 51a0475173fb..803d3ac18c56 100644
 > --- a/drivers/pci/controller/dwc/pcie-qcom.c
 > +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -204,8 +204,7 @@ struct qcom_pcie {
->  	union qcom_pcie_resources res;
->  	struct phy *phy;
->  	struct gpio_desc *reset;
-> -	const struct qcom_pcie_ops *ops;
-> -	unsigned int pipe_clk_need_muxing:1;
-> +	const struct qcom_pcie_cfg *cfg;
+> @@ -194,7 +194,9 @@ struct qcom_pcie_ops {
+>  
+>  struct qcom_pcie_cfg {
+>  	const struct qcom_pcie_ops *ops;
+> +	/* flags for ops 2.7.0 and 1.9.0 */
 
-There is no change in this patch that adds "pipe_clk_need_muxing" to
-qcom_pcie_cfg.
+No need of this comment.
+
+>  	unsigned int pipe_clk_need_muxing:1;
+
+This should be added in the previous patch.
+
+> +	unsigned int has_ddrss_sf_tbu_clk:1;
+
+Wondering if we could make both the flags "bool" as the values passed to it
+are of boolean type. I don't think we could save a significant amount of
+memory using bitfields.
 
 Thanks,
 Mani
-
 >  };
 >  
->  #define to_qcom_pcie(x)		dev_get_drvdata((x)->dev)
-> @@ -229,8 +228,8 @@ static int qcom_pcie_start_link(struct dw_pcie *pci)
->  	struct qcom_pcie *pcie = to_qcom_pcie(pci);
+>  struct qcom_pcie {
+> @@ -1164,7 +1166,7 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
+>  	res->clks[3].id = "bus_slave";
+>  	res->clks[4].id = "slave_q2a";
+>  	res->clks[5].id = "tbu";
+> -	if (of_device_is_compatible(dev->of_node, "qcom,pcie-sm8250")) {
+> +	if (pcie->cfg->has_ddrss_sf_tbu_clk) {
+>  		res->clks[6].id = "ddrss_sf_tbu";
+>  		res->num_clks = 7;
+>  	} else {
+> @@ -1512,6 +1514,7 @@ static const struct qcom_pcie_cfg sdm845_cfg = {
 >  
->  	/* Enable Link Training state machine */
-> -	if (pcie->ops->ltssm_enable)
-> -		pcie->ops->ltssm_enable(pcie);
-> +	if (pcie->cfg->ops->ltssm_enable)
-> +		pcie->cfg->ops->ltssm_enable(pcie);
+>  static const struct qcom_pcie_cfg sm8250_cfg = {
+>  	.ops = &ops_1_9_0,
+> +	.has_ddrss_sf_tbu_clk = true,
+>  };
 >  
->  	return 0;
->  }
-> @@ -1176,7 +1175,7 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
->  	if (ret < 0)
->  		return ret;
->  
-> -	if (pcie->pipe_clk_need_muxing) {
-> +	if (pcie->cfg->pipe_clk_need_muxing) {
->  		res->pipe_clk_src = devm_clk_get(dev, "pipe_mux");
->  		if (IS_ERR(res->pipe_clk_src))
->  			return PTR_ERR(res->pipe_clk_src);
-> @@ -1209,7 +1208,7 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
->  	}
->  
->  	/* Set TCXO as clock source for pcie_pipe_clk_src */
-> -	if (pcie->pipe_clk_need_muxing)
-> +	if (pcie->cfg->pipe_clk_need_muxing)
->  		clk_set_parent(res->pipe_clk_src, res->ref_clk_src);
->  
->  	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
-> @@ -1284,7 +1283,7 @@ static int qcom_pcie_post_init_2_7_0(struct qcom_pcie *pcie)
->  	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
->  
->  	/* Set pipe clock as clock source for pcie_pipe_clk_src */
-> -	if (pcie->pipe_clk_need_muxing)
-> +	if (pcie->cfg->pipe_clk_need_muxing)
->  		clk_set_parent(res->pipe_clk_src, res->phy_pipe_clk);
->  
->  	return clk_prepare_enable(res->pipe_clk);
-> @@ -1384,7 +1383,7 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
->  
->  	qcom_ep_reset_assert(pcie);
->  
-> -	ret = pcie->ops->init(pcie);
-> +	ret = pcie->cfg->ops->init(pcie);
->  	if (ret)
->  		return ret;
->  
-> @@ -1392,16 +1391,16 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
->  	if (ret)
->  		goto err_deinit;
->  
-> -	if (pcie->ops->post_init) {
-> -		ret = pcie->ops->post_init(pcie);
-> +	if (pcie->cfg->ops->post_init) {
-> +		ret = pcie->cfg->ops->post_init(pcie);
->  		if (ret)
->  			goto err_disable_phy;
->  	}
->  
->  	qcom_ep_reset_deassert(pcie);
->  
-> -	if (pcie->ops->config_sid) {
-> -		ret = pcie->ops->config_sid(pcie);
-> +	if (pcie->cfg->ops->config_sid) {
-> +		ret = pcie->cfg->ops->config_sid(pcie);
->  		if (ret)
->  			goto err;
->  	}
-> @@ -1410,12 +1409,12 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
->  
->  err:
->  	qcom_ep_reset_assert(pcie);
-> -	if (pcie->ops->post_deinit)
-> -		pcie->ops->post_deinit(pcie);
-> +	if (pcie->cfg->ops->post_deinit)
-> +		pcie->cfg->ops->post_deinit(pcie);
->  err_disable_phy:
->  	phy_power_off(pcie->phy);
->  err_deinit:
-> -	pcie->ops->deinit(pcie);
-> +	pcie->cfg->ops->deinit(pcie);
->  
->  	return ret;
->  }
-> @@ -1531,7 +1530,6 @@ static int qcom_pcie_probe(struct platform_device *pdev)
->  	struct pcie_port *pp;
->  	struct dw_pcie *pci;
->  	struct qcom_pcie *pcie;
-> -	const struct qcom_pcie_cfg *pcie_cfg;
->  	int ret;
->  
->  	pcie = devm_kzalloc(dev, sizeof(*pcie), GFP_KERNEL);
-> @@ -1553,15 +1551,12 @@ static int qcom_pcie_probe(struct platform_device *pdev)
->  
->  	pcie->pci = pci;
->  
-> -	pcie_cfg = of_device_get_match_data(dev);
-> -	if (!pcie_cfg || !pcie_cfg->ops) {
-> +	pcie->cfg = of_device_get_match_data(dev);
-> +	if (!pcie->cfg || !pcie->cfg->ops) {
->  		dev_err(dev, "Invalid platform data\n");
->  		return -EINVAL;
->  	}
->  
-> -	pcie->ops = pcie_cfg->ops;
-> -	pcie->pipe_clk_need_muxing = pcie_cfg->pipe_clk_need_muxing;
-> -
->  	pcie->reset = devm_gpiod_get_optional(dev, "perst", GPIOD_OUT_HIGH);
->  	if (IS_ERR(pcie->reset)) {
->  		ret = PTR_ERR(pcie->reset);
-> @@ -1586,7 +1581,7 @@ static int qcom_pcie_probe(struct platform_device *pdev)
->  		goto err_pm_runtime_put;
->  	}
->  
-> -	ret = pcie->ops->get_resources(pcie);
-> +	ret = pcie->cfg->ops->get_resources(pcie);
->  	if (ret)
->  		goto err_pm_runtime_put;
->  
+>  static const struct qcom_pcie_cfg sc7280_cfg = {
 > -- 
 > 2.33.0
 > 
