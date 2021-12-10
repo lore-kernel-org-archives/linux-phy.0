@@ -4,78 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99A1FC433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Dec 2021 09:52:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBCE8C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Dec 2021 11:15:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Mime-Version:References:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=OG5kS3VM7o6HahSNE3isXG6QWGzR8JHkd/xJaxGTyV8=; b=IzI9ATKRRw4Apn
-	eCo6gz6jWaOKBErn6nEVm1xD/7yFqPx2olddQ9KdW1g5o97rysMlUg9Y9nEOf86F6uojBDog/MjkS
-	bZPJf0ni61LioMFF9XQTsBpEI2N0JRN+LiIcvBURBLUq/AZC7Din0rutQNoOdE8nIy/R68vxvXDh2
-	aA5Yh0Z1ISSHUNnUjktzFv7Qd1hRDp/o6BJXIKQ7eNjE2GbxxXF+iGxTg9Zqk0p5wbuX10qzxzP5b
-	KGw2LwaT+MTsczGsPsbTs0ZZaXL+ahDiTIGhrH5NQX/q2smSsh9HaOpNZuu1f9SX0GfpS0KpwSy/j
-	/1uuoK+v5fmfsH2j1NOQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Zyo/Yl/56CxxR9fsccfFym08ZthX0ybEkVSTnlSVXiw=; b=vTf46AtQcTvWGw
+	OO5gMD6U4ZWAeAr3LFOLHH7H0sHP8LuIWJJzPQwo+41BUEl2SKY92mrDN0netyfAyZ9gkScCxY9JA
+	xQvMKBGJC4695ZGabGXsaeiWcGYxjUdbevd+RtDtFWYOn/eBq+gOfGeTvD61hXY8ERavGLEW6v8tf
+	s9A0xTJerF0nRqBlalpM/fxC5JJPnCrSU0iNCYfwJetEv9Eyu9x1EwsGHigh8S4vW4QllUdhEqTSU
+	5bUDE3bqfV26KPFoxKg9EtEAN4dtxjo95Q1ToNijYpeGfp8BDh+dydx0CvLPTl71uV3FLHPC7BBe7
+	550kQgE+gOdvQdstQqNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mvcZq-001PvJ-UA; Fri, 10 Dec 2021 09:52:30 +0000
-Received: from regular1.263xmail.com ([211.150.70.195])
+	id 1mvdsX-001brq-8k; Fri, 10 Dec 2021 11:15:53 +0000
+Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mvcZe-001Pu1-5h; Fri, 10 Dec 2021 09:52:20 +0000
-Received: from localhost (unknown [192.168.167.69])
- by regular1.263xmail.com (Postfix) with ESMTP id C1F681DB2;
- Fri, 10 Dec 2021 17:52:10 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from hp1216 (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P21855T140161358755584S1639129928714121_; 
- Fri, 10 Dec 2021 17:52:10 +0800 (CST)
-X-IP-DOMAINF: 1
-X-RL-SENDER: zyf@rock-chips.com
-X-SENDER: zyf@rock-chips.com
-X-LOGIN-NAME: zyf@rock-chips.com
-X-FST-TO: jbx6244@gmail.com
-X-RCPT-COUNT: 14
-X-LOCAL-RCPT-COUNT: 2
-X-MUTI-DOMAIN-COUNT: 0
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-UNIQUE-TAG: <e0494cae6d4ee80fec1a7b8ba3da28e9>
-X-System-Flag: 0
-Date: Fri, 10 Dec 2021 17:52:10 +0800
-Organization: =?utf-8?B?55Ge6Iqv5b6u55S15a2Q?=
-From: =?utf-8?B?6LW15Luq5bOw?= <yifeng.zhao@rock-chips.com>
-To: "Johan Jonker" <jbx6244@gmail.com>, 
- =?utf-8?B?SGVpa29TdMO8Ym5lcg==?= <heiko@sntech.de>, 
- robh+dt <robh+dt@kernel.org>
-Cc: devicetree <devicetree@vger.kernel.org>, "Vinod Koul" <vkoul@kernel.org>, 
- michael.riesch <michael.riesch@wolfvision.net>, 
- linux-rockchip <linux-rockchip@lists.infradead.org>, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- linux-kernel <linux-kernel@vger.kernel.org>, 
- linux-phy <linux-phy@lists.infradead.org>, kishon <kishon@ti.com>, 
- "Philipp Zabel" <p.zabel@pengutronix.de>, 
- =?utf-8?B?6ZmI5Lqu?= <cl@rock-chips.com>
-Subject: Re: Re: [PATCH v3 2/3] phy/rockchip: add naneng combo phy for RK3568
-References: <20211025080632.32063-1-yifeng.zhao@rock-chips.com>, 
- <20211025080632.32063-3-yifeng.zhao@rock-chips.com>, 
- <65898b49-87ee-211e-f5ef-39147107ef83@gmail.com>, 
- <95ba0a5b-8f5a-3351-fc53-33021b2a0111@gmail.com>
-X-Priority: 3
-X-Has-Attach: no
-X-Mailer: Foxmail 7.2.22.188[cn]
-Mime-Version: 1.0
-Message-ID: <2021121017510984173129@rock-chips.com>
+ id 1mvdsU-001bqI-Ps
+ for linux-phy@lists.infradead.org; Fri, 10 Dec 2021 11:15:52 +0000
+Received: by mail-pj1-x1033.google.com with SMTP id
+ gx15-20020a17090b124f00b001a695f3734aso7291959pjb.0
+ for <linux-phy@lists.infradead.org>; Fri, 10 Dec 2021 03:15:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=qYllIsVSqbDs4dUz+zHNMI4+DHlEEtES2AFLDR4RsZs=;
+ b=lJMJZNQwKKu3LXLTLiiAMsOb/MOH+BlpVy5hjylkJ5ZbqhJVb+i9WuizTmYNqqHd8i
+ GU+rvIFnESSUy8bcVLcsBqzhh9Xe7ZKHtd66uad0C+bNYUCVUZEXQU2FfQhH64QHf+w2
+ DZeQs6EI23KdzoHltL53EfUJLeAwCbNOvO2A9AS4OzfacF6kMvd1ADO9icjkU3oMmLfG
+ Ug7mI0GUaQpoLPuBMGo/gfOLKrpONc+ZCH/T+Ss+ffigflymQglRnDhkSdOY3r18eteM
+ 4BZDg3PbylTiHWEKQ82AojRHPaVn4EbqpMAFJQkBcq569ZFD3oTvthmgOnuO2rL7h3q/
+ LXow==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=qYllIsVSqbDs4dUz+zHNMI4+DHlEEtES2AFLDR4RsZs=;
+ b=eaRMw6QwxVcTzghRUVtW2RJXxRFlfqtb47vJsxWOG5YbTiaHhoRKt5Q7fs18YJvC1M
+ pvOge9OR9YTlxrPmxyeXI0Qs9DRJXnev4zl0sPCW3nx2SBao5DjPqZjLVmtg8qVj5HKs
+ HXgvPPnRSAobGPIxRgT8PCXwV86kqgrxcOJ60bCO2vxSKGQSAwpkh2h+6wAMjw0+YDmF
+ uTcA/48pg1STeQg6+VHHboemmnRt5pwvBFnL4oKSyGKQhZ15suYIS/ZHcBBnepQGv/UV
+ Ou/f1AG9l0rubpZWor4hR29oPsYQsJC6C1/FdUlkby28G2B/RI+227W0Fzl/i9hRMGw/
+ +UFw==
+X-Gm-Message-State: AOAM530hIca12aaRrkhX/jrm8rQlneuCDVl7TwG+fUDeUITO/tdZQC0F
+ VfP2+3v0LYji3prReg4OS2Wd
+X-Google-Smtp-Source: ABdhPJzERHijcXGBjTizLrbvJuz4CCYCfVW96LQWzIIDzO445NjwhkHNujDFBQnjjnIQB6Atf/1YQw==
+X-Received: by 2002:a17:902:e842:b0:142:dbc:bade with SMTP id
+ t2-20020a170902e84200b001420dbcbademr75107587plg.45.1639134948281; 
+ Fri, 10 Dec 2021 03:15:48 -0800 (PST)
+Received: from thinkpad ([202.21.42.75])
+ by smtp.gmail.com with ESMTPSA id s19sm2944131pfu.104.2021.12.10.03.15.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 10 Dec 2021 03:15:47 -0800 (PST)
+Date: Fri, 10 Dec 2021 16:45:41 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Stanimir Varbanov <svarbanov@mm-sol.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 04/10] PCI: qcom: Remove redundancy between qcom_pcie
+ and qcom_pcie_cfg
+Message-ID: <20211210111541.GD1734@thinkpad>
+References: <20211208171442.1327689-1-dmitry.baryshkov@linaro.org>
+ <20211208171442.1327689-5-dmitry.baryshkov@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20211208171442.1327689-5-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211210_015218_599491_5EE29983 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20211210_031550_882204_59134AD2 
+X-CRM114-Status: GOOD (  23.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,85 +94,167 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgSm9oYW4sCgpXZSByZWZlciB0byB0aGUgSVAgZG9jdW1lbnRzIG9ubHkgIGFuZCBkb24ndCBu
-b3RpY2UgdGhhdCB0aGUgVFJNIG5hbWVzIHRoZSByZWdpc3RlcnMgaXMgZGlmZmVyZW50LiAKCkFi
-b3V0IHRoZSBTU0MsIHNzY19lbiA9IDHvvIwgSW4gUENJRSBtb2RlIHdpbGwgc2V0IFNTQyBPTiwg
-aXQgdGhlIHNhbWUgd2l0aCBTQVRBIGFuZCBVU0IuIApUaGUgZG9jdW1lbnQgZGVzY3JpcHRpb24g
-aXMgbm90IGNsZWFyIGVub3VnaC4KCgoKCgo+SGksCgoKCj4KCgoKPlNlZSBxdWVzdGlvbiBiZWxv
-dy4KCgoKPgoKCgo+T24gMTEvMTQvMjEgMTI6NDAgUE0sIEpvaGFuIEpvbmtlciB3cm90ZToKCgoK
-Pj4gSGkgWWlmZW5nLAoKCgo+PiAKCgoKPj4gU29tZSBjb21tZW50cy4gSGF2ZSBhIGxvb2sgaWYg
-aXQncyB1c2VmdWwuCgoKCj4+IAoKCgo+PiBPbiAxMC8yNS8yMSAxMDowNiBBTSwgWWlmZW5nIFpo
-YW8gd3JvdGU6CgoKCj4+PiBUaGlzIHBhdGNoIGltcGxlbWVudHMgYSBjb21ibyBwaHkgZHJpdmVy
-IGZvciBSb2NrY2hpcCBTb0NzCgoKCj4+PiB3aXRoIE5hTmVuZyBJUCBibG9jay4gVGhpcyBwaHkg
-Y2FuIGJlIHVzZWQgYXMgcGNpZS1waHksIHVzYjMtcGh5LAoKCgo+Pj4gc2F0YS1waHkgb3Igc2dt
-aWktcGh5LgoKCgo+Pj4KCgoKPj4+IFNpZ25lZC1vZmYtYnk6IFlpZmVuZyBaaGFvIDx5aWZlbmcu
-emhhb0Byb2NrLWNoaXBzLmNvbT4KCgoKPj4+IC0tLQoKCgo+CgoKCj4+PiBkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLW5hbmVuZy1jb21icGh5LmMgYi9kcml2
-ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWNvbWJwaHkuYwoKCgo+CgoKCj4+
-PiArCgoKCj4+PiArI2RlZmluZSBCSVRfV1JJVEVBQkxFX1NISUZUCQkxNgoKCgo+Pj4gKyNkZWZp
-bmUgUkVGX0NMT0NLXzI0TUh6CQkJMjQwMDAwMDAKCgoKPj4+ICsjZGVmaW5lIFJFRl9DTE9DS18y
-NU1IegkJCTI1MDAwMDAwCgoKCj4+PiArI2RlZmluZSBSRUZfQ0xPQ0tfMTAwTUh6CQkxMDAwMDAw
-MDAKCgoKPj4+ICsvKiBSSzM1NjggVDIyIENPTUJPIFBIWSBSRUcgKi8KCgoKPj4+ICsjZGVmaW5l
-IFJLMzU2OF9UMjJfUEhZUkVHNQkJMHgxNAoKCgo+Pj4gKyNkZWZpbmUgVDIyX1BIWVJFRzVfUExM
-X0RJVl9NQVNLCUdFTk1BU0soNywgNikKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlSRUc1X1BMTF9E
-SVZfU0hJRlQJNgoKCgo+Pj4gKyNkZWZpbmUgVDIyX1BIWVJFRzVfUExMX0RJVl8yCQkxCgoKCj4+
-PiArCgoKCj4KCgoKPj4+ICsjZGVmaW5lIFJLMzU2OF9UMjJfUEhZUkVHNgkJMHgxOAoKCgo+CgoK
-Cj5NdWx0aS1QSFlfUmVnaXN0ZXIwMDcKCgoKPkFkZHJlc3M6IE9wZXJhdGlvbmFsIEJhc2UgKyBv
-ZmZzZXQgKDB4MDAxOCkKCgoKPgoKCgo+Pj4gKyNkZWZpbmUgVDIyX1BIWVJFRzZfVFhfUlRFUk1f
-TUFTSwlHRU5NQVNLKDcsIDQpCgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHNl9UWF9SVEVSTV9T
-SElGVAk0CgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHNl9UWF9SVEVSTV81ME9ITQkweDgKCgoK
-Pj4+ICsjZGVmaW5lIFQyMl9QSFlSRUc2X1JYX1JURVJNX01BU0sJR0VOTUFTSygzLCAwKQoKCgo+
-Pj4gKyNkZWZpbmUgVDIyX1BIWVJFRzZfUlhfUlRFUk1fU0hJRlQJMAoKCgo+Pj4gKyNkZWZpbmUg
-VDIyX1BIWVJFRzZfUlhfUlRFUk1fNDRPSE0JMHhGCgoKCj4+PiArCgoKCj4+PiArI2RlZmluZSBS
-SzM1NjhfVDIyX1BIWVJFRzcJCTB4MUMKCgoKPgoKCgo+TXVsdGktUEhZX1JlZ2lzdGVyMDA4CgoK
-Cj5BZGRyZXNzOiBPcGVyYXRpb25hbCBCYXNlICsgb2Zmc2V0ICgweDAwMUMpCgoKCj4KCgoKPj4+
-ICsjZGVmaW5lIFQyMl9QSFlSRUc3X1NTQ19FTgkJQklUKDQpCgoKCj4KCgoKPlNlZSBSb2NrY2hp
-cCBSSzM1NjggVFJNIFBhcnQyIFYxLjAtMjAyMTAxMTEgcGFnZSAxOTU3LTE5NTgKCgoKPgoKCgo+
-SXQgbG9va3MgYXMgaWYgYWxsIFBIWVJFRyBkZWZpbmVzIGFkZCAtMSBpbiB2YWx1ZT8gSSdtIEkg
-Y29ycmVjdCBoZXJlPwoKCgo+CgoKCj49PT0KCgoKPgoKCgo+U1NDX0VOCgoKCj5JbiBVMyBhbmQg
-U0FUQSBtb2RlLCB0aGlzIGJpdD0gMSwgc2V0IFNTQyBvbgoKCgo+SW4gUENJRSBtb2RlLCB0aGlz
-IGJpdD0wIHNldCBTU0Mgb2ZmCgoKCj4KCgoKPsKgwqDCoMKgwqAgSWYgU3ByZWFkIFNwZWN0cnVt
-IENsb2NraW5nIChTU0MpIGlzIHVzZWQgaXQgaXMKCgoKPsKgwqDCoMKgwqAgcmVxdWlyZWQgdGhh
-dCBhIGNvbW1vbiByZWZlcmVuY2UgY2xvY2sgaXMgdXNlZCBieSB0aGUgbGluayBwYXJ0bmVycy4K
-CgoKPsKgwqDCoMKgwqAgTW9zdCBjb21tZXJjaWFsbHkgYXZhaWxhYmxlIHBsYXRmb3JtcyB3aXRo
-IFBDSWUgYmFja3BsYW5lcyB1c2UKCgoKPsKgwqDCoMKgwqAgU1NDIHRvIHJlZHVjZSBFTUkuCgoK
-Cj4KCgoKPk1heWJlIGEgZHVtYiBxdWVzdGlvbiBmb3IgaW4gYSBwb3NzaWJsZSBZQU1MIGRlc2Ny
-aXB0aW9uOgoKCgo+SXMgdGhpcyBhYm92ZSB0ZXh0IGZyb20gdGhlIFRSTSBjb3JyZWN0PwoKCgo+
-SXMgU1NDIG9ubHkgdXNlZCBpbiBjb21iaW5hdGlvbiB3aXRoIFBDSUUgaW5zdGVhZCBvZiBVMyBh
-bmQgU0FUQT8KCgoKPgoKCgo+PT09CgoKCj4KCgoKPkpvaGFuCgoKCj4KCgoKPj4+ICsKCgoKPj4+
-ICsjZGVmaW5lIFJLMzU2OF9UMjJfUEhZUkVHMTAJCTB4MjgKCgoKPj4+ICsjZGVmaW5lIFQyMl9Q
-SFlSRUcxMF9TVV9UUklNXzBfNwkweEYwCgoKCj4+PiArCgoKCj4+PiArI2RlZmluZSBSSzM1Njhf
-VDIyX1BIWVJFRzExCQkweDJDCgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHMTFfUExMX0xQRl9B
-REoJMHg0CgoKCj4+PiArCgoKCj4KCgoKPj4+ICsjZGVmaW5lIFJLMzU2OF9UMjJfUEhZUkVHMTIJ
-CTB4MzAKCgoKPgoKCgo+TXVsdGktUEhZX1JlZ2lzdGVyMDEzCgoKCj5BZGRyZXNzOiBPcGVyYXRp
-b25hbCBCYXNlICsgb2Zmc2V0ICgweDAwMzApCgoKCj4KCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlS
-RUcxMl9SRVNJU1RFUl9NQVNLCUdFTk1BU0soNSwgNCkKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlS
-RUcxMl9SRVNJU1RFUl9TSElGVAkweDQKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlSRUcxMl9SRVNJ
-U1RFUl9ISUdIX1oJMHgzCgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHMTJfQ0tSQ1ZfQU1QMAkJ
-QklUKDcpCgoKCj4+PiArCgoKCj4+PiArI2RlZmluZSBSSzM1NjhfVDIyX1BIWVJFRzEzCQkweDM0
-CgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHMTNfQ0tSQ1ZfQU1QMQkJQklUKDApCgoKCj4+PiAr
-CgoKCj4+PiArI2RlZmluZSBSSzM1NjhfVDIyX1BIWVJFRzE0CQkweDM4CgoKCj4+PiArI2RlZmlu
-ZSBUMjJfUEhZUkVHMTRfQ1RMRV9FTgkJQklUKDApCgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVH
-MTRfU1NDX0NOVF9NQVNLCUdFTk1BU0soNywgNikKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlSRUcx
-NF9TU0NfQ05UX1NISUZUCTYKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlSRUcxNF9TU0NfQ05UX1ZB
-TFVFCTB4MQoKCgo+Pj4gKwoKCgo+Pj4gKyNkZWZpbmUgUkszNTY4X1QyMl9QSFlSRUcxNQkJMHgz
-QwoKCgo+Pj4gKyNkZWZpbmUgVDIyX1BIWVJFRzE1X1NTQ19DTlRfVkFMVUUJMHg1ZgoKCgo+Pj4g
-KwoKCgo+Pj4gKyNkZWZpbmUgUkszNTY4X1QyMl9QSFlSRUcxNwkJMHg0NAoKCgo+Pj4gKyNkZWZp
-bmUgVDIyX1BIWVJFRzE3X1BMTF9MT09QCQkweDMyCgoKCj4+PiArCgoKCj4+PiArI2RlZmluZSBS
-SzM1NjhfVDIyX1BIWVJFRzMxCQkweDdDCgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHMzFfU1ND
-X01BU0sJCUdFTk1BU0soNywgNCkKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlSRUczMV9TU0NfRElS
-X1NISUZUCTQKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlSRUczMV9TU0NfVVBXQVJECQkwCgoKCj4+
-PiArI2RlZmluZSBUMjJfUEhZUkVHMzFfU1NDX0RPV05XQVJECTEKCgoKPj4+ICsjZGVmaW5lIFQy
-Ml9QSFlSRUczMV9TU0NfT0ZGU0VUX1NISUZUCTYKCgoKPj4+ICsjZGVmaW5lIFQyMl9QSFlSRUcz
-MV9TU0NfT0ZGU0VUXzUwMFBQTQkxCgoKCj4+PiArCgoKCj4+PiArI2RlZmluZSBSSzM1NjhfVDIy
-X1BIWVJFRzMyCQkweDgwCgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHMzJfUExMX0tWQ09fTUFT
-SwlHRU5NQVNLKDQsIDIpCgoKCj4+PiArI2RlZmluZSBUMjJfUEhZUkVHMzJfUExMX0tWQ09fU0hJ
-RlQJMgoKCgo+Pj4gKyNkZWZpbmUgVDIyX1BIWVJFRzMyX1BMTF9LVkNPX1ZBTFVFCTIKCgoKPj4+
-ICsKCgoKPgoKCgo+CgoKCj4KCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1waHkK
+On Wed, Dec 08, 2021 at 08:14:36PM +0300, Dmitry Baryshkov wrote:
+> In preparation to adding more flags to configuration data, use struct
+> qcom_pcie_cfg directly inside struct qcom_pcie, rather than duplicating
+> all its fields. This would save us from the boilerplate code that just
+> copies flags values from one sruct to another one.
+> 
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  drivers/pci/controller/dwc/pcie-qcom.c | 39 +++++++++++---------------
+>  1 file changed, 17 insertions(+), 22 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+> index 1c3d1116bb60..51a0475173fb 100644
+> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+> @@ -204,8 +204,7 @@ struct qcom_pcie {
+>  	union qcom_pcie_resources res;
+>  	struct phy *phy;
+>  	struct gpio_desc *reset;
+> -	const struct qcom_pcie_ops *ops;
+> -	unsigned int pipe_clk_need_muxing:1;
+> +	const struct qcom_pcie_cfg *cfg;
+
+There is no change in this patch that adds "pipe_clk_need_muxing" to
+qcom_pcie_cfg.
+
+Thanks,
+Mani
+
+>  };
+>  
+>  #define to_qcom_pcie(x)		dev_get_drvdata((x)->dev)
+> @@ -229,8 +228,8 @@ static int qcom_pcie_start_link(struct dw_pcie *pci)
+>  	struct qcom_pcie *pcie = to_qcom_pcie(pci);
+>  
+>  	/* Enable Link Training state machine */
+> -	if (pcie->ops->ltssm_enable)
+> -		pcie->ops->ltssm_enable(pcie);
+> +	if (pcie->cfg->ops->ltssm_enable)
+> +		pcie->cfg->ops->ltssm_enable(pcie);
+>  
+>  	return 0;
+>  }
+> @@ -1176,7 +1175,7 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
+>  	if (ret < 0)
+>  		return ret;
+>  
+> -	if (pcie->pipe_clk_need_muxing) {
+> +	if (pcie->cfg->pipe_clk_need_muxing) {
+>  		res->pipe_clk_src = devm_clk_get(dev, "pipe_mux");
+>  		if (IS_ERR(res->pipe_clk_src))
+>  			return PTR_ERR(res->pipe_clk_src);
+> @@ -1209,7 +1208,7 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
+>  	}
+>  
+>  	/* Set TCXO as clock source for pcie_pipe_clk_src */
+> -	if (pcie->pipe_clk_need_muxing)
+> +	if (pcie->cfg->pipe_clk_need_muxing)
+>  		clk_set_parent(res->pipe_clk_src, res->ref_clk_src);
+>  
+>  	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
+> @@ -1284,7 +1283,7 @@ static int qcom_pcie_post_init_2_7_0(struct qcom_pcie *pcie)
+>  	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
+>  
+>  	/* Set pipe clock as clock source for pcie_pipe_clk_src */
+> -	if (pcie->pipe_clk_need_muxing)
+> +	if (pcie->cfg->pipe_clk_need_muxing)
+>  		clk_set_parent(res->pipe_clk_src, res->phy_pipe_clk);
+>  
+>  	return clk_prepare_enable(res->pipe_clk);
+> @@ -1384,7 +1383,7 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
+>  
+>  	qcom_ep_reset_assert(pcie);
+>  
+> -	ret = pcie->ops->init(pcie);
+> +	ret = pcie->cfg->ops->init(pcie);
+>  	if (ret)
+>  		return ret;
+>  
+> @@ -1392,16 +1391,16 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
+>  	if (ret)
+>  		goto err_deinit;
+>  
+> -	if (pcie->ops->post_init) {
+> -		ret = pcie->ops->post_init(pcie);
+> +	if (pcie->cfg->ops->post_init) {
+> +		ret = pcie->cfg->ops->post_init(pcie);
+>  		if (ret)
+>  			goto err_disable_phy;
+>  	}
+>  
+>  	qcom_ep_reset_deassert(pcie);
+>  
+> -	if (pcie->ops->config_sid) {
+> -		ret = pcie->ops->config_sid(pcie);
+> +	if (pcie->cfg->ops->config_sid) {
+> +		ret = pcie->cfg->ops->config_sid(pcie);
+>  		if (ret)
+>  			goto err;
+>  	}
+> @@ -1410,12 +1409,12 @@ static int qcom_pcie_host_init(struct pcie_port *pp)
+>  
+>  err:
+>  	qcom_ep_reset_assert(pcie);
+> -	if (pcie->ops->post_deinit)
+> -		pcie->ops->post_deinit(pcie);
+> +	if (pcie->cfg->ops->post_deinit)
+> +		pcie->cfg->ops->post_deinit(pcie);
+>  err_disable_phy:
+>  	phy_power_off(pcie->phy);
+>  err_deinit:
+> -	pcie->ops->deinit(pcie);
+> +	pcie->cfg->ops->deinit(pcie);
+>  
+>  	return ret;
+>  }
+> @@ -1531,7 +1530,6 @@ static int qcom_pcie_probe(struct platform_device *pdev)
+>  	struct pcie_port *pp;
+>  	struct dw_pcie *pci;
+>  	struct qcom_pcie *pcie;
+> -	const struct qcom_pcie_cfg *pcie_cfg;
+>  	int ret;
+>  
+>  	pcie = devm_kzalloc(dev, sizeof(*pcie), GFP_KERNEL);
+> @@ -1553,15 +1551,12 @@ static int qcom_pcie_probe(struct platform_device *pdev)
+>  
+>  	pcie->pci = pci;
+>  
+> -	pcie_cfg = of_device_get_match_data(dev);
+> -	if (!pcie_cfg || !pcie_cfg->ops) {
+> +	pcie->cfg = of_device_get_match_data(dev);
+> +	if (!pcie->cfg || !pcie->cfg->ops) {
+>  		dev_err(dev, "Invalid platform data\n");
+>  		return -EINVAL;
+>  	}
+>  
+> -	pcie->ops = pcie_cfg->ops;
+> -	pcie->pipe_clk_need_muxing = pcie_cfg->pipe_clk_need_muxing;
+> -
+>  	pcie->reset = devm_gpiod_get_optional(dev, "perst", GPIOD_OUT_HIGH);
+>  	if (IS_ERR(pcie->reset)) {
+>  		ret = PTR_ERR(pcie->reset);
+> @@ -1586,7 +1581,7 @@ static int qcom_pcie_probe(struct platform_device *pdev)
+>  		goto err_pm_runtime_put;
+>  	}
+>  
+> -	ret = pcie->ops->get_resources(pcie);
+> +	ret = pcie->cfg->ops->get_resources(pcie);
+>  	if (ret)
+>  		goto err_pm_runtime_put;
+>  
+> -- 
+> 2.33.0
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
