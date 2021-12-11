@@ -4,74 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49519C433EF
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Dec 2021 18:01:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 027C8C433EF
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Dec 2021 19:18:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tdKkK2t/8BLb09ikKeNhBHtGslZiRRrYyvR1DPHi1RA=; b=3Nl5L5c6PjrGuG
-	5dNLw/uMEQSBNxsD3xAS+C9c/s06FsALrIQoJj7LVwmMlKA2vsypsFGe6iK4V+ykE4tojQcpAE0ug
-	Vyix4G2wb2Y3CypRT5gSHeRO1i8zODVjXxbTz2ovTG7eV/iCqBA9Kqia3d2k7P8GXe9U+i0cCWWv2
-	/ymIocGItmApyV0sT/dGhondm6uY8HbAi8uV1tsUdUyZv4FWIJNzAD2fnrLyjNb70Jdl0fQFNAhuf
-	D5Ya/GEXWzq36kjoLKH9Q12ESr20eKN75S1BltoT9jMsxYXVA5a0oPLkHkh2e8nwLx+qc4+5rDSaJ
-	WjnszjCEyiHr91AoljBA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WCRkeHv80YthUyQn6i2+A3Nd074z9Dj86dy5Ij4DJD4=; b=GXMqIYQK335NyV
+	O0pEnprU2BhJmxToI0JvnsmsSKcoh4EzA6GaH507fLY7rmbtE9BxJyfPQsOQeyN7OAovZjDskn7a6
+	F56Ny7Er7h9Phf03AXP8waDH2gtCU+JDAGL0+rlu3cKiu5/+gfSQKvppSTCfxHWjFf58LgJrkxGK/
+	JK6DfEs4h5GnxuQvVm+M9wwAREF2n0xzwO6GCKaUyAKnvch4H/yVfdKKqzZXOYXWxVcgmj9HK/lhR
+	PKq34JC1wY1Of6khpmkr0KGG9JYaNjzU34FNVMZdVDIU48WoXo8/420CC5Tz14V8F7xILlkj0lBFi
+	vQ0E8/svBNthxO86Ef2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mw6g9-005LDV-FB; Sat, 11 Dec 2021 18:01:01 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1mw7tW-005QRs-B0; Sat, 11 Dec 2021 19:18:54 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mw6g6-005LCL-MR; Sat, 11 Dec 2021 18:01:00 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id v11so20121540wrw.10;
- Sat, 11 Dec 2021 10:00:56 -0800 (PST)
+ id 1mw7tT-005QRB-KE; Sat, 11 Dec 2021 19:18:52 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id j3so20420592wrp.1;
+ Sat, 11 Dec 2021 11:18:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=NTqJE9O5IKUSo/m88Ab/X8Fm1HEOexFRkRE81c4V/Mg=;
- b=LfuiKKGmEbpKqw430aASUTABt3NnFt6A7kO84jFi0HbZqcIRYjovGFxIdzgoPgz6vV
- nwauJ6arBYI+7/rqV6Z4Z8YeVKdCDEbNxPtrJyTinw3el7zvfIktrz3AQRUx0DptNe7t
- dL/H3v3BxG48WfD4AhqivG5mnbZ5g2eceXMXvUzlgJiNG2lSpaJ5w0ruNik0K4OhG0OY
- 7NTkF00HlJmRA9CPSWcDo5pgOfuzW3y1Cv1qxsX56lvkUoV4wRPvxnag+HGBpBBbXWDS
- GkYCJ0BStnJhUsEK8utPdqurQad7JftGG9pRH0Y2R5VxxmFi+LDQdu3uuv5hX3OtsAKk
- 96tQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=gOlTCB5g4Ul64JkhSPK2Bym/NyU9CnIoy/twmv8/VQM=;
+ b=fUqpRaZgBf7CEd3z2zVOe6jdnR/v8TZ2zI28oI+Jlz9SA22NR1gOn9jMaiJDtm3bEV
+ jZd077h7yeY1eNxjd7HU8UU9K/kTvPNtZulCXWxAS5efH3p/+NQ2oDeTfvmSHyScyv8L
+ a15EkJH3Rbn+ayd5Dzn9w7ZxClS7+WudFy1fgChiz94+PE6cRZ+gIvGhrpPOBnPOQc/9
+ 3w2O0X1Mk9Hsjswuo4jLg92CpWUX0czhIvGUkR99LFenrkC+2EzEmB0itf83/eACQJpC
+ moTwP67Km7CGyNjJMXGQt4QjvsfTF2WedRTaxaXT15RlqMv8ip0TqL0BNu9TrRpgHR0O
+ QMuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=NTqJE9O5IKUSo/m88Ab/X8Fm1HEOexFRkRE81c4V/Mg=;
- b=62yoqNHkg8EJ7FDVNed1A6tR1JVMMRlT3aNXpmjt1Nvai5IQX0172Br0fwQs5BTrEn
- g0RC2sVnUmlxKzBu/1cYA8jnZz9PT1QIor2xAOY3pIISMsxkaIjP+0d9Env9MjBXpXcG
- CnFuTG3lfqt0nzM0a+ujpkZvM1aFXJ3aOE2jBt/xBTdxi5kelQVRBmpHfYEohLYJWHBd
- ecvuPG4tBLtFg5odSwaXf8L5HVk1Jx7NIeVuE8hvPe85iQkN3wYG9HwMsM9AViWjpw7u
- R4vYTFTTPYkBxR+d+2hvOKxhCMuK8OVaa0+cEkQmJ1HwJ+DdtvlkTdEipJRj27l4jhic
- bR1Q==
-X-Gm-Message-State: AOAM530mcbKaMJp0pnevHavZ6hTXTmxmjmZyoGJD2zmlEdLYAyKlGIsk
- +xTgG0Gz0Cq6sDSnP6mSqUY=
-X-Google-Smtp-Source: ABdhPJxUAVBviSw0OvKnZaywdMXUJn7Ur6vlRTPj4c6JyDiOu3sUOnpqJgWSgh8vZYgMdzgksGZ31w==
-X-Received: by 2002:adf:f3d0:: with SMTP id g16mr6478226wrp.699.1639245655258; 
- Sat, 11 Dec 2021 10:00:55 -0800 (PST)
-Received: from localhost (cpc154979-craw9-2-0-cust193.16-3.cable.virginm.net.
- [80.193.200.194])
- by smtp.gmail.com with ESMTPSA id z7sm1994792wmi.33.2021.12.11.10.00.54
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=gOlTCB5g4Ul64JkhSPK2Bym/NyU9CnIoy/twmv8/VQM=;
+ b=2LQ06R7TFK7bhhvBexvrXDwiogu+rzEc9viXL0IidXTXneAe3qwiPemiXeRzU3YOQ3
+ RYbbFaZYa4doqaNIBVAqC2W6ySNXlhq5zEUEVDpLiE1SHt7ns0c2R96BQiv4U+YS3MtN
+ jdrydFDMtSLQsEvJYjrZTvW21JYpTd9R+pxejUqRDXluTA7HWyHkp+qNza4vO5wrnFfH
+ NjpoYPCqqJ96UVp6Rg/DNtiP+awKxl2vZ/oEfhcJySlejK3tOnycqwEX0vdTvEe9gqfx
+ MJhktsuTwJJOGvGoogiYZro2bVz9BeEFES0tsKhssmXDrUShc41aBrAGL7hDGTME8Su8
+ EGqg==
+X-Gm-Message-State: AOAM5319Ao8S+RAYSEFarfW8cztjNyqzq+U91BuOj/fb1yBcp0XutV16
+ NU7QoZg9TDCqf7aVca7bNdeZ3PvbyC8=
+X-Google-Smtp-Source: ABdhPJzIhDx8ABRVZ0FCBxAK7JVUsBsAzr623bRju7te8XUPwtOqsjQL6wl7EZJAH5iXBIwoDCdt1w==
+X-Received: by 2002:a5d:5007:: with SMTP id e7mr21539594wrt.320.1639250329686; 
+ Sat, 11 Dec 2021 11:18:49 -0800 (PST)
+Received: from archbook.localnet (84-72-105-84.dclient.hispeed.ch.
+ [84.72.105.84])
+ by smtp.gmail.com with ESMTPSA id a3sm3116524wri.98.2021.12.11.11.18.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 11 Dec 2021 10:00:54 -0800 (PST)
-From: Colin Ian King <colin.i.king@gmail.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-Cc: kernel-janitors@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: rockchip-inno-usb2: remove redundant assignment to
- variable delay
-Date: Sat, 11 Dec 2021 18:00:54 +0000
-Message-Id: <20211211180054.525368-1-colin.i.king@gmail.com>
-X-Mailer: git-send-email 2.33.1
+ Sat, 11 Dec 2021 11:18:49 -0800 (PST)
+From: Nicolas Frattaroli <frattaroli.nicolas@gmail.com>
+To: heiko@sntech.de, linux-rockchip@lists.infradead.org
+Cc: robh+dt@kernel.org, kishon@ti.com, vkoul@kernel.org, p.zabel@pengutronix.de,
+ yifeng.zhao@rock-chips.com, kever.yang@rock-chips.com, cl@rock-chips.com,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [RFC PATCH v4 0/4] Add Naneng combo PHY support for RK3568
+Date: Sat, 11 Dec 2021 20:18:47 +0100
+Message-ID: <2461932.fyNAqVaUXx@archbook>
+In-Reply-To: <20211208185449.16763-1-jbx6244@gmail.com>
+References: <20211208185449.16763-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211211_100058_767959_DA65A799 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20211211_111851_717231_38F0D25D 
+X-CRM114-Status: GOOD (  12.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,34 +89,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Variable delay is being assigned to zero and the code falls through to
-the next case in a switch statement that returns out of the function.
-The variable is never read in this scenario and so the assignment is
-redundant and can be removed.
+On Mittwoch, 8. Dezember 2021 19:54:45 CET Johan Jonker wrote:
+> This phy can be used as pcie-phy, usb3-phy, sata-phy or sgmii-phy.
+> 
+> =============================================
+> 
+> Changed V4 by Johan Jonker:
+>   TEST COMPILED ONLY!
+>   Driver not verified with hardware!
+>   Produced in the hope that we can get some review progress
+>   with this serie for the documents and driver.
+>   Use at your own risk!
+> 
+>   restyle
+>   add devm_reset_control_array_get()
+>   remove clk structure
+>   change refclk DT parse
+>   change dev_err message
+>   add dot to phrase
+>   add ext_refclk variable
+>   add enable_ssc variable
+>   rename rockchip_combphy_param_write
+>   remove param_read
+>   replace rockchip-naneng-combphy driver name
+> 
+>   rename node name
+>   remove reset-names
+>   move #phy-cells
+>   add rockchip,rk3568-pipe-grf
+>   add rockchip,rk3568-pipe-phy-grf
+> 
+> =============================================
+> 
 
-Cleans up scan-build static analysis warning:
-drivers/phy/rockchip/phy-rockchip-inno-usb2.c:753:3: warning: Value
-stored to 'delay' is never read [deadcode.DeadStores]
+Tested-by: Nicolas Frattaroli <frattaroli.nicolas@gmail.com>
 
-Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 1 -
- 1 file changed, 1 deletion(-)
+Applied this on top of 5.16-rc4, added the necessary device tree
+changes to rk356x.dtsi and rk3566-quartz64-a.dts and ran it on
+my Quartz64. I tested PCIe2x1 on the one combphy and SATA on the
+other, simultaneously. Devices were detected correctly (with some
+hiccups on SATA due to a Quartz64 Model A design issue, but it
+was detected eventually) and some transfers were done to ensure
+it's stable. It is stable.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 1938365abbb3..9f95b587e2c0 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -750,7 +750,6 @@ static void rockchip_chg_detect_work(struct work_struct *work)
- 		fallthrough;
- 	case USB_CHG_STATE_SECONDARY_DONE:
- 		rphy->chg_state = USB_CHG_STATE_DETECTED;
--		delay = 0;
- 		fallthrough;
- 	case USB_CHG_STATE_DETECTED:
- 		/* put the controller in normal mode */
--- 
-2.34.1
+Regards,
+Nicolas Frattaroli
+
 
 
 -- 
