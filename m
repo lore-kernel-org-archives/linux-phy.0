@@ -4,69 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1C71C433EF
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Dec 2021 21:45:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DEF8C433EF
+	for <linux-phy@archiver.kernel.org>; Sun, 12 Dec 2021 06:50:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZP9cyvdNq9gcke2WQztHZJzhEqoY6NqETL3GFmycUTs=; b=e0q/XtTnTky9rg
-	t+3iMn9LVwoSILYnKaWw/3ZIE46DM86Ko29rghKnBJFhhhVl/ZJem2wEZcYfXKyO+PD5+f7u5vh7t
-	PDrxoLH4BR2K55du/zm1DvCvp/stOMQgm0PbjHO4NyZheLGGMszR1i84w6EYUvksqPanWI1pbQTbv
-	r52+RsudL5y39kUeEpcfef7UYOybTLJaTYq21i4QmFrXL5yOG76mJccR6jTABQ5/x2LPq2YBYeDjP
-	pp4zHK4pHCBymkhB+GzBFcXMVQmsjzzYDKedQuBteRkVWdiOOeI3AJzVvnI+nwLT74R9rz9+KNDSD
-	ri8Q6vq3ziV412deHatA==;
+	List-Owner; bh=ufmomYJFG+xcALLHMzwwufTDoLvVuIlJ73WtvQ0yDhw=; b=wXZrnPJNyq6Yeb
+	G1R9hWUH4hgIZ6AHpNJmOTklFsBEZLKl+HhemkgLf82uM5pYNP5tbQGcU3QmKuvKJ8HkXKHWzxa3m
+	KrhdO3yG6SMgD7BXev3193Rt21JoIHkybvuth47AdC74L2RASh9lFrCMOULRqW8p3IMKGsvdQXvSU
+	zHQrXDFf8H9qFOwoEiEjpQe3vzStWF6Dez+Cs33K45eZrBJQaE1l6frKyJPVE110zvfYyD6Majxq0
+	JbMUYGaTKFY1+jjusHd5e1coehePirOwpMocjmuHZ1t/Z+Lau2gGcgyyRlH6TPp2xrk05jR5cn5F5
+	QFoZ3ZV3A2SlOuqzxsHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mwABe-005coK-Ug; Sat, 11 Dec 2021 21:45:46 +0000
-Received: from esa.microchip.iphmx.com ([68.232.153.233])
+	id 1mwIgg-0061zE-Jm; Sun, 12 Dec 2021 06:50:22 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mwABc-005cm9-2y
- for linux-phy@lists.infradead.org; Sat, 11 Dec 2021 21:45:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1639259145; x=1670795145;
- h=from:to:cc:subject:date:message-id:mime-version:
- content-transfer-encoding;
- bh=kPEOxlRJTHMuHZKyDDPAt3/GOzpvpZEMvEMb59PqfX4=;
- b=dXaKy5D1I2N9+Rd59WAH6Xl4A+QkQ5MJ5TMUVhuSOqjhRhkMngfKzKXV
- 1clWnxE2KlD6D8+5C8CTeSvC8XWvblCV6cV17gxTBQAMsBQbOTl4bAKOC
- /JGAEk7T+hZo6D8yefImk2KscMsqujTyTGU80DZtKhL7YC9eRs4yDfkVO
- 4pDe5jcsZCETyYedx4scqP1BPo+PcTy/CYJBxgSFpYBxtIFaSiHjFWhaI
- jkmYjaa4u5mYo098CRiVKhQXk5KOd/qItbp8Me0PAPQCasaCVKUtsxgbE
- 40j9OhpeyiczGfYIynimn0HoJmQK0gdHDAgndJA3uRGdy4R0uHsnWsbTw A==;
-IronPort-SDR: Iq/GQflWI2WFGi7l4IFzHQCasMOinRa6l6YAAZNDoUkcsoxL6iBCh1Ih6Qr8sflGMy7xa8We7M
- XWUClBFBdyNedL+38z1tZYbMVxciv0DBPpfQNZn73WJo5pKw2DYsENN8wiq61cas9+WInK8KBk
- O16JaVpi/kns7dREtuDyfphn5XSmnn2f4jl6Vk4TGjCB8VAn019UOuv4aeIBhi+8bBecgdaceP
- I1oi/Kb/ccyDAcLeFqL2n1usxXUkWDCDMOA3kCT/PhOJV3lSfArwPD4V/JnML2aOGiniok+shi
- 2JXH8bsqEZzM7O/DakRcF1pd
-X-IronPort-AV: E=Sophos;i="5.88,199,1635231600"; d="scan'208";a="146345647"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 11 Dec 2021 14:45:41 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2375.17; Sat, 11 Dec 2021 14:45:39 -0700
-Received: from soft-dev3-1.microsemi.net (10.10.115.15) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.2375.17 via Frontend Transport; Sat, 11 Dec 2021 14:45:38 -0700
-From: Horatiu Vultur <horatiu.vultur@microchip.com>
-To: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-CC: <kishon@ti.com>, <vkoul@kernel.org>, <linux@armlinux.org.uk>, "Horatiu
- Vultur" <horatiu.vultur@microchip.com>
-Subject: [PATCH] phy: lan966x: Remove set_speed function
-Date: Sat, 11 Dec 2021 22:47:17 +0100
-Message-ID: <20211211214717.1284306-1-horatiu.vultur@microchip.com>
-X-Mailer: git-send-email 2.33.0
-MIME-Version: 1.0
+ id 1mwIge-0061ye-HQ
+ for linux-phy@lists.infradead.org; Sun, 12 Dec 2021 06:50:21 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id
+ y14-20020a17090a2b4e00b001a5824f4918so12382500pjc.4
+ for <linux-phy@lists.infradead.org>; Sat, 11 Dec 2021 22:50:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id;
+ bh=Vv5HnCBn8ZZpA7yWumcO3TVtFyNutN2LSOBDm38pII4=;
+ b=lHproLaSO5xxAcZ7keHz60psiB6fnSyaocv07YHedRG0Ni2Sgdiu213n4n6BKu5n1X
+ hF/kmfnosyvrSljTVUdQhGwq+T/anRyJ1z2WtNC8hHCeFCz/712L5Z45TjJy2IWlqtyj
+ 20oLbMA92hkwdqPlg7Xm0Rl1WbUCudBOUULoVH/RYWmh4UGHbZA9aKP7/kwv5+p5ww5U
+ fxiJVTY8NuFVviJg81e1dlJ1JCN2+eghcYFNUcJ9iCH+W4ac9gaPZiynECOL3KflT5Gb
+ SwAY8uuj0UA4seNSR4M824qTr8Srt1e7AcQJqYpBlkhmIwqDBe/4TFPLfNuTdvDg1rVd
+ gibg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Vv5HnCBn8ZZpA7yWumcO3TVtFyNutN2LSOBDm38pII4=;
+ b=e8i1yv1Hfn5EPwoKKu/Qvjz/xfkdKopz7YO3vQJjZJ0+CQqpXb1gxQV+xciWKS3/8C
+ XEJHgieL2VHLaFa9wwC6Ti+HW/I/gkHrHdz6g/6Nomqx74JpPEIlYZNO0mCARFYO4448
+ kYjwWfRXQ9vLjpqiw6azVWtczNeveOUnBKgI7uaDLAWiTWrwi1xKdQmlyx8pZRSEz9WF
+ OlNeAvmIHDEjGkkQmCsPmOyTZRjAy8X/7Xh+5MZzePa3OowsZBF7tAXHO5N8Xg7hOKym
+ 0GujbJHHsjkXlA2pS1dta2ys/esq1akBc2MSEQXNyV/aAQJV7bEBMHcuQ6G/Yur0DDSY
+ Qzpw==
+X-Gm-Message-State: AOAM533qjk1ViOFJNYHxDJ6RWF/PwCChecAyiVWm5s96ZFS3m2P4Atzk
+ KzJoJS+3JauJrwNOCkB/hQY=
+X-Google-Smtp-Source: ABdhPJwGWiBsr3aky1R6JtO8s875qTPMx14Q38lR67upO5k8arQsQEmsr43TObpKWSsNtL550Npx/A==
+X-Received: by 2002:a17:903:2082:b0:142:7dff:f7dc with SMTP id
+ d2-20020a170903208200b001427dfff7dcmr87437835plc.46.1639291819898; 
+ Sat, 11 Dec 2021 22:50:19 -0800 (PST)
+Received: from localhost.localdomain ([159.226.95.43])
+ by smtp.googlemail.com with ESMTPSA id q10sm2910261pjd.0.2021.12.11.22.50.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 11 Dec 2021 22:50:19 -0800 (PST)
+From: Miaoqian Lin <linmq006@gmail.com>
+To: 
+Cc: linmq006@gmail.com, JC Kuo <jckuo@nvidia.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-phy@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: tegra: xusb: Fix NULL vs IS_ERR_OR_NULL checking
+Date: Sun, 12 Dec 2021 06:50:14 +0000
+Message-Id: <20211212065014.31660-1-linmq006@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211211_134544_161104_729E05F4 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211211_225020_620171_278B1FB4 
+X-CRM114-Status: GOOD (  12.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,66 +82,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Remove the set_speed function and allow the driver to figure out the
-speed at which needs to configure the serdes based on the interface type.
+The tegra_xusb_find_port_node() function may return error pointer when
+kasprintf() return NULL. Using IS_ERR_OR_NULL to check the return value
+of tegra_xusb_find_port_node() to catch this.
 
-Fixes: 305524902a0045 ("phy: Add lan966x ethernet serdes PHY driver")
-Signed-off-by: Horatiu Vultur <horatiu.vultur@microchip.com>
+Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
 ---
- drivers/phy/microchip/lan966x_serdes.c | 17 +++++------------
- 1 file changed, 5 insertions(+), 12 deletions(-)
+ drivers/phy/tegra/xusb.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/phy/microchip/lan966x_serdes.c b/drivers/phy/microchip/lan966x_serdes.c
-index c0b80a176387..e86a879b92b5 100644
---- a/drivers/phy/microchip/lan966x_serdes.c
-+++ b/drivers/phy/microchip/lan966x_serdes.c
-@@ -392,6 +392,11 @@ static int serdes_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	if (mode != PHY_MODE_ETHERNET)
- 		return -EOPNOTSUPP;
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 963de5913e50..52c2f85c67c3 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -472,7 +472,7 @@ tegra_xusb_find_port(struct tegra_xusb_padctl *padctl, const char *type,
+ 	struct device_node *np;
  
-+	if (submode == PHY_INTERFACE_MODE_2500BASEX)
-+		macro->speed = SPEED_2500;
-+	else
-+		macro->speed = SPEED_1000;
-+
- 	if (submode == PHY_INTERFACE_MODE_1000BASEX ||
- 	    submode == PHY_INTERFACE_MODE_2500BASEX)
- 		submode = PHY_INTERFACE_MODE_SGMII;
-@@ -427,19 +432,8 @@ static int serdes_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- 	return -EINVAL;
- }
+ 	np = tegra_xusb_find_port_node(padctl, type, index);
+-	if (!np)
++	if (IS_ERR_OR_NULL(np))
+ 		return NULL;
  
--static int serdes_set_speed(struct phy *phy, int speed)
--{
--	struct serdes_macro *macro = phy_get_drvdata(phy);
--
--	macro->speed = speed;
--
--	return lan966x_sd6g40_setup(macro, macro->idx - (CU_MAX + 1),
--				    macro->mode);
--}
--
- static const struct phy_ops serdes_ops = {
- 	.set_mode	= serdes_set_mode,
--	.set_speed	= serdes_set_speed,
- 	.owner		= THIS_MODULE,
- };
+ 	list_for_each_entry(port, &padctl->ports, list) {
+@@ -763,7 +763,7 @@ static int tegra_xusb_add_usb2_port(struct tegra_xusb_padctl *padctl,
+ 	 * marked as disabled there is no reason to register it.
+ 	 */
+ 	np = tegra_xusb_find_port_node(padctl, "usb2", index);
+-	if (!np || !of_device_is_available(np))
++	if (IS_ERR_OR_NULL(np) || !of_device_is_available(np))
+ 		goto out;
  
-@@ -482,7 +476,6 @@ static int serdes_phy_create(struct serdes_ctrl *ctrl, u8 idx, struct phy **phy)
+ 	usb2 = kzalloc(sizeof(*usb2), GFP_KERNEL);
+@@ -829,7 +829,7 @@ static int tegra_xusb_add_ulpi_port(struct tegra_xusb_padctl *padctl,
+ 	int err = 0;
  
- 	macro->idx = idx;
- 	macro->ctrl = ctrl;
--	macro->speed = SPEED_1000;
- 	macro->port = -1;
+ 	np = tegra_xusb_find_port_node(padctl, "ulpi", index);
+-	if (!np || !of_device_is_available(np))
++	if (IS_ERR_OR_NULL(np) || !of_device_is_available(np))
+ 		goto out;
  
- 	phy_set_drvdata(*phy, macro);
+ 	ulpi = kzalloc(sizeof(*ulpi), GFP_KERNEL);
+@@ -884,7 +884,7 @@ static int tegra_xusb_add_hsic_port(struct tegra_xusb_padctl *padctl,
+ 	int err = 0;
+ 
+ 	np = tegra_xusb_find_port_node(padctl, "hsic", index);
+-	if (!np || !of_device_is_available(np))
++	if (IS_ERR_OR_NULL(np) || !of_device_is_available(np))
+ 		goto out;
+ 
+ 	hsic = kzalloc(sizeof(*hsic), GFP_KERNEL);
+@@ -970,7 +970,7 @@ static int tegra_xusb_add_usb3_port(struct tegra_xusb_padctl *padctl,
+ 	 * hence return 0 instead of an error to allow ports to be optional.
+ 	 */
+ 	np = tegra_xusb_find_port_node(padctl, "usb3", index);
+-	if (!np || !of_device_is_available(np))
++	if (IS_ERR_OR_NULL(np) || !of_device_is_available(np))
+ 		goto out;
+ 
+ 	usb3 = kzalloc(sizeof(*usb3), GFP_KERNEL);
+@@ -1035,7 +1035,7 @@ static int tegra_xusb_find_unused_usb3_port(struct tegra_xusb_padctl *padctl)
+ 
+ 	for (i = 0; i < padctl->soc->ports.usb3.count; i++) {
+ 		np = tegra_xusb_find_port_node(padctl, "usb3", i);
+-		if (!np || !of_device_is_available(np))
++		if (IS_ERR_OR_NULL(np) || !of_device_is_available(np))
+ 			return i;
+ 	}
+ 
 -- 
-2.33.0
+2.17.1
 
 
 -- 
