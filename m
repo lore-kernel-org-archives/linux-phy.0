@@ -4,71 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57736C433EF
-	for <linux-phy@archiver.kernel.org>; Sun, 12 Dec 2021 14:22:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89A62C433EF
+	for <linux-phy@archiver.kernel.org>; Sun, 12 Dec 2021 14:31:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TjTNSSerFqKik+402A2w1xB5KS9O2RDZ0l4703dmFuE=; b=1M3CA6OvxZWGMS
-	2FB3f5suoxRwcghNAvpFaN1+f0e+nzjPw3xOQ9wQGrvQFUejuKJdge4aJKCR5I5Jei7RwoBtU1UqE
-	VLKsfDNxffsSRD40dzWYoOvh0G6xYxDiq2X9kW12cpFRMkLfrUJY6zRW6tsCrJ+0xDwEWbTj51NvY
-	hw1jFqSJIefaGnzrf97UzsoJnB3SAxMUtAcS/TU+dc9kdNEqrwPqR9fVvl+ncD4S6kcfFSbC2J/8Z
-	d7FD8kbFMPIwnc82BQzsSpuub2F7kCPDwSGlaP4ZL1/utY0hUaVwbQmvY/fEckR7yzC4/0CGuXNJY
-	7nD9Dmhs15C+XP483Iwg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=xHiTKNtrLcguxIDqWrg1XJuiz+A6IJMMHLeCKRSxkzs=; b=hP3QuKeGjmKip45UzKqLB0bD4r
+	9sc0/pbL4HSX3NCxj+MdmioBIe8UsxIKxKEK1xi1KEMSEkRROPEWOlEO2Ydq5YjYTCPiCJ47MbEgB
+	NpKeLdF7wC+wwtxkFFEEhuysp/PWkxTqz4UbjQ/ezWwf0US39YvwW/d7iKsvKR1ZPpfOF3FSfbPlV
+	6bSZTjWINZIdpM8nBI/mzNBIvcuTjnVMQLI0cXoC3VZ3VRdQjIY+7kI1aCI8MhsV0UDisFqcNiGMl
+	Qe/CgXvYtnR9l1HuTv0tqXNS6H8/dTwXAW+yS3j2/RiXsvzJzMnRZ/hTf86SPjKELZ9vbbsiddR0n
+	b3OQzoqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mwPkK-006ee8-Mt; Sun, 12 Dec 2021 14:22:36 +0000
-Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
+	id 1mwPt7-006ewt-M5; Sun, 12 Dec 2021 14:31:41 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mwPkI-006edI-0D
- for linux-phy@lists.infradead.org; Sun, 12 Dec 2021 14:22:35 +0000
-Received: by mail-pl1-x634.google.com with SMTP id y8so9452283plg.1
- for <linux-phy@lists.infradead.org>; Sun, 12 Dec 2021 06:22:32 -0800 (PST)
+ id 1mwPt5-006ewZ-3k
+ for linux-phy@lists.infradead.org; Sun, 12 Dec 2021 14:31:40 +0000
+Received: by mail-lf1-x132.google.com with SMTP id m6so14667417lfu.1
+ for <linux-phy@lists.infradead.org>; Sun, 12 Dec 2021 06:31:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id;
- bh=ZWrvl8F+5ZsZqqN1/f2CJOo+5n6LcVWRAabb8RZsrIY=;
- b=eGgJyxTzHAZ68924wqTozbqQkO7+kdcouG86WxzM2zKxAzzHtk6ibtz7IUyXaGoZNi
- GHQJJLE/qxW6OVtD6C3kRN1yzKhJ4niGziNW+0sz30j1MJ4dQemOZcVjLtG5qqkYgED8
- z3egKzAir1dLekkw/LeJZrnz0VgCMiHHGwiI2dONGv2CeVuZyLF1AJG8km8RHS0B2kdM
- vj4BBVpVyb+uRdJ3Vvq/rgykC+0dTU2cn2JcVw3UdHmJ8lJOZpTa4lX1tTwiPGqEQO85
- xseBQKSKDkwKKHNvRID0R4s3nl8H2HWNOMHuw9Ciwjo5jJNLeZGcFviWRHgJWSed09ZH
- 8pAg==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=VBxOttOanXQi8+gUOe1aPRf28WeiRgO0+KmnpkQpZ9s=;
+ b=goi0nVevc1lmZp2gJ4gpKszQiyxv8QQKnbF23lOAZQNVSUJg6E7Y1Yy/odw1kkO7GA
+ 6o6voSIx5T7S+vdJl1i+dNJVXFRXigMwons9NIewnx+uRkC0sZyAFygobaOLqaELcMMq
+ wicFr+vr4OZ+N5r7bHkkbcH6TMhPdoc4MmRWjWCCc03QHNyFHQd3Doyf1O5EoA5bjQb9
+ 7VvcfzFCYaplcE6m7+WsF8NVIPSSgr5TYkNAddOjMuv2jTTWPk9eGXVubv80jnukflZl
+ i2pH/RLuno1+oG9nrzn5Ar4pW3T6L4JVu9TnNfcPDjYBIA6vNqzbAVwFVhgQH/VFiQUt
+ qmsA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ZWrvl8F+5ZsZqqN1/f2CJOo+5n6LcVWRAabb8RZsrIY=;
- b=LhEnQvjSZf4tP4IwoBozKoYjuoa7XuOTLg5uGwvDzLb9Xnm9nZobqYABC6t78LycZ8
- lcCU17mQK2y/YodnO7oU0nR4guKz9ptaBlzJkNz/ltLRGJvx+G7hbSY5ty8SkCSA1ids
- QvcYfDRpcOyG0Q4TFqkGu5NZeqJdoLjJvrzJi9Ju/BJoeYX1d0me8eD/yWbZLAHdrJY+
- dC0yH2xyWX3TWXoT7vseUjJmBcapmd9ViyLHxPwT8mhYmXsDVbs3C5OzSOdY9VTpTYyq
- AkuOT3coLY+677wXiQFcT74E97jawsT/ZRkj+KcJLagJZc8mQ+MlwRxYPfhRdAbcQCv1
- b24g==
-X-Gm-Message-State: AOAM533r6O5E5bBIX17981N38aIeFSsv4uqHoPCfvVMqJGynk6X1t/+Y
- o8cxLHmovYyBp9N1K6NycGY=
-X-Google-Smtp-Source: ABdhPJz/4LNqrQx02YorlMGDlqCE2XkkIuzbZvDKDHVytuJtqywQlPeE4YGlaHCq1lQkqRSNSl01zQ==
-X-Received: by 2002:a17:90b:1c87:: with SMTP id
- oo7mr37033855pjb.159.1639318951549; 
- Sun, 12 Dec 2021 06:22:31 -0800 (PST)
-Received: from localhost.localdomain ([159.226.95.43])
- by smtp.googlemail.com with ESMTPSA id x3sm178091pgl.79.2021.12.12.06.22.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 12 Dec 2021 06:22:31 -0800 (PST)
-From: Miaoqian Lin <linmq006@gmail.com>
-To: 
-Cc: linmq006@gmail.com, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: ti: Use IS_ERR_OR_NULL() to clean code
-Date: Sun, 12 Dec 2021 14:22:21 +0000
-Message-Id: <20211212142226.23674-1-linmq006@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=VBxOttOanXQi8+gUOe1aPRf28WeiRgO0+KmnpkQpZ9s=;
+ b=okBAAoVDKqipMEg7II6mBf9yLQMjMi13LV2/1wBACZeT5Wm1roX3QHVUpyYlQTtTtF
+ E8lJIASou/DVR8isfGxbL+hodB0Ls/fl0uV+kjEMaV6RvMJUKNZP+PsnUeVuedjv24/a
+ SkKE9EsMcN19IFG++8kf3EkRZArkQnqkeEZlNy2HPBqWenSlSJfctGgmvkS5vT68qGIy
+ fErukBKIUFkdYOyyla+v56HWldem78AQmSjbgOch7T89DucJ1a2Hj6VC5+vI593OD2u+
+ e+BPFZzpbf91OaCmlqEhMyM+v0x8SoBb9/8OcZhJaAkBPFfnuqlrszWExCs4685Xlf7X
+ ZObw==
+X-Gm-Message-State: AOAM532WQrTrdm5mzJu8NLxi3sAcPGpCJktP5T0UTUVFqPSOxGgNwZhK
+ wU9Due4BywviFilsvQbDPH8=
+X-Google-Smtp-Source: ABdhPJx975a/nLjNoGRL+73F5WkY/HOAQXv1b/iHWAdCDWGX4R3ePRLX6RiBQax3wzLUJJYbxReR6w==
+X-Received: by 2002:a05:6512:110c:: with SMTP id
+ l12mr23746178lfg.224.1639319496636; 
+ Sun, 12 Dec 2021 06:31:36 -0800 (PST)
+Received: from [192.168.2.145] (94-29-46-111.dynamic.spd-mgts.ru.
+ [94.29.46.111])
+ by smtp.googlemail.com with ESMTPSA id v10sm1054752ljp.125.2021.12.12.06.31.35
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 12 Dec 2021 06:31:36 -0800 (PST)
+Subject: Re: [PATCH] phy: tegra: xusb: Fix NULL vs IS_ERR_OR_NULL checking
+To: Miaoqian Lin <linmq006@gmail.com>
+Cc: JC Kuo <jckuo@nvidia.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-phy@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20211212065014.31660-1-linmq006@gmail.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <942f943c-9ec8-9887-aa6d-4d133821beca@gmail.com>
+Date: Sun, 12 Dec 2021 17:31:35 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.14.0
+MIME-Version: 1.0
+In-Reply-To: <20211212065014.31660-1-linmq006@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211212_062234_085302_C0F8E6E3 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211212_063139_211456_F947DBCD 
+X-CRM114-Status: GOOD (  12.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,55 +90,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use IS_ERR_OR_NULL() to make the code cleaner.
-
-Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
----
- drivers/phy/ti/phy-omap-control.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/phy/ti/phy-omap-control.c b/drivers/phy/ti/phy-omap-control.c
-index 47482f106fab..76c5595f0859 100644
---- a/drivers/phy/ti/phy-omap-control.c
-+++ b/drivers/phy/ti/phy-omap-control.c
-@@ -26,7 +26,7 @@ void omap_control_pcie_pcs(struct device *dev, u8 delay)
- 	u32 val;
- 	struct omap_control_phy	*control_phy;
- 
--	if (IS_ERR(dev) || !dev) {
-+	if (IS_ERR_OR_NULL(dev)) {
- 		pr_err("%s: invalid device\n", __func__);
- 		return;
- 	}
-@@ -61,7 +61,7 @@ void omap_control_phy_power(struct device *dev, int on)
- 	unsigned long rate;
- 	struct omap_control_phy	*control_phy;
- 
--	if (IS_ERR(dev) || !dev) {
-+	if (IS_ERR_OR_NULL(dev)) {
- 		pr_err("%s: invalid device\n", __func__);
- 		return;
- 	}
-@@ -202,7 +202,7 @@ void omap_control_usb_set_mode(struct device *dev,
- {
- 	struct omap_control_phy	*ctrl_phy;
- 
--	if (IS_ERR(dev) || !dev)
-+	if (IS_ERR_OR_NULL(dev))
- 		return;
- 
- 	ctrl_phy = dev_get_drvdata(dev);
--- 
-2.17.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+MTIuMTIuMjAyMSAwOTo1MCwgTWlhb3FpYW4gTGluINC/0LjRiNC10YI6Cj4gVGhlIHRlZ3JhX3h1
+c2JfZmluZF9wb3J0X25vZGUoKSBmdW5jdGlvbiBtYXkgcmV0dXJuIGVycm9yIHBvaW50ZXIgd2hl
+bgo+IGthc3ByaW50ZigpIHJldHVybiBOVUxMLiBVc2luZyBJU19FUlJfT1JfTlVMTCB0byBjaGVj
+ayB0aGUgcmV0dXJuIHZhbHVlCj4gb2YgdGVncmFfeHVzYl9maW5kX3BvcnRfbm9kZSgpIHRvIGNh
+dGNoIHRoaXMuCj4gCj4gU2lnbmVkLW9mZi1ieTogTWlhb3FpYW4gTGluIDxsaW5tcTAwNkBnbWFp
+bC5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYyB8IDEyICsrKysrKy0tLS0t
+LQo+ICAxIGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspLCA2IGRlbGV0aW9ucygtKQoKSW5z
+dGVhZCBvZiBjaGFuZ2luZyB0aGUgNiBsaW5lcyBhbmQgbWFraW5nIGNvZGUgbGVzcyByZWFkYWJs
+ZSwgeW91IGNvdWxkCmNoYW5nZSBhIHNpbmdsZSBsaW5lLgoKZGlmZiAtLWdpdCBhL2RyaXZlcnMv
+cGh5L3RlZ3JhL3h1c2IuYyBiL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYwppbmRleCA5NjNkZTU5
+MTNlNTAuLmFhNTIzN2VhY2QyOSAxMDA2NDQKLS0tIGEvZHJpdmVycy9waHkvdGVncmEveHVzYi5j
+CisrKyBiL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYwpAQCAtNDU1LDcgKzQ1NSw3IEBAIHRlZ3Jh
+X3h1c2JfZmluZF9wb3J0X25vZGUoc3RydWN0IHRlZ3JhX3h1c2JfcGFkY3RsCipwYWRjdGwsIGNv
+bnN0IGNoYXIgKnR5cGUsCiAgICAgICAgbmFtZSA9IGthc3ByaW50ZihHRlBfS0VSTkVMLCAiJXMt
+JXUiLCB0eXBlLCBpbmRleCk7CiAgICAgICAgaWYgKCFuYW1lKSB7CiAgICAgICAgICAgICAgICBv
+Zl9ub2RlX3B1dChwb3J0cyk7Ci0gICAgICAgICAgICAgICByZXR1cm4gRVJSX1BUUigtRU5PTUVN
+KTsKKyAgICAgICAgICAgICAgIHJldHVybiBOVUxMOwogICAgICAgIH0KICAgICAgICBucCA9IG9m
+X2dldF9jaGlsZF9ieV9uYW1lKHBvcnRzLCBuYW1lKTsKICAgICAgICBrZnJlZShuYW1lKTsKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
