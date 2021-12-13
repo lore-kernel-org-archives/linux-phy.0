@@ -4,83 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A109C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Dec 2021 08:27:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49F73C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Dec 2021 10:33:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iU0U2ZRfW0NSpUxPRjtMstJU+vx6CDJLCHOW4jMMwcQ=; b=fnsU4F0UKl1XNw
-	O7lnmIzCPlv8rZa8YBmHQHNUC1DL83nGK0k1akmEKDB2w1bFvJZqe212REVWSPL1qKgacjjoqmcp3
-	ksNnjwO81Vz+/CQpuNjuTjZPDqFYGrUdvjb7VWpuAIRrKBJlokYaRWlTyCUC64Z6PSdKQ8aAmr1+3
-	8bnb5+eTyCB2ZQGJ0lTVi1KtgZ1PZ2/bkG2LVTb416PZ3htKEStgNoVC17yka7GDii7YY1GBSkQvT
-	i7yxNK5X4ju3s5evGn3YOZM1cj1w4nfkFo+CQyk4arfoQ50H9Qd95pmghZfmySZnu4VjFCoCswvKE
-	DOlct2PSmsIU0dvMMiWw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=14BUSFq5Mc0b8abeofBcQ0otsaXJPknDdgLdIUOHtt4=; b=NGP3PX9lsb3pg9iPg4sNqBisC3
+	FDbG+4OUB1LxPkLAoik3/kuAhprRq6G0juknr/ZT+3pMAq4b6QOl8qn0opKZNw1UcNjf+hJDhF1Tt
+	/nssR/OtdUF3fx/pmdr9WweQWkCRdbs2cW/ahqILBKJIcpBjQjMbWJEAj7h2Rrl07+n3SiaYn4Ynq
+	UsQWF8FoI7sLIz75pfDxOXS2gMjW+4UAwfpor9NSlJbI3LnxGq38GIwe20MMDOZ16gSFtIomzYwsu
+	omUdQZsub+WdGYzQuz5/mUoXPppLA9Qbcby7QFY8q+8sNwXLFVuvpykVt5vqB+TsobkBPfrukbQzQ
+	DCxUFi5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mwgg2-008HtR-49; Mon, 13 Dec 2021 08:27:18 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1mwidx-009347-E6; Mon, 13 Dec 2021 10:33:17 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mwgg0-008HsT-C6
- for linux-phy@lists.infradead.org; Mon, 13 Dec 2021 08:27:17 +0000
-Received: by mail-ed1-x536.google.com with SMTP id r25so48908516edq.7
- for <linux-phy@lists.infradead.org>; Mon, 13 Dec 2021 00:27:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fairphone.com; s=fair;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=GMm67AIvcXY6qklTj1xMKUOirDsiafuBtic6EDXbrUI=;
- b=DTC7WGjdvAqdjanbrAxw5grBfcgQE37OeqT/pwC0Z2eG8+QPNAM6ZmOvObjH20NFlD
- w8RrRFpVCJ3SR8uLRF1DGeRAs2tyspzM5ovfUYKdAA7H4b87a/0jNW1UBQ3zSsoQbFK2
- 7jqEbNJEEJ8j/Sjzwe8o+uPJv9H8ZrHsAcroGWKDen7Teyv/IQtz7ugWiMDq0ILvNu1J
- IU4v9K8t3VaiPyDjv32G/SXS6eJ87nH/ruw73oR3Y2Vv4HNfxITUpq0Cudue8S/rXFN6
- mCrvQY7YDDBs5i8xpfMvc92dQEr8qoSt4xLCNmRnZuYW6DhEhce1c4LKfU8EY1XTdpT9
- mFKQ==
+ id 1mwiVs-008zVv-Te
+ for linux-phy@lists.infradead.org; Mon, 13 Dec 2021 10:24:58 +0000
+Received: by mail-wr1-x434.google.com with SMTP id k9so8355315wrd.2
+ for <linux-phy@lists.infradead.org>; Mon, 13 Dec 2021 02:24:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Lps8zlY0plffu89oo+ZuKtBVR2UFB4mYLL1XQcOR5SA=;
+ b=Za7I3FFfxdMWiq9GbGcKIbeq0brDgYen8LmJIsEVOpyPpHwYZbppF3xfqtlIfENdP1
+ jHzUFwVAP2of3Xe4rLtkWRMId6pLI74v5FjBEJhPFD2Qe3miPuN6o+ncw3dknYNTDqMQ
+ wi42NVQiYAJAWQuwYkLNh0hK3QsTiXETLvNGR0EhwzmqH4c74hCm5xpFWWJMJYXIQTGT
+ BYc3zFYCdPn8GMYWHCfq2KJLnwt2dEmjvKUfVgKQT2HwZ3pO9WkLRmLq19EdRyHkAMrM
+ fL4N8RW+umwAa887wcZi43Se2SgJtZuq1L7bW2zIXPKWZgkAjcr0R4miICMkPdiQ/sVh
+ cxTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=GMm67AIvcXY6qklTj1xMKUOirDsiafuBtic6EDXbrUI=;
- b=inTsUOxbEOnw0lXUNcO/ntl/JLSnrJloed2HUxg/sWLoQQSPd79VL9uQMo/0IkBD6w
- qK7TZ8YJfsCJ46LxSG8xliWWkkRFwgzM5/5dF/vvzOh2iQ1hMBC8rgDkLUNqVQwfb+NV
- 64vY97ARmwT9vP7W2AHrH9KeoEPuyL7ODuZo6FtRZ2LiJm7DYAEz86HeiQryhNq7//gu
- Gvyy2IUAXH99CqWdPH9bRXacl/7MpJO5PjnBXjT3Cg9FBV2a5QRXlUr3d5desZSluSJe
- fGJDwcAAZenZaUSgBgtWrtGViWP4SkyuMxNBEeFBTfw7o/Uht0O72DrpG1lw9DhaSM78
- 1I1A==
-X-Gm-Message-State: AOAM532Yp4We17p6bN1SEC2C5LXJff5Yvsn3yet0C2IpcU9udbDLV4hb
- j0KHQeFzIB/FvfCIsVoMDRs2jQ==
-X-Google-Smtp-Source: ABdhPJxIY/9Ksv9VfDYjeCpOETIdPtwglBsGFiqhDKYDlmjLwPkjFgt7OAp+YsiBCBAG7DoZeqM9xQ==
-X-Received: by 2002:a05:6402:b23:: with SMTP id
- bo3mr61598431edb.366.1639384034612; 
- Mon, 13 Dec 2021 00:27:14 -0800 (PST)
-Received: from localhost.localdomain
- ([2a02:a210:20c5:8c80:7d0a:cd68:c339:f426])
- by smtp.gmail.com with ESMTPSA id b11sm6062432ede.62.2021.12.13.00.27.13
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Lps8zlY0plffu89oo+ZuKtBVR2UFB4mYLL1XQcOR5SA=;
+ b=WgyEfzlks7S53Yd4W7BhaFXcEUXV/iPLgkscrtsi8Xixw5xUr5ovtmgJCDQ+655yJk
+ L+4Tt55faLMMW4MJ0pvdjfILxcqZNFC6ZBHWArqt/6FJEFEUWKJO4InPkhISF0vcm6fW
+ 0XL3tVUDfeupG4aM8gy7ktDnNtO6YPnJ5O4linyIhy/XFHWB3/OlcfpojwHQiMxd4Z2L
+ oHfopT8dF/rrTt6T+uWMaoGVr4nJTV+dp/9XEbNif2CfN64XtzTYeoABJxTcc+wBtbRl
+ LjqJzwm7NtgG9aNQ6HJNwJffWM3mObsu5ktSO3voR3jareIMggpYPe/6sYpce6CuUQKZ
+ KGqA==
+X-Gm-Message-State: AOAM53378n7pmc19Z+fiuI2Y5CTwQ/TGn+apvw+Kk6O93YzYqO85Msz5
+ 9tFRIqZmoK5Pfm26jU8vmEA=
+X-Google-Smtp-Source: ABdhPJwFcQlQB6qp/Z8EgEGC4clwRl8Lug9EUHupaG/P+GoEeE207ABb2BWX1xTZnxDob1Ye9DojIQ==
+X-Received: by 2002:a5d:5643:: with SMTP id j3mr31204212wrw.138.1639391094112; 
+ Mon, 13 Dec 2021 02:24:54 -0800 (PST)
+Received: from orome ([193.209.96.43])
+ by smtp.gmail.com with ESMTPSA id o3sm7170098wms.10.2021.12.13.02.24.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Dec 2021 00:27:14 -0800 (PST)
-From: Luca Weiss <luca.weiss@fairphone.com>
-To: linux-arm-msm@vger.kernel.org
-Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
- Luca Weiss <luca.weiss@fairphone.com>,
- Konrad Dybcio <konrad.dybcio@somainline.org>,
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Manu Gautam <mgautam@codeaurora.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 04/10] dt-bindings: phy: qcom,qusb2: Add SM6350 compatible
-Date: Mon, 13 Dec 2021 09:26:05 +0100
-Message-Id: <20211213082614.22651-5-luca.weiss@fairphone.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20211213082614.22651-1-luca.weiss@fairphone.com>
-References: <20211213082614.22651-1-luca.weiss@fairphone.com>
+ Mon, 13 Dec 2021 02:24:53 -0800 (PST)
+Date: Mon, 13 Dec 2021 11:24:50 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Miaoqian Lin <linmq006@gmail.com>
+Cc: digetx@gmail.com, jckuo@nvidia.com, jonathanh@nvidia.com, kishon@ti.com,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-tegra@vger.kernel.org, vkoul@kernel.org
+Subject: Re: [PATCH v2] phy: tegra: xusb: Fix return value of
+ tegra_xusb_find_port_node function
+Message-ID: <YbcfcpkwxCkeGP3f@orome>
+References: <942f943c-9ec8-9887-aa6d-4d133821beca@gmail.com>
+ <20211213020507.1458-1-linmq006@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <20211213020507.1458-1-linmq006@gmail.com>
+User-Agent: Mutt/2.1.3 (987dde4c) (2021-09-10)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211213_002716_434308_6256C02F 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211213_022457_004805_F93BF9C7 
+X-CRM114-Status: GOOD (  11.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,36 +85,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6690907117375786676=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add devicetree compatible for the usb phy on SM6350 SoC.
 
-Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-Acked-by: Konrad Dybcio <konrad.dybcio@somainline.org>
----
- Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+--===============6690907117375786676==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="W2swrXWGj6l4aaDV"
+Content-Disposition: inline
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-index aa2e409a1a09..e651a63a4be3 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-@@ -30,6 +30,7 @@ properties:
-           - enum:
-               - qcom,sc7180-qusb2-phy
-               - qcom,sdm845-qusb2-phy
-+              - qcom,sm6350-qusb2-phy
-           - const: qcom,qusb2-v2-phy
-   reg:
-     maxItems: 1
--- 
-2.34.1
 
+--W2swrXWGj6l4aaDV
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Dec 13, 2021 at 02:05:07AM +0000, Miaoqian Lin wrote:
+> callers of tegra_xusb_find_port_node() function only do NULL checking for
+> the return value. return NULL instead of ERR_PTR(-ENOMEM) to keep
+> consistent.
+>=20
+> Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+> ---
+>  drivers/phy/tegra/xusb.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+
+Acked-by: Thierry Reding <treding@nvidia.com>
+
+--W2swrXWGj6l4aaDV
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmG3H3IACgkQ3SOs138+
+s6HJrw/+PwLmkXa7Ame0lq2zyamq1ugkXKFFAabK3ZHFV8Epsuyl4tT+FKNn2ShM
+y7Dy/Vqh6SVtb4CXBFc25tI4SyfoH1uRALMdFc8CqUyPGhN4HXOOIPRrikUyeWyg
+xROkHn5Fnjf3vdkBat3vwVEHZiu++AZTMz97GOsNP25lwMIEmw/sGw9KBFt+cCTV
+S8g/ihfq8fncGHOIO7soGncJyjZPQhWB/R7mur7A5eSelfj+OKW+BqeZUwhI167C
++yvONyxgtB8EZmNWGnw5jrV384n0hw6kOJGR9G4tsZRV9kVWGL7vTGcdiAZiDB/v
+GIZGGdzNiCKFSp9di9nj8lkvl28YGJrgQgg7VfT1MF5KfDZCW0dohgq+KrrBPw4N
+/IxAVEvF8rYmuESrL4UuPS8KVjAhjN0DlvtJvWoBumq3rhx0FsD5OpuZik1daN8c
+/eXWcxlvAZZZSYyyiNMIxTIPDixHxj3s2J9/9zTfDpNZYuShOBR2t43wYTiCUbfr
+HRIyaUO73BHbOU1wUeutEO4IS9pqL4YU2a2bnELG5GGG6HQ1/HmdIeMWVjgeebux
+LG1eqUqKSoV13LWt8ULgli4Xz3Ra+y6PJpbB1a1hsINgCmuv0PpDG2qkHS2ZKYbJ
+9XiWzxcgulRpx1OzLOFkdkcfbRt/zWCCiOK1bQiJIG5mwrI3NQo=
+=JIfE
+-----END PGP SIGNATURE-----
+
+--W2swrXWGj6l4aaDV--
+
+
+--===============6690907117375786676==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6690907117375786676==--
+
