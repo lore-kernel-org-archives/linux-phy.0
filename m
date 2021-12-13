@@ -4,72 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB3ABC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Dec 2021 20:19:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB809C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Dec 2021 22:51:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bbQsJhqRS3+X5utHhPfzEw7WtlslkdLq/2K4G42t7Zo=; b=HFy3eCab/MtmJZ
-	mLHD+38GwY1m3rYKDCRVLJovRzxsQOcjFjCu6/KF87o0reUzZYg5bqnUNvTwdYd9DZj5779rC62uw
-	MJ1z48LmqUiCsjPfDVM0VuT9zhLG4saJguYQBVBnt+CFyIO8IXKUnCeSSaJgkJaI0jK340kECkG0+
-	iyxrrpekWxaurc8Ir4FvXJBO3YxEYiVcWTkJc3LUjEIySOja8aQcFafcC2qFnj9Q8KMJTDgaBdXy+
-	O2kfWZ7uk8kgYPODeVhzC2JZkk///BWskgZuwvvUP/1ObinSONcexIz10mwDF1AnKOP9KoBGUwu/4
-	+bn9yzpr3M3NjQ4VM2yA==;
+	List-Owner; bh=BiKV4EbGwxdvBEfWEndJi1a2V3AXz1I4INAh9xS3ZR8=; b=esnHYLY9awekro
+	qtEdWOl0WBDd8t4s07T4qdBgkyv6VCUTYwSZlMLZ5JH4SrKLh+4dWhwc7Faj6i3AMm6SfMlK+Cvb/
+	VTzIQsJMXXi4W7bskQfcniQ+9d2vclaD6ZDhsdpcrWuMNLoIxkwLf+0aBadvEWioNRCSMh4feunSE
+	RYe9yUqDyNtav8EqL/t+puTsx7USitWNVf3IZJ1YUKeGgXQrDRySv1zcR/sSNPkEszwreq6OIxXVs
+	rtEP9LTRoSKDqKw0BEt4x6DXZQQcfM0YcXe2hxxXWrV6nuPn91U30AZhqa4N6Wd8tUPsfwxiM4jdY
+	mKC5JtxjUrOe2kdMD8lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mwrnf-00BJRU-4Q; Mon, 13 Dec 2021 20:19:55 +0000
-Received: from mail-ot1-f51.google.com ([209.85.210.51])
+	id 1mwuAT-00Brx0-8S; Mon, 13 Dec 2021 22:51:37 +0000
+Received: from mail-oi1-x236.google.com ([2607:f8b0:4864:20::236])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mwrnc-00BJQd-Mj
- for linux-phy@lists.infradead.org; Mon, 13 Dec 2021 20:19:54 +0000
-Received: by mail-ot1-f51.google.com with SMTP id
- n104-20020a9d2071000000b005799790cf0bso18718760ota.5
- for <linux-phy@lists.infradead.org>; Mon, 13 Dec 2021 12:19:51 -0800 (PST)
+ id 1mwu4L-00Bq6O-QE
+ for linux-phy@lists.infradead.org; Mon, 13 Dec 2021 22:45:19 +0000
+Received: by mail-oi1-x236.google.com with SMTP id t19so25148849oij.1
+ for <linux-phy@lists.infradead.org>; Mon, 13 Dec 2021 14:45:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=ZAGpupmE58tiiF1IrnuYNItgVr/me2iTuZtboJFJyj8=;
+ b=ozfZXbnFnFpMaeH1yXfAvcBVuAkg94fLSzFhtWeD/Y7zPBhjx1irHgrtMkv61pS6ej
+ lyGHHzB8MMAq4iZyvnMUBPyA0ZoRI/UJmwwIc3wirCywPC5QTkF7QafmspTXPDo5jGHL
+ mIqAj9llTuzi2n3tPBkza+3uaegZDhqkUGBtx6VADne0o8FEOp42DKZEuy1uuQcvZdZ2
+ gUrKZYtLrgDgx1ajzC5+2I5Gu8KdYr924DcyOBsQynG8mEoyePkzqIGlemuRDYt4RIRJ
+ ghHvh5b8inCTmGXMQouGJTTLojltm7HZNENY7RkAioSz1ppXk8wyHZpgRQT4fnmS5P/t
+ qarw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=WN/EU3Tqk0e8ErBw3JtRSP5A6/xa+N6f3cKQLbPWvZw=;
- b=1Q+55lgLE4Wom9a/E8K3ZCEqAxj7gaOvw/HPeUu1ovpU+Vi6ovaPI55PDY0VVX2Edc
- JPFnHcM6Xogq4V8X5DM+ImOH1xcqGuOG3C8kX+9Y6h4w8c4btZFhiTKcQ1S/juS64YXK
- Ejmov3DfKuBZJut88TQSt/5CvUmx+uYEwXJWaT1C4ROwkVA7fjE4KUsD60DX+Qn5OkBn
- lL18KNorDCevqTnrAoPdE69dr+tWznLQNlWaTkZRctrKuSuGEHciDSV+MgWIuuzmf2Hn
- uZJGTPXgCfkYsTTpZGcX87/nx0Wt+lbLiswTWnWpYqatvWnf3cI1i5i0FKTh0LIz7jN3
- CHZg==
-X-Gm-Message-State: AOAM530mXnJgI0rp5/xOpEr8SeYTPZv16OezmueqObws91q8RniMBP3i
- TaaO06f3kD52ULxkg5LosQ==
-X-Google-Smtp-Source: ABdhPJy/Kdpt3vHE/n5DWLa5z2zo9tRnw/q4qgWuWRbWc1zYTxCxupDXrhT9Yyr+7fnGb3/2r4HHOg==
-X-Received: by 2002:a9d:4543:: with SMTP id p3mr645542oti.99.1639426791186;
- Mon, 13 Dec 2021 12:19:51 -0800 (PST)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id bi20sm3047537oib.29.2021.12.13.12.19.50
+ bh=ZAGpupmE58tiiF1IrnuYNItgVr/me2iTuZtboJFJyj8=;
+ b=8SFkLJ1eHewhdLqP4WZ69lmd9z1hF3gBbTfpUmi50nd3cuI4fOL6AP3LSlE2BhGsHZ
+ 1QOiwewnsV8KlgazsG89l0QoIfK+sOncI8FR8GCB3VEqn8O5y1iJKgfuhf9Z1b3NON7U
+ IpkrkHLTZh0tNyROff6VQP2kfRR62SnMrk0H5Oc/7+UTY9HaIvxzbQYmHZdjkLF9g1er
+ coW2a7p10YtmdAW1k1jiU2icGHiecNsofCIAOzgRf/QnoBmWr6zec+ffGO1weOfcveHj
+ /S11e3QfOYfYb9jJpkzH/RL+Ri2Cd4/wUpG32cGAM28SnE61cSJk73mUOQ64WnSOvC+z
+ bKYw==
+X-Gm-Message-State: AOAM532O3ijOUB8eB7v/2jCuyfrAmysj3Qwf6EJnk+7HsDIFy/vdJqCo
+ B7zhAIMtN72nb0cT2yfjv57xqpR4dD8IjQ==
+X-Google-Smtp-Source: ABdhPJwpK+XmytwVOGn9TpyTH03MBGU917LNMYGWdZGosJtWbvnRo2z05N8w+/p9Vis1JRwyfQJjkQ==
+X-Received: by 2002:a05:6808:114:: with SMTP id
+ b20mr1212242oie.95.1639435516005; 
+ Mon, 13 Dec 2021 14:45:16 -0800 (PST)
+Received: from builder.lan (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id t13sm2936066oiw.30.2021.12.13.14.45.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 13 Dec 2021 12:19:50 -0800 (PST)
-Received: (nullmailer pid 1502975 invoked by uid 1000);
- Mon, 13 Dec 2021 20:19:49 -0000
-Date: Mon, 13 Dec 2021 14:19:49 -0600
-From: Rob Herring <robh@kernel.org>
-To: Aswath Govindraju <a-govindraju@ti.com>
-Cc: Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-can@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document
- mux-states property
-Message-ID: <Ybeq5dNYjN4GOzdV@robh.at.kernel.org>
-References: <20211202131002.12217-1-a-govindraju@ti.com>
- <20211202131002.12217-2-a-govindraju@ti.com>
+ Mon, 13 Dec 2021 14:45:15 -0800 (PST)
+Date: Mon, 13 Dec 2021 16:45:10 -0600
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Wesley Cheng <wcheng@codeaurora.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add
+ bindings for SM8450
+Message-ID: <YbfM9uqXGDcQZ7xS@builder.lan>
+References: <20211213131450.535775-1-vkoul@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211202131002.12217-2-a-govindraju@ti.com>
+In-Reply-To: <20211213131450.535775-1-vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211213_121952_763915_E48542E7 
-X-CRM114-Status: GOOD (  20.92  )
+X-CRM114-CacheID: sfid-20211213_144517_904384_38493FF9 
+X-CRM114-Status: GOOD (  11.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,40 +92,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 02, 2021 at 06:40:01PM +0530, Aswath Govindraju wrote:
-> On some boards, for routing CAN signals from controller to transceivers,
-> muxes might need to be set. This can be implemented using mux-states
-> property. Therefore, document the same in the respective bindings.
+On Mon 13 Dec 07:14 CST 2021, Vinod Koul wrote:
+
+> Document the compatible string for USB phy found in Qualcomm SM8450 SoC
 > 
-> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+> Signed-off-by: Vinod Koul <vkoul@kernel.org>
 > ---
->  .../devicetree/bindings/phy/ti,tcan104x-can.yaml    | 13 +++++++++++++
->  1 file changed, 13 insertions(+)
+>  .../devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml          | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> index 6107880e5246..5b2b08016635 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> @@ -37,6 +37,18 @@ properties:
->        max bit rate supported in bps
->      minimum: 1
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> index 20203a8a9e41..0dfe6914ec87 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> @@ -20,6 +20,7 @@ properties:
+>        - qcom,sm8150-usb-hs-phy
+>        - qcom,sm8250-usb-hs-phy
+>        - qcom,sm8350-usb-hs-phy
+> +      - qcom,sm8450-usb-hs-phy
+>        - qcom,usb-snps-femto-v2-phy
 >  
-> +  mux-states:
-> +    description:
-> +      mux controller node to route the signals from controller to
-> +      transceiver. Depending on the mux chip and the control lines
-> +      in it, the first and second parameters can be used for
-> +      representing control line and state. The number of arguments
-> +      is to be used based on '#mux-state-cells' property in the
-> +      mux-controller node. If '#mux-state-cells' is equal to
-> +      one then, then the argument to be used would be the state.
-> +      If it is set to two, then the first argument is the control
-> +      line and the second argument would be its corresponding state.
-
-No need to redefine how a common property works here. What you do need 
-to define is how many entries and what they are for if more than 1. 
-
-Rob
+>    reg:
+> -- 
+> 2.31.1
+> 
 
 -- 
 linux-phy mailing list
