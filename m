@@ -4,61 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6814C433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Dec 2021 07:37:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E23A3C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Dec 2021 07:38:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ApQgZYF7ni2TNaUtE9kdy4G1Wcs5inkG9eMq3OkwfTA=; b=mNq5x1rDSrGcFa
-	F2IenVFzYInaiEMTTUOaJlZvXQeFY5nnTOlwfCpkGt3WsHN44E3DAS/Smv5tgTA3sq4pv6/kMdc/P
-	SbIw6Pvtg8mMK9Zbq9+Q45thidRvZeNpbGHvPyVugL6vlyhvCRAC5NU2ggKQYXcY1Wsju8lpnXDT+
-	4iVggq1LKj9sW9MgcYVGGpBan3U+MdOailbL2hqn2K4qecab0RjX/XoseD57qK3iBqlIb9ZTHXINP
-	kMNWvWTiQDsuNy5/VYRIGIRO+811Xpa93ftgZGD9WvBg1UCEiWxx8Iqt2boZ0RJv7lWigvK5XzB6u
-	eU/+KOUpBMhJLAI1kFlQ==;
+	List-Owner; bh=AzBR6pY5wWyax4x+gdxNZbu1Njetw62hd1mrpO6BEDk=; b=QCs3Cfyt+EhG/Z
+	tHHKPKrAou0ZbCoW6V29ko5TZFlN0lxPNpWBY1O1Ne+D2iCfDYlH3Euy/PZJq8qDqk8gHhbUUeVjk
+	d/m+/nUExxWHrSJiuU4RbO/85Y8ybDyH8VJVA6JkXa+DtiIoAGZF13sXBF6CyO1PCiLeBjrmdqi8L
+	ruJ1wq4YTSI6NAQJbFN0yusZm1YU5V2jfDsNUJ4noEvu3sNPEh7d/hglDAM23OgALyn5bzhzRvirF
+	8Hm5OKR24xqro61c5K29TA6RyS7rGZx3NeIv8yD/ALo/YtvJnRr+m/7mMGTHCnB4QjvJRmff3wzC7
+	eRZZnyJJ8vVgLJISa9Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mx2NW-00Cumk-5V; Tue, 14 Dec 2021 07:37:38 +0000
+	id 1mx2Od-00CuzN-Cb; Tue, 14 Dec 2021 07:38:47 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mx2NT-00Culz-KC
- for linux-phy@lists.infradead.org; Tue, 14 Dec 2021 07:37:36 +0000
+ id 1mx2Oa-00CuyY-MM
+ for linux-phy@lists.infradead.org; Tue, 14 Dec 2021 07:38:45 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 1094E61342;
- Tue, 14 Dec 2021 07:37:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 851FEC34604;
- Tue, 14 Dec 2021 07:37:33 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 45C7960E14;
+ Tue, 14 Dec 2021 07:38:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D416AC34601;
+ Tue, 14 Dec 2021 07:38:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1639467454;
- bh=+I7jyVRiXealtexH7w79gsPyY9yTEyVLP2AaWCCQDo8=;
+ s=k20201202; t=1639467523;
+ bh=LYVbEp6oDnQQyqbRxWbmjublt79R3Y2q0XjQOAruDPo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qns4nrWTkv/V5g4S7XHLdITbSxXbc1cQdNsDOC9oCWACjpVTSQBsJ8yAfFmAasTFN
- hD8IfFTXkf3nc6xjnb7POKC2Ineb3RAflFCi6Botc+CVEdpt/Er/8KWQi6XL57v22Q
- PaP4gEVJ0G+BgeVro7PE53hfW4P24n+kahSdmEb/pET3LO6Lva0yyymydhZqxn/TM0
- 9aFPingsogNitiklXxmtC9Ird/ZwtPnGnYpSJswiYhwaGWpuEEMl//LU1UiOaeh3xD
- oEPD6TjRXBzkEeUSDm6xw3bT9Y46kEkcNNDYGCh8gGXWQniAwG9xLe0uVyPuIuO7gJ
- bJWsY759hFHxg==
-Date: Tue, 14 Dec 2021 13:07:30 +0530
+ b=GmMBhJUGo6F6Qe4ZRZt1z3TfBX33FlvvhhmwITzLoGqwtZIz/tDVjFZv2qB8CV2Ou
+ JXbCY22GdcGxDWBiAVY69uF3lwz9bbnJT/q583DFkwYzRw5TuMmCZjDvWXqOS3OBiQ
+ v4OqOKTEDUXqGR5Pr6fOax2Fu2ju4eHtojgiXlWXnCWMlnYV0o7Y+/AuSufy2cJ1hJ
+ sbaTjprawXUxoieIcBJ7+nRhJs6KGmGJfwuoa0rorIrs113da/IT4fh6EKuyNSvsZe
+ HJdFR4CeExfxWd5nNR0z9knZ4Atrq9Gr+KkW/Nth5rOWAXzgFG3+kSEssQq/HElZdh
+ 5K1vaq0P+CvwQ==
+Date: Tue, 14 Dec 2021 13:08:39 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Miaoqian Lin <linmq006@gmail.com>
-Cc: digetx@gmail.com, jckuo@nvidia.com, jonathanh@nvidia.com, kishon@ti.com,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-tegra@vger.kernel.org, thierry.reding@gmail.com
-Subject: Re: [PATCH v2] phy: tegra: xusb: Fix return value of
- tegra_xusb_find_port_node function
-Message-ID: <YbhJugAkqdXApeGQ@matsya>
-References: <942f943c-9ec8-9887-aa6d-4d133821beca@gmail.com>
- <20211213020507.1458-1-linmq006@gmail.com>
+To: Luca Weiss <luca.weiss@fairphone.com>
+Cc: linux-arm-msm@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
+ phone-devel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Manu Gautam <mgautam@codeaurora.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 04/10] dt-bindings: phy: qcom, qusb2: Add SM6350 compatible
+Message-ID: <YbhJ/zNI8EgD15TN@matsya>
+References: <20211213082614.22651-1-luca.weiss@fairphone.com>
+ <20211213082614.22651-5-luca.weiss@fairphone.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211213020507.1458-1-linmq006@gmail.com>
+In-Reply-To: <20211213082614.22651-5-luca.weiss@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211213_233735_736644_AE9E6C3E 
-X-CRM114-Status: UNSURE (   6.47  )
+X-CRM114-CacheID: sfid-20211213_233844_801602_CF54055C 
+X-CRM114-Status: UNSURE (   6.59  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,12 +79,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-12-21, 02:05, Miaoqian Lin wrote:
-> callers of tegra_xusb_find_port_node() function only do NULL checking for
-> the return value. return NULL instead of ERR_PTR(-ENOMEM) to keep
-> consistent.
+On 13-12-21, 09:26, Luca Weiss wrote:
+> Add devicetree compatible for the usb phy on SM6350 SoC.
 
-Applied, thanks
+Applied to phy-next, thanks
 
 -- 
 ~Vinod
