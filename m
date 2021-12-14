@@ -4,67 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3966C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Dec 2021 23:25:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C83F2C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Dec 2021 03:47:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=e8NPS7cfy6zu+fKWe4/UrjkJoXhqHd3Wn98Zle9tYbc=; b=3UAHZAnWFsHNHg
-	jytPsuJVvIur2J2abaDZcVg05Gu+wQjW+3jargIgzfBtvI8xQAAMQr0WSW/ZdnWy3bdlxtD+TcGMN
-	Dz1HU1eM/A5GWRT1i0IZk2BKiqEpk1pQ6R1HD69rCxaABAVKY4MiuQRAIwFGmXl1iZR7uvKP68sAE
-	BvREbWM9t/wrhdvJMDP4juL5bhgJfwkN1Cl2pXy1zXHF572Bp/Ge6YrUCladzdqccuQUuhyBcxLKf
-	kBrH56f870PrviSoSD24qD8rGHXZ5+65kJ0YHbH4kVoe1bLN76kVAMpQN8TahESu9E3keNp5KOiKh
-	Qz/IDExaLjnKrrK4k45g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=SkofwXDwwnm91ZbsrizVtW/r51fOUX9Ou6SfhUFaq04=; b=kjgcO11Q4v7oMMJBnFPTTU/ppb
+	/xmp851eSmtABpRjpekBPnSMPw4Ry+hbDQmwFbP6/A+e5LOCQP5v0CIPN7zgJS/A+Il7aPdP67GGV
+	4Pj8BXWPzwWhYonetSRosrp9Ft8CEoeyBrthRwcrIqdiBqmHi9+SCq2w6CZybIVJqhDoO4TV/o/r+
+	j39ZfNasgi2PUwa4SBKrRT9x0A0HPYWadYqc/Tb3bE54G5LBhZDEOgPVLKQkByDms/TZfANBMEp1V
+	3AWn963Oj9dYyy7hq3ChkFbn7R4RljfA97OfBv+2y4EKWNgbBw5Ub5fuXW35RBmbeZO5RQG7g9PUy
+	ojzZAkHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mwugx-00Bxup-6L; Mon, 13 Dec 2021 23:25:11 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1mwymc-00CRf4-1n; Tue, 14 Dec 2021 03:47:18 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mwug9-00Bxnd-2j
- for linux-phy@lists.infradead.org; Mon, 13 Dec 2021 23:24:26 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 1A0D0B816DC;
- Mon, 13 Dec 2021 23:24:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9EB36C34601;
- Mon, 13 Dec 2021 23:24:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1639437857;
- bh=A9pKYsIk8sVgWhuPxxwl6CXmwAOIQO9QyUcOm4pfpSY=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=fI/qqDW72TRDXIw9jcT0c5ByYhyLm7Wlw22TzOKpb9YX8lNF8qHEWcs9pjP9oKegc
- ZZu9byNHqjd27HrCqz6iNi+gBLEswNRHbb5Ds29H99f/RtsYSA1dPkHb/eqT0KfIDb
- ugnclVHE205t21hoDIJMrIkqSRO1PzyPtjkyVifsv92oGqGLdYeuJgpzugQ7hGJW78
- sCeVDoWLX+JBq0lrq8yvUEOJjqo0Ee81o1LHdcXm/2haSs5b0zPFZ00VFcLH0ty7Z3
- Yg4S98c3MMNi0R5912j6QrJPqbms/kPBGyL1OMJvc04IAQ9hhzafi2Dy5Baoqm8Kf/
- gGYkjsT4wPkqg==
-Date: Mon, 13 Dec 2021 17:24:16 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Stanimir Varbanov <svarbanov@mm-sol.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 04/10] PCI: qcom: Remove redundancy between qcom_pcie
- and qcom_pcie_cfg
-Message-ID: <20211213232416.GA554939@bhelgaas>
+ id 1mwymZ-00CRdh-HU
+ for linux-phy@lists.infradead.org; Tue, 14 Dec 2021 03:47:17 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1BE3l0SI059276;
+ Mon, 13 Dec 2021 21:47:00 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1639453620;
+ bh=sSUI+3XbCkWJC8iuEmPzjq99OubAAA0oFQ31cA0MhpA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=HgmGgtYtjS/+21+jDL3Qdo38QnwnKO48L46s2HPUFDMkJt1nopdh1qkJXZUBj7SV0
+ CazYg45gzVKd/ZMPUeQAx7y2T7358XmGqqpThV3rP0ttGUs7QDSIimb4KtD+I3wdgG
+ XHAlzJ4TX0MlpERNQdl4j5C/iidTWKNwqbvkQDHA=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1BE3l0CH054348
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 13 Dec 2021 21:47:00 -0600
+Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 13
+ Dec 2021 21:46:59 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Mon, 13 Dec 2021 21:46:59 -0600
+Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1BE3kuDX023438;
+ Mon, 13 Dec 2021 21:46:57 -0600
+Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document
+ mux-states property
+To: Rob Herring <robh@kernel.org>
+CC: Wolfgang Grandegger <wg@grandegger.com>, Marc Kleine-Budde
+ <mkl@pengutronix.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
+ <vkoul@kernel.org>,
+ <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+References: <20211202131002.12217-1-a-govindraju@ti.com>
+ <20211202131002.12217-2-a-govindraju@ti.com>
+ <Ybeq5dNYjN4GOzdV@robh.at.kernel.org>
+From: Aswath Govindraju <a-govindraju@ti.com>
+Message-ID: <05d52ca2-424b-94b5-4f0c-56dbbc5a0c22@ti.com>
+Date: Tue, 14 Dec 2021 09:16:55 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.14.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211211021758.1712299-5-dmitry.baryshkov@linaro.org>
+In-Reply-To: <Ybeq5dNYjN4GOzdV@robh.at.kernel.org>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211213_152421_325809_5C486361 
-X-CRM114-Status: UNSURE (   8.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211213_194715_758667_596FAA6B 
+X-CRM114-Status: GOOD (  21.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,14 +90,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Dec 11, 2021 at 05:17:52AM +0300, Dmitry Baryshkov wrote:
-> In preparation to adding more flags to configuration data, use struct
-> qcom_pcie_cfg directly inside struct qcom_pcie, rather than duplicating
-> all its fields. This would save us from the boilerplate code that just
-> copies flags values from one sruct to another one.
+Hi Rob,
 
-s/flags values/flag values/
-s/sruct/struct/
+On 14/12/21 1:49 am, Rob Herring wrote:
+> On Thu, Dec 02, 2021 at 06:40:01PM +0530, Aswath Govindraju wrote:
+>> On some boards, for routing CAN signals from controller to transceivers,
+>> muxes might need to be set. This can be implemented using mux-states
+>> property. Therefore, document the same in the respective bindings.
+>>
+>> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+>> ---
+>>  .../devicetree/bindings/phy/ti,tcan104x-can.yaml    | 13 +++++++++++++
+>>  1 file changed, 13 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+>> index 6107880e5246..5b2b08016635 100644
+>> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+>> @@ -37,6 +37,18 @@ properties:
+>>        max bit rate supported in bps
+>>      minimum: 1
+>>  
+>> +  mux-states:
+>> +    description:
+>> +      mux controller node to route the signals from controller to
+>> +      transceiver. Depending on the mux chip and the control lines
+>> +      in it, the first and second parameters can be used for
+>> +      representing control line and state. The number of arguments
+>> +      is to be used based on '#mux-state-cells' property in the
+>> +      mux-controller node. If '#mux-state-cells' is equal to
+>> +      one then, then the argument to be used would be the state.
+>> +      If it is set to two, then the first argument is the control
+>> +      line and the second argument would be its corresponding state.
+> 
+> No need to redefine how a common property works here. What you do need 
+> to define is how many entries and what they are for if more than 1. 
+> 
+
+Got it. So, I'll remove the common part that describes about the number
+of arguments and only include what the arguments would mean given the
+number of arguments
+
+
+  mux-states:
+    description:
+      mux controller node to route the signals from controller to
+      transceiver. Two arguments can be present depending on the mux
+      chip. If mux-states has one argument then it represents the state.
+      If there are two arguments then the first argument is the control
+      line and the second argument is its corresponding state.
+
+
+Thanks,
+Aswath
+
+> Rob
+> 
+
 
 -- 
 linux-phy mailing list
