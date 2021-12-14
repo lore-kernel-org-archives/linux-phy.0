@@ -4,76 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C83F2C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Dec 2021 03:47:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D4AEC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Dec 2021 07:33:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=SkofwXDwwnm91ZbsrizVtW/r51fOUX9Ou6SfhUFaq04=; b=kjgcO11Q4v7oMMJBnFPTTU/ppb
-	/xmp851eSmtABpRjpekBPnSMPw4Ry+hbDQmwFbP6/A+e5LOCQP5v0CIPN7zgJS/A+Il7aPdP67GGV
-	4Pj8BXWPzwWhYonetSRosrp9Ft8CEoeyBrthRwcrIqdiBqmHi9+SCq2w6CZybIVJqhDoO4TV/o/r+
-	j39ZfNasgi2PUwa4SBKrRT9x0A0HPYWadYqc/Tb3bE54G5LBhZDEOgPVLKQkByDms/TZfANBMEp1V
-	3AWn963Oj9dYyy7hq3ChkFbn7R4RljfA97OfBv+2y4EKWNgbBw5Ub5fuXW35RBmbeZO5RQG7g9PUy
-	ojzZAkHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7LuIojCjeKZOIjIUIUoygR1zT+kQG79h5fjyqkh5t9Y=; b=hVJaapqFj6XHFr
+	Y29oJ44PoIT5iYhZs+2l+C8/kNFlLTyWsqypO9l5WtGhmpRoLLfCIOkhRc6iE+aeqVp0d3XVaI2cb
+	PF//Xl0JrG5Ryt3GORaP0BAWz2YSEAN6s3T31HoxKpmQ8muM3+HthnxKgt9qZZlpYqs+m0xxZ2AI0
+	83MIpX24h5AJGi8H0It2usWUYZ9+rie2wjRTzn4jhIQ74JyUuBjjeP0MPtbshD0wifXE4i6l2G9St
+	YaV5rntoxpvNt2pdZ5f9xehHE8OC+YfkopylG+NbgCO1MmvuAU4RQhAzkAo2ZSuq6XR6ybcy5YemZ
+	Ga/Ynk1RcSxxaUagxxFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mwymc-00CRf4-1n; Tue, 14 Dec 2021 03:47:18 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1mx2JR-00CtZZ-SM; Tue, 14 Dec 2021 07:33:25 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mwymZ-00CRdh-HU
- for linux-phy@lists.infradead.org; Tue, 14 Dec 2021 03:47:17 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1BE3l0SI059276;
- Mon, 13 Dec 2021 21:47:00 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1639453620;
- bh=sSUI+3XbCkWJC8iuEmPzjq99OubAAA0oFQ31cA0MhpA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=HgmGgtYtjS/+21+jDL3Qdo38QnwnKO48L46s2HPUFDMkJt1nopdh1qkJXZUBj7SV0
- CazYg45gzVKd/ZMPUeQAx7y2T7358XmGqqpThV3rP0ttGUs7QDSIimb4KtD+I3wdgG
- XHAlzJ4TX0MlpERNQdl4j5C/iidTWKNwqbvkQDHA=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1BE3l0CH054348
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 13 Dec 2021 21:47:00 -0600
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 13
- Dec 2021 21:46:59 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 13 Dec 2021 21:46:59 -0600
-Received: from [10.250.232.185] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1BE3kuDX023438;
- Mon, 13 Dec 2021 21:46:57 -0600
-Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document
- mux-states property
-To: Rob Herring <robh@kernel.org>
-CC: Wolfgang Grandegger <wg@grandegger.com>, Marc Kleine-Budde
- <mkl@pengutronix.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
- <vkoul@kernel.org>,
- <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+ id 1mx2Iv-00CtMK-Te
+ for linux-phy@lists.infradead.org; Tue, 14 Dec 2021 07:32:56 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ams.source.kernel.org (Postfix) with ESMTPS id B30C3B817E3;
+ Tue, 14 Dec 2021 07:32:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C24F2C34604;
+ Tue, 14 Dec 2021 07:32:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1639467170;
+ bh=pQyER7T0WE9UAG/q7rCKCBxfJ83RpRjTruPbnXb4S2E=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=KvZWbf0Pd6n2qGVpw/t67mZ2xxyyuwwWXPaxYslEC+UGwI8HUbVgeDbt/Ahq14TQ6
+ dXgM+VIvuVJ6fMSgP54TPGx8x0CO/JTIRME4ps1G5/eWwO7THxQhs945KiUw+sa6fw
+ V3VZUMjdFHbuCPl5fuaeuv/JVNEGxW9EDibkYhJcw6IogtjY0484RPve1NH+lygGdC
+ dBm5RKiGOx92jlNpHyKeYkkKs8ZoKh9feos7RoKK9VDwkMqZTpPhGbXFqpAqETDYeC
+ v613iLUMBvAM4aqsBsxINIFKuBaGlw8I51wG0hjyVvAOgEXtJcHTLlNgqnhm5RuJiW
+ b1Cox3miF2A4w==
+Date: Tue, 14 Dec 2021 13:02:46 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Aswath Govindraju <a-govindraju@ti.com>
+Cc: Wolfgang Grandegger <wg@grandegger.com>,
+ Marc Kleine-Budde <mkl@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-can@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/2] phy: phy-can-transceiver: Add support for setting mux
+Message-ID: <YbhInhyZH9d0HGGf@matsya>
 References: <20211202131002.12217-1-a-govindraju@ti.com>
- <20211202131002.12217-2-a-govindraju@ti.com>
- <Ybeq5dNYjN4GOzdV@robh.at.kernel.org>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <05d52ca2-424b-94b5-4f0c-56dbbc5a0c22@ti.com>
-Date: Tue, 14 Dec 2021 09:16:55 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ <20211202131002.12217-3-a-govindraju@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <Ybeq5dNYjN4GOzdV@robh.at.kernel.org>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20211202131002.12217-3-a-govindraju@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211213_194715_758667_596FAA6B 
-X-CRM114-Status: GOOD (  21.09  )
+X-CRM114-CacheID: sfid-20211213_233254_274540_A3A6D097 
+X-CRM114-Status: GOOD (  25.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,63 +77,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
-
-On 14/12/21 1:49 am, Rob Herring wrote:
-> On Thu, Dec 02, 2021 at 06:40:01PM +0530, Aswath Govindraju wrote:
->> On some boards, for routing CAN signals from controller to transceivers,
->> muxes might need to be set. This can be implemented using mux-states
->> property. Therefore, document the same in the respective bindings.
->>
->> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
->> ---
->>  .../devicetree/bindings/phy/ti,tcan104x-can.yaml    | 13 +++++++++++++
->>  1 file changed, 13 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
->> index 6107880e5246..5b2b08016635 100644
->> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
->> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
->> @@ -37,6 +37,18 @@ properties:
->>        max bit rate supported in bps
->>      minimum: 1
->>  
->> +  mux-states:
->> +    description:
->> +      mux controller node to route the signals from controller to
->> +      transceiver. Depending on the mux chip and the control lines
->> +      in it, the first and second parameters can be used for
->> +      representing control line and state. The number of arguments
->> +      is to be used based on '#mux-state-cells' property in the
->> +      mux-controller node. If '#mux-state-cells' is equal to
->> +      one then, then the argument to be used would be the state.
->> +      If it is set to two, then the first argument is the control
->> +      line and the second argument would be its corresponding state.
+On 02-12-21, 18:40, Aswath Govindraju wrote:
+> On some boards, for routing CAN signals from controller to transceiver,
+> muxes might need to be set. Therefore, add support for setting the mux by
+> reading the mux-states property from the device tree node.
 > 
-> No need to redefine how a common property works here. What you do need 
-> to define is how many entries and what they are for if more than 1. 
+> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+> ---
+>  drivers/phy/Kconfig               |  1 +
+>  drivers/phy/phy-can-transceiver.c | 22 ++++++++++++++++++++++
+>  2 files changed, 23 insertions(+)
 > 
+> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+> index 82b63e60c5a2..300b0f2b5f84 100644
+> --- a/drivers/phy/Kconfig
+> +++ b/drivers/phy/Kconfig
+> @@ -64,6 +64,7 @@ config USB_LGM_PHY
+>  config PHY_CAN_TRANSCEIVER
+>  	tristate "CAN transceiver PHY"
+>  	select GENERIC_PHY
+> +	select MULTIPLEXER
+>  	help
+>  	  This option enables support for CAN transceivers as a PHY. This
+>  	  driver provides function for putting the transceivers in various
+> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+> index 6f3fe37dee0e..cb91d0e94da7 100644
+> --- a/drivers/phy/phy-can-transceiver.c
+> +++ b/drivers/phy/phy-can-transceiver.c
+> @@ -10,6 +10,7 @@
+>  #include<linux/module.h>
+>  #include<linux/gpio.h>
+>  #include<linux/gpio/consumer.h>
+> +#include <linux/mux/consumer.h>
+>  
+>  struct can_transceiver_data {
+>  	u32 flags;
+> @@ -21,13 +22,22 @@ struct can_transceiver_phy {
+>  	struct phy *generic_phy;
+>  	struct gpio_desc *standby_gpio;
+>  	struct gpio_desc *enable_gpio;
+> +	struct mux_state *mux_state;
+>  };
+>  
+>  /* Power on function */
+>  static int can_transceiver_phy_power_on(struct phy *phy)
+>  {
+> +	int ret;
+>  	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
 
-Got it. So, I'll remove the common part that describes about the number
-of arguments and only include what the arguments would mean given the
-number of arguments
+reverse christmas tree notation is typically use, so new addition at the
+end here please
 
+>  
+> +	if (can_transceiver_phy->mux_state) {
+> +		ret = mux_state_select(can_transceiver_phy->mux_state);
+> +		if (ret) {
+> +			dev_err(&phy->dev, "Failed to select CAN mux: %d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+>  	if (can_transceiver_phy->standby_gpio)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
+>  	if (can_transceiver_phy->enable_gpio)
+> @@ -45,6 +55,8 @@ static int can_transceiver_phy_power_off(struct phy *phy)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
+>  	if (can_transceiver_phy->enable_gpio)
+>  		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
+> +	if (can_transceiver_phy->mux_state)
+> +		mux_state_deselect(can_transceiver_phy->mux_state);
+>  
+>  	return 0;
+>  }
+> @@ -95,6 +107,16 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+>  	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+>  	drvdata = match->data;
+>  
+> +	if (of_property_read_bool(dev->of_node, "mux-states")) {
+> +		struct mux_state *mux_state;
+> +
+> +		mux_state = devm_mux_state_get(dev, NULL);
+> +		if (IS_ERR(mux_state))
+> +			return dev_err_probe(&pdev->dev, PTR_ERR(mux_state),
+> +					     "failed to get mux\n");
+> +		can_transceiver_phy->mux_state = mux_state;
+> +	}
+> +
+>  	phy = devm_phy_create(dev, dev->of_node,
+>  			      &can_transceiver_phy_ops);
+>  	if (IS_ERR(phy)) {
+> -- 
+> 2.17.1
 
-  mux-states:
-    description:
-      mux controller node to route the signals from controller to
-      transceiver. Two arguments can be present depending on the mux
-      chip. If mux-states has one argument then it represents the state.
-      If there are two arguments then the first argument is the control
-      line and the second argument is its corresponding state.
-
-
-Thanks,
-Aswath
-
-> Rob
-> 
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
