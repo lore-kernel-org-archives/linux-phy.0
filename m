@@ -4,64 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E23A3C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Dec 2021 07:38:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63DB9C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Dec 2021 07:40:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AzBR6pY5wWyax4x+gdxNZbu1Njetw62hd1mrpO6BEDk=; b=QCs3Cfyt+EhG/Z
-	tHHKPKrAou0ZbCoW6V29ko5TZFlN0lxPNpWBY1O1Ne+D2iCfDYlH3Euy/PZJq8qDqk8gHhbUUeVjk
-	d/m+/nUExxWHrSJiuU4RbO/85Y8ybDyH8VJVA6JkXa+DtiIoAGZF13sXBF6CyO1PCiLeBjrmdqi8L
-	ruJ1wq4YTSI6NAQJbFN0yusZm1YU5V2jfDsNUJ4noEvu3sNPEh7d/hglDAM23OgALyn5bzhzRvirF
-	8Hm5OKR24xqro61c5K29TA6RyS7rGZx3NeIv8yD/ALo/YtvJnRr+m/7mMGTHCnB4QjvJRmff3wzC7
-	eRZZnyJJ8vVgLJISa9Pw==;
+	List-Owner; bh=3SsQlQtglmzr2Pao3pJxOcHmaN7fHdntA8I45/jKl7U=; b=DF/fWyJlIMu8TC
+	5vQtBcUaytnJrQPB51/bcY0wm3cfe0ZseVipdrtwMwbI08YLXT5fFoqbRnjekgFjs3T55B5y1KR73
+	5F7sE4UrFNtuM4oUCh/tSCCfEtfLwdX3ALHISL6k/tailagLnmxgFNNGDi9p5Gp6KK5B1eLmUtcYu
+	tSaP4+hEFesQP4dLRb2Aehz0WZDqksjMI70IKq/upzlvGxPEc9ns+2q+Kaqwr0sw3TUNrbag1LpTb
+	rmzULgAJMlyzvb4YKLfLOlkGTw9+qYhf+7GV2Ivi+WYN6ZhjOlJRiiDr2pDHf/6q4W8pxhl/+C+Uc
+	cR+9vXhar6bhQcWAss7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mx2Od-00CuzN-Cb; Tue, 14 Dec 2021 07:38:47 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1mx2QB-00CvFQ-MN; Tue, 14 Dec 2021 07:40:23 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mx2Oa-00CuyY-MM
- for linux-phy@lists.infradead.org; Tue, 14 Dec 2021 07:38:45 +0000
+ id 1mx2Q8-00CvEG-Mq
+ for linux-phy@lists.infradead.org; Tue, 14 Dec 2021 07:40:21 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 45C7960E14;
- Tue, 14 Dec 2021 07:38:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D416AC34601;
- Tue, 14 Dec 2021 07:38:42 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 5EF52B80D69;
+ Tue, 14 Dec 2021 07:40:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1346EC34601;
+ Tue, 14 Dec 2021 07:40:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1639467523;
- bh=LYVbEp6oDnQQyqbRxWbmjublt79R3Y2q0XjQOAruDPo=;
+ s=k20201202; t=1639467618;
+ bh=spvSZByQK+29iSEGKgTMsJTE72ieXduZWv3Fg8lA06g=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GmMBhJUGo6F6Qe4ZRZt1z3TfBX33FlvvhhmwITzLoGqwtZIz/tDVjFZv2qB8CV2Ou
- JXbCY22GdcGxDWBiAVY69uF3lwz9bbnJT/q583DFkwYzRw5TuMmCZjDvWXqOS3OBiQ
- v4OqOKTEDUXqGR5Pr6fOax2Fu2ju4eHtojgiXlWXnCWMlnYV0o7Y+/AuSufy2cJ1hJ
- sbaTjprawXUxoieIcBJ7+nRhJs6KGmGJfwuoa0rorIrs113da/IT4fh6EKuyNSvsZe
- HJdFR4CeExfxWd5nNR0z9knZ4Atrq9Gr+KkW/Nth5rOWAXzgFG3+kSEssQq/HElZdh
- 5K1vaq0P+CvwQ==
-Date: Tue, 14 Dec 2021 13:08:39 +0530
+ b=VwF4sStEVMZne9O9j+TyF+OTJFgn6NQedmvg5xFTZVg+L2dtUiCxsiEZGBJb/44J8
+ 7emwh091FVE1vnGU1r4ePeP++zEtUCKIZ3ylEfa+ueA6Z1tbaZ2n9UXMMbMz42AGY/
+ LJUkT23IlqTJqIA5ST65mo/QYYJn1RTIfVGBnBFG9uGDv0RVmYyMuTa2IajhDWZUMs
+ MY6oboRP0bBL1Z5rjN3w8CgkDUz6XcaLtCyfTWFtbkupDm+KEDXRm0s64en3+PiSxp
+ j8Ey4q8ho/8COwlp4VWEdwVQj3IXc5cERfoHwLc/SD02SvEFvUrC8QuceXa2oDNIOY
+ kn81vlq6jYnOA==
+Date: Tue, 14 Dec 2021 13:10:13 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: linux-arm-msm@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
- phone-devel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@somainline.org>,
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Manu Gautam <mgautam@codeaurora.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 04/10] dt-bindings: phy: qcom, qusb2: Add SM6350 compatible
-Message-ID: <YbhJ/zNI8EgD15TN@matsya>
-References: <20211213082614.22651-1-luca.weiss@fairphone.com>
- <20211213082614.22651-5-luca.weiss@fairphone.com>
+To: Miaoqian Lin <linmq006@gmail.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: ti: Use IS_ERR_OR_NULL() to clean code
+Message-ID: <YbhKXdHRbe0EmGwx@matsya>
+References: <20211212142226.23674-1-linmq006@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211213082614.22651-5-luca.weiss@fairphone.com>
+In-Reply-To: <20211212142226.23674-1-linmq006@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211213_233844_801602_CF54055C 
-X-CRM114-Status: UNSURE (   6.59  )
+X-CRM114-CacheID: sfid-20211213_234020_911872_2601E5DF 
+X-CRM114-Status: UNSURE (   6.41  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,10 +73,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-12-21, 09:26, Luca Weiss wrote:
-> Add devicetree compatible for the usb phy on SM6350 SoC.
+On 12-12-21, 14:22, Miaoqian Lin wrote:
+> Use IS_ERR_OR_NULL() to make the code cleaner.
 
-Applied to phy-next, thanks
+Applied, thanks
 
 -- 
 ~Vinod
