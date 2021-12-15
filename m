@@ -4,38 +4,37 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD23CC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Dec 2021 10:01:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 705CCC4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Dec 2021 10:02:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XpSKU2b/HGKMNAUXYOoZiNjXtudW38Of85Z3w8zmhhg=; b=mXIvOi7mqHX13e
-	my1lOIpGGe9TaLGFB0lR1h5KYeYq1WNMdkQZ8W9HLGsPLGaH7mUCRqsIS4hMJfsy8JKUpHaSekxh7
-	e9SV+Bkp2h2GkxoWQYMyj993yhB5qs1FVCH6885FxeL2VuJrpYDz2G+YhUluM+cW+s9A4OxPr1EEu
-	L0t3YPPva87s/PJsdkibBGj6PPsDHE2V6Es2cVZOK4HT3B3XuR3TXv6ytRCsyWlWWAchFLNx7B0K+
-	EObJ/hBfgrPbaV+x3GxLbuKSR97JnmDmkN0ACfhXgDOfNyCm3tvosiFH/tCHy+AQgIuVZDjLHmZP1
-	gzv8y6a4w7+omSnN/gdQ==;
+	List-Owner; bh=Gdup/132JqzZhlkE+PBT7OMol1cUngMZZe2t5KE6QG4=; b=kFwOqh+05cInmR
+	7VOoKOW/GhrBdKtt6c3HDccWGtB6pWHzSMcUtyP78o2Ja1CrqbxrL9th52oEDet7Cesg6itH0T/8b
+	jj6+Q6zYzJCoVMRddu4Nx1kYrapKpk8vtCOi6eF9ReO5gih25HKJvwrSZJ/ELKkQxgHC2H78T5iB5
+	pcbP5qg+nwaW1tW2eeeKoAoAdAxai1dktuYHWWLLVOfZO+b2RlpsEjbeo7MCIIif62xTHVetLEew+
+	B1UQlTqmqjNRDXkqROvwr3tavYy5Wn8GBeE4W2hBBEgN4g42nOAoeBtXsFAB2vXSXQW0IJZpdfG55
+	nFh0Ho9A1QeKwMkUyXqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mxR6j-0004CG-3R; Wed, 15 Dec 2021 10:01:57 +0000
+	id 1mxR7e-0004Zz-Qz; Wed, 15 Dec 2021 10:02:54 +0000
 Received: from lucky1.263xmail.com ([211.157.147.132])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mxR2F-0002C5-Nn; Wed, 15 Dec 2021 09:57:21 +0000
+ id 1mxR2G-0002Bt-BU; Wed, 15 Dec 2021 09:57:23 +0000
 Received: from localhost (unknown [192.168.167.223])
- by lucky1.263xmail.com (Postfix) with ESMTP id E73EAFDE9F;
- Wed, 15 Dec 2021 17:57:13 +0800 (CST)
+ by lucky1.263xmail.com (Postfix) with ESMTP id 1D478FDFD6;
+ Wed, 15 Dec 2021 17:57:12 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
-X-SKE-CHECKED: 1
 X-ANTISPAM-LEVEL: 2
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P18835T140477477144320S1639562220094025_; 
- Wed, 15 Dec 2021 17:57:13 +0800 (CST)
+ Wed, 15 Dec 2021 17:57:11 +0800 (CST)
 X-IP-DOMAINF: 1
 X-RL-SENDER: yifeng.zhao@rock-chips.com
 X-SENDER: zyf@rock-chips.com
@@ -46,7 +45,7 @@ X-LOCAL-RCPT-COUNT: 3
 X-MUTI-DOMAIN-COUNT: 0
 X-SENDER-IP: 58.22.7.114
 X-ATTACHMENT-NUM: 0
-X-UNIQUE-TAG: <982e40503fd5a75f1c5138733054e260>
+X-UNIQUE-TAG: <7e09a493426c9099737eb22075673646>
 X-System-Flag: 0
 From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 To: heiko@sntech.de
@@ -56,16 +55,16 @@ Cc: robh+dt@kernel.org, jbx6244@gmail.com, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, kishon@ti.com,
  p.zabel@pengutronix.de, cl@rock-chips.com, kever.yang@rock-chips.com,
  Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Subject: [PATCH v5 4/4] arm64: dts: rockchip: add naneng combo phy nodes for
- rk3568
-Date: Wed, 15 Dec 2021 17:56:57 +0800
-Message-Id: <20211215095657.13183-5-yifeng.zhao@rock-chips.com>
+Subject: [PATCH v5 2/4] dt-bindings: phy: rockchip: Add Naneng combo PHY
+ bindings
+Date: Wed, 15 Dec 2021 17:56:55 +0800
+Message-Id: <20211215095657.13183-3-yifeng.zhao@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20211215095657.13183-1-yifeng.zhao@rock-chips.com>
 References: <20211215095657.13183-1-yifeng.zhao@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211215_015720_178485_2F8041D4 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20211215_015720_871508_B6E26B8A 
+X-CRM114-Status: GOOD (  15.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,141 +82,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the core dt-node for the rk3568's naneng combo phys.
+Add the compatible strings for the Naneng combo PHY found on rockchip SoC.
 
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
 
 Changes in v5:
+- modify description for ssc and ext-refclk
 - remove apb reset
 
 Changes in v4:
-- rename node name
+- restyle
+- remove some minItems
+- add more properties
 - remove reset-names
 - move #phy-cells
 - add rockchip,rk3568-pipe-grf
 - add rockchip,rk3568-pipe-phy-grf
 
-Changes in v3:
-- Move pipe_phy_grf0 to rk3568.dtsi
-
+Changes in v3: None
 Changes in v2:
-- Move phy0 to rk3568.dtsi
+- Fix dtschema/dtc warnings/errors
 
- arch/arm64/boot/dts/rockchip/rk3568.dtsi | 21 +++++++++++
- arch/arm64/boot/dts/rockchip/rk356x.dtsi | 47 ++++++++++++++++++++++++
- 2 files changed, 68 insertions(+)
+ .../phy/phy-rockchip-naneng-combphy.yaml      | 126 ++++++++++++++++++
+ 1 file changed, 126 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3568.dtsi b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
-index 2fd313a295f8..91a0b798b857 100644
---- a/arch/arm64/boot/dts/rockchip/rk3568.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
-@@ -8,6 +8,11 @@
- / {
- 	compatible = "rockchip,rk3568";
- 
-+	pipe_phy_grf0: syscon@fdc70000 {
-+		compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
-+		reg = <0x0 0xfdc70000 0x0 0x1000>;
-+	};
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+new file mode 100644
+index 000000000000..6b2db5e39f76
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+@@ -0,0 +1,126 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/phy-rockchip-naneng-combphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- 	qos_pcie3x1: qos@fe190080 {
- 		compatible = "rockchip,rk3568-qos", "syscon";
- 		reg = <0x0 0xfe190080 0x0 0x20>;
-@@ -71,6 +76,22 @@
- 			queue0 {};
- 		};
- 	};
++title: Rockchip SoC Naneng Combo Phy Device Tree Bindings
 +
-+	combphy0: phy@fe820000 {
-+		compatible = "rockchip,rk3568-naneng-combphy";
-+		reg = <0x0 0xfe820000 0x0 0x100>;
-+		clocks = <&pmucru CLK_PCIEPHY0_REF>,
-+			 <&cru PCLK_PIPEPHY0>,
-+			 <&cru PCLK_PIPE>;
-+		clock-names = "ref", "apb", "pipe";
-+		assigned-clocks = <&pmucru CLK_PCIEPHY0_REF>;
-+		assigned-clock-rates = <100000000>;
-+		resets = <&cru SRST_PIPEPHY0>;
-+		rockchip,pipe-grf = <&pipegrf>;
-+		rockchip,pipe-phy-grf = <&pipe_phy_grf0>;
-+		#phy-cells = <1>;
-+		status = "disabled";
-+	};
- };
- 
- &cpu0_opp_table {
-diff --git a/arch/arm64/boot/dts/rockchip/rk356x.dtsi b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-index a68033a23975..93f230f799f1 100644
---- a/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-@@ -218,11 +218,26 @@
- 		};
- 	};
- 
-+	pipegrf: syscon@fdc50000 {
-+		compatible = "rockchip,rk3568-pipe-grf", "syscon";
-+		reg = <0x0 0xfdc50000 0x0 0x1000>;
-+	};
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
 +
- 	grf: syscon@fdc60000 {
- 		compatible = "rockchip,rk3568-grf", "syscon", "simple-mfd";
- 		reg = <0x0 0xfdc60000 0x0 0x10000>;
- 	};
- 
-+	pipe_phy_grf1: syscon@fdc80000 {
-+		compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
-+		reg = <0x0 0xfdc80000 0x0 0x1000>;
-+	};
++properties:
++  compatible:
++    enum:
++      - rockchip,rk3568-naneng-combphy
 +
-+	pipe_phy_grf2: syscon@fdc90000 {
-+		compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
-+		reg = <0x0 0xfdc90000 0x0 0x1000>;
-+	};
++  reg:
++    maxItems: 1
 +
- 	pmucru: clock-controller@fdd00000 {
- 		compatible = "rockchip,rk3568-pmucru";
- 		reg = <0x0 0xfdd00000 0x0 0x1000>;
-@@ -1141,6 +1156,38 @@
- 		status = "disabled";
- 	};
- 
-+	combphy1: phy@fe830000 {
-+		compatible = "rockchip,rk3568-naneng-combphy";
-+		reg = <0x0 0xfe830000 0x0 0x100>;
-+		clocks = <&pmucru CLK_PCIEPHY1_REF>,
-+			 <&cru PCLK_PIPEPHY1>,
-+			 <&cru PCLK_PIPE>;
-+		clock-names = "ref", "apb", "pipe";
-+		assigned-clocks = <&pmucru CLK_PCIEPHY1_REF>;
-+		assigned-clock-rates = <100000000>;
-+		resets = <&cru SRST_PIPEPHY1>;
-+		rockchip,pipe-grf = <&pipegrf>;
-+		rockchip,pipe-phy-grf = <&pipe_phy_grf1>;
-+		#phy-cells = <1>;
-+		status = "disabled";
-+	};
++  clocks:
++    items:
++      - description: reference clock
++      - description: apb clock
++      - description: pipe clock
 +
-+	combphy2: phy@fe840000 {
-+		compatible = "rockchip,rk3568-naneng-combphy";
-+		reg = <0x0 0xfe840000 0x0 0x100>;
-+		clocks = <&pmucru CLK_PCIEPHY2_REF>,
-+			 <&cru PCLK_PIPEPHY2>,
-+			 <&cru PCLK_PIPE>;
-+		clock-names = "ref", "apb", "pipe";
-+		assigned-clocks = <&pmucru CLK_PCIEPHY2_REF>;
-+		assigned-clock-rates = <100000000>;
-+		resets = <&cru SRST_PIPEPHY2>;
-+		rockchip,pipe-grf = <&pipegrf>;
-+		rockchip,pipe-phy-grf = <&pipe_phy_grf2>;
-+		#phy-cells = <1>;
-+		status = "disabled";
-+	};
++  clock-names:
++    items:
++      - const: ref
++      - const: apb
++      - const: pipe
 +
- 	pinctrl: pinctrl {
- 		compatible = "rockchip,rk3568-pinctrl";
- 		rockchip,grf = <&grf>;
++  resets:
++    items:
++      - description: exclusive PHY reset line
++
++  rockchip,dis-u3otg0-port:
++    type: boolean
++    description:
++      Disable the u3otg0 port.
++
++  rockchip,dis-u3otg1-port:
++    type: boolean
++    description:
++      Disable the u3otg1 port.
++
++  rockchip,enable-ssc:
++    type: boolean
++    description:
++      The option SSC can be enabled for U3, SATA and PCIE.
++      Most commercially available platforms use SSC to reduce EMI.
++
++  rockchip,ext-refclk:
++    type: boolean
++    description:
++      Many PCIe connections, especially backplane connections,
++      require a synchronous reference clock between the two link partners.
++      To achieve this a common clock source, referred to as REFCLK in
++      the PCI Express Card Electromechanical Specification,
++      should be used by both ends of the PCIe link.
++      In PCIe mode, the reference clock can choose to use internal clock
++      or external clock.
++      By default, the internal clock is selected, The PCIe PHY provides
++      100MHz differential clock output(optional with SSC) for system applications.
++      When selecting This option to used external reference clock, a externally
++      100MHz differential clock is needs to be provided for PCIe PHY.
++
++  rockchip,pipe-grf:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Some additional phy settings are accessed through GRF regs.
++
++  rockchip,pipe-phy-grf:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Some additional pipe settings are accessed through GRF regs.
++
++  rockchip,sgmii-mac-sel:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 1]
++    default: 0
++    description:
++      Select gmac0 or gmac1 to be used as SGMII controller.
++
++  "#phy-cells":
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - resets
++  - rockchip,pipe-grf
++  - rockchip,pipe-phy-grf
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3568-cru.h>
++
++    pipegrf: syscon@fdc50000 {
++      compatible = "rockchip,rk3568-pipe-grf", "syscon";
++      reg = <0xfdc50000 0x1000>;
++    };
++
++    pipe_phy_grf0: syscon@fdc70000 {
++      compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
++      reg = <0xfdc70000 0x1000>;
++    };
++
++    combphy0: phy@fe820000 {
++      compatible = "rockchip,rk3568-naneng-combphy";
++      reg = <0xfe820000 0x100>;
++      clocks = <&pmucru CLK_PCIEPHY0_REF>,
++               <&cru PCLK_PIPEPHY0>,
++               <&cru PCLK_PIPE>;
++      clock-names = "ref", "apb", "pipe";
++      assigned-clocks = <&pmucru CLK_PCIEPHY0_REF>;
++      assigned-clock-rates = <100000000>;
++      resets = <&cru SRST_PIPEPHY0>;
++      rockchip,pipe-grf = <&pipegrf>;
++      rockchip,pipe-phy-grf = <&pipe_phy_grf0>;
++      #phy-cells = <1>;
++    };
 -- 
 2.17.1
 
