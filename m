@@ -4,72 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1588DC433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Dec 2021 20:40:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40738C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Dec 2021 21:03:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MgxwXv6ZJRiZCmF2dtclN1HZENno3luLr0VfXlvyKoU=; b=LT8yBHrmmi74cp
-	kaKn1g74f0Mlz2cxXo2i35qVRUsrHleXlN0mbG1ny1zjHwzsEj00FeMhMxJM499cSer96KsBXODxm
-	WzswppRYFXD05zGnF3m3cw+dkpFEvo1VpN0gauymYRuNWNBoN0ASA46oh3UZzlaMH+dZSf5NytqeP
-	gjZko3/lIdNl+8LWlZDrJ0sui+nBOTAXvnqSjY8Wk+N43+MIL66kttY33sFYKfhQHV2MTrOe3BDbb
-	5MjHKamgDzWD6qqGck9JHaOl3pICWEdcnNNm7Q1wqc9LmgkHAU4tfKvXgHFAYaNh6n8kUPbtNysZ6
-	Oqp1VO3rk7dPDe/2QWFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JLSFoyeIpHYr1cLgkctdUzNFSHq/3AHJV4GoMhVpciw=; b=Z3DmilbgGvajNk
+	gZc+nPKjnuwno/faz7sXQLR3G8gQRqkhXyZI6ui5KheVnuoiWfJl90PQdLhXHxL6frC+YOfaOlmdl
+	F2aYN0+GybHmJK3YUWErllnnCv7kmSGVYyB/P62UhIH1GWtF4sXo2mNK2vQuzpC8yDRr2TIH0c/r+
+	waBefC0QamH2C/vvvem8DftYYYtZyj9sFKmgAYc14dJVqmF+xGYQZfFRmbZ3qdFVn6snukLHABrhm
+	IkNImvy2QGRLsvfoyUkV6PhlHtlMNcDrmpN6HMjSVZ/IIQUsU46hGt/4DnWBirvvZBX/wcENdCkXH
+	nakmFWPRbHmu25SUuTCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mxb4z-002fkn-GL; Wed, 15 Dec 2021 20:40:49 +0000
-Received: from mail-oo1-f54.google.com ([209.85.161.54])
+	id 1mxbQV-002iXw-Gw; Wed, 15 Dec 2021 21:03:03 +0000
+Received: from mail-qt1-x82d.google.com ([2607:f8b0:4864:20::82d])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mxb4v-002fie-Ud
- for linux-phy@lists.infradead.org; Wed, 15 Dec 2021 20:40:47 +0000
-Received: by mail-oo1-f54.google.com with SMTP id
- b1-20020a4a8101000000b002c659ab1342so6271139oog.1
- for <linux-phy@lists.infradead.org>; Wed, 15 Dec 2021 12:40:45 -0800 (PST)
+ id 1mxbQS-002iVs-Nk; Wed, 15 Dec 2021 21:03:02 +0000
+Received: by mail-qt1-x82d.google.com with SMTP id l8so23257950qtk.6;
+ Wed, 15 Dec 2021 13:02:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=rg/3hN0e0TCpLvswI7fQ10BFOQtPWlta0LiifXq1NbI=;
+ b=m4vnhxHPtB66eBAgJXgtLtT1LXEt8GiBufJHnBQbk/kyJwztY7pNerexrZ8bvsfRTn
+ sZDCZzgeeP+tARmrEhqM7xtYKA25U0DyxIezpPGkudj48aLWgFD/6+ycrY5HjS+9BKK1
+ Dqek4Vlbw+ID3u0AhVx47wHOIlSJh+z7DC5EALE1qZu2Fy7v3vEJ5U1GU+MyfhTjQr4V
+ 3ZFoYgQvcucjF+wl6JhPVO4AvQKcaGq3mZMyv2G2mC8rAr5lqM/8CTxIPH+0Q9BGfmzl
+ Hf+fMVrKwnjoFpGasxy+dnKBMhLvX0a2rCdw04xKGsSfNPQUMqwyugeruZzORTw7t+Ot
+ 2bvA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=tCm31AopJqJh3IGAGVf/dCMDar4WQOTuKl/qvZkribo=;
- b=X8wNrdf50T3bf/WqGOnULiYQKU4YjMVE7dk+QzQAEZ7Ej9F306AlkVlgUJ18hukgcD
- yyGU4fKm4m0gdL3MO+SKX8yQ/iZLTwkkH2XHoD20qo0Sry54cdmgq1I5Tjg8DBsySRDg
- GfMsAczpN+FS3PaMTS16uqDcNWaKoUQOd3rbfZen6gR0pvTvIONhrvz7j5EgY7TMu7+7
- GhU4CA4A3oY2Xhv/K3mAlFSWZ/o77eOQgo9iO8Bz1B0A+kZPqz7cxpG/W7xYdXkumvGF
- Z6L6PbG1mwIlm7DHLx2nLfx8qpU4W1k577VizasmLI3bnSTz4Ng6RvdoCWn7nH4IUk+8
- 1rcw==
-X-Gm-Message-State: AOAM532/J9POCHFH2IiVWx9/Gw47sm2EVeHLc6BKu9btYqdmm8LTipPj
- 5/bsYf1PgHvRjxbn3DgK6A==
-X-Google-Smtp-Source: ABdhPJwkO6XUr282lpbyRQWgyGURMsV/N5cuswo4uKTuUZTRW3m+/Apo0eeSYdMnHWOq88WSqW/wmw==
-X-Received: by 2002:a4a:3110:: with SMTP id k16mr8722917ooa.64.1639600844654; 
- Wed, 15 Dec 2021 12:40:44 -0800 (PST)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id b22sm527081oib.41.2021.12.15.12.40.43
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=rg/3hN0e0TCpLvswI7fQ10BFOQtPWlta0LiifXq1NbI=;
+ b=Oze/AHnIzmvBB7shmI5QDBlqfAwTXhnHOVzMA8MTh/lv1r582BG8JHH4Op2ytrPpHJ
+ 0NUro0rqu9Vuf5ZKxYKP1IqFpur659guWpEJVwICmWF+EA8iTqq8BrJw1Yb+7mlxBIWV
+ meRat+kOQ5asesRCX2s0JeHV0MBZvBDQLaA/NO+6CMMrLxM+hOjpbCobxnJ3PRackOmm
+ EaldvqAjCp5LfMuu2JkpqV0+uWMnXx9YbVNtp5Nz3SqUtrcU2mP7WLh/xBd5V3cBz6y1
+ pQtE4nGqGnlHISNQyBR0AH6byVL6WQr2ytnahb3h0VVdV2p87g3Xa7lqVml4q7MD16e3
+ PTZw==
+X-Gm-Message-State: AOAM533NznrYRiO6KUZ0tOY0km3Wb8BGFEC7Flag5TsfLNB3Y5V6FRVB
+ BLdC0JY+LsTa6hTxWLOSo2c=
+X-Google-Smtp-Source: ABdhPJwAzzADLtXZ0TSEB0cgsuZRavn1+kgANRdz7FqzEtZGT0zjUeqO3qZbwWB7F0PQWd6Y5qbdYQ==
+X-Received: by 2002:a05:622a:15ca:: with SMTP id
+ d10mr14054429qty.81.1639602177604; 
+ Wed, 15 Dec 2021 13:02:57 -0800 (PST)
+Received: from master-x64.sparksnet (c-98-233-193-225.hsd1.md.comcast.net.
+ [98.233.193.225])
+ by smtp.gmail.com with ESMTPSA id a20sm1644356qkh.63.2021.12.15.13.02.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Dec 2021 12:40:44 -0800 (PST)
-Received: (nullmailer pid 1801237 invoked by uid 1000);
- Wed, 15 Dec 2021 20:40:43 -0000
-Date: Wed, 15 Dec 2021 14:40:43 -0600
-From: Rob Herring <robh@kernel.org>
-To: Aswath Govindraju <a-govindraju@ti.com>
-Cc: Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-can@vger.kernel.org,
+ Wed, 15 Dec 2021 13:02:57 -0800 (PST)
+From: Peter Geis <pgwipeout@gmail.com>
+To: 
+Cc: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: ti,tcan104x-can: Document
- mux-states property
-Message-ID: <YbpSy0+x/SnTYUzb@robh.at.kernel.org>
-References: <20211214142908.27940-1-a-govindraju@ti.com>
- <20211214142908.27940-2-a-govindraju@ti.com>
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Michael Riesch <michael.riesch@wolfvision.net>,
+ Johan Jonker <jbx6244@gmail.com>, Rob Herring <robh@kernel.org>,
+ Ondrej Jirman <megous@megous.com>
+Subject: [PATCH v3 0/8] phy-rockchip-inno-usb2: support rk356x usb2phy
+Date: Wed, 15 Dec 2021 16:02:44 -0500
+Message-Id: <20211215210252.120923-1-pgwipeout@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211214142908.27940-2-a-govindraju@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211215_124046_017339_21D8EC26 
-X-CRM114-Status: GOOD (  21.41  )
+X-CRM114-CacheID: sfid-20211215_130300_796842_0B793BB5 
+X-CRM114-Status: GOOD (  10.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,53 +91,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Dec 14, 2021 at 07:59:07PM +0530, Aswath Govindraju wrote:
-> On some boards, for routing CAN signals from controller to transceivers,
-> muxes might need to be set. This can be implemented using mux-states
-> property. Therefore, document the same in the respective bindings.
-> 
-> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
-> ---
->  .../devicetree/bindings/phy/ti,tcan104x-can.yaml       | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> index 6107880e5246..7b9216e43b58 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> @@ -37,6 +37,15 @@ properties:
->        max bit rate supported in bps
->      minimum: 1
->  
-> +  mux-states:
-> +    description:
-> +      mux controller node to route the signals from controller to
-> +      transceiver. Two arguments can be present depending on the
-> +      mux chip. If one argument is used then it represents the state
-> +      to be set on the mux-chip. If there are two arguments then the
-> +      first argument is the control line and the second argument is
-> +      its corresponding state to be set, on the mux-chip.
-> +
+Good Afternoon,
 
-You are still describing how the mux-states works. What the cells 
-contain and how many are opaque to this binding. Here you need to 
-describe how many muxes you have and what they are controlling as that 
-is what is specific to this binding. If there is only one, this boils 
-down to 'maxItems: 1'. It's just like reg, interrupts, clocks, etc.
+This is my series to support the usb2 phy devices on the rk356x.
+The rk356x phy has a single muxed interrupt and has moved the usb2phy
+nodes out of the grf and into their own nodes.
+The phy needs to tie back into the grf for register control, similar to
+the rv1108.
+By moving the phys into their own nodes, they now have full
+#address_cells = 2 register addresses, but they still reside below the 32bit
+mmio range.
 
->  required:
->    - compatible
->    - '#phy-cells'
-> @@ -53,4 +62,5 @@ examples:
->        max-bitrate = <5000000>;
->        standby-gpios = <&wakeup_gpio1 16 GPIO_ACTIVE_LOW>;
->        enable-gpios = <&main_gpio1 67 GPIO_ACTIVE_HIGH>;
-> +      mux-states = <&mux0 1>;
->      };
-> -- 
-> 2.17.1
-> 
-> 
+This driver series only supports the host configuration for the rk356x.
+I have have tested it on the following:
+rk3566 - Pine64 Quartz64 Model A
+rk3399 - Pine64 Rockpro64
+
+Please provide feedback and comments as you see fit.
+
+Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
+
+Changelog:
+v3:
+- adjust usb2phy dt-bindings to filter correctly, thanks Rob and Johan
+- adjust usb2phy dts names to fix alphetical ordering, thanks Michael
+- squash "phy: rockchip-inno-usb2: Don't print useless error" thanks
+  Ondrej
+
+v2:
+- correct the order of the usb2phy-grf dt-bindings patch, thanks Johan
+- correct the conditional requirements of phy-rockchip-inno-usb2, thanks
+  Johan
+- drop increase generic-ohci clocks patch, thanks Heiko
+- correct rk356x.dtsi ordering
+- fix a dtbs-check callout
+
+Peter Geis (8):
+  dt-bindings: soc: rockchip: add rk3568-usb2phy-grf
+  dt-bindings: phy: phy-rockchip-inno-usb2: add rk3568 documentation
+  phy: phy-rockchip-inno-usb2: support #address_cells = 2
+  phy: phy-rockchip-inno-usb2: support standalone phy nodes
+  phy: phy-rockchip-inno-usb2: support muxed interrupts
+  phy: phy-rockchip-inno-usb2: add rk3568 support
+  arm64: dts: rockchip: add usb2 nodes to rk3568 device tree
+  arm64: dts: rockchip: add Quartz64-A usb2 support
+
+ .../bindings/phy/phy-rockchip-inno-usb2.yaml  |  44 ++-
+ .../devicetree/bindings/soc/rockchip/grf.yaml |   1 +
+ .../boot/dts/rockchip/rk3566-quartz64-a.dts   |  52 ++++
+ arch/arm64/boot/dts/rockchip/rk356x.dtsi      |  98 +++++++
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 259 ++++++++++++++----
+ 5 files changed, 396 insertions(+), 58 deletions(-)
+
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
