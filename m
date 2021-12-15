@@ -4,77 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF669C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Dec 2021 21:03:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC2F8C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Dec 2021 21:03:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UaAs95kU+9NFtfUKAK/WcKgSA6H/x7gUfYXbvFb6PH8=; b=ZsdKLFOjuuxwps
-	8NwcA7nF9vnp+CNsX2H900IWrNeJX43mlXoUeprFFh54iG8NCPjI+l4FU2f9O0JY6QUg7XmdpjFtG
-	D3H0dPmtfo+JLyKDhtxuta4+DoWrnPB0vWpDjWjG5fxgngqlvfmaopoq9b2HzFuJpE2WaI84X7JLB
-	qNfTJ85b6fPQWQ2MsuQ3HFl02Lbake4zbs2YLpgokRHBym2EscYO9d98g+aQ6LZcHU6K0FTpmJlHY
-	QosyBVC6b5SqXAdmFfvRe/vZPke2bfTK9h4pWzK4PAHUkOFdlrlfzYArsEa8TT6jVVPWENFs7YNxD
-	mMD2YTqL0pe5JRJjrVDA==;
+	List-Owner; bh=0onquYIKtFz8yeiJXAV736/hkmn4YV9AuoE77STgFdQ=; b=kguqxOoxxdxaxW
+	8r9SCPXO5mUk+T27CfjdoYagUdTUcEPXb/aVUH1M6wCIeTv6xCIO3WFOPGyrY7hi3xvJ14xVwvBus
+	P+VWx6scZ/4vfBnaobyiuYXf8+bpSD/4zDv+kVAR0vLLZuTwAErsRZ1umSjhwNNQSlivOCQj6eHPl
+	8byJLA+iGVy0ColaD3zqbpJl6PkVafFaXVeOuFKB1IlhsDVaTuphorbmVIL8PC6Ypqo80Zjz/GpdG
+	STBIp8PrwEB7eYOph3wGoEnAcZ98AW44UqfuOLxY8qxLoOd5WljQs27wi8zL87K14aHOaUBAFcc2U
+	jgl9MCBl4/hyY+iAIn7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mxbQs-002igd-62; Wed, 15 Dec 2021 21:03:26 +0000
-Received: from mail-qt1-x830.google.com ([2607:f8b0:4864:20::830])
+	id 1mxbR4-002ikx-52; Wed, 15 Dec 2021 21:03:38 +0000
+Received: from mail-qv1-xf33.google.com ([2607:f8b0:4864:20::f33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mxbQT-002iW6-Pn; Wed, 15 Dec 2021 21:03:03 +0000
-Received: by mail-qt1-x830.google.com with SMTP id m25so23211431qtq.13;
- Wed, 15 Dec 2021 13:03:01 -0800 (PST)
+ id 1mxbQU-002iWb-Uu; Wed, 15 Dec 2021 21:03:04 +0000
+Received: by mail-qv1-xf33.google.com with SMTP id o10so1033725qvc.5;
+ Wed, 15 Dec 2021 13:03:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Qtvoh3tWKPnOw1Z92Liu2Y3L35YeCARO/v2RhKvSqa0=;
- b=mtzYePaF3q6HIoiwUrD0Qpoz7PMauWz+vbmYJ+etGbJ+OJRihIBkniO1SJtHiYRvBA
- IWAyQW69QJiqB8j5Nx4u0aivp7TATGW+K6mrQAjEeEDN5q1V5kbNCR9vDoKFgOGr47Ol
- NXJcJIpg6es+Ku0I6+uFDD2KW2nx3T0zXhQKr5sOuZ3d6pZ1ntQ3lY86HAy/4NCQEess
- bpOhLYfvUo5wSZFFowYAcCig4XlKqjKf99PPPd1cZdXk6dsnBv/USG70cVj9Rfrzm/65
- FqunVFl+qqIxwchUM4kipSLPbISHrIKn4BdcgWzz1bUbQPIGW06zFWJCpuMfjYuzsb6R
- xNEw==
+ bh=df9+jLGWpWWmT9NM3fIUAh5IVXi+6QBCR7ad2jz9wxs=;
+ b=JzeCQwWGA2Y/dMp1IC8Y1WVUbgo5GqL9++OUCRZzN+3uREgW8CmSli1xUFG3hD34VO
+ iSBckW1mjWpPLH+TBXPVe6C6AS1b1PybBiFfJ8rk20C0mvzdZgF0CvrVNV/RUNZK9lot
+ DzhYCTou5DyMyM2BJ1LcwYhitMfRUqCyjSGTfV34Ds9fR6sDjdgDYvtIQb1VM205cM/B
+ LVjPh0E2yPZzstwuuj7IQWmnvoeeC1bN3CKwZ56z7Ht2BFD1X6HZQZuqRQCk3P60p9it
+ UFG4VxenQrnkUCWtDvqRR8PazIl2VlYuQ3nkKfSXWR3jjTvlut3hHx44wvIzseEC1Kt/
+ Tijg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Qtvoh3tWKPnOw1Z92Liu2Y3L35YeCARO/v2RhKvSqa0=;
- b=pO3BcEh325x0Sjm5taInoklx4HZGKJc2sG7x+O6E9TVqvXH5tjsoM8/mRSePiiGRD0
- R4sbi8YCTmvKNejuWYEYRS5JGpDlBIp2VY5Qw7H/Wfb0vT2osOWhfJkjAuThyPv0ecLO
- fW5LcKmpgqn9x+NPBDSDtYZ64qds3DWIYwuesQKq1RAHtXEFinWpD+DX0DEYi4GfrdZr
- hQOLzU8S766FoHGEQRxPItB5NQZgz/oMMSXs8EraR2O5QI3ODD1kHQKr5zww5u9glNHh
- hV7SyRBZtywkuZJxNeINlR/HryrgZ13pxvUB4gOO5G7j4PZc2a+t2q9JL54WQqr5Erx3
- GIoQ==
-X-Gm-Message-State: AOAM533SVdIjD9WbVY+EmCl6Lv09BmvJZX3QesuIRxaRCH445wY7I+zs
- sPmGyYUN/8Vb+ZAS0H60x2pSzRNHcmT4UA==
-X-Google-Smtp-Source: ABdhPJzCgrybsdVfbHcMg+6x0kMS2UAJKkjdtqiz97/N6CuLvJ+knNOQtRgNMNMWkdBoAQCjKsaXuA==
-X-Received: by 2002:ac8:5e4a:: with SMTP id i10mr14343170qtx.569.1639602180345; 
- Wed, 15 Dec 2021 13:03:00 -0800 (PST)
+ bh=df9+jLGWpWWmT9NM3fIUAh5IVXi+6QBCR7ad2jz9wxs=;
+ b=qPY49BKZlfFFTgAoO9cSkKz4WklFjZHIrrjwgn05nU7mjSJgombrpOHY1lYBZ0E4tb
+ VNHN1F7aAjb1Act8cxlIDyd8nMUPiTPA7HpANdw9KJ8BJfgvVweukv5pCDze1ocK3Vrl
+ hEp7pihuiQijIvpRvzAvANyK4zMrBWbljNs32dkEgInLDYAZP/Oapaz2eS19XuYEGSHo
+ 1kiyBBHttQPw2URIJacMmYviDKZHVsWErttdgjIh3gDVl0mx8jBAGSIrqEiaOF67wlMF
+ UYK89N1Jtz3XQ5ItbQw4BRh7UXnNWIU1mUQi7k8/C40BwEArRK5ZoPMQaLQz3ThbS4A8
+ JMBw==
+X-Gm-Message-State: AOAM531VkeNqjvX9cHaUVceFTfQMKDptsXnaEp0sX044Wa5FTVoSGCof
+ rJbf7P0v1TRcROwcg1OLjVHEgifqB3cY0w==
+X-Google-Smtp-Source: ABdhPJzHXdQm0FRg98q5/QgMAlc0JVYTPSGVQQd9VCPiFNJsnjMNmYl5B1HSmn6brcszCZCQc+qC+g==
+X-Received: by 2002:a05:6214:260c:: with SMTP id
+ gu12mr13331158qvb.87.1639602181519; 
+ Wed, 15 Dec 2021 13:03:01 -0800 (PST)
 Received: from master-x64.sparksnet (c-98-233-193-225.hsd1.md.comcast.net.
  [98.233.193.225])
- by smtp.gmail.com with ESMTPSA id a20sm1644356qkh.63.2021.12.15.13.02.59
+ by smtp.gmail.com with ESMTPSA id a20sm1644356qkh.63.2021.12.15.13.03.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Dec 2021 13:02:59 -0800 (PST)
+ Wed, 15 Dec 2021 13:03:01 -0800 (PST)
 From: Peter Geis <pgwipeout@gmail.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-Cc: Peter Geis <pgwipeout@gmail.com>, Johan Jonker <jbx6244@gmail.com>,
- Rob Herring <robh@kernel.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Heiko Stuebner <heiko@sntech.de>
+Cc: Peter Geis <pgwipeout@gmail.com>,
+ Michael Riesch <michael.riesch@wolfvision.net>,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v3 2/8] dt-bindings: phy: phy-rockchip-inno-usb2: add rk3568
- documentation
-Date: Wed, 15 Dec 2021 16:02:46 -0500
-Message-Id: <20211215210252.120923-3-pgwipeout@gmail.com>
+Subject: [PATCH v3 3/8] phy: phy-rockchip-inno-usb2: support #address_cells = 2
+Date: Wed, 15 Dec 2021 16:02:47 -0500
+Message-Id: <20211215210252.120923-4-pgwipeout@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20211215210252.120923-1-pgwipeout@gmail.com>
 References: <20211215210252.120923-1-pgwipeout@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211215_130301_859037_13491761 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20211215_130303_024002_1678481C 
+X-CRM114-Status: GOOD (  13.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,115 +91,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The rk3568 usb2phy node is a standalone node with a single muxed
-interrupt.
-Add documentation for it to phy-rockchip-inno-usb2.
+New Rockchip devices have the usb phy nodes as standalone devices.
+These nodes have register nodes with #address_cells = 2, but only use 32
+bit addresses.
+
+Adjust the driver to check if the returned address is "0", and adjust
+the index in that case.
 
 Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
+
 ---
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
-This was the best solution I've come up with for this.
-I avoided creating another binding since this is such a simple change to
-the actual driver and would likely require renaming the existing
-binding.
-I've tested that this correctly flags if the interrupts are missing or
-incorrectly assigned on both rk356x and rk3399.
-
-Thank you Johan and Rob for your constructive feedback.
-
- .../bindings/phy/phy-rockchip-inno-usb2.yaml  | 44 +++++++++++++++++--
- 1 file changed, 40 insertions(+), 4 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-index 5bebd86bf8b6..4b75289735eb 100644
---- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-+++ b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-@@ -18,6 +18,7 @@ properties:
-       - rockchip,rk3328-usb2phy
-       - rockchip,rk3366-usb2phy
-       - rockchip,rk3399-usb2phy
-+      - rockchip,rk3568-usb2phy
-       - rockchip,rv1108-usb2phy
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 1938365abbb3..5cfa7169d879 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1091,12 +1091,21 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
+ 		rphy->usbgrf = NULL;
+ 	}
  
-   reg:
-@@ -50,6 +51,10 @@ properties:
-     description:
-       Phandle to the extcon device providing the cable state for the otg phy.
+-	if (of_property_read_u32(np, "reg", &reg)) {
++	if (of_property_read_u32_index(np, "reg", 0, &reg)) {
+ 		dev_err(dev, "the reg property is not assigned in %pOFn node\n",
+ 			np);
+ 		return -EINVAL;
+ 	}
  
-+  interrupts:
-+    description: Muxed interrupt for both ports
-+    maxItems: 1
++	/* support address_cells=2 */
++	if (reg == 0) {
++		if (of_property_read_u32_index(np, "reg", 1, &reg)) {
++			dev_err(dev, "the reg property is not assigned in %pOFn node\n",
++				np);
++			return -EINVAL;
++		}
++	}
 +
-   rockchip,usbgrf:
-     $ref: /schemas/types.yaml#/definitions/phandle
-     description:
-@@ -67,6 +72,7 @@ properties:
- 
-       interrupts:
-         description: host linestate interrupt
-+        maxItems: 1
- 
-       interrupt-names:
-         const: linestate
-@@ -78,8 +84,6 @@ properties:
- 
-     required:
-       - "#phy-cells"
--      - interrupts
--      - interrupt-names
- 
-   otg-port:
-     type: object
-@@ -109,8 +113,6 @@ properties:
- 
-     required:
-       - "#phy-cells"
--      - interrupts
--      - interrupt-names
- 
- required:
-   - compatible
-@@ -120,6 +122,40 @@ required:
-   - host-port
-   - otg-port
- 
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: rockchip,rk3568-usb2phy
-+
-+    then:
-+      properties:
-+        host-port:
-+          properties:
-+            interrupts: false
-+
-+        otg-port:
-+          properties:
-+            interrupts: false
-+
-+      required:
-+        - interrupts
-+
-+    else:
-+      properties:
-+        interrupts: false
-+
-+        host-port:
-+          required:
-+            - interrupts
-+            - interrupt-names
-+
-+        otg-port:
-+          required:
-+            - interrupts
-+            - interrupt-names
-+
- additionalProperties: false
- 
- examples:
+ 	rphy->dev = dev;
+ 	phy_cfgs = match->data;
+ 	rphy->chg_state = USB_CHG_STATE_UNDEFINED;
 -- 
 2.25.1
 
