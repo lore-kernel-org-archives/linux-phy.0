@@ -4,53 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43E29C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Dec 2021 10:34:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07956C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Dec 2021 12:45:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yv+NyNMo63dZY0Uaa4GhsKvMfU5Xd+BITwjj8hCfBa0=; b=LctbrO5gb2uiPg
-	v81NYU74SvVmTOtDiMp2cAUMUaqYcSb08JFI+tR2Faeqlw2NjWOjMHhKreLE9oyvTc6J/O8DCY/VL
-	e6/B6XyWbDuon0/3q3hAuzaC46AqX8020eWuaQEyxnGD/oBDpi9purO6m/TwY2ynqiTnAILQQ7+Uo
-	5JpVflKkUPZVt+Q8lnCpOd2hh6mWOLg/OHRE1BG+ofIZAtFLpeFltE+J7Op8qk/lSU7WYoqiTr2oV
-	X/Se7wKXG/Mq/U9m5PoolDgDvyZMARHyshFfKolImC+vMldvPxDiu9GHOuDXNc+L7a29WEG04j7fS
-	ML+GNIDxDFyM+vsMta3A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=T9CMTT6VmRrRu6Pvw7USHpQwXNcZVHCub1AgsPJplsE=; b=SqKvgKW3V7YAZ24C3gZvEnYYMi
+	ICaSurbNgilGDNZ84fWdh/eBXi90gLj2hzunPwChIXYASCMy8Kbx6Y6K89WOe362RGt0BfJ66FWJ8
+	jWxL2w7IVXJfs392RHjiS4qOLecqehaqmqbTk3Zf9Jv8wof8m7Y7wcvzwp0Sf0uRIdeqW5GaGJwYO
+	k1xUisdydMoHyb18DRf8nBVofJ3n3tVZ1wigLSLc3FOZPKNfBnanJ1UiSp4JbO87lsPQ9pE24SFwv
+	NzNb/0KzlP6MGh6ZGxSmSW0WsyA+15jaccbS+MnTtQ+3ji5h4WLr2Sj5Jy70nATSsYxkTIViclr6Z
+	9K4ukN+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mxo5e-004s78-LE; Thu, 16 Dec 2021 10:34:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mxo5S-004s3r-Cb; Thu, 16 Dec 2021 10:34:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 16C8A1474;
- Thu, 16 Dec 2021 02:34:06 -0800 (PST)
-Received: from e123427-lin.arm.com (unknown [10.57.36.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 450473F774;
- Thu, 16 Dec 2021 02:34:02 -0800 (PST)
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: vkoul@kernel.org, tharvey@gateworks.com, robh@kernel.org,
- l.stach@pengutronix.de, galak@kernel.crashing.org, shawnguo@kernel.org,
- Richard Zhu <hongxing.zhu@nxp.com>, bhelgaas@google.com,
- marcel.ziswiler@toradex.com, kishon@ti.com
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-phy@lists.infradead.org, linux-imx@nxp.com, kernel@pengutronix.de,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: (subset) [PATCH v7 0/8] Add the imx8m pcie phy driver and imx8mm
- pcie support
-Date: Thu, 16 Dec 2021 10:33:51 +0000
-Message-Id: <163965080404.20006.5241609551643501749.b4-ty@arm.com>
-X-Mailer: git-send-email 2.31.0
-In-Reply-To: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
+	id 1mxq8v-005W0J-4q; Thu, 16 Dec 2021 12:45:53 +0000
+Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1mxpj3-005O8V-EH; Thu, 16 Dec 2021 12:19:11 +0000
+Received: by mail-ed1-x52f.google.com with SMTP id z29so6216017edl.7;
+ Thu, 16 Dec 2021 04:19:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=VIrvjDDC253+7I8ItkMS3rF4mFMXAntO0qv9ce/v2ss=;
+ b=TZ9XFXMMw5EhhxSGFi3vG/xVzFNWggatiVkyZ2dRaR8zi7wtRaJg9Cyc890t5T0eBy
+ kL6I1F09o36UZCn5ZJPKhoUkKd8Dml7AK2/peCess7th2CL5Bwb4oE+h96y4fmfXPD+b
+ E2zCJOHlC+xaFs5a4qwGAUPlNs1eknqghiA/bHZ9wmOwoFP+x6OrksG5Gqa+l8sQ7iRd
+ UlIY2DOMZg9I4oP3mToCpMF3wnuaWjQIuO++/MEWwglBp45wiTFEakm8TT/l6ecR+3OE
+ AoJmHEGQ8XhMj6nMKNUvS8xsauFeEVYa3zJGFHfugx7S87Yf68wq42LnJ0G8baBF19zW
+ BCtQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=VIrvjDDC253+7I8ItkMS3rF4mFMXAntO0qv9ce/v2ss=;
+ b=2FnxuDXoJz7K15qwm/VnGpHz8tzEbhN7iwZF4zu3Lt75FJZ2lvCRllyLSvX7L+LTQI
+ OvnBK8d1pMHysRxOJn1/JhwnFZM9WqdV2t+8eTKWr5T3uhKxF/A2EzmnmktEsO0lGq7R
+ ShEkPcZSO1lvpBQxltWv1OEBpbJqO+Oc/fchYUIHFQQtBKPIJv1fTL9BqeaS/yLKUrxs
+ JRxL0SMKFF0V3iUxjsyCn+5b7DjX8jn9rHpxElzQsUB7f4IH5LyUscAFpJTDcYE3CVkE
+ yVbBtyW/WzmpmqVoQsddQBdy0fnZzI32etpeW88DlRiKrOlZ+JLV533HfDao3+zC2X6T
+ 9K1A==
+X-Gm-Message-State: AOAM533vOK61SZEqOGhvoGUA36r9bHkrRBS0ygTMpf6CkdCas+OuaJmf
+ wo1qJx6MZp6wj1GonhDjr/o=
+X-Google-Smtp-Source: ABdhPJx57/Y1ToabDY4iwszQILT22ZlEjX0GXMZ1x7wPjWQTqERZnVyFHWZxA4fjm4VC1CK/hvpHIQ==
+X-Received: by 2002:a05:6402:4413:: with SMTP id
+ y19mr19904062eda.26.1639657146167; 
+ Thu, 16 Dec 2021 04:19:06 -0800 (PST)
+Received: from [192.168.2.1] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id
+ z8sm2395456edb.5.2021.12.16.04.19.05
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 16 Dec 2021 04:19:05 -0800 (PST)
+Subject: Re: [PATCH v5 4/4] arm64: dts: rockchip: add naneng combo phy nodes
+ for rk3568
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>, heiko@sntech.de
+Cc: robh+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org,
+ michael.riesch@wolfvision.net, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, kishon@ti.com, p.zabel@pengutronix.de,
+ cl@rock-chips.com, kever.yang@rock-chips.com
+References: <20211215095657.13183-1-yifeng.zhao@rock-chips.com>
+ <20211215095657.13183-5-yifeng.zhao@rock-chips.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <c91c1a5a-44cf-f2d5-4d1b-f864912fcc90@gmail.com>
+Date: Thu, 16 Dec 2021 13:19:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.14.0
 MIME-Version: 1.0
+In-Reply-To: <20211215095657.13183-5-yifeng.zhao@rock-chips.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211216_023410_518547_81F11F4B 
-X-CRM114-Status: UNSURE (   7.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20211216_041909_580532_2AF11F05 
+X-CRM114-Status: GOOD (  22.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,25 +97,306 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2 Dec 2021 16:02:30 +0800, Richard Zhu wrote:
-> Refer to the discussion [1] when try to enable i.MX8MM PCIe support,
-> one standalone PCIe PHY driver should be seperated from i.MX PCIe
-> driver when enable i.MX8MM PCIe support.
+Hi Heiko, Yifeng,
+
+Could you advise whether we should change the DT layout and driver a bit.
+Some properties don't really fit to one particular phy node, so move
+them to a parent node.
+
+Maybe replace rockchip,sgmii-mac-sel by a node in phy 1 and 2 ??
+
+Also there are two USB3.0 Controllers, one can use as USB3.0 OTG
+Controller, another one can use as USB3.0 Host Controller only.
+Yet properties are called: rockchip,dis-u3otg0-port,
+rockchip,dis-u3otg1-port.
+Maybe replace them by a node ??
+
+Unknown capabilities of future (rk3588) Naneng versions (combined  host
+and otg ??)
+
+Maybe follow more in line with the phy-rockchip-inno-usb2.c and
+phy-rockchip-usb.c drivers.
+
+Could you confirm combo PHY on the RK3566 lacks the QSGMII/SGMII stuff?
+(Lack of rk3566 TRM)
+
+With so many differences maybe use separate compatible string and keep
+the DT nodes completely apart.
+(rockchip,rk3566-naneng-combphy, rockchip,rk3568-naneng-combphy)
+
+
+
+Johan
+
+================================
+
+	combphy: combphy {
+		compatible = "rockchip,rk3568-naneng-combphy";
+========
+		rockchip,ext-refclk;
+		rockchip,enable-ssc;
+		rockchip,pipe-grf = <&pipegrf>;
+========
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+		status = "disabled";
+
+		combphy0: combi-phy@fe820000 {
+			reg = <0x0 0xfe820000 0x0 0x100>;
+			clocks = <&pmucru CLK_PCIEPHY0_REF>,
+				 <&cru PCLK_PIPEPHY0>,
+				 <&cru PCLK_PIPE>;
+			clock-names = "ref", "apb", "pipe";
+			assigned-clocks = <&pmucru CLK_PCIEPHY0_REF>;
+			assigned-clock-rates = <100000000>;
+			resets = <&cru SRST_PIPEPHY0>;
+			rockchip,pipe-phy-grf = <&pipe_phy_grf0>;
+			#phy-cells = <1>;
+			status = "disabled";
+
+			u3phy0_otg: otg-port {
+===
+				/* ??? */
+				#phy-cells = <0>;
+				status = "disabled";
+===
+			};
+		};
+
+		combphy1: combi-phy@fe830000 {
+			reg = <0x0 0xfe830000 0x0 0x100>;
+			clocks = <&pmucru CLK_PCIEPHY1_REF>,
+				 <&cru PCLK_PIPEPHY1>,
+				 <&cru PCLK_PIPE>;
+			clock-names = "ref", "apb", "pipe";
+			assigned-clocks = <&pmucru CLK_PCIEPHY1_REF>;
+			assigned-clock-rates = <100000000>;
+			resets = <&cru SRST_PIPEPHY1>;
+			rockchip,pipe-phy-grf = <&pipe_phy_grf1>;
+			#phy-cells = <1>;
+			status = "disabled";
+
+			u3phy0_host: host-port {
+===
+				/* ??? */
+				#phy-cells = <0>;
+				status = "disabled";
+===
+			}
+
+			sgmii_port: sgmii-port {
+
+				/* ??? */
+				status = "disabled";
+			}
+		};
+
+		combphy2: combi-phy@fe840000 {
+			reg = <0x0 0xfe840000 0x0 0x100>;
+			clocks = <&pmucru CLK_PCIEPHY2_REF>,
+				 <&cru PCLK_PIPEPHY2>,
+				 <&cru PCLK_PIPE>;
+			clock-names = "ref", "apb", "pipe";
+			assigned-clocks = <&pmucru CLK_PCIEPHY2_REF>;
+			assigned-clock-rates = <100000000>;
+			resets = <&cru SRST_PIPEPHY2>;
+			rockchip,pipe-phy-grf = <&pipe_phy_grf2>;
+			#phy-cells = <1>;
+			status = "disabled";
+
+			sgmii_port: sgmii-port {
+
+				/* ??? */
+				status = "disabled";
+			}
+		};
+	}
+
+==============
+Example from phy-rockchip-usb.c:
+
+	for_each_available_child_of_node(dev->of_node, child) {
+		err = rockchip_combphy_init(phy_base, child);
+		if (err) {
+			of_node_put(child);
+			return err;
+		}
+	}
+
+==============
+Example from phy-rockchip-inno-usb2.c:
+
+		/* initialize otg/host port separately */
+		if (of_node_name_eq(child_np, "host-port")) {
+			ret = rockchip_usb3phy_host_port_init(rphy, rport,
+							      child_np);
+			if (ret)
+				goto put_child;
+		} else {
+			ret = rockchip_usb3phy_otg_port_init(rphy, rport,
+							     child_np);
+			if (ret)
+				goto put_child;
+		}
+
+===============
+Example from dwmac-rk.c:
+	/* Multiple Naneng phy controllers need
+	 * to be distinguished.
+	 */
+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+	if (res) {
+		int i = 0;
+
+		while (ops->regs[i]) {
+			if (ops->regs[i] == res->start) {
+				bsp_priv->id = i;
+				break;
+			}
+			i++;
+		}
+	}
+
+================
+
+On 12/15/21 10:56 AM, Yifeng Zhao wrote:
+> Add the core dt-node for the rk3568's naneng combo phys.
 > 
-> This patch-set adds the standalone PCIe PHY driver suport[1-5], and i.MX8MM
-> PCIe support[6-8] to have whole view to review this patch-set.
+> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
 > 
-> [...]
-
-Applied to pci/dwc, thanks!
-
-[3/8] dt-bindings: imx6q-pcie: Add PHY phandles and name properties
-      https://git.kernel.org/lpieralisi/pci/c/3e15f623bb
-[8/8] PCI: imx: Add the imx8mm pcie support
-      https://git.kernel.org/lpieralisi/pci/c/d5a8dec49b
-
-Thanks,
-Lorenzo
+> Changes in v5:
+> - remove apb reset
+> 
+> Changes in v4:
+> - rename node name
+> - remove reset-names
+> - move #phy-cells
+> - add rockchip,rk3568-pipe-grf
+> - add rockchip,rk3568-pipe-phy-grf
+> 
+> Changes in v3:
+> - Move pipe_phy_grf0 to rk3568.dtsi
+> 
+> Changes in v2:
+> - Move phy0 to rk3568.dtsi
+> 
+>  arch/arm64/boot/dts/rockchip/rk3568.dtsi | 21 +++++++++++
+>  arch/arm64/boot/dts/rockchip/rk356x.dtsi | 47 ++++++++++++++++++++++++
+>  2 files changed, 68 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3568.dtsi b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
+> index 2fd313a295f8..91a0b798b857 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3568.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
+> @@ -8,6 +8,11 @@
+>  / {
+>  	compatible = "rockchip,rk3568";
+>  
+> +	pipe_phy_grf0: syscon@fdc70000 {
+> +		compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
+> +		reg = <0x0 0xfdc70000 0x0 0x1000>;
+> +	};
+> +
+>  	qos_pcie3x1: qos@fe190080 {
+>  		compatible = "rockchip,rk3568-qos", "syscon";
+>  		reg = <0x0 0xfe190080 0x0 0x20>;
+> @@ -71,6 +76,22 @@
+>  			queue0 {};
+>  		};
+>  	};
+> +
+> +	combphy0: phy@fe820000 {
+> +		compatible = "rockchip,rk3568-naneng-combphy";
+> +		reg = <0x0 0xfe820000 0x0 0x100>;
+> +		clocks = <&pmucru CLK_PCIEPHY0_REF>,
+> +			 <&cru PCLK_PIPEPHY0>,
+> +			 <&cru PCLK_PIPE>;
+> +		clock-names = "ref", "apb", "pipe";
+> +		assigned-clocks = <&pmucru CLK_PCIEPHY0_REF>;
+> +		assigned-clock-rates = <100000000>;
+> +		resets = <&cru SRST_PIPEPHY0>;
+> +		rockchip,pipe-grf = <&pipegrf>;
+> +		rockchip,pipe-phy-grf = <&pipe_phy_grf0>;
+> +		#phy-cells = <1>;
+> +		status = "disabled";
+> +	};
+>  };
+>  
+>  &cpu0_opp_table {
+> diff --git a/arch/arm64/boot/dts/rockchip/rk356x.dtsi b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
+> index a68033a23975..93f230f799f1 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk356x.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
+> @@ -218,11 +218,26 @@
+>  		};
+>  	};
+>  
+> +	pipegrf: syscon@fdc50000 {
+> +		compatible = "rockchip,rk3568-pipe-grf", "syscon";
+> +		reg = <0x0 0xfdc50000 0x0 0x1000>;
+> +	};
+> +
+>  	grf: syscon@fdc60000 {
+>  		compatible = "rockchip,rk3568-grf", "syscon", "simple-mfd";
+>  		reg = <0x0 0xfdc60000 0x0 0x10000>;
+>  	};
+>  
+> +	pipe_phy_grf1: syscon@fdc80000 {
+> +		compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
+> +		reg = <0x0 0xfdc80000 0x0 0x1000>;
+> +	};
+> +
+> +	pipe_phy_grf2: syscon@fdc90000 {
+> +		compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
+> +		reg = <0x0 0xfdc90000 0x0 0x1000>;
+> +	};
+> +
+>  	pmucru: clock-controller@fdd00000 {
+>  		compatible = "rockchip,rk3568-pmucru";
+>  		reg = <0x0 0xfdd00000 0x0 0x1000>;
+> @@ -1141,6 +1156,38 @@
+>  		status = "disabled";
+>  	};
+>  
+> +	combphy1: phy@fe830000 {
+> +		compatible = "rockchip,rk3568-naneng-combphy";
+> +		reg = <0x0 0xfe830000 0x0 0x100>;
+> +		clocks = <&pmucru CLK_PCIEPHY1_REF>,
+> +			 <&cru PCLK_PIPEPHY1>,
+> +			 <&cru PCLK_PIPE>;
+> +		clock-names = "ref", "apb", "pipe";
+> +		assigned-clocks = <&pmucru CLK_PCIEPHY1_REF>;
+> +		assigned-clock-rates = <100000000>;
+> +		resets = <&cru SRST_PIPEPHY1>;
+> +		rockchip,pipe-grf = <&pipegrf>;
+> +		rockchip,pipe-phy-grf = <&pipe_phy_grf1>;
+> +		#phy-cells = <1>;
+> +		status = "disabled";
+> +	};
+> +
+> +	combphy2: phy@fe840000 {
+> +		compatible = "rockchip,rk3568-naneng-combphy";
+> +		reg = <0x0 0xfe840000 0x0 0x100>;
+> +		clocks = <&pmucru CLK_PCIEPHY2_REF>,
+> +			 <&cru PCLK_PIPEPHY2>,
+> +			 <&cru PCLK_PIPE>;
+> +		clock-names = "ref", "apb", "pipe";
+> +		assigned-clocks = <&pmucru CLK_PCIEPHY2_REF>;
+> +		assigned-clock-rates = <100000000>;
+> +		resets = <&cru SRST_PIPEPHY2>;
+> +		rockchip,pipe-grf = <&pipegrf>;
+> +		rockchip,pipe-phy-grf = <&pipe_phy_grf2>;
+> +		#phy-cells = <1>;
+> +		status = "disabled";
+> +	};
+> +
+>  	pinctrl: pinctrl {
+>  		compatible = "rockchip,rk3568-pinctrl";
+>  		rockchip,grf = <&grf>;
+> 
 
 -- 
 linux-phy mailing list
