@@ -4,62 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C94A0C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Dec 2021 06:36:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43E29C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Dec 2021 10:34:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xlKLR0w/g8HtoHpDOgsttaYWZeYp5evU89bT9gRum7w=; b=cJukAuK+4jGZiC
-	DVKudzZfGR8eBGRuJS09n9IhUwJUYJEamMUrFZz4uhH/PMkvvttQP21/Z5rPfkglNQlfDQyjKWbOy
-	DpsrNtDxPlzziAf9ZbDVsK4S8eubcMGVfj6dL2ielysBccVecVivnHdLOnvr9FQo/Ax1Z5uEMTD8V
-	GofQsG/WbYcKbydbYgHIr1DjOMDfstEakNI4D8SzwRWNboYQvlUrDVyt/qdqj+lGx8YKTXNJ8SlPt
-	R4iS5WOt90TOyDiY55CAkMv1WWRPIqIysxGveIskZX6d4dwiiR1zvxkSl29+GiT3K2Z9TbbLFnUCo
-	ywzW964Tki/AZ2fzZXUw==;
+	List-Owner; bh=Yv+NyNMo63dZY0Uaa4GhsKvMfU5Xd+BITwjj8hCfBa0=; b=LctbrO5gb2uiPg
+	v81NYU74SvVmTOtDiMp2cAUMUaqYcSb08JFI+tR2Faeqlw2NjWOjMHhKreLE9oyvTc6J/O8DCY/VL
+	e6/B6XyWbDuon0/3q3hAuzaC46AqX8020eWuaQEyxnGD/oBDpi9purO6m/TwY2ynqiTnAILQQ7+Uo
+	5JpVflKkUPZVt+Q8lnCpOd2hh6mWOLg/OHRE1BG+ofIZAtFLpeFltE+J7Op8qk/lSU7WYoqiTr2oV
+	X/Se7wKXG/Mq/U9m5PoolDgDvyZMARHyshFfKolImC+vMldvPxDiu9GHOuDXNc+L7a29WEG04j7fS
+	ML+GNIDxDFyM+vsMta3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mxkNK-003mV4-85; Thu, 16 Dec 2021 06:36:22 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mxkNH-003mU4-7W
- for linux-phy@lists.infradead.org; Thu, 16 Dec 2021 06:36:20 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 3C5B061C4E;
- Thu, 16 Dec 2021 06:36:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D3DEDC36AE2;
- Thu, 16 Dec 2021 06:36:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1639636577;
- bh=neU9K+dVdRN9HYvVjoIapl4HfMVGMGGHHK9OM8vGk9w=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vFcnYOgRfdBfISm46BAT8cSFrqfRG1QkFwb1Gx2T5yoaanL83Tdi0won7+pwl9NBW
- Ew6Z5aOHaClbdfACdrx3CBtdU1sDlN4jG53sNC3TKXkl1duV6a0921hCjoZojXx3GE
- EYADMd3o0SN9It835KWhYxQ0A+QD2eTqijNOqE0TKKWiWP2MZFQAiP5jxnMUVJB0F6
- 44GXU63DUbKbtIdBXfuUIC0Z3lYY/LuZWJ3qYDkRzok9PkKzcQmFhVMW7vGD2nQBbA
- qXIPT5D+SDtgWQb5I9VV1LFFPeLRLEt9jGZ+YNyhE8cXlIvgI3S6WDMLtALID2b4Yd
- onD7YnQHVt7VQ==
-Date: Thu, 16 Dec 2021 12:06:13 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>
-Cc: linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Wesley Cheng <wcheng@codeaurora.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add
- bindings for SM8450
-Message-ID: <YbreXVkMoOcoeHAA@matsya>
-References: <20211213131450.535775-1-vkoul@kernel.org>
+	id 1mxo5e-004s78-LE; Thu, 16 Dec 2021 10:34:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1mxo5S-004s3r-Cb; Thu, 16 Dec 2021 10:34:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 16C8A1474;
+ Thu, 16 Dec 2021 02:34:06 -0800 (PST)
+Received: from e123427-lin.arm.com (unknown [10.57.36.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 450473F774;
+ Thu, 16 Dec 2021 02:34:02 -0800 (PST)
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: vkoul@kernel.org, tharvey@gateworks.com, robh@kernel.org,
+ l.stach@pengutronix.de, galak@kernel.crashing.org, shawnguo@kernel.org,
+ Richard Zhu <hongxing.zhu@nxp.com>, bhelgaas@google.com,
+ marcel.ziswiler@toradex.com, kishon@ti.com
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-phy@lists.infradead.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Subject: Re: (subset) [PATCH v7 0/8] Add the imx8m pcie phy driver and imx8mm
+ pcie support
+Date: Thu, 16 Dec 2021 10:33:51 +0000
+Message-Id: <163965080404.20006.5241609551643501749.b4-ty@arm.com>
+X-Mailer: git-send-email 2.31.0
+In-Reply-To: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20211213131450.535775-1-vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211215_223619_330251_4DF25AE8 
-X-CRM114-Status: UNSURE (   6.71  )
+X-CRM114-CacheID: sfid-20211216_023410_518547_81F11F4B 
+X-CRM114-Status: UNSURE (   7.59  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,13 +67,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-12-21, 18:44, Vinod Koul wrote:
-> Document the compatible string for USB phy found in Qualcomm SM8450 SoC
+On Thu, 2 Dec 2021 16:02:30 +0800, Richard Zhu wrote:
+> Refer to the discussion [1] when try to enable i.MX8MM PCIe support,
+> one standalone PCIe PHY driver should be seperated from i.MX PCIe
+> driver when enable i.MX8MM PCIe support.
+> 
+> This patch-set adds the standalone PCIe PHY driver suport[1-5], and i.MX8MM
+> PCIe support[6-8] to have whole view to review this patch-set.
+> 
+> [...]
 
-Applied all, thanks
+Applied to pci/dwc, thanks!
 
--- 
-~Vinod
+[3/8] dt-bindings: imx6q-pcie: Add PHY phandles and name properties
+      https://git.kernel.org/lpieralisi/pci/c/3e15f623bb
+[8/8] PCI: imx: Add the imx8mm pcie support
+      https://git.kernel.org/lpieralisi/pci/c/d5a8dec49b
+
+Thanks,
+Lorenzo
 
 -- 
 linux-phy mailing list
