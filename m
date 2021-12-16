@@ -4,71 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22901C433FE
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Dec 2021 20:31:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A67BC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Dec 2021 20:33:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OyD1xJv+6AiE28QjioIFqT98YhBtVxus8xYpoI21AhM=; b=uxTdWAXXu5oC5v
-	0D87VY0P/m78guUUGNSZxX3lhiYr0OgJnrfhex0vEWQMg2N2F2bylQHi6dy83iYz6VNSu23ajiZo0
-	sxmZZvf+5BjHbnzZrXzfYIDh/mkofIqvT1mktvMdLsV8M86W8BNDc0asbxApgsXw4gQL0P79fx4w5
-	eyWyVc2ax00jhddrWOUV2qB/3EqOhwivHVzS1fcfkpqrqjxPGhGHYvsMFAh07IhZPVbC/2nOKm5Rh
-	kfAWHeqwIlGQtQ84k3xZULOqr003fZJyG1Sm9e8nH4CkUSAAFIxHdeE++n3Qpvgt3IwSN+5V+3Do9
-	8pV8OLKi9VI4f3Oi7wlw==;
+	List-Owner; bh=S7C7Po6si+nzGKTFlRm7m0DQ8v9/mdNcILsRseUNluw=; b=POLXFbAlX0cmOC
+	2OBWX2aZfAq6miVlHCK8i3tun5aK06hncvHdBditcQxi84RSr4t6hRyNCYBYXPfUD8vH668VtO8VI
+	sY/izIt0q+OkdFfXfIfqouzShaQXccAMQqvjBPUPdF56Dv3omULO5SbWu1W6DU2nrtCcZ9qiJRecd
+	TQosOc+qUFCFBuuIWXwCdngS4EFcQCpravmhoHh85IchiWjS+Qp7EOcj81M2aUAaekk45rToJfIIi
+	h7+IU3weFU6yNPO5XwosxpSV0fqQh7tA22st8sDVaxZq0wPM8aZuQjheV3N/rxH8ZvKhFdD19Z08+
+	oYtipRGdnxXM3+FYtenQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mxxPk-007WX3-IY; Thu, 16 Dec 2021 20:31:44 +0000
-Received: from mail-ot1-f52.google.com ([209.85.210.52])
+	id 1mxxRY-007X55-W6; Thu, 16 Dec 2021 20:33:36 +0000
+Received: from mail-ot1-f47.google.com ([209.85.210.47])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mxxPU-007WTL-O1; Thu, 16 Dec 2021 20:31:30 +0000
-Received: by mail-ot1-f52.google.com with SMTP id
- 47-20020a9d0332000000b005798ac20d72so305597otv.9; 
- Thu, 16 Dec 2021 12:31:28 -0800 (PST)
+ id 1mxxRW-007X4O-E1
+ for linux-phy@lists.infradead.org; Thu, 16 Dec 2021 20:33:35 +0000
+Received: by mail-ot1-f47.google.com with SMTP id
+ x19-20020a9d7053000000b0055c8b39420bso361561otj.1
+ for <linux-phy@lists.infradead.org>; Thu, 16 Dec 2021 12:33:34 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=9OyruAna4eQK8uRw8f/nq559G0rjy0iQItWA5/0EZSI=;
- b=bWdbm0s2iT5tzTU1Wjon6J5l7ZBRalYOOC3Xm6dB1DWoQPP6ZH2StVrJateKtnMuiF
- d+/bXekVYFaw5KljMpB5EA4TKVkAxohRrC4bolc9Ag0h0eZna+nHSRCzYD3n3umgdDnH
- FCoVR62ny+W83vxAZEt/FNenEeM3+sI195odGH540nAr9GMzxKfiIJYnSiK0o/W9Wqhu
- l9w535Q3rFHX6T5Cy8viyIe9c6QfeCBiaVGXa7ksfOtqeZZHM4RdtjEm/PcFNHlh1kXt
- KBt1kbnHIL3n/vLWBRUoPr7NPcE653mIoT94oKuM30saZ78oHyFHDhbJe2AfNBabc5Hz
- 4O1Q==
-X-Gm-Message-State: AOAM532ks4+gI95xSI77tE8ETlAX+WfyvnVMjbjoLmBAbZIAmDx88m3r
- 78KCiX4FP13CWjNmMCdeqg==
-X-Google-Smtp-Source: ABdhPJyOYXNB53yOciN7Z88z8EuVw1heccZg9ATVKolCRbHwQ8myX1kELq8j+Ks33oKO0ALx+/QjHg==
-X-Received: by 2002:a9d:7cce:: with SMTP id r14mr13783658otn.114.1639686687735; 
- Thu, 16 Dec 2021 12:31:27 -0800 (PST)
+ bh=hfg8ACYlikMDDEUu3EXFo+9JtNm0KhnPtElu4BGn4Jw=;
+ b=PFMYwuc5ezVTGsRXy6VkyP0Zl6M3lWAPo//lQtaGODsQAuWn11GRbhxECmAbh49Tws
+ ExFfCn2JPngDHWLlrBrJT6zIb1nmxzD1Op9fWcxjhGgHS9dmpWOytzfZFteWPJXw242y
+ +LFheY90nPILLjOYcuPxrqY+wNLBHayDApoqtsQoaPiyeRzCZATPLOFl3UmfvoA4+DZY
+ TL2niNxhPzUJFUr71X2QM4RGYwjpFwpK3Sfsxn0FIG3D5Xy4XB2ii8vWjPzLKyGMOcnr
+ ra/i2RFgAaJyBY0dM1kx1rXpIzd4xk9rrvIqCo6a48/o8oRpW9o++uAuRwsq2NYbcfzn
+ t+Uw==
+X-Gm-Message-State: AOAM531oDvdxbG75hjrWAw4mZ3IV14uXhlC43d+qpS9c+itEXfrwNafA
+ FODt8qHHr+HC3VSMYu4YRg==
+X-Google-Smtp-Source: ABdhPJyFHwjvpklpQVesYfYXxrlFzdhuIejqiguu1DyewZF/CSRFpeDC3+bPOv0TWVjolIjQnoArTg==
+X-Received: by 2002:a05:6830:4389:: with SMTP id
+ s9mr14117622otv.97.1639686813783; 
+ Thu, 16 Dec 2021 12:33:33 -0800 (PST)
 Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
  [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id w5sm1221565otk.70.2021.12.16.12.31.26
+ by smtp.gmail.com with ESMTPSA id t11sm1227217otj.24.2021.12.16.12.33.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 16 Dec 2021 12:31:26 -0800 (PST)
-Received: (nullmailer pid 705168 invoked by uid 1000);
- Thu, 16 Dec 2021 20:31:25 -0000
-Date: Thu, 16 Dec 2021 14:31:25 -0600
+ Thu, 16 Dec 2021 12:33:33 -0800 (PST)
+Received: (nullmailer pid 708667 invoked by uid 1000);
+ Thu, 16 Dec 2021 20:33:32 -0000
+Date: Thu, 16 Dec 2021 14:33:32 -0600
 From: Rob Herring <robh@kernel.org>
-To: Peter Geis <pgwipeout@gmail.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Johan Jonker <jbx6244@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH v3 2/8] dt-bindings: phy: phy-rockchip-inno-usb2: add
- rk3568 documentation
-Message-ID: <YbuiHfUPezvB01CH@robh.at.kernel.org>
-References: <20211215210252.120923-1-pgwipeout@gmail.com>
- <20211215210252.120923-3-pgwipeout@gmail.com>
+To: Aswath Govindraju <a-govindraju@ti.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-can@vger.kernel.org,
+ Wolfgang Grandegger <wg@grandegger.com>,
+ Marc Kleine-Budde <mkl@pengutronix.de>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: ti,tcan104x-can: Document
+ mux-states property
+Message-ID: <YbuinMnaJHW/hUVQ@robh.at.kernel.org>
+References: <20211216041012.16892-1-a-govindraju@ti.com>
+ <20211216041012.16892-2-a-govindraju@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211215210252.120923-3-pgwipeout@gmail.com>
+In-Reply-To: <20211216041012.16892-2-a-govindraju@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211216_123128_809308_4B2D7449 
-X-CRM114-Status: GOOD (  15.95  )
+X-CRM114-CacheID: sfid-20211216_123334_507269_66567D3B 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,25 +88,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 15 Dec 2021 16:02:46 -0500, Peter Geis wrote:
-> The rk3568 usb2phy node is a standalone node with a single muxed
-> interrupt.
-> Add documentation for it to phy-rockchip-inno-usb2.
+On Thu, 16 Dec 2021 09:40:11 +0530, Aswath Govindraju wrote:
+> On some boards, for routing CAN signals from controller to transceivers,
+> muxes might need to be set. This can be implemented using mux-states
+> property. Therefore, document the same in the respective bindings.
 > 
-> Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
 > ---
-> 
-> This was the best solution I've come up with for this.
-> I avoided creating another binding since this is such a simple change to
-> the actual driver and would likely require renaming the existing
-> binding.
-> I've tested that this correctly flags if the interrupts are missing or
-> incorrectly assigned on both rk356x and rk3399.
-> 
-> Thank you Johan and Rob for your constructive feedback.
-> 
->  .../bindings/phy/phy-rockchip-inno-usb2.yaml  | 44 +++++++++++++++++--
->  1 file changed, 40 insertions(+), 4 deletions(-)
+>  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml | 7 +++++++
+>  1 file changed, 7 insertions(+)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
