@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FE2CC433F5
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Dec 2021 14:10:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A98DDC433EF
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Dec 2021 14:10:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3kTgycn+TFiTg7PplvyQS8mj5Y6wI3RltMkDgncc2+k=; b=j2Wn9Ysx55RCdK
-	fWalRdpoHJe6i2Zam71ZuRMrU4VT0CmVElRSAtmXNY7kNecQYG5EXbVYtI4I2xgIcQjtmeoKa9fpr
-	zzvF/lzBIPxPklpclp8iikAgJX1x7sbsXCyDGZqAgqeyrttx1rOSNCaPW2PPaoc/1nqxmTlQLMVk8
-	NOxiGBqad/tOI8WFN/n5hL4/U5F9eBAFdMt1vT7lzD561KFi9OYMPQJ+XfDtaV/uAFs1RLBYec+dx
-	BS+vTIAVUTvjR8IyZsxG1nuYDDe3lDfEELNHr5Ho6EPBMw/x4OlTOf6tDWXhnCOr4qp4LDinec249
-	vUfntHS4gU2tg0FTs9WA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3P6kr6MdNjp0bvpm4dsLdv8WEdXm07FxvHlSFAcOh2w=; b=FaSfAaO5gXyW9e
+	hmPDI68DFUXn+4U2KUubSDyw9bsItn/BOYQRQzUolhr3jee6XnNXdGSem3CuFnTs2H7aktMSURA6e
+	Z51ko3qWnQYnRZHnRFF96cep4qt1GzWsLqESeNlP/7VX0s2BBBRkfHO7/YnaWWjQOLfmJZ63xbY7r
+	jxSR8IJVxWUOYJJnfP8G8VsMrR4qnvzyZb1+G9m/4dpqSNbTkBIwNixJtIB/ZGKzLbJR3yfkfKoyx
+	nKFj3GieMEgLwr9Vg5oVwCH6Ms28Emm5w8/Qql2JPj+BOxuRQvVz6ZkaLlgs0Q2A/97aOHkMZj0n5
+	Q+Gkyb+BxEWeZV1iq7Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1myaPy-00DxYS-PG; Sat, 18 Dec 2021 14:10:34 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1myaPz-00DxYs-SN; Sat, 18 Dec 2021 14:10:35 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1myaPw-00DxWZ-3v
+ id 1myaPw-00DxWm-BS
  for linux-phy@lists.infradead.org; Sat, 18 Dec 2021 14:10:33 +0000
-Received: by mail-lj1-x235.google.com with SMTP id 207so7865772ljf.10
- for <linux-phy@lists.infradead.org>; Sat, 18 Dec 2021 06:10:30 -0800 (PST)
+Received: by mail-lf1-x131.google.com with SMTP id b40so10729708lfv.10
+ for <linux-phy@lists.infradead.org>; Sat, 18 Dec 2021 06:10:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lFt6X0KER9eQ+C0OYY/wY0eK0N3IsPMop2A/RWQEB+8=;
- b=Sv78hEqnXqXaU8ZsZL+1SFCTGZio744Bua3QkrdgMwABcuhMRNQCQxnq6V0H8yLzRp
- 5B8s9Bg9pgSENp2SVlkwmR3dJJ5UqmCa8VuXdkROUho77JvyIz6qXMdYXrjIwnvD9hUZ
- NoqUDmdcjf315URgqhjhttQX7CtaSZsNn1LdQeS5ceZGIPARlPqIBu2tgMdvbnYr1C78
- OxRm0+p4tN+jFDxYauWeNHdWDuTm+9R8RtAXs+U3czmoq+IaFgOmwSkA19Plt9dGVJpY
- rvi3HlXMH9o315iWLFMvnPFvQt43yaHctk/N29/w5Gj/noEQ3P3FRScTEIlLu7UBp0GA
- nZuQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=tkCGnjxecVs6iJ5OhJolrVkfI81Gc2C3djNJPu21hcI=;
+ b=GFyZ96bt5P1Tdq7Rdod0rseW5Qkj+OeJeADZWdowfdTwcFDkf8x2BxjroPSizd1tPy
+ zwUUP1uzUnxvrGZhAGfEI66MN6BCltA4Kd/HJLIn82oICdx5A/SfvFp2eMg6+G7ECvFR
+ HrPOsxoPyJcuB41676w7LRSU6HL88vB5JUozjLMmIppYTPmOIf0GtwdCOXg11YNuUy0w
+ YygMfwwbtUrkiS3ITRGoTkQ9NIpesQR5fFTIoYvfFh3pK0ZxhPEZEp9dnjgb7XNN74YU
+ FqjBoM2BpbPb7N538F9vi9eT9TYO3pxjartRZjuAoIZ6CR/I9b6IMD22K/FmM9EourUM
+ CbzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lFt6X0KER9eQ+C0OYY/wY0eK0N3IsPMop2A/RWQEB+8=;
- b=amBtKmiUyJo/4MChpiStgBtnIOTPL5CgVa8rFJfXti0yShsaTuIOPWofWfjMZ4P2kW
- 7PRBtnLvsMNAEKqHPs58jJMJzanvEPM1x8spkFIsPX3f2VJLgpOigCT3uix6OUpS+KGR
- SwqLWXagyKmihDw+X3KbNTN09MIOxA0QzIRfiV7Tuic6uYpsAT46SToEiEVuvso3bBAf
- vMzNE0+xPllJFIVOqTeRxbUVw9AztkaevbTB2oupN4HzH002aHt4Ki2vBubcsf2iaFqv
- Y01w240DRRVIpKIbWgxq0FQCIr8PO9OMJjeYrtLfEjNMlddRofy9FmJosB4ajjNs6OJ7
- kIlA==
-X-Gm-Message-State: AOAM5305UnQ6EqqrZPeLUxdPemVCuqFwgy+u6lM1bmd8Q0Ufb9JrWTj0
- FqAazlN+s3Hwq2koWjT2vzNtxg==
-X-Google-Smtp-Source: ABdhPJxQx+BiEdXyNqa+ssNg1vIeTyUlhVk9vDvWUSuNBVNNrFZigv7asswBCg3rY4KUd29fi861xA==
-X-Received: by 2002:a2e:a305:: with SMTP id l5mr7140349lje.73.1639836628838;
- Sat, 18 Dec 2021 06:10:28 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=tkCGnjxecVs6iJ5OhJolrVkfI81Gc2C3djNJPu21hcI=;
+ b=WYzT9hY5dgHcnOnrjpXm67VnYc+Li7/FlrPwnancDtEEVXlH9MzEZtkzfX6tjQgMbd
+ 0B+Tv4WqSCU7J7np+Un8qwSdoOCkzJAfSdgozycWoqTHQYbtC+xNumXtd3u9xiVThtlQ
+ s2NzHvWA5kxqllRJSzlIKlOsdh3MRpNMpaRpl7Gaw9qGky2jU3AuH12Ny0gm2SZeUsmo
+ PC5KP7scysF7m7FkTd5pClRAHKFFCzhoFi2N3sb+oxznwLK5wj886Cgb++NvDtZge0Ez
+ wT6jaF7M3JZQJxG38YWBEVeQV3py393vSVuaAnKaLbd+R79KlxSumh2JwO9UqCt7wLbd
+ WeGw==
+X-Gm-Message-State: AOAM530wZEZEB0nP5fx3pNglYDPQtlrLkbin+1Be2RVW6evFU49pc3Hs
+ /HZlfdqRTi/3heUchran5EgliQ==
+X-Google-Smtp-Source: ABdhPJy5/t4pXWcG0z5Cg2A8VE9LuZpptJFuMFz/QjV74cxv/fgkZu5Wto1gxgsGm6nwyH2eDjJINg==
+X-Received: by 2002:a19:8c48:: with SMTP id i8mr7449715lfj.179.1639836630630; 
+ Sat, 18 Dec 2021 06:10:30 -0800 (PST)
 Received: from eriador.lan ([2001:470:dd84:abc0::8a5])
- by smtp.gmail.com with ESMTPSA id c2sm145789lfh.189.2021.12.18.06.10.27
+ by smtp.gmail.com with ESMTPSA id c2sm145789lfh.189.2021.12.18.06.10.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 18 Dec 2021 06:10:28 -0800 (PST)
+ Sat, 18 Dec 2021 06:10:30 -0800 (PST)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -68,14 +68,17 @@ Cc: Bjorn Helgaas <bhelgaas@google.com>,
  =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
  linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: [PATCH v5 0/5] qcom: add support for PCIe on SM8450 platform
-Date: Sat, 18 Dec 2021 17:10:19 +0300
-Message-Id: <20211218141024.500952-1-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v5 1/5] dt-bindings: pci: qcom: Document PCIe bindings for
+ SM8450
+Date: Sat, 18 Dec 2021 17:10:20 +0300
+Message-Id: <20211218141024.500952-2-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20211218141024.500952-1-dmitry.baryshkov@linaro.org>
+References: <20211218141024.500952-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211218_061032_218971_D7806F38 
-X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-CacheID: sfid-20211218_061032_416808_0558770A 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,42 +96,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-There are two different PCIe controllers and PHYs on SM8450, one having
-one lane and another with two lanes. Add support for both PCIe
-controllers
+Document the PCIe DT bindings for SM8450 SoC. The PCIe IP is similar
+to the one used on SM8250, however unlike SM8250, PCIe0 and PCIe1 use
+different set of clocks, so two compatible entries are required.
 
-Dependencies:
- - https://lore.kernel.org/linux-arm-msm/20211218140223.500390-1-dmitry.baryshkov@linaro.org/
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ .../devicetree/bindings/pci/qcom,pcie.txt     | 22 ++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
 
-Changes since v4:
- - Add PCIe1 support
- - Change binding accordingly, to use qcom,pcie-sm8450-pcie0 and
-   qcom,pcie-sm8450-pcie1 compatibility strings
- - Rebase on top of (pending) pipe_clock cleanup/rework patchset
-
-Changes since v3:
- - Fix pcie gpios to follow defined schema as noted by Rob
- - Fix commit message according to Bjorn's suggestions
-
-Changes since v2:
- - Remove unnecessary comment in struct qcom_pcie_cfg
-
-Changes since v1:
- - Fix capitalization/wording of PCI patch subjects
- - Add missing gen3x1 specification to PHY table names
-
-----------------------------------------------------------------
-Dmitry Baryshkov (5):
-      dt-bindings: pci: qcom: Document PCIe bindings for SM8450
-      PCI: qcom: Remove redundancy between qcom_pcie and qcom_pcie_cfg
-      PCI: qcom: Add ddrss_sf_tbu flag
-      PCI: qcom: Add interconnect support to 2.7.0/1.9.0 ops
-      PCI: qcom: Add SM8450 PCIe support
-
- .../devicetree/bindings/pci/qcom,pcie.txt          |  22 ++++-
- drivers/pci/controller/dwc/pcie-qcom.c             | 101 ++++++++++++++-------
- 2 files changed, 91 insertions(+), 32 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.txt b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
+index a0ae024c2d0c..0adb56d5645e 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie.txt
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
+@@ -15,6 +15,8 @@
+ 			- "qcom,pcie-sc8180x" for sc8180x
+ 			- "qcom,pcie-sdm845" for sdm845
+ 			- "qcom,pcie-sm8250" for sm8250
++			- "qcom,pcie-sm8450-pcie0" for PCIe0 on sm8450
++			- "qcom,pcie-sm8450-pcie1" for PCIe1 on sm8450
+ 			- "qcom,pcie-ipq6018" for ipq6018
+ 
+ - reg:
+@@ -169,6 +171,24 @@
+ 			- "ddrss_sf_tbu" PCIe SF TBU clock
+ 			- "pipe"	PIPE clock
+ 
++- clock-names:
++	Usage: required for sm8450-pcie0 and sm8450-pcie1
++	Value type: <stringlist>
++	Definition: Should contain the following entries
++			- "aux"         Auxiliary clock
++			- "cfg"         Configuration clock
++			- "bus_master"  Master AXI clock
++			- "bus_slave"   Slave AXI clock
++			- "slave_q2a"   Slave Q2A clock
++			- "tbu"         PCIe TBU clock
++			- "ddrss_sf_tbu" PCIe SF TBU clock
++			- "pipe"        PIPE clock
++			- "pipe_mux"    PIPE MUX
++			- "phy_pipe"    PIPE output clock
++			- "ref"         REFERENCE clock
++			- "aggre0"	Aggre NoC PCIe0 AXI clock, only for sm8450-pcie0
++			- "aggre1"	Aggre NoC PCIe1 AXI clock
++
+ - resets:
+ 	Usage: required
+ 	Value type: <prop-encoded-array>
+@@ -246,7 +266,7 @@
+ 			- "ahb"			AHB reset
+ 
+ - reset-names:
+-	Usage: required for sc8180x, sdm845 and sm8250
++	Usage: required for sc8180x, sdm845, sm8250 and sm8450
+ 	Value type: <stringlist>
+ 	Definition: Should contain the following entries
+ 			- "pci"			PCIe core reset
+-- 
+2.34.1
 
 
 -- 
