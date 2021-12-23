@@ -4,63 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C31E0C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 05:27:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 191C7C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 05:36:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sISwynch0TXu7YdLDjpmTlHwpXtnyaxnq6xvF/D49nY=; b=vgVEXwCIXI968J
-	CZmthEKfKDpTl1/Y/S+Kf5jtHZFVlb7THF0b/JsQIxc0WNFk6wHJ5sXS9aOP0kIrYIpdHfmKxJmb1
-	5ViBqfnm1EQK7DUi9+XDHtc5tH1ZHcUqYZFQgH2ERPUCvPL51UFckFjUW9jbnmrMEAr3Q2TUhsTDh
-	MrVirYnE1OFZPD6yOJJdOAhfkQvjn3zfs0b6aGvkK2KWaizh1BEqB0TBWPEuu2+veTFtjk1yiTvxF
-	4smc1JUwG4DHoBB5xUi6v7LS9vN+ID3lt9HXN/Ph1sHfbFl0SuYMKIfg51aPgZvElSPEBOtlrqHVq
-	fqNma6bll08pG1nDKlQw==;
+	List-Owner; bh=GWIXxWNJn0Z39HacmFS8OyHitXuFM9aikopmxW57yVo=; b=hR9Y50wH3GeI5c
+	INy+URcUbm/4YJ7fGCkpNCg0qdRTqDjX23pzBwJ6OEJpckc/62qDFBtit4LMrEVXKsHXqrZpEIvUR
+	+1kHZ6r4oFQVPPHXTcSjGQud/FhQH+BwwnvUNQ1FEgecGPV4hJQ2RfVwSsKmQykyZOmRo5098/yRU
+	vNqAs4+aLf9s//OYu1iaZu84SqU2rWXzv+WxsnI7JqxkOaDCoICEdbxjeP3rcYxF1UYgHAbXLqGIE
+	S1ikhhLdtoQncbGIJLFt8WdroEUp/v2f73MT0PuBaCsSscsJ1iakCPzAfgKfla1dYMBi2S7Zssar1
+	Odew2/87Cnz9neFXADew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n0GdD-00Bt3d-Rw; Thu, 23 Dec 2021 05:27:11 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1n0GmO-00BtNL-CE; Thu, 23 Dec 2021 05:36:40 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n0GdB-00Bt3C-01
- for linux-phy@lists.infradead.org; Thu, 23 Dec 2021 05:27:10 +0000
+ id 1n0GmK-00BtMc-PY
+ for linux-phy@lists.infradead.org; Thu, 23 Dec 2021 05:36:38 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id E0D8C61DBD;
- Thu, 23 Dec 2021 05:27:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C3948C36AE9;
- Thu, 23 Dec 2021 05:27:06 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id AF55361DB9;
+ Thu, 23 Dec 2021 05:36:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D8B5C36AE5;
+ Thu, 23 Dec 2021 05:36:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1640237227;
- bh=Sh6jpk/Rbr2ag37WBYje8V7bPWoR/w5w/sUmeauAzJw=;
+ s=k20201202; t=1640237794;
+ bh=+RESyguACPEDh1QytdBXRrgftqqCYuF45pA3Mr9Wjxg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jZow9MqGsJXa294P3rt+I2VYegmI+cNC1fSO2AgctovFOIj03x8vA6pLIcK61aR80
- wzbO+i2Q3HCCcH+uQZeyiyayqsh0TQq8eZUiYImk5jBGny/fjHodzdhv71Ll/GlnjV
- kgpVSfRlLA6bIbOMR4Ff98w8PZpDmlFrTgBs/e0O3wsdn9eeYtUZ8OAUxBq5TpaLkm
- MmEqkxpquCyVc9Ayz0v091tuZSGPfFGQ2qkmXW3R40xOqZoco4fsj1pi9AcpKcQthn
- ncldgfA0UaZ/FNC9/YWEVNg2e/TTswLMW1fDmKytvr6y79ISK6cZmgqCOsWSsM55WK
- lAluvfnkXpYLQ==
-Date: Thu, 23 Dec 2021 10:57:03 +0530
+ b=R+B4fqLuFIRpKY4PBoPuzC9E+gil3cRxeN4MSMcE0Hppy+Zt6KIU44I12ZCBLPdlf
+ i3ElEdyK2+UclrKL2BtzQnoJ95nhXnzOz7gbgwTNHTjlj0laLTa7M9ifI6dZQ6vL7G
+ U78XZLkeyxkxIgzm1w4vFb5cuuvXuOCmKFiScF5iabrOZwUPS3vIrkHSAIN59O9rls
+ kg9/qaWTB+SKOg1Z5ddg38N7xijd10OTJyKPazAoxX4HmTOaveA5TJbOalaAy3eQLG
+ I8ZGZJZVSOa21DrWdbz9SbNWzlxRX6d4syPwv8LT1SXlrE8Nf4qEbTk6uWRvnt4Jgj
+ fHR/7xxRU7z4w==
+Date: Thu, 23 Dec 2021 11:06:29 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Li Chen <lchen@ambarella.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Swapnil Jakhade <sjakhade@cadence.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Dan Carpenter <dan.carpenter@oracle.com>
-Subject: Re: [PATCH] Revert "phy: cadence-torrent: Do not configure SERDES if
- it's already configured"
-Message-ID: <YcQIp3IJ0eki3hY2@matsya>
-References: <CH2PR19MB4024BE31FB249744412071F6A0639@CH2PR19MB4024.namprd19.prod.outlook.com>
+To: Pratyush Yadav <p.yadav@ti.com>
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Swapnil Jakhade <sjakhade@cadence.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v6 1/4] phy: cadence: Add Cadence D-PHY Rx driver
+Message-ID: <YcQK3WVEo6FyEtVa@matsya>
+References: <20211214180703.3268-1-p.yadav@ti.com>
+ <20211214180703.3268-2-p.yadav@ti.com>
+ <YcCh1PU+Tc1+pzEL@aptenodytes>
+ <20211222184545.atci25onvpw6f2ed@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CH2PR19MB4024BE31FB249744412071F6A0639@CH2PR19MB4024.namprd19.prod.outlook.com>
+In-Reply-To: <20211222184545.atci25onvpw6f2ed@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211222_212709_164293_8D58F74C 
-X-CRM114-Status: GOOD (  21.86  )
+X-CRM114-CacheID: sfid-20211222_213636_942060_8E0ABD6F 
+X-CRM114-Status: GOOD (  35.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,107 +80,161 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-11-21, 05:06, Li Chen wrote:
-> This reverts commit
-> b69d39f68419("phy: cadence-torrent: Do not configure SERDES if it's already configured")
-
-space between commit id and open brace...
-
+On 23-12-21, 00:15, Pratyush Yadav wrote:
+> On 20/12/21 04:31PM, Paul Kocialkowski wrote:
+> > Hi Pratyush,
+> > 
+> > On Tue 14 Dec 21, 23:37, Pratyush Yadav wrote:
+> > > The Cadence D-PHY can be configured in Tx (DSI) mode or Rx (CSI) mode.
+> > > Both modes have a different programming sequence and share little among
+> > > them. In addition, a PHY configured in Tx mode cannot be used in Rx mode
+> > > and vice versa. For this reason, create a separate driver for the Rx
+> > > mode to make it easier to read and maintain.
+> > > 
+> > > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> > > 
+> > > ---
+> > > 
+> > > Changes in v6:
+> > > - Move to a separate driver.
+> > > 
+> > > Changes in v5:
+> > > - Use the new cdns_dphy_info to specify PHY ops.
+> > > - Re-order include in alphabetical order.
+> > > - Make bands const.
+> > > - Drop num_bands.
+> > > - Make i, lanes unsigned.
+> > > - Drop the maximum check in cdns_dphy_rx_get_band_ctrl(). Let the loop
+> > >   complete and return -EOPNOTSUPP when we reach the end.
+> > > - Drop the "rate < bands[i].min_rate" check since the bands are in
+> > >   ascending order.
+> > > - Move data_lane_ctrl to start of function and make it static const.
+> > > 
+> > > Changes in v4:
+> > > - Drop the submode parts. Use a different compatible for the Rx ops.
+> > > - Make bands and num_bands static.
+> > > 
+> > > Changes in v3:
+> > > - Use a table to select the band.
+> > > - Use a table to poll the data lane ready bits.
+> > > - Multiply the DPHY HS clock rate by 2 to get the bit rate since the
+> > >   clock is DDR.
+> > > 
+> > >  drivers/phy/cadence/Kconfig        |   8 +
+> > >  drivers/phy/cadence/Makefile       |   1 +
+> > >  drivers/phy/cadence/cdns-dphy-rx.c | 250 +++++++++++++++++++++++++++++
+> > >  3 files changed, 259 insertions(+)
+> > >  create mode 100644 drivers/phy/cadence/cdns-dphy-rx.c
+> > > 
+> > > diff --git a/drivers/phy/cadence/Kconfig b/drivers/phy/cadence/Kconfig
+> > > index a62910ff5591..1adde2d99ae7 100644
+> > > --- a/drivers/phy/cadence/Kconfig
+> > > +++ b/drivers/phy/cadence/Kconfig
+> > > @@ -22,6 +22,14 @@ config PHY_CADENCE_DPHY
+> > >  	  system. If M is selected, the module will be called
+> > >  	  cdns-dphy.
+> > >  
+> > > +config PHY_CADENCE_DPHY_RX
+> > > +	tristate "Cadence D-PHY Rx Support"
+> > > +	depends on HAS_IOMEM && OF
+> > > +	select GENERIC_PHY
+> > > +	select GENERIC_PHY_MIPI_DPHY
+> > > +	help
+> > > +	  Support for Cadence D-PHY in Rx configuration.
+> > > +
+> > >  config PHY_CADENCE_SIERRA
+> > >  	tristate "Cadence Sierra PHY Driver"
+> > >  	depends on OF && HAS_IOMEM && RESET_CONTROLLER
+> > > diff --git a/drivers/phy/cadence/Makefile b/drivers/phy/cadence/Makefile
+> > > index 26e16bd34efe..e17f035ddece 100644
+> > > --- a/drivers/phy/cadence/Makefile
+> > > +++ b/drivers/phy/cadence/Makefile
+> > > @@ -1,5 +1,6 @@
+> > >  # SPDX-License-Identifier: GPL-2.0-only
+> > >  obj-$(CONFIG_PHY_CADENCE_TORRENT)	+= phy-cadence-torrent.o
+> > >  obj-$(CONFIG_PHY_CADENCE_DPHY)	+= cdns-dphy.o
+> > > +obj-$(CONFIG_PHY_CADENCE_DPHY_RX)	+= cdns-dphy-rx.o
+> > >  obj-$(CONFIG_PHY_CADENCE_SIERRA)	+= phy-cadence-sierra.o
+> > >  obj-$(CONFIG_PHY_CADENCE_SALVO)	+= phy-cadence-salvo.o
+> > > diff --git a/drivers/phy/cadence/cdns-dphy-rx.c b/drivers/phy/cadence/cdns-dphy-rx.c
+> > > new file mode 100644
+> > > index 000000000000..fb75e645e662
+> > > --- /dev/null
+> > > +++ b/drivers/phy/cadence/cdns-dphy-rx.c
+> > > @@ -0,0 +1,250 @@
+> > > +// SPDX-License-Identifier: GPL-2.0+
+> > > +/*
+> > > + * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com/
+> > > + */
+> > > +
+> > > +#include <linux/bitfield.h>
+> > > +#include <linux/bitops.h>
+> > > +#include <linux/io.h>
+> > > +#include <linux/iopoll.h>
+> > > +#include <linux/module.h>
+> > > +#include <linux/phy/phy.h>
+> > > +#include <linux/phy/phy-mipi-dphy.h>
+> > > +#include <linux/platform_device.h>
+> > > +
+> > > +#define DPHY_PMA_CMN(reg)		(reg)
+> > > +#define DPHY_PCS(reg)			(0xb00 + (reg))
+> > > +#define DPHY_ISO(reg)			(0xc00 + (reg))
+> > > +
+> > > +#define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
+> > > +#define DPHY_CMN_RX_MODE_EN		BIT(10)
+> > > +#define DPHY_CMN_RX_BANDGAP_TIMER_MASK	GENMASK(8, 1)
+> > > +#define DPHY_CMN_SSM_EN			BIT(0)
+> > > +
+> > > +#define DPHY_CMN_RX_BANDGAP_TIMER	0x14
+> > > +
+> > > +#define DPHY_BAND_CFG			DPHY_PCS(0x0)
+> > > +#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
+> > > +#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
+> > > +
+> > > +#define DPHY_POWER_ISLAND_EN_DATA	DPHY_PCS(0x8)
+> > > +#define DPHY_POWER_ISLAND_EN_DATA_VAL	0xaaaaaaaa
+> > > +
+> > > +#define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
+> > > +#define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
+> > > +
+> > > +#define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
+> > > +#define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
+> > > +#define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
+> > > +#define DPHY_ISO_DL_CTRL_L2		DPHY_ISO(0x30)
+> > > +#define DPHY_ISO_DL_CTRL_L3		DPHY_ISO(0x3c)
+> > > +
+> > > +#define DPHY_ISO_LANE_READY_BIT		0
+> > > +#define DPHY_ISO_LANE_READY_TIMEOUT_MS	100UL
+> > > +
+> > > +#define DPHY_LANES_MIN			1
+> > > +#define DPHY_LANES_MAX			4
+> > > +
+> > > +struct cdns_dphy_rx {
+> > > +	void __iomem *regs;
+> > > +	struct device *dev;
+> > > +	struct phy *phy;
+> > > +};
+> > > +
+> > > +struct cdns_dphy_rx_band {
+> > > +	/* Rates are in Mbps. */
+> > > +	unsigned int min_rate;
+> > > +	unsigned int max_rate;
+> > > +};
+> > > +
+> > > +/* Order of bands is important since the index is the band number. */
+> > > +static const struct cdns_dphy_rx_band bands[] = {
+> > > +	{80, 100}, {100, 120}, {120, 160}, {160, 200}, {200, 240},
+> > > +	{240, 280}, {280, 320}, {320, 360}, {360, 400}, {400, 480},
+> > > +	{480, 560}, {560, 640}, {640, 720}, {720, 800}, {800, 880},
+> > > +	{880, 1040}, {1040, 1200}, {1200, 1350}, {1350, 1500}, {1500, 1750},
+> > > +	{1750, 2000}, {2000, 2250}, {2250, 2500}
+> > 
+> > Cosmetic suggestion: add whitespaces after { and before }.
 > 
-> our soc will hang on any regmap field read before reset.
+> I think it would just add noise. I would like to keep it compact.
 
-okay, in this case the right fix would be to keep track of reset in SW
-and still skip reset if it is already configured?
-
-> 
-> Signed-off-by: Li Chen <lchen@ambarella.com>
-> ---
->  drivers/phy/cadence/phy-cadence-torrent.c | 31 +++++++----------------
->  1 file changed, 9 insertions(+), 22 deletions(-)
-> 
-> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-> index 415ace64adc5c..e57e0b1523aff 100644
-> --- a/drivers/phy/cadence/phy-cadence-torrent.c
-> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
-> @@ -2031,11 +2031,6 @@ static int cdns_torrent_noop_phy_on(struct phy *phy)
->  	return 0;
->  }
->  
-> -static const struct phy_ops noop_ops = {
-> -	.power_on	= cdns_torrent_noop_phy_on,
-> -	.owner		= THIS_MODULE,
-> -};
-> -
->  static
->  int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
->  {
-> @@ -2282,7 +2277,6 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
->  	struct device_node *child;
->  	int ret, subnodes, node = 0, i;
->  	u32 total_num_lanes = 0;
-> -	int already_configured;
->  	u8 init_dp_regmap = 0;
->  	u32 phy_type;
->  
-> @@ -2321,20 +2315,16 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
->  	if (ret)
->  		return ret;
->  
-> -	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1, &already_configured);
-> -
-> -	if (!already_configured) {
-> -		ret = cdns_torrent_reset(cdns_phy);
-> -		if (ret)
-> -			goto clk_cleanup;
-> +	ret = cdns_torrent_reset(cdns_phy);
-> +	if (ret)
-> +		goto clk_cleanup;
->  
-> -		ret = cdns_torrent_clk(cdns_phy);
-> -		if (ret)
-> -			goto clk_cleanup;
-> +	ret = cdns_torrent_clk(cdns_phy);
-> +	if (ret)
-> +		goto clk_cleanup;
->  
->  		/* Enable APB */
-> -		reset_control_deassert(cdns_phy->apb_rst);
-> -	}
-> +	reset_control_deassert(cdns_phy->apb_rst);
->  
->  	for_each_available_child_of_node(dev->of_node, child) {
->  		struct phy *gphy;
-> @@ -2404,10 +2394,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
->  		of_property_read_u32(child, "cdns,ssc-mode",
->  				     &cdns_phy->phys[node].ssc_mode);
->  
-> -		if (!already_configured)
-> -			gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
-> -		else
-> -			gphy = devm_phy_create(dev, child, &noop_ops);
-> +		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
->  		if (IS_ERR(gphy)) {
->  			ret = PTR_ERR(gphy);
->  			goto put_child;
-> @@ -2490,7 +2477,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
->  		goto put_lnk_rst;
->  	}
->  
-> -	if (cdns_phy->nsubnodes > 1 && !already_configured) {
-> +	if (cdns_phy->nsubnodes > 1) {
->  		ret = cdns_torrent_phy_configure_multilink(cdns_phy);
->  		if (ret)
->  			goto put_lnk_rst;
-> -- 
-> 2.33.1
->  
-> 
-> **********************************************************************
-> This email and attachments contain Ambarella Proprietary and/or Confidential Information and is intended solely for the use of the individual(s) to whom it is addressed. Any unauthorized review, use, disclosure, distribute, copy, or print is prohibited. If you are not an intended recipient, please contact the sender by reply email and destroy all copies of the original message. Thank you.
-
-Aha!!!
-
-Okay destroyed this now!
+No, it makes it look lot more neater and is usually the convention
+followed in kernel
 
 -- 
 ~Vinod
