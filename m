@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32ECFC433FE
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 11:25:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41517C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 11:28:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BMQBGyqhaVxx0xBcNVJs/CMxWV+47Gjc2msNmRe5jBY=; b=LDPspM2J9t04EJ
-	pFMqXOMWcjfis4y1rsFBQC450DIii/az2R0bno5r7uLMujNo2XsBwne1dVX/mVUWkhtvc9+0blXKt
-	+sgD5AozT2XkxJrIvPKNK1lV8vUoFgMka27i2FZbxmyndF0yajocsJPKAJVLxG2qrKUg2NqcnSJFI
-	Mkhb6GqVFLq8QgLoL6L3KngnRzDc/4lfmFPq1Ip94uLbw+JXM3Wx/U8fH0pH8MugzA70gPJJV8nnJ
-	bS7DJydr7CGbIvwUwSXdOgso/IYtv43445/X3PrEjE1EF8gJDyZ1NSfObNE48BE7UBEmBmPZ6gwU7
-	1H3vmh9bTYu3wHIl2vIA==;
+	List-Owner; bh=C2FaKsukf3G0u4gwdUz5vjLpA6HfUFzgrtkx9yU2Ypk=; b=XgoT8mypLe1eYV
+	st3HczNnctHIgRgcX1+pTY+h227aO9kPLfFKVn5EEa6LB7WAlI6/OWEtjRyvUjEC5jgH2CXq4UnE8
+	bphOFUg+mEq7bIUGJ5m6tPOPRVdRm45pSKKaanUcSLlV0lCcmkS3YALYJ1r8eoVmf348MPuIqQ7Re
+	CsdxXzc8496mDBTsB9HULjDxzNqHb7n9o8faAOKX2tbBEx4SS0pwaScStKrVAxTtaAgSlFWxaW2Tw
+	9sTD6rfZyJ5DVJBQEF10yFDrOw+fyUHJBhWHjlS3WZuwm6nTZeGgwQM+iZdoXyCcaY8cpc3ByPMM1
+	RVUZAz0zy1F3hj1VBRZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n0ME6-00CZxo-L5; Thu, 23 Dec 2021 11:25:38 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1n0MGu-00CaDI-Mx; Thu, 23 Dec 2021 11:28:32 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n0MDu-00CZv5-BN; Thu, 23 Dec 2021 11:25:27 +0000
+ id 1n0MGr-00CaCk-Qr
+ for linux-phy@lists.infradead.org; Thu, 23 Dec 2021 11:28:31 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 764CDB8200F;
- Thu, 23 Dec 2021 11:25:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37FDCC36AE9;
- Thu, 23 Dec 2021 11:25:21 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 5865161E3D;
+ Thu, 23 Dec 2021 11:28:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DDAF5C36AE9;
+ Thu, 23 Dec 2021 11:28:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1640258723;
- bh=hP0ZPwGrLJ5L9ght86XMHMVAyvOjs4D499mJuEVzkzA=;
+ s=k20201202; t=1640258908;
+ bh=htCvpSaVrR8Gu/Gf+sfTWo3rQbsZZ8ATd3vQXhFLWYA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SWPUwxkchGsUwNeAa6Ufmmd2KK9sc0B/fABWV6OLUNi/XgLzuel7mCELfrtS0xDon
- Cl6PBPr7Apyio4nTwOj3bFcqzkubz/jkA3Psr8pn7n+YTFxORuuQVDwiSHORT5wPSY
- kaP2UISdxvkuMwEdfV0fbdiJGot9pq9c7AVt4ZoiOFR69g40Kauc0nxYgAZqyG2fqA
- bJaAAQo4B1FGsVx0MKRScw57rzUlaoboi9zS9olZlT5DCjfnkgk9E9NUgbklY5IeEL
- dImwfzBxAVPn1UIlj9Gq4WNv/BgEl8P2VH3BzYMxZW13WYOwaHDGl9jrGTCj2nd7cR
- QH+zEGZ/dEoag==
-Date: Thu, 23 Dec 2021 16:55:19 +0530
+ b=byI8vGwHlAIcTpT0z9s+YkHj//vmsmN8841AogPROn1/ASF83M7dUR5eb70y19tCo
+ 1GRS1QoBIh4fcNd+qnx3RULTNJIH8j/TiLJ36XbVt0OnwQnyWknZ0HtXUPbCrKFzen
+ b71i9fRpUX16/xmSqI8zhfuUSQl0kJjsvxJjBVRvhkazbDgHm9aPnZ0y09EuiwpOIs
+ ci2ckdy3N6UEOOZs8nUScwaldD2qSurNn2mHLTow1yeAThwd22yk7vPaiitXlQztRj
+ EHcp9aqB3deH0OVdNGA9b96LwuD60OiGU/PNPLhhoA7jyGl8ulrDS+pA/sbwfe7SG5
+ sIgd1GgzjUOrw==
+Date: Thu, 23 Dec 2021 16:58:24 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Peter Geis <pgwipeout@gmail.com>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- Michael Riesch <michael.riesch@wolfvision.net>,
- Johan Jonker <jbx6244@gmail.com>, Rob Herring <robh@kernel.org>,
- Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH v3 0/8] phy-rockchip-inno-usb2: support rk356x usb2phy
-Message-ID: <YcRcn17RMRGsLr5M@matsya>
-References: <20211215210252.120923-1-pgwipeout@gmail.com>
+To: Aswath Govindraju <a-govindraju@ti.com>
+Cc: Wolfgang Grandegger <wg@grandegger.com>,
+ Marc Kleine-Budde <mkl@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-can@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 0/2] CAN: Add support for setting mux
+Message-ID: <YcRdWJtREHFWXBKM@matsya>
+References: <20211216041012.16892-1-a-govindraju@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211215210252.120923-1-pgwipeout@gmail.com>
+In-Reply-To: <20211216041012.16892-1-a-govindraju@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211223_032526_562347_2688435C 
-X-CRM114-Status: GOOD (  13.50  )
+X-CRM114-CacheID: sfid-20211223_032829_956986_012B6897 
+X-CRM114-Status: GOOD (  15.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,28 +76,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15-12-21, 16:02, Peter Geis wrote:
-> Good Afternoon,
-> 
-> This is my series to support the usb2 phy devices on the rk356x.
-> The rk356x phy has a single muxed interrupt and has moved the usb2phy
-> nodes out of the grf and into their own nodes.
-> The phy needs to tie back into the grf for register control, similar to
-> the rv1108.
-> By moving the phys into their own nodes, they now have full
-> #address_cells = 2 register addresses, but they still reside below the 32bit
-> mmio range.
-> 
-> This driver series only supports the host configuration for the rk356x.
-> I have have tested it on the following:
-> rk3566 - Pine64 Quartz64 Model A
-> rk3399 - Pine64 Rockpro64
-> 
-> Please provide feedback and comments as you see fit.
+On 16-12-21, 09:40, Aswath Govindraju wrote:
+> The following series of patches add support for setting
+> muxes to route signals from CAN controller to transceiver
+> by reading the property mux-states from the device tree
+> node
 
-Applied patches 2-6 to phy-next
+These look okay to me
+> 
+> The following series of patches are dependent on,
+> - https://lkml.org/lkml/2021/12/2/423
 
-Thanks
+Pls post when these are merged..
+
+> 
+> Changes since v2:
+> - Fixed the bindings removing the description about
+>   the arguments in mux-states property
+> 
+> Changes since v1:
+> - Fixed the description for mux-states property in bindings
+>   file
+> - appended declaration of variable ret in the end
+> 
+> Aswath Govindraju (2):
+>   dt-bindings: phy: ti,tcan104x-can: Document mux-states property
+>   phy: phy-can-transceiver: Add support for setting mux
+> 
+>  .../bindings/phy/ti,tcan104x-can.yaml         |  7 ++++++
+>  drivers/phy/Kconfig                           |  1 +
+>  drivers/phy/phy-can-transceiver.c             | 24 ++++++++++++++++++-
+>  3 files changed, 31 insertions(+), 1 deletion(-)
+> 
+> -- 
+> 2.17.1
 
 -- 
 ~Vinod
