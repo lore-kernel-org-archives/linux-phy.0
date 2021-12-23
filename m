@@ -4,157 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8302FC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 06:28:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3633FC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 10:34:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=skWZ5TMU6bSTYZ1L7WRD1axam8ehSdoKPLLKg8yV8Eo=; b=Vkg0ESjGUV/vf6
-	IciSjnZcbaSDbrk4BZVMp598GGYPFLRb9pMlK/RvHiUQPjMAvwiNvytohE13mKPLgRzSG6gC4NsCo
-	AJKCMiMIYbPa5rNkJ3mCbbb2ob/9xabMTDn2FqytY8XwQtfjPgXmjFq9e6UGxOSZmlnifQun+Gmfy
-	TuBM0adkj+MAsSaQXoMXPsqkl3L6a6VOcLoHkQXxNCJcr6Io/gD6Ip3VUVZvenLyGkzEm0DCAABly
-	SFqei2KtajJYyVAyuaYfjTcYQjRZn3oofVSzq4HyBl5jc8MfGhpTIs/K/GpUiRL3MFzKktRFrMcui
-	mRVHmoP+1j00+aYSUX1w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:Cc:To:From:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=TlKgYlluI3reyR31jAlavwC7nX9Lme3YwIIK04sEEdA=; b=emFE9UyA8wT1mNvIgT10Nil+gP
+	Vr5I6M2Z6sgpoGKfPF1gDkIISMRzg/heif9GGOkvq5v9vjFWHTbmfiHrRmCBD366+YcGcBSsRH2vN
+	mFx4NP4yGHUmju/O223BarI7LVDs4tnWLDvIZ9c7lAwworWzgW5ivKjbBSSxQuG9J1QAPb885BzAq
+	IFRKgFsv5fVlbqBYmWuxPkRm8F7C1UeJyGReX2pKLrUU1iZ3EXmxOA9SdnZzUL9WUqgJ4S7jXgNIG
+	TrI1nyJzuHP3A3Okfw73az0MaBbIxsf8VLyml3YeMFzE5Za/EyY0BU3qrMdCljGL5tR4iSpmYQTzc
+	qsbCrACw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n0Ha6-00Bvv6-0G; Thu, 23 Dec 2021 06:28:02 +0000
-Received: from mx0b-00622301.pphosted.com ([205.220.175.205])
+	id 1n0LQj-00CVGS-IN; Thu, 23 Dec 2021 10:34:37 +0000
+Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n0Ha2-00Bvuj-Ja
- for linux-phy@lists.infradead.org; Thu, 23 Dec 2021 06:28:00 +0000
-Received: from pps.filterd (m0241925.ppops.net [127.0.0.1])
- by mx0a-00622301.pphosted.com (8.16.1.2/8.16.1.2) with ESMTP id 1BN5tXhh001151;
- Thu, 23 Dec 2021 06:27:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ambarella.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=com20210415pp;
- bh=kibEU9CtORsuP81+wj9HAF0dZZAL4XY0wvxcY4Gc3+0=;
- b=MXQyitZvA51Q6JAdFXDa/+L2hH1aCzAGUx6HY6jD92DfxMGxeIM1Cpbt9+pcFud20zOY
- NpekSURN00ApOW0KAwapHGIq0xiIf7Jhtmi51/v57ZCFRif+0VRZS3BTFYuZnvNI7ihX
- /B84O7CknkA0Ob6wIvZl0cfZqOd2QDdqlUHtqrJMB6GtdDG6J29Z/3hQhV7Hnswbuwtk
- Bt3GcE6vZFyn99etJS1xsm7TnIcPR6gMB0JHfn7bCROl+H8ZXtBvc5YnaLYMytQ5XRv4
- 5oV8bJHBqxNZgFLqWzo+W63qvahNtXv82CURoRBykGVCuG2aP0GBQKno1O7MS4IhQcW/ Lg== 
-Received: from nam10-bn7-obe.outbound.protection.outlook.com
- (mail-bn7nam10lp2102.outbound.protection.outlook.com [104.47.70.102])
- by mx0a-00622301.pphosted.com (PPS) with ESMTPS id 3d3ucggj43-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 23 Dec 2021 06:27:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=abtIiaavgRxjSfEO23UDa1SeEWPUl5y4JEgCe2w3NUvGUhC07nB6SWXFo5BEuHSFVjYKgz3bLd/wSyuqEuZO8qD9oubZ0leJfWIwXCPY6UkEvR9/djANtYFCCkUTGcCMzVgfAJnzWFW28OUN6Ax7fSn4yM/zoW5DL4/JolQBXw5DD7McCmpMHVydJxtERKslfg005Yu4V/v7dnhZzlNU6hnc8I/YaI1NRwq/ROKYycqZEkgowbWQLirYXw5Nme3IbkWsoHpL69ywtr+bbeITImJj0eXpuoeSC/7pxBmLgENzXQg2ItySbtJQAU9qKEMLASQ7ryj4WGM8SgovDWBBbg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=kibEU9CtORsuP81+wj9HAF0dZZAL4XY0wvxcY4Gc3+0=;
- b=WEAmp1UK7pbqG23rT4X2+uuCYcEFIhhPrdYXN/rALChh/flBIpao2NMTcnUKekL7DHclABr9DEq9kCToG2ITYw+o6KduzpK012qIwcZ7p45INgAXHXgZvJOx7k/msMNsjtHAnskFRLax3LUmghMkEl8orCydurzKL5xl81LB5vBYEf0SCfXygQyhi9PSNOhs55X2GymzqaFbDgah88KJkIndzd5ffegfMFciiS5E5u5dGuGg7BTwLAihffCpXc0ILIqMprCZBkOpKt8R101iO8uYSaaa7cGiVCDIz/WJJMxx6q1LE7gMCj6iysCyzuXnCrNMM6Lpo0WAcnehhOB8tg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=ambarella.com; dmarc=pass action=none
- header.from=ambarella.com; dkim=pass header.d=ambarella.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ambarella.onmicrosoft.com; s=selector1-ambarella-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kibEU9CtORsuP81+wj9HAF0dZZAL4XY0wvxcY4Gc3+0=;
- b=kLOXIR6uW5BprYZvzBQxGw7fDoSs/k4UeZLzlHPqJYIQKa+vEaXavp3GUxPRs0pSHCvbsj8Mobb1TnrGFGPOtF2+wEviquGmXMuFPN0bOex7kla51rVC6bJXLBPNHAOki/c6uRygPQ/eKC9CXlI9rdjoYTXt22If42Ru2xAqWJc=
-Received: from CH2PR19MB4024.namprd19.prod.outlook.com (2603:10b6:610:92::22)
- by CH2PR19MB4024.namprd19.prod.outlook.com (2603:10b6:610:92::22)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4823.18; Thu, 23 Dec
- 2021 06:27:41 +0000
-Received: from CH2PR19MB4024.namprd19.prod.outlook.com
- ([fe80::3c65:8b89:ca42:d828]) by CH2PR19MB4024.namprd19.prod.outlook.com
- ([fe80::3c65:8b89:ca42:d828%8]) with mapi id 15.20.4823.019; Thu, 23 Dec 2021
- 06:27:41 +0000
-From: Li Chen <lchen@ambarella.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Philipp Zabel
- <p.zabel@pengutronix.de>, Swapnil Jakhade <sjakhade@cadence.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Dan Carpenter <dan.carpenter@oracle.com>
-Subject: RE: [EXT] Re: [PATCH] Revert "phy: cadence-torrent: Do not configure
- SERDES if it's already configured"
-Thread-Topic: [EXT] Re: [PATCH] Revert "phy: cadence-torrent: Do not configure
- SERDES if it's already configured"
-Thread-Index: Adfigy5UG7A+JRfzRGOjQFvgL0E/BwVOokqAAAH7bcA=
-Date: Thu, 23 Dec 2021 06:27:40 +0000
-Message-ID: <CH2PR19MB4024714657D84812E6F16A77A07E9@CH2PR19MB4024.namprd19.prod.outlook.com>
-References: <CH2PR19MB4024BE31FB249744412071F6A0639@CH2PR19MB4024.namprd19.prod.outlook.com>
- <YcQIp3IJ0eki3hY2@matsya>
-In-Reply-To: <YcQIp3IJ0eki3hY2@matsya>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5a3827b7-7b20-4afe-811f-08d9c5dd52a4
-x-ms-traffictypediagnostic: CH2PR19MB4024:EE_
-x-microsoft-antispam-prvs: <CH2PR19MB4024C49C58C998725796CFB1A07E9@CH2PR19MB4024.namprd19.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: T5P6FoQSXBBrGoATIQL6sePn/PsM8sOF45Il+tS6Zr3Bp8RekaIYpY//XpuO1ZNZiHPTMqTwBc/SPZmnG4X8uqaYGo0iXWfqYnd6mg7cgCjob+S4Ujm/dUJMQ82SNrWeeZycL6WrfwtODVulbU+E2l7fpC9pDnI1aM9SXmxUQAC4y0pEyniCWRTUYVasnEhwcXqtkxcjHbbHVoZ0asLd8yArBRwoOu2g9nHvHKmjxZkWJo9MoX2XriUPTNnm6n4GeXaK8OfsBICkZ5XzaA2CgedWrib404jFPcFnB7KOVnEB1LqahvJv3yXCuEIvaqUxw1xMcFoNg0t5+Z812ya+Qph6mblHIoTomALll1RF9vFHZcjRSJMTnQiOq8eIaL+Ce6H3sk959i90/66QAkkSpUhDeCJO4jeV3EXZTjJv2YWFgkIM4gcxgmVbHGZo1cKvmczBocF1M7Y6TMO3JJL/BiEFPL54QJfiOd8bUTXszQgUtTWGcbA/5M7x31u66ZDb7RIoko1ZCM3oAycbcKXSTjobls7ySr/xmVAtF9nEGpyUcDzT5o2JEeCVhN0agQHQC4/H7UNTBvJCbJcteJHxcFoztPJ4hhlerEhAc5Xs0PRiu72dadasKlKi8wUHoHliCLglc7ec1BzB5Hi3m8C5rg==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:CH2PR19MB4024.namprd19.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(366004)(26005)(88996005)(52536014)(8676002)(86362001)(122000001)(54906003)(316002)(508600001)(8936002)(6506007)(53546011)(83380400001)(33656002)(186003)(2906002)(55016003)(5660300002)(6916009)(64756008)(66946007)(9686003)(66446008)(71200400001)(66476007)(66556008)(4326008)(7696005)(38100700002);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?sWgKltkoa6hRBsll3FqCDSaHyNCGPmW9e4gZYQUQQdmjOiOVnlFltp3WC6qg?=
- =?us-ascii?Q?bJUMAsNW08TGb9/Yh8SpfRiHyZ3rknPUc2TV0mKD2WvZYIUgs/Dn/WaG4EP+?=
- =?us-ascii?Q?f9k32ZWLmHSKoVaSk/hCsjQrKiwG57YKAKApKE2z8AqrV7IC2jh1ka6d3nvL?=
- =?us-ascii?Q?M40fE7DLjvPpRNOwS5cJbW5eMikcipc3hJRoxxiQWF/p1llUfGvN4zK0m78S?=
- =?us-ascii?Q?N2TH2Dq7EDjVlXA2AtyF4TU5rqfeamBGNAdmqYWRwB+GW2MW4IuOsPRiRNqF?=
- =?us-ascii?Q?Bo/w+llPbm1Q4dBD0IG0dNWUwWQWuLRGcfj8wXkISwTTaTplBGmg/dTJEP4J?=
- =?us-ascii?Q?76MStJIoIM+aPqAh0zEXi0FnXTEXa5GkNOZlNZBanmPfLRXd2/kTdgnNd07V?=
- =?us-ascii?Q?xbmOI99rLvpSMfxFEHZIZDdSxTOLcILkhqSPFpl/y+GoEpNhGIByVNY3Z3nb?=
- =?us-ascii?Q?w+8ZOE0F5E76ZLGyL4rfxMx0GY27dBFD1g9/qqmwxpLTPUMaCgRtHQ23hjt+?=
- =?us-ascii?Q?NC7yZy+Iqe8GLv6KpuqvQRcLFi3N+3LTv+Pc6e6UslMghjrnt1jbfm9KhCsM?=
- =?us-ascii?Q?/4ZfT6mtJdgnnpmW21OlxAxcCzgyLKh+FJJayjeTPum7ni5iEh+5kW1WnFj3?=
- =?us-ascii?Q?/muMcyJ8hocq+PNrcjLf6a2z9rl4P0TqWhPeep54Ovd5VPsP6UNAYPVXDAde?=
- =?us-ascii?Q?aG/2S3vO1v813Q+I0vjX7sdF2mV41Njca+KrFTjxMfWoDd54pzLCl5LpWutG?=
- =?us-ascii?Q?7Gvi8cGdtLBSvorMmfTxUleZRhyh2EPu7Y6skb/n7DZlW75ZTlesrZnYa3EP?=
- =?us-ascii?Q?FSUFVShwBCvIME4BGIcNvYhbILlxgE0ZlnSpfCfNB94DGAzndZUikawir4At?=
- =?us-ascii?Q?xgy+OgoDgTYye6PDYIeqYHYnwygW5B47eUnF+SVbUZ79qdCzjb/pSyMfHmV7?=
- =?us-ascii?Q?JxkV2Eu1e2VjiLcMQ6d7SyIzl+qF6SkDipQnxDcwgfx1KvnXEdcV6UsArnv6?=
- =?us-ascii?Q?XKltqu08+tEADQppDEHNUS/Ns2aqKYAu1KbXUjeyGMns6A4+aR77Ak0pBZOS?=
- =?us-ascii?Q?aQz+7kKnKZ+uHrCXBN00ZDHE16eDJFHSBMNNpyfbCK/uC5DJpIV9mMFqt+S1?=
- =?us-ascii?Q?00qGDBJczwKE/uxn6+zkvshP4d4i6jkOMysrOaJo82AUOW40wKNNX/hiuveu?=
- =?us-ascii?Q?vTLfo5jAC123gztpV6Y7AgpoFEFDgigzun7C2Hov7zmlWRuVItrRsXfTLrl7?=
- =?us-ascii?Q?Kbrcw+IRlWgjd+ScL3a+VtAvVwP3s3TmUcmg33YPSRMGLlZIb/dakt07+1Sk?=
- =?us-ascii?Q?fHJA1NvIoy3ozEMedlZblriw5OwX4Om747Djq8mVAnuCTs1Erkb7UnHN3vEO?=
- =?us-ascii?Q?5kOux50ApdMiSdtxgvFysNbOtOTONvHePqQgDFbk83VzGNnFqBe0LmAaic4P?=
- =?us-ascii?Q?wfMFvXd5dU4E3jL/3zVKs9wpFW97R2qLl6Uvw0Ooqr6/BvnGRzNapIMk1X6T?=
- =?us-ascii?Q?qzSCRrqvmy4F0eGMZYj1tpZ6gJUTU31E5rXcd93aKXjQUSylaQLMa0OMAgfQ?=
- =?us-ascii?Q?oSOOK7invDzWVwR7P2L8BWev+p6tSC/6Ry/wsRG3HYDVXnj4ltBzdh2IoB8Z?=
- =?us-ascii?Q?uLhpmEBuHXaryMfxPtgEywU=3D?=
+ id 1n0LQU-00CVDk-4G; Thu, 23 Dec 2021 10:34:25 +0000
+Received: by mail-ed1-x52d.google.com with SMTP id z29so19618535edl.7;
+ Thu, 23 Dec 2021 02:34:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=nEDdPxiWGHJHA/JwM55TTuzm/mi1Nl/8AAGZvXNWNn0=;
+ b=Oulg5mbR+nUmLG7mXJbzK7HqYNZVWVREScTKG6j7YYH6kDQrkNjheZn2IYQ1dwZ+h3
+ iMPru6A2aYReBk4XS/kHKCgeIqVNmuRSaYTh0fKbDkwdmAQp3kPCldRwHhNkiawi+0VH
+ Oa8cOV3P7xDBCR/1KA1wGf3WsT4CHcpDjGpQ0PmyahfHFbVIUFIeJk9Pg+8ovrYqwDeR
+ GojM+mxNIPW2Zw2B2Oysf3lbcWzH12+icsJ3VwfjFtDA28DTL1CMfmJO6N19D0yPkxgo
+ mkIeJXliIEsiHDjjxXrxqH4DkYvKnDetwZw5lClTMAW3d1OQn2spjBlvRM95vdn69u7f
+ gVYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=nEDdPxiWGHJHA/JwM55TTuzm/mi1Nl/8AAGZvXNWNn0=;
+ b=lS10moUVu8hP/f7+4HOCk4B2+2kSCAy+ASGGHKWQyfBOzQ2FXdjuA9jxhr+Mw7eLHA
+ BiCfduZPoTkejqiB3rEjPuWhjJ1Y27pc5V3hcbBiCP8bkcQ1hhczTZKAW1DVnogdj+HJ
+ GiYRmPOYlnz7YqDu3ZmxEnS43RXoMZCbzAGIJBehyBcxPCtiQ0qe2de+YzaChegS64OE
+ 1x9q/M5dsiYGTXOXW8WSI5rz0Y72/eDR8zHYv5s9FhdAnGmR89JHDwjlQa/zefItnHpe
+ CSLMrge959YxaqOCkLrsIZ/rKjkQBstsDHgi/VSJfaJepPi/PzPcmKiB8rHSr+iPs/pT
+ //fA==
+X-Gm-Message-State: AOAM530yifvQ+ENYJXYvh0iOo9Pp1Ept/AaxYnhYBC/Cx/7Y3zIhXaPW
+ 6QudAkZto1UPz7lhWqPKb9k=
+X-Google-Smtp-Source: ABdhPJzyEVSkBQXrkgelgAu5hd4p2ELOA9zWaAEWMmhCcReWt0SXbYNMrLqYdBWIEJdIzVPBQMLepQ==
+X-Received: by 2002:a17:907:3d88:: with SMTP id
+ he8mr1423537ejc.707.1640255660348; 
+ Thu, 23 Dec 2021 02:34:20 -0800 (PST)
+Received: from [192.168.2.1] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id
+ bx6sm1854840edb.78.2021.12.23.02.34.19
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 23 Dec 2021 02:34:20 -0800 (PST)
+Subject: Re: [RFC PATCH v6 3/4] phy: rockchip: add naneng multi phy for rk3568
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Cc: robh+dt@kernel.org, kishon@ti.com, vkoul@kernel.org,
+ p.zabel@pengutronix.de, lee.jones@linaro.org, yifeng.zhao@rock-chips.com,
+ kever.yang@rock-chips.com, cl@rock-chips.com, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20211222213032.7678-1-jbx6244@gmail.com>
+ <20211222213032.7678-4-jbx6244@gmail.com>
+Message-ID: <983bfd82-87e6-b5ca-1620-917be6098625@gmail.com>
+Date: Thu, 23 Dec 2021 11:34:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.14.0
 MIME-Version: 1.0
-X-OriginatorOrg: ambarella.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: CH2PR19MB4024.namprd19.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5a3827b7-7b20-4afe-811f-08d9c5dd52a4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Dec 2021 06:27:40.8656 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3ccd3c8d-5f7c-4eb4-ae6f-32d8c106402c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: mQCIVk7WhcP2BlVO0KpN0qsMW/XHbkL6J9EWHJF+V1mgv8bNX98o1v1X6tJKfzv86bq9gN/VghbVhqAEJ123+g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR19MB4024
-X-Proofpoint-ORIG-GUID: gDil6U4NlL2plpDSbHLXsElyr10bkFI4
-X-Proofpoint-GUID: gDil6U4NlL2plpDSbHLXsElyr10bkFI4
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.11.62.513
- definitions=2021-12-23_01,2021-12-22_01,2021-12-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- spamscore=0 clxscore=1011 suspectscore=0 mlxscore=0 bulkscore=0
- impostorscore=0 lowpriorityscore=0 phishscore=0 mlxlogscore=999
- adultscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2110150000 definitions=main-2112230035
+In-Reply-To: <20211222213032.7678-4-jbx6244@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211222_222758_927832_7671BE03 
-X-CRM114-Status: GOOD (  31.11  )
+X-CRM114-CacheID: sfid-20211223_023422_240454_E294E18C 
+X-CRM114-Status: GOOD (  36.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -171,146 +96,948 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, Vinod
+Hi Yifeng and others,
 
-> -----Original Message-----
-> From: Vinod Koul [mailto:vkoul@kernel.org]
-> Sent: Thursday, December 23, 2021 1:27 PM
-> To: Li Chen
-> Cc: Kishon Vijay Abraham I; Philipp Zabel; Swapnil Jakhade; linux-
-> phy@lists.infradead.org; linux-kernel@vger.kernel.org; Dan Carpenter
-> Subject: [EXT] Re: [PATCH] Revert "phy: cadence-torrent: Do not configure
-> SERDES if it's already configured"
-> 
-> On 26-11-21, 05:06, Li Chen wrote:
-> > This reverts commit
-> > b69d39f68419("phy: cadence-torrent: Do not configure SERDES if it's already
-> configured")
-> 
-> space between commit id and open brace...
-> 
-> >
-> > our soc will hang on any regmap field read before reset.
-> 
-> okay, in this case the right fix would be to keep track of reset in SW
-> and still skip reset if it is already configured?
-> 
+Some comments,have a look if it's useful.
 
-I should be grateful if you would give me more details of reset in SW.
+If you like the multi phy approuch:
 
-> >
-> > Signed-off-by: Li Chen <lchen@ambarella.com>
-> > ---
-> >  drivers/phy/cadence/phy-cadence-torrent.c | 31 +++++++----------------
-> >  1 file changed, 9 insertions(+), 22 deletions(-)
-> >
-> > diff --git a/drivers/phy/cadence/phy-cadence-torrent.c
-> b/drivers/phy/cadence/phy-cadence-torrent.c
-> > index 415ace64adc5c..e57e0b1523aff 100644
-> > --- a/drivers/phy/cadence/phy-cadence-torrent.c
-> > +++ b/drivers/phy/cadence/phy-cadence-torrent.c
-> > @@ -2031,11 +2031,6 @@ static int cdns_torrent_noop_phy_on(struct phy
-> *phy)
-> >  	return 0;
-> >  }
-> >
-> > -static const struct phy_ops noop_ops = {
-> > -	.power_on	= cdns_torrent_noop_phy_on,
-> > -	.owner		= THIS_MODULE,
-> > -};
-> > -
-> >  static
-> >  int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
-> >  {
-> > @@ -2282,7 +2277,6 @@ static int cdns_torrent_phy_probe(struct
-> platform_device *pdev)
-> >  	struct device_node *child;
-> >  	int ret, subnodes, node = 0, i;
-> >  	u32 total_num_lanes = 0;
-> > -	int already_configured;
-> >  	u8 init_dp_regmap = 0;
-> >  	u32 phy_type;
-> >
-> > @@ -2321,20 +2315,16 @@ static int cdns_torrent_phy_probe(struct
-> platform_device *pdev)
-> >  	if (ret)
-> >  		return ret;
-> >
-> > -	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1,
-> &already_configured);
-> > -
-> > -	if (!already_configured) {
-> > -		ret = cdns_torrent_reset(cdns_phy);
-> > -		if (ret)
-> > -			goto clk_cleanup;
-> > +	ret = cdns_torrent_reset(cdns_phy);
-> > +	if (ret)
-> > +		goto clk_cleanup;
-> >
-> > -		ret = cdns_torrent_clk(cdns_phy);
-> > -		if (ret)
-> > -			goto clk_cleanup;
-> > +	ret = cdns_torrent_clk(cdns_phy);
-> > +	if (ret)
-> > +		goto clk_cleanup;
-> >
-> >  		/* Enable APB */
-> > -		reset_control_deassert(cdns_phy->apb_rst);
-> > -	}
-> > +	reset_control_deassert(cdns_phy->apb_rst);
-> >
-> >  	for_each_available_child_of_node(dev->of_node, child) {
-> >  		struct phy *gphy;
-> > @@ -2404,10 +2394,7 @@ static int cdns_torrent_phy_probe(struct
-> platform_device *pdev)
-> >  		of_property_read_u32(child, "cdns,ssc-mode",
-> >  				     &cdns_phy->phys[node].ssc_mode);
-> >
-> > -		if (!already_configured)
-> > -			gphy = devm_phy_create(dev, child,
-> &cdns_torrent_phy_ops);
-> > -		else
-> > -			gphy = devm_phy_create(dev, child, &noop_ops);
-> > +		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
-> >  		if (IS_ERR(gphy)) {
-> >  			ret = PTR_ERR(gphy);
-> >  			goto put_child;
-> > @@ -2490,7 +2477,7 @@ static int cdns_torrent_phy_probe(struct
-> platform_device *pdev)
-> >  		goto put_lnk_rst;
-> >  	}
-> >
-> > -	if (cdns_phy->nsubnodes > 1 && !already_configured) {
-> > +	if (cdns_phy->nsubnodes > 1) {
-> >  		ret = cdns_torrent_phy_configure_multilink(cdns_phy);
-> >  		if (ret)
-> >  			goto put_lnk_rst;
-> > --
-> > 2.33.1
-> >
-> >
-> >
-> **************************************************************
-> ********
-> > This email and attachments contain Ambarella Proprietary and/or Confidential
-> Information and is intended solely for the use of the individual(s) to whom it is
-> addressed. Any unauthorized review, use, disclosure, distribute, copy, or print is
-> prohibited. If you are not an intended recipient, please contact the sender by
-> reply email and destroy all copies of the original message. Thank you.
-> 
-> Aha!!!
-> 
-> Okay destroyed this now!
-> 
-> --
-> ~Vinod
-> 
-> ##############################################################
-> ########
-> This EXTERNAL email has been scanned by Proofpoint Email Protect service.
+Could you carefully test with hardware and tell us
+what part of the code works or not and what to improve.
 
-Regards,
-Li
+Produce a version 7 based on the code ideas and the comments below.
+
+Kind regards,
+
+Johan Jonker
+
+
+On 12/22/21 10:30 PM, Johan Jonker wrote:
+> From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+> 
+> This patch implements a multi phy driver for Rockchip SoCs
+> with NaNeng IP block. This phy can be used as pcie-phy, usb3-phy,
+> sata-phy or sgmii-phy.
+> 
+> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+> 
+> TEST COMPILED ONLY!
+> Driver not verified with hardware!
+> 
+> ---
+> 
+> Changes in v6:
+> - restyle
+> - rename defines
+> - change from comb to multi phy
+> - clean up includes
+> - add parent node
+> - change compatible strings
+> - remove rockchip,sgmii-mac-sel support
+> - remove rockchip,dis-u3otg0-port support
+> - remove rockchip,dis-u3otg1-port support
+> 
+> Changes in v5:
+> - add rockchip_combphy_updatel()
+> - restyle
+> 
+> Changes in v4:
+> - restyle
+> - add devm_reset_control_array_get()
+> - remove clk structure
+> - change refclk DT parse
+> - change dev_err message
+> - add dot to phrase
+> - add ext_refclk variable
+> - add enable_ssc variable
+> - rename rockchip_combphy_param_write
+> - remove param_read
+> - replace rockchip-naneng-combphy driver name
+> 
+> Changes in v3:
+> - Using api devm_reset_control_get_optional_exclusive and dev_err_probe.
+> - Remove apb_rst.
+> - Redefine registers address.
+> 
+> Changes in v2:
+> - Using api devm_platform_get_and_ioremap_resource.
+> - Modify rockchip_combphy_set_Mode.
+> - Add some PHY registers definition.
+> ---
+>  drivers/phy/rockchip/Kconfig                  |   8 +
+>  drivers/phy/rockchip/Makefile                 |   1 +
+>  .../rockchip/phy-rockchip-naneng-multiphy.c   | 661 ++++++++++++++++++
+>  3 files changed, 670 insertions(+)
+>  create mode 100644 drivers/phy/rockchip/phy-rockchip-naneng-multiphy.c
+> 
+> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+> index e812adad7..a14e32b6f 100644
+> --- a/drivers/phy/rockchip/Kconfig
+> +++ b/drivers/phy/rockchip/Kconfig
+> @@ -66,6 +66,14 @@ config PHY_ROCKCHIP_INNO_DSIDPHY
+>  	  Enable this to support the Rockchip MIPI/LVDS/TTL PHY with
+>  	  Innosilicon IP block.
+>  
+> +config PHY_ROCKCHIP_NANENG_MULTI_PHY
+> +	tristate "Rockchip NANENG MULTI PHY Driver"
+> +	depends on ARCH_ROCKCHIP && OF
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support the Rockchip PCIe/USB3.0/SATA/QSGMII
+> +	  multi PHY with NaNeng IP block.
+> +
+>  config PHY_ROCKCHIP_PCIE
+>  	tristate "Rockchip PCIe PHY Driver"
+>  	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
+> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
+> index f0eec212b..d5570452f 100644
+> --- a/drivers/phy/rockchip/Makefile
+> +++ b/drivers/phy/rockchip/Makefile
+> @@ -6,6 +6,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_CSIDPHY)	+= phy-rockchip-inno-csidphy.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_DSIDPHY)	+= phy-rockchip-inno-dsidphy.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+= phy-rockchip-inno-hdmi.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+= phy-rockchip-inno-usb2.o
+> +obj-$(CONFIG_PHY_ROCKCHIP_NANENG_MULTI_PHY)	+= phy-rockchip-naneng-multiphy.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
+> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-multiphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-multiphy.c
+> new file mode 100644
+> index 000000000..765ede440
+> --- /dev/null
+> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-multiphy.c
+> @@ -0,0 +1,661 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Rockchip PIPE USB3.0 PCIE SATA Multi Phy driver
+> + *
+> + * Copyright (C) 2021 Rockchip Electronics Co., Ltd.
+> + */
+> +
+> +#include <dt-bindings/phy/phy.h>
+> +#include <linux/clk.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of_device.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset.h>
+> +#include <linux/units.h>
+> +
+> +#define BIT_WRITEABLE_SHIFT		16
+> +#define REF_CLOCK_24MHz			(24 * HZ_PER_MHZ)
+> +#define REF_CLOCK_25MHz			(25 * HZ_PER_MHZ)
+> +#define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
+> +
+> +/* RK3568 MULTI PHY REG */
+> +#define RK3568_PHYREG6			0x14
+> +#define PHYREG6_PLL_DIV_MASK		GENMASK(7, 6)
+> +#define PHYREG6_PLL_DIV_SHIFT		6
+> +#define PHYREG6_PLL_DIV_2		1
+> +
+> +#define RK3568_PHYREG7			0x18
+> +#define PHYREG7_TX_RTERM_MASK		GENMASK(7, 4)
+> +#define PHYREG7_TX_RTERM_SHIFT		4
+> +#define PHYREG7_TX_RTERM_50OHM		8
+> +#define PHYREG7_RX_RTERM_MASK		GENMASK(3, 0)
+> +#define PHYREG7_RX_RTERM_SHIFT		0
+> +#define PHYREG7_RX_RTERM_44OHM		15
+> +
+> +#define RK3568_PHYREG8			0x1C
+> +#define PHYREG8_SSC_EN			BIT(4)
+> +
+> +#define RK3568_PHYREG11			0x28
+> +#define PHYREG11_SU_TRIM_0_7		0xF0
+> +
+> +#define RK3568_PHYREG12			0x2C
+> +#define PHYREG12_PLL_LPF_ADJ_VALUE	4
+> +
+> +#define RK3568_PHYREG13			0x30
+> +#define PHYREG13_RESISTER_MASK		GENMASK(5, 4)
+> +#define PHYREG13_RESISTER_SHIFT		0x4
+> +#define PHYREG13_RESISTER_HIGH_Z	3
+> +#define PHYREG13_CKRCV_AMP0		BIT(7)
+> +
+> +#define RK3568_PHYREG14			0x34
+> +#define PHYREG14_CKRCV_AMP1		BIT(0)
+> +
+> +#define RK3568_PHYREG15			0x38
+> +#define PHYREG15_CTLE_EN		BIT(0)
+> +#define PHYREG15_SSC_CNT_MASK		GENMASK(7, 6)
+> +#define PHYREG15_SSC_CNT_SHIFT		6
+> +#define PHYREG15_SSC_CNT_VALUE		1
+> +
+> +#define RK3568_PHYREG16			0x3C
+> +#define PHYREG16_SSC_CNT_VALUE		0x5f
+> +
+> +#define RK3568_PHYREG18			0x44
+> +#define PHYREG18_PLL_LOOP		0x32
+> +
+> +#define RK3568_PHYREG32			0x7C
+> +#define PHYREG32_SSC_MASK		GENMASK(7, 4)
+> +#define PHYREG32_SSC_DIR_SHIFT		4
+> +#define PHYREG32_SSC_UPWARD		0
+> +#define PHYREG32_SSC_DOWNWARD		1
+> +#define PHYREG32_SSC_OFFSET_SHIFT	6
+> +#define PHYREG32_SSC_OFFSET_500PPM	1
+> +
+> +#define RK3568_PHYREG33			0x80
+> +#define PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
+> +#define PHYREG33_PLL_KVCO_SHIFT		2
+> +#define PHYREG33_PLL_KVCO_VALUE		2
+
+/* RK3588 MULTI PHY REG */
+
+Add more defines.
+
+> +
+> +struct rockchip_multiphy_priv;
+> +
+> +struct multiphy_reg {
+> +	u16 offset;
+> +	u16 bitend;
+> +	u16 bitstart;
+> +	u16 disable;
+> +	u16 enable;
+> +};
+> +
+> +struct rockchip_multiphy_grfcfg {
+> +	struct multiphy_reg pcie_mode_set;
+> +	struct multiphy_reg usb_mode_set;
+> +	struct multiphy_reg sgmii_mode_set;
+> +	struct multiphy_reg qsgmii_mode_set;
+> +	struct multiphy_reg pipe_rxterm_set;
+> +	struct multiphy_reg pipe_txelec_set;
+> +	struct multiphy_reg pipe_txcomp_set;
+> +	struct multiphy_reg pipe_clk_25m;
+> +	struct multiphy_reg pipe_clk_100m;
+> +	struct multiphy_reg pipe_phymode_sel;
+> +	struct multiphy_reg pipe_rate_sel;
+> +	struct multiphy_reg pipe_rxterm_sel;
+> +	struct multiphy_reg pipe_txelec_sel;
+> +	struct multiphy_reg pipe_txcomp_sel;
+> +	struct multiphy_reg pipe_clk_ext;
+> +	struct multiphy_reg pipe_sel_usb;
+> +	struct multiphy_reg pipe_sel_qsgmii;
+> +	struct multiphy_reg pipe_phy_status;
+> +	struct multiphy_reg con0_for_pcie;
+> +	struct multiphy_reg con1_for_pcie;
+> +	struct multiphy_reg con2_for_pcie;
+> +	struct multiphy_reg con3_for_pcie;
+> +	struct multiphy_reg con0_for_sata;
+> +	struct multiphy_reg con1_for_sata;
+> +	struct multiphy_reg con2_for_sata;
+> +	struct multiphy_reg con3_for_sata;
+> +	struct multiphy_reg pipe_con0_for_sata;
+> +	struct multiphy_reg pipe_sgmii_mac_sel;
+> +	struct multiphy_reg pipe_xpcs_phy_ready;
+> +	struct multiphy_reg u3otg0_port_en;
+> +	struct multiphy_reg u3otg1_port_en;
+
+.num_phy
+.regs
+.cap
+
+Add more phy properties for checks and control.
+
+> +};
+> +
+> +struct rockchip_multiphy_cfg {
+> +	const struct rockchip_multiphy_grfcfg *grfcfg;
+> +	int (*multiphy_cfg)(struct phy *phy);
+> +};
+> +
+> +struct rockchip_multiphy_node_priv {
+> +	int id;
+> +	u8 mode;
+> +	void __iomem *mmio;
+> +	int num_clks;
+> +	struct clk_bulk_data *clks;
+> +	struct regmap *phy_grf;
+> +	struct phy *phy;
+> +	struct reset_control *phy_rst;
+> +	struct clk *refclk;
+> +	bool enable_ssc;
+> +	bool ext_refclk;
+> +};
+> +
+> +struct rockchip_multiphy_priv {
+> +	struct device *dev;
+> +	int num_phy;
+> +	struct regmap *pipe_grf;
+> +	const struct rockchip_multiphy_cfg *cfg;
+> +	struct rockchip_multiphy_node_priv **node;
+> +};
+> +
+> +static void rockchip_multiphy_updatel(struct phy *phy, int mask, int val, int reg)
+> +{
+> +	struct rockchip_multiphy_node_priv *node_priv = phy_get_drvdata(phy);
+> +	unsigned int temp;
+> +
+> +	temp = readl(node_priv->mmio + reg);
+> +	temp = (temp & ~(mask)) | val;
+> +	writel(temp, node_priv->mmio + reg);
+> +}
+> +
+> +static int rockchip_multiphy_param_write(struct regmap *base,
+> +					 const struct multiphy_reg *reg, bool en)
+> +{
+> +	u32 val, mask, tmp;
+> +
+> +	tmp = en ? reg->enable : reg->disable;
+> +	mask = GENMASK(reg->bitend, reg->bitstart);
+> +	val = (tmp << reg->bitstart) | (mask << BIT_WRITEABLE_SHIFT);
+> +
+> +	return regmap_write(base, reg->offset, val);
+> +}
+> +
+> +static u32 rockchip_multiphy_is_ready(struct phy *phy)
+> +{
+> +	struct rockchip_multiphy_priv *priv = dev_get_drvdata(phy->dev.parent);
+> +	struct rockchip_multiphy_node_priv *node_priv = phy_get_drvdata(phy);
+> +	const struct rockchip_multiphy_grfcfg *cfg = priv->cfg->grfcfg;
+> +	u32 mask, val;
+> +
+> +	mask = GENMASK(cfg->pipe_phy_status.bitend,
+> +		       cfg->pipe_phy_status.bitstart);
+> +
+> +	regmap_read(node_priv->phy_grf, cfg->pipe_phy_status.offset, &val);
+> +	val = (val & mask) >> cfg->pipe_phy_status.bitstart;
+> +
+> +	return val;
+> +}
+> +
+> +static int rockchip_multiphy_set_mode(struct phy *phy)
+> +{
+> +	struct rockchip_multiphy_priv *priv = dev_get_drvdata(phy->dev.parent);
+> +	struct rockchip_multiphy_node_priv *node_priv = phy_get_drvdata(phy);
+> +	int ret = 0;
+> +
+> +	switch (node_priv->mode) {
+> +	case PHY_TYPE_PCIE:
+> +	case PHY_TYPE_USB3:
+> +	case PHY_TYPE_SATA:
+> +	case PHY_TYPE_SGMII:
+> +	case PHY_TYPE_QSGMII:
+> +		if (priv->cfg->multiphy_cfg)
+> +			ret = priv->cfg->multiphy_cfg(phy);
+> +		break;
+> +	default:
+> +		dev_err(priv->dev, "incompatible PHY type\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (ret)
+> +		dev_err(priv->dev, "failed to init phy for phy mode %x\n", node_priv->mode);
+> +
+> +	return ret;
+> +}
+> +
+> +static int rockchip_multiphy_init(struct phy *phy)
+> +{
+> +	struct rockchip_multiphy_priv *priv = dev_get_drvdata(phy->dev.parent);
+> +	struct rockchip_multiphy_node_priv *node_priv = phy_get_drvdata(phy);
+> +	const struct rockchip_multiphy_grfcfg *cfg = priv->cfg->grfcfg;
+> +	u32 val;
+> +	int ret;
+> +
+> +	ret = clk_bulk_prepare_enable(node_priv->num_clks, node_priv->clks);
+> +	if (ret) {
+> +		dev_err(priv->dev, "failed to enable clks\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = rockchip_multiphy_set_mode(phy);
+> +	if (ret)
+> +		goto err_clk;
+> +
+> +	ret = reset_control_deassert(node_priv->phy_rst);
+> +	if (ret)
+> +		goto err_clk;
+> +
+> +	if (node_priv->mode == PHY_TYPE_USB3) {
+> +		ret = readx_poll_timeout_atomic(rockchip_multiphy_is_ready,
+> +						phy, val,
+> +						val == cfg->pipe_phy_status.enable,
+> +						10, 1000);
+> +		if (ret)
+> +			dev_warn(priv->dev, "wait phy status ready timeout\n");
+> +	}
+> +
+> +	return 0;
+> +
+> +err_clk:
+> +	clk_bulk_disable_unprepare(node_priv->num_clks, node_priv->clks);
+> +
+> +	return ret;
+> +}
+> +
+> +static int rockchip_multiphy_exit(struct phy *phy)
+> +{
+> +	struct rockchip_multiphy_node_priv *node_priv = phy_get_drvdata(phy);
+> +
+> +	clk_bulk_disable_unprepare(node_priv->num_clks, node_priv->clks);
+> +	reset_control_assert(node_priv->phy_rst);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops rochchip_multiphy_ops = {
+> +	.init = rockchip_multiphy_init,
+> +	.exit = rockchip_multiphy_exit,
+> +	.owner = THIS_MODULE,
+> +};
+> +
+> +static struct phy *rockchip_multiphy_xlate(struct device *dev, struct of_phandle_args *args)
+> +{
+> +	struct rockchip_multiphy_priv *priv = dev_get_drvdata(dev);
+> +	struct rockchip_multiphy_node_priv *node_priv = NULL;
+> +	struct device_node *phy_np = args->np;
+> +	int index;
+> +
+[..]
+
+> +
+> +	for (index = 0; index < priv->num_phy; index++)
+> +		if (phy_np == priv->node[index]->phy->dev.of_node) {
+> +			node_priv = priv->node[index];
+> +			break;
+> +		}
+> +
+> +	if (!node_priv) {
+> +		dev_err(dev, "failed to find appropriate phy\n");
+> +		return ERR_PTR(-EINVAL);
+> +	}
+> +
+> +	if (node_priv->mode != PHY_NONE && node_priv->mode != args->args[0])
+> +		dev_warn(dev, "phy type select %d overwriting type %d\n",
+> +			 args->args[0], node_priv->mode);
+> +
+> +	node_priv->mode = args->args[0];
+
+if ((node_priv->mode == PHY_TYPE_SGMII && args->args_count != 2) ||
+(node_priv->mode != PHY_TYPE_SGMII && args->args_count != 1) {
+		dev_err(dev, "invalid number of arguments\n");
+		return ERR_PTR(-EINVAL);
+	}
+
+Check number of argument based on capabillity.
+
+===
+
+	if (node_priv->mode != priv->cap[node_priv->id]) {
+		dev_err(dev, "invalid mode\n");
+		return ERR_PTR(-EINVAL);
+	}
+
+Check mode and id with phy node capabilities.
+
+===
+	if (node_priv->mode == PHY_TYPE_SGMII && args->args[1] == 0 ||
+args->args[1] == 1)
+		node_priv->sgmii-mac-sel = args->args[1];
+	else {
+		dev_err(dev, "invalid gmac id\n");
+		return ERR_PTR(-EINVAL);
+	}
+
+Maybe obtain SGMII output from extra phy argument.
+Fix YAML document as well!
+
+> +
+> +	return node_priv->phy;
+> +}
+> +
+> +static int rockchip_multiphy_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *np = dev->of_node;
+> +	struct device_node *child_np;
+> +	struct phy_provider *phy_provider;
+> +	struct resource res;
+> +	struct rockchip_multiphy_priv *priv;
+> +	int retval;
+> +	int id;
+> +
+> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	priv->cfg = of_device_get_match_data(dev);
+> +	if (!priv->cfg) {
+> +		dev_err(dev, "no OF match data provided\n");
+> +		return -EINVAL;
+> +	}
+> +
+
+> +	priv->num_phy = of_get_child_count(np);
+
+Check priv->num_phy with max SoC capabilities.
+
+> +	priv->node = devm_kcalloc(dev, priv->num_phy, sizeof(*priv->node), GFP_KERNEL);
+> +	if (!priv->node)
+> +		return -ENOMEM;
+> +
+> +	priv->dev = dev;
+> +	dev_set_drvdata(dev, priv);
+> +
+> +	priv->pipe_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-grf");
+> +	if (IS_ERR(priv->pipe_grf)) {
+> +		dev_err(dev, "failed to find peri_ctrl pipe-grf regmap\n");
+> +		return PTR_ERR(priv->pipe_grf);
+> +	}
+> +
+> +	id = 0;
+> +	for_each_child_of_node(np, child_np) {
+> +		struct rockchip_multiphy_node_priv *node_priv;
+> +		struct device *subdev;
+> +		struct phy *phy;
+> +		int i;
+> +
+> +		node_priv = devm_kzalloc(dev, sizeof(*node_priv), GFP_KERNEL);
+> +		if (!node_priv) {
+> +			retval = -ENOMEM;
+> +			goto put_child;
+> +		}
+> +
+> +		priv->node[id] = node_priv;
+> +
+> +		phy = devm_phy_create(dev, child_np, &rochchip_multiphy_ops);
+> +		if (IS_ERR(phy)) {
+> +			dev_err(dev, "failed to create phy\n");
+> +			retval = PTR_ERR(phy);
+> +			goto put_child;
+> +		}
+> +
+> +		subdev = &phy->dev;
+> +		retval = of_address_to_resource(child_np, 0, &res);
+> +		if (retval) {
+> +			dev_err(subdev, "failed to get address resource(id-%d)\n",
+> +				id);
+> +			goto put_child;
+> +		}
+> +
+> +		node_priv->mmio = devm_ioremap_resource(subdev, &res);
+> +		if (IS_ERR(node_priv->mmio)) {
+> +			retval = PTR_ERR(node_priv->mmio);
+> +			goto put_child;
+> +		}
+> +
+> +		node_priv->phy = phy;
+
+> +		node_priv->id = id;
+
+For a mode check based on id and phy node capabilities the id has to be
+based on reg address DT order.
+Currently node_priv->id is based on node order.
+Check reg address with a table and assign id from table index.
+
+> +		node_priv->mode = PHY_NONE;
+> +		id++;
+> +
+> +		phy_set_drvdata(phy, node_priv);
+> +
+> +		node_priv->num_clks = devm_clk_bulk_get_all(dev, &node_priv->clks);
+> +		if (node_priv->num_clks < 1) {
+> +			retval = -EINVAL;
+> +			goto put_child;
+> +		}
+> +
+> +		node_priv->refclk = NULL;
+> +		for (i = 0; i < node_priv->num_clks; i++) {
+> +			if (!strncmp(node_priv->clks[i].id, "ref", 3)) {
+> +				node_priv->refclk = node_priv->clks[i].clk;
+> +				break;
+> +			}
+> +		}
+> +
+> +		if (!node_priv->refclk) {
+> +			dev_err(dev, "no refclk found\n");
+> +			retval = -EINVAL;
+> +			goto put_child;
+> +		}
+> +
+> +		node_priv->phy_grf = syscon_regmap_lookup_by_phandle(dev->of_node,
+> +								     "rockchip,pipe-phy-grf");
+> +		if (IS_ERR(node_priv->phy_grf)) {
+> +			retval = PTR_ERR(node_priv->phy_grf);
+> +			dev_err(dev, "failed to find pipe-phy-grf regmap\n");
+> +			goto put_child;
+> +		}
+> +
+> +		node_priv->enable_ssc = device_property_present(dev, "rockchip,enable-ssc");
+> +
+> +		node_priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
+> +
+> +		node_priv->phy_rst = devm_reset_control_array_get(dev, false, false);
+> +		if (IS_ERR(node_priv->phy_rst)) {
+> +			retval = PTR_ERR(node_priv->phy_rst);
+> +			dev_err(dev, "failed to get phy reset\n");
+> +			goto put_child;
+> +		}
+> +
+> +		retval = reset_control_assert(node_priv->phy_rst);
+> +		if (retval) {
+> +			dev_err(dev, "failed to reset phy\n");
+> +			goto put_child;
+> +		}
+> +	}
+> +
+> +	phy_provider = devm_of_phy_provider_register(dev, rockchip_multiphy_xlate);
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +put_child:
+> +	of_node_put(child_np);
+> +	return retval;
+> +}
+> +
+> +static int rk3568_multiphy_cfg(struct phy *phy)
+> +{
+> +	struct rockchip_multiphy_node_priv *node_priv = phy_get_drvdata(phy);
+> +	struct rockchip_multiphy_priv *priv = dev_get_drvdata(phy->dev.parent);
+> +	const struct rockchip_multiphy_grfcfg *cfg = priv->cfg->grfcfg;
+> +	unsigned long rate;
+> +	u32 val;
+> +
+> +	switch (node_priv->mode) {
+> +	case PHY_TYPE_PCIE:
+> +		/* Set SSC downward spread spectrum. */
+> +		rockchip_multiphy_updatel(phy, PHYREG32_SSC_MASK,
+> +					  PHYREG32_SSC_DOWNWARD << PHYREG32_SSC_DIR_SHIFT,
+> +					  RK3568_PHYREG32);
+> +
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con0_for_pcie, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con1_for_pcie, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con2_for_pcie, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con3_for_pcie, true);
+> +		break;
+> +
+> +	case PHY_TYPE_USB3:
+> +		/* Set SSC downward spread spectrum. */
+> +		rockchip_multiphy_updatel(phy, PHYREG32_SSC_MASK,
+> +					  PHYREG32_SSC_DOWNWARD << PHYREG32_SSC_DIR_SHIFT,
+> +					  RK3568_PHYREG32);
+> +
+> +		/* Enable adaptive CTLE for USB3.0 Rx. */
+> +		val = readl(node_priv->mmio + RK3568_PHYREG15);
+> +		val |= PHYREG15_CTLE_EN;
+> +		writel(val, node_priv->mmio + RK3568_PHYREG15);
+> +
+> +		/* Set PLL KVCO fine tuning signals. */
+> +		rockchip_multiphy_updatel(phy, PHYREG33_PLL_KVCO_MASK,
+> +					  PHYREG33_PLL_KVCO_VALUE << PHYREG33_PLL_KVCO_SHIFT,
+> +					  RK3568_PHYREG33);
+> +
+> +		/* Enable controlling random jitter. */
+> +		writel(PHYREG12_PLL_LPF_ADJ_VALUE, node_priv->mmio + RK3568_PHYREG12);
+> +
+> +		/* Set PLL input clock divider 1/2. */
+> +		rockchip_multiphy_updatel(phy, PHYREG6_PLL_DIV_MASK,
+> +					  PHYREG6_PLL_DIV_2 << PHYREG6_PLL_DIV_SHIFT,
+> +					  RK3568_PHYREG6);
+> +
+> +		writel(PHYREG18_PLL_LOOP, node_priv->mmio + RK3568_PHYREG18);
+> +		writel(PHYREG11_SU_TRIM_0_7, node_priv->mmio + RK3568_PHYREG11);
+> +
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_sel_usb, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_txcomp_sel, false);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_txelec_sel, false);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->usb_mode_set, true);
+> +		break;
+> +
+> +	case PHY_TYPE_SATA:
+> +		/* Enable adaptive CTLE for SATA Rx. */
+> +		val = readl(node_priv->mmio + RK3568_PHYREG15);
+> +		val |= PHYREG15_CTLE_EN;
+> +		writel(val, node_priv->mmio + RK3568_PHYREG15);
+> +		/*
+> +		 * Set tx_rterm=50ohm and rx_rterm=44ohm for SATA.
+> +		 * 0: 60ohm, 8: 50ohm 15: 44ohm (by step abort 1ohm)
+> +		 */
+> +		val = PHYREG7_TX_RTERM_50OHM << PHYREG7_TX_RTERM_SHIFT;
+> +		val |= PHYREG7_RX_RTERM_44OHM << PHYREG7_RX_RTERM_SHIFT;
+> +		writel(val, node_priv->mmio + RK3568_PHYREG7);
+> +
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con0_for_sata, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con1_for_sata, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con2_for_sata, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->con3_for_sata, true);
+> +		rockchip_multiphy_param_write(priv->pipe_grf, &cfg->pipe_con0_for_sata, true);
+> +		break;
+> +
+> +	case PHY_TYPE_SGMII:
+> +		rockchip_multiphy_param_write(priv->pipe_grf, &cfg->pipe_xpcs_phy_ready, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_phymode_sel, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_sel_qsgmii, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->sgmii_mode_set, true);
+> +		break;
+> +
+> +	case PHY_TYPE_QSGMII:
+> +		rockchip_multiphy_param_write(priv->pipe_grf, &cfg->pipe_xpcs_phy_ready, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_phymode_sel, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_rate_sel, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_sel_qsgmii, true);
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->qsgmii_mode_set, true);
+> +		break;
+> +
+> +	default:
+> +		dev_err(priv->dev, "incompatible PHY type\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	rate = clk_get_rate(node_priv->refclk);
+> +
+> +	switch (rate) {
+> +	case REF_CLOCK_24MHz:
+> +		if (node_priv->mode == PHY_TYPE_USB3 || node_priv->mode == PHY_TYPE_SATA) {
+> +			/* Set ssc_cnt[9:0]=0101111101 & 31.5KHz. */
+> +			val = PHYREG15_SSC_CNT_VALUE << PHYREG15_SSC_CNT_SHIFT;
+> +			rockchip_multiphy_updatel(phy, PHYREG15_SSC_CNT_MASK,
+> +						  val, RK3568_PHYREG15);
+> +
+> +			writel(PHYREG16_SSC_CNT_VALUE, node_priv->mmio + RK3568_PHYREG16);
+> +		}
+> +		break;
+> +
+> +	case REF_CLOCK_25MHz:
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_clk_25m, true);
+> +		break;
+> +
+> +	case REF_CLOCK_100MHz:
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_clk_100m, true);
+> +		if (node_priv->mode == PHY_TYPE_PCIE) {
+> +			/* PLL KVCO  fine tuning. */
+> +			val = PHYREG33_PLL_KVCO_VALUE << PHYREG33_PLL_KVCO_SHIFT;
+> +			rockchip_multiphy_updatel(phy, PHYREG33_PLL_KVCO_MASK,
+> +						  val, RK3568_PHYREG33);
+> +
+> +			/* Enable controlling random jitter. */
+> +			writel(PHYREG12_PLL_LPF_ADJ_VALUE, node_priv->mmio + RK3568_PHYREG12);
+> +
+> +			val = PHYREG6_PLL_DIV_2 << PHYREG6_PLL_DIV_SHIFT;
+> +			rockchip_multiphy_updatel(phy, PHYREG6_PLL_DIV_MASK,
+> +						  val, RK3568_PHYREG6);
+> +
+> +			writel(PHYREG18_PLL_LOOP, node_priv->mmio + RK3568_PHYREG18);
+> +			writel(PHYREG11_SU_TRIM_0_7, node_priv->mmio + RK3568_PHYREG11);
+> +		} else if (node_priv->mode == PHY_TYPE_SATA) {
+> +			/* downward spread spectrum +500ppm */
+> +			val = PHYREG32_SSC_DOWNWARD << PHYREG32_SSC_DIR_SHIFT;
+> +			val |= PHYREG32_SSC_OFFSET_500PPM << PHYREG32_SSC_OFFSET_SHIFT;
+> +			rockchip_multiphy_updatel(phy, PHYREG32_SSC_MASK,
+> +						  val, RK3568_PHYREG32);
+> +			writel(val, node_priv->mmio + RK3568_PHYREG32);
+> +		}
+> +		break;
+> +
+> +	default:
+> +		dev_err(priv->dev, "unsupported rate: %lu\n", rate);
+> +		return -EINVAL;
+> +	}
+
+	condition1 = (SoC rk3568) && (id == 0)
+	val = condition1 && (mode != USB3)? false : true;
+	if (condition1)
+		rockchip_combphy_param_write(priv->pipe_grf,
+&phy_cfg->grfcfg->u3otg0_port_en, val);
+
+
+	condition2 = (SoC rk3566 or rk3568) && (id == 1)
+	val = condition2 && (mode != USB3)? false : true;
+	if (condition2)
+		rockchip_combphy_param_write(priv->pipe_grf,
+&phy_cfg->grfcfg->u3otg1_port_en, val);
+
+========================
+
+	condition3 = (SoC rk3568) && (id == 1 || id == 2) && (mode == SGMII)
+	val = condition3 && (node_priv->sgmii-mac-sel)? true : false;
+	if (condition3)
+		rockchip_combphy_param_write(priv->pipe_grf,
+&phy_cfg->grfcfg->pipe_sgmii_mac_sel, val);
+
+TODO:
+Allow more phy data with:
+
+YAML node:
+
+     "#phy-cells":
+        enum: [1, 2]
+
+DT node:
+
+	gmac0: ethernet@fe2a0000 {
+		phys = <&combphy1 PHY_TYPE_SGMII 0>;
+		phy-names = "sgmii-phy";
+
+or
+
+		phys = <&combphy2 PHY_TYPE_SGMII 0>;
+		phy-names = "sgmii-phy";
+	}
+
+	gmac1: ethernet@fe010000 {
+		phys = <&combphy1 PHY_TYPE_SGMII 1>;
+		phy-names = "sgmii-phy";
+
+or
+
+		phys = <&combphy2 PHY_TYPE_SGMII 1>;
+		phy-names = "sgmii-phy";
+	}
+
+Could someone test this idea?
+
+> +
+> +	if (node_priv->ext_refclk) {
+> +		rockchip_multiphy_param_write(node_priv->phy_grf, &cfg->pipe_clk_ext, true);
+> +		if (node_priv->mode == PHY_TYPE_PCIE && rate == REF_CLOCK_100MHz) {
+> +			val = PHYREG13_RESISTER_HIGH_Z << PHYREG13_RESISTER_SHIFT;
+> +			val |= PHYREG13_CKRCV_AMP0;
+> +			rockchip_multiphy_updatel(phy, PHYREG13_RESISTER_MASK,
+> +						  val, RK3568_PHYREG13);
+> +
+> +			val = readl(node_priv->mmio + RK3568_PHYREG14);
+> +			val |= PHYREG14_CKRCV_AMP1;
+> +			writel(val, node_priv->mmio + RK3568_PHYREG14);
+> +		}
+> +	}
+> +
+> +	if (node_priv->enable_ssc) {
+> +		val = readl(node_priv->mmio + RK3568_PHYREG8);
+> +		val |= PHYREG8_SSC_EN;
+> +		writel(val, node_priv->mmio + RK3568_PHYREG8);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+static const struct rockchip_multiphy_grfcfg rk3566_multiphy_grfcfgs = {
+[..]
+
+Add maximum number of phy nodes for check with priv->num_phy.
+ .num_phy = 2,
+
+Add reg addresses to detect phy id.
+.regs =
+0xfe830000,
+0xfe840000,
+
+Add table with SoC capabilities based on phy id.
+ PCie USB3 SATA SGMII
+0: 0   x    x     0
+1: x   x    x     0
+
+Don't confuse phy id with node label numbers!
+
+};
+
+> +static const struct rockchip_multiphy_grfcfg rk3568_multiphy_grfcfgs = {
+> +	/* pipe-phy-grf */
+> +	.pcie_mode_set		= { 0x0000, 5, 0, 0x00, 0x11 },
+> +	.usb_mode_set		= { 0x0000, 5, 0, 0x00, 0x04 },
+> +	.sgmii_mode_set		= { 0x0000, 5, 0, 0x00, 0x01 },
+> +	.qsgmii_mode_set	= { 0x0000, 5, 0, 0x00, 0x21 },
+> +	.pipe_rxterm_set	= { 0x0000, 12, 12, 0x00, 0x01 },
+> +	.pipe_txelec_set	= { 0x0004, 1, 1, 0x00, 0x01 },
+> +	.pipe_txcomp_set	= { 0x0004, 4, 4, 0x00, 0x01 },
+> +	.pipe_clk_25m		= { 0x0004, 14, 13, 0x00, 0x01 },
+> +	.pipe_clk_100m		= { 0x0004, 14, 13, 0x00, 0x02 },
+> +	.pipe_phymode_sel	= { 0x0008, 1, 1, 0x00, 0x01 },
+> +	.pipe_rate_sel		= { 0x0008, 2, 2, 0x00, 0x01 },
+> +	.pipe_rxterm_sel	= { 0x0008, 8, 8, 0x00, 0x01 },
+> +	.pipe_txelec_sel	= { 0x0008, 12, 12, 0x00, 0x01 },
+> +	.pipe_txcomp_sel	= { 0x0008, 15, 15, 0x00, 0x01 },
+> +	.pipe_clk_ext		= { 0x000c, 9, 8, 0x02, 0x01 },
+> +	.pipe_sel_usb		= { 0x000c, 14, 13, 0x00, 0x01 },
+> +	.pipe_sel_qsgmii	= { 0x000c, 15, 13, 0x00, 0x07 },
+> +	.pipe_phy_status	= { 0x0034, 6, 6, 0x01, 0x00 },
+> +	.con0_for_pcie		= { 0x0000, 15, 0, 0x00, 0x1000 },
+> +	.con1_for_pcie		= { 0x0004, 15, 0, 0x00, 0x0000 },
+> +	.con2_for_pcie		= { 0x0008, 15, 0, 0x00, 0x0101 },
+> +	.con3_for_pcie		= { 0x000c, 15, 0, 0x00, 0x0200 },
+> +	.con0_for_sata		= { 0x0000, 15, 0, 0x00, 0x0119 },
+> +	.con1_for_sata		= { 0x0004, 15, 0, 0x00, 0x0040 },
+> +	.con2_for_sata		= { 0x0008, 15, 0, 0x00, 0x80c3 },
+> +	.con3_for_sata		= { 0x000c, 15, 0, 0x00, 0x4407 },
+> +	/* pipe-grf */
+> +	.pipe_con0_for_sata	= { 0x0000, 15, 0, 0x00, 0x2220 },
+> +	.pipe_sgmii_mac_sel	= { 0x0040, 1, 1, 0x00, 0x01 },
+> +	.pipe_xpcs_phy_ready	= { 0x0040, 2, 2, 0x00, 0x01 },
+> +	.u3otg0_port_en		= { 0x0104, 15, 0, 0x0181, 0x1100 },
+> +	.u3otg1_port_en		= { 0x0144, 15, 0, 0x0181, 0x1100 },
+
+Add maximum number of phy nodes for check with priv->num_phy.
+ .num_phy = 3,
+
+Add reg addresses to detect phy id.
+.regs =
+0xfe820000,
+0xfe830000,
+0xfe840000,
+
+
+Add table with SoC capabilities based on phy id.
+ PCie USB3 SATA SGMII
+0: 0   x    x     0
+1: 0   x    x     x
+2: x   x    x     x
+
+> +};
+
+static const struct rockchip_multiphy_grfcfg rk3588_multiphy_grfcfgs = {
+[..]
+};
+
+static const struct rockchip_multiphy_cfg rk3566_multiphy_cfgs = {
+	.grfcfg		= &rk3566_multiphy_grfcfgs,
+	.multiphy_cfg	= rk3568_multiphy_cfg,
+};
+
+> +
+> +static const struct rockchip_multiphy_cfg rk3568_multiphy_cfgs = {
+> +	.grfcfg		= &rk3568_multiphy_grfcfgs,
+> +	.multiphy_cfg	= rk3568_multiphy_cfg,
+> +};
+
+
+static const struct rockchip_multiphy_cfg rk3588_multiphy_cfgs = {
+	.grfcfg		= &rk3588_multiphy_grfcfgs,
+	.multiphy_cfg	= rk3588_multiphy_cfg,
+};
+
+> +
+> +static const struct of_device_id rockchip_multiphy_of_match[] = {
+> +	{ .compatible = "rockchip,rk3566-naneng-multiphy",
+
+> +	  .data = &rk3568_multiphy_cfgs, },
+
+	  .data = &rk3566_multiphy_cfgs, },
+
+> +	{ .compatible = "rockchip,rk3568-naneng-multiphy",
+> +	  .data = &rk3568_multiphy_cfgs, },
+
+	{ .compatible = "rockchip,rk3588-naneng-multiphy",
+	  .data = &rk3588_multiphy_cfgs, },
+
+> +	{ },
+> +};
+> +MODULE_DEVICE_TABLE(of, rockchip_multiphy_of_match);
+> +
+> +static struct platform_driver rockchip_multiphy_driver = {
+> +	.probe	= rockchip_multiphy_probe,
+> +	.driver = {
+> +		.name = "rockchip-naneng-multiphy",
+> +		.of_match_table = rockchip_multiphy_of_match,
+> +	},
+> +};
+> +module_platform_driver(rockchip_multiphy_driver);
+> +
+> +MODULE_DESCRIPTION("Rockchip NANENG MULTIPHY driver");
+> +MODULE_LICENSE("GPL v2");
+> 
 
 -- 
 linux-phy mailing list
