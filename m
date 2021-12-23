@@ -4,61 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD8D6C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 12:41:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF45DC433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 12:44:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s+9pwLOIFaInIP7EO2CDATa7C411G7GooTUZnPW28OY=; b=jTmjSswGURREM5
-	or9bcAqU4Quf99tQyogY/EqkNY4FzMpZ6PxeMNND65Ge4Uq5CEyG8/lLmHORjNh5wk4OOA1Wvs4Eu
-	bq7NJSbi1o9Oc8jux/MJAZ5YpLtAORvMJ/n3eR2dUBZnrC+bRYQqCkNKOLpQ1F7DelL58k2oOAXAy
-	BizohaucWHzuen5YnPAFboBWhoeTtyqzx9WhNCf05jDcvGV0HdarrJY8rwyd8EwgHnAi92GIoK6vJ
-	Z+xgyxRpFsIG5OiIa9/PvjtvinvUJ4LbVpAb0kwaLwenHzXQ9O8JMrYptOk5wLODv1ovoXi5RoP1q
-	ns4hGJSJVbxqCHMUK0og==;
+	List-Owner; bh=NjaB1VIKF+0QriBzl0woO63bQUcgVTluuLaG5M0DAWs=; b=l6wdtOkHvmLmZ5
+	MI8oWF3Oila0IuE/acK6oTwlN/hpSY94nbLdWp6EC8nHrCra87sceIxfWa00QmcOAkaUzDvhNQuAJ
+	aX3a7OJB+hHgxUlxmoAb+a6pNb6HdfEv34w9pGHsl0v0sC/qnDr3WqG7yN7RRS20KT9vM9QiSmupT
+	DUcCGOIhafZPlXc5BrKp0GhZiCkcznC3tZQQZwefn1McY46k6Mf0kIzllCP855plwaWrtWKzr/HsN
+	4qoj7bf1Fc3z+k1S+dV2AnT1q6MkiiOweW2+SFW1RrwRHIjrQmm4vi1VQdGcdoP2m+wlqIAk/qfyx
+	xMQghXYumyCAAg9nIpSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n0NP3-00CiPV-5B; Thu, 23 Dec 2021 12:41:01 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1n0NSa-00CifT-43; Thu, 23 Dec 2021 12:44:40 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n0NP0-00CiOP-Hc
- for linux-phy@lists.infradead.org; Thu, 23 Dec 2021 12:40:59 +0000
+ id 1n0NSW-00Cies-Nn
+ for linux-phy@lists.infradead.org; Thu, 23 Dec 2021 12:44:38 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id E241C61E87;
- Thu, 23 Dec 2021 12:40:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03C34C36AE5;
- Thu, 23 Dec 2021 12:40:55 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 419AD61E51;
+ Thu, 23 Dec 2021 12:44:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6250C36AE9;
+ Thu, 23 Dec 2021 12:44:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1640263256;
- bh=CFYjAz1FDmGMG2s7ubgZfRMYK8Ma+K8On9nBD7t6Uhk=;
+ s=k20201202; t=1640263475;
+ bh=wf2Q5Z8Tn40GLZE7d2G7aovZuItbu1aPQM8ANQTfrr0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=E6Iuo34VXlgDASZWuNdGVDAGOVQCO8UVSjm+YgkhqrU65HgPKZu45WQrbvgoisS27
- M6+C6Awc8prziYYGByy0F+fdoV2A8+00mBuP838O/6f4ZQZ0n97OBm5KqRBjjHzRqb
- Vb60eqQmzBn4dJzUEG5xWOpexlmwTlVtRZRdGjVYNN2JROAPD1p4hIRYFGu6M0Pgv7
- tEem+ksSp2gVrFgiXNXE5HTYKYfi18kNm6XAb5S82avrpx3tfTEwiisTRkhtSz2vkf
- NseCFdLU6xir3j12BK9bFCTW237kQA5fmOn7EX7Dyhsah5zFRv4mfbgFmI0wENa3oH
- 6Ev5fCAA4WtRg==
-Date: Thu, 23 Dec 2021 18:10:52 +0530
+ b=rzeFX8nLeFG53dNA0OMoD+SQ9bKo0YRW7sYdQlJMJLkVM1vWu9k9phtL64NPjSoqG
+ LCwmSV2pWGxL8Go1ODKLPqrtVDc5tDGf96cJmDr0+1ObszHjhSXOGRrRexAE/Hb/x/
+ upnXURepmNI5+450Mg95sjYuvrXG9eedwCY8YkqI8CzjiC2FMAcvzzzVh28rldLrZV
+ jKViuDWkFWkxcAwThLhi11jFhkgrq4yKvd8iV7blCVZuqqo3KH/XcuDmmNFqn7mFjc
+ Y6F3/tsIuc7D4GfRrp7QDrxx64c1USgb0EEV3+UOvgzO1u8BS1ANrdFhykBt1WPpfj
+ bV7UoqoNqAL0g==
+Date: Thu, 23 Dec 2021 18:14:31 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>
-Cc: linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
- pali@kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Re: [PATCH phy v2 2/6] phy: marvell: phy-mvebu-a3700-comphy: Add
- native kernel implementation
-Message-ID: <YcRuVCdXztTTrJs7@matsya>
-References: <20211208024038.8797-1-kabel@kernel.org>
- <20211208024038.8797-3-kabel@kernel.org>
+To: Li Chen <lchen@ambarella.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Swapnil Jakhade <sjakhade@cadence.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>
+Subject: Re: [EXT] Re: [PATCH] Revert "phy: cadence-torrent: Do not configure
+ SERDES if it's already configured"
+Message-ID: <YcRvL85x9Q1dkvRn@matsya>
+References: <CH2PR19MB4024BE31FB249744412071F6A0639@CH2PR19MB4024.namprd19.prod.outlook.com>
+ <YcQIp3IJ0eki3hY2@matsya>
+ <CH2PR19MB4024714657D84812E6F16A77A07E9@CH2PR19MB4024.namprd19.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211208024038.8797-3-kabel@kernel.org>
+In-Reply-To: <CH2PR19MB4024714657D84812E6F16A77A07E9@CH2PR19MB4024.namprd19.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211223_044058_687032_376ED7C3 
-X-CRM114-Status: GOOD (  14.20  )
+X-CRM114-CacheID: sfid-20211223_044436_888592_4D9A4B95 
+X-CRM114-Status: GOOD (  31.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,115 +74,164 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-12-21, 03:40, Marek Beh=FAn wrote:
-> From: Pali Roh=E1r <pali@kernel.org>
+On 23-12-21, 06:27, Li Chen wrote:
+> Hi, Vinod
+> 
+> > -----Original Message-----
+> > From: Vinod Koul [mailto:vkoul@kernel.org]
+> > Sent: Thursday, December 23, 2021 1:27 PM
+> > To: Li Chen
+> > Cc: Kishon Vijay Abraham I; Philipp Zabel; Swapnil Jakhade; linux-
+> > phy@lists.infradead.org; linux-kernel@vger.kernel.org; Dan Carpenter
+> > Subject: [EXT] Re: [PATCH] Revert "phy: cadence-torrent: Do not configure
+> > SERDES if it's already configured"
+> > 
+> > On 26-11-21, 05:06, Li Chen wrote:
+> > > This reverts commit
+> > > b69d39f68419("phy: cadence-torrent: Do not configure SERDES if it's already
+> > configured")
+> > 
+> > space between commit id and open brace...
+> > 
+> > >
+> > > our soc will hang on any regmap field read before reset.
+> > 
+> > okay, in this case the right fix would be to keep track of reset in SW
+> > and still skip reset if it is already configured?
+> > 
+> 
+> I should be grateful if you would give me more details of reset in SW.
 
-> +/* COMPHY registers */
-> +#define COMPHY_POWER_PLL_CTRL		0x01
-> +#define PU_IVREF_BIT			BIT(15)
-> +#define PU_PLL_BIT			BIT(14)
-> +#define PU_RX_BIT			BIT(13)
-> +#define PU_TX_BIT			BIT(12)
-> +#define PU_TX_INTP_BIT			BIT(11)
-> +#define PU_DFE_BIT			BIT(10)
-> +#define RESET_DTL_RX_BIT		BIT(9)
-> +#define PLL_LOCK_BIT			BIT(8)
-> +#define REF_FREF_SEL_MASK		GENMASK(4, 0)
-> +#define REF_FREF_SEL_SERDES_25MHZ	(0x1 << 0)
-> +#define REF_FREF_SEL_SERDES_40MHZ	(0x3 << 0)
-> +#define REF_FREF_SEL_SERDES_50MHZ	(0x4 << 0)
-> +#define REF_FREF_SEL_PCIE_USB3_25MHZ	(0x2 << 0)
-> +#define REF_FREF_SEL_PCIE_USB3_40MHZ	(0x3 << 0)
-> +#define COMPHY_MODE_MASK		GENMASK(7, 5)
-> +#define COMPHY_MODE_SATA		(0x0 << 5)
-> +#define COMPHY_MODE_PCIE		(0x3 << 5)
-> +#define COMPHY_MODE_SERDES		(0x4 << 5)
-> +#define COMPHY_MODE_USB3		(0x5 << 5)
+Store the reset state in a driver variable reset and use that for
+finding already_configured rather than reading a hw value
 
-Any reason why these are not using GENMASK. I guess documentation would
-define these as BIT x-y right?
+> 
+> > >
+> > > Signed-off-by: Li Chen <lchen@ambarella.com>
+> > > ---
+> > >  drivers/phy/cadence/phy-cadence-torrent.c | 31 +++++++----------------
+> > >  1 file changed, 9 insertions(+), 22 deletions(-)
+> > >
+> > > diff --git a/drivers/phy/cadence/phy-cadence-torrent.c
+> > b/drivers/phy/cadence/phy-cadence-torrent.c
+> > > index 415ace64adc5c..e57e0b1523aff 100644
+> > > --- a/drivers/phy/cadence/phy-cadence-torrent.c
+> > > +++ b/drivers/phy/cadence/phy-cadence-torrent.c
+> > > @@ -2031,11 +2031,6 @@ static int cdns_torrent_noop_phy_on(struct phy
+> > *phy)
+> > >  	return 0;
+> > >  }
+> > >
+> > > -static const struct phy_ops noop_ops = {
+> > > -	.power_on	= cdns_torrent_noop_phy_on,
+> > > -	.owner		= THIS_MODULE,
+> > > -};
+> > > -
+> > >  static
+> > >  int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+> > >  {
+> > > @@ -2282,7 +2277,6 @@ static int cdns_torrent_phy_probe(struct
+> > platform_device *pdev)
+> > >  	struct device_node *child;
+> > >  	int ret, subnodes, node = 0, i;
+> > >  	u32 total_num_lanes = 0;
+> > > -	int already_configured;
+> > >  	u8 init_dp_regmap = 0;
+> > >  	u32 phy_type;
+> > >
+> > > @@ -2321,20 +2315,16 @@ static int cdns_torrent_phy_probe(struct
+> > platform_device *pdev)
+> > >  	if (ret)
+> > >  		return ret;
+> > >
+> > > -	regmap_field_read(cdns_phy->phy_pma_cmn_ctrl_1,
+> > &already_configured);
+> > > -
+> > > -	if (!already_configured) {
+> > > -		ret = cdns_torrent_reset(cdns_phy);
+> > > -		if (ret)
+> > > -			goto clk_cleanup;
+> > > +	ret = cdns_torrent_reset(cdns_phy);
+> > > +	if (ret)
+> > > +		goto clk_cleanup;
+> > >
+> > > -		ret = cdns_torrent_clk(cdns_phy);
+> > > -		if (ret)
+> > > -			goto clk_cleanup;
+> > > +	ret = cdns_torrent_clk(cdns_phy);
+> > > +	if (ret)
+> > > +		goto clk_cleanup;
+> > >
+> > >  		/* Enable APB */
+> > > -		reset_control_deassert(cdns_phy->apb_rst);
+> > > -	}
+> > > +	reset_control_deassert(cdns_phy->apb_rst);
+> > >
+> > >  	for_each_available_child_of_node(dev->of_node, child) {
+> > >  		struct phy *gphy;
+> > > @@ -2404,10 +2394,7 @@ static int cdns_torrent_phy_probe(struct
+> > platform_device *pdev)
+> > >  		of_property_read_u32(child, "cdns,ssc-mode",
+> > >  				     &cdns_phy->phys[node].ssc_mode);
+> > >
+> > > -		if (!already_configured)
+> > > -			gphy = devm_phy_create(dev, child,
+> > &cdns_torrent_phy_ops);
+> > > -		else
+> > > -			gphy = devm_phy_create(dev, child, &noop_ops);
+> > > +		gphy = devm_phy_create(dev, child, &cdns_torrent_phy_ops);
+> > >  		if (IS_ERR(gphy)) {
+> > >  			ret = PTR_ERR(gphy);
+> > >  			goto put_child;
+> > > @@ -2490,7 +2477,7 @@ static int cdns_torrent_phy_probe(struct
+> > platform_device *pdev)
+> > >  		goto put_lnk_rst;
+> > >  	}
+> > >
+> > > -	if (cdns_phy->nsubnodes > 1 && !already_configured) {
+> > > +	if (cdns_phy->nsubnodes > 1) {
+> > >  		ret = cdns_torrent_phy_configure_multilink(cdns_phy);
+> > >  		if (ret)
+> > >  			goto put_lnk_rst;
+> > > --
+> > > 2.33.1
+> > >
+> > >
+> > >
+> > **************************************************************
+> > ********
+> > > This email and attachments contain Ambarella Proprietary and/or Confidential
+> > Information and is intended solely for the use of the individual(s) to whom it is
+> > addressed. Any unauthorized review, use, disclosure, distribute, copy, or print is
+> > prohibited. If you are not an intended recipient, please contact the sender by
+> > reply email and destroy all copies of the original message. Thank you.
 
-> +/* Changes to 40M1G25 mode data required for running 40M3G125 init mode =
-*/
-> +static struct gbe_phy_init_data_fix gbe_phy_init_fix[] =3D {
-> +	{0x005, 0x07CC}, {0x015, 0x0000}, {0x01B, 0x0000}, {0x01D, 0x0000},
-> +	{0x01E, 0x0000}, {0x01F, 0x0000}, {0x020, 0x0000}, {0x021, 0x0030},
-> +	{0x026, 0x0888}, {0x04D, 0x0152}, {0x04F, 0xA020}, {0x050, 0x07CC},
-> +	{0x053, 0xE9CA}, {0x055, 0xBD97}, {0x071, 0x3015}, {0x076, 0x03AA},
-> +	{0x07C, 0x0FDF}, {0x0C2, 0x3030}, {0x0C3, 0x8000}, {0x0E2, 0x5550},
-> +	{0x0E3, 0x12A4}, {0x0E4, 0x7D00}, {0x0E6, 0x0C83}, {0x101, 0xFCC0},
-> +	{0x104, 0x0C10}
+You do realize this is not OK in public emails... Pls fix
 
-empty space after { and before } makes it look neater and it typically
-the convention followed at many places
+> > 
+> > Aha!!!
+> > 
+> > Okay destroyed this now!
+> > 
+> > --
+> > ~Vinod
+> > 
+> > ##############################################################
+> > ########
+> > This EXTERNAL email has been scanned by Proofpoint Email Protect service.
+> 
+> Regards,
+> Li
 
-> +/* PHY selector configures with corresponding modes */
-> +static int
-> +mvebu_a3700_comphy_set_phy_selector(struct mvebu_a3700_comphy_lane *lane)
-> +{
-> +	u32 old, new, clr =3D 0, set =3D 0;
-> +	unsigned long flags;
-> +
-> +	switch (lane->mode) {
-> +	case PHY_MODE_SATA:
-> +		/* SATA must be in Lane2 */
-> +		if (lane->id =3D=3D 2)
-> +			clr =3D COMPHY_SELECTOR_USB3_PHY_SEL_BIT;
-> +		else
-> +			goto error;
-> +		break;
-> +
-> +	case PHY_MODE_ETHERNET:
-> +		if (lane->id =3D=3D 0)
-> +			clr =3D COMPHY_SELECTOR_USB3_GBE1_SEL_BIT;
-> +		else if (lane->id =3D=3D 1)
-> +			clr =3D COMPHY_SELECTOR_PCIE_GBE0_SEL_BIT;
-> +		else
-> +			goto error;
-> +		break;
-> +
-> +	case PHY_MODE_USB_HOST_SS:
-> +		if (lane->id =3D=3D 2)
-> +			set =3D COMPHY_SELECTOR_USB3_PHY_SEL_BIT;
-> +		else if (lane->id =3D=3D 0)
-> +			set =3D COMPHY_SELECTOR_USB3_GBE1_SEL_BIT;
-> +		else
-> +			goto error;
-> +		break;
-> +
-> +	case PHY_MODE_PCIE:
-> +		/* PCIE must be in Lane1 */
-> +		if (lane->id =3D=3D 1)
-> +			set =3D COMPHY_SELECTOR_PCIE_GBE0_SEL_BIT;
-> +		else
-> +			goto error;
-> +		break;
-> +
-> +	default:
-> +		goto error;
-> +	}
-> +
-> +	raw_spin_lock_irqsave(&lane->priv->lock, flags);
-> +
-> +	old =3D readl(lane->priv->comphy_regs + COMPHY_SELECTOR_PHY_REG);
-> +	new =3D (old & ~clr) | set;
-> +	writel(new, lane->priv->comphy_regs + COMPHY_SELECTOR_PHY_REG);
-> +
-> +	raw_spin_unlock_irqrestore(&lane->priv->lock, flags);
-
-any reason to use raw_ variant? why not spin_lock_irqsave()
-
--- =
-
+-- 
 ~Vinod
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
