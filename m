@@ -4,64 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBE27C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 11:50:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD8D6C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Dec 2021 12:41:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8iiWrl/ME7N7a9BW/nXSnEeJ5rfr3koS+Bnuk6pb9bg=; b=q+kV8q9F08GQZq
-	wsmhzicVIRpjJfy7KOmczh/o3gXCvcRU//rjK1Rx3VTavwWQBEn9zKR1d0AFBD3hmrlfyHpoPP94/
-	qkXX/bqu+gRXZzvLNBnJYhUncc9CU8XegZmK2PoBU0CD7umYm2lAZrcaUg3V7NRMGaZV+7O00uZmf
-	GHOdCOOP2+XYRL71d8td2Hni/J4jVDy79GzcmTb5TrhsAr+UKZiw7TQg4pt5RNuIXIq91ju9JJIdK
-	/o5cpamM17e5fI3zVEhvJR5rC62PSRjR2F2WCHim+Q9FQ6F/S3IeVvkCxlFa1ha13OMyw1H+1eF76
-	aMI+Sc9XZjlvCmQWWIgw==;
+	List-Owner; bh=s+9pwLOIFaInIP7EO2CDATa7C411G7GooTUZnPW28OY=; b=jTmjSswGURREM5
+	or9bcAqU4Quf99tQyogY/EqkNY4FzMpZ6PxeMNND65Ge4Uq5CEyG8/lLmHORjNh5wk4OOA1Wvs4Eu
+	bq7NJSbi1o9Oc8jux/MJAZ5YpLtAORvMJ/n3eR2dUBZnrC+bRYQqCkNKOLpQ1F7DelL58k2oOAXAy
+	BizohaucWHzuen5YnPAFboBWhoeTtyqzx9WhNCf05jDcvGV0HdarrJY8rwyd8EwgHnAi92GIoK6vJ
+	Z+xgyxRpFsIG5OiIa9/PvjtvinvUJ4LbVpAb0kwaLwenHzXQ9O8JMrYptOk5wLODv1ovoXi5RoP1q
+	ns4hGJSJVbxqCHMUK0og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n0Mc4-00Ccyn-9S; Thu, 23 Dec 2021 11:50:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n0Mbp-00Ccw0-B7; Thu, 23 Dec 2021 11:50:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6F7DA1FB;
- Thu, 23 Dec 2021 03:50:06 -0800 (PST)
-Received: from lpieralisi (e121166-lin.cambridge.arm.com [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 390853F5A1;
- Thu, 23 Dec 2021 03:50:04 -0800 (PST)
-Date: Thu, 23 Dec 2021 11:49:58 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Hongxing Zhu <hongxing.zhu@nxp.com>
-Cc: Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- "tharvey@gateworks.com" <tharvey@gateworks.com>,
- "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh@kernel.org" <robh@kernel.org>,
- "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>
-Subject: Re: [PATCH v7 8/8] PCI: imx: Add the imx8mm pcie support
-Message-ID: <20211223114958.GA30243@lpieralisi>
-References: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
- <1638432158-4119-9-git-send-email-hongxing.zhu@nxp.com>
- <Ybtuo0CzfUhoJwsT@rocinante>
- <AS8PR04MB8676F7F8BBE79E36D3EAFB6B8C789@AS8PR04MB8676.eurprd04.prod.outlook.com>
+	id 1n0NP3-00CiPV-5B; Thu, 23 Dec 2021 12:41:01 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1n0NP0-00CiOP-Hc
+ for linux-phy@lists.infradead.org; Thu, 23 Dec 2021 12:40:59 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id E241C61E87;
+ Thu, 23 Dec 2021 12:40:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03C34C36AE5;
+ Thu, 23 Dec 2021 12:40:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1640263256;
+ bh=CFYjAz1FDmGMG2s7ubgZfRMYK8Ma+K8On9nBD7t6Uhk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=E6Iuo34VXlgDASZWuNdGVDAGOVQCO8UVSjm+YgkhqrU65HgPKZu45WQrbvgoisS27
+ M6+C6Awc8prziYYGByy0F+fdoV2A8+00mBuP838O/6f4ZQZ0n97OBm5KqRBjjHzRqb
+ Vb60eqQmzBn4dJzUEG5xWOpexlmwTlVtRZRdGjVYNN2JROAPD1p4hIRYFGu6M0Pgv7
+ tEem+ksSp2gVrFgiXNXE5HTYKYfi18kNm6XAb5S82avrpx3tfTEwiisTRkhtSz2vkf
+ NseCFdLU6xir3j12BK9bFCTW237kQA5fmOn7EX7Dyhsah5zFRv4mfbgFmI0wENa3oH
+ 6Ev5fCAA4WtRg==
+Date: Thu, 23 Dec 2021 18:10:52 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>
+Cc: linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ pali@kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>
+Subject: Re: [PATCH phy v2 2/6] phy: marvell: phy-mvebu-a3700-comphy: Add
+ native kernel implementation
+Message-ID: <YcRuVCdXztTTrJs7@matsya>
+References: <20211208024038.8797-1-kabel@kernel.org>
+ <20211208024038.8797-3-kabel@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <AS8PR04MB8676F7F8BBE79E36D3EAFB6B8C789@AS8PR04MB8676.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20211208024038.8797-3-kabel@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211223_035009_528078_FAAB2EF4 
-X-CRM114-Status: GOOD (  36.49  )
+X-CRM114-CacheID: sfid-20211223_044058_687032_376ED7C3 
+X-CRM114-Status: GOOD (  14.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,113 +70,115 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBEZWMgMTcsIDIwMjEgYXQgMDU6NTQ6MjFBTSArMDAwMCwgSG9uZ3hpbmcgWmh1IHdy
-b3RlOgo+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiA+IEZyb206IEtyenlzenRvZiBX
-aWxjennFhHNraSA8a3dAbGludXguY29tPgo+ID4gU2VudDogRnJpZGF5LCBEZWNlbWJlciAxNywg
-MjAyMSAxMjo1MiBBTQo+ID4gVG86IEhvbmd4aW5nIFpodSA8aG9uZ3hpbmcuemh1QG54cC5jb20+
-Cj4gPiBDYzogbC5zdGFjaEBwZW5ndXRyb25peC5kZTsgYmhlbGdhYXNAZ29vZ2xlLmNvbTsKPiA+
-IGxvcmVuem8ucGllcmFsaXNpQGFybS5jb207IE1hcmNlbCBaaXN3aWxlcgo+ID4gPG1hcmNlbC56
-aXN3aWxlckB0b3JhZGV4LmNvbT47IHRoYXJ2ZXlAZ2F0ZXdvcmtzLmNvbTsKPiA+IGtpc2hvbkB0
-aS5jb207IHZrb3VsQGtlcm5lbC5vcmc7IHJvYmhAa2VybmVsLm9yZzsKPiA+IGdhbGFrQGtlcm5l
-bC5jcmFzaGluZy5vcmc7IHNoYXduZ3VvQGtlcm5lbC5vcmc7Cj4gPiBsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZzsgZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7Cj4gPiBsaW51eC1wY2lA
-dmdlci5rZXJuZWwub3JnOyBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7Cj4g
-PiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOyBrZXJuZWxAcGVuZ3V0cm9uaXguZGU7IGRs
-LWxpbnV4LWlteAo+ID4gPGxpbnV4LWlteEBueHAuY29tPgo+ID4gU3ViamVjdDogUmU6IFtQQVRD
-SCB2NyA4LzhdIFBDSTogaW14OiBBZGQgdGhlIGlteDhtbSBwY2llIHN1cHBvcnQKPiA+IAo+ID4g
-SGkgUmljaGFyZCwKPiA+IAo+ID4gQXBvbG9naWVzIGZvciBhIHZlcnkgbGF0ZSByZXZpZXchICBF
-c3BlY2lhbGx5IHNpbmNlIExvcmVuem8gYWxyZWFkeSB0b29rCj4gPiBwYXRjaGVzIGFzIHBlcjoK
-PiA+IAo+ID4gCj4gPiBodHRwczovL2V1cjAxLnNhZmVsaW5rcy5wcm90ZWN0aW9uLm91dGxvb2su
-Y29tLz91cmw9aHR0cHMlM0ElMkYlMkZsb3IKPiA+IGUua2VybmVsLm9yZyUyRmxpbnV4LXBjaSUy
-RjE2Mzk2NTA4MDQwNC4yMDAwNi41MjQxNjA5NTUxNjQzNTAxNwo+ID4gNDkuYjQtdHklNDBhcm0u
-Y29tJTJGJmFtcDtkYXRhPTA0JTdDMDElN0Nob25neGluZy56aHUlNDBueHAKPiA+IC5jb20lN0M4
-YWZiNjczMzQ4MjE0MjYxODgzNjA4ZDljMGI0NWIxZCU3QzY4NmVhMWQzYmMyYjRjNmZhCj4gPiA5
-MmNkOTljNWMzMDE2MzUlN0MwJTdDMCU3QzYzNzc1MjcwMzEyNDE2NjgwNSU3Q1Vua25vd24lNwo+
-ID4gQ1RXRnBiR1pzYjNkOGV5SldJam9pTUM0d0xqQXdNREFpTENKUUlqb2lWMmx1TXpJaUxDSkJU
-aUk2SWsxaGEKPiA+IFd3aUxDSlhWQ0k2TW4wJTNEJTdDMzAwMCZhbXA7c2RhdGE9cmZtTjFYb2p1
-YmFwMnZpM0o0Sm9sM296eQo+ID4gTjFRMnE3WWlCTTVicU1tMjJzJTNEJmFtcDtyZXNlcnZlZD0w
-Cj4gPiAKPiA+IEhvd2V2ZXIsIHBlcmhhcHMgaXQncyBub3QgdG9vIGxhdGUuCj4gW1JpY2hhcmQg
-Wmh1XSBIaSBLcnp5c3p0b2Y6IAo+IFRoYW5rcyBmb3IgeW91ciByZXZpZXcuCj4gQnV0IEkgZG9u
-J3Qga25vdyBob3cgdG8gaGFuZGxlIHRoaXMgc2l0dWF0aW9uLgo+IEhvdyBhYm91dCB0aGF0IEkg
-YWRkIHRoaXMgcmVmaW5lIHBhdGNoIGludG8gdGhlIGZvbGxvd2luZyBidWcgZml4IGFuZAo+ICBy
-ZWZpbmUgcGF0Y2gtc2V0IGxhdGVyPwo+IFBDSTogaW14NjogcmVmaW5lIGNvZGVzIGFuZCBhZGQg
-Y29tcGxpYW5jZSB0ZXN0cyBtb2RlIHN1cHBvcnQKPiAiIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5l
-bC5vcmcvcHJvamVjdC9saW51eC1hcm0ta2VybmVsL2NvdmVyLzE2MzU3NDc0NzgtMjU1NjItMS1n
-aXQtc2VuZC1lbWFpbC1ob25neGluZy56aHVAbnhwLmNvbS8iCj4gCj4gPiAKPiA+IFsuLi5dCj4g
-PiA+IEBAIC00NDYsNiArNDUyLDEzIEBAIHN0YXRpYyBpbnQgaW14Nl9wY2llX2VuYWJsZV9yZWZf
-Y2xrKHN0cnVjdAo+ID4gaW14Nl9wY2llICppbXg2X3BjaWUpCj4gPiA+ICAJCWJyZWFrOwo+ID4g
-PiAgCWNhc2UgSU1YN0Q6Cj4gPiA+ICAJCWJyZWFrOwo+ID4gPiArCWNhc2UgSU1YOE1NOgo+ID4g
-PiArCQlyZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUoaW14Nl9wY2llLT5wY2llX2F1eCk7Cj4gPiA+
-ICsJCWlmIChyZXQpIHsKPiA+ID4gKwkJCWRldl9lcnIoZGV2LCAidW5hYmxlIHRvIGVuYWJsZSBw
-Y2llX2F1eCBjbG9ja1xuIik7Cj4gPiA+ICsJCQlicmVhazsKPiA+ID4gKwkJfQo+ID4gPiArCQli
-cmVhazsKPiA+IAo+ID4gWW91IGNhbiBkcm9wIHRoZSBpbm5lciBicmVhaywgaXQgd291bGRuJ3Qg
-ZG8gbXVjaCBoZXJlLCB1bmxlc3MgdGhpcyB3YXMKPiA+IGludGVuZGVkIHRvIGJlIGEgcmV0dXJu
-Pwo+IFtSaWNoYXJkIFpodV0gWWVzLCBpdCBpcy4gVGhlIGlubmVyIGJyZWFrIGNhbiBiZSBkcm9w
-cGVkLiBUaGUgZXJyb3IgcmV0dXJuCj4gd291bGQgYmUgaGFuZGxlZCBpbiB0aGUgZW5kLgo+IAo+
-ID4gCj4gPiA+IEBAIC01MzgsNiArNTU5LDEwIEBAIHN0YXRpYyB2b2lkCj4gPiBpbXg2X3BjaWVf
-ZGVhc3NlcnRfY29yZV9yZXNldChzdHJ1Y3QgaW14Nl9wY2llICppbXg2X3BjaWUpCj4gPiA+ICAJ
-Y2FzZSBJTVg4TVE6Cj4gPiA+ICAJCXJlc2V0X2NvbnRyb2xfZGVhc3NlcnQoaW14Nl9wY2llLT5w
-Y2llcGh5X3Jlc2V0KTsKPiA+ID4gIAkJYnJlYWs7Cj4gPiA+ICsJY2FzZSBJTVg4TU06Cj4gPiA+
-ICsJCWlmIChwaHlfaW5pdChpbXg2X3BjaWUtPnBoeSkgIT0gMCkKPiA+ID4gKwkJCWRldl9lcnIo
-ZGV2LCAiV2FpdGluZyBmb3IgUEhZIHJlYWR5IHRpbWVvdXQhXG4iKTsKPiA+ID4gKwkJYnJlYWs7
-Cj4gPiAKPiA+IElmIHRoZSBhYm92ZSwgeW91IGNhbiBrZWVwIHRoZSBzYW1lIHN0eWxlIGFzIHVz
-ZWQgdGhyb3VnaG91dCB0aGUgZmlsZQo+ID4gYWxyZWFkeSwgc28gaXQgd291bGQganVzdCBzaW1w
-bHkgYmU6Cj4gPiAKPiA+ICAgaWYgKHBoeV9pbml0KGlteDZfcGNpZS0+cGh5KSkKPiA+IAo+ID4g
-QWxzbywgYSBuaXRwaWNrOiB0byBiZSBjb25zaXN0ZW50IHdpdGggb3RoZXIgc3VjaCBtZXNzYWdl
-cyBoZXJlLCB0aGUgZXJyb3IKPiA+IG1lc3NhZ2Ugd291bGQgYmUgYWxsIGxvd2VyLWNhc2UgbGV0
-dGVycy4KPiBbUmljaGFyZCBaaHVdIFllcywgaXQgaXMuCj4gPiAKPiA+IFsuLi5dCj4gPiA+IEBA
-IC02MTQsNiArNjM5LDggQEAgc3RhdGljIHZvaWQgaW14Nl9wY2llX2NvbmZpZ3VyZV90eXBlKHN0
-cnVjdAo+ID4gPiBpbXg2X3BjaWUgKmlteDZfcGNpZSkgIHN0YXRpYyB2b2lkIGlteDZfcGNpZV9p
-bml0X3BoeShzdHJ1Y3QKPiA+IGlteDZfcGNpZQo+ID4gPiAqaW14Nl9wY2llKSAgewo+ID4gPiAg
-CXN3aXRjaCAoaW14Nl9wY2llLT5kcnZkYXRhLT52YXJpYW50KSB7Cj4gPiA+ICsJY2FzZSBJTVg4
-TU06Cj4gPiA+ICsJCWJyZWFrOwo+ID4gPiAgCWNhc2UgSU1YOE1ROgo+ID4gCj4gPiBXb3VsZCBp
-dCB3YXJyYW50IGEgY29tbWVudCB0aGF0IGFkZHMgYSBub3RlIHRoZXJlIHRvIHRoaXMgc2luZ2xl
-IGJhcmUKPiA+IGJyZWFrPyAgUGVyaGFwcyB0aGlzIHZlcnNpb24gaXMgbm90IHN1cHBvcnQsIGxh
-Y2sgdGhpcyBwYXJ0aWN1bGFyCj4gPiBmdW5jdGlvbmFsaXR5LCBldGMuCj4gW1JpY2hhcmQgWmh1
-XSBZZXMsIGl0J3MgZWFzaWVyIHRvIHVuZGVyc3RhbmQgYWZ0ZXIgYWRkIG9uZSBjb21tZW50Lgo+
-ID4gCj4gPiBbLi4uXQo+ID4gPiBAQCAtMTA4OSwxMCArMTEyMiwzOSBAQCBzdGF0aWMgaW50IGlt
-eDZfcGNpZV9wcm9iZShzdHJ1Y3QKPiA+IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+ID4gIAkJ
-CWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGdldCBQQ0lFIEFQUFMgcmVzZXQgY29udHJvbFxuIik7
-Cj4gPiA+ICAJCQlyZXR1cm4gUFRSX0VSUihpbXg2X3BjaWUtPmFwcHNfcmVzZXQpOwo+ID4gPiAg
-CQl9Cj4gPiA+ICsJCWJyZWFrOwo+ID4gPiArCWNhc2UgSU1YOE1NOgo+ID4gPiArCQlpbXg2X3Bj
-aWUtPnBjaWVfYXV4ID0gZGV2bV9jbGtfZ2V0KGRldiwgInBjaWVfYXV4Iik7Cj4gPiA+ICsJCWlm
-IChJU19FUlIoaW14Nl9wY2llLT5wY2llX2F1eCkpCj4gPiA+ICsJCQlyZXR1cm4gZGV2X2Vycl9w
-cm9iZShkZXYsCj4gPiBQVFJfRVJSKGlteDZfcGNpZS0+cGNpZV9hdXgpLAo+ID4gPiArCQkJCQkg
-ICAgICJwY2llX2F1eCBjbG9jayBzb3VyY2UgbWlzc2luZyBvcgo+ID4gaW52YWxpZFxuIik7Cj4g
-PiA+ICsJCWlteDZfcGNpZS0+YXBwc19yZXNldCA9Cj4gPiBkZXZtX3Jlc2V0X2NvbnRyb2xfZ2V0
-X2V4Y2x1c2l2ZShkZXYsCj4gPiA+ICsJCQkJCQkJCQkgImFwcHMiKTsKPiA+ID4gKwkJaWYgKElT
-X0VSUihpbXg2X3BjaWUtPmFwcHNfcmVzZXQpKSB7Cj4gPiA+ICsJCQlkZXZfZXJyKGRldiwgIkZh
-aWxlZCB0byBnZXQgUENJRSBBUFBTIHJlc2V0IGNvbnRyb2xcbiIpOwo+ID4gPiArCQkJcmV0dXJu
-IFBUUl9FUlIoaW14Nl9wY2llLT5hcHBzX3Jlc2V0KTsKPiA+ID4gKwkJfQo+ID4gPiArCj4gPiA+
-ICsJCWlteDZfcGNpZS0+cGh5ID0gZGV2bV9waHlfZ2V0KGRldiwgInBjaWUtcGh5Iik7Cj4gPiA+
-ICsJCWlmIChJU19FUlIoaW14Nl9wY2llLT5waHkpKSB7Cj4gPiA+ICsJCQlpZiAoUFRSX0VSUihp
-bXg2X3BjaWUtPnBoeSkgPT0gLUVQUk9CRV9ERUZFUikKPiA+ID4gKwkJCQlyZXR1cm4gLUVQUk9C
-RV9ERUZFUjsKPiA+ID4gKwkJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGdldCBQQ0lFIFBIWVxu
-Iik7Cj4gPiA+ICsJCQlyZXR1cm4gUFRSX0VSUihpbXg2X3BjaWUtPnBoeSk7Cj4gPiA+ICsJCX0K
-PiA+IAo+ID4gQSBxdWVzdGlvbiBhYm91dCBoYW5kbGluZyBvZiB0aGUgLUVQUk9CRV9ERUZFUiBh
-Ym92ZTogd2h5IG5vdCB0byB1c2UKPiA+IHRoZQo+ID4gZGV2X2Vycl9wcm9iZSgpIGhlbHBlciBz
-aW1pbGFybHkgdG8gdGhlIGNvZGUgYWJvdmUgYW5kIGJlbG93PyAgV291bGQKPiA+IHRoZXJlIGJl
-IHNvbWV0aGluZyBkaWZmZXJlbnQgcHJldmVudGluZyB0aGUgdXNlIG9mIGRldl9lcnJfcHJvYmUo
-KSBoZXJlCj4gPiB0b28/Cj4gW1JpY2hhcmQgWmh1XSBUbyBiZSBhbGlnbmVkLCB0aGUgYWJvdmUg
-b25lIGNhbiBiZSByZXBsYWNlZCB0b3RhbGx5Lgo+IEkgZGlkbid0IHdhbnQgdG8gZHVtcCB0aGUg
-ZXJyb3IgbWVzc2FnZSB3aGVuIC1FUFJPQkVfREVGRkVSIG9jY3Vycy4KPiBBbnl3YXksIEkgY2Fu
-IG1ha2UgdGhlbSBhbGlnbmVkIGxhdGVyLgoKQ2FuIHlvdSBzZW5kIG1lIGFuIHVwZGF0ZSBmb3Ig
-dGhpcyBwYXRjaCBvbmx5IHNvIHRoYXQgSSBjYW4gdXBkYXRlCnRoZSBjb3JyZXNwb25kaW5nIGNv
-bW1pdCBhY2NvcmRpbmcgdG8gdGhpcyByZXZpZXcgcGxlYXNlID8KClRoYW5rcywKTG9yZW56bwoK
-PiBCZXN0IFJlZ2FyZHMKPiBSaWNoYXJkCj4gCj4gPiAKPiA+ID4gIAkJYnJlYWs7Cj4gPiA+ICAJ
-ZGVmYXVsdDoKPiA+ID4gIAkJYnJlYWs7Cj4gPiA+ICAJfQo+ID4gPiArCS8qIERvbid0IGZldGNo
-IHRoZSBwY2llX3BoeSBjbG9jaywgaWYgaXQgaGFzIGFic3RyYWN0IFBIWSBkcml2ZXIgKi8KPiA+
-ID4gKwlpZiAoaW14Nl9wY2llLT5waHkgPT0gTlVMTCkgewo+ID4gPiArCQlpbXg2X3BjaWUtPnBj
-aWVfcGh5ID0gZGV2bV9jbGtfZ2V0KGRldiwgInBjaWVfcGh5Iik7Cj4gPiA+ICsJCWlmIChJU19F
-UlIoaW14Nl9wY2llLT5wY2llX3BoeSkpCj4gPiA+ICsJCQlyZXR1cm4gZGV2X2Vycl9wcm9iZShk
-ZXYsCj4gPiBQVFJfRVJSKGlteDZfcGNpZS0+cGNpZV9waHkpLAo+ID4gPiArCQkJCQkgICAgICJw
-Y2llX3BoeSBjbG9jayBzb3VyY2UgbWlzc2luZyBvcgo+ID4gaW52YWxpZFxuIik7Cj4gPiA+ICsJ
-fQo+ID4gCj4gPiBUaGFuayB5b3UgZm9yIGFub3RoZXIgYW1hemluZyBwYXRjaCEKPiA+IAo+ID4g
-CUtyenlzenRvZgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+On 08-12-21, 03:40, Marek Beh=FAn wrote:
+> From: Pali Roh=E1r <pali@kernel.org>
+
+> +/* COMPHY registers */
+> +#define COMPHY_POWER_PLL_CTRL		0x01
+> +#define PU_IVREF_BIT			BIT(15)
+> +#define PU_PLL_BIT			BIT(14)
+> +#define PU_RX_BIT			BIT(13)
+> +#define PU_TX_BIT			BIT(12)
+> +#define PU_TX_INTP_BIT			BIT(11)
+> +#define PU_DFE_BIT			BIT(10)
+> +#define RESET_DTL_RX_BIT		BIT(9)
+> +#define PLL_LOCK_BIT			BIT(8)
+> +#define REF_FREF_SEL_MASK		GENMASK(4, 0)
+> +#define REF_FREF_SEL_SERDES_25MHZ	(0x1 << 0)
+> +#define REF_FREF_SEL_SERDES_40MHZ	(0x3 << 0)
+> +#define REF_FREF_SEL_SERDES_50MHZ	(0x4 << 0)
+> +#define REF_FREF_SEL_PCIE_USB3_25MHZ	(0x2 << 0)
+> +#define REF_FREF_SEL_PCIE_USB3_40MHZ	(0x3 << 0)
+> +#define COMPHY_MODE_MASK		GENMASK(7, 5)
+> +#define COMPHY_MODE_SATA		(0x0 << 5)
+> +#define COMPHY_MODE_PCIE		(0x3 << 5)
+> +#define COMPHY_MODE_SERDES		(0x4 << 5)
+> +#define COMPHY_MODE_USB3		(0x5 << 5)
+
+Any reason why these are not using GENMASK. I guess documentation would
+define these as BIT x-y right?
+
+> +/* Changes to 40M1G25 mode data required for running 40M3G125 init mode =
+*/
+> +static struct gbe_phy_init_data_fix gbe_phy_init_fix[] =3D {
+> +	{0x005, 0x07CC}, {0x015, 0x0000}, {0x01B, 0x0000}, {0x01D, 0x0000},
+> +	{0x01E, 0x0000}, {0x01F, 0x0000}, {0x020, 0x0000}, {0x021, 0x0030},
+> +	{0x026, 0x0888}, {0x04D, 0x0152}, {0x04F, 0xA020}, {0x050, 0x07CC},
+> +	{0x053, 0xE9CA}, {0x055, 0xBD97}, {0x071, 0x3015}, {0x076, 0x03AA},
+> +	{0x07C, 0x0FDF}, {0x0C2, 0x3030}, {0x0C3, 0x8000}, {0x0E2, 0x5550},
+> +	{0x0E3, 0x12A4}, {0x0E4, 0x7D00}, {0x0E6, 0x0C83}, {0x101, 0xFCC0},
+> +	{0x104, 0x0C10}
+
+empty space after { and before } makes it look neater and it typically
+the convention followed at many places
+
+> +/* PHY selector configures with corresponding modes */
+> +static int
+> +mvebu_a3700_comphy_set_phy_selector(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	u32 old, new, clr =3D 0, set =3D 0;
+> +	unsigned long flags;
+> +
+> +	switch (lane->mode) {
+> +	case PHY_MODE_SATA:
+> +		/* SATA must be in Lane2 */
+> +		if (lane->id =3D=3D 2)
+> +			clr =3D COMPHY_SELECTOR_USB3_PHY_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	case PHY_MODE_ETHERNET:
+> +		if (lane->id =3D=3D 0)
+> +			clr =3D COMPHY_SELECTOR_USB3_GBE1_SEL_BIT;
+> +		else if (lane->id =3D=3D 1)
+> +			clr =3D COMPHY_SELECTOR_PCIE_GBE0_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	case PHY_MODE_USB_HOST_SS:
+> +		if (lane->id =3D=3D 2)
+> +			set =3D COMPHY_SELECTOR_USB3_PHY_SEL_BIT;
+> +		else if (lane->id =3D=3D 0)
+> +			set =3D COMPHY_SELECTOR_USB3_GBE1_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	case PHY_MODE_PCIE:
+> +		/* PCIE must be in Lane1 */
+> +		if (lane->id =3D=3D 1)
+> +			set =3D COMPHY_SELECTOR_PCIE_GBE0_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	default:
+> +		goto error;
+> +	}
+> +
+> +	raw_spin_lock_irqsave(&lane->priv->lock, flags);
+> +
+> +	old =3D readl(lane->priv->comphy_regs + COMPHY_SELECTOR_PHY_REG);
+> +	new =3D (old & ~clr) | set;
+> +	writel(new, lane->priv->comphy_regs + COMPHY_SELECTOR_PHY_REG);
+> +
+> +	raw_spin_unlock_irqrestore(&lane->priv->lock, flags);
+
+any reason to use raw_ variant? why not spin_lock_irqsave()
+
+-- =
+
+~Vinod
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
