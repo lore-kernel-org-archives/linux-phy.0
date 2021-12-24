@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FC96C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Dec 2021 10:11:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29185C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Dec 2021 17:03:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ip3jptvI5h6MbZ0NZtIknW1t8DJ1c+QBX9Bd0PEYDHk=; b=CCCZ0mnFHtgajtdZf5xAKNZMrY
-	vigZPvF8FkfG0gZ2qAHBjsoRg59xWgt8W4hYMqzm44QSlEtqa/RCRGeV9HMpuuZjl/MCB6VxhBmG3
-	tUFyg5AWxO6rF4L1h4jm1HYE4OTFTHrmhVQdX5czXVIMVNKuGQ0amZuE706tgvJStl26c4SUoXNql
-	fpvz22O5Qy6pCBoA8gUXfGTbMxY6aNpnXvsscf3YNhXMDJTL3N7IFFS4pMs6VlAEXqwGnpw41SzIa
-	++PWUiR/KOrBQctv/ygZpJzcZ9T63TCCjXe9eUijAd36/wtc68AfplcFt58VSpftrIIp+6zAjHaJE
-	zTDuVX4w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YctB+JM0CpBXVCgwwoE0qXp+t5Lk4bwqkQofYNjnymM=; b=IrhCmPb00QTYlp
+	7DEkH44QC59E/nCpz0q7ZxnuzlANA0/U8MLWlIytGuz3G4XS8NK9qi0ROdLTl2MXDQXiM9TZ682Ra
+	RPawu4NmzTFnTGOz0NcG/D8+Al8Q9+usUMJTgfZO1hdryedgoO1yOEtAsLqHTaEWg1WfuHXRM1VXN
+	dTOERRqo0WyNq51WDNXVSkiAinKW8BQlCjXSBI36bgZ5YxuT+nmql8HvLKWGTjweYxD5aHGWgqxls
+	jwP6yyduj3dFtmJFmL1xMWBss7MBml1nxIvVqbm5M8HqKbDp/0gThSbIaZS7VQyAG4a6NRAyGMQDK
+	s5i03VbleGg4dv6DqV/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n0hXa-00E55Z-Uq; Fri, 24 Dec 2021 10:11:10 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1n0ny7-00ELWa-Fm; Fri, 24 Dec 2021 17:02:59 +0000
+Received: from ixit.cz ([94.230.151.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n0hXO-00E53x-RJ; Fri, 24 Dec 2021 10:11:00 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: kholk11) with ESMTPSA id 1ABC71F45CC5
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
- s=mail; t=1640340657;
- bh=K0vduRr/PSyXSZURCDSAe+4sfJYS7J60lk/6WQDlpcg=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=Saf556NNDqc6qq6vvuZBsNYtzw57NQTrKeXFn4aAec/8HBh4iAWReD8sZs9xgU8Nu
- xLRC1NCzZVVeonuR9yQrkIyt6WVRl/S5c4SOoP8Zdt9J+livMZeYY68KMmikJRXrHz
- 9ywxUk7maA0wLDh5MYrB/Gy4BqbLvodZC1r+07qicypwrN+EIj7fDZTkBmOgvxf8CO
- Mmb7WZ9qujweXRcsmP4NhbHHOuUXV+YJeRX9rC+tuIMmsfgwJd+kaSO0G//BmwXATl
- 9f2E06nsVksHSw0Db0SZDDDUgmeztKBTjzFOjScFAeFJ1lVJSLNZ8afUQSScBzqBbv
- UqnEvHjWD54fg==
-Subject: Re: [PATCH v2 3/5] phy: mediatek: add helpers to update bits of
- registers
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
-References: <20211218082802.5256-1-chunfeng.yun@mediatek.com>
- <20211218082802.5256-3-chunfeng.yun@mediatek.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Message-ID: <047803b9-d09f-d4f8-a674-317cc19dd055@collabora.com>
-Date: Fri, 24 Dec 2021 11:10:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.13.0
+ id 1n0ny3-00ELVl-Fa
+ for linux-phy@lists.infradead.org; Fri, 24 Dec 2021 17:02:57 +0000
+Received: from localhost.localdomain (ip-89-176-96-70.net.upcbroadband.cz
+ [89.176.96.70])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by ixit.cz (Postfix) with ESMTPSA id 802A92243C;
+ Fri, 24 Dec 2021 18:02:43 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ixit.cz; s=dkim;
+ t=1640365363;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=HbmIZwLuV6VZPMQ2LsqtWZDS7tE+7vlqNV7H+vpBED0=;
+ b=lfeE112a7wnQxddN8gP4N6WncHhMYn9EUXBgFow+Li0+umYK5u9LN9Uv+Y8U9Ws3fffWo/
+ YxvXmVbiBWEGXbTHelN4pltsw1BYQDJWpO7gyTbEmAs+TcazwNmDfeZNcddBhd/sqbAGqF
+ +I4LPzc8tdnONr068KDTr9pNY8XcM14=
+From: David Heidelberg <david@ixit.cz>
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>
+Cc: ~okias/devicetree@lists.sr.ht, David Heidelberg <david@ixit.cz>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] dt-bindings: phy: convert Qualcomm USB HS phy to yaml
+Date: Fri, 24 Dec 2021 18:02:41 +0100
+Message-Id: <20211224170242.57816-1-david@ixit.cz>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-In-Reply-To: <20211218082802.5256-3-chunfeng.yun@mediatek.com>
-Content-Language: en-US
+X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211224_021059_055348_5376013D 
-X-CRM114-Status: GOOD (  17.93  )
+X-CRM114-CacheID: sfid-20211224_090255_884621_E1571DF2 
+X-CRM114-Status: GOOD (  13.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,76 +69,206 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 18/12/21 09:28, Chunfeng Yun ha scritto:
-> Add three helpers mtk_phy_clear/set/update_bits() for registers operation
-> 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
-> v2: new patch, add register access helpers,
->      Add updatel() macro suggested by Vinod, here add more ones instead.
-> ---
->   drivers/phy/mediatek/phy-mtk-io.h | 38 +++++++++++++++++++++++++++++++
->   1 file changed, 38 insertions(+)
->   create mode 100644 drivers/phy/mediatek/phy-mtk-io.h
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-io.h b/drivers/phy/mediatek/phy-mtk-io.h
-> new file mode 100644
-> index 000000000000..500fcdab165d
-> --- /dev/null
-> +++ b/drivers/phy/mediatek/phy-mtk-io.h
-> @@ -0,0 +1,38 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (C) 2021 MediaTek Inc.
-> + *
-> + * Author: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> + */
-> +
-> +#ifndef __PHY_MTK_H__
-> +#define __PHY_MTK_H__
-> +
-> +#include <linux/io.h>
-> +
-> +static inline void mtk_phy_clear_bits(void __iomem *reg, u32 bits)
-> +{
-> +	u32 tmp = readl(reg);
-> +
-> +	tmp &= ~bits;
-> +	writel(tmp, reg);
-> +}
-> +
-> +static inline void mtk_phy_set_bits(void __iomem *reg, u32 bits)
-> +{
-> +	u32 tmp = readl(reg);
-> +
-> +	tmp |= bits;
-> +	writel(tmp, reg);
-> +}
-> +
-> +static inline void mtk_phy_update_bits(void __iomem *reg, u32 mask, u32 val)
-> +{
-> +	u32 tmp = readl(reg);
-> +
-> +	tmp &= ~mask;
-> +	tmp |= val & mask;
-> +	writel(tmp, reg);
-> +}
-> +
-> +#endif
-> 
+Conversion of Qualcomm USB HS phy documentation to yaml.
 
-These helpers are almost exactly duplicating what regmap_update_bits() is doing.
-I appreciate the effort to stop open-coding the same sequences over and over by
-adding such helper functions, but I think that the proper way of doing what you
-are proposing is not to add custom functions but rather reuse what the Linux APIs
-give you.
+Signed-off-by: David Heidelberg <david@ixit.cz>
+---
+ .../bindings/phy/qcom,usb-hs-phy.txt          | 84 ------------------
+ .../bindings/phy/qcom,usb-hs-phy.yaml         | 86 +++++++++++++++++++
+ 2 files changed, 86 insertions(+), 84 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
 
-What about doing a conversion to use regmap on this driver?
+diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
+deleted file mode 100644
+index b3b75c1e6285..000000000000
+--- a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
++++ /dev/null
+@@ -1,84 +0,0 @@
+-Qualcomm's USB HS PHY
+-
+-PROPERTIES
+-
+-- compatible:
+-    Usage: required
+-    Value type: <string>
+-    Definition: Should contain "qcom,usb-hs-phy" and more specifically one of the
+-                following:
+-
+-                        "qcom,usb-hs-phy-apq8064"
+-                        "qcom,usb-hs-phy-msm8916"
+-                        "qcom,usb-hs-phy-msm8974"
+-
+-- #phy-cells:
+-    Usage: required
+-    Value type: <u32>
+-    Definition: Should contain 0
+-
+-- clocks:
+-    Usage: required
+-    Value type: <prop-encoded-array>
+-    Definition: Should contain clock specifier for the reference and sleep
+-                clocks
+-
+-- clock-names:
+-    Usage: required
+-    Value type: <stringlist>
+-    Definition: Should contain "ref" and "sleep" for the reference and sleep
+-                clocks respectively
+-
+-- resets:
+-    Usage: required
+-    Value type: <prop-encoded-array>
+-    Definition: Should contain the phy and POR resets
+-
+-- reset-names:
+-    Usage: required
+-    Value type: <stringlist>
+-    Definition: Should contain "phy" and "por" for the phy and POR resets
+-                respectively
+-
+-- v3p3-supply:
+-    Usage: required
+-    Value type: <phandle>
+-    Definition: Should contain a reference to the 3.3V supply
+-
+-- v1p8-supply:
+-    Usage: required
+-    Value type: <phandle>
+-    Definition: Should contain a reference to the 1.8V supply
+-
+-- extcon:
+-    Usage: optional
+-    Value type: <prop-encoded-array>
+-    Definition: Should contain the vbus extcon
+-
+-- qcom,init-seq:
+-    Usage: optional
+-    Value type: <u8 array>
+-    Definition: Should contain a sequence of ULPI address and value pairs to
+-                program into the ULPI_EXT_VENDOR_SPECIFIC area. This is related
+-                to Device Mode Eye Diagram test. The addresses are offsets
+-                from the ULPI_EXT_VENDOR_SPECIFIC address, for example,
+-                <0x1 0x53> would mean "write the value 0x53 to address 0x81".
+-
+-EXAMPLE
+-
+-otg: usb-controller {
+-	ulpi {
+-		phy {
+-			compatible = "qcom,usb-hs-phy-msm8974", "qcom,usb-hs-phy";
+-			#phy-cells = <0>;
+-			clocks = <&xo_board>, <&gcc GCC_USB2A_PHY_SLEEP_CLK>;
+-			clock-names = "ref", "sleep";
+-			resets = <&gcc GCC_USB2A_PHY_BCR>, <&otg 0>;
+-			reset-names = "phy", "por";
+-			v3p3-supply = <&pm8941_l24>;
+-			v1p8-supply = <&pm8941_l6>;
+-			extcon = <&smbb>;
+-			qcom,init-seq = /bits/ 8 <0x1 0x63>;
+-		};
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
+new file mode 100644
+index 000000000000..202c42754188
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
+@@ -0,0 +1,86 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,usb-hs-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm's USB HS PHY binding description
++
++maintainers:
++  - Bjorn Andersson <bjorn.andersson@linaro.org>
++
++properties:
++  compatible:
++    items:
++      - enum:
++          - qcom,usb-hs-phy-apq8064
++          - qcom,usb-hs-phy-msm8916
++          - qcom,usb-hs-phy-msm8974
++      - const: qcom,usb-hs-phy
++
++  clocks: true
++
++  clock-names:
++    oneOf:
++      - items:
++          - const: ref
++          - const: sleep
++      - items:
++          - const: sleep
++          - const: ref
++
++  resets: true
++
++  reset-names:
++    oneOf:
++      - items:
++          - const: por
++      - items:
++          - const: phy
++          - const: por
++
++  v1p8-supply: true
++
++  v3p3-supply: true
++
++  extcon: true
++
++  "#phy-cells":
++    const: 0
++
++  qcom,init-seq:
++    $ref: /schemas/types.yaml#/definitions/uint8-array
++    description: |
++      Should contain a sequence of ULPI address and value pairs to
++      program into the ULPI_EXT_VENDOR_SPECIFIC area. This is related
++      to Device Mode Eye Diagram test. The addresses are offsets
++      from the ULPI_EXT_VENDOR_SPECIFIC address, for example,
++      <0x1 0x53> would mean "write the value 0x53 to address 0x81".
++
++required:
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    otg: usb-controller {
++      ulpi {
++        phy {
++          compatible = "qcom,usb-hs-phy-msm8974", "qcom,usb-hs-phy";
++          #phy-cells = <0>;
++          clocks = <&clk 0>, <&clk 258>;
++          clock-names = "ref", "sleep";
++          resets = <&gcc 10>, <&otg 0>;
++          reset-names = "phy", "por";
++          v3p3-supply = <&pm8941_l24>;
++          v1p8-supply = <&pm8941_l6>;
++          extcon = <&smbb>;
++          qcom,init-seq = /bits/ 8 <0x1 0x63>;
++        };
++      };
++    };
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
