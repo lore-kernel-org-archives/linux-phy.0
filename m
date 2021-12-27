@@ -4,60 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29185C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Dec 2021 17:03:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43535C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Dec 2021 10:32:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YctB+JM0CpBXVCgwwoE0qXp+t5Lk4bwqkQofYNjnymM=; b=IrhCmPb00QTYlp
-	7DEkH44QC59E/nCpz0q7ZxnuzlANA0/U8MLWlIytGuz3G4XS8NK9qi0ROdLTl2MXDQXiM9TZ682Ra
-	RPawu4NmzTFnTGOz0NcG/D8+Al8Q9+usUMJTgfZO1hdryedgoO1yOEtAsLqHTaEWg1WfuHXRM1VXN
-	dTOERRqo0WyNq51WDNXVSkiAinKW8BQlCjXSBI36bgZ5YxuT+nmql8HvLKWGTjweYxD5aHGWgqxls
-	jwP6yyduj3dFtmJFmL1xMWBss7MBml1nxIvVqbm5M8HqKbDp/0gThSbIaZS7VQyAG4a6NRAyGMQDK
-	s5i03VbleGg4dv6DqV/g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bCl817CkUyBiJHUGceM7lO6/ND9LJLkQMsIWXY+ru8c=; b=q9u+BTPiBChPRa
+	SPCtAY4ldemadmMVOuh/C728bPYXENvuiG93Xz3Jb6pjdXqBZZJbQgm7p1WxBePzCHCpDpO69WWZu
+	MYT7noOYB+G+rcjBCX7YXtMjMzU1UMucZmV69b1PW1jEWnYuLJI1EsgaMvdg0Rg+hi50+W88oM9fk
+	Mawh5fxh+RW9/E6mmd4BY3SHwPMwI2MbBmZ1wNw4Ai3SsmcDEApzzpAxkz7gQcGjyCUdjqabvDwGd
+	MD9di0wyMGP7FD/aT6uWHwwlVbGxMO6aj/3CBAsEuwScdM/rwvyrQM/Zzmp7koU/vXTd8x2BV9kpW
+	8NP2OPuySUc+D0VsT2Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n0ny7-00ELWa-Fm; Fri, 24 Dec 2021 17:02:59 +0000
-Received: from ixit.cz ([94.230.151.217])
+	id 1n1nIQ-00GXAA-G1; Mon, 27 Dec 2021 10:32:02 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n0ny3-00ELVl-Fa
- for linux-phy@lists.infradead.org; Fri, 24 Dec 2021 17:02:57 +0000
-Received: from localhost.localdomain (ip-89-176-96-70.net.upcbroadband.cz
- [89.176.96.70])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ id 1n1nIN-00GX9q-Gh
+ for linux-phy@lists.infradead.org; Mon, 27 Dec 2021 10:32:01 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ixit.cz (Postfix) with ESMTPSA id 802A92243C;
- Fri, 24 Dec 2021 18:02:43 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ixit.cz; s=dkim;
- t=1640365363;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=HbmIZwLuV6VZPMQ2LsqtWZDS7tE+7vlqNV7H+vpBED0=;
- b=lfeE112a7wnQxddN8gP4N6WncHhMYn9EUXBgFow+Li0+umYK5u9LN9Uv+Y8U9Ws3fffWo/
- YxvXmVbiBWEGXbTHelN4pltsw1BYQDJWpO7gyTbEmAs+TcazwNmDfeZNcddBhd/sqbAGqF
- +I4LPzc8tdnONr068KDTr9pNY8XcM14=
-From: David Heidelberg <david@ixit.cz>
-To: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>
-Cc: ~okias/devicetree@lists.sr.ht, David Heidelberg <david@ixit.cz>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] dt-bindings: phy: convert Qualcomm USB HS phy to yaml
-Date: Fri, 24 Dec 2021 18:02:41 +0100
-Message-Id: <20211224170242.57816-1-david@ixit.cz>
-X-Mailer: git-send-email 2.34.1
+ by ams.source.kernel.org (Postfix) with ESMTPS id AE467B80E66;
+ Mon, 27 Dec 2021 10:31:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8ED29C36AE7;
+ Mon, 27 Dec 2021 10:31:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1640601114;
+ bh=/KjC1UJVv3vSOLwDC5ETeD3L87FQ7q37TromhwIqc+0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=k8i2bd3ehjpyERzYC03d3VeS6CFfActH89ZFJUcT9Uigy6kxH4SoPSRQOmC9WrHAg
+ Z1GsEF6nWL4KIEQ9RDZb90Ffr2EoTUCPYpAkmy2DZf2xkF8MaO0+COQ8YgTZggjSAK
+ RiiyBcllMfogt9zR7SbL6Ig6BEkx9+OQPaCoG9QrMdiPxMJoY6wFFnyinCP+Pn5VdF
+ u30JL66e62JfsD8waDNJjvnMcvPTKez7VXPzQZzHd50DDIKaASj3l3/JWBpJk2faOG
+ MR/wXIbE5vIYFw+MX/rnoCp+QpVLt/y0ZrmDxqs3kvrRamjNAOWnLFEruZoeDQ+Vu6
+ r4bFY61eXWz/g==
+Date: Mon, 27 Dec 2021 16:01:50 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Pali =?iso-8859-1?Q?Roh=E1r?= <pali@kernel.org>
+Cc: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
+ linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>
+Subject: Re: [PATCH phy v2 2/6] phy: marvell: phy-mvebu-a3700-comphy: Add
+ native kernel implementation
+Message-ID: <YcmWFtjBke3LDY79@matsya>
+References: <20211208024038.8797-1-kabel@kernel.org>
+ <20211208024038.8797-3-kabel@kernel.org> <YcRuVCdXztTTrJs7@matsya>
+ <20211223132102.lgne4vsdjeqqudwc@pali>
 MIME-Version: 1.0
-X-Spam: Yes
+Content-Disposition: inline
+In-Reply-To: <20211223132102.lgne4vsdjeqqudwc@pali>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211224_090255_884621_E1571DF2 
-X-CRM114-Status: GOOD (  13.60  )
+X-CRM114-CacheID: sfid-20211227_023159_889326_ABADE3A0 
+X-CRM114-Status: GOOD (  16.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,208 +72,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Conversion of Qualcomm USB HS phy documentation to yaml.
+On 23-12-21, 14:21, Pali Roh=E1r wrote:
+> On Thursday 23 December 2021 18:10:52 Vinod Koul wrote:
+> > On 08-12-21, 03:40, Marek Beh=FAn wrote:
+> > > From: Pali Roh=E1r <pali@kernel.org>
+> > =
 
-Signed-off-by: David Heidelberg <david@ixit.cz>
----
- .../bindings/phy/qcom,usb-hs-phy.txt          | 84 ------------------
- .../bindings/phy/qcom,usb-hs-phy.yaml         | 86 +++++++++++++++++++
- 2 files changed, 86 insertions(+), 84 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
+> > > +/* COMPHY registers */
+> > > +#define COMPHY_POWER_PLL_CTRL		0x01
+> > > +#define PU_IVREF_BIT			BIT(15)
+> > > +#define PU_PLL_BIT			BIT(14)
+> > > +#define PU_RX_BIT			BIT(13)
+> > > +#define PU_TX_BIT			BIT(12)
+> > > +#define PU_TX_INTP_BIT			BIT(11)
+> > > +#define PU_DFE_BIT			BIT(10)
+> > > +#define RESET_DTL_RX_BIT		BIT(9)
+> > > +#define PLL_LOCK_BIT			BIT(8)
+> > > +#define REF_FREF_SEL_MASK		GENMASK(4, 0)
+> > > +#define REF_FREF_SEL_SERDES_25MHZ	(0x1 << 0)
+> > > +#define REF_FREF_SEL_SERDES_40MHZ	(0x3 << 0)
+> > > +#define REF_FREF_SEL_SERDES_50MHZ	(0x4 << 0)
+> > > +#define REF_FREF_SEL_PCIE_USB3_25MHZ	(0x2 << 0)
+> > > +#define REF_FREF_SEL_PCIE_USB3_40MHZ	(0x3 << 0)
+> > > +#define COMPHY_MODE_MASK		GENMASK(7, 5)
+> > > +#define COMPHY_MODE_SATA		(0x0 << 5)
+> > > +#define COMPHY_MODE_PCIE		(0x3 << 5)
+> > > +#define COMPHY_MODE_SERDES		(0x4 << 5)
+> > > +#define COMPHY_MODE_USB3		(0x5 << 5)
+> > =
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
-deleted file mode 100644
-index b3b75c1e6285..000000000000
---- a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.txt
-+++ /dev/null
-@@ -1,84 +0,0 @@
--Qualcomm's USB HS PHY
--
--PROPERTIES
--
--- compatible:
--    Usage: required
--    Value type: <string>
--    Definition: Should contain "qcom,usb-hs-phy" and more specifically one of the
--                following:
--
--                        "qcom,usb-hs-phy-apq8064"
--                        "qcom,usb-hs-phy-msm8916"
--                        "qcom,usb-hs-phy-msm8974"
--
--- #phy-cells:
--    Usage: required
--    Value type: <u32>
--    Definition: Should contain 0
--
--- clocks:
--    Usage: required
--    Value type: <prop-encoded-array>
--    Definition: Should contain clock specifier for the reference and sleep
--                clocks
--
--- clock-names:
--    Usage: required
--    Value type: <stringlist>
--    Definition: Should contain "ref" and "sleep" for the reference and sleep
--                clocks respectively
--
--- resets:
--    Usage: required
--    Value type: <prop-encoded-array>
--    Definition: Should contain the phy and POR resets
--
--- reset-names:
--    Usage: required
--    Value type: <stringlist>
--    Definition: Should contain "phy" and "por" for the phy and POR resets
--                respectively
--
--- v3p3-supply:
--    Usage: required
--    Value type: <phandle>
--    Definition: Should contain a reference to the 3.3V supply
--
--- v1p8-supply:
--    Usage: required
--    Value type: <phandle>
--    Definition: Should contain a reference to the 1.8V supply
--
--- extcon:
--    Usage: optional
--    Value type: <prop-encoded-array>
--    Definition: Should contain the vbus extcon
--
--- qcom,init-seq:
--    Usage: optional
--    Value type: <u8 array>
--    Definition: Should contain a sequence of ULPI address and value pairs to
--                program into the ULPI_EXT_VENDOR_SPECIFIC area. This is related
--                to Device Mode Eye Diagram test. The addresses are offsets
--                from the ULPI_EXT_VENDOR_SPECIFIC address, for example,
--                <0x1 0x53> would mean "write the value 0x53 to address 0x81".
--
--EXAMPLE
--
--otg: usb-controller {
--	ulpi {
--		phy {
--			compatible = "qcom,usb-hs-phy-msm8974", "qcom,usb-hs-phy";
--			#phy-cells = <0>;
--			clocks = <&xo_board>, <&gcc GCC_USB2A_PHY_SLEEP_CLK>;
--			clock-names = "ref", "sleep";
--			resets = <&gcc GCC_USB2A_PHY_BCR>, <&otg 0>;
--			reset-names = "phy", "por";
--			v3p3-supply = <&pm8941_l24>;
--			v1p8-supply = <&pm8941_l6>;
--			extcon = <&smbb>;
--			qcom,init-seq = /bits/ 8 <0x1 0x63>;
--		};
--	};
--};
-diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
-new file mode 100644
-index 000000000000..202c42754188
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
-@@ -0,0 +1,86 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/qcom,usb-hs-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Qualcomm's USB HS PHY binding description
-+
-+maintainers:
-+  - Bjorn Andersson <bjorn.andersson@linaro.org>
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          - qcom,usb-hs-phy-apq8064
-+          - qcom,usb-hs-phy-msm8916
-+          - qcom,usb-hs-phy-msm8974
-+      - const: qcom,usb-hs-phy
-+
-+  clocks: true
-+
-+  clock-names:
-+    oneOf:
-+      - items:
-+          - const: ref
-+          - const: sleep
-+      - items:
-+          - const: sleep
-+          - const: ref
-+
-+  resets: true
-+
-+  reset-names:
-+    oneOf:
-+      - items:
-+          - const: por
-+      - items:
-+          - const: phy
-+          - const: por
-+
-+  v1p8-supply: true
-+
-+  v3p3-supply: true
-+
-+  extcon: true
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  qcom,init-seq:
-+    $ref: /schemas/types.yaml#/definitions/uint8-array
-+    description: |
-+      Should contain a sequence of ULPI address and value pairs to
-+      program into the ULPI_EXT_VENDOR_SPECIFIC area. This is related
-+      to Device Mode Eye Diagram test. The addresses are offsets
-+      from the ULPI_EXT_VENDOR_SPECIFIC address, for example,
-+      <0x1 0x53> would mean "write the value 0x53 to address 0x81".
-+
-+required:
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    otg: usb-controller {
-+      ulpi {
-+        phy {
-+          compatible = "qcom,usb-hs-phy-msm8974", "qcom,usb-hs-phy";
-+          #phy-cells = <0>;
-+          clocks = <&clk 0>, <&clk 258>;
-+          clock-names = "ref", "sleep";
-+          resets = <&gcc 10>, <&otg 0>;
-+          reset-names = "phy", "por";
-+          v3p3-supply = <&pm8941_l24>;
-+          v1p8-supply = <&pm8941_l6>;
-+          extcon = <&smbb>;
-+          qcom,init-seq = /bits/ 8 <0x1 0x63>;
-+        };
-+      };
-+    };
--- 
-2.34.1
+> > Any reason why these are not using GENMASK. I guess documentation would
+> > define these as BIT x-y right?
+> =
 
+> Hello Vinod! I'm not sure to which macro refers your question as all
+> *_MASK defines are now using GENMASK() macros.
+> =
 
--- 
+> Definitions which do not have mask _MASK are not masks, but rather
+> particular values for corresponding _MASK constant.
+> =
+
+> So, for example: REF_FREF_SEL_MASK is 5 bit mask for fref_sel and
+> fref_sel can contain exactly one of the following values:
+> REF_FREF_SEL_SERDES_25MHZ, REF_FREF_SEL_SERDES_40MHZ,
+> REF_FREF_SEL_SERDES_50MHZ, REF_FREF_SEL_PCIE_USB3_25MHZ,
+> REF_FREF_SEL_PCIE_USB3_40MHZ. So you want to set serdes ref freq to
+> 50 MHz you need to clear bits [4:0] (macro REF_FREF_SEL_MASK) and then
+> set to value 0x4 (macro REF_FREF_SEL_SERDES_50MHZ) to bits [4:0].
+> =
+
+> It is clear now? Or did you mean something different?
+
+Thanks for explanation.
+
+Looking at this, i think this should be defined as constants as defined
+in the spec:
+#define REF_FREF_SEL_SERDES_25MHZ x
+#define REF_FREF_SEL_SERDES_40MHZ y
+... so on
+
+and then use FIELD_PREP(MASK, constant) ie,
+FIELD_PREP(REF_FREF_SEL_MASK, REF_FREF_SEL_SERDES_25MHZ)
+
+That sounds more readable and less error prone to me :)
+
+Thanks
+-- =
+
+~Vinod
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
