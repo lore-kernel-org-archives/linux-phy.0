@@ -4,83 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D8F5C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Dec 2021 16:19:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC6C6C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Dec 2021 16:39:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UO3HG6VWiRhwZUqKkXfF9OerU+9ZgEvAJPCGxhMLbYg=; b=CWB7r+Bpm7a9Y0
-	OJ6L1XvRiqh50kX+KZZXI0/ecn2U57TfwuM/5hPfs7WTftf/1Xc07EqYL6afRDv5EPYzTasqG9pHu
-	C9s6sGyKMQKOD80oEv2U7BnJbYoh6+pPaGTZOkDf4PEuvLOc8GcBI4pEvm9GN+wHtKDsraKt40EYY
-	WPZHlC9aVpyCk4sk3MRr7PjLmbgc8ujicxVojQlpEAj3YTFpGeB7PJZ5iItmk8CDhwA0G5Zjf/Hsf
-	dPU7HLxM5mP6r6xI8lZwIqpc0H/CjlO6Mz1aM+oq1dVEeuN+zezX3TjuVNg2HyD1tyduNS07R6TCp
-	Jh4BRBcFwoDsX7CcsDsA==;
+	List-Owner; bh=nwXeCrQ2OFkbvrUSB4RjJYoRUR2qHb4mBtCNFUp4YdI=; b=WcbZgZtD7jupSo
+	EXrGdO0KM7N5Ptur8zFWMteZnk1SXp4QjWdzfZgwEsRo1aYmqLvuNcMYxqTMkXAdKNoQdAqApERmT
+	WWX1xFMsUP1RfVFhQnXOO7PVAZ+oFXDdKzguMp1kpu1B+Ze3NI/pZsI9WjxzkZ3bYM4US2MtMrxGS
+	GFSI29hR4RO7wzPSfUvVoMuQcNvE9W31HIurE3t8jqAx5fi6Vo2B9W97ASxiARiyvZVGtI52Icr4g
+	DAqefsZIsDyyjhNFaRV4BHFJCw2aHJwTq899q5uYlpcxaTPOeePRS7q1ZtEDMnVDiQYJ9BgzWywvN
+	bts1oz718s46ejQRGtKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n2FCS-001VsI-Ki; Tue, 28 Dec 2021 16:19:44 +0000
-Received: from mail-oi1-x230.google.com ([2607:f8b0:4864:20::230])
+	id 1n2FVD-001XdF-9p; Tue, 28 Dec 2021 16:39:07 +0000
+Received: from mail-oi1-x22c.google.com ([2607:f8b0:4864:20::22c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n2FCP-001Vrh-Pb
- for linux-phy@lists.infradead.org; Tue, 28 Dec 2021 16:19:43 +0000
-Received: by mail-oi1-x230.google.com with SMTP id t23so30731354oiw.3
- for <linux-phy@lists.infradead.org>; Tue, 28 Dec 2021 08:19:41 -0800 (PST)
+ id 1n2FVA-001Xcc-Dy
+ for linux-phy@lists.infradead.org; Tue, 28 Dec 2021 16:39:06 +0000
+Received: by mail-oi1-x22c.google.com with SMTP id j124so30826285oih.12
+ for <linux-phy@lists.infradead.org>; Tue, 28 Dec 2021 08:39:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=AYitZ0Q2H8/UE8ntVEjHxS3ygRuiQMT5kuJ2XWSERHA=;
- b=VFSjddkrSuYDV5bueT8CZ8raosWrrrZ+9XDv2VQ4cJsHzyfj+83vcEz/StnJ5aWbMj
- n/A4OJe4ntdf6qq8sEsnnwlhPHtZtW4kXdR8b8MlSVog3zhL35w3no/3abb2LxdxZZAL
- Igm2moCUsyhyvWDNYv04pnhmZnHUbV6g15mzBRrUymCorkCfU6xBv/dFMBxx759ZzNdN
- UpcF7zfucyXn4KeeYllK+66NUydNBTFx57KNNG5KUkfAKcHru5TytTaZyRkPwn/pfKRQ
- 6RxtgrJuNVZ/J+kw0HBY0IIOpM+FUKgzcopb6i5IHvkkPlVOWLjGjUQYJgDBAaiVFWq+
- CT7g==
+ bh=ZIpboUz/xGiGm0M2bXxED5rkbHQBbAAf8QHnqv08958=;
+ b=AFobbcTiuaEItSulj0GbplCZ6nJLKEzZbS81I/vjDL5fHMv8umDxbEl+tLsi3MxQBY
+ 46vmWs1PJkhy9r0z2ovi/LIaVLnG53l16NTAaut38zEBwHhpnVj2rEPyLbJfveeGg0Bj
+ DSwuFfeEPNUP1qlM6JObzKhKwW+qoQoOUVXoRCBCvgiOgBiCLGhEOnebkh8jrpyBPcOM
+ rFW3mMUh/v4bjiRSYbMb+K9WImT2Va7UIXo4yc0PDwufsUYc34QhbvMVpNajXfg1QOiC
+ 1Gq7DSneEuXJk7uff1K3YoVpM3Atz6KsNLgUYKNHy7yDQ0tN0VeZHhjUpSFIH/9TQYGw
+ 6eGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=AYitZ0Q2H8/UE8ntVEjHxS3ygRuiQMT5kuJ2XWSERHA=;
- b=ZXgOK6t/SX7NSMzbZW9FZ3KKX4Uz494Qu+7Entdz+RX86a4Tq0K9mf9yqKxMR5xvYj
- VhxXdkqc3AeYdVuVyxUqTelwcpw1kWVzAsgBUb6u0pZHHR1bqbDUclM8LFXIhrWeGlOR
- AoSF+MUA+UChasLEPyxZrcSoou0d4xQDbdcSWYrnzBFyPHzn9e8i7WLID4Ie5S0VndRj
- SfT5eqOrs7Yt88X+7dN9SNs4zX7qMf3FrnBBd5i1V+NgAcZTu7BDPDf5X2ExxF8f126z
- OYAsmhfrHixc6RwBZ5iSa3EiQUw2WLuS5VqWrNCRNIVC2AwbR38xof8GEsq8RcINnPxO
- IlHg==
-X-Gm-Message-State: AOAM532gBeYEMCTUcG1sQapSAH3rRe/yHKJi+BKkF1OYDaNMzx7Q49Cs
- WXTgt4ynszFGXgg4AlXnIJ1KDW0gjVK7ew==
-X-Google-Smtp-Source: ABdhPJwR9tQaHdpponyTVV8xn5GVx9M3djSgjgNJcELczLc3VOt3xH7wlrscMbjQ2O6AGzND2okr3g==
-X-Received: by 2002:a05:6808:16a3:: with SMTP id
- bb35mr17427845oib.72.1640708380807; 
- Tue, 28 Dec 2021 08:19:40 -0800 (PST)
+ bh=ZIpboUz/xGiGm0M2bXxED5rkbHQBbAAf8QHnqv08958=;
+ b=nfK/ESpIOyWY0FAkB0qp/HWJuwTXDwSWCzrGVaENdMvxd6k7Tkka8qjP4XXZ49A0yO
+ 8kp6NcCa4rwzMLZoK9/heK5oDQZdcQrlB0gXRFcKXTpJUl9ygQsVOWhekMN9h4k1ECwZ
+ tvqi4tfaMuts0f0hN3ENb9HXgnIZAjTsjdpSfxLRMrWrfgI+BN0Uf7D9eOwCVlq5Ifsi
+ 1+00f3As+COFPbL9mbqIve82ooAYUhekp2WOXK4fVmtmrkMAerfXUAK/Od42nP8OfPLD
+ /cc+t7K16IaZj8W9hjJik1KoC1yJXkXIgB2Q2UHNNoNGpw4FNxo589kxIabWmBvv34Ua
+ QgXA==
+X-Gm-Message-State: AOAM531aoXlbjpniE1JYb1zUBJUTwJZ1WLbUZueb3IEc5ji1EC2NzlqO
+ nyytHOrqANa6c0wJ1Jn2v6jGew==
+X-Google-Smtp-Source: ABdhPJzOODy4nmc8nUHSmsbMH/o2ue92pmv2LHEXCJDGBzRWhqAPOozIKUl/ymCjnUMkyifprhlvtA==
+X-Received: by 2002:a05:6808:682:: with SMTP id
+ k2mr18106337oig.63.1640709541365; 
+ Tue, 28 Dec 2021 08:39:01 -0800 (PST)
 Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
  [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id m12sm4072249oiw.23.2021.12.28.08.19.40
+ by smtp.gmail.com with ESMTPSA id o11sm3993423oiv.10.2021.12.28.08.39.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Dec 2021 08:19:40 -0800 (PST)
-Date: Tue, 28 Dec 2021 08:20:41 -0800
+ Tue, 28 Dec 2021 08:39:00 -0800 (PST)
+Date: Tue, 28 Dec 2021 08:40:01 -0800
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: kernel test robot <lkp@intel.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Hans de Goede <hdegoede@redhat.com>, kbuild-all@lists.01.org,
+ Hans de Goede <hdegoede@redhat.com>,
  "Rafael J. Wysocki" <rafael@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-Subject: Re: [PATCH 2/8] phy: qcom-qmp: Register typec mux and orientation
- switch
-Message-ID: <Ycs5WUwhhUq1g9hA@ripper>
-References: <20211228052116.1748443-3-bjorn.andersson@linaro.org>
- <202112282120.JleedcIB-lkp@intel.com>
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org
+Subject: Re: [PATCH 6/8] typec: mux: Allow multiple mux_devs per mux
+Message-ID: <Ycs94b+Uh42KQKui@ripper>
+References: <20211228052116.1748443-1-bjorn.andersson@linaro.org>
+ <20211228052116.1748443-7-bjorn.andersson@linaro.org>
+ <42ef1ff8-1c60-c601-3e97-7b9ffb3cab07@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202112282120.JleedcIB-lkp@intel.com>
+In-Reply-To: <42ef1ff8-1c60-c601-3e97-7b9ffb3cab07@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211228_081941_889454_09A6027C 
-X-CRM114-Status: GOOD (  15.06  )
+X-CRM114-CacheID: sfid-20211228_083904_516467_71B35C44 
+X-CRM114-Status: GOOD (  30.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,69 +98,253 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue 28 Dec 05:59 PST 2021, kernel test robot wrote:
+On Tue 28 Dec 08:04 PST 2021, Dmitry Baryshkov wrote:
 
-> Hi Bjorn,
+> On 28/12/2021 08:21, Bjorn Andersson wrote:
+> > In the Qualcomm platforms the USB/DP PHY handles muxing and orientation
+> > switching of the SuperSpeed lines, but the SBU lines needs to be
+> > connected and switched by external (to the SoC) hardware.
+> > 
+> > It's therefor necessary to be able to have the TypeC controller operate
+> > multiple TypeC muxes and switches. Use the newly introduced indirection
+> > object to handle this, to avoid having to taint the TypeC controllers
+> > with knowledge about the downstream hardware configuration.
+> > 
+> > The max number of devs per indirection is set to 3, based on the number
+> > of ports defined in the usb-c-connector binding.
 > 
-> I love your patch! Yet something to improve:
+> If we had the 'count' ability, we wouldn't have to put limits here.
+> The limit 3 is a bit artificial if you consider the redriver chips.
 > 
-> [auto build test ERROR on usb/usb-testing]
-> [also build test ERROR on robh/for-next driver-core/driver-core-testing linus/master v5.16-rc7 next-20211224]
-> [If your patch is applied to the wrong git tree, kindly drop us a note.
-> And when submitting patch, we suggest to use '--base' as documented in
-> https://git-scm.com/docs/git-format-patch]
-> 
-> url:    https://github.com/0day-ci/linux/commits/Bjorn-Andersson/typec-mux-Introduce-support-for-multiple-TypeC-muxes/20211228-132045
-> base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git usb-testing
-> config: arc-randconfig-r043-20211228 (https://download.01.org/0day-ci/archive/20211228/202112282120.JleedcIB-lkp@intel.com/config)
-> compiler: arceb-elf-gcc (GCC) 11.2.0
-> reproduce (this is a W=1 build):
->         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
->         chmod +x ~/bin/make.cross
->         # https://github.com/0day-ci/linux/commit/db0b002b5b2e1055b2df7b430438335a75dc1557
->         git remote add linux-review https://github.com/0day-ci/linux
->         git fetch --no-tags linux-review Bjorn-Andersson/typec-mux-Introduce-support-for-multiple-TypeC-muxes/20211228-132045
->         git checkout db0b002b5b2e1055b2df7b430438335a75dc1557
->         # save the config file to linux build tree
->         mkdir build_dir
->         COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-11.2.0 make.cross O=build_dir ARCH=arc SHELL=/bin/bash
-> 
-> If you fix the issue, kindly add following tag as appropriate
-> Reported-by: kernel test robot <lkp@intel.com>
-> 
-> All errors (new ones prefixed by >>):
-> 
->    arceb-elf-ld: drivers/phy/qualcomm/phy-qcom-qmp.o: in function `qcom_qmp_phy_remove':
-> >> phy-qcom-qmp.c:(.text+0x37e): undefined reference to `typec_mux_unregister'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x37e): undefined reference to `typec_mux_unregister'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x384): undefined reference to `typec_switch_unregister'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x384): undefined reference to `typec_switch_unregister'
->    arceb-elf-ld: drivers/phy/qualcomm/phy-qcom-qmp.o: in function `qcom_qmp_phy_probe':
-> >> phy-qcom-qmp.c:(.text+0x14bc): undefined reference to `typec_switch_register'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x14bc): undefined reference to `typec_switch_register'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x14e2): undefined reference to `typec_mux_register'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x14e2): undefined reference to `typec_mux_register'
->    arceb-elf-ld: phy-qcom-qmp.c:(.text+0x14f6): undefined reference to `typec_switch_unregister'
->    arceb-elf-ld: phy-qcom-qmp.c:(.text+0x14f6): undefined reference to `typec_switch_unregister'
->    arceb-elf-ld: drivers/phy/qualcomm/phy-qcom-qmp.o: in function `qcom_qmp_phy_typec_switch_set':
-> >> phy-qcom-qmp.c:(.text+0x18f0): undefined reference to `typec_switch_get_drvdata'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x18f0): undefined reference to `typec_switch_get_drvdata'
->    arceb-elf-ld: drivers/phy/qualcomm/phy-qcom-qmp.o: in function `qcom_qmp_phy_typec_mux_set':
-> >> phy-qcom-qmp.c:(.text+0x1962): undefined reference to `typec_mux_get_drvdata'
-> >> arceb-elf-ld: phy-qcom-qmp.c:(.text+0x1962): undefined reference to `typec_mux_get_drvdata'
 
-I missed the fact that CONFIG_TYPEC is tristate. As such the QMP driver
-now need to be made "depend on TYPEC || TYPEC=n".
+I don't know if it's worth making it more dynamic at this point in time.
+I definitely don't think it's worth taking two passes here, because
+typec_switch_match will allocate objects that needs to be freed after
+the "count" pass. I.e.  taking two passes is expensive (and ugly).
 
-I will update accordingly in v2.
+Also in it's current state we're wasting 16 bytes per USB connector at
+worst and in the case of us having QMP muxing SuperSpeed signals and an
+external redriver we have 2.
+
+
+Given that we're just dealing with pointers the waste isn't that big,
+but we could put say 8 (16?) entries on the stack and then dynamically
+allocate the typec_switch and typec_mux arrays based on the actual
+number of items returned.
 
 Regards,
 Bjorn
 
+> > 
+> > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > ---
+> >   drivers/usb/typec/mux.c | 124 +++++++++++++++++++++++++++++++---------
+> >   1 file changed, 98 insertions(+), 26 deletions(-)
+> > 
+> > diff --git a/drivers/usb/typec/mux.c b/drivers/usb/typec/mux.c
+> > index d0b42c297aca..adf3681cf22d 100644
+> > --- a/drivers/usb/typec/mux.c
+> > +++ b/drivers/usb/typec/mux.c
+> > @@ -17,8 +17,11 @@
+> >   #include "class.h"
+> >   #include "mux.h"
+> > +#define TYPEC_MUX_MAX_DEVS	3
+> > +
+> >   struct typec_switch {
+> > -	struct typec_switch_dev *sw_dev;
+> > +	struct typec_switch_dev *sw_devs[TYPEC_MUX_MAX_DEVS];
+> > +	unsigned int num_sw_devs;
+> >   };
+> >   static int switch_fwnode_match(struct device *dev, const void *fwnode)
+> > @@ -67,25 +70,48 @@ static void *typec_switch_match(struct fwnode_handle *fwnode, const char *id,
+> >    */
+> >   struct typec_switch *fwnode_typec_switch_get(struct fwnode_handle *fwnode)
+> >   {
+> > -	struct typec_switch_dev *sw_dev;
+> > +	struct typec_switch_dev *sw_devs[TYPEC_MUX_MAX_DEVS];
+> >   	struct typec_switch *sw;
+> > +	int count;
+> > +	int err;
+> > +	int i;
+> >   	sw = kzalloc(sizeof(*sw), GFP_KERNEL);
+> >   	if (!sw)
+> >   		return ERR_PTR(-ENOMEM);
+> > -	sw_dev = fwnode_connection_find_match(fwnode, "orientation-switch", NULL,
+> > -					      typec_switch_match);
+> > -	if (IS_ERR_OR_NULL(sw_dev)) {
+> > +	count = fwnode_connection_find_matches(fwnode, "orientation-switch", NULL,
+> > +					       typec_switch_match,
+> > +					       (void **)sw_devs,
+> > +					       ARRAY_SIZE(sw_devs));
+> > +	if (count <= 0) {
+> >   		kfree(sw);
+> > -		return ERR_CAST(sw_dev);
+> > +		return NULL;
+> >   	}
+> > -	WARN_ON(!try_module_get(sw_dev->dev.parent->driver->owner));
+> > +	for (i = 0; i < count; i++) {
+> > +		if (IS_ERR(sw_devs[i])) {
+> > +			err = PTR_ERR(sw_devs[i]);
+> > +			goto put_sw_devs;
+> > +		}
+> > +	}
+> > +
+> > +	for (i = 0; i < count; i++) {
+> > +		WARN_ON(!try_module_get(sw_devs[i]->dev.parent->driver->owner));
+> > +		sw->sw_devs[i] = sw_devs[i];
+> > +	}
+> > -	sw->sw_dev = sw_dev;
+> > +	sw->num_sw_devs = count;
+> >   	return sw;
+> > +
+> > +put_sw_devs:
+> > +	for (i = 0; i < count; i++) {
+> > +		if (!IS_ERR(sw_devs[i]))
+> > +			put_device(&sw_devs[i]->dev);
+> > +	}
+> > +
+> > +	return ERR_PTR(err);
+> >   }
+> >   EXPORT_SYMBOL_GPL(fwnode_typec_switch_get);
+> > @@ -98,14 +124,17 @@ EXPORT_SYMBOL_GPL(fwnode_typec_switch_get);
+> >   void typec_switch_put(struct typec_switch *sw)
+> >   {
+> >   	struct typec_switch_dev *sw_dev;
+> > +	unsigned int i;
+> >   	if (IS_ERR_OR_NULL(sw))
+> >   		return;
+> > -	sw_dev = sw->sw_dev;
+> > +	for (i = 0; i < sw->num_sw_devs; i++) {
+> > +		sw_dev = sw->sw_devs[i];
+> > -	module_put(sw_dev->dev.parent->driver->owner);
+> > -	put_device(&sw_dev->dev);
+> > +		module_put(sw_dev->dev.parent->driver->owner);
+> > +		put_device(&sw_dev->dev);
+> > +	}
+> >   	kfree(sw);
+> >   }
+> >   EXPORT_SYMBOL_GPL(typec_switch_put);
+> > @@ -170,13 +199,21 @@ int typec_switch_set(struct typec_switch *sw,
+> >   		     enum typec_orientation orientation)
+> >   {
+> >   	struct typec_switch_dev *sw_dev;
+> > +	unsigned int i;
+> > +	int ret;
+> >   	if (IS_ERR_OR_NULL(sw))
+> >   		return 0;
+> > -	sw_dev = sw->sw_dev;
+> > +	for (i = 0; i < sw->num_sw_devs; i++) {
+> > +		sw_dev = sw->sw_devs[i];
+> > +
+> > +		ret = sw_dev->set(sw_dev, orientation);
+> > +		if (ret)
+> > +			return ret;
+> > +	}
+> > -	return sw_dev->set(sw_dev, orientation);
+> > +	return 0;
+> >   }
+> >   EXPORT_SYMBOL_GPL(typec_switch_set);
+> > @@ -208,7 +245,8 @@ EXPORT_SYMBOL_GPL(typec_switch_get_drvdata);
+> >   /* ------------------------------------------------------------------------- */
+> >   struct typec_mux {
+> > -	struct typec_mux_dev *mux_dev;
+> > +	struct typec_mux_dev *mux_devs[TYPEC_MUX_MAX_DEVS];
+> > +	unsigned int num_mux_devs;
+> >   };
+> >   static int mux_fwnode_match(struct device *dev, const void *fwnode)
+> > @@ -291,25 +329,48 @@ static void *typec_mux_match(struct fwnode_handle *fwnode, const char *id,
+> >   struct typec_mux *fwnode_typec_mux_get(struct fwnode_handle *fwnode,
+> >   				       const struct typec_altmode_desc *desc)
+> >   {
+> > -	struct typec_mux_dev *mux_dev;
+> > +	struct typec_mux_dev *mux_devs[TYPEC_MUX_MAX_DEVS];
+> >   	struct typec_mux *mux;
+> > +	int count;
+> > +	int err;
+> > +	int i;
+> >   	mux = kzalloc(sizeof(*mux), GFP_KERNEL);
+> >   	if (!mux)
+> >   		return ERR_PTR(-ENOMEM);
+> > -	mux_dev = fwnode_connection_find_match(fwnode, "mode-switch", (void *)desc,
+> > -					       typec_mux_match);
+> > -	if (IS_ERR_OR_NULL(mux_dev)) {
+> > +	count = fwnode_connection_find_matches(fwnode, "mode-switch",
+> > +					       (void *)desc, typec_mux_match,
+> > +					       (void **)mux_devs,
+> > +					       ARRAY_SIZE(mux_devs));
+> > +	if (count <= 0) {
+> >   		kfree(mux);
+> > -		return ERR_CAST(mux_dev);
+> > +		return NULL;
+> >   	}
+> > -	WARN_ON(!try_module_get(mux_dev->dev.parent->driver->owner));
+> > +	for (i = 0; i < count; i++) {
+> > +		if (IS_ERR(mux_devs[i])) {
+> > +			err = PTR_ERR(mux_devs[i]);
+> > +			goto put_mux_devs;
+> > +		}
+> > +	}
+> > +
+> > +	for (i = 0; i < count; i++) {
+> > +		WARN_ON(!try_module_get(mux_devs[i]->dev.parent->driver->owner));
+> > +		mux->mux_devs[i] = mux_devs[i];
+> > +	}
+> > -	mux->mux_dev = mux_dev;
+> > +	mux->num_mux_devs = count;
+> >   	return mux;
+> > +
+> > +put_mux_devs:
+> > +	for (i = 0; i < count; i++) {
+> > +		if (!IS_ERR(mux_devs[i]))
+> > +			put_device(&mux_devs[i]->dev);
+> > +	}
+> > +
+> > +	return ERR_PTR(err);
+> >   }
+> >   EXPORT_SYMBOL_GPL(fwnode_typec_mux_get);
+> > @@ -322,13 +383,16 @@ EXPORT_SYMBOL_GPL(fwnode_typec_mux_get);
+> >   void typec_mux_put(struct typec_mux *mux)
+> >   {
+> >   	struct typec_mux_dev *mux_dev;
+> > +	unsigned int i;
+> >   	if (IS_ERR_OR_NULL(mux))
+> >   		return;
+> > -	mux_dev = mux->mux_dev;
+> > -	module_put(mux_dev->dev.parent->driver->owner);
+> > -	put_device(&mux_dev->dev);
+> > +	for (i = 0; i < mux->num_mux_devs; i++) {
+> > +		mux_dev = mux->mux_devs[i];
+> > +		module_put(mux_dev->dev.parent->driver->owner);
+> > +		put_device(&mux_dev->dev);
+> > +	}
+> >   	kfree(mux);
+> >   }
+> >   EXPORT_SYMBOL_GPL(typec_mux_put);
+> > @@ -336,13 +400,21 @@ EXPORT_SYMBOL_GPL(typec_mux_put);
+> >   int typec_mux_set(struct typec_mux *mux, struct typec_mux_state *state)
+> >   {
+> >   	struct typec_mux_dev *mux_dev;
+> > +	unsigned int i;
+> > +	int ret;
+> >   	if (IS_ERR_OR_NULL(mux))
+> >   		return 0;
+> > -	mux_dev = mux->mux_dev;
+> > +	for (i = 0; i < mux->num_mux_devs; i++) {
+> > +		mux_dev = mux->mux_devs[i];
+> > +
+> > +		ret = mux_dev->set(mux_dev, state);
+> > +		if (ret)
+> > +			return ret;
+> > +	}
+> > -	return mux_dev->set(mux_dev, state);
+> > +	return 0;
+> >   }
+> >   EXPORT_SYMBOL_GPL(typec_mux_set);
 > 
-> ---
-> 0-DAY CI Kernel Test Service, Intel Corporation
-> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+> 
+> -- 
+> With best wishes
+> Dmitry
 
 -- 
 linux-phy mailing list
