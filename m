@@ -4,75 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1F5CC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Dec 2021 20:49:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E7F2C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Dec 2021 00:48:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tBZrrBgZmkKTNtSSxStaFE8mIMutoyep5imUNuzUMkc=; b=hzg5N70y9F1G/G
-	vFN5408b9JQMtLaJxUTfq3ss9J1CrtZXaACKIH71ZDJMVNsVZIaGfjNdbanT5XeGDJpuZ071JdEty
-	PSTHExXBga2CFQe/CwVTPNiJ5Lf265dTcwBksI0sj4aruA13gq/OP6LYbZoVJzwUYN91JmpmP/3ET
-	lCDVg2o+gpDFheaEQdrC0tNqCM927zVfl4MuW5lxt/N3s9uolScoox/du2z+So2Gs16Pspm3C27Hz
-	px6QcHryVfFQhxLIafvUOFll8/+qeIkjVGnbNutKysseGSbp8hV1k5uT7/CriTUTipFfbu81t+IhL
-	tD6MkLc9yMWZ/rpOBP+g==;
+	List-Owner; bh=1my99Ifv9tB8aENPf2j/LnTCcf1rOhLx8ggUs//33sU=; b=U+DFk/wKQuaabF
+	SFOHRPS6vTGuAtC8sGbeZQXhgPlcthH5KVDepak0hEfY7tHtSqb5/of3K5V29TJSVxQUStKJ5hG6c
+	yNNqERbTP2Q4JE/2FGhkID8TCkfloz967OlldrwDZs8yiwmCF+7zI5HGNjqk7sqdOPgzEkNmYbWXH
+	3AX5YZhParbKHM4nqDb0olOShY4SjetUMPDDnGV0EVDVysENzjwBf6UBOuQ+0LYvGyR6QJwVTDyqs
+	Q44Z/S2NarnzcBgSF4rgZMOZmLNr1hm5Mqp8Nc8h+nPNI0r7Ob90Tcj/v4aRJlUomZrUm+JBt+4pO
+	dieHogEtaK06FuGVAKZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n1wvi-00HSsA-1P; Mon, 27 Dec 2021 20:49:14 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1n20fM-0001og-Og; Tue, 28 Dec 2021 00:48:36 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n1wvd-00HSrh-QB
- for linux-phy@lists.infradead.org; Mon, 27 Dec 2021 20:49:12 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1BRKn0vf081374;
- Mon, 27 Dec 2021 14:49:00 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1640638140;
- bh=Sf+TygJTFGkJZaMoLDFtGI1kePsfZJMILid4Yayi3QY=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=lNJOuzS8kBS5Ms6YKmBSWuOZSTC9WqZt+t2ALBpx6KSeMgadLH5oXz+SLgCc9aLus
- c/1cCaoiFZgDH/gXZ0GWAX4xXeVvWlaSZqje/ClXIK4jt+7K8nAOpqixfNmQEMC42v
- 5LZ5Xo5BaQji54CwkWMu0/6ba6rPryYioUuCQ1wo=
-Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1BRKn0iR024882
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 27 Dec 2021 14:49:00 -0600
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 27
- Dec 2021 14:49:00 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 27 Dec 2021 14:49:00 -0600
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1BRKmxHS123431;
- Mon, 27 Dec 2021 14:48:59 -0600
-Date: Tue, 28 Dec 2021 02:18:58 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Rob Herring <robh@kernel.org>
-CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, Vinod
- Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Swapnil Jakhade
- <sjakhade@cadence.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- <devicetree@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>, Tomi
- Valkeinen <tomi.valkeinen@ideasonboard.com>, Paul Kocialkowski
- <paul.kocialkowski@bootlin.com>, Vignesh Raghavendra <vigneshr@ti.com>
-Subject: Re: [PATCH v7 4/4] phy: dt-bindings: Add Cadence D-PHY Rx bindings
-Message-ID: <20211227204856.o6s6kjt5yahuk2j7@ti.com>
-References: <20211227105545.4852-1-p.yadav@ti.com>
- <20211227105545.4852-5-p.yadav@ti.com>
- <YcnwcpPdOOJ7WgSe@robh.at.kernel.org>
+ id 1n20fK-0001o9-3X; Tue, 28 Dec 2021 00:48:35 +0000
+Received: from p57b77d8b.dip0.t-ipconnect.de ([87.183.125.139]
+ helo=phil.fritz.box)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1n20fE-0001p0-SA; Tue, 28 Dec 2021 01:48:28 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Peter Geis <pgwipeout@gmail.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Johan Jonker <jbx6244@gmail.com>, Ondrej Jirman <megous@megous.com>,
+ Michael Riesch <michael.riesch@wolfvision.net>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh@kernel.org>,
+ linux-kernel@vger.kernel.org
+Subject: Re: (subset) [PATCH v3 0/8] phy-rockchip-inno-usb2: support rk356x
+ usb2phy
+Date: Tue, 28 Dec 2021 01:48:27 +0100
+Message-Id: <164065249086.1985132.4031278620113773485.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20211215210252.120923-1-pgwipeout@gmail.com>
+References: <20211215210252.120923-1-pgwipeout@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YcnwcpPdOOJ7WgSe@robh.at.kernel.org>
-User-Agent: NeoMutt/20171215
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211227_124910_022337_621EDDF8 
-X-CRM114-Status: GOOD (  15.98  )
+X-CRM114-CacheID: sfid-20211227_164834_167715_51EC2840 
+X-CRM114-Status: GOOD (  11.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,41 +64,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
-
-On 27/12/21 12:57PM, Rob Herring wrote:
-> On Mon, 27 Dec 2021 16:25:45 +0530, Pratyush Yadav wrote:
-> > The Rx mode DPHY is different from Tx mode DPHY. Add a separate binding
-> > for it.
-> > 
-> > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > 
-> > ---
-> > 
-> > (no changes since v6)
-> > 
-> > Changes in v6:
-> > - Add a new binding for DPHY Rx.
-> > 
-> >  .../devicetree/bindings/phy/cdns,dphy-rx.yaml | 42 +++++++++++++++++++
-> >  1 file changed, 42 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy-rx.yaml
-> > 
+On Wed, 15 Dec 2021 16:02:44 -0500, Peter Geis wrote:
+> Good Afternoon,
 > 
+> This is my series to support the usb2 phy devices on the rk356x.
+> The rk356x phy has a single muxed interrupt and has moved the usb2phy
+> nodes out of the grf and into their own nodes.
+> The phy needs to tie back into the grf for register control, similar to
+> the rv1108.
+> By moving the phys into their own nodes, they now have full
+> #address_cells = 2 register addresses, but they still reside below the 32bit
+> mmio range.
 > 
-> Please add Acked-by/Reviewed-by tags when posting new versions. However,
-> there's no need to repost patches *only* to add the tags. The upstream
-> maintainer will do that for acks received on the version they apply.
-> 
-> If a tag was not added on purpose, please state why and what changed.
+> [...]
 
-Sorry. I missed adding your R-by. It was by mistake, since this patch 
-has not changed since.
+Applied, thanks!
 
+[1/8] dt-bindings: soc: rockchip: add rk3568-usb2phy-grf
+      commit: 0c8662341dfdda1e0a59692e4d78ecb087f09da1
+[7/8] arm64: dts: rockchip: add usb2 nodes to rk3568 device tree
+      commit: cca4da59db28cdd284d34835be9f109f37bf0803
+[8/8] arm64: dts: rockchip: add Quartz64-A usb2 support
+      commit: 80d44c01e56943fcf9d0b5267ccfaa9487ac8067
+
+Best regards,
 -- 
-Regards,
-Pratyush Yadav
-Texas Instruments Inc.
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
