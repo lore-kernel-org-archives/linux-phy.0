@@ -4,68 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5777C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Dec 2021 05:40:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A848C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Dec 2021 06:00:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C2mERCGw8G47maVKDkUGf/IvbV4Rb4QVToBCvg6al9o=; b=xeOyX61yqwQPw7
-	c9k5FLPZmLZ1JCb7NG0JggpwutNCPJxnDXX+XX8brQ1bQQ1sCwCTTzEQcf4wIm/dSu7WgkrFDwTWu
-	EYT9OEKbaVO/my9LLg+eccJqz5+uelcehbTLsYIuz87sYpPM0Jp4BeYfM9BOLQqNdLrEwUmr/3Cpm
-	QS8Cm8m5OAvG/wdTFWSqV+tntDpsNP6pyf3VibaTR4ZzdcD1wgvIunkvcLfyEJdTj/uOEuqFk79JQ
-	+R858ln3CdWH2zlD9Q/fl/4w/yyk40D4luPlwCsvg93ISJKThgVuDWVvMRO8vs1ZEzNJo7tTw8MjN
-	iULj5SjjPJALMp+xTUaQ==;
+	List-Owner; bh=ypRYv5shQwHFI5HyC5vl9T5tecVlSCAtuUmA6kf+lCo=; b=uerEMzwUQka4o6
+	lGjf/qO/tYV0h0i8Tv5PcViH3xkvwslBrIQux/96Ao9SaqLOaTEMw9MaMNs19RORu/mJgLJIDBNxU
+	bFnbIg/P0UfUqG47r/cac87pNyfItam2vEwtOeVzjHFoc/biIGiyN6wRZSGHgxykdoFV5zxcB24Id
+	mq8qyc2ORE/pJvc8oGaJO+UflqfUd0k4tBkaHAjAl8F/HBlXSqY2bI4q3rdFHwCTtc9u233FpQ8hw
+	KbdVleLI7Zp0BhxYDDczkYpWoHbikTvFSxvu4AEm51MZebOV+FBFGgyzXqfZIl8DOBV3O8HYeZ+as
+	E5D79f4ZGrZz0lyd691A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n2RhM-002IMA-9n; Wed, 29 Dec 2021 05:40:28 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1n2S1A-002JhI-3R; Wed, 29 Dec 2021 06:00:56 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n2RhJ-002IL6-DA
- for linux-phy@lists.infradead.org; Wed, 29 Dec 2021 05:40:27 +0000
+ id 1n2S0w-002Jeb-6Z; Wed, 29 Dec 2021 06:00:43 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 15ED5B81757;
- Wed, 29 Dec 2021 05:40:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DC1BDC36AEA;
- Wed, 29 Dec 2021 05:40:21 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id CA4A961426;
+ Wed, 29 Dec 2021 06:00:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66625C36AE7;
+ Wed, 29 Dec 2021 06:00:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1640756422;
- bh=ZDSJxCw+26nf7CRKQUd/wtLZMwsu5luoF5sZD/yoX0U=;
+ s=k20201202; t=1640757639;
+ bh=OrbrodgAYSjiQzNjHIQlniQevCVLb6lJHzjWobUG6zQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uDFpmUBjvXGojvo/pLAX9ZBtkf0m6VU8AMZGNec6POpOKHNIOfofjmAeWHpWJhUR7
- Jj1zgzXzqnWhX7UESn4AuQ7eesScH28AArX34RnN0xZMNZ/WCdQQQBiFAP4oo5c8Uq
- OEjjultnSWc1pdv2zOi1JCgDoiIP4N3yPWe6xeFE9jZyLi5Dwb04aokFDN+OOOD08p
- SymZ7lnmaEUJA4MLwAP074qvLea1DShU5WVB0YmAAa2hUWgmDBOfGRXbnydglaeEwk
- qkK+I7Z88ryhElZVRGcr8lLa9G7f0ZeRs+EmJSoH2yrH+YTV0VjtZL6IUrbRuvcFG1
- cgtQDr/1XQuVw==
-Date: Wed, 29 Dec 2021 11:10:18 +0530
+ b=Sg8B51SpKPJDdqa1AVldira9Nh6lciLITTvy60O9L3ouVHB/CTU9BxlOtkwKQCoYH
+ rjEFUUxo35dXqTwlXnPqZeZC89oRJt1G+uKK15tHovWH7nwAqJMxrhcsnOgJ+hv71S
+ ME5z+F5WRY/ZAJf1GDzOGu4vuEWjDDG+5LcLhEiPjooDGWQF54csAmnC9VNtBY0b0F
+ gWsTTZ7YBUCpPDJGym/Pdl4QkNRYEpWz1iJz3/2k1/yKLoBeXUIpg9uiA3iRJuwUIR
+ 83kZKTKTXMF66TeiGq2bvy/EvmfQsEUDBXRL+LVCpv0ctXjUAA/dKwNmvoqsKaUZAP
+ 756kH05sJkW5A==
+Date: Wed, 29 Dec 2021 11:30:34 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Hans de Goede <hdegoede@redhat.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org
-Subject: Re: [PATCH 3/8] device property: Helper to match multiple connections
-Message-ID: <Ycv0wtDSyLhS1LWZ@matsya>
-References: <20211228052116.1748443-1-bjorn.andersson@linaro.org>
- <20211228052116.1748443-4-bjorn.andersson@linaro.org>
- <78491489-6b31-c741-8c69-8d52fb614a6c@linaro.org>
- <YctDgaHV8dsR109L@ripper>
+To: Guillaume Ranquet <granquet@baylibre.com>
+Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Markus Schneider-Pargmann <msp@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v7 6/8] phy: phy-mtk-dp: Add driver for DP phy
+Message-ID: <Ycv5gnWDtosJhwjc@matsya>
+References: <20211217150854.2081-1-granquet@baylibre.com>
+ <20211217150854.2081-7-granquet@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YctDgaHV8dsR109L@ripper>
+In-Reply-To: <20211217150854.2081-7-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211228_214025_760581_883A3CC1 
-X-CRM114-Status: GOOD (  31.05  )
+X-CRM114-CacheID: sfid-20211228_220042_350559_151F56F8 
+X-CRM114-Status: GOOD (  32.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,81 +79,153 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28-12-21, 09:04, Bjorn Andersson wrote:
-> On Tue 28 Dec 05:09 PST 2021, Dmitry Baryshkov wrote:
-> 
-> > On 28/12/2021 08:21, Bjorn Andersson wrote:
-> > > In some cases multiple connections with the same connection id
-> > > needs to be resolved from a fwnode graph.
-> > > 
-> > > One such example is when separate hardware is used for performing muxing and/or
-> > > orientation switching of the SuperSpeed and SBU lines in a USB-C
-> > > connector. In this case the connector needs to belong to a graph with
-> > > multiple matching remote endpoints, and the TypeC controller needs to be
-> > > able to resolve them both.
-> > > 
-> > > Add a new API that allows this kind of lookup.
-> > > 
-> > > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > > ---
-> > >   drivers/base/property.c  | 94 ++++++++++++++++++++++++++++++++++++++++
-> > >   include/linux/property.h |  5 +++
-> > >   2 files changed, 99 insertions(+)
-> > > 
-> > > diff --git a/drivers/base/property.c b/drivers/base/property.c
-> > > index cbe4fa298413..0aa0296fd991 100644
-> > > --- a/drivers/base/property.c
-> > > +++ b/drivers/base/property.c
-> > > @@ -1180,6 +1180,36 @@ fwnode_graph_devcon_match(struct fwnode_handle *fwnode, const char *con_id,
-> > >   	return NULL;
-> > >   }
-> > > +static unsigned int fwnode_graph_devcon_matches(struct fwnode_handle *fwnode,
-> > > +						const char *con_id, void *data,
-> > > +						devcon_match_fn_t match,
-> > > +						void **matches,
-> > > +						unsigned int matches_len)
-> > > +{
-> > > +	struct fwnode_handle *node;
-> > > +	struct fwnode_handle *ep;
-> > > +	unsigned int count = 0;
-> > > +	void *ret;
-> > > +
-> > > +	fwnode_graph_for_each_endpoint(fwnode, ep) {
-> > > +		if (count >= matches_len) {
-> > > +			fwnode_handle_put(ep);
-> > > +			return count;
-> > > +		}
-> > > +
-> > > +		node = fwnode_graph_get_remote_port_parent(ep);
-> > > +		if (!fwnode_device_is_available(node))
-> > > +			continue;
-> > > +
-> > > +		ret = match(node, con_id, data);
-> > > +		fwnode_handle_put(node);
-> > > +
-> > > +		if (ret)
-> > > +			matches[count++] = ret;
-> > > +	}
-> > > +	return count;
-> > > +}
-> > 
-> > This API doesn't let it's user know if there are more matches found in the
-> > device tree or not. I'd suggest to add 'count' mode that would return the
-> > amount of found matches if (matches == NULL) && (matches_len == 0).
 
-But the API does call each match
-> 
-> Unfortunately in this code path we don't know how to "free" the objects
-> returned by match(), e.g. see how typec_switch_match() returns wrapper
-> of a refcounted device.
-> 
-> So we must return all the match results to the caller to it can free
-> things up based on its knowledge of what matches[] actually contains..
+On 17-12-21, 16:08, Guillaume Ranquet wrote:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
 
-ACPI walk has similar APIs, I can think of acpi_walk_namespace() which I
-have used in past and does similar walk in namespace but for devices and
-calls the match()
+Pls cc relevant folks on cover so that they know what is going on in the
+series... Is this dependent on rest? It should not and can be sent and
+reviewed separately!
 
+> This is a new driver that supports the integrated DisplayPort phy for
+> mediatek SoCs, especially the mt8195. The phy is integrated into the
+> DisplayPort controller and will be created by the mtk-dp driver. This
+> driver expects a struct regmap to be able to work on the same registers
+> as the DisplayPort controller. It sets the device data to be the struct
+> phy so that the DisplayPort controller can easily work with it.
+> 
+> The driver does not have any devicetree bindings because the datasheet
+> does not list the controller and the phy as distinct units.
+> 
+> The interaction with the controller can be covered by the configure
+> callback of the phy framework and its displayport parameters.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
+>  MAINTAINERS                       |   1 +
+>  drivers/phy/mediatek/Kconfig      |   8 ++
+>  drivers/phy/mediatek/Makefile     |   1 +
+>  drivers/phy/mediatek/phy-mtk-dp.c | 219 ++++++++++++++++++++++++++++++
+>  4 files changed, 229 insertions(+)
+>  create mode 100644 drivers/phy/mediatek/phy-mtk-dp.c
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 8b7a98daf8e05..c44829d8a74df 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -6394,6 +6394,7 @@ L:	linux-mediatek@lists.infradead.org (moderated for non-subscribers)
+>  S:	Supported
+>  F:	Documentation/devicetree/bindings/display/mediatek/
+>  F:	drivers/gpu/drm/mediatek/
+> +F:	drivers/phy/mediatek/phy-mtk-dp.c
+>  F:	drivers/phy/mediatek/phy-mtk-hdmi*
+>  F:	drivers/phy/mediatek/phy-mtk-mipi*
+>  
+> diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
+> index 55f8e6c048ab3..f7ec860590492 100644
+> --- a/drivers/phy/mediatek/Kconfig
+> +++ b/drivers/phy/mediatek/Kconfig
+> @@ -55,3 +55,11 @@ config PHY_MTK_MIPI_DSI
+>  	select GENERIC_PHY
+>  	help
+>  	  Support MIPI DSI for Mediatek SoCs.
+> +
+> +config PHY_MTK_DP
+> +	tristate "MediaTek DP-PHY Driver"
+> +	depends on ARCH_MEDIATEK || COMPILE_TEST
+> +	depends on OF
+> +	select GENERIC_PHY
+> +	help
+> +	  Support DisplayPort PHY for Mediatek SoCs.
+> diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
+> index ace660fbed3a1..4ba1e06504346 100644
+> --- a/drivers/phy/mediatek/Makefile
+> +++ b/drivers/phy/mediatek/Makefile
+> @@ -3,6 +3,7 @@
+>  # Makefile for the phy drivers.
+>  #
+>  
+> +obj-$(CONFIG_PHY_MTK_DP)		+= phy-mtk-dp.o
+>  obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
+>  obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
+>  obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
+> diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
+> new file mode 100644
+> index 0000000000000..e0de2a367e788
+> --- /dev/null
+> +++ b/drivers/phy/mediatek/phy-mtk-dp.c
+> @@ -0,0 +1,219 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2021 BayLibre
+> + * Author: Markus Schneider-Pargmann <msp@baylibre.com>
+> + */
+> +
+> +#include <linux/delay.h>
+> +#include <linux/io.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +
+> +#define PHY_OFFSET 0x1000
+> +
+> +#define MTK_DP_PHY_DIG_PLL_CTL_1		(PHY_OFFSET + 0x014)
+> +# define TPLL_SSC_EN				BIT(3)
+> +
+> +#define MTK_DP_PHY_DIG_BIT_RATE			(PHY_OFFSET + 0x03C)
+> +# define BIT_RATE_RBR				0
+> +# define BIT_RATE_HBR				1
+> +# define BIT_RATE_HBR2				2
+> +# define BIT_RATE_HBR3				3
+> +
+> +#define MTK_DP_PHY_DIG_SW_RST			(PHY_OFFSET + 0x038)
+> +# define DP_GLB_SW_RST_PHYD			BIT(0)
+> +
+> +#define MTK_DP_LANE0_DRIVING_PARAM_3		(PHY_OFFSET + 0x138)
+> +#define MTK_DP_LANE1_DRIVING_PARAM_3		(PHY_OFFSET + 0x238)
+> +#define MTK_DP_LANE2_DRIVING_PARAM_3		(PHY_OFFSET + 0x338)
+> +#define MTK_DP_LANE3_DRIVING_PARAM_3		(PHY_OFFSET + 0x438)
+> +# define XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT	0x10
+> +# define XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT	(0x14 << 8)
+> +# define XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT	(0x18 << 16)
+> +# define XTP_LN_TX_LCTXC0_SW0_PRE3_DEFAULT	(0x20 << 24)
+
+how about defining constants and using FEILD_PREP() to set the value.
+Here and few other places!
+
+> +static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
+> +{
+> +	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
+> +	u32 val;
+> +
+> +	if (opts->dp.set_rate) {
+> +		switch (opts->dp.link_rate) {
+> +		default:
+> +			dev_err(&phy->dev,
+> +				"Implementation error, unknown linkrate %x\n",
+> +				opts->dp.link_rate);
+> +			return -EINVAL;
+> +		case 1620:
+> +			val = BIT_RATE_RBR;
+> +			break;
+> +		case 2700:
+> +			val = BIT_RATE_HBR;
+> +			break;
+> +		case 5400:
+> +			val = BIT_RATE_HBR2;
+> +			break;
+> +		case 8100:
+> +			val = BIT_RATE_HBR3;
+> +			break;
+> +		}
+> +		regmap_write(dp_phy->regs, MTK_DP_PHY_DIG_BIT_RATE, val);
+
+interesting use of default :) which is correct!
+
+But why keep the regmap_write inside switch, you are anyway returning in
+default, so this write could be outside as well
 -- 
 ~Vinod
 
