@@ -4,68 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D143DC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Dec 2021 12:40:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F541C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Dec 2021 15:33:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UqDlkMJJ1MEvRiuI8q+UtUVIbjtCyj5bBpj8Shz9dqQ=; b=cB8Tq2Q25FQ7yR
-	6kFTaUth7f4D9GXW+5P8i8HKXx+p28ulzU+G/fCiLF+S5Hh7cRP9cVE1nsAQtdZzrc0gwe8siPvl1
-	E7lrKEs136I2SOQXCvwi9f7Fd4Yphjn8RFcSaF1t1z8vOZoQhP+K3g6pkQLfDsEK1L0pQ0JuGbEHM
-	ieEP80LajMDGH130NepdjRq78418Qsb3C+AQ0v2WG9kqUHL4oY8pISm9+H09p/htn+EkE6+AU0t/S
-	Ko/VSNGAnlxOhFRqW2WViWct6NzLZrS62lqLR1PEVVbgm09cQ3CVc1gLM47dXBMnvKlvsIrbio2IC
-	3h6G/nrjHlFX+E9K4ukQ==;
+	List-Owner; bh=oz9CBJl/vQzT6JgZfYiUhutmKNfm1aCYV1lXJkdMHXE=; b=4r/BuKWMMVAJLL
+	SbdN0rbNmGe7AFjT2UZfeTMXh8U8OgRXGyFtJmEAuyhMp1MaC+FY33kcOfPgP6hMThCfiZXC5dkLH
+	plyhiwY8DkmylC50vVL9ZbPVj+VrwtARyTgAUhMfPuMVhA8n+dMIFJem4yNk+ZmuJKsgCE6e5rx4b
+	EfZ5gGnH8sLGe4TpVJ9yoJq4StckN1HVrta8y0e70AdB2oeK3bpSGXzAZhAsjGW+/K4ijidn4n+Y1
+	aMypSZeuYh6B+GFQ/A5U/F+hFILpSz3c7e9dhIXfBaz46VaM30/sBHaZC+y2aI5wW6fUjQnJpuPUw
+	nwZmi4ljwD4JTM7FtVkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n2YFc-002l2k-AY; Wed, 29 Dec 2021 12:40:16 +0000
-Received: from galois.linutronix.de ([193.142.43.55])
+	id 1n2aws-0031fc-SJ; Wed, 29 Dec 2021 15:33:06 +0000
+Received: from mail-ot1-x32a.google.com ([2607:f8b0:4864:20::32a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n2YFR-002l14-2e; Wed, 29 Dec 2021 12:40:06 +0000
-Message-ID: <7320d3fb-4338-86b8-5a49-b56f06f1cd11@linutronix.de>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linutronix.de;
- s=2020; t=1640781598;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=VK8JjCAILC4Pks4UyV4d6jV2jFdL5FC8a0J3vQoAPIM=;
- b=hmvTN58MVIE0bw5z8QpAZtWvHRz6yjKKfBRNxUqSTL2/eKVE7PHmXg3ttiGU0h9JHZpszV
- qQss/6j5LZl6YvEVUPXS5ULU2GBe14UOKEkAsunKwzjjTJ/5neaE25CbYuboVoh9OqgFhW
- RZe7i68slcAOVhIGcsqzLS86FkSLUSTjFHGTqhDvWMSMbnsnlm+0R2SX2msT+wb/xc2wHm
- 9GI0xowBQGJaMvzQAlOognQAjjeksGIDLvBIDutCL97EMTTGrFtLoJYeIhZr3OemXDqE9j
- W1sn88asG+iiS7BQ268LeeQh73RbE0gqjh3wB5yn98Nm6z4vt7VKa01fC2E1kw==
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=linutronix.de;
- s=2020e; t=1640781598;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=VK8JjCAILC4Pks4UyV4d6jV2jFdL5FC8a0J3vQoAPIM=;
- b=19N9LN2Plsnl5mgKiuuZfw79rauawTIw2lPlms19UUMXWgnr2dOJWzGh0otku1H3XJovwd
- oHqNIcIS+gprHMAA==
-Date: Wed, 29 Dec 2021 13:39:57 +0100
+ id 1n2awq-0031ex-BX
+ for linux-phy@lists.infradead.org; Wed, 29 Dec 2021 15:33:06 +0000
+Received: by mail-ot1-x32a.google.com with SMTP id
+ r10-20020a056830080a00b0055c8fd2cebdso28798251ots.6
+ for <linux-phy@lists.infradead.org>; Wed, 29 Dec 2021 07:33:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=bEVREXqmH89MbzmWrN4QA+dq6opc4nWIdeFIogoG25s=;
+ b=RTFfsdB2uHBYB6NExwweLLpzosyKhW44qS26y7DFowJZzwMDzXBlFLOYojA2LkuTIN
+ EceuNyl22Trg1sHmMGE3IHbMM6/MVvXgD3oVBSPCcN6nzf/uAg17aEOyGQTYCRALPt/u
+ aM0ClQSaFnUhFy8Dn/Tml4jDWiQnxOXACQxWt2JsjdfoPN96zGlG60/CPdWcLP2xLOz0
+ gQUDQd600NHbXxaihims1Dfmwec9qVhYCtq1SlkYoV1gGq7alR4H4BBMRhUlUVBOssML
+ x/3ZqEDPP/zCL8eL0/NKyOxLva4I1gWkrAO5flxh3zg1zQ0fCEzmu4Vc+E0XXhs24Saw
+ CzXg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=bEVREXqmH89MbzmWrN4QA+dq6opc4nWIdeFIogoG25s=;
+ b=KRgLVejBaaEdB8h4PnQuXqjTy1vSdgmI2FmYU7krJMS72P7aYT0zMem0MDDxNDAieO
+ vi3SrQ95/vw/BmO5tqMaA8Fvq8+WY6neG+ueiPEpW7A1F4I5WEaa5e+bsS81XChHpwa1
+ PBGC3NwJ2yBpj2MU4O2xmpE76nrFqz8ziVI1dkWXohfRvIWS6+q2hWNwqeuVGFlt+wG3
+ SESfedZqxnv0cuNdboGbS5SSzd8suc88rJl6bts7Z56AJxppOHQP58pytbked9enMjZh
+ fTWKjM8W0berVBYeVj275msfUI9WCzbsJ1KRM3CMFq3ke6AdBCnVfLSd5U9HolqHpA7L
+ zX7g==
+X-Gm-Message-State: AOAM5339xHB6zAVvkQjCOnQo7L232L7wjJUez0RjsUofOutVekIjJI7J
+ mNBD9ABvRtyQv0XxuvYeb8f0bw==
+X-Google-Smtp-Source: ABdhPJz7bIQYwCUhTRuh/qTGG0rfJw4FKVSoZoVnl9SZrPB35j1RqA4/G6fChoJwqmI09cwCo+YPbg==
+X-Received: by 2002:a9d:6a56:: with SMTP id h22mr19063881otn.135.1640791982466; 
+ Wed, 29 Dec 2021 07:33:02 -0800 (PST)
+Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id r5sm3408543ote.53.2021.12.29.07.33.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 29 Dec 2021 07:33:02 -0800 (PST)
+Date: Wed, 29 Dec 2021 07:34:02 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: David Heidelberg <david@ixit.cz>
+Cc: Andy Gross <agross@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ ~okias/devicetree@lists.sr.ht, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: phy: convert Qualcomm USB HS phy to yaml
+Message-ID: <Ycx/6gXhd6hnYJqP@ripper>
+References: <20211224170242.57816-1-david@ixit.cz>
 MIME-Version: 1.0
-Subject: Re: [PATCH v7 5/8] phy: freescale: pcie: Initialize the imx8 pcie
- standalone phy driver
-Content-Language: en-US
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com,
- tharvey@gateworks.com, marcel.ziswiler@toradex.com, kishon@ti.com,
- vkoul@kernel.org, robh@kernel.org, galak@kernel.crashing.org,
- shawnguo@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de, linux-imx@nxp.com
-References: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
- <1638432158-4119-6-git-send-email-hongxing.zhu@nxp.com>
-From: Philip Molloy <philip@linutronix.de>
-In-Reply-To: <1638432158-4119-6-git-send-email-hongxing.zhu@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20211224170242.57816-1-david@ixit.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211229_044005_331394_B7A0DF75 
-X-CRM114-Status: GOOD (  17.81  )
+X-CRM114-CacheID: sfid-20211229_073304_436558_530CD5DF 
+X-CRM114-Status: GOOD (  18.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,80 +92,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Richard,
+On Fri 24 Dec 09:02 PST 2021, David Heidelberg wrote:
 
-I've run into an issue that appears to indicate a functional difference
-between the existing integrated pci-imx6.c implementation and this new
-implementation with the separate phy driver.
+> Conversion of Qualcomm USB HS phy documentation to yaml.
+> 
+> Signed-off-by: David Heidelberg <david@ixit.cz>
 
-I'm working with a SOM and baseboard from Phytec that is based on the
-IMX8MM. The board does not have an external PCIe clock and has a
-ethernet controller hanging off the PCIe bus.
+Very nice to see your efforts in this area David!
 
-When booting from a 5.4 NXP-based kernel from Phytec the ethernet
-controller is probed and functions as expected.
+Just some minor nits below.
 
-A co-worker backported a slightly earlier version of this patchset to
-5.10.[1] With our kernel both the controller driver and new PHY driver
-are probed, but a timeout occurs in dw_pcie_wait_for_link() which
-indicates that the "Phy link never came up".
+[..]
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
+> new file mode 100644
+> index 000000000000..202c42754188
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.yaml
+> @@ -0,0 +1,86 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/qcom,usb-hs-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Qualcomm's USB HS PHY binding description
+> +
+> +maintainers:
+> +  - Bjorn Andersson <bjorn.andersson@linaro.org>
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - qcom,usb-hs-phy-apq8064
+> +          - qcom,usb-hs-phy-msm8916
+> +          - qcom,usb-hs-phy-msm8974
+> +      - const: qcom,usb-hs-phy
+> +
+> +  clocks: true
+> +
+> +  clock-names:
+> +    oneOf:
+> +      - items:
+> +          - const: ref
+> +          - const: sleep
+> +      - items:
+> +          - const: sleep
+> +          - const: ref
 
-After reproducing this issue I configured pcie_phy with
-IMX8_PCIE_REFCLK_PAD_OUTPUT. With that configured, phy register
-CMN_REG062/0x188 matches the 5.4 NXP/Phytec kernel. I then compared the
-controller and PHY registers between the two kernels and noticed that
-CMN_REG063/0x18c is set to AUX_IN/0x0 in the 5.4 NXP/Phytec kernel, but
-the new PHY driver writes I_PLL_REFCLK_FROM_SYSPLL/0xc0 to that register.
+Can't we just pick one of them?
 
-If I modify the phy driver to not write I_PLL_REFCLK_FROM_SYSPLL/0xc0
-then the system behaves as expected.
+> +
+> +  resets: true
+> +
+> +  reset-names:
+> +    oneOf:
+> +      - items:
+> +          - const: por
+> +      - items:
+> +          - const: phy
+> +          - const: por
 
-Best,
-Philip
+How about doing the:
 
-[1]: I plan on rebasing our branch with the latest patches that have
-been applied upstream. Note that I did not see any difference in the
-following code with what we have applied.
+items:
+  - const: por
+  - const: phy
+minItems: 1
 
-On 12/2/21 09:02, Richard Zhu wrote:
-> +#define IMX8MM_PCIE_PHY_CMN_REG061	0x184
-> +#define  ANA_PLL_CLK_OUT_TO_EXT_IO_EN	BIT(0)
-> +#define IMX8MM_PCIE_PHY_CMN_REG062	0x188
-> +#define  ANA_PLL_CLK_OUT_TO_EXT_IO_SEL	BIT(3)
-> +#define IMX8MM_PCIE_PHY_CMN_REG063	0x18C
-> +#define  AUX_PLL_REFCLK_SEL_SYS_PLL	GENMASK(7, 6)
-> +#define IMX8MM_PCIE_PHY_CMN_REG064	0x190
-> +#define  ANA_AUX_RX_TX_SEL_TX		BIT(7)
-> +#define  ANA_AUX_RX_TERM_GND_EN		BIT(3)
-> +#define  ANA_AUX_TX_TERM		BIT(2)
-> +#define IMX8MM_PCIE_PHY_CMN_REG065	0x194
-> +#define  ANA_AUX_RX_TERM		(BIT(7) | BIT(4))
-> +#define  ANA_AUX_TX_LVL			GENMASK(3, 0)
-...
-> +	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT) {
-> +		/* Configure the pad as input */
-> +		val = readl(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-> +		writel(val & ~ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
-> +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-> +	} else if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT) {
-> +		/* Configure the PHY to output the refclock via pad */
-> +		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
-> +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-> +		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
-> +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
-> +		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
-> +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
+> +
+> +  v1p8-supply: true
+> +
+> +  v3p3-supply: true
+> +
+> +  extcon: true
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  qcom,init-seq:
+> +    $ref: /schemas/types.yaml#/definitions/uint8-array
 
-If I comment out this writel() then the register defaults to 0x0/AUX_IN
-and then the system behaves as expected.
+It's better to use the uint8-matrix, as that allows you to describe the
+value pairs as well. See e.g. st,adc-diff-channels in
+iio/adc/st,stm32-adc.yaml as an example.
 
-> +		val = ANA_AUX_RX_TX_SEL_TX | ANA_AUX_TX_TERM;
-> +		writel(val | ANA_AUX_RX_TERM_GND_EN,
-> +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG064);
-> +		writel(ANA_AUX_RX_TERM | ANA_AUX_TX_LVL,
-> +		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG065);
-> +	}
+> +    description: |
 
+I think you can omit the '|'.
+
+Regards,
+Bjorn
+
+> +      Should contain a sequence of ULPI address and value pairs to
+> +      program into the ULPI_EXT_VENDOR_SPECIFIC area. This is related
+> +      to Device Mode Eye Diagram test. The addresses are offsets
+> +      from the ULPI_EXT_VENDOR_SPECIFIC address, for example,
+> +      <0x1 0x53> would mean "write the value 0x53 to address 0x81".
+> +
+> +required:
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    otg: usb-controller {
+> +      ulpi {
+> +        phy {
+> +          compatible = "qcom,usb-hs-phy-msm8974", "qcom,usb-hs-phy";
+> +          #phy-cells = <0>;
+> +          clocks = <&clk 0>, <&clk 258>;
+> +          clock-names = "ref", "sleep";
+> +          resets = <&gcc 10>, <&otg 0>;
+> +          reset-names = "phy", "por";
+> +          v3p3-supply = <&pm8941_l24>;
+> +          v1p8-supply = <&pm8941_l6>;
+> +          extcon = <&smbb>;
+> +          qcom,init-seq = /bits/ 8 <0x1 0x63>;
+> +        };
+> +      };
+> +    };
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
