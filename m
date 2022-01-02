@@ -4,74 +4,153 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FEB1C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Dec 2021 10:29:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBDEBC433FE
+	for <linux-phy@archiver.kernel.org>; Sun,  2 Jan 2022 00:26:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tScCnYlHKcb1hEdZO8kh/I0QTH4c3ceqflsIShQwq3o=; b=KU48MotIizeOz1
-	61YkvpYDu943aTQFFuW7XFBIIdEQagOgS3ODSZFvYwqpMKRWp7EIftxOo9FChtVpbgzBPcLc0fMm6
-	1UJwV27ocbYMtya4Dhxffws6BVHdqJpd6+UgjolaFi/XB6v00WHgXh7eloHgmnMS3eDmxd3EhOKxR
-	TZSUKockZWBHjSSAx/9YAgX/r2tFuDmx/XGfc3B35S+dHzku4LebrZPDnAOCKbEIlXrWKNKZvNz9h
-	xYnOG2nnTSHaR9c/unzwSm9YfZtT0wFoU+qHl6C9h04SSkGPxmRfgqs8AZVm9Ob66u4rPMJylj5L8
-	dRvtRvFkipVQtelakzrw==;
+	List-Owner; bh=47u3YsCKobJH8k4apk98XkqMD5UZjNUk+4gT2V/qolU=; b=mNkJqGIsuJUmFy
+	rqDfAtv2xZfSpLBBor7ZBtwJ5HsENOu3E9wfVU/4KkcYAAfSQ0xfr/13vQe2ptV/+CxKowoXhDPBU
+	QOuj8PAjDFL1E4/gY6guxxfFNrjarAE79/JCh4iKitvQBjk9hXsKOh5G8OnvAIN3QMKT73DufHjOC
+	MXVrYXPCEkKM4Gl6XSr2XPFDSRh+1Eclc/erOq7jMAkkDdt6pnWvsc6eZUe29+KwSKcts0TkHu777
+	FBrwCgB55RGoowPpC/HBwFm6CkaUsg61dC+QfK1NPkBllm47Igv+DUZIpq8IrX2JN/6gx0ZuJnZXu
+	3vdeAUa2dZJk+XdkYnWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n3F9y-005vTQ-MM; Fri, 31 Dec 2021 10:29:18 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1n3ohH-007T9W-6h; Sun, 02 Jan 2022 00:26:03 +0000
+Received: from mail-gv0che01on2071c.outbound.protection.outlook.com
+ ([2a01:111:f403:4012::71c]
+ helo=CHE01-GV0-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n3F9u-005vRY-T3
- for linux-phy@lists.infradead.org; Fri, 31 Dec 2021 10:29:17 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 1BVAT192033926;
- Fri, 31 Dec 2021 04:29:01 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1640946541;
- bh=+xitE1aCA39Kx82Gp70qrVCxf+gWOGTFLQVpnFiPMUo=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=YoI8B27BewCzHpet08ksZUEiY2pdHxvyQWa3DinvF15nX0+U+gVQ/ZZzBWoolnG7d
- /dRy5Pzu5TITQHOOpqIlaJsCeRASvGgdWgAC7DdIlW21j26EPVtZ2Uj/WPJemuVrk6
- U4u/d7B7T0+JBzAJKBNHY21NwqLA2uKxnVZf9yx8=
-Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 1BVAT1HF026155
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 31 Dec 2021 04:29:01 -0600
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Fri, 31
- Dec 2021 04:29:00 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Fri, 31 Dec 2021 04:29:00 -0600
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 1BVAT0q8089155;
- Fri, 31 Dec 2021 04:29:00 -0600
-Date: Fri, 31 Dec 2021 15:58:59 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-CC: Vinod Koul <vkoul@kernel.org>, Paul Kocialkowski
- <paul.kocialkowski@bootlin.com>, Tomi Valkeinen
- <tomi.valkeinen@ideasonboard.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Swapnil Jakhade <sjakhade@cadence.com>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v7 1/4] phy: cadence: Add Cadence D-PHY Rx driver
-Message-ID: <20211231102857.pg2msmkws54isgbr@ti.com>
-References: <20211227105545.4852-1-p.yadav@ti.com>
- <20211227105545.4852-2-p.yadav@ti.com>
- <YczviHU5IK6cdNhK@pendragon.ideasonboard.com>
+ id 1n3ohD-007T8R-Hu; Sun, 02 Jan 2022 00:26:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=oHuecVEdPr2w4C78JSRVH5qBgXjSUNpGvvRzrGdJxeXKFKidAQ8Gn11y4zdzQxvYeC+zoHrqyF+wDFRgkW7AdSyBClESCTDuZLP+Nf20MnO9DsBxApX7sYcwtJ+nfBMO6yOnUasFImjGl8lhJN6+UnL9ptzbTKMOC+8UhFMqKoFJwyDch843HgjHQCfg+Bg9ekaFIIwHkEoY1LotdGoqNRcOK4w5F2vFLvol2QJdUn1OnRtXpcbvvwXm1Wi3VWDd4Ii+hrXzqsTLpgOsHR+JKG00sSd0G5gXnNNlWgGIml7pYD52hFrgnL4RiqnIeGFS7J+2qXYWRSLwU7biY/3yoQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=xMWxaMLS3UnDFODqrLlp7yrQxqosIi77RBQgFq2y2eo=;
+ b=BC4N1Vz7dMPeFfjZgBYdwx6BZkaf32RhUvD3vbPZulf//zl3P0whxwVaIlo1NBsZNXfo8rsHP3mLQ9Z2OGnoPb1iPyGIGDz1G2q+9dhbQ0LvY6wVA2EonBkUUBnAvAmvPgjxa0Ih1RcOTG1V5VMFHCxc32yOVgErtIrZW/OK7CBf6y+45TrNLGo/XJ412PW6ELarI+L3v3XajKu9Jm/wL1TVVwD4Xvi8tfAIr0Ic/7js73PHygAUrKrCnVyLCvt2CaOZyPXlDJ0W/N0wE+kqEkQxOzxB3w71vzTlXO5PU+Dyqu2KdbcXnmni0duH52SdLvnGtjq5cMsva6oFJEs+0A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xMWxaMLS3UnDFODqrLlp7yrQxqosIi77RBQgFq2y2eo=;
+ b=e5rveWFkQeCnOHnvAil+QSY2EEfDpVAPaEWZp64I4hwbqnQbza0XU0HhUWGPNGQ/APSs+ndT86kQqewuV1FYu19yGd8l1cgOeOLjxEvXUyUE0ei/h7WJDNR+zIy/YhLU+K3SqO/jV7JffbBqSoNB+8F4+JEdkI7oJ0RdTZJwAro=
+Received: from ZR0P278MB0683.CHEP278.PROD.OUTLOOK.COM (2603:10a6:910:3b::9) by
+ ZRAP278MB0253.CHEP278.PROD.OUTLOOK.COM (2603:10a6:910:28::10) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4844.14; Sun, 2 Jan 2022 00:25:54 +0000
+Received: from ZR0P278MB0683.CHEP278.PROD.OUTLOOK.COM
+ ([fe80::2de2:ea03:cafb:56c1]) by ZR0P278MB0683.CHEP278.PROD.OUTLOOK.COM
+ ([fe80::2de2:ea03:cafb:56c1%5]) with mapi id 15.20.4844.015; Sun, 2 Jan 2022
+ 00:25:54 +0000
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+To: "philip@linutronix.de" <philip@linutronix.de>, "hongxing.zhu@nxp.com"
+ <hongxing.zhu@nxp.com>
+CC: "linux-imx@nxp.com" <linux-imx@nxp.com>, "robh@kernel.org"
+ <robh@kernel.org>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "galak@kernel.crashing.org" <galak@kernel.crashing.org>,
+ "tharvey@gateworks.com" <tharvey@gateworks.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "vkoul@kernel.org" <vkoul@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "kishon@ti.com" <kishon@ti.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "lorenzo.pieralisi@arm.com"
+ <lorenzo.pieralisi@arm.com>, "linux-pci@vger.kernel.org"
+ <linux-pci@vger.kernel.org>, "bhelgaas@google.com" <bhelgaas@google.com>
+Subject: Re: [PATCH v7 5/8] phy: freescale: pcie: Initialize the imx8 pcie
+ standalone phy driver
+Thread-Topic: [PATCH v7 5/8] phy: freescale: pcie: Initialize the imx8 pcie
+ standalone phy driver
+Thread-Index: AQHX51bfICt/1UNCV0qyjJZ7jYBd0KxJk7GAgAERg4CABGq5AA==
+Date: Sun, 2 Jan 2022 00:25:54 +0000
+Message-ID: <6799287e55542e777e316a6525aab2ecced50edf.camel@toradex.com>
+References: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
+ <1638432158-4119-6-git-send-email-hongxing.zhu@nxp.com>
+ <7320d3fb-4338-86b8-5a49-b56f06f1cd11@linutronix.de>
+ <AS8PR04MB8676151C053B01293A0C1E938C459@AS8PR04MB8676.eurprd04.prod.outlook.com>
+In-Reply-To: <AS8PR04MB8676151C053B01293A0C1E938C459@AS8PR04MB8676.eurprd04.prod.outlook.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=toradex.com;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: eab4ae9f-2371-4c4d-01f6-08d9cd86706f
+x-ms-traffictypediagnostic: ZRAP278MB0253:EE_
+x-microsoft-antispam-prvs: <ZRAP278MB025399989563FCE4D723519AFB489@ZRAP278MB0253.CHEP278.PROD.OUTLOOK.COM>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: GPxivWfuPFTN8iiAHkyfnF3recubMGzcyYhmIQc2GIeoQJYju5fodiunWErOYng0EyBor57dtz4mcWW8WOoSe4MB4/SNGPXudTujFC7dU3DlLG/PpuhP0yRlAfFJGilgsK+rKUt+RT60gwf2uVYvICsklEejCmJxdjdOLgqom9/m9wZIYMWtjWoctGEar7xxxuc8MpEzToIM6rdbJgAWO84PppFGmVfPoZwfYzz1c8yt6tm/RRboirbwXQpfdWef+vLemYXg55g4sPr63CUHDhzJ8uuQkIKG1kj7F24k8YMmuegtTCeAyTAk98V5Subd9gf2Ub8PBfn4Wy/6xBiJ6+ytEwn+DBIeeDYAbP5hctmSAxY7DwJw+R1S/bsz0A6VJBPF24xqwrudqFGVLE9i7b+9wo1lyCRSeR61GkI1n/Y9Ry1fzvHqv6wpTujku3an29Oz4JTbACOfXOsH/u21gv56FdPvfaVBS1uBicJDVj1hBGwD3PqcUSb7LK3R58iFNcwacgvW0F7VA5LVztrfFH4nlE974F6wz0/3VQ09FdetLx1eo+1AsSh7xnLJcQQGXqv6pcBhhwgfrSx/eXYTUBZVG96nGxN0dsodf2vfm2sALHg2W88pAvHCFgoZByEsHA+kOnr2Lnzbi1gDaN40jp+6Cp0AeRdEooFWpcz13YTviN9RbahBGbbK2nRzI6RvFTT2SwGC7cRdSW0R/mAalg==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:ZR0P278MB0683.CHEP278.PROD.OUTLOOK.COM; PTR:; CAT:NONE;
+ SFS:(4636009)(346002)(366004)(122000001)(4326008)(186003)(44832011)(83380400001)(36756003)(7416002)(6486002)(6512007)(71200400001)(2616005)(316002)(76116006)(38100700002)(53546011)(66446008)(4001150100001)(8936002)(66946007)(66476007)(86362001)(26005)(38070700005)(5660300002)(8676002)(66556008)(54906003)(64756008)(508600001)(6506007)(110136005)(2906002);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?NmRob1g4WnZnaUFycUNPT3lzTUl1azVCRHpqeTBZODEyUVdTQWhHVE80S1N6?=
+ =?utf-8?B?S0lMbHA5bVd1ZWE1UFJJQnlmeFpKK01yQzF6eUVPVXNidFB4QjdOSWVzYzVy?=
+ =?utf-8?B?SHN0QlpwVm80U3dKSTJCZ05XZllyZCtsa1VOSWpIWk9INzFEbGdFWXJObDJO?=
+ =?utf-8?B?NnJjV25KaGZOZ3VFVmFubFZBUWRkT3EycVh4d0J2dTZNYUswbExBZVlKZXFr?=
+ =?utf-8?B?N3hXekJCOGlwMU5DMDVMU3hzVmhQVVVwTjdpUmZEZDFYSnFGeFlibHduM0oz?=
+ =?utf-8?B?WGc2d2JZV2VWWm5QdG1uTGNMelBHNnoxcnl3NjB2QllPbEpkNkUrRUR2MEtz?=
+ =?utf-8?B?OHJRNGZiOGZnM0JjNzFnM3pzeXJYUDdGckw0YnpISW9nbnplaTdPeHpjK3kw?=
+ =?utf-8?B?dDZnSjJWUlphZGpBNDZnNHZGUWFDcXB3TVhGQjNEYlpLZVk2SVRQd2hkNnQz?=
+ =?utf-8?B?QkZUV3NWakNRQzNzM2hIU0c1bkVhYXE2T0swV2ZmZG4wOWpXcUhsdy9XdHcz?=
+ =?utf-8?B?ZVdtVjM4MWwvMUZTUXdoV0NJVjdrekxYeUJ0Y1gzUGh1bnAyOWdsMHdkWURm?=
+ =?utf-8?B?U1lnQmJqcFNMbm9ySWtLZVdBR3ZmSEs5N1FhSnN4aXRHb1YvOWE1N2pELzdl?=
+ =?utf-8?B?alRVN01SNmJOYmYwN0JadUlIa2xQYThTWU9iUGEwRFVTYmYxczlRUUJrMkRw?=
+ =?utf-8?B?QTRhcVdueXUyRnRGNGU1RGJMR3IzRkpEVUNMS3hOSHd2OFp6Wk4rNHBxRW9J?=
+ =?utf-8?B?bDRjRVhjd24yRytmTFcwbEh3akYzeER0aGhVTHJmd2lKSlRYb3FsMzd1dkc0?=
+ =?utf-8?B?eHBFWTR4MFYwREI2ZGxNQ2Iwdi9aVkpvRUxCUzBRUjNTd2pGMVkvRUxNZG9N?=
+ =?utf-8?B?SUVNMFV0UWh3dDlRQ3VDZkJ3ODVjTlE0RnNrL1JDY2ptbFVJWS9EVU8vT0N6?=
+ =?utf-8?B?VnA0c3Evdzc5WUp0L205QURLaE16bnNYaHRyZGlnMlFPNDJqaHB3TmNrOGdD?=
+ =?utf-8?B?d0lNSitBOWVIU09BaHJCMHhHOVRjRVdiR1FOYVE4VzMrcXZjQzFTUUNzQ3Vw?=
+ =?utf-8?B?ZFdLVVQ0eHg2bGUzdXlGZk1NbFVlVGZTRHNYSkFMeXhxc0RvWUNFTTk0a2Rh?=
+ =?utf-8?B?Ni9UWHdXUVdXN3FIaUpydThXMUM4T0pFRHZBV2M0MjRCSjVTWXpHR1FheCt4?=
+ =?utf-8?B?QisxQ1lYREdBWE5sblJybkNmTTVFVzg5UDBxeDVhUUpOMlNHQWR2NXpzbzMw?=
+ =?utf-8?B?OUQxYTE3cFNVdUZCZEs5NGNpZkJuWVZvS09TRHhaa3VCL1FKSG5PQ2pyQ29z?=
+ =?utf-8?B?NFM5K1RkWkNSTkFsbElzcUdTRzBGay83RmI1OHA2bk1ZZDJEYWhReFg5WmxR?=
+ =?utf-8?B?V1RIRVFSbVBQbzVLY1FYUFpTeGdIU211VzNyeFJUZUJHdVhodVA5VURCT1ll?=
+ =?utf-8?B?NTA2Y3FKdXNzM25uNm5mZjNMTGpHbGZXTlpUMTJXenBRVDFmbHdOK1IrMmdu?=
+ =?utf-8?B?dlRLRGZkMWFBVlp5cm5JY04xODVWaE1wSkZ2cDYzRGF4WVZ5V0wvdWhrL1By?=
+ =?utf-8?B?d1ZoMW91ZHRpSytGNGZrZlNYUHdxcnp3dTRoTWMzbG51T1hOTHJuS2V4OHdO?=
+ =?utf-8?B?UHdlMUdmZlhJbmE3MVIyUy9ES21SMUJBUGtmRmUvakZYcTJTd0pZTDZqamVm?=
+ =?utf-8?B?Q3hOTUlDU1Z1YlA1emk3NUIvVUYwUThCZ083TDJtM25jcTNjNExVcnFlVWVB?=
+ =?utf-8?B?RFBxTS9XcnZoS3lNZ1U4dUkxd0VrVElLZ21LelF3dUttclFPZ1ZMalltUlFL?=
+ =?utf-8?B?b3NHRGhtMi9HVk9rT2ZpWDBDdERuMnJTa2pvK2tFbnFheWtOZ0ZYc0drUW9B?=
+ =?utf-8?B?dDY1Q0RZOC92K1JlU25pS25LWW43dk1OYVV0elJEbUJYdjVTV1BFbHorV1Bq?=
+ =?utf-8?B?TFgzZHV6SkQ0ZVhVSnVua0dYaEhFazdNVW5WUVo3ZHZBeDVXQVZHdmJqVG9n?=
+ =?utf-8?B?ZDh1ZjNVRWdUL3R5ZXJ0VEFPdzlZaktUb081b01pa0ZVVjAzMmQ5dVM3OHBr?=
+ =?utf-8?B?TDNBM21Wd0JDYlJvR09QVjJDdE5CNG95TSt5cjhtZjBWTDNGanB4NGtBbFdo?=
+ =?utf-8?B?bkVUam5uT24zWEIrenVxNFhwS3VxcTBDTkQ1Q1EzK0hlcUxoRDNsSUtqRFhh?=
+ =?utf-8?B?UXJDRXZ5ZlcvNGNqRFNNQ1dtWDhubHRRa01YR3VrTXlLd2RpdFdseG5xZHho?=
+ =?utf-8?Q?y6DLKkGi40y/zt451dnfk8+IrLPUi+V72suWM3lW4s=3D?=
+Content-ID: <B67C19CEC500D940AFD84E2F7E11B1DD@CHEP278.PROD.OUTLOOK.COM>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YczviHU5IK6cdNhK@pendragon.ideasonboard.com>
-User-Agent: NeoMutt/20171215
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: ZR0P278MB0683.CHEP278.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: eab4ae9f-2371-4c4d-01f6-08d9cd86706f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jan 2022 00:25:54.4295 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: yB+Y+isywhqs8Tba2YQ9J5W5+5nG1v3cF+wkNN1vEYQbNBbQfNlHVb3HPp0fiyixmpDC1wHQTa1WqXv0jCx7h61LSRxeRRQXUqJCPhujn3w=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: ZRAP278MB0253
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20211231_022915_071398_A45D3335 
-X-CRM114-Status: GOOD (  49.89  )
+X-CRM114-CacheID: sfid-20220101_162559_789914_67609732 
+X-CRM114-Status: GOOD (  31.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,387 +162,190 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30/12/21 01:30AM, Laurent Pinchart wrote:
-> Hi Pratyush,
-> 
-> Thank you for the patch.
-> 
-> On Mon, Dec 27, 2021 at 04:25:42PM +0530, Pratyush Yadav wrote:
-> > The Cadence D-PHY can be configured in Tx (DSI) mode or Rx (CSI) mode.
-> > Both modes have a different programming sequence and share little among
-> > them. In addition, a PHY configured in Tx mode cannot be used in Rx mode
-> > and vice versa. For this reason, create a separate driver for the Rx
-> > mode to make it easier to read and maintain.
-> > 
-> > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > 
-> > ---
-> > 
-> > Changes in v7:
-> > - Add spaces after { and before } in the bands table.
-> > - Drop the wrapping around the for loop on cdns_dphy_rx_get_band_ctrl().
-> > - Make cdns_dphy_rx_wait_for_bit() inline.
-> > - Print an error message if registering PHY provider fails.
-> > 
-> > Changes in v6:
-> > - Move to a separate driver.
-> > 
-> > Changes in v5:
-> > - Use the new cdns_dphy_info to specify PHY ops.
-> > - Re-order include in alphabetical order.
-> > - Make bands const.
-> > - Drop num_bands.
-> > - Make i, lanes unsigned.
-> > - Drop the maximum check in cdns_dphy_rx_get_band_ctrl(). Let the loop
-> >   complete and return -EOPNOTSUPP when we reach the end.
-> > - Drop the "rate < bands[i].min_rate" check since the bands are in
-> >   ascending order.
-> > - Move data_lane_ctrl to start of function and make it static const.
-> > 
-> > Changes in v4:
-> > - Drop the submode parts. Use a different compatible for the Rx ops.
-> > - Make bands and num_bands static.
-> > 
-> > Changes in v3:
-> > - Use a table to select the band.
-> > - Use a table to poll the data lane ready bits.
-> > - Multiply the DPHY HS clock rate by 2 to get the bit rate since the
-> >   clock is DDR.
-> > 
-> >  drivers/phy/cadence/Kconfig        |   8 +
-> >  drivers/phy/cadence/Makefile       |   1 +
-> >  drivers/phy/cadence/cdns-dphy-rx.c | 255 +++++++++++++++++++++++++++++
-> >  3 files changed, 264 insertions(+)
-> >  create mode 100644 drivers/phy/cadence/cdns-dphy-rx.c
-> > 
-> > diff --git a/drivers/phy/cadence/Kconfig b/drivers/phy/cadence/Kconfig
-> > index a62910ff5591..1adde2d99ae7 100644
-> > --- a/drivers/phy/cadence/Kconfig
-> > +++ b/drivers/phy/cadence/Kconfig
-> > @@ -22,6 +22,14 @@ config PHY_CADENCE_DPHY
-> >  	  system. If M is selected, the module will be called
-> >  	  cdns-dphy.
-> >  
-> > +config PHY_CADENCE_DPHY_RX
-> > +	tristate "Cadence D-PHY Rx Support"
-> > +	depends on HAS_IOMEM && OF
-> > +	select GENERIC_PHY
-> > +	select GENERIC_PHY_MIPI_DPHY
-> > +	help
-> > +	  Support for Cadence D-PHY in Rx configuration.
-> > +
-> >  config PHY_CADENCE_SIERRA
-> >  	tristate "Cadence Sierra PHY Driver"
-> >  	depends on OF && HAS_IOMEM && RESET_CONTROLLER
-> > diff --git a/drivers/phy/cadence/Makefile b/drivers/phy/cadence/Makefile
-> > index 26e16bd34efe..e17f035ddece 100644
-> > --- a/drivers/phy/cadence/Makefile
-> > +++ b/drivers/phy/cadence/Makefile
-> > @@ -1,5 +1,6 @@
-> >  # SPDX-License-Identifier: GPL-2.0-only
-> >  obj-$(CONFIG_PHY_CADENCE_TORRENT)	+= phy-cadence-torrent.o
-> >  obj-$(CONFIG_PHY_CADENCE_DPHY)	+= cdns-dphy.o
-> > +obj-$(CONFIG_PHY_CADENCE_DPHY_RX)	+= cdns-dphy-rx.o
-> >  obj-$(CONFIG_PHY_CADENCE_SIERRA)	+= phy-cadence-sierra.o
-> >  obj-$(CONFIG_PHY_CADENCE_SALVO)	+= phy-cadence-salvo.o
-> > diff --git a/drivers/phy/cadence/cdns-dphy-rx.c b/drivers/phy/cadence/cdns-dphy-rx.c
-> > new file mode 100644
-> > index 000000000000..47a5b67ded58
-> > --- /dev/null
-> > +++ b/drivers/phy/cadence/cdns-dphy-rx.c
-> > @@ -0,0 +1,255 @@
-> > +// SPDX-License-Identifier: GPL-2.0+
-> > +/*
-> > + * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com/
-> > + */
-> > +
-> > +#include <linux/bitfield.h>
-> > +#include <linux/bitops.h>
-> > +#include <linux/io.h>
-> > +#include <linux/iopoll.h>
-> > +#include <linux/module.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/phy/phy-mipi-dphy.h>
-> > +#include <linux/platform_device.h>
-> > +
-> > +#define DPHY_PMA_CMN(reg)		(reg)
-> > +#define DPHY_PCS(reg)			(0xb00 + (reg))
-> > +#define DPHY_ISO(reg)			(0xc00 + (reg))
-> > +
-> > +#define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
-> > +#define DPHY_CMN_RX_MODE_EN		BIT(10)
-> > +#define DPHY_CMN_RX_BANDGAP_TIMER_MASK	GENMASK(8, 1)
-> > +#define DPHY_CMN_SSM_EN			BIT(0)
-> > +
-> > +#define DPHY_CMN_RX_BANDGAP_TIMER	0x14
-> > +
-> > +#define DPHY_BAND_CFG			DPHY_PCS(0x0)
-> > +#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
-> > +#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
-> > +
-> > +#define DPHY_POWER_ISLAND_EN_DATA	DPHY_PCS(0x8)
-> > +#define DPHY_POWER_ISLAND_EN_DATA_VAL	0xaaaaaaaa
-> > +
-> > +#define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
-> > +#define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
-> > +
-> > +#define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
-> > +#define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
-> > +#define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
-> > +#define DPHY_ISO_DL_CTRL_L2		DPHY_ISO(0x30)
-> > +#define DPHY_ISO_DL_CTRL_L3		DPHY_ISO(0x3c)
-> > +
-> > +#define DPHY_ISO_LANE_READY_BIT		0
-> > +#define DPHY_ISO_LANE_READY_TIMEOUT_MS	100UL
-> > +
-> > +#define DPHY_LANES_MIN			1
-> > +#define DPHY_LANES_MAX			4
-> > +
-> > +struct cdns_dphy_rx {
-> > +	void __iomem *regs;
-> > +	struct device *dev;
-> > +	struct phy *phy;
-> > +};
-> > +
-> > +struct cdns_dphy_rx_band {
-> > +	/* Rates are in Mbps. */
-> > +	unsigned int min_rate;
-> > +	unsigned int max_rate;
-> > +};
-> > +
-> > +/* Order of bands is important since the index is the band number. */
-> > +static const struct cdns_dphy_rx_band bands[] = {
-> > +	{ 80, 100 }, { 100, 120 }, { 120, 160 }, { 160, 200 }, { 200, 240 },
-> > +	{ 240, 280 }, { 280, 320 }, { 320, 360 }, { 360, 400 }, { 400, 480 },
-> > +	{ 480, 560 }, { 560, 640 }, { 640, 720 }, { 720, 800 }, { 800, 880 },
-> > +	{ 880, 1040 }, { 1040, 1200 }, { 1200, 1350 }, { 1350, 1500 },
-> > +	{ 1500, 1750 }, { 1750, 2000 }, { 2000, 2250 }, { 2250, 2500 }
-> 
-> It could be possible to store only the min or max rate, as
-> bands[i].max_rate == bands[i+1].min_rate. Up to you.
-
-I don't have a strong preference. I think this looks a bit nicer and is 
-easier to understand at first glance.
-
-> 
-> > +};
-> > +
-> > +static int cdns_dphy_rx_power_on(struct phy *phy)
-> > +{
-> > +	struct cdns_dphy_rx *dphy = phy_get_drvdata(phy);
-> > +
-> > +	/* Start RX state machine. */
-> > +	writel(DPHY_CMN_SSM_EN | DPHY_CMN_RX_MODE_EN |
-> > +	       FIELD_PREP(DPHY_CMN_RX_BANDGAP_TIMER_MASK,
-> > +			  DPHY_CMN_RX_BANDGAP_TIMER),
-> > +	       dphy->regs + DPHY_CMN_SSM);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_rx_power_off(struct phy *phy)
-> > +{
-> > +	struct cdns_dphy_rx *dphy = phy_get_drvdata(phy);
-> > +
-> > +	writel(0, dphy->regs + DPHY_CMN_SSM);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_rx_get_band_ctrl(unsigned long hs_clk_rate)
-> > +{
-> > +	unsigned int rate, i;
-> > +
-> > +	rate = hs_clk_rate / 1000000UL;
-> > +	/* Since CSI-2 clock is DDR, the bit rate is twice the clock rate. */
-> > +	rate *= 2;
-> > +
-> > +	if (rate < bands[0].min_rate)
-> > +		return -EOPNOTSUPP;
-> > +
-> > +	for (i = 0; i < ARRAY_SIZE(bands); i++)
-> > +		if (rate < bands[i].max_rate)
-> > +			return i;
-> > +
-> > +	return -EOPNOTSUPP;
-> > +}
-> > +
-> > +static inline int cdns_dphy_rx_wait_for_bit(void __iomem *addr,
-> > +					    unsigned int bit)
-> > +{
-> > +	u32 val;
-> > +
-> > +	return readl_relaxed_poll_timeout(addr, val, val & BIT(bit), 10,
-> > +					  DPHY_ISO_LANE_READY_TIMEOUT_MS * 1000);
-> > +}
-> > +
-> > +static int cdns_dphy_rx_wait_lane_ready(struct cdns_dphy_rx *dphy,
-> > +					unsigned int lanes)
-> > +{
-> > +	static const u32 data_lane_ctrl[] = {DPHY_ISO_DL_CTRL_L0,
-> > +					     DPHY_ISO_DL_CTRL_L1,
-> > +					     DPHY_ISO_DL_CTRL_L2,
-> > +					     DPHY_ISO_DL_CTRL_L3};
-> > +	void __iomem *reg = dphy->regs;
-> > +	unsigned int i;
-> > +	int ret;
-> > +
-> > +	/* Data lanes. Minimum one lane is mandatory. */
-> > +	if (lanes < DPHY_LANES_MIN || lanes > DPHY_LANES_MAX)
-> > +		return -EINVAL;
-> 
-> How about moving this at the beginning of cdns_dphy_rx_configure(), to
-> avoid starting the configuration sequence if the parameter is wrong ?
-
-Ok.
-
-> 
-> > +
-> > +	/* Clock lane */
-> > +	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_CL_CTRL_L,
-> > +					DPHY_ISO_LANE_READY_BIT);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	for (i = 0; i < lanes; i++) {
-> > +		ret = cdns_dphy_rx_wait_for_bit(reg + data_lane_ctrl[i],
-> > +						DPHY_ISO_LANE_READY_BIT);
-> > +		if (ret)
-> > +			return ret;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_rx_configure(struct phy *phy,
-> > +				  union phy_configure_opts *opts)
-> > +{
-> > +	struct cdns_dphy_rx *dphy = phy_get_drvdata(phy);
-> > +	unsigned int reg;
-> > +	int band_ctrl, ret;
-> > +
-> > +	band_ctrl = cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-> > +	if (band_ctrl < 0)
-> > +		return band_ctrl;
-> > +
-> > +	reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
-> > +	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
-> > +	writel(reg, dphy->regs + DPHY_BAND_CFG);
-> > +
-> > +	/*
-> > +	 * Set the required power island phase 2 time. This is mandated by DPHY
-> > +	 * specs.
-> > +	 */
-> > +	reg = DPHY_POWER_ISLAND_EN_DATA_VAL;
-> > +	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_DATA);
-> > +	reg = DPHY_POWER_ISLAND_EN_CLK_VAL;
-> > +	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_CLK);
-> > +
-> > +	ret = cdns_dphy_rx_wait_lane_ready(dphy, opts->mipi_dphy.lanes);
-> > +	if (ret) {
-> > +		dev_err(dphy->dev, "DPHY wait for lane ready timeout\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int cdns_dphy_rx_validate(struct phy *phy, enum phy_mode mode,
-> > +				 int submode, union phy_configure_opts *opts)
-> > +{
-> > +	int ret;
-> > +
-> > +	if (mode != PHY_MODE_MIPI_DPHY)
-> > +		return -EINVAL;
-> > +
-> > +	ret = cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	return phy_mipi_dphy_config_validate(&opts->mipi_dphy);
-> > +}
-> > +
-> > +static const struct phy_ops cdns_dphy_rx_ops = {
-> > +	.power_on = cdns_dphy_rx_power_on,
-> > +	.power_off = cdns_dphy_rx_power_off,
-> > +	.configure = cdns_dphy_rx_configure,
-> > +	.validate = cdns_dphy_rx_validate,
-> > +};
-> > +
-> > +static int cdns_dphy_rx_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct phy_provider *provider;
-> > +	struct cdns_dphy_rx *dphy;
-> > +
-> > +	dphy = devm_kzalloc(dev, sizeof(*dphy), GFP_KERNEL);
-> > +	if (!dphy)
-> > +		return -ENOMEM;
-> > +
-> > +	dev_set_drvdata(dev, dphy);
-> > +	dphy->dev = dev;
-> > +
-> > +	dphy->regs = devm_platform_ioremap_resource(pdev, 0);
-> > +	if (IS_ERR(dphy->regs))
-> > +		return PTR_ERR(dphy->regs);
-> > +
-> > +	dphy->phy = devm_phy_create(dev, NULL, &cdns_dphy_rx_ops);
-> > +	if (IS_ERR(dphy->phy)) {
-> > +		dev_err(dev, "Failed to create PHY: %d\n", PTR_ERR(dphy->phy));
-> > +		return PTR_ERR(dphy->phy);
-> > +	}
-> > +
-> > +	phy_set_drvdata(dphy->phy, dphy);
-> > +	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> > +	if (IS_ERR(provider)) {
-> > +		dev_err(dev, "Failed to register PHY provider: %d\n",
-> > +			PTR_ERR(provider));
-> > +		return PTR_ERR(provider);
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct of_device_id cdns_dphy_rx_of_match[] = {
-> > +	{ .compatible = "cdns,dphy-rx" },
-> > +	{ /* sentinel */ },
-> > +};
-> > +MODULE_DEVICE_TABLE(of, cdns_dphy_rx_of_match);
-> > +
-> > +static struct platform_driver cdns_dphy_rx_platform_driver = {
-> > +	.probe		= cdns_dphy_rx_probe,
-> > +	.driver		= {
-> > +		.name		= "cdns-mipi-dphy-rx",
-> > +		.of_match_table	= cdns_dphy_rx_of_match,
-> > +	},
-> > +};
-> > +module_platform_driver(cdns_dphy_rx_platform_driver);
-> > +
-> > +MODULE_AUTHOR("Pratyush Yadav <p.yadav@ti.com>");
-> > +MODULE_DESCRIPTION("Cadence D-PHY Rx Driver");
-> > +MODULE_LICENSE("GPL v2");
-> 
-> This should be "GPL". "GPL v2" exists for historical reasons (see
-> Documentation/process/license-rules.rst).
-
-Ok.
-
-> 
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-Thanks.
-
--- 
-Regards,
-Pratyush Yadav
-Texas Instruments Inc.
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCAyMDIxLTEyLTMwIGF0IDA0OjU4ICswMDAwLCBIb25neGluZyBaaHUgd3JvdGU6DQo+
+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPiBGcm9tOiBQaGlsaXAgTW9sbG95IDxw
+aGlsaXBAbGludXRyb25peC5kZT4NCj4gPiBTZW50OiBXZWRuZXNkYXksIERlY2VtYmVyIDI5LCAy
+MDIxIDg6NDAgUE0NCj4gPiBUbzogSG9uZ3hpbmcgWmh1IDxob25neGluZy56aHVAbnhwLmNvbT4N
+Cj4gPiBDYzogbC5zdGFjaEBwZW5ndXRyb25peC5kZTsgYmhlbGdhYXNAZ29vZ2xlLmNvbTsNCj4g
+PiBsb3JlbnpvLnBpZXJhbGlzaUBhcm0uY29tOyB0aGFydmV5QGdhdGV3b3Jrcy5jb207IE1hcmNl
+bCBaaXN3aWxlcg0KPiA+IDxtYXJjZWwuemlzd2lsZXJAdG9yYWRleC5jb20+OyBraXNob25AdGku
+Y29tOyB2a291bEBrZXJuZWwub3JnOw0KPiA+IHJvYmhAa2VybmVsLm9yZzsgZ2FsYWtAa2VybmVs
+LmNyYXNoaW5nLm9yZzsgc2hhd25ndW9Aa2VybmVsLm9yZzsNCj4gPiBsaW51eC1waHlAbGlzdHMu
+aW5mcmFkZWFkLm9yZzsgZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7DQo+ID4gbGludXgtcGNp
+QHZnZXIua2VybmVsLm9yZzsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOw0K
+PiA+IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7IGtlcm5lbEBwZW5ndXRyb25peC5kZTsg
+ZGwtbGludXgtaW14DQo+ID4gPGxpbnV4LWlteEBueHAuY29tPg0KPiA+IFN1YmplY3Q6IFJlOiBb
+UEFUQ0ggdjcgNS84XSBwaHk6IGZyZWVzY2FsZTogcGNpZTogSW5pdGlhbGl6ZSB0aGUgaW14OCBw
+Y2llDQo+ID4gc3RhbmRhbG9uZSBwaHkgZHJpdmVyDQo+ID4gDQo+ID4gSGkgUmljaGFyZCwNCj4g
+PiANCj4gPiBJJ3ZlIHJ1biBpbnRvIGFuIGlzc3VlIHRoYXQgYXBwZWFycyB0byBpbmRpY2F0ZSBh
+IGZ1bmN0aW9uYWwgZGlmZmVyZW5jZQ0KPiA+IGJldHdlZW4gdGhlIGV4aXN0aW5nIGludGVncmF0
+ZWQgcGNpLWlteDYuYyBpbXBsZW1lbnRhdGlvbiBhbmQgdGhpcyBuZXcNCj4gPiBpbXBsZW1lbnRh
+dGlvbiB3aXRoIHRoZSBzZXBhcmF0ZSBwaHkgZHJpdmVyLg0KPiA+IA0KPiA+IEknbSB3b3JraW5n
+IHdpdGggYSBTT00gYW5kIGJhc2Vib2FyZCBmcm9tIFBoeXRlYyB0aGF0IGlzIGJhc2VkIG9uIHRo
+ZQ0KPiA+IElNWDhNTS4gVGhlIGJvYXJkIGRvZXMgbm90IGhhdmUgYW4gZXh0ZXJuYWwgUENJZSBj
+bG9jayBhbmQgaGFzIGENCj4gPiBldGhlcm5ldCBjb250cm9sbGVyIGhhbmdpbmcgb2ZmIHRoZSBQ
+Q0llIGJ1cy4NCj4gPiANCj4gPiBXaGVuIGJvb3RpbmcgZnJvbSBhIDUuNCBOWFAtYmFzZWQga2Vy
+bmVsIGZyb20gUGh5dGVjIHRoZSBldGhlcm5ldA0KPiA+IGNvbnRyb2xsZXIgaXMgcHJvYmVkIGFu
+ZCBmdW5jdGlvbnMgYXMgZXhwZWN0ZWQuDQo+ID4gDQo+ID4gQSBjby13b3JrZXIgYmFja3BvcnRl
+ZCBhIHNsaWdodGx5IGVhcmxpZXIgdmVyc2lvbiBvZiB0aGlzIHBhdGNoc2V0IHRvDQo+ID4gNS4x
+MC5bMV0gV2l0aCBvdXIga2VybmVsIGJvdGggdGhlIGNvbnRyb2xsZXIgZHJpdmVyIGFuZCBuZXcg
+UEhZIGRyaXZlciBhcmUNCj4gPiBwcm9iZWQsIGJ1dCBhIHRpbWVvdXQgb2NjdXJzIGluIGR3X3Bj
+aWVfd2FpdF9mb3JfbGluaygpIHdoaWNoIGluZGljYXRlcw0KPiA+IHRoYXQgdGhlICJQaHkgbGlu
+ayBuZXZlciBjYW1lIHVwIi4NCj4gPiANCj4gPiBBZnRlciByZXByb2R1Y2luZyB0aGlzIGlzc3Vl
+IEkgY29uZmlndXJlZCBwY2llX3BoeSB3aXRoDQo+ID4gSU1YOF9QQ0lFX1JFRkNMS19QQURfT1VU
+UFVULiBXaXRoIHRoYXQgY29uZmlndXJlZCwgcGh5IHJlZ2lzdGVyDQo+ID4gQ01OX1JFRzA2Mi8w
+eDE4OCBtYXRjaGVzIHRoZSA1LjQgTlhQL1BoeXRlYyBrZXJuZWwuIEkgdGhlbg0KPiA+IGNvbXBh
+cmVkIHRoZSBjb250cm9sbGVyIGFuZCBQSFkgcmVnaXN0ZXJzIGJldHdlZW4gdGhlIHR3byBrZXJu
+ZWxzIGFuZA0KPiA+IG5vdGljZWQgdGhhdCBDTU5fUkVHMDYzLzB4MThjIGlzIHNldCB0byBBVVhf
+SU4vMHgwIGluIHRoZSA1LjQNCj4gPiBOWFAvUGh5dGVjIGtlcm5lbCwgYnV0IHRoZSBuZXcgUEhZ
+IGRyaXZlciB3cml0ZXMNCj4gPiBJX1BMTF9SRUZDTEtfRlJPTV9TWVNQTEwvMHhjMCB0byB0aGF0
+IHJlZ2lzdGVyLg0KPiA+IA0KPiA+IElmIEkgbW9kaWZ5IHRoZSBwaHkgZHJpdmVyIHRvIG5vdCB3
+cml0ZSBJX1BMTF9SRUZDTEtfRlJPTV9TWVNQTEwvMHhjMA0KPiA+IHRoZW4gdGhlIHN5c3RlbSBi
+ZWhhdmVzIGFzIGV4cGVjdGVkLg0KPiBbUmljaGFyZCBaaHVdIA0KPiBIaSBQaGlsaXA6DQo+IFRo
+ZSBhZGRyZXNzIDB4MDE4QyBpcyBhIHJlZ2lzdGVyIHRvIGNvbnRyb2wgdGhlIG91dHB1dCBtb2Rl
+IG9mIFJlZmNsayBJTy4NCj4gV2hlbiBpbnRlcm5hbCBzeXNwbGwgaXMgdXNlZCBhcyBQSFkgUkVG
+IGNsb2NrLg0KPiBSZWdhcmRpbmcgbXkgdW5kZXJzdGFuZCwgdGhpcyByZWdpc3RlciBzaG91bGQg
+c2VsZWN0IHRoZSBzeXNwbGwsIGFuZCByb3V0ZQ0KPiBpdCBvdXQgb2YgU09DIGZyb20gQ0xLIE4v
+UCBwYWRzLg0KPiBUaGVuIHRoZSByZW1vdGUgRVAgZGV2aWNlIGNhbiB1c2UgdGhlIGNsb2NrIGZy
+b20gQ0xLIE4vUCBwYWRzLg0KPiANCj4gSWYgdGhlIGJpdDctNiBpcyBzZXQgdG8gMmInMDAsIHRo
+ZXJlIHdvdWxkbid0IGNsb2NrIG91dHB1dCBmcm9tIENMSyBOL1AgcGFkcy4NCj4gV2hhdCdzIHRo
+ZSBoYXJkd2FyZSBkZXNpZ24gb2YgdGhlIENMSyBOL1AgcGFkcyBpbiB5b3VyIHByb2plY3Q/DQo+
+IENhbiB5b3UgbW9uaXRvciB0aGUgc2l0dWF0aW9uIG9mIHRoZSBDTEsgTi9QIGlmIGl0IGlzIHBv
+c3NpYmxlPw0KDQpJIGNhbiBjb25maXJtIHRoYXQgZm9yIG1lIHNpbWlsYXIgaGFyZHdhcmUgd2hp
+Y2ggYWxzbyAiZG9lcyBub3QgaGF2ZSBhbiBleHRlcm5hbCBQQ0llIGNsb2NrIiB3b3JrcyBqdXN0
+IGZpbmUNCndpdGggdGhlIGZvbGxvd2luZyBkZXZpY2UgdHJlZSBzbmlwZWQ6DQoNCiZwY2llMCB7
+DQoJYXNzaWduZWQtY2xvY2tzID0gPCZjbGsgSU1YOE1NX0NMS19QQ0lFMV9BVVg+LA0KCQkJICA8
+JmNsayBJTVg4TU1fQ0xLX1BDSUUxX0NUUkw+Ow0KCWFzc2lnbmVkLWNsb2NrLXBhcmVudHMgPSA8
+JmNsayBJTVg4TU1fU1lTX1BMTDJfNTBNPiwNCgkJCQkgPCZjbGsgSU1YOE1NX1NZU19QTEwyXzI1
+ME0+Ow0KCWFzc2lnbmVkLWNsb2NrLXJhdGVzID0gPDEwMDAwMDAwPiwgPDI1MDAwMDAwMD47DQoJ
+Y2xvY2tzID0gPCZjbGsgSU1YOE1NX0NMS19QQ0lFMV9ST09UPiwgPCZjbGsgSU1YOE1NX0NMS19Q
+Q0lFMV9BVVg+LA0KCQkgPCZjbGsgSU1YOE1NX0NMS19QQ0lFMV9QSFk+Ow0KCWNsb2NrLW5hbWVz
+ID0gInBjaWUiLCAicGNpZV9hdXgiLCAicGNpZV9idXMiOw0KCXBpbmN0cmwtbmFtZXMgPSAiZGVm
+YXVsdCI7DQoJcGluY3RybC0wID0gPCZwaW5jdHJsX3BjaWUwPjsNCgkvKiBQQ0lFXzFfUkVTRVQj
+IChTT0RJTU0gMjQ0KSAqLw0KCXJlc2V0LWdwaW8gPSA8JmdwaW8zIDE5IEdQSU9fQUNUSVZFX0xP
+Vz47DQoJc3RhdHVzID0gIm9rYXkiOw0KfTsNCg0KJnBjaWVfcGh5IHsNCgljbG9ja3MgPSA8JmNs
+ayBJTVg4TU1fQ0xLX1BDSUUxX1BIWT47DQoJZnNsLGNsa3JlcS11bnN1cHBvcnRlZDsNCglmc2ws
+cmVmY2xrLXBhZC1tb2RlID0gPElNWDhfUENJRV9SRUZDTEtfUEFEX09VVFBVVD47DQoJZnNsLHR4
+LWRlZW1waC1nZW4xID0gPDB4MmQ+Ow0KCWZzbCx0eC1kZWVtcGgtZ2VuMiA9IDwweGY+Ow0KCXN0
+YXR1cyA9ICJva2F5IjsNCn07DQoNCkR1cmluZyBib290IHRoYXQgbG9va3MgYXMgZm9sbG93czoN
+Cg0KWyAgICAxLjg1ODMxMl0gaW14NnEtcGNpZSAzMzgwMDAwMC5wY2llOiBob3N0IGJyaWRnZSAv
+c29jQDAvcGNpZUAzMzgwMDAwMCByYW5nZXM6DQoNClsgICAgMS44NjU2MzBdIGlteDZxLXBjaWUg
+MzM4MDAwMDAucGNpZTogICAgICAgSU8gMHgwMDFmZjgwMDAwLi4weDAwMWZmOGZmZmYgLT4gMHgw
+MDAwMDAwMDAwDQpbICAgIDEuODc3ODMzXSBpbXg2cS1wY2llIDMzODAwMDAwLnBjaWU6ICAgICAg
+TUVNIDB4MDAxODAwMDAwMC4uMHgwMDFmZWZmZmZmIC0+IDB4MDAxODAwMDAwMA0KDQpbICAgIDEu
+OTkyMDEwXSBpbXg2cS1wY2llIDMzODAwMDAwLnBjaWU6IGlBVFUgdW5yb2xsOiBlbmFibGVkDQpb
+ICAgIDEuOTk3NTIzXSBpbXg2cS1wY2llIDMzODAwMDAwLnBjaWU6IERldGVjdGVkIGlBVFUgcmVn
+aW9uczogNCBvdXRib3VuZCwgNCBpbmJvdW5kDQoNClsgICAgMi4xMDMxNDBdIGlteDZxLXBjaWUg
+MzM4MDAwMDAucGNpZTogTGluayB1cA0KWyAgICAyLjEwNzUyN10gaW14NnEtcGNpZSAzMzgwMDAw
+MC5wY2llOiBMaW5rIHVwDQpbICAgIDIuMTExODk1XSBpbXg2cS1wY2llIDMzODAwMDAwLnBjaWU6
+IExpbmsgdXAsIEdlbjENClsgICAgMi4xMTY3ODZdIGlteDZxLXBjaWUgMzM4MDAwMDAucGNpZTog
+TGluayB1cA0KWyAgICAyLjEyMTI5OF0gaW14NnEtcGNpZSAzMzgwMDAwMC5wY2llOiBQQ0kgaG9z
+dCBicmlkZ2UgdG8gYnVzIDAwMDA6MDANClsgICAgMi4xMjc2NzFdIHBjaV9idXMgMDAwMDowMDog
+cm9vdCBidXMgcmVzb3VyY2UgW2J1cyAwMC1mZl0NClsgICAgMi4xMzMxNzFdIHBjaV9idXMgMDAw
+MDowMDogcm9vdCBidXMgcmVzb3VyY2UgW2lvICAweDAwMDAtMHhmZmZmXQ0KWyAgICAyLjEzOTM2
+M10gcGNpX2J1cyAwMDAwOjAwOiByb290IGJ1cyByZXNvdXJjZSBbbWVtIDB4MTgwMDAwMDAtMHgx
+ZmVmZmZmZl0NClsgICAgMi4xNDYyODJdIHBjaSAwMDAwOjAwOjAwLjA6IFsxNmMzOmFiY2RdIHR5
+cGUgMDEgY2xhc3MgMHgwNjA0MDANClsgICAgMi4xNTIzMjJdIHBjaSAwMDAwOjAwOjAwLjA6IHJl
+ZyAweDEwOiBbbWVtIDB4MDAwMDAwMDAtMHgwMDBmZmZmZl0NClsgICAgMi4xNTg2MTJdIHBjaSAw
+MDAwOjAwOjAwLjA6IHJlZyAweDM4OiBbbWVtIDB4MDAwMDAwMDAtMHgwMDAwZmZmZiBwcmVmXQ0K
+WyAgICAyLjE2NTM3M10gcGNpIDAwMDA6MDA6MDAuMDogc3VwcG9ydHMgRDENClsgICAgMi4xNjkz
+OTVdIHBjaSAwMDAwOjAwOjAwLjA6IFBNRSMgc3VwcG9ydGVkIGZyb20gRDAgRDEgRDNob3QgRDNj
+b2xkDQpbICAgIDIuMTc4MTAxXSBwY2kgMDAwMDowMTowMC4wOiBbMTBlYzo4MTY4XSB0eXBlIDAw
+IGNsYXNzIDB4MDIwMDAwDQpbICAgIDIuMTg0MTk2XSBwY2kgMDAwMDowMTowMC4wOiByZWcgMHgx
+MDogW2lvICAweDAwMDAtMHgwMGZmXQ0KWyAgICAyLjE4OTg2NF0gcGNpIDAwMDA6MDE6MDAuMDog
+cmVnIDB4MTg6IFttZW0gMHgwMDAwMDAwMC0weDAwMDAwZmZmIDY0Yml0IHByZWZdDQpbICAgIDIu
+MTk3MTUyXSBwY2kgMDAwMDowMTowMC4wOiByZWcgMHgyMDogW21lbSAweDAwMDAwMDAwLTB4MDAw
+MDNmZmYgNjRiaXQgcHJlZl0NClsgICAgMi4yMDQ3NzddIHBjaSAwMDAwOjAxOjAwLjA6IHN1cHBv
+cnRzIEQxIEQyDQpbICAgIDIuMjA5MDU5XSBwY2kgMDAwMDowMTowMC4wOiBQTUUjIHN1cHBvcnRl
+ZCBmcm9tIEQwIEQxIEQyIEQzaG90IEQzY29sZA0KWyAgICAyLjIyOTExNF0gcGNpIDAwMDA6MDA6
+MDAuMDogQkFSIDA6IGFzc2lnbmVkIFttZW0gMHgxODAwMDAwMC0weDE4MGZmZmZmXQ0KWyAgICAy
+LjIzNTkzNF0gcGNpIDAwMDA6MDA6MDAuMDogQkFSIDE1OiBhc3NpZ25lZCBbbWVtIDB4MTgxMDAw
+MDAtMHgxODFmZmZmZiBwcmVmXQ0KWyAgICAyLjI0MzI2MF0gcGNpIDAwMDA6MDA6MDAuMDogQkFS
+IDY6IGFzc2lnbmVkIFttZW0gMHgxODIwMDAwMC0weDE4MjBmZmZmIHByZWZdDQpbICAgIDIuMjUw
+NTAxXSBwY2kgMDAwMDowMDowMC4wOiBCQVIgMTM6IGFzc2lnbmVkIFtpbyAgMHgxMDAwLTB4MWZm
+Zl0NClsgICAgMi4yNTY3MzRdIHBjaSAwMDAwOjAxOjAwLjA6IEJBUiA0OiBhc3NpZ25lZCBbbWVt
+IDB4MTgxMDAwMDAtMHgxODEwM2ZmZiA2NGJpdCBwcmVmXQ0KWyAgICAyLjI2NDUzNF0gcGNpIDAw
+MDA6MDE6MDAuMDogQkFSIDI6IGFzc2lnbmVkIFttZW0gMHgxODEwNDAwMC0weDE4MTA0ZmZmIDY0
+Yml0IHByZWZdDQpbICAgIDIuMjcyMzM4XSBwY2kgMDAwMDowMTowMC4wOiBCQVIgMDogYXNzaWdu
+ZWQgW2lvICAweDEwMDAtMHgxMGZmXQ0KWyAgICAyLjI3ODQ2MF0gcGNpIDAwMDA6MDA6MDAuMDog
+UENJIGJyaWRnZSB0byBbYnVzIDAxLWZmXQ0KWyAgICAyLjI4MzY5OF0gcGNpIDAwMDA6MDA6MDAu
+MDogICBicmlkZ2Ugd2luZG93IFtpbyAgMHgxMDAwLTB4MWZmZl0NClsgICAgMi4yODk4MDhdIHBj
+aSAwMDAwOjAwOjAwLjA6ICAgYnJpZGdlIHdpbmRvdyBbbWVtIDB4MTgxMDAwMDAtMHgxODFmZmZm
+ZiBwcmVmXQ0KWyAgICAyLjI5NzQ0NF0gcGNpZXBvcnQgMDAwMDowMDowMC4wOiBQTUU6IFNpZ25h
+bGluZyB3aXRoIElSUSAyMjUNCg0KQW5kIG15IG1pbmktUENJZSBFdGhlcm5ldCBjYXJkIGdldHMg
+ZGV0ZWN0ZWQgYW5kIGlzIGZ1bGx5IGZ1bmN0aW9uYWw6DQoNClsgICAgNC40MzM4OTldIHI4MTY5
+IDAwMDA6MDE6MDAuMDogZW5hYmxpbmcgZGV2aWNlICgwMDAwIC0+IDAwMDMpDQpbICAgIDQuNDY2
+NzMxXSBsaWJwaHk6IHI4MTY5OiBwcm9iZWQNClsgICAgNC40NzYyODhdIHI4MTY5IDAwMDA6MDE6
+MDAuMCBldGgxOiBSVEw4MTY4ZS84MTExZSwgMDA6ZTA6NGM6ODA6ZjQ6MGQsIFhJRCAyYzIsIElS
+USAyMjkNClsgICAgNC40ODQ0ODVdIHI4MTY5IDAwMDA6MDE6MDAuMCBldGgxOiBqdW1ibyBmZWF0
+dXJlcyBbZnJhbWVzOiA5MTk0IGJ5dGVzLCB0eCBjaGVja3N1bW1pbmc6IGtvXQ0KDQpbICAgIDUu
+MDIzNjE2XSByODE2OSAwMDAwOjAxOjAwLjAgZW5wMXMwOiByZW5hbWVkIGZyb20gZXRoMQ0KDQpb
+ICAgIDYuNzEzNjAxXSByODE2OSAwMDAwOjAxOjAwLjA6IERpcmVjdCBmaXJtd2FyZSBsb2FkIGZv
+ciBydGxfbmljL3J0bDgxNjhlLTIuZncgZmFpbGVkIHdpdGggZXJyb3IgLTINClsgICAgNi43MjI3
+ODZdIHI4MTY5IDAwMDA6MDE6MDAuMDogVW5hYmxlIHRvIGxvYWQgZmlybXdhcmUgcnRsX25pYy9y
+dGw4MTY4ZS0yLmZ3ICgtMikNClsgICAgNi43MzEzOTFdIFJUTDgyMTFETiBHaWdhYml0IEV0aGVy
+bmV0IHI4MTY5LTAtMTAwOjAwOiBhdHRhY2hlZCBQSFkgZHJpdmVyIChtaWlfYnVzOnBoeV9hZGRy
+PXI4MTY5LTAtMTAwOjAwLA0KaXJxPU1BQykNClsgICAgNi44MDg3OThdIHI4MTY5IDAwMDA6MDE6
+MDAuMCBlbnAxczA6IExpbmsgaXMgRG93bg0KDQpyb290QHZlcmRpbi1pbXg4bW0tMDY3NjA1NTQ6
+fiMgbHNwY2kNCjAwOjAwLjAgUENJIGJyaWRnZTogU3lub3BzeXMsIEluYy4gRFdDX3VzYjMgLyBQ
+Q0llIGJyaWRnZSAocmV2IDAxKQ0KMDE6MDAuMCBFdGhlcm5ldCBjb250cm9sbGVyOiBSZWFsdGVr
+IFNlbWljb25kdWN0b3IgQ28uLCBMdGQuIFJUTDgxMTEvODE2OC84NDExIFBDSSBFeHByZXNzIEdp
+Z2FiaXQgRXRoZXJuZXQNCkNvbnRyb2xsZXIgKHJldiAwNikNCg0KQ2hlZXJzDQoNCk1hcmNlbA0K
+DQo+IEJlc3QgUmVnYXJkcw0KPiBSaWNoYXJkIFpodQ0KPiANCj4gPiANCj4gPiBCZXN0LA0KPiA+
+IFBoaWxpcA0KPiA+IA0KPiA+IFsxXTogSSBwbGFuIG9uIHJlYmFzaW5nIG91ciBicmFuY2ggd2l0
+aCB0aGUgbGF0ZXN0IHBhdGNoZXMgdGhhdCBoYXZlIGJlZW4NCj4gPiBhcHBsaWVkIHVwc3RyZWFt
+LiBOb3RlIHRoYXQgSSBkaWQgbm90IHNlZSBhbnkgZGlmZmVyZW5jZSBpbiB0aGUgZm9sbG93aW5n
+DQo+ID4gY29kZSB3aXRoIHdoYXQgd2UgaGF2ZSBhcHBsaWVkLg0KPiA+IA0KPiA+IE9uIDEyLzIv
+MjEgMDk6MDIsIFJpY2hhcmQgWmh1IHdyb3RlOg0KPiA+ID4gKyNkZWZpbmUgSU1YOE1NX1BDSUVf
+UEhZX0NNTl9SRUcwNjHCoMKgwqDCoMKgMHgxODQNCj4gPiA+ICsjZGVmaW5lwqAgQU5BX1BMTF9D
+TEtfT1VUX1RPX0VYVF9JT19FTsKgwqBCSVQoMCkNCj4gPiA+ICsjZGVmaW5lIElNWDhNTV9QQ0lF
+X1BIWV9DTU5fUkVHMDYywqDCoMKgwqDCoDB4MTg4DQo+ID4gPiArI2RlZmluZcKgIEFOQV9QTExf
+Q0xLX09VVF9UT19FWFRfSU9fU0VMwqBCSVQoMykNCj4gPiA+ICsjZGVmaW5lIElNWDhNTV9QQ0lF
+X1BIWV9DTU5fUkVHMDYzwqDCoMKgwqDCoDB4MThDDQo+ID4gPiArI2RlZmluZcKgIEFVWF9QTExf
+UkVGQ0xLX1NFTF9TWVNfUExMwqDCoMKgwqBHRU5NQVNLKDcsIDYpDQo+ID4gPiArI2RlZmluZSBJ
+TVg4TU1fUENJRV9QSFlfQ01OX1JFRzA2NMKgwqDCoMKgwqAweDE5MA0KPiA+ID4gKyNkZWZpbmXC
+oCBBTkFfQVVYX1JYX1RYX1NFTF9UWMKgwqDCoMKgwqDCoMKgwqDCoMKgQklUKDcpDQo+ID4gPiAr
+I2RlZmluZcKgIEFOQV9BVVhfUlhfVEVSTV9HTkRfRU7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoEJJVCgzKQ0KPiA+ID4gKyNkZWZpbmXCoCBBTkFfQVVYX1RYX1RFUk3CoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqBCSVQoMikNCj4gPiA+ICsjZGVmaW5lIElNWDhNTV9QQ0lFX1BI
+WV9DTU5fUkVHMDY1wqDCoMKgwqDCoDB4MTk0DQo+ID4gPiArI2RlZmluZcKgIEFOQV9BVVhfUlhf
+VEVSTcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoChCSVQoNykgfCBCSVQoNCkpDQo+ID4g
+PiArI2RlZmluZcKgIEFOQV9BVVhfVFhfTFZMwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgR0VOTUFTSygzLCAwKQ0KPiA+IC4uLg0KPiA+ID4gK8KgwqDCoMKg
+wqDCoMKgaWYgKHBhZF9tb2RlID09IElNWDhfUENJRV9SRUZDTEtfUEFEX0lOUFVUKSB7DQo+ID4g
+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgLyogQ29uZmlndXJlIHRoZSBwYWQgYXMg
+aW5wdXQgKi8NCj4gPiA+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB2YWwgPSByZWFk
+bChpbXg4X3BoeS0+YmFzZSArDQo+ID4gSU1YOE1NX1BDSUVfUEhZX0NNTl9SRUcwNjEpOw0KPiA+
+ID4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoHdyaXRlbCh2YWwgJiB+QU5BX1BMTF9D
+TEtfT1VUX1RPX0VYVF9JT19FTiwNCj4gPiA+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgaW14OF9waHktPmJhc2UgKw0KPiA+IElNWDhNTV9QQ0lFX1BIWV9DTU5f
+UkVHMDYxKTsNCj4gPiA+ICvCoMKgwqDCoMKgwqDCoH0gZWxzZSBpZiAocGFkX21vZGUgPT0gSU1Y
+OF9QQ0lFX1JFRkNMS19QQURfT1VUUFVUKSB7DQo+ID4gPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgLyogQ29uZmlndXJlIHRoZSBQSFkgdG8gb3V0cHV0IHRoZSByZWZjbG9jayB2aWEg
+cGFkICovDQo+ID4gPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgd3JpdGVsKEFOQV9Q
+TExfQ0xLX09VVF9UT19FWFRfSU9fRU4sDQo+ID4gPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgIGlteDhfcGh5LT5iYXNlICsNCj4gPiBJTVg4TU1fUENJRV9QSFlf
+Q01OX1JFRzA2MSk7DQo+ID4gPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgd3JpdGVs
+KEFOQV9QTExfQ0xLX09VVF9UT19FWFRfSU9fU0VMLA0KPiA+ID4gK8KgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbXg4X3BoeS0+YmFzZSArDQo+ID4gSU1YOE1NX1BD
+SUVfUEhZX0NNTl9SRUcwNjIpOw0KPiA+ID4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oHdyaXRlbChBVVhfUExMX1JFRkNMS19TRUxfU1lTX1BMTCwNCj4gPiA+ICvCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaW14OF9waHktPmJhc2UgKw0KPiA+IElNWDhN
+TV9QQ0lFX1BIWV9DTU5fUkVHMDYzKTsNCj4gPiANCj4gPiBJZiBJIGNvbW1lbnQgb3V0IHRoaXMg
+d3JpdGVsKCkgdGhlbiB0aGUgcmVnaXN0ZXIgZGVmYXVsdHMgdG8gMHgwL0FVWF9JTg0KPiA+IGFu
+ZCB0aGVuIHRoZSBzeXN0ZW0gYmVoYXZlcyBhcyBleHBlY3RlZC4NCj4gPiANCj4gPiA+ICvCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB2YWwgPSBBTkFfQVVYX1JYX1RYX1NFTF9UWCB8IEFO
+QV9BVVhfVFhfVEVSTTsNCj4gPiA+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB3cml0
+ZWwodmFsIHwgQU5BX0FVWF9SWF9URVJNX0dORF9FTiwNCj4gPiA+ICvCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaW14OF9waHktPmJhc2UgKw0KPiA+IElNWDhNTV9Q
+Q0lFX1BIWV9DTU5fUkVHMDY0KTsNCj4gPiA+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqB3cml0ZWwoQU5BX0FVWF9SWF9URVJNIHwgQU5BX0FVWF9UWF9MVkwsDQo+ID4gPiArwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlteDhfcGh5LT5iYXNlICsNCj4g
+PiBJTVg4TU1fUENJRV9QSFlfQ01OX1JFRzA2NSk7DQo+ID4gPiArwqDCoMKgwqDCoMKgwqB9DQot
+LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
