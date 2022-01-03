@@ -4,61 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E98C433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Jan 2022 08:59:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E2D9C433FE
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Jan 2022 14:32:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DHiwH1UULhevTQOt6+1T5PuE0pnoOopza3bptA1+KzA=; b=gRnWMQTqmAyH1wTZo86gOLOOzH
-	/cVSdG7kV1oQxQURgyDkg9FQhPDbhqxBhckKTGi7rHTnmRr1ARUPtsY6EqKMXMlL13rShLVBaXKaN
-	x/865yyMRv0rIizc+nwJ9BjeC1do3fWFfUoesSuQbKpaK+bCcG23qTBrDJ6iHDPpHK7UoPXBYJQRY
-	U/834tSqmRMBRgv/SoO2LFq9sR+vl6PvpmViAGQCV4MhrH117xb83wEEqPSnlkBQ1ZtcdA2FuFmme
-	QSWAemtwJPCCVmluDstJIb1oNkMaKoUQgzKu5aCE9jZR9oPA6xf+pLI04AqCeM0C5zWYwhqArzI+l
-	lJMf99zg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=inkFTg8PyeyImJFR35z8fpCbEkaE7ZLEDMAHTlKSwVk=; b=Bg2gIQ/zd6RiL0
+	2LmLdVqJcJfrHpAvMEpiq78Vf1LLKeQIk7J5XZRhvmO7bcBIv5TLaFG79Dx6OdN+Sbqk/P6WWDtjp
+	BpKSCLe8RGTkip6xQAykaycj0KNpVbZkkXJ9e5AFLthxtOCvN1GrXlYsVNtfxtt7+70C2iVEPoqjW
+	Ic3UGgC133LFneagBVUk83dsgniGRjeA2vHTBfuF2cywSpEQW8PQsmfaoXFazluNfxR+zTjWkAwGF
+	dkKFs9L9Pswn4Dn2pphwdzdveq7vZ203lCUihfU+SiZocqLhv/aPoNQ8EO7Ezan3edDEQQQ2D3RUI
+	RsvVBKbJjjJnQ9SFaSOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n4JBc-008cdp-On; Mon, 03 Jan 2022 08:59:24 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1n4ONz-009CM2-QC; Mon, 03 Jan 2022 14:32:31 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n4JBP-008ccD-QC; Mon, 03 Jan 2022 08:59:13 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: kholk11) with ESMTPSA id 8A5071F41EBE
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
- s=mail; t=1641200347;
- bh=Lg7ar1sN11ciL2DcpoXXF8T+6ylIewLjLgr41Thyq3Y=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=YKOtWIbxd0k61NxswnNEpxj+h1HzxuK9la2Q+nvHl2NikBMjv+8ZCdlxSr5bepYGH
- rmO7GB93XpTKJiOc55M2foj8gXDaQ9oLaCGMHJ7ncNMF2FlIc7jeBq7UBm8BTt7acd
- 5qWncBGtpDuiHtuAD6oBA/yWfyfjX9EEh+FOBJ7Fz3OwzZUTRH1JbmsEGFHLq+E7W9
- sgvyn/PymuRs79ZAzKf53YXkO23qjQY8uDi6RMxXjm04gNySExylW9iq7XNDpdZd0M
- ULOLdg3gHfjACKvWBNOKtxIDJ/XA6Qs0CsfVpidOYylnH89u/S+rJqJWYrF6B3tzbq
- tUPGLHYuglTLA==
-Subject: Re: [PATCH v2 3/5] phy: mediatek: add helpers to update bits of
- registers
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eddie Hung <eddie.hung@mediatek.com>
-References: <20211218082802.5256-1-chunfeng.yun@mediatek.com>
- <20211218082802.5256-3-chunfeng.yun@mediatek.com>
- <047803b9-d09f-d4f8-a674-317cc19dd055@collabora.com>
- <75b2773d1d170f42bae0774dbc58d1458cb25502.camel@mediatek.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Message-ID: <821f9e8b-cf35-2e53-e64f-c19e7bde957b@collabora.com>
-Date: Mon, 3 Jan 2022 09:59:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.13.0
+ id 1n4ONx-009CLK-A8
+ for linux-phy@lists.infradead.org; Mon, 03 Jan 2022 14:32:30 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id B82836111C;
+ Mon,  3 Jan 2022 14:32:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D681C36AED;
+ Mon,  3 Jan 2022 14:32:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1641220346;
+ bh=2R/vT5PYrv4pGEbU4bI6HlTM/+DhqVhkSRgEU+OeoMs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=SA2gNcaawZovs14jKBM6BWwwznJnHJl+3mWDMbLA3/j/Ju/aDAi6uGlG8m6A1kEWI
+ DCooiY19WYhJT0LtQMsmTmp30+LlJztbuCFIMXhAxt5A129txRDDebDzlzasJl9vnZ
+ +bo+O8PEN9+Lgrc1s75l3fmos41E3wwUev3WFv6v6ItxquK8mcYoVVryUpQmBa64cX
+ flZIQVe/NHF+/+3FCL4pF9RKSpEJB3GqCC2Mwv89ezDtXszXOA9wt1lH5mnmCn1mhX
+ vkuAqwI90OAxJHiRcHpXLpx1y+xHLDt8BKeUDkLJbKPLUqQYSREWuyskIGl1DoOXMO
+ 1zqef53KN1SVg==
+From: =?UTF-8?q?Marek=20Beh=C3=BAn?= <kabel@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ pali@kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ =?UTF-8?q?Marek=20Beh=C3=BAn?= <kabel@kernel.org>
+Subject: [PATCH phy v3 0/5] Armada 3720 comphy native implementation
+Date: Mon,  3 Jan 2022 15:32:15 +0100
+Message-Id: <20220103143220.13070-1-kabel@kernel.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-In-Reply-To: <75b2773d1d170f42bae0774dbc58d1458cb25502.camel@mediatek.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220103_005912_046839_B1881DC8 
-X-CRM114-Status: GOOD (  20.17  )
+X-CRM114-CacheID: sfid-20220103_063229_481651_96707640 
+X-CRM114-Status: GOOD (  13.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,106 +67,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 30/12/21 03:06, Chunfeng Yun ha scritto:
-> On Fri, 2021-12-24 at 11:10 +0100, AngeloGioacchino Del Regno wrote:
->> Il 18/12/21 09:28, Chunfeng Yun ha scritto:
->>> Add three helpers mtk_phy_clear/set/update_bits() for registers
->>> operation
->>>
->>> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
->>> ---
->>> v2: new patch, add register access helpers,
->>>       Add updatel() macro suggested by Vinod, here add more ones
->>> instead.
->>> ---
->>>    drivers/phy/mediatek/phy-mtk-io.h | 38
->>> +++++++++++++++++++++++++++++++
->>>    1 file changed, 38 insertions(+)
->>>    create mode 100644 drivers/phy/mediatek/phy-mtk-io.h
->>>
->>> diff --git a/drivers/phy/mediatek/phy-mtk-io.h
->>> b/drivers/phy/mediatek/phy-mtk-io.h
->>> new file mode 100644
->>> index 000000000000..500fcdab165d
->>> --- /dev/null
->>> +++ b/drivers/phy/mediatek/phy-mtk-io.h
->>> @@ -0,0 +1,38 @@
->>> +/* SPDX-License-Identifier: GPL-2.0 */
->>> +/*
->>> + * Copyright (C) 2021 MediaTek Inc.
->>> + *
->>> + * Author: Chunfeng Yun <chunfeng.yun@mediatek.com>
->>> + */
->>> +
->>> +#ifndef __PHY_MTK_H__
->>> +#define __PHY_MTK_H__
->>> +
->>> +#include <linux/io.h>
->>> +
->>> +static inline void mtk_phy_clear_bits(void __iomem *reg, u32 bits)
->>> +{
->>> +	u32 tmp = readl(reg);
->>> +
->>> +	tmp &= ~bits;
->>> +	writel(tmp, reg);
->>> +}
->>> +
->>> +static inline void mtk_phy_set_bits(void __iomem *reg, u32 bits)
->>> +{
->>> +	u32 tmp = readl(reg);
->>> +
->>> +	tmp |= bits;
->>> +	writel(tmp, reg);
->>> +}
->>> +
->>> +static inline void mtk_phy_update_bits(void __iomem *reg, u32
->>> mask, u32 val)
->>> +{
->>> +	u32 tmp = readl(reg);
->>> +
->>> +	tmp &= ~mask;
->>> +	tmp |= val & mask;
->>> +	writel(tmp, reg);
->>> +}
->>> +
->>> +#endif
->>>
->>
->> These helpers are almost exactly duplicating what
->> regmap_update_bits() is doing.
->> I appreciate the effort to stop open-coding the same sequences over
->> and over by
->> adding such helper functions,
-> I agree with you.
->> but I think that the proper way of doing what you
->> are proposing is not to add custom functions but rather reuse what
->> the Linux APIs
->> give you.
-> I also like to use common APIs ASAP, but not found suitable ones.
-> This may be a problem, I found that some similar custom helps already
-> added under phy fold.
-> 
->>
->> What about doing a conversion to use regmap on this driver?
-> No, we don't use regmap here, these registers are monopolized by t-phy,
-> it's not syscon.
-> 
-> 
-
-Hello,
-
-The regmap API allows this kind of usage, registers don't necessarily have
-to be part of a syscon.
-
-Regards,
-- Angelo
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGVsbG8gVmlub2QsCgp0aGlzIGlzIHYzIG9mIHNlcmllcyBjb252ZXJ0aW5nIEEzNzIwIGNvbXBo
+eSB0byBuYXRpdmUga2VybmVsCmltcGxlbWVudGF0aW9uLgoKVGVzdGVkIG9uIFR1cnJpcyBNT1gg
+YW5kIEVTUFJFU1NPYmluICh0ZXN0ZWQgYWxsIHN1cHBvcnRlZCBQSFkgbW9kZXM6CmV0aGVybmV0
+LCBQQ0llLCBVU0IzLCBTQVRBKS4KCkNoYW5nZXMgc2luY2UgdjI6Ci0gcmVtb3ZlZCBkZXZpY2Ut
+dHJlZSBjaGFuZ2luZyBwYXRjaCwgR3JlZ29yeSBhcHBsaWVkIGl0IG9uIG12ZWJ1L2R0NjQKLSBj
+aGFuZ2VkIHJhdyBzcGluIGxvY2sgdG8gb3JkaW5hcnkgc3BpbiBsb2NrCi0gZml4ZWQgaW5kZW50
+YXRpb24gb2YgZ2JlX3BoeV9pbml0X2ZpeAotIHVzZSBGSUVMRF9QUkVQKCkgbWFjcm8KCkNoYW5n
+ZXMgc2luY2UgdjEgKGFsbCBjaGFuZ2VzIGluIHBhdGNoIDIvNik6Ci0gcmVmYWN0b3JlZCB0byB1
+c2UgR0VOTUFTSygpCi0gZml4ZWQgdmFyaW91cyByZWdpc3RlciBuYW1lcyB0byBjb25mb3JtIHRv
+IEZ1bmN0aW9uYWwgU3BlY2lmaWNhdGlvbgotIHJlZmFjdG9yZWQgdmFyaW91cyByZWdpc3RlciBu
+YW1lcyB0byBoYXZlIHVuaWZvcm0gbmFtaW5nCi0gcmVmYWN0b3JlZCByZWdpc3RlciBhY2Nlc3Mg
+aW50byBvbmUgZnVuY3Rpb24sIHdoaWNoIGRlY2lkZXMgd2hldGhlcgogIHRoZSBhY2Nlc3Mgc2hv
+dWxkIGJlIGRpcmVjdCBvciBpbmRpcmVjdCwgc28gYXMgdG8gbm90IGhhdmUgYWxsIHRoZXNlCiAg
+Y2hlY2tzIGRvbmUgZXZlcnl3aGVyZSBpbiB0aGUgY29kZQotIG1vdmVkIGFyb3VuZCBvbmUgcmVn
+aXN0ZXIgZGVmaW5pdGlvbiB0byBoYXZlIHRoZSByZWdpc3RlcnMgc29ydGVkCiAgYWNjb3JkaW5n
+IHRvIHRoZWlyIG9mZnNldAotIGFkZGVkIGNvbW1lbnRzIHRvIHNvbWUgcmVnaXN0ZXIgZGVmaW5p
+dGlvbnMKLSBhZGRlZCBzdXBwb3J0IGZvciBQSFkgcmVzZXQoKSBtZXRob2QKLSB3aGVuIGNoYW5n
+aW5nIFBIWSBtb2RlLCB0aGUgZHJpdmVyIG5vdyByZXNldHMgdGhlIFBIWSBhbmQgaXRzCiAgcmVn
+aXN0ZXJzIHRvIHB1dCB0aGUgUEhZIGluIGtub3duIHN0YXRlCi0gZml4ZWQgdGhlIHBvd2VyX29m
+ZigpIG1ldGhvZAotIGFkZGVkIHNwaW5sb2NrIGd1YXJkIHdoZW4gYWNjZXNzaW5nIFBIWSBTZWxl
+Y3RvciByZWdpc3Rlciwgc2luY2UgaXQKICBpcyBzaGFyZWQgYmV0d2VlbiB0aGUgUEhZcyBhbmQg
+c28gdGhlIFBIWSBtdXRleCBpcyBpbnN1ZmZpY2llbnQKLSB1cG9uIGRyaXZlciBwcm9iZSBjaGFu
+Z2VkIHRoZSBjYWxscyB0byBwb3dlcl9vZmYoKSB0byByZXNldCgpCgoKVGhlIG9yaWdpbmFsIGNv
+dmVyIGxldHRlciBzYWlkOgoKVGhlIFJQQyBjYWxsaW5nIHRvIEFSTSBUcnVzdGVkIEZpcm13YXJl
+IGltcGxlbWVudGF0aW9uIG9mIEFybWFkYSAzNzIwCmNvbXBoeSBkcml2ZXIgY2F1c2VkIHF1aXRl
+IGEgbnVtYmVyIG9mIGlzc3VlcyAoZXhwbGFpbmVkIG1vcmUgaW4gcGF0Y2ggMikuCgpUaGlzIHNl
+cmllcyBmaXhlcyB0aG9zZSBpc3N1ZXMgYnkgcmVpbXBsZW1lbnRpbmcgdGhlIGRyaXZlciB0byBu
+YXRpdmUKa2VybmVsIGltcGxlbWVudGF0aW9uLgoKVGhlIGxhc3QgMyBjb21taXRzIHJldmVydCBj
+b21taXRzIGluIEFIQ0ksIFVTQiwgYW5kIFBDSSBkcml2ZXJzLCB0aGF0IHdlcmUKaW50cm9kdWNl
+ZCB0aGVyZSBiZWNhdXNlIG9mIHRob3NlIGlzc3Vlcy4KClBhbGkgUm9ow6FyICg1KToKICBwaHk6
+IG1hcnZlbGw6IHBoeS1tdmVidS1hMzcwMC1jb21waHk6IFJlbW92ZSBwb3J0IGZyb20gZHJpdmVy
+CiAgICBjb25maWd1cmF0aW9uCiAgcGh5OiBtYXJ2ZWxsOiBwaHktbXZlYnUtYTM3MDAtY29tcGh5
+OiBBZGQgbmF0aXZlIGtlcm5lbCBpbXBsZW1lbnRhdGlvbgogIFJldmVydCAiYXRhOiBhaGNpOiBt
+dmVidTogTWFrZSBTQVRBIFBIWSBvcHRpb25hbCBmb3IgQXJtYWRhIDM3MjAiCiAgUmV2ZXJ0ICJ1
+c2I6IGhvc3Q6IHhoY2k6IG12ZWJ1OiBtYWtlIFVTQiAzLjAgUEhZIG9wdGlvbmFsIGZvciBBcm1h
+ZGEKICAgIDM3MjAiCiAgUmV2ZXJ0ICJQQ0k6IGFhcmR2YXJrOiBGaXggaW5pdGlhbGl6YXRpb24g
+d2l0aCBvbGQgTWFydmVsbCdzIEFybQogICAgVHJ1c3RlZCBGaXJtd2FyZSIKCiBkcml2ZXJzL2F0
+YS9haGNpLmggICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgIDIgLQogZHJpdmVycy9hdGEv
+YWhjaV9tdmVidS5jICAgICAgICAgICAgICAgICAgICAgfCAgICAyICstCiBkcml2ZXJzL2F0YS9s
+aWJhaGNpX3BsYXRmb3JtLmMgICAgICAgICAgICAgICB8ICAgIDIgKy0KIGRyaXZlcnMvcGNpL2Nv
+bnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMgICAgICAgIHwgICAgNCArLQogZHJpdmVycy9waHkvbWFy
+dmVsbC9waHktbXZlYnUtYTM3MDAtY29tcGh5LmMgfCAxMzY5ICsrKysrKysrKysrKysrKystLQog
+ZHJpdmVycy91c2IvaG9zdC94aGNpLW12ZWJ1LmMgICAgICAgICAgICAgICAgfCAgIDQyIC0KIGRy
+aXZlcnMvdXNiL2hvc3QveGhjaS1tdmVidS5oICAgICAgICAgICAgICAgIHwgICAgNiAtCiBkcml2
+ZXJzL3VzYi9ob3N0L3hoY2ktcGxhdC5jICAgICAgICAgICAgICAgICB8ICAgMjAgKy0KIGRyaXZl
+cnMvdXNiL2hvc3QveGhjaS1wbGF0LmggICAgICAgICAgICAgICAgIHwgICAgMSAtCiA5IGZpbGVz
+IGNoYW5nZWQsIDEyNDUgaW5zZXJ0aW9ucygrKSwgMjAzIGRlbGV0aW9ucygtKQoKLS0gCjIuMzQu
+MQoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
+eQo=
