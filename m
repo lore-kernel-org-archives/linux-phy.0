@@ -4,69 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B84E8C433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Jan 2022 18:41:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B8EBC433FE
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Jan 2022 20:42:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XSnbDNqURbm0Ll0ZnmiblPWt+6mpJmztKnK1yPR8l44=; b=YA6zW7hB8O7AGk
-	kCxp6tr9CYwGxN6TKvKYlchiYKYMeo3/NAHgPUvJRjbSK3/dXgcQvPURHgdgscBH6A7po6AJYLTTz
-	SxSapJcq08Ydc/USdScgGFhwublYnXv2QW4rp2opDD12XBwgdMdbkeCtGuL+OXJ3YytnuHVeSUpWy
-	O2t63X9qNeLAuNUbqOELNAIaL+cdObF4ecuuuiS1ZcYAnlgrPWD7sGo69yGXttX2nEZoUYfaQadok
-	sHJTvX/jDmbT8XsHccKf4Ha5R13VsqbWrM/icZlotPdPRvBqLDR3XfccEU+2UnotKMp65e04kyFn5
-	H/hU/WvHPsY+a6s2sI9Q==;
+	List-Owner; bh=9oQp8k2WgVOmZX2z+GqCHu27p+ycQL8cNouaIlb73DY=; b=LltGOPq0tHfaqe
+	brHOgqqFE+HB2X99EmJea3RZVGnwgItUm1bpo7SpLYnrGuYeiJCPB8lxLndC2m9R/YH2DxltjSuza
+	VO0cSmn7k0zHWEkLtjLMbOaoFxaHh1PuyeVxBfYbenTuShRv/jX1iogWtCKwkjdX69hoBfPJ2mFx4
+	eVuhNOPRRHWbNK9oOPLlaBP+jUZsXWLS+9sNimwzazQOD397rRylwF2wr/mGF5ebqGLbkawbHw6K1
+	CAiIx3QOptp9GxKn2DciaRSD6EGG2cOWDQLJzron23itHDbKYJet96XmoAVIuyZxuDF19/WpK2vkp
+	6Z1Emx26pfByik1SHVCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5BER-00FdLa-41; Wed, 05 Jan 2022 18:41:55 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1n5D7M-00FntU-Vt; Wed, 05 Jan 2022 20:42:44 +0000
+Received: from mail-ot1-x32c.google.com ([2607:f8b0:4864:20::32c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5BEO-00FdKP-3k
- for linux-phy@lists.infradead.org; Wed, 05 Jan 2022 18:41:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1641408112; x=1672944112;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=9jWTwzcroPAB6SjOmCs6Db9zm5qd0qwmZSImoWib7kg=;
- b=M1ScfJrVaAjlKFrce96lmYhESZF+4fKg4V+ANU0HdrR6HiSKP/aV+qBf
- Bxqeu3F8ipSkj/OVMxdIHQFd2tMGvHOnbiJRtxq2/NiycSuSWvGqZ1Yrp
- V4Hh0ULq75cksef7BIWOMM7i6dN9GdTgaQvqkQP0m9s2Z/XsDjEL5eUFF
- 6K5f8NcyOk3gaRykJmJ5/sA63kW6VebQ/+OT81bhW61o6xokVM4/ljWvs
- 7nHHzb2mztusv/neKxTCG7A5rw5P3D7tVwPPODMLE8enz/7dd9GqDGT1F
- pcGhVuSQEUdiBaAg64NCxyJVDMyERVydS0tgaCcr+0LbUO+tE4TjjQWhl g==;
-X-IronPort-AV: E=McAfee;i="6200,9189,10217"; a="222507006"
-X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="222507006"
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 05 Jan 2022 10:41:51 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="668198888"
-Received: from lkp-server01.sh.intel.com (HELO e357b3ef1427) ([10.239.97.150])
- by fmsmga001.fm.intel.com with ESMTP; 05 Jan 2022 10:41:49 -0800
-Received: from kbuild by e357b3ef1427 with local (Exim 4.92)
- (envelope-from <lkp@intel.com>)
- id 1n5BEK-000Gwl-QQ; Wed, 05 Jan 2022 18:41:48 +0000
-Date: Thu, 6 Jan 2022 02:41:35 +0800
-From: kernel test robot <lkp@intel.com>
-To: Miaoqian Lin <linmq006@gmail.com>
-Cc: llvm@lists.linux.dev, kbuild-all@lists.01.org, linmq006@gmail.com,
+ id 1n5D7K-00Fns9-11
+ for linux-phy@lists.infradead.org; Wed, 05 Jan 2022 20:42:43 +0000
+Received: by mail-ot1-x32c.google.com with SMTP id
+ t23-20020a9d7757000000b0059078ccf03dso716224otl.7
+ for <linux-phy@lists.infradead.org>; Wed, 05 Jan 2022 12:42:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=GqKtuhkPiMoPzGt6j5rJjkXpaGOAonB+8jqGdQJ30AU=;
+ b=k5quMqvUgiT2ESX4nHdif3wTGD4JTrRIyVSYUGAUzNuMwItyG7xSG/8T320z4D6/cl
+ QRJAdLwwVTNlyzaokVZczMhAawT9VIhvPnliKhWAAIzDzMTSAopHGcZ0EC6ROlnVHqJ7
+ ymRlqyvN27bEBwDj5TrQ+ZzJyr8Rgddjl3ayfk1BvgtVYh26/S9X8J1r1dKT9mtyc7vD
+ k+99Cyht5XtCpeS6jrEe4bngyOcjLnkOPBIaCx9Js9ZaSyfVcXWIsxsDYA3XjmA7dQeW
+ Co3A6uC9nV8yJgBH2CnhdgTFSCuQxXGu9xXdY905uUZqvbRa1amrD99COlZXiqSog0Uj
+ vyPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=GqKtuhkPiMoPzGt6j5rJjkXpaGOAonB+8jqGdQJ30AU=;
+ b=QOMWTEvGbblku5MEiVwr2sL5DSQLcy0uCY7vzWokM7fXCJuMQi0kU4jSqQ0hpE0AJk
+ 1+G0POiyekE6kTTRltqzReahvt1OeYEJyNzCgZemze/WbHdz4iQV7ebzu0BK9XfdTDpn
+ SNltmO1XnLxBySb/5+Q1nS6pobR0qVUjhUZ8Cy7looSCHpfIgNX9hViSNJ7nMpTyfeR5
+ ZStwqbVQtd2rTLPAWJT6ZDrcBIWvEtYPm4h9OzNUhRS49opY6DKyagsHOhnihtepjP8M
+ tq++XRERJeSxGeB+WSIMwL5v2AxnFBiB49dufy+kBiJOqxCOdAEUIzy8ovRJzPwx+GIB
+ sMeg==
+X-Gm-Message-State: AOAM533CT03m/vwO9G10pgDinqiO2cewPHO6Is6dV48F0dFqFWqjrAVD
+ QVw85GHe4O4otwoBWP1OaB5iRg==
+X-Google-Smtp-Source: ABdhPJwn09fZPAkcMlQq+rmMAWcs2U0izBZKiAM3vzg/0ktiMRpswUHye3oJ0Gn5utow2lQjPMgFRQ==
+X-Received: by 2002:a9d:313:: with SMTP id 19mr38383642otv.2.1641415359717;
+ Wed, 05 Jan 2022 12:42:39 -0800 (PST)
+Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id f27sm8430162otc.16.2022.01.05.12.42.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 05 Jan 2022 12:42:38 -0800 (PST)
+Date: Wed, 5 Jan 2022 12:43:28 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
  Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Tony Lindgren <tony@atomide.com>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: mapphone-mdm6600: Fix PM disable depth imbalance in
- phy_mdm6600_probe
-Message-ID: <202201060211.yT7coTKI-lkp@intel.com>
-References: <20220105123947.17946-1-linmq006@gmail.com>
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hans de Goede <hdegoede@redhat.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Daniel Scally <djrscally@gmail.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH 3/8] device property: Helper to match multiple connections
+Message-ID: <YdYC8DeF1i9a3RnP@ripper>
+References: <20211228052116.1748443-1-bjorn.andersson@linaro.org>
+ <20211228052116.1748443-4-bjorn.andersson@linaro.org>
+ <Yc17Ssug3neFFXKN@kuha.fi.intel.com>
+ <Yc7I3gZehc1lHn4Z@paasikivi.fi.intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220105123947.17946-1-linmq006@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <Yc7I3gZehc1lHn4Z@paasikivi.fi.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220105_104152_204040_DAEEBB4A 
-X-CRM114-Status: GOOD (  16.14  )
+X-CRM114-CacheID: sfid-20220105_124242_147275_29D341F0 
+X-CRM114-Status: GOOD (  45.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,139 +96,270 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Miaoqian,
+On Fri 31 Dec 01:09 PST 2021, Sakari Ailus wrote:
 
-Thank you for the patch! Perhaps something to improve:
+> Hi Bj=F6rn,
+> =
 
-[auto build test WARNING on linus/master]
-[also build test WARNING on v5.16-rc8 next-20220105]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch]
+> (And thanks to Heikki for cc'ing me!)
+> =
 
-url:    https://github.com/0day-ci/linux/commits/Miaoqian-Lin/phy-mapphone-mdm6600-Fix-PM-disable-depth-imbalance-in-phy_mdm6600_probe/20220105-204113
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git c9e6606c7fe92b50a02ce51dda82586ebdf99b48
-config: hexagon-randconfig-r035-20220105 (https://download.01.org/0day-ci/archive/20220106/202201060211.yT7coTKI-lkp@intel.com/config)
-compiler: clang version 14.0.0 (https://github.com/llvm/llvm-project d5b6e30ed3acad794dd0aec400e617daffc6cc3d)
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # https://github.com/0day-ci/linux/commit/62cad5a4dd9feab731b40f99e6e0bf7a2429f1ed
-        git remote add linux-review https://github.com/0day-ci/linux
-        git fetch --no-tags linux-review Miaoqian-Lin/phy-mapphone-mdm6600-Fix-PM-disable-depth-imbalance-in-phy_mdm6600_probe/20220105-204113
-        git checkout 62cad5a4dd9feab731b40f99e6e0bf7a2429f1ed
-        # save the config file to linux build tree
-        mkdir build_dir
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=hexagon SHELL=/bin/bash drivers/phy/motorola/
+> On Thu, Dec 30, 2021 at 11:26:34AM +0200, Heikki Krogerus wrote:
+> > +Andy, Dan and Sakari
+> > =
 
-If you fix the issue, kindly add following tag as appropriate
-Reported-by: kernel test robot <lkp@intel.com>
+> > On Mon, Dec 27, 2021 at 09:21:11PM -0800, Bjorn Andersson wrote:
+> > > In some cases multiple connections with the same connection id
+> > > needs to be resolved from a fwnode graph.
+> > > =
 
-All warnings (new ones prefixed by >>):
+> > > One such example is when separate hardware is used for performing mux=
+ing and/or
+> > > orientation switching of the SuperSpeed and SBU lines in a USB-C
+> > > connector. In this case the connector needs to belong to a graph with
+> > > multiple matching remote endpoints, and the TypeC controller needs to=
+ be
+> > > able to resolve them both.
+> > > =
 
->> drivers/phy/motorola/phy-mapphone-mdm6600.c:633:1: warning: unused label 'disable_pm' [-Wunused-label]
-   disable_pm:
-   ^~~~~~~~~~~
-   1 warning generated.
+> > > Add a new API that allows this kind of lookup.
+> > > =
+
+> > > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > > ---
+> > >  drivers/base/property.c  | 94 ++++++++++++++++++++++++++++++++++++++=
+++
+> > >  include/linux/property.h |  5 +++
+> > >  2 files changed, 99 insertions(+)
+> > > =
+
+> > > diff --git a/drivers/base/property.c b/drivers/base/property.c
+> > > index cbe4fa298413..0aa0296fd991 100644
+> > > --- a/drivers/base/property.c
+> > > +++ b/drivers/base/property.c
+> > > @@ -1180,6 +1180,36 @@ fwnode_graph_devcon_match(struct fwnode_handle=
+ *fwnode, const char *con_id,
+> > >  	return NULL;
+> > >  }
+> > >  =
+
+> > > +static unsigned int fwnode_graph_devcon_matches(struct fwnode_handle=
+ *fwnode,
+> > > +						const char *con_id, void *data,
+> > > +						devcon_match_fn_t match,
+> > > +						void **matches,
+> > > +						unsigned int matches_len)
+> > > +{
+> > > +	struct fwnode_handle *node;
+> > > +	struct fwnode_handle *ep;
+> > > +	unsigned int count =3D 0;
+> > > +	void *ret;
+> > > +
+> > > +	fwnode_graph_for_each_endpoint(fwnode, ep) {
+> > > +		if (count >=3D matches_len) {
+> > > +			fwnode_handle_put(ep);
+> > > +			return count;
+> > > +		}
+> > > +
+> > > +		node =3D fwnode_graph_get_remote_port_parent(ep);
+> > > +		if (!fwnode_device_is_available(node))
+> =
+
+> The reference to node needs to be put here.
+> =
 
 
-vim +/disable_pm +633 drivers/phy/motorola/phy-mapphone-mdm6600.c
+You're right, thanks!
 
-   555	
-   556	static int phy_mdm6600_probe(struct platform_device *pdev)
-   557	{
-   558		struct phy_mdm6600 *ddata;
-   559		int error;
-   560	
-   561		ddata = devm_kzalloc(&pdev->dev, sizeof(*ddata), GFP_KERNEL);
-   562		if (!ddata)
-   563			return -ENOMEM;
-   564	
-   565		INIT_DELAYED_WORK(&ddata->bootup_work,
-   566				  phy_mdm6600_deferred_power_on);
-   567		INIT_DELAYED_WORK(&ddata->status_work, phy_mdm6600_status);
-   568		INIT_DELAYED_WORK(&ddata->modem_wake_work, phy_mdm6600_modem_wake);
-   569		init_completion(&ddata->ack);
-   570	
-   571		ddata->dev = &pdev->dev;
-   572		platform_set_drvdata(pdev, ddata);
-   573	
-   574		/* Active state selected in phy_mdm6600_power_on() */
-   575		error = pinctrl_pm_select_sleep_state(ddata->dev);
-   576		if (error)
-   577			dev_warn(ddata->dev, "%s: error with sleep_state: %i\n",
-   578				 __func__, error);
-   579	
-   580		error = phy_mdm6600_init_lines(ddata);
-   581		if (error)
-   582			return error;
-   583	
-   584		phy_mdm6600_init_irq(ddata);
-   585		schedule_delayed_work(&ddata->bootup_work, 0);
-   586	
-   587		/*
-   588		 * See phy_mdm6600_device_power_on(). We should be able
-   589		 * to remove this eventually when ohci-platform can deal
-   590		 * with -EPROBE_DEFER.
-   591		 */
-   592		msleep(PHY_MDM6600_PHY_DELAY_MS + 500);
-   593	
-   594		/*
-   595		 * Enable PM runtime only after PHY has been powered up properly.
-   596		 * It is currently only needed after USB suspends mdm6600 and n_gsm
-   597		 * needs to access the device. We don't want to do this earlier as
-   598		 * gpio mode0 pin doubles as mdm6600 wake-up gpio.
-   599		 */
-   600		pm_runtime_use_autosuspend(ddata->dev);
-   601		pm_runtime_set_autosuspend_delay(ddata->dev,
-   602						 MDM6600_MODEM_IDLE_DELAY_MS);
-   603		pm_runtime_enable(ddata->dev);
-   604		error = pm_runtime_get_sync(ddata->dev);
-   605		if (error < 0) {
-   606			dev_warn(ddata->dev, "failed to wake modem: %i\n", error);
-   607			pm_runtime_put_noidle(ddata->dev);
-   608			goto cleanup;
-   609		}
-   610	
-   611		ddata->generic_phy = devm_phy_create(ddata->dev, NULL, &gpio_usb_ops);
-   612		if (IS_ERR(ddata->generic_phy)) {
-   613			error = PTR_ERR(ddata->generic_phy);
-   614			goto idle;
-   615		}
-   616	
-   617		phy_set_drvdata(ddata->generic_phy, ddata);
-   618	
-   619		ddata->phy_provider =
-   620			devm_of_phy_provider_register(ddata->dev,
-   621						      of_phy_simple_xlate);
-   622		if (IS_ERR(ddata->phy_provider))
-   623			error = PTR_ERR(ddata->phy_provider);
-   624	
-   625	idle:
-   626		pm_runtime_mark_last_busy(ddata->dev);
-   627		pm_runtime_put_autosuspend(ddata->dev);
-   628	
-   629	cleanup:
-   630		if (error < 0)
-   631			phy_mdm6600_device_power_off(ddata);
-   632	
- > 633	disable_pm:
-   634		pm_runtime_disable(ddata->dev);
-   635	
-   636		return error;
-   637	}
-   638	
+> > > +			continue;
+> > > +
+> > > +		ret =3D match(node, con_id, data);
+> > > +		fwnode_handle_put(node);
+> > > +
+> > > +		if (ret)
+> > > +			matches[count++] =3D ret;
+> > > +	}
+> > > +	return count;
+> > > +}
+> > > +
+> > >  static void *
+> > >  fwnode_devcon_match(struct fwnode_handle *fwnode, const char *con_id,
+> > >  		    void *data, devcon_match_fn_t match)
+> > > @@ -1202,6 +1232,35 @@ fwnode_devcon_match(struct fwnode_handle *fwno=
+de, const char *con_id,
+> > >  	return NULL;
+> > >  }
+> > >  =
 
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+> > > +static unsigned int fwnode_devcon_matches(struct fwnode_handle *fwno=
+de,
+> > > +					  const char *con_id, void *data,
+> > > +					  devcon_match_fn_t match,
+> > > +					  void **matches,
+> > > +					  unsigned int matches_len)
+> > > +{
+> > > +	struct fwnode_handle *node;
+> > > +	unsigned int count =3D 0;
+> > > +	void *ret;
+> > > +	int i;
+> =
 
--- 
+> unsigned int, please.
+> =
+
+
+Sounds good.
+
+> > > +
+> > > +	for (i =3D 0; ; i++) {
+> > > +		if (count >=3D matches_len)
+> > > +			return count;
+> > > +
+> > > +		node =3D fwnode_find_reference(fwnode, con_id, i);
+> > > +		if (IS_ERR(node))
+> > > +			break;
+> > > +
+> > > +		ret =3D match(node, NULL, data);
+> > > +		fwnode_handle_put(node);
+> > > +
+> > > +		if (ret)
+> > > +			matches[count++] =3D ret;
+> > > +	}
+> > > +
+> > > +	return count;
+> > > +}
+> > > +
+> > >  /**
+> > >   * fwnode_connection_find_match - Find connection from a device node
+> > >   * @fwnode: Device node with the connection
+> > > @@ -1229,3 +1288,38 @@ void *fwnode_connection_find_match(struct fwno=
+de_handle *fwnode,
+> > >  	return fwnode_devcon_match(fwnode, con_id, data, match);
+> > >  }
+> > >  EXPORT_SYMBOL_GPL(fwnode_connection_find_match);
+> > > +
+> > > +/**
+> > > + * fwnode_connection_find_matches - Find connections from a device n=
+ode
+> > > + * @fwnode: Device node with the connection
+> > > + * @con_id: Identifier for the connection
+> > > + * @data: Data for the match function
+> > > + * @match: Function to check and convert the connection description
+> > > + * @matches: Array of pointers to fill with matches
+> > > + * @matches_len: Length of @matches
+> > > + *
+> > > + * Find up to @matches_len connections with unique identifier @con_i=
+d between
+> > > + * @fwnode and other device nodes. @match will be used to convert the
+> > > + * connection description to data the caller is expecting to be retu=
+rned
+> > > + * through the @matches array.
+> =
+
+> If the caller allocates the matches array, how does it know how large it
+> should be? Is there a need to provide a way to count the matches before
+> writing them to an array? Most similar functions do that by just setting =
+the
+> array (matches) to NULL.
+> =
+
+
+This is a very relevant comment and I did look for ways to handle this
+as I came up with the patch.
+
+I think the typical mechanism would be to allow @matches to be NULL, in
+which case we iterate over objects and return the number of matches, so
+that the caller can allocate an appropriately sized array and call the
+API again.
+
+But the "match" function simply returns a pointer to something and
+looking at the example of the typec_{mux,switch} this pointer points to
+a member of an object which has a struct device which is refcounted.
+
+As such, we can't simply discard the returned object. We have to pass it
+back to the caller, whom knows what "match" did and is able to reverse
+that.
+
+I looked at changing the callback and I looked at using krealloc() to
+grow an array dynamically.
+
+
+But looking at the use case in mind; finding entities that might need to
+react to a USB Type-C event I have a need for 2 matches, and 3 seems
+plausible. Beyond that the largest of_graph I have ever dealt with has 6
+endpoints.
+
+While it isn't relevant to use this API for my 6-endpoint case, it would
+result in @matches having to be 48 bytes of pointers. And once the call
+returns, the actual number of pointers needed is known and the long-term
+storage can be re-allocated as necessary based on the return value.
+
+As such, I dropped the idea of making something fancier and more
+dynamic, for the sake of simplicity. Perhaps I'm missing some cool use
+case where this is infeasible?
+
+Regards,
+Bjorn
+
+> > > + *
+> > > + * Return: Number of matches resolved, of negative errno.
+> > > + */
+> > > +int fwnode_connection_find_matches(struct fwnode_handle *fwnode,
+> > > +				   const char *con_id, void *data,
+> > > +				   devcon_match_fn_t match,
+> > > +				   void **matches, unsigned int matches_len)
+> > > +{
+> > > +	unsigned int count;
+> > > +
+> > > +	if (!fwnode || !match || !matches)
+> > > +		return -EINVAL;
+> > > +
+> > > +	count =3D fwnode_graph_devcon_matches(fwnode, con_id, data, match,
+> > > +					    matches, matches_len);
+> > > +
+> > > +	return count + fwnode_devcon_matches(fwnode, con_id, data, match,
+> > > +					     matches + count,
+> > > +					     matches_len - count);
+> > > +}
+> > > +EXPORT_SYMBOL_GPL(fwnode_connection_find_matches);
+> > > diff --git a/include/linux/property.h b/include/linux/property.h
+> > > index 16f736c698a2..59484ccb260e 100644
+> > > --- a/include/linux/property.h
+> > > +++ b/include/linux/property.h
+> > > @@ -444,6 +444,11 @@ static inline void *device_connection_find_match=
+(struct device *dev,
+> > >  	return fwnode_connection_find_match(dev_fwnode(dev), con_id, data, =
+match);
+> > >  }
+> > >  =
+
+> > > +int fwnode_connection_find_matches(struct fwnode_handle *fwnode,
+> > > +				   const char *con_id, void *data,
+> > > +				   devcon_match_fn_t match,
+> > > +				   void **matches, unsigned int matches_len);
+> > > +
+> > >  /* -----------------------------------------------------------------=
+--------- */
+> > >  /* Software fwnode support - when HW description is incomplete or mi=
+ssing */
+> > >  =
+
+> =
+
+> -- =
+
+> Kind regards,
+> =
+
+> Sakari Ailus
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
