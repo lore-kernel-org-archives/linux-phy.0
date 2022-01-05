@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3C14C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Jan 2022 14:30:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B84E8C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Jan 2022 18:41:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jNeApNInNZgvnoiisTr7UwvvK+X3xrndcM01uDtfXwk=; b=EB14J76z7QDgp5
-	JRDDlDrwvzqgoKuErpp1a5Y8kLxwDbnS6PC3rL4DoZ/VdbRfgmtWdmGAnAksVTb/sMVQzm7ehXEQl
-	/utSJGEvjGL31RLwZmQDQxiCQGBEfdlTaYG08dwRBEPIWaGtjrefjwwf0JGWciUI/tEv82rxfHiX/
-	Gpweomh8qnnV8moD2UCHsPbeBO3WIZTLy29/O06Nu0+8vqP3D1nEdAg+nU11rqTtuYkX8/YRG4Shq
-	oj1QEISBxvdhswaKv7Snpn0wD8wjZ8LFZYSMbzFVfXT4bZSglC0PphxaUEWcMdcwbzdjaI0z58KUv
-	weGXEuqB4prFXUnKXyjQ==;
+	List-Owner; bh=XSnbDNqURbm0Ll0ZnmiblPWt+6mpJmztKnK1yPR8l44=; b=YA6zW7hB8O7AGk
+	kCxp6tr9CYwGxN6TKvKYlchiYKYMeo3/NAHgPUvJRjbSK3/dXgcQvPURHgdgscBH6A7po6AJYLTTz
+	SxSapJcq08Ydc/USdScgGFhwublYnXv2QW4rp2opDD12XBwgdMdbkeCtGuL+OXJ3YytnuHVeSUpWy
+	O2t63X9qNeLAuNUbqOELNAIaL+cdObF4ecuuuiS1ZcYAnlgrPWD7sGo69yGXttX2nEZoUYfaQadok
+	sHJTvX/jDmbT8XsHccKf4Ha5R13VsqbWrM/icZlotPdPRvBqLDR3XfccEU+2UnotKMp65e04kyFn5
+	H/hU/WvHPsY+a6s2sI9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n57J7-00Ezwq-1f; Wed, 05 Jan 2022 14:30:29 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1n5BER-00FdLa-41; Wed, 05 Jan 2022 18:41:55 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n57J4-00Ezvr-I6
- for linux-phy@lists.infradead.org; Wed, 05 Jan 2022 14:30:28 +0000
+ id 1n5BEO-00FdKP-3k
+ for linux-phy@lists.infradead.org; Wed, 05 Jan 2022 18:41:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1641393026; x=1672929026;
+ t=1641408112; x=1672944112;
  h=date:from:to:cc:subject:message-id:references:
  mime-version:in-reply-to;
- bh=vnFsN2Xd6VIYLzjaK59BLACJXya+VDbw2JZKFLsW7NU=;
- b=NgHTfhfC4VOmgqxyXibAhCFQLjjDGt+7iGoLPKiS4DL5lfozMzV63zjp
- Ut6fJMSgyKITXl+Y19Xja143I4d9c5FQ/Si+DMXcyXwvIvrDa5fOVxBBG
- 6bzZfVUqvOhgNSKOZL2Rs1N5bw7MJjUZDbYG12ZCWjjRPWyq/M8d06thh
- EomFAtcJWYD2QieIxusWKaug8D1Xd3TwoQdv5zeMX1T68LhsRVrRojZk9
- aUXS3FLMZ76oj80IX2xMxCfD1Mklg4ueb/GZYeaBLuBFTi2CbjPHZlz4f
- BMWR6Ko+0g7uTcFAh9JuXjlfkyTJSzTZ3G8LN4KMC1v3+WKcZe94cXsQ+ w==;
-X-IronPort-AV: E=McAfee;i="6200,9189,10217"; a="242250646"
-X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="242250646"
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 05 Jan 2022 06:16:45 -0800
+ bh=9jWTwzcroPAB6SjOmCs6Db9zm5qd0qwmZSImoWib7kg=;
+ b=M1ScfJrVaAjlKFrce96lmYhESZF+4fKg4V+ANU0HdrR6HiSKP/aV+qBf
+ Bxqeu3F8ipSkj/OVMxdIHQFd2tMGvHOnbiJRtxq2/NiycSuSWvGqZ1Yrp
+ V4Hh0ULq75cksef7BIWOMM7i6dN9GdTgaQvqkQP0m9s2Z/XsDjEL5eUFF
+ 6K5f8NcyOk3gaRykJmJ5/sA63kW6VebQ/+OT81bhW61o6xokVM4/ljWvs
+ 7nHHzb2mztusv/neKxTCG7A5rw5P3D7tVwPPODMLE8enz/7dd9GqDGT1F
+ pcGhVuSQEUdiBaAg64NCxyJVDMyERVydS0tgaCcr+0LbUO+tE4TjjQWhl g==;
+X-IronPort-AV: E=McAfee;i="6200,9189,10217"; a="222507006"
+X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="222507006"
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 05 Jan 2022 10:41:51 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="556543340"
+X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="668198888"
 Received: from lkp-server01.sh.intel.com (HELO e357b3ef1427) ([10.239.97.150])
- by orsmga001.jf.intel.com with ESMTP; 05 Jan 2022 06:16:43 -0800
+ by fmsmga001.fm.intel.com with ESMTP; 05 Jan 2022 10:41:49 -0800
 Received: from kbuild by e357b3ef1427 with local (Exim 4.92)
  (envelope-from <lkp@intel.com>)
- id 1n575m-000GiW-I6; Wed, 05 Jan 2022 14:16:42 +0000
-Date: Wed, 5 Jan 2022 22:16:26 +0800
+ id 1n5BEK-000Gwl-QQ; Wed, 05 Jan 2022 18:41:48 +0000
+Date: Thu, 6 Jan 2022 02:41:35 +0800
 From: kernel test robot <lkp@intel.com>
 To: Miaoqian Lin <linmq006@gmail.com>
 Cc: llvm@lists.linux.dev, kbuild-all@lists.01.org, linmq006@gmail.com,
  Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Randy Dunlap <rdunlap@infradead.org>,
- Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: ti: Add missing pm_runtime_disable() in probe
- function
-Message-ID: <202201052240.Rjl0xRWG-lkp@intel.com>
-References: <20220105090225.20507-1-linmq006@gmail.com>
+ Vinod Koul <vkoul@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: mapphone-mdm6600: Fix PM disable depth imbalance in
+ phy_mdm6600_probe
+Message-ID: <202201060211.yT7coTKI-lkp@intel.com>
+References: <20220105123947.17946-1-linmq006@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220105090225.20507-1-linmq006@gmail.com>
+In-Reply-To: <20220105123947.17946-1-linmq006@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220105_063026_713702_079195F0 
-X-CRM114-Status: GOOD (  17.81  )
+X-CRM114-CacheID: sfid-20220105_104152_204040_DAEEBB4A 
+X-CRM114-Status: GOOD (  16.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,131 +93,118 @@ Thank you for the patch! Perhaps something to improve:
 And when submitting patch, we suggest to use '--base' as documented in
 https://git-scm.com/docs/git-format-patch]
 
-url:    https://github.com/0day-ci/linux/commits/Miaoqian-Lin/phy-ti-Add-missing-pm_runtime_disable-in-probe-function/20220105-170334
+url:    https://github.com/0day-ci/linux/commits/Miaoqian-Lin/phy-mapphone-mdm6600-Fix-PM-disable-depth-imbalance-in-phy_mdm6600_probe/20220105-204113
 base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git c9e6606c7fe92b50a02ce51dda82586ebdf99b48
-config: riscv-randconfig-r013-20220105 (https://download.01.org/0day-ci/archive/20220105/202201052240.Rjl0xRWG-lkp@intel.com/config)
+config: hexagon-randconfig-r035-20220105 (https://download.01.org/0day-ci/archive/20220106/202201060211.yT7coTKI-lkp@intel.com/config)
 compiler: clang version 14.0.0 (https://github.com/llvm/llvm-project d5b6e30ed3acad794dd0aec400e617daffc6cc3d)
 reproduce (this is a W=1 build):
         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
         chmod +x ~/bin/make.cross
-        # install riscv cross compiling tool for clang build
-        # apt-get install binutils-riscv64-linux-gnu
-        # https://github.com/0day-ci/linux/commit/dc404b65a54364bb2937baba85bb37960c514167
+        # https://github.com/0day-ci/linux/commit/62cad5a4dd9feab731b40f99e6e0bf7a2429f1ed
         git remote add linux-review https://github.com/0day-ci/linux
-        git fetch --no-tags linux-review Miaoqian-Lin/phy-ti-Add-missing-pm_runtime_disable-in-probe-function/20220105-170334
-        git checkout dc404b65a54364bb2937baba85bb37960c514167
+        git fetch --no-tags linux-review Miaoqian-Lin/phy-mapphone-mdm6600-Fix-PM-disable-depth-imbalance-in-phy_mdm6600_probe/20220105-204113
+        git checkout 62cad5a4dd9feab731b40f99e6e0bf7a2429f1ed
         # save the config file to linux build tree
         mkdir build_dir
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=riscv SHELL=/bin/bash drivers/phy/ti/
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=hexagon SHELL=/bin/bash drivers/phy/motorola/
 
 If you fix the issue, kindly add following tag as appropriate
 Reported-by: kernel test robot <lkp@intel.com>
 
 All warnings (new ones prefixed by >>):
 
->> drivers/phy/ti/phy-am654-serdes.c:841:1: warning: unused label 'err_pm_disable' [-Wunused-label]
-   err_pm_disable:
-   ^~~~~~~~~~~~~~~
+>> drivers/phy/motorola/phy-mapphone-mdm6600.c:633:1: warning: unused label 'disable_pm' [-Wunused-label]
+   disable_pm:
+   ^~~~~~~~~~~
    1 warning generated.
 
 
-vim +/err_pm_disable +841 drivers/phy/ti/phy-am654-serdes.c
+vim +/disable_pm +633 drivers/phy/motorola/phy-mapphone-mdm6600.c
 
-   751	
-   752	static int serdes_am654_probe(struct platform_device *pdev)
-   753	{
-   754		struct phy_provider *phy_provider;
-   755		struct device *dev = &pdev->dev;
-   756		struct device_node *node = dev->of_node;
-   757		struct clk_onecell_data *clk_data;
-   758		struct serdes_am654 *am654_phy;
-   759		struct mux_control *control;
-   760		const char *clock_name;
-   761		struct regmap *regmap;
-   762		void __iomem *base;
-   763		struct phy *phy;
-   764		int ret;
-   765		int i;
-   766	
-   767		am654_phy = devm_kzalloc(dev, sizeof(*am654_phy), GFP_KERNEL);
-   768		if (!am654_phy)
-   769			return -ENOMEM;
-   770	
-   771		base = devm_platform_ioremap_resource(pdev, 0);
-   772		if (IS_ERR(base))
-   773			return PTR_ERR(base);
-   774	
-   775		regmap = devm_regmap_init_mmio(dev, base, &serdes_am654_regmap_config);
-   776		if (IS_ERR(regmap)) {
-   777			dev_err(dev, "Failed to initialize regmap\n");
-   778			return PTR_ERR(regmap);
-   779		}
-   780	
-   781		control = devm_mux_control_get(dev, NULL);
-   782		if (IS_ERR(control))
-   783			return PTR_ERR(control);
-   784	
-   785		am654_phy->dev = dev;
-   786		am654_phy->of_node = node;
-   787		am654_phy->regmap = regmap;
-   788		am654_phy->control = control;
-   789		am654_phy->type = PHY_NONE;
-   790	
-   791		ret = serdes_am654_regfield_init(am654_phy);
-   792		if (ret) {
-   793			dev_err(dev, "Failed to initialize regfields\n");
-   794			return ret;
-   795		}
-   796	
-   797		platform_set_drvdata(pdev, am654_phy);
-   798	
-   799		for (i = 0; i < SERDES_NUM_CLOCKS; i++) {
-   800			ret = of_property_read_string_index(node, "clock-output-names",
-   801							    i, &clock_name);
-   802			if (ret) {
-   803				dev_err(dev, "Failed to get clock name\n");
-   804				return ret;
-   805			}
-   806	
-   807			ret = serdes_am654_clk_register(am654_phy, clock_name, i);
-   808			if (ret) {
-   809				dev_err(dev, "Failed to initialize clock %s\n",
-   810					clock_name);
-   811				return ret;
-   812			}
-   813		}
-   814	
-   815		clk_data = &am654_phy->clk_data;
-   816		clk_data->clks = am654_phy->clks;
-   817		clk_data->clk_num = SERDES_NUM_CLOCKS;
-   818		ret = of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
-   819		if (ret)
-   820			return ret;
-   821	
-   822		pm_runtime_enable(dev);
-   823	
-   824		phy = devm_phy_create(dev, NULL, &ops);
-   825		if (IS_ERR(phy)) {
-   826			ret = PTR_ERR(phy);
-   827			goto clk_err;
-   828		}
-   829	
-   830		phy_set_drvdata(phy, am654_phy);
-   831		phy_provider = devm_of_phy_provider_register(dev, serdes_am654_xlate);
-   832		if (IS_ERR(phy_provider)) {
-   833			ret = PTR_ERR(phy_provider);
-   834			goto clk_err;
-   835		}
-   836	
-   837		return 0;
-   838	
-   839	clk_err:
-   840		of_clk_del_provider(node);
- > 841	err_pm_disable:
-   842		pm_runtime_disable(dev);
-   843		return ret;
-   844	}
-   845	
+   555	
+   556	static int phy_mdm6600_probe(struct platform_device *pdev)
+   557	{
+   558		struct phy_mdm6600 *ddata;
+   559		int error;
+   560	
+   561		ddata = devm_kzalloc(&pdev->dev, sizeof(*ddata), GFP_KERNEL);
+   562		if (!ddata)
+   563			return -ENOMEM;
+   564	
+   565		INIT_DELAYED_WORK(&ddata->bootup_work,
+   566				  phy_mdm6600_deferred_power_on);
+   567		INIT_DELAYED_WORK(&ddata->status_work, phy_mdm6600_status);
+   568		INIT_DELAYED_WORK(&ddata->modem_wake_work, phy_mdm6600_modem_wake);
+   569		init_completion(&ddata->ack);
+   570	
+   571		ddata->dev = &pdev->dev;
+   572		platform_set_drvdata(pdev, ddata);
+   573	
+   574		/* Active state selected in phy_mdm6600_power_on() */
+   575		error = pinctrl_pm_select_sleep_state(ddata->dev);
+   576		if (error)
+   577			dev_warn(ddata->dev, "%s: error with sleep_state: %i\n",
+   578				 __func__, error);
+   579	
+   580		error = phy_mdm6600_init_lines(ddata);
+   581		if (error)
+   582			return error;
+   583	
+   584		phy_mdm6600_init_irq(ddata);
+   585		schedule_delayed_work(&ddata->bootup_work, 0);
+   586	
+   587		/*
+   588		 * See phy_mdm6600_device_power_on(). We should be able
+   589		 * to remove this eventually when ohci-platform can deal
+   590		 * with -EPROBE_DEFER.
+   591		 */
+   592		msleep(PHY_MDM6600_PHY_DELAY_MS + 500);
+   593	
+   594		/*
+   595		 * Enable PM runtime only after PHY has been powered up properly.
+   596		 * It is currently only needed after USB suspends mdm6600 and n_gsm
+   597		 * needs to access the device. We don't want to do this earlier as
+   598		 * gpio mode0 pin doubles as mdm6600 wake-up gpio.
+   599		 */
+   600		pm_runtime_use_autosuspend(ddata->dev);
+   601		pm_runtime_set_autosuspend_delay(ddata->dev,
+   602						 MDM6600_MODEM_IDLE_DELAY_MS);
+   603		pm_runtime_enable(ddata->dev);
+   604		error = pm_runtime_get_sync(ddata->dev);
+   605		if (error < 0) {
+   606			dev_warn(ddata->dev, "failed to wake modem: %i\n", error);
+   607			pm_runtime_put_noidle(ddata->dev);
+   608			goto cleanup;
+   609		}
+   610	
+   611		ddata->generic_phy = devm_phy_create(ddata->dev, NULL, &gpio_usb_ops);
+   612		if (IS_ERR(ddata->generic_phy)) {
+   613			error = PTR_ERR(ddata->generic_phy);
+   614			goto idle;
+   615		}
+   616	
+   617		phy_set_drvdata(ddata->generic_phy, ddata);
+   618	
+   619		ddata->phy_provider =
+   620			devm_of_phy_provider_register(ddata->dev,
+   621						      of_phy_simple_xlate);
+   622		if (IS_ERR(ddata->phy_provider))
+   623			error = PTR_ERR(ddata->phy_provider);
+   624	
+   625	idle:
+   626		pm_runtime_mark_last_busy(ddata->dev);
+   627		pm_runtime_put_autosuspend(ddata->dev);
+   628	
+   629	cleanup:
+   630		if (error < 0)
+   631			phy_mdm6600_device_power_off(ddata);
+   632	
+ > 633	disable_pm:
+   634		pm_runtime_disable(ddata->dev);
+   635	
+   636		return error;
+   637	}
+   638	
 
 ---
 0-DAY CI Kernel Test Service, Intel Corporation
