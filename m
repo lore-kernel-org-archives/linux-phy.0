@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23E79C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Jan 2022 12:39:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3C14C433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Jan 2022 14:30:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3xoAMjjXeRYmoPTmmwWLKL8AG9yFYD+FiVm/jjvhrSU=; b=zJwACb53XN/b7i
-	/iqQowfplUb0qGCzAh2MOGdVB0ilKVWFMYT+IRJ2VJ9xuxjB0H5MIYXeQB7EQUi3d3/tWGVtZGczS
-	cwhEreZBbus5rOOK07V2JRMKSnoa3FojdhS8us3HsDqgQERp5LbxIo20RbGZGgxJoGxj4xWpaGsdX
-	gWDw1+Sw13HZ4JxZ7EdmXyECRp7e6ysl/FZVn/5Ry7AH8oBXAluBagdhInJsAHvU3T396KCU1AUb0
-	lV6l5g3f7bSMROb61l5hJXHHFOzwLA+Tn4njWo5u7XmWO5JvZgdmJn8uG4Q+0JMdTq9VVRWFESUDR
-	lth2dDybHCgcaf2jYAPQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jNeApNInNZgvnoiisTr7UwvvK+X3xrndcM01uDtfXwk=; b=EB14J76z7QDgp5
+	JRDDlDrwvzqgoKuErpp1a5Y8kLxwDbnS6PC3rL4DoZ/VdbRfgmtWdmGAnAksVTb/sMVQzm7ehXEQl
+	/utSJGEvjGL31RLwZmQDQxiCQGBEfdlTaYG08dwRBEPIWaGtjrefjwwf0JGWciUI/tEv82rxfHiX/
+	Gpweomh8qnnV8moD2UCHsPbeBO3WIZTLy29/O06Nu0+8vqP3D1nEdAg+nU11rqTtuYkX8/YRG4Shq
+	oj1QEISBxvdhswaKv7Snpn0wD8wjZ8LFZYSMbzFVfXT4bZSglC0PphxaUEWcMdcwbzdjaI0z58KUv
+	weGXEuqB4prFXUnKXyjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n55a7-00EnYp-Jq; Wed, 05 Jan 2022 12:39:55 +0000
-Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
+	id 1n57J7-00Ezwq-1f; Wed, 05 Jan 2022 14:30:29 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n55a5-00EnYL-CU
- for linux-phy@lists.infradead.org; Wed, 05 Jan 2022 12:39:54 +0000
-Received: by mail-pj1-x1030.google.com with SMTP id gp5so501288pjb.0
- for <linux-phy@lists.infradead.org>; Wed, 05 Jan 2022 04:39:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id;
- bh=rv3hpFNoQ1qNkYinvHNFrNCrgnypW56t0xtrMZ/Tcys=;
- b=OJHBv7PiyuHflqragaXTgXu3E7LYLJ243q9wcpw9FGWUe1iH6uKRw2vj54dfKGMPe8
- njABLnC/HjMGzo9baUaFm4RIqUn9JpfV3tdjYoKLdyeIcEMNTQSZUTRR9G/Iu9BjwBsx
- vubYUEPucXSKBIk/PWvGu7M6zqzvG3Y2AKUxB13ByXrsLnDF0mlBuRg+T24bLbdAU20m
- QwH6wt/wLoZF3bcQXnU6QIj12K0Fprr5Y3wtPEfmSAS5XT//J9RCmOK/vWrkHtrq09nY
- XM1s0LOORSvo+HTU2l98VRCNIH9XBRIzCarGNxIvfnWIlMS8HZL34dkuzsZAZkAxl3Fc
- iGjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=rv3hpFNoQ1qNkYinvHNFrNCrgnypW56t0xtrMZ/Tcys=;
- b=3DPmC51hIEbMT9vNnN2wjK9oAJalydq5UuPgXdNkX19jdumt/3wlwVCWiZSf2ODHMm
- BPWaTskjlyBVDsFygL8YU0YPWC5Y7SKXVLmsD/EgL2J19qptzEr0anNlJHXCK0FmSFUt
- lqq7v+WjoE7X0V9/QybHS1+U8VUMvHh2lJd1gC/2IipKmTwWHqTW48+oMOJVlm4WwAYb
- 7Vjx5TBsuIJdKZngdCkz17LQeS+4bGJYmEHsy736WusOY1rrO6uTmlMPgj6+nUgEvt7W
- 5s06htRr9kPpcy+mGds1QPMKvTZkkIlv5Z32bLByB1T5o/aMOi84+KQwWw2JPDNRfLZP
- tqcQ==
-X-Gm-Message-State: AOAM533ftM4jmHrvFc3BjMddgXCCfjxm55pUBElMSkA7bsN3AeX29nrQ
- AReEDmZeNjOj0ehg7b6hoKc=
-X-Google-Smtp-Source: ABdhPJwjPVuYIAQ6/OKekHMB/mC7cv9yZsPZ3C0OdkfEGpypRfrigp2wRx9yTMyuTypK8muinHXWUQ==
-X-Received: by 2002:a17:90b:1651:: with SMTP id
- il17mr3946413pjb.10.1641386392590; 
- Wed, 05 Jan 2022 04:39:52 -0800 (PST)
-Received: from localhost.localdomain ([159.226.95.43])
- by smtp.googlemail.com with ESMTPSA id t191sm37769008pgd.3.2022.01.05.04.39.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 05 Jan 2022 04:39:52 -0800 (PST)
-From: Miaoqian Lin <linmq006@gmail.com>
-To: 
-Cc: linmq006@gmail.com, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Tony Lindgren <tony@atomide.com>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: mapphone-mdm6600: Fix PM disable depth imbalance in
- phy_mdm6600_probe
-Date: Wed,  5 Jan 2022 12:39:42 +0000
-Message-Id: <20220105123947.17946-1-linmq006@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1n57J4-00Ezvr-I6
+ for linux-phy@lists.infradead.org; Wed, 05 Jan 2022 14:30:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+ t=1641393026; x=1672929026;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=vnFsN2Xd6VIYLzjaK59BLACJXya+VDbw2JZKFLsW7NU=;
+ b=NgHTfhfC4VOmgqxyXibAhCFQLjjDGt+7iGoLPKiS4DL5lfozMzV63zjp
+ Ut6fJMSgyKITXl+Y19Xja143I4d9c5FQ/Si+DMXcyXwvIvrDa5fOVxBBG
+ 6bzZfVUqvOhgNSKOZL2Rs1N5bw7MJjUZDbYG12ZCWjjRPWyq/M8d06thh
+ EomFAtcJWYD2QieIxusWKaug8D1Xd3TwoQdv5zeMX1T68LhsRVrRojZk9
+ aUXS3FLMZ76oj80IX2xMxCfD1Mklg4ueb/GZYeaBLuBFTi2CbjPHZlz4f
+ BMWR6Ko+0g7uTcFAh9JuXjlfkyTJSzTZ3G8LN4KMC1v3+WKcZe94cXsQ+ w==;
+X-IronPort-AV: E=McAfee;i="6200,9189,10217"; a="242250646"
+X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="242250646"
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 05 Jan 2022 06:16:45 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.88,264,1635231600"; d="scan'208";a="556543340"
+Received: from lkp-server01.sh.intel.com (HELO e357b3ef1427) ([10.239.97.150])
+ by orsmga001.jf.intel.com with ESMTP; 05 Jan 2022 06:16:43 -0800
+Received: from kbuild by e357b3ef1427 with local (Exim 4.92)
+ (envelope-from <lkp@intel.com>)
+ id 1n575m-000GiW-I6; Wed, 05 Jan 2022 14:16:42 +0000
+Date: Wed, 5 Jan 2022 22:16:26 +0800
+From: kernel test robot <lkp@intel.com>
+To: Miaoqian Lin <linmq006@gmail.com>
+Cc: llvm@lists.linux.dev, kbuild-all@lists.01.org, linmq006@gmail.com,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Randy Dunlap <rdunlap@infradead.org>,
+ Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: ti: Add missing pm_runtime_disable() in probe
+ function
+Message-ID: <202201052240.Rjl0xRWG-lkp@intel.com>
+References: <20220105090225.20507-1-linmq006@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220105090225.20507-1-linmq006@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220105_043953_465762_FBBDB29C 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20220105_063026_713702_079195F0 
+X-CRM114-Status: GOOD (  17.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,39 +79,150 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pm_runtime_enable will increase power disable depth.
-If the probe fails, we should use pm_runtime_disable() to balance
-pm_runtime_enable().
+Hi Miaoqian,
 
-Fixes: f7f50b2 ("phy: mapphone-mdm6600: Add runtime PM support for n_gsm on USB suspend")
-Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+Thank you for the patch! Perhaps something to improve:
+
+[auto build test WARNING on linus/master]
+[also build test WARNING on v5.16-rc8 next-20220105]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch]
+
+url:    https://github.com/0day-ci/linux/commits/Miaoqian-Lin/phy-ti-Add-missing-pm_runtime_disable-in-probe-function/20220105-170334
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git c9e6606c7fe92b50a02ce51dda82586ebdf99b48
+config: riscv-randconfig-r013-20220105 (https://download.01.org/0day-ci/archive/20220105/202201052240.Rjl0xRWG-lkp@intel.com/config)
+compiler: clang version 14.0.0 (https://github.com/llvm/llvm-project d5b6e30ed3acad794dd0aec400e617daffc6cc3d)
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # install riscv cross compiling tool for clang build
+        # apt-get install binutils-riscv64-linux-gnu
+        # https://github.com/0day-ci/linux/commit/dc404b65a54364bb2937baba85bb37960c514167
+        git remote add linux-review https://github.com/0day-ci/linux
+        git fetch --no-tags linux-review Miaoqian-Lin/phy-ti-Add-missing-pm_runtime_disable-in-probe-function/20220105-170334
+        git checkout dc404b65a54364bb2937baba85bb37960c514167
+        # save the config file to linux build tree
+        mkdir build_dir
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=riscv SHELL=/bin/bash drivers/phy/ti/
+
+If you fix the issue, kindly add following tag as appropriate
+Reported-by: kernel test robot <lkp@intel.com>
+
+All warnings (new ones prefixed by >>):
+
+>> drivers/phy/ti/phy-am654-serdes.c:841:1: warning: unused label 'err_pm_disable' [-Wunused-label]
+   err_pm_disable:
+   ^~~~~~~~~~~~~~~
+   1 warning generated.
+
+
+vim +/err_pm_disable +841 drivers/phy/ti/phy-am654-serdes.c
+
+   751	
+   752	static int serdes_am654_probe(struct platform_device *pdev)
+   753	{
+   754		struct phy_provider *phy_provider;
+   755		struct device *dev = &pdev->dev;
+   756		struct device_node *node = dev->of_node;
+   757		struct clk_onecell_data *clk_data;
+   758		struct serdes_am654 *am654_phy;
+   759		struct mux_control *control;
+   760		const char *clock_name;
+   761		struct regmap *regmap;
+   762		void __iomem *base;
+   763		struct phy *phy;
+   764		int ret;
+   765		int i;
+   766	
+   767		am654_phy = devm_kzalloc(dev, sizeof(*am654_phy), GFP_KERNEL);
+   768		if (!am654_phy)
+   769			return -ENOMEM;
+   770	
+   771		base = devm_platform_ioremap_resource(pdev, 0);
+   772		if (IS_ERR(base))
+   773			return PTR_ERR(base);
+   774	
+   775		regmap = devm_regmap_init_mmio(dev, base, &serdes_am654_regmap_config);
+   776		if (IS_ERR(regmap)) {
+   777			dev_err(dev, "Failed to initialize regmap\n");
+   778			return PTR_ERR(regmap);
+   779		}
+   780	
+   781		control = devm_mux_control_get(dev, NULL);
+   782		if (IS_ERR(control))
+   783			return PTR_ERR(control);
+   784	
+   785		am654_phy->dev = dev;
+   786		am654_phy->of_node = node;
+   787		am654_phy->regmap = regmap;
+   788		am654_phy->control = control;
+   789		am654_phy->type = PHY_NONE;
+   790	
+   791		ret = serdes_am654_regfield_init(am654_phy);
+   792		if (ret) {
+   793			dev_err(dev, "Failed to initialize regfields\n");
+   794			return ret;
+   795		}
+   796	
+   797		platform_set_drvdata(pdev, am654_phy);
+   798	
+   799		for (i = 0; i < SERDES_NUM_CLOCKS; i++) {
+   800			ret = of_property_read_string_index(node, "clock-output-names",
+   801							    i, &clock_name);
+   802			if (ret) {
+   803				dev_err(dev, "Failed to get clock name\n");
+   804				return ret;
+   805			}
+   806	
+   807			ret = serdes_am654_clk_register(am654_phy, clock_name, i);
+   808			if (ret) {
+   809				dev_err(dev, "Failed to initialize clock %s\n",
+   810					clock_name);
+   811				return ret;
+   812			}
+   813		}
+   814	
+   815		clk_data = &am654_phy->clk_data;
+   816		clk_data->clks = am654_phy->clks;
+   817		clk_data->clk_num = SERDES_NUM_CLOCKS;
+   818		ret = of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
+   819		if (ret)
+   820			return ret;
+   821	
+   822		pm_runtime_enable(dev);
+   823	
+   824		phy = devm_phy_create(dev, NULL, &ops);
+   825		if (IS_ERR(phy)) {
+   826			ret = PTR_ERR(phy);
+   827			goto clk_err;
+   828		}
+   829	
+   830		phy_set_drvdata(phy, am654_phy);
+   831		phy_provider = devm_of_phy_provider_register(dev, serdes_am654_xlate);
+   832		if (IS_ERR(phy_provider)) {
+   833			ret = PTR_ERR(phy_provider);
+   834			goto clk_err;
+   835		}
+   836	
+   837		return 0;
+   838	
+   839	clk_err:
+   840		of_clk_del_provider(node);
+ > 841	err_pm_disable:
+   842		pm_runtime_disable(dev);
+   843		return ret;
+   844	}
+   845	
+
 ---
- drivers/phy/motorola/phy-mapphone-mdm6600.c | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/drivers/phy/motorola/phy-mapphone-mdm6600.c b/drivers/phy/motorola/phy-mapphone-mdm6600.c
-index 5172971f4c36..14666750946c 100644
---- a/drivers/phy/motorola/phy-mapphone-mdm6600.c
-+++ b/drivers/phy/motorola/phy-mapphone-mdm6600.c
-@@ -630,6 +630,9 @@ static int phy_mdm6600_probe(struct platform_device *pdev)
- 	if (error < 0)
- 		phy_mdm6600_device_power_off(ddata);
- 
-+disable_pm:
-+	pm_runtime_disable(ddata->dev);
-+
- 	return error;
- }
- 
--- 
-2.17.1
-
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 -- 
 linux-phy mailing list
