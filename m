@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 572E6C433F5
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jan 2022 08:26:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC8A4C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jan 2022 08:48:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9qXhrjlLDHaz9hCU23rC9J12XZNKzGU3M+sFP6Curro=; b=Gvfq6R9wE+vKXX
-	nx5k3LHrq3MBsUGIj7WOy2aa4MHa3X7nneXiCvdR/nRI/JFjopg0X9epC5FI03Xy5O78ZMYKTbL32
-	2uJBOM31YGXW6QgPn19/kBXcpdzFBaOVdYHjaZUCKDx9or6G0yZrgWrywhuj4w1pkXGuMDEP9wLKe
-	6WZI+14T5LlIVfSv0QhlkxT7yp5anNrKDOY8p3/TSxi34XjC3mrErqaKEAuKNvn1ERgmbCKtzpAdF
-	QSDh5alLe9jt2SBMUPKEU32nUqU51H6Q74okwmyXXpNmWp5vuMe2mH+66ZTAGEUxVXPahQwVPYNh6
-	hR8MDhnqTaBrC0BUtUBg==;
+	List-Owner; bh=6H8pAskOTOdYAEiOCSTE46iYEYk/10VwwsWF3VoZiPE=; b=BFER+ynv6b7UXs
+	PuHyenXs/d4TPtE94bSsAWWu51j4UnexKpPwKD7hIGUnq3U523jIBWTN/D0MO+oi2Wsw4rw/uokV2
+	AG9wfIX1NMzq/2FSIWlMrpyRlGcYArSOIbUA2/f1VuQ/BLRdkE6wFTd0wO8yW5TTnwkVXLokalrhR
+	lU8QgpQiqwRTFUxr7gm1MuLTKYxaPGgbDdFJrAI8uot077aM7XBHIFIWSVd2DKc4p1Vrm0XkThNRQ
+	NOhQNyQznAeFXAev5lK4ddIt7h/VpOX6EcEBLkVo6w1huRYmVIiaR5IV6RSmVlRNKjb4yn/un3iQO
+	tKw0lZoidRImHakN91JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5O6Z-00H3hZ-Nm; Thu, 06 Jan 2022 08:26:39 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1n5OS9-00H7Ht-Dt; Thu, 06 Jan 2022 08:48:57 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5O6H-00H3ZJ-8n; Thu, 06 Jan 2022 08:26:24 +0000
-X-UUID: 19a24ca25ac24170870bd9436f1bfd25-20220106
+ id 1n5ORr-00H7C7-Ps; Thu, 06 Jan 2022 08:48:41 +0000
+X-UUID: 5aef2650074d4d029da16bb365dea8e4-20220106
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=rgVN23E145Q0AI9mr0pPYudysTh2ES8fpBmhms7Mpz4=; 
- b=rVKnq68mnuY0X2AUhlErmtZ2Q5Uon3PtqkPcvemdwPNCIt7G3cMo9vum5HPbUNDaOLa2jJJNggYE0qskLWarUch16kbgDOfEcBBkoTmTNQNuzZ+wjq6Rn4mHEGd5KFwg/I1wmU44SknJBq6fCGu7LNN0DuQAiW06dx8ShwDK0Vw=;
-X-UUID: 19a24ca25ac24170870bd9436f1bfd25-20220106
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=uB9XI7j4SB26amz3x7QKvwzxoWm0mOvg3a8f7hiIa5o=; 
+ b=kho4X7gxWwiWEERtXhKw0DfZLLr09J8izqqaEiAjiH8+bOtJgL2DGiSL5nID8ORQA85hGOvmGYNDnCu5+9/8y1EoHrsiiEfnWK7yxM8nKQMJ8Zjbj1/WvUqf/msWCq8jZ6KwHLywObZsbtlLTYgWWvw+EQjz0GlExK6wwahfcwQ=;
+X-UUID: 5aef2650074d4d029da16bb365dea8e4-20220106
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1132981332; Thu, 06 Jan 2022 01:26:16 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 6 Jan 2022 00:26:15 -0800
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
- Thu, 6 Jan 2022 16:26:13 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas10.mediatek.inc
+ with ESMTP id 597681819; Thu, 06 Jan 2022 01:48:37 -0700
+Received: from mtkexhb02.mediatek.inc (172.21.101.103) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 6 Jan 2022 00:38:34 -0800
+Received: from mtkcas11.mediatek.inc (172.21.101.40) by mtkexhb02.mediatek.inc
+ (172.21.101.103) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Thu, 6 Jan 2022 16:38:33 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 6 Jan 2022 16:26:12 +0800
-Message-ID: <709022152dd2b80c3866205c1d7b9c018b27e59f.camel@mediatek.com>
-Subject: Re: [PATCH 1/4] phy: mediatek: phy-mtk-hdmi: Switch to regmap for
- mmio access
+ Transport; Thu, 6 Jan 2022 16:38:32 +0800
+Message-ID: <509b82079256ffaa0d844ae5a79a436fced16f3f.camel@mediatek.com>
+Subject: Re: [PATCH 2/3] phy: mediatek: phy-mtk-mipi-dsi: Reorder and stop
+ implicit header inclusion
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  <chunkuang.hu@kernel.org>
@@ -55,15 +54,16 @@ CC: <p.zabel@pengutronix.de>, <kishon@ti.com>, <vkoul@kernel.org>,
  <matthias.bgg@gmail.com>, <dri-devel@lists.freedesktop.org>,
  <linux-mediatek@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>, 
  <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Date: Thu, 6 Jan 2022 16:26:12 +0800
-In-Reply-To: <20220103153055.50473-1-angelogioacchino.delregno@collabora.com>
-References: <20220103153055.50473-1-angelogioacchino.delregno@collabora.com>
+Date: Thu, 6 Jan 2022 16:38:32 +0800
+In-Reply-To: <20220103145324.48008-2-angelogioacchino.delregno@collabora.com>
+References: <20220103145324.48008-1-angelogioacchino.delregno@collabora.com>
+ <20220103145324.48008-2-angelogioacchino.delregno@collabora.com>
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220106_002621_355962_E558D81B 
-X-CRM114-Status: GOOD (  15.78  )
+X-CRM114-CacheID: sfid-20220106_004839_872074_8FA27526 
+X-CRM114-Status: GOOD (  16.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,720 +80,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2022-01-03 at 16:30 +0100, AngeloGioacchino Del Regno wrote:
-> Switch to using the generic regmap API instead of calls to
-> readl/writel
-> for MMIO register access, removing custom crafted
-> update/set/clear_bits
-> functions and also allowing us to reduce code size.
-Using readl/writel is simpler than regmap here
-
-Thanks
-
+On Mon, 2022-01-03 at 15:53 +0100, AngeloGioacchino Del Regno wrote:
+> All the headers for phy-mtk-mipi-{dsi,dsi-mt8173,dsi-mt8183}.c were
+> included from phy-mtk-mipi-dsi.h, but this isn't optimal: in order to
+> increase readability and sensibly reduce build times, the inclusions
+> should be done per-file, also avoiding to include unused headers and
+> should not be implicit.
+> 
+> For this reason, move the inclusions to each file and remove unused
+> ones.
 > 
 > Signed-off-by: AngeloGioacchino Del Regno <
 > angelogioacchino.delregno@collabora.com>
 > ---
->  drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c | 165 ++++++++++---------
-> --
->  drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c | 126 ++++++++--------
->  drivers/phy/mediatek/phy-mtk-hdmi.c        |  51 ++-----
->  drivers/phy/mediatek/phy-mtk-hdmi.h        |   9 +-
->  4 files changed, 158 insertions(+), 193 deletions(-)
+>  drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c |  4 ++++
+>  drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c |  4 ++++
+>  drivers/phy/mediatek/phy-mtk-mipi-dsi.c        |  7 +++++++
+>  drivers/phy/mediatek/phy-mtk-mipi-dsi.h        | 10 ++--------
+>  4 files changed, 17 insertions(+), 8 deletions(-)
 > 
-> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> b/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> index b74c65a1762c..09e0dd7499d8 100644
-> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> @@ -69,19 +69,19 @@ static int mtk_hdmi_pll_prepare(struct clk_hw
+> diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
+> b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
+> index 95a0d9a3cca7..59f028da9d3e 100644
+> --- a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
+> +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
+> @@ -4,7 +4,11 @@
+>   * Author: jitao.shi <jitao.shi@mediatek.com>
+>   */
+>  
+> +#include <linux/clk-provider.h>
+> +#include <linux/delay.h>
+> +#include <linux/module.h>
+>  #include <linux/regmap.h>
+> +#include <linux/phy/phy.h>
+>  #include "phy-mtk-mipi-dsi.h"
+>  
+>  #define MIPITX_DSI_CON		0x00
+> diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
+> b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
+> index 01b59527669e..6c6b192485ba 100644
+> --- a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
+> +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
+> @@ -4,7 +4,11 @@
+>   * Author: jitao.shi <jitao.shi@mediatek.com>
+>   */
+>  
+> +#include <linux/clk-provider.h>
+> +#include <linux/delay.h>
+> +#include <linux/module.h>
+>  #include <linux/regmap.h>
+> +#include <linux/phy/phy.h>
+>  #include "phy-mtk-mipi-dsi.h"
+>  
+>  #define MIPITX_LANE_CON		0x000c
+> diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+> b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+> index 51b1b1d4ad38..6f7425b0bf5b 100644
+> --- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+> +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+> @@ -3,7 +3,14 @@
+>   * Copyright (c) 2015 MediaTek Inc.
+>   */
+>  
+> +#include <linux/clk.h>
+> +#include <linux/clk-provider.h>
+> +#include <linux/module.h>
+> +#include <linux/nvmem-consumer.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
+>  #include <linux/regmap.h>
+> +#include <linux/phy/phy.h>
+>  #include "phy-mtk-mipi-dsi.h"
+>  
+>  inline struct mtk_mipi_tx *mtk_mipi_tx_from_clk_hw(struct clk_hw
 > *hw)
->  {
->  	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
+> diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
+> b/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
+> index 8d32e9027a15..4eb5fc91e083 100644
+> --- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
+> +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
+> @@ -7,16 +7,10 @@
+>  #ifndef _MTK_MIPI_TX_H
+>  #define _MTK_MIPI_TX_H
 >  
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON7, RG_HTPLL_AUTOK_EN);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_RLH_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON2, RG_HDMITX_EN_MBIAS);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON7,
-> RG_HTPLL_AUTOK_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_RLH_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_MBIAS);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON6, RG_HTPLL_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
->  	usleep_range(80, 100);
->  	return 0;
->  }
-> @@ -90,19 +90,19 @@ static void mtk_hdmi_pll_unprepare(struct clk_hw
-> *hw)
->  {
->  	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
->  
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6, RG_HTPLL_EN);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_EN_MBIAS);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_RLH_EN);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON7,
-> RG_HTPLL_AUTOK_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_MBIAS);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_RLH_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON7,
-> RG_HTPLL_AUTOK_EN);
->  	usleep_range(80, 100);
->  }
->  
-> @@ -125,37 +125,34 @@ static int mtk_hdmi_pll_set_rate(struct clk_hw
-> *hw, unsigned long rate,
->  	else
->  		pos_div = 1;
->  
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON6,
-> RG_HTPLL_PREDIV_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_EN_TX_POSDIV);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6, (0x1 << RG_HTPLL_IC),
-> -			  RG_HTPLL_IC_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6, (0x1 << RG_HTPLL_IR),
-> -			  RG_HTPLL_IR_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON2, (pos_div <<
-> RG_HDMITX_TX_POSDIV),
-> -			  RG_HDMITX_TX_POSDIV_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6, (1 << RG_HTPLL_FBKSEL),
-> -			  RG_HTPLL_FBKSEL_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6, (19 << RG_HTPLL_FBKDIV),
-> -			  RG_HTPLL_FBKDIV_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON7, (0x2 << RG_HTPLL_DIVEN),
-> -			  RG_HTPLL_DIVEN_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6, (0xc << RG_HTPLL_BP),
-> -			  RG_HTPLL_BP_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6, (0x2 << RG_HTPLL_BC),
-> -			  RG_HTPLL_BC_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6, (0x1 << RG_HTPLL_BR),
-> -			  RG_HTPLL_BR_MASK);
-> -
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PRED_IMP);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON1, (0x3 <<
-> RG_HDMITX_PRED_IBIAS),
-> -			  RG_HDMITX_PRED_IBIAS_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_IMP_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON1, (0x28 <<
-> RG_HDMITX_DRV_IMP),
-> -			  RG_HDMITX_DRV_IMP_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON4, 0x28,
-> RG_HDMITX_RESERVE_MASK);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON0, (0xa <<
-> RG_HDMITX_DRV_IBIAS),
-> -			  RG_HDMITX_DRV_IBIAS_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_PREDIV_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_TX_POSDIV);
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_IC_MASK, BIT(RG_HTPLL_IC));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_IR_MASK, BIT(RG_HTPLL_IR));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_TX_POSDIV_MASK,
-> +			   (pos_div << RG_HDMITX_TX_POSDIV));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_FBKSEL_MASK,
-> +			   (1 << RG_HTPLL_FBKSEL));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_FBKDIV_MASK,
-> +			   (19 << RG_HTPLL_FBKDIV));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON7,
-> RG_HTPLL_DIVEN_MASK,
-> +			   (0x2 << RG_HTPLL_DIVEN));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_BP_MASK,
-> +			   (0xc << RG_HTPLL_BP));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_BC_MASK,
-> +			   (0x2 << RG_HTPLL_BC));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_BR_MASK, BIT(RG_HTPLL_BR));
-> +
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PRED_IMP);
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PRED_IBIAS_MASK,
-> +			   (0x3 << RG_HDMITX_PRED_IBIAS));
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_IMP_MASK);
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_DRV_IMP_MASK,
-> +			   (0x28 << RG_HDMITX_DRV_IMP));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON4,
-> RG_HDMITX_RESERVE_MASK, 0x28);
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_DRV_IBIAS_MASK,
-> +			   (0xa << RG_HDMITX_DRV_IBIAS));
->  	return 0;
->  }
->  
-> @@ -163,10 +160,11 @@ static unsigned long
-> mtk_hdmi_pll_recalc_rate(struct clk_hw *hw,
->  					      unsigned long
-> parent_rate)
->  {
->  	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
-> -	unsigned long out_rate, val;
-> +	unsigned long out_rate;
-> +	u32 val;
->  
-> -	val = (readl(hdmi_phy->regs + HDMI_CON6)
-> -	       & RG_HTPLL_PREDIV_MASK) >> RG_HTPLL_PREDIV;
-> +	regmap_read(hdmi_phy->regmap, HDMI_CON6, &val);
-> +	val = (val & RG_HTPLL_PREDIV_MASK) >> RG_HTPLL_PREDIV;
->  	switch (val) {
->  	case 0x00:
->  		out_rate = parent_rate;
-> @@ -179,14 +177,15 @@ static unsigned long
-> mtk_hdmi_pll_recalc_rate(struct clk_hw *hw,
->  		break;
->  	}
->  
-> -	val = (readl(hdmi_phy->regs + HDMI_CON6)
-> -	       & RG_HTPLL_FBKDIV_MASK) >> RG_HTPLL_FBKDIV;
-> +	regmap_read(hdmi_phy->regmap, HDMI_CON6, &val);
-> +	val = (val & RG_HTPLL_FBKDIV_MASK) >> RG_HTPLL_FBKDIV;
->  	out_rate *= (val + 1) * 2;
-> -	val = (readl(hdmi_phy->regs + HDMI_CON2)
-> -	       & RG_HDMITX_TX_POSDIV_MASK);
-> +	regmap_read(hdmi_phy->regmap, HDMI_CON2, &val);
-> +	val &= RG_HDMITX_TX_POSDIV_MASK;
->  	out_rate >>= (val >> RG_HDMITX_TX_POSDIV);
->  
-> -	if (readl(hdmi_phy->regs + HDMI_CON2) & RG_HDMITX_EN_TX_POSDIV)
-> +	regmap_read(hdmi_phy->regmap, HDMI_CON2, &val);
-> +	if (val & RG_HDMITX_EN_TX_POSDIV)
->  		out_rate /= 5;
->  
->  	return out_rate;
-> @@ -202,37 +201,37 @@ static const struct clk_ops
-> mtk_hdmi_phy_pll_ops = {
->  
->  static void mtk_hdmi_phy_enable_tmds(struct mtk_hdmi_phy *hdmi_phy)
->  {
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON7, RG_HTPLL_AUTOK_EN);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_RLH_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON2, RG_HDMITX_EN_MBIAS);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON7,
-> RG_HTPLL_AUTOK_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_RLH_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_MBIAS);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON6, RG_HTPLL_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
->  	usleep_range(80, 100);
->  }
->  
->  static void mtk_hdmi_phy_disable_tmds(struct mtk_hdmi_phy *hdmi_phy)
->  {
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_DRV_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_PRED_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SER_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_MBIAS_LPF_EN);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_EN_SLDO_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_TX_CKLDO);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6, RG_HTPLL_EN);
->  	usleep_range(80, 100);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON2,
-> RG_HDMITX_EN_MBIAS);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON6, RG_HTPLL_RLH_EN);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON7,
-> RG_HTPLL_AUTOK_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON2,
-> RG_HDMITX_EN_MBIAS);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_POSDIV_MASK);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON6,
-> RG_HTPLL_RLH_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON7,
-> RG_HTPLL_AUTOK_EN);
->  	usleep_range(80, 100);
->  }
->  
-> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c
-> b/drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c
-> index 6cdfdf5a698a..e317bf4a9db9 100644
-> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c
-> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c
-> @@ -111,15 +111,15 @@ static int mtk_hdmi_pll_prepare(struct clk_hw
-> *hw)
->  {
->  	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
->  
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_AUTOK_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_PLL_POSDIV);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON3,
-> RG_HDMITX_MHLCK_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_AUTOK_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_PLL_POSDIV);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON3,
-> RG_HDMITX_MHLCK_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_EN);
->  	usleep_range(100, 150);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0, RG_HDMITX_PLL_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0, RG_HDMITX_PLL_EN);
->  	usleep_range(100, 150);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_LPF_EN);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_TXDIV_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_LPF_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_TXDIV_EN);
->  
->  	return 0;
->  }
-> @@ -128,14 +128,14 @@ static void mtk_hdmi_pll_unprepare(struct
-> clk_hw *hw)
->  {
->  	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
->  
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_TXDIV_EN);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_LPF_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_TXDIV_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_LPF_EN);
->  	usleep_range(100, 150);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0, RG_HDMITX_PLL_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_PLL_EN);
->  	usleep_range(100, 150);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_EN);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_PLL_POSDIV);
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON1,
-> RG_HDMITX_PLL_AUTOK_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_BIAS_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_PLL_POSDIV);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_AUTOK_EN);
->  	usleep_range(100, 150);
->  }
->  
-> @@ -177,65 +177,59 @@ static int mtk_hdmi_pll_set_rate(struct clk_hw
-> *hw, unsigned long rate,
->  		div = 1;
->  	}
->  
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON0,
-> -			  (pre_div << PREDIV_SHIFT),
-> RG_HDMITX_PLL_PREDIV);
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON0,
-> RG_HDMITX_PLL_POSDIV);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON0,
-> -			  (0x1 << PLL_IC_SHIFT) | (0x1 <<
-> PLL_IR_SHIFT),
-> -			  RG_HDMITX_PLL_IC | RG_HDMITX_PLL_IR);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON1,
-> -			  (div << PLL_TXDIV_SHIFT),
-> RG_HDMITX_PLL_TXDIV);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON0,
-> -			  (0x1 << PLL_FBKSEL_SHIFT) | (19 <<
-> PLL_FBKDIV_SHIFT),
-> -			  RG_HDMITX_PLL_FBKSEL | RG_HDMITX_PLL_FBKDIV);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON1,
-> -			  (0x2 << PLL_DIVEN_SHIFT),
-> RG_HDMITX_PLL_DIVEN);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON0,
-> -			  (0xc << PLL_BP_SHIFT) | (0x2 << PLL_BC_SHIFT)
-> |
-> -			  (0x1 << PLL_BR_SHIFT),
-> -			  RG_HDMITX_PLL_BP | RG_HDMITX_PLL_BC |
-> -			  RG_HDMITX_PLL_BR);
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_PLL_PREDIV,
-> +			   (pre_div << PREDIV_SHIFT));
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON0,
-> RG_HDMITX_PLL_POSDIV);
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON0,
-> +			   RG_HDMITX_PLL_IC | RG_HDMITX_PLL_IR,
-> +			   BIT(PLL_IC_SHIFT) | BIT(PLL_IR_SHIFT));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_TXDIV,
-> +			   (div << PLL_TXDIV_SHIFT));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON0,
-> +			   RG_HDMITX_PLL_FBKSEL | RG_HDMITX_PLL_FBKDIV,
-> +			  BIT(PLL_FBKSEL_SHIFT) | (19 <<
-> PLL_FBKDIV_SHIFT));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON1,
-> RG_HDMITX_PLL_DIVEN,
-> +			   (0x2 << PLL_DIVEN_SHIFT));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON0,
-> +			   RG_HDMITX_PLL_BP | RG_HDMITX_PLL_BC |
-> RG_HDMITX_PLL_BR,
-> +			   (0xc << PLL_BP_SHIFT) | (0x2 <<
-> PLL_BC_SHIFT) |
-> +			   (0x1 << PLL_BR_SHIFT));
->  	if (rate < 165000000) {
-> -		mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON3,
-> +		regmap_clear_bits(hdmi_phy->regmap, HDMI_CON3,
->  					RG_HDMITX_PRD_IMP_EN);
->  		pre_ibias = 0x3;
->  		imp_en = 0x0;
->  		hdmi_ibias = hdmi_phy->ibias;
->  	} else {
-> -		mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON3,
-> +		regmap_set_bits(hdmi_phy->regmap, HDMI_CON3,
->  				      RG_HDMITX_PRD_IMP_EN);
->  		pre_ibias = 0x6;
->  		imp_en = 0xf;
->  		hdmi_ibias = hdmi_phy->ibias_up;
->  	}
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON4,
-> -			  (pre_ibias << PRD_IBIAS_CLK_SHIFT) |
-> -			  (pre_ibias << PRD_IBIAS_D2_SHIFT) |
-> -			  (pre_ibias << PRD_IBIAS_D1_SHIFT) |
-> -			  (pre_ibias << PRD_IBIAS_D0_SHIFT),
-> -			  RG_HDMITX_PRD_IBIAS_CLK |
-> -			  RG_HDMITX_PRD_IBIAS_D2 |
-> -			  RG_HDMITX_PRD_IBIAS_D1 |
-> -			  RG_HDMITX_PRD_IBIAS_D0);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON3,
-> -			  (imp_en << DRV_IMP_EN_SHIFT),
-> -			  RG_HDMITX_DRV_IMP_EN);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON6,
-> -			  (hdmi_phy->drv_imp_clk << DRV_IMP_CLK_SHIFT)
-> |
-> -			  (hdmi_phy->drv_imp_d2 << DRV_IMP_D2_SHIFT) |
-> -			  (hdmi_phy->drv_imp_d1 << DRV_IMP_D1_SHIFT) |
-> -			  (hdmi_phy->drv_imp_d0 << DRV_IMP_D0_SHIFT),
-> -			  RG_HDMITX_DRV_IMP_CLK | RG_HDMITX_DRV_IMP_D2
-> |
-> -			  RG_HDMITX_DRV_IMP_D1 | RG_HDMITX_DRV_IMP_D0);
-> -	mtk_hdmi_phy_mask(hdmi_phy, HDMI_CON5,
-> -			  (hdmi_ibias << DRV_IBIAS_CLK_SHIFT) |
-> -			  (hdmi_ibias << DRV_IBIAS_D2_SHIFT) |
-> -			  (hdmi_ibias << DRV_IBIAS_D1_SHIFT) |
-> -			  (hdmi_ibias << DRV_IBIAS_D0_SHIFT),
-> -			  RG_HDMITX_DRV_IBIAS_CLK |
-> -			  RG_HDMITX_DRV_IBIAS_D2 |
-> -			  RG_HDMITX_DRV_IBIAS_D1 |
-> -			  RG_HDMITX_DRV_IBIAS_D0);
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON4,
-> +			   RG_HDMITX_PRD_IBIAS_CLK |
-> RG_HDMITX_PRD_IBIAS_D2 |
-> +			   RG_HDMITX_PRD_IBIAS_D1 |
-> RG_HDMITX_PRD_IBIAS_D0,
-> +			   (pre_ibias << PRD_IBIAS_CLK_SHIFT) |
-> +			   (pre_ibias << PRD_IBIAS_D2_SHIFT) |
-> +			   (pre_ibias << PRD_IBIAS_D1_SHIFT) |
-> +			   (pre_ibias << PRD_IBIAS_D0_SHIFT));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON3,
-> RG_HDMITX_DRV_IMP_EN,
-> +			   (imp_en << DRV_IMP_EN_SHIFT));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON6,
-> +			   RG_HDMITX_DRV_IMP_CLK | RG_HDMITX_DRV_IMP_D2
-> |
-> +			   RG_HDMITX_DRV_IMP_D1 | RG_HDMITX_DRV_IMP_D0,
-> +			   (hdmi_phy->drv_imp_clk << DRV_IMP_CLK_SHIFT)
-> |
-> +			   (hdmi_phy->drv_imp_d2 << DRV_IMP_D2_SHIFT) |
-> +			   (hdmi_phy->drv_imp_d1 << DRV_IMP_D1_SHIFT) |
-> +			   (hdmi_phy->drv_imp_d0 << DRV_IMP_D0_SHIFT));
-> +	regmap_update_bits(hdmi_phy->regmap, HDMI_CON5,
-> +			   RG_HDMITX_DRV_IBIAS_CLK |
-> RG_HDMITX_DRV_IBIAS_D2 |
-> +			   RG_HDMITX_DRV_IBIAS_D1 |
-> RG_HDMITX_DRV_IBIAS_D0,
-> +			   (hdmi_ibias << DRV_IBIAS_CLK_SHIFT) |
-> +			   (hdmi_ibias << DRV_IBIAS_D2_SHIFT) |
-> +			   (hdmi_ibias << DRV_IBIAS_D1_SHIFT) |
-> +			   (hdmi_ibias << DRV_IBIAS_D0_SHIFT));
->  	return 0;
->  }
->  
-> @@ -257,17 +251,15 @@ static const struct clk_ops
-> mtk_hdmi_phy_pll_ops = {
->  
->  static void mtk_hdmi_phy_enable_tmds(struct mtk_hdmi_phy *hdmi_phy)
->  {
-> -	mtk_hdmi_phy_set_bits(hdmi_phy, HDMI_CON3,
-> -			      RG_HDMITX_SER_EN | RG_HDMITX_PRD_EN |
-> -			      RG_HDMITX_DRV_EN);
-> +	regmap_set_bits(hdmi_phy->regmap, HDMI_CON3,
-> +			RG_HDMITX_SER_EN | RG_HDMITX_PRD_EN |
-> RG_HDMITX_DRV_EN);
->  	usleep_range(100, 150);
->  }
->  
->  static void mtk_hdmi_phy_disable_tmds(struct mtk_hdmi_phy *hdmi_phy)
->  {
-> -	mtk_hdmi_phy_clear_bits(hdmi_phy, HDMI_CON3,
-> -				RG_HDMITX_DRV_EN | RG_HDMITX_PRD_EN |
-> -				RG_HDMITX_SER_EN);
-> +	regmap_clear_bits(hdmi_phy->regmap, HDMI_CON3,
-> +			  RG_HDMITX_DRV_EN | RG_HDMITX_PRD_EN |
-> RG_HDMITX_SER_EN);
->  }
->  
->  struct mtk_hdmi_phy_conf mtk_hdmi_phy_8173_conf = {
-> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c
-> b/drivers/phy/mediatek/phy-mtk-hdmi.c
-> index 5fb4217fb8e0..707e90691e6e 100644
-> --- a/drivers/phy/mediatek/phy-mtk-hdmi.c
-> +++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
-> @@ -15,39 +15,6 @@ static const struct phy_ops mtk_hdmi_phy_dev_ops =
-> {
->  	.owner = THIS_MODULE,
->  };
->  
-> -void mtk_hdmi_phy_clear_bits(struct mtk_hdmi_phy *hdmi_phy, u32
-> offset,
-> -			     u32 bits)
-> -{
-> -	void __iomem *reg = hdmi_phy->regs + offset;
-> -	u32 tmp;
-> -
-> -	tmp = readl(reg);
-> -	tmp &= ~bits;
-> -	writel(tmp, reg);
-> -}
-> -
-> -void mtk_hdmi_phy_set_bits(struct mtk_hdmi_phy *hdmi_phy, u32
-> offset,
-> -			   u32 bits)
-> -{
-> -	void __iomem *reg = hdmi_phy->regs + offset;
-> -	u32 tmp;
-> -
-> -	tmp = readl(reg);
-> -	tmp |= bits;
-> -	writel(tmp, reg);
-> -}
-> -
-> -void mtk_hdmi_phy_mask(struct mtk_hdmi_phy *hdmi_phy, u32 offset,
-> -		       u32 val, u32 mask)
-> -{
-> -	void __iomem *reg = hdmi_phy->regs + offset;
-> -	u32 tmp;
-> -
-> -	tmp = readl(reg);
-> -	tmp = (tmp & ~mask) | (val & mask);
-> -	writel(tmp, reg);
-> -}
-> -
->  inline struct mtk_hdmi_phy *to_mtk_hdmi_phy(struct clk_hw *hw)
->  {
->  	return container_of(hw, struct mtk_hdmi_phy, pll_hw);
-> @@ -96,6 +63,13 @@ static void mtk_hdmi_phy_clk_get_data(struct
-> mtk_hdmi_phy *hdmi_phy,
->  	clk_init->ops = hdmi_phy->conf->hdmi_phy_clk_ops;
->  }
->  
-> +static const struct regmap_config mtk_hdmi_phy_regmap_config = {
-> +	.reg_bits = 32,
-> +	.reg_stride = 4,
-> +	.val_bits = 32,
-> +	.disable_locking = true,
-> +};
-> +
->  static int mtk_hdmi_phy_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> @@ -109,15 +83,20 @@ static int mtk_hdmi_phy_probe(struct
-> platform_device *pdev)
->  
->  	struct phy *phy;
->  	struct phy_provider *phy_provider;
-> +	void __iomem *regs;
->  	int ret;
->  
->  	hdmi_phy = devm_kzalloc(dev, sizeof(*hdmi_phy), GFP_KERNEL);
->  	if (!hdmi_phy)
->  		return -ENOMEM;
->  
-> -	hdmi_phy->regs = devm_platform_ioremap_resource(pdev, 0);
-> -	if (IS_ERR(hdmi_phy->regs))
-> -		return PTR_ERR(hdmi_phy->regs);
-> +	regs = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(regs))
-> +		return PTR_ERR(regs);
-> +
-> +	hdmi_phy->regmap = devm_regmap_init_mmio(dev, regs,
-> &mtk_hdmi_phy_regmap_config);
-> +	if (IS_ERR(hdmi_phy->regmap))
-> +		return PTR_ERR(hdmi_phy->regmap);
->  
->  	ref_clk = devm_clk_get(dev, "pll_ref");
->  	if (IS_ERR(ref_clk)) {
-> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.h
-> b/drivers/phy/mediatek/phy-mtk-hdmi.h
-> index dcf9bb13699b..a0571271d730 100644
-> --- a/drivers/phy/mediatek/phy-mtk-hdmi.h
-> +++ b/drivers/phy/mediatek/phy-mtk-hdmi.h
-> @@ -15,6 +15,7 @@
->  #include <linux/of_device.h>
->  #include <linux/phy/phy.h>
->  #include <linux/platform_device.h>
+> -#include <linux/clk.h>
+>  #include <linux/clk-provider.h>
+> -#include <linux/delay.h>
+> -#include <linux/io.h>
+> -#include <linux/module.h>
+> -#include <linux/nvmem-consumer.h>
+> -#include <linux/of_device.h>
+> -#include <linux/platform_device.h>
+> +#include <linux/types.h>
 > +#include <linux/regmap.h>
->  #include <linux/types.h>
+>  #include <linux/phy/phy.h>
+> -#include <linux/slab.h>
 >  
->  struct mtk_hdmi_phy;
-> @@ -28,7 +29,7 @@ struct mtk_hdmi_phy_conf {
->  };
->  
->  struct mtk_hdmi_phy {
-> -	void __iomem *regs;
-> +	struct regmap *regmap;
->  	struct device *dev;
->  	struct mtk_hdmi_phy_conf *conf;
->  	struct clk *pll;
-> @@ -42,12 +43,6 @@ struct mtk_hdmi_phy {
->  	unsigned int ibias_up;
->  };
->  
-> -void mtk_hdmi_phy_clear_bits(struct mtk_hdmi_phy *hdmi_phy, u32
-> offset,
-> -			     u32 bits);
-> -void mtk_hdmi_phy_set_bits(struct mtk_hdmi_phy *hdmi_phy, u32
-> offset,
-> -			   u32 bits);
-> -void mtk_hdmi_phy_mask(struct mtk_hdmi_phy *hdmi_phy, u32 offset,
-> -		       u32 val, u32 mask);
->  struct mtk_hdmi_phy *to_mtk_hdmi_phy(struct clk_hw *hw);
->  
->  extern struct mtk_hdmi_phy_conf mtk_hdmi_phy_8173_conf;
+I don't think it's good idea to move the common headers into .c files
+
+>  struct mtk_mipitx_data {
+>  	const u32 mppll_preserve;
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
