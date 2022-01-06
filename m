@@ -4,81 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEE5BC433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jan 2022 12:16:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42658C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jan 2022 21:00:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VqabFheU1/8JusByUQlBuU8pztpwAnAk0TXCYQd6mfw=; b=qZapyrhCcaHThH
-	ePQ3uDeDEJ8tPzA8d6kn+hqYtn4W0lL6dLoKXOrG9qrz2T7I3DEWjegjlR34SXfVQgs6lDtvmosjt
-	8Rl3Gtqu/BtVi6ySSVrKV1/LSGabbb8jD9lwNLZp4vyaLVV8yoVKjaNbMsaTbWgX/IuU+KOCtjpSF
-	OnjDyRmc2tFxgSnjoytq+/X/aD+SzjVmHj2/h/eD4aEJbT8lpZbMQz2KYBQo0c531rU16mHXrGqLv
-	RMMHvI9Iha6Uq1iTAvN3l/OTTiLUaugN29ds9Vv89zorB5AYhMCBK+knPS3O5BpEElScNJcZUhii/
-	N18t349aoXrw6F1oIwpQ==;
+	List-Owner; bh=xYajttNVs8Ghs5QC/Cpg/3qoYyBT+CcxLaCpSg8/VXc=; b=HIOsoVZGTh89kc
+	L6IADSKoQo1mZqdS5bP5FPSVA7l5cq3wZ71QWOct6jx+lC6LVX98quzFzYRHX5u0GmkkBFhfVRLza
+	vJ70t2SXXdD/S9QT9yQMy1FYidHT2NE3ZaZjATy5b1TwraOvXEyx8ElZWfnGHwBMmwrHIegP7gEm8
+	Fhs1jq2xhF/DmzfET5GShicspth2XpLe1xfpiMWY1C0xx2T+5bZw4tA4/nm9SQGxAihu+kr/sTcdZ
+	+fGLsQx1r6VH38RLjxbbd5J0GaKx25jzufRoFgtg9xbUbyi7y4oXoWwCuJsruC3WBJ5TLtmN2ZkAb
+	l2IDFosAAzDYOp8Mbc8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5Rgu-00HaVa-4D; Thu, 06 Jan 2022 12:16:24 +0000
-Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
+	id 1n5Zs6-001NaJ-Fe; Thu, 06 Jan 2022 21:00:30 +0000
+Received: from mail-io1-xd2f.google.com ([2607:f8b0:4864:20::d2f])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5Rgh-00HaS7-TE; Thu, 06 Jan 2022 12:16:13 +0000
-Received: by mail-pl1-x631.google.com with SMTP id l8so150879plt.6;
- Thu, 06 Jan 2022 04:16:10 -0800 (PST)
+ id 1n5Zs3-001NZe-74
+ for linux-phy@lists.infradead.org; Thu, 06 Jan 2022 21:00:29 +0000
+Received: by mail-io1-xd2f.google.com with SMTP id l3so4631859iol.10
+ for <linux-phy@lists.infradead.org>; Thu, 06 Jan 2022 13:00:26 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ezhOL9IQmLkdhn7bT2hYUZscONiXzj3Zulc4AqaqV74=;
- b=VWuYcofoSfJWAV4N8jaIG1D93UCOzzLF4pnjMZckQdHuwfgaz+x204qWdN4QF4YoRD
- jjXdv6nQCa0cdQvhgmsH706TQG5JQqC2UipfolVHtapLb6VJ6mjx3mvAMAvJ9Ooi5nB6
- CRsCNuUmRVJtehrSnmYuebPoAmJSgHGuYmCNi47cAYBd27WmmUPIrHfBja4EQVUVAYvE
- xHEMWdoc093Hihp5ksbATTC/pSlSafiFyvDCnDXh1YrfV/2OCzLMdP60JaQ0C2aNaVkj
- tim9w33+IK49XDuWb+ftGMo9xZMAsOF+xNjlHqYS+VRwvF0me3YYKY1Vt79vdnY/4VeR
- RXUg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=AmzdgAiuO/8SZ4ChbNLcS7C9Wx3iWh+y/OvXPCFKxrw=;
+ b=bF0zHrf6cn7DZ9x7Pn4rON78LlB/Hv4SZOT1CUj/MS6/n3ZRZRuCOzw38oA9zXUnUq
+ bmPYvez6eiYkBvk7XWVrAWDC9k/UQm1G+UlfndAwfmWfa9a8OmebJf30pHRvKVOH7vLs
+ jt6bGvG2Aqd9ZHc94cDDGoxmgy4g8E5zyYL9iT0hbk68Fbwp9h6N8bAzGBvI8eheAF4z
+ FcEVNjkDqF28luZRsiDiFQOfedRFwy+Cm991Ddau75kShcGF2h70VZ4zhwsPu2abAa0c
+ bafGpZZYjVq8h0wtrhrDmHrDlIiTeia1yeNt14TfbkApq+o7nqg88SGsPY1GhFNAVaZV
+ RgNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ezhOL9IQmLkdhn7bT2hYUZscONiXzj3Zulc4AqaqV74=;
- b=sSSLH8gEHbQkMX7sw985l8vSj9djKguTztIGNXObcxzO41tdF1P8OQz6KLfqphF4uf
- tLmM/q/pez3IFhdRrZ+n0+rulRFd6lkS/3838bQI1Rl9iBU2pqu+UuPsdSxz2pysz4R2
- hI1iQtdrPxwDdBgmwv5mIwO1Bqli6+QYn5+xzEQyHdBfA1zhqXPU9hjKMOsaeTIJ5Q8K
- QZaXsQF/fijwD4BLKhhIWZQURMMvIp9BCMupUgHR4tsMuCA39xaaI1WYk6lIcJc+2DK9
- 5dp0l4LwjgDDH8qcAOg4odlSe+tORxX/cvrw/no7klSJ3qxMAwHa52tydLRkJZhxPNZU
- GsRQ==
-X-Gm-Message-State: AOAM533L8wu0GNAGEbSNNHBOebAOjhELYcSrYD/vgqZacL6xMR93T57Y
- imyllDDoPvJrB/BdSF211Pn7lB0h3ENE1LoAyW4=
-X-Google-Smtp-Source: ABdhPJzV2qd7Kyc2ZIOHuzuuD3AFWMO67x7jgDMNj2Z9+hCizMBZuXOekzZfGXgf9RDEl+VUGs7ztA==
-X-Received: by 2002:a17:90b:4f4a:: with SMTP id
- pj10mr9731709pjb.112.1641471369839; 
- Thu, 06 Jan 2022 04:16:09 -0800 (PST)
-Received: from 8345e2a12d0c ([159.226.95.43])
- by smtp.gmail.com with ESMTPSA id b5sm2401828pfm.155.2022.01.06.04.16.07
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 06 Jan 2022 04:16:09 -0800 (PST)
-Date: Thu, 6 Jan 2022 12:16:05 +0000
-From: Miaoqian Lin <linmq006@gmail.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-phy@lists.infradead.org, linux-kernel <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] phy: mediatek: Fix missing check in mtk_mipi_tx_probe
-Message-ID: <20220106121524.GA25165@8345e2a12d0c>
-References: <20211224082103.7658-1-linmq006@gmail.com>
- <CAAOTY_-7-BrnkPk_5V5y20F6fX3X8Vm0tcYAA=1DNCnxjvNF8A@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AmzdgAiuO/8SZ4ChbNLcS7C9Wx3iWh+y/OvXPCFKxrw=;
+ b=qJxewnA2bozR3Z4UIcfkWD+t9BtdMBq49lJ8zL5Xdv13VGNhy1EKbdIjCDVArdrdYs
+ 9BRiTdKhA5lwVeMFcOhafA5pGuWWadLZvGSP4WcQrcahNxOGVickZRyh80IA3xQ3xPhz
+ MvqX70TkMedyjzJ3iO7cC7yYISoBEmH04YcPm7GliyqFdQrldTuvUw32QKHbykXxgaQ+
+ pdXq1p+Rjp/eQMI7+XY/Ko4Zvz2bHQAqgFRwwo5+elzcRqVox/4zTaGGYEA/TzY4Reis
+ irhvzin6KerEhhxriMDy6/2xV+eTgmCnlop1omNIf06V+T2t/agbqbjA8Caoj1P3eN4F
+ 8dhg==
+X-Gm-Message-State: AOAM532u0xVNWCmKp51/5CTE91GqipGWvvE9FTooJxRB6n4R7i0eeX0p
+ VXivRgp9r6nwWDB0Yj+l7uf/K68XSGOqfkBix9s=
+X-Google-Smtp-Source: ABdhPJyMPlDYOazAJHlrg63PALPvUxYHWGsXkLSVu4lQmb//VCulO817Wx8LlBVYawaWZLOwDu/PsbsVmaBAVu8/IEM=
+X-Received: by 2002:a05:6638:33a6:: with SMTP id
+ h38mr28475446jav.194.1641502825423; 
+ Thu, 06 Jan 2022 13:00:25 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAAOTY_-7-BrnkPk_5V5y20F6fX3X8Vm0tcYAA=1DNCnxjvNF8A@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20211201180653.35097-1-alcooperx@gmail.com>
+ <20211201180653.35097-2-alcooperx@gmail.com>
+ <YahNIinbEwB569C1@matsya>
+In-Reply-To: <YahNIinbEwB569C1@matsya>
+From: Alan Cooper <alcooperx@gmail.com>
+Date: Thu, 6 Jan 2022 16:01:53 -0500
+Message-ID: <CAOGqxeVS0sQg=vAQKOC3ksuGfdCO-TzgMdOmhtQJZBcuj3YFdg@mail.gmail.com>
+Subject: Re: [PATCH 1/3] phy: usb: Leave some clocks running during suspend
+To: Vinod Koul <vkoul@kernel.org>
+Cc: ": Linux Kernel Mailing List" <linux-kernel@vger.kernel.org>, 
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>, 
+ Florian Fainelli <f.fainelli@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-phy@lists.infradead.org, 
+ =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220106_041611_973822_CC11BDB5 
-X-CRM114-Status: GOOD (  16.60  )
+X-CRM114-CacheID: sfid-20220106_130027_881699_3FE68858 
+X-CRM114-Status: GOOD (  31.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,29 +87,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, Chun-Kuang:
-
-On Fri, Dec 31, 2021 at 12:31:33AM +0800, Chun-Kuang Hu wrote:
-> > diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-> > index 28ad9403c441..67b005d5b9e3 100644
-> > --- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-> > +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-> > @@ -146,6 +146,8 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
-> >                 return -ENOMEM;
-> >
-> >         mipi_tx->driver_data = of_device_get_match_data(dev);
-> > +       if (!mipi_tx->driver_data)
-> 
-> I'm confused. mtk_mipi_tx_probe() is called because this device node's
-> compatible match one in mtk_mipi_tx_match[]. So I think the return
-> value of of_device_get_match_data(dev) would not be NULL. If this is
-> true, this checking is redundant.
+On Wed, Dec 1, 2021 at 11:35 PM Vinod Koul <vkoul@kernel.org> wrote:
 >
-I think your are right, this checking is redundant. Thanks for your
-reply.
+> On 01-12-21, 13:06, Al Cooper wrote:
+> > The PHY client driver does a phy_exit() call on suspend or rmmod and
+> > the PHY driver needs to know the difference because some clocks need
+> > to be kept running for suspend but can be shutdown on unbind/rmmod
+> > (or if there are no PHY clients at all).
+> >
+> > The fix is to use a PM notifier so the driver can tell if a PHY
+> > client is calling exit() because of a system suspend or a driver
+> > unbind/rmmod.
+> >
+> > Signed-off-by: Al Cooper <alcooperx@gmail.com>
+> > ---
+> >  drivers/phy/broadcom/phy-brcm-usb.c | 38 +++++++++++++++++++++++++++++
+> >  1 file changed, 38 insertions(+)
+> >
+> > diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
+> > index 116fb23aebd9..0f1deb6e0eab 100644
+> > --- a/drivers/phy/broadcom/phy-brcm-usb.c
+> > +++ b/drivers/phy/broadcom/phy-brcm-usb.c
+> > @@ -18,6 +18,7 @@
+> >  #include <linux/soc/brcmstb/brcmstb.h>
+> >  #include <dt-bindings/phy/phy.h>
+> >  #include <linux/mfd/syscon.h>
+> > +#include <linux/suspend.h>
+> >
+> >  #include "phy-brcm-usb-init.h"
+> >
+> > @@ -70,12 +71,35 @@ struct brcm_usb_phy_data {
+> >       int                     init_count;
+> >       int                     wake_irq;
+> >       struct brcm_usb_phy     phys[BRCM_USB_PHY_ID_MAX];
+> > +     struct notifier_block   pm_notifier;
+> > +     bool                    pm_active;
+> >  };
+> >
+> >  static s8 *node_reg_names[BRCM_REGS_MAX] = {
+> >       "crtl", "xhci_ec", "xhci_gbl", "usb_phy", "usb_mdio", "bdc_ec"
+> >  };
+> >
+> > +static int brcm_pm_notifier(struct notifier_block *notifier,
+> > +                         unsigned long pm_event,
+> > +                         void *unused)
+> > +{
+> > +     struct brcm_usb_phy_data *priv =
+> > +             container_of(notifier, struct brcm_usb_phy_data, pm_notifier);
+> > +
+> > +     switch (pm_event) {
+> > +     case PM_HIBERNATION_PREPARE:
+> > +     case PM_SUSPEND_PREPARE:
+> > +             priv->pm_active = true;
+> > +             break;
+> > +     case PM_POST_RESTORE:
+> > +     case PM_POST_HIBERNATION:
+> > +     case PM_POST_SUSPEND:
+> > +             priv->pm_active = false;
+> > +             break;
+> > +     }
+> > +     return NOTIFY_DONE;
+> > +}
+> > +
+> >  static irqreturn_t brcm_usb_phy_wake_isr(int irq, void *dev_id)
+> >  {
+> >       struct phy *gphy = dev_id;
+> > @@ -91,6 +115,9 @@ static int brcm_usb_phy_init(struct phy *gphy)
+> >       struct brcm_usb_phy_data *priv =
+> >               container_of(phy, struct brcm_usb_phy_data, phys[phy->id]);
+> >
+> > +     if (priv->pm_active)
+> > +             return 0;
+> > +
+> >       /*
+> >        * Use a lock to make sure a second caller waits until
+> >        * the base phy is inited before using it.
+> > @@ -120,6 +147,9 @@ static int brcm_usb_phy_exit(struct phy *gphy)
+> >       struct brcm_usb_phy_data *priv =
+> >               container_of(phy, struct brcm_usb_phy_data, phys[phy->id]);
+> >
+> > +     if (priv->pm_active)
+> > +             return 0;
+> > +
+> >       dev_dbg(&gphy->dev, "EXIT\n");
+> >       if (phy->id == BRCM_USB_PHY_2_0)
+> >               brcm_usb_uninit_eohci(&priv->ini);
+> > @@ -488,6 +518,9 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
+> >       if (err)
+> >               return err;
+> >
+> > +     priv->pm_notifier.notifier_call = brcm_pm_notifier;
+> > +     register_pm_notifier(&priv->pm_notifier);
+> > +
+> >       mutex_init(&priv->mutex);
+> >
+> >       /* make sure invert settings are correct */
+> > @@ -528,7 +561,10 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
+> >
+> >  static int brcm_usb_phy_remove(struct platform_device *pdev)
+> >  {
+> > +     struct brcm_usb_phy_data *priv = dev_get_drvdata(&pdev->dev);
+> > +
+> >       sysfs_remove_group(&pdev->dev.kobj, &brcm_usb_phy_group);
+> > +     unregister_pm_notifier(&priv->pm_notifier);
+> >
+> >       return 0;
+> >  }
+> > @@ -539,6 +575,7 @@ static int brcm_usb_phy_suspend(struct device *dev)
+> >       struct brcm_usb_phy_data *priv = dev_get_drvdata(dev);
+> >
+> >       if (priv->init_count) {
+> > +             dev_dbg(dev, "SUSPEND\n");
+>
+> debug artifact?
+>
+> >               priv->ini.wake_enabled = device_may_wakeup(dev);
+> >               if (priv->phys[BRCM_USB_PHY_3_0].inited)
+> >                       brcm_usb_uninit_xhci(&priv->ini);
+> > @@ -578,6 +615,7 @@ static int brcm_usb_phy_resume(struct device *dev)
+> >        * Uninitialize anything that wasn't previously initialized.
+> >        */
+> >       if (priv->init_count) {
+> > +             dev_dbg(dev, "RESUME\n");
+>
+> here too
 
-Regards,
-Miaoqian.
+I left these in intentionally because they are very useful for debug.
+
+>
+> >               if (priv->wake_irq >= 0)
+> >                       disable_irq_wake(priv->wake_irq);
+> >               brcm_usb_init_common(&priv->ini);
+> > --
+> > 2.17.1
+>
+> --
+> ~Vinod
 
 -- 
 linux-phy mailing list
