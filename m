@@ -4,88 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24E58C433FE
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 15:14:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AE58C433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 19:15:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wsCljLxKGI3U9d7T7kKhB9IrtpprFIIZfzDxI595El8=; b=Qq8yLlW5zT+5a4
-	IoJURAGqxwPimhsmKXx2EPTuht+7BqIEYZ5DB0lNscQPZXrEHstboBLK+SEkl2I923F8IH/c3o2d9
-	PrB/qhWx34HzG87WaOgwPih3bPwMa7yoLnI8HyWqkGVbXCHYqNihiVWSgI862ksc69Kbwegr3KgCB
-	i+raqqaH05PoCcEy2FNmFRzXo6PDNLz6e64LsaQVHMLzyLtfIlLdkA/JsQXh5b/Nj3tQKDibiIr9S
-	Bb5ZPIKCy9rDKTTCbZ4UiE/V/c0SHipz2nafs2ssX8S3nY2flbBxuOzb/fYQ55XXlhRHkLapdc1Zb
-	TyTe4b1OGwM9jBSgUWDA==;
+	List-Owner; bh=O3u3T42VZNY3BgZMFNcPT+HGqBiK2HN++F5GZ3hmn3M=; b=qcJVfu1go+Muoq
+	C8tGEUy7Bs2ZMSszUPBd2cP8MheqaoKidXO70Tq2boWH0VwQFgYYohWcJEpldLgS3aLrfpn+0whlS
+	6X+o8BxpoO6HyWcaifEIApyf9ZjUHuMQkleibWQ9Os2MtIveS2rzDFuXIemOa8XecKNdX19mMptBD
+	NENplEi6Hflzw2xYTFSq6O77WZcAGF3AVwuAYDSsaf8X8FximMHzMP4tuBtYk6OfH8fRQOMunXfPx
+	K3a5/fWnY2U0QP0tFXlnAKeLx/XoP2OG9TNKDGJo3RlfgdnGEHuLIQAAaSZzSNHDq9LeftV1K/uqO
+	b8MrTvSa+Xcx5dO0wisw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5qx6-004Qic-JK; Fri, 07 Jan 2022 15:14:48 +0000
-Received: from mail-oi1-x22b.google.com ([2607:f8b0:4864:20::22b])
+	id 1n5uhf-0053QS-0X; Fri, 07 Jan 2022 19:15:07 +0000
+Received: from mail-ot1-x334.google.com ([2607:f8b0:4864:20::334])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5qx3-004Qgg-8e
- for linux-phy@lists.infradead.org; Fri, 07 Jan 2022 15:14:47 +0000
-Received: by mail-oi1-x22b.google.com with SMTP id w80so8547271oie.9
- for <linux-phy@lists.infradead.org>; Fri, 07 Jan 2022 07:14:44 -0800 (PST)
+ id 1n5uha-0053OT-W8
+ for linux-phy@lists.infradead.org; Fri, 07 Jan 2022 19:15:05 +0000
+Received: by mail-ot1-x334.google.com with SMTP id
+ 45-20020a9d0a30000000b0058f1a6df088so7645983otg.4
+ for <linux-phy@lists.infradead.org>; Fri, 07 Jan 2022 11:15:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=hoW/s0DcuKRkkzOcD//hS7BMlfvE2r9t+HnZfYmtjjI=;
- b=IVzL8zg7qh111l5P6Unaxg6UD17D1qulF1CZYB5ghokN24BQ5IRwO6l/sn0cl3vGVh
- UCnnvJpFoOQQ2B1YGjk3FHXy2U3YTYlO9SyXKe7gDrI1nJ5rlNhqKDhD4Dx6TG6VhoH+
- ZU2Ahy4dg8HtyO1Ee52LWFP0Z0dizAmqbLKn/vQahrD76gFnNTSeJhX1bxkAb3VpRsjN
- gEOyrhzimOXuW3IHEoMO1oQUmpSgBRkwbD4Kc9J5JleT0NvAbZz08FWrrWhD4UQSkDV7
- +3856kvrMYO/Qa7xyWejxSvFb8JPO/NFq+uBwvW1Gaq4UApv+U92HFHS9AQPsbWjeEo5
- LP4A==
+ :content-disposition:in-reply-to;
+ bh=WtHO/Q1bDJN+G650TFpgg/0NiPkrLAPHRgb8v223Lbo=;
+ b=qONpMQerFVvJzeuaO7HJZFklpD0RhtVscnKhouQotEj2yGV1inUiOVjoIrwSdcu3u5
+ pziPKDh5Uy7aBsppkzh1MRIAQnoQOo0+/Oan2f5Bj8tvGHYrreKOHECnFdMpf+pTDVTp
+ P6BK9/snST6swA4g+dDgOQLIU8d7pSDbV61aSvYUOrljBJJXiH0SdGOvcadatIgcLwwb
+ o2Dm/tjA4ew7sIDw0kzYcHUzJtXgLZke1SNSx1SqM2mbIZmTmLWLSXe3rzX9t1lMOLqP
+ /5hdc7f/ubXWLgLzD84Vgk0ltCExiIb7IxZ2x+0lwtIZI7R10QI/lxhIGdDsYzUvkLZ+
+ pxaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=hoW/s0DcuKRkkzOcD//hS7BMlfvE2r9t+HnZfYmtjjI=;
- b=p08RP6e0jdMM3nkB7mWBlCp5QIb7XFtWo3KqxPMtsjhA4TbWuZ4sC8hRMlDva/HsfZ
- tjFTiJ8H9d4HFbhDjqGuIH6HMnKhD+CsDqVA2S9XLMs77tPkYgj8c1NY7KBu2NQI8DoA
- HahkoKM8y80ssHEePoZSguvJNZLwYqzMfygzjh/RTp+ZsIVozB0Ke7KzVz0XJ/U39Og/
- 2hKgbYIdxrF71BcTc/tUP3RiCI1ZNouvl69r2WxN3UoRwG5if1h+E8WU97BLHOfxgj+x
- 9zyku2Y1KDu3nRh9imXWaXTvBb7lNsbXO0F1yU5doOc8fjrIjvLFMCg1NPJl5zfSmcfT
- F5cA==
-X-Gm-Message-State: AOAM533h93G56F8T+HUyB5mNborZquFarOmT/diNj2oz93RPyaM2mOWK
- WR2/K5mncYfkaHEwaXnKLKXGiA==
-X-Google-Smtp-Source: ABdhPJyhks2Fazm9yhlWgkK0jTfqI95vyQTiRxh0FVvoGTX2ao1hw+Qg+M68nCKS0/wVdYGUR9MRbQ==
-X-Received: by 2002:a05:6808:3d8:: with SMTP id
- o24mr10468608oie.119.1641568484294; 
- Fri, 07 Jan 2022 07:14:44 -0800 (PST)
+ :mime-version:content-disposition:in-reply-to;
+ bh=WtHO/Q1bDJN+G650TFpgg/0NiPkrLAPHRgb8v223Lbo=;
+ b=4IfVQ4ceifl4qK7rf1l3Tkbixfm32znTJR2/owBt4P6/sJM8AES1erfJKNx7dOXvaM
+ zlMDgJKUOW1b+5NUU48uy8uHB4MmywrQDMnfCDrBmqxi0iaN64ON5snTTUgcLUYWW62+
+ RZgoQi7yMabh7iEPJOr7KVsctwW0mNzlnkYDJnmvZz9+PAQNiYieWLg/1Pnni100/gga
+ fdJgng2ZsPOPUWOcaxUc71mqr9OOId0XTjwEAsk/E7VSpv1MZJI1ZMIpRfF1lyYYdxr+
+ nTcOqvPjQeSwn4oPO5l93Dbz/SnueNy9e0zRNVQyDX8VWdGPm4Z/JC979CJPDtT1LuUb
+ 8gmA==
+X-Gm-Message-State: AOAM532FMiVzb07vKnpf+K0V3zJSh6D8iWlpekKSd3+k+fYtvdQ5nAhu
+ PHrHaWCCxZakbo09QpgnB/lZ/w==
+X-Google-Smtp-Source: ABdhPJyER9T3EOwYSOIowyTf9EWMcugUaNVPtcM6nDpPtMfbdbEXtdMfAc/EnCINbs1sZwTKzmfUgQ==
+X-Received: by 2002:a9d:84c:: with SMTP id 70mr47330471oty.185.1641582901293; 
+ Fri, 07 Jan 2022 11:15:01 -0800 (PST)
 Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
  [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id a6sm995134oil.6.2022.01.07.07.14.43
+ by smtp.gmail.com with ESMTPSA id h1sm992357oog.26.2022.01.07.11.15.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 07 Jan 2022 07:14:43 -0800 (PST)
-Date: Fri, 7 Jan 2022 07:15:30 -0800
+ Fri, 07 Jan 2022 11:15:00 -0800 (PST)
+Date: Fri, 7 Jan 2022 11:15:49 -0800
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
  Hans de Goede <hdegoede@redhat.com>,
  "Rafael J. Wysocki" <rafael@kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Daniel Scally <djrscally@gmail.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH 3/8] device property: Helper to match multiple connections
-Message-ID: <YdhZEp6LmAxCGDIc@ripper>
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org
+Subject: Re: [PATCH 2/8] phy: qcom-qmp: Register typec mux and orientation
+ switch
+Message-ID: <YdiRZUV0oJfsdHZV@ripper>
 References: <20211228052116.1748443-1-bjorn.andersson@linaro.org>
- <20211228052116.1748443-4-bjorn.andersson@linaro.org>
- <Yc17Ssug3neFFXKN@kuha.fi.intel.com>
- <Yc7I3gZehc1lHn4Z@paasikivi.fi.intel.com> <YdYC8DeF1i9a3RnP@ripper>
- <YdhPQ0Wuz63JBKaR@paasikivi.fi.intel.com>
+ <20211228052116.1748443-3-bjorn.andersson@linaro.org>
+ <Ycvx2qOlPsVIjkHq@matsya>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YdhPQ0Wuz63JBKaR@paasikivi.fi.intel.com>
+In-Reply-To: <Ycvx2qOlPsVIjkHq@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220107_071445_389186_7F3723A8 
-X-CRM114-Status: GOOD (  55.12  )
+X-CRM114-CacheID: sfid-20220107_111503_108373_4E7DA109 
+X-CRM114-Status: GOOD (  40.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,276 +93,322 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri 07 Jan 06:33 PST 2022, Sakari Ailus wrote:
+On Tue 28 Dec 21:27 PST 2021, Vinod Koul wrote:
 
-> On Wed, Jan 05, 2022 at 12:43:28PM -0800, Bjorn Andersson wrote:
-> > On Fri 31 Dec 01:09 PST 2021, Sakari Ailus wrote:
-> > =
+> On 27-12-21, 21:21, Bjorn Andersson wrote:
+> > The QMP PHY handles muxing of USB vs DisplayPort, as well as orientation
+> > switching of the SuperSpeed lanes. So register typec handlers for the
+> > two types.
+> > 
+> > The TypeC mux allows switching between four lanes of DisplayPort and a
+> > mixed USB+DP combination. This makes it possible to reach resolutions
+> > that requires 4 lanes.
+> > 
+> > The TypeC switch allows switching the SuperSpeed pins and have been
+> > tested with both 2 and 4 lane DisplayPort.
+> > 
+> > It's possible that in the USB mode the DP_MODE should be disabled, but
+> > this is left untouched.
+> > 
+> > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > ---
+> > 
+> > My suggestion is that if/once this patch is deemed acceptable the PHY
+> > maintainers could create a immutable branch/tag which can be merged into the
+> > PHY tree as well as the USB tree.
+> > 
+> >  drivers/phy/qualcomm/phy-qcom-qmp.c | 176 +++++++++++++++++++++++++---
+> >  1 file changed, 158 insertions(+), 18 deletions(-)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> > index 7bea6a60dc54..8d8139df9d8e 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> > @@ -19,6 +19,8 @@
+> >  #include <linux/regulator/consumer.h>
+> >  #include <linux/reset.h>
+> >  #include <linux/slab.h>
+> > +#include <linux/usb/typec_dp.h>
+> > +#include <linux/usb/typec_mux.h>
+> >  
+> >  #include <dt-bindings/phy/phy.h>
+> >  
+> > @@ -3017,6 +3019,9 @@ struct qmp_phy_dp_clks {
+> >   * @phy_mutex: mutex lock for PHY common block initialization
+> >   * @init_count: phy common block initialization count
+> >   * @ufs_reset: optional UFS PHY reset handle
+> > + * @sw: typec switch for receiving orientation changes
+> > + * @mux: typec mux for DP muxing
+> > + * @orientation: carries current CC orientation
+> >   */
+> >  struct qcom_qmp {
+> >  	struct device *dev;
+> > @@ -3032,6 +3037,10 @@ struct qcom_qmp {
+> >  	int init_count;
+> >  
+> >  	struct reset_control *ufs_reset;
+> > +
+> > +	struct typec_switch *sw;
+> > +	struct typec_mux *mux;
+> > +	enum typec_orientation orientation;
+> >  };
+> >  
+> >  static void qcom_qmp_v3_phy_dp_aux_init(struct qmp_phy *qphy);
+> > @@ -4378,30 +4387,23 @@ static void qcom_qmp_v3_phy_configure_dp_tx(struct qmp_phy *qphy)
+> >  
+> >  static bool qcom_qmp_phy_configure_dp_mode(struct qmp_phy *qphy)
+> >  {
+> > +	const struct phy_configure_opts_dp *dp_opts = &qphy->dp_opts;
+> > +	bool reverse = qphy->qmp->orientation == TYPEC_ORIENTATION_REVERSE;
+> >  	u32 val;
+> > -	bool reverse = false;
+> >  
+> >  	val = DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
+> >  	      DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN;
+> >  
+> > -	/*
+> > -	 * TODO: Assume orientation is CC1 for now and two lanes, need to
+> > -	 * use type-c connector to understand orientation and lanes.
+> > -	 *
+> > -	 * Otherwise val changes to be like below if this code understood
+> > -	 * the orientation of the type-c cable.
+> > -	 *
+> > -	 * if (lane_cnt == 4 || orientation == ORIENTATION_CC2)
+> > -	 *	val |= DP_PHY_PD_CTL_LANE_0_1_PWRDN;
+> > -	 * if (lane_cnt == 4 || orientation == ORIENTATION_CC1)
+> > -	 *	val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
+> > -	 * if (orientation == ORIENTATION_CC2)
+> > -	 *	writel(0x4c, qphy->pcs + QSERDES_V3_DP_PHY_MODE);
+> > -	 */
+> > -	val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
+> > +	if (dp_opts->lanes == 4 || reverse)
+> > +		val |= DP_PHY_PD_CTL_LANE_0_1_PWRDN;
+> > +	if (dp_opts->lanes == 4 || !reverse)
+> > +		val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
+> >  	writel(val, qphy->pcs + QSERDES_DP_PHY_PD_CTL);
+> >  
+> > -	writel(0x5c, qphy->pcs + QSERDES_DP_PHY_MODE);
+> > +	if (reverse)
+> > +		writel(0x4c, qphy->pcs + QSERDES_DP_PHY_MODE);
+> > +	else
+> > +		writel(0x5c, qphy->pcs + QSERDES_DP_PHY_MODE);
+> >  
+> >  	return reverse;
+> >  }
+> > @@ -5809,6 +5811,123 @@ static const struct dev_pm_ops qcom_qmp_phy_pm_ops = {
+> >  			   qcom_qmp_phy_runtime_resume, NULL)
+> >  };
+> >  
+> > +#if IS_ENABLED(CONFIG_TYPEC)
+> > +static int qcom_qmp_phy_typec_switch_set(struct typec_switch *sw,
+> > +		enum typec_orientation orientation)
+> 
+> pls align to preceding open brace (here and other places)
+> 
 
-> > > Hi Bj=F6rn,
-> > > =
+Sure thing.
 
-> > > (And thanks to Heikki for cc'ing me!)
-> > > =
+> > +{
+> > +	struct qcom_qmp *qmp = typec_switch_get_drvdata(sw);
+> > +	void __iomem *dp_com = qmp->dp_com;
+> > +
+> > +	qmp->orientation = orientation;
+> > +
+> > +	if (orientation == TYPEC_ORIENTATION_REVERSE)
+> > +		qphy_setbits(dp_com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x01);
+> > +	else
+> > +		qphy_clrbits(dp_com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x01);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int qcom_qmp_phy_typec_mux_set(struct typec_mux *mux,
+> > +				      struct typec_mux_state *state)
+> > +{
+> > +	struct qcom_qmp *qmp = typec_mux_get_drvdata(mux);
+> > +	void __iomem *dp_com = qmp->dp_com;
+> > +	bool dp_mode;
+> > +	bool usb_mode;
+> > +
+> > +	switch (state->mode) {
+> > +	case TYPEC_STATE_SAFE:
+> > +	case TYPEC_STATE_USB:
+> > +		/*
+> > +		 * TODO: Figure out if we should clear DP_MODE when we enter a
+> > +		 * USB-only state.
+> > +		 */
+> > +		dp_mode = true;
+> 
+> should this be false for these states?
+> 
 
-> > > On Thu, Dec 30, 2021 at 11:26:34AM +0200, Heikki Krogerus wrote:
-> > > > +Andy, Dan and Sakari
-> > > > =
+I think it should, but figured that I better change the behavior in a
+separate follow-up commit. Might also be that SAFE should be
+false/false - or in some other way turning off the output.
 
-> > > > On Mon, Dec 27, 2021 at 09:21:11PM -0800, Bjorn Andersson wrote:
-> > > > > In some cases multiple connections with the same connection id
-> > > > > needs to be resolved from a fwnode graph.
-> > > > > =
+Hence the TODO.
 
-> > > > > One such example is when separate hardware is used for performing=
- muxing and/or
-> > > > > orientation switching of the SuperSpeed and SBU lines in a USB-C
-> > > > > connector. In this case the connector needs to belong to a graph =
-with
-> > > > > multiple matching remote endpoints, and the TypeC controller need=
-s to be
-> > > > > able to resolve them both.
-> > > > > =
+> > +		usb_mode = true;
+> > +		break;
+> > +	case TYPEC_DP_STATE_A:
+> > +	case TYPEC_DP_STATE_C:
+> > +	case TYPEC_DP_STATE_E:
+> > +		dp_mode = true;
+> > +		usb_mode = false;
+> > +		break;
+> > +	case TYPEC_DP_STATE_B:
+> > +	case TYPEC_DP_STATE_D:
+> > +	case TYPEC_DP_STATE_F:
+> > +		dp_mode = true;
+> > +		usb_mode = true;
+> > +		break;
+> > +	}
+> 
+> looks like dp_mode is true always. And only for DP state A C E, usb_mode
+> is false...
+> 
 
-> > > > > Add a new API that allows this kind of lookup.
-> > > > > =
+A, C and E are 4-lanes DP, while B, D, F are 2-lane DP and 2-lane USB.
 
-> > > > > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > > > > ---
-> > > > >  drivers/base/property.c  | 94 ++++++++++++++++++++++++++++++++++=
-++++++
-> > > > >  include/linux/property.h |  5 +++
-> > > > >  2 files changed, 99 insertions(+)
-> > > > > =
+> > +
+> > +	qphy_setbits(dp_com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
+> > +		     SW_DPPHY_RESET_MUX | SW_USB3PHY_RESET_MUX);
+> > +	if (dp_mode)
+> > +		qphy_setbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, DP_MODE);
+> > +	else
+> > +		qphy_clrbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, DP_MODE);
+> > +
+> > +	if (usb_mode)
+> > +		qphy_setbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE);
+> > +	else
+> > +		qphy_clrbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE);
+> > +
+> > +	qphy_setbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
+> > +	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
+> > +	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int qcom_qmp_phy_typec_register(struct qcom_qmp *qmp,
+> > +				       const struct qmp_phy_cfg *cfg)
+> > +{
+> > +	struct typec_switch_desc sw_desc = {};
+> > +	struct typec_mux_desc mux_desc = {};
+> > +	struct device *dev = qmp->dev;
+> > +
+> > +	if (!cfg->has_phy_dp_com_ctrl)
+> > +		return 0;
+> > +
+> > +	sw_desc.drvdata = qmp;
+> > +	sw_desc.fwnode = dev->fwnode;
+> > +	sw_desc.set = qcom_qmp_phy_typec_switch_set;
+> > +	qmp->sw = typec_switch_register(dev, &sw_desc);
+> > +	if (IS_ERR(qmp->sw)) {
+> > +		dev_err(dev, "Error registering typec switch: %pe\n", qmp->sw);
+> > +		return PTR_ERR(qmp->sw);
+> > +	}
+> > +
+> > +	mux_desc.drvdata = qmp;
+> > +	mux_desc.fwnode = dev->fwnode;
+> > +	mux_desc.set = qcom_qmp_phy_typec_mux_set;
+> > +	qmp->mux = typec_mux_register(dev, &mux_desc);
+> > +	if (IS_ERR(qmp->mux)) {
+> > +		dev_err(dev, "Error registering typec mux: %pe\n", qmp->mux);
+> > +		typec_switch_unregister(qmp->sw);
+> > +		return PTR_ERR(qmp->mux);
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static void qcom_qmp_phy_typec_unregister(struct qcom_qmp *qmp)
+> > +{
+> > +	typec_mux_unregister(qmp->mux);
+> > +	typec_switch_unregister(qmp->sw);
+> > +}
+> > +#else
+> 
+> empty line here pls
+> 
 
-> > > > > diff --git a/drivers/base/property.c b/drivers/base/property.c
-> > > > > index cbe4fa298413..0aa0296fd991 100644
-> > > > > --- a/drivers/base/property.c
-> > > > > +++ b/drivers/base/property.c
-> > > > > @@ -1180,6 +1180,36 @@ fwnode_graph_devcon_match(struct fwnode_ha=
-ndle *fwnode, const char *con_id,
-> > > > >  	return NULL;
-> > > > >  }
-> > > > >  =
-
-> > > > > +static unsigned int fwnode_graph_devcon_matches(struct fwnode_ha=
-ndle *fwnode,
-> > > > > +						const char *con_id, void *data,
-> > > > > +						devcon_match_fn_t match,
-> > > > > +						void **matches,
-> > > > > +						unsigned int matches_len)
-> > > > > +{
-> > > > > +	struct fwnode_handle *node;
-> > > > > +	struct fwnode_handle *ep;
-> > > > > +	unsigned int count =3D 0;
-> > > > > +	void *ret;
-> > > > > +
-> > > > > +	fwnode_graph_for_each_endpoint(fwnode, ep) {
-> > > > > +		if (count >=3D matches_len) {
-> > > > > +			fwnode_handle_put(ep);
-> > > > > +			return count;
-> > > > > +		}
-> > > > > +
-> > > > > +		node =3D fwnode_graph_get_remote_port_parent(ep);
-> > > > > +		if (!fwnode_device_is_available(node))
-> > > =
-
-> > > The reference to node needs to be put here.
-> > > =
-
-> > =
-
-> > You're right, thanks!
-> > =
-
-> > > > > +			continue;
-> > > > > +
-> > > > > +		ret =3D match(node, con_id, data);
-> > > > > +		fwnode_handle_put(node);
-> > > > > +
-> > > > > +		if (ret)
-> > > > > +			matches[count++] =3D ret;
-> > > > > +	}
-> > > > > +	return count;
-> > > > > +}
-> > > > > +
-> > > > >  static void *
-> > > > >  fwnode_devcon_match(struct fwnode_handle *fwnode, const char *co=
-n_id,
-> > > > >  		    void *data, devcon_match_fn_t match)
-> > > > > @@ -1202,6 +1232,35 @@ fwnode_devcon_match(struct fwnode_handle *=
-fwnode, const char *con_id,
-> > > > >  	return NULL;
-> > > > >  }
-> > > > >  =
-
-> > > > > +static unsigned int fwnode_devcon_matches(struct fwnode_handle *=
-fwnode,
-> > > > > +					  const char *con_id, void *data,
-> > > > > +					  devcon_match_fn_t match,
-> > > > > +					  void **matches,
-> > > > > +					  unsigned int matches_len)
-> > > > > +{
-> > > > > +	struct fwnode_handle *node;
-> > > > > +	unsigned int count =3D 0;
-> > > > > +	void *ret;
-> > > > > +	int i;
-> > > =
-
-> > > unsigned int, please.
-> > > =
-
-> > =
-
-> > Sounds good.
-> > =
-
-> > > > > +
-> > > > > +	for (i =3D 0; ; i++) {
-> > > > > +		if (count >=3D matches_len)
-> > > > > +			return count;
-> > > > > +
-> > > > > +		node =3D fwnode_find_reference(fwnode, con_id, i);
-> > > > > +		if (IS_ERR(node))
-> > > > > +			break;
-> > > > > +
-> > > > > +		ret =3D match(node, NULL, data);
-> > > > > +		fwnode_handle_put(node);
-> > > > > +
-> > > > > +		if (ret)
-> > > > > +			matches[count++] =3D ret;
-> > > > > +	}
-> > > > > +
-> > > > > +	return count;
-> > > > > +}
-> > > > > +
-> > > > >  /**
-> > > > >   * fwnode_connection_find_match - Find connection from a device =
-node
-> > > > >   * @fwnode: Device node with the connection
-> > > > > @@ -1229,3 +1288,38 @@ void *fwnode_connection_find_match(struct =
-fwnode_handle *fwnode,
-> > > > >  	return fwnode_devcon_match(fwnode, con_id, data, match);
-> > > > >  }
-> > > > >  EXPORT_SYMBOL_GPL(fwnode_connection_find_match);
-> > > > > +
-> > > > > +/**
-> > > > > + * fwnode_connection_find_matches - Find connections from a devi=
-ce node
-> > > > > + * @fwnode: Device node with the connection
-> > > > > + * @con_id: Identifier for the connection
-> > > > > + * @data: Data for the match function
-> > > > > + * @match: Function to check and convert the connection descript=
-ion
-> > > > > + * @matches: Array of pointers to fill with matches
-> > > > > + * @matches_len: Length of @matches
-> > > > > + *
-> > > > > + * Find up to @matches_len connections with unique identifier @c=
-on_id between
-> > > > > + * @fwnode and other device nodes. @match will be used to conver=
-t the
-> > > > > + * connection description to data the caller is expecting to be =
-returned
-> > > > > + * through the @matches array.
-> > > =
-
-> > > If the caller allocates the matches array, how does it know how large=
- it
-> > > should be? Is there a need to provide a way to count the matches befo=
-re
-> > > writing them to an array? Most similar functions do that by just sett=
-ing the
-> > > array (matches) to NULL.
-> > > =
-
-> > =
-
-> > This is a very relevant comment and I did look for ways to handle this
-> > as I came up with the patch.
-> > =
-
-> > I think the typical mechanism would be to allow @matches to be NULL, in
-> > which case we iterate over objects and return the number of matches, so
-> > that the caller can allocate an appropriately sized array and call the
-> > API again.
-> > =
-
-> > But the "match" function simply returns a pointer to something and
-> > looking at the example of the typec_{mux,switch} this pointer points to
-> > a member of an object which has a struct device which is refcounted.
-> > =
-
-> > As such, we can't simply discard the returned object. We have to pass it
-> > back to the caller, whom knows what "match" did and is able to reverse
-> > that.
-> > =
-
-> > I looked at changing the callback and I looked at using krealloc() to
-> > grow an array dynamically.
-> =
-
-> krealloc() may also fail...
-> =
-
-
-Exactly.
-
-> > =
-
-> > =
-
-> > But looking at the use case in mind; finding entities that might need to
-> > react to a USB Type-C event I have a need for 2 matches, and 3 seems
-> > plausible. Beyond that the largest of_graph I have ever dealt with has 6
-> > endpoints.
-> > =
-
-> > While it isn't relevant to use this API for my 6-endpoint case, it would
-> > result in @matches having to be 48 bytes of pointers. And once the call
-> > returns, the actual number of pointers needed is known and the long-term
-> > storage can be re-allocated as necessary based on the return value.
-> > =
-
-> > As such, I dropped the idea of making something fancier and more
-> > dynamic, for the sake of simplicity. Perhaps I'm missing some cool use
-> > case where this is infeasible?
-> =
-
-> Another option would be to use a fixed-size array for the purpose. Assumi=
-ng
-> this will remain a small number, a single global macro could be used to s=
-et
-> the maximum number that could be also easily increased if needed.
-> =
-
-> On the other hand, if this number remains specific to the caller as it
-> would seem, then I guess a caller-set value (as implemented now) remains a
-> fine option, too.
-> =
-
-
-Sounds good.
-
-I will try to capture these arguments in the commit message as I post
-the next version.
+Okay.
 
 Thanks,
 Bjorn
 
-> -- =
+> > +static int qcom_qmp_phy_typec_register(struct qcom_qmp *qmp,
+> > +				       const struct qmp_phy_cfg *cfg)
+> > +{
+> > +	return 0;
+> > +}
+> > +
+> > +static void qcom_qmp_phy_typec_unregister(struct qcom_qmp *qmp)
+> > +{
+> > +}
+> > +#endif
+> > +
+> >  static int qcom_qmp_phy_probe(struct platform_device *pdev)
+> >  {
+> >  	struct qcom_qmp *qmp;
+> > @@ -5891,7 +6010,15 @@ static int qcom_qmp_phy_probe(struct platform_device *pdev)
+> >  		return ret;
+> >  	}
+> >  
+> > -	num = of_get_available_child_count(dev->of_node);
+> > +	ret = qcom_qmp_phy_typec_register(qmp, cfg);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	num = 0;
+> > +	for_each_available_child_of_node(dev->of_node, child) {
+> > +		if (!of_node_name_eq(child, "port"))
+> > +			num++;
+> > +	}
+> >  	/* do we have a rogue child node ? */
+> >  	if (num > expected_phys)
+> >  		return -EINVAL;
+> > @@ -5918,6 +6045,9 @@ static int qcom_qmp_phy_probe(struct platform_device *pdev)
+> >  			serdes = usb_serdes;
+> >  		}
+> >  
+> > +		if (of_node_name_eq(child, "port"))
+> > +			continue;
+> > +
+> >  		/* Create per-lane phy */
+> >  		ret = qcom_qmp_phy_create(dev, child, id, serdes, cfg);
+> >  		if (ret) {
+> > @@ -5962,8 +6092,18 @@ static int qcom_qmp_phy_probe(struct platform_device *pdev)
+> >  	return ret;
+> >  }
+> >  
+> > +static int qcom_qmp_phy_remove(struct platform_device *pdev)
+> > +{
+> > +	struct qcom_qmp *qmp = platform_get_drvdata(pdev);
+> > +
+> > +	qcom_qmp_phy_typec_unregister(qmp);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> >  static struct platform_driver qcom_qmp_phy_driver = {
+> >  	.probe		= qcom_qmp_phy_probe,
+> > +	.remove		= qcom_qmp_phy_remove,
+> >  	.driver = {
+> >  		.name	= "qcom-qmp-phy",
+> >  		.pm	= &qcom_qmp_phy_pm_ops,
+> > -- 
+> > 2.33.1
+> 
+> -- 
+> ~Vinod
 
-> Kind regards,
-> =
-
-> Sakari Ailus
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
