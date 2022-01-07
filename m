@@ -4,76 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CE5EC433EF
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 15:06:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24E58C433FE
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 15:14:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90ZlHzspw44C4jX6P4RNvtRQXC35PpNu5lAfXcWFQrA=; b=BhYJFwtvtlUXze
-	TJOB01oqQ/6FiOwOiz1kv614MFF3VECRNZlZhQmNNSW/G1AgZv76lYyWOMbjd0SRztNhf4kyCQWn6
-	UbWa4vvwizVmWmcFh8SRMl5AXWemZJf+eUfGM8I8pNFgHZBpmqeNYRM7/W/7odAyXpENWlG0vLny/
-	wwK+JCfGTuxhscNDOH6QXGOuIHqKBIZUfbyRkUi6lZsWj2m1W25Z8GSggVHiUDKs7mwtcyl9OBXL3
-	9JHiXsu5JxtT8jPtgT936WzZlzppjl2wXK2y9QARaGk1JmKgyL0DEZogH1tvVrGxmk2xjsmYYS5WC
-	AOMgVWJMdvgC3AhVYzcA==;
+	List-Owner; bh=wsCljLxKGI3U9d7T7kKhB9IrtpprFIIZfzDxI595El8=; b=Qq8yLlW5zT+5a4
+	IoJURAGqxwPimhsmKXx2EPTuht+7BqIEYZ5DB0lNscQPZXrEHstboBLK+SEkl2I923F8IH/c3o2d9
+	PrB/qhWx34HzG87WaOgwPih3bPwMa7yoLnI8HyWqkGVbXCHYqNihiVWSgI862ksc69Kbwegr3KgCB
+	i+raqqaH05PoCcEy2FNmFRzXo6PDNLz6e64LsaQVHMLzyLtfIlLdkA/JsQXh5b/Nj3tQKDibiIr9S
+	Bb5ZPIKCy9rDKTTCbZ4UiE/V/c0SHipz2nafs2ssX8S3nY2flbBxuOzb/fYQ55XXlhRHkLapdc1Zb
+	TyTe4b1OGwM9jBSgUWDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5qoZ-004OHM-PU; Fri, 07 Jan 2022 15:05:59 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1n5qx6-004Qic-JK; Fri, 07 Jan 2022 15:14:48 +0000
+Received: from mail-oi1-x22b.google.com ([2607:f8b0:4864:20::22b])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5qnw-004Nz4-Mc
- for linux-phy@lists.infradead.org; Fri, 07 Jan 2022 15:05:24 +0000
-Received: by mail-wr1-x433.google.com with SMTP id k18so11543336wrg.11
- for <linux-phy@lists.infradead.org>; Fri, 07 Jan 2022 07:05:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20210112.gappssmtp.com; s=20210112;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=fHWF5TDlNwWGy88TN4XkKblCivGgDwghMb/yRIfXJVc=;
- b=cKlzPnbfZjEyR+mOjB4e7M7jyI8geIq/5unkn42D8OICNzX171SwE2/uLdfhzzhnFf
- E7yvVeS8ortZe9HE5Qfkb+okw0TI2+wX9HJTiA/eydcF4FQ6/MZF9aVcAmROQkS+EFox
- cWRpIBtFYsj627Cq1ZzoKwt7Y1jPwQypPtePWkaPENn0AC3TGbgTUBvfjhTc/D3Cph9N
- PkKIMy36/dxsFPpDaD/Jo74OQAyp4vgeuqwSfgzANwrFvP/CPnF9234NvrF6VgHO9yc6
- c9l33ukOJBCyY25/Pbiyo+3ECQuiRTv0EbJm/fVJlB6f0juhxTiq97CEcNNaAPtvoClL
- ocrQ==
+ id 1n5qx3-004Qgg-8e
+ for linux-phy@lists.infradead.org; Fri, 07 Jan 2022 15:14:47 +0000
+Received: by mail-oi1-x22b.google.com with SMTP id w80so8547271oie.9
+ for <linux-phy@lists.infradead.org>; Fri, 07 Jan 2022 07:14:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=hoW/s0DcuKRkkzOcD//hS7BMlfvE2r9t+HnZfYmtjjI=;
+ b=IVzL8zg7qh111l5P6Unaxg6UD17D1qulF1CZYB5ghokN24BQ5IRwO6l/sn0cl3vGVh
+ UCnnvJpFoOQQ2B1YGjk3FHXy2U3YTYlO9SyXKe7gDrI1nJ5rlNhqKDhD4Dx6TG6VhoH+
+ ZU2Ahy4dg8HtyO1Ee52LWFP0Z0dizAmqbLKn/vQahrD76gFnNTSeJhX1bxkAb3VpRsjN
+ gEOyrhzimOXuW3IHEoMO1oQUmpSgBRkwbD4Kc9J5JleT0NvAbZz08FWrrWhD4UQSkDV7
+ +3856kvrMYO/Qa7xyWejxSvFb8JPO/NFq+uBwvW1Gaq4UApv+U92HFHS9AQPsbWjeEo5
+ LP4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=fHWF5TDlNwWGy88TN4XkKblCivGgDwghMb/yRIfXJVc=;
- b=BWFZTRvb/vjwWvUux7GOWoVdHGJgBG37Y+TdE1IWPe6Di+BRamIPt4OdI8e/0MsmU3
- XAMjg/ECtlm3R1HuUNmIH6wk3XbZQni78c2PCJCzK2lYALjy0yawqn4tGgIefl14TggP
- RcWRhhlHVH425ADgJmkUqCqu+9o6j/646cgNn+EqQudF3pIGImJd6M7/7gD7Z7mE6JqZ
- 7V9xi4L1qy4nd4Hb8bdCuAF2fXLY9ZDFPi0/YbKwLse0lfvUMdiiA4wgehWPlvHVdVF0
- k+9wwxAsFfUJjChfqR6MdmNRVmV29nW3JkDBEWsaXSsotBEK/z7HCd7ZcCrCKpwi9LV8
- 7dnA==
-X-Gm-Message-State: AOAM532rHX4A3Pf+8afywLJJFkgIKAP5TB1WiJfW2pptnBkpiCc22eDv
- dxpzu5/CyHiqZSjlmbT6xLrOHw==
-X-Google-Smtp-Source: ABdhPJxvJv3z4C3IEiHF+XOMvYlLZyCad60SVMspYCfhcbCu0hnC5kWf6uS6tTyX7bRaonfkc4Uvmw==
-X-Received: by 2002:a5d:56c6:: with SMTP id m6mr54269048wrw.639.1641567918003; 
- Fri, 07 Jan 2022 07:05:18 -0800 (PST)
-Received: from localhost.localdomain ([2001:861:44c0:66c0:fc89:e826:8938:cbde])
- by smtp.gmail.com with ESMTPSA id s194sm1848246wme.45.2022.01.07.07.05.17
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=hoW/s0DcuKRkkzOcD//hS7BMlfvE2r9t+HnZfYmtjjI=;
+ b=p08RP6e0jdMM3nkB7mWBlCp5QIb7XFtWo3KqxPMtsjhA4TbWuZ4sC8hRMlDva/HsfZ
+ tjFTiJ8H9d4HFbhDjqGuIH6HMnKhD+CsDqVA2S9XLMs77tPkYgj8c1NY7KBu2NQI8DoA
+ HahkoKM8y80ssHEePoZSguvJNZLwYqzMfygzjh/RTp+ZsIVozB0Ke7KzVz0XJ/U39Og/
+ 2hKgbYIdxrF71BcTc/tUP3RiCI1ZNouvl69r2WxN3UoRwG5if1h+E8WU97BLHOfxgj+x
+ 9zyku2Y1KDu3nRh9imXWaXTvBb7lNsbXO0F1yU5doOc8fjrIjvLFMCg1NPJl5zfSmcfT
+ F5cA==
+X-Gm-Message-State: AOAM533h93G56F8T+HUyB5mNborZquFarOmT/diNj2oz93RPyaM2mOWK
+ WR2/K5mncYfkaHEwaXnKLKXGiA==
+X-Google-Smtp-Source: ABdhPJyhks2Fazm9yhlWgkK0jTfqI95vyQTiRxh0FVvoGTX2ao1hw+Qg+M68nCKS0/wVdYGUR9MRbQ==
+X-Received: by 2002:a05:6808:3d8:: with SMTP id
+ o24mr10468608oie.119.1641568484294; 
+ Fri, 07 Jan 2022 07:14:44 -0800 (PST)
+Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186])
+ by smtp.gmail.com with ESMTPSA id a6sm995134oil.6.2022.01.07.07.14.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 07 Jan 2022 07:05:17 -0800 (PST)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: kishon@ti.com,
-	vkoul@kernel.org
-Cc: linux-phy@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>
-Subject: [PATCH v3 2/2] phy: amlogic: Add G12A Analog MIPI D-PHY driver
-Date: Fri,  7 Jan 2022 16:05:12 +0100
-Message-Id: <20220107150512.614423-3-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220107150512.614423-1-narmstrong@baylibre.com>
-References: <20220107150512.614423-1-narmstrong@baylibre.com>
+ Fri, 07 Jan 2022 07:14:43 -0800 (PST)
+Date: Fri, 7 Jan 2022 07:15:30 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hans de Goede <hdegoede@redhat.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Daniel Scally <djrscally@gmail.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH 3/8] device property: Helper to match multiple connections
+Message-ID: <YdhZEp6LmAxCGDIc@ripper>
+References: <20211228052116.1748443-1-bjorn.andersson@linaro.org>
+ <20211228052116.1748443-4-bjorn.andersson@linaro.org>
+ <Yc17Ssug3neFFXKN@kuha.fi.intel.com>
+ <Yc7I3gZehc1lHn4Z@paasikivi.fi.intel.com> <YdYC8DeF1i9a3RnP@ripper>
+ <YdhPQ0Wuz63JBKaR@paasikivi.fi.intel.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <YdhPQ0Wuz63JBKaR@paasikivi.fi.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220107_070520_835221_90F59E93 
-X-CRM114-Status: GOOD (  19.81  )
+X-CRM114-CacheID: sfid-20220107_071445_389186_7F3723A8 
+X-CRM114-Status: GOOD (  55.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,245 +97,276 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Amlogic G12A SoCs embeds an Analog MIPI D-PHY used to communicate with DSI
-panels.
+On Fri 07 Jan 06:33 PST 2022, Sakari Ailus wrote:
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/phy/amlogic/Kconfig                   |  12 ++
- drivers/phy/amlogic/Makefile                  |   1 +
- .../amlogic/phy-meson-g12a-mipi-dphy-analog.c | 177 ++++++++++++++++++
- 3 files changed, 190 insertions(+)
- create mode 100644 drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
+> On Wed, Jan 05, 2022 at 12:43:28PM -0800, Bjorn Andersson wrote:
+> > On Fri 31 Dec 01:09 PST 2021, Sakari Ailus wrote:
+> > =
 
-diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-index db5d0cd757e3..ac898a102bcc 100644
---- a/drivers/phy/amlogic/Kconfig
-+++ b/drivers/phy/amlogic/Kconfig
-@@ -49,6 +49,18 @@ config PHY_MESON_G12A_USB3_PCIE
- 	  in Meson G12A SoCs.
- 	  If unsure, say N.
- 
-+config PHY_MESON_G12A_MIPI_DPHY_ANALOG
-+	tristate "Meson G12A MIPI Analog DPHY driver"
-+	default ARCH_MESON
-+	depends on OF && (ARCH_MESON || COMPILE_TEST)
-+	select GENERIC_PHY
-+	select REGMAP_MMIO
-+	select GENERIC_PHY_MIPI_DPHY
-+	help
-+	  Enable this to support the Meson MIPI Analog DPHY found in Meson G12A
-+	  SoCs.
-+	  If unsure, say N.
-+
- config PHY_MESON_AXG_PCIE
- 	tristate "Meson AXG PCIE PHY driver"
- 	default ARCH_MESON
-diff --git a/drivers/phy/amlogic/Makefile b/drivers/phy/amlogic/Makefile
-index 8fa07fbd0d92..2eada0a683ca 100644
---- a/drivers/phy/amlogic/Makefile
-+++ b/drivers/phy/amlogic/Makefile
-@@ -3,6 +3,7 @@ obj-$(CONFIG_PHY_MESON8B_USB2)			+= phy-meson8b-usb2.o
- obj-$(CONFIG_PHY_MESON_GXL_USB2)		+= phy-meson-gxl-usb2.o
- obj-$(CONFIG_PHY_MESON_G12A_USB2)		+= phy-meson-g12a-usb2.o
- obj-$(CONFIG_PHY_MESON_G12A_USB3_PCIE)		+= phy-meson-g12a-usb3-pcie.o
-+obj-$(CONFIG_PHY_MESON_G12A_MIPI_DPHY_ANALOG)	+= phy-meson-g12a-mipi-dphy-analog.o
- obj-$(CONFIG_PHY_MESON_AXG_PCIE)		+= phy-meson-axg-pcie.o
- obj-$(CONFIG_PHY_MESON_AXG_MIPI_PCIE_ANALOG)	+= phy-meson-axg-mipi-pcie-analog.o
- obj-$(CONFIG_PHY_MESON_AXG_MIPI_DPHY)		+= phy-meson-axg-mipi-dphy.o
-diff --git a/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c b/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
-new file mode 100644
-index 000000000000..6e9d416c0552
---- /dev/null
-+++ b/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
-@@ -0,0 +1,177 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Meson G12A MIPI DSI Analog PHY
-+ *
-+ * Copyright (C) 2018 Amlogic, Inc. All rights reserved
-+ * Copyright (C) 2020 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/bitops.h>
-+#include <linux/module.h>
-+#include <linux/phy/phy.h>
-+#include <linux/regmap.h>
-+#include <linux/delay.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/platform_device.h>
-+#include <dt-bindings/phy/phy.h>
-+
-+#define HHI_MIPI_CNTL0 0x00
-+#define		HHI_MIPI_CNTL0_DIF_REF_CTL1	GENMASK(31, 16)
-+#define		HHI_MIPI_CNTL0_DIF_REF_CTL0	GENMASK(15, 0)
-+
-+#define HHI_MIPI_CNTL1 0x04
-+#define		HHI_MIPI_CNTL1_BANDGAP		BIT(16)
-+#define		HHI_MIPI_CNTL2_DIF_REF_CTL2	GENMASK(15, 0)
-+
-+#define HHI_MIPI_CNTL2 0x08
-+#define		HHI_MIPI_CNTL2_DIF_TX_CTL1	GENMASK(31, 16)
-+#define		HHI_MIPI_CNTL2_CH_EN		GENMASK(15, 11)
-+#define		HHI_MIPI_CNTL2_DIF_TX_CTL0	GENMASK(10, 0)
-+
-+#define DSI_LANE_0				BIT(4)
-+#define DSI_LANE_1				BIT(3)
-+#define DSI_LANE_CLK				BIT(2)
-+#define DSI_LANE_2				BIT(1)
-+#define DSI_LANE_3				BIT(0)
-+
-+struct phy_g12a_mipi_dphy_analog_priv {
-+	struct phy *phy;
-+	struct regmap *regmap;
-+	struct phy_configure_opts_mipi_dphy config;
-+};
-+
-+static int phy_g12a_mipi_dphy_analog_configure(struct phy *phy,
-+					       union phy_configure_opts *opts)
-+{
-+	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = phy_mipi_dphy_config_validate(&opts->mipi_dphy);
-+	if (ret)
-+		return ret;
-+
-+	memcpy(&priv->config, opts, sizeof(priv->config));
-+
-+	return 0;
-+}
-+
-+static int phy_g12a_mipi_dphy_analog_power_on(struct phy *phy)
-+{
-+	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
-+	unsigned int reg;
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL0,
-+		     FIELD_PREP(HHI_MIPI_CNTL0_DIF_REF_CTL0, 0x8) |
-+		     FIELD_PREP(HHI_MIPI_CNTL0_DIF_REF_CTL1, 0xa487));
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL1,
-+		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_REF_CTL2, 0x2e) |
-+		     HHI_MIPI_CNTL1_BANDGAP);
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL2,
-+		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_TX_CTL0, 0x459) |
-+		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_TX_CTL1, 0x2680));
-+
-+	reg = DSI_LANE_CLK;
-+	switch (priv->config.lanes) {
-+	case 4:
-+		reg |= DSI_LANE_3;
-+		fallthrough;
-+	case 3:
-+		reg |= DSI_LANE_2;
-+		fallthrough;
-+	case 2:
-+		reg |= DSI_LANE_1;
-+		fallthrough;
-+	case 1:
-+		reg |= DSI_LANE_0;
-+		break;
-+	default:
-+		reg = 0;
-+	}
-+
-+	regmap_update_bits(priv->regmap, HHI_MIPI_CNTL2,
-+			   HHI_MIPI_CNTL2_CH_EN,
-+			   FIELD_PREP(HHI_MIPI_CNTL2_CH_EN, reg));
-+
-+	return 0;
-+}
-+
-+static int phy_g12a_mipi_dphy_analog_power_off(struct phy *phy)
-+{
-+	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL0, 0);
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL1, 0);
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL2, 0);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops phy_g12a_mipi_dphy_analog_ops = {
-+	.configure = phy_g12a_mipi_dphy_analog_configure,
-+	.power_on = phy_g12a_mipi_dphy_analog_power_on,
-+	.power_off = phy_g12a_mipi_dphy_analog_power_off,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int phy_g12a_mipi_dphy_analog_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy;
-+	struct device *dev = &pdev->dev;
-+	struct phy_g12a_mipi_dphy_analog_priv *priv;
-+	struct device_node *np = dev->of_node;
-+	struct regmap *map;
-+	int ret;
-+
-+	priv = devm_kmalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	/* Get the hhi system controller node */
-+	map = syscon_node_to_regmap(of_get_parent(dev->of_node));
-+	if (IS_ERR(map)) {
-+		dev_err(dev,
-+			"failed to get HHI regmap\n");
-+		return PTR_ERR(map);
-+	}
-+
-+	priv->regmap = map;
-+
-+	priv->phy = devm_phy_create(dev, np, &phy_g12a_mipi_dphy_analog_ops);
-+	if (IS_ERR(priv->phy)) {
-+		ret = PTR_ERR(priv->phy);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(dev, "failed to create PHY\n");
-+		return ret;
-+	}
-+
-+	phy_set_drvdata(priv->phy, priv);
-+	dev_set_drvdata(dev, priv);
-+
-+	phy = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy);
-+}
-+
-+static const struct of_device_id phy_g12a_mipi_dphy_analog_of_match[] = {
-+	{
-+		.compatible = "amlogic,g12a-mipi-dphy-analog",
-+	},
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, phy_g12a_mipi_dphy_analog_of_match);
-+
-+static struct platform_driver phy_g12a_mipi_dphy_analog_driver = {
-+	.probe = phy_g12a_mipi_dphy_analog_probe,
-+	.driver = {
-+		.name = "phy-meson-g12a-mipi-dphy-analog",
-+		.of_match_table = phy_g12a_mipi_dphy_analog_of_match,
-+	},
-+};
-+module_platform_driver(phy_g12a_mipi_dphy_analog_driver);
-+
-+MODULE_AUTHOR("Neil Armstrong <narmstrong@baylibre.com>");
-+MODULE_DESCRIPTION("Meson G12A MIPI Analog D-PHY driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.25.1
+> > > Hi Bj=F6rn,
+> > > =
+
+> > > (And thanks to Heikki for cc'ing me!)
+> > > =
+
+> > > On Thu, Dec 30, 2021 at 11:26:34AM +0200, Heikki Krogerus wrote:
+> > > > +Andy, Dan and Sakari
+> > > > =
+
+> > > > On Mon, Dec 27, 2021 at 09:21:11PM -0800, Bjorn Andersson wrote:
+> > > > > In some cases multiple connections with the same connection id
+> > > > > needs to be resolved from a fwnode graph.
+> > > > > =
+
+> > > > > One such example is when separate hardware is used for performing=
+ muxing and/or
+> > > > > orientation switching of the SuperSpeed and SBU lines in a USB-C
+> > > > > connector. In this case the connector needs to belong to a graph =
+with
+> > > > > multiple matching remote endpoints, and the TypeC controller need=
+s to be
+> > > > > able to resolve them both.
+> > > > > =
+
+> > > > > Add a new API that allows this kind of lookup.
+> > > > > =
+
+> > > > > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > > > > ---
+> > > > >  drivers/base/property.c  | 94 ++++++++++++++++++++++++++++++++++=
+++++++
+> > > > >  include/linux/property.h |  5 +++
+> > > > >  2 files changed, 99 insertions(+)
+> > > > > =
+
+> > > > > diff --git a/drivers/base/property.c b/drivers/base/property.c
+> > > > > index cbe4fa298413..0aa0296fd991 100644
+> > > > > --- a/drivers/base/property.c
+> > > > > +++ b/drivers/base/property.c
+> > > > > @@ -1180,6 +1180,36 @@ fwnode_graph_devcon_match(struct fwnode_ha=
+ndle *fwnode, const char *con_id,
+> > > > >  	return NULL;
+> > > > >  }
+> > > > >  =
+
+> > > > > +static unsigned int fwnode_graph_devcon_matches(struct fwnode_ha=
+ndle *fwnode,
+> > > > > +						const char *con_id, void *data,
+> > > > > +						devcon_match_fn_t match,
+> > > > > +						void **matches,
+> > > > > +						unsigned int matches_len)
+> > > > > +{
+> > > > > +	struct fwnode_handle *node;
+> > > > > +	struct fwnode_handle *ep;
+> > > > > +	unsigned int count =3D 0;
+> > > > > +	void *ret;
+> > > > > +
+> > > > > +	fwnode_graph_for_each_endpoint(fwnode, ep) {
+> > > > > +		if (count >=3D matches_len) {
+> > > > > +			fwnode_handle_put(ep);
+> > > > > +			return count;
+> > > > > +		}
+> > > > > +
+> > > > > +		node =3D fwnode_graph_get_remote_port_parent(ep);
+> > > > > +		if (!fwnode_device_is_available(node))
+> > > =
+
+> > > The reference to node needs to be put here.
+> > > =
+
+> > =
+
+> > You're right, thanks!
+> > =
+
+> > > > > +			continue;
+> > > > > +
+> > > > > +		ret =3D match(node, con_id, data);
+> > > > > +		fwnode_handle_put(node);
+> > > > > +
+> > > > > +		if (ret)
+> > > > > +			matches[count++] =3D ret;
+> > > > > +	}
+> > > > > +	return count;
+> > > > > +}
+> > > > > +
+> > > > >  static void *
+> > > > >  fwnode_devcon_match(struct fwnode_handle *fwnode, const char *co=
+n_id,
+> > > > >  		    void *data, devcon_match_fn_t match)
+> > > > > @@ -1202,6 +1232,35 @@ fwnode_devcon_match(struct fwnode_handle *=
+fwnode, const char *con_id,
+> > > > >  	return NULL;
+> > > > >  }
+> > > > >  =
+
+> > > > > +static unsigned int fwnode_devcon_matches(struct fwnode_handle *=
+fwnode,
+> > > > > +					  const char *con_id, void *data,
+> > > > > +					  devcon_match_fn_t match,
+> > > > > +					  void **matches,
+> > > > > +					  unsigned int matches_len)
+> > > > > +{
+> > > > > +	struct fwnode_handle *node;
+> > > > > +	unsigned int count =3D 0;
+> > > > > +	void *ret;
+> > > > > +	int i;
+> > > =
+
+> > > unsigned int, please.
+> > > =
+
+> > =
+
+> > Sounds good.
+> > =
+
+> > > > > +
+> > > > > +	for (i =3D 0; ; i++) {
+> > > > > +		if (count >=3D matches_len)
+> > > > > +			return count;
+> > > > > +
+> > > > > +		node =3D fwnode_find_reference(fwnode, con_id, i);
+> > > > > +		if (IS_ERR(node))
+> > > > > +			break;
+> > > > > +
+> > > > > +		ret =3D match(node, NULL, data);
+> > > > > +		fwnode_handle_put(node);
+> > > > > +
+> > > > > +		if (ret)
+> > > > > +			matches[count++] =3D ret;
+> > > > > +	}
+> > > > > +
+> > > > > +	return count;
+> > > > > +}
+> > > > > +
+> > > > >  /**
+> > > > >   * fwnode_connection_find_match - Find connection from a device =
+node
+> > > > >   * @fwnode: Device node with the connection
+> > > > > @@ -1229,3 +1288,38 @@ void *fwnode_connection_find_match(struct =
+fwnode_handle *fwnode,
+> > > > >  	return fwnode_devcon_match(fwnode, con_id, data, match);
+> > > > >  }
+> > > > >  EXPORT_SYMBOL_GPL(fwnode_connection_find_match);
+> > > > > +
+> > > > > +/**
+> > > > > + * fwnode_connection_find_matches - Find connections from a devi=
+ce node
+> > > > > + * @fwnode: Device node with the connection
+> > > > > + * @con_id: Identifier for the connection
+> > > > > + * @data: Data for the match function
+> > > > > + * @match: Function to check and convert the connection descript=
+ion
+> > > > > + * @matches: Array of pointers to fill with matches
+> > > > > + * @matches_len: Length of @matches
+> > > > > + *
+> > > > > + * Find up to @matches_len connections with unique identifier @c=
+on_id between
+> > > > > + * @fwnode and other device nodes. @match will be used to conver=
+t the
+> > > > > + * connection description to data the caller is expecting to be =
+returned
+> > > > > + * through the @matches array.
+> > > =
+
+> > > If the caller allocates the matches array, how does it know how large=
+ it
+> > > should be? Is there a need to provide a way to count the matches befo=
+re
+> > > writing them to an array? Most similar functions do that by just sett=
+ing the
+> > > array (matches) to NULL.
+> > > =
+
+> > =
+
+> > This is a very relevant comment and I did look for ways to handle this
+> > as I came up with the patch.
+> > =
+
+> > I think the typical mechanism would be to allow @matches to be NULL, in
+> > which case we iterate over objects and return the number of matches, so
+> > that the caller can allocate an appropriately sized array and call the
+> > API again.
+> > =
+
+> > But the "match" function simply returns a pointer to something and
+> > looking at the example of the typec_{mux,switch} this pointer points to
+> > a member of an object which has a struct device which is refcounted.
+> > =
+
+> > As such, we can't simply discard the returned object. We have to pass it
+> > back to the caller, whom knows what "match" did and is able to reverse
+> > that.
+> > =
+
+> > I looked at changing the callback and I looked at using krealloc() to
+> > grow an array dynamically.
+> =
+
+> krealloc() may also fail...
+> =
 
 
--- 
+Exactly.
+
+> > =
+
+> > =
+
+> > But looking at the use case in mind; finding entities that might need to
+> > react to a USB Type-C event I have a need for 2 matches, and 3 seems
+> > plausible. Beyond that the largest of_graph I have ever dealt with has 6
+> > endpoints.
+> > =
+
+> > While it isn't relevant to use this API for my 6-endpoint case, it would
+> > result in @matches having to be 48 bytes of pointers. And once the call
+> > returns, the actual number of pointers needed is known and the long-term
+> > storage can be re-allocated as necessary based on the return value.
+> > =
+
+> > As such, I dropped the idea of making something fancier and more
+> > dynamic, for the sake of simplicity. Perhaps I'm missing some cool use
+> > case where this is infeasible?
+> =
+
+> Another option would be to use a fixed-size array for the purpose. Assumi=
+ng
+> this will remain a small number, a single global macro could be used to s=
+et
+> the maximum number that could be also easily increased if needed.
+> =
+
+> On the other hand, if this number remains specific to the caller as it
+> would seem, then I guess a caller-set value (as implemented now) remains a
+> fine option, too.
+> =
+
+
+Sounds good.
+
+I will try to capture these arguments in the commit message as I post
+the next version.
+
+Thanks,
+Bjorn
+
+> -- =
+
+> Kind regards,
+> =
+
+> Sakari Ailus
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
