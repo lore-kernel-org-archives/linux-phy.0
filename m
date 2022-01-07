@@ -4,73 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42658C433F5
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jan 2022 21:00:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81893C433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 02:51:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xYajttNVs8Ghs5QC/Cpg/3qoYyBT+CcxLaCpSg8/VXc=; b=HIOsoVZGTh89kc
-	L6IADSKoQo1mZqdS5bP5FPSVA7l5cq3wZ71QWOct6jx+lC6LVX98quzFzYRHX5u0GmkkBFhfVRLza
-	vJ70t2SXXdD/S9QT9yQMy1FYidHT2NE3ZaZjATy5b1TwraOvXEyx8ElZWfnGHwBMmwrHIegP7gEm8
-	Fhs1jq2xhF/DmzfET5GShicspth2XpLe1xfpiMWY1C0xx2T+5bZw4tA4/nm9SQGxAihu+kr/sTcdZ
-	+fGLsQx1r6VH38RLjxbbd5J0GaKx25jzufRoFgtg9xbUbyi7y4oXoWwCuJsruC3WBJ5TLtmN2ZkAb
-	l2IDFosAAzDYOp8Mbc8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=e0ef/EdGi06s2CvZXNNscRVE/6EXLPCkIYD1h7CT7uk=; b=UfmICbA+4D133d
+	DeMJjiZtXDX9HtupvfoRSW+RuO/qfjw0LY02LNnomY8LJLhcJN5traEhFzWxq+m6flJNdS7wCmG+z
+	x7B4ZCcCtmUxlUwm0pw3nnP2zWM1PwBf1OV2fzDHD3tcFbHKVkTS0UR2+BIjhdrs/arErUdQxGMHf
+	b0vB78iMmfGlKCSTygZHE/siA1KPtSgYfYtAlfCKryTJlC4EgvbVJGjmhr64wfYJCtEHhymM6SmuB
+	2/pXZecWaOnrXUCZ+R1oyqa8rH6seuS3YGLzX+XPU1M1fuVBHEG+4a6D1e4uStFlA6FIV3SQj81UO
+	m09N9mtJQp92PbfoqeUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5Zs6-001NaJ-Fe; Thu, 06 Jan 2022 21:00:30 +0000
-Received: from mail-io1-xd2f.google.com ([2607:f8b0:4864:20::d2f])
+	id 1n5fLo-002516-To; Fri, 07 Jan 2022 02:51:32 +0000
+Received: from mail-sgaapc01on2099.outbound.protection.outlook.com
+ ([40.107.215.99] helo=APC01-SG2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5Zs3-001NZe-74
- for linux-phy@lists.infradead.org; Thu, 06 Jan 2022 21:00:29 +0000
-Received: by mail-io1-xd2f.google.com with SMTP id l3so4631859iol.10
- for <linux-phy@lists.infradead.org>; Thu, 06 Jan 2022 13:00:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AmzdgAiuO/8SZ4ChbNLcS7C9Wx3iWh+y/OvXPCFKxrw=;
- b=bF0zHrf6cn7DZ9x7Pn4rON78LlB/Hv4SZOT1CUj/MS6/n3ZRZRuCOzw38oA9zXUnUq
- bmPYvez6eiYkBvk7XWVrAWDC9k/UQm1G+UlfndAwfmWfa9a8OmebJf30pHRvKVOH7vLs
- jt6bGvG2Aqd9ZHc94cDDGoxmgy4g8E5zyYL9iT0hbk68Fbwp9h6N8bAzGBvI8eheAF4z
- FcEVNjkDqF28luZRsiDiFQOfedRFwy+Cm991Ddau75kShcGF2h70VZ4zhwsPu2abAa0c
- bafGpZZYjVq8h0wtrhrDmHrDlIiTeia1yeNt14TfbkApq+o7nqg88SGsPY1GhFNAVaZV
- RgNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AmzdgAiuO/8SZ4ChbNLcS7C9Wx3iWh+y/OvXPCFKxrw=;
- b=qJxewnA2bozR3Z4UIcfkWD+t9BtdMBq49lJ8zL5Xdv13VGNhy1EKbdIjCDVArdrdYs
- 9BRiTdKhA5lwVeMFcOhafA5pGuWWadLZvGSP4WcQrcahNxOGVickZRyh80IA3xQ3xPhz
- MvqX70TkMedyjzJ3iO7cC7yYISoBEmH04YcPm7GliyqFdQrldTuvUw32QKHbykXxgaQ+
- pdXq1p+Rjp/eQMI7+XY/Ko4Zvz2bHQAqgFRwwo5+elzcRqVox/4zTaGGYEA/TzY4Reis
- irhvzin6KerEhhxriMDy6/2xV+eTgmCnlop1omNIf06V+T2t/agbqbjA8Caoj1P3eN4F
- 8dhg==
-X-Gm-Message-State: AOAM532u0xVNWCmKp51/5CTE91GqipGWvvE9FTooJxRB6n4R7i0eeX0p
- VXivRgp9r6nwWDB0Yj+l7uf/K68XSGOqfkBix9s=
-X-Google-Smtp-Source: ABdhPJyMPlDYOazAJHlrg63PALPvUxYHWGsXkLSVu4lQmb//VCulO817Wx8LlBVYawaWZLOwDu/PsbsVmaBAVu8/IEM=
-X-Received: by 2002:a05:6638:33a6:: with SMTP id
- h38mr28475446jav.194.1641502825423; 
- Thu, 06 Jan 2022 13:00:25 -0800 (PST)
+ id 1n5fLb-0024xJ-4b; Fri, 07 Jan 2022 02:51:20 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HSj5bwzwfpxuKZZMoM5IOHIGupaFgd4kT25dY5bM9SmEoqeFiAwpnr3Oee13bC1P1WjW4ckw/y12jDYb+ohgypClTEs49AE9hcchP96ufNbhdNaLdlAXfItgswJzGjeMp3WXMH7RyPaqTH4xU+xZVzxtsQhM0IC2K1zhO3kAqxswM/6UTS1EpvrJxhDrpMbcy9f9j6VPxgQ6UCRE+9WickZrdPBcHFAVZLruw0YzZAB5+iyvcKGbga0sSQlIM2fZUADwrEwgvSgMU9DYNBoiU/3qdiY4aK88dVRWH9VpQK4J2QyZJFcWHK7cwlnl5WWfd143f9pIy2tiNKIbjYWAfg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=5r4UGt1bprd3oWYhcqQ18mvvoJrjKspLTKeP6SBKXY8=;
+ b=nP0BYHvJ3f3aOL7e1Q1PAs0VmXnWHSPVP21/hzUV8O19gffG88HgFg0EOETyhmMjzqzBvXjyoX3/bM0QUQDg8T6sECtZhW6QDirQsRFDrpz8XqaomndS91Iskdd18EPEofwkQGZiuInb/LuBSECoDo5Y0jhynIL9/GdLY4WSJY41WkyvZWRJYCO3CjMfIIHNxckecfTDvp8T3YpxvqZ1U9lZmDggSgDCGy/IB5jhxX5TrIlvxT+74UnbOvI/fBVxE729XUPe2bxmKutDmVMu24ZotZWn8G5tuKzCZsv1WMQNOoH8Ugbq9U9hDVhTLGXXMnZfDOBTpVUOYFa0bZZHzw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
+ dkim=pass header.d=vivo.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo0.onmicrosoft.com; 
+ s=selector2-vivo0-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5r4UGt1bprd3oWYhcqQ18mvvoJrjKspLTKeP6SBKXY8=;
+ b=PR0eVAP1LJekZh5l65n4BRxYqCncGRme4pRx7OElVT7jpPaYITOCVt1h0ahZl3UyVuYY7UQ8BZk8BLuP7fJPj7hXEOz8Z0k9vDtD2hsTuk7deHVBILUsxIk8G8Wt/bYiw+WTjFbt11sZ5o1XRXvtBd3hAo59+KJNcbx7OnfbPLI=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=vivo.com;
+Received: from SG2PR06MB3367.apcprd06.prod.outlook.com (2603:1096:4:78::19) by
+ SG2PR06MB2859.apcprd06.prod.outlook.com (2603:1096:4:18::17) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4867.9; Fri, 7 Jan 2022 02:51:10 +0000
+Received: from SG2PR06MB3367.apcprd06.prod.outlook.com
+ ([fe80::ac83:c27d:7c9:74ba]) by SG2PR06MB3367.apcprd06.prod.outlook.com
+ ([fe80::ac83:c27d:7c9:74ba%6]) with mapi id 15.20.4844.016; Fri, 7 Jan 2022
+ 02:51:09 +0000
+From: Wan Jiabing <wanjiabing@vivo.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: jiabing.wan@qq.com,
+	Wan Jiabing <wanjiabing@vivo.com>
+Subject: [PATCH] phy: phy-mtk-tphy: Fix dumplicated argument in phy-mtk-tphy
+Date: Fri,  7 Jan 2022 10:50:50 +0800
+Message-Id: <20220107025050.787720-1-wanjiabing@vivo.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SG2PR04CA0158.apcprd04.prod.outlook.com (2603:1096:4::20)
+ To SG2PR06MB3367.apcprd06.prod.outlook.com (2603:1096:4:78::19)
 MIME-Version: 1.0
-References: <20211201180653.35097-1-alcooperx@gmail.com>
- <20211201180653.35097-2-alcooperx@gmail.com>
- <YahNIinbEwB569C1@matsya>
-In-Reply-To: <YahNIinbEwB569C1@matsya>
-From: Alan Cooper <alcooperx@gmail.com>
-Date: Thu, 6 Jan 2022 16:01:53 -0500
-Message-ID: <CAOGqxeVS0sQg=vAQKOC3ksuGfdCO-TzgMdOmhtQJZBcuj3YFdg@mail.gmail.com>
-Subject: Re: [PATCH 1/3] phy: usb: Leave some clocks running during suspend
-To: Vinod Koul <vkoul@kernel.org>
-Cc: ": Linux Kernel Mailing List" <linux-kernel@vger.kernel.org>, 
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>, 
- Florian Fainelli <f.fainelli@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-phy@lists.infradead.org, 
- =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: f9e8575b-eed1-4081-c69a-08d9d1888e97
+X-MS-TrafficTypeDiagnostic: SG2PR06MB2859:EE_
+X-Microsoft-Antispam-PRVS: <SG2PR06MB2859BE7002BD6F5C5F9EB583AB4D9@SG2PR06MB2859.apcprd06.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2150;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: dAImU5NtYV1lVUhGUnp3o1L/P7gh8xaWkfFEDyluzPhUpvX+8IoLCSmrdeSTbi4mGlastJHqKXPaIIHiAeGdOQPO2tNudt7gm72UajVmvFe6MWoBOBl9Gh0AeUGNKzydxjXV3BDdi29Il+L5l9JzCZS95zaTFR9yIFlnhNxvaEi14JLzrKjPHhooLNtkxz2oTvceI9LXFkDPVuxykjxELkCYJk2Ny+dIisR8gisS4yrQuY27wX7WcyHZbd5P/J1ap0j504p7RMij0uSE0MZ+kGV947BinII5J2AZ9SqPAcBVzHLZSd6WxpoS+sVzJj0FbiRCYblX87sWQ5SjTVMZ4puhxLXgz7izbdECW5I3ymGgr/8VS5IsDbPnK1niHFRiguwT+dg4hFlfC4SI6LyqPuYPApsrC/Gv5+OXTV8HBY6G9DFJJem2hyJOxtoTL65im+DbLSbm4UIcxld1y7q5yNz6dKnOgqGcfIk/Ygs+yr+51O7I4PqzYprIsqEAGEr9x8Tdx33OwomMvDHWMW5jdtKWp3ALHl04KIQZHfV0hKdw7Rqrk3e+GO//HmryKL2c/YhZxgqFCD+8tLAuIzCd8lYvRQtUoUOL7mwuQElfJ9k4U3QpSPOAI5CpcSpT+a2umSBfNtlsHctRNFxtjRfrWrVZDNwgoD6/j58AIxq8NzDidQxb5ysYZd5+kQOMr6KVgtFKvjmNjFrn/8oDcswOpg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SG2PR06MB3367.apcprd06.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(6666004)(26005)(2906002)(6506007)(2616005)(107886003)(1076003)(36756003)(38350700002)(38100700002)(6512007)(316002)(86362001)(6486002)(66476007)(508600001)(66946007)(66556008)(5660300002)(83380400001)(52116002)(110136005)(8936002)(4326008)(4744005)(8676002)(186003);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Bbx0LZ/CzUS6JePgdMucK7R2M+u7cOf62eJkF47bjdTNwJigMOjVsykGDRWg?=
+ =?us-ascii?Q?vs3DYgkFWW2AEYR2wg4JidMTEJzfEgzL+6CU3svv2auPUi2TFrHWmWRx8u++?=
+ =?us-ascii?Q?zzUJRPzmXetwYzVKHyF5wl7I39y+mklzkUcvwdoxw3f6vaWnEmtDMEx34kV3?=
+ =?us-ascii?Q?CuEhgIQy/AlOdJjJOmIGIcqw+k9/o5u09RukxAocz08PJvZpSLAgAUZws41r?=
+ =?us-ascii?Q?iG8nBLu4Sgf+QF52kg5nL+0GhdzS68b8WzzlhcNHHG2oJZ02tfuRCqZzE7xn?=
+ =?us-ascii?Q?ME+QfQ80Wt1MU3QNVAVovkCyuwOFpp8lVao77Dx/Rh+7qC7/m6vfD/VMm5rQ?=
+ =?us-ascii?Q?J1K3X+blHVES5l24yA5SoKeK5NhhImzlgGUC2ovxbM9LTAt2/hx1tCG5yVX5?=
+ =?us-ascii?Q?vFCsY/T8+Kr73peTEcA4Sswm8ZMqOHJgG50w1XFDoVB4lstDvZGPIagjftWH?=
+ =?us-ascii?Q?z0LQTxiEy735B7aH/efgfF5BVQoXLWf6YXRwAMqcb84bFpASqYfvyjHq9G+A?=
+ =?us-ascii?Q?GgPrAlnMGXv5sv7+wlf/6Nj+rBGSJKq+tUt3ymg4GZ+pl3d9MpxaW8/8ams+?=
+ =?us-ascii?Q?Jp8k1u2fBJTXkPb7J0VaPawaYirOkmln4PoXEDmhWRAC6UJz4mGV7Phtts+Y?=
+ =?us-ascii?Q?kDRV1vmsBTk71vJ3UKUXfZ32Qi0fB0D236VOFntSf+ui6Hi2v4L2iCiJNEs4?=
+ =?us-ascii?Q?EH9cTrrmijBTWum1cUipYlXUr0c7HsTmCKeK6wJiUOYMZlvEav8UUqa/yaEe?=
+ =?us-ascii?Q?Y72qwUpXGi4IU8IqUF04vFCmCf4gAbWayvUHa8606mHpvrS6OpT584VrGfh4?=
+ =?us-ascii?Q?MfebBIWwxDhxdC2uLs5m5Db9+hwGQuGMY9v1FAk5hyAgJFFxsoRXSuZsHycH?=
+ =?us-ascii?Q?sHiG+q9UmW8h+qgbEFKw2MN85O1VT2mm/m5wVeYNEr2sINXLR3V2N8N8gugK?=
+ =?us-ascii?Q?Sfkl4TnX06TPEZj2tSYE8GA1LHfAuy/J27j//IJeqnE4BC/Hn9nCCJ67pjbc?=
+ =?us-ascii?Q?M4vkFBXK4nsLXeJ0QbQPPQLhybNYlZuCWc+MsrTSt8KjsivYgTNwroCZcc1p?=
+ =?us-ascii?Q?zxufNHbW9+ooE0pgqcJ8YOCLZMWDlC31KB0UBNqxOMB7rLnczso1a0/ia9oF?=
+ =?us-ascii?Q?xi2xh8lhB7MF0xNqjbKlgE31nJErEpZGkYDYHc/oHW23f29CmzjpUWKzfLrZ?=
+ =?us-ascii?Q?OVt9LTjCdWqKp8E5ToBixO1jTbRc0AVb1khXUDThmW9eF57nW0VAZJ8VgF82?=
+ =?us-ascii?Q?8pKqjGjfGdh1Djpd+ajq3y9XqvmmgsYQJhpPeWXfqDabdVZ861TXDHMcERuG?=
+ =?us-ascii?Q?ocxG1H6evdxB85QV9hcUbmoVIcEH+lqkXSZKjFNNFPELRH7aFKj7JhsIFiZM?=
+ =?us-ascii?Q?pMYAVeXZ6zWLl/yEnpMblEd+TJFkxDaK6TnpccT7K7er/ctUmyz+ONewA4Vz?=
+ =?us-ascii?Q?ZyEUt7wHiBsYURSRqkaNlY6AcCu21Pt5TQzaWvkISA/6aT1WQ7ByKrOxDIOi?=
+ =?us-ascii?Q?ilMq6QUYWyF6wS8L8U9ij5f1r9fRF+JsoTk1SrlTrIkZc8d9xEJ5GAVigbmr?=
+ =?us-ascii?Q?LeCi0OSeAdbxEqhR14V/wmuqvHPMFb1q9gXN//y+0n0NS6wLXZV7KkoH7gG4?=
+ =?us-ascii?Q?SMvWF2+fUQCm1upQ4tfh6ak=3D?=
+X-OriginatorOrg: vivo.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f9e8575b-eed1-4081-c69a-08d9d1888e97
+X-MS-Exchange-CrossTenant-AuthSource: SG2PR06MB3367.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Jan 2022 02:51:09.2391 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: fZULO9vQVtpDTbxBuQPQVezDoaeZt+j3z+L7CisEE4dWW7UXhimjk/XX6VUx8fpbcCHF23hy0fjk5BZIpUFnZg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SG2PR06MB2859
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220106_130027_881699_3FE68858 
-X-CRM114-Status: GOOD (  31.87  )
+X-CRM114-CacheID: sfid-20220106_185119_211864_CF24321A 
+X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,142 +138,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 1, 2021 at 11:35 PM Vinod Koul <vkoul@kernel.org> wrote:
->
-> On 01-12-21, 13:06, Al Cooper wrote:
-> > The PHY client driver does a phy_exit() call on suspend or rmmod and
-> > the PHY driver needs to know the difference because some clocks need
-> > to be kept running for suspend but can be shutdown on unbind/rmmod
-> > (or if there are no PHY clients at all).
-> >
-> > The fix is to use a PM notifier so the driver can tell if a PHY
-> > client is calling exit() because of a system suspend or a driver
-> > unbind/rmmod.
-> >
-> > Signed-off-by: Al Cooper <alcooperx@gmail.com>
-> > ---
-> >  drivers/phy/broadcom/phy-brcm-usb.c | 38 +++++++++++++++++++++++++++++
-> >  1 file changed, 38 insertions(+)
-> >
-> > diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-> > index 116fb23aebd9..0f1deb6e0eab 100644
-> > --- a/drivers/phy/broadcom/phy-brcm-usb.c
-> > +++ b/drivers/phy/broadcom/phy-brcm-usb.c
-> > @@ -18,6 +18,7 @@
-> >  #include <linux/soc/brcmstb/brcmstb.h>
-> >  #include <dt-bindings/phy/phy.h>
-> >  #include <linux/mfd/syscon.h>
-> > +#include <linux/suspend.h>
-> >
-> >  #include "phy-brcm-usb-init.h"
-> >
-> > @@ -70,12 +71,35 @@ struct brcm_usb_phy_data {
-> >       int                     init_count;
-> >       int                     wake_irq;
-> >       struct brcm_usb_phy     phys[BRCM_USB_PHY_ID_MAX];
-> > +     struct notifier_block   pm_notifier;
-> > +     bool                    pm_active;
-> >  };
-> >
-> >  static s8 *node_reg_names[BRCM_REGS_MAX] = {
-> >       "crtl", "xhci_ec", "xhci_gbl", "usb_phy", "usb_mdio", "bdc_ec"
-> >  };
-> >
-> > +static int brcm_pm_notifier(struct notifier_block *notifier,
-> > +                         unsigned long pm_event,
-> > +                         void *unused)
-> > +{
-> > +     struct brcm_usb_phy_data *priv =
-> > +             container_of(notifier, struct brcm_usb_phy_data, pm_notifier);
-> > +
-> > +     switch (pm_event) {
-> > +     case PM_HIBERNATION_PREPARE:
-> > +     case PM_SUSPEND_PREPARE:
-> > +             priv->pm_active = true;
-> > +             break;
-> > +     case PM_POST_RESTORE:
-> > +     case PM_POST_HIBERNATION:
-> > +     case PM_POST_SUSPEND:
-> > +             priv->pm_active = false;
-> > +             break;
-> > +     }
-> > +     return NOTIFY_DONE;
-> > +}
-> > +
-> >  static irqreturn_t brcm_usb_phy_wake_isr(int irq, void *dev_id)
-> >  {
-> >       struct phy *gphy = dev_id;
-> > @@ -91,6 +115,9 @@ static int brcm_usb_phy_init(struct phy *gphy)
-> >       struct brcm_usb_phy_data *priv =
-> >               container_of(phy, struct brcm_usb_phy_data, phys[phy->id]);
-> >
-> > +     if (priv->pm_active)
-> > +             return 0;
-> > +
-> >       /*
-> >        * Use a lock to make sure a second caller waits until
-> >        * the base phy is inited before using it.
-> > @@ -120,6 +147,9 @@ static int brcm_usb_phy_exit(struct phy *gphy)
-> >       struct brcm_usb_phy_data *priv =
-> >               container_of(phy, struct brcm_usb_phy_data, phys[phy->id]);
-> >
-> > +     if (priv->pm_active)
-> > +             return 0;
-> > +
-> >       dev_dbg(&gphy->dev, "EXIT\n");
-> >       if (phy->id == BRCM_USB_PHY_2_0)
-> >               brcm_usb_uninit_eohci(&priv->ini);
-> > @@ -488,6 +518,9 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
-> >       if (err)
-> >               return err;
-> >
-> > +     priv->pm_notifier.notifier_call = brcm_pm_notifier;
-> > +     register_pm_notifier(&priv->pm_notifier);
-> > +
-> >       mutex_init(&priv->mutex);
-> >
-> >       /* make sure invert settings are correct */
-> > @@ -528,7 +561,10 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
-> >
-> >  static int brcm_usb_phy_remove(struct platform_device *pdev)
-> >  {
-> > +     struct brcm_usb_phy_data *priv = dev_get_drvdata(&pdev->dev);
-> > +
-> >       sysfs_remove_group(&pdev->dev.kobj, &brcm_usb_phy_group);
-> > +     unregister_pm_notifier(&priv->pm_notifier);
-> >
-> >       return 0;
-> >  }
-> > @@ -539,6 +575,7 @@ static int brcm_usb_phy_suspend(struct device *dev)
-> >       struct brcm_usb_phy_data *priv = dev_get_drvdata(dev);
-> >
-> >       if (priv->init_count) {
-> > +             dev_dbg(dev, "SUSPEND\n");
->
-> debug artifact?
->
-> >               priv->ini.wake_enabled = device_may_wakeup(dev);
-> >               if (priv->phys[BRCM_USB_PHY_3_0].inited)
-> >                       brcm_usb_uninit_xhci(&priv->ini);
-> > @@ -578,6 +615,7 @@ static int brcm_usb_phy_resume(struct device *dev)
-> >        * Uninitialize anything that wasn't previously initialized.
-> >        */
-> >       if (priv->init_count) {
-> > +             dev_dbg(dev, "RESUME\n");
->
-> here too
+Fix following coccicheck warning:
+./drivers/phy/mediatek/phy-mtk-tphy.c:994:6-29: duplicated argument
+to && or ||
 
-I left these in intentionally because they are very useful for debug.
+The efuse_rx_imp is duplicate. Here should be efuse_tx_imp.
 
->
-> >               if (priv->wake_irq >= 0)
-> >                       disable_irq_wake(priv->wake_irq);
-> >               brcm_usb_init_common(&priv->ini);
-> > --
-> > 2.17.1
->
-> --
-> ~Vinod
+Signed-off-by: Wan Jiabing <wanjiabing@vivo.com>
+---
+ drivers/phy/mediatek/phy-mtk-tphy.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index 6d307102f4f6..8ee7682b8e93 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -992,7 +992,7 @@ static int phy_efuse_get(struct mtk_tphy *tphy, struct mtk_phy_instance *instanc
+ 		/* no efuse, ignore it */
+ 		if (!instance->efuse_intr &&
+ 		    !instance->efuse_rx_imp &&
+-		    !instance->efuse_rx_imp) {
++		    !instance->efuse_tx_imp) {
+ 			dev_warn(dev, "no u3 intr efuse, but dts enable it\n");
+ 			instance->efuse_sw_en = 0;
+ 			break;
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
