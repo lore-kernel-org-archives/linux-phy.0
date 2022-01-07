@@ -4,84 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AE58C433F5
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 19:15:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A48EC433EF
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 22:09:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O3u3T42VZNY3BgZMFNcPT+HGqBiK2HN++F5GZ3hmn3M=; b=qcJVfu1go+Muoq
-	C8tGEUy7Bs2ZMSszUPBd2cP8MheqaoKidXO70Tq2boWH0VwQFgYYohWcJEpldLgS3aLrfpn+0whlS
-	6X+o8BxpoO6HyWcaifEIApyf9ZjUHuMQkleibWQ9Os2MtIveS2rzDFuXIemOa8XecKNdX19mMptBD
-	NENplEi6Hflzw2xYTFSq6O77WZcAGF3AVwuAYDSsaf8X8FximMHzMP4tuBtYk6OfH8fRQOMunXfPx
-	K3a5/fWnY2U0QP0tFXlnAKeLx/XoP2OG9TNKDGJo3RlfgdnGEHuLIQAAaSZzSNHDq9LeftV1K/uqO
-	b8MrTvSa+Xcx5dO0wisw==;
+	List-Owner; bh=Z+EcUUW0SktQ+n/AGDcGY3HRSwSGQ0P2AfvDRIo2EdI=; b=QnOWlxL0hGHzjZ
+	Ty0Zcui4SUGnqBP6RRf0kiiGRKnDHzVTc4JC+Uk1/wrYDzYrGFzg2WNRmnnqOjGP69yCGmmB9Oxzy
+	XmoYVcgjUUMGxgVjFMcG2tCvYzOyxDdLwpPHDWwkTNtzI9FOANZ+OHyBTZdnFRMB6ZO6Fcc6P5LHd
+	XWjRodOPMWBJ1TLmkxchM2QtABmqN6X/Sn7J946lc5EwPrOOGChaQ/j7+aYta7KhwVOkaCK67j2Qx
+	NX30CZCoXl1Ya9sLc8deC7SANwgE/Hm3Yv2sBMKZUVxhruRoS0uc/H4EvhSDxcG8i6VQ/5PzIjCi2
+	eFu+ZCeFrgrJsNSlzuvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5uhf-0053QS-0X; Fri, 07 Jan 2022 19:15:07 +0000
-Received: from mail-ot1-x334.google.com ([2607:f8b0:4864:20::334])
+	id 1n5xQN-005MIA-KL; Fri, 07 Jan 2022 22:09:27 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5uha-0053OT-W8
- for linux-phy@lists.infradead.org; Fri, 07 Jan 2022 19:15:05 +0000
-Received: by mail-ot1-x334.google.com with SMTP id
- 45-20020a9d0a30000000b0058f1a6df088so7645983otg.4
- for <linux-phy@lists.infradead.org>; Fri, 07 Jan 2022 11:15:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=WtHO/Q1bDJN+G650TFpgg/0NiPkrLAPHRgb8v223Lbo=;
- b=qONpMQerFVvJzeuaO7HJZFklpD0RhtVscnKhouQotEj2yGV1inUiOVjoIrwSdcu3u5
- pziPKDh5Uy7aBsppkzh1MRIAQnoQOo0+/Oan2f5Bj8tvGHYrreKOHECnFdMpf+pTDVTp
- P6BK9/snST6swA4g+dDgOQLIU8d7pSDbV61aSvYUOrljBJJXiH0SdGOvcadatIgcLwwb
- o2Dm/tjA4ew7sIDw0kzYcHUzJtXgLZke1SNSx1SqM2mbIZmTmLWLSXe3rzX9t1lMOLqP
- /5hdc7f/ubXWLgLzD84Vgk0ltCExiIb7IxZ2x+0lwtIZI7R10QI/lxhIGdDsYzUvkLZ+
- pxaQ==
+ id 1n5xQL-005MHK-2o; Fri, 07 Jan 2022 22:09:26 +0000
+Received: by mail-ed1-x536.google.com with SMTP id b13so27179615edd.8;
+ Fri, 07 Jan 2022 14:09:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20210112;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=4+0ZpFdgBKihQctxGsR5tz5extrL8aulkQZU1Kn3azo=;
+ b=K3ZcUyDM3Xy3mHkSHSdku4XVutFc0wBOgQ298XZZbl41dH+SV1Sl+YTDH+ZmccgVZW
+ cB26EaTH8yMaFESd5M5Th5+qVyZ03IB4fQSqVTXj4FLapg+1CxRABeGIYtAffiZzQyMK
+ TN6NxI2Wl/1dWBLuzo+NnsvN41LR1844VIEE1Vnp+MkzVERHGS7ipLxo5Ce7BF7I9oDH
+ Oagxs56lCIYgtdwoccq9K1e76+ieIEVenbc7fWE234q4sDZg2ESsLw0w0IDga11NXeKy
+ xKVTTYh85E1msdtQ7lZpf2gRI+jxrN0bsKxeXEJc5Q5ixbwnT68SELi4Js8kf2nNfcmG
+ RI1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=WtHO/Q1bDJN+G650TFpgg/0NiPkrLAPHRgb8v223Lbo=;
- b=4IfVQ4ceifl4qK7rf1l3Tkbixfm32znTJR2/owBt4P6/sJM8AES1erfJKNx7dOXvaM
- zlMDgJKUOW1b+5NUU48uy8uHB4MmywrQDMnfCDrBmqxi0iaN64ON5snTTUgcLUYWW62+
- RZgoQi7yMabh7iEPJOr7KVsctwW0mNzlnkYDJnmvZz9+PAQNiYieWLg/1Pnni100/gga
- fdJgng2ZsPOPUWOcaxUc71mqr9OOId0XTjwEAsk/E7VSpv1MZJI1ZMIpRfF1lyYYdxr+
- nTcOqvPjQeSwn4oPO5l93Dbz/SnueNy9e0zRNVQyDX8VWdGPm4Z/JC979CJPDtT1LuUb
- 8gmA==
-X-Gm-Message-State: AOAM532FMiVzb07vKnpf+K0V3zJSh6D8iWlpekKSd3+k+fYtvdQ5nAhu
- PHrHaWCCxZakbo09QpgnB/lZ/w==
-X-Google-Smtp-Source: ABdhPJyER9T3EOwYSOIowyTf9EWMcugUaNVPtcM6nDpPtMfbdbEXtdMfAc/EnCINbs1sZwTKzmfUgQ==
-X-Received: by 2002:a9d:84c:: with SMTP id 70mr47330471oty.185.1641582901293; 
- Fri, 07 Jan 2022 11:15:01 -0800 (PST)
-Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net.
- [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id h1sm992357oog.26.2022.01.07.11.15.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 07 Jan 2022 11:15:00 -0800 (PST)
-Date: Fri, 7 Jan 2022 11:15:49 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Hans de Goede <hdegoede@redhat.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org
-Subject: Re: [PATCH 2/8] phy: qcom-qmp: Register typec mux and orientation
- switch
-Message-ID: <YdiRZUV0oJfsdHZV@ripper>
-References: <20211228052116.1748443-1-bjorn.andersson@linaro.org>
- <20211228052116.1748443-3-bjorn.andersson@linaro.org>
- <Ycvx2qOlPsVIjkHq@matsya>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4+0ZpFdgBKihQctxGsR5tz5extrL8aulkQZU1Kn3azo=;
+ b=IsqicYCWD1XJXVTtGAxIcsggmeFIIptQvgdtRkZCX+xX7/xkAqEZrKiuf+0KJsZqoD
+ vhSkz4tglUwQ/amrn9/Qw3j9ptCPD7blqwJ5ZTnmP0bZMSOkXbm1yPgfiDUzopRb4cb8
+ GKjD7w06EznWu3oZ9rW91lYEfn3+YSM8RxsFAR/NcX5ZblUjRsabh9dv0X+22ymMxaY9
+ jH98lk+oK03kGM+1/lNZW0gDk3PUGhTpKS+aAgaxGooVZM8ykxPydy75jlp8y4jr4lwE
+ Z22nJRwDr81Elwaz0kFxTsU3HjQPdrBTZrFScan2u+DJ09+vBHjOY9mRE8aMRekifmJk
+ nPRA==
+X-Gm-Message-State: AOAM533pLOewG9ZMjac4w9htHgTLF5FWFxeLSpGh2lTZ4DwK4u6uyqzh
+ mndh6y2i1FIV1BGOoeBqOfv+rnBv7dQAbBvYLY4=
+X-Google-Smtp-Source: ABdhPJzeY83EKOGSCN9Dn8swluMDNbgvxPIXcBwiH7LpXk5Wf7DawvbKULi0rEQR33XhaAtyGEHq3NwqqLMBBhKLhMs=
+X-Received: by 2002:a05:6402:518a:: with SMTP id
+ q10mr61116623edd.29.1641593363736; 
+ Fri, 07 Jan 2022 14:09:23 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Ycvx2qOlPsVIjkHq@matsya>
+References: <20220107150512.614423-1-narmstrong@baylibre.com>
+ <20220107150512.614423-3-narmstrong@baylibre.com>
+In-Reply-To: <20220107150512.614423-3-narmstrong@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Fri, 7 Jan 2022 23:09:13 +0100
+Message-ID: <CAFBinCC9J_w9JM-TmrXp7SXT27V7Ze37wrxHZZQ1==N4y2-0dg@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] phy: amlogic: Add G12A Analog MIPI D-PHY driver
+To: Neil Armstrong <narmstrong@baylibre.com>
+Cc: kishon@ti.com, vkoul@kernel.org, linux-phy@lists.infradead.org, 
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220107_111503_108373_4E7DA109 
-X-CRM114-Status: GOOD (  40.13  )
+X-CRM114-CacheID: sfid-20220107_140925_189713_36189F89 
+X-CRM114-Status: GOOD (  12.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,315 +84,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue 28 Dec 21:27 PST 2021, Vinod Koul wrote:
+Hi Neil,
 
-> On 27-12-21, 21:21, Bjorn Andersson wrote:
-> > The QMP PHY handles muxing of USB vs DisplayPort, as well as orientation
-> > switching of the SuperSpeed lanes. So register typec handlers for the
-> > two types.
-> > 
-> > The TypeC mux allows switching between four lanes of DisplayPort and a
-> > mixed USB+DP combination. This makes it possible to reach resolutions
-> > that requires 4 lanes.
-> > 
-> > The TypeC switch allows switching the SuperSpeed pins and have been
-> > tested with both 2 and 4 lane DisplayPort.
-> > 
-> > It's possible that in the USB mode the DP_MODE should be disabled, but
-> > this is left untouched.
-> > 
-> > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > ---
-> > 
-> > My suggestion is that if/once this patch is deemed acceptable the PHY
-> > maintainers could create a immutable branch/tag which can be merged into the
-> > PHY tree as well as the USB tree.
-> > 
-> >  drivers/phy/qualcomm/phy-qcom-qmp.c | 176 +++++++++++++++++++++++++---
-> >  1 file changed, 158 insertions(+), 18 deletions(-)
-> > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-> > index 7bea6a60dc54..8d8139df9d8e 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-> > @@ -19,6 +19,8 @@
-> >  #include <linux/regulator/consumer.h>
-> >  #include <linux/reset.h>
-> >  #include <linux/slab.h>
-> > +#include <linux/usb/typec_dp.h>
-> > +#include <linux/usb/typec_mux.h>
-> >  
-> >  #include <dt-bindings/phy/phy.h>
-> >  
-> > @@ -3017,6 +3019,9 @@ struct qmp_phy_dp_clks {
-> >   * @phy_mutex: mutex lock for PHY common block initialization
-> >   * @init_count: phy common block initialization count
-> >   * @ufs_reset: optional UFS PHY reset handle
-> > + * @sw: typec switch for receiving orientation changes
-> > + * @mux: typec mux for DP muxing
-> > + * @orientation: carries current CC orientation
-> >   */
-> >  struct qcom_qmp {
-> >  	struct device *dev;
-> > @@ -3032,6 +3037,10 @@ struct qcom_qmp {
-> >  	int init_count;
-> >  
-> >  	struct reset_control *ufs_reset;
-> > +
-> > +	struct typec_switch *sw;
-> > +	struct typec_mux *mux;
-> > +	enum typec_orientation orientation;
-> >  };
-> >  
-> >  static void qcom_qmp_v3_phy_dp_aux_init(struct qmp_phy *qphy);
-> > @@ -4378,30 +4387,23 @@ static void qcom_qmp_v3_phy_configure_dp_tx(struct qmp_phy *qphy)
-> >  
-> >  static bool qcom_qmp_phy_configure_dp_mode(struct qmp_phy *qphy)
-> >  {
-> > +	const struct phy_configure_opts_dp *dp_opts = &qphy->dp_opts;
-> > +	bool reverse = qphy->qmp->orientation == TYPEC_ORIENTATION_REVERSE;
-> >  	u32 val;
-> > -	bool reverse = false;
-> >  
-> >  	val = DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
-> >  	      DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN;
-> >  
-> > -	/*
-> > -	 * TODO: Assume orientation is CC1 for now and two lanes, need to
-> > -	 * use type-c connector to understand orientation and lanes.
-> > -	 *
-> > -	 * Otherwise val changes to be like below if this code understood
-> > -	 * the orientation of the type-c cable.
-> > -	 *
-> > -	 * if (lane_cnt == 4 || orientation == ORIENTATION_CC2)
-> > -	 *	val |= DP_PHY_PD_CTL_LANE_0_1_PWRDN;
-> > -	 * if (lane_cnt == 4 || orientation == ORIENTATION_CC1)
-> > -	 *	val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
-> > -	 * if (orientation == ORIENTATION_CC2)
-> > -	 *	writel(0x4c, qphy->pcs + QSERDES_V3_DP_PHY_MODE);
-> > -	 */
-> > -	val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
-> > +	if (dp_opts->lanes == 4 || reverse)
-> > +		val |= DP_PHY_PD_CTL_LANE_0_1_PWRDN;
-> > +	if (dp_opts->lanes == 4 || !reverse)
-> > +		val |= DP_PHY_PD_CTL_LANE_2_3_PWRDN;
-> >  	writel(val, qphy->pcs + QSERDES_DP_PHY_PD_CTL);
-> >  
-> > -	writel(0x5c, qphy->pcs + QSERDES_DP_PHY_MODE);
-> > +	if (reverse)
-> > +		writel(0x4c, qphy->pcs + QSERDES_DP_PHY_MODE);
-> > +	else
-> > +		writel(0x5c, qphy->pcs + QSERDES_DP_PHY_MODE);
-> >  
-> >  	return reverse;
-> >  }
-> > @@ -5809,6 +5811,123 @@ static const struct dev_pm_ops qcom_qmp_phy_pm_ops = {
-> >  			   qcom_qmp_phy_runtime_resume, NULL)
-> >  };
-> >  
-> > +#if IS_ENABLED(CONFIG_TYPEC)
-> > +static int qcom_qmp_phy_typec_switch_set(struct typec_switch *sw,
-> > +		enum typec_orientation orientation)
-> 
-> pls align to preceding open brace (here and other places)
-> 
+On Fri, Jan 7, 2022 at 4:06 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+[...]
+> +#define HHI_MIPI_CNTL2 0x08
+> +#define                HHI_MIPI_CNTL2_DIF_TX_CTL1      GENMASK(31, 16)
+> +#define                HHI_MIPI_CNTL2_CH_EN            GENMASK(15, 11)
+> +#define                HHI_MIPI_CNTL2_DIF_TX_CTL0      GENMASK(10, 0)
+> +
+> +#define DSI_LANE_0                             BIT(4)
+> +#define DSI_LANE_1                             BIT(3)
+> +#define DSI_LANE_CLK                           BIT(2)
+> +#define DSI_LANE_2                             BIT(1)
+> +#define DSI_LANE_3                             BIT(0)
+At first I thought that these should be named
+HHI_MIPI_CNTL2_DSI_LANE_0 (and similar).
+But then I understood that they aren't bits directly in HHI_MIPI_CNTL2
+but they belong to HHI_MIPI_CNTL2_CH_EN.
+Have you considered naming them for example
+HHI_MIPI_CNTL2_CH_EN_DSI_LANE_0 to make this more clear?
 
-Sure thing.
+[...]
+> +       if (IS_ERR(map)) {
+> +               dev_err(dev,
+> +                       "failed to get HHI regmap\n");
+> +               return PTR_ERR(map);
+I suggest using:
+  return dev_err_probe(dev, PTR_ERR(map), "failed to get HHI regmap\n");
+to simplify the code
 
-> > +{
-> > +	struct qcom_qmp *qmp = typec_switch_get_drvdata(sw);
-> > +	void __iomem *dp_com = qmp->dp_com;
-> > +
-> > +	qmp->orientation = orientation;
-> > +
-> > +	if (orientation == TYPEC_ORIENTATION_REVERSE)
-> > +		qphy_setbits(dp_com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x01);
-> > +	else
-> > +		qphy_clrbits(dp_com, QPHY_V3_DP_COM_TYPEC_CTRL, 0x01);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int qcom_qmp_phy_typec_mux_set(struct typec_mux *mux,
-> > +				      struct typec_mux_state *state)
-> > +{
-> > +	struct qcom_qmp *qmp = typec_mux_get_drvdata(mux);
-> > +	void __iomem *dp_com = qmp->dp_com;
-> > +	bool dp_mode;
-> > +	bool usb_mode;
-> > +
-> > +	switch (state->mode) {
-> > +	case TYPEC_STATE_SAFE:
-> > +	case TYPEC_STATE_USB:
-> > +		/*
-> > +		 * TODO: Figure out if we should clear DP_MODE when we enter a
-> > +		 * USB-only state.
-> > +		 */
-> > +		dp_mode = true;
-> 
-> should this be false for these states?
-> 
+[...]
+> +       if (IS_ERR(priv->phy)) {
+> +               ret = PTR_ERR(priv->phy);
+> +               if (ret != -EPROBE_DEFER)
+> +                       dev_err(dev, "failed to create PHY\n");
+> +               return ret;
+and similar here:
+  return dev_err_probe(dev, PTR_ERR(priv->phy), "failed to create PHY\n");
 
-I think it should, but figured that I better change the behavior in a
-separate follow-up commit. Might also be that SAFE should be
-false/false - or in some other way turning off the output.
+[...]
+> +static const struct of_device_id phy_g12a_mipi_dphy_analog_of_match[] = {
+> +       {
+> +               .compatible = "amlogic,g12a-mipi-dphy-analog",
+> +       },
+> +       { },
+In the past I was suggested to use:
+  { /* sentinel */ }
+meaning: no trailing comma here so nobody can add entries after the
+sentinel by accident.
+I suggest doing the same here if you re-spin this series.
 
-Hence the TODO.
 
-> > +		usb_mode = true;
-> > +		break;
-> > +	case TYPEC_DP_STATE_A:
-> > +	case TYPEC_DP_STATE_C:
-> > +	case TYPEC_DP_STATE_E:
-> > +		dp_mode = true;
-> > +		usb_mode = false;
-> > +		break;
-> > +	case TYPEC_DP_STATE_B:
-> > +	case TYPEC_DP_STATE_D:
-> > +	case TYPEC_DP_STATE_F:
-> > +		dp_mode = true;
-> > +		usb_mode = true;
-> > +		break;
-> > +	}
-> 
-> looks like dp_mode is true always. And only for DP state A C E, usb_mode
-> is false...
-> 
-
-A, C and E are 4-lanes DP, while B, D, F are 2-lane DP and 2-lane USB.
-
-> > +
-> > +	qphy_setbits(dp_com, QPHY_V3_DP_COM_RESET_OVRD_CTRL,
-> > +		     SW_DPPHY_RESET_MUX | SW_USB3PHY_RESET_MUX);
-> > +	if (dp_mode)
-> > +		qphy_setbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, DP_MODE);
-> > +	else
-> > +		qphy_clrbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, DP_MODE);
-> > +
-> > +	if (usb_mode)
-> > +		qphy_setbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE);
-> > +	else
-> > +		qphy_clrbits(dp_com, QPHY_V3_DP_COM_PHY_MODE_CTRL, USB3_MODE);
-> > +
-> > +	qphy_setbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
-> > +	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SWI_CTRL, 0x03);
-> > +	qphy_clrbits(dp_com, QPHY_V3_DP_COM_SW_RESET, SW_RESET);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int qcom_qmp_phy_typec_register(struct qcom_qmp *qmp,
-> > +				       const struct qmp_phy_cfg *cfg)
-> > +{
-> > +	struct typec_switch_desc sw_desc = {};
-> > +	struct typec_mux_desc mux_desc = {};
-> > +	struct device *dev = qmp->dev;
-> > +
-> > +	if (!cfg->has_phy_dp_com_ctrl)
-> > +		return 0;
-> > +
-> > +	sw_desc.drvdata = qmp;
-> > +	sw_desc.fwnode = dev->fwnode;
-> > +	sw_desc.set = qcom_qmp_phy_typec_switch_set;
-> > +	qmp->sw = typec_switch_register(dev, &sw_desc);
-> > +	if (IS_ERR(qmp->sw)) {
-> > +		dev_err(dev, "Error registering typec switch: %pe\n", qmp->sw);
-> > +		return PTR_ERR(qmp->sw);
-> > +	}
-> > +
-> > +	mux_desc.drvdata = qmp;
-> > +	mux_desc.fwnode = dev->fwnode;
-> > +	mux_desc.set = qcom_qmp_phy_typec_mux_set;
-> > +	qmp->mux = typec_mux_register(dev, &mux_desc);
-> > +	if (IS_ERR(qmp->mux)) {
-> > +		dev_err(dev, "Error registering typec mux: %pe\n", qmp->mux);
-> > +		typec_switch_unregister(qmp->sw);
-> > +		return PTR_ERR(qmp->mux);
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static void qcom_qmp_phy_typec_unregister(struct qcom_qmp *qmp)
-> > +{
-> > +	typec_mux_unregister(qmp->mux);
-> > +	typec_switch_unregister(qmp->sw);
-> > +}
-> > +#else
-> 
-> empty line here pls
-> 
-
-Okay.
-
-Thanks,
-Bjorn
-
-> > +static int qcom_qmp_phy_typec_register(struct qcom_qmp *qmp,
-> > +				       const struct qmp_phy_cfg *cfg)
-> > +{
-> > +	return 0;
-> > +}
-> > +
-> > +static void qcom_qmp_phy_typec_unregister(struct qcom_qmp *qmp)
-> > +{
-> > +}
-> > +#endif
-> > +
-> >  static int qcom_qmp_phy_probe(struct platform_device *pdev)
-> >  {
-> >  	struct qcom_qmp *qmp;
-> > @@ -5891,7 +6010,15 @@ static int qcom_qmp_phy_probe(struct platform_device *pdev)
-> >  		return ret;
-> >  	}
-> >  
-> > -	num = of_get_available_child_count(dev->of_node);
-> > +	ret = qcom_qmp_phy_typec_register(qmp, cfg);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	num = 0;
-> > +	for_each_available_child_of_node(dev->of_node, child) {
-> > +		if (!of_node_name_eq(child, "port"))
-> > +			num++;
-> > +	}
-> >  	/* do we have a rogue child node ? */
-> >  	if (num > expected_phys)
-> >  		return -EINVAL;
-> > @@ -5918,6 +6045,9 @@ static int qcom_qmp_phy_probe(struct platform_device *pdev)
-> >  			serdes = usb_serdes;
-> >  		}
-> >  
-> > +		if (of_node_name_eq(child, "port"))
-> > +			continue;
-> > +
-> >  		/* Create per-lane phy */
-> >  		ret = qcom_qmp_phy_create(dev, child, id, serdes, cfg);
-> >  		if (ret) {
-> > @@ -5962,8 +6092,18 @@ static int qcom_qmp_phy_probe(struct platform_device *pdev)
-> >  	return ret;
-> >  }
-> >  
-> > +static int qcom_qmp_phy_remove(struct platform_device *pdev)
-> > +{
-> > +	struct qcom_qmp *qmp = platform_get_drvdata(pdev);
-> > +
-> > +	qcom_qmp_phy_typec_unregister(qmp);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> >  static struct platform_driver qcom_qmp_phy_driver = {
-> >  	.probe		= qcom_qmp_phy_probe,
-> > +	.remove		= qcom_qmp_phy_remove,
-> >  	.driver = {
-> >  		.name	= "qcom-qmp-phy",
-> >  		.pm	= &qcom_qmp_phy_pm_ops,
-> > -- 
-> > 2.33.1
-> 
-> -- 
-> ~Vinod
+Thank you!
+Martin
 
 -- 
 linux-phy mailing list
