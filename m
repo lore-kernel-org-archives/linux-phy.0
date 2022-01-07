@@ -4,65 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E81C6C433EF
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 05:43:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7052C433EF
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jan 2022 09:23:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d9nPNyWBbC+x5UCU41MxApxWq5fU1Q3DNTC7vKS/VYI=; b=x75vTPA2nzLl1C
-	aQteoRtrQZJEKAXPkmf/s8m6hIY2ZJSyJxVYVhaixyWgtFsN1ECe/SCX2BIfJsvWx5j9I44kBHZaq
-	dNG1FsjtNmcIjKv6DuOaNia0ELE93lV9JBLouTNKyV8flCZa6A4SUbQyxTMgtjRvxwBJGQBDGFAiN
-	gdUnJFnqAxX0udhVifIPXPozs2Cum6YphAafYrFFLDSno4vxgxVeoHfnL148w6iMYhs5CM1rLOleZ
-	ppAfT2b5F4PuZLREjBeAtjYmn236FN5OBWsJvw7/xqKyMCSWtTxGu9DwKF8lm90EcC+rl7/IEfiTs
-	9feAJSE62X58El9+ouvQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=phCH5gCejUIbwuYIq/WgYYeNmSEFbV44BUgHIoQ+e7s=; b=esk6ruFd8YdSJLyvoptPWGgRJD
+	v6NzsQbtCjtpVbC0sgujW6iTjbysjofCtz0DKdbhyMOle3fVzplLpSE0P+v16BufQh0wDVbhcJrWD
+	185jQkSTa5AJ92dUhdL3dYol0a2omXOQ5ADsltVmgnC5L6jviWc/24xG2JXACgGXQj5UQvk0XqrAR
+	LAF7BSNmHivy73P0TxdI361tOd2ezcKv1gq34VT0RqXpyfFdLljoDg7zppzg64BXC6YW1pR3e7lEr
+	EDiqmVRxKxTZdQVsTprBn8ZiFKcRR6oLeUkOg4H23GqZZ1kGqA3vXq7BHrFDTXce7EksYVOS74o+R
+	OGb64bRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n5i2b-002T60-IB; Fri, 07 Jan 2022 05:43:53 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1n5lTT-00333m-2F; Fri, 07 Jan 2022 09:23:51 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n5hrC-002OYN-FG; Fri, 07 Jan 2022 05:32:10 +0000
-X-UUID: 1571ba0fe9ec4b789c74d73f214212e1-20220106
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=yOyhSybCVKwL6f9Dj2Yrfcp2GMZppE3rd+pnbUwSqSY=; 
- b=SXppUhy85uxMGv8v/EEk+0Co3WslGKkZ7GFz7T+skXuahnAHyrRLdR2n19F99sgFD8TZhaYeE3Z9AKsnQ6on8tctbSnYV3ru96FPFk+0cx/B8C167kO6VD7occ0gwWq3B2pev+7InYMIYDVmf7hrhwPlUyEcTNEnuMpdq8dgLy8=;
-X-UUID: 1571ba0fe9ec4b789c74d73f214212e1-20220106
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1505165310; Thu, 06 Jan 2022 22:32:01 -0700
-Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 6 Jan 2022 21:32:00 -0800
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by mtkexhb01.mediatek.inc
- (172.21.101.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Fri, 7 Jan 2022 13:31:53 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 7 Jan 2022 13:31:51 +0800
-Message-ID: <54af6850e07aba2ca8002e344be86498c810067d.camel@mediatek.com>
-Subject: Re: [PATCH] phy: phy-mtk-tphy: Fix dumplicated argument in
- phy-mtk-tphy
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Wan Jiabing <wanjiabing@vivo.com>, Kishon Vijay Abraham I <kishon@ti.com>, 
- Vinod Koul <vkoul@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
- <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>, 
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-CC: <jiabing.wan@qq.com>
-Date: Fri, 7 Jan 2022 13:31:52 +0800
-In-Reply-To: <20220107025050.787720-1-wanjiabing@vivo.com>
-References: <20220107025050.787720-1-wanjiabing@vivo.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+ id 1n5lTF-003306-GP; Fri, 07 Jan 2022 09:23:39 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: kholk11) with ESMTPSA id DD0E51F40A55
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+ s=mail; t=1641547414;
+ bh=wj1ZDK4lkn/iSMxOoGczIJTSg6wOxjiARPaZ2r2OUWw=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=c7TocaBKZAHN+HhlzCoPRaklI+aiWQMse7sjTJ3DD/6JaFoxtqSb0Y2088RnnaH+1
+ qGzWIPCWvRqUwaKIxDUIMGG/+RRw2vcdj5w2TAGVlWYjdb5UL5gQuhC4bsR76YevUE
+ qcMPJQCdnQs/owVWkwDW/Ho5IzM/W26Vhr+gydewcZtoP6z/9EWyAiNnOc8mBRducK
+ AiIqupciZFfnW+cJVeoB5ewBy+ibo1+k38gKmZWv51xuAylIQvj9KENrXjw4YISQ0z
+ HoeVrMnHircsrRPFaXXEs3kjaClm73RQwu5zSPcefzAapyeG/yyldEDraJqoFz8cLR
+ 0iqNsArtWAg9g==
+Subject: Re: [PATCH 3/3] phy: mediatek: phy-mtk-mipi-dsi: Simplify with
+ dev_err_probe()
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, chunkuang.hu@kernel.org
+Cc: p.zabel@pengutronix.de, kishon@ti.com, vkoul@kernel.org,
+ matthias.bgg@gmail.com, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20220103145324.48008-1-angelogioacchino.delregno@collabora.com>
+ <20220103145324.48008-3-angelogioacchino.delregno@collabora.com>
+ <4d7195c3ac9bc63a5f980548f0c880484403346d.camel@mediatek.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Message-ID: <ba6c0163-fc5f-2a5f-560d-240e5fe2c3c4@collabora.com>
+Date: Fri, 7 Jan 2022 10:23:32 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.13.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <4d7195c3ac9bc63a5f980548f0c880484403346d.camel@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220106_213207_357930_65F655A5 
-X-CRM114-Status: GOOD (  15.84  )
+X-CRM114-CacheID: sfid-20220107_012337_736663_04DDE1EA 
+X-CRM114-Status: GOOD (  17.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,43 +68,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2022-01-07 at 10:50 +0800, Wan Jiabing wrote:
-> Fix following coccicheck warning:
-> ./drivers/phy/mediatek/phy-mtk-tphy.c:994:6-29: duplicated argument
-> to && or ||
+Il 06/01/22 10:13, Chunfeng Yun ha scritto:
+> On Mon, 2022-01-03 at 15:53 +0100, AngeloGioacchino Del Regno wrote:
+>> Use the dev_err_probe() helper to simplify error handling during
+>> probe.
+>>
+>> Signed-off-by: AngeloGioacchino Del Regno <
+>> angelogioacchino.delregno@collabora.com>
+>> ---
+>>   drivers/phy/mediatek/phy-mtk-mipi-dsi.c | 29 +++++++++------------
+>> ----
+>>   1 file changed, 10 insertions(+), 19 deletions(-)
+>>
+>> diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+>> b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+>> index 6f7425b0bf5b..4b77508f5241 100644
+>> --- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+>> +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+>> @@ -148,11 +148,9 @@ static int mtk_mipi_tx_probe(struct
+>> platform_device *pdev)
+>>   		return PTR_ERR(mipi_tx->regmap);
+>>   
+>>   	ref_clk = devm_clk_get(dev, NULL);
+>> -	if (IS_ERR(ref_clk)) {
+>> -		ret = PTR_ERR(ref_clk);
+>> -		dev_err(dev, "Failed to get reference clock: %d\n",
+>> ret);
+>> -		return ret;
+>> -	}
+>> +	if (IS_ERR(ref_clk))
+>> +		return dev_err_probe(dev, PTR_ERR(ref_clk),
+>> +				     "Failed to get reference
+>> clock\n");
+>>   
+>>   	ret = of_property_read_u32(dev->of_node, "drive-strength-
+>> microamp",
+>>   				   &mipi_tx->mipitx_drive);
+>> @@ -172,27 +170,20 @@ static int mtk_mipi_tx_probe(struct
+>> platform_device *pdev)
+>>   
+>>   	ret = of_property_read_string(dev->of_node, "clock-output-
+>> names",
+>>   				      &clk_init.name);
+>> -	if (ret < 0) {
+>> -		dev_err(dev, "Failed to read clock-output-names: %d\n",
+>> ret);
+>> -		return ret;
+>> -	}
+>> +	if (ret < 0)
+>> +		return dev_err_probe(dev, ret, "Failed to read clock-
+>> output-names\n");
+> Seems no need change it here. (no EPROBE_DEFER error)
 > 
-> The efuse_rx_imp is duplicate. Here should be efuse_tx_imp.
-> 
-> Signed-off-by: Wan Jiabing <wanjiabing@vivo.com>
-> ---
->  drivers/phy/mediatek/phy-mtk-tphy.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
-> b/drivers/phy/mediatek/phy-mtk-tphy.c
-> index 6d307102f4f6..8ee7682b8e93 100644
-> --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> @@ -992,7 +992,7 @@ static int phy_efuse_get(struct mtk_tphy *tphy,
-> struct mtk_phy_instance *instanc
->  		/* no efuse, ignore it */
->  		if (!instance->efuse_intr &&
->  		    !instance->efuse_rx_imp &&
-> -		    !instance->efuse_rx_imp) {
-> +		    !instance->efuse_tx_imp) {
->  			dev_warn(dev, "no u3 intr efuse, but dts enable
-> it\n");
->  			instance->efuse_sw_en = 0;
->  			break;
 
-Acked-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Hello Chunfeng,
 
-Thanks a lot
+pasting from kernel driver-api infrastructure guidelines:
+
+[...]Note that it is deemed acceptable to use this function for error prints during 
+probe even if the err is known to never be -EPROBE_DEFER. The benefit compared to a 
+normal dev_err() is the standardized format of the error code and the fact that the 
+error code is returned.
+
+https://www.kernel.org/doc/html/latest/driver-api/infrastructure.html
+
+Regards,
+- Angelo
+
+> Thanks
+>>   
+>>   	clk_init.ops = mipi_tx->driver_data->mipi_tx_clk_ops;
+>>   
+>>   	mipi_tx->pll_hw.init = &clk_init;
+>>   	mipi_tx->pll = devm_clk_register(dev, &mipi_tx->pll_hw);
+>> -	if (IS_ERR(mipi_tx->pll)) {
+>> -		ret = PTR_ERR(mipi_tx->pll);
+>> -		dev_err(dev, "Failed to register PLL: %d\n", ret);
+>> -		return ret;
+>> -	}
+>> +	if (IS_ERR(mipi_tx->pll))
+>> +		return dev_err_probe(dev, PTR_ERR(mipi_tx->pll),
+>> "Cannot register PLL\n");
+>>   
+>>   	phy = devm_phy_create(dev, NULL, &mtk_mipi_tx_ops);
+>> -	if (IS_ERR(phy)) {
+>> -		ret = PTR_ERR(phy);
+>> -		dev_err(dev, "Failed to create MIPI D-PHY: %d\n", ret);
+>> -		return ret;
+>> -	}
+>> +	if (IS_ERR(phy))
+>> +		return dev_err_probe(dev, PTR_ERR(phy), "Failed to
+>> create MIPI D-PHY\n");
+>> +
+>>   	phy_set_drvdata(phy, mipi_tx);
+>>   
+>>   	phy_provider = devm_of_phy_provider_register(dev,
+>> of_phy_simple_xlate);
+> 
+
 
 -- 
 linux-phy mailing list
