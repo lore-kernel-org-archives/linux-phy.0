@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38CC8C433EF
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Jan 2022 18:08:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C30B0C43219
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Jan 2022 00:03:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XWyQ63+xUWWiCcvJr0+QaRXoQOHSqkpZImsUIZXDR24=; b=b2+uJWrtfRLUwa
-	e0wsRdLvEzG9FO7cLBRsfmvunWiV97psimTblSeXNx4umhVeztWGarFoBEusetWinhL4M7Vcwn5w2
-	0Q22p7rIAWpOzw5cCyXBunR8cJBju2H/xFA+qfdepHfJcEQ+xtJ3Ksl8YVhj68pjRTJbxqpQMgK8t
-	uxQo779KE22/uEMTDEbAwifkZ1LDvHUCA70f4upVG4EVa2bKwROO6Rz/3dzj52+TnbQENzD8vghHq
-	rRHPeKYVMfDSF0ZxQutX5ArF+qEGtIzunH1/BtrNZfWp95Q9Mmk4bi54Uk9rpTkIyfW8KQzP1j0om
-	NTWEIq8rcqhLJLh/V22Q==;
+	List-Owner; bh=SDxoy8qV5V5pJRQ78WtqmkwnCOhURANK4DEtKRDolvc=; b=2Ky5AtDZ1t03Tq
+	VlXHtUsOeEUTDr3JA+XWGzEKtwy01RIM7AyxzXXlNsM83aGGn2KE5c6LTQ8WmceP+ZnbUx1OSD1hz
+	G5ZUj4CtE5XiUfPw4+H9MrQUY7YMBqJ/jKs7acLJRb4Ym2lZDWA2O1xwan46UcYyymCvdnRLSSgZw
+	SYeWwZSZx5Nl1Zr0yU/xk/4L3XLeJu5VP0eNUv9ON3gjr5V6RYME1DbHamzvanSRlXGnHtnWjrSYc
+	fGmHN8XqZvhRdy5zxhYzw3Mc7ZFaQ12PRNuGBFIycawYdnBxxpL7uHEWCk30bbgpHU0/qAzLGAKWN
+	307QoLBfmxCl+tINgNHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n6G8O-006oxc-Hd; Sat, 08 Jan 2022 18:08:08 +0000
+	id 1n6Lgk-0079gm-57; Sun, 09 Jan 2022 00:03:58 +0000
 Received: from ixit.cz ([94.230.151.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n6G8J-006ovp-Vz
- for linux-phy@lists.infradead.org; Sat, 08 Jan 2022 18:08:06 +0000
+ id 1n6Lgg-0079fY-0G
+ for linux-phy@lists.infradead.org; Sun, 09 Jan 2022 00:03:56 +0000
 Received: from localhost.localdomain (ip-89-176-96-70.net.upcbroadband.cz
  [89.176.96.70])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
  (No client certificate requested)
- by ixit.cz (Postfix) with ESMTPSA id 78FCA2243C;
- Sat,  8 Jan 2022 19:07:54 +0100 (CET)
+ by ixit.cz (Postfix) with ESMTPSA id 438A82243C;
+ Sun,  9 Jan 2022 01:03:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ixit.cz; s=dkim;
- t=1641665274;
+ t=1641686629;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding;
- bh=bQLa91L3QHw3kIWxZ1si8XusTJU6EeOzMwtD1FoNDhM=;
- b=n/U+L8khXkfa1kI/jdDk3nqeIlG2K1XLnqnI7Z3EhcXTEx3vnJs3o2iUzAOb+onJq80oXZ
- JoV25gPympDuGpIcrgEk5G/4ZjsCc6TkF44CspWUGxpXdg1RgVBEiZ6zbPkEShnyJI87SJ
- 0wTKSIpED4wM1eqfd59HREKbOQpt670=
+ bh=eXoHtbq78Rir1Qjft2jqVMfSIbbFr/f5LvqE/cj31/Q=;
+ b=FC0HmwJbywPbOV4lqzFnlhYSzUi9hLMqXuKlqDI0U0yFqZMTtXK6FVvoHblQShfg1klOaQ
+ SG39zFqKpay3xhXHXJFH8t1Swg7n8x6iluiM6bxvtuHn/UDQmq7Gf+V11f5JYVjnOhHD50
+ 0/Ub8X6ng9FfYPF8l4FNgXndDlGgdME=
 From: David Heidelberg <david@ixit.cz>
 To: Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
  Abhinav Kumar <quic_abhinavk@quicinc.com>, David Airlie <airlied@linux.ie>,
@@ -52,14 +52,14 @@ Cc: ~okias/devicetree@lists.sr.ht, David Heidelberg <david@ixit.cz>,
  linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: [PATCH v2] dt-bindings: display/msm: hdmi: split and convert to yaml
-Date: Sat,  8 Jan 2022 19:07:52 +0100
-Message-Id: <20220108180753.64912-1-david@ixit.cz>
+Subject: [PATCH v3] dt-bindings: display/msm: hdmi: split and convert to yaml
+Date: Sun,  9 Jan 2022 01:03:47 +0100
+Message-Id: <20220109000348.106534-1-david@ixit.cz>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220108_100804_400995_B7246A4C 
-X-CRM114-Status: GOOD (  18.48  )
+X-CRM114-CacheID: sfid-20220108_160354_527861_2042F299 
+X-CRM114-Status: GOOD (  19.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,6 +89,10 @@ v2:
  - added maxItems for gpios
  - simplified pinctrl-names
  - dropped some inconsistent quotes
+
+v3:
+ - adjusted $id of phy file to the new path from v2
+Signed-off-by: David Heidelberg <david@ixit.cz>
 ---
  .../devicetree/bindings/display/msm/hdmi.txt  |  99 ---------
  .../bindings/display/msm/qcom,hdmi.yaml       | 206 ++++++++++++++++++
@@ -417,7 +421,7 @@ index 000000000000..33ebc879af93
 +    };
 diff --git a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy.yaml
 new file mode 100644
-index 000000000000..be08fc767435
+index 000000000000..1203b0c6709f
 --- /dev/null
 +++ b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy.yaml
 @@ -0,0 +1,119 @@
@@ -425,7 +429,7 @@ index 000000000000..be08fc767435
 +%YAML 1.2
 +---
 +
-+$id: "http://devicetree.org/schemas/display/msm/qcom,hdmi-phy.yaml#"
++$id: "http://devicetree.org/schemas/phy/qcom,hdmi-phy.yaml#"
 +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
 +
 +title: Qualcomm Adreno/Snapdragon HDMI phy
