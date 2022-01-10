@@ -4,108 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD992C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Jan 2022 20:12:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F2DCC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Jan 2022 20:40:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fNQSswQ1U8mCPcey1EFvy/EwGtiC5NGKF9kdYIOb/h8=; b=gRxFZ1Nn7Hct1cwq6qTDBoLadB
-	uRaD0gaL4QT8ZRThtAkHvPPHKIFU1gCCvdK5dG3nTvUGQ5VSBAreV/S2zPIznoSsvn4Hu6A2V0X6l
-	TXEg+eAWPNd1ewuCDCgS9IZx+IUiY+6DUUkRU3ptka51J5XevAwwEszm+sbYWvsou6FiR70zETqSu
-	OncgWQSYtBRsdyoklf5nb6oH9ZaUO+tu9cBhdAYFc5Fk3Sa/gI9k+bbTklsONRbn27KmG9i+XVBX/
-	ekM0MaTRRAbWRaKypKO+VhDMc4/KFsNsc6Lja3IS18QfCsJTGi70KxV+x3bHGFuVYB71OAQlgVbAY
-	ajZzb9YA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iPkXlzDetsETs5lzUbmVIkWCHfsIwNOnlkPNc5hRIYA=; b=CHGeS43ZnVt9ix
+	eAs0d8W/TwnvcxrncFree5e6EijLftjp1uHJb3K9nq/WM7wMJsgbZauDj+OIg6lKig2TLL9+OSUf6
+	s1em4BWB89dH6XxezAapPjNVAzZoSee0bDpch51QYNuDLJSX2kXe0wvdM6Kv6tQ4dxU5yR4CU/N49
+	0JFXitBF6X2YQgktC2TqhwQZAST4bIxVOAkqFJMBE9EkNfLN4YR71id554u8dnjVF8jPdHo4UxFWX
+	OBQmvXeTpysG/9fmC2T5aLpbCklP6RgU+AthoPqu7w1zr4pNQmKDAk9Vc8vsfepgESyrB2B8WBbIQ
+	H1TGpXnoOS01JmzTjBsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n711r-00DB4v-82; Mon, 10 Jan 2022 20:12:31 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1n71Sv-00DFjJ-0P; Mon, 10 Jan 2022 20:40:29 +0000
+Received: from mail-ot1-f52.google.com ([209.85.210.52])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n711b-00DAzG-1z
- for linux-phy@lists.infradead.org; Mon, 10 Jan 2022 20:12:16 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1n70zq-0000Jr-8q; Mon, 10 Jan 2022 21:10:26 +0100
-Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
- by drehscheibe.grey.stw.pengutronix.de with esmtps (TLS1.3) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <ukl@pengutronix.de>)
- id 1n70zg-009aNt-0Y; Mon, 10 Jan 2022 21:10:15 +0100
-Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1n70ze-0007V8-8f; Mon, 10 Jan 2022 21:10:14 +0100
-Date: Mon, 10 Jan 2022 21:10:14 +0100
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Sergey Shtylyov <s.shtylyov@omp.ru>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-kernel@vger.kernel.org, Andrew Lunn <andrew@lunn.ch>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Vignesh Raghavendra <vigneshr@ti.com>, Jiri Slaby <jirislaby@kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-iio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Amit Kucheria <amitk@kernel.org>, alsa-devel@alsa-project.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Sebastian Reichel <sre@kernel.org>, linux-phy@lists.infradead.org,
- Thierry Reding <thierry.reding@gmail.com>,
- linux-mtd@lists.infradead.org, linux-i2c@vger.kernel.org,
- linux-gpio@vger.kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Guenter Roeck <groeck@chromium.org>, Lee Jones <lee.jones@linaro.org>,
- openipmi-developer@lists.sourceforge.net,
- Saravanan Sekar <sravanhome@gmail.com>,
- Khuong Dinh <khuong@os.amperecomputing.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
- kvm@vger.kernel.org, Kamal Dasu <kdasu.kdev@gmail.com>,
- Richard Weinberger <richard@nod.at>, Bartosz Golaszewski <brgl@bgdev.pl>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-serial@vger.kernel.org,
- Jakub Kicinski <kuba@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- Jaroslav Kysela <perex@perex.cz>,
- platform-driver-x86@vger.kernel.org, linux-pwm@vger.kernel.org,
- John Garry <john.garry@huawei.com>,
- Robert Richter <rric@kernel.org>, Zha Qipeng <qipeng.zha@intel.com>,
- Corey Minyard <minyard@acm.org>, linux-pm@vger.kernel.org,
- Peter Korsgaard <peter@korsgaard.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Mark Gross <markgross@kernel.org>, Hans de Goede <hdegoede@redhat.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mark Brown <broonie@kernel.org>, Borislav Petkov <bp@alien8.de>,
- Matthias Brugger <matthias.bgg@gmail.com>, Takashi Iwai <tiwai@suse.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Benson Leung <bleung@chromium.org>,
- linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
- Tony Luck <tony.luck@intel.com>, Mun Yew Tham <mun.yew.tham@intel.com>,
- Eric Auger <eric.auger@redhat.com>, netdev@vger.kernel.org,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Cornelia Huck <cohuck@redhat.com>, linux-mmc@vger.kernel.org,
- Joakim Zhang <qiangqing.zhang@nxp.com>, linux-spi@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
- James Morse <james.morse@arm.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- linux-mediatek@lists.infradead.org,
- Brian Norris <computersforpeace@gmail.com>,
- "David S. Miller" <davem@davemloft.net>
-Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
-Message-ID: <20220110201014.mtajyrfcfznfhyqm@pengutronix.de>
-References: <20220110195449.12448-1-s.shtylyov@omp.ru>
- <20220110195449.12448-2-s.shtylyov@omp.ru>
+ id 1n71So-00DFgm-B4; Mon, 10 Jan 2022 20:40:23 +0000
+Received: by mail-ot1-f52.google.com with SMTP id
+ j6-20020a056830240600b00590eab8f4fbso1757225ots.8; 
+ Mon, 10 Jan 2022 12:40:22 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=brEnSG94a9dEuzAEhYmErXtFPNCp8zc17eSCyTs7HPY=;
+ b=7cNWRJ2/eptC8TYsUaDaqTnZJ58t6Qm47b2/5YS+Tdq8vxAeIcnOWOPsHpyuoiwj91
+ BC2lMqyfhJz6ON3+T/zgnMgB01qj8J7ESII2FTakAhnYdF75pvrTb9L/Cn615842kr2U
+ FFmzl9lxzAfS8Wj/taLkbdbuubOxQ1bCciKUkmtDfZlz2TM8Eq2/QwDRYqwNVTHZEdLx
+ 45tYttI+EUVgZgN1TiIdDxZk7OVxNpd8jS0xSzUc1cnx7NWuIBcjsgLdcJTbDWn50I15
+ xdkoVbKKkzvenR4GReXyI5/qU4EFz9KBwjCJyE6AREvCnVFwCwjXYaFZSS8SWVdbxn3g
+ 2a3A==
+X-Gm-Message-State: AOAM531L71yFTtwjjC78LEwPLNL79+c7pd1P8YMYscj/Ww1riHFfj++N
+ wtglG/56axwXKfxwqSzlZQ==
+X-Google-Smtp-Source: ABdhPJzk49Ol9ambqLs0ZZIbcVdiZbc+q+NbxpnrF8t8Q/F7kIf1MubSNAMHOfkCOtRL57+99q7Pfg==
+X-Received: by 2002:a9d:27e1:: with SMTP id c88mr1144745otb.354.1641847221453; 
+ Mon, 10 Jan 2022 12:40:21 -0800 (PST)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id v4sm1507610oot.36.2022.01.10.12.40.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 10 Jan 2022 12:40:20 -0800 (PST)
+Received: (nullmailer pid 1466998 invoked by uid 1000);
+ Mon, 10 Jan 2022 20:40:19 -0000
+Date: Mon, 10 Jan 2022 14:40:19 -0600
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Cc: cl@rock-chips.com, vkoul@kernel.org, robh+dt@kernel.org,
+ p.zabel@pengutronix.de, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, yifeng.zhao@rock-chips.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, kever.yang@rock-chips.com,
+ heiko@sntech.de, wulf@rock-chips.com, kishon@ti.com,
+ michael.riesch@wolfvision.net
+Subject: Re: [PATCH v7] dt-bindings: soc: grf: add naneng combo phy register
+ compatible
+Message-ID: <YdyZs7dDFPCWfJd9@robh.at.kernel.org>
+References: <20211230084815.28110-2-yifeng.zhao@rock-chips.com>
+ <20211231082249.5075-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20220110195449.12448-2-s.shtylyov@omp.ru>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20211231082249.5075-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220110_121215_113986_9DB6BF9E 
-X-CRM114-Status: GOOD (  25.92  )
+X-CRM114-CacheID: sfid-20220110_124022_419599_ADA8E7A4 
+X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,104 +83,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0062000342086440623=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, 31 Dec 2021 09:22:49 +0100, Johan Jonker wrote:
+> Add Naneng combo phy register compatible.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
 
---===============0062000342086440623==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="brvee3afuyivhyph"
-Content-Disposition: inline
-
-
---brvee3afuyivhyph
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hello,
-
-On Mon, Jan 10, 2022 at 10:54:48PM +0300, Sergey Shtylyov wrote:
-> This patch is based on the former Andy Shevchenko's patch:
->=20
-> https://lore.kernel.org/lkml/20210331144526.19439-1-andriy.shevchenko@lin=
-ux.intel.com/
->=20
-> Currently platform_get_irq_optional() returns an error code even if IRQ
-> resource simply has not been found. It prevents the callers from being
-> error code agnostic in their error handling:
->=20
-> 	ret =3D platform_get_irq_optional(...);
-> 	if (ret < 0 && ret !=3D -ENXIO)
-> 		return ret; // respect deferred probe
-> 	if (ret > 0)
-> 		...we get an IRQ...
->=20
-> All other *_optional() APIs seem to return 0 or NULL in case an optional
-> resource is not available. Let's follow this good example, so that the
-> callers would look like:
->=20
-> 	ret =3D platform_get_irq_optional(...);
-> 	if (ret < 0)
-> 		return ret;
-> 	if (ret > 0)
-> 		...we get an IRQ...
-
-The difference to gpiod_get_optional (and most other *_optional) is that
-you can use the NULL value as if it were a valid GPIO.
-
-As this isn't given with for irqs, I don't think changing the return
-value has much sense. In my eyes the problem with platform_get_irq() and
-platform_get_irq_optional() is that someone considered it was a good
-idea that a global function emits an error message. The problem is,
-that's only true most of the time. (Sometimes the caller can handle an
-error (here: the absence of an irq) just fine, sometimes the generic
-error message just isn't as good as a message by the caller could be.
-(here: The caller could emit "TX irq not found" which is a much nicer
-message than "IRQ index 5 not found".)
-
-My suggestion would be to keep the return value of
-platform_get_irq_optional() as is, but rename it to
-platform_get_irq_silent() to get rid of the expectation invoked by the
-naming similarity that motivated you to change
-platform_get_irq_optional().
-
-Best regards
-Uwe
-
---=20
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
---brvee3afuyivhyph
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmHckpoACgkQwfwUeK3K
-7AmPEAf/e1sLmVHBLqGY9M4YYn2aUPQflQncGGvDAcCOcOjWhjj61Z53oAw8B/Eb
-3J5RoNwe8DIoUyLHQa6DtxFAk+dFhxCCt/6oJngstFQmZYKw3pdpADTY7EDtYA8+
-mYdn6pcScMhpA6OBtI9ybuLy2WaUubn5rCr+NsldDY9GS9GaUvCNWcayugGDQSH1
-uHWNiupkgORajRdaD+ENzFqUohu0HSr6CPy0mid1+4h/9xcykRE38sjcmQ1n+7qs
-/Rpe0taiRj94Ut9mV/MW8nEARhxt+bRH/oI91P369tNKqaWP2IdMcyB04zJvNeLc
-YLmkZv+MpI9lIZU3TrRVSk9UVwA0BQ==
-=/ril
------END PGP SIGNATURE-----
-
---brvee3afuyivhyph--
-
-
---===============0062000342086440623==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0062000342086440623==--
-
