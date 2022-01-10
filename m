@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC85FC43217
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Jan 2022 09:36:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DACEC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Jan 2022 13:01:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,76 +13,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xDpgUmJhUvpmGHyFLtmwbOHguhclddCgLc4QK9HHH/A=; b=UeibrXU0v4PRUNpEyoteYoTnVT
-	8nzbDTb8USlBXkDcPlJw0UYknRENr2DppNz+RCCOFVI/UZUDwIHbkzEcCEQl896V7y1BlkPGk3gGq
-	q5p8xDhyRpGO/T/zZqOhf5Y41DCp53unnCowGjWL326LIgc4TQJ+15Pk/i1FLnMht/yar6zkdAjPt
-	PzmTIzs3tIkPKDcjukHhbOqIMAvFCRvwEIpwxCGTkv67YsKSzYIK/VBk4MU0djIjDZeo+0XegC7Pp
-	hWzr0xYjmSUfPxvXNG0yi43iGNSSfArMqBSz1I0WgFRBZBQtp47umnxcfxgIE6qEV6/Dszd8D20q0
-	mDNAsEpA==;
+	bh=VgEMM/eX80fXkfkXd5RUy0AyIWKxBzhiMuec1T6wj5I=; b=Cc2fiOMJ7O275JkRwO5CkOe36Y
+	kAWc5f40heueVGXzpuBBoCWtWqcDgrcoh/a79L43LbcDVak3gohlNtta8B1qVF7+4gHt6psjyEY5S
+	Z2aqoh1DolBnxuUNsbOlMtcCxQuOiNDETofC5YhCEBiS/1tmcTrWuj7N3SwbRGujFCct+lh/qzhZV
+	sR7lDuJyKaXMFmWZ0laPRQ9IcKVWSqLIhHMdI65WuJ4pF0F9jcr+OgGQbeNvum8zHGAvLSZYt1wwT
+	VqnXG3+QEHdSIQrRaE+XHJtJzm7Q6tVY/HZWNiRuzCYDb8rZHWIKPc9sj6h1C+6RQbfCbm2CBnRKf
+	ZBDGID1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n6r6g-00ASWR-1O; Mon, 10 Jan 2022 09:36:50 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1n6uIq-00BSY5-Kw; Mon, 10 Jan 2022 13:01:36 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n6qvH-00ALXK-GO
- for linux-phy@lists.infradead.org; Mon, 10 Jan 2022 09:25:04 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id h10so15316565wrb.1
- for <linux-phy@lists.infradead.org>; Mon, 10 Jan 2022 01:25:03 -0800 (PST)
+ id 1n6uIn-00BSVj-6a
+ for linux-phy@lists.infradead.org; Mon, 10 Jan 2022 13:01:35 +0000
+Received: by mail-wm1-x336.google.com with SMTP id
+ o203-20020a1ca5d4000000b003477d032384so5598654wme.2
+ for <linux-phy@lists.infradead.org>; Mon, 10 Jan 2022 05:01:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=subject:to:cc:references:from:organization:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=iXRcQtW/RqOfyLEuPiv/rc/ZOHCOx0ZmI+mS8uhOeao=;
- b=vHSXBHa+8Dng6wkLUU8WVk6FiH3tcp1ac53WDMyiK06jdNJO6yDaUKb1hIKjClIN0q
- NX+RqkVx162MbZkD21ndK6jb+NgeVtgJP3vsrxMcEqtjLZYbxSDif0f0JYjgkY6FEkL2
- zFvRBkp2wiup0bJ7mVwYV2iYzH6g7IC/dCzqmSY9iUFsKqLe0LE5D7O1SmQMzNstn7nX
- mq8Ophn1E1auqBvr8o5ktZT4ChPhUKh+YoQUJY2KjvbUzNVEF+EgdSrZwWN8bD6Gim2P
- hCyt5V32cqiOfpJuUbhwTZ0hX/+ZbzjaKGjwR9BgUXCNwNNCtsHqzsZk3kTfN4teh6kB
- tpWg==
+ bh=VJEMyTSL01yzwyzBH1ogq1RDgA7lqAGH2WXcdzLGgjo=;
+ b=KuZAXZ3ZWP8qIfuAbD36Zgtco5ENapO7WysQBN72KNU/8/BG1U2Mmkp7kz5JzXw1h4
+ 7kKeaj81XNLwaybFvBgCk5A+GEDd0y82Itp6RYah/xvFxMYrslBZELHGwM0KCFNCirpD
+ Iq+xnMELOpHDfZRAVvgwfGfx2gNO+xj4F1XbF8c35iqvcR0SJneFup4QsrLRtvVFlLVX
+ IYJd1HdGfEiARGg2FaMpI6mdfSMGXLkM+glHg5yo9LRltnZjvWkuqfAa5qSNlT3JnCe9
+ 7tm/sd75DC/QtPLNd+tfU/qdG6sfK1OKOacsct3GZoKSG5VEN0zQcSZK19O2PIin8nBi
+ g4Bg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:subject:to:cc:references:from:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=iXRcQtW/RqOfyLEuPiv/rc/ZOHCOx0ZmI+mS8uhOeao=;
- b=xNR8OwWY4wRwJd0YQji8mkJTZWSOnQuoHM8SljeYpf+GBu42NBze5ciyBhkRKhG76Q
- ZYtFYQ19pltVToPvGcMCOHZIZAhSkbYc/cEZ/fIIvzza3ro4n1xEwjRE+2f6GAXY+n7R
- VInOTm9vgJ2R2hr1GrZyTET/VyNgO5Uw6WjJlxVvMZ2lGAz0Mp/xuDKfNLg1GXoxvOeb
- jXl32cMXO7b7rjlAFjiIhLVTqkQsCAYCmhqiz02fghyjeJC/n1t0nImQQUz0y1F1hge4
- 3fGeEEyUMQihaw/Q0lfoEtLfmWxudsuD9viEXpQ+Ius23nQ44Wahl8x0HM0C41R4srOb
- GEJQ==
-X-Gm-Message-State: AOAM532JJVPdNHYnBOUbX44vNlInQ9hKgDUAQ+PhOmYYF7x6Yn/rnFB1
- I5hqa+JvkT1HkhJHuAMX1qef4A==
-X-Google-Smtp-Source: ABdhPJyvmN1IIelz0OaL6TWjryajCQAa27psvjcxhcDCQvdNj0GmndfkDN8HvgK50DPa6wDpPBMwpg==
-X-Received: by 2002:adf:e188:: with SMTP id az8mr20152428wrb.670.1641806701770; 
- Mon, 10 Jan 2022 01:25:01 -0800 (PST)
+ bh=VJEMyTSL01yzwyzBH1ogq1RDgA7lqAGH2WXcdzLGgjo=;
+ b=bjACVZGTVnAyKmWJ16PlXKmgNcwHMeLvKHAzshKcQmoaaRc8ZCyPekrRC6P9MWkiT5
+ +XVwUkazlPtqNff5ZFsUsezwdzpyYLlEFTXTuwztvn8zf8l1ACx8oEgXyHspnMSQ9MiR
+ 9Vc37MUHIETtpQSlIAVh1BsrQ4jMO5JmYMkuxc6IGIa2VWAxUvOXr7sSnN782EuRf3CA
+ gFavxa+zgsuk/+QmJKfTp6L/hkveCMgDznsjnFv7LltMXdJbGEl+s4QvRaDZJp3ap6DF
+ IJAhhmyePe/GTOFy99GFhDNSkLN/ZGGk6gxmHxsFWnlcNrkFKdJFYb3swVksICL/mRWG
+ y8Cg==
+X-Gm-Message-State: AOAM531+FcIy/BTibQ7w9q87zWriV6sBRJqBwMvTV1BN0ZksM7b02/2D
+ kCPHD7rCdoi3U1SX0KP0Hlz9Aw==
+X-Google-Smtp-Source: ABdhPJxoccRH+KX27a/eLPTTXByrJgo/z+jQlyAzLsIRsJcCmZV3LChVjnKha1NAc/+h3HDFi05wHg==
+X-Received: by 2002:a05:600c:21cf:: with SMTP id
+ x15mr2545054wmj.8.1641819691598; 
+ Mon, 10 Jan 2022 05:01:31 -0800 (PST)
 Received: from ?IPv6:2001:861:44c0:66c0:94e5:2e36:6bcc:a9f1?
  ([2001:861:44c0:66c0:94e5:2e36:6bcc:a9f1])
- by smtp.gmail.com with ESMTPSA id q14sm6330055wro.58.2022.01.10.01.25.01
+ by smtp.gmail.com with ESMTPSA id k19sm6384673wmo.29.2022.01.10.05.01.30
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 10 Jan 2022 01:25:01 -0800 (PST)
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: add Amlogic G12A Analog MIPI
- D-PHY bindings
+ Mon, 10 Jan 2022 05:01:31 -0800 (PST)
+Subject: Re: [PATCH v3 2/2] phy: amlogic: Add G12A Analog MIPI D-PHY driver
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: kishon@ti.com, vkoul@kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: kishon@ti.com, vkoul@kernel.org, linux-phy@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 References: <20220107150512.614423-1-narmstrong@baylibre.com>
- <20220107150512.614423-2-narmstrong@baylibre.com>
- <CAFBinCDRx6VaaAubr6VRLnX=G4Ez8cGg-=6e-9GWrH8FwwBs-g@mail.gmail.com>
+ <20220107150512.614423-3-narmstrong@baylibre.com>
+ <CAFBinCC9J_w9JM-TmrXp7SXT27V7Ze37wrxHZZQ1==N4y2-0dg@mail.gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Organization: Baylibre
-Message-ID: <fad140b9-2940-a24a-ba70-9849bacf617d@baylibre.com>
-Date: Mon, 10 Jan 2022 10:25:00 +0100
+Message-ID: <3f7f1c95-8a16-cb74-3a99-3f67404424db@baylibre.com>
+Date: Mon, 10 Jan 2022 14:01:30 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.14.0
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCDRx6VaaAubr6VRLnX=G4Ez8cGg-=6e-9GWrH8FwwBs-g@mail.gmail.com>
+In-Reply-To: <CAFBinCC9J_w9JM-TmrXp7SXT27V7Ze37wrxHZZQ1==N4y2-0dg@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220110_012503_631676_86CBE24F 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20220110_050133_346445_37C58C32 
+X-CRM114-Status: GOOD (  21.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,27 +100,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/01/2022 23:13, Martin Blumenstingl wrote:
+Hi,
+
+On 07/01/2022 23:09, Martin Blumenstingl wrote:
 > Hi Neil,
 > 
-> On Fri, Jan 7, 2022 at 4:05 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+> On Fri, Jan 7, 2022 at 4:06 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 > [...]
->> +required:
->> +  - compatible
->> +  - reg
->> +  - "#phy-cells"
-> I also found a "MIPI DSI PHY clock" and "MIPI DSI PHY interrupt" in
-> the datasheet.
-> I'm no expert on this and I'm just asking in case you have missed one of these:
-> Can you confirm that these belong to some other IP?
+>> +#define HHI_MIPI_CNTL2 0x08
+>> +#define                HHI_MIPI_CNTL2_DIF_TX_CTL1      GENMASK(31, 16)
+>> +#define                HHI_MIPI_CNTL2_CH_EN            GENMASK(15, 11)
+>> +#define                HHI_MIPI_CNTL2_DIF_TX_CTL0      GENMASK(10, 0)
+>> +
+>> +#define DSI_LANE_0                             BIT(4)
+>> +#define DSI_LANE_1                             BIT(3)
+>> +#define DSI_LANE_CLK                           BIT(2)
+>> +#define DSI_LANE_2                             BIT(1)
+>> +#define DSI_LANE_3                             BIT(0)
+> At first I thought that these should be named
+> HHI_MIPI_CNTL2_DSI_LANE_0 (and similar).
+> But then I understood that they aren't bits directly in HHI_MIPI_CNTL2
+> but they belong to HHI_MIPI_CNTL2_CH_EN.
+> Have you considered naming them for example
+> HHI_MIPI_CNTL2_CH_EN_DSI_LANE_0 to make this more clear?
+> 
+> [...]
+>> +       if (IS_ERR(map)) {
+>> +               dev_err(dev,
+>> +                       "failed to get HHI regmap\n");
+>> +               return PTR_ERR(map);
+> I suggest using:
+>   return dev_err_probe(dev, PTR_ERR(map), "failed to get HHI regmap\n");
+> to simplify the code
+> 
+> [...]
+>> +       if (IS_ERR(priv->phy)) {
+>> +               ret = PTR_ERR(priv->phy);
+>> +               if (ret != -EPROBE_DEFER)
+>> +                       dev_err(dev, "failed to create PHY\n");
+>> +               return ret;
+> and similar here:
+>   return dev_err_probe(dev, PTR_ERR(priv->phy), "failed to create PHY\n");
+> 
+> [...]
+>> +static const struct of_device_id phy_g12a_mipi_dphy_analog_of_match[] = {
+>> +       {
+>> +               .compatible = "amlogic,g12a-mipi-dphy-analog",
+>> +       },
+>> +       { },
+> In the past I was suggested to use:
+>   { /* sentinel */ }
+> meaning: no trailing comma here so nobody can add entries after the
+> sentinel by accident.
+> I suggest doing the same here if you re-spin this series.
 
-Indeed the name is misleading, both go to the DSI Transceiver IP (dw-mipi-dsi)
+Yep, will do the changes,
 
+Thanks,
 Neil
 
 > 
 > 
-> Best regards,
+> Thank you!
 > Martin
 > 
 
