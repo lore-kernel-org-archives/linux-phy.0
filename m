@@ -4,62 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B17A0C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Jan 2022 21:08:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6A40C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Jan 2022 21:19:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uEvdQQhyAmUsGyZvlDG+WcC9GtXAdNRdYFPS6Rlb1L8=; b=EMpTkvGvnLQQ4j
-	VaOERhc276sAwhFjuiO9XWTXYN7yGhnu6rUqb39UpihuJBC2yoIcHWjtUTPgJ8J6p/RxSVfiPGeK+
-	rGjtFbfLPBnZeOxLz3lhe9arDMAmeMkAcNE8owo9/RVBezs6YtJdvYZgAs644pm8NOtjflCMmyf3w
-	UktfDWb0MP4WOGtiYhyK0Reu2s8SkTqI8tSr6Xr6rD5uLLjcXSSVQ6GLnE+hmGgojLZjE8LQWvHZb
-	A8YWdf4XRWIos/hAZrRhWx65S/KERHHkGZCrd6knpHknfMbJppKMhXxLqLrS8hVwjpos6krn7MIom
-	+s8Aw0dwXzHHv2c1beIw==;
+	List-Owner; bh=j7i90GNy428BL+UpKum8+VhJ200dqDChGmULxCIice8=; b=Z1eDbxkqVclqMY
+	DVKD4jKQWJhAbCCK1ftUSa91Oh4cLbtKNXYRj9TQHeOCx5nOy3PWw7EErSgMVhtfmIoQX4PxGh9gw
+	GPICOYCeSLHSK+dLYDZol5+eFEidIZoIpQJPP6qPiS1EWgtCpk+XRRsZsmuxpzpeSUW8P3GW8KtSG
+	MnCSNbQ4CfszUnfMISkHxaQr0S5xKlsEXMpprKEOJ4nGkPr/tHtgOQbist8fqdpJ6aRn0hjNiB4DP
+	yDzDgmCgUb6MtNy4tADxwFMeFftGV9GSYtIdHVJbxQ061mwJ9Ps3KbiBVn/oM/IphoKSeX1yP7aGl
+	1v67m0T/LLXznqT6vsdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n71uI-00DLrQ-Vx; Mon, 10 Jan 2022 21:08:46 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1n7257-00DPgx-6v; Mon, 10 Jan 2022 21:19:57 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n71uD-00DLnv-4T; Mon, 10 Jan 2022 21:08:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1641848921; x=1673384921;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:content-transfer-encoding:in-reply-to;
- bh=noXDmlMb/EBRvid+M0xTN4DJrqhApqmO9Jn6H9SNPpk=;
- b=gHbih01Mr3YKT1rv5nOjELNCkPGRHU83/EhA3wWGQz86+mj3m5NaLrGY
- cRNlionPmDPyhzgxiMHD+lmbdX4c38IpVssKIFt3Ez3wSV4fCP5BhJ2vk
- OUl8x6QnaP+pp7OxKMMBmEm8X3j3V4bJ7+wrhL3Ohu66MiFBD/2fZAIFJ
- SuThOXNcYRwgH9Q1ABzEc+sL9qao0v7wZsYyGhMpZG+5MA3sk6ADtqUHI
- D5Q40pE27lIsv6hcCdB197cktCGjmR2txz2OAAcrTC/ABxH0M0m1PhnhU
- hqBX0OGgXW31lhDi7Rj9tmYLSDf+AbanVw6XFyWYWNzCpob/jnBtwwCHk A==;
-X-IronPort-AV: E=McAfee;i="6200,9189,10223"; a="240871316"
-X-IronPort-AV: E=Sophos;i="5.88,278,1635231600"; d="scan'208";a="240871316"
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 10 Jan 2022 13:08:38 -0800
-X-IronPort-AV: E=Sophos;i="5.88,278,1635231600"; d="scan'208";a="490132599"
-Received: from smile.fi.intel.com ([10.237.72.61])
- by orsmga002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 10 Jan 2022 13:08:20 -0800
-Received: from andy by smile.fi.intel.com with local (Exim 4.95)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1n71sd-00915P-Sm; Mon, 10 Jan 2022 23:07:03 +0200
-Date: Mon, 10 Jan 2022 23:07:03 +0200
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+ id 1n7254-00DPfC-4k; Mon, 10 Jan 2022 21:19:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Transfer-Encoding:Content-Disposition:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:From:
+ Sender:Reply-To:Subject:Date:Message-ID:To:Cc:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Content-Disposition:
+ In-Reply-To:References; bh=+shfBCYZr6PmwOhnVqXddxKoDSg/lEauRmaiul2UEhM=; b=4o
+ l3yOrRGYQHgE2pE132qpWBfvjQ+NzSSqod8/ALQpxBEieSiLNaEM0aDNpQGFsKUXcM4AN+KtkY7I0
+ Dog50nem4yqnGbL4CLeiEkDbtBsos2cEho6n48/B+0syf6ABim7DNKVR/T8K8+S9x47c49e3Fsnc3
+ 0c7YhiasNFUCF4w=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+ (envelope-from <andrew@lunn.ch>)
+ id 1n723S-0011UU-6G; Mon, 10 Jan 2022 22:18:14 +0100
+Date: Mon, 10 Jan 2022 22:18:14 +0100
+From: Andrew Lunn <andrew@lunn.ch>
 To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
 Cc: Sergey Shtylyov <s.shtylyov@omp.ru>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-kernel@vger.kernel.org, Andrew Lunn <andrew@lunn.ch>,
- Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-kernel@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
  Vignesh Raghavendra <vigneshr@ti.com>, Jiri Slaby <jirislaby@kernel.org>,
  Liam Girdwood <lgirdwood@gmail.com>, linux-iio@vger.kernel.org,
  Linus Walleij <linus.walleij@linaro.org>,
  Amit Kucheria <amitk@kernel.org>, alsa-devel@alsa-project.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
  Sebastian Reichel <sre@kernel.org>, linux-phy@lists.infradead.org,
  Thierry Reding <thierry.reding@gmail.com>,
  linux-mtd@lists.infradead.org, linux-i2c@vger.kernel.org,
@@ -103,17 +91,16 @@ Cc: Sergey Shtylyov <s.shtylyov@omp.ru>,
  Brian Norris <computersforpeace@gmail.com>,
  "David S. Miller" <davem@davemloft.net>
 Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
-Message-ID: <Ydyf93VD8FrV7GH+@smile.fi.intel.com>
+Message-ID: <YdyilpjC6rtz6toJ@lunn.ch>
 References: <20220110195449.12448-1-s.shtylyov@omp.ru>
  <20220110195449.12448-2-s.shtylyov@omp.ru>
  <20220110201014.mtajyrfcfznfhyqm@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20220110201014.mtajyrfcfznfhyqm@pengutronix.de>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220110_130841_253975_BA752631 
-X-CRM114-Status: GOOD (  32.30  )
+X-CRM114-CacheID: sfid-20220110_131954_234870_EA7CB50D 
+X-CRM114-Status: GOOD (  26.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,6 +118,9 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Mon, Jan 10, 2022 at 09:10:14PM +0100, Uwe Kleine-K=F6nig wrote:
+> Hello,
+> =
+
 > On Mon, Jan 10, 2022 at 10:54:48PM +0300, Sergey Shtylyov wrote:
 > > This patch is based on the former Andy Shevchenko's patch:
 > > =
@@ -165,36 +155,25 @@ inux.intel.com/
 
 > The difference to gpiod_get_optional (and most other *_optional) is that
 > you can use the NULL value as if it were a valid GPIO.
-
-The problem is not only there, but also in the platform_get_irq() and that
-problem is called vIRQ0. Or as Linus put it "_cookie_" for IRQ, which never
-ever should be 0.
+> =
 
 > As this isn't given with for irqs, I don't think changing the return
-> value has much sense. In my eyes the problem with platform_get_irq() and
-> platform_get_irq_optional() is that someone considered it was a good
-> idea that a global function emits an error message. The problem is,
-> that's only true most of the time. (Sometimes the caller can handle an
-> error (here: the absence of an irq) just fine, sometimes the generic
-> error message just isn't as good as a message by the caller could be.
-> (here: The caller could emit "TX irq not found" which is a much nicer
-> message than "IRQ index 5 not found".)
-> =
+> value has much sense.
+
+We actually want platform_get_irq_optional() to look different to all
+the other _optional() methods because it is not equivalent. If it
+looks the same, developers will assume it is the same, and get
+themselves into trouble.
 
 > My suggestion would be to keep the return value of
 > platform_get_irq_optional() as is, but rename it to
-> platform_get_irq_silent() to get rid of the expectation invoked by the
-> naming similarity that motivated you to change
+> platform_get_irq_silent() to get rid of the expectation invoked by
+> the naming similarity that motivated you to change
 > platform_get_irq_optional().
 
-This won't fix the issue with vIRQ0.
+This is a good idea.
 
--- =
-
-With Best Regards,
-Andy Shevchenko
-
-
+     Andrew
 
 -- =
 
