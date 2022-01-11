@@ -4,73 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94D3CC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Jan 2022 22:18:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BE1BC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jan 2022 09:53:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GJrDJefZnbZ5OXbXHTf5Ixk08Dyy5O7hjAAnWMI6Ipc=; b=VkiPpY0Xmld7Ke
-	ZHq6lAQdD2GiSVPhL8nHAeXWeMGuY0qW4DbDulK73SAhsWeLDAZLlu4UzsfINgDeZgXpPt/iw/ywN
-	zC3PnBAlgZB/MjPQPK4prKd4TuyN8AEsC0m2rrSOInJeKYRB7c58t7EPsAVOcamekNWFXDyVGWQyM
-	+PDzBNFkUdT7Arj58mSEbPg2HqkAO90aWi3x9wb41npuocIgZc7j6PomSzvGOxLJhX4ft0rrLFBLR
-	hl+CN+Fb+GB4H5OTDY8WOrSwSq7Tak7MHAU/+cec8X/Sa8jQ9zHP50efwI1z1v1FHprVLYznBinTP
-	KHLC7o69eKKplg7s/BFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LRrzunKkNkYUtfFfGj+bKH64nIG1k4ZOnvB+rogfHQY=; b=fRRORJzgWVSFTF
+	BLfKyawP6tz9QKfFF/tlemTApJT/DbUv9TMdYYq2ploAl39WpQUlJl31z/IgTiJP1eDoYLvqoy1IW
+	ptf6/ZkftCS3Pbxhi/5HkEys2pQ4nsOhIFVx2M+ZHTBNHuV/uSokzgqQ4+pGaQWp052FEpbNHM+cH
+	J8+HZtSPk+vN69BTWfqgAGjGAVrNtOlgNNa9/eTVNxjrog25W4EVr6aX6YskAnemoBKZkUzL4odY8
+	rITnN4ELInYyNAqo7AJC9IeyfEyreGZ3kQ9zQboZmlUCWLsHj5Lt4BbOpiBAyuvodJzrs6r8Mo0VL
+	pPk30zpK1G6T6dh4K1Zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n7304-00Dd2u-39; Mon, 10 Jan 2022 22:18:48 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1n7DqC-00FfVI-QK; Tue, 11 Jan 2022 09:53:20 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n7301-00Dd22-UD; Mon, 10 Jan 2022 22:18:47 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id i5so5896659edf.9;
- Mon, 10 Jan 2022 14:18:45 -0800 (PST)
+ id 1n7Dq9-00FfSS-8t
+ for linux-phy@lists.infradead.org; Tue, 11 Jan 2022 09:53:19 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id q8so31754783wra.12
+ for <linux-phy@lists.infradead.org>; Tue, 11 Jan 2022 01:53:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20210112;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2wuC4QBxAL4gvA6QWC/OGqzBQ+FgoNoq9qXBNAbilkI=;
- b=gZ5zUOlenO/ly7lxX8d963S/GMOXF/nLk7n0jgUAQYWSAm4MrJKvTEoKVOpyYY6MJp
- rl4P8gQiJS17IhwHvT71WS8RbtlCGRn2oyHv1iDxLSARz2tItN6biu6sW4CEl/4F92ae
- tU+0NGvG6M1E2i6hhrcvxAog5jE2suyYwCJJsmbozyynu/Wt3oIfNaEBuIXies72Fznj
- +e4hnU6hGbiwt/5WVpc+iOE016WEi4N+kPqMVYMMBAkb0AgMfaFwn7o770IYAv5tbIUU
- ddV6C+vaIlsMuFUSrXm2ED/PmV5XAIVYkQtnQCovbW7o4yQszXBvqv46+gO9Ock/UBCv
- sBzA==
+ d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hG9rUK4IkVrQ+8ACrhWPxZRakkSjKpRWQoFCkTNn/X8=;
+ b=DFFuwIP1QgjMS3n63C11s7si82MBSKADwXDsS6TttMcsW/l7YvB4ym40GSsD2V+znz
+ ABi6b5LyWhV0M7JYJCuGU2JJCu6YMwDcP6pDnCAGx17QJxSXaptukJviXcrBGtLVx/xT
+ A78CeKN/nP9s3tRxbekgxmuNFJ0BrhKuTEYNYB8UjRPlSz4xw/zhvPqOZoD7ntmFSF45
+ Y4pyJuunlxo09nA9LuD9NzGasP+DTw26KFLJsdMNH+Sg1c+IvLPQAuk33JwLqH047A+4
+ JB3xwuFQXa65G3sRtEwG0YN6YUrarvT3V51QmKVrt7cwPZe8PXvodzzCvEAwOPSppFg1
+ 2p3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2wuC4QBxAL4gvA6QWC/OGqzBQ+FgoNoq9qXBNAbilkI=;
- b=hlYqH/mF8pLPqUDB+qhb74bzmqKeBaQ0YWP//Eph67yefVLmmwPqCUqTQbqcoflkUD
- 04SB41+Iv06/qxYP4JzZqzUeKgneRRQ/1YLjYw/kuPXm3tikUji4Ory2eBydIuaUOA++
- 2Zf+YBNmatsh4pY7R+MPPsCPb6IR0iuaDGldQN+5Xt2+TbTo5y/WrBm1lYY/oIovFL/o
- FrgIObHItMZ4AsDdNjg5sBoZilGSCR3SI/FzdRP7Qg4DLpAxdD8F3TfSO1dhdbqNSb3V
- bug+EaMdZgPUh8qIpMneO6tT7uMtE8uIsBNSEVgTyabfTZG4Alm0YT5hdeuZhSdEV2l1
- HlBA==
-X-Gm-Message-State: AOAM5334RPPgKVdXXHl8TXqSxNNW3Z/Xts485fqzqay5glKzEtT1n74R
- n4o4rrKziqGzvilP240o6dwQKh36nsfq5k36H2I=
-X-Google-Smtp-Source: ABdhPJztnzSCV1UM5hQ3Y8AKb2QMmivElfcK6mKeONxweu0vrWguEgxTqC0RXmTiKv6H2RbGvdC+3F2oZ4GCJf7mt0g=
-X-Received: by 2002:a17:906:519b:: with SMTP id
- y27mr1329857ejk.649.1641853124571; 
- Mon, 10 Jan 2022 14:18:44 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hG9rUK4IkVrQ+8ACrhWPxZRakkSjKpRWQoFCkTNn/X8=;
+ b=msz8aXDbUOmGQyOQ2pnBeFZWXxEhAHl/os8dru5bTZdQC4vt+950rblMPJd5eR0l3h
+ Nt1h/0Uc00Gg+1qC9Cp/znKqeEDP3a5S+2NTYRPNghaQiWgLL2hjLIn85R9YtvL/r4al
+ yqHEzIVpvL04yTwNQkGba00swqg7e8ue0+LhF0Bueu59zqnErPGj4IjFY2aXSX9RdOXn
+ OoG9VZJpVtjTk1XVyYYnyWXsRZW+2u3atapFf7Nzu0ZUuboX5bz9VdMZAlJPFsP4UXj2
+ H8IvngxNnpBeg1NutU8Tyyv+Xsfyvr6npiCFNdMFC7Ubynuzri3qlEUx42fw7DjGvQMr
+ cpzA==
+X-Gm-Message-State: AOAM531pRf4iED2Bj52yw5mjkqI/o8jDPAXkHpmsBDkDECf5OBBz4L6N
+ d/9HdWL5iYlhht63PLaqsRRFmw==
+X-Google-Smtp-Source: ABdhPJxvFffbttIKz7Na7DPiLiYm3YnyCQTdRoBJ+lM//JF3O1XkLpBPZEnlqZ/8dg6bspbaSdHVAA==
+X-Received: by 2002:a5d:6f18:: with SMTP id ay24mr3114077wrb.694.1641894794812; 
+ Tue, 11 Jan 2022 01:53:14 -0800 (PST)
+Received: from localhost.localdomain (203.247.120.78.rev.sfr.net.
+ [78.120.247.203])
+ by smtp.googlemail.com with ESMTPSA id l18sm1248916wms.24.2022.01.11.01.53.13
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 11 Jan 2022 01:53:14 -0800 (PST)
+From: Amjad Ouled-Ameur <aouledameur@baylibre.com>
+To: kishon@ti.com
+Cc: Amjad Ouled-Ameur <aouledameur@baylibre.com>, p.zabel@pengutronix.de,
+ balbi@kernel.org, jbrunet@baylibre.com, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-phy@lists.infradead.org, vkoul@kernel.org, khilman@baylibre.com
+Subject: [PATCH v6 0/3] phy: amlogic: fix shared reset control use
+Date: Tue, 11 Jan 2022 10:52:52 +0100
+Message-Id: <20220111095255.176141-1-aouledameur@baylibre.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-References: <20220107150512.614423-1-narmstrong@baylibre.com>
- <20220107150512.614423-2-narmstrong@baylibre.com>
- <CAFBinCDRx6VaaAubr6VRLnX=G4Ez8cGg-=6e-9GWrH8FwwBs-g@mail.gmail.com>
- <fad140b9-2940-a24a-ba70-9849bacf617d@baylibre.com>
-In-Reply-To: <fad140b9-2940-a24a-ba70-9849bacf617d@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 10 Jan 2022 23:18:33 +0100
-Message-ID: <CAFBinCC7wfPjLGVe87E0H7WYXwrFw0e0k_2epF1dDaWKkSvRyQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: add Amlogic G12A Analog MIPI
- D-PHY bindings
-To: Neil Armstrong <narmstrong@baylibre.com>
-Cc: kishon@ti.com, vkoul@kernel.org, devicetree@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-amlogic@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220110_141846_015281_67BE0ACD 
-X-CRM114-Status: GOOD (  15.83  )
+X-CRM114-CacheID: sfid-20220111_015317_376538_E3D7FFA2 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,44 +90,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Neil,
+This patchset fixes a usb suspend warning seen on the libretech-cc by
+using reset_control_rearm() call of the reset framework API. 
+This call allows a reset consummer to release the reset line even when 
+just triggered so that it may be triggered again by other reset
+consummers.
 
-On Mon, Jan 10, 2022 at 10:25 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> On 07/01/2022 23:13, Martin Blumenstingl wrote:
-> > Hi Neil,
-> >
-> > On Fri, Jan 7, 2022 at 4:05 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
-> > [...]
-> >> +required:
-> >> +  - compatible
-> >> +  - reg
-> >> +  - "#phy-cells"
-> > I also found a "MIPI DSI PHY clock" and "MIPI DSI PHY interrupt" in
-> > the datasheet.
-> > I'm no expert on this and I'm just asking in case you have missed one of these:
-> > Can you confirm that these belong to some other IP?
->
-> Indeed the name is misleading, both go to the DSI Transceiver IP (dw-mipi-dsi)
-Thank you for clarifying this!
+reset_control_(de)assert() calls are called, in some meson usb drivers, 
+on a shared reset line when reset_control_reset has been used. This is not
+allowed by the reset framework.
 
-I just found an old comment from Rob on v2 of this series: [0]
-He mentions:
-"If this is a child of something else, then put a $ref to this schema
-and the example in the parent schema."
+Finally the meson usb drivers are updated to use this new call, which
+solves the suspend issue addressed by the previous reverted 
+commit 7a410953d1fb ("usb: dwc3: meson-g12a: fix shared reset control
+use").
 
-To be honest: I completely forgot about that comment until now.
-If I had remembered it (and assuming that his comment is still valid)
-then I would have had to NACK my own
-Documentation/devicetree/bindings/phy/amlogic,meson8-hdmi-tx-phy.yaml
-For today it's already late so I'll look into this more tomorrow.
+changes since v5:
+- No changes.
 
+Amjad Ouled-Ameur (3):
+  phy: amlogic: phy-meson-gxl-usb2: fix shared reset controller use
+  phy: amlogic: meson8b-usb2: Use dev_err_probe()
+  phy: amlogic: meson8b-usb2: fix shared reset control use
 
-Best regards,
-Martin
+ drivers/phy/amlogic/phy-meson-gxl-usb2.c | 5 ++++-
+ drivers/phy/amlogic/phy-meson8b-usb2.c   | 9 +++++++--
+ 2 files changed, 11 insertions(+), 3 deletions(-)
 
+-- 
+2.25.1
 
-[0] https://lore.kernel.org/all/20210210165118.GA2311581@robh.at.kernel.org/
 
 -- 
 linux-phy mailing list
