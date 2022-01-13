@@ -4,65 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83F19C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Jan 2022 09:03:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E60FC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Jan 2022 11:10:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rWrqmpqx7cYn1wiNyIV66h89aSCuP2hxayexc6RP+QE=; b=K68E27xhCbupKV
-	2fRPmlhqZT32H1mzqH0IzZjxgiehByPCoY3BMkczVn8mabopvVLipZCMLq+Q3d9ccJzgKLp90Ls/L
-	dSxCkXmCD52d7sjt/mXw+OJjZauQtcQPtdo/r79oXf2sCKORfSSBHpH/LofGHS1BXzludmx+vpTIW
-	gXOaC21a8h32XXpG4zWbf63UYf5QWadY+G+nPfDQDEKqJCjt6ewHVcBBFVSP8YxTHOvmNLSNsQ1Ak
-	f/uaFXXlCwvsjg6HuFq4FrlHmE5l9eSW7hDhOoUsqD9KZCHFfH/RvIlPVND0xjzYMGQ6x392wm7CP
-	uGqcI6VckPpyrz9lsXHQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=DXcE2umcZOFasLKIXzGfWrw87O3oOlvxZpwjNhVeriw=; b=DzI08XhJjBHDbTgNI4v4F33vA0
+	eWTlScL1Wom3Tj1uITAEkui2ZLjZMn4rD/JceVYZeTeSp1Ta/yfHHRceqVKw0EpMNS3JaaG8OA7cU
+	QBN3jrHf/Ud6o81HDunRtr5zlnrklEeGHYQWUiFeFKicmvm60E4csbCE9279KrWRIbV+GBbHtQlxd
+	ijAsFbawGNeTHZAD63NaGFRVPA+mS/e5eW03/rNfevO8bq6zGTlMYthYLXobtnzEWHvHxFaMR8DA1
+	LtwyiLNBA+ilGY0g/cQIzy/NxMz9iHT04gn+FOEUA7/8w9fVIdCOi0jesMtIJazb4kXkumNwkryS9
+	+rNW1Ifg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n7w1T-005BQH-Sz; Thu, 13 Jan 2022 09:03:55 +0000
-Received: from mout.perfora.net ([74.208.4.196])
+	id 1n7y0J-005a1D-FJ; Thu, 13 Jan 2022 11:10:51 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n7w1R-005BOv-7P; Thu, 13 Jan 2022 09:03:54 +0000
-Received: from localhost.localdomain ([81.221.144.115]) by mrelay.perfora.net
- (mreueus003 [74.208.5.2]) with ESMTPSA (Nemesis) id
- 0M1m9M-1mEAdZ2zBy-00th5p; Thu, 13 Jan 2022 10:03:36 +0100
-From: Marcel Ziswiler <marcel@ziswiler.com>
-To: linux-phy@lists.infradead.org
-Cc: linux-next@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- linux-imx@nxp.com, linux-pci@vger.kernel.org,
- Mark Brown <broonie@kernel.org>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Fabio Estevam <festevam@gmail.com>,
+ id 1n7y00-005Zvu-Uq
+ for linux-phy@lists.infradead.org; Thu, 13 Jan 2022 11:10:34 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1n7xyF-0006Q7-HJ; Thu, 13 Jan 2022 12:08:43 +0100
+Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
+ by drehscheibe.grey.stw.pengutronix.de with esmtps (TLS1.3) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1n7xy5-00A3Hi-BT; Thu, 13 Jan 2022 12:08:32 +0100
+Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1n7xy3-0005lb-Nu; Thu, 13 Jan 2022 12:08:31 +0100
+Date: Thu, 13 Jan 2022 12:08:31 +0100
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+To: Mark Brown <broonie@kernel.org>
+Cc: Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Vignesh Raghavendra <vigneshr@ti.com>, KVM list <kvm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>,
+ ALSA Development Mailing List <alsa-devel@alsa-project.org>,
+ Jaroslav Kysela <perex@perex.cz>, Guenter Roeck <groeck@chromium.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ MTD Maling List <linux-mtd@lists.infradead.org>,
+ Linux I2C <linux-i2c@vger.kernel.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-phy@lists.infradead.org, Jiri Slaby <jirislaby@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Khuong Dinh <khuong@os.amperecomputing.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
+ Kamal Dasu <kdasu.kdev@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lee Jones <lee.jones@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Zhang Rui <rui.zhang@intel.com>, platform-driver-x86@vger.kernel.org,
+ Linux PWM List <linux-pwm@vger.kernel.org>,
+ Robert Richter <rric@kernel.org>, Saravanan Sekar <sravanhome@gmail.com>,
+ Corey Minyard <minyard@acm.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ John Garry <john.garry@huawei.com>, Takashi Iwai <tiwai@suse.com>,
+ Peter Korsgaard <peter@korsgaard.com>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Mark Gross <markgross@kernel.org>, Hans de Goede <hdegoede@redhat.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Sergey Shtylyov <s.shtylyov@omp.ru>, Borislav Petkov <bp@alien8.de>,
+ Eric Auger <eric.auger@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ openipmi-developer@lists.sourceforge.net,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Benson Leung <bleung@chromium.org>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Richard Zhu <hongxing.zhu@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v2] phy: freescale: pcie: cosmetic clean-up
-Date: Thu, 13 Jan 2022 10:03:21 +0100
-Message-Id: <20220113090321.119880-1-marcel@ziswiler.com>
-X-Mailer: git-send-email 2.33.1
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-edac@vger.kernel.org, Tony Luck <tony.luck@intel.com>,
+ Richard Weinberger <richard@nod.at>, Mun Yew Tham <mun.yew.tham@intel.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ netdev@vger.kernel.org,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Cornelia Huck <cohuck@redhat.com>,
+ Linux MMC List <linux-mmc@vger.kernel.org>,
+ Joakim Zhang <qiangqing.zhang@nxp.com>,
+ linux-spi <linux-spi@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, James Morse <james.morse@arm.com>,
+ Zha Qipeng <qipeng.zha@intel.com>, Sebastian Reichel <sre@kernel.org>,
+ Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
+ linux-mediatek@lists.infradead.org,
+ Brian Norris <computersforpeace@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>
+Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
+Message-ID: <20220113110831.wvwbm75hbfysbn2d@pengutronix.de>
+References: <20220110195449.12448-1-s.shtylyov@omp.ru>
+ <20220110195449.12448-2-s.shtylyov@omp.ru>
+ <20220110201014.mtajyrfcfznfhyqm@pengutronix.de>
+ <YdyilpjC6rtz6toJ@lunn.ch>
+ <CAMuHMdWK3RKVXRzMASN4HaYfLckdS7rBvSopafq+iPADtGEUzA@mail.gmail.com>
+ <20220112085009.dbasceh3obfok5dc@pengutronix.de>
+ <CAMuHMdWsMGPiQaPS0-PJ_+Mc5VQ37YdLfbHr_aS40kB+SfW-aw@mail.gmail.com>
+ <20220112213121.5ruae5mxwj6t3qiy@pengutronix.de>
+ <Yd9L9SZ+g13iyKab@sirena.org.uk>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:LMVuApgc6X7l67/Kle4sn+3reMtIFV4BD4OCrBDC7RhTnbXCqpN
- oMXeq9r8qLlVW/gPAVRU6Mysznuj9kG0EoDH3Rp0xtEm+gnC7zrvAqU4uGHwp+zWsGg1REC
- 6z8DfT98EQ7kpLzxabfruD8xyQ5UAuVlxPoM1kOgsArUKFtIDVxlwcvYq2+STFnhvC9gilt
- VusWDZxKRPcFMHm9EzuXw==
-X-UI-Out-Filterresults: notjunk:1;V03:K0:nGo3enaFOMI=:1EQd4AM0tHvPCz8hk00wKi
- m+xBm6ZubgPv5cObWHd+SFTqJutPuqpz/2/FwpP6s21DqJpAU2T2EEbAXUbYUQbjzg8me/z7z
- qqPJMR/4Nvu+gVBlzDggoLlvLKgtELx7UZJgx0rr9IVW2yh2/cfWenyRXQDPfTQSlIFuyNpI/
- yRXzr7o47oYuaVNIQS/t7hDrZZoMALMRizJu4N0x+l2YK6tCZnFPx1jUnI3TVPTB3H5d2dXFI
- yMjUwPXq85uB2u5rn0s+ZYQyLSRG3pu7wKGmcdr1ipfmhiK96Sfy+MJfUC/cn6Y2VU3iilCem
- vlcckL+/hHJKRxoeiWibrQR+njJXFDjaexD1EBb0Aw+qRqPQxBylspfePJi/GDbMyAPno8qhg
- uybCZlxz7BjwpKxjb2TpbqU4LCbJ/07mRvxq27MmtTWQmGgurgDtT3R6B0ttRHGhKP6eGB9Wg
- NXZ8/a5lxZDmdnUuQ8ZMFYz9S4apaE0fY4L8bVjbExtc8dAxPSlwIuHpbeJq85GR0nLW0b19k
- UUAR4Md/xfrO/0fbAjU6Pwx68yIaAiTsiR8sNLm0JiyfsFT7mDzuaSydXdyyllncxNR+vZMf0
- v21n9e3bIeuy29fA5u9SRE4e/ve9JTPfHVPZb7beJUsq46QYG1t6qV4Y+ffJ2upJKamSis84Q
- FBLkYWGTAMwhz1xB5eM7HKOtxspFTV5Syd0LUVaCRDpZtBR9UfEhvmrKjBu6zn5NDgTg=
+In-Reply-To: <Yd9L9SZ+g13iyKab@sirena.org.uk>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220113_010353_390461_22B95656 
-X-CRM114-Status: UNSURE (   8.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220113_031033_190425_90DF04B7 
+X-CRM114-Status: GOOD (  27.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,56 +131,104 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2293105773586691859=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
-Sort includes alphabethically and add a new line before the dt-bindings
-one as usually done.
+--===============2293105773586691859==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="zcdy7nemyxfoojub"
+Content-Disposition: inline
 
-Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
----
+--zcdy7nemyxfoojub
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Changes in v2:
-- Was 'phy: freescale: pcie: fix building for x86_64 as a module' but as
-  Vinod already pushed a fix for that build issue this now only
-  addresses the minor cosmetic clean-up as requested by him.
+On Wed, Jan 12, 2022 at 09:45:25PM +0000, Mark Brown wrote:
+> On Wed, Jan 12, 2022 at 10:31:21PM +0100, Uwe Kleine-K=F6nig wrote:
+> > On Wed, Jan 12, 2022 at 11:27:02AM +0100, Geert Uytterhoeven wrote:
+>=20
+> (Do we really need *all* the CCs here?)
 
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+It's probably counteractive to finding an agreement because there are
+too many opinions on that matter. But I didn't dare to strip it down,
+too :-)
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index 04b1aafb29f4..f1eb03ba25d6 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -5,9 +5,9 @@
- 
- #include <linux/bitfield.h>
- #include <linux/clk.h>
-+#include <linux/delay.h>
- #include <linux/io.h>
- #include <linux/iopoll.h>
--#include <linux/delay.h>
- #include <linux/mfd/syscon.h>
- #include <linux/mfd/syscon/imx7-iomuxc-gpr.h>
- #include <linux/module.h>
-@@ -15,6 +15,7 @@
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
- #include <linux/reset.h>
-+
- #include <dt-bindings/phy/phy-imx8-pcie.h>
- 
- #define IMX8MM_PCIE_PHY_CMN_REG061	0x184
--- 
-2.33.1
+> > That convinces me, that platform_get_irq_optional() is a bad name. The
+> > only difference to platform_get_irq is that it's silent. And returning
+> > a dummy irq value (which would make it aligned with the other _optional
+> > functions) isn't possible.
+>=20
+> There is regulator_get_optional() which is I believe the earliest of
+> these APIs, it doesn't return a dummy either (and is silent too) - this
+> is because regulator_get() does return a dummy since it's the vastly
+> common case that regulators must be physically present and them not
+> being found is due to there being an error in the system description.
+> It's unfortunate that we've ended up with these two different senses for
+> _optional(), people frequently get tripped up by it.
 
+Yeah, I tripped over that one already, too. And according to my counting
+this results in three different senses now :-\ :
+
+ a) regulator
+    regulator_get returns a dummy, regulator_get_optional returns ERR_PTR(-=
+ENODEV)
+ b) clk + gpiod
+    ..._get returns ERR_PTR(-ENODEV), ..._get_optional returns a dummy
+ c) platform_get_irq()
+    platform_get_irq_optional() is just a silent variant of
+    platform_get_irq(); the return values are identical.
+   =20
+This is all very unfortunate. In my eyes b) is the most sensible
+sense, but the past showed that we don't agree here. (The most annoying
+part of regulator_get is the warning that is emitted that regularily
+makes customers ask what happens here and if this is fixable.)
+
+I think at least c) is easy to resolve because
+platform_get_irq_optional() isn't that old yet and mechanically
+replacing it by platform_get_irq_silent() should be easy and safe.
+And this is orthogonal to the discussion if -ENOXIO is a sensible return
+value and if it's as easy as it could be to work with errors on irq
+lookups.
+
+Best regards
+Uwe
+
+--=20
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+
+--zcdy7nemyxfoojub
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmHgCCsACgkQwfwUeK3K
+7AktbAf/UzNin6+fnXTmkdrTvXWaXCV8TB76EIUtIdNWwJEjmXxWes5jyBpp/jXj
+7gSmYT3gi4oK0wjB6dKmqF6jba5/RPL4cdS6/8iQDp32Xey0hzWymBPENLc/Nxt5
+Ge81cdot6EFxqSkuW1Zbe55wzmNUmEsez7+e+8gJAviPB6zQndDE/zAkwxczzb04
+GfD6Uixgm4a29NwXNIignwNm8pACez/px2A8cVhILZ8135X0rdwYM17BiQtfM5Uq
+s2hZsLfxWm9ZvdyxA7gGvsfefPmiPfS3k/HWagHMDB8nQq4vqnMmPTu01YJs34dM
++ycJZkglW3eJnCZ9Fr5sjnuP6uLExw==
+=5Hn7
+-----END PGP SIGNATURE-----
+
+--zcdy7nemyxfoojub--
+
+
+--===============2293105773586691859==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2293105773586691859==--
+
