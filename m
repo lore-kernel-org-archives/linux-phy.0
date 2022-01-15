@@ -4,124 +4,156 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15336C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jan 2022 20:31:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74342C433EF
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Jan 2022 11:52:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YR54eaYWM3ireVgHQEeaEGvQ2dGzzgwMC7nSezVTx8c=; b=FGb1U+JnqxDbwXs/DwQmOhFYxL
-	Oz3/8itt6rD+uJ4YgGPURQFxoqRlRFJ+Ef2LElMrJz1WdNLuAlM5e1OIQeb8F1w3Vf/mglfl/0ogo
-	83f+gv2cyHWhtBkwKNqF9+7mRA9B4rTdgnQLLU/TaP8mLcB/0kmE4c2c2eT170O5uSQHVvQCMhuEt
-	+cAxscg9K1PC6bpqOz4kkP6/mxjtXLooVqGnfLfa+k1Qz8UwgTOpAgbgPCC68/Jhn7aaUfL0p4SKS
-	OqwQYM45DPuwR5z7s3qmqtnfRT23k2QfHAWnQzWLclQDoSwxVgZBf6BvR/MehfNdn3Xe8HcO3IO+V
-	GEGecbPQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=n1w7hDLJOODnhv4Gzf8Krr4E7INaiJ8yyBRXoIC7Iz4=; b=ldnYn20y1TKQAn
+	MLJrPpDySJGwF+O3OdxzJxa61nppP0UXSZSoWL+4SaOzDoUWhfhWD6ywNNEe7MvKhJIsFRQdWr2DV
+	+8t1HDxow0lz7QujuYFgZCq2MH7Zj2sIZpIjEQToxEn/mcmjewPWrzlp/RFWN7TycL3XH2EZGG/bB
+	uR9Q9Palns4xCylpJX6U/8C/4XW8RqLsmlLSi32t+LdfVqnrL2398/ypQT2jN7CUi65nJI1+vIMCn
+	iOgBzdFXl5uTux2OWBwsH/hjJXeHAXNmQWpi2dSbW9rS2wvGDVV2Roy9I8TfWyDkGVOzbE8WEA/8x
+	QcsJ2llgeDkdZ+Qap/5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n8TEM-00AC9c-HH; Fri, 14 Jan 2022 20:31:26 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1n8hbZ-00B012-BV; Sat, 15 Jan 2022 11:52:21 +0000
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n8TE7-00AC7J-2E
- for linux-phy@lists.infradead.org; Fri, 14 Jan 2022 20:31:12 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1n8TCl-0001fN-N3; Fri, 14 Jan 2022 21:29:47 +0100
-Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
- by drehscheibe.grey.stw.pengutronix.de with esmtps (TLS1.3) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <ukl@pengutronix.de>)
- id 1n8TCi-00AJbq-3s; Fri, 14 Jan 2022 21:29:43 +0100
-Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1n8TCg-0002hC-MP; Fri, 14 Jan 2022 21:29:42 +0100
-Date: Fri, 14 Jan 2022 21:29:39 +0100
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Sergey Shtylyov <s.shtylyov@omp.ru>
-Cc: Mark Brown <broonie@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Vignesh Raghavendra <vigneshr@ti.com>, KVM list <kvm@vger.kernel.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>,
- ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Jaroslav Kysela <perex@perex.cz>, Guenter Roeck <groeck@chromium.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- MTD Maling List <linux-mtd@lists.infradead.org>,
- Linux I2C <linux-i2c@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-phy@lists.infradead.org, netdev@vger.kernel.org,
- linux-spi <linux-spi@vger.kernel.org>, Jiri Slaby <jirislaby@kernel.org>,
- Khuong Dinh <khuong@os.amperecomputing.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Zhang Rui <rui.zhang@intel.com>, platform-driver-x86@vger.kernel.org,
- Linux PWM List <linux-pwm@vger.kernel.org>,
- Robert Richter <rric@kernel.org>, Saravanan Sekar <sravanhome@gmail.com>,
- Corey Minyard <minyard@acm.org>, Linux PM list <linux-pm@vger.kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- John Garry <john.garry@huawei.com>, Takashi Iwai <tiwai@suse.com>,
- Peter Korsgaard <peter@korsgaard.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Mark Gross <markgross@kernel.org>, Hans de Goede <hdegoede@redhat.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Jakub Kicinski <kuba@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- openipmi-developer@lists.sourceforge.net,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Benson Leung <bleung@chromium.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-edac@vger.kernel.org, Tony Luck <tony.luck@intel.com>,
- Richard Weinberger <richard@nod.at>, Mun Yew Tham <mun.yew.tham@intel.com>,
- Eric Auger <eric.auger@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Cornelia Huck <cohuck@redhat.com>,
- Linux MMC List <linux-mmc@vger.kernel.org>,
- Joakim Zhang <qiangqing.zhang@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, James Morse <james.morse@arm.com>,
- Zha Qipeng <qipeng.zha@intel.com>, Sebastian Reichel <sre@kernel.org>,
- Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- linux-mediatek@lists.infradead.org,
- Brian Norris <computersforpeace@gmail.com>,
- "David S. Miller" <davem@davemloft.net>
-Subject: Re: [PATCH] driver core: platform: Rename
- platform_get_irq_optional() to platform_get_irq_silent()
-Message-ID: <20220114202939.5kq5ud5opfosjlyc@pengutronix.de>
-References: <YdyilpjC6rtz6toJ@lunn.ch>
- <CAMuHMdWK3RKVXRzMASN4HaYfLckdS7rBvSopafq+iPADtGEUzA@mail.gmail.com>
- <20220112085009.dbasceh3obfok5dc@pengutronix.de>
- <CAMuHMdWsMGPiQaPS0-PJ_+Mc5VQ37YdLfbHr_aS40kB+SfW-aw@mail.gmail.com>
- <20220112213121.5ruae5mxwj6t3qiy@pengutronix.de>
- <Yd9L9SZ+g13iyKab@sirena.org.uk>
- <20220113110831.wvwbm75hbfysbn2d@pengutronix.de>
- <YeA7CjOyJFkpuhz/@sirena.org.uk>
- <20220113194358.xnnbhsoyetihterb@pengutronix.de>
- <386a7f56-38c8-229c-4fec-4b38a77c4121@omp.ru>
+ id 1n8hbW-00B00A-1U
+ for linux-phy@lists.infradead.org; Sat, 15 Jan 2022 11:52:19 +0000
+Received: from pps.filterd (m0246629.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 20F3CHS7003974; 
+ Sat, 15 Jan 2022 11:52:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : content-type : mime-version; s=corp-2021-07-09;
+ bh=63H1ygHiO9hRWw+/iFdcumsoVXw2+MEmJOKVvNksogU=;
+ b=KKQVC1Ce+pifI0naazRBQUYKaQ3dh7284vJQTbw/YTT8W4AoWj+nnebDvWQU4j8ezqN1
+ ez5OxNivbraP3wME8M1Y7mquE+o6GndEFgcq6mZHyh5sof6iZJtUhmB3p8fGfKMrjHkZ
+ HDbxeRfHLGTkpJM0S+/MdOxsSMDdici0iQ5cAXIrsiYdZ/EJnhvj0IW7XKydrU6d8TeO
+ z3NeU36wWvxYzkKRCD7NvRtNmdDrqq7ezhVwFYQ9nz3ygTKdDHCj/raugkCCK6G6d6SZ
+ x8j1WqI2G2XIsVfgJbqVGwTCtrb51iLZzxUHh6NUDpnqbz6JrAT4yW6MZcbOXZDBt5yg Gw== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by mx0b-00069f02.pphosted.com with ESMTP id 3dkp5agej3-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sat, 15 Jan 2022 11:52:05 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.1.2/8.16.1.2) with SMTP id 20FBpo2g136242;
+ Sat, 15 Jan 2022 11:52:03 GMT
+Received: from nam12-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam12lp2177.outbound.protection.outlook.com [104.47.59.177])
+ by userp3020.oracle.com with ESMTP id 3dkqqhamg0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sat, 15 Jan 2022 11:52:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Izq2oMkoiWN1VkLhI5abqB3LjEH/nnddDP+gYOonkyNNnjvira9MPGT7QLBzWpiPy2gYDFjzPKlNJAXTRrswrtu7a5vjDx4/Ehf2Nkk4BtH7Qn4vAU/Qc0ka591TXpMx5wW0HctCUkbkjomY7EcWoScqwvp+J4YSKBUGbBg3eicERLKZkhwfIizPj/rMLh0jb8h01MWODdkQY0GwUgYN+vDkN1nzoIFXGPNjoXHPQyje5CezduG/k/TUoCdccDxwn0y3N+Q+Dps/VmUMo/VQO82ttgdCXCSAVUEO7xZ3RiOjctGfErKVFOjgWpXhZeurVagalhuq1TuHR0ZR2mlg/Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=63H1ygHiO9hRWw+/iFdcumsoVXw2+MEmJOKVvNksogU=;
+ b=VLosgpcXTcDVkoBaDbxOpoUdWlIjtoPvORhv2jorsbaO+8Tnp1GjFNH0oOb4L7RCXwWUvSk9scdsgNIMntAk+Ua4xKaUvXFa6jd+XsgPmI1UaiXqdQ5oP0xtQxAg25Q0Qq0gginyjBexX6FOS5rIAaMSqRpG5MKwz3p9t46/OTHQkORDqblj+Z2PV/iEdRX8AyKydc7CrVJGfzKte55fsy235ZPhuMA3uh/oystouR01iq5oovzFiqeFTo04kWEsC82nlVEFdOtC9pQHkR7LTe66CF+YWZXcm8OUus/KKiB3cztgScxLB++L2D3yxh+xVl24JRQZUl+vMc99HvbBZw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=63H1ygHiO9hRWw+/iFdcumsoVXw2+MEmJOKVvNksogU=;
+ b=tSc+wv5LAtcdoz4AMGdas5KvfghyRT9NT9RMqsUfa2RmRelOMcrOAui1r7n4YPJdQPTN9Df/98NGHN9SFVWysQsX9Z/gRwWF6eGjwPzILW3soa4SQmpJn/7CmwnQI/NodlUwBJNfNrpbrYT81hAt06iAQcpbqpDkv8hVeu1cL9g=
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28) by MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4888.11; Sat, 15 Jan
+ 2022 11:52:01 +0000
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::c13b:5812:a403:6d96]) by MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::c13b:5812:a403:6d96%5]) with mapi id 15.20.4888.012; Sat, 15 Jan 2022
+ 11:52:01 +0000
+Date: Sat, 15 Jan 2022 14:51:46 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Alan Douglas <adouglas@cadence.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Swapnil Jakhade <sjakhade@cadence.com>,
+ Aswath Govindraju <a-govindraju@ti.com>, linux-phy@lists.infradead.org,
+ kernel-janitors@vger.kernel.org
+Subject: [PATCH] phy: cadence: Sierra: fix error handling bugs in probe()
+Message-ID: <20220115115146.GC7552@kili>
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-ClientProxiedBy: ZR0P278CA0077.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:22::10) To MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28)
 MIME-Version: 1.0
-In-Reply-To: <386a7f56-38c8-229c-4fec-4b38a77c4121@omp.ru>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 12c25a1e-64b5-462f-9a5d-08d9d81d70cc
+X-MS-TrafficTypeDiagnostic: MWHPR1001MB2365:EE_
+X-Microsoft-Antispam-PRVS: <MWHPR1001MB2365472BAA15DB8FFA72C7138E559@MWHPR1001MB2365.namprd10.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:741;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: CL91wYn+q8zOv5OHbQzVJXn7t2e/8cUmRj5+aGCXa3VewtpIs07ey2Qr6mzZB2Y3I06fDHNUmfs8Su7WSB6MKshTnjtwxdo0OtvkKZ52BtqIjybu8LSRrgIEQclEiwC044DId61QrgszB+mNgbzywp3/vn8brk6YjoUMgIt4ahdvjGPTe4Zhal2NWJ/dP1nnHlY4oCKM958vBz2IrCaf8DPCsjpwnap8ur8s4yEOdoyzu6LXaa/100usIbJJ0FBkQUBp5s0LE1MfJreQY22pLi+AR2enC1G5z5q4pCArfgrUdKMXKvgX0zVSTabZmj6i4W2wSa9jqE25I+D10uXQOnBiuRjd/7mMruxTSCVbc63vPMnW/Gd16C9WjJ23hkbl75+0qNAILAd4NSn4TDDt3GGw18uKnHd1HNZqDoWeDTDmXkz0ld9KsYIlBHdPEDasUw9HAhk3KbSrK1qHgc+gTxnJ051+kLBmSWp/NNSaDJgT4BvuQzurFHvKKOCgCk+eySaeMdvhFwM5Y9gWUxjiFYfQokPvYioUOg1sND8+uamqmzPR3+vp77BIK9xER0hrBVvvNBAFSvkMDP2s+b2Yr9HFzh2/0ber30wm+cKAMG4sIpdJtcrjXtE6+vtOHBu97JgTTi83waiN0Ylsy2uIKwcf/NvMqXF/2NDYF8ACy2RbCA/JH2Rd6RaNRJyQBLSdRxWmOHS2Xc5MW3LOm2paXg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MWHPR1001MB2365.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(7916004)(366004)(110136005)(54906003)(26005)(38100700002)(38350700002)(8936002)(44832011)(186003)(66476007)(2906002)(8676002)(66556008)(4326008)(83380400001)(33656002)(6666004)(316002)(6486002)(5660300002)(508600001)(66946007)(86362001)(9686003)(6512007)(1076003)(33716001)(6506007)(52116002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?iAvscaaLJfgvfRyiZibX/PVirlASxefOYZjSQGTPJOSu0HwdQBQIP9kxmOSo?=
+ =?us-ascii?Q?ebVXxVtKwDoh1+kqnCgHK2Nz8b2+IFPt0+zcXDvYsPSMBSEUfPeEPtExN6CU?=
+ =?us-ascii?Q?hdaWDifrx5zzuZfyM5zi9aDRXxrUK3/8oGesaW53jqW0cSodOk6RQzGVdbz7?=
+ =?us-ascii?Q?jcm13clSADr5m/PT+HRJECoJLutDbrpEkH7j4/Sc3NDGzBUXv0Dq7SdocXhg?=
+ =?us-ascii?Q?UE543sOuWc1mxRPmat/vKE2xsfcEhb9L9RIqcVmKHMUpfPudQM5uDbF24QEy?=
+ =?us-ascii?Q?BP1IJxDAGuRWjM7LuW4fPrQwOL1yQdyVRNMqF57pSC95V+5raOr6ejrsdjsB?=
+ =?us-ascii?Q?+RXgAzqrLegRL4BP46vW9VsbKgHnqVduskH/UCpdOehQAucAhSGu6j0Edbjr?=
+ =?us-ascii?Q?zTBl2B5pidXg8WqIQ181RhUndQQFakgAWfSKSY0GGHGGFjtSAzlwWgQ0iCMM?=
+ =?us-ascii?Q?j13xM4mERMy9mCVACU7AUw669nKXrRP6yeGhlE07LrKpXK8J9Lreno01VvQ3?=
+ =?us-ascii?Q?31oNjeTQUvuVj4n7FlzJ59BSX4zdn0v7FIqn7ORWolO+n/AwtJY0Mh7xf48d?=
+ =?us-ascii?Q?P30sSkNDIGHGIxv35PHAGHLPOwKAprlKiHdh5SKZXpT8XU2oxT+MGJ4BzIrg?=
+ =?us-ascii?Q?itMXwp9lwZzVAOT+guaTDBIHhRQpAho31pOFWca3kgItBSEK4TyWdnWeeaV2?=
+ =?us-ascii?Q?LhU9ZvR6lA4uVn9KFwOKjkHC51IKs27FExPiE0NrpaOuUqI5MeEbOrWbCczU?=
+ =?us-ascii?Q?f4lhZF28tvYRTByuKeJYdHLxemagoG7kGdYDXbQgQGy2/QCY2qtZwL+O/vyH?=
+ =?us-ascii?Q?/FBjwfihpcGxsNoq55BH/m6Y+7fluSVwQ2fA/EzaZscr1XrpufYXXPRN/X8Z?=
+ =?us-ascii?Q?kn/n0eylQe5Rn8MGIICboxiiW1lNVEMazmJ1utv8z2/U+immdwWr1KMHu69J?=
+ =?us-ascii?Q?Xo7fXAVRzG4IO1Out/uPR/pNIidgPkyzzOiDyEHsNavD5bdu6GEUNSQjmqbe?=
+ =?us-ascii?Q?DVqVX2Tq9PFwC3HXnAbf/RnhppW9G/i62LD+8s/tm0y+jniwMOTu9nT6F8af?=
+ =?us-ascii?Q?mY7jr44gAaqiKDcAuOA9c+IhWo7NWcfSNI5tBtNl6ir0BOWEflbXi9rl1lCD?=
+ =?us-ascii?Q?IREArvyrzlyMXeFtdkVb+x8ICtX3HSOJg6NJUqr1lOk1aPUkfahon8JZkSEQ?=
+ =?us-ascii?Q?5ueMrpxWq0IPGnFBKbhaTAJI1gw8r2c+6ipxTHBfZhY+EfFGk8TOm54+Rn/D?=
+ =?us-ascii?Q?Feq+3vM2EAmqfkVK085THtM1J+yVETWeilTej9HxBo4+jO8fizWVy/BgBQ2j?=
+ =?us-ascii?Q?j/dkFfeB1BafDyJlqVPmWtA/FWmdpY20dNP40icRIwcIQSHy2jw+vYgb3cIx?=
+ =?us-ascii?Q?TeL3Y6V0IJULCgEkysCpbsNgZcQ8ttxxcjpKMBb2XTEjvucGrakl7AWsAGq8?=
+ =?us-ascii?Q?95wJ6xErXP5/QDOfGenUzTHLz3CqgZfgd6lSMUfYT5KG3SdpWmRfGPK5CXc2?=
+ =?us-ascii?Q?iFilIyQ0iSrbZWb15BxFlsYay3Lq8i7rXlr/TOu3yqeDGVShbHWYo9DNE8Ga?=
+ =?us-ascii?Q?YFd2a9aQjXgZTiAPdsutbfMsLyGIzd2SWC5Uzxcnbm+uBl261nlEJcQ823JM?=
+ =?us-ascii?Q?fEsZbymXkTPJqwke75ai8CwRUF29nRRkLfaCMs+Kz51ynVFsIa1NcEmECtMJ?=
+ =?us-ascii?Q?kuMVjdkErWY/1aZzPPVPI8MsHRM=3D?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 12c25a1e-64b5-462f-9a5d-08d9d81d70cc
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2365.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Jan 2022 11:52:01.2587 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: inoimUsUciTAqGuiK9w7WW9JFiM9zhSU9e0KwirnEmSwHfqQNSrJLK82xLcFFqcAYiXHYmsUIsmxomaqiKkl+Li6e2YLKT5CFjS3pw5Bv2M=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR1001MB2365
+X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10227
+ signatures=668683
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ phishscore=0
+ mlxlogscore=999 malwarescore=0 bulkscore=0 suspectscore=0 spamscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2110150000 definitions=main-2201150073
+X-Proofpoint-ORIG-GUID: 06Hez2eSARdhKaPcWdWBfViSc6lQ-c3h
+X-Proofpoint-GUID: 06Hez2eSARdhKaPcWdWBfViSc6lQ-c3h
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220114_123111_280863_1561784C 
-X-CRM114-Status: GOOD (  51.73  )
+X-CRM114-CacheID: sfid-20220115_035218_121880_54B8075D 
+X-CRM114-Status: GOOD (  19.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,162 +165,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7499627492640411262=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+There are two bugs in the error handling:
+1: If devm_of_phy_provider_register() fails then there was no cleanup.
+2: The error handling called of_node_put(child) improperly leading to
+   a use after free.  We are only holding the reference inside the loop
+   so the last two gotos after the loop lead to a use after free bug.
+   Fix this by cleaning up the partial allocations (or partial iterations)
+   in the loop before doing the goto.
 
---===============7499627492640411262==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="gs4ynp4fq77e5cup"
-Content-Disposition: inline
+Fixes: a43f72ae136a ("phy: cadence: Sierra: Change MAX_LANES of Sierra to 16")
+Fixes: 44d30d622821 ("phy: cadence: Add driver for Sierra PHY")
+Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+---
+From static analysis.  Not tested.
 
+ drivers/phy/cadence/phy-cadence-sierra.c | 35 ++++++++++++++----------
+ 1 file changed, 21 insertions(+), 14 deletions(-)
 
---gs4ynp4fq77e5cup
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index da24acd26666..e265647e29a2 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -1338,7 +1338,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	const struct cdns_sierra_data *data;
+ 	unsigned int id_value;
+-	int i, ret, node = 0;
++	int ret, node = 0;
+ 	void __iomem *base;
+ 	struct device_node *dn = dev->of_node, *child;
+ 
+@@ -1416,7 +1416,8 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 			dev_err(dev, "failed to get reset %s\n",
+ 				child->full_name);
+ 			ret = PTR_ERR(sp->phys[node].lnk_rst);
+-			goto put_child2;
++			of_node_put(child);
++			goto put_control;
+ 		}
+ 
+ 		if (!sp->autoconf) {
+@@ -1424,7 +1425,9 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 			if (ret) {
+ 				dev_err(dev, "missing property in node %s\n",
+ 					child->name);
+-				goto put_child;
++				of_node_put(child);
++				reset_control_put(sp->phys[node].lnk_rst);
++				goto put_control;
+ 			}
+ 		}
+ 
+@@ -1434,7 +1437,9 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 
+ 		if (IS_ERR(gphy)) {
+ 			ret = PTR_ERR(gphy);
+-			goto put_child;
++			of_node_put(child);
++			reset_control_put(sp->phys[node].lnk_rst);
++			goto put_control;
+ 		}
+ 		sp->phys[node].phy = gphy;
+ 		phy_set_drvdata(gphy, &sp->phys[node]);
+@@ -1446,26 +1451,28 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 	if (sp->num_lanes > SIERRA_MAX_LANES) {
+ 		ret = -EINVAL;
+ 		dev_err(dev, "Invalid lane configuration\n");
+-		goto put_child2;
++		goto put_control;
+ 	}
+ 
+ 	/* If more than one subnode, configure the PHY as multilink */
+ 	if (!sp->autoconf && sp->nsubnodes > 1) {
+ 		ret = cdns_sierra_phy_configure_multilink(sp);
+ 		if (ret)
+-			goto put_child2;
++			goto put_control;
+ 	}
+ 
+ 	pm_runtime_enable(dev);
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+-	return PTR_ERR_OR_ZERO(phy_provider);
+-
+-put_child:
+-	node++;
+-put_child2:
+-	for (i = 0; i < node; i++)
+-		reset_control_put(sp->phys[i].lnk_rst);
+-	of_node_put(child);
++	if (IS_ERR(phy_provider)) {
++		ret = PTR_ERR(phy_provider);
++		goto put_control;
++	}
++
++	return 0;
++
++put_control:
++	while (--node >= 0)
++		reset_control_put(sp->phys[node].lnk_rst);
+ clk_disable:
+ 	cdns_sierra_phy_disable_clocks(sp);
+ 	reset_control_assert(sp->apb_rst);
+-- 
+2.20.1
 
-On Fri, Jan 14, 2022 at 10:45:38PM +0300, Sergey Shtylyov wrote:
-> On 1/13/22 10:43 PM, Uwe Kleine-K=F6nig wrote:
->=20
-> > The subsystems regulator, clk and gpio have the concept of a dummy
-> > resource. For regulator, clk and gpio there is a semantic difference
-> > between the regular _get() function and the _get_optional() variant.
-> > (One might return the dummy resource, the other won't. Unfortunately
-> > which one implements which isn't the same for these three.) The
-> > difference between platform_get_irq() and platform_get_irq_optional() is
-> > only that the former might emit an error message and the later won't.
-> >=20
-> > To prevent people's expectations that there is a semantic difference
-> > between these too, rename platform_get_irq_optional() to
-> > platform_get_irq_silent() to make the actual difference more obvious.
-> >=20
-> > The #define for the old name can and should be removed once all patches
-> > currently in flux still relying on platform_get_irq_optional() are
-> > fixed.
->=20
->    Hm... I'm afraid that with this #define they would never get fixed... =
-:-)
-
-I will care for it.
-
-> > Signed-off-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-> > ---
-> > Hello,
-> >=20
-> > On Thu, Jan 13, 2022 at 02:45:30PM +0000, Mark Brown wrote:
-> >> On Thu, Jan 13, 2022 at 12:08:31PM +0100, Uwe Kleine-K=F6nig wrote:
-> >>
-> >>> This is all very unfortunate. In my eyes b) is the most sensible
-> >>> sense, but the past showed that we don't agree here. (The most annoyi=
-ng
-> >>> part of regulator_get is the warning that is emitted that regularily
-> >>> makes customers ask what happens here and if this is fixable.)
-> >>
-> >> Fortunately it can be fixed, and it's safer to clearly specify things.
-> >> The prints are there because when the description is wrong enough to
-> >> cause things to blow up we can fail to boot or run messily and
-> >> forgetting to describe some supplies (or typoing so they haven't done
-> >> that) and people were having a hard time figuring out what might've
-> >> happened.
-> >=20
-> > Yes, that's right. I sent a patch for such a warning in 2019 and pinged
-> > occationally. Still waiting for it to be merged :-\
-> > (https://lore.kernel.org/r/20190625100412.11815-1-u.kleine-koenig@pengu=
-tronix.de)
-> >=20
-> >>> I think at least c) is easy to resolve because
-> >>> platform_get_irq_optional() isn't that old yet and mechanically
-> >>> replacing it by platform_get_irq_silent() should be easy and safe.
-> >>> And this is orthogonal to the discussion if -ENOXIO is a sensible ret=
-urn
-> >>> value and if it's as easy as it could be to work with errors on irq
-> >>> lookups.
-> >>
-> >> It'd certainly be good to name anything that doesn't correspond to one
-> >> of the existing semantics for the API (!) something different rather
-> >> than adding yet another potentially overloaded meaning.
-> >=20
-> > It seems we're (at least) three who agree about this. Here is a patch
-> > fixing the name.
->=20
->    I can't say I genrally agree with this patch...
-
-Yes, I didn't count you to the three people signaling agreement.
-
-> [...]
-> > diff --git a/include/linux/platform_device.h b/include/linux/platform_d=
-evice.h
-> > index 7c96f169d274..6d495f15f717 100644
-> > --- a/include/linux/platform_device.h
-> > +++ b/include/linux/platform_device.h
-> > @@ -69,7 +69,14 @@ extern void __iomem *
-> >  devm_platform_ioremap_resource_byname(struct platform_device *pdev,
-> >  				      const char *name);
-> >  extern int platform_get_irq(struct platform_device *, unsigned int);
-> > -extern int platform_get_irq_optional(struct platform_device *, unsigne=
-d int);
-> > +extern int platform_get_irq_silent(struct platform_device *, unsigned =
-int);
-> > +
-> > +/*
-> > + * platform_get_irq_optional was recently renamed to platform_get_irq_=
-silent.
-> > + * Fixup users to not break patches that were created before the renam=
-e.
-> > + */
-> > +#define platform_get_irq_optional(pdev, index) platform_get_irq_silent=
-(pdev, index)
-> > +
->=20
->    Yeah, why bother fixing if it compiles anyway?
-
-The plan is to remove the define in one or two kernel releases. The idea
-is only to not break patches that are currently in next.
-
->    I think an inline wrapper with an indication to gcc that the function =
-is deprecated
-> (I just forgot how it should look) would be better instead...
-
-The deprecated function annotation is generally frowned upon. See
-771c035372a0.
-
-Best regards
-Uwe
-
---=20
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
---gs4ynp4fq77e5cup
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmHh3S8ACgkQwfwUeK3K
-7AkDXQf/U5FAV2AAfHdpPoYhXkPobJeAf5Dqsq9HthaQ/4EsbgoDzhwXUQuRqgGp
-s3l08rbKnPAXvuz91TT4s4P4EfflDVbvLMELaacliZW9A2Zubif0kRa5i7noZtww
-bMiLnHbf6jZNoGKWayBhA0I+mD3ItG2bJkiZMPC9EauwofQRd5TZEOFEnf0MOQYR
-WDceoBK0StFIaNP+azd2h5Mkfo+sy70ZLX3i1E5+f2X9Iac4pOldU5N65ldsgg9N
-AVzKdnYk6h5IpXqZaytMAGpMn9j4OQHJGDLA8zo0jjwjnK+1JHnoGFwlJO43H0af
-61XlzqllsW1diNuTEAhAtFOrNwsDYQ==
-=Iw62
------END PGP SIGNATURE-----
-
---gs4ynp4fq77e5cup--
-
-
---===============7499627492640411262==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7499627492640411262==--
-
