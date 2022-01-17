@@ -4,133 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4723C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jan 2022 10:42:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D265BC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jan 2022 11:01:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PFjKhfOkCdlcHmsJ4UMJkKilIGfFzfJ2eI5fk0qro4w=; b=ozZMLuoE2t85YU
-	13zSDXjqY6jWcJ1sbDVJ8vykrAIZg26Q24AfdfxJfWbyS1DOGVGuEwolFv0HRR07+sPcpQZoeNeqx
-	TykFp/vGZZuOlstW209MOVYFDb1dybKl6cjPC+9Ro9npYaVMS+O3PFRToY2B04Rpokp1kPuZLuwJ6
-	9VCI+F13qSokryPLzaiZxV6hcZdxB6oHm2OT93GlOmzVmUsRuDxNfcGChsIpZJ97yyhbpHhjP9Ig1
-	7azhZobf1GVF1Ry1WLadDu7SRSmT7fon4OuDRqJ2UR5h+9S6Cu7wX0VhEqWvQvqGb8XheADWyqO4m
-	7hqvtzh6RtOF/jcges0g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LlOEJbqo9nAPkARdpXhGyPCcX8yyLt8ijHVPM3cd9Y4=; b=UHO0RBUbnMVqKp
+	ugVvj9ajtUYG22tEAhXllIr4bErZsSGRkgeCj/j4O7my9GTbtRZaJwM5KFOg3P8VeWtDGqmGXaEuj
+	xCT2BL1Fqfpi3ZitRXZEeY60BrN2MYxZVYP+rTJYo8TncjHXbm7bC2YwxHB5//LNSEMo2xlky4TtL
+	7KdISJ9Gjs6xu9ws6/lz2y1TpoMwU2R6m1h0hBEcyCnSK8AptK6jOPIZCTwYRGYhJCpsa2J3MYTfi
+	PTvio4Su+1X5C4+70IhZcUZpyWyoLTqda4e524OFPy7rUfnqgssUrjMiDho2oCSaHESvo5YbPLbB/
+	Acz9MT3THkPfpFw2vgfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n9PSf-00EXZl-CB; Mon, 17 Jan 2022 10:42:05 +0000
-Received: from mail-qk1-f173.google.com ([209.85.222.173])
+	id 1n9PlM-00EaGg-9f; Mon, 17 Jan 2022 11:01:24 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n9PSP-00EXWg-SQ; Mon, 17 Jan 2022 10:41:51 +0000
-Received: by mail-qk1-f173.google.com with SMTP id 193so18395340qkh.13;
- Mon, 17 Jan 2022 02:41:44 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=8wbyaDOKHzyncR/a8atHHiwf57S6QrlnXekhvOqZ5Zc=;
- b=ctHkskrZJjPwrMYuvujLTJu1OjIkvYeA0k1b2ovJ4FdGxJd5nqc2nWOYMjoU//LGeZ
- qgukoFljEKwRlKc1FLc/7dKppx6sQoY7KD5znCg1zCbbC1t6D5pSIV/oZ13FPC0KfOVJ
- g28l62oku45cRhlpMX1rd36gLh+1K07jjlOOtz+umR3j4dwqlw48IEfv4Jo1QqQJ8IW2
- 4CQjuk2kRLA67tg07S1NK3GFTN8a9hdrzAT/jT8Byqx89Wmpxgp7NTEyw+6bAw4qova2
- vD2dj0Yslr0jSRtptg2iSS4E2RfU4LQZooF/9nB6XKeH94MzWVRAS0Umf9SEpsVLflfW
- Aj1g==
-X-Gm-Message-State: AOAM533OyiOQ0A6WNzpqUrNE6nguV7sL/XavU3faQ/bZJEm4M41MYmyO
- Vs64vWjwhiml0p4avLPM7gb18fP23KXtnHT0
-X-Google-Smtp-Source: ABdhPJyuBtMGTg6BoOMljm7UP5owanPIlR6Ho/q30R1RkqGHxHq+iPE46nCtq2l3nU+Kp8q2E3eyzg==
-X-Received: by 2002:a05:620a:1906:: with SMTP id
- bj6mr14568287qkb.94.1642416103402; 
- Mon, 17 Jan 2022 02:41:43 -0800 (PST)
-Received: from mail-yb1-f176.google.com (mail-yb1-f176.google.com.
- [209.85.219.176])
- by smtp.gmail.com with ESMTPSA id z5sm8252302qti.57.2022.01.17.02.41.43
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 17 Jan 2022 02:41:43 -0800 (PST)
-Received: by mail-yb1-f176.google.com with SMTP id g81so44420692ybg.10;
- Mon, 17 Jan 2022 02:41:43 -0800 (PST)
-X-Received: by 2002:ab0:4d42:: with SMTP id k2mr5738849uag.78.1642415764003;
- Mon, 17 Jan 2022 02:36:04 -0800 (PST)
+ id 1n9PlJ-00EaGG-BS
+ for linux-phy@lists.infradead.org; Mon, 17 Jan 2022 11:01:22 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 20HB1F8i105933;
+ Mon, 17 Jan 2022 05:01:15 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1642417275;
+ bh=APcufelCvvtQ92C4lwDeP/wnCcE/tCVes1IRHyTJzUY=;
+ h=From:To:CC:Subject:Date;
+ b=I1walgYssduKSqfJZfAo656o1GDfaStLuK+EZyGTKO4SJjAiw4+BaNuuozjwlvYf5
+ X0CDHQrR0w7GDAP0jVa/600BNn2stCIQpA1SL3d0OufEwQKkQNoozsOZZoqf/7ua0P
+ e8K1NSJYF0zc9N++PgNtqrR3e7UZZW0D+N39Uvf4=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 20HB1FKd111167
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 17 Jan 2022 05:01:15 -0600
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 17
+ Jan 2022 05:01:14 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Mon, 17 Jan 2022 05:01:14 -0600
+Received: from a0393678-lt.ent.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 20HB1Ase115422;
+ Mon, 17 Jan 2022 05:01:11 -0600
+From: Kishon Vijay Abraham I <kishon@ti.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
+CC: Swapnil Jakhade <sjakhade@cadence.com>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
+Subject: [PATCH] phy: ti: Fix "BUG: KASAN: global-out-of-bounds in
+ _get_maxdiv" issue
+Date: Mon, 17 Jan 2022 16:31:08 +0530
+Message-ID: <20220117110108.4117-1-kishon@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20220112085009.dbasceh3obfok5dc@pengutronix.de>
- <CAMuHMdWsMGPiQaPS0-PJ_+Mc5VQ37YdLfbHr_aS40kB+SfW-aw@mail.gmail.com>
- <20220112213121.5ruae5mxwj6t3qiy@pengutronix.de>
- <Yd9L9SZ+g13iyKab@sirena.org.uk>
- <29f0c65d-77f2-e5b2-f6cc-422add8a707d@omp.ru>
- <20220114092557.jrkfx7ihg26ekzci@pengutronix.de>
- <61b80939-357d-14f5-df99-b8d102a4e1a1@omp.ru>
- <20220114202226.ugzklxv4wzr6egwj@pengutronix.de>
- <c9026f17-2b3f-ee94-0ea3-5630f981fbc1@omp.ru>
- <CAMuHMdXVbRudGs69f9ZzaP1PXhteDNZiXA658eMFAwP4nr9r3w@mail.gmail.com>
- <20220117092444.opoedfcf5k5u6otq@pengutronix.de>
-In-Reply-To: <20220117092444.opoedfcf5k5u6otq@pengutronix.de>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 17 Jan 2022 11:35:52 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdUgZUeraHadRAi2Z=DV+NuNBrKPkmAKsvFvir2MuquVoA@mail.gmail.com>
-Message-ID: <CAMuHMdUgZUeraHadRAi2Z=DV+NuNBrKPkmAKsvFvir2MuquVoA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Cc: Sergey Shtylyov <s.shtylyov@omp.ru>, Andrew Lunn <andrew@lunn.ch>, 
- Ulf Hansson <ulf.hansson@linaro.org>, Vignesh Raghavendra <vigneshr@ti.com>,
- KVM list <kvm@vger.kernel.org>, 
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org, 
- Linus Walleij <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>, 
- ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Jaroslav Kysela <perex@perex.cz>, 
- Guenter Roeck <groeck@chromium.org>, Thierry Reding <thierry.reding@gmail.com>,
- MTD Maling List <linux-mtd@lists.infradead.org>,
- Linux I2C <linux-i2c@vger.kernel.org>, 
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>, 
- linux-phy@lists.infradead.org, netdev <netdev@vger.kernel.org>, 
- linux-spi <linux-spi@vger.kernel.org>, Jiri Slaby <jirislaby@kernel.org>, 
- Khuong Dinh <khuong@os.amperecomputing.com>,
- Florian Fainelli <f.fainelli@gmail.com>, 
- Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, 
- Lee Jones <lee.jones@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, 
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>, 
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jakub Kicinski <kuba@kernel.org>, 
- Zhang Rui <rui.zhang@intel.com>, platform-driver-x86@vger.kernel.org, 
- Linux PWM List <linux-pwm@vger.kernel.org>, Robert Richter <rric@kernel.org>, 
- Saravanan Sekar <sravanhome@gmail.com>, Corey Minyard <minyard@acm.org>, 
- Linux PM list <linux-pm@vger.kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
- Mauro Carvalho Chehab <mchehab@kernel.org>, John Garry <john.garry@huawei.com>,
- Peter Korsgaard <peter@korsgaard.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>, 
- Mark Gross <markgross@kernel.org>, Hans de Goede <hdegoede@redhat.com>, 
- Alex Williamson <alex.williamson@redhat.com>, Mark Brown <broonie@kernel.org>, 
- Borislav Petkov <bp@alien8.de>, Takashi Iwai <tiwai@suse.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, 
- openipmi-developer@lists.sourceforge.net, 
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Benson Leung <bleung@chromium.org>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, 
- linux-edac@vger.kernel.org, Tony Luck <tony.luck@intel.com>, 
- Richard Weinberger <richard@nod.at>, Mun Yew Tham <mun.yew.tham@intel.com>, 
- Eric Auger <eric.auger@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Cornelia Huck <cohuck@redhat.com>, 
- Linux MMC List <linux-mmc@vger.kernel.org>,
- Joakim Zhang <qiangqing.zhang@nxp.com>, 
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, 
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, 
- James Morse <james.morse@arm.com>, Zha Qipeng <qipeng.zha@intel.com>, 
- Sebastian Reichel <sre@kernel.org>,
- =?UTF-8?Q?Niklas_S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>, 
- linux-mediatek@lists.infradead.org, 
- Brian Norris <computersforpeace@gmail.com>,
- "David S. Miller" <davem@davemloft.net>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220117_024149_931197_CD48B9CF 
-X-CRM114-Status: GOOD (  50.86  )
+X-CRM114-CacheID: sfid-20220117_030121_520946_F594994F 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,95 +77,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVXdlLAoKT24gTW9uLCBKYW4gMTcsIDIwMjIgYXQgMTA6MjQgQU0gVXdlIEtsZWluZS1Lw7Zu
-aWcKPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4gd3JvdGU6Cj4gT24gTW9uLCBKYW4g
-MTcsIDIwMjIgYXQgMDk6NDE6NDJBTSArMDEwMCwgR2VlcnQgVXl0dGVyaG9ldmVuIHdyb3RlOgo+
-ID4gT24gU2F0LCBKYW4gMTUsIDIwMjIgYXQgOToyMiBQTSBTZXJnZXkgU2h0eWx5b3YgPHMuc2h0
-eWx5b3ZAb21wLnJ1PiB3cm90ZToKPiA+ID4gT24gMS8xNC8yMiAxMToyMiBQTSwgVXdlIEtsZWlu
-ZS1Lw7ZuaWcgd3JvdGU6Cj4gPiA+ID4gWW91IGhhdmUgdG8gdW5kZXJzdGFuZCB0aGF0IGZvciBj
-bGsgKGFuZCByZWd1bGF0b3IgYW5kIGdwaW9kKSBOVUxMIGlzIGEKPiA+ID4gPiB2YWxpZCBkZXNj
-cmlwdG9yIHRoYXQgY2FuIGFjdHVhbGx5IGJlIHVzZWQsIGl0IGp1c3QgaGFzIG5vIGVmZmVjdC4g
-U28KPiA+ID4gPiB0aGlzIGlzIGEgY29udmVuaWVuY2UgdmFsdWUgZm9yIHRoZSBjYXNlICJJZiB0
-aGUgY2xrL3JlZ3VsYXRvci9ncGlvZCBpbgo+ID4gPiA+IHF1ZXN0aW9uIGlzbid0IGF2YWlsYWJs
-ZSwgdGhlcmUgaXMgbm90aGluZyB0byBkbyIuIFRoaXMgaXMgd2hhdCBtYWtlcwo+ID4gPiA+IGNs
-a19nZXRfb3B0aW9uYWwoKSBhbmQgdGhlIG90aGVycyByZWFsbHkgdXNlZnVsIGFuZCBqdXN0aWZp
-ZXMgdGhlaXIKPiA+ID4gPiBleGlzdGVuY2UuIFRoaXMgZG9lc24ndCBhcHBseSB0byBwbGF0Zm9y
-bV9nZXRfaXJxX29wdGlvbmFsKCkuCj4gPiA+Cj4gPiA+ICAgIEkgZG8gdW5kZXJzdGFuZCB0aGF0
-LiBIb3dldmVyLCBJUlFzIGFyZSBhIGRpZmZlcmVudCBiZWFzdCB3aXRoIHRoZWlyCj4gPiA+IG93
-biBqdXN0aWZpY2F0aW9ucy4uLgo+ID4KPiA+ID4gPiBjbGtfZ2V0X29wdGlvbmFsKCkgaXMgc2Fu
-ZSBhbmQgc2Vuc2libGUgZm9yIGNhc2VzIHdoZXJlIHRoZSBjbGsgbWlnaHQgYmUKPiA+ID4gPiBh
-YnNlbnQgYW5kIGl0IGhlbHBzIHlvdSBiZWNhdXNlIHlvdSBkb24ndCBoYXZlIHRvIGRpZmZlcmVu
-dGlhdGUgYmV0d2Vlbgo+ID4gPiA+ICJub3QgZm91bmQiIGFuZCAidGhlcmUgaXMgYW4gYWN0dWFs
-IHJlc291cmNlIi4KPiA+ID4gPgo+ID4gPiA+IFRoZSByZWFzb24gZm9yIHBsYXRmb3JtX2dldF9p
-cnFfb3B0aW9uYWwoKSdzIGV4aXN0ZW5jZSBpcyBqdXN0IHRoYXQKPiA+ID4gPiBwbGF0Zm9ybV9n
-ZXRfaXJxKCkgZW1pdHMgYW4gZXJyb3IgbWVzc2FnZSB3aGljaCBpcyB3cm9uZyBvciBzdWJvcHRp
-bWFsCj4gPiA+Cj4gPiA+ICAgIEkgdGhpbmsgeW91IGFyZSB2ZXJ5IHdyb25nIGhlcmUuIFRoZSBy
-ZWFsIHJlYXNvbiBpcyB0byBzaW1wbGlmeSB0aGUKPiA+ID4gY2FsbGVycy4KPiA+Cj4gPiBJbmRl
-ZWQuCj4KPiBUaGUgY29tbWl0IHRoYXQgaW50cm9kdWNlZCBwbGF0Zm9ybV9nZXRfaXJxX29wdGlv
-bmFsKCkgc2FpZDoKPgo+ICAgICAgICAgSW50cm9kdWNlIGEgbmV3IHBsYXRmb3JtX2dldF9pcnFf
-b3B0aW9uYWwoKSB0aGF0IHdvcmtzIG11Y2ggbGlrZQo+ICAgICAgICAgcGxhdGZvcm1fZ2V0X2ly
-cSgpIGJ1dCBkb2VzIG5vdCBvdXRwdXQgYW4gZXJyb3Igb24gZmFpbHVyZSB0bwo+ICAgICAgICAg
-ZmluZCB0aGUgaW50ZXJydXB0Lgo+Cj4gU28gdGhlIGF1dGhvciBvZiA4OTczZWE0NzkwMWM4MWEx
-OTEyYmQwNWYxNTc3YmVkOWI1YjUyNTA2IGZhaWxlZCB0bwo+IG1lbnRpb24gdGhlIHJlYWwgcmVh
-c29uPyBPciBsb29rIGF0Cj4gMzFhOGQ4ZmE4NGM1MWQzYWIwMGJmMDU5MTU4ZDVkZTYxNzhjZjg5
-MDoKPgo+ICAgICAgICAgWy4uLl0gdXNlIHBsYXRmb3JtX2dldF9pcnFfb3B0aW9uYWwoKSB0byBn
-ZXQgc2Vjb25kL3RoaXJkIElSUQo+ICAgICAgICAgd2hpY2ggYXJlIG9wdGlvbmFsIHRvIGF2b2lk
-IGJlbG93IGVycm9yIG1lc3NhZ2UgZHVyaW5nIHByb2JlOgo+ICAgICAgICAgWy4uLl0KPgo+IExv
-b2sgdGhyb3VnaCB0aGUgb3V0cHV0IG9mCj4KPiAgICAgICAgIGdpdCBsb2cgLVNwbGF0Zm9ybV9n
-ZXRfaXJxX29wdGlvbmFsCj4KPiB0byBmaW5kIHNldmVyYWwgbW9yZSBvZiB0aGVzZS4KCkNvbW1p
-dCA4OTczZWE0NzkwMWM4MWExICgiZHJpdmVyIGNvcmU6IHBsYXRmb3JtOiBJbnRyb2R1Y2UKcGxh
-dGZvcm1fZ2V0X2lycV9vcHRpb25hbCgpIikgYW5kIHRoZSB2YXJpb3VzIGZpeHVwcyBmaXhlZCB0
-aGUgdWdseQpwcmludGluZyBvZiBlcnJvciBtZXNzYWdlcyB0aGF0IHdlcmUgbm90IGFwcGxpY2Fi
-bGUuCkluIGhpbmRzaWdodCwgcHJvYmFibHkgY29tbWl0IDc3MjNmNGM1ZWNkYjhkODMgKCJkcml2
-ZXIgY29yZToKcGxhdGZvcm06IEFkZCBhbiBlcnJvciBtZXNzYWdlIHRvIHBsYXRmb3JtX2dldF9p
-cnEqKCkiKSBzaG91bGQgaGF2ZQpiZWVuIHJldmVydGVkIGluc3RlYWQsIHVudGlsIGEgcGxhdGZv
-cm1fZ2V0X2lycV9vcHRpb25hbCgpIHdpdGggcHJvcGVyCnNlbWFudGljcyB3YXMgaW50cm9kdWNl
-ZC4gIEJ1dCBhcyB3ZSB3ZXJlIGFsbCBpbiBhIGh1cnJ5IHRvIGtpbGwKdGhlIG5vbi1hcHBsaWNh
-YmxlIGVycm9yIG1lc3NhZ2UsIHdlIHdlbnQgZm9yIHRoZSBxdWljayBhbmQgZGlydHkgZml4LgoK
-PiBBbHNvIEkgZmFpbCB0byBzZWUgaG93IGEgY2FsbGVyIG9mICh0b2RheSdzKSBwbGF0Zm9ybV9n
-ZXRfaXJxX29wdGlvbmFsKCkKPiBpcyBzaW1wbGVyIHRoYW4gYSBjYWxsZXIgb2YgcGxhdGZvcm1f
-Z2V0X2lycSgpIGdpdmVuIHRoYXQgdGhlcmUgaXMgbm8KPiBzZW1hbnRpYyBkaWZmZXJlbmNlIGJl
-dHdlZW4gdGhlIHR3by4gUGxlYXNlIHNob3cgbWUgYSBzaW5nbGUKPiBjb252ZXJzaW9uIGZyb20g
-cGxhdGZvcm1fZ2V0X2lycSB0byBwbGF0Zm9ybV9nZXRfaXJxX29wdGlvbmFsIHRoYXQKPiB5aWVs
-ZGVkIGEgc2ltcGxpZmljYXRpb24uCgpUaGF0J3MgZXhhY3RseSB3aHkgd2Ugd2FudCB0byBjaGFu
-Z2UgdGhlIGxhdHRlciB0byByZXR1cm4gMCA7LSkKCj4gU28geW91IG5lZWQgc29tZSBtb3JlIGVm
-Zm9ydCB0byBjb252aW5jZSBtZSBvZiB5b3VyIFBPVi4KPgo+ID4gRXZlbiBmb3IgY2xvY2tzLCB5
-b3UgY2Fubm90IGFzc3VtZSB0aGF0IHlvdSBjYW4gYWx3YXlzIGJsaW5kbHkgdXNlCj4gPiB0aGUg
-cmV0dXJuZWQgZHVtbXkgKGFjdHVhbGx5IGEgTlVMTCBwb2ludGVyKSB0byBjYWxsIGludG8gdGhl
-IGNsawo+ID4gQVBJLiAgV2hpbGUgdGhpcyB3b3JrcyBmaW5lIGZvciBzaW1wbGUgdXNlIGNhc2Vz
-LCB3aGVyZSB5b3UganVzdAo+ID4gd2FudCB0byBlbmFibGUvZGlzYWJsZSBhbiBvcHRpb25hbCBj
-bG9jayAoY2xrX3ByZXBhcmVfZW5hYmxlKCkgYW5kCj4gPiBjbGtfZGlzYWJsZV91bnByZXBhcmUo
-KSksIGl0IGRvZXMgbm90IHdvcmsgZm9yIG1vcmUgY29tcGxleCB1c2UgY2FzZXMuCj4KPiBBZ3Jl
-ZWQuIEJ1dCBmb3IgY2xrcyBhbmQgZ3Bpb2RzIGFuZCByZWd1bGF0b3JzIHRoZSBzaW1wbGUgY2Fz
-ZSBpcyBxdWl0ZQo+IHVzdWFsLiBGb3IgaXJxcyBpdCBpc24ndC4KCkl0IGlzIGZvciBkZXZpY2Vz
-IHRoYXQgY2FuIGhhdmUgZWl0aGVyIHNlcGFyYXRlIGludGVycnVwdHMsIG9yIGEgc2luZ2xlCm11
-bHRpcGxleGVkIGludGVycnVwdC4KClRoZSBsb2dpYyBpbiBlLmcuIGRyaXZlcnMvdHR5L3Nlcmlh
-bC9zaC1zY2kuYyBhbmQKZHJpdmVycy9zcGkvc3BpLXJzcGkuYyBjb3VsZCBiZSBzaW1wbGlmaWVk
-IGFuZCBpbXByb3ZlZCAoY3VycmVudGx5Cml0IGRvZXNuJ3QgaGFuZGxlIGRlZmVycmVkIHByb2Jl
-KSBpZiBwbGF0Zm9ybV9nZXRfaXJxX29wdGlvbmFsKCkKd291bGQgcmV0dXJuIDAgaW5zdGVhZCBv
-ZiAtRU5YSU8uCgo+IEFuZCBpZiB5b3UgY2Fubm90IGJsaW5kbHkgdXNlIHRoZSBkdW1teSwgdGhl
-biB5b3UncmUgbm90IHRoZSB0YXJnZXR0ZWQKPiBjYWxsZXIgb2YgKl9nZXRfb3B0aW9uYWwoKSBh
-bmQgc2hvdWxkIGJldHRlciB1c2UgKl9nZXQoKSBhbmQgaGFuZGxlCj4gLUVOT0RFViBleHBsaWNp
-dGx5LgoKTm8sIGJlY2F1c2UgdGhlIGphbml0b3JzIHRlbmQgdG8gY29uc29saWRhdGUgZXJyb3Ig
-bWVzc2FnZSBoYW5kbGluZywKYnkgbW92aW5nIHRoZSBwcmludGluZyB1cCwgaW5zaWRlIHRoZSAq
-X2dldCgpIG1ldGhvZHMuICBUaGF0J3MgZXhhY3RseQp3aGF0IGhhcHBlbmVkIGhlcmUuClNvIHRo
-ZXJlIGFyZSB0aHJlZSByZWFzb25zOiBiZWNhdXNlIHRoZSBhYnNlbmNlIG9mIGFuIG9wdGlvbmFs
-IElSUQppcyBub3QgYW4gZXJyb3IsIGFuZCB0aHVzIHRoYXQgc2hvdWxkIG5vdCBjYXVzZSAoYSkg
-YW4gZXJyb3IgY29kZQp0byBiZSByZXR1cm5lZCwgYW5kIChiKSBhbiBlcnJvciBtZXNzYWdlIHRv
-IGJlIHByaW50ZWQsIGFuZCAoYykKYmVjYXVzZSBpdCBjYW4gc2ltcGxpZnkgdGhlIGxvZ2ljIGlu
-IGRldmljZSBkcml2ZXJzLgoKQ29tbWl0IDg5NzNlYTQ3OTAxYzgxYTEgKCJkcml2ZXIgY29yZTog
-cGxhdGZvcm06IEludHJvZHVjZQpwbGF0Zm9ybV9nZXRfaXJxX29wdGlvbmFsKCkiKSBmaXhlZCAo
-YiksIGJ1dCBkaWRuJ3QgYWRkcmVzcyAoYSkgYW5kCihjKS4KCkdye29ldGplLGVldGluZ31zLAoK
-ICAgICAgICAgICAgICAgICAgICAgICAgR2VlcnQKCi0tCkdlZXJ0IFV5dHRlcmhvZXZlbiAtLSBU
-aGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4ay5vcmcK
-CkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJIGNhbGwg
-bXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0cyBJIGp1
-c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+_get_table_maxdiv() tries to access "clk_div_table" array out of bound
+defined in phy-j721e-wiz.c. Add a sentinel entry to prevent
+the following global-out-of-bounds error reported by enabling KASAN.
+
+[    9.552392] BUG: KASAN: global-out-of-bounds in _get_maxdiv+0xc0/0x148
+[    9.558948] Read of size 4 at addr ffff8000095b25a4 by task kworker/u4:1/38
+[    9.565926]
+[    9.567441] CPU: 1 PID: 38 Comm: kworker/u4:1 Not tainted 5.16.0-116492-gdaadb3bd0e8d-dirty #360
+[    9.576242] Hardware name: Texas Instruments J721e EVM (DT)
+[    9.581832] Workqueue: events_unbound deferred_probe_work_func
+[    9.587708] Call trace:
+[    9.590174]  dump_backtrace+0x20c/0x218
+[    9.594038]  show_stack+0x18/0x68
+[    9.597375]  dump_stack_lvl+0x9c/0xd8
+[    9.601062]  print_address_description.constprop.0+0x78/0x334
+[    9.606830]  kasan_report+0x1f0/0x260
+[    9.610517]  __asan_load4+0x9c/0xd8
+[    9.614030]  _get_maxdiv+0xc0/0x148
+[    9.617540]  divider_determine_rate+0x88/0x488
+[    9.622005]  divider_round_rate_parent+0xc8/0x124
+[    9.626729]  wiz_clk_div_round_rate+0x54/0x68
+[    9.631113]  clk_core_determine_round_nolock+0x124/0x158
+[    9.636448]  clk_core_round_rate_nolock+0x68/0x138
+[    9.641260]  clk_core_set_rate_nolock+0x268/0x3a8
+[    9.645987]  clk_set_rate+0x50/0xa8
+[    9.649499]  cdns_sierra_phy_init+0x88/0x248
+[    9.653794]  phy_init+0x98/0x108
+[    9.657046]  cdns_pcie_enable_phy+0xa0/0x170
+[    9.661340]  cdns_pcie_init_phy+0x250/0x2b0
+[    9.665546]  j721e_pcie_probe+0x4b8/0x798
+[    9.669579]  platform_probe+0x8c/0x108
+[    9.673350]  really_probe+0x114/0x630
+[    9.677037]  __driver_probe_device+0x18c/0x220
+[    9.681505]  driver_probe_device+0xac/0x150
+[    9.685712]  __device_attach_driver+0xec/0x170
+[    9.690178]  bus_for_each_drv+0xf0/0x158
+[    9.694124]  __device_attach+0x184/0x210
+[    9.698070]  device_initial_probe+0x14/0x20
+[    9.702277]  bus_probe_device+0xec/0x100
+[    9.706223]  deferred_probe_work_func+0x124/0x180
+[    9.710951]  process_one_work+0x4b0/0xbc0
+[    9.714983]  worker_thread+0x74/0x5d0
+[    9.718668]  kthread+0x214/0x230
+[    9.721919]  ret_from_fork+0x10/0x20
+[    9.725520]
+[    9.727032] The buggy address belongs to the variable:
+[    9.732183]  clk_div_table+0x24/0x440
+
+Fixes: 091876cc35 ("phy: ti: j721e-wiz: Add support for WIZ module present in TI J721E SoC")
+Cc: stable@vger.kernel.org # v5.10+
+Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+---
+ drivers/phy/ti/phy-j721e-wiz.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index b3384c31637a..da546c35d1d5 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -233,6 +233,7 @@ static const struct clk_div_table clk_div_table[] = {
+ 	{ .val = 1, .div = 2, },
+ 	{ .val = 2, .div = 4, },
+ 	{ .val = 3, .div = 8, },
++	{ /* sentinel */ },
+ };
+ 
+ static const struct wiz_clk_div_sel clk_div_sel[] = {
+-- 
+2.17.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
