@@ -4,59 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB6D5C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jan 2022 15:01:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E1F7C4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jan 2022 17:01:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eRF/v5N9GI90qem7IlIDkJ9VMsLCZVe7tPoDQaMoxv0=; b=4UpYmxbFiRgkqY
-	YlJUWGTAEeqeagMCkIFJq2io938GCmRkWbyFXrhBdIWIKR7hwGOVDhrdbWubxtEXOOiKDSOHlWVwx
-	nTnH5qRybO0M8v0AtjE9MPoePrKU/VZx8rgANeBNcLMTBzGTs7TOqmMSeUknpiegW510kzfMrS+ks
-	R9HlUCUl70X85c3wLtDKj0GDpGCWBGcm6pu42Txg14l714wfd4KgksBrGGxX7yg9hCn/1Dc6ehz+v
-	5V0VKygm3e1Oe7/IXjvb8cyeH3R+FtqQSmVAe1N8M/E27ardv1sP6p3gh9oGlMbprDwd3UF/VrQEz
-	S18MCpYd3IdZAWTzAbYw==;
+	List-Owner; bh=4dgEC+zQYLGkwXAy4sbgf5rm3S0elqbZzrLZFDF0Cxo=; b=HFJhIR8tQHvchi
+	7xV17UUS1S1W16pteEr3vAWFUPF97pVRR3PlL1R6ddFISYMGot0OI61I7/sYcmqWAOQOdnHiVmclK
+	Mre8PmnfN06lsbmvbr0AE9wHCQLtWZUzox9twpB+XDod8HYh9T6PTQrv/E7a7dG6ywuDroqs3ghYr
+	U6y8UyL+fGYqTu4yg2/4B84CoCe5yww09BzuOZmBswqQx+Ctz4X8cBr2Ta1WwN2ByjHAR0Xl6/3D5
+	HJYlzJvjHK8oWWn1rGHWYUnGd9nNETwEw2J8sXzSuisnVwX2JV5OVcHvUZLQTNZNTrffoCxbVGmYa
+	ARWkp0zcXn5qTVyaNE/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n9TW7-00FJ0R-1z; Mon, 17 Jan 2022 15:01:55 +0000
+	id 1n9VO3-00FgUz-Qq; Mon, 17 Jan 2022 17:01:43 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n9TTF-00FHVH-Kh
- for linux-phy@lists.infradead.org; Mon, 17 Jan 2022 14:58:59 +0000
+ id 1n9VND-00Ffxe-Bk; Mon, 17 Jan 2022 17:00:55 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 89E5560B07;
- Mon, 17 Jan 2022 14:58:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6F28CC36AE7;
- Mon, 17 Jan 2022 14:58:54 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id D99E16120A;
+ Mon, 17 Jan 2022 17:00:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CF5CC36AEF;
+ Mon, 17 Jan 2022 17:00:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1642431536;
- bh=J5rgVzBianAc02/FslOLHixhJssrJYFn1AKI2egp28E=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=OZ1hsq/OqNGcK7q6N8XEkHIjaUkd/a9VnoZXKoB1Cdtg+peaPmLDxQ7ncJuSk+Ger
- alUQsFeqlDtj5RpvyxjfBgBGEarqoqONo0bPlSSoljCBt4gJT5H32b/mZJZKiIyHE3
- ROyYRy5Ki1k5k0oK3Hxu15lOndaSl6kL3khf4A7hn8sF4ZcVY0GfjUQw1YnFeF0rcW
- xU9Y0tYxnO3bBcLQpUxAbjbLAVORqC62XsSNvrdCK4bvPqzrFw036S6N4QBRjpWlmE
- RyLK0OqNFtHBnzQgZ9wi1dHaLwSuifcq1zbzSYLxOb5jii/PbH+tlnlNps5P7+m+K3
- aucBY3kLdcdCg==
-Date: Mon, 17 Jan 2022 15:58:51 +0100
-From: Marek =?UTF-8?B?QmVow7pu?= <kabel@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
- pali@kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>, Gregory CLEMENT
- <gregory.clement@bootlin.com>
-Subject: Re: [PATCH phy v3 0/5] Armada 3720 comphy native implementation
-Message-ID: <20220117155851.5759b337@thinkpad>
-In-Reply-To: <20220103143220.13070-1-kabel@kernel.org>
-References: <20220103143220.13070-1-kabel@kernel.org>
-X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
+ s=k20201202; t=1642438850;
+ bh=MQZNKsIA8dH2rECRUuLDz3Ofvj0Sz2YQD2ogUS2SVoQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=STX0z+/fViiJgXT6UY/ut4rs5NAO/nlbNlRXnkVeY9Yg6FUhtfN9cH2vxnau72S6x
+ 9lKzrNy/Z8wYEZlePIm1ZylIO7whCnhn1datEL8nkgkU07bBGF69ijtogovhY3Kl+a
+ uzgxRLJ4vYpwYfVFaKVdxhrR2CfPtlrXTGeGLLMNteTBKS4hzI1xw4TrXzmfBPcTEC
+ ucLyOde2OjXoUIWZFsZDzyFYLZYXMlmQM6ao1frjLHKR8xvUmlcqysusRM3Bl9oZyQ
+ HwphFb/2N38XtU/IF2Qu8xw+TgXxA4JQvrQqxFvpx7NV+B84cS+i2+mZZJir3wOrzg
+ M2y+FcNYDR/Ew==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Sasha Levin <sashal@kernel.org>, kishon@ti.com, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org
+Subject: [PATCH AUTOSEL 5.16 44/52] phy: phy-mtk-tphy: add support efuse
+ setting
+Date: Mon, 17 Jan 2022 11:58:45 -0500
+Message-Id: <20220117165853.1470420-44-sashal@kernel.org>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20220117165853.1470420-1-sashal@kernel.org>
+References: <20220117165853.1470420-1-sashal@kernel.org>
 MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220117_065857_834351_26C29271 
-X-CRM114-Status: GOOD (  21.70  )
+X-CRM114-CacheID: sfid-20220117_090051_874372_2F57B770 
+X-CRM114-Status: GOOD (  21.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,62 +72,286 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RGVhciBWaW5vZCwKCmRpZCB5b3UgZmluZCB0aW1lIHRvIGxvb2sgYXQgdGhpcyBzZXJpZXM/CgpN
-YXJlawoKT24gTW9uLCAgMyBKYW4gMjAyMiAxNTozMjoxNSArMDEwMApNYXJlayBCZWjDum4gPGth
-YmVsQGtlcm5lbC5vcmc+IHdyb3RlOgoKPiBIZWxsbyBWaW5vZCwKPiAKPiB0aGlzIGlzIHYzIG9m
-IHNlcmllcyBjb252ZXJ0aW5nIEEzNzIwIGNvbXBoeSB0byBuYXRpdmUga2VybmVsCj4gaW1wbGVt
-ZW50YXRpb24uCj4gCj4gVGVzdGVkIG9uIFR1cnJpcyBNT1ggYW5kIEVTUFJFU1NPYmluICh0ZXN0
-ZWQgYWxsIHN1cHBvcnRlZCBQSFkgbW9kZXM6Cj4gZXRoZXJuZXQsIFBDSWUsIFVTQjMsIFNBVEEp
-Lgo+IAo+IENoYW5nZXMgc2luY2UgdjI6Cj4gLSByZW1vdmVkIGRldmljZS10cmVlIGNoYW5naW5n
-IHBhdGNoLCBHcmVnb3J5IGFwcGxpZWQgaXQgb24gbXZlYnUvZHQ2NAo+IC0gY2hhbmdlZCByYXcg
-c3BpbiBsb2NrIHRvIG9yZGluYXJ5IHNwaW4gbG9jawo+IC0gZml4ZWQgaW5kZW50YXRpb24gb2Yg
-Z2JlX3BoeV9pbml0X2ZpeAo+IC0gdXNlIEZJRUxEX1BSRVAoKSBtYWNybwo+IAo+IENoYW5nZXMg
-c2luY2UgdjEgKGFsbCBjaGFuZ2VzIGluIHBhdGNoIDIvNik6Cj4gLSByZWZhY3RvcmVkIHRvIHVz
-ZSBHRU5NQVNLKCkKPiAtIGZpeGVkIHZhcmlvdXMgcmVnaXN0ZXIgbmFtZXMgdG8gY29uZm9ybSB0
-byBGdW5jdGlvbmFsIFNwZWNpZmljYXRpb24KPiAtIHJlZmFjdG9yZWQgdmFyaW91cyByZWdpc3Rl
-ciBuYW1lcyB0byBoYXZlIHVuaWZvcm0gbmFtaW5nCj4gLSByZWZhY3RvcmVkIHJlZ2lzdGVyIGFj
-Y2VzcyBpbnRvIG9uZSBmdW5jdGlvbiwgd2hpY2ggZGVjaWRlcyB3aGV0aGVyCj4gICB0aGUgYWNj
-ZXNzIHNob3VsZCBiZSBkaXJlY3Qgb3IgaW5kaXJlY3QsIHNvIGFzIHRvIG5vdCBoYXZlIGFsbCB0
-aGVzZQo+ICAgY2hlY2tzIGRvbmUgZXZlcnl3aGVyZSBpbiB0aGUgY29kZQo+IC0gbW92ZWQgYXJv
-dW5kIG9uZSByZWdpc3RlciBkZWZpbml0aW9uIHRvIGhhdmUgdGhlIHJlZ2lzdGVycyBzb3J0ZWQK
-PiAgIGFjY29yZGluZyB0byB0aGVpciBvZmZzZXQKPiAtIGFkZGVkIGNvbW1lbnRzIHRvIHNvbWUg
-cmVnaXN0ZXIgZGVmaW5pdGlvbnMKPiAtIGFkZGVkIHN1cHBvcnQgZm9yIFBIWSByZXNldCgpIG1l
-dGhvZAo+IC0gd2hlbiBjaGFuZ2luZyBQSFkgbW9kZSwgdGhlIGRyaXZlciBub3cgcmVzZXRzIHRo
-ZSBQSFkgYW5kIGl0cwo+ICAgcmVnaXN0ZXJzIHRvIHB1dCB0aGUgUEhZIGluIGtub3duIHN0YXRl
-Cj4gLSBmaXhlZCB0aGUgcG93ZXJfb2ZmKCkgbWV0aG9kCj4gLSBhZGRlZCBzcGlubG9jayBndWFy
-ZCB3aGVuIGFjY2Vzc2luZyBQSFkgU2VsZWN0b3IgcmVnaXN0ZXIsIHNpbmNlIGl0Cj4gICBpcyBz
-aGFyZWQgYmV0d2VlbiB0aGUgUEhZcyBhbmQgc28gdGhlIFBIWSBtdXRleCBpcyBpbnN1ZmZpY2ll
-bnQKPiAtIHVwb24gZHJpdmVyIHByb2JlIGNoYW5nZWQgdGhlIGNhbGxzIHRvIHBvd2VyX29mZigp
-IHRvIHJlc2V0KCkKPiAKPiAKPiBUaGUgb3JpZ2luYWwgY292ZXIgbGV0dGVyIHNhaWQ6Cj4gCj4g
-VGhlIFJQQyBjYWxsaW5nIHRvIEFSTSBUcnVzdGVkIEZpcm13YXJlIGltcGxlbWVudGF0aW9uIG9m
-IEFybWFkYSAzNzIwCj4gY29tcGh5IGRyaXZlciBjYXVzZWQgcXVpdGUgYSBudW1iZXIgb2YgaXNz
-dWVzIChleHBsYWluZWQgbW9yZSBpbiBwYXRjaCAyKS4KPiAKPiBUaGlzIHNlcmllcyBmaXhlcyB0
-aG9zZSBpc3N1ZXMgYnkgcmVpbXBsZW1lbnRpbmcgdGhlIGRyaXZlciB0byBuYXRpdmUKPiBrZXJu
-ZWwgaW1wbGVtZW50YXRpb24uCj4gCj4gVGhlIGxhc3QgMyBjb21taXRzIHJldmVydCBjb21taXRz
-IGluIEFIQ0ksIFVTQiwgYW5kIFBDSSBkcml2ZXJzLCB0aGF0IHdlcmUKPiBpbnRyb2R1Y2VkIHRo
-ZXJlIGJlY2F1c2Ugb2YgdGhvc2UgaXNzdWVzLgo+IAo+IFBhbGkgUm9ow6FyICg1KToKPiAgIHBo
-eTogbWFydmVsbDogcGh5LW12ZWJ1LWEzNzAwLWNvbXBoeTogUmVtb3ZlIHBvcnQgZnJvbSBkcml2
-ZXIKPiAgICAgY29uZmlndXJhdGlvbgo+ICAgcGh5OiBtYXJ2ZWxsOiBwaHktbXZlYnUtYTM3MDAt
-Y29tcGh5OiBBZGQgbmF0aXZlIGtlcm5lbCBpbXBsZW1lbnRhdGlvbgo+ICAgUmV2ZXJ0ICJhdGE6
-IGFoY2k6IG12ZWJ1OiBNYWtlIFNBVEEgUEhZIG9wdGlvbmFsIGZvciBBcm1hZGEgMzcyMCIKPiAg
-IFJldmVydCAidXNiOiBob3N0OiB4aGNpOiBtdmVidTogbWFrZSBVU0IgMy4wIFBIWSBvcHRpb25h
-bCBmb3IgQXJtYWRhCj4gICAgIDM3MjAiCj4gICBSZXZlcnQgIlBDSTogYWFyZHZhcms6IEZpeCBp
-bml0aWFsaXphdGlvbiB3aXRoIG9sZCBNYXJ2ZWxsJ3MgQXJtCj4gICAgIFRydXN0ZWQgRmlybXdh
-cmUiCj4gCj4gIGRyaXZlcnMvYXRhL2FoY2kuaCAgICAgICAgICAgICAgICAgICAgICAgICAgIHwg
-ICAgMiAtCj4gIGRyaXZlcnMvYXRhL2FoY2lfbXZlYnUuYyAgICAgICAgICAgICAgICAgICAgIHwg
-ICAgMiArLQo+ICBkcml2ZXJzL2F0YS9saWJhaGNpX3BsYXRmb3JtLmMgICAgICAgICAgICAgICB8
-ICAgIDIgKy0KPiAgZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2ktYWFyZHZhcmsuYyAgICAgICAg
-fCAgICA0ICstCj4gIGRyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWEzNzAwLWNvbXBoeS5j
-IHwgMTM2OSArKysrKysrKysrKysrKysrLS0KPiAgZHJpdmVycy91c2IvaG9zdC94aGNpLW12ZWJ1
-LmMgICAgICAgICAgICAgICAgfCAgIDQyIC0KPiAgZHJpdmVycy91c2IvaG9zdC94aGNpLW12ZWJ1
-LmggICAgICAgICAgICAgICAgfCAgICA2IC0KPiAgZHJpdmVycy91c2IvaG9zdC94aGNpLXBsYXQu
-YyAgICAgICAgICAgICAgICAgfCAgIDIwICstCj4gIGRyaXZlcnMvdXNiL2hvc3QveGhjaS1wbGF0
-LmggICAgICAgICAgICAgICAgIHwgICAgMSAtCj4gIDkgZmlsZXMgY2hhbmdlZCwgMTI0NSBpbnNl
-cnRpb25zKCspLCAyMDMgZGVsZXRpb25zKC0pCj4gCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+
+[ Upstream commit 6f2b033cb883f64ad084a75f13634242c7e179a6 ]
+
+Due to some SoCs have a bit shift issue that will drop a bit for usb3
+phy or pcie phy, fix it by adding software efuse reading and setting,
+but only support it optionally for version 2/3.
+
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Link: https://lore.kernel.org/r/20211218082802.5256-2-chunfeng.yun@mediatek.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/phy/mediatek/phy-mtk-tphy.c | 162 ++++++++++++++++++++++++++++
+ 1 file changed, 162 insertions(+)
+
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index cdcef865fe9e5..98a942c607a67 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -12,6 +12,7 @@
+ #include <linux/iopoll.h>
+ #include <linux/mfd/syscon.h>
+ #include <linux/module.h>
++#include <linux/nvmem-consumer.h>
+ #include <linux/of_address.h>
+ #include <linux/of_device.h>
+ #include <linux/phy/phy.h>
+@@ -41,6 +42,9 @@
+ #define SSUSB_SIFSLV_V2_U3PHYD		0x200
+ #define SSUSB_SIFSLV_V2_U3PHYA		0x400
+ 
++#define U3P_MISC_REG1		0x04
++#define MR1_EFUSE_AUTO_LOAD_DIS		BIT(6)
++
+ #define U3P_USBPHYACR0		0x000
+ #define PA0_RG_U2PLL_FORCE_ON		BIT(15)
+ #define PA0_USB20_PLL_PREDIV		GENMASK(7, 6)
+@@ -133,6 +137,8 @@
+ #define P3C_RG_SWRST_U3_PHYD_FORCE_EN	BIT(24)
+ 
+ #define U3P_U3_PHYA_REG0	0x000
++#define P3A_RG_IEXT_INTR		GENMASK(15, 10)
++#define P3A_RG_IEXT_INTR_VAL(x)		((0x3f & (x)) << 10)
+ #define P3A_RG_CLKDRV_OFF		GENMASK(3, 2)
+ #define P3A_RG_CLKDRV_OFF_VAL(x)	((0x3 & (x)) << 2)
+ 
+@@ -187,6 +193,19 @@
+ #define P3D_RG_FWAKE_TH		GENMASK(21, 16)
+ #define P3D_RG_FWAKE_TH_VAL(x)	((0x3f & (x)) << 16)
+ 
++#define U3P_U3_PHYD_IMPCAL0		0x010
++#define P3D_RG_FORCE_TX_IMPEL		BIT(31)
++#define P3D_RG_TX_IMPEL			GENMASK(28, 24)
++#define P3D_RG_TX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
++
++#define U3P_U3_PHYD_IMPCAL1		0x014
++#define P3D_RG_FORCE_RX_IMPEL		BIT(31)
++#define P3D_RG_RX_IMPEL			GENMASK(28, 24)
++#define P3D_RG_RX_IMPEL_VAL(x)		((0x1f & (x)) << 24)
++
++#define U3P_U3_PHYD_RSV			0x054
++#define P3D_RG_EFUSE_AUTO_LOAD_DIS	BIT(12)
++
+ #define U3P_U3_PHYD_CDR1		0x05c
+ #define P3D_RG_CDR_BIR_LTD1		GENMASK(28, 24)
+ #define P3D_RG_CDR_BIR_LTD1_VAL(x)	((0x1f & (x)) << 24)
+@@ -307,6 +326,11 @@ struct mtk_phy_pdata {
+ 	 * 48M PLL, fix it by switching PLL to 26M from default 48M
+ 	 */
+ 	bool sw_pll_48m_to_26m;
++	/*
++	 * Some SoCs (e.g. mt8195) drop a bit when use auto load efuse,
++	 * support sw way, also support it for v2/v3 optionally.
++	 */
++	bool sw_efuse_supported;
+ 	enum mtk_phy_version version;
+ };
+ 
+@@ -336,6 +360,10 @@ struct mtk_phy_instance {
+ 	struct regmap *type_sw;
+ 	u32 type_sw_reg;
+ 	u32 type_sw_index;
++	u32 efuse_sw_en;
++	u32 efuse_intr;
++	u32 efuse_tx_imp;
++	u32 efuse_rx_imp;
+ 	int eye_src;
+ 	int eye_vrt;
+ 	int eye_term;
+@@ -1040,6 +1068,130 @@ static int phy_type_set(struct mtk_phy_instance *instance)
+ 	return 0;
+ }
+ 
++static int phy_efuse_get(struct mtk_tphy *tphy, struct mtk_phy_instance *instance)
++{
++	struct device *dev = &instance->phy->dev;
++	int ret = 0;
++
++	/* tphy v1 doesn't support sw efuse, skip it */
++	if (!tphy->pdata->sw_efuse_supported) {
++		instance->efuse_sw_en = 0;
++		return 0;
++	}
++
++	/* software efuse is optional */
++	instance->efuse_sw_en = device_property_read_bool(dev, "nvmem-cells");
++	if (!instance->efuse_sw_en)
++		return 0;
++
++	switch (instance->type) {
++	case PHY_TYPE_USB2:
++		ret = nvmem_cell_read_variable_le_u32(dev, "intr", &instance->efuse_intr);
++		if (ret) {
++			dev_err(dev, "fail to get u2 intr efuse, %d\n", ret);
++			break;
++		}
++
++		/* no efuse, ignore it */
++		if (!instance->efuse_intr) {
++			dev_warn(dev, "no u2 intr efuse, but dts enable it\n");
++			instance->efuse_sw_en = 0;
++			break;
++		}
++
++		dev_dbg(dev, "u2 efuse - intr %x\n", instance->efuse_intr);
++		break;
++
++	case PHY_TYPE_USB3:
++	case PHY_TYPE_PCIE:
++		ret = nvmem_cell_read_variable_le_u32(dev, "intr", &instance->efuse_intr);
++		if (ret) {
++			dev_err(dev, "fail to get u3 intr efuse, %d\n", ret);
++			break;
++		}
++
++		ret = nvmem_cell_read_variable_le_u32(dev, "rx_imp", &instance->efuse_rx_imp);
++		if (ret) {
++			dev_err(dev, "fail to get u3 rx_imp efuse, %d\n", ret);
++			break;
++		}
++
++		ret = nvmem_cell_read_variable_le_u32(dev, "tx_imp", &instance->efuse_tx_imp);
++		if (ret) {
++			dev_err(dev, "fail to get u3 tx_imp efuse, %d\n", ret);
++			break;
++		}
++
++		/* no efuse, ignore it */
++		if (!instance->efuse_intr &&
++		    !instance->efuse_rx_imp &&
++		    !instance->efuse_rx_imp) {
++			dev_warn(dev, "no u3 intr efuse, but dts enable it\n");
++			instance->efuse_sw_en = 0;
++			break;
++		}
++
++		dev_dbg(dev, "u3 efuse - intr %x, rx_imp %x, tx_imp %x\n",
++			instance->efuse_intr, instance->efuse_rx_imp,instance->efuse_tx_imp);
++		break;
++	default:
++		dev_err(dev, "no sw efuse for type %d\n", instance->type);
++		ret = -EINVAL;
++	}
++
++	return ret;
++}
++
++static void phy_efuse_set(struct mtk_phy_instance *instance)
++{
++	struct device *dev = &instance->phy->dev;
++	struct u2phy_banks *u2_banks = &instance->u2_banks;
++	struct u3phy_banks *u3_banks = &instance->u3_banks;
++	u32 tmp;
++
++	if (!instance->efuse_sw_en)
++		return;
++
++	switch (instance->type) {
++	case PHY_TYPE_USB2:
++		tmp = readl(u2_banks->misc + U3P_MISC_REG1);
++		tmp |= MR1_EFUSE_AUTO_LOAD_DIS;
++		writel(tmp, u2_banks->misc + U3P_MISC_REG1);
++
++		tmp = readl(u2_banks->com + U3P_USBPHYACR1);
++		tmp &= ~PA1_RG_INTR_CAL;
++		tmp |= PA1_RG_INTR_CAL_VAL(instance->efuse_intr);
++		writel(tmp, u2_banks->com + U3P_USBPHYACR1);
++		break;
++	case PHY_TYPE_USB3:
++	case PHY_TYPE_PCIE:
++		tmp = readl(u3_banks->phyd + U3P_U3_PHYD_RSV);
++		tmp |= P3D_RG_EFUSE_AUTO_LOAD_DIS;
++		writel(tmp, u3_banks->phyd + U3P_U3_PHYD_RSV);
++
++		tmp = readl(u3_banks->phyd + U3P_U3_PHYD_IMPCAL0);
++		tmp &= ~P3D_RG_TX_IMPEL;
++		tmp |= P3D_RG_TX_IMPEL_VAL(instance->efuse_tx_imp);
++		tmp |= P3D_RG_FORCE_TX_IMPEL;
++		writel(tmp, u3_banks->phyd + U3P_U3_PHYD_IMPCAL0);
++
++		tmp = readl(u3_banks->phyd + U3P_U3_PHYD_IMPCAL1);
++		tmp &= ~P3D_RG_RX_IMPEL;
++		tmp |= P3D_RG_RX_IMPEL_VAL(instance->efuse_rx_imp);
++		tmp |= P3D_RG_FORCE_RX_IMPEL;
++		writel(tmp, u3_banks->phyd + U3P_U3_PHYD_IMPCAL1);
++
++		tmp = readl(u3_banks->phya + U3P_U3_PHYA_REG0);
++		tmp &= ~P3A_RG_IEXT_INTR;
++		tmp |= P3A_RG_IEXT_INTR_VAL(instance->efuse_intr);
++		writel(tmp, u3_banks->phya + U3P_U3_PHYA_REG0);
++		break;
++	default:
++		dev_warn(dev, "no sw efuse for type %d\n", instance->type);
++		break;
++	}
++}
++
+ static int mtk_phy_init(struct phy *phy)
+ {
+ 	struct mtk_phy_instance *instance = phy_get_drvdata(phy);
+@@ -1050,6 +1202,8 @@ static int mtk_phy_init(struct phy *phy)
+ 	if (ret)
+ 		return ret;
+ 
++	phy_efuse_set(instance);
++
+ 	switch (instance->type) {
+ 	case PHY_TYPE_USB2:
+ 		u2_phy_instance_init(tphy, instance);
+@@ -1134,6 +1288,7 @@ static struct phy *mtk_phy_xlate(struct device *dev,
+ 	struct mtk_phy_instance *instance = NULL;
+ 	struct device_node *phy_np = args->np;
+ 	int index;
++	int ret;
+ 
+ 	if (args->args_count != 1) {
+ 		dev_err(dev, "invalid number of cells in 'phy' property\n");
+@@ -1174,6 +1329,10 @@ static struct phy *mtk_phy_xlate(struct device *dev,
+ 		return ERR_PTR(-EINVAL);
+ 	}
+ 
++	ret = phy_efuse_get(tphy, instance);
++	if (ret)
++		return ERR_PTR(ret);
++
+ 	phy_parse_property(tphy, instance);
+ 	phy_type_set(instance);
+ 
+@@ -1196,10 +1355,12 @@ static const struct mtk_phy_pdata tphy_v1_pdata = {
+ 
+ static const struct mtk_phy_pdata tphy_v2_pdata = {
+ 	.avoid_rx_sen_degradation = false,
++	.sw_efuse_supported = true,
+ 	.version = MTK_PHY_V2,
+ };
+ 
+ static const struct mtk_phy_pdata tphy_v3_pdata = {
++	.sw_efuse_supported = true,
+ 	.version = MTK_PHY_V3,
+ };
+ 
+@@ -1210,6 +1371,7 @@ static const struct mtk_phy_pdata mt8173_pdata = {
+ 
+ static const struct mtk_phy_pdata mt8195_pdata = {
+ 	.sw_pll_48m_to_26m = true,
++	.sw_efuse_supported = true,
+ 	.version = MTK_PHY_V3,
+ };
+ 
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
