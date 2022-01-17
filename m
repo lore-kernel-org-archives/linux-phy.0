@@ -4,105 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C227C433F5
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Jan 2022 18:15:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FF86C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jan 2022 00:44:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jpTKNRbC8tvgz2lorCp+h7u43hFL3TTa7ok/thh2BvE=; b=Yw8fXoxdFbI573ROYS1j8oSwzC
-	3iua7IxHGnKaMI8YkdwcxjLLxn+D7yWnyxkaXCQsSowj7heUgA8dMIU1rkxcETkZuNG+oYY9vfdjo
-	OSPQcoHMECD8+nAxnJ6XPt9g6lCTsh2Kdl6sweK37tMQbeANgv4d37r/TJzIbVmSFQoDZvVmm+AAR
-	DgqisSScs7eQUl2073OrzxRTg7aq0yfs6c4QxuJcA86Qe7GYELgBMJrvnkSfy+jU1zdXvKpCUt18D
-	eJhKP/oRcUtRizWU+zmJ9c3IwlFcx+aK2z8XDkC6l0jk5H9JJLo9Yo9HtOwUfypi3jR7SV/3JR0BY
-	j0KZYE7Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t/9uHVBQ+FL3UiCYPduTwX/IBYVrzQPSQjW3VATwv8k=; b=cdh5MCZJjQFiNH
+	XFI0+8ZCxZELTDFsHx6SyekgcwpTU7mES5j5s00gx3d1Nb8e/UGveiA+ehWpKULl8L2bDNgoCSk1b
+	d0qDG/1BfCOLX7IkHxooScZqlGQpCeMhpe6K6o4bKn/RtvTz1HtF/DEedNkUChNrb4K0/pB7MeVaS
+	7Ix1iQI6rqOL5e3dQh1fISo6z80xVpl/kONS21QDNbNb/fv0tpBYkJLrZpNibv/BvXys9E618FOO6
+	H0aAKjvHEB2J6f2xSHgmFeeiHi+0/6EdQht6NOHFwhqbzZ8EAqGMVpW2ZVZGk5XK3eSgB/XWhvLTD
+	YYNP+PGxxdclac15IqzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n9A4I-00Co7q-Qj; Sun, 16 Jan 2022 18:15:54 +0000
-Received: from mxout02.lancloud.ru ([45.84.86.82])
+	id 1n9G7v-00DAtS-QV; Mon, 17 Jan 2022 00:44:03 +0000
+Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n9A40-00Co3i-Di; Sun, 16 Jan 2022 18:15:39 +0000
-Received: from LanCloud
-DKIM-Filter: OpenDKIM Filter v2.11.0 mxout02.lancloud.ru 20CE0205BB5A
-Received: from LanCloud
-Received: from LanCloud
-Received: from LanCloud
-Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
-To: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
-CC: Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
- Vignesh Raghavendra <vigneshr@ti.com>, KVM list <kvm@vger.kernel.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, <linux-iio@vger.kernel.org>, "Linus
- Walleij" <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>, "ALSA
- Development Mailing List" <alsa-devel@alsa-project.org>, Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>, Jaroslav Kysela <perex@perex.cz>,
- Guenter Roeck <groeck@chromium.org>, Thierry Reding
- <thierry.reding@gmail.com>, MTD Maling List <linux-mtd@lists.infradead.org>,
- Linux I2C <linux-i2c@vger.kernel.org>, Miquel Raynal
- <miquel.raynal@bootlin.com>, <linux-phy@lists.infradead.org>, Jiri Slaby
- <jirislaby@kernel.org>, <openipmi-developer@lists.sourceforge.net>, "David S.
- Miller" <davem@davemloft.net>, Khuong Dinh <khuong@os.amperecomputing.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Matthias Schiffer
- <matthias.schiffer@ew.tq-group.com>, Joakim Zhang <qiangqing.zhang@nxp.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, Lee Jones <lee.jones@linaro.org>, "Bartosz
- Golaszewski" <brgl@bgdev.pl>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Geert Uytterhoeven
- <geert@linux-m68k.org>, "open list:SERIAL DRIVERS"
- <linux-serial@vger.kernel.org>, Yoshihiro Shimoda
- <yoshihiro.shimoda.uh@renesas.com>, bcm-kernel-feedback-list
- <bcm-kernel-feedback-list@broadcom.com>, Zhang Rui <rui.zhang@intel.com>,
- Linux PWM List <linux-pwm@vger.kernel.org>, Robert Richter <rric@kernel.org>, 
- Saravanan Sekar <sravanhome@gmail.com>, Corey Minyard <minyard@acm.org>,
- Linux PM list <linux-pm@vger.kernel.org>, Liam Girdwood
- <lgirdwood@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>, John Garry
- <john.garry@huawei.com>, Peter Korsgaard <peter@korsgaard.com>, "William
- Breathitt Gray" <vilhelm.gray@gmail.com>, Mark Gross <markgross@kernel.org>,
- Hans de Goede <hdegoede@redhat.com>, Alex Williamson
- <alex.williamson@redhat.com>, Mark Brown <broonie@kernel.org>, "Borislav
- Petkov" <bp@alien8.de>, Sebastian Reichel <sre@kernel.org>, Jakub Kicinski
- <kuba@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Takashi Iwai
- <tiwai@suse.com>, <platform-driver-x86@vger.kernel.org>, Benson Leung
- <bleung@chromium.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- <linux-edac@vger.kernel.org>, Tony Luck <tony.luck@intel.com>, Mun Yew Tham
- <mun.yew.tham@intel.com>, Eric Auger <eric.auger@redhat.com>, "Greg
- Kroah-Hartman" <gregkh@linuxfoundation.org>, "open list:GPIO SUBSYSTEM"
- <linux-gpio@vger.kernel.org>, Cornelia Huck <cohuck@redhat.com>, "Linux MMC
- List" <linux-mmc@vger.kernel.org>, Linux Kernel Mailing List
- <linux-kernel@vger.kernel.org>, linux-spi <linux-spi@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>, Vinod Koul
- <vkoul@kernel.org>, James Morse <james.morse@arm.com>, Zha Qipeng
- <qipeng.zha@intel.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Richard Weinberger <richard@nod.at>, =?UTF-8?Q?Niklas_S=c3=b6derlund?=
- <niklas.soderlund@ragnatech.se>, <linux-mediatek@lists.infradead.org>, "Brian
- Norris" <computersforpeace@gmail.com>, <netdev@vger.kernel.org>
-References: <20220110201014.mtajyrfcfznfhyqm@pengutronix.de>
- <YdyilpjC6rtz6toJ@lunn.ch>
- <CAMuHMdWK3RKVXRzMASN4HaYfLckdS7rBvSopafq+iPADtGEUzA@mail.gmail.com>
- <20220112085009.dbasceh3obfok5dc@pengutronix.de>
- <CAMuHMdWsMGPiQaPS0-PJ_+Mc5VQ37YdLfbHr_aS40kB+SfW-aw@mail.gmail.com>
- <20220112213121.5ruae5mxwj6t3qiy@pengutronix.de>
- <Yd9L9SZ+g13iyKab@sirena.org.uk>
- <29f0c65d-77f2-e5b2-f6cc-422add8a707d@omp.ru>
- <20220114092557.jrkfx7ihg26ekzci@pengutronix.de>
- <61b80939-357d-14f5-df99-b8d102a4e1a1@omp.ru>
- <20220114202226.ugzklxv4wzr6egwj@pengutronix.de>
-From: Sergey Shtylyov <s.shtylyov@omp.ru>
-Organization: Open Mobile Platform
-Message-ID: <57af1851-9341-985e-7b28-d2ba86770ecb@omp.ru>
-Date: Sun, 16 Jan 2022 21:15:20 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.10.1
+ id 1n9G7t-00DAss-4u
+ for linux-phy@lists.infradead.org; Mon, 17 Jan 2022 00:44:02 +0000
+Received: by mail-ed1-x532.google.com with SMTP id m4so58579720edb.10
+ for <linux-phy@lists.infradead.org>; Sun, 16 Jan 2022 16:44:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fVBwHqjRiTPngWkNGF9zdvdA//oHQIGX1K8FVBmadoE=;
+ b=ahBnotuLo2MHhRJNsnoJSvsPJeP0nuIPb74JifxhzfTNUva1Vmp1Vq4Zc6ZivaEViv
+ 9nq4+vSH2/FTECHhEJ5ZraYvkWRYoVPACRbUrsTyq04YFJlVjA84kPBFfByykgRgdoMr
+ jLb8Vn6+kUjpFVcV9kzZs3cU9OGrLl8CE/fDn00mAdVmOzsRFFwAO7D0wh0wIp1ELnfW
+ NmGahlbaSFhpcKXd3wSPcTtXW8eEj6PNOWnELVoei3BM6f1mImANOlqsHabqdzcteXxh
+ NV75MnAUb9Mmjx/jNPhOnmIKw6ZiFM97QBQWZ052DWG/yyCkLf8r7UTvLzr+wm0GQX/l
+ joLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fVBwHqjRiTPngWkNGF9zdvdA//oHQIGX1K8FVBmadoE=;
+ b=s8yNgXffNcpV/Dsc5f1Stf21SVKr/biN9obqt9p6/Wnx+/LfrpI0DH0uB8ZO4x6gPu
+ UcxtywzQMjpi+yPYJPRtKi/dh3givRyOkL1dQLreT49fUu40Rf9yyHW112d84xrBmlON
+ /L+rG16yftmG2tQstTgxx+G1I9e/Sy2jxPOP+FjHh9vgUGe/vBpy0OfmjPM4deZn5SCR
+ Eg+Bm9kskcimJ665dJdN5/DwEfBxKTWHjPWF0EHyZVG9Gd/pAN8o9PAekszI+3h+ziSk
+ 6nG8So9jn3Cd21HFA/KMSFtGH+zHR47/v2BEVx8c/jn5WiBao0PLaZxvw3N0GYoo4BTv
+ x9aQ==
+X-Gm-Message-State: AOAM5301LLniG8KsSO5tRkPGH6ium6YEl+e3dnbIMxPhda2OcQsRMG3u
+ qvV/OUo7aKoKaQ6GBiYJNNU=
+X-Google-Smtp-Source: ABdhPJzueh6U+3ebTRaJF4BFO4gi/HSDdXR09qU0X172/JUL/EVbKDFdN4yPWzvoVNgrxesnWeUZ1A==
+X-Received: by 2002:a05:6402:1bd9:: with SMTP id
+ ch25mr14458702edb.84.1642380239563; 
+ Sun, 16 Jan 2022 16:43:59 -0800 (PST)
+Received: from localhost.localdomain (93-42-71-246.ip85.fastwebnet.it.
+ [93.42.71.246]) by smtp.googlemail.com with ESMTPSA id
+ go41sm3879266ejc.200.2022.01.16.16.43.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 16 Jan 2022 16:43:59 -0800 (PST)
+From: Ansuel Smith <ansuelsmth@gmail.com>
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Cc: Ansuel Smith <ansuelsmth@gmail.com>
+Subject: [PATCH 1/2] drivers: phy: qcom: ipq806x-usb: convert to BITFIELD macro
+Date: Mon, 17 Jan 2022 01:26:40 +0100
+Message-Id: <20220117002641.26773-1-ansuelsmth@gmail.com>
+X-Mailer: git-send-email 2.33.1
 MIME-Version: 1.0
-In-Reply-To: <20220114202226.ugzklxv4wzr6egwj@pengutronix.de>
-Content-Language: en-US
-X-Originating-IP: [192.168.11.198]
-X-ClientProxiedBy: LFEXT01.lancloud.ru (fd00:f066::141) To
- LFEX1907.lancloud.ru (fd00:f066::207)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220116_101536_869969_7CCEBFE5 
-X-CRM114-Status: GOOD (  23.31  )
+X-CRM114-CacheID: sfid-20220116_164401_209844_3BF4076B 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,92 +86,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello!
+Convert some define to BITFIELD macro to tidy things up.
 
-On 1/14/22 11:22 PM, Uwe Kleine-K=F6nig wrote:
+Signed-off-by: Ansuel Smith <ansuelsmth@gmail.com>
+---
+ drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
->>>>>>> To me it sounds much more logical for the driver to check if an
->>>>>>> optional irq is non-zero (available) or zero (not available), than =
-to
->>>>>>> sprinkle around checks for -ENXIO. In addition, you have to remember
->>>>>>> that this one returns -ENXIO, while other APIs use -ENOENT or -ENOS=
-YS
->>>>>>> (or some other error code) to indicate absence. I thought not having
->>>>>>> to care about the actual error code was the main reason behind the
->>>>>>> introduction of the *_optional() APIs.
->>>>>
->>>>>> No, the main benefit of gpiod_get_optional() (and clk_get_optional()=
-) is
->>>>>> that you can handle an absent GPIO (or clk) as if it were available.
->>>>
->>>>    Hm, I've just looked at these and must note that they match 1:1 with
->>>> platform_get_irq_optional(). Unfortunately, we can't however behave the
->>>> same way in request_irq() -- because it has to support IRQ0 for the sa=
-ke
->>>> of i8253 drivers in arch/...
->>>
->>> Let me reformulate your statement to the IMHO equivalent:
->>>
->>> 	If you set aside the differences between
->>> 	platform_get_irq_optional() and gpiod_get_optional(),
->>
->>    Sorry, I should make it clear this is actually the diff between a wou=
-ld-be
->> platform_get_irq_optional() after my patch, not the current code...
-> =
+diff --git a/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c b/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c
+index bfff0c8c9130..6788e0e8272a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c
+@@ -10,6 +10,7 @@
+ #include <linux/delay.h>
+ #include <linux/regmap.h>
+ #include <linux/mfd/syscon.h>
++#include <linux/bitfield.h>
+ 
+ /* USB QSCRATCH Hardware registers */
+ #define QSCRATCH_GENERAL_CFG		(0x08)
+@@ -74,20 +75,20 @@
+ 		 PHY_PARAM_CTRL1_LOS_BIAS_MASK)
+ 
+ #define PHY_PARAM_CTRL1_TX_FULL_SWING(x)	\
+-		(((x) << 20) & PHY_PARAM_CTRL1_TX_FULL_SWING_MASK)
++		FIELD_PREP(PHY_PARAM_CTRL1_TX_FULL_SWING_MASK, (x))
+ #define PHY_PARAM_CTRL1_TX_DEEMPH_6DB(x)	\
+-		(((x) << 14) & PHY_PARAM_CTRL1_TX_DEEMPH_6DB_MASK)
++		FIELD_PREP(PHY_PARAM_CTRL1_TX_DEEMPH_6DB_MASK, (x))
+ #define PHY_PARAM_CTRL1_TX_DEEMPH_3_5DB(x)	\
+-		(((x) <<  8) & PHY_PARAM_CTRL1_TX_DEEMPH_3_5DB_MASK)
++		FIELD_PREP(PHY_PARAM_CTRL1_TX_DEEMPH_3_5DB_MASK, x)
+ #define PHY_PARAM_CTRL1_LOS_BIAS(x)	\
+-		(((x) <<  3) & PHY_PARAM_CTRL1_LOS_BIAS_MASK)
++		FIELD_PREP(PHY_PARAM_CTRL1_LOS_BIAS_MASK, (x))
+ 
+ /* RX OVRD IN HI bits */
+ #define RX_OVRD_IN_HI_RX_RESET_OVRD		BIT(13)
+ #define RX_OVRD_IN_HI_RX_RX_RESET		BIT(12)
+ #define RX_OVRD_IN_HI_RX_EQ_OVRD		BIT(11)
+ #define RX_OVRD_IN_HI_RX_EQ_MASK		GENMASK(10, 7)
+-#define RX_OVRD_IN_HI_RX_EQ(x)			((x) << 8)
++#define RX_OVRD_IN_HI_RX_EQ(x)			FIELD_PREP(RX_OVRD_IN_HI_RX_EQ_MASK, (x))
+ #define RX_OVRD_IN_HI_RX_EQ_EN_OVRD		BIT(7)
+ #define RX_OVRD_IN_HI_RX_EQ_EN			BIT(6)
+ #define RX_OVRD_IN_HI_RX_LOS_FILTER_OVRD	BIT(5)
+-- 
+2.33.1
 
-> The similarity is that with your patch both gpiod_get_optional() and
-> platform_get_irq_optional() return NULL and 0 on not-found. The relevant
-> difference however is that for a gpiod NULL is a dummy value, while for
-> irqs it's not. So the similarity is only syntactically, but not
-> semantically.
 
-   I have noting to say here, rather than optional IRQ could well have a di=
-fferent
-meaning than for clk/gpio/etc.
-
-[...]
->>> However for an interupt this cannot work. You will always have to check
->>> if the irq is actually there or not because if it's not you cannot just
->>> ignore that. So there is no benefit of an optional irq.
->>>
->>> Leaving error message reporting aside, the introduction of
->>> platform_get_irq_optional() allows to change
->>>
->>> 	irq =3D platform_get_irq(...);
->>> 	if (irq < 0 && irq !=3D -ENXIO) {
->>> 		return irq;
->>> 	} else if (irq >=3D 0) {
->>
->>    Rather (irq > 0) actually, IRQ0 is considered invalid (but still retu=
-rned).
-> =
-
-> This is a topic I don't feel strong for, so I'm sloppy here. If changing
-> this is all that is needed to convince you of my point ...
-
-   Note that we should absolutely (and first of all) stop returning 0 from =
-platform_get_irq()
-on a "real" IRQ0. Handling that "still good" zero absolutely doesn't scale =
-e.g. for the subsystems
-(like libata) which take 0 as an indication that the polling mode should be=
- used... We can't afford
-to be sloppy here. ;-)
-
-[...]
-
-> Best regards
-> Uwe
-
-MBR, Sergey
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
