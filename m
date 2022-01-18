@@ -4,122 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D65F4C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jan 2022 17:27:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93F37C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Jan 2022 03:43:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XNm5PAEWlgyGM/GhS5k1764wmD4mA7O2uNs15zyECao=; b=b8PCfQQSfVx0U+1K5fKbeKRCrX
-	VqZexJ3fi36CSvpxH+Peabu0V/nkkP/16CjgD/USQ/SnQ0/v8wJLFi+ryiSP1QrAoYcQdn4K9ooH6
-	zd+pd4UJImjzEljeMCMqJ4hoR2kNXktVpPde0dQGIV6gTaihWRLUXtr4lUpFEs7pZeHAbwn90qHc3
-	XqKM0s9DyKOICOT0aDUs/wGr6R9Qdr4z8/4H0Ho8uPhRX2tOcYaAlveUbomEyo7fjrfUKqBAXxBqa
-	roVPWoDlVllivTiwgqKyC4em38HoLoq172KC0EB6jEvbIdwsKs7u4TSjvpNhVH2V8OAqBSJxo7RYZ
-	VwmLV2dA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=o/0QxV4pFaV6XGPGpH2l8E0DfN29J5UNo87clEibrJg=; b=00YIfGaeQ+kJcL
+	uCLcWsOSdAsM34cr1v4d0y5HbA2HXbq4QAuyGlund/PxwixYiCxr/MhYE5OueBjlppUrLCd8frOzc
+	ocEd1knq5iYb07Mt3/VRbZV4g1AsXYaxTFFfBhnycm+5dmwBL/wmVPS2/usdM3CgZVJr6X1HLs/9y
+	f0KvSrSnrSyA18IxRxGCO1LFGEOwQN9Lq0yiNKEOYMi9FsLV/ZHSrko78jxj9ys9ukEFv20Y1eHcX
+	p6ldrilYXOomb7JttS3+pyVL+Oa9NfuxlF5BYIphv33u3q21gaNz4GhH+qvUs1OYTq+lyEWLZocX4
+	OCJ1K/wmssxJHClMWUIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n9Vmq-00Ftv4-64; Mon, 17 Jan 2022 17:27:20 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1n9fPV-00HYiN-PN; Tue, 18 Jan 2022 03:43:53 +0000
+Received: from mail-eopbgr00042.outbound.protection.outlook.com ([40.107.0.42]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n9VUO-00FkR6-Rv
- for linux-phy@lists.infradead.org; Mon, 17 Jan 2022 17:08:22 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1n9VSt-0007f8-E9; Mon, 17 Jan 2022 18:06:43 +0100
-Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
- by drehscheibe.grey.stw.pengutronix.de with esmtps (TLS1.3) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <ukl@pengutronix.de>)
- id 1n9VSk-00Ar9W-EE; Mon, 17 Jan 2022 18:06:33 +0100
-Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1n9VSj-0002dO-9e; Mon, 17 Jan 2022 18:06:33 +0100
-Date: Mon, 17 Jan 2022 18:06:09 +0100
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
- Vignesh Raghavendra <vigneshr@ti.com>, KVM list <kvm@vger.kernel.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>,
- ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Jaroslav Kysela <perex@perex.cz>, Guenter Roeck <groeck@chromium.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- MTD Maling List <linux-mtd@lists.infradead.org>,
- Linux I2C <linux-i2c@vger.kernel.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>, linux-phy@lists.infradead.org,
- linux-spi <linux-spi@vger.kernel.org>, Jiri Slaby <jirislaby@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- Khuong Dinh <khuong@os.amperecomputing.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jakub Kicinski <kuba@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- platform-driver-x86@vger.kernel.org,
- Linux PWM List <linux-pwm@vger.kernel.org>,
- Hans de Goede <hdegoede@redhat.com>, Robert Richter <rric@kernel.org>,
- Saravanan Sekar <sravanhome@gmail.com>, Corey Minyard <minyard@acm.org>,
- Linux PM list <linux-pm@vger.kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- John Garry <john.garry@huawei.com>, Peter Korsgaard <peter@korsgaard.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Mark Gross <markgross@kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mark Brown <broonie@kernel.org>, Borislav Petkov <bp@alien8.de>,
- Takashi Iwai <tiwai@suse.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- openipmi-developer@lists.sourceforge.net,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Benson Leung <bleung@chromium.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-edac@vger.kernel.org, Tony Luck <tony.luck@intel.com>,
- Richard Weinberger <richard@nod.at>, Mun Yew Tham <mun.yew.tham@intel.com>,
- Eric Auger <eric.auger@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Cornelia Huck <cohuck@redhat.com>,
- Linux MMC List <linux-mmc@vger.kernel.org>,
- Joakim Zhang <qiangqing.zhang@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Sergey Shtylyov <s.shtylyov@omp.ru>, Vinod Koul <vkoul@kernel.org>,
- James Morse <james.morse@arm.com>, Zha Qipeng <qipeng.zha@intel.com>,
- Sebastian Reichel <sre@kernel.org>,
- Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- linux-mediatek@lists.infradead.org,
- Brian Norris <computersforpeace@gmail.com>, netdev <netdev@vger.kernel.org>
-Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
-Message-ID: <20220117170609.yxaamvqdkivs56ju@pengutronix.de>
-References: <29f0c65d-77f2-e5b2-f6cc-422add8a707d@omp.ru>
- <20220114092557.jrkfx7ihg26ekzci@pengutronix.de>
- <61b80939-357d-14f5-df99-b8d102a4e1a1@omp.ru>
- <20220114202226.ugzklxv4wzr6egwj@pengutronix.de>
- <c9026f17-2b3f-ee94-0ea3-5630f981fbc1@omp.ru>
- <CAMuHMdXVbRudGs69f9ZzaP1PXhteDNZiXA658eMFAwP4nr9r3w@mail.gmail.com>
- <20220117092444.opoedfcf5k5u6otq@pengutronix.de>
- <CAMuHMdUgZUeraHadRAi2Z=DV+NuNBrKPkmAKsvFvir2MuquVoA@mail.gmail.com>
- <20220117114923.d5vajgitxneec7j7@pengutronix.de>
- <CAMuHMdWCKERO20R2iVHq8P=BaoauoBAtiampWzfMRYihi3Sb0g@mail.gmail.com>
+ id 1n9ekc-00HFRf-A0; Tue, 18 Jan 2022 03:01:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QLrJXZA1s1NyGZqz69cIy3DQIlYGEmwHNm2XrVjxRj8GTFiS4/PbX0IJNOy0ZYfkqlfjPHr8fGSr64EB1roFjB5xiDxYiCZjtnIOZLFhcMBjmfFR5XcOXpSnNtgNCax8rKPZXCfB8Z7kBqbhOE3WgDHSAQ0PxsoRGC/NLJavXcqJLUGymZ90CA3zEj8hTPSNhz52Ejar/pokDVwu31rSLD0O18tgLPAXDl5ZRJlMk4Ph3dA+yz1v06uViLtaz91BWWSTCl04506of6QmsDxmaXb+CmCHKwAtF/G5NOACdOvq/rky59xdrbrR+RDaCy4XGYE6yyIqoZoSB9ryPmZL4w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=VCDwhEtmmEYLIzpIeV9i0fc7ATrkV+SpOyNtCaGDeSM=;
+ b=G2TC5ijf6arJ5omNCvJYKFRPh41mY0Jn5wJTbUOpLKgTsdvcLnvlZWSqloPD1kA88Sq2l+fKPe5l5EN0DEmNm5BOa9qcuBlZqm6PsAFO073S3kH1/fY1yrJfjN8FqsZoWcutMg6zKW0RTFbVWr025+wiCRGc/k7/anDd3ES/yz0m3Xv09V9DHlhu/Nf9D+JTMRne/Um+1hPfEwuTuh/DjYPRh5PeP+B1bOEDw7Wiq7Bws3Kn+WFAh0IUN3SzGKCr+kHOplaz/gZl8nHqlrclRtsHVe2gjwzq9GE1kxsAl3mBAhIoOVGJDXPIiDykyslXq2rJ6POkH8O/zUeWvskJMg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VCDwhEtmmEYLIzpIeV9i0fc7ATrkV+SpOyNtCaGDeSM=;
+ b=QiG/ldUrvJIqiyyNNSTDkCKfZ3LLxTHvHaoffDq4xYp8wFf2c8lWCk/QfjsTH9kCYD7mfxA2Vj9TsaxyUniqKWXbIuEqR+HGJZzhp4fJg1SelGvRqvnYQsBSUd2+9FLzInj8ARjxMGasBvqfvlr0asYYOs04K6DBvdiSi+asmI0=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by AM5PR04MB2978.eurprd04.prod.outlook.com (2603:10a6:206:5::28) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4888.9; Tue, 18 Jan
+ 2022 03:01:27 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::a5b3:9e5:366:a3fc]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::a5b3:9e5:366:a3fc%3]) with mapi id 15.20.4888.014; Tue, 18 Jan 2022
+ 03:01:27 +0000
+From: Liu Ying <victor.liu@nxp.com>
+To: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-rockchip@lists.infradead.org
+Cc: linux-imx@nxp.com, Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Robert Foss <robert.foss@linaro.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Heiko Stuebner <heiko@sntech.de>, Maxime Ripard <mripard@kernel.org>,
+ =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
+Subject: [PATCH] phy: dphy: Correct clk_pre parameter
+Date: Tue, 18 Jan 2022 10:59:18 +0800
+Message-Id: <20220118025918.1444288-1-victor.liu@nxp.com>
+X-Mailer: git-send-email 2.25.1
+X-ClientProxiedBy: SG3P274CA0011.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:be::23)
+ To AM7PR04MB7046.eurprd04.prod.outlook.com
+ (2603:10a6:20b:113::22)
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdWCKERO20R2iVHq8P=BaoauoBAtiampWzfMRYihi3Sb0g@mail.gmail.com>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: a3e97a0f-e19d-499c-fe3d-08d9da2ed1cf
+X-MS-TrafficTypeDiagnostic: AM5PR04MB2978:EE_
+X-Microsoft-Antispam-PRVS: <AM5PR04MB2978C5D6FFB7DC145CE1EA6998589@AM5PR04MB2978.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4941;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: M2iwM/wfyhdFleFMe08me5erqKcvye4dFDeE0bWdgpEhfcVOlTYGk5mkxsSqQ5IeDrAbZ3sAmkFdMNPfjfpXkDvchTCO0Vb1IqAZ5QI7woNR+WC19ZU7U+ilA2qTV4fTOO2hWbshCawNTfUTsCkkPDjZ9DtLAHNFJNnT1bKMoCefdRT1ukuPpGsjyNBuvAxFYCm2915ttb9GD/7QJwdi467fzyMWYKpudLtrKTkhJneoFRJvStGHpdTTGuk5rKvztHkReslClgUNyeKNn7DZ0DZhCCGcfnV/LHHf+hTWI7eHXHqN2N/HaWKJ3N2UA/bcclsvKeqxcDlvKqdIuAJcrGujdKQdaIFyav+LxOEpM5F6pQAjgoxjxtN2REJNvFQDHrfYmdPH4FX/xaGILg7JLHWZJd7lTzzTVgYZzonf78YYkbE8IXcp96mySwqxSvYpWPqHT4jRCMVQgPluw/jhu7e7O8S13tolOyg6j0h02X48/m3DFGKWNIyWcaNBgmgPgy6ixoKjSzHTEi8wR4LsWW1d2MbiaockaSOOLFqH8p5loesxaws5C4uM7KThV/364vAQz+k/d/u26348+JbWz0jhdVyE/NSsQfzcOxyEigDM+2aQkOPg1FEZ9qwVTQCa2hbDfaHv/M4kNHGeNR39SCXlv0tYUQ+vBE9tq9MLrVadPL41txIs/TQCZ2OONQzjq3+TEiwmvMBKxs5LVhS3eQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM7PR04MB7046.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(366004)(5660300002)(4326008)(6506007)(6486002)(186003)(316002)(2906002)(7416002)(508600001)(26005)(2616005)(66476007)(66556008)(54906003)(8936002)(38350700002)(52116002)(86362001)(66574015)(83380400001)(36756003)(38100700002)(6666004)(1076003)(6512007)(66946007)(8676002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?VjV1TFpaejhjL1JSNm1Ienl2TDVtM0xWNWNrQ0dXZHBMTTkycURFVktHcWVs?=
+ =?utf-8?B?TFRCUkNRbHRjT2dVQjg3QmV4UUNybVVTMDJ5aXZQRE1LbnNGWmlGMmZXdFdR?=
+ =?utf-8?B?V3liVXMwQk4xemt4anlVUEZTZ3dQNWhoNytCdFB5U29WclEyTmRuanZpRktQ?=
+ =?utf-8?B?YnVyMmdtRTArRVU0QXRWL1ovajZRU0Y3VnA1SnVveVVQUm9zSGIzUVJKZDhO?=
+ =?utf-8?B?TjZZVzhzV2EzR2liZEMwUS9MSmErOUsrY3luT0dEbDYxWFcwaUw1YlMrcmJX?=
+ =?utf-8?B?R29WNmFNWjJtUkJ1TDcraTZpOXdtOWxpejJTT2xHcEE1YThWRGtndWxUczJC?=
+ =?utf-8?B?SW14L2J2cUxja1BKWkYvS2FUM2hxSkNTbnRab1BCcCtKZ2FpQWlWQlZVTDY1?=
+ =?utf-8?B?SlZFV2EwRUF0V21ZQlV5emZrblNkTklMSWZEb3lhWWxNVXJtMG1YM0NoN2w4?=
+ =?utf-8?B?YjdSdXNJb3dWeTNweHBjZU45Rm5zTDZDYTRsdjJCcU1JaDFzSzRRcnRPa0Uy?=
+ =?utf-8?B?djliM3ZDV2gwS0Zuc3d5YjFRRENoZUFFOG5nZVd1RTdhTXdCMTViQnJNTWo5?=
+ =?utf-8?B?bFlsbGVIamQzREhwVjh4NWNZM3MyZk84TVNvc09TWUdEMXJLU250bmRNVWsr?=
+ =?utf-8?B?V1VzNWs1ZEZPWlppWGwvTjNVazhRRzBka0JQRjdUVXd2WjNUK3E5L3VFUXds?=
+ =?utf-8?B?bHd3S2tYMGFCY0ZXUWV5aUNZMmNNbDBsWEduZzZKZUdzZTR0N010SzQvUG5D?=
+ =?utf-8?B?S2I1S2pnTTA5UTZyK3VFMFBNM3RDaUxhQkVocUduRk16K0NCakxobG12TVdw?=
+ =?utf-8?B?ZFNmSzhmZEluMVRzVTFpZHJsQWlwZ2k0TlRzQlZheUxmZi9HdTk3Sy9SUGlX?=
+ =?utf-8?B?ZjYrcTVqNDlEVlJFcUI2QUlrT211SStoMzRjbEZGVENCcVpYUUppL1J3L09J?=
+ =?utf-8?B?YTlnTi9EaHRwNTJCM2g4UlorN0RHNUtTbXZReUhRNGVrZVhyVGIxeGRnWjY3?=
+ =?utf-8?B?SkkrZmUyelJlVnIvYlMzclM3R0tjTW94OWwwdE1RcFQ2cUdBTVlkcUlENzMy?=
+ =?utf-8?B?ZkpJOXkxdzNmcFNEczBQNzcyWldmUXhQU2Z0MTRlSWxvNWZnZzRpMUhKYk1Q?=
+ =?utf-8?B?eVgvOGxnWHh4VHJ5MU9mUlI4N2dnTm83RGxVMVRxa05XQ3dZUVMwaFV0SmZF?=
+ =?utf-8?B?bTRHWjhEd2IyNjZsVENlbjJXaFZySDNHZjdSb1haaElkUkFmQTFoOXh1WFhT?=
+ =?utf-8?B?bmlpQVdKR2ZiWmVRRllxUUR6Uml3N1l4dzUrdEJsdVZ2ZWs0MHlUbzYvRDA2?=
+ =?utf-8?B?R1NMaXhLM0tjQ2pXajJ4cE5BbUpmWjlhb3JQYTFyMFVVZzU0Y1ZseUNZcGlo?=
+ =?utf-8?B?ZmV6T3Q1NzM4UEpnOGhzMGVTcjEzc3pLMFNMQkttejZxWDc4L0EzQUN6ajlr?=
+ =?utf-8?B?aUd0YStrd2xoaG1hR29JenFnNkpJQWhwQWZ2eVVub3lGQmpKTTZpRDlrN1Bs?=
+ =?utf-8?B?K05pb1ZoSlV2ZXlDR09wRTh2VjJlMHZ6alpQVDFxNkpNa0ZzcUVwZHpyVi9w?=
+ =?utf-8?B?YXUrUG1RR1l5Qkx1YjRpeXIrbEg1UGRKbFVlQTlkckxBUXpwUDBBd2xLME5N?=
+ =?utf-8?B?alNpWkw0MWJ5ZlpLNUJHVlY4QXB1Q2pQZmZNd0NlTjZvN1UxTlZXYnUxSVVT?=
+ =?utf-8?B?MXFQZXY3NFNJY29KbVJvME9zcytjSEk5cGtodFhUZGhJVVJiY1d0YThOTTJl?=
+ =?utf-8?B?V2tUOUFkYlU0WTlQNmdudE82WnZyU1JCcEh3ZVJBcmR4ZEJwOFZwYXJpSnJm?=
+ =?utf-8?B?aWxSZ2hYZkVhMEVIekVVRHNCOXFyOWt3cTNYdStpa1BTSVJYVjA1RlRmVjdT?=
+ =?utf-8?B?Q28wLzR6Z3dHc1BtVE1vblQzaVVTMm82LzZ5M2RVZWNsS0taZGl6Y0JhVTNV?=
+ =?utf-8?B?ZHJjdjVOdmZGcW5NcXNydDg0bjZXaWNTOStFK0FLRC9PL0NMdGkwYkM5ZkU3?=
+ =?utf-8?B?SGQrTUoyZjVuMVJPZlU5eTBOVWZzeHlkUVA4aW1Ra1ZGTENpWGltYlZHRlVk?=
+ =?utf-8?B?YXZoOXR1NE5WSUFuQVJPUy9zai91M3BSNkVlNUwxalQrT2IrTS96RnhFS2Z4?=
+ =?utf-8?B?SUhmazFyZHBMUytmMGdxWVNmUW9IYXFJbUord2FiRDVvb0dWaFdCMHNtUW0w?=
+ =?utf-8?Q?dextzwZdxtomss9DrfemaCU=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a3e97a0f-e19d-499c-fe3d-08d9da2ed1cf
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jan 2022 03:01:27.4930 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: OYZ3/FSB27af1F5Ati2MzTZXhlOjcQZaHaDwzdHLLi7yy3uHOqiG6IVeckuXfi9syCmMnEKscLCxuerZBISjZg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR04MB2978
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220117_090817_259972_2F9341B3 
-X-CRM114-Status: GOOD (  75.97  )
+X-CRM114-CacheID: sfid-20220117_190138_481503_28509444 
+X-CRM114-Status: GOOD (  19.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,402 +148,114 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6794181764073958658=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============6794181764073958658==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="aw3dtkiiyid6id5x"
-Content-Disposition: inline
-
-
---aw3dtkiiyid6id5x
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Jan 17, 2022 at 02:08:19PM +0100, Geert Uytterhoeven wrote:
-> Hi Uwe,
->=20
-> On Mon, Jan 17, 2022 at 12:49 PM Uwe Kleine-K=F6nig
-> <u.kleine-koenig@pengutronix.de> wrote:
-> > On Mon, Jan 17, 2022 at 11:35:52AM +0100, Geert Uytterhoeven wrote:
-> > > On Mon, Jan 17, 2022 at 10:24 AM Uwe Kleine-K=F6nig
-> > > <u.kleine-koenig@pengutronix.de> wrote:
-> > > > On Mon, Jan 17, 2022 at 09:41:42AM +0100, Geert Uytterhoeven wrote:
-> > > > > On Sat, Jan 15, 2022 at 9:22 PM Sergey Shtylyov <s.shtylyov@omp.r=
-u> wrote:
-> > > > > > On 1/14/22 11:22 PM, Uwe Kleine-K=F6nig wrote:
-> > > > > > > You have to understand that for clk (and regulator and gpiod)=
- NULL is a
-> > > > > > > valid descriptor that can actually be used, it just has no ef=
-fect. So
-> > > > > > > this is a convenience value for the case "If the clk/regulato=
-r/gpiod in
-> > > > > > > question isn't available, there is nothing to do". This is wh=
-at makes
-> > > > > > > clk_get_optional() and the others really useful and justifies=
- their
-> > > > > > > existence. This doesn't apply to platform_get_irq_optional().
-> > > > > >
-> > > > > >    I do understand that. However, IRQs are a different beast wi=
-th their
-> > > > > > own justifications...
-> > > > >
-> > > > > > > clk_get_optional() is sane and sensible for cases where the c=
-lk might be
-> > > > > > > absent and it helps you because you don't have to differentia=
-te between
-> > > > > > > "not found" and "there is an actual resource".
-> > > > > > >
-> > > > > > > The reason for platform_get_irq_optional()'s existence is jus=
-t that
-> > > > > > > platform_get_irq() emits an error message which is wrong or s=
-uboptimal
-> > > > > >
-> > > > > >    I think you are very wrong here. The real reason is to simpl=
-ify the
-> > > > > > callers.
-> > > > >
-> > > > > Indeed.
-> > > >
-> > > > The commit that introduced platform_get_irq_optional() said:
-> > > >
-> > > >         Introduce a new platform_get_irq_optional() that works much=
- like
-> > > >         platform_get_irq() but does not output an error on failure =
-to
-> > > >         find the interrupt.
-> > > >
-> > > > So the author of 8973ea47901c81a1912bd05f1577bed9b5b52506 failed to
-> > > > mention the real reason? Or look at
-> > > > 31a8d8fa84c51d3ab00bf059158d5de6178cf890:
-> > > >
-> > > >         [...] use platform_get_irq_optional() to get second/third I=
-RQ
-> > > >         which are optional to avoid below error message during prob=
-e:
-> > > >         [...]
-> > > >
-> > > > Look through the output of
-> > > >
-> > > >         git log -Splatform_get_irq_optional
-> > > >
-> > > > to find several more of these.
-> > >
-> > > Commit 8973ea47901c81a1 ("driver core: platform: Introduce
-> > > platform_get_irq_optional()") and the various fixups fixed the ugly
-> > > printing of error messages that were not applicable.
-> > > In hindsight, probably commit 7723f4c5ecdb8d83 ("driver core:
-> > > platform: Add an error message to platform_get_irq*()") should have
-> > > been reverted instead, until a platform_get_irq_optional() with proper
-> > > semantics was introduced.
-> >
-> > ack.
-> >
-> > > But as we were all in a hurry to kill the non-applicable error
-> > > message, we went for the quick and dirty fix.
-> > >
-> > > > Also I fail to see how a caller of (today's) platform_get_irq_optio=
-nal()
-> > > > is simpler than a caller of platform_get_irq() given that there is =
-no
-> > > > semantic difference between the two. Please show me a single
-> > > > conversion from platform_get_irq to platform_get_irq_optional that
-> > > > yielded a simplification.
-> > >
-> > > That's exactly why we want to change the latter to return 0 ;-)
-> >
-> > OK. So you agree to my statement "The reason for
-> > platform_get_irq_optional()'s existence is just that platform_get_irq()
-> > emits an error message [...]". Actually you don't want to oppose but
-> > say: It's unfortunate that the silent variant of platform_get_irq() took
-> > the obvious name of a function that could have an improved return code
-> > semantic.
-> >
-> > So my suggestion to rename todays platform_get_irq_optional() to
-> > platform_get_irq_silently() and then introducing
-> > platform_get_irq_optional() with your suggested semantic seems
-> > intriguing and straigt forward to me.
->=20
-> I don't really see the point of needing platform_get_irq_silently(),
-> unless as an intermediary step, where it's going to be removed again
-> once the conversion has completed.
-
-We agree that one of the two functions is enough, just differ in which
-of the two we want to have. :-)
-
-If you think platform_get_irq_silently() is a good intermediate step for
-your goal, then we agree to rename platform_get_irq_optional(). So I
-suggest you ack my patch.
-
-> Still, the rename would touch all users at once anyway.
-
-It would be more easy to keep the conversion regression-free however. A
-plain rename is simple to verify. And then converting to the new
-platform_get_irq_optional() can be done individually and without the
-need to do everything in a single step.
-
-> > Another thought: platform_get_irq emits an error message for all
-> > problems. Wouldn't it be consistent to let platform_get_irq_optional()
-> > emit an error message for all problems but "not found"?
-> > Alternatively remove the error printk from platform_get_irq().
->=20
-> Yes, all problems but not found are real errors.
-
-If you want to make platform_get_irq and its optional variant more
-similar to the others, dropping the error message is the way to go.
-
-> > > > So you need some more effort to convince me of your POV.
-> > > >
-> > > > > Even for clocks, you cannot assume that you can always blindly use
-> > > > > the returned dummy (actually a NULL pointer) to call into the clk
-> > > > > API.  While this works fine for simple use cases, where you just
-> > > > > want to enable/disable an optional clock (clk_prepare_enable() and
-> > > > > clk_disable_unprepare()), it does not work for more complex use c=
-ases.
-> > > >
-> > > > Agreed. But for clks and gpiods and regulators the simple case is q=
-uite
-> > > > usual. For irqs it isn't.
-> > >
-> > > It is for devices that can have either separate interrupts, or a sing=
-le
-> > > multiplexed interrupt.
-> > >
-> > > The logic in e.g. drivers/tty/serial/sh-sci.c and
-> > > drivers/spi/spi-rspi.c could be simplified and improved (currently
-> > > it doesn't handle deferred probe) if platform_get_irq_optional()
-> > > would return 0 instead of -ENXIO.
-> >
-> > Looking at sh-sci.c the irq handling logic could be improved even
-> > without a changed platform_get_irq_optional():
-> >
-> > diff --git a/drivers/tty/serial/sh-sci.c b/drivers/tty/serial/sh-sci.c
-> > index 968967d722d4..c7dc9fb84844 100644
-> > --- a/drivers/tty/serial/sh-sci.c
-> > +++ b/drivers/tty/serial/sh-sci.c
-> > @@ -2873,11 +2873,13 @@ static int sci_init_single(struct platform_devi=
-ce *dev,
-> >          * interrupt ID numbers, or muxed together with another interru=
-pt.
-> >          */
-> >         if (sci_port->irqs[0] < 0)
-> > -               return -ENXIO;
-> > +               return sci_port->irqs[0];
-> >
-> > -       if (sci_port->irqs[1] < 0)
-> > +       if (sci_port->irqs[1] =3D=3D -ENXIO)
-> >                 for (i =3D 1; i < ARRAY_SIZE(sci_port->irqs); i++)
-> >                         sci_port->irqs[i] =3D sci_port->irqs[0];
-> > +       else if (sci_port->irqs[1] < 0)
-> > +               return sci_port->irqs[1];
-> >
-> >         sci_port->params =3D sci_probe_regmap(p);
-> >         if (unlikely(sci_port->params =3D=3D NULL))
-> >
-> > And then the code flow is actively irritating. sci_init_single() copies
-> > irqs[0] to all other irqs[i] and then sci_request_irq() loops over the
-> > already requested irqs and checks for duplicates. A single place that
-> > identifies the exact set of required irqs would already help a lot.
->=20
-> Yeah, it's ugly and convoluted, like the wide set of hardware the
-> driver supports.
->=20
-> > Also for spi-rspi.c I don't see how platform_get_irq_byname_optional()
-> > returning 0 instead of -ENXIO would help. Please talk in patches.
->=20
-> --- a/drivers/spi/spi-rspi.c
-> +++ b/drivers/spi/spi-rspi.c
-> @@ -1420,17 +1420,25 @@ static int rspi_probe(struct platform_device *pde=
-v)
->         ctlr->max_native_cs =3D rspi->ops->num_hw_ss;
->=20
->         ret =3D platform_get_irq_byname_optional(pdev, "rx");
-> -       if (ret < 0) {
-> +       if (ret < 0)
-> +               goto error2;
-> +
-> +       if (!ret) {
->                 ret =3D platform_get_irq_byname_optional(pdev, "mux");
-> -               if (ret < 0)
-> +               if (!ret)
->                         ret =3D platform_get_irq(pdev, 0);
-> +               if (ret < 0)
-> +                       goto error2;
-> +
->                 if (ret >=3D 0)
->                         rspi->rx_irq =3D rspi->tx_irq =3D ret;
->         } else {
->                 rspi->rx_irq =3D ret;
->                 ret =3D platform_get_irq_byname(pdev, "tx");
-> -               if (ret >=3D 0)
-> -                       rspi->tx_irq =3D ret;
-> +               if (ret < 0)
-> +                       goto error2;
-> +
-> +               rspi->tx_irq =3D ret;
->         }
->=20
->         if (rspi->rx_irq =3D=3D rspi->tx_irq) {
-
-This is not a simplification, just looking at the line count and the
-added gotos. That's because it also improves error handling and so the
-effect isn't easily spotted.
-
-> I like it when the "if (ret < ) ..." error handling is the first check to=
- do.
-
-That's a relevant difference between us.
-
-> With -ENXIO, it becomes more convoluted. and looks less nice (IMHO).
->=20
-> > Preferably first simplify in-driver logic to make the conversion to the
-> > new platform_get_irq_optional() actually reviewable.
->=20
-> So I have to choose between
->=20
->     if (ret < 0 && ret !=3D -ENXIO)
->             return ret;
->=20
->     if (ret) {
->             ...
->     }
->=20
-> and
->=20
->     if (ret =3D=3D -ENXIO) {
->             ...
->     } else if (ret < 0)
->             return ret;
->     }
-
-I would do the latter, then it's in the normal order for error handling
-
-	handle some specific errors;
-	forward unhandled errors up the stack;
-	handle success;
-
-but it seems you prefer to not call "not found" an error. Actually I
-think it's an advantage that the driver has to mention -ENXIO, feels
-like proper error handling to me. I guess we won't agree about that
-though.
-
-What about the following idea (in pythonic pseudo code for simplicity):
-
-	# the rspi device either has two irqs, one for rx and one for
-	# tx, or a single one for both together.
-
-	def muxed_hander(irq):
-		status =3D readl(STATUS)
-		if status & IF_RX:
-			rx_handler()
-		if status & IF_TX:
-			tx_handler()
-
-	def probe_muxed_irq():
-		irq =3D platform_get_irq_by_name("mux")
-		if irq < 0:
-			return irq;
-
-		request_irq(irq, muxed_handler)
-
-	def probe_separate_irqs():
-		txirq =3D platform_get_irq_by_name("tx")
-		if txirq < 0:
-			return txirq
-
-		rxirq =3D platform_get_irq_by_name("rx")
-		if rxirq < 0:
-			return rxirq
-
-		request_irq(txirq, tx_handler)
-		request_irq(rxirq, rx_handler)
-
-	def probe():
-		ret =3D probe_separate_irqs()
-		if ret =3D=3D -ENXIO:
-			ret =3D probe_muxed_irq()
-
-		if ret < 0:
-			return ret
-
-looks clean (to me that is) and allows to skip the demuxing in
-tx_handler and rx_handler (which might or might not yield improved
-runtime behaviour). Maybe a bit more verbose, but simpler to grasp for a
-human, isn't it?
-
-> with the final target being
->=20
->     if (ret < 0)
->             return ret;
->=20
->     if (ret) {
->             ...
->     }
->=20
-> So the first option means the final change is smaller, but it looks less
-> nice than the second option (IMHO).
-> But the second option means more churn.
->=20
-> > > So there are three reasons: because the absence of an optional IRQ
-> > > is not an error, and thus that should not cause (a) an error code
-> > > to be returned, and (b) an error message to be printed, and (c)
-> > > because it can simplify the logic in device drivers.
-> >
-> > I don't agree to (a). If the value signaling not-found is -ENXIO or 0
-> > (or -ENODEV) doesn't matter much. I wouldn't deviate from the return
-> > code semantics of platform_get_irq() just for having to check against 0
-> > instead of -ENXIO. Zero is then just another magic value.
->=20
-> Zero is a natural magic value (also for pointers).
-> Errors are always negative.
-> Positive values are cookies (or pointers) associated with success.
-
-Yeah, the issue where we don't agree is if "not-found" is special enough
-to deserve the natural magic value. For me -ENXIO is magic enough to
-handle the absence of an irq line. I consider it even the better magic
-value.
-
-> > (c) still has to be proven, see above.
-
-Best regards
-Uwe
-
---=20
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
---aw3dtkiiyid6id5x
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmHlof4ACgkQwfwUeK3K
-7Aniewf+MoaFo3EYfzYPpJGODkMHLkkxMbHUg8vSMqRQM6WJsf8c9vxwcsWAL4ve
-Et7WTI1iMsw9uc3Wiag0LUt2KFm0pxr+OCAyIEsfQ/5exnZOmiPovOmrt8eNPe8c
-hTXRJzXnsS9aZP/mJjPEqSZKaBTA/0WYUaKJUQsHq0cxBBtQCeUlMtXmCgCcRUFZ
-NK/trtp/5N3W9bLhTFaZ+tCe0aYS5iQAihlnquEZNjJjeTyuZfN/pCbeiAZdDFv1
-S85HGZU7QsH9jV00tdrlAze2aLGJ11VXdnibbL3l5ITXHpJKBdpBFZHGazA0P5iG
-b1PnP722liY900ec+sr8AE7Gyb3swA==
-=kGnZ
------END PGP SIGNATURE-----
-
---aw3dtkiiyid6id5x--
-
-
---===============6794181764073958658==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6794181764073958658==--
-
+VGhlIEQtUEhZIHNwZWNpZmljYXRpb24gKHYxLjIpIGV4cGxpY2l0bHkgbWVudGlvbnMgdGhhdCB0
+aGUgVC1DTEstUFJFCnBhcmFtZXRlcidzIHVuaXQgaXMgVW5pdCBJbnRlcnZhbChVSSkgYW5kIHRo
+ZSBtaW5pbXVtIHZhbHVlIGlzIDguICBBbHNvLAprZXJuZWwgZG9jIG9mIHRoZSAnY2xrX3ByZScg
+bWVtYmVyIG9mIHN0cnVjdCBwaHlfY29uZmlndXJlX29wdHNfbWlwaV9kcGh5Cm1lbnRpb25zIHRo
+YXQgaXQgc2hvdWxkIGJlIGluIFVJLiAgSG93ZXZlciwgdGhlIGRwaHkgY29yZSBkcml2ZXIgd3Jv
+bmdseQpzZXRzICdjbGtfcHJlJyB0byA4MDAwLCB3aGljaCBzZWVtcyB0byBoaW50IHRoYXQgaXQn
+cyBpbiBwaWNvc2Vjb25kcy4KQW5kLCB0aGUga2VybmVsIGRvYyBvZiB0aGUgJ2Nsa19wcmUnIG1l
+bWJlciB3cm9uZ2x5IHNheXMgdGhlIG1pbmltdW0gdmFsdWUKaXMgJzggVUknLCBpbnN0ZWFkIG9m
+IDguCgpTbywgbGV0J3MgZml4IGJvdGggdGhlIGRwaHkgY29yZSBkcml2ZXIgYW5kIHRoZSBrZXJu
+ZWwgZG9jIG9mIHRoZSAnY2xrX3ByZScKbWVtYmVyIHRvIGNvcnJlY3RseSByZWZsZWN0IHRoZSBU
+LUNMSy1QUkUgcGFyYW1ldGVyJ3MgdW5pdCBhbmQgdGhlIG1pbmltdW0KdmFsdWUgYWNjb3JkaW5n
+IHRvIHRoZSBELVBIWSBzcGVjaWZpY2F0aW9uLgoKSSdtIGFzc3VtaW5nIHRoYXQgYWxsIGltcGFj
+dGVkIGN1c3RvbSBkcml2ZXJzIHNoYWxsIHByb2dyYW0gdmFsdWVzIGluClR4Qnl0ZUNsa0hTIGN5
+Y2xlcyBpbnRvIGhhcmR3YXJlIGZvciB0aGUgVC1DTEstUFJFIHBhcmFtZXRlci4gIFRoZSBELVBI
+WQpzcGVjaWZpY2F0aW9uIG1lbnRpb25zIHRoYXQgdGhlIGZyZXF1ZW5jeSBvZiBUeEJ5dGVDbGtI
+UyBpcyBleGFjdGx5IDEvOAp0aGUgSGlnaC1TcGVlZChIUykgYml0IHJhdGUoZWFjaCBIUyBiaXQg
+Y29uc3VtZXMgb25lIFVJKS4gIFNvLCByZWxldmFudApjdXN0b20gZHJpdmVyIGNvZGUgaXMgY2hh
+bmdlZCB0byBwcm9ncmFtIHRob3NlIHZhbHVlcyBhcwpESVZfUk9VTkRfVVAoY2ZnLT5jbGtfcHJl
+LCBNSVBJX0RQSFlfVUlfUEVSX1RYQllURUNMS0hTX1BFUklPRCksIHRoZW4uCgpOb3RlIHRoYXQg
+SSd2ZSBvbmx5IHRlc3RlZCB0aGUgcGF0Y2ggd2l0aCBSTTY3MTkxIERTSSBwYW5lbCBvbiBpLk1Y
+OG1xIEVWSy4KSGVscCBpcyBuZWVkZWQgdG8gdGVzdCB3aXRoIG90aGVyIGkuTVg4bXEsIE1lc29u
+IGFuZCBSb2NrY2hpcCBwbGF0Zm9ybXMsCmFzIEkgZG9uJ3QgaGF2ZSB0aGUgaGFyZHdhcmVzLgoK
+Rml4ZXM6IDJlZDg2OTk5MGUxNCAoInBoeTogQWRkIE1JUEkgRC1QSFkgY29uZmlndXJhdGlvbiBv
+cHRpb25zIikKQ2M6IEFuZHJ6ZWogSGFqZGEgPGFuZHJ6ZWouaGFqZGFAaW50ZWwuY29tPgpDYzog
+TmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgpDYzogUm9iZXJ0IEZvc3Mg
+PHJvYmVydC5mb3NzQGxpbmFyby5vcmc+CkNjOiBMYXVyZW50IFBpbmNoYXJ0IDxMYXVyZW50LnBp
+bmNoYXJ0QGlkZWFzb25ib2FyZC5jb20+CkNjOiBKb25hcyBLYXJsbWFuIDxqb25hc0Brd2lib28u
+c2U+CkNjOiBKZXJuZWogU2tyYWJlYyA8amVybmVqLnNrcmFiZWNAZ21haWwuY29tPgpDYzogRGF2
+aWQgQWlybGllIDxhaXJsaWVkQGxpbnV4LmllPgpDYzogRGFuaWVsIFZldHRlciA8ZGFuaWVsQGZm
+d2xsLmNoPgpDYzogS2lzaG9uIFZpamF5IEFicmFoYW0gSSA8a2lzaG9uQHRpLmNvbT4KQ2M6IFZp
+bm9kIEtvdWwgPHZrb3VsQGtlcm5lbC5vcmc+CkNjOiBLZXZpbiBIaWxtYW4gPGtoaWxtYW5AYmF5
+bGlicmUuY29tPgpDYzogSmVyb21lIEJydW5ldCA8amJydW5ldEBiYXlsaWJyZS5jb20+CkNjOiBN
+YXJ0aW4gQmx1bWVuc3RpbmdsIDxtYXJ0aW4uYmx1bWVuc3RpbmdsQGdvb2dsZW1haWwuY29tPgpD
+YzogSGVpa28gU3R1ZWJuZXIgPGhlaWtvQHNudGVjaC5kZT4KQ2M6IE1heGltZSBSaXBhcmQgPG1y
+aXBhcmRAa2VybmVsLm9yZz4KQ2M6IEd1aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+ClRl
+c3RlZC1ieTogTGl1IFlpbmcgPHZpY3Rvci5saXVAbnhwLmNvbT4gIyBSTTY3MTkxIERTSSBwYW5l
+bCBvbiBpLk1YOG1xIEVWSwpTaWduZWQtb2ZmLWJ5OiBMaXUgWWluZyA8dmljdG9yLmxpdUBueHAu
+Y29tPgotLS0KIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS5jICAgICAgICAgICAgICAg
+ICB8IDcgKystLS0tLQogZHJpdmVycy9waHkvYW1sb2dpYy9waHktbWVzb24tYXhnLW1pcGktZHBo
+eS5jICAgIHwgMyArKy0KIGRyaXZlcnMvcGh5L3BoeS1jb3JlLW1pcGktZHBoeS5jICAgICAgICAg
+ICAgICAgICB8IDQgKystLQogZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlubm8t
+ZHNpZHBoeS5jIHwgMyArKy0KIGluY2x1ZGUvbGludXgvcGh5L3BoeS1taXBpLWRwaHkuaCAgICAg
+ICAgICAgICAgICB8IDQgKysrLQogNSBmaWxlcyBjaGFuZ2VkLCAxMSBpbnNlcnRpb25zKCspLCAx
+MCBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1k
+c2kuYyBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS5jCmluZGV4IGE3Mzg5YTBmYWNm
+Yi4uZjFmZGNkZjc2M2VlIDEwMDY0NAotLS0gYS9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1k
+c2kuYworKysgYi9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1kc2kuYwpAQCAtMTk2LDEyICsx
+OTYsOSBAQCBzdGF0aWMgdTMyIHBzMmJjKHN0cnVjdCBud2xfZHNpICpkc2ksIHVuc2lnbmVkIGxv
+bmcgbG9uZyBwcykKIC8qCiAgKiB1aTJiYyAtIFVJIHRpbWUgcGVyaW9kcyB0byBieXRlIGNsb2Nr
+IGN5Y2xlcwogICovCi1zdGF0aWMgdTMyIHVpMmJjKHN0cnVjdCBud2xfZHNpICpkc2ksIHVuc2ln
+bmVkIGxvbmcgbG9uZyB1aSkKK3N0YXRpYyB1MzIgdWkyYmMoc3RydWN0IG53bF9kc2kgKmRzaSwg
+dW5zaWduZWQgaW50IHVpKQogewotCXUzMiBicHAgPSBtaXBpX2RzaV9waXhlbF9mb3JtYXRfdG9f
+YnBwKGRzaS0+Zm9ybWF0KTsKLQotCXJldHVybiBESVY2NF9VNjRfUk9VTkRfVVAodWkgKiBkc2kt
+PmxhbmVzLAotCQkJCSAgZHNpLT5tb2RlLmNsb2NrICogMTAwMCAqIGJwcCk7CisJcmV0dXJuIERJ
+Vl9ST1VORF9VUCh1aSwgTUlQSV9EUEhZX1VJX1BFUl9UWEJZVEVDTEtIU19QRVJJT0QpOwogfQog
+CiAvKgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvYW1sb2dpYy9waHktbWVzb24tYXhnLW1pcGkt
+ZHBoeS5jIGIvZHJpdmVycy9waHkvYW1sb2dpYy9waHktbWVzb24tYXhnLW1pcGktZHBoeS5jCmlu
+ZGV4IGNkMjMzMmJmMGUzMS4uOGE4MThjZGI3NjA2IDEwMDY0NAotLS0gYS9kcml2ZXJzL3BoeS9h
+bWxvZ2ljL3BoeS1tZXNvbi1heGctbWlwaS1kcGh5LmMKKysrIGIvZHJpdmVycy9waHkvYW1sb2dp
+Yy9waHktbWVzb24tYXhnLW1pcGktZHBoeS5jCkBAIC0yNTAsNyArMjUwLDggQEAgc3RhdGljIGlu
+dCBwaHlfbWVzb25fYXhnX21pcGlfZHBoeV9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCiAJCSAg
+ICAgKERJVl9ST1VORF9VUChwcml2LT5jb25maWcuY2xrX3plcm8sIHRlbXApIDw8IDE2KSB8CiAJ
+CSAgICAgKERJVl9ST1VORF9VUChwcml2LT5jb25maWcuY2xrX3ByZXBhcmUsIHRlbXApIDw8IDI0
+KSk7CiAJcmVnbWFwX3dyaXRlKHByaXYtPnJlZ21hcCwgTUlQSV9EU0lfQ0xLX1RJTTEsCi0JCSAg
+ICAgRElWX1JPVU5EX1VQKHByaXYtPmNvbmZpZy5jbGtfcHJlLCB0ZW1wKSk7CisJCSAgICAgRElW
+X1JPVU5EX1VQKHByaXYtPmNvbmZpZy5jbGtfcHJlLAorCQkJCSAgTUlQSV9EUEhZX1VJX1BFUl9U
+WEJZVEVDTEtIU19QRVJJT0QpKTsKIAogCXJlZ21hcF93cml0ZShwcml2LT5yZWdtYXAsIE1JUElf
+RFNJX0hTX1RJTSwKIAkJICAgICBESVZfUk9VTkRfVVAocHJpdi0+Y29uZmlnLmhzX2V4aXQsIHRl
+bXApIHwKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3BoeS1jb3JlLW1pcGktZHBoeS5jIGIvZHJp
+dmVycy9waHkvcGh5LWNvcmUtbWlwaS1kcGh5LmMKaW5kZXggMjg4YzljNjdhYTc0Li5jY2I0MDQ1
+Njg1Y2QgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGh5L3BoeS1jb3JlLW1pcGktZHBoeS5jCisrKyBi
+L2RyaXZlcnMvcGh5L3BoeS1jb3JlLW1pcGktZHBoeS5jCkBAIC0zNiw3ICszNiw3IEBAIGludCBw
+aHlfbWlwaV9kcGh5X2dldF9kZWZhdWx0X2NvbmZpZyh1bnNpZ25lZCBsb25nIHBpeGVsX2Nsb2Nr
+LAogCiAJY2ZnLT5jbGtfbWlzcyA9IDA7CiAJY2ZnLT5jbGtfcG9zdCA9IDYwMDAwICsgNTIgKiB1
+aTsKLQljZmctPmNsa19wcmUgPSA4MDAwOworCWNmZy0+Y2xrX3ByZSA9IDg7CiAJY2ZnLT5jbGtf
+cHJlcGFyZSA9IDM4MDAwOwogCWNmZy0+Y2xrX3NldHRsZSA9IDk1MDAwOwogCWNmZy0+Y2xrX3Rl
+cm1fZW4gPSAwOwpAQCAtOTcsNyArOTcsNyBAQCBpbnQgcGh5X21pcGlfZHBoeV9jb25maWdfdmFs
+aWRhdGUoc3RydWN0IHBoeV9jb25maWd1cmVfb3B0c19taXBpX2RwaHkgKmNmZykKIAlpZiAoY2Zn
+LT5jbGtfcG9zdCA8ICg2MDAwMCArIDUyICogdWkpKQogCQlyZXR1cm4gLUVJTlZBTDsKIAotCWlm
+IChjZmctPmNsa19wcmUgPCA4MDAwKQorCWlmIChjZmctPmNsa19wcmUgPCA4KQogCQlyZXR1cm4g
+LUVJTlZBTDsKIAogCWlmIChjZmctPmNsa19wcmVwYXJlIDwgMzgwMDAgfHwgY2ZnLT5jbGtfcHJl
+cGFyZSA+IDk1MDAwKQpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tj
+aGlwLWlubm8tZHNpZHBoeS5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlu
+bm8tZHNpZHBoeS5jCmluZGV4IDM0N2RjNzlhMThjMS4uNjdiMGExN2JlN2UzIDEwMDY0NAotLS0g
+YS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby1kc2lkcGh5LmMKKysrIGIv
+ZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlubm8tZHNpZHBoeS5jCkBAIC0zNjQs
+NyArMzY0LDggQEAgc3RhdGljIHZvaWQgaW5ub19kc2lkcGh5X21pcGlfbW9kZV9lbmFibGUoc3Ry
+dWN0IGlubm9fZHNpZHBoeSAqaW5ubykKIAkgKiBUaGUgdmFsdWUgb2YgY291bnRlciBmb3IgSFMg
+VGNsay1wcmUKIAkgKiBUY2xrLXByZSA9IFRwaW5fdHhieXRlY2xraHMgKiB2YWx1ZQogCSAqLwot
+CWNsa19wcmUgPSBESVZfUk9VTkRfVVAoY2ZnLT5jbGtfcHJlLCB0X3R4Ynl0ZWNsa2hzKTsKKwlj
+bGtfcHJlID0gRElWX1JPVU5EX1VQKGNmZy0+Y2xrX3ByZSwKKwkJCSAgICAgICBNSVBJX0RQSFlf
+VUlfUEVSX1RYQllURUNMS0hTX1BFUklPRCk7CiAKIAkvKgogCSAqIFRoZSB2YWx1ZSBvZiBjb3Vu
+dGVyIGZvciBIUyBUbHB4IFRpbWUKZGlmZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvcGh5L3BoeS1t
+aXBpLWRwaHkuaCBiL2luY2x1ZGUvbGludXgvcGh5L3BoeS1taXBpLWRwaHkuaAppbmRleCBhODc3
+ZmZlZTg0NWQuLmFiMWY3MzZmYmNkMyAxMDA2NDQKLS0tIGEvaW5jbHVkZS9saW51eC9waHkvcGh5
+LW1pcGktZHBoeS5oCisrKyBiL2luY2x1ZGUvbGludXgvcGh5L3BoeS1taXBpLWRwaHkuaApAQCAt
+Niw2ICs2LDggQEAKICNpZm5kZWYgX19QSFlfTUlQSV9EUEhZX0hfCiAjZGVmaW5lIF9fUEhZX01J
+UElfRFBIWV9IXwogCisjZGVmaW5lIE1JUElfRFBIWV9VSV9QRVJfVFhCWVRFQ0xLSFNfUEVSSU9E
+CTgKKwogLyoqCiAgKiBzdHJ1Y3QgcGh5X2NvbmZpZ3VyZV9vcHRzX21pcGlfZHBoeSAtIE1JUEkg
+RC1QSFkgY29uZmlndXJhdGlvbiBzZXQKICAqCkBAIC00Miw3ICs0NCw3IEBAIHN0cnVjdCBwaHlf
+Y29uZmlndXJlX29wdHNfbWlwaV9kcGh5IHsKIAkgKiB0aGUgdHJhbnNtaXR0ZXIgcHJpb3IgdG8g
+YW55IGFzc29jaWF0ZWQgRGF0YSBMYW5lIGJlZ2lubmluZwogCSAqIHRoZSB0cmFuc2l0aW9uIGZy
+b20gTFAgdG8gSFMgbW9kZS4KIAkgKgotCSAqIE1pbmltdW0gdmFsdWU6IDggVUkKKwkgKiBNaW5p
+bXVtIHZhbHVlOiA4CiAJICovCiAJdW5zaWduZWQgaW50CQljbGtfcHJlOwogCi0tIAoyLjI1LjEK
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
