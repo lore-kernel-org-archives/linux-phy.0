@@ -4,106 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39D3FC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Jan 2022 19:50:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60E3DC4321E
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jan 2022 20:56:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=m+b7iS8EqrjloZqL7aGuG/yImZmNwL3Ov6RMfCtEf2c=; b=YOa4VX2I9jjuqNxyuOeFwoMrUH
-	LtFX3hu8/Btmxk4yBQ53OoVu9/1k4wAyQT/ZyjGfCv2SGlzVsLXhR1QIsUWpVg4VTlEbDCOU2Bjl1
-	W++DBrjdGrFEEc1f/p5n2iV0pI0/bMfYq19QoJEHtHMODxVH8YLto1UugrfFfQrw51uw3dD25xxiK
-	YN4AmLQBytANl6BD9O6DRrjUCRGMTDnS19nXWRLgSLVj7Bq3Jd+TbmxQOHLa1u5TCGvvFyO4iPaDi
-	TdqT11E5fQCYg7qZ8Kbgf82AIXCjvfRYZ7AEIepJ9pRZlwPSaB+eXs0l1w0iM+KPXE5DqoWJuIsb8
-	a9L4jevg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RmQ56jcEAtQJvBp9ez+zhNA17H0/wn7+KkXvETunLzw=; b=REhMo+W8PP+qOf
+	cyPj+Gg+a5/SCe+3IDIP/8Dyeh8OTmZbDOijGXpQxQfHtyIXLGdDeBXT+uUQqN/GGRV28kW6M1Xkk
+	mDBU/q1ckTnpre5KCM6NO7gXCRCIQYgaHY+uB10pztv5sGI235fXu0snf3LoDgCzpVCBNdCj8jU9w
+	cNaSC7kvdDQkwyfQF6ih74lq56ra9WSIeurQ6k1QBtfhlKBbFn66691xZDUb3WlJL63dflNnNxuas
+	nw9PlvuUwh5KyFUTQ3I9Z9+c8gEg4X50iBJe/28+Mu6tIWkVJeOapKs3itrOt5o3+SYHqMmo7YMYE
+	nF3Wn/W6Jw1ftfauVfnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nAGyf-00790A-MZ; Wed, 19 Jan 2022 19:50:41 +0000
-Received: from mxout04.lancloud.ru ([45.84.86.114])
+	id 1nAI0W-007Q8Y-OI; Wed, 19 Jan 2022 20:56:40 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nAGxz-0078jF-1r; Wed, 19 Jan 2022 19:50:01 +0000
-Received: from LanCloud
-DKIM-Filter: OpenDKIM Filter v2.11.0 mxout04.lancloud.ru 1999620B0896
-Received: from LanCloud
-Received: from LanCloud
-Received: from LanCloud
-Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
-CC: Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
+ id 1nAI0T-007Q6B-Pn; Wed, 19 Jan 2022 20:56:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+ t=1642625797; x=1674161797;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=Zn3K2EdVeDLJCMJ0xbcykPqu/tTiNlke9kM/JdHhcyA=;
+ b=UKP5BPWQ+uw2sBH+BM1UqeeTghbHvgaSjb/HR8XqV2m/L0x+YVEmxOGG
+ flhgx042uwtvDmyFlbH1w3PHokLzPGv6z+k+i45vi98jaPXt+vr175APx
+ AbZt1GcjiOufYlT52vxr4qzItwd0SVdtcN8WG3VZf89UFYd8sgki/FTZ0
+ nAJVaJF3b9itTPyNWKR/tIDClRlUTOZwB+qhiCz2ulEGjz2iqqn3ekqLu
+ wBY0+mwl9tNWjORFuFbtJE0r88oQiNJ8px6dZJvxRVbsCoXYnnCWjk+qF
+ bKdDmFFe8Dlc4vZoy0A9phMp1kTFErGo9dZCebUQjx5RAQ/pMMDiEL2gZ w==;
+X-IronPort-AV: E=McAfee;i="6200,9189,10231"; a="225862990"
+X-IronPort-AV: E=Sophos;i="5.88,300,1635231600"; d="scan'208";a="225862990"
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 19 Jan 2022 12:56:37 -0800
+X-IronPort-AV: E=Sophos;i="5.88,300,1635231600"; d="scan'208";a="615845335"
+Received: from smile.fi.intel.com ([10.237.72.61])
+ by fmsmga003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 19 Jan 2022 12:56:21 -0800
+Received: from andy by smile.fi.intel.com with local (Exim 4.95)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1nAHz3-00CGxM-Ht; Wed, 19 Jan 2022 22:55:09 +0200
+Date: Wed, 19 Jan 2022 22:55:09 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Sergey Shtylyov <s.shtylyov@omp.ru>
+Cc: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
  Vignesh Raghavendra <vigneshr@ti.com>, KVM list <kvm@vger.kernel.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, <linux-iio@vger.kernel.org>, "Linus
- Walleij" <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>, "ALSA
- Development Mailing List" <alsa-devel@alsa-project.org>, Jaroslav Kysela
- <perex@perex.cz>, Guenter Roeck <groeck@chromium.org>, Thierry Reding
- <thierry.reding@gmail.com>, MTD Maling List <linux-mtd@lists.infradead.org>,
- Linux I2C <linux-i2c@vger.kernel.org>, "open list:GPIO SUBSYSTEM"
- <linux-gpio@vger.kernel.org>, Miquel Raynal <miquel.raynal@bootlin.com>,
- <linux-phy@lists.infradead.org>, <netdev@vger.kernel.org>, linux-spi
- <linux-spi@vger.kernel.org>, Jiri Slaby <jirislaby@kernel.org>, Khuong Dinh
- <khuong@os.amperecomputing.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Matthias Schiffer <matthias.schiffer@ew.tq-group.com>, Kamal Dasu
- <kdasu.kdev@gmail.com>, Lee Jones <lee.jones@linaro.org>, Bartosz Golaszewski
- <brgl@bgdev.pl>, Daniel Lezcano <daniel.lezcano@linaro.org>, "Kishon Vijay
- Abraham I" <kishon@ti.com>, Geert Uytterhoeven <geert@linux-m68k.org>, "open
- list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>, bcm-kernel-feedback-list
- <bcm-kernel-feedback-list@broadcom.com>, Zhang Rui <rui.zhang@intel.com>,
- <platform-driver-x86@vger.kernel.org>, Linux PWM List
- <linux-pwm@vger.kernel.org>, Robert Richter <rric@kernel.org>, "Saravanan
- Sekar" <sravanhome@gmail.com>, Corey Minyard <minyard@acm.org>, Linux PM list
- <linux-pm@vger.kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, "Mauro
- Carvalho Chehab" <mchehab@kernel.org>, John Garry <john.garry@huawei.com>,
- Takashi Iwai <tiwai@suse.com>, Peter Korsgaard <peter@korsgaard.com>,
- "William Breathitt Gray" <vilhelm.gray@gmail.com>, Mark Gross
- <markgross@kernel.org>, Hans de Goede <hdegoede@redhat.com>, Alex Williamson
- <alex.williamson@redhat.com>, Mark Brown <broonie@kernel.org>, "Borislav
- Petkov" <bp@alien8.de>, Jakub Kicinski <kuba@kernel.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, <openipmi-developer@lists.sourceforge.net>, "Benson
- Leung" <bleung@chromium.org>, Pengutronix Kernel Team
- <kernel@pengutronix.de>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- <linux-edac@vger.kernel.org>, Tony Luck <tony.luck@intel.com>, "Richard
- Weinberger" <richard@nod.at>, Mun Yew Tham <mun.yew.tham@intel.com>, "Eric
- Auger" <eric.auger@redhat.com>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Yoshihiro Shimoda
- <yoshihiro.shimoda.uh@renesas.com>, Cornelia Huck <cohuck@redhat.com>, "Linux
- MMC List" <linux-mmc@vger.kernel.org>, Joakim Zhang
- <qiangqing.zhang@nxp.com>, Linux Kernel Mailing List
- <linux-kernel@vger.kernel.org>, Linux-Renesas
- <linux-renesas-soc@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>, "James
- Morse" <james.morse@arm.com>, Zha Qipeng <qipeng.zha@intel.com>, "Sebastian
- Reichel" <sre@kernel.org>, =?UTF-8?Q?Niklas_S=c3=b6derlund?=
- <niklas.soderlund@ragnatech.se>, <linux-mediatek@lists.infradead.org>, "Brian
- Norris" <computersforpeace@gmail.com>, "David S. Miller"
- <davem@davemloft.net>
-References: <20220112085009.dbasceh3obfok5dc@pengutronix.de>
- <CAMuHMdWsMGPiQaPS0-PJ_+Mc5VQ37YdLfbHr_aS40kB+SfW-aw@mail.gmail.com>
+ "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>,
+ ALSA Development Mailing List <alsa-devel@alsa-project.org>,
+ Jaroslav Kysela <perex@perex.cz>, Guenter Roeck <groeck@chromium.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ MTD Maling List <linux-mtd@lists.infradead.org>,
+ Linux I2C <linux-i2c@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+ linux-spi <linux-spi@vger.kernel.org>, Jiri Slaby <jirislaby@kernel.org>,
+ Khuong Dinh <khuong@os.amperecomputing.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
+ Kamal Dasu <kdasu.kdev@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Bartosz Golaszewski <brgl@bgdev.pl>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Zhang Rui <rui.zhang@intel.com>, platform-driver-x86@vger.kernel.org,
+ Linux PWM List <linux-pwm@vger.kernel.org>,
+ Robert Richter <rric@kernel.org>, Saravanan Sekar <sravanhome@gmail.com>,
+ Corey Minyard <minyard@acm.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ John Garry <john.garry@huawei.com>, Takashi Iwai <tiwai@suse.com>,
+ Peter Korsgaard <peter@korsgaard.com>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Mark Gross <markgross@kernel.org>, Hans de Goede <hdegoede@redhat.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mark Brown <broonie@kernel.org>, Borislav Petkov <bp@alien8.de>,
+ Jakub Kicinski <kuba@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ openipmi-developer@lists.sourceforge.net,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Benson Leung <bleung@chromium.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-edac@vger.kernel.org, Tony Luck <tony.luck@intel.com>,
+ Richard Weinberger <richard@nod.at>, Mun Yew Tham <mun.yew.tham@intel.com>,
+ Eric Auger <eric.auger@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Cornelia Huck <cohuck@redhat.com>,
+ Linux MMC List <linux-mmc@vger.kernel.org>,
+ Joakim Zhang <qiangqing.zhang@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, James Morse <james.morse@arm.com>,
+ Zha Qipeng <qipeng.zha@intel.com>, Sebastian Reichel <sre@kernel.org>,
+ Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>,
+ linux-mediatek@lists.infradead.org,
+ Brian Norris <computersforpeace@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>
+Subject: Re: [PATCH] driver core: platform: Rename
+ platform_get_irq_optional() to platform_get_irq_silent()
+Message-ID: <Yeh6rdBjEMiavLfh@smile.fi.intel.com>
+References: <CAMuHMdWsMGPiQaPS0-PJ_+Mc5VQ37YdLfbHr_aS40kB+SfW-aw@mail.gmail.com>
  <20220112213121.5ruae5mxwj6t3qiy@pengutronix.de>
  <Yd9L9SZ+g13iyKab@sirena.org.uk>
- <29f0c65d-77f2-e5b2-f6cc-422add8a707d@omp.ru>
- <20220114092557.jrkfx7ihg26ekzci@pengutronix.de>
- <61b80939-357d-14f5-df99-b8d102a4e1a1@omp.ru>
- <20220114202226.ugzklxv4wzr6egwj@pengutronix.de>
- <57af1851-9341-985e-7b28-d2ba86770ecb@omp.ru>
- <20220117084732.cdy2sash5hxp4lwo@pengutronix.de>
- <YehfP23nMd4wn48K@smile.fi.intel.com>
-From: Sergey Shtylyov <s.shtylyov@omp.ru>
-Organization: Open Mobile Platform
-Message-ID: <fabb8166-e3a9-c48e-073b-cdbbe8c62714@omp.ru>
-Date: Wed, 19 Jan 2022 22:49:52 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.10.1
+ <20220113110831.wvwbm75hbfysbn2d@pengutronix.de>
+ <YeA7CjOyJFkpuhz/@sirena.org.uk>
+ <20220113194358.xnnbhsoyetihterb@pengutronix.de>
+ <YeF05vBOzkN+xYCq@smile.fi.intel.com>
+ <20220115154539.j3tsz5ioqexq2yuu@pengutronix.de>
+ <YehdsUPiOTwgZywq@smile.fi.intel.com>
+ <b7edb713-dd91-14e7-34ff-d8fb559e8e92@omp.ru>
 MIME-Version: 1.0
-In-Reply-To: <YehfP23nMd4wn48K@smile.fi.intel.com>
-Content-Language: en-US
-X-Originating-IP: [192.168.11.198]
-X-ClientProxiedBy: LFEXT02.lancloud.ru (fd00:f066::142) To
- LFEX1907.lancloud.ru (fd00:f066::207)
+Content-Disposition: inline
+In-Reply-To: <b7edb713-dd91-14e7-34ff-d8fb559e8e92@omp.ru>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220119_114959_503237_F5B7FBEF 
-X-CRM114-Status: GOOD (  18.52  )
+X-CRM114-CacheID: sfid-20220119_125637_891772_FB2868B7 
+X-CRM114-Status: GOOD (  26.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,57 +145,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 1/19/22 9:58 PM, Andy Shevchenko wrote:
+On Wed, Jan 19, 2022 at 10:47:06PM +0300, Sergey Shtylyov wrote:
+> On 1/19/22 9:51 PM, Andy Shevchenko wrote:
 
-[...]
->> Because with your change we have:
->>
->>  - < 0 -> error
->>  - == 0 -> no irq
->>  - > 0 -> irq
->>
->> For my part I'd say this doesn't justify the change, but at least I
->> could better life with the reasoning. If you start at:
->>
->> 	irq = platform_get_irq_optional(...)
->> 	if (irq < 0 && irq != -ENXIO)
->> 		return irq
->> 	else if (irq > 0)
->> 		setup_irq(irq);
->> 	else
->> 		setup_polling()
->>
->> I'd change that to
->>
->> 	irq = platform_get_irq_optional(...)
->> 	if (irq > 0) /* or >= 0 ? */
->> 		setup_irq(irq)
->> 	else if (irq == -ENXIO)
->> 		setup_polling()
->> 	else
->> 		return irq
->>
->> This still has to mention -ENXIO, but this is ok and checking for 0 just
->> hardcodes a different return value.
+> >>>>> It'd certainly be good to name anything that doesn't correspond to one
+> >>>>> of the existing semantics for the API (!) something different rather
+> >>>>> than adding yet another potentially overloaded meaning.
+> >>>>
+> >>>> It seems we're (at least) three who agree about this. Here is a patch
+> >>>> fixing the name.
+> >>>
+> >>> And similar number of people are on the other side.
+> >>
+> >> If someone already opposed to the renaming (and not only the name) I
+> >> must have missed that.
+> >>
+> >> So you think it's a good idea to keep the name
+> >> platform_get_irq_optional() despite the "not found" value returned by it
+> >> isn't usable as if it were a normal irq number?
+> > 
+> > I meant that on the other side people who are in favour of Sergey's patch.
+> > Since that I commented already that I opposed the renaming being a standalone
+> > change.
+> > 
+> > Do you agree that we have several issues with platform_get_irq*() APIs?
+> > 
+> > 1. The unfortunate naming
 > 
-> It's what we are against of. The idea is to have
-> 
-> 	irq = platform_get_irq_optional(...)
-> 	if (irq < 0) // we do not care about special cookies here
-> 		return irq;
-> 
-> 	if (irq)
-> 		setup_irq(irq)
-> 	else
-> 		setup_polling()
-> 
-> See the difference? Your code is convoluted.
+>    Mmm, "what's in a name?"... is this the topmost prio issue?
 
-   ... and it's longer when you look at the translated code! :-)
+The order is arbitrary.
 
-[...]
+> > 2. The vIRQ0 handling: a) WARN() followed by b) returned value 0
+> 
+>    This is the most severe issue, I think...
+> 
+> > 3. The specific cookie for "IRQ not found, while no error happened" case
 
-MBR, Sergey
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 -- 
 linux-phy mailing list
