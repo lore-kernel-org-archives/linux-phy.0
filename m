@@ -4,32 +4,33 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 792ACC433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Jan 2022 16:12:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44FE5C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jan 2022 18:30:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
+	Message-ID:References:CC:To:Subject:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6KXteUuxSconjw1FJw7N19DhORJVOLFh3Viv3gqHguI=; b=hTSIMk7OfWzMY9RQgcRhgPZSd2
-	CFcZPav0dv51y9BC1IQeFPLmkHQnuSZhZUmJdEKqe71qpQfV4hISt7u3EnlvgcEAyh4EdZKJBjlo0
-	ZzryGB8j7PmDJlFuFXLzQZ5uykyy1pp1iB+5xDKAOIpfNl6j0Y7YT0RkraF7Q780uqnJmLQpTqrGd
-	eZ5gNhg5wyFO9TjV+YujuU35mvKPJxtzRDJWduR6mLj1uvOv4VDXQDbaQsXomlgu21hOPPhNvX84q
-	zZPInUGrv988XJ4AatqFhxgSReHLaVBtiA+bEHag+pHUcZHjG5S/GUxcQZe98rzHAP6+yXR15l3j1
-	z80z1Gog==;
+	bh=ah+X6yXDy4cHr9mj30w3bXemB8oSK1W/b5A780m08LI=; b=3lIsf5U3zebzcHUQArm10uC1vP
+	7tyYfi5R2z+DVbtNWfx2mVSARShR4TwK9EOkkUD3v9L9SSDwZqeXzaIHY6+vtqRb++Q2KxWTd9tL7
+	3fQWG+4RbZ8F/+uVwAmYXc7ix34ZMJYQHrQwp8ON8OjZec6OGBIMCCdz4dK4gWUxJ6Bk9DZfUbxsX
+	DNHvzwuRIQPNWphVWxJlI0+OYUJ/fBYGHjps27Guhj4umwMVlathh7PnoQCxVhpByJ0UM5kncWBlU
+	Nih0n95dLk6S6M39RiCEw0+q1VzC0tKGHL5RK52v/J3TLLUhRKcty8Qz1TIE2rQ8UMfj4VuW/MkJN
+	5g0rsEzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nADZy-006Idi-To; Wed, 19 Jan 2022 16:12:58 +0000
-Received: from mxout03.lancloud.ru ([45.84.86.113])
+	id 1nAFib-006onJ-Iv; Wed, 19 Jan 2022 18:30:01 +0000
+Received: from mxout01.lancloud.ru ([45.84.86.81])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nADZX-006IPF-Nt; Wed, 19 Jan 2022 16:12:34 +0000
+ id 1nAFiI-006ofc-Qt; Wed, 19 Jan 2022 18:29:45 +0000
 Received: from LanCloud
-DKIM-Filter: OpenDKIM Filter v2.11.0 mxout03.lancloud.ru AAAEC20F6A78
+DKIM-Filter: OpenDKIM Filter v2.11.0 mxout01.lancloud.ru EF8112090480
 Received: from LanCloud
 Received: from LanCloud
 Received: from LanCloud
+From: Sergey Shtylyov <s.shtylyov@omp.ru>
 Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
 To: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>, "Geert
  Uytterhoeven" <geert@linux-m68k.org>
@@ -89,21 +90,21 @@ References: <20220117092444.opoedfcf5k5u6otq@pengutronix.de>
  <20220118120806.pbjsat4ulg3vnhsh@pengutronix.de>
  <CAMuHMdWkwV9XE_R5FZ=jPtDwLpDbEngG6+X2JmiDJCZJZvUjYA@mail.gmail.com>
  <20220118142945.6y3rmvzt44pjpr4z@pengutronix.de>
-From: Sergey Shtylyov <s.shtylyov@omp.ru>
+ <6370798a-7a7e-243d-99f9-09bf772ddbac@omp.ru>
 Organization: Open Mobile Platform
-Message-ID: <6370798a-7a7e-243d-99f9-09bf772ddbac@omp.ru>
-Date: Wed, 19 Jan 2022 19:12:23 +0300
+Message-ID: <96ff907a-4ad2-5b2e-9bcc-09592d65a6df@omp.ru>
+Date: Wed, 19 Jan 2022 21:29:28 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.10.1
 MIME-Version: 1.0
-In-Reply-To: <20220118142945.6y3rmvzt44pjpr4z@pengutronix.de>
+In-Reply-To: <6370798a-7a7e-243d-99f9-09bf772ddbac@omp.ru>
 Content-Language: en-US
 X-Originating-IP: [192.168.11.198]
-X-ClientProxiedBy: LFEXT01.lancloud.ru (fd00:f066::141) To
+X-ClientProxiedBy: LFEXT02.lancloud.ru (fd00:f066::142) To
  LFEX1907.lancloud.ru (fd00:f066::207)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220119_081232_190548_002D445A 
-X-CRM114-Status: GOOD (  28.65  )
+X-CRM114-CacheID: sfid-20220119_102943_261986_D758C455 
+X-CRM114-Status: GOOD (  15.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,150 +116,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 1/18/22 5:29 PM, Uwe Kleine-K=F6nig wrote:
+On 1/19/22 7:12 PM, Sergey Shtylyov wrote:
 
->> nst the magic not-found value (so no implementation detail magic
->>>>> leaks into the caller code) and just pass it to the next API function=
-=3D
->> .
->>>>> (And my expectation would be that if you chose to represent not-found=
-=3D
->>  by
->>>>> (void *)66 instead of NULL, you won't have to adapt any user, just th=
-=3D
->> e
->>>>> framework internal checks. This is a good thing!)
->>>>
->>>> Ah, there is the wrong assumption: drivers sometimes do need to know
->>>> if the resource was found, and thus do need to know about (void *)66,
->>>> -ENODEV, or -ENXIO.  I already gave examples for IRQ and clk before.
->>>> I can imagine these exist for gpiod and regulator, too, as soon as
->>>> you go beyond the trivial "enable" and "disable" use-cases.
->>>
->>> My premise is that every user who has to check for "not found"
->>> explicitly should not use (clk|gpiod)_get_optional() but
->>> (clk|gpiod)_get() and do proper (and explicit) error handling for
->>> -ENODEV. (clk|gpiod)_get_optional() is only for these trivial use-cases.
->>>
->>>> And 0/NULL vs. > 0 is the natural check here: missing, but not
->>>> an error.
->>>
->>> For me it it 100% irrelevant if "not found" is an error for the query
->>> function or not. I just have to be able to check for "not found" and
->>> react accordingly.
->>>
->>> And adding a function
->>>
->>>         def platform_get_irq_opional():
->>>                 ret =3D3D platform_get_irq()
->>>                 if ret =3D3D=3D3D -ENXIO:
->>>                         return 0
->>>                 return ret
->>>
->>> it's not a useful addition to the API if I cannot use 0 as a dummy
->>> because it doesn't simplify the caller enough to justify the additional
->>> function.
->>>
->>> The only thing I need to be able is to distinguish the cases "there is
->>> an irq", "there is no irq" and anything else is "there is a problem I
->>> cannot handle and so forward it to my caller". The semantic of
->>> platform_get_irq() is able to satisfy this requirement[1], so why intro=
-du=3D
->> ce
->>> platform_get_irq_opional() for the small advantage that I can check for
->>> not-found using
->>>
->>>         if (!irq)
->>>
->>> instead of
->>>
->>>         if (irq !=3D3D -ENXIO)
->>>
->>> ? The semantic of platform_get_irq() is easier ("Either a usable
->>> non-negative irq number or a negative error number") compared to
->>> platform_get_irq_optional() ("Either a usable positive irq number or a
->>> negative error number or 0 meaning not found"). Usage of
->>> platform_get_irq() isn't harder or more expensive (neither for a human
->>> reader nor for a maching running the resulting compiled code).
->>> For a human reader
->>>
->>>         if (irq !=3D3D -ENXIO)
->>>
->>> is even easier to understand because for
->>>
->>>         if (!irq)
->>>
->>> they have to check where the value comes from, see it's
->>> platform_get_irq_optional() and understand that 0 means not-found.
+[...]
+>>> So there's still a need for two functions.
 >>
->> "vIRQ zero does not exist."
-> =
-
-> With that statement in mind I would expect that a function that gives me
-> an (v)irq number never returns 0.
-> =
-
->>> This function just adds overhead because as a irq framework user I have
->>> to understand another function. For me the added benefit is too small to
->>> justify the additional function. And you break out-of-tree drivers.
->>> These are all no major counter arguments, but as the advantage isn't
->>> major either, they still matter.
->>>
->>> Best regards
->>> Uwe
->>>
->>> [1] the only annoying thing is the error message.
+>> Or a single function not emitting an error message together with the
+>> callers being responsible for calling dev_err().
 >>
->> So there's still a need for two functions.
-> =
+>> So the options in my preference order (first is best) are:
+>>
+>>  - Remove the printk from platform_get_irq() and remove
+>>    platform_get_irq_optional();
+> 
+>    Strong NAK here:
+> - dev_err() in our function saves a lot of (repeatable!) comments;
 
-> Or a single function not emitting an error message together with the
-> callers being responsible for calling dev_err().
-> =
+   s/comments/code/.
+   Actually, I think I can accept the removal of dev_err_probe() in platform_get_irq()
+as this is not a common practice anyway (yet? :-))...
 
-> So the options in my preference order (first is best) are:
-> =
+> - we've already discussed that it's more optimal to check againt 0 than
 
->  - Remove the printk from platform_get_irq() and remove
->    platform_get_irq_optional();
+   Against. :-)
 
-   Strong NAK here:
-- dev_err() in our function saves a lot of (repeatable!) comments;
-- we've already discussed that it's more optimal to check againt 0 than
-  against -ENXIO in the callers.
+>   against -ENXIO in the callers.
 
->  - Rename platform_get_irq_optional() to platform_get_irq_silently()
+   And we also aim to be the error code agnostic in the callers...
 
-   NAK as well. We'd better off complaining about irq < 0 in this function.
+>>  - Rename platform_get_irq_optional() to platform_get_irq_silently()
+> 
+>    NAK as well. We'd better off complaining about irq < 0 in this function.
 
->  - Keep platform_get_irq_optional() as is
+>>  - Keep platform_get_irq_optional() as is
+> 
+>    NAK, it's suboptimal in the call sites.
 
-   NAK, it's suboptimal in the call sites.
+   s/in/on/.
 
->  - Collect underpants
-> =
+[...]
 
->  - ?
-
-   You're on your own here. :-)
-
->  - Change semantic of platform_get_irq_optional()
-
-   Yes, we should change the semantics if it serves our goals better. =
-
-
-> Best regards
-> Uwe
+>> Best regards
+>> Uwe
 
 MBR, Sergey
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
