@@ -4,139 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E72DC433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Jan 2022 02:38:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87941C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jan 2022 03:07:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dLdSNjHDtUftDmKvkcJ4e2+QgWf2smN08opGgnZWRq4=; b=sp1nS9vMn5rvyI
-	sNhtAevuazJNJI80pFUWOr8gKZaP1DIm+diwrmtiop7MDWOZ+L5UUXv12L22bhOULrnMPmnrigucX
-	I/OuhAdKd/0urhmg9rKvgtcfm2j1E91QiofPxHdo8JmgOn6WbCfB3To9g2tlAI7NBoACJ4t+ntyyM
-	Pd+fwYRug7zhjIos9aQcnOn1UwsFlNvx2+jQ4KZ0SVmQbLdRPsxztw4QumOasV1wuetvCz+lVWQg9
-	G1ZpAVXuYUwxIhAr2wsLFIkly3EXQWJ4Aa1O8Eb0XmQVMKn+Dj/Jy3EBwEM8vqC05CBAlmi20oZMz
-	G5sZXYlibOObl6EsWzOg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9KIFpzvxShR8d/+dUV3TcNaS029dgVwstAEjZHxKENc=; b=YzSBGxYK50YBoM
+	/4CKyjBnArEkaVvdAm3lyMap9Dr6iEiS6ogoNx2LzP6OU0DjFtjrEjQvgX+eqrVZeMhafh3HgyTgd
+	g1KRfXx4/UIRlbpvX/GFi2GkOwQ8NKD4a2Skm/X9T3btBo1nZNcLCYWz0eIFerDKd1MGt4jlE5btu
+	MtbGswQcREukWiSMKoQHsWMqgP1puJjYc+HHhVpEpZ/EtHIHw7GWsL3vevkJkrVFASA3vMcYIW78m
+	GieNHXHqHdytOf30M6SQ9COINMvlJ/k2UpAl8R2u+3nziW6DjDDTTQgat4a1Bsp6FJ/h/gUOtPrQL
+	w0sGlF1pC53n3ZgdkMZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nA0rk-003ac0-CK; Wed, 19 Jan 2022 02:38:28 +0000
-Received: from mail-eopbgr70088.outbound.protection.outlook.com ([40.107.7.88]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1nA1Ja-003eLz-V9; Wed, 19 Jan 2022 03:07:14 +0000
+Received: from mail-oi1-f173.google.com ([209.85.167.173])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nA0rU-003aX7-NI; Wed, 19 Jan 2022 02:38:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=O/HZWinBxVyJNHUB9jwez23UnAa2EpEuqRmUA1S9vG/FdubUQEoX6jFhmkXHHHh2menOttlF4O7XqPisqymDRKhX9zHt0IUUe+9IBxLa+3cjQSabmRZLkpiFf5KPuc6j/IE3bLkIkKZ1V2WPf/9NA2S9el7hdolsPZndnfEaI9A3AWlCHlV6lbH82MrAzzkH7bSa8gqAMzAbctktOYRgcW/C3RBZmcmxq3gGjXRdxd08crpglWaKsnFm0XIHcZSBMlGbo29Je9nNwPXEjZx6nBnwKAnFLZ0A6TAkVDhx7OWUdkgWih3Ie3Gf+aIF/9cKVBSKWD3m0GO7pCYgro3fIQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=tnJ5yxdI7HHJD0XMNqupCI6R887JEfSr30UT0n2cnmg=;
- b=CLVvkCXd2KEWD0tN8MdcfmjjLPe3g9s3IBRE1Hl4pMRC4PK/hW45ylXDvdZfuwgEuargFQG8sZGjAnVvoMnV1uxb+LnQDcr5r6zZ+HXQwCGAflp1cwjuwwYa2JOnonG9rLc4/dF/oD1TyICUs+UHYld1WJp3HH3zqJx7pIyuN0xGRpwfs8KPenRGZIhyELTVELtBm67xwKNROVMcRJxkjn3JAAdvhfQeBKxn8DXg1snLWWYYFqG31I44oFsJoCQnQqEgPrrMBIeYfxHZBpHBVAC6dL7/5MrEV3c4wCwwLzCiCYRZoGI89Qeu+W11p6RvKnD8ruR5eROCfVAwlXmfAQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tnJ5yxdI7HHJD0XMNqupCI6R887JEfSr30UT0n2cnmg=;
- b=Q55FkdahyaSmAqC3pobY3aQ409JiWHJy6fK1OZD+9Z675/UBKN+KrAAzGww+cgXZq26MELvK3MG0o4p0tDINNz6gfdm6dvTHiGkVgUIdng2lMCSbNUVr2LIe/IP+mRHwWpDARIrDxoCXjJJuUfZ8iWNtTSZKr3Aa0hvLzvyMIZE=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
- by AM6PR04MB5543.eurprd04.prod.outlook.com (2603:10a6:20b:99::28)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4888.11; Wed, 19 Jan
- 2022 02:38:09 +0000
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::a5b3:9e5:366:a3fc]) by AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::a5b3:9e5:366:a3fc%3]) with mapi id 15.20.4888.014; Wed, 19 Jan 2022
- 02:38:08 +0000
-From: Liu Ying <victor.liu@nxp.com>
-To: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-rockchip@lists.infradead.org
-Cc: linux-imx@nxp.com, Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Robert Foss <robert.foss@linaro.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Heiko Stuebner <heiko@sntech.de>, Maxime Ripard <mripard@kernel.org>,
- =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
-Subject: [PATCH v2] phy: dphy: Correct clk_pre parameter
-Date: Wed, 19 Jan 2022 10:37:14 +0800
-Message-Id: <20220119023714.1498508-1-victor.liu@nxp.com>
-X-Mailer: git-send-email 2.25.1
-X-ClientProxiedBy: SGXP274CA0020.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b8::32)
- To AM7PR04MB7046.eurprd04.prod.outlook.com
- (2603:10a6:20b:113::22)
+ id 1nA1JY-003eKy-3V
+ for linux-phy@lists.infradead.org; Wed, 19 Jan 2022 03:07:13 +0000
+Received: by mail-oi1-f173.google.com with SMTP id q186so1998714oih.8
+ for <linux-phy@lists.infradead.org>; Tue, 18 Jan 2022 19:07:11 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=ZG6b7uz1PB4E2oe2QeAcnHF46q6pw+U4MECvO3MKSCw=;
+ b=IAcgFqVI7QjExgLS5hzm9BBWIpd/SSildr4YDICJpxtDNXdfhNOzjBgV1k2MVGmqN3
+ jY/TeqzLUIhoGoFDt/KbRc2LVlcMAPCpns2U1prNZllF6XDSbbcvBOGIQSTTUTefsg0o
+ QKwNpeuqMU63/knrwZ0zjWTam3Dhfxu1tv/kciwPu3iwH1f+W0yR+TuiEXtEgSkNv2+e
+ Ycy49/TD36SMVnytygL2+B7t++WJnbtiB/wcA/k4qhtXvORQVAE9jVhumJrtJFMO9dKn
+ EmcMnI5YlEjWEAMeeO7oxeSarRIM/dO2WwlflPpleq/SKIwZ7xtly2M1nMAQZSOsEmdK
+ q0XA==
+X-Gm-Message-State: AOAM53331xMRglrs2pkSr4dPLQXG6lvwLvAj7r7SBtObPZ/u4GMlbMtd
+ kLEk1nS2jO7aWN86KGcSNA==
+X-Google-Smtp-Source: ABdhPJxws2eRhptEN549//3CvsKN266kS9zY1g70eqi83+1D1kdUwALIO5rNbFeHwdXB8B1RTkY0qQ==
+X-Received: by 2002:a05:6808:1188:: with SMTP id
+ j8mr1278242oil.101.1642561631142; 
+ Tue, 18 Jan 2022 19:07:11 -0800 (PST)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id o16sm6431863otk.7.2022.01.18.19.07.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 18 Jan 2022 19:07:10 -0800 (PST)
+Received: (nullmailer pid 2557216 invoked by uid 1000);
+ Wed, 19 Jan 2022 03:07:09 -0000
+Date: Tue, 18 Jan 2022 21:07:09 -0600
+From: Rob Herring <robh@kernel.org>
+To: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>
+Cc: devicetree@vger.kernel.org, Vladimir Oltean <olteanv@gmail.com>,
+ Holger Brunck <holger.brunck@hitachienergy.com>, Andrew Lunn <andrew@lunn.ch>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>, linux-phy@lists.infradead.org,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH devicetree v2] dt-bindings: phy: Add `tx-p2p-microvolt`
+ property binding
+Message-ID: <YeeAXSHSCn6PtqKW@robh.at.kernel.org>
+References: <20220112181602.13661-1-kabel@kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 5bb769a4-2ab6-4f02-ebee-08d9daf4ba81
-X-MS-TrafficTypeDiagnostic: AM6PR04MB5543:EE_
-X-Microsoft-Antispam-PRVS: <AM6PR04MB55439CF6C586B334233D546998599@AM6PR04MB5543.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:4941;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: H0De4MzA40eNG7v9yOW3neQdSNkL5LwoK2/JY2OEXHrheUb0DRgl/Zfu473NjWCtBXVJs46M+nHpcw0OvX8wIsa1oXVIa8k4R5P4rSuqGwwlS33G3zwu6fJ4i96kFSbB7giA9/qtAbzGFJIKM8cBxUF+4J8XwaZpSu2IVuN9060qyhzFKGF5eC3EBR+DfRAe0qbEIz9LKTzTopM3HKi3Mw00q7d7BBhmoFa/6zJCvWbeJttbnWrNsg2CNQcVSwOHN8ohkBQpy2b/FxlRqG7VyBQLe/yHdsCPXoxOrekwvmRI6TUsJTEojOnovsKF+RMVCFJYzyYZHAGQmtpNLVFeS2K9UTiRMo/6nyZa3ni0TqaBFyf3hGWmNuxNZRYNuMRqo9Dsz8NZghCre9RdcnMXadBeTdcrdJMUwJHAmgYK4wCYnFoXfZaW1wzopDuW/XXdS+kLpMEWCR7xwS79cCUgtu+2egXjTz2sLK79M3zH0svtePr3hF9aKqmqMvacEwl1XvfnRF5wM3oEg0cWk0103lTVJ3+kXdA+JZtowiCLxlrNRoEnM4Bhhyp521vGommCWF1xbm8IF0FRAPg5bher3yleSq/21krxuWMip0vCiwP1vNSE662ObWqiQI2rk4OmrtFtVEW8187d9/G6I/gIALnN2NXJh6v2B9zBowvbJIqvZm/dH4Suxb94cSelhsShlBeel5sfnBOYC6/YPrwaEA==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM7PR04MB7046.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(8676002)(38350700002)(38100700002)(66476007)(66556008)(316002)(52116002)(36756003)(186003)(6506007)(6666004)(1076003)(8936002)(26005)(2616005)(4326008)(66574015)(83380400001)(86362001)(7416002)(508600001)(66946007)(2906002)(6512007)(54906003)(5660300002)(6486002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Kzd3aGdkZHVNbUMzSzd1RGZsQk1HdzdNZVJuMThqTjJSanBJeURncFpCdklB?=
- =?utf-8?B?WGpMbjhuTTI5NVV2NlNWNTIzVkJUMUZQQ2pmeWczakRRaTdabURSakloSnZF?=
- =?utf-8?B?VkUxMVpubFlhU2ZjN2RXaFNDNUd1OEprVHlhMm5tc2xEanFFMWhHRzJSbmhi?=
- =?utf-8?B?Y1JwMTFYRS9PSUFOMW9wN0ZDS3RnWlQzLzlSbXBDKys2OFZkL1ZZK0RQcmUz?=
- =?utf-8?B?MjV6dEpPK05SenFZVmRJejBtZ3JLcGdSamRMMGU4cENOV1hIUXBWSjJJc3BG?=
- =?utf-8?B?Z1A2RmFsZlZXa0h3SVJzMllzVWM5cW5naWhUWTIzUCtxUVVMemNydFZVdVFE?=
- =?utf-8?B?QnAwbmNwSVEvaVVFQnZTRnJtdXAwclZVWlpid3NaRzRXTDluTlAxcW9oRUpv?=
- =?utf-8?B?dGxIUWNzdUJjbmhLZVRCNE5KdlBVYjRwLzNZVnRqN3ZkMC9hRmM1U09YeGox?=
- =?utf-8?B?Ty94VXAvSnVkTWY2bnVDUXFEYU1kejBUQm9RL0VtSFhSLzByc2pmRS9vVmV1?=
- =?utf-8?B?S3FleUhqTS9WOHUzUU5KSkg3ZFVZYmJVSEdxK2pQNDNrQjF6clJUeDhubWlZ?=
- =?utf-8?B?N2xIZ1FFRW1VVCtURlNveUF4U2l1WE55RDdqS0h5UVRRVFlzRk5EMHlrblFQ?=
- =?utf-8?B?dlB0RkxTKzBzaVFBYU02ZEVld1d3ZWR6SS82N2c5SlVsekl5U281enJCMTRI?=
- =?utf-8?B?QkpURXpwdmpmN3JhaTJjN1l0R3l5L1FIWWpLdDVjTmVxSU4wWldpQjdSRmxv?=
- =?utf-8?B?Z2pnUjd2cTZDYTcyUXkyWWcwdFJSUG1FQUhySXdUNVptZlYxZXZGTnd2L1ZI?=
- =?utf-8?B?eU1WYklxTlVUUEh6Nkw0RFhpcnRzK0FERVEyVm5vZ3lnbXRmZ1A3Z1hNRThq?=
- =?utf-8?B?VVNmNnhkeFBQSEE2RTk0aVExWkpJMWNYWEp5c3RKdVlFdVNwdUZ2eVA4UmxI?=
- =?utf-8?B?a1NhNWJzWC9nNlNUWEI0QmtHS0xRcElObSt4Y1BqVkhSMzUzZE5CRXRIQ3Zv?=
- =?utf-8?B?N0ZvbkpwZnFxb01kbTZ0N0lIZnVkcVZwWSt6VndLbm9vcnBoeHdzbjFyVXBF?=
- =?utf-8?B?UU1aRW9EazBmelJkUy92Snc3d2dQK2NLclFaK0cvTUVEOElTblppLzZmS2Iz?=
- =?utf-8?B?cVdhNDVoWkNabUFmQVdHU3NyQngwdHkvcSt5c3ZxRy9hREZvMFl6MlJlWmlO?=
- =?utf-8?B?a05IM2F1T004ZXhpcGlib1ZSdExJVGM3YVcvd0JKbm1QUG45YlA5TlpnbDBE?=
- =?utf-8?B?MHFjN2grMUg4aHZTMUZodGlWTzNROEJybW50QWVKdFRwaTBCeXA4N3NxUDVn?=
- =?utf-8?B?bVRHNUpESVlaOXFZaTZPVnJIekM1UVR3bjlTZnE5RHN5WHB5R2M1QnNBQnBl?=
- =?utf-8?B?YmtSTitUeWwyZkVRWm84QmFzV3lLOWJpN0dtNXNSZmNpalN1Z0s4N3prT1RB?=
- =?utf-8?B?Wlo1bFIzWXl4S2ZxRFFxZVVqVE5QeGw4aDh4Z2cxTWM3MjdhNXZLWmdEcUZo?=
- =?utf-8?B?Yng2MndtL0FiWTJhNFlrRVlYNktTcWZVdU02RlphVk4xV2hFMHJ5VkpsUTlC?=
- =?utf-8?B?Q2ljN1hVQVphNWhuK2F3TkdqdkxldXdNR2JOUnVPM1RzM3JCbU1WQnFJZGZG?=
- =?utf-8?B?dk5EK2xHTWIzL1VEaU9Qdy9mS3VnRk5sQTBqc3A3RVJiTTN2NVZpM1NrM1BP?=
- =?utf-8?B?ZGkwT1BhOElkaWFqS0Nkamp2K1JuSmF5TkkvRnRvQ0ltMVlyTzFkemVMY1di?=
- =?utf-8?B?NFNOQmNjRFFZd1VuUmZOQ1kyRXFjYWd1K2EraFZkUTV5SzFwQ1JNVnFwYUpx?=
- =?utf-8?B?U21xUkxadTRwWDFTTWo1Mkg3NDFRNUpzdjZJU2FiUkJnb3I3VnA0L0k4Z0xJ?=
- =?utf-8?B?ZlA2MFEzd3NBdklydExWVisxaUhraWVpRmJuTndXTFlRVUtxQVBRWkVrUnJU?=
- =?utf-8?B?ZUxER2EvTmNoUzN0MnloRWR4ZVcwRkVZd05EWU5oYXZSVFRWbG1lQnROSGJK?=
- =?utf-8?B?RDZ5WjQ0ZFJDV1pEVHRrSy94eEFuNW11eHdUdXdoMzlYRklnUVdhTTB4di9i?=
- =?utf-8?B?cUJFU2N5UWdYNzhDTHJwa0F4N3FUTmtwb2RPZzBST01EUDBnREQwcVAyN3Y1?=
- =?utf-8?B?czZCWWpiZVVsdVBzaDZyYVFNUFNhWXN4R3B4TmN0eE81eXU5WEhpU2FVempF?=
- =?utf-8?Q?JLS3wQ9+HeDfX45OA3oIVCw=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5bb769a4-2ab6-4f02-ebee-08d9daf4ba81
-X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Jan 2022 02:38:08.8868 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: stLubDZYpPueqJF6FzsG4jPwFnyBBjeKvxv40o50IKLdq5mjE9K4tB6cLmRfQr2MROlhm9RxfjuuDRRvjxG0bQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5543
+Content-Disposition: inline
+In-Reply-To: <20220112181602.13661-1-kabel@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220118_183812_965035_4D1FCA48 
-X-CRM114-Status: GOOD (  21.71  )
+X-CRM114-CacheID: sfid-20220118_190712_182449_8DC98CA6 
+X-CRM114-Status: GOOD (  25.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,131 +81,188 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhlIEQtUEhZIHNwZWNpZmljYXRpb24gKHYxLjIpIGV4cGxpY2l0bHkgbWVudGlvbnMgdGhhdCB0
-aGUgVC1DTEstUFJFCnBhcmFtZXRlcidzIHVuaXQgaXMgVW5pdCBJbnRlcnZhbChVSSkgYW5kIHRo
-ZSBtaW5pbXVtIHZhbHVlIGlzIDguICBBbHNvLAprZXJuZWwgZG9jIG9mIHRoZSAnY2xrX3ByZScg
-bWVtYmVyIG9mIHN0cnVjdCBwaHlfY29uZmlndXJlX29wdHNfbWlwaV9kcGh5Cm1lbnRpb25zIHRo
-YXQgaXQgc2hvdWxkIGJlIGluIFVJLiAgSG93ZXZlciwgdGhlIGRwaHkgY29yZSBkcml2ZXIgd3Jv
-bmdseQpzZXRzICdjbGtfcHJlJyB0byA4MDAwLCB3aGljaCBzZWVtcyB0byBoaW50IHRoYXQgaXQn
-cyBpbiBwaWNvc2Vjb25kcy4KQW5kLCB0aGUga2VybmVsIGRvYyBvZiB0aGUgJ2Nsa19wcmUnIG1l
-bWJlciB3cm9uZ2x5IHNheXMgdGhlIG1pbmltdW0gdmFsdWUKaXMgJzggVUknLCBpbnN0ZWFkIG9m
-IDguCgpTbywgbGV0J3MgZml4IGJvdGggdGhlIGRwaHkgY29yZSBkcml2ZXIgYW5kIHRoZSBrZXJu
-ZWwgZG9jIG9mIHRoZSAnY2xrX3ByZScKbWVtYmVyIHRvIGNvcnJlY3RseSByZWZsZWN0IHRoZSBU
-LUNMSy1QUkUgcGFyYW1ldGVyJ3MgdW5pdCBhbmQgdGhlIG1pbmltdW0KdmFsdWUgYWNjb3JkaW5n
-IHRvIHRoZSBELVBIWSBzcGVjaWZpY2F0aW9uLgoKSSdtIGFzc3VtaW5nIHRoYXQgYWxsIGltcGFj
-dGVkIGN1c3RvbSBkcml2ZXJzIHNoYWxsIHByb2dyYW0gdmFsdWVzIGluClR4Qnl0ZUNsa0hTIGN5
-Y2xlcyBpbnRvIGhhcmR3YXJlIGZvciB0aGUgVC1DTEstUFJFIHBhcmFtZXRlci4gIFRoZSBELVBI
-WQpzcGVjaWZpY2F0aW9uIG1lbnRpb25zIHRoYXQgdGhlIGZyZXF1ZW5jeSBvZiBUeEJ5dGVDbGtI
-UyBpcyBleGFjdGx5IDEvOAp0aGUgSGlnaC1TcGVlZChIUykgYml0IHJhdGUoZWFjaCBIUyBiaXQg
-Y29uc3VtZXMgb25lIFVJKS4gIFNvLCByZWxldmFudApjdXN0b20gZHJpdmVyIGNvZGUgaXMgY2hh
-bmdlZCB0byBwcm9ncmFtIHRob3NlIHZhbHVlcyBhcwpESVZfUk9VTkRfVVAoY2ZnLT5jbGtfcHJl
-LCBCSVRTX1BFUl9CWVRFKSwgdGhlbi4KCk5vdGUgdGhhdCBJJ3ZlIG9ubHkgdGVzdGVkIHRoZSBw
-YXRjaCB3aXRoIFJNNjcxOTEgRFNJIHBhbmVsIG9uIGkuTVg4bXEgRVZLLgpIZWxwIGlzIG5lZWRl
-ZCB0byB0ZXN0IHdpdGggb3RoZXIgaS5NWDhtcSwgTWVzb24gYW5kIFJvY2tjaGlwIHBsYXRmb3Jt
-cywKYXMgSSBkb24ndCBoYXZlIHRoZSBoYXJkd2FyZXMuCgpGaXhlczogMmVkODY5OTkwZTE0ICgi
-cGh5OiBBZGQgTUlQSSBELVBIWSBjb25maWd1cmF0aW9uIG9wdGlvbnMiKQpDYzogQW5kcnplaiBI
-YWpkYSA8YW5kcnplai5oYWpkYUBpbnRlbC5jb20+CkNjOiBOZWlsIEFybXN0cm9uZyA8bmFybXN0
-cm9uZ0BiYXlsaWJyZS5jb20+CkNjOiBSb2JlcnQgRm9zcyA8cm9iZXJ0LmZvc3NAbGluYXJvLm9y
-Zz4KQ2M6IExhdXJlbnQgUGluY2hhcnQgPExhdXJlbnQucGluY2hhcnRAaWRlYXNvbmJvYXJkLmNv
-bT4KQ2M6IEpvbmFzIEthcmxtYW4gPGpvbmFzQGt3aWJvby5zZT4KQ2M6IEplcm5laiBTa3JhYmVj
-IDxqZXJuZWouc2tyYWJlY0BnbWFpbC5jb20+CkNjOiBEYXZpZCBBaXJsaWUgPGFpcmxpZWRAbGlu
-dXguaWU+CkNjOiBEYW5pZWwgVmV0dGVyIDxkYW5pZWxAZmZ3bGwuY2g+CkNjOiBLaXNob24gVmlq
-YXkgQWJyYWhhbSBJIDxraXNob25AdGkuY29tPgpDYzogVmlub2QgS291bCA8dmtvdWxAa2VybmVs
-Lm9yZz4KQ2M6IEtldmluIEhpbG1hbiA8a2hpbG1hbkBiYXlsaWJyZS5jb20+CkNjOiBKZXJvbWUg
-QnJ1bmV0IDxqYnJ1bmV0QGJheWxpYnJlLmNvbT4KQ2M6IE1hcnRpbiBCbHVtZW5zdGluZ2wgPG1h
-cnRpbi5ibHVtZW5zdGluZ2xAZ29vZ2xlbWFpbC5jb20+CkNjOiBIZWlrbyBTdHVlYm5lciA8aGVp
-a29Ac250ZWNoLmRlPgpDYzogTWF4aW1lIFJpcGFyZCA8bXJpcGFyZEBrZXJuZWwub3JnPgpDYzog
-R3VpZG8gR8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4KVGVzdGVkLWJ5OiBMaXUgWWluZyA8dmlj
-dG9yLmxpdUBueHAuY29tPiAjIFJNNjcxOTEgRFNJIHBhbmVsIG9uIGkuTVg4bXEgRVZLClNpZ25l
-ZC1vZmYtYnk6IExpdSBZaW5nIDx2aWN0b3IubGl1QG54cC5jb20+Ci0tLQp2MS0+djI6CiogVXNl
-IEJJVFNfUEVSX0JZVEUgbWFjcm8uIChBbmRyemVqKQoqIERyb3AgZHNpIGFyZ3VtZW50IGZyb20g
-dWkyYmMoKSBpbiBud2wtZHNpLmMuCgogZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpLmMg
-ICAgICAgICAgICAgICAgIHwgMTIgKysrKystLS0tLS0tCiBkcml2ZXJzL3BoeS9hbWxvZ2ljL3Bo
-eS1tZXNvbi1heGctbWlwaS1kcGh5LmMgICAgfCAgMyArKy0KIGRyaXZlcnMvcGh5L3BoeS1jb3Jl
-LW1pcGktZHBoeS5jICAgICAgICAgICAgICAgICB8ICA0ICsrLS0KIGRyaXZlcnMvcGh5L3JvY2tj
-aGlwL3BoeS1yb2NrY2hpcC1pbm5vLWRzaWRwaHkuYyB8ICAzICsrLQogaW5jbHVkZS9saW51eC9w
-aHkvcGh5LW1pcGktZHBoeS5oICAgICAgICAgICAgICAgIHwgIDIgKy0KIDUgZmlsZXMgY2hhbmdl
-ZCwgMTIgaW5zZXJ0aW9ucygrKSwgMTIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVy
-cy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpLmMgYi9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1k
-c2kuYwppbmRleCBhNzM4OWEwZmFjZmIuLmFmMDdlZWI0N2NhMCAxMDA2NDQKLS0tIGEvZHJpdmVy
-cy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpLmMKKysrIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9u
-d2wtZHNpLmMKQEAgLTcsNiArNyw3IEBACiAgKi8KIAogI2luY2x1ZGUgPGxpbnV4L2JpdGZpZWxk
-Lmg+CisjaW5jbHVkZSA8bGludXgvYml0cy5oPgogI2luY2x1ZGUgPGxpbnV4L2Nsay5oPgogI2lu
-Y2x1ZGUgPGxpbnV4L2lycS5oPgogI2luY2x1ZGUgPGxpbnV4L21hdGg2NC5oPgpAQCAtMTk2LDEy
-ICsxOTcsOSBAQCBzdGF0aWMgdTMyIHBzMmJjKHN0cnVjdCBud2xfZHNpICpkc2ksIHVuc2lnbmVk
-IGxvbmcgbG9uZyBwcykKIC8qCiAgKiB1aTJiYyAtIFVJIHRpbWUgcGVyaW9kcyB0byBieXRlIGNs
-b2NrIGN5Y2xlcwogICovCi1zdGF0aWMgdTMyIHVpMmJjKHN0cnVjdCBud2xfZHNpICpkc2ksIHVu
-c2lnbmVkIGxvbmcgbG9uZyB1aSkKK3N0YXRpYyB1MzIgdWkyYmModW5zaWduZWQgaW50IHVpKQog
-ewotCXUzMiBicHAgPSBtaXBpX2RzaV9waXhlbF9mb3JtYXRfdG9fYnBwKGRzaS0+Zm9ybWF0KTsK
-LQotCXJldHVybiBESVY2NF9VNjRfUk9VTkRfVVAodWkgKiBkc2ktPmxhbmVzLAotCQkJCSAgZHNp
-LT5tb2RlLmNsb2NrICogMTAwMCAqIGJwcCk7CisJcmV0dXJuIERJVl9ST1VORF9VUCh1aSwgQklU
-U19QRVJfQllURSk7CiB9CiAKIC8qCkBAIC0yMzIsMTIgKzIzMCwxMiBAQCBzdGF0aWMgaW50IG53
-bF9kc2lfY29uZmlnX2hvc3Qoc3RydWN0IG53bF9kc2kgKmRzaSkKIAl9CiAKIAkvKiB2YWx1ZXMg
-aW4gYnl0ZSBjbG9jayBjeWNsZXMgKi8KLQljeWNsZXMgPSB1aTJiYyhkc2ksIGNmZy0+Y2xrX3By
-ZSk7CisJY3ljbGVzID0gdWkyYmMoY2ZnLT5jbGtfcHJlKTsKIAlEUk1fREVWX0RFQlVHX0RSSVZF
-Uihkc2ktPmRldiwgImNmZ190X3ByZTogMHgleFxuIiwgY3ljbGVzKTsKIAlud2xfZHNpX3dyaXRl
-KGRzaSwgTldMX0RTSV9DRkdfVF9QUkUsIGN5Y2xlcyk7CiAJY3ljbGVzID0gcHMyYmMoZHNpLCBj
-ZmctPmxweCArIGNmZy0+Y2xrX3ByZXBhcmUgKyBjZmctPmNsa196ZXJvKTsKIAlEUk1fREVWX0RF
-QlVHX0RSSVZFUihkc2ktPmRldiwgImNmZ190eF9nYXAgKHByZSk6IDB4JXhcbiIsIGN5Y2xlcyk7
-Ci0JY3ljbGVzICs9IHVpMmJjKGRzaSwgY2ZnLT5jbGtfcHJlKTsKKwljeWNsZXMgKz0gdWkyYmMo
-Y2ZnLT5jbGtfcHJlKTsKIAlEUk1fREVWX0RFQlVHX0RSSVZFUihkc2ktPmRldiwgImNmZ190X3Bv
-c3Q6IDB4JXhcbiIsIGN5Y2xlcyk7CiAJbndsX2RzaV93cml0ZShkc2ksIE5XTF9EU0lfQ0ZHX1Rf
-UE9TVCwgY3ljbGVzKTsKIAljeWNsZXMgPSBwczJiYyhkc2ksIGNmZy0+aHNfZXhpdCk7CmRpZmYg
-LS1naXQgYS9kcml2ZXJzL3BoeS9hbWxvZ2ljL3BoeS1tZXNvbi1heGctbWlwaS1kcGh5LmMgYi9k
-cml2ZXJzL3BoeS9hbWxvZ2ljL3BoeS1tZXNvbi1heGctbWlwaS1kcGh5LmMKaW5kZXggY2QyMzMy
-YmYwZTMxLi5mZGJkNjRjMDNlMTIgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGh5L2FtbG9naWMvcGh5
-LW1lc29uLWF4Zy1taXBpLWRwaHkuYworKysgYi9kcml2ZXJzL3BoeS9hbWxvZ2ljL3BoeS1tZXNv
-bi1heGctbWlwaS1kcGh5LmMKQEAgLTksNiArOSw3IEBACiAKICNpbmNsdWRlIDxsaW51eC9iaXRm
-aWVsZC5oPgogI2luY2x1ZGUgPGxpbnV4L2JpdG9wcy5oPgorI2luY2x1ZGUgPGxpbnV4L2JpdHMu
-aD4KICNpbmNsdWRlIDxsaW51eC9jbGsuaD4KICNpbmNsdWRlIDxsaW51eC9kZWxheS5oPgogI2lu
-Y2x1ZGUgPGxpbnV4L2lvLmg+CkBAIC0yNTAsNyArMjUxLDcgQEAgc3RhdGljIGludCBwaHlfbWVz
-b25fYXhnX21pcGlfZHBoeV9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCiAJCSAgICAgKERJVl9S
-T1VORF9VUChwcml2LT5jb25maWcuY2xrX3plcm8sIHRlbXApIDw8IDE2KSB8CiAJCSAgICAgKERJ
-Vl9ST1VORF9VUChwcml2LT5jb25maWcuY2xrX3ByZXBhcmUsIHRlbXApIDw8IDI0KSk7CiAJcmVn
-bWFwX3dyaXRlKHByaXYtPnJlZ21hcCwgTUlQSV9EU0lfQ0xLX1RJTTEsCi0JCSAgICAgRElWX1JP
-VU5EX1VQKHByaXYtPmNvbmZpZy5jbGtfcHJlLCB0ZW1wKSk7CisJCSAgICAgRElWX1JPVU5EX1VQ
-KHByaXYtPmNvbmZpZy5jbGtfcHJlLCBCSVRTX1BFUl9CWVRFKSk7CiAKIAlyZWdtYXBfd3JpdGUo
-cHJpdi0+cmVnbWFwLCBNSVBJX0RTSV9IU19USU0sCiAJCSAgICAgRElWX1JPVU5EX1VQKHByaXYt
-PmNvbmZpZy5oc19leGl0LCB0ZW1wKSB8CmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9waHktY29y
-ZS1taXBpLWRwaHkuYyBiL2RyaXZlcnMvcGh5L3BoeS1jb3JlLW1pcGktZHBoeS5jCmluZGV4IDI4
-OGM5YzY3YWE3NC4uY2NiNDA0NTY4NWNkIDEwMDY0NAotLS0gYS9kcml2ZXJzL3BoeS9waHktY29y
-ZS1taXBpLWRwaHkuYworKysgYi9kcml2ZXJzL3BoeS9waHktY29yZS1taXBpLWRwaHkuYwpAQCAt
-MzYsNyArMzYsNyBAQCBpbnQgcGh5X21pcGlfZHBoeV9nZXRfZGVmYXVsdF9jb25maWcodW5zaWdu
-ZWQgbG9uZyBwaXhlbF9jbG9jaywKIAogCWNmZy0+Y2xrX21pc3MgPSAwOwogCWNmZy0+Y2xrX3Bv
-c3QgPSA2MDAwMCArIDUyICogdWk7Ci0JY2ZnLT5jbGtfcHJlID0gODAwMDsKKwljZmctPmNsa19w
-cmUgPSA4OwogCWNmZy0+Y2xrX3ByZXBhcmUgPSAzODAwMDsKIAljZmctPmNsa19zZXR0bGUgPSA5
-NTAwMDsKIAljZmctPmNsa190ZXJtX2VuID0gMDsKQEAgLTk3LDcgKzk3LDcgQEAgaW50IHBoeV9t
-aXBpX2RwaHlfY29uZmlnX3ZhbGlkYXRlKHN0cnVjdCBwaHlfY29uZmlndXJlX29wdHNfbWlwaV9k
-cGh5ICpjZmcpCiAJaWYgKGNmZy0+Y2xrX3Bvc3QgPCAoNjAwMDAgKyA1MiAqIHVpKSkKIAkJcmV0
-dXJuIC1FSU5WQUw7CiAKLQlpZiAoY2ZnLT5jbGtfcHJlIDwgODAwMCkKKwlpZiAoY2ZnLT5jbGtf
-cHJlIDwgOCkKIAkJcmV0dXJuIC1FSU5WQUw7CiAKIAlpZiAoY2ZnLT5jbGtfcHJlcGFyZSA8IDM4
-MDAwIHx8IGNmZy0+Y2xrX3ByZXBhcmUgPiA5NTAwMCkKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5
-L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLWRzaWRwaHkuYyBiL2RyaXZlcnMvcGh5L3JvY2tj
-aGlwL3BoeS1yb2NrY2hpcC1pbm5vLWRzaWRwaHkuYwppbmRleCAzNDdkYzc5YTE4YzEuLjYzMGUw
-MWI1YzE5YiAxMDA2NDQKLS0tIGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlu
-bm8tZHNpZHBoeS5jCisrKyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5v
-LWRzaWRwaHkuYwpAQCAtNSw2ICs1LDcgQEAKICAqIEF1dGhvcjogV3lvbiBCaSA8Yml2dnkuYmlA
-cm9jay1jaGlwcy5jb20+CiAgKi8KIAorI2luY2x1ZGUgPGxpbnV4L2JpdHMuaD4KICNpbmNsdWRl
-IDxsaW51eC9rZXJuZWwuaD4KICNpbmNsdWRlIDxsaW51eC9jbGsuaD4KICNpbmNsdWRlIDxsaW51
-eC9pb3BvbGwuaD4KQEAgLTM2NCw3ICszNjUsNyBAQCBzdGF0aWMgdm9pZCBpbm5vX2RzaWRwaHlf
-bWlwaV9tb2RlX2VuYWJsZShzdHJ1Y3QgaW5ub19kc2lkcGh5ICppbm5vKQogCSAqIFRoZSB2YWx1
-ZSBvZiBjb3VudGVyIGZvciBIUyBUY2xrLXByZQogCSAqIFRjbGstcHJlID0gVHBpbl90eGJ5dGVj
-bGtocyAqIHZhbHVlCiAJICovCi0JY2xrX3ByZSA9IERJVl9ST1VORF9VUChjZmctPmNsa19wcmUs
-IHRfdHhieXRlY2xraHMpOworCWNsa19wcmUgPSBESVZfUk9VTkRfVVAoY2ZnLT5jbGtfcHJlLCBC
-SVRTX1BFUl9CWVRFKTsKIAogCS8qCiAJICogVGhlIHZhbHVlIG9mIGNvdW50ZXIgZm9yIEhTIFRs
-cHggVGltZQpkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC9waHkvcGh5LW1pcGktZHBoeS5oIGIv
-aW5jbHVkZS9saW51eC9waHkvcGh5LW1pcGktZHBoeS5oCmluZGV4IGE4NzdmZmVlODQ1ZC4uNTlh
-NWU3N2FiNDA5IDEwMDY0NAotLS0gYS9pbmNsdWRlL2xpbnV4L3BoeS9waHktbWlwaS1kcGh5LmgK
-KysrIGIvaW5jbHVkZS9saW51eC9waHkvcGh5LW1pcGktZHBoeS5oCkBAIC00Miw3ICs0Miw3IEBA
-IHN0cnVjdCBwaHlfY29uZmlndXJlX29wdHNfbWlwaV9kcGh5IHsKIAkgKiB0aGUgdHJhbnNtaXR0
-ZXIgcHJpb3IgdG8gYW55IGFzc29jaWF0ZWQgRGF0YSBMYW5lIGJlZ2lubmluZwogCSAqIHRoZSB0
-cmFuc2l0aW9uIGZyb20gTFAgdG8gSFMgbW9kZS4KIAkgKgotCSAqIE1pbmltdW0gdmFsdWU6IDgg
-VUkKKwkgKiBNaW5pbXVtIHZhbHVlOiA4CiAJICovCiAJdW5zaWduZWQgaW50CQljbGtfcHJlOwog
-Ci0tIAoyLjI1LjEKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+On Wed, Jan 12, 2022 at 07:16:02PM +0100, Marek Beh=FAn wrote:
+> Common PHYs and network PCSes often have the possibility to specify
+> peak-to-peak voltage on the differential pair - the default voltage
+> sometimes needs to be changed for a particular board.
+> =
+
+> Add properties `tx-p2p-microvolt` and `tx-p2p-microvolt-names` for this
+> purpose. The second property is needed to specify the mode for the
+> corresponding voltage in the `tx-p2p-microvolt` property, if the voltage
+> is to be used only for speficic mode. More voltage-mode pairs can be
+> specified.
+> =
+
+> Example usage with only one voltage (it will be used for all supported
+> PHY modes, the `tx-p2p-microvolt-names` property is not needed in this
+> case):
+> =
+
+>   tx-p2p-microvolt =3D <915000>;
+> =
+
+> Example usage with voltages for multiple modes:
+> =
+
+>   tx-p2p-microvolt =3D <915000>, <1100000>, <1200000>;
+>   tx-p2p-microvolt-names =3D "2500base-x", "usb", "pcie";
+> =
+
+> Add these properties into a separate file phy/transmit-amplitude.yaml,
+> selecting it for validation if either of the `tx-p2p-microvolt`,
+> `tx-p2p-microvolt-names` properties is set for a node.
+> =
+
+> Signed-off-by: Marek Beh=FAn <kabel@kernel.org>
+> ---
+>  .../bindings/phy/transmit-amplitude.yaml      | 110 ++++++++++++++++++
+>  1 file changed, 110 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/transmit-amplit=
+ude.yaml
+> =
+
+> diff --git a/Documentation/devicetree/bindings/phy/transmit-amplitude.yam=
+l b/Documentation/devicetree/bindings/phy/transmit-amplitude.yaml
+> new file mode 100644
+> index 000000000000..90a491b75f61
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/transmit-amplitude.yaml
+> @@ -0,0 +1,110 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/transmit-amplitude.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Common PHY and network PCS transmit amplitude property binding
+> +
+> +description:
+> +  Binding describing the peak-to-peak transmit amplitude for common PHYs
+> +  and network PCSes.
+> +
+> +maintainers:
+> +  - Marek Beh=FAn <kabel@kernel.org>
+> +
+> +properties:
+> +  tx-p2p-microvolt:
+> +    description:
+> +      Transmit amplitude voltages in microvolts, peak-to-peak. If this p=
+roperty
+> +      contains multiple values for various PHY modes, the
+> +      'tx-p2p-microvolt-names' property must be provided and contain
+> +      corresponding mode names.
+> +
+> +  tx-p2p-microvolt-names:
+> +    description: |
+> +      Names of the modes corresponding to voltages in the 'tx-p2p-microv=
+olt'
+> +      property. Required only if multiple voltages are provided.
+> +
+> +      If a value of 'default' is provided, the system should use it for =
+any PHY
+> +      mode that is otherwise not defined here. If 'default' is not provi=
+ded, the
+> +      system should use manufacturer default value.
+> +    minItems: 1
+> +    maxItems: 16
+> +    items:
+> +      enum:
+> +        - default
+> +
+> +        # ethernet modes
+> +        - sgmii
+> +        - qsgmii
+> +        - xgmii
+> +        - 1000base-x
+> +        - 2500base-x
+> +        - 5gbase-r
+> +        - rxaui
+> +        - xaui
+> +        - 10gbase-kr
+> +        - usxgmii
+> +        - 10gbase-r
+> +        - 25gbase-r
+> +
+> +        # PCIe modes
+> +        - pcie
+> +        - pcie1
+> +        - pcie2
+> +        - pcie3
+> +        - pcie4
+> +        - pcie5
+> +        - pcie6
+> +
+> +        # USB modes
+> +        - usb
+> +        - usb-ls
+> +        - usb-fs
+> +        - usb-hs
+> +        - usb-ss
+> +        - usb-ss+
+> +        - usb-4
+> +
+> +        # storage modes
+> +        - sata
+> +        - ufs-hs
+> +        - ufs-hs-a
+> +        - ufs-hs-b
+> +
+> +        # display modes
+> +        - lvds
+> +        - dp
+> +        - dp-rbr
+> +        - dp-hbr
+> +        - dp-hbr2
+> +        - dp-hbr3
+> +        - dp-uhbr-10
+> +        - dp-uhbr-13.5
+> +        - dp-uhbr-20
+> +
+> +        # camera modes
+> +        - mipi-dphy
+> +        - mipi-dphy-univ
+> +        - mipi-dphy-v2.5-univ
+> +
+> +dependencies:
+> +  tx-p2p-microvolt-names: [ tx-p2p-microvolt ]
+> +
+> +select:
+
+This should be omitted and this schema should be referenced by any =
+
+binding that uses it. That is necessary so all properties get evaluated.
+
+> +  anyOf:
+> +    - required:
+> +      - 'tx-p2p-microvolt'
+> +    - required:
+> +      - 'tx-p2p-microvolt-names'
+> +
+> +additionalProperties: true
+> +
+> +examples:
+> +  - |
+> +    phy: phy {
+> +      #phy-cells =3D <1>;
+> +      tx-p2p-microvolt =3D <915000>, <1100000>, <1200000>;
+> +      tx-p2p-microvolt-names =3D "2500base-x", "usb-hs", "usb-ss";
+> +    };
+> -- =
+
+> 2.34.1
+> =
+
+> =
+
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
