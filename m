@@ -4,66 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73CECC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Jan 2022 08:49:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E23B2C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Jan 2022 11:27:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Vy23RTZUkTtHWw7kjes/BdH/28gAtMoImd8Qm8Wu6ZY=; b=ba2QyDjFi0AYAo6iEOTuO0y2ua
-	G2G+daxKm8ZCR/OtXtgAcR908KVcp08kKYjnUObMayZCDZueXdgfw1SHx6Iv/pLEpiSfHu+5dzSk1
-	4mJsmYbNTKifxJicfI9XPI4KQLSXcn7RdyylbR8bs9Ud5eH7V3/5EDHuWN7qxcAPGnYhlW3O9+1Nb
-	4hIJ0mvAhXkjhlUTQm4eaSFIM84p/CzdavIfTEme4bUiHy2eLpqVl00F4c6zthAHx61d2qbSaXSJW
-	hHnrzqIkviote1SfsViSRECuFZRoooit8vbr1VB/s9NY3eajpMNVtGPhJAEt85aDBzSvBhfhFbl7J
-	0XZHL8Og==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:CC:To:Subject:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+f00cjvaim+kash/1HMhqCH58g2AYnplfqdereGDRk0=; b=TyZIyJIndYDcurp7O2ZKyggONH
+	px+Cpghj02z3SBcQ/wU29dSR5go4Eh2yrGLoge0GmdAZv2mQDLfJE0vkJ3cptkJPVZtsop+UQsiV4
+	Wgkq+Bwdey8IxFe29Wh+6kIlvI86rLLHyaXwLmVf9mNJPBQEWt4Rqg3HIC4Idb1mTpgje8vXfldET
+	ZBgt2CoFZXcd+MCOQPy46QUnFVSNU4cXTF4PBwWtWkuDRK5uN7RojVXkDRv1IutJQn4twBzhTCUq7
+	b7C1HvPtlU8NvEHfWdZz9W+OEFqfc+bjv6xPXturAiA55iYprCo1jwSnUi6ZPtaMlnt0DGBbjjkwX
+	FRQCIDjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nAT8V-009uy8-RO; Thu, 20 Jan 2022 08:49:39 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1nAVbW-00B45o-Ar; Thu, 20 Jan 2022 11:27:46 +0000
+Received: from mxout01.lancloud.ru ([45.84.86.81])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nAT8Q-009utx-90
- for linux-phy@lists.infradead.org; Thu, 20 Jan 2022 08:49:38 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mkl@pengutronix.de>)
- id 1nAT8C-00017W-Kz; Thu, 20 Jan 2022 09:49:20 +0100
-Received: from pengutronix.de (unknown [195.138.59.174])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (Client did not present a certificate)
- (Authenticated sender: mkl-all@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id C732A1E389;
- Thu, 20 Jan 2022 08:49:17 +0000 (UTC)
-Date: Thu, 20 Jan 2022 09:49:14 +0100
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Marek =?utf-8?B?QmVow7pu?= <kabel@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
- Vladimir Oltean <olteanv@gmail.com>,
- Holger Brunck <holger.brunck@hitachienergy.com>,
- Andrew Lunn <andrew@lunn.ch>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, ore@pengutronix.de,
- alexandru.tachici@analog.com
-Subject: Re: [PATCH devicetree v3] dt-bindings: phy: Add `tx-p2p-microvolt`
- property binding
-Message-ID: <20220120084914.ga7o372lyynbn4ly@pengutronix.de>
-References: <20220119131117.30245-1-kabel@kernel.org>
+ id 1nAVbE-00B40J-0o; Thu, 20 Jan 2022 11:27:30 +0000
+Received: from LanCloud
+DKIM-Filter: OpenDKIM Filter v2.11.0 mxout01.lancloud.ru BF82F20E4C10
+Received: from LanCloud
+Received: from LanCloud
+Received: from LanCloud
+From: Sergey Shtylyov <s.shtylyov@omp.ru>
+Subject: Re: [PATCH 1/2] platform: make platform_get_irq_optional() optional
+To: Geert Uytterhoeven <geert@linux-m68k.org>,
+ =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
+CC: Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Vignesh Raghavendra <vigneshr@ti.com>, KVM list <kvm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, <linux-iio@vger.kernel.org>, "Linus
+ Walleij" <linus.walleij@linaro.org>, Amit Kucheria <amitk@kernel.org>, "ALSA
+ Development Mailing List" <alsa-devel@alsa-project.org>, Andy Shevchenko
+ <andriy.shevchenko@linux.intel.com>, Jaroslav Kysela <perex@perex.cz>,
+ Guenter Roeck <groeck@chromium.org>, Thierry Reding
+ <thierry.reding@gmail.com>, MTD Maling List <linux-mtd@lists.infradead.org>,
+ Linux I2C <linux-i2c@vger.kernel.org>, Miquel Raynal
+ <miquel.raynal@bootlin.com>, <linux-phy@lists.infradead.org>, Jiri Slaby
+ <jirislaby@kernel.org>, <openipmi-developer@lists.sourceforge.net>, "Khuong
+ Dinh" <khuong@os.amperecomputing.com>, Florian Fainelli
+ <f.fainelli@gmail.com>, Matthias Schiffer
+ <matthias.schiffer@ew.tq-group.com>, Joakim Zhang <qiangqing.zhang@nxp.com>,
+ Kamal Dasu <kdasu.kdev@gmail.com>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Lee Jones <lee.jones@linaro.org>, "Bartosz
+ Golaszewski" <brgl@bgdev.pl>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Tony Luck" <tony.luck@intel.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>, "open
+ list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>, Jakub Kicinski
+ <kuba@kernel.org>, Zhang Rui <rui.zhang@intel.com>, Linux PWM List
+ <linux-pwm@vger.kernel.org>, Robert Richter <rric@kernel.org>, "Saravanan
+ Sekar" <sravanhome@gmail.com>, Corey Minyard <minyard@acm.org>, Linux PM list
+ <linux-pm@vger.kernel.org>, Linux Kernel Mailing List
+ <linux-kernel@vger.kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ John Garry <john.garry@huawei.com>, Peter Korsgaard <peter@korsgaard.com>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>, Mark Gross
+ <markgross@kernel.org>, "open list:GPIO SUBSYSTEM"
+ <linux-gpio@vger.kernel.org>, Alex Williamson <alex.williamson@redhat.com>,
+ Mark Brown <broonie@kernel.org>, Borislav Petkov <bp@alien8.de>, "Sebastian
+ Reichel" <sre@kernel.org>, Eric Auger <eric.auger@redhat.com>, "Matthias
+ Brugger" <matthias.bgg@gmail.com>, Takashi Iwai <tiwai@suse.com>,
+ <platform-driver-x86@vger.kernel.org>, Benson Leung <bleung@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ <linux-edac@vger.kernel.org>, Mun Yew Tham <mun.yew.tham@intel.com>, "Hans de
+ Goede" <hdegoede@redhat.com>, netdev <netdev@vger.kernel.org>, "Yoshihiro
+ Shimoda" <yoshihiro.shimoda.uh@renesas.com>, Cornelia Huck
+ <cohuck@redhat.com>, Linux MMC List <linux-mmc@vger.kernel.org>, "Liam
+ Girdwood" <lgirdwood@gmail.com>, linux-spi <linux-spi@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>, Vinod Koul
+ <vkoul@kernel.org>, James Morse <james.morse@arm.com>, Zha Qipeng
+ <qipeng.zha@intel.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Richard Weinberger <richard@nod.at>, =?UTF-8?Q?Niklas_S=c3=b6derlund?=
+ <niklas.soderlund@ragnatech.se>, <linux-mediatek@lists.infradead.org>, "Brian
+ Norris" <computersforpeace@gmail.com>, "David S. Miller"
+ <davem@davemloft.net>
+References: <20220112213121.5ruae5mxwj6t3qiy@pengutronix.de>
+ <Yd9L9SZ+g13iyKab@sirena.org.uk>
+ <29f0c65d-77f2-e5b2-f6cc-422add8a707d@omp.ru>
+ <20220114092557.jrkfx7ihg26ekzci@pengutronix.de>
+ <61b80939-357d-14f5-df99-b8d102a4e1a1@omp.ru>
+ <20220114202226.ugzklxv4wzr6egwj@pengutronix.de>
+ <c9026f17-2b3f-ee94-0ea3-5630f981fbc1@omp.ru>
+ <CAMuHMdXVbRudGs69f9ZzaP1PXhteDNZiXA658eMFAwP4nr9r3w@mail.gmail.com>
+ <20220117092444.opoedfcf5k5u6otq@pengutronix.de>
+ <CAMuHMdUgZUeraHadRAi2Z=DV+NuNBrKPkmAKsvFvir2MuquVoA@mail.gmail.com>
+ <20220117114923.d5vajgitxneec7j7@pengutronix.de>
+ <CAMuHMdWCKERO20R2iVHq8P=BaoauoBAtiampWzfMRYihi3Sb0g@mail.gmail.com>
+Organization: Open Mobile Platform
+Message-ID: <b8fda2ae-07b7-af30-2b0d-213a60a7b802@omp.ru>
+Date: Thu, 20 Jan 2022 14:27:08 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.10.1
 MIME-Version: 1.0
-In-Reply-To: <20220119131117.30245-1-kabel@kernel.org>
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+In-Reply-To: <CAMuHMdWCKERO20R2iVHq8P=BaoauoBAtiampWzfMRYihi3Sb0g@mail.gmail.com>
+Content-Language: en-US
+X-Originating-IP: [192.168.11.198]
+X-ClientProxiedBy: LFEXT02.lancloud.ru (fd00:f066::142) To
+ LFEX1907.lancloud.ru (fd00:f066::207)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220120_004934_378509_6E5B18CD 
-X-CRM114-Status: GOOD (  17.57  )
+X-CRM114-CacheID: sfid-20220120_032728_496726_62296D20 
+X-CRM114-Status: GOOD (  20.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,99 +117,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3759456404564864277=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 1/17/22 4:08 PM, Geert Uytterhoeven wrote:
 
---===============3759456404564864277==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="kvv4ypl26cp5w72m"
-Content-Disposition: inline
+[...]
+>>> But as we were all in a hurry to kill the non-applicable error
+>>> message, we went for the quick and dirty fix.
+>>>
+>>>> Also I fail to see how a caller of (today's) platform_get_irq_optional()
+>>>> is simpler than a caller of platform_get_irq() given that there is no
+>>>> semantic difference between the two. Please show me a single
+>>>> conversion from platform_get_irq to platform_get_irq_optional that
+>>>> yielded a simplification.
+>>>
+>>> That's exactly why we want to change the latter to return 0 ;-)
+>>
+>> OK. So you agree to my statement "The reason for
+>> platform_get_irq_optional()'s existence is just that platform_get_irq()
+>> emits an error message [...]". Actually you don't want to oppose but
+>> say: It's unfortunate that the silent variant of platform_get_irq() took
+>> the obvious name of a function that could have an improved return code
+>> semantic.
+>>
+>> So my suggestion to rename todays platform_get_irq_optional() to
+>> platform_get_irq_silently() and then introducing
+>> platform_get_irq_optional() with your suggested semantic seems
+>> intriguing and straigt forward to me.
+> 
+> I don't really see the point of needing platform_get_irq_silently(),
+> unless as an intermediary step, where it's going to be removed again
+> once the conversion has completed.
+> Still, the rename would touch all users at once anyway.
+> 
+>> Another thought: platform_get_irq emits an error message for all
+>> problems. Wouldn't it be consistent to let platform_get_irq_optional()
+>> emit an error message for all problems but "not found"?
+>> Alternatively remove the error printk from platform_get_irq().
+> 
+> Yes, all problems but not found are real errors.
 
+   ACK for using dev_err_probe() in platfrom_get_irq_optional()
+for the real errors...
+   I've also noted that only platfrom_get_irq_optional() got converted
+from dev_err() to dev_err_probe() but not platfrom_get_irq_byname_optional()...
 
---kvv4ypl26cp5w72m
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+[...]
 
-On 19.01.2022 14:11:17, Marek Beh=C3=BAn wrote:
-> Common PHYs and network PCSes often have the possibility to specify
-> peak-to-peak voltage on the differential pair - the default voltage
-> sometimes needs to be changed for a particular board.
->=20
-> Add properties `tx-p2p-microvolt` and `tx-p2p-microvolt-names` for this
-> purpose. The second property is needed to specify the mode for the
-> corresponding voltage in the `tx-p2p-microvolt` property, if the voltage
-> is to be used only for speficic mode. More voltage-mode pairs can be
-> specified.
->=20
-> Example usage with only one voltage (it will be used for all supported
-> PHY modes, the `tx-p2p-microvolt-names` property is not needed in this
-> case):
->=20
->   tx-p2p-microvolt =3D <915000>;
->=20
-> Example usage with voltages for multiple modes:
->=20
->   tx-p2p-microvolt =3D <915000>, <1100000>, <1200000>;
->   tx-p2p-microvolt-names =3D "2500base-x", "usb", "pcie";
->=20
-> Add these properties into a separate file phy/transmit-amplitude.yaml,
-> which should be referenced by any binding that uses it.
+> Gr{oetje,eeting}s,
+> 
+>                         Geert
 
-If I understand your use-case correctly, you need different voltage p2p
-levels in the connection between the Ethernet MAC and the Ethernet
-switch or Ethernet-PHY?
-
-Some of the two wire Ethernet standards (10base-T1S, 10base-T1L,
-100base-T1, 1000base-T1) defines several p2p voltage levels on the wire,
-i.e. between the PHYs. Alexandru has posed a series where you can
-specify the between-PHY voltage levels:
-
-| https://lore.kernel.org/all/20211210110509.20970-8-alexandru.tachici@anal=
-og.com/
-
-Can we make clear that your binding specifies the voltage level on the
-MII interface, in contrast Alexandru's binding?
-
-regards,
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde           |
-Embedded Linux                   | https://www.pengutronix.de  |
-Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
-
---kvv4ypl26cp5w72m
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEK3kIWJt9yTYMP3ehqclaivrt76kFAmHpIgcACgkQqclaivrt
-76m0QAf8CHZs1OBGLvXK0xMTJjOnlBpk4Ey7SjdgyBAKSqVuzT5CsLxxz0pjaN5m
-+oJDadaBGfmLJ7EhSferqbHSyScH6GcPtExGWX3zTauRLYNU2SO7zIlseR29/Pc0
-1iPUOHsthgJkH7tTuC1UOvaECCjLqTjD6Awj4qj3UGe/XpJz6PUoLjLlw3tjrMl8
-1lCbHU/Kx9TA3+udo5n/ah3BZ2AjiQ//yB6xOclo0jK774hx2laAbSJYfK1a+4lP
-qQ6T5tAFCEfbGYeX5jZey2i1jTwBWLnTUqeluowKQn6H1HxyuI4LWuTcmiVdJOJC
-qJ+1uMyDgbMNZXoy6Q8c4GoJPXTQbQ==
-=KE6p
------END PGP SIGNATURE-----
-
---kvv4ypl26cp5w72m--
-
-
---===============3759456404564864277==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+MBR, Sergey
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3759456404564864277==--
-
