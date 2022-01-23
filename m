@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF551C433F5
-	for <linux-phy@archiver.kernel.org>; Sun, 23 Jan 2022 11:46:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30D83C433EF
+	for <linux-phy@archiver.kernel.org>; Sun, 23 Jan 2022 11:48:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b9vMkQXUr/eH4rB2Bt64e9s6ZMdBDa/U0LafJxBGDnc=; b=ZlaJwPDB1k1fEQ
-	L21H55XOSNHYNjQf0I+0xuICpHCqS7NhjSebOrXIfz7ZvArbu4wnwMLjD+zvcRHAqJGzppUyr9nZK
-	dO+WjAv7XC9PvStKXslzW79lSKILsdlKA77OypO1qomZ9gz4gUsC2xFNuDqbTw5t6iZl6i3pYKrkO
-	lkBJGP7oHzOGN4oyDpbEWAwhhOTJ+Xae2GWR74uQydmxnlPTRw514Xc0uoVfwtE+NXldac4IlSAKi
-	DRnTMb3TIiDCcDJk1J5rqn4RsrfvvS+ne4/AtcuuwSkVqCgIvZgNqnDJnFnJP4gSvMOOxDk5IgDZQ
-	3DUbv+lfF0z4d18OCjdA==;
+	List-Owner; bh=0NgrzSTpvK9+ED4tWRO7A6ntJBfft8I2zo7TqRH5fec=; b=yupjw3DwRQ4JOt
+	y5caGNYqBD6SfSMzt4uJcSxoFrNb+/vgpkWIfGoxUVQ61BIG2/9BOH1en9XbRNXTPOcQmSXrEdH5L
+	lAZ5XhG6lgTSRfp7F2p5LQ7hvH6fJC44mVJrCWQ4+2oARPhaPzEXuWNYjPlzrCwMh0IRbDIOWg5+E
+	EyXSerP20ZseKpFAaJzuSkiXNMUFwTJyJkCKsEPYdJrUN+JivPI6jgZVKNh3EpgXS0VbGVPB8+8Hf
+	QJchqQuDGvoxwpdMKAI44GSf58TluMwWdWlaOZdAr7B+A2jJ+Vvmeo2l+kR7ngS8O7fKfFcgUk5FK
+	x3FE9WcX8L4wMgzW5QAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nBbJr-000kGn-63; Sun, 23 Jan 2022 11:46:03 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nBbLn-000kZT-MK; Sun, 23 Jan 2022 11:48:03 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nBbJo-000kGQ-KK
- for linux-phy@lists.infradead.org; Sun, 23 Jan 2022 11:46:01 +0000
+ id 1nBbLk-000kY2-Qs
+ for linux-phy@lists.infradead.org; Sun, 23 Jan 2022 11:48:02 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 1F6D3B80C76;
- Sun, 23 Jan 2022 11:45:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05AEDC340E2;
- Sun, 23 Jan 2022 11:45:55 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 296F0B80CA2;
+ Sun, 23 Jan 2022 11:47:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D83CC340E2;
+ Sun, 23 Jan 2022 11:47:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1642938356;
- bh=UhU7E+vx7Dalcg6EmkOXd1hIwDDZ71eS8u67xI1UUSA=;
+ s=k20201202; t=1642938477;
+ bh=rFp/yN48cpk/ut0/dbyFyGSEUZAJkEo9wRKhftFT/FE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=raKMiK95afWZ8hzulavL/GwFzgCKG4JoXWdp3I8Zoaq9A3N46u/5NeJ7T02181wil
- R32Lr3beLtp3UOx3cEmdSfEcJC+LQnd439NGZdiYRL2l1BrfJMf2liUIP+bU1+40v8
- TWmQzz6aoes4Ah7vdtrRsD1IeBbHy6KBiBeh1yBfeKlB+Y2kX0HGxNot4hjf31Wcyr
- eSE5HyS3tvQuzYmvQ2E67hEVt8FLnYw2sF4cxQ1Ts8xZVDjeDg4jzF7UhFB+x6LJaD
- yidPfrRm3TAo3tHVBCMEasp8Yln11hdmTJynadvi0QzZLA5YOPaj6dXcQP0PrMDgXf
- ggPdE1Fjm5Q1g==
-Date: Sun, 23 Jan 2022 17:15:52 +0530
+ b=O1oKMEhCdinMIElAVRgvQhZojLlG+2vl61yCRA5eRACYBv5GGsrruXGcmpe3D2Hsm
+ JBpDfbamQcX5tybqmcpeMMgKZAgvXQvcd+fuTjpWBL+lhgDIs8cq3zjYnTb+I+W9W3
+ Vug5n0+5/HvYhR7NJFw4GTfq8iKSk94g+li5/4TrYAfIIHE/aYd6gOa72Vofqo0sAY
+ +7mPZ1mCBobHGeT5cFI3iTD8aiYl4c42P1dLdLISYeZwix+LCkIFpy/qSbFOe1xOMe
+ 01M5G8Ep5GWnazGONayBMqiE77QBlhIQ54DUo4dBuoIhePo+I3JrWmdpnVsmawTTkl
+ lYiZJ3Em8ARCg==
+Date: Sun, 23 Jan 2022 17:17:53 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Cc: Al Cooper <alcooperx@gmail.com>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-phy@lists.infradead.org,
- =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
-Subject: Re: [PATCH 0/3] phy: phy-brcm-usb: Fixes for phy-brcm-usb driver
-Message-ID: <Ye0/8MSBRVNuBr3L@matsya>
-References: <20211201180653.35097-1-alcooperx@gmail.com>
- <7cbb745e-8b95-1eed-0903-44070a112ec0@gmail.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Swapnil Jakhade <sjakhade@cadence.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: Re: [PATCH] phy: ti: Fix "BUG: KASAN: global-out-of-bounds in
+ _get_maxdiv" issue
+Message-ID: <Ye1AaZnnjWFZXvWK@matsya>
+References: <20220117110108.4117-1-kishon@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7cbb745e-8b95-1eed-0903-44070a112ec0@gmail.com>
+In-Reply-To: <20220117110108.4117-1-kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220123_034600_847221_8925AB19 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20220123_034801_036985_5243952C 
+X-CRM114-Status: UNSURE (   7.14  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,20 +74,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19-01-22, 15:26, Florian Fainelli wrote:
-> Hi Vinod,
-> 
-> On 12/1/21 10:06 AM, Al Cooper wrote:
-> > A few fixes for the phy-brcm-usb driver.
-> > 
-> > Al Cooper (3):
-> >   phy: usb: Leave some clocks running during suspend
-> >   usb: Add "wake on" functionality for newer Synopsis XHCI controllers
-> >   phy: broadcom: Kconfig: Fix PHY_BRCM_USB config option
-> 
-> Are you able to pick up those patches? Thank you
+On 17-01-22, 16:31, Kishon Vijay Abraham I wrote:
+> _get_table_maxdiv() tries to access "clk_div_table" array out of bound
+> defined in phy-j721e-wiz.c. Add a sentinel entry to prevent
+> the following global-out-of-bounds error reported by enabling KASAN.
 
-Applied phy patches to phy-fixes, thanks
+Applied, thanks
 
 -- 
 ~Vinod
