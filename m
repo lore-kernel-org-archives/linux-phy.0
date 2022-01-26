@@ -4,52 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EAB5C5AC75
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Jan 2022 00:27:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 555FAC3525A
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Jan 2022 02:25:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bEwcJs7Mvg2n7TmkJ/hcDu2zSOAH1gRJYL2CC3da708=; b=o8kVnvVWx1rbyn
-	gxs+mTWcBLWRCjaaiQu90Tq7+8ZSb6BotFhq0xREkD9p10HGXpmB7uLPa8pYn9kVROKKvN+SB3E9c
-	9yzbLFar/CCwG3U7moYG4RAr4JEDBKUea0XAmxSYgQsbsB2tIM5Azz33alap3aCf/c5lzerEqI1Hl
-	v+BEm30AZiFSLn5xfAoWcA4O6Cf1pFXwldCEtRysSB6cfCfY02UltMiwOPpOR4Y298NmBKVknW3ur
-	0c5zC0CENmORbV5HaLym49KSc/uiZ+hMWwSvlMP88dr3XEaJ1uHztHKzE5cSvilEwGYCiAO3JzVlU
-	c09zCyczdYeFI5M3e3SQ==;
+	List-Owner; bh=Vpu+P+4XhMBKzx1X4fcYHuXcvsBE8BMJ8TWajtSyikQ=; b=ZXSJsNHSITPPtz
+	DbDqkxralkACfE84EX7zR5YvItgUhXMW/UpP781Umae/jvndE1J5ilKqdWk3tb7MegwigzqcEzvzM
+	1W4TrVVxie5WTQ8XwOzi8rDD2/AUqnkBx+03XlmELpM0hglQO1Edts2yhA+/OuGVpHYhGE8lzBtZh
+	Ps2UvWRz7U8pIxO00qDVnkedQtrLWp9toqtdKCK9Qo9DW5mUUHOseLr+54eAnq+96KawMbYcKMukM
+	4rzSe+7glvV8WlQIwSNcIYvWw8KwX3Rc1UQIU4alelPc5VQ6k7QvMJJbJCUfc5ES0darfePWp0voJ
+	e4vkKXafuckd3cB5FuMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nCW9S-009jWX-Si; Wed, 26 Jan 2022 00:27:06 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1nCY0H-009sWz-Pt; Wed, 26 Jan 2022 02:25:45 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nCW9Q-009jVp-9j
- for linux-phy@lists.infradead.org; Wed, 26 Jan 2022 00:27:05 +0000
-Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
- [62.78.145.57])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6B78071;
- Wed, 26 Jan 2022 01:26:57 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1643156817;
- bh=FtaCmjYq2RjI/ulFRPg0YU3jDKSu6E784ktHN7eVdgs=;
+ id 1nCY05-009sTn-Gy; Wed, 26 Jan 2022 02:25:34 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 10AB261652;
+ Wed, 26 Jan 2022 02:25:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7EC13C340E7;
+ Wed, 26 Jan 2022 02:25:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1643163932;
+ bh=6vFEuX4LHodp+DBl+knwGxVrfdfuwDNczYuijuE+GKw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gOiFHTBtQucnf+yxqgl5qYai7i27Zjsrbb35hjNVvPiknAAozX78d+E7gjUqSfjCV
- ZmORkcccOXPYnl7RGYpmIXqqXyLJeUSVzFo7FyOxtwFE7otJhn2oGTu50jhyYiGTs9
- 1sZuE5Iyvl5wfYXPn8RTuUYifSmZe4cCVJZrMJlg=
-Date: Wed, 26 Jan 2022 02:26:38 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Robert Hancock <robert.hancock@calian.com>
-Cc: linux-phy@lists.infradead.org, anurag.kumar.vulisha@xilinx.com,
- kishon@ti.com, vkoul@kernel.org, michal.simek@xilinx.com
-Subject: Re: [PATCH] phy: xilinx: zynqmp: Fix bus width setting for SGMII
-Message-ID: <YfCVPtqrIG7pXU+8@pendragon.ideasonboard.com>
-References: <20220126001600.1592218-1-robert.hancock@calian.com>
+ b=CYk7blm65frnmUjGPY3H413Wt3Hrx/v2SdHo3GFnMYLjnIftPa7CHekjrF2wrYSCc
+ Lq2rtawGeTiz6qBAh0oAT5A+zl6B5UhqUUit4Y+BqCk3bEQk6JyPkdfpphrn6Bu/Hk
+ BqXoSp/NBj3rqSaTvsfcIArndEqzL88l+gjOvoeZN9zyxhjaOPBzjYw8HSJGbZYkKe
+ Q027+agSIVjtkcuK5LWIzB+YWVlaIZ/MvHARpOVKb03pkUCmVuprkg3kn7EyhMFGi6
+ dcHJ5m+KSwuY03ITvg5JQsPlRWQFF8bvVZYc5BYj47QvgRdjn1gy73nCcDHd4cdVfa
+ +8Dpg940MG5AQ==
+Date: Wed, 26 Jan 2022 10:25:25 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com,
+ marcel.ziswiler@toradex.com, tharvey@gateworks.com, kishon@ti.com,
+ vkoul@kernel.org, robh@kernel.org, galak@kernel.crashing.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
+Subject: Re: [PATCH v7 4/8] arm64: dts: imx8mm: Add the pcie phy support
+Message-ID: <20220126022524.GB4686@dragon>
+References: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
+ <1638432158-4119-5-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220126001600.1592218-1-robert.hancock@calian.com>
+In-Reply-To: <1638432158-4119-5-git-send-email-hongxing.zhu@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220125_162704_533103_46F9B3D0 
-X-CRM114-Status: GOOD (  18.99  )
+X-CRM114-CacheID: sfid-20220125_182533_620143_2372F852 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,64 +78,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Robert,
-
-Thank you for the patch.
-
-On Tue, Jan 25, 2022 at 06:16:00PM -0600, Robert Hancock wrote:
-> TX_PROT_BUS_WIDTH and RX_PROT_BUS_WIDTH are single registers with
-> separate bit fields for each lane. The code in xpsgtr_phy_init_sgmii was
-> not preserving the existing register value for other lanes, so enabling
-> the PHY in SGMII mode on one lane zeroed out the settings for all other
-> lanes, causing other PS-GTR peripherals such as USB3 to malfunction.
+On Thu, Dec 02, 2021 at 04:02:34PM +0800, Richard Zhu wrote:
+> Add the PCIe PHY support on iMX8MM platforms.
 > 
-> Use xpsgtr_clr_set to only manipulate the desired bits in the register.
-> 
-> Fixes: 4a33bea00314 ("phy: zynqmp: Add PHY driver for the Xilinx ZynqMP Gigabit Transceiver")
-> Signed-off-by: Robert Hancock <robert.hancock@calian.com>
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+> Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> Reviewed-by: Tim Harvey <tharvey@gateworks.com>
+> Tested-by: Tim Harvey <tharvey@gateworks.com>
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-> ---
->  drivers/phy/xilinx/phy-zynqmp.c | 11 ++++++-----
->  1 file changed, 6 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-> index f478d8a17115..9be9535ad7ab 100644
-> --- a/drivers/phy/xilinx/phy-zynqmp.c
-> +++ b/drivers/phy/xilinx/phy-zynqmp.c
-> @@ -134,7 +134,8 @@
->  #define PROT_BUS_WIDTH_10		0x0
->  #define PROT_BUS_WIDTH_20		0x1
->  #define PROT_BUS_WIDTH_40		0x2
-> -#define PROT_BUS_WIDTH_SHIFT		2
-> +#define PROT_BUS_WIDTH_SHIFT(n)		((n) * 2)
-> +#define PROT_BUS_WIDTH_MASK(n)		GENMASK((n) * 2 + 1, (n) * 2)
->  
->  /* Number of GT lanes */
->  #define NUM_LANES			4
-> @@ -445,12 +446,12 @@ static void xpsgtr_phy_init_sata(struct xpsgtr_phy *gtr_phy)
->  static void xpsgtr_phy_init_sgmii(struct xpsgtr_phy *gtr_phy)
->  {
->  	struct xpsgtr_dev *gtr_dev = gtr_phy->dev;
-> +	u32 mask = PROT_BUS_WIDTH_MASK(gtr_phy->lane);
-> +	u32 val = PROT_BUS_WIDTH_10 << PROT_BUS_WIDTH_SHIFT(gtr_phy->lane);
->  
->  	/* Set SGMII protocol TX and RX bus width to 10 bits. */
-> -	xpsgtr_write(gtr_dev, TX_PROT_BUS_WIDTH,
-> -		     PROT_BUS_WIDTH_10 << (gtr_phy->lane * PROT_BUS_WIDTH_SHIFT));
-> -	xpsgtr_write(gtr_dev, RX_PROT_BUS_WIDTH,
-> -		     PROT_BUS_WIDTH_10 << (gtr_phy->lane * PROT_BUS_WIDTH_SHIFT));
-> +	xpsgtr_clr_set(gtr_dev, TX_PROT_BUS_WIDTH, mask, val);
-> +	xpsgtr_clr_set(gtr_dev, RX_PROT_BUS_WIDTH, mask, val);
->  
->  	xpsgtr_bypass_scrambler_8b10b(gtr_phy);
->  }
-
--- 
-Regards,
-
-Laurent Pinchart
+Applied, thanks!
 
 -- 
 linux-phy mailing list
