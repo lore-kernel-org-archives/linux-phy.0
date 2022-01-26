@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B7FEC5DF62
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Jan 2022 02:26:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8CE8C3525A
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Jan 2022 02:27:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CT1HSpOWELmPAml7rQGxvzBgUU+kLJ3xlE5C1SOpz7o=; b=S+jlydP2wvb1d7
-	8EiWMo98bp6Nc189VdaPy5QMhOWqZmKEdIQi1emtZwsIz9Yx4qd/d3SB2/jnSb6cBK7UkbNMIcoQA
-	CSdyksSNubCarM6OSRJIPf//+51XjJjieFPfrNh54qvGZdzjs0VB83zuNfp8K2cdAAW4KWfnreI3d
-	jM/lj5nTitXo9SWe7Mirc6bHs06ag4M3x1+Dylth99r7DoTyjQc9LkpOfEiqbRfHbznerh0bMOXNL
-	aHUWbiPmnXyxuOoiSPUv8yaNbva8mDtQ1r6KILan3TC8PXEgFcuzOJBCYSbvHFNeEgVVER4QN7rOA
-	GTq8w+/5e0sQuxR7JzuA==;
+	List-Owner; bh=8w6M792QVU/NvE/GSZotZS+VvMswk5+lqw571pXqeHQ=; b=n0rB7x5KEeL+hK
+	9ycxSl6yva2Na08UQ1MReUq/UpdAcWVKSe3chXu/N9oI9snJ+WnLoMkorOUwHkKeRBz5bcq2hcTdP
+	NhvJ8xsngqbs2DW6ZuNMxBo8aTQwXYhZdq5ApRJohc5o+/ZbJFmz7thj7P8Y7LjNPd987bXS49TRI
+	k5iQAtg6ztfmy6bP15DxucPGTjCTXs26iw/yss5iEov6Jxnvp89m8ADpm8Ex0MApvg5IRhVLn6CuU
+	VlVtEdkvsS33fxOavUbVpnfjq+vzJfA7V/1Y8ULQ8vjAUGqzKgwemzM+MmpJmDnwQoOeISakfNUBP
+	EmIkuTljhyVMea5FOO+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nCY0n-009sgZ-VA; Wed, 26 Jan 2022 02:26:17 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1nCY1k-009t6m-7u; Wed, 26 Jan 2022 02:27:16 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nCY0V-009sa2-Q4; Wed, 26 Jan 2022 02:26:01 +0000
+ id 1nCY1V-009szZ-SA; Wed, 26 Jan 2022 02:27:03 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 4F3136169A;
- Wed, 26 Jan 2022 02:25:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C02A8C340E0;
- Wed, 26 Jan 2022 02:25:55 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 86FD9B817B2;
+ Wed, 26 Jan 2022 02:27:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2E9AC340E0;
+ Wed, 26 Jan 2022 02:26:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1643163958;
- bh=RmgzmvNM3U88+c1923i7TOMfJnQBr8QzL2GLg1H5+ug=;
+ s=k20201202; t=1643164019;
+ bh=0EB6cP7OR7AmWV0MNJu9iQEAQNNivvS5YyjvxnTpexE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=In4Rrh/bYyNC6EHa3YVOy+PmmZTzXzW2TtCDuW6jazHo1cQCGBFoZcl6d2e0oY/3b
- QXTvHSnTmxQni9PZRkEf3+ZANu+mdl/lNPOgFfUYAwXgvp3Rhaoiek47BriA5JHhel
- AxmA6wf8Fn++WP2v+37pA0GvRPFx9I5IVEs+1YELa4QVi+dnvkSEAjMhKttk+5zHvH
- 1xF+ZT8HTVOUz46u0k201ipNnjZ8pgaa/dCn7w3cL4xzp7kYTYCqAknfvFjv+qtbr7
- XE7pQ3K73xd3qPsXARmznPqD+Kk53Z5KkMmQKBuDYe5cWA1QNDyliI9V4DbC2Unuia
- H3s2YRwobxuxA==
-Date: Wed, 26 Jan 2022 10:25:52 +0800
+ b=k8iR6TQxOFtjWVXILWWOYJkWJq9QPkdGUr9b/pvZEE6jPKltvYUMh6gJl3DLKxulg
+ hBo3jWAffJrb2QQCiv6FyAS1UuwQqVwwvyHZbSZUCheOlr0bdrqB+in/1nCWnrF336
+ /WsoK5hPvanUSFFC52rGKmB7HnJKnUoZsh4p56MdxlX0s5Sa4S5k5fvNY4jJd5PAt0
+ AI5fz9L3cqbxH9fT/V/XwuYScbrAEYKsavA3+ttbXFEmaJ28c7u9nU3wRcJVuOLiPe
+ LZT5ciovcTpmPoor1KnthJftPqiP1wVAjyAoMX63+xhlx/P4zhch0+GO4pS99Gv49x
+ BJQoxzinEC72w==
+Date: Wed, 26 Jan 2022 10:26:52 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Richard Zhu <hongxing.zhu@nxp.com>
 Cc: l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com,
@@ -50,18 +50,18 @@ Cc: l.stach@pengutronix.de, bhelgaas@google.com, lorenzo.pieralisi@arm.com,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
-Subject: Re: [PATCH v7 6/8] arm64: dts: imx8mm: Add the pcie support
-Message-ID: <20220126022552.GC4686@dragon>
+Subject: Re: [PATCH v7 7/8] arm64: dts: imx8mm-evk: Add the pcie support on
+ imx8mm evk board
+Message-ID: <20220126022651.GD4686@dragon>
 References: <1638432158-4119-1-git-send-email-hongxing.zhu@nxp.com>
- <1638432158-4119-7-git-send-email-hongxing.zhu@nxp.com>
+ <1638432158-4119-8-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1638432158-4119-7-git-send-email-hongxing.zhu@nxp.com>
+In-Reply-To: <1638432158-4119-8-git-send-email-hongxing.zhu@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220125_182559_929328_419677F7 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220125_182702_227442_3F97A78E 
+X-CRM114-Status: GOOD (  15.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,15 +78,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 02, 2021 at 04:02:36PM +0800, Richard Zhu wrote:
-> Add the PCIe support on i.MX8MM platforms.
+On Thu, Dec 02, 2021 at 04:02:37PM +0800, Richard Zhu wrote:
+> Add the PCIe support on iMX8MM EVK boards.
+> And set the default reference clock mode.
 > 
 > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 > Tested-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 > Reviewed-by: Tim Harvey <tharvey@gateworks.com>
 > Tested-by: Tim Harvey <tharvey@gateworks.com>
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi | 55 +++++++++++++++++++
+>  1 file changed, 55 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+> index e033d0257b5a..87a30daf0b3c 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dtsi
+> @@ -5,6 +5,7 @@
+>  
+>  /dts-v1/;
+>  
+> +#include <dt-bindings/phy/phy-imx8-pcie.h>
+>  #include <dt-bindings/usb/pd.h>
+>  #include "imx8mm.dtsi"
+>  
+> @@ -30,6 +31,23 @@ status {
+>  		};
+>  	};
+>  
+> +	pcie0_refclk: pcie0-refclk {
+> +		compatible = "fixed-clock";
+> +			#clock-cells = <0>;
+> +			clock-frequency = <100000000>;
 
-Applied, thanks!
+Incorrect indent.  Fixed them up and applied.
+
+Shawn
+
+> +	};
+> +
+> +	reg_pcie0: regulator-pcie {
+> +		compatible = "regulator-fixed";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_pcie0_reg>;
+> +		regulator-name = "MPCIE_3V3";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		gpio = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
+> +	};
+> +
+>  	reg_usdhc2_vmmc: regulator-usdhc2 {
+>  		compatible = "regulator-fixed";
+>  		pinctrl-names = "default";
+> @@ -289,6 +307,30 @@ pca6416: gpio@20 {
+>  	};
+>  };
+>  
+> +&pcie_phy {
+> +	fsl,refclk-pad-mode = <IMX8_PCIE_REFCLK_PAD_INPUT>;
+> +	fsl,tx-deemph-gen1 = <0x2d>;
+> +	fsl,tx-deemph-gen2 = <0xf>;
+> +	clocks = <&pcie0_refclk>;
+> +	status = "okay";
+> +};
+> +
+> +&pcie0 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_pcie0>;
+> +	reset-gpio = <&gpio4 21 GPIO_ACTIVE_LOW>;
+> +	clocks = <&clk IMX8MM_CLK_PCIE1_ROOT>, <&clk IMX8MM_CLK_PCIE1_AUX>,
+> +		 <&pcie0_refclk>;
+> +	clock-names = "pcie", "pcie_aux", "pcie_bus";
+> +	assigned-clocks = <&clk IMX8MM_CLK_PCIE1_AUX>,
+> +			  <&clk IMX8MM_CLK_PCIE1_CTRL>;
+> +	assigned-clock-rates = <10000000>, <250000000>;
+> +	assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_50M>,
+> +				 <&clk IMX8MM_SYS_PLL2_250M>;
+> +	vpcie-supply = <&reg_pcie0>;
+> +	status = "okay";
+> +};
+> +
+>  &sai3 {
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_sai3>;
+> @@ -406,6 +448,19 @@ MX8MM_IOMUXC_I2C3_SDA_I2C3_SDA			0x400001c3
+>  		>;
+>  	};
+>  
+> +	pinctrl_pcie0: pcie0grp {
+> +		fsl,pins = <
+> +			MX8MM_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B    0x61
+> +			MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21       0x41
+> +		>;
+> +	};
+> +
+> +	pinctrl_pcie0_reg: pcie0reggrp {
+> +		fsl,pins = <
+> +			MX8MM_IOMUXC_GPIO1_IO05_GPIO1_IO5       0x41
+> +		>;
+> +	};
+> +
+>  	pinctrl_pmic: pmicirqgrp {
+>  		fsl,pins = <
+>  			MX8MM_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x141
+> -- 
+> 2.25.1
+> 
 
 -- 
 linux-phy mailing list
