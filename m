@@ -4,69 +4,158 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6083AC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 08:57:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12658C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 10:20:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zur3r/yUPPz+bFuBRcbYJSvnn4AvurLk4GitC4EWL0w=; b=d1RfWhowrgGSUS
-	p8HjGC1nIPb1nAZWJpLwfZ91fgoLr+L7VPSKSIJjelgn3p5B0IdDovM6ObWGnxfT9mRheAkHFBbDD
-	iXsmNPJMvB+RLS0p6S1aCBvMNqMzmpOBnS+7V5Seb3OwxJ7HQXN73Lpu/CtnzkaEI+pVppTl5S1jS
-	F/T3fIfFFaGgleV0pGT/5j7Evlu0ec5X52wX5etGErIJRlS1x6EvwLfEabdQDMcw3HBt8e9bNYwY6
-	gJL4hs0t7mJtgcSK8ZPugk2h8U/SQYytwlIxjeC0CZME9e0r5nb3HKgk7SsaSyt9SKCfFFtN01OpZ
-	FhVGNYyNliAQp5S8Q33A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6wou5xJaK1ZgMeJkgN+gj6Z87XQzWXJHTRpK7X7yqE4=; b=I9frch2hneCkSC
+	3cVZ2EkE65aK+ufdR/B23Jlinq0+3p/PSWUJ6mDKxu0Efb/vG/UJ7QHKPlHElDc00WLrW7G/6mUUm
+	A+jjv3mL43059OUtzNMK7jTYGB+C69ndwN/C3wNgpkYk3wWkxUaSCnGD3kkQFSzky087ZA/v+niBW
+	QOFH/85/FhpPZPqbca+6Fi9wE557UuuRLvm+edbRL8FFYnZ9qI8BVvIpsR4oo2hhs/Jn1VrX+YwpO
+	8tZC7Ebo7I6u+nFI237y/eHdKlYmtJ5ZEM0n3L/20LtE1CKp39jba1O4U8k74sADJpkiKNDg/XaQ9
+	/uMZbgoPKCBifnd8ohTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nD0an-00EmPE-O6; Thu, 27 Jan 2022 08:57:21 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1nD1sx-00F88w-GF; Thu, 27 Jan 2022 10:20:11 +0000
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nD0al-00EmOk-0t
- for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 08:57:20 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 20R8v6tA067443;
- Thu, 27 Jan 2022 02:57:06 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1643273826;
- bh=7UGkZLlsCbU6/7eRk2sQKQKDQzdA+OHIOBNXAlW3FuQ=;
- h=From:To:CC:Subject:Date;
- b=E+HN7iuvG7KJHSntdZBahrsZQ4h/eUofRe5g3dwqCFl+B8s+WJjdkAaPXeBJdLUFy
- S2cgQoz1bA3q5K5wuqrdxpIWapAnrEcRTg5Je9pMlBEeknL7oo9V02DM5czsf2OgfQ
- Q+SZajr/kC/C/8RxZVh20FEOWrlgm2YqGMw8ygCI=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 20R8v6Nv047367
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 27 Jan 2022 02:57:06 -0600
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Thu, 27
- Jan 2022 02:57:05 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Thu, 27 Jan 2022 02:57:05 -0600
-Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
- (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 20R8v2OO014712;
- Thu, 27 Jan 2022 02:57:03 -0600
-From: Aswath Govindraju <a-govindraju@ti.com>
-To: 
-CC: Aswath Govindraju <a-govindraju@ti.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Philipp Zabel
- <p.zabel@pengutronix.de>, Swapnil Jakhade <sjakhade@cadence.com>, Dan
- Carpenter <dan.carpenter@oracle.com>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] phy: cadence: Sierra: Add support for skipping configuration
-Date: Thu, 27 Jan 2022 14:26:58 +0530
-Message-ID: <20220127085700.10333-1-a-govindraju@ti.com>
-X-Mailer: git-send-email 2.17.1
+ id 1nD1sv-00F87y-03
+ for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 10:20:10 +0000
+Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 20R6TVnF012687; 
+ Thu, 27 Jan 2022 10:20:03 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : content-type : in-reply-to :
+ mime-version; s=corp-2021-07-09;
+ bh=C9GQLN6rzysLHslU+D4M9Bl213r9WnLtObB7BSF3Q30=;
+ b=b9JRz0MAEXPHlHKrexGMKfWZOP3kFohuA7uWVCj+TDgUv302ZwWOnyskReQQhHP080AD
+ eXYQaU/PBzJQW2p23ImwZcfcuUV/d+t0GQVNn5J6x9GG/TuwxQgf6WUyShOlJtgFrp/K
+ klcIjTDYNE9ZaY6nPrWnrv8ZkBkkw/z2J0/LFV8f0pb4oK+4YU1Y8gkV+v75LG6UKO6m
+ /ZDO0IMDRDFq0Umfq9RFlKWEJV1fTWNyCIktp6xZeAzrWKbB3faj6FoZHhSPxzRg5ZYk
+ RN6YchFNIKkBFEItCTis0Cq2QhfYJ3h1+lYDTSwOwg3xQDkjCtb33ns+33kzwaAveWdr UQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by mx0b-00069f02.pphosted.com with ESMTP id 3dsvmjhbtp-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 27 Jan 2022 10:20:03 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.1.2/8.16.1.2) with SMTP id 20RAAWol032306;
+ Thu, 27 Jan 2022 10:20:02 GMT
+Received: from nam10-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam10lp2108.outbound.protection.outlook.com [104.47.58.108])
+ by userp3020.oracle.com with ESMTP id 3drbct1x53-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 27 Jan 2022 10:20:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DeqjfsM56zJm1qRd92e3nqYUn4zPSPrSbqgRDRu6y6075S3FLPL1GOZOHP0NdS5QJcCLwaj6elCveEYogDJ5SxziuSYu6hmsAeWNFNWy2yH665jT2v/MEpDc6HvRzJ5rEDcDJt/RMkyZGIH1TosigAGI5dj/dJ9VcNlUDVOXgXeGjwBi6I6LSI1qgtOKCdylXA+2bXrgqo1W6fGWJaRofdVZe8FNQ3rgFWWklMTw0ikEmxU+DWf7v5pUuPzDnFrXpwMNCYkx/4YmxUbbtVuezwYCp5Cfe6qVUCrUod7kC8gGAg6Fhxblh/3GO3Ewi4xtsJ5PKG3NqsxUU7EaqiIuiw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=C9GQLN6rzysLHslU+D4M9Bl213r9WnLtObB7BSF3Q30=;
+ b=aFKVcAIt1fQLoZWYQUammxL1Z6DjN9eyFPqZsv9/fxgwWEMUeMrDPrLDWJ83WPP/uukNxcpHL8g+x75SMtnrWjYgpCfZKpjAaHB7KrqNCr1OeCioEI0/qqkbtljGp7JW8Y27Q+laXCvOeUJC6UxI3jBh5x1MSHoVpjZfKAWLmB/q2puJASow87TRJbdXf93TKIdwjPYj7JRuEe1uEeA0tJproD6a1Kj86IkupUIdD9fWw1SJmWvyfZrREFyKkhBMEJnn7q29LnDl+65nip90EKfnRzL79lkQg+0OKveOf5aauBVYb+uWqgMdOmic7wuvyE4AGG3phU15C5UnTIpDXw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=C9GQLN6rzysLHslU+D4M9Bl213r9WnLtObB7BSF3Q30=;
+ b=myOSTvOnBzXWRreEQbQ0cdlWnKksLUYyMQWZS1EYwFW7RdTll9J1fUx+w6BHVDZ5xP4vjEMmi7nzrS0XmDPvFtz5/xNoQ+T7a7hT0ECsUt6lWe1aBgci5x4Mv/V3B54bRm5kQiMbJN9yqMmmgCz/Fd98Vvw0zPxYgkF9ix7ewWA=
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28) by DM5PR10MB1291.namprd10.prod.outlook.com
+ (2603:10b6:3:a::9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4909.11; Thu, 27 Jan
+ 2022 10:19:59 +0000
+Received: from MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::c13b:5812:a403:6d96]) by MWHPR1001MB2365.namprd10.prod.outlook.com
+ ([fe80::c13b:5812:a403:6d96%6]) with mapi id 15.20.4909.019; Thu, 27 Jan 2022
+ 10:19:59 +0000
+Date: Thu, 27 Jan 2022 13:19:38 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Aswath Govindraju <a-govindraju@ti.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Swapnil Jakhade <sjakhade@cadence.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: cadence: Sierra: Add support for skipping
+ configuration
+Message-ID: <20220127101938.GD1978@kadam>
+References: <20220127085700.10333-1-a-govindraju@ti.com>
+Content-Disposition: inline
+In-Reply-To: <20220127085700.10333-1-a-govindraju@ti.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-ClientProxiedBy: JN2P275CA0022.ZAFP275.PROD.OUTLOOK.COM (2603:1086:0:3::34)
+ To MWHPR1001MB2365.namprd10.prod.outlook.com
+ (2603:10b6:301:2d::28)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 55416574-7e49-4eb4-d0fe-08d9e17e9267
+X-MS-TrafficTypeDiagnostic: DM5PR10MB1291:EE_
+X-Microsoft-Antispam-PRVS: <DM5PR10MB129110663799C6429A7300318E219@DM5PR10MB1291.namprd10.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: DibS82dSTKuhhQtcR/cCteWit56KNANcUyK/Tik9bmPJE0S1ngNi612Vo3CrWiCtr2dRcwI8aWfO8iPYzSWzHnJ7rSoRRwH18Icg0mkwCfvtrcqNUZkisXTZg4nikCHRSMRbJOY/cU/Zl0sqc8CPRiUmw3O6ZF5YGhISTi4zxAQ8XEzwh43Vf+afbpqcDjCQjUrbLm+ZBwRmi5M57Su8Q5MFKkChQaA7Uw/96mbKunKqiNUM2RYqIcAicCzSe/H45vh03oF4yUs1ONo1mBpcxQDID3oDjpgUK0XaV8nkQok2/r4hXwmB73CyTeOqM1lehSSB1bcxHXYbU7Jp2Ls1QT5qSsmbJMfxQJBQAukxQM64yZjyauAH6WqdSjDN16maK50Swycur/vIyhMid7MmW/0NDB0Ald2sBNsinCANKojFE3szEfqKBtSvfn2mli6USG+2OVXYZi2JoAVsKqh9Vl09oQM8Pp9M2X9VlYFqKfpMlUOmjiVDI8DCTJxQi6Louh/3EDSZSI9EwTxNauMxQM+4tQ/aOb27Bh72iaLccO1EmqpPi0mkuGb43D4Yx7IiqWDdeSMC+8t8V6BICqQhHH6d1qT4LUGpR9VEGsfHnsTxQtENGZ1yczkTxu2NeWINI9Mj8/DLpcycE7pHn6x9BYb4+cH3+mfZUw6aEGg9ElLEQ+4uAGu4EZuiPy/Iy7ogKiwNniRGmzc/jykhsZGrhQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MWHPR1001MB2365.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(7916004)(366004)(8936002)(508600001)(33716001)(54906003)(9686003)(4326008)(6512007)(2906002)(33656002)(6486002)(44832011)(5660300002)(26005)(52116002)(316002)(1076003)(38100700002)(66556008)(66476007)(6506007)(66946007)(186003)(38350700002)(6666004)(86362001)(6916009)(83380400001)(8676002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?tdGnc0PCsNfGYcgp4cbSUK/f0IneZPIjNhiimmAQUHE4hwiGN05th4jb8aou?=
+ =?us-ascii?Q?TnF1Fw7oRhF9/0X3mwqknPxg8dWPwHLMZw57MsuZkwF87EYUtS+wuxNyV6yO?=
+ =?us-ascii?Q?X5jf7KY1Ogo3beFQoSHu2Sv5HkxgXi/2lZ1HK1ziYT1wzhSZuDBoWRvwY8j0?=
+ =?us-ascii?Q?RavUgnGcexF7dbMAJi604yvU08MZwsXFfRv5dSAlYZK3XH73KpBPqCmWkg31?=
+ =?us-ascii?Q?OAV1rXzYNvkitDGMdMZR0CjTPeLHRYRlRKB0iuxOBqaaKgP94wQUkpskfFut?=
+ =?us-ascii?Q?DjvoIYmUtWWRNW0cxtGLqZ+HijSW04tCMpWIOT+ZrxDd8n8SEuQPh8EbKAsB?=
+ =?us-ascii?Q?bFQikFWQI10sJo6R+a+EKscXuNJzFGQ0ObRhegkoTfRzLBtCNCcf2ualiZIn?=
+ =?us-ascii?Q?EQG3Mh1uNwhB0ykgSipMzf4xPxoFvaZnCRBlNaLfe8tS8VUsj3wCblPbjpWV?=
+ =?us-ascii?Q?x0N1yUzmPAppM2GW0GGbWndyGytLcM8vFpTnxPtJ/p5zjsmHn0lrXFZXvZwD?=
+ =?us-ascii?Q?+EZphDJR3zelpxb3ypTppFAdLS7RlYKqDjaP2iupqZoi6FLHp6LbUhHh6INA?=
+ =?us-ascii?Q?iMjirNB6mEcltjxaDd+ySyqGuzRArxQg/3wSjLqP8S3YaOIAJRCOfFkIHjJx?=
+ =?us-ascii?Q?bsVNjlIme2brxqnBTSEoG0rIUMx8GFR+AmWvTJZFrpalh8zV6y6U8KbC1BKm?=
+ =?us-ascii?Q?TUl2EXgz9Qjq4jEUdiA97lsk/kxCNH1kMJqcY2QI0kwTZdY0GpaEr9n5Imen?=
+ =?us-ascii?Q?B6ZjBC48US5e8zVqUv2nhnANOQRg7hQLAzzqZA0L1iMQthnNzo9KW00TFNYW?=
+ =?us-ascii?Q?0K6XSJIvzYB+yQgqi9fAnKexM99shSm7DXiiUXq42U5Ts5c7xHSSH97iJhVn?=
+ =?us-ascii?Q?Bkbd+tJyBo8u7cL2IOk3L+hSi4MqXyuOBYF6gUa6JZNSKsnaYlQGN9UkDNdr?=
+ =?us-ascii?Q?rsKH2VlrZ09T4WsfZDzGBfDg3Fztupk0hEO7fgQgCMYJOx91XUgD6l56nsL5?=
+ =?us-ascii?Q?r/FY5aZD78V/uRlJheE9yujpTPNjq6Lpkxck9+C+PQ8ga6XfBDUpOxjrebMF?=
+ =?us-ascii?Q?oK7aIGu4goKzP9IntihF6VIlhJ+hlkfp0bi7QfLcmwS8o/GSDTstZiZO1NFb?=
+ =?us-ascii?Q?n4T+6y35AsJddhaLoIPkWXhobKu9lWGbpVEpWIgidwNqZiZw0qCbrcOAdNZr?=
+ =?us-ascii?Q?to6FJsSiSmMR0g12stN3Lv7AOexVj+nSg0FXe0Dbb/Y7h/cmyySx/mqcoJsO?=
+ =?us-ascii?Q?m0l6wM2D15THvbnL5Z0jK6Lklb63DJvzfT69n9kqKE8VzXDBrneEV4PSL2eX?=
+ =?us-ascii?Q?WWifjBLvZ85o5Warc/DEPJc3T3zAFvKuF+xeowp1TVIesxa/uIVj7WEHj4G7?=
+ =?us-ascii?Q?e2e+hsJwBfZ3krvRmh+qCQc7TmtJvuK7xqKDCpZjTf4nG3vHWejEP16mOvUe?=
+ =?us-ascii?Q?ez+2C6d5s7AA9ISBrMxMcs2pSzbBmELY0WFOwYE0U5Bk2Nw2URfBvLXnxFHQ?=
+ =?us-ascii?Q?OjsHyTyGhi4XD0XmjcWMHasvXZhd+BGLsVtrdUekfBGWV3WLYg4OFcC6S1rb?=
+ =?us-ascii?Q?AgK8qSMeM0VMmH5vBumgOndLTugl/a1sWZtoi2fr3OVbpxoSuu4zTS+ZM4vE?=
+ =?us-ascii?Q?zWCI8KiOmULT7tHvnuxgwiLR9qXc9PoBrcCXmzU28w8+dl0QLRE1Hle6kPPI?=
+ =?us-ascii?Q?RdnAr1Zv04AI0UIlsi6wQ0lNOzA=3D?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 55416574-7e49-4eb4-d0fe-08d9e17e9267
+X-MS-Exchange-CrossTenant-AuthSource: MWHPR1001MB2365.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jan 2022 10:19:59.0698 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: By+EMcrUnv5if4kb1cy8k+7lg59b98Y7OIhE+YedtIpRQIgcLh8oAO+FU3vAaPIruR8smNt5JNx1BJMMZ3ueCcNY++Kg71iqKWe2J75I0bA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR10MB1291
+X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10239
+ signatures=668683
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
+ mlxscore=0 malwarescore=0
+ spamscore=0 phishscore=0 suspectscore=0 adultscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2201110000
+ definitions=main-2201270062
+X-Proofpoint-GUID: LShIPuwEFkraGavvLVKb42JW9SEeDaNg
+X-Proofpoint-ORIG-GUID: LShIPuwEFkraGavvLVKb42JW9SEeDaNg
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220127_005719_248157_EEB7C52B 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20220127_022009_250762_F2EF23A6 
+X-CRM114-Status: GOOD (  25.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,169 +172,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Skip the phy configuration if the required configurations were done in an
-earlier boot stage.
+On Thu, Jan 27, 2022 at 02:26:58PM +0530, Aswath Govindraju wrote:
+> Skip the phy configuration if the required configurations were done in an
+> earlier boot stage.
+> 
 
-Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
----
- drivers/phy/cadence/phy-cadence-sierra.c | 73 +++++++++++++++++-------
- 1 file changed, 51 insertions(+), 22 deletions(-)
+Why are you doing this?  Could you please put in the commit message if
+the user will see an improvement from this change.
 
-diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index e265647e29a2..d4197524ee8d 100644
---- a/drivers/phy/cadence/phy-cadence-sierra.c
-+++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -370,6 +370,7 @@ struct cdns_sierra_phy {
- 	int nsubnodes;
- 	u32 num_lanes;
- 	bool autoconf;
-+	int already_configured;
- 	struct clk_onecell_data clk_data;
- 	struct clk *output_clks[CDNS_SIERRA_OUTPUT_CLOCKS];
- };
-@@ -517,7 +518,7 @@ static int cdns_sierra_phy_init(struct phy *gphy)
- 	int i, j;
- 
- 	/* Initialise the PHY registers, unless auto configured */
--	if (phy->autoconf || phy->nsubnodes > 1)
-+	if (phy->autoconf || phy->already_configured || phy->nsubnodes > 1)
- 		return 0;
- 
- 	clk_set_rate(phy->input_clks[CMN_REFCLK_DIG_DIV], 25000000);
-@@ -646,6 +647,18 @@ static const struct phy_ops ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static int cdns_sierra_noop_phy_on(struct phy *gphy)
-+{
-+	usleep_range(5000, 10000);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops noop_ops = {
-+	.power_on	= cdns_sierra_noop_phy_on,
-+	.owner		= THIS_MODULE,
-+};
-+
- static u8 cdns_sierra_pll_mux_get_parent(struct clk_hw *hw)
- {
- 	struct cdns_sierra_pll_mux *mux = to_cdns_sierra_pll_mux(hw);
-@@ -1118,13 +1131,6 @@ static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
- 	struct clk *clk;
- 	int ret;
- 
--	clk = devm_clk_get_optional(dev, "phy_clk");
--	if (IS_ERR(clk)) {
--		dev_err(dev, "failed to get clock phy_clk\n");
--		return PTR_ERR(clk);
--	}
--	sp->input_clks[PHY_CLK] = clk;
--
- 	clk = devm_clk_get_optional(dev, "cmn_refclk_dig_div");
- 	if (IS_ERR(clk)) {
- 		dev_err(dev, "cmn_refclk_dig_div clock not found\n");
-@@ -1160,17 +1166,33 @@ static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
- 	return 0;
- }
- 
--static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
-+static int cdns_sierra_phy_clk(struct cdns_sierra_phy *sp)
- {
-+	struct device *dev = sp->dev;
-+	struct clk *clk;
- 	int ret;
- 
-+	clk = devm_clk_get_optional(dev, "phy_clk");
-+	if (IS_ERR(clk)) {
-+		dev_err(dev, "failed to get clock phy_clk\n");
-+		return PTR_ERR(clk);
-+	}
-+	sp->input_clks[PHY_CLK] = clk;
-+
- 	ret = clk_prepare_enable(sp->input_clks[PHY_CLK]);
- 	if (ret)
- 		return ret;
- 
-+	return 0;
-+}
-+
-+static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
-+{
-+	int ret;
-+
- 	ret = clk_prepare_enable(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
- 	if (ret)
--		goto err_pll_cmnlc;
-+		return ret;
- 
- 	ret = clk_prepare_enable(sp->output_clks[CDNS_SIERRA_PLL_CMNLC1]);
- 	if (ret)
-@@ -1181,9 +1203,6 @@ static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
- err_pll_cmnlc1:
- 	clk_disable_unprepare(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
- 
--err_pll_cmnlc:
--	clk_disable_unprepare(sp->input_clks[PHY_CLK]);
--
- 	return ret;
- }
- 
-@@ -1382,16 +1401,24 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	ret = cdns_sierra_phy_get_resets(sp, dev);
--	if (ret)
--		goto unregister_clk;
--
- 	ret = cdns_sierra_phy_enable_clocks(sp);
- 	if (ret)
- 		goto unregister_clk;
- 
--	/* Enable APB */
--	reset_control_deassert(sp->apb_rst);
-+	regmap_field_read(sp->pma_cmn_ready, &sp->already_configured);
-+
-+	if (!(sp->already_configured)) {
-+		ret = cdns_sierra_phy_clk(sp);
-+		if (ret)
-+			goto unregister_clk;
-+
-+		ret = cdns_sierra_phy_get_resets(sp, dev);
-+		if (ret)
-+			goto unregister_clk;
-+
-+		/* Enable APB */
-+		reset_control_deassert(sp->apb_rst);
-+	}
- 
- 	/* Check that PHY is present */
- 	regmap_field_read(sp->macro_id_type, &id_value);
-@@ -1433,8 +1460,10 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 
- 		sp->num_lanes += sp->phys[node].num_lanes;
- 
--		gphy = devm_phy_create(dev, child, &ops);
--
-+		if (!(sp->already_configured))
-+			gphy = devm_phy_create(dev, child, &ops);
-+		else
-+			gphy = devm_phy_create(dev, child, &noop_ops);
- 		if (IS_ERR(gphy)) {
- 			ret = PTR_ERR(gphy);
- 			of_node_put(child);
-@@ -1455,7 +1484,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 	}
- 
- 	/* If more than one subnode, configure the PHY as multilink */
--	if (!sp->autoconf && sp->nsubnodes > 1) {
-+	if (!(sp->already_configured && sp->autoconf) && sp->nsubnodes > 1) {
- 		ret = cdns_sierra_phy_configure_multilink(sp);
- 		if (ret)
- 			goto put_control;
--- 
-2.17.1
+> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+> ---
+
+[ snip ]
+
+> @@ -1382,16 +1401,24 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>  
+> -	ret = cdns_sierra_phy_get_resets(sp, dev);
+> -	if (ret)
+> -		goto unregister_clk;
+> -
+>  	ret = cdns_sierra_phy_enable_clocks(sp);
+>  	if (ret)
+>  		goto unregister_clk;
+>  
+> -	/* Enable APB */
+> -	reset_control_deassert(sp->apb_rst);
+> +	regmap_field_read(sp->pma_cmn_ready, &sp->already_configured);
+> +
+> +	if (!(sp->already_configured)) {
+
+Delete extra parens.
+
+> +		ret = cdns_sierra_phy_clk(sp);
+> +		if (ret)
+> +			goto unregister_clk;
+
+The goto should release the most recent successful allocation which is
+cdns_sierra_phy_enable_clocks().  So this should be goto clk_disable.
+Except that will also call reset_control_assert() which is wrong...  The
+rules are generally that error handling should be in the reverse order
+from how we allocated it.  If allocation is optional the cleanup should
+be optional.  The allocation and unwind code should mirror each other.
+
+> +
+> +		ret = cdns_sierra_phy_get_resets(sp, dev);
+> +		if (ret)
+> +			goto unregister_clk;
+
+goto clk_disable;
+
+> +
+> +		/* Enable APB */
+> +		reset_control_deassert(sp->apb_rst);
+
+Since this is now optional it should be optional in the cleanup.
+
+> +	}
+>  
+
+Since the order of allocations has changed, the other gotos need to be
+updated to free the most recent allocation as well.  Then the error
+handling looks like this:
+
+	return 0;
+
+put_control:
+	while (--node >= 0)
+		reset_control_put(sp->phys[node].lnk_rst);
+ctrl_assert:
+	if (!sp->already_configured)
+		reset_control_assert(sp->apb_rst);
+clk_disable:
+	cdns_sierra_phy_disable_clocks(sp);
+unregister_clk:
+	cdns_sierra_clk_unregister(sp);
+	return ret;
+
+
+>  	/* Check that PHY is present */
+>  	regmap_field_read(sp->macro_id_type, &id_value);
+> @@ -1433,8 +1460,10 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+>  
+>  		sp->num_lanes += sp->phys[node].num_lanes;
+>  
+> -		gphy = devm_phy_create(dev, child, &ops);
+> -
+> +		if (!(sp->already_configured))
+
+Delete parens.
+
+> +			gphy = devm_phy_create(dev, child, &ops);
+> +		else
+> +			gphy = devm_phy_create(dev, child, &noop_ops);
+>  		if (IS_ERR(gphy)) {
+>  			ret = PTR_ERR(gphy);
+>  			of_node_put(child);
+> @@ -1455,7 +1484,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	/* If more than one subnode, configure the PHY as multilink */
+> -	if (!sp->autoconf && sp->nsubnodes > 1) {
+> +	if (!(sp->already_configured && sp->autoconf) && sp->nsubnodes > 1) {
+
+It's normally easier to understand conditions when you push the ! as
+far in as possible:
+
+	if ((!sp->already_configured || !sp->autoconf) &&
+	    sp->nsubnodes > 1) {
+
+Is this condition right?  Shouldn't it be:
+
+	if (!sp->already_configured && !sp->autoconf && sp->nsubnodes > 1) {
+
+The ->already_configured is set/stored in firmware so I don't know when
+that happens.  Please, add that information to the commit message when
+you resend.
+
+regards,
+dan carpenter
 
 
 -- 
