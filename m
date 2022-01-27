@@ -4,63 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD34EC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 05:31:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C60EDC433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 05:34:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/w3t7hPy6yo6ejbPlWLELS2MFaMl7QnMMr7u52F4dMk=; b=zhFSsdpH3Yi+fh
-	t90dXrI2DPNz4TGFciZITzhb0iRoCPOTl6TqOVrrVITw7Us07b79sLiOBfKDduKzhw0IZA9Ycox+e
-	U3OjRnPSfAM1Ncf8eUrvRf67au1zCwHpnIzENY9QoPpM6oO1s/sjyMlb1WKA+k7wxoqGPgdvAxyfF
-	y0EaviG0BbflmmTaB9bgXNEsSuvex3GqMVq9P3aoVMzqt6LBkK4TbFrtvqfXR4cEmekf0sLDJJhGv
-	pZM+yT/14Z9KF9jmZURVg30hUDQq/3sdAtES8q2QIAQ0zTtvNiTazFOW1xhsHofoQtP25EZvyEpKw
-	oHIJ3F7e9Z7fyFkg3OGA==;
+	List-Owner; bh=o6863sWE6gbRQtRYLOFUuw7vzPIX9/FM1qevs8dPeR8=; b=CWi8U2S930eJj0
+	1Kjdj8+0FjMZiGfr3dQL2YNGfJpdLoR9/tANY1QmK6iEPTFW6kX8Tv0FjKdSOxhCxvNKMlNLrKA7k
+	S1+oG0POJCmJH/auwvdLur6o7xA9Kt4XrhLc2Wvhi47LZ/taPGJNGFG31e5/iR81TYh6kZ5kZGtoM
+	vZlG7yH2I4AosW5M05jc+ev+t9Gk759Ah3tCZl3otgo2lkq/kucLkiPDRDhw6wE6oRwSQUZqksx7l
+	hcP3yK01vfLqFP/GfyH6+txbuok5dOVltjeh3a9RnYserAQbIUP5xYkm8wtilsDRFwDd+gudioP75
+	h7Jo5e5FjHF/PMHVH1wQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nCxN8-00EPDD-8b; Thu, 27 Jan 2022 05:31:02 +0000
+	id 1nCxQv-00EPtU-A4; Thu, 27 Jan 2022 05:34:57 +0000
 Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nCxN6-00EPCK-99
- for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 05:31:01 +0000
+ id 1nCxQs-00EPsx-Q3
+ for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 05:34:56 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id C869FB82156;
- Thu, 27 Jan 2022 05:30:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0D87C340E4;
- Thu, 27 Jan 2022 05:30:56 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 74403B8210C;
+ Thu, 27 Jan 2022 05:34:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5910FC340E4;
+ Thu, 27 Jan 2022 05:34:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1643261457;
- bh=ZO8QqAPZhk4/Am2PeI6dAhQraFlAnTUockNeGMJ5AnE=;
+ s=k20201202; t=1643261692;
+ bh=5S9wWt15TRVrJ6Yz4hj/m81O+1PNXTybGgjTNNXdhLM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=oynhwJHZxAzSkIlGqTnRzpmotg+LpoytKcCepNeuBy6Zud8c+PrpnsBjlxItGSSvI
- DWYwtvjes8OxUSxrIL5eJZh2PQX666F9HOISUx4fkAeSmsUFzBph+aMCuJd8hObQOi
- 8hY85kh47b7klzZgjFZhDhsoNjDmw4V1XfDYezIu/4iFEsC046zgA7scAh7LSm546P
- Fjj8boFNXUUOmC5crgEX6SOuvnNZ/XmwmPn79SXAf074FrDv/55h7K/jMuc0yDVxO8
- 5oSm2C8mymUF+UIqdJjbj5kgyoRvSo3fisgnvagJHirkeEQSOakbqedhXqeA4Uumj4
- /gOWZO0Fz9AEg==
-Date: Thu, 27 Jan 2022 11:00:54 +0530
+ b=Jc3bvfoBF2XboC0ign5S4JZO6wKpsCTDkYPjC4+VK+aMfXtA/HizbWmoh5/ca26kA
+ L6KkgQ4ZyR5oWOMQiwjoslod79EF+928mYSjO1jVF3Nb0JB8/zNvgo9WbZSXjjR1B4
+ mWmjeB8vJttQC4TQ2yJGdjijyMD3YtXvOuGu6siaIDRL9prjSXiNJqIUvUsnMy2OkR
+ DZ8o/VfBDZB73m9u/nXihQZeVngJc3pAFUHtJJngtopQz4y51fGOskhQu/hVAAuvag
+ LK4YXQ5ieOj6pMkRX07yWfy9ayJsoDoNG8OapcmoyG9PKnd6MNtjsTij5dvPbTzZ6u
+ KJfS+ZhaaNIGw==
+Date: Thu, 27 Jan 2022 11:04:48 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Luca Weiss <luca@z3ntu.xyz>
-Cc: linux-arm-msm@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
- phone-devel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@somainline.org>,
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 02/15] phy: qcom-qusb2: Add compatible for MSM8953
-Message-ID: <YfIuDkVs2WqAwikk@matsya>
-References: <20220112194118.178026-1-luca@z3ntu.xyz>
- <20220112194118.178026-3-luca@z3ntu.xyz>
+To: Dan Carpenter <dan.carpenter@oracle.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Amelie Delaunay <amelie.delaunay@foss.st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-phy@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com, kernel-janitors@vger.kernel.org
+Subject: Re: [PATCH] phy: stm32: fix a refcount leak in
+ stm32_usbphyc_pll_enable()
+Message-ID: <YfIu+PYohxp6+VYe@matsya>
+References: <20220112111724.GB3019@kili>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220112194118.178026-3-luca@z3ntu.xyz>
+In-Reply-To: <20220112111724.GB3019@kili>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220126_213100_480240_185014AC 
-X-CRM114-Status: UNSURE (   6.09  )
+X-CRM114-CacheID: sfid-20220126_213455_012882_B1709ECB 
+X-CRM114-Status: UNSURE (   6.06  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,9 +80,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12-01-22, 20:40, Luca Weiss wrote:
-> Add compatible for MSM8953 QUSB2 device which reuses MSM8996
-> configuration.
+On 12-01-22, 14:17, Dan Carpenter wrote:
+> This error path needs to decrement "usbphyc->n_pll_cons.counter" before
+> returning.
 
 Applied, thanks
 
