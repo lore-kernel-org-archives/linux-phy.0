@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A7A1C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 05:28:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A57BC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 05:30:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h6oDgkAP+jW9LHDEDVD5TK3HCuY+jbYqser0XMwgks4=; b=DOfUgkrsg5RAlF
-	qUSi+b2niS4k3DBs4/8kJvToTWWFdtppZIjvMbDQAqoBAdra0u8IC5AavXIMK1n0bHa63wJf8A6f1
-	VSQMwqQX35PXfYNq2NZsyO4fUkVPqpCEVpTQ/CAiPEYJqrhXkRWhqddQDKIqpCPLJZwQbvo4A49wb
-	JpvApbjlpNDfdy7r4+FpPyzBBICFUUKZDFEO80I7Zy+FksvhBaIf2f6aayO/6G+YnzRWBu+7HQ4A1
-	H/u2nvf2KyesiBnJx26rR3bsVPXPaYjxXCl8kpI/JMft32RhpXmTa+Qrh8NIVTv74GQ//kc+z/dG2
-	5Z3Zi6krhGFbRzHADGlw==;
+	List-Owner; bh=z4FG6ijvsfh084ScStgxZsKBtMwA3n6rnygEM+DC4As=; b=KwynEol80PZaGL
+	Yq2rAYYQWRD4CtTEjka51c3QNC0oqstIUZnIB0RNQgm7oFLe+hmAfJkrnm9S25VlE/hBIQpRUve1b
+	gNi1aA1rfsX0W3pFQ6FUu5sxXo5LctTPzlcJFJJnwUnIgNcnLvszbhYvyvvzDceAEVG6tkpKb/y82
+	lTk3gurLfuGOUbPOh8kG6ciZAhmHwvTzGIrdUUs0MxOuAEHW7GhObyZablEyMoagQ8Qh3zJZFAVpY
+	apFkrODXoNZ37GqpChjnv+na8UEBXECk/+KeKqPHL1zi0npCvYBrWOpmoGlthCkOqBYI2QmLfgi3f
+	R2baeVd3Bcj1LDaEH22Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nCxL2-00EOlL-MW; Thu, 27 Jan 2022 05:28:52 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nCxMp-00EP9e-1h; Thu, 27 Jan 2022 05:30:43 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nCxKp-00EOi9-7s; Thu, 27 Jan 2022 05:28:40 +0000
+ id 1nCxMn-00EP99-B5
+ for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 05:30:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id EAB3DB82157;
- Thu, 27 Jan 2022 05:28:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D65EC340E4;
- Thu, 27 Jan 2022 05:28:35 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id D8940617B8;
+ Thu, 27 Jan 2022 05:30:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 682C3C340E4;
+ Thu, 27 Jan 2022 05:30:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1643261316;
- bh=2NdSwzXs0/J0PSIuKmSGKLJE4Qf81V0hg2EpWJnok/4=;
+ s=k20201202; t=1643261440;
+ bh=RFru6zDdDC7kdd3Z8nnB6b47NEgyHbEaUrldn5b6FWo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ujHo/YpLgkZeQuyqHISrAmgajrE+2lJ3N+DAFYvdzpaEIfL742n81byiUFDUCgxKL
- bTOGu9hQqQgwwYSeE+32Md0E0ljTTmlZy3tuJ/1CYQ5CXXvW1kpkR8FC3rSnsvAllQ
- SnBl2U0N23bgGTDNdUNRlsiqACFegDkVEarr7kkzOy0joKEF5yqWFT9W59T+4WQY5n
- LQmqbONWmXS3vgRduXoBFFRSkIfPU97J2RNLOjnpy26pohrR4u2ZHvarpaiYw6ZumW
- oK4pHQirHaXBjT/ZxXI+OD6HIc08RhZdg9bri8QFnYIz1aOTuKr+s29punp+pnZp80
- 9L6fimuhGDntA==
-Date: Thu, 27 Jan 2022 10:58:32 +0530
+ b=oY99M0U+kI71Y9CyWwWre5mqwgNm2/qxzL8QfqnbF6aCuE1sXUhgLvNzAWjvtZiF/
+ mbKJYek6PIAa2p6r8rgtQDPPoyjAn4/3dBYGt5mrKiIRnYPASvjylnNhg3RQNwk/5I
+ D3VjYzX5jjWUIka/5lmugGhLk+IgA+1ruSeV91Ag+LafHF3wDspUBw3/EKrdEXC0tS
+ ABwiowfNT52hrgjWjCqJFS1eC5A1ApPpQ8rBwomTmQvyVWj3GCYw3/Y30TjC0nAgxD
+ u6k2yc6P3FypxpJjqgn1zYs/JfAl/bNVopr8RWuFoOZ85S88S3p9p4NIwjX00GZJNM
+ L0r7crK7k0xEA==
+Date: Thu, 27 Jan 2022 11:00:36 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Marcel Ziswiler <marcel@ziswiler.com>
-Cc: linux-phy@lists.infradead.org, linux-next@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- linux-pci@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Fabio Estevam <festevam@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Richard Zhu <hongxing.zhu@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [PATCH v2] phy: freescale: pcie: cosmetic clean-up
-Message-ID: <YfItgKZ4eCeFB5ZX@matsya>
-References: <20220113090321.119880-1-marcel@ziswiler.com>
+To: Luca Weiss <luca@z3ntu.xyz>
+Cc: linux-arm-msm@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
+ phone-devel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Manu Gautam <mgautam@codeaurora.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 01/15] dt-bindings: phy: qcom,qusb2: Document msm8953
+ compatible
+Message-ID: <YfIt/Lej93IcH0lo@matsya>
+References: <20220112194118.178026-1-luca@z3ntu.xyz>
+ <20220112194118.178026-2-luca@z3ntu.xyz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220113090321.119880-1-marcel@ziswiler.com>
+In-Reply-To: <20220112194118.178026-2-luca@z3ntu.xyz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220126_212839_446889_B30F8B09 
-X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-CacheID: sfid-20220126_213041_448154_9E0A1954 
+X-CRM114-Status: UNSURE (   6.39  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,11 +80,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-01-22, 10:03, Marcel Ziswiler wrote:
-> From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> 
-> Sort includes alphabethically and add a new line before the dt-bindings
-> one as usually done.
+On 12-01-22, 20:40, Luca Weiss wrote:
+> Document the compatible string used for the qusb2 phy in msm8953.
 
 Applied, thanks
 
