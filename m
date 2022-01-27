@@ -4,74 +4,150 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FF25C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 12:24:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65E4BC433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 14:32:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7guikZasZ4wxL8n45Od8zBB6wfxtpBtas3LhDjRtE3o=; b=FcAVnWYAMUQblsTu3SoycZufsX
-	ms89Q2+U37qxWrz39yJjKtJpH7eUlKiU1zP1fwMiyrRyWVRnkYt5rSoc2kO1jmYViTnOxx7rSLIeu
-	0EoSEj+cf4N7z+frGlK/9dC7PAzBKlN++FjaeGfEfgox+GzdkU0g3iXTVqOmQaF6hPZfZoU6QTo7J
-	BmKgLrvtKXCLqjJfigdSj3RDzzKpVAujjc27cHD2MPhhO6/JcQtEYHI6drifZKBMj85oNNuUEbH3K
-	5hMyyRmBnNrL60i8eRwrF9WsfamWNsbtwrFnC6kalPogFMBs+P/NoqfyY6Puhbdogk8PBpgw1TwEr
-	ZGYGQoxg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iijpo6csN254s7bRGxs9AKWuOBzzHNJ/IAlA0L3lepM=; b=QjG/lycYcWpDS1
+	ICiYRiwofqb28JktABZkK1Nfd1GYZR5yBTVOm+80rHq1IBlauasseFLOxPbML6po5LlMKqx3IWg/l
+	Fk9tcJUdP0lKyCeCA+n/OYBWP/bBZ/OuEy19h852cRL/HOHPUWcusr23MjUuDuWwJM+MNjSDo3ICi
+	zkdMTLmrVM4/QN59n9chChJ/O5nYuZ2l7FDfFgWdBeXE88co7WImuFkLbNjXPMnqpjIQI/Qv0EdgX
+	3Kz4B8abFxMYudUx5Orfga8CCqhGuEsM9289A60pn5O9zWnldFKPbRAaBXCsSiIYGcfTRdRbeUfMy
+	+JJIAmEmr4CrVMg/zpUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nD3p0-00FfRk-P6; Thu, 27 Jan 2022 12:24:14 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1nD5op-00G4oW-Ok; Thu, 27 Jan 2022 14:32:11 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nD3nk-00Feo9-78
- for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 12:22:58 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 20RCMo3D041382;
- Thu, 27 Jan 2022 06:22:50 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1643286170;
- bh=M+t4TNyz45XBmCPzZgTRKAq1n7WDttb+rCbMTRGsH/I=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=XkAxfKj3fnwD4EDaZNL+Y4uKWtT/HgS2eVzm0zuoagMIDkEfBCKAuWJcYu72BuQZC
- 5nCP4svvbM93kbU1H+LPKtmjMGEtqzlbWSvVqzIyDu2u2nSCktY4kN8jKLGfBB4OxK
- /pSfuhGnDBz1oSxbY4GWL2MeOz8BFP47vTd92Ta4=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 20RCMoaG037595
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 27 Jan 2022 06:22:50 -0600
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Thu, 27
- Jan 2022 06:22:50 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Thu, 27 Jan 2022 06:22:50 -0600
-Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 20RCMlME047186;
- Thu, 27 Jan 2022 06:22:48 -0600
-Subject: Re: [PATCH] phy: cadence: Sierra: Add support for skipping
- configuration
-To: Dan Carpenter <dan.carpenter@oracle.com>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Swapnil Jakhade
- <sjakhade@cadence.com>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <20220127085700.10333-1-a-govindraju@ti.com>
- <20220127101938.GD1978@kadam>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <41985856-48f4-7333-b1d8-35d0f4c55509@ti.com>
-Date: Thu, 27 Jan 2022 17:52:47 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ id 1nD5od-00G4lZ-TH
+ for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 14:32:01 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.1.2/8.16.1.2) with ESMTP id 20R93Bh4025426;
+ Thu, 27 Jan 2022 06:31:43 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=proofpoint;
+ bh=QQTgeHHj15E+sa6ZI8G2oZA4pgyatYPT04r5cHpj0tA=;
+ b=eFo7+5tBophhJADHWVEwmq+FaXldPZ04QRXRfDqGYiyqxQjUQY337NIiT3rYcGUV5eD0
+ J0FweCA3PBROYbB5aGl17baNduWhtN7Dy/5zRQ/5fcQZb8c5I8t44kRTFxZMGQc8UBCL
+ zw60pKk3CKKR3HSrdq98rtLYvF++pHcvyNe2MWxGrGd3jMrCiSDYnDbdNHedmMoKGbze
+ 3dtd2+LKjnId9luVjkeuXRVOVd7odB8uk2ThEWUAjETj3eT/CH5pWiI+HjTNTiT634T/
+ NfxwXlzWne/GNYkuKOiGICVtRkMk13bsUe5DM4LS1hNiTjDD+PwRs4Z0XbExJmDQXjI6 DA== 
+Received: from nam12-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam12lp2169.outbound.protection.outlook.com [104.47.59.169])
+ by mx0b-0014ca01.pphosted.com (PPS) with ESMTPS id 3dujtnsq7c-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 27 Jan 2022 06:31:43 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=JMtVlD8i2NZ5Z6BZkvVNQ6B9Lq8O9AoyPbiaN+D0Lc5C5iikLrFNlgZwZk48jx5nIxbchSgh2QJsesUzThZIO2OEbvvb38KJ9Gk6DOTGoqyPpqka5viDbeu8j0ysKB0iYZozMHdyjaVqlpq71q4PePUrxfYuo3xUdkkH6ODt3qHmdeiRMXePKVnKKsduss0CFCybF+EyUIx4BFqdWzZfaJ1ixhHHZ1uwxaMuiMVKkNfnlT7w6QLnsEPt6t+OkCzl3H4sPiQKGQ+wP6g518RUV8DgrL7AdwcQx3gkyR5WRcPN+5gg+W/mMLkJAcRs+ht/sgEgndvpPCgziKZowPfzuw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=QQTgeHHj15E+sa6ZI8G2oZA4pgyatYPT04r5cHpj0tA=;
+ b=Zyz0ZjO7TCGqVCFSyGVVtOAr0pyCU+ztviOZWflnffeGoKJ4SBMvpQEgXZFyzm2YD38mA3n/ZnDgoQ7p9Ye7kvx3HtO2cD0C/JK0Xc39iAlf2IIqU0nGbxlX6oQ69J7GCSWqd4rQhFztKDLEV4uM8+cFwFkbabl04x4SGTDwleBFtwyteKPXHnEK9yTdVKui4M2HDUCwtbiPAZxDOXUWKT3/7T2hPdbBqBIadN5BfdzGYQqrPdOOHQmUDDpWlTwNU2YhDDlHPgeznqiM1c5i+licVssMp/x9UXh2YC9VghjCTl97pBwqPxLH2/fwQrCyeOt37FMNzd9/Yl2yJ0H64w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 64.207.220.244) smtp.rcpttodomain=lists.infradead.org
+ smtp.mailfrom=cadence.com; dmarc=pass (p=none sp=none pct=100) action=none
+ header.from=cadence.com; dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QQTgeHHj15E+sa6ZI8G2oZA4pgyatYPT04r5cHpj0tA=;
+ b=Nhk/V2lnuFp/HZ/BCMSi/c1fZ63aOFGIvrpal83/EV+4+hGZi1jgSlmdO39NcAToJ77Rng/Jf2XQDhcbIlrUhobZsgibsygZWuROd0urt8q5HnKACeVRCXYI26ockzic6rklcyl7sbSXaQ/NwxSATvs56d5UgbWeFgJR+w1kHxQ=
+Received: from BN7PR06CA0067.namprd06.prod.outlook.com (2603:10b6:408:34::44)
+ by BYAPR07MB5992.namprd07.prod.outlook.com (2603:10b6:a03:130::32)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4909.10; Thu, 27 Jan
+ 2022 14:31:38 +0000
+Received: from BN8NAM12FT017.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:408:34:cafe::a4) by BN7PR06CA0067.outlook.office365.com
+ (2603:10b6:408:34::44) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4930.15 via Frontend
+ Transport; Thu, 27 Jan 2022 14:31:38 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 64.207.220.244)
+ smtp.mailfrom=cadence.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 64.207.220.244 as permitted sender) receiver=protection.outlook.com;
+ client-ip=64.207.220.244; helo=wcmailrelayl01.cadence.com;
+Received: from wcmailrelayl01.cadence.com (64.207.220.244) by
+ BN8NAM12FT017.mail.protection.outlook.com (10.13.182.170) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4951.5 via Frontend Transport; Thu, 27 Jan 2022 14:31:36 +0000
+Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
+ by wcmailrelayl01.cadence.com (8.14.7/8.14.4) with ESMTP id
+ 20REVXgT179338
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=OK);
+ Thu, 27 Jan 2022 06:31:34 -0800
+X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
+Received: from maileu4.global.cadence.com (10.160.110.201) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 27 Jan 2022 15:31:21 +0100
+Received: from vleu-orange.cadence.com (10.160.88.83) by
+ maileu4.global.cadence.com (10.160.110.201) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2176.2
+ via Frontend Transport; Thu, 27 Jan 2022 15:31:21 +0100
+Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 20REU0ff023522;
+ Thu, 27 Jan 2022 15:30:32 +0100
+Received: (from sjakhade@localhost)
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 20RETwcT023505;
+ Thu, 27 Jan 2022 15:29:58 +0100
+From: Swapnil Jakhade <sjakhade@cadence.com>
+To: <vkoul@kernel.org>, <kishon@ti.com>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>
+CC: <mparab@cadence.com>, <sjakhade@cadence.com>, <a-govindraju@ti.com>,
+ <r-ravikumar@ti.com>
+Subject: [PATCH 0/4] PHY: Add multilink DP support in Cadence Torrent PHY
+ driver
+Date: Thu, 27 Jan 2022 15:29:54 +0100
+Message-ID: <20220127142958.23465-1-sjakhade@cadence.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-In-Reply-To: <20220127101938.GD1978@kadam>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-OrganizationHeadersPreserved: maileu3.global.cadence.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 957faa58-edbe-419f-005d-08d9e1a1b932
+X-MS-TrafficTypeDiagnostic: BYAPR07MB5992:EE_
+X-Microsoft-Antispam-PRVS: <BYAPR07MB59929BB54609C1FBBAD1DAC7C5219@BYAPR07MB5992.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4941;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: vZtdmpfziIkuvpLC71UbklzNJsMrzKCa0uqPxj6WsS8yRDWl83JES/SHn1MFp7PsjbWQuFfpOwZOG5k92jeZieLWKXZVW3H1eOmo6RXoNfaPXjUCaJUtZhzTn2+84MXlNwt/CPx0P4j1JlVpt3HRe+v+3rIGPm3Kx2dw3Z2+A2tgeMw03XSDecNeU/xKEQnvTMoTEnUUTlgA/jpTFUPzsS7OADUjvBLhegTYjIJDajF5hZbF1Qlto3LnCCFNw92MlkJR/vGQezysQFXE2Tra20w9Ud56E39jbfTBd1VopJiw8bt94yV1gEmoavEkNxq/EmrQ9HFIgpEuYNMKMOdKdHWnJn4oxEi9sglU75hi5bDm7oE9O5DCnJIBoppFHue43fJg/JHTIwkLrLYbT/pKCseOQ9NoWb8CmJw4C4j3hTPztcIYCzWXWNCjOYIChtdl6q04/URf2tGcZiujmvIXSxWVAgvAhqgybH4FsxI7djHD7ikmNSELr9wXjBrHMFg/wXOEwut3LCB7pid0gqjuXE8Clms59dkkl51t2CA1aANY8XJzW7L7N6VMepHwex5VuDAJ68vo1gNsCfniwt16xyy9dXHVwaXTxug8ldeLuNkjmBz8VoTFbCl5UbsAZSIOG6hpJwAHppazSZQdVe6Sj7g0x+hWpUy0ZX4kcJVcKXeHIy0yC0NF7LQsdkeVA0FitgmrANqLzmJQmBiEYBwqmuw0yWmVpf6bKjW7p1FM11D57ignUZ61sMDgCVm8c/xAu6Uq5hSshqLq73x9MRg7XPNI96LZLpX3PGo8L/jqadu9+BgeYrGlOUfuGurbWx8aP+pkRMlGU7F+E2IzaGMvWA==
+X-Forefront-Antispam-Report: CIP:64.207.220.244; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:wcmailrelayl01.cadence.com; PTR:ErrorRetry; CAT:NONE;
+ SFS:(4636009)(36092001)(46966006)(36840700001)(40470700004)(8936002)(508600001)(8676002)(42186006)(81166007)(1076003)(54906003)(356005)(336012)(316002)(2616005)(40460700003)(6666004)(36756003)(86362001)(36860700001)(4326008)(47076005)(2906002)(5660300002)(4744005)(83380400001)(110136005)(26005)(70206006)(186003)(426003)(70586007)(82310400004)(36900700001);
+ DIR:OUT; SFP:1101; 
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jan 2022 14:31:36.1119 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 957faa58-edbe-419f-005d-08d9e1a1b932
+X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[64.207.220.244];
+ Helo=[wcmailrelayl01.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN8NAM12FT017.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR07MB5992
+X-Proofpoint-GUID: RK1IqgnoXJMLABR3hc4GyaBkEVS54hvY
+X-Proofpoint-ORIG-GUID: RK1IqgnoXJMLABR3hc4GyaBkEVS54hvY
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.816,Hydra:6.0.425,FMLib:17.11.62.513
+ definitions=2022-01-27_03,2022-01-27_01,2021-12-02_01
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 mlxscore=0
+ suspectscore=0 lowpriorityscore=0 priorityscore=1501 phishscore=0
+ impostorscore=0 mlxlogscore=680 bulkscore=0 adultscore=0 clxscore=1011
+ spamscore=0 malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2201110000 definitions=main-2201270088
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220127_042256_440422_6D6C935D 
-X-CRM114-Status: GOOD (  32.59  )
+X-CRM114-CacheID: sfid-20220127_063200_487954_105C90E3 
+X-CRM114-Status: GOOD (  11.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,148 +164,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dan,
+This patch series adds support for multilink multiprotocol DisplayPort
+configurations in Cadence Torrent PHY driver. Following configurations
+are supported:
+(1) PCIe + DP
+(2) USB + DP
 
-On 27/01/22 3:49 pm, Dan Carpenter wrote:
-> On Thu, Jan 27, 2022 at 02:26:58PM +0530, Aswath Govindraju wrote:
->> Skip the phy configuration if the required configurations were done in an
->> earlier boot stage.
->>
-> 
-> Why are you doing this?  Could you please put in the commit message if
-> the user will see an improvement from this change.
-> 
+The changes have been validated on TI J721S2 platform.
 
-In some cases, the SerDes configuration can be done in the bootloaders
-itself and in these the reconfiguration can be skipped in kernel. For
-example 2 different cores can be using the SerDes, in this case the
-bootloaders configure the SerDes, so that the cores can later on use the
-lanes directly without configuring the lanes again.
+Swapnil Jakhade (4):
+  phy: cadence-torrent: Add function to get PLL to be configured for DP
+  phy: cadence-torrent: Prepare driver for multilink DP support
+  phy: cadence-torrent: Add PCIe + DP multilink configuration for 100MHz
+    refclk
+  phy: cadence-torrent: Add USB + DP multilink configuration
 
-I will include this in the commit message of the respin.
+ drivers/phy/cadence/phy-cadence-torrent.c | 727 ++++++++++++++++------
+ 1 file changed, 532 insertions(+), 195 deletions(-)
 
->> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
->> ---
-> 
-> [ snip ]
-> 
->> @@ -1382,16 +1401,24 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
->>  	if (ret)
->>  		return ret;
->>  
->> -	ret = cdns_sierra_phy_get_resets(sp, dev);
->> -	if (ret)
->> -		goto unregister_clk;
->> -
->>  	ret = cdns_sierra_phy_enable_clocks(sp);
->>  	if (ret)
->>  		goto unregister_clk;
->>  
->> -	/* Enable APB */
->> -	reset_control_deassert(sp->apb_rst);
->> +	regmap_field_read(sp->pma_cmn_ready, &sp->already_configured);
->> +
->> +	if (!(sp->already_configured)) {
-> 
-> Delete extra parens.
-> 
->> +		ret = cdns_sierra_phy_clk(sp);
->> +		if (ret)
->> +			goto unregister_clk;
-> 
-> The goto should release the most recent successful allocation which is
-> cdns_sierra_phy_enable_clocks().  So this should be goto clk_disable.
-> Except that will also call reset_control_assert() which is wrong...  The
-> rules are generally that error handling should be in the reverse order
-> from how we allocated it.  If allocation is optional the cleanup should
-> be optional.  The allocation and unwind code should mirror each other.
-> 
->> +
->> +		ret = cdns_sierra_phy_get_resets(sp, dev);
->> +		if (ret)
->> +			goto unregister_clk;
-> 
-> goto clk_disable;
-> 
->> +
->> +		/* Enable APB */
->> +		reset_control_deassert(sp->apb_rst);
-> 
-> Since this is now optional it should be optional in the cleanup.
-> 
->> +	}
->>  
-> 
-> Since the order of allocations has changed, the other gotos need to be
-> updated to free the most recent allocation as well.  Then the error
-> handling looks like this:
-> 
-> 	return 0;
-> 
-> put_control:
-> 	while (--node >= 0)
-> 		reset_control_put(sp->phys[node].lnk_rst);
-> ctrl_assert:
-> 	if (!sp->already_configured)
-> 		reset_control_assert(sp->apb_rst);
-> clk_disable:
-> 	cdns_sierra_phy_disable_clocks(sp);
-> unregister_clk:
-> 	cdns_sierra_clk_unregister(sp);
-> 	return ret;
-> 
-> 
->>  	/* Check that PHY is present */
->>  	regmap_field_read(sp->macro_id_type, &id_value);
->> @@ -1433,8 +1460,10 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
->>  
->>  		sp->num_lanes += sp->phys[node].num_lanes;
->>  
->> -		gphy = devm_phy_create(dev, child, &ops);
->> -
->> +		if (!(sp->already_configured))
-> 
-> Delete parens.
-> 
->> +			gphy = devm_phy_create(dev, child, &ops);
->> +		else
->> +			gphy = devm_phy_create(dev, child, &noop_ops);
->>  		if (IS_ERR(gphy)) {
->>  			ret = PTR_ERR(gphy);
->>  			of_node_put(child);
->> @@ -1455,7 +1484,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
->>  	}
->>  
->>  	/* If more than one subnode, configure the PHY as multilink */
->> -	if (!sp->autoconf && sp->nsubnodes > 1) {
->> +	if (!(sp->already_configured && sp->autoconf) && sp->nsubnodes > 1) {
-> 
-> It's normally easier to understand conditions when you push the ! as
-> far in as possible:
-> 
-> 	if ((!sp->already_configured || !sp->autoconf) &&
-> 	    sp->nsubnodes > 1) {
-> 
-> Is this condition right?  Shouldn't it be:
-> 
-> 	if (!sp->already_configured && !sp->autoconf && sp->nsubnodes > 1) {
-> 
-> The ->already_configured is set/stored in firmware so I don't know when
-> that happens.  Please, add that information to the commit message when
-> you resend.
-> 
-
-Sorry, my logic was wrong. I will correct this in the respin.
-
-
-Thank you for the review comments
-
-Regards,
-Aswath
-
-> regards,
-> dan carpenter
-> 
+-- 
+2.34.1
 
 
 -- 
