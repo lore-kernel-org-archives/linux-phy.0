@@ -4,60 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FD09C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 05:27:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A7A1C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jan 2022 05:28:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+dV65DABHQx4SOsSB+sCTJhh/pnAoUi8qXCbShxbwF0=; b=16aDoP7LlB8Rf3
-	1yBb6RWrT2Be+uK9W3XTGKQbVjL0shYTh9Rxhj9/WXmqm9abU04hvpuRu2jADceDBwMn/cDsshoY6
-	+pU39qrqmdXldL1oMo68SegBaoriM5u57qBc/M1XL/M5kcXeoB7lE5nN1u/M+FcOfhcdi8gdf6p2E
-	b8jqW6xhwC0lOQLFNVHyc+J5057IPKtWURqncBWK3AY3/UVLHv7KSzAYaSqxoyS+rvb9dxu6KNBi7
-	N+aUnNTfKg/z/yVqQRljj0zY/2YZoD2x4HuTRQ8CzqQl3MPxXc+Lp0vOQWo2Im0dUmjPPX5oonf9d
-	lvKD/kwgWyesI6Y/7mdA==;
+	List-Owner; bh=h6oDgkAP+jW9LHDEDVD5TK3HCuY+jbYqser0XMwgks4=; b=DOfUgkrsg5RAlF
+	qUSi+b2niS4k3DBs4/8kJvToTWWFdtppZIjvMbDQAqoBAdra0u8IC5AavXIMK1n0bHa63wJf8A6f1
+	VSQMwqQX35PXfYNq2NZsyO4fUkVPqpCEVpTQ/CAiPEYJqrhXkRWhqddQDKIqpCPLJZwQbvo4A49wb
+	JpvApbjlpNDfdy7r4+FpPyzBBICFUUKZDFEO80I7Zy+FksvhBaIf2f6aayO/6G+YnzRWBu+7HQ4A1
+	H/u2nvf2KyesiBnJx26rR3bsVPXPaYjxXCl8kpI/JMft32RhpXmTa+Qrh8NIVTv74GQ//kc+z/dG2
+	5Z3Zi6krhGFbRzHADGlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nCxJt-00EOer-Qb; Thu, 27 Jan 2022 05:27:41 +0000
+	id 1nCxL2-00EOlL-MW; Thu, 27 Jan 2022 05:28:52 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nCxJr-00EOeX-CV
- for linux-phy@lists.infradead.org; Thu, 27 Jan 2022 05:27:41 +0000
+ id 1nCxKp-00EOi9-7s; Thu, 27 Jan 2022 05:28:40 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 17EC7B82025;
- Thu, 27 Jan 2022 05:27:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 057E0C340E4;
- Thu, 27 Jan 2022 05:27:33 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id EAB3DB82157;
+ Thu, 27 Jan 2022 05:28:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D65EC340E4;
+ Thu, 27 Jan 2022 05:28:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1643261254;
- bh=fTYpbel51UiOwkooMZZZehU/EQ0y4jCHNjSpqQhKvTY=;
+ s=k20201202; t=1643261316;
+ bh=2NdSwzXs0/J0PSIuKmSGKLJE4Qf81V0hg2EpWJnok/4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IVeEQpJ9t838HPG2X8bMpO5fJtMd7ITEXQ06/UaUmfSYtXxvt3sESkos0+PleGHbI
- +N/3VudeueATlRGgjM0W3yDvE1mXPosZoW8AS3a90PtdPzDY8dVmu5THrByMPzSq0q
- fTyGJOIsGvoivxT+Kp1MhTiJW3vgGpe/vMxtcrBbbo4VxiPbs2SIB30CsTf/j909m9
- DqnyfrjRuqcKdUj562g+oIlk6iuH0baBffdxP/4gtUAw0nzyoRt24jk/b9a6rY4pwd
- qf8NpkjaLxkUFr2us5KuPIOUqiIAxDgHvrgNOKXzbhrcLV9wm9xoiuYnCNGLt8sAS0
- l3CWH/9pi2HkQ==
-Date: Thu, 27 Jan 2022 10:57:30 +0530
+ b=ujHo/YpLgkZeQuyqHISrAmgajrE+2lJ3N+DAFYvdzpaEIfL742n81byiUFDUCgxKL
+ bTOGu9hQqQgwwYSeE+32Md0E0ljTTmlZy3tuJ/1CYQ5CXXvW1kpkR8FC3rSnsvAllQ
+ SnBl2U0N23bgGTDNdUNRlsiqACFegDkVEarr7kkzOy0joKEF5yqWFT9W59T+4WQY5n
+ LQmqbONWmXS3vgRduXoBFFRSkIfPU97J2RNLOjnpy26pohrR4u2ZHvarpaiYw6ZumW
+ oK4pHQirHaXBjT/ZxXI+OD6HIc08RhZdg9bri8QFnYIz1aOTuKr+s29punp+pnZp80
+ 9L6fimuhGDntA==
+Date: Thu, 27 Jan 2022 10:58:32 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>
-Cc: linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
- pali@kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Re: [PATCH phy v3 0/5] Armada 3720 comphy native implementation
-Message-ID: <YfItQmAizb8h9BqG@matsya>
-References: <20220103143220.13070-1-kabel@kernel.org>
- <20220117155851.5759b337@thinkpad>
+To: Marcel Ziswiler <marcel@ziswiler.com>
+Cc: linux-phy@lists.infradead.org, linux-next@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-pci@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Richard Zhu <hongxing.zhu@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v2] phy: freescale: pcie: cosmetic clean-up
+Message-ID: <YfItgKZ4eCeFB5ZX@matsya>
+References: <20220113090321.119880-1-marcel@ziswiler.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220117155851.5759b337@thinkpad>
+In-Reply-To: <20220113090321.119880-1-marcel@ziswiler.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220126_212739_747427_563F34DB 
-X-CRM114-Status: GOOD (  25.85  )
+X-CRM114-CacheID: sfid-20220126_212839_446889_B30F8B09 
+X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,117 +75,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17-01-22, 15:58, Marek Beh=FAn wrote:
-> Dear Vinod,
-> =
+On 13-01-22, 10:03, Marcel Ziswiler wrote:
+> From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> 
+> Sort includes alphabethically and add a new line before the dt-bindings
+> one as usually done.
 
-> did you find time to look at this series?
+Applied, thanks
 
-Pls do not top post!
-
-This came in just before merge window, I dont pick patches during that
-time. rc1 came this monday, so this is in queue...
-
-> =
-
-> Marek
-> =
-
-> On Mon,  3 Jan 2022 15:32:15 +0100
-> Marek Beh=FAn <kabel@kernel.org> wrote:
-> =
-
-> > Hello Vinod,
-> > =
-
-> > this is v3 of series converting A3720 comphy to native kernel
-> > implementation.
-> > =
-
-> > Tested on Turris MOX and ESPRESSObin (tested all supported PHY modes:
-> > ethernet, PCIe, USB3, SATA).
-> > =
-
-> > Changes since v2:
-> > - removed device-tree changing patch, Gregory applied it on mvebu/dt64
-> > - changed raw spin lock to ordinary spin lock
-> > - fixed indentation of gbe_phy_init_fix
-> > - use FIELD_PREP() macro
-> > =
-
-> > Changes since v1 (all changes in patch 2/6):
-> > - refactored to use GENMASK()
-> > - fixed various register names to conform to Functional Specification
-> > - refactored various register names to have uniform naming
-> > - refactored register access into one function, which decides whether
-> >   the access should be direct or indirect, so as to not have all these
-> >   checks done everywhere in the code
-> > - moved around one register definition to have the registers sorted
-> >   according to their offset
-> > - added comments to some register definitions
-> > - added support for PHY reset() method
-> > - when changing PHY mode, the driver now resets the PHY and its
-> >   registers to put the PHY in known state
-> > - fixed the power_off() method
-> > - added spinlock guard when accessing PHY Selector register, since it
-> >   is shared between the PHYs and so the PHY mutex is insufficient
-> > - upon driver probe changed the calls to power_off() to reset()
-> > =
-
-> > =
-
-> > The original cover letter said:
-> > =
-
-> > The RPC calling to ARM Trusted Firmware implementation of Armada 3720
-> > comphy driver caused quite a number of issues (explained more in patch =
-2).
-> > =
-
-> > This series fixes those issues by reimplementing the driver to native
-> > kernel implementation.
-> > =
-
-> > The last 3 commits revert commits in AHCI, USB, and PCI drivers, that w=
-ere
-> > introduced there because of those issues.
-> > =
-
-> > Pali Roh=E1r (5):
-> >   phy: marvell: phy-mvebu-a3700-comphy: Remove port from driver
-> >     configuration
-> >   phy: marvell: phy-mvebu-a3700-comphy: Add native kernel implementation
-> >   Revert "ata: ahci: mvebu: Make SATA PHY optional for Armada 3720"
-> >   Revert "usb: host: xhci: mvebu: make USB 3.0 PHY optional for Armada
-> >     3720"
-> >   Revert "PCI: aardvark: Fix initialization with old Marvell's Arm
-> >     Trusted Firmware"
-> > =
-
-> >  drivers/ata/ahci.h                           |    2 -
-> >  drivers/ata/ahci_mvebu.c                     |    2 +-
-> >  drivers/ata/libahci_platform.c               |    2 +-
-> >  drivers/pci/controller/pci-aardvark.c        |    4 +-
-> >  drivers/phy/marvell/phy-mvebu-a3700-comphy.c | 1369 ++++++++++++++++--
-> >  drivers/usb/host/xhci-mvebu.c                |   42 -
-> >  drivers/usb/host/xhci-mvebu.h                |    6 -
-> >  drivers/usb/host/xhci-plat.c                 |   20 +-
-> >  drivers/usb/host/xhci-plat.h                 |    1 -
-> >  9 files changed, 1245 insertions(+), 203 deletions(-)
-> > =
-
-
--- =
-
+-- 
 ~Vinod
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
