@@ -4,70 +4,158 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 066A2C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Jan 2022 07:27:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1C6FC433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Jan 2022 07:38:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=p/ISelYwCWtHv3ai6R3fNld5D+/7UnJ+9PMraA5doJU=; b=xtuSWmgMKnuCYD
-	0tej9pyVBIJQi0vVN+gi8L4zhN95KHFol51mXSbx75kWVp+7blBdwgn7PcTi1RpXHIiO3RVbsiS8I
-	wSP48rlcZLj6PAmsS0wNNrE+SKvqrOMpI8hWtYByeE7PvXoh4clGX8XQx6DsAOPh+Q09qnQV6i+08
-	ihjMLj0coQCVdWZNuBJWqe5TyTZ2mC3MRbK1um+mIjFtEouj/rbtWXYypo1wrpNyDZ267ReWTNwxT
-	7evPlqHh8L5RGt1bSB8Rz8f0mOM0JCKWq/1xrOqhvszpo3zpKzdtcGO4y0UNspjdRF/z4VI7k4HJq
-	bn7GSs4Y6SoZ5amHVFkw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6E9J2eHZuFFKNInVDfioigxrSYOe0MB/sUm6AwwShDI=; b=3ZO9r87tSDCotX
+	cF0AuHaXKQuCXULuWpdOec/8tu2Rxp8gGfbyRGPZTumje5wRg9vD4MJ0iRvTrJs2Vv6XWAuQitD8N
+	5ajxOarzw3rrjXHOTTSqqYA1H7LTyWcSwgwrT/VcIUIMwZbVblIT8UIDIcqUvXs8hI/7A0Uky1fdE
+	aaVarAQxSNcsX46diYH3MErTV/LHdqra3Aa0HqFuAWtBQzZDW8o5GxDf4aD9e1qq9a6bDANFoiq5b
+	V1UvAmMY/lwz9/SjRBm89iWvHKjhsbVrPFIAkQ7xTkxpe5t8PGfqLRMsqK9WY3/0QcXKbWPjhkjcm
+	H5D22vLhC7dW40tEovsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nDLf0-000ok6-G8; Fri, 28 Jan 2022 07:27:06 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1nDLqI-000qIA-7e; Fri, 28 Jan 2022 07:38:46 +0000
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nDLex-000oj2-Dz
- for linux-phy@lists.infradead.org; Fri, 28 Jan 2022 07:27:05 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 20S7QuPB020634;
- Fri, 28 Jan 2022 01:26:56 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1643354816;
- bh=dN+CEUUtbl5d4ZOKmjdlZ5dy3pMK59MIQvO+Co4HQ98=;
- h=From:To:CC:Subject:Date;
- b=iLSXCzOqTZkH84s2U9kch1WNamGturJQdhrnKXCsaEqaYfBoJrYp4egVwxFfwcWC5
- SZSCI94+8C/cCEwja1mTRIVJCG1DyqtDFDm+LhhfeqIhS5rXNr0xF7g79a4B8Cm16g
- qgHcKklynIHjvxbR9f11asQeGygdjUjrlvIsyDH8=
-Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 20S7Quin092588
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 28 Jan 2022 01:26:56 -0600
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Fri, 28
- Jan 2022 01:26:55 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Fri, 28 Jan 2022 01:26:55 -0600
-Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
- (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 20S7QrOT011924;
- Fri, 28 Jan 2022 01:26:53 -0600
-From: Aswath Govindraju <a-govindraju@ti.com>
-To: 
-CC: Aswath Govindraju <a-govindraju@ti.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Philipp Zabel
- <p.zabel@pengutronix.de>, Swapnil Jakhade <sjakhade@cadence.com>, Dan
- Carpenter <dan.carpenter@oracle.com>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] phy: cadence: Sierra: Add support for skipping
+ id 1nDLqF-000qHm-QR
+ for linux-phy@lists.infradead.org; Fri, 28 Jan 2022 07:38:45 +0000
+Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 20S7Bhlu017933; 
+ Fri, 28 Jan 2022 07:38:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : content-type : in-reply-to :
+ mime-version; s=corp-2021-07-09;
+ bh=BX3TE56U0VgY8sm5Q3tH0gQcgaW0h8gYRb62J0aW5Vw=;
+ b=Q9KN2owaLx0dhapjlSNI4pHdxN5KvV+bR6Fb9xqgW4t9JVI7cfDF3+YbFyuE6HsDn/jW
+ 8FWmjdw/byVAtO+38etPIwHnlUYUgNrm75jnVt9/8SI5P5KfmV0lpCYGV9tTahWc+53P
+ NYntI5RaKbh+akD/2eBsW4o8TkqyfszfAYntP75Vkr3Vzfng3g2ztRlTEOWBmks7FQ2w
+ QTsrw+r7ReGaVG6Ktrc7+VBA9FvU5LiVaX+zGi0B07mgALQCtox12sAbdxgYQVKONNHb
+ RGwEIt/+M9XjgB+IJbC5jF5envM/wCaVotETzKwuwzF0Lio8W+WEl/d2LFUgZPp6ryc3 CQ== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by mx0b-00069f02.pphosted.com with ESMTP id 3duvquthuk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 28 Jan 2022 07:38:39 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.1.2/8.16.1.2) with SMTP id 20S7ZQDM035399;
+ Fri, 28 Jan 2022 07:38:38 GMT
+Received: from nam10-bn7-obe.outbound.protection.outlook.com
+ (mail-bn7nam10lp2104.outbound.protection.outlook.com [104.47.70.104])
+ by aserp3030.oracle.com with ESMTP id 3dr7yn9d01-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 28 Jan 2022 07:38:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PeiSWAdnXorUUMwwVPO4uZnD+Zj2lwRLJx/95WTz7VGo+sVqVh8TlZmPlzoZNHjE7CEm9YR0O4qxCqN0Pob0pOPP01tH8pM3EsE1y+qB9Pt+Ms4bz/yEK+RTVnA4ZuyNNOCeixgvXfWvb9W6F18bawXAnrLl+nhxdvcX1gWpp14Uo/+NCGVkLD1/xou4iBIiNHUDfvMPs+gbC+8FhvZ0vbWTKt5wqT3bj8mH/fHmJzcrC0lxCcBbr8SkRS5cabEWWE7Akv8sSXKTRvj6zv2T+T5tR2oilvXTEajzNuHlEbyKo6cgi7nvpHQkSZWwkxeGkHjHpQvoDSvOniqdIiudMw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=BX3TE56U0VgY8sm5Q3tH0gQcgaW0h8gYRb62J0aW5Vw=;
+ b=JD5+e+Wg8D2bkDd+kDkPzB7Msx+XGQS8Vz/YWy3WzhNuQWYbhTK/ZX5sfCtu6jZwAAIi1CQo7QzsqD3Et96AL8UgNGfPkPUab8uaZ2dG1uSrR+doR7swrbj8tmNmJSQ2MrJJqqWit4LvaMjsrE8yve9c/vTzY5YhPTb9OOWMyjMOzj7RiBDj4MRxxCFOJdso5KxfCYihen6n1y0HYyXrvsf5eaYcC1q+svUY+eB4a9HvEaHFhFuPux3jxNxbvNsxtXnedRB3OXOUBfDz38zYG7qq5mpHqntXeRrCv+E8rBL9axgVOz+5orn36BPCau+9lir+U67o/7rAThIVnSTR7w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BX3TE56U0VgY8sm5Q3tH0gQcgaW0h8gYRb62J0aW5Vw=;
+ b=mEzN1ggyK7Zwp0yl49eR5Bon984G1gBD1TW6lrPENBMIkyAZLZvTDcSHZ2UrnwjnffbuUp5jm0bBSPkcgWIttfkgNQwxrsSh9NQKyBymUSh39SQVKiJNZ4b3Ku04M+QzZ0OBgux5DhnpD7u8eb6Tg8WjQNm3yZU0iIizsqPEf0M=
+Received: from CY4PR1001MB2358.namprd10.prod.outlook.com
+ (2603:10b6:910:4a::32) by DM6PR10MB3657.namprd10.prod.outlook.com
+ (2603:10b6:5:17e::13) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4909.13; Fri, 28 Jan
+ 2022 07:38:36 +0000
+Received: from CY4PR1001MB2358.namprd10.prod.outlook.com
+ ([fe80::cdcc:584:3514:f052]) by CY4PR1001MB2358.namprd10.prod.outlook.com
+ ([fe80::cdcc:584:3514:f052%5]) with mapi id 15.20.4909.017; Fri, 28 Jan 2022
+ 07:38:36 +0000
+Date: Fri, 28 Jan 2022 10:38:15 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Aswath Govindraju <a-govindraju@ti.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Swapnil Jakhade <sjakhade@cadence.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] phy: cadence: Sierra: Add support for skipping
  configuration
-Date: Fri, 28 Jan 2022 12:56:41 +0530
-Message-ID: <20220128072642.29188-1-a-govindraju@ti.com>
-X-Mailer: git-send-email 2.17.1
+Message-ID: <20220128073814.GK1978@kadam>
+References: <20220128072642.29188-1-a-govindraju@ti.com>
+Content-Disposition: inline
+In-Reply-To: <20220128072642.29188-1-a-govindraju@ti.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-ClientProxiedBy: JNAP275CA0024.ZAFP275.PROD.OUTLOOK.COM (2603:1086:0:4d::15)
+ To CY4PR1001MB2358.namprd10.prod.outlook.com
+ (2603:10b6:910:4a::32)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 81a62c74-1ad9-4600-4ab5-08d9e2313144
+X-MS-TrafficTypeDiagnostic: DM6PR10MB3657:EE_
+X-Microsoft-Antispam-PRVS: <DM6PR10MB3657B02EA76116E8FD1CDB2C8E229@DM6PR10MB3657.namprd10.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 3e8Bgo41MD3MwcsDZ8FhvBrrsPEefQZQjnAjG2GFeVVbGfRd69usi4FxQWjeCCXWxSdl85COptS0TzeEUJd22N+Si/QBX//j8K8mUpSxztmbcyP0sa7vZ4feyGxHCr0yymD0ibBURfEEZzs6ovoeI68B4NkAIvvuduJjWS0Oq2lcxTelN3SqBE2iHdn3Rzgw+4GN+uyaa3HbkNsBBGPlWU9z6ygk5FMCC/CDpR7KlaRYzLQ1rz9K56ptpyAieDKHKPJvnr3LURrbmvmIY1udekPdhUCnLOisTGySuIFBzJjy1iOPOXoW3Jdnt98sB5segAGkTQ55JG5xxOlNkw/pXjV4x32xi+CIzTqRhd+3e9WOIfHeou8WgBwEIKHpqnypaI6JKynZYJM+nFVgNIWKdNiyZp1ncfE945F/zJLvMxCoClwfVWoiKCgDBTAa2IIEM+fgS89GTgNvvN38GGu48NRnke8Ors2XI2RURWIB7i6SL4AqyVA+wWYopE8FcqydRDQpjUT7sIWp4wmhsp7c3pjCvaecqmrXglKHq5BIdrMAIbX1mgpyjTyzNE9MHYh/fzPrj896lyQw2qI2UoMPlVgER4nUgwU9O8fya18M0KFqj04JvTCp1F+GDxBUPG7r/2G6car2CA6lUK2CzYugwmkJmXVwji0ptq/BJXhB0WzQvrgyogf6MVWSuRmVOLKP
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:CY4PR1001MB2358.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(7916004)(366004)(4744005)(38100700002)(54906003)(38350700002)(52116002)(66476007)(6486002)(44832011)(4326008)(508600001)(86362001)(66556008)(6512007)(8676002)(6916009)(66946007)(316002)(26005)(83380400001)(186003)(2906002)(33656002)(9686003)(5660300002)(1076003)(6506007)(8936002)(33716001)(6666004);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?AmsY2FHRMmf0SNRJtBgvCif02Xuk3pObP6HB4QrVBgYYeewHMjt5qjwO//zs?=
+ =?us-ascii?Q?oMBhPuo5u/4Vgb+JLzK9aLvWE101vGEJ/lsYv3JMPPSnt2ypKnuni9mHHBRo?=
+ =?us-ascii?Q?u3BEQw5covD/YKJWID2Rsc6vOjyt9xtzoaBmuQOaAvPeL4efVKjFzwFLBm9/?=
+ =?us-ascii?Q?YCItiRMCsERzA4WeuX/TBIxb8t5hZsFcgC+VC5hBzGI7icZ8/h/FHXGObAlf?=
+ =?us-ascii?Q?HJqUe7Ke2UgtfdoLFAS/BCs3BKpuawP0xtn3idrTsVcTc1ztH1jQnr+SpCpT?=
+ =?us-ascii?Q?b7HGufaboduq+ZNBEMXyHY27B337bNBfG8WVE50wtGEiCWrQhX25BGClfOLl?=
+ =?us-ascii?Q?wcEfASuj61r4n6HSjJkPYnF7YmziH9anDqr03R/VECF1ZbeHhdMtoYsTN6h3?=
+ =?us-ascii?Q?RSVdYSke/jAiJO0uYU0Krpp4gX1oJt/GfoB7JuuDVqbEV7bj+4KG2Mca0eIZ?=
+ =?us-ascii?Q?bRVbdYJVBoREoc+wdvglRAAYxgDNdvltIDLQQPr0VUhc5Ldxy0Kmh9kkwfZJ?=
+ =?us-ascii?Q?jdH0UNHSdmjbatbDQ12eL57C13W5hH1Dswc2d02CEUQC9AZPfZLQy4qQH/4w?=
+ =?us-ascii?Q?0kFF0TskJfdCKwruSxGCm6CLRKl5DkVxu6GpFsnsuhOUaQ7WmwQj0ESRNHPo?=
+ =?us-ascii?Q?QVxZPW7sHHDweV2/cQAJVbGUU6W8XtIZZ+VjONvnyHd6gLLIXXo8hraWhn2c?=
+ =?us-ascii?Q?JQSxG17HBOMNczlDX4BJM/cZ/Go/MEbN6vomERvPR0b9ZewVuSfh38tIWN/w?=
+ =?us-ascii?Q?ZsHgIB2XD9ffLyCUKKFvTB+K0KOjzDnicEp5gXeHxC3ogNXI5UdwhZyP6rYi?=
+ =?us-ascii?Q?j5l4ncO2aSeFo0zEBcEIAHZ7lxqvSfsuqSZnKPYEV36qXNQDwHiAipkTAaTT?=
+ =?us-ascii?Q?na7HhJP2Hn8KQAiV7iYV4bSZ+FABXhbqBI2rN1Rte9GbbIHMbAzxo2lXUf9F?=
+ =?us-ascii?Q?s6jBsyd9PNduHpADVHo9eh8MXCDn8eUy+P3grskNb4HodE2mczuik++rNAA4?=
+ =?us-ascii?Q?FbT/0/nu0LHSFsr1FqGNkKf4SgA9RoLxcxFtT7A7H4eMw9EpncOHT62t9UWp?=
+ =?us-ascii?Q?H+w4iwnM3g5eyyEJ2cChYun6piefLKYr2EJqmh+zwf8640FVEaB/2S6QCNQl?=
+ =?us-ascii?Q?fXMsMb9jlIo08C67SdMZqttHct3PtB9ZrYOwAnOrPiZkMLk+g8yx4EG1wZOG?=
+ =?us-ascii?Q?Kfn7GJ7dilL2SxMEdyn1srQwRoqvrfenIOFnEHw16yX430J1Oikx7PSMv3BL?=
+ =?us-ascii?Q?zaVzlKzWDbHh1aVWCERzcmTYNrtbx6b6XxKvMfAUdiLuusEvh+bTFzJnEzRT?=
+ =?us-ascii?Q?WAmWfLdTZwUiqFfRfxRXWOp/Prcn6DjdlXavd+QDn0oVsWRPtmYi/Tv5M3lJ?=
+ =?us-ascii?Q?kAclwXzxEoAqk2u8C3nIEHL+IDFRYrTzR1CdJrs0TamCelI7PYupdScyxbNg?=
+ =?us-ascii?Q?dECCpmHbEAQ2fbKE5j7PFBACIWktdLPmY1w5UjyhI3VtJ1pW2DJPh5cOe33Y?=
+ =?us-ascii?Q?/mW8RYF2s9hqgpYrwv2ZIKhmwKrEpLlkbQzTGcUKCiWCnIW5juy5yT7RkqBy?=
+ =?us-ascii?Q?kyRenQ9uJ4DwizvYRzrofwHTzPHHMtDCV4iYkdt1UldgGmyiBFrVSYUpinxs?=
+ =?us-ascii?Q?iw+rNEf/klEfx7VA8UvpPfd/1RkYYDdiAKl3k5mQORfqnT485h03VW7IDKuQ?=
+ =?us-ascii?Q?DX0kF9fRPPrSIlM0YrlPRMKJPZU=3D?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 81a62c74-1ad9-4600-4ab5-08d9e2313144
+X-MS-Exchange-CrossTenant-AuthSource: CY4PR1001MB2358.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jan 2022 07:38:35.9500 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: ZIA9ait8t5/b8lww9ZTgBbrJrC5SnVE1dZOY4dFJCGRcWsihTyANIg/FaWuWXabcSH6yz2MsFqWXPRN5aweBwlnc34ns1Hq7e+CgxaMdUQI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR10MB3657
+X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10240
+ signatures=669575
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ phishscore=0 bulkscore=0
+ suspectscore=0 malwarescore=0 adultscore=0 mlxlogscore=999 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2201110000
+ definitions=main-2201280046
+X-Proofpoint-GUID: 6WNTLKHJ_-m_-UKyyVN3fkUh_DHF5_Hk
+X-Proofpoint-ORIG-GUID: 6WNTLKHJ_-m_-UKyyVN3fkUh_DHF5_Hk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220127_232703_629075_D3ECD618 
-X-CRM114-Status: GOOD (  19.85  )
+X-CRM114-CacheID: sfid-20220127_233844_070054_1249AAFD 
+X-CRM114-Status: GOOD (  13.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,207 +172,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In some cases, a single SerDes instance can be shared between two different
-processors, each using a separate link. In these cases, the SerDes
-configuration is done in an earlier boot stage. Therefore, add support to
-skip reconfiguring, if it is was already configured beforehand.
+On Fri, Jan 28, 2022 at 12:56:41PM +0530, Aswath Govindraju wrote:
+> In some cases, a single SerDes instance can be shared between two different
+> processors, each using a separate link. In these cases, the SerDes
+> configuration is done in an earlier boot stage. Therefore, add support to
+> skip reconfiguring, if it is was already configured beforehand.
+> 
+> Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+> ---
+> 
+> Changes since v1:
+> - Removed redundant braces
+> - Corrected the logic for skipping multilink configuration
+> - Corrected the order in failure path
+> 
 
-Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
----
+Thanks!
 
-Changes since v1:
-- Removed redundant braces
-- Corrected the logic for skipping multilink configuration
-- Corrected the order in failure path
+Reviewed-by: Dan Carpenter <dan.carpenter@oracle.com>
 
- drivers/phy/cadence/phy-cadence-sierra.c | 82 ++++++++++++++++--------
- 1 file changed, 57 insertions(+), 25 deletions(-)
-
-diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index e265647e29a2..6b917f7bddbe 100644
---- a/drivers/phy/cadence/phy-cadence-sierra.c
-+++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -370,6 +370,7 @@ struct cdns_sierra_phy {
- 	int nsubnodes;
- 	u32 num_lanes;
- 	bool autoconf;
-+	int already_configured;
- 	struct clk_onecell_data clk_data;
- 	struct clk *output_clks[CDNS_SIERRA_OUTPUT_CLOCKS];
- };
-@@ -517,7 +518,7 @@ static int cdns_sierra_phy_init(struct phy *gphy)
- 	int i, j;
- 
- 	/* Initialise the PHY registers, unless auto configured */
--	if (phy->autoconf || phy->nsubnodes > 1)
-+	if (phy->autoconf || phy->already_configured || phy->nsubnodes > 1)
- 		return 0;
- 
- 	clk_set_rate(phy->input_clks[CMN_REFCLK_DIG_DIV], 25000000);
-@@ -646,6 +647,18 @@ static const struct phy_ops ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static int cdns_sierra_noop_phy_on(struct phy *gphy)
-+{
-+	usleep_range(5000, 10000);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops noop_ops = {
-+	.power_on	= cdns_sierra_noop_phy_on,
-+	.owner		= THIS_MODULE,
-+};
-+
- static u8 cdns_sierra_pll_mux_get_parent(struct clk_hw *hw)
- {
- 	struct cdns_sierra_pll_mux *mux = to_cdns_sierra_pll_mux(hw);
-@@ -1118,13 +1131,6 @@ static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
- 	struct clk *clk;
- 	int ret;
- 
--	clk = devm_clk_get_optional(dev, "phy_clk");
--	if (IS_ERR(clk)) {
--		dev_err(dev, "failed to get clock phy_clk\n");
--		return PTR_ERR(clk);
--	}
--	sp->input_clks[PHY_CLK] = clk;
--
- 	clk = devm_clk_get_optional(dev, "cmn_refclk_dig_div");
- 	if (IS_ERR(clk)) {
- 		dev_err(dev, "cmn_refclk_dig_div clock not found\n");
-@@ -1160,17 +1166,33 @@ static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
- 	return 0;
- }
- 
--static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
-+static int cdns_sierra_phy_clk(struct cdns_sierra_phy *sp)
- {
-+	struct device *dev = sp->dev;
-+	struct clk *clk;
- 	int ret;
- 
-+	clk = devm_clk_get_optional(dev, "phy_clk");
-+	if (IS_ERR(clk)) {
-+		dev_err(dev, "failed to get clock phy_clk\n");
-+		return PTR_ERR(clk);
-+	}
-+	sp->input_clks[PHY_CLK] = clk;
-+
- 	ret = clk_prepare_enable(sp->input_clks[PHY_CLK]);
- 	if (ret)
- 		return ret;
- 
-+	return 0;
-+}
-+
-+static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
-+{
-+	int ret;
-+
- 	ret = clk_prepare_enable(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
- 	if (ret)
--		goto err_pll_cmnlc;
-+		return ret;
- 
- 	ret = clk_prepare_enable(sp->output_clks[CDNS_SIERRA_PLL_CMNLC1]);
- 	if (ret)
-@@ -1181,9 +1203,6 @@ static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
- err_pll_cmnlc1:
- 	clk_disable_unprepare(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
- 
--err_pll_cmnlc:
--	clk_disable_unprepare(sp->input_clks[PHY_CLK]);
--
- 	return ret;
- }
- 
-@@ -1191,7 +1210,8 @@ static void cdns_sierra_phy_disable_clocks(struct cdns_sierra_phy *sp)
- {
- 	clk_disable_unprepare(sp->output_clks[CDNS_SIERRA_PLL_CMNLC1]);
- 	clk_disable_unprepare(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
--	clk_disable_unprepare(sp->input_clks[PHY_CLK]);
-+	if (!sp->already_configured)
-+		clk_disable_unprepare(sp->input_clks[PHY_CLK]);
- }
- 
- static int cdns_sierra_phy_get_resets(struct cdns_sierra_phy *sp,
-@@ -1382,22 +1402,30 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	ret = cdns_sierra_phy_get_resets(sp, dev);
--	if (ret)
--		goto unregister_clk;
--
- 	ret = cdns_sierra_phy_enable_clocks(sp);
- 	if (ret)
- 		goto unregister_clk;
- 
--	/* Enable APB */
--	reset_control_deassert(sp->apb_rst);
-+	regmap_field_read(sp->pma_cmn_ready, &sp->already_configured);
-+
-+	if (!sp->already_configured) {
-+		ret = cdns_sierra_phy_clk(sp);
-+		if (ret)
-+			goto clk_disable;
-+
-+		ret = cdns_sierra_phy_get_resets(sp, dev);
-+		if (ret)
-+			goto clk_disable;
-+
-+		/* Enable APB */
-+		reset_control_deassert(sp->apb_rst);
-+	}
- 
- 	/* Check that PHY is present */
- 	regmap_field_read(sp->macro_id_type, &id_value);
- 	if  (sp->init_data->id_value != id_value) {
- 		ret = -EINVAL;
--		goto clk_disable;
-+		goto ctrl_assert;
- 	}
- 
- 	sp->autoconf = of_property_read_bool(dn, "cdns,autoconf");
-@@ -1433,8 +1461,10 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 
- 		sp->num_lanes += sp->phys[node].num_lanes;
- 
--		gphy = devm_phy_create(dev, child, &ops);
--
-+		if (!sp->already_configured)
-+			gphy = devm_phy_create(dev, child, &ops);
-+		else
-+			gphy = devm_phy_create(dev, child, &noop_ops);
- 		if (IS_ERR(gphy)) {
- 			ret = PTR_ERR(gphy);
- 			of_node_put(child);
-@@ -1455,7 +1485,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- 	}
- 
- 	/* If more than one subnode, configure the PHY as multilink */
--	if (!sp->autoconf && sp->nsubnodes > 1) {
-+	if (!sp->already_configured && !sp->autoconf && sp->nsubnodes > 1) {
- 		ret = cdns_sierra_phy_configure_multilink(sp);
- 		if (ret)
- 			goto put_control;
-@@ -1473,9 +1503,11 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
- put_control:
- 	while (--node >= 0)
- 		reset_control_put(sp->phys[node].lnk_rst);
-+ctrl_assert:
-+	if (!sp->already_configured)
-+		reset_control_assert(sp->apb_rst);
- clk_disable:
- 	cdns_sierra_phy_disable_clocks(sp);
--	reset_control_assert(sp->apb_rst);
- unregister_clk:
- 	cdns_sierra_clk_unregister(sp);
- 	return ret;
--- 
-2.17.1
+regards,
+dan carpenter
 
 
 -- 
