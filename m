@@ -4,93 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0272C433F5
-	for <linux-phy@archiver.kernel.org>; Sat, 29 Jan 2022 19:38:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FE2AC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Jan 2022 17:44:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9tMlV7uxDM1pDeEVIr4Tz/iUuOmxIjrAMd8EiieL2DA=; b=NgxG5WJrLXCaE4
-	+n/NtEs8XGB/MTqBOEQ2RhhqiwuRvOTLqz2D64R2noWtUnI0gRejAn397V89kEyrBUx309jepVNh+
-	2qGKmcBxumZl3Ri8qr9EBn16EdTgDzYRytlQDWpN4h3EHW4cdejlwwfY1bmcgaDX6dyYsl3irFIfS
-	IFuIOo0fGcDJttTWJmYuNnk6bwQVkh1BN/LYx/krlvNiJonxZc3Y8nfIxZGoT5a08zAb4ZaKu130q
-	WbBTrKbX8iJxR0aCMLlikJtfaueqqCoWcSOjbH9WAkHPYtDVpSPtV17nQB2ZlUQYKoi1gTYAulfdl
-	+8eMfP8U6/jiVSWQ1hfA==;
+	List-Owner; bh=1kW/7qURP7uGwDHSnBHO8aD9LWKPR2o/gBX/+2m5MbY=; b=n77iD+7GLbSLF6
+	VZn6nW/5rtH/Ec4uVilc7Qpv2QLg5nnUOl/wRJr1POXbmTnVThGoRGuHpzd/jop0r+5kHwmy/AGew
+	21WoiFANp/pYJOS/45Mp8p3VxZCwHhiSwsUPY2DCUKJYEC6w4umJDe4RK0pazbszKp/ZkKYaIjhjI
+	u9QqKumuu1JJdXZPiwOoEhCI8I2ytU1dFLQdKLDsGNbps6KYvX3aa77yCDje1IrY8NVJiVa9OD19k
+	GrfRMxhAh1wnEkLgKX8rqM+Hb2K0S4oHmhwayYMNkB9zUawK6bhyxNmGeHoIow8XWgVvPwdlRbh3S
+	u/whzP7hTh3v+TzKlmyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nDtYh-005Kbq-V9; Sat, 29 Jan 2022 19:38:51 +0000
-Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
+	id 1nEajP-00ACrg-QF; Mon, 31 Jan 2022 17:44:47 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nDtXC-005Jyo-NL
- for linux-phy@lists.infradead.org; Sat, 29 Jan 2022 19:37:21 +0000
-Received: from mail-ed1-f71.google.com (mail-ed1-f71.google.com
- [209.85.208.71])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 396E34076C
- for <linux-phy@lists.infradead.org>; Sat, 29 Jan 2022 19:37:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
- s=20210705; t=1643485031;
- bh=v3MaE4YE81127QeF4TU2Qxtg0ok0vmr5F1s7ZnnGBgk=;
- h=From:To:Subject:Date:Message-Id:In-Reply-To:References:
- MIME-Version;
- b=Mdcv8aHzmOU+HGPqXsl/p9v+P3RSOg8+ecPVqa1gYYsbC7pzlyaHBTjRI6QipRin/
- 8L07fG2HyswAMXjSt99VtNqi/7gMpR21TTrVpjrRlTX3dFm0Bkly6pR59fYDQyo2Z9
- wWpLAwQp5dbQhkpEzlIw4u/ipyi0QygNMudb36HqhK56eNIGBWY6x4fjgRGE9UmS0x
- 4oA75nxIALYRoCeT60o3Hfg+0QstJsefdJWN0uwxa/bnM9Eefe1I1xEzpqarblR4eC
- +oRhl+Y7pPLrXZEIT4jCW/UIrcsafkDJEJKs7s5eKQ5pwdU/BXpUr3qztEGbtEKdQ3
- Uwtt+qiXSW99w==
-Received: by mail-ed1-f71.google.com with SMTP id
- j1-20020aa7c341000000b0040417b84efeso4764248edr.21
- for <linux-phy@lists.infradead.org>; Sat, 29 Jan 2022 11:37:11 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=v3MaE4YE81127QeF4TU2Qxtg0ok0vmr5F1s7ZnnGBgk=;
- b=fNAoU1HK0BGrcMoTUj2o13lZCse0xtWCBNMKZGJkbLfc1JZLH9aE08y0ZAPcNXo07n
- Xh6DNj9Vte3+znYyjS6JzIJQCK87LnL78LpmcPA6Uii9TNWKuNsoVYQCRQQsDhUoGzW/
- SVBglkQgdXxbfXK1gR6k0JgrASe/2FEI/u2DImMeQk2iwjKiJhatJv9NDsMKIyli+v26
- vSzvxhsMsuenV7CUApJWThrhO3Hcft36cfgrdG136uBf40iZsw/nm+psGtA0D14aRhG+
- AFmD0NCGeMm9DREQRKU1eO3s/81t5OfTwRRHxZqfpYNsv1JZBBvVPqOepue4/ycPRak7
- 089A==
-X-Gm-Message-State: AOAM530CG2xSK/zC3/+WP236Qm3tzLu153rW9wgp8U0KRqSVnecYNIpM
- +9g0WBQYF8xSHqPSV4m+tVke5ubWtl27nsp9kGv8pnY5/IVLajnBDqAe+DKMQu0VXGv9PztTW+P
- UthtMAE2BonTQ4vuRxEnBPPtHCrr8lQkPJ3EVF4mGVP0=
-X-Received: by 2002:aa7:d709:: with SMTP id t9mr13957572edq.216.1643485019381; 
- Sat, 29 Jan 2022 11:36:59 -0800 (PST)
-X-Google-Smtp-Source: ABdhPJzxLkvcLW6BLxgIqLjTWWRLCLYPN6D4UhxKK1OqrkVsROsoJ44oBC30s8nc7egAVFljLNwTyw==
-X-Received: by 2002:aa7:d709:: with SMTP id t9mr13957561edq.216.1643485019174; 
- Sat, 29 Jan 2022 11:36:59 -0800 (PST)
-Received: from localhost.localdomain (xdsl-188-155-168-84.adslplus.ch.
- [188.155.168.84])
- by smtp.gmail.com with ESMTPSA id bf21sm14968026edb.2.2022.01.29.11.36.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 29 Jan 2022 11:36:58 -0800 (PST)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Guenter Roeck <linux@roeck-us.net>,
- Marek Szyprowski <m.szyprowski@samsung.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: [PATCH 8/8] dt-bindings: phy: samsung,
- usb3-drd-phy: convert to dtschema
-Date: Sat, 29 Jan 2022 20:36:46 +0100
-Message-Id: <20220129193646.372481-8-krzysztof.kozlowski@canonical.com>
-X-Mailer: git-send-email 2.32.0
-In-Reply-To: <20220129193646.372481-1-krzysztof.kozlowski@canonical.com>
-References: <20220129193646.372481-1-krzysztof.kozlowski@canonical.com>
+ id 1nEaYV-00A99Y-6C
+ for linux-phy@lists.infradead.org; Mon, 31 Jan 2022 17:33:33 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 20VHXN56033414;
+ Mon, 31 Jan 2022 11:33:23 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1643650403;
+ bh=d/nKZqwc2od13cU51Zz7bCRw2NTAl3U668VmwloWthE=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=AkdGKP9kmypQG5koNSa5rWpcKGjNXyl+PL4CxTwbcfyVAkdDgjkq0903m/lGoFJHV
+ ei9ng9/7O8krzy2Qd67iTs5LdeM04T2ieR1uE1kzJ71Rxp8thD9dSS4rceQAQp+Vog
+ Iua5gPKkMppKctxHfjok52+QmwLaj6ZlSjHIRp18=
+Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 20VHXN5a032234
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 31 Jan 2022 11:33:23 -0600
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 31
+ Jan 2022 11:33:23 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Mon, 31 Jan 2022 11:33:22 -0600
+Received: from pratyush-4F-325.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 20VHXFpe034468;
+ Mon, 31 Jan 2022 11:33:19 -0600
+From: Pratyush Yadav <p.yadav@ti.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Pratyush Yadav <p.yadav@ti.com>, Laurent Pinchart
+ <laurent.pinchart@ideasonboard.com>, Paul Kocialkowski
+ <paul.kocialkowski@bootlin.com>, Tomi Valkeinen
+ <tomi.valkeinen@ideasonboard.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Swapnil Jakhade <sjakhade@cadence.com>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Subject: [PATCH v9 1/4] phy: cadence: Add Cadence D-PHY Rx driver
+Date: Mon, 31 Jan 2022 23:03:11 +0530
+Message-ID: <20220131173314.2073641-2-p.yadav@ti.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20220131173314.2073641-1-p.yadav@ti.com>
+References: <20220131173314.2073641-1-p.yadav@ti.com>
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220129_113718_992035_F6D19DB5 
-X-CRM114-Status: GOOD (  20.89  )
+X-CRM114-CacheID: sfid-20220131_093331_385088_DA2F199A 
+X-CRM114-Status: GOOD (  31.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,212 +87,355 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Samsung Exynos USB 3.0 DRD PHY bindings to DT schema format.
+The Cadence D-PHY can be configured in Tx (DSI) mode or Rx (CSI) mode.
+Both modes have a different programming sequence and share little among
+them. In addition, a PHY configured in Tx mode cannot be used in Rx mode
+and vice versa. For this reason, create a separate driver for the Rx
+mode to make it easier to read and maintain.
 
-Except the conversion, add also vbus-supply and vbus-boost-supply
-properties which were already used by the driver and DTS.
+Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
 ---
- .../bindings/phy/samsung,usb3-drd-phy.yaml    | 126 ++++++++++++++++++
- .../devicetree/bindings/phy/samsung-phy.txt   |  53 --------
- 2 files changed, 126 insertions(+), 53 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/samsung-phy.txt
 
-diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+Changes in v9:
+- Use %ld instead of %d for printing PTR_ERR().
+
+Changes in v8:
+- Move lanes check to start of configure sequence.
+- Change MODULE_LICENSE() to "GPL".
+- Add Laurent's R-by.
+
+Changes in v7:
+- Add spaces after { and before } in the bands table.
+- Drop the wrapping around the for loop on cdns_dphy_rx_get_band_ctrl().
+- Make cdns_dphy_rx_wait_for_bit() inline.
+- Print an error message if registering PHY provider fails.
+
+Changes in v6:
+- Move to a separate driver.
+
+Changes in v5:
+- Use the new cdns_dphy_info to specify PHY ops.
+- Re-order include in alphabetical order.
+- Make bands const.
+- Drop num_bands.
+- Make i, lanes unsigned.
+- Drop the maximum check in cdns_dphy_rx_get_band_ctrl(). Let the loop
+  complete and return -EOPNOTSUPP when we reach the end.
+- Drop the "rate < bands[i].min_rate" check since the bands are in
+  ascending order.
+- Move data_lane_ctrl to start of function and make it static const.
+
+Changes in v4:
+- Drop the submode parts. Use a different compatible for the Rx ops.
+- Make bands and num_bands static.
+
+Changes in v3:
+- Use a table to select the band.
+- Use a table to poll the data lane ready bits.
+- Multiply the DPHY HS clock rate by 2 to get the bit rate since the
+  clock is DDR.
+
+ drivers/phy/cadence/Kconfig        |   8 +
+ drivers/phy/cadence/Makefile       |   1 +
+ drivers/phy/cadence/cdns-dphy-rx.c | 255 +++++++++++++++++++++++++++++
+ 3 files changed, 264 insertions(+)
+ create mode 100644 drivers/phy/cadence/cdns-dphy-rx.c
+
+diff --git a/drivers/phy/cadence/Kconfig b/drivers/phy/cadence/Kconfig
+index a62910ff5591..1adde2d99ae7 100644
+--- a/drivers/phy/cadence/Kconfig
++++ b/drivers/phy/cadence/Kconfig
+@@ -22,6 +22,14 @@ config PHY_CADENCE_DPHY
+ 	  system. If M is selected, the module will be called
+ 	  cdns-dphy.
+ 
++config PHY_CADENCE_DPHY_RX
++	tristate "Cadence D-PHY Rx Support"
++	depends on HAS_IOMEM && OF
++	select GENERIC_PHY
++	select GENERIC_PHY_MIPI_DPHY
++	help
++	  Support for Cadence D-PHY in Rx configuration.
++
+ config PHY_CADENCE_SIERRA
+ 	tristate "Cadence Sierra PHY Driver"
+ 	depends on OF && HAS_IOMEM && RESET_CONTROLLER
+diff --git a/drivers/phy/cadence/Makefile b/drivers/phy/cadence/Makefile
+index 26e16bd34efe..e17f035ddece 100644
+--- a/drivers/phy/cadence/Makefile
++++ b/drivers/phy/cadence/Makefile
+@@ -1,5 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-$(CONFIG_PHY_CADENCE_TORRENT)	+= phy-cadence-torrent.o
+ obj-$(CONFIG_PHY_CADENCE_DPHY)	+= cdns-dphy.o
++obj-$(CONFIG_PHY_CADENCE_DPHY_RX)	+= cdns-dphy-rx.o
+ obj-$(CONFIG_PHY_CADENCE_SIERRA)	+= phy-cadence-sierra.o
+ obj-$(CONFIG_PHY_CADENCE_SALVO)	+= phy-cadence-salvo.o
+diff --git a/drivers/phy/cadence/cdns-dphy-rx.c b/drivers/phy/cadence/cdns-dphy-rx.c
 new file mode 100644
-index 000000000000..f83f0f8135b9
+index 000000000000..c9bb8c7f16f6
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-@@ -0,0 +1,126 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/samsung,usb3-drd-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/phy/cadence/cdns-dphy-rx.c
+@@ -0,0 +1,255 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com/
++ */
 +
-+title: Samsung Exynos SoC USB 3.0 DRD PHY USB 2.0 PHY
++#include <linux/bitfield.h>
++#include <linux/bitops.h>
++#include <linux/io.h>
++#include <linux/iopoll.h>
++#include <linux/module.h>
++#include <linux/phy/phy.h>
++#include <linux/phy/phy-mipi-dphy.h>
++#include <linux/platform_device.h>
 +
-+maintainers:
-+  - Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-+  - Marek Szyprowski <m.szyprowski@samsung.com>
-+  - Sylwester Nawrocki <s.nawrocki@samsung.com>
++#define DPHY_PMA_CMN(reg)		(reg)
++#define DPHY_PCS(reg)			(0xb00 + (reg))
++#define DPHY_ISO(reg)			(0xc00 + (reg))
 +
-+description: |
-+  For samsung,exynos5250-usbdrd-phy and samsung,exynos5420-usbdrd-phy
-+  compatible PHYs, the second cell in the PHY specifier identifies the
-+  PHY id, which is interpreted as follows::
-+    0 - UTMI+ type phy,
-+    1 - PIPE3 type phy.
++#define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
++#define DPHY_CMN_RX_MODE_EN		BIT(10)
++#define DPHY_CMN_RX_BANDGAP_TIMER_MASK	GENMASK(8, 1)
++#define DPHY_CMN_SSM_EN			BIT(0)
 +
-+  For SoCs like Exynos5420 having multiple USB 3.0 DRD PHY controllers,
-+  'usbdrd_phy' nodes should have numbered alias in the aliases node, in the
-+  form of usbdrdphyN, N = 0, 1... (depending on number of controllers).
++#define DPHY_CMN_RX_BANDGAP_TIMER	0x14
 +
-+properties:
-+  compatible:
-+    enum:
-+      - samsung,exynos5250-usbdrd-phy
-+      - samsung,exynos5420-usbdrd-phy
-+      - samsung,exynos5433-usbdrd-phy
-+      - samsung,exynos7-usbdrd-phy
++#define DPHY_BAND_CFG			DPHY_PCS(0x0)
++#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
++#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
 +
-+  clocks:
-+    minItems: 2
-+    maxItems: 5
++#define DPHY_POWER_ISLAND_EN_DATA	DPHY_PCS(0x8)
++#define DPHY_POWER_ISLAND_EN_DATA_VAL	0xaaaaaaaa
 +
-+  clock-names:
-+    minItems: 2
-+    maxItems: 5
-+    description: |
-+      At least two clocks::
-+        - Main PHY clock (same as USB DRD controller i.e. DWC3 IP clock), used
-+          for register access.
-+        - PHY reference clock (usually crystal clock), used for PHY operations,
-+          associated by phy name. It is used to determine bit values for clock
-+          settings register.  For Exynos5420 this is given as 'sclk_usbphy30'
-+          in the CMU.
++#define DPHY_POWER_ISLAND_EN_CLK	DPHY_PCS(0xc)
++#define DPHY_POWER_ISLAND_EN_CLK_VAL	0xaa
 +
-+  "#phy-cells":
-+    const: 1
++#define DPHY_ISO_CL_CTRL_L		DPHY_ISO(0x10)
++#define DPHY_ISO_DL_CTRL_L0		DPHY_ISO(0x14)
++#define DPHY_ISO_DL_CTRL_L1		DPHY_ISO(0x20)
++#define DPHY_ISO_DL_CTRL_L2		DPHY_ISO(0x30)
++#define DPHY_ISO_DL_CTRL_L3		DPHY_ISO(0x3c)
 +
-+  port:
-+    $ref: /schemas/graph.yaml#/properties/port
-+    description:
-+      Any connector to the data bus of this controller should be modelled using
-+      the OF graph bindings specified.
++#define DPHY_ISO_LANE_READY_BIT		0
++#define DPHY_ISO_LANE_READY_TIMEOUT_MS	100UL
 +
-+  reg:
-+    maxItems: 1
++#define DPHY_LANES_MIN			1
++#define DPHY_LANES_MAX			4
 +
-+  samsung,pmu-syscon:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to PMU system controller interface.
++struct cdns_dphy_rx {
++	void __iomem *regs;
++	struct device *dev;
++	struct phy *phy;
++};
 +
-+  vbus-supply:
-+    description:
-+      VBUS power source.
++struct cdns_dphy_rx_band {
++	/* Rates are in Mbps. */
++	unsigned int min_rate;
++	unsigned int max_rate;
++};
 +
-+  vbus-boost-supply:
-+    description:
-+      VBUS Boost 5V power source.
++/* Order of bands is important since the index is the band number. */
++static const struct cdns_dphy_rx_band bands[] = {
++	{ 80, 100 }, { 100, 120 }, { 120, 160 }, { 160, 200 }, { 200, 240 },
++	{ 240, 280 }, { 280, 320 }, { 320, 360 }, { 360, 400 }, { 400, 480 },
++	{ 480, 560 }, { 560, 640 }, { 640, 720 }, { 720, 800 }, { 800, 880 },
++	{ 880, 1040 }, { 1040, 1200 }, { 1200, 1350 }, { 1350, 1500 },
++	{ 1500, 1750 }, { 1750, 2000 }, { 2000, 2250 }, { 2250, 2500 }
++};
 +
-+required:
-+  - compatible
-+  - clocks
-+  - clock-names
-+  - "#phy-cells"
-+  - reg
-+  - samsung,pmu-syscon
++static int cdns_dphy_rx_power_on(struct phy *phy)
++{
++	struct cdns_dphy_rx *dphy = phy_get_drvdata(phy);
 +
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - samsung,exynos5433-usbdrd-phy
-+              - samsung,exynos7-usbdrd-phy
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 5
-+          maxItems: 5
-+        clock-names:
-+          items:
-+            - const: phy
-+            - const: ref
-+            - const: phy_utmi
-+            - const: phy_pipe
-+            - const: itp
-+    else:
-+      properties:
-+        clocks:
-+          minItems: 2
-+          maxItems: 2
-+        clock-names:
-+          items:
-+            - const: phy
-+            - const: ref
++	/* Start RX state machine. */
++	writel(DPHY_CMN_SSM_EN | DPHY_CMN_RX_MODE_EN |
++	       FIELD_PREP(DPHY_CMN_RX_BANDGAP_TIMER_MASK,
++			  DPHY_CMN_RX_BANDGAP_TIMER),
++	       dphy->regs + DPHY_CMN_SSM);
 +
-+additionalProperties: false
++	return 0;
++}
 +
-+examples:
-+  - |
-+    #include <dt-bindings/clock/exynos5420.h>
++static int cdns_dphy_rx_power_off(struct phy *phy)
++{
++	struct cdns_dphy_rx *dphy = phy_get_drvdata(phy);
 +
-+    phy@12100000 {
-+        compatible = "samsung,exynos5420-usbdrd-phy";
-+        reg = <0x12100000 0x100>;
-+        #phy-cells = <1>;
-+        clocks = <&clock CLK_USBD300>, <&clock CLK_SCLK_USBPHY300>;
-+        clock-names = "phy", "ref";
-+        samsung,pmu-syscon = <&pmu_system_controller>;
-+        vbus-supply = <&usb300_vbus_reg>;
-+    };
-diff --git a/Documentation/devicetree/bindings/phy/samsung-phy.txt b/Documentation/devicetree/bindings/phy/samsung-phy.txt
-deleted file mode 100644
-index b0abeb4ac0a2..000000000000
---- a/Documentation/devicetree/bindings/phy/samsung-phy.txt
-+++ /dev/null
-@@ -1,53 +0,0 @@
--Samsung Exynos5 SoC series USB DRD PHY controller
----------------------------------------------------
--
--Required properties:
--- compatible : Should be set to one of the following supported values:
--	- "samsung,exynos5250-usbdrd-phy" - for exynos5250 SoC,
--	- "samsung,exynos5420-usbdrd-phy" - for exynos5420 SoC.
--	- "samsung,exynos5433-usbdrd-phy" - for exynos5433 SoC.
--	- "samsung,exynos7-usbdrd-phy" - for exynos7 SoC.
--- reg : Register offset and length of USB DRD PHY register set;
--- clocks: Clock IDs array as required by the controller
--- clock-names: names of clocks correseponding to IDs in the clock property;
--	       Required clocks:
--	- phy: main PHY clock (same as USB DRD controller i.e. DWC3 IP clock),
--	       used for register access.
--	- ref: PHY's reference clock (usually crystal clock), used for
--	       PHY operations, associated by phy name. It is used to
--	       determine bit values for clock settings register.
--	       For Exynos5420 this is given as 'sclk_usbphy30' in CMU.
--	- optional clocks: Exynos5433 & Exynos7 SoC has now following additional
--			   gate clocks available:
--			   - phy_pipe: for PIPE3 phy
--			   - phy_utmi: for UTMI+ phy
--			   - itp: for ITP generation
--- samsung,pmu-syscon: phandle for PMU system controller interface, used to
--		      control pmu registers for power isolation.
--- #phy-cells : from the generic PHY bindings, must be 1;
--
--For "samsung,exynos5250-usbdrd-phy" and "samsung,exynos5420-usbdrd-phy"
--compatible PHYs, the second cell in the PHY specifier identifies the
--PHY id, which is interpreted as follows:
--  0 - UTMI+ type phy,
--  1 - PIPE3 type phy,
--
--Example:
--	usbdrd_phy: usbphy@12100000 {
--		compatible = "samsung,exynos5250-usbdrd-phy";
--		reg = <0x12100000 0x100>;
--		clocks = <&clock 286>, <&clock 1>;
--		clock-names = "phy", "ref";
--		samsung,pmu-syscon = <&pmu_system_controller>;
--		#phy-cells = <1>;
--	};
--
--- aliases: For SoCs like Exynos5420 having multiple USB 3.0 DRD PHY controllers,
--	   'usbdrd_phy' nodes should have numbered alias in the aliases node,
--	   in the form of usbdrdphyN, N = 0, 1... (depending on number of
--	   controllers).
--Example:
--	aliases {
--		usbdrdphy0 = &usb3_phy0;
--		usbdrdphy1 = &usb3_phy1;
--	};
++	writel(0, dphy->regs + DPHY_CMN_SSM);
++
++	return 0;
++}
++
++static int cdns_dphy_rx_get_band_ctrl(unsigned long hs_clk_rate)
++{
++	unsigned int rate, i;
++
++	rate = hs_clk_rate / 1000000UL;
++	/* Since CSI-2 clock is DDR, the bit rate is twice the clock rate. */
++	rate *= 2;
++
++	if (rate < bands[0].min_rate)
++		return -EOPNOTSUPP;
++
++	for (i = 0; i < ARRAY_SIZE(bands); i++)
++		if (rate < bands[i].max_rate)
++			return i;
++
++	return -EOPNOTSUPP;
++}
++
++static inline int cdns_dphy_rx_wait_for_bit(void __iomem *addr,
++					    unsigned int bit)
++{
++	u32 val;
++
++	return readl_relaxed_poll_timeout(addr, val, val & BIT(bit), 10,
++					  DPHY_ISO_LANE_READY_TIMEOUT_MS * 1000);
++}
++
++static int cdns_dphy_rx_wait_lane_ready(struct cdns_dphy_rx *dphy,
++					unsigned int lanes)
++{
++	static const u32 data_lane_ctrl[] = {DPHY_ISO_DL_CTRL_L0,
++					     DPHY_ISO_DL_CTRL_L1,
++					     DPHY_ISO_DL_CTRL_L2,
++					     DPHY_ISO_DL_CTRL_L3};
++	void __iomem *reg = dphy->regs;
++	unsigned int i;
++	int ret;
++
++	/* Clock lane */
++	ret = cdns_dphy_rx_wait_for_bit(reg + DPHY_ISO_CL_CTRL_L,
++					DPHY_ISO_LANE_READY_BIT);
++	if (ret)
++		return ret;
++
++	for (i = 0; i < lanes; i++) {
++		ret = cdns_dphy_rx_wait_for_bit(reg + data_lane_ctrl[i],
++						DPHY_ISO_LANE_READY_BIT);
++		if (ret)
++			return ret;
++	}
++
++	return 0;
++}
++
++static int cdns_dphy_rx_configure(struct phy *phy,
++				  union phy_configure_opts *opts)
++{
++	struct cdns_dphy_rx *dphy = phy_get_drvdata(phy);
++	unsigned int reg, lanes = opts->mipi_dphy.lanes;
++	int band_ctrl, ret;
++
++	/* Data lanes. Minimum one lane is mandatory. */
++	if (lanes < DPHY_LANES_MIN || lanes > DPHY_LANES_MAX)
++		return -EINVAL;
++
++	band_ctrl = cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
++	if (band_ctrl < 0)
++		return band_ctrl;
++
++	reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
++	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
++	writel(reg, dphy->regs + DPHY_BAND_CFG);
++
++	/*
++	 * Set the required power island phase 2 time. This is mandated by DPHY
++	 * specs.
++	 */
++	reg = DPHY_POWER_ISLAND_EN_DATA_VAL;
++	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_DATA);
++	reg = DPHY_POWER_ISLAND_EN_CLK_VAL;
++	writel(reg, dphy->regs + DPHY_POWER_ISLAND_EN_CLK);
++
++	ret = cdns_dphy_rx_wait_lane_ready(dphy, lanes);
++	if (ret) {
++		dev_err(dphy->dev, "DPHY wait for lane ready timeout\n");
++		return ret;
++	}
++
++	return 0;
++}
++
++static int cdns_dphy_rx_validate(struct phy *phy, enum phy_mode mode,
++				 int submode, union phy_configure_opts *opts)
++{
++	int ret;
++
++	if (mode != PHY_MODE_MIPI_DPHY)
++		return -EINVAL;
++
++	ret = cdns_dphy_rx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
++	if (ret < 0)
++		return ret;
++
++	return phy_mipi_dphy_config_validate(&opts->mipi_dphy);
++}
++
++static const struct phy_ops cdns_dphy_rx_ops = {
++	.power_on = cdns_dphy_rx_power_on,
++	.power_off = cdns_dphy_rx_power_off,
++	.configure = cdns_dphy_rx_configure,
++	.validate = cdns_dphy_rx_validate,
++};
++
++static int cdns_dphy_rx_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct phy_provider *provider;
++	struct cdns_dphy_rx *dphy;
++
++	dphy = devm_kzalloc(dev, sizeof(*dphy), GFP_KERNEL);
++	if (!dphy)
++		return -ENOMEM;
++
++	dev_set_drvdata(dev, dphy);
++	dphy->dev = dev;
++
++	dphy->regs = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(dphy->regs))
++		return PTR_ERR(dphy->regs);
++
++	dphy->phy = devm_phy_create(dev, NULL, &cdns_dphy_rx_ops);
++	if (IS_ERR(dphy->phy)) {
++		dev_err(dev, "Failed to create PHY: %ld\n", PTR_ERR(dphy->phy));
++		return PTR_ERR(dphy->phy);
++	}
++
++	phy_set_drvdata(dphy->phy, dphy);
++	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++	if (IS_ERR(provider)) {
++		dev_err(dev, "Failed to register PHY provider: %ld\n",
++			PTR_ERR(provider));
++		return PTR_ERR(provider);
++	}
++
++	return 0;
++}
++
++static const struct of_device_id cdns_dphy_rx_of_match[] = {
++	{ .compatible = "cdns,dphy-rx" },
++	{ /* sentinel */ },
++};
++MODULE_DEVICE_TABLE(of, cdns_dphy_rx_of_match);
++
++static struct platform_driver cdns_dphy_rx_platform_driver = {
++	.probe		= cdns_dphy_rx_probe,
++	.driver		= {
++		.name		= "cdns-mipi-dphy-rx",
++		.of_match_table	= cdns_dphy_rx_of_match,
++	},
++};
++module_platform_driver(cdns_dphy_rx_platform_driver);
++
++MODULE_AUTHOR("Pratyush Yadav <p.yadav@ti.com>");
++MODULE_DESCRIPTION("Cadence D-PHY Rx Driver");
++MODULE_LICENSE("GPL");
 -- 
-2.32.0
+2.34.1
 
 
 -- 
