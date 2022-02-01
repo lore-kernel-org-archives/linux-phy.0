@@ -4,73 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42057C43217
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Jan 2022 17:44:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18D5FC433F5
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Feb 2022 08:18:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1efr0i2MK02YuQD5i2x5NqdF93s8Em9AznSXFdG/cjE=; b=q4k+FOadkdcxzM
-	EwECl6HPNHurnZGdt669oqCiLoAL2eO4W5GRATILP2CdTkIl9l4WmlbxPXPRdpGYlxWjd1Wdjsfxf
-	tfd0u4hZAL2z90Q627VuCWoBsZHaB9Dxb25g3WD6V8cpPWFt/nX6GF+cilT7yWMLkQjDxb41AZtgI
-	bAebIBe8WfG7m+XqkmsdYUuDYMEOtkfpNXTtiCJIfsMuYpZ89PTEfz1JdHll+GhVHloUIGaH9HjaG
-	PUR72AjZs18qqjcruTwfbNPrNW9v5VBxb4Lrhj0vOizs3/bWYqLfvVR1RiCN4NTTHEhf8XEEHqSxT
-	FE9iuy8yvJ/50fWwgIdg==;
+	List-Owner; bh=YJCSGI3EFUy1ESTRMmD6Ua1IkN7XJNBGnP3jOPSX9nI=; b=fuO45bz3+pqS6l
+	UuJ2Pe251JugbfReKXabv+bpTM6HzvZmFHumbgWliZcGqr0up7x0dbf1m5ZdXMbOO0j2LVaCsZ8Io
+	S3p1SGDWIeBBxKSbOAheTZsWwe1ltt2Bf7CxAvALQB9NW+IpNJNp/gRF+1vWTSLyIY4cUlNsy77wv
+	KRVBHP7Og5FHdtUXgzJE6UbxTI7ysBtdA3dwWkGnry8pk/xQCGod9SaOvsfLTyvVtKhJnji532UcZ
+	AhGC3o/b/sq+eFHwdZWwPtJOITNjzfVP6EWGbA7MXcPDe/aCZ0bJmc2Nq+7/7gNZLyH7I9bv7zdpP
+	ytDgu7jvitUdkgHItEsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nEajQ-00ACs1-BJ; Mon, 31 Jan 2022 17:44:48 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1nEoN1-00BV3I-Cs; Tue, 01 Feb 2022 08:18:35 +0000
+Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nEaYf-00A9Cy-FY
- for linux-phy@lists.infradead.org; Mon, 31 Jan 2022 17:33:43 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 20VHXRX7043147;
- Mon, 31 Jan 2022 11:33:27 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1643650407;
- bh=C0+VGEntVNI3MtS9mDeqP4xuy+YWng1ZiXsO5o7rw18=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=YzZBxpuCOjj1/dDGeLGM26L093oYe+vCBFYFEayGdDCrfknqsWvcEa5TNB0bwdh05
- Q3Sd/QDvfWVS5TB0rqZixDy9FrD3H+0+sjzEDxKGYBN+ZtCdyUt07yWpyWBuxWciYp
- DePmBcrIeh3p4rLdyLnl+n6vfq9Lx4Q9wqSvEu6I=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 20VHXQWE032278
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 31 Jan 2022 11:33:26 -0600
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Mon, 31
- Jan 2022 11:33:26 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Mon, 31 Jan 2022 11:33:26 -0600
-Received: from pratyush-4F-325.dhcp.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 20VHXFpf034468;
- Mon, 31 Jan 2022 11:33:23 -0600
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Pratyush Yadav <p.yadav@ti.com>, Laurent Pinchart
- <laurent.pinchart@ideasonboard.com>, Paul Kocialkowski
- <paul.kocialkowski@bootlin.com>, Tomi Valkeinen
- <tomi.valkeinen@ideasonboard.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Swapnil Jakhade <sjakhade@cadence.com>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: [PATCH v9 2/4] phy: dt-bindings: Convert Cadence DPHY binding to YAML
-Date: Mon, 31 Jan 2022 23:03:12 +0530
-Message-ID: <20220131173314.2073641-3-p.yadav@ti.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20220131173314.2073641-1-p.yadav@ti.com>
-References: <20220131173314.2073641-1-p.yadav@ti.com>
+ id 1nEoMy-00BV1l-9K
+ for linux-phy@lists.infradead.org; Tue, 01 Feb 2022 08:18:33 +0000
+Received: from mail-ed1-f71.google.com (mail-ed1-f71.google.com
+ [209.85.208.71])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 221E73F328
+ for <linux-phy@lists.infradead.org>; Tue,  1 Feb 2022 08:18:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1643703511;
+ bh=4OMJ5aSVw9egu+KfVN6MouMq2XmyI041S1HUizk8CCg=;
+ h=From:To:Subject:Date:Message-Id:In-Reply-To:References:
+ MIME-Version:Content-Type;
+ b=QeJWjHOs/TDyxxegU58iKapFRF0SpMTyDqhr9fyHhcS1hIhXhDpfrSAcNAMnVbdlG
+ i8QzN0hGObFje/MwGyuENHxe4Hn4a51kayL8tVqaD5GS3HEyVmTKpTE7Kqbek8jmx2
+ yD3B3e/A3PBo8k13rnq48GU65DbKStdGJ+SNy+VbSAdpFWbwGe9tUXoyR4wUGyF1RU
+ GCXCPIn7ZbuQpoSiVsyJ7TAzLJWL+ccauWcZooHnh8ilwPsoYDRubBxcy3EdPzYzxj
+ rMqnuAORQEvfLrs/JXkRio3O28mNaJBJhtWlRc5bupj7PLPRiJGEG2IP/+yTMxfvmA
+ yP5qJfJa3A/1A==
+Received: by mail-ed1-f71.google.com with SMTP id
+ f21-20020a50d555000000b00407a8d03b5fso8215566edj.9
+ for <linux-phy@lists.infradead.org>; Tue, 01 Feb 2022 00:18:31 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=4OMJ5aSVw9egu+KfVN6MouMq2XmyI041S1HUizk8CCg=;
+ b=z6E7g95n0J9/GXeaLysWKJHQbVT+1DkCtPIRwF18x2LkoiL7lcFXD7M9Via2BB/kb5
+ Ut43lZtyMjZboIT3fpioJsjqTHxofDqb9zSmZ6Nqh2krvSXjixd3lcOqiiU6A1IhmH/s
+ 6nobBHGvyorty9tr8+5f24w2Ojg/LKOlUdrceJ1Jbj/L6JlL2vmOYMmpy5Kjb93fP3sE
+ nwoXNRjNy3f2eQSUAE+WCdjErs8IRDc+IOvxEnHSf7XUCDdJsOvK6FgNkeaNmvnkWila
+ G67U4ZzYdcc0RGYybOpqrRpGBbSjJSClWpL4xq28lRlL3vuewapI/5LxGQ+N6LWMcmXM
+ 0lHw==
+X-Gm-Message-State: AOAM531FwUCPIL7pp2dGzkoDkxIXfwHyDx1ZKBzWWwheYEyxXeR6hSX+
+ +xG00gxNzLqPZwQ3DOGIXwsp9PeiwD5ICgX1EPLfxBg8ifXOoYDJikVMLe6nflMk2iAkmqJ/WXy
+ tMb3cnMZ3oii6ZnqR5NnJtwaQzw713eXe1rIFBrw95pE=
+X-Received: by 2002:a17:906:19ce:: with SMTP id
+ h14mr20919921ejd.407.1643703510611; 
+ Tue, 01 Feb 2022 00:18:30 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJwi9GBsiIiYtp42mt15Psk7ObFdzcgWoYjLwVXsinm40dgxMTPh5vnURxVxv53FfpPvG7hEKQ==
+X-Received: by 2002:a17:906:19ce:: with SMTP id
+ h14mr20919913ejd.407.1643703510486; 
+ Tue, 01 Feb 2022 00:18:30 -0800 (PST)
+Received: from localhost.localdomain (xdsl-188-155-168-84.adslplus.ch.
+ [188.155.168.84])
+ by smtp.gmail.com with ESMTPSA id r3sm14368372ejd.129.2022.02.01.00.18.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 01 Feb 2022 00:18:30 -0800 (PST)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+To: linux-phy@lists.infradead.org, Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Guenter Roeck <linux@roeck-us.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: (subset) [PATCH 1/8] arm64: dts: exynos: adjust USB DRD clocks
+ with dtschema in Exynos7
+Date: Tue,  1 Feb 2022 09:17:55 +0100
+Message-Id: <164370347107.13100.9120518363426119036.b4-ty@canonical.com>
+X-Mailer: git-send-email 2.32.0
+In-Reply-To: <20220129193646.372481-1-krzysztof.kozlowski@canonical.com>
+References: <20220129193646.372481-1-krzysztof.kozlowski@canonical.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220131_093341_680567_9EFDD44D 
-X-CRM114-Status: GOOD (  14.77  )
+X-CRM114-CacheID: sfid-20220201_001832_484324_EC6B8C1E 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,118 +109,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert Cadence DPHY binding to YAML.
+On Sat, 29 Jan 2022 20:36:39 +0100, Krzysztof Kozlowski wrote:
+> Use the same order of USB 3.0 DRD controller clocks as in Exynos5433.
+> 
+> 
 
-Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Applied, thanks!
 
----
+[1/8] arm64: dts: exynos: adjust USB DRD clocks with dtschema in Exynos7
+      commit: a0d5455330ece6f50ddf9e71d530f91c302803e9
 
-(no changes since v3)
-
-Changes in v3:
-- Add Rob's R-by.
-
-Changes in v2:
-- Drop reg description.
-- Add a description for each DPHY clock.
-- Rename dphy@... to phy@... in example.
-- Add Laurent's R-by.
-- Re-order subject prefixes.
-
- .../devicetree/bindings/phy/cdns,dphy.txt     | 20 --------
- .../devicetree/bindings/phy/cdns,dphy.yaml    | 51 +++++++++++++++++++
- 2 files changed, 51 insertions(+), 20 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-
-diff --git a/Documentation/devicetree/bindings/phy/cdns,dphy.txt b/Documentation/devicetree/bindings/phy/cdns,dphy.txt
-deleted file mode 100644
-index 1095bc4e72d9..000000000000
---- a/Documentation/devicetree/bindings/phy/cdns,dphy.txt
-+++ /dev/null
-@@ -1,20 +0,0 @@
--Cadence DPHY
--============
--
--Cadence DPHY block.
--
--Required properties:
--- compatible: should be set to "cdns,dphy".
--- reg: physical base address and length of the DPHY registers.
--- clocks: DPHY reference clocks.
--- clock-names: must contain "psm" and "pll_ref".
--- #phy-cells: must be set to 0.
--
--Example:
--	dphy0: dphy@fd0e0000{
--		compatible = "cdns,dphy";
--		reg = <0x0 0xfd0e0000 0x0 0x1000>;
--		clocks = <&psm_clk>, <&pll_ref_clk>;
--		clock-names = "psm", "pll_ref";
--		#phy-cells = <0>;
--	};
-diff --git a/Documentation/devicetree/bindings/phy/cdns,dphy.yaml b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-new file mode 100644
-index 000000000000..b90a58773bf2
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
-@@ -0,0 +1,51 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/cdns,dphy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Cadence DPHY Device Tree Bindings
-+
-+maintainers:
-+  - Pratyush Yadav <p.yadav@ti.com>
-+
-+properties:
-+  compatible:
-+    items:
-+      - const: cdns,dphy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: PMA state machine clock
-+      - description: PLL reference clock
-+
-+  clock-names:
-+    items:
-+      - const: psm
-+      - const: pll_ref
-+
-+  "#phy-cells":
-+    const: 0
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+
-+    dphy0: phy@fd0e0000{
-+        compatible = "cdns,dphy";
-+        reg = <0xfd0e0000 0x1000>;
-+        clocks = <&psm_clk>, <&pll_ref_clk>;
-+        clock-names = "psm", "pll_ref";
-+        #phy-cells = <0>;
-+    };
+Best regards,
 -- 
-2.34.1
-
+Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
 
 -- 
 linux-phy mailing list
