@@ -4,71 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36F4BC433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Feb 2022 15:42:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0136FC433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Feb 2022 15:56:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uore6Xbj1KAQPYdOV+tvuID6ww6cNs2TZAL++akKhl0=; b=4a4ZIPEGr6JQJk
-	0l+f+4kitcu1JO51cU2XIlVvY0TQXuHeJ04vTukVDVVfKo3VRVh2rUUgWusns6onqladxQgtG2awz
-	y6qBkTbrIqvMmxfLZkgSVSGDKch6lDkU+/NchBaALx0133jBdwVvgiWCd3B3plJu0P2W4lQS0kZqu
-	yMtHdWcjyxCCOez2gU7BzPEFibF0Shnyg8rq2b9YUXYD6a30Pw+D6Mtk3xRv6m1/5+DzmZYWVJhyx
-	mN4T133iTgjStKlWHbqmYeztWp+CyQ+VC4+9MRfBjD2zNABQr5Yr+NYPZZnE3+OfmXpUQ+luOpQCW
-	7VLJSf7N4eJgE0TvTy6w==;
+	List-Owner; bh=EVqsNQgOSdMGNPaFVyYLCHgqimPN16pqGr5Rjv3WVjk=; b=S54DAlQR4zbxrA
+	SZOJDCZPMdaRpnXjdKoIGAi8rXo+XMs+eKCWM/kYGmtDaBZ2+wjLdCwBay229Y11yK/UFp1JAJq3O
+	JjpwltuXbAlEhoBKYiERMqzsB8bhJTcUpaLSv0lAqH6JnZKdSNsvYs4pI8w9E5Iee0muo5glgydAq
+	7yEgnUdxc2FjA7udL0ttlQFnV6CW2QC6pPnLfXOZz+89tnyIttqztmbg2FWIrkY3lD7C0PVf3sx94
+	1y78T5nBPt1YdyyDG91YMEi2n2Fk0Y7M9ubQaoIkLNP/+yIXx/6xvPHKHqdNv7dn6viJfmw878eQ5
+	AJ8ybzhXt+oBglmY/2ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nFHlo-00G2R0-5l; Wed, 02 Feb 2022 15:42:08 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nFHzQ-00G6Hn-0O; Wed, 02 Feb 2022 15:56:12 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nFHSR-00Fxqd-0C; Wed, 02 Feb 2022 15:22:08 +0000
+ id 1nFHvo-00G5Bg-6d
+ for linux-phy@lists.infradead.org; Wed, 02 Feb 2022 15:52:33 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 7A6CF6159F;
- Wed,  2 Feb 2022 15:22:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 113DDC004E1;
- Wed,  2 Feb 2022 15:22:05 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 6336BB831A7;
+ Wed,  2 Feb 2022 15:52:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C2D59C340EB;
+ Wed,  2 Feb 2022 15:52:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1643815325;
- bh=OTLXgwve+GXUKqJgusIix6IvLJEmARJe1ZPe1Wk9IxQ=;
+ s=k20201202; t=1643817145;
+ bh=MnUT7jIJh8Gz3/oQ/TL2s5RiS07lmHgG+Jcg67HpC1g=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UxdeogQjte72mAnF7hRypZPI8xAbel7BrvRvPRlt1nfnufzyW07t/bWcHBqQ+cWPm
- Gfc7wtq1yWuM2Uxpn/bNERIJOeOvPeaoI++xw+q2x8VrjZqBmySMQSBjFDba9IJcW6
- +cwWNGtZFw79R6zllZHcbqxZrAX74luFmU3CzYCl7aa1qHcw4b+lbh8fH1pEj+uRAU
- UT0vNpdnpUacazhAij3sM8PDYaMhN6cYmFT54tdjOiJqYFz5AdKJ3TUpuMoCMpyKBE
- UBR1KsMFehen3PYeGvOFkAHjM8IfDBW3goWi6ZgbHxbfzVlmxlK6r/uhtmXJ5WFkHG
- QBJj61DDUrK7w==
-Date: Wed, 2 Feb 2022 20:52:01 +0530
+ b=lbButO5FFPY7r4w8J4dIStoTKbyEcrTi/rbJtbqtGlscKA3PxvSiPgWDyYsN1Twg0
+ JZ0qrJc4c/FCcFOT2rnWrxqzcI7PRfldalFpqKyLdBKBcO4GGpl6KxyChloBIsx3XR
+ lswTSW4Mf3m7TZ6HrmbkoAFehNu0wy/4AxD2EluEbBnA/2h8qXN+a9ppVJjV9RhcTb
+ e5xvHQMDNiXBZlt6/k99psqkoFajetEklsIpZZa6SD+uUdweTDFkJ3vfP881e0pUNt
+ HH8i/5BhM+rGkN3FYYvDTCifjmt0PnyDUi5rTbwrFHdL6EK5QaQdZEbVIPxhDHjVuy
+ Ou6OQnzLuF6zQ==
+Date: Wed, 2 Feb 2022 21:22:20 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Liu Ying <victor.liu@nxp.com>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-imx@nxp.com,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Robert Foss <robert.foss@linaro.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Heiko Stuebner <heiko@sntech.de>, Maxime Ripard <mripard@kernel.org>,
- Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>,
- Wyon Bi <bivvy.bi@rock-chips.com>
-Subject: Re: [PATCH v4] phy: dphy: Correct clk_pre parameter
-Message-ID: <YfqhmSEL8Jym8FhA@matsya>
-References: <20220124024007.1465018-1-victor.liu@nxp.com>
+To: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>
+Cc: linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ pali@kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>
+Subject: Re: [PATCH phy v3 2/5] phy: marvell: phy-mvebu-a3700-comphy: Add
+ native kernel implementation
+Message-ID: <YfqotCQ8TRWHp8Vz@matsya>
+References: <20220103143220.13070-1-kabel@kernel.org>
+ <20220103143220.13070-3-kabel@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220124024007.1465018-1-victor.liu@nxp.com>
+In-Reply-To: <20220103143220.13070-3-kabel@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220202_072207_140767_96926AA3 
-X-CRM114-Status: GOOD (  15.95  )
+X-CRM114-CacheID: sfid-20220202_075228_805737_115BE79E 
+X-CRM114-Status: GOOD (  40.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,38 +70,1713 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-01-22, 10:40, Liu Ying wrote:
-> The D-PHY specification (v1.2) explicitly mentions that the T-CLK-PRE
-> parameter's unit is Unit Interval(UI) and the minimum value is 8.  Also,
-> kernel doc of the 'clk_pre' member of struct phy_configure_opts_mipi_dphy
-> mentions that it should be in UI.  However, the dphy core driver wrongly
-> sets 'clk_pre' to 8000, which seems to hint that it's in picoseconds.
-> 
-> So, let's fix the dphy core driver to correctly reflect the T-CLK-PRE
-> parameter's minimum value according to the D-PHY specification.
-> 
-> I'm assuming that all impacted custom drivers shall program values in
-> TxByteClkHS cycles into hardware for the T-CLK-PRE parameter.  The D-PHY
-> specification mentions that the frequency of TxByteClkHS is exactly 1/8
-> the High-Speed(HS) bit rate(each HS bit consumes one UI).  So, relevant
-> custom driver code is changed to program those values as
-> DIV_ROUND_UP(cfg->clk_pre, BITS_PER_BYTE), then.
-> 
-> Note that I've only tested the patch with RM67191 DSI panel on i.MX8mq EVK.
-> Help is needed to test with other i.MX8mq, Meson and Rockchip platforms,
-> as I don't have the hardwares.
+On 03-01-22, 15:32, Marek Beh=FAn wrote:
+> From: Pali Roh=E1r <pali@kernel.org>
+> =
 
-Applied, thanks
+> Remove old RPC implementation and add a new native kernel implementation.
+> =
 
--- 
+> The old implementation uses ARM SMC API to issue RPC calls to ARM Trusted
+> Firmware which provides real implementation of PHY configuration.
+> =
+
+> But older versions of ARM Trusted Firmware do not provide this PHY
+> configuration functionality, simply returning: operation not supported; or
+> worse, some versions provide the configuration functionality incorrectly.
+> =
+
+> For example the firmware shipped in ESPRESSObin board has this older
+> version of ARM Trusted Firmware and therefore SATA, USB 3.0 and PCIe
+> functionality do not work with newer versions of Linux kernel.
+> =
+
+> Due to the above reasons, the following commits were introduced into Linu=
+x,
+> to workaround these issues by ignoring -EOPNOTSUPP error code from
+> phy-mvebu-a3700-comphy driver function phy_power_on():
+> =
+
+> commit 45aefe3d2251 ("ata: ahci: mvebu: Make SATA PHY optional for Armada
+> 3720")
+> commit 3241929b67d2 ("usb: host: xhci: mvebu: make USB 3.0 PHY optional f=
+or
+> Armada 3720")
+> commit b0c6ae0f8948 ("PCI: aardvark: Fix initialization with old Marvell's
+> Arm Trusted Firmware")
+> =
+
+> Replace this RPC implementation with proper native kernel implementation,
+> which is independent on the firmware. Never return -EOPNOTSUPP for proper
+> arguments.
+> =
+
+> This should solve multiple issues with real-world boards, where it is not
+> possible or really inconvenient to change the firmware. Let's eliminate
+> these issues.
+> =
+
+> This implementation is ported directly from Armada 3720 comphy driver fou=
+nd
+> in newest version of ARM Trusted Firmware source code, but with various
+> fixes of register names, some added comments, some refactoring due to the
+> original code not conforming to kernel standards. Also PCIe mode poweroff
+> support was added here, and PHY reset support. These changes are also goi=
+ng
+> to be sent to ARM Trusted Firmware.
+> =
+
+> Signed-off-by: Pali Roh=E1r <pali@kernel.org>
+> Acked-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> [ Pali did the porting from ATF.
+>   I (Marek) then fixed some register names, some various other things,
+>   added some comments and refactored the code to kernel standards. Also
+>   fixed PHY poweroff and added PHY reset. ]
+> Signed-off-by: Marek Beh=FAn <kabel@kernel.org>
+> ---
+> Changes since v2:
+> - changed raw spin lock to ordinary spin lock
+> - fixed indentation of gbe_phy_init_fix
+> - use FIELD_PREP() macro
+> Changes since v1:
+> - refactored to use GENMASK()
+> - fixed various register names to conform to Functional Specification
+> - refactored various register names to have uniform naming
+> - refactored register access into one function, which decides whether
+>   the access should be direct or indirect, so as to not have all these
+>   checks done everywhere in the code
+> - moved around one register definition to have the registers sorted
+>   according to their offset
+> - added comments to some register definitions
+> - added support for PHY reset() method
+> - when changing PHY mode, the driver now resets the PHY and its
+>   registers to put the PHY in known state
+> - fixed the power_off() method
+> - added spinlock guard when accessing PHY Selector register, since it
+>   is shared between the PHYs and so the PHY mutex is insufficient
+> - upon driver probe changed the calls to power_off() to reset()
+> ---
+>  drivers/phy/marvell/phy-mvebu-a3700-comphy.c | 1351 ++++++++++++++++--
+>  1 file changed, 1234 insertions(+), 117 deletions(-)
+> =
+
+> diff --git a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c b/drivers/phy/m=
+arvell/phy-mvebu-a3700-comphy.c
+> index dbb2d4308851..cbda47c33b98 100644
+> --- a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+> +++ b/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+> @@ -5,12 +5,16 @@
+>   * Authors:
+>   *   Evan Wang <xswang@marvell.com>
+>   *   Miqu=E8l Raynal <miquel.raynal@bootlin.com>
+> + *   Pali Roh=E1r <pali@kernel.org>
+> + *   Marek Beh=FAn <kabel@kernel.org>
+>   *
+>   * Structure inspired from phy-mvebu-cp110-comphy.c written by Antoine T=
+enart.
+> - * SMC call initial support done by Grzegorz Jaszczyk.
+> + * Comphy code from ARM Trusted Firmware ported by Pali Roh=E1r <pali@ke=
+rnel.org>
+> + * and Marek Beh=FAn <kabel@kernel.org>.
+>   */
+>  =
+
+> -#include <linux/arm-smccc.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+>  #include <linux/io.h>
+>  #include <linux/iopoll.h>
+>  #include <linux/mfd/syscon.h>
+> @@ -18,103 +22,1147 @@
+>  #include <linux/phy.h>
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+> +#include <linux/spinlock.h>
+>  =
+
+> -#define MVEBU_A3700_COMPHY_LANES		3
+> -
+> -/* COMPHY Fast SMC function identifiers */
+> -#define COMPHY_SIP_POWER_ON			0x82000001
+> -#define COMPHY_SIP_POWER_OFF			0x82000002
+> -#define COMPHY_SIP_PLL_LOCK			0x82000003
+> -
+> -#define COMPHY_FW_MODE_SATA			0x1
+> -#define COMPHY_FW_MODE_SGMII			0x2
+> -#define COMPHY_FW_MODE_2500BASEX		0x3
+> -#define COMPHY_FW_MODE_USB3H			0x4
+> -#define COMPHY_FW_MODE_USB3D			0x5
+> -#define COMPHY_FW_MODE_PCIE			0x6
+> -#define COMPHY_FW_MODE_USB3			0xa
+> -
+> -#define COMPHY_FW_SPEED_1_25G			0 /* SGMII 1G */
+> -#define COMPHY_FW_SPEED_2_5G			1
+> -#define COMPHY_FW_SPEED_3_125G			2 /* 2500BASE-X */
+> -#define COMPHY_FW_SPEED_5G			3
+> -#define COMPHY_FW_SPEED_MAX			0x3F
+> -
+> -#define COMPHY_FW_MODE(mode)			((mode) << 12)
+> -#define COMPHY_FW_NET(mode, idx, speed)		(COMPHY_FW_MODE(mode) | \
+> -						 ((idx) << 8) |	\
+> -						 ((speed) << 2))
+> -#define COMPHY_FW_PCIE(mode, speed, width)	(COMPHY_FW_NET(mode, 0, speed=
+) | \
+> -						 ((width) << 18))
+> +#define PLL_SET_DELAY_US		600
+> +#define COMPHY_PLL_SLEEP		1000
+> +#define COMPHY_PLL_TIMEOUT		150000
+> +
+> +/* Comphy lane2 indirect access register offset */
+> +#define COMPHY_LANE2_INDIR_ADDR		0x0
+> +#define COMPHY_LANE2_INDIR_DATA		0x4
+> +
+> +/* SATA and USB3 PHY offset compared to SATA PHY */
+> +#define COMPHY_LANE2_REGS_BASE		0x200
+> +
+> +/*
+> + * When accessing common PHY lane registers directly, we need to shift b=
+y 1,
+> + * since the registers are 16-bit.
+> + */
+> +#define COMPHY_LANE_REG_DIRECT(reg)	(((reg) & 0x7FF) << 1)
+> +
+> +/* COMPHY registers */
+> +#define COMPHY_POWER_PLL_CTRL		0x01
+> +#define PU_IVREF_BIT			BIT(15)
+> +#define PU_PLL_BIT			BIT(14)
+> +#define PU_RX_BIT			BIT(13)
+> +#define PU_TX_BIT			BIT(12)
+> +#define PU_TX_INTP_BIT			BIT(11)
+> +#define PU_DFE_BIT			BIT(10)
+> +#define RESET_DTL_RX_BIT		BIT(9)
+> +#define PLL_LOCK_BIT			BIT(8)
+> +#define REF_FREF_SEL_MASK		GENMASK(4, 0)
+> +#define REF_FREF_SEL_SERDES_25MHZ	FIELD_PREP(REF_FREF_SEL_MASK, 0x1)
+> +#define REF_FREF_SEL_SERDES_40MHZ	FIELD_PREP(REF_FREF_SEL_MASK, 0x3)
+> +#define REF_FREF_SEL_SERDES_50MHZ	FIELD_PREP(REF_FREF_SEL_MASK, 0x4)
+> +#define REF_FREF_SEL_PCIE_USB3_25MHZ	FIELD_PREP(REF_FREF_SEL_MASK, 0x2)
+> +#define REF_FREF_SEL_PCIE_USB3_40MHZ	FIELD_PREP(REF_FREF_SEL_MASK, 0x3)
+> +#define COMPHY_MODE_MASK		GENMASK(7, 5)
+> +#define COMPHY_MODE_SATA		FIELD_PREP(COMPHY_MODE_MASK, 0x0)
+> +#define COMPHY_MODE_PCIE		FIELD_PREP(COMPHY_MODE_MASK, 0x3)
+> +#define COMPHY_MODE_SERDES		FIELD_PREP(COMPHY_MODE_MASK, 0x4)
+> +#define COMPHY_MODE_USB3		FIELD_PREP(COMPHY_MODE_MASK, 0x5)
+> +
+> +#define COMPHY_KVCO_CAL_CTRL		0x02
+> +#define USE_MAX_PLL_RATE_BIT		BIT(12)
+> +#define SPEED_PLL_MASK			GENMASK(7, 2)
+> +#define SPEED_PLL_VALUE_16		FIELD_PREP(SPEED_PLL_MASK, 0x10)
+> +
+> +#define COMPHY_DIG_LOOPBACK_EN		0x23
+> +#define SEL_DATA_WIDTH_MASK		GENMASK(11, 10)
+> +#define DATA_WIDTH_10BIT		FIELD_PREP(SEL_DATA_WIDTH_MASK, 0x0)
+> +#define DATA_WIDTH_20BIT		FIELD_PREP(SEL_DATA_WIDTH_MASK, 0x1)
+> +#define DATA_WIDTH_40BIT		FIELD_PREP(SEL_DATA_WIDTH_MASK, 0x2)
+> +#define PLL_READY_TX_BIT		BIT(4)
+> +
+> +#define COMPHY_SYNC_PATTERN		0x24
+> +#define TXD_INVERT_BIT			BIT(10)
+> +#define RXD_INVERT_BIT			BIT(11)
+> +
+> +#define COMPHY_SYNC_MASK_GEN		0x25
+> +#define PHY_GEN_MAX_MASK		GENMASK(11, 10)
+> +#define PHY_GEN_MAX_USB3_5G		FIELD_PREP(PHY_GEN_MAX_MASK, 0x1)
+> +
+> +#define COMPHY_ISOLATION_CTRL		0x26
+> +#define PHY_ISOLATE_MODE		BIT(15)
+> +
+> +#define COMPHY_GEN2_SET2		0x3e
+> +#define GS2_TX_SSC_AMP_MASK		GENMASK(15, 9)
+> +#define GS2_TX_SSC_AMP_4128		FIELD_PREP(GS2_TX_SSC_AMP_MASK, 0x20)
+> +#define GS2_VREG_RXTX_MAS_ISET_MASK	GENMASK(8, 7)
+> +#define GS2_VREG_RXTX_MAS_ISET_60U	FIELD_PREP(GS2_VREG_RXTX_MAS_ISET_MAS=
+K,\
+> +						   0x0)
+> +#define GS2_VREG_RXTX_MAS_ISET_80U	FIELD_PREP(GS2_VREG_RXTX_MAS_ISET_MAS=
+K,\
+> +						   0x1)
+> +#define GS2_VREG_RXTX_MAS_ISET_100U	FIELD_PREP(GS2_VREG_RXTX_MAS_ISET_MA=
+SK,\
+> +						   0x2)
+> +#define GS2_VREG_RXTX_MAS_ISET_120U	FIELD_PREP(GS2_VREG_RXTX_MAS_ISET_MA=
+SK,\
+> +						   0x3)
+> +#define GS2_RSVD_6_0_MASK		GENMASK(6, 0)
+> +
+> +#define COMPHY_GEN3_SET2		0x3f
+> +
+> +#define COMPHY_IDLE_SYNC_EN		0x48
+> +#define IDLE_SYNC_EN			BIT(12)
+> +
+> +#define COMPHY_MISC_CTRL0		0x4F
+> +#define CLK100M_125M_EN			BIT(4)
+> +#define TXDCLK_2X_SEL			BIT(6)
+> +#define CLK500M_EN			BIT(7)
+> +#define PHY_REF_CLK_SEL			BIT(10)
+> +
+> +#define COMPHY_SFT_RESET		0x52
+> +#define SFT_RST				BIT(9)
+> +#define SFT_RST_NO_REG			BIT(10)
+> +
+> +#define COMPHY_MISC_CTRL1		0x73
+> +#define SEL_BITS_PCIE_FORCE		BIT(15)
+> +
+> +#define COMPHY_GEN2_SET3		0x112
+> +#define GS3_FFE_CAP_SEL_MASK		GENMASK(3, 0)
+> +#define GS3_FFE_CAP_SEL_VALUE		FIELD_PREP(GS3_FFE_CAP_SEL_MASK, 0xF)
+> +
+> +/* PIPE registers */
+> +#define COMPHY_PIPE_LANE_CFG0		0x180
+> +#define PRD_TXDEEMPH0_MASK		BIT(0)
+> +#define PRD_TXMARGIN_MASK		GENMASK(3, 1)
+> +#define PRD_TXSWING_MASK		BIT(4)
+> +#define CFG_TX_ALIGN_POS_MASK		GENMASK(8, 5)
+> +
+> +#define COMPHY_PIPE_LANE_CFG1		0x181
+> +#define PRD_TXDEEMPH1_MASK		BIT(15)
+> +#define USE_MAX_PLL_RATE_EN		BIT(9)
+> +#define TX_DET_RX_MODE			BIT(6)
+> +#define GEN2_TX_DATA_DLY_MASK		GENMASK(4, 3)
+> +#define GEN2_TX_DATA_DLY_DEFT		FIELD_PREP(GEN2_TX_DATA_DLY_MASK, 2)
+> +#define TX_ELEC_IDLE_MODE_EN		BIT(0)
+> +
+> +#define COMPHY_PIPE_LANE_STAT1		0x183
+> +#define TXDCLK_PCLK_EN			BIT(0)
+> +
+> +#define COMPHY_PIPE_LANE_CFG4		0x188
+> +#define SPREAD_SPECTRUM_CLK_EN		BIT(7)
+> +
+> +#define COMPHY_PIPE_RST_CLK_CTRL	0x1C1
+> +#define PIPE_SOFT_RESET			BIT(0)
+> +#define PIPE_REG_RESET			BIT(1)
+> +#define MODE_CORE_CLK_FREQ_SEL		BIT(9)
+> +#define MODE_PIPE_WIDTH_32		BIT(3)
+> +#define MODE_REFDIV_MASK		GENMASK(5, 4)
+> +#define MODE_REFDIV_BY_4		FIELD_PREP(MODE_REFDIV_MASK, 0x2)
+> +
+> +#define COMPHY_PIPE_TEST_MODE_CTRL	0x1C2
+> +#define MODE_MARGIN_OVERRIDE		BIT(2)
+> +
+> +#define COMPHY_PIPE_CLK_SRC_LO		0x1C3
+> +#define MODE_CLK_SRC			BIT(0)
+> +#define BUNDLE_PERIOD_SEL		BIT(1)
+> +#define BUNDLE_PERIOD_SCALE_MASK	GENMASK(3, 2)
+> +#define BUNDLE_SAMPLE_CTRL		BIT(4)
+> +#define PLL_READY_DLY_MASK		GENMASK(7, 5)
+> +#define CFG_SEL_20B			BIT(15)
+> +
+> +#define COMPHY_PIPE_PWR_MGM_TIM1	0x1D0
+> +#define CFG_PM_OSCCLK_WAIT_MASK		GENMASK(15, 12)
+> +#define CFG_PM_RXDEN_WAIT_MASK		GENMASK(11, 8)
+> +#define CFG_PM_RXDEN_WAIT_1_UNIT	FIELD_PREP(CFG_PM_RXDEN_WAIT_MASK, 0x1)
+> +#define CFG_PM_RXDLOZ_WAIT_MASK		GENMASK(7, 0)
+> +#define CFG_PM_RXDLOZ_WAIT_7_UNIT	FIELD_PREP(CFG_PM_RXDLOZ_WAIT_MASK, 0x=
+7)
+> +#define CFG_PM_RXDLOZ_WAIT_12_UNIT	FIELD_PREP(CFG_PM_RXDLOZ_WAIT_MASK, 0=
+xC)
+> +
+> +/*
+> + * This register is not from PHY lane register space. It only exists in =
+the
+> + * indirect register space, before the actual PHY lane 2 registers. So t=
+he
+> + * offset is absolute, not relative to COMPHY_LANE2_REGS_BASE.
+> + * It is used only for SATA PHY initialization.
+> + */
+> +#define COMPHY_RESERVED_REG		0x0E
+> +#define PHYCTRL_FRM_PIN_BIT		BIT(13)
+> +
+> +/* South Bridge PHY Configuration Registers */
+> +#define COMPHY_PHY_REG(lane, reg)	(((1 - (lane)) * 0x28) + ((reg) & 0x3f=
+))
+> +
+> +/*
+> + * lane0: USB3/GbE1 PHY Configuration 1
+> + * lane1: PCIe/GbE0 PHY Configuration 1
+> + * (used only by SGMII code)
+> + */
+> +#define COMPHY_PHY_CFG1			0x0
+> +#define PIN_PU_IVREF_BIT		BIT(1)
+> +#define PIN_RESET_CORE_BIT		BIT(11)
+> +#define PIN_RESET_COMPHY_BIT		BIT(12)
+> +#define PIN_PU_PLL_BIT			BIT(16)
+> +#define PIN_PU_RX_BIT			BIT(17)
+> +#define PIN_PU_TX_BIT			BIT(18)
+> +#define PIN_TX_IDLE_BIT			BIT(19)
+> +#define GEN_RX_SEL_MASK			GENMASK(25, 22)
+> +#define GEN_RX_SEL_VALUE(val)		FIELD_PREP(GEN_RX_SEL_MASK, (val))
+> +#define GEN_TX_SEL_MASK			GENMASK(29, 26)
+> +#define GEN_TX_SEL_VALUE(val)		FIELD_PREP(GEN_TX_SEL_MASK, (val))
+> +#define SERDES_SPEED_1_25_G		0x6
+> +#define SERDES_SPEED_3_125_G		0x8
+> +#define PHY_RX_INIT_BIT			BIT(30)
+> +
+> +/*
+> + * lane0: USB3/GbE1 PHY Status 1
+> + * lane1: PCIe/GbE0 PHY Status 1
+> + * (used only by SGMII code)
+> + */
+> +#define COMPHY_PHY_STAT1		0x18
+> +#define PHY_RX_INIT_DONE_BIT		BIT(0)
+> +#define PHY_PLL_READY_RX_BIT		BIT(2)
+> +#define PHY_PLL_READY_TX_BIT		BIT(3)
+> +
+> +/* PHY Selector */
+> +#define COMPHY_SELECTOR_PHY_REG			0xFC
+> +/* bit0: 0: Lane1 is GbE0; 1: Lane1 is PCIe */
+> +#define COMPHY_SELECTOR_PCIE_GBE0_SEL_BIT	BIT(0)
+> +/* bit4: 0: Lane0 is GbE1; 1: Lane0 is USB3 */
+> +#define COMPHY_SELECTOR_USB3_GBE1_SEL_BIT	BIT(4)
+> +/* bit8: 0: Lane0 is USB3 instead of GbE1, Lane2 is SATA; 1: Lane2 is US=
+B3 */
+> +#define COMPHY_SELECTOR_USB3_PHY_SEL_BIT	BIT(8)
+>  =
+
+>  struct mvebu_a3700_comphy_conf {
+>  	unsigned int lane;
+>  	enum phy_mode mode;
+>  	int submode;
+> -	u32 fw_mode;
+>  };
+>  =
+
+> -#define MVEBU_A3700_COMPHY_CONF(_lane, _mode, _smode, _fw)		\
+> +#define MVEBU_A3700_COMPHY_CONF(_lane, _mode, _smode)			\
+>  	{								\
+>  		.lane =3D _lane,						\
+>  		.mode =3D _mode,						\
+>  		.submode =3D _smode,					\
+> -		.fw_mode =3D _fw,						\
+>  	}
+>  =
+
+> -#define MVEBU_A3700_COMPHY_CONF_GEN(_lane, _mode, _fw) \
+> -	MVEBU_A3700_COMPHY_CONF(_lane, _mode, PHY_INTERFACE_MODE_NA, _fw)
+> +#define MVEBU_A3700_COMPHY_CONF_GEN(_lane, _mode) \
+> +	MVEBU_A3700_COMPHY_CONF(_lane, _mode, PHY_INTERFACE_MODE_NA)
+>  =
+
+> -#define MVEBU_A3700_COMPHY_CONF_ETH(_lane, _smode, _fw) \
+> -	MVEBU_A3700_COMPHY_CONF(_lane, PHY_MODE_ETHERNET, _smode, _fw)
+> +#define MVEBU_A3700_COMPHY_CONF_ETH(_lane, _smode) \
+> +	MVEBU_A3700_COMPHY_CONF(_lane, PHY_MODE_ETHERNET, _smode)
+>  =
+
+>  static const struct mvebu_a3700_comphy_conf mvebu_a3700_comphy_modes[] =
+=3D {
+>  	/* lane 0 */
+> -	MVEBU_A3700_COMPHY_CONF_GEN(0, PHY_MODE_USB_HOST_SS,
+> -				    COMPHY_FW_MODE_USB3H),
+> -	MVEBU_A3700_COMPHY_CONF_ETH(0, PHY_INTERFACE_MODE_SGMII,
+> -				    COMPHY_FW_MODE_SGMII),
+> -	MVEBU_A3700_COMPHY_CONF_ETH(0, PHY_INTERFACE_MODE_2500BASEX,
+> -				    COMPHY_FW_MODE_2500BASEX),
+> +	MVEBU_A3700_COMPHY_CONF_GEN(0, PHY_MODE_USB_HOST_SS),
+> +	MVEBU_A3700_COMPHY_CONF_ETH(0, PHY_INTERFACE_MODE_SGMII),
+> +	MVEBU_A3700_COMPHY_CONF_ETH(0, PHY_INTERFACE_MODE_1000BASEX),
+> +	MVEBU_A3700_COMPHY_CONF_ETH(0, PHY_INTERFACE_MODE_2500BASEX),
+>  	/* lane 1 */
+> -	MVEBU_A3700_COMPHY_CONF_GEN(1, PHY_MODE_PCIE, COMPHY_FW_MODE_PCIE),
+> -	MVEBU_A3700_COMPHY_CONF_ETH(1, PHY_INTERFACE_MODE_SGMII,
+> -				    COMPHY_FW_MODE_SGMII),
+> -	MVEBU_A3700_COMPHY_CONF_ETH(1, PHY_INTERFACE_MODE_2500BASEX,
+> -				    COMPHY_FW_MODE_2500BASEX),
+> +	MVEBU_A3700_COMPHY_CONF_GEN(1, PHY_MODE_PCIE),
+> +	MVEBU_A3700_COMPHY_CONF_ETH(1, PHY_INTERFACE_MODE_SGMII),
+> +	MVEBU_A3700_COMPHY_CONF_ETH(1, PHY_INTERFACE_MODE_1000BASEX),
+> +	MVEBU_A3700_COMPHY_CONF_ETH(1, PHY_INTERFACE_MODE_2500BASEX),
+>  	/* lane 2 */
+> -	MVEBU_A3700_COMPHY_CONF_GEN(2, PHY_MODE_SATA, COMPHY_FW_MODE_SATA),
+> -	MVEBU_A3700_COMPHY_CONF_GEN(2, PHY_MODE_USB_HOST_SS,
+> -				    COMPHY_FW_MODE_USB3H),
+> +	MVEBU_A3700_COMPHY_CONF_GEN(2, PHY_MODE_SATA),
+> +	MVEBU_A3700_COMPHY_CONF_GEN(2, PHY_MODE_USB_HOST_SS),
+> +};
+> +
+> +struct mvebu_a3700_comphy_priv {
+> +	void __iomem *comphy_regs;
+> +	void __iomem *lane0_phy_regs; /* USB3 and GbE1 */
+> +	void __iomem *lane1_phy_regs; /* PCIe and GbE0 */
+> +	void __iomem *lane2_phy_indirect; /* SATA and USB3 */
+> +	spinlock_t lock; /* for PHY selector access */
+> +	bool xtal_is_40m;
+>  };
+>  =
+
+>  struct mvebu_a3700_comphy_lane {
+> +	struct mvebu_a3700_comphy_priv *priv;
+>  	struct device *dev;
+>  	unsigned int id;
+>  	enum phy_mode mode;
+>  	int submode;
+> +	bool invert_tx;
+> +	bool invert_rx;
+> +	bool needs_reset;
+>  };
+>  =
+
+> -static int mvebu_a3700_comphy_smc(unsigned long function, unsigned long =
+lane,
+> -				  unsigned long mode)
+> +struct gbe_phy_init_data_fix {
+> +	u16 addr;
+> +	u16 value;
+> +};
+> +
+> +/* Changes to 40M1G25 mode data required for running 40M3G125 init mode =
+*/
+> +static struct gbe_phy_init_data_fix gbe_phy_init_fix[] =3D {
+> +	{ 0x005, 0x07CC }, { 0x015, 0x0000 }, { 0x01B, 0x0000 },
+> +	{ 0x01D, 0x0000 }, { 0x01E, 0x0000 }, { 0x01F, 0x0000 },
+> +	{ 0x020, 0x0000 }, { 0x021, 0x0030 }, { 0x026, 0x0888 },
+> +	{ 0x04D, 0x0152 }, { 0x04F, 0xA020 }, { 0x050, 0x07CC },
+> +	{ 0x053, 0xE9CA }, { 0x055, 0xBD97 }, { 0x071, 0x3015 },
+> +	{ 0x076, 0x03AA }, { 0x07C, 0x0FDF }, { 0x0C2, 0x3030 },
+> +	{ 0x0C3, 0x8000 }, { 0x0E2, 0x5550 }, { 0x0E3, 0x12A4 },
+> +	{ 0x0E4, 0x7D00 }, { 0x0E6, 0x0C83 }, { 0x101, 0xFCC0 },
+> +	{ 0x104, 0x0C10 }
+> +};
+> +
+> +/* 40M1G25 mode init data */
+> +static u16 gbe_phy_init[512] =3D {
+> +	/* 0       1       2       3       4       5       6       7 */
+> +	/*-----------------------------------------------------------*/
+> +	/* 8       9       A       B       C       D       E       F */
+> +	0x3110, 0xFD83, 0x6430, 0x412F, 0x82C0, 0x06FA, 0x4500, 0x6D26,	/* 00 */
+> +	0xAFC0, 0x8000, 0xC000, 0x0000, 0x2000, 0x49CC, 0x0BC9, 0x2A52,	/* 08 */
+> +	0x0BD2, 0x0CDE, 0x13D2, 0x0CE8, 0x1149, 0x10E0, 0x0000, 0x0000,	/* 10 */
+> +	0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x4134, 0x0D2D, 0xFFFF,	/* 18 */
+> +	0xFFE0, 0x4030, 0x1016, 0x0030, 0x0000, 0x0800, 0x0866, 0x0000,	/* 20 */
+> +	0x0000, 0x0000, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF,	/* 28 */
+> +	0xFFFF, 0xFFFF, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/* 30 */
+> +	0x0000, 0x0000, 0x000F, 0x6A62, 0x1988, 0x3100, 0x3100, 0x3100,	/* 38 */
+> +	0x3100, 0xA708, 0x2430, 0x0830, 0x1030, 0x4610, 0xFF00, 0xFF00,	/* 40 */
+> +	0x0060, 0x1000, 0x0400, 0x0040, 0x00F0, 0x0155, 0x1100, 0xA02A,	/* 48 */
+> +	0x06FA, 0x0080, 0xB008, 0xE3ED, 0x5002, 0xB592, 0x7A80, 0x0001,	/* 50 */
+> +	0x020A, 0x8820, 0x6014, 0x8054, 0xACAA, 0xFC88, 0x2A02, 0x45CF,	/* 58 */
+> +	0x000F, 0x1817, 0x2860, 0x064F, 0x0000, 0x0204, 0x1800, 0x6000,	/* 60 */
+> +	0x810F, 0x4F23, 0x4000, 0x4498, 0x0850, 0x0000, 0x000E, 0x1002,	/* 68 */
+> +	0x9D3A, 0x3009, 0xD066, 0x0491, 0x0001, 0x6AB0, 0x0399, 0x3780,	/* 70 */
+> +	0x0040, 0x5AC0, 0x4A80, 0x0000, 0x01DF, 0x0000, 0x0007, 0x0000,	/* 78 */
+> +	0x2D54, 0x00A1, 0x4000, 0x0100, 0xA20A, 0x0000, 0x0000, 0x0000,	/* 80 */
+> +	0x0000, 0x0000, 0x0000, 0x7400, 0x0E81, 0x1000, 0x1242, 0x0210,	/* 88 */
+> +	0x80DF, 0x0F1F, 0x2F3F, 0x4F5F, 0x6F7F, 0x0F1F, 0x2F3F, 0x4F5F,	/* 90 */
+> +	0x6F7F, 0x4BAD, 0x0000, 0x0000, 0x0800, 0x0000, 0x2400, 0xB651,	/* 98 */
+> +	0xC9E0, 0x4247, 0x0A24, 0x0000, 0xAF19, 0x1004, 0x0000, 0x0000,	/* A0 */
+> +	0x0000, 0x0013, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/* A8 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/* B0 */
+> +	0x0000, 0x0000, 0x0000, 0x0060, 0x0000, 0x0000, 0x0000, 0x0000,	/* B8 */
+> +	0x0000, 0x0000, 0x3010, 0xFA00, 0x0000, 0x0000, 0x0000, 0x0003,	/* C0 */
+> +	0x1618, 0x8200, 0x8000, 0x0400, 0x050F, 0x0000, 0x0000, 0x0000,	/* C8 */
+> +	0x4C93, 0x0000, 0x1000, 0x1120, 0x0010, 0x1242, 0x1242, 0x1E00,	/* D0 */
+> +	0x0000, 0x0000, 0x0000, 0x00F8, 0x0000, 0x0041, 0x0800, 0x0000,	/* D8 */
+> +	0x82A0, 0x572E, 0x2490, 0x14A9, 0x4E00, 0x0000, 0x0803, 0x0541,	/* E0 */
+> +	0x0C15, 0x0000, 0x0000, 0x0400, 0x2626, 0x0000, 0x0000, 0x4200,	/* E8 */
+> +	0x0000, 0xAA55, 0x1020, 0x0000, 0x0000, 0x5010, 0x0000, 0x0000,	/* F0 */
+> +	0x0000, 0x0000, 0x5000, 0x0000, 0x0000, 0x0000, 0x02F2, 0x0000,	/* F8 */
+> +	0x101F, 0xFDC0, 0x4000, 0x8010, 0x0110, 0x0006, 0x0000, 0x0000,	/*100 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*108 */
+> +	0x04CF, 0x0000, 0x04CF, 0x0000, 0x04CF, 0x0000, 0x04C6, 0x0000,	/*110 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*118 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*120 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*128 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*130 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*138 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*140 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*148 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*150 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*158 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*160 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*168 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*170 */
+> +	0x0000, 0x0000, 0x0000, 0x00F0, 0x08A2, 0x3112, 0x0A14, 0x0000,	/*178 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*180 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*188 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*190 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*198 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1A0 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1A8 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1B0 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1B8 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1C0 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1C8 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1D0 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1D8 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1E0 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1E8 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,	/*1F0 */
+> +	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000	/*1F8 */
+> +};
+> +
+> +static inline void comphy_reg_set(void __iomem *addr, u32 data, u32 mask)
+> +{
+> +	u32 val;
+> +
+> +	val =3D readl(addr);
+> +	val =3D (val & ~mask) | (data & mask);
+> +	writel(val, addr);
+> +}
+> +
+> +static inline void comphy_reg_set16(void __iomem *addr, u16 data, u16 ma=
+sk)
+>  {
+> -	struct arm_smccc_res res;
+> -	s32 ret;
+> +	u16 val;
+>  =
+
+> -	arm_smccc_smc(function, lane, mode, 0, 0, 0, 0, 0, &res);
+> -	ret =3D res.a0;
+> +	val =3D readw(addr);
+> +	val =3D (val & ~mask) | (data & mask);
+> +	writew(val, addr);
+> +}
+>  =
+
+> -	switch (ret) {
+> -	case SMCCC_RET_SUCCESS:
+> -		return 0;
+> -	case SMCCC_RET_NOT_SUPPORTED:
+> -		return -EOPNOTSUPP;
+> +/* Used for accessing lane 2 registers (SATA/USB3 PHY) */
+> +static void comphy_set_indirect(struct mvebu_a3700_comphy_priv *priv,
+> +				u32 offset, u16 data, u16 mask)
+> +{
+> +	writel(offset,
+> +	       priv->lane2_phy_indirect + COMPHY_LANE2_INDIR_ADDR);
+> +	comphy_reg_set(priv->lane2_phy_indirect + COMPHY_LANE2_INDIR_DATA,
+> +		       data, mask);
+> +}
+> +
+> +static void comphy_lane_reg_set(struct mvebu_a3700_comphy_lane *lane,
+> +				u16 reg, u16 data, u16 mask)
+> +{
+> +	if (lane->id =3D=3D 2) {
+> +		/* lane 2 PHY registers are accessed indirectly */
+> +		comphy_set_indirect(lane->priv,
+> +				    reg + COMPHY_LANE2_REGS_BASE,
+> +				    data, mask);
+> +	} else {
+> +		void __iomem *base =3D lane->id =3D=3D 1 ?
+> +				     lane->priv->lane1_phy_regs :
+> +				     lane->priv->lane0_phy_regs;
+> +
+> +		comphy_reg_set16(base + COMPHY_LANE_REG_DIRECT(reg),
+> +				 data, mask);
+> +	}
+> +}
+> +
+> +static int comphy_lane_reg_poll(struct mvebu_a3700_comphy_lane *lane,
+> +				u16 reg, u16 bits,
+> +				ulong sleep_us, ulong timeout_us)
+> +{
+> +	int ret;
+> +
+> +	if (lane->id =3D=3D 2) {
+> +		u32 data;
+> +
+> +		/* lane 2 PHY registers are accessed indirectly */
+> +		writel(reg + COMPHY_LANE2_REGS_BASE,
+> +		       lane->priv->lane2_phy_indirect +
+> +		       COMPHY_LANE2_INDIR_ADDR);
+> +
+> +		ret =3D readl_poll_timeout(lane->priv->lane2_phy_indirect +
+> +					 COMPHY_LANE2_INDIR_DATA,
+> +					 data, (data & bits) =3D=3D bits,
+> +					 sleep_us, timeout_us);
+> +	} else {
+> +		void __iomem *base =3D lane->id =3D=3D 1 ?
+> +				     lane->priv->lane1_phy_regs :
+> +				     lane->priv->lane0_phy_regs;
+> +		u16 data;
+> +
+> +		ret =3D readw_poll_timeout(base + COMPHY_LANE_REG_DIRECT(reg),
+> +					 data, (data & bits) =3D=3D bits,
+> +					 sleep_us, timeout_us);
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +static void comphy_periph_reg_set(struct mvebu_a3700_comphy_lane *lane,
+> +				  u8 reg, u32 data, u32 mask)
+> +{
+> +	comphy_reg_set(lane->priv->comphy_regs + COMPHY_PHY_REG(lane->id, reg),
+> +		       data, mask);
+> +}
+> +
+> +static int comphy_periph_reg_poll(struct mvebu_a3700_comphy_lane *lane,
+> +				  u8 reg, u32 bits,
+> +				  ulong sleep_us, ulong timeout_us)
+> +{
+> +	u32 data;
+> +
+> +	return readl_poll_timeout(lane->priv->comphy_regs +
+> +				  COMPHY_PHY_REG(lane->id, reg),
+> +				  data, (data & bits) =3D=3D bits,
+> +				  sleep_us, timeout_us);
+> +}
+> +
+> +/* PHY selector configures with corresponding modes */
+> +static int
+> +mvebu_a3700_comphy_set_phy_selector(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	u32 old, new, clr =3D 0, set =3D 0;
+> +	unsigned long flags;
+> +
+> +	switch (lane->mode) {
+> +	case PHY_MODE_SATA:
+> +		/* SATA must be in Lane2 */
+> +		if (lane->id =3D=3D 2)
+> +			clr =3D COMPHY_SELECTOR_USB3_PHY_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	case PHY_MODE_ETHERNET:
+> +		if (lane->id =3D=3D 0)
+> +			clr =3D COMPHY_SELECTOR_USB3_GBE1_SEL_BIT;
+> +		else if (lane->id =3D=3D 1)
+> +			clr =3D COMPHY_SELECTOR_PCIE_GBE0_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	case PHY_MODE_USB_HOST_SS:
+> +		if (lane->id =3D=3D 2)
+> +			set =3D COMPHY_SELECTOR_USB3_PHY_SEL_BIT;
+> +		else if (lane->id =3D=3D 0)
+> +			set =3D COMPHY_SELECTOR_USB3_GBE1_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	case PHY_MODE_PCIE:
+> +		/* PCIE must be in Lane1 */
+> +		if (lane->id =3D=3D 1)
+> +			set =3D COMPHY_SELECTOR_PCIE_GBE0_SEL_BIT;
+> +		else
+> +			goto error;
+> +		break;
+> +
+> +	default:
+> +		goto error;
+> +	}
+> +
+> +	spin_lock_irqsave(&lane->priv->lock, flags);
+> +
+> +	old =3D readl(lane->priv->comphy_regs + COMPHY_SELECTOR_PHY_REG);
+> +	new =3D (old & ~clr) | set;
+> +	writel(new, lane->priv->comphy_regs + COMPHY_SELECTOR_PHY_REG);
+> +
+> +	spin_unlock_irqrestore(&lane->priv->lock, flags);
+> +
+> +	dev_dbg(lane->dev,
+> +		"COMPHY[%d] mode[%d] changed PHY selector 0x%08x -> 0x%08x\n",
+> +		lane->id, lane->mode, old, new);
+> +
+> +	return 0;
+> +error:
+> +	dev_err(lane->dev, "COMPHY[%d] mode[%d] is invalid\n", lane->id,
+> +		lane->mode);
+> +	return -EINVAL;
+> +}
+> +
+> +static int
+> +mvebu_a3700_comphy_sata_power_on(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	u32 mask, data, ref_clk;
+> +	int ret;
+> +
+> +	/* Configure phy selector for SATA */
+> +	ret =3D mvebu_a3700_comphy_set_phy_selector(lane);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* Clear phy isolation mode to make it work in normal mode */
+> +	comphy_lane_reg_set(lane, COMPHY_ISOLATION_CTRL,
+> +			    0x0, PHY_ISOLATE_MODE);
+> +
+> +	/* 0. Check the Polarity invert bits */
+> +	data =3D 0x0;
+> +	if (lane->invert_tx)
+> +		data |=3D TXD_INVERT_BIT;
+> +	if (lane->invert_rx)
+> +		data |=3D RXD_INVERT_BIT;
+> +	mask =3D TXD_INVERT_BIT | RXD_INVERT_BIT;
+> +	comphy_lane_reg_set(lane, COMPHY_SYNC_PATTERN, data, mask);
+> +
+> +	/* 1. Select 40-bit data width */
+> +	comphy_lane_reg_set(lane, COMPHY_DIG_LOOPBACK_EN,
+> +			    DATA_WIDTH_40BIT, SEL_DATA_WIDTH_MASK);
+> +
+> +	/* 2. Select reference clock(25M) and PHY mode (SATA) */
+> +	if (lane->priv->xtal_is_40m)
+> +		ref_clk =3D REF_FREF_SEL_SERDES_40MHZ;
+> +	else
+> +		ref_clk =3D REF_FREF_SEL_SERDES_25MHZ;
+> +
+> +	data =3D ref_clk | COMPHY_MODE_SATA;
+> +	mask =3D REF_FREF_SEL_MASK | COMPHY_MODE_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_POWER_PLL_CTRL, data, mask);
+> +
+> +	/* 3. Use maximum PLL rate (no power save) */
+> +	comphy_lane_reg_set(lane, COMPHY_KVCO_CAL_CTRL,
+> +			    USE_MAX_PLL_RATE_BIT, USE_MAX_PLL_RATE_BIT);
+> +
+> +	/* 4. Reset reserved bit */
+> +	comphy_set_indirect(lane->priv, COMPHY_RESERVED_REG,
+> +			    0x0, PHYCTRL_FRM_PIN_BIT);
+> +
+> +	/* 5. Set vendor-specific configuration (It is done in sata driver) */
+> +	/* XXX: in U-Boot below sequence was executed in this place, in Linux
+> +	 * not.  Now it is done only in U-Boot before this comphy
+> +	 * initialization - tests shows that it works ok, but in case of any
+> +	 * future problem it is left for reference.
+> +	 *   reg_set(MVEBU_REGS_BASE + 0xe00a0, 0, 0xffffffff);
+> +	 *   reg_set(MVEBU_REGS_BASE + 0xe00a4, BIT(6), BIT(6));
+> +	 */
+> +
+> +	/* Wait for > 55 us to allow PLL be enabled */
+> +	udelay(PLL_SET_DELAY_US);
+> +
+> +	/* Polling status */
+> +	ret =3D comphy_lane_reg_poll(lane, COMPHY_DIG_LOOPBACK_EN,
+> +				   PLL_READY_TX_BIT, COMPHY_PLL_SLEEP,
+> +				   COMPHY_PLL_TIMEOUT);
+> +	if (ret) {
+> +		dev_err(lane->dev, "Failed to lock SATA PLL\n");
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+
+This can be:
+        ret =3D comphy_lane_reg_poll(lane, COMPHY_DIG_LOOPBACK_EN, ...);
+        if (ret)
+                dev_err(...);
+
+        return ret;
+
+> +}
+> +
+> +static void comphy_gbe_phy_init(struct mvebu_a3700_comphy_lane *lane,
+> +				bool is_1gbps)
+> +{
+> +	int addr, fix_idx;
+> +	u16 val;
+> +
+> +	fix_idx =3D 0;
+> +	for (addr =3D 0; addr < 512; addr++) {
+> +		/*
+> +		 * All PHY register values are defined in full for 3.125Gbps
+> +		 * SERDES speed. The values required for 1.25 Gbps are almost
+> +		 * the same and only few registers should be "fixed" in
+> +		 * comparison to 3.125 Gbps values. These register values are
+> +		 * stored in "gbe_phy_init_fix" array.
+> +		 */
+> +		if (!is_1gbps && gbe_phy_init_fix[fix_idx].addr =3D=3D addr) {
+> +			/* Use new value */
+> +			val =3D gbe_phy_init_fix[fix_idx].value;
+> +			if (fix_idx < ARRAY_SIZE(gbe_phy_init_fix))
+> +				fix_idx++;
+> +		} else {
+> +			val =3D gbe_phy_init[addr];
+> +		}
+> +
+> +		comphy_lane_reg_set(lane, addr, val, 0xFFFF);
+> +	}
+> +}
+> +
+> +static int
+> +mvebu_a3700_comphy_ethernet_power_on(struct mvebu_a3700_comphy_lane *lan=
+e)
+> +{
+> +	u32 mask, data, speed_sel;
+> +	int ret;
+> +
+> +	/* Set selector */
+> +	ret =3D mvebu_a3700_comphy_set_phy_selector(lane);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/*
+> +	 * 1. Reset PHY by setting PHY input port PIN_RESET=3D1.
+> +	 * 2. Set PHY input port PIN_TX_IDLE=3D1, PIN_PU_IVREF=3D1 to keep
+> +	 *    PHY TXP/TXN output to idle state during PHY initialization
+> +	 * 3. Set PHY input port PIN_PU_PLL=3D0, PIN_PU_RX=3D0, PIN_PU_TX=3D0.
+> +	 */
+> +	data =3D PIN_PU_IVREF_BIT | PIN_TX_IDLE_BIT | PIN_RESET_COMPHY_BIT;
+> +	mask =3D data | PIN_RESET_CORE_BIT | PIN_PU_PLL_BIT | PIN_PU_RX_BIT |
+> +	       PIN_PU_TX_BIT | PHY_RX_INIT_BIT;
+> +	comphy_periph_reg_set(lane, COMPHY_PHY_CFG1, data, mask);
+> +
+> +	/* 4. Release reset to the PHY by setting PIN_RESET=3D0. */
+> +	data =3D 0x0;
+> +	mask =3D PIN_RESET_COMPHY_BIT;
+> +	comphy_periph_reg_set(lane, COMPHY_PHY_CFG1, data, mask);
+> +
+> +	/*
+> +	 * 5. Set PIN_PHY_GEN_TX[3:0] and PIN_PHY_GEN_RX[3:0] to decide COMPHY
+> +	 * bit rate
+> +	 */
+> +	switch (lane->submode) {
+> +	case PHY_INTERFACE_MODE_SGMII:
+> +	case PHY_INTERFACE_MODE_1000BASEX:
+> +		/* SGMII 1G, SerDes speed 1.25G */
+> +		speed_sel =3D SERDES_SPEED_1_25_G;
+> +		break;
+> +	case PHY_INTERFACE_MODE_2500BASEX:
+> +		/* 2500Base-X, SerDes speed 3.125G */
+> +		speed_sel =3D SERDES_SPEED_3_125_G;
+> +		break;
+>  	default:
+> +		/* Other rates are not supported */
+> +		dev_err(lane->dev,
+> +			"unsupported phy speed %d on comphy lane%d\n",
+> +			lane->submode, lane->id);
+>  		return -EINVAL;
+>  	}
+> +	data =3D GEN_RX_SEL_VALUE(speed_sel) | GEN_TX_SEL_VALUE(speed_sel);
+> +	mask =3D GEN_RX_SEL_MASK | GEN_TX_SEL_MASK;
+> +	comphy_periph_reg_set(lane, COMPHY_PHY_CFG1, data, mask);
+> +
+> +	/*
+> +	 * 6. Wait 10mS for bandgap and reference clocks to stabilize; then
+> +	 * start SW programming.
+> +	 */
+> +	mdelay(10);
+> +
+> +	/* 7. Program COMPHY register PHY_MODE */
+> +	data =3D COMPHY_MODE_SERDES;
+> +	mask =3D COMPHY_MODE_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_POWER_PLL_CTRL, data, mask);
+> +
+> +	/*
+> +	 * 8. Set COMPHY register REFCLK_SEL to select the correct REFCLK
+> +	 * source
+> +	 */
+> +	data =3D 0x0;
+> +	mask =3D PHY_REF_CLK_SEL;
+> +	comphy_lane_reg_set(lane, COMPHY_MISC_CTRL0, data, mask);
+> +
+> +	/*
+> +	 * 9. Set correct reference clock frequency in COMPHY register
+> +	 * REF_FREF_SEL.
+> +	 */
+> +	if (lane->priv->xtal_is_40m)
+> +		data =3D REF_FREF_SEL_SERDES_50MHZ;
+> +	else
+> +		data =3D REF_FREF_SEL_SERDES_25MHZ;
+> +
+> +	mask =3D REF_FREF_SEL_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_POWER_PLL_CTRL, data, mask);
+> +
+> +	/* 10. Program COMPHY register PHY_GEN_MAX[1:0]
+> +	 * This step is mentioned in the flow received from verification team.
+> +	 * However the PHY_GEN_MAX value is only meaningful for other interfaces
+> +	 * (not SERDES). For instance, it selects SATA speed 1.5/3/6 Gbps or
+> +	 * PCIe speed 2.5/5 Gbps
+> +	 */
+> +
+> +	/*
+> +	 * 11. Program COMPHY register SEL_BITS to set correct parallel data
+> +	 * bus width
+> +	 */
+> +	data =3D DATA_WIDTH_10BIT;
+> +	mask =3D SEL_DATA_WIDTH_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_DIG_LOOPBACK_EN, data, mask);
+> +
+> +	/*
+> +	 * 12. As long as DFE function needs to be enabled in any mode,
+> +	 * COMPHY register DFE_UPDATE_EN[5:0] shall be programmed to 0x3F
+> +	 * for real chip during COMPHY power on.
+
+Okay where is this step..?
+
+> +	 * The step 14 exists (and empty) in the original initialization flow
+> +	 * obtained from the verification team. According to the functional
+> +	 * specification DFE_UPDATE_EN already has the default value 0x3F
+> +	 */
+> +
+> +	/*
+> +	 * 13. Program COMPHY GEN registers.
+> +	 * These registers should be programmed based on the lab testing result
+> +	 * to achieve optimal performance. Please contact the CEA group to get
+> +	 * the related GEN table during real chip bring-up. We only required to
+> +	 * run though the entire registers programming flow defined by
+> +	 * "comphy_gbe_phy_init" when the REF clock is 40 MHz. For REF clock
+> +	 * 25 MHz the default values stored in PHY registers are OK.
+> +	 */
+> +	dev_dbg(lane->dev, "Running C-DPI phy init %s mode\n",
+> +		lane->submode =3D=3D PHY_INTERFACE_MODE_2500BASEX ? "2G5" : "1G");
+> +	if (lane->priv->xtal_is_40m)
+> +		comphy_gbe_phy_init(lane,
+> +				    lane->submode !=3D PHY_INTERFACE_MODE_2500BASEX);
+> +
+> +	/*
+> +	 * 14. [Simulation Only] should not be used for real chip.
+> +	 * By pass power up calibration by programming EXT_FORCE_CAL_DONE
+> +	 * (R02h[9]) to 1 to shorten COMPHY simulation time.
+> +	 */
+> +
+> +	/*
+> +	 * 15. [Simulation Only: should not be used for real chip]
+> +	 * Program COMPHY register FAST_DFE_TIMER_EN=3D1 to shorten RX training
+> +	 * simulation time.
+> +	 */
+
+can we skip Simulation Only comments?
+
+> +
+> +	/*
+> +	 * 16. Check the PHY Polarity invert bit
+> +	 */
+> +	data =3D 0x0;
+> +	if (lane->invert_tx)
+> +		data |=3D TXD_INVERT_BIT;
+> +	if (lane->invert_rx)
+> +		data |=3D RXD_INVERT_BIT;
+> +	mask =3D TXD_INVERT_BIT | RXD_INVERT_BIT;
+> +	comphy_lane_reg_set(lane, COMPHY_SYNC_PATTERN, data, mask);
+> +
+> +	/*
+> +	 * 17. Set PHY input ports PIN_PU_PLL, PIN_PU_TX and PIN_PU_RX to 1 to
+> +	 * start PHY power up sequence. All the PHY register programming should
+> +	 * be done before PIN_PU_PLL=3D1. There should be no register programmi=
+ng
+> +	 * for normal PHY operation from this point.
+> +	 */
+> +	data =3D PIN_PU_PLL_BIT | PIN_PU_RX_BIT | PIN_PU_TX_BIT;
+> +	mask =3D data;
+> +	comphy_periph_reg_set(lane, COMPHY_PHY_CFG1, data, mask);
+> +
+> +	/*
+> +	 * 18. Wait for PHY power up sequence to finish by checking output ports
+> +	 * PIN_PLL_READY_TX=3D1 and PIN_PLL_READY_RX=3D1.
+> +	 */
+> +	ret =3D comphy_periph_reg_poll(lane, COMPHY_PHY_STAT1,
+> +				     PHY_PLL_READY_TX_BIT |
+> +				     PHY_PLL_READY_RX_BIT,
+> +				     COMPHY_PLL_SLEEP, COMPHY_PLL_TIMEOUT);
+> +	if (ret) {
+> +		dev_err(lane->dev, "Failed to lock PLL for SERDES PHY %d\n",
+> +			lane->id);
+> +		return ret;
+> +	}
+> +
+> +	/*
+> +	 * 19. Set COMPHY input port PIN_TX_IDLE=3D0
+> +	 */
+> +	comphy_periph_reg_set(lane, COMPHY_PHY_CFG1, 0x0, PIN_TX_IDLE_BIT);
+> +
+> +	/*
+> +	 * 20. After valid data appear on PIN_RXDATA bus, set PIN_RX_INIT=3D1. =
+To
+> +	 * start RX initialization. PIN_RX_INIT_DONE will be cleared to 0 by the
+> +	 * PHY After RX initialization is done, PIN_RX_INIT_DONE will be set to
+> +	 * 1 by COMPHY Set PIN_RX_INIT=3D0 after PIN_RX_INIT_DONE=3D 1. Please
+> +	 * refer to RX initialization part for details.
+> +	 */
+> +	comphy_periph_reg_set(lane, COMPHY_PHY_CFG1,
+> +			      PHY_RX_INIT_BIT, PHY_RX_INIT_BIT);
+> +
+> +	ret =3D comphy_periph_reg_poll(lane, COMPHY_PHY_STAT1,
+> +				     PHY_PLL_READY_TX_BIT |
+> +				     PHY_PLL_READY_RX_BIT,
+> +				     COMPHY_PLL_SLEEP, COMPHY_PLL_TIMEOUT);
+> +	if (ret) {
+> +		dev_err(lane->dev, "Failed to lock PLL for SERDES PHY %d\n",
+> +			lane->id);
+> +		return ret;
+> +	}
+> +
+> +	ret =3D comphy_periph_reg_poll(lane, COMPHY_PHY_STAT1,
+> +				     PHY_RX_INIT_DONE_BIT,
+> +				     COMPHY_PLL_SLEEP, COMPHY_PLL_TIMEOUT);
+> +	if (ret) {
+> +		dev_err(lane->dev, "Failed to init RX of SERDES PHY %d\n",
+> +			lane->id);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+
+This can be:
+
+        ret =3D comphy_periph_reg_poll(lane, COMPHY_PHY_STAT1, ...
+        if (ret)
+                dev_err(...);
+
+        return ret;
+
+> +}
+> +
+> +static int
+> +mvebu_a3700_comphy_usb3_power_on(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	u32 mask, data, cfg, ref_clk;
+> +	int ret;
+> +
+> +	/* Set phy seclector */
+> +	ret =3D mvebu_a3700_comphy_set_phy_selector(lane);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/*
+> +	 * 0. Set PHY OTG Control(0x5d034), bit 4, Power up OTG module The
+> +	 * register belong to UTMI module, so it is set in UTMI phy driver.
+> +	 */
+> +
+> +	/*
+> +	 * 1. Set PRD_TXDEEMPH (3.5db de-emph)
+> +	 */
+> +	data =3D PRD_TXDEEMPH0_MASK;
+> +	mask =3D PRD_TXDEEMPH0_MASK | PRD_TXMARGIN_MASK | PRD_TXSWING_MASK |
+> +	       CFG_TX_ALIGN_POS_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_LANE_CFG0, data, mask);
+> +
+> +	/*
+> +	 * 2. Set BIT0: enable transmitter in high impedance mode
+> +	 *    Set BIT[3:4]: delay 2 clock cycles for HiZ off latency
+> +	 *    Set BIT6: Tx detect Rx at HiZ mode
+> +	 *    Unset BIT15: set to 0 to set USB3 De-emphasize level to -3.5db
+> +	 *            together with bit 0 of COMPHY_PIPE_LANE_CFG0 register
+> +	 */
+> +	data =3D TX_DET_RX_MODE | GEN2_TX_DATA_DLY_DEFT | TX_ELEC_IDLE_MODE_EN;
+> +	mask =3D PRD_TXDEEMPH1_MASK | TX_DET_RX_MODE | GEN2_TX_DATA_DLY_MASK |
+> +	       TX_ELEC_IDLE_MODE_EN;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_LANE_CFG1, data, mask);
+> +
+> +	/*
+> +	 * 3. Set Spread Spectrum Clock Enabled
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_LANE_CFG4,
+> +			    SPREAD_SPECTRUM_CLK_EN, SPREAD_SPECTRUM_CLK_EN);
+> +
+> +	/*
+> +	 * 4. Set Override Margining Controls From the MAC:
+> +	 *    Use margining signals from lane configuration
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_TEST_MODE_CTRL,
+> +			    MODE_MARGIN_OVERRIDE, 0xFFFF);
+> +
+> +	/*
+> +	 * 5. Set Lane-to-Lane Bundle Clock Sampling Period =3D per PCLK cycles
+> +	 *    set Mode Clock Source =3D PCLK is generated from REFCLK
+> +	 */
+> +	data =3D 0x0;
+> +	mask =3D MODE_CLK_SRC | BUNDLE_PERIOD_SEL | BUNDLE_PERIOD_SCALE_MASK |
+> +	       BUNDLE_SAMPLE_CTRL | PLL_READY_DLY_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_CLK_SRC_LO, data, mask);
+> +
+> +	/*
+> +	 * 6. Set G2 Spread Spectrum Clock Amplitude at 4K
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_GEN2_SET2,
+> +			    GS2_TX_SSC_AMP_4128, GS2_TX_SSC_AMP_MASK);
+> +
+> +	/*
+> +	 * 7. Unset G3 Spread Spectrum Clock Amplitude
+> +	 *    set G3 TX and RX Register Master Current Select
+> +	 */
+> +	data =3D GS2_VREG_RXTX_MAS_ISET_60U;
+> +	mask =3D GS2_TX_SSC_AMP_MASK | GS2_VREG_RXTX_MAS_ISET_MASK |
+> +	       GS2_RSVD_6_0_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_GEN3_SET2, data, mask);
+> +
+> +	/*
+> +	 * 8. Check crystal jumper setting and program the Power and PLL Control
+> +	 * accordingly Change RX wait
+> +	 */
+> +	if (lane->priv->xtal_is_40m) {
+> +		ref_clk =3D REF_FREF_SEL_PCIE_USB3_40MHZ;
+> +		cfg =3D CFG_PM_RXDLOZ_WAIT_12_UNIT;
+> +	} else {
+> +		ref_clk =3D REF_FREF_SEL_PCIE_USB3_25MHZ;
+> +		cfg =3D CFG_PM_RXDLOZ_WAIT_7_UNIT;
+> +	}
+> +
+> +	data =3D PU_IVREF_BIT | PU_PLL_BIT | PU_RX_BIT | PU_TX_BIT |
+> +	       PU_TX_INTP_BIT | PU_DFE_BIT | COMPHY_MODE_USB3 | ref_clk;
+> +	mask =3D PU_IVREF_BIT | PU_PLL_BIT | PU_RX_BIT | PU_TX_BIT |
+> +	       PU_TX_INTP_BIT | PU_DFE_BIT | PLL_LOCK_BIT | COMPHY_MODE_MASK |
+> +	       REF_FREF_SEL_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_POWER_PLL_CTRL, data, mask);
+> +
+> +	data =3D CFG_PM_RXDEN_WAIT_1_UNIT | cfg;
+> +	mask =3D CFG_PM_OSCCLK_WAIT_MASK | CFG_PM_RXDEN_WAIT_MASK |
+> +	       CFG_PM_RXDLOZ_WAIT_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_PWR_MGM_TIM1, data, mask);
+> +
+> +	/*
+> +	 * 9. Enable idle sync
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_IDLE_SYNC_EN,
+> +			    IDLE_SYNC_EN, IDLE_SYNC_EN);
+> +
+> +	/*
+> +	 * 10. Enable the output of 500M clock
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_MISC_CTRL0, CLK500M_EN, CLK500M_EN);
+> +
+> +	/*
+> +	 * 11. Set 20-bit data width
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_DIG_LOOPBACK_EN,
+> +			    DATA_WIDTH_20BIT, 0xFFFF);
+> +
+> +	/*
+> +	 * 12. Override Speed_PLL value and use MAC PLL
+> +	 */
+> +	data =3D SPEED_PLL_VALUE_16 | USE_MAX_PLL_RATE_BIT;
+> +	mask =3D 0xFFFF;
+> +	comphy_lane_reg_set(lane, COMPHY_KVCO_CAL_CTRL, data, mask);
+> +
+> +	/*
+> +	 * 13. Check the Polarity invert bit
+> +	 */
+> +	data =3D 0x0;
+> +	if (lane->invert_tx)
+> +		data |=3D TXD_INVERT_BIT;
+> +	if (lane->invert_rx)
+> +		data |=3D RXD_INVERT_BIT;
+> +	mask =3D TXD_INVERT_BIT | RXD_INVERT_BIT;
+> +	comphy_lane_reg_set(lane, COMPHY_SYNC_PATTERN, data, mask);
+> +
+> +	/*
+> +	 * 14. Set max speed generation to USB3.0 5Gbps
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_SYNC_MASK_GEN,
+> +			    PHY_GEN_MAX_USB3_5G, PHY_GEN_MAX_MASK);
+> +
+> +	/*
+> +	 * 15. Set capacitor value for FFE gain peaking to 0xF
+> +	 */
+> +	comphy_lane_reg_set(lane, COMPHY_GEN2_SET3,
+> +			    GS3_FFE_CAP_SEL_VALUE, GS3_FFE_CAP_SEL_MASK);
+> +
+> +	/*
+> +	 * 16. Release SW reset
+> +	 */
+> +	data =3D MODE_CORE_CLK_FREQ_SEL | MODE_PIPE_WIDTH_32 | MODE_REFDIV_BY_4;
+> +	mask =3D 0xFFFF;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_RST_CLK_CTRL, data, mask);
+> +
+> +	/* Wait for > 55 us to allow PCLK be enabled */
+> +	udelay(PLL_SET_DELAY_US);
+> +
+> +	ret =3D comphy_lane_reg_poll(lane, COMPHY_PIPE_LANE_STAT1, TXDCLK_PCLK_=
+EN,
+> +				   COMPHY_PLL_SLEEP, COMPHY_PLL_TIMEOUT);
+> +	if (ret) {
+> +		dev_err(lane->dev, "Failed to lock USB3 PLL\n");
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+
+this can be improved too
+
+> +}
+> +
+> +static int
+> +mvebu_a3700_comphy_pcie_power_on(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	u32 mask, data, ref_clk;
+> +	int ret;
+> +
+> +	/* Configure phy selector for PCIe */
+> +	ret =3D mvebu_a3700_comphy_set_phy_selector(lane);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* 1. Enable max PLL. */
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_LANE_CFG1,
+> +			    USE_MAX_PLL_RATE_EN, USE_MAX_PLL_RATE_EN);
+> +
+> +	/* 2. Select 20 bit SERDES interface. */
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_CLK_SRC_LO,
+> +			    CFG_SEL_20B, CFG_SEL_20B);
+> +
+> +	/* 3. Force to use reg setting for PCIe mode */
+> +	comphy_lane_reg_set(lane, COMPHY_MISC_CTRL1,
+> +			    SEL_BITS_PCIE_FORCE, SEL_BITS_PCIE_FORCE);
+> +
+> +	/* 4. Change RX wait */
+> +	data =3D CFG_PM_RXDEN_WAIT_1_UNIT | CFG_PM_RXDLOZ_WAIT_12_UNIT;
+> +	mask =3D CFG_PM_OSCCLK_WAIT_MASK | CFG_PM_RXDEN_WAIT_MASK |
+> +	       CFG_PM_RXDLOZ_WAIT_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_PWR_MGM_TIM1, data, mask);
+> +
+> +	/* 5. Enable idle sync */
+> +	comphy_lane_reg_set(lane, COMPHY_IDLE_SYNC_EN,
+> +			    IDLE_SYNC_EN, IDLE_SYNC_EN);
+> +
+> +	/* 6. Enable the output of 100M/125M/500M clock */
+> +	data =3D CLK500M_EN | TXDCLK_2X_SEL | CLK100M_125M_EN;
+> +	mask =3D data;
+> +	comphy_lane_reg_set(lane, COMPHY_MISC_CTRL0, data, mask);
+> +
+> +	/*
+> +	 * 7. Enable TX, PCIE global register, 0xd0074814, it is done in
+> +	 * PCI-E driver
+> +	 */
+> +
+> +	/*
+> +	 * 8. Check crystal jumper setting and program the Power and PLL
+> +	 * Control accordingly
+> +	 */
+> +
+> +	if (lane->priv->xtal_is_40m)
+> +		ref_clk =3D REF_FREF_SEL_PCIE_USB3_40MHZ;
+> +	else
+> +		ref_clk =3D REF_FREF_SEL_PCIE_USB3_25MHZ;
+> +
+> +	data =3D PU_IVREF_BIT | PU_PLL_BIT | PU_RX_BIT | PU_TX_BIT |
+> +	       PU_TX_INTP_BIT | PU_DFE_BIT | COMPHY_MODE_PCIE | ref_clk;
+> +	mask =3D 0xFFFF;
+> +	comphy_lane_reg_set(lane, COMPHY_POWER_PLL_CTRL, data, mask);
+> +
+> +	/* 9. Override Speed_PLL value and use MAC PLL */
+> +	comphy_lane_reg_set(lane, COMPHY_KVCO_CAL_CTRL,
+> +			    SPEED_PLL_VALUE_16 | USE_MAX_PLL_RATE_BIT,
+> +			    0xFFFF);
+> +
+> +	/* 10. Check the Polarity invert bit */
+> +	data =3D 0x0;
+> +	if (lane->invert_tx)
+> +		data |=3D TXD_INVERT_BIT;
+> +	if (lane->invert_rx)
+> +		data |=3D RXD_INVERT_BIT;
+> +	mask =3D TXD_INVERT_BIT | RXD_INVERT_BIT;
+> +	comphy_lane_reg_set(lane, COMPHY_SYNC_PATTERN, data, mask);
+> +
+> +	/* 11. Release SW reset */
+> +	data =3D MODE_CORE_CLK_FREQ_SEL | MODE_PIPE_WIDTH_32;
+> +	mask =3D data | PIPE_SOFT_RESET | MODE_REFDIV_MASK;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_RST_CLK_CTRL, data, mask);
+> +
+> +	/* Wait for > 55 us to allow PCLK be enabled */
+> +	udelay(PLL_SET_DELAY_US);
+> +
+> +	ret =3D comphy_lane_reg_poll(lane, COMPHY_PIPE_LANE_STAT1, TXDCLK_PCLK_=
+EN,
+> +				   COMPHY_PLL_SLEEP, COMPHY_PLL_TIMEOUT);
+> +	if (ret) {
+> +		dev_err(lane->dev, "Failed to lock PCIE PLL\n");
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void
+> +mvebu_a3700_comphy_usb3_power_off(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	/*
+> +	 * Currently the USB3 MAC sets the USB3 PHY to low state, so we do not
+> +	 * need to power off USB3 PHY again.
+> +	 */
+> +}
+
+lets drop the dummy and move this comment to caller..?
+
+> +
+> +static void
+> +mvebu_a3700_comphy_sata_power_off(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	/* Set phy isolation mode */
+> +	comphy_lane_reg_set(lane, COMPHY_ISOLATION_CTRL,
+> +			    PHY_ISOLATE_MODE, PHY_ISOLATE_MODE);
+> +
+> +	/* Power off PLL, Tx, Rx */
+> +	comphy_lane_reg_set(lane, COMPHY_POWER_PLL_CTRL,
+> +			    0x0, PU_PLL_BIT | PU_RX_BIT | PU_TX_BIT);
+> +}
+> +
+> +static void
+> +mvebu_a3700_comphy_ethernet_power_off(struct mvebu_a3700_comphy_lane *la=
+ne)
+> +{
+> +	u32 mask, data;
+> +
+> +	data =3D PIN_RESET_CORE_BIT | PIN_RESET_COMPHY_BIT | PIN_PU_IVREF_BIT |
+> +	       PHY_RX_INIT_BIT;
+> +	mask =3D data;
+> +	comphy_periph_reg_set(lane, COMPHY_PHY_CFG1, data, mask);
+> +}
+> +
+> +static void
+> +mvebu_a3700_comphy_pcie_power_off(struct mvebu_a3700_comphy_lane *lane)
+> +{
+> +	/* Power off PLL, Tx, Rx */
+> +	comphy_lane_reg_set(lane, COMPHY_POWER_PLL_CTRL,
+> +			    0x0, PU_PLL_BIT | PU_RX_BIT | PU_TX_BIT);
+> +}
+> +
+> +static int mvebu_a3700_comphy_reset(struct phy *phy)
+> +{
+> +	struct mvebu_a3700_comphy_lane *lane =3D phy_get_drvdata(phy);
+> +	u16 mask, data;
+> +
+> +	dev_dbg(lane->dev, "resetting lane %d\n", lane->id);
+> +
+> +	/* COMPHY reset for internal logic */
+> +	comphy_lane_reg_set(lane, COMPHY_SFT_RESET,
+> +			    SFT_RST_NO_REG, SFT_RST_NO_REG);
+> +
+> +	/* COMPHY register reset (cleared automatically) */
+> +	comphy_lane_reg_set(lane, COMPHY_SFT_RESET, SFT_RST, SFT_RST);
+> +
+> +	/* PIPE soft and register reset */
+> +	data =3D PIPE_SOFT_RESET | PIPE_REG_RESET;
+> +	mask =3D data;
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_RST_CLK_CTRL, data, mask);
+> +
+> +	/* Release PIPE register reset */
+> +	comphy_lane_reg_set(lane, COMPHY_PIPE_RST_CLK_CTRL,
+> +			    0x0, PIPE_REG_RESET);
+> +
+> +	/* Reset SB configuration register (only for lanes 0 and 1) */
+> +	if (lane->id =3D=3D 0 || lane->id =3D=3D 1) {
+> +		u32 mask, data;
+> +
+> +		data =3D PIN_RESET_CORE_BIT | PIN_RESET_COMPHY_BIT |
+> +		       PIN_PU_PLL_BIT | PIN_PU_RX_BIT | PIN_PU_TX_BIT;
+> +		mask =3D data | PIN_PU_IVREF_BIT | PIN_TX_IDLE_BIT;
+> +		comphy_periph_reg_set(lane, COMPHY_PHY_CFG1, data, mask);
+> +	}
+> +
+> +	return 0;
+>  }
+>  =
+
+> -static int mvebu_a3700_comphy_get_fw_mode(int lane,
+> +static bool mvebu_a3700_comphy_check_mode(int lane,
+>  					  enum phy_mode mode,
+>  					  int submode)
+>  {
+> @@ -122,7 +1170,7 @@ static int mvebu_a3700_comphy_get_fw_mode(int lane,
+>  =
+
+>  	/* Unused PHY mux value is 0x0 */
+>  	if (mode =3D=3D PHY_MODE_INVALID)
+> -		return -EINVAL;
+> +		return false;
+>  =
+
+>  	for (i =3D 0; i < n; i++) {
+>  		if (mvebu_a3700_comphy_modes[i].lane =3D=3D lane &&
+> @@ -132,27 +1180,30 @@ static int mvebu_a3700_comphy_get_fw_mode(int lane,
+>  	}
+>  =
+
+>  	if (i =3D=3D n)
+> -		return -EINVAL;
+> +		return false;
+>  =
+
+> -	return mvebu_a3700_comphy_modes[i].fw_mode;
+> +	return true;
+>  }
+>  =
+
+>  static int mvebu_a3700_comphy_set_mode(struct phy *phy, enum phy_mode mo=
+de,
+>  				       int submode)
+>  {
+>  	struct mvebu_a3700_comphy_lane *lane =3D phy_get_drvdata(phy);
+> -	int fw_mode;
+> -
+> -	if (submode =3D=3D PHY_INTERFACE_MODE_1000BASEX)
+> -		submode =3D PHY_INTERFACE_MODE_SGMII;
+>  =
+
+> -	fw_mode =3D mvebu_a3700_comphy_get_fw_mode(lane->id, mode,
+> -						 submode);
+> -	if (fw_mode < 0) {
+> +	if (!mvebu_a3700_comphy_check_mode(lane->id, mode, submode)) {
+>  		dev_err(lane->dev, "invalid COMPHY mode\n");
+> -		return fw_mode;
+> +		return -EINVAL;
+>  	}
+>  =
+
+> +	/* Mode cannot be changed while the PHY is powered on */
+> +	if (phy->power_count &&
+> +	    (lane->mode !=3D mode || lane->submode !=3D submode))
+> +		return -EBUSY;
+> +
+> +	/* If changing mode, ensure reset is called */
+> +	if (lane->mode !=3D PHY_MODE_INVALID && lane->mode !=3D mode)
+> +		lane->needs_reset =3D true;
+> +
+>  	/* Just remember the mode, ->power_on() will do the real setup */
+>  	lane->mode =3D mode;
+>  	lane->submode =3D submode;
+> @@ -163,76 +1214,68 @@ static int mvebu_a3700_comphy_set_mode(struct phy =
+*phy, enum phy_mode mode,
+>  static int mvebu_a3700_comphy_power_on(struct phy *phy)
+>  {
+>  	struct mvebu_a3700_comphy_lane *lane =3D phy_get_drvdata(phy);
+> -	u32 fw_param;
+> -	int fw_mode;
+> -	int fw_port;
+>  	int ret;
+>  =
+
+> -	fw_mode =3D mvebu_a3700_comphy_get_fw_mode(lane->id,
+> -						 lane->mode, lane->submode);
+> -	if (fw_mode < 0) {
+> +	if (!mvebu_a3700_comphy_check_mode(lane->id, lane->mode,
+> +					   lane->submode)) {
+>  		dev_err(lane->dev, "invalid COMPHY mode\n");
+> -		return fw_mode;
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (lane->needs_reset) {
+> +		ret =3D mvebu_a3700_comphy_reset(phy);
+> +		if (ret)
+> +			return ret;
+> +
+> +		lane->needs_reset =3D false;
+>  	}
+>  =
+
+>  	switch (lane->mode) {
+>  	case PHY_MODE_USB_HOST_SS:
+>  		dev_dbg(lane->dev, "set lane %d to USB3 host mode\n", lane->id);
+> -		fw_param =3D COMPHY_FW_MODE(fw_mode);
+> -		break;
+> +		return mvebu_a3700_comphy_usb3_power_on(lane);
+>  	case PHY_MODE_SATA:
+>  		dev_dbg(lane->dev, "set lane %d to SATA mode\n", lane->id);
+> -		fw_param =3D COMPHY_FW_MODE(fw_mode);
+> -		break;
+> +		return mvebu_a3700_comphy_sata_power_on(lane);
+>  	case PHY_MODE_ETHERNET:
+> -		fw_port =3D (lane->id =3D=3D 0) ? 1 : 0;
+> -		switch (lane->submode) {
+> -		case PHY_INTERFACE_MODE_SGMII:
+> -			dev_dbg(lane->dev, "set lane %d to SGMII mode\n",
+> -				lane->id);
+> -			fw_param =3D COMPHY_FW_NET(fw_mode, fw_port,
+> -						 COMPHY_FW_SPEED_1_25G);
+> -			break;
+> -		case PHY_INTERFACE_MODE_2500BASEX:
+> -			dev_dbg(lane->dev, "set lane %d to 2500BASEX mode\n",
+> -				lane->id);
+> -			fw_param =3D COMPHY_FW_NET(fw_mode, fw_port,
+> -						 COMPHY_FW_SPEED_3_125G);
+> -			break;
+> -		default:
+> -			dev_err(lane->dev, "unsupported PHY submode (%d)\n",
+> -				lane->submode);
+> -			return -ENOTSUPP;
+> -		}
+> -		break;
+> +		dev_dbg(lane->dev, "set lane %d to Ethernet mode\n", lane->id);
+> +		return mvebu_a3700_comphy_ethernet_power_on(lane);
+>  	case PHY_MODE_PCIE:
+>  		dev_dbg(lane->dev, "set lane %d to PCIe mode\n", lane->id);
+> -		fw_param =3D COMPHY_FW_PCIE(fw_mode, COMPHY_FW_SPEED_5G,
+> -					  phy->attrs.bus_width);
+> -		break;
+> +		return mvebu_a3700_comphy_pcie_power_on(lane);
+>  	default:
+>  		dev_err(lane->dev, "unsupported PHY mode (%d)\n", lane->mode);
+> -		return -ENOTSUPP;
+> +		return -EOPNOTSUPP;
+>  	}
+> -
+> -	ret =3D mvebu_a3700_comphy_smc(COMPHY_SIP_POWER_ON, lane->id, fw_param);
+> -	if (ret =3D=3D -EOPNOTSUPP)
+> -		dev_err(lane->dev,
+> -			"unsupported SMC call, try updating your firmware\n");
+> -
+> -	return ret;
+>  }
+>  =
+
+>  static int mvebu_a3700_comphy_power_off(struct phy *phy)
+>  {
+>  	struct mvebu_a3700_comphy_lane *lane =3D phy_get_drvdata(phy);
+>  =
+
+> -	return mvebu_a3700_comphy_smc(COMPHY_SIP_POWER_OFF, lane->id, 0);
+> +	switch (lane->mode) {
+> +	case PHY_MODE_USB_HOST_SS:
+> +		mvebu_a3700_comphy_usb3_power_off(lane);
+> +		return 0;
+> +	case PHY_MODE_SATA:
+> +		mvebu_a3700_comphy_sata_power_off(lane);
+> +		return 0;
+> +	case PHY_MODE_ETHERNET:
+> +		mvebu_a3700_comphy_ethernet_power_off(lane);
+> +		return 0;
+> +	case PHY_MODE_PCIE:
+> +		mvebu_a3700_comphy_pcie_power_off(lane);
+> +		return 0;
+> +	default:
+> +		dev_err(lane->dev, "invalid COMPHY mode\n");
+> +		return -EINVAL;
+> +	}
+
+move return 0 to end would look better....
+
+>  }
+>  =
+
+>  static const struct phy_ops mvebu_a3700_comphy_ops =3D {
+>  	.power_on	=3D mvebu_a3700_comphy_power_on,
+>  	.power_off	=3D mvebu_a3700_comphy_power_off,
+> +	.reset		=3D mvebu_a3700_comphy_reset,
+>  	.set_mode	=3D mvebu_a3700_comphy_set_mode,
+>  	.owner		=3D THIS_MODULE,
+>  };
+> @@ -256,13 +1299,75 @@ static struct phy *mvebu_a3700_comphy_xlate(struct=
+ device *dev,
+>  		return ERR_PTR(-EINVAL);
+>  	}
+>  =
+
+> +	lane->invert_tx =3D args->args[1] & BIT(0);
+> +	lane->invert_rx =3D args->args[1] & BIT(1);
+> +
+>  	return phy;
+>  }
+>  =
+
+>  static int mvebu_a3700_comphy_probe(struct platform_device *pdev)
+>  {
+> +	struct mvebu_a3700_comphy_priv *priv;
+>  	struct phy_provider *provider;
+>  	struct device_node *child;
+> +	struct resource *res;
+> +	struct clk *clk;
+> +	int ret;
+> +
+> +	priv =3D devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	spin_lock_init(&priv->lock);
+> +
+> +	res =3D platform_get_resource_byname(pdev, IORESOURCE_MEM, "comphy");
+> +	priv->comphy_regs =3D devm_ioremap_resource(&pdev->dev, res);
+> +	if (IS_ERR(priv->comphy_regs))
+> +		return PTR_ERR(priv->comphy_regs);
+> +
+> +	res =3D platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> +					   "lane1_pcie_gbe");
+> +	priv->lane1_phy_regs =3D devm_ioremap_resource(&pdev->dev, res);
+> +	if (IS_ERR(priv->lane1_phy_regs))
+> +		return PTR_ERR(priv->lane1_phy_regs);
+> +
+> +	res =3D platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> +					   "lane0_usb3_gbe");
+> +	priv->lane0_phy_regs =3D devm_ioremap_resource(&pdev->dev, res);
+> +	if (IS_ERR(priv->lane0_phy_regs))
+> +		return PTR_ERR(priv->lane0_phy_regs);
+> +
+> +	res =3D platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> +					   "lane2_sata_usb3");
+> +	priv->lane2_phy_indirect =3D devm_ioremap_resource(&pdev->dev, res);
+> +	if (IS_ERR(priv->lane2_phy_indirect))
+> +		return PTR_ERR(priv->lane2_phy_indirect);
+> +
+> +	/*
+> +	 * Driver needs to know if reference xtal clock is 40MHz or 25MHz.
+> +	 * Old DT bindings do not have xtal clk present. So do not fail here
+> +	 * and expects that default 25MHz reference clock is used.
+> +	 */
+> +	clk =3D clk_get(&pdev->dev, "xtal");
+> +	if (IS_ERR(clk)) {
+> +		if (PTR_ERR(clk) =3D=3D -EPROBE_DEFER)
+> +			return -EPROBE_DEFER;
+> +		dev_warn(&pdev->dev, "missing 'xtal' clk (%ld)\n",
+> +			 PTR_ERR(clk));
+> +	} else {
+> +		ret =3D clk_prepare_enable(clk);
+> +		if (ret) {
+> +			dev_warn(&pdev->dev, "enabling xtal clk failed (%d)\n",
+> +				 ret);
+> +		} else {
+> +			if (clk_get_rate(clk) =3D=3D 40000000)
+> +				priv->xtal_is_40m =3D true;
+> +			clk_disable_unprepare(clk);
+> +		}
+> +		clk_put(clk);
+> +	}
+> +
+> +	dev_set_drvdata(&pdev->dev, priv);
+>  =
+
+>  	for_each_available_child_of_node(pdev->dev.of_node, child) {
+>  		struct mvebu_a3700_comphy_lane *lane;
+> @@ -277,7 +1382,7 @@ static int mvebu_a3700_comphy_probe(struct platform_=
+device *pdev)
+>  			continue;
+>  		}
+>  =
+
+> -		if (lane_id >=3D MVEBU_A3700_COMPHY_LANES) {
+> +		if (lane_id >=3D 3) {
+>  			dev_err(&pdev->dev, "invalid 'reg' property\n");
+>  			continue;
+>  		}
+> @@ -295,11 +1400,21 @@ static int mvebu_a3700_comphy_probe(struct platfor=
+m_device *pdev)
+>  			return PTR_ERR(phy);
+>  		}
+>  =
+
+> +		lane->priv =3D priv;
+>  		lane->dev =3D &pdev->dev;
+>  		lane->mode =3D PHY_MODE_INVALID;
+>  		lane->submode =3D PHY_INTERFACE_MODE_NA;
+>  		lane->id =3D lane_id;
+> +		lane->invert_tx =3D false;
+> +		lane->invert_rx =3D false;
+>  		phy_set_drvdata(phy, lane);
+> +
+> +		/*
+> +		 * To avoid relying on the bootloader/firmware configuration,
+> +		 * power off all comphys.
+> +		 */
+> +		mvebu_a3700_comphy_reset(phy);
+> +		lane->needs_reset =3D false;
+>  	}
+>  =
+
+>  	provider =3D devm_of_phy_provider_register(&pdev->dev,
+> @@ -323,5 +1438,7 @@ static struct platform_driver mvebu_a3700_comphy_dri=
+ver =3D {
+>  module_platform_driver(mvebu_a3700_comphy_driver);
+>  =
+
+>  MODULE_AUTHOR("Miqu=E8l Raynal <miquel.raynal@bootlin.com>");
+> +MODULE_AUTHOR("Pali Roh=E1r <pali@kernel.org>");
+> +MODULE_AUTHOR("Marek Beh=FAn <kabel@kernel.org>");
+>  MODULE_DESCRIPTION("Common PHY driver for A3700");
+>  MODULE_LICENSE("GPL v2");
+> -- =
+
+> 2.34.1
+
+-- =
+
 ~Vinod
 
--- 
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
