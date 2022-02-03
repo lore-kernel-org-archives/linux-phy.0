@@ -4,91 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5490AC433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Feb 2022 01:36:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7F30C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Feb 2022 05:50:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NdFlRtEeiN1ERlNlCoFXz5xjTafuTGvyn5C0UKmA0+A=; b=RkZ0Dl5K4AZFFo
-	hfWTBUbCw4ov/5YusvTy4hWStfjnUgglYcKhHXXx7JjTwR2Cr+Hpq0khSIu8y1ycjqdNJzbC+24YY
-	gZNbc1tRodKrxRiX2TEhypPVaxRlPOsMDICMIgrzbqa6J0C9ODTNUPSu/32RlibGiqsuWq2Ahr69C
-	8RcwHJl4leS8WXbq/Mu9KSTJbPHJyEdKwk88g2De4r1gKRtFEL5d6pU/Q5dInMmaXNvEE/7+qA2qs
-	KjuODAJYrYcFAovaQ1tK21LAsQV4mLFvv2cEWNPjS20CWKW/Y2MD0o0FBD75jRDtmE50/MJ2klKIf
-	a2DqjbvBYINt4JdQaJGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1btH2JxVsa2CRtFuVpWzM4YD7LWiaBTkBU2rc2hvkno=; b=bo4HLf/U0mkJJu
+	OPcvcMYQXKMF1TuufkAp1YwZtPltFPGqqmXwWvj0mdNCYvrKOQ6o+Zy3s4L05EL4EDvgyW0wRKrHw
+	P0LEwhh3XXThatMfDJBA2ugDgVhFEtJfc8StsxVHTDsEK/dChrVEtw6pHT2nixwFqdTgRJrjLx7mZ
+	xkhJKJZAG0rw4cQ+a9SDO8yk7Qoyw5GyxIfaibdC92l0FHyv6zCVhvTAR+iqYLo9NjAHvK2/1LUGG
+	iVVnVECthjJaTcBsFF+sRCKTfKdcEwdGH+0xDXEmsobbL/0JVjM7ibxmMT52SYEUkjZqM1/szIEqd
+	zHaUaMSt2Xi9stRUX4Ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nFR3E-00HJdz-Ov; Thu, 03 Feb 2022 01:36:44 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1nFV0s-0001jE-4n; Thu, 03 Feb 2022 05:50:34 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nFR2c-00HJTm-22; Thu, 03 Feb 2022 01:36:07 +0000
-Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
- by mailnew.nyi.internal (Postfix) with ESMTP id 67D845801D8;
- Wed,  2 Feb 2022 20:36:05 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute1.internal (MEProxy); Wed, 02 Feb 2022 20:36:05 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
- :in-reply-to:message-id:mime-version:references:reply-to:sender
- :subject:subject:to:to; s=fm1; bh=Qv9J1cRGGPx4g8yfYeZF9v08xNYwi0
- aJAWkB6MIlnNo=; b=PsTXpCgOT5MWmZJun82tGr+XVHga3TcF2KbdsfcUSlRJwr
- CM5n946W0YwpTidnusclb3EZmpdo7Yt+tJ8BCrm5gcCY0D6huNxovmFGHZDPzdqg
- OHuiUlQQxAc8zBKUq49HLu1y56QS+ecPM2YUyg+sRlX2ISvNVVl1QmEX1/TX5myG
- LmGOURKncuQsGkDAsKF8siYsqWtCEfCOUGQlOaI3Y6lBGUrF90K5m0glil/Fis4W
- ju+okkFbHMnVSJfS/8lFlD9R1LeOOLk2qQlprws0P9S4R/Fl2QftdF2CfTpCxAqN
- 2SAxURcag3FPTdMG/hEA05rhgPkfpstmAJGkNaLQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
- :from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:sender:subject:subject:to:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Qv9J1c
- RGGPx4g8yfYeZF9v08xNYwi0aJAWkB6MIlnNo=; b=oG6ujevragac52soTNNY5a
- v5PPCIYKTrEX8enK7AMQMfTMVQXQVDXeyHT6ZBzUvhaCFo6YprXNlWrMy/hoOexe
- GZfCD3fQlV04xemT3AqxESAZoVkSFoJ/9gqRrwSJAY8y1W6xE6wx0eRYCTzs67VM
- IVkaBloXm7GPvjtXW1RrzzwYlc6OcpsMUtlTPz/YCEeEpucs2ZMTc+VeU9FgtATC
- c1msKONWRvTHXIB7tx7IJduuLGoH7sijUmbEEeIMGJxqTGmCDll298HIDaBSYcKk
- elM2GWLQ+1I3yNHo7EKlOJ3uuPrUy0cGDfTnrkQfyTpuVNVgiqxcDaTAIjRrdWdA
- ==
-X-ME-Sender: <xms:hTH7YbXjzgxgQrunYqBCvZI7PixE2Mj6UVm4_d6_7fyh3kcoCMqAWg>
- <xme:hTH7YTmufX3_X0glz-mbmqiez5WuEtzvNpc1WXpA0UhcLD6nACYl5lbc8-M_gwQG8
- _kxFOZ-gTU-Ng2Cbw>
-X-ME-Received: <xmr:hTH7YXa89loeAW2Pss-OmISxfpSJG5iKjFG5svuxPro-WtYVR00JnEfFx93iC-WRxyEIwOvZSnlIeI1Ky19cNz6_uOa76g385e0ESF3Ob9XepucftpuCE1Li8drsh3GPCbSRcQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrgeeigdefiecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepufgrmhhuvghl
- ucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecuggftrf
- grthhtvghrnhepudfhjeefvdfhgfefheetgffhieeigfefhefgvddvveefgeejheejvdfg
- jeehueeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
- epshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
-X-ME-Proxy: <xmx:hTH7YWWuC75YL797VAW9eKKrlFMgzGPU1u1VDiggIaDVDkX02CwadQ>
- <xmx:hTH7YVnDBwGm1k7z_yc7EHTTeiG88FK2yeK5bY5yeI2qVPFGHj5HJQ>
- <xmx:hTH7YTe_wi5LNZao5QsXYdTCQGl6OJbw5J1ielHG-_IDaLSs0lDEzw>
- <xmx:hTH7YbcNc-gvENjmmJ9vgqbNwXZ1cnAiNirRm98gB8vCWxpI58HY4Q>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 2 Feb 2022 20:36:04 -0500 (EST)
-From: Samuel Holland <samuel@sholland.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>,
-	Vinod Koul <vkoul@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
- Samuel Holland <samuel@sholland.org>
-Subject: [PATCH 4/4] phy: sun4i-usb: Add D1 variant
-Date: Wed,  2 Feb 2022 19:35:57 -0600
-Message-Id: <20220203013558.11490-4-samuel@sholland.org>
-X-Mailer: git-send-email 2.33.1
-In-Reply-To: <20220203013558.11490-1-samuel@sholland.org>
-References: <20220203013558.11490-1-samuel@sholland.org>
+ id 1nFV0p-0001iC-Cm
+ for linux-phy@lists.infradead.org; Thu, 03 Feb 2022 05:50:33 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 2135oJlc029849;
+ Wed, 2 Feb 2022 23:50:19 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1643867419;
+ bh=sAF5ic9GnxONMiFzMd/9MsCvgWyl4xIwsqQQswxJBHc=;
+ h=From:To:CC:Subject:Date;
+ b=K6hFwam3vBQjlgGrA8Z1unmNRMDPd7qQftSKfBMbhCWId6BcKOeSVqeIukot2K4fc
+ bbtnBOcIbWJARYcC7kUGQNiWAGOgHHx2oesrjFujaKWgZwiyaKW/Ymltj+p3JMmO5c
+ DkUz2ZBFVQ/0q4AurI18rXhW4bjoNPicmPb5SjIE=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 2135oJt9046082
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 2 Feb 2022 23:50:19 -0600
+Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Wed, 2
+ Feb 2022 23:50:19 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Wed, 2 Feb 2022 23:50:19 -0600
+Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
+ (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 2135oGkn004778;
+ Wed, 2 Feb 2022 23:50:17 -0600
+From: Aswath Govindraju <a-govindraju@ti.com>
+To: 
+CC: Aswath Govindraju <a-govindraju@ti.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Swapnil Jakhade <sjakhade@cadence.com>,
+ <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v3] phy: cadence: Sierra: Add support for skipping
+ configuration
+Date: Thu, 3 Feb 2022 11:20:10 +0530
+Message-ID: <20220203055012.29323-1-a-govindraju@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220202_173606_215932_FA6DD95F 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220202_215031_723347_134A2B03 
+X-CRM114-Status: GOOD (  21.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,45 +83,211 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-D1 has a register layout like A100 and H616, with the moved SIDDQ bit.
-Unlike H616 it does not have any dependencies between PHY instances.
+In some cases, a single SerDes instance can be shared between two different
+processors, each using a separate link. In these cases, the SerDes
+configuration is done in an earlier boot stage. Therefore, add support to
+skip reconfiguring, if it is was already configured beforehand.
 
-Signed-off-by: Samuel Holland <samuel@sholland.org>
+Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
+Reviewed-by: Dan Carpenter <dan.carpenter@oracle.com>
 ---
 
- drivers/phy/allwinner/phy-sun4i-usb.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Changes since v2:
+- Rebased the patch on top of phy-next branch.
 
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index 6675dad17415..d5f3b42eb8ce 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -945,6 +945,15 @@ static const struct sun4i_usb_phy_cfg sun8i_v3s_cfg = {
- 	.phy0_dual_route = true,
+Changes since v1:
+- Removed redundant braces
+- Corrected the logic for skipping multilink configuration
+- Corrected the order in failure path
+
+ drivers/phy/cadence/phy-cadence-sierra.c | 82 ++++++++++++++++--------
+ 1 file changed, 57 insertions(+), 25 deletions(-)
+
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index da24acd26666..2aa0905ee268 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -370,6 +370,7 @@ struct cdns_sierra_phy {
+ 	int nsubnodes;
+ 	u32 num_lanes;
+ 	bool autoconf;
++	int already_configured;
+ 	struct clk_onecell_data clk_data;
+ 	struct clk *output_clks[CDNS_SIERRA_OUTPUT_CLOCKS];
+ };
+@@ -517,7 +518,7 @@ static int cdns_sierra_phy_init(struct phy *gphy)
+ 	int i, j;
+ 
+ 	/* Initialise the PHY registers, unless auto configured */
+-	if (phy->autoconf || phy->nsubnodes > 1)
++	if (phy->autoconf || phy->already_configured || phy->nsubnodes > 1)
+ 		return 0;
+ 
+ 	clk_set_rate(phy->input_clks[CMN_REFCLK_DIG_DIV], 25000000);
+@@ -646,6 +647,18 @@ static const struct phy_ops ops = {
+ 	.owner		= THIS_MODULE,
  };
  
-+static const struct sun4i_usb_phy_cfg sun20i_d1_cfg = {
-+	.num_phys = 2,
-+	.type = sun50i_h6_phy,
-+	.phyctl_offset = REG_PHYCTL_A33,
-+	.dedicated_clocks = true,
-+	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
-+	.phy0_dual_route = true,
++static int cdns_sierra_noop_phy_on(struct phy *gphy)
++{
++	usleep_range(5000, 10000);
++
++	return 0;
++}
++
++static const struct phy_ops noop_ops = {
++	.power_on	= cdns_sierra_noop_phy_on,
++	.owner		= THIS_MODULE,
 +};
 +
- static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
- 	.num_phys = 2,
- 	.type = sun50i_a64_phy,
-@@ -975,6 +984,7 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
- 	{ .compatible = "allwinner,sun8i-h3-usb-phy", .data = &sun8i_h3_cfg },
- 	{ .compatible = "allwinner,sun8i-r40-usb-phy", .data = &sun8i_r40_cfg },
- 	{ .compatible = "allwinner,sun8i-v3s-usb-phy", .data = &sun8i_v3s_cfg },
-+	{ .compatible = "allwinner,sun20i-d1-usb-phy", .data = &sun20i_d1_cfg },
- 	{ .compatible = "allwinner,sun50i-a64-usb-phy",
- 	  .data = &sun50i_a64_cfg},
- 	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
+ static u8 cdns_sierra_pll_mux_get_parent(struct clk_hw *hw)
+ {
+ 	struct cdns_sierra_pll_mux *mux = to_cdns_sierra_pll_mux(hw);
+@@ -1118,13 +1131,6 @@ static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
+ 	struct clk *clk;
+ 	int ret;
+ 
+-	clk = devm_clk_get_optional(dev, "phy_clk");
+-	if (IS_ERR(clk)) {
+-		dev_err(dev, "failed to get clock phy_clk\n");
+-		return PTR_ERR(clk);
+-	}
+-	sp->input_clks[PHY_CLK] = clk;
+-
+ 	clk = devm_clk_get_optional(dev, "cmn_refclk_dig_div");
+ 	if (IS_ERR(clk)) {
+ 		dev_err(dev, "cmn_refclk_dig_div clock not found\n");
+@@ -1160,17 +1166,33 @@ static int cdns_sierra_phy_get_clocks(struct cdns_sierra_phy *sp,
+ 	return 0;
+ }
+ 
+-static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
++static int cdns_sierra_phy_clk(struct cdns_sierra_phy *sp)
+ {
++	struct device *dev = sp->dev;
++	struct clk *clk;
+ 	int ret;
+ 
++	clk = devm_clk_get_optional(dev, "phy_clk");
++	if (IS_ERR(clk)) {
++		dev_err(dev, "failed to get clock phy_clk\n");
++		return PTR_ERR(clk);
++	}
++	sp->input_clks[PHY_CLK] = clk;
++
+ 	ret = clk_prepare_enable(sp->input_clks[PHY_CLK]);
+ 	if (ret)
+ 		return ret;
+ 
++	return 0;
++}
++
++static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
++{
++	int ret;
++
+ 	ret = clk_prepare_enable(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
+ 	if (ret)
+-		goto err_pll_cmnlc;
++		return ret;
+ 
+ 	ret = clk_prepare_enable(sp->output_clks[CDNS_SIERRA_PLL_CMNLC1]);
+ 	if (ret)
+@@ -1181,9 +1203,6 @@ static int cdns_sierra_phy_enable_clocks(struct cdns_sierra_phy *sp)
+ err_pll_cmnlc1:
+ 	clk_disable_unprepare(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
+ 
+-err_pll_cmnlc:
+-	clk_disable_unprepare(sp->input_clks[PHY_CLK]);
+-
+ 	return ret;
+ }
+ 
+@@ -1191,7 +1210,8 @@ static void cdns_sierra_phy_disable_clocks(struct cdns_sierra_phy *sp)
+ {
+ 	clk_disable_unprepare(sp->output_clks[CDNS_SIERRA_PLL_CMNLC1]);
+ 	clk_disable_unprepare(sp->output_clks[CDNS_SIERRA_PLL_CMNLC]);
+-	clk_disable_unprepare(sp->input_clks[PHY_CLK]);
++	if (!sp->already_configured)
++		clk_disable_unprepare(sp->input_clks[PHY_CLK]);
+ }
+ 
+ static int cdns_sierra_phy_get_resets(struct cdns_sierra_phy *sp,
+@@ -1382,22 +1402,30 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = cdns_sierra_phy_get_resets(sp, dev);
+-	if (ret)
+-		goto unregister_clk;
+-
+ 	ret = cdns_sierra_phy_enable_clocks(sp);
+ 	if (ret)
+ 		goto unregister_clk;
+ 
+-	/* Enable APB */
+-	reset_control_deassert(sp->apb_rst);
++	regmap_field_read(sp->pma_cmn_ready, &sp->already_configured);
++
++	if (!sp->already_configured) {
++		ret = cdns_sierra_phy_clk(sp);
++		if (ret)
++			goto clk_disable;
++
++		ret = cdns_sierra_phy_get_resets(sp, dev);
++		if (ret)
++			goto clk_disable;
++
++		/* Enable APB */
++		reset_control_deassert(sp->apb_rst);
++	}
+ 
+ 	/* Check that PHY is present */
+ 	regmap_field_read(sp->macro_id_type, &id_value);
+ 	if  (sp->init_data->id_value != id_value) {
+ 		ret = -EINVAL;
+-		goto clk_disable;
++		goto ctrl_assert;
+ 	}
+ 
+ 	sp->autoconf = of_property_read_bool(dn, "cdns,autoconf");
+@@ -1430,8 +1458,10 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 
+ 		sp->num_lanes += sp->phys[node].num_lanes;
+ 
+-		gphy = devm_phy_create(dev, child, &ops);
+-
++		if (!sp->already_configured)
++			gphy = devm_phy_create(dev, child, &ops);
++		else
++			gphy = devm_phy_create(dev, child, &noop_ops);
+ 		if (IS_ERR(gphy)) {
+ 			ret = PTR_ERR(gphy);
+ 			goto put_child;
+@@ -1450,7 +1480,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	/* If more than one subnode, configure the PHY as multilink */
+-	if (!sp->autoconf && sp->nsubnodes > 1) {
++	if (!sp->already_configured && !sp->autoconf && sp->nsubnodes > 1) {
+ 		ret = cdns_sierra_phy_configure_multilink(sp);
+ 		if (ret)
+ 			goto put_child2;
+@@ -1466,9 +1496,11 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 	for (i = 0; i < node; i++)
+ 		reset_control_put(sp->phys[i].lnk_rst);
+ 	of_node_put(child);
++ctrl_assert:
++	if (!sp->already_configured)
++		reset_control_assert(sp->apb_rst);
+ clk_disable:
+ 	cdns_sierra_phy_disable_clocks(sp);
+-	reset_control_assert(sp->apb_rst);
+ unregister_clk:
+ 	cdns_sierra_clk_unregister(sp);
+ 	return ret;
 -- 
-2.33.1
+2.17.1
 
 
 -- 
