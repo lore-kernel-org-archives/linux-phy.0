@@ -4,75 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0861FC433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Feb 2022 05:55:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB2A1C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Feb 2022 08:15:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Zycy9mwkfav2/VWrPCp+JoCXVLU9qWNboTJKakri17Y=; b=UhT7qtd+xIWo7WQ9T7lESIqrkM
-	IujvXtnefdNEPZFro7kA+FbdOe6vEuOx8B+z7QZcc9ST8Yf9cqmfBoGhmuufuLD7jjHC97hUIBoJs
-	G3pUGKKPbIbpzytl4s2veJgT458fc3qafTE7CvJVpf2Xj9V+OPqYsjCPmhtDp9TBOvtfrXsuaJSCx
-	YwFIE2IljFWx1P30W+rKf7du84ch0jyReTE9R+muvbanLOJUQz703IsWjmkg4iIZ4U+GsiGBhhtr4
-	6U0oc5DZKZK13+hKq/x6FM8gM4W57UhuMbZ7PR4I8xtNcFAwX5f3+m2kGYdaIQgk7Qv5c+pr+Fq6T
-	yQtAP5ZA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ShSevMpfHyAYxaXfl74aDLGsTy2gBV2H6c1TcbCyFWA=; b=rq54NilsAwEK2fP4hXZSJDUhxU
+	jwQPlD7gTJK3Vxz4H7+nLz8oYukPq59IF7mF355Xf2dVcKGbWZJGju3heXRee1DcsHnqLtfhmfM5n
+	MoKQ63O/lMndfRxlCkeJ3bAV1ZztwsaExkIocAnXuna9aCImWzf2kMT3V7gyn5Jxbc/KPUC84702Z
+	4Mfh2Q/TGlFXi3BPmHlVTWHAgY9K0mdbZWCVLjchTX5wlkIzbSJqNALnm/nILRwkJTT/flwVilRGL
+	a8iBrUoF+GvpFhKezhjnDgAQ56ccV3eZmDGNLfzY9PK0mkZUL+PtWQQcjRLEBSGy17wFGUXDEXiBk
+	A/8ErNPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nFV5m-000274-El; Thu, 03 Feb 2022 05:55:38 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1nFXGj-000HDP-8R; Thu, 03 Feb 2022 08:15:05 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nFV5k-00026I-7q
- for linux-phy@lists.infradead.org; Thu, 03 Feb 2022 05:55:37 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 2135tXVE030887;
- Wed, 2 Feb 2022 23:55:33 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1643867733;
- bh=JD/mD2wLKgToLdLuGwh6h0fFTpWKbSM/tDxw4N2Xe04=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=CslY0Mmho/NklB4Be1zldSHxH4hX/1YOqfIdjozXRmSAWoLG5F/RskIxgFrRoJJHj
- pB2TksB2iTlKmfv3oaBNY6qpqPTIwZb4phsMva9MmCypUNb5zs57siyAwlFb6N5HIL
- CO76fqhZsHVKhOSTBZd+QtY3+EPkcgSP/63Nmwos=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 2135tWg0014908
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 2 Feb 2022 23:55:33 -0600
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Wed, 2
- Feb 2022 23:55:32 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Wed, 2 Feb 2022 23:55:32 -0600
-Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 2135tT1E101255;
- Wed, 2 Feb 2022 23:55:30 -0600
-Subject: Re: [PATCH v2] phy: cadence: Sierra: Add support for skipping
- configuration
-To: Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Philipp Zabel
- <p.zabel@pengutronix.de>, Swapnil Jakhade <sjakhade@cadence.com>, Dan
- Carpenter <dan.carpenter@oracle.com>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <20220128072642.29188-1-a-govindraju@ti.com>
- <YfqT444YoGBIturt@matsya> <1d5c41a8-24aa-3cfb-fff0-c2695102aa91@ti.com>
- <YfseaJADVocxqnOu@matsya>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <3444e347-2603-6f5b-94de-09642c41fc27@ti.com>
-Date: Thu, 3 Feb 2022 11:25:29 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ id 1nFXGQ-000H66-S3; Thu, 03 Feb 2022 08:14:48 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 4B52B58028B;
+ Thu,  3 Feb 2022 03:14:45 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute5.internal (MEProxy); Thu, 03 Feb 2022 03:14:45 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+ :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
+ :message-id:mime-version:references:reply-to:sender:subject
+ :subject:to:to; s=fm2; bh=g0pk/IL+SUr/Cc7b8VMIHRiL7WuNfWxDPfDQv3
+ PTMxg=; b=Xl/Aag+ASepVDwAcVOkFYKdE/7Oeizbn8eHs3BemhIe/o5J+oGm10B
+ H1Y3VG5nTXltADnJqwDb0TkxnfKYgRLibnWqmols6jcdhz1FsCxVh3ftmPKY/tRc
+ 47RkIRJi42Ytl045DXLw+A3TADkPpgYpioKVLfatR3+NWYxtt++zlbEQx4TvqS8W
+ gAeqWgxy1AKGYheZwYZT1R0DxkWiKJwp7yk33R9h5+j3cHg4dUq9xLrk2vzZ/hsO
+ 6lno9WFo3tpxllRV50wNyUIDcw3KhcXJTjq297jYC+4AIMQuFUUPRR8IrqPvJuzx
+ aq1X1XTSbJBea9hN66L/S/xrbL99VWuQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:cc:content-type:date:date:from:from
+ :in-reply-to:in-reply-to:message-id:mime-version:references
+ :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=g0pk/IL+SUr/Cc7b8
+ VMIHRiL7WuNfWxDPfDQv3PTMxg=; b=MDBhOJ8TXyUc00WDBLUWzG4EVPkL3duyB
+ uAVUx1DBCJShgGd9Fgg3kbYW+fSW1jHI+qpPaedyJb1nMx6W8CvinrzMVMPt2ZA5
+ iZxzvTRqT+TDWEtZ/64ULBF3uAwar6nnzMi3AJSpdrwJmnxQkcRhkBq3O/QaQjYd
+ olciq6DkLmyRClaORjJMkvOD9PTC+Gj6H1jcJVUe2v7aeKTtqSkx1ljCJsXEi7ii
+ YtzP56ceVRLmv9VnyUWWdfOhS2NEh9dU8vtPmN+Hu949l7WLPhlekjLIrGnWPqqx
+ p/Kj2Pxd2MGFqzHCJsq4V8O3eypHRj4XqrarEcTr+1zhZok2dJvsw==
+X-ME-Sender: <xms:9Y77YY2YhrsAX52BEaKdo7vVnTwqfqZxH2_lx1_9IsdN5f-ItqnObA>
+ <xme:9Y77YTG-T_WfqzYOfTdJPnPSKlDiBIV0Hpw5m966BmaPUunc6CYVCO06tun2z6h-D
+ tq5aGz4vFzSSxdp89o>
+X-ME-Received: <xmr:9Y77YQ5ZYOJGY65G9Gno_7rHlNUIUkeBlNV_8VJrN2vx86_ipAbPLoGDEzpROys1Fvp8Fa1EhGj8wYaPZeHWQb5MISKH_BmXsfiENsw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrgeeigdduudehucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmh
+ grgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:9Y77YR3r03Q3I2Tk4PrIzvkHeQSv89O-SJ7-TdiZ5X0OeWlx4Fy55g>
+ <xmx:9Y77YbHtdkTV5LpCViZXqE2XCbVIwRs-iSUs8zc_53xVz6IY438ndQ>
+ <xmx:9Y77Ya_WQh7ZXbPaofWMMsa2P_Z81Xo5LWzWAokz7cjyLcIw_eeTJg>
+ <xmx:9Y77YT9OqPR_oEKkIADtHhbdef8F89zOaXwaIYOFZvfQHwI1JrXExg>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
+ 3 Feb 2022 03:14:44 -0500 (EST)
+Date: Thu, 3 Feb 2022 09:14:43 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Samuel Holland <samuel@sholland.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH 1/4] dt-bindings: phy: Add compatible for D1 USB PHY
+Message-ID: <20220203081443.lgishr4lbz6asbd5@houat>
+References: <20220203013558.11490-1-samuel@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <YfseaJADVocxqnOu@matsya>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20220203013558.11490-1-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220202_215536_402996_34DF9C42 
-X-CRM114-Status: GOOD (  16.45  )
+X-CRM114-CacheID: sfid-20220203_001447_013030_AA71D800 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,53 +97,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0663886824552842550=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
 
-On 03/02/22 5:44 am, Vinod Koul wrote:
-> On 02-02-22, 20:14, Aswath Govindraju wrote:
->> Hi Vinod,
->>
->> On 02/02/22 7:53 pm, Vinod Koul wrote:
->>> On 28-01-22, 12:56, Aswath Govindraju wrote:
->>>> In some cases, a single SerDes instance can be shared between two different
->>>> processors, each using a separate link. In these cases, the SerDes
->>>> configuration is done in an earlier boot stage. Therefore, add support to
->>>> skip reconfiguring, if it is was already configured beforehand.
->>>
->>> This fails to apply, pls rebase and resend
->>>
->>
->> On rebasing, I am seeing no difference in the patch and I am able to
->> apply it on top of linux-next/master commit 6abab1b81b65. May I know if
->> there is any other branch that I would need to rebase this patch on top of?
-> 
-> It should be based on phy-next which is at
-> 1f1b0c105b19ac0d90975e2569040da1216489b7 now
-> 
+--===============0663886824552842550==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="d3d4ssd6wxoltkfu"
+Content-Disposition: inline
 
-I have posted a respin of this patch after rebasing it on top of
-phy-next. One aspect that is not clear to me is, phy-next branch does
-not have the following commit which is present in linux-next master,
 
-29afbd769ca3 phy: cadence: Sierra: fix error handling bugs in probe()
+--d3d4ssd6wxoltkfu
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-When the respin of this patch(v3) is merged with linux-next/master
-wouldn't it cause merge-conflicts?
+On Wed, Feb 02, 2022 at 07:35:54PM -0600, Samuel Holland wrote:
+> D1 features one OTG port and one host port, like the A64 SoC, so its
+> USB PHY supports the same set of properties. Add the new compatible to
+> the existing binding.
+>=20
+> Signed-off-by: Samuel Holland <samuel@sholland.org>
 
-May I know how would this be handled?
+for the series:
 
-Link to v3:
-- https://patchwork.kernel.org/project/linux-phy/list/?series=610903
+Acked-by: Maxime Ripard <maxime@cerno.tech>
 
-Thanks,
-Aswath
+Maxime
+
+--d3d4ssd6wxoltkfu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYfuO8wAKCRDj7w1vZxhR
+xSM4AQCVJr7dBdD67lry2C5gvGUfY6mTWZFR2miM2F5WMXRLkwEAhVsKhxVOvchc
+em2yLo1aKpV1AMz0Yzpiafdz8OZewQY=
+=7wru
+-----END PGP SIGNATURE-----
+
+--d3d4ssd6wxoltkfu--
+
+
+--===============0663886824552842550==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0663886824552842550==--
+
