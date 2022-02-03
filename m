@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2573BC433EF
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Feb 2022 01:36:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14B3FC433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Feb 2022 01:36:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P2tDpDvNhgsY+5Wyc5U7C7NYy4i0XjinO53iw8G0XmQ=; b=mcrN3X6mpxh94v
-	B9PtYomfgT0UlZi83Nmq3SCMQmiYSR3U8FwJ7Oih9dvRD2yESskE4fss5DejMAZ4QEM5mcab0OP6I
-	5d12ZtR59LQRwJ4JFidMbiu+8PqiNP5cH90nBeiDJXClW/8nFRmi9ni52Xr0qaJl2w9FRi50CF1SO
-	+50gxUIns90Jh0vbNNdcJl8hU4F0i9dPnTNURk8PjwRzjf9+TEM6wBfhmBOMqkaxBGNCRaqk8Z/wg
-	wCTmZLiPFwhafmU0aD4Pj6el3izkkXELwzSMoBbfKojTln+oVw1Wa+tLHX+nLSbdlnvEO/nPtlIhG
-	c+tWQQNR73gpQeXPnzHQ==;
+	List-Owner; bh=pEaS1nRoxhOA19uraKu3agut4S+medXYyVPxZai9GOs=; b=4Sr7A0ahr8dhh3
+	bkhTuXVIxWoTQOAme0jvwjiIyoCcHIzvk0uaFXRWqoCVCA3kK0FTn9MOx5N4ZvS/NFKNfmaCvD8ak
+	RD2jiaV/Ek3nMS0IhVldzhStfTGShcdDcWYoQS09nupWVNt63mi6qi/6+4xq5sGa/dDBNdE0+3GKL
+	A9ytoEQd6oMKZCovyOZ3b9G1K1vohg4zLX+MVoGrdr+zle+AL9HArrFP+CgHns/lAU9qAQvTbMaT8
+	LmAN+MtXcE0lW4wr0Xt68uOv5BJ8YnMj4gO90EQt32fFPZFpNZHYCIzgIdjr44PhwrzyBPUHyYLOU
+	TsfR2UNXvJLscRepaLjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nFR2t-00HJZC-Ge; Thu, 03 Feb 2022 01:36:23 +0000
+	id 1nFR33-00HJap-C1; Thu, 03 Feb 2022 01:36:33 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nFR2Y-00HJS4-Ki; Thu, 03 Feb 2022 01:36:03 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 03E4A5801D8;
- Wed,  2 Feb 2022 20:36:02 -0500 (EST)
+ id 1nFR2a-00HJT3-Co; Thu, 03 Feb 2022 01:36:06 +0000
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+ by mailnew.nyi.internal (Postfix) with ESMTP id B5DB1580154;
+ Wed,  2 Feb 2022 20:36:03 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 02 Feb 2022 20:36:02 -0500
+ by compute2.internal (MEProxy); Wed, 02 Feb 2022 20:36:03 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
  :in-reply-to:message-id:mime-version:references:reply-to:sender
- :subject:subject:to:to; s=fm1; bh=5AjGYad9sW+FKie1aNJ3+LpBiH4rzT
- j/3qYmj3pgyJY=; b=nIFf0CEuLAcA7GwB0DxNrEmHzPCcN/hj5kEEKyz1T3kXIO
- obQCh1Mo8ecLONj3blFtmUBKek+y6ktYgtQhDMOfnIKXDfyzHTt7FXHw1pDwRsCO
- JAZB2DYPC2vKfBklt9siAoU6hjrg4ulGDlM93b9TQurYR48tpNnG2Mz7eJTmQpwi
- 7i3e5UetGMSHAr5SQLsnztPmePAnL6U3c1B75lvH/gC+7rV4WlTeo0waOUVUfEd5
- wcHVoZtKgfLH4LYii4+DjQlEa+YlGWvqwIZQrr7uREppACqHPpjb2egD8rwA8Z1J
- y3DoFwpSw0H8c1l3J8wbu9LHSSqZKvTXiSbrg4EA==
+ :subject:subject:to:to; s=fm1; bh=ZN3RWo26nidccjxhuUyvxHYFylz9R9
+ GDaMIgACviAFU=; b=eOQ4P0Y4PnIwHCvxbyENpxB79ITtruyY94y1gdvdWkcoyZ
+ F3alW/GRWVsxQbZkxYSW2AdFAE0W8Be3tZKQHJPa+1RDnzEfsB/8yfZ/dlmLwSRt
+ 0qs6qMHzd8dP/KyVAM6NVxmhO14FSHKwoBrnErH9KtpHed89FByUfrP2eslVbx1e
+ 3T10tYH9eJIOujoN5rsE2C1YLxWJXaaqFsgxGrlHKWqcDpu0Wj3xngz9neFH1bw8
+ zvo3T3kLqiwvvQR8Z0MqdsU/rfw4pAxd6BG0VFk9CIrYS0FbPBF4xsO0aYP6xO7L
+ kw2oCEFTe11PT1kQF0IOWJbnGw1YoEovY9C8nAmA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
  :from:from:in-reply-to:in-reply-to:message-id:mime-version
  :references:reply-to:sender:subject:subject:to:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=5AjGYa
- d9sW+FKie1aNJ3+LpBiH4rzTj/3qYmj3pgyJY=; b=a6W+pCQbElOaTUErmRAdkB
- Rd0QnFuI4zCdQb8vpaDrJeslrCQDuxDjzDsRRW1HMj3gu9CBWcQIAnpc8B7FzWrn
- d5bBI1u6oIG0PVpsPx21OIvXqHLycmfxUJb5arkcDQbvBeBaJAoxATS/YAmEB00K
- 8Z1oBcUQWwmQpSkmdhCPWFVNiKVY3ipkst2KmTwYoJmVbLytvNdOQPgRCwT3MGnX
- dmta6yk2+lxUZW71YtbTHKbhhcVPVvU3lkheR3qf4ZkmdT+Lhwf3141kSw8f3Ijf
- QDXrcQBx6gJFgtu2BMLdCFuqil8vZDQnFB0rIproBHPWKqoZiKUdeRYCCArqSlxQ
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ZN3RWo
+ 26nidccjxhuUyvxHYFylz9R9GDaMIgACviAFU=; b=H8OipAxXvtir40yRHjpNkO
+ qK7mZXCWPW7lXYJFRN7pVDT79KkEtgEu2RKX5mJCxKStg0T0dgnZGEwLcmEjHhcJ
+ O0jRBtMtzxmWg2IlneooEBsojhTNCCVBy5y6Uoeq8bFxV7TWdCLUtrJB2z6sYIPa
+ jhake6loqzLMgWW748NIDaCDF3IVpkb46gVO4Ze6gONBNmggtq4i5Jv6bFShAOGr
+ HSpzn/GPOXegigUVp5hP9Yf97yc/rierCJrOHcehFi1M8cBfmBVOouMSMJu3J910
+ Du3iWRELekCxWqNd2qKeL8Szqq1YqnbVKCYiIe2f8gTLPUubVzOm6UGmv3rsAdDA
  ==
-X-ME-Sender: <xms:gTH7YcMGHztxTDpi259jHncLb9SnsBST3KPY6egJwmB5tQraMZSSww>
- <xme:gTH7YS8vA6pIKQltOiZrKoPPYkHhkEV09LDYjTFUGNewyqoIdYKiyxgaI1jPrmDy9
- 3XV_xcL1m-imNvpxA>
-X-ME-Received: <xmr:gTH7YTSpc3hWQ70MXZvJsVXOrUan4arrRkeUg0mEWWKE3vt4HTEKE0XA3JzGZDiuSKBrADimIHxZBswhYdTF0VkjsQtAkChYYKqrmZnYnreXSEA4iEW1bpGD986C_8TrDREN8Q>
+X-ME-Sender: <xms:gzH7YcpCzfA-06oDF0n61JimMJifdvqn8C4E8RM0kl2p2TWAZp_TdQ>
+ <xme:gzH7YSoIlfdueaeAjL6VikJfjgs3tl3pvD5LsTf__baT2lwt6A9c-zatb2ntF9Ryl
+ slqGoy3VEhDwkp_2A>
+X-ME-Received: <xmr:gzH7YROO4jmAcGpygqx8UoZjKrjA69oHZZBxyFUWz2ZuTlHRF9vOCCvdLMQCspvN5k8E-zNqqzWBcciWvdM-HJpCxREQmxZrmyVyfHjSWZuROUA174okSi4smNRDt4pf6lVDzw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrgeeigdefhecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -63,12 +63,12 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrgeeigdefhecutefuodetggdote
  grthhtvghrnhepudfhjeefvdfhgfefheetgffhieeigfefhefgvddvveefgeejheejvdfg
  jeehueeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
  epshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
-X-ME-Proxy: <xmx:gTH7YUsvF4xmHxv_kN-QzIwQ6j5S-yLGj9yBmcYO1Rd4kOJSQXc8gg>
- <xmx:gTH7YUdJxFnqhAI4WZH87ieZ8BvvBfJg8oSP3BNWxUk-BQLo-9odPA>
- <xmx:gTH7YY2ZwzLJmXcV_XkTKtuQttzYioSIEqwoEPmoWLyF1Sqcjk1ACA>
- <xmx:gTH7YY0pVx0R-nE8-nSLbtUcrpSUQZMqrg2G5biYcOvSQARu1ska-g>
+X-ME-Proxy: <xmx:gzH7YT78gul2ovcTbqIEw1b1zdozEaX9MwPC3CSER_jhab5l2uQ8mA>
+ <xmx:gzH7Yb7e0KSbxMZjSGDxqIqZJAi9FeDY6CAoQgxGBiTftvzFOe3_eA>
+ <xmx:gzH7YTgnHHH2rmid7HilJ4T1eXeuVCvrvpzuCyd2f4DaVSxxjvqYrw>
+ <xmx:gzH7Yfh3avS64qNuQOsmpvdvNKrkkuAindgSxw6T8cT6O6j49nmVvw>
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 2 Feb 2022 20:36:00 -0500 (EST)
+ 2 Feb 2022 20:36:02 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
 To: Kishon Vijay Abraham I <kishon@ti.com>,
 	Vinod Koul <vkoul@kernel.org>
@@ -78,16 +78,16 @@ Cc: Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
  Jernej Skrabec <jernej.skrabec@gmail.com>, linux-sunxi@lists.linux.dev,
  linux-kernel@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
  Samuel Holland <samuel@sholland.org>
-Subject: [PATCH 2/4] phy: sun4i-usb: Remove .disc_thresh where not applicable
-Date: Wed,  2 Feb 2022 19:35:55 -0600
-Message-Id: <20220203013558.11490-2-samuel@sholland.org>
+Subject: [PATCH 3/4] phy: sun4i-usb: Rework HCI PHY (aka "pmu_unk1") handling
+Date: Wed,  2 Feb 2022 19:35:56 -0600
+Message-Id: <20220203013558.11490-3-samuel@sholland.org>
 X-Mailer: git-send-email 2.33.1
 In-Reply-To: <20220203013558.11490-1-samuel@sholland.org>
 References: <20220203013558.11490-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220202_173602_771751_5034A989 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20220202_173604_542393_5020EBF6 
+X-CRM114-Status: GOOD (  14.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,27 +104,165 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-.disc_thresh is not used when .type = sun50i_h6_phy, so providing a
-value for it is misleading.
+From: Andre Przywara <andre.przywara@arm.com>
 
+As Icenowy pointed out, newer manuals (starting with H6) actually
+document the register block at offset 0x800 as "HCI controller and PHY
+interface", also describe the bits in our "PMU_UNK1" register.
+Let's put proper names to those "unknown" variables and symbols.
+
+While we are at it, generalise the existing code by allowing a bitmap
+of bits to clear and set, to cover newer SoCs: The A100 and H616 use a
+different bit for the SIDDQ control.
+
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
 
- drivers/phy/allwinner/phy-sun4i-usb.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/phy/allwinner/phy-sun4i-usb.c | 30 ++++++++++++---------------
+ 1 file changed, 13 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index 788dd5cdbb7d..624950fd48ba 100644
+index 624950fd48ba..6675dad17415 100644
 --- a/drivers/phy/allwinner/phy-sun4i-usb.c
 +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -962,7 +962,6 @@ static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
- static const struct sun4i_usb_phy_cfg sun50i_h6_cfg = {
- 	.num_phys = 4,
- 	.type = sun50i_h6_phy,
--	.disc_thresh = 3,
+@@ -43,7 +43,7 @@
+ #define REG_PHYCTL_A33			0x10
+ #define REG_PHY_OTGCTL			0x20
+ 
+-#define REG_PMU_UNK1			0x10
++#define REG_HCI_PHY_CTL			0x10
+ 
+ #define PHYCTL_DATA			BIT(7)
+ 
+@@ -82,6 +82,7 @@
+ /* A83T specific control bits for PHY0 */
+ #define PHY_CTL_VBUSVLDEXT		BIT(5)
+ #define PHY_CTL_SIDDQ			BIT(3)
++#define PHY_CTL_H3_SIDDQ		BIT(1)
+ 
+ /* A83T specific control bits for PHY2 HSIC */
+ #define SUNXI_EHCI_HS_FORCE		BIT(20)
+@@ -115,9 +116,9 @@ struct sun4i_usb_phy_cfg {
+ 	int hsic_index;
+ 	enum sun4i_usb_phy_type type;
+ 	u32 disc_thresh;
++	u32 hci_phy_ctl_clear;
+ 	u8 phyctl_offset;
+ 	bool dedicated_clocks;
+-	bool enable_pmu_unk1;
+ 	bool phy0_dual_route;
+ 	int missing_phys;
+ };
+@@ -288,6 +289,12 @@ static int sun4i_usb_phy_init(struct phy *_phy)
+ 		return ret;
+ 	}
+ 
++	if (phy->pmu && data->cfg->hci_phy_ctl_clear) {
++		val = readl(phy->pmu + REG_HCI_PHY_CTL);
++		val &= ~data->cfg->hci_phy_ctl_clear;
++		writel(val, phy->pmu + REG_HCI_PHY_CTL);
++	}
++
+ 	if (data->cfg->type == sun8i_a83t_phy ||
+ 	    data->cfg->type == sun50i_h6_phy) {
+ 		if (phy->index == 0) {
+@@ -297,11 +304,6 @@ static int sun4i_usb_phy_init(struct phy *_phy)
+ 			writel(val, data->base + data->cfg->phyctl_offset);
+ 		}
+ 	} else {
+-		if (phy->pmu && data->cfg->enable_pmu_unk1) {
+-			val = readl(phy->pmu + REG_PMU_UNK1);
+-			writel(val & ~2, phy->pmu + REG_PMU_UNK1);
+-		}
+-
+ 		/* Enable USB 45 Ohm resistor calibration */
+ 		if (phy->index == 0)
+ 			sun4i_usb_phy_write(phy, PHY_RES45_CAL_EN, 0x01, 1);
+@@ -863,7 +865,6 @@ static const struct sun4i_usb_phy_cfg sun4i_a10_cfg = {
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = false,
+-	.enable_pmu_unk1 = false,
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun5i_a13_cfg = {
+@@ -872,7 +873,6 @@ static const struct sun4i_usb_phy_cfg sun5i_a13_cfg = {
+ 	.disc_thresh = 2,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = false,
+-	.enable_pmu_unk1 = false,
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun6i_a31_cfg = {
+@@ -881,7 +881,6 @@ static const struct sun4i_usb_phy_cfg sun6i_a31_cfg = {
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = true,
+-	.enable_pmu_unk1 = false,
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun7i_a20_cfg = {
+@@ -890,7 +889,6 @@ static const struct sun4i_usb_phy_cfg sun7i_a20_cfg = {
+ 	.disc_thresh = 2,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = false,
+-	.enable_pmu_unk1 = false,
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_a23_cfg = {
+@@ -899,7 +897,6 @@ static const struct sun4i_usb_phy_cfg sun8i_a23_cfg = {
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = true,
+-	.enable_pmu_unk1 = false,
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_a33_cfg = {
+@@ -908,7 +905,6 @@ static const struct sun4i_usb_phy_cfg sun8i_a33_cfg = {
+ 	.disc_thresh = 3,
  	.phyctl_offset = REG_PHYCTL_A33,
  	.dedicated_clocks = true,
+-	.enable_pmu_unk1 = false,
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_a83t_cfg = {
+@@ -925,7 +921,7 @@ static const struct sun4i_usb_phy_cfg sun8i_h3_cfg = {
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+-	.enable_pmu_unk1 = true,
++	.hci_phy_ctl_clear = PHY_CTL_H3_SIDDQ,
  	.phy0_dual_route = true,
+ };
+ 
+@@ -935,7 +931,7 @@ static const struct sun4i_usb_phy_cfg sun8i_r40_cfg = {
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+-	.enable_pmu_unk1 = true,
++	.hci_phy_ctl_clear = PHY_CTL_H3_SIDDQ,
+ 	.phy0_dual_route = true,
+ };
+ 
+@@ -945,7 +941,7 @@ static const struct sun4i_usb_phy_cfg sun8i_v3s_cfg = {
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+-	.enable_pmu_unk1 = true,
++	.hci_phy_ctl_clear = PHY_CTL_H3_SIDDQ,
+ 	.phy0_dual_route = true,
+ };
+ 
+@@ -955,7 +951,7 @@ static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+-	.enable_pmu_unk1 = true,
++	.hci_phy_ctl_clear = PHY_CTL_H3_SIDDQ,
+ 	.phy0_dual_route = true,
+ };
+ 
 -- 
 2.33.1
 
