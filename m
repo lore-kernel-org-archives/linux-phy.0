@@ -4,76 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7964DC433EF
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Feb 2022 06:18:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09D23C433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Feb 2022 12:19:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=wm+mz+wgk+OuRyON69v0l8kSCnxwajRfwqz+Zj/oaMw=; b=HXowTMQfOG4/OeHpA4I8dJQ+T8
-	jpsWy707jjA2LXA6hCH0UYcgmi3bGXjAaVmCe0W/8PrQOGm7Yn9T+DPB/P5LitgEWZmKPQMbw/xIT
-	/xLtLhIekRo6ddJSVPLvvQeYTl1Fo/SCO10FLYLfbJRPYopTwSWyU4Tph/lGvFAMYDpogZP5DV2tt
-	SI58taiNTpyVprczmAq42JKvgpA0Py1pn0gioVRX15suKMcSXJu4J6glyvn4iWXqQmVtJcU+7F+KE
-	yu7xZDWJKTjSvyDLKoeP7aJv6EA0C60Y1/br3msbQmfWEz3TihinCjDZUX/H5W1av2uweX0aZB9hi
-	RMHAY55Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VPJ59Z3uLx1J+GzBFlkT7YbGTyt8D/wdPMqG1fuQFRc=; b=xOHy8tPra0VKy0
+	VX2hGeSh20u7UkVLbU7LyP8JIR3Yne7ku+ihPQpVC414zYWo0sPV7wz6p/HlDC8ip2pAPOQVHTQTW
+	r3bGXXdSqRDC5mUdaVMDhULlTvAdol9LJBApQS7yEDhy33hJFwuKmoMdZx5bn844rM4JVwX+uJL4c
+	SybGjsaLsWd01+YQ80CejGRH5cxs23ff7PfQRx5x5x7XVEEqHeQP+ZDQGDdzJVvOFw0wD5b5OIhOa
+	/MIum2ArkzFjqE+//iTDM86pwzjUViomiOaOHh2PHa0vYn2ro1zVzLvuzjUilQiEtVUKUGZRcm250
+	9VTmNqmbMb0yliU+PK1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nFrvn-003Yno-US; Fri, 04 Feb 2022 06:18:51 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1nFxYh-004EfS-7L; Fri, 04 Feb 2022 12:19:23 +0000
+Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nFrvk-003YnU-8Z
- for linux-phy@lists.infradead.org; Fri, 04 Feb 2022 06:18:50 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 2146IbCu035157;
- Fri, 4 Feb 2022 00:18:37 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1643955517;
- bh=/FT23SvfglRjzI4nnVzbze5Z7SGFAuqP/w3IBygPSS4=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Gvu8s4IKOdts5gJkD/9fcldul+jaQTq+z4aKnP+fUhvI6xlDJeorShtnKLnvfzfpc
- 6uHOToZ9Oqy8L8CNKsl7yMNl83r0r1xYcTkhGFpZe8lCLF20POMkxCIi+J6T4R27L4
- ttotWLPtMAsltQAO6Px5Xx1mzygODposF+CPLnh0=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 2146Ibgi011830
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 4 Feb 2022 00:18:37 -0600
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Fri, 4
- Feb 2022 00:18:36 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Fri, 4 Feb 2022 00:18:36 -0600
-Received: from [172.24.145.9] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 2146IX0m027334;
- Fri, 4 Feb 2022 00:18:34 -0600
-Subject: Re: [PATCH v2] phy: cadence: Sierra: Add support for skipping
- configuration
-To: Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@ti.com>, Philipp Zabel
- <p.zabel@pengutronix.de>, Swapnil Jakhade <sjakhade@cadence.com>, Dan
- Carpenter <dan.carpenter@oracle.com>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <20220128072642.29188-1-a-govindraju@ti.com>
- <YfqT444YoGBIturt@matsya> <1d5c41a8-24aa-3cfb-fff0-c2695102aa91@ti.com>
- <YfseaJADVocxqnOu@matsya> <3444e347-2603-6f5b-94de-09642c41fc27@ti.com>
- <YfzERMrPh+TrXr9x@matsya>
-From: Aswath Govindraju <a-govindraju@ti.com>
-Message-ID: <004e4d00-936f-1e4f-8378-b779ae168c60@ti.com>
-Date: Fri, 4 Feb 2022 11:48:33 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
+ id 1nFxWU-004DSS-Tw; Fri, 04 Feb 2022 12:17:08 +0000
+Received: by mail-ed1-x535.google.com with SMTP id n10so12758067edv.2;
+ Fri, 04 Feb 2022 04:17:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=message-id:date:mime-version:user-agent:subject:content-language
+ :from:to:cc:references:in-reply-to:content-transfer-encoding;
+ bh=eHBHzUia9mruyB4YUukSDrxzx6AfeOgulQdxUcrQ01Q=;
+ b=SBeg0hAuVOVt3vAT8e1Ie0QdqByT0wbgDPzNIQNUUEAT1U4w1LOaL2DptiroXUHdfE
+ Hkrw7cPb7cj5GDaCbStOaPaUkw+JP8qfpoQiCSQYYYzt4FjfH4dHw8qvlQk+lind9mtp
+ dHPvgQrqwYy45MqJB4mDWxMKbNgBBqcPMb+bpbwtcCxJzm6woxWG90oMXT0We4Q9BuK+
+ 8BNiPi6096ZHmkyprgC6Qrb+KtcsmS/EoDebY+VBVw52SHkXM6yv+oRDOS7tscUg05a8
+ 8awoA+Fq3UtBbdMH+QgXWfx15LjDMS5MOCIxWjajedF5rl7RKVdADQThId4tJbTWSxy8
+ FU6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:from:to:cc:references:in-reply-to
+ :content-transfer-encoding;
+ bh=eHBHzUia9mruyB4YUukSDrxzx6AfeOgulQdxUcrQ01Q=;
+ b=NyYShTI2+yeBS4oXad6s4I2Yr5abRZmt0U15IVCKf2Ndm4R9jX4N1amB++bEX6WS6z
+ M4DCyHaDjPgltoyLBELVzaFdZHkSuEbP4qqevllaIf8yjJyPRii8BkfenuCr5JEsT+9d
+ tP/6gzVDuTjab7Mk1QecL2qKSRfa53UirfD3+RSRL8AF58j9oOXQff3aZxXILY6c0vFy
+ g7fksq3kl383Wp70GBbYNm9KzxNr/2u9iw2/8ww7+/KYmpFbCxlFSuSVlTVwvwejpxFX
+ As3WL6OE7nVIFSwyC7XP7M8MpDaMKyC9IWeELZ4JMcYFQ7PHGhjxajoZirWW2qoPKNTo
+ MosA==
+X-Gm-Message-State: AOAM530GtVDma6P+EJOGqBAqOEDo+SK3bZst1p925jVOjh7mbguR8C7n
+ RKBbq7yHwYrsJKoF44oE+xk=
+X-Google-Smtp-Source: ABdhPJwNGOsK4+pWoc1ci4iXaJJz7WgHa2jxbtSwbSsa9Axav2aDtMiirV3zHvkRizynn7vEBUFnvQ==
+X-Received: by 2002:a05:6402:40cd:: with SMTP id
+ z13mr2737770edb.119.1643977024173; 
+ Fri, 04 Feb 2022 04:17:04 -0800 (PST)
+Received: from [192.168.2.1] (81-204-249-205.fixed.kpn.net. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id
+ d15sm610498ejw.143.2022.02.04.04.17.03
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 04 Feb 2022 04:17:03 -0800 (PST)
+Message-ID: <72304aa8-6845-250b-dc0e-5122428b8dd8@gmail.com>
+Date: Fri, 4 Feb 2022 13:17:02 +0100
 MIME-Version: 1.0
-In-Reply-To: <YfzERMrPh+TrXr9x@matsya>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH v7 3/4] phy: rockchip: add naneng combo phy for RK3568
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+From: Johan Jonker <jbx6244@gmail.com>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>, heiko@sntech.de
+Cc: robh+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org,
+ michael.riesch@wolfvision.net, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, kishon@ti.com, p.zabel@pengutronix.de,
+ cl@rock-chips.com, kever.yang@rock-chips.com, lee.jones@linaro.org,
+ wulf@rock-chips.com, Frank Wunderlich <frank-w@public-files.de>
+References: <20211230084815.28110-1-yifeng.zhao@rock-chips.com>
+ <20211230084815.28110-4-yifeng.zhao@rock-chips.com>
+ <4838413b-c424-cf55-0699-9cd8ac23d9c2@gmail.com>
+In-Reply-To: <4838413b-c424-cf55-0699-9cd8ac23d9c2@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220203_221848_459965_C7ADB224 
-X-CRM114-Status: GOOD (  19.81  )
+X-CRM114-CacheID: sfid-20220204_041707_019025_8518A394 
+X-CRM114-Status: GOOD (  11.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,57 +97,159 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Hi Heiko, Frank and others,
 
-On 04/02/22 11:44 am, Vinod Koul wrote:
-> On 03-02-22, 11:25, Aswath Govindraju wrote:
->> Hi Vinod,
->>
->> On 03/02/22 5:44 am, Vinod Koul wrote:
->>> On 02-02-22, 20:14, Aswath Govindraju wrote:
->>>> Hi Vinod,
->>>>
->>>> On 02/02/22 7:53 pm, Vinod Koul wrote:
->>>>> On 28-01-22, 12:56, Aswath Govindraju wrote:
->>>>>> In some cases, a single SerDes instance can be shared between two different
->>>>>> processors, each using a separate link. In these cases, the SerDes
->>>>>> configuration is done in an earlier boot stage. Therefore, add support to
->>>>>> skip reconfiguring, if it is was already configured beforehand.
->>>>>
->>>>> This fails to apply, pls rebase and resend
->>>>>
->>>>
->>>> On rebasing, I am seeing no difference in the patch and I am able to
->>>> apply it on top of linux-next/master commit 6abab1b81b65. May I know if
->>>> there is any other branch that I would need to rebase this patch on top of?
->>>
->>> It should be based on phy-next which is at
->>> 1f1b0c105b19ac0d90975e2569040da1216489b7 now
->>>
->>
->> I have posted a respin of this patch after rebasing it on top of
->> phy-next. One aspect that is not clear to me is, phy-next branch does
->> not have the following commit which is present in linux-next master,
->>
->> 29afbd769ca3 phy: cadence: Sierra: fix error handling bugs in probe()
-> 
-> This is in fixes
->>
->> When the respin of this patch(v3) is merged with linux-next/master
->> wouldn't it cause merge-conflicts?
->>
->> May I know how would this be handled?
-> 
-> If need arises (we have a dependency) I would merge fixes into next and
-> then apply patches. Cover letter of the patches should mention that
-> 
+China is on new year vacation.
 
-Thank you for the clarification. I will make note of mentioning this
-from next time. So, just to confirm, if the fixes are merged then v2 of
-this patch series will apply cleanly.
+Question for Heiko:
+With xpcs in a separate node, how do we pass phy modes from gmac to
+xpcs, multiphy in a correct DT way?
+Can we brand xpcs as phy?
+Please advise.
 
-Thanks,
-Aswath
+Johan
+===
+
+Found example for the way Rockchip connects sgmii in the manufacturer DT.
+https://github.com/Poco-Ye/rk-ethernet/blob/master/SGMII.rar
+
+From gmac1.txt:
+
+> &mdio1 {
+>         sgmii_phy: phy@1 {
+         sgmii_phy: phy@0 { // ???
+
+What is correct?
+
+>                 compatible = "ethernet-phy-ieee802.3-c22";
+>                 reg = <0x0>;
+
+C45E
+Clause 45 PHY Enable
+When this bit is set, Clause 45 capable PHY is connected to MDIO.
+When this bit is reset, Clause 22 capable PHY is connected to
+MDIO.
+Values:
+1'b0: Clause 45 PHY is disabled
+1'b1: Clause 45 PHY is enabled
+
+>         };
+> };
+>
+>
+> &combphy2_psq {
+> +       rockchip,sgmii-mac-sel = <1>;
+>         status = "okay";
+> };
+>
+>
+> &gmac0 {
+> 	phy-mode = "sgmii";
+> 	
+> 	rockchip,pipegrf = <&pipegrf>;
+> 	rockchip,xpcs = <&xpcs>;
+>
+> 	snps,reset-gpio = <&gpio3 RK_PB4 GPIO_ACTIVE_LOW>;
+> 	snps,reset-active-low;
+> 	/* Reset time is 20ms, 100ms for rtl8211f */
+> 	snps,reset-delays-us = <0 20000 100000>;
+>
+> 	assigned-clocks = <&cru SCLK_GMAC1_RX_TX>;
+> 	assigned-clock-parents = <&gmac1_xpcsclk>;
+>
+> +	pinctrl-0 = <&gmac1m0_miim>;
+> 	power-domains = <&power RK3568_PD_PIPE>;
+> 	phys = <&combphy2_psq PHY_TYPE_SGMII>;
+> +	phy-handle = <&sgmii_phy>;
+>
+> 	status = "okay";
+> };
+
+===
+
+Proposal:
+xpcs driver passes mode info to multiphy driver.
+Phy arg is used for gmac source selection for PHY_INTERFACE_MODE_SGMII
+and PHY_INTERFACE_MODE_QSGMII.
+
+> 	phys = <&xpcs 0>;
+
+===
+
+{
+	gmac0_xpcsclk: xpcs-gmac0-clock {
+		compatible = "fixed-clock";
+		clock-frequency = <125000000>;
+		clock-output-names = "clk_gmac0_xpcs_mii";
+		#clock-cells = <0>;
+	};
+
+	gmac1_xpcsclk: xpcs-gmac1-clock {
+		compatible = "fixed-clock";
+		clock-frequency = <125000000>;
+		clock-output-names = "clk_gmac1_xpcs_mii";
+		#clock-cells = <0>;
+	};
+
+	xpcs: syscon@fda00000 {
+		compatible = "rockchip,rk3568-xpcs", "syscon";
+		reg = <0x0 0xfda00000 0x0 0x200000>;
+		clocks = <&cru PCLK_XPCS>;
+		clock-names = "pclk_xpcs";
+
+>		phys = <&multiphy2>;
+
+		power-domains = <&power RK3568_PD_PIPE>;
+ 		rockchip,pipegrf = <&pipegrf>; // Switch between gmac0 and gmac1
+		status = "disabled";
+	};
+}
+
+&mdio1 {
+         sgmii_phy: phy@0 {
+                 compatible = "ethernet-phy-ieee802.3-c22";
+                 reg = <0x0>;
+         };
+ };
+
+
+&multiphy2 {
+         status = "okay";
+};
+
+
+&gmac0 {
+	assigned-clocks = <&cru SCLK_GMAC1_RX_TX>;
+ 	assigned-clock-parents = <&gmac1_xpcsclk>;
+
+ 	phys = <&combphy2_psq PHY_TYPE_SGMII>;
+	phy-handle = <&sgmii_phy>;
+ 	phy-mode = "sgmii";
+
+> 	phys = <&xpcs 0>;
+
+	pinctrl-0 = <&gmac1m0_miim>;
+
+ 	snps,reset-gpio = <&gpio3 RK_PB4 GPIO_ACTIVE_LOW>;
+	snps,reset-active-low;
+ 	/* Reset time is 20ms, 100ms for rtl8211f */
+ 	snps,reset-delays-us = <0 20000 100000>;
+
+	status = "okay";
+};
+
+On 1/3/22 19:26, Johan Jonker wrote:
+> Hi Yifeng, Kishon, rob+dt,
+> 
+> Some comments, have a look if it's useful.
+> 
+> ====
+> 
+> Could the DT and phy maintainer advise the correct/right driver
+> structure to Yifeng, so that we can move forward!
+> 
+> ====
+> 
 
 -- 
 linux-phy mailing list
