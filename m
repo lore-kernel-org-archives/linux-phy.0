@@ -4,85 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA13BC433FE
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Feb 2022 14:38:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 066DFC433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Feb 2022 16:47:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qe2uFPfm/bwWOpV9jaJ4M5XJVfsj41xU4PNyGkSBFk0=; b=gyhdmFgv7qH6wQ
-	FWNmt6Bjikk3QWAPgvrG/A2C/LHiGbKk3De9CHsePmNyTR4mvQtD3wgv8CQ7xFU59jux7KATKIGne
-	44H/E9FpNlkyDOAYYUuH7k5RBVvwOHpFgUDeRBubEkxEViJn/Gj4cLsacGpt+odVdTAeSxke9GslD
-	O3AJSlfBu3G96UXI3FJmD7u1AswWxUPFyi8WbymDJQIJGl43c7muAMesNMzZPAvcTIwYJMZ3qkUws
-	ixaAYTDDP8jmA0KsMppYlDqn0CrEI1Z++npghpWB3DgeryxQGdMfQOp+9W1hmYYFmVuRQNSYyIsI5
-	EQd5Jg4rd6sdNHSZEieA==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+jMOirouqhlO14Y1hz71vijXLPG8uxj3NDRLA6XLK7o=; b=HNQ
+	ziFZd8bxxeXPdYDdSnTyFhc9mKfEKOWRMlJd3GYcaxE65rBx5/bpr/hxwA6xus+7WoaaqN0/HHMME
+	f2qAbfcVk6qU/7Hl1LDOSKShT2i42gbhjABA8O+Rc7zppFvnMgjOPfQ2o53GJA7TLjYuT3K74VhfM
+	MRLcJyL7N1sgufdqJJ3hTDd7sJpXj3L9FByX1HwvJxNg6m3tRwqbgYo486VAI0IpIXOYsYiyPuhQM
+	BsE8RT4bUajORyuTKrSv/hUIBJnRhiwLdtq59W9TfZdHPn1D+C/3GLIiFnRKEAkzVKwlltf1ozpg3
+	vQUVsPBnm6OUzpIBNV9Q45rnBGrzdaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nFzjT-004anj-Bc; Fri, 04 Feb 2022 14:38:39 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1nG1kQ-004xHa-Cb; Fri, 04 Feb 2022 16:47:46 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nFzjR-004anA-AC
- for linux-phy@lists.infradead.org; Fri, 04 Feb 2022 14:38:38 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id u6so12998058lfm.10
- for <linux-phy@lists.infradead.org>; Fri, 04 Feb 2022 06:38:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=8zmIWe+6ZwBu7ElBid2Px0vQ+Pa6/XPVpcBYjuu3N/Y=;
- b=xEJAnONiEBCWTzLctXlczL2oH3jQiNS3rR/C6Rc9m6wOp/SfE2B3mCL4BOFn/bHPue
- hAnmhq92b4rL9aI/ZPX6bg4okODwroyBRmHC1p5BhoVH+sLpl21j3IKkD4ioNB5D/Kqh
- Z955KoEao68ecTtQ7Wv4ZDuatYnVij3yfE5+dv1TstDNHY3kV1Ynf9g2FuoArZdTFXqW
- oBczg/+ZDyAEfip6y24rWkJ2IvKKJHCWhFRft8llJSyFWf4SnCdlb47a6gpAiJSERVKS
- KBEJqS2UD+Ez/rh4MPyAJ8FeUp8Xyh+3IANXBNmbbTPRiu0Vz+xXbzSkbzU6RR/mupKj
- Uadg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=8zmIWe+6ZwBu7ElBid2Px0vQ+Pa6/XPVpcBYjuu3N/Y=;
- b=F9Sx5oJJSarjRAH+c8Srpb9OQeGYcZOEAGXCkgyi4kIYM/egvxlATi6iovuO8RnflA
- wPPPGDf3rti+y5WlJFwY28A2luP5Qok/SJUJ2VS7sb53QAcT2BDm8NtEmOu4tFF3Lc+m
- +fBNjL7qUEEcDBoqXlxMbma1c/bW0Qg/9R6BVGDSoC0A909PaBMILufaENy+Ulwshk6H
- wFMyJR7k0E/mfH4UkeWAwUh1pv1aS50eRc3XsEPShQzlIT47T7UTDNlXl1I6uM6LS3ej
- rukfN4UAiicYADG4bQN3cNnDvzNv0N+zeKnU9yJHk1hzrNiSpab9SSCIPeVgiOye6NZ6
- WdnQ==
-X-Gm-Message-State: AOAM531GJkb9C/+RNduIF7hExMTqHLX8CfdSiEhG4BYwY2rJUG+I3R6z
- rcto5tFxpCLxHoogBL4wg+Mc+A==
-X-Google-Smtp-Source: ABdhPJxaOed+hkjLmis4Oxp5ciR43zWuYlWqvxBvSM148L1K53n1haqeyQTUxW2xT8nTeLwmAePC/Q==
-X-Received: by 2002:a05:6512:224f:: with SMTP id
- i15mr2506943lfu.446.1643985515153; 
- Fri, 04 Feb 2022 06:38:35 -0800 (PST)
-Received: from [192.168.1.211] ([37.153.55.125])
- by smtp.gmail.com with ESMTPSA id u4sm339972lfg.239.2022.02.04.06.38.34
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 04 Feb 2022 06:38:34 -0800 (PST)
-Message-ID: <527f0365-1544-ad73-cf49-b839ae629340@linaro.org>
-Date: Fri, 4 Feb 2022 17:38:33 +0300
+ id 1nG1kN-004xH2-5o
+ for linux-phy@lists.infradead.org; Fri, 04 Feb 2022 16:47:44 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id BC4B06194D;
+ Fri,  4 Feb 2022 16:47:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 64B19C004E1;
+ Fri,  4 Feb 2022 16:47:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1643993262;
+ bh=9e2Mu0Fu8rbPTnt4SnobAKnyDwsFA10BlghgdqBHmvQ=;
+ h=Date:From:To:Cc:Subject:From;
+ b=QReL6YHJVX/sOAtDvyDNLcrE80F/N5RSzZ2ji5/EVhZFRsphLCsv74YF09NJnhdex
+ nFQ5gk2Xerc7eFBt1iUKtFs9J/hNftgLfI8YdEXQwQ038ejmRIVHYGDCVzCHRxF754
+ 94qgXYLEhU3W76pGpRWcatUqs5ZYKNluQHHF+CPlrbvqM6H+7PoCaLZaunycPx7GZ9
+ 0pUFJoYbicAaBC6ZA+nkzxtfCTH/oHrWsyPcn3OYWWyKYgq1Wf8T8THzP5OGLZMXoJ
+ xVYUH6EEK6+RhR872z9C/BXAtHceNVDrk8WQz8ocREZzrFvpiMB5sv/rR7QPss01iV
+ MyNQRWBhavWLQ==
+Date: Fri, 4 Feb 2022 22:17:37 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Greg KH <gregkh@linuxfoundation.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Linux Phy <linux-phy@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>
+Subject: [GIT PULL]: Generic phy fixes for v5.17
+Message-ID: <Yf1YqcqUmResNevN@matsya>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.5.0
-Subject: Re: [PATCH v5 4/5] PCI: qcom: Add interconnect support to 2.7.0/1.9.0
- ops
-Content-Language: en-GB
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Stanimir Varbanov <svarbanov@mm-sol.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Krzysztof Wilczy??ski <kw@linux.com>,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20211218141024.500952-1-dmitry.baryshkov@linaro.org>
- <20211218141024.500952-5-dmitry.baryshkov@linaro.org>
- <Yfv7gh8YycxH2Wtm@ripper>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <Yfv7gh8YycxH2Wtm@ripper>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220204_063837_398801_400F731C 
-X-CRM114-Status: GOOD (  23.52  )
+X-CRM114-CacheID: sfid-20220204_084743_350494_3FBD058D 
+X-CRM114-Status: GOOD (  11.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,125 +65,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============7565633819316850187=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03/02/2022 18:57, Bjorn Andersson wrote:
-> On Sat 18 Dec 06:10 PST 2021, Dmitry Baryshkov wrote:
-> 
->> Add optional interconnect support for the 2.7.0/1.9.0 hosts. Set the
->> bandwidth according to the values from the downstream driver.
->>
-> 
-> What memory transactions will travel this path? I would expect there to
-> be two different paths involved, given the rather low bw numbers I
-> presume this is the config path?
 
-I think so. Downstream votes on this path for most of the known SoCs. 
-Two spotted omissions are ipq8074 and qcs404.
-
-> 
-> Is there no vote for the data path?
-
-CNSS devices can vote additionally on the MASTER_PCI to memory paths:
-For sm845 (45 = MASTER_PCIE):
-                 qcom,msm-bus,vectors-KBps =
-                         <45 512 0 0>,
-                         <45 512 600000 800000>; /* ~4.6Gbps (MCS12) */
-
-On sm8150/sm8250 qca bindings do not contain a vote, but wil6210 does 
-(100 = MASTER_PCIE_1):
-                 qcom,msm-bus,vectors-KBps =
-                         <100 512 0 0>,
-                         <100 512 600000 800000>; /* ~4.6Gbps (MCS12) */
-
-For sm8450 there are two paths used by cnss:
-		<&pcie_noc MASTER_PCIE_0 &pcie_noc SLAVE_ANOC_PCIE_GEM_NOC>,
-		<&gem_noc MASTER_ANOC_PCIE_GEM_NOC &mc_virt SLAVE_EBI1>;
-
-with multiple entries per each path.
-
-So, I'm not sure about these values.
-
-> 
->> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->> ---
->>   drivers/pci/controller/dwc/pcie-qcom.c | 11 +++++++++++
->>   1 file changed, 11 insertions(+)
->>
->> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
->> index d8d400423a0a..55ac3caa6d7d 100644
->> --- a/drivers/pci/controller/dwc/pcie-qcom.c
->> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
->> @@ -12,6 +12,7 @@
->>   #include <linux/crc8.h>
->>   #include <linux/delay.h>
->>   #include <linux/gpio/consumer.h>
->> +#include <linux/interconnect.h>
->>   #include <linux/interrupt.h>
->>   #include <linux/io.h>
->>   #include <linux/iopoll.h>
->> @@ -167,6 +168,7 @@ struct qcom_pcie_resources_2_7_0 {
->>   	struct clk *pipe_clk_src;
->>   	struct clk *phy_pipe_clk;
->>   	struct clk *ref_clk_src;
->> +	struct icc_path *path;
->>   };
->>   
->>   union qcom_pcie_resources {
->> @@ -1121,6 +1123,10 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
->>   	if (IS_ERR(res->pci_reset))
->>   		return PTR_ERR(res->pci_reset);
->>   
->> +	res->path = devm_of_icc_get(dev, "pci");
-> 
-> The paths are typically identified using a string of the form
-> <source>-<destination>.
-> 
-> 
-> I don't see the related update to the DT binding for the introduction of
-> the interconnect.
-> 
-> Regards,
-> Bjorn
-> 
->> +	if (IS_ERR(res->path))
->> +		return PTR_ERR(res->path);
->> +
->>   	res->supplies[0].supply = "vdda";
->>   	res->supplies[1].supply = "vddpe-3v3";
->>   	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(res->supplies),
->> @@ -1183,6 +1189,9 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
->>   	if (pcie->cfg->pipe_clk_need_muxing)
->>   		clk_set_parent(res->pipe_clk_src, res->phy_pipe_clk);
->>   
->> +	if (res->path)
->> +		icc_set_bw(res->path, 500, 800);
->> +
->>   	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
->>   	if (ret < 0)
->>   		goto err_disable_regulators;
->> @@ -1241,6 +1250,8 @@ static void qcom_pcie_deinit_2_7_0(struct qcom_pcie *pcie)
->>   	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
->>   
->>   	clk_bulk_disable_unprepare(res->num_clks, res->clks);
->> +	if (res->path)
->> +		icc_set_bw(res->path, 0, 0);
->>   
->>   	/* Set TCXO as clock source for pcie_pipe_clk_src */
->>   	if (pcie->cfg->pipe_clk_need_muxing)
->> -- 
->> 2.34.1
->>
+--===============7565633819316850187==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="6GopgMmcKAvDgyfo"
+Content-Disposition: inline
 
 
--- 
-With best wishes
-Dmitry
+--6GopgMmcKAvDgyfo
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hello Greg,
+
+Please pull to recieve the fixes for v5.17 for Generic phy subsystem.
+
+The following changes since commit e783362eb54cd99b2cac8b3a9aeac942e6f6ac07:
+
+  Linux 5.17-rc1 (2022-01-23 10:12:53 +0200)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-=
+fixes-5.17
+
+for you to fetch changes up to 9a8406ba1a9a2965c27e0db1d7753471d12ee9ff:
+
+  phy: dphy: Correct clk_pre parameter (2022-02-02 10:33:04 +0530)
+
+----------------------------------------------------------------
+phy: fixes for 5.17
+
+Fixes for bunch of drivers:
+ - clk params for dphy
+ - arg fix for mtk-tphy
+ - refcount leak fix for stm32
+ - bus width fix for zynqmp
+ - sentinel fix ti
+ - PHY_BRCM_USB Kconfig fix
+ - clk fix for usb phy
+
+----------------------------------------------------------------
+Al Cooper (2):
+      phy: usb: Leave some clocks running during suspend
+      phy: broadcom: Kconfig: Fix PHY_BRCM_USB config option
+
+Dan Carpenter (2):
+      phy: cadence: Sierra: fix error handling bugs in probe()
+      phy: stm32: fix a refcount leak in stm32_usbphyc_pll_enable()
+
+Kishon Vijay Abraham I (1):
+      phy: ti: Fix missing sentinel for clk_div_table
+
+Liu Ying (1):
+      phy: dphy: Correct clk_pre parameter
+
+Robert Hancock (1):
+      phy: xilinx: zynqmp: Fix bus width setting for SGMII
+
+Wan Jiabing (1):
+      phy: phy-mtk-tphy: Fix duplicated argument in phy-mtk-tphy
+
+ drivers/gpu/drm/bridge/nwl-dsi.c                 | 12 ++++----
+ drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c    |  3 +-
+ drivers/phy/broadcom/Kconfig                     |  3 +-
+ drivers/phy/broadcom/phy-brcm-usb.c              | 38 ++++++++++++++++++++=
+++++
+ drivers/phy/cadence/phy-cadence-sierra.c         | 35 +++++++++++++-------=
+--
+ drivers/phy/mediatek/phy-mtk-tphy.c              |  2 +-
+ drivers/phy/phy-core-mipi-dphy.c                 |  4 +--
+ drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c |  3 +-
+ drivers/phy/st/phy-stm32-usbphyc.c               |  2 +-
+ drivers/phy/ti/phy-j721e-wiz.c                   |  1 +
+ drivers/phy/xilinx/phy-zynqmp.c                  | 11 +++----
+ 11 files changed, 80 insertions(+), 34 deletions(-)
+
+
+--=20
+~Vinod
+
+--6GopgMmcKAvDgyfo
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE+vs47OPLdNbVcHzyfBQHDyUjg0cFAmH9WKkACgkQfBQHDyUj
+g0ekWw/9HU/aFfpFSx2VXd40AR6rUYzO25oK36lFlYJb8juxTsNvLsxaeW9wGyzc
+2FQT3pZoqzaagV2Ttuu0k6QkThkGYhpkzSTxZv8uy2qqP+Xmsj1UK+mC9UyH/nm5
+0Mem0XogOuP2mSVy0aGovd4oWaRqQi5WXF3r7rIa4zl2G9eCKODCUIMpUhSo+kaa
+4LqpufbrGOT3iMW5C30wMBaVpxsRUpIJZ12HODmf0P29QH8C1pfiQarkit9i6TI+
+ESlFmg/j1a7F5srDJkkZNa2LWYaO9RF3uUbuUA9cHJJVlVXumM3CimCVxBb3qHW3
+eo0FcoZiOLJorCpg+i/t2R33GjZdyl91EfBO8cpBIhIJsUnEUwBpigX9/lQy+e1d
+Af2I5r/D/o6gPp4FBEA0931zHh2weMNP+Aebtlrs0V+YTM7H7fFR5gween+nz3yV
+Fi+Kh7Xe4T4qq8XYjEMa8xw+C7TkYSUqHqlBEXJTKARjBBmZa+2+0XjsJLxIkz/E
+uL2HFC96iJBn7tds7Su3C2VoGBiSohfe1S1ZnVnB7VTAi5OjJWosDbnXS7g5mYuW
+OReUeTadtSGitokVjJJWlzrSb0/EuwJmPoh+CObPIw3UytnEkujv9RAn1kG9eVD+
++uE2Gomm+aTsbTo1ITUDW4RCqyc9+GreuBDvr8j1DNLEBMj6NYM=
+=9GyH
+-----END PGP SIGNATURE-----
+
+--6GopgMmcKAvDgyfo--
+
+
+--===============7565633819316850187==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7565633819316850187==--
+
