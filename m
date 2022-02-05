@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 053C1C433F5
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:23:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C9B9C433F5
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:24:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BkzaAQBXItJF6aUyUKgcseKS+tB3fHyKdnVkamKGvM4=; b=inxS1KZzBbouYU
-	ebDS0Eyl1/AOjtGH3m3x/PFbtTNdlGjHq426QJj6+Dodb/cbQRycV/4789GX9okxSLLqU1XcDp47X
-	GynbPu+xfq/SNA++Z1hIrjM1GEuWX3glRg5TboGT/+GQvqHdDXlyPf6Ja7ARsWRFONY7ht9GvBKnA
-	J2/ZLPwMjzg/xWsARvb65TdVGH01ObVIHc14Z/KwrE9vPqBCmWkv8uLg1etGG4DhgQODbxXTZ9TkL
-	4sVnfo3Pp+B82Cba/HA29mji1qeHfQmgpQYSmesH0KejkbVOcwss51TkP0VpaOQC5f+4GeC71PGkf
-	x6J3WXqoRejmLQnykijw==;
+	List-Owner; bh=wIOjx0aE3ZWW0BgjfSRP7D+sRKyKxbPkj3iGWapR60s=; b=I3Zrs7ZhfLT4G3
+	IDIl9bv5p7HDYdO7bKi9rV32K7QsAyQf1VqASgfJvf76otEoz7ktlu2djYsq2y/mlH5Inn2zVX7ps
+	qRdErwnK8ELjmPjZyAHE1uc3HrKjn4qeDShu3R58NWEP6jGriKNduza1uuPaasLb2672LH8eVL700
+	hCB2DjkXB9EoqRX96l3qcH1X7FcEkbWuJj76GFfXgtJlDnADDF6X8i/De8D6c72auaDRkx+Po6Z2H
+	SNfKDqH0xN2s9GKQoKvQP3qhX6PlvHSweB3MM6IHU+Q1geTHmJ5vp07LNLU7XNagTYUeSgUTJ2xNO
+	o7r4KHWlj2ZVVtUOdHJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGQeW-007Bto-56; Sat, 05 Feb 2022 19:23:20 +0000
-Received: from relay10.mail.gandi.net ([2001:4b98:dc4:8::230])
+	id 1nGQfj-007CLo-5y; Sat, 05 Feb 2022 19:24:35 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGQDg-006zmL-LS; Sat, 05 Feb 2022 18:55:45 +0000
+ id 1nGQDi-006znO-8F; Sat, 05 Feb 2022 18:55:48 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 552FF240011;
- Sat,  5 Feb 2022 18:55:33 +0000 (UTC)
+ by mail.gandi.net (Postfix) with ESMTPSA id 18454240013;
+ Sat,  5 Feb 2022 18:55:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644087335;
+ t=1644087336;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=nAEGfQDJ0sLUOXQFQuKZ7RzdheNIg4Vw/eOZrL/G0qM=;
- b=J7J/7ad8perCvZH7629BPuOL3H5HnNNr+nM+/eAvAwsVNo/SlI9aWPHDWEbvHbRT5i5Ga7
- Ac3TniUEOg+pPj6giMPcq6LBUS58lgHb4q5oAsK7VkF/uLRsq/MuzWv1/ZMLbbLwZiIlHD
- he4WeFMLipnNbFVtRmdaXkWzZHLyNbcKyOtDSq5qnrPkHZEo5NWW9MFH/q/uq6Vsdkj2Fb
- uBRh7+F/IZwT+maLNRGryiQYozSvQ6JrfqJUQiZbl88DQ/ZVzpIouEknSvFE3GgKjPDPxA
- h+1MjjdZKz+uOSdrhJq7sdLhLd/dgLfFu8l/kpFroigBRMRjcmjzsyM0ADjLIg==
+ bh=0jubZshSXnxWNcLqToRYZ4msPOfmZec/ijVEXGGFBPY=;
+ b=jwxdmQhJF/TYA6pDqbQaMAIMoKVBLs37HBMQwvZV3ILeG0+E7/p3UtSMn6Ckrh+JTcRRSE
+ TLoj/DdQ1vl6QzqWzsxDYTlbhpdb0YXRIlf4tT1oYENJwzvjNnbBrAbKsqhjvDRblYHE+m
+ 97iXTw3FaU9kfazZ42CtvQiCNzQ+/60xxs7tFcUuEkmKctRbxKakzBwVfh9qriiyYnS0Gm
+ Ba4Iic0s/qCQv083yRQB/xAKHNMQZRE0RJqGWy1c/V/2Kn/M+bl8VFZDu0aFOnD/7QOPr5
+ cIyfbTmZxcgyauwO1AimBfC7Bp1nERseAUaIpkRIgj6Qt+T4qUzDFVM52AnLsA==
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -55,17 +55,17 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH v2 32/66] media: sun6i-csi: Add capture state using vsync for
- page flip
-Date: Sat,  5 Feb 2022 19:53:55 +0100
-Message-Id: <20220205185429.2278860-33-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v2 33/66] media: sun6i-csi: Rework register definitions,
+ invert misleading fields
+Date: Sat,  5 Feb 2022 19:53:56 +0100
+Message-Id: <20220205185429.2278860-34-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_105537_086275_B7DB4AE6 
-X-CRM114-Status: GOOD (  29.25  )
+X-CRM114-CacheID: sfid-20220205_105538_653056_477713AE 
+X-CRM114-Status: GOOD (  16.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,305 +77,666 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhpcyBpbnRyb2R1Y2VzIGEgbmV3IHN0YXRlIHN0cnVjdHVyZSBhbmQgYXNzb2NpYXRlZCBoZWxw
-ZXJzIGZvcgpjYXB0dXJlLCB3aGljaCBoYW5kbGVzIHRoZSBidWZmZXIgcXVldWUgYW5kIHN0YXRl
-IGZvciBlYWNoIHN1Ym1pdHRlZApidWZmZXIuCgpCZXNpZGVzIGZyb20gdGhlIGNvZGUgcmVmYWN0
-b3JpbmcsIHRoaXMgY2hhbmdlcyB0aGUgcGFnZSBmbGlwIHBvaW50CnRvIHZzeW5jIGluc3RlYWQg
-b2YgZnJhbWUgZG9uZSwgd2hpY2ggYWxsb3dzIHdvcmtpbmcgd2l0aCBvbmx5CnR3byBidWZmZXJz
-IHdpdGhvdXQgbG9zaW5nIGZyYW1lcy4gVGhpcyBpcyBhcHBhcmVudGx5IGEgbW9yZQphcHByb3By
-aWF0ZSB0aGluZyB0byBkbyB3aXRoIHRoaXMgY29udHJvbGxlci4KClNpZ25lZC1vZmYtYnk6IFBh
-dWwgS29jaWFsa293c2tpIDxwYXVsLmtvY2lhbGtvd3NraUBib290bGluLmNvbT4KLS0tCiAuLi4v
-cGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5jICAgICAgfCAgIDQgKwogLi4uL3Bs
-YXRmb3JtL3N1bnhpL3N1bjZpLWNzaS9zdW42aV9jc2kuaCAgICAgIHwgICAzIC0KIC4uLi9zdW54
-aS9zdW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuYyAgICAgICB8IDI1OSArKysrKysrKysrLS0t
-LS0tLS0KIC4uLi9zdW54aS9zdW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuaCAgICAgICB8ICAy
-MyArLQogNCBmaWxlcyBjaGFuZ2VkLCAxNjUgaW5zZXJ0aW9ucygrKSwgMTI0IGRlbGV0aW9ucygt
-KQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1
-bjZpX2NzaS5jIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1jc2kvc3VuNmlf
-Y3NpLmMKaW5kZXggODM0ZmM4YzE3MTg5Li4xYjU5OTVlNjhiZTUgMTAwNjQ0Ci0tLSBhL2RyaXZl
-cnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5jCisrKyBiL2RyaXZl
-cnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5jCkBAIC01NjYsNiAr
-NTY2LDcgQEAgdm9pZCBzdW42aV9jc2lfc2V0X3N0cmVhbShzdHJ1Y3Qgc3VuNmlfY3NpX2Rldmlj
-ZSAqY3NpX2RldiwgYm9vbCBlbmFibGUpCiAKIAlyZWdtYXBfd3JpdGUocmVnbWFwLCBDU0lfQ0hf
-SU5UX1NUQV9SRUcsIDB4RkYpOwogCXJlZ21hcF93cml0ZShyZWdtYXAsIENTSV9DSF9JTlRfRU5f
-UkVHLAorCQkgICAgIENTSV9DSF9JTlRfRU5fVlNfSU5UX0VOIHwKIAkJICAgICBDU0lfQ0hfSU5U
-X0VOX0hCX09GX0lOVF9FTiB8CiAJCSAgICAgQ1NJX0NIX0lOVF9FTl9GSUZPMl9PRl9JTlRfRU4g
-fAogCQkgICAgIENTSV9DSF9JTlRfRU5fRklGTzFfT0ZfSU5UX0VOIHwKQEAgLTY4Niw2ICs2ODcs
-OSBAQCBzdGF0aWMgaXJxcmV0dXJuX3Qgc3VuNmlfY3NpX2lzcihpbnQgaXJxLCB2b2lkICpwcml2
-YXRlKQogCWlmIChzdGF0dXMgJiBDU0lfQ0hfSU5UX1NUQV9GRF9QRCkKIAkJc3VuNmlfY3NpX2Nh
-cHR1cmVfZnJhbWVfZG9uZShjc2lfZGV2KTsKIAorCWlmIChzdGF0dXMgJiBDU0lfQ0hfSU5UX1NU
-QV9WU19QRCkKKwkJc3VuNmlfY3NpX2NhcHR1cmVfc3luYyhjc2lfZGV2KTsKKwogCXJlZ21hcF93
-cml0ZShyZWdtYXAsIENTSV9DSF9JTlRfU1RBX1JFRywgc3RhdHVzKTsKIAogCXJldHVybiBJUlFf
-SEFORExFRDsKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmkt
-Y3NpL3N1bjZpX2NzaS5oIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1jc2kv
-c3VuNmlfY3NpLmgKaW5kZXggYTUzYzk4NTA3ZjM3Li43NDFjYWNhYTQzZTEgMTAwNjQ0Ci0tLSBh
-L2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5oCisrKyBi
-L2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5oCkBAIC0y
-Niw5ICsyNiw2IEBAIGVudW0gc3VuNmlfY3NpX3BvcnQgewogc3RydWN0IHN1bjZpX2NzaV9idWZm
-ZXIgewogCXN0cnVjdCB2YjJfdjRsMl9idWZmZXIJCXY0bDJfYnVmZmVyOwogCXN0cnVjdCBsaXN0
-X2hlYWQJCWxpc3Q7Ci0KLQlkbWFfYWRkcl90CQkJZG1hX2FkZHI7Ci0JYm9vbAkJCQlxdWV1ZWRf
-dG9fY3NpOwogfTsKIAogLyoqCmRpZmYgLS1naXQgYS9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3N1
-bnhpL3N1bjZpLWNzaS9zdW42aV9jc2lfY2FwdHVyZS5jIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9y
-bS9zdW54aS9zdW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuYwppbmRleCAxZWJjMmQ4MjU4Mzgu
-LmJjYmI0ZmZiYjUxNyAxMDA2NDQKLS0tIGEvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9z
-dW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuYworKysgYi9kcml2ZXJzL21lZGlhL3BsYXRmb3Jt
-L3N1bnhpL3N1bjZpLWNzaS9zdW42aV9jc2lfY2FwdHVyZS5jCkBAIC05MCw4ICs5MCwxMyBAQCBz
-dGF0aWMgdm9pZAogc3VuNmlfY3NpX2NhcHR1cmVfYnVmZmVyX2NvbmZpZ3VyZShzdHJ1Y3Qgc3Vu
-NmlfY3NpX2RldmljZSAqY3NpX2RldiwKIAkJCQkgICBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciAq
-Y3NpX2J1ZmZlcikKIHsKLQljc2lfYnVmZmVyLT5xdWV1ZWRfdG9fY3NpID0gdHJ1ZTsKLQlzdW42
-aV9jc2lfdXBkYXRlX2J1Zl9hZGRyKGNzaV9kZXYsIGNzaV9idWZmZXItPmRtYV9hZGRyKTsKKwlz
-dHJ1Y3QgdmIyX2J1ZmZlciAqdmIyX2J1ZmZlcjsKKwlkbWFfYWRkcl90IGFkZHJlc3M7CisKKwl2
-YjJfYnVmZmVyID0gJmNzaV9idWZmZXItPnY0bDJfYnVmZmVyLnZiMl9idWY7CisJYWRkcmVzcyA9
-IHZiMl9kbWFfY29udGlnX3BsYW5lX2RtYV9hZGRyKHZiMl9idWZmZXIsIDApOworCisJc3VuNmlf
-Y3NpX3VwZGF0ZV9idWZfYWRkcihjc2lfZGV2LCBhZGRyZXNzKTsKIH0KIAogc3RhdGljIHZvaWQg
-c3VuNmlfY3NpX2NhcHR1cmVfY29uZmlndXJlKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lf
-ZGV2KQpAQCAtMTA4LDYgKzExMywxMTkgQEAgc3RhdGljIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVf
-Y29uZmlndXJlKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQogCXN1bjZpX2NzaV91
-cGRhdGVfY29uZmlnKGNzaV9kZXYsICZjb25maWcpOwogfQogCisvKiBTdGF0ZSAqLworCitzdGF0
-aWMgdm9pZCBzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZV9jbGVhbnVwKHN0cnVjdCBzdW42aV9jc2lf
-ZGV2aWNlICpjc2lfZGV2LAorCQkJCQkgICAgYm9vbCBlcnJvcikKK3sKKwlzdHJ1Y3Qgc3VuNmlf
-Y3NpX2NhcHR1cmVfc3RhdGUgKnN0YXRlID0gJmNzaV9kZXYtPmNhcHR1cmUuc3RhdGU7CisJc3Ry
-dWN0IHN1bjZpX2NzaV9idWZmZXIgKipjc2lfYnVmZmVyX3N0YXRlc1tdID0geworCQkmc3RhdGUt
-PnBlbmRpbmcsICZzdGF0ZS0+Y3VycmVudCwgJnN0YXRlLT5jb21wbGV0ZSwKKwl9OworCXN0cnVj
-dCBzdW42aV9jc2lfYnVmZmVyICpjc2lfYnVmZmVyOworCXN0cnVjdCB2YjJfYnVmZmVyICp2YjJf
-YnVmZmVyOworCXVuc2lnbmVkIGxvbmcgZmxhZ3M7CisJdW5zaWduZWQgaW50IGk7CisKKwlzcGlu
-X2xvY2tfaXJxc2F2ZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsKKworCWZvciAoaSA9IDA7IGkgPCBB
-UlJBWV9TSVpFKGNzaV9idWZmZXJfc3RhdGVzKTsgaSsrKSB7CisJCWNzaV9idWZmZXIgPSAqY3Np
-X2J1ZmZlcl9zdGF0ZXNbaV07CisJCWlmICghY3NpX2J1ZmZlcikKKwkJCWNvbnRpbnVlOworCisJ
-CXZiMl9idWZmZXIgPSAmY3NpX2J1ZmZlci0+djRsMl9idWZmZXIudmIyX2J1ZjsKKwkJdmIyX2J1
-ZmZlcl9kb25lKHZiMl9idWZmZXIsIGVycm9yID8gVkIyX0JVRl9TVEFURV9FUlJPUiA6CisJCQkJ
-VkIyX0JVRl9TVEFURV9RVUVVRUQpOworCisJCSpjc2lfYnVmZmVyX3N0YXRlc1tpXSA9IE5VTEw7
-CisJfQorCisJbGlzdF9mb3JfZWFjaF9lbnRyeShjc2lfYnVmZmVyLCAmc3RhdGUtPnF1ZXVlLCBs
-aXN0KSB7CisJCXZiMl9idWZmZXIgPSAmY3NpX2J1ZmZlci0+djRsMl9idWZmZXIudmIyX2J1ZjsK
-KwkJdmIyX2J1ZmZlcl9kb25lKHZiMl9idWZmZXIsIGVycm9yID8gVkIyX0JVRl9TVEFURV9FUlJP
-UiA6CisJCQkJVkIyX0JVRl9TVEFURV9RVUVVRUQpOworCX0KKworCUlOSVRfTElTVF9IRUFEKCZz
-dGF0ZS0+cXVldWUpOworCisJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmc3RhdGUtPmxvY2ssIGZs
-YWdzKTsKK30KKworc3RhdGljIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfc3RhdGVfdXBkYXRlKHN0
-cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQoreworCXN0cnVjdCBzdW42aV9jc2lfY2Fw
-dHVyZV9zdGF0ZSAqc3RhdGUgPSAmY3NpX2Rldi0+Y2FwdHVyZS5zdGF0ZTsKKwlzdHJ1Y3Qgc3Vu
-NmlfY3NpX2J1ZmZlciAqY3NpX2J1ZmZlcjsKKwl1bnNpZ25lZCBsb25nIGZsYWdzOworCisJc3Bp
-bl9sb2NrX2lycXNhdmUoJnN0YXRlLT5sb2NrLCBmbGFncyk7CisKKwlpZiAobGlzdF9lbXB0eSgm
-c3RhdGUtPnF1ZXVlKSkKKwkJZ290byBjb21wbGV0ZTsKKworCWlmIChzdGF0ZS0+cGVuZGluZykK
-KwkJZ290byBjb21wbGV0ZTsKKworCWNzaV9idWZmZXIgPSBsaXN0X2ZpcnN0X2VudHJ5KCZzdGF0
-ZS0+cXVldWUsIHN0cnVjdCBzdW42aV9jc2lfYnVmZmVyLAorCQkJCSAgICAgIGxpc3QpOworCisJ
-c3VuNmlfY3NpX2NhcHR1cmVfYnVmZmVyX2NvbmZpZ3VyZShjc2lfZGV2LCBjc2lfYnVmZmVyKTsK
-KworCWxpc3RfZGVsKCZjc2lfYnVmZmVyLT5saXN0KTsKKworCXN0YXRlLT5wZW5kaW5nID0gY3Np
-X2J1ZmZlcjsKKworY29tcGxldGU6CisJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmc3RhdGUtPmxv
-Y2ssIGZsYWdzKTsKK30KKworc3RhdGljIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfc3RhdGVfY29t
-cGxldGUoc3RydWN0IHN1bjZpX2NzaV9kZXZpY2UgKmNzaV9kZXYpCit7CisJc3RydWN0IHN1bjZp
-X2NzaV9jYXB0dXJlX3N0YXRlICpzdGF0ZSA9ICZjc2lfZGV2LT5jYXB0dXJlLnN0YXRlOworCXVu
-c2lnbmVkIGxvbmcgZmxhZ3M7CisKKwlzcGluX2xvY2tfaXJxc2F2ZSgmc3RhdGUtPmxvY2ssIGZs
-YWdzKTsKKworCWlmICghc3RhdGUtPnBlbmRpbmcpCisJCWdvdG8gY29tcGxldGU7CisKKwlzdGF0
-ZS0+Y29tcGxldGUgPSBzdGF0ZS0+Y3VycmVudDsKKwlzdGF0ZS0+Y3VycmVudCA9IHN0YXRlLT5w
-ZW5kaW5nOworCXN0YXRlLT5wZW5kaW5nID0gTlVMTDsKKworCWlmIChzdGF0ZS0+Y29tcGxldGUp
-IHsKKwkJc3RydWN0IHN1bjZpX2NzaV9idWZmZXIgKmNzaV9idWZmZXIgPSBzdGF0ZS0+Y29tcGxl
-dGU7CisJCXN0cnVjdCB2YjJfYnVmZmVyICp2YjJfYnVmZmVyID0KKwkJCSZjc2lfYnVmZmVyLT52
-NGwyX2J1ZmZlci52YjJfYnVmOworCisJCXZiMl9idWZmZXItPnRpbWVzdGFtcCA9IGt0aW1lX2dl
-dF9ucygpOworCQljc2lfYnVmZmVyLT52NGwyX2J1ZmZlci5zZXF1ZW5jZSA9IHN0YXRlLT5zZXF1
-ZW5jZTsKKworCQl2YjJfYnVmZmVyX2RvbmUodmIyX2J1ZmZlciwgVkIyX0JVRl9TVEFURV9ET05F
-KTsKKworCQlzdGF0ZS0+Y29tcGxldGUgPSBOVUxMOworCX0KKworY29tcGxldGU6CisJc3Bpbl91
-bmxvY2tfaXJxcmVzdG9yZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsKK30KKwordm9pZCBzdW42aV9j
-c2lfY2FwdHVyZV9mcmFtZV9kb25lKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQor
-eworCXN0cnVjdCBzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZSAqc3RhdGUgPSAmY3NpX2Rldi0+Y2Fw
-dHVyZS5zdGF0ZTsKKwl1bnNpZ25lZCBsb25nIGZsYWdzOworCisJc3Bpbl9sb2NrX2lycXNhdmUo
-JnN0YXRlLT5sb2NrLCBmbGFncyk7CisJc3RhdGUtPnNlcXVlbmNlKys7CisJc3Bpbl91bmxvY2tf
-aXJxcmVzdG9yZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsKK30KKwordm9pZCBzdW42aV9jc2lfY2Fw
-dHVyZV9zeW5jKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQoreworCXN1bjZpX2Nz
-aV9jYXB0dXJlX3N0YXRlX2NvbXBsZXRlKGNzaV9kZXYpOworCXN1bjZpX2NzaV9jYXB0dXJlX3N0
-YXRlX3VwZGF0ZShjc2lfZGV2KTsKK30KKwogLyogUXVldWUgKi8KIAogc3RhdGljIGludCBzdW42
-aV9jc2lfY2FwdHVyZV9xdWV1ZV9zZXR1cChzdHJ1Y3QgdmIyX3F1ZXVlICpxdWV1ZSwKQEAgLTEx
-Nyw4ICsyMzUsNyBAQCBzdGF0aWMgaW50IHN1bjZpX2NzaV9jYXB0dXJlX3F1ZXVlX3NldHVwKHN0
-cnVjdCB2YjJfcXVldWUgKnF1ZXVlLAogCQkJCQkgc3RydWN0IGRldmljZSAqYWxsb2NfZGV2c1td
-KQogewogCXN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2ID0gdmIyX2dldF9kcnZfcHJp
-dihxdWV1ZSk7Ci0Jc3RydWN0IHN1bjZpX2NzaV9jYXB0dXJlICpjYXB0dXJlID0gJmNzaV9kZXYt
-PmNhcHR1cmU7Ci0JdW5zaWduZWQgaW50IHNpemUgPSBjYXB0dXJlLT5mb3JtYXQuZm10LnBpeC5z
-aXplaW1hZ2U7CisJdW5zaWduZWQgaW50IHNpemUgPSBjc2lfZGV2LT5jYXB0dXJlLmZvcm1hdC5m
-bXQucGl4LnNpemVpbWFnZTsKIAogCWlmICgqcGxhbmVzX2NvdW50KQogCQlyZXR1cm4gc2l6ZXNb
-MF0gPCBzaXplID8gLUVJTlZBTCA6IDA7CkBAIC0xMzUsOCArMjUyLDYgQEAgc3RhdGljIGludCBz
-dW42aV9jc2lfY2FwdHVyZV9idWZmZXJfcHJlcGFyZShzdHJ1Y3QgdmIyX2J1ZmZlciAqYnVmZmVy
-KQogCXN0cnVjdCBzdW42aV9jc2lfY2FwdHVyZSAqY2FwdHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJl
-OwogCXN0cnVjdCB2NGwyX2RldmljZSAqdjRsMl9kZXYgPSAmY3NpX2Rldi0+djRsMi52NGwyX2Rl
-djsKIAlzdHJ1Y3QgdmIyX3Y0bDJfYnVmZmVyICp2NGwyX2J1ZmZlciA9IHRvX3ZiMl92NGwyX2J1
-ZmZlcihidWZmZXIpOwotCXN0cnVjdCBzdW42aV9jc2lfYnVmZmVyICpjc2lfYnVmZmVyID0KLQkJ
-Y29udGFpbmVyX29mKHY0bDJfYnVmZmVyLCBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciwgdjRsMl9i
-dWZmZXIpOwogCXVuc2lnbmVkIGxvbmcgc2l6ZSA9IGNhcHR1cmUtPmZvcm1hdC5mbXQucGl4LnNp
-emVpbWFnZTsKIAogCWlmICh2YjJfcGxhbmVfc2l6ZShidWZmZXIsIDApIDwgc2l6ZSkgewpAQCAt
-MTQ3LDcgKzI2Miw2IEBAIHN0YXRpYyBpbnQgc3VuNmlfY3NpX2NhcHR1cmVfYnVmZmVyX3ByZXBh
-cmUoc3RydWN0IHZiMl9idWZmZXIgKmJ1ZmZlcikKIAogCXZiMl9zZXRfcGxhbmVfcGF5bG9hZChi
-dWZmZXIsIDAsIHNpemUpOwogCi0JY3NpX2J1ZmZlci0+ZG1hX2FkZHIgPSB2YjJfZG1hX2NvbnRp
-Z19wbGFuZV9kbWFfYWRkcihidWZmZXIsIDApOwogCXY0bDJfYnVmZmVyLT5maWVsZCA9IGNhcHR1
-cmUtPmZvcm1hdC5mbXQucGl4LmZpZWxkOwogCiAJcmV0dXJuIDA7CkBAIC0xNTYsMTYgKzI3MCwx
-NSBAQCBzdGF0aWMgaW50IHN1bjZpX2NzaV9jYXB0dXJlX2J1ZmZlcl9wcmVwYXJlKHN0cnVjdCB2
-YjJfYnVmZmVyICpidWZmZXIpCiBzdGF0aWMgdm9pZCBzdW42aV9jc2lfY2FwdHVyZV9idWZmZXJf
-cXVldWUoc3RydWN0IHZiMl9idWZmZXIgKmJ1ZmZlcikKIHsKIAlzdHJ1Y3Qgc3VuNmlfY3NpX2Rl
-dmljZSAqY3NpX2RldiA9IHZiMl9nZXRfZHJ2X3ByaXYoYnVmZmVyLT52YjJfcXVldWUpOwotCXN0
-cnVjdCBzdW42aV9jc2lfY2FwdHVyZSAqY2FwdHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJlOworCXN0
-cnVjdCBzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZSAqc3RhdGUgPSAmY3NpX2Rldi0+Y2FwdHVyZS5z
-dGF0ZTsKIAlzdHJ1Y3QgdmIyX3Y0bDJfYnVmZmVyICp2NGwyX2J1ZmZlciA9IHRvX3ZiMl92NGwy
-X2J1ZmZlcihidWZmZXIpOwogCXN0cnVjdCBzdW42aV9jc2lfYnVmZmVyICpjc2lfYnVmZmVyID0K
-IAkJY29udGFpbmVyX29mKHY0bDJfYnVmZmVyLCBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciwgdjRs
-Ml9idWZmZXIpOwogCXVuc2lnbmVkIGxvbmcgZmxhZ3M7CiAKLQlzcGluX2xvY2tfaXJxc2F2ZSgm
-Y2FwdHVyZS0+ZG1hX3F1ZXVlX2xvY2ssIGZsYWdzKTsKLQljc2lfYnVmZmVyLT5xdWV1ZWRfdG9f
-Y3NpID0gZmFsc2U7Ci0JbGlzdF9hZGRfdGFpbCgmY3NpX2J1ZmZlci0+bGlzdCwgJmNhcHR1cmUt
-PmRtYV9xdWV1ZSk7Ci0Jc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmY2FwdHVyZS0+ZG1hX3F1ZXVl
-X2xvY2ssIGZsYWdzKTsKKwlzcGluX2xvY2tfaXJxc2F2ZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsK
-KwlsaXN0X2FkZF90YWlsKCZjc2lfYnVmZmVyLT5saXN0LCAmc3RhdGUtPnF1ZXVlKTsKKwlzcGlu
-X3VubG9ja19pcnFyZXN0b3JlKCZzdGF0ZS0+bG9jaywgZmxhZ3MpOwogfQogCiBzdGF0aWMgaW50
-IHN1bjZpX2NzaV9jYXB0dXJlX3N0YXJ0X3N0cmVhbWluZyhzdHJ1Y3QgdmIyX3F1ZXVlICpxdWV1
-ZSwKQEAgLTE3MywxOCArMjg2LDE2IEBAIHN0YXRpYyBpbnQgc3VuNmlfY3NpX2NhcHR1cmVfc3Rh
-cnRfc3RyZWFtaW5nKHN0cnVjdCB2YjJfcXVldWUgKnF1ZXVlLAogewogCXN0cnVjdCBzdW42aV9j
-c2lfZGV2aWNlICpjc2lfZGV2ID0gdmIyX2dldF9kcnZfcHJpdihxdWV1ZSk7CiAJc3RydWN0IHN1
-bjZpX2NzaV9jYXB0dXJlICpjYXB0dXJlID0gJmNzaV9kZXYtPmNhcHR1cmU7CisJc3RydWN0IHN1
-bjZpX2NzaV9jYXB0dXJlX3N0YXRlICpzdGF0ZSA9ICZjYXB0dXJlLT5zdGF0ZTsKIAlzdHJ1Y3Qg
-dmlkZW9fZGV2aWNlICp2aWRlb19kZXYgPSAmY2FwdHVyZS0+dmlkZW9fZGV2OwotCXN0cnVjdCBz
-dW42aV9jc2lfYnVmZmVyICpidWY7Ci0Jc3RydWN0IHN1bjZpX2NzaV9idWZmZXIgKm5leHRfYnVm
-OwogCXN0cnVjdCB2NGwyX3N1YmRldiAqc3ViZGV2OwotCXVuc2lnbmVkIGxvbmcgZmxhZ3M7CiAJ
-aW50IHJldDsKIAotCWNhcHR1cmUtPnNlcXVlbmNlID0gMDsKKwlzdGF0ZS0+c2VxdWVuY2UgPSAw
-OwogCiAJcmV0ID0gbWVkaWFfcGlwZWxpbmVfc3RhcnQoJnZpZGVvX2Rldi0+ZW50aXR5LCAmdmlk
-ZW9fZGV2LT5waXBlKTsKIAlpZiAocmV0IDwgMCkKLQkJZ290byBlcnJvcl9kbWFfcXVldWVfZmx1
-c2g7CisJCWdvdG8gZXJyb3Jfc3RhdGU7CiAKIAlpZiAoY2FwdHVyZS0+bWJ1c19jb2RlID09IDAp
-IHsKIAkJcmV0ID0gLUVJTlZBTDsKQEAgLTE5NywzNyArMzA4LDE3IEBAIHN0YXRpYyBpbnQgc3Vu
-NmlfY3NpX2NhcHR1cmVfc3RhcnRfc3RyZWFtaW5nKHN0cnVjdCB2YjJfcXVldWUgKnF1ZXVlLAog
-CQlnb3RvIGVycm9yX21lZGlhX3BpcGVsaW5lOwogCX0KIAorCS8qIENvbmZpZ3VyZSAqLworCiAJ
-c3VuNmlfY3NpX2NhcHR1cmVfY29uZmlndXJlKGNzaV9kZXYpOwogCi0Jc3Bpbl9sb2NrX2lycXNh
-dmUoJmNhcHR1cmUtPmRtYV9xdWV1ZV9sb2NrLCBmbGFncyk7CisJLyogU3RhdGUgVXBkYXRlICov
-CiAKLQlidWYgPSBsaXN0X2ZpcnN0X2VudHJ5KCZjYXB0dXJlLT5kbWFfcXVldWUsCi0JCQkgICAg
-ICAgc3RydWN0IHN1bjZpX2NzaV9idWZmZXIsIGxpc3QpOwotCXN1bjZpX2NzaV9jYXB0dXJlX2J1
-ZmZlcl9jb25maWd1cmUoY3NpX2RldiwgYnVmKTsKKwlzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZV91
-cGRhdGUoY3NpX2Rldik7CiAKLQlzdW42aV9jc2lfc2V0X3N0cmVhbShjc2lfZGV2LCB0cnVlKTsK
-KwkvKiBFbmFibGUgKi8KIAotCS8qCi0JICogQ1NJIHdpbGwgbG9va3VwIHRoZSBuZXh0IGRtYSBi
-dWZmZXIgZm9yIG5leHQgZnJhbWUgYmVmb3JlIHRoZQotCSAqIHRoZSBjdXJyZW50IGZyYW1lIGRv
-bmUgSVJRIHRyaWdnZXJlZC4gVGhpcyBpcyBub3QgZG9jdW1lbnRlZAotCSAqIGJ1dCByZXBvcnRl
-ZCBieSBPbmTFmWVqIEppcm1hbi4KLQkgKiBUaGUgQlNQIGNvZGUgaGFzIHdvcmthcm91bmQgZm9y
-IHRoaXMgdG9vLiBJdCBza2lwIHRvIG1hcmsgdGhlCi0JICogZmlyc3QgYnVmZmVyIGFzIGZyYW1l
-IGRvbmUgZm9yIFZCMiBhbmQgcGFzcyB0aGUgc2Vjb25kIGJ1ZmZlcgotCSAqIHRvIENTSSBpbiB0
-aGUgZmlyc3QgZnJhbWUgZG9uZSBJU1IgY2FsbC4gVGhlbiBpbiBzZWNvbmQgZnJhbWUKLQkgKiBk
-b25lIElTUiBjYWxsLCBpdCBtYXJrIHRoZSBmaXJzdCBidWZmZXIgYXMgZnJhbWUgZG9uZSBmb3Ig
-VkIyCi0JICogYW5kIHBhc3MgdGhlIHRoaXJkIGJ1ZmZlciB0byBDU0kuIEFuZCBzbyBvbi4gVGhl
-IGJhZCB0aGluZyBpcwotCSAqIHRoYXQgdGhlIGZpcnN0IGJ1ZmZlciB3aWxsIGJlIHdyaXR0ZW4g
-dHdpY2UgYW5kIHRoZSBmaXJzdCBmcmFtZQotCSAqIGlzIGRyb3BwZWQgZXZlbiB0aGUgcXVldWVk
-IGJ1ZmZlciBpcyBzdWZmaWNpZW50LgotCSAqIFNvLCBJIG1ha2Ugc29tZSBpbXByb3ZlbWVudCBo
-ZXJlLiBQYXNzIHRoZSBuZXh0IGJ1ZmZlciB0byBDU0kKLQkgKiBqdXN0IGZvbGxvdyBzdGFydGlu
-ZyB0aGUgQ1NJLiBJbiB0aGlzIGNhc2UsIHRoZSBmaXJzdCBmcmFtZQotCSAqIHdpbGwgYmUgc3Rv
-cmVkIGluIGZpcnN0IGJ1ZmZlciwgc2Vjb25kIGZyYW1lIGluIHNlY29uZCBidWZmZXIuCi0JICog
-VGhpcyBtZXRob2QgaXMgdXNlZCB0byBhdm9pZCBkcm9wcGluZyB0aGUgZmlyc3QgZnJhbWUsIGl0
-Ci0JICogd291bGQgYWxzbyBkcm9wIGZyYW1lIHdoZW4gbGFja2luZyBvZiBxdWV1ZWQgYnVmZmVy
-LgotCSAqLwotCW5leHRfYnVmID0gbGlzdF9uZXh0X2VudHJ5KGJ1ZiwgbGlzdCk7Ci0Jc3VuNmlf
-Y3NpX2NhcHR1cmVfYnVmZmVyX2NvbmZpZ3VyZShjc2lfZGV2LCBuZXh0X2J1Zik7Ci0KLQlzcGlu
-X3VubG9ja19pcnFyZXN0b3JlKCZjYXB0dXJlLT5kbWFfcXVldWVfbG9jaywgZmxhZ3MpOworCXN1
-bjZpX2NzaV9zZXRfc3RyZWFtKGNzaV9kZXYsIHRydWUpOwogCiAJcmV0ID0gdjRsMl9zdWJkZXZf
-Y2FsbChzdWJkZXYsIHZpZGVvLCBzX3N0cmVhbSwgMSk7CiAJaWYgKHJldCAmJiByZXQgIT0gLUVO
-T0lPQ1RMQ01EKQpAQCAtMjQxLDEzICszMzIsOCBAQCBzdGF0aWMgaW50IHN1bjZpX2NzaV9jYXB0
-dXJlX3N0YXJ0X3N0cmVhbWluZyhzdHJ1Y3QgdmIyX3F1ZXVlICpxdWV1ZSwKIGVycm9yX21lZGlh
-X3BpcGVsaW5lOgogCW1lZGlhX3BpcGVsaW5lX3N0b3AoJnZpZGVvX2Rldi0+ZW50aXR5KTsKIAot
-ZXJyb3JfZG1hX3F1ZXVlX2ZsdXNoOgotCXNwaW5fbG9ja19pcnFzYXZlKCZjYXB0dXJlLT5kbWFf
-cXVldWVfbG9jaywgZmxhZ3MpOwotCWxpc3RfZm9yX2VhY2hfZW50cnkoYnVmLCAmY2FwdHVyZS0+
-ZG1hX3F1ZXVlLCBsaXN0KQotCQl2YjJfYnVmZmVyX2RvbmUoJmJ1Zi0+djRsMl9idWZmZXIudmIy
-X2J1ZiwKLQkJCQlWQjJfQlVGX1NUQVRFX1FVRVVFRCk7Ci0JSU5JVF9MSVNUX0hFQUQoJmNhcHR1
-cmUtPmRtYV9xdWV1ZSk7Ci0Jc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmY2FwdHVyZS0+ZG1hX3F1
-ZXVlX2xvY2ssIGZsYWdzKTsKK2Vycm9yX3N0YXRlOgorCXN1bjZpX2NzaV9jYXB0dXJlX3N0YXRl
-X2NsZWFudXAoY3NpX2RldiwgZmFsc2UpOwogCiAJcmV0dXJuIHJldDsKIH0KQEAgLTI1Nyw4ICsz
-NDMsNiBAQCBzdGF0aWMgdm9pZCBzdW42aV9jc2lfY2FwdHVyZV9zdG9wX3N0cmVhbWluZyhzdHJ1
-Y3QgdmIyX3F1ZXVlICpxdWV1ZSkKIAlzdHJ1Y3Qgc3VuNmlfY3NpX2RldmljZSAqY3NpX2RldiA9
-IHZiMl9nZXRfZHJ2X3ByaXYocXVldWUpOwogCXN0cnVjdCBzdW42aV9jc2lfY2FwdHVyZSAqY2Fw
-dHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJlOwogCXN0cnVjdCB2NGwyX3N1YmRldiAqc3ViZGV2Owot
-CXVuc2lnbmVkIGxvbmcgZmxhZ3M7Ci0Jc3RydWN0IHN1bjZpX2NzaV9idWZmZXIgKmJ1ZjsKIAog
-CXN1YmRldiA9IHN1bjZpX2NzaV9jYXB0dXJlX3JlbW90ZV9zdWJkZXYoY2FwdHVyZSwgTlVMTCk7
-CiAJaWYgKHN1YmRldikKQEAgLTI2OCw1OSArMzUyLDcgQEAgc3RhdGljIHZvaWQgc3VuNmlfY3Np
-X2NhcHR1cmVfc3RvcF9zdHJlYW1pbmcoc3RydWN0IHZiMl9xdWV1ZSAqcXVldWUpCiAKIAltZWRp
-YV9waXBlbGluZV9zdG9wKCZjYXB0dXJlLT52aWRlb19kZXYuZW50aXR5KTsKIAotCS8qIFJlbGVh
-c2UgYWxsIGFjdGl2ZSBidWZmZXJzICovCi0Jc3Bpbl9sb2NrX2lycXNhdmUoJmNhcHR1cmUtPmRt
-YV9xdWV1ZV9sb2NrLCBmbGFncyk7Ci0JbGlzdF9mb3JfZWFjaF9lbnRyeShidWYsICZjYXB0dXJl
-LT5kbWFfcXVldWUsIGxpc3QpCi0JCXZiMl9idWZmZXJfZG9uZSgmYnVmLT52NGwyX2J1ZmZlci52
-YjJfYnVmLCBWQjJfQlVGX1NUQVRFX0VSUk9SKTsKLQlJTklUX0xJU1RfSEVBRCgmY2FwdHVyZS0+
-ZG1hX3F1ZXVlKTsKLQlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZjYXB0dXJlLT5kbWFfcXVldWVf
-bG9jaywgZmxhZ3MpOwotfQotCi12b2lkIHN1bjZpX2NzaV9jYXB0dXJlX2ZyYW1lX2RvbmUoc3Ry
-dWN0IHN1bjZpX2NzaV9kZXZpY2UgKmNzaV9kZXYpCi17Ci0Jc3RydWN0IHN1bjZpX2NzaV9jYXB0
-dXJlICpjYXB0dXJlID0gJmNzaV9kZXYtPmNhcHR1cmU7Ci0Jc3RydWN0IHN1bjZpX2NzaV9idWZm
-ZXIgKmJ1ZjsKLQlzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciAqbmV4dF9idWY7Ci0Jc3RydWN0IHZi
-Ml92NGwyX2J1ZmZlciAqdjRsMl9idWZmZXI7Ci0KLQlzcGluX2xvY2soJmNhcHR1cmUtPmRtYV9x
-dWV1ZV9sb2NrKTsKLQotCWJ1ZiA9IGxpc3RfZmlyc3RfZW50cnkoJmNhcHR1cmUtPmRtYV9xdWV1
-ZSwKLQkJCSAgICAgICBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciwgbGlzdCk7Ci0JaWYgKGxpc3Rf
-aXNfbGFzdCgmYnVmLT5saXN0LCAmY2FwdHVyZS0+ZG1hX3F1ZXVlKSkgewotCQlkZXZfZGJnKGNz
-aV9kZXYtPmRldiwgIkZyYW1lIGRyb3BwZWQhXG4iKTsKLQkJZ290byBjb21wbGV0ZTsKLQl9Ci0K
-LQluZXh0X2J1ZiA9IGxpc3RfbmV4dF9lbnRyeShidWYsIGxpc3QpOwotCS8qIElmIGEgbmV3IGJ1
-ZmZlciAoI25leHRfYnVmKSBoYWQgbm90IGJlZW4gcXVldWVkIHRvIENTSSwgdGhlIG9sZAotCSAq
-IGJ1ZmZlciAoI2J1ZikgaXMgc3RpbGwgaG9sZGluZyBieSBDU0kgZm9yIHN0b3JpbmcgdGhlIG5l
-eHQKLQkgKiBmcmFtZS4gU28sIHdlIHF1ZXVlIGEgbmV3IGJ1ZmZlciAoI25leHRfYnVmKSB0byBD
-U0kgdGhlbiB3YWl0Ci0JICogZm9yIG5leHQgSVNSIGNhbGwuCi0JICovCi0JaWYgKCFuZXh0X2J1
-Zi0+cXVldWVkX3RvX2NzaSkgewotCQlzdW42aV9jc2lfY2FwdHVyZV9idWZmZXJfY29uZmlndXJl
-KGNzaV9kZXYsIG5leHRfYnVmKTsKLQkJZGV2X2RiZyhjc2lfZGV2LT5kZXYsICJGcmFtZSBkcm9w
-cGVkIVxuIik7Ci0JCWdvdG8gY29tcGxldGU7Ci0JfQotCi0JbGlzdF9kZWwoJmJ1Zi0+bGlzdCk7
-Ci0JdjRsMl9idWZmZXIgPSAmYnVmLT52NGwyX2J1ZmZlcjsKLQl2NGwyX2J1ZmZlci0+dmIyX2J1
-Zi50aW1lc3RhbXAgPSBrdGltZV9nZXRfbnMoKTsKLQl2NGwyX2J1ZmZlci0+c2VxdWVuY2UgPSBj
-YXB0dXJlLT5zZXF1ZW5jZTsKLQl2YjJfYnVmZmVyX2RvbmUoJnY0bDJfYnVmZmVyLT52YjJfYnVm
-LCBWQjJfQlVGX1NUQVRFX0RPTkUpOwotCi0JLyogUHJlcGFyZSBidWZmZXIgZm9yIG5leHQgZnJh
-bWUgYnV0IG9uZS4gICovCi0JaWYgKCFsaXN0X2lzX2xhc3QoJm5leHRfYnVmLT5saXN0LCAmY2Fw
-dHVyZS0+ZG1hX3F1ZXVlKSkgewotCQluZXh0X2J1ZiA9IGxpc3RfbmV4dF9lbnRyeShuZXh0X2J1
-ZiwgbGlzdCk7Ci0JCXN1bjZpX2NzaV9jYXB0dXJlX2J1ZmZlcl9jb25maWd1cmUoY3NpX2Rldiwg
-bmV4dF9idWYpOwotCX0gZWxzZSB7Ci0JCWRldl9kYmcoY3NpX2Rldi0+ZGV2LCAiTmV4dCBmcmFt
-ZSB3aWxsIGJlIGRyb3BwZWQhXG4iKTsKLQl9Ci0KLWNvbXBsZXRlOgotCWNhcHR1cmUtPnNlcXVl
-bmNlKys7Ci0Jc3Bpbl91bmxvY2soJmNhcHR1cmUtPmRtYV9xdWV1ZV9sb2NrKTsKKwlzdW42aV9j
-c2lfY2FwdHVyZV9zdGF0ZV9jbGVhbnVwKGNzaV9kZXYsIHRydWUpOwogfQogCiBzdGF0aWMgY29u
-c3Qgc3RydWN0IHZiMl9vcHMgc3VuNmlfY3NpX2NhcHR1cmVfcXVldWVfb3BzID0gewpAQCAtNjM1
-LDYgKzY2Nyw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgbWVkaWFfZW50aXR5X29wZXJhdGlvbnMg
-c3VuNmlfY3NpX2NhcHR1cmVfbWVkaWFfb3BzID0gewogaW50IHN1bjZpX2NzaV9jYXB0dXJlX3Nl
-dHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQogewogCXN0cnVjdCBzdW42aV9j
-c2lfY2FwdHVyZSAqY2FwdHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJlOworCXN0cnVjdCBzdW42aV9j
-c2lfY2FwdHVyZV9zdGF0ZSAqc3RhdGUgPSAmY2FwdHVyZS0+c3RhdGU7CiAJc3RydWN0IHY0bDJf
-ZGV2aWNlICp2NGwyX2RldiA9ICZjc2lfZGV2LT52NGwyLnY0bDJfZGV2OwogCXN0cnVjdCB2NGwy
-X3N1YmRldiAqYnJpZGdlX3N1YmRldiA9ICZjc2lfZGV2LT5icmlkZ2Uuc3ViZGV2OwogCXN0cnVj
-dCB2aWRlb19kZXZpY2UgKnZpZGVvX2RldiA9ICZjYXB0dXJlLT52aWRlb19kZXY7CkBAIC02NDQs
-NiArNjc3LDExIEBAIGludCBzdW42aV9jc2lfY2FwdHVyZV9zZXR1cChzdHJ1Y3Qgc3VuNmlfY3Np
-X2RldmljZSAqY3NpX2RldikKIAlzdHJ1Y3QgdjRsMl9waXhfZm9ybWF0ICpwaXhfZm9ybWF0ID0g
-JmZvcm1hdC5mbXQucGl4OwogCWludCByZXQ7CiAKKwkvKiBTdGF0ZSAqLworCisJSU5JVF9MSVNU
-X0hFQUQoJnN0YXRlLT5xdWV1ZSk7CisJc3Bpbl9sb2NrX2luaXQoJnN0YXRlLT5sb2NrKTsKKwog
-CS8qIE1lZGlhIEVudGl0eSAqLwogCiAJdmlkZW9fZGV2LT5lbnRpdHkub3BzID0gJnN1bjZpX2Nz
-aV9jYXB0dXJlX21lZGlhX29wczsKQEAgLTY1NiwxMyArNjk0LDYgQEAgaW50IHN1bjZpX2NzaV9j
-YXB0dXJlX3NldHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQogCWlmIChyZXQg
-PCAwKQogCQlyZXR1cm4gcmV0OwogCi0JLyogRE1BIHF1ZXVlICovCi0KLQlJTklUX0xJU1RfSEVB
-RCgmY2FwdHVyZS0+ZG1hX3F1ZXVlKTsKLQlzcGluX2xvY2tfaW5pdCgmY2FwdHVyZS0+ZG1hX3F1
-ZXVlX2xvY2spOwotCi0JY2FwdHVyZS0+c2VxdWVuY2UgPSAwOwotCiAJLyogUXVldWUgKi8KIAog
-CW11dGV4X2luaXQoJmNhcHR1cmUtPmxvY2spOwpAQCAtNjcyLDE0ICs3MDMsMTIgQEAgaW50IHN1
-bjZpX2NzaV9jYXB0dXJlX3NldHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQog
-CXF1ZXVlLT5idWZfc3RydWN0X3NpemUgPSBzaXplb2Yoc3RydWN0IHN1bjZpX2NzaV9idWZmZXIp
-OwogCXF1ZXVlLT5vcHMgPSAmc3VuNmlfY3NpX2NhcHR1cmVfcXVldWVfb3BzOwogCXF1ZXVlLT5t
-ZW1fb3BzID0gJnZiMl9kbWFfY29udGlnX21lbW9wczsKKwlxdWV1ZS0+bWluX2J1ZmZlcnNfbmVl
-ZGVkID0gMjsKIAlxdWV1ZS0+dGltZXN0YW1wX2ZsYWdzID0gVjRMMl9CVUZfRkxBR19USU1FU1RB
-TVBfTU9OT1RPTklDOwogCXF1ZXVlLT5sb2NrID0gJmNhcHR1cmUtPmxvY2s7CiAJcXVldWUtPmRl
-diA9IGNzaV9kZXYtPmRldjsKIAlxdWV1ZS0+ZHJ2X3ByaXYgPSBjc2lfZGV2OwogCi0JLyogTWFr
-ZSBzdXJlIG5vbi1kcm9wcGVkIGZyYW1lLiAqLwotCXF1ZXVlLT5taW5fYnVmZmVyc19uZWVkZWQg
-PSAzOwotCiAJcmV0ID0gdmIyX3F1ZXVlX2luaXQocXVldWUpOwogCWlmIChyZXQpIHsKIAkJdjRs
-Ml9lcnIodjRsMl9kZXYsICJmYWlsZWQgdG8gaW5pdGlhbGl6ZSB2YjIgcXVldWU6ICVkXG4iLCBy
-ZXQpOwpkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1jc2kv
-c3VuNmlfY3NpX2NhcHR1cmUuaCBiL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmkt
-Y3NpL3N1bjZpX2NzaV9jYXB0dXJlLmgKaW5kZXggMzZiYmEzMWZjYjQ4Li43ZmE2NmEyYWY1ZWMg
-MTAwNjQ0Ci0tLSBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZp
-X2NzaV9jYXB0dXJlLmgKKysrIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1j
-c2kvc3VuNmlfY3NpX2NhcHR1cmUuaApAQCAtMTMsMjMgKzEzLDM0IEBACiAKIHN0cnVjdCBzdW42
-aV9jc2lfZGV2aWNlOwogCisjdW5kZWYgY3VycmVudAorc3RydWN0IHN1bjZpX2NzaV9jYXB0dXJl
-X3N0YXRlIHsKKwlzdHJ1Y3QgbGlzdF9oZWFkCQlxdWV1ZTsKKwlzcGlubG9ja190CQkJbG9jazsg
-LyogUXVldWUgYW5kIGJ1ZmZlcnMgbG9jay4gKi8KKworCXN0cnVjdCBzdW42aV9jc2lfYnVmZmVy
-CQkqcGVuZGluZzsKKwlzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlcgkJKmN1cnJlbnQ7CisJc3RydWN0
-IHN1bjZpX2NzaV9idWZmZXIJCSpjb21wbGV0ZTsKKworCXVuc2lnbmVkIGludAkJCXNlcXVlbmNl
-OworfTsKKwogc3RydWN0IHN1bjZpX2NzaV9jYXB0dXJlIHsKKwlzdHJ1Y3Qgc3VuNmlfY3NpX2Nh
-cHR1cmVfc3RhdGUJc3RhdGU7CisKIAlzdHJ1Y3QgdmlkZW9fZGV2aWNlCQl2aWRlb19kZXY7CiAJ
-c3RydWN0IHZiMl9xdWV1ZQkJcXVldWU7CiAJc3RydWN0IG11dGV4CQkJbG9jazsgLyogUXVldWUg
-bG9jay4gKi8KIAlzdHJ1Y3QgbWVkaWFfcGFkCQlwYWQ7CiAKLQlzdHJ1Y3QgbGlzdF9oZWFkCQlk
-bWFfcXVldWU7Ci0Jc3BpbmxvY2tfdAkJCWRtYV9xdWV1ZV9sb2NrOyAvKiBETUEgcXVldWUgbG9j
-ay4gKi8KLQogCXN0cnVjdCB2NGwyX2Zvcm1hdAkJZm9ybWF0OwogCXUzMgkJCQltYnVzX2NvZGU7
-Ci0JdW5zaWduZWQgaW50CQkJc2VxdWVuY2U7CiB9OwogCit2b2lkIHN1bjZpX2NzaV9jYXB0dXJl
-X3N5bmMoc3RydWN0IHN1bjZpX2NzaV9kZXZpY2UgKmNzaV9kZXYpOwordm9pZCBzdW42aV9jc2lf
-Y2FwdHVyZV9mcmFtZV9kb25lKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KTsKKwog
-aW50IHN1bjZpX2NzaV9jYXB0dXJlX3NldHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lf
-ZGV2KTsKIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfY2xlYW51cChzdHJ1Y3Qgc3VuNmlfY3NpX2Rl
-dmljZSAqY3NpX2Rldik7CiAKLXZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfZnJhbWVfZG9uZShzdHJ1
-Y3Qgc3VuNmlfY3NpX2RldmljZSAqY3NpX2Rldik7Ci0KICNlbmRpZiAvKiBfX1NVTjZJX0NBUFRV
-UkVfSF9fICovCi0tIAoyLjM0LjEKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+This cleans up the register definitions a bit, adds a prefix, remove masks.
+Registers are now fully defined, some additional fields were added when
+needed. New format definitions are added for future use.
+
+Some fields are wrongly defined (inverted) in Allwinner litterature
+(e.g. field vs frame prefixes), which is quite misleading. They are
+now corrected to reflect their actual behavior.
+
+This should only be a cosmetic commit. No functional change intended.
+
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+---
+ .../platform/sunxi/sun6i-csi/sun6i_csi.c      | 182 ++++++-----
+ .../platform/sunxi/sun6i-csi/sun6i_csi_reg.h  | 296 ++++++++++--------
+ 2 files changed, 266 insertions(+), 212 deletions(-)
+
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+index 1b5995e68be5..ee2d4df50481 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+@@ -155,7 +155,8 @@ int sun6i_csi_set_power(struct sun6i_csi_device *csi_dev, bool enable)
+ 	int ret;
+ 
+ 	if (!enable) {
+-		regmap_update_bits(regmap, CSI_EN_REG, CSI_EN_CSI_EN, 0);
++		regmap_update_bits(regmap, SUN6I_CSI_EN_REG,
++				   SUN6I_CSI_EN_CSI_EN, 0);
+ 		pm_runtime_put(dev);
+ 
+ 		return 0;
+@@ -165,7 +166,8 @@ int sun6i_csi_set_power(struct sun6i_csi_device *csi_dev, bool enable)
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	regmap_update_bits(regmap, CSI_EN_REG, CSI_EN_CSI_EN, CSI_EN_CSI_EN);
++	regmap_update_bits(regmap, SUN6I_CSI_EN_REG, SUN6I_CSI_EN_CSI_EN,
++			   SUN6I_CSI_EN_CSI_EN);
+ 
+ 	return 0;
+ }
+@@ -334,7 +336,7 @@ static void sun6i_csi_setup_bus(struct sun6i_csi_device *csi_dev)
+ 	struct sun6i_csi_config *config = &csi_dev->config;
+ 	unsigned char bus_width;
+ 	u32 flags;
+-	u32 cfg;
++	u32 cfg = 0;
+ 	bool input_interlaced = false;
+ 
+ 	if (config->field == V4L2_FIELD_INTERLACED
+@@ -344,52 +346,63 @@ static void sun6i_csi_setup_bus(struct sun6i_csi_device *csi_dev)
+ 
+ 	bus_width = endpoint->bus.parallel.bus_width;
+ 
+-	regmap_read(csi_dev->regmap, CSI_IF_CFG_REG, &cfg);
+-
+-	cfg &= ~(CSI_IF_CFG_CSI_IF_MASK | CSI_IF_CFG_MIPI_IF_MASK |
+-		 CSI_IF_CFG_IF_DATA_WIDTH_MASK |
+-		 CSI_IF_CFG_CLK_POL_MASK | CSI_IF_CFG_VREF_POL_MASK |
+-		 CSI_IF_CFG_HREF_POL_MASK | CSI_IF_CFG_FIELD_MASK |
+-		 CSI_IF_CFG_SRC_TYPE_MASK);
+-
+ 	if (input_interlaced)
+-		cfg |= CSI_IF_CFG_SRC_TYPE_INTERLACED;
++		cfg |= SUN6I_CSI_IF_CFG_SRC_TYPE_INTERLACED |
++		       SUN6I_CSI_IF_CFG_FIELD_DT_PCLK_SHIFT(1) |
++		       SUN6I_CSI_IF_CFG_FIELD_DT_FIELD_VSYNC;
+ 	else
+-		cfg |= CSI_IF_CFG_SRC_TYPE_PROGRESSED;
++		cfg |= SUN6I_CSI_IF_CFG_SRC_TYPE_PROGRESSIVE;
+ 
+ 	switch (endpoint->bus_type) {
+ 	case V4L2_MBUS_PARALLEL:
+-		cfg |= CSI_IF_CFG_MIPI_IF_CSI;
++		cfg |= SUN6I_CSI_IF_CFG_IF_CSI;
+ 
+ 		flags = endpoint->bus.parallel.flags;
+ 
+-		cfg |= (bus_width == 16) ? CSI_IF_CFG_CSI_IF_YUV422_16BIT :
+-					   CSI_IF_CFG_CSI_IF_YUV422_INTLV;
++		if (bus_width == 16)
++			cfg |= SUN6I_CSI_IF_CFG_IF_CSI_YUV_COMBINED;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_IF_CSI_YUV_RAW;
+ 
+ 		if (flags & V4L2_MBUS_FIELD_EVEN_LOW)
+-			cfg |= CSI_IF_CFG_FIELD_POSITIVE;
++			cfg |= SUN6I_CSI_IF_CFG_FIELD_NEGATIVE;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_FIELD_POSITIVE;
+ 
+ 		if (flags & V4L2_MBUS_VSYNC_ACTIVE_LOW)
+-			cfg |= CSI_IF_CFG_VREF_POL_POSITIVE;
++			cfg |= SUN6I_CSI_IF_CFG_VREF_POL_NEGATIVE;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_VREF_POL_POSITIVE;
++
+ 		if (flags & V4L2_MBUS_HSYNC_ACTIVE_LOW)
+-			cfg |= CSI_IF_CFG_HREF_POL_POSITIVE;
++			cfg |= SUN6I_CSI_IF_CFG_HREF_POL_NEGATIVE;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_HREF_POL_POSITIVE;
+ 
+ 		if (flags & V4L2_MBUS_PCLK_SAMPLE_RISING)
+-			cfg |= CSI_IF_CFG_CLK_POL_FALLING_EDGE;
++			cfg |= SUN6I_CSI_IF_CFG_CLK_POL_RISING;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_CLK_POL_FALLING;
+ 		break;
+ 	case V4L2_MBUS_BT656:
+-		cfg |= CSI_IF_CFG_MIPI_IF_CSI;
++		cfg |= SUN6I_CSI_IF_CFG_IF_CSI;
+ 
+ 		flags = endpoint->bus.parallel.flags;
+ 
+-		cfg |= (bus_width == 16) ? CSI_IF_CFG_CSI_IF_BT1120 :
+-					   CSI_IF_CFG_CSI_IF_BT656;
++		if (bus_width == 16)
++			cfg |= SUN6I_CSI_IF_CFG_IF_CSI_BT1120;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_IF_CSI_BT656;
+ 
+ 		if (flags & V4L2_MBUS_FIELD_EVEN_LOW)
+-			cfg |= CSI_IF_CFG_FIELD_POSITIVE;
++			cfg |= SUN6I_CSI_IF_CFG_FIELD_NEGATIVE;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_FIELD_POSITIVE;
+ 
+ 		if (flags & V4L2_MBUS_PCLK_SAMPLE_FALLING)
+-			cfg |= CSI_IF_CFG_CLK_POL_FALLING_EDGE;
++			cfg |= SUN6I_CSI_IF_CFG_CLK_POL_RISING;
++		else
++			cfg |= SUN6I_CSI_IF_CFG_CLK_POL_FALLING;
+ 		break;
+ 	default:
+ 		dev_warn(csi_dev->dev, "Unsupported bus type: %d\n",
+@@ -399,13 +412,13 @@ static void sun6i_csi_setup_bus(struct sun6i_csi_device *csi_dev)
+ 
+ 	switch (bus_width) {
+ 	case 8:
+-		cfg |= CSI_IF_CFG_IF_DATA_WIDTH_8BIT;
++		cfg |= SUN6I_CSI_IF_CFG_DATA_WIDTH_8;
+ 		break;
+ 	case 10:
+-		cfg |= CSI_IF_CFG_IF_DATA_WIDTH_10BIT;
++		cfg |= SUN6I_CSI_IF_CFG_DATA_WIDTH_10;
+ 		break;
+ 	case 12:
+-		cfg |= CSI_IF_CFG_IF_DATA_WIDTH_12BIT;
++		cfg |= SUN6I_CSI_IF_CFG_DATA_WIDTH_12;
+ 		break;
+ 	case 16: /* No need to configure DATA_WIDTH for 16bit */
+ 		break;
+@@ -414,42 +427,35 @@ static void sun6i_csi_setup_bus(struct sun6i_csi_device *csi_dev)
+ 		break;
+ 	}
+ 
+-	regmap_write(csi_dev->regmap, CSI_IF_CFG_REG, cfg);
++	regmap_write(csi_dev->regmap, SUN6I_CSI_IF_CFG_REG, cfg);
+ }
+ 
+ static void sun6i_csi_set_format(struct sun6i_csi_device *csi_dev)
+ {
+ 	struct sun6i_csi_config *config = &csi_dev->config;
+-	u32 cfg;
++	u32 cfg = 0;
+ 	u32 val;
+ 
+-	regmap_read(csi_dev->regmap, CSI_CH_CFG_REG, &cfg);
+-
+-	cfg &= ~(CSI_CH_CFG_INPUT_FMT_MASK |
+-		 CSI_CH_CFG_OUTPUT_FMT_MASK | CSI_CH_CFG_VFLIP_EN |
+-		 CSI_CH_CFG_HFLIP_EN | CSI_CH_CFG_FIELD_SEL_MASK |
+-		 CSI_CH_CFG_INPUT_SEQ_MASK);
+-
+ 	val = get_csi_input_format(csi_dev, config->code,
+ 				   config->pixelformat);
+-	cfg |= CSI_CH_CFG_INPUT_FMT(val);
++	cfg |= SUN6I_CSI_CH_CFG_INPUT_FMT(val);
+ 
+ 	val = get_csi_output_format(csi_dev, config->pixelformat,
+ 				    config->field);
+-	cfg |= CSI_CH_CFG_OUTPUT_FMT(val);
++	cfg |= SUN6I_CSI_CH_CFG_OUTPUT_FMT(val);
+ 
+ 	val = get_csi_input_seq(csi_dev, config->code,
+ 				config->pixelformat);
+-	cfg |= CSI_CH_CFG_INPUT_SEQ(val);
++	cfg |= SUN6I_CSI_CH_CFG_INPUT_YUV_SEQ(val);
+ 
+ 	if (config->field == V4L2_FIELD_TOP)
+-		cfg |= CSI_CH_CFG_FIELD_SEL_FIELD0;
++		cfg |= SUN6I_CSI_CH_CFG_FIELD_SEL_FIELD0;
+ 	else if (config->field == V4L2_FIELD_BOTTOM)
+-		cfg |= CSI_CH_CFG_FIELD_SEL_FIELD1;
++		cfg |= SUN6I_CSI_CH_CFG_FIELD_SEL_FIELD1;
+ 	else
+-		cfg |= CSI_CH_CFG_FIELD_SEL_BOTH;
++		cfg |= SUN6I_CSI_CH_CFG_FIELD_SEL_EITHER;
+ 
+-	regmap_write(csi_dev->regmap, CSI_CH_CFG_REG, cfg);
++	regmap_write(csi_dev->regmap, SUN6I_CSI_CH_CFG_REG, cfg);
+ }
+ 
+ static void sun6i_csi_set_window(struct sun6i_csi_device *csi_dev)
+@@ -475,12 +481,12 @@ static void sun6i_csi_set_window(struct sun6i_csi_device *csi_dev)
+ 		break;
+ 	}
+ 
+-	regmap_write(csi_dev->regmap, CSI_CH_HSIZE_REG,
+-		     CSI_CH_HSIZE_HOR_LEN(hor_len) |
+-		     CSI_CH_HSIZE_HOR_START(0));
+-	regmap_write(csi_dev->regmap, CSI_CH_VSIZE_REG,
+-		     CSI_CH_VSIZE_VER_LEN(height) |
+-		     CSI_CH_VSIZE_VER_START(0));
++	regmap_write(csi_dev->regmap, SUN6I_CSI_CH_HSIZE_REG,
++		     SUN6I_CSI_CH_HSIZE_LEN(hor_len) |
++		     SUN6I_CSI_CH_HSIZE_START(0));
++	regmap_write(csi_dev->regmap, SUN6I_CSI_CH_VSIZE_REG,
++		     SUN6I_CSI_CH_VSIZE_LEN(height) |
++		     SUN6I_CSI_CH_VSIZE_START(0));
+ 
+ 	planar_offset[0] = 0;
+ 	switch (config->pixelformat) {
+@@ -521,9 +527,9 @@ static void sun6i_csi_set_window(struct sun6i_csi_device *csi_dev)
+ 		break;
+ 	}
+ 
+-	regmap_write(csi_dev->regmap, CSI_CH_BUF_LEN_REG,
+-		     CSI_CH_BUF_LEN_BUF_LEN_C(bytesperline_c) |
+-		     CSI_CH_BUF_LEN_BUF_LEN_Y(bytesperline_y));
++	regmap_write(csi_dev->regmap, SUN6I_CSI_CH_BUF_LEN_REG,
++		     SUN6I_CSI_CH_BUF_LEN_CHROMA_LINE(bytesperline_c) |
++		     SUN6I_CSI_CH_BUF_LEN_LUMA_LINE(bytesperline_y));
+ }
+ 
+ int sun6i_csi_update_config(struct sun6i_csi_device *csi_dev,
+@@ -544,14 +550,16 @@ int sun6i_csi_update_config(struct sun6i_csi_device *csi_dev,
+ void sun6i_csi_update_buf_addr(struct sun6i_csi_device *csi_dev,
+ 			       dma_addr_t addr)
+ {
+-	regmap_write(csi_dev->regmap, CSI_CH_F0_BUFA_REG,
+-		     (addr + csi_dev->planar_offset[0]) >> 2);
++	regmap_write(csi_dev->regmap, SUN6I_CSI_CH_FIFO0_ADDR_REG,
++		     SUN6I_CSI_ADDR_VALUE(addr + csi_dev->planar_offset[0]));
+ 	if (csi_dev->planar_offset[1] != -1)
+-		regmap_write(csi_dev->regmap, CSI_CH_F1_BUFA_REG,
+-			     (addr + csi_dev->planar_offset[1]) >> 2);
++		regmap_write(csi_dev->regmap, SUN6I_CSI_CH_FIFO1_ADDR_REG,
++			     SUN6I_CSI_ADDR_VALUE(addr +
++						  csi_dev->planar_offset[1]));
+ 	if (csi_dev->planar_offset[2] != -1)
+-		regmap_write(csi_dev->regmap, CSI_CH_F2_BUFA_REG,
+-			     (addr + csi_dev->planar_offset[2]) >> 2);
++		regmap_write(csi_dev->regmap, SUN6I_CSI_CH_FIFO2_ADDR_REG,
++			     SUN6I_CSI_ADDR_VALUE(addr +
++						  csi_dev->planar_offset[2]));
+ }
+ 
+ void sun6i_csi_set_stream(struct sun6i_csi_device *csi_dev, bool enable)
+@@ -559,23 +567,25 @@ void sun6i_csi_set_stream(struct sun6i_csi_device *csi_dev, bool enable)
+ 	struct regmap *regmap = csi_dev->regmap;
+ 
+ 	if (!enable) {
+-		regmap_update_bits(regmap, CSI_CAP_REG, CSI_CAP_CH0_VCAP_ON, 0);
+-		regmap_write(regmap, CSI_CH_INT_EN_REG, 0);
++		regmap_update_bits(regmap, SUN6I_CSI_CAP_REG,
++				   SUN6I_CSI_CAP_VCAP_ON, 0);
++		regmap_write(regmap, SUN6I_CSI_CH_INT_EN_REG, 0);
+ 		return;
+ 	}
+ 
+-	regmap_write(regmap, CSI_CH_INT_STA_REG, 0xFF);
+-	regmap_write(regmap, CSI_CH_INT_EN_REG,
+-		     CSI_CH_INT_EN_VS_INT_EN |
+-		     CSI_CH_INT_EN_HB_OF_INT_EN |
+-		     CSI_CH_INT_EN_FIFO2_OF_INT_EN |
+-		     CSI_CH_INT_EN_FIFO1_OF_INT_EN |
+-		     CSI_CH_INT_EN_FIFO0_OF_INT_EN |
+-		     CSI_CH_INT_EN_FD_INT_EN |
+-		     CSI_CH_INT_EN_CD_INT_EN);
+-
+-	regmap_update_bits(regmap, CSI_CAP_REG, CSI_CAP_CH0_VCAP_ON,
+-			   CSI_CAP_CH0_VCAP_ON);
++	regmap_write(regmap, SUN6I_CSI_CH_INT_STA_REG,
++		     SUN6I_CSI_CH_INT_STA_CLEAR);
++	regmap_write(regmap, SUN6I_CSI_CH_INT_EN_REG,
++		     SUN6I_CSI_CH_INT_EN_VS |
++		     SUN6I_CSI_CH_INT_EN_HB_OF |
++		     SUN6I_CSI_CH_INT_EN_FIFO2_OF |
++		     SUN6I_CSI_CH_INT_EN_FIFO1_OF |
++		     SUN6I_CSI_CH_INT_EN_FIFO0_OF |
++		     SUN6I_CSI_CH_INT_EN_FD |
++		     SUN6I_CSI_CH_INT_EN_CD);
++
++	regmap_update_bits(regmap, SUN6I_CSI_CAP_REG, SUN6I_CSI_CAP_VCAP_ON,
++			   SUN6I_CSI_CAP_VCAP_ON);
+ }
+ 
+ /* Media */
+@@ -668,29 +678,31 @@ static irqreturn_t sun6i_csi_isr(int irq, void *private)
+ 	struct regmap *regmap = csi_dev->regmap;
+ 	u32 status;
+ 
+-	regmap_read(regmap, CSI_CH_INT_STA_REG, &status);
++	regmap_read(regmap, SUN6I_CSI_CH_INT_STA_REG, &status);
+ 
+ 	if (!(status & 0xFF))
+ 		return IRQ_NONE;
+ 
+-	if ((status & CSI_CH_INT_STA_FIFO0_OF_PD) ||
+-	    (status & CSI_CH_INT_STA_FIFO1_OF_PD) ||
+-	    (status & CSI_CH_INT_STA_FIFO2_OF_PD) ||
+-	    (status & CSI_CH_INT_STA_HB_OF_PD)) {
+-		regmap_write(regmap, CSI_CH_INT_STA_REG, status);
+-		regmap_update_bits(regmap, CSI_EN_REG, CSI_EN_CSI_EN, 0);
+-		regmap_update_bits(regmap, CSI_EN_REG, CSI_EN_CSI_EN,
+-				   CSI_EN_CSI_EN);
++	if ((status & SUN6I_CSI_CH_INT_STA_FIFO0_OF) ||
++	    (status & SUN6I_CSI_CH_INT_STA_FIFO1_OF) ||
++	    (status & SUN6I_CSI_CH_INT_STA_FIFO2_OF) ||
++	    (status & SUN6I_CSI_CH_INT_STA_HB_OF)) {
++		regmap_write(regmap, SUN6I_CSI_CH_INT_STA_REG, status);
++
++		regmap_update_bits(regmap, SUN6I_CSI_EN_REG,
++				   SUN6I_CSI_EN_CSI_EN, 0);
++		regmap_update_bits(regmap, SUN6I_CSI_EN_REG,
++				   SUN6I_CSI_EN_CSI_EN, SUN6I_CSI_EN_CSI_EN);
+ 		return IRQ_HANDLED;
+ 	}
+ 
+-	if (status & CSI_CH_INT_STA_FD_PD)
++	if (status & SUN6I_CSI_CH_INT_STA_FD)
+ 		sun6i_csi_capture_frame_done(csi_dev);
+ 
+-	if (status & CSI_CH_INT_STA_VS_PD)
++	if (status & SUN6I_CSI_CH_INT_STA_VS)
+ 		sun6i_csi_capture_sync(csi_dev);
+ 
+-	regmap_write(regmap, CSI_CH_INT_STA_REG, status);
++	regmap_write(regmap, SUN6I_CSI_CH_INT_STA_REG, status);
+ 
+ 	return IRQ_HANDLED;
+ }
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_reg.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_reg.h
+index 703fa14bb313..9b0326d6ba3c 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_reg.h
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_reg.h
+@@ -10,133 +10,175 @@
+ 
+ #include <linux/kernel.h>
+ 
+-#define CSI_EN_REG			0x0
+-#define CSI_EN_VER_EN				BIT(30)
+-#define CSI_EN_CSI_EN				BIT(0)
+-
+-#define CSI_IF_CFG_REG			0x4
+-#define CSI_IF_CFG_SRC_TYPE_MASK		BIT(21)
+-#define CSI_IF_CFG_SRC_TYPE_PROGRESSED		((0 << 21) & CSI_IF_CFG_SRC_TYPE_MASK)
+-#define CSI_IF_CFG_SRC_TYPE_INTERLACED		((1 << 21) & CSI_IF_CFG_SRC_TYPE_MASK)
+-#define CSI_IF_CFG_FPS_DS_EN			BIT(20)
+-#define CSI_IF_CFG_FIELD_MASK			BIT(19)
+-#define CSI_IF_CFG_FIELD_NEGATIVE		((0 << 19) & CSI_IF_CFG_FIELD_MASK)
+-#define CSI_IF_CFG_FIELD_POSITIVE		((1 << 19) & CSI_IF_CFG_FIELD_MASK)
+-#define CSI_IF_CFG_VREF_POL_MASK		BIT(18)
+-#define CSI_IF_CFG_VREF_POL_NEGATIVE		((0 << 18) & CSI_IF_CFG_VREF_POL_MASK)
+-#define CSI_IF_CFG_VREF_POL_POSITIVE		((1 << 18) & CSI_IF_CFG_VREF_POL_MASK)
+-#define CSI_IF_CFG_HREF_POL_MASK		BIT(17)
+-#define CSI_IF_CFG_HREF_POL_NEGATIVE		((0 << 17) & CSI_IF_CFG_HREF_POL_MASK)
+-#define CSI_IF_CFG_HREF_POL_POSITIVE		((1 << 17) & CSI_IF_CFG_HREF_POL_MASK)
+-#define CSI_IF_CFG_CLK_POL_MASK			BIT(16)
+-#define CSI_IF_CFG_CLK_POL_RISING_EDGE		((0 << 16) & CSI_IF_CFG_CLK_POL_MASK)
+-#define CSI_IF_CFG_CLK_POL_FALLING_EDGE		((1 << 16) & CSI_IF_CFG_CLK_POL_MASK)
+-#define CSI_IF_CFG_IF_DATA_WIDTH_MASK		GENMASK(10, 8)
+-#define CSI_IF_CFG_IF_DATA_WIDTH_8BIT		((0 << 8) & CSI_IF_CFG_IF_DATA_WIDTH_MASK)
+-#define CSI_IF_CFG_IF_DATA_WIDTH_10BIT		((1 << 8) & CSI_IF_CFG_IF_DATA_WIDTH_MASK)
+-#define CSI_IF_CFG_IF_DATA_WIDTH_12BIT		((2 << 8) & CSI_IF_CFG_IF_DATA_WIDTH_MASK)
+-#define CSI_IF_CFG_MIPI_IF_MASK			BIT(7)
+-#define CSI_IF_CFG_MIPI_IF_CSI			(0 << 7)
+-#define CSI_IF_CFG_MIPI_IF_MIPI			BIT(7)
+-#define CSI_IF_CFG_CSI_IF_MASK			GENMASK(4, 0)
+-#define CSI_IF_CFG_CSI_IF_YUV422_INTLV		((0 << 0) & CSI_IF_CFG_CSI_IF_MASK)
+-#define CSI_IF_CFG_CSI_IF_YUV422_16BIT		((1 << 0) & CSI_IF_CFG_CSI_IF_MASK)
+-#define CSI_IF_CFG_CSI_IF_BT656			((4 << 0) & CSI_IF_CFG_CSI_IF_MASK)
+-#define CSI_IF_CFG_CSI_IF_BT1120		((5 << 0) & CSI_IF_CFG_CSI_IF_MASK)
+-
+-#define CSI_CAP_REG			0x8
+-#define CSI_CAP_CH0_CAP_MASK_MASK		GENMASK(5, 2)
+-#define CSI_CAP_CH0_CAP_MASK(count)		(((count) << 2) & CSI_CAP_CH0_CAP_MASK_MASK)
+-#define CSI_CAP_CH0_VCAP_ON			BIT(1)
+-#define CSI_CAP_CH0_SCAP_ON			BIT(0)
+-
+-#define CSI_SYNC_CNT_REG		0xc
+-#define CSI_FIFO_THRS_REG		0x10
+-#define CSI_BT656_HEAD_CFG_REG		0x14
+-#define CSI_PTN_LEN_REG			0x30
+-#define CSI_PTN_ADDR_REG		0x34
+-#define CSI_VER_REG			0x3c
+-
+-#define CSI_CH_CFG_REG			0x44
+-#define CSI_CH_CFG_INPUT_FMT_MASK		GENMASK(23, 20)
+-#define CSI_CH_CFG_INPUT_FMT(fmt)		(((fmt) << 20) & CSI_CH_CFG_INPUT_FMT_MASK)
+-#define CSI_CH_CFG_OUTPUT_FMT_MASK		GENMASK(19, 16)
+-#define CSI_CH_CFG_OUTPUT_FMT(fmt)		(((fmt) << 16) & CSI_CH_CFG_OUTPUT_FMT_MASK)
+-#define CSI_CH_CFG_VFLIP_EN			BIT(13)
+-#define CSI_CH_CFG_HFLIP_EN			BIT(12)
+-#define CSI_CH_CFG_FIELD_SEL_MASK		GENMASK(11, 10)
+-#define CSI_CH_CFG_FIELD_SEL_FIELD0		((0 << 10) & CSI_CH_CFG_FIELD_SEL_MASK)
+-#define CSI_CH_CFG_FIELD_SEL_FIELD1		((1 << 10) & CSI_CH_CFG_FIELD_SEL_MASK)
+-#define CSI_CH_CFG_FIELD_SEL_BOTH		((2 << 10) & CSI_CH_CFG_FIELD_SEL_MASK)
+-#define CSI_CH_CFG_INPUT_SEQ_MASK		GENMASK(9, 8)
+-#define CSI_CH_CFG_INPUT_SEQ(seq)		(((seq) << 8) & CSI_CH_CFG_INPUT_SEQ_MASK)
+-
+-#define CSI_CH_SCALE_REG		0x4c
+-#define CSI_CH_SCALE_QUART_EN			BIT(0)
+-
+-#define CSI_CH_F0_BUFA_REG		0x50
+-
+-#define CSI_CH_F1_BUFA_REG		0x58
+-
+-#define CSI_CH_F2_BUFA_REG		0x60
+-
+-#define CSI_CH_STA_REG			0x6c
+-#define CSI_CH_STA_FIELD_STA_MASK		BIT(2)
+-#define CSI_CH_STA_FIELD_STA_FIELD0		((0 << 2) & CSI_CH_STA_FIELD_STA_MASK)
+-#define CSI_CH_STA_FIELD_STA_FIELD1		((1 << 2) & CSI_CH_STA_FIELD_STA_MASK)
+-#define CSI_CH_STA_VCAP_STA			BIT(1)
+-#define CSI_CH_STA_SCAP_STA			BIT(0)
+-
+-#define CSI_CH_INT_EN_REG		0x70
+-#define CSI_CH_INT_EN_VS_INT_EN			BIT(7)
+-#define CSI_CH_INT_EN_HB_OF_INT_EN		BIT(6)
+-#define CSI_CH_INT_EN_MUL_ERR_INT_EN		BIT(5)
+-#define CSI_CH_INT_EN_FIFO2_OF_INT_EN		BIT(4)
+-#define CSI_CH_INT_EN_FIFO1_OF_INT_EN		BIT(3)
+-#define CSI_CH_INT_EN_FIFO0_OF_INT_EN		BIT(2)
+-#define CSI_CH_INT_EN_FD_INT_EN			BIT(1)
+-#define CSI_CH_INT_EN_CD_INT_EN			BIT(0)
+-
+-#define CSI_CH_INT_STA_REG		0x74
+-#define CSI_CH_INT_STA_VS_PD			BIT(7)
+-#define CSI_CH_INT_STA_HB_OF_PD			BIT(6)
+-#define CSI_CH_INT_STA_MUL_ERR_PD		BIT(5)
+-#define CSI_CH_INT_STA_FIFO2_OF_PD		BIT(4)
+-#define CSI_CH_INT_STA_FIFO1_OF_PD		BIT(3)
+-#define CSI_CH_INT_STA_FIFO0_OF_PD		BIT(2)
+-#define CSI_CH_INT_STA_FD_PD			BIT(1)
+-#define CSI_CH_INT_STA_CD_PD			BIT(0)
+-
+-#define CSI_CH_FLD1_VSIZE_REG		0x78
+-
+-#define CSI_CH_HSIZE_REG		0x80
+-#define CSI_CH_HSIZE_HOR_LEN_MASK		GENMASK(28, 16)
+-#define CSI_CH_HSIZE_HOR_LEN(len)		(((len) << 16) & CSI_CH_HSIZE_HOR_LEN_MASK)
+-#define CSI_CH_HSIZE_HOR_START_MASK		GENMASK(12, 0)
+-#define CSI_CH_HSIZE_HOR_START(start)		(((start) << 0) & CSI_CH_HSIZE_HOR_START_MASK)
+-
+-#define CSI_CH_VSIZE_REG		0x84
+-#define CSI_CH_VSIZE_VER_LEN_MASK		GENMASK(28, 16)
+-#define CSI_CH_VSIZE_VER_LEN(len)		(((len) << 16) & CSI_CH_VSIZE_VER_LEN_MASK)
+-#define CSI_CH_VSIZE_VER_START_MASK		GENMASK(12, 0)
+-#define CSI_CH_VSIZE_VER_START(start)		(((start) << 0) & CSI_CH_VSIZE_VER_START_MASK)
+-
+-#define CSI_CH_BUF_LEN_REG		0x88
+-#define CSI_CH_BUF_LEN_BUF_LEN_C_MASK		GENMASK(29, 16)
+-#define CSI_CH_BUF_LEN_BUF_LEN_C(len)		(((len) << 16) & CSI_CH_BUF_LEN_BUF_LEN_C_MASK)
+-#define CSI_CH_BUF_LEN_BUF_LEN_Y_MASK		GENMASK(13, 0)
+-#define CSI_CH_BUF_LEN_BUF_LEN_Y(len)		(((len) << 0) & CSI_CH_BUF_LEN_BUF_LEN_Y_MASK)
+-
+-#define CSI_CH_FLIP_SIZE_REG		0x8c
+-#define CSI_CH_FLIP_SIZE_VER_LEN_MASK		GENMASK(28, 16)
+-#define CSI_CH_FLIP_SIZE_VER_LEN(len)		(((len) << 16) & CSI_CH_FLIP_SIZE_VER_LEN_MASK)
+-#define CSI_CH_FLIP_SIZE_VALID_LEN_MASK		GENMASK(12, 0)
+-#define CSI_CH_FLIP_SIZE_VALID_LEN(len)		(((len) << 0) & CSI_CH_FLIP_SIZE_VALID_LEN_MASK)
+-
+-#define CSI_CH_FRM_CLK_CNT_REG		0x90
+-#define CSI_CH_ACC_ITNL_CLK_CNT_REG	0x94
+-#define CSI_CH_FIFO_STAT_REG		0x98
+-#define CSI_CH_PCLK_STAT_REG		0x9c
++#define SUN6I_CSI_ADDR_VALUE(a)			((a) >> 2)
++
++#define SUN6I_CSI_EN_REG			0x0
++#define SUN6I_CSI_EN_VER_EN			BIT(30)
++#define SUN6I_CSI_EN_PTN_CYCLE(v)		(((v) << 16) & GENMASK(23, 16))
++#define SUN6I_CSI_EN_SRAM_PWDN			BIT(8)
++#define SUN6I_CSI_EN_PTN_START			BIT(4)
++#define SUN6I_CSI_EN_CLK_CNT_SPL_VSYNC		BIT(3)
++#define SUN6I_CSI_EN_CLK_CNT_EN			BIT(2)
++#define SUN6I_CSI_EN_PTN_GEN_EN			BIT(1)
++#define SUN6I_CSI_EN_CSI_EN			BIT(0)
++
++/* Note that Allwinner manuals and code invert positive/negative definitions. */
++
++#define SUN6I_CSI_IF_CFG_REG			0x4
++#define SUN6I_CSI_IF_CFG_FIELD_DT_PCLK_SHIFT(v)	(((v) << 24) & GENMASK(27, 24))
++#define SUN6I_CSI_IF_CFG_SRC_TYPE_PROGRESSIVE	(0 << 21)
++#define SUN6I_CSI_IF_CFG_SRC_TYPE_INTERLACED	(1 << 21)
++#define SUN6I_CSI_IF_CFG_FPS_DS			BIT(20)
++#define SUN6I_CSI_IF_CFG_FIELD_POSITIVE		(0 << 19)
++#define SUN6I_CSI_IF_CFG_FIELD_NEGATIVE		(1 << 19)
++#define SUN6I_CSI_IF_CFG_VREF_POL_POSITIVE	(0 << 18)
++#define SUN6I_CSI_IF_CFG_VREF_POL_NEGATIVE	(1 << 18)
++#define SUN6I_CSI_IF_CFG_HREF_POL_POSITIVE	(0 << 17)
++#define SUN6I_CSI_IF_CFG_HREF_POL_NEGATIVE	(1 << 17)
++#define SUN6I_CSI_IF_CFG_CLK_POL_FALLING	(0 << 16)
++#define SUN6I_CSI_IF_CFG_CLK_POL_RISING		(1 << 16)
++#define SUN6I_CSI_IF_CFG_FIELD_DT_FIELD_VSYNC	(0 << 14)
++#define SUN6I_CSI_IF_CFG_FIELD_DT_FIELD		(1 << 14)
++#define SUN6I_CSI_IF_CFG_FIELD_DT_VSYNC		(2 << 14)
++#define SUN6I_CSI_IF_CFG_DATA_WIDTH_8		(0 << 8)
++#define SUN6I_CSI_IF_CFG_DATA_WIDTH_10		(1 << 8)
++#define SUN6I_CSI_IF_CFG_DATA_WIDTH_12		(2 << 8)
++#define SUN6I_CSI_IF_CFG_DATA_WIDTH_8_PLUS_2	(3 << 8)
++#define SUN6I_CSI_IF_CFG_DATA_WIDTH_2_TIMES_8	(4 << 8)
++#define SUN6I_CSI_IF_CFG_IF_CSI			(0 << 7)
++#define SUN6I_CSI_IF_CFG_IF_MIPI		(1 << 7)
++#define SUN6I_CSI_IF_CFG_IF_CSI_YUV_RAW		(0 << 0)
++#define SUN6I_CSI_IF_CFG_IF_CSI_YUV_COMBINED	(1 << 0)
++#define SUN6I_CSI_IF_CFG_IF_CSI_BT656		(4 << 0)
++#define SUN6I_CSI_IF_CFG_IF_CSI_BT1120		(5 << 0)
++
++#define SUN6I_CSI_CAP_REG			0x8
++#define SUN6I_CSI_CAP_MASK(v)			(((v) << 2) & GENMASK(5, 2))
++#define SUN6I_CSI_CAP_VCAP_ON			BIT(1)
++#define SUN6I_CSI_CAP_SCAP_ON			BIT(0)
++
++#define SUN6I_CSI_SYNC_CNT_REG			0xc
++#define SUN6I_CSI_FIFO_THRS_REG			0x10
++#define SUN6I_CSI_BT656_HEAD_CFG_REG		0x14
++
++#define SUN6I_CSI_PTN_LEN_REG			0x30
++#define SUN6I_CSI_PTN_ADDR_REG			0x34
++#define SUN6I_CSI_VER_REG			0x3c
++
++#define SUN6I_CSI_CH_CFG_REG			0x44
++#define SUN6I_CSI_CH_CFG_PAD_VAL(v)		(((v) << 24) & GENMASK(31, 24))
++#define SUN6I_CSI_CH_CFG_INPUT_FMT(v)		(((v) << 20) & GENMASK(23, 20))
++#define SUN6I_CSI_CH_CFG_OUTPUT_FMT(v)		(((v) << 16) & GENMASK(19, 16))
++#define SUN6I_CSI_CH_CFG_VFLIP_EN		BIT(13)
++#define SUN6I_CSI_CH_CFG_HFLIP_EN		BIT(12)
++#define SUN6I_CSI_CH_CFG_FIELD_SEL_FIELD0	(0 << 10)
++#define SUN6I_CSI_CH_CFG_FIELD_SEL_FIELD1	(1 << 10)
++#define SUN6I_CSI_CH_CFG_FIELD_SEL_EITHER	(2 << 10)
++#define SUN6I_CSI_CH_CFG_INPUT_YUV_SEQ(v)	(((v) << 8) & GENMASK(9, 8))
++
++#define SUN6I_CSI_INPUT_FMT_RAW			0
++#define SUN6I_CSI_INPUT_FMT_YUV422		3
++#define SUN6I_CSI_INPUT_FMT_YUV420		4
++
++/* Note that Allwinner manuals and code invert frame/field definitions. */
++
++/* RAW */
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_RAW_8	0
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_RAW_10	1
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_RAW_12	2
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_RGB565	4
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_RGB888	5
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_PRGB888	6
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_RAW_8	8
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_RAW_10	9
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_RAW_12	10
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_RGB565	12
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_RGB888	13
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_PRGB888	14
++
++/* YUV */
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV422P	0
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV420P	1
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_YUV420P	2
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_YUV422P	3
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV422SP	4
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV420SP	5
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_YUV420SP	6
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_YUV422SP	7
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV422MB	8
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV420MB	9
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_YUV420MB	10
++#define SUN6I_CSI_OUTPUT_FMT_FIELD_YUV422MB	11
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV422SP_10	12
++#define SUN6I_CSI_OUTPUT_FMT_FRAME_YUV420SP_10	13
++
++/* YUV Planar */
++#define SUN6I_CSI_INPUT_YUV_SEQ_YUYV		0
++#define SUN6I_CSI_INPUT_YUV_SEQ_YVYU		1
++#define SUN6I_CSI_INPUT_YUV_SEQ_UYVY		2
++#define SUN6I_CSI_INPUT_YUV_SEQ_VYUY		3
++
++/* YUV Semi-planar */
++#define SUN6I_CSI_INPUT_YUV_SEQ_UV		0
++#define SUN6I_CSI_INPUT_YUV_SEQ_VU		1
++
++#define SUN6I_CSI_CH_SCALE_REG			0x4c
++#define SUN6I_CSI_CH_SCALE_QUART_EN		BIT(0)
++
++#define SUN6I_CSI_CH_FIFO0_ADDR_REG		0x50
++#define SUN6I_CSI_CH_FIFO1_ADDR_REG		0x58
++#define SUN6I_CSI_CH_FIFO2_ADDR_REG		0x60
++
++#define SUN6I_CSI_CH_STA_REG			0x6c
++#define SUN6I_CSI_CH_STA_FIELD			BIT(2)
++#define SUN6I_CSI_CH_STA_VCAP			BIT(1)
++#define SUN6I_CSI_CH_STA_SCAP			BIT(0)
++
++#define SUN6I_CSI_CH_INT_EN_REG			0x70
++#define SUN6I_CSI_CH_INT_EN_VS			BIT(7)
++#define SUN6I_CSI_CH_INT_EN_HB_OF		BIT(6)
++#define SUN6I_CSI_CH_INT_EN_MUL_ERR		BIT(5)
++#define SUN6I_CSI_CH_INT_EN_FIFO2_OF		BIT(4)
++#define SUN6I_CSI_CH_INT_EN_FIFO1_OF		BIT(3)
++#define SUN6I_CSI_CH_INT_EN_FIFO0_OF		BIT(2)
++#define SUN6I_CSI_CH_INT_EN_FD			BIT(1)
++#define SUN6I_CSI_CH_INT_EN_CD			BIT(0)
++
++#define SUN6I_CSI_CH_INT_STA_REG		0x74
++#define SUN6I_CSI_CH_INT_STA_CLEAR		0xff
++#define SUN6I_CSI_CH_INT_STA_VS			BIT(7)
++#define SUN6I_CSI_CH_INT_STA_HB_OF		BIT(6)
++#define SUN6I_CSI_CH_INT_STA_MUL_ERR		BIT(5)
++#define SUN6I_CSI_CH_INT_STA_FIFO2_OF		BIT(4)
++#define SUN6I_CSI_CH_INT_STA_FIFO1_OF		BIT(3)
++#define SUN6I_CSI_CH_INT_STA_FIFO0_OF		BIT(2)
++#define SUN6I_CSI_CH_INT_STA_FD			BIT(1)
++#define SUN6I_CSI_CH_INT_STA_CD			BIT(0)
++
++#define SUN6I_CSI_CH_FLD1_VSIZE_REG		0x78
++#define SUN6I_CSI_CH_FLD1_VSIZE_VER_LEN(v)	(((v) << 16) & GENMASK(28, 16))
++#define SUN6I_CSI_CH_FLD1_VSIZE_VER_START(v)	((v) & GENMASK(12, 0))
++
++#define SUN6I_CSI_CH_HSIZE_REG			0x80
++#define SUN6I_CSI_CH_HSIZE_LEN(v)		(((v) << 16) & GENMASK(28, 16))
++#define SUN6I_CSI_CH_HSIZE_START(v)		((v) & GENMASK(12, 0))
++
++#define SUN6I_CSI_CH_VSIZE_REG			0x84
++#define SUN6I_CSI_CH_VSIZE_LEN(v)		(((v) << 16) & GENMASK(28, 16))
++#define SUN6I_CSI_CH_VSIZE_START(v)		((v) & GENMASK(12, 0))
++
++#define SUN6I_CSI_CH_BUF_LEN_REG		0x88
++#define SUN6I_CSI_CH_BUF_LEN_CHROMA_LINE(v)	(((v) << 16) & GENMASK(29, 16))
++#define SUN6I_CSI_CH_BUF_LEN_LUMA_LINE(v)	((v) & GENMASK(13, 0))
++
++#define SUN6I_CSI_CH_FLIP_SIZE_REG		0x8c
++#define SUN6I_CSI_CH_FLIP_SIZE_VER_LEN(v)	(((v) << 16) & GENMASK(28, 16))
++#define SUN6I_CSI_CH_FLIP_SIZE_VALID_LEN(v)	((v) & GENMASK(12, 0))
++
++#define SUN6I_CSI_CH_FRM_CLK_CNT_REG		0x90
++#define SUN6I_CSI_CH_ACC_ITNL_CLK_CNT_REG	0x94
++#define SUN6I_CSI_CH_FIFO_STAT_REG		0x98
++#define SUN6I_CSI_CH_PCLK_STAT_REG		0x9c
+ 
+ /*
+  * csi input data format
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
