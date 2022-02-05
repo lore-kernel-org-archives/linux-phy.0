@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC91CC433F5
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:35:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9782C433F5
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:36:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Nvtks+AiN1M7A9+vhANptZQl/58naHjPY+x9efqjNE=; b=CQXEuojgK6hN7s
-	ttCc2AffP0xnO+6raNFFkEUelfyYuCq+gjYtp+Dnw/LZ4yY+5sAGBg104qefGHiHAaX5lFcBV4Pe8
-	YVtGc5CHdz/vxFozo4v2jpnqWQT5TPXN98z/Tc1eLZ2/eFWslmpoDOyzEmwAgvpRQcfXOfotmuJiu
-	7OiWdpxNFPFC2IVx4xt/2OPwmK8qEwu3ePZmDlttvgyx+XfL4FpKw54vJEixAQwj/Fa/j4ZyOUyLl
-	j2Q2cXwCRltnSUEfT8vSC5/5rNShiKl9CXT6Fa5TVgOItVwQMiZVPAmQEnLZooCg02ySwa5xZ0gpk
-	b11szA6x919HmMXHqCtg==;
+	List-Owner; bh=swSARA4+GQUPMF4aepSDiAfoaQA/kSAVMbAM6vQt080=; b=IrNT/JM1lTXamW
+	pxKuvAZPUGogxVZ5m1+DDLBwEPPYODyWHI6CCxAxsjR9ulaKlnSe3D8z7/2uRe1coTkNjB3AyGJiT
+	3DUR80d4GVXo+8Wr57IqsbgDOLN/vxhHo0TS5Tj06/CbNQnt/Ha2hzAlDiFjJECZnx6HQKNmUqEkw
+	/32FWiWfiWuvJZUO9wRYAdA/2uRY5y5lJvQ2sjWOjCLF8irvxHO1xbrdOq9I3ANDaUz2qf/VTkBJm
+	p+PEW2B99nczfYw098G/pDDcyoGk/3DvtV0bhggb9rPJQIGETTqSJI1dB0vitH2UJnZZnnq5w7ICl
+	6chsd7tjzqx04srIs8JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGQqS-007GQF-5h; Sat, 05 Feb 2022 19:35:40 +0000
+	id 1nGQr4-007GfJ-Ub; Sat, 05 Feb 2022 19:36:18 +0000
 Received: from relay10.mail.gandi.net ([2001:4b98:dc4:8::230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGQEE-00709c-6A; Sat, 05 Feb 2022 18:56:16 +0000
+ id 1nGQEC-00708I-Gw; Sat, 05 Feb 2022 18:56:15 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id CCC9124001C;
- Sat,  5 Feb 2022 18:56:06 +0000 (UTC)
+ by mail.gandi.net (Postfix) with ESMTPSA id 2DA42240018;
+ Sat,  5 Feb 2022 18:56:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644087368;
+ t=1644087366;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=rw9sX0ixeheTtFNsdf6WOCL+54BUmmSHSVUGdB4RDWY=;
- b=JZG3DLBSe1WOJseOdbhvMI2+QyAx9DzMOf88qW29EJqFR1BMgH2H0w1nuA8nisUQ3zxaHE
- NnxgTU6ljN6QQXOsw80VzbB65fftZtKcFlGSsEkZuy3qILnH25VT3J9KF5qmN5c8RoLSiT
- Y+uCZKTkuQScRhx6/sN9Zx6DF0TM1ia8yoxwFtdmD2ysT/7YM/wpFvQoCWqu9V+fCLTsUL
- On/42aJxmggemfqjori0d5Hbw/8+wx8xDQEta5H/ealfk36sL8oYzCoSIj+/VbmIxCRXBv
- HiucwcZjUQcb0rbmc7t2IWqUkbQ7r5t49qdt7VarNJlkrW1TrNok3FF2m7ixGA==
+ bh=SMCULc6HrPXZzioFZHc2jhN/9bV7Xz9OY1iLkG08uy0=;
+ b=UAZbgpiHK+JaZAjN3tWaPhzuYQq9gDsTD1qOGHDu8X8VGU6xO75SBLRMKvegGnRaUANpb5
+ GAU6cJUKJ4umnbDElxMuftMtiMmcKH1T/9/9S7tB+TSa5qVnyLk8ctCCpnPXYW/sxFkpJw
+ gDWLC5jHHwXVZHp+wYwMG7zIzwjYoTQGIFxFLQudM456XwzPlJQPlhBTr39YQfT86KzuJF
+ RJgcydfREpUn9bEm2vpktZoKLE8919c2Tqme5jgb7kix9Z84roEpoItpgGBEsWDluKkObR
+ N6LXSxwTPK7s78fK12sJkXh6Ra7kVoc1TmHbYZRQ2LZ+uDy/ZMK0yDrBRQhHsQ==
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -55,17 +55,17 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH v2 52/66] media: sun6i-csi: Rename the capture video device to
- sun6i-csi-capture
-Date: Sat,  5 Feb 2022 19:54:15 +0100
-Message-Id: <20220205185429.2278860-53-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v2 51/66] media: sun6i-csi: Unset bridge source on capture
+ streamon fail
+Date: Sat,  5 Feb 2022 19:54:14 +0100
+Message-Id: <20220205185429.2278860-52-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_105610_448373_7A117553 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20220205_105608_781841_39B9BC6C 
+X-CRM114-Status: GOOD (  11.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,43 +82,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Now that the driver is properly split between bridge and capture,
-rename the video device to highlight its role and be in line with
-the bridge entity naming.
+In cases where the media pipeline start fails but our bridge
+has already registered a source, the source remains set and
+the bridge code is not called.
+
+Clean it in capture streamon error handler to avoid the issue.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c | 3 ++-
- drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h | 2 ++
- 2 files changed, 4 insertions(+), 1 deletion(-)
+ drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
-index 6033acaa9564..85ea7812e991 100644
+index 4315e197d53f..6033acaa9564 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
-@@ -1020,7 +1020,8 @@ int sun6i_csi_capture_setup(struct sun6i_csi_device *csi_dev)
+@@ -628,6 +628,8 @@ static int sun6i_csi_capture_start_streaming(struct vb2_queue *queue,
+ error_state:
+ 	sun6i_csi_capture_state_cleanup(csi_dev, false);
  
- 	/* Video Device */
- 
--	strscpy(video_dev->name, SUN6I_CSI_NAME, sizeof(video_dev->name));
-+	strscpy(video_dev->name, SUN6I_CSI_CAPTURE_NAME,
-+		sizeof(video_dev->name));
- 	video_dev->device_caps = V4L2_CAP_VIDEO_CAPTURE | V4L2_CAP_STREAMING;
- 	video_dev->vfl_dir = VFL_DIR_RX;
- 	video_dev->release = video_device_release_empty;
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h
-index a61db3bc72e5..59c57bcefeec 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h
-@@ -11,6 +11,8 @@
- #include <media/v4l2-dev.h>
- #include <media/videobuf2-core.h>
- 
-+#define SUN6I_CSI_CAPTURE_NAME	"sun6i-csi-capture"
++	csi_dev->bridge.source = NULL;
 +
- #define SUN6I_CSI_CAPTURE_WIDTH_MIN	32
- #define SUN6I_CSI_CAPTURE_WIDTH_MAX	4800
- #define SUN6I_CSI_CAPTURE_HEIGHT_MIN	32
+ 	return ret;
+ }
+ 
 -- 
 2.34.1
 
