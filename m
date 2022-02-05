@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86B3CC433EF
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:23:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 053C1C433F5
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:23:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mt8DIhARFZuCGJgmLQPHt8lfZLyBLBzfNQIA8cyD858=; b=WfxSaZB/PYIxF0
-	a0EfUCbzbvlWKLT+CkAoLxGvarVs2W1j/fMaCIG9xgyw8U/s6VLUnCc+tI6i69lRU3EJiEA6EDLaS
-	eQXa2/1ssaA03USRGJSQ/YOMOb2W5+vll+D9h+8PEsYAd1P07atdCff3+UHS3CQtZ7GF7YIcvsnjA
-	bMs/Ot0Xri7y1fLOoZtY+SR1qCm7y464mpltOhenpKlXpkFAfkCTdfhPVCRsgCk5pD2aH6JNBvNHG
-	UrDEmpVRJxrENJrAf3dVLyXFlooBRb3iY3kPvzJlIe2ezESH/psVt/gSioefU+xBIcGEWQfrANl/2
-	M5AFiIPAgJipWor4jc/w==;
+	List-Owner; bh=BkzaAQBXItJF6aUyUKgcseKS+tB3fHyKdnVkamKGvM4=; b=inxS1KZzBbouYU
+	ebDS0Eyl1/AOjtGH3m3x/PFbtTNdlGjHq426QJj6+Dodb/cbQRycV/4789GX9okxSLLqU1XcDp47X
+	GynbPu+xfq/SNA++Z1hIrjM1GEuWX3glRg5TboGT/+GQvqHdDXlyPf6Ja7ARsWRFONY7ht9GvBKnA
+	J2/ZLPwMjzg/xWsARvb65TdVGH01ObVIHc14Z/KwrE9vPqBCmWkv8uLg1etGG4DhgQODbxXTZ9TkL
+	4sVnfo3Pp+B82Cba/HA29mji1qeHfQmgpQYSmesH0KejkbVOcwss51TkP0VpaOQC5f+4GeC71PGkf
+	x6J3WXqoRejmLQnykijw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGQeV-007BtU-RR; Sat, 05 Feb 2022 19:23:19 +0000
+	id 1nGQeW-007Bto-56; Sat, 05 Feb 2022 19:23:20 +0000
 Received: from relay10.mail.gandi.net ([2001:4b98:dc4:8::230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGQDd-006zkI-B7; Sat, 05 Feb 2022 18:55:44 +0000
+ id 1nGQDg-006zmL-LS; Sat, 05 Feb 2022 18:55:45 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id EED57240005;
- Sat,  5 Feb 2022 18:55:29 +0000 (UTC)
+ by mail.gandi.net (Postfix) with ESMTPSA id 552FF240011;
+ Sat,  5 Feb 2022 18:55:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644087331;
+ t=1644087335;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=aMa9oieTIRQl5krVx9KT/y0WvlGegi7Fo5Ey19lOLO0=;
- b=iynE05Es3cGeDZ89iZ48I5cOFKKBKJTp2QGBnQQgvCxl3F88X2cjVliWU8+kqnKm/2uuYg
- tP0cCWMgOQS8wM8OK3ZJA8C6rEQ70B2KCQG5+yV4q529x9dluGm7z5WMrWLtL1quGiD2My
- L3kbG7CaIjwNiM+yW3IyB0CzTOX31YVwLXBp7T2VdTaDOTc9o3J62SP5zR4wxMhVih4hN8
- EqThIYbr003Tupu4Dt9e2Trcl4yHvgzcH6Hc1FpZd74IBTpS5vJEJmS7B2xe9AcUQtDu4q
- psnSoTMvrPB4i8bBbXeucTXSfDMfwnz9MLcCeicG2f8CxP3jrCw6KyGFCVlODQ==
+ bh=nAEGfQDJ0sLUOXQFQuKZ7RzdheNIg4Vw/eOZrL/G0qM=;
+ b=J7J/7ad8perCvZH7629BPuOL3H5HnNNr+nM+/eAvAwsVNo/SlI9aWPHDWEbvHbRT5i5Ga7
+ Ac3TniUEOg+pPj6giMPcq6LBUS58lgHb4q5oAsK7VkF/uLRsq/MuzWv1/ZMLbbLwZiIlHD
+ he4WeFMLipnNbFVtRmdaXkWzZHLyNbcKyOtDSq5qnrPkHZEo5NWW9MFH/q/uq6Vsdkj2Fb
+ uBRh7+F/IZwT+maLNRGryiQYozSvQ6JrfqJUQiZbl88DQ/ZVzpIouEknSvFE3GgKjPDPxA
+ h+1MjjdZKz+uOSdrhJq7sdLhLd/dgLfFu8l/kpFroigBRMRjcmjzsyM0ADjLIg==
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -55,17 +55,17 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH v2 30/66] media: sun6i-csi: Add bridge v4l2 subdev with port
- management
-Date: Sat,  5 Feb 2022 19:53:53 +0100
-Message-Id: <20220205185429.2278860-31-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v2 32/66] media: sun6i-csi: Add capture state using vsync for
+ page flip
+Date: Sat,  5 Feb 2022 19:53:55 +0100
+Message-Id: <20220205185429.2278860-33-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_105533_813840_80AB7FFC 
-X-CRM114-Status: GOOD (  30.78  )
+X-CRM114-CacheID: sfid-20220205_105537_086275_B7DB4AE6 
+X-CRM114-Status: GOOD (  29.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,893 +77,305 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce a bridge v4l2 subdev to prepare for separation between the
-processing part (bridge) and the dma engine, which is required to
-properly support ths isp workflow later on.
-
-Currently the bridge just manages fwnode mapping to media pads,
-using an async notifier (which was previously in the main code).
-The s_stream video op just forwards to the connected v4l2 subdev
-(sensor or MIPI CSI-2 bridge).
-
-The video capture device is now registered after the bridge and
-attaches to it with a media link.
-
-Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
----
- .../media/platform/sunxi/sun6i-csi/Makefile   |   2 +-
- .../platform/sunxi/sun6i-csi/sun6i_csi.c      | 156 +-----
- .../platform/sunxi/sun6i-csi/sun6i_csi.h      |  12 +-
- .../sunxi/sun6i-csi/sun6i_csi_bridge.c        | 473 ++++++++++++++++++
- .../sunxi/sun6i-csi/sun6i_csi_bridge.h        |  44 ++
- .../platform/sunxi/sun6i-csi/sun6i_video.c    |  19 +
- 6 files changed, 571 insertions(+), 135 deletions(-)
- create mode 100644 drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c
- create mode 100644 drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.h
-
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/Makefile b/drivers/media/platform/sunxi/sun6i-csi/Makefile
-index e7e315347804..7a699580a641 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/Makefile
-+++ b/drivers/media/platform/sunxi/sun6i-csi/Makefile
-@@ -1,4 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0-only
--sun6i-csi-y += sun6i_video.o sun6i_csi.o
-+sun6i-csi-y += sun6i_video.o sun6i_csi.o sun6i_csi_bridge.o
- 
- obj-$(CONFIG_VIDEO_SUN6I_CSI) += sun6i-csi.o
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-index c8fe31cc38b5..a1847ae3e88e 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-@@ -34,16 +34,17 @@
- bool sun6i_csi_is_format_supported(struct sun6i_csi_device *csi_dev,
- 				   u32 pixformat, u32 mbus_code)
- {
--	struct sun6i_csi_v4l2 *v4l2 = &csi_dev->v4l2;
-+	struct v4l2_fwnode_endpoint *endpoint =
-+		&csi_dev->bridge.source->endpoint;
- 
- 	/*
- 	 * Some video receivers have the ability to be compatible with
- 	 * 8bit and 16bit bus width.
- 	 * Identify the media bus format from device tree.
- 	 */
--	if ((v4l2->v4l2_ep.bus_type == V4L2_MBUS_PARALLEL
--	     || v4l2->v4l2_ep.bus_type == V4L2_MBUS_BT656)
--	     && v4l2->v4l2_ep.bus.parallel.bus_width == 16) {
-+	if ((endpoint->bus_type == V4L2_MBUS_PARALLEL
-+	     || endpoint->bus_type == V4L2_MBUS_BT656)
-+	     && endpoint->bus.parallel.bus_width == 16) {
- 		switch (pixformat) {
- 		case V4L2_PIX_FMT_NV12_16L16:
- 		case V4L2_PIX_FMT_NV12:
-@@ -328,7 +329,8 @@ static enum csi_input_seq get_csi_input_seq(struct sun6i_csi_device *csi_dev,
- 
- static void sun6i_csi_setup_bus(struct sun6i_csi_device *csi_dev)
- {
--	struct v4l2_fwnode_endpoint *endpoint = &csi_dev->v4l2.v4l2_ep;
-+	struct v4l2_fwnode_endpoint *endpoint =
-+		&csi_dev->bridge.source->endpoint;
- 	struct sun6i_csi_config *config = &csi_dev->config;
- 	unsigned char bus_width;
- 	u32 flags;
-@@ -583,95 +585,11 @@ static const struct media_device_ops sun6i_csi_media_ops = {
- 
- /* V4L2 */
- 
--static int sun6i_csi_link_entity(struct sun6i_csi_device *csi_dev,
--				 struct media_entity *entity,
--				 struct fwnode_handle *fwnode)
-+int sun6i_csi_v4l2_complete(struct sun6i_csi_device *csi_dev)
- {
--	struct media_entity *sink;
--	struct media_pad *sink_pad;
--	int src_pad_index;
--	int ret;
--
--	ret = media_entity_get_fwnode_pad(entity, fwnode, MEDIA_PAD_FL_SOURCE);
--	if (ret < 0) {
--		dev_err(csi_dev->dev,
--			"%s: no source pad in external entity %s\n", __func__,
--			entity->name);
--		return -EINVAL;
--	}
--
--	src_pad_index = ret;
--
--	sink = &csi_dev->video.video_dev.entity;
--	sink_pad = &csi_dev->video.pad;
--
--	dev_dbg(csi_dev->dev, "creating %s:%u -> %s:%u link\n",
--		entity->name, src_pad_index, sink->name, sink_pad->index);
--	ret = media_create_pad_link(entity, src_pad_index, sink,
--				    sink_pad->index,
--				    MEDIA_LNK_FL_ENABLED |
--				    MEDIA_LNK_FL_IMMUTABLE);
--	if (ret < 0) {
--		dev_err(csi_dev->dev, "failed to create %s:%u -> %s:%u link\n",
--			entity->name, src_pad_index,
--			sink->name, sink_pad->index);
--		return ret;
--	}
--
--	return 0;
--}
--
--static int sun6i_subdev_notify_complete(struct v4l2_async_notifier *notifier)
--{
--	struct sun6i_csi_device *csi_dev =
--		container_of(notifier, struct sun6i_csi_device,
--			     v4l2.notifier);
--	struct sun6i_csi_v4l2 *v4l2 = &csi_dev->v4l2;
--	struct v4l2_device *v4l2_dev = &v4l2->v4l2_dev;
--	struct v4l2_subdev *sd;
--	int ret;
--
--	dev_dbg(csi_dev->dev, "notify complete, all subdevs registered\n");
--
--	sd = list_first_entry(&v4l2_dev->subdevs, struct v4l2_subdev, list);
--	if (!sd)
--		return -EINVAL;
--
--	ret = sun6i_csi_link_entity(csi_dev, &sd->entity, sd->fwnode);
--	if (ret < 0)
--		return ret;
--
--	ret = v4l2_device_register_subdev_nodes(v4l2_dev);
--	if (ret < 0)
--		return ret;
--
--	return 0;
--}
--
--static const struct v4l2_async_notifier_operations sun6i_csi_async_ops = {
--	.complete = sun6i_subdev_notify_complete,
--};
--
--static int sun6i_csi_fwnode_parse(struct device *dev,
--				  struct v4l2_fwnode_endpoint *vep,
--				  struct v4l2_async_subdev *asd)
--{
--	struct sun6i_csi_device *csi_dev = dev_get_drvdata(dev);
-+	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
- 
--	if (vep->base.port || vep->base.id) {
--		dev_warn(dev, "Only support a single port with one endpoint\n");
--		return -ENOTCONN;
--	}
--
--	switch (vep->bus_type) {
--	case V4L2_MBUS_PARALLEL:
--	case V4L2_MBUS_BT656:
--		csi_dev->v4l2.v4l2_ep = *vep;
--		return 0;
--	default:
--		dev_err(dev, "Unsupported media bus type\n");
--		return -ENOTCONN;
--	}
-+	return v4l2_device_register_subdev_nodes(v4l2_dev);
- }
- 
- static int sun6i_csi_v4l2_setup(struct sun6i_csi_device *csi_dev)
-@@ -679,7 +597,6 @@ static int sun6i_csi_v4l2_setup(struct sun6i_csi_device *csi_dev)
- 	struct sun6i_csi_v4l2 *v4l2 = &csi_dev->v4l2;
- 	struct media_device *media_dev = &v4l2->media_dev;
- 	struct v4l2_device *v4l2_dev = &v4l2->v4l2_dev;
--	struct v4l2_async_notifier *notifier = &v4l2->notifier;
- 	struct device *dev = csi_dev->dev;
- 	int ret;
- 
-@@ -720,42 +637,8 @@ static int sun6i_csi_v4l2_setup(struct sun6i_csi_device *csi_dev)
- 		goto error_v4l2_ctrl;
- 	}
- 
--	/* Video */
--
--	ret = sun6i_video_setup(csi_dev);
--	if (ret)
--		goto error_v4l2_device;
--
--	/* V4L2 Async */
--
--	v4l2_async_nf_init(notifier);
--	notifier->ops = &sun6i_csi_async_ops;
--
--	ret = v4l2_async_nf_parse_fwnode_endpoints(dev, notifier,
--						   sizeof(struct
--							  v4l2_async_subdev),
--						   sun6i_csi_fwnode_parse);
--	if (ret)
--		goto error_video;
--
--	ret = v4l2_async_nf_register(v4l2_dev, notifier);
--	if (ret) {
--		dev_err(dev, "failed to register v4l2 async notifier: %d\n",
--			ret);
--		goto error_v4l2_async_notifier;
--	}
--
- 	return 0;
- 
--error_v4l2_async_notifier:
--	v4l2_async_nf_cleanup(notifier);
--
--error_video:
--	sun6i_video_cleanup(csi_dev);
--
--error_v4l2_device:
--	v4l2_device_unregister(&v4l2->v4l2_dev);
--
- error_v4l2_ctrl:
- 	v4l2_ctrl_handler_free(&v4l2->ctrl_handler);
- 
-@@ -771,9 +654,6 @@ static void sun6i_csi_v4l2_cleanup(struct sun6i_csi_device *csi_dev)
- 	struct sun6i_csi_v4l2 *v4l2 = &csi_dev->v4l2;
- 
- 	media_device_unregister(&v4l2->media_dev);
--	v4l2_async_nf_unregister(&v4l2->notifier);
--	v4l2_async_nf_cleanup(&v4l2->notifier);
--	sun6i_video_cleanup(csi_dev);
- 	v4l2_device_unregister(&v4l2->v4l2_dev);
- 	v4l2_ctrl_handler_free(&v4l2->ctrl_handler);
- 	media_device_cleanup(&v4l2->media_dev);
-@@ -995,8 +875,22 @@ static int sun6i_csi_probe(struct platform_device *platform_dev)
- 	if (ret)
- 		goto error_resources;
- 
-+	ret = sun6i_csi_bridge_setup(csi_dev);
-+	if (ret)
-+		goto error_v4l2;
-+
-+	ret = sun6i_video_setup(csi_dev);
-+	if (ret)
-+		goto error_bridge;
-+
- 	return 0;
- 
-+error_bridge:
-+	sun6i_csi_bridge_cleanup(csi_dev);
-+
-+error_v4l2:
-+	sun6i_csi_v4l2_cleanup(csi_dev);
-+
- error_resources:
- 	sun6i_csi_resources_cleanup(csi_dev);
- 
-@@ -1007,6 +901,8 @@ static int sun6i_csi_remove(struct platform_device *pdev)
- {
- 	struct sun6i_csi_device *csi_dev = platform_get_drvdata(pdev);
- 
-+	sun6i_video_cleanup(csi_dev);
-+	sun6i_csi_bridge_cleanup(csi_dev);
- 	sun6i_csi_v4l2_cleanup(csi_dev);
- 	sun6i_csi_resources_cleanup(csi_dev);
- 
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
-index 4dd83e57bafa..576c7f10289e 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
-@@ -13,11 +13,16 @@
- #include <media/v4l2-fwnode.h>
- #include <media/videobuf2-v4l2.h>
- 
-+#include "sun6i_csi_bridge.h"
- #include "sun6i_video.h"
- 
- #define SUN6I_CSI_NAME		"sun6i-csi"
- #define SUN6I_CSI_DESCRIPTION	"Allwinner A31 CSI Device"
- 
-+enum sun6i_csi_port {
-+	SUN6I_CSI_PORT_PARALLEL		= 0,
-+};
-+
- struct sun6i_csi_buffer {
- 	struct vb2_v4l2_buffer		v4l2_buffer;
- 	struct list_head		list;
-@@ -46,10 +51,6 @@ struct sun6i_csi_v4l2 {
- 	struct v4l2_device		v4l2_dev;
- 	struct v4l2_ctrl_handler	ctrl_handler;
- 	struct media_device		media_dev;
--
--	struct v4l2_async_notifier	notifier;
--	/* video port settings */
--	struct v4l2_fwnode_endpoint	v4l2_ep;
- };
- 
- struct sun6i_csi_device {
-@@ -57,6 +58,7 @@ struct sun6i_csi_device {
- 
- 	struct sun6i_csi_config		config;
- 	struct sun6i_csi_v4l2		v4l2;
-+	struct sun6i_csi_bridge		bridge;
- 	struct sun6i_video		video;
- 
- 	struct regmap			*regmap;
-@@ -156,4 +158,6 @@ static inline int sun6i_csi_get_bpp(unsigned int pixformat)
- 	return 0;
- }
- 
-+int sun6i_csi_v4l2_complete(struct sun6i_csi_device *csi_dev);
-+
- #endif /* __SUN6I_CSI_H__ */
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c
-new file mode 100644
-index 000000000000..74706d883359
---- /dev/null
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c
-@@ -0,0 +1,473 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2021-2022 Bootlin
-+ * Author: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-+ */
-+
-+#include <linux/pm_runtime.h>
-+#include <linux/regmap.h>
-+#include <media/v4l2-device.h>
-+#include <media/v4l2-fwnode.h>
-+
-+#include "sun6i_csi.h"
-+#include "sun6i_csi_bridge.h"
-+
-+/* Format */
-+
-+static const u32 sun6i_csi_bridge_mbus_codes[] = {
-+	/* Bayer */
-+	MEDIA_BUS_FMT_SBGGR8_1X8,
-+	MEDIA_BUS_FMT_SGBRG8_1X8,
-+	MEDIA_BUS_FMT_SGRBG8_1X8,
-+	MEDIA_BUS_FMT_SRGGB8_1X8,
-+	MEDIA_BUS_FMT_SBGGR10_1X10,
-+	MEDIA_BUS_FMT_SGBRG10_1X10,
-+	MEDIA_BUS_FMT_SGRBG10_1X10,
-+	MEDIA_BUS_FMT_SRGGB10_1X10,
-+	MEDIA_BUS_FMT_SBGGR12_1X12,
-+	MEDIA_BUS_FMT_SGBRG12_1X12,
-+	MEDIA_BUS_FMT_SGRBG12_1X12,
-+	MEDIA_BUS_FMT_SRGGB12_1X12,
-+	/* RGB */
-+	MEDIA_BUS_FMT_RGB565_2X8_LE,
-+	MEDIA_BUS_FMT_RGB565_2X8_BE,
-+	/* YUV422 */
-+	MEDIA_BUS_FMT_YUYV8_2X8,
-+	MEDIA_BUS_FMT_UYVY8_2X8,
-+	MEDIA_BUS_FMT_YVYU8_2X8,
-+	MEDIA_BUS_FMT_UYVY8_2X8,
-+	MEDIA_BUS_FMT_VYUY8_2X8,
-+	MEDIA_BUS_FMT_YUYV8_1X16,
-+	MEDIA_BUS_FMT_UYVY8_1X16,
-+	MEDIA_BUS_FMT_YVYU8_1X16,
-+	MEDIA_BUS_FMT_UYVY8_1X16,
-+	MEDIA_BUS_FMT_VYUY8_1X16,
-+	/* Compressed */
-+	MEDIA_BUS_FMT_JPEG_1X8,
-+};
-+
-+static bool sun6i_csi_bridge_mbus_code_check(u32 mbus_code)
-+{
-+	unsigned int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(sun6i_csi_bridge_mbus_codes); i++)
-+		if (sun6i_csi_bridge_mbus_codes[i] == mbus_code)
-+			return true;
-+
-+	return false;
-+}
-+
-+/* V4L2 Subdev */
-+
-+static int sun6i_csi_bridge_s_stream(struct v4l2_subdev *subdev, int on)
-+{
-+	struct sun6i_csi_device *csi_dev = v4l2_get_subdevdata(subdev);
-+	struct v4l2_subdev *source_subdev;
-+	/* Initialize to 0 to use both in disable label (ret != 0) and off. */
-+	int ret = 0;
-+
-+	/* Source */
-+
-+	if (!csi_dev->bridge.source)
-+		return -ENODEV;
-+
-+	source_subdev = csi_dev->bridge.source->subdev;
-+
-+	if (!on) {
-+		v4l2_subdev_call(source_subdev, video, s_stream, 0);
-+		goto disable;
-+	}
-+
-+	ret = v4l2_subdev_call(source_subdev, video, s_stream, 1);
-+	if (ret && ret != -ENOIOCTLCMD)
-+		goto disable;
-+
-+	return 0;
-+
-+disable:
-+	csi_dev->bridge.source = NULL;
-+
-+	return ret;
-+}
-+
-+static const struct v4l2_subdev_video_ops sun6i_csi_bridge_video_ops = {
-+	.s_stream	= sun6i_csi_bridge_s_stream,
-+};
-+
-+static void
-+sun6i_csi_bridge_mbus_format_prepare(struct v4l2_mbus_framefmt *mbus_format)
-+{
-+	if (!sun6i_csi_bridge_mbus_code_check(mbus_format->code))
-+		mbus_format->code = sun6i_csi_bridge_mbus_codes[0];
-+
-+	mbus_format->field = V4L2_FIELD_NONE;
-+	mbus_format->colorspace = V4L2_COLORSPACE_RAW;
-+	mbus_format->quantization = V4L2_QUANTIZATION_DEFAULT;
-+	mbus_format->xfer_func = V4L2_XFER_FUNC_DEFAULT;
-+}
-+
-+static int sun6i_csi_bridge_init_cfg(struct v4l2_subdev *subdev,
-+				     struct v4l2_subdev_state *state)
-+{
-+	unsigned int pad = SUN6I_CSI_BRIDGE_PAD_SINK;
-+	struct v4l2_mbus_framefmt *mbus_format =
-+		v4l2_subdev_get_try_format(subdev, state, pad);
-+
-+	mbus_format->code = sun6i_csi_bridge_mbus_codes[0];
-+	mbus_format->width = 1280;
-+	mbus_format->height = 720;
-+
-+	sun6i_csi_bridge_mbus_format_prepare(mbus_format);
-+
-+	return 0;
-+}
-+
-+static int
-+sun6i_csi_bridge_enum_mbus_code(struct v4l2_subdev *subdev,
-+				struct v4l2_subdev_state *state,
-+				struct v4l2_subdev_mbus_code_enum *code_enum)
-+{
-+	if (code_enum->index >= ARRAY_SIZE(sun6i_csi_bridge_mbus_codes))
-+		return -EINVAL;
-+
-+	code_enum->code = sun6i_csi_bridge_mbus_codes[code_enum->index];
-+
-+	return 0;
-+}
-+
-+static int sun6i_csi_bridge_get_fmt(struct v4l2_subdev *subdev,
-+				    struct v4l2_subdev_state *state,
-+				    struct v4l2_subdev_format *format)
-+{
-+	struct sun6i_csi_device *csi_dev = v4l2_get_subdevdata(subdev);
-+	struct v4l2_mbus_framefmt *mbus_format = &format->format;
-+
-+	if (format->which == V4L2_SUBDEV_FORMAT_TRY)
-+		*mbus_format = *v4l2_subdev_get_try_format(subdev, state,
-+							   format->pad);
-+	else
-+		*mbus_format = csi_dev->bridge.mbus_format;
-+
-+	return 0;
-+}
-+
-+static int sun6i_csi_bridge_set_fmt(struct v4l2_subdev *subdev,
-+				    struct v4l2_subdev_state *state,
-+				    struct v4l2_subdev_format *format)
-+{
-+	struct sun6i_csi_device *csi_dev = v4l2_get_subdevdata(subdev);
-+	struct v4l2_mbus_framefmt *mbus_format = &format->format;
-+
-+	sun6i_csi_bridge_mbus_format_prepare(mbus_format);
-+
-+	if (format->which == V4L2_SUBDEV_FORMAT_TRY)
-+		*v4l2_subdev_get_try_format(subdev, state, format->pad) =
-+			*mbus_format;
-+	else
-+		csi_dev->bridge.mbus_format = *mbus_format;
-+
-+	return 0;
-+}
-+
-+static const struct v4l2_subdev_pad_ops sun6i_csi_bridge_pad_ops = {
-+	.init_cfg	= sun6i_csi_bridge_init_cfg,
-+	.enum_mbus_code	= sun6i_csi_bridge_enum_mbus_code,
-+	.get_fmt	= sun6i_csi_bridge_get_fmt,
-+	.set_fmt	= sun6i_csi_bridge_set_fmt,
-+};
-+
-+const struct v4l2_subdev_ops sun6i_csi_bridge_subdev_ops = {
-+	.video	= &sun6i_csi_bridge_video_ops,
-+	.pad	= &sun6i_csi_bridge_pad_ops,
-+};
-+
-+/* Media Entity */
-+
-+static int sun6i_csi_bridge_link_validate(struct media_link *link)
-+{
-+	struct v4l2_subdev *subdev =
-+		media_entity_to_v4l2_subdev(link->sink->entity);
-+	struct sun6i_csi_device *csi_dev = v4l2_get_subdevdata(subdev);
-+	struct sun6i_csi_bridge *bridge = &csi_dev->bridge;
-+	struct device *dev = csi_dev->dev;
-+	struct v4l2_subdev *source_subdev =
-+		media_entity_to_v4l2_subdev(link->source->entity);
-+	int ret;
-+
-+	/* Only support one enabled source at a time. */
-+	if (bridge->source) {
-+		dev_err(dev, "multiple sources are connected to the bridge\n");
-+		return -EBUSY;
-+	}
-+
-+	ret = v4l2_subdev_link_validate(link);
-+	if (ret)
-+		return ret;
-+
-+	if (source_subdev == bridge->source_parallel.subdev)
-+		bridge->source = &bridge->source_parallel;
-+	else
-+		return -EINVAL;
-+
-+	return 0;
-+}
-+
-+static const struct media_entity_operations sun6i_csi_bridge_entity_ops = {
-+	.link_validate	= sun6i_csi_bridge_link_validate,
-+};
-+
-+/* V4L2 Async */
-+
-+static int sun6i_csi_bridge_link(struct sun6i_csi_device *csi_dev,
-+				 int sink_pad_index,
-+				 struct v4l2_subdev *remote_subdev,
-+				 bool enabled)
-+{
-+	struct device *dev = csi_dev->dev;
-+	struct v4l2_subdev *subdev = &csi_dev->bridge.subdev;
-+	struct media_entity *sink_entity = &subdev->entity;
-+	struct media_entity *source_entity = &remote_subdev->entity;
-+	int source_pad_index;
-+	int ret;
-+
-+	/* Get the first remote source pad. */
-+	ret = media_entity_get_fwnode_pad(source_entity, remote_subdev->fwnode,
-+					  MEDIA_PAD_FL_SOURCE);
-+	if (ret < 0) {
-+		dev_err(dev, "missing source pad in external entity %s\n",
-+			source_entity->name);
-+		return -EINVAL;
-+	}
-+
-+	source_pad_index = ret;
-+
-+	dev_dbg(dev, "creating %s:%u -> %s:%u link\n", source_entity->name,
-+		source_pad_index, sink_entity->name, sink_pad_index);
-+
-+	ret = media_create_pad_link(source_entity, source_pad_index,
-+				    sink_entity, sink_pad_index,
-+				    enabled ? MEDIA_LNK_FL_ENABLED : 0);
-+	if (ret < 0) {
-+		dev_err(dev, "failed to create %s:%u -> %s:%u link\n",
-+			source_entity->name, source_pad_index,
-+			sink_entity->name, sink_pad_index);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int
-+sun6i_csi_bridge_notifier_bound(struct v4l2_async_notifier *notifier,
-+				struct v4l2_subdev *remote_subdev,
-+				struct v4l2_async_subdev *async_subdev)
-+{
-+	struct sun6i_csi_device *csi_dev =
-+		container_of(notifier, struct sun6i_csi_device,
-+			     bridge.notifier);
-+	struct sun6i_csi_bridge *bridge = &csi_dev->bridge;
-+	struct sun6i_csi_bridge_source *source = NULL;
-+	struct fwnode_handle *fwnode = dev_fwnode(csi_dev->dev);
-+	struct fwnode_handle *handle = NULL;
-+	bool enabled;
-+	int ret;
-+
-+	while ((handle = fwnode_graph_get_next_endpoint(fwnode, handle))) {
-+		struct fwnode_endpoint endpoint = { 0 };
-+		struct fwnode_handle *remote_fwnode;
-+
-+		remote_fwnode = fwnode_graph_get_remote_port_parent(handle);
-+		if (!remote_fwnode)
-+			continue;
-+
-+		if (remote_fwnode != remote_subdev->fwnode)
-+			goto next;
-+
-+		ret = fwnode_graph_parse_endpoint(handle, &endpoint);
-+		if (ret < 0)
-+			goto next;
-+
-+		switch (endpoint.port) {
-+		case SUN6I_CSI_PORT_PARALLEL:
-+			source = &bridge->source_parallel;
-+			enabled = true;
-+			break;
-+		default:
-+			break;
-+		}
-+
-+next:
-+		fwnode_handle_put(remote_fwnode);
-+	}
-+
-+	if (!source)
-+		return -EINVAL;
-+
-+	source->subdev = remote_subdev;
-+
-+	return sun6i_csi_bridge_link(csi_dev, SUN6I_CSI_BRIDGE_PAD_SINK,
-+				     remote_subdev, enabled);
-+}
-+
-+static int
-+sun6i_csi_bridge_notifier_complete(struct v4l2_async_notifier *notifier)
-+{
-+	struct sun6i_csi_device *csi_dev =
-+		container_of(notifier, struct sun6i_csi_device,
-+			     bridge.notifier);
-+
-+	return sun6i_csi_v4l2_complete(csi_dev);
-+}
-+
-+static const struct v4l2_async_notifier_operations
-+sun6i_csi_bridge_notifier_ops = {
-+	.bound		= sun6i_csi_bridge_notifier_bound,
-+	.complete	= sun6i_csi_bridge_notifier_complete,
-+};
-+
-+/* Bridge */
-+
-+static int sun6i_csi_bridge_source_setup(struct sun6i_csi_device *csi_dev,
-+					 struct sun6i_csi_bridge_source *source,
-+					 u32 port,
-+					 enum v4l2_mbus_type *bus_types)
-+{
-+	struct device *dev = csi_dev->dev;
-+	struct v4l2_async_notifier *notifier = &csi_dev->bridge.notifier;
-+	struct v4l2_fwnode_endpoint *endpoint = &source->endpoint;
-+	struct v4l2_async_subdev *async_subdev;
-+	struct fwnode_handle *handle;
-+	int ret;
-+
-+	handle = fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), port, 0, 0);
-+	if (!handle)
-+		return -ENODEV;
-+
-+	ret = v4l2_fwnode_endpoint_parse(handle, endpoint);
-+	if (ret)
-+		goto complete;
-+
-+	if (bus_types) {
-+		bool valid = false;
-+		unsigned int i;
-+
-+		for (i = 0; bus_types[i] != V4L2_MBUS_INVALID; i++) {
-+			if (endpoint->bus_type == bus_types[i]) {
-+				valid = true;
-+				break;
-+			}
-+		}
-+
-+		if (!valid) {
-+			dev_err(dev, "unsupported bus type for port %d\n",
-+				port);
-+			ret = -EINVAL;
-+			goto complete;
-+		}
-+	}
-+
-+	async_subdev = v4l2_async_nf_add_fwnode_remote(notifier, handle,
-+		struct v4l2_async_subdev);
-+	if (IS_ERR(async_subdev)) {
-+		ret = PTR_ERR(async_subdev);
-+		goto complete;
-+	}
-+
-+	source->expected = true;
-+
-+complete:
-+	fwnode_handle_put(handle);
-+
-+	return ret;
-+}
-+
-+int sun6i_csi_bridge_setup(struct sun6i_csi_device *csi_dev)
-+{
-+	struct device *dev = csi_dev->dev;
-+	struct sun6i_csi_bridge *bridge = &csi_dev->bridge;
-+	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
-+	struct v4l2_subdev *subdev = &bridge->subdev;
-+	struct v4l2_async_notifier *notifier = &bridge->notifier;
-+	struct media_pad *pads = bridge->pads;
-+	enum v4l2_mbus_type parallel_mbus_types[] = {
-+		V4L2_MBUS_PARALLEL,
-+		V4L2_MBUS_BT656,
-+		V4L2_MBUS_INVALID
-+	};
-+	int ret;
-+
-+	/* V4L2 Subdev */
-+
-+	v4l2_subdev_init(subdev, &sun6i_csi_bridge_subdev_ops);
-+	strscpy(subdev->name, SUN6I_CSI_BRIDGE_NAME, sizeof(subdev->name));
-+	subdev->flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-+	subdev->owner = THIS_MODULE;
-+	subdev->dev = dev;
-+
-+	v4l2_set_subdevdata(subdev, csi_dev);
-+
-+	/* Media Entity */
-+
-+	subdev->entity.function = MEDIA_ENT_F_VID_IF_BRIDGE;
-+	subdev->entity.ops = &sun6i_csi_bridge_entity_ops;
-+
-+	/* Media Pads */
-+
-+	pads[SUN6I_CSI_BRIDGE_PAD_SINK].flags = MEDIA_PAD_FL_SINK;
-+	pads[SUN6I_CSI_BRIDGE_PAD_SOURCE].flags = MEDIA_PAD_FL_SOURCE |
-+						  MEDIA_PAD_FL_MUST_CONNECT;
-+
-+	ret = media_entity_pads_init(&subdev->entity,
-+				     SUN6I_CSI_BRIDGE_PAD_COUNT, pads);
-+	if (ret < 0)
-+		return ret;
-+
-+	/* V4L2 Subdev */
-+
-+	ret = v4l2_device_register_subdev(v4l2_dev, subdev);
-+	if (ret) {
-+		dev_err(dev, "failed to register v4l2 subdev: %d\n", ret);
-+		goto error_media_entity;
-+	}
-+
-+	/* V4L2 Async */
-+
-+	v4l2_async_nf_init(notifier);
-+	notifier->ops = &sun6i_csi_bridge_notifier_ops;
-+
-+	sun6i_csi_bridge_source_setup(csi_dev, &bridge->source_parallel,
-+				      SUN6I_CSI_PORT_PARALLEL,
-+				      parallel_mbus_types);
-+
-+	ret = v4l2_async_nf_register(v4l2_dev, notifier);
-+	if (ret) {
-+		dev_err(dev, "failed to register v4l2 async notifier: %d\n",
-+			ret);
-+		goto error_v4l2_async_notifier;
-+	}
-+
-+	return 0;
-+
-+error_v4l2_async_notifier:
-+	v4l2_async_nf_cleanup(notifier);
-+
-+	v4l2_device_unregister_subdev(subdev);
-+
-+error_media_entity:
-+	media_entity_cleanup(&subdev->entity);
-+
-+	return ret;
-+}
-+
-+void sun6i_csi_bridge_cleanup(struct sun6i_csi_device *csi_dev)
-+{
-+	struct v4l2_subdev *subdev = &csi_dev->bridge.subdev;
-+	struct v4l2_async_notifier *notifier = &csi_dev->bridge.notifier;
-+
-+	v4l2_async_nf_unregister(notifier);
-+	v4l2_async_nf_cleanup(notifier);
-+
-+	v4l2_device_unregister_subdev(subdev);
-+
-+	media_entity_cleanup(&subdev->entity);
-+}
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.h
-new file mode 100644
-index 000000000000..2ee7878102b6
---- /dev/null
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.h
-@@ -0,0 +1,44 @@
-+/* SPDX-License-Identifier: GPL-2.0+ */
-+/*
-+ * Copyright 2021 Bootlin
-+ * Author: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-+ */
-+
-+#ifndef _SUN6I_CSI_BRIDGE_H_
-+#define _SUN6I_CSI_BRIDGE_H_
-+
-+#include <media/v4l2-device.h>
-+#include <media/v4l2-fwnode.h>
-+
-+#define SUN6I_CSI_BRIDGE_NAME	"sun6i-csi-bridge"
-+
-+enum sun6i_csi_bridge_pad {
-+	SUN6I_CSI_BRIDGE_PAD_SINK	= 0,
-+	SUN6I_CSI_BRIDGE_PAD_SOURCE	= 1,
-+	SUN6I_CSI_BRIDGE_PAD_COUNT	= 2,
-+};
-+
-+struct sun6i_csi_device;
-+
-+struct sun6i_csi_bridge_source {
-+	struct v4l2_subdev		*subdev;
-+	struct v4l2_fwnode_endpoint	endpoint;
-+	bool				expected;
-+};
-+
-+struct sun6i_csi_bridge {
-+	struct v4l2_subdev		subdev;
-+	struct v4l2_async_notifier	notifier;
-+	struct media_pad		pads[2];
-+	struct v4l2_mbus_framefmt	mbus_format;
-+
-+	struct sun6i_csi_bridge_source	source_parallel;
-+	struct sun6i_csi_bridge_source	*source;
-+};
-+
-+/* Bridge */
-+
-+int sun6i_csi_bridge_setup(struct sun6i_csi_device *csi_dev);
-+void sun6i_csi_bridge_cleanup(struct sun6i_csi_device *csi_dev);
-+
-+#endif
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-index d32ff6b81f8a..fa5bf3697ace 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-@@ -632,6 +632,7 @@ int sun6i_video_setup(struct sun6i_csi_device *csi_dev)
- {
- 	struct sun6i_video *video = &csi_dev->video;
- 	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
-+	struct v4l2_subdev *bridge_subdev = &csi_dev->bridge.subdev;
- 	struct video_device *video_dev = &video->video_dev;
- 	struct vb2_queue *queue = &video->queue;
- 	struct media_pad *pad = &video->pad;
-@@ -715,8 +716,26 @@ int sun6i_video_setup(struct sun6i_csi_device *csi_dev)
- 	v4l2_info(v4l2_dev, "device %s registered as %s\n", video_dev->name,
- 		  video_device_node_name(video_dev));
- 
-+	/* Media Pad Link */
-+
-+	ret = media_create_pad_link(&bridge_subdev->entity,
-+				    SUN6I_CSI_BRIDGE_PAD_SOURCE,
-+				    &video_dev->entity, 0,
-+				    MEDIA_LNK_FL_ENABLED |
-+				    MEDIA_LNK_FL_IMMUTABLE);
-+	if (ret < 0) {
-+		v4l2_err(v4l2_dev, "failed to create %s:%u -> %s:%u link\n",
-+			 bridge_subdev->entity.name,
-+			 SUN6I_CSI_BRIDGE_PAD_SOURCE,
-+			 video_dev->entity.name, 0);
-+		goto error_video_device;
-+	}
-+
- 	return 0;
- 
-+error_video_device:
-+	vb2_video_unregister_device(video_dev);
-+
- error_media_entity:
- 	media_entity_cleanup(&video_dev->entity);
- 
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhpcyBpbnRyb2R1Y2VzIGEgbmV3IHN0YXRlIHN0cnVjdHVyZSBhbmQgYXNzb2NpYXRlZCBoZWxw
+ZXJzIGZvcgpjYXB0dXJlLCB3aGljaCBoYW5kbGVzIHRoZSBidWZmZXIgcXVldWUgYW5kIHN0YXRl
+IGZvciBlYWNoIHN1Ym1pdHRlZApidWZmZXIuCgpCZXNpZGVzIGZyb20gdGhlIGNvZGUgcmVmYWN0
+b3JpbmcsIHRoaXMgY2hhbmdlcyB0aGUgcGFnZSBmbGlwIHBvaW50CnRvIHZzeW5jIGluc3RlYWQg
+b2YgZnJhbWUgZG9uZSwgd2hpY2ggYWxsb3dzIHdvcmtpbmcgd2l0aCBvbmx5CnR3byBidWZmZXJz
+IHdpdGhvdXQgbG9zaW5nIGZyYW1lcy4gVGhpcyBpcyBhcHBhcmVudGx5IGEgbW9yZQphcHByb3By
+aWF0ZSB0aGluZyB0byBkbyB3aXRoIHRoaXMgY29udHJvbGxlci4KClNpZ25lZC1vZmYtYnk6IFBh
+dWwgS29jaWFsa293c2tpIDxwYXVsLmtvY2lhbGtvd3NraUBib290bGluLmNvbT4KLS0tCiAuLi4v
+cGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5jICAgICAgfCAgIDQgKwogLi4uL3Bs
+YXRmb3JtL3N1bnhpL3N1bjZpLWNzaS9zdW42aV9jc2kuaCAgICAgIHwgICAzIC0KIC4uLi9zdW54
+aS9zdW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuYyAgICAgICB8IDI1OSArKysrKysrKysrLS0t
+LS0tLS0KIC4uLi9zdW54aS9zdW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuaCAgICAgICB8ICAy
+MyArLQogNCBmaWxlcyBjaGFuZ2VkLCAxNjUgaW5zZXJ0aW9ucygrKSwgMTI0IGRlbGV0aW9ucygt
+KQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1
+bjZpX2NzaS5jIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1jc2kvc3VuNmlf
+Y3NpLmMKaW5kZXggODM0ZmM4YzE3MTg5Li4xYjU5OTVlNjhiZTUgMTAwNjQ0Ci0tLSBhL2RyaXZl
+cnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5jCisrKyBiL2RyaXZl
+cnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5jCkBAIC01NjYsNiAr
+NTY2LDcgQEAgdm9pZCBzdW42aV9jc2lfc2V0X3N0cmVhbShzdHJ1Y3Qgc3VuNmlfY3NpX2Rldmlj
+ZSAqY3NpX2RldiwgYm9vbCBlbmFibGUpCiAKIAlyZWdtYXBfd3JpdGUocmVnbWFwLCBDU0lfQ0hf
+SU5UX1NUQV9SRUcsIDB4RkYpOwogCXJlZ21hcF93cml0ZShyZWdtYXAsIENTSV9DSF9JTlRfRU5f
+UkVHLAorCQkgICAgIENTSV9DSF9JTlRfRU5fVlNfSU5UX0VOIHwKIAkJICAgICBDU0lfQ0hfSU5U
+X0VOX0hCX09GX0lOVF9FTiB8CiAJCSAgICAgQ1NJX0NIX0lOVF9FTl9GSUZPMl9PRl9JTlRfRU4g
+fAogCQkgICAgIENTSV9DSF9JTlRfRU5fRklGTzFfT0ZfSU5UX0VOIHwKQEAgLTY4Niw2ICs2ODcs
+OSBAQCBzdGF0aWMgaXJxcmV0dXJuX3Qgc3VuNmlfY3NpX2lzcihpbnQgaXJxLCB2b2lkICpwcml2
+YXRlKQogCWlmIChzdGF0dXMgJiBDU0lfQ0hfSU5UX1NUQV9GRF9QRCkKIAkJc3VuNmlfY3NpX2Nh
+cHR1cmVfZnJhbWVfZG9uZShjc2lfZGV2KTsKIAorCWlmIChzdGF0dXMgJiBDU0lfQ0hfSU5UX1NU
+QV9WU19QRCkKKwkJc3VuNmlfY3NpX2NhcHR1cmVfc3luYyhjc2lfZGV2KTsKKwogCXJlZ21hcF93
+cml0ZShyZWdtYXAsIENTSV9DSF9JTlRfU1RBX1JFRywgc3RhdHVzKTsKIAogCXJldHVybiBJUlFf
+SEFORExFRDsKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmkt
+Y3NpL3N1bjZpX2NzaS5oIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1jc2kv
+c3VuNmlfY3NpLmgKaW5kZXggYTUzYzk4NTA3ZjM3Li43NDFjYWNhYTQzZTEgMTAwNjQ0Ci0tLSBh
+L2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5oCisrKyBi
+L2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZpX2NzaS5oCkBAIC0y
+Niw5ICsyNiw2IEBAIGVudW0gc3VuNmlfY3NpX3BvcnQgewogc3RydWN0IHN1bjZpX2NzaV9idWZm
+ZXIgewogCXN0cnVjdCB2YjJfdjRsMl9idWZmZXIJCXY0bDJfYnVmZmVyOwogCXN0cnVjdCBsaXN0
+X2hlYWQJCWxpc3Q7Ci0KLQlkbWFfYWRkcl90CQkJZG1hX2FkZHI7Ci0JYm9vbAkJCQlxdWV1ZWRf
+dG9fY3NpOwogfTsKIAogLyoqCmRpZmYgLS1naXQgYS9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3N1
+bnhpL3N1bjZpLWNzaS9zdW42aV9jc2lfY2FwdHVyZS5jIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9y
+bS9zdW54aS9zdW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuYwppbmRleCAxZWJjMmQ4MjU4Mzgu
+LmJjYmI0ZmZiYjUxNyAxMDA2NDQKLS0tIGEvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9z
+dW42aS1jc2kvc3VuNmlfY3NpX2NhcHR1cmUuYworKysgYi9kcml2ZXJzL21lZGlhL3BsYXRmb3Jt
+L3N1bnhpL3N1bjZpLWNzaS9zdW42aV9jc2lfY2FwdHVyZS5jCkBAIC05MCw4ICs5MCwxMyBAQCBz
+dGF0aWMgdm9pZAogc3VuNmlfY3NpX2NhcHR1cmVfYnVmZmVyX2NvbmZpZ3VyZShzdHJ1Y3Qgc3Vu
+NmlfY3NpX2RldmljZSAqY3NpX2RldiwKIAkJCQkgICBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciAq
+Y3NpX2J1ZmZlcikKIHsKLQljc2lfYnVmZmVyLT5xdWV1ZWRfdG9fY3NpID0gdHJ1ZTsKLQlzdW42
+aV9jc2lfdXBkYXRlX2J1Zl9hZGRyKGNzaV9kZXYsIGNzaV9idWZmZXItPmRtYV9hZGRyKTsKKwlz
+dHJ1Y3QgdmIyX2J1ZmZlciAqdmIyX2J1ZmZlcjsKKwlkbWFfYWRkcl90IGFkZHJlc3M7CisKKwl2
+YjJfYnVmZmVyID0gJmNzaV9idWZmZXItPnY0bDJfYnVmZmVyLnZiMl9idWY7CisJYWRkcmVzcyA9
+IHZiMl9kbWFfY29udGlnX3BsYW5lX2RtYV9hZGRyKHZiMl9idWZmZXIsIDApOworCisJc3VuNmlf
+Y3NpX3VwZGF0ZV9idWZfYWRkcihjc2lfZGV2LCBhZGRyZXNzKTsKIH0KIAogc3RhdGljIHZvaWQg
+c3VuNmlfY3NpX2NhcHR1cmVfY29uZmlndXJlKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lf
+ZGV2KQpAQCAtMTA4LDYgKzExMywxMTkgQEAgc3RhdGljIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVf
+Y29uZmlndXJlKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQogCXN1bjZpX2NzaV91
+cGRhdGVfY29uZmlnKGNzaV9kZXYsICZjb25maWcpOwogfQogCisvKiBTdGF0ZSAqLworCitzdGF0
+aWMgdm9pZCBzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZV9jbGVhbnVwKHN0cnVjdCBzdW42aV9jc2lf
+ZGV2aWNlICpjc2lfZGV2LAorCQkJCQkgICAgYm9vbCBlcnJvcikKK3sKKwlzdHJ1Y3Qgc3VuNmlf
+Y3NpX2NhcHR1cmVfc3RhdGUgKnN0YXRlID0gJmNzaV9kZXYtPmNhcHR1cmUuc3RhdGU7CisJc3Ry
+dWN0IHN1bjZpX2NzaV9idWZmZXIgKipjc2lfYnVmZmVyX3N0YXRlc1tdID0geworCQkmc3RhdGUt
+PnBlbmRpbmcsICZzdGF0ZS0+Y3VycmVudCwgJnN0YXRlLT5jb21wbGV0ZSwKKwl9OworCXN0cnVj
+dCBzdW42aV9jc2lfYnVmZmVyICpjc2lfYnVmZmVyOworCXN0cnVjdCB2YjJfYnVmZmVyICp2YjJf
+YnVmZmVyOworCXVuc2lnbmVkIGxvbmcgZmxhZ3M7CisJdW5zaWduZWQgaW50IGk7CisKKwlzcGlu
+X2xvY2tfaXJxc2F2ZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsKKworCWZvciAoaSA9IDA7IGkgPCBB
+UlJBWV9TSVpFKGNzaV9idWZmZXJfc3RhdGVzKTsgaSsrKSB7CisJCWNzaV9idWZmZXIgPSAqY3Np
+X2J1ZmZlcl9zdGF0ZXNbaV07CisJCWlmICghY3NpX2J1ZmZlcikKKwkJCWNvbnRpbnVlOworCisJ
+CXZiMl9idWZmZXIgPSAmY3NpX2J1ZmZlci0+djRsMl9idWZmZXIudmIyX2J1ZjsKKwkJdmIyX2J1
+ZmZlcl9kb25lKHZiMl9idWZmZXIsIGVycm9yID8gVkIyX0JVRl9TVEFURV9FUlJPUiA6CisJCQkJ
+VkIyX0JVRl9TVEFURV9RVUVVRUQpOworCisJCSpjc2lfYnVmZmVyX3N0YXRlc1tpXSA9IE5VTEw7
+CisJfQorCisJbGlzdF9mb3JfZWFjaF9lbnRyeShjc2lfYnVmZmVyLCAmc3RhdGUtPnF1ZXVlLCBs
+aXN0KSB7CisJCXZiMl9idWZmZXIgPSAmY3NpX2J1ZmZlci0+djRsMl9idWZmZXIudmIyX2J1ZjsK
+KwkJdmIyX2J1ZmZlcl9kb25lKHZiMl9idWZmZXIsIGVycm9yID8gVkIyX0JVRl9TVEFURV9FUlJP
+UiA6CisJCQkJVkIyX0JVRl9TVEFURV9RVUVVRUQpOworCX0KKworCUlOSVRfTElTVF9IRUFEKCZz
+dGF0ZS0+cXVldWUpOworCisJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmc3RhdGUtPmxvY2ssIGZs
+YWdzKTsKK30KKworc3RhdGljIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfc3RhdGVfdXBkYXRlKHN0
+cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQoreworCXN0cnVjdCBzdW42aV9jc2lfY2Fw
+dHVyZV9zdGF0ZSAqc3RhdGUgPSAmY3NpX2Rldi0+Y2FwdHVyZS5zdGF0ZTsKKwlzdHJ1Y3Qgc3Vu
+NmlfY3NpX2J1ZmZlciAqY3NpX2J1ZmZlcjsKKwl1bnNpZ25lZCBsb25nIGZsYWdzOworCisJc3Bp
+bl9sb2NrX2lycXNhdmUoJnN0YXRlLT5sb2NrLCBmbGFncyk7CisKKwlpZiAobGlzdF9lbXB0eSgm
+c3RhdGUtPnF1ZXVlKSkKKwkJZ290byBjb21wbGV0ZTsKKworCWlmIChzdGF0ZS0+cGVuZGluZykK
+KwkJZ290byBjb21wbGV0ZTsKKworCWNzaV9idWZmZXIgPSBsaXN0X2ZpcnN0X2VudHJ5KCZzdGF0
+ZS0+cXVldWUsIHN0cnVjdCBzdW42aV9jc2lfYnVmZmVyLAorCQkJCSAgICAgIGxpc3QpOworCisJ
+c3VuNmlfY3NpX2NhcHR1cmVfYnVmZmVyX2NvbmZpZ3VyZShjc2lfZGV2LCBjc2lfYnVmZmVyKTsK
+KworCWxpc3RfZGVsKCZjc2lfYnVmZmVyLT5saXN0KTsKKworCXN0YXRlLT5wZW5kaW5nID0gY3Np
+X2J1ZmZlcjsKKworY29tcGxldGU6CisJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmc3RhdGUtPmxv
+Y2ssIGZsYWdzKTsKK30KKworc3RhdGljIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfc3RhdGVfY29t
+cGxldGUoc3RydWN0IHN1bjZpX2NzaV9kZXZpY2UgKmNzaV9kZXYpCit7CisJc3RydWN0IHN1bjZp
+X2NzaV9jYXB0dXJlX3N0YXRlICpzdGF0ZSA9ICZjc2lfZGV2LT5jYXB0dXJlLnN0YXRlOworCXVu
+c2lnbmVkIGxvbmcgZmxhZ3M7CisKKwlzcGluX2xvY2tfaXJxc2F2ZSgmc3RhdGUtPmxvY2ssIGZs
+YWdzKTsKKworCWlmICghc3RhdGUtPnBlbmRpbmcpCisJCWdvdG8gY29tcGxldGU7CisKKwlzdGF0
+ZS0+Y29tcGxldGUgPSBzdGF0ZS0+Y3VycmVudDsKKwlzdGF0ZS0+Y3VycmVudCA9IHN0YXRlLT5w
+ZW5kaW5nOworCXN0YXRlLT5wZW5kaW5nID0gTlVMTDsKKworCWlmIChzdGF0ZS0+Y29tcGxldGUp
+IHsKKwkJc3RydWN0IHN1bjZpX2NzaV9idWZmZXIgKmNzaV9idWZmZXIgPSBzdGF0ZS0+Y29tcGxl
+dGU7CisJCXN0cnVjdCB2YjJfYnVmZmVyICp2YjJfYnVmZmVyID0KKwkJCSZjc2lfYnVmZmVyLT52
+NGwyX2J1ZmZlci52YjJfYnVmOworCisJCXZiMl9idWZmZXItPnRpbWVzdGFtcCA9IGt0aW1lX2dl
+dF9ucygpOworCQljc2lfYnVmZmVyLT52NGwyX2J1ZmZlci5zZXF1ZW5jZSA9IHN0YXRlLT5zZXF1
+ZW5jZTsKKworCQl2YjJfYnVmZmVyX2RvbmUodmIyX2J1ZmZlciwgVkIyX0JVRl9TVEFURV9ET05F
+KTsKKworCQlzdGF0ZS0+Y29tcGxldGUgPSBOVUxMOworCX0KKworY29tcGxldGU6CisJc3Bpbl91
+bmxvY2tfaXJxcmVzdG9yZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsKK30KKwordm9pZCBzdW42aV9j
+c2lfY2FwdHVyZV9mcmFtZV9kb25lKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQor
+eworCXN0cnVjdCBzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZSAqc3RhdGUgPSAmY3NpX2Rldi0+Y2Fw
+dHVyZS5zdGF0ZTsKKwl1bnNpZ25lZCBsb25nIGZsYWdzOworCisJc3Bpbl9sb2NrX2lycXNhdmUo
+JnN0YXRlLT5sb2NrLCBmbGFncyk7CisJc3RhdGUtPnNlcXVlbmNlKys7CisJc3Bpbl91bmxvY2tf
+aXJxcmVzdG9yZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsKK30KKwordm9pZCBzdW42aV9jc2lfY2Fw
+dHVyZV9zeW5jKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQoreworCXN1bjZpX2Nz
+aV9jYXB0dXJlX3N0YXRlX2NvbXBsZXRlKGNzaV9kZXYpOworCXN1bjZpX2NzaV9jYXB0dXJlX3N0
+YXRlX3VwZGF0ZShjc2lfZGV2KTsKK30KKwogLyogUXVldWUgKi8KIAogc3RhdGljIGludCBzdW42
+aV9jc2lfY2FwdHVyZV9xdWV1ZV9zZXR1cChzdHJ1Y3QgdmIyX3F1ZXVlICpxdWV1ZSwKQEAgLTEx
+Nyw4ICsyMzUsNyBAQCBzdGF0aWMgaW50IHN1bjZpX2NzaV9jYXB0dXJlX3F1ZXVlX3NldHVwKHN0
+cnVjdCB2YjJfcXVldWUgKnF1ZXVlLAogCQkJCQkgc3RydWN0IGRldmljZSAqYWxsb2NfZGV2c1td
+KQogewogCXN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2ID0gdmIyX2dldF9kcnZfcHJp
+dihxdWV1ZSk7Ci0Jc3RydWN0IHN1bjZpX2NzaV9jYXB0dXJlICpjYXB0dXJlID0gJmNzaV9kZXYt
+PmNhcHR1cmU7Ci0JdW5zaWduZWQgaW50IHNpemUgPSBjYXB0dXJlLT5mb3JtYXQuZm10LnBpeC5z
+aXplaW1hZ2U7CisJdW5zaWduZWQgaW50IHNpemUgPSBjc2lfZGV2LT5jYXB0dXJlLmZvcm1hdC5m
+bXQucGl4LnNpemVpbWFnZTsKIAogCWlmICgqcGxhbmVzX2NvdW50KQogCQlyZXR1cm4gc2l6ZXNb
+MF0gPCBzaXplID8gLUVJTlZBTCA6IDA7CkBAIC0xMzUsOCArMjUyLDYgQEAgc3RhdGljIGludCBz
+dW42aV9jc2lfY2FwdHVyZV9idWZmZXJfcHJlcGFyZShzdHJ1Y3QgdmIyX2J1ZmZlciAqYnVmZmVy
+KQogCXN0cnVjdCBzdW42aV9jc2lfY2FwdHVyZSAqY2FwdHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJl
+OwogCXN0cnVjdCB2NGwyX2RldmljZSAqdjRsMl9kZXYgPSAmY3NpX2Rldi0+djRsMi52NGwyX2Rl
+djsKIAlzdHJ1Y3QgdmIyX3Y0bDJfYnVmZmVyICp2NGwyX2J1ZmZlciA9IHRvX3ZiMl92NGwyX2J1
+ZmZlcihidWZmZXIpOwotCXN0cnVjdCBzdW42aV9jc2lfYnVmZmVyICpjc2lfYnVmZmVyID0KLQkJ
+Y29udGFpbmVyX29mKHY0bDJfYnVmZmVyLCBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciwgdjRsMl9i
+dWZmZXIpOwogCXVuc2lnbmVkIGxvbmcgc2l6ZSA9IGNhcHR1cmUtPmZvcm1hdC5mbXQucGl4LnNp
+emVpbWFnZTsKIAogCWlmICh2YjJfcGxhbmVfc2l6ZShidWZmZXIsIDApIDwgc2l6ZSkgewpAQCAt
+MTQ3LDcgKzI2Miw2IEBAIHN0YXRpYyBpbnQgc3VuNmlfY3NpX2NhcHR1cmVfYnVmZmVyX3ByZXBh
+cmUoc3RydWN0IHZiMl9idWZmZXIgKmJ1ZmZlcikKIAogCXZiMl9zZXRfcGxhbmVfcGF5bG9hZChi
+dWZmZXIsIDAsIHNpemUpOwogCi0JY3NpX2J1ZmZlci0+ZG1hX2FkZHIgPSB2YjJfZG1hX2NvbnRp
+Z19wbGFuZV9kbWFfYWRkcihidWZmZXIsIDApOwogCXY0bDJfYnVmZmVyLT5maWVsZCA9IGNhcHR1
+cmUtPmZvcm1hdC5mbXQucGl4LmZpZWxkOwogCiAJcmV0dXJuIDA7CkBAIC0xNTYsMTYgKzI3MCwx
+NSBAQCBzdGF0aWMgaW50IHN1bjZpX2NzaV9jYXB0dXJlX2J1ZmZlcl9wcmVwYXJlKHN0cnVjdCB2
+YjJfYnVmZmVyICpidWZmZXIpCiBzdGF0aWMgdm9pZCBzdW42aV9jc2lfY2FwdHVyZV9idWZmZXJf
+cXVldWUoc3RydWN0IHZiMl9idWZmZXIgKmJ1ZmZlcikKIHsKIAlzdHJ1Y3Qgc3VuNmlfY3NpX2Rl
+dmljZSAqY3NpX2RldiA9IHZiMl9nZXRfZHJ2X3ByaXYoYnVmZmVyLT52YjJfcXVldWUpOwotCXN0
+cnVjdCBzdW42aV9jc2lfY2FwdHVyZSAqY2FwdHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJlOworCXN0
+cnVjdCBzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZSAqc3RhdGUgPSAmY3NpX2Rldi0+Y2FwdHVyZS5z
+dGF0ZTsKIAlzdHJ1Y3QgdmIyX3Y0bDJfYnVmZmVyICp2NGwyX2J1ZmZlciA9IHRvX3ZiMl92NGwy
+X2J1ZmZlcihidWZmZXIpOwogCXN0cnVjdCBzdW42aV9jc2lfYnVmZmVyICpjc2lfYnVmZmVyID0K
+IAkJY29udGFpbmVyX29mKHY0bDJfYnVmZmVyLCBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciwgdjRs
+Ml9idWZmZXIpOwogCXVuc2lnbmVkIGxvbmcgZmxhZ3M7CiAKLQlzcGluX2xvY2tfaXJxc2F2ZSgm
+Y2FwdHVyZS0+ZG1hX3F1ZXVlX2xvY2ssIGZsYWdzKTsKLQljc2lfYnVmZmVyLT5xdWV1ZWRfdG9f
+Y3NpID0gZmFsc2U7Ci0JbGlzdF9hZGRfdGFpbCgmY3NpX2J1ZmZlci0+bGlzdCwgJmNhcHR1cmUt
+PmRtYV9xdWV1ZSk7Ci0Jc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmY2FwdHVyZS0+ZG1hX3F1ZXVl
+X2xvY2ssIGZsYWdzKTsKKwlzcGluX2xvY2tfaXJxc2F2ZSgmc3RhdGUtPmxvY2ssIGZsYWdzKTsK
+KwlsaXN0X2FkZF90YWlsKCZjc2lfYnVmZmVyLT5saXN0LCAmc3RhdGUtPnF1ZXVlKTsKKwlzcGlu
+X3VubG9ja19pcnFyZXN0b3JlKCZzdGF0ZS0+bG9jaywgZmxhZ3MpOwogfQogCiBzdGF0aWMgaW50
+IHN1bjZpX2NzaV9jYXB0dXJlX3N0YXJ0X3N0cmVhbWluZyhzdHJ1Y3QgdmIyX3F1ZXVlICpxdWV1
+ZSwKQEAgLTE3MywxOCArMjg2LDE2IEBAIHN0YXRpYyBpbnQgc3VuNmlfY3NpX2NhcHR1cmVfc3Rh
+cnRfc3RyZWFtaW5nKHN0cnVjdCB2YjJfcXVldWUgKnF1ZXVlLAogewogCXN0cnVjdCBzdW42aV9j
+c2lfZGV2aWNlICpjc2lfZGV2ID0gdmIyX2dldF9kcnZfcHJpdihxdWV1ZSk7CiAJc3RydWN0IHN1
+bjZpX2NzaV9jYXB0dXJlICpjYXB0dXJlID0gJmNzaV9kZXYtPmNhcHR1cmU7CisJc3RydWN0IHN1
+bjZpX2NzaV9jYXB0dXJlX3N0YXRlICpzdGF0ZSA9ICZjYXB0dXJlLT5zdGF0ZTsKIAlzdHJ1Y3Qg
+dmlkZW9fZGV2aWNlICp2aWRlb19kZXYgPSAmY2FwdHVyZS0+dmlkZW9fZGV2OwotCXN0cnVjdCBz
+dW42aV9jc2lfYnVmZmVyICpidWY7Ci0Jc3RydWN0IHN1bjZpX2NzaV9idWZmZXIgKm5leHRfYnVm
+OwogCXN0cnVjdCB2NGwyX3N1YmRldiAqc3ViZGV2OwotCXVuc2lnbmVkIGxvbmcgZmxhZ3M7CiAJ
+aW50IHJldDsKIAotCWNhcHR1cmUtPnNlcXVlbmNlID0gMDsKKwlzdGF0ZS0+c2VxdWVuY2UgPSAw
+OwogCiAJcmV0ID0gbWVkaWFfcGlwZWxpbmVfc3RhcnQoJnZpZGVvX2Rldi0+ZW50aXR5LCAmdmlk
+ZW9fZGV2LT5waXBlKTsKIAlpZiAocmV0IDwgMCkKLQkJZ290byBlcnJvcl9kbWFfcXVldWVfZmx1
+c2g7CisJCWdvdG8gZXJyb3Jfc3RhdGU7CiAKIAlpZiAoY2FwdHVyZS0+bWJ1c19jb2RlID09IDAp
+IHsKIAkJcmV0ID0gLUVJTlZBTDsKQEAgLTE5NywzNyArMzA4LDE3IEBAIHN0YXRpYyBpbnQgc3Vu
+NmlfY3NpX2NhcHR1cmVfc3RhcnRfc3RyZWFtaW5nKHN0cnVjdCB2YjJfcXVldWUgKnF1ZXVlLAog
+CQlnb3RvIGVycm9yX21lZGlhX3BpcGVsaW5lOwogCX0KIAorCS8qIENvbmZpZ3VyZSAqLworCiAJ
+c3VuNmlfY3NpX2NhcHR1cmVfY29uZmlndXJlKGNzaV9kZXYpOwogCi0Jc3Bpbl9sb2NrX2lycXNh
+dmUoJmNhcHR1cmUtPmRtYV9xdWV1ZV9sb2NrLCBmbGFncyk7CisJLyogU3RhdGUgVXBkYXRlICov
+CiAKLQlidWYgPSBsaXN0X2ZpcnN0X2VudHJ5KCZjYXB0dXJlLT5kbWFfcXVldWUsCi0JCQkgICAg
+ICAgc3RydWN0IHN1bjZpX2NzaV9idWZmZXIsIGxpc3QpOwotCXN1bjZpX2NzaV9jYXB0dXJlX2J1
+ZmZlcl9jb25maWd1cmUoY3NpX2RldiwgYnVmKTsKKwlzdW42aV9jc2lfY2FwdHVyZV9zdGF0ZV91
+cGRhdGUoY3NpX2Rldik7CiAKLQlzdW42aV9jc2lfc2V0X3N0cmVhbShjc2lfZGV2LCB0cnVlKTsK
+KwkvKiBFbmFibGUgKi8KIAotCS8qCi0JICogQ1NJIHdpbGwgbG9va3VwIHRoZSBuZXh0IGRtYSBi
+dWZmZXIgZm9yIG5leHQgZnJhbWUgYmVmb3JlIHRoZQotCSAqIHRoZSBjdXJyZW50IGZyYW1lIGRv
+bmUgSVJRIHRyaWdnZXJlZC4gVGhpcyBpcyBub3QgZG9jdW1lbnRlZAotCSAqIGJ1dCByZXBvcnRl
+ZCBieSBPbmTFmWVqIEppcm1hbi4KLQkgKiBUaGUgQlNQIGNvZGUgaGFzIHdvcmthcm91bmQgZm9y
+IHRoaXMgdG9vLiBJdCBza2lwIHRvIG1hcmsgdGhlCi0JICogZmlyc3QgYnVmZmVyIGFzIGZyYW1l
+IGRvbmUgZm9yIFZCMiBhbmQgcGFzcyB0aGUgc2Vjb25kIGJ1ZmZlcgotCSAqIHRvIENTSSBpbiB0
+aGUgZmlyc3QgZnJhbWUgZG9uZSBJU1IgY2FsbC4gVGhlbiBpbiBzZWNvbmQgZnJhbWUKLQkgKiBk
+b25lIElTUiBjYWxsLCBpdCBtYXJrIHRoZSBmaXJzdCBidWZmZXIgYXMgZnJhbWUgZG9uZSBmb3Ig
+VkIyCi0JICogYW5kIHBhc3MgdGhlIHRoaXJkIGJ1ZmZlciB0byBDU0kuIEFuZCBzbyBvbi4gVGhl
+IGJhZCB0aGluZyBpcwotCSAqIHRoYXQgdGhlIGZpcnN0IGJ1ZmZlciB3aWxsIGJlIHdyaXR0ZW4g
+dHdpY2UgYW5kIHRoZSBmaXJzdCBmcmFtZQotCSAqIGlzIGRyb3BwZWQgZXZlbiB0aGUgcXVldWVk
+IGJ1ZmZlciBpcyBzdWZmaWNpZW50LgotCSAqIFNvLCBJIG1ha2Ugc29tZSBpbXByb3ZlbWVudCBo
+ZXJlLiBQYXNzIHRoZSBuZXh0IGJ1ZmZlciB0byBDU0kKLQkgKiBqdXN0IGZvbGxvdyBzdGFydGlu
+ZyB0aGUgQ1NJLiBJbiB0aGlzIGNhc2UsIHRoZSBmaXJzdCBmcmFtZQotCSAqIHdpbGwgYmUgc3Rv
+cmVkIGluIGZpcnN0IGJ1ZmZlciwgc2Vjb25kIGZyYW1lIGluIHNlY29uZCBidWZmZXIuCi0JICog
+VGhpcyBtZXRob2QgaXMgdXNlZCB0byBhdm9pZCBkcm9wcGluZyB0aGUgZmlyc3QgZnJhbWUsIGl0
+Ci0JICogd291bGQgYWxzbyBkcm9wIGZyYW1lIHdoZW4gbGFja2luZyBvZiBxdWV1ZWQgYnVmZmVy
+LgotCSAqLwotCW5leHRfYnVmID0gbGlzdF9uZXh0X2VudHJ5KGJ1ZiwgbGlzdCk7Ci0Jc3VuNmlf
+Y3NpX2NhcHR1cmVfYnVmZmVyX2NvbmZpZ3VyZShjc2lfZGV2LCBuZXh0X2J1Zik7Ci0KLQlzcGlu
+X3VubG9ja19pcnFyZXN0b3JlKCZjYXB0dXJlLT5kbWFfcXVldWVfbG9jaywgZmxhZ3MpOworCXN1
+bjZpX2NzaV9zZXRfc3RyZWFtKGNzaV9kZXYsIHRydWUpOwogCiAJcmV0ID0gdjRsMl9zdWJkZXZf
+Y2FsbChzdWJkZXYsIHZpZGVvLCBzX3N0cmVhbSwgMSk7CiAJaWYgKHJldCAmJiByZXQgIT0gLUVO
+T0lPQ1RMQ01EKQpAQCAtMjQxLDEzICszMzIsOCBAQCBzdGF0aWMgaW50IHN1bjZpX2NzaV9jYXB0
+dXJlX3N0YXJ0X3N0cmVhbWluZyhzdHJ1Y3QgdmIyX3F1ZXVlICpxdWV1ZSwKIGVycm9yX21lZGlh
+X3BpcGVsaW5lOgogCW1lZGlhX3BpcGVsaW5lX3N0b3AoJnZpZGVvX2Rldi0+ZW50aXR5KTsKIAot
+ZXJyb3JfZG1hX3F1ZXVlX2ZsdXNoOgotCXNwaW5fbG9ja19pcnFzYXZlKCZjYXB0dXJlLT5kbWFf
+cXVldWVfbG9jaywgZmxhZ3MpOwotCWxpc3RfZm9yX2VhY2hfZW50cnkoYnVmLCAmY2FwdHVyZS0+
+ZG1hX3F1ZXVlLCBsaXN0KQotCQl2YjJfYnVmZmVyX2RvbmUoJmJ1Zi0+djRsMl9idWZmZXIudmIy
+X2J1ZiwKLQkJCQlWQjJfQlVGX1NUQVRFX1FVRVVFRCk7Ci0JSU5JVF9MSVNUX0hFQUQoJmNhcHR1
+cmUtPmRtYV9xdWV1ZSk7Ci0Jc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmY2FwdHVyZS0+ZG1hX3F1
+ZXVlX2xvY2ssIGZsYWdzKTsKK2Vycm9yX3N0YXRlOgorCXN1bjZpX2NzaV9jYXB0dXJlX3N0YXRl
+X2NsZWFudXAoY3NpX2RldiwgZmFsc2UpOwogCiAJcmV0dXJuIHJldDsKIH0KQEAgLTI1Nyw4ICsz
+NDMsNiBAQCBzdGF0aWMgdm9pZCBzdW42aV9jc2lfY2FwdHVyZV9zdG9wX3N0cmVhbWluZyhzdHJ1
+Y3QgdmIyX3F1ZXVlICpxdWV1ZSkKIAlzdHJ1Y3Qgc3VuNmlfY3NpX2RldmljZSAqY3NpX2RldiA9
+IHZiMl9nZXRfZHJ2X3ByaXYocXVldWUpOwogCXN0cnVjdCBzdW42aV9jc2lfY2FwdHVyZSAqY2Fw
+dHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJlOwogCXN0cnVjdCB2NGwyX3N1YmRldiAqc3ViZGV2Owot
+CXVuc2lnbmVkIGxvbmcgZmxhZ3M7Ci0Jc3RydWN0IHN1bjZpX2NzaV9idWZmZXIgKmJ1ZjsKIAog
+CXN1YmRldiA9IHN1bjZpX2NzaV9jYXB0dXJlX3JlbW90ZV9zdWJkZXYoY2FwdHVyZSwgTlVMTCk7
+CiAJaWYgKHN1YmRldikKQEAgLTI2OCw1OSArMzUyLDcgQEAgc3RhdGljIHZvaWQgc3VuNmlfY3Np
+X2NhcHR1cmVfc3RvcF9zdHJlYW1pbmcoc3RydWN0IHZiMl9xdWV1ZSAqcXVldWUpCiAKIAltZWRp
+YV9waXBlbGluZV9zdG9wKCZjYXB0dXJlLT52aWRlb19kZXYuZW50aXR5KTsKIAotCS8qIFJlbGVh
+c2UgYWxsIGFjdGl2ZSBidWZmZXJzICovCi0Jc3Bpbl9sb2NrX2lycXNhdmUoJmNhcHR1cmUtPmRt
+YV9xdWV1ZV9sb2NrLCBmbGFncyk7Ci0JbGlzdF9mb3JfZWFjaF9lbnRyeShidWYsICZjYXB0dXJl
+LT5kbWFfcXVldWUsIGxpc3QpCi0JCXZiMl9idWZmZXJfZG9uZSgmYnVmLT52NGwyX2J1ZmZlci52
+YjJfYnVmLCBWQjJfQlVGX1NUQVRFX0VSUk9SKTsKLQlJTklUX0xJU1RfSEVBRCgmY2FwdHVyZS0+
+ZG1hX3F1ZXVlKTsKLQlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZjYXB0dXJlLT5kbWFfcXVldWVf
+bG9jaywgZmxhZ3MpOwotfQotCi12b2lkIHN1bjZpX2NzaV9jYXB0dXJlX2ZyYW1lX2RvbmUoc3Ry
+dWN0IHN1bjZpX2NzaV9kZXZpY2UgKmNzaV9kZXYpCi17Ci0Jc3RydWN0IHN1bjZpX2NzaV9jYXB0
+dXJlICpjYXB0dXJlID0gJmNzaV9kZXYtPmNhcHR1cmU7Ci0Jc3RydWN0IHN1bjZpX2NzaV9idWZm
+ZXIgKmJ1ZjsKLQlzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciAqbmV4dF9idWY7Ci0Jc3RydWN0IHZi
+Ml92NGwyX2J1ZmZlciAqdjRsMl9idWZmZXI7Ci0KLQlzcGluX2xvY2soJmNhcHR1cmUtPmRtYV9x
+dWV1ZV9sb2NrKTsKLQotCWJ1ZiA9IGxpc3RfZmlyc3RfZW50cnkoJmNhcHR1cmUtPmRtYV9xdWV1
+ZSwKLQkJCSAgICAgICBzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlciwgbGlzdCk7Ci0JaWYgKGxpc3Rf
+aXNfbGFzdCgmYnVmLT5saXN0LCAmY2FwdHVyZS0+ZG1hX3F1ZXVlKSkgewotCQlkZXZfZGJnKGNz
+aV9kZXYtPmRldiwgIkZyYW1lIGRyb3BwZWQhXG4iKTsKLQkJZ290byBjb21wbGV0ZTsKLQl9Ci0K
+LQluZXh0X2J1ZiA9IGxpc3RfbmV4dF9lbnRyeShidWYsIGxpc3QpOwotCS8qIElmIGEgbmV3IGJ1
+ZmZlciAoI25leHRfYnVmKSBoYWQgbm90IGJlZW4gcXVldWVkIHRvIENTSSwgdGhlIG9sZAotCSAq
+IGJ1ZmZlciAoI2J1ZikgaXMgc3RpbGwgaG9sZGluZyBieSBDU0kgZm9yIHN0b3JpbmcgdGhlIG5l
+eHQKLQkgKiBmcmFtZS4gU28sIHdlIHF1ZXVlIGEgbmV3IGJ1ZmZlciAoI25leHRfYnVmKSB0byBD
+U0kgdGhlbiB3YWl0Ci0JICogZm9yIG5leHQgSVNSIGNhbGwuCi0JICovCi0JaWYgKCFuZXh0X2J1
+Zi0+cXVldWVkX3RvX2NzaSkgewotCQlzdW42aV9jc2lfY2FwdHVyZV9idWZmZXJfY29uZmlndXJl
+KGNzaV9kZXYsIG5leHRfYnVmKTsKLQkJZGV2X2RiZyhjc2lfZGV2LT5kZXYsICJGcmFtZSBkcm9w
+cGVkIVxuIik7Ci0JCWdvdG8gY29tcGxldGU7Ci0JfQotCi0JbGlzdF9kZWwoJmJ1Zi0+bGlzdCk7
+Ci0JdjRsMl9idWZmZXIgPSAmYnVmLT52NGwyX2J1ZmZlcjsKLQl2NGwyX2J1ZmZlci0+dmIyX2J1
+Zi50aW1lc3RhbXAgPSBrdGltZV9nZXRfbnMoKTsKLQl2NGwyX2J1ZmZlci0+c2VxdWVuY2UgPSBj
+YXB0dXJlLT5zZXF1ZW5jZTsKLQl2YjJfYnVmZmVyX2RvbmUoJnY0bDJfYnVmZmVyLT52YjJfYnVm
+LCBWQjJfQlVGX1NUQVRFX0RPTkUpOwotCi0JLyogUHJlcGFyZSBidWZmZXIgZm9yIG5leHQgZnJh
+bWUgYnV0IG9uZS4gICovCi0JaWYgKCFsaXN0X2lzX2xhc3QoJm5leHRfYnVmLT5saXN0LCAmY2Fw
+dHVyZS0+ZG1hX3F1ZXVlKSkgewotCQluZXh0X2J1ZiA9IGxpc3RfbmV4dF9lbnRyeShuZXh0X2J1
+ZiwgbGlzdCk7Ci0JCXN1bjZpX2NzaV9jYXB0dXJlX2J1ZmZlcl9jb25maWd1cmUoY3NpX2Rldiwg
+bmV4dF9idWYpOwotCX0gZWxzZSB7Ci0JCWRldl9kYmcoY3NpX2Rldi0+ZGV2LCAiTmV4dCBmcmFt
+ZSB3aWxsIGJlIGRyb3BwZWQhXG4iKTsKLQl9Ci0KLWNvbXBsZXRlOgotCWNhcHR1cmUtPnNlcXVl
+bmNlKys7Ci0Jc3Bpbl91bmxvY2soJmNhcHR1cmUtPmRtYV9xdWV1ZV9sb2NrKTsKKwlzdW42aV9j
+c2lfY2FwdHVyZV9zdGF0ZV9jbGVhbnVwKGNzaV9kZXYsIHRydWUpOwogfQogCiBzdGF0aWMgY29u
+c3Qgc3RydWN0IHZiMl9vcHMgc3VuNmlfY3NpX2NhcHR1cmVfcXVldWVfb3BzID0gewpAQCAtNjM1
+LDYgKzY2Nyw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgbWVkaWFfZW50aXR5X29wZXJhdGlvbnMg
+c3VuNmlfY3NpX2NhcHR1cmVfbWVkaWFfb3BzID0gewogaW50IHN1bjZpX2NzaV9jYXB0dXJlX3Nl
+dHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQogewogCXN0cnVjdCBzdW42aV9j
+c2lfY2FwdHVyZSAqY2FwdHVyZSA9ICZjc2lfZGV2LT5jYXB0dXJlOworCXN0cnVjdCBzdW42aV9j
+c2lfY2FwdHVyZV9zdGF0ZSAqc3RhdGUgPSAmY2FwdHVyZS0+c3RhdGU7CiAJc3RydWN0IHY0bDJf
+ZGV2aWNlICp2NGwyX2RldiA9ICZjc2lfZGV2LT52NGwyLnY0bDJfZGV2OwogCXN0cnVjdCB2NGwy
+X3N1YmRldiAqYnJpZGdlX3N1YmRldiA9ICZjc2lfZGV2LT5icmlkZ2Uuc3ViZGV2OwogCXN0cnVj
+dCB2aWRlb19kZXZpY2UgKnZpZGVvX2RldiA9ICZjYXB0dXJlLT52aWRlb19kZXY7CkBAIC02NDQs
+NiArNjc3LDExIEBAIGludCBzdW42aV9jc2lfY2FwdHVyZV9zZXR1cChzdHJ1Y3Qgc3VuNmlfY3Np
+X2RldmljZSAqY3NpX2RldikKIAlzdHJ1Y3QgdjRsMl9waXhfZm9ybWF0ICpwaXhfZm9ybWF0ID0g
+JmZvcm1hdC5mbXQucGl4OwogCWludCByZXQ7CiAKKwkvKiBTdGF0ZSAqLworCisJSU5JVF9MSVNU
+X0hFQUQoJnN0YXRlLT5xdWV1ZSk7CisJc3Bpbl9sb2NrX2luaXQoJnN0YXRlLT5sb2NrKTsKKwog
+CS8qIE1lZGlhIEVudGl0eSAqLwogCiAJdmlkZW9fZGV2LT5lbnRpdHkub3BzID0gJnN1bjZpX2Nz
+aV9jYXB0dXJlX21lZGlhX29wczsKQEAgLTY1NiwxMyArNjk0LDYgQEAgaW50IHN1bjZpX2NzaV9j
+YXB0dXJlX3NldHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQogCWlmIChyZXQg
+PCAwKQogCQlyZXR1cm4gcmV0OwogCi0JLyogRE1BIHF1ZXVlICovCi0KLQlJTklUX0xJU1RfSEVB
+RCgmY2FwdHVyZS0+ZG1hX3F1ZXVlKTsKLQlzcGluX2xvY2tfaW5pdCgmY2FwdHVyZS0+ZG1hX3F1
+ZXVlX2xvY2spOwotCi0JY2FwdHVyZS0+c2VxdWVuY2UgPSAwOwotCiAJLyogUXVldWUgKi8KIAog
+CW11dGV4X2luaXQoJmNhcHR1cmUtPmxvY2spOwpAQCAtNjcyLDE0ICs3MDMsMTIgQEAgaW50IHN1
+bjZpX2NzaV9jYXB0dXJlX3NldHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KQog
+CXF1ZXVlLT5idWZfc3RydWN0X3NpemUgPSBzaXplb2Yoc3RydWN0IHN1bjZpX2NzaV9idWZmZXIp
+OwogCXF1ZXVlLT5vcHMgPSAmc3VuNmlfY3NpX2NhcHR1cmVfcXVldWVfb3BzOwogCXF1ZXVlLT5t
+ZW1fb3BzID0gJnZiMl9kbWFfY29udGlnX21lbW9wczsKKwlxdWV1ZS0+bWluX2J1ZmZlcnNfbmVl
+ZGVkID0gMjsKIAlxdWV1ZS0+dGltZXN0YW1wX2ZsYWdzID0gVjRMMl9CVUZfRkxBR19USU1FU1RB
+TVBfTU9OT1RPTklDOwogCXF1ZXVlLT5sb2NrID0gJmNhcHR1cmUtPmxvY2s7CiAJcXVldWUtPmRl
+diA9IGNzaV9kZXYtPmRldjsKIAlxdWV1ZS0+ZHJ2X3ByaXYgPSBjc2lfZGV2OwogCi0JLyogTWFr
+ZSBzdXJlIG5vbi1kcm9wcGVkIGZyYW1lLiAqLwotCXF1ZXVlLT5taW5fYnVmZmVyc19uZWVkZWQg
+PSAzOwotCiAJcmV0ID0gdmIyX3F1ZXVlX2luaXQocXVldWUpOwogCWlmIChyZXQpIHsKIAkJdjRs
+Ml9lcnIodjRsMl9kZXYsICJmYWlsZWQgdG8gaW5pdGlhbGl6ZSB2YjIgcXVldWU6ICVkXG4iLCBy
+ZXQpOwpkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1jc2kv
+c3VuNmlfY3NpX2NhcHR1cmUuaCBiL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmkt
+Y3NpL3N1bjZpX2NzaV9jYXB0dXJlLmgKaW5kZXggMzZiYmEzMWZjYjQ4Li43ZmE2NmEyYWY1ZWMg
+MTAwNjQ0Ci0tLSBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuNmktY3NpL3N1bjZp
+X2NzaV9jYXB0dXJlLmgKKysrIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW42aS1j
+c2kvc3VuNmlfY3NpX2NhcHR1cmUuaApAQCAtMTMsMjMgKzEzLDM0IEBACiAKIHN0cnVjdCBzdW42
+aV9jc2lfZGV2aWNlOwogCisjdW5kZWYgY3VycmVudAorc3RydWN0IHN1bjZpX2NzaV9jYXB0dXJl
+X3N0YXRlIHsKKwlzdHJ1Y3QgbGlzdF9oZWFkCQlxdWV1ZTsKKwlzcGlubG9ja190CQkJbG9jazsg
+LyogUXVldWUgYW5kIGJ1ZmZlcnMgbG9jay4gKi8KKworCXN0cnVjdCBzdW42aV9jc2lfYnVmZmVy
+CQkqcGVuZGluZzsKKwlzdHJ1Y3Qgc3VuNmlfY3NpX2J1ZmZlcgkJKmN1cnJlbnQ7CisJc3RydWN0
+IHN1bjZpX2NzaV9idWZmZXIJCSpjb21wbGV0ZTsKKworCXVuc2lnbmVkIGludAkJCXNlcXVlbmNl
+OworfTsKKwogc3RydWN0IHN1bjZpX2NzaV9jYXB0dXJlIHsKKwlzdHJ1Y3Qgc3VuNmlfY3NpX2Nh
+cHR1cmVfc3RhdGUJc3RhdGU7CisKIAlzdHJ1Y3QgdmlkZW9fZGV2aWNlCQl2aWRlb19kZXY7CiAJ
+c3RydWN0IHZiMl9xdWV1ZQkJcXVldWU7CiAJc3RydWN0IG11dGV4CQkJbG9jazsgLyogUXVldWUg
+bG9jay4gKi8KIAlzdHJ1Y3QgbWVkaWFfcGFkCQlwYWQ7CiAKLQlzdHJ1Y3QgbGlzdF9oZWFkCQlk
+bWFfcXVldWU7Ci0Jc3BpbmxvY2tfdAkJCWRtYV9xdWV1ZV9sb2NrOyAvKiBETUEgcXVldWUgbG9j
+ay4gKi8KLQogCXN0cnVjdCB2NGwyX2Zvcm1hdAkJZm9ybWF0OwogCXUzMgkJCQltYnVzX2NvZGU7
+Ci0JdW5zaWduZWQgaW50CQkJc2VxdWVuY2U7CiB9OwogCit2b2lkIHN1bjZpX2NzaV9jYXB0dXJl
+X3N5bmMoc3RydWN0IHN1bjZpX2NzaV9kZXZpY2UgKmNzaV9kZXYpOwordm9pZCBzdW42aV9jc2lf
+Y2FwdHVyZV9mcmFtZV9kb25lKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lfZGV2KTsKKwog
+aW50IHN1bjZpX2NzaV9jYXB0dXJlX3NldHVwKHN0cnVjdCBzdW42aV9jc2lfZGV2aWNlICpjc2lf
+ZGV2KTsKIHZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfY2xlYW51cChzdHJ1Y3Qgc3VuNmlfY3NpX2Rl
+dmljZSAqY3NpX2Rldik7CiAKLXZvaWQgc3VuNmlfY3NpX2NhcHR1cmVfZnJhbWVfZG9uZShzdHJ1
+Y3Qgc3VuNmlfY3NpX2RldmljZSAqY3NpX2Rldik7Ci0KICNlbmRpZiAvKiBfX1NVTjZJX0NBUFRV
+UkVfSF9fICovCi0tIAoyLjM0LjEKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
+aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1waHkK
