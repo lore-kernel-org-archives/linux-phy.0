@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50436C433EF
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:07:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48738C433FE
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:07:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HVi++00IHBkoNMdyQy17SAPySHeEcMnkcfQGWRoMN1k=; b=Q5RmGLSGjxOhjB
-	kPwW7ebvNv9nwiu+yy0wJCMlxjw+TpyW0Mu9fsVsxrAuLpLldtnNVcRF0BFquHpOAaSx7pNiiGHEn
-	4Hd2CWte38FF0188N4lOfOanNJKB55GTnZw1C6YkxyyDZ1IcULrlpFUlEGu1tkIgjc9a9CPTatM1+
-	izMLZxSRzk4cH4iGyrBPbipwerNuMaHwnsAeOKxnhyRInSGEbmHJkz+cJsGsQK41LI6labrYeK8P7
-	xNnaYw1LZhjOxM8syCDiaUXGRoNIo3DQ/QZ/BBUE801F3gapy190UiD/lzYh31bzVFRqoPjLcVZGp
-	u6N/wk890IQpP/oWnzGQ==;
+	List-Owner; bh=HJzEHm8trFhW4VaWlIRMgdOrKOgB4EjPmi1fus+aijw=; b=XUhMVKw8t/w3I+
+	PnuvNAB8MwBntw+z71x5j8OxPSMzQhBurK/Hy6/w9M1IyTmsu9dIEodmqqAy6XaR3UwooL7XwFuKC
+	NIP2N0gblQDTR1hH0T1TtihcoykkUbNPNU9ejkwrpivFLw9V1a2iEZd10eY0xtyceVkR/zfgCY+Wy
+	ADYY9KM6IMFk0kvYujHzXdz+nb6z8duPBLJVeo7PikynSZ56qMH2hWERa3ZvDgIt6S04jq8U0tXoO
+	BHrYS6QVIx3/7AZnD3Eo1524/7GipnycqWocOgxLpYMNYX19qqlGGhL570mxgxaxofH6oYY9RWwYX
+	Kgf0semPYI6On7LaLdxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGQPQ-00761y-Ct; Sat, 05 Feb 2022 19:07:44 +0000
+	id 1nGQPR-00762T-CV; Sat, 05 Feb 2022 19:07:45 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGQDF-006zUr-Bu; Sat, 05 Feb 2022 18:55:15 +0000
+ id 1nGQDH-006zWH-14; Sat, 05 Feb 2022 18:55:15 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 0E76324000E;
- Sat,  5 Feb 2022 18:55:05 +0000 (UTC)
+ by mail.gandi.net (Postfix) with ESMTPSA id DB76E24000B;
+ Sat,  5 Feb 2022 18:55:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644087307;
+ t=1644087309;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=uFgB4m27O07rnmur1ieq1ePYGmAaOz1tQ2Kuen+iRL8=;
- b=dsEl8oIejDBXr8Q18aN37r9Qod3PW3OicinBxdM3b0G4Q65BD9WI4ZtIckqLyVripOs1ta
- SzziDBzEfEMvgvftK/NSQJbsW2vXD6K+m+his05M5qPJi/HkLnbXEpyZn2UG55WKK7y9cQ
- GhOpuDeSL8zggDr0fDcTTc3tA5EE8Q623SQqloEN5Zn8beXrDnA3ipAIFL4BHTF7S0Pewq
- wiG4sezRLNERX6+BgoAe+90x8EikBFfdLJXgyxjva5Ud8fxD1TaPQPVUKsLbGrQsNqaYkH
- 390QSoSWWndIQUIvbgDNPM0YdR6L3md129teCks8BHpjTBLWYUWbVJMMmAYI3g==
+ bh=thQFXb+Mbfog5Wu3+RYgHAOHMpkNUMkaPZldQzKOFCI=;
+ b=POBS8qNGo79IGw+1tA4WMVk+b2+4QVJqDCBrSuj64Npk2IBHMtMxSOuXgberW/bWGUnYQs
+ 6dOtimeBK873korpK0pFVujnFlTcnAQJNJb+mbPJMI3xa84kbKYi576E2ZK+L3zy2o4H/C
+ JEA3fN0QjWE0rTOAbQwoXalgUb11YtWpaov5Z2pRMw/yuZKyL1vBkQAXa9gKBUDvpjdcDx
+ bvV1tzVMZQuMFoz7uMl5F6WZocWujfhIK731EeRTO6uGqB+IKnUDFg7wCY2IGKg8uTk5K+
+ S9i2NLavH3Hue1GGIZBGLMH16UAej4HkKMUBm9PoilD0yqaiFGZM94+7xitXbg==
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -54,19 +54,18 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?UTF-8?q?K=C3=A9vin=20L=27h=C3=B4pital?= <kevin.lhopital@bootlin.com>
-Subject: [PATCH NOT FOR MERGE v2 16/66] ARM: dts: sun8i: a83t: bananapi-m3:
- Enable MIPI CSI-2 with OV8865
-Date: Sat,  5 Feb 2022 19:53:39 +0100
-Message-Id: <20220205185429.2278860-17-paul.kocialkowski@bootlin.com>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: [PATCH v2 17/66] media: sun6i-csi: Define and use driver name and
+ (reworked) description
+Date: Sat,  5 Feb 2022 19:53:40 +0100
+Message-Id: <20220205185429.2278860-18-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_105509_723410_EF00C97B 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20220205_105511_402582_95E2D7BD 
+X-CRM114-Status: GOOD (  15.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,77 +77,100 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogS8OpdmluIEwnaMO0cGl0YWwgPGtldmluLmxob3BpdGFsQGJvb3RsaW4uY29tPgoKVGhl
-IEJhbmFuYXBpIE0zIHN1cHBvcnRzIGEgY2FtZXJhIG1vZHVsZSB3aGljaCBpbmNsdWRlcyBhbiBP
-Vjg4NjUgc2Vuc29yCmNvbm5lY3RlZCB2aWEgdGhlIHBhcmFsbGVsIENTSSBpbnRlcmZhY2UgYW5k
-IGFuIE9WODg2NSBzZW5zb3IgY29ubmVjdGVkCnZpYSBNSVBJIENTSS0yLgoKVGhlIEkyQzIgYnVz
-IGlzIHNoYXJlZCBieSB0aGUgdHdvIHNlbnNvcnMgYXMgd2VsbCBhcyB0aGUgKGFjdGl2ZS1sb3cp
-CnJlc2V0IHNpZ25hbCwgYnV0IGVhY2ggc2Vuc29yIGhhcyBpdCBvd24gc2h1dGRvd24gbGluZS4K
-ClNpZ25lZC1vZmYtYnk6IEvDqXZpbiBMJ2jDtHBpdGFsIDxrZXZpbi5saG9waXRhbEBib290bGlu
-LmNvbT4KU2lnbmVkLW9mZi1ieTogUGF1bCBLb2NpYWxrb3dza2kgPHBhdWwua29jaWFsa293c2tp
-QGJvb3RsaW4uY29tPgotLS0KIGFyY2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWE4M3QtYmFuYW5hcGkt
-bTMuZHRzIHwgMTAyICsrKysrKysrKysrKysrKysrKysKIDEgZmlsZSBjaGFuZ2VkLCAxMDIgaW5z
-ZXJ0aW9ucygrKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjhpLWE4M3QtYmFu
-YW5hcGktbTMuZHRzIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktYTgzdC1iYW5hbmFwaS1tMy5k
-dHMKaW5kZXggNWE3ZTFiZDVmODI1Li44MGZkOTljZjI0YjIgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJt
-L2Jvb3QvZHRzL3N1bjhpLWE4M3QtYmFuYW5hcGktbTMuZHRzCisrKyBiL2FyY2gvYXJtL2Jvb3Qv
-ZHRzL3N1bjhpLWE4M3QtYmFuYW5hcGktbTMuZHRzCkBAIC04NSw2ICs4NSwzMCBAQCBsZWQtMSB7
-CiAJCX07CiAJfTsKIAorCXJlZ19vdjg4NjVfYXZkZDogb3Y4ODY1LWF2ZGQgeworCQljb21wYXRp
-YmxlID0gInJlZ3VsYXRvci1maXhlZCI7CisJCXJlZ3VsYXRvci1uYW1lID0gIm92ODg2NS1hdmRk
-IjsKKwkJcmVndWxhdG9yLW1pbi1taWNyb3ZvbHQgPSA8MjgwMDAwMD47CisJCXJlZ3VsYXRvci1t
-YXgtbWljcm92b2x0ID0gPDI4MDAwMDA+OworCQl2aW4tc3VwcGx5ID0gPCZyZWdfZGxkbzQ+Owor
-CX07CisKKwlyZWdfb3Y4ODY1X2RvdmRkOiBvdjg4NjUtZG92ZGQgeworCQljb21wYXRpYmxlID0g
-InJlZ3VsYXRvci1maXhlZCI7CisJCXJlZ3VsYXRvci1uYW1lID0gIm92ODg2NS1kb3ZkZCI7CisJ
-CXJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDI4MDAwMDA+OworCQlyZWd1bGF0b3ItbWF4LW1p
-Y3Jvdm9sdCA9IDwyODAwMDAwPjsKKwkJdmluLXN1cHBseSA9IDwmcmVnX2RsZG80PjsKKwl9Owor
-CisJcmVnX292ODg2NV9kdmRkOiBvdjg4NjUtZHZkZCB7CisJCWNvbXBhdGlibGUgPSAicmVndWxh
-dG9yLWZpeGVkIjsKKwkJcmVndWxhdG9yLW5hbWUgPSAib3Y4ODY1LWR2ZGQiOworCQlyZWd1bGF0
-b3ItbWluLW1pY3Jvdm9sdCA9IDwxMjAwMDAwPjsKKwkJcmVndWxhdG9yLW1heC1taWNyb3ZvbHQg
-PSA8MTIwMDAwMD47CisJCXZpbi1zdXBwbHkgPSA8JnJlZ19lbGRvMT47CisJfTsKKwogCXJlZ191
-c2IxX3ZidXM6IHJlZy11c2IxLXZidXMgewogCQljb21wYXRpYmxlID0gInJlZ3VsYXRvci1maXhl
-ZCI7CiAJCXJlZ3VsYXRvci1uYW1lID0gInVzYjEtdmJ1cyI7CkBAIC0xMTUsNiArMTM5LDIzIEBA
-ICZjcHUxMDAgewogCWNwdS1zdXBwbHkgPSA8JnJlZ19kY2RjMz47CiB9OwogCismY3NpIHsKKwlz
-dGF0dXMgPSAib2theSI7CisKKwlwb3J0cyB7CisJCSNhZGRyZXNzLWNlbGxzID0gPDE+OworCQkj
-c2l6ZS1jZWxscyA9IDwwPjsKKworCQlwb3J0QDEgeworCQkJcmVnID0gPDE+OworCisJCQljc2lf
-aW5fbWlwaV9jc2kyOiBlbmRwb2ludCB7CisJCQkJcmVtb3RlLWVuZHBvaW50ID0gPCZtaXBpX2Nz
-aTJfb3V0X2NzaT47CisJCQl9OworCQl9OworCX07Cit9OworCiAmZGUgewogCXN0YXR1cyA9ICJv
-a2F5IjsKIH07CkBAIC0xNDcsNiArMTg4LDM2IEBAIGhkbWlfb3V0X2NvbjogZW5kcG9pbnQgewog
-CX07CiB9OwogCismaTJjMiB7CisJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKKwlwaW5jdHJs
-LTAgPSA8JmkyYzJfcGVfcGlucz47CisJc3RhdHVzID0gIm9rYXkiOworCisJb3Y4ODY1OiBjYW1l
-cmFAMzYgeworCQljb21wYXRpYmxlID0gIm92dGksb3Y4ODY1IjsKKwkJcmVnID0gPDB4MzY+Owor
-CQlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOworCQlwaW5jdHJsLTAgPSA8JmNzaV9tY2xrX3Bp
-bj47CisJCWNsb2NrcyA9IDwmY2N1IENMS19DU0lfTUNMSz47CisJCWFzc2lnbmVkLWNsb2NrcyA9
-IDwmY2N1IENMS19DU0lfTUNMSz47CisJCWFzc2lnbmVkLWNsb2NrLXJhdGVzID0gPDI0MDAwMDAw
-PjsKKwkJYXZkZC1zdXBwbHkgPSA8JnJlZ19vdjg4NjVfYXZkZD47CisJCWRvdmRkLXN1cHBseSA9
-IDwmcmVnX292ODg2NV9kb3ZkZD47CisJCWR2ZGQtc3VwcGx5ID0gPCZyZWdfb3Y4ODY1X2R2ZGQ+
-OworCQlwb3dlcmRvd24tZ3Bpb3MgPSA8JnBpbyA0IDE3IEdQSU9fQUNUSVZFX0xPVz47IC8qIFBF
-MTcgKi8KKwkJcmVzZXQtZ3Bpb3MgPSA8JnBpbyA0IDE2IEdQSU9fQUNUSVZFX0xPVz47IC8qIFBF
-MTYgKi8KKworCQlwb3J0IHsKKwkJCW92ODg2NV9vdXRfbWlwaV9jc2kyOiBlbmRwb2ludCB7CisJ
-CQkJZGF0YS1sYW5lcyA9IDwxIDIgMyA0PjsKKwkJCQlsaW5rLWZyZXF1ZW5jaWVzID0gL2JpdHMv
-IDY0IDwzNjAwMDAwMDA+OworCisJCQkJcmVtb3RlLWVuZHBvaW50ID0gPCZtaXBpX2NzaTJfaW5f
-b3Y4ODY1PjsKKwkJCX07CisJCX07CisJfTsKK307CisKICZtZGlvIHsKIAlyZ21paV9waHk6IGV0
-aGVybmV0LXBoeUAxIHsKIAkJY29tcGF0aWJsZSA9ICJldGhlcm5ldC1waHktaWVlZTgwMi4zLWMy
-MiI7CkBAIC0xNTQsNiArMjI1LDI0IEBAIHJnbWlpX3BoeTogZXRoZXJuZXQtcGh5QDEgewogCX07
-CiB9OwogCismbWlwaV9jc2kyIHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismbWlwaV9jc2ky
-X2luIHsKKwltaXBpX2NzaTJfaW5fb3Y4ODY1OiBlbmRwb2ludCB7CisJCWRhdGEtbGFuZXMgPSA8
-MSAyIDMgND47CisKKwkJcmVtb3RlLWVuZHBvaW50ID0gPCZvdjg4NjVfb3V0X21pcGlfY3NpMj47
-CisJfTsKK307CisKKyZtaXBpX2NzaTJfb3V0IHsKKwltaXBpX2NzaTJfb3V0X2NzaTogZW5kcG9p
-bnQgeworCQlyZW1vdGUtZW5kcG9pbnQgPSA8JmNzaV9pbl9taXBpX2NzaTI+OworCX07Cit9Owor
-CiAmbW1jMCB7CiAJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKIAlwaW5jdHJsLTAgPSA8Jm1t
-YzBfcGlucz47CkBAIC0zMjcsMTEgKzQxNiwyNCBAQCAmcmVnX2RsZG8zIHsKIAlyZWd1bGF0b3It
-bmFtZSA9ICJ2Y2MtcGQiOwogfTsKIAorJnJlZ19kbGRvNCB7CisJcmVndWxhdG9yLWFsd2F5cy1v
-bjsKKwlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwyODAwMDAwPjsKKwlyZWd1bGF0b3ItbWF4
-LW1pY3Jvdm9sdCA9IDwyODAwMDAwPjsKKwlyZWd1bGF0b3ItbmFtZSA9ICJhdmRkLWNzaSI7Cit9
-OworCiAmcmVnX2RyaXZldmJ1cyB7CiAJcmVndWxhdG9yLW5hbWUgPSAidXNiMC12YnVzIjsKIAlz
-dGF0dXMgPSAib2theSI7CiB9OwogCismcmVnX2VsZG8xIHsKKwlyZWd1bGF0b3ItbWluLW1pY3Jv
-dm9sdCA9IDwxMjAwMDAwPjsKKwlyZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwxMjAwMDAwPjsK
-KwlyZWd1bGF0b3ItbmFtZSA9ICJkdmRkLWNzaS1yIjsKK307CisKICZyZWdfZmxkbzEgewogCXJl
-Z3VsYXRvci1taW4tbWljcm92b2x0ID0gPDEwODAwMDA+OwogCXJlZ3VsYXRvci1tYXgtbWljcm92
-b2x0ID0gPDEzMjAwMDA+OwotLSAKMi4zNC4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
-bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Add proper defines for driver name and description instead of
+MODULE_NAME and hardcoding (cosmetics).
+
+Also rework the description while at it to mention the hardware
+generation that the driver supports and remove the video capture
+mentions since it applies to the whole media device.
+
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+---
+ drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c | 14 ++++++--------
+ drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h |  3 +++
+ 2 files changed, 9 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+index fc96921b0583..43dcd8117d3f 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+@@ -27,8 +27,6 @@
+ #include "sun6i_csi.h"
+ #include "sun6i_csi_reg.h"
+ 
+-#define MODULE_NAME	"sun6i-csi"
+-
+ struct sun6i_csi_dev {
+ 	struct sun6i_csi		csi;
+ 	struct device			*dev;
+@@ -730,7 +728,7 @@ static int sun6i_csi_v4l2_init(struct sun6i_csi *csi)
+ 	int ret;
+ 
+ 	csi->media_dev.dev = csi->dev;
+-	strscpy(csi->media_dev.model, "Allwinner Video Capture Device",
++	strscpy(csi->media_dev.model, SUN6I_CSI_DESCRIPTION,
+ 		sizeof(csi->media_dev.model));
+ 	csi->media_dev.hw_revision = 0;
+ 	snprintf(csi->media_dev.bus_info, sizeof(csi->media_dev.bus_info),
+@@ -755,7 +753,7 @@ static int sun6i_csi_v4l2_init(struct sun6i_csi *csi)
+ 		goto free_ctrl;
+ 	}
+ 
+-	ret = sun6i_video_init(&csi->video, csi, "sun6i-csi");
++	ret = sun6i_video_init(&csi->video, csi, SUN6I_CSI_NAME);
+ 	if (ret)
+ 		goto unreg_v4l2;
+ 
+@@ -870,8 +868,8 @@ static int sun6i_csi_resource_request(struct sun6i_csi_dev *sdev,
+ 	if (irq < 0)
+ 		return -ENXIO;
+ 
+-	ret = devm_request_irq(&pdev->dev, irq, sun6i_csi_isr, 0, MODULE_NAME,
+-			       sdev);
++	ret = devm_request_irq(&pdev->dev, irq, sun6i_csi_isr, 0,
++			       SUN6I_CSI_NAME, sdev);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "Cannot request csi IRQ\n");
+ 		return ret;
+@@ -924,12 +922,12 @@ static struct platform_driver sun6i_csi_platform_driver = {
+ 	.probe = sun6i_csi_probe,
+ 	.remove = sun6i_csi_remove,
+ 	.driver = {
+-		.name = MODULE_NAME,
++		.name = SUN6I_CSI_NAME,
+ 		.of_match_table = of_match_ptr(sun6i_csi_of_match),
+ 	},
+ };
+ module_platform_driver(sun6i_csi_platform_driver);
+ 
+-MODULE_DESCRIPTION("Allwinner V3s Camera Sensor Interface driver");
++MODULE_DESCRIPTION("Allwinner A31 Camera Sensor Interface driver");
+ MODULE_AUTHOR("Yong Deng <yong.deng@magewell.com>");
+ MODULE_LICENSE("GPL");
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
+index 3a38d107ae3f..e04f3c3fa27b 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
+@@ -14,6 +14,9 @@
+ 
+ #include "sun6i_video.h"
+ 
++#define SUN6I_CSI_NAME		"sun6i-csi"
++#define SUN6I_CSI_DESCRIPTION	"Allwinner A31 CSI Device"
++
+ struct sun6i_csi;
+ 
+ /**
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
