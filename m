@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 767D7C433F5
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:42:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66351C433F5
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 19:42:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oNrQynby/DYR1Z12HgvCqICM5owKYLUZYYhbzLlfBvc=; b=HcCDuEYwR6NihD
-	KOIpCBwWURDF41SyOWcxviHCG/hiIsjcgyp6a69YqOQbfGCcVWIhaP85iehKXV2bMaMBcCuvhf77x
-	vZuJCUcQ6Q5G0zCJ7Z8ORpGrqmdFmyGmkZBqAEDkIMaeAcqzKpRQCcmWg5RHZCtrsqbF6Q7FxKYbv
-	LeQV39+NjDLVhfttjQmWoQCHWHugLvYBPq0tuPnpZu+AeRzlEjzMQ4RmfQo9IdQ7cZZsIOsmJLjLd
-	yFuyC4MXOiOlHjgjCf5XDCPUGj7BSfDXDTW5AH0u7qhrTkJyIqMrZhQtBH+dapPsXqvgqWtAmXlx3
-	hulAUZOmHLwLi8yk7unQ==;
+	List-Owner; bh=lv8KZJZY1RB9iNBsducNdUy+57psqtWNjsIJWG0/GBk=; b=TfAX8JnWq219xL
+	cH4S3f6KvTAwawDPpIuemoEybQ7wQ9hUCLtNSfnewZW39iTT9F2wqrk/EyWaxAbt5Dd5Ey5qFkusv
+	a+N3yq5MPtlT4RzAX4/DphAClh5ABL8mzWJYnakgZR9+5lPutvZB6sIZ7GO54dUhm206bOlw+k2cx
+	hziBkafC0qw6muB9ALC5suQd9bb5UzZee8ICFfryLrTjNVdMfwN6bR5Mf0qh2CYs9+diUIr/LpLeN
+	pmSCl8o8sutL8BqnSrAoo9Ot1KCy9U9psM7bi1uR5Kc9tYXgJHUzmXTEC0sNiIK5YZ7ofvqwTh2cj
+	Bb+qk8JEhhXXKAK/iRSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGQwe-007Iv3-FT; Sat, 05 Feb 2022 19:42:04 +0000
-Received: from relay10.mail.gandi.net ([2001:4b98:dc4:8::230])
+	id 1nGQxQ-007JCr-0x; Sat, 05 Feb 2022 19:42:52 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGQER-0070JK-QU; Sat, 05 Feb 2022 18:56:28 +0000
+ id 1nGQEQ-0070I2-0E; Sat, 05 Feb 2022 18:56:29 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 4002024001F;
- Sat,  5 Feb 2022 18:56:20 +0000 (UTC)
+ by mail.gandi.net (Postfix) with ESMTPSA id 957E924001C;
+ Sat,  5 Feb 2022 18:56:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644087381;
+ t=1644087380;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=lzYEV15xzku+y6IihxRZLFkuLWL8R00vJmdalNUtBmc=;
- b=MYkS4EhaaywVXqr2wgBxKHdx/kQZ2HQdCmK8qLCCc5LTYKSEh0/eFFI/ysJUseIUnkVU8f
- 9QEW6k2AqIzh4VqsMb4T9IPfIhukNT1DZm5Y2i1XglNeQCmEZUBOx6WgTzl1vCfaa7bCWU
- KwQZJvX0hRHYMpo3RFSmE2cb3/i0RMqQo/qvJm6s/MiRNgqw6fATmOJw31ZH4LvA05ookT
- AWoTsqWmqEz1/v3thLFYemWGg6Q+eFIboDpJ38BYdL0D2A4Ay1seVg5k5aiGUdlJV7kR8m
- Lb16LI9oLqpuMx8LIVY1pP8kYgVBI6BeB2KQgRCj/c/Tw/JP7Rl/dNZhzkeSNg==
+ bh=5luBjbgwR8xInbAp7xEaH/avHqpBe9Vj+954q16ysFc=;
+ b=edS+gwjAQrsobEVDamVq3zkxOhSV3VQ2nQgvsSLEPvKYIohO0ZYUzc+W9Jfq5Tbr/lhomG
+ GWF/17rIpxAmOaWnNQ3Zy1avemgpZWdv8a4SC7NCZryBIx6qbe3CZb0Kcr6nRFEf4j60zE
+ z0kCePiVG6k/Gl66Lw4d4da/aaQNSvHWdNqVP3thKt60iggZUhXZ7E4RDMMuxxR7Rf4HyZ
+ 51QcIncC5VwVGEU+//zx8IfEiRglQJzqjab3Y3LOt/lGnUGY1QJyRe/MjSfUYRL+3Spdo3
+ 4/2hKf2nsYmG9mvlttQnf1h+y0wAEVWLvGy96zjrGQJyQooQvZZXbGw1r4IPqw==
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -55,17 +55,17 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH v2 60/66] MAINTAINERS: Add myself as sun6i-csi maintainer and
- rename/move entry
-Date: Sat,  5 Feb 2022 19:54:23 +0100
-Message-Id: <20220205185429.2278860-61-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v2 59/66] media: sun6i-csi: Add support for hooking to the isp
+ devices
+Date: Sat,  5 Feb 2022 19:54:22 +0100
+Message-Id: <20220205185429.2278860-60-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_105624_085250_D463C9D4 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20220205_105622_398100_BC77A078 
+X-CRM114-Status: GOOD (  25.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,53 +82,320 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Given the substantial rework of the driver that I carried out and the
-knowledge acquired about the hardware along the way, make myself a
-maintainer of the sun6i-csi driver.
+In order to use the isp and csi together, both devices need to be
+parented to the same v4l2 and media devices. We use the isp as
+top-level device and let the csi code hook to its v4l2 and media
+devices when async subdev registration takes place.
 
-Also rename and move the entry while at it since the driver is not
-specific to the V3s.
+As a result v4l2/media device setup is only called when the ISP
+is missing and the capture device is registered after the devices
+are hooked. The bridge subdev and its notifier are registered
+without any device when the ISP is available. Top-level pointers
+for the devices are introduced to either redirect to the hooked ones
+(isp available) or the registered ones (isp missing).
+
+Also keep track of whether the capture node was setup or not to
+avoid cleaning up resources when it wasn't.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- MAINTAINERS | 17 +++++++++--------
- 1 file changed, 9 insertions(+), 8 deletions(-)
+ .../platform/sunxi/sun6i-csi/sun6i_csi.c      | 55 ++++++++++++++-----
+ .../platform/sunxi/sun6i-csi/sun6i_csi.h      |  7 +++
+ .../sunxi/sun6i-csi/sun6i_csi_bridge.c        | 31 +++++++++--
+ .../sunxi/sun6i-csi/sun6i_csi_capture.c       | 19 ++++++-
+ .../sunxi/sun6i-csi/sun6i_csi_capture.h       |  1 +
+ 5 files changed, 93 insertions(+), 20 deletions(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 46582119e767..0e65b9e5123f 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -751,6 +751,15 @@ T:	git git://linuxtv.org/media_tree.git
- F:	Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
- F:	drivers/media/platform/sunxi/sun4i-csi/
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+index 70b2a8b95b40..0c635b446fba 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+@@ -26,6 +26,18 @@
  
-+ALLWINNER A31 CSI DRIVER
-+M:	Yong Deng <yong.deng@magewell.com>
-+M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-+L:	linux-media@vger.kernel.org
-+S:	Maintained
-+T:	git git://linuxtv.org/media_tree.git
-+F:	Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
-+F:	drivers/media/platform/sunxi/sun6i-csi/
+ /* ISP */
+ 
++int sun6i_csi_isp_complete(struct sun6i_csi_device *csi_dev,
++			   struct v4l2_device *v4l2_dev)
++{
++	if (csi_dev->v4l2_dev && csi_dev->v4l2_dev != v4l2_dev)
++		return -EINVAL;
 +
- ALLWINNER A31 MIPI CSI-2 BRIDGE DRIVER
- M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
- L:	linux-media@vger.kernel.org
-@@ -5064,14 +5073,6 @@ M:	Jaya Kumar <jayakumar.alsa@gmail.com>
- S:	Maintained
- F:	sound/pci/cs5535audio/
++	csi_dev->v4l2_dev = v4l2_dev;
++	csi_dev->media_dev = v4l2_dev->mdev;
++
++	return sun6i_csi_capture_setup(csi_dev);
++}
++
+ static bool sun6i_csi_isp_detect(struct sun6i_csi_device *csi_dev)
+ {
+ 	struct device *dev = csi_dev->dev;
+@@ -64,8 +76,17 @@ static const struct media_device_ops sun6i_csi_media_ops = {
+ int sun6i_csi_v4l2_complete(struct sun6i_csi_device *csi_dev)
+ {
+ 	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
++	int ret;
++
++	ret = v4l2_device_register_subdev_nodes(v4l2_dev);
++	if (ret)
++		return ret;
  
--CSI DRIVERS FOR ALLWINNER V3s
--M:	Yong Deng <yong.deng@magewell.com>
--L:	linux-media@vger.kernel.org
--S:	Maintained
--T:	git git://linuxtv.org/media_tree.git
--F:	Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
--F:	drivers/media/platform/sunxi/sun6i-csi/
+-	return v4l2_device_register_subdev_nodes(v4l2_dev);
++	ret = sun6i_csi_capture_setup(csi_dev);
++	if (ret)
++		return ret;
++
++	return 0;
+ }
+ 
+ static int sun6i_csi_v4l2_setup(struct sun6i_csi_device *csi_dev)
+@@ -113,6 +134,9 @@ static int sun6i_csi_v4l2_setup(struct sun6i_csi_device *csi_dev)
+ 		goto error_v4l2_ctrl;
+ 	}
+ 
++	csi_dev->v4l2_dev = v4l2_dev;
++	csi_dev->media_dev = media_dev;
++
+ 	return 0;
+ 
+ error_v4l2_ctrl:
+@@ -361,25 +385,27 @@ static int sun6i_csi_probe(struct platform_device *platform_dev)
+ 	if (ret)
+ 		goto error_resources;
+ 
+-	ret = sun6i_csi_v4l2_setup(csi_dev);
+-	if (ret)
+-		goto error_resources;
++	/*
++	 * Register our own v4l2 and media devices when there is no ISP around.
++	 * Otherwise the ISP will use async subdev registration with our bridge,
++	 * which will provide v4l2 and media devices that are used to register
++	 * the video interface.
++	 */
++	if (!csi_dev->isp_available) {
++		ret = sun6i_csi_v4l2_setup(csi_dev);
++		if (ret)
++			goto error_resources;
++	}
+ 
+ 	ret = sun6i_csi_bridge_setup(csi_dev);
+ 	if (ret)
+ 		goto error_v4l2;
+ 
+-	ret = sun6i_csi_capture_setup(csi_dev);
+-	if (ret)
+-		goto error_bridge;
 -
- CW1200 WLAN driver
- M:	Solomon Peachy <pizza@shaftnet.org>
- S:	Maintained
+ 	return 0;
+ 
+-error_bridge:
+-	sun6i_csi_bridge_cleanup(csi_dev);
+-
+ error_v4l2:
+-	sun6i_csi_v4l2_cleanup(csi_dev);
++	if (!csi_dev->isp_available)
++		sun6i_csi_v4l2_cleanup(csi_dev);
+ 
+ error_resources:
+ 	sun6i_csi_resources_cleanup(csi_dev);
+@@ -393,7 +419,10 @@ static int sun6i_csi_remove(struct platform_device *pdev)
+ 
+ 	sun6i_csi_capture_cleanup(csi_dev);
+ 	sun6i_csi_bridge_cleanup(csi_dev);
+-	sun6i_csi_v4l2_cleanup(csi_dev);
++
++	if (!csi_dev->isp_available)
++		sun6i_csi_v4l2_cleanup(csi_dev);
++
+ 	sun6i_csi_resources_cleanup(csi_dev);
+ 
+ 	return 0;
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
+index 6cdaf98dc295..6f1ea2c55ecd 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
+@@ -38,6 +38,8 @@ struct sun6i_csi_v4l2 {
+ 
+ struct sun6i_csi_device {
+ 	struct device			*dev;
++	struct v4l2_device		*v4l2_dev;
++	struct media_device		*media_dev;
+ 
+ 	struct sun6i_csi_v4l2		v4l2;
+ 	struct sun6i_csi_bridge		bridge;
+@@ -52,6 +54,11 @@ struct sun6i_csi_device {
+ 	bool				isp_available;
+ };
+ 
++/* ISP */
++
++int sun6i_csi_isp_complete(struct sun6i_csi_device *csi_dev,
++			   struct v4l2_device *v4l2_dev);
++
+ /* V4L2 */
+ 
+ int sun6i_csi_v4l2_complete(struct sun6i_csi_device *csi_dev);
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c
+index 9827486dc3cb..55a632c814b2 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_bridge.c
+@@ -692,6 +692,16 @@ sun6i_csi_bridge_notifier_bound(struct v4l2_async_notifier *notifier,
+ 
+ 	source->subdev = remote_subdev;
+ 
++	if (csi_dev->isp_available) {
++		/*
++		 * Hook to the first available remote subdev to get v4l2 and
++		 * media devices and register the capture device then.
++		 */
++		ret = sun6i_csi_isp_complete(csi_dev, remote_subdev->v4l2_dev);
++		if (ret)
++			return ret;
++	}
++
+ 	return sun6i_csi_bridge_link(csi_dev, SUN6I_CSI_BRIDGE_PAD_SINK,
+ 				     remote_subdev, enabled);
+ }
+@@ -703,6 +713,9 @@ sun6i_csi_bridge_notifier_complete(struct v4l2_async_notifier *notifier)
+ 		container_of(notifier, struct sun6i_csi_device,
+ 			     bridge.notifier);
+ 
++	if (csi_dev->isp_available)
++		return 0;
++
+ 	return sun6i_csi_v4l2_complete(csi_dev);
+ }
+ 
+@@ -772,7 +785,7 @@ int sun6i_csi_bridge_setup(struct sun6i_csi_device *csi_dev)
+ {
+ 	struct device *dev = csi_dev->dev;
+ 	struct sun6i_csi_bridge *bridge = &csi_dev->bridge;
+-	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
++	struct v4l2_device *v4l2_dev = csi_dev->v4l2_dev;
+ 	struct v4l2_subdev *subdev = &bridge->subdev;
+ 	struct v4l2_async_notifier *notifier = &bridge->notifier;
+ 	struct media_pad *pads = bridge->pads;
+@@ -811,7 +824,11 @@ int sun6i_csi_bridge_setup(struct sun6i_csi_device *csi_dev)
+ 
+ 	/* V4L2 Subdev */
+ 
+-	ret = v4l2_device_register_subdev(v4l2_dev, subdev);
++	if (csi_dev->isp_available)
++		ret = v4l2_async_register_subdev(subdev);
++	else
++		ret = v4l2_device_register_subdev(v4l2_dev, subdev);
++
+ 	if (ret) {
+ 		dev_err(dev, "failed to register v4l2 subdev: %d\n", ret);
+ 		goto error_media_entity;
+@@ -828,7 +845,10 @@ int sun6i_csi_bridge_setup(struct sun6i_csi_device *csi_dev)
+ 	sun6i_csi_bridge_source_setup(csi_dev, &bridge->source_mipi_csi2,
+ 				      SUN6I_CSI_PORT_MIPI_CSI2, NULL);
+ 
+-	ret = v4l2_async_nf_register(v4l2_dev, notifier);
++	if (csi_dev->isp_available)
++		ret = v4l2_async_subdev_nf_register(subdev, notifier);
++	else
++		ret = v4l2_async_nf_register(v4l2_dev, notifier);
+ 	if (ret) {
+ 		dev_err(dev, "failed to register v4l2 async notifier: %d\n",
+ 			ret);
+@@ -840,7 +860,10 @@ int sun6i_csi_bridge_setup(struct sun6i_csi_device *csi_dev)
+ error_v4l2_async_notifier:
+ 	v4l2_async_nf_cleanup(notifier);
+ 
+-	v4l2_device_unregister_subdev(subdev);
++	if (csi_dev->isp_available)
++		v4l2_async_unregister_subdev(subdev);
++	else
++		v4l2_device_unregister_subdev(subdev);
+ 
+ error_media_entity:
+ 	media_entity_cleanup(&subdev->entity);
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
+index f6dac15af675..2ad38277633f 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
+@@ -570,7 +570,7 @@ static int sun6i_csi_capture_buffer_prepare(struct vb2_buffer *buffer)
+ {
+ 	struct sun6i_csi_device *csi_dev = vb2_get_drv_priv(buffer->vb2_queue);
+ 	struct sun6i_csi_capture *capture = &csi_dev->capture;
+-	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
++	struct v4l2_device *v4l2_dev = csi_dev->v4l2_dev;
+ 	struct vb2_v4l2_buffer *v4l2_buffer = to_vb2_v4l2_buffer(buffer);
+ 	unsigned long size = capture->format.fmt.pix.sizeimage;
+ 
+@@ -886,7 +886,7 @@ static int sun6i_csi_capture_link_validate(struct media_link *link)
+ 	struct video_device *video_dev =
+ 		media_entity_to_video_device(link->sink->entity);
+ 	struct sun6i_csi_device *csi_dev = video_get_drvdata(video_dev);
+-	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
++	struct v4l2_device *v4l2_dev = csi_dev->v4l2_dev;
+ 	const struct sun6i_csi_capture_format *capture_format;
+ 	const struct sun6i_csi_bridge_format *bridge_format;
+ 	unsigned int capture_width, capture_height;
+@@ -968,7 +968,7 @@ int sun6i_csi_capture_setup(struct sun6i_csi_device *csi_dev)
+ {
+ 	struct sun6i_csi_capture *capture = &csi_dev->capture;
+ 	struct sun6i_csi_capture_state *state = &capture->state;
+-	struct v4l2_device *v4l2_dev = &csi_dev->v4l2.v4l2_dev;
++	struct v4l2_device *v4l2_dev = csi_dev->v4l2_dev;
+ 	struct v4l2_subdev *bridge_subdev = &csi_dev->bridge.subdev;
+ 	struct video_device *video_dev = &capture->video_dev;
+ 	struct vb2_queue *queue = &capture->queue;
+@@ -977,6 +977,10 @@ int sun6i_csi_capture_setup(struct sun6i_csi_device *csi_dev)
+ 	struct v4l2_pix_format *pix_format = &format->fmt.pix;
+ 	int ret;
+ 
++	/* This may happen with multiple bridge notifier bound calls. */
++	if (state->setup)
++		return 0;
++
+ 	/* State */
+ 
+ 	INIT_LIST_HEAD(&state->queue);
+@@ -1055,6 +1059,7 @@ int sun6i_csi_capture_setup(struct sun6i_csi_device *csi_dev)
+ 	ret = media_create_pad_link(&bridge_subdev->entity,
+ 				    SUN6I_CSI_BRIDGE_PAD_SOURCE,
+ 				    &video_dev->entity, 0,
++				    csi_dev->isp_available ? 0 :
+ 				    MEDIA_LNK_FL_ENABLED |
+ 				    MEDIA_LNK_FL_IMMUTABLE);
+ 	if (ret < 0) {
+@@ -1065,6 +1070,8 @@ int sun6i_csi_capture_setup(struct sun6i_csi_device *csi_dev)
+ 		goto error_video_device;
+ 	}
+ 
++	state->setup = true;
++
+ 	return 0;
+ 
+ error_video_device:
+@@ -1083,7 +1090,13 @@ void sun6i_csi_capture_cleanup(struct sun6i_csi_device *csi_dev)
+ 	struct sun6i_csi_capture *capture = &csi_dev->capture;
+ 	struct video_device *video_dev = &capture->video_dev;
+ 
++	/* This may happen if async registration failed to complete. */
++	if (!capture->state.setup)
++		return;
++
+ 	vb2_video_unregister_device(video_dev);
+ 	media_entity_cleanup(&video_dev->entity);
+ 	mutex_destroy(&capture->lock);
++
++	capture->state.setup = false;
+ }
+diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h
+index 29893cf96f6b..3ee5ccefbd10 100644
+--- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h
++++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.h
+@@ -45,6 +45,7 @@ struct sun6i_csi_capture_state {
+ 
+ 	unsigned int			sequence;
+ 	bool				streaming;
++	bool				setup;
+ };
+ 
+ struct sun6i_csi_capture {
 -- 
 2.34.1
 
