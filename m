@@ -4,69 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21C24C4332F
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 16:45:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C245C433F5
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 16:45:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WpUXb6kv6U1PldsO8E8416OVqES6jBBK3l8Qh4kiAjA=; b=NqXhI217NgfeDe
-	Ll1z2J3tCsFPekqF8P5zW+PV3TP0MpLemvOptlvI6rCTMHQpk3Znx6+2pb4SdsqvPqE3suAtDdrYM
-	uXnZoMPClr/H9yWDTyRjsEsiMEBMTN0tns1mFjswvGz8z9/r/VdIphWl1Bfok1Il6zEyy8bThsLtM
-	O0J2u4VTydbJfU6VyU9A8N+L4B9IxcRPkErdeLuPOIrw/LkCGmtkmXIO7hA49gnWxE60qykJkiGeV
-	StY5ld0kihg2WbUJFqlBUurOHoJp0A9uJWewr2PFx4Ta1a8wDBaWJwiLUSxuL9+9Tj2h+Nl7moTLQ
-	Mfs9cAwfbIbD0RMxHnzA==;
+	List-Owner; bh=VIve+wpN418xizzMw8EuUCzzew2aHwHJk+eXIneBGlE=; b=QAwmfe5dde0n5o
+	w87xMD+2XTcP16w8HY66mlTJncys9SrbXoQ9SGxXYXSvOXpuWUkNqbWHW/gw9EXfOsInay91vPbc8
+	JV/bg1uQrry4MPOYRaFCoMXecyfTBjqot5YW61DBbWKl/8dKlr8LfCcxRF0FOgzK75ikok1nEHPyV
+	PD327qKzNNR3bU6htsDQRhgb0hONElc8C5G2Fngx6Quv68wwmv8mqJURlD8/8OH1vJw60qyhMDLop
+	EUzZSCjnq+4GwwKmpKm6rCqLm1jVRXv+O6aElZKFuQkdog7cb7figpero8BBkwmR42FVDyKIQbuwg
+	BlDmRNfflZJQs9K69A4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGOC9-006qAX-Hl; Sat, 05 Feb 2022 16:45:53 +0000
+	id 1nGOCA-006qBG-M2; Sat, 05 Feb 2022 16:45:54 +0000
 Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGOC5-006q8E-Jp
- for linux-phy@lists.infradead.org; Sat, 05 Feb 2022 16:45:51 +0000
+ id 1nGOC8-006q9Y-0U
+ for linux-phy@lists.infradead.org; Sat, 05 Feb 2022 16:45:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1644079547;
+ s=mimecast20190719; t=1644079551;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=VTtksw/kNF8G+OAAAdw+cff6C6rBjpvCwfNWJ3xDNTA=;
- b=NE1FI6rMLr9Ml/2M/viTyVTLiDX5hqB36XjeMRP4CkG27G9MthTsKWMpAvM8cV345EZ6T2
- i/7UCskJ4oOqfN8CxXlevWvU8RCpzWZMaonUtrstkgQQ+nn3FfZ7schPQ/u21VJAv1RJi7
- IQ+LKRomlBnUk69cO9WoOLZ7K6mksVk=
+ bh=0lIKP4e+Cty+i9AK+PrpEMunk31JuGZR+3dEheWS9AA=;
+ b=PJLyQ96HKIKvxEDvNNZpOQ2Hrwg0QaPurUzKIPi/GDug9A283a9UtQJuNS5313eJnoAJPJ
+ rnohQffPLgh3ntYcdlknN0CEblfT8S6TBCQ7kuvdInTL5J7eNBb0f6gQvInaAXL27JYpMQ
+ XjEPq1XUq5vL7YuexAdC/CQoQRDa25w=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) by relay.mimecast.com with ESMTP with STARTTLS
  (version=TLSv1.2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- us-mta-256-waUDACR4PUyUJyv7B8rY4g-1; Sat, 05 Feb 2022 11:45:44 -0500
-X-MC-Unique: waUDACR4PUyUJyv7B8rY4g-1
+ us-mta-36-3PHqbkbmOmS0IbgV08ZOew-1; Sat, 05 Feb 2022 11:45:47 -0500
+X-MC-Unique: 3PHqbkbmOmS0IbgV08ZOew-1
 Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
  [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D837764083;
- Sat,  5 Feb 2022 16:45:42 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A146418A0F1B;
+ Sat,  5 Feb 2022 16:45:46 +0000 (UTC)
 Received: from shalem.redhat.com (unknown [10.39.192.37])
- by smtp.corp.redhat.com (Postfix) with ESMTP id B8D332B4D2;
- Sat,  5 Feb 2022 16:45:40 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 081972B4D2;
+ Sat,  5 Feb 2022 16:45:44 +0000 (UTC)
 From: Hans de Goede <hdegoede@redhat.com>
 To: Felipe Balbi <balbi@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
 Cc: Hans de Goede <hdegoede@redhat.com>, linux-usb@vger.kernel.org,
- Stephan Gerhold <stephan@gerhold.net>, linux-phy@lists.infradead.org,
- Serge Semin <Sergey.Semin@baikalelectronics.ru>
-Subject: [PATCH 1/9] usb: dwc3: pci: Add "snps,
- dis_u2_susphy_quirk" for Intel Bay Trail
-Date: Sat,  5 Feb 2022 17:45:27 +0100
-Message-Id: <20220205164535.179231-2-hdegoede@redhat.com>
+ Stephan Gerhold <stephan@gerhold.net>, linux-phy@lists.infradead.org
+Subject: [PATCH 3/9] usb: dwc3: pci: Set the swnode from inside
+ dwc3_pci_quirks()
+Date: Sat,  5 Feb 2022 17:45:29 +0100
+Message-Id: <20220205164535.179231-4-hdegoede@redhat.com>
 In-Reply-To: <20220205164535.179231-1-hdegoede@redhat.com>
 References: <20220205164535.179231-1-hdegoede@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_084549_764652_9E64233D 
-X-CRM114-Status: GOOD (  13.01  )
+X-CRM114-CacheID: sfid-20220205_084552_143723_78C858C7 
+X-CRM114-Status: GOOD (  12.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,69 +82,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Commit e0082698b689 ("usb: dwc3: ulpi: conditionally resume ULPI PHY")
-fixed an issue where ULPI transfers would timeout if any requests where
-send to the phy sometime after init, giving it enough time to auto-suspend.
+The quirk handling may need to set some different properties
+which means using a different swnode, move the setting of the swnode
+to inside dwc3_pci_quirks() so that the quirk handling can choose
+a different swnode.
 
-Commit e5f4ca3fce90 ("usb: dwc3: ulpi: Fix USB2.0 HS/FS/LS PHY suspend
-regression") changed the behavior to instead of clearing the
-DWC3_GUSB2PHYCFG_SUSPHY bit, add an extra sleep when it is set.
-
-But on Bay Trail devices, when phy_set_mode() gets called during init,
-this leads to errors like these:
-[   28.451522] tusb1210 dwc3.ulpi: error -110 writing val 0x01 to reg 0x0a
-[   28.464089] tusb1210 dwc3.ulpi: error -110 writing val 0x01 to reg 0x0a
-
-Add "snps,dis_u2_susphy_quirk" to the settings for Bay Trail devices to
-fix this. This restores the old behavior for Bay Trail devices, since
-previously the DWC3_GUSB2PHYCFG_SUSPHY bit would get cleared on the first
-ulpi_read/_write() and then was never set again.
-
-Fixes: e5f4ca3fce90 ("usb: dwc3: ulpi: Fix USB2.0 HS/FS/LS PHY suspend regression")
-Cc: Serge Semin <Sergey.Semin@baikalelectronics.ru>
 Signed-off-by: Hans de Goede <hdegoede@redhat.com>
 ---
- drivers/usb/dwc3/dwc3-pci.c | 13 ++++++++++++-
- 1 file changed, 12 insertions(+), 1 deletion(-)
+ drivers/usb/dwc3/dwc3-pci.c | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/usb/dwc3/dwc3-pci.c b/drivers/usb/dwc3/dwc3-pci.c
-index 7ff8fc8f79a9..022341aef400 100644
+index 1ecedbb1684c..40a3a1b114e9 100644
 --- a/drivers/usb/dwc3/dwc3-pci.c
 +++ b/drivers/usb/dwc3/dwc3-pci.c
-@@ -119,6 +119,13 @@ static const struct property_entry dwc3_pci_intel_properties[] = {
- 	{}
+@@ -184,7 +184,8 @@ static const struct software_node dwc3_pci_amd_mr_swnode = {
+ 	.properties = dwc3_pci_mr_properties,
  };
  
-+static const struct property_entry dwc3_pci_intel_byt_properties[] = {
-+	PROPERTY_ENTRY_STRING("dr_mode", "peripheral"),
-+	PROPERTY_ENTRY_BOOL("snps,dis_u2_susphy_quirk"),
-+	PROPERTY_ENTRY_BOOL("linux,sysdev_is_parent"),
-+	{}
-+};
-+
- static const struct property_entry dwc3_pci_mrfld_properties[] = {
- 	PROPERTY_ENTRY_STRING("dr_mode", "otg"),
- 	PROPERTY_ENTRY_STRING("linux,extcon-name", "mrfld_bcove_pwrsrc"),
-@@ -161,6 +168,10 @@ static const struct software_node dwc3_pci_intel_swnode = {
- 	.properties = dwc3_pci_intel_properties,
- };
+-static int dwc3_pci_quirks(struct dwc3_pci *dwc)
++static int dwc3_pci_quirks(struct dwc3_pci *dwc,
++			   const struct software_node *swnode)
+ {
+ 	struct pci_dev			*pdev = dwc->pci;
  
-+static const struct software_node dwc3_pci_intel_byt_swnode = {
-+	.properties = dwc3_pci_intel_byt_properties,
-+};
-+
- static const struct software_node dwc3_pci_intel_mrfld_swnode = {
- 	.properties = dwc3_pci_mrfld_properties,
- };
-@@ -344,7 +355,7 @@ static const struct pci_device_id dwc3_pci_id_table[] = {
- 	  (kernel_ulong_t) &dwc3_pci_intel_swnode, },
+@@ -241,7 +242,7 @@ static int dwc3_pci_quirks(struct dwc3_pci *dwc)
+ 		}
+ 	}
  
- 	{ PCI_VDEVICE(INTEL, PCI_DEVICE_ID_INTEL_BYT),
--	  (kernel_ulong_t) &dwc3_pci_intel_swnode, },
-+	  (kernel_ulong_t) &dwc3_pci_intel_byt_swnode, },
+-	return 0;
++	return device_add_software_node(&dwc->dwc3->dev, swnode);
+ }
  
- 	{ PCI_VDEVICE(INTEL, PCI_DEVICE_ID_INTEL_MRFLD),
- 	  (kernel_ulong_t) &dwc3_pci_intel_mrfld_swnode, },
+ #ifdef CONFIG_PM
+@@ -306,11 +307,7 @@ static int dwc3_pci_probe(struct pci_dev *pci, const struct pci_device_id *id)
+ 	dwc->dwc3->dev.parent = dev;
+ 	ACPI_COMPANION_SET(&dwc->dwc3->dev, ACPI_COMPANION(dev));
+ 
+-	ret = device_add_software_node(&dwc->dwc3->dev, (void *)id->driver_data);
+-	if (ret < 0)
+-		goto err;
+-
+-	ret = dwc3_pci_quirks(dwc);
++	ret = dwc3_pci_quirks(dwc, (void *)id->driver_data);
+ 	if (ret)
+ 		goto err;
+ 
 -- 
 2.33.1
 
