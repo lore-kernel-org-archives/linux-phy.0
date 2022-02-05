@@ -4,75 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A560C433EF
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 02:18:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2844EC4332F
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 03:18:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m0gCytL1GItNWnDkU9k92ETuK4mqCYb+0RoU0DXh7us=; b=Wc5HGAOUZk32yS
-	+16iw3G3wu4phy82vQkNXVHrcpC7J/OqT53AZYNfJW2nSgZzLSGeinKUNH/HEScwoLTrCV6sFVo1l
-	KR0uz1r8kLO5B8hjDb+rNJlVXjwA+ze0xJn5E0TEc0/s+zbWeEWOMgMFIelI5rsgV0ugV4NiMk+37
-	76AudakGFtFAkflaTFQMFUa074BKTKFMzbrlAs4WJztsBe4lVQXlmn7JmvNQyKceYtrMOU/tnELwa
-	SfiqDlQXujz+VVFV3JxkLsAW5+FsuLo0GaOBNauRnNcoeF8wYB7vpvRDBunVKfTx/x+7bK/NCRq9g
-	IxrAcE5+at8mlq5Bx/cA==;
+	List-Owner; bh=5/tk8Fzt46yJakmYC/4YNhL0X73iFnMZH9tWJ9kSIaM=; b=qsB2r/sKqmPuya
+	rjb7tZShrB2O4M4IgJOwgg9IWK2xupRnVSvORLr9kXSLzWC4CMPlXLLKy3KS7w1Jw3LB0QckWJAOJ
+	cbtE3niGT1f1eZrW/9OSIg9FxB/XE2G5uRU/ieudPPYL2T51F6uFJ9T8IKKvzbesPcF4+SU3uzEoD
+	U48L+fWKfhgU3A+C+v92dzoGLZASQbioYBDmEaLynHAxI5opziS/OgcQ/1mYWQx6NS+yBI3A70mU5
+	Fahv18JvEYbZAAhQfCBKzcrUN1LYDkjW0LdrZSSm5y+PbSwEQd5sEBi1rB0aR4SrKouwoSFYCzd+W
+	8zyYsA25kaAhgZ8nBOWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGAf0-005xkK-Ga; Sat, 05 Feb 2022 02:18:46 +0000
-Received: from mail-oo1-f45.google.com ([209.85.161.45])
+	id 1nGBas-0060ZX-GN; Sat, 05 Feb 2022 03:18:34 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGAex-005xjC-GZ
- for linux-phy@lists.infradead.org; Sat, 05 Feb 2022 02:18:44 +0000
-Received: by mail-oo1-f45.google.com with SMTP id
- t75-20020a4a3e4e000000b002e9c0821d78so6761944oot.4
- for <linux-phy@lists.infradead.org>; Fri, 04 Feb 2022 18:18:43 -0800 (PST)
+ id 1nGBap-0060Yl-5G
+ for linux-phy@lists.infradead.org; Sat, 05 Feb 2022 03:18:32 +0000
+Received: by mail-pf1-x436.google.com with SMTP id y5so5759242pfe.4
+ for <linux-phy@lists.infradead.org>; Fri, 04 Feb 2022 19:18:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=message-id:date:mime-version:user-agent:subject:content-language:to
+ :cc:references:from:in-reply-to:content-transfer-encoding;
+ bh=R7incvgluYs5dTKR2o83cZ4xjLUlYz2zw4AZmoxYKh0=;
+ b=CruTIdnN0MOxwfdWronF0oZDLrIx9+ejQZH03EMu/p/DMVEu2ZYE9W28nRI2xeCuuz
+ 9PQ9G43A0iq58Q7HnnjhtuXnltzAynm1kAw6Eyq6hbu6W7NxjTwN4CLeKL1ytizDGPuq
+ FnqX8WUTNOJDS9lpIdYS/VTLHnsc0LPXj0ro0JO30Gly3KKWwMsO3qTRYk9fay89dKKe
+ HVaBVptsa70kgMMMZ9+qB5JWVRfkuyljPQw853tTksh8CBHwtNQeHtL/aDDzhKgOhM7R
+ gHFnw0t26rvNApUUdVZnhnQr8Cwf3cqNWHGfTowxXT4tUYXQsbFUKI8qx1Ob+1TC2GcB
+ efjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=dh+lEqNlO5YoCM8DAnReukIGw+hgF+pQdL2dapiz1tw=;
- b=jJKArC28y40JFZHTNYXHyAGFd6NKT/phL+8CGauUNx3Y9NlysesAuwIy54SgDOL1G2
- xeYpWUCJrsquIKJJdYcoyrTJ8vpDtEuBnTMKf57y18nLv5EeBVvCgqzcqCrUGv6Pg3C7
- a0JEmxUMI+sB4eX+w9TjRxV27/biGkiaE6+4S9IQfVKGtaU7ZfqtTRr9LwaVnlVCoJLT
- gUD7qq5fiMso7aJgLu1OWqvUqCdjorf75ZQHLaZ4KlMcHOyp5Qwnc4CcenbsXS58aoIO
- iPVjUNUNzwcO7h2Swq0tnL5p6YM4Ja8jwn50mw55AmB76tAF2kyazrjAuDnc59T5r0KP
- yfiA==
-X-Gm-Message-State: AOAM531lC6kBN1oaicz0ZKh2oQU+HcPyMQ4K3jP3Ao1we6RDcL2ni655
- +AqAUHGptb2L38Vd4GO+UWA/pNK/yw==
-X-Google-Smtp-Source: ABdhPJzVNBt81cbdJTvk5Ro3frSpSh5Zi976G6ToD+gWG8jKQFJyo6E99hWEtAccWCoNG6CR6ss2dw==
-X-Received: by 2002:a05:6870:37c5:: with SMTP id
- p5mr1411350oai.252.1644027522457; 
- Fri, 04 Feb 2022 18:18:42 -0800 (PST)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id h9sm1425584otk.42.2022.02.04.18.18.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 04 Feb 2022 18:18:41 -0800 (PST)
-Received: (nullmailer pid 3624417 invoked by uid 1000);
- Sat, 05 Feb 2022 02:18:40 -0000
-Date: Fri, 4 Feb 2022 20:18:40 -0600
-From: Rob Herring <robh@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Cc: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
- devicetree@vger.kernel.org, Vladimir Oltean <olteanv@gmail.com>,
- Holger Brunck <holger.brunck@hitachienergy.com>, Andrew Lunn <andrew@lunn.ch>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, linux-phy@lists.infradead.org,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=R7incvgluYs5dTKR2o83cZ4xjLUlYz2zw4AZmoxYKh0=;
+ b=L/TU2aUTk0MUkQvaZq1Psq0d1LDmxwFMSxDKQqZsht/9Rmc97IDKCPXYHoRgtBXod8
+ mV7p08tzb3iOcrpIzjPct2BHUmm7f7Kg7MLi9Ltci4/acZ29hbH5jqS6R0wRbncLrAF1
+ a+RQlNVmNB7nLCGXW7KovnuthD5g8u/pDnjsnp+WNKca9z2/B0ac+ikE26FP+8Ib9vJz
+ wY/IvCk06QV2yp1F3xxQ3mSmESRFEqSkw3dC8Gk4L7f/KCbIX7UPF8wgaN11GTBCOGgq
+ LGak00jeebGQoc4NCVyyVqbVh1+nomFfnUY7+NPFsNWsk1fkLZJ5iIGh3Ojb1q/viBhI
+ zJQA==
+X-Gm-Message-State: AOAM531nCqzbdvEkvhf/sb61mXuv5OcG66bEkJKVYh+fAuUhGVNQvZaJ
+ 0bTzgprODP7QwlbXu08Gl4Y=
+X-Google-Smtp-Source: ABdhPJz0qcDgW8+C4I/2MCh/cmTTsVEqPv/CztD4vzde27m+23EhRqV4bgrd6uiOBpW+l1Xcx0V59w==
+X-Received: by 2002:a63:8ac9:: with SMTP id y192mr1630526pgd.598.1644031110164; 
+ Fri, 04 Feb 2022 19:18:30 -0800 (PST)
+Received: from ?IPV6:2600:8802:b00:4a48:d9cb:da6e:2448:2d1c?
+ ([2600:8802:b00:4a48:d9cb:da6e:2448:2d1c])
+ by smtp.gmail.com with ESMTPSA id s6sm2682161pgk.44.2022.02.04.19.18.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 04 Feb 2022 19:18:29 -0800 (PST)
+Message-ID: <d34fc733-d8ee-5e11-92b2-11a948d656cf@gmail.com>
+Date: Fri, 4 Feb 2022 19:18:27 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
 Subject: Re: [PATCH devicetree v3] dt-bindings: phy: Add `tx-p2p-microvolt`
  property binding
-Message-ID: <Yf3egEVYyyXUkklM@robh.at.kernel.org>
+Content-Language: en-US
+To: Rob Herring <robh@kernel.org>
+Cc: =?UTF-8?Q?Marek_Beh=c3=ban?= <kabel@kernel.org>,
+ devicetree@vger.kernel.org, Vladimir Oltean <olteanv@gmail.com>,
+ Holger Brunck <holger.brunck@hitachienergy.com>, Andrew Lunn
+ <andrew@lunn.ch>, "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>, linux-phy@lists.infradead.org,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
 References: <20220119131117.30245-1-kabel@kernel.org>
  <74566284-ff3f-8e69-5b7d-d8ede75b78ad@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <74566284-ff3f-8e69-5b7d-d8ede75b78ad@gmail.com>
+ <Yf3egEVYyyXUkklM@robh.at.kernel.org>
+From: Florian Fainelli <f.fainelli@gmail.com>
+In-Reply-To: <Yf3egEVYyyXUkklM@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220204_181843_578012_35C297CD 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20220204_191831_239713_E0ADE9CC 
+X-CRM114-Status: GOOD (  10.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,61 +93,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 21, 2022 at 11:18:09AM -0800, Florian Fainelli wrote:
-> On 1/19/22 5:11 AM, Marek Beh=FAn wrote:
-> > Common PHYs and network PCSes often have the possibility to specify
-> > peak-to-peak voltage on the differential pair - the default voltage
-> > sometimes needs to be changed for a particular board.
-> > =
-
-> > Add properties `tx-p2p-microvolt` and `tx-p2p-microvolt-names` for this
-> > purpose. The second property is needed to specify the mode for the
-> > corresponding voltage in the `tx-p2p-microvolt` property, if the voltage
-> > is to be used only for speficic mode. More voltage-mode pairs can be
-> > specified.
-> > =
-
-> > Example usage with only one voltage (it will be used for all supported
-> > PHY modes, the `tx-p2p-microvolt-names` property is not needed in this
-> > case):
-> > =
-
-> >   tx-p2p-microvolt =3D <915000>;
-> > =
-
-> > Example usage with voltages for multiple modes:
-> > =
-
-> >   tx-p2p-microvolt =3D <915000>, <1100000>, <1200000>;
-> >   tx-p2p-microvolt-names =3D "2500base-x", "usb", "pcie";
-> > =
-
-> > Add these properties into a separate file phy/transmit-amplitude.yaml,
-> > which should be referenced by any binding that uses it.
-> =
-
-> p2p commonly means peer to peer which incidentally could be confusing,
-> can you spell out the property entire:
-> =
-
-> tx-peaktopeak-microvolt or:
-> =
-
-> tx-pk2pk-microvolt for a more compact name maybe?
-
-Peer to peer makes little sense in terms of a voltage. I think this is =
-
-fine as-is.
-
-Rob
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiAyLzQvMjAyMiA2OjE4IFBNLCBSb2IgSGVycmluZyB3cm90ZToKPiBPbiBGcmksIEphbiAy
+MSwgMjAyMiBhdCAxMToxODowOUFNIC0wODAwLCBGbG9yaWFuIEZhaW5lbGxpIHdyb3RlOgo+PiBP
+biAxLzE5LzIyIDU6MTEgQU0sIE1hcmVrIEJlaMO6biB3cm90ZToKPj4+IENvbW1vbiBQSFlzIGFu
+ZCBuZXR3b3JrIFBDU2VzIG9mdGVuIGhhdmUgdGhlIHBvc3NpYmlsaXR5IHRvIHNwZWNpZnkKPj4+
+IHBlYWstdG8tcGVhayB2b2x0YWdlIG9uIHRoZSBkaWZmZXJlbnRpYWwgcGFpciAtIHRoZSBkZWZh
+dWx0IHZvbHRhZ2UKPj4+IHNvbWV0aW1lcyBuZWVkcyB0byBiZSBjaGFuZ2VkIGZvciBhIHBhcnRp
+Y3VsYXIgYm9hcmQuCj4+Pgo+Pj4gQWRkIHByb3BlcnRpZXMgYHR4LXAycC1taWNyb3ZvbHRgIGFu
+ZCBgdHgtcDJwLW1pY3Jvdm9sdC1uYW1lc2AgZm9yIHRoaXMKPj4+IHB1cnBvc2UuIFRoZSBzZWNv
+bmQgcHJvcGVydHkgaXMgbmVlZGVkIHRvIHNwZWNpZnkgdGhlIG1vZGUgZm9yIHRoZQo+Pj4gY29y
+cmVzcG9uZGluZyB2b2x0YWdlIGluIHRoZSBgdHgtcDJwLW1pY3Jvdm9sdGAgcHJvcGVydHksIGlm
+IHRoZSB2b2x0YWdlCj4+PiBpcyB0byBiZSB1c2VkIG9ubHkgZm9yIHNwZWZpY2ljIG1vZGUuIE1v
+cmUgdm9sdGFnZS1tb2RlIHBhaXJzIGNhbiBiZQo+Pj4gc3BlY2lmaWVkLgo+Pj4KPj4+IEV4YW1w
+bGUgdXNhZ2Ugd2l0aCBvbmx5IG9uZSB2b2x0YWdlIChpdCB3aWxsIGJlIHVzZWQgZm9yIGFsbCBz
+dXBwb3J0ZWQKPj4+IFBIWSBtb2RlcywgdGhlIGB0eC1wMnAtbWljcm92b2x0LW5hbWVzYCBwcm9w
+ZXJ0eSBpcyBub3QgbmVlZGVkIGluIHRoaXMKPj4+IGNhc2UpOgo+Pj4KPj4+ICAgIHR4LXAycC1t
+aWNyb3ZvbHQgPSA8OTE1MDAwPjsKPj4+Cj4+PiBFeGFtcGxlIHVzYWdlIHdpdGggdm9sdGFnZXMg
+Zm9yIG11bHRpcGxlIG1vZGVzOgo+Pj4KPj4+ICAgIHR4LXAycC1taWNyb3ZvbHQgPSA8OTE1MDAw
+PiwgPDExMDAwMDA+LCA8MTIwMDAwMD47Cj4+PiAgICB0eC1wMnAtbWljcm92b2x0LW5hbWVzID0g
+IjI1MDBiYXNlLXgiLCAidXNiIiwgInBjaWUiOwo+Pj4KPj4+IEFkZCB0aGVzZSBwcm9wZXJ0aWVz
+IGludG8gYSBzZXBhcmF0ZSBmaWxlIHBoeS90cmFuc21pdC1hbXBsaXR1ZGUueWFtbCwKPj4+IHdo
+aWNoIHNob3VsZCBiZSByZWZlcmVuY2VkIGJ5IGFueSBiaW5kaW5nIHRoYXQgdXNlcyBpdC4KPj4K
+Pj4gcDJwIGNvbW1vbmx5IG1lYW5zIHBlZXIgdG8gcGVlciB3aGljaCBpbmNpZGVudGFsbHkgY291
+bGQgYmUgY29uZnVzaW5nLAo+PiBjYW4geW91IHNwZWxsIG91dCB0aGUgcHJvcGVydHkgZW50aXJl
+Ogo+Pgo+PiB0eC1wZWFrdG9wZWFrLW1pY3Jvdm9sdCBvcjoKPj4KPj4gdHgtcGsycGstbWljcm92
+b2x0IGZvciBhIG1vcmUgY29tcGFjdCBuYW1lIG1heWJlPwo+IAo+IFBlZXIgdG8gcGVlciBtYWtl
+cyBsaXR0bGUgc2Vuc2UgaW4gdGVybXMgb2YgYSB2b2x0YWdlLiBJIHRoaW5rIHRoaXMgaXMKPiBm
+aW5lIGFzLWlzLgoKVW5kZXJzdG9vZCwgbXkgcG9pbnQgd2FzIHRoYXQgcGVlciBpcyBhIHdvcmQg
+dGhhdCBpcyBjb21tb25seSB1c2VkIGluIGFuIAplbnZpcm9ubWVudCB3aGVyZSB5b3UgYXJlIHRh
+bGtpbmcgYWJvdXQgbmV0d29ya2luZyBlcXVpcG1lbnQgYXQgbGFyZ2UuIApBbnl3YXksIGZlZWwg
+ZnJlZSB0byBpZ25vcmUgaXQuCi0tIApGbG9yaWFuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
+dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
