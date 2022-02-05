@@ -4,81 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37461C433F5
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 20:10:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2668EC433F5
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 20:15:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SrL9YNZptGXYoqCSythBzkYyZ7gTlGZ1MIEjX3nI3t4=; b=yvfLy6HaufKBit
-	BzG6Aw36FdCc3uAHCkvOFXSjOCShz3IKF8OdNiOBMexH5ZyXwgssJ4dVEr5kPKCa54cPVEtN6SUhQ
-	W9oTn1ey0+ZmzNvxnT0DZ/VZQApYP8aK5itagzOCAr+JjZUr52iL9WpIIDUwvl4qcmOVzyurRz9Ac
-	CliyVzr07jGuQzNpfI7UGEYhPDBULiL9kG5JNRq+Bwk2fmUmPOGXqRveWZ6WE9XwxgwRD9/2z4FkJ
-	cNYFLDMh0ZByayLOqn8o35UQ3mQShxA8BIgPO44F9Q7uRWIvsQgbqNTwYLqxcB6Bn2e7Us8EVRIjv
-	lpadIZ7mEVAaht4y4nWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Wua7Lnx9Gih/XKeopVu55t2krpUClTbYDpt779DgmCA=; b=X7mAJxSn3JzU9j5hK4ATqD14CF
+	xT5Qvf5PvVg9RFlnWsXEQ7anDtG1yP8ck8ALjtONM0BG3PEbFginSxx2TIrWYPvN4o2xKQZYIBrX7
+	XuGycnpIcUd8hSFqiur4y6KPCNtt+MwQTNGLboC9MamYmnsyhM89d/E2qJZSJ3iNMsx2rtMcltHor
+	AbKUcxVZJJYZmYGxn6Y/UXqHzYM0pzbtFrnd+vITcr8KsPFkkYvv3yN1XYusgM3sr/i3nmP2ZyzBR
+	hWKtQdyawOT4IeBnyReGlzweN85Up46b3AHdkuBLKCql7EWSuFsJsWLf3hDwYzI/Hn6gOuCzz2fXA
+	YDlWnb3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGRNu-007QYv-K0; Sat, 05 Feb 2022 20:10:14 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1nGRT0-007SGI-IE; Sat, 05 Feb 2022 20:15:30 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGRMW-007PwL-Ke; Sat, 05 Feb 2022 20:08:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=KsW6dwZ6XY/Jd3tCcTrPW9sY6sNQwXsn1oDkb4n9lt8=; b=hOenFWSdEA4zrtMhkqXkkZVDiD
- 7PHWhFhdOWi9LlLYGiK//QzMKkJOSeutDa36WP5NtWy5Z/jt+GLbCz65GrpPDiYWLXEIkIETXCdCE
- 2rVdsEm+ZyRun/coIj1nrTEmPA6GAol2otCfdN5K09w3X1VwoGxw8Wwqc75BVGpKQL6RrW7Gu/kmx
- TqfAp7bNf5wRI2deHSAUU+pUOPADvmfszxeLpKRxMuIsgQ2ur07yV6/cOdk/WzQcGK+zK5/wteQeN
- jOu0+gy87ozvhdVxYdQvrAByQCr92uLOeCH9T1rhhQtLvZSV6VBa5Aa3fhbAvC+DqhlgjvCLWWahN
- 9FmALYfw==;
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGQDn-007CGo-AH; Sat, 05 Feb 2022 18:55:45 +0000
-Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 1C3FE24000A;
- Sat,  5 Feb 2022 18:55:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644087341;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=KsW6dwZ6XY/Jd3tCcTrPW9sY6sNQwXsn1oDkb4n9lt8=;
- b=budOrhSW03+JLtgBO9IhoomOq125GQ/GwlLhnOSNgWef2yStBlAXSe8bigpcZ2L1FCIEGp
- OjaTIn9fg5VvZsUQuwXWS3xCERfVnSkjmUNmTwE/b/prHlrAh30j74khYAjBVVht1Eb+qe
- JEcBKOuz8ypNGUNpEZ8aVl7icd+YzLbvIqdrEgZ9sVCQV3rzWQm0iAe/zUHJlXvz7ohfbJ
- YyYBKr8XQylEyXEkHhsN9Wre2yRQW8RZSFUqrUBK1FCr/8p5mFOB7KIX31X4gyDL3oBoWW
- eh3GD2dzFhwx/zK2rU1yDpMkX1a2FvN1U44K5G0MpL8Cmh7ze6K6fUBwmHNHFg==
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ id 1nGRSg-007S56-05; Sat, 05 Feb 2022 20:15:12 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 7BD35580138;
+ Sat,  5 Feb 2022 15:15:03 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute1.internal (MEProxy); Sat, 05 Feb 2022 15:15:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ cc:cc:content-transfer-encoding:content-type:date:date:from:from
+ :in-reply-to:in-reply-to:message-id:mime-version:references
+ :reply-to:sender:subject:subject:to:to; s=fm1; bh=o+YT8dM65eINM7
+ uU12V7S7CiGbJyTBQ0DTTXbszDH5A=; b=h54tOPJ+R6s9s6BX7rxDpJGJusl6Cn
+ xOA9NZHxingpnUQxIPCuN2Q+1xUvkcfjI1oewBOseZnmGJWMBkKtFewJWWFVJT9G
+ LM3Zs+0br5NdmhiLTbyy+h5fZDRR6zWwePRgWf7Vg7pGkGxqbS9W7uEzi40Ji1uh
+ Hz7XwueelqGrLCVdqDaupJ62V7FpsSUDHrob0iFOKDNkgGpMZznJUL3z7zC3hheo
+ NX3eWnUI7ZwIiDdjnH2Y3DHycxb2Tc7IlYZde2XfyZLBgP1jGhMSFAzSHBaiCuul
+ NBgZNTWHJ7UPnSE3GEslBh7nNGhGav8o83IJOU6PikBr/jF29gts0ckw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:cc:content-transfer-encoding
+ :content-type:date:date:from:from:in-reply-to:in-reply-to
+ :message-id:mime-version:references:reply-to:sender:subject
+ :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=o+YT8dM65eINM7uU12V7S7CiGbJyTBQ0DTTXbszDH
+ 5A=; b=F6SKmv1B2f8Q6PEKJhn+l6Mmr4L3KXkfLRGDhxcfzEp8OaBquZH/z3lyV
+ apkOd/Q8fCqwHvnxAksFDOdl0icttpS1MCJ5vnYAo8sIAHJZSiXE5bmrvRlcFD4U
+ lTuA/BMkSnwBi1vYSrl178w2Lw6ddqctacgYcTAMrgvAdWgGKBwqrOkmrHMV208y
+ 4yCPPwuWAxQI9S9OX3rnFCo81f0wvfuyJSIxm1wvcYiIwW5QPFwKxxeeR72Bvqa5
+ B5JgIvjO8+35rudcOHLc0KYroeGc0AXNjytBA9zG48XANQjAW3GwwTHg90kqfDzW
+ Ig7l6HKJlFZIsyb/tj2ouHX3CzZUg==
+X-ME-Sender: <xms:xdr-YRuEELIwf6C_80xflXTojQpWZPP3IgLorcryiRsKcCKGYZJ6PQ>
+ <xme:xdr-YaedkiIpdSYlMu7C3msF6F0NlJE3n8aY0E1G4npN5ySFTZDKeuYfXXkja33T9
+ KAWjFRT6Lb1Sb1VYg>
+X-ME-Received: <xmr:xdr-YUyCZZHO9ZVZNHXwigPCP391GD2dt19Y8zU-Wg9mK55XwRjpA9QNA_qxhciZtRuu3Di6rVsekP4RUZNvZeazexkqXhTKhG2KR4i8LohvNeb1f14WUF5m_w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrhedugddufeegucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepuffvfhfhkffffgggjggtgfesthejredttdefjeenucfhrhhomhepufgrmhhu
+ vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecugg
+ ftrfgrthhtvghrnhepffefvdfhhefhkeefteeiheeftdevuddvleeileegtedtfeejhfej
+ kedtffdtjeeknecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghruf
+ hiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgr
+ nhgurdhorhhg
+X-ME-Proxy: <xmx:xdr-YYMuPGb3RKzPx2sCF7P1sx9DpQlivNqFahdzXwfCohVlFoYh2g>
+ <xmx:xdr-YR9EcVCQoWMzpuGQJKWk1SWfUIwTsxiCcQzD1MMBxatkHu6azA>
+ <xmx:xdr-YYV36DLjVoTDTvXq26BuxeBcAuJDtdKSApyC-z6cAuq_XBB-_A>
+ <xmx:x9r-YYiSTR_JsUoQ0tmyE1mpu4vuyi0XqXo5g-70QG1FqRMHi6isXA>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
+ 5 Feb 2022 15:15:00 -0500 (EST)
+Subject: Re: [PATCH v2 02/66] dt-bindings: interconnect: sunxi: Add V3s mbus
+ compatible
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev
-Cc: Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH v2 36/66] media: sun6i-csi: Split stream sequences and irq
- code in capture
-Date: Sat,  5 Feb 2022 19:53:59 +0100
-Message-Id: <20220205185429.2278860-37-paul.kocialkowski@bootlin.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-3-paul.kocialkowski@bootlin.com>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <5386b1f5-9e75-4ce3-6641-bd7667c85d42@sholland.org>
+Date: Sat, 5 Feb 2022 14:14:59 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
+In-Reply-To: <20220205185429.2278860-3-paul.kocialkowski@bootlin.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_185543_440188_4A249013 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20220205_121510_149699_807ED42C 
+X-CRM114-Status: GOOD (  14.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,173 +117,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Create minimal helpers that split the enable/disable flow, which will
-make it easier to move control over to the bridge later on.
+On 2/5/22 12:53 PM, Paul Kocialkowski wrote:
+> Since the V3s uses the internal mbus, document its compatible.
+> 
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> ---
+>  .../devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml  | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
+> index 29c9961ee2d8..b67bf9261a6a 100644
+> --- a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
+> +++ b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
+> @@ -31,6 +31,7 @@ properties:
+>        - allwinner,sun5i-a13-mbus
+>        - allwinner,sun8i-h3-mbus
+>        - allwinner,sun8i-r40-mbus
+> +      - allwinner,sun8i-v3s-mbus
 
-Generally speaking the goal is to move register configuration to
-the capture code and later split it with the bridge code.
+Please enable the expanded binding added in commit 245578ba9f03 ("dt-bindings:
+arm: sunxi: Expand MBUS binding")[1] by adding the new compatible to the "if"
+block lower in the file. That way we can add V3S devfreq support in the future
+without changing that binding.
 
-Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
----
- .../platform/sunxi/sun6i-csi/sun6i_csi.c      | 26 ---------
- .../platform/sunxi/sun6i-csi/sun6i_csi.h      |  7 ---
- .../sunxi/sun6i-csi/sun6i_csi_capture.c       | 58 ++++++++++++++++++-
- 3 files changed, 55 insertions(+), 36 deletions(-)
+Regards,
+Samuel
 
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-index 5314497ad681..22779baf8c09 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-@@ -535,32 +535,6 @@ int sun6i_csi_update_config(struct sun6i_csi_device *csi_dev,
- 	return 0;
- }
- 
--void sun6i_csi_set_stream(struct sun6i_csi_device *csi_dev, bool enable)
--{
--	struct regmap *regmap = csi_dev->regmap;
--
--	if (!enable) {
--		regmap_update_bits(regmap, SUN6I_CSI_CAP_REG,
--				   SUN6I_CSI_CAP_VCAP_ON, 0);
--		regmap_write(regmap, SUN6I_CSI_CH_INT_EN_REG, 0);
--		return;
--	}
--
--	regmap_write(regmap, SUN6I_CSI_CH_INT_STA_REG,
--		     SUN6I_CSI_CH_INT_STA_CLEAR);
--	regmap_write(regmap, SUN6I_CSI_CH_INT_EN_REG,
--		     SUN6I_CSI_CH_INT_EN_VS |
--		     SUN6I_CSI_CH_INT_EN_HB_OF |
--		     SUN6I_CSI_CH_INT_EN_FIFO2_OF |
--		     SUN6I_CSI_CH_INT_EN_FIFO1_OF |
--		     SUN6I_CSI_CH_INT_EN_FIFO0_OF |
--		     SUN6I_CSI_CH_INT_EN_FD |
--		     SUN6I_CSI_CH_INT_EN_CD);
--
--	regmap_update_bits(regmap, SUN6I_CSI_CAP_REG, SUN6I_CSI_CAP_VCAP_ON,
--			   SUN6I_CSI_CAP_VCAP_ON);
--}
--
- /* Media */
- 
- static const struct media_device_ops sun6i_csi_media_ops = {
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
-index e16b3439a63c..1f235b8e240c 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.h
-@@ -89,13 +89,6 @@ int sun6i_csi_set_power(struct sun6i_csi_device *csi_dev, bool enable);
- int sun6i_csi_update_config(struct sun6i_csi_device *csi_dev,
- 			    struct sun6i_csi_config *config);
- 
--/**
-- * sun6i_csi_set_stream() - start/stop csi streaming
-- * @csi:	pointer to the csi
-- * @enable:	start/stop
-- */
--void sun6i_csi_set_stream(struct sun6i_csi_device *csi_dev, bool enable);
--
- /* get bpp form v4l2 pixformat */
- static inline int sun6i_csi_get_bpp(unsigned int pixformat)
- {
-diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
-index f32beed0aaad..ab6e298864ed 100644
---- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
-+++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi_capture.c
-@@ -107,6 +107,51 @@ static bool sun6i_csi_capture_format_check(u32 format)
- 
- /* Capture */
- 
-+static void sun6i_csi_capture_irq_enable(struct sun6i_csi_device *csi_dev)
-+{
-+	struct regmap *regmap = csi_dev->regmap;
-+
-+	regmap_write(regmap, SUN6I_CSI_CH_INT_EN_REG,
-+		     SUN6I_CSI_CH_INT_EN_VS |
-+		     SUN6I_CSI_CH_INT_EN_HB_OF |
-+		     SUN6I_CSI_CH_INT_EN_FIFO2_OF |
-+		     SUN6I_CSI_CH_INT_EN_FIFO1_OF |
-+		     SUN6I_CSI_CH_INT_EN_FIFO0_OF |
-+		     SUN6I_CSI_CH_INT_EN_FD |
-+		     SUN6I_CSI_CH_INT_EN_CD);
-+}
-+
-+static void sun6i_csi_capture_irq_disable(struct sun6i_csi_device *csi_dev)
-+{
-+	struct regmap *regmap = csi_dev->regmap;
-+
-+	regmap_write(regmap, SUN6I_CSI_CH_INT_EN_REG, 0);
-+}
-+
-+static void sun6i_csi_capture_irq_clear(struct sun6i_csi_device *csi_dev)
-+{
-+	struct regmap *regmap = csi_dev->regmap;
-+
-+	regmap_write(regmap, SUN6I_CSI_CH_INT_EN_REG, 0);
-+	regmap_write(regmap, SUN6I_CSI_CH_INT_STA_REG,
-+		     SUN6I_CSI_CH_INT_STA_CLEAR);
-+}
-+
-+static void sun6i_csi_capture_enable(struct sun6i_csi_device *csi_dev)
-+{
-+	struct regmap *regmap = csi_dev->regmap;
-+
-+	regmap_update_bits(regmap, SUN6I_CSI_CAP_REG, SUN6I_CSI_CAP_VCAP_ON,
-+			   SUN6I_CSI_CAP_VCAP_ON);
-+}
-+
-+static void sun6i_csi_capture_disable(struct sun6i_csi_device *csi_dev)
-+{
-+	struct regmap *regmap = csi_dev->regmap;
-+
-+	regmap_update_bits(regmap, SUN6I_CSI_CAP_REG, SUN6I_CSI_CAP_VCAP_ON, 0);
-+}
-+
- static void
- sun6i_csi_capture_buffer_configure(struct sun6i_csi_device *csi_dev,
- 				   struct sun6i_csi_buffer *csi_buffer)
-@@ -357,6 +402,10 @@ static int sun6i_csi_capture_start_streaming(struct vb2_queue *queue,
- 		goto error_media_pipeline;
- 	}
- 
-+	/* Clear */
-+
-+	sun6i_csi_capture_irq_clear(csi_dev);
-+
- 	/* Configure */
- 
- 	sun6i_csi_capture_configure(csi_dev);
-@@ -367,7 +416,8 @@ static int sun6i_csi_capture_start_streaming(struct vb2_queue *queue,
- 
- 	/* Enable */
- 
--	sun6i_csi_set_stream(csi_dev, true);
-+	sun6i_csi_capture_irq_enable(csi_dev);
-+	sun6i_csi_capture_enable(csi_dev);
- 
- 	ret = v4l2_subdev_call(subdev, video, s_stream, 1);
- 	if (ret && ret != -ENOIOCTLCMD)
-@@ -376,7 +426,8 @@ static int sun6i_csi_capture_start_streaming(struct vb2_queue *queue,
- 	return 0;
- 
- error_stream:
--	sun6i_csi_set_stream(csi_dev, false);
-+	sun6i_csi_capture_disable(csi_dev);
-+	sun6i_csi_capture_irq_disable(csi_dev);
- 
- error_media_pipeline:
- 	media_pipeline_stop(&video_dev->entity);
-@@ -397,7 +448,8 @@ static void sun6i_csi_capture_stop_streaming(struct vb2_queue *queue)
- 	if (subdev)
- 		v4l2_subdev_call(subdev, video, s_stream, 0);
- 
--	sun6i_csi_set_stream(csi_dev, false);
-+	sun6i_csi_capture_disable(csi_dev);
-+	sun6i_csi_capture_irq_disable(csi_dev);
- 
- 	media_pipeline_stop(&capture->video_dev.entity);
- 
--- 
-2.34.1
+[1]: https://git.kernel.org/torvalds/c/245578ba9f03
+
+>        - allwinner,sun50i-a64-mbus
+>  
+>    reg:
+> 
 
 
 -- 
