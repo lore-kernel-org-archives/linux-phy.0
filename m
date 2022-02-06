@@ -4,103 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2668EC433F5
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Feb 2022 20:15:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59650C433EF
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Feb 2022 11:30:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Wua7Lnx9Gih/XKeopVu55t2krpUClTbYDpt779DgmCA=; b=X7mAJxSn3JzU9j5hK4ATqD14CF
-	xT5Qvf5PvVg9RFlnWsXEQ7anDtG1yP8ck8ALjtONM0BG3PEbFginSxx2TIrWYPvN4o2xKQZYIBrX7
-	XuGycnpIcUd8hSFqiur4y6KPCNtt+MwQTNGLboC9MamYmnsyhM89d/E2qJZSJ3iNMsx2rtMcltHor
-	AbKUcxVZJJYZmYGxn6Y/UXqHzYM0pzbtFrnd+vITcr8KsPFkkYvv3yN1XYusgM3sr/i3nmP2ZyzBR
-	hWKtQdyawOT4IeBnyReGlzweN85Up46b3AHdkuBLKCql7EWSuFsJsWLf3hDwYzI/Hn6gOuCzz2fXA
-	YDlWnb3g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+i7jgTHCEaqVD3CnRL4sZuLi4KPCFpuQZrMHcXQxjyg=; b=OIMkDrueju3yaw
+	4upO2svV6lkuXijfR//8M9xeDGNRwbJ/iSu5H3nis2V54/k8EiSiKpw7O2BDgFPx1M3XvBkO64VXy
+	fOciwRcKuNlPsqlBe3nmD04cEy7DUGoCCj7a/MWxI3g4blSVnLifmIzzz6xv+Cqj4IrrbvU2HI6On
+	QPWMVO8tWzcUmGoPn51qRh5whem88jRD/TFZjtmBho6NWs9sHU+1ed/ptm9YnMlbAukB7uqg/1pM9
+	QrPR/33mHatVYIjZc9gX5IoLAd+cLW6dRtWvod/pqDAmEGYpBWJ3wCQUMnXM25u5ew4nEbfcaHMRa
+	BRzO/597gqg5BIyhOQ1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGRT0-007SGI-IE; Sat, 05 Feb 2022 20:15:30 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1nGfjz-0087y0-MA; Sun, 06 Feb 2022 11:29:59 +0000
+Received: from smtp-relay-internal-1.canonical.com ([185.125.188.123])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGRSg-007S56-05; Sat, 05 Feb 2022 20:15:12 +0000
-Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
- by mailnew.nyi.internal (Postfix) with ESMTP id 7BD35580138;
- Sat,  5 Feb 2022 15:15:03 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute1.internal (MEProxy); Sat, 05 Feb 2022 15:15:03 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- cc:cc:content-transfer-encoding:content-type:date:date:from:from
- :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to; s=fm1; bh=o+YT8dM65eINM7
- uU12V7S7CiGbJyTBQ0DTTXbszDH5A=; b=h54tOPJ+R6s9s6BX7rxDpJGJusl6Cn
- xOA9NZHxingpnUQxIPCuN2Q+1xUvkcfjI1oewBOseZnmGJWMBkKtFewJWWFVJT9G
- LM3Zs+0br5NdmhiLTbyy+h5fZDRR6zWwePRgWf7Vg7pGkGxqbS9W7uEzi40Ji1uh
- Hz7XwueelqGrLCVdqDaupJ62V7FpsSUDHrob0iFOKDNkgGpMZznJUL3z7zC3hheo
- NX3eWnUI7ZwIiDdjnH2Y3DHycxb2Tc7IlYZde2XfyZLBgP1jGhMSFAzSHBaiCuul
- NBgZNTWHJ7UPnSE3GEslBh7nNGhGav8o83IJOU6PikBr/jF29gts0ckw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=o+YT8dM65eINM7uU12V7S7CiGbJyTBQ0DTTXbszDH
- 5A=; b=F6SKmv1B2f8Q6PEKJhn+l6Mmr4L3KXkfLRGDhxcfzEp8OaBquZH/z3lyV
- apkOd/Q8fCqwHvnxAksFDOdl0icttpS1MCJ5vnYAo8sIAHJZSiXE5bmrvRlcFD4U
- lTuA/BMkSnwBi1vYSrl178w2Lw6ddqctacgYcTAMrgvAdWgGKBwqrOkmrHMV208y
- 4yCPPwuWAxQI9S9OX3rnFCo81f0wvfuyJSIxm1wvcYiIwW5QPFwKxxeeR72Bvqa5
- B5JgIvjO8+35rudcOHLc0KYroeGc0AXNjytBA9zG48XANQjAW3GwwTHg90kqfDzW
- Ig7l6HKJlFZIsyb/tj2ouHX3CzZUg==
-X-ME-Sender: <xms:xdr-YRuEELIwf6C_80xflXTojQpWZPP3IgLorcryiRsKcCKGYZJ6PQ>
- <xme:xdr-YaedkiIpdSYlMu7C3msF6F0NlJE3n8aY0E1G4npN5ySFTZDKeuYfXXkja33T9
- KAWjFRT6Lb1Sb1VYg>
-X-ME-Received: <xmr:xdr-YUyCZZHO9ZVZNHXwigPCP391GD2dt19Y8zU-Wg9mK55XwRjpA9QNA_qxhciZtRuu3Di6rVsekP4RUZNvZeazexkqXhTKhG2KR4i8LohvNeb1f14WUF5m_w>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrhedugddufeegucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepuffvfhfhkffffgggjggtgfesthejredttdefjeenucfhrhhomhepufgrmhhu
- vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecugg
- ftrfgrthhtvghrnhepffefvdfhhefhkeefteeiheeftdevuddvleeileegtedtfeejhfej
- kedtffdtjeeknecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghruf
- hiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgr
- nhgurdhorhhg
-X-ME-Proxy: <xmx:xdr-YYMuPGb3RKzPx2sCF7P1sx9DpQlivNqFahdzXwfCohVlFoYh2g>
- <xmx:xdr-YR9EcVCQoWMzpuGQJKWk1SWfUIwTsxiCcQzD1MMBxatkHu6azA>
- <xmx:xdr-YYV36DLjVoTDTvXq26BuxeBcAuJDtdKSApyC-z6cAuq_XBB-_A>
- <xmx:x9r-YYiSTR_JsUoQ0tmyE1mpu4vuyi0XqXo5g-70QG1FqRMHi6isXA>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
- 5 Feb 2022 15:15:00 -0500 (EST)
-Subject: Re: [PATCH v2 02/66] dt-bindings: interconnect: sunxi: Add V3s mbus
- compatible
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-3-paul.kocialkowski@bootlin.com>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <5386b1f5-9e75-4ce3-6641-bd7667c85d42@sholland.org>
-Date: Sat, 5 Feb 2022 14:14:59 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1nGfjx-0087xa-9J
+ for linux-phy@lists.infradead.org; Sun, 06 Feb 2022 11:29:58 +0000
+Received: from mail-ej1-f69.google.com (mail-ej1-f69.google.com
+ [209.85.218.69])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-relay-internal-1.canonical.com (Postfix) with ESMTPS id 0DFFC40040
+ for <linux-phy@lists.infradead.org>; Sun,  6 Feb 2022 11:29:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1644146988;
+ bh=Rt0CLAsAt//yNIPsU1fxnJ6fI6vrkoAOGL9+IE9dY2A=;
+ h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
+ In-Reply-To:Content-Type;
+ b=iyNF24RunQBqywPHV9APclAF/0SOPDNXAu21OGC1ZyQA+D55Sc7b0lcRa3C1Kh7Wk
+ ligK6armJAAOJ9KwoPmmHURB2RAyrlq5yHzIif6T8xjP+S3NAA65CR/VgnBZ6IGZj0
+ edw7i5Hm1avlcoMBJZQfiBHKUmbjs2d6+88kU4i8afju4us5s+va/2n2vhLfNAlYV5
+ TOcHXgAoZ1B5dD3t6nW8F/kS4TXlVACtwNeLDpCWw551A3l71JO3C1HfyYSW7SwDEp
+ XruJ96+HeTECWGXmyj0222wW5Mk43oo+FeOwZGVSuq/HEFpBvxd/sWW099RvydE2eC
+ bG9feGuNwVzgQ==
+Received: by mail-ej1-f69.google.com with SMTP id
+ o4-20020a170906768400b006a981625756so3708125ejm.0
+ for <linux-phy@lists.infradead.org>; Sun, 06 Feb 2022 03:29:48 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=Rt0CLAsAt//yNIPsU1fxnJ6fI6vrkoAOGL9+IE9dY2A=;
+ b=ipT/CI73YOmo/KYuFx5uf8xeL80P35cDZw+a4gMWinMgXa8apGnoxQGZhCDieY70SU
+ DNFMDyB29Ebh1EAZtGgKGsc+/1lLY6L54Cp02DiXrz4i1+W42I+FLn+XsTz2MIwx+sWO
+ 130VPSSFxPh74zKJesUj/0sKGT8eB+em3PZcHJT32/iX0wRJJnk7FzwMJp5mac158VaI
+ aMEc9G5p4GhGqsCrXYrm2FadGbnpnrqqrYprtVZ6/GcA7QzWuWUk7lul+fbB8umxMUd5
+ s1DityX5v9q8LiMmfLoGiVG40Nq0GUoTBl6B/QJ0fnwbVOmufbkKqwooIwTVMg6SpQx7
+ sL+Q==
+X-Gm-Message-State: AOAM533Pr+Do6o2Tw5zEQ8BBPcORd9JodhgZUlJLk6Co/GtTWUgncoTS
+ s+Yo0yVTSjPTJSN/Iq2okJaEeCfPy3oDg/uiOopvnuEKH4rgDTjYYI+8aBgMq2iW4nlHZx3OW72
+ 50D/vUAQjUd6ctGDHyJ5I+o2M8U0oGxpSgi2Xzu7T9GA=
+X-Received: by 2002:a05:6402:520d:: with SMTP id
+ s13mr8442901edd.132.1644146987539; 
+ Sun, 06 Feb 2022 03:29:47 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJyQUy24RjHPXGNrYXXd4Ep/1rz7beCD0Lisb4rFEaHdqI4+hhfFuwh3fhCM8vUwP90U+Eq35g==
+X-Received: by 2002:a05:6402:520d:: with SMTP id
+ s13mr8442890edd.132.1644146987417; 
+ Sun, 06 Feb 2022 03:29:47 -0800 (PST)
+Received: from [192.168.0.83] (xdsl-188-155-168-84.adslplus.ch.
+ [188.155.168.84])
+ by smtp.gmail.com with ESMTPSA id ec40sm1776603edb.68.2022.02.06.03.29.46
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 06 Feb 2022 03:29:46 -0800 (PST)
+Message-ID: <04ef74c4-71f6-559c-f054-5267086abc22@canonical.com>
+Date: Sun, 6 Feb 2022 12:29:45 +0100
 MIME-Version: 1.0
-In-Reply-To: <20220205185429.2278860-3-paul.kocialkowski@bootlin.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH V1 07/10] arm64: tegra: Enable PCIe slots in P3737-0000
+ board
 Content-Language: en-US
+To: Vidya Sagar <vidyas@nvidia.com>, bhelgaas@google.com,
+ lorenzo.pieralisi@arm.com, robh+dt@kernel.org, thierry.reding@gmail.com,
+ jonathanh@nvidia.com
+Cc: kishon@ti.com, vkoul@kernel.org, kw@linux.com, p.zabel@pengutronix.de,
+ mperttunen@nvidia.com, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-tegra@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ kthota@nvidia.com, mmaddireddy@nvidia.com, sagar.tv@gmail.com
+References: <20220205162144.30240-1-vidyas@nvidia.com>
+ <20220205162144.30240-8-vidyas@nvidia.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+In-Reply-To: <20220205162144.30240-8-vidyas@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220205_121510_149699_807ED42C 
-X-CRM114-Status: GOOD (  14.28  )
+X-CRM114-CacheID: sfid-20220206_032957_488864_E1A9B2B9 
+X-CRM114-Status: GOOD (  13.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,39 +112,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/5/22 12:53 PM, Paul Kocialkowski wrote:
-> Since the V3s uses the internal mbus, document its compatible.
+On 05/02/2022 17:21, Vidya Sagar wrote:
+> Enable PCIe controller nodes to enable respective PCIe slots on
+> P3737-0000 board. Following is the ownership of slots by different
+> PCIe controllers.
+> Controller-1 : On-board Broadcom WiFi controller
+> Controller-4 : M.2 Key-M slot
+> Controller-5 : CEM form-factor x8 slot
 > 
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 > ---
->  .../devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml  | 1 +
->  1 file changed, 1 insertion(+)
+>  .../nvidia/tegra234-p3737-0000+p3701-0000.dts | 26 +++++++++++++++++++
+>  1 file changed, 26 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-> index 29c9961ee2d8..b67bf9261a6a 100644
-> --- a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-> +++ b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-> @@ -31,6 +31,7 @@ properties:
->        - allwinner,sun5i-a13-mbus
->        - allwinner,sun8i-h3-mbus
->        - allwinner,sun8i-r40-mbus
-> +      - allwinner,sun8i-v3s-mbus
+> diff --git a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+> index efbbb878ba5a..b819e1133bc4 100644
+> --- a/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+> +++ b/arch/arm64/boot/dts/nvidia/tegra234-p3737-0000+p3701-0000.dts
+> @@ -21,4 +21,30 @@
+>  	serial {
+>  		status = "okay";
+>  	};
+> +
+> +	pcie@14100000 {
+> +		status = "okay";
+> +
+> +		phys = <&p2u_hsio_3>;
+> +		phy-names = "p2u-0";
+> +	};
+> +
+> +	pcie@14160000 {
+> +		status = "okay";
+> +
+> +		phys = <&p2u_hsio_4>, <&p2u_hsio_5>, <&p2u_hsio_6>,
+> +		       <&p2u_hsio_7>;
+> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3";
+> +	};
+> +
+> +	pcie@141a0000 {
+> +		status = "okay";
+> +
+> +		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
+> +		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
+> +		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
+> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
+> +			    "p2u-5", "p2u-6", "p2u-7";
+> +	};
+> +
 
-Please enable the expanded binding added in commit 245578ba9f03 ("dt-bindings:
-arm: sunxi: Expand MBUS binding")[1] by adding the new compatible to the "if"
-block lower in the file. That way we can add V3S devfreq support in the future
-without changing that binding.
+No need for trailing new line.
 
-Regards,
-Samuel
+>  };
 
-[1]: https://git.kernel.org/torvalds/c/245578ba9f03
 
->        - allwinner,sun50i-a64-mbus
->  
->    reg:
-> 
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
