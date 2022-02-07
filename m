@@ -4,67 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C5ADC433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 05:29:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93C7AC433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 06:47:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=83UBQVqI9FSZu26HOtT5fXzm+78lQRjDbDmD9Qwjva4=; b=w4AIR1nZyJPVb3
-	GDB/CL+xX7T7HJhGP7pxds6kB2aTSNnjdi/V9IQEi2e644MUTBFR2mtgQZ7xPhOOuJQ1f+yh3N0h9
-	b3GO1nsgyIB+rOrnbVW+cKWOeawxj560IDZun2KIhtjiOoZ6uvHP07eaCKOSHX2Hl1JfzLvEyaMqI
-	8zLmpAJa0/PRZerYHdCaUlADuahc74sxil018eadBbYcAiOudPSYQFLRC44D2jjl/rQYe+6GziHxC
-	GTPqpP6/g74PD74Few1vdWoM0mYyRsW1zj5v6PUAnnYporjlTFOzGUHNVF0/vXQkU+Ik03maG2Wd5
-	BpI2bmPT6+OgFRjQNrFQ==;
+	List-Owner; bh=6FBVRvp7SD7QcNWPthw/tUiEu429EdYguvt/TAKJqLU=; b=ypS97/JwYDGH6S
+	/hrscJqhPfYcC/4BcMvPurLF+XYDQhbYjZhL6RDCw7nl0aUx/N1LIHI7jZTdrPcazWDGyj/tab/jO
+	EEf9ejn4Hvad3WMrfsH3XN7pXfShGKmAZkzq8wB1Y+GOVMuEicMFc9jxNKTrlXiXBtEbItfxu7iii
+	k7HZC6RyAsfekZeV6jrV0kwpR9T1/eMFssmJOQMSAhnyuCzf9Bco+qYHtqLN9vtd0AQRR3/EdkRzJ
+	gsRpaRVmFhZfDRpzJAa9PwmXQMUtPSTS0UvXkM6pm+6DTqq41D2e1I3VxW+2ChkjS4S2Dpma+XnQ1
+	YTUBzUEMMR3BtRWTbzDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGway-0093ni-DY; Mon, 07 Feb 2022 05:29:48 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nGxoG-009BH7-0Z; Mon, 07 Feb 2022 06:47:36 +0000
+Received: from mail.tambre.ee ([2a01:7e01:e001:cc::3])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGwav-0093nO-88
- for linux-phy@lists.infradead.org; Mon, 07 Feb 2022 05:29:46 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id B62BBB80ED0;
- Mon,  7 Feb 2022 05:29:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1FEEC004E1;
- Mon,  7 Feb 2022 05:29:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1644211782;
- bh=IScjOYArVNYVbJH6MdKnmqqYzf1ygoeSC6Cat/SyezM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZKr+40RwCyLTmBLqDyLA6NfttVuysn3LAXf6bwqRngyYCtAe7oBoc9d08siEND25g
- 5sEvUB6SRqwpHSyYh+Nxu/w40pGCL/ae3bklPZXBjKSsbq2Fy9xzvspbOAiqwWsp/2
- wpi2IyOQ7oYNpXqEnC1MI8Z6kibSUmPwjpwBYM4nS+MKboN7nJo/3fSWDuChgkfdly
- BkB/g8sXdfrB2A8/xLoir1UkQ+rMpxbs6T/9+EddJprBls4JXsBMKxd2iX7eFou+W7
- 3CCEDPnYyoxFooqYA0tLKFfAdA7Fy6+9McuGwYMZOwpfBm8XuCIrZDHnYT9Ip0EpnV
- a2PoM7SXEh6Hg==
-Date: Mon, 7 Feb 2022 10:59:38 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>
-Cc: Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- devicetree@vger.kernel.org, Vladimir Oltean <olteanv@gmail.com>,
- Holger Brunck <holger.brunck@hitachienergy.com>,
- Andrew Lunn <andrew@lunn.ch>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, linux-phy@lists.infradead.org,
- Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [PATCH devicetree v3] dt-bindings: phy: Add `tx-p2p-microvolt`
- property binding
-Message-ID: <YgCuQjN5tBvljrQN@matsya>
-References: <20220119131117.30245-1-kabel@kernel.org>
- <74566284-ff3f-8e69-5b7d-d8ede75b78ad@gmail.com>
- <Yf3egEVYyyXUkklM@robh.at.kernel.org>
- <20220206185413.4c1ac00d@thinkpad>
+ id 1nGxoC-009BG2-5U
+ for linux-phy@lists.infradead.org; Mon, 07 Feb 2022 06:47:34 +0000
+Received: from [172.16.1.108] (unknown [194.204.61.131])
+ (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested) (Authenticated sender: raul)
+ by mail.tambre.ee (Postfix) with ESMTPSA id 249867EB02;
+ Mon,  7 Feb 2022 08:47:26 +0200 (EET)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.tambre.ee 249867EB02
+Authentication-Results: mail.tambre.ee;
+ dmarc=fail (p=reject dis=none) header.from=tambre.ee
+Authentication-Results: mail.tambre.ee; spf=fail smtp.mailfrom=tambre.ee
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.tambre.ee 249867EB02
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tambre.ee; s=201812;
+ t=1644216446; bh=1ZuSZkK917+DnbsBJTyoKnsNI3AbwbnGFtaNh1AErE8=;
+ h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+ b=wOHR/Bbmhh6Zh+XHczx2X0WjMYtd3PP60SzboIictEX28QeQkfOtl1UKOxSkIxoY2
+ SOOxEUqfTq+y+xPTWTRcQqYagfE58hP8e7eH5zQ+RIKiUlEU6Oc0W5VLhOFe+wYEbb
+ OxS5Ji36pH7WzTmHCYgHIYCKJ1uoWRaAddTbmdD6/yvWNrSTBYcA3AygkhNPuRetc7
+ bpzDvgLycBGe6Pn638YaKrICwH+vTpOhddcGwnq1s3XzcUWEycRxRFr4q/l8cbas+M
+ CHUY+yK1FZuDSYlWfXupJ/M5bcVTTQs9kMae8BlHPGVL0LHDKbhKtI51sSqpC8DIpK
+ O1+s4ytj8wg5w==
+Message-ID: <dcbf28db-d47a-a2e1-dae1-48f17f9a703a@tambre.ee>
+Date: Mon, 7 Feb 2022 08:47:26 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220206185413.4c1ac00d@thinkpad>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.1
+Subject: Re: [PATCH V1 04/10] dt-bindings: PHY: P2U: Add support for Tegra234
+ P2U block
+To: Vidya Sagar <vidyas@nvidia.com>, bhelgaas@google.com,
+ lorenzo.pieralisi@arm.com, robh+dt@kernel.org, thierry.reding@gmail.com,
+ jonathanh@nvidia.com
+Cc: kishon@ti.com, vkoul@kernel.org, kw@linux.com,
+ krzysztof.kozlowski@canonical.com, p.zabel@pengutronix.de,
+ mperttunen@nvidia.com, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-tegra@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ kthota@nvidia.com, mmaddireddy@nvidia.com, sagar.tv@gmail.com
+References: <20220205162144.30240-1-vidyas@nvidia.com>
+ <20220205162144.30240-5-vidyas@nvidia.com>
+From: Raul Tambre <raul@tambre.ee>
+In-Reply-To: <20220205162144.30240-5-vidyas@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220206_212945_477796_29453258 
-X-CRM114-Status: GOOD (  21.98  )
+X-CRM114-CacheID: sfid-20220206_224732_837942_7943C675 
+X-CRM114-Status: GOOD (  10.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,85 +79,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06-02-22, 18:54, Marek Beh=FAn wrote:
-> On Fri, 4 Feb 2022 20:18:40 -0600
-> Rob Herring <robh@kernel.org> wrote:
-> =
+On 2022-02-05 18:21, Vidya Sagar wrote:
+> Subject:
+> [PATCH V1 04/10] dt-bindings: PHY: P2U: Add support for Tegra234 P2U block
+> From:
+> Vidya Sagar <vidyas@nvidia.com>
+> Date:
+> 2022-02-05, 18:21
+> 
+> To:
+> <bhelgaas@google.com>, <lorenzo.pieralisi@arm.com>, 
+> <robh+dt@kernel.org>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+> CC:
+> <kishon@ti.com>, <vkoul@kernel.org>, <kw@linux.com>, 
+> <krzysztof.kozlowski@canonical.com>, <p.zabel@pengutronix.de>, 
+> <mperttunen@nvidia.com>, <linux-pci@vger.kernel.org>, 
+> <devicetree@vger.kernel.org>, <linux-tegra@vger.kernel.org>, 
+> <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, 
+> <kthota@nvidia.com>, <mmaddireddy@nvidia.com>, <vidyas@nvidia.com>, 
+> <sagar.tv@gmail.com>
+> 
+> 
+> Add support for Tegra234 P2U (PIPE to UPHY) module block which is a glue
+> module instantiated once for each PCIe lane between Synopsys DesignWare
+> core based PCIe IP and Universal PHY block.
+> 
+> Signed-off-by: Vidya Sagar<vidyas@nvidia.com>
+> ---
+>   .../bindings/phy/phy-tegra194-p2u.yaml          | 17 +++++++++++++----
+>   1 file changed, 13 insertions(+), 4 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml b/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml
+> index 9a89d05efbda..6ba1f69b1126 100644
+> --- a/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml
+> +++ b/Documentation/devicetree/bindings/phy/phy-tegra194-p2u.yaml
+> @@ -4,7 +4,7 @@
+>   $id:"http://devicetree.org/schemas/phy/phy-tegra194-p2u.yaml#"
+>   $schema:"http://devicetree.org/meta-schemas/core.yaml#"
+>   
+> -title: NVIDIA Tegra194 P2U binding
+> +title: NVIDIA Tegra194 & Tegra234 P2U binding
+>   
+>   maintainers:
+>     - Thierry Reding<treding@nvidia.com>
+> @@ -12,13 +12,17 @@ maintainers:
+>   description: >
+>     Tegra194 has two PHY bricks namely HSIO (High Speed IO) and NVHS (NVIDIA High
+>     Speed) each interfacing with 12 and 8 P2U instances respectively.
+> +  Tegra234 has three PHY bricks namesly HSIO, NVHS and GBE (Gigabit Ethernet)
 
-> > On Fri, Jan 21, 2022 at 11:18:09AM -0800, Florian Fainelli wrote:
-> > > On 1/19/22 5:11 AM, Marek Beh=FAn wrote:  =
+typo: namely
 
-> > > > Common PHYs and network PCSes often have the possibility to specify
-> > > > peak-to-peak voltage on the differential pair - the default voltage
-> > > > sometimes needs to be changed for a particular board.
-> > > > =
-
-> > > > Add properties `tx-p2p-microvolt` and `tx-p2p-microvolt-names` for =
-this
-> > > > purpose. The second property is needed to specify the mode for the
-> > > > corresponding voltage in the `tx-p2p-microvolt` property, if the vo=
-ltage
-> > > > is to be used only for speficic mode. More voltage-mode pairs can be
-> > > > specified.
-> > > > =
-
-> > > > Example usage with only one voltage (it will be used for all suppor=
-ted
-> > > > PHY modes, the `tx-p2p-microvolt-names` property is not needed in t=
-his
-> > > > case):
-> > > > =
-
-> > > >   tx-p2p-microvolt =3D <915000>;
-> > > > =
-
-> > > > Example usage with voltages for multiple modes:
-> > > > =
-
-> > > >   tx-p2p-microvolt =3D <915000>, <1100000>, <1200000>;
-> > > >   tx-p2p-microvolt-names =3D "2500base-x", "usb", "pcie";
-> > > > =
-
-> > > > Add these properties into a separate file phy/transmit-amplitude.ya=
-ml,
-> > > > which should be referenced by any binding that uses it.  =
-
-> > > =
-
-> > > p2p commonly means peer to peer which incidentally could be confusing,
-> > > can you spell out the property entire:
-> > > =
-
-> > > tx-peaktopeak-microvolt or:
-> > > =
-
-> > > tx-pk2pk-microvolt for a more compact name maybe?  =
-
-> > =
-
-> > Peer to peer makes little sense in terms of a voltage. I think this is =
-
-> > fine as-is.
-> =
-
-> Cool. Should this get merged via devicetree, or via phy maintainers?
-> Or should I resend this together with patches that make use of this
-> property? (In that case can you add your Ack?)
-
-Sending with patches using this would be better.. It can go thru phy
-tree
-
--- =
-
-~Vinod
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
