@@ -4,72 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5698C433EF
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 09:58:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BD73C433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 16:15:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ppFnyOguCUcJ6+OBnhsd17Zt0T3+ryWMSJ1+IEJc1p4=; b=omRRftkIVVtPV0f1tqF5SEkVpA
-	SMm7yHS1+NEINcMQ9PiQo9ukdA2uSU5nZ9Juox3c3A8zIgQkcNd7dk3HUHo3wvVLzOrc1Q2kZNlE+
-	rfjIC2sFdM8wwFkP0J7ir4fMfvSDdneL9wQx8dNgYEEegEacIPFtMDjh7k+h4+1hKdhYKxg4PJ4CF
-	0Lg0kstUzgF+gKUYoyD3pAlepl2d0GecsNRmBcd5ydBUNNacaCR/eSHJeYt89ORYxCUcTxWdBbMyx
-	VuZc93v2R7oKrNHwQUo16EQf+8fcM859RJs3ImDuRVCyzSSxIApqDFp+BAOKc25uWAT+9hT+4lsR4
-	PYrMNBrA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JMlSJ/AazR+t6S0yE+Q/ny3irnWVr1ZeiOMVW0Tf6Es=; b=zvaIWpqbZkojGr
+	TRqABDOGnuNvvuqudeYZi1LWy0ApEpJDyzKdNYK7+eY7PUxbMrwN6aFz2ST9lk08TJL4XcbBnY2jY
+	02MKhbp59w3EiytT4etuV/yIHyPsMu4pKKa1+fnChfpdBpkxMxbblAWlhG7rSsuEKSsnncW0nMsyh
+	Oyk1ibNFwNLMK5YG0QPeHeQuWh4X6a7+I3/GU1ZEVL8DtQIMZ1px/pfBUo3VtkiwGA6hd//os0du3
+	UzSnnX8cJl6DG43duwT0XD7mRbvNsYJxRqvxBgAQw27CbFEpXDnozFxfQVRZarcDACkCkxKpjPmKC
+	Myv6Cq2bitRXEVHu7VmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nH0nT-009i5L-7f; Mon, 07 Feb 2022 09:58:59 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1nH6fw-00B1G2-E3; Mon, 07 Feb 2022 16:15:36 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nH0n4-009ht4-2B; Mon, 07 Feb 2022 09:58:35 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 506A35801B4;
- Mon,  7 Feb 2022 04:58:33 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 07 Feb 2022 04:58:33 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
- :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to; s=fm2; bh=LaJ0v2ms79kLOJkjg/3kGK9hXazOFFTsZfGFTE
- rsluE=; b=tDAyrh7fO5UWuYXdeQ8lpAnakCa358D+0NBqMt8zV9dw/WZZw9KVgK
- OyXcMpHI/M02B5dP8dTcDiAY+UJdf1YsIszh253r9pZ3YChph+jryADVaZ/gncST
- Kc6T7ejEvXC0lbRjn9XfJcLTfwPH/9RsT7XniJecdYkD7q/uzeYVcloL8JAUPyHl
- F+u3OTeGgmNk6bSmLeCToJg8pKqW5ZSxwPqL0IPO/C+rW+Y2jhnmtpePQ0zaBKg4
- pK218bBspGaXBHza8dHGMu8a60Giparnupw/vwQZA5HhlvFji1ludGbcfJmvZ40F
- ZaEaKEpBvgoykZvhFfyCzew1XXspvVyA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-type:date:date:from:from
- :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=LaJ0v2ms79kLOJkjg
- /3kGK9hXazOFFTsZfGFTErsluE=; b=RI3EdBlZEh02qsohqW0pK8fQFNFB3vt5s
- CrYP/JrBbmikFUEfDULCliKhZbnHWAuNqXXz84jkx8pOo1IL34LROcYShY6/3o+l
- ZE2jONyqeMND2SY4SQztG7ANrm2lcP5FXX0PjZwa+LUa5XoPIIKHeag55D0xxLWg
- IUne7wWMVBBlMBZSK4nbrH7ZqgaK5leMiWRBTgrdIKy7r1ma5JObwso1ec65K95T
- qhXhV7i9ZKrFmPFL+KpQKN/Qy+L6CQEEfW2W/zHBYNtKOUC1Y+RzcspOSDws4qRF
- 9nUAOZWgFpZmAdiDnea1g0EighrnWwnd9QOeB9YwbFFiNXUm7eniQ==
-X-ME-Sender: <xms:SO0AYqSu09xfPBE5UZ65DLtaNJ_e7DULAa93cXP8xp6VuVbA455mRA>
- <xme:SO0AYvzPLrSbrPrbTGuxb-ka5qO3Fs1dGnmzVs5SuLorUS6vt6y1huPZC_639ICFw
- hbbPWAboHIrEsXLQqk>
-X-ME-Received: <xmr:SO0AYn1OewLxK-rj4K5kUbmjDwGynPvPWaD1fZ8XRTLvEghzOuDqBsaOtjeHvqbpKWtYIT0nAT_Vgyhox8BpNywBiGjS3MfuyNoyN8U>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheehgddtkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
- gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
- udenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrg
- igihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:SO0AYmAlJN0QGaxTfRAH7BpgWzAW6uWFnVl-I0lABJcGSAibiW5Uqw>
- <xmx:SO0AYjjuu5KlaBudBxxIpLiCHJKCE1xYTaC-UhOPr5AFF3-8KJF9ug>
- <xmx:SO0AYipakf4e-36UGuC3bY2QKjHLp-P6SRxr-t7gopU91T3LyNiVTQ>
- <xmx:Se0AYsZ6Yr9X0QT_gTp6A7pBGPTtKEaInvNlUZo2XIPRYk_OYwfTRw>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 7 Feb 2022 04:58:31 -0500 (EST)
-Date: Mon, 7 Feb 2022 10:58:30 +0100
-From: Maxime Ripard <maxime@cerno.tech>
+ id 1nH6Ia-00ArV3-Tu; Mon, 07 Feb 2022 15:51:30 +0000
+Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
+ [62.78.145.57])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 54D34340;
+ Mon,  7 Feb 2022 16:51:23 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1644249083;
+ bh=Kg8KkyXqodwxnkoOUnTFgILuDislMphNhCMp4Cyt3k0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=d+p/yyLLVWoFHaQMa3PKOYne2f5NsLX/aSXsN5whwh5fbgyeQpYs8XdYey0+Cmdzm
+ wzUhiqC1tH8lsKZPl6Eninn4/oSoKEz/NKHoSjt3wcCtb6Np67rcbw0PDyekIXy8+L
+ kBpaesRvFQGudsLOVg3bNSdwSx4HeFms+1kyhIT4=
+Date: Mon, 7 Feb 2022 17:51:21 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -77,25 +44,24 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
  Yong Deng <yong.deng@magewell.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 25/66] media: sun6i-csi: Pass and store csi device
- directly in video code
-Message-ID: <20220207095830.k2k2nmkr3kqb5rdt@houat>
+Subject: Re: [PATCH v2 61/66] dt-bindings: media: Add Allwinner A31 ISP
+ bindings documentation
+Message-ID: <YgE/+UmP4nJVxtRT@pendragon.ideasonboard.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-26-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-62-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <20220205185429.2278860-26-paul.kocialkowski@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20220205185429.2278860-62-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220207_015834_222203_060129E3 
-X-CRM114-Status: UNSURE (   9.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220207_075129_156879_90E57183 
+X-CRM114-Status: GOOD (  19.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,57 +73,178 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4170321518042139909=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Paul,
 
---===============4170321518042139909==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="p6vzlvrvhk5bygbl"
-Content-Disposition: inline
+Thank you for the patch.
 
-
---p6vzlvrvhk5bygbl
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Sat, Feb 05, 2022 at 07:53:48PM +0100, Paul Kocialkowski wrote:
-> The video structure is part of the main csi device structure, so pass
-> pointers to that top-level structure directly. This makes it easier to
-> navigate and access other elements. No functional change intended.
->=20
+On Sat, Feb 05, 2022 at 07:54:24PM +0100, Paul Kocialkowski wrote:
+> This introduces YAML bindings documentation for the Allwinner A31 Image
+> Signal Processor (ISP).
+> 
 > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> ---
+>  .../media/allwinner,sun6i-a31-isp.yaml        | 117 ++++++++++++++++++
+>  1 file changed, 117 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
+> new file mode 100644
+> index 000000000000..2d87022c43ce
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
+> @@ -0,0 +1,117 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-isp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner A31 Image Signal Processor Driver (ISP) Device Tree Bindings
+> +
+> +maintainers:
+> +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - allwinner,sun6i-a31-isp
+> +      - allwinner,sun8i-v3s-isp
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Bus Clock
+> +      - description: Module Clock
+> +      - description: DRAM Clock
 
-Reviewed-by: Maxime Ripard <maxime@cerno.tech>
+That's interesting, does the ISP have a dedicated DRAM ?
 
-Maxime
+> +
+> +  clock-names:
+> +    items:
+> +      - const: bus
+> +      - const: mod
+> +      - const: ram
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description: CSI0 input port
+> +
+> +        properties:
+> +          reg:
+> +            const: 0
+> +
+> +          endpoint:
+> +            $ref: video-interfaces.yaml#
+> +            unevaluatedProperties: false
 
---p6vzlvrvhk5bygbl
-Content-Type: application/pgp-signature; name="signature.asc"
+If no other property than remote-endpoint are allowed, I'd write
 
------BEGIN PGP SIGNATURE-----
+          endpoint:
+            $ref: video-interfaces.yaml#
+	    remote-endpoint: true
+            additionalProperties: false
 
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgDtRgAKCRDj7w1vZxhR
-xQsoAQCTQuGPJjgwQxNDB56tWYcoUfQGHYrEnOAcVpx3F+5OvwEAoyMDIH8m1x/K
-QBNwdA2MghhwXgi8r2tujv77nhejlwk=
-=nT9H
------END PGP SIGNATURE-----
+Same below.
 
---p6vzlvrvhk5bygbl--
+> +
+> +        additionalProperties: false
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description: CSI1 input port
+> +
+> +        properties:
+> +          reg:
+> +            const: 0
 
+This should be 1.
 
---===============4170321518042139909==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +
+> +          endpoint:
+> +            $ref: video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +
+> +        additionalProperties: false
+> +
+> +    anyOf:
+> +      - required:
+> +        - port@0
+> +      - required:
+> +        - port@1
+
+As ports are an intrinsic property of the ISP, both should be required,
+but they don't have to be connected.
+
+By the way, how do you select at runtime which CSI-2 RX the ISP gets its
+image stream from ? Is it configured through registers of the ISP ?
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/sun8i-v3s-ccu.h>
+> +    #include <dt-bindings/reset/sun8i-v3s-ccu.h>
+> +
+> +    isp: isp@1cb8000 {
+> +        compatible = "allwinner,sun8i-v3s-isp";
+> +        reg = <0x01cb8000 0x1000>;
+> +        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
+> +        clocks = <&ccu CLK_BUS_CSI>,
+> +             <&ccu CLK_CSI1_SCLK>,
+> +             <&ccu CLK_DRAM_CSI>;
+> +        clock-names = "bus", "mod", "ram";
+> +        resets = <&ccu RST_BUS_CSI>;
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                reg = <0>;
+> +
+> +                isp_in_csi0: endpoint {
+> +                    remote-endpoint = <&csi0_out_isp>;
+> +                };
+> +            };
+> +        };
+> +    };
+> +
+> +...
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4170321518042139909==--
-
