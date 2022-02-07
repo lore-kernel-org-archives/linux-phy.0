@@ -4,87 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2FB0C433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 08:50:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26D45C433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 09:10:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LrJ19d4Kl+MOvH+o/Eqwm3oWFbea+vhxZL7JuDDgIa4=; b=02FVH3RJXSBbDc
-	dRnWZC7RAbUkI8gccJHurK5MGIm3mbL+afF/vnUJmO+hAVVDANKqvVSeyKNiSwSARaloOp4P7TbBk
-	GSn1cDCcywQT/dKkiOnmb1XB0PLr+odvGcUHlqHijIdrxqAmyb77QLjmMINz9G4m/YBQbUwd17Nk5
-	sI4NrK9i3m3YM8txaQE/aVKGrWGKSiPZMwthe479BwkYK0OQi7/tY9zgaeAgYnLTv52n7b2/tHpyn
-	PF9sME+asqxTcXSmfXN3FJJVgGFQ4MpEF9rlZHL0upaQtP5LgKt993xd3GWo/iu2KgjqO9Uhvd4Ww
-	w6Gjq/R2wZV/7cxjHSFg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=wY0+BLf/zNrvRJjotb9K5MuF5MQEtJIcAzqeYWhd16I=; b=0SiLwPj5Y51YlBfLoBbvDi+1/G
+	nP+SUJRDmyiVlPpVcrRCYY4JHNQ2QZzfs7TL9zF6+TjfOO/4HnSExyP0bOWy+gPUtj7oFcYArtnzh
+	zkUTe7npHDDhVutcItZYDNk2GVCj9oIHYANLfJ4Wym1gO8Hv6jRRjk2Sv6og+qGR/2W+FCbnNckMa
+	r2ZYmMTq/dUW9hS5qOzI5L+MrBfSJpxvLzlvXjh2sTzU0mZ4bUq203AAMbAIffFQNFRkwSfDMA+jO
+	zIbmVkkPlw8Q8UiGsJ/OX1IeOB3Bltej5Qi3pH0pSiqRwY2jzCl4MwUynzeOENu0jefulcXt77LQz
+	SsTTMM/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nGzj1-009QK7-4l; Mon, 07 Feb 2022 08:50:19 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1nH02Y-009VLo-L3; Mon, 07 Feb 2022 09:10:30 +0000
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nGzio-009QHB-Dt; Mon, 07 Feb 2022 08:50:07 +0000
-Received: by mail-ej1-x633.google.com with SMTP id og43so15865681ejc.0;
- Mon, 07 Feb 2022 00:50:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=kp8nZg26AuEMvm8QEtueCcP+FrKWg8a9EQmnI5dKMtc=;
- b=i9NmlbplMBKyJptoV+0Ap8F9ZDNfpzM54h3O+whKY55ghEvHjqUCIQCPE3Vc9y4XfN
- SdPnc1zwArIgWqV9fIhoPMKyO73MpLg5XV/24wUbnMuveF3DCkgjjXZZPmMZa/BqjdmO
- kXV+wu2MlLamw4IqRXaFIQ1JWx95IvHQUJhIxh0QUodKAIeE7+qQD86oPdTQjmthaC1n
- HRl4F/EuM83ftwuIKQORLweYYBiWXs/Nh2Hfj0XuPSy0ehR8X4rCHvMQgct1nulZmpEc
- PqpRfpNMmc6oH4pKLjFX5f4aSKl/+WKldpaxPh9IP8Oi3H1NC5cP6acRJ5KG4muZ8KwE
- RayA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=kp8nZg26AuEMvm8QEtueCcP+FrKWg8a9EQmnI5dKMtc=;
- b=TJA2NcDQOk6q5zITMQ4c4PF/GLEaLWPDmyjedXDpkYyViUkjfhSGwv0IeUjGhN84y1
- EWkNEkNCPllVMu1bGZ2wCiDOFHTZYCxHtC06bwLGH3s5EhT3i2pN2EjVVKzYeJ4yUx48
- fIVi+p1OLB6WOIIhRQx49UQiWHEdWU2kb9kDkJONEf7H42eIGCivN0wJOinYXWvT9YiW
- WG/ykmJ1U/r5gDiDKGi9dI6z94MI1zB+ctC1sHAFSLQ9ZnzzXTN+uwN58rZt8PmjeVYx
- UEUe17nEoR6b5onlS405LNbYBiwm8EoscWjIgQVrSLJTbO24kizwRBV0VTmtddtuwGw2
- rAZg==
-X-Gm-Message-State: AOAM5312BpICl8J5L+m7czKEwMvwxXVZMq4yau1vhSh2dzYxHTac4GtP
- FDql2rfRjKPL/bxIKFrq6fo=
-X-Google-Smtp-Source: ABdhPJxIrJn4H6z5Uh+XugYTFQFkEqQT/xm3/GRroGI4nndtytFjOtPRhPBD8MtsV1QLALi1vZOmmQ==
-X-Received: by 2002:a17:906:619:: with SMTP id
- s25mr9129849ejb.341.1644223803512; 
- Mon, 07 Feb 2022 00:50:03 -0800 (PST)
-Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net.
- [89.212.178.211])
- by smtp.gmail.com with ESMTPSA id hq28sm3417230ejc.204.2022.02.07.00.50.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 07 Feb 2022 00:50:02 -0800 (PST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: Samuel Holland <samuel@sholland.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+ id 1nH02L-009VJy-WF; Mon, 07 Feb 2022 09:10:19 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 3564F580197;
+ Mon,  7 Feb 2022 04:10:17 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 07 Feb 2022 04:10:17 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+ :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
+ :message-id:mime-version:references:reply-to:sender:subject
+ :subject:to:to; s=fm2; bh=R7UJ3iF3QHld5VlL8DXB8KHalc3jQUprq6G9Hy
+ azmd4=; b=pnZ8k0BqtwOlrpwjVR9F+Ywos6Celc3JwwbWPdnm6EpMOZwuNw7ayN
+ oxHfUAk1haNbOFsrs3Pcsj9Z3kgikXa5tl9sahiBMI34BPJxwtSrhI0NcoQ6f1tX
+ co1HIxABhBVHZm3PVKHcz/LUQgS8vzLMHtV0Zx052z9fztFg6eXB5Tmr/GvEcMI9
+ 6TtoyUHbIJDCgR+PD6OurVD3nbcZ7LXMI20KFgnHMnLx/Qym0onRKMv4q7hB1pKI
+ J4E3YiUq/AguO4vMKuEbvat7JDC2XdFFplRfBblgEo2IVoz2AD68VJGLuDwF2Ci7
+ sIgww9T6PD8iuELP7AQEe2ORxnaemNyw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:cc:content-type:date:date:from:from
+ :in-reply-to:in-reply-to:message-id:mime-version:references
+ :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=R7UJ3iF3QHld5VlL8
+ DXB8KHalc3jQUprq6G9Hyazmd4=; b=I6KDPlL1blMggMMpM4sfBmsi+xz5ZkoIy
+ CGG1kfBDiZ+Cb6stxr9Q4wl2ekuaVwuWsbgiN+6qI0qSQiwy9kn9rmUVVtYCcDg+
+ QfOItq+ftrzN7AMoxS/BRrY7xrd7F1HAJ69UH0/ywES29RFZqF0dPsIxQF/DUzoX
+ SADmRDVMMqelhoPIpxJgOif5YnFmQjTst/ryXZId60emVmLuRbEsA2fZrbW3yRKT
+ iWnrMMTRtk0vMcc7LXVdidjTMdvIbxOlVX+mMDvutOKp7As0J9EqX9HD6Bf5iVqO
+ F+Bx2cIkuXM/lAlNaQvX4EE2zDmC4Yl1taf8UF1KaGsizsQKzducw==
+X-ME-Sender: <xms:-OEAYi6ZC8ybTYDe51-rgSjE4J6tYtrXvr4fH1xFVQsyUM__fG4fFQ>
+ <xme:-OEAYr6o7a5xsoJU-ado0ccOaUNIj96q7Bir_gXZXdKd5iJeK_HYJOqNOGUH5UIYu
+ o48IKfCAfb5umVCaZU>
+X-ME-Received: <xmr:-OEAYhflU0vIqTcdb4UeLBNpRHEOj-PB-ZOvMufB8UYJ2umvuZJILke-Fv0Nrh97PMjDGBs9zDJHcOccgsl1NE3LLNBwpWuNMK1Y9_E>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheeggdduvdegucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmh
+ grgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:-OEAYvKgotox7wuaen_JPKuVushrlWshKfgnHyw5fFKH3yny111A5Q>
+ <xmx:-OEAYmK3M6uHOz0aREF_IB9-a-w0kaD-iIsdKJCjnIDRmb415DsIHQ>
+ <xmx:-OEAYgy9BeecMal-mAODbT4HdTHd_y5Rb4e5CKlpeFpXK0Luk3RoUg>
+ <xmx:-eEAYrBt6LqJFndomEn_wOo7QhXvozfYzDdBtJn3nKnIbVMkNdTIvA>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
+ 7 Feb 2022 04:10:15 -0500 (EST)
+Date: Mon, 7 Feb 2022 10:10:14 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 02/66] dt-bindings: interconnect: sunxi: Add V3s mbus
- compatible
-Date: Mon, 07 Feb 2022 09:50:00 +0100
-Message-ID: <8021451.T7Z3S40VBb@jernej-laptop>
-In-Reply-To: <YgDbv8aQEOOjwTb0@aptenodytes>
+Subject: Re: [PATCH v2 17/66] media: sun6i-csi: Define and use driver name
+ and (reworked) description
+Message-ID: <20220207091014.6rugcnspzjdubuxb@houat>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <5386b1f5-9e75-4ce3-6641-bd7667c85d42@sholland.org>
- <YgDbv8aQEOOjwTb0@aptenodytes>
+ <20220205185429.2278860-18-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
+In-Reply-To: <20220205185429.2278860-18-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220207_005006_518486_7D410A9F 
-X-CRM114-Status: GOOD (  19.71  )
+X-CRM114-CacheID: sfid-20220207_011018_137957_85A94CDB 
+X-CRM114-Status: GOOD (  10.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,77 +106,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2078198414000423112=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Paul,
 
-Dne ponedeljek, 07. februar 2022 ob 09:43:43 CET je Paul Kocialkowski 
-napisal(a):
-> Hi,
-> 
-> On Sat 05 Feb 22, 14:14, Samuel Holland wrote:
-> > On 2/5/22 12:53 PM, Paul Kocialkowski wrote:
-> > > Since the V3s uses the internal mbus, document its compatible.
-> > > 
-> > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > ---
-> > > 
-> > >  .../devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml  | 1 +
-> > >  1 file changed, 1 insertion(+)
-> > > 
-> > > diff --git
-> > > a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.
-> > > yaml
-> > > b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.
-> > > yaml index 29c9961ee2d8..b67bf9261a6a 100644
-> > > ---
-> > > a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.
-> > > yaml +++
-> > > b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.
-> > > yaml> > 
-> > > @@ -31,6 +31,7 @@ properties:
-> > >        - allwinner,sun5i-a13-mbus
-> > >        - allwinner,sun8i-h3-mbus
-> > >        - allwinner,sun8i-r40-mbus
-> > > 
-> > > +      - allwinner,sun8i-v3s-mbus
-> > 
-> > Please enable the expanded binding added in commit 245578ba9f03
-> > ("dt-bindings: arm: sunxi: Expand MBUS binding")[1] by adding the new
-> > compatible to the "if" block lower in the file. That way we can add V3S
-> > devfreq support in the future without changing that binding.
-> 
-> I had missed that new driver but surely I will expand the updated binding.
-> 
-> By the way do you have an explanation about the cell index given to the
-> interconnects (after &mbus)?
-
-This is mbus channel. You can find appropriate one checking DRAM driver in U-
-Boot, where mbus is configured.
-
-Best regards,
-Jernej
-
-> 
-> Paul
-> 
-> > Regards,
-> > Samuel
-> > 
-> > [1]: https://git.kernel.org/torvalds/c/245578ba9f03
-> > 
-> > >        - allwinner,sun50i-a64-mbus
-> > >    
-> > >    reg:
+--===============2078198414000423112==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="w2mtmwumvelpbuht"
+Content-Disposition: inline
 
 
+--w2mtmwumvelpbuht
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, Feb 05, 2022 at 07:53:40PM +0100, Paul Kocialkowski wrote:
+> Add proper defines for driver name and description instead of
+> MODULE_NAME and hardcoding (cosmetics).
+>=20
+> Also rework the description while at it to mention the hardware
+> generation that the driver supports and remove the video capture
+> mentions since it applies to the whole media device.
+>=20
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+
+Reviewed-by: Maxime Ripard <maxime@cerno.tech>
+
+Maxime
+
+--w2mtmwumvelpbuht
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgDh9gAKCRDj7w1vZxhR
+xUhdAQDxosvE5Z1tfazCfFwKTKvd8wdE1L1J0eAJW2n0zJD0GwD/Y/ZSfxTbktu6
+mAwempvC3dPabl4ELRLwkyfcajQdcwg=
+=hI7k
+-----END PGP SIGNATURE-----
+
+--w2mtmwumvelpbuht--
 
 
+--===============2078198414000423112==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2078198414000423112==--
+
