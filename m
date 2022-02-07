@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FA50C433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 09:56:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2B03C433FE
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 09:57:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=PtPBBPZrqefhZzo2ZQyq70pD1+BUfNn5rxYj8mmVgiE=; b=Qb2su7dYglGSZadyDMqGmtwsCP
-	U1BKp7LinpDnVtH07gmbRlnBouedr8D6pFkB4uQ7x33CFUi+VIM+nf34BrGpvGu0RCxjh5xCM6bGB
-	wuJIgKVuzJq7yYcZDgg0IdoJGg9G80TezIMSNtnO/UjLsWRYvpGHVQRtFo4R6I+MaE1/xZ4iwjsoF
-	2IHL/sASisgCGBz4sbTeA6DVpYk7QUST5R2E63/ypDhEaeqG7lybXRH95VCHPOyjiuOvBDiePYyss
-	W2LNoPxTtTTPsXdlfWitfagIIzfp2Rm6XWJcc50KgKgOx2USgN561sdjSUGGXsmpd61WE2DEQwXuR
-	cRCBcAzA==;
+	bh=/mL9h0smh3t5fk3+0B3EnsVbJlevWOYZAj7jZJLV/uU=; b=VDAGINUV2S1ml671AImx9EZDQ2
+	QmrlxSiUnwR6lefzy76Lq/0hHej36DH3AuEc8O779xv5WGU9uiikH8SHSq1ykxYa0HaGsK7tBHfQU
+	aKOokuY7eIKKkHKF0lWMqZXxkRYCLDKwEW87spwMQhnzXV/rAMXfG5fOGbWgiHnuAmZbFBzPp0+Hu
+	2/OL7LMXwq/rbaD9NzztoMss0CiZBLuiQm32ZaVaDRpuUcXbHa5aY/XLOUy5GI2TPNu/xaqNn0w0U
+	KkuSi25NI27bWPKNDNGpZyN9rnell2bEpdH8vtdAjms63dJKyGbCkEhCuX55X3a6uE+dYMsQW144D
+	rkONSSUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nH0ky-009gtj-F8; Mon, 07 Feb 2022 09:56:24 +0000
+	id 1nH0lm-009hFa-35; Mon, 07 Feb 2022 09:57:14 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nH0kH-009gdg-5K; Mon, 07 Feb 2022 09:55:42 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 3A1B65801B4;
- Mon,  7 Feb 2022 04:55:40 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 07 Feb 2022 04:55:40 -0500
+ id 1nH0lD-009h0o-Rg; Mon, 07 Feb 2022 09:56:41 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 19A9B5801B1;
+ Mon,  7 Feb 2022 04:56:39 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute1.internal (MEProxy); Mon, 07 Feb 2022 04:56:39 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
  :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
  :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to; s=fm2; bh=LzpW5U29/mV3TnArXep7XidAoi+6P2KaOjL2Uu
- SGyY8=; b=MwrJLKGMyPYfjGSbDCS1Bf2SMrC4nOsXhJrjqKdZd8qTYTpfxFpND3
- /gsSGltSjOBoQkC5J+m/YTzVMLI1mmXh+5+Q7mtXzUvgmm7t9V52tqKFcEbkw4O7
- Q3N7WqUigvXrK/4VjQgdBAvxpcNzTRvBxF2csTyNz68ZthjZ/XEQTPwSXPvXJIQJ
- vP3qaDy5m0exlpNtsVHI/m6tSUU6yHnYrggo5LX7AAc+Q+FmmNCKwuEWt2KBhEUs
- 9IZiCOxQp1WUR4fMwgFjBTLDbiUmezRa5+S/J/pC1Vh9PKGrplN9PmtuZtUOHz3u
- LkzM/UkUdr40WIWgRTwBGIDlyoNBmcrg==
+ :subject:to:to; s=fm2; bh=kGIMVYhKNCUOPYuVWpsXpzFka3m2RK9MnBQ1Zh
+ CUJw0=; b=W/NE6I+eNlpjh6UO5VSgb7pJjCD4kgvHSRxmCyUQY2alPdd9ud2Csy
+ Rg/0mLwlxFzml9FA630Z6UN9/dJZ91di1AxwMoBIGnWAuRClF1r2OeTPCpgbTCL/
+ sGntx8DNrjEvHA0fg8E/vayRNBgHIjg2LTgo1wLh/HiXAjF/wjQUoX3BrNcb3aJw
+ yHlo387UzHeAE0cQ6Fyk8x3spQ2JRjjJ1QNn6qn5Zyu0wm+w8nVL2ukxHkEFBTGR
+ mN5xk4oocy3yGeordrzMszSH/AfSeR5y3T42Pxhk99OngnAXUcXHazqBDAQ8zdUw
+ /HS7UNGbuq6jfRgEmIXK4CnJN4qoiDpA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:cc:content-type:date:date:from:from
  :in-reply-to:in-reply-to:message-id:mime-version:references
  :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=LzpW5U29/mV3TnArX
- ep7XidAoi+6P2KaOjL2UuSGyY8=; b=Y1H9v6AU1pfVmn3nNPk08l9+B0J+9pnKa
- ZdiHbNsx/uiyxDrhDBw7CzGOtP9+Kb5rwIZviATjfFSqLYnFsw4M1p0KNG0kF3cA
- nIr35V2XkfxDylGVAmNHwoMXfREpbtbhsj5jJwdTOVj0nUj1p/vQ1RhvkJ8vtsRk
- glIk5rqme0zB7Zo05AGElNuMItJyD3AWIXQ+IEDb9YqXayoD3ofbrY36N8q3Uxt0
- afK9Mmb3Pies1SrH2FzMX9hmZ6hguz1aNUpRkh0hlO6ap0HcoRSIdT3Z6K1EODwm
- 74lLGaCBl3U1Os+F1fic0CaLmu0zQ+g9wQW3W0dDGQ4Gq8XxG2TOA==
-X-ME-Sender: <xms:muwAYnnfH21w3ZcYr9vUpgzcYUGx-F97VwZGwYnhXbtwy5sjkbjmlQ>
- <xme:muwAYq342lI5EVIWLeSOgymB5EkMPpM83WSbTo2S1Ddf1QJ8YI4_vTvy-qqLcqMe5
- 25lNsFX3peeqlY8BSc>
-X-ME-Received: <xmr:muwAYtqngz_qQbtbcklfBTqPSDbjELfpHcmEOdPhIp7zo5lxGBSTdL6SPfFktGE0VAJqm1TRsBCVotVZouaprw9NlmTI9CDbtEgJupw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheehgddtjecutefuodetggdotefrodftvf
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=kGIMVYhKNCUOPYuVW
+ psXpzFka3m2RK9MnBQ1ZhCUJw0=; b=T4pixUTz9EGQeZ5nMxygyybJID341dNQu
+ 9gvL3iVHPDruyI9/kNiLP/nmgNaVSmfpYKO7vQlbscnu1dF0K+wDaRNy/E0C0Ean
+ MM5eONfdQdFs6MD19CZhVH2Vfa1Puj8WfM+iOpLHz394w0+L6m1Rt46mr4Xd2KJ2
+ VRsGxh8Us0ve+cd7IVv9YJk4CTBNTBIEH/YiLyB5bkoEewG4sExvMqLHU/pl1MAL
+ rli8hB1Ksd4n4wW5JV0G9ratwqf8kRY3oWx3bt5VqssspLJ1Ww0Ut/PBF2mgHDNY
+ l2HH7aZHSjOP1HiFqbVsgymDWbi1eO7GhS2+Mu5BxGyq9w9+uJO5w==
+X-ME-Sender: <xms:1uwAYmCd4dWfTFwbmZMzaIzU4qwW7XvrdOok8Iz7_VDd1yJjluPsHA>
+ <xme:1uwAYghe6mBViOZMM9FzfrDrQkNvnPc9jwihc497M-lCkvJ-I1EwB4NKwqe8oT5TU
+ dfyE6ZtJVeVGA4WT9A>
+X-ME-Received: <xmr:1uwAYpmRBWuemiFFlQvB3RgOILvxo-1O0Pbw0BISlKnp1tUxUhtxfJQ-cuAaQcptH1tkAWFLs3I9DXSk4ugb2qd_augvSuTL_eA0smA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheehgddtkecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
@@ -62,13 +62,13 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheehgddtjecutefuodetggdote
  gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
  udenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrg
  igihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:muwAYvm_t2Eh25_r1lKUHHTlvfu7vKe8Hy4YNn4zFvateXTN_9PEgg>
- <xmx:muwAYl03htUu29oGMPledVUjxdmcSi0sIAWKVMU18XH9LVClhf96fw>
- <xmx:muwAYuu8hbBa_2DGNEEwR7-AmlflacezEtyRO2ZJtIF__L1_t4yamQ>
- <xmx:nOwAYsue7NANvZAY5nXD7ySAL8rq_35RGFbNNtBo5k9smbwHLxm1mg>
+X-ME-Proxy: <xmx:1uwAYkzgHb5EfN9-i9d458PWYAM8GUHuZ-rFIOsa3oIRsMtjYKWN8g>
+ <xmx:1uwAYrSMkLR0RcApVpl6j1G6eqwy2SN0Rl010dxnffzbn7LlSQE94Q>
+ <xmx:1uwAYvY8zA4DTe3_dQjXZ5bjFVEn7ZdbAalQtAvCB0jkjdHGwWwF9g>
+ <xmx:1-wAYsJjFnQwWw7aXHbVGFPdqU3iO8pJbDfGoUbBz4VlDSG1Kj_1Lw>
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 7 Feb 2022 04:55:38 -0500 (EST)
-Date: Mon, 7 Feb 2022 10:55:35 +0100
+ 7 Feb 2022 04:56:38 -0500 (EST)
+Date: Mon, 7 Feb 2022 10:56:36 +0100
 From: Maxime Ripard <maxime@cerno.tech>
 To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
@@ -85,15 +85,15 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 23/66] media: sun6i-csi: Tidy up v4l2 code
-Message-ID: <20220207095535.bvkenjwnrawbh66j@houat>
+Subject: Re: [PATCH v2 24/66] media: sun6i-csi: Tidy up video code
+Message-ID: <20220207095636.qoqagsavskhlrng7@houat>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-24-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-25-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <20220205185429.2278860-24-paul.kocialkowski@bootlin.com>
+In-Reply-To: <20220205185429.2278860-25-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220207_015541_487523_F4F14DBD 
-X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-CacheID: sfid-20220207_015640_017952_A718D018 
+X-CRM114-Status: UNSURE (   9.05  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -106,26 +106,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3624989308114723267=="
+Content-Type: multipart/mixed; boundary="===============2488957944579050403=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============3624989308114723267==
+--===============2488957944579050403==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="z2k626xkldr63pmc"
+	protocol="application/pgp-signature"; boundary="pyrsjzli2thxv5dg"
 Content-Disposition: inline
 
 
---z2k626xkldr63pmc
+--pyrsjzli2thxv5dg
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Sat, Feb 05, 2022 at 07:53:46PM +0100, Paul Kocialkowski wrote:
-> Various cosmetic improvements to the v4l2 registration code, with
-> renames, lowerings, etc. The cleanup function is moved down after
-> setup. No functional change intended.
+On Sat, Feb 05, 2022 at 07:53:47PM +0100, Paul Kocialkowski wrote:
+> Some code cleanups, renames, variable lowerings and moving things around =
+for
+> better organization. No functional change intended.
 >=20
 > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 
@@ -133,21 +133,21 @@ Reviewed-by: Maxime Ripard <maxime@cerno.tech>
 
 Maxime
 
---z2k626xkldr63pmc
+--pyrsjzli2thxv5dg
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgDslwAKCRDj7w1vZxhR
-xYUzAP0ej+2jY/iJRXJJW8CJHTu9z9F4r55daJfJr9TYHTjmzAD/T7cUtfZlL39G
-0syT9Uej1bcktNVjzCz1cIxmQn9AFAo=
-=3IsS
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgDs1AAKCRDj7w1vZxhR
+xQKnAQCMUjpfUgamt9vxCE20zE0gPD6E4cQ4Qn5ABCapBEwBMAEAvy8vHSWgmZqd
+l7MgNjmOqkikWP952Y5ku+UaAbTVFA0=
+=XZPY
 -----END PGP SIGNATURE-----
 
---z2k626xkldr63pmc--
+--pyrsjzli2thxv5dg--
 
 
---===============3624989308114723267==
+--===============2488957944579050403==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -158,5 +158,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============3624989308114723267==--
+--===============2488957944579050403==--
 
