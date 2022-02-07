@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26D45C433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 09:10:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4DDDC433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Feb 2022 09:12:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wY0+BLf/zNrvRJjotb9K5MuF5MQEtJIcAzqeYWhd16I=; b=0SiLwPj5Y51YlBfLoBbvDi+1/G
-	nP+SUJRDmyiVlPpVcrRCYY4JHNQ2QZzfs7TL9zF6+TjfOO/4HnSExyP0bOWy+gPUtj7oFcYArtnzh
-	zkUTe7npHDDhVutcItZYDNk2GVCj9oIHYANLfJ4Wym1gO8Hv6jRRjk2Sv6og+qGR/2W+FCbnNckMa
-	r2ZYmMTq/dUW9hS5qOzI5L+MrBfSJpxvLzlvXjh2sTzU0mZ4bUq203AAMbAIffFQNFRkwSfDMA+jO
-	zIbmVkkPlw8Q8UiGsJ/OX1IeOB3Bltej5Qi3pH0pSiqRwY2jzCl4MwUynzeOENu0jefulcXt77LQz
-	SsTTMM/w==;
+	bh=PhIHqCPi88J89vDzSjIj6q9zGRIE/tT0EUkA15vgn38=; b=VaTl4BRDU8Vuq0kgpPqeB4ijiL
+	pHYft1dbdz0blZ6S7hAnBaRkdn5oriWaUjdtC3e5B+JTvyWx2PMMS61K+A/cHoCrAvf8KgqH1VT/r
+	/lgo/4sp8fWAR8Og8jr2W6Y436MBVWJBZpUI8aX10KJGzRx2TTAIKxCE0+dj4PdjikT0cA1jQBjEf
+	YMvGL+ds9Tlat0DMwooTgc6FN8SAruYSc8ycZoj2PYQnFsA7HiD4x4Mw+4iBk3/8ek53vncqxmV/9
+	CEkxXiU6MyiA8qWJGE3YD8eQBz+Caa9c39Y1ip8EY3rmbCCHSNrwPDttZ0mD50NcjSp2GD3B8wrzi
+	Za3XGEdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nH02Y-009VLo-L3; Mon, 07 Feb 2022 09:10:30 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1nH04E-009VYR-7S; Mon, 07 Feb 2022 09:12:14 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nH02L-009VJy-WF; Mon, 07 Feb 2022 09:10:19 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 3564F580197;
- Mon,  7 Feb 2022 04:10:17 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 07 Feb 2022 04:10:17 -0500
+ id 1nH042-009VVV-Vg; Mon, 07 Feb 2022 09:12:04 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id E3FE55800FF;
+ Mon,  7 Feb 2022 04:11:59 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 07 Feb 2022 04:11:59 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
  :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
  :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to; s=fm2; bh=R7UJ3iF3QHld5VlL8DXB8KHalc3jQUprq6G9Hy
- azmd4=; b=pnZ8k0BqtwOlrpwjVR9F+Ywos6Celc3JwwbWPdnm6EpMOZwuNw7ayN
- oxHfUAk1haNbOFsrs3Pcsj9Z3kgikXa5tl9sahiBMI34BPJxwtSrhI0NcoQ6f1tX
- co1HIxABhBVHZm3PVKHcz/LUQgS8vzLMHtV0Zx052z9fztFg6eXB5Tmr/GvEcMI9
- 6TtoyUHbIJDCgR+PD6OurVD3nbcZ7LXMI20KFgnHMnLx/Qym0onRKMv4q7hB1pKI
- J4E3YiUq/AguO4vMKuEbvat7JDC2XdFFplRfBblgEo2IVoz2AD68VJGLuDwF2Ci7
- sIgww9T6PD8iuELP7AQEe2ORxnaemNyw==
+ :subject:to:to; s=fm2; bh=AkbvzTgyLEVcCtiaikYwQWMxktMorl1GqklAmd
+ isHMc=; b=ZYtQP4oemzGrMZjyzqYYS9N7Fhdl+lS8p19CIH+lB21naHgFNFZdeo
+ 8NumhaYpjXUzzVhfC5p9vkcGna4l69sCBWSCb0JT5KzG3k15K/X54fm2+pjIYCqM
+ Nsj4SY31GoOxQAkk9RwwunBIVxCX4Er5wgVq8LW0qPkTfRL+5PVLrbZzXm+Y5FO1
+ mdH/I38750KKGe4E4HIfaAXOAjDbcv2UgzPsH5V6jIyVarRsubn1tx3hcMzaLnKN
+ 7pkcyaCMPV1bUyuMlw22GjtFd7WzGLJCI0xUvlkJJEqPAM8IoMszOLqxvB/Dr+Ht
+ Q1aZR1zX1NPOhAz/TDbFuZosYq9yAjGA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:cc:content-type:date:date:from:from
  :in-reply-to:in-reply-to:message-id:mime-version:references
  :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=R7UJ3iF3QHld5VlL8
- DXB8KHalc3jQUprq6G9Hyazmd4=; b=I6KDPlL1blMggMMpM4sfBmsi+xz5ZkoIy
- CGG1kfBDiZ+Cb6stxr9Q4wl2ekuaVwuWsbgiN+6qI0qSQiwy9kn9rmUVVtYCcDg+
- QfOItq+ftrzN7AMoxS/BRrY7xrd7F1HAJ69UH0/ywES29RFZqF0dPsIxQF/DUzoX
- SADmRDVMMqelhoPIpxJgOif5YnFmQjTst/ryXZId60emVmLuRbEsA2fZrbW3yRKT
- iWnrMMTRtk0vMcc7LXVdidjTMdvIbxOlVX+mMDvutOKp7As0J9EqX9HD6Bf5iVqO
- F+Bx2cIkuXM/lAlNaQvX4EE2zDmC4Yl1taf8UF1KaGsizsQKzducw==
-X-ME-Sender: <xms:-OEAYi6ZC8ybTYDe51-rgSjE4J6tYtrXvr4fH1xFVQsyUM__fG4fFQ>
- <xme:-OEAYr6o7a5xsoJU-ado0ccOaUNIj96q7Bir_gXZXdKd5iJeK_HYJOqNOGUH5UIYu
- o48IKfCAfb5umVCaZU>
-X-ME-Received: <xmr:-OEAYhflU0vIqTcdb4UeLBNpRHEOj-PB-ZOvMufB8UYJ2umvuZJILke-Fv0Nrh97PMjDGBs9zDJHcOccgsl1NE3LLNBwpWuNMK1Y9_E>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheeggdduvdegucetufdoteggodetrfdotf
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=AkbvzTgyLEVcCtiai
+ kYwQWMxktMorl1GqklAmdisHMc=; b=VM3DGXCpCRL20mz8TJrkx3EUxptakYg6b
+ 8pdATEcdRfElHDv5rr10zlujya8idjcB1xiYSkA+Upq+rCH1baqpfIcXzu/JRUJu
+ OdK7E37rPSA0ZXsASTOKdQlETkT26QtVZLOgi2aD7ZFntOod7W0iBlC8gZRP2px9
+ FBnhK1ExbKkAZJFJtB9pzTSWbA1/f11tPsMB8k0fQ76cEo1/Nk34Zr8sHVl6NlEZ
+ n1ab3E8akB5Vs1d/3E6KLwmuVJTK0l5vYYdLBNybtXKzY4KEQKq/RICP/NGWKh5h
+ 9uhwTOHx7tnolu5whbqYroiMKf7cot1IrHM/1niyw1T3ELnN6BnJg==
+X-ME-Sender: <xms:X-IAYoEQ2YCfWFywbXQyIA4f13o_qYtQZ8L1gdLh-IwxOIhI13TBug>
+ <xme:X-IAYhUJIj6ebXHlIPDI8Cr6xIwtLECh0JKoaSiCO1nEevU532bSFMmG5U6fyJ-qH
+ dyO4QR5ivXDL4WQ048>
+X-ME-Received: <xmr:X-IAYiIUY5WHilUa2iDRJVTADKxFrXsEFU3g7S3TuL3mJi-8ke4_1ngDKSLZenJc_K6NY1SycUyyIa-6I3BKmHy960Lw6Y3-SNN54EE>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheeggdduvdehucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
@@ -62,13 +62,13 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheeggdduvdegucetufdoteggod
  htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
  gedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmh
  grgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:-OEAYvKgotox7wuaen_JPKuVushrlWshKfgnHyw5fFKH3yny111A5Q>
- <xmx:-OEAYmK3M6uHOz0aREF_IB9-a-w0kaD-iIsdKJCjnIDRmb415DsIHQ>
- <xmx:-OEAYgy9BeecMal-mAODbT4HdTHd_y5Rb4e5CKlpeFpXK0Luk3RoUg>
- <xmx:-eEAYrBt6LqJFndomEn_wOo7QhXvozfYzDdBtJn3nKnIbVMkNdTIvA>
+X-ME-Proxy: <xmx:X-IAYqGKge_BNab5Lue8XWxDzwDoD8YqGutS9Zs8lkyPU0hbw5kAqg>
+ <xmx:X-IAYuVwZAM_AADyshif8PSzr3Qax_liBaJRzHJsZ9562Se7MLDfWQ>
+ <xmx:X-IAYtNrNNmHIpjLwgQ6OM2QlcMg7fGNQy4M8LU6JKiaAAEFue8hHQ>
+ <xmx:X-IAYlMzk0JWZnZIkSt1LtGSGdvZxx-MdM2dAy25y9RP1Ep7jaS-8A>
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 7 Feb 2022 04:10:15 -0500 (EST)
-Date: Mon, 7 Feb 2022 10:10:14 +0100
+ 7 Feb 2022 04:11:59 -0500 (EST)
+Date: Mon, 7 Feb 2022 10:11:57 +0100
 From: Maxime Ripard <maxime@cerno.tech>
 To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
@@ -85,16 +85,16 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 17/66] media: sun6i-csi: Define and use driver name
- and (reworked) description
-Message-ID: <20220207091014.6rugcnspzjdubuxb@houat>
+Subject: Re: [PATCH v2 18/66] media: sun6i-csi: Refactor main driver data
+ structures
+Message-ID: <20220207091157.czmye7mgwu2xnvdw@houat>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-18-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-19-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <20220205185429.2278860-18-paul.kocialkowski@bootlin.com>
+In-Reply-To: <20220205185429.2278860-19-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220207_011018_137957_85A94CDB 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20220207_011203_122352_6EFD3409 
+X-CRM114-Status: GOOD (  11.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,29 +106,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2078198414000423112=="
+Content-Type: multipart/mixed; boundary="===============7057474876857175863=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2078198414000423112==
+--===============7057474876857175863==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="w2mtmwumvelpbuht"
+	protocol="application/pgp-signature"; boundary="pvpl6lthepkpplvj"
 Content-Disposition: inline
 
 
---w2mtmwumvelpbuht
+--pvpl6lthepkpplvj
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Sat, Feb 05, 2022 at 07:53:40PM +0100, Paul Kocialkowski wrote:
-> Add proper defines for driver name and description instead of
-> MODULE_NAME and hardcoding (cosmetics).
+On Sat, Feb 05, 2022 at 07:53:41PM +0100, Paul Kocialkowski wrote:
+> Merge contents of structs sun6i_csi and sun6i_csi_dev into a main
+> sun6i_csi_device structure holding a sun6i_csi_v4l2 struct for things
+> related to v4l2, as well as the already-existing sun6i_csi_video and
+> sun6i_csi_config which are left unchanged.
 >=20
-> Also rework the description while at it to mention the hardware
-> generation that the driver supports and remove the video capture
-> mentions since it applies to the whole media device.
+> This mostly simplifies accessing stuff by having a single main
+> structure accessible to every part of the code instead of a private
+> definition.
+>=20
+> No functional change is intended in this commit, variables are just
+> moved around (cosmetics).
 >=20
 > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 
@@ -136,21 +141,21 @@ Reviewed-by: Maxime Ripard <maxime@cerno.tech>
 
 Maxime
 
---w2mtmwumvelpbuht
+--pvpl6lthepkpplvj
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgDh9gAKCRDj7w1vZxhR
-xUhdAQDxosvE5Z1tfazCfFwKTKvd8wdE1L1J0eAJW2n0zJD0GwD/Y/ZSfxTbktu6
-mAwempvC3dPabl4ELRLwkyfcajQdcwg=
-=hI7k
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgDiXQAKCRDj7w1vZxhR
+xSGfAQCEScJB9Pk5OkjRcUoUy0UT+1teyY75s7RbxibNwwsRuQEA7+Xs5alYNZVw
+4mxVPttH8uX/GzbBfYot4xEMWPf2dQI=
+=cJ27
 -----END PGP SIGNATURE-----
 
---w2mtmwumvelpbuht--
+--pvpl6lthepkpplvj--
 
 
---===============2078198414000423112==
+--===============7057474876857175863==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -161,5 +166,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============2078198414000423112==--
+--===============7057474876857175863==--
 
