@@ -4,76 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4870C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Feb 2022 00:17:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5211BC433F5
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Feb 2022 00:19:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X3UEiRl6tUhBrmHU1BhNLtw+eeSHQlYSFP3liTLNg1c=; b=XHlcNFZjdkDf95
-	6U/AK4IJ0zwgv+MJNnpNTgmZLeeSwXDTsvOd7kMNTDr/JkDeOPKwDatX3RSqxH+B+1VlAR38EbxVI
-	BCDDMfKAJlocPC/OozC7QtiIbFfKUX3gFydTCux2+wIpETDJ0eaofsn+sKxUhOTA8bmzv3LfZ0xiI
-	kCZelcn2VsUAkM4DDU30Akv2Bswm0dijRdINxWbEEeA1/ibkJTl79p8H+4vsIniFAXRroVC2xpPwP
-	vTs2vDNKU5g0prq1KZuvO68zMBXQx6b4x+ngPoXyKBGrTWahJGqf36uO6cL0jdZ6MThp1vSlu+WOl
-	AThTMvDPPi6WkPC0es8g==;
+	List-Owner; bh=/zWQZt/An3KAl5jEH/AZuvsGT8P+SuuPrq3CHQCiXPk=; b=lyZDeWXguBuLEQ
+	S6gBgStpFmXaLJeaJZmxJCsiQ/wFqbVENcDUIbMrx5YWzzcE90Gd8SP41f4fj7Z8SWC4MRYofw0kX
+	ozrXtuVOru7Zr9HVSs0EXpmUT+bNsX0SUXZwWlE8McgIsQljiyVonwWObtSfMTgaSNf0nkYdOETTG
+	FP5a++lp0MnWLSEy043uXTCOE1rdWwAYZoaL2zBLTjJGuilnq+FQ6OZDAbsD2f+wWBdvZdlS7Nug5
+	eYiWJkL3NkIK6y0DwefQI2uhYOCc9BGIy9msDHD1/+Sbq0CInKFJOi5PDlLhPQKt4TnE/AIK7meTm
+	xcGff7d/Id1fOJsteQBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nHECN-00C2h1-5L; Tue, 08 Feb 2022 00:17:35 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+	id 1nHEDj-00C2oH-Jv; Tue, 08 Feb 2022 00:18:59 +0000
+Received: from mail-il1-x133.google.com ([2607:f8b0:4864:20::133])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nHECK-00C2fr-GE
- for linux-phy@lists.infradead.org; Tue, 08 Feb 2022 00:17:33 +0000
-Received: by mail-pf1-x433.google.com with SMTP id u130so15896586pfc.2
- for <linux-phy@lists.infradead.org>; Mon, 07 Feb 2022 16:17:31 -0800 (PST)
+ id 1nHEDg-00C2nr-H1
+ for linux-phy@lists.infradead.org; Tue, 08 Feb 2022 00:18:57 +0000
+Received: by mail-il1-x133.google.com with SMTP id e8so12549138ilm.13
+ for <linux-phy@lists.infradead.org>; Mon, 07 Feb 2022 16:18:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=U33ZTHwgHmjIzYzVW35GSTUErZveTsvzYRI78IuL0pI=;
- b=PKAr0GJCu78ei+S4Lat41so9TQfJkESk2YAtsBLsuDgdCKYbchdWWZO0zcikvlM4qp
- SEL9aoQ+G7EDbuJwajYjmQXILX6hHHyQxcI3O/cOVfV8sA8Da7g621rfx5Mqzcf4Qh5D
- 6SNG+Ui/OunaDApsqN5YkvnAB5mfr8npQe+iw=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=vScBC3jkunPuKV71bwmpHxOhrGxKlBbuYe/cqBu7qF8=;
+ b=TV/KEXy0SdalYrBG9vcyQo4ANXKRqQZpfsevkQCRvDDS3QkNqsAVFK3CiXgrn7BhEC
+ lQZP1zue6xcSxErPJDsPnbnJ7NzZaPCUltMJoeN9SGtNIMM3tb2qVUWD6hCx2/5gvyQb
+ 4WVzprlonmdeJ8JUjSQiAOvjj5o67UrS7+Dfc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=U33ZTHwgHmjIzYzVW35GSTUErZveTsvzYRI78IuL0pI=;
- b=uX+MOPvdw+0HPDFBPNsetCk2GQf0gIU6h7qp+zJxYACtGPUAdrHo5Zl+QZ/J6FJm9E
- HYJSk/wGqRXjMoA9QJjc29/5yWUzu551zOWkWJNqO0ic9ZnnHlb4jUP4IqUnIbCg3MV+
- uUEBzvcBu5/aU3bUqIj0l9hgfS4IyA5+wgg/4MuxoDbPdGz5bvyER2Hduw+MQDtFNgEN
- XCoj+dCi9n0JmH1xRWlZaVdZ62mfUmOu+BPxmrzY4KtBkxxaROEeKwKF1KvUKeUW1ddX
- EZgXg7PgKNLBw3dzIo/bAFcTy1EM80DmofTYjCR/DQ9qH2yQwNqZQVSgepgGfyHcnr0J
- Vl3A==
-X-Gm-Message-State: AOAM532qwew+44l8CgDCYMfKwec2Y0riuxT5Gvue5NZdv7HSejmYyYb5
- Z8FsxrtyG28oWPZMhp3Syzm1/A==
-X-Google-Smtp-Source: ABdhPJyat6mgLk+B7LHmqgM/oZQI4LpOtABby6iQ3FD5YT8iXzyLG2E7KhwkS5O6kFxtifv6r+5mAg==
-X-Received: by 2002:a65:5801:: with SMTP id g1mr1479962pgr.43.1644279451436;
- Mon, 07 Feb 2022 16:17:31 -0800 (PST)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:201:6c4d:c442:5b4:f597])
- by smtp.gmail.com with ESMTPSA id mz4sm456185pjb.53.2022.02.07.16.17.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 07 Feb 2022 16:17:31 -0800 (PST)
-From: Douglas Anderson <dianders@chromium.org>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: quic_mkrishn@quicinc.com, linux-arm-msm@vger.kernel.org,
- Sankeerth Billakanti <quic_sbillaka@quicinc.com>, robdclark@gmail.com,
- quic_khsieh@quicinc.com, quic_abhinavk@quicinc.com,
- linux-phy@lists.infradead.org, Stephen Boyd <swboyd@chromium.org>,
- Douglas Anderson <dianders@chromium.org>, Andy Gross <agross@kernel.org>,
- linux-kernel@vger.kernel.org
-Subject: [REPOST PATCH v1 3/3] phy: qcom: Program SSC only if supported by sink
-Date: Mon,  7 Feb 2022 16:17:04 -0800
-Message-Id: <20220207161612.REPOST.v1.3.Ie81d594ec2327dae6410db359cc492484bab171f@changeid>
-X-Mailer: git-send-email 2.35.0.263.gb82422642f-goog
-In-Reply-To: <20220208001704.367069-1-dianders@chromium.org>
-References: <20220208001704.367069-1-dianders@chromium.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=vScBC3jkunPuKV71bwmpHxOhrGxKlBbuYe/cqBu7qF8=;
+ b=tQN3zeEHhdQvTbDkZKQiwnXfXYwFu8ZV7Sp+ega9FE7J4+3xHK6crsnOVPe1pu67dO
+ Dg53IgYY36mxOTCxK4i6+hSnpCfqGhQm6SJ0EbKHMO66n2mtnrBm7Wk7RTUPgF0+GeLc
+ 1nvXYQdQgi4NgERBEjvk2zqu7BOCwgXLB0Ny6tNg3pJD9cw9XAEIfQOLFC55vwJ8HtuD
+ UDzMhhXevFU5Y2R7hyCvDFlFEtQ6uRlJxJeAnfg2RyJeUgx4OEzPNzMYaz+TFkKmlJyC
+ xWqLjg5ZsZA5KRmoql89MRi99mO/rhEbW4tRgFOp9u15UAWHcYFRH7s4DwwPkihpcQJp
+ +vxg==
+X-Gm-Message-State: AOAM532/O5D8pWQ5V83yGZny8mYR0ygRcppWDd2iffAbyBJwaIH/dS3I
+ mz+G/szVxDE+43no6cauFW62lIk29rSLeA==
+X-Google-Smtp-Source: ABdhPJyuJo7Nmb6iLirRm9UVYPbAjJq8RQktotrCPEHex8r4wpZRji2YZ/y5HoaO7Z/M2uda0MBW0Q==
+X-Received: by 2002:a92:190f:: with SMTP id 15mr1017929ilz.82.1644279535245;
+ Mon, 07 Feb 2022 16:18:55 -0800 (PST)
+Received: from mail-io1-f45.google.com (mail-io1-f45.google.com.
+ [209.85.166.45])
+ by smtp.gmail.com with ESMTPSA id k2sm7085825iow.7.2022.02.07.16.18.54
+ for <linux-phy@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 07 Feb 2022 16:18:54 -0800 (PST)
+Received: by mail-io1-f45.google.com with SMTP id i62so19174911ioa.1
+ for <linux-phy@lists.infradead.org>; Mon, 07 Feb 2022 16:18:54 -0800 (PST)
+X-Received: by 2002:a05:6638:168d:: with SMTP id
+ f13mr980261jat.44.1644279533953; 
+ Mon, 07 Feb 2022 16:18:53 -0800 (PST)
 MIME-Version: 1.0
+References: <1637046458-20607-1-git-send-email-quic_sbillaka@quicinc.com>
+ <CAE-0n50sONq+URcWwvDH=UPshgy6+XZEB3sK_4n+5jNktHsEhg@mail.gmail.com>
+In-Reply-To: <CAE-0n50sONq+URcWwvDH=UPshgy6+XZEB3sK_4n+5jNktHsEhg@mail.gmail.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Mon, 7 Feb 2022 16:18:40 -0800
+X-Gmail-Original-Message-ID: <CAD=FV=VwrO9fpOtpjrsbjkmucvL6NbHMc3jLtjsiRJD6aG0Hkg@mail.gmail.com>
+Message-ID: <CAD=FV=VwrO9fpOtpjrsbjkmucvL6NbHMc3jLtjsiRJD6aG0Hkg@mail.gmail.com>
+Subject: Re: [PATCH v1 0/3] Add support for eDP PHY on SC7280 platform
+To: Stephen Boyd <swboyd@chromium.org>
+Cc: Sankeerth Billakanti <quic_sbillaka@quicinc.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>, 
+ freedreno <freedreno@lists.freedesktop.org>, 
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, 
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Clark <robdclark@gmail.com>, 
+ Sean Paul <seanpaul@chromium.org>, quic_kalyant@quicinc.com,
+ quic_abhinavk@quicinc.com, 
+ quic_khsieh@quicinc.com, quic_mkrishn@quicinc.com, 
+ linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220207_161732_586777_5E59B5B2 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20220207_161856_592168_C49A3ECC 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,42 +100,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sankeerth Billakanti <quic_sbillaka@quicinc.com>
+Hi,
 
-Some legacy eDP sinks may not support SSC. The support for SSC is
-indicated through an opts flag from the controller driver. This
-change will enable SSC only if the sink supports it.
+On Wed, Feb 2, 2022 at 1:54 PM Stephen Boyd <swboyd@chromium.org> wrote:
+>
+> Quoting Sankeerth Billakanti (2021-11-15 23:07:35)
+> > This series adds support for the eDP PHY on Qualcomm SC7280 platform.
+> > The changes are dependent on v4 of the new eDP PHY driver introduced by Bjorn:
+> > https://patchwork.kernel.org/project/linux-arm-msm/list/?series=575135
+> >
+> > Sankeerth Billakanti (3):
+> >   dt-bindings: phy: Add eDP PHY compatible for sc7280
+> >   phy: qcom: Add support for eDP PHY on sc7280
+> >   phy: qcom: Program SSC only if supported by sink
+>
+> This series was sent to the wrong maintainers. It's in the phy
+> framework, not the drm framework. Please use scripts/get_maintainers.pl
+> to find the right email addresses and send this series again.
 
-Signed-off-by: Sankeerth Billakanti <quic_sbillaka@quicinc.com>
-Reviewed-by: Stephen Boyd <swboyd@chromium.org>
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
+To help out, I've re-posted this myself, hopefully getting all the
+correct maintainers.
 
- drivers/phy/qualcomm/phy-qcom-edp.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index 21cafbb623f8..cacd32f6e0cc 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -335,9 +335,11 @@ static int qcom_edp_phy_power_on(struct phy *phy)
- 	writel(0x00, edp->tx0 + TXn_LANE_MODE_1);
- 	writel(0x00, edp->tx1 + TXn_LANE_MODE_1);
- 
--	ret = qcom_edp_configure_ssc(edp);
--	if (ret)
--		return ret;
-+	if (edp->dp_opts.ssc) {
-+		ret = qcom_edp_configure_ssc(edp);
-+		if (ret)
-+			return ret;
-+	}
- 
- 	ret = qcom_edp_configure_pll(edp);
- 	if (ret)
--- 
-2.35.0.263.gb82422642f-goog
-
+https://lore.kernel.org/r/20220208001704.367069-1-dianders@chromium.org
 
 -- 
 linux-phy mailing list
