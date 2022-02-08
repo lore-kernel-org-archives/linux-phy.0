@@ -4,98 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D033FC433F5
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Feb 2022 17:23:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA8BCC433F5
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Feb 2022 17:41:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wty2o/4Ht09iPeAOmrI74TCKsjijBwCktIz/AptzGok=; b=esga4gUPU635O0
-	e1Da0cT2ObjUsBZzItT8Wk3JDaDOKn5OkTQ+QwIwC/ug2vIKTltw/7+Al8VeX25PyOp1Iq8Dp3OPb
-	JGsTiL3m4Lgg1FIqD+CF5i27Xg2+WOTT6CG+7wOqBsxmErEoZdqI/sP8+FP+x5B0jYy41XZIYiN0B
-	Tyijf9dDWPjO33yt97GFau0dUYX1cK6uOV3p1g+kVRZEi7Lb9eSD82EIJLojfzYpf9dK88H9mZVkn
-	/xDsxFY+yOfzXThe3pPgUhtjHyr08NGXAxdgwvy3K04rGiw1JcoPZEgzaOJFV3FeRcsqBb36XFlhI
-	u53vwFxlT7JT7J244ALw==;
+	List-Owner; bh=JzQ87BMgp42tRk7ts07t4jbQUytkOgjkl9KfJRUx5wQ=; b=1iRhgwNUekUtcv
+	llGGPN1RynTCkbOyVs8xvHoa0ELe6OCWVpBNayX7QYUzzE9uqQ227BWOftyumiZaQTexzHFQF3QSi
+	aqwxglMDgGcGe1pNvPIjYnVps/PmSGxVr+IkE4eReGOySqCze0TwP56LLNnUfoMJ5eadtMbz9W/cF
+	2PYMzdGxQ1h2hizrGO+v914nHXJOETCOdp+LtkQOpUU8gDm2n3A/qngSI90M9z53RtxKEj0I0Moyq
+	DMbD2Te646FiC7TeazapnUT8yxBeSzFtutUYfN3yHVaINIJL9cmbcjtFaeeVtUQDyeaozuVu1eKfh
+	aPAaeLyjurIbRZwWP3lQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nHUCi-00F49s-So; Tue, 08 Feb 2022 17:23:00 +0000
-Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
+	id 1nHUUK-00F9MB-7O; Tue, 08 Feb 2022 17:41:12 +0000
+Received: from mail-yb1-xb2a.google.com ([2607:f8b0:4864:20::b2a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nHU9H-00F2Iz-I2
- for linux-phy@lists.infradead.org; Tue, 08 Feb 2022 17:19:31 +0000
-Received: from mail-ej1-f70.google.com (mail-ej1-f70.google.com
- [209.85.218.70])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 4A6D33F1E7
- for <linux-phy@lists.infradead.org>; Tue,  8 Feb 2022 17:19:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
- s=20210705; t=1644340766;
- bh=4Kqc6L6Q9tC6aVZ4IcSd8iWDDGh3wUIB157CLAeaaFw=;
- h=From:To:Cc:Subject:Date:Message-Id:In-Reply-To:References:
- MIME-Version;
- b=O1PmpqQwPIZrvIE1A5x/m5NFgG9XYL4KBweUbScZNb6gAMK0n66ygYDCYeMztalZM
- +rvKk2vPoRqkU80WuJ4OJJKhQNi70diw5PTEahW4tquzlhDH8xG2qpcRNIcJfxjdt6
- ieHsHMU1gA9xTiKG5Fi3AFLj92oFJXKy1wqk6Ff0ltGK0i9HO290WGoqtbNw7OYhmE
- grJYr8/dND1YPl4kp5hEgAkQzbqMdNqdz2ZXzJdBst7Mwokc8Z3CRRY8lMlbatjw2Q
- 0mduc6i9jXYcrhElebz0C/PTRJeCB3cCi2bsyJAtpVnTJJ1E0jHm8z1ywyoZo90ojT
- LyUUSkhmkG/jA==
-Received: by mail-ej1-f70.google.com with SMTP id
- 13-20020a170906328d00b006982d0888a4so5990506ejw.9
- for <linux-phy@lists.infradead.org>; Tue, 08 Feb 2022 09:19:26 -0800 (PST)
+ id 1nHUU1-00F9Ee-3N; Tue, 08 Feb 2022 17:40:56 +0000
+Received: by mail-yb1-xb2a.google.com with SMTP id v47so27059616ybi.4;
+ Tue, 08 Feb 2022 09:40:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tkPJJuEA6vkBZ5W2Eo0wzc8nKc46cvVjzpi+zD28DZE=;
+ b=ZzXTITkAtmoC2guDI3INUA36hRewGj1cGPvYDytHkTkdjwC+149DDsE5Y+CV2Ctj0L
+ zdieLVM7Do4fOyGZmo10v5O/ngmLP32JwW7qiru4769yclP/YSyeGr4X7onrJze7VkhV
+ Jco3T/okgJ5GzU2rReuB+ui4zFbfFl+0MPeeEKl532oHLYDIEKY95eXZ+Obwx2pOLdte
+ WjmmugJ1kny9uuh5/uRR8uHmFhMI0tEJQZjEg08w9QneK07BK2uP7K7yPb79UYItXf8D
+ K3CD1FG46VuqcCrX+eK02xLHjdbr1gUtDr+wRwiAlEJ8CrI0eyLbFwTI33Q6GhciMPxr
+ svNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=4Kqc6L6Q9tC6aVZ4IcSd8iWDDGh3wUIB157CLAeaaFw=;
- b=MLAyhPwEex55dxg7XXOvtHlmYmJWBLOYYM4vIxzWukMQRCrWdtGSNGlhCStAAb7Zwn
- vrt5aWRBICPnNNvo8A6EiAeLIt++3SlyxetiTqCeqy7d6CYhz8/31ExDuWvupgFcO9mh
- AO6IqCUhRgbGo8cMpn34LS5uspfKwW9K1YRPDYgN2u0hIFqOmEVjEdH4pFamcSJYBDYG
- efprfzuahhJbb05f09fAhzkcodiGgKxaTWCXwHtKEdg9NIJ6oDv6uEFe/lY9oaB1B5RV
- WAUFjaV9y7yWB7WrATpVCjPrru+bDr2QpY6zHRgHxqJupbNqOZPjgXegPv9EhnPFNe5S
- GglQ==
-X-Gm-Message-State: AOAM530V5hWKAny5fB7/tLbvqr6/CGTWynjKkQQ8xGe9bnZDVya5pn1W
- CkdKTagj8ogO/4ZLxwg5w7bOC2XF66i4gfOnPe4gavO8oIW3QILuPzatQ0PZz6PVDqoj1OVlCZR
- USBJkvojAZt/b2+wn62SdC1sJGtpMeHWS1rJmRyZd2To=
-X-Received: by 2002:a05:6402:510b:: with SMTP id
- m11mr5597632edd.290.1644340765075; 
- Tue, 08 Feb 2022 09:19:25 -0800 (PST)
-X-Google-Smtp-Source: ABdhPJxRZNXcZzMs0TAC2gPdxKPihRqli2IMBZU42Ls1ax0iChpkOJ4tgyVxzgjOsC0cDw2k6wkGXQ==
-X-Received: by 2002:a05:6402:510b:: with SMTP id
- m11mr5597617edd.290.1644340764811; 
- Tue, 08 Feb 2022 09:19:24 -0800 (PST)
-Received: from localhost.localdomain (xdsl-188-155-168-84.adslplus.ch.
- [188.155.168.84])
- by smtp.gmail.com with ESMTPSA id r10sm5125550ejy.148.2022.02.08.09.19.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 08 Feb 2022 09:19:24 -0800 (PST)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-To: Inki Dae <inki.dae@samsung.com>, Joonyoung Shim <jy0922.shim@samsung.com>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Cc: Marek Szyprowski <m.szyprowski@samsung.com>,
- Sylwester Nawrocki <snawrocki@kernel.org>
-Subject: [PATCH 10/10] dt-bindings: display: samsung,
- exynos-fimd: convert to dtschema
-Date: Tue,  8 Feb 2022 18:18:23 +0100
-Message-Id: <20220208171823.226211-11-krzysztof.kozlowski@canonical.com>
-X-Mailer: git-send-email 2.32.0
-In-Reply-To: <20220208171823.226211-1-krzysztof.kozlowski@canonical.com>
-References: <20220208171823.226211-1-krzysztof.kozlowski@canonical.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tkPJJuEA6vkBZ5W2Eo0wzc8nKc46cvVjzpi+zD28DZE=;
+ b=TXDVsSPLbWi4mOO9Bvta1b3o+Eg//bULXFMSmyVRRNijtuD2XQjRYvj50SSb8d0lMt
+ 6RJIeCLtZRj+1K6xYCeULW+kGLPHb+jx55Y4te6JB9ffhakeXfQEKnY2fUpDhPtBwiQ1
+ hbxTmF4z8N/w3eUhjH/LqHk8DGThotQJdrmO9JwqK9KyXXxPCrp5zxZy1Ao3oDZBynYL
+ ecZQojZmsKs5ENeKO/ZrWpXR7Qh87lzrNhOg8NfJWjkUGAjfanys474dEifZsQTB+nLP
+ xHnBCE0c2ZWKmNHmeslo6+PjXo0qPuJn3Cc1j+RKxugkrLlYaPoryreOeJ59zOtTobRs
+ 39Ew==
+X-Gm-Message-State: AOAM5334StmG9mQtXKUMEw8gjUzfiCJ9ERUOUFYFL4LxUOLxVuY0suAI
+ Ntdhzf4x3zPOfU44Qc4UV8ScQ/HJIiL6Mi2txj4=
+X-Google-Smtp-Source: ABdhPJzrZHkLuXqifnIWdQYDYSxbxzViL5JSIWPzvGoR0xhRoqduWKhP+3dBYtN8S++irzS6n5tjQTZQuOogTcv+Ue8=
+X-Received: by 2002:a25:3a05:: with SMTP id h5mr5357061yba.405.1644342049954; 
+ Tue, 08 Feb 2022 09:40:49 -0800 (PST)
 MIME-Version: 1.0
+References: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
+ <20220208091326.12495-4-yifeng.zhao@rock-chips.com>
+In-Reply-To: <20220208091326.12495-4-yifeng.zhao@rock-chips.com>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Tue, 8 Feb 2022 12:40:38 -0500
+Message-ID: <CAMdYzYphVaA2g=+zn-Vbzd_Mt0vKsK0_MbPzeDFvsQJZ43u88A@mail.gmail.com>
+Subject: Re: [PATCH v8 3/4] phy: rockchip: add naneng combo phy for RK3568
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>, 
+ Johan Jonker <jbx6244@gmail.com>, devicetree <devicetree@vger.kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, Michael Riesch <michael.riesch@wolfvision.net>, 
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, 
+ arm-mail-list <linux-arm-kernel@lists.infradead.org>, 
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-phy@lists.infradead.org, 
+ "Kishon Vijay Abraham, I" <kishon@ti.com>, p.zabel@pengutronix.de,
+ Liang Chen <cl@rock-chips.com>, 
+ Kever Yang <kever.yang@rock-chips.com>, Lee Jones <lee.jones@linaro.org>, 
+ wulf <wulf@rock-chips.com>, David Wu <david.wu@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220208_091927_934673_246AE630 
-X-CRM114-Status: GOOD (  26.86  )
+X-CRM114-CacheID: sfid-20220208_094053_211361_4AA66458 
+X-CRM114-Status: GOOD (  31.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,339 +90,688 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the S3C/S5P/Exynos FIMD bindings to DT schema format.
+On Tue, Feb 8, 2022 at 4:14 AM Yifeng Zhao <yifeng.zhao@rock-chips.com> wrote:
+>
+> This patch implements a combo phy driver for Rockchip SoCs
+> with NaNeng IP block. This phy can be used as pcie-phy, usb3-phy,
+> sata-phy or sgmii-phy.
+>
+> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-The conversion includes also updates to the bindings, matching the
-current DTS and Linux driver: adding optional iommus and power-domains.
+Tested successfully on Quartz64-A and Quartz64-B in SATA, USB3, and PCIe modes.
+Tested-by: Peter Geis <pgwipeout@gmail.com>
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
----
- .../bindings/display/exynos/samsung-fimd.txt  | 107 ----------
- .../display/samsung/samsung,fimd.yaml         | 198 ++++++++++++++++++
- 2 files changed, 198 insertions(+), 107 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/display/exynos/samsung-fimd.txt
- create mode 100644 Documentation/devicetree/bindings/display/samsung/samsung,fimd.yaml
-
-diff --git a/Documentation/devicetree/bindings/display/exynos/samsung-fimd.txt b/Documentation/devicetree/bindings/display/exynos/samsung-fimd.txt
-deleted file mode 100644
-index b3096421d42b..000000000000
---- a/Documentation/devicetree/bindings/display/exynos/samsung-fimd.txt
-+++ /dev/null
-@@ -1,107 +0,0 @@
--Device-Tree bindings for Samsung SoC display controller (FIMD)
--
--FIMD (Fully Interactive Mobile Display) is the Display Controller for the
--Samsung series of SoCs which transfers the image data from a video memory
--buffer to an external LCD interface.
--
--Required properties:
--- compatible: value should be one of the following
--		"samsung,s3c2443-fimd"; /* for S3C24XX SoCs */
--		"samsung,s3c6400-fimd"; /* for S3C64XX SoCs */
--		"samsung,s5pv210-fimd"; /* for S5PV210 SoC */
--		"samsung,exynos3250-fimd"; /* for Exynos3250/3472 SoCs */
--		"samsung,exynos4210-fimd"; /* for Exynos4 SoCs */
--		"samsung,exynos5250-fimd"; /* for Exynos5250 SoCs */
--		"samsung,exynos5420-fimd"; /* for Exynos5420/5422/5800 SoCs */
--
--- reg: physical base address and length of the FIMD registers set.
--
--- interrupts: should contain a list of all FIMD IP block interrupts in the
--		 order: FIFO Level, VSYNC, LCD_SYSTEM. The interrupt specifier
--		 format depends on the interrupt controller used.
--
--- interrupt-names: should contain the interrupt names: "fifo", "vsync",
--	"lcd_sys", in the same order as they were listed in the interrupts
--        property.
--
--- pinctrl-0: pin control group to be used for this controller.
--
--- pinctrl-names: must contain a "default" entry.
--
--- clocks: must include clock specifiers corresponding to entries in the
--         clock-names property.
--
--- clock-names: list of clock names sorted in the same order as the clocks
--               property. Must contain "sclk_fimd" and "fimd".
--
--Optional Properties:
--- power-domains: a phandle to FIMD power domain node.
--- samsung,invert-vden: video enable signal is inverted
--- samsung,invert-vclk: video clock signal is inverted
--- display-timings: timing settings for FIMD, as described in document [1].
--		Can be used in case timings cannot be provided otherwise
--		or to override timings provided by the panel.
--- samsung,sysreg: handle to syscon used to control the system registers
--- i80-if-timings: timing configuration for lcd i80 interface support.
--  - cs-setup: clock cycles for the active period of address signal is enabled
--              until chip select is enabled.
--              If not specified, the default value(0) will be used.
--  - wr-setup: clock cycles for the active period of CS signal is enabled until
--              write signal is enabled.
--              If not specified, the default value(0) will be used.
--  - wr-active: clock cycles for the active period of CS is enabled.
--               If not specified, the default value(1) will be used.
--  - wr-hold: clock cycles for the active period of CS is disabled until write
--             signal is disabled.
--             If not specified, the default value(0) will be used.
--
--  The parameters are defined as:
--
--    VCLK(internal)  __|??????|_____|??????|_____|??????|_____|??????|_____|??
--                      :            :            :            :            :
--    Address Output  --:<XXXXXXXXXXX:XXXXXXXXXXXX:XXXXXXXXXXXX:XXXXXXXXXXXX:XX
--                      | cs-setup+1 |            :            :            :
--                      |<---------->|            :            :            :
--    Chip Select     ???????????????|____________:____________:____________|??
--                                   | wr-setup+1 |            | wr-hold+1  |
--                                   |<---------->|            |<---------->|
--    Write Enable    ????????????????????????????|____________|???????????????
--                                                | wr-active+1|
--                                                |<---------->|
--    Video Data      ----------------------------<XXXXXXXXXXXXXXXXXXXXXXXXX>--
--
--The device node can contain 'port' child nodes according to the bindings defined
--in [2]. The following are properties specific to those nodes:
--- reg: (required) port index, can be:
--		0 - for CAMIF0 input,
--		1 - for CAMIF1 input,
--		2 - for CAMIF2 input,
--		3 - for parallel output,
--		4 - for write-back interface
--
--[1]: Documentation/devicetree/bindings/display/panel/display-timing.txt
--[2]: Documentation/devicetree/bindings/media/video-interfaces.txt
--
--Example:
--
--SoC specific DT entry:
--
--	fimd@11c00000 {
--		compatible = "samsung,exynos4210-fimd";
--		interrupt-parent = <&combiner>;
--		reg = <0x11c00000 0x20000>;
--		interrupt-names = "fifo", "vsync", "lcd_sys";
--		interrupts = <11 0>, <11 1>, <11 2>;
--		clocks = <&clock 140>, <&clock 283>;
--		clock-names = "sclk_fimd", "fimd";
--		power-domains = <&pd_lcd0>;
--		status = "disabled";
--	};
--
--Board specific DT entry:
--
--	fimd@11c00000 {
--		pinctrl-0 = <&lcd_clk &lcd_data24 &pwm1_out>;
--		pinctrl-names = "default";
--		status = "okay";
--	};
-diff --git a/Documentation/devicetree/bindings/display/samsung/samsung,fimd.yaml b/Documentation/devicetree/bindings/display/samsung/samsung,fimd.yaml
-new file mode 100644
-index 000000000000..9cf5f120d516
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/samsung/samsung,fimd.yaml
-@@ -0,0 +1,198 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/samsung/samsung,fimd.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Samsung S3C/S5P/Exynos SoC Fully Interactive Mobile Display (FIMD)
-+
-+maintainers:
-+  - Inki Dae <inki.dae@samsung.com>
-+  - Joonyoung Shim <jy0922.shim@samsung.com>
-+  - Seung-Woo Kim <sw0312.kim@samsung.com>
-+  - Kyungmin Park <kyungmin.park@samsung.com>
-+  - Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - samsung,s3c2443-fimd
-+      - samsung,s3c6400-fimd
-+      - samsung,s5pv210-fimd
-+      - samsung,exynos3250-fimd
-+      - samsung,exynos4210-fimd
-+      - samsung,exynos5250-fimd
-+      - samsung,exynos5420-fimd
-+
-+  '#address-cells':
-+    const: 1
-+
-+  clocks:
-+    minItems: 2
-+    maxItems: 2
-+
-+  clock-names:
-+    items:
-+      - const: sclk_fimd
-+      - const: fimd
-+
-+  display-timings:
-+    $ref: ../panel/display-timings.yaml#
-+
-+  i80-if-timings:
-+    type: object
-+    description: |
-+      Timing configuration for lcd i80 interface support.
-+      The parameters are defined as::
-+      VCLK(internal)  __|??????|_____|??????|_____|??????|_____|??????|_____|??
-+                        :            :            :            :            :
-+      Address Output  --:<XXXXXXXXXXX:XXXXXXXXXXXX:XXXXXXXXXXXX:XXXXXXXXXXXX:XX
-+                        | cs-setup+1 |            :            :            :
-+                        |<---------->|            :            :            :
-+      Chip Select     ???????????????|____________:____________:____________|??
-+                                     | wr-setup+1 |            | wr-hold+1  |
-+                                     |<---------->|            |<---------->|
-+      Write Enable    ????????????????????????????|____________|???????????????
-+                                                  | wr-active+1|
-+                                                  |<---------->|
-+      Video Data      ----------------------------<XXXXXXXXXXXXXXXXXXXXXXXXX>--
-+
-+    properties:
-+      cs-setup:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description:
-+          Clock cycles for the active period of address signal is enabled until
-+          chip select is enabled.
-+        default: 0
-+
-+      wr-active:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description:
-+          Clock cycles for the active period of CS is enabled.
-+        default: 1
-+
-+      wr-hold:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description:
-+          Clock cycles for the active period of CS is disabled until write
-+          signal is disabled.
-+        default: 0
-+
-+      wr-setup:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description:
-+          Clock cycles for the active period of CS signal is enabled until
-+          write signal is enabled.
-+        default: 0
-+
-+  iommus:
-+    minItems: 1
-+    maxItems: 2
-+
-+  iommu-names:
-+    items:
-+      - const: m0
-+      - const: m1
-+
-+  interrupts:
-+    items:
-+      - description: FIFO level
-+      - description: VSYNC
-+      - description: LCD system
-+
-+  interrupt-names:
-+    items:
-+      - const: fifo
-+      - const: vsync
-+      - const: lcd_sys
-+
-+  power-domains:
-+    maxItems: 1
-+
-+  reg:
-+    maxItems: 1
-+
-+  samsung,invert-vden:
-+    type: boolean
-+    description:
-+      Video enable signal is inverted.
-+
-+  samsung,invert-vclk:
-+    type: boolean
-+    description:
-+      Video clock signal is inverted.
-+
-+  samsung,sysreg:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to System Register syscon.
-+
-+  '#size-cells':
-+    const: 0
-+
-+patternProperties:
-+  "^port@[0-4]+$":
-+    $ref: /schemas/graph.yaml#/properties/port
-+    description: |
-+      Contains ports with port with index::
-+       0 - for CAMIF0 input,
-+       1 - for CAMIF1 input,
-+       2 - for CAMIF2 input,
-+       3 - for parallel output,
-+       4 - for write-back interface
-+
-+required:
-+  - compatible
-+  - clocks
-+  - clock-names
-+  - interrupts
-+  - interrupt-names
-+  - reg
-+
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: samsung,exynos5420-fimd
-+    then:
-+      properties:
-+        iommus:
-+          minItems: 2
-+          maxItems: 2
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/exynos4.h>
-+
-+    fimd@11c00000 {
-+        compatible = "samsung,exynos4210-fimd";
-+        interrupt-parent = <&combiner>;
-+        reg = <0x11c00000 0x20000>;
-+        interrupt-names = "fifo", "vsync", "lcd_sys";
-+        interrupts = <11 0>, <11 1>, <11 2>;
-+        clocks = <&clock CLK_SCLK_FIMD0>, <&clock CLK_FIMD0>;
-+        clock-names = "sclk_fimd", "fimd";
-+        power-domains = <&pd_lcd0>;
-+        iommus = <&sysmmu_fimd0>;
-+        samsung,sysreg = <&sys_reg>;
-+
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+
-+        samsung,invert-vden;
-+        samsung,invert-vclk;
-+
-+        pinctrl-0 = <&lcd_clk>, <&lcd_data24>;
-+        pinctrl-names = "default";
-+
-+        port@3 {
-+            reg = <3>;
-+
-+            fimd_dpi_ep: endpoint {
-+                remote-endpoint = <&lcd_ep>;
-+            };
-+        };
-+    };
--- 
-2.32.0
-
+> ---
+>
+> Changes in v8:
+> - rename 'mode' to 'type'
+> - using devm_reset_control_array_get_exclusive
+> - move rockchip_combphy_set_mode into rockchip_combphy_init
+>
+> Changes in v7:
+> - rename regs
+> - remove pipe_sgmii_mac_sel, u3otg0_port_en and u3otg1_port_en
+>
+> Changes in v5:
+> - add rockchip_combphy_updatel()
+> - restyle
+>
+> Changes in v4:
+> - restyle
+> - add devm_reset_control_array_get()
+> - remove clk structure
+> - change refclk DT parse
+> - change dev_err message
+> - add dot to phrase
+> - add ext_refclk variable
+> - add enable_ssc variable
+> - rename rockchip_combphy_param_write
+> - remove param_read
+> - replace rockchip-naneng-combphy driver name
+>
+> Changes in v3:
+> - Using api devm_reset_control_get_optional_exclusive and dev_err_probe.
+> - Remove apb_rst.
+> - Redefine registers address.
+>
+> Changes in v2:
+> - Using api devm_platform_get_and_ioremap_resource.
+> - Modify rockchip_combphy_set_Mode.
+> - Add some PHY registers definition.
+>
+>  drivers/phy/rockchip/Kconfig                  |   8 +
+>  drivers/phy/rockchip/Makefile                 |   1 +
+>  .../rockchip/phy-rockchip-naneng-combphy.c    | 581 ++++++++++++++++++
+>  3 files changed, 590 insertions(+)
+>  create mode 100644 drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+>
+> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+> index e812adad7242..9022e395c056 100644
+> --- a/drivers/phy/rockchip/Kconfig
+> +++ b/drivers/phy/rockchip/Kconfig
+> @@ -66,6 +66,14 @@ config PHY_ROCKCHIP_INNO_DSIDPHY
+>           Enable this to support the Rockchip MIPI/LVDS/TTL PHY with
+>           Innosilicon IP block.
+>
+> +config PHY_ROCKCHIP_NANENG_COMBO_PHY
+> +       tristate "Rockchip NANENG COMBO PHY Driver"
+> +       depends on ARCH_ROCKCHIP && OF
+> +       select GENERIC_PHY
+> +       help
+> +         Enable this to support the Rockchip PCIe/USB3.0/SATA/QSGMII
+> +         combo PHY with NaNeng IP block.
+> +
+>  config PHY_ROCKCHIP_PCIE
+>         tristate "Rockchip PCIe PHY Driver"
+>         depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
+> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
+> index f0eec212b2aa..a5041efb5b8f 100644
+> --- a/drivers/phy/rockchip/Makefile
+> +++ b/drivers/phy/rockchip/Makefile
+> @@ -6,6 +6,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_CSIDPHY) += phy-rockchip-inno-csidphy.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_DSIDPHY)        += phy-rockchip-inno-dsidphy.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)   += phy-rockchip-inno-hdmi.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)   += phy-rockchip-inno-usb2.o
+> +obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)    += phy-rockchip-naneng-combphy.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_PCIE)                += phy-rockchip-pcie.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)       += phy-rockchip-typec.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_USB)         += phy-rockchip-usb.o
+> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> new file mode 100644
+> index 000000000000..7b213825fb5d
+> --- /dev/null
+> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> @@ -0,0 +1,581 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Rockchip PIPE USB3.0 PCIE SATA Combo Phy driver
+> + *
+> + * Copyright (C) 2021 Rockchip Electronics Co., Ltd.
+> + */
+> +
+> +#include <dt-bindings/phy/phy.h>
+> +#include <linux/clk.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/of_device.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset.h>
+> +#include <linux/units.h>
+> +
+> +#define BIT_WRITEABLE_SHIFT            16
+> +#define REF_CLOCK_24MHz                        (24 * HZ_PER_MHZ)
+> +#define REF_CLOCK_25MHz                        (25 * HZ_PER_MHZ)
+> +#define REF_CLOCK_100MHz               (100 * HZ_PER_MHZ)
+> +
+> +/* COMBO PHY REG */
+> +#define PHYREG6                                0x14
+> +#define PHYREG6_PLL_DIV_MASK           GENMASK(7, 6)
+> +#define PHYREG6_PLL_DIV_SHIFT          6
+> +#define PHYREG6_PLL_DIV_2              1
+> +
+> +#define PHYREG7                                0x18
+> +#define PHYREG7_TX_RTERM_MASK          GENMASK(7, 4)
+> +#define PHYREG7_TX_RTERM_SHIFT         4
+> +#define PHYREG7_TX_RTERM_50OHM         8
+> +#define PHYREG7_RX_RTERM_MASK          GENMASK(3, 0)
+> +#define PHYREG7_RX_RTERM_SHIFT         0
+> +#define PHYREG7_RX_RTERM_44OHM         15
+> +
+> +#define PHYREG8                                0x1C
+> +#define PHYREG8_SSC_EN                 BIT(4)
+> +
+> +#define PHYREG11                       0x28
+> +#define PHYREG11_SU_TRIM_0_7           0xF0
+> +
+> +#define PHYREG12                       0x2C
+> +#define PHYREG12_PLL_LPF_ADJ_VALUE     4
+> +
+> +#define PHYREG13                       0x30
+> +#define PHYREG13_RESISTER_MASK         GENMASK(5, 4)
+> +#define PHYREG13_RESISTER_SHIFT                0x4
+> +#define PHYREG13_RESISTER_HIGH_Z       3
+> +#define PHYREG13_CKRCV_AMP0            BIT(7)
+> +
+> +#define PHYREG14                       0x34
+> +#define PHYREG14_CKRCV_AMP1            BIT(0)
+> +
+> +#define PHYREG15                       0x38
+> +#define PHYREG15_CTLE_EN               BIT(0)
+> +#define PHYREG15_SSC_CNT_MASK          GENMASK(7, 6)
+> +#define PHYREG15_SSC_CNT_SHIFT         6
+> +#define PHYREG15_SSC_CNT_VALUE         1
+> +
+> +#define PHYREG16                       0x3C
+> +#define PHYREG16_SSC_CNT_VALUE         0x5f
+> +
+> +#define PHYREG18                       0x44
+> +#define PHYREG18_PLL_LOOP              0x32
+> +
+> +#define PHYREG32                       0x7C
+> +#define PHYREG32_SSC_MASK              GENMASK(7, 4)
+> +#define PHYREG32_SSC_DIR_SHIFT         4
+> +#define PHYREG32_SSC_UPWARD            0
+> +#define PHYREG32_SSC_DOWNWARD          1
+> +#define PHYREG32_SSC_OFFSET_SHIFT      6
+> +#define PHYREG32_SSC_OFFSET_500PPM     1
+> +
+> +#define PHYREG33                       0x80
+> +#define PHYREG33_PLL_KVCO_MASK         GENMASK(4, 2)
+> +#define PHYREG33_PLL_KVCO_SHIFT                2
+> +#define PHYREG33_PLL_KVCO_VALUE                2
+> +
+> +struct rockchip_combphy_priv;
+> +
+> +struct combphy_reg {
+> +       u16 offset;
+> +       u16 bitend;
+> +       u16 bitstart;
+> +       u16 disable;
+> +       u16 enable;
+> +};
+> +
+> +struct rockchip_combphy_grfcfg {
+> +       struct combphy_reg pcie_mode_set;
+> +       struct combphy_reg usb_mode_set;
+> +       struct combphy_reg sgmii_mode_set;
+> +       struct combphy_reg qsgmii_mode_set;
+> +       struct combphy_reg pipe_rxterm_set;
+> +       struct combphy_reg pipe_txelec_set;
+> +       struct combphy_reg pipe_txcomp_set;
+> +       struct combphy_reg pipe_clk_25m;
+> +       struct combphy_reg pipe_clk_100m;
+> +       struct combphy_reg pipe_phymode_sel;
+> +       struct combphy_reg pipe_rate_sel;
+> +       struct combphy_reg pipe_rxterm_sel;
+> +       struct combphy_reg pipe_txelec_sel;
+> +       struct combphy_reg pipe_txcomp_sel;
+> +       struct combphy_reg pipe_clk_ext;
+> +       struct combphy_reg pipe_sel_usb;
+> +       struct combphy_reg pipe_sel_qsgmii;
+> +       struct combphy_reg pipe_phy_status;
+> +       struct combphy_reg con0_for_pcie;
+> +       struct combphy_reg con1_for_pcie;
+> +       struct combphy_reg con2_for_pcie;
+> +       struct combphy_reg con3_for_pcie;
+> +       struct combphy_reg con0_for_sata;
+> +       struct combphy_reg con1_for_sata;
+> +       struct combphy_reg con2_for_sata;
+> +       struct combphy_reg con3_for_sata;
+> +       struct combphy_reg pipe_con0_for_sata;
+> +       struct combphy_reg pipe_xpcs_phy_ready;
+> +};
+> +
+> +struct rockchip_combphy_cfg {
+> +       const struct rockchip_combphy_grfcfg *grfcfg;
+> +       int (*combphy_cfg)(struct rockchip_combphy_priv *priv);
+> +};
+> +
+> +struct rockchip_combphy_priv {
+> +       u8 type;
+> +       void __iomem *mmio;
+> +       int num_clks;
+> +       struct clk_bulk_data *clks;
+> +       struct device *dev;
+> +       struct regmap *pipe_grf;
+> +       struct regmap *phy_grf;
+> +       struct phy *phy;
+> +       struct reset_control *phy_rst;
+> +       const struct rockchip_combphy_cfg *cfg;
+> +       bool enable_ssc;
+> +       bool ext_refclk;
+> +       struct clk *refclk;
+> +};
+> +
+> +static void rockchip_combphy_updatel(struct rockchip_combphy_priv *priv,
+> +                                    int mask, int val, int reg)
+> +{
+> +       unsigned int temp;
+> +
+> +       temp = readl(priv->mmio + reg);
+> +       temp = (temp & ~(mask)) | val;
+> +       writel(temp, priv->mmio + reg);
+> +}
+> +
+> +static int rockchip_combphy_param_write(struct regmap *base,
+> +                                       const struct combphy_reg *reg, bool en)
+> +{
+> +       u32 val, mask, tmp;
+> +
+> +       tmp = en ? reg->enable : reg->disable;
+> +       mask = GENMASK(reg->bitend, reg->bitstart);
+> +       val = (tmp << reg->bitstart) | (mask << BIT_WRITEABLE_SHIFT);
+> +
+> +       return regmap_write(base, reg->offset, val);
+> +}
+> +
+> +static u32 rockchip_combphy_is_ready(struct rockchip_combphy_priv *priv)
+> +{
+> +       const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
+> +       u32 mask, val;
+> +
+> +       mask = GENMASK(cfg->pipe_phy_status.bitend,
+> +                      cfg->pipe_phy_status.bitstart);
+> +
+> +       regmap_read(priv->phy_grf, cfg->pipe_phy_status.offset, &val);
+> +       val = (val & mask) >> cfg->pipe_phy_status.bitstart;
+> +
+> +       return val;
+> +}
+> +
+> +static int rockchip_combphy_init(struct phy *phy)
+> +{
+> +       struct rockchip_combphy_priv *priv = phy_get_drvdata(phy);
+> +       const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
+> +       u32 val;
+> +       int ret;
+> +
+> +       ret = clk_bulk_prepare_enable(priv->num_clks, priv->clks);
+> +       if (ret) {
+> +               dev_err(priv->dev, "failed to enable clks\n");
+> +               return ret;
+> +       }
+> +
+> +       switch (priv->type) {
+> +       case PHY_TYPE_PCIE:
+> +       case PHY_TYPE_USB3:
+> +       case PHY_TYPE_SATA:
+> +       case PHY_TYPE_SGMII:
+> +       case PHY_TYPE_QSGMII:
+> +               if (priv->cfg->combphy_cfg)
+> +                       ret = priv->cfg->combphy_cfg(priv);
+> +               break;
+> +       default:
+> +               dev_err(priv->dev, "incompatible PHY type\n");
+> +               ret = -EINVAL;
+> +               break;
+> +       }
+> +
+> +       if (ret) {
+> +               dev_err(priv->dev, "failed to init phy for phy type %x\n", priv->type);
+> +               goto err_clk;
+> +       }
+> +
+> +       ret = reset_control_deassert(priv->phy_rst);
+> +       if (ret)
+> +               goto err_clk;
+> +
+> +       if (priv->type == PHY_TYPE_USB3) {
+> +               ret = readx_poll_timeout_atomic(rockchip_combphy_is_ready,
+> +                                               priv, val,
+> +                                               val == cfg->pipe_phy_status.enable,
+> +                                               10, 1000);
+> +               if (ret)
+> +                       dev_warn(priv->dev, "wait phy status ready timeout\n");
+> +       }
+> +
+> +       return 0;
+> +
+> +err_clk:
+> +       clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
+> +
+> +       return ret;
+> +}
+> +
+> +static int rockchip_combphy_exit(struct phy *phy)
+> +{
+> +       struct rockchip_combphy_priv *priv = phy_get_drvdata(phy);
+> +
+> +       clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
+> +       reset_control_assert(priv->phy_rst);
+> +
+> +       return 0;
+> +}
+> +
+> +static const struct phy_ops rochchip_combphy_ops = {
+> +       .init = rockchip_combphy_init,
+> +       .exit = rockchip_combphy_exit,
+> +       .owner = THIS_MODULE,
+> +};
+> +
+> +static struct phy *rockchip_combphy_xlate(struct device *dev, struct of_phandle_args *args)
+> +{
+> +       struct rockchip_combphy_priv *priv = dev_get_drvdata(dev);
+> +
+> +       if (args->args_count != 1) {
+> +               dev_err(dev, "invalid number of arguments\n");
+> +               return ERR_PTR(-EINVAL);
+> +       }
+> +
+> +       if (priv->type != PHY_NONE && priv->type != args->args[0])
+> +               dev_warn(dev, "phy type select %d overwriting type %d\n",
+> +                        args->args[0], priv->type);
+> +
+> +       priv->type = args->args[0];
+> +
+> +       return priv->phy;
+> +}
+> +
+> +static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy_priv *priv)
+> +{
+> +       int i;
+> +
+> +       priv->num_clks = devm_clk_bulk_get_all(dev, &priv->clks);
+> +       if (priv->num_clks < 1)
+> +               return -EINVAL;
+> +
+> +       priv->refclk = NULL;
+> +       for (i = 0; i < priv->num_clks; i++) {
+> +               if (!strncmp(priv->clks[i].id, "ref", 3)) {
+> +                       priv->refclk = priv->clks[i].clk;
+> +                       break;
+> +               }
+> +       }
+> +
+> +       if (!priv->refclk) {
+> +               dev_err(dev, "no refclk found\n");
+> +               return -EINVAL;
+> +       }
+> +
+> +       priv->pipe_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-grf");
+> +       if (IS_ERR(priv->pipe_grf)) {
+> +               dev_err(dev, "failed to find peri_ctrl pipe-grf regmap\n");
+> +               return PTR_ERR(priv->pipe_grf);
+> +       }
+> +
+> +       priv->phy_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-phy-grf");
+> +       if (IS_ERR(priv->phy_grf)) {
+> +               dev_err(dev, "failed to find peri_ctrl pipe-phy-grf regmap\n");
+> +               return PTR_ERR(priv->phy_grf);
+> +       }
+> +
+> +       priv->enable_ssc = device_property_present(dev, "rockchip,enable-ssc");
+> +
+> +       priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
+> +
+> +       priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
+> +       if (IS_ERR(priv->phy_rst))
+> +               return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
+> +
+> +       return 0;
+> +}
+> +
+> +static int rockchip_combphy_probe(struct platform_device *pdev)
+> +{
+> +       struct phy_provider *phy_provider;
+> +       struct device *dev = &pdev->dev;
+> +       struct rockchip_combphy_priv *priv;
+> +       const struct rockchip_combphy_cfg *phy_cfg;
+> +       struct resource *res;
+> +       int ret;
+> +
+> +       phy_cfg = of_device_get_match_data(dev);
+> +       if (!phy_cfg) {
+> +               dev_err(dev, "no OF match data provided\n");
+> +               return -EINVAL;
+> +       }
+> +
+> +       priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +       if (!priv)
+> +               return -ENOMEM;
+> +
+> +       priv->mmio = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
+> +       if (IS_ERR(priv->mmio)) {
+> +               ret = PTR_ERR(priv->mmio);
+> +               return ret;
+> +       }
+> +
+> +       priv->dev = dev;
+> +       priv->type = PHY_NONE;
+> +       priv->cfg = phy_cfg;
+> +
+> +       ret = rockchip_combphy_parse_dt(dev, priv);
+> +       if (ret)
+> +               return ret;
+> +
+> +       ret = reset_control_assert(priv->phy_rst);
+> +       if (ret) {
+> +               dev_err(dev, "failed to reset phy\n");
+> +               return ret;
+> +       }
+> +
+> +       priv->phy = devm_phy_create(dev, NULL, &rochchip_combphy_ops);
+> +       if (IS_ERR(priv->phy)) {
+> +               dev_err(dev, "failed to create combphy\n");
+> +               return PTR_ERR(priv->phy);
+> +       }
+> +
+> +       dev_set_drvdata(dev, priv);
+> +       phy_set_drvdata(priv->phy, priv);
+> +
+> +       phy_provider = devm_of_phy_provider_register(dev, rockchip_combphy_xlate);
+> +
+> +       return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
+> +{
+> +       const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
+> +       unsigned long rate;
+> +       u32 val;
+> +
+> +       switch (priv->type) {
+> +       case PHY_TYPE_PCIE:
+> +               /* Set SSC downward spread spectrum. */
+> +               rockchip_combphy_updatel(priv, PHYREG32_SSC_MASK,
+> +                                        PHYREG32_SSC_DOWNWARD << PHYREG32_SSC_DIR_SHIFT,
+> +                                        PHYREG32);
+> +
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_pcie, true);
+> +               break;
+> +
+> +       case PHY_TYPE_USB3:
+> +               /* Set SSC downward spread spectrum. */
+> +               rockchip_combphy_updatel(priv, PHYREG32_SSC_MASK,
+> +                                        PHYREG32_SSC_DOWNWARD << PHYREG32_SSC_DIR_SHIFT,
+> +                                        PHYREG32);
+> +
+> +               /* Enable adaptive CTLE for USB3.0 Rx. */
+> +               val = readl(priv->mmio + PHYREG15);
+> +               val |= PHYREG15_CTLE_EN;
+> +               writel(val, priv->mmio + PHYREG15);
+> +
+> +               /* Set PLL KVCO fine tuning signals. */
+> +               rockchip_combphy_updatel(priv, PHYREG33_PLL_KVCO_MASK,
+> +                                        PHYREG33_PLL_KVCO_VALUE << PHYREG33_PLL_KVCO_SHIFT,
+> +                                        PHYREG33);
+> +
+> +               /* Enable controlling random jitter. */
+> +               writel(PHYREG12_PLL_LPF_ADJ_VALUE, priv->mmio + PHYREG12);
+> +
+> +               /* Set PLL input clock divider 1/2. */
+> +               rockchip_combphy_updatel(priv, PHYREG6_PLL_DIV_MASK,
+> +                                        PHYREG6_PLL_DIV_2 << PHYREG6_PLL_DIV_SHIFT,
+> +                                        PHYREG6);
+> +
+> +               writel(PHYREG18_PLL_LOOP, priv->mmio + PHYREG18);
+> +               writel(PHYREG11_SU_TRIM_0_7, priv->mmio + PHYREG11);
+> +
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_sel_usb, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txcomp_sel, false);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txelec_sel, false);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->usb_mode_set, true);
+> +               break;
+> +
+> +       case PHY_TYPE_SATA:
+> +               /* Enable adaptive CTLE for SATA Rx. */
+> +               val = readl(priv->mmio + PHYREG15);
+> +               val |= PHYREG15_CTLE_EN;
+> +               writel(val, priv->mmio + PHYREG15);
+> +               /*
+> +                * Set tx_rterm=50ohm and rx_rterm=44ohm for SATA.
+> +                * 0: 60ohm, 8: 50ohm 15: 44ohm (by step abort 1ohm)
+> +                */
+> +               val = PHYREG7_TX_RTERM_50OHM << PHYREG7_TX_RTERM_SHIFT;
+> +               val |= PHYREG7_RX_RTERM_44OHM << PHYREG7_RX_RTERM_SHIFT;
+> +               writel(val, priv->mmio + PHYREG7);
+> +
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_sata, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_sata, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_sata, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_sata, true);
+> +               rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_con0_for_sata, true);
+> +               break;
+> +
+> +       case PHY_TYPE_SGMII:
+> +               rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_xpcs_phy_ready, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_phymode_sel, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_sel_qsgmii, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->sgmii_mode_set, true);
+> +               break;
+> +
+> +       case PHY_TYPE_QSGMII:
+> +               rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_xpcs_phy_ready, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_phymode_sel, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_rate_sel, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_sel_qsgmii, true);
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->qsgmii_mode_set, true);
+> +               break;
+> +
+> +       default:
+> +               dev_err(priv->dev, "incompatible PHY type\n");
+> +               return -EINVAL;
+> +       }
+> +
+> +       rate = clk_get_rate(priv->refclk);
+> +
+> +       switch (rate) {
+> +       case REF_CLOCK_24MHz:
+> +               if (priv->type == PHY_TYPE_USB3 || priv->type == PHY_TYPE_SATA) {
+> +                       /* Set ssc_cnt[9:0]=0101111101 & 31.5KHz. */
+> +                       val = PHYREG15_SSC_CNT_VALUE << PHYREG15_SSC_CNT_SHIFT;
+> +                       rockchip_combphy_updatel(priv, PHYREG15_SSC_CNT_MASK,
+> +                                                val, PHYREG15);
+> +
+> +                       writel(PHYREG16_SSC_CNT_VALUE, priv->mmio + PHYREG16);
+> +               }
+> +               break;
+> +
+> +       case REF_CLOCK_25MHz:
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_25m, true);
+> +               break;
+> +
+> +       case REF_CLOCK_100MHz:
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
+> +               if (priv->type == PHY_TYPE_PCIE) {
+> +                       /* PLL KVCO  fine tuning. */
+> +                       val = PHYREG33_PLL_KVCO_VALUE << PHYREG33_PLL_KVCO_SHIFT;
+> +                       rockchip_combphy_updatel(priv, PHYREG33_PLL_KVCO_MASK,
+> +                                                val, PHYREG33);
+> +
+> +                       /* Enable controlling random jitter. */
+> +                       writel(PHYREG12_PLL_LPF_ADJ_VALUE, priv->mmio + PHYREG12);
+> +
+> +                       val = PHYREG6_PLL_DIV_2 << PHYREG6_PLL_DIV_SHIFT;
+> +                       rockchip_combphy_updatel(priv, PHYREG6_PLL_DIV_MASK,
+> +                                                val, PHYREG6);
+> +
+> +                       writel(PHYREG18_PLL_LOOP, priv->mmio + PHYREG18);
+> +                       writel(PHYREG11_SU_TRIM_0_7, priv->mmio + PHYREG11);
+> +               } else if (priv->type == PHY_TYPE_SATA) {
+> +                       /* downward spread spectrum +500ppm */
+> +                       val = PHYREG32_SSC_DOWNWARD << PHYREG32_SSC_DIR_SHIFT;
+> +                       val |= PHYREG32_SSC_OFFSET_500PPM << PHYREG32_SSC_OFFSET_SHIFT;
+> +                       rockchip_combphy_updatel(priv, PHYREG32_SSC_MASK, val, PHYREG32);
+> +               }
+> +               break;
+> +
+> +       default:
+> +               dev_err(priv->dev, "unsupported rate: %lu\n", rate);
+> +               return -EINVAL;
+> +       }
+> +
+> +       if (priv->ext_refclk) {
+> +               rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_ext, true);
+> +               if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_100MHz) {
+> +                       val = PHYREG13_RESISTER_HIGH_Z << PHYREG13_RESISTER_SHIFT;
+> +                       val |= PHYREG13_CKRCV_AMP0;
+> +                       rockchip_combphy_updatel(priv, PHYREG13_RESISTER_MASK, val, PHYREG13);
+> +
+> +                       val = readl(priv->mmio + PHYREG14);
+> +                       val |= PHYREG14_CKRCV_AMP1;
+> +                       writel(val, priv->mmio + PHYREG14);
+> +               }
+> +       }
+> +
+> +       if (priv->enable_ssc) {
+> +               val = readl(priv->mmio + PHYREG8);
+> +               val |= PHYREG8_SSC_EN;
+> +               writel(val, priv->mmio + PHYREG8);
+> +       }
+> +
+> +       return 0;
+> +}
+> +
+> +static const struct rockchip_combphy_grfcfg rk3568_combphy_grfcfgs = {
+> +       /* pipe-phy-grf */
+> +       .pcie_mode_set          = { 0x0000, 5, 0, 0x00, 0x11 },
+> +       .usb_mode_set           = { 0x0000, 5, 0, 0x00, 0x04 },
+> +       .sgmii_mode_set         = { 0x0000, 5, 0, 0x00, 0x01 },
+> +       .qsgmii_mode_set        = { 0x0000, 5, 0, 0x00, 0x21 },
+> +       .pipe_rxterm_set        = { 0x0000, 12, 12, 0x00, 0x01 },
+> +       .pipe_txelec_set        = { 0x0004, 1, 1, 0x00, 0x01 },
+> +       .pipe_txcomp_set        = { 0x0004, 4, 4, 0x00, 0x01 },
+> +       .pipe_clk_25m           = { 0x0004, 14, 13, 0x00, 0x01 },
+> +       .pipe_clk_100m          = { 0x0004, 14, 13, 0x00, 0x02 },
+> +       .pipe_phymode_sel       = { 0x0008, 1, 1, 0x00, 0x01 },
+> +       .pipe_rate_sel          = { 0x0008, 2, 2, 0x00, 0x01 },
+> +       .pipe_rxterm_sel        = { 0x0008, 8, 8, 0x00, 0x01 },
+> +       .pipe_txelec_sel        = { 0x0008, 12, 12, 0x00, 0x01 },
+> +       .pipe_txcomp_sel        = { 0x0008, 15, 15, 0x00, 0x01 },
+> +       .pipe_clk_ext           = { 0x000c, 9, 8, 0x02, 0x01 },
+> +       .pipe_sel_usb           = { 0x000c, 14, 13, 0x00, 0x01 },
+> +       .pipe_sel_qsgmii        = { 0x000c, 15, 13, 0x00, 0x07 },
+> +       .pipe_phy_status        = { 0x0034, 6, 6, 0x01, 0x00 },
+> +       .con0_for_pcie          = { 0x0000, 15, 0, 0x00, 0x1000 },
+> +       .con1_for_pcie          = { 0x0004, 15, 0, 0x00, 0x0000 },
+> +       .con2_for_pcie          = { 0x0008, 15, 0, 0x00, 0x0101 },
+> +       .con3_for_pcie          = { 0x000c, 15, 0, 0x00, 0x0200 },
+> +       .con0_for_sata          = { 0x0000, 15, 0, 0x00, 0x0119 },
+> +       .con1_for_sata          = { 0x0004, 15, 0, 0x00, 0x0040 },
+> +       .con2_for_sata          = { 0x0008, 15, 0, 0x00, 0x80c3 },
+> +       .con3_for_sata          = { 0x000c, 15, 0, 0x00, 0x4407 },
+> +       /* pipe-grf */
+> +       .pipe_con0_for_sata     = { 0x0000, 15, 0, 0x00, 0x2220 },
+> +       .pipe_xpcs_phy_ready    = { 0x0040, 2, 2, 0x00, 0x01 },
+> +};
+> +
+> +static const struct rockchip_combphy_cfg rk3568_combphy_cfgs = {
+> +       .grfcfg         = &rk3568_combphy_grfcfgs,
+> +       .combphy_cfg    = rk3568_combphy_cfg,
+> +};
+> +
+> +static const struct of_device_id rockchip_combphy_of_match[] = {
+> +       {
+> +               .compatible = "rockchip,rk3568-naneng-combphy",
+> +               .data = &rk3568_combphy_cfgs,
+> +       },
+> +       { },
+> +};
+> +MODULE_DEVICE_TABLE(of, rockchip_combphy_of_match);
+> +
+> +static struct platform_driver rockchip_combphy_driver = {
+> +       .probe  = rockchip_combphy_probe,
+> +       .driver = {
+> +               .name = "rockchip-naneng-combphy",
+> +               .of_match_table = rockchip_combphy_of_match,
+> +       },
+> +};
+> +module_platform_driver(rockchip_combphy_driver);
+> +
+> +MODULE_DESCRIPTION("Rockchip NANENG COMBPHY driver");
+> +MODULE_LICENSE("GPL v2");
+> --
+> 2.17.1
+>
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 -- 
 linux-phy mailing list
