@@ -4,29 +4,29 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22338C433FE
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Feb 2022 09:14:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2230DC433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Feb 2022 09:14:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0jk8wuYkmQhUnimMUeL900xSmeT4AicmdI7bdME4LoU=; b=4DSOe+ithUKC8u
-	Xo2qmYWT9IlxwKWAw1dbGebPMeuaxsvdVkhf2ir2+VUiAu2qZGeLcTX7GLOLaleUty8vDM1+Hr+kP
-	wE+oasRfH6/qIDPWb7diMRkUz+eSQLBmqyho9RjFA8cwL6LnJ4rwzx6dXGm3cq/7Q/uUjno8hgxe1
-	HyhjwGKQ2zE/TyqiyhOdWmjsuW1A3qWOBOdJAaxK9dGSsqdP96wm4d80JF9GetEFBQ/o5MXYJ8iF1
-	UXl3Q67HtuBw3qewgDvjrhkvHUQCMHytK+rGAtRYIJ7Ae9eoT+70gPU6NQ+BL5MqsFvrrB7q0482M
-	NfASZEna9mY7MHeUCFmg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ooez+wh2GSGYryRbGOOiV5WEQR5wYfniHkToHVaPqUM=; b=04WF5c6ZrvMzmS
+	KmHqXXS0/M/ZRNkET1+i2vToGlFp6AWWhxEweyqngdgfGuNmX+JYHlZq5sYZjmJqiLXAhPT+mxyzf
+	Bz8DWVUmdciAbZed/zUyFBO2QPXGgX6rIW8Xs8MaNC7ux4KvNBFzRbwE3MhMAJEEGdAHwUAuFTtxj
+	yQrA9I4hAuE9SiWQVkQNLgVq2GehbGvPdJDvdPRsBZ13uvF899CrsefjZ93QMLfyCYp+QYaQc/Tgt
+	VsS4Seb8mjFCntG97Srf6xeX8EWxaZ4Xjcahq0ZRX4FZDcBVvJVEPEEBUy3h45WDwsCO5BZNh6oa+
+	85PrnxeG7QcnP0O9iuSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nHMZY-00DB5m-Ck; Tue, 08 Feb 2022 09:14:04 +0000
+	id 1nHMZY-00DB5r-Fs; Tue, 08 Feb 2022 09:14:04 +0000
 Received: from mail-m17635.qiye.163.com ([59.111.176.35])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nHMZA-00DAxJ-4x; Tue, 08 Feb 2022 09:13:42 +0000
+ id 1nHMZA-00DAwb-5A; Tue, 08 Feb 2022 09:13:42 +0000
 Received: from localhost.localdomain (unknown [58.22.7.114])
- by mail-m17635.qiye.163.com (Hmail) with ESMTPA id 97C7B400379;
- Tue,  8 Feb 2022 17:13:34 +0800 (CST)
+ by mail-m17635.qiye.163.com (Hmail) with ESMTPA id 6C7A2400393;
+ Tue,  8 Feb 2022 17:13:33 +0800 (CST)
 From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 To: heiko@sntech.de
 Cc: robh+dt@kernel.org, jbx6244@gmail.com, devicetree@vger.kernel.org,
@@ -36,23 +36,20 @@ Cc: robh+dt@kernel.org, jbx6244@gmail.com, devicetree@vger.kernel.org,
  p.zabel@pengutronix.de, cl@rock-chips.com, kever.yang@rock-chips.com,
  lee.jones@linaro.org, wulf@rock-chips.com, david.wu@rock-chips.com,
  Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Subject: [PATCH v8 1/4] dt-bindings: soc: grf: add naneng combo phy register
- compatible
-Date: Tue,  8 Feb 2022 17:13:23 +0800
-Message-Id: <20220208091326.12495-2-yifeng.zhao@rock-chips.com>
+Subject: [PATCH v8 0/4] Add Naneng combo PHY support for RK3568
+Date: Tue,  8 Feb 2022 17:13:22 +0800
+Message-Id: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
-References: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
 X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgPGg8OCBgUHx5ZQUlOS1dZCBgUCR5ZQVlLVUtZV1
- kWDxoPAgseWUFZKDYvK1lXWShZQUhPN1dZLVlBSVdZDwkaFQgSH1lBWRkdHxpWS09PGEpPTEwfGR
- 8eVRMBExYaEhckFA4PWVdZFhoPEhUdFFlBWVVLWQY+
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PhQ6OCo6Ij5PGiEqFDgNL0ko
- PDYKCjZVSlVKTU9PSEpKTUpOQ0NMVTMWGhIXVQISHR4VHFUBExoUOwkUGBBWGBMSCwhVGBQWRVlX
- WRILWUFZTkNVSUlVTFVKSk9ZV1kIAVlBSUxDTzcG
-X-HM-Tid: 0a7ed89c1667d991kuws97c7b400379
+ kWDxoPAgseWUFZKDYvK1lXWShZQUhPN1dZLVlBSVdZDwkaFQgSH1lBWUNLQkhWH0lKTUIfGB9JQ0
+ pPVRMBExYaEhckFA4PWVdZFhoPEhUdFFlBWVVLWQY+
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6My46Ihw*Fz4MLCEQMjlKLwwp
+ FAMKFBVVSlVKTU9PSEpKTUpPTk5MVTMWGhIXVQISHR4VHFUBExoUOwkUGBBWGBMSCwhVGBQWRVlX
+ WRILWUFZTkNVSUlVTFVKSk9ZV1kIAVlBSE1NTjcG
+X-HM-Tid: 0a7ed89c11e5d991kuws6c7a2400393
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220208_011340_436863_C7A08DC0 
-X-CRM114-Status: UNSURE (   5.45  )
+X-CRM114-CacheID: sfid-20220208_011340_445416_682AB994 
+X-CRM114-Status: UNSURE (   8.65  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -71,38 +68,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Johan Jonker <jbx6244@gmail.com>
 
-Add Naneng combo phy register compatible.
+This phy can be used as pcie-phy, usb3-phy, sata-phy or sgmii-phy.
 
-Acked-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
----
+Changes in v8:
+- rename 'mode' to 'type'
+- using devm_reset_control_array_get_exclusive
+- move rockchip_combphy_set_mode into rockchip_combphy_init
 
-Changes in v8: None
-Changes in v7: None
-Changes in v5: None
-Changes in v4: None
-Changes in v3: None
-Changes in v2: None
+Changes in v7:
+- remove u3otg0_port_en, u3otg1_port_en and pipe_sgmii_mac_sel
+- rename regs
 
- Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+Changes in v5:
+- modify description for ssc and ext-refclk
+- remove apb reset
+- add rockchip_combphy_updatel()
+- restyle
 
-diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-index b2ba7bed89b2..5079e9d24af6 100644
---- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-+++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-@@ -15,6 +15,8 @@ properties:
-       - items:
-           - enum:
-               - rockchip,rk3288-sgrf
-+              - rockchip,rk3568-pipe-grf
-+              - rockchip,rk3568-pipe-phy-grf
-               - rockchip,rk3568-usb2phy-grf
-               - rockchip,rv1108-usbgrf
-           - const: syscon
+Changes in v4:
+- restyle
+- remove some minItems
+- add more properties
+- remove reset-names
+- move #phy-cells
+- add rockchip,rk3568-pipe-grf
+- add rockchip,rk3568-pipe-phy-grf
+- add devm_reset_control_array_get()
+- remove clk structure
+- change refclk DT parse
+- change dev_err message
+- add dot to phrase
+- add ext_refclk variable
+- add enable_ssc variable
+- rename rockchip_combphy_param_write
+- remove param_read
+- replace rockchip-naneng-combphy driver name
+- rename node name
+
+Changes in v3:
+- Using api devm_reset_control_get_optional_exclusive and dev_err_probe.
+- Remove apb_rst.
+- Redefine registers address.
+- Move pipe_phy_grf0 to rk3568.dtsi
+
+Changes in v2:
+- Fix dtschema/dtc warnings/errors
+- Using api devm_platform_get_and_ioremap_resource.
+- Modify rockchip_combphy_set_Mode.
+- Add some PHY registers definition.
+- Move phy0 to rk3568.dtsi
+
+Johan Jonker (1):
+  dt-bindings: soc: grf: add naneng combo phy register compatible
+
+Yifeng Zhao (3):
+  dt-bindings: phy: rockchip: Add Naneng combo PHY bindings
+  phy: rockchip: add naneng combo phy for RK3568
+  arm64: dts: rockchip: add naneng combo phy nodes for rk3568
+
+ .../phy/phy-rockchip-naneng-combphy.yaml      | 109 ++++
+ .../devicetree/bindings/soc/rockchip/grf.yaml |   2 +
+ arch/arm64/boot/dts/rockchip/rk3568.dtsi      |  21 +
+ arch/arm64/boot/dts/rockchip/rk356x.dtsi      |  47 ++
+ drivers/phy/rockchip/Kconfig                  |   8 +
+ drivers/phy/rockchip/Makefile                 |   1 +
+ .../rockchip/phy-rockchip-naneng-combphy.c    | 581 ++++++++++++++++++
+ 7 files changed, 769 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+
 -- 
 2.17.1
 
