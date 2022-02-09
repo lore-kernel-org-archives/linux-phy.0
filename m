@@ -4,59 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2774C433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Feb 2022 09:15:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD4B4C433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Feb 2022 09:21:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fxx7VXdzKPRsetCkNKGPmT1NekWaxKTv7jGYprl0TIo=; b=MjGu2usYwiV1Qt
-	d0WRVvzOtwP3EQKOwTifyV1HMjat8dnZKsEMdg4PqSIP9/mh4tUbhz1Sb9ejPngxe6d46gGbnha2H
-	voXbtoVfOJplarKxs6YF7Rhoxx0C6+IR8FvIZt73094rybWigpfW0GEOZW1EIb5TJGfZ+B2ivmJl9
-	MtXuKtGseqoU4T26ka+MRYZdh/v6CarD1+NI6/G6CZjKXN3yo1My37jXMqzDoSbMvCFs3wrvxnOCy
-	odyB5/tRli/YKIMPtl4jDzBjhzj7aYaLWz6IMkzvr45ey4F5+/9kSnjq98ZXH6Zr38TEtk1wbD2Ez
-	gbOCCUZN4X2G6X/rBEZg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=XQHJ75J1+rOK74tgWRJvIHgzXJ/mFTFSGOhdmJL2uD0=; b=tPQFBCnPVWLu2AfPRDhZYsTvHV
+	0FRrmZxlK5x1VMaynpARA3JOGwDjFT0uVHuaS8LSI1lfZRkOiWir8cRqs5Y+vatUsJZPaL6LVis/T
+	rFpPwwSk21d+1+2qwLfIH6CyYLpXlNoOzfiOur498nZHkQ8kdJf+PT0XlZAuyh53620M1KWnHGCTH
+	jW3Enb51INJr2+5T/MTWVDUrSCsnV0cA/498BlgHrqrM2l+C+7hyuqEzH6MN9NkPY8FTZhOSXjHOu
+	O6NhG1vh2MfYRDTGWG6v3bMtC2ZSoL0ZVqrEfGDw8l85FhiUU/hWWanJnwyEYgpqHzXta52DdAaxY
+	+FA7GB4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nHj4c-00Gr1P-7f; Wed, 09 Feb 2022 09:15:38 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1nHjA4-00GsSP-Vm; Wed, 09 Feb 2022 09:21:16 +0000
+Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nHj3z-00Gqjm-3u; Wed, 09 Feb 2022 09:15:00 +0000
-Received: from ip5b412258.dynamic.kabel-deutschland.de ([91.65.34.88]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1nHj3m-0007nJ-En; Wed, 09 Feb 2022 10:14:46 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Rob Herring <robh@kernel.org>,
- =?utf-8?B?6LW15Luq5bOw?= <yifeng.zhao@rock-chips.com>,
- "zyf@rock-chips.com" <zyf@rock-chips.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
- linux-rockchip <linux-rockchip@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>, robh+dt <robh+dt@kernel.org>,
- Lee Jones <lee.jones@linaro.org>, =?utf-8?B?6ZmI5Lqu?= <cl@rock-chips.com>,
- kishon <kishon@ti.com>, "Kever. Yang" <kever.yang@rock-chips.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "david.wu@rock-chips.com" <david.wu@rock-chips.com>,
- "michael. riesch" <michael.riesch@wolfvision.net>,
- linux-phy <linux-phy@lists.infradead.org>,
- =?utf-8?B?5ZC06Imv5bOw?= <wulf@rock-chips.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v8 2/4] dt-bindings: phy: rockchip: Add Naneng combo PHY
- bindings
-Date: Wed, 09 Feb 2022 10:14:45 +0100
-Message-ID: <6069846.8JqooZBoOc@diego>
-In-Reply-To: <2022020911371529703712@rock-chips.com>
-References: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
- <1644352412.075016.2969144.nullmailer@robh.at.kernel.org>
- <2022020911371529703712@rock-chips.com>
+ id 1nHj9W-00GsLT-VT; Wed, 09 Feb 2022 09:20:45 +0000
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+ by mailnew.west.internal (Postfix) with ESMTP id B755D2B001F6;
+ Wed,  9 Feb 2022 04:20:39 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute1.internal (MEProxy); Wed, 09 Feb 2022 04:20:41 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
+ :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
+ :message-id:mime-version:references:reply-to:sender:subject
+ :subject:to:to; s=fm2; bh=SBTnBJKQIWPfpUR/56tNnSFnqOAge6wgqkQjX1
+ F+GWw=; b=CDpH6QDlK6etkYWwEufaBl86rsCLCUXcMo8QxESkub7gK+AFd4yqkb
+ 6kBATCa0xGSUTrnFTWB2DgKWUcn2VOOo1B4/rGhPumCOmI815CwDKgYDmQJkn6eE
+ JCSD1SyPZwknHxOLs5OpP/1Ky7yjerNewNl0+co96gyMNfKVibE/t45IAmiKT6U3
+ jJOwgU49qEiQ2QIAZZ72+TkTZ1W1b+pfNzutZ0nZeGu3iNguwhF2bfS4izy/8oSj
+ I3V/B9OkThZYwYbZINt+rO9HeerVjk8Aacd5aLACXvceq5/LEaGe24C/Xfu2iIiq
+ Qfd27O+bpPo+bAiwPEsfDEHYAi4cWfUA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:cc:content-type:date:date:from:from
+ :in-reply-to:in-reply-to:message-id:mime-version:references
+ :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=SBTnBJKQIWPfpUR/5
+ 6tNnSFnqOAge6wgqkQjX1F+GWw=; b=SuXPnSCidnnCw7+asKU9JhwD7CJo6XAmf
+ RlC137mUb7s3vSeq/1VqjwOfxEa6wcMhGsRgKkskL75NP9aLUnE3Y8wzuG4w3pMe
+ 4ozpoit7AylY8y1k90WXcD8563bbTh0JzGRWXTVqPWYJcDXg9Uoscs/ZH2OIGMlT
+ W6JRy7mGxBBXVn7nCQ+JFMlyrZDxw1LPbsUynd27XAB6bWQhF9WLIn0AAumScQay
+ xFxRLPiMm9aosDr5c7iqFqitBoP/oLCK/0hwA5DbYR9kWZ0I1p/B3YJ5x+ALo1tI
+ DWoZkQL1FTdE25wc8drszHAEtcclHokxgmWl0Yz09tnej/utT/p3g==
+X-ME-Sender: <xms:ZYcDYnbEmphW3VJrIoA3r1HmrQD6YNKiP4LGsxBj22ZQThBVA4Pdmw>
+ <xme:ZYcDYmbGJb9A4jiJFc-QYbzTkztY9TKYsFy0N_P56Uw048ick-T-7C3irzwcebTvF
+ 34JSpG9UbrES16sjvE>
+X-ME-Received: <xmr:ZYcDYp91vaS2zFZs6_1rZLxXu8eA6F7aY2cwisz6To1-238hYGswL5JU8R4gnnFjg57wgxRwTsoNRT4pMg-inyySD6_KpgmVyR3TrEs>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheelgddtudcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
+ gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
+ udenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrg
+ igihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:ZYcDYtpaz_FpHS6w2OteYl0qFgQXU02dsOId9hLdW6_vwPG8VFgxgw>
+ <xmx:ZYcDYipPJUq5rJ23KQCMH8kuAZwdd98ASpCiEmAJNdUsgQg4ufGR3w>
+ <xmx:ZYcDYjQNof7nLUqRAGRx9Wdsf-IZRkqFgBUkEnPgktOmRbaaCvmPPA>
+ <xmx:Z4cDYnj43Z_R4o22y8Z1KuGyMwA3_z-uKQi0SnfNqBo2HyQHnLDx8A1K950>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 9 Feb 2022 04:20:37 -0500 (EST)
+Date: Wed, 9 Feb 2022 10:20:35 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH v2 19/66] media: sun6i-csi: Grab bus clock instead of
+ passing it to regmap
+Message-ID: <20220209092035.tz5ctosidpib47fq@houat>
+References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-20-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
+In-Reply-To: <20220205185429.2278860-20-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220209_011459_228994_BE85E31D 
-X-CRM114-Status: GOOD (  25.55  )
+X-CRM114-CacheID: sfid-20220209_012043_155561_CCC93859 
+X-CRM114-Status: GOOD (  15.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,105 +106,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1372708988425945969=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+
+--===============1372708988425945969==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="yjjnfllv4wtw5ufd"
+Content-Disposition: inline
+
+
+--yjjnfllv4wtw5ufd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
 Hi,
 
-Am Mittwoch, 9. Februar 2022, 04:38:15 CET schrieb zyf@rock-chips.com:
-> Hi Rob,
-> 
-> We move "rockchip,rk3568-pipe-grf" from syscon.yaml to grf.yaml.
-> How to fix this compilation failed?
+On Sat, Feb 05, 2022 at 07:53:42PM +0100, Paul Kocialkowski wrote:
+> Since the bus clock alone is not enough to get access to the registers,
+> don't pass it to regmap and manage it instead just like the other
+> clocks.
+>=20
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 
-as you can see in the example, there is already a
-	#include <dt-bindings/clock/rk3568-cru.h>
-so you probably just need to add another include for the grf.yaml
+I'm not really sure about this one.
 
+Sure, there's more resources involved than the clock to get access to
+the registers (like reset), but you can't have a functional device
+without the reset line deasserted.
 
-Heiko
+You can however have a functional device without the bus clock enabled,
+so it just seems much better to let regmap manage it.
 
-> 
-> diff --git a/Documentation/devicetree/bindings/mfd/syscon.yaml b/Documentation/devicetree/bindings/mfd/syscon.yaml
-> index fdd96e378df0..e9bb96ab9446 100644
-> --- a/Documentation/devicetree/bindings/mfd/syscon.yaml
-> +++ b/Documentation/devicetree/bindings/mfd/syscon.yaml
-> @@ -52,6 +52,8 @@ properties:
->                - rockchip,rk3288-qos
->                - rockchip,rk3368-qos
->                - rockchip,rk3399-qos
-> +              - rockchip,rk3568-pipe-grf
-> +              - rockchip,rk3568-pipe-phy-grf
-> 
-> 
-> >On Tue, 08 Feb 2022 17:13:24 +0800, Yifeng Zhao wrote:
-> >> Add the compatible strings for the Naneng combo PHY found on rockchip SoC.
-> >>
-> >> Reviewed-by: Rob Herring <robh@kernel.org>
-> >> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-> >> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> >> ---
-> >>
-> >> Changes in v8: None
-> >> Changes in v7:
-> >> - remove u3otg0_port_en, u3otg1_port_en and pipe_sgmii_mac_sel
-> >>
-> >> Changes in v5:
-> >> - modify description for ssc and ext-refclk
-> >> - remove apb reset
-> >>
-> >> Changes in v4:
-> >> - restyle
-> >> - remove some minItems
-> >> - add more properties
-> >> - remove reset-names
-> >> - move #phy-cells
-> >> - add rockchip,rk3568-pipe-grf
-> >> - add rockchip,rk3568-pipe-phy-grf
-> >>
-> >> Changes in v3: None
-> >> Changes in v2:
-> >> - Fix dtschema/dtc warnings/errors
-> >>
-> >>  .../phy/phy-rockchip-naneng-combphy.yaml      | 109 ++++++++++++++++++
-> >>  1 file changed, 109 insertions(+)
-> >>  create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-> >>
-> > 
-> >My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-> >on your patch (DT_CHECKER_FLAGS is new in v5.13):
-> > 
-> >yamllint warnings/errors:
-> > 
-> >dtschema/dtc warnings/errors:
-> >Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.example.dt.yaml:0:0: /example-0/syscon@fdc50000: failed to match any schema with compatible: ['rockchip,rk3568-pipe-grf', 'syscon']
-> >Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.example.dt.yaml:0:0: /example-0/syscon@fdc70000: failed to match any schema with compatible: ['rockchip,rk3568-pipe-phy-grf', 'syscon']
-> > 
-> >doc reference errors (make refcheckdocs):
-> > 
-> >See https://patchwork.ozlabs.org/patch/1589719
-> > 
-> >This check can fail if there are any dependencies. The base for a patch
-> >series is generally the most recent rc1.
-> > 
-> >If you already ran 'make dt_binding_check' and didn't see the above
-> >error(s), then make sure 'yamllint' is installed and dt-schema is up to
-> >date:
-> > 
-> >pip3 install dtschema --upgrade
-> > 
-> >Please check and re-submit.
->  
->  
-> 
+Unless there's a drawback to it of course, but it should be in your
+commit log if so.
+
+Maxime
+
+--yjjnfllv4wtw5ufd
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgOHYwAKCRDj7w1vZxhR
+xVdlAP9xWWz+r+5yqqSyDREBt4wUIYsOPLYBVd8MDdUu/WQGfgEAkFTtNt3mcKcT
+DWTcs0AATTN6+sept16oF0pNbheHkA0=
+=mR//
+-----END PGP SIGNATURE-----
+
+--yjjnfllv4wtw5ufd--
 
 
-
-
+--===============1372708988425945969==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1372708988425945969==--
+
