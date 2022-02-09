@@ -4,97 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94B59C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Feb 2022 09:40:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69522C433FE
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Feb 2022 16:39:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Y5KFAHh7VusqLgjyQEc2uTDwB6UkEtJ0lvJyyLbXJqI=; b=1HrPpzkzNuGkQ9tX1wfDqxRYuL
-	86YD7GBxxoFabukg+yHBZ6RHUJPOpHrpzudQownn557OpImQ6F3/BGhOIvFFP6684YynCyShsK/IJ
-	kwebQ9rzZgIm3oV9i2gMicXG7H+1gbj/hE1d/q8Ntk552moJAkU5SmBJirKKnV9of/Pq+yp+wcDLd
-	Rl5D8TVHBBL0YPrSYjZkKkqNoPkkXHnHrvWR7gAA38DGBT66blJs2WmhVy2gHfOItigh+sfENW1KN
-	cOzGkqVWneSbmempwugZ7CXEMKNOXprEO6FM/GkYNvxavZXh5Ri4BXfbnHLhSH2bOtqywqlD6SSNC
-	3JP9djBQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
+	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=14eS4OHtbAicareJSe0K+QoSAjpRQnDZID58dFQCjbg=; b=f7KoYsgTLfc5PM
+	I72xozijD2LXGJSATJDNocYi2VunRPFC/o2Glmqy3e4jlSvn9RCvAtxObFtuqerFY8HQHeDO/Agut
+	sqWuXc9E5Feto5no7Wde+1gx6E4aVGDZWO/r4ZlJ0pPgCyt4P05hW2iTcFbL3b2uc0ezLPGph3H6o
+	+ixsOFWwRIE7MjIgL9AQmuP2dhEfbglzpBgdFxY3kChLj74V4cWKgq8OY/e6Q+Bsz3yYoPSbsvJc/
+	gk+BTlZdz3QIACG4IwaWAyjFxpjh7O+UxGxC3XGRzicP93fnMBqKgRt8XcD/+OMWxmH2TsuM+50Dd
+	sQCHQTDpPiwf6w8L8flg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nHjSH-00Gy37-31; Wed, 09 Feb 2022 09:40:05 +0000
-Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
+	id 1nHq0U-000raJ-Li; Wed, 09 Feb 2022 16:39:50 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nHjS3-00Gxxv-Al; Wed, 09 Feb 2022 09:39:53 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id 115792B0024D;
- Wed,  9 Feb 2022 04:39:48 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Wed, 09 Feb 2022 04:39:50 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
- :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to; s=fm2; bh=zZDTW0FB5xKeIff0Mgbh1Hl+LyU717M3Sxe8pk
- IOuHc=; b=KlmaBgGevb6slB6ovY6OBGrpRLV8tshmia32SHGxOGlrtr6r9ZSNpZ
- Jb9Ov9d6JaZ35Nn7KWKTfA3hAYfX0jjz5bAgcsOe/mkD4+yMLbvPM0bdavTZNZRD
- MfTQFtsvJTp7m+ES+uT49HUNf8PT94qOit8mFniJrAndZEKJEyoDquEtypBtNq6D
- 4OOoQyHgRwFY+qigKYrfM64ctNZlTn1nxu3Go/lGlyT1XYvNkW0lpPxslyLXhQTV
- Qy9Hw0pvkVbTnE7HcDmmeX/bjgm4q88G9k74n7t0kI56n0ZxBLhepChTU9JW/t75
- 9+lWl8GpcFlNEeafSQsICQrXLatRueLA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-type:date:date:from:from
- :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=zZDTW0FB5xKeIff0M
- gbh1Hl+LyU717M3Sxe8pkIOuHc=; b=FURyB28ibG4wKLzvnt1IiJgZcL3W0Y5u+
- XQdEwRtaBvxDjjnpyBGUrfMIBRjgr334IouWW5IeIv5j2modJRRj4QkXC+xy5A9U
- ppRch0eWsuE8XU00D0SEBdF1hW6IsWse9eSCLywMkQFhomRCYDJNvXEnv+yAbrsz
- Awhb+5OyQKDK/7dQBUUHhEdducnVb7EPYUweyzbBfsPC05yKmRvjR4J+CH97Iggo
- UzJdu6pUCkVtjETJqMmN2pW1cNa8KEzGjj58Ab/MoFrKMqRfKVu5UHnuMTVXxKKe
- nflyBCFF5TlmYZyX3kQTulwqf5nOXYrWi/ECbS8SPlm5OGpcUCLhA==
-X-ME-Sender: <xms:44sDYjSxlulXbXOJqCM8WdVKQGqZt13IBP2bSh2AF4mf_T2aZDr7DA>
- <xme:44sDYkxHRJSC2rvpTW35Jc5VZnXAAEyya_edLFYC5GF5grGz_-pkYyky_7mWtArdq
- A_TR9_MOpQ1olgXsPw>
-X-ME-Received: <xmr:44sDYo37kBJDFUI0HfXtyJ-MMzuKgq_p1SQjGm7_qOZsvqyql4-VV6oSVj2umtI5i7hUsBgzCPA6dDbJvbxXAIKEhQLuTI1Z11jw5mY>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrheelgddthecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
- gvrhhnpeevveefffduveeitdegtefhhfetueffteefffdvheevvdehteethedvleffgfej
- vdenucffohhmrghinhepkhgvrhhnvghlrdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
- enucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:44sDYjA1m5oRlsmPJVwlSRYEXcPh3mzF2RoLWejLVWrr80SAVR5S2Q>
- <xmx:44sDYsiJYipLR3S9fJRo7q4pokp8cjkfqjwsk4D68iy52hLwQ40XfA>
- <xmx:44sDYnr2BIm6RArU5B456VZSpZCgS9DWObNEBchbLtQyp3KroLcaxA>
- <xmx:5IsDYlZ8pSIB5aLnEULMyXJ-SpVxye41G7b7NbC7R0erH2yzJkQLSRkh33A>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 9 Feb 2022 04:39:46 -0500 (EST)
-Date: Wed, 9 Feb 2022 10:39:45 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 33/66] media: sun6i-csi: Rework register definitions,
- invert misleading fields
-Message-ID: <20220209093945.uertj7wut72tximz@houat>
-References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-34-paul.kocialkowski@bootlin.com>
+ id 1nHq0R-000rYH-Ov; Wed, 09 Feb 2022 16:39:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1644424761;
+ bh=23VcDO1UBkUQfDfSRRv997yJv60exeA4uC8n5A+TDxE=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=Lpz1wJHH+K9of3uaGCbGNXyz1urRUVQbH1pD53xTOmIjHuNtxxi8IIZcdciYSKIsX
+ 4MJc9P3mlZPyRhaqQiYfwl6/pp+R93QqZKT1doLmBQ9ciW+xsUC+joHGpoDQcmUtUa
+ 9IF7W8+xVXr8lvNaQscVYGh5MRCOjDBYZwMY9ZzU=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [80.245.77.2] ([80.245.77.2]) by web-mail.gmx.net
+ (3c-app-gmx-bs62.server.lan [172.19.170.146]) (via HTTP); Wed, 9 Feb 2022
+ 17:39:21 +0100
 MIME-Version: 1.0
-In-Reply-To: <20220205185429.2278860-34-paul.kocialkowski@bootlin.com>
+Message-ID: <trinity-15c80db0-29c1-4cea-be14-794d9a02debf-1644424761490@3c-app-gmx-bs62>
+From: Frank Wunderlich <frank-w@public-files.de>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Cc: heiko@sntech.de, robh+dt@kernel.org, jbx6244@gmail.com,
+ devicetree@vger.kernel.org, vkoul@kernel.org,
+ michael.riesch@wolfvision.net, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, kishon@ti.com, p.zabel@pengutronix.de,
+ cl@rock-chips.com, kever.yang@rock-chips.com, lee.jones@linaro.org,
+ wulf@rock-chips.com, david.wu@rock-chips.com, Yifeng Zhao
+ <yifeng.zhao@rock-chips.com>
+Subject: Aw: [PATCH v8 0/4] Add Naneng combo PHY support for RK3568
+Date: Wed, 9 Feb 2022 17:39:21 +0100
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
+References: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:MM7Nx0+88CSi+CDhES/hxhcnP//1RXCCnodnqkxCyHMOIysSJnTzv+d82Mt13iCGAncX8
+ DgZq7W20vZbLm3xrY7uJN7LjQMf7VkEYdBuxa068oT0hSc7uaWya6GHwx0FG0exoqY9wfgQIvdtz
+ z/33dMmbL+E7IUjtCgMmZa1XUE7DeO1od88KOma67UbRir4X3wo24XXsrZ8wLyWJnt3cQlWVEEaT
+ sp0T2QHcIVYTwUfv5qMBAaQky7saSPMPuCJfKHnqB/DtCt3D5DgGhBR4tU3I4IbQIfi/3CGRJZTN
+ h8=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:peP6EjXS6tA=:oPaDBOwEnnaixYUZ5ZG4iW
+ hIbhVRUzRZM6vZEA0ca3IykLJ2yzYM1jAHDgCcmJkP+/7Zn22hg1DqKibs9vkHgJwhLIJ3QYl
+ KHh1rkMR/YzrtnPWLFof7S1U+ms0PlO9Hm6JjZUnZkJsnm15uaBOkwrQhCH9khSrl0BA8FOh3
+ ILTJlcdnrEkYGjSigZ4wjRcaQAkh6eved6z1bqID5nAZgUIjkp1z/5NTveMPYshvMecSbYp/R
+ XthpN2OOB//PFaD0AjvYNk8b7qG5bmUxAWyNUMenaR7ukwHQD0DmuBgPo67mkE/4qLzMUfIP4
+ XCL5sxqvSE4Nem6huPvK9/A7ZHKBAPK7XhOCJy7v0k7DPPHJBZJnsL+f5acLwysPyQh0gAsfj
+ sNzUWanufR8/4mpJ+fkfnNxsF070wThsKQyfUCQFWRZ5niSxAtPwMyAhJX154z9nBlol64dax
+ i1OYh2cBrArUq30TClk2Uym/jcJSYVNu9h4Aa0ysB5Qt4TAs0kiOgUemWhMUsGPuF4HN1zvCZ
+ xjceUAIAhlJRmoMLBEwePcmCa9az/jnEnFYG0IOqGhLVzJE+Sc1EJLLrhwnmcLYoowIZoz6dY
+ yuoEXv+SqWYOliW5TRQwIx2CbX7pYO67oxKnJlchVkvsomVIzyG/L+iNl+v/uilT+G6mUhQDQ
+ CmpjIWrh0zlPzEUJg55uu/TW4QVfvmL2T8gF0KtLNbVEcn8gnAp1FrnYcoLRwyPAWApJeuLln
+ ZDorxOKy/KY/QMDjggxoygmrEG+4TzkR0V/lv0vmiJ0NsVbpvNUnzRvq1OsrUAcJCnZ3sqC0n
+ HTxv+ei
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220209_013951_613003_2E2FBD64 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20220209_083948_183156_D47A3BAE 
+X-CRM114-Status: UNSURE (   4.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,64 +88,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0523359950385363019=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi
 
---===============0523359950385363019==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="y5bsrtm5k7kfdw3r"
-Content-Disposition: inline
+Tested complete series on rk3568 based Bananapi R2 Pro
 
+combphy0: usb3 (usbdrd3_0)
+combphy1: usb3 (usbdrd3_1)
+combphy2: sata (sata2)
 
---y5bsrtm5k7kfdw3r
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Tested-by: Frank Wunderlich <frank-w@public-files.de>
 
-On Sat, Feb 05, 2022 at 07:53:56PM +0100, Paul Kocialkowski wrote:
-> This cleans up the register definitions a bit, adds a prefix, remove mask=
-s.
-> Registers are now fully defined, some additional fields were added when
-> needed. New format definitions are added for future use.
->=20
-> Some fields are wrongly defined (inverted) in Allwinner litterature
-> (e.g. field vs frame prefixes), which is quite misleading. They are
-> now corrected to reflect their actual behavior.
-
-How was it tested?
-
-In particular, see
-https://lore.kernel.org/all/20180305093535.11801-7-maxime.ripard@bootlin.co=
-m/
-
-Maxime
-
---y5bsrtm5k7kfdw3r
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYgOL4QAKCRDj7w1vZxhR
-xVXMAP4tUZl6Zly0E31lIvZlN0DimuVQB8+cy8faHTKuekbwPQEA4bndLWw2iOVW
-ikY5YFrnuK1/de7lSQUW2bhUHCbSPQ4=
-=Pxbv
------END PGP SIGNATURE-----
-
---y5bsrtm5k7kfdw3r--
-
-
---===============0523359950385363019==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+regards Frank
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0523359950385363019==--
-
