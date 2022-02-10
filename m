@@ -4,135 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E84CC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Feb 2022 04:04:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A173C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Feb 2022 06:05:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=na0Q3iC3K0CxdjdPN95pq9uB+uWr4sXbZKkcJv+B2GE=; b=uAPHMGAWqu/Bbw
-	iC2yYqh6XfLxdtQyk96mqcw114NSa1cprJOC+d10xCFmkEMEVYartxVGQvbEzobPJ/irM7DqgsYmv
-	D10lQ4L22xI9Nmn9Lf+54WTUykLGXcsdhA4p/ijpzBCqnkB8foaAmeyiYC+wknaCs3l1i0tR+YraW
-	EpKz7Np7fqQpcwzYWL0ESqOw8i6V1esVwd6TiF9DoVigHXlrLhL/xAVPfEBu1wCMz6k2CNoBOwiCL
-	fbG4ezRRibivwmb3DjTcuWB/02+cWW++ukmgliCvWNaZPBKfGEFODnoc5mHR6aMM7/PZvSbmUY970
-	rAD6IIqHbzoYECi5p4xw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=V/s4P2RRioxs+SyeMGQ968s14r2fhrVoT57634SSjhU=; b=ZkMqlkr9rm+djE
+	asWNPMR+lV2BdpDxH5Kl9YdooP8yrgBalruQtoNXe9vqCUCTSN5jICU7aKkBN7Dyh3CODXSQjgvI9
+	utwavaZ5W/dow2Umji4jqW1bcKMLX3DN4hQqHbZ2fIgw3cweZM1mVXM9SSkrPd4srIpDQ4Yt1MOcF
+	DjwS3lG1kPPa+PVeDmA1v2hUctrLBj4n17QhIFtAAywd0p80QKWaD8S8aWy1/JFVDexcgj+L1qImf
+	Te/df8FeMWhHfTfE5HlUXvWFgXUjdUji3TkMpSLoEu1jbwqvXRA7nXbfIqhgniUhXvu56vDUSHXI9
+	q5N6YBIa53N9fi3S1Dhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nI0hI-002VVw-AJ; Thu, 10 Feb 2022 04:04:44 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1nI2aP-002lKA-JQ; Thu, 10 Feb 2022 06:05:45 +0000
+Received: from mail-qv1-xf2f.google.com ([2607:f8b0:4864:20::f2f])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nI0gP-002VMx-At
- for linux-phy@lists.infradead.org; Thu, 10 Feb 2022 04:03:53 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20220210040342epoutp02189ddbd8c510563ed4ea864ff3577cab~SUPP-OvSK1306213062epoutp02D
- for <linux-phy@lists.infradead.org>; Thu, 10 Feb 2022 04:03:42 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20220210040342epoutp02189ddbd8c510563ed4ea864ff3577cab~SUPP-OvSK1306213062epoutp02D
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1644465822;
- bh=s98+9VPav5RQZNoXRdsXGL9ubyNPY1JXXOB4R8f7M0Y=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=sM0jOl/UcXHS5CA5wIFZlQOqJ04l4K5gMPteGtG5vYHP7wC6ajUB5o4f2PYO5iApB
- qd+d/eqSY9kiWP8jXJnyAmw5wqjh9pVaMC9CtkAXRCAy/JK8z68BcO3Nn7szRUGGaQ
- kjNJ95ZO9CG1YiqGK/mSSMl3yeuuLjbqVdRYqKVk=
-Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
- epcas5p1.samsung.com (KnoxPortal) with ESMTP id
- 20220210040341epcas5p1226981efca4e61735205421bc2def079~SUPPIcF6r0129601296epcas5p1n;
- Thu, 10 Feb 2022 04:03:41 +0000 (GMT)
-Received: from epsmges5p1new.samsung.com (unknown [182.195.38.181]) by
- epsnrtp1.localdomain (Postfix) with ESMTP id 4JvNQc44s3z4x9Q0; Thu, 10 Feb
- 2022 04:03:36 +0000 (GMT)
-Received: from epcas5p1.samsung.com ( [182.195.41.39]) by
- epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- CB.1E.06423.19E84026; Thu, 10 Feb 2022 13:03:29 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
- 20220210040328epcas5p233a2f8ef33593694404334f11c6dde34~SUPDAJ3FA0864808648epcas5p2b;
- Thu, 10 Feb 2022 04:03:28 +0000 (GMT)
-Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20220210040328epsmtrp26876f1897f533d89d65955b8851ed1ca~SUPDAOSDw2508625086epsmtrp2B;
- Thu, 10 Feb 2022 04:03:28 +0000 (GMT)
-X-AuditID: b6c32a49-b13ff70000001917-fc-62048e9151df
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- 2C.EA.08738.09E84026; Thu, 10 Feb 2022 13:03:28 +0900 (KST)
-Received: from alimakhtar03 (unknown [107.122.12.5]) by epsmtip1.samsung.com
- (KnoxPortal) with ESMTPA id
- 20220210040326epsmtip15aa9d8c1f673af62fe86ddc57a0bf836~SUPAfxDt_2289122891epsmtip1s;
- Thu, 10 Feb 2022 04:03:26 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzysztof.kozlowski@canonical.com>, "'Inki
- Dae'" <inki.dae@samsung.com>, "'Joonyoung Shim'" <jy0922.shim@samsung.com>,
- "'Seung-Woo Kim'" <sw0312.kim@samsung.com>, "'Kyungmin	Park'"
- <kyungmin.park@samsung.com>, "'David Airlie'" <airlied@linux.ie>, "'Daniel
- Vetter'" <daniel@ffwll.ch>, "'Rob Herring'" <robh+dt@kernel.org>, "'Kishon
- Vijay Abraham I'" <kishon@ti.com>, "'Vinod	Koul'" <vkoul@kernel.org>,
- <dri-devel@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Cc: "'Marek Szyprowski'" <m.szyprowski@samsung.com>, "'Sylwester Nawrocki'"
- <snawrocki@kernel.org>, <stable@vger.kernel.org>
-In-Reply-To: <20220208171823.226211-3-krzysztof.kozlowski@canonical.com>
-Subject: RE: [PATCH 02/10] ARM: dts: exynos: add missing HDMI supplies on
- SMDK5420
-Date: Thu, 10 Feb 2022 09:33:24 +0530
-Message-ID: <003301d81e33$28712a20$79537e60$@samsung.com>
+ id 1nI2aN-002lIL-Dt
+ for linux-phy@lists.infradead.org; Thu, 10 Feb 2022 06:05:44 +0000
+Received: by mail-qv1-xf2f.google.com with SMTP id p7so3937034qvk.11
+ for <linux-phy@lists.infradead.org>; Wed, 09 Feb 2022 22:05:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=libE9Yn1tWBYKLkyjSY/ju5fNvytYicqcfgJwizlZcE=;
+ b=dLKYw75qu4bpXdwIh3rv48k15nRreYPToUXnAHn/slr1zvyL8DqWHxmixuR93gw4M/
+ bl/4oFr9hfl7mJEKZCMyx40iWCZt47TgKsAmz8HPsDddE0OQEZ9XOJ1w+5YorWITCBZF
+ 12sEovbYFwSkEoXtBUV6cFGloa1ocqMLIORVaB1Wsbrvo/LfNRN9gpcGdvV4uu3DIXUU
+ 2Tt2u4JahD2Rubi12QtPNP2cqjMEyHII+HqeU7PUIcKvnh4xU2olUyaO19hjOYuIu/X4
+ c23BPIS/SyCkCMzMpdYIdclcuagKi40wKsmbnMu37uYpK9HR/CoOxnxj4UarpC0Ca1SU
+ 7f+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=libE9Yn1tWBYKLkyjSY/ju5fNvytYicqcfgJwizlZcE=;
+ b=AJo0QH3qG+HlHEdNHwX2Gd0IJSSZCD9RtwAUQL2eYc0LCsQhlCe+Q9lcrXZWFqjq1A
+ N7yaODFdfh/6INp8Qd7JpUZyHP5gW5BhhC9qUbZlmx2K3meunUND5HgWxcM1Fw+aLrrQ
+ sDyngJV3pDSPtddy39WAldYiSMIfM84zI/SCydHrhhn/plIQycRz4I1usPWQ82TBsUmR
+ D2kIfruMCUyXTaJRC810ZG5bZMWN8hnEexRW8F8muP4+h6RKdwyF1t5mbvardp4Sc7gN
+ iJasm0rrBCLRKlVqaPXgrT4DZj2xIyOdWk9+skMhVWLiqLJEXKA0XhRy/I1xObUeZoyO
+ +TLQ==
+X-Gm-Message-State: AOAM530FB09YpkWePKoJQapt1ElZOFpkKsPss4oivdctlx6BgG3VE9dS
+ UJauafOT97sNmu6W0RlcW/w=
+X-Google-Smtp-Source: ABdhPJwPEeBaJnQZEpGh/G4E2EiYfU9a5wjU9luZd+NapvxeRAesLQVAOTyq3zmZ8C+PR6Xyefuvtg==
+X-Received: by 2002:a05:6214:62b:: with SMTP id
+ a11mr3968947qvx.99.1644473135358; 
+ Wed, 09 Feb 2022 22:05:35 -0800 (PST)
+Received: from localhost.localdomain ([193.203.214.57])
+ by smtp.gmail.com with ESMTPSA id d6sm10331723qtb.55.2022.02.09.22.05.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 09 Feb 2022 22:05:35 -0800 (PST)
+From: cgel.zte@gmail.com
+X-Google-Original-From: chi.minghao@zte.com.cn
+To: kishon@ti.com
+Cc: vkoul@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ "Minghao Chi (CGEL ZTE)" <chi.minghao@zte.com.cn>,
+ Zeal Robot <zealci@zte.com.cn>
+Subject: [PATCH] drivers/phy: remove unneeded ret variable
+Date: Thu, 10 Feb 2022 06:05:29 +0000
+Message-Id: <20220210060529.1608027-1-chi.minghao@zte.com.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQKO+pA4e/0lxhjrdKzLnJfOvLS5zwJNwtwxAgVrE2eq+9du0A==
-Content-Language: en-us
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrOJsWRmVeSWpSXmKPExsWy7bCmuu7EPpYkg8sfVS16z51ksvi/bSKz
- xfwj51gtrnx9z2Yx6f4EFosX9y6yWFx42sNmsfHtDyaLs01v2C02Pb7GanF51xw2iwmrvrFY
- zDi/j8li7ZG77Bate4+wW7Q/fclssWDjI0aLGZNfslnsvHOC2UHYY1ZDL5vH3m8LWDw2repk
- 89j+7QGrx/3u40wem5fUe/RtWcXocfzGdiaPz5vkAjijsm0yUhNTUosUUvOS81My89JtlbyD
- 453jTc0MDHUNLS3MlRTyEnNTbZVcfAJ03TJzgL5SUihLzCkFCgUkFhcr6dvZFOWXlqQqZOQX
- l9gqpRak5BSYFOgVJ+YWl+al6+WlllgZGhgYmQIVJmRnTDh9ia3gD3/F388H2RsYv/F2MXJy
- SAiYSHQdb2IDsYUEdjNKbJzL38XIBWR/YpRo/rmeBcL5zCixc9ECoCoOsI7+U+4QDbsYJSbN
- K4aoecko0bdrCTNIgk1AV2LH4jY2kISIQDerxINji8FWMAvUSdx5uQCsiFPAQ+L03y6wuLBA
- iMT9ywuYQGwWAVWJ1h8fwGxeAUuJ55uXQtmCEidnPmGBmCMvsf3tHGaIFxQkfj5dxgpiiwg4
- Sew+OZ8VokZc4uXRI+wgR0gITOaU2PhpMztEg4vEitZpjBC2sMSr41ug4lISn9/thfoyW6Jn
- lzFEuEZi6bxjLBC2vcSBK3NYQEqYBTQl1u/Sh1jFJ9H7+wkTRCevREebEES1qkTzu6tQndIS
- E7u7WSFsD4kdW98zT2BUnIXksVlIHpuF5IFZCMsWMLKsYpRMLSjOTU8tNi0wzEsth8d2cn7u
- JkZwitfy3MF498EHvUOMTByMhxglOJiVRHhP1TMnCfGmJFZWpRblxxeV5qQWH2I0BYb2RGYp
- 0eR8YJbJK4k3NLE0MDEzMzOxNDYzVBLnPZ2+IVFIID2xJDU7NbUgtQimj4mDU6qBKaLItIyD
- dY2ocdC0txtmLZ7oXiZ7XfuJ8aXX3hv6tT/+/hq3r+TB4cLLu548OHv5uUzeqqj+nFnXtGo4
- l508VbPxvvTatX6lp78t8bwWtMbpepT3vBV/l/IH7v3iZyS1OPfOHuE983Mypt74dHj/j0tv
- L53+bqXcqvBo7vuK5tXb72exL0yb+vcz7x2Zq16JKhUmc134Tn83SgxQauKb1d3VFukUd+rw
- 78iImmAN96MupUHnVnk4zd9zssW8SiElr08rZXbQl9UP7JKjJ906uTDmBkN0PlOJ9k9nL57/
- uftj3G4KHdVJ33Do6fMLa6SyX/y8z/oyeFnV2t4QVT7VI/v8GtwWGGxuK9HYyHC6sFOJpTgj
- 0VCLuag4EQDAO3ZkegQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrIIsWRmVeSWpSXmKPExsWy7bCSnO6EPpYkg1v3LCx6z51ksvi/bSKz
- xfwj51gtrnx9z2Yx6f4EFosX9y6yWFx42sNmsfHtDyaLs01v2C02Pb7GanF51xw2iwmrvrFY
- zDi/j8li7ZG77Bate4+wW7Q/fclssWDjI0aLGZNfslnsvHOC2UHYY1ZDL5vH3m8LWDw2repk
- 89j+7QGrx/3u40wem5fUe/RtWcXocfzGdiaPz5vkAjijuGxSUnMyy1KL9O0SuDImnL7EVvCH
- v+Lv54PsDYzfeLsYOTgkBEwk+k+5dzFycQgJ7GCUuHOnjaWLkRMoLi1xfeMEdghbWGLlv+fs
- EEXPGSW6781gBEmwCehK7FjcxgaSEBGYySqxYPs0sG5mgQZGiR1/1CE6rjJKHNi/BmwUp4CH
- xOm/XWwgtrBAkMSPkx1gk1gEVCVaf3xgArF5BSwlnm9eCmULSpyc+YQF5FRmAT2Jto2MEPPl
- Jba/ncMMcZ2CxM+ny1hBbBEBJ4ndJ+ezQtSIS7w8eoR9AqPwLCSTZiFMmoVk0iwkHQsYWVYx
- SqYWFOem5xYbFhjlpZbrFSfmFpfmpesl5+duYgTHupbWDsY9qz7oHWJk4mA8xCjBwawkwnuq
- njlJiDclsbIqtSg/vqg0J7X4EKM0B4uSOO+FrpPxQgLpiSWp2ampBalFMFkmDk6pBibbFaKe
- fmFXD0ZzfmizmPdKPaaAb4LrYuNSt+I/C6Ov8+QvK1sZdeOD0eP/VkEMcbUZXLcXTHmRVuSd
- pJW2OjMp9JHWH+8fe6pK5tR+4/pfyiG+0bpE2WvK1KeeGeW/epv0suYGTz8eZX1sL3ecdv4E
- 9ikzMw2POhcqXlp196C/IZfVkdP7LabMj1nk9mhq+NQuvvZvu1kuVX7qnMS85v7Lghqb54cO
- Pf9qMevcqX1f912LvP+andPxs1f59WeqSeVT3pxIvTKXU9ImPWDXgQuHt+6/pvxns9Y2d7fd
- /RIFwmeffe+XWLjwxPyIxvvTnV+teKumbjz52uvbC8sdune5Hd1y+Iouq7B3PP82p+hmJZbi
- jERDLeai4kQA3gf9IGQDAAA=
-X-CMS-MailID: 20220210040328epcas5p233a2f8ef33593694404334f11c6dde34
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220208171919epcas5p34f600badf08124d3c86c91fcb4065d11
-References: <20220208171823.226211-1-krzysztof.kozlowski@canonical.com>
- <CGME20220208171919epcas5p34f600badf08124d3c86c91fcb4065d11@epcas5p3.samsung.com>
- <20220208171823.226211-3-krzysztof.kozlowski@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220209_200349_947400_92EFA7BD 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20220209_220543_478557_10B87527 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,62 +90,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: "Minghao Chi (CGEL ZTE)" <chi.minghao@zte.com.cn>
 
+Return value from regmap_update_bits() directly instead
+of taking this in another redundant variable.
 
->-----Original Message-----
->From: Krzysztof Kozlowski [mailto:krzysztof.kozlowski@canonical.com]
->Sent: Tuesday, February 8, 2022 10:48 PM
->To: Inki Dae <inki.dae@samsung.com>; Joonyoung Shim
-><jy0922.shim@samsung.com>; Seung-Woo Kim
-><sw0312.kim@samsung.com>; Kyungmin Park
-><kyungmin.park@samsung.com>; David Airlie <airlied@linux.ie>; Daniel
->Vetter <daniel@ffwll.ch>; Rob Herring <robh+dt@kernel.org>; Krzysztof
->Kozlowski <krzysztof.kozlowski@canonical.com>; Alim Akhtar
-><alim.akhtar@samsung.com>; Kishon Vijay Abraham I <kishon@ti.com>;
->Vinod Koul <vkoul@kernel.org>; dri-devel@lists.freedesktop.org;
->devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
->samsung-soc@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
->phy@lists.infradead.org
->Cc: Marek Szyprowski <m.szyprowski@samsung.com>; Sylwester Nawrocki
-><snawrocki@kernel.org>; stable@vger.kernel.org
->Subject: [PATCH 02/10] ARM: dts: exynos: add missing HDMI supplies on
->SMDK5420
->
->Add required VDD supplies to HDMI block on SMDK5420.  Without them, the
->HDMI driver won't probe.  Because of lack of schematics, use same supplies
-as
->on Arndale Octa and Odroid XU3 boards (voltage matches).
->
->Cc: <stable@vger.kernel.org> # v3.15+
->Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
->---
-> arch/arm/boot/dts/exynos5420-smdk5420.dts | 3 +++
-> 1 file changed, 3 insertions(+)
->
->diff --git a/arch/arm/boot/dts/exynos5420-smdk5420.dts
->b/arch/arm/boot/dts/exynos5420-smdk5420.dts
->index 2978b5775a6d..4d7b6d9008a7 100644
->--- a/arch/arm/boot/dts/exynos5420-smdk5420.dts
->+++ b/arch/arm/boot/dts/exynos5420-smdk5420.dts
->@@ -124,6 +124,9 @@ &hdmi {
-> 	hpd-gpios = <&gpx3 7 GPIO_ACTIVE_HIGH>;
-> 	pinctrl-names = "default";
-> 	pinctrl-0 = <&hdmi_hpd_irq>;
->+	vdd-supply = <&ldo6_reg>;
->+	vdd_osc-supply = <&ldo7_reg>;
->+	vdd_pll-supply = <&ldo6_reg>;
-> };
+Reported-by: Zeal Robot <zealci@zte.com.cn>
+Signed-off-by: Minghao Chi (CGEL ZTE) <chi.minghao@zte.com.cn>
+---
+ drivers/phy/ti/phy-ti-pipe3.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-
-Same supply found on smdk5420 as well.
-
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
-
->
-> &hsi2c_4 {
->--
->2.32.0
-
+diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
+index 2cbc91e535d4..060b68c69ab8 100644
+--- a/drivers/phy/ti/phy-ti-pipe3.c
++++ b/drivers/phy/ti/phy-ti-pipe3.c
+@@ -318,7 +318,6 @@ static void ti_pipe3_disable_clocks(struct ti_pipe3 *phy);
+ 
+ static int ti_pipe3_power_off(struct phy *x)
+ {
+-	int ret;
+ 	struct ti_pipe3 *phy = phy_get_drvdata(x);
+ 
+ 	if (!phy->phy_power_syscon) {
+@@ -326,9 +325,8 @@ static int ti_pipe3_power_off(struct phy *x)
+ 		return 0;
+ 	}
+ 
+-	ret = regmap_update_bits(phy->phy_power_syscon, phy->power_reg,
++	return regmap_update_bits(phy->phy_power_syscon, phy->power_reg,
+ 				 PIPE3_PHY_PWRCTL_CLK_CMD_MASK, 0);
+-	return ret;
+ }
+ 
+ static void ti_pipe3_calibrate(struct ti_pipe3 *phy);
+-- 
+2.25.1
 
 
 -- 
