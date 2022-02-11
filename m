@@ -4,68 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7735C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Feb 2022 15:12:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 699B0C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Feb 2022 15:13:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uxqRgexN/dAqyy7R1yxg6F6xbWv3a652ITQ035xqk6A=; b=E0Mzo+Xdta1ZapLPrNcl5OfvM7
-	Yrx/b4Bcyhr3lUWxM2HFs3oXTL2W+fPPLJCtQIYdPveP4vFoJpqL4GvbX7PDFihiBiQEcU0K/2uYL
-	6PBCz4w4TWQOaFd480CX+93+WqFIzyWJN2D4vG0BcrSqGCEfwfTmLDHIWNHlDz0eLPkxgEl0HILud
-	MtCsddvaZMhbBKpn429E0Irk8T8Da/4M2gLSXmFA25ZQS84lvW9wV8//2mL3ohJUjQGhQ25j9MeAF
-	ZrbJbDWJdSukzczHVC/ToQsEJgxCsnYp1eaWwLeBONGMQSma7UpidHU9plp9gVveMjeKSqeBcU8q+
-	H9oO2HlQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6BnCGLXa56o/gbq+K94icqO0HZ7ecLm7rQBLxTZwVkY=; b=PRDsw+gVfT75lj
+	iqwwHB+vS+ZL3Fko/DGv54hddSexSxAykzvlnPFf4yxR+OvDyCoeUxCc28UMeX/3SyWNV4NNU/g6P
+	TIEmunI/2WM0SL4vALF71DvXUc+UdyXsapfxEtTKjNrysP4dp3x2kDtMe+yumGVqu3GpiTBeFgz8i
+	ax8MV5E1Qe51f9N8YSF2ZGCUYFQHVt3R16MfHcwo1nH1zlZ0/a9Pm9qfq4mdDlFwjY3py9yoePyi4
+	tRHPZ2ANNvQVUv4jmZPSrhD/jJXQUBer8exx92mapyFIC6B3hOuY8y/37h9JXjl0Q0OGgPp+0cRGS
+	Zi7cvelv9539+DIeEVEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nIXbS-007jLT-B6; Fri, 11 Feb 2022 15:12:54 +0000
-Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
+	id 1nIXcO-007je4-TN; Fri, 11 Feb 2022 15:13:52 +0000
+Received: from mail-oi1-f180.google.com ([209.85.167.180])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nIXbC-007jGJ-V1; Fri, 11 Feb 2022 15:12:42 +0000
-Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 2B19E1BF209;
- Fri, 11 Feb 2022 15:12:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644592353;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=UtWBObtE4IkrC6h1yUcZW77RKDqVsXLhy4QmmGFNKO4=;
- b=ccsc7k/xzRCiUCIwcH++UiryHmcKwovXKWAbQ0BzGb8gXA7/c8bPP7QQpRxDTUfei/rYsO
- d2zRJkIzW4z/xEJVPa3feg2jB8zwr9sqda3PLMZgq3VJLgdEk06z3RUHSwBXd/OXAxJ2eM
- KlEVy+4ibDVuU1T0dMtE01z5jZ/TCudeLgPpcdB9swBmayu6bLsxSAGhcAxSZys48c74xl
- nL/iFCoeQaOpaTEgxvEpNM3GZbRmrgM9Q8jFSds66zhUkcvuEyHjQFOFZO68n6Y7H9e+Gi
- IAJig+PEZNDNOaCGhfhGel6U1f02I9kEIVUyRv9Rr7uxZ+Jw6iwN7Lvp1nKJ9A==
-Date: Fri, 11 Feb 2022 16:12:29 +0100
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Rob Herring <robh@kernel.org>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ id 1nIXc8-007jXc-2g; Fri, 11 Feb 2022 15:13:37 +0000
+Received: by mail-oi1-f180.google.com with SMTP id s24so9873648oic.6;
+ Fri, 11 Feb 2022 07:13:35 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=nAFVbtRVtzhYKIqkkFFxa3DynoLvmGUt99SFwmIUitE=;
+ b=UIr1GEXcZyrHUvpywkJs6CR2Ci5FQmF/58VhtiNX+v5UUvBP2sebYDMKATQuY4GOGp
+ nRKH0jwjl0rMFM/rww0gbn2hOWJqpvZ7YyewWVhKSiHqhh54Nc4NnvX4ttHvXD8EKY8q
+ oaKUX9ZlNM8IfMndmWGYTIH604Nuh5Ebx47+XH7JELdXA0mFDwK+gq2CQUIqrJdzp+CQ
+ CjoR7gL3r0F5U+7b2ySYrnZt0hBckSPuvmOuZyxx0OvtX2tMeebGD/vtRkzP0WdyEsbX
+ RYswAkQKkkHd5YdTWrUt/xL8DJfXDKqib3+P2mb+O5I21i/SuP7rp7gxI0DMNs+lhEux
+ /Z8g==
+X-Gm-Message-State: AOAM531JBkiGp8mznlxtnL4lHwguRaN2GH1jGUe8PRLKj3GthTKI7id2
+ qDC4CL063evNpeSriDXYQQ==
+X-Google-Smtp-Source: ABdhPJwaPHuiQHGSQ6kUYYw0O9nkOWW7a1boAaJFBE38Tc1cgFspZLWYz6Pn0l3DnSsVViQOAEGGUg==
+X-Received: by 2002:aca:aa96:: with SMTP id t144mr415668oie.132.1644592415173; 
+ Fri, 11 Feb 2022 07:13:35 -0800 (PST)
+Received: from robh.at.kernel.org ([2607:fb90:20d7:a802:e6b0:6d9c:32f7:4bd9])
+ by smtp.gmail.com with ESMTPSA id
+ j3sm9649552oig.37.2022.02.11.07.13.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Feb 2022 07:13:34 -0800 (PST)
+Received: (nullmailer pid 378308 invoked by uid 1000);
+ Fri, 11 Feb 2022 15:13:31 -0000
+Date: Fri, 11 Feb 2022 09:13:30 -0600
+From: Rob Herring <robh@kernel.org>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Yong Deng <yong.deng@magewell.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
  Maxime Ripard <mripard@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 05/66] dt-bindings: sun6i-a31-mipi-dphy: Add optional
- direction property
-Message-ID: <YgZ83To26Dgy+JD4@aptenodytes>
+Subject: Re: [PATCH v2 61/66] dt-bindings: media: Add Allwinner A31 ISP
+ bindings documentation
+Message-ID: <YgZ9GjgasiPljg9X@robh.at.kernel.org>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-6-paul.kocialkowski@bootlin.com>
- <YgZ6qsdO+SfTemPZ@robh.at.kernel.org>
+ <20220205185429.2278860-62-paul.kocialkowski@bootlin.com>
+ <YgE/+UmP4nJVxtRT@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-In-Reply-To: <YgZ6qsdO+SfTemPZ@robh.at.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <YgE/+UmP4nJVxtRT@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220211_071239_326646_78D5C12B 
-X-CRM114-Status: GOOD (  27.29  )
+X-CRM114-CacheID: sfid-20220211_071336_153809_58A068FE 
+X-CRM114-Status: GOOD (  21.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,114 +88,104 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7881064556667311827=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============7881064556667311827==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="C0Hx0xaxCNYFUf5H"
-Content-Disposition: inline
-
-
---C0Hx0xaxCNYFUf5H
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Rob,
-
-On Fri 11 Feb 22, 09:03, Rob Herring wrote:
-> On Sat, Feb 05, 2022 at 07:53:28PM +0100, Paul Kocialkowski wrote:
-> > The Allwinner A31 MIPI D-PHY block supports both tx and rx directions,
-> > although each instance of the block is meant to be used in one
-> > direction only. There will typically be one instance for MIPI DSI and
-> > one for MIPI CSI-2 (it seems unlikely to ever see a shared instance).
-> >=20
-> > Describe the direction with a new allwinner,direction property.
-> > For backwards compatibility, the property is optional and tx mode
-> > should be assumed by default.
-> >=20
+On Mon, Feb 07, 2022 at 05:51:21PM +0200, Laurent Pinchart wrote:
+> Hi Paul,
+> 
+> Thank you for the patch.
+> 
+> On Sat, Feb 05, 2022 at 07:54:24PM +0100, Paul Kocialkowski wrote:
+> > This introduces YAML bindings documentation for the Allwinner A31 Image
+> > Signal Processor (ISP).
+> > 
 > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 > > ---
-> >  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml  | 12 ++++++++++++
-> >  1 file changed, 12 insertions(+)
-> >=20
-> > diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-=
-mipi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-=
-mipi-dphy.yaml
-> > index d0b541a461f3..22636c9fdab8 100644
-> > --- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dp=
-hy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dp=
-hy.yaml
-> > @@ -37,6 +37,18 @@ properties:
-> >    resets:
-> >      maxItems: 1
-> > =20
-> > +  allwinner,direction:
-> > +    $ref: '/schemas/types.yaml#/definitions/string'
-> > +    description: |
-> > +      Direction of the D-PHY:
-> > +      - "rx" for receiving (e.g. when used with MIPI CSI-2);
-> > +      - "tx" for transmitting (e.g. when used with MIPI DSI).
+> >  .../media/allwinner,sun6i-a31-isp.yaml        | 117 ++++++++++++++++++
+> >  1 file changed, 117 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
+> > new file mode 100644
+> > index 000000000000..2d87022c43ce
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
+> > @@ -0,0 +1,117 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-isp.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
+> > +title: Allwinner A31 Image Signal Processor Driver (ISP) Device Tree Bindings
+> > +
+> > +maintainers:
+> > +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > +
+> > +properties:
+> > +  compatible:
 > > +    enum:
-> > +      - tx
-> > +      - rx
-> > +    default: tx
->=20
-> Can you the phy mode to imply the direction?
+> > +      - allwinner,sun6i-a31-isp
+> > +      - allwinner,sun8i-v3s-isp
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  interrupts:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    items:
+> > +      - description: Bus Clock
+> > +      - description: Module Clock
+> > +      - description: DRAM Clock
+> 
+> That's interesting, does the ISP have a dedicated DRAM ?
+> 
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: bus
+> > +      - const: mod
+> > +      - const: ram
+> > +
+> > +  resets:
+> > +    maxItems: 1
+> > +
+> > +  ports:
+> > +    $ref: /schemas/graph.yaml#/properties/ports
+> > +
+> > +    properties:
+> > +      port@0:
+> > +        $ref: /schemas/graph.yaml#/$defs/port-base
+> > +        description: CSI0 input port
+> > +
+> > +        properties:
+> > +          reg:
+> > +            const: 0
+> > +
+> > +          endpoint:
+> > +            $ref: video-interfaces.yaml#
+> > +            unevaluatedProperties: false
+> 
+> If no other property than remote-endpoint are allowed, I'd write
+> 
+>           endpoint:
+>             $ref: video-interfaces.yaml#
+> 	    remote-endpoint: true
 
-So there was a first attempt at this which introduced a PHY submode but
-it was concluded after discussions that the direction is not really a
-mode of operation choice, in the sense that the D-PHY cannot be reconfigured
-to behave in Rx or Tx mode: it is instead statically assigned to one role
-or the other. This is why it feels more appropriate to describe it in the
-device-tree.
+You just mixed a node and a property...
 
-See this thread from the previous iteration:
-https://patchwork.linuxtv.org/project/linux-media/patch/20210115200141.1397=
-785-3-paul.kocialkowski@bootlin.com/#128800
+'remote-endpoint' is always allowed, so need to put it here and every 
+other user. So 'unevaluatedProperties' is correct. But it would be good 
+to define what properties from video-interfaces.yaml are used here.
 
-Cheers,
-
-Paul
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---C0Hx0xaxCNYFUf5H
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmIGfN0ACgkQ3cLmz3+f
-v9E7MwgAgb6y0f+35BKNQMY0ApR9vBuccUbtMvfY5MRxfwFygHy+dHC03V+oFXWR
-oh9Mb6Wc3RKnI6nyWPgoFzbz7KDXpHf9rubsuw9dZYtytY7cAVla5GHfJxLSZVzj
-g7Em8TMkWD86KmX7jl2LtkUyjpuWZ2YWnZnS+s2fOHBMLbUAuc2I+lelXgKxLCTL
-gluqLgtLSxn/T6tGheE5exmUTWV5Wq17QWtx+ganNYMEQoG9d0Q2sf1kE1eOocHF
-8sSTdFPAzC/f6nhMYoXBiCIpTKtAMZ+1kTuBJDEEhPLTCQ/YKvxu4UfbV2W5EvLa
-zi3iRUd2SKPMnAblAuD9zINCfUPEMQ==
-=h8WY
------END PGP SIGNATURE-----
-
---C0Hx0xaxCNYFUf5H--
-
-
---===============7881064556667311827==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Rob
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7881064556667311827==--
-
