@@ -4,81 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2E8CC433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Feb 2022 15:18:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D55EAC433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Feb 2022 15:18:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PwqP+zSHojPsz4cx29rTXZXnLKX42xZNIvjP7VYs2i4=; b=YnzgnxQ91Kd6CM
-	9kntVfrYZ43ENUIdnDC3c+Y1IFqbsGZnqG75D7VsSr4gosam0P9Ypy+ecd8rXMtnB2uPk6q571yu9
-	aD+840qexIn+78NJ2KRFost1enGc8iIEhPJ9pm6eHXFFxrZLuU8ygVKxaqyPcERLiXLCN7wXmmsUa
-	1We2n37X1jk1TMmC1Gu8ptf1xGQlDZIufRuUysF3yBnRWMCey/cJAG69FQMt3wriJCPYbXmej4oc9
-	V8nU2awvt11FbkfcWPm4mvIuGCxWPpxEuRlHHcjbiOOcmMW+Y2dyAimnpL85K2/9UM4SLKPcpLaFt
-	E7Ug2DartYKOyjjalpRw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=MCBoUKo0hHZ3lEtoevP9yebC4xMf2I15Xg9OcpK/Vt0=; b=yIY/RX2JLB/x1y4xp+VKMnl4Wt
+	m9QjLaSNnXMLAd4uL3RiOyTmAF2FLCU7TeLGRXf1GohhAQIrBljuDHSxLwOohwZ7MrdrPhn/JUoNP
+	mSbLS/noPmyfoSqILR0MpbJfswQjuASkGWDz44/8ZxeefyZNMvWtjnrRxtvuwUW16ASNPs50amfD/
+	fkJT1DHaL6XP26JqP72i0JUXTURXiZWlVyXZkUFbiKzRKyqxpOCv3KmMWxxKXHK8/rVSsOTvxhNT/
+	g25L8Di7gwvGz+Rqch53+f4l5lELWqkmfelZXTkRWo2ex4/vQCjlOPVNyHgaayiAhp32Eci6TRxj/
+	MAA8gwtA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nIXgO-007lWc-Vp; Fri, 11 Feb 2022 15:18:00 +0000
-Received: from mail-oo1-f47.google.com ([209.85.161.47])
+	id 1nIXgz-007lqs-4z; Fri, 11 Feb 2022 15:18:37 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nIXfF-007koh-Hf; Fri, 11 Feb 2022 15:16:51 +0000
-Received: by mail-oo1-f47.google.com with SMTP id
- u25-20020a4ad0d9000000b002e8d4370689so10643336oor.12; 
- Fri, 11 Feb 2022 07:16:49 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=1P3H5utZhmDvFsnAtwZyeK8JRztag6WByXWcE5q2Zyc=;
- b=i9B9+Oiaj+OKPMlx7Dh8PRSwlg+0O3uGvMfX6pHPyNPvJDdPT1t7rGU7rXM3Bij8Nn
- 1sCil9DkNEBVwkAr8gnpNoqfMEZ/UxHveqja+FT4xQn/M+7caKllvenJzWIqxsSZywCJ
- YkNUvszKwuUGlIVlJx8zxWFxZEb0t/NuHE2Tvzc235Y8etrWm1Lun8C0Q/ihoV9L82MN
- 9RzKj3wiJaryme6jvC1sPqilObYWLhG4Uhyti4sNLwKWVcm9B63aWphHURQayuUDGRuF
- YIzOTGAklrv9BnQyyFCtoYH3lXlORjOqczFjnjesWsoGKnOWJPvvBwQI5iBKMtMk0bZg
- z46w==
-X-Gm-Message-State: AOAM532KDq4icR4E4de0hNP+9/RwmV+WM8S3JfAaMV7zd0qhmQ6j2TKr
- oBDrffk7vFUwNH29fGMh3w==
-X-Google-Smtp-Source: ABdhPJyjj0qRfHV+X2Or/x7i2b6yIL+QqHCBBRDSOpVutl1Fb19j9aZR3y+aSd0eIuMcJSEYP3cxig==
-X-Received: by 2002:a05:6870:87c2:: with SMTP id
- s2mr283788oam.123.1644592608577; 
- Fri, 11 Feb 2022 07:16:48 -0800 (PST)
-Received: from robh.at.kernel.org ([2607:fb90:20db:bd0f:3516:878e:18c1:cd1e])
- by smtp.gmail.com with ESMTPSA id
- eh38sm5186127oab.36.2022.02.11.07.16.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 11 Feb 2022 07:16:47 -0800 (PST)
-Received: (nullmailer pid 382654 invoked by uid 1000);
- Fri, 11 Feb 2022 15:16:44 -0000
-Date: Fri, 11 Feb 2022 09:16:44 -0600
-From: Rob Herring <robh@kernel.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ id 1nIXft-007lD6-Gv; Fri, 11 Feb 2022 15:17:31 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by mail.gandi.net (Postfix) with ESMTPSA id E31931C0010;
+ Fri, 11 Feb 2022 15:17:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+ t=1644592646;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=VXF0Q98TnY0VF6LJAgT1z6iuK0gMwIZwwneiqBq9XCk=;
+ b=G8KjfCt1YjfMmLzINgPygwXjdiDJuTBXGcWdih6FT3BH8KxHmLHoIySqIwrDwRTnJqFzrH
+ CI8LuS6bc5QZYy6LUti6DoVkMDbGujFz2h5EusKBgKQ8fdsJQd/CesNJIXQMkXP0sOSsMc
+ Gqk0pXSP1BufwkzJbeQlNiQSB9QGEjEd6i3c7x151zt8HSGGhlotI0wxsr2ZlCWArCjgRu
+ VcldH6O2ZkPYE47GF7YdHqeLsoQownp3RBGOPZkpCX/Yidwzj3adVOOiVhqBY+/xPGeW3s
+ rbK9hv/QMEfMZwR0u+MwX0ZefOVSbjnSmfKE/CgcmmvB8Y6JcGFBcvpw1S72lw==
+Date: Fri, 11 Feb 2022 16:17:22 +0100
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Maxime Ripard <maxime@cerno.tech>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 62/66] dt-bindings: media: sun6i-a31-csi: Add ISP
- output port
-Message-ID: <YgZ93JcVaeU6VUBq@robh.at.kernel.org>
+Subject: Re: [PATCH v2 33/66] media: sun6i-csi: Rework register definitions,
+ invert misleading fields
+Message-ID: <YgZ+AgGD4n1ELpcA@aptenodytes>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-63-paul.kocialkowski@bootlin.com>
- <YgFDI17Q3AlZxaOi@pendragon.ideasonboard.com>
+ <20220205185429.2278860-34-paul.kocialkowski@bootlin.com>
+ <20220209093945.uertj7wut72tximz@houat>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YgFDI17Q3AlZxaOi@pendragon.ideasonboard.com>
+In-Reply-To: <20220209093945.uertj7wut72tximz@houat>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220211_071649_625559_5FDECA0A 
-X-CRM114-Status: GOOD (  22.85  )
+X-CRM114-CacheID: sfid-20220211_071729_882450_078FC58B 
+X-CRM114-Status: GOOD (  18.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,62 +77,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4304933665613697624=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 07, 2022 at 06:04:51PM +0200, Laurent Pinchart wrote:
-> On Sat, Feb 05, 2022 at 07:54:25PM +0100, Paul Kocialkowski wrote:
-> > Some Allwinner devices come with an Image Signal Processor (ISP) that
-> > allows processing camera data to produce good-looking images,
-> > especially from raw bayer representations.
-> > 
-> > The ISP does not have a dedicated capture path: it is fed directly by
-> > one of the CSI controllers, which can be selected at run-time.
-> > 
-> > Represent this possibility as a graph connection between the CSI
-> > controller and the ISP in the device-tree bindings.
-> > 
-> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > ---
-> >  .../bindings/media/allwinner,sun6i-a31-csi.yaml    | 14 ++++++++++++++
-> >  1 file changed, 14 insertions(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
-> > index 3cc61866ea89..7952413f98d8 100644
-> > --- a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
-> > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
-> > @@ -83,6 +83,20 @@ properties:
-> >  
-> >          additionalProperties: false
-> >  
-> > +      port@2:
-> > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > +        description: ISP output port
-> > +
-> > +        properties:
-> > +          reg:
-> > +            const: 2
-> > +
-> > +          endpoint:
-> > +            $ref: video-interfaces.yaml#
-> > +            unevaluatedProperties: false
-> 
-> This could be
-> 
->             $ref: video-interfaces.yaml#
->             remote-endpoint: true
->             additionalProperties: false
-> 
-> to reject other properties.
 
-If that's what is desired, then video-interfaces.yaml shouldn't be 
-referenced and up above should be /properties/port.
+--===============4304933665613697624==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="nAZiK7IJGde0Oma+"
+Content-Disposition: inline
 
-Rob
+
+--nAZiK7IJGde0Oma+
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Wed 09 Feb 22, 10:39, Maxime Ripard wrote:
+> On Sat, Feb 05, 2022 at 07:53:56PM +0100, Paul Kocialkowski wrote:
+> > This cleans up the register definitions a bit, adds a prefix, remove ma=
+sks.
+> > Registers are now fully defined, some additional fields were added when
+> > needed. New format definitions are added for future use.
+> >=20
+> > Some fields are wrongly defined (inverted) in Allwinner litterature
+> > (e.g. field vs frame prefixes), which is quite misleading. They are
+> > now corrected to reflect their actual behavior.
+>=20
+> How was it tested?
+>=20
+> In particular, see
+> https://lore.kernel.org/all/20180305093535.11801-7-maxime.ripard@bootlin.=
+com/
+
+No oscilloscope testing on my side to investigate the matter in depth,
+so the polarities inversion is based on what you changed in the driver.
+
+The idea is to change the register definitions to match what the hardware
+appears to be doing (based on your good look at the oscilloscope) to avoid
+the confusion of setting register fields that look contradictory.
+It's just a rename and the behavior remains the same.
+
+Paul
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--nAZiK7IJGde0Oma+
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmIGfgIACgkQ3cLmz3+f
+v9EnTAgAhApdzmVhN+9E++U4/kVhkozTecPPIQB7VC2eBNFFzHUCTDxUeNLba3bZ
+xSc4Hhkj5k1i34BXCJQr7fn4EJ65pEiT4cwzC66oPzS+xsEtguAiOPAWfRKPACdv
+PXhdORHKu5tYfhCHuUcT4OOe+Bq5ug0sERvnkpeMvxmVOHmheguf1USya8NKz0DS
+xKGn4Y8//yY1h3Ho2We4t9aTCG6W1MnpW5N45tb8vAK2y0+cOsObQvSRfEDkPvyA
+BfE7zj7LWmdXO3KPEqycnULT0NtLKYzH7Qqj4bMxZYnNxSCq8k8rXbNUd0d+A3AF
+NIXeKTJBhwrrsnAvBfNFkLSFfGS6tQ==
+=dcHQ
+-----END PGP SIGNATURE-----
+
+--nAZiK7IJGde0Oma+--
+
+
+--===============4304933665613697624==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4304933665613697624==--
+
