@@ -4,91 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAE39C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 11:51:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CF44C43217
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 13:57:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:CC:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=4Nhf9/XR17//zYmaDrFPlzy4aY98lMcCs++YaubT5nA=; b=flvh5RybNWeBs3IlhU4FHksh/z
-	jfQbZ+gDUyq2u4mpJrZyS4jdB/VdtgePNCeLUYwh++NbsaY/8DjT6doDl9l0WsdnVW/aeGlTQWzYN
-	DJJecg6AIW+DDs/XXfAMkYNGEkeu8Rb+Qsxi+L5cHvUX6qYnkihNCrXRZplIGDqkkbI8Cj8ajKVGV
-	MR7Cn1+q3VVV18SRFungxJpRSdFJ7tSRg/CZ7Xru77/rL5rw6O5mv4eVvWfpMTWDPQUUKHWOpdUBp
-	jIzgqExmLlYsgV3tS3cMSX/n5jbtqvj2/8Wc0mR9QFhkb4x5Q3E7Et0E7poW4SvCmvYeVn3dOG9SL
-	xJNSIM2A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ZJbFaOewB43TufZv5iONsQAnK5UJ5nZoxXJxVPNuMzs=; b=lu58+wqn4d4/WQ3EjGAnYpFvHf
+	gq42zRYXf97mjf4ZOE/YT4spmup5FrkLu6WpemowqiAsoQsBIBH3vCkT9lUCOykQYPWmvunKZq/jp
+	tcQBvOgIK5+mZ9nVHO7NQwfAyfyfZ0PjJmogOiRkTC6aLyGYC3/NFVGXC/z5FcoSAN/0ZQ8jaLtPv
+	MP4ybXflq5im7t5jjO3xx8LiPY0L2eKirpBHZrOJgXteU+J1ARTYiMhmwXYIDx5D9Z+InWicCvde0
+	X6paNqQfLR00+j7ggBdE9KfhfnqE3I9BvCgBN+9MQqmoWiX977POjr0x6w4cAmDJgw4Glge0Z7gTN
+	t5uIhX0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nJZsv-00Ewnv-UQ; Mon, 14 Feb 2022 11:51:13 +0000
-Received: from mxout03.lancloud.ru ([45.84.86.113])
+	id 1nJbrL-00FWMM-QZ; Mon, 14 Feb 2022 13:57:43 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nJYpI-00EaBT-CJ; Mon, 14 Feb 2022 10:43:27 +0000
-Received: from LanCloud
-DKIM-Filter: OpenDKIM Filter v2.11.0 mxout03.lancloud.ru 5C61B20EAFAD
-Received: from LanCloud
-Received: from LanCloud
-Received: from LanCloud
+ id 1nJbqn-00FVwC-M9
+ for linux-phy@lists.infradead.org; Mon, 14 Feb 2022 13:57:11 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1nJbqA-0006T5-AI; Mon, 14 Feb 2022 14:56:30 +0100
+Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
+ by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1nJbq0-00GYf6-Ms; Mon, 14 Feb 2022 14:56:19 +0100
+Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.94.2)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1nJbpy-0038Nh-VX; Mon, 14 Feb 2022 14:56:18 +0100
+Date: Mon, 14 Feb 2022 14:56:18 +0100
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Vignesh Raghavendra <vigneshr@ti.com>, kvm@vger.kernel.org,
+ "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Amit Kucheria <amitk@kernel.org>, alsa-devel@alsa-project.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Guenter Roeck <groeck@chromium.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ linux-mtd@lists.infradead.org, linux-i2c@vger.kernel.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>, linux-phy@lists.infradead.org,
+ Oleksij Rempel <linux@rempel-privat.de>, Lee Jones <lee.jones@linaro.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Peter Korsgaard <peter@korsgaard.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
+ Joakim Zhang <qiangqing.zhang@nxp.com>, Kamal Dasu <kdasu.kdev@gmail.com>,
+ Jiri Slaby <jirislaby@kernel.org>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-serial@vger.kernel.org,
+ Jakub Kicinski <kuba@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ platform-driver-x86@vger.kernel.org, linux-pwm@vger.kernel.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Corey Minyard <minyard@acm.org>, linux-pm@vger.kernel.org,
+ John Garry <john.garry@huawei.com>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Mark Gross <markgross@kernel.org>, linux-gpio@vger.kernel.org,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Eric Auger <eric.auger@redhat.com>, Takashi Iwai <tiwai@suse.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ openipmi-developer@lists.sourceforge.net, Jaroslav Kysela <perex@perex.cz>,
+ Benson Leung <bleung@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ Sergey Shtylyov <s.shtylyov@omp.ru>, Mun Yew Tham <mun.yew.tham@intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Cornelia Huck <cohuck@redhat.com>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ Zha Qipeng <qipeng.zha@intel.com>, Richard Weinberger <richard@nod.at>,
+ Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
+ Brian Norris <computersforpeace@gmail.com>, netdev@vger.kernel.org
 Subject: Re: [PATCH v2 1/2] platform: make platform_get_irq_optional() optional
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Rafael J. Wysocki"
- <rafael@kernel.org>, <linux-kernel@vger.kernel.org>, Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>, Corey Minyard <minyard@acm.org>,
- "Oleksij Rempel" <linux@rempel-privat.de>, Pengutronix Kernel Team
- <kernel@pengutronix.de>, William Breathitt Gray <vilhelm.gray@gmail.com>,
- "Mun Yew Tham" <mun.yew.tham@intel.com>, Linus Walleij
- <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, Thierry
- Reding <thierry.reding@gmail.com>, =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?=
- <u.kleine-koenig@pengutronix.de>, Lee Jones <lee.jones@linaro.org>, "Kamal
- Dasu" <kdasu.kdev@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
- <bcm-kernel-feedback-list@broadcom.com>, Peter Korsgaard
- <peter@korsgaard.com>, Andrew Lunn <andrew@lunn.ch>, Ulf Hansson
- <ulf.hansson@linaro.org>, Brian Norris <computersforpeace@gmail.com>, "Miquel
- Raynal" <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>,
- Vignesh Raghavendra <vigneshr@ti.com>, "David S. Miller"
- <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, Joakim Zhang
- <qiangqing.zhang@nxp.com>, Yoshihiro Shimoda
- <yoshihiro.shimoda.uh@renesas.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Benson Leung <bleung@chromium.org>, "Guenter
- Roeck" <groeck@chromium.org>, Zha Qipeng <qipeng.zha@intel.com>, Hans de
- Goede <hdegoede@redhat.com>, Mark Gross <markgross@kernel.org>, John Garry
- <john.garry@huawei.com>, Mark Brown <broonie@kernel.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, =?UTF-8?Q?Niklas_S=c3=b6derlund?=
- <niklas.soderlund@ragnatech.se>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amitk@kernel.org>, Zhang Rui <rui.zhang@intel.com>, Jiri Slaby
- <jirislaby@kernel.org>, Eric Auger <eric.auger@redhat.com>, Alex Williamson
- <alex.williamson@redhat.com>, Cornelia Huck <cohuck@redhat.com>, "Liam
- Girdwood" <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>, "Takashi
- Iwai" <tiwai@suse.com>, <openipmi-developer@lists.sourceforge.net>,
- <linux-iio@vger.kernel.org>, <linux-gpio@vger.kernel.org>,
- <linux-pwm@vger.kernel.org>, <linux-i2c@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mmc@vger.kernel.org>,
- <linux-mtd@lists.infradead.org>, <netdev@vger.kernel.org>,
- <linux-renesas-soc@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <platform-driver-x86@vger.kernel.org>, <linux-spi@vger.kernel.org>,
- <linux-mediatek@lists.infradead.org>, <linux-pm@vger.kernel.org>,
- <linux-serial@vger.kernel.org>, <kvm@vger.kernel.org>,
- <alsa-devel@alsa-project.org>, Matthias Schiffer
- <matthias.schiffer@ew.tq-group.com>
+Message-ID: <20220214135618.kdiikxi3j4j4erks@pengutronix.de>
 References: <20220212201631.12648-1-s.shtylyov@omp.ru>
  <20220212201631.12648-2-s.shtylyov@omp.ru>
- <CAMuHMdUPxX7Tja6BCjEb4KDobNFPMcM66Fk7Z+VsO7pgb8JnjA@mail.gmail.com>
-From: Sergey Shtylyov <s.shtylyov@omp.ru>
-Organization: Open Mobile Platform
-Message-ID: <41b49828-e0bc-3e7a-32d7-5ee41c778206@omp.ru>
-Date: Mon, 14 Feb 2022 13:43:11 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.10.1
+ <20220214071351.pcvstrzkwqyrg536@pengutronix.de>
+ <YgorLXUr8aT+1ttv@smile.fi.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdUPxX7Tja6BCjEb4KDobNFPMcM66Fk7Z+VsO7pgb8JnjA@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [192.168.11.198]
-X-ClientProxiedBy: LFEXT02.lancloud.ru (fd00:f066::142) To
- LFEX1907.lancloud.ru (fd00:f066::207)
+In-Reply-To: <YgorLXUr8aT+1ttv@smile.fi.intel.com>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220214_024324_874693_3A923553 
-X-CRM114-Status: GOOD (  29.08  )
+X-CRM114-CacheID: sfid-20220214_055709_740550_9FDEB04B 
+X-CRM114-Status: GOOD (  28.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,156 +109,108 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6488696738807531114=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello!
 
-On 2/14/22 11:54 AM, Geert Uytterhoeven wrote:
+--===============6488696738807531114==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="woc7fbustut2ntcm"
+Content-Disposition: inline
 
-[...]
 
->> This patch is based on the former Andy Shevchenko's patch:
->>
->> https://lore.kernel.org/lkml/20210331144526.19439-1-andriy.shevchenko@linux.intel.com/
->>
->> Currently platform_get_irq_optional() returns an error code even if IRQ
->> resource simply has not been found.  It prevents the callers from being
->> error code agnostic in their error handling:
->>
->>         ret = platform_get_irq_optional(...);
->>         if (ret < 0 && ret != -ENXIO)
->>                 return ret; // respect deferred probe
->>         if (ret > 0)
->>                 ...we get an IRQ...
->>
->> All other *_optional() APIs seem to return 0 or NULL in case an optional
->> resource is not available.  Let's follow this good example, so that the
->> callers would look like:
->>
->>         ret = platform_get_irq_optional(...);
->>         if (ret < 0)
->>                 return ret;
->>         if (ret > 0)
->>                 ...we get an IRQ...
->>
->> Reported-by: Matthias Schiffer <matthias.schiffer@ew.tq-group.com>
->> Signed-off-by: Sergey Shtylyov <s.shtylyov@omp.ru>
->> ---
->> Changes in version 2:
-> 
-> Thanks for the update!
-> 
->>  drivers/base/platform.c                  | 60 +++++++++++++++---------
-> 
-> The core change LGTM.
+--woc7fbustut2ntcm
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-   Thanx! :-)
+Hello Andy,
 
-> I'm only looking at Renesas drivers below...
-> 
->> --- a/drivers/mmc/host/sh_mmcif.c
->> +++ b/drivers/mmc/host/sh_mmcif.c
->> @@ -1465,14 +1465,14 @@ static int sh_mmcif_probe(struct platform_device *pdev)
->>         sh_mmcif_sync_reset(host);
->>         sh_mmcif_writel(host->addr, MMCIF_CE_INT_MASK, MASK_ALL);
->>
->> -       name = irq[1] < 0 ? dev_name(dev) : "sh_mmc:error";
->> +       name = irq[1] <= 0 ? dev_name(dev) : "sh_mmc:error";
-> 
-> "== 0" should be sufficient here, if the code above would bail out
-> on errors returned by platform_get_irq_optional(), which it currently
-> doesn't do.
-> As this adds missing error handling, this is to be fixed by a separate
-> patch later?
+On Mon, Feb 14, 2022 at 12:13:01PM +0200, Andy Shevchenko wrote:
+> On Mon, Feb 14, 2022 at 08:13:51AM +0100, Uwe Kleine-K=F6nig wrote:
+> > On Sat, Feb 12, 2022 at 11:16:30PM +0300, Sergey Shtylyov wrote:
+> > > This patch is based on the former Andy Shevchenko's patch:
+> > >=20
+> > > https://lore.kernel.org/lkml/20210331144526.19439-1-andriy.shevchenko=
+@linux.intel.com/
+> > >=20
+> > > Currently platform_get_irq_optional() returns an error code even if I=
+RQ
+> > > resource simply has not been found.  It prevents the callers from bei=
+ng
+> > > error code agnostic in their error handling:
+> > >=20
+> > > 	ret =3D platform_get_irq_optional(...);
+> > > 	if (ret < 0 && ret !=3D -ENXIO)
+> > > 		return ret; // respect deferred probe
+> > > 	if (ret > 0)
+> > > 		...we get an IRQ...
+> > >=20
+> > > All other *_optional() APIs seem to return 0 or NULL in case an optio=
+nal
+> > > resource is not available.  Let's follow this good example, so that t=
+he
+> > > callers would look like:
+> > >=20
+> > > 	ret =3D platform_get_irq_optional(...);
+> > > 	if (ret < 0)
+> > > 		return ret;
+> > > 	if (ret > 0)
+> > > 		...we get an IRQ...
+> > >=20
+> > > Reported-by: Matthias Schiffer <matthias.schiffer@ew.tq-group.com>
+> > > Signed-off-by: Sergey Shtylyov <s.shtylyov@omp.ru>
+> >=20
+> > While this patch is better than v1, I still don't like it for the
+> > reasons discussed for v1. (i.e. 0 isn't usable as a dummy value which I
+> > consider the real advantage for the other _get_optional() functions.)
+>=20
+> I think you haven't reacted anyhow to my point that you mixing apples and
+> bananas together when comparing this 0 to the others _optional APIs.
 
-   Yes.
+Is this a question to me or Sergey?
 
-[...]
->>                 ret = devm_request_threaded_irq(dev, irq[1],
->>                                                 sh_mmcif_intr, sh_mmcif_irqt,
->>                                                 0, "sh_mmc:int", host);
-> 
->> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
->> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
->> @@ -439,7 +439,7 @@ static int rcar_gen3_phy_usb2_init(struct phy *p)
->>         u32 val;
->>         int ret;
->>
->> -       if (!rcar_gen3_is_any_rphy_initialized(channel) && channel->irq >= 0) {
->> +       if (!rcar_gen3_is_any_rphy_initialized(channel) && channel->irq > 0) {
->>                 INIT_WORK(&channel->work, rcar_gen3_phy_usb2_work);
->>                 ret = request_irq(channel->irq, rcar_gen3_phy_usb2_irq,
->>                                   IRQF_SHARED, dev_name(channel->dev), channel);
->> @@ -486,7 +486,7 @@ static int rcar_gen3_phy_usb2_exit(struct phy *p)
->>                 val &= ~USB2_INT_ENABLE_UCOM_INTEN;
->>         writel(val, usb2_base + USB2_INT_ENABLE);
->>
->> -       if (channel->irq >= 0 && !rcar_gen3_is_any_rphy_initialized(channel))
->> +       if (channel->irq > 0 && !rcar_gen3_is_any_rphy_initialized(channel))
->>                 free_irq(channel->irq, channel);
->>
->>         return 0;
-> 
-> LGTM, but note that all errors returned by platform_get_irq_optional()
-> are currently ignored, even real errors, which should be propagated
-> up.
-> As this adds missing error handling, this is to be fixed by a separate
-> patch later?
+I fully agree, when the 0 of platform_get_irq_optional is an apple and
+the NULL of gpio_get_optional is a banana, I doubt "All other
+*_optional() APIs seem to return 0 or NULL in case an optional resource
+is not available.  Let's follow this good example, [...]".
 
-   Yes.
+Best regards
+Uwe
 
->> --- a/drivers/thermal/rcar_gen3_thermal.c
->> +++ b/drivers/thermal/rcar_gen3_thermal.c
->> @@ -432,6 +432,8 @@ static int rcar_gen3_thermal_request_irqs(struct rcar_gen3_thermal_priv *priv,
->>                 irq = platform_get_irq_optional(pdev, i);
->>                 if (irq < 0)
->>                         return irq;
->> +               if (!irq)
->> +                       return -ENXIO;
-> 
-> While correct, and preserving existing behavior, this looks strange
-> to me.  Probably this should return zero instead (i.e. the check
-> above should be changed to "<= 0"), and the caller should start caring
-> about and propagating up real errors.
+--=20
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
-   Hm, you're right... should be <= 0 there, it seems.
+--woc7fbustut2ntcm
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> As this adds missing error handling, this is to be fixed by a separate
-> patch later?
+-----BEGIN PGP SIGNATURE-----
 
-   Propagating errors from the probe() method is a matter of separate patch, yes.
+iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmIKX38ACgkQwfwUeK3K
+7AnLpgf9EdBYBZTRjJVoNGFFTEqmmhehKa4KFk5v/UfvgXZenr00B/u2K/MHO4lF
+HHazTdjZ6XfXR0zlckqQaisXEU2TXb/YxxUC3K7hBgh1k2dtS14XlUQHbh2zQXQI
+HKw3Yitn6vDghQH9WkSROTJNBOvMg3PcAg8i5h8g17e0D9BI5sdJERnMTFNeMzpz
+cY95lA6BqyVoJn2GW+QxAKYiYCMB5CSNw3yIxV8nd8CKPKMUQNt4aX4EFwglsJKP
+dB7ddBCRW0+mJcywV7mjkU7B7q6hTtPyAkNBQrWYtaAY4xcsIH7E2T64AaNc4Rah
+C/iCiRD7LGScn9QG72fV+C+upY3/gg==
+=VmOP
+-----END PGP SIGNATURE-----
 
->>
->>                 irqname = devm_kasprintf(dev, GFP_KERNEL, "%s:ch%d",
->>                                          dev_name(dev), i);
->> diff --git a/drivers/tty/serial/8250/8250_mtk.c b/drivers/tty/serial/8250/8250_mtk.c
->> index fb65dc601b23..328ab074fd89 100644
-> 
->> --- a/drivers/tty/serial/sh-sci.c
->> +++ b/drivers/tty/serial/sh-sci.c
-> 
-> I think you missed
-> 
->     #define SCIx_IRQ_IS_MUXED(port)                 \
->             ((port)->irqs[SCIx_ERI_IRQ] ==  \
->              (port)->irqs[SCIx_RXI_IRQ]) || \
->             ((port)->irqs[SCIx_ERI_IRQ] &&  \
->              ((port)->irqs[SCIx_RXI_IRQ] < 0))
-> 
-> above? The last condition should become "<= 0".
+--woc7fbustut2ntcm--
 
-   Yes, probably... TY!
 
-> Gr{oetje,eeting}s,
-> 
->                         Geert
-
-MBR, Sergey
+--===============6488696738807531114==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6488696738807531114==--
+
