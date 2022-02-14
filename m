@@ -4,76 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8054FC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 02:06:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33F10C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 07:28:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qe8/YuTgOYmW6eR6ORbccERUTtQMS7d9QVn3YYH11C0=; b=Me4j6/kJtR/JYY
-	/mn+qfsdq0TyqA8fZzPFcDft9CU5++K5YY2ufmQFNsogb8aSUaRHKkfRmBTkok6ge86pEzX5H8Wd3
-	wiINownoPYsRZXBzierdpuJBIXUQnna/DZZO9zQO89v87biJ1KfOYTzOgk+3ZT6NMJXGqMWMhwsk5
-	kLU58s0qZDPwYtD5eMUkL4CE48A4U9ndHPLNKDYtoDMbV0BMRU1ZkLD9VugzvMJnQm1tIlMuBjdla
-	kPgBzRrPOWy3nVJYBfpMvyPptX+qKrk6OZg0tWThB6vl0OAErCEZAiWQqDXN1XNaeGzZVr7X3Dbvk
-	vl1Rlu5bX4Zug5ceMvzA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=y0xms0o0IN0UHE5T6Dd/8uHguyyHkgG7633V2qNbhBc=; b=FcAeyaEMYYcT3jR0ubQHBvKvOi
+	5ku9IpqiOGL0azOU0P+V8yCIu3rGAIFMoYDxKFDtdnIcSBp3ixxw91WwmQvPYGMh3Yk7pZ/H888a/
+	7Du2ii3F8HSsheOzbMVDID9CDNHU9n6wLVqbCKMmhSNcRpo6KQUIWu9wWC2iR9PO847Vyu/IhSduC
+	TNL0IdcE4gfFtT+WbPpHrBdrTYcpDH9dRhkvzVJWjTFrLqP/dHXiu9srE2DzAUB43S/vCFR4A4H4b
+	aLJGgfr+xaNvTCjW1tI5wrYbqc4/uPRpgDq8Qu9OjpQMkZ5S1CUpDt6dpro/F0gj0UPnmHjUbv58l
+	xgn1hAqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nJQlA-00CyXg-Tr; Mon, 14 Feb 2022 02:06:36 +0000
-Received: from mail-qv1-xf2a.google.com ([2607:f8b0:4864:20::f2a])
+	id 1nJVms-00Dhqp-IY; Mon, 14 Feb 2022 07:28:42 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nJQl8-00CyWr-EY
- for linux-phy@lists.infradead.org; Mon, 14 Feb 2022 02:06:35 +0000
-Received: by mail-qv1-xf2a.google.com with SMTP id v10so13722527qvk.7
- for <linux-phy@lists.infradead.org>; Sun, 13 Feb 2022 18:06:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=x6D+rW+M/590MNn6d2fJzbKUc0e2Gs+IX5YARDEY8vY=;
- b=XnUgXRrMXepVz7BhayGIuaIuiNR+gi4RU0BnTwEM2Q+1EE2H9I0y4aq0XfVXkoJynu
- vjlZtoyoCInbaMeI3YZkL9ml2a+6PxTpSsEEgnjXA5wNqZEHIBoNeY7WlNMGIanrM+Nn
- XSvNNx5I6xFPXppMW6Qub49m7rnV7XAnur0OMfSGspZkyGfKXsv2O931zJF2ymcBJoOQ
- kXXWoN/ITAlpg0+XQ9HizCsIxeUGTuNRHVE3AI++E3p1LgRGZJgcQTWDkgZv+yk9UibJ
- 0Gk29a/2V5VbwTRI2LTRDqlMi69UNgVgJbfMwP13BjLq38VUwlIY+gCpzvqGLrr0IuFN
- Cf8w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=x6D+rW+M/590MNn6d2fJzbKUc0e2Gs+IX5YARDEY8vY=;
- b=W1uDNbgTSdbO9DKOC31gMFTNgbFCabQta2vmgYAMqq9gAxEGYKEdcQeH2UQdhYeq63
- Ae9TVelIiIY0M8V+0HSPKqudT1x0kE/3ub8rWNIkVWH9To8142PkmmNQrb2KZf647qAA
- aPoaZzaDtoHpP306Jq8N8WxNeHqPC/fW82KL6l4c4SEXvJvQhJS9Zo1SqNhpZlF/ByvC
- MqLWf/NfSyEfTkD0LUiPUNz6rj56MddFrGrsMMMBkZ1S8Ngh9Jni3HzP0xWn4ctVFRm4
- Dk+R6jXGX/4v4C2IkQNoCmntsT5PRaa3wVHPOHb7Uop395Ikvg1upK/L5I2UuKGHsS3L
- gmVg==
-X-Gm-Message-State: AOAM531X2E1CrDioxECzKugICkvuxqxEvc7Ccj01swSKJnUsK8GRq3vn
- CVzmXvVZN+8GK8Wtx9B6/T0=
-X-Google-Smtp-Source: ABdhPJyVbKTazCjbPnlL4BVLjqu5Hu2WSB3lyx94QL//89CseIbr6/MdX/GH5h5gxzc4Mpup1ICCmA==
-X-Received: by 2002:a05:6214:20c6:: with SMTP id
- 6mr8215578qve.32.1644804393036; 
- Sun, 13 Feb 2022 18:06:33 -0800 (PST)
-Received: from localhost.localdomain ([193.203.214.57])
- by smtp.gmail.com with ESMTPSA id d6sm16924750qtb.55.2022.02.13.18.06.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 13 Feb 2022 18:06:32 -0800 (PST)
-From: cgel.zte@gmail.com
-X-Google-Original-From: chi.minghao@zte.com.cn
-To: kishon@ti.com
-Cc: vkoul@kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- "Minghao Chi (CGEL ZTE)" <chi.minghao@zte.com.cn>,
- Zeal Robot <zealci@zte.com.cn>
-Subject: [PATCH] phy/cadence: Use of_device_get_match_data()
-Date: Mon, 14 Feb 2022 02:06:26 +0000
-Message-Id: <20220214020626.1714696-1-chi.minghao@zte.com.cn>
-X-Mailer: git-send-email 2.25.1
+ id 1nJVZp-00Dd4N-JL
+ for linux-phy@lists.infradead.org; Mon, 14 Feb 2022 07:15:16 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1nJVZ0-0006l6-Nq; Mon, 14 Feb 2022 08:14:22 +0100
+Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
+ by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1nJVYf-00GV12-4n; Mon, 14 Feb 2022 08:14:00 +0100
+Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.94.2)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1nJVYd-002oWn-E1; Mon, 14 Feb 2022 08:13:59 +0100
+Date: Mon, 14 Feb 2022 08:13:51 +0100
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+To: Sergey Shtylyov <s.shtylyov@omp.ru>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ linux-kernel@vger.kernel.org, Andrew Lunn <andrew@lunn.ch>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Jiri Slaby <jirislaby@kernel.org>, linux-iio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Amit Kucheria <amitk@kernel.org>, alsa-devel@alsa-project.org,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-phy@lists.infradead.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ linux-mtd@lists.infradead.org, linux-i2c@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Guenter Roeck <groeck@chromium.org>, linux-spi@vger.kernel.org,
+ Lee Jones <lee.jones@linaro.org>, openipmi-developer@lists.sourceforge.net,
+ Peter Korsgaard <peter@korsgaard.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
+ kvm@vger.kernel.org, Kamal Dasu <kdasu.kdev@gmail.com>,
+ Richard Weinberger <richard@nod.at>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-serial@vger.kernel.org,
+ Jakub Kicinski <kuba@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ Jaroslav Kysela <perex@perex.cz>,
+ platform-driver-x86@vger.kernel.org, linux-pwm@vger.kernel.org,
+ Zha Qipeng <qipeng.zha@intel.com>, Corey Minyard <minyard@acm.org>,
+ linux-pm@vger.kernel.org, John Garry <john.garry@huawei.com>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Mark Gross <markgross@kernel.org>, Hans de Goede <hdegoede@redhat.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Takashi Iwai <tiwai@suse.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Benson Leung <bleung@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ Mun Yew Tham <mun.yew.tham@intel.com>,
+ Eric Auger <eric.auger@redhat.com>, netdev@vger.kernel.org,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Cornelia Huck <cohuck@redhat.com>, linux-mmc@vger.kernel.org,
+ Joakim Zhang <qiangqing.zhang@nxp.com>,
+ Oleksij Rempel <linux@rempel-privat.de>,
+ linux-renesas-soc@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
+ Brian Norris <computersforpeace@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>
+Subject: Re: [PATCH v2 1/2] platform: make platform_get_irq_optional() optional
+Message-ID: <20220214071351.pcvstrzkwqyrg536@pengutronix.de>
+References: <20220212201631.12648-1-s.shtylyov@omp.ru>
+ <20220212201631.12648-2-s.shtylyov@omp.ru>
 MIME-Version: 1.0
+In-Reply-To: <20220212201631.12648-2-s.shtylyov@omp.ru>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220213_180634_512957_18603552 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220213_231513_704528_DD03EC56 
+X-CRM114-Status: GOOD (  21.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,46 +110,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8753383933375400576=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: "Minghao Chi (CGEL ZTE)" <chi.minghao@zte.com.cn>
 
-Use of_device_get_match_data() instead of open-coding it.
+--===============8753383933375400576==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="r3c6abkz2rpak4yl"
+Content-Disposition: inline
 
-Reported-by: Zeal Robot <zealci@zte.com.cn>
-Signed-off-by: Minghao Chi (CGEL ZTE) <chi.minghao@zte.com.cn>
----
- drivers/phy/cadence/phy-cadence-salvo.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
 
-diff --git a/drivers/phy/cadence/phy-cadence-salvo.c b/drivers/phy/cadence/phy-cadence-salvo.c
-index 51c0b98f5fd7..e569f5f67578 100644
---- a/drivers/phy/cadence/phy-cadence-salvo.c
-+++ b/drivers/phy/cadence/phy-cadence-salvo.c
-@@ -263,14 +263,9 @@ static int cdns_salvo_phy_probe(struct platform_device *pdev)
- 	struct phy_provider *phy_provider;
- 	struct device *dev = &pdev->dev;
- 	struct cdns_salvo_phy *salvo_phy;
--	const struct of_device_id *match;
- 	struct cdns_salvo_data *data;
- 
--	match = of_match_device(cdns_salvo_phy_of_match, dev);
--	if (!match)
--		return -EINVAL;
--
--	data = (struct cdns_salvo_data *)match->data;
-+	data = (struct cdns_salvo_data *)of_device_get_match_data(dev);
- 	salvo_phy = devm_kzalloc(dev, sizeof(*salvo_phy), GFP_KERNEL);
- 	if (!salvo_phy)
- 		return -ENOMEM;
--- 
-2.25.1
+--r3c6abkz2rpak4yl
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Sat, Feb 12, 2022 at 11:16:30PM +0300, Sergey Shtylyov wrote:
+> This patch is based on the former Andy Shevchenko's patch:
+>=20
+> https://lore.kernel.org/lkml/20210331144526.19439-1-andriy.shevchenko@lin=
+ux.intel.com/
+>=20
+> Currently platform_get_irq_optional() returns an error code even if IRQ
+> resource simply has not been found.  It prevents the callers from being
+> error code agnostic in their error handling:
+>=20
+> 	ret =3D platform_get_irq_optional(...);
+> 	if (ret < 0 && ret !=3D -ENXIO)
+> 		return ret; // respect deferred probe
+> 	if (ret > 0)
+> 		...we get an IRQ...
+>=20
+> All other *_optional() APIs seem to return 0 or NULL in case an optional
+> resource is not available.  Let's follow this good example, so that the
+> callers would look like:
+>=20
+> 	ret =3D platform_get_irq_optional(...);
+> 	if (ret < 0)
+> 		return ret;
+> 	if (ret > 0)
+> 		...we get an IRQ...
+>=20
+> Reported-by: Matthias Schiffer <matthias.schiffer@ew.tq-group.com>
+> Signed-off-by: Sergey Shtylyov <s.shtylyov@omp.ru>
+
+While this patch is better than v1, I still don't like it for the
+reasons discussed for v1. (i.e. 0 isn't usable as a dummy value which I
+consider the real advantage for the other _get_optional() functions.)
+
+Apart from that, I think the subject is badly chosen. With "Make
+somefunc() optional" I would expect that you introduce a Kconfig symbol
+that results in the function not being available when disabled.
+
+Best regards
+Uwe
+
+--=20
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+
+--r3c6abkz2rpak4yl
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmIKASwACgkQwfwUeK3K
+7Ak1DAf/fgLBIz9p8Vx2hzG+I8aYoNMAmPLmUfMeIR1DWaBc26HTbyTBn6pFRiPZ
+rztM2uc+royoY44/mp4H89WkPzZ0/v3AlRkdqI8UBny0ZKRbNtMfzL6f7wyVik5C
+rxqc7EgXLRk2/0IxTohA6bwj7Vczei9NwYndm+QrxDHjmY5Dq95rdvxv9+8iaa9y
+gLQ2x91x4bybaKnKVe36f5JfLeMhS9kLuCx82Wi1yqPK4UQQ6R/+QEE0zGS8QNHP
+vMasmLHge9XqVx/c0SuPcLVZ/uRatkzzuqf1rY75peyQp4YpDDdkhkTws4kcVC22
+lVFz9FjvbtVS4nxvPxNwZAnvq9sPaQ==
+=UfDO
+-----END PGP SIGNATURE-----
+
+--r3c6abkz2rpak4yl--
+
+
+--===============8753383933375400576==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8753383933375400576==--
+
