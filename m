@@ -4,69 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21068C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 16:29:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62668C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 16:31:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=U1f+IL8BhTX6F3haPPoutu0xt0c8w2UxEc8+6uVbsq8=; b=tNvvqSrCbd69ClFVOWJXQQxjNw
-	efKZ59cNRg4bdR05EW//0rObvcOGrfkwuQMhG85CTLwAyFbV2PwhZTGWeWtFwEMfoyYjCsxlxkl99
-	Eco3BnM6vQ6DRDfExINPWXulK6OQygIvn2sKzL9AOiw3dtCQjGpXk3cB3GAOz2LKT5ruejUuG72gd
-	GqLfOO+IO8UUrNSIeiMYDxwIFF489Q8b4VB1XT38+0ISJEOe2tcQNDLHOJT3R9enT2LjlLZnlKzim
-	sycch2VSg+RZMsONUpCYcQlV8iYPE9O6hjEU4W89pv+hdIkRwy7EItdjQvlA0/sTpm5XegEMTM7Pa
-	gM5Mgzyw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IjfCXoHiKPhqcLWQbNjNpGdY0j/0399rjaiZioctH6E=; b=uDmvfiTCyJ42o1
+	wQpRkCZruRNz9q4zYXL+J2TtPkKHU7KVPh8L+OLSPJMrL3XFkldTeQk/ZPAxEcp8FIqKZRcdqJtag
+	FhRXgX8OBZse6xTRghI7aTevT04e7HIUvMOJ4Pvl5GeTO4UPG9ZBUUh/d691zgeAaA7FNxDmqfK21
+	otJp6Zxn+ioxXrh5vgUZv+PdlLU+6KJibxEg8Tmm6hHyeFMjq8ZtvyinJfFpWvj6+5WNOlZg81Sba
+	Ot7mNdFD4h/lgU2uE9xMEBhH+ywMuDbm/rB1iKt3qijU/9CiLH5QLOz3H8HMqcImGedjlTkPk58UC
+	1nNrsyUYb4CjBin4IggQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nJeDz-00G0id-IK; Mon, 14 Feb 2022 16:29:15 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1nJeGM-00G1Uj-Ps; Mon, 14 Feb 2022 16:31:42 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nJeDe-00G0cP-UZ; Mon, 14 Feb 2022 16:29:01 +0000
-Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 533571BF20A;
- Mon, 14 Feb 2022 16:28:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1644856132;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=5duxPRqWDu+1JL3oVHLVTFQSMMgYnhs6Kqh7x0Swsnk=;
- b=X6pwmukcd11Mw7rgTo4OKu1ESaDmEN4fj2oNd+qz1feH91E4jnTQThvEWarS0aIXZMPeU9
- B8h/kZlDoJCIF0L8SQfDVo+xwYIjNME3aCAk9cupji/XDzP1v2sbT0J7CCDs8MnMxUrzbW
- TW3U5YQ/CVYu7bOGu9ljX4/4ZLxe657soWOXimNA5YbYUNc5pqIArVn4hYeadDhkWxNsZw
- KiCfZHdZTjAYQSHtD810UfmclTdztaMEGGbUbNQB0YNNXpF6Y9RiYRYJdW8DDRf+Mnda+Q
- kX2bqtcKOnclqVKjQlfBa1Vgq2LONfL5khac3De3DmV53nd/cLvINt5oSJgicw==
-Date: Mon, 14 Feb 2022 17:28:50 +0100
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Rob Herring <robh@kernel.org>, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-staging@lists.linux.dev, Yong Deng <yong.deng@magewell.com>,
+ id 1nJeG7-00G1QQ-2C; Mon, 14 Feb 2022 16:31:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+ t=1644856287; x=1676392287;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=/rNAITY1+98uvbGAZzlsiQlo0IS/4Nq0dkDRoszUuaY=;
+ b=W6axuujmjvAjLQRpiOzAYHdbcoJ0q49qHSCw6jS7giXebA8QU8QkVmus
+ uE9HAcyJknh0CVYP/ubtofGGmvzXdWr86mxGWmwQnSis1B8QTpDEv7GbK
+ tbnFLjBW/CMtP4OwDqF3tsnGMo2VTor8gYr7lIQyeee3ycTSJCGizZfPL
+ qLFRRbZGDghR4YTbJOe0LI8Y54gybULmfw0QSbPmcnfkN10HK1R3Qrufo
+ 0b1fcnsdgODmq+Qya6/uHM71lbP1QR6mD64Y90spjtpoNOeBEvI0DOWUG
+ WpynS71okhl29crK1M1Qx7NjpbvVtoAcgrvZDZ0WTKWVoA+tRBltkN51+ Q==;
+X-IronPort-AV: E=McAfee;i="6200,9189,10258"; a="274696744"
+X-IronPort-AV: E=Sophos;i="5.88,368,1635231600"; d="scan'208";a="274696744"
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 14 Feb 2022 08:31:08 -0800
+X-IronPort-AV: E=Sophos;i="5.88,368,1635231600"; d="scan'208";a="603341808"
+Received: from punajuuri.fi.intel.com (HELO paasikivi.fi.intel.com)
+ ([10.237.72.43])
+ by fmsmga004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 14 Feb 2022 08:31:04 -0800
+Received: from paasikivi.fi.intel.com (localhost [127.0.0.1])
+ by paasikivi.fi.intel.com (Postfix) with SMTP id C7AE6201DB;
+ Mon, 14 Feb 2022 18:31:01 +0200 (EET)
+Date: Mon, 14 Feb 2022 18:31:01 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
+ Yong Deng <yong.deng@magewell.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 61/66] dt-bindings: media: Add Allwinner A31 ISP
- bindings documentation
-Message-ID: <YgqDQs/GJVxZMB+C@aptenodytes>
+Subject: Re: [PATCH v2 21/66] media: sun6i-csi: Always set exclusive module
+ clock rate
+Message-ID: <YgqDxWwUeVQu+05O@paasikivi.fi.intel.com>
 References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-62-paul.kocialkowski@bootlin.com>
- <YgE/+UmP4nJVxtRT@pendragon.ideasonboard.com>
- <YgZ9GjgasiPljg9X@robh.at.kernel.org>
- <YgbMmLht/AXb5R1y@pendragon.ideasonboard.com>
+ <20220205185429.2278860-22-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <YgbMmLht/AXb5R1y@pendragon.ideasonboard.com>
+Content-Disposition: inline
+In-Reply-To: <20220205185429.2278860-22-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220214_082855_308254_2A9FB7E2 
-X-CRM114-Status: GOOD (  31.51  )
+X-CRM114-CacheID: sfid-20220214_083127_166716_741B6330 
+X-CRM114-Status: GOOD (  21.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,198 +87,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3922540370020900856=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Paul,
 
---===============3922540370020900856==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yzLvnjd3wstFCaVx"
-Content-Disposition: inline
+Thanks for the patchbomb.
 
+On Sat, Feb 05, 2022 at 07:53:44PM +0100, Paul Kocialkowski wrote:
+> In some situations the default rate of the module clock is not the
+> required one for operation (for example when reconfiguring the clock
+> tree to use a different parent). As a result, always set the correct
+> rate for the clock (and take care of cleanup).
+> 
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> ---
+>  .../platform/sunxi/sun6i-csi/sun6i_csi.c      | 54 ++++++++++++++-----
+>  1 file changed, 41 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+> index 8155e9560164..2355088fdc37 100644
+> --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+> +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+> @@ -856,28 +849,53 @@ static int sun6i_csi_resources_setup(struct sun6i_csi_device *csi_dev,
+>  		return PTR_ERR(csi_dev->clk_ram);
+>  	}
+>  
+> +	if (of_device_is_compatible(dev->of_node, "allwinner,sun50i-a64-csi"))
+> +		clk_mod_rate = 300000000;
+> +	else
+> +		clk_mod_rate = 297000000;
 
---yzLvnjd3wstFCaVx
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+This would be nice to put in OF match data.
 
-Hi,
+Of course the driver did this already before the patch. The approach still
+scales badly.
 
-On Fri 11 Feb 22, 22:52, Laurent Pinchart wrote:
-> Hi Rob,
->=20
-> On Fri, Feb 11, 2022 at 09:13:30AM -0600, Rob Herring wrote:
-> > On Mon, Feb 07, 2022 at 05:51:21PM +0200, Laurent Pinchart wrote:
-> > > On Sat, Feb 05, 2022 at 07:54:24PM +0100, Paul Kocialkowski wrote:
-> > > > This introduces YAML bindings documentation for the Allwinner A31 I=
-mage
-> > > > Signal Processor (ISP).
-> > > >=20
-> > > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > ---
-> > > >  .../media/allwinner,sun6i-a31-isp.yaml        | 117 ++++++++++++++=
-++++
-> > > >  1 file changed, 117 insertions(+)
-> > > >  create mode 100644 Documentation/devicetree/bindings/media/allwinn=
-er,sun6i-a31-isp.yaml
-> > > >=20
-> > > > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6=
-i-a31-isp.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a3=
-1-isp.yaml
-> > > > new file mode 100644
-> > > > index 000000000000..2d87022c43ce
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-i=
-sp.yaml
-> > > > @@ -0,0 +1,117 @@
-> > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-isp.y=
-aml#
-> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > +
-> > > > +title: Allwinner A31 Image Signal Processor Driver (ISP) Device Tr=
-ee Bindings
-> > > > +
-> > > > +maintainers:
-> > > > +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    enum:
-> > > > +      - allwinner,sun6i-a31-isp
-> > > > +      - allwinner,sun8i-v3s-isp
-> > > > +
-> > > > +  reg:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  interrupts:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  clocks:
-> > > > +    items:
-> > > > +      - description: Bus Clock
-> > > > +      - description: Module Clock
-> > > > +      - description: DRAM Clock
-> > >=20
-> > > That's interesting, does the ISP have a dedicated DRAM ?
-> > >=20
-> > > > +
-> > > > +  clock-names:
-> > > > +    items:
-> > > > +      - const: bus
-> > > > +      - const: mod
-> > > > +      - const: ram
-> > > > +
-> > > > +  resets:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  ports:
-> > > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > > +
-> > > > +    properties:
-> > > > +      port@0:
-> > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > +        description: CSI0 input port
-> > > > +
-> > > > +        properties:
-> > > > +          reg:
-> > > > +            const: 0
-> > > > +
-> > > > +          endpoint:
-> > > > +            $ref: video-interfaces.yaml#
-> > > > +            unevaluatedProperties: false
-> > >=20
-> > > If no other property than remote-endpoint are allowed, I'd write
-> > >=20
-> > >           endpoint:
-> > >             $ref: video-interfaces.yaml#
-> > > 	    remote-endpoint: true
-> >=20
-> > You just mixed a node and a property...
->=20
-> Yes, I meant
->=20
->            endpoint:
->              $ref: video-interfaces.yaml#
->              properties:
->                remote-endpoint: true
->=20
-> and actually add
->=20
->              additionalProperties: false
->=20
-> > 'remote-endpoint' is always allowed, so need to put it here and every=
-=20
-> > other user. So 'unevaluatedProperties' is correct. But it would be good=
-=20
-> > to define what properties from video-interfaces.yaml are used here.
->=20
-> I've been looking at this recently. The usual pattern is to write
->=20
->     endpoint:
->       $ref: video-interfaces.yaml#
->       unevaluatedProperties: false
->       properties:
->         hsync-polarity: true
->         vsync-polarity: true
->=20
-> to express that the hsync-polarity and vsync-polarity properties are
-> used. However, this will still validate fine if, for instance,
-> data-lanes was specified in the device tree. Shouldn't we use
-> additionalProperties instead of unevaluatedProperties here ? If so,
-> specifying remote-endpoint: true seems needed.
+-- 
+Regards,
 
-My understanding is that unevaluatedProperties well allow all properties
-defined in the included video-interfaces.yaml ref but reject others
-while additionalProperties will reject any unspecified local property,
-even if it is declared in the ref.
-
-In any case with the ISP maybe we don't even want to take the ref from
-video-interfaces.yaml since we are dealing with an internal fifo between
-two devices. Maybe it would be more appropriate to ref
-/schemas/graph.yaml#/$defs/endpoint-base, which already defines
-remote-endpoint too.
-
-What do you think?
-
-Paul
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---yzLvnjd3wstFCaVx
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmIKg0EACgkQ3cLmz3+f
-v9Fg/ggAoquw4gO5eekW7dxNLQONv8zyL3sxR/AwEuZlLOhjPUHeJzQwg5NupSx8
-AqsMfFQA68MxH3nsQNRZkCFLXTIzmrK/xZRRX7OFD8cLQjKjMJmbz6gpm32UHBJr
-un2rlNt0N8+iY9xKne3vQFPscOhnVFk/i5bdYj65jCfOiZF+jvnUwYtFcgoeQrv7
-r4Hu6A2hlK9O8t+kG9oJ0MSU9ZdYTeXuLTg9W1QtSkt2bSxVauV0JxRKO7Wo67D6
-LqwIEBtpEikyWIMARqoR3BcroJvCPNK96AmyZ9eKkTmpC+NI8pOLJyxwdRhqPN1o
-njaQSFJo2B9w/O690dh0GMhf5B2I3Q==
-=B7GD
------END PGP SIGNATURE-----
-
---yzLvnjd3wstFCaVx--
-
-
---===============3922540370020900856==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Sakari Ailus
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3922540370020900856==--
-
