@@ -4,101 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B14BC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 14:01:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06EF5C43219
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Feb 2022 16:10:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KEIw5UU+x6cz32jyCz4H49BfOuRIlFGKXTLDWGxGrOk=; b=FYXVjUpyvXq3XHmoqL7NTNN+S2
-	ULsa8aNR6ORxq9obrIYo36Gr22AyQwK3DnKT1sJ3Hujwpph0pQ2dqIdxkEeo4LBR3Sgotenb3hNvb
-	Z1dnPrj29687rqeSvNDCN1CixKLoM0pLFNrNDm1jwrDkQFVcJTfHhCvtHeVVPgyIu74N+Iao4+gD9
-	2SicCDrJb5pbwV4qo8eYHena8GbO/eu+raCiDgtDt4u3wMlEiq32CCqz2y7Rk6XbITR0hU0lQcgGC
-	VkMNF9dyqdWc+CkQKLRRrZ1Ydo89OIcd8ITsQpwkwEn2F54lAQaTAT0C1wQJT058Cm+CRg5lFnpry
-	XsZsbpNw==;
+	bh=JTs0HVwPGcUA77+Tb0C4unNiACOGR/BYPUMSz0XRCpk=; b=Fwg/gRhNDXy8TILe0Ymji4+EGj
+	V4H24eJvmFRkDQP7gipNVrcJ4rYQljomm7ubYsX5V3+WkBb3G0bQ0VDZnWj+LMS9RTJYDOVhrs1E4
+	/+ciNerFKoFHTt6fhNeDPlgt7bwoi8hWCZ76W9CzBBJYK63w/NCBXjURxqg1zoVtsjIWLg/bQAkAF
+	a14JdolJb4REi8/GLF0/TfBlGWv2ebchloaHJYYJq2CP9oq6ERGUOYvyjk6D3S6qybzLlCIrrvikl
+	H/f3wHsB8mJ9dRcMNrUi+w+QHSTV2+OsAOoWB8nfqBfUgzI7FfOWUfDLqua6jBz5Skp1WrkyG16J8
+	YreDpRlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nJbun-00FXyh-0b; Mon, 14 Feb 2022 14:01:17 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1nJdvn-00FwfB-BA; Mon, 14 Feb 2022 16:10:27 +0000
+Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nJbub-00FXwG-TM
- for linux-phy@lists.infradead.org; Mon, 14 Feb 2022 14:01:08 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1nJbu2-0007Aw-Jd; Mon, 14 Feb 2022 15:00:30 +0100
-Received: from [2a0a:edc0:0:900:1d::77] (helo=ptz.office.stw.pengutronix.de)
- by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
- (envelope-from <ukl@pengutronix.de>)
- id 1nJbu1-00GYgZ-R1; Mon, 14 Feb 2022 15:00:29 +0100
-Received: from ukl by ptz.office.stw.pengutronix.de with local (Exim 4.94.2)
- (envelope-from <ukl@pengutronix.de>)
- id 1nJbu0-0038OM-4h; Mon, 14 Feb 2022 15:00:28 +0100
-Date: Mon, 14 Feb 2022 15:00:27 +0100
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Andrew Lunn <andrew@lunn.ch>, Ulf Hansson <ulf.hansson@linaro.org>,
- Vignesh Raghavendra <vigneshr@ti.com>, kvm@vger.kernel.org,
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-iio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Amit Kucheria <amitk@kernel.org>, alsa-devel@alsa-project.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Guenter Roeck <groeck@chromium.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- linux-mtd@lists.infradead.org, linux-i2c@vger.kernel.org,
- Miquel Raynal <miquel.raynal@bootlin.com>, linux-phy@lists.infradead.org,
- Oleksij Rempel <linux@rempel-privat.de>, Lee Jones <lee.jones@linaro.org>,
- "David S. Miller" <davem@davemloft.net>,
- Peter Korsgaard <peter@korsgaard.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
- Joakim Zhang <qiangqing.zhang@nxp.com>, Kamal Dasu <kdasu.kdev@gmail.com>,
- Jiri Slaby <jirislaby@kernel.org>, Bartosz Golaszewski <brgl@bgdev.pl>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-serial@vger.kernel.org,
- Jakub Kicinski <kuba@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- platform-driver-x86@vger.kernel.org, linux-pwm@vger.kernel.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Corey Minyard <minyard@acm.org>, linux-pm@vger.kernel.org,
- John Garry <john.garry@huawei.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- Mark Gross <markgross@kernel.org>, linux-gpio@vger.kernel.org,
- Alex Williamson <alex.williamson@redhat.com>,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Eric Auger <eric.auger@redhat.com>, Takashi Iwai <tiwai@suse.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- openipmi-developer@lists.sourceforge.net, Jaroslav Kysela <perex@perex.cz>,
- Benson Leung <bleung@chromium.org>, linux-arm-kernel@lists.infradead.org,
- Sergey Shtylyov <s.shtylyov@omp.ru>, Mun Yew Tham <mun.yew.tham@intel.com>,
- Hans de Goede <hdegoede@redhat.com>,
+ id 1nJdva-00Fwar-Vh; Mon, 14 Feb 2022 16:10:17 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by mail.gandi.net (Postfix) with ESMTPSA id F24851BF215;
+ Mon, 14 Feb 2022 16:10:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+ t=1644855010;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=b5eS9fguaP+pvzR5A1Vwu+pYHyCDBG8CctR4OI6MdrE=;
+ b=UCj7f71PmwliZ1ok8P9m8PXiwkU1fLCOpZZ3sk70BvhQuGXFhuBmONFAMuSbUi1XZZ5v6I
+ QVpMk7mSQJwKucLTkeer6lOa1TmqXGX7Fc8xvI5zZRCKgrfQO1bJTpwqiOEHuUOkA+FQtG
+ B77Afoe4dPbz7hemN4PheVD6azW/7wzrlBdV81+M+Au1E4SdQDIlUw2JI8q945X4WT3Uex
+ EzjsmO0+Gws4avZNcm5iT+YhbZCMG1BSYxeAztO1GF0BPVNy4DKCsKgUWKI9yKxNPYZJQW
+ 4Ipo7H5vQB+UwL/Hry4QvOcnMj2k+7AbuSoEE7ZDWIIHjJL8YVdPDn8JYhE5cA==
+Date: Mon, 14 Feb 2022 17:10:05 +0100
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Cornelia Huck <cohuck@redhat.com>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
- Zha Qipeng <qipeng.zha@intel.com>, Richard Weinberger <richard@nod.at>,
- Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- Brian Norris <computersforpeace@gmail.com>, netdev@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] platform: make platform_get_irq_optional() optional
-Message-ID: <20220214140027.npw6ddrxklarb6wp@pengutronix.de>
-References: <20220212201631.12648-1-s.shtylyov@omp.ru>
- <20220212201631.12648-2-s.shtylyov@omp.ru>
- <20220214071351.pcvstrzkwqyrg536@pengutronix.de>
- <CAMuHMdWi8gno_FBbc=AwsdRtDJik8_bANjQrrRtUOOBRjFN=KA@mail.gmail.com>
+ Helen Koike <helen.koike@collabora.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 07/66] dt-bindings: media: sun6i-a31-csi: Add MIPI
+ CSI-2 input port
+Message-ID: <Ygp+3URjxyvRBn/5@aptenodytes>
+References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-8-paul.kocialkowski@bootlin.com>
+ <YgFCuaf007wd8sJy@pendragon.ideasonboard.com>
+ <YgaKXvP3rLOLR9VR@aptenodytes>
+ <YgbNfKiNkPmvaT1k@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdWi8gno_FBbc=AwsdRtDJik8_bANjQrrRtUOOBRjFN=KA@mail.gmail.com>
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+In-Reply-To: <YgbNfKiNkPmvaT1k@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220214_060105_970993_3A55F429 
-X-CRM114-Status: GOOD (  18.73  )
+X-CRM114-CacheID: sfid-20220214_081015_442521_1FCE6A78 
+X-CRM114-Status: GOOD (  47.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,67 +79,226 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2254406697056196399=="
+Content-Type: multipart/mixed; boundary="===============1713235362888790364=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2254406697056196399==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="mxy3a336cmbyaspi"
+--===============1713235362888790364==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="1K2ddbKyLBZHtd45"
 Content-Disposition: inline
 
 
---mxy3a336cmbyaspi
-Content-Type: text/plain; charset=iso-8859-1
+--1K2ddbKyLBZHtd45
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Hello Geert,
+Hi,
 
-On Mon, Feb 14, 2022 at 10:01:14AM +0100, Geert Uytterhoeven wrote:
-> Also IMHO, the dummy value handling is a red herring.  Contrary to
-> optional clocks and resets, a missing optional interrupt does not
-> always mean there is nothing to do: in case of polling, something
-> else must definitely be done.=20
+On Fri 11 Feb 22, 22:56, Laurent Pinchart wrote:
+> On Fri, Feb 11, 2022 at 05:10:06PM +0100, Paul Kocialkowski wrote:
+> > Hi Laurent,
+> >=20
+> > Thanks for the review!
+> >=20
+> > On Mon 07 Feb 22, 18:03, Laurent Pinchart wrote:
+> > > Hi Paul,
+> > >=20
+> > > Thank you for the patch.
+> > >=20
+> > > On Sat, Feb 05, 2022 at 07:53:30PM +0100, Paul Kocialkowski wrote:
+> > > > The A31 CSI controller supports two distinct input interfaces:
+> > > > parallel and an external MIPI CSI-2 bridge. The parallel interface
+> > > > is often connected to a set of hardware pins while the MIPI CSI-2
+> > > > bridge is an internal FIFO-ish link. As a result, these two inputs
+> > > > are distinguished as two different ports.
+> > > >=20
+> > > > Note that only one of the two may be present on a controller instan=
+ce.
+> > > > For example, the V3s has one controller dedicated to MIPI-CSI2 and =
+one
+> > > > dedicated to parallel.
+> > >=20
+> > > Is it that only one of the two is present, or only one of the two is
+> > > connected ? In the latter case I'd make both ports required, but with
+> > > only one of them connected.
+> >=20
+> > There are situations where the actual pins for parallel (port@0) are mi=
+ssing
+> > and the controller is dedicated to its mipi csi-2 bridge (port@1), case=
+s where
+> > the two are present and cases where the mipi csi-2 bridge doesn't exist.
+> > So all in all it's really legit that only one port may be defined.
+>=20
+> The port could still exist internally in the IP core though. Of course
+> that's hard to tell.
 
-Note this is exactly why I don't like this change. I'd even go so far
-and claim that "a missing optional interrupt hardly ever means there is
-nothing to do".
+Yes that's true, the bit to switch input to mipi csi-2 is there in all cases
+but I don't think it makes sense to expose the port in situations where
+no controller is attached.
 
-> So even if request_irq() would accept a dummy interrupt zero and just
-> do nothing, it would give the false impression that that is all there
-> is to do, while an actual check for zero with polling code handling
-> may still need to be present, thus leading to more not less bugs.
+> > > > Update the binding with an explicit ports node that holds two disti=
+nct
+> > > > port nodes: one for parallel input and one for MIPI CSI-2.
+> > > >=20
+> > > > This is backward-compatible with the single-port approach that was
+> > > > previously taken for representing the parallel interface port, which
+> > > > stays enumerated as fwnode port 0.
+> > > >=20
+> > > > Note that additional ports may be added in the future, especially to
+> > > > support feeding the CSI controller's output to the ISP.
+> > > >=20
+> > > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > > Acked-by: Maxime Ripard <mripard@kernel.org>
+> > > > ---
+> > > >  .../media/allwinner,sun6i-a31-csi.yaml        | 60 +++++++++++++++=
+----
+> > > >  1 file changed, 47 insertions(+), 13 deletions(-)
+> > > >=20
+> > > > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6=
+i-a31-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a3=
+1-csi.yaml
+> > > > index 8b568072a069..3cc61866ea89 100644
+> > > > --- a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-c=
+si.yaml
+> > > > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-c=
+si.yaml
+> > > > @@ -61,6 +61,34 @@ properties:
+> > > > =20
+> > > >      additionalProperties: false
+> > > > =20
+> > > > +  ports:
+> > > > +    $ref: /schemas/graph.yaml#/properties/ports
+> > > > +
+> > > > +    properties:
+> > > > +      port@0:
+> > > > +        $ref: "#/properties/port"
+> > > > +        unevaluatedProperties: false
+> > > > +
+> > > > +      port@1:
+> > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
+> > > > +        description: MIPI CSI-2 bridge input port
+> > > > +
+> > > > +        properties:
+> > > > +          reg:
+> > > > +            const: 1
+> > > > +
+> > > > +          endpoint:
+> > > > +            $ref: video-interfaces.yaml#
+> > > > +            unevaluatedProperties: false
+> > > > +
+> > > > +        additionalProperties: false
+> > > > +
+> > > > +    anyOf:
+> > > > +      - required:
+> > > > +        - port@0
+> > > > +      - required:
+> > > > +        - port@1
+> > > > +
+> > > >  required:
+> > > >    - compatible
+> > > >    - reg
+> > >=20
+> > > Shouldn't you specify that either port or ports is required, but not
+> > > both ? I'd also add a comment in the port node to tell it's deprecate=
+d,
+> > > and that ports should be used instead.
+> >=20
+> > Yes I agree on both points. I guess that should be a:
+> >=20
+> > oneOf:
+> >   - required:
+> >     - ports
+> >   - required:
+> >     - port
+> >=20
+> > (but feel free to correct me).
+> >=20
+> > > > @@ -89,19 +117,25 @@ examples:
+> > > >                        "ram";
+> > > >          resets =3D <&ccu RST_BUS_CSI>;
+> > > > =20
+> > > > -        port {
+> > > > -            /* Parallel bus endpoint */
+> > > > -            csi1_ep: endpoint {
+> > > > -                remote-endpoint =3D <&adv7611_ep>;
+> > > > -                bus-width =3D <16>;
+> > > > -
+> > > > -                /*
+> > > > -                 * If hsync-active/vsync-active are missing,
+> > > > -                 * embedded BT.656 sync is used.
+> > > > -                 */
+> > > > -                 hsync-active =3D <0>; /* Active low */
+> > > > -                 vsync-active =3D <0>; /* Active low */
+> > > > -                 pclk-sample =3D <1>;  /* Rising */
+> > > > +        ports {
+> > > > +            #address-cells =3D <1>;
+> > > > +            #size-cells =3D <0>;
+> > > > +
+> > > > +            port@0 {
+> > > > +                reg =3D <0>;
+> > > > +                /* Parallel bus endpoint */
+> > > > +                csi1_ep: endpoint {
+> > > > +                    remote-endpoint =3D <&adv7611_ep>;
+> > > > +                    bus-width =3D <16>;
+> > > > +
+> > > > +                    /*
+> > > > +                     * If hsync-active/vsync-active are missing,
+> > > > +                     * embedded BT.656 sync is used.
+> > > > +                     */
+> > > > +                     hsync-active =3D <0>; /* Active low */
+> > > > +                     vsync-active =3D <0>; /* Active low */
+> > > > +                     pclk-sample =3D <1>;  /* Rising */
+> > >=20
+> > > Wrong indentation.
+> >=20
+> > The double-space before /* Rising */ or something with the heading inde=
+nt?
+>=20
+> The heading has one extra space for all three lines, they should be
+> aligned to the / of /*, not to the *.
 
-Yes, a dummy irq value will just not be possible.
+Oh that's true, good catch thanks!
 
-Best regards
-Uwe
+Paul
+
+> > > > +                };
+> > > >              };
+> > > >          };
+> > > >      };
+>=20
+> --=20
+> Regards,
+>=20
+> Laurent Pinchart
 
 --=20
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
 
---mxy3a336cmbyaspi
+--1K2ddbKyLBZHtd45
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAmIKYHgACgkQwfwUeK3K
-7AkfUwf+PjHT71nPQKjE5hOrUJs08gV3dPyFE+Lky6h3jHjtzp+VwX3waHB3n4Iy
-r1fdR+06wiK9BWaTD2PdT8FdEYo9n0yQlTx+03PQXtLFnutK7QSb0fBMQs7sVAfa
-nxp4CK8a1wlf0mzj1zSaeiGm6BYTsoJxoblrZ8hWbpbiVfhF6Eo5zXr0toHMI0WF
-QOhqgWNpQjHlpU+2paIvbOnBpNxJaXj3cycd6036NHAFQvZN5xrDdqHa+By0jeU0
-bm8NmjRjwHCqvhBpRYUglt+KhyRYWWTC/83WFKviLwnPV7tnkh5ZhJE50aUUp1Lr
-hyNbZjQKG8NIOTLNKMgY4nM0uni8jg==
-=vr2/
+iQEyBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmIKft0ACgkQ3cLmz3+f
+v9GBzQf4ykgosl0x6xfMvLDDLl0cFnB2eK0Bdp9ZhcxVv+4V0W9kcIZ/NnN4FJ+5
+2NODVUSkvCLd8E5R/z8MT4ngVlKnvd26GV3Uiog3yhoQ1SpjkTQT2dZMXOMhPARi
+mzNpeUfkBY76pRMdDQzmOnwAAj4Iqlizkar0a3su1o/zKAwYJ1k//32QHc5RVF9X
+i9kE1FldlInxg0HNAuE0SOU0k0DYSbHI0xNugH8Wf5DszFeWTFdMUseOdB3iNaT3
+eQRBKtfrzjIrYFSE4LLZTtydLTDyxh1N4udg/t0DMQpjF5vFZWW/Im4iMXwD0IAI
+WbWJgCPQNoul4HI9EK2vEWjUyDsh
+=ShHP
 -----END PGP SIGNATURE-----
 
---mxy3a336cmbyaspi--
+--1K2ddbKyLBZHtd45--
 
 
---===============2254406697056196399==
+--===============1713235362888790364==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -181,5 +309,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============2254406697056196399==--
+--===============1713235362888790364==--
 
