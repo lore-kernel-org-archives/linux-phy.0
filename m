@@ -4,89 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02CD9C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Feb 2022 19:55:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 735CEC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Feb 2022 21:21:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cNGyVGR9Sb+baAdMzARM4gO8PXlB2elRqJpcVm+Ol5k=; b=TvxcY9rYTqGvNn
-	qKtUYpBqQCQwqsjSokw7mjxOQCALcPOz2FkcrN9WP76xh5h/M+dAcWnefg0U1jxE+4Rt07qf82jEK
-	VHWNDE5bfwCTOlrCos/Ou0UDHVVQ6bm1RvCsymXcW+ChkWNn/bKbmCijiNRoyEKbhSvxA5Wa1fIfk
-	emXTlEut3rv1N99t37AL6OXrrZJEf5jz1HEaszC+4eL30sCHWKkLMnXxFQEKBbNaFlueoulhHvhW2
-	nYFpOQ2RLEjlIJt5r5mieHK409hcbAhbH9fLqvG1P6VVmcp/cIt2MnzVsERM0UCANb/Qy472czKc4
-	Hw0N9LNfXIBLdMxuTIzg==;
+	List-Owner; bh=T+YmA2v+vlU8XdaC7tAe5Xa6YBo5U/dSDvRKo58DyME=; b=nW8RKyzH5Y34OA
+	kygs8k105JGo73uYl/y5fw4puQe8GzGHIkJyNCZh90chnaFFhcfjg9LgG5ZXeOZu9dwvVZF8BRzBo
+	MzholxN5AZvs67HgIzLw/Phdd+dtexr7lwqyFxRgW7Hq+HKiOVs7iyZixm7YXinPmQViY38fDWshD
+	SHosFzV632xLr9Y0AM8NGuorG3q8Fhe5w27EoXj3qmP2eJpPC0Cp4KxpDDvt2wOFXiGXSp6TGzhU7
+	6dYF1phZSg+kwS72g/MVnLewss04TZvhXSnTePSLLpS/UgrCDpHGY9P7h58WPDo4rNL6a/4Hu01wd
+	uDRj0tNQW0P3lPyD6sBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nK3v4-004Rcq-FU; Tue, 15 Feb 2022 19:55:26 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1nK5GQ-004h0r-Uy; Tue, 15 Feb 2022 21:21:34 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nK3v1-004RQa-Vn
- for linux-phy@lists.infradead.org; Tue, 15 Feb 2022 19:55:25 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id e5so9200173lfr.9
- for <linux-phy@lists.infradead.org>; Tue, 15 Feb 2022 11:55:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=od9Fv9jtSpr7wJ186PxRq7ulSmKEgnYjdZXcjAfazIo=;
- b=PH2AVilT2kpsLFO1HEukZSVhRun9ilfkrnq6W59AVR3hwgb1gm7pTqe1KNp033S5Km
- Y3V+U0IWpcw7iA0RxRPVr86sUFYAz/4PUgCe4eriG6I45tOuwDzdT+cuHXhkkjtkHkq/
- naCB45uKFm8OTA6iET/Jz8tKqsIZZmlMw0IJwtsU2HKpnAuv/++IXmP/A+UCA3Oucb80
- 9HLzHxlNkyOrQzwYASpnNEqEXBYkIBYvhA2pLtQ3Iur4LdQ6JhHiP6RaCGq5nNi5cC2J
- 7sIXklkRJZIHRJ5NGBtkAcotBL/f8HRjaKpoB9swrc469lUL+5Rjsu3KZ9R4tWaBybET
- L7OA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=od9Fv9jtSpr7wJ186PxRq7ulSmKEgnYjdZXcjAfazIo=;
- b=i6eFDBZw27RnNI/zq6YIM6wmI0RH1iC6ZtoKAiCZ8fcTeOBIlwCdwe2Ki8UNFLEcbT
- 7DicLbGUODrju8EU48jMfKAOK0EUR7GkCLc71JJR5rA1qKaaIgtyP7VfCpukmjHc9gIr
- z/cDs+ckvVHPiRQ/8yjFLalCTUy0TtsnglO6bLQ7+D6jZbsLVW4nI0ODlFagVrxqR8Sp
- I7jKArKnpsCBCRQ7JgkI8D5Dn+nOsYV+a9hc35yEofGRZYkX3G+q+RXKme8LlwST4XxK
- nKa3dqg+U7baIvu55wiegTwnKvak4VvFSVrB18x+jhJ4+fcvTR6ZyNm/mNAiepCxklV+
- uJxQ==
-X-Gm-Message-State: AOAM531tBq//eLIiZjunYcEkWnfOUYu31jFw6gjujfzBIYB/JPT0zm7W
- 4mfNOgCR17lHZQAP4NEPj2LH7Q==
-X-Google-Smtp-Source: ABdhPJzECnJd9c606qBv0fz/un9p5bu6tPClqHkkq6PByN5AK0Qwwk2/z0dziQr2abuBnJ5sUk9K3g==
-X-Received: by 2002:a05:6512:c10:: with SMTP id
- z16mr493947lfu.387.1644954921579; 
- Tue, 15 Feb 2022 11:55:21 -0800 (PST)
-Received: from [192.168.1.211] ([37.153.55.125])
- by smtp.gmail.com with ESMTPSA id b9sm4602308lfb.222.2022.02.15.11.55.20
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 15 Feb 2022 11:55:20 -0800 (PST)
-Message-ID: <f1b4b389-12f9-7c21-b117-f2fe6df58a89@linaro.org>
-Date: Tue, 15 Feb 2022 22:55:18 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.5.1
-Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
- override params bindings
-Content-Language: en-GB
-To: Sandeep Maheswaram <quic_c_sanm@quicinc.com>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Wesley Cheng <wcheng@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
- Doug Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>
-Cc: evicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ id 1nK5GC-004gxW-4E; Tue, 15 Feb 2022 21:21:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+ t=1644960080; x=1676496080;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=D3mH1ZQYnUmDyHebTFiaM1aX+zULtvkheCq0LawoiFk=;
+ b=IMqf5jtb6eVuuLvbte3ieXXI57GtQFGn0BehSaVnq/rTOgHbBpdiB8PW
+ hzttvAJk7O0zycomCgNZ6tbUX2obThNA7F8M4TH7AQE+YZVKzYURKQDXb
+ CvdcFaXCX/+UnsqrM2/tcUWo3yf4Co++82+yNV3GkALphG6XKQhVDYDX3
+ gKAaN1qxKkgIYGRYMTzLhWM9XADp/cg11Cqe9LsStk2n8v55/LChFR+tI
+ Aj0t6F7skP3aDnbcpdktXFFzC43qu9UTdP1fTxciaYH3ISVxOo7npj1/+
+ hO5yQbac0DPFvDJvW+zh01M572vpS2nPXrQ1abqWcmXGFfq7u11as0Dml w==;
+X-IronPort-AV: E=McAfee;i="6200,9189,10259"; a="311197876"
+X-IronPort-AV: E=Sophos;i="5.88,371,1635231600"; d="scan'208";a="311197876"
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 15 Feb 2022 13:21:10 -0800
+X-IronPort-AV: E=Sophos;i="5.88,371,1635231600"; d="scan'208";a="625027203"
+Received: from punajuuri.fi.intel.com (HELO paasikivi.fi.intel.com)
+ ([10.237.72.43])
+ by fmsmga003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 15 Feb 2022 13:21:05 -0800
+Received: from paasikivi.fi.intel.com (localhost [127.0.0.1])
+ by paasikivi.fi.intel.com (Postfix) with SMTP id 723FA200F1;
+ Tue, 15 Feb 2022 23:21:03 +0200 (EET)
+Date: Tue, 15 Feb 2022 23:21:03 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-usb@vger.kernel.org, quic_pkondeti@quicinc.com,
- quic_ppratap@quicinc.com
-References: <1644952755-15527-1-git-send-email-quic_c_sanm@quicinc.com>
- <1644952755-15527-2-git-send-email-quic_c_sanm@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <1644952755-15527-2-git-send-email-quic_c_sanm@quicinc.com>
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH v2 37/66] media: sun6i-csi: Move power management to
+ runtime pm in capture
+Message-ID: <YgwZP4CS26FCOOqc@paasikivi.fi.intel.com>
+References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-38-paul.kocialkowski@bootlin.com>
+ <YgqftcDgfrsZfTdF@paasikivi.fi.intel.com>
+ <Ygt4xh2Mq0qStyKs@aptenodytes>
+ <Ygt6vwydxg9/WuDH@pendragon.ideasonboard.com>
+ <Ygt+nZJrZMNXV4Cl@aptenodytes>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <Ygt+nZJrZMNXV4Cl@aptenodytes>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220215_115524_073656_A89E4EFC 
-X-CRM114-Status: GOOD (  15.71  )
+X-CRM114-CacheID: sfid-20220215_132120_298691_3E5D7169 
+X-CRM114-Status: GOOD (  35.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,59 +91,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/02/2022 22:19, Sandeep Maheswaram wrote:
-> Add support for overriding SNPS phy tuning parameters in device tree
-> bindings.
+Hi Paul,
 
-This does not really benefit the users and does not help developers.
-Could you please change the dt bindings to specify values for 
-thresholds, durations, impedance, etc. The values should be represented 
-in the human units (e.g. us, Ohms, mV), not in the internal register 
-'bits' representation.
-
+On Tue, Feb 15, 2022 at 11:21:17AM +0100, Paul Kocialkowski wrote:
+> Hi Laurent,
 > 
-> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-> ---
->   .../devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml  | 16 ++++++++++++++++
->   1 file changed, 16 insertions(+)
+> On Tue 15 Feb 22, 12:04, Laurent Pinchart wrote:
+> > Hi Paul,
+> > 
+> > On Tue, Feb 15, 2022 at 10:56:22AM +0100, Paul Kocialkowski wrote:
+> > > On Mon 14 Feb 22, 20:30, Sakari Ailus wrote:
+> > > > On Sat, Feb 05, 2022 at 07:54:00PM +0100, Paul Kocialkowski wrote:
+> > > > > Let's just enable the module when we start using it (at stream on)
+> > > > > and benefit from runtime pm instead of enabling it at first open.
+> > > > > 
+> > > > > Also reorder the call to v4l2_pipeline_pm_get.
+> > > > > 
+> > > > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > > > 
+> > > > Nice patch!
+> > > 
+> > > Thanks!
+> > > 
+> > > > Do you still need v4l2_pipeline_pm_put()? Removing it would be a separate
+> > > > patch of course.
+> > > 
+> > > My understanding is that this is still useful if there are drivers in the
+> > > pipeline that rely on s_power instead of rpm (a typical case could be an
+> > > old sensor driver). So that's why this is kept around, but all other components
+> > > of the pipeline (isp/csi/mipi csi-2) are using rpm now.
+> > 
+> > If that's not the case on your test platforms, I think it would be
+> > better to drop support for this old API, and convert drivers that still
+> > use .s_power() if someone needs to use one on an Allwinner platform.
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> index 0dfe691..44cf3bf 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> @@ -50,6 +50,22 @@ properties:
->     vdda33-supply:
->       description: phandle to the regulator 3.3V supply node.
->   
-> +  qcom,override_x0:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description: Override value for hs disconnect and squelch detector threshold.
-> +
-> +  qcom,override_x1:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description: Override value for hs amplitude, pre-emphasis duration and amplitude.
-> +
-> +  qcom,override_x2:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description: Override value for hs rise/fall time, cross over voltage, output impedance.
-> +
-> +  qcom,override_x3:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description: Override value for ls/fs output impedance.
-> +
->   required:
->     - compatible
->     - reg
+> I agree this is the path to follow but it feels like we're not quite there
+> yet and a bunch of driver were not converted at this point, including some
+> popular ones like ov5640, which I know for sure is used with Allwinner devices.
+> 
+> Honestly I'd be happy to get rid of these legacy functions as soon as the
+> transition is done, but doing it now would mean breaking a significant number
+> of use cases (which I'm trying to avoid here despite all the changes).
+> 
+> I definitely wouldn't be confident making that transition here and it
+> probably wouldn't be a good idea to make that a requirement to merge this
+> (already quite big) series.
+> 
+> What do you think?
 
+Feel free to keep it if you prefer that.
+
+All sensor drivers that implement s_power are old but there are quite a few
+of them. Converting them isn't trivial so best done by someone who has
+access to the hardware.
 
 -- 
-With best wishes
-Dmitry
+Regards,
+
+Sakari Ailus
 
 -- 
 linux-phy mailing list
