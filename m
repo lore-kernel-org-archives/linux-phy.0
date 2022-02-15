@@ -4,77 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C695C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Feb 2022 19:20:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02CD9C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Feb 2022 19:55:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I5ZH+plbXVmPen1WKMMOUXqlt3ckYkejEKDfZzBfjIM=; b=aZ1EiQ6djRFuPo
-	7p6Lp0oqMQ0cLVhnY8gggFyO8KORd9oew5lOsebQMrD+Sq0pfI+qOSuu86+swITKKRTEFLy8PoU3F
-	o3QO2M59ktVkLqMwH8YMvtEc6AIjBERXrbGNuEHRwV5n8NwQ+W3qjOqI0RKMxRhtSg1szuJyQOVsF
-	e6tz5vPyaHpaJgOgUcfYptj+I5PS4JUDWftxThLzHHPNEZpLMaQmi1XrzeYUQtZsEPxSrMHjUO2Jy
-	07pGwP481zPKbi5/3h1RoxZ66Ujf523ZjC1CfmjhMmjUUTcR533jXZtpb4fIrggIgZOM9d8UKbDUl
-	UT86siHnwXpfCY8VVg+w==;
+	List-Owner; bh=cNGyVGR9Sb+baAdMzARM4gO8PXlB2elRqJpcVm+Ol5k=; b=TvxcY9rYTqGvNn
+	qKtUYpBqQCQwqsjSokw7mjxOQCALcPOz2FkcrN9WP76xh5h/M+dAcWnefg0U1jxE+4Rt07qf82jEK
+	VHWNDE5bfwCTOlrCos/Ou0UDHVVQ6bm1RvCsymXcW+ChkWNn/bKbmCijiNRoyEKbhSvxA5Wa1fIfk
+	emXTlEut3rv1N99t37AL6OXrrZJEf5jz1HEaszC+4eL30sCHWKkLMnXxFQEKBbNaFlueoulhHvhW2
+	nYFpOQ2RLEjlIJt5r5mieHK409hcbAhbH9fLqvG1P6VVmcp/cIt2MnzVsERM0UCANb/Qy472czKc4
+	Hw0N9LNfXIBLdMxuTIzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nK3Mx-004HRb-ED; Tue, 15 Feb 2022 19:20:11 +0000
-Received: from alexa-out.qualcomm.com ([129.46.98.28])
+	id 1nK3v4-004Rcq-FU; Tue, 15 Feb 2022 19:55:26 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nK3Mj-004HKU-8r
- for linux-phy@lists.infradead.org; Tue, 15 Feb 2022 19:19:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
- t=1644952797; x=1676488797;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version;
- bh=XeefgcZDdJ2Av5SJ7ak6HNuzzyBwctIrJ52GfpLMZV0=;
- b=jSTAsHhtnNtD2G9WE/4V0V65i7INdF8sgGzG2zvePhYtQnvDooR2SMAJ
- R7FkXTqOiksM03XTst98yOmthW5q64FEZuUPH4DzJZLKtlqkFnPrsd0DF
- Jdm1oOBmMKkg7uLDUI45TdBY4BzO8x+rdD3WyJqIvWr001xikGO47HIWh s=;
-Received: from ironmsg08-lv.qualcomm.com ([10.47.202.152])
- by alexa-out.qualcomm.com with ESMTP; 15 Feb 2022 11:19:56 -0800
-X-QCInternal: smtphost
-Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
- by ironmsg08-lv.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 15 Feb 2022 11:19:56 -0800
-Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
- nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.15; Tue, 15 Feb 2022 11:19:56 -0800
-Received: from c-sanm-linux.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.922.19; Tue, 15 Feb 2022 11:19:50 -0800
-From: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-To: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski@canonical.com>, Andy Gross <agross@kernel.org>, "Bjorn
- Andersson" <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Wesley Cheng <wcheng@codeaurora.org>, "Stephen
- Boyd" <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>, "Matthias
- Kaehlcke" <mka@chromium.org>
-CC: <evicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <linux-usb@vger.kernel.org>, <quic_pkondeti@quicinc.com>,
- <quic_ppratap@quicinc.com>, Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-Subject: [PATCH 3/3] arm64: dts: qcom: sc7280: Update SNPS Phy params for
- SC7280 IDP device
-Date: Wed, 16 Feb 2022 00:49:15 +0530
-Message-ID: <1644952755-15527-4-git-send-email-quic_c_sanm@quicinc.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1644952755-15527-1-git-send-email-quic_c_sanm@quicinc.com>
-References: <1644952755-15527-1-git-send-email-quic_c_sanm@quicinc.com>
+ id 1nK3v1-004RQa-Vn
+ for linux-phy@lists.infradead.org; Tue, 15 Feb 2022 19:55:25 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id e5so9200173lfr.9
+ for <linux-phy@lists.infradead.org>; Tue, 15 Feb 2022 11:55:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=message-id:date:mime-version:user-agent:subject:content-language:to
+ :cc:references:from:in-reply-to:content-transfer-encoding;
+ bh=od9Fv9jtSpr7wJ186PxRq7ulSmKEgnYjdZXcjAfazIo=;
+ b=PH2AVilT2kpsLFO1HEukZSVhRun9ilfkrnq6W59AVR3hwgb1gm7pTqe1KNp033S5Km
+ Y3V+U0IWpcw7iA0RxRPVr86sUFYAz/4PUgCe4eriG6I45tOuwDzdT+cuHXhkkjtkHkq/
+ naCB45uKFm8OTA6iET/Jz8tKqsIZZmlMw0IJwtsU2HKpnAuv/++IXmP/A+UCA3Oucb80
+ 9HLzHxlNkyOrQzwYASpnNEqEXBYkIBYvhA2pLtQ3Iur4LdQ6JhHiP6RaCGq5nNi5cC2J
+ 7sIXklkRJZIHRJ5NGBtkAcotBL/f8HRjaKpoB9swrc469lUL+5Rjsu3KZ9R4tWaBybET
+ L7OA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=od9Fv9jtSpr7wJ186PxRq7ulSmKEgnYjdZXcjAfazIo=;
+ b=i6eFDBZw27RnNI/zq6YIM6wmI0RH1iC6ZtoKAiCZ8fcTeOBIlwCdwe2Ki8UNFLEcbT
+ 7DicLbGUODrju8EU48jMfKAOK0EUR7GkCLc71JJR5rA1qKaaIgtyP7VfCpukmjHc9gIr
+ z/cDs+ckvVHPiRQ/8yjFLalCTUy0TtsnglO6bLQ7+D6jZbsLVW4nI0ODlFagVrxqR8Sp
+ I7jKArKnpsCBCRQ7JgkI8D5Dn+nOsYV+a9hc35yEofGRZYkX3G+q+RXKme8LlwST4XxK
+ nKa3dqg+U7baIvu55wiegTwnKvak4VvFSVrB18x+jhJ4+fcvTR6ZyNm/mNAiepCxklV+
+ uJxQ==
+X-Gm-Message-State: AOAM531tBq//eLIiZjunYcEkWnfOUYu31jFw6gjujfzBIYB/JPT0zm7W
+ 4mfNOgCR17lHZQAP4NEPj2LH7Q==
+X-Google-Smtp-Source: ABdhPJzECnJd9c606qBv0fz/un9p5bu6tPClqHkkq6PByN5AK0Qwwk2/z0dziQr2abuBnJ5sUk9K3g==
+X-Received: by 2002:a05:6512:c10:: with SMTP id
+ z16mr493947lfu.387.1644954921579; 
+ Tue, 15 Feb 2022 11:55:21 -0800 (PST)
+Received: from [192.168.1.211] ([37.153.55.125])
+ by smtp.gmail.com with ESMTPSA id b9sm4602308lfb.222.2022.02.15.11.55.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 15 Feb 2022 11:55:20 -0800 (PST)
+Message-ID: <f1b4b389-12f9-7c21-b117-f2fe6df58a89@linaro.org>
+Date: Tue, 15 Feb 2022 22:55:18 +0300
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.1
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
+ override params bindings
+Content-Language: en-GB
+To: Sandeep Maheswaram <quic_c_sanm@quicinc.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Wesley Cheng <wcheng@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
+ Doug Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>
+Cc: evicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, quic_pkondeti@quicinc.com,
+ quic_ppratap@quicinc.com
+References: <1644952755-15527-1-git-send-email-quic_c_sanm@quicinc.com>
+ <1644952755-15527-2-git-send-email-quic_c_sanm@quicinc.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <1644952755-15527-2-git-send-email-quic_c_sanm@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220215_111957_387784_DD58998E 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220215_115524_073656_A89E4EFC 
+X-CRM114-Status: GOOD (  15.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,36 +98,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Overriding the SNPS Phy tuning parameters for SC7280 IDP device.
+On 15/02/2022 22:19, Sandeep Maheswaram wrote:
+> Add support for overriding SNPS phy tuning parameters in device tree
+> bindings.
 
-Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
----
- arch/arm64/boot/dts/qcom/sc7280-idp.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
+This does not really benefit the users and does not help developers.
+Could you please change the dt bindings to specify values for 
+thresholds, durations, impedance, etc. The values should be represented 
+in the human units (e.g. us, Ohms, mV), not in the internal register 
+'bits' representation.
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi b/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi
-index ecbf2b8..88ca9d5 100644
---- a/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi
-@@ -317,6 +317,10 @@
- 	vdda-pll-supply = <&vreg_l10c_0p8>;
- 	vdda33-supply = <&vreg_l2b_3p0>;
- 	vdda18-supply = <&vreg_l1c_1p8>;
-+	qcom,override_x0 = <0xe6>;
-+	qcom,override_x1 = <0x8b>;
-+	qcom,override_x2 = <0x16>;
-+	qcom,override_x3 = <0x03>;
- };
- 
- &usb_1_qmpphy {
+> 
+> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+> ---
+>   .../devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml  | 16 ++++++++++++++++
+>   1 file changed, 16 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> index 0dfe691..44cf3bf 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> @@ -50,6 +50,22 @@ properties:
+>     vdda33-supply:
+>       description: phandle to the regulator 3.3V supply node.
+>   
+> +  qcom,override_x0:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: Override value for hs disconnect and squelch detector threshold.
+> +
+> +  qcom,override_x1:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: Override value for hs amplitude, pre-emphasis duration and amplitude.
+> +
+> +  qcom,override_x2:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: Override value for hs rise/fall time, cross over voltage, output impedance.
+> +
+> +  qcom,override_x3:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: Override value for ls/fs output impedance.
+> +
+>   required:
+>     - compatible
+>     - reg
+
+
 -- 
-2.7.4
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
