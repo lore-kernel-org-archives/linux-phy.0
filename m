@@ -4,64 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4579FC433FE
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Feb 2022 15:48:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3670DC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Feb 2022 19:19:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hoU2kFEv4NVz3biV/g1bKVOD1SUVz3owMl2LPQ37Ab4=; b=CVzgEsP0IESjh6
-	KiE0/l7q3x+CsKVqFr9xjDKc7tPVQVQRXxj8kSSMUbqZ8/WUuCphwUpOkm63/lgdbl+KWBJ3KyMrr
-	bPK/YXkDBekrBSMgQewVk6vMF40r14TLGalnam7N/RAp5w9p9k4LCsDy1LmsPX8NkNbpVxjbeqHad
-	me5O9iJgc59CaE2+XsAmETYV/2/kDc3vSb6yGE4sd47fKyn8X5sKFxXmVFdM8K6drD1SLsG3yQUAQ
-	WGDay3KgnoC/Bne43oLhqxYIdRU8d3xVmTKUwEGJ3U4IesCw9rEow6uKB8cKeFqMw29ZaFmf+u3/S
-	eqdEPmjv3EtgEeB3b5CQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=imCj8o5H7Dn5Y0Zemm/n4zml3epKZIwfn0/kjdQOvWw=; b=ZTPfQt9lkkCzm3
+	N7A5vgJiultIBQjlDURNV9xet2JMPsiY/Cu8ru6JNM4SsFm/nQG6VxE+f9XxcU7uoZwhmtgjXFqzN
+	pCCxEVt+hMmHDN0OXcmfBjPlN6liTWDOp74tJdY+7PkbLI+cu36c6V1D0MFmgXLs9TisemvNbB6I0
+	7lzhqijJvMLM9SWizlS3XZkxe4uPwdhNTzXv3Ppz/duM9Tdrp624m3wkEPpcSffQHJsq68WATXrgK
+	TnntdYRAUfllPKpSNbFFHtl3tejSGCGAGfI63lBwX6taOSZN0Y4y8cryu6fsvJDQOFlC20TR1kN+H
+	bLx4ogcgu0ENNNAyHygQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nK03i-003QHW-Fi; Tue, 15 Feb 2022 15:48:06 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nK3MS-004HBd-AL; Tue, 15 Feb 2022 19:19:40 +0000
+Received: from alexa-out.qualcomm.com ([129.46.98.28])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nJzmG-003HS5-NT
- for linux-phy@lists.infradead.org; Tue, 15 Feb 2022 15:30:06 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 45BB06168F;
- Tue, 15 Feb 2022 15:30:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A64FC340F4;
- Tue, 15 Feb 2022 15:30:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1644939003;
- bh=PFd0vWbuccoeBz31rmd7XX1dtx0C17Ku1YNGpKvMo6I=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=gyQYQbSy77Xyuii9zoq3t9OIDKCm3Qc59U+EFiLW8s3cfFHXiNV2Ghx9ijLtX2isY
- Pblnop9yMtDHwdbbIQ/uSE+9S0zlwWu5qs37Frzr6edQMhfF0WgcZxPEKwSpae0CAK
- DfrL3wSwWkcuJHgr5nJID6OCUj/NsCoBPrv2zF7ex+vXdN08jx2ioh3mMggHGt2cMd
- C7Yxl4gvnpgPoD18CNxYsLa2z2Eoh6TzxJ39w52zJbnd7jDB+jqvq5CpYTwpBME8a4
- 6STGQSWKJxIJmLLehYs6eAAqs87ynqUgWs0VicZiK7gD6u+aJQ95dWvxcnS3Rpst0L
- S+Ag8iuikCXCA==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Al Cooper <alcooperx@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Vinod Koul <vkoul@kernel.org>, Sasha Levin <sashal@kernel.org>,
- kishon@ti.com, bcm-kernel-feedback-list@broadcom.com,
- linux-phy@lists.infradead.org
-Subject: [PATCH AUTOSEL 5.10 03/23] phy: usb: Leave some clocks running during
- suspend
-Date: Tue, 15 Feb 2022 10:29:37 -0500
-Message-Id: <20220215152957.581303-3-sashal@kernel.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20220215152957.581303-1-sashal@kernel.org>
-References: <20220215152957.581303-1-sashal@kernel.org>
+ id 1nK3MP-004HAP-VR
+ for linux-phy@lists.infradead.org; Tue, 15 Feb 2022 19:19:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
+ t=1644952778; x=1676488778;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=gexs4JvegdKqrsb9mXRMPBkw4uzr7hXiX3Lra7mOZow=;
+ b=Ebq0avgE7MFHhhk67qNW4a3xe4Lq8U/OwXill66nWfI2pWTNo8AO9ah6
+ 21E76zbigrrUsnT5YxzITs7JIuyZagQTdOKxJOr8iX86e2tuCJgE158qr
+ jkmm7eVw53diufHcjsOlS+aiS7rWt+BY9M5s6uV8W53/2FPuRxXspjhFO 4=;
+Received: from ironmsg08-lv.qualcomm.com ([10.47.202.152])
+ by alexa-out.qualcomm.com with ESMTP; 15 Feb 2022 11:19:37 -0800
+X-QCInternal: smtphost
+Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
+ by ironmsg08-lv.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 15 Feb 2022 11:19:36 -0800
+Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
+ nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.15; Tue, 15 Feb 2022 11:19:35 -0800
+Received: from c-sanm-linux.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.922.19; Tue, 15 Feb 2022 11:19:30 -0800
+From: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+To: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+ <krzysztof.kozlowski@canonical.com>, Andy Gross <agross@kernel.org>, "Bjorn
+ Andersson" <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Wesley Cheng <wcheng@codeaurora.org>, "Stephen
+ Boyd" <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>, "Matthias
+ Kaehlcke" <mka@chromium.org>
+CC: <evicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <linux-usb@vger.kernel.org>, <quic_pkondeti@quicinc.com>,
+ <quic_ppratap@quicinc.com>, Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+Subject: [PATCH 0/3] Add QCOM SNPS PHY overriding params support
+Date: Wed, 16 Feb 2022 00:49:12 +0530
+Message-ID: <1644952755-15527-1-git-send-email-quic_c_sanm@quicinc.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220215_073004_947414_F3CA7764 
-X-CRM114-Status: GOOD (  21.35  )
+X-CRM114-CacheID: sfid-20220215_111938_099405_204485B9 
+X-CRM114-Status: UNSURE (   7.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,135 +87,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Al Cooper <alcooperx@gmail.com>
+Added support for overriding tuning parameters in QCOM SNPS PHY
+from device tree.
 
-[ Upstream commit 42fed57046fc74586d7058bd51a1c10ac9c690cb ]
+Sandeep Maheswaram (3):
+  dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy override params
+    bindings
+  phy: qcom-snps: Add support for overriding phy tuning parameters
+  arm64: dts: qcom: sc7280: Update SNPS Phy params for SC7280 IDP device
 
-The PHY client driver does a phy_exit() call on suspend or rmmod and
-the PHY driver needs to know the difference because some clocks need
-to be kept running for suspend but can be shutdown on unbind/rmmod
-(or if there are no PHY clients at all).
+ .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 16 ++++++++
+ arch/arm64/boot/dts/qcom/sc7280-idp.dtsi           |  4 ++
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 45 ++++++++++++++++++++++
+ 3 files changed, 65 insertions(+)
 
-The fix is to use a PM notifier so the driver can tell if a PHY
-client is calling exit() because of a system suspend or a driver
-unbind/rmmod.
-
-Signed-off-by: Al Cooper <alcooperx@gmail.com>
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
-Link: https://lore.kernel.org/r/20211201180653.35097-2-alcooperx@gmail.com
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/phy/broadcom/phy-brcm-usb.c | 38 +++++++++++++++++++++++++++++
- 1 file changed, 38 insertions(+)
-
-diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-index 99fbc7e4138be..b901a0d4e2a80 100644
---- a/drivers/phy/broadcom/phy-brcm-usb.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb.c
-@@ -17,6 +17,7 @@
- #include <linux/soc/brcmstb/brcmstb.h>
- #include <dt-bindings/phy/phy.h>
- #include <linux/mfd/syscon.h>
-+#include <linux/suspend.h>
- 
- #include "phy-brcm-usb-init.h"
- 
-@@ -69,12 +70,35 @@ struct brcm_usb_phy_data {
- 	int			init_count;
- 	int			wake_irq;
- 	struct brcm_usb_phy	phys[BRCM_USB_PHY_ID_MAX];
-+	struct notifier_block	pm_notifier;
-+	bool			pm_active;
- };
- 
- static s8 *node_reg_names[BRCM_REGS_MAX] = {
- 	"crtl", "xhci_ec", "xhci_gbl", "usb_phy", "usb_mdio", "bdc_ec"
- };
- 
-+static int brcm_pm_notifier(struct notifier_block *notifier,
-+			    unsigned long pm_event,
-+			    void *unused)
-+{
-+	struct brcm_usb_phy_data *priv =
-+		container_of(notifier, struct brcm_usb_phy_data, pm_notifier);
-+
-+	switch (pm_event) {
-+	case PM_HIBERNATION_PREPARE:
-+	case PM_SUSPEND_PREPARE:
-+		priv->pm_active = true;
-+		break;
-+	case PM_POST_RESTORE:
-+	case PM_POST_HIBERNATION:
-+	case PM_POST_SUSPEND:
-+		priv->pm_active = false;
-+		break;
-+	}
-+	return NOTIFY_DONE;
-+}
-+
- static irqreturn_t brcm_usb_phy_wake_isr(int irq, void *dev_id)
- {
- 	struct phy *gphy = dev_id;
-@@ -90,6 +114,9 @@ static int brcm_usb_phy_init(struct phy *gphy)
- 	struct brcm_usb_phy_data *priv =
- 		container_of(phy, struct brcm_usb_phy_data, phys[phy->id]);
- 
-+	if (priv->pm_active)
-+		return 0;
-+
- 	/*
- 	 * Use a lock to make sure a second caller waits until
- 	 * the base phy is inited before using it.
-@@ -119,6 +146,9 @@ static int brcm_usb_phy_exit(struct phy *gphy)
- 	struct brcm_usb_phy_data *priv =
- 		container_of(phy, struct brcm_usb_phy_data, phys[phy->id]);
- 
-+	if (priv->pm_active)
-+		return 0;
-+
- 	dev_dbg(&gphy->dev, "EXIT\n");
- 	if (phy->id == BRCM_USB_PHY_2_0)
- 		brcm_usb_uninit_eohci(&priv->ini);
-@@ -484,6 +514,9 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
- 	if (err)
- 		return err;
- 
-+	priv->pm_notifier.notifier_call = brcm_pm_notifier;
-+	register_pm_notifier(&priv->pm_notifier);
-+
- 	mutex_init(&priv->mutex);
- 
- 	/* make sure invert settings are correct */
-@@ -524,7 +557,10 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
- 
- static int brcm_usb_phy_remove(struct platform_device *pdev)
- {
-+	struct brcm_usb_phy_data *priv = dev_get_drvdata(&pdev->dev);
-+
- 	sysfs_remove_group(&pdev->dev.kobj, &brcm_usb_phy_group);
-+	unregister_pm_notifier(&priv->pm_notifier);
- 
- 	return 0;
- }
-@@ -535,6 +571,7 @@ static int brcm_usb_phy_suspend(struct device *dev)
- 	struct brcm_usb_phy_data *priv = dev_get_drvdata(dev);
- 
- 	if (priv->init_count) {
-+		dev_dbg(dev, "SUSPEND\n");
- 		priv->ini.wake_enabled = device_may_wakeup(dev);
- 		if (priv->phys[BRCM_USB_PHY_3_0].inited)
- 			brcm_usb_uninit_xhci(&priv->ini);
-@@ -574,6 +611,7 @@ static int brcm_usb_phy_resume(struct device *dev)
- 	 * Uninitialize anything that wasn't previously initialized.
- 	 */
- 	if (priv->init_count) {
-+		dev_dbg(dev, "RESUME\n");
- 		if (priv->wake_irq >= 0)
- 			disable_irq_wake(priv->wake_irq);
- 		brcm_usb_init_common(&priv->ini);
 -- 
-2.34.1
+2.7.4
 
 
 -- 
