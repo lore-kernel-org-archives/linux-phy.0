@@ -4,82 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 735CEC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Feb 2022 21:21:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CA13C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Feb 2022 02:10:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T+YmA2v+vlU8XdaC7tAe5Xa6YBo5U/dSDvRKo58DyME=; b=nW8RKyzH5Y34OA
-	kygs8k105JGo73uYl/y5fw4puQe8GzGHIkJyNCZh90chnaFFhcfjg9LgG5ZXeOZu9dwvVZF8BRzBo
-	MzholxN5AZvs67HgIzLw/Phdd+dtexr7lwqyFxRgW7Hq+HKiOVs7iyZixm7YXinPmQViY38fDWshD
-	SHosFzV632xLr9Y0AM8NGuorG3q8Fhe5w27EoXj3qmP2eJpPC0Cp4KxpDDvt2wOFXiGXSp6TGzhU7
-	6dYF1phZSg+kwS72g/MVnLewss04TZvhXSnTePSLLpS/UgrCDpHGY9P7h58WPDo4rNL6a/4Hu01wd
-	uDRj0tNQW0P3lPyD6sBw==;
+	List-Owner; bh=+ufndWCMA34aLYRp0/YskBKYr2HwKD6LOaDhYE2Tj5E=; b=F4k+uupShWrpiG
+	fK1KqXVa6AeIqCSHh8xMYAcRbxn3LZb3cm08Pc3sjUaLoQuHuDkzQuUvnjFa4XPRdQpwK5zs9gu2L
+	EVSKq3ktas3AsKtj2Oc4Tsf2fRsl7xmvGoeMSUf+CXVfw+ytTvLxLT3dTTPQ08dHD/0f9VwMf6txc
+	RAJ2QCk9Q2HUASTsWPaEahYTawjAaMzmzxCjbREKTScJTEkgOnS7hwmQJST3Y/3RNmOyDxgWEKZnB
+	68VSXvZHyqSbk8d/u+X5o6W7I1y3OKv8ulw3eXhFAbHfir/UsHE4stB3Xoe2l8FBr30E/3am0pE3H
+	dW17gi9jkdE73Snf39pA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nK5GQ-004h0r-Uy; Tue, 15 Feb 2022 21:21:34 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1nK9mM-005IPi-Kq; Wed, 16 Feb 2022 02:10:50 +0000
+Received: from mail-oo1-xc29.google.com ([2607:f8b0:4864:20::c29])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nK5GC-004gxW-4E; Tue, 15 Feb 2022 21:21:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1644960080; x=1676496080;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=D3mH1ZQYnUmDyHebTFiaM1aX+zULtvkheCq0LawoiFk=;
- b=IMqf5jtb6eVuuLvbte3ieXXI57GtQFGn0BehSaVnq/rTOgHbBpdiB8PW
- hzttvAJk7O0zycomCgNZ6tbUX2obThNA7F8M4TH7AQE+YZVKzYURKQDXb
- CvdcFaXCX/+UnsqrM2/tcUWo3yf4Co++82+yNV3GkALphG6XKQhVDYDX3
- gKAaN1qxKkgIYGRYMTzLhWM9XADp/cg11Cqe9LsStk2n8v55/LChFR+tI
- Aj0t6F7skP3aDnbcpdktXFFzC43qu9UTdP1fTxciaYH3ISVxOo7npj1/+
- hO5yQbac0DPFvDJvW+zh01M572vpS2nPXrQ1abqWcmXGFfq7u11as0Dml w==;
-X-IronPort-AV: E=McAfee;i="6200,9189,10259"; a="311197876"
-X-IronPort-AV: E=Sophos;i="5.88,371,1635231600"; d="scan'208";a="311197876"
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 15 Feb 2022 13:21:10 -0800
-X-IronPort-AV: E=Sophos;i="5.88,371,1635231600"; d="scan'208";a="625027203"
-Received: from punajuuri.fi.intel.com (HELO paasikivi.fi.intel.com)
- ([10.237.72.43])
- by fmsmga003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 15 Feb 2022 13:21:05 -0800
-Received: from paasikivi.fi.intel.com (localhost [127.0.0.1])
- by paasikivi.fi.intel.com (Postfix) with SMTP id 723FA200F1;
- Tue, 15 Feb 2022 23:21:03 +0200 (EET)
-Date: Tue, 15 Feb 2022 23:21:03 +0200
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 37/66] media: sun6i-csi: Move power management to
- runtime pm in capture
-Message-ID: <YgwZP4CS26FCOOqc@paasikivi.fi.intel.com>
-References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-38-paul.kocialkowski@bootlin.com>
- <YgqftcDgfrsZfTdF@paasikivi.fi.intel.com>
- <Ygt4xh2Mq0qStyKs@aptenodytes>
- <Ygt6vwydxg9/WuDH@pendragon.ideasonboard.com>
- <Ygt+nZJrZMNXV4Cl@aptenodytes>
+ id 1nK9mJ-005INb-Jv
+ for linux-phy@lists.infradead.org; Wed, 16 Feb 2022 02:10:48 +0000
+Received: by mail-oo1-xc29.google.com with SMTP id
+ k13-20020a4a948d000000b003172f2f6bdfso907051ooi.1
+ for <linux-phy@lists.infradead.org>; Tue, 15 Feb 2022 18:10:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:in-reply-to:references:from:user-agent:date:message-id
+ :subject:to:cc;
+ bh=eOGRLRkS3e6dTdy4+VsuInylNMPOPtypXWpw081JkCE=;
+ b=d3EOKXLfn2QjqppU+AbsJVRiA9w27o8GUwtOTW7lMqgN6+D8QDhBJKyNgzBVV2EibR
+ DLQUjHF4BGcIoJ47MhqRcU0S7Dwy8i2sW2j2LseP9rQPKq5sO2TTk4Vy6qtEaCn+t6u6
+ dBgM1T5YWbsxE0AO3PH6jBptWbRx24mBTJOBM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:mime-version:in-reply-to:references:from
+ :user-agent:date:message-id:subject:to:cc;
+ bh=eOGRLRkS3e6dTdy4+VsuInylNMPOPtypXWpw081JkCE=;
+ b=nO2tynZsjez+M7CCKx/ztHfJo66vQUP841m9lbLUvMm9ybRFd0jIbYsOJRS8C9thvY
+ l497EBdFs+/tm2Z6vip3ldA3GqxwJ8GEgtm3u6Jdv1uL4rBxcaq83f1RtRisNlUsKRsf
+ hKrxB372H0+qDrJxLJonBF7gOHW97TVfGHhxmhR5o+FB6zbCYu2DQby5xfu6uTNwFuJk
+ JT6lRBa5G1uWcR7Vy/wLqIGtfa5of8HXk1fkts8ZNCSrj6+09YtoKhI7BegfWG5FVVyH
+ lHJGp/0QDeRQQuzPgJ4ho4uUfTixNtrVMGqXodzTw97Pm6ndc8xg+ZkOuy50wuBdkXL7
+ 6Zhg==
+X-Gm-Message-State: AOAM533lWb25vME0o0OrznmE4F3D1ypUS0Phk1fHO1wvWz8cT7zMU/JI
+ hQ6Pbj/5FiPJfbxm0BSR9aHMQCW8d+KeVZuxxTq5hA==
+X-Google-Smtp-Source: ABdhPJzrN3Y1q7CHe3i8jMiQafAjvoaP/zBlEg6kWGGDyJQIBmexLpOXeN8Dr09gBIW5TjNknaxnK8JYghcdA6EzEfU=
+X-Received: by 2002:a05:6870:631a:b0:d1:7d97:806 with SMTP id
+ s26-20020a056870631a00b000d17d970806mr278296oao.8.1644977445823; Tue, 15 Feb
+ 2022 18:10:45 -0800 (PST)
+Received: from 753933720722 named unknown by gmailapi.google.com with
+ HTTPREST; Tue, 15 Feb 2022 18:10:45 -0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Ygt+nZJrZMNXV4Cl@aptenodytes>
+In-Reply-To: <f1b4b389-12f9-7c21-b117-f2fe6df58a89@linaro.org>
+References: <1644952755-15527-1-git-send-email-quic_c_sanm@quicinc.com>
+ <1644952755-15527-2-git-send-email-quic_c_sanm@quicinc.com>
+ <f1b4b389-12f9-7c21-b117-f2fe6df58a89@linaro.org>
+From: Stephen Boyd <swboyd@chromium.org>
+User-Agent: alot/0.10
+Date: Tue, 15 Feb 2022 18:10:45 -0800
+Message-ID: <CAE-0n52G6Cu8douv_KuQEeVM-3vnwGT4dhai8kmiLJ4Fd9Qz8A@mail.gmail.com>
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
+ override params bindings
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Doug Anderson <dianders@chromium.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
+ Matthias Kaehlcke <mka@chromium.org>, 
+ Rob Herring <robh+dt@kernel.org>, Sandeep Maheswaram <quic_c_sanm@quicinc.com>,
+ Vinod Koul <vkoul@kernel.org>, Wesley Cheng <wcheng@codeaurora.org>
+Cc: evicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-usb@vger.kernel.org, quic_pkondeti@quicinc.com, 
+ quic_ppratap@quicinc.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220215_132120_298691_3E5D7169 
-X-CRM114-Status: GOOD (  35.23  )
+X-CRM114-CacheID: sfid-20220215_181047_678635_97B1F73D 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,64 +99,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Paul,
+Quoting Dmitry Baryshkov (2022-02-15 11:55:18)
+> On 15/02/2022 22:19, Sandeep Maheswaram wrote:
+> > Add support for overriding SNPS phy tuning parameters in device tree
+> > bindings.
+>
+> This does not really benefit the users and does not help developers.
+> Could you please change the dt bindings to specify values for
+> thresholds, durations, impedance, etc. The values should be represented
+> in the human units (e.g. us, Ohms, mV), not in the internal register
+> 'bits' representation.
 
-On Tue, Feb 15, 2022 at 11:21:17AM +0100, Paul Kocialkowski wrote:
-> Hi Laurent,
-> 
-> On Tue 15 Feb 22, 12:04, Laurent Pinchart wrote:
-> > Hi Paul,
-> > 
-> > On Tue, Feb 15, 2022 at 10:56:22AM +0100, Paul Kocialkowski wrote:
-> > > On Mon 14 Feb 22, 20:30, Sakari Ailus wrote:
-> > > > On Sat, Feb 05, 2022 at 07:54:00PM +0100, Paul Kocialkowski wrote:
-> > > > > Let's just enable the module when we start using it (at stream on)
-> > > > > and benefit from runtime pm instead of enabling it at first open.
-> > > > > 
-> > > > > Also reorder the call to v4l2_pipeline_pm_get.
-> > > > > 
-> > > > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > 
-> > > > Nice patch!
-> > > 
-> > > Thanks!
-> > > 
-> > > > Do you still need v4l2_pipeline_pm_put()? Removing it would be a separate
-> > > > patch of course.
-> > > 
-> > > My understanding is that this is still useful if there are drivers in the
-> > > pipeline that rely on s_power instead of rpm (a typical case could be an
-> > > old sensor driver). So that's why this is kept around, but all other components
-> > > of the pipeline (isp/csi/mipi csi-2) are using rpm now.
-> > 
-> > If that's not the case on your test platforms, I think it would be
-> > better to drop support for this old API, and convert drivers that still
-> > use .s_power() if someone needs to use one on an Allwinner platform.
-> 
-> I agree this is the path to follow but it feels like we're not quite there
-> yet and a bunch of driver were not converted at this point, including some
-> popular ones like ov5640, which I know for sure is used with Allwinner devices.
-> 
-> Honestly I'd be happy to get rid of these legacy functions as soon as the
-> transition is done, but doing it now would mean breaking a significant number
-> of use cases (which I'm trying to avoid here despite all the changes).
-> 
-> I definitely wouldn't be confident making that transition here and it
-> probably wouldn't be a good idea to make that a requirement to merge this
-> (already quite big) series.
-> 
-> What do you think?
-
-Feel free to keep it if you prefer that.
-
-All sensor drivers that implement s_power are old but there are quite a few
-of them. Converting them isn't trivial so best done by someone who has
-access to the hardware.
-
--- 
-Regards,
-
-Sakari Ailus
++1
 
 -- 
 linux-phy mailing list
