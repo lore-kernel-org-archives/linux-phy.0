@@ -4,58 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3E0BC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Feb 2022 15:31:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C4D5C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Feb 2022 15:01:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ZsfwIQMZ19qyn4TARBamfqaQ8eKHfNawdLRbBQEwVA=; b=olycsrEB9f81h7
-	ug/IH3qKTOE8Mgibw00Z2h6jeFU4aKfAbIoijZQahWohJVKQL2oFzgHUdy5tOQXVsd9rawMyH5aXX
-	YTXgPYKol6YVlTPR/BQ/CzTiZC4JirR/j/0Nu6/wzCnCGeCwKGV8N9g1Kh9xynyT4ckHgrpWQ7YCB
-	M5BHJQDDUDaPKVLVnSXHs0/0sQIZ2xm2gHTeARl2OLVpafR7lRizLwwWLnij+EJ6FI/iGvrkBD5PE
-	ituGWLgS5jJ09swCmFGQHXTOlhYC54vA2r5pMbeN6AfkuEAk6+cjZHyr0kWcB0BU+3meeuTrE0G/7
-	806GAZZ47L8G/ZdLck1g==;
+	List-Owner; bh=i++9A4y4JFVGHjVdKnSB7kq/AhCIBkKmTGPGB+c5bVs=; b=aXucrE1UYzEPDq
+	Sv4lVB5GJaH8Qw5tIM2eFM/nHwmxNZY0RE6wHrPYDKnxGE4PXbEZDkPc1sGTsmsxCMSzfmO4QsJyx
+	76i4dict5/TYU2pjN7KiOvCZz9IGPoyAUNobtZSxX5/XQ5yBv5XQjNBjVE6QytuWgYX/cAU7KYlc2
+	zWBcrfN8isdnQ7/H+F4EEfwDp1OpbRwauAzbToGR7I9qB4vtwn94dF2dqOVyOFJA/lw1FnPM5lOGo
+	CkTBng9uCMnf0Z9WbIPHLTNrBtSeOECg59ppB1n+vhTnEqI6lsc4tp+6pEaBVrZ3blOophncbKoNt
+	GyAfxrLSueVDt8W6bbLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nKikb-00BGgX-Eg; Thu, 17 Feb 2022 15:31:21 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nL4lZ-00EvZI-He; Fri, 18 Feb 2022 15:01:49 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nKikY-00BGfs-Ux
- for linux-phy@lists.infradead.org; Thu, 17 Feb 2022 15:31:20 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 8968AB82343;
- Thu, 17 Feb 2022 15:31:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F39B3C340E8;
- Thu, 17 Feb 2022 15:31:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1645111876;
- bh=sVtS9yh28F1Fnko4xbrtn/2OLrArPuSPTSdZ57vWlN4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=f913LM/znHsrVvU+TJ8WFBJ5TFGiEvHqLev1UmO0at6dZ0yFrRViCEVdUzbxx+RUb
- /QoMs3SQnzxbQrbyisQlIEnCvdZ9KqeVCJurSGt2Y9JYQPyMsdP3/+1iAUC86iDZbu
- MoeRLgJqvDY5zBb8Bdg4SAJvwcwHTre0guaQCgIc=
-Date: Thu, 17 Feb 2022 16:31:13 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Hans de Goede <hdegoede@redhat.com>
-Cc: Felipe Balbi <balbi@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>,
- Stephan Gerhold <stephan@gerhold.net>, linux-usb@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 0/9] usb/dwc3 / phy/tusb1210: Add TUSB1211 charger
- detection
-Message-ID: <Yg5qQXUFd/Takm7V@kroah.com>
-References: <20220213130524.18748-1-hdegoede@redhat.com>
+ id 1nL4fw-00ErvS-S2
+ for linux-phy@lists.infradead.org; Fri, 18 Feb 2022 14:56:03 +0000
+Received: by mail-wr1-x441.google.com with SMTP id p9so14994973wra.12
+ for <linux-phy@lists.infradead.org>; Fri, 18 Feb 2022 06:56:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=qC+RbOnlbAMYT0RkhfvSIqXlBo3fNavEyqmQsnLiR2Q=;
+ b=CB/gthuBR1PKlTX0iRK6AGpgmej1LoRD8khuOAy0FQB9eCSE8iJkQM4NYE1ZysOiKs
+ la2wmI5DNqHmk3Wie4KVwcRAjSuR3pv9v0Z3NBZHUVKejZwAY0Y78WkhHLlnXLYHPDIv
+ KiAERdi2FrteWdUGKvtFGAAT71x4pk+S1RHGgB1i/atRB3wMMCKZVkDFzFbER0ZMu+O4
+ VATNEmRSJkbX/ZDl4zvF+/q0Cl8dwfUwyt24KzEVU8MVMBpgeCCsQTzOW3z1fLhqK7CM
+ WOhVK1BhA0a2HUW0Pn8hKI2l4dGz92rXj1d/SpDEDofgbA1bFqHzXEVn6guVSxM93lv7
+ SjxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=qC+RbOnlbAMYT0RkhfvSIqXlBo3fNavEyqmQsnLiR2Q=;
+ b=t7xouG4ujEt2AURPtAngLX4ALLNIbUlhVg5isXUyWVU+b+dTna6k2JqeKDq6eY3wqX
+ CD1mXzWOZ98hamVQPe2CUC7UX5SpYAHuEj3RBsaH1us9QgzeLrfzmpyLzulGcO2imvHh
+ ZEmW8d/iATy4mll6P/Z1PiYt7s4jU4mw8gAQYsDTKLYrJovzd03q6I7tb7qsDYPSv8JW
+ rGbn4iUCU0aPETBwXjri3Ny6CaNqtsJ9EKiScJWtCR7OGT4u8EGecOAHabYrQaExhrPr
+ 6BlvcFtHMFSMiWVqO9Re/cuis6Blu+J8oCJfaVWq33vLoCPATMvtRXgdonaRKbYbfBom
+ wlzw==
+X-Gm-Message-State: AOAM530E8nYrqL1bSvfrjSJ+CSkWbHd/xPozHYnhxT6EmKhRZUtmMpOF
+ 5EUWr5Kp3V/L0G6afJPb0MTsXA==
+X-Google-Smtp-Source: ABdhPJwNBdk3NS5ZflKP/t4iGuuUk373NB0fBIlAS30h710cFUX/Rlxqs4tq3A739PN3fuS29Ive5g==
+X-Received: by 2002:a05:6000:257:b0:1e3:3a1b:d4ca with SMTP id
+ m23-20020a056000025700b001e33a1bd4camr6304391wrz.112.1645196158903; 
+ Fri, 18 Feb 2022 06:55:58 -0800 (PST)
+Received: from localhost.localdomain
+ (2a02-8440-6241-3b28-3074-96af-9642-0002.rev.sfr.net.
+ [2a02:8440:6241:3b28:3074:96af:9642:2])
+ by smtp.gmail.com with ESMTPSA id b10sm47431454wrd.8.2022.02.18.06.55.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 18 Feb 2022 06:55:58 -0800 (PST)
+From: Guillaume Ranquet <granquet@baylibre.com>
+To: chunkuang.hu@kernel.org, p.zabel@pengutronix.de, airlied@linux.ie,
+ daniel@ffwll.ch, robh+dt@kernel.org, maarten.lankhorst@linux.intel.com,
+ mripard@kernel.org, tzimmermann@suse.de, matthias.bgg@gmail.com,
+ chunfeng.yun@mediatek.com, kishon@ti.com, vkoul@kernel.org, deller@gmx.de,
+ ck.hu@mediatek.com, jitao.shi@mediatek.com,
+ angelogioacchino.delregno@collabora.com
+Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-fbdev@vger.kernel.org, Markus Schneider-Pargmann <msp@baylibre.com>,
+ Rob Herring <robh@kernel.org>
+Subject: [PATCH v8 01/19] dt-bindings: mediatek,dpi: Add DP_INTF compatible
+Date: Fri, 18 Feb 2022 15:54:19 +0100
+Message-Id: <20220218145437.18563-2-granquet@baylibre.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20220218145437.18563-1-granquet@baylibre.com>
+References: <20220218145437.18563-1-granquet@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220213130524.18748-1-hdegoede@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220217_073119_177380_AE849837 
-X-CRM114-Status: GOOD (  18.34  )
+X-CRM114-CacheID: sfid-20220218_065600_994567_20781D95 
+X-CRM114-Status: GOOD (  12.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,36 +99,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Feb 13, 2022 at 02:05:15PM +0100, Hans de Goede wrote:
-> Hi All,
-> 
-> Here is v2 of the patchs-series to add support for USB charger-type
-> (SDP/DCP) detection using a tusb1210 phy connected to a dwc3 controller.
-> 
-> Changes in v2:
-> [PATCH v2 9/9] phy: ti: tusb1210: Add charger detection:
-> - Add an online attribute to the registered power_supply class device,
->   otherwise upower thinks it is an extra system battery
-> - Add tusb1210_remove_charger_detect() function to properly unregister
->   the tusb->psy_nb notifier and to cancel tusb->chg_det_work
-> 
-> v1 cover-letter:
-> 
-> Some Android x86 tablets with a Bay Trail (BYT) SoC (with DWC3 UDC)
-> and a Crystal Cove PMIC, which does not support charger-detection,
-> rely on a TUSB1211 phy for charger-detection.
-> 
-> This series adds support for this, it starts with some dwc3 bug-fixes
-> for issues hit while developing this, as well as adding support to
-> the dwc3 code to set a special property checked by the tusb1210 driver
-> to signal that it needs to enable charger-detection.
-> 
-> The 2nd half of the series does some refactoring / fixes to the
-> tusb1210 driver and adds the charger-detection support.
+From: Markus Schneider-Pargmann <msp@baylibre.com>
 
-The first 4 are all in my usb trees now, thanks.
+DP_INTF is similar to DPI but does not have the exact same feature set
+or register layouts.
 
-greg k-h
+DP_INTF is the sink of the display pipeline that is connected to the
+DisplayPort controller and encoder unit. It takes the same clocks as
+DPI.
+
+Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+ .../bindings/display/mediatek/mediatek,dpi.yaml       | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+index dd2896a40ff08..53acf9a84f7fb 100644
+--- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
++++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+@@ -4,16 +4,16 @@
+ $id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
+ 
+-title: mediatek DPI Controller Device Tree Bindings
++title: mediatek DPI/DP_INTF Controller Device Tree Bindings
+ 
+ maintainers:
+   - CK Hu <ck.hu@mediatek.com>
+   - Jitao shi <jitao.shi@mediatek.com>
+ 
+ description: |
+-  The Mediatek DPI function block is a sink of the display subsystem and
+-  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
+-  output bus.
++  The Mediatek DPI and DP_INTF function blocks are a sink of the display
++  subsystem and provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a
++  parallel output bus.
+ 
+ properties:
+   compatible:
+@@ -23,6 +23,7 @@ properties:
+       - mediatek,mt8173-dpi
+       - mediatek,mt8183-dpi
+       - mediatek,mt8192-dpi
++      - mediatek,mt8195-dpintf
+ 
+   reg:
+     maxItems: 1
+@@ -54,7 +55,7 @@ properties:
+     $ref: /schemas/graph.yaml#/properties/port
+     description:
+       Output port node. This port should be connected to the input port of an
+-      attached HDMI or LVDS encoder chip.
++      attached HDMI, LVDS or DisplayPort encoder chip.
+ 
+ required:
+   - compatible
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
