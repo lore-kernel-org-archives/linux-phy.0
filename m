@@ -4,62 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75C28C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Feb 2022 15:24:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FAF2C433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Feb 2022 22:04:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zKUlKHQZ7o+wiYCJACCDsDnOjPUumRIjpuEkHFeZDso=; b=nLl6pANbw2WMJH
-	XZwDDOhKgqn5pi7RU4Z2Yl3ip7aEU53OVmPezrykFFEcB4n85l5Z0Ty3JWF/1Jw2Rs74pSxpIOl9d
-	uir1yjV2AWditUZLccaYHvfHHoNmD8ZkYcetI4icL/FF/68A13/Umpgch6shEt/W0A3TJHfQbpT7X
-	79y4ZFLAEevOmzOlMj5LgmtrIQpWG+DKg9CXVEKvqcAWMHMFg3y1SJVHlwgVXrt2Zri4X2dpWFXoi
-	Jbm+7S9ytNzM1leO+u3l/pRPGvNlZPKr+M/qRKb4iws7X1HLGBqE53TKppu2eaqcHBbFFN0YL1jHI
-	glUpKdH65u8ZA6H8WoRg==;
+	List-Owner; bh=vTr5Z7UnletgMcxWMAkyE1TFB6Hk8jtqzYaahJxn3o4=; b=4dVWPwilj5Yjr2
+	WvoZgt8gC4wNYdKLa1KpZryyizowP7/OsQWnyKWNozjTRyN+8C0rbJx/y1JOZauNAd2Y7Fa7L1Xag
+	5cWsDkB2FIXx2eEYnyFq6WWuCkawzvSP8RZWNIhbH2Go9EjvgFS7XxNyAX756rx6CJCqkBHDn5lyo
+	4du99SvWOBIfrlGW+IzSwdcsKaQrp2ZJn+B9A8QsqbLWt858xufahJgCgKib7qtEvadT9Pg6aIi6C
+	kK7nC/KvYXSLrEJY3yIEEfL1iEzjuXDSHIxzWBTefSZwc7EpnyxQ8KK7ryOdO9oiK7C+4VRkTdGP+
+	R6AlyFazeWkWj80SHMNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nMX1b-00ACCp-0x; Tue, 22 Feb 2022 15:24:23 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1nMdGX-00BjGp-UR; Tue, 22 Feb 2022 22:04:13 +0000
+Received: from mail-oi1-f180.google.com ([209.85.167.180])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nMWuN-00A8jS-Vi; Tue, 22 Feb 2022 15:16:58 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: kholk11) with ESMTPSA id 1402E1F42D79
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
- s=mail; t=1645543012;
- bh=m6iks4nKShpjnvSQCg9oNY965h9zeoboZznnHfhpxKI=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=hWvPkhkzNvqzNuA/40T3XKUxHYa8HSRU4pVMNzoIFWC7rXAT0apDYLnpkMJhnqbJM
- arssexAyQVcSVzvw5Amf+UBgH8G+8JAoeSIFcUxhxPNyzQMNZV+16CstcTP/iDH5Hg
- 8XKAw2ROpBcy+hVlpJZNGroDpoRV/m8w9fVh/Yl0wVhuV6RPtUoYvkLuG/iZUukwGC
- bAX9ZZ15SJkfiUYauqLfQv5HFCFnR47Rx3FLe1eOLehFQPIJKIeNvBPRO6NReiqME2
- u+ne7v0rhJH3lU010TKtdqa7o08BP9WgUrRIeePPFQWufHuOtvUjuDVVM8Ex9z5m24
- I22HEnZSbhtaw==
-Message-ID: <1c791b60-935c-1e8e-dd1b-4b18fc273c1b@collabora.com>
-Date: Tue, 22 Feb 2022 16:16:48 +0100
+ id 1nMdGU-00BjEx-7M
+ for linux-phy@lists.infradead.org; Tue, 22 Feb 2022 22:04:11 +0000
+Received: by mail-oi1-f180.google.com with SMTP id z7so178541oid.4
+ for <linux-phy@lists.infradead.org>; Tue, 22 Feb 2022 14:04:07 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=ZJIgkPazYMVFLLiCayOvQBp4dxbbz1/q0+2SKBUnq7o=;
+ b=D4PgtQplf0MrG5Zifqjovdad1tgeOvlOBFchlZMk7WYgHYoyBw5eOxBgYPbpVi4J+Z
+ g7PZqEwQJQy+a62EDTwd562FNgT+gTfnIewY5Z4ApHZmWgpBJxXTpPVG+hX0pWP95Dqx
+ k5W4Wl1UPHLejj6KHyKmemsV7UtfxyMaT/ZrsQiaK70RUz0RhVag+ifefQUPTCVDfHpV
+ arqZRuAOejC1plGuQmb3tQIDKNFSnWImqEl6Ep3Rs50aNqNQyYj5n4mVNuIajeqbmulS
+ IjMCll7CdXr3qp1InZkaZmu5WfMsVC2KALsMez3p4TI2q6GQvb3NLSqAZySpcleZAiHq
+ 95xQ==
+X-Gm-Message-State: AOAM530+oiLag4fgV1HxWEZd/Qc2arNnXbqNbrx+bJoYxBcVhftc+w71
+ 4+/1/LL54y2XgaasWxcGiQ==
+X-Google-Smtp-Source: ABdhPJwf7/R5yUDTpF7lQ3A5JN4EudZmrZdxSkEYSXPIW6Turzd6Ou9niX+/eo46eJ+rqdMRs2APdQ==
+X-Received: by 2002:aca:744:0:b0:2ce:ffcf:e794 with SMTP id
+ 65-20020aca0744000000b002ceffcfe794mr2976975oih.221.1645567447283; 
+ Tue, 22 Feb 2022 14:04:07 -0800 (PST)
+Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
+ [66.90.148.213])
+ by smtp.gmail.com with ESMTPSA id u3sm30791518oao.25.2022.02.22.14.04.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 22 Feb 2022 14:04:06 -0800 (PST)
+Received: (nullmailer pid 3671561 invoked by uid 1000);
+ Tue, 22 Feb 2022 22:04:05 -0000
+Date: Tue, 22 Feb 2022 16:04:05 -0600
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+Cc: Rob Herring <robh+dt@kernel.org>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, Lee Jones <lee.jones@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, devicetree@vger.kernel.org,
+ Roger Quadros <rogerq@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH] dt-bindings: update Roger Quadros email
+Message-ID: <YhVd1e8cGidb/T6P@robh.at.kernel.org>
+References: <20220221100701.48593-1-krzysztof.kozlowski@canonical.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.5.1
-Subject: Re: [PATCH v8 04/19] video/hdmi: Add audio_infoframe packing for DP
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>, chunkuang.hu@kernel.org,
- p.zabel@pengutronix.de, airlied@linux.ie, daniel@ffwll.ch,
- robh+dt@kernel.org, maarten.lankhorst@linux.intel.com, mripard@kernel.org,
- tzimmermann@suse.de, matthias.bgg@gmail.com, chunfeng.yun@mediatek.com,
- kishon@ti.com, vkoul@kernel.org, deller@gmx.de, ck.hu@mediatek.com,
- jitao.shi@mediatek.com
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-fbdev@vger.kernel.org, Markus Schneider-Pargmann <msp@baylibre.com>
-References: <20220218145437.18563-1-granquet@baylibre.com>
- <20220218145437.18563-5-granquet@baylibre.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220218145437.18563-5-granquet@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <20220221100701.48593-1-krzysztof.kozlowski@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220222_071656_275219_4E75FA77 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20220222_140410_286380_D0761FA7 
+X-CRM114-Status: GOOD (  11.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,42 +79,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 18/02/22 15:54, Guillaume Ranquet ha scritto:
-> From: Markus Schneider-Pargmann <msp@baylibre.com>
+On Mon, 21 Feb 2022 11:07:01 +0100, Krzysztof Kozlowski wrote:
+> Emails to Roger Quadros TI account bounce with:
+>   550 Invalid recipient <rogerq@ti.com> (#5.1.1)
 > 
-> Similar to HDMI, DP uses audio infoframes as well which are structured
-> very similar to the HDMI ones.
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
 > 
-> This patch adds a helper function to pack the HDMI audio infoframe for
-> DP, called hdmi_audio_infoframe_pack_for_dp().
-> hdmi_audio_infoframe_pack_only() is split into two parts. One of them
-> packs the payload only and can be used for HDMI and DP.
-> 
-> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-
-Hello Guillaume,
-
-I've just noticed that this patch will not apply against the latest linux-next,
-as the include/drm/drm_dp_helper.h header was moved to
-include/drm/dp/drm_dp_helper.h
-
-Can you please rebase for v9?
-
-Thanks,
-Angelo
-
 > ---
->   drivers/video/hdmi.c        | 83 ++++++++++++++++++++++++++++---------
->   include/drm/drm_dp_helper.h |  2 +
->   include/linux/hdmi.h        |  7 +++-
->   3 files changed, 72 insertions(+), 20 deletions(-)
 > 
+> Roger,
+> You should also add a mailmap entry for your inactive emails.
+> 
+> Best regards,
+> Krzysztof
+> ---
+>  .../devicetree/bindings/mfd/ti,j721e-system-controller.yaml     | 2 +-
+>  Documentation/devicetree/bindings/phy/ti,omap-usb2.yaml         | 2 +-
+>  Documentation/devicetree/bindings/usb/ti,j721e-usb.yaml         | 2 +-
+>  Documentation/devicetree/bindings/usb/ti,keystone-dwc3.yaml     | 2 +-
+>  4 files changed, 4 insertions(+), 4 deletions(-)
+> 
+
+Applied, thanks!
 
 -- 
 linux-phy mailing list
