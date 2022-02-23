@@ -4,81 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 842C5C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 10:14:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1D27C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 10:15:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f99NNsJUuqz0uuTSpbz9/cKaWtgf+YSW6S2ThmFOfnk=; b=RuxXf6AZ8Jj6fy
-	E0e+nXDPLnB47mfO2xW8n/esbY+VbhymQ3vciBaWOa8P8tn9UkudHOeq06fIYIyXem/oi3hwDbNvv
-	J0gwimDxyqmTW3ukaBLeCKkm5W7cooxIsKtJFlcz/38A66wLdCXatgg+x+HHSZaZ+lKrQ465ncCt0
-	+FBhsTmtvSc8qrPllA10kwbr62qoyUdyJieUyYXt+OMbHalSfA8vyEZpQtQt6ricv+GqcM8qxKrVZ
-	ml7RZcFuWcQ1aD0Db9KOIkRcShRyZamFfByeGShy7FgW9zRcmSFf/wQ1XMiUfHy/MxYYb5GvJumhk
-	NSFxernt+U3OrDe/FLhw==;
+	List-Owner; bh=JxHdxTTifOML1sSZ3GAW4MmhNoBUtPLrbPmNojhP0QE=; b=VgwRsky8KDFiUS
+	oCwo8gKnOcBAg7RxOwCKhWiX+cZ1vSePZl0+y+9c1gAxvZcAJ1XrtYnLO4BMw2iuWHVMdvKJn7Eo6
+	t49zXYyokGu5tzeiGg6vCm+6DMUPYREyPNI5ZnLN4LxU99a2Utmj4OJN6QVAuGoZVtSDzVhFEPQ/7
+	ef5EyZ238EeSKu9TYcBwJmAcvBMigBvA52f6whrF8Zfij6JHV5ii7yy57JeuNzvr4Lf6U//tq8EEM
+	uUufiL1dWpR/ocn2y4PwK7khoEzSHn7JsLK5aXODoCQRTpCDSKlWesIsLY/tAcKF/wKjSGGApHhFI
+	ba01Kowz5zv9/pdR64yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nMofZ-00DdoR-Vz; Wed, 23 Feb 2022 10:14:49 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1nMogW-00Ddyw-9g; Wed, 23 Feb 2022 10:15:48 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nMofW-00Ddlw-Dw
- for linux-phy@lists.infradead.org; Wed, 23 Feb 2022 10:14:48 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id 29so14130470ljv.10
- for <linux-phy@lists.infradead.org>; Wed, 23 Feb 2022 02:14:45 -0800 (PST)
+ id 1nMogT-00Ddy0-FD
+ for linux-phy@lists.infradead.org; Wed, 23 Feb 2022 10:15:46 +0000
+Received: by mail-lj1-x236.google.com with SMTP id r20so23861154ljj.1
+ for <linux-phy@lists.infradead.org>; Wed, 23 Feb 2022 02:15:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=bKXCxz8PO7s7Qk0bP2QxK8inFr7HkdpbFAomn9XlFeA=;
- b=SYmRoB+AQ9vkH7X2hlq89XsfoKRTQiaSb7C6IsJI6VYl7pRXKKkMv/oWn2bxru2XIm
- Tmo9/csYFFQvykTeLq3CzFwRsHpEl/y4e2QTvoagFVAMhSRKoQP8F8W0Mj+wCbiwEm6j
- BqcIa0Kl7ltWmOASpDJtDjuQTf7ExZS55AiheYC3y9VbtHEKcUEwwbTK5GQA6nHpvEG2
- nhd3PwkecHEbcQSzAJMRTf+yfBnjsCLBGWx5YmiRMeMLxntpQW1gpQLyInIdC9tB3m/f
- MdxyMYdVo9d74lASdXJtQwS6fy+nGDiRmdzxVwXIXXqwIyDIkHW8cTtb0Wched/Ifs7l
- awtg==
+ h=message-id:date:mime-version:user-agent:subject:content-language:to
+ :cc:references:from:in-reply-to:content-transfer-encoding;
+ bh=x0hhqTD7+70BY56UgVvuj1KjLOHy0vwMSq9Dkm9spfM=;
+ b=DPy2VmvLhkyfMACRJLIYku0No2FqHO7MxS8kBZKPz85pBiTzAd9xLJL643CgWMQHnv
+ FaU/t+0EjXgiarKAsvykxE69jIi7MOTyHNLpj8bQrxDTxYTS0VtsSns18Hs9dAdGt185
+ zi3z0bFPR9KPX4mYhRhH5Ebcm3dHo63LskNE2p8KnXRH3FWBw+P/LYwZ2hArNIM0do0x
+ oDMA99CLbSoS+VA6Lv85LSM9gydEO4DRNCgoYjW/HrTX43Ps1pQjcaoWINRtXo+gQLPG
+ Tcu/XT3nE2pq9tDOa7jfBbmVmovuRo/cotueEoS4ua6dB0v6rWC94gcjC6JyujOMLiDO
+ 8PzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=bKXCxz8PO7s7Qk0bP2QxK8inFr7HkdpbFAomn9XlFeA=;
- b=zojhLxGcXPSTnqnxStNbXi5SxRS3WWsomRySpYpJ9eWFAEUEIsD3XjBp9QJSVB0vib
- jkNpd2n01vfn8NVEYHzNdEH3PUQJ96KuhnR9sGn0Ctp/m01AkHTUROqIu3YBIeiP4NeL
- TZC7q55s1D5ZmaKM0QQ27Rw1tYLvhi3V+DmblWVoNApfmMfzvfhlvSJYzWfLz4HacaEV
- xzXC6/dy1sUj3H+P5FKNqTKMV/8fnyP/Hw7OPrjUXF3/ZMxZYM9YVFAIaczCu99L6CIG
- suYvglvB+crikVYzUKMOQigO/C9Afg4fMScM8WmvpGxz8SIMA/xK4BFIh/H2di8YwVnK
- 9DaQ==
-X-Gm-Message-State: AOAM5319S5jNC8ET+8NxoQ9FDnTJuVLNS84QOf6JAFd6COBegl0eOW95
- TmxGaTIBseRnHt8IQX5GgwAeFA==
-X-Google-Smtp-Source: ABdhPJwGkiuibP/yRjiyS+0In7zGWu8vKGOk5v5Yvo9mAgWIYvnW2zN8WqLo+mR88pJiYeolSYmnHw==
-X-Received: by 2002:a05:651c:14f:b0:23d:8a2a:456d with SMTP id
- c15-20020a05651c014f00b0023d8a2a456dmr21255258ljd.196.1645611284505; 
- Wed, 23 Feb 2022 02:14:44 -0800 (PST)
-Received: from eriador.lumag.spb.ru ([94.25.228.217])
- by smtp.gmail.com with ESMTPSA id s9sm2060256ljd.79.2022.02.23.02.14.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Feb 2022 02:14:44 -0800 (PST)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Stanimir Varbanov <svarbanov@mm-sol.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Bjorn Helgaas <bhelgaas@google.com>,
- =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=x0hhqTD7+70BY56UgVvuj1KjLOHy0vwMSq9Dkm9spfM=;
+ b=5ADNPemX/QmgFbAoTkplV5o3BVf/vAHsJ4ZPKGiKukN/DVDdhPvn0cy8pReLecbCHD
+ L7oeVSXlDSnqDpMKkzqiaCxnCR92wIuX6dQk663yLPmaS+nPX6H8kR9ihuNAjSk9pRMt
+ Fxj+y5V/RdE2E8Qem7Dg2qNUfvkYtO5+yS7gg2KTg2l0XXLfFhAiojWMDkq0mW53SVlr
+ RICQzOrJ8P5Mp+RMFJavgZNGUavHFS52Y7qAISGJLrr/yAPeISZ3OTXMnQUah3RPNPDk
+ zd9EsEtJggbKiTIW+2RzZHUMlIO6qdkFxuG3pOSnK6CkfJb0ttsvsTsGDN38Q3at0vNJ
+ ae/Q==
+X-Gm-Message-State: AOAM530JlQIPxfdoUQ/+yQk5HaUvlhK0eLzPjbw+/8+c9p12WF+G3afK
+ 16SxdzO5JnSrh78hGUPn+0cVXg==
+X-Google-Smtp-Source: ABdhPJyBygHlAaG01x0Rytqlew+o7vC1YMULRRZgas+QS2byaE3Kl2J4sxbbDOVziTse83JDVeh7GQ==
+X-Received: by 2002:a05:651c:200c:b0:23b:8267:9ed1 with SMTP id
+ s12-20020a05651c200c00b0023b82679ed1mr20856217ljo.368.1645611343630; 
+ Wed, 23 Feb 2022 02:15:43 -0800 (PST)
+Received: from [192.168.43.7] ([94.25.228.217])
+ by smtp.gmail.com with ESMTPSA id o10sm145880ljh.43.2022.02.23.02.15.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 23 Feb 2022 02:15:43 -0800 (PST)
+Message-ID: <449637fd-322b-35b5-b73b-c72e970a7c59@linaro.org>
+Date: Wed, 23 Feb 2022 13:15:40 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.6.0
+Subject: Re: [PATCH v5 4/5] PCI: qcom: Add interconnect support to 2.7.0/1.9.0
+ ops
+Content-Language: en-GB
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Stanimir Varbanov <svarbanov@mm-sol.com>, Bjorn Helgaas
+ <bhelgaas@google.com>, Krzysztof Wilczy??ski <kw@linux.com>,
  linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: [PATCH v6 4/4] PCI: qcom: Add SM8450 PCIe support
-Date: Wed, 23 Feb 2022 13:14:35 +0300
-Message-Id: <20220223101435.447839-5-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20220223101435.447839-1-dmitry.baryshkov@linaro.org>
-References: <20220223101435.447839-1-dmitry.baryshkov@linaro.org>
-MIME-Version: 1.0
+References: <20211218141024.500952-1-dmitry.baryshkov@linaro.org>
+ <20211218141024.500952-5-dmitry.baryshkov@linaro.org>
+ <Yfv7gh8YycxH2Wtm@ripper> <527f0365-1544-ad73-cf49-b839ae629340@linaro.org>
+ <20220211161208.GB448@lpieralisi> <YhV2EhQvReObX/4J@ripper>
+ <20220223093119.GA26626@lpieralisi>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220223093119.GA26626@lpieralisi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220223_021446_500656_CD2265D5 
-X-CRM114-Status: GOOD (  15.76  )
+X-CRM114-CacheID: sfid-20220223_021545_546591_60377536 
+X-CRM114-Status: GOOD (  16.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,146 +96,70 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On SM8450 platform PCIe hosts do not use all the clocks (and add several
-additional clocks), so expand the driver to handle these requirements.
+On 23/02/2022 12:31, Lorenzo Pieralisi wrote:
+> On Tue, Feb 22, 2022 at 03:47:30PM -0800, Bjorn Andersson wrote:
+>> On Fri 11 Feb 08:12 PST 2022, Lorenzo Pieralisi wrote:
+>>
+>>> On Fri, Feb 04, 2022 at 05:38:33PM +0300, Dmitry Baryshkov wrote:
+>>>> On 03/02/2022 18:57, Bjorn Andersson wrote:
+>>>>> On Sat 18 Dec 06:10 PST 2021, Dmitry Baryshkov wrote:
+>>>>>
+>>>>>> Add optional interconnect support for the 2.7.0/1.9.0 hosts. Set the
+>>>>>> bandwidth according to the values from the downstream driver.
+>>>>>>
+>>>>>
+>>>>> What memory transactions will travel this path? I would expect there to
+>>>>> be two different paths involved, given the rather low bw numbers I
+>>>>> presume this is the config path?
+>>>>
+>>>> I think so. Downstream votes on this path for most of the known SoCs. Two
+>>>> spotted omissions are ipq8074 and qcs404.
+>>>>
+>>>>>
+>>>>> Is there no vote for the data path?
+>>>>
+>>>> CNSS devices can vote additionally on the MASTER_PCI to memory paths:
+>>>> For sm845 (45 = MASTER_PCIE):
+>>>>                  qcom,msm-bus,vectors-KBps =
+>>>>                          <45 512 0 0>,
+>>>>                          <45 512 600000 800000>; /* ~4.6Gbps (MCS12) */
+>>>>
+>>>> On sm8150/sm8250 qca bindings do not contain a vote, but wil6210 does (100 =
+>>>> MASTER_PCIE_1):
+>>>>                  qcom,msm-bus,vectors-KBps =
+>>>>                          <100 512 0 0>,
+>>>>                          <100 512 600000 800000>; /* ~4.6Gbps (MCS12) */
+>>>>
+>>>> For sm8450 there are two paths used by cnss:
+>>>> 		<&pcie_noc MASTER_PCIE_0 &pcie_noc SLAVE_ANOC_PCIE_GEM_NOC>,
+>>>> 		<&gem_noc MASTER_ANOC_PCIE_GEM_NOC &mc_virt SLAVE_EBI1>;
+>>>>
+>>>> with multiple entries per each path.
+>>>>
+>>>> So, I'm not sure about these values.
+>>>
+>>> This discussion is gating the series, please let me know if you want me
+>>> to cherry-pick the other patches or you will resend the series.
+>>>
+>>
+>> Please pick the other patches and I'll work with Dmitry to conclude how
+>> this is actually connected to the busses inside the SoC.
+> 
+> Hi,
+> 
+> can you resend the series without this patch rebased on top of
+> v5.17-rc1 please ?
 
-PCIe0 and PCIe1 hosts use different sets of clocks, so separate entries
-are required.
+Done. I've posted v6.
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/pci/controller/dwc/pcie-qcom.c | 57 ++++++++++++++++++++------
- 1 file changed, 44 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-index 7e97820eb575..0bb6d0e14cbb 100644
---- a/drivers/pci/controller/dwc/pcie-qcom.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom.c
-@@ -161,7 +161,7 @@ struct qcom_pcie_resources_2_3_3 {
- 
- /* 6 clocks typically, 7 for sm8250 */
- struct qcom_pcie_resources_2_7_0 {
--	struct clk_bulk_data clks[7];
-+	struct clk_bulk_data clks[9];
- 	int num_clks;
- 	struct regulator_bulk_data supplies[2];
- 	struct reset_control *pci_reset;
-@@ -195,7 +195,10 @@ struct qcom_pcie_ops {
- struct qcom_pcie_cfg {
- 	const struct qcom_pcie_ops *ops;
- 	unsigned int pipe_clk_need_muxing:1;
-+	unsigned int has_tbu_clk:1;
- 	unsigned int has_ddrss_sf_tbu_clk:1;
-+	unsigned int has_aggre0_clk:1;
-+	unsigned int has_aggre1_clk:1;
- };
- 
- struct qcom_pcie {
-@@ -1146,6 +1149,7 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
- 	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
- 	struct dw_pcie *pci = pcie->pci;
- 	struct device *dev = pci->dev;
-+	unsigned int idx;
- 	int ret;
- 
- 	res->pci_reset = devm_reset_control_get_exclusive(dev, "pci");
-@@ -1159,18 +1163,22 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
- 	if (ret)
- 		return ret;
- 
--	res->clks[0].id = "aux";
--	res->clks[1].id = "cfg";
--	res->clks[2].id = "bus_master";
--	res->clks[3].id = "bus_slave";
--	res->clks[4].id = "slave_q2a";
--	res->clks[5].id = "tbu";
--	if (pcie->cfg->has_ddrss_sf_tbu_clk) {
--		res->clks[6].id = "ddrss_sf_tbu";
--		res->num_clks = 7;
--	} else {
--		res->num_clks = 6;
--	}
-+	idx = 0;
-+	res->clks[idx++].id = "aux";
-+	res->clks[idx++].id = "cfg";
-+	res->clks[idx++].id = "bus_master";
-+	res->clks[idx++].id = "bus_slave";
-+	res->clks[idx++].id = "slave_q2a";
-+	if (pcie->cfg->has_tbu_clk)
-+		res->clks[idx++].id = "tbu";
-+	if (pcie->cfg->has_ddrss_sf_tbu_clk)
-+		res->clks[idx++].id = "ddrss_sf_tbu";
-+	if (pcie->cfg->has_aggre0_clk)
-+		res->clks[idx++].id = "aggre0";
-+	if (pcie->cfg->has_aggre1_clk)
-+		res->clks[idx++].id = "aggre1";
-+
-+	res->num_clks = idx;
- 
- 	ret = devm_clk_bulk_get(dev, res->num_clks, res->clks);
- 	if (ret < 0)
-@@ -1236,6 +1244,9 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
- 		goto err_disable_clocks;
- 	}
- 
-+	/* Wait for reset to complete, required on SM8450 */
-+	usleep_range(1000, 1500);
-+
- 	/* configure PCIe to RC mode */
- 	writel(DEVICE_TYPE_RC, pcie->parf + PCIE20_PARF_DEVICE_TYPE);
- 
-@@ -1509,15 +1520,33 @@ static const struct qcom_pcie_cfg ipq4019_cfg = {
- 
- static const struct qcom_pcie_cfg sdm845_cfg = {
- 	.ops = &ops_2_7_0,
-+	.has_tbu_clk = true,
- };
- 
- static const struct qcom_pcie_cfg sm8250_cfg = {
-+	.ops = &ops_1_9_0,
-+	.has_tbu_clk = true,
-+	.has_ddrss_sf_tbu_clk = true,
-+};
-+
-+static const struct qcom_pcie_cfg sm8450_pcie0_cfg = {
- 	.ops = &ops_1_9_0,
- 	.has_ddrss_sf_tbu_clk = true,
-+	.pipe_clk_need_muxing = true,
-+	.has_aggre0_clk = true,
-+	.has_aggre1_clk = true,
-+};
-+
-+static const struct qcom_pcie_cfg sm8450_pcie1_cfg = {
-+	.ops = &ops_1_9_0,
-+	.has_ddrss_sf_tbu_clk = true,
-+	.pipe_clk_need_muxing = true,
-+	.has_aggre1_clk = true,
- };
- 
- static const struct qcom_pcie_cfg sc7280_cfg = {
- 	.ops = &ops_1_9_0,
-+	.has_tbu_clk = true,
- 	.pipe_clk_need_muxing = true,
- };
- 
-@@ -1628,6 +1657,8 @@ static const struct of_device_id qcom_pcie_match[] = {
- 	{ .compatible = "qcom,pcie-sdm845", .data = &sdm845_cfg },
- 	{ .compatible = "qcom,pcie-sm8250", .data = &sm8250_cfg },
- 	{ .compatible = "qcom,pcie-sc8180x", .data = &sm8250_cfg },
-+	{ .compatible = "qcom,pcie-sm8450-pcie0", .data = &sm8450_pcie0_cfg },
-+	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &sm8450_pcie1_cfg },
- 	{ .compatible = "qcom,pcie-sc7280", .data = &sc7280_cfg },
- 	{ }
- };
 -- 
-2.34.1
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
