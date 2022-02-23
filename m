@@ -4,94 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B770C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 04:02:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB175C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 04:40:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=6qr/BQ1WhXnA1bq+ko1lRx5MGGsRFuZM/t/77J7AApE=; b=BRx1xrZTw+X3IxxNuwgguFpe4r
-	CpDND3JHvY/BXYGx6nwq+BYLFQh9EPsD/y2MksuGnqlodPWFGjG44XM9ZZf3nS7iwWbevm1ILewFS
-	E4t8ytCwr7gJcxaR9ybizB0Tq7r8+Lv4EtsqCbhfN6diWkugyC+fNHEekGHooVoA/ngdlyo76p+ja
-	fHId1H/s87AWCh6UB6l+BZm1El0Rql1Iqks3MNpPr+/FZuempNuI9VWzVy6u4a42DPZpLALLwdpEc
-	JqKK829YSiTFC0SmY0mQ2WYGwXwj0aVkmFrX1KXrWTchTPSu7MfMom9GrIi+aL2ivMqEMNNfRbgny
-	vN3Ro1/Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TKAbCPBAQeGy5Cmv4U/pDrkbHrI5QIwvbl8NCbxXG0Q=; b=UKoGfCkopSQV05
+	BJLAGXGwqzm5eTjmdC/IRcdfa2ec5oN+itfae+NU+N89liQnOH/2JdTzoqaqgRD44JZKiNER7hHl2
+	Js0IvOTHofuwy8cCIURbjfQD+MYCeLWjs7u9L42NCbOcvrjdD/VOr3ar+d9U2tvEzQedUtwZKWQjz
+	rvG86GYsaSgIpCXQ0Ig4T7yU07lJS0ZeADoNZzGnP/rrQu+fQWfG76pf9kZ6kl0WoF3znprMVVi1l
+	1vbU4N0WKqvaX6euS38TzPstjDw8COOwWjthX1fv6MKKw8QnUi6TGgqO23vlz8U7vE+rcPJWU54tb
+	8177C3Ojg9OyB/xVIjcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nMirG-00ChxI-UY; Wed, 23 Feb 2022 04:02:30 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1nMjRo-00CnXb-46; Wed, 23 Feb 2022 04:40:16 +0000
+Received: from mail-oi1-x236.google.com ([2607:f8b0:4864:20::236])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nMin5-00Cg75-LY; Wed, 23 Feb 2022 03:58:14 +0000
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
- by mailnew.nyi.internal (Postfix) with ESMTP id EE53B5801D0;
- Tue, 22 Feb 2022 22:58:10 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute2.internal (MEProxy); Tue, 22 Feb 2022 22:58:10 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- cc:cc:content-transfer-encoding:content-type:date:date:from:from
- :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to; s=fm2; bh=JMnTWrM6JKgfkr
- GrFGJeArt2hBYEa8agk9uD7BDHbyI=; b=V/ehg4cp+DYJvWZyUIhLRI9Q0+0Lto
- 5xT1uq5pyG+iBq4DhutDRT2923luPDAUeowdRjykTVpXvRsfHzxmDW5iPYD43M9J
- CVL6EMsFXz6VESxEYP1VJeDEnA3L9WSCh6K2JeKxdyxXNdZjzSbDvCG8O3UQIMll
- OxLf3/CZlCzhO5eT91eRiM4fvg4bWX9G1LVg+AFZT7A+VSnruip9RyK2ritOpn36
- hDHqsjekp0g5E/4fU0o85zplx5AA6Wrur7+zGoIjRqLyFd6O6/Fo2bEBCdGg0ktv
- W6H2mCJUlGJEZQmv6E1NK4nCiTdfEOos+01/9UaeUyDgMZFeanKiuZvA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=JMnTWrM6JKgfkrGrFGJeArt2hBYEa8agk9uD7BDHb
- yI=; b=QpX+wfTThxe76ooL3wyB3aRq94MnFypg/bIbZQeaVnI9kLnvotdVMuak8
- Cea3G1/qj4wqctujBqrzx/lwNCiOi+UBpczHZBPSHhuZvVXiXZj6diXla5N8DMtV
- WSqRLzsqFZshBtP/d/tU6kz9KVzH9wU0m4Hc/du6yY6e9b9yj7+Nnu8qmBfSpFwk
- 6mxh9b2u6jcM/5NBllMugT2cu9kOIsDk90HHFQW+Hni3jgVjUbC8mKi3cRMXWuRa
- gC1U/WnR1N7ZFMPDWYCkzN8vlyILG5Y/S4LzEg2G7TFX8kGCvd9Mfph/sBUtqpD0
- tGoclawcq9Q/JCEY6p229Ch5xt55w==
-X-ME-Sender: <xms:0rAVYuj3wjPs4RIwOYYtxiaZ72e8-JAVop-pz4shWArf6_eVBi5UVA>
- <xme:0rAVYvAZlDajc4AqxQGD5aQnviCQM3x1zLGjmIW-nQyfSvJkbOlj8S6Ha6KlSwUQj
- v8beZRq6E9fV0zb1Q>
-X-ME-Received: <xmr:0rAVYmED_UzmE5KqXxZsPJotaWyQyEfcXWGazJrnf8Mequu_PboMqYXnldBguYwO6pvzHveE7jeOGIhvyfe0U9_jSoh4o7_V-cOvB6uSyeU5Nl_obleFVP15AA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrkeelgdeigecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucggtf
- frrghtthgvrhhnpefgveffteelheffjeeukedvkedviedtheevgeefkeehueeiieeuteeu
- gfettdeggeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhroh
- hmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:0rAVYnQCE5ngqyaI4zQBMS50f_0gE3XOnLd0nWSt9r7h-JEwAgdaiA>
- <xmx:0rAVYrwHgFjSVSPx2NMP7WXaw0f9F0l08SF7k4GnIe5y9B8JW7L_iQ>
- <xmx:0rAVYl7PrF_HdraK3cQ33534AnR-oJF2NuFJ8qauvVp_iaQ8jvUNFQ>
- <xmx:0rAVYp51rRlWWFNgTo0BcpMkyyzViwJXqS6lKj4s-p6AwOGGxAeV0A>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 22 Feb 2022 22:58:10 -0500 (EST)
-Subject: Re: [PATCH v10 15/18] phy: sun4i-usb: Add support for the H616 USB PHY
-To: Andre Przywara <andre.przywara@arm.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>
-Cc: Rob Herring <robh@kernel.org>, Ondrej Jirman <megous@megous.com>,
- Icenowy Zheng <icenowy@aosc.io>, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-phy@lists.infradead.org
-References: <20220211122643.1343315-1-andre.przywara@arm.com>
- <20220211122643.1343315-16-andre.przywara@arm.com>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <e309c65d-7859-d9c8-148d-033bb0d28c8c@sholland.org>
-Date: Tue, 22 Feb 2022 21:58:09 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1nMjRm-00CnX6-5k
+ for linux-phy@lists.infradead.org; Wed, 23 Feb 2022 04:40:15 +0000
+Received: by mail-oi1-x236.google.com with SMTP id y7so16987275oih.5
+ for <linux-phy@lists.infradead.org>; Tue, 22 Feb 2022 20:40:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dsRICSn/v/bxa2UPxGZA6ohcDIrS1JILrK1mA8xJ1sM=;
+ b=MtKTSE6hOugw+wabSEoE2OSjauzQDZM2iYlBI9ljINbu2I9Aha4c7jS0rxVXF9r/2c
+ KfuX+1zlgoTw1C5N3iC7v8gJfjcb6YA9a08PcPBJsgTBzwHppWGzG/MgV5lndag4aVMm
+ ADOLlpH84QVnLYS2FJBureW8Vq378WM9/eJRqFtlYrXZV99VqTd6BysLABjSDlxTmFqf
+ MZ4N3kzH+3VPG9lBvZ6w+LiYq10sZADNn4Ql11zzwy2pjqgupMrHx0QZ2zLFQPS71ZGi
+ 3ENz4sOagvf1cDTdkYZ9zD/RA8xdooL3iQzyllskpt2L1TtHdM5u1HPo5fqLKCgyPq4u
+ p0zg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dsRICSn/v/bxa2UPxGZA6ohcDIrS1JILrK1mA8xJ1sM=;
+ b=7rCogiHsGmOBBTrTLB10H7tHs1pkkTN5eOrHIUwhHs7ykJRMM+Y992aTAy14Xbkal9
+ atZQt0AsrvwTCqDwitWQffcsJZLOga3WHxl5zXg64BM0irWbQhVrj+0xMR7h5T3YKbUp
+ wTUBi/VSiIetdIXKmsJFOptqCjshDFSSk7nhvOUdMf5n23sCZ3hxn7+mNZJcPfhAMVLt
+ nKeDyKzSVfjQxdQSPOj0tWaNmOPZeOA1ZlB1aN6AUzbNDnhr5wDk461Tll5qCvE4LX2Q
+ Yn12R7amV3c8FLTVm0n3lU1SjwfaWVl3VlYkhaG683UI2SQ9Kdf7mrCdr01F4nzbV7JZ
+ RS2w==
+X-Gm-Message-State: AOAM533CNTVWfbD5mo2oz1zGt4RPRhMmja/dAiFx5FUeB96bL0vVaSve
+ lhaF0HsWRQpjT4Nbv49S6kunrg==
+X-Google-Smtp-Source: ABdhPJxGR18ifwlVddz7t3QMNx9RO1Y7RolZ4RAfZ5MQCWauQAWAk0VK+DWH7WoyX2k6g75V7LvcKg==
+X-Received: by 2002:aca:b206:0:b0:2d3:fa53:4fab with SMTP id
+ b6-20020acab206000000b002d3fa534fabmr3626425oif.174.1645591213041; 
+ Tue, 22 Feb 2022 20:40:13 -0800 (PST)
+Received: from ripper.. ([2600:1700:a0:3dc8:205:1bff:fec0:b9b3])
+ by smtp.gmail.com with ESMTPSA id x22sm6250033ooo.20.2022.02.22.20.40.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 22 Feb 2022 20:40:12 -0800 (PST)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] dt-bindings: phy: qcom,
+ qmp: add sc8180x and sc8280xp ufs compatibles
+Date: Tue, 22 Feb 2022 20:42:12 -0800
+Message-Id: <20220223044213.3776600-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.33.1
 MIME-Version: 1.0
-In-Reply-To: <20220211122643.1343315-16-andre.przywara@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220222_195811_843251_54987A65 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20220222_204014_269433_88184B6B 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,18 +90,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/11/22 6:26 AM, Andre Przywara wrote:
-> The USB PHY used in the Allwinner H616 SoC inherits some traits from its
-> various predecessors: it has four full PHYs like the H3, needs some
-> extra bits to be set like the H6, and puts SIDDQ on a different bit like
-> the A100. Plus it needs this weird PHY2 quirk.
-> 
-> Name all those properties in a new config struct and assign a new
-> compatible name to it.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Add compatible for the UFS PHY found in the Qualcomm SC8280XP platform
+and document the required clocks for this and the SC8180X UFS PHY.
 
-Reviewed-by: Samuel Holland <samuel@sholland.org>
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+index e417cd667997..455317dee5ea 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+@@ -32,6 +32,7 @@ properties:
+       - qcom,sc8180x-qmp-pcie-phy
+       - qcom,sc8180x-qmp-ufs-phy
+       - qcom,sc8180x-qmp-usb3-phy
++      - qcom,sc8280xp-qmp-ufs-phy
+       - qcom,sdm845-qhp-pcie-phy
+       - qcom,sdm845-qmp-pcie-phy
+       - qcom,sdm845-qmp-ufs-phy
+@@ -280,6 +281,8 @@ allOf:
+               - qcom,sdm845-qmp-ufs-phy
+               - qcom,sm8150-qmp-ufs-phy
+               - qcom,sm8250-qmp-ufs-phy
++	      - qcom,sc8180x-qmp-ufs-phy
++	      - qcom,sc8280xp-qmp-ufs-phy
+     then:
+       properties:
+         clocks:
+-- 
+2.33.1
+
 
 -- 
 linux-phy mailing list
