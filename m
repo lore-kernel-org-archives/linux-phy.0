@@ -4,59 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06D37C43217
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 09:31:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23ED4C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 10:14:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HlceyCxvS84XbQBSq+D1GjRtUbMJf5v6oF+2kMKo2MA=; b=OmH+Ek8St9Tsly
-	iuS6e/FNErnW/FurD+5E2gQiCsnyUyvvQNNiyoxsl7Vd5crhwAFUjiRaT7H71FJaPfYABreksgGEa
-	xPkXvxXit7jnRh75jNHKkiME8aP9q8+KyTnNfS195OfgmdUgnQrgrI8QhEfVyD8LQXo3DmkDk936N
-	GmTUH+/gYNZ+mT567kHDILVzYb7cR+3sj96k4quBhXkmsQcAT+AEu0dxZP7036JJD2IPpBXT4KoAU
-	meWjaWAv3pfocufOGIr4xtTL2veArVpJInol9xlAmGLXPX6MMNbu5hA6mqAgImhBFckSdWb4QcCMK
-	fWyETRGqYEL2N9F353BQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+GZI8nKwY8wtuwaeFQrQw431U0ha70ro5KlhzKAZYXY=; b=sosRnDCkjssPPJ
+	FpO6CncAkmF7zmQUT9d49W0Jqu8/JwxW577z5tijpZasrDLdn8mxyEwCo05kwqjuH2Tf+Y+wC38j6
+	Xt1KRQI2M3Zyi411vnHLvcoGrjXJBf1aD2g1RddM1kwupJvpaeUgwBxFX9MBaVCUCnXXqHliEl4hJ
+	+ic+Wrqsp5Z6anfFPNgqX38WncsB/OgqBP6td0QOp1JBL8M10hdCS0J+UJp6cPRZdXSXKZ4mot/So
+	H8AaUK2Gv2Q818pJfTovXe7nvS83s6w95k/PnMpOAWNsFjwg4hbQDwZCZh5QZXLjsjwgzu9J8rzU8
+	N/UR4TfKpi8Z+9iDBgrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nMnzh-00DViR-Bi; Wed, 23 Feb 2022 09:31:33 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nMnzc-00DVgu-UY
- for linux-phy@lists.infradead.org; Wed, 23 Feb 2022 09:31:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 08A8F1042;
- Wed, 23 Feb 2022 01:31:27 -0800 (PST)
-Received: from lpieralisi (e121166-lin.cambridge.arm.com [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 598CD3F5A1;
- Wed, 23 Feb 2022 01:31:25 -0800 (PST)
-Date: Wed, 23 Feb 2022 09:31:19 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+	id 1nMofS-00Ddkq-L0; Wed, 23 Feb 2022 10:14:42 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1nMofQ-00DdjE-4o
+ for linux-phy@lists.infradead.org; Wed, 23 Feb 2022 10:14:41 +0000
+Received: by mail-lf1-x134.google.com with SMTP id i11so30144759lfu.3
+ for <linux-phy@lists.infradead.org>; Wed, 23 Feb 2022 02:14:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iX1ZeLF9Gp+VwIS5LsBskWHUnS0HsS8oiMTD54YQjTs=;
+ b=cHqVkKRV86o2eEV1UeWuU0HCYKCfTt9NSvJOlpYKPl9IlGrDSQVWQ2k3yMroblPKmO
+ aiEQ+4gOuPLw8djmpMroDGxy/oquR4pBFG+k0k3ihUBDpieRhzH8OObso5GHcaojKG6N
+ a1oM9JdZVss44vjANB5HRt6fSaUMJu9i9HVk/se5jtsEl+Mib/OgHCLteFifmNrMtsnO
+ rz0ns9X/xWzChBnUHskS02pqU91bZP+SQ6Ueu61op+g/pfhlYLWb9vaJNokp0V8RmCvD
+ GuEacjQ0K3xIj0AVHArdBDZGxB2McOvCIkadx0PUx+4LnEoTMmcxs0eZG+RlovygskK4
+ RHpQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iX1ZeLF9Gp+VwIS5LsBskWHUnS0HsS8oiMTD54YQjTs=;
+ b=roTonewJ+XRQBDi3nVFlecz8eo0hGsB2Wvwz4T7eO62LsQhqJfeHw2MCOim08OHNgE
+ aYML3nxXkJAQl6NT9wDdirvkuWcEB0rQgFdxyglWbFNPbYcmBvMvw21psIKrhjAp8f9R
+ 1ZaN51zcMPxpEQwbtpEqR0W2unjZy9CbkbqLn3tELIukECklxSLG7yHXNLmlt3MC7wFe
+ CIpBLBDHBw5hLcuWRBoqe5QbEhkh+adxCe+D8ZsTfY4kNK92jr/4qzNsy2ZCVukEkZDS
+ tvxJP37PyLDBMq+iv+4lmWXpj3vDJn/pmhSPr4UYwLc7j9BjLWtWOGsRCsg5IjsFW6vm
+ VJfw==
+X-Gm-Message-State: AOAM5307536DAX0hWk687G/oXa4mVCPPPobIaag7jA0Hh73B2AJ5ZqJb
+ E3hnmESxbffHlD2ZXtblLoVVcg==
+X-Google-Smtp-Source: ABdhPJwWGshHSvrjvjn+t34cea1aJ9jvn22/Fm42XQYDA16HH37CePJGkQRrS5SaeSEtyshh8BdztA==
+X-Received: by 2002:ac2:562b:0:b0:443:76b5:cb35 with SMTP id
+ b11-20020ac2562b000000b0044376b5cb35mr19392663lff.208.1645611278030; 
+ Wed, 23 Feb 2022 02:14:38 -0800 (PST)
+Received: from eriador.lumag.spb.ru ([94.25.228.217])
+ by smtp.gmail.com with ESMTPSA id s9sm2060256ljd.79.2022.02.23.02.14.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 23 Feb 2022 02:14:37 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
  Stanimir Varbanov <svarbanov@mm-sol.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Krzysztof Wilczy??ski <kw@linux.com>, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 4/5] PCI: qcom: Add interconnect support to
- 2.7.0/1.9.0 ops
-Message-ID: <20220223093119.GA26626@lpieralisi>
-References: <20211218141024.500952-1-dmitry.baryshkov@linaro.org>
- <20211218141024.500952-5-dmitry.baryshkov@linaro.org>
- <Yfv7gh8YycxH2Wtm@ripper>
- <527f0365-1544-ad73-cf49-b839ae629340@linaro.org>
- <20220211161208.GB448@lpieralisi> <YhV2EhQvReObX/4J@ripper>
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Cc: Bjorn Helgaas <bhelgaas@google.com>,
+ =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH v6 0/4] qcom: add support for PCIe on SM8450 platform
+Date: Wed, 23 Feb 2022 13:14:31 +0300
+Message-Id: <20220223101435.447839-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YhV2EhQvReObX/4J@ripper>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220223_013129_122170_BB329D20 
-X-CRM114-Status: GOOD (  37.64  )
+X-CRM114-CacheID: sfid-20220223_021440_217164_35FF2642 
+X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,137 +94,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Feb 22, 2022 at 03:47:30PM -0800, Bjorn Andersson wrote:
-> On Fri 11 Feb 08:12 PST 2022, Lorenzo Pieralisi wrote:
-> 
-> > On Fri, Feb 04, 2022 at 05:38:33PM +0300, Dmitry Baryshkov wrote:
-> > > On 03/02/2022 18:57, Bjorn Andersson wrote:
-> > > > On Sat 18 Dec 06:10 PST 2021, Dmitry Baryshkov wrote:
-> > > > 
-> > > > > Add optional interconnect support for the 2.7.0/1.9.0 hosts. Set the
-> > > > > bandwidth according to the values from the downstream driver.
-> > > > > 
-> > > > 
-> > > > What memory transactions will travel this path? I would expect there to
-> > > > be two different paths involved, given the rather low bw numbers I
-> > > > presume this is the config path?
-> > > 
-> > > I think so. Downstream votes on this path for most of the known SoCs. Two
-> > > spotted omissions are ipq8074 and qcs404.
-> > > 
-> > > > 
-> > > > Is there no vote for the data path?
-> > > 
-> > > CNSS devices can vote additionally on the MASTER_PCI to memory paths:
-> > > For sm845 (45 = MASTER_PCIE):
-> > >                 qcom,msm-bus,vectors-KBps =
-> > >                         <45 512 0 0>,
-> > >                         <45 512 600000 800000>; /* ~4.6Gbps (MCS12) */
-> > > 
-> > > On sm8150/sm8250 qca bindings do not contain a vote, but wil6210 does (100 =
-> > > MASTER_PCIE_1):
-> > >                 qcom,msm-bus,vectors-KBps =
-> > >                         <100 512 0 0>,
-> > >                         <100 512 600000 800000>; /* ~4.6Gbps (MCS12) */
-> > > 
-> > > For sm8450 there are two paths used by cnss:
-> > > 		<&pcie_noc MASTER_PCIE_0 &pcie_noc SLAVE_ANOC_PCIE_GEM_NOC>,
-> > > 		<&gem_noc MASTER_ANOC_PCIE_GEM_NOC &mc_virt SLAVE_EBI1>;
-> > > 
-> > > with multiple entries per each path.
-> > > 
-> > > So, I'm not sure about these values.
-> > 
-> > This discussion is gating the series, please let me know if you want me
-> > to cherry-pick the other patches or you will resend the series.
-> > 
-> 
-> Please pick the other patches and I'll work with Dmitry to conclude how
-> this is actually connected to the busses inside the SoC.
+There are two different PCIe controllers and PHYs on SM8450, one having
+one lane and another with two lanes. Add support for both PCIe
+controllers
 
-Hi,
+Changes since v5:
+ - Rebase on 5.17-rc1
+ - Drop external dependencies. The pipe_clk rework takes too much time
+   to be reviewed. SM8450 works with the current pipe_clk multiplexing
+   code. Fixing pipe_clk will be handled separately.
+ - Drop interconnect support. It will be handled separately for all
+   generations requiring interconnect usage.
 
-can you resend the series without this patch rebased on top of
-v5.17-rc1 please ?
+Changes since v4:
+ - Add PCIe1 support
+ - Change binding accordingly, to use qcom,pcie-sm8450-pcie0 and
+   qcom,pcie-sm8450-pcie1 compatibility strings
+ - Rebase on top of (pending) pipe_clock cleanup/rework patchset
 
-Thanks,
-Lorenzo
+Changes since v3:
+ - Fix pcie gpios to follow defined schema as noted by Rob
+ - Fix commit message according to Bjorn's suggestions
 
-> 
-> Thanks,
-> Bjorn
-> 
-> > Lorenzo
-> > 
-> > > > > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> > > > > ---
-> > > > >   drivers/pci/controller/dwc/pcie-qcom.c | 11 +++++++++++
-> > > > >   1 file changed, 11 insertions(+)
-> > > > > 
-> > > > > diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> > > > > index d8d400423a0a..55ac3caa6d7d 100644
-> > > > > --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> > > > > +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> > > > > @@ -12,6 +12,7 @@
-> > > > >   #include <linux/crc8.h>
-> > > > >   #include <linux/delay.h>
-> > > > >   #include <linux/gpio/consumer.h>
-> > > > > +#include <linux/interconnect.h>
-> > > > >   #include <linux/interrupt.h>
-> > > > >   #include <linux/io.h>
-> > > > >   #include <linux/iopoll.h>
-> > > > > @@ -167,6 +168,7 @@ struct qcom_pcie_resources_2_7_0 {
-> > > > >   	struct clk *pipe_clk_src;
-> > > > >   	struct clk *phy_pipe_clk;
-> > > > >   	struct clk *ref_clk_src;
-> > > > > +	struct icc_path *path;
-> > > > >   };
-> > > > >   union qcom_pcie_resources {
-> > > > > @@ -1121,6 +1123,10 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
-> > > > >   	if (IS_ERR(res->pci_reset))
-> > > > >   		return PTR_ERR(res->pci_reset);
-> > > > > +	res->path = devm_of_icc_get(dev, "pci");
-> > > > 
-> > > > The paths are typically identified using a string of the form
-> > > > <source>-<destination>.
-> > > > 
-> > > > 
-> > > > I don't see the related update to the DT binding for the introduction of
-> > > > the interconnect.
-> > > > 
-> > > > Regards,
-> > > > Bjorn
-> > > > 
-> > > > > +	if (IS_ERR(res->path))
-> > > > > +		return PTR_ERR(res->path);
-> > > > > +
-> > > > >   	res->supplies[0].supply = "vdda";
-> > > > >   	res->supplies[1].supply = "vddpe-3v3";
-> > > > >   	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(res->supplies),
-> > > > > @@ -1183,6 +1189,9 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
-> > > > >   	if (pcie->cfg->pipe_clk_need_muxing)
-> > > > >   		clk_set_parent(res->pipe_clk_src, res->phy_pipe_clk);
-> > > > > +	if (res->path)
-> > > > > +		icc_set_bw(res->path, 500, 800);
-> > > > > +
-> > > > >   	ret = clk_bulk_prepare_enable(res->num_clks, res->clks);
-> > > > >   	if (ret < 0)
-> > > > >   		goto err_disable_regulators;
-> > > > > @@ -1241,6 +1250,8 @@ static void qcom_pcie_deinit_2_7_0(struct qcom_pcie *pcie)
-> > > > >   	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
-> > > > >   	clk_bulk_disable_unprepare(res->num_clks, res->clks);
-> > > > > +	if (res->path)
-> > > > > +		icc_set_bw(res->path, 0, 0);
-> > > > >   	/* Set TCXO as clock source for pcie_pipe_clk_src */
-> > > > >   	if (pcie->cfg->pipe_clk_need_muxing)
-> > > > > -- 
-> > > > > 2.34.1
-> > > > > 
-> > > 
-> > > 
-> > > -- 
-> > > With best wishes
-> > > Dmitry
+Changes since v2:
+ - Remove unnecessary comment in struct qcom_pcie_cfg
+
+Changes since v1:
+ - Fix capitalization/wording of PCI patch subjects
+ - Add missing gen3x1 specification to PHY table names
+
+
+Dmitry Baryshkov (4):
+  dt-bindings: pci: qcom: Document PCIe bindings for SM8450
+  PCI: qcom: Remove redundancy between qcom_pcie and qcom_pcie_cfg
+  PCI: qcom: Add ddrss_sf_tbu flag
+  PCI: qcom: Add SM8450 PCIe support
+
+ .../devicetree/bindings/pci/qcom,pcie.txt     | 22 ++++-
+ drivers/pci/controller/dwc/pcie-qcom.c        | 93 ++++++++++++-------
+ 2 files changed, 83 insertions(+), 32 deletions(-)
+
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
