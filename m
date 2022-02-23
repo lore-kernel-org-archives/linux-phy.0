@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A941CC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 03:42:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61DA9C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 03:45:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,85 +13,85 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=sPGQzD0b6pS1YxmWgcIFu4Toxup/TzWgrYWPCn/1T94=; b=dqFiDEP9HrwpRdeH12gcWx/s7L
-	vJ7NJDb2t+0wbfS/C1h+xywC3CEU6ydLBVFKMyK3LwlgPOJtLC6GCjE63wQSkfAnDMaX+hfVNF8qt
-	laIcZy0qynjnoo233O1jF/lw9kA84WPddaKpMA2Gz9RvNZK99UDxlVeJhwBKO2zcseM9USoONUHWo
-	Dh7WtiIt1hnFdiJavwuNJ75sGXoVjj9hICbodyEX3A6WYlFx5Hbw4Tt8+EIlH3WtTH+QaAx54ocnJ
-	BYlXFwSgkCZy8/exfnz6m/iNqqw/oGmqO0K89kokq3vK+BJBF/uIyww/GrO5ca5AtT6kxVaPt6wL7
-	X0D8erdA==;
+	bh=j7JloKF7OzAJZbakTR685M4My07VLZiz5m4XY9DbsiE=; b=FuS8YKERrBzNzW/ClNWl/s4Vjq
+	edD/+NHOBcs2TdqSIwBcJfpOXP2Jh8VSTEiLqMReMDltDvmpiAvH9LbmnmfIz7ytnq+E2dRRqqkfG
+	IDlzXzt7Hrih8IMw7BaRz6bcsEF0VAXCuSLQ41Un1AU4pb2GgdY3g1b7gNzUyT+d78UphLXjeESAy
+	wV2nqGATUER93M+cQI1Z/ci8Eu683Nwh+F4H8EyHfzsZbfPwgpcqV1lMWEyaUUdNBGviE1pGJZYG8
+	y8Y/Dh4+lm9dla8lCgTzGMWrSFzGFzkiGyTvBGGQkllWtsvm7WEmc1M2dc4umyY2RuQ9T5I+147w4
+	fAHq275A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nMiYM-00CaI0-VT; Wed, 23 Feb 2022 03:42:58 +0000
+	id 1nMiaU-00Cax9-N4; Wed, 23 Feb 2022 03:45:10 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nMiXi-00CZzE-CP; Wed, 23 Feb 2022 03:42:20 +0000
+ id 1nMia0-00CaqK-Gc; Wed, 23 Feb 2022 03:44:42 +0000
 Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
- by mailnew.nyi.internal (Postfix) with ESMTP id A24D2580207;
- Tue, 22 Feb 2022 22:42:17 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id A28AD58020A;
+ Tue, 22 Feb 2022 22:44:39 -0500 (EST)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute2.internal (MEProxy); Tue, 22 Feb 2022 22:42:17 -0500
+ by compute2.internal (MEProxy); Tue, 22 Feb 2022 22:44:39 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  cc:cc:content-transfer-encoding:content-type:date:date:from:from
  :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to; s=fm2; bh=yh5oiXgQfk3oTq
- k3JJphdKYAq5z0QRmGrTaoXUwh8dY=; b=XFQyzDyQnbr8GPgWEC0QohCixgGBA5
- QyKJv7rhS5iKSD6xvnEeucOopxsu5wDZzjlbctjyuYemdoRU1e/cITDhx1NkMP3n
- AMM6nbqXHiwYSI8lU3p/qmoyZJYYm5TTo+wie9kO19O/cLBP+PdEEqfbca60myY8
- WmxALNTIM5CIG5NScDHBlaDiS5xwwpArioYnw9ZokBV55/GZgyooEh8Eq+5Wcac/
- bSDCTCzfLv7EXrJcEZe4N2pcFjFWQaBPOVFwBttHqZ2+3/zfkkIr4pIuk6nFlyej
- wIyEZtiIsNCvIgLvFpo1XOcswLamNLhygfk59TXk4za3Td9EkfNuRlyQ==
+ :reply-to:sender:subject:subject:to:to; s=fm2; bh=LAq/x+sjX1h3RY
+ deEBmP+TCHY+nFbfG+PQIlZr63FDY=; b=elHl0afiXEziLWdOnRbl7oUM0gdPzJ
+ QYZnjZmp2R7XAKpY2tQNincaBNWe4NaeSK+222l77EKsegdmxlt5oH1X/WDLnJWl
+ B4BfZhC7gOg4LKkXVXb2sD0Qs8qy9bbxzAt5q4QkN5n88IrQ5xaQ/V13leDpOEtC
+ WmvxOtqhlCfRsXFo4DLrk/7Yl1yaqTW72mgK2vZXoF2wk9gXGlZMa8Q9BzHNmQBT
+ phmDa3YagziTnNa3V5rZ+TTkHkt5QYrqe4pv44rcQ/2cBqN5W5ibxLSSwajhL1MK
+ Kmux8pjQ7E7fwEeK5KH4kL3DhvYNblYZJSg1aVbZpvpNPg1d7AOaeJKw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:cc:content-transfer-encoding
  :content-type:date:date:from:from:in-reply-to:in-reply-to
  :message-id:mime-version:references:reply-to:sender:subject
  :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=yh5oiXgQfk3oTqk3JJphdKYAq5z0QRmGrTaoXUwh8
- dY=; b=KWvruJy0TUDUb0FnKQ4Jckq/i6SoiMzTAYZTh3cQ/p/Tkks+fgLOx1wj1
- jdRYFNFV4yvSuHkAMe/A3f5RTM7ajobiU9LoSSwwYWQqdBh7y3122oKcB+kdl2f2
- Ccm6Jbv3QXC6w4UNl19iM1IEnJDTv15SQkjOX4BInjYZNnly9nCdlyMq9/IYmrxk
- CRspxCW256sMqLxPhPtR8AsHRKVvJVHtN564mDe2uzoN1vX7ZS425M5wBPA78ocY
- ZCb4AmJo7eYyiqdlXMmwj1znMmbAD4djeXRe9SNTnf5XEaNpeL5IzBuAO4L5sWjC
- 8VQscogV525381bV3zzPE5H+Q2BsQ==
-X-ME-Sender: <xms:Ga0VYo6C868iMQD9fhmuDoKehvdBJBU1xBdrlUJpEmIyKlsWSnHxrA>
- <xme:Ga0VYp5G2Hj3NeMI9UTMXLdmh69c7hVZhzoFODd8vq93eYxYO_KK3LQyGyyGfhFs3
- jXy3XXEC4g4Eap6yw>
-X-ME-Received: <xmr:Ga0VYnddkNgN5pz0x_nEnWd0I7RJs4QvWIF5IrPtKlWj9SEub5tUV-AMWIO_di8z-vQfVXkKVE6Dn03b-yIKvSehLOZZvbAQbRB_QoghDNwp7L0iJbJOJ55OsQ>
+ :x-sasl-enc; s=fm2; bh=LAq/x+sjX1h3RYdeEBmP+TCHY+nFbfG+PQIlZr63F
+ DY=; b=fHdn1PYE+BCM6+WUUC4nqAaHKOeKuL0gl8LceZPMWT4fk8TpmnlikKL5z
+ fT46FJKlitdG3Rg7Ycmt1v836klQMWjOK7X8SuOtjxoH9O8QSwOGSb+HIlgMRAyR
+ p33OViRrbv/etwYwCyIycpJUoJ4a0+mCE6OqGWZz2jB5viB7c3FKKmc076FkNrWq
+ fM3jvp1seCdiBKy7etExc+HTvOJP1gOee7BAI2n0nV7S+G2lfZEaoxNUDSXkM44A
+ jwGExwP3YQ7e1mkGyV2JFc1et0x6KCB34vYboKolUDZlN4kgwzBYncMq8W6Xy+cZ
+ fEb/UEL7pn+PpXsv3xPuFiSVz4p5w==
+X-ME-Sender: <xms:p60VYqjE462gq5F5hrEjkVgZADtwHafHh2Y6H7Y_RVfbVgzyO3Wziw>
+ <xme:p60VYrDHf--zdazfym0pzgMHI2HvpadEC9EziZ5I9OrrwjjUBUwq7tUIU6s_ithGI
+ loSOpdkO29PasbXLA>
+X-ME-Received: <xmr:p60VYiF-cHSWoJxQo0UbJVPl_vlXnsbntJBQ_JvTqDcSw9kREw7rCTiQRnam-FIunKGAeNtbzu6zws4EkEszNgrOA6qhAV0WrDTX6qTY4wg7qG37T4U8hubg4Q>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrkeelgdeiudcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
  lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucggtf
  frrghtthgvrhhnpefgveffteelheffjeeukedvkedviedtheevgeefkeehueeiieeuteeu
- gfettdeggeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhroh
+ gfettdeggeenucevlhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhroh
  hmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:Ga0VYtIhCIp61ylZRk-QWE0-2mDUXPB_l6FgFT-7gUqsl_V3zoB3JQ>
- <xmx:Ga0VYsLWtJnoWg-6sDvf9IWi0woFhwIEIm3Qb0dVuJnerfs5G2NOMA>
- <xmx:Ga0VYuxYsKIc-Tae8bqSDsbTwiKZfzSFK7gpzWyyl1srsbgBsQaoLQ>
- <xmx:Ga0VYqx-_rgsNT2bGwqtKJZAKFfHwR72ga8KOxQUjOgfpeHNwvNeGg>
+X-ME-Proxy: <xmx:p60VYjTGhs7sqjKp-UEQ9kNQECvHjoy_hcCiy1Ydkitl3LFyoy-mhw>
+ <xmx:p60VYnzgqBHYDJipdgKohR_K5EMY8xGF4VEremP6tKhp1bqoAvZY2g>
+ <xmx:p60VYh6ZzTkoArf6KIir4xCJ-fCRitXdXNPo_0iyeY8uVIjbjabeRw>
+ <xmx:p60VYqoiGYE3uKZQqzimgK7rjV6TQFbF1XfBsFKYjTsGjeu61Tlk7Q>
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 22 Feb 2022 22:42:16 -0500 (EST)
-Subject: Re: [PATCH v10 12/18] phy: sun4i-usb: Rework HCI PHY (aka.
- "pmu_unk1") handling
-To: Andre Przywara <andre.przywara@arm.com>
-Cc: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>, Rob Herring <robh@kernel.org>,
- Ondrej Jirman <megous@megous.com>, Icenowy Zheng <icenowy@aosc.io>,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
+ 22 Feb 2022 22:44:38 -0500 (EST)
+Subject: Re: [PATCH v10 13/18] phy: sun4i-usb: Allow reset line to be shared
+To: Andre Przywara <andre.przywara@arm.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>
+Cc: Rob Herring <robh@kernel.org>, Ondrej Jirman <megous@megous.com>,
+ Icenowy Zheng <icenowy@aosc.io>, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-phy@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>
 References: <20220211122643.1343315-1-andre.przywara@arm.com>
- <20220211122643.1343315-13-andre.przywara@arm.com>
+ <20220211122643.1343315-14-andre.przywara@arm.com>
 From: Samuel Holland <samuel@sholland.org>
-Message-ID: <40b6855b-7fac-e9bf-af9b-885d54530054@sholland.org>
-Date: Tue, 22 Feb 2022 21:42:15 -0600
+Message-ID: <aac11817-5c3c-631e-ad10-0fecf83e4c41@sholland.org>
+Date: Tue, 22 Feb 2022 21:44:38 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20220211122643.1343315-13-andre.przywara@arm.com>
+In-Reply-To: <20220211122643.1343315-14-andre.przywara@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220222_194218_562404_1A7A0D92 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20220222_194440_691798_672978B5 
+X-CRM114-Status: GOOD (  10.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,21 +109,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 2/11/22 6:26 AM, Andre Przywara wrote:
-> As Icenowy pointed out, newer manuals (starting with H6) actually
-> document the register block at offset 0x800 as "HCI controller and PHY
-> interface", also describe the bits in our "PMU_UNK1" register.
-> Let's put proper names to those "unknown" variables and symbols.
+> The USB HCIs (and PHYs?) in Allwinner's newer generation SoCs (H616)
+> rely on the reset line of USB PHY 2 to be de-asserted, even when only
+> one of the other PHYs is actually in use.
+
+Thankfully, so far this appears to be a quirk of H616 only.
+
+> To make those ports work, we include this reset line in the HCIs' resets
+> property, which requires this line to be shareable.
 > 
-> While we are at it, generalise the existing code by allowing a bitmap
-> of bits to clear and set, to cover newer SoCs: The A100 and H616 use a
-> different bit for the SIDDQ control.
+> Change the call to allocate the reset line to mark it as shared, to
+> enable the other ports on those SoCs.
 > 
 > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 
 Acked-by: Samuel Holland <samuel@sholland.org>
-Tested-by: Samuel Holland <samuel@sholland.org>
-
-Tested on D1, which also requires this patch.
 
 -- 
 linux-phy mailing list
