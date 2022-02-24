@@ -4,69 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6F0EC43217
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Feb 2022 16:08:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F4021C433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Feb 2022 12:33:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hlyqP8utrXk16q1XGi4udT9ggmMy2GR816MerXA+uWI=; b=pvSUwFy4YSAE4P
-	WsqkKHFOpsWdG63BwXI7Upiwpf8rURWkYO+DMaxqgvvoXNB1hyRdVCodyqJnSIFFkoGJBDL5L60LC
-	3jtr3TtKDUPt3c3ZSUFc6PsE0FOfQpQnp9g66CKo0xhmbHaDocgGCXPbXd8dsY1MVdfdu5+HJVnng
-	4LTttKnApzXw2WDB/erVF+XFxgIL1MAFmxZYZFiHaUM4UJ/rwzpbGEbxak2cVQkM2iCZZmmxQWPp5
-	759CXB/TF/HmcLk9GN6gDy3EFDA1Y/60lFndqS4me+PlfFUKfGGaHtwEDx3kFfnqLz2W+KW28bbEE
-	xHrUSsE/wbqG9k3L3/Uw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cW4shHgzkpOmp7vAD8wO/o87YlUz7UMV3C5oHfQMMME=; b=onjNotABtRUt8k
+	6z6yYIMK1yFbJx5qqR3Ji9KxMRPRFM5sEZCrPg/8Wd8kXxcs6yX8zJ3BMkMmBd7vUBXtIwCxuiF0c
+	prLxMcXl6emZaXX1i6nnKIl9d+cLF+jt/PMc6vNpL/0laQ35wb85wmmG28Y3EjS1Nj+ZxuPCxod7b
+	ginHo74sbGgUUpKYQPrkyeNpjNv12VLVeSk3mMEIiUifgOZl3ZGyAOAHINyFeVahOvSZhTbZJSfzb
+	QRTPukUuPvSldmkzanQfpx20uFvDBBpKZeFWwxbN9IZEkl5g2d3tjX25Tjh/vq0NqijPC25h9mnfD
+	i4g9oo0OJ6sdLF5Su/ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nMuBx-00FFG6-77; Wed, 23 Feb 2022 16:08:37 +0000
-Received: from mail-oi1-f173.google.com ([209.85.167.173])
+	id 1nNDJ0-000hmx-DF; Thu, 24 Feb 2022 12:33:10 +0000
+Received: from mail-pf1-x42c.google.com ([2607:f8b0:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nMuBu-00FFFK-JC
- for linux-phy@lists.infradead.org; Wed, 23 Feb 2022 16:08:36 +0000
-Received: by mail-oi1-f173.google.com with SMTP id j24so16631682oii.11
- for <linux-phy@lists.infradead.org>; Wed, 23 Feb 2022 08:08:33 -0800 (PST)
+ id 1nNDIx-000hlY-Js
+ for linux-phy@lists.infradead.org; Thu, 24 Feb 2022 12:33:08 +0000
+Received: by mail-pf1-x42c.google.com with SMTP id l19so1750328pfu.2
+ for <linux-phy@lists.infradead.org>; Thu, 24 Feb 2022 04:33:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Uhqs7VB4RRUY7J0XXRbx7LXxMKz2KfECenS4KOr6xXI=;
+ b=S2Vf0RYPXrLy1meYNbj0MlVf+rxsZCVo9rIwPYSB9gJ6S5SYMAh2+CxyH7aT8MxeCO
+ dG8YQYAMoOCI/bT8oW3od3qZtQ9PzGMqzBfDkCrtglJFkC/+7ub+TbPnhFtW8mYrb23/
+ zBeEVeuMsoq7MNg7p74+vABGuT790eFGGmOu780oEtfRK4x5u546ovA1JU8Xm68k7fHe
+ ZMslKDPkEsB6k/FKtgdi7g0w36Ys9ssAVaebqZ8Jc+Fli3GAaNhIGl/ynY8WlqXmqKXi
+ zATDRMYfxSNP5j3WbCiWA7cqbThaduhq2O7mFEag0NgYKPiaX4ZYaq9Z4U4ekcww1l+H
+ F9uA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
- :message-id;
- bh=VlLFX4EqJjMes8RQHVfh/XZ71GjRDL6L1TFesEM7wzE=;
- b=yKeSjW1tsvsnObabEL5XoNGFadiC13bUFVjfNX9tTt0EyP/1pf91VQtfHXFOvbyAaC
- gF+GJRVrA8b95Mweduc90HvyO9WuLM5DLDIAeWb22ty/PZM2671FK8zGRI8z0PZz7JcA
- hkpaaA/SjLacY3UIxYo7Wwz5cfZ5Uj6d2r8KaWaR6gyoluRYD1ViXfGjd0Joo4bms/Qf
- NeRDN47Q/yC7620Hnr3h1BJ2Y4xtRi+4G/+I1XEOMY2x1NOOW9NX3MXRbhoggXNXXJSC
- Jut/AG95kWG8d/Xe6bCAHRPhzFx4M/2W/ibn0SdtSwgL///G1BoTweFgPOu61ljKPXcl
- aOhw==
-X-Gm-Message-State: AOAM530BPpBi0GxEX6rrBz+dSMOmsv/UV9x6QZ9wgi833rpAkBG115fq
- pg1xUwfTBzW01avaErjxaQWrJbQp+w==
-X-Google-Smtp-Source: ABdhPJwJKDQ6JefrLm3QtPQRxB642eYP2C3FBUp8cNjO1ona+VQ8wvG7WgEvKHU/GtcuAWfkCx9uoA==
-X-Received: by 2002:a05:6808:2101:b0:2d4:2b3a:9acb with SMTP id
- r1-20020a056808210100b002d42b3a9acbmr4960666oiw.231.1645632513102; 
- Wed, 23 Feb 2022 08:08:33 -0800 (PST)
-Received: from robh.at.kernel.org (66-90-148-213.dyn.grandenetworks.net.
- [66.90.148.213])
- by smtp.gmail.com with ESMTPSA id bc16sm10542255oib.26.2022.02.23.08.08.31
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Uhqs7VB4RRUY7J0XXRbx7LXxMKz2KfECenS4KOr6xXI=;
+ b=TF5qIxPVs5yATvnfqT18wsZ/OP/uNR2xxK27R/MaaNXDaRyIcZae/t2jwz0ATj3Fhn
+ 2E0+sC8h1lGx2vU1MkqUUDoYxqCFkPet07Zcccr+BMqm5TD1hJjYFjPaWeCZ/G/bKD9T
+ u8kGGgs8lHosIAj35pUZfjaIiQOXQfZHJzFkUShFETno6cSWtFN0bCVfuZJVw2DUAnLv
+ RQ6DksAFfL/xjudALbBX1QXile7h1ulwuF8WypmVndbaz56ICnHKwVnSPuDmO+c8/iVC
+ C2wsxOUmSQbdLLLOPqj57hhPbg6B8s9cGy7GCOrz2PqcG7iFAMCQ1UXxx84keG34fwcC
+ gU+A==
+X-Gm-Message-State: AOAM531gPTAl8SWx9+IcihsNEJlEoKKAQj3ywiodnvFwDN5hbStFv53m
+ bTTxBX1Er3KC0aLrAqwcpBLaTw==
+X-Google-Smtp-Source: ABdhPJxE9MbifRXJoWthHwSxtlJ7G04wYvzC85z9VEDcnm5iRZLyuDKyBimvDL1t5y8moHqRV9v0bQ==
+X-Received: by 2002:a63:114c:0:b0:373:a701:3736 with SMTP id
+ 12-20020a63114c000000b00373a7013736mr2134339pgr.117.1645705985897; 
+ Thu, 24 Feb 2022 04:33:05 -0800 (PST)
+Received: from localhost.localdomain ([223.179.129.209])
+ by smtp.gmail.com with ESMTPSA id
+ ep5-20020a17090ae64500b001bc56af507dsm6237567pjb.47.2022.02.24.04.32.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Feb 2022 08:08:32 -0800 (PST)
-Received: (nullmailer pid 1021548 invoked by uid 1000);
- Wed, 23 Feb 2022 16:08:31 -0000
-From: Rob Herring <robh@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>
-In-Reply-To: <20220223044213.3776600-1-bjorn.andersson@linaro.org>
-References: <20220223044213.3776600-1-bjorn.andersson@linaro.org>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,
- qmp: add sc8180x and sc8280xp ufs compatibles
-Date: Wed, 23 Feb 2022 10:08:31 -0600
-Message-Id: <1645632511.468790.1021547.nullmailer@robh.at.kernel.org>
+ Thu, 24 Feb 2022 04:33:05 -0800 (PST)
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+To: linux-arm-msm@vger.kernel.org
+Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com, agross@kernel.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, robh+dt@kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH 1/2] dt-bindings: phy: qcom,
+ qmp: Mark '#clock-cells' as a 'optional' property
+Date: Thu, 24 Feb 2022 18:02:47 +0530
+Message-Id: <20220224123248.67073-1-bhupesh.sharma@linaro.org>
+X-Mailer: git-send-email 2.35.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220223_080834_655622_CFBD3EE5 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20220224_043307_744610_9F8AD0F2 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,83 +86,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 22 Feb 2022 20:42:12 -0800, Bjorn Andersson wrote:
-> Add compatible for the UFS PHY found in the Qualcomm SC8280XP platform
-> and document the required clocks for this and the SC8180X UFS PHY.
-> 
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
+Since '#clock-cells' is not a required property for several
+QCoM boards supporting qmp-phy(s) (for e.g. sm8150, sm8250 or sm8350 SoC
+based boards), mark it as an optional property instead.
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+This fixes the following '$ make dtbs_check' warning(s):
 
-yamllint warnings/errors:
-./Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml:284:1: [error] syntax error: found character '\t' that cannot start any token (syntax)
+sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
+  '#clock-cells' is a required property
 
-dtschema/dtc warnings/errors:
-make[1]: *** Deleting file 'Documentation/devicetree/bindings/phy/qcom,qmp-phy.example.dts'
-Traceback (most recent call last):
-  File "/usr/local/bin/dt-extract-example", line 46, in <module>
-    binding = yaml.load(open(args.yamlfile, encoding='utf-8').read())
-  File "/usr/local/lib/python3.8/dist-packages/ruamel/yaml/main.py", line 434, in load
-    return constructor.get_single_data()
-  File "/usr/local/lib/python3.8/dist-packages/ruamel/yaml/constructor.py", line 119, in get_single_data
-    node = self.composer.get_single_node()
-  File "_ruamel_yaml.pyx", line 706, in _ruamel_yaml.CParser.get_single_node
-  File "_ruamel_yaml.pyx", line 724, in _ruamel_yaml.CParser._compose_document
-  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
-  File "_ruamel_yaml.pyx", line 773, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 850, in _ruamel_yaml.CParser._compose_sequence_node
-  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
-  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
-  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
-  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
-  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
-  File "_ruamel_yaml.pyx", line 773, in _ruamel_yaml.CParser._compose_node
-  File "_ruamel_yaml.pyx", line 852, in _ruamel_yaml.CParser._compose_sequence_node
-  File "_ruamel_yaml.pyx", line 904, in _ruamel_yaml.CParser._parse_next_event
-ruamel.yaml.scanner.ScannerError: while scanning a plain scalar
-  in "<unicode string>", line 283, column 17
-found a tab character that violates indentation
-  in "<unicode string>", line 284, column 1
-make[1]: *** [Documentation/devicetree/bindings/Makefile:25: Documentation/devicetree/bindings/phy/qcom,qmp-phy.example.dts] Error 1
-make[1]: *** Waiting for unfinished jobs....
-./Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml:  while scanning a plain scalar
-  in "<unicode string>", line 283, column 17
-found a tab character that violates indentation
-  in "<unicode string>", line 284, column 1
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml: ignoring, error parsing file
-make: *** [Makefile:1398: dt_binding_check] Error 2
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 1 -
+ 1 file changed, 1 deletion(-)
 
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/patch/1596499
-
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit.
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+index 9e0f60e682c4..746a929c63bb 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+@@ -115,7 +115,6 @@ patternProperties:
+ required:
+   - compatible
+   - reg
+-  - "#clock-cells"
+   - "#address-cells"
+   - "#size-cells"
+   - ranges
+-- 
+2.35.1
 
 
 -- 
