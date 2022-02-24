@@ -4,78 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A265C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Feb 2022 12:33:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6ED44C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Feb 2022 13:57:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QpdyDuXTBZUNiKpdwYlmwzhylJzxnKF4YqnWVJ7MnWI=; b=KYmBFw8h2xOqFx
-	rlBuB7OeuSslTiwnZPnUYy9khoCv4xqwOUUkD5da0JzCl3t2X4zh7VBYNqVDqeSj3OFR8rNAQlUom
-	VLWNSsdfRu6kEcFOshlUvEETbsEKZyVPkZu6lzzG6ak2aH3KqDv0vahZ4rINRrzny7IMdx2G+hqYh
-	deccvs7r5MmL0fleMYnxRkBEh5uB2S4/+Ny1LVDzXZUQ3I7SeXSenBTF5UvbJdGCVyMzYiCgywN0F
-	WsvTWFS4V3xNNw973Xns9hctr4tP+iZ69T567diDeB62GbsBvk6evNJ71mlJLWBrS4Jgt10njDDb3
-	iE1qZfarwd86cV8rVIBw==;
+	List-Owner; bh=CZbovuz0mwFPtIIAAMr6fzCNlXzt+M4CpM5Sva5QeYo=; b=3jFrmbX4mSH1Xq
+	/SadIfw3WJVBwXO2XevbfAo8NrTj7XVK0gE5UoIbvcY8NQFr7p9OQPcEw+UrkMDKj8Dt/0hcixWf5
+	CnConJnYWeLT7JrspPcAoADcebEpdzPEu97D/Ir2TOW/TLzqZlw2NXWFaXDXTOvyWl1sT/jTWyJDb
+	BH26edW8EK6+gC2HbTLZ4Xv2N6OKEvkXbytWF8V0HfqPQlUdb4tRoiEYZYzZcsxBNDAamvY7WcjgI
+	bMnhuw95E38IKi6K2zdg7aG0SL2Pcm/88A81BjUhSV/buC1Db4Obj7Y6UhHSsWaLcHP6GQ++p7NRl
+	eftTZzi59MKAs7+DbVEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nNDJK-000huK-RT; Thu, 24 Feb 2022 12:33:30 +0000
-Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
+	id 1nNEcl-0012GV-Nv; Thu, 24 Feb 2022 13:57:39 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nNDJ2-000hnW-KG
- for linux-phy@lists.infradead.org; Thu, 24 Feb 2022 12:33:14 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id q11so1557749pln.11
- for <linux-phy@lists.infradead.org>; Thu, 24 Feb 2022 04:33:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=ndo93wIjxvP8kHvXABnHYUiq6F07JiSbtJBf2BQ08oo=;
- b=BZYuyaV4jmz2dR1NyMZzPD4ZhoiPdfWB/5CClaaUzQhwZw5M9ufL/dcF+OSHfN9XJY
- RKYvoovcWx6cpD3AlhbbuVtZuhNbUTyZhq07db/1IzRc9cD/z0jZJ6xYKQOe9zEBGwh1
- Yo9nW0v1PFDweGcEAna9EOkTPhCqtY/9hyxJvjonbISFD2KLQjNQiazEW+9JlvbBwGYH
- /bY3MLIh2Gueb7RHuQH7k7nSf1OmiRJfiQuKWHg3zTIrns7Ko3UZrxeRsjGxHIDeFvYH
- SQdfE19sEozOwunVDfo1gHFgR1hJ0TYRPkuJqx/zbnfmOai9I9VYjO0f1jzfFszSnhBt
- FIGA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ndo93wIjxvP8kHvXABnHYUiq6F07JiSbtJBf2BQ08oo=;
- b=tTjQ8ha4KrG/oaD2p93lk9JTsQ7PWMPNKO5akZXKDc07f4pq4Pu08iY6aP1GIrCakp
- IorNuwxmv7wGjOu2n5mnxOumlVge/2BrvHzkHowQBnj7UxyKwoejNflXrooDmHvMXka8
- xHZuy+lwzRAbwmTSW0fwmoyK1vLvolWr9mUJvgNL3mtAfUXjPYUspS+XZLLFIz+dA4tO
- XiDvi3r6yQm7CVLcxWQ0TN++nXUUyhQB2cg9LTE31mR7rsqzOFi+z0JZ1UXQ79snxfg0
- wXiuLYMw9bDum+KthqZ890oMPHBTWvssmVSjgUA/bLTV0J+cpJuMwJCm1txDZh0UCeih
- GWlw==
-X-Gm-Message-State: AOAM531JUtfK5YOAn52AgGpK+c8Yrq2h10KgOGLc4Pwf4I9wPxfY/ysQ
- Hy5BNq73JeSSYKypoU+U9PtqPhegIimsxw==
-X-Google-Smtp-Source: ABdhPJx3F0jqYy8AAvIIkDv1/khHxroXYxJdxMJUxEBDrXj1JojYslfhxmsN58K8sPwmvtaZBZNJkg==
-X-Received: by 2002:a17:902:f647:b0:14f:c37d:34ec with SMTP id
- m7-20020a170902f64700b0014fc37d34ecmr2350409plg.6.1645705991469; 
- Thu, 24 Feb 2022 04:33:11 -0800 (PST)
-Received: from localhost.localdomain ([223.179.129.209])
- by smtp.gmail.com with ESMTPSA id
- ep5-20020a17090ae64500b001bc56af507dsm6237567pjb.47.2022.02.24.04.33.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Feb 2022 04:33:11 -0800 (PST)
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-To: linux-arm-msm@vger.kernel.org
-Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com, agross@kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, robh+dt@kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH 2/2] dt-bindings: phy: qcom,
- qmp: Describe 'vdda-max-microamp' & 'vdda-pll-max-microamp' properties
-Date: Thu, 24 Feb 2022 18:02:48 +0530
-Message-Id: <20220224123248.67073-2-bhupesh.sharma@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220224123248.67073-1-bhupesh.sharma@linaro.org>
-References: <20220224123248.67073-1-bhupesh.sharma@linaro.org>
+ id 1nNEcS-00125g-Gm; Thu, 24 Feb 2022 13:57:22 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: kholk11) with ESMTPSA id 7CFBE1F4520E
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+ s=mail; t=1645711034;
+ bh=FU23JamNvvn6c127qa/j3ThUY5jmoMZZrJoFmPK46lk=;
+ h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+ b=j9j905lQZJV6y6Q+ixrGg1d5bX0EWryPbz0rqodSFAm/E1N89Di2GwfyVXuAK4CD/
+ risj/WhwnIVEOq7nucZuGfLQ8YMgWH3n0gBke9gATVqtNrfSjazSWRlo6h+IG9IeZJ
+ udW+un6ZncU4ehSOA7rYZyOP5dwafIK7P02F2mkkm62uPDPl711zJAOeQB4g7sw96r
+ YkMXzt6CePkHxPKyL1hAI+ykjsIXQEKmpkWX3zEtid4R7SvgDjX6DzQtTSdcRR8OqJ
+ qC4G5tyRmYV+p7C9xa2EG500xHtMtBrSrgtMvCyeXEXOFLD0Mq3ePM8TW44k1t7rz1
+ pb4HzXsgSufXQ==
+Message-ID: <03a5591a-574f-ec07-68c8-0e3f97a0c68f@collabora.com>
+Date: Thu, 24 Feb 2022 14:57:11 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.1
+Subject: Re: [PATCH v8 15/19] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+Content-Language: en-US
+To: Guillaume Ranquet <granquet@baylibre.com>, chunkuang.hu@kernel.org,
+ p.zabel@pengutronix.de, airlied@linux.ie, daniel@ffwll.ch,
+ robh+dt@kernel.org, maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+ tzimmermann@suse.de, matthias.bgg@gmail.com, chunfeng.yun@mediatek.com,
+ kishon@ti.com, vkoul@kernel.org, deller@gmx.de, ck.hu@mediatek.com,
+ jitao.shi@mediatek.com
+Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-fbdev@vger.kernel.org, Markus Schneider-Pargmann <msp@baylibre.com>,
+ kernel test robot <lkp@intel.com>
+References: <20220218145437.18563-1-granquet@baylibre.com>
+ <20220218145437.18563-16-granquet@baylibre.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220218145437.18563-16-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220224_043312_683254_06975CA9 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20220224_055720_928645_4E812943 
+X-CRM114-Status: GOOD (  29.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,51 +73,415 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since a few boards based on QCoM qmp phy use the
-'vdda-max-microamp' & 'vdda-pll-max-microamp' properties to
-describe the ufs phy nodes, add them to the dt-bindings doc as well.
+Il 18/02/22 15:54, Guillaume Ranquet ha scritto:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
+> 
+> This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
+> 
+> It supports the mt8195, the embedded DisplayPort units. It offers
+> hot-plug-detection and DisplayPort 1.4 with up to 4 lanes.
+> 
+> The driver creates a child device for the phy. The child device will
+> never exist without the parent being active. As they are sharing a
+> register range, the parent passes a regmap pointer to the child so that
+> both can work with the same register range. The phy driver sets device
+> data that is read by the parent to get the phy device that can be used
+> to control the phy properties.
+> 
+> This driver is based on an initial version by
+> Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Reported-by: kernel test robot <lkp@intel.com>
+> ---
+>   drivers/gpu/drm/mediatek/Kconfig       |    7 +
+>   drivers/gpu/drm/mediatek/Makefile      |    2 +
+>   drivers/gpu/drm/mediatek/mtk_dp.c      | 2358 ++++++++++++++++++++++++
+>   drivers/gpu/drm/mediatek/mtk_dp_reg.h  |  568 ++++++
+>   drivers/gpu/drm/mediatek/mtk_drm_drv.c |    1 +
+>   drivers/gpu/drm/mediatek/mtk_drm_drv.h |    1 +
+>   6 files changed, 2937 insertions(+)
+>   create mode 100644 drivers/gpu/drm/mediatek/mtk_dp.c
+>   create mode 100644 drivers/gpu/drm/mediatek/mtk_dp_reg.h
+> 
 
-This fixes the following '$ make dtbs_check' warning(s):
 
-sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
-  'vdda-max-microamp', 'vdda-pll-max-microamp' do not match any of
-   the regexes: '^phy@[0-9a-f]+$', 'pinctrl-[0-9]+'
+Sorry for the double review, but I've just noticed something critical:
 
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>
-Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
----
- Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 ++++++++
- 1 file changed, 8 insertions(+)
+the new version of mtk_dp_train_handler is severely misbehaving, producing
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index 746a929c63bb..a481442c897a 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -92,6 +92,14 @@ properties:
-     minItems: 1
-     maxItems: 3
- 
-+  vdda-max-microamp:
-+    description:
-+      Specifies max. load that can be drawn from phy supply.
-+
-+  vdda-pll-max-microamp:
-+    description:
-+      Specifies max. load that can be drawn from pll supply.
-+
-   vdda-phy-supply:
-     description:
-       Phandle to a regulator supply to PHY core block.
--- 
-2.35.1
+non-functional display.
 
+I also went on with some effort to give you a solution for this,
+which implies to also tick the DP_STATE with the DP_TRAIN_STATE;
+
+This is my take on it:
+
+static int mtk_dp_train_handler(struct mtk_dp *mtk_dp)
+
+{
+
+	bool training_done = false;
+
+	short max_retry = 50;
+
+	int ret = 0;
+
+
+
+	do {
+
+		switch (mtk_dp->train_state) {
+
+		case MTK_DP_TRAIN_STATE_STARTUP:
+
+			mtk_dp_state_handler(mtk_dp);
+
+			mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKCAP;
+
+			break;
+
+
+
+		case MTK_DP_TRAIN_STATE_CHECKCAP:
+
+			if (mtk_dp_parse_capabilities(mtk_dp)) {
+
+				mtk_dp->train_info.check_cap_count = 0;
+
+				mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKEDID;
+
+			} else {
+
+				mtk_dp->train_info.check_cap_count++;
+
+
+
+				if (mtk_dp->train_info.check_cap_count >
+
+				    MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT) {
+
+					mtk_dp->train_info.check_cap_count = 0;
+
+					mtk_dp->train_state = MTK_DP_TRAIN_STATE_DPIDLE;
+
+					ret = -ETIMEDOUT;
+
+				}
+
+			}
+
+			break;
+
+
+
+		case MTK_DP_TRAIN_STATE_CHECKEDID:
+
+			mtk_dp->audio_enable =
+
+					!mtk_dp_edid_parse_audio_capabilities(
+
+						mtk_dp, &mtk_dp->info.audio_caps);
+
+
+
+			if (!mtk_dp->audio_enable)
+
+				memset(&mtk_dp->info.audio_caps, 0,
+
+				       sizeof(mtk_dp->info.audio_caps));
+
+
+
+			mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING_PRE;
+
+			break;
+
+
+
+		case MTK_DP_TRAIN_STATE_TRAINING_PRE:
+
+			mtk_dp_state_handler(mtk_dp);
+
+			mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING;
+
+			break;
+
+
+
+		case MTK_DP_TRAIN_STATE_TRAINING:
+
+			ret = mtk_dp_train_start(mtk_dp);
+
+			if (ret == 0) {
+
+				mtk_dp_video_mute(mtk_dp, true);
+
+				mtk_dp_audio_mute(mtk_dp, true);
+
+				mtk_dp->train_state = MTK_DP_TRAIN_STATE_NORMAL;
+
+				mtk_dp_fec_enable(mtk_dp, mtk_dp->has_fec);
+
+			} else if (ret != -EAGAIN) {
+
+				mtk_dp->train_state = MTK_DP_TRAIN_STATE_DPIDLE;
+
+			}
+
+			break;
+
+		case MTK_DP_TRAIN_STATE_NORMAL:
+
+			mtk_dp_state_handler(mtk_dp);
+
+			training_done = true;
+
+			break;
+
+		case MTK_DP_TRAIN_STATE_DPIDLE:
+
+			break;
+
+		default:
+
+			break;
+
+		}
+
+
+
+		if (ret) {
+
+			if (ret == -EAGAIN)
+
+				continue;
+
+			/*
+
+			 * If we get any other error number, it doesn't
+
+			 * make any sense to keep iterating.
+
+			 */
+
+			break;
+
+		}
+
+	} while (!training_done || --max_retry);
+
+
+
+	return ret;
+
+}
+
+> +static void mtk_dp_train_handler(struct mtk_dp *mtk_dp)
+> +{
+> +	int ret = 0;
+> +	int i = 50;
+> +
+> +	do {
+> +		if (mtk_dp->train_state == MTK_DP_TRAIN_STATE_NORMAL)
+> +			continue;
+> +
+> +		switch (mtk_dp->train_state) {
+> +		case MTK_DP_TRAIN_STATE_STARTUP:
+> +			mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKCAP;
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_CHECKCAP:
+> +			if (mtk_dp_parse_capabilities(mtk_dp)) {
+> +				mtk_dp->train_info.check_cap_count = 0;
+> +				mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKEDID;
+> +			} else {
+> +				mtk_dp->train_info.check_cap_count++;
+> +
+> +				if (mtk_dp->train_info.check_cap_count >
+> +					MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT) {
+> +					mtk_dp->train_info.check_cap_count = 0;
+> +					mtk_dp->train_state = MTK_DP_TRAIN_STATE_DPIDLE;
+> +					ret = -ETIMEDOUT;
+> +				}
+> +			}
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_CHECKEDID:
+> +			mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING_PRE;
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_TRAINING_PRE:
+> +			mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING;
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_TRAINING:
+> +			ret = mtk_dp_train_start(mtk_dp);
+> +			if (!ret) {
+> +				mtk_dp_video_mute(mtk_dp, true);
+> +				mtk_dp->train_state = MTK_DP_TRAIN_STATE_NORMAL;
+> +				mtk_dp_fec_enable(mtk_dp, mtk_dp->has_fec);
+> +			} else if (ret != -EAGAIN) {
+> +				mtk_dp->train_state = MTK_DP_TRAIN_STATE_DPIDLE;
+> +			}
+> +
+> +			ret = 0;
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_NORMAL:
+> +			break;
+> +		case MTK_DP_TRAIN_STATE_DPIDLE:
+> +			break;
+> +		default:
+> +			break;
+> +		}
+> +	} while (ret && i--);
+> +
+> +	if (ret)
+> +		drm_err(mtk_dp->drm_dev, "Train handler failed %d\n", ret);
+> +}
+> +
+> +static void mtk_dp_video_enable(struct mtk_dp *mtk_dp, bool enable)
+> +{
+> +	if (enable) {
+> +		mtk_dp_set_tx_out(mtk_dp);
+> +		mtk_dp_video_mute(mtk_dp, false);
+> +	} else {
+> +		mtk_dp_video_mute(mtk_dp, true);
+> +	}
+> +}
+> +
+> +static void mtk_dp_video_config(struct mtk_dp *mtk_dp)
+> +{
+> +	mtk_dp_mn_overwrite_disable(mtk_dp);
+> +
+> +	mtk_dp_set_msa(mtk_dp);
+> +
+> +	mtk_dp_set_color_depth(mtk_dp, mtk_dp->info.depth);
+> +	mtk_dp_set_color_format(mtk_dp, mtk_dp->info.format);
+> +}
+> +
+> +static void mtk_dp_state_handler(struct mtk_dp *mtk_dp)
+> +{
+> +	switch (mtk_dp->state) {
+> +	case MTK_DP_STATE_INITIAL:
+> +		mtk_dp_video_mute(mtk_dp, true);
+> +		mtk_dp->state = MTK_DP_STATE_IDLE;
+> +		break;
+> +
+> +	case MTK_DP_STATE_IDLE:
+> +		if (mtk_dp->train_state == MTK_DP_TRAIN_STATE_NORMAL)
+> +			mtk_dp->state = MTK_DP_STATE_PREPARE;
+> +		break;
+> +
+> +	case MTK_DP_STATE_PREPARE:
+> +		mtk_dp_video_config(mtk_dp);
+> +		mtk_dp_video_enable(mtk_dp, true);
+> +
+> +		mtk_dp->state = MTK_DP_STATE_NORMAL;
+> +		break;
+> +
+> +	case MTK_DP_STATE_NORMAL:
+> +		if (mtk_dp->train_state != MTK_DP_TRAIN_STATE_NORMAL) {
+> +			mtk_dp_video_mute(mtk_dp, true);
+> +			mtk_dp->state = MTK_DP_STATE_IDLE;
+> +		}
+> +		break;
+> +
+> +	default:
+> +		break;
+> +	}
+> +}
+> +
+
+Move mtk_dp_train_handler() here.....
+
+
+> +static void mtk_dp_bridge_atomic_enable(struct drm_bridge *bridge,
+> +					struct drm_bridge_state *old_state)
+> +{
+> +	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
+> +	struct drm_connector_state *conn_state;
+> +	struct drm_crtc *crtc;
+> +	struct drm_crtc_state *crtc_state;
+
+	int ret;
+
+> +
+> +	mtk_dp->conn = drm_atomic_get_new_connector_for_encoder(old_state->base.state,
+> +								bridge->encoder);
+> +	if (!mtk_dp->conn) {
+> +		drm_err(mtk_dp->drm_dev,
+> +			"Can't enable bridge as connector is missing\n");
+> +		return;
+> +	}
+> +
+> +	memcpy(mtk_dp->connector_eld, mtk_dp->conn->eld, MAX_ELD_BYTES);
+> +
+> +	conn_state =
+> +		drm_atomic_get_new_connector_state(old_state->base.state, mtk_dp->conn);
+> +	if (!conn_state) {
+> +		drm_err(mtk_dp->drm_dev,
+> +			"Can't enable bridge as connector state is missing\n");
+> +		return;
+> +	}
+> +
+> +	crtc = conn_state->crtc;
+> +	if (!crtc) {
+> +		drm_err(mtk_dp->drm_dev,
+> +			"Can't enable bridge as connector state doesn't have a crtc\n");
+> +		return;
+> +	}
+> +
+> +	crtc_state = drm_atomic_get_new_crtc_state(old_state->base.state, crtc);
+> +	if (!crtc_state) {
+> +		drm_err(mtk_dp->drm_dev,
+> +			"Can't enable bridge as crtc state is missing\n");
+> +		return;
+> +	}
+> +
+> +	mtk_dp_parse_drm_mode_timings(mtk_dp, &crtc_state->adjusted_mode);
+> +	if (!mtk_dp_parse_capabilities(mtk_dp)) {
+> +		drm_err(mtk_dp->drm_dev,
+> +			"Can't enable bridge as nothing is plugged in\n");
+> +		return;
+> +	}
+> +
+> +	/* Training */
+
+The following is very similar to your previous version of this function:
+
+	ret = mtk_dp_train_handler(mtk_dp);
+
+	if (ret) {
+
+		drm_err(mtk_dp->drm_dev, "Train handler failed %d\n", ret);
+
+		return;
+
+	}
+
+
+
+	mtk_dp->enabled = true;
+
+	mtk_dp_update_plugged_status(mtk_dp)
+}
+
+
+> +	mtk_dp_train_handler(mtk_dp);
+> +	mtk_dp_state_handler(mtk_dp);
+> +	mtk_dp->enabled = true;
+> +}
+
+Regards,
+Angelo
 
 -- 
 linux-phy mailing list
