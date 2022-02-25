@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AFC9C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 08:58:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BB35C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 09:02:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M1+AMq4K3zbledNHMqWSUGrE/g5/mr6ah3K7qoLj+mE=; b=YW5YHoFDVqYlxD
-	CCNmVelkjVaOpaPG8iYA9LjPActtAXoxzKoJsQrBQ/Cqhj539U5neb9ytS5iuXQO+MxvYAL/WEUH+
-	hIIrGE3Q9ab9f9NIvTRyINqT5xWSroUSSjFr6rIUkpLP/lC48PixB15F+rdDFUa7AUHPw45TPz63d
-	WrXaYqUj/qmibdZD4aOKvlkS9g51r1bHMDo5tg/Jux6C8Jr+JCL0S9A4mxuGidbg8LkfL75lSUOKn
-	yf23wi3rWFYM1HOsXfh2+YfJZqZofB6WdqbIYEpLO5Rg9WgiB+iuVsAJD+xSX+wCePsoTF6t9h654
-	7vtalz4d7LCDyNzhFnaA==;
+	List-Owner; bh=UuCHfbnLUux9+mbNcIv3YtBwEMWwy1dHMwltPAk/9Mw=; b=tBqkB9xUgjfz0j
+	jTTY+o+QP8CxiBn6zYT0KwykdmMsuTpQelO7E1z+kwAkWRg0tTYwpJ3MinpDLx3jTPNq9fkf/7o2s
+	Ygmf8s599U6V/Lsqr7GB04LbOk/pG+bDtGxqXsKLOP7u1VjG+zRYV2TPlVZim8qzXEFIY8w2wmHph
+	gy7CMtRI3t8v/toWopigigAXkhtMOODV9MEPtwsOBATkQVzxMOsWKy5DuAaI+N/pyH8BGnOfPk7ZF
+	bYJmPVn55H6Z2M6R4bgDzEvUkWwBx1k1XViR953vvn7MC3fUK1bS8KEDhdWovKfusmuLyLKxXjOND
+	uBHTRz/+HCJIJ88u2ikQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nNWRB-0042Qm-Mn; Fri, 25 Feb 2022 08:58:53 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nNWV3-0043H1-JA; Fri, 25 Feb 2022 09:02:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nNWR9-0042Pj-BZ
- for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 08:58:52 +0000
+ id 1nNWV0-0043G8-VU
+ for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 09:02:52 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id C058661CCE;
- Fri, 25 Feb 2022 08:58:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ACEF3C340E7;
- Fri, 25 Feb 2022 08:58:49 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 8AA0361C9A;
+ Fri, 25 Feb 2022 09:02:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4DD87C340F1;
+ Fri, 25 Feb 2022 09:02:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1645779530;
- bh=sw5tDBlxWJXbCoGAwOiCDSj1VB62c4bkXCqy7O/uzrk=;
+ s=k20201202; t=1645779770;
+ bh=QvY30WDBlbSyY750xBEH771LLo1ExcgV/Rqwvt34S3A=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=W5Xd3Jcv9mixpFloV3zOL+wMrtLhcud6/HWv+OuZvMPpC7kVMSJ3Zd2CS+8VXGVGa
- 9iF/N/vml8izrn1Xy0o9wHY7Y32bIeXlNN714sbgeCcnvAiO+/GPn/wYuzciKM4k9F
- wWdLpSC5Zy+xxouNBln0CFJixk7sYSkepJ5ym4szMFd/4j1zOIZow96Fzu2baz7Iol
- rlN7yNrZ94n0sb6YWnN9u70nXryKMSqysXvg8KJXsKd87P/WQCKztixIkHDN3gSjn4
- sfhtsiusWUY5H0unsyeDZPF1/H7CL/wsJMBJX7GlZJqGqYeobvoh+pASAnvL5I/xfK
- XQxzBBla8WBmg==
-Date: Fri, 25 Feb 2022 14:28:45 +0530
+ b=Ip5K4jVhv/vfdvQNQWiGmMU+xRHEATej58TeumTCwjladdp56nNPQDLT7QLVSSFfP
+ cKSmNpMUv3cr0+jdXFd+zlXqtZT4Bg7NQnTTMSk2BWIRj6B6/QqTkLCp06ta959q5g
+ 1127Nndi8a/9B9TyUH2H2RzBewWT6ah7bmkDpz7MWcsIYENvJfXGOnG2kFDFzmcQL+
+ u/7E33aAC1/YczwwgpFheJckSr46Bkq85JyGHpkfKJeB7QnrK3AdcPWLKkWuRuJEx8
+ uLi3hHQzBwkMEGugDlZKXhM+gw8n+A8CIlyhOL6ohRSQWTIjZrBVdWA1OC4FuulCJD
+ fUXejy+sfdwhg==
+Date: Fri, 25 Feb 2022 14:32:46 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Hans de Goede <hdegoede@redhat.com>
-Cc: Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Stephan Gerhold <stephan@gerhold.net>, linux-usb@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 0/9] usb/dwc3 / phy/tusb1210: Add TUSB1211 charger
- detection
-Message-ID: <YhiaRUvW1AutIrCy@matsya>
-References: <20220213130524.18748-1-hdegoede@redhat.com>
+To: =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Al Cooper <alcooperx@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, linux-phy@lists.infradead.org,
+ bcm-kernel-feedback-list@broadcom.com,
+ =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
+Subject: Re: [PATCH] phy: phy-brcm-usb: fixup BCM4908 support
+Message-ID: <YhibNvLHtna59t/i@matsya>
+References: <20220218172459.10431-1-zajec5@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220213130524.18748-1-hdegoede@redhat.com>
+In-Reply-To: <20220218172459.10431-1-zajec5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220225_005851_463375_C888E706 
-X-CRM114-Status: GOOD (  17.77  )
+X-CRM114-CacheID: sfid-20220225_010251_080654_852E0CC9 
+X-CRM114-Status: GOOD (  11.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,44 +69,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-02-22, 14:05, Hans de Goede wrote:
-> Hi All,
-> 
-> Here is v2 of the patchs-series to add support for USB charger-type
-> (SDP/DCP) detection using a tusb1210 phy connected to a dwc3 controller.
-> 
-> Changes in v2:
-> [PATCH v2 9/9] phy: ti: tusb1210: Add charger detection:
-> - Add an online attribute to the registered power_supply class device,
->   otherwise upower thinks it is an extra system battery
-> - Add tusb1210_remove_charger_detect() function to properly unregister
->   the tusb->psy_nb notifier and to cancel tusb->chg_det_work
-> 
-> v1 cover-letter:
-> 
-> Some Android x86 tablets with a Bay Trail (BYT) SoC (with DWC3 UDC)
-> and a Crystal Cove PMIC, which does not support charger-detection,
-> rely on a TUSB1211 phy for charger-detection.
-> 
-> This series adds support for this, it starts with some dwc3 bug-fixes
-> for issues hit while developing this, as well as adding support to
-> the dwc3 code to set a special property checked by the tusb1210 driver
-> to signal that it needs to enable charger-detection.
-> 
-> The 2nd half of the series does some refactoring / fixes to the
-> tusb1210 driver and adds the charger-detection support.
-
-Applied phy patches to phy-next, thanks
-
--- 
-~Vinod
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTgtMDItMjIsIDE4OjI0LCBSYWZhxYIgTWnFgmVja2kgd3JvdGU6Cj4gRnJvbTogUmFmYcWC
+IE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgo+IAo+IEp1c3QgbGlrZSBldmVyeSBvdGhlciBm
+YW1pbHkgQkNNNDkwOCBzaG91bGQgZ2V0IGl0cyBvd24gZW51bSB2YWx1ZS4gVGhhdAo+IGlzIHJl
+cXVpcmVkIHRvIHByb3Blcmx5IGhhbmRsZSBpdCBpbiBjaGlwc2V0IGNvbmRpdGlvbmFsIGNvZGUu
+Cj4gCj4gVGhlIHJlYWwgY2hhbmdlIGlzIGV4Y2x1ZGluZyBCQ000OTA4IGZyb20gdGhlIFBMTCBy
+ZXByb2dyYW1taW5nIGNvZGUKPiAoc2VlIGJyY211c2JfdXNiM19wbGxfNTRtaHooKSkuIEknbSBu
+b3Qgc3VyZSB3aGF0J3MgdGhlIEJDTTQ5MDgKPiByZWZlcmVuY2UgY2xvY2sgZnJlcXVlbmN5IGJ1
+dDoKPiAxLiBCQ000OTA4IGN1c3RvbSBkcml2ZXIgZnJvbSBCcm9hZGNvbSdzIFNESyBkb2Vzbid0
+IHJlcHJvZ3JhbSBQTEwKPiAyLiBEb2luZyB0aGF0IGluIExpbnV4IGRyaXZlciBzdG9wcGVkIFBI
+WSBoYW5kbGluZyBzb21lIFVTQiAzLjAgZGV2aWNlcwo+IAo+IFRoaXMgY2hhbmdlIG1ha2VzIFVT
+QiAzLjAgUEhZIHJlY29nbml6ZSBlLmcuOgo+IDEuIDA0ZTg6Njg2MCAtIFNhbXN1bmcgRWxlY3Ry
+b25pY3MgQ28uLCBMdGQgR2FsYXh5IHNlcmllcywgbWlzYy4gKE1UUCBtb2RlKQo+IDIuIDEwNTg6
+MjU5ZiAtIFdlc3Rlcm4gRGlnaXRhbCBNeSBQYXNzcG9ydCAyNTlGCj4gCj4gQnJvYWRjb20ncyBT
+VEIgU29DcyBjb21lIHdpdGggYSBzZXQgb2YgU1VOX1RPUF9DVFJMXyogcmVnaXN0ZXJzIHRoYXQK
+PiBhbGxvdyByZWFkaW5nIGNoaXAgZmFtaWx5IGFuZCBwcm9kdWN0IGlkcy4gU3VjaCBhIGJsb2Nr
+ICYgcmVnaXN0ZXIgaXMKPiBtaXNzaW5nIG9uIEJDTTQ5MDggc28gdGhpcyBjb21taXQgaW50cm9k
+dWNlcyAiY29tcGF0aWJsZSIgc3RyaW5nCj4gc3BlY2lmaWMgYmluZGluZy4KCkFwcGxpZWQsIHRo
+YW5rcwoKLS0gCn5WaW5vZAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
