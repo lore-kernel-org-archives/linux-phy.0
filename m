@@ -4,62 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59D32C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 08:25:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9970AC433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 08:28:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yB6x41UMVUt8phrhC3rD0UlXMAHF+fi9wCuncesCy0M=; b=ueGobUrgrg2TgI
-	iExg8LBb+Q8OoY+lbjm0VkrsWAOijnqDULoea+rQTxBmSiz2CyV3SCTQc5qXna0HAAV7Jq+S0tjFf
-	7Vi33JExoa5UOjlCrMr0x5E8u2zBgZRt+UzQyhNzACTf9+EGv7fI8d92Vl5ITMmGItUicDSLsITAB
-	ma+/vbub/kwFq7NehH6H5RP3zYZTBckyD74VXbKoJtl2TPFEs7CyL1DCxjq/6hoIyZY4jgfYdDPzu
-	iBCung5ICG/5lgPJA1eYGOU7mwswG9sRstY4v38y62wMSp05e6QscWAYy5ITYthMFHUSUFglHqCKf
-	Xr6GJug7hktsvaAF+wxA==;
+	List-Owner; bh=Gon0sGzdMhOZdHThXFXx0h+Lhimzabw8DZce95Yxk+Q=; b=F/lGW+OZf6uHiZ
+	8ukiiVRLMd3iTqFIm7kdy/HmzAyJKOVuc8dU+LmrEwmqRTYNvRbF7IgEpo/puw7L2tt6TRVDVUh5V
+	3yjn9zpI70cDqDOfvw1odxM8KP0Vs31sPrtu2hIOWZRdJmMgoxIm1nZy6wNxO8YwGfdNPaJkJVUWo
+	SAkELONsO+JnF0gj7Is1ugYLK5qIbiF+ZzE01RxfAGRvlSL76IqP6luKUgNdP7i6lflt8OLCemwTm
+	g4bvpJe/LsIlCkgC1oARqDfD22T28Tsp+2s9KynBbZaAtMvhKMwnZJ6QRMd5FRsXx7Qv99cDVbuub
+	U1QxnzjQ3qoNNrIepk0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nNVug-003wUC-Nn; Fri, 25 Feb 2022 08:25:18 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1nNVxo-003xOk-1q; Fri, 25 Feb 2022 08:28:32 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nNVu8-003wIb-Sk; Fri, 25 Feb 2022 08:24:46 +0000
+ id 1nNVxl-003xOC-SS
+ for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 08:28:31 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 1AAB161C2F;
- Fri, 25 Feb 2022 08:24:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE074C340E7;
- Fri, 25 Feb 2022 08:24:42 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 6501B61C50;
+ Fri, 25 Feb 2022 08:28:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 33C3DC340E7;
+ Fri, 25 Feb 2022 08:28:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1645777483;
- bh=d9Uy2ioP2Sl9I8LOHRagRhdSaAoY2P57qNiGvE7DJF0=;
+ s=k20201202; t=1645777708;
+ bh=nhUImlcEfUVQ3AnB3IAWai1Ov9lBtp35vbO8g3TVH4s=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PGlDJkWZHxFJLs4Q/Vb75zUX0yT0U0veE1ybn+rPHa8UmPzRAZzqYj5ZECv9vR/ee
- 1/OEEl5gm0gAR/pMiLUeDG3ydgVVgfXLKVdyt/YauhEZ5L9DACw9Vpvkfqx2rwAjv6
- /2xEhpG1NlaaFBzEolkPApV4WmRIkfrE62kgblLR15oxGjmfyt03fQZgLdj0YKHI5p
- 2+2eyrlxVIW58RyKh6fM/H7gkhlL0yIZGYOG4aPHubb6TVvnc9eMb52ybVRqARECwQ
- cpV1U6Ge07Ft8UteU/6GizOwhFqqNT1g4CiN7jOJo5JT2o9q/8elNUAYhiyN4013Gj
- G9htmeIDt3TVg==
-Date: Fri, 25 Feb 2022 13:54:39 +0530
+ b=sj4sYTRodxHZ6quzQ4MX4ggaH/K8CTJgGyUQW56lEmeyOejLr4AcdIFA4LPaRKrNN
+ 6pBF8XOgacmoQKyK6A6MGzf/pFgLB8T5tVeKBfveD78mTQBcpyHw7Onl+OHuzZ603F
+ RWPWHet4ioaD7BS6J9m6xn5Xc+yOHzPxqFWKyN7TEaszm9sFdHS6YXEecf6/+509Us
+ agQVYILEcqSOsU1lBXMjct+k+qISOktl8VYfR9hvIm8tTk4PTGL3JqyK+/Rfs7LV4q
+ qrR+38Pml6J7xZQqR1PFbjt9XIBQvmDKjOo73SusOMg2MRbYvbUNXyYZCblHg70yHz
+ nzHSVr8nWFKfg==
+Date: Fri, 25 Feb 2022 13:58:25 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Samuel Holland <samuel@sholland.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: Add compatible for D1 USB PHY
-Message-ID: <YhiSRzO8MqIjRNuR@matsya>
-References: <20220203013558.11490-1-samuel@sholland.org>
+To: cgel.zte@gmail.com
+Cc: kishon@ti.com, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ "Minghao Chi (CGEL ZTE)" <chi.minghao@zte.com.cn>,
+ Zeal Robot <zealci@zte.com.cn>
+Subject: Re: [PATCH] phy/cadence: Use of_device_get_match_data()
+Message-ID: <YhiTKXpJ5a9tWmbg@matsya>
+References: <20220214020626.1714696-1-chi.minghao@zte.com.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220203013558.11490-1-samuel@sholland.org>
+In-Reply-To: <20220214020626.1714696-1-chi.minghao@zte.com.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220225_002445_008427_4EC4E3F9 
-X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-CacheID: sfid-20220225_002829_979375_E754F77C 
+X-CRM114-Status: UNSURE (   6.13  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,12 +74,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02-02-22, 19:35, Samuel Holland wrote:
-> D1 features one OTG port and one host port, like the A64 SoC, so its
-> USB PHY supports the same set of properties. Add the new compatible to
-> the existing binding.
+On 14-02-22, 02:06, cgel.zte@gmail.com wrote:
+> From: "Minghao Chi (CGEL ZTE)" <chi.minghao@zte.com.cn>
+> 
+> Use of_device_get_match_data() instead of open-coding it.
 
-Applied all, thanks
+Applied, thanks
 
 -- 
 ~Vinod
