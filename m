@@ -4,109 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 047ECC433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 01:12:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B8BCC433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 03:38:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YX2iKxY5agkw6Uk1a3ndlVOEgoUTec9Fq2vxo6BTdVE=; b=K40sQsITHkfQRW
-	VZ0/8Bjeumdf8ncr7O57XoKEap72g05+EVwnAoFrP8df3+THPM8eT1Zk0jD5zPQYurKR7rLtdarEd
-	QEhzEonMntsWElh+OcKdSVj8rUPXySWvCTzT96rMps/N5tXxZnSUwD8ikd4Ecx72VTxoQelsjMgLy
-	JyZIgxiOeM/Vcu2T1xIjjuQd3uNu4eA65yffdgQZgF345Gzs26mVoLNAp9p9k3pvtRuxCBRjuCfvU
-	v1d6F5eth+O8VfcNLLzZ3EneYKlgvMnLafzcIcvDo6LhryDzOkVhwx0zHYkaR+A1X3L57kSf3CwhP
-	MzPs0+K3+nCl9G1mzyfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ACUwRypG/utTpKh0fR78rZOvgfwj2VGfGLHpXBvy6KU=; b=jjdEKb4+XOdcBx
+	SBge3SDVzYf2kj82gnuoRShd5idGxAop/QEi1NjXvlgL3UMPwW3fnyzCEvmonDlfgPYMGIiSDkck4
+	gzlHuS33boHEVudrrIuFh5BloB6oaxDRHqkw0RJStQks9WgSf73iq3aR1qJmmKxOEh+elHVCdhTO4
+	kUyY+C1xKWp8oPQSBo72pGfsmEEIhc7kEucGU3pMb9NKjHDYuDJ4mV+WxiXJ/8cSkTT3MiebQ/IcU
+	8+HSwrVVQ1N73I4nZwck72uNUSt5XQyZkxYFF9dye8bIx4vpZ983JUH6guC60YJ4LTx89T2ar5QHa
+	5QYZYlehdRLOlofKQgeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nNP9d-002r7m-8M; Fri, 25 Feb 2022 01:12:17 +0000
-Received: from esa1.hgst.iphmx.com ([68.232.141.245])
+	id 1nNRRX-0036yX-JZ; Fri, 25 Feb 2022 03:38:55 +0000
+Received: from mail-ot1-x336.google.com ([2607:f8b0:4864:20::336])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nNP9Z-002r75-TX
- for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 01:12:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1645751533; x=1677287533;
- h=message-id:date:mime-version:subject:to:cc:references:
- from:in-reply-to:content-transfer-encoding;
- bh=LufNjz8E8edDYYHLaymtIUjPsqaiuNBQVhZrRsR6Ze4=;
- b=gYfia//AFmgJ1JHWmCjZiQYYizHiVWmNx9VTP0qAhyFQ+jtG7Vh+Y/8m
- pMnzFF0Ad+XSjHuW4x71fZ0DywKaiX+ZEePdYsy8rqc2pKdxTXyOQP2Kh
- FEzLBjeXpIxEJZK5Ih3AQ1ys9IPhxanfZ5qq2rhPkMu3Owoq2vtpuiY6S
- ijWw0Wlow6uRdX73kvqzG4QyC9yYhBBmPPrXikBihTDIN0Ix7sNgbrbjZ
- fQHyPz9RUfPrDJq2tmw2Hs0ZfOPRzLaD8TWBPvuNnU4sAxXI0qTDCKyAX
- 5anvpiJKHaCNuoYqGZtHLCO3FSVgjzgWmtMDV/kY4pe4yWPKWpw+Ogb0o Q==;
-X-IronPort-AV: E=Sophos;i="5.90,134,1643644800"; d="scan'208";a="305803914"
-Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
- ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 25 Feb 2022 09:12:00 +0800
-IronPort-SDR: 03NS0EGFXtcm8GBkD4vM8WiXcfZltCtyb0r8P4It5Dmfa8eeknNHzvyJRgCDEagHP/dRetVap4
- TQwKboOw/5ewBk3cfheUhQZhGAA/de5ehNMiDfye8k3mPyxQ0N5KwGL1XezXV1iIvWx8pcP0si
- Jg6SU41l1EtXYUNA+v+rOPjmJhAoiRDqtCulNNle/s1Ibv0rioyigjj9lkwxo6Ab7qnQKZMhnV
- 3EZGnvEAkXcpPebvVBZEP8HSiQvHvN9G4Tr7HSqbS+oJ/uDE+RFW/M2zGpfwOPkRzwfLmPyvU4
- Fks69pbOv9Tup15RZXnxl4tg
-Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
- by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 24 Feb 2022 16:44:34 -0800
-IronPort-SDR: Gff2XxNq7ex+G8hF8dcIzmhvlqVDl73gvS/K/tazHb53IwFnQEUZ0lSnYwal4yMF9YO188xRTc
- MXg6rkM/UAgklvkMwPDxniyDZnGEU12BSNs/FMQX+8ABMeCCB+yQhsl6cZzDoB176oMhP+7Z7I
- lfrMylLQGTic0KbRyrgxFJqiSfHLFkv2M4W1QYHMROal4NhOXeOGO+Oz7KZiD6YY5FKy8OOQdf
- Hqc10TBzorCx3ZAvQ0mG+dI+/ADrKCbJPfXGUOCHC4gIiDxyavmfN/vTi15GdgcJsULZwZOFKP
- 3LI=
-WDCIronportException: Internal
-Received: from usg-ed-osssrv.wdc.com ([10.3.10.180])
- by uls-op-cesaip02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 24 Feb 2022 17:12:00 -0800
-Received: from usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTP id 4K4Wvh1Jb6z1Rwrw
- for <linux-phy@lists.infradead.org>; Thu, 24 Feb 2022 17:12:00 -0800 (PST)
-Authentication-Results: usg-ed-osssrv.wdc.com (amavisd-new); dkim=pass
- reason="pass (just generated, assumed good)"
- header.d=opensource.wdc.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
- opensource.wdc.com; h=content-transfer-encoding:content-type
- :in-reply-to:organization:from:references:to:content-language
- :subject:user-agent:mime-version:date:message-id; s=dkim; t=
- 1645751519; x=1648343520; bh=LufNjz8E8edDYYHLaymtIUjPsqaiuNBQVhZ
- rRsR6Ze4=; b=D1tJJFgPUFrXEVGyLvj38OAnpNnH2nu9HY7L6iPTcXjfzHahZ2+
- OkRIu4O6ZYDXwTHkb4LMRHvT6o2UVAzOyx2jySHy729DXJH4it2A4d8Gd88andpr
- dVdKsPFJNM1brzrkdYfwtP8c8xP9UjwujhgvdOH0MDhQaLTZkkJNrx7yxnr8likI
- e7Fe81DtoOV8FLe4ND+e4Iq0JlOi91h1kp/hGHLTF+paim9WqNCHOE8KgNtOfet9
- SWiFST07HxYIXmKJgYHZcRdQ2RD+rGBusRWrn7p7/F7RN2B4HzSu8DQGLUo2eD3E
- izzbbO02h8VZLBxWIwsAs6hywuIQuCWxnug==
-X-Virus-Scanned: amavisd-new at usg-ed-osssrv.wdc.com
-Received: from usg-ed-osssrv.wdc.com ([127.0.0.1])
- by usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1]) (amavisd-new,
- port 10026)
- with ESMTP id ji1rPgN5XP82 for <linux-phy@lists.infradead.org>;
- Thu, 24 Feb 2022 17:11:59 -0800 (PST)
-Received: from [10.225.163.81] (unknown [10.225.163.81])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTPSA id 4K4Wvf6Sklz1Rvlx;
- Thu, 24 Feb 2022 17:11:58 -0800 (PST)
-Message-ID: <49ef22b8-9a29-b153-397a-ffd94fd27ecc@opensource.wdc.com>
-Date: Fri, 25 Feb 2022 10:11:57 +0900
+ id 1nNRRV-0036xT-9y
+ for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 03:38:54 +0000
+Received: by mail-ot1-x336.google.com with SMTP id
+ j9-20020a9d7d89000000b005ad5525ba09so2762224otn.10
+ for <linux-phy@lists.infradead.org>; Thu, 24 Feb 2022 19:38:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nnXfHtdU2dmF+bRIs9i/3/49SI7ksFP4+CUOpW5LUCM=;
+ b=A61Hahea1bfexZmqVnRRpHA8a0I90W04xKaxHoyWH47bxY7X0uoVQAnujcpZHA5luW
+ 7iJyj86bn4rDaf8s5E0PWa1cOd7TxhJq+dlFM2f5ihHxKeZzIWnvHOP1scWY2376hbM0
+ 0NFqjaJkgUmKx0RUXOdZ2uHxV43Kh60osc6u0jzpGyG0w7zFdY+loLVJ7Nt3se7tm4c/
+ 2bnnMWrBk7Ex8jFLP3CmOE1WT+YQOFIlpXc6xhGljo0qsQXTlYcyKb3WBczOVrgWz8G6
+ pnh788gQkRyb7thgXdDRa/FATjvSi8tReXb5uuoSXEdtiI6RYlrL84igSYXVuzFinMAA
+ AbcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nnXfHtdU2dmF+bRIs9i/3/49SI7ksFP4+CUOpW5LUCM=;
+ b=NoSekloW4nCnAi36P+m6FFxcYs3nYeZUSfDEEA54CHZLTGDM8puXRrcc6nUHXRGt4l
+ ynSzrtWfmloINDETwPgm089vCjY/m9ORcLFeOVgR12W5xnKqaAlnG9sdj/L3tmgamHyJ
+ 5DemoHY9Cj7R4ouBO3z9YaWwZiIrrPYsicYvmuRrDxOLblfHiOJVRTwePqjSnFxcqLXE
+ Ypk6LDlVHMH7+VlC/tOo6fOj4Dt/oxgYpIXtZdlAp3KJLVV+TVDhoktV+EEkNuNHneU5
+ 9jCtE2tjo3qsVWRnQQXydnt77+gcqucLGfDMbEzB0edDTMD++FV1HWw9SAER1Pu/4Glf
+ ccVQ==
+X-Gm-Message-State: AOAM5324YfDtIyZIbPkzanZ6BmXkWFOjbmhw/txSxUhfDTqH289V28qG
+ wSjC0rIXsHzjDLow4uwxX37YQQ==
+X-Google-Smtp-Source: ABdhPJxme5mSkSa+u0Mgeo+AjXvnrc4v2vvCZ10Vi1iBQ9PUoyLFkiqYOSWx1BQ4aWNV3Lbh9gTH5g==
+X-Received: by 2002:a9d:178d:0:b0:5af:8e58:9ff2 with SMTP id
+ j13-20020a9d178d000000b005af8e589ff2mr2127787otj.87.1645760331614; 
+ Thu, 24 Feb 2022 19:38:51 -0800 (PST)
+Received: from ripper.. ([2600:1700:a0:3dc8:205:1bff:fec0:b9b3])
+ by smtp.gmail.com with ESMTPSA id
+ fq14-20020a0568710b0e00b000d4492531a2sm809359oab.17.2022.02.24.19.38.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 24 Feb 2022 19:38:50 -0800 (PST)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
+ Wesley Cheng <wcheng@codeaurora.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] dt-bindings: phy: qcom,
+ usb-snps-femto-v2: Add sc8180x and sc8280xp
+Date: Thu, 24 Feb 2022 19:40:48 -0800
+Message-Id: <20220225034049.2294207-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.33.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.5.0
-Subject: Re: [PATCH phy v4 3/5] Revert "ata: ahci: mvebu: Make SATA PHY
- optional for Armada 3720"
-Content-Language: en-US
-To: =?UTF-8?Q?Marek_Beh=c3=ban?= <kabel@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
- pali@kernel.org
-References: <20220203214444.1508-1-kabel@kernel.org>
- <20220203214444.1508-4-kabel@kernel.org> <20220224161324.6ac0061c@dellmb>
- <6082e3a5-aaf7-f876-b1ec-c6627fba1503@kernel.dk>
- <20220224163738.7da04b51@dellmb>
- <c6a1d5ca-255b-9a3d-aad2-9c3dc4dd68a3@opensource.wdc.com>
- <20220225004300.1bd1405e@thinkpad>
-From: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-Organization: Western Digital Research
-In-Reply-To: <20220225004300.1bd1405e@thinkpad>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220224_171214_053255_85BC9CAF 
-X-CRM114-Status: GOOD (  17.19  )
+X-CRM114-CacheID: sfid-20220224_193853_430637_DB335C23 
+X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,41 +88,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMi8yNS8yMiAwODo0MywgTWFyZWsgQmVow7puIHdyb3RlOgo+IE9uIEZyaSwgMjUgRmViIDIw
-MjIgMDc6MzM6NDggKzA5MDAKPiBEYW1pZW4gTGUgTW9hbCA8ZGFtaWVuLmxlbW9hbEBvcGVuc291
-cmNlLndkYy5jb20+IHdyb3RlOgo+IAo+PiBPbiAyLzI1LzIyIDAwOjM3LCBNYXJlayBCZWjDum4g
-d3JvdGU6Cj4+PiBPbiBUaHUsIDI0IEZlYiAyMDIyIDA4OjE0OjU4IC0wNzAwCj4+PiBKZW5zIEF4
-Ym9lIDxheGJvZUBrZXJuZWwuZGs+IHdyb3RlOgo+Pj4gICAKPj4+PiBPbiAyLzI0LzIyIDg6MTMg
-QU0sIE1hcmVrIEJlaD9uIHdyb3RlOiAgCj4+Pj4+IERlYXIgSmVucywKPj4+Pj4KPj4+Pj4gY291
-bGQgeW91IHBsZWFzZSBzZW5kIEFjayBmb3IgdGhpcyBwYXRjaD8KPj4+Pj4gaHR0cHM6Ly9sb3Jl
-Lmtlcm5lbC5vcmcvbGludXgtcGh5LzIwMjIwMjAzMjE0NDQ0LjE1MDgtNC1rYWJlbEBrZXJuZWwu
-b3JnLwo+Pj4+Pgo+Pj4+PiBJdCBpcyBhIHJldmVydCBvZiBhbm90aGVyIHBhdGNoIHRoYXQgd2Fz
-IGFkZGVkIGJlY2F1c2Ugb2YgcG90ZW50aWFsCj4+Pj4+IHByb2JsZW1zIGluIGNvbXBoeSBkcml2
-ZXIsIGFuZCB0aGVzZSBhcmUgbm93IHNvbHZlZCBieSB0aGlzIHNlcmllcywgYnV0Cj4+Pj4+IFZp
-bm9kIHNheXMgaGUgY2FuIGFwcGx5IHRoZSBBVEEgcGF0Y2ggYnV0IGhlIG5lZWRzIHlvdXIgQWNr
-LiAgICAKPj4+Pgo+Pj4+IEknbSBub3QgbWFpbnRhaW5pbmcgbGliYXRhIGFueW1vcmUsIGFkZGlu
-ZyBEYW1pZW4gd2hvJ3MgdGhlIG5ldwo+Pj4+IG1haW50YWluZXIuIExlYXZpbmcgZW1haWwgYmVs
-b3cuICAKPj4+Cj4+PiBEZWFyIERhbWllbiwKPj4+IGNvdWxkIHlvdSBsb29rIGF0IHRoaXMgcmV2
-ZXJ0IGFuZCBnaXZlIHlvdXIgQWNrPyBTZWUgdGhlIHF1b3RlZCBtZXNzYWdlCj4+PiBmb3IgSmVu
-cy4gIAo+Pgo+PiBUaGUgcGF0Y2ggbG9vayBPSyB0byBtZS4gQnV0IEkgaGF2ZSBub3QgcmVjZWl2
-ZWQgaXQsIG5vciBkbyBJIHNlZSBpdCBpbgo+PiBsaW51eC1pZGUgbGlzdC4gUGxlYXNlIHJlc2Vu
-ZCBpdCB0byBtZSBhbmQgbGludXgtaWRlIHNvIHRoYXQgSSBjYW4gYXBwbHkKPj4gaXQgdG9nZXRo
-ZXIgd2l0aCBvdGhlciBsaWJhdGEgZml4ZXMuCj4gCj4gRGVhciBEYW1pZW4sCj4gCj4gdGhpcyBu
-ZWVkcyB0byBiZSBhcHBsaWVkIG9ubHkgYWZ0ZXIgdGhlIGZpcnN0IHR3byBwYXRjaGVzIG9mIHRo
-YXQKPiBzZXJpZXMgYXJlIGFwcGxpZWQgdmlhIGxpbnV4LXBoeSwgc28gd2Ugd291bGQgbGlrZSBh
-bGwgb2YgdGhlbSB0byBnZXQKPiBhcHBsaWVkIGJ5IFZpbm9kIHZpYSBsaW51eC1waHkgaWYgcG9z
-c2libGUuIElmIHlvdSdyZSBub3QgY29tZm9ydGFibGUKPiB3aXRoIHRoYXQgcGxlYXNlIGxldCBt
-ZSBrbm93IGFuZCB3ZSdsbCB0cnkgYW5vdGhlciBzb2x1dGlvbi4KPiAKPiBJIGNhbiBib3VuY2Ug
-dGhlIHBhdGNoIHRvIGxpbnV4LWlkZS4gU2hvdWxkIEkgYWxzbyBib3VuY2UgdGhlIHdob2xlCj4g
-c2VyaWVzLCBvciB0aGF0IHBhdGNoIG9ubHk/CgpHb3QgaXQuIFRoZW4gZmVlbCBmcmVlIHRvIGFk
-ZDoKCkFja2VkLWJ5OiBEYW1pZW4gTGUgTW9hbCA8ZGFtaWVuLmxlbW9hbEBvcGVuc291cmNlLndk
-Yy5jb20+CgpCdXQgaW4gdGhlIGZ1dHVyZSwgcGxlYXNlIENDIG1lIGFuZCBsaW51eC1pZGUgb24g
-cGF0Y2hlcyB0b3VjaGluZyBBVEEKY29kZS9kcml2ZXJzLgoKPiAKPiBNYXJlawoKCi0tIApEYW1p
-ZW4gTGUgTW9hbApXZXN0ZXJuIERpZ2l0YWwgUmVzZWFyY2gKCi0tIApsaW51eC1waHkgbWFpbGlu
-ZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Add compatible for the femto USB PHY found in sc8180x, sc8280xp and the
+generic 5nm form of the latter.
+
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ .../devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml        | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+index 0dfe6914ec87..1ce251de0855 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+@@ -15,8 +15,11 @@ description: |
+ properties:
+   compatible:
+     enum:
++      - qcom,usb-snps-hs-5nm-phy
+       - qcom,usb-snps-hs-7nm-phy
+       - qcom,sc7280-usb-hs-phy
++      - qcom,sc8180x-usb-hs-phy
++      - qcom,sc8280xp-usb-hs-phy
+       - qcom,sm8150-usb-hs-phy
+       - qcom,sm8250-usb-hs-phy
+       - qcom,sm8350-usb-hs-phy
+-- 
+2.33.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
