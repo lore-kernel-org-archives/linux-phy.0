@@ -4,73 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A772C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 09:17:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88B9FC433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 09:45:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pubNCaoaRYlYvGkbot2v6GOotGhTEBAy53zE66P/J6o=; b=U0XTGXnRs6AjbD
-	O3lpBLHDSAm2QJ6jNAw4bKL5Ue/0Rimya6I//e7//kU6mlNOihuTsIFWoVVBzOMXdY+DN+Yg+W/qs
-	MMH5Ohk7gXEeOC0BsLRIdFSaJ2wykMVQWg/4jMK5z/tBAroUyRzQERZSSYtIv6kOplD97zPFYrt5/
-	+TBeZ6+c2ulbYnXChhWKbEb21fKAdIy1J+sjbpg67R4RejU7MO7GA4k0CKi25d3yEjm3Xnc6EGuA3
-	M6t7XVXu0LZLcl5JWUrJh7sAZCNqsj+S0i9U+DjeHzcY3/RRT7DBeJC3nLTgkkHXxHaGiHfPsfGqV
-	p7ngSWUgEdYlwTnLlVTA==;
+	List-Owner; bh=PZbT8bm6QkWsjkJqHvdMvK/Z74/5bpS+lqWzfk9zdbc=; b=jaeB52JUTN4u82
+	6zv+uwkiglf5tolJ1z1y08y1E52uVEFBYp0oUP7gXDi2DR/+QUATz6PsmtgaCAgSy83Q+890VYHBZ
+	ujih+UZQ/s7uD/xLVBRzWOAqVhfD9H0DSTOspUHCUDKtStvuo6Ag0JffHsmzYOgKEbJTo6AwfO8fD
+	ja9xPaNMih0YstURJ0gJBLiDTWY5LrhRAukJJodRaJgyRK8TziW603gJjy1Fiia0WVKWcbz91GhEU
+	8UWnr9OoRRzkp996jckFkeyJKcucQFEBmUfBvaHjHDlN9mXiVutm3YvP36Ul05ONOGrFFxMIzxuzX
+	IWzrrXIJHy54Tu5oVpCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nNWis-0046lU-SD; Fri, 25 Feb 2022 09:17:10 +0000
-Received: from mail-oo1-xc35.google.com ([2607:f8b0:4864:20::c35])
+	id 1nNXAe-004Dco-UM; Fri, 25 Feb 2022 09:45:52 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nNWip-0046kY-Pu
- for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 09:17:09 +0000
-Received: by mail-oo1-xc35.google.com with SMTP id
- j7-20020a4ad6c7000000b0031c690e4123so5473600oot.11
- for <linux-phy@lists.infradead.org>; Fri, 25 Feb 2022 01:17:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wkModBfYW/sro4zX7iHc2v70i7FEbVRCcdgHDgCBjEU=;
- b=rxqWkRnYPEe3ddiQuI9xuAVJ2cFo5NwcMOUx3EmugebRUBaLU4E1mtmk5GZKilrNip
- qxJwU718/BGVUHTn9EVrB8SXO0dLkTwcn4Vul65MOJM1+Yb5DJ/qv1pG4uE/bnRKU578
- 1erriMs9eMi3EtOrzNjSo3ActyfMATIVdkPIZoZSgqIyDsdPQE685OWeBtRFjajbVydw
- d5IHEMsNJ93r8GHg0UwYojrMW+NtRd7U0KGqHFpRBTJj2SmRmeAPzOAj1/x0N9zHc31R
- PWyZmJOMJg2E6qiW3wqVAf9cBBJDRYMV1ADOpUMQckLZY/ut7UmpeQ3r3pWmShZ1mnDI
- L27w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wkModBfYW/sro4zX7iHc2v70i7FEbVRCcdgHDgCBjEU=;
- b=jgt112WfZ6+chXAS+BIkXpu7uVXbdoaeI95jZsj8guOJDT9cDaH3XBVp9cauvzNsjI
- F6bJc/PILzZwLINFwjdo9EozLxwj2cMChvu0QWzJakeiuw6P+KXAzFBypoyJ/jNIu7Zo
- emLmi3tm8CEu2fN7rxdvPqxlafW34sg+VR01u2oPrl/JAauYg2QeQ/kkYO0Zx591iCnQ
- 62LBAieBD0dJjUPBfcW4hCLm2TaSojzFxLLHRDZc89jQZCyQZjh+xUZ8YDvq/KZaB4ey
- baFjmEGDeCmfn5vEA9lgTX8xwZt0v6fiF9Sn6ppTIL8QdMulwwmBoCkRcYChlcoTU8j/
- XQfw==
-X-Gm-Message-State: AOAM531SfVj2Avqrt+irjAgnMASO/N2kX3fT7vHfKHVPool+uK31g3gG
- eT4p/ZPPwIxGYsyVqxy/xh4qW75mCqoV6IHIXkhkKw==
-X-Google-Smtp-Source: ABdhPJwQ31m5c0xE+wlL8qf66tvpuk9ah//HylNSbT7uGyrV8YYzHAW11DMgHFvaBIKh1krEo2GpCBGoTVbARGrFBA0=
-X-Received: by 2002:a05:6870:450a:b0:d3:58dd:be81 with SMTP id
- e10-20020a056870450a00b000d358ddbe81mr882804oao.304.1645780626498; Fri, 25
- Feb 2022 01:17:06 -0800 (PST)
+ id 1nNXAP-004DYO-Lx; Fri, 25 Feb 2022 09:45:41 +0000
+X-UUID: 4d0d865d440748dea1a81eba025c9966-20220225
+X-UUID: 4d0d865d440748dea1a81eba025c9966-20220225
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1135858617; Fri, 25 Feb 2022 02:45:30 -0700
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 25 Feb 2022 01:45:28 -0800
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 25 Feb 2022 17:45:26 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkcas10.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 25 Feb 2022 17:45:26 +0800
+Message-ID: <9069bd9d83653fbb286f9e8fa53827b1639d1923.camel@mediatek.com>
+Subject: Re: [PATCH v8 15/19] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+From: CK Hu <ck.hu@mediatek.com>
+To: Guillaume Ranquet <granquet@baylibre.com>, <chunkuang.hu@kernel.org>,
+ <p.zabel@pengutronix.de>, <airlied@linux.ie>, <daniel@ffwll.ch>,
+ <robh+dt@kernel.org>, <maarten.lankhorst@linux.intel.com>,
+ <mripard@kernel.org>, <tzimmermann@suse.de>, <matthias.bgg@gmail.com>,
+ <chunfeng.yun@mediatek.com>, <kishon@ti.com>, <vkoul@kernel.org>,
+ <deller@gmx.de>, <jitao.shi@mediatek.com>,
+ <angelogioacchino.delregno@collabora.com>
+CC: <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+ <linux-fbdev@vger.kernel.org>, Markus Schneider-Pargmann <msp@baylibre.com>,
+ kernel test robot <lkp@intel.com>
+Date: Fri, 25 Feb 2022 17:45:26 +0800
+In-Reply-To: <20220218145437.18563-16-granquet@baylibre.com>
+References: <20220218145437.18563-1-granquet@baylibre.com>
+ <20220218145437.18563-16-granquet@baylibre.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-References: <20220224123248.67073-1-bhupesh.sharma@linaro.org>
- <CAA8EJprRgsZRSXBQumveAn029j+w6xO8K2kZUO4rzZaefuYe7Q@mail.gmail.com>
-In-Reply-To: <CAA8EJprRgsZRSXBQumveAn029j+w6xO8K2kZUO4rzZaefuYe7Q@mail.gmail.com>
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Date: Fri, 25 Feb 2022 14:46:55 +0530
-Message-ID: <CAH=2NtxQBS=c0W0cpX5EdNi12PrqiKEuzyvEtF8WrVE6nsU_rg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom, qmp: Mark '#clock-cells' as a
- 'optional' property
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, bhupesh.linux@gmail.com, agross@kernel.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-phy@lists.infradead.org, robh+dt@kernel.org, 
- Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220225_011707_868954_4BD563B9 
-X-CRM114-Status: GOOD (  20.17  )
+X-CRM114-CacheID: sfid-20220225_014537_738170_3BFB8A3C 
+X-CRM114-Status: GOOD (  33.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,67 +81,298 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+Hi, Guillaume:
 
-Thanks for your review comments.
+On Fri, 2022-02-18 at 15:54 +0100, Guillaume Ranquet wrote:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
+> 
+> This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
+> 
+> It supports the mt8195, the embedded DisplayPort units. It offers
+> hot-plug-detection and DisplayPort 1.4 with up to 4 lanes.
+> 
+> The driver creates a child device for the phy. The child device will
+> never exist without the parent being active. As they are sharing a
+> register range, the parent passes a regmap pointer to the child so
+> that
+> both can work with the same register range. The phy driver sets
+> device
+> data that is read by the parent to get the phy device that can be
+> used
+> to control the phy properties.
+> 
+> This driver is based on an initial version by
+> Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Reported-by: kernel test robot <lkp@intel.com>
+> ---
+>  drivers/gpu/drm/mediatek/Kconfig       |    7 +
+>  drivers/gpu/drm/mediatek/Makefile      |    2 +
+>  drivers/gpu/drm/mediatek/mtk_dp.c      | 2358
+> ++++++++++++++++++++++++
+>  drivers/gpu/drm/mediatek/mtk_dp_reg.h  |  568 ++++++
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c |    1 +
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h |    1 +
+>  6 files changed, 2937 insertions(+)
+>  create mode 100644 drivers/gpu/drm/mediatek/mtk_dp.c
+>  create mode 100644 drivers/gpu/drm/mediatek/mtk_dp_reg.h
+> 
+> 
 
-On Thu, 24 Feb 2022 at 20:22, Dmitry Baryshkov
-<dmitry.baryshkov@linaro.org> wrote:
->
-> On Thu, 24 Feb 2022 at 15:33, Bhupesh Sharma <bhupesh.sharma@linaro.org> wrote:
-> >
-> > Since '#clock-cells' is not a required property for several
-> > QCoM boards supporting qmp-phy(s) (for e.g. sm8150, sm8250 or sm8350 SoC
-> > based boards), mark it as an optional property instead.
->
-> I believe the description is not correct. the clock-cells should not
-> be used at all, so it should be removed from the root node.
+[snip]
 
-Hmm.. 'clock-cells' is still used for describing qmp phy pcie nodes for certain
-devices like 'msm8996.dtsi'. I am not sure if removing it would impact existing
-dts files. But let me try cleaning them up in v2.
+> +
+> +static u32 *mtk_dp_bridge_atomic_get_output_bus_fmts(struct
+> drm_bridge *bridge,
+> +						     struct
+> drm_bridge_state *bridge_state,
+> +						     struct
+> drm_crtc_state *crtc_state,
+> +						     struct
+> drm_connector_state *conn_state,
+> +						     unsigned int
+> *num_output_fmts)
+> +{
+> +	u32 *output_fmts;
+> +
+> +	*num_output_fmts = 0;
+> +	output_fmts = kcalloc(1, sizeof(*output_fmts), GFP_KERNEL);
+> +	if (!output_fmts)
+> +		return NULL;
+> +	*num_output_fmts = 1;
+> +	output_fmts[0] = MEDIA_BUS_FMT_FIXED;
+> +	return output_fmts;
+> +}
+> +
+> +static const u32 mt8195_input_fmts[] = {
+> +	MEDIA_BUS_FMT_RGB888_1X24,
+> +	MEDIA_BUS_FMT_YUV8_1X24,
+> +	MEDIA_BUS_FMT_YUYV8_1X16,
+> +};
 
-> Also we should describe phy@ properties.
+This means DPINTF output format, right? Does DPINTF switch output
+buffer format?
 
-Sure, I will add them in v2.
+> +
+> +static u32 *mtk_dp_bridge_atomic_get_input_bus_fmts(struct
+> drm_bridge *bridge,
+> +						    struct
+> drm_bridge_state *bridge_state,
+> +						    struct
+> drm_crtc_state *crtc_state,
+> +						    struct
+> drm_connector_state *conn_state,
+> +						    u32 output_fmt,
+> +						    unsigned int
+> *num_input_fmts)
+> +{
+> +	u32 *input_fmts;
+> +	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
+> +	struct drm_display_mode *mode = &crtc_state->adjusted_mode;
+> +	struct drm_display_info *display_info =
+> +		&conn_state->connector->display_info;
+> +	u32 rx_linkrate;
+> +	u32 bpp;
+> +
+> +	bpp = (display_info->color_formats & DRM_COLOR_FORMAT_YCRCB422)
+> ? 16 :
+> +									
+> 	24;
+> +	rx_linkrate = (u32)mtk_dp->train_info.link_rate * 27000;
+> +	*num_input_fmts = 0;
+> +	input_fmts = kcalloc(ARRAY_SIZE(mt8195_input_fmts),
+> sizeof(*input_fmts),
+> +			     GFP_KERNEL);
+> +	if (!input_fmts)
+> +		return NULL;
+> +
+> +	*num_input_fmts = ARRAY_SIZE(mt8195_input_fmts);
+> +
+> +	memcpy(input_fmts, mt8195_input_fmts,
+> +	       sizeof(*input_fmts) * ARRAY_SIZE(mt8195_input_fmts));
+> +
+> +	if (((rx_linkrate * mtk_dp->train_info.lane_count) <
+> +	     (mode->clock * 24 / 8)) &&
+> +	    ((rx_linkrate * mtk_dp->train_info.lane_count) >
+> +	     (mode->clock * 16 / 8)) &&
+> +	    (display_info->color_formats & DRM_COLOR_FORMAT_YCRCB422))
+> {
+> +		kfree(input_fmts);
+> +		input_fmts = kcalloc(1, sizeof(*input_fmts),
+> GFP_KERNEL);
+> +		*num_input_fmts = 1;
+> +		input_fmts[0] = MEDIA_BUS_FMT_YUYV8_1X16;
+> +	}
+> +
+> +	return input_fmts;
+> +}
+> +
+
+[snip]
+
+> +
+> +static int mtk_dp_probe(struct platform_device *pdev)
+> +{
+> +	struct mtk_dp *mtk_dp;
+> +	struct device *dev = &pdev->dev;
+> +	int ret;
+> +	int irq_num = 0;
+> +
+> +	mtk_dp = devm_kzalloc(dev, sizeof(*mtk_dp), GFP_KERNEL);
+> +	if (!mtk_dp)
+> +		return -ENOMEM;
+> +
+> +	mtk_dp->dev = dev;
+> +
+> +	irq_num = platform_get_irq(pdev, 0);
+> +	if (irq_num < 0) {
+> +		dev_err(dev, "failed to request dp irq resource\n");
+> +		return irq_num;
+> +	}
+> +
+> +	mtk_dp->next_bridge = devm_drm_of_get_bridge(dev, dev->of_node, 
+> 1, 0);
+> +	if (IS_ERR(mtk_dp->next_bridge)) {
+> +		ret = PTR_ERR(mtk_dp->next_bridge);
+> +		dev_err_probe(dev, ret, "Failed to get bridge\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = mtk_dp_dt_parse(mtk_dp, pdev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	mtk_dp_aux_init(mtk_dp);
+> +
+> +	ret = devm_request_threaded_irq(dev, irq_num, mtk_dp_hpd_event,
+> +					mtk_dp_hpd_event_thread,
+> +					IRQ_TYPE_LEVEL_HIGH,
+> dev_name(dev),
+> +					mtk_dp);
+
+Embedded displayport is always connected, right? Why do we need process
+hot plug? Move this to the patch of external displayport.
+
+> +	if (ret) {
+> +		dev_err(dev, "failed to request mediatek dptx irq\n");
+> +		return -EPROBE_DEFER;
+> +	}
+> +
+> +	mutex_init(&mtk_dp->dp_lock);
+
+Why need dp_lock, please provide the case information.
+
+> +	mutex_init(&mtk_dp->edid_lock);
+
+edid_lock is necessary when irq exist.
+
+> +
+> +	platform_set_drvdata(pdev, mtk_dp);
+> +
+> +	mtk_dp->phy_dev = platform_device_register_data(dev, "mediatek-
+> dp-phy",
+> +							PLATFORM_DEVID_
+> AUTO,
+> +							&mtk_dp->regs,
+> +							sizeof(struct
+> regmap *));
+> +	if (IS_ERR(mtk_dp->phy_dev)) {
+> +		dev_err(dev, "Failed to create device mediatek-dp-phy:
+> %ld\n",
+> +			PTR_ERR(mtk_dp->phy_dev));
+> +		return PTR_ERR(mtk_dp->phy_dev);
+> +	}
+> +
+> +	mtk_dp_get_calibration_data(mtk_dp);
+> +
+> +	mtk_dp->phy = devm_phy_get(&mtk_dp->phy_dev->dev, "dp");
+> +	if (IS_ERR(mtk_dp->phy)) {
+> +		dev_err(dev, "Failed to get phy: %ld\n",
+> PTR_ERR(mtk_dp->phy));
+> +		platform_device_unregister(mtk_dp->phy_dev);
+> +		return PTR_ERR(mtk_dp->phy);
+> +	}
+> +
+> +	mtk_dp->bridge.funcs = &mtk_dp_bridge_funcs;
+> +	mtk_dp->bridge.of_node = dev->of_node;
+> +	mtk_dp->bridge.type = DRM_MODE_CONNECTOR_eDP;
+> +
+> +	mtk_dp->bridge.ops =
+> +		DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
+> DRM_BRIDGE_OP_HPD;
+
+DRM_BRIDGE_OP_DETECT? DRM_BRIDGE_OP_HPD?
+
+> +	drm_bridge_add(&mtk_dp->bridge);
+> +
+> +	pm_runtime_enable(dev);
+> +	pm_runtime_get_sync(dev);
+> +
+> +	return 0;
+> +}
+> +
+> 
+
+[snip]
+
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dp_reg.h
+> b/drivers/gpu/drm/mediatek/mtk_dp_reg.h
+> new file mode 100644
+> index 0000000000000..79952ac30e9e6
+> --- /dev/null
+> +++ b/drivers/gpu/drm/mediatek/mtk_dp_reg.h
+> @@ -0,0 +1,568 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (c) 2019 MediaTek Inc.
+> + * Copyright (c) 2021 BayLibre
+> + */
+> +#ifndef _MTK_DP_REG_H_
+> +#define _MTK_DP_REG_H_
+> +
+> +#define MTK_DP_SIP_CONTROL_AARCH32 0x82000523
+> +#define MTK_DP_SIP_ATF_VIDEO_UNMUTE 0x20
+> +#define MTK_DP_SIP_ATF_EDP_VIDEO_UNMUTE 0x21
+> +
+> +#define DP_PHY_GLB_BIAS_GEN_00 0x0000
+> +#define RG_XTP_GLB_BIAS_INTR_CTRL (0x1f << 16)
+> +
+> +#define DP_PHY_GLB_DPAUX_TX 0x0008
+> +#define RG_CKM_PT0_CKTX_IMPSEL (0xf << 20)
+> +
+> +#define DP_PHY_LANE_TX_0 0x104
+> +#define RG_XTP_LN0_TX_IMPSEL_PMOS (0xf << 12)
+> +#define RG_XTP_LN0_TX_IMPSEL_NMOS (0xf << 16)
+> +
+> +#define DP_PHY_LANE_TX_1 0x204
+> +#define RG_XTP_LN1_TX_IMPSEL_PMOS (0xf << 12)
+> +#define RG_XTP_LN1_TX_IMPSEL_NMOS (0xf << 16)
+> +
+> +#define DP_PHY_LANE_TX_2 0x304
+> +#define RG_XTP_LN2_TX_IMPSEL_PMOS (0xf << 12)
+> +#define RG_XTP_LN2_TX_IMPSEL_NMOS (0xf << 16)
+> +
+> +#define DP_PHY_LANE_TX_3 0x404
+> +#define RG_XTP_LN3_TX_IMPSEL_PMOS (0xf << 12)
+> +#define RG_XTP_LN3_TX_IMPSEL_NMOS (0xf << 16)
+
+These register should be controlled by dp_phy driver?
 
 Regards,
-Bhupesh
+CK
 
-> >
-> > This fixes the following '$ make dtbs_check' warning(s):
-> >
-> > sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
-> >   '#clock-cells' is a required property
-> >
-> > Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > Cc: Vinod Koul <vkoul@kernel.org>
-> > Cc: Rob Herring <robh+dt@kernel.org>
-> > Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-> > ---
-> >  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 1 -
-> >  1 file changed, 1 deletion(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> > index 9e0f60e682c4..746a929c63bb 100644
-> > --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> > @@ -115,7 +115,6 @@ patternProperties:
-> >  required:
-> >    - compatible
-> >    - reg
-> > -  - "#clock-cells"
-> >    - "#address-cells"
-> >    - "#size-cells"
-> >    - ranges
-> > --
-> > 2.35.1
-> >
->
->
-> --
-> With best wishes
-> Dmitry
+> +
+> +#define TOP_OFFSET 0x2000
+> +#define ENC0_OFFSET 0x3000
+> +#define ENC1_OFFSET 0x3200
+> +#define TRANS_OFFSET 0x3400
+> +#define AUX_OFFSET 0x3600
+> +#define SEC_OFFSET 0x4000
+> +
+> 
+
 
 -- 
 linux-phy mailing list
