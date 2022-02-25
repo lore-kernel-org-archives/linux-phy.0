@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C544C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 08:43:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AFC9C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 08:58:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kA9pZxQsuBfd97QAM6NhBD3tIeVM0GfMTmft04xWneM=; b=k+tprcnG5ztcOu
-	m0pPAxGGBumapLq/O1YNTbTG3J4WRxLIaKQmXa8TEdcs7j5gRs38KJ6QcTLMyCfAZ7rg/i/f47gsu
-	5OwmEopBvBOG/6vukGM6nVeDCVzaeMA+viDmVI8Bn1kjOv3IUFTy3P6g5Rmbyjo5GtB5Sb/Gv0Cje
-	iw7+SjcZ9CNkH91TF9du2mDSekFNvoVRqH3POUkzk2ifvHWfGgm+2wushwN//JTtvrsV35c2haeiJ
-	W3tWP/0+TtCeX1t+L66qShcYvBH1EnRzTMSUaL4mDUUAz39SsaBk9gC5B5kOKMcZA6rwbNgWiofeT
-	GxI9R9V3XSQQ7BMXOtGQ==;
+	List-Owner; bh=M1+AMq4K3zbledNHMqWSUGrE/g5/mr6ah3K7qoLj+mE=; b=YW5YHoFDVqYlxD
+	CCNmVelkjVaOpaPG8iYA9LjPActtAXoxzKoJsQrBQ/Cqhj539U5neb9ytS5iuXQO+MxvYAL/WEUH+
+	hIIrGE3Q9ab9f9NIvTRyINqT5xWSroUSSjFr6rIUkpLP/lC48PixB15F+rdDFUa7AUHPw45TPz63d
+	WrXaYqUj/qmibdZD4aOKvlkS9g51r1bHMDo5tg/Jux6C8Jr+JCL0S9A4mxuGidbg8LkfL75lSUOKn
+	yf23wi3rWFYM1HOsXfh2+YfJZqZofB6WdqbIYEpLO5Rg9WgiB+iuVsAJD+xSX+wCePsoTF6t9h654
+	7vtalz4d7LCDyNzhFnaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nNWCO-0040K4-GM; Fri, 25 Feb 2022 08:43:36 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1nNWRB-0042Qm-Mn; Fri, 25 Feb 2022 08:58:53 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nNWCL-0040JP-Lm
- for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 08:43:35 +0000
+ id 1nNWR9-0042Pj-BZ
+ for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 08:58:52 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 3FE0E61C77;
- Fri, 25 Feb 2022 08:43:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7FC64C340E7;
- Fri, 25 Feb 2022 08:43:32 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id C058661CCE;
+ Fri, 25 Feb 2022 08:58:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ACEF3C340E7;
+ Fri, 25 Feb 2022 08:58:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1645778613;
- bh=oGOrRQb4Wq9padIb9oBVCYbpCpufpOd8E+7hPls+87Q=;
+ s=k20201202; t=1645779530;
+ bh=sw5tDBlxWJXbCoGAwOiCDSj1VB62c4bkXCqy7O/uzrk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XPHxhu8O3sIentsEeZZYqlFIV8MvVJ76L8s61U6HvyovwheqNlyqWDNr7xDHEHKMB
- sGnhcjLW8Ckb+aVzyx6NrPoojLL1GPZekJ4B0IZG/j+QntOP7KRDVPBieu4su+2hyh
- usAqe8obB8NehzCjJ8Rb9g2IqIbYAT/5gkoZOHB1Fcq6GU7b389YF1zq8hHHuJ8dEK
- TRk8NMMlvIa0zR8gKN/idjD8GF2qdRNt0dhTPSMaZQH8/nGL7Corr6oDgmQWzGw/o4
- b6xcLp/LthTJsMj2iG6tqt8PQnrmMBqYCM2Q8Fe4wY7z2Ktqe4Jp3hY1MSnqdh1XTg
- TLWRIdGLwjyVQ==
-Date: Fri, 25 Feb 2022 14:13:29 +0530
+ b=W5Xd3Jcv9mixpFloV3zOL+wMrtLhcud6/HWv+OuZvMPpC7kVMSJ3Zd2CS+8VXGVGa
+ 9iF/N/vml8izrn1Xy0o9wHY7Y32bIeXlNN714sbgeCcnvAiO+/GPn/wYuzciKM4k9F
+ wWdLpSC5Zy+xxouNBln0CFJixk7sYSkepJ5ym4szMFd/4j1zOIZow96Fzu2baz7Iol
+ rlN7yNrZ94n0sb6YWnN9u70nXryKMSqysXvg8KJXsKd87P/WQCKztixIkHDN3gSjn4
+ sfhtsiusWUY5H0unsyeDZPF1/H7CL/wsJMBJX7GlZJqGqYeobvoh+pASAnvL5I/xfK
+ XQxzBBla8WBmg==
+Date: Fri, 25 Feb 2022 14:28:45 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Cc: linux-kernel@vger.kernel.org, Al Cooper <alcooperx@gmail.com>,
+To: Hans de Goede <hdegoede@redhat.com>
+Cc: Felipe Balbi <balbi@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:BROADCOM BRCMSTB USB2 and USB3 PHY DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, 
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v2] phy: usb: Add "wake on" functionality for newer
- Synopsis XHCI controllers
-Message-ID: <YhiWsTyaGL9CFZkW@matsya>
-References: <20220215032422.5179-1-f.fainelli@gmail.com>
+ Stephan Gerhold <stephan@gerhold.net>, linux-usb@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 0/9] usb/dwc3 / phy/tusb1210: Add TUSB1211 charger
+ detection
+Message-ID: <YhiaRUvW1AutIrCy@matsya>
+References: <20220213130524.18748-1-hdegoede@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220215032422.5179-1-f.fainelli@gmail.com>
+In-Reply-To: <20220213130524.18748-1-hdegoede@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220225_004333_776299_BCE377A5 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220225_005851_463375_C888E706 
+X-CRM114-Status: GOOD (  17.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,16 +76,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-02-22, 19:24, Florian Fainelli wrote:
-> From: Al Cooper <alcooperx@gmail.com>
+On 13-02-22, 14:05, Hans de Goede wrote:
+> Hi All,
 > 
-> Add "wake on" support for the newer Synopsis based XHCI only controller.
-> This works on the 72165 and 72164 and newer chips and does not work
-> on 7216 based systems. Also switch the USB sysclk to a slower clock
-> on suspend to save additional power in S2. The clock switch will only
-> save power on the 72165b0 and newer chips and is a nop on older chips.
+> Here is v2 of the patchs-series to add support for USB charger-type
+> (SDP/DCP) detection using a tusb1210 phy connected to a dwc3 controller.
+> 
+> Changes in v2:
+> [PATCH v2 9/9] phy: ti: tusb1210: Add charger detection:
+> - Add an online attribute to the registered power_supply class device,
+>   otherwise upower thinks it is an extra system battery
+> - Add tusb1210_remove_charger_detect() function to properly unregister
+>   the tusb->psy_nb notifier and to cancel tusb->chg_det_work
+> 
+> v1 cover-letter:
+> 
+> Some Android x86 tablets with a Bay Trail (BYT) SoC (with DWC3 UDC)
+> and a Crystal Cove PMIC, which does not support charger-detection,
+> rely on a TUSB1211 phy for charger-detection.
+> 
+> This series adds support for this, it starts with some dwc3 bug-fixes
+> for issues hit while developing this, as well as adding support to
+> the dwc3 code to set a special property checked by the tusb1210 driver
+> to signal that it needs to enable charger-detection.
+> 
+> The 2nd half of the series does some refactoring / fixes to the
+> tusb1210 driver and adds the charger-detection support.
 
-Applied, thanks
+Applied phy patches to phy-next, thanks
 
 -- 
 ~Vinod
