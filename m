@@ -4,62 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25FCBC433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 13:53:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28FB6C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Feb 2022 15:54:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WUaLKVhyKRb+ZWKMS5SRmjlQtpuQvjzvIKhjwykeCtY=; b=t8/xY2H538PQvV
-	C7jC+TxmF98X/zxMQ8Z2XLtrOTNTjQkVt6/rE+a58Vs1PjHkArxjwl2LvG1xOAUSzgbjAt2THaHyc
-	y3ygCEdhwCpTcEup7XboATlJosrp1OdqhqjMBThWYUd9nGVD5DrSqykTP169qKjloUbwun/F6d4oL
-	BiRSF2J8OSFa6XVffVywv+gwdDOFvN5buMMFwE9VzKD+9FwGRLfON4q0s1DJjGTSagEMSpkCk8YTE
-	021JL29WU7J0UeBTm+HkecpUhHqD1bHZhtb5lXLpijsW603kN0pX8mKHPCB2hngnS+dP5SLub3Mcf
-	v+NCTwsa2wTlgeHHvXag==;
+	List-Owner; bh=Tl+ASPyEuoHUVttO8FawI6cPlDDt5aWsTFKFj+jSJjU=; b=D4px0EDxlN43A5
+	HDfiVkIr+IXI65jIzCq8k0FF/fmD1h3Xlbe3wNPHwNGGcxz7wf6KIoMZfySEZNhUbVgpOenrxEfDv
+	6mpYV0vydGyS/uikUo9WtIkN91aBFmwQSWV2R5BQDEYnfpmh4+CaxyWoikMyC8ZOOu6Vy9FvWRDgB
+	38f/u2HFQotaGNfqQdTOlv1Omt2pGQXJeZaeqgGRCLcfr9eu0UhTJbfQpt0gu6aXr+wDI+KJLln0n
+	K2u6igjDhNEUk2t5euuhMzp1mAioEKVUNgk9kyQdykpDbj79SFxookaQciOIpz7auSpAtAi3G5HxN
+	FytPiw1TTJaCy/Qk7Z5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nNb2c-005Fwf-B8; Fri, 25 Feb 2022 13:53:50 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nNcvo-005jLq-0Y; Fri, 25 Feb 2022 15:54:56 +0000
+Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nNatM-005ChM-OA
- for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 13:44:18 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1nNcti-005iU5-TE
+ for linux-phy@lists.infradead.org; Fri, 25 Feb 2022 15:52:48 +0000
+Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
+ [209.85.128.71])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 3E2C461DCA;
- Fri, 25 Feb 2022 13:44:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7FB4CC340E8;
- Fri, 25 Feb 2022 13:44:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1645796655;
- bh=YeWwmDQydXDKpfTMGd7ZLbBtQHjZpNv4VkGds+9BRs8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ua2bFiRBfSLL+zdFVl64MBQYOZ9vhcCheKSua8A6Prj97fkzW7yYqPyrM5DSuCXxm
- oo3y8UoD9sF9VFW0lavS4jDC4PyLamNiBty9O43SNWY/9TQVD0RL2u6aRgenKh4Kja
- sZ/8TH/vMByaGFaQzWjY3LdqJlQsqP0FrN/JRANCy6ZmfzwWEv61+azEIdDytxfc68
- zqNLJb15l5wsEPPCCyHD43/V6ZSEPA8dAjm33NrR0e1kq3LKspDQUeGN9oB8eDPIeQ
- a5nyYcC3SWvtdOrDHhS5H9G11DItE2fXDtZf/+oabCLaf4EooxSLxab0T21GxHyEs3
- SotgF+TWXoAzQ==
-Received: by pali.im (Postfix)
- id BD0617EF; Fri, 25 Feb 2022 14:44:12 +0100 (CET)
-Date: Fri, 25 Feb 2022 14:44:12 +0100
-From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Marek =?utf-8?B?QmVow7pu?= <kabel@kernel.org>,
- linux-phy@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [PATCH phy v4 0/5] Armada 3720 comphy native implementation
-Message-ID: <20220225134412.3zcdt6vfd33brszo@pali>
-References: <20220203214444.1508-1-kabel@kernel.org> <Yhjc7tpcp06QKnqz@matsya>
+ by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 9E5E03FCA5
+ for <linux-phy@lists.infradead.org>; Fri, 25 Feb 2022 15:52:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1645804365;
+ bh=QHFF1WfMTvTAtjpAnWWRlegRHHUzrTEtJpZxW8bOnTU=;
+ h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
+ In-Reply-To:Content-Type;
+ b=bw8kS4MCvVlpCQGqbzBHzDhsex4scGaJHfEjMI8HoR9YLz0gQXGYla2XfqwmUcFDO
+ g9mmJJmJt0sH55UvpYPOcNHrpghnyz22bwqaaKM6I8a2orM9yfOVWL62uJXjmW4Qmx
+ fCWF+gGz1RlQT/qdGROxoRGumc5k1OUCFdUWXi6nWwuQ2zv64vHnGbuWRhQTAOrZcX
+ ST71xP5uz6i2edqDz9tIsxRFl/ce3mls0M6Kpox0hihXY8RrdWpGjCOudFWp6hfgww
+ 2HiOHOkG4//p+LOssWltvhpLKr7Ee2nRqYis9Yv0/9YvJ/Bys/HC9XNgyALSOgN2PA
+ p5PUP8x2dbaGA==
+Received: by mail-wm1-f71.google.com with SMTP id
+ r8-20020a05600c35c800b0038118108e71so1485431wmq.7
+ for <linux-phy@lists.infradead.org>; Fri, 25 Feb 2022 07:52:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=QHFF1WfMTvTAtjpAnWWRlegRHHUzrTEtJpZxW8bOnTU=;
+ b=FsciZXxc8xMYSDjwAZhv0OEdh48jFPyb9cpCQn6/Dqfa5X/WWY4u5v0elIXeGezmHp
+ rOBENg6EUd+aF1wzhaZKlLsOwViueVeNIilr7Zv4K3NHyIMEo7p1PqRDm1JzaVqaJv41
+ klKxYHH7DdhrnswIm7k4jNEAqciQVkSUzkYn6iph5kFfeEeO080zrzOT5ZIyTAVGbpjL
+ ZUlLILtUrT0h1dlS+GYNfUNu9wuRkscRyzePhgVsHJkzRW00xnKW3R8Mw2aBmgwo7rwH
+ eyIhZoKIJm891V2N1I3KE+T+/19jtqNtngBJMnkORB+EXW3cQBgPctx+E32rEICqVQ8+
+ gmlw==
+X-Gm-Message-State: AOAM532vGJyaOGVIUhnh8dbGc1AYmGfg8HPIRwdHPAb8SPbLaaMZ61Fe
+ h5rZclm41S0vVK3a5RoPavGWRvFCtZshPgoJ+8HDfwJpLrSZWdy3SUgjtljWaJdSC4ulHfD14LM
+ vyJ72fU0XoG8OHMGdxBdo3Nxspf0p8zkDl1WglXmbg0I=
+X-Received: by 2002:a05:6000:257:b0:1ee:b98c:243c with SMTP id
+ m23-20020a056000025700b001eeb98c243cmr5267565wrz.51.1645804363706; 
+ Fri, 25 Feb 2022 07:52:43 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJwZClTgVXWBy9RraiO8dWUTT6Evv084LD3/xmJExyAJgJi+5QIL+SZtvfW/xkcPwvhNWEwrtA==
+X-Received: by 2002:a05:6000:257:b0:1ee:b98c:243c with SMTP id
+ m23-20020a056000025700b001eeb98c243cmr5267548wrz.51.1645804363529; 
+ Fri, 25 Feb 2022 07:52:43 -0800 (PST)
+Received: from [192.168.0.133] (xdsl-188-155-181-108.adslplus.ch.
+ [188.155.181.108]) by smtp.gmail.com with ESMTPSA id
+ g5-20020a5d5545000000b001ed9d3f521csm2567002wrw.113.2022.02.25.07.52.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 25 Feb 2022 07:52:43 -0800 (PST)
+Message-ID: <6561cfc7-b602-20e3-8679-0ebb99a52f16@canonical.com>
+Date: Fri, 25 Feb 2022 16:52:42 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Yhjc7tpcp06QKnqz@matsya>
-User-Agent: NeoMutt/20180716
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: qcom,qmp: add sc8180x and
+ sc8280xp ufs compatibles
+Content-Language: en-US
+To: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20220225035105.2294599-1-bjorn.andersson@linaro.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+In-Reply-To: <20220225035105.2294599-1-bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220225_054416_863231_7D8F8686 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220225_075247_133751_D2AA3406 
+X-CRM114-Status: GOOD (  10.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,17 +103,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpZGF5IDI1IEZlYnJ1YXJ5IDIwMjIgMTk6MTM6MTAgVmlub2QgS291bCB3cm90ZToKPiBP
-biAwMy0wMi0yMiwgMjI6NDQsIE1hcmVrIEJlaMO6biB3cm90ZToKPiA+IEhlbGxvIFZpbm9kLAo+
-ID4gCj4gPiB0aGlzIGlzIHY0IG9mIHNlcmllcyBjb252ZXJ0aW5nIEEzNzIwIGNvbXBoeSB0byBu
-YXRpdmUga2VybmVsCj4gPiBpbXBsZW1lbnRhdGlvbi4KPiA+IAo+ID4gVGVzdGVkIG9uIFR1cnJp
-cyBNT1ggYW5kIEVTUFJFU1NPYmluICh0ZXN0ZWQgYWxsIHN1cHBvcnRlZCBQSFkgbW9kZXM6Cj4g
-PiBldGhlcm5ldCwgUENJZSwgVVNCMywgU0FUQSkuCj4gCj4gQXBwbGllZCBhbGwsIHRoYW5rcwo+
-IAo+IC0tIAo+IH5WaW5vZAoKVGhhbmsgeW91IHZlcnkgbXVjaCEKCi0tIApsaW51eC1waHkgbWFp
-bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 25/02/2022 04:51, Bjorn Andersson wrote:
+> Add compatible for the UFS PHY found in the Qualcomm SC8280XP platform
+> and document the required clocks for this and the SC8180X UFS PHY.
+> 
+> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> ---
+> 
+> Changes since v1:
+> - Fixed indentation
+> 
+>  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
