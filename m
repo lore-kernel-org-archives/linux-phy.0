@@ -4,83 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 450FDC4332F
-	for <linux-phy@archiver.kernel.org>; Sat, 26 Feb 2022 23:38:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F768C433EF
+	for <linux-phy@archiver.kernel.org>; Sun, 27 Feb 2022 04:19:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0EBbooUMAM7smYFwveNPzhoFb4x1P6JvfyGEv24Mfq8=; b=zbYmGax5yBF97D
-	GrxuUpEcSAib7la3rNN8A7PsItuPOpgSVB7Ypho/k9jk/uOWNovzWYOZyMqPK71b6j4WnG2YqrdiG
-	Mu/HyUzDawucv7Y+7kBkc4+joVocSrviiIprrVgpEL/HkbmEuPkQWviYTS/O3Bqldd6nsek7GMaok
-	csgd9mlWrS1BnIJrIgrrAfOqg/6ZbjXNH+ovqa9eplkn14D9afN9fUskY89YuSvZDRw81MZOdzJGp
-	wi35/QihxY6X8yRrEAb1DAb7HgKyEwmUuXzJIH/eKh5pac5d1n2yefk7eaBTN5blTllL7j4jhFWTE
-	WSO4o+vxlPCjS+TKdhzA==;
+	List-Owner; bh=GB94XLDFikzTB2B86jYe+p0yzTNAwBCtJaMeKobiXGM=; b=22aarMmr1nw05I
+	1+LBixRXeW3J1Jm2VBAy9vHwwuSh5mfKLwqtv3cKnt2w1LO/OfkCvotfBej5cLRfGcOMcaIQvAZ2n
+	8GjWorf15a605DPrR25WnIPEOmb02U1RK2epwrZyrNUabeFIK+f7D2S7dCu42gP3iNj/IcDwOni7C
+	QXFnVyWIhp7zkyh+2hTBB01KT8xQOJcO5ONLkcElEh3yrAAfcvdwZcg0C729LvvPVGG8Hm6UYdQg+
+	Ctn/0zgOdmAcW2yMG1uAWQZSn00P+dYjUFefFGcjmh2sJ8i+IjxsZX0EbwQalS4KIVPPXg+YxoGJE
+	AlQIokhioDcV3E8D8NyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nO6dv-008etb-Kn; Sat, 26 Feb 2022 23:38:27 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1nOB2D-008qTY-W2; Sun, 27 Feb 2022 04:19:49 +0000
+Received: from mail-oo1-xc2c.google.com ([2607:f8b0:4864:20::c2c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nO6ds-008etG-Pa
- for linux-phy@lists.infradead.org; Sat, 26 Feb 2022 23:38:26 +0000
-Received: by mail-lj1-x236.google.com with SMTP id e8so12385215ljj.2
- for <linux-phy@lists.infradead.org>; Sat, 26 Feb 2022 15:38:23 -0800 (PST)
+ id 1nOB2A-008qSY-J8
+ for linux-phy@lists.infradead.org; Sun, 27 Feb 2022 04:19:48 +0000
+Received: by mail-oo1-xc2c.google.com with SMTP id
+ s203-20020a4a3bd4000000b003191c2dcbe8so13361752oos.9
+ for <linux-phy@lists.infradead.org>; Sat, 26 Feb 2022 20:19:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=L77jjy3Pjb6haSmnZfnNmFgIofaBblWDltlBIh2LtP8=;
- b=ksCenEYJQP77iJl3VqiJjoJeFeq1I9QMUm9fBePnf75SO+2P4R5mUgZ2dv3tKUFnuu
- gar7ZtWVt828sugg+VnjuYXnlA7qzZVyxJ/2Fc+Wjuq4KHtxJ0pKzrAByvjmsM6JlnqZ
- o3WODvJDdShjW1l2b8nEOAU6Jfe/fzCXXKDuCF6N6sA1IHoRNmPLjt+RqDAg2H5bf3tY
- LCjY63dHcBz2Zl5OxOMr0PeQmKwW2ry49C2tXCnEXCRwy7A7FgqnlQ8YOxCxkHfhq120
- 2UqBGKjlKA8KKmGeZBCTcW2qvmwr3Heq5LdFUYauq5193lbCmssb9S8fYYA5VgSjT+Lu
- bCcw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=DOWQCle1yWXb74A6NwPdy7M5JNT4HpDC3FQ0vyWPTag=;
+ b=IeylE/7EPIwORvE0KS/7Ameqd+Ni1fvuGcTyhvl9Q+CBocq+kWqmhUOzDExwG+binD
+ b9NOZrJNqg8PSGZTql6noit2xRsPQlDHlz2uEkbZfPnkpQPgohVAEbkaulVLzCgms9aY
+ mEMavWAD1EwN9ULfjmyBqjYWuob6fPjV9j0Xi9zyvLdCkbe649ctm4rO+ougQiWPqKQq
+ TWZ0UYDBIL8HXreHEWovO+gTBa/jFnU8FvJ/jGr5lxO6qr80PzxK7DmeDtFSqBaugTx2
+ Igm6D4I9aQ9VS4Z/qLMgBpDCSW6nsLnhMIRg662la8bTYY36QaOI6/l/mg3DTU0Jzttq
+ 7aQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=L77jjy3Pjb6haSmnZfnNmFgIofaBblWDltlBIh2LtP8=;
- b=fl/FcX1V5HdWOfcujRh31gV+j19WPn3acaPmibDNNvVWcWeJGOt+7S8OWm0oyJ8mJ6
- 49notgi/f7EY0CI3ewzVb0fvX0lrZom16PHavP6Gi8t2rsyodm0v9VC/H5XjVxCW3UEK
- jT/UOiQ6KfMsUkQJKiOOUS1e8Bv2Q1u8Z/W8iZUGKX8uQ2RoiULYaguufvTcS0u0oZQN
- pEHA4Anh/XDQM6qkvnpkIwE8RMX65M2R4ul274s4j92z/6kGHi8H811JU4ssS3uNzzDm
- JkU0PNq37c69LooZgGWyCq6gkMIQGKNoMjsXB/plRg/VWAW+nvQGt7Pme3FDEqoTtG7Q
- KAzQ==
-X-Gm-Message-State: AOAM531tS+zaR+GYevX+kLm2vOjT//BpaXhiYHOxfT+uVzsjSaH4hBYW
- NUydazYO6mogb4CYwbtXZSpXqw==
-X-Google-Smtp-Source: ABdhPJzI6jlwWxLLswkwolfMTDkejgzveyClOap+Ur9bxPwPT/5fOg85P4oWWg1y+wDGzOu5nl5a9A==
-X-Received: by 2002:a2e:7007:0:b0:246:2b76:31a with SMTP id
- l7-20020a2e7007000000b002462b76031amr9992267ljc.397.1645918702617; 
- Sat, 26 Feb 2022 15:38:22 -0800 (PST)
-Received: from [192.168.1.211] ([37.153.55.125])
- by smtp.gmail.com with ESMTPSA id
- b3-20020ac25623000000b004435fb1f5basm550208lff.78.2022.02.26.15.38.21
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 26 Feb 2022 15:38:22 -0800 (PST)
-Message-ID: <a6d28a2e-69fc-9bdf-da0d-28be35d9bfc2@linaro.org>
-Date: Sun, 27 Feb 2022 02:38:21 +0300
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=DOWQCle1yWXb74A6NwPdy7M5JNT4HpDC3FQ0vyWPTag=;
+ b=XgTU4GnvjLyq81W3q9jPImdT2KQ50mmDkMk0nlUaW54bhSTiuTiFK9ip9TzgmGxjhU
+ Ucj0LnhXouLVC72EQC1znmeRX/mqW2thV/a4pq7NcQ15wWvCzyA+AS5yjB/p3KPgNyCZ
+ 7jD2f5wlQGX0HLv+rd2yfxK3ihbk0FUDUrLrT0ZIKgo+UyEXzH0YCO6wP6mPr0gIRYgO
+ BhTWp3U6CanXewsvNjoPV8NGo4FAUZ/qTj2hCpojmVxGu1jid2jVLzkKMj+HFQgEyDG5
+ 7QYfojCCZU5tdQWkNl2cDw7Kkwdgu555hfxTQlyWXaSgDbtiYMkCkML0ryckxnpAiSoC
+ 14oA==
+X-Gm-Message-State: AOAM533IVtL3mLCXOPPGyPK+JoBQGKkeUxm/9ps6cNdsv7WDNpQowkV4
+ UHECWI5lfirT3dqpnPlFKuIBolHk/F4m69o6pkOpPw==
+X-Google-Smtp-Source: ABdhPJzIp2ckX/5Fmg/5ZskGI2KaKSC4oRyfJHOpnu/S5EGTP1fU2fyV7LXsE25qAb1bhAdDLKuJeW4Nln8qhWSEhBA=
+X-Received: by 2002:a4a:301c:0:b0:2dc:dcf1:8a62 with SMTP id
+ q28-20020a4a301c000000b002dcdcf18a62mr6116378oof.7.1645935582815; Sat, 26 Feb
+ 2022 20:19:42 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.6.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom, qmp: Mark '#clock-cells' as a
- 'optional' property
-Content-Language: en-GB
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, bhupesh.linux@gmail.com,
- agross@kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, robh+dt@kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>
 References: <20220224123248.67073-1-bhupesh.sharma@linaro.org>
  <CAA8EJprRgsZRSXBQumveAn029j+w6xO8K2kZUO4rzZaefuYe7Q@mail.gmail.com>
  <CAH=2NtxQBS=c0W0cpX5EdNi12PrqiKEuzyvEtF8WrVE6nsU_rg@mail.gmail.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <CAH=2NtxQBS=c0W0cpX5EdNi12PrqiKEuzyvEtF8WrVE6nsU_rg@mail.gmail.com>
+ <a6d28a2e-69fc-9bdf-da0d-28be35d9bfc2@linaro.org>
+In-Reply-To: <a6d28a2e-69fc-9bdf-da0d-28be35d9bfc2@linaro.org>
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+Date: Sun, 27 Feb 2022 09:49:31 +0530
+Message-ID: <CAH=2NtwveafJxjNAY_2eRE1sKhEL2wKJhcF7a1THsJW_QiwSpQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom, qmp: Mark '#clock-cells' as a
+ 'optional' property
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, bhupesh.linux@gmail.com, agross@kernel.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-phy@lists.infradead.org, robh+dt@kernel.org, 
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220226_153824_895792_585BA6FE 
-X-CRM114-Status: GOOD (  18.50  )
+X-CRM114-CacheID: sfid-20220226_201946_691022_293F2A0A 
+X-CRM114-Status: GOOD (  16.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,82 +84,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/02/2022 12:16, Bhupesh Sharma wrote:
-> Hi Dmitry,
-> 
-> Thanks for your review comments.
-> 
-> On Thu, 24 Feb 2022 at 20:22, Dmitry Baryshkov
-> <dmitry.baryshkov@linaro.org> wrote:
->>
->> On Thu, 24 Feb 2022 at 15:33, Bhupesh Sharma <bhupesh.sharma@linaro.org> wrote:
->>>
->>> Since '#clock-cells' is not a required property for several
->>> QCoM boards supporting qmp-phy(s) (for e.g. sm8150, sm8250 or sm8350 SoC
->>> based boards), mark it as an optional property instead.
->>
->> I believe the description is not correct. the clock-cells should not
->> be used at all, so it should be removed from the root node.
-> 
-> Hmm.. 'clock-cells' is still used for describing qmp phy pcie nodes for certain
-> devices like 'msm8996.dtsi'. I am not sure if removing it would impact existing
-> dts files. But let me try cleaning them up in v2.
+On Sun, 27 Feb 2022 at 05:08, Dmitry Baryshkov
+<dmitry.baryshkov@linaro.org> wrote:
+>
+> On 25/02/2022 12:16, Bhupesh Sharma wrote:
+> > Hi Dmitry,
+> >
+> > Thanks for your review comments.
+> >
+> > On Thu, 24 Feb 2022 at 20:22, Dmitry Baryshkov
+> > <dmitry.baryshkov@linaro.org> wrote:
+> >>
+> >> On Thu, 24 Feb 2022 at 15:33, Bhupesh Sharma <bhupesh.sharma@linaro.org> wrote:
+> >>>
+> >>> Since '#clock-cells' is not a required property for several
+> >>> QCoM boards supporting qmp-phy(s) (for e.g. sm8150, sm8250 or sm8350 SoC
+> >>> based boards), mark it as an optional property instead.
+> >>
+> >> I believe the description is not correct. the clock-cells should not
+> >> be used at all, so it should be removed from the root node.
+> >
+> > Hmm.. 'clock-cells' is still used for describing qmp phy pcie nodes for certain
+> > devices like 'msm8996.dtsi'. I am not sure if removing it would impact existing
+> > dts files. But let me try cleaning them up in v2.
+>
+> Checked. Unless I'm mistaken, msm8996.dtsi doesn't use #clock-cells in
+> root QMP PHY nodes.
 
-Checked. Unless I'm mistaken, msm8996.dtsi doesn't use #clock-cells in 
-root QMP PHY nodes.
+Indeed. I meant that we made some cleanups already via
+82d61e19fccb ("arm64: dts: qcom: msm8996: Move '#clock-cells' to QMP
+PHY child node"),
+but it seems a few dts still need to be cleaned up to move the
+'#clock-cells' to QMP PHY child node instead of the root node.
 
-> 
->> Also we should describe phy@ properties.
-> 
-> Sure, I will add them in v2.
-> 
-> Regards,
-> Bhupesh
-> 
->>>
->>> This fixes the following '$ make dtbs_check' warning(s):
->>>
->>> sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
->>>    '#clock-cells' is a required property
->>>
->>> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
->>> Cc: Vinod Koul <vkoul@kernel.org>
->>> Cc: Rob Herring <robh+dt@kernel.org>
->>> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
->>> ---
->>>   Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 1 -
->>>   1 file changed, 1 deletion(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
->>> index 9e0f60e682c4..746a929c63bb 100644
->>> --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
->>> +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
->>> @@ -115,7 +115,6 @@ patternProperties:
->>>   required:
->>>     - compatible
->>>     - reg
->>> -  - "#clock-cells"
->>>     - "#address-cells"
->>>     - "#size-cells"
->>>     - ranges
->>> --
->>> 2.35.1
->>>
->>
->>
->> --
->> With best wishes
->> Dmitry
+I will send a fixed version in v2 :)
 
-
--- 
-With best wishes
-Dmitry
+Regards,
+Bhupesh
 
 -- 
 linux-phy mailing list
