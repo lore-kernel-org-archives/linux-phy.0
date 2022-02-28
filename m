@@ -4,80 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D692C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Feb 2022 12:49:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6E01C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Feb 2022 14:44:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jG5kchuIefB4KWTRUXs+VQXt0PZa+kfv9OeRt46Hv4U=; b=p4C0vTTOG/waPA
-	jbzrTRvGSuXw/QKdCnbUn9HQTnY5xZsFHxLG1loHM8uT4laaXc+wzehYL31lisduAVsTr31hkzbL1
-	R/WL8NhrR+6vmu7LTGGA8rjVvBaKrzuuPOKS5KSEWmntzw5IsGtu/36RKS04qTq6VIogtqSK6Afk9
-	2dqyGSY6VZibO9/BKbpmPwrl6fm1Z/h2Gbsv+47PZ5sNE4XCM/SDz5UE7ipC05ipEkLzBoohWcDjx
-	6OHdbxi62qMOleJY9hUEQRYeVSaQhzDTtPbIcqtXiHpvXYH7b7jUiqYgsrtE2nMBDztzQiWo5kK7w
-	looXjIoIOXRSkzo2VxWw==;
+	List-Owner; bh=kj5BuZ+3qNwzFerzZhcIOOfBKyAuuDwNib44NnWRhHk=; b=0fu8qQ2aNZLCq+
+	4C9ciLxggpjlqAskbjjXBP6WTUsqzajXbEKrFl4bmngyGqcCAo706SD/tQ9MyjhplNSC7ddwGa3wU
+	bAYvHPjfdisT9/tAknUyYeyiClAE9ubE0yqAmy/GBcBaLs0x2VVYqMDXNUY62OEEVUpGsDhDCIIJy
+	5eIIhXXhXvUhqn/D1T7qB7IpyNRKRW5oh8vwZoKrIP9Q8Cb5IfuAp68j74Jttq+s4RPM97zzOH+ys
+	oUsqW+ty4j9GyN8XZtUyEkdLqlwTi1lM+0xPezKAXazYflxVng3iSqXuhLq5h9DsBfBxRhcy4JI+x
+	keZEtp1/pILjNat7vNwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nOfSW-00CKXH-PC; Mon, 28 Feb 2022 12:49:00 +0000
-Received: from mail-pf1-x430.google.com ([2607:f8b0:4864:20::430])
+	id 1nOhG3-00CzSX-RD; Mon, 28 Feb 2022 14:44:15 +0000
+Received: from mail-vs1-f48.google.com ([209.85.217.48])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nOfBF-00CDlj-Bz
- for linux-phy@lists.infradead.org; Mon, 28 Feb 2022 12:31:10 +0000
-Received: by mail-pf1-x430.google.com with SMTP id t5so1955716pfg.4
- for <linux-phy@lists.infradead.org>; Mon, 28 Feb 2022 04:31:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=uiCgAku//7sIMuxqYHJc2X9D5M99OLU0HUtVfVHUJPY=;
- b=Nh6OUoqsnLEtt283PlSYofT0UzjINAUBlvDTEtSbmjaMIILGxpKPijxKTImryL80pZ
- DffhZKBm46nxZVmMorF1GE2psWugzuEJSnykI66Ww8RgRt8anmJWTTwulLfrPEwVf8UJ
- 9vvgtTgBfrqZnjHKzYBT7bKAaZSrg6izHygsmT3YQGI0bo4mpo6LEqtI5MOoQPY/Kupt
- SQJjJOjHOCC6oLaO5JHkdPdsBY1JkA2vlIKFMd1/GtLVF8nPyJV6OmzVzZ2zf8PKIZYe
- recM9diRzHH6Vh9oUuYEBxy+KPQOP+BHVWYYruQKB2WfVdljcZ/TxBjOPES527DN2yB4
- wAAg==
+ id 1nOh7r-00CwMJ-QK
+ for linux-phy@lists.infradead.org; Mon, 28 Feb 2022 14:35:49 +0000
+Received: by mail-vs1-f48.google.com with SMTP id i27so13113219vsr.10
+ for <linux-phy@lists.infradead.org>; Mon, 28 Feb 2022 06:35:47 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=uiCgAku//7sIMuxqYHJc2X9D5M99OLU0HUtVfVHUJPY=;
- b=vm8g0Z2sFChu6uiUQuG//TYKBC8OpguO8+qE9Vxj3PBScMMgpDiyPhkR3CLOyPJle7
- n4Ziw9dZ4UQP8qcpFYkZrNKHTpp1Rl18A/m/c7KNzbuoIP8OJSrb/t+8SnLWEwREPusf
- nfZ/yMoJMsbblp9nid1IwppbBSIQcnGIm2LEGPrUPfqRJ4mPtqdPUz5fAdVRxnNT1G7l
- d/SnfAgS4tbeKNyii+5ITUxsZYqzyTg3FyE+E48BcVf5R1xN7B88ov3C1TvJw+rnbtLl
- dHBLrAwxk0Vc2hjqSu2fHeSEc7W/GUNwh6UrVp9sgdaYEo/t8Sf+oKpMrcY5hvHh7YMq
- Vv5w==
-X-Gm-Message-State: AOAM532DKr9S/9CVgw2iB/HujFDW5OaitsvBcNAYmHQzpi6duJuhDUm4
- iMhYT+dI728K2tK1xcf3xQU8Bw==
-X-Google-Smtp-Source: ABdhPJzBpN1R+t/fGMdQfNiAYxIQ/GG3amctANAxG40D5LFiKQhC6nutcyeNhTgRbB1ZD3JHW7BAGg==
-X-Received: by 2002:a65:4549:0:b0:378:c0b0:c153 with SMTP id
- x9-20020a654549000000b00378c0b0c153mr1446757pgr.177.1646051468859; 
- Mon, 28 Feb 2022 04:31:08 -0800 (PST)
-Received: from localhost.localdomain ([223.179.136.225])
- by smtp.gmail.com with ESMTPSA id
- f7-20020a056a0022c700b004f0e9d686dcsm13790001pfj.137.2022.02.28.04.31.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Feb 2022 04:31:08 -0800 (PST)
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-To: linux-arm-msm@vger.kernel.org
-Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com, agross@kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- shawn.guo@linaro.org, vkoul@kernel.org, linux-phy@lists.infradead.org,
- robh+dt@kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh@kernel.org>
-Subject: [PATCH v2 8/8] dt-bindings: phy: qcom,
- qmp: Mark 'vdda-pll-supply' & 'vdda-phy-supply' as optional
-Date: Mon, 28 Feb 2022 18:00:19 +0530
-Message-Id: <20220228123019.382037-9-bhupesh.sharma@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220228123019.382037-1-bhupesh.sharma@linaro.org>
-References: <20220228123019.382037-1-bhupesh.sharma@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4W2KAZr0aee0ddqrQkvXwCKjH8/N/IF9E6sKuTx6QWo=;
+ b=tiURuisAz8bqpaM6KEDY6Jnq4kPu0XCEuzX8SNF7zNy7kpqW6kUdeqWH9ve3Sv1GUN
+ tp3ZWo2KAbsxfz6TLubBz6+BV+m3uXIpimNH60q3vqJTUpA941Y6c3PcfjHeLsT+qrAn
+ cTIc5+3UtBhCEd5GMnFQailChH6G7DQy1ONe3Cc6EvqE0eSuijG8UN2s48DuccQH4GRt
+ OCFSylLUQhOurTevFoB5UMB+xbrbbF/cwab4jx90y8HhHKkdv1sYcFN3sG5aL/g59QF3
+ UgmtN5EGUlHliB9RBdVkz07v2ttmlhrnbmUnrN2T6sQoTqUR0tWbIPn6r3+h+h3KDqvL
+ Aq6Q==
+X-Gm-Message-State: AOAM532zS7tG70vuOqsC2qoEJII4E/nrGTUIv62sfGzl8b8Z9fe969Qm
+ K5B8k3Q6Qz7JtNts6x7o4vlyYWYWRTmWZA==
+X-Google-Smtp-Source: ABdhPJwLhK5z18Wwts2zPZ6G7nzTUSAZOwTOFhbRmP7cQV6u/RoxsaXL0q+Ih5rLiykZw/FYfpm0tg==
+X-Received: by 2002:a05:6102:838:b0:31a:c4de:648b with SMTP id
+ k24-20020a056102083800b0031ac4de648bmr7580903vsb.46.1646058946215; 
+ Mon, 28 Feb 2022 06:35:46 -0800 (PST)
+Received: from mail-vk1-f178.google.com (mail-vk1-f178.google.com.
+ [209.85.221.178]) by smtp.gmail.com with ESMTPSA id
+ j35-20020a05612221a300b0031efb73803bsm1655459vkd.4.2022.02.28.06.35.45
+ for <linux-phy@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 28 Feb 2022 06:35:45 -0800 (PST)
+Received: by mail-vk1-f178.google.com with SMTP id k15so5213102vkn.13
+ for <linux-phy@lists.infradead.org>; Mon, 28 Feb 2022 06:35:45 -0800 (PST)
+X-Received: by 2002:a05:6122:130d:b0:333:33a4:52a9 with SMTP id
+ e13-20020a056122130d00b0033333a452a9mr2122971vkp.33.1646058945038; Mon, 28
+ Feb 2022 06:35:45 -0800 (PST)
 MIME-Version: 1.0
+References: <20220227230817.31094-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <TYBPR01MB5341A5DC3BBB4AA59668AF87D8019@TYBPR01MB5341.jpnprd01.prod.outlook.com>
+In-Reply-To: <TYBPR01MB5341A5DC3BBB4AA59668AF87D8019@TYBPR01MB5341.jpnprd01.prod.outlook.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 28 Feb 2022 15:35:33 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdX5yW3_3ydFXZBsOd+s-23-3dCfcgCxi8g_VEg0XPYnDA@mail.gmail.com>
+Message-ID: <CAMuHMdX5yW3_3ydFXZBsOd+s-23-3dCfcgCxi8g_VEg0XPYnDA@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: phy: renesas,
+ usb2-phy: Document RZ/V2L phy bindings
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Cc: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>, 
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, 
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Prabhakar <prabhakar.csengg@gmail.com>, 
+ Biju Das <biju.das.jz@bp.renesas.com>, 
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220228_043109_448602_8F62B3F2 
-X-CRM114-Status: UNSURE (   7.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220228_063547_901871_E16BB1D7 
+X-CRM114-Status: GOOD (  25.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,40 +96,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix the following 'make dtbs_check' warnings, by marking the
-'vdda-pll-supply' & 'vdda-phy-supply' properties as 'optional' in
-'qcom,qmp-phy' dt-binding:
+On Mon, Feb 28, 2022 at 3:18 AM Yoshihiro Shimoda
+<yoshihiro.shimoda.uh@renesas.com> wrote:
+> > From: Lad Prabhakar, Sent: Monday, February 28, 2022 8:08 AM
+> >
+> > Document USB phy bindings for RZ/V2L SoC. RZ/V2L USB phy is identical to
+> > one found on the RZ/G2L SoC. No driver changes are required as generic
+> > compatible string "renesas,rzg2l-usb2-phy" will be used as a fallback.
+> >
+> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > Reviewed-by: Biju Das <biju.das.jz@bp.renesas.com>
+> > ---
+> >  Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> > b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> > index 3a6e1165419c..4c475be413ef 100644
+> > --- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> > @@ -33,6 +33,7 @@ properties:
+> >        - items:
+> >            - enum:
+> >                - renesas,usb2-phy-r9a07g044 # RZ/G2{L,LC}
+> > +              - renesas,usb2-phy-r9a07g054 # RZ/V2L
+> >            - const: renesas,rzg2l-usb2-phy  # RZ/G2L family
+>
+> The "# RZ/G2L family" is not suitable now. I think removing
+> the comment is better like "renesas,rcar-gen3-usb2-phy".
 
-arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dt.yaml:
- phy-wrapper@88e9000: 'vdda-phy-supply' is a required property
+Indeed.
 
-arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dt.yaml:
- phy-wrapper@88e9000: 'vdda-pll-supply' is a required property
+> I don't have the RZ/V2L- documentation. So, I cannot check
+> whether the RZ/V2L is the same specification with RZ/G2{L,LC}.
+> But I trust you. So, after the comment was removed,
 
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Rob Herring <robh@kernel.org>
-Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
----
- Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 3 ---
- 1 file changed, 3 deletions(-)
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index f8a43acd229a..82b102b7d42c 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -436,9 +436,6 @@ allOf:
-           items:
-             - const: phy
-             - const: common
--      required:
--        - vdda-phy-supply
--        - vdda-pll-supply
-   - if:
-       properties:
-         compatible:
--- 
-2.35.1
+Gr{oetje,eeting}s,
 
+                        Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
