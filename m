@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92DFBC4332F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12164C43217
 	for <linux-phy@archiver.kernel.org>; Mon, 28 Feb 2022 12:48:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,70 +12,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nAhyrAv7gbh8LJJmWRm8VDzk2p4KSG3huTYQtfBxtZA=; b=k14XoPuMSPlG/d
-	zu7Gv9zk/jnL5gK9h/2qfOMcEPNM0wvo06V+TTNjH1teBXert1GnedhyVAh/7ao8RNo90EZo8cSXp
-	9HJY2M3H0o3MA6AwlhX1w6ewWr1sRu1H40k4rTY3KwBLxztHIop6YJpD2um63M59lmhSsZuXOMH4w
-	67GR1Dk2BxsxHWJg+d+VLXWeEH/jWuiPnkpArztsTI0jFphtPiKzNKy6VT+YXTrj82UsKmSKv08TM
-	KH7MLcuWCMIyroXSjaAglKpkeFuETmVbd1B6jobC4SXwCV9LtuqlTW9Tbc5LE9jgm7pnUSsZg5fLP
-	2rFw4QccRnDBySxj/12A==;
+	List-Owner; bh=ZXzMrYXOW/brgfLRp1Jvdklq9LCyC2vl7BNV7aZs8YI=; b=2DeEfvn69/+8y5
+	A+BxJIhcDbXnOSKj1ubml9l4xc5OWfKrCB784CxgP6XJbT9Rtd1xEEtks9CMCx3o16fV/PKQ2UJSQ
+	AHZtk+2RppB7OiDjfYuVRS2wR1HniJJUV/b/jw4ruawkEsv0dbg6/xImZBLR+iVERW2MJl++LPAvW
+	x1u7CTa0h/zxwCvyc5LixwEFVtbLL5DE68mkftiytDSop1DdLruO1VtgzXT5H9KhhuHMCMVu+biDZ
+	jkszWGw/6rfJMefGMg5WfEUrxSkvoWPuMEolqU2CaQ+rdHTXHxjXN/EX5bp1wviVw3PiQaZouzJFP
+	8i+K/f42FD+2fI/nPyYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nOfST-00CKTw-CQ; Mon, 28 Feb 2022 12:48:57 +0000
-Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
+	id 1nOfSU-00CKUe-8T; Mon, 28 Feb 2022 12:48:58 +0000
+Received: from mail-pl1-x62c.google.com ([2607:f8b0:4864:20::62c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nOfAn-00CDY0-Qw
- for linux-phy@lists.infradead.org; Mon, 28 Feb 2022 12:30:43 +0000
-Received: by mail-pl1-x636.google.com with SMTP id bd1so10549253plb.13
- for <linux-phy@lists.infradead.org>; Mon, 28 Feb 2022 04:30:41 -0800 (PST)
+ id 1nOfAs-00CDaK-4M
+ for linux-phy@lists.infradead.org; Mon, 28 Feb 2022 12:30:47 +0000
+Received: by mail-pl1-x62c.google.com with SMTP id h17so5007657plc.5
+ for <linux-phy@lists.infradead.org>; Mon, 28 Feb 2022 04:30:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=nAVvmeFPIjPaZ8Ic6jkgvNjs8mBwZCyzpyJ7eU2Zm5c=;
- b=PsrilE//k/KBeU5lfyDt7ncyeCRTEibDue38hBEJBUHIvkzBWoK+qMbmKZLMJ4NFhE
- VRLAsCpCkYSIgkkDZRh8rep5UDSNHKG960QXJDENxs8hai9thhWS3pUfr0fDDSYxvE0L
- cZzzQSGjLJi4360Cm6fw0xSijbym/jrkPTQDSsTIoh03gIS1JU6t1RsRNIHYm2CEMawU
- wIVqC0ZtRXAIhzSYmHz954aD88uQaSm8ohACEB/zXvNOLOeGvxIXKDhtQ4yM5l/yoV7h
- 3mtikdVIHu0kqL1EGbBY5gNuHUh0ggqL3ZjSHU7zNP/PE4RjuGvVe9hM3u00v74aLf8e
- yGiw==
+ bh=LTdaYyO7BCAGNKSC2MWHao5kqhDNJ7241TMEcNLnGmI=;
+ b=xZXFG6gst/2wMMOV4VQQwCn7XSlZDiwhGYdG9ZITVuWzvnuJFIBRLdDhscattRJNA/
+ 0iWcMIJDnOF9hd+BekyVX9ZxjCWlDgTIg+QD0Decxvz+S7mrT2R0FNBuwOuPEibxX2+o
+ yEOE1gk4mlbFJOS5V31W1eiwm1fOupV7/5S8CUBJmpyYNhuCmN2UbS+JQypm21CiqyrO
+ t6+Xyett1/j+jMd4G+Wlpk/T42/Hac6zHWUrf78Vhe57b5TYAbzqedODBg+ChyXjd1eQ
+ V5IvYHvINDFDZjsnDU/3w5phflJJr5/EWlncmUXNBWtZTL+oUDsHK9By6utlWqeMzEEX
+ a2Og==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=nAVvmeFPIjPaZ8Ic6jkgvNjs8mBwZCyzpyJ7eU2Zm5c=;
- b=6Y2hPdMQ7h90/joZGe58kpX/uzRx0Zf4Q2AF0rNKS1aFHWAsqTaIdZGJIWw0BzzT+v
- abwqRzglvT1NAVHiE8Bd/dKlSQCEyVDhb8nWjukFVPJzvryQTDtv7lNDD5P3FFYhmGsj
- khuBoATa4iWVUkRQCsM5jkDlF7AKpKqjXsFZANR3tugys/KX7AjYneqlcJ5Z2W8MmAiA
- L5a0eGWipT0g2hSBVZWm8cBy0+rDmooMCMW03/Jhkh4ygLLSGJnODZDkCD17CD4/+5mF
- wfbcV+coDdfxLGx+Y5txEn85+VD4GwpkiwiBgofNuRMZ/Zc55oYnT80ahs6HgjTV20D7
- 105A==
-X-Gm-Message-State: AOAM532WP13NFdWhn0rymBlGx+P2cGq3qPP1VvL6meApFZ4ADR3bYGV5
- iMR1UyjYOZZRBxozXdrZ59vrQA==
-X-Google-Smtp-Source: ABdhPJy5t8eALRHCJam/DcW+LuiRUR5zjwBdLipSnmBRkvJ+XYeLJYVECL6zv2428OGGf5chqtp06w==
-X-Received: by 2002:a17:902:cec9:b0:151:532b:7074 with SMTP id
- d9-20020a170902cec900b00151532b7074mr9421726plg.123.1646051440499; 
- Mon, 28 Feb 2022 04:30:40 -0800 (PST)
+ bh=LTdaYyO7BCAGNKSC2MWHao5kqhDNJ7241TMEcNLnGmI=;
+ b=tRP0NYawRdSAJboYJs1SdYM4taU2dFhTtqYefbTNaktzGN/QWbqqRsoax4gr0d2gGv
+ 0SDMxZsIyCXfGIQQDcbvm2VWrtYpo5AayRY3mIdHGUvSs7V0v/E6Ql4LrPjSZhIDL/+M
+ HE/S7EOrIm/K9qUjUPKxttlAQ1NmmAoIDi4YUlulhH/mb7QriH9gYWeN9j9Pe5GbHCq3
+ qg/+JYSeJ0fws6DvVo4MwNkX9GnVSK/4/wfGwwGOVsMSXojYZ/xrnGKYYGzm9Y8lDhxV
+ TW+KizhSl+XQRxTDev3X+96+vSGOJfFsOBBC7vGw7jnDISJ9RmGjRl2LiX3KUfoHJyZn
+ Ybcw==
+X-Gm-Message-State: AOAM530KI3Ut0Z5k3Ky0ipwHHc0Tyx68+JytiijnMcwpdGJQriQViDWl
+ bO+q9XZ8KscjD5Bz7IYcMmxCpQ==
+X-Google-Smtp-Source: ABdhPJzKsV3eHjoLgbKe7QfzMGneFHSKdf+oVN9ovRH/PBzA2MPzhkXuzpM3u7iZYV33pewy/PyGKw==
+X-Received: by 2002:a17:902:e5d1:b0:14f:f8b1:a9bf with SMTP id
+ u17-20020a170902e5d100b0014ff8b1a9bfmr20646551plf.35.1646051444962; 
+ Mon, 28 Feb 2022 04:30:44 -0800 (PST)
 Received: from localhost.localdomain ([223.179.136.225])
  by smtp.gmail.com with ESMTPSA id
- f7-20020a056a0022c700b004f0e9d686dcsm13790001pfj.137.2022.02.28.04.30.36
+ f7-20020a056a0022c700b004f0e9d686dcsm13790001pfj.137.2022.02.28.04.30.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Feb 2022 04:30:40 -0800 (PST)
+ Mon, 28 Feb 2022 04:30:44 -0800 (PST)
 From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
 To: linux-arm-msm@vger.kernel.org
 Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com, agross@kernel.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  shawn.guo@linaro.org, vkoul@kernel.org, linux-phy@lists.infradead.org,
  robh+dt@kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: [PATCH v2 2/8] dt-bindings: phy: qcom,
- qmp: Describe 'vdda-max-microamp' & 'vdda-pll-max-microamp' properties
-Date: Mon, 28 Feb 2022 18:00:13 +0530
-Message-Id: <20220228123019.382037-3-bhupesh.sharma@linaro.org>
+Subject: [PATCH v2 3/8] arm64: dts: qcom: msm8996-xiaomi: Drop max-microamp
+ and vddp-ref-clk properties from QMP PHY
+Date: Mon, 28 Feb 2022 18:00:14 +0530
+Message-Id: <20220228123019.382037-4-bhupesh.sharma@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220228123019.382037-1-bhupesh.sharma@linaro.org>
 References: <20220228123019.382037-1-bhupesh.sharma@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220228_043041_918936_26DDB5D3 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20220228_043046_200313_A1CB7D76 
+X-CRM114-Status: UNSURE (   8.44  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,43 +93,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since a few boards based on QCoM qmp phy use the
-'vdda-max-microamp' & 'vdda-pll-max-microamp' properties to
-describe the ufs phy nodes, add them to the dt-bindings doc as well.
+The following properties are not supported and causing dtbs_check
+warnings.
 
-This fixes the following '$ make dtbs_check' warning(s):
+    - vdda-phy-max-microamp
+    - vdda-pll-max-microamp
+    - vddp-ref-clk-max-microamp
+    - vddp-ref-clk-always-on
 
-sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
-  'vdda-max-microamp', 'vdda-pll-max-microamp' do not match any of
-   the regexes: '^phy@[0-9a-f]+$', 'pinctrl-[0-9]+'
+arch/arm64/boot/dts/qcom/msm8996-xiaomi-gemini.dt.yaml: phy@627000:
+   'vdda-phy-max-microamp', 'vddp-ref-clk-always-on', 'vddp-ref-clk-max-microamp'
+    do not match any of the regexes: '^phy@[0-9a-f]+$', 'pinctrl-[0-9]+'
+
+Drop them from QMP PHY nodes for 'msm8996-xiaomi' dts.
 
 Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>
 Cc: Rob Herring <robh+dt@kernel.org>
 Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
 ---
- Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm64/boot/dts/qcom/msm8996-xiaomi-common.dtsi | 5 -----
+ 1 file changed, 5 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index 48cd6b6171a1..70e7cd75e173 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -87,6 +87,14 @@ properties:
-     minItems: 1
-     maxItems: 3
+diff --git a/arch/arm64/boot/dts/qcom/msm8996-xiaomi-common.dtsi b/arch/arm64/boot/dts/qcom/msm8996-xiaomi-common.dtsi
+index 7a9fcbe9bb31..f6f6b2e89a36 100644
+--- a/arch/arm64/boot/dts/qcom/msm8996-xiaomi-common.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8996-xiaomi-common.dtsi
+@@ -337,12 +337,7 @@ &ufsphy {
+ 	vdda-phy-supply = <&vreg_l28a_0p925>;
+ 	vdda-pll-supply = <&vreg_l12a_1p8>;
  
-+  vdda-max-microamp:
-+    description:
-+      Specifies max. load that can be drawn from phy supply.
-+
-+  vdda-pll-max-microamp:
-+    description:
-+      Specifies max. load that can be drawn from pll supply.
-+
-   vdda-phy-supply:
-     description:
-       Phandle to a regulator supply to PHY core block.
+-	vdda-phy-max-microamp = <18380>;
+-	vdda-pll-max-microamp = <9440>;
+-
+ 	vddp-ref-clk-supply = <&vreg_l25a_1p2>;
+-	vddp-ref-clk-max-microamp = <100>;
+-	vddp-ref-clk-always-on;
+ };
+ 
+ &venus {
 -- 
 2.35.1
 
