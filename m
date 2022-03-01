@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87A21C433F5
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D0A6C433FE
 	for <linux-phy@archiver.kernel.org>; Tue,  1 Mar 2022 11:18:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DuiqjTOH0gHzX5z6pkbaxngn9ybGQGu2TLDdZy6/f6I=; b=2sIijkeWtbfPFz
-	mOeCAZ0yJhy8Bzw0rXTPDFepmlWS+hXewzv0hpDto1NDJgEDMqa0+q4m2LN6uiUo3str3idpDOFfp
-	7SWk/I0MLEEnx0Pkc7F/dV0ERZT+geikMGyEv6NmjMfNBnJudfJOnqRwiPlit/YeUiKuOqdWtUtAJ
-	oW8uvokDDbD9uwssOC3NXKx9y38nXWXDkw44fGmtTmu9eBcgzIAjNNahMU3Eb3dXOC1d2agup01T2
-	RWrIUYfKaSt6eV4slRPk5FOC2xXxrzaDYTTgmE2aUBci1VrzAtsNUAI+5G5M5szx4ISGaKFC5xkHM
-	B75RY142ULM909xSVAQg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1efr0i2MK02YuQD5i2x5NqdF93s8Em9AznSXFdG/cjE=; b=at/YyGjdQLEYon
+	803rEbSCe16aFqxI7eGqM2dqwwZdbeAdUqavGZ4uPmB1sw9zlc+pUslSLq4LArC5UKrqC2bu3iqqo
+	dHQxUvluNq9GLx+RbS7L7/+pbx5SAWoffqBeznyqi01GIaZ7U9ZlElL2Wh+IC79a3LuKS6uup5ysU
+	tqhlfYHirNKODyD3AQ4U5EtVVl/kARDQnPwhwV7RrWAKawno1R8EECKRQS+IznNEZSMFe8ig1zXMV
+	/Nz0YvY4PO0DVgYpBvqoKvGKgNrblAxNaVWPlH7XKZCdpno3C0NAFh7xmAfgvNVvENTi/mT7mZsnc
+	rPtTd9GZ3IhUy7AL5CxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nP0Wi-00GO1d-OU; Tue, 01 Mar 2022 11:18:44 +0000
+	id 1nP0Wj-00GO1j-04; Tue, 01 Mar 2022 11:18:45 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nP0Uj-00GNTO-O5
- for linux-phy@lists.infradead.org; Tue, 01 Mar 2022 11:16:43 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 221BGRb5031460;
- Tue, 1 Mar 2022 05:16:27 -0600
+ id 1nP0Uj-00GNTZ-O9
+ for linux-phy@lists.infradead.org; Tue, 01 Mar 2022 11:16:45 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 221BGX1I031501;
+ Tue, 1 Mar 2022 05:16:33 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1646133387;
- bh=hgoYOfg51sWvCO51C/Y8M5TUnxSuo7QxMthh6uJ+J5g=;
- h=From:To:CC:Subject:Date;
- b=fFkyQjA6w/dyas0gFnfdOIk815jUjNCel0ehfxUmgF/HLkuGbWwsEYMtNjF9ThPM3
- L8/MdCUpK41LMY3+zY4/Y2XEv17YWxg+MIwHsJfBBhD1FYEENCxcicxZwchyFHNhwg
- +Cb6zAy1kibaGjSWzwlZeaoYF60VQlSHIkxCr8Y0=
-Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 221BGQBb017771
+ s=ti-com-17Q1; t=1646133394;
+ bh=C0+VGEntVNI3MtS9mDeqP4xuy+YWng1ZiXsO5o7rw18=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=V+ZFL6O5pCCWRwIXh3Rzp7pudBnyjsly0sMteot/0urE6tDs3YqrWitegbVK0DVFD
+ Ev8CPuUSk9evIYJ92BZSUBQRpLEMmDvYoNHIbWPEq1ka2tJJ8gDZ9f2fZOh8zuTjz8
+ qlObXEuyv9RPUH89hzk8F+t6oSzECMW24K/hdMrs=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 221BGXjh023010
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 1 Mar 2022 05:16:26 -0600
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 1 Mar 2022 05:16:33 -0600
+Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Tue, 1
- Mar 2022 05:16:26 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2022 05:16:33 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Tue, 1 Mar 2022 05:16:26 -0600
+ Frontend Transport; Tue, 1 Mar 2022 05:16:33 -0600
 Received: from pratyush-4F-325.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 221BGMAl116021;
- Tue, 1 Mar 2022 05:16:23 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 221BGMAn116021;
+ Tue, 1 Mar 2022 05:16:30 -0600
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Vinod Koul <vkoul@kernel.org>
 CC: Pratyush Yadav <p.yadav@ti.com>, Laurent Pinchart
@@ -60,15 +60,17 @@ CC: Pratyush Yadav <p.yadav@ti.com>, Laurent Pinchart
  Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
  Swapnil Jakhade <sjakhade@cadence.com>, <devicetree@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: [PATCH v10 0/4] Rx mode support for Cadence DPHY
-Date: Tue, 1 Mar 2022 16:46:17 +0530
-Message-ID: <20220301111621.2992275-1-p.yadav@ti.com>
+Subject: [PATCH v10 2/4] phy: dt-bindings: Convert Cadence DPHY binding to YAML
+Date: Tue, 1 Mar 2022 16:46:19 +0530
+Message-ID: <20220301111621.2992275-3-p.yadav@ti.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20220301111621.2992275-1-p.yadav@ti.com>
+References: <20220301111621.2992275-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220301_031641_895686_4A0A78D5 
-X-CRM114-Status: GOOD (  17.85  )
+X-CRM114-CacheID: sfid-20220301_031641_922391_1A297EE2 
+X-CRM114-Status: GOOD (  14.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,66 +87,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Convert Cadence DPHY binding to YAML.
 
-This series adds support for Cadence DPHY Rx driver. It has been split
-off from [0] to facilitate easier merging. I have still kept the version
-number to maintain continuity with the previous patches. The earlier
-version used the same binding for Tx and Rx DPHY. With the separate
-driver, I have added a separate binding. But I am still keeping the old
-conversion patch in this series since I have already done the work in
-converting the binding to yaml, might as well get it merged.
+Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
-Tested on TI's J721E with OV5640 sensor.
+---
 
-[0] https://patchwork.linuxtv.org/project/linux-media/list/?series=5526&state=%2A&archive=both
-
-Changes in v10:
-- Change SPDX license to GPL-2.0-only.
-- Change copyright year to 2022.
-
-Changes in v9:
-- Use %ld instead of %d for printing PTR_ERR().
-
-Changes in v8:
-- Move lanes check to start of configure sequence.
-- Change MODULE_LICENSE() to "GPL".
-
-Changes in v7:
-- Add spaces after { and before } in the bands table.
-- Drop the wrapping around the for loop on cdns_dphy_rx_get_band_ctrl().
-- Make cdns_dphy_rx_wait_for_bit() inline.
-- Print an error message if registering PHY provider fails.
-
-Changes in v6:
-- Add a new binding for DPHY Rx.
-- Move the DPHY Rx part to a separate driver.
-- Drop Rx specific changes from the cdns,dphy.yaml binding. Keep those
-  in cdns,dphy-rx.yaml
-
-Changes in v5:
-- Use the new cdns_dphy_info to specify PHY ops.
-- Re-order include in alphabetical order.
-- Make bands const.
-- Drop num_bands.
-- Make i, lanes unsigned.
-- Drop the maximum check in cdns_dphy_rx_get_band_ctrl(). Let the loop
-  complete and return -EOPNOTSUPP when we reach the end.
-- Drop the "rate < bands[i].min_rate" check since the bands are in
-  ascending order.
-- Move data_lane_ctrl to start of function and make it static const.
-
-Changes in v4:
-- Drop the submode parts. Use a different compatible for the Rx ops.
-- Make bands and num_bands static.
-- Drop the submode patches. Use a different compatible for Rx mode DPHY
-instead.
+(no changes since v3)
 
 Changes in v3:
-- Use a table to select the band.
-- Use a table to poll the data lane ready bits.
-- Multiply the DPHY HS clock rate by 2 to get the bit rate since the
-  clock is DDR.
 - Add Rob's R-by.
 
 Changes in v2:
@@ -153,28 +106,96 @@ Changes in v2:
 - Rename dphy@... to phy@... in example.
 - Add Laurent's R-by.
 - Re-order subject prefixes.
-- Add power-domain to the example.
-- Add Laurent's R-by.
-- Re-order subject prefixes.
 
-Pratyush Yadav (4):
-  phy: cadence: Add Cadence D-PHY Rx driver
-  phy: dt-bindings: Convert Cadence DPHY binding to YAML
-  phy: dt-bindings: cdns,dphy: add power-domains property
-  phy: dt-bindings: Add Cadence D-PHY Rx bindings
-
- .../devicetree/bindings/phy/cdns,dphy-rx.yaml |  42 +++
- .../devicetree/bindings/phy/cdns,dphy.txt     |  20 --
- .../devicetree/bindings/phy/cdns,dphy.yaml    |  56 ++++
- drivers/phy/cadence/Kconfig                   |   8 +
- drivers/phy/cadence/Makefile                  |   1 +
- drivers/phy/cadence/cdns-dphy-rx.c            | 255 ++++++++++++++++++
- 6 files changed, 362 insertions(+), 20 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy-rx.yaml
+ .../devicetree/bindings/phy/cdns,dphy.txt     | 20 --------
+ .../devicetree/bindings/phy/cdns,dphy.yaml    | 51 +++++++++++++++++++
+ 2 files changed, 51 insertions(+), 20 deletions(-)
  delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
  create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
- create mode 100644 drivers/phy/cadence/cdns-dphy-rx.c
 
+diff --git a/Documentation/devicetree/bindings/phy/cdns,dphy.txt b/Documentation/devicetree/bindings/phy/cdns,dphy.txt
+deleted file mode 100644
+index 1095bc4e72d9..000000000000
+--- a/Documentation/devicetree/bindings/phy/cdns,dphy.txt
++++ /dev/null
+@@ -1,20 +0,0 @@
+-Cadence DPHY
+-============
+-
+-Cadence DPHY block.
+-
+-Required properties:
+-- compatible: should be set to "cdns,dphy".
+-- reg: physical base address and length of the DPHY registers.
+-- clocks: DPHY reference clocks.
+-- clock-names: must contain "psm" and "pll_ref".
+-- #phy-cells: must be set to 0.
+-
+-Example:
+-	dphy0: dphy@fd0e0000{
+-		compatible = "cdns,dphy";
+-		reg = <0x0 0xfd0e0000 0x0 0x1000>;
+-		clocks = <&psm_clk>, <&pll_ref_clk>;
+-		clock-names = "psm", "pll_ref";
+-		#phy-cells = <0>;
+-	};
+diff --git a/Documentation/devicetree/bindings/phy/cdns,dphy.yaml b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
+new file mode 100644
+index 000000000000..b90a58773bf2
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/cdns,dphy.yaml
+@@ -0,0 +1,51 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/cdns,dphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Cadence DPHY Device Tree Bindings
++
++maintainers:
++  - Pratyush Yadav <p.yadav@ti.com>
++
++properties:
++  compatible:
++    items:
++      - const: cdns,dphy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: PMA state machine clock
++      - description: PLL reference clock
++
++  clock-names:
++    items:
++      - const: psm
++      - const: pll_ref
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++
++    dphy0: phy@fd0e0000{
++        compatible = "cdns,dphy";
++        reg = <0xfd0e0000 0x1000>;
++        clocks = <&psm_clk>, <&pll_ref_clk>;
++        clock-names = "psm", "pll_ref";
++        #phy-cells = <0>;
++    };
 -- 
 2.34.1
 
