@@ -4,78 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F834C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Feb 2022 22:10:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE0F4C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Mar 2022 02:46:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tkg3b0sQu7c4E5ctMq6091Kapz2+aH2AL1d5uwdYaA8=; b=Bt/3joiy79z14aqMvP3sKGnebz
-	mcEWXdC30+edoxYKaORwh0KufCt14t9kxdYOm5n4FYsgS+iMUM8bwm2GkxAT5C5M6BbHNzEEPT2FR
-	XsRKEFJ9JpcJk9jD2Bk7BFI/ywEX/lVrGm6J4iQJFEQ67lx+5DyIk8Czy+EJ68wBD2fzveBnUJHWX
-	0RluAsjxsGWHtjoZipdH5TqbitgAvMyZesNBkreBOMGO/joqZS/fz1iHIPht6jFT+Jzd0rehsXsPf
-	tb3+fg3sz/+pzR6Lj0fgetTamBh9nforWPH7zYXKPo+tWpxQ58XMpm2gB+OOx+dMeFd62F0fHZPe3
-	T+6eQZ1Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SWpUc69XGw596rHD58t7M62O8p5+cn0iD/m/oSZc2NU=; b=pAl4N1/zm98ZGU
+	4bGH4ne58WTfQEoG47Y+PMJo1T0ws199Sc6KCXwVooSEE+d8BJAlTSOfKAg4G7N6wOKpf4zYGOwGZ
+	c5LJnbFYhVH8XXGqNL25V+RiGchVw91WsAp0SshTSVo8kNkbWN/bMOkjoipXTTcbhk04ZBPQnnW/w
+	RCbKG2IvW3OkRvT7xoLG+FdAT4VRT4Z0FqtL78gaTZdsftOL1BV7HxIq/AexKIuwx08DHNtuyOlJl
+	6iIKkV2ddWX12QVX52Mofd78Dlc2uH1LzVYJB6Gdm7HG9tEE0kJI1jOa0l6UK+Mdsg4r+ODFiyroJ
+	cwNpoBS+1s+KQNH2INxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nOoDY-00EGnv-23; Mon, 28 Feb 2022 22:10:08 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nOsX4-00EjAK-3k; Tue, 01 Mar 2022 02:46:34 +0000
+Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nOoDB-00EGip-1I; Mon, 28 Feb 2022 22:09:46 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 3F5AEB8169A;
- Mon, 28 Feb 2022 22:09:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D10FC340EE;
- Mon, 28 Feb 2022 22:09:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1646086180;
- bh=C3m4pnnTAF+o+8Z+tsT22TMwOAoIvmDl7rQIHuiLdMA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BdRbVBZNF8SyrlpXKAsHjo1A6k3f944Uzsh5hy2UmK5ywn8cPtoiWatoTWpomjQzc
- x44Jv7/Wzxo8T+fSgsmyLRYgbKXOQkqEy86p/ln+HE5A679Zvs+XoyM7aJWc8wSHt6
- ACqagutJzp7I7JrJGyMxpDRREGY/HUyTANKgF4FJ/99jkm+o2X+/pda0xDuvY8MbdY
- Sv4Zfi/zQD1hFPf6GsOnP6lA5hiuplekt76UNCcR1YonNLI47HOJfCmRDkLAT1NcBE
- yuQHyRRcOkNLJGUq9zBF6RREf+bF8FScygNYfOz5OBENPb041Vfalb0bt696k7uf4U
- g+dDDXgOJFcHA==
-Date: Mon, 28 Feb 2022 22:09:31 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Pavel Machek <pavel@ucw.cz>, Lee Jones <lee.jones@linaro.org>,
- Guenter Roeck <groeck@chromium.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
- "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Sebastian Reichel <sre@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org,
- linux-leds@vger.kernel.org, linux-mtd@lists.infradead.org,
- netdev@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-spi@vger.kernel.org,
- linux-usb@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: Another pass removing cases of 'allOf'
- containing a '$ref'
-Message-ID: <Yh1IG9daOUOB52rf@sirena.org.uk>
-References: <20220228213802.1639658-1-robh@kernel.org>
-MIME-Version: 1.0
-In-Reply-To: <20220228213802.1639658-1-robh@kernel.org>
-X-Cookie: Killing turkeys causes winter.
+ id 1nOsX1-00Ej9j-DK
+ for linux-phy@lists.infradead.org; Tue, 01 Mar 2022 02:46:32 +0000
+Received: by mail-pl1-x631.google.com with SMTP id bd1so12310652plb.13
+ for <linux-phy@lists.infradead.org>; Mon, 28 Feb 2022 18:46:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:subject:date:message-id:in-reply-to:references;
+ bh=Oh77CwmcM8TqQGwRDvYrvPiyyCBaVXCwM96gKvsyh0c=;
+ b=cKgQn+iSiUti9x7VYjmZIZ10o8SAl7Y55nkiuo/+bpRiPYT1stJ6ggJklb6u8XoRXz
+ Et4saEOaAACuxUhA1LAMv3LrHG0QnCibU1WHYFFXRcTuEVUXSTwfOJWC9J9rM5JBoaGy
+ lO6aMbnnF8nD5xgx3LfQT30MOoGHCyhEMGEdl3wV72ofW+zuFdNtIHBO596XSNBiBIz3
+ 0EQsVSJppoMLizuOB+7u12dFxO5D2ViwDzDcjYgQXoOYDBS5pHW1YaeipwaEUHqVZKTe
+ yT9HyrNfXmv7O+FY+O1N/Gp8dPlSc6ViSO8LnEerMvzDovesI7Rqj4gtLgFX48UNUfNd
+ 1bzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references;
+ bh=Oh77CwmcM8TqQGwRDvYrvPiyyCBaVXCwM96gKvsyh0c=;
+ b=8RQbdHcy69my4zvEgtprXPxLALgrmGkvI2J6gbW51DEJb7MaBQZKfh5W4gv9HKb+oT
+ +3NwElbjeMnk2btiviLrdZYkOpopW5jx2hVRW6MmkUencp4onzSkXx7cu9xnTTZuiXyM
+ JPJyfIrEhn4/0rlznqU3UtVBiPJsGoAokBJmrK1gNY9g/2w7zO2PTWJZnfuubPLBWLmc
+ ghHP4LgnrF/sGXBgrTrydRkJ+PameADi4IBFSvWiQT1riCgBWqP0InFVNfJX8Knuh6Co
+ WyCaDv7zLDRPRgug3NoeioDJwj7IXxWj4BeTtLdtefno1dnXH04wa5M0Gsyzcst+S6qj
+ +xsw==
+X-Gm-Message-State: AOAM531Vzli1AdPaTkRmJFoP67biDy9QtFy86IbQ53qLJekJeeOYwIkl
+ Hhpoq0xd1vlaXYzL847Z4gRpgINPD99IQltQzt8=
+X-Google-Smtp-Source: ABdhPJxuyzzCqyPsxftZG5kik28R9flxKAT1VMHHtF755Tw/FboWjZE+mIlnRbvPeZonXtIveEVwPQ==
+X-Received: by 2002:a17:90a:a78f:b0:1bc:8042:9330 with SMTP id
+ f15-20020a17090aa78f00b001bc80429330mr19438763pjq.229.1646102789999; 
+ Mon, 28 Feb 2022 18:46:29 -0800 (PST)
+Received: from localhost.localdomain ([159.226.95.43])
+ by smtp.googlemail.com with ESMTPSA id
+ t8-20020a6549c8000000b00372eb3a7fb3sm11399940pgs.92.2022.02.28.18.46.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 28 Feb 2022 18:46:29 -0800 (PST)
+From: Miaoqian Lin <linmq006@gmail.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Miaoqian Lin <linmq006@gmail.com>, Tony Lindgren <tony@atomide.com>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v2] phy: mapphone-mdm6600: Fix PM error handling in
+ phy_mdm6600_probe
+Date: Tue,  1 Mar 2022 02:46:11 +0000
+Message-Id: <20220301024615.31899-1-linmq006@gmail.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20220105123947.17946-1-linmq006@gmail.com>
+References: <20220105123947.17946-1-linmq006@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220228_140945_264493_12C8CCD7 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20220228_184631_471217_99275DC0 
+X-CRM114-Status: GOOD (  12.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,61 +83,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1673572725752979221=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The pm_runtime_enable will increase power disable depth.
+If the probe fails, we should use pm_runtime_disable() to balance
+pm_runtime_enable(). And use pm_runtime_dont_use_autosuspend() to
+undo pm_runtime_use_autosuspend()
+In the PM Runtime docs:
+    Drivers in ->remove() callback should undo the runtime PM changes done
+    in ->probe(). Usually this means calling pm_runtime_disable(),
+    pm_runtime_dont_use_autosuspend() etc.
 
---===============1673572725752979221==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="xC2AwCckB4yHmCdp"
-Content-Disposition: inline
+We should do this in error handling.
 
+Fixes: f7f50b2 ("phy: mapphone-mdm6600: Add runtime PM support for n_gsm on USB suspend")
+Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+---
+changes in v2:
+- remove unused label
+- add pm_runtime_dont_use_autosuspend
+---
+ drivers/phy/motorola/phy-mapphone-mdm6600.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
---xC2AwCckB4yHmCdp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/drivers/phy/motorola/phy-mapphone-mdm6600.c b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+index 5172971f4c36..3cd4d51c247c 100644
+--- a/drivers/phy/motorola/phy-mapphone-mdm6600.c
++++ b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+@@ -629,7 +629,8 @@ static int phy_mdm6600_probe(struct platform_device *pdev)
+ cleanup:
+ 	if (error < 0)
+ 		phy_mdm6600_device_power_off(ddata);
+-
++	pm_runtime_disable(ddata->dev);
++	pm_runtime_dont_use_autosuspend(ddata->dev);
+ 	return error;
+ }
+ 
+-- 
+2.17.1
 
-On Mon, Feb 28, 2022 at 03:38:02PM -0600, Rob Herring wrote:
-> Another pass at removing unnecessary use of 'allOf' with a '$ref'.
->=20
-> json-schema versions draft7 and earlier have a weird behavior in that
-> any keywords combined with a '$ref' are ignored (silently). The correct
-> form was to put a '$ref' under an 'allOf'. This behavior is now changed
-> in the 2019-09 json-schema spec and '$ref' can be mixed with other
-> keywords.
-
-Acked-by: Mark Brown <broonie@kernel.org>
-
---xC2AwCckB4yHmCdp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmIdSBoACgkQJNaLcl1U
-h9Brnwf9Gb7P9H3jku9OngoretGUxGN4DtDmr+0Bvk7ZZFkSIVQYVBROL0mmUfer
-wPLiKHS48VJM6irhxRMqHLa1CrIeAmJHZpkg0R1JH1Iw36fWPZiBTfrDG8qubOti
-l/cEx7Jmxoj2EtB8xcTpbYGqwOqSZtDkAz1smUIh3coKzArwCPjkAYE59GjQ28SS
-F+P6ze1awYqRh/vkZC5ge03hrBhxOKU1iVyqv4iRfWtwCXRxYM3aPTs4aLB/T0NW
-svINogVRgGsGVmY7gRufv1wI7bJle7+MP7byPwsqzx2AXthe0fYt3x457mV59wjc
-Ej2pLNgE/IiOKyZ8gmWU8kkWHOh2hQ==
-=Hxgn
------END PGP SIGNATURE-----
-
---xC2AwCckB4yHmCdp--
-
-
---===============1673572725752979221==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1673572725752979221==--
-
