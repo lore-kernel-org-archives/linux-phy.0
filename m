@@ -4,39 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B864CC433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Mar 2022 08:19:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7414C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Mar 2022 09:14:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oo2LRN91xYmAc4CyGahHdkJaicNuiZJizysofHeGajo=; b=LjLeKkK9h5Tawc
-	JKl9Yy1+FJZeje6tX89+JzKjxkphVS4qrNLOPTQhxBk1NRJJRsOdYfv25grOS8vXDkXKOCShBB1BE
-	ugVomjW7fC/JH416iGgbleDDU3K0RxVJMJ/ZAMtb60JCAnv94W1dpM64S592bVgiNtzZMmtDz/Bx2
-	/Yp6ZgiubQpYZMWiV3biflNc9ALUL2wbdKFmNRZZtlV/QjGveO2r1xIihhIK2fwDUabih8+WRtb7b
-	EzvQIhCv4mgrT/id3nYxsKO3EEeQxNgh/CL1URi1JRx1I6CLeY2pxy/leBUA38nM3XIf3yMerqKCV
-	OV4tWp0DW6otP6nhC4GQ==;
+	List-Owner; bh=Oad//jdS4ROz5vybtyly/5LQIwfL3kyoNkA/ebkcOXM=; b=qUC8VfqvoIHEn1
+	Dy6uVugUd9C11XVugeaeoHSiylG9A6B2oU7S3I6SCkjicw95SWFcYZ39zeI3KDVXUBoaL8k9Fom+o
+	5+43XWSSyrxeWAGwsVXZqXVByqlLGmX6iwZZhCftbjmMGZukSnoghR3oWNxWFf1+sNB4fLcsYm9Oz
+	7e5M1YxmYE9AgOkTU8SUg/Bpf//LC8YOqhfSi80+XoKOQcY2+/PSrjnzC4ZGhfpOFxwzrAIoFjcV6
+	FIgAYUOaNbtu96EIc6wEZRdMeMmpazTI0elbmTxTxccZq4DlTTPk9v6/G6NfYa7G5dc7Javx/bU7Z
+	2biSvOqBO5xXCBlymZnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nOxj7-00FYdD-71; Tue, 01 Mar 2022 08:19:21 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1nOyac-00Fn8N-9F; Tue, 01 Mar 2022 09:14:38 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nOxig-00FYQR-Sn; Tue, 01 Mar 2022 08:18:56 +0000
-Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
- [62.78.145.57])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6776A478;
- Tue,  1 Mar 2022 09:18:52 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1646122732;
- bh=GUeID2Un8vVSdeuDNIEpa8RZjMMEHoy9L8wSmXbuUy8=;
+ id 1nOyaB-00Fmy7-IU; Tue, 01 Mar 2022 09:14:13 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 22493B8163F;
+ Tue,  1 Mar 2022 09:14:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51870C340EE;
+ Tue,  1 Mar 2022 09:14:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+ s=korg; t=1646126048;
+ bh=3u5ZRH134IsbvgB65HHGgx0NUtj7j3ilfzvoR9+6XSY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=miR5YmRNNJOlmDq2Yqs9dB5x+/XGsPj5xCWEd5d4QNz5EOGQpnsdmFZxXhyD4MKIk
- rbf5ayN8604es0VCCAiQRs20sEQGYm4i485kkz8RqNa01HdgUMWxmhGcc7qoMO3hEb
- q2nC3FtfDQ133CVtcapt7269jyXQ9M8016CxGHSY=
-Date: Tue, 1 Mar 2022 10:18:42 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+ b=LVGI6hTsonrfGWNRI8s4fNHsvabvgQDzYG9sbH6HwDRk5ka6vwqL1OAMbHjaGdj1A
+ xk2u6mhlMWs9hk0fJz1sLIezRIIl9iUWfI58LjDkIC/XlkJ+mfVnktbAdD14ePqvUp
+ yjEUMDGKIsjHEDPiXjGWy0WJ501Djkpm2FsQ2gNM=
+Date: Tue, 1 Mar 2022 10:14:04 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: Rob Herring <robh@kernel.org>
 Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
@@ -52,7 +55,7 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
  Mark Brown <broonie@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  dri-devel@lists.freedesktop.org,
  linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org,
  linux-leds@vger.kernel.org, linux-mtd@lists.infradead.org,
@@ -62,14 +65,14 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-usb@vger.kernel.org
 Subject: Re: [PATCH] dt-bindings: Another pass removing cases of 'allOf'
  containing a '$ref'
-Message-ID: <Yh3W4r7rNSI60rVT@pendragon.ideasonboard.com>
+Message-ID: <Yh3j3D22TopTEV9E@kroah.com>
 References: <20220228213802.1639658-1-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20220228213802.1639658-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220301_001855_159338_B9DAF9F3 
-X-CRM114-Status: GOOD (  17.52  )
+X-CRM114-CacheID: sfid-20220301_011411_927559_0C7AEFCB 
+X-CRM114-Status: GOOD (  15.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,10 +88,6 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
-
-Hi Rob,
-
-Thank you for the patch.
 
 On Mon, Feb 28, 2022 at 03:38:02PM -0600, Rob Herring wrote:
 > Another pass at removing unnecessary use of 'allOf' with a '$ref'.
@@ -133,36 +132,7 @@ On Mon, Feb 28, 2022 at 03:38:02PM -0600, Rob Herring wrote:
 > Cc: linux-usb@vger.kernel.org
 > Signed-off-by: Rob Herring <robh@kernel.org>
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-> ---
->  .../bindings/connector/usb-connector.yaml         |  3 +--
->  .../bindings/display/brcm,bcm2711-hdmi.yaml       |  3 +--
->  .../bindings/display/bridge/adi,adv7511.yaml      |  5 ++---
->  .../bindings/display/bridge/synopsys,dw-hdmi.yaml |  5 ++---
->  .../bindings/display/panel/display-timings.yaml   |  3 +--
->  .../devicetree/bindings/display/ste,mcde.yaml     |  4 ++--
->  .../devicetree/bindings/input/adc-joystick.yaml   |  9 ++++-----
->  .../bindings/leds/cznic,turris-omnia-leds.yaml    |  3 +--
->  .../devicetree/bindings/leds/leds-lp50xx.yaml     |  3 +--
->  .../devicetree/bindings/mfd/google,cros-ec.yaml   | 12 ++++--------
->  .../devicetree/bindings/mtd/nand-controller.yaml  |  8 +++-----
->  .../bindings/mtd/rockchip,nand-controller.yaml    |  3 +--
->  .../devicetree/bindings/net/ti,cpsw-switch.yaml   |  3 +--
->  .../bindings/phy/phy-stm32-usbphyc.yaml           |  3 +--
->  .../bindings/power/supply/sbs,sbs-manager.yaml    |  4 +---
->  .../bindings/remoteproc/ti,k3-r5f-rproc.yaml      |  3 +--
->  .../devicetree/bindings/soc/ti/ti,pruss.yaml      | 15 +++------------
->  .../devicetree/bindings/sound/st,stm32-sai.yaml   |  3 +--
->  .../devicetree/bindings/sound/tlv320adcx140.yaml  | 13 ++++++-------
->  .../devicetree/bindings/spi/spi-controller.yaml   |  4 +---
->  .../devicetree/bindings/usb/st,stusb160x.yaml     |  4 +---
->  21 files changed, 39 insertions(+), 74 deletions(-)
-
--- 
-Regards,
-
-Laurent Pinchart
+Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 -- 
 linux-phy mailing list
