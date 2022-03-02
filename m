@@ -4,63 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F76FC433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Mar 2022 14:25:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA09BC433FE
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Mar 2022 14:28:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gukABz3YpaBkULhkA7GHK7NDXGHT5ZK1QacYteZfZFE=; b=icK65kaH7Pyv4M
-	Q+Nkk1aF/YGP03BllkJ7Q2bHUU6CuVoWdaGVv+4LWseUkG0PWprZwOajlu0iufrbBW6C/0u+y6jJz
-	aEv0UrhEBLmRloPsJemQSh9gXcI8kZQh/4xsqk3q2WobADqLExaHovLPwMJzmsKeCvQQWSETMrnsa
-	IlU7pibSCadvIXS8JjfwUmn7b2B3619GzyivcxdZereE7fFuD/hca3tFiU2TytPi4BUCi/0G33K3Y
-	/HP6x/yQRB0L3z5nAy5LjBNO1KMFKQCMdVQZynRhrgSuyhx7yUMdtQ+mrBKCMoolxIaDYdcHD1jjc
-	FgOVMNjbxqwAXc+vohcA==;
+	List-Owner; bh=nWKNfcSod9JwgRSzkyEpQkhHldP+0UyBYi9V8fdKyv8=; b=m7Srs72l6Ddv7C
+	2sAOG/eCBQCuh1p9reHqnLunIiP+AGlr1R94Kk8kbvsWfJoAdqdkg6j36ccLJYbBIQI2FnfIqG03C
+	tfpudNCel+KT19StMOMxlA+bFn90KZhk1p9JfPGqmni7895JcjDO/ECN04n3EfZWXFYknFwRLf8Q8
+	d+uzfGcjNSYn7IrzLQfiWMUHb48cYmEq0hhjRMzUQCOXxPZfOLAa2MuGEBr2odFaXnwdlG9qWeUM5
+	ETAvm9bOqU2QZlnUzXgP84Q2fNjG8teAe0J+2XugeJsN91umygvmKYI+DdqYMckyM4wGUBCW6lwG3
+	6vt4CRpjmKVx0CM2r1iQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nPPuW-002yYl-Jr; Wed, 02 Mar 2022 14:25:00 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1nPPy0-002zU9-Vq; Wed, 02 Mar 2022 14:28:36 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nPPuU-002yYA-MQ
- for linux-phy@lists.infradead.org; Wed, 02 Mar 2022 14:25:00 +0000
+ id 1nPPxz-002zT4-M6
+ for linux-phy@bombadil.infradead.org; Wed, 02 Mar 2022 14:28:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=aavQmjtaPH1P/jDweMLmK0SzXw2eMoHox8W2JO2axJo=; b=YyXDkVbnJVqa5CntaduvCUb1h/
+ 3o2RTfRbCY5EoT686kU/7/HUHnJPuTLC1ZMkCzVF9xdS4PG0Z13ItzbIh6xZdPVxYx2KAex7H6Fbh
+ WAAFZaITudDygWYVMYN2lBnhF3vkDyM52bTj5yOZgfJlZebPYvan3Si0vwmbzlgfBBt10jUi6kKLc
+ Cu7D1TUv5dFQVJ9uWr1VgjToke7Qf9hm9ZFT5LAPou34qwftpPHgeitMYjCgu7qYkUrINgu2/LaXv
+ SE+dfWIxgq+D5ORu3DfMoBBAjjCQmnjbzCuAU5uHtxX/7d1IcAxfO8It5D85GanbO7cuYua7jXQnK
+ pPL5cS/A==;
+Received: from ams.source.kernel.org ([145.40.68.75])
+ by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1nPPxw-00EcUy-ED
+ for linux-phy@lists.infradead.org; Wed, 02 Mar 2022 14:28:34 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 47BC36136E;
- Wed,  2 Mar 2022 14:24:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 18369C004E1;
- Wed,  2 Mar 2022 14:24:56 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 76281B81FF6;
+ Wed,  2 Mar 2022 14:28:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59142C36AE3;
+ Wed,  2 Mar 2022 14:28:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1646231097;
- bh=Qv/tJVn7ZbngpF/h/3ssMrEwwL4QaG+fVThe66+ImAU=;
+ s=k20201202; t=1646231300;
+ bh=ut9NbID3o+lZR6vImYsjP4BUbOvcddMf3AE6FYy2R4U=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ato+Hb7fhiU8P5IZC5OH0GkTLqv8bglJEfQJP+DHJZPCEH1o/DQFI0C+ITckzOdLB
- Nxukx97EROpYbWSPW/3iA3uh2zjUtaow8ztKuyT13ZQKouyEuxWnlzOILuG89e84km
- jZJ2JoX3tQoX74fq6m9aolY7LBSe5DQkdGbWjjiy78ihtHuNqCv+vtF+8cXd9Bb04n
- IeORHBLvQcWZ4jfH/36fUV1d3aBaCLYe3Ni00ZYJGRlPT80FjI3/4Jc1GDNv+SFy/k
- HIHr8lsKqNeeVKmZm5mR1p0gaIAj/Bop9a7+y/SgiX1hAz4y9HElT3Bj44i1dgwy/S
- it1nx6xDfKM2A==
-Date: Wed, 2 Mar 2022 19:54:53 +0530
+ b=OT4jXWvhqFup2NwIlGO7/Dsj87GE64Qafm96DMEcwkjhZXb49lct0TQM1G8SOvgF3
+ sVSjEgVEpLiiBByJk3JbKThFVAlJ4iPpl0CTTB2K6PxkkSlISR+uygQR/royD6kmX+
+ RTk5Wx3tvQlLHk4QVn9skqXp6RZRs3JBUM4xPH/ZQzMGQUhp3l/efZqIeFSaMKjgvd
+ BgxBWJ12FhY4h2tn0eP9RqeOWP7ONmC4ZOIsRT/wLw4rXEc5ThjnnkyMV5xddDgZSx
+ piq9enB19Vsuwk+tzp6GTur3uq2LbT17pn++zbPeBeQmp2agONeJSHj8F+r64lpeqk
+ UjN5Cun9WxHWQ==
+Date: Wed, 2 Mar 2022 19:58:16 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Pratyush Yadav <p.yadav@ti.com>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Swapnil Jakhade <sjakhade@cadence.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v10 0/4] Rx mode support for Cadence DPHY
-Message-ID: <Yh9+Ncc2DulmBpXr@matsya>
-References: <20220301111621.2992275-1-p.yadav@ti.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: qcom,qmp: add sc8180x and
+ sc8280xp ufs compatibles
+Message-ID: <Yh9/ALkRZJYla2MA@matsya>
+References: <20220225035105.2294599-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220301111621.2992275-1-p.yadav@ti.com>
+In-Reply-To: <20220225035105.2294599-1-bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220302_062458_792237_0FDD3EB7 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20220302_142832_652333_5E105786 
+X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,20 +90,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-03-22, 16:46, Pratyush Yadav wrote:
-> Hi,
-> 
-> This series adds support for Cadence DPHY Rx driver. It has been split
-> off from [0] to facilitate easier merging. I have still kept the version
-> number to maintain continuity with the previous patches. The earlier
-> version used the same binding for Tx and Rx DPHY. With the separate
-> driver, I have added a separate binding. But I am still keeping the old
-> conversion patch in this series since I have already done the work in
-> converting the binding to yaml, might as well get it merged.
-> 
-> Tested on TI's J721E with OV5640 sensor.
+On 24-02-22, 19:51, Bjorn Andersson wrote:
+> Add compatible for the UFS PHY found in the Qualcomm SC8280XP platform
+> and document the required clocks for this and the SC8180X UFS PHY.
 
-Applied, thanks
+Applied all, thanks
 
 -- 
 ~Vinod
