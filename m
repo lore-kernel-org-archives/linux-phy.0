@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6C61C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Mar 2022 14:28:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26DBEC433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Mar 2022 14:34:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rqlTnS22pMNzOlb+YG3dCKtkqa+z/FQ2aP4FoEDNHAk=; b=JkWdqm4UhpmIFK
-	89zD8cCNNvaxo6uXTpk0HureEnPqN5gUBFOEzaIraevQ3EYI0qYgH5Ep2C63KswfQ41A9RegwQ+P7
-	Xi0Ph76qpfchr46JnYpq/vMCtKk2mOeXsIcRsiMKgd7YlxIuPhiDPRNk4WO7FOP5J2Psl1MXr6CnE
-	GDmhx6czyEAVo36Gu6WnTBowO8m5rbP7xXoZaMwf+N6BPaFhNLnWQVxhdbPprlXrjPld+h5ybAt/8
-	qhz96r+5jr9j1co/xDdknVGzoIUQQE3BzFLXen5qaPSq+1REVEBpJZMwFmZviCGfFO3CNmPJMuq2q
-	E4mhptabYQEmlAxbi5CA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=y5HyzYGwaW40ActHoQlRi+6Y536dpXlPqeh1pin6zP4=; b=WhAHQ4WwLtdPIg
+	g/JqO3RAkIDBTuE692cKGqMTi1QYlCFKbU95nhxAGeZt77YuwaEMrE6E5KhkvHj3xZczwOXunki8S
+	LAyLhrrMKQydCz87vXdCoG1Z2w+EXg7eQPDF5iEyMXGyZx2pQFAfxDawwwIrSl3ESAiV5oFeHJjZu
+	7j8T6byoxTXnj+BVCd5GAB7RN/uTxac60y6DIpXAL1JccLY19EsvCIAU2MiHMKk23ZbsDv+N93wB1
+	H38GUqDVJvWoqYalgu8FHYRb35H/6W1VwngUdtswFLsY4G/egBWjVFHLNzsi0LdY5fUPlfyM11GYR
+	cFBhick15ph6B2UTB51Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nPPyL-002zaT-8r; Wed, 02 Mar 2022 14:28:57 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nPQ44-0030Ss-JL; Wed, 02 Mar 2022 14:34:52 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nPPyI-002zZ5-J4
- for linux-phy@lists.infradead.org; Wed, 02 Mar 2022 14:28:55 +0000
+ id 1nPQ3s-0030QB-Rt; Wed, 02 Mar 2022 14:34:42 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 3EC7DB81FFD;
- Wed,  2 Mar 2022 14:28:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5BC28C340ED;
- Wed,  2 Mar 2022 14:28:50 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 8D3A7B81FF5;
+ Wed,  2 Mar 2022 14:34:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9EAF9C004E1;
+ Wed,  2 Mar 2022 14:34:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1646231330;
- bh=x5NhZSDTe+nBk7s18b/KMi3nUIEuVJYY1jAlwghRTyk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lZCrFgAVl4vJwdBUJKqCZreKsAfPLt6WCJ3rKSfZYE1Ygf1C1lKiVYAWqo51qTIkz
- hKteFm4C9635nJ773d5Me4M+0h1bSFNFgLy9hk/ifpwHZvqMWT/JpVJQJfv6yuI5vw
- scC4wN4I/KiENygKF0tDoUUsxzRCL4mFlcp5opU0DFa2/rjXybuTqQ7AWpJFp10NVE
- U29UZSVNmQz7Zow63+JcBshpMw6Fjy6iG/kRaNE8rrtl45v4EH7r51r/Zx7GpJo6+N
- V9OCGCciFnIG3Xo7awHeaWrnDJRCyHXG54eTik6I6XNbwbjcJ/GHRSyKqXiTjI3yl6
- Ncm56n8TBwBEw==
-Date: Wed, 2 Mar 2022 19:58:47 +0530
+ s=k20201202; t=1646231678;
+ bh=DsddKgliXpWgfbTSJqq6vbfVEJXlCc5yzM7GOjfvd2k=;
+ h=From:To:Cc:Subject:Date:From;
+ b=pgvWETVkoFF4pAglxqhxWAalhLE20E45W4S3hMYrAS0UkvtR/ilZ/bwXabiyQHKdh
+ DkBwFr3SelME5V7IvbwCnNJKk93hKZvCvK+LK1CJm/xGN9gPqnDVHBKgAuPoDCxEQ9
+ szrC6UgcMzmHmVxu2cgzuq59ZehMe5+R8laoL1ZyBq10HZGCIt+ca4R5vKUb7y3ELg
+ v1OhxNNIl8dD6sHgTtBRCF3G25UVhlE5k7B4su+CngT3wVha5eVE1cu+7bB7DaB0U/
+ CuDLGxh5ZtwyVOXpKgwFotwQtv/8crf8uIvBs5xGLsayYjNMGaUYNT5VLj0pwS+U8g
+ nAlxiD78cWkqA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
- Wesley Cheng <wcheng@codeaurora.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Peter Geis <pgwipeout@gmail.com>
+Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Johan Jonker <jbx6244@gmail.com>, Jianqun Xu <jay.xu@rock-chips.com>,
+ Tobias Schramm <t.schramm@manjaro.org>,
+ Michael Riesch <michael.riesch@wolfvision.net>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,usb-snps-femto-v2: Add
- sc8180x and sc8280xp
-Message-ID: <Yh9/H9SQilPoHaa/@matsya>
-References: <20220225034049.2294207-1-bjorn.andersson@linaro.org>
+Subject: [PATCH] dt-bindings: Revert "dt-bindings: soc: grf: add naneng combo
+ phy register compatible"
+Date: Wed,  2 Mar 2022 20:04:27 +0530
+Message-Id: <20220302143427.447748-1-vkoul@kernel.org>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220225034049.2294207-1-bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220302_062854_802925_DE6E329A 
-X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-CacheID: sfid-20220302_063441_048867_85378108 
+X-CRM114-Status: UNSURE (   8.97  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,14 +77,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-02-22, 19:40, Bjorn Andersson wrote:
-> Add compatible for the femto USB PHY found in sc8180x, sc8280xp and the
-> generic 5nm form of the latter.
+This reverts commit b3df807e1fb0 ("dt-bindings: soc: grf: add naneng
+combo phy register compatible") as that was wrongly merged, so better to
+drop the wrong patch
 
-Applied all, thanks
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+---
+I am applying this to phy-next to fix the issue
 
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index fe68e22efce0..dfebf425ca49 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -38,8 +38,6 @@ properties:
+               - rockchip,rk3399-grf
+               - rockchip,rk3399-pmugrf
+               - rockchip,rk3568-grf
+-              - rockchip,rk3568-pipe-grf
+-              - rockchip,rk3568-pipe-phy-grf
+               - rockchip,rk3568-pmugrf
+               - rockchip,rv1108-grf
+               - rockchip,rv1108-pmugrf
 -- 
-~Vinod
+2.34.1
+
 
 -- 
 linux-phy mailing list
