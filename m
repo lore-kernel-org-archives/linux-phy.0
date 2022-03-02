@@ -4,40 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1651C433FE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01E25C4332F
 	for <linux-phy@archiver.kernel.org>; Wed,  2 Mar 2022 22:09:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PpJ1hcrixiZSp5ypePta3IHd0Ws2U85/MPwpM5b7mgY=; b=laMdoCWFb7tffQ
-	oaf2diRgww7G8RLI6zaObZ9qxmf+NbaqgZzgqaWY2cgzsdSY8PvrO8T0meJ2nL0GSx7laggaQNNjf
-	b68h94BICkJvcpVIu9I5Cv0b+9g2wy57X56JV9+/ZidF3LdRnA5tbD4EjqxO4b8P6CFW4HUV6R8r3
-	rukAwW7CajHsjQ7DUNhHf4LeOEZ8HrMBe5c2HZKZbEshmUM7E/ABOx3mTPMtfkELs1yGK5AXF3NO7
-	V6noZ/NCNCJk5QDoMuMrHli9d2knjEmI5vAAAxRvRLjgWVvbp5wFbU4VyyabxiBTqnDpqZtaJc9O9
-	lG+T4Dthti4NHtDnqL+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/DHEDwDqXGleL7PR/I8aSoRumckWj/UGwCPum2o2Sk4=; b=ZlQtxllJCzj9ae
+	2p2znlUmyFmwipIXMnvVELzqjQd21YXnCbfvICQ/06Ja/lErmO3sBcIAzvGTTMv82qncR1PE9eUIk
+	J9SPKarhvZJNLIujti4e+1LXJXb2OuMzIbPtNLEcWeRTCRFuhepYJJH609C/tA2uPGg/uKzgHEl0a
+	HNNI+2IdMGpzky02+W+Ow2CX9P7LoExYbvoYfLOBzlI5JJ2LmBEaBDG3QLobcWcPouuJdLRy41KUH
+	1O6f0EsU1w3ASPpZEHFsUCZF/04WevPy0RQ+3UzB4AkC0tXru2fODfzaIAkwN2kzGUbZHnZ6/yH5y
+	0xXvgLxf3cxh/1ncp4XQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nPX9v-004Sjb-18; Wed, 02 Mar 2022 22:09:23 +0000
+	id 1nPX9v-004Sjr-76; Wed, 02 Mar 2022 22:09:23 +0000
 Received: from relay4-d.mail.gandi.net ([2001:4b98:dc4:8::224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nPX8i-004S5D-8D; Wed, 02 Mar 2022 22:08:11 +0000
+ id 1nPX8i-004S7k-7j; Wed, 02 Mar 2022 22:08:11 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 7BAE2E0003;
- Wed,  2 Mar 2022 22:07:51 +0000 (UTC)
+ by mail.gandi.net (Postfix) with ESMTPSA id D10DDE000B;
+ Wed,  2 Mar 2022 22:08:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1646258874;
+ t=1646258886;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=lS1QSNcGHjM0XgM4B7WgVQryBpLLi9DEmZbSo/cMOS4=;
- b=Ote3cmIhGhk7KJS0xw+Cs7bF1JY7KqFtTRznRFMQ/c46qky2tYY2cIXY9hVGQhEJmqX9OP
- U4xAt/K0wnm3Pqa/OMt74VIPtie+FSN1/BBxcmCT/JeieyOhACx7AGDMbqF6ZfQypTKlXI
- usISbdehawZc35+D+zq3QOh4KdWaqG3kgnMaMiJ2L0nUcsUrVZHdZKAW7ZeI7sOxN+3a+C
- sxMDAANwX3dg/bf9wWVAXGLuBGBHoOrQBtGnVP/9elpzmk+BxWqR0ZmDFNYA1Rj1sWExcm
- fgILP9116WRqikXUK4tGgq0dRl6u13mSs6phGZvEXLo++mmFwxZXCYauUUJsgg==
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=rI91tG6jLFSguMmjGVEP5a4E3plfGZ+m9Z0I33jTCxc=;
+ b=B2BsZTmbLwY5+sFJFemu/w1NOR+V9Ip88VoYB1UDSaBnWTDcobEgeMl9XCIGZPS94suXXV
+ gYUGPcVfX8ljFluOT+/SojJkrgv7/9U/c4WOViQpBB+MpOB04btQOMF+M5FVezKv1TCEzQ
+ oF6b4S33I/1Df36DjRFWNNr7l45yFNkf4d3jVI23OIRKdFfrsjPmhY1hLGXEtmerjEqDJe
+ y5dKMJ/Y3dkT+bIbj/tEAVQ+PLRN3QpB+HniTb09+Klvi6LTkgDYS8XQm8Qs8TT7b53b+B
+ D8QGPVPzK245wXzOQDtBUrZOx/RE7u/Ma67wiaPhRdbW3hF2KEjWSKapaK/1UA==
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -53,16 +54,19 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Maxime Ripard <mripard@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: [PATCH v3 0/9] Allwinner A31/A83T MIPI CSI-2 and A31 ISP / MIPI CSI-2
- Support
-Date: Wed,  2 Mar 2022 23:07:30 +0100
-Message-Id: <20220302220739.144303-1-paul.kocialkowski@bootlin.com>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: [PATCH v3 7/9] dt-bindings: media: Add Allwinner A83T MIPI CSI-2
+ bindings documentation
+Date: Wed,  2 Mar 2022 23:07:37 +0100
+Message-Id: <20220302220739.144303-8-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220302220739.144303-1-paul.kocialkowski@bootlin.com>
+References: <20220302220739.144303-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220302_140808_702053_FBB16AD0 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20220302_140808_629609_28BC45EF 
+X-CRM114-Status: GOOD (  12.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,69 +83,160 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This new version is an offspring from the big "Allwinner A31/A83T
-MIPI CSI-2 Support and A31 ISP Support" series, which was split into
-individual series for better clarity and handling.
+This introduces YAML bindings documentation for the Allwinner A83T
+MIPI CSI-2 controller.
 
-This part only concerns the MIPI CSI-2 controllers support changes.
-
-Changes since all-in-one v2:
-- Use the newly-introduced media/mipi-csi2.h header instead of local
-  definitions;
-- Introduce a use a mutex for format access serialization;
-- Make both port@0 and port@1 as well as ports required in the binding;
-- Made one of the two CSI input ports required;
-
-Paul Kocialkowski (9):
-  dt-bindings: sun6i-a31-mipi-dphy: Add optional direction property
-  phy: allwinner: phy-sun6i-mipi-dphy: Support D-PHY Rx mode for MIPI
-    CSI-2
-  dt-bindings: media: sun6i-a31-csi: Add MIPI CSI-2 input port
-  dt-bindings: media: Add Allwinner A31 MIPI CSI-2 bindings
-    documentation
-  media: sunxi: Add support for the A31 MIPI CSI-2 controller
-  MAINTAINERS: Add entry for the Allwinner A31 MIPI CSI-2 bridge driver
-  dt-bindings: media: Add Allwinner A83T MIPI CSI-2 bindings
-    documentation
-  media: sunxi: Add support for the A83T MIPI CSI-2 controller
-  MAINTAINERS: Add entry for the Allwinner A83T MIPI CSI-2 bridge
-
- .../media/allwinner,sun6i-a31-csi.yaml        |  66 +-
- .../media/allwinner,sun6i-a31-mipi-csi2.yaml  | 147 ++++
- .../media/allwinner,sun8i-a83t-mipi-csi2.yaml | 138 +++
- .../phy/allwinner,sun6i-a31-mipi-dphy.yaml    |  12 +
- MAINTAINERS                                   |  16 +
- drivers/media/platform/sunxi/Kconfig          |   2 +
- drivers/media/platform/sunxi/Makefile         |   2 +
- .../platform/sunxi/sun6i-mipi-csi2/Kconfig    |  12 +
- .../platform/sunxi/sun6i-mipi-csi2/Makefile   |   4 +
- .../sunxi/sun6i-mipi-csi2/sun6i_mipi_csi2.c   | 766 ++++++++++++++++
- .../sunxi/sun6i-mipi-csi2/sun6i_mipi_csi2.h   |  53 ++
- .../sun6i-mipi-csi2/sun6i_mipi_csi2_reg.h     |  76 ++
- .../sunxi/sun8i-a83t-mipi-csi2/Kconfig        |  11 +
- .../sunxi/sun8i-a83t-mipi-csi2/Makefile       |   4 +
- .../sun8i-a83t-mipi-csi2/sun8i_a83t_dphy.c    |  72 ++
- .../sun8i-a83t-mipi-csi2/sun8i_a83t_dphy.h    |  39 +
- .../sun8i_a83t_mipi_csi2.c                    | 833 ++++++++++++++++++
- .../sun8i_a83t_mipi_csi2.h                    |  56 ++
- .../sun8i_a83t_mipi_csi2_reg.h                | 151 ++++
- drivers/phy/allwinner/phy-sun6i-mipi-dphy.c   | 166 +++-
- 20 files changed, 2609 insertions(+), 17 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun6i-a31-mipi-csi2.yaml
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+ .../media/allwinner,sun8i-a83t-mipi-csi2.yaml | 138 ++++++++++++++++++
+ 1 file changed, 138 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
- create mode 100644 drivers/media/platform/sunxi/sun6i-mipi-csi2/Kconfig
- create mode 100644 drivers/media/platform/sunxi/sun6i-mipi-csi2/Makefile
- create mode 100644 drivers/media/platform/sunxi/sun6i-mipi-csi2/sun6i_mipi_csi2.c
- create mode 100644 drivers/media/platform/sunxi/sun6i-mipi-csi2/sun6i_mipi_csi2.h
- create mode 100644 drivers/media/platform/sunxi/sun6i-mipi-csi2/sun6i_mipi_csi2_reg.h
- create mode 100644 drivers/media/platform/sunxi/sun8i-a83t-mipi-csi2/Kconfig
- create mode 100644 drivers/media/platform/sunxi/sun8i-a83t-mipi-csi2/Makefile
- create mode 100644 drivers/media/platform/sunxi/sun8i-a83t-mipi-csi2/sun8i_a83t_dphy.c
- create mode 100644 drivers/media/platform/sunxi/sun8i-a83t-mipi-csi2/sun8i_a83t_dphy.h
- create mode 100644 drivers/media/platform/sunxi/sun8i-a83t-mipi-csi2/sun8i_a83t_mipi_csi2.c
- create mode 100644 drivers/media/platform/sunxi/sun8i-a83t-mipi-csi2/sun8i_a83t_mipi_csi2.h
- create mode 100644 drivers/media/platform/sunxi/sun8i-a83t-mipi-csi2/sun8i_a83t_mipi_csi2_reg.h
 
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
+new file mode 100644
+index 000000000000..75121b402435
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
+@@ -0,0 +1,138 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/allwinner,sun8i-a83t-mipi-csi2.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A83T MIPI CSI-2 Device Tree Bindings
++
++maintainers:
++  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
++
++properties:
++  compatible:
++    const: allwinner,sun8i-a83t-mipi-csi2
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: Bus Clock
++      - description: Module Clock
++      - description: MIPI-specific Clock
++      - description: Misc CSI Clock
++
++  clock-names:
++    items:
++      - const: bus
++      - const: mod
++      - const: mipi
++      - const: misc
++
++  resets:
++    maxItems: 1
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description: Input port, connect to a MIPI CSI-2 sensor
++
++        properties:
++          reg:
++            const: 0
++
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
++
++            properties:
++              clock-lanes:
++                maxItems: 1
++
++              data-lanes:
++                minItems: 1
++                maxItems: 4
++
++            required:
++              - data-lanes
++
++        additionalProperties: false
++
++      port@1:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description: Output port, connect to a CSI controller
++
++        properties:
++          reg:
++            const: 1
++
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
++
++        additionalProperties: false
++
++    required:
++      - port@0
++      - port@1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/sun8i-a83t-ccu.h>
++    #include <dt-bindings/reset/sun8i-a83t-ccu.h>
++
++    mipi_csi2: csi@1cb1000 {
++        compatible = "allwinner,sun8i-a83t-mipi-csi2";
++        reg = <0x01cb1000 0x1000>;
++        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&ccu CLK_BUS_CSI>,
++                 <&ccu CLK_CSI_SCLK>,
++                 <&ccu CLK_MIPI_CSI>,
++                 <&ccu CLK_CSI_MISC>;
++        clock-names = "bus", "mod", "mipi", "misc";
++        resets = <&ccu RST_BUS_CSI>;
++
++        ports {
++            #address-cells = <1>;
++            #size-cells = <0>;
++
++            mipi_csi2_in: port@0 {
++                reg = <0>;
++
++                mipi_csi2_in_ov8865: endpoint {
++                    data-lanes = <1 2 3 4>;
++
++                    remote-endpoint = <&ov8865_out_mipi_csi2>;
++                };
++            };
++
++            mipi_csi2_out: port@1 {
++                reg = <1>;
++
++                mipi_csi2_out_csi: endpoint {
++                    remote-endpoint = <&csi_in_mipi_csi2>;
++                };
++            };
++        };
++    };
++
++...
 -- 
 2.35.1
 
