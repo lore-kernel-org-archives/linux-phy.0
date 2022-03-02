@@ -4,73 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF0A3C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Mar 2022 08:16:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1B96C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Mar 2022 08:52:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NAjMBADkU7rIjy7gf4H2stM7VRknm9L+biKUwRenZVE=; b=0EwnCSfQeVawD/
-	JAy9v4iaVZ8QlvKyaC/faGwnl9JkA/3nr7bgIpoGjAmPBzC9YrJV00tqHVkvHwB9mGiet67BD/m6E
-	nCPGqOuGVs5NtZwpTPhZdduDhCwfXUVnsOUOLj8ASo7nap+43pRdVyVt4OKvn8KcXflaxSMYVPhIN
-	uIa9ofE2ZgiCq8cn/G5FQbm3WfdrzQwr7sskZ3H+RElG+Pj0ng8DEFopC4F52pKUTd6JaUC/zT2v3
-	NIVIhOzzbDx6Dw1ONV6WhFOuz7dqOMOHohBaD/uly1OtnqFzYH0+SFkOCxQbgQ1ybpRd5Hykbpglh
-	bLlIl6gPHpnMmLP9ut+Q==;
+	List-Owner; bh=GZTeWLrFCPiI92ynRktSGXKRNU1f8SmRbqzYia2cB0Q=; b=uDtEoZDnG9GlqU
+	EiUx/WS3X5KfykdssRCWXv9ZcnRUTRwWewNrVfyzQO7ghpJTpOjg0HjbFuPNyEUTDEfLCDlEqXdfC
+	CNjz33vhUpvJ8qYcAGWBagGK3PKv/DgBOTBrm77TjiNl5dNa58WihKu3kFpPzVCd2jlCuwB7Dq2WF
+	BugDaKOTqVGIkesTzW5SQp2sXTCWbZ4hmdw7dyycVm5nCxgOpCjaCJX4Ks/l9A1/8/Vpd3P6S1qnm
+	8Qv1caR1hpQvZhbJtY1AEISak1O4eD1P6tLuauZ9NdSgXPl+FV7dJQNtIVwPqdUSEquLWP36JobJo
+	Qws+dtLo0LZEq1CsiflQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nPK9j-001pLW-Ck; Wed, 02 Mar 2022 08:16:19 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nPKiW-001waG-0S; Wed, 02 Mar 2022 08:52:16 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nPK9W-001pGh-TP; Wed, 02 Mar 2022 08:16:08 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 6E6FF60C3B;
- Wed,  2 Mar 2022 08:16:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D631C004E1;
- Wed,  2 Mar 2022 08:16:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1646208965;
- bh=XZmYOYtMmwo2P8dkntVlx9JQ2MUJP9KNkRguDCErpIw=;
+ id 1nPKi0-001wPJ-9Y; Wed, 02 Mar 2022 08:51:47 +0000
+Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
+ [62.78.145.57])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id B2C62A04;
+ Wed,  2 Mar 2022 09:51:39 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1646211099;
+ bh=cbzPGIwgXJdg7L3y0VO7R5FjmCa4xay9OWwPMF71EJg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WDCy5Z6KWGROQHThae/yU5BrZuHCU9dZq/2cNdJdxg0V6Hof+D1ToifbE+FwwAKyT
- 2iOaaD0IXi1xgmb1cngtu9WMV3lT8d/4J0FL3zIA2b/5105dRtABUPKpUUf6gsR+y1
- Doh3hXkIwRcc/p/nl2D/FXKuXkberO3ONKsPSJklPVple89omC2Esp1QSpDKyzYpnL
- fG2EE0PjfADIMl8BgAylOqpqEODALYuX8juYiooud5uzVB7tsy28W94dO12MBnZU51
- fs7Kn3MUkc0QNs+nxPJTUeXZYFN9VI3FOZAQTWfvSyHd8lp/nIYWPFcczFJ9n2QEzd
- Jdr+OcECbqWfg==
-Date: Wed, 2 Mar 2022 13:46:01 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Rob Herring <robh+dt@kernel.org>
-Cc: Peter Geis <pgwipeout@gmail.com>, Yifeng Zhao <yifeng.zhao@rock-chips.com>,
- "heiko@sntech.de" <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>,
- devicetree <devicetree@vger.kernel.org>,
- Michael Riesch <michael.riesch@wolfvision.net>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Liang Chen <cl@rock-chips.com>,
- Kever Yang <kever.yang@rock-chips.com>,
- Lee Jones <lee.jones@linaro.org>, wulf <wulf@rock-chips.com>,
- David Wu <david.wu@rock-chips.com>
-Subject: Re: [PATCH v8 2/4] dt-bindings: phy: rockchip: Add Naneng combo PHY
- bindings
-Message-ID: <Yh8nwS7iAKgJZeFa@matsya>
-References: <20220208091326.12495-1-yifeng.zhao@rock-chips.com>
- <20220208091326.12495-3-yifeng.zhao@rock-chips.com>
- <CAL_Jsq+1ixfw4+pwPcM5azPdC_4_bYCPu50jUvKnVMr6dSncpA@mail.gmail.com>
- <CAMdYzYryTb4Gvv3XENgUOSrutr7S-5a7GOMRahXWWZOeL1qKWA@mail.gmail.com>
- <CAL_JsqLsLU5-bJVRWv_TzGUZdFHOx7tdzqV2piNfacNkXg=zww@mail.gmail.com>
+ b=j3O8fi11Gp7hoTmSzMtUWa37EFrB/cKOrROkphix2NDKx30J/gcT2BsFswLGvuEY0
+ y8hZn8JAKXwxMViZKN56dONwX2TATkgxIwWhsUb8+49nMVqoKxpIuZWc31bLIt+qSg
+ QtN7oReI0oz9pRMYpzUV/6Hq2FsnfGAvBzacy+2Y=
+Date: Wed, 2 Mar 2022 10:51:27 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH v2 63/66] staging: media: Add support for the Allwinner
+ A31 ISP
+Message-ID: <Yh8wD8lF2Hs+cxD7@pendragon.ideasonboard.com>
+References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
+ <20220205185429.2278860-64-paul.kocialkowski@bootlin.com>
+ <YgFFxMd2htKvX0K1@pendragon.ideasonboard.com>
+ <Yh5CuyEJ+WhIAzYm@aptenodytes>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAL_JsqLsLU5-bJVRWv_TzGUZdFHOx7tdzqV2piNfacNkXg=zww@mail.gmail.com>
+In-Reply-To: <Yh5CuyEJ+WhIAzYm@aptenodytes>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220302_001607_047409_EE13ADB8 
-X-CRM114-Status: GOOD (  28.70  )
+X-CRM114-CacheID: sfid-20220302_005144_564134_85C0C244 
+X-CRM114-Status: GOOD (  50.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,82 +80,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-03-22, 08:06, Rob Herring wrote:
-> On Mon, Feb 28, 2022 at 3:37 PM Peter Geis <pgwipeout@gmail.com> wrote:
-> >
-> > On Mon, Feb 28, 2022 at 2:18 PM Rob Herring <robh+dt@kernel.org> wrote:
-> > >
-> > > On Tue, Feb 8, 2022 at 3:15 AM Yifeng Zhao <yifeng.zhao@rock-chips.com> wrote:
-> > > >
-> > > > Add the compatible strings for the Naneng combo PHY found on rockchip SoC.
-> > > >
-> > > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > > Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-> > > > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> > > > ---
-> > > >
-> > > > Changes in v8: None
-> > > > Changes in v7:
-> > > > - remove u3otg0_port_en, u3otg1_port_en and pipe_sgmii_mac_sel
-> > > >
-> > > > Changes in v5:
-> > > > - modify description for ssc and ext-refclk
-> > > > - remove apb reset
-> > > >
-> > > > Changes in v4:
-> > > > - restyle
-> > > > - remove some minItems
-> > > > - add more properties
-> > > > - remove reset-names
-> > > > - move #phy-cells
-> > > > - add rockchip,rk3568-pipe-grf
-> > > > - add rockchip,rk3568-pipe-phy-grf
-> > > >
-> > > > Changes in v3: None
-> > > > Changes in v2:
-> > > > - Fix dtschema/dtc warnings/errors
-> > > >
-> > > >  .../phy/phy-rockchip-naneng-combphy.yaml      | 109 ++++++++++++++++++
-> > > >  1 file changed, 109 insertions(+)
-> > > >  create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
-> > >
-> > > This now fails in linux-next:
-> > >
-> > > /builds/robherring/linux-dt/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.example.dt.yaml:
-> > > syscon@fdc50000: compatible: 'oneOf' conditional failed, one must be
-> > > fixed:
-> > >  ['rockchip,rk3568-pipe-grf', 'syscon'] is too short
-> > >  'rockchip,rk3568-pipe-grf' is not one of ['rockchip,rk3288-sgrf',
-> > > 'rockchip,rk3568-usb2phy-grf', 'rockchip,rv1108-usbgrf']
-> > > From schema: /builds/robherring/linux-dt/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> > > /builds/robherring/linux-dt/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.example.dt.yaml:
-> > > syscon@fdc70000: compatible: 'oneOf' conditional failed, one must be
-> > > fixed:
-> > >  ['rockchip,rk3568-pipe-phy-grf', 'syscon'] is too short
-> > >  'rockchip,rk3568-pipe-phy-grf' is not one of ['rockchip,rk3288-sgrf',
-> > > 'rockchip,rk3568-usb2phy-grf', 'rockchip,rv1108-usbgrf']
-> > > From schema: /builds/robherring/linux-dt/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> > >
-> > >
-> > > The problem appears to be that patch 1 was applied incorrectly and the
-> > > compatibles ended up in the wrong section (the one requiring
-> > > 'simple-mfd'). Patch 1 probably conflicts as my bot will just skip the
-> > > patch if it conflicts which is why this had a different error report.
-> >
-> > Good Afternoon Rob,
-> >
-> > This is fixed in the first patch of my rk356x dwc3 enablement series:
-> > https://patchwork.kernel.org/project/linux-rockchip/patch/20220228135700.1089526-2-pgwipeout@gmail.com/
-> 
-> Where does that say Vinod incorrectly applied the original patch and
-> needs to apply it? What's the status of the series? Do we have to wait
-> for the rest of the series to be applied?
+Hi Paul,
 
-Thanks for pointing that out, I can revert this patch so that corrected
-one can be applied... Does that look better
+On Tue, Mar 01, 2022 at 04:58:51PM +0100, Paul Kocialkowski wrote:
+> On Mon 07 Feb 22, 18:16, Laurent Pinchart wrote:
+> > On Sat, Feb 05, 2022 at 07:54:26PM +0100, Paul Kocialkowski wrote:
+> > > Some Allwinner platforms come with an Image Signal Processor, which
+> > > supports various features in order to enhance and transform data
+> > > received by image sensors into good-looking pictures. In most cases,
+> > > the data is raw bayer, which gets internally converted to RGB and
+> > > finally YUV, which is what the hardware produces.
+> > > 
+> > > This driver supports ISPs that are similar to the A31 ISP, which was
+> > > the first standalone ISP found in Allwinner platforms. Simpler ISP
+> > > blocks were found in the A10 and A20, where they are tied to a CSI
+> > > controller. Newer generations of Allwinner SoCs (starting with the
+> > > H6, H616, etc) come with a new camera subsystem and revised ISP.
+> > > Even though these previous and next-generation ISPs are somewhat
+> > > similar to the A31 ISP, they have enough significant differences to
+> > > be out of the scope of this driver.
+> > > 
+> > > While the ISP supports many features, including 3A and many
+> > > enhancement blocks, this implementation is limited to the following:
+> > > - V3s (V3/S3) platform support;
+> > > - Bayer media bus formats as input;
+> > 
+> > Greyscale formats would also be nice to have, if the hardware can
+> > support that (it mostly just requires the ability to disable the CFA
+> > interpolation).
+> 
+> As far as I know there's no support for grayscale, only bayer formats
+> and YUV.
+> 
+> > > - Semi-planar YUV (NV12/NV21) as output;
+> > 
+> > Packed YUV would also be useful if the hardware supports it.
+> 
+> Same here, it only supports planar and semi-planar YUV as output.
+> 
+> > > - Debayering with per-component gain and offset configuration;
+> > > - 2D noise filtering with configurable coefficients.
+> > > 
+> > > Since many features are missing from the associated uAPI, the driver
+> > > is aimed to integrate staging until all features are properly
+> > > described.
+> > > 
+> > > On the technical side, it uses the v4l2 and media controller APIs,
+> > > with a video node for capture, a processor subdev and a video node
+> > > for parameters submission. A specific uAPI structure and associated
+> > > v4l2 meta format are used to configure parameters of the supported
+> > > modules.
+> > > 
+> > > One particular thing about the hardware is that configuration for
+> > > module registers needs to be stored in a DMA buffer and gets copied
+> > > to actual registers by the hardware at the next vsync, when instructed
+> > > by a flag. This is handled by the "state" mechanism in the driver.
+> > > 
+> > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > > ---
+> > >  drivers/staging/media/sunxi/Kconfig           |   1 +
+> > >  drivers/staging/media/sunxi/Makefile          |   1 +
+> > >  drivers/staging/media/sunxi/sun6i-isp/Kconfig |  13 +
+> > >  .../staging/media/sunxi/sun6i-isp/Makefile    |   4 +
+> > >  .../staging/media/sunxi/sun6i-isp/sun6i_isp.c | 572 +++++++++++++
+> > >  .../staging/media/sunxi/sun6i-isp/sun6i_isp.h |  86 ++
+> > >  .../media/sunxi/sun6i-isp/sun6i_isp_capture.c | 751 ++++++++++++++++++
+> > >  .../media/sunxi/sun6i-isp/sun6i_isp_capture.h |  78 ++
+> > >  .../media/sunxi/sun6i-isp/sun6i_isp_params.c  | 573 +++++++++++++
+> > >  .../media/sunxi/sun6i-isp/sun6i_isp_params.h  |  52 ++
+> > >  .../media/sunxi/sun6i-isp/sun6i_isp_proc.c    | 599 ++++++++++++++
+> > >  .../media/sunxi/sun6i-isp/sun6i_isp_proc.h    |  61 ++
+> > >  .../media/sunxi/sun6i-isp/sun6i_isp_reg.h     | 275 +++++++
+> > >  .../sunxi/sun6i-isp/uapi/sun6i-isp-config.h   |  43 +
+> > 
+> > Could you add a TODO file to list the issues that need to be fixed for
+> > the driver to move out of staging ? I'll already propose one entry:
+> > 
+> > - Add support in libcamera
+> 
+> Maybe it would be good to narrow down what level of support you have in mind
+> here. Just adding basic support fort the pipeline is probably doable, but
+> developing complex 3A algorithms would require very significant effort and
+> it would be a shame that this prevents the driver from leaving staging.
+> 
+> I think another obvious task would be to have a complete uAPI that reflects
+> all modules that are part of the ISP.
+> 
+> What do you think?
+
+The reason why I'd like to see libcamera support for the ISP driver is
+to ensure that the kernel API is adequate for real use cases. The API
+can be split in three parts:
+
+- Pipeline configuration (this includes the media controller topology,
+  link setting, subdev pad format/selection rectangle configuration,
+  ...)
+- ISP parameters
+- ISP statistics
+
+A pipeline handler implementation will cover the first parts. The second
+and third parts need to be tested too, but we don't need to implement
+every single feature. A very simple algorithm that demonstrates
+statistics can be captured and ISP parameters can be set should be
+enough to test and exercise the API in real scenarios. We're working on
+making basic AE and AWB algorithm implementations generic (or at least
+creating generic building blocks that can easily be assembled to create
+those algorithms, as the ISP statistics and parameters are specific to
+the ISP and thus require some ISP-specific code), so that should become
+a fairly easy task soon. I expect most of the work to go in the pipeline
+handler.
+
+Does this sound fair to you ?
+
+> > This isn't required to merge the driver in staging as long as ABI
+> > compatibility doesn't need to be preserved until the driver is moved out
+> > of staging.
+> >
+> > >  14 files changed, 3109 insertions(+)
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/Kconfig
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/Makefile
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp.c
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp.h
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp_capture.c
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp_capture.h
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp_params.c
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp_params.h
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp_proc.c
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp_proc.h
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/sun6i_isp_reg.h
+> > >  create mode 100644 drivers/staging/media/sunxi/sun6i-isp/uapi/sun6i-isp-config.h
+> > 
+> > [snip]
 
 -- 
-~Vinod
+Regards,
+
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
