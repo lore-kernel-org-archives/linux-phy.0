@@ -4,72 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 425D3C433F5
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Mar 2022 14:10:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98C63C433EF
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Mar 2022 17:31:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3GF7Cjp1SlnMlkB1p0JWkiAS6vLDk8DahPPWIUN/qmc=; b=Cb89yDjJqpEqDZ
-	1KbaTbAK0Ekg0WOzfB60AcJ1PcYB9WMo1YWmIbeKEcOlkxu1vm6h92UBIzWwlqBT2K8lYDhO6s196
-	7EnUj+jJrfBJceOe81I3yefX6VCzxR4VzmjGs7gp3MZMnzL4gZS64qOB7cxvs/r2uG7DRVunG04Js
-	1M0WoEs+3bB15Cxp5/nO/bIncVj/Rbv8bGPJ40GhZGeZ2HafoIE+H+kRw4a+Iqb3nnSBCKakgSJei
-	UYnnGT1din+snl1wmvHTbZw+WmzYhOo/IJ3i9brBGe+UD17OUlHYxbmJiNVPYZpfNJwwwMhB9VbwR
-	+H6Vqlb9mEc6HcXeYiBw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/6mTfY5Jylq4XL281hlSB6gRuzzuDdmhVNjo5yg1tUo=; b=jef
+	TPfPN52ED2sXb/GGOjPwZ28tD+nAW0Pfr28sg/KZ0LylIciogj0XKmho/DUibolB9W139VXgcuOiJ
+	osBDCEFK5GR+3cMcCSL1OwUmBvj4rIO6BngePQ2bzCkbL+5TV1IW960N/ulK+TK7d1SE4mvpzv2yz
+	Q3QxOcJC+Aw09IKWRArUCIZPo0fo14M8O3PnDi7jUdP/NTWRTgVE+NbEwe9hGirJdCnS/YaJtrg/X
+	cxpEVzEA/biuRwsY8hs162hqhaqF09wQz52foMQUB/vcoxmuEj+s7+LiyZsjj5Lqr7cpWoKEhqOjj
+	GgoHf3RmjV8hJwN9fo3+WFbF25GFHwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nQ8dG-00APmO-Mv; Fri, 04 Mar 2022 14:10:10 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1nQBmS-00BMpH-My; Fri, 04 Mar 2022 17:31:52 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nQ8d2-00APhh-1Z; Fri, 04 Mar 2022 14:09:58 +0000
-Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
- [62.78.145.57])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id B192451C;
- Fri,  4 Mar 2022 15:09:51 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1646402991;
- bh=tF6TWpIIc5PYHjBDOutrn91zOquoDieFQB9UV4VT/xA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=wOH+XCeCDQNhLB7bifxDul4QCeIEWLjntNs3CPSl+Zkx5jp0ASRiqJL7k6CxknFC3
- CanLGoUWehTHglLWgU6Glf7e2tZ9H6hKYFg0nHl5aTpnkRSmJlzq52sFAxRwluP1Br
- onB5Km/r+4hvLynzOqJ+NATBoTng1c6nfR9gcJkE=
-Date: Fri, 4 Mar 2022 16:09:39 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 61/66] dt-bindings: media: Add Allwinner A31 ISP
- bindings documentation
-Message-ID: <YiIdo4PF/5smLocf@pendragon.ideasonboard.com>
-References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-62-paul.kocialkowski@bootlin.com>
- <YgE/+UmP4nJVxtRT@pendragon.ideasonboard.com>
- <YgqAv2vLimYgRwDS@aptenodytes>
- <YgqM3ZdMfEz+ZKo/@pendragon.ideasonboard.com>
- <Ygt8LF8qx3rnxlgp@aptenodytes>
- <Ygt9j+rwEC+2aUjH@pendragon.ideasonboard.com>
- <Yh4+E9el5NdQ7qJq@aptenodytes>
- <YiH/kLakb/GOaYIT@pendragon.ideasonboard.com>
- <YiIa1SRFhtvURTbN@aptenodytes>
+ id 1nQBmM-00BMky-OU
+ for linux-phy@lists.infradead.org; Fri, 04 Mar 2022 17:31:49 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 4A80561E9D;
+ Fri,  4 Mar 2022 17:31:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 562EFC340E9;
+ Fri,  4 Mar 2022 17:31:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1646415105;
+ bh=bgXevccjItadLy8SOwBdmdr0b+S8SePNjm16udApYHo=;
+ h=Date:From:To:Cc:Subject:From;
+ b=K8HjDl7MTcMpimx7CZZiYO4/928BMO6Pu8Vkh3fRpM7rQmxfDGmzbG0qKmXjGjv14
+ DR+7Zd/s1nhUF+EyRmqjSDnICBVbX2aYW/t3P/J4ZTBuff+eFVLg6sng31Ert1lfvQ
+ wjhT9yL9V2tuN5d/tC4t57GIB5mhuhiVcKJPgDNVl2dZrd2aoI+tvKubd15Y4RYBmY
+ 91ZzYS5FWeZtQnRtm4H5uNqSvofg1/vvmXwwoXzp6r3MW9sE+OAVOQbiuAa61uauKn
+ lAIloFjcklzVy5cT22VNn036EGLD4mAo90/F1nfpObRGCgLO6nVNt+AV8ablM8d7Qx
+ uzmEok3SlYKdQ==
+Date: Fri, 4 Mar 2022 23:01:41 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Greg KH <gregkh@linuxfoundation.org>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+ Linux Phy <linux-phy@lists.infradead.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Subject: [GIT PULL] Generic phy updates for v5.18-rc1
+Message-ID: <YiJM/aHDOqqcvimp@matsya>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YiIa1SRFhtvURTbN@aptenodytes>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220304_060956_430497_CEAD0E1F 
-X-CRM114-Status: GOOD (  79.58  )
+X-CRM114-CacheID: sfid-20220304_093146_983599_31F828E9 
+X-CRM114-Status: GOOD (  19.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,293 +65,289 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0037016279292999723=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Paul,
 
-(With a question for Sakari below)
+--===============0037016279292999723==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="6+g71u/0irGe+9jL"
+Content-Disposition: inline
 
-On Fri, Mar 04, 2022 at 02:57:41PM +0100, Paul Kocialkowski wrote:
-> On Fri 04 Mar 22, 14:01, Laurent Pinchart wrote:
-> > On Tue, Mar 01, 2022 at 04:38:59PM +0100, Paul Kocialkowski wrote:
-> > > On Tue 15 Feb 22, 12:16, Laurent Pinchart wrote:
-> > > > On Tue, Feb 15, 2022 at 11:10:52AM +0100, Paul Kocialkowski wrote:
-> > > > > On Mon 14 Feb 22, 19:09, Laurent Pinchart wrote:
-> > > > > > On Mon, Feb 14, 2022 at 05:18:07PM +0100, Paul Kocialkowski wrote:
-> > > > > > > On Mon 07 Feb 22, 17:51, Laurent Pinchart wrote:
-> > > > > > > > On Sat, Feb 05, 2022 at 07:54:24PM +0100, Paul Kocialkowski wrote:
-> > > > > > > > > This introduces YAML bindings documentation for the Allwinner A31 Image
-> > > > > > > > > Signal Processor (ISP).
-> > > > > > > > > 
-> > > > > > > > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > > > > > > ---
-> > > > > > > > >  .../media/allwinner,sun6i-a31-isp.yaml        | 117 ++++++++++++++++++
-> > > > > > > > >  1 file changed, 117 insertions(+)
-> > > > > > > > >  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
-> > > > > > > > > 
-> > > > > > > > > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
-> > > > > > > > > new file mode 100644
-> > > > > > > > > index 000000000000..2d87022c43ce
-> > > > > > > > > --- /dev/null
-> > > > > > > > > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
-> > > > > > > > > @@ -0,0 +1,117 @@
-> > > > > > > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > > > > > > > +%YAML 1.2
-> > > > > > > > > +---
-> > > > > > > > > +$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-isp.yaml#
-> > > > > > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > > > > > +
-> > > > > > > > > +title: Allwinner A31 Image Signal Processor Driver (ISP) Device Tree Bindings
-> > > > > > > > > +
-> > > > > > > > > +maintainers:
-> > > > > > > > > +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > > > > > > +
-> > > > > > > > > +properties:
-> > > > > > > > > +  compatible:
-> > > > > > > > > +    enum:
-> > > > > > > > > +      - allwinner,sun6i-a31-isp
-> > > > > > > > > +      - allwinner,sun8i-v3s-isp
-> > > > > > > > > +
-> > > > > > > > > +  reg:
-> > > > > > > > > +    maxItems: 1
-> > > > > > > > > +
-> > > > > > > > > +  interrupts:
-> > > > > > > > > +    maxItems: 1
-> > > > > > > > > +
-> > > > > > > > > +  clocks:
-> > > > > > > > > +    items:
-> > > > > > > > > +      - description: Bus Clock
-> > > > > > > > > +      - description: Module Clock
-> > > > > > > > > +      - description: DRAM Clock
-> > > > > > > > 
-> > > > > > > > That's interesting, does the ISP have a dedicated DRAM ?
-> > > > > > > 
-> > > > > > > It doesn't, it actually uses the main DRAM with the "mbus" interconnect.
-> > > > > > > The clock is probably for the DMA engine.
-> > > > > > > 
-> > > > > > > > > +
-> > > > > > > > > +  clock-names:
-> > > > > > > > > +    items:
-> > > > > > > > > +      - const: bus
-> > > > > > > > > +      - const: mod
-> > > > > > > > > +      - const: ram
-> > > > > > > > > +
-> > > > > > > > > +  resets:
-> > > > > > > > > +    maxItems: 1
-> > > > > > > > > +
-> > > > > > > > > +  ports:
-> > > > > > > > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > > > > > > > +
-> > > > > > > > > +    properties:
-> > > > > > > > > +      port@0:
-> > > > > > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > > > > > +        description: CSI0 input port
-> > > > > > > > > +
-> > > > > > > > > +        properties:
-> > > > > > > > > +          reg:
-> > > > > > > > > +            const: 0
-> > > > > > > > > +
-> > > > > > > > > +          endpoint:
-> > > > > > > > > +            $ref: video-interfaces.yaml#
-> > > > > > > > > +            unevaluatedProperties: false
-> > > > > > > > 
-> > > > > > > > If no other property than remote-endpoint are allowed, I'd write
-> > > > > > > > 
-> > > > > > > >           endpoint:
-> > > > > > > >             $ref: video-interfaces.yaml#
-> > > > > > > > 	    remote-endpoint: true
-> > > > > > > >             additionalProperties: false
-> > > > > > > > 
-> > > > > > > > Same below.
-> > > > > > > > 
-> > > > > > > > > +
-> > > > > > > > > +        additionalProperties: false
-> > > > > > > > > +
-> > > > > > > > > +      port@1:
-> > > > > > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > > > > > +        description: CSI1 input port
-> > > > > > > > > +
-> > > > > > > > > +        properties:
-> > > > > > > > > +          reg:
-> > > > > > > > > +            const: 0
-> > > > > > > > 
-> > > > > > > > This should be 1.
-> > > > > > > 
-> > > > > > > Correct, thanks!
-> > > > > > > 
-> > > > > > > > > +
-> > > > > > > > > +          endpoint:
-> > > > > > > > > +            $ref: video-interfaces.yaml#
-> > > > > > > > > +            unevaluatedProperties: false
-> > > > > > > > > +
-> > > > > > > > > +        additionalProperties: false
-> > > > > > > > > +
-> > > > > > > > > +    anyOf:
-> > > > > > > > > +      - required:
-> > > > > > > > > +        - port@0
-> > > > > > > > > +      - required:
-> > > > > > > > > +        - port@1
-> > > > > > > > 
-> > > > > > > > As ports are an intrinsic property of the ISP, both should be required,
-> > > > > > > > but they don't have to be connected.
-> > > > > > > 
-> > > > > > > Well the ISP does have the ability to source from either CSI0 and CSI1
-> > > > > > > but I don't really get the point of declaring both ports when only one
-> > > > > > > of the two controllers is present.
-> > > > > > 
-> > > > > > If it's within an SoC I don't mind too much. What I usually insist on is
-> > > > > > declaring all ports even when no external devices are connected on the
-> > > > > > board. It may however be easier to implement things on the driver side
-> > > > > > when all the ports are declared, even for internal devices. I won't
-> > > > > > insist either way here.
-> > > > > > 
-> > > > > > > > By the way, how do you select at runtime which CSI-2 RX the ISP gets its
-> > > > > > > > image stream from ? Is it configured through registers of the ISP ?
-> > > > > > > 
-> > > > > > > Actually what the ISP gets is fully dependent on what is received by the
-> > > > > > > CSI controller it is connected to (which can be the mipi csi-2 controller
-> > > > > > > or its direct parallel pins), so the configuration happens on the CSI side.
-> > > > > > 
-> > > > > > OK, then how do you select at runtime which CSI the ISP gets its image
-> > > > > > stream from ? :-)
-> > > > > 
-> > > > > What is done in the driver is that all available csi(s) entities pads are linked
-> > > > > to a single csi sink media pad, which allows userspace to enable one or the
-> > > > > other. If there's only one, it's enabled by default.
-> > > > > 
-> > > > > The actual stream source (isp_dev->proc.source) is selected at link_validate
-> > > > > time and the source bit is set in sun6i_isp_proc_enable.
-> > > > > 
-> > > > > I hope this answers your question!
-> > > > 
-> > > > Yes it does, thank you.
-> > > > 
-> > > > While this works, it makes life a bit more complicated for userspace, as
-> > > > switching between the two sources require disabling the link first and
-> > > > then enabling the new one. This is something that caused issues in the
-> > > > libcamera simple pipeline handler, I ended up having to implement a
-> > > > workaround.
-> > > 
-> > > That surprises me a bit, I thought this was a typical use-case for links.
-> > > So the fact that it's a two-step process causes issues somehow?
-> > 
-> > It's not so much that the links have to be configured in two steps
-> > (although it would be nice if that could be fixed), but the fact that
-> > the order of the operations matter. Userspace has to know what
-> > combination of links is acceptable in order to determine the order of
-> > the enable/disable operations, otherwise errors may be returned. That
-> > makes it more difficult to write generic userspace code.
-> 
-> Ah right, I understand that. Now it's pretty much trial-and-error if userspace
-> doesn't have prior knowledge about the hardware. But to be honest I assumed
-> that it was more or less understood that there cannot be fully generic
-> userspace for this and that knowedlege about the driver and pipeline flow
-> is required to do things right.
 
-You're right, and that's why we have device-specific code in libcamera.
-However, the more generic-friendly the APIs can be, the more the
-device-specific userspace code will be able to use generic helpers, so
-it still matters.
+--6+g71u/0irGe+9jL
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> > > > Could you instead have two sink pads for the ISP, and select the sensor
-> > > > at stream on time instead of link validation time by checking which link
-> > > > is enabled ? If no links or both links are enabled, you can then return
-> > > > an error.
-> > > 
-> > > Yes that's totally doable.
-> > > 
-> > > There's a similar situation with the sun6i-csi bridge where the source pad
-> > > has two possible links: one for routing to sun6i-csi capture (video device)
-> > > and one for routing to the isp entity.
-> > > 
-> > > Would that also be best represented as two pads?
-> > 
-> > Are the two outputs mutually exclusive ? Sorry if I've asked before.
-> 
-> I don't think you have. Yes they are mutually exclusive, only one source
-> can be selected at a time. Same situation as the ISP where the two CSI unit
-> inputs are mutually exclusive.
+Hello Greg,
 
-On the sink (input) side that's quite common, if you have two different
-sources but a single sink, the sink can't (usually) process both sources
-at the same time. I understand that for the sun6i-csi bridge it's the
-other way around, with the bridge can output to either a DMA engine or
-to the ISP, but not both at the same time. That's less common, but can
-certainly happen. I think I'd go for two source pads in that case too.
-Sakari, any opinion ?
+Please pull to receive the Generic phy updates for v5.18. Bunch of new
+device support and updates to few existing drivers.
 
-> > > > Ideally I'd say such internal routing should use the new V4L2 subdev
-> > > > routing API that is currently being implemented (see [1]), but I don't
-> > > > know when it will land, and I don't want to delay your patch series.
-> > > > 
-> > > > [1] https://lore.kernel.org/linux-media/20211130141536.891878-28-tomi.valkeinen@ideasonboard.com
-> > > 
-> > > I'm still a bit confused what problem this is trying to solve.
-> > > My understanding was that the current pad/link API allows representing complex
-> > > topologies and switching different paths with link enable/disable.
-> > 
-> > That was the intent of the MEDIA_IOC_SETUP_LINK ioctl, but we ended up
-> > with something that is fairly ill-defined, and doesn't have the ability
-> > to set multiple links atomically. It turned out to be less usable for
-> > userspace than expected. Mistakes happen (and I'll blame myself here,
-> > having designed that API) when we don't have real test cases during
-> > kernel development.
-> 
-> Yeah it's hard to predict these kinds of things in advance I suppose.
-> Thanks for the heads up!
-> 
-> > > > > > > > > +
-> > > > > > > > > +required:
-> > > > > > > > > +  - compatible
-> > > > > > > > > +  - reg
-> > > > > > > > > +  - interrupts
-> > > > > > > > > +  - clocks
-> > > > > > > > > +  - clock-names
-> > > > > > > > > +  - resets
-> > > > > > > > > +
-> > > > > > > > > +additionalProperties: false
-> > > > > > > > > +
-> > > > > > > > > +examples:
-> > > > > > > > > +  - |
-> > > > > > > > > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> > > > > > > > > +    #include <dt-bindings/clock/sun8i-v3s-ccu.h>
-> > > > > > > > > +    #include <dt-bindings/reset/sun8i-v3s-ccu.h>
-> > > > > > > > > +
-> > > > > > > > > +    isp: isp@1cb8000 {
-> > > > > > > > > +        compatible = "allwinner,sun8i-v3s-isp";
-> > > > > > > > > +        reg = <0x01cb8000 0x1000>;
-> > > > > > > > > +        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-> > > > > > > > > +        clocks = <&ccu CLK_BUS_CSI>,
-> > > > > > > > > +             <&ccu CLK_CSI1_SCLK>,
-> > > > > > > > > +             <&ccu CLK_DRAM_CSI>;
-> > > > > > > > > +        clock-names = "bus", "mod", "ram";
-> > > > > > > > > +        resets = <&ccu RST_BUS_CSI>;
-> > > > > > > > > +
-> > > > > > > > > +        ports {
-> > > > > > > > > +            #address-cells = <1>;
-> > > > > > > > > +            #size-cells = <0>;
-> > > > > > > > > +
-> > > > > > > > > +            port@0 {
-> > > > > > > > > +                reg = <0>;
-> > > > > > > > > +
-> > > > > > > > > +                isp_in_csi0: endpoint {
-> > > > > > > > > +                    remote-endpoint = <&csi0_out_isp>;
-> > > > > > > > > +                };
-> > > > > > > > > +            };
-> > > > > > > > > +        };
-> > > > > > > > > +    };
-> > > > > > > > > +
-> > > > > > > > > +...
+The pull is based on fixes tag you had merged earlier. I had merged
+that into next for resolving dependencies between next & fixes.
 
--- 
-Regards,
+The following changes since commit 9a8406ba1a9a2965c27e0db1d7753471d12ee9ff:
 
-Laurent Pinchart
+  phy: dphy: Correct clk_pre parameter (2022-02-02 10:33:04 +0530)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-=
+for-5.18
+
+for you to fetch changes up to c6455af548991ed22c89528f998fd965c052fb2e:
+
+  phy: qcom-qmp: add sc8280xp UFS PHY (2022-03-02 20:06:54 +0530)
+
+----------------------------------------------------------------
+phy-for-5.18
+
+  - New support:
+        - Mediatek tphy support for MT8186
+	- Qualcomm usb phy support for sc8180x and sc8280xp
+	- Qualcomm ufs phy support for sc8180x and sc8280xp
+	- Qualcomm usb phy support for MSM8953
+	- Cadence D-Phy Rx support
+	- Sun4i support for USB phy
+	- Rockchip naneng combo phy support for RK3568
+	- Qualcomm eDP PHY for sc7280
+
+  - Updates:
+        - wake on support for Synopsis XHCI controllers
+	- Yamilify Qualcomm USB HS phy binding
+	- Charger detection support for TI tusb1210
+
+----------------------------------------------------------------
+Al Cooper (1):
+      phy: usb: Add "wake on" functionality for newer Synopsis XHCI control=
+lers
+
+Allen-KH Cheng (2):
+      dt-bindings: phy: Add compatible for Mediatek MT8186
+      dt-bindings: phy: mediatek,tphy: Add compatible for MT8192
+
+Amjad Ouled-Ameur (3):
+      phy: amlogic: phy-meson-gxl-usb2: fix shared reset controller use
+      phy: amlogic: meson8b-usb2: Use dev_err_probe()
+      phy: amlogic: meson8b-usb2: fix shared reset control use
+
+Andre Przywara (1):
+      phy: sun4i-usb: Rework HCI PHY (aka "pmu_unk1") handling
+
+Ansuel Smith (2):
+      drivers: phy: qcom: ipq806x-usb: convert to BITFIELD macro
+      drivers: phy: qcom: ipq806x-usb: conver latch function to pool macro
+
+Aswath Govindraju (1):
+      phy: cadence: Sierra: Add support for skipping configuration
+
+Bjorn Andersson (4):
+      dt-bindings: phy: qcom,usb-snps-femto-v2: Add sc8180x and sc8280xp
+      phy: qcom-snps: Add sc8280xp support
+      dt-bindings: phy: qcom,qmp: add sc8180x and sc8280xp ufs compatibles
+      phy: qcom-qmp: add sc8280xp UFS PHY
+
+David Heidelberg (1):
+      dt-bindings: phy: convert Qualcomm USB HS phy to yaml
+
+Geert Uytterhoeven (1):
+      phy: freescale: i.MX8 PHYs should depend on ARCH_MXC && ARM64
+
+Hans de Goede (3):
+      phy: ti: tusb1210: Improve ulpi_read()/_write() error checking
+      phy: ti: tusb1210: Drop tusb->vendor_specific2 !=3D 0 check from tusb=
+1210_power_on()
+      phy: ti: tusb1210: Add a delay between power-on and restoring the phy=
+-parameters
+
+Johan Jonker (1):
+      dt-bindings: soc: grf: add naneng combo phy register compatible
+
+Krzysztof Kozlowski (7):
+      dt-bindings: phy: samsung: drop old Eynos5440 PCIe phy
+      dt-bindings: phy: samsung,mipi-video-phy: convert to dtschema
+      dt-bindings: phy: samsung,dp-video-phy: convert to dtschema
+      dt-bindings: phy: samsung,usb2-phy: convert to dtschema
+      dt-bindings: phy: samsung,exynos5250-sata-phy: convert to dtschema
+      dt-bindings: phy: samsung: move SATA phy I2C to trivial devices
+      dt-bindings: phy: samsung,usb3-drd-phy: convert to dtschema
+
+Lad Prabhakar (1):
+      dt-bindings: phy: renesas,usb2-phy: Document RZ/V2L phy bindings
+
+Liu Ying (1):
+      phy: dphy: Correct lpx parameter and its derivatives(ta_{get,go,sure})
+
+Luca Weiss (2):
+      dt-bindings: phy: qcom,qusb2: Document msm8953 compatible
+      phy: qcom-qusb2: Add compatible for MSM8953
+
+Marcel Ziswiler (1):
+      phy: freescale: pcie: cosmetic clean-up
+
+Minghao Chi (CGEL ZTE) (1):
+      phy/cadence: Use of_device_get_match_data()
+
+Pali Roh=C3=A1r (5):
+      phy: marvell: phy-mvebu-a3700-comphy: Remove port from driver configu=
+ration
+      phy: marvell: phy-mvebu-a3700-comphy: Add native kernel implementation
+      Revert "ata: ahci: mvebu: Make SATA PHY optional for Armada 3720"
+      Revert "usb: host: xhci: mvebu: make USB 3.0 PHY optional for Armada =
+3720"
+      Revert "PCI: aardvark: Fix initialization with old Marvell's Arm Trus=
+ted Firmware"
+
+Pratyush Yadav (4):
+      phy: cadence: Add Cadence D-PHY Rx driver
+      phy: dt-bindings: Convert Cadence DPHY binding to YAML
+      phy: dt-bindings: cdns,dphy: add power-domains property
+      phy: dt-bindings: Add Cadence D-PHY Rx bindings
+
+Rafa=C5=82 Mi=C5=82ecki (1):
+      phy: phy-brcm-usb: fixup BCM4908 support
+
+Samuel Holland (3):
+      dt-bindings: phy: Add compatible for D1 USB PHY
+      phy: sun4i-usb: Remove .disc_thresh where not applicable
+      phy: sun4i-usb: Add D1 variant
+
+Sankeerth Billakanti (3):
+      dt-bindings: phy: Add eDP PHY compatible for sc7280
+      phy: qcom: Add support for eDP PHY on sc7280
+      phy: qcom: Program SSC only if supported by sink
+
+Stephan Gerhold (1):
+      phy: ti: tusb1210: Add charger detection
+
+Vinod Koul (2):
+      Merge tag 'phy-fixes-5.17' into next
+      dt-bindings: Revert "dt-bindings: soc: grf: add naneng combo phy regi=
+ster compatible"
+
+Yifeng Zhao (2):
+      dt-bindings: phy: rockchip: Add Naneng combo PHY bindings
+      phy: rockchip: add naneng combo phy for RK3568
+
+ .../bindings/phy/allwinner,sun50i-a64-usb-phy.yaml |    4 +-
+ .../devicetree/bindings/phy/cdns,dphy-rx.yaml      |   42 +
+ .../devicetree/bindings/phy/cdns,dphy.txt          |   20 -
+ .../devicetree/bindings/phy/cdns,dphy.yaml         |   56 +
+ .../devicetree/bindings/phy/mediatek,tphy.yaml     |    2 +
+ .../bindings/phy/phy-rockchip-naneng-combphy.yaml  |  109 ++
+ .../devicetree/bindings/phy/qcom,edp-phy.yaml      |    4 +-
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml      |    3 +
+ .../devicetree/bindings/phy/qcom,qusb2-phy.yaml    |    1 +
+ .../devicetree/bindings/phy/qcom,usb-hs-phy.txt    |   84 --
+ .../devicetree/bindings/phy/qcom,usb-hs-phy.yaml   |  108 ++
+ .../bindings/phy/qcom,usb-snps-femto-v2.yaml       |    3 +
+ .../devicetree/bindings/phy/renesas,usb2-phy.yaml  |    3 +-
+ .../bindings/phy/samsung,dp-video-phy.yaml         |   41 +
+ .../bindings/phy/samsung,exynos5250-sata-phy.yaml  |   64 +
+ .../bindings/phy/samsung,mipi-video-phy.yaml       |  113 ++
+ .../devicetree/bindings/phy/samsung,usb2-phy.yaml  |  102 ++
+ .../bindings/phy/samsung,usb3-drd-phy.yaml         |  126 ++
+ .../devicetree/bindings/phy/samsung-phy.txt        |  210 ---
+ .../devicetree/bindings/trivial-devices.yaml       |    2 +
+ MAINTAINERS                                        |    2 +-
+ drivers/ata/ahci.h                                 |    2 -
+ drivers/ata/ahci_mvebu.c                           |    2 +-
+ drivers/ata/libahci_platform.c                     |    2 +-
+ drivers/pci/controller/pci-aardvark.c              |    4 +-
+ drivers/phy/allwinner/phy-sun4i-usb.c              |   41 +-
+ drivers/phy/amlogic/phy-meson-gxl-usb2.c           |    5 +-
+ drivers/phy/amlogic/phy-meson8b-usb2.c             |    9 +-
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c  |   46 +-
+ drivers/phy/broadcom/phy-brcm-usb-init.c           |   36 +
+ drivers/phy/broadcom/phy-brcm-usb-init.h           |    1 +
+ drivers/phy/broadcom/phy-brcm-usb.c                |   11 +-
+ drivers/phy/cadence/Kconfig                        |    8 +
+ drivers/phy/cadence/Makefile                       |    1 +
+ drivers/phy/cadence/cdns-dphy-rx.c                 |  255 ++++
+ drivers/phy/cadence/phy-cadence-salvo.c            |    7 +-
+ drivers/phy/cadence/phy-cadence-sierra.c           |   82 +-
+ drivers/phy/freescale/Kconfig                      |    5 +
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c         |    3 +-
+ drivers/phy/marvell/phy-mvebu-a3700-comphy.c       | 1350 ++++++++++++++++=
+++--
+ drivers/phy/phy-core-mipi-dphy.c                   |    4 +-
+ drivers/phy/qualcomm/phy-qcom-edp.c                |    9 +-
+ drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c        |   28 +-
+ drivers/phy/qualcomm/phy-qcom-qmp.c                |    3 +
+ drivers/phy/qualcomm/phy-qcom-qusb2.c              |    3 +
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      |    5 +
+ drivers/phy/rockchip/Kconfig                       |    8 +
+ drivers/phy/rockchip/Makefile                      |    1 +
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c |  581 +++++++++
+ drivers/phy/ti/phy-tusb1210.c                      |  443 ++++++-
+ drivers/usb/host/xhci-mvebu.c                      |   42 -
+ drivers/usb/host/xhci-mvebu.h                      |    6 -
+ drivers/usb/host/xhci-plat.c                       |   20 +-
+ drivers/usb/host/xhci-plat.h                       |    1 -
+ 54 files changed, 3496 insertions(+), 627 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy-rx.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/cdns,dphy.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-nane=
+ng-combphy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.t=
+xt
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-hs-phy.y=
+aml
+ create mode 100644 Documentation/devicetree/bindings/phy/samsung,dp-video-=
+phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/samsung,exynos525=
+0-sata-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/samsung,mipi-vide=
+o-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/samsung,usb2-phy.=
+yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/samsung,usb3-drd-=
+phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/samsung-phy.txt
+ create mode 100644 drivers/phy/cadence/cdns-dphy-rx.c
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+
+Thanks
+--=20
+~Vinod
+
+--6+g71u/0irGe+9jL
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE+vs47OPLdNbVcHzyfBQHDyUjg0cFAmIiTPwACgkQfBQHDyUj
+g0f2ohAAwGLRPzSrreY665GQUbLEMWKCg428yuSp8vVvKUKfwW/4SRy0fFzsPzsF
+vUhck7kGfLS0htRNVLzUD8TsgFVUE4k3l8wpjflqtKSuSb6mbw/h6fmH/8fXI9HB
+9gpEsyzI9TUBHzrDx/3HFwTXuAbdl2d7KSdQ0/9+g/MyIIeoSNgKXk9qYWpSkL2b
+DpMIQxIxplzDARHcScYD8Gnhu/vN37f/D+hyKw2TZqc+1SNZ8b3yJEJay+QDTGSa
+EoyAzrw4qcaWcXZsS3fcUlFiKkzkJc6gJ/+3p3iYpQt67En2BYL9VyvAtET77Y6c
+gznZvG77dDrHGMoCjZzWZYPTMGQMwUwcM5lr4DJE1FtWWEHGIdis2DjlNfZHXVaf
+eTESzv2vp8UPN9GN/Lj4hSu4QVf4Yyugo92Sg2usV049NjuO4i1Q2mFjTy0/w2tJ
+KA+eG6sOHLpJ/5xfrdubDml+uPB53+EvJI2nNkEU69D3ikxaBkDHlawC79F3piBM
+Rqwzy+7uVDYjjfHJXCaMoyBMcnU5jWI7mux6G6NXoKSJaVameO1g72j6HAO074Du
+uYhgDeWVYDGOuFhOeDbV76D0qO3TRC6Qn4ltH6aPq9g2M/1E1/2GeIKtCLfGDj1n
+lrBe2Uh6bhojs88ekhS+FZgyG2eJUTgmSPAYeEsS7MTr3EqSArE=
+=+soa
+-----END PGP SIGNATURE-----
+
+--6+g71u/0irGe+9jL--
+
+
+--===============0037016279292999723==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0037016279292999723==--
+
