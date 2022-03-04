@@ -4,69 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6329EC433F5
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Mar 2022 09:31:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD71BC433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Mar 2022 11:30:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YweQ5Dt/kF2x/+v2VSn9eArWKYTchqiRjFI3lh+3OI0=; b=r+3PoPi807Mx4yGlIH9BHd35Qu
-	RjQ3Wco72w13V1swXNbwrfpEgNhthe0idWMR4KAkuVlGxtPgQR/UnlGIb/0FKS4YhamsYjXLhocpB
-	KGSscYXyyFhBvsJ+QKvWezHHNjhA4qhdodSAUq8vDDzhMVtAGQH24IjcRjLLlYLLiLLnlUR0LJkpO
-	0Jp16hR1WefB4VX88ofOyIq4JE0zBF/nCxkAOLBMObnhJu+XwFyuI9Q7VkWJvmyNJCfPG+jipVBZJ
-	pekUz07uwto7yOlRxDPtO/lT/2lOcveSYe0KM3hcMc/B2R8U+SQW+eCJxHZ81jsjK2upj7315/+uO
-	SnESehpg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lU7J8E3/Ls+crulh5rHo/SvOb1APhT79r06/LPqR5Cg=; b=1gIZ3ZKJb4ILwO
+	guaXhRyi0s0clQ3l+DjFvKMlgsSo7Kyn0TYzRXkh/qcYDZ6PjWzHioMIFDNRSoF698VLsmmzC0tyr
+	wlgMBTHpUBre63TzviNMhfBMbqNlvOVLjSQdJ/Afu3i4hUf1HBDznwJaeveHDsyXQA96dfRh/4UpO
+	F1o6887PSRHyhe1u6QOlWLS/WNLZY1xNmbKu55BgRqS8TH5SB/nvYvzT/k3D0hO1uOmaSjx4l+zXs
+	2qJ+eqHAwfryt/ykr3Wn5iIsO1GEhIrv7JwC+EsnQTimlLAi7+1/+96Jv5GJJEsKzcdwZhS1PKzm8
+	lq/ORlKFtjclJGudZgyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nQ4Hi-009IU0-3g; Fri, 04 Mar 2022 09:31:38 +0000
-Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
+	id 1nQ68N-009nxc-BI; Fri, 04 Mar 2022 11:30:07 +0000
+Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nQ3nS-009AOl-LR; Fri, 04 Mar 2022 09:00:25 +0000
-Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id 3EEEC1BF213;
- Fri,  4 Mar 2022 09:00:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1646384418;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=MoznkUIec7VAQY3ImNmY3IHeuYJ/S05cBMHdD+Wm4Nc=;
- b=F9tvU0ozNsPeQ9lftznClBeZfJB6PRNXxUPQuKwyUpT+KlQKi1Nt6H6ki+H9T74PtC15GX
- mEICPAhXiahTCeW0RAjDqf9QHMqxP63CmickbbG9Wiyp9qId8qFcZGrK6aWmhmVw7/aGt2
- yLlqqcQDFBjV1yRkmHN+eaunAwYFhRpPb7msRMR/CGFHaJhhUappIX1EW+O1P7k1yliwnB
- M5V5bFFMXlCKDVfIyrkqNeKa0olTvBeJQCCkrxzrIJUMmqwnsXU1BEtxyIGQsumhssIw9L
- Zlau+iKBkap+qVKAuIzvu4o1YBw/r/7qV5t3A4pr5bmRcw1uqeMrjAN3qNgwTQ==
-Date: Fri, 4 Mar 2022 10:00:12 +0100
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ id 1nQ68K-009nwY-PA
+ for linux-phy@lists.infradead.org; Fri, 04 Mar 2022 11:30:06 +0000
+Received: by mail-pf1-x42a.google.com with SMTP id s8so3307450pfk.12
+ for <linux-phy@lists.infradead.org>; Fri, 04 Mar 2022 03:30:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id;
+ bh=8h85EqRRCLiGL53ycW8kr7mXUB11CVEXR9UMxVb4BkI=;
+ b=LtruXqJBf79xHTqXkhttmi7F4MMrxTC4jzgT3oDue5YoUczjkcLzR/288VLZi+om7w
+ KstnsUmjYyUIqfHpokSxOLlNQ+WtCCSf1xjgUAXG4Wr5snl9gZ+/hMcayXaZf4AYpW6G
+ OHxlYfurYVQBg0pdU4LyLjbrTLdesUbhc23Jixnfq8yomdUx1Q39jC1c690Uz8LfSUWm
+ nguqN/KiLsQu2W8Bv9flRw1ZjMpvyTXcBw3OwDMxfX6XdFvQC2MkQlpiHIITp28NreP1
+ JHkdp27nEmMG7qiA6WE7fm0QJaHAn8IhMPbZVkzjfddGtRcvEKq7AOx6DHI3wN8+Z4RM
+ DXcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=8h85EqRRCLiGL53ycW8kr7mXUB11CVEXR9UMxVb4BkI=;
+ b=tYPzQxLh5jSdtiUFgKmUpS2upCDP4Gsy0yjCawY2xTrYBpwow2qpyl0V95rf0jlLe8
+ j/EHfdT7uFQTEQRTdag8YS+ALEI/dZ9HSnVGW84CoSEOIuRWQG46skECL2Y8x6YOaBxd
+ 0g5V5usC1D394bRh6yZk665NOzQSVp2lvM6y8C/QhRAtIkIkatz/JPGKogrgXo5QFX+6
+ joBIhvbSFWopUd2znLEOU/2J3ZU5PoPnxSDjam/pH2FG1e98Oj3SsRIuT25+bxU34lEF
+ iR4inmcyh/TpFCfheYdRDUIr5hvjjKyeCRTBePUv7aKB2BmhdB0tYHLpovyasBdakqFc
+ 2xGA==
+X-Gm-Message-State: AOAM5331xv5fvnXfuZsY6Ow8lKlXZCsyBGjs9ow920kpU5A81w/pExXl
+ TCX/Li+twQHBg/hfIuP2dEo=
+X-Google-Smtp-Source: ABdhPJwqxIBJuIn5XpOvRpZQlQgIg+Pos7BA0dFdg5JsK54IWbBXXykhk/Gco+jvsDeoR+xFlHeGBA==
+X-Received: by 2002:a05:6a00:2301:b0:4e1:5842:48d7 with SMTP id
+ h1-20020a056a00230100b004e1584248d7mr43017387pfh.14.1646393402652; 
+ Fri, 04 Mar 2022 03:30:02 -0800 (PST)
+Received: from scdiu3.sunplus.com ([113.196.136.192])
+ by smtp.googlemail.com with ESMTPSA id
+ h3-20020a056a00170300b004f104c635e4sm5718237pfc.99.2022.03.04.03.30.00
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 04 Mar 2022 03:30:02 -0800 (PST)
+From: Vincent Shih <vincent.sunplus@gmail.com>
+To: kishon@ti.com, vkoul@kernel.org, p.zabel@pengutronix.de,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 30/66] media: sun6i-csi: Add bridge v4l2 subdev with
- port management
-Message-ID: <YiHVHM53GUQ1jxco@aptenodytes>
-References: <20220205185429.2278860-1-paul.kocialkowski@bootlin.com>
- <20220205185429.2278860-31-paul.kocialkowski@bootlin.com>
- <YgqbqVRinNxQ8+WV@paasikivi.fi.intel.com>
- <Yh+GZv9/rKQ2WbI2@aptenodytes>
- <YiFEq1liAnBy0fkq@paasikivi.fi.intel.com>
-MIME-Version: 1.0
-In-Reply-To: <YiFEq1liAnBy0fkq@paasikivi.fi.intel.com>
+ linux-usb@vger.kernel.org, robh+dt@kernel.org, devicetree@vger.kernel.org,
+ wells.lu@sunplus.com
+Cc: Vincent Shih <vincent.sunplus@gmail.com>
+Subject: [PATCH v1 0/2] Add phy driver for ehci in Sunplus SP7021
+Date: Fri,  4 Mar 2022 19:30:16 +0800
+Message-Id: <1646393418-26421-1-git-send-email-vincent.sunplus@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220304_010023_366424_030640E0 
-X-CRM114-Status: GOOD (  29.16  )
+X-CRM114-CacheID: sfid-20220304_033004_837804_61DCAA18 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,174 +81,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0152170743059238393=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This is a patch series for ehci driver for Sunplus SP7021 SoC.
 
---===============0152170743059238393==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="dwUOJP15b315kF0b"
-Content-Disposition: inline
+Sunplus SP7021 is an ARM Coretex A7 (4 cores) based SoC. It integrates
+many peripherals (ex: UART, I2C, SPI, SDIO, eMMC, USB, SD Card and
+etc.) into a single chip. It is designed for industrial control.
 
+Refer to:
+https://sunplus-tibbo.atlassian.net/wiki/spaces/doc/overview
+https://tibbo.com/store/plus1.html
 
---dwUOJP15b315kF0b
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Vincent Shih (2):
+  phy: usb: Add USB2.0 phy driver for Sunplus SP7021
+  dt-bindings: phy: Add bindings doc for Sunplus USB2 PHY driver
 
-Hi Sakari,
+ .../bindings/phy/sunplus,sp7021-usb2-phy.yaml      |  73 ++++++
+ MAINTAINERS                                        |   9 +
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/sunplus/Kconfig                        |  12 +
+ drivers/phy/sunplus/Makefile                       |   2 +
+ drivers/phy/sunplus/phy-sunplus-usb2.c             | 248 +++++++++++++++++++++
+ 7 files changed, 346 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml
+ create mode 100644 drivers/phy/sunplus/Kconfig
+ create mode 100644 drivers/phy/sunplus/Makefile
+ create mode 100644 drivers/phy/sunplus/phy-sunplus-usb2.c
 
-On Fri 04 Mar 22, 00:43, Sakari Ailus wrote:
-> Hi Paul,
->=20
-> On Wed, Mar 02, 2022 at 03:59:50PM +0100, Paul Kocialkowski wrote:
-> > > > +static int
-> > > > +sun6i_csi_bridge_notifier_bound(struct v4l2_async_notifier *notifi=
-er,
-> > > > +				struct v4l2_subdev *remote_subdev,
-> > > > +				struct v4l2_async_subdev *async_subdev)
-> > > > +{
-> > > > +	struct sun6i_csi_device *csi_dev =3D
-> > > > +		container_of(notifier, struct sun6i_csi_device,
-> > > > +			     bridge.notifier);
-> > > > +	struct sun6i_csi_bridge *bridge =3D &csi_dev->bridge;
-> > > > +	struct sun6i_csi_bridge_source *source =3D NULL;
-> > > > +	struct fwnode_handle *fwnode =3D dev_fwnode(csi_dev->dev);
-> > > > +	struct fwnode_handle *handle =3D NULL;
-> > > > +	bool enabled;
-> > > > +	int ret;
-> > > > +
-> > > > +	while ((handle =3D fwnode_graph_get_next_endpoint(fwnode, handle)=
-)) {
-> > >=20
-> > > I'd instead store the information you need here in struct sun6i_csi_b=
-ridge.
-> > > You could remove the loop here.
-> >=20
-> > Is there a different method for matching a remote subdev to a local por=
-t?
-> > The rationale here is that I need the handle for fwnode_graph_parse_end=
-point
-> > but cannot get that handle from the remote subdev's fwnode pointer dire=
-ctly.
->=20
-> You generally shouldn't try to match fwnodes here as the V4L2 async
-> framework has already done that job. This information can be found behind
-> the async_subdev pointer.
->=20
-> See e.g. drivers/media/pci/intel/ipu3/ipu3-cio2-main.c for an example.
+-- 
+2.7.4
 
-Thanks for the feedback, I'll look into that.
-
-> >=20
-> > > > +		struct fwnode_endpoint endpoint =3D { 0 };
-> > > > +		struct fwnode_handle *remote_fwnode;
-> > > > +
-> > > > +		remote_fwnode =3D fwnode_graph_get_remote_port_parent(handle);
-> > > > +		if (!remote_fwnode)
-> > > > +			continue;
-> > > > +
-> > > > +		if (remote_fwnode !=3D remote_subdev->fwnode)
-> > > > +			goto next;
-> > > > +
-> > > > +		ret =3D fwnode_graph_parse_endpoint(handle, &endpoint);
-> > > > +		if (ret < 0)
-> > > > +			goto next;
-> > > > +
-> > > > +		switch (endpoint.port) {
-> > > > +		case SUN6I_CSI_PORT_PARALLEL:
-> > > > +			source =3D &bridge->source_parallel;
-> > > > +			enabled =3D true;
-> > > > +			break;
-> > > > +		default:
-> > > > +			break;
-> > > > +		}
-> > > > +
-> > > > +next:
-> > > > +		fwnode_handle_put(remote_fwnode);
-> > > > +	}
-> > > > +
-> > > > +	if (!source)
-> > > > +		return -EINVAL;
-> > > > +
-> > > > +	source->subdev =3D remote_subdev;
-> > > > +
-> > > > +	return sun6i_csi_bridge_link(csi_dev, SUN6I_CSI_BRIDGE_PAD_SINK,
-> > > > +				     remote_subdev, enabled);
-> > > > +}
-> > > > +
-> > > > +static int
-> > > > +sun6i_csi_bridge_notifier_complete(struct v4l2_async_notifier *not=
-ifier)
-> > > > +{
-> > > > +	struct sun6i_csi_device *csi_dev =3D
-> > > > +		container_of(notifier, struct sun6i_csi_device,
-> > > > +			     bridge.notifier);
-> > > > +
-> > > > +	return sun6i_csi_v4l2_complete(csi_dev);
-> > >=20
-> > > You could call v4l2_device_register_subdev_nodes() here.
-> >=20
-> > That's definitely what sun6i_csi_v4l2_complete does (the diff is probab=
-ly not
-> > very clear). Note that the wrapper is extended later on to register the=
- capture
-> > video device for the no-isp path.
->=20
-> I could be missing something... Do you need to call
-> sun6i_csi_v4l2_complete() in multiple places or not? If not, then I think
-> it'd be probably better to just move the code here.
-
-No this is only called here so I guess we can avoid it entirely.
-
-Thanks,
-
-Paul
-
-> >=20
-> > Maybe the capture registration could be kept in sun6i_csi_probe for the=
- non-isp
-> > path and then the wrapper wouldn't be needed. I don't mind either way.
->=20
-> --=20
-> Kind regards,
->=20
-> Sakari Ailus
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---dwUOJP15b315kF0b
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmIh1RwACgkQ3cLmz3+f
-v9Ha5Qf+Lz13XAEQwduMjvaJ3V4PK+23t0taf6Fv0+Peh5fnTfFagFYbMtBdFsbo
-q/6i5Zt3JaRdXe+5SixAINP00cflNxpxuAN+MRbjP4wfaRBxNRGqhIGjXWzJYLZe
-jn4lX8W49l8iafyCstJ5jhccMEn/LSo1mO3pAyjc3pMXK+6HabgMe5UEETWvm5n3
-XX1j/KBu1PtgQUNKbBxKGpGVmlmBjMEfM+DIx19h70AeeG7OW4wUq37IJ5i6AiuX
-Q7da7pWZMzdesWbjon3l5X5rPbfimGXqNLJYUa86zFBrk/nO+10HhU1udx4du5AW
-4e/50RP2kNoRQ9bvpvarQtS8gN0BGg==
-=Nf6c
------END PGP SIGNATURE-----
-
---dwUOJP15b315kF0b--
-
-
---===============0152170743059238393==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0152170743059238393==--
-
