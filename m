@@ -4,37 +4,37 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 733A8C433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Mar 2022 09:18:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FA92C433EF
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Mar 2022 09:18:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jvFuauIWaguh7kDhZDUU1SeeVmMubWAd+NJCVKCCN8U=; b=alSEHq81PNXgh0
-	rpCy1Ew2a9DaKuR7qCuZ3Q0d28tawK1YaIh9nXx10dD9N4vbrDBEI3ktsbqZDa5DY0vZLOYhnuOXa
-	Jx85yRPH0I1PE5LL4cSC8zj9I+TIRaK2StYGRAVTxJIaXMU4Em87PJiFpj0Z2zyWyun0WQWklnx3m
-	x7c+CzPC25BjpZrCZSfp/iMCQtZ/5XunbRCDwXLJ6btS/k9d5ZBIgecMlUvd1stgpMaVvKVoPv8Cp
-	3wjsuUfaqpNrVpRYmzgzHQPhZwu9cv+Dy+XBEeoW0oo2cnEeqJVXExyQJ7xIPbMszd9onVUA050mq
-	AjIuA0n2WdDtBypfe09Q==;
+	List-Owner; bh=fmDHt3inbsGfQ4MDsKxyBZe88MoeBdl/ye5eq63yZyE=; b=cN4pdgRk1AVIyM
+	5EHUWgiscC/i/5vRddJIjlneCNy8qu2pS5RaAU0z/aer90HAknPBkzaK26+YxXC+5VGdnOFvGAZlF
+	XEUTFPjrhkVFDJY/IMNPmJWCYxMzx2eBMr2GvtFkY/namibTuCkejfXAhmspnT5VNUko1FvFWa4/O
+	lILbP6a5wO+fWPx4yKLnsFD6p7LliNvrZd2YZmH9vXtaAmRbPxVh8NrbJVWL6i4imF0VC9dusRtG8
+	tQIua7dAfAAQGGfswvFqp5suqlZpxxT/irUi2wRqWRf2v5sDcFlYviClUlQBF+s9dGgX9f5AlOsN8
+	p8GOOX06lLV0MllnhV1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nR9VQ-00GgRB-PA; Mon, 07 Mar 2022 09:18:16 +0000
+	id 1nR9Vx-00GgiD-Ap; Mon, 07 Mar 2022 09:18:49 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nR9To-00GfcE-AN; Mon, 07 Mar 2022 09:16:39 +0000
+ id 1nR9Tr-00GfdS-6L; Mon, 07 Mar 2022 09:16:41 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E5EF22000A9;
- Mon,  7 Mar 2022 10:16:34 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DDB88201483;
+ Mon,  7 Mar 2022 10:16:37 +0100 (CET)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com
  (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5DE1B200078;
- Mon,  7 Mar 2022 10:16:34 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9385E200095;
+ Mon,  7 Mar 2022 10:16:37 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id CB40B183AD6D;
- Mon,  7 Mar 2022 17:16:32 +0800 (+08)
+ by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 88E2D183AD67;
+ Mon,  7 Mar 2022 17:16:35 +0800 (+08)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: p.zabel@pengutronix.de, l.stach@pengutronix.de, bhelgaas@google.com,
  lorenzo.pieralisi@arm.com, robh@kernel.org, shawnguo@kernel.org,
@@ -43,16 +43,17 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com,
  Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [PATCH v2 3/7] phy: freescale: imx8m-pcie: Add iMX8MP PCIe PHY support
-Date: Mon,  7 Mar 2022 17:07:30 +0800
-Message-Id: <1646644054-24421-4-git-send-email-hongxing.zhu@nxp.com>
+Subject: [PATCH v2 5/7] arm64: dts: imx8mp: add the iMX8MP PCIe support
+Date: Mon,  7 Mar 2022 17:07:32 +0800
+Message-Id: <1646644054-24421-6-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1646644054-24421-1-git-send-email-hongxing.zhu@nxp.com>
 References: <1646644054-24421-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220307_011636_690458_89163B75 
-X-CRM114-Status: GOOD (  20.04  )
+X-CRM114-CacheID: sfid-20220307_011639_544255_21905200 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,306 +71,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the i.MX8MP PCIe PHY support
+Add the i.MX8MP PCIe support.
 
 Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 ---
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 205 ++++++++++++++++-----
- 1 file changed, 163 insertions(+), 42 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi | 46 ++++++++++++++++++++++-
+ 1 file changed, 45 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index 04b1aafb29f4..3d01da4323a6 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -11,6 +11,8 @@
- #include <linux/mfd/syscon.h>
- #include <linux/mfd/syscon/imx7-iomuxc-gpr.h>
- #include <linux/module.h>
-+#include <linux/of_address.h>
-+#include <linux/of_device.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
-@@ -30,12 +32,10 @@
- #define IMX8MM_PCIE_PHY_CMN_REG065	0x194
- #define  ANA_AUX_RX_TERM		(BIT(7) | BIT(4))
- #define  ANA_AUX_TX_LVL			GENMASK(3, 0)
--#define IMX8MM_PCIE_PHY_CMN_REG75	0x1D4
--#define  PCIE_PHY_CMN_REG75_PLL_DONE	0x3
-+#define IMX8MM_PCIE_PHY_CMN_REG075	0x1D4
-+#define  ANA_PLL_DONE			0x3
- #define PCIE_PHY_TRSV_REG5		0x414
--#define  PCIE_PHY_TRSV_REG5_GEN1_DEEMP	0x2D
- #define PCIE_PHY_TRSV_REG6		0x418
--#define  PCIE_PHY_TRSV_REG6_GEN2_DEEMP	0xF
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+index b40a5646f205..e7b3d8029e34 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+@@ -5,6 +5,7 @@
  
- #define IMX8MM_GPR_PCIE_REF_CLK_SEL	GENMASK(25, 24)
- #define IMX8MM_GPR_PCIE_REF_CLK_PLL	FIELD_PREP(IMX8MM_GPR_PCIE_REF_CLK_SEL, 0x3)
-@@ -46,16 +46,43 @@
- #define IMX8MM_GPR_PCIE_SSC_EN		BIT(16)
- #define IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE	BIT(9)
+ #include <dt-bindings/clock/imx8mp-clock.h>
+ #include <dt-bindings/power/imx8mp-power.h>
++#include <dt-bindings/reset/imx8mp-reset.h>
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+@@ -375,7 +376,8 @@ iomuxc: pinctrl@30330000 {
+ 			};
  
-+#define IMX8MP_GPR_REG0			0x0
-+#define IMX8MP_GPR_CLK_MOD_EN		BIT(0)
-+#define IMX8MP_GPR_PHY_APB_RST		BIT(4)
-+#define IMX8MP_GPR_PHY_INIT_RST		BIT(5)
-+#define IMX8MP_GPR_REG1			0x4
-+#define IMX8MP_GPR_PM_EN_CORE_CLK	BIT(0)
-+#define IMX8MP_GPR_PLL_LOCK		BIT(13)
-+#define IMX8MP_GPR_REG2			0x8
-+#define IMX8MP_GPR_P_PLL_MASK		GENMASK(5, 0)
-+#define IMX8MP_GPR_M_PLL_MASK		GENMASK(15, 6)
-+#define IMX8MP_GPR_S_PLL_MASK		GENMASK(18, 16)
-+#define IMX8MP_GPR_P_PLL		(0xc << 0)
-+#define IMX8MP_GPR_M_PLL		(0x320 << 6)
-+#define IMX8MP_GPR_S_PLL		(0x4 << 16)
-+#define IMX8MP_GPR_REG3			0xc
-+#define IMX8MP_GPR_PLL_CKE		BIT(17)
-+#define IMX8MP_GPR_PLL_RST		BIT(31)
-+
-+enum imx8_pcie_phy_type {
-+	IMX8MM,
-+	IMX8MP,
-+};
-+
- struct imx8_pcie_phy {
- 	void __iomem		*base;
-+	struct device		*dev;
- 	struct clk		*clk;
- 	struct phy		*phy;
-+	struct regmap		*hsio_blk_ctrl;
- 	struct regmap		*iomuxc_gpr;
- 	struct reset_control	*reset;
-+	struct reset_control	*perst;
- 	u32			refclk_pad_mode;
- 	u32			tx_deemph_gen1;
- 	u32			tx_deemph_gen2;
- 	bool			clkreq_unused;
-+	enum imx8_pcie_phy_type	variant;
- };
+ 			gpr: iomuxc-gpr@30340000 {
+-				compatible = "fsl,imx8mp-iomuxc-gpr", "syscon";
++				compatible = "fsl,imx8mp-iomuxc-gpr",
++					     "fsl,imx6q-iomuxc-gpr", "syscon";
+ 				reg = <0x30340000 0x10000>;
+ 			};
  
- static int imx8_pcie_phy_init(struct phy *phy)
-@@ -67,6 +94,87 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 	reset_control_assert(imx8_phy->reset);
+@@ -965,6 +967,17 @@ aips4: bus@32c00000 {
+ 			#size-cells = <1>;
+ 			ranges;
  
- 	pad_mode = imx8_phy->refclk_pad_mode;
-+	switch (imx8_phy->variant) {
-+	case IMX8MM:
-+		/* Tune PHY de-emphasis setting to pass PCIe compliance. */
-+		if (imx8_phy->tx_deemph_gen1)
-+			writel(imx8_phy->tx_deemph_gen1,
-+			       imx8_phy->base + PCIE_PHY_TRSV_REG5);
-+		if (imx8_phy->tx_deemph_gen2)
-+			writel(imx8_phy->tx_deemph_gen2,
-+			       imx8_phy->base + PCIE_PHY_TRSV_REG6);
-+		break;
-+	case IMX8MP:
-+		reset_control_assert(imx8_phy->perst);
-+		/* Set P=12,M=800,S=4 and must set ICP=2'b01. */
-+		regmap_update_bits(imx8_phy->hsio_blk_ctrl, IMX8MP_GPR_REG2,
-+				   IMX8MP_GPR_P_PLL_MASK |
-+				   IMX8MP_GPR_M_PLL_MASK |
-+				   IMX8MP_GPR_S_PLL_MASK,
-+				   IMX8MP_GPR_P_PLL |
-+				   IMX8MP_GPR_M_PLL |
-+				   IMX8MP_GPR_S_PLL);
-+		/* wait greater than 1/F_FREF =1/2MHZ=0.5us */
-+		udelay(1);
-+
-+		regmap_update_bits(imx8_phy->hsio_blk_ctrl, IMX8MP_GPR_REG3,
-+				   IMX8MP_GPR_PLL_RST,
-+				   IMX8MP_GPR_PLL_RST);
-+		udelay(10);
-+
-+		/* Set 1 to pll_cke of GPR_REG3 */
-+		regmap_update_bits(imx8_phy->hsio_blk_ctrl, IMX8MP_GPR_REG3,
-+				   IMX8MP_GPR_PLL_CKE,
-+				   IMX8MP_GPR_PLL_CKE);
-+
-+		/* Lock time should be greater than 300cycle=300*0.5us=150us */
-+		ret = regmap_read_poll_timeout(imx8_phy->hsio_blk_ctrl,
-+					     IMX8MP_GPR_REG1, val,
-+					     val & IMX8MP_GPR_PLL_LOCK,
-+					     10, 1000);
-+		if (ret) {
-+			dev_err(imx8_phy->dev, "PCIe PLL lock timeout\n");
-+			return ret;
-+		}
-+
-+		/* pcie_clock_module_en */
-+		regmap_update_bits(imx8_phy->hsio_blk_ctrl, IMX8MP_GPR_REG0,
-+				   IMX8MP_GPR_CLK_MOD_EN,
-+				   IMX8MP_GPR_CLK_MOD_EN);
-+		udelay(10);
-+
-+		reset_control_deassert(imx8_phy->reset);
-+		reset_control_deassert(imx8_phy->perst);
-+
-+		/* release pcie_phy_apb_reset and pcie_phy_init_resetn */
-+		regmap_update_bits(imx8_phy->hsio_blk_ctrl, IMX8MP_GPR_REG0,
-+				   IMX8MP_GPR_PHY_APB_RST |
-+				   IMX8MP_GPR_PHY_INIT_RST,
-+				   IMX8MP_GPR_PHY_APB_RST |
-+				   IMX8MP_GPR_PHY_INIT_RST);
-+		break;
-+	}
-+
-+	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT) {
-+		/* Configure the pad as input */
-+		val = readl(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-+		writel(val & ~ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-+	} else if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT) {
-+		/* Configure the PHY to output the refclock via pad */
-+		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
-+		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
-+		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
-+		val = ANA_AUX_RX_TX_SEL_TX | ANA_AUX_TX_TERM;
-+		writel(val | ANA_AUX_RX_TERM_GND_EN,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG064);
-+		writel(ANA_AUX_RX_TERM | ANA_AUX_TX_LVL,
-+		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG065);
-+	}
-+
- 	/* Set AUX_EN_OVERRIDE 1'b0, when the CLKREQ# isn't hooked */
- 	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
- 			   IMX8MM_GPR_PCIE_AUX_EN_OVERRIDE,
-@@ -91,42 +199,30 @@ static int imx8_pcie_phy_init(struct phy *phy)
- 	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
- 			   IMX8MM_GPR_PCIE_CMN_RST,
- 			   IMX8MM_GPR_PCIE_CMN_RST);
--	usleep_range(200, 500);
++			pcie_phy: pcie-phy@32f00000 {
++				compatible = "fsl,imx8mp-pcie-phy";
++				reg = <0x32f00000 0x10000>;
++				resets = <&src IMX8MP_RESET_PCIEPHY>,
++					 <&src IMX8MP_RESET_PCIEPHY_PERST>;
++				reset-names = "pciephy", "perst";
++				power-domains = <&hsio_blk_ctrl IMX8MP_HSIOBLK_PD_PCIE_PHY>;
++				#phy-cells = <0>;
++				status = "disabled";
++			};
++	
+ 			hsio_blk_ctrl: blk-ctrl@32f10000 {
+ 				compatible = "fsl,imx8mp-hsio-blk-ctrl", "syscon";
+ 				reg = <0x32f10000 0x24>;
+@@ -980,6 +993,37 @@ hsio_blk_ctrl: blk-ctrl@32f10000 {
+ 			};
+ 		};
  
--	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT) {
--		/* Configure the pad as input */
--		val = readl(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
--		writel(val & ~ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
--		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
--	} else if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT) {
--		/* Configure the PHY to output the refclock via pad */
--		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
--		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
--		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
--		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
--		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
--		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG063);
--		val = ANA_AUX_RX_TX_SEL_TX | ANA_AUX_TX_TERM;
--		writel(val | ANA_AUX_RX_TERM_GND_EN,
--		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG064);
--		writel(ANA_AUX_RX_TERM | ANA_AUX_TX_LVL,
--		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG065);
-+	switch (imx8_phy->variant) {
-+	case IMX8MM:
-+		reset_control_deassert(imx8_phy->reset);
-+		usleep_range(200, 500);
-+		break;
++		pcie: pcie@33800000 {
++			compatible = "fsl,imx8mp-pcie";
++			reg = <0x33800000 0x400000>, <0x1ff00000 0x80000>;
++			reg-names = "dbi", "config";
++			#address-cells = <3>;
++			#size-cells = <2>;
++			device_type = "pci";
++			bus-range = <0x00 0xff>;
++			ranges =  <0x81000000 0 0x00000000 0x1ff80000 0 0x00010000 /* downstream I/O 64KB */
++				   0x82000000 0 0x18000000 0x18000000 0 0x07f00000>; /* non-prefetchable memory */
++			num-lanes = <1>;
++			num-viewport = <4>;
++			interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi";
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &gic GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &gic GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &gic GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &gic GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>;
++			fsl,max-link-speed = <3>;
++			linux,pci-domain = <0>;
++			power-domains = <&hsio_blk_ctrl IMX8MP_HSIOBLK_PD_PCIE>;
++			resets = <&src IMX8MP_RESET_PCIE_CTRL_APPS_EN>,
++				 <&src IMX8MP_RESET_PCIE_CTRL_APPS_TURNOFF>;
++			reset-names = "apps", "turnoff";
++			phys = <&pcie_phy>;
++			phy-names = "pcie-phy";
++			status = "disabled";
++		};
 +
-+	case IMX8MP:
-+		/* wait for core_clk enabled */
-+		ret = regmap_read_poll_timeout(imx8_phy->hsio_blk_ctrl,
-+					     IMX8MP_GPR_REG1, val,
-+					     val & IMX8MP_GPR_PM_EN_CORE_CLK,
-+					     10, 20000);
-+		if (ret) {
-+			dev_err(imx8_phy->dev, "PCIe CORE CLK enable failed\n");
-+			return ret;
-+		}
-+
-+		break;
- 	}
- 
--	/* Tune PHY de-emphasis setting to pass PCIe compliance. */
--	if (imx8_phy->tx_deemph_gen1)
--		writel(imx8_phy->tx_deemph_gen1,
--		       imx8_phy->base + PCIE_PHY_TRSV_REG5);
--	if (imx8_phy->tx_deemph_gen2)
--		writel(imx8_phy->tx_deemph_gen2,
--		       imx8_phy->base + PCIE_PHY_TRSV_REG6);
--
--	reset_control_deassert(imx8_phy->reset);
--
- 	/* Polling to check the phy is ready or not. */
--	ret = readl_poll_timeout(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG75,
--				 val, val == PCIE_PHY_CMN_REG75_PLL_DONE,
--				 10, 20000);
-+	ret = readl_poll_timeout(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG075,
-+				 val, val == ANA_PLL_DONE, 10, 20000);
- 	return ret;
- }
- 
-@@ -153,18 +249,33 @@ static const struct phy_ops imx8_pcie_phy_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static const struct of_device_id imx8_pcie_phy_of_match[] = {
-+	{.compatible = "fsl,imx8mm-pcie-phy", .data = (void *)IMX8MM},
-+	{.compatible = "fsl,imx8mp-pcie-phy", .data = (void *)IMX8MP},
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
-+
- static int imx8_pcie_phy_probe(struct platform_device *pdev)
- {
- 	struct phy_provider *phy_provider;
- 	struct device *dev = &pdev->dev;
-+	const struct of_device_id *of_id;
- 	struct device_node *np = dev->of_node;
- 	struct imx8_pcie_phy *imx8_phy;
- 	struct resource *res;
- 
-+	of_id = of_match_device(imx8_pcie_phy_of_match, dev);
-+	if (!of_id)
-+		return -EINVAL;
-+
- 	imx8_phy = devm_kzalloc(dev, sizeof(*imx8_phy), GFP_KERNEL);
- 	if (!imx8_phy)
- 		return -ENOMEM;
- 
-+	imx8_phy->dev = dev;
-+	imx8_phy->variant = (enum imx8_pcie_phy_type)of_id->data;
-+
- 	/* get PHY refclk pad mode */
- 	of_property_read_u32(np, "fsl,refclk-pad-mode",
- 			     &imx8_phy->refclk_pad_mode);
-@@ -201,6 +312,22 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
- 		dev_err(dev, "Failed to get PCIEPHY reset control\n");
- 		return PTR_ERR(imx8_phy->reset);
- 	}
-+	if (imx8_phy->variant == IMX8MP) {
-+		/* Grab HSIO MIX config register range */
-+		imx8_phy->hsio_blk_ctrl =
-+			 syscon_regmap_lookup_by_compatible("fsl,imx8mp-hsio-blk-ctrl");
-+		if (IS_ERR(imx8_phy->hsio_blk_ctrl)) {
-+			dev_err(dev, "unable to find hsio mix registers\n");
-+			return PTR_ERR(imx8_phy->hsio_blk_ctrl);
-+		}
-+
-+		imx8_phy->perst =
-+			devm_reset_control_get_exclusive(dev, "perst");
-+		if (IS_ERR(imx8_phy->perst)) {
-+			dev_err(dev, "Failed to get PCIEPHY perst control\n");
-+			return PTR_ERR(imx8_phy->perst);
-+		}
-+	}
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	imx8_phy->base = devm_ioremap_resource(dev, res);
-@@ -218,12 +345,6 @@ static int imx8_pcie_phy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
--static const struct of_device_id imx8_pcie_phy_of_match[] = {
--	{.compatible = "fsl,imx8mm-pcie-phy",},
--	{ },
--};
--MODULE_DEVICE_TABLE(of, imx8_pcie_phy_of_match);
--
- static struct platform_driver imx8_pcie_phy_driver = {
- 	.probe	= imx8_pcie_phy_probe,
- 	.driver = {
+ 		gpu3d: gpu@38000000 {
+ 			compatible = "vivante,gc";
+ 			reg = <0x38000000 0x8000>;
 -- 
 2.25.1
 
