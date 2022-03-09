@@ -4,130 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 290DAC433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Mar 2022 16:43:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97EEEC433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Mar 2022 17:03:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eqoIeoJQ76qoHLnJ9SHjNr9KdCQkdy4qk7mG2ESJjwg=; b=lMSFuIUdjcmJtc
-	Nv68GNCQtKyUyxnGjJGv2l7jWiPySiSIw0p8/x1bWtVSUEP6xGxWAE9k1UNFTwq9B/3l1EPVzb4hM
-	DuFeAUYPq6KrjVnjX3V2dqPgvHTgVLpnZsPVHTjXArwe29O+gJDInseq2Qdf21UA9dwlaCYLRqpiA
-	cSa3o+YnLL2DjTXNAgtOXXA9p6Js1YD3S4h4I5YLwEqeNtxalsw8OixkBhSAH9/CufEIZIFdnINsI
-	hIKpkFkmPzhHPxAKqmGIbpB3VZYIJCG7CEJ9w2LdMioVMkeQcKAitGDntse5PJRZs2nDlw74oUJch
-	j4cVhgVK0RnH6ST/TVIA==;
+	List-Owner; bh=/HLnNHTahEs9vjKq12eFfzOQFF/kJnJu0bBED5dk0AE=; b=YzmPLHEDnYbtkd
+	uVE/WNQKO+s9KwKhw/Qq1BRQE7U+bUdMQL/j6n7fvSETNz4rUsLRDcoat6hhGOPc3YepDkMjexbig
+	7uVcsNfDeNT6HVhl/yEDX1P/0J9cSQQSol6d9zE3XYzp933w4E2du2800QNo73aleL0dkdijgEpNT
+	C/O5Yq8iRTQMMBAxHRQVJjvTFkhmOBeIC0OHyOVcPvkaXyLMriilEgaguUaejeHjrnKw1HpLNbnAP
+	1EBTDvH2cKKvTBTE+GG7sZWnaq39O3IphVbOZPlEBpxJmVzTE5UKcQhj1aRaptWd1mF37c1A9oh8i
+	A8NAP67DOrlfSIYjkVbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nRzPb-009X8O-OU; Wed, 09 Mar 2022 16:43:43 +0000
-Received: from mail-db3eur04on0628.outbound.protection.outlook.com
- ([2a01:111:f400:fe0c::628]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1nRzin-009fb2-NB; Wed, 09 Mar 2022 17:03:33 +0000
+Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nRzKH-009Ubd-1r
- for linux-phy@lists.infradead.org; Wed, 09 Mar 2022 16:38:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MJpZgyYwrhTdrNn+XfQ5nTdpcEGO917jXMYLItzvGQAPRsnu+KUuxmsr2c1CX8zH0UCkvPsNxqAyi6mLpD25B0R/0lFQN7Xgg5khexxvwz7EqziwqzFHsgX2eeKHQg8cc8JAZhfitXdHyJtKa2OuY99Q4g2NHeHY8GhxI3vQkPquFpEr7vn3GYfF4Ud4ON/Cc78DGKH5AVX6NFfwlsyD0A4vxEBNyugr+1o7Rhsf8C9QMQCNfdw96NwHEHvwKM9MJYR1w1V+75cdGsIru2dMoL4KUSS0XiH1lv5n+31/AJzKjYhbJPG12LqBtLQq0HqcHmimApn0/xRgI/mRV0alLg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ubcFvqjSO9LOnq25sHAW8Dwa5SqCZVIBR7Wt8LAvzaw=;
- b=Opn9GkLnugK+jIqfLHkShiIYat09SJjOpR0ABv3fS0oIyp8DvX0A3tZ2je3BtyQ2W2OqtogCkMuWkNuiCatmq91SAOSl1BSuDKWUUS0JMwuNXkO6IUxu7jf6ln9J+hl0lW8t07tMiNLUrIW9GMTiKwnj3iI7VzDimEPh3bcmQS+5+6MgNnMgAhy+VZwNUjqsftTdbJP5Ucme+NUfVgYPf1no4uepH8Rb9aP2JOIsKf/Tb0TAHkz0B2q+fhUlmwr+WJbeeitF+s4YqyxHuvBbFpg8hIGt+nQJZHnGUJviYN2VpPCIWOAVTt/TBX+j9T9HN3JoPUhE4w147UUCUjCQLw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ubcFvqjSO9LOnq25sHAW8Dwa5SqCZVIBR7Wt8LAvzaw=;
- b=rnmAVFl6RqpOQXouyYTRgpSRr5MRmArb16fw6XGelkKt5gMj/3Sl+Xlb/l85SpzYxK2gEp2s4bk29+60yyGxE0BNcMZXBwdZ/i/+rqC0FVPzHQ6lWJv28s77WgLaN786nq5V1erii1jgr4jE9fQwIMj23LASPMuPlqKOmwPtLhY=
-Received: from AM9PR04MB8555.eurprd04.prod.outlook.com (2603:10a6:20b:436::16)
- by AM5PR04MB3124.eurprd04.prod.outlook.com (2603:10a6:206:c::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5038.14; Wed, 9 Mar
- 2022 16:38:10 +0000
-Received: from AM9PR04MB8555.eurprd04.prod.outlook.com
- ([fe80::c58c:4cac:5bf9:5579]) by AM9PR04MB8555.eurprd04.prod.outlook.com
- ([fe80::c58c:4cac:5bf9:5579%7]) with mapi id 15.20.5038.027; Wed, 9 Mar 2022
- 16:38:10 +0000
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: "davem@davemloft.net" <davem@davemloft.net>, "kuba@kernel.org"
- <kuba@kernel.org>, "netdev@vger.kernel.org" <netdev@vger.kernel.org>
-CC: "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Leo Li <leoyang.li@nxp.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
-Subject: Re: [PATCH net-next 0/8] dpaa2-mac: add support for changing the
- protocol at runtime
-Thread-Topic: [PATCH net-next 0/8] dpaa2-mac: add support for changing the
- protocol at runtime
-Thread-Index: AQHYM8NQPgkHy0kr6U+q/h+MUbTmgKy3QJeA
-Date: Wed, 9 Mar 2022 16:38:10 +0000
-Message-ID: <20220309163809.5hzapz7s2b44iw2l@skbuf>
-References: <20220309143751.3362678-1-ioana.ciornei@nxp.com>
-In-Reply-To: <20220309143751.3362678-1-ioana.ciornei@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7606b862-2700-4df9-94f0-08da01eb3275
-x-ms-traffictypediagnostic: AM5PR04MB3124:EE_
-x-microsoft-antispam-prvs: <AM5PR04MB3124EC21CC278AD1D04801F3E00A9@AM5PR04MB3124.eurprd04.prod.outlook.com>
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: sQvYSmdPFtthUVLb54g4hAbuhN9xWK0zJ++Ml7zii1WCMPWnU/BRXgBqMOLKqkAQ/FUVCfi9SvfWgWT7NUUKTU38jmDR9OYoSLqqYyXO1ECIjo1ZarvlnpHDARu6Hb1/frK/UTXBVFLJPwAcbF2iNOut6oDKIs1SvKSHIjjjU9axSW4xVt9skFMqv0jLPGa5P35/KoAbFjLzgEw370f7TB0M0zeR732tEz4+1m8u043YvgVwIVUfQR4btS26QyD5xSnQaAvVB24nsYTLK2YuDI/h6tKP6bfl4H8nhPIcsv6+bW2Ddq43iGASkE7F9eFQK7zJrbkGWDqrO+2319fnL9+kmFv2GyYx1Yjuh2t8icLtzOg6++KZeady6sT5G6kIPEIrwDoaOt7Z2EmtSGwBckKRNMy2UQp91OJhetye9DQPCPw5fnuOsh+pnF2zx8gTJBBd6fyiC97xa60rkx3b7NOx/Xpi2ABpfEfXA6yK5u/0gSLGv84r0CSq+5o0DJn9prXz+nEUR9oRbK7yJCqzZAgCS1R8/XlZAXnokG3EvYbR0gOFQdJ5WQZHF3kLLqLwklRvGRd01ItZ0s09lCBwPLJwPmhxHA9YnV/vXOCxFslNT0bEE09nJKtQygq0TaXCiwr2h3nBsJZNlMLuUcGRkac2vBxGCBut4hUntuFvDqh+afXgdUZBw47wnpgq46qTZNvO4SdgbWfJvwNLR27mJw==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM9PR04MB8555.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230001)(4636009)(7916004)(366004)(66446008)(44832011)(71200400001)(66556008)(64756008)(66476007)(66946007)(6506007)(8936002)(9686003)(6512007)(316002)(33716001)(4326008)(5660300002)(86362001)(54906003)(91956017)(6486002)(110136005)(8676002)(2906002)(38070700005)(76116006)(122000001)(186003)(83380400001)(26005)(508600001)(38100700002)(1076003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?FWbgRQw/eMM1p3Jqj+HpLO6aWNsYKg93u5N3qZd21FtLnPWwg36fSV3wD14k?=
- =?us-ascii?Q?6tG+9p1Z2rtqgicchcLBgfAX1Y+ZsUA6MOMtinWeiH4mYrBa4HR6kxhOK5ED?=
- =?us-ascii?Q?9wqx0QvHKSNTlVXWssq244MuyuX/WG65HT1dPHIVImEeQ9BMHYZXKn1tEFBR?=
- =?us-ascii?Q?CANySIV7XEHo/snws6N+6NXfsWDs6ccggoPoFAz9L0tomfAkvw+jBsnLWThQ?=
- =?us-ascii?Q?DdLLiBa/Nxs1LC+upFnYWwwF9R9FVlxECSwWboq6ADG9KDCjAxFYAyOeZTwc?=
- =?us-ascii?Q?13h+Sx3v1GrQorAbhHuI5NN5291WPgN46Pwv/Qad0MxCyJSlV205onTxRDa4?=
- =?us-ascii?Q?c3hU54IBtl2NS0dS9d29iuae4rQb8UW8Mb7sf8VmsD6SFbu2CKnordrmNtLX?=
- =?us-ascii?Q?ZsSX4D+R2HtcLN1GeFiwqgJdrCeWX6Hzlwx8VEpTYFQnG7WddeXYm02xguz8?=
- =?us-ascii?Q?UOwhJr1aMkcY/SbRVS0tMRcAHlFQm1fONHCyQCDakWVL7GPYLgOJnnFBFA3k?=
- =?us-ascii?Q?LDHNpBVmxtxygAx/v9+/GG608Vs40n0ZIV/3CnQi5m4+qUY53Rn96uqaMjpO?=
- =?us-ascii?Q?/RGUmk7T1JjE/xf51Tx/3ptoQLpls5srV67QhGolo5vqJKTatfdzjaDdQ3nz?=
- =?us-ascii?Q?JawXKcALu0hgtApaeAyBksFlTdfjBRP4UpqPjmWUbjzXWzBN4nnGoz+nsV+W?=
- =?us-ascii?Q?HcejxQhmNz4SZHgPs+ODsRBLcZXvCVuFdScn7obEceF440OVtKzZHWmCA3Y8?=
- =?us-ascii?Q?JjnR5oNsUN7RIZLT2O7sUvbevWjmAfJ0XHcSqgWivTwwXnFO5FSaj2BSd+wc?=
- =?us-ascii?Q?7Nw7j5mTP28/QK+rD5nWStdkwkb7ZxXJLUmT+yGhYRRMo0kOAkSaj7iCk5VJ?=
- =?us-ascii?Q?wK2VwJsPRz3MFbXM8NCUMXZG3M0enapMXmfuhj/ms96u9Hy58EXTIMJZIE7o?=
- =?us-ascii?Q?ZdJ22fyzS9vrPCuqr1SNInKgYCIfbsHbtv8tzISsVXgVdRlKquNcDRTCtV4U?=
- =?us-ascii?Q?bQmLtes9kAkBvyHi6Re9fD4C+DoFooneD+uzkfodE63M+5AkPhO5xgrqNzoy?=
- =?us-ascii?Q?HVZe6XgPgTTYwokG4Zb4kaOZ5gNJxcN8yAe/urrRc4OvtBZo1km+MhH1U76R?=
- =?us-ascii?Q?3dRuN2KiimC0U8yDSQcC5Qq5IyV+ZpGbFZopZ0aefwGRV7l4OF2H5M49aOL/?=
- =?us-ascii?Q?OOYHN/g3np0Z+8B0dr3elREVC7+MXGLVz5hSyc95UDmkUCe0ueFSTgFjZz0c?=
- =?us-ascii?Q?sUo+dODfFpW3w1E2Wtb1GCAEgWkj/83UF/tXI1ck03GwKN0kmDxHvCExNGvU?=
- =?us-ascii?Q?MMrzH9kLAbuNmK0xipOnWVUzGuVxT5iJyVxrGleuNP81L+7O8YnrT6VhXD1b?=
- =?us-ascii?Q?AJE/n0audfk7uGqGIEjtgXDTXwajz9gciOWT9LeUuB7NVt+vxCnj7/xeP7SU?=
- =?us-ascii?Q?vxUEtdU4WncGR8pzSJJ/mjSrTCCOr8SXTqvhzYpFTenUh31NJxYQzMMcxjLp?=
- =?us-ascii?Q?2cdABrSMY/GrBUgGxlOuant/bd+vmWqKXZg9zR97AzzR7/Yx75Bo5iAw1DG9?=
- =?us-ascii?Q?5ZMaFlL8BzW71lcbB7DmHOInsrva8aPvkjP/DXZWmh5MmPcNETALRpWPZ3Ez?=
- =?us-ascii?Q?xfnz/zKEljuU8d00dBX2FMY=3D?=
-Content-ID: <911ECFB7A35BD944A345D849CE02670D@eurprd04.prod.outlook.com>
+ id 1nRzWF-009ZuP-IL
+ for linux-phy@lists.infradead.org; Wed, 09 Mar 2022 16:50:37 +0000
+Received: from mail-ed1-f70.google.com (mail-ed1-f70.google.com
+ [209.85.208.70])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 0023B3F19E
+ for <linux-phy@lists.infradead.org>; Wed,  9 Mar 2022 16:50:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1646844630;
+ bh=n3bsDkHLKbob4SpB/QLI8yY+wMazsO7AAgENM4v1TGo=;
+ h=Message-ID:Date:MIME-Version:Subject:To:References:From:
+ In-Reply-To:Content-Type;
+ b=J/HiKAU9CaZYOvJLxNrLIIC6LmqGO/kH628kKGOcfmjzXj2Iox2doHLJay+VxVgnc
+ MnGrd9XTho9G24bvs4chQ75KhspVqz2tpf5r2DXln5Rptvy7O7XyunrowrwRs7Obem
+ JMv8tzoOKP8ABxHWUXYemFjxZhT1TKNllPaZyMpiN625rgGvjnfqlP5W4NpADbIp6L
+ 80Y8vaSUeG2LfvkUDVf8NvB4z4PneSySoXSXLybBuH+vG2IKLO/c9HDHFvsk6fYUfm
+ gTice2akRXr54FdX204DhRFnezfoJ9sjVzHBjss4Oy5bzCVMpzegl7MT4lm1K5sLFy
+ lZyZ0u8mPVAgA==
+Received: by mail-ed1-f70.google.com with SMTP id
+ cf6-20020a0564020b8600b00415e9b35c81so1586166edb.9
+ for <linux-phy@lists.infradead.org>; Wed, 09 Mar 2022 08:50:29 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=n3bsDkHLKbob4SpB/QLI8yY+wMazsO7AAgENM4v1TGo=;
+ b=uyG7L2oxQMljOBgJ0c6Sv4opoH35uUy6zcjcRamhgEUVqMl1avJL84o11f6BDuOH6O
+ 1Rg30Kb2qXYZXmugL9s06oSAk0MiS9DbY/L6/1CIyCIr4E2bPLtDWA4L7mnzrpCTK+0w
+ /rGWS6Mzyi3ifo+ATAHTW+o5KlZHldYHQHBphiCaD1yz70cNfSnmxi9hVyu7qAU8cY/l
+ f86JeNG+7kPaPAbDok5LIMNHoilD+QVlqCIgRwR0oQQu6B2rUvFEzJfcXmcAGa/nBVra
+ IRezZgAwclxYf6X4eiel+aEwYtdny6nFl0Irpc3aiaTpjJ/NZhcwKyP1xaNA0Ux7e/u9
+ 79OQ==
+X-Gm-Message-State: AOAM533yw/Obkh2Fdt2NcRXr/V4XZ2DTcgDv6/SEv3fIksJ/lujGXfdC
+ bdTmTnj0uNuo1soPyVhxgozKJV0sTak+ZOKycs86C4J/hXmPmtMY22hThVh0+wU/IuKxHDOBOzq
+ GnQjpv3XrcGwCxPpS5CyegFD0Jj0PHI+mi635c4HKQFc=
+X-Received: by 2002:a17:907:7205:b0:6db:706e:9453 with SMTP id
+ dr5-20020a170907720500b006db706e9453mr639838ejc.406.1646844629563; 
+ Wed, 09 Mar 2022 08:50:29 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJxCxaTei6vOMnlujVwxaQYI8z9747SILBVem6r7T6w8d5qi1Y8LIsUHSSxKjRH2289mhNKSEw==
+X-Received: by 2002:a17:907:7205:b0:6db:706e:9453 with SMTP id
+ dr5-20020a170907720500b006db706e9453mr639816ejc.406.1646844629326; 
+ Wed, 09 Mar 2022 08:50:29 -0800 (PST)
+Received: from [192.168.0.144] (xdsl-188-155-174-239.adslplus.ch.
+ [188.155.174.239]) by smtp.gmail.com with ESMTPSA id
+ w15-20020a056402268f00b00416474fbb42sm1032819edd.19.2022.03.09.08.50.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 09 Mar 2022 08:50:28 -0800 (PST)
+Message-ID: <3eed8d0c-e009-2daa-ba66-899fe8f48a90@canonical.com>
+Date: Wed, 9 Mar 2022 17:50:25 +0100
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8555.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7606b862-2700-4df9-94f0-08da01eb3275
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Mar 2022 16:38:10.0761 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: HEoJ09z9icpoVhKLS9+4DWE9usq07bQzG0vStpygEqbOXdcv62fjmSV/T6gtCy7pkg6oI4woJaz0fP0yI/wqXA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR04MB3124
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH] phy: samsung: Fix missing of_node_put() in
+ exynos_sata_phy_probe
+Content-Language: en-US
+To: Miaoqian Lin <linmq006@gmail.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Girish K S <ks.giri@samsung.com>,
+ Vasanth Ananthan <vasanth.a@samsung.com>,
+ Yuvaraj Kumar C D <yuvaraj.cd@gmail.com>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20220309124856.32632-1-linmq006@gmail.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+In-Reply-To: <20220309124856.32632-1-linmq006@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220309_083813_220899_38EA15BB 
-X-CRM114-Status: GOOD (  24.49  )
+X-CRM114-CacheID: sfid-20220309_085035_894335_66EBDB08 
+X-CRM114-Status: GOOD (  11.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,48 +110,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Mar 09, 2022 at 04:37:43PM +0200, Ioana Ciornei wrote:
-> This patch set adds support for changing the Ethernet protocol at
-> runtime on Layerscape SoCs which have the Lynx 28G SerDes block.
+On 09/03/2022 13:48, Miaoqian Lin wrote:
+> The device_node pointer is returned by of_parse_phandle() with refcount
+> incremented. We should use of_node_put() on it when done.
 > 
-> The first two patches add a new generic PHY driver for the Lynx 28G and
-> the bindings file associated. The driver reads the PLL configuration at
-> probe time (the frequency provided to the lanes) and determines what
-> protocols can be supported.
-> Based on this the driver can deny or approve a request from the
-> dpaa2-mac to setup a new protocol.
+> Fixes: bcff4cba41bc ("PHY: Exynos: Add Exynos5250 SATA PHY driver")
+> Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+> ---
+>  drivers/phy/samsung/phy-exynos5250-sata.c | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> The next 2 patches add some MC APIs for inquiring what is the running
-> version of firmware and setting up a new protocol on the MAC.
-> 
-> Moving along, we extract the code for setting up the supported
-> interfaces on a MAC on a different function since in the next patches
-> will update the logic.
-> 
-> In the next patch, the dpaa2-mac is updated so that it retrieves the
-> SerDes PHY based on the OF node and in case of a major reconfig, call
-> the PHY driver to set up the new protocol on the associated lane and the
-> MC firmware to reconfigure the MAC side of things.
-> 
-> Finally, the LX2160A dtsi is annotated with the SerDes PHY nodes for the
-> 1st SerDes block. Beside this, the LX2160A Clearfog dtsi is annotated
-> with the 'phys' property for the exposed SFP cages.
-> 
-> Ioana Ciornei (8):
->   phy: add support for the Layerscape SerDes 28G
->   dt-bindings: phy: add the "fsl,lynx-28g" compatible
->   dpaa2-mac: add the MC API for retrieving the version
->   dpaa2-mac: add the MC API for reconfiguring the protocol
->   dpaa2-mac: retrieve API version and detect features
->   dpaa2-mac: move setting up supported_interfaces into a function
->   dpaa2-mac: configure the SerDes phy on a protocol change
->   arch: arm64: dts: lx2160a: describe the SerDes block #1
 
-I forgot the MODULE_LICENSE for the generic PHY driver.
 
-I'll send a v2 so that we can actually see if the build step is clean.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
 
-Ioana
+
+Best regards,
+Krzysztof
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
