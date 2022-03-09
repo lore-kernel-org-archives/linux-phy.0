@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50BDCC433F5
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AA7FC4167E
 	for <linux-phy@archiver.kernel.org>; Wed,  9 Mar 2022 14:38:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,46 +12,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M0ccgIT3Q9DfZVvky4KJRRuh4CJ8AmS2sGZdJGBAo7s=; b=u/sFmzNOVoCdIV
-	8qIziz7b+alKmhMphblCVSGKKRGSmRHenvkU2JxKOVRN7+q4DBUYQVsAfo7MoMB8f0MekoFCojZtm
-	UWhvRD0Sxu8g3bYEbGqlJLRw1CLgj9eaUE4QwAbKOHbNmyP3cAbt2Bm9+31ndgrEyr4Mg73WsQ8Xn
-	oC4fwVO4kLkZfDH9qCtYLUIFP6dpwJr3h+Uo9eFClpj4Q5QRkd8xyfaU6UzlwdxHxZjwtQVEuQ2wW
-	AyFGhrslMMT8tGQYMfV2DlVHb6IuUmv0Lk8NTS5xIsltNN99AC2PWnbSc5GmWHaiJXsKXHc8FoqLA
-	SDMXh91S3eXHDJkb5UvA==;
+	List-Owner; bh=Lx1OGK9BNtdDzdW1hO6OUBMSjnhcLVRIVmqWDHuJ7zg=; b=DKQ2ADo5NNsP5L
+	PpvgYJB5veu52NFASyXuDbLWBfvoEg+Ss06eV+bcC5TzelvcN0U669KCUPBllElwCXRuBTWHUkEbV
+	vCaNo/meRomixzHFWqe40K1WRnu5LDv38TlprgEn/AkzM1eAhBFsqn/6cy6CK5K6+CCWuWbS5WBr4
+	asAVt6tC9Lklw6K/A9GWMWcacA3vKFR/1+x02jIwgSfsBoATL9G6G9kyN/8bt3/4qv3dXtlSnA8UC
+	u7h7SAAOSs0aRmARB+q9ismxjPG4rpuw5Ne6/bbhophe/lGdT8cyQV0H0OCctQ24KGVBQlhUBOSY/
+	rolmtdwUi6mj+2N8A8TQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nRxSU-00919k-HT; Wed, 09 Mar 2022 14:38:34 +0000
-Received: from mail-vi1eur05on2062b.outbound.protection.outlook.com
- ([2a01:111:f400:7d00::62b]
- helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1nRxSU-00919x-QB; Wed, 09 Mar 2022 14:38:34 +0000
+Received: from mail-he1eur01on061e.outbound.protection.outlook.com
+ ([2a01:111:f400:fe1e::61e]
+ helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nRxSQ-009131-AA
- for linux-phy@lists.infradead.org; Wed, 09 Mar 2022 14:38:32 +0000
+ id 1nRxSR-00912E-44
+ for linux-phy@lists.infradead.org; Wed, 09 Mar 2022 14:38:33 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Owbpe5/FqH7oPmAra0N5Vf3YwLslSTRCBNqKX3e6LlkEMuNeJU8ttbgNSngXIFlJQ7PEWcnpwC70Ou8Z+3fyIn1ezpCMG5/ZNT7GqqthNQ33g/q8rzds2KcMVgfDxB2htzjNapSkfCjlmIgv8GsBiuysJlHf6ewC+LYJ9c/HCx/tVTYqhS9iVRUtD7PjRpcOVe/jeYYQjYY44S+a1khtVw2JgHKhC1NZrmmYMZMYD9jKWMEaGWlvht7YT47wf7hk1hgRV7O9d6HBPw7/EIbxREFEtsu26GDIjlw+KjgHUO4h4EgLTl8h1yb3Q38/Q0R6MD3g6UFMb4Xc2e0CztrW6A==
+ b=FeAIqb0X3tQKkC3Ihn5RPfYDWkgANvYBt08XZv1mIEs3ZSPbVFtu0cVBioUh8axuRdvKrN8HEdxMh9VKeHgz14j5vH++3V3VXpICWIdkBN3Od9FGbwdFsnc/hjBPA8GwxLLdFYtJrZuk4J0G08QPxxO9MvfSmWHAIxJzmbNtTN0MVW010/gnYqA4twmpkE/dH7Vyia0SD3on9oy4hMcLtaiO3zpl0CqK7daqIYd6D5FmkvWxyOWeIi1jXntORbQZoWuV4GaGt6lh3cdP0IXazCD5husuusLB2OdJH5R8AwMQiJRXfZQnIea2yGMGRHtOl1whMw0GU50LY1qWCxffxw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=j8KAOoskIsZHU92TeE8ybyMh//n3srX1ri3s42vsitg=;
- b=K5knUig1CDeg4qmba/aTkyCTgjRZIxNi7NIi7QrOfSfHIocnpV02Nz7VjeBcvfpcyhqgzCclV2fKZgxfyFiZJbMIpJxWwV5j4Ij4JtD8C5KCNf6deYYfNkJCg5DXjtmp3aftnJIGJqQtwQpdlVGauSW8a0b6KoZKbwgsPfzhxbfTXnHIElIqjBWf/6ryd86gHCmbM2XSZ3hlw8C9+9paK7IjmCc8HXTmfWKcfFmLK8ac/zBBmn8qMVqVcy6JXvYDjM+HeZhaxRrRocsfCEI9UmqB3IXnpTZR2DoLOy21jq79B3pFcdZ5J1PvG39OmAg+fuuBERuJ0zapf9ZDv4wD8g==
+ bh=OaIj3Nvs+tMytCMTxP31Imv1T9KQJ2bRgQIF24FLP+s=;
+ b=NAcvgiHlvYZrq3N65SKCf/ZWVPUU10x3CbGXEaTwJJrIzUm6sZbb++fsnnqL+dbV/0V0PjeSQ015KwpRccs43bFyb1B0VqB+ydlQbJbiugEsBjYlPFCrvMPr2OsOIWoubC2FGhMwdCuG7JxrDMKS0VWaBQJJwP6x7dHG+TMJSrHXt0LIdT723HaZ2WlrhaqU4Pwnp7eKvykJuSpZTmkcbw4hpNHCbxwNOJ8Gc4poAoQAx6ygHYtSpi3f1TazEt6OIJoYoiIPjcrDPkIUY965UzKtk8u/yGCulFRhaxyRJftHp13UUuzM5MQP6BnEFZGAu2FMbO/UIAtciKFUPEf/lQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=j8KAOoskIsZHU92TeE8ybyMh//n3srX1ri3s42vsitg=;
- b=b2TfTemLLEnzQRFBswLcfQTdowcD6G9z/qHQ3Koqy8V44LSxadhFHfVzub23tCRIbuska4lbCZSt6IbjwIYswmcSLnyFA1dANlrhlVU7s2q80bFuG8yws8GoGk9NE8+IwuFr46tHbKBJG8jS9podGDBKFgMsFCdkSSd0kgrPlQk=
+ bh=OaIj3Nvs+tMytCMTxP31Imv1T9KQJ2bRgQIF24FLP+s=;
+ b=MERQgEYJelTEqhOQPxF6OhiGDUE1D53tlDyDxhN7R3+Y+lDUOCejxJjP+y6rv/Efuc+xWg5ZoYuADWFAtpFZCJUTT4ukpYz9BfI/aDjNDoBYJjFwOoymCEWMLJjSJPWmxtvDF/dfHx9K5BUUyr+tIODMQ+zA3JYNqigvqr1Jk7k=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM9PR04MB8555.eurprd04.prod.outlook.com (2603:10a6:20b:436::16)
- by VI1PR04MB6094.eurprd04.prod.outlook.com (2603:10a6:803:f4::16)
+ by VI1PR04MB6223.eurprd04.prod.outlook.com (2603:10a6:803:fa::20)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5061.21; Wed, 9 Mar
- 2022 14:38:22 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5038.14; Wed, 9 Mar
+ 2022 14:38:23 +0000
 Received: from AM9PR04MB8555.eurprd04.prod.outlook.com
  ([fe80::c58c:4cac:5bf9:5579]) by AM9PR04MB8555.eurprd04.prod.outlook.com
  ([fe80::c58c:4cac:5bf9:5579%7]) with mapi id 15.20.5038.027; Wed, 9 Mar 2022
- 14:38:22 +0000
+ 14:38:23 +0000
 From: Ioana Ciornei <ioana.ciornei@nxp.com>
 To: davem@davemloft.net,
 	kuba@kernel.org,
@@ -59,10 +59,10 @@ To: davem@davemloft.net,
 Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, leoyang.li@nxp.com,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  Ioana Ciornei <ioana.ciornei@nxp.com>
-Subject: [PATCH net-next 5/8] dpaa2-mac: retrieve API version and detect
- features
-Date: Wed,  9 Mar 2022 16:37:48 +0200
-Message-Id: <20220309143751.3362678-6-ioana.ciornei@nxp.com>
+Subject: [PATCH net-next 7/8] dpaa2-mac: configure the SerDes phy on a
+ protocol change
+Date: Wed,  9 Mar 2022 16:37:50 +0200
+Message-Id: <20220309143751.3362678-8-ioana.ciornei@nxp.com>
 X-Mailer: git-send-email 2.33.1
 In-Reply-To: <20220309143751.3362678-1-ioana.ciornei@nxp.com>
 References: <20220309143751.3362678-1-ioana.ciornei@nxp.com>
@@ -71,56 +71,59 @@ X-ClientProxiedBy: AM0PR02CA0187.eurprd02.prod.outlook.com
  (2603:10a6:20b:436::16)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 4c04da0e-2bd7-4ed6-9664-08da01da75ec
-X-MS-TrafficTypeDiagnostic: VI1PR04MB6094:EE_
-X-Microsoft-Antispam-PRVS: <VI1PR04MB6094B8C5E36702114D80BE20E00A9@VI1PR04MB6094.eurprd04.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: 8526a322-1c8b-4336-b54b-08da01da76fc
+X-MS-TrafficTypeDiagnostic: VI1PR04MB6223:EE_
+X-Microsoft-Antispam-PRVS: <VI1PR04MB622312A4BF1E7A893B0404A4E00A9@VI1PR04MB6223.eurprd04.prod.outlook.com>
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 8X3hlA0WkD0Cn1pnyfW++0ePzPea/x0ivX7kY71C1mxCnL84IbnYfNTLvIfBVZROPaWR4sMY58YqcC1tA28IDm2Y59QHczkGFLsnN/E+Gu2hVYrzfGXgbj8kzr+yFheusSpOT5kgnyiUeDcA17ile8BQXX2mR+PezTYVT9iyT1KcQ3PeGhO1TANLW8ErMPbwA3qkT+CoAI8QaHtgIpGi9aMPV+4UX0AcMVAz1jleNCrRSoylqw3msG9XNSK09MP8HJTGKTgyCAXm7l3GEeR0/lFyxZm7XKd8iKwN9XRZRJDi1eO+xxOkKJy/SHrClj0mAyJze8XI3wZQokzItwug7kNUUcQzdWfObE7mzMtDxIQzOJH63jthqJW0jNPoVjPF3bgcanEleyTBvs8Gm9ME2qBIw1b2FSE5+JoN8poTDh7PQckmw4whUX0/HA4ZKxqjVMUdpHFhhPTaW7tpjJRN9r1MyT5esOLZlIJPEv75nueUfopmsQaRlGsHRjNUJIWXwTZ9sDdoQ+wf5GQsosbGBJSw+XQudITJWS3GFXED3WgKqjGVIx/ibPjX3euFxar4qYj65//eGh3LgxMgZV2Rle6/DjLd5BtEDH+4zuDiEZRJcPz37MQOX1ecbzkKODtEEdwLna3Rs8WjgtadyjlSGk/C3yJCasHYh4Zy0/0Bdc+suW7Jr5aYow0Vbn6BoLI2k9uXlfmyGJcWze2bSbjVvQ==
+X-Microsoft-Antispam-Message-Info: fnisBZxHBnvnHKWcs6EmI7K2gXkfxOUufGIysgS9VsjmI5zeIFocuAukxtdYl6yDSYTkAB+WDpJuZArBoGpfti9DDnV9xwEGTkBnpT4TMZnK561380NoRbhyNDVEtYfS0cvPKfhbyfJby12E4pNkohuyErUFjlJfjXHI35iDwrY9x3+GFOtvN6fdJH0wZ35suR27mdsIhgBNgg8mCzdjnjslHVmA7dLJXueQSw/VV65Psu2ou0+h+j6+wsNsSuRYfikpEL9mCkAnst97C1HgasRcVIF9yvaehYPv3Z5zdeUHRpzHfELgI5CMqYF807CNTgeKihrkM4bjg1aIqncL7bvV9stAH8lNBNx0RuFX92sBTLG+2gOLbx8mMZLD8y5UfU4oMjLrIvIWfdd9SaHjaDQ576f6qXb4khShPaxOEKFsuNAgACiZaauOBm/LpiSN6iXWe3lTz7gcGECQaA5d3l3ZQQ2YC0T3PjYAoqPFK0GhOKOKVDo4B1fgd0sY4pI2RSZaXebMC4IT0m+LVZo7G5BRNtVQL0Ne81he+ye9D1pAozXvwa9H/Y+Kc2lzY1twNUd8K7WSfPo9l0ANJ9gwL7n3N/LP6HsLyzW8YjmIVR/4TaIW8tA7Mpp4Ll8fs/tAEC1AfwzldzwkRdRmG8+JyBcttSpg6c34HgOLBztzhbO21crKZZskC5xaPH/gGb3tzlu9b9DYZJm5D6+edThPeA==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM9PR04MB8555.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230001)(4636009)(366004)(6666004)(6506007)(6512007)(8676002)(6486002)(2906002)(66946007)(186003)(4326008)(86362001)(66476007)(66556008)(38350700002)(38100700002)(36756003)(316002)(8936002)(26005)(1076003)(2616005)(44832011)(5660300002)(83380400001)(52116002)(508600001);
+ SFS:(13230001)(4636009)(366004)(6506007)(6512007)(86362001)(44832011)(52116002)(36756003)(66476007)(66556008)(8936002)(66946007)(8676002)(26005)(5660300002)(498600001)(2906002)(4326008)(6666004)(83380400001)(38350700002)(38100700002)(6486002)(2616005)(1076003)(186003);
  DIR:OUT; SFP:1101; 
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?dDCOKDf3XRjAyZnDFinfNT/yGX144iSa7h+CmBJcu/jqfYLcAFgbFBONWYUX?=
- =?us-ascii?Q?v/S+lcETaa9ObnHUaK8uL4F7r4NtAuwp1zSixpmtYYJhsPmOdTvrmRApjSW3?=
- =?us-ascii?Q?0oUdl/eM/ZwXaDSjdQWT1SZHe23SZWc0CJOVAnHSkDssWl0B76R62jGpTosl?=
- =?us-ascii?Q?BqVlAzTOW+i23sOxGLB3Wp3MUNq0ebKWjrJ+maLGC/gcmyHAif4bbzCGxTKe?=
- =?us-ascii?Q?4Imk7Uy+SppCR8OUl2pNRFl7KTaX/Rkt+NNM656H9gRwh7b0tF39hhjFe82J?=
- =?us-ascii?Q?ECWGXqGZfMD2ruEixr4aKTr36h2sG+/jNjCbT+nfGuTi3AOZVlG9/n44cf1S?=
- =?us-ascii?Q?UKuKhbhwC7kmv3bNB8QiSsLuqHNuaNs06VfTzRZQfO987RTvplCMSha/13Pb?=
- =?us-ascii?Q?2Mhi1U4QeY5i5hotNBEl1shZzP4hqwiMPcWjJZ7GTN/S6qZLlrqfi5CTlIuj?=
- =?us-ascii?Q?PW11bFvSPDAhz2rlfzRdYY4LHUSx5wrcCJmyOVzmsFQq3CCXY1X2nV1gfM1v?=
- =?us-ascii?Q?LJmRonb9AmoaDyQc8iTiinpMOvexlpLwi8XB9u60KDTsbsNsErHlSSy+GWKV?=
- =?us-ascii?Q?ifU5Ed36Wi+sIQ5XP700lKSqDhnOumNdMXIfBI2T+DU8/fzYVrEfXFSz4xrQ?=
- =?us-ascii?Q?TxAbDG0gUNyIy8CJNFOpnqi7HVpiYIban4HEFkVc+K9hSlSZZ8T2mOlIe7AQ?=
- =?us-ascii?Q?PcVxOzt3tJUmTzSCeM0PvOJ2ZHEZYuzsJrlkZFV+GjqHCIIeoQFcyil64cuI?=
- =?us-ascii?Q?KxnNvCzvV0J6Ls+AEzOI+ThUmS3r/2gsHYejRKeKTgRZSPdwbPdUpyQg95Rq?=
- =?us-ascii?Q?fvOtiLlTeR84xmUnaivirLq1Wj2awz5TeULSypLPFs8eY4e1eBOk1Ruo231S?=
- =?us-ascii?Q?i7auO51BDYDNwVRDOmoA76eDz20xjJkQYPdjMekzSLTaCJ+WS4q9tfO3Fke7?=
- =?us-ascii?Q?l+3muz/R0CNiZWLGc/m0256/9Yw0zp3Rw2YMfxT7NWQO4RUMDCSlrqSq2a1S?=
- =?us-ascii?Q?uVkvBtKJtTDa1/W2eQ+WQqCfqw9DgEAfAq0ri2gcCqYtoXrsIuip63Nr9BZL?=
- =?us-ascii?Q?klJFCmKivaz5yWjUQLlI/r5B3DIbCrpcGygU61WSgKXagrZkZK8ARcqJnwmI?=
- =?us-ascii?Q?l5mgil0HBQwWSe/PE1/smVlvTOPMR0bqxdfJ6H+sAFxNhl+CFHwkG+b/wzHx?=
- =?us-ascii?Q?SCkQriJtq40RfDVQr8tslURrowWlzkHHNRNr4PtDQsjmTQ2ktE53Ya8ZQeXm?=
- =?us-ascii?Q?qD4fqvj2OSR/LkTjy+f0flNxCJ6Wo63jBlNNBBjxXxxn9JnrMh22TAnl6Oc1?=
- =?us-ascii?Q?HRQ40nQWrLw6wa/WROB4cG53QOFZnsKcMLk7IFQ4Z6zREsn3FCwBOHWtq1LN?=
- =?us-ascii?Q?ivjavrH4/UUmfF3C3JF3d2k+/BfX66/OTYdnAIigae8WNfQ5fhcDQEsd+MAl?=
- =?us-ascii?Q?rV4pyT6gu6s4o7peLa/r4MyzcC6n/MagK37cjYU5wKT0WAnjbB6bGg=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?kiKhgcvibUHPnMeGOcXAumv9pKGTDkBhFhRFmuUgf4Mri1gHdc8goXCa6GDb?=
+ =?us-ascii?Q?Ch0fWD5MyD1T6k+ZEwC3xh5F5ay9RGs2K0da4hp1dbcnf0PfZg58qrnvme9c?=
+ =?us-ascii?Q?uJYREc4PT0hviTaWell0Kb5FZ36IBhfQOm9oPqqSHDsZBGiP5ogsFihzTi97?=
+ =?us-ascii?Q?kHcntGBLx839Q1gf5e9yd0z0dIhJq988hxE3SztSmemT2U8Wi2ElW6oSXcw0?=
+ =?us-ascii?Q?QA+43e3kPAqh/vP+xfnQpqUFQJsWIsTdl3bttEC4y+mQK/8u/SKduMqwn12w?=
+ =?us-ascii?Q?FuKV0AcVTvPyYfCxUnFZFaDEQAL1bNRl3Bpa/TnaSK1NrxZgktB4vpdlkKCx?=
+ =?us-ascii?Q?0z3olqhkGPLR/B/6NUvQRlYl6nrKlmhldLF8lEz4eHOHDzw1pxUK7qnJQkYt?=
+ =?us-ascii?Q?DLxol+WJR8+SOtbh0iWPJLfr8Fa7JhDe50k7pgREacb1Vf/qsUpVApntWid2?=
+ =?us-ascii?Q?eOT86zYYBX6iPhZ6q6AQkG/GPT4Qud5L43FVAYlJQpn6WjjGiknmZ9QSatmN?=
+ =?us-ascii?Q?4H7hzMtTmTUxaKiPz4/UUzWwirpqjQrsKtX4JACSKZd7rHS1nk1+9twhBGmi?=
+ =?us-ascii?Q?ZatJeNOmG5ELJKkm/O9nnuSWhsuLIxkRi67fZv+i9Kv1d3mqxCWQnuk3xI9M?=
+ =?us-ascii?Q?YuEjf4sZK8fHmXs5a8LFHeCIDGJaoKx/Xre7Ys6SieAqAJFOhKNH/2WEaeTC?=
+ =?us-ascii?Q?w2IR9AbhxxRW9Y9F4kfLi1S0AqB9agrLOJYphpRN4xkkGOC/uioEr0aHmNPD?=
+ =?us-ascii?Q?1adu9cJh8Wn6RpzOMcNonnRfaa4pmKp/6wVpBSJWh1P8yGd5dtaKJ+r7zvJW?=
+ =?us-ascii?Q?YOr8G2DM8QAu9IEsMmCVAdjYde5UZy7tJKoc46ZJ3oVRr+sy7wtzo6aExn5S?=
+ =?us-ascii?Q?rmRvsl5H/eeFM/jHfpbsIWdx4/aqgSdyuNQ7sch4U/f1rGriOi2MRYgmeKQz?=
+ =?us-ascii?Q?Cd2Q7Q6BpytwH+j53EnXi3+crgQh1UFnfR/4PDUipEUhdAFrbLN51355i85i?=
+ =?us-ascii?Q?YT7I8YLG22hyUoqfftce3qcTwclNeT4kWfqz06m42wmluxcMaWVHmLneZkd3?=
+ =?us-ascii?Q?lVsLSrpFdm2TnZHjHsMeuPoX12wMQ2WLbYT+x0RP42FXLMaQdADvIZFjamTH?=
+ =?us-ascii?Q?Xyywdgl3QSwF8H8PVL5uNugj3ELCGr4TMNYxkI6S94ZccR6xjA26Z8lJsYAV?=
+ =?us-ascii?Q?i06H6XdCOdkxYKkVIvEaJw/3QcOOqaEnFN9vNhGEpla6n/uUMcd5fQ0rYMgS?=
+ =?us-ascii?Q?L/1g2CT5fRAEAOUDLjrrWuuBaWDpde3PmAI3SsiPey9O7IXWyQ5iHACuj8TL?=
+ =?us-ascii?Q?1uREgxY/VZW9ITjaVs9uwESnJ43wglOfc6Mu2bJFOMtg0xpDHyWDCHr5bbOE?=
+ =?us-ascii?Q?QpcNEhpkyXL3WbniOLCZq6vB+j69XDo6CrFNp9HpxfJSmrw0z5FElmhfV2Va?=
+ =?us-ascii?Q?s/K8XNla1qhMUBzQBRWbZbwq5T5iavMxafpnU+87SA/fbsU7SSJvwBYh5zzc?=
+ =?us-ascii?Q?lR0mo51iA/yQGuHTo+4Sjtp720IN4bd0hKGweukn0WbxLQ1g0EhA7+5sCCWp?=
+ =?us-ascii?Q?Zz1oM3HrbzN2cNJMBUXTCFdhCX31Tp89llTGMJoQ3WYFgqapl5sst9peDr75?=
+ =?us-ascii?Q?FuZHzxdJDyh6immgIWZw+6U=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4c04da0e-2bd7-4ed6-9664-08da01da75ec
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8526a322-1c8b-4336-b54b-08da01da76fc
 X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8555.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Mar 2022 14:38:22.0377 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Mar 2022 14:38:23.8255 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: nzQeZ/+7QSDtYQM/LKFvSdn+eWB0fLhqtUxDmAFoTV+SVRHTT2Abg0dxwDyMnNOywkbyCcoIqYxaxavmqdnlIQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6094
+X-MS-Exchange-CrossTenant-UserPrincipalName: CgKGLylOQbOAWj34YXO/FJEjTC1WMsTzwWM4M+WWAsARR+6Q44/7ocYOi9K2aT2dKZb0Cr8w8UHmcj8/U1WBAw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6223
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220309_063830_421456_D4ABF191 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20220309_063831_254480_B2850CB4 
+X-CRM114-Status: GOOD (  25.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,78 +140,260 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Retrieve the API version running on the firmware and based on it detect
-which features are available for usage.
-The first one to be listed is the capability to change the MAC protocol
-at runtime.
+This patch integrates the dpaa2-eth driver with the generic PHY
+infrastructure in order to search, find and reconfigure the SerDes lanes
+in case of a protocol change.
+
+On the .mac_config() callback, the phy_set_mode_ext() API is called so
+that the Lynx 28G SerDes PHY driver can change the lane's configuration.
+In the same phylink callback the MC firmware is called so that it
+reconfigures the MAC side to run using the new protocol.
+
+The consumer drivers - dpaa2-eth and dpaa2-switch - are updated to call
+the dpaa2_mac_start/stop functions newly added which will
+power_on/power_off the associated SerDes lane.
 
 Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
 ---
- .../net/ethernet/freescale/dpaa2/dpaa2-mac.c  | 30 +++++++++++++++++++
- .../net/ethernet/freescale/dpaa2/dpaa2-mac.h  |  2 ++
- 2 files changed, 32 insertions(+)
+ .../net/ethernet/freescale/dpaa2/dpaa2-eth.c  |  5 +-
+ .../net/ethernet/freescale/dpaa2/dpaa2-mac.c  | 91 +++++++++++++++++++
+ .../net/ethernet/freescale/dpaa2/dpaa2-mac.h  |  6 ++
+ .../ethernet/freescale/dpaa2/dpaa2-switch.c   |  5 +-
+ 4 files changed, 105 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
-index 521f036d1c00..c4a49bf10156 100644
---- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
-+++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
-@@ -11,6 +11,28 @@
- #define phylink_to_dpaa2_mac(config) \
- 	container_of((config), struct dpaa2_mac, phylink_config)
- 
-+#define DPMAC_PROTOCOL_CHANGE_VER_MAJOR		4
-+#define DPMAC_PROTOCOL_CHANGE_VER_MINOR		8
-+
-+#define DPAA2_MAC_FEATURE_PROTOCOL_CHANGE	BIT(0)
-+
-+static int dpaa2_mac_cmp_ver(struct dpaa2_mac *mac,
-+			     u16 ver_major, u16 ver_minor)
-+{
-+	if (mac->ver_major == ver_major)
-+		return mac->ver_minor - ver_minor;
-+	return mac->ver_major - ver_major;
-+}
-+
-+static void dpaa2_mac_detect_features(struct dpaa2_mac *mac)
-+{
-+	mac->features = 0;
-+
-+	if (dpaa2_mac_cmp_ver(mac, DPMAC_PROTOCOL_CHANGE_VER_MAJOR,
-+			      DPMAC_PROTOCOL_CHANGE_VER_MINOR) >= 0)
-+		mac->features |= DPAA2_MAC_FEATURE_PROTOCOL_CHANGE;
-+}
-+
- static int phy_mode(enum dpmac_eth_if eth_if, phy_interface_t *if_mode)
- {
- 	*if_mode = PHY_INTERFACE_MODE_NA;
-@@ -359,6 +381,14 @@ int dpaa2_mac_open(struct dpaa2_mac *mac)
- 		goto err_close_dpmac;
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth.c
+index 939fa9db6a2e..b87369f0605f 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth.c
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth.c
+@@ -2077,8 +2077,10 @@ static int dpaa2_eth_open(struct net_device *net_dev)
+ 		goto enable_err;
  	}
  
-+	err = dpmac_get_api_version(mac->mc_io, 0, &mac->ver_major, &mac->ver_minor);
-+	if (err) {
-+		netdev_err(net_dev, "dpmac_get_api_version() = %d\n", err);
-+		goto err_close_dpmac;
+-	if (dpaa2_eth_is_type_phy(priv))
++	if (dpaa2_eth_is_type_phy(priv)) {
+ 		phylink_start(priv->mac->phylink);
++		dpaa2_mac_start(priv->mac);
 +	}
+ 
+ 	return 0;
+ 
+@@ -2153,6 +2155,7 @@ static int dpaa2_eth_stop(struct net_device *net_dev)
+ 
+ 	if (dpaa2_eth_is_type_phy(priv)) {
+ 		phylink_stop(priv->mac->phylink);
++		dpaa2_mac_stop(priv->mac);
+ 	} else {
+ 		netif_tx_stop_all_queues(net_dev);
+ 		netif_carrier_off(net_dev);
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
+index e6e758eaafea..bd90acc49cdb 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
+@@ -3,6 +3,7 @@
+ 
+ #include <linux/acpi.h>
+ #include <linux/pcs-lynx.h>
++#include <linux/phy/phy.h>
+ #include <linux/property.h>
+ 
+ #include "dpaa2-eth.h"
+@@ -60,6 +61,26 @@ static int phy_mode(enum dpmac_eth_if eth_if, phy_interface_t *if_mode)
+ 	return 0;
+ }
+ 
++static enum dpmac_eth_if dpmac_eth_if_mode(phy_interface_t if_mode)
++{
++	switch (if_mode) {
++	case PHY_INTERFACE_MODE_RGMII:
++		return DPMAC_ETH_IF_RGMII;
++	case PHY_INTERFACE_MODE_USXGMII:
++		return DPMAC_ETH_IF_USXGMII;
++	case PHY_INTERFACE_MODE_QSGMII:
++		return DPMAC_ETH_IF_QSGMII;
++	case PHY_INTERFACE_MODE_SGMII:
++		return DPMAC_ETH_IF_SGMII;
++	case PHY_INTERFACE_MODE_10GBASER:
++		return DPMAC_ETH_IF_XFI;
++	case PHY_INTERFACE_MODE_1000BASEX:
++		return DPMAC_ETH_IF_1000BASEX;
++	default:
++		return DPMAC_ETH_IF_MII;
++	}
++}
 +
-+	dpaa2_mac_detect_features(mac);
+ static struct fwnode_handle *dpaa2_mac_get_node(struct device *dev,
+ 						u16 dpmac_id)
+ {
+@@ -147,6 +168,19 @@ static void dpaa2_mac_config(struct phylink_config *config, unsigned int mode,
+ 	if (err)
+ 		netdev_err(mac->net_dev, "%s: dpmac_set_link_state() = %d\n",
+ 			   __func__, err);
 +
- 	/* Find the device node representing the MAC device and link the device
- 	 * behind the associated netdev to it.
- 	 */
++	if (!mac->serdes_phy)
++		return;
++
++	/* This happens only if we support changing of protocol at runtime */
++	err = dpmac_set_protocol(mac->mc_io, 0, mac->mc_dev->mc_handle,
++				 dpmac_eth_if_mode(state->interface));
++	if (err)
++		netdev_err(mac->net_dev,  "dpmac_set_protocol() = %d\n", err);
++
++	err = phy_set_mode_ext(mac->serdes_phy, PHY_MODE_ETHERNET, state->interface);
++	if (err)
++		netdev_err(mac->net_dev, "phy_set_mode_ext() = %d\n", err);
+ }
+ 
+ static void dpaa2_mac_link_up(struct phylink_config *config,
+@@ -200,12 +234,21 @@ static void dpaa2_mac_link_down(struct phylink_config *config,
+ 		netdev_err(mac->net_dev, "dpmac_set_link_state() = %d\n", err);
+ }
+ 
++static int dpaa2_mac_prepare(struct phylink_config *config, unsigned int mode,
++			     phy_interface_t interface)
++{
++	dpaa2_mac_link_down(config, mode, interface);
++
++	return 0;
++}
++
+ static const struct phylink_mac_ops dpaa2_mac_phylink_ops = {
+ 	.validate = phylink_generic_validate,
+ 	.mac_select_pcs = dpaa2_mac_select_pcs,
+ 	.mac_config = dpaa2_mac_config,
+ 	.mac_link_up = dpaa2_mac_link_up,
+ 	.mac_link_down = dpaa2_mac_link_down,
++	.mac_prepare = dpaa2_mac_prepare,
+ };
+ 
+ static int dpaa2_pcs_create(struct dpaa2_mac *mac,
+@@ -259,6 +302,8 @@ static void dpaa2_pcs_destroy(struct dpaa2_mac *mac)
+ 
+ static void dpaa2_mac_set_supported_interfaces(struct dpaa2_mac *mac)
+ {
++	int intf, err;
++
+ 	/* We support the current interface mode, and if we have a PCS
+ 	 * similar interface modes that do not require the SerDes lane to be
+ 	 * reconfigured.
+@@ -278,12 +323,40 @@ static void dpaa2_mac_set_supported_interfaces(struct dpaa2_mac *mac)
+ 			break;
+ 		}
+ 	}
++
++	if (!mac->serdes_phy)
++		return;
++
++	/* In case we have access to the SerDes phy/lane, then ask the SerDes
++	 * driver what interfaces are supported based on the current PLL
++	 * configuration.
++	 */
++	for (intf = 0; intf < PHY_INTERFACE_MODE_MAX; intf++) {
++		err = phy_validate(mac->serdes_phy, PHY_MODE_ETHERNET, intf, NULL);
++		if (err)
++			continue;
++
++		__set_bit(intf, mac->phylink_config.supported_interfaces);
++	}
++}
++
++void dpaa2_mac_start(struct dpaa2_mac *mac)
++{
++	if (mac->serdes_phy)
++		phy_power_on(mac->serdes_phy);
++}
++
++void dpaa2_mac_stop(struct dpaa2_mac *mac)
++{
++	if (mac->serdes_phy)
++		phy_power_off(mac->serdes_phy);
+ }
+ 
+ int dpaa2_mac_connect(struct dpaa2_mac *mac)
+ {
+ 	struct net_device *net_dev = mac->net_dev;
+ 	struct fwnode_handle *dpmac_node;
++	struct phy *serdes_phy = NULL;
+ 	struct phylink *phylink;
+ 	int err;
+ 
+@@ -300,6 +373,22 @@ int dpaa2_mac_connect(struct dpaa2_mac *mac)
+ 		return -EINVAL;
+ 	mac->if_mode = err;
+ 
++	if (mac->features & DPAA2_MAC_FEATURE_PROTOCOL_CHANGE &&
++	    !phy_interface_mode_is_rgmii(mac->if_mode) &&
++	    is_of_node(dpmac_node)) {
++		serdes_phy = of_phy_get(to_of_node(dpmac_node), NULL);
++
++		if (IS_ERR(serdes_phy)) {
++			if (PTR_ERR(serdes_phy) == -ENODEV)
++				serdes_phy = NULL;
++			else
++				return PTR_ERR(serdes_phy);
++		} else {
++			phy_init(serdes_phy);
++		}
++	}
++	mac->serdes_phy = serdes_phy;
++
+ 	/* The MAC does not have the capability to add RGMII delays so
+ 	 * error out if the interface mode requests them and there is no PHY
+ 	 * to act upon them
+@@ -363,6 +452,8 @@ void dpaa2_mac_disconnect(struct dpaa2_mac *mac)
+ 	phylink_disconnect_phy(mac->phylink);
+ 	phylink_destroy(mac->phylink);
+ 	dpaa2_pcs_destroy(mac);
++	of_phy_put(mac->serdes_phy);
++	mac->serdes_phy = NULL;
+ }
+ 
+ int dpaa2_mac_open(struct dpaa2_mac *mac)
 diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h
-index 1331a8477fe4..d2e51d21c80c 100644
+index d2e51d21c80c..a58cab188a99 100644
 --- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h
 +++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h
-@@ -17,6 +17,8 @@ struct dpaa2_mac {
- 	struct net_device *net_dev;
- 	struct fsl_mc_io *mc_io;
- 	struct dpmac_attr attr;
-+	u16 ver_major, ver_minor;
-+	unsigned long features;
+@@ -26,6 +26,8 @@ struct dpaa2_mac {
+ 	enum dpmac_link_type if_link_type;
+ 	struct phylink_pcs *pcs;
+ 	struct fwnode_handle *fw_node;
++
++	struct phy *serdes_phy;
+ };
  
- 	struct phylink_config phylink_config;
- 	struct phylink *phylink;
+ bool dpaa2_mac_is_type_fixed(struct fsl_mc_device *dpmac_dev,
+@@ -45,4 +47,8 @@ void dpaa2_mac_get_strings(u8 *data);
+ 
+ void dpaa2_mac_get_ethtool_stats(struct dpaa2_mac *mac, u64 *data);
+ 
++void dpaa2_mac_start(struct dpaa2_mac *mac);
++
++void dpaa2_mac_stop(struct dpaa2_mac *mac);
++
+ #endif /* DPAA2_MAC_H */
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-switch.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-switch.c
+index 9a561072aa4a..e4f8f927e223 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-switch.c
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-switch.c
+@@ -703,8 +703,10 @@ static int dpaa2_switch_port_open(struct net_device *netdev)
+ 
+ 	dpaa2_switch_enable_ctrl_if_napi(ethsw);
+ 
+-	if (dpaa2_switch_port_is_type_phy(port_priv))
++	if (dpaa2_switch_port_is_type_phy(port_priv)) {
+ 		phylink_start(port_priv->mac->phylink);
++		dpaa2_mac_start(port_priv->mac);
++	}
+ 
+ 	return 0;
+ }
+@@ -717,6 +719,7 @@ static int dpaa2_switch_port_stop(struct net_device *netdev)
+ 
+ 	if (dpaa2_switch_port_is_type_phy(port_priv)) {
+ 		phylink_stop(port_priv->mac->phylink);
++		dpaa2_mac_stop(port_priv->mac);
+ 	} else {
+ 		netif_tx_stop_all_queues(netdev);
+ 		netif_carrier_off(netdev);
 -- 
 2.33.1
 
