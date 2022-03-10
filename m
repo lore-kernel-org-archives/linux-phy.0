@@ -4,135 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 705A1C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Mar 2022 15:57:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D30EC4332F
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Mar 2022 16:47:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xrGx2+Q/rdc4qoW17xrdp9sODrjm8dbW+NvjH86SX1w=; b=LFGtk3TFp3pIPa
-	cpn3ApIlvZA3YONEuwTMBPNHAmArVNYDkFxdvJ0RgfJ2TE6qb+Y9IUXo6E4PFvcufKvbJywjrKAY7
-	U6z9Y/mvOM7iMvA5oOk2j4L4BsS6C7Lnzf4jBt9HxR7E1vKb4NFpkb4enRwDpoq5vFx/hpwK7N0CS
-	BqpIPlxKEK8Qqdhwdhjw7zgxdCVAuCWARuNyyHyNOwcpaP9t0aRpfkl7u1aG9UiGEjXZo340KSA8I
-	ee1ifCP/WzvG0uQpvLvMpTg2a/urOPiFWNtdL3Nnxo9HNWN6cesqC8yl5nQ3xBJimpeP5l5Y4/PSg
-	tX8n6qpp69qKxJJ2d6Aw==;
+	List-Owner; bh=kcQXmD6soGsfkc4YQXCpRmLs406d2+5FGbKAXYeyVyY=; b=Vero5CM71HLlm/
+	oULG91L60eZIj6i5wNa6H4+A04DF/DCaD0x2YRos5nwmujyfVC0MUmu0f2MwoIAq61mqThBphBVq5
+	ajj57nd0uPLnSTJ7qrnCQgadUn2NaJzmu3es5Li4dTDqhH5JNENGeaCCSszq6FofL5mOl+lIjytgZ
+	/7+Of62ZDJFM4FyDX6Vo5NcBB7ojbmvRsGFju5zRhN32ZKLCrZNGXfFITOimyj6O/ODja5IDvsXPC
+	PSmArkQpcfb3ecRUks9HPLCqjrJh31bvpT+TJBQ2hyRhqyAUFxNyPl+pjZ+Hi/wVvt7ic7jwnRr/+
+	8TCYIe8/OLMu1gMtD2Uw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nSLAD-00DQnf-Ul; Thu, 10 Mar 2022 15:57:17 +0000
-Received: from mail-vi1eur04on061a.outbound.protection.outlook.com
- ([2a01:111:f400:fe0e::61a]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1nSLwz-00DYC3-SS; Thu, 10 Mar 2022 16:47:41 +0000
+Received: from smtp-relay-internal-1.canonical.com ([185.125.188.123])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nSLAB-00DQmw-1X
- for linux-phy@lists.infradead.org; Thu, 10 Mar 2022 15:57:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZTpYLLV+DYl3RFvRybzBoKzrtzZ2TdG+FA07fMOEVd+ub864IqDbwb/Dha/NsWyvzZWja7H6lYPXWfnF1vPP4pchkKe/9pf/wM+jhnFAN3Dxdemp+4qQruxQhFUb8wFl3Ezuh6I3EPaYQpb1nem8gHbQ5NvQhnSfRBDgVyR0P2tEKPe605sUsgnWltP/zNM0kRN8seIheUTPwi9MtqrUQ20HmhzhURfSwZS+4rWkeF7zGUTdsAKhd9FB6YL6XWabCNG8QSpfaVSTpPWDi63W29mJx7jIyO7xhbz0VH5POCetsnphmVpeQVBCjZVziY+17JtscBzAUZgi/yXZJn7oGQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=TsxEApI6hPYcyN/1X46ZhAmvn/zeVISHDEcN3VM3FNc=;
- b=lBnlB93vg9od4CMfBiRALVcCDVgYHR/G6ejLQ8gJ5Lea5pcMw0Gi1Qa4Dlm2Slw6If2NmhwBr82rNmGYrylTsXbetqdAzv6cz6UCSEaeBEgc0bb7wksDlbD/HFt6KrJP3vis2SBcWaQBY39kTV7B1jcxCvxuDTcTFCfxgaINadSaMpBISMmuhNYDY/W42PKDvGm/REXlDaXqPVOrARnLdz2fVtibtvvocJH3ZnUEeCEybAoP7CMRiM5y9eggPKF1K/tH5KHG9/iKjuJyXa20N7iKtXxJ9X5kkTPK9zmkfD9m3IdxB8UD5IaR9ez9BObI0mdQVeW1kcayNcmE2A6EBA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TsxEApI6hPYcyN/1X46ZhAmvn/zeVISHDEcN3VM3FNc=;
- b=QVhh+29YggP23xaiXKSiTIm/mxRhDBIOpTwpmvAaCTf5ubPJhi/CE/EE2VHAoRQLsUgd/ecMQ4PIhh+QTIqqTcUQgnmmLIcWnJ3/mPhw5HrWK1cLhL8nyJTlF4i6qeEqzPh9uzDWGcJNQrFBJLQpd/YrMXXkfuQlF2BG60DdC/Q=
-Received: from AM9PR04MB8555.eurprd04.prod.outlook.com (2603:10a6:20b:436::16)
- by VI1PR0401MB2560.eurprd04.prod.outlook.com (2603:10a6:800:58::23)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5038.15; Thu, 10 Mar
- 2022 15:57:10 +0000
-Received: from AM9PR04MB8555.eurprd04.prod.outlook.com
- ([fe80::c58c:4cac:5bf9:5579]) by AM9PR04MB8555.eurprd04.prod.outlook.com
- ([fe80::c58c:4cac:5bf9:5579%7]) with mapi id 15.20.5038.027; Thu, 10 Mar 2022
- 15:57:10 +0000
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: "Russell King (Oracle)" <linux@armlinux.org.uk>
-CC: "davem@davemloft.net" <davem@davemloft.net>, "kuba@kernel.org"
- <kuba@kernel.org>, "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Leo Li <leoyang.li@nxp.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Hongxing Zhu
- <hongxing.zhu@nxp.com>
-Subject: Re: [PATCH net-next v3 7/8] dpaa2-mac: configure the SerDes phy on a
- protocol change
-Thread-Topic: [PATCH net-next v3 7/8] dpaa2-mac: configure the SerDes phy on a
- protocol change
-Thread-Index: AQHYNI53+CR564NygkStQtKc0yUlqay4t4sAgAAOVoA=
-Date: Thu, 10 Mar 2022 15:57:10 +0000
-Message-ID: <20220310155709.xfbqjspok2duka3n@skbuf>
-References: <20220310145200.3645763-1-ioana.ciornei@nxp.com>
- <20220310145200.3645763-8-ioana.ciornei@nxp.com>
- <YioTznpNwldCnJpm@shell.armlinux.org.uk>
-In-Reply-To: <YioTznpNwldCnJpm@shell.armlinux.org.uk>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 6c419575-7f86-4f90-9f93-08da02aea2e4
-x-ms-traffictypediagnostic: VI1PR0401MB2560:EE_
-x-microsoft-antispam-prvs: <VI1PR0401MB2560ED374E1FBB6C5E5BD48CE00B9@VI1PR0401MB2560.eurprd04.prod.outlook.com>
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Af4vmasqHg0BtyMIgOEniOpHVkwNHKNnX7TRGm+Dx3toG/R10XJ68f2BPf6frnldBhQRE+FXCBjl3AlRLiN52Y5r2JO/aYMT/N4eUb6jnoP7J486zfCp+c1QehF9oK0jeRClRrj+pOdZ+ahizXfgrXqDAyWYLAY1XpoXLxwWy7zjQM7UoudFQuhcP5Fdsufz3HKkWcPP0JsENCZbRaLi6BGm8nOtWF+Z7CAbNrlY4DeHNa2ZhZkE998AnasRhRtfnPX23vnzSXhpSk1lb0pWKHAPeBSoFEs6gfz37cSY5z7+Jy+amNGMrVzxq4Ks9+SB72306SS5csGNTfeN/TWJmBRKXa8WhvjaqI1+ykKlNiJxHFOPfosHfWYG46ndIGEMEldKUYZeh35kwJY3A8+8rKrPlRB2Lk/cVDEFZTcudqexJpHgNHNa8ni6+S3Vlp4lgtnqKvyNKHmycmvEf3/9hgMJlfl2RBCMoMXBqPPN738n5r9rMEquJHTisYCLiKH2LhPQz2hfHD0oWHGIct8SxXBY5p1HyxHOzsWa0cKcnRrnfvK72TOeIQDoCp3Ewina6dCYe8aOb992lUB/3NR/4BkD2u6sg94GnucPD3UqbnvvKYq08VgEFUgKZO5qlzGCGOQhOcsoE0ouh3JdFphHmKHM3NLJAVhyLxIbK8EJFgKICaMwbJcI0PMuM9emKB/dXzZhDY0jADeWQnQdK0sdDA==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM9PR04MB8555.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230001)(7916004)(4636009)(366004)(64756008)(66556008)(8676002)(6512007)(6506007)(83380400001)(66946007)(33716001)(66446008)(9686003)(76116006)(38070700005)(6486002)(44832011)(54906003)(86362001)(71200400001)(91956017)(4326008)(38100700002)(5660300002)(7416002)(8936002)(498600001)(2906002)(1076003)(26005)(186003)(122000001)(66476007)(6916009);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?qDQHg9qWTCZSEZCt5gcmGJeK0RLdtyICuwPbNXg05KTHdBxf9/v/kgjW/ch6?=
- =?us-ascii?Q?b5Aj4ZHy/Fg8NG8CUSxdiun5Y643TWMKEvghQ3bXUcqj1+Ixae+mkfxhH1bP?=
- =?us-ascii?Q?1yxBoI4X28M6c5/N0VRa54cYU3QYZFP71QBMXRx7ENxDzgzydGXTD/DT97pH?=
- =?us-ascii?Q?4OmcUcFqzrhiECGKFF2Dm2Rt4u47lxQXEBVFOqaYxjWQk+Lcssw86oFeKVTj?=
- =?us-ascii?Q?L1fydvc2lnT6IE+e3mz8oSdLeI5x82dru14+EJvfljjLpyFS99q2rZeEpdlt?=
- =?us-ascii?Q?qYRkKOoRG05YHnYfn8w8br3ZKmavj2wkhzcJd4aZC/IOxZB0c3/80qBEELXM?=
- =?us-ascii?Q?3XSXaD58w3j6ppV+J08asZvd48csw6TVkbeUdZvE0ox4MzB+widO1KOjIVgi?=
- =?us-ascii?Q?6r+0c9i4MGojyG0aaMfetbides0/xkh+7Koo2SeYTa/li6sR/HeFDZ0Mll1o?=
- =?us-ascii?Q?NrEVoHaNXkTAHXbvpn8hJufo/b6ubCVBf/hsir8rik4XhoXIhjF8yjmEL06s?=
- =?us-ascii?Q?657DJKma+OHTzmYX6fElKBC4jECEZoT+Mh05cY00SWWiHJECSsa3HekPm1U2?=
- =?us-ascii?Q?HYM1DJ/ifr14hhqvkIYtXkpw6psSGxKoWlAzwLDSymwUWsGONqVgWX6mfGi2?=
- =?us-ascii?Q?4sJxknUlMTGRnKhHsbhHNQxPnUQbnefMtMpIG1CYgFOnIyvfWxKPukJEe8UH?=
- =?us-ascii?Q?+9oR+n/4JGLfwow7BP0jCA8tXsTqzRP6Zg6qdueurHL2o0x4d1hFbUVJu5tR?=
- =?us-ascii?Q?su+C63CpuXkvn9HjQ5Dx0q6Pjicc/SYbN00DwvFoKuCCKWciABWhX/qmLOTK?=
- =?us-ascii?Q?Cihy13zidrv5xKp9EgNCfex9QdrrLAEz/Y9E/WyYSkdixV4YjbnnPux3/s1V?=
- =?us-ascii?Q?ok2uoKABpjsGeUIgsoVnW5cScW3eE1MfwoIA6i8wILLBy4agMaE7BaXX3JxN?=
- =?us-ascii?Q?nIjxioIpJi2DFU2VECZsq5O9v4BpbpEioR+UlbOqhXxMDI6DNZK9o7MtrALP?=
- =?us-ascii?Q?W9NEZs4fj7Ri9N2EFPnjy8I9T5UAdrLKDnTscwzYK/BlfpMNfqyYr1aiYheR?=
- =?us-ascii?Q?qdrklAdT3BpjYWRHTczRHif6TiMmB4wivZw1x74iGr4APtAGdJWOMHQoaA+m?=
- =?us-ascii?Q?eeL/182HwIZnU+AvsLag99nnWqqMGViZrB6cseirm90iqK9TwMGk6TgxPEJ3?=
- =?us-ascii?Q?f+qitZLeht1So9tqKmsj9jKtJ0hr+Kf9cwJv3NHcBR3LBPuzQveKuBW57AZS?=
- =?us-ascii?Q?MFfi1ZLA/qLX7WI0kmaSpUbkWSbobGLSj9Z7OXd0goqYyzdZv5dwCJhSoAy+?=
- =?us-ascii?Q?nvGRxEQ1UzkE9rYIoZoVGPeGnNbi74jTw91cKGFa+Bm80XV/ou+uITprrTD5?=
- =?us-ascii?Q?vQaYNoROxwwtsgkUvq/j7ILyuu3V5EzuhxXKy/OTT14lsJYP3/ISthrbybWP?=
- =?us-ascii?Q?n3DgFgk+MJkclIPVmilo84FiDgdINOpYnoAMdOgb6aGz8bIn+tWvvhE4onVi?=
- =?us-ascii?Q?Et/9o0ql6gavvYO/RHYPKdjCEzzkb9lqhT5LpmwgPVdU8CRhJvJRQIEyT67t?=
- =?us-ascii?Q?wpRGoqIgA8sBNhHeA+9GDGGoTNTGwG9Gq375S91/C5DwWUAgTliHiY+OaeTl?=
- =?us-ascii?Q?JkmOkCA1XvtORq3bOQQXfZQ=3D?=
-Content-ID: <EEA4656546607F4489E4BB4C1C06EE7C@eurprd04.prod.outlook.com>
+ id 1nSLww-00DYAk-Pd
+ for linux-phy@lists.infradead.org; Thu, 10 Mar 2022 16:47:40 +0000
+Received: from mail-ed1-f72.google.com (mail-ed1-f72.google.com
+ [209.85.208.72])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-relay-internal-1.canonical.com (Postfix) with ESMTPS id 5757D3F321
+ for <linux-phy@lists.infradead.org>; Thu, 10 Mar 2022 16:47:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1646930853;
+ bh=wWVrqZ7JJTH8Su/93i9Vl44N0LYGxLioIabuzPNt6dY=;
+ h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
+ In-Reply-To:Content-Type;
+ b=uNnhX4M/uSXSVnvqFi7QxUrP1P5Cq/g4n1DgB2y6gAQ4R4anOmU6GWe9RvXiWoYpZ
+ JN5X3DpHt/Is6KPzzK/Y8aw6oFLyH4nSZ+v1VOVDr23GQUFHBvTnpKbrRF79KUufIh
+ jUDTqsK+45DbhKpiAM6U1ABtywvStSzrLzDGV7a3yxL5bQsKfdDFfGy0F+G2OSHm7s
+ 5eZ1q+oQRVwutX+OrhO5+7D5c0AWwrXzySPPT/IGxM0Wy+k109+efCprBvLRco69a+
+ kyWvMq0rUIWhkMBZVUJyUqciKFsa3U1HTCA8smbh9XI8Qri9m8xcVURGpZg9D40Xvh
+ WeGH/09YakycA==
+Received: by mail-ed1-f72.google.com with SMTP id
+ s7-20020a508dc7000000b0040f29ccd65aso3443015edh.1
+ for <linux-phy@lists.infradead.org>; Thu, 10 Mar 2022 08:47:33 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=wWVrqZ7JJTH8Su/93i9Vl44N0LYGxLioIabuzPNt6dY=;
+ b=PuFlA8aLAHcQ+xMFkkS1eppoqXL2XAD+UcODMXmwWkMHebS2124jHXHJV5ixKwpoK0
+ NzEtqXfjbhEGCQwIqoyTx4+2iWFPpshTozlwK3JLQPVfq8BmDhem3po8bYhTUtuyHFP1
+ CNCSz3MCVlcfnLDrSxkSJMvi2pC7QfAAcVMBo5O9t5ClYHhfhw0ZmEQ2sadA0NZcf/EU
+ RYmP34Hf6u3285htQUBAclW5kcQfwEToY6h0J3+QT+WcrbsGmvQhTR7deXhpkGK14QTk
+ ajA/v4jco6IGRWyAxh2oSe+JH9pg5W/XDvuVODec33EZDB/Sy7HuPeR8Ed4lfO2ZIukv
+ tGYw==
+X-Gm-Message-State: AOAM530auUSLpoP2P5aN3z96TSzCZj7CNlwZ6YSrwQ4TMdyNG6rWIesE
+ Z6ToLRA2Jn2UPZprt6Eo12VHn4HdtWav6YT8a0SBw9Wq2AcJcamh/YTK6ZcZhrorYl8sx2WwZhA
+ +wNuCln5hkJ5bWjdv6s/KfUXj5H0CHS9nRr+vxUVpzdI=
+X-Received: by 2002:a05:6402:10d5:b0:408:f881:f0f3 with SMTP id
+ p21-20020a05640210d500b00408f881f0f3mr5237480edu.112.1646930852925; 
+ Thu, 10 Mar 2022 08:47:32 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJy++BoKBanQlX8IjQPl/omh12eZim/u509rcL+dxdwZ+W/nPbDlkvNHYK/wHstkZtmfEY57IQ==
+X-Received: by 2002:a05:6402:10d5:b0:408:f881:f0f3 with SMTP id
+ p21-20020a05640210d500b00408f881f0f3mr5237455edu.112.1646930852690; 
+ Thu, 10 Mar 2022 08:47:32 -0800 (PST)
+Received: from [192.168.0.147] (xdsl-188-155-174-239.adslplus.ch.
+ [188.155.174.239]) by smtp.gmail.com with ESMTPSA id
+ y12-20020a50eb8c000000b00410f02e577esm2269227edr.7.2022.03.10.08.47.31
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 10 Mar 2022 08:47:31 -0800 (PST)
+Message-ID: <a32fa8df-bd07-8040-41cd-92484420756d@canonical.com>
+Date: Thu, 10 Mar 2022 17:47:31 +0100
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8555.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6c419575-7f86-4f90-9f93-08da02aea2e4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Mar 2022 15:57:10.5710 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Hx6AKUtsOoaD4ev2KM5KWdKAquTh3UvE7+bduUwLKAOMgkQq5nXUVqZ7NjCHf/Wk3q78OVyLvXjrxDM+ypXTBQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0401MB2560
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH net-next v3 2/8] dt-bindings: phy: add the "fsl, lynx-28g"
+ compatible
+Content-Language: en-US
+To: Ioana Ciornei <ioana.ciornei@nxp.com>, davem@davemloft.net,
+ kuba@kernel.org, netdev@vger.kernel.org
+Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, leoyang.li@nxp.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux@armlinux.org.uk, shawnguo@kernel.org, hongxing.zhu@nxp.com
+References: <20220310145200.3645763-1-ioana.ciornei@nxp.com>
+ <20220310145200.3645763-3-ioana.ciornei@nxp.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+In-Reply-To: <20220310145200.3645763-3-ioana.ciornei@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220310_075715_177130_AAC40393 
-X-CRM114-Status: GOOD (  25.65  )
+X-CRM114-CacheID: sfid-20220310_084739_074451_6F71EB81 
+X-CRM114-Status: GOOD (  18.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,67 +109,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Mar 10, 2022 at 03:05:50PM +0000, Russell King (Oracle) wrote:
-> On Thu, Mar 10, 2022 at 04:51:59PM +0200, Ioana Ciornei wrote:
-> > This patch integrates the dpaa2-eth driver with the generic PHY
-> > infrastructure in order to search, find and reconfigure the SerDes lanes
-> > in case of a protocol change.
-> > 
-> > On the .mac_config() callback, the phy_set_mode_ext() API is called so
-> > that the Lynx 28G SerDes PHY driver can change the lane's configuration.
-> > In the same phylink callback the MC firmware is called so that it
-> > reconfigures the MAC side to run using the new protocol.
-> > 
-> > The consumer drivers - dpaa2-eth and dpaa2-switch - are updated to call
-> > the dpaa2_mac_start/stop functions newly added which will
-> > power_on/power_off the associated SerDes lane.
-> > 
-> > Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-> 
-> Looks better, there's a minor thing that I missed, sorry:
-> 
-> > +	if (mac->features & DPAA2_MAC_FEATURE_PROTOCOL_CHANGE &&
-> > +	    !phy_interface_mode_is_rgmii(mac->if_mode) &&
-> > +	    is_of_node(dpmac_node)) {
-> > +		serdes_phy = of_phy_get(to_of_node(dpmac_node), NULL);
-> > +
-> > +		if (IS_ERR(serdes_phy)) {
-> > +			if (PTR_ERR(serdes_phy) == -ENODEV)
-> > +				serdes_phy = NULL;
-> > +			else
-> > +				return PTR_ERR(serdes_phy);
-> > +		} else {
-> > +			phy_init(serdes_phy);
-> > +		}
-> 
-> Would:
-> 		if (PTR_ERR(serdes_phy) == -ENODEV)
-> 			serdes_phy = NULL;
-> 		else if (IS_ERR(serdes_phy))
-> 			return PTR_ERR(serdes_phy);
-> 		else
-> 			phy_init(serdes_phy);
-> 
+On 10/03/2022 15:51, Ioana Ciornei wrote:
+> Describe the "fsl,lynx-28g" compatible used by the Lynx 28G SerDes PHY
+> driver on Layerscape based SoCs.
 
-Yes, it wouldn't be an if inside another if statement.
+The message is a bit misleading, because it suggests you add only
+compatible to existing bindings. Instead please look at the git log how
+people usually describe it in subject and message.
 
-> be neater? There is no need to check IS_ERR() before testing PTR_ERR().
-> One may also prefer the pointer-comparison approach:
 > 
-> 		if (serdes_phy == ERR_PTR(-ENODEV))
+> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+> ---
+> Changes in v2:
+> 	- none
+> Changes in v3:
+> 	- 2/8: fix 'make dt_binding_check' errors
 > 
-> to remove any question about PTR_ERR(p) on a !IS_ERR(p) value too, but
-> it really doesn't make any difference.
+>  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 98 +++++++++++++++++++
+>  MAINTAINERS                                   |  1 +
+>  2 files changed, 99 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
 > 
-> I suspect this is just a code formatting issue, I'd think the compiler
-> would generate reasonable code either way, so as I said above, it's
-> quite minor.
-> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> new file mode 100644
+> index 000000000000..e98339ec83a7
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> @@ -0,0 +1,98 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/fsl,lynx-28g.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale Lynx 28G SerDes PHY binding
+> +
+> +maintainers:
+> +  - Ioana Ciornei <ioana.ciornei@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,lynx-28g
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +
+> +patternProperties:
+> +  '^phy@[0-9a-f]$':
+> +    type: object
+> +    properties:
+> +      reg:
+> +        description:
+> +          Number of the SerDes lane.
+> +        minimum: 0
+> +        maximum: 7
+> +
+> +      "#phy-cells":
+> +        const: 0
 
-As you said, since it's quite minor I am going to wait to see if more
-comments will appear, if not I am going to fix this up in another patch.
+Why do you need all these children? You just enumerated them, without
+statuses, resources or any properties. This should be rather just index
+of lynx-28g phy.
 
-Thanks!
+> +
+> +    additionalProperties: false
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    soc {
+> +      #address-cells = <2>;
+> +      #size-cells = <2>;
+> +      serdes_1: serdes_phy@1ea0000 {
+
+node name just "phy"
+
+> +        compatible = "fsl,lynx-28g";
+> +        reg = <0x0 0x1ea0000 0x0 0x1e30>;
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +        #phy-cells = <1>;
+> +
+> +        serdes1_lane_a: phy@0 {
+> +          reg = <0>;
+> +          #phy-cells = <0>;
+> +        };
+
+
+
+Best regards,
+Krzysztof
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
