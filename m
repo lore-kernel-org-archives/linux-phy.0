@@ -4,124 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E11AC433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 01:55:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73118C433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 13:09:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xob8tD00aewEGsoajgH+Wv2NGxZf8o1CLtqAxD5+fNs=; b=no/T4jVDkQeWrB
-	1wL/XNqr7zPkAxvIfLFS9EL1CpVsQhtsek2aScGZ8laqGRopNQpSEGz7VPq9/euxxal26Ebl/TIAu
-	EFmffz5BcghtzewMiYvO5rGFFEjvahuq6TZbZASXqJgzM2y4nBUYrSVydWXw83Bjcjeygl2So3fBy
-	t6OsI1eQJTHy2KPpGuacd2Fw8N1QZ/BVX0I6hHikrbt9/ukM05w9lXwKIiHv6eXLuE2zbBH6TyvC3
-	l7SL1lTzLcV/O5bOi4GeN27DVih+M7nUGJgzasQEW65fbx22vsTXyP3YjLpkApWWL73qHGyeFPaxt
-	2CcAUAXWiBcXoJjmwr5w==;
+	List-Owner; bh=O1FR1Q576c0NZ+gJo20Z29UmstFmUc42OyfKs1ZxuLY=; b=tmWMRnJ/PmV2uc
+	kk6kJfSHxdIQxWqvvcuDauuRTGPJRfC37VBrqmNMEhAiHA89UWiS+ofrzgpOXp++4CZhfNhSMpndx
+	MPPCXX9qZc1gmrLzt+mJX2P4HlhlryOyGvmZh9IWGIB+A/f0JdRCkZh9vB/1Uz0dErh1JazpfLB3T
+	SnDzr4BDOhr4Ceykdq5VFeczOfpVc7i0gP5Ev8PKUCO1IrzVBUFRHaYEWE07kb28ll/SqLcHk2PdC
+	j7qTOeF8S0GEUSQqXE8G1459sNFwpIvFmgbqKRLLGbgHL+bieh8z2slFryfOvtuq4Bb5UjhR8mcvo
+	vRA4OvEgBMksPGV4Do3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nSUUn-00EXjv-LS; Fri, 11 Mar 2022 01:55:09 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1nSf15-00GRyu-Ub; Fri, 11 Mar 2022 13:09:11 +0000
+Received: from smtp-relay-internal-1.canonical.com ([185.125.188.123])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nSUUk-00EXiL-DH
- for linux-phy@lists.infradead.org; Fri, 11 Mar 2022 01:55:08 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20220311015502epoutp02d35b445a5fd101787f5c7a666cb05a39~bMML-j7pl3161931619epoutp02_
- for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 01:55:02 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20220311015502epoutp02d35b445a5fd101787f5c7a666cb05a39~bMML-j7pl3161931619epoutp02_
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1646963702;
- bh=6GflsjQ7Mm9rWX70uL0WTVJxcMEIPkbVymAImoVej2k=;
- h=From:To:In-Reply-To:Subject:Date:References:From;
- b=R30spkq7a66hl3bmCoOSF8VZ05H0Q7nLJt8iz1VFN1EnniLs9ohDg6n49LwxgxTx2
- g2fqedLF93vZV9IyGJftwsqcRwLga0eOmxIUt+21jViDKxCj3jl+Jl++98m4dGQaM7
- 4VjwY+mGWkYx/zeZJFjJpOEYSVqWqzJzD25WiNKk=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
- epcas5p2.samsung.com (KnoxPortal) with ESMTP id
- 20220311015502epcas5p231e246c27d8107bff45663d5f7832314~bMMLcQaKv2663926639epcas5p2O;
- Fri, 11 Mar 2022 01:55:02 +0000 (GMT)
-Received: from epsmges5p1new.samsung.com (unknown [182.195.38.183]) by
- epsnrtp3.localdomain (Postfix) with ESMTP id 4KF8Bn1s61z4x9Q9; Fri, 11 Mar
- 2022 01:54:57 +0000 (GMT)
-Received: from epcas5p4.samsung.com ( [182.195.41.42]) by
- epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 86.AA.06423.1FBAA226; Fri, 11 Mar 2022 10:54:57 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
- 20220311015456epcas5p4d04741216c82091cbe6fca83cbfa832f~bMMGD7J011309313093epcas5p4u;
- Fri, 11 Mar 2022 01:54:56 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20220311015456epsmtrp2c3ca1a96a2d94019102fd9fbcfdf74bc~bMMGDM7wS0776207762epsmtrp2A;
- Fri, 11 Mar 2022 01:54:56 +0000 (GMT)
-X-AuditID: b6c32a49-b13ff70000001917-94-622aabf10b0d
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 63.E8.29871.0FBAA226; Fri, 11 Mar 2022 10:54:56 +0900 (KST)
-Received: from alimakhtar03 (unknown [107.122.12.5]) by epsmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20220311015455epsmtip2ed8a4286ea5368676ab69081f5dda2c7~bMMEyZdMU0664006640epsmtip2h;
- Fri, 11 Mar 2022 01:54:54 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzysztof.kozlowski@canonical.com>, "'Kishon
- Vijay Abraham I'" <kishon@ti.com>, "'Vinod Koul'" <vkoul@kernel.org>,
- "'Miaoqian Lin'" <linmq006@gmail.com>, <linux-phy@lists.infradead.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-In-Reply-To: <20220309170028.51913-1-krzysztof.kozlowski@canonical.com>
-Subject: RE: [PATCH] phy: samsung: exynos5250-sata: fix missing device put
- in probe error paths
-Date: Fri, 11 Mar 2022 07:24:53 +0530
-Message-ID: <018501d834eb$01e62ad0$05b28070$@samsung.com>
+ id 1nSf13-00GRxJ-EC
+ for linux-phy@lists.infradead.org; Fri, 11 Mar 2022 13:09:11 +0000
+Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
+ [209.85.128.71])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-relay-internal-1.canonical.com (Postfix) with ESMTPS id 2CDE93F321
+ for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 13:09:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1647004148;
+ bh=NV42Tsh6ksYymUGQsb6VXgBFoYR1XLFl1LciE1oosJM=;
+ h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
+ In-Reply-To:Content-Type;
+ b=rP9pNcjjWbPQtLknj3V27NBGG4+PbYwi9PkEOh4LOKsYQyf2dw6E0nS8wwrdvvw3j
+ 1Y5vkj/kkts2U75NNxE/tsMw9BlH1Lu+rK5cUtofg5TCF7F2+htdK0Gp/yULRKWYln
+ bryaXz5eazzasdUJ2r0nwbAoI+XTMNG82oSgTKJ12Z3+ypk4/pxzGoBD2Eob3VdH+R
+ yNJ87IiZVKoov3e0ZAtbRWU2b8b0sAcTGB1ewF3iulJpeF5MSjQ+m4FDwpr1eFgfiP
+ NoD8AbQvc1VKhuBS9L5setf6FeLfhCKyFWjiZTQYV04c8lB6ZhhXjkJJuvr1TrpnIX
+ c5Ou/Q7mc4jUw==
+Received: by mail-wm1-f71.google.com with SMTP id
+ o21-20020a05600c511500b003818c4b98b5so2979410wms.0
+ for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 05:09:08 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=NV42Tsh6ksYymUGQsb6VXgBFoYR1XLFl1LciE1oosJM=;
+ b=xchPZscAmoiM/XP0lxx6qjhfLgiYkaPzdATq4KoYJQco23QVRqxi1S9las5aZZGd3F
+ CypkZRdr0q6n/l3B/fghZz/CS9amqImN5/jBqu+dP/8O5eImPaqJ1wq7KoybmCDtXPxi
+ wwXkoOzVlWcW36OcXdHbgm31+gskFtfzwySO7wp1QqHZEiHeEuG1PnslygiO9NuQcJbu
+ y0IrZtAr9azJ1IfRBxG7Lcr0tOM/WXSkVia3yil+xtDnRiAnPOA0lOAJWfbHxBtOp0FY
+ w0oXfFuZD9kQgHHvU5UFtXIjhI1Vekdb9nZupkmLHMcNdbrgy4Bp7fitk7/yI4VmEdLd
+ X3FA==
+X-Gm-Message-State: AOAM531hZtqY3BKoR1nQBpHzviCdWC6buXWlqH2LByKs+3hE/haNkDhg
+ D9ffflDhmlsMCKTS+qwG2jsK69Psr2FZde50kaj+xwsEjuFt3tppHJWlk0+zvE0mhKEyCsV/Ly3
+ WoERZUbeQxEI2nyaUJfste7/RQn1piiPykVAE2pe+6MQ=
+X-Received: by 2002:a5d:4310:0:b0:1ef:fb60:e1d8 with SMTP id
+ h16-20020a5d4310000000b001effb60e1d8mr7275968wrq.92.1647004147555; 
+ Fri, 11 Mar 2022 05:09:07 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJyED6dgMrjY9eXx4ZHgAWm3pzIMZBlOht4JOuqN8JwR2d+4/pCQ98QGDhdAY9JgnNNKanzqDA==
+X-Received: by 2002:a5d:4310:0:b0:1ef:fb60:e1d8 with SMTP id
+ h16-20020a5d4310000000b001effb60e1d8mr7275953wrq.92.1647004147242; 
+ Fri, 11 Mar 2022 05:09:07 -0800 (PST)
+Received: from [192.168.0.148] (xdsl-188-155-174-239.adslplus.ch.
+ [188.155.174.239]) by smtp.gmail.com with ESMTPSA id
+ g26-20020a05600c4c9a00b00389a48b68bdsm6715945wmp.10.2022.03.11.05.09.06
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 11 Mar 2022 05:09:06 -0800 (PST)
+Message-ID: <f782bf45-3a69-18b4-de0b-f53669aec546@canonical.com>
+Date: Fri, 11 Mar 2022 14:09:05 +0100
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQFk9GdFcluxqBuuM3cfs7kS0OZnrAJRu4lfrY1fA0A=
-Content-Language: en-us
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrMJsWRmVeSWpSXmKPExsWy7bCmlu7H1VpJBg9fs1tceNrDZrHx7Q8m
- i+cfG5ktNj2+xmpxedccNosJq76xWMw4v4/JYuedE8wOHB6zGnrZPHbOusvusWlVJ5vH5iX1
- HsdvbGfy+LxJLoAtKtsmIzUxJbVIITUvOT8lMy/dVsk7ON453tTMwFDX0NLCXEkhLzE31VbJ
- xSdA1y0zB+geJYWyxJxSoFBAYnGxkr6dTVF+aUmqQkZ+cYmtUmpBSk6BSYFecWJucWleul5e
- aomVoYGBkSlQYUJ2xuf7jgWzxCt+/elgaWB8I9zFyMkhIWAicfbLbbYuRi4OIYHdjBLzpy9h
- hnA+MUr8fzmDFcL5xigxd+ptdpiW8wuuQlXtZZT48fc/E4TzklGir/UnK0gVm4CuxI7FbWCD
- RQROM0ksn3+TCSTBKeAucercCrAiYYFEia57x8HGsgioSvy7foaxi5GDg1fAUqLruSFImFdA
- UOLkzCcsIDazgLzE9rdzmCGuUJD4+XQZ2BgRASuJ2befs0HUiEu8PHqEHWSvhMBCDolH/16w
- QjS4SBzveAVlC0u8Or4F6h0pic/v9rKB7JUQyJbo2WUMEa6RWDrvGAuEbS9x4MocFpASZgFN
- ifW79CFW8Un0/n7CBNHJK9HRJgRRrSrR/O4qVKe0xMTubqilHhIX+2+wQ4JqFqPE2YNTGScw
- KsxC8uUsJF/OQvLNLITNCxhZVjFKphYU56anFpsWGOallsPjOzk/dxMjOLVqee5gvPvgg94h
- RiYOxkOMEhzMSiK8TaEaSUK8KYmVValF+fFFpTmpxYcYTYEhP5FZSjQ5H5jc80riDU0sDUzM
- zMxMLI3NDJXEeU+nb0gUEkhPLEnNTk0tSC2C6WPi4JRqYNKQl7GZazS1dOGt0vNZJ5bxpQm8
- OHyn3fnXnmlGM+5VGy2dFfx+tet2j/fu7OtaIs5tkLXqW28v9mX72c+cZ0/NPDjj9J+Hr53W
- HXTQCE896csqulO9/eXS4LXWalUfzO/94vllL5Yu3Fm9aNaHne1BM/e+r24pzf36KamSoayv
- XSHj+1YWDTfnno2f51/1r0tWjroWH1e2cuOlMLnbv2e4asg3Zvb5pixJ7Jn4nUlyMbfpgtl3
- +NZxHF33fpfyn2qGdxqTfdv4GN8fWJEly2NvlbZr3tUzn7x0VRPXOxsW2WWeaT4poK5+80gd
- +3T+qR763Wv00kpTWefvWMi4IlPb19GjvGC5Z8s7Rbm9E5VYijMSDbWYi4oTAdrtTLA2BAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrLLMWRmVeSWpSXmKPExsWy7bCSvO6H1VpJBpvPCFhceNrDZrHx7Q8m
- i+cfG5ktNj2+xmpxedccNosJq76xWMw4v4/JYuedE8wOHB6zGnrZPHbOusvusWlVJ5vH5iX1
- HsdvbGfy+LxJLoAtissmJTUnsyy1SN8ugSvj833HglniFb/+dLA0ML4R7mLk5JAQMJE4v+Aq
- cxcjF4eQwG5GifULb7BAJKQlrm+cwA5hC0us/PcczBYSeM4ocfB8FIjNJqArsWNxGxtIs4jA
- RSaJ+49nskJMmsEosW7rBSaQKk4Bd4lT51awgtjCAvES2w40MILYLAKqEv+unwGyOTh4BSwl
- up4bgoR5BQQlTs58wgISZhbQk2jbCFbNLCAvsf3tHGaIexQkfj5dBjZRRMBKYvbt52wQNeIS
- L48eYZ/AKDQLyaRZCJNmIZk0C0nHAkaWVYySqQXFuem5xYYFhnmp5XrFibnFpXnpesn5uZsY
- wTGkpbmDcfuqD3qHGJk4GA8xSnAwK4nwNoVqJAnxpiRWVqUW5ccXleakFh9ilOZgURLnvdB1
- Ml5IID2xJDU7NbUgtQgmy8TBKdXAZDo9byf/bfnVvidnuvQe+7Pg27s/+iV9s7qeh9wu/Dx7
- QsOP40uuyh7489FDyibcfMEcf44dfaWmJvKGYdrGZ3canJnuXdsXcFZE7GfQNvuX7pcW/HS6
- /qY7XPPiikMzzi57PnOX+Nslux027Pz85diGnYv+Tpxo377sCgOb8N4HRjVKX12717wXibv5
- U3zPe0u+uZWGaVVu4YpPxXIDJ+42+5XRbVP/pFNsxRy1yMPM2hv1NVt6v+gyid5cXOZUppDX
- +bpoyZ7oa3PTRKuXTwyw9NRhSo/6dXSJ2Uw7//Z500Wd/9m9O1QyVf/5q2smugdWislXhy0q
- 2jXbY5fApNCdua2dn0vmfNtkpfYwL1OJpTgj0VCLuag4EQB7HhT0EAMAAA==
-X-CMS-MailID: 20220311015456epcas5p4d04741216c82091cbe6fca83cbfa832f
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220309170036epcas5p2e6ee56f4c38761868ad9408616c03203
-References: <CGME20220309170036epcas5p2e6ee56f4c38761868ad9408616c03203@epcas5p2.samsung.com>
- <20220309170028.51913-1-krzysztof.kozlowski@canonical.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH net-next v4 2/8] dt-bindings: phy: add the "fsl, lynx-28g"
+ compatible
+Content-Language: en-US
+To: Ioana Ciornei <ioana.ciornei@nxp.com>, davem@davemloft.net,
+ kuba@kernel.org, netdev@vger.kernel.org
+Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, leoyang.li@nxp.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux@armlinux.org.uk, shawnguo@kernel.org, hongxing.zhu@nxp.com
+References: <20220311125437.3854483-1-ioana.ciornei@nxp.com>
+ <20220311125437.3854483-3-ioana.ciornei@nxp.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+In-Reply-To: <20220311125437.3854483-3-ioana.ciornei@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220310_175506_997957_B31A1C1B 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20220311_050909_650478_AC24BEB0 
+X-CRM114-Status: GOOD (  15.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,97 +109,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof
+On 11/03/2022 13:54, Ioana Ciornei wrote:
+> Describe the "fsl,lynx-28g" compatible used by the Lynx 28G SerDes PHY
+> driver on Layerscape based SoCs.
+> 
+> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+> ---
+> Changes in v2:
+> 	- none
+> Changes in v3:
+> 	- 2/8: fix 'make dt_binding_check' errors
+> Changes in v4:
+> 	- 2/8: remove the lane DT nodes
+> 
+>  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 40 +++++++++++++++++++
+>  MAINTAINERS                                   |  1 +
+>  2 files changed, 41 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> new file mode 100644
+> index 000000000000..dd1adf7b3c05
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> @@ -0,0 +1,40 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/fsl,lynx-28g.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale Lynx 28G SerDes PHY binding
+> +
+> +maintainers:
+> +  - Ioana Ciornei <ioana.ciornei@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,lynx-28g
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    soc {
+> +      #address-cells = <2>;
+> +      #size-cells = <2>;
+> +      serdes_1: serdes_phy@1ea0000 {
 
->-----Original Message-----
->From: Krzysztof Kozlowski [mailto:krzysztof.kozlowski@canonical.com]
->Sent: Wednesday, March 9, 2022 10:30 PM
->To: Kishon Vijay Abraham I <kishon@ti.com>; Vinod Koul
-><vkoul@kernel.org>; Krzysztof Kozlowski
-><krzysztof.kozlowski@canonical.com>; Alim Akhtar
-><alim.akhtar@samsung.com>; Miaoqian Lin <linmq006@gmail.com>; linux-
->phy@lists.infradead.org; linux-arm-kernel@lists.infradead.org; linux-
->samsung-soc@vger.kernel.org; linux-kernel@vger.kernel.org
->Subject: [PATCH] phy: samsung: exynos5250-sata: fix missing device put in
->probe error paths
->
->The actions of of_find_i2c_device_by_node() in probe function should be
->reversed in error paths by putting the reference to obtained device.
->
->Fixes: bcff4cba41bc ("PHY: Exynos: Add Exynos5250 SATA PHY driver")
->Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
->
-Thanks for fixing this.
+Comment from v3 still unresolved. Rest looks good.
 
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
-
->---
->
->Rebased on top of (although it is independent, no conflicts):
->https://lore.kernel.org/linux-samsung-soc/20220309124856.32632-1-
->linmq006@gmail.com/T/#u
->---
-> drivers/phy/samsung/phy-exynos5250-sata.c | 20 ++++++++++++++------
-> 1 file changed, 14 insertions(+), 6 deletions(-)
->
->diff --git a/drivers/phy/samsung/phy-exynos5250-sata.c
->b/drivers/phy/samsung/phy-exynos5250-sata.c
->index 6c305a3fe187..595adba5fb8f 100644
->--- a/drivers/phy/samsung/phy-exynos5250-sata.c
->+++ b/drivers/phy/samsung/phy-exynos5250-sata.c
->@@ -196,20 +196,21 @@ static int exynos_sata_phy_probe(struct
->platform_device *pdev)
-> 	sata_phy->phyclk = devm_clk_get(dev, "sata_phyctrl");
-> 	if (IS_ERR(sata_phy->phyclk)) {
-> 		dev_err(dev, "failed to get clk for PHY\n");
->-		return PTR_ERR(sata_phy->phyclk);
->+		ret = PTR_ERR(sata_phy->phyclk);
->+		goto put_dev;
-> 	}
->
-> 	ret = clk_prepare_enable(sata_phy->phyclk);
-> 	if (ret < 0) {
-> 		dev_err(dev, "failed to enable source clk\n");
->-		return ret;
->+		goto put_dev;
-> 	}
->
-> 	sata_phy->phy = devm_phy_create(dev, NULL,
->&exynos_sata_phy_ops);
-> 	if (IS_ERR(sata_phy->phy)) {
->-		clk_disable_unprepare(sata_phy->phyclk);
-> 		dev_err(dev, "failed to create PHY\n");
->-		return PTR_ERR(sata_phy->phy);
->+		ret = PTR_ERR(sata_phy->phy);
->+		goto clk_disable;
-> 	}
->
-> 	phy_set_drvdata(sata_phy->phy, sata_phy); @@ -217,11 +218,18
->@@ static int exynos_sata_phy_probe(struct platform_device *pdev)
-> 	phy_provider = devm_of_phy_provider_register(dev,
-> 					of_phy_simple_xlate);
-> 	if (IS_ERR(phy_provider)) {
->-		clk_disable_unprepare(sata_phy->phyclk);
->-		return PTR_ERR(phy_provider);
->+		ret = PTR_ERR(phy_provider);
->+		goto clk_disable;
-> 	}
->
-> 	return 0;
->+
->+clk_disable:
->+	clk_disable_unprepare(sata_phy->phyclk);
->+put_dev:
->+	put_device(&sata_phy->client->dev);
->+
->+	return ret;
-> }
->
-> static const struct of_device_id exynos_sata_phy_of_match[] = {
->--
->2.32.0
-
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
