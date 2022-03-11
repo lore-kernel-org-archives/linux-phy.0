@@ -4,103 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06ADDC433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 13:15:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEC57C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 13:35:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D3ZWcPN98B/dSsUZcMRmIsfTSSBh/TXeZHp1s6gfQa0=; b=Aw+5WtH3HUIFOz
-	P68lRTCp+lo2hjZrxNeNkpjMDcrbxBeSmZyQRpFGo4sbW3vfVlit9SAazUnwLDfyPFfQRwZ3HQX2i
-	uH2MZFUhCCAaC8yMt68PB2qXP6BrnhCRM3MdYeZaK+XeQQ1kI8LmYRHCfUjkY4I6o4IPi7+TH1vhE
-	39d22aIN/aazSNfVPnQ7mx8G3f2kgUpobbUZlmdig9otPx/4dfLv4CKDvLS+ScGNwsq6LcmdD5Mb/
-	mkrRzVSACE0A/EgBIqDsv+L6wp68xLnPXH6JilRLzJl/BoILOWVw5yE2W1oDU9JWHJgy9rSIvZC6e
-	JEZx3SKHN4FbMFfPy3Fg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=B4xI4XUxu84naIwwWfId8i5XFVCN4yrFvaJaiyhOUcY=; b=4m11N3X6hn2sp1
+	tkuI058CJd3EHUjaBfVZs3HoX+Zw9Wr6TkiyCHYp/zNOdTq67waGiN9N2uilAgimsJK0y1ZLwmq58
+	iwlXjdpId2b8h/a+UFzU87j/6MlwVKy9ac/IwYerTlJeVLGsWN/Ojf4qhxk7Cvt1y4D4J80r8G/lR
+	coK6Kl295XkkqyfyyoH2wBLMYpTrPHAm00tz9GkZF7NpxJU1phMPy3V3iDc5t4zSJ36JYfMB02Xxa
+	s3/maJokthsvViNee+WRTLf7KlKYG/IQFAFqmnxIHrb/KT3L35xt0um3oRYy16GqKDrPv/VfJ9BGb
+	icUuQtmyCB2ADmDzo9bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nSf7A-00GTfv-Gm; Fri, 11 Mar 2022 13:15:28 +0000
-Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
+	id 1nSfQu-00GXbO-1g; Fri, 11 Mar 2022 13:35:52 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nSf77-00GTer-Ps
- for linux-phy@lists.infradead.org; Fri, 11 Mar 2022 13:15:27 +0000
-Received: from mail-ed1-f72.google.com (mail-ed1-f72.google.com
- [209.85.208.72])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id D0DC63F60F
- for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 13:15:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
- s=20210705; t=1647004523;
- bh=TN0/6qCY/tJQXZh6cFY1jeGVIfLosWp/aDkoemInbFs=;
- h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
- In-Reply-To:Content-Type;
- b=lavVCKjyr1uU5ETjMKKQVZpIMUbv7UtnT1MtQX21YPWVOLfV6KkmITYDZBIkvKLII
- nW64LWWQ+9I2zgp6mCntXTFKD3bnK0hFh8uQ4HHpWidthjplSNf/khbg5NagTF2Hpp
- 41JhB5FKbXKbs0LSSYO7+gIYJWtOmPjwbSJ0D7mjWNbXhhV6tg0N+R0K/uXOMRk0e5
- 8WS6P2dV+uWEe5RqN80Cme7oigDlYbPdAaz4HIapuqbt1MkM6PK9f6d3KJGopY/V/y
- H/c6Sq1oX1N5y6hecLxjt/JVpWvNAiHlrRt9K1EzAyad4Iy7Vo9hvTbXUapTlJ9Slx
- A4vi2/wK9y7ag==
-Received: by mail-ed1-f72.google.com with SMTP id
- s7-20020a508dc7000000b0040f29ccd65aso4858972edh.1
- for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 05:15:23 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=TN0/6qCY/tJQXZh6cFY1jeGVIfLosWp/aDkoemInbFs=;
- b=XkRAI/1nCptRaeKITc5dteqU86X8t8C1OYoH0GWsE/tWgN1nSX0EV4gh/rStvOeZbY
- 6mzF0PhLDXVYd9E9rbR/2JVZR1Wsqfun3ctEpoQM/TB4/QqT8RFwrlwYadOSwDTzRUPO
- WIqu9E2oMuA4GzOz/CPS6YdyVSFdaaUz6CTI8cKCIC32ufGn2WmCbm+I7zl/xcJEPUQc
- 8fEo/nPvooiZ+4NM9cH4gK6L4pDA5Vgbcj1zFQ7fMEdlIDD9ElC0QlgnkM2Q9hbSZqZU
- UmAFFHaNPbPp7UJ0qEla71higwYCrup08hPJmRX/jArwNnH46pjRGfRulSce2woJWsTf
- PKFg==
-X-Gm-Message-State: AOAM533P5agMcoInQYedWFv/QkNt+sY+QjIL1lKVDDa9l79wtvHaKgGL
- A9L8sNwjzQXm2nFjNk0hRBEB64t+0spdJJ6Lg1Okw+MfzStxG3zSoyTU1WBHlfW8edIze9Ll8eL
- rkTnH8n/kC8/yilQxz5YLCDGM1/MFVILocwylg1ed5JY=
-X-Received: by 2002:a17:906:3ec7:b0:6d6:e52b:b with SMTP id
- d7-20020a1709063ec700b006d6e52b000bmr8280066ejj.521.1647004523287; 
- Fri, 11 Mar 2022 05:15:23 -0800 (PST)
-X-Google-Smtp-Source: ABdhPJxi3gklXV/fUKCMh5Si2xnpWTXW2rKNoLHSWBdSlOw8X+knNmCFTl0zQOg4mxoJY2xxUJgSfg==
-X-Received: by 2002:a17:906:3ec7:b0:6d6:e52b:b with SMTP id
- d7-20020a1709063ec700b006d6e52b000bmr8280045ejj.521.1647004523117; 
- Fri, 11 Mar 2022 05:15:23 -0800 (PST)
-Received: from [192.168.0.148] (xdsl-188-155-174-239.adslplus.ch.
- [188.155.174.239]) by smtp.gmail.com with ESMTPSA id
- w19-20020a05640234d300b00416baf4cdcasm1890685edc.48.2022.03.11.05.15.22
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 11 Mar 2022 05:15:22 -0800 (PST)
-Message-ID: <388e0ded-57ed-27bd-ae05-b18b943fbc32@canonical.com>
-Date: Fri, 11 Mar 2022 14:15:21 +0100
+ id 1nSfQs-00GXZt-5A; Fri, 11 Mar 2022 13:35:51 +0000
+X-UUID: a78d4f84b8cf4252a3e3bfa7272df427-20220311
+X-UUID: a78d4f84b8cf4252a3e3bfa7272df427-20220311
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <jianjun.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1630538469; Fri, 11 Mar 2022 06:35:46 -0700
+Received: from mtkexhb02.mediatek.inc (172.21.101.103) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 11 Mar 2022 05:35:44 -0800
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by mtkexhb02.mediatek.inc
+ (172.21.101.103) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 11 Mar 2022 21:35:31 +0800
+Received: from localhost.localdomain (10.17.3.154) by mtkcas10.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 11 Mar 2022 21:35:29 +0800
+From: Jianjun Wang <jianjun.wang@mediatek.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+CC: Jianjun Wang <jianjun.wang@mediatek.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <rex-bc.chen@mediatek.com>,
+ <randy.wu@mediatek.com>, <jieyy.yang@mediatek.com>,
+ <chuanjia.liu@mediatek.com>, <qizhong.cheng@mediatek.com>,
+ <jian.yang@mediatek.com>
+Subject: [PATCH 0/2] phy: mediatek: Add PCIe PHY driver
+Date: Fri, 11 Mar 2022 21:35:25 +0800
+Message-ID: <20220311133527.5914-1-jianjun.wang@mediatek.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.5.0
-Subject: Re: [PATCH net-next v4 2/8] dt-bindings: phy: add the "fsl, lynx-28g"
- compatible
-Content-Language: en-US
-To: Ioana Ciornei <ioana.ciornei@nxp.com>
-Cc: "davem@davemloft.net" <davem@davemloft.net>,
- "kuba@kernel.org" <kuba@kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Leo Li <leoyang.li@nxp.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- Hongxing Zhu <hongxing.zhu@nxp.com>
-References: <20220311125437.3854483-1-ioana.ciornei@nxp.com>
- <20220311125437.3854483-3-ioana.ciornei@nxp.com>
- <f782bf45-3a69-18b4-de0b-f53669aec546@canonical.com>
- <20220311131324.uzayrpnp2mifox23@skbuf>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-In-Reply-To: <20220311131324.uzayrpnp2mifox23@skbuf>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220311_051526_012625_5CCCF3C5 
-X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-CacheID: sfid-20220311_053550_208528_5414296B 
+X-CRM114-Status: UNSURE (   8.87  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,26 +76,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/03/2022 14:13, Ioana Ciornei wrote:
-> On Fri, Mar 11, 2022 at 02:09:05PM +0100, Krzysztof Kozlowski wrote:
->> On 11/03/2022 13:54, Ioana Ciornei wrote:
->>> +examples:
->>> +  - |
->>> +    soc {
->>> +      #address-cells = <2>;
->>> +      #size-cells = <2>;
->>> +      serdes_1: serdes_phy@1ea0000 {
->>
->> Comment from v3 still unresolved. Rest looks good.
-> 
-> Uhhh, I forgot to change the name. Sorry.
+These series patches add support for PCIe PHY driver on MediaTek chipsets.
 
-With the node name "phy":
+Jianjun Wang (2):
+  phy: mediatek: Add PCIe PHY driver
+  dt-bindings: phy: mediatek: Add YAML schema for PCIe PHY
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+ .../bindings/phy/mediatek,pcie-phy.yaml       |  71 +++++++
+ drivers/phy/mediatek/Kconfig                  |  11 +
+ drivers/phy/mediatek/Makefile                 |   1 +
+ drivers/phy/mediatek/phy-mtk-pcie.c           | 198 ++++++++++++++++++
+ 4 files changed, 281 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
+ create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
 
-Best regards,
-Krzysztof
+-- 
+2.18.0
+
 
 -- 
 linux-phy mailing list
