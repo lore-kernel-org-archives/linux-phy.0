@@ -4,95 +4,127 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73118C433FE
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 13:09:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2B19C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 13:09:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O1FR1Q576c0NZ+gJo20Z29UmstFmUc42OyfKs1ZxuLY=; b=tmWMRnJ/PmV2uc
-	kk6kJfSHxdIQxWqvvcuDauuRTGPJRfC37VBrqmNMEhAiHA89UWiS+ofrzgpOXp++4CZhfNhSMpndx
-	MPPCXX9qZc1gmrLzt+mJX2P4HlhlryOyGvmZh9IWGIB+A/f0JdRCkZh9vB/1Uz0dErh1JazpfLB3T
-	SnDzr4BDOhr4Ceykdq5VFeczOfpVc7i0gP5Ev8PKUCO1IrzVBUFRHaYEWE07kb28ll/SqLcHk2PdC
-	j7qTOeF8S0GEUSQqXE8G1459sNFwpIvFmgbqKRLLGbgHL+bieh8z2slFryfOvtuq4Bb5UjhR8mcvo
-	vRA4OvEgBMksPGV4Do3g==;
+	List-Owner; bh=YjtODcSxHczXjOqzvw0gbkw8gtEZfAVDVk9rDSqk8/8=; b=4RxgoPXrILfeeq
+	G9CPurlJHVz/7QnKq7xdPS2LNLcJhRsRSHkk4TdON6VA8iPFcFjZOKoVePM2KH8fa4Jx+Tl9UVTHp
+	OE0CAuqLXAF08j+hmjAVUJqZp50+LKSlNWNwSP1zgQ4ErfIZxrTnktG2robPCgN2EEvSW0WkRSHAn
+	Z7L/MCdEltUPtcqfIo8FcMtgTzP9+EaRenxkI7H9W+nGlY+3OSUzwYqgsFEVboJvDPdJE7yUS9MDz
+	4q+PhAQDxQs1chSk84YlxobZHWbUwU4ADPpW3x7GPIjQAz5Ei+uU05und8RVv1KRQrLEeb8pvkEwK
+	tUeEn2/M4BBsx5LE1Onw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nSf15-00GRyu-Ub; Fri, 11 Mar 2022 13:09:11 +0000
-Received: from smtp-relay-internal-1.canonical.com ([185.125.188.123])
+	id 1nSf1Q-00GS6t-2V; Fri, 11 Mar 2022 13:09:32 +0000
+Received: from mail-db5eur03on060b.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0a::60b]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nSf13-00GRxJ-EC
- for linux-phy@lists.infradead.org; Fri, 11 Mar 2022 13:09:11 +0000
-Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
- [209.85.128.71])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-relay-internal-1.canonical.com (Postfix) with ESMTPS id 2CDE93F321
- for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 13:09:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
- s=20210705; t=1647004148;
- bh=NV42Tsh6ksYymUGQsb6VXgBFoYR1XLFl1LciE1oosJM=;
- h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
- In-Reply-To:Content-Type;
- b=rP9pNcjjWbPQtLknj3V27NBGG4+PbYwi9PkEOh4LOKsYQyf2dw6E0nS8wwrdvvw3j
- 1Y5vkj/kkts2U75NNxE/tsMw9BlH1Lu+rK5cUtofg5TCF7F2+htdK0Gp/yULRKWYln
- bryaXz5eazzasdUJ2r0nwbAoI+XTMNG82oSgTKJ12Z3+ypk4/pxzGoBD2Eob3VdH+R
- yNJ87IiZVKoov3e0ZAtbRWU2b8b0sAcTGB1ewF3iulJpeF5MSjQ+m4FDwpr1eFgfiP
- NoD8AbQvc1VKhuBS9L5setf6FeLfhCKyFWjiZTQYV04c8lB6ZhhXjkJJuvr1TrpnIX
- c5Ou/Q7mc4jUw==
-Received: by mail-wm1-f71.google.com with SMTP id
- o21-20020a05600c511500b003818c4b98b5so2979410wms.0
- for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 05:09:08 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=NV42Tsh6ksYymUGQsb6VXgBFoYR1XLFl1LciE1oosJM=;
- b=xchPZscAmoiM/XP0lxx6qjhfLgiYkaPzdATq4KoYJQco23QVRqxi1S9las5aZZGd3F
- CypkZRdr0q6n/l3B/fghZz/CS9amqImN5/jBqu+dP/8O5eImPaqJ1wq7KoybmCDtXPxi
- wwXkoOzVlWcW36OcXdHbgm31+gskFtfzwySO7wp1QqHZEiHeEuG1PnslygiO9NuQcJbu
- y0IrZtAr9azJ1IfRBxG7Lcr0tOM/WXSkVia3yil+xtDnRiAnPOA0lOAJWfbHxBtOp0FY
- w0oXfFuZD9kQgHHvU5UFtXIjhI1Vekdb9nZupkmLHMcNdbrgy4Bp7fitk7/yI4VmEdLd
- X3FA==
-X-Gm-Message-State: AOAM531hZtqY3BKoR1nQBpHzviCdWC6buXWlqH2LByKs+3hE/haNkDhg
- D9ffflDhmlsMCKTS+qwG2jsK69Psr2FZde50kaj+xwsEjuFt3tppHJWlk0+zvE0mhKEyCsV/Ly3
- WoERZUbeQxEI2nyaUJfste7/RQn1piiPykVAE2pe+6MQ=
-X-Received: by 2002:a5d:4310:0:b0:1ef:fb60:e1d8 with SMTP id
- h16-20020a5d4310000000b001effb60e1d8mr7275968wrq.92.1647004147555; 
- Fri, 11 Mar 2022 05:09:07 -0800 (PST)
-X-Google-Smtp-Source: ABdhPJyED6dgMrjY9eXx4ZHgAWm3pzIMZBlOht4JOuqN8JwR2d+4/pCQ98QGDhdAY9JgnNNKanzqDA==
-X-Received: by 2002:a5d:4310:0:b0:1ef:fb60:e1d8 with SMTP id
- h16-20020a5d4310000000b001effb60e1d8mr7275953wrq.92.1647004147242; 
- Fri, 11 Mar 2022 05:09:07 -0800 (PST)
-Received: from [192.168.0.148] (xdsl-188-155-174-239.adslplus.ch.
- [188.155.174.239]) by smtp.gmail.com with ESMTPSA id
- g26-20020a05600c4c9a00b00389a48b68bdsm6715945wmp.10.2022.03.11.05.09.06
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 11 Mar 2022 05:09:06 -0800 (PST)
-Message-ID: <f782bf45-3a69-18b4-de0b-f53669aec546@canonical.com>
-Date: Fri, 11 Mar 2022 14:09:05 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.5.0
-Subject: Re: [PATCH net-next v4 2/8] dt-bindings: phy: add the "fsl, lynx-28g"
- compatible
-Content-Language: en-US
-To: Ioana Ciornei <ioana.ciornei@nxp.com>, davem@davemloft.net,
- kuba@kernel.org, netdev@vger.kernel.org
+ id 1nSf1N-00GS3h-E7
+ for linux-phy@lists.infradead.org; Fri, 11 Mar 2022 13:09:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BFFoSqhDmPNPvJj+lPyt0pyXCqr8Dirayf79q/15i7dNY+978UYbENPLW5+jXMGvaip5pIBwtrAIx7CAN05RuWTJNP5hY31JTqR4Y42hi0gmqj2KQj40RLXx2Np6MSZhbqQa14EeLFeCpbHxwgoodX+YZf8GeCs+9Q8zikK8qC/Kzy7+tNB2751JenFdF2qim2sLNA20W0OiCMhcxG+SwHO/T6uniVgLC+J4lnM3MVH1SdJxCcV+t/FhWJIxn42nR6Q3feCjbkG+po95Uh4JYUq8DBbg5v15PmQlcDphSuFqNk/FOzDlLmywXbxaGQtajBM4o718qWf6tLq57UDjRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=FPm6jT54oslGsalXvOLA7AvwPpBLDeig2k74QYziVpA=;
+ b=YykM7C9DNWAvG0SeBgNi9zKNWLLV2KOeo2l5WG/wRyIQ9/pKFJTA4gVjWFmmNPGIaqY5LqiZ6aMspOfMwGKBpYcuyr2+C31sXQ3ZvtzOto3f4cGWoc0Ttav53ktnWoYPIZWQ+s1dpbNUN+eE5Fp5s1uOGXw2WiUW89/1ebn+iY5qDET8stmXWHOVtFwfVIqYQDID/iDS+Muc/6q6+6DKxzuXnXM0TXwBVtzUecTuuBNFzvR0viiC/D90PWkruU6TfEkHlnMn8PWlXHkFdaJGAXBBTzyqBIcLLrBAzL2OLgvhaveb+Pew4A9cbZlNDIfSgkFiKamW9j73w7+xh943Mg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FPm6jT54oslGsalXvOLA7AvwPpBLDeig2k74QYziVpA=;
+ b=AwZ1Zq5O9J6Kw+0Gxsu6R7h5VNGTqf1+Ipbv9lA97GSKXF3DCpizD77mPAovwSB9qDduDoHWd+Aj+4nCGpPrQQKVAzWOOPH2pGxDDxg+GI4tA1lU51ReUxjJ+xPRN6eUyiCkQoD9PC5GjRSTlpECkfAzvjwf20EH2VwlqijVi/o=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8555.eurprd04.prod.outlook.com (2603:10a6:20b:436::16)
+ by AM6PR0402MB3431.eurprd04.prod.outlook.com (2603:10a6:209:e::10)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5038.19; Fri, 11 Mar
+ 2022 12:55:05 +0000
+Received: from AM9PR04MB8555.eurprd04.prod.outlook.com
+ ([fe80::c58c:4cac:5bf9:5579]) by AM9PR04MB8555.eurprd04.prod.outlook.com
+ ([fe80::c58c:4cac:5bf9:5579%7]) with mapi id 15.20.5038.027; Fri, 11 Mar 2022
+ 12:55:05 +0000
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: davem@davemloft.net,
+	kuba@kernel.org,
+	netdev@vger.kernel.org
 Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, leoyang.li@nxp.com,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux@armlinux.org.uk, shawnguo@kernel.org, hongxing.zhu@nxp.com
+ linux@armlinux.org.uk, shawnguo@kernel.org, hongxing.zhu@nxp.com,
+ Ioana Ciornei <ioana.ciornei@nxp.com>
+Subject: [PATCH net-next v4 5/8] dpaa2-mac: retrieve API version and detect
+ features
+Date: Fri, 11 Mar 2022 14:54:34 +0200
+Message-Id: <20220311125437.3854483-6-ioana.ciornei@nxp.com>
+X-Mailer: git-send-email 2.33.1
+In-Reply-To: <20220311125437.3854483-1-ioana.ciornei@nxp.com>
 References: <20220311125437.3854483-1-ioana.ciornei@nxp.com>
- <20220311125437.3854483-3-ioana.ciornei@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-In-Reply-To: <20220311125437.3854483-3-ioana.ciornei@nxp.com>
+X-ClientProxiedBy: AM5PR0402CA0014.eurprd04.prod.outlook.com
+ (2603:10a6:203:90::24) To AM9PR04MB8555.eurprd04.prod.outlook.com
+ (2603:10a6:20b:436::16)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 316b5720-993b-4696-25c0-08da035e5d66
+X-MS-TrafficTypeDiagnostic: AM6PR0402MB3431:EE_
+X-Microsoft-Antispam-PRVS: <AM6PR0402MB34317161E79F0D69584E0C4DE00C9@AM6PR0402MB3431.eurprd04.prod.outlook.com>
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 9kOOivPZGaKXOhSLwXAXWHfalRDlVyfLWfl9u6jSvoBGtTGT7p5AhE7J0+5TI3fuuZLCN0+0geQUCFtMrqFbTKP6UJqWsLCZ9/7yLfgGdzdUTgSNT/FT4Lu4js7umLwspLBh4tdfSOsUyRGGN5uhnEGSCfuWxFR3ARP/qVhakc5uhkhLEofUnETbxqmavtGhqa7dNOToO1ReLi/hQtBQ9JX8e4b4IpLT3dWwGtt0cr/r53iY0jyFPdyUEAlu7LwsgZeP2tJ83gJG2aIVK+rc25OryrDupjF6sE0vSYbMdJCcT43gWjEt8AJegoGtDm9srBod9p6+A1whWz6kvZ49054s5UikcmJC9qIN2lZk/V5PPhrM364bG/oobF0EVpYlwY5hgfzn9+yc3aMFePfW2Q2ESCMQdNXJVd6+oZ3pUEPhxooRZr6u0cTBFE9M6pIT3nv9oQLB2BkXF5z3Qubzfzt3zUk4UgviED3p8JHUx8uBdG+fnCSypr+lJ5iW7qlmpRH86Djqqitl8rBtjSvfYO6KLlBrZlR9a4iTV/ZU0ajmrqrIZ+qeWUJQzywyCu5hxKzVGG9r7g8dAnhG5fQQw/KQNaUEm5MyAWbjy4GhNbGWJty+9naqxAy34XxIFa/+CPl6taLrWLByrgcS2Worz7wXGMZbb4Q8WT5vH7Ol7ZOpdkQ1Ern+0xp8/gVdgztIS9eh6kJm3Vbm+9oQj0z3kg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM9PR04MB8555.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230001)(4636009)(366004)(8676002)(66946007)(7416002)(5660300002)(6486002)(8936002)(44832011)(508600001)(66476007)(66556008)(316002)(4326008)(83380400001)(1076003)(2616005)(6512007)(52116002)(6666004)(6506007)(2906002)(26005)(186003)(86362001)(36756003)(38350700002)(38100700002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?sJLgJCTEWTIO1707TcCSiXkGs+q6Iu5INbweocHKfLN5mvTsMZRvprjN8OWa?=
+ =?us-ascii?Q?Fg1LsrfYl/6SUGjvYpzIkAewKu1NDyW+IwhtXm7qVtfWIKecnKbFNc6+HRWM?=
+ =?us-ascii?Q?XCnCzx9EnwvTtLIRx2rLhITuY4ES1nOmzo9n7TkY1Xa2TMoEJZVUwlhiFAgz?=
+ =?us-ascii?Q?ptTu5e7mDd/9g98rCZahmUSDUCOacr9B3pnrtVPdCM03/BfE3lATPND2zw+T?=
+ =?us-ascii?Q?IzvdaZApX/qkj5mx84kLQz7pknhvlfPlhBWkAm0/wsH/IoHDTS4jhuE2ji4t?=
+ =?us-ascii?Q?jlE68VWadEoP3KL+mJ+lBMemyiyYmwP9awkvU649bJhExsFDf9al0p+OpLGB?=
+ =?us-ascii?Q?rMewR8OaIghKKc84L6Ocwy/mZyWfnTRpwjCssggIzzVndCuuB9rkz2xbliTu?=
+ =?us-ascii?Q?09xXUPvt5L09woH6LO95XMak1xZvbvgh+uFydZyahSYtuRqDIkoKiRr91KSi?=
+ =?us-ascii?Q?HrNfkMHNTVxKXjDjkBGuxs/fXYLl8+8z3dh3ncRbOYvx3NiFicKkiNNKZA3E?=
+ =?us-ascii?Q?r5J2lxHGQLw0oY3DRJkhn2x6SRMprh8eU9T5ln46oeMdpYUjFmzycA1nXAJ3?=
+ =?us-ascii?Q?Hq6yuZ3Oh8GoqMs15tVBFOYw5xfEdAG1RhdaPb8rUCaQ2zZWpyYAttJT3Epl?=
+ =?us-ascii?Q?UXBi1mzLI4t+bLoQOiCJ0qyz0Nh6Dk4snb0xgwerFaqCQ081z5xt1FXtECXt?=
+ =?us-ascii?Q?t/kJZ67jWwEuKJH4T2ZgCWscgGQPDfNK8zdh9YLShOkvy8dwL0PV6QyWGaCu?=
+ =?us-ascii?Q?zstf7oLduZBo8WyXV6GvrWgriZ2eqDqE9wOIP2U4R7RkdPOmfIj7EdC81d19?=
+ =?us-ascii?Q?RVv0rkWiQDMgD3Z0zH7LAj/2+NE+nRhhvPxhzKoiajcrByjC3CDuqJLQsOA1?=
+ =?us-ascii?Q?GY13SVNRHOTpKMzC2L2qTiG5mF07ByPpq4m30Fb2oW+AZNXqhExt0uH5HLF4?=
+ =?us-ascii?Q?OHGPBE78WPnSwoheL4McBxcNiuWkpVntZmnqcn6qHx6dC6l19o3XVuynpkSh?=
+ =?us-ascii?Q?0+30daMyTOa3ZmCd+p3YuH8wq0NQtSQg3alkGXJQsfdQ1Y558GqG4+5f/j2Q?=
+ =?us-ascii?Q?y+bq4BGqTY4RH9O52xZCk0zFox4ioZ9i3fdphZQpkVgH9M6clcRgLyzWJNH+?=
+ =?us-ascii?Q?H9+1jMAfhxHFYe79nD5Ozsv4hOOB9hnVq+uHpnWBRvZ9zrUTazuy8yvHO+q6?=
+ =?us-ascii?Q?4/FKqBO2npeMC4kObmHoI7c2OybFNTu5De6Ye5SoLRMQIEn26Wlcu6tdPnP4?=
+ =?us-ascii?Q?o9xiAevE0EJXOTJH5W4g3lPeXirSlJyo6HgCYYgiB5yaja6ENeSN8AnAxg4O?=
+ =?us-ascii?Q?cYRDDgipJnPddSei454XTCo+e3qJozj1X9dvvWx493a8YreUWV4eAOUr7g5p?=
+ =?us-ascii?Q?k8WteTrLoCEzQ2Oshup05G3u7SJuRr/1Z+tzenRVs1pXlhBUNbm+sE8CUHxs?=
+ =?us-ascii?Q?CCKqPcyAmZpnjFCWgI0LhwS4KK2aBBdxOG1+0LKM5Ab3JYUvsbtVXvCrHp2i?=
+ =?us-ascii?Q?AWFEsGWOgrzmaQRWAoJZ8Pzj6SrI92yGEJPDkXxbepggAL5W/8fUpG+cTSPZ?=
+ =?us-ascii?Q?9301+uF510BLrXl72XtsJjnbBH/Kabda2/aI/dVdkFaGlPUBY/1umB21woL9?=
+ =?us-ascii?Q?oeuZXN7cBTZeUjTQnpYGYss=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 316b5720-993b-4696-25c0-08da035e5d66
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8555.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Mar 2022 12:55:05.7005 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: JETLV/zXchirmZpbLxEPZ0sYjwrH1atFiNyrxX37NXLdt70Egc3x2uYgUmEfvuwZuQkPEjddRnGfOLo0dKmCJw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3431
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220311_050909_650478_AC24BEB0 
-X-CRM114-Status: GOOD (  15.20  )
+X-CRM114-CacheID: sfid-20220311_050929_488022_63A42C26 
+X-CRM114-Status: GOOD (  12.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,70 +141,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/03/2022 13:54, Ioana Ciornei wrote:
-> Describe the "fsl,lynx-28g" compatible used by the Lynx 28G SerDes PHY
-> driver on Layerscape based SoCs.
-> 
-> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-> ---
-> Changes in v2:
-> 	- none
-> Changes in v3:
-> 	- 2/8: fix 'make dt_binding_check' errors
-> Changes in v4:
-> 	- 2/8: remove the lane DT nodes
-> 
->  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 40 +++++++++++++++++++
->  MAINTAINERS                                   |  1 +
->  2 files changed, 41 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> new file mode 100644
-> index 000000000000..dd1adf7b3c05
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> @@ -0,0 +1,40 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/fsl,lynx-28g.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale Lynx 28G SerDes PHY binding
-> +
-> +maintainers:
-> +  - Ioana Ciornei <ioana.ciornei@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,lynx-28g
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    soc {
-> +      #address-cells = <2>;
-> +      #size-cells = <2>;
-> +      serdes_1: serdes_phy@1ea0000 {
+Retrieve the API version running on the firmware and based on it detect
+which features are available for usage.
+The first one to be listed is the capability to change the MAC protocol
+at runtime.
 
-Comment from v3 still unresolved. Rest looks good.
+Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+---
+Changes in v2:
+	- none
+Changes in v3:
+	- none
+Changes in v4:
+	- none
 
-Best regards,
-Krzysztof
+ .../net/ethernet/freescale/dpaa2/dpaa2-mac.c  | 30 +++++++++++++++++++
+ .../net/ethernet/freescale/dpaa2/dpaa2-mac.h  |  2 ++
+ 2 files changed, 32 insertions(+)
+
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
+index 521f036d1c00..c4a49bf10156 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
+@@ -11,6 +11,28 @@
+ #define phylink_to_dpaa2_mac(config) \
+ 	container_of((config), struct dpaa2_mac, phylink_config)
+ 
++#define DPMAC_PROTOCOL_CHANGE_VER_MAJOR		4
++#define DPMAC_PROTOCOL_CHANGE_VER_MINOR		8
++
++#define DPAA2_MAC_FEATURE_PROTOCOL_CHANGE	BIT(0)
++
++static int dpaa2_mac_cmp_ver(struct dpaa2_mac *mac,
++			     u16 ver_major, u16 ver_minor)
++{
++	if (mac->ver_major == ver_major)
++		return mac->ver_minor - ver_minor;
++	return mac->ver_major - ver_major;
++}
++
++static void dpaa2_mac_detect_features(struct dpaa2_mac *mac)
++{
++	mac->features = 0;
++
++	if (dpaa2_mac_cmp_ver(mac, DPMAC_PROTOCOL_CHANGE_VER_MAJOR,
++			      DPMAC_PROTOCOL_CHANGE_VER_MINOR) >= 0)
++		mac->features |= DPAA2_MAC_FEATURE_PROTOCOL_CHANGE;
++}
++
+ static int phy_mode(enum dpmac_eth_if eth_if, phy_interface_t *if_mode)
+ {
+ 	*if_mode = PHY_INTERFACE_MODE_NA;
+@@ -359,6 +381,14 @@ int dpaa2_mac_open(struct dpaa2_mac *mac)
+ 		goto err_close_dpmac;
+ 	}
+ 
++	err = dpmac_get_api_version(mac->mc_io, 0, &mac->ver_major, &mac->ver_minor);
++	if (err) {
++		netdev_err(net_dev, "dpmac_get_api_version() = %d\n", err);
++		goto err_close_dpmac;
++	}
++
++	dpaa2_mac_detect_features(mac);
++
+ 	/* Find the device node representing the MAC device and link the device
+ 	 * behind the associated netdev to it.
+ 	 */
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h
+index 1331a8477fe4..d2e51d21c80c 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h
+@@ -17,6 +17,8 @@ struct dpaa2_mac {
+ 	struct net_device *net_dev;
+ 	struct fsl_mc_io *mc_io;
+ 	struct dpmac_attr attr;
++	u16 ver_major, ver_minor;
++	unsigned long features;
+ 
+ 	struct phylink_config phylink_config;
+ 	struct phylink *phylink;
+-- 
+2.33.1
+
 
 -- 
 linux-phy mailing list
