@@ -4,77 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02EB2C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 13:15:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06ADDC433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Mar 2022 13:15:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mw+9a9Iu2rZUeqxLsOMTydSlghNqFgQPB0v77l8Buf8=; b=2lkP/2trLv0WYj
-	AepWAlSp24nGPo5SXOv4oEhvin0B9/Y0sYTpu9KaERgA2Nu8cKx3XeOgStytOQuZaLQLCys4PJ1j7
-	Mt4K35tdex3sYHFiSoA44YJePXxk05jnkFrNULz19I4qs4igDkHrZTMx8QHnZvMm8WEj1r3wCPLcg
-	w0cpz+UKs0gQoq6AuT//EMEde481MS1tTFOKDd3dPvTXOlfeE4cnSL7Gl6Z/H4bUABQxsmN+ITKZD
-	PIoUtpQiV8z7K3iUbIrEZxpZsPyXvOilp/NoiwqS+Bfwowjp3ewkW6wHvmCZSo/GflixqAhm8lbYa
-	4ukM5HuJKP9cGcE8Ko4g==;
+	List-Owner; bh=D3ZWcPN98B/dSsUZcMRmIsfTSSBh/TXeZHp1s6gfQa0=; b=Aw+5WtH3HUIFOz
+	P68lRTCp+lo2hjZrxNeNkpjMDcrbxBeSmZyQRpFGo4sbW3vfVlit9SAazUnwLDfyPFfQRwZ3HQX2i
+	uH2MZFUhCCAaC8yMt68PB2qXP6BrnhCRM3MdYeZaK+XeQQ1kI8LmYRHCfUjkY4I6o4IPi7+TH1vhE
+	39d22aIN/aazSNfVPnQ7mx8G3f2kgUpobbUZlmdig9otPx/4dfLv4CKDvLS+ScGNwsq6LcmdD5Mb/
+	mkrRzVSACE0A/EgBIqDsv+L6wp68xLnPXH6JilRLzJl/BoILOWVw5yE2W1oDU9JWHJgy9rSIvZC6e
+	JEZx3SKHN4FbMFfPy3Fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nSf6q-00GTbr-Bn; Fri, 11 Mar 2022 13:15:08 +0000
-Received: from smtp-relay-internal-1.canonical.com ([185.125.188.123])
+	id 1nSf7A-00GTfv-Gm; Fri, 11 Mar 2022 13:15:28 +0000
+Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nSf6o-00GTb7-HU
- for linux-phy@lists.infradead.org; Fri, 11 Mar 2022 13:15:07 +0000
+ id 1nSf77-00GTer-Ps
+ for linux-phy@lists.infradead.org; Fri, 11 Mar 2022 13:15:27 +0000
 Received: from mail-ed1-f72.google.com (mail-ed1-f72.google.com
  [209.85.208.72])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
  (No client certificate requested)
- by smtp-relay-internal-1.canonical.com (Postfix) with ESMTPS id 3FB453F1E5
- for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 13:15:05 +0000 (UTC)
+ by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id D0DC63F60F
+ for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 13:15:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
- s=20210705; t=1647004505;
- bh=xOL5KCXZ0SGH69gklhacxZ/8cP5ta3EREGmzsgqE7XU=;
+ s=20210705; t=1647004523;
+ bh=TN0/6qCY/tJQXZh6cFY1jeGVIfLosWp/aDkoemInbFs=;
  h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
  In-Reply-To:Content-Type;
- b=Oe4f95+eH4PrR5SMpUk5Ll+zqFjnhczEbW1h8AGZM6VDgJ2/J3QzFpqVkZTM7Wo3o
- JN4jy7IeG9J8xEp60vgkXYC8ECnRrMMsutPxPTf2BRj0KbxQqxqmEH+cAPzkuu1dmO
- /nQf5bkmv6D6mBkHRY8X8U03iJBaz4tpXgO2u6+3b5jl3+yyVTjsMo15TnSt+kY9ru
- 0REY7UYsvubVWW0JyphgURKX1LGJOjfQzBGS5CpU/loHif+i0ebVzQq4HF8/WJrGmP
- DHEtiRUrSrOMCi31bxq14wQ3FKYcpGE1Y14FKWUsSnm2Ct9v8jmL7MoCTfIE9/bQfP
- iubJmQNtGfLEg==
+ b=lavVCKjyr1uU5ETjMKKQVZpIMUbv7UtnT1MtQX21YPWVOLfV6KkmITYDZBIkvKLII
+ nW64LWWQ+9I2zgp6mCntXTFKD3bnK0hFh8uQ4HHpWidthjplSNf/khbg5NagTF2Hpp
+ 41JhB5FKbXKbs0LSSYO7+gIYJWtOmPjwbSJ0D7mjWNbXhhV6tg0N+R0K/uXOMRk0e5
+ 8WS6P2dV+uWEe5RqN80Cme7oigDlYbPdAaz4HIapuqbt1MkM6PK9f6d3KJGopY/V/y
+ H/c6Sq1oX1N5y6hecLxjt/JVpWvNAiHlrRt9K1EzAyad4Iy7Vo9hvTbXUapTlJ9Slx
+ A4vi2/wK9y7ag==
 Received: by mail-ed1-f72.google.com with SMTP id
- bq19-20020a056402215300b0040f276105a4so4861292edb.2
- for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 05:15:05 -0800 (PST)
+ s7-20020a508dc7000000b0040f29ccd65aso4858972edh.1
+ for <linux-phy@lists.infradead.org>; Fri, 11 Mar 2022 05:15:23 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
  :content-language:to:cc:references:from:in-reply-to
  :content-transfer-encoding;
- bh=xOL5KCXZ0SGH69gklhacxZ/8cP5ta3EREGmzsgqE7XU=;
- b=vStHlFzT1YirTS2VRulP1BJN6+8XWt0cl7VBGrIfTcfZMuRT+i/CO05cfT+zObt0NG
- eEnX4uzfSINkbUOZ/7zjIwjG5YId3pt0XKK8hOoyG0HPFZAYvICP/Nd+/Gy9pEQ1NAFc
- DJEwM1A0+HTIqLf2TX41nFT4bwIP7ukhUXddPvgwXfGKAHyIprSQ9VNWAkbeKnyjIwWj
- 0y2IL61b1VWOb8P3vZm8oq4x4CkSGR3vmgi4oNm3LD2eniwHanNe/kKsK2Ht/FPqRyq1
- dzLcabMit2HcTC31tcSg6my1o+0IITnAgiRx1DgKxAPiaQxoTH2xBvjw8sJo64rXjn12
- UkiQ==
-X-Gm-Message-State: AOAM533bMB/24R2aDc1KfyV9cI8Syi8q/HcqjI7qPS2joIOYWQqOdPaQ
- DsMBXaGiri9RSFP9sTxy+2YaboOyBX4gzlR9lyPhe0tqyBDx01KSSqeZs49Szp05p/JdmVzOFHb
- FiITR7vmX5u6PSffz6BjOdvEvE59KXVSy0JLT/QwMcIM=
-X-Received: by 2002:a17:906:d29b:b0:6da:9e4d:bb7c with SMTP id
- ay27-20020a170906d29b00b006da9e4dbb7cmr8769365ejb.155.1647004504119; 
- Fri, 11 Mar 2022 05:15:04 -0800 (PST)
-X-Google-Smtp-Source: ABdhPJz5gVuyZQARyT4Ih8qZYzFfz39imMgrNy/pXVuj7BFtK1eQuAfgpviPhn6BRSfABhPjTA82iw==
-X-Received: by 2002:a17:906:d29b:b0:6da:9e4d:bb7c with SMTP id
- ay27-20020a170906d29b00b006da9e4dbb7cmr8769338ejb.155.1647004503614; 
- Fri, 11 Mar 2022 05:15:03 -0800 (PST)
+ bh=TN0/6qCY/tJQXZh6cFY1jeGVIfLosWp/aDkoemInbFs=;
+ b=XkRAI/1nCptRaeKITc5dteqU86X8t8C1OYoH0GWsE/tWgN1nSX0EV4gh/rStvOeZbY
+ 6mzF0PhLDXVYd9E9rbR/2JVZR1Wsqfun3ctEpoQM/TB4/QqT8RFwrlwYadOSwDTzRUPO
+ WIqu9E2oMuA4GzOz/CPS6YdyVSFdaaUz6CTI8cKCIC32ufGn2WmCbm+I7zl/xcJEPUQc
+ 8fEo/nPvooiZ+4NM9cH4gK6L4pDA5Vgbcj1zFQ7fMEdlIDD9ElC0QlgnkM2Q9hbSZqZU
+ UmAFFHaNPbPp7UJ0qEla71higwYCrup08hPJmRX/jArwNnH46pjRGfRulSce2woJWsTf
+ PKFg==
+X-Gm-Message-State: AOAM533P5agMcoInQYedWFv/QkNt+sY+QjIL1lKVDDa9l79wtvHaKgGL
+ A9L8sNwjzQXm2nFjNk0hRBEB64t+0spdJJ6Lg1Okw+MfzStxG3zSoyTU1WBHlfW8edIze9Ll8eL
+ rkTnH8n/kC8/yilQxz5YLCDGM1/MFVILocwylg1ed5JY=
+X-Received: by 2002:a17:906:3ec7:b0:6d6:e52b:b with SMTP id
+ d7-20020a1709063ec700b006d6e52b000bmr8280066ejj.521.1647004523287; 
+ Fri, 11 Mar 2022 05:15:23 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJxi3gklXV/fUKCMh5Si2xnpWTXW2rKNoLHSWBdSlOw8X+knNmCFTl0zQOg4mxoJY2xxUJgSfg==
+X-Received: by 2002:a17:906:3ec7:b0:6d6:e52b:b with SMTP id
+ d7-20020a1709063ec700b006d6e52b000bmr8280045ejj.521.1647004523117; 
+ Fri, 11 Mar 2022 05:15:23 -0800 (PST)
 Received: from [192.168.0.148] (xdsl-188-155-174-239.adslplus.ch.
  [188.155.174.239]) by smtp.gmail.com with ESMTPSA id
- m26-20020a1709060d9a00b006da81fb9d72sm2917192eji.100.2022.03.11.05.15.02
+ w19-20020a05640234d300b00416baf4cdcasm1890685edc.48.2022.03.11.05.15.22
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 11 Mar 2022 05:15:03 -0800 (PST)
-Message-ID: <f0e07031-2f4d-0625-201b-f65fa69107a5@canonical.com>
-Date: Fri, 11 Mar 2022 14:15:02 +0100
+ Fri, 11 Mar 2022 05:15:22 -0800 (PST)
+Message-ID: <388e0ded-57ed-27bd-ae05-b18b943fbc32@canonical.com>
+Date: Fri, 11 Mar 2022 14:15:21 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.5.0
@@ -99,8 +99,9 @@ References: <20220311125437.3854483-1-ioana.ciornei@nxp.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
 In-Reply-To: <20220311131324.uzayrpnp2mifox23@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220311_051506_750732_328DD09C 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20220311_051526_012625_5CCCF3C5 
+X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,14 +131,10 @@ On 11/03/2022 14:13, Ioana Ciornei wrote:
 >> Comment from v3 still unresolved. Rest looks good.
 > 
 > Uhhh, I forgot to change the name. Sorry.
-> 
-> Do you have in plan to look at any other patch? I am asking just so I
-> know when to send a v4.
-> 
 
-No, I am just checking the bindings. Maybe wait a bit before sending v4
-to give other people chance to review :)
+With the node name "phy":
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
 
 Best regards,
 Krzysztof
