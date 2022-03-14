@@ -4,67 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B09E4C4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Mar 2022 10:31:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56D13C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Mar 2022 10:41:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jGivpMdodhSlHod6nRpqCFF+i11OBJUpZ5XEscUqhpw=; b=NOq8IjbgGyBQoj
-	VyWtJ5A1HGDts+52QM8az92p07G8peWA4bqNKAfO2CHB7RA5LRVEpnpBQzzyIneyXzWJVMElnCOw4
-	YNcKzXr7xmGwWBxiOBf1XoAstskXATwaEZsVL3h7djrdSGjAMcHiV9h53HkrctmxDpwRMqmyhc5bV
-	jTw6Z2cMeaF7zZtmZ+bcjy39E226ON86PmmJiJfBIOQ1MtZlUus4dvrHVri55ojri0rRQDuLpQK1b
-	jtiBUDxN7ykbR8UH1xoIWPTDSW5qYLat+TC2m5k5TGgTVx/5ELF5P184M2UEFet8COKHVZWz7EQ9I
-	G9u5+FTo4NqX7VoFVxUA==;
+	List-Owner; bh=JB1GcmW9sYRUvHUslgiJGi+6+QM0A/CcoFtUdMPxGrA=; b=4tPxVpidwNqoIP
+	y6NpSaSNxk2Z3AXKSQ2x7KhVaoNX80SE3iQKSp5Xd6xwdzymF5jrGtIwiPH9y7gvVSjAs8xRK8rvO
+	C5TTSoUoIWP9khwtujNBzql2IpA23SNd8dujRA+/D6OWR97tn6FGbaSiS+VlX/NpLpcB3mj5TowCL
+	JbbzxdWaUmtq8ImnSLNzH7nAyi+UxGOYpMis0UzfmEp1+uewRMUJItDxkgp+wmv395r5RjymVpEzm
+	8xzSVnhpisgjDemD5rSLWp3c9R/sLkcbFPuM5ArkScZ6jm4XuQ1CxXw5zomxbL07hUsRqtiGKI5Bn
+	Ls90aYxEIeDwdY58WHng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nThyg-004yQM-3P; Mon, 14 Mar 2022 10:31:02 +0000
-Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
+	id 1nTi8r-0050jN-QW; Mon, 14 Mar 2022 10:41:33 +0000
+Received: from smtp-relay-internal-1.canonical.com ([185.125.188.123])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nThyd-004yPE-5y
- for linux-phy@lists.infradead.org; Mon, 14 Mar 2022 10:31:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
- t=1647253859; x=1678789859;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=AE49BjDKIr7fQ1ylcAJCvf/EmIu4MWN573wR5DDTssM=;
- b=KazAqrg8+IE6VL7pP5aVklnM3Rhu+y4Nt+eXcUvtwYMjo1pTd6aMnOI2
- xtDMRvUXJUq7Zbu8JTFk9uWYtPrAKdZRN3wf/KbsxVqG352Yika80tYCB
- hXFPiBzcnopxL8gyzfANN+ysbv/bu95nAYUhVUhMsOy2lh4pixdhT5r+B k=;
-Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
- by alexa-out-sd-02.qualcomm.com with ESMTP; 14 Mar 2022 03:30:58 -0700
-X-QCInternal: smtphost
-Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
- by ironmsg05-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 14 Mar 2022 03:30:56 -0700
-Received: from nalasex01b.na.qualcomm.com (10.47.209.197) by
- nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.15; Mon, 14 Mar 2022 03:30:55 -0700
-Received: from hu-pkondeti-hyd.qualcomm.com (10.80.80.8) by
- nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.15; Mon, 14 Mar 2022 03:30:49 -0700
-Date: Mon, 14 Mar 2022 16:00:45 +0530
-From: Pavan Kondeti <quic_pkondeti@quicinc.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
-CC: Pavan Kondeti <quic_pkondeti@quicinc.com>, Sandeep Maheswaram
- <quic_c_sanm@quicinc.com>, Rob Herring <robh+dt@kernel.org>, Andy Gross
- <agross@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>, "Kishon
- Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Greg
- Kroah-Hartman" <gregkh@linuxfoundation.org>, Wesley Cheng
- <wcheng@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>, Doug Anderson
- <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- <devicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <linux-usb@vger.kernel.org>, <quic_ppratap@quicinc.com>,
- <quic_kriskura@quicinc.com>
+ id 1nTi8p-0050iA-7I
+ for linux-phy@lists.infradead.org; Mon, 14 Mar 2022 10:41:33 +0000
+Received: from mail-ed1-f72.google.com (mail-ed1-f72.google.com
+ [209.85.208.72])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-relay-internal-1.canonical.com (Postfix) with ESMTPS id B98FE3F7DE
+ for <linux-phy@lists.infradead.org>; Mon, 14 Mar 2022 10:41:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1647254489;
+ bh=cR8L9DGP3yJSDi44x8gY1TGjdeDaEHMP44/lzSW8rUQ=;
+ h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
+ In-Reply-To:Content-Type;
+ b=uZ1YNzHChHmCeH+THODOAPEsCaIwQg65eSDPPYJu4McYWuq9pumNDgtR2wYIVQVuv
+ DPDYLKURuGTvJTBPwPrbBQaoNKxezHUDyHTqrQaTItMXmgYe2surs3nryfu7KO8xx2
+ 7I8aYTM52kGQOjrDfYswCL8R8oVQcsC1KqlJwJ2uVSURDAItNG0VU/L+Ox78/5kHXX
+ Dv7VVWdLh4GXZntNWj9L9SuNn89F+nHaWwkskyS8sNivhioMmQtFKTFvCL4jpAvkzV
+ uBi92J7/cpR/mvKx6L1DDTTBTbQ5IffRfysUHPrP7BGKuFVfiE0SuCGTqt2OXHO8aF
+ MwCqZfGfJcYkw==
+Received: by mail-ed1-f72.google.com with SMTP id
+ r28-20020a50aadc000000b00418572a365bso3442018edc.0
+ for <linux-phy@lists.infradead.org>; Mon, 14 Mar 2022 03:41:29 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=cR8L9DGP3yJSDi44x8gY1TGjdeDaEHMP44/lzSW8rUQ=;
+ b=28Acz/UJ8pZdMeVnF8t5q0Qw5YF3WaUJly5xl9QIfk6RvSW8cE6NggDWwxZBdLhj3e
+ ypsKU5Y27X1IJamOlQ7ueXEueZE7llyPCl5qPQIWZ+4E5nVndL2VqutHvi9ILy7VYr5g
+ POa858u2UtCnsK3J+W7XJsICM62Mhk/WHoaS3/FmWrbZw9iF54bt1MJzogdd5l5cyhd5
+ aQtWFwiXo4R5PJPmsJlC2ku/jef9lcDpwSl+qbA6CbBEetLrZit73KGG9uxcHno7o89M
+ 3D9zt8FVl0c94qCocVt8MGvylN6BElaFngVSYgDpXCc/rMI0N8QTHIsGS8EL56NQ4bR9
+ pc+A==
+X-Gm-Message-State: AOAM5323Tu3rYTGBLvOQfeZ5/GoZqAybbWzfW3cKQOoXvg+hqTF0gOZW
+ kaqa6fRvRef2jeioxoJSCW12nlJmLjI2t3Ua8NWzTinXacfWYXjn+lEjiNSF3hvsh4StxC8Bi9p
+ c36juqmiBMWHP8YR/Km81TiiQ82DdXahp5l0h+Mz3vSY=
+X-Received: by 2002:a17:906:c116:b0:6d6:f8b3:cd47 with SMTP id
+ do22-20020a170906c11600b006d6f8b3cd47mr18639523ejc.501.1647254489232; 
+ Mon, 14 Mar 2022 03:41:29 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxSOTbmSAF6uG3GM22YAt0E/KC7wWNF2wsOIEvYm9csbBjNR+5AfgsSfbdmR5FElce7jWg1qA==
+X-Received: by 2002:a17:906:c116:b0:6d6:f8b3:cd47 with SMTP id
+ do22-20020a170906c11600b006d6f8b3cd47mr18639508ejc.501.1647254489015; 
+ Mon, 14 Mar 2022 03:41:29 -0700 (PDT)
+Received: from [192.168.0.152] (xdsl-188-155-174-239.adslplus.ch.
+ [188.155.174.239]) by smtp.googlemail.com with ESMTPSA id
+ er12-20020a056402448c00b00413d03ac4a2sm7380218edb.69.2022.03.14.03.41.27
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 14 Mar 2022 03:41:28 -0700 (PDT)
+Message-ID: <fadbc93f-8741-58c6-d0e5-dc740e0f0724@canonical.com>
+Date: Mon, 14 Mar 2022 11:41:27 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
 Subject: Re: [PATCH v2 1/3] dt-bindings: phy: qcom, usb-snps-femto-v2: Add phy
  override params bindings
-Message-ID: <20220314103045.GA31533@hu-pkondeti-hyd.qualcomm.com>
+Content-Language: en-US
+To: Pavan Kondeti <quic_pkondeti@quicinc.com>
+Cc: Sandeep Maheswaram <quic_c_sanm@quicinc.com>,
+ Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Wesley Cheng <wcheng@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
+ Doug Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+ devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, quic_ppratap@quicinc.com,
+ quic_kriskura@quicinc.com
 References: <1646288011-32242-1-git-send-email-quic_c_sanm@quicinc.com>
  <1646288011-32242-2-git-send-email-quic_c_sanm@quicinc.com>
  <b793195b-1d3d-63b2-19d2-72ae2aec8c0f@canonical.com>
@@ -74,16 +102,12 @@ References: <1646288011-32242-1-git-send-email-quic_c_sanm@quicinc.com>
  <c88396f4-4cfe-d375-1dcd-b34a6496cb06@canonical.com>
  <20220314094054.GB28402@hu-pkondeti-hyd.qualcomm.com>
  <b45b3b7e-e1c0-79b6-81c0-53c70427dd10@canonical.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b45b3b7e-e1c0-79b6-81c0-53c70427dd10@canonical.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+ <20220314103045.GA31533@hu-pkondeti-hyd.qualcomm.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+In-Reply-To: <20220314103045.GA31533@hu-pkondeti-hyd.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220314_033059_289059_5EB5A773 
-X-CRM114-Status: GOOD (  48.18  )
+X-CRM114-CacheID: sfid-20220314_034131_501809_162BD465 
+X-CRM114-Status: GOOD (  30.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,176 +124,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
+On 14/03/2022 11:30, Pavan Kondeti wrote:
+> Hi Krzysztof,
+> 
+>>
+>> Ah, I did not get it. That's not the solution for this case. defines in
+>> dt-bindings are for constants which already can be in DT, e.g. IDs. Your
+>> register values should not be stored in DT.
+>>
+> These are again not register definitions. These are encodings that dT and
+> driver can use. These would be constants only, no?
 
-On Mon, Mar 14, 2022 at 11:08:05AM +0100, Krzysztof Kozlowski wrote:
-> On 14/03/2022 10:40, Pavan Kondeti wrote:
-> > Hi Krzysztof,
-> > 
-> > Thanks for your suggestions and guidance on this.
-> > 
-> > On Mon, Mar 14, 2022 at 09:36:02AM +0100, Krzysztof Kozlowski wrote:
-> >> On 14/03/2022 09:16, Pavan Kondeti wrote:
-> >>> Hi Krzysztof,
-> >>>
-> >>> On Mon, Mar 14, 2022 at 08:39:57AM +0100, Krzysztof Kozlowski wrote:
-> >>>> On 14/03/2022 04:29, Pavan Kondeti wrote:
-> >>>>> Hi Krzysztof,
-> >>>>>
-> >>>>> On Thu, Mar 03, 2022 at 04:59:22PM +0100, Krzysztof Kozlowski wrote:
-> >>>>>> On 03/03/2022 07:13, Sandeep Maheswaram wrote:
-> >>>>>>> Add device tree bindings for SNPS phy tuning parameters.
-> >>>>>>>
-> >>>>>>> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-> >>>>>>> ---
-> >>>>>>>  .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 125 +++++++++++++++++++++
-> >>>>>>>  1 file changed, 125 insertions(+)
-> >>>>>>>
-> >>>>>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> >>>>>>> index 0dfe691..227c097 100644
-> >>>>>>> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> >>>>>>> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> >>>>>>> @@ -50,6 +50,131 @@ properties:
-> >>>>>>>    vdda33-supply:
-> >>>>>>>      description: phandle to the regulator 3.3V supply node.
-> >>>>>>>  
-> >>>>>>> +  qcom,hs-disconnect:
-> >>>>>>> +    $ref: /schemas/types.yaml#/definitions/uint32
-> >>>>>>> +    description:
-> >>>>>>> +      This adjusts the voltage level for the threshold used to
-> >>>>>>> +      detect a disconnect event at the host. Possible values are.
-> >>>>>>
-> >>>>>> ':', instead of full stop.
-> >>>>>>
-> >>>>>>> +      7 -> +21.56%
-> >>>>>>> +      6 -> +17.43%
-> >>>>>>> +      5 -> +13.32%
-> >>>>>>> +      4 -> +9.73%
-> >>>>>>> +      3 -> +6.3
-> >>>>>>> +      2 -> +3.17%
-> >>>>>>> +      1 -> 0, Design default%
-> >>>>>>
-> >>>>>> Use "default:" instead. Here and in other places.
-> >>>>>>
-> >>>>>>> +      0 -> -2.72%
-> >>>>>>
-> >>>>>> In current form this should be an enum... but actually current form is
-> >>>>>> wrong. You should not store register values in DT. What if next version
-> >>>>>> of hardware has a different meaning of these values?
-> >>>>>>
-> >>>>>> Instead, you should store here meaningful values, not register values.
-> >>>>>>
-> >>>>>
-> >>>>> Thanks for the feedback.
-> >>>>>
-> >>>>> The values in % really makes the tuning easy. People look at the eye diagram
-> >>>>> and decided whether to increase/decrease the margin. The absolute values
-> >>>>> may not be that useful. All we need is an "adjustment" here. The databook
-> >>>>> it self does not give any absolute values.
-> >>>>>
-> >>>>> I agree to the "enum" suggestion which we have been following for the
-> >>>>> qusb2 driver already. 
-> >>>>>
-> >>>>> The values have not changed in the last 5 years for this hardware block, so
-> >>>>> defining enums for the % values would be really helpful. 
-> >>>>
-> >>>> I did not say you cannot store here percentages. Quite opposite - store
-> >>>> here the percentages. Just do not store register value. No. Please read
-> >>>> my comment again - meaningful values are needed.
-> >>>>
-> >>>
-> >>> IIUC, you are asking us to come up with a meaningful values to encode the
-> >>> percentage values. However, all the % increments are not linear, so we can't
-> >>> come up with {min, max} scheme. Lets take an example of hostdisconnect
-> >>> threshold.
-> >>>
-> >>> As per the data book,
-> >>>
-> >>> +      7 -> +21.56%
-> >>> +      6 -> +17.43%
-> >>> +      5 -> +13.32%
-> >>> +      4 -> +9.73%
-> >>> +      3 -> +6.3
-> >>> +      2 -> +3.17%
-> >>> +      1 -> 0, Design default%
-> >>> +      0 -> -2.72%
-> >>>
-> >>> so how do we give meaningful values here? Does the below scheme make sense
-> >>> to you?
-> >>
-> >> By "meaningful value" I mean something which has a understandable
-> >> meaning to reader of this code or to hardware designer. For example
-> >> percentage values or some units (ms, ns, Hz, mA, mV). The value used in
-> >> register is not meaningful in that way to us because it has a meaning
-> >> only to the hardware block. Storing register values is more difficult to
-> >> read later, non-portable and non-scalable.
-> >>
-> >>>
-> >>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_NEG_2P72	(-272)
-> >>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_DEFAULT	0
-> >>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_3P17	317
-> >>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_6P3	63
-> >>
-> >> This is some define in driver, does not look related to bindings.
-> >>
-> >>> In the driver, we have a mapping (which can be per SoC if required in future)
-> >>> that takes these values and convert to the correct values for a given
-> >>> register.
-> >>
-> >> You focus on driver but I am talking here only about bindings.
-> > 
-> > I was saying we define those defines in include/dt-bindings/phy/... header and
-> > use it in the device tree and as well in the driver.
-> 
-> Ah, I did not get it. That's not the solution for this case. defines in
-> dt-bindings are for constants which already can be in DT, e.g. IDs. Your
-> register values should not be stored in DT.
-> 
-These are again not register definitions. These are encodings that dT and
-driver can use. These would be constants only, no?
+What do you mean it is not a register value? I don't have access to
+datasheet/manual but I can clearly see code:
 
-> > 
-> >>
-> >> What could be the meaningful value? Percentage could work. You have
-> >> there a negative value, so I wonder what type of percentage is it? What
-> >> is the formula?
-> > 
-> > I just multiplied by 100 since device tree has no support for floating (as per
-> > my knowledge). The negative value represents it lowers the disconnect
-> > threshold by 2.72% of the default value. if it makes sense, we could also
-> > start from 0 like below.
-> 
-> ok
-> 
-> > 
-> > #define QCOM_SNPS_FEMTO_HS_DISCONNECT_NEG_2P72_PCT 0
-> > #define QCOM_SNPS_FEMTO_HS_DISCONNECT_DEFAULT	1
-> > #define QCOM_SNPS_FEMTO_HS_DISCONNECT_3P17_PCT	2
-> > #define QCOM_SNPS_FEMTO_HS_DISCONNECT_6P3_PCT	3
-> > 
-> > The driver can have a table to map these bindings. This looks much better
-> > than those x100 formula values.
-> 
-> Again mention driver how he can map it. I mostly don't care about the
-> driver. :)
-> 
-> I think we are getting around the problem, so to emphasize again: do not
-> store register values in the bindings/DT but its meaning, so in your
-> case most likely percentages (or permille or ratio or some other value).
-> 
++	if (or->hs_disconnect.override)
++		qcom_snps_hsphy_write_mask(hsphy->base,
++			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0,
++			HS_DISCONNECT_MASK,
++			or->hs_disconnect.value << HS_DISCONNECT_SHIFT);
 
-I am really confused on what is that you mean by not storing the registers
-here. We are only giving enum values for specific percentages supported by
-the PHY. if you see -2.72 corresponds to 0 value on 0:2 bits of a register.
-I did not mention that in the device tree. we are giving constant values
-(enums) for all the possible percentage values. The user can see the
-dt-bindings file and pass the approriate value based on the compliance
-results. What is the objection?
+You read the value from DT (e.g. "3" which means 6.3% for hs-disconnect)
+and you write it to a register. Directly. 3 is a value for the hardware,
+meaningless outside of it. It has meaning only in this one hardware
+programming model. For humans it means nothing. For humans 6.3% means
+something.
 
-can you please give an example if you have something in mind? 
+>>>
+>>>>
+>>>> What could be the meaningful value? Percentage could work. You have
+>>>> there a negative value, so I wonder what type of percentage is it? What
+>>>> is the formula?
+>>>
+>>> I just multiplied by 100 since device tree has no support for floating (as per
+>>> my knowledge). The negative value represents it lowers the disconnect
+>>> threshold by 2.72% of the default value. if it makes sense, we could also
+>>> start from 0 like below.
+>>
+>> ok
+>>
+>>>
+>>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_NEG_2P72_PCT 0
+>>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_DEFAULT	1
+>>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_3P17_PCT	2
+>>> #define QCOM_SNPS_FEMTO_HS_DISCONNECT_6P3_PCT	3
+>>>
+>>> The driver can have a table to map these bindings. This looks much better
+>>> than those x100 formula values.
+>>
+>> Again mention driver how he can map it. I mostly don't care about the
+>> driver. :)
+>>
+>> I think we are getting around the problem, so to emphasize again: do not
+>> store register values in the bindings/DT but its meaning, so in your
+>> case most likely percentages (or permille or ratio or some other value).
+>>
+> 
+> I am really confused on what is that you mean by not storing the registers
+> here. We are only giving enum values for specific percentages supported by
+> the PHY. 
 
-Thanks,
-Pavan
+The enum consists of values used in hardware registers. Values having
+meaning only to this one particular hardware. Any other hardware will
+not understand them.
+
+IOW, you embed the hardware programming model in the DT. No.
+
+> if you see -2.72 corresponds to 0 value on 0:2 bits of a register.
+> I did not mention that in the device tree. we are giving constant values
+> (enums) for all the possible percentage values. The user can see the
+> dt-bindings file and pass the approriate value based on the compliance
+> results. What is the objection?
+
+You use some unrelated arguments. How does it matter what user can see
+or cannot see?
+
+> 
+> can you please give an example if you have something in mind? 
+
+I gave you an example - use percentages. Another example how it was done
+wrong is here:
+https://lore.kernel.org/linux-devicetree/c6607953-927e-4d85-21cb-72e01a121453@kernel.org/
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
