@@ -4,68 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E431DC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Mar 2022 10:52:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BCDFC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Mar 2022 11:00:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
+	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zjp7Y4yoxr9C4Xm21sqZb/TBG67Ik2jHW6+p3sOHhXs=; b=DiSLIkXzh967bo
-	bB0pQ4gYYt9dmOdp2wy6q5wZa/X62QW6XUTZYeg6IIxJOhK6b8FqtFdQps7x+Sa1xvyVdxGhg4va8
-	rCcaZxgNwmqL/P5Rnj8hNjzagZXil0xt5VcajrdVw2haVle2M0uGpRpbxy7ml6MJPqn2kptFTk72N
-	buDtFfkSlzxPySwb+cZw1ktgJE2rVvgxt/ioXA0FN04bv9LKueJOa7rOO8fJaU43W1BOVKAmDtGBt
-	RHyfYZ9/IQxcWuud14Dqv5FaBdJ3GQtRd+wQuWRuInfS03QIzgyT26YHARBz/O/obFuO4ekFuXbN1
-	Hb24f/Otz5Ep1Qz/s3EA==;
+	List-Owner; bh=aq2/33WcGK9IyWTaCxZ6VQvSU4nGAPg8RgP3MLxbLCE=; b=oBRk51KDaMtDUN
+	QiCoLrwfqWEbnlP76nAfMyLH4FUd1VrNlRFeQAqInW8d9GquA5GkQinSAPEH/fsUTsSMvfCYcWd51
+	jUVAH8lv6Io/mgYXy8VKeMBFS77aNnNbnHbCe39SrmukudgiTmH2/PiNxmgDJUBmeF596TF4r4Own
+	7fnR3JUpryf6PF1A3O2j8nxmoc5sxLZ5rkDQ7iGAhYL5xZQKjoZ2jJNFHoiTp219xg0TzcwKngY/D
+	f+g8x2PJmqK2EpHyck8lu+kwAaC9ecSdrJC+K5QIbA+tCZMzqMtDOhvyCwP+0fKdrHvW/FvLxFePu
+	SkEYtlld8T4TTHaVv/uQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nTiJr-0052qz-BJ; Mon, 14 Mar 2022 10:52:55 +0000
-Received: from phobos.denx.de ([85.214.62.61])
+	id 1nTiR1-0054vR-Ep; Mon, 14 Mar 2022 11:00:19 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nTiJf-0052p9-Ea; Mon, 14 Mar 2022 10:52:44 +0000
-Received: from [127.0.0.1] (p578adb1c.dip0.t-ipconnect.de [87.138.219.28])
- (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits))
+ id 1nTiQy-0054uY-Bp
+ for linux-phy@lists.infradead.org; Mon, 14 Mar 2022 11:00:18 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- (Authenticated sender: marex@denx.de)
- by phobos.denx.de (Postfix) with ESMTPSA id 9136280330;
- Mon, 14 Mar 2022 11:52:40 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=denx.de;
- s=phobos-20191101; t=1647255161;
- bh=5LJfyKl6PzxNG0htYRXW3sEniRHspsUvmRKFeP8A+L4=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=Mc4QGDcX2Ph1aWmW5mOzHh0xq00oV/UZafV+6F9dLv42bJ0/M6izmOGjkEIkoTM/o
- pns47sWzhuX8sqEnx0wXVZ34wrZYWMl6E5GnJd0HjcO06jD+N8/dxoArGg2pjJHaYK
- a0JOlKn8urxrF5ESUS+bxb+W+17i5p70ain6GIEfaDDmKt4UoAMQVCn7oOyxQh4C02
- e7vfPOcBTdmbJS8diKasFqVMAU/6TeauJOpfWaX7EpyerUM37bP4yanzcRfe9/ZXNv
- dBuSuwjd99bsekmuJrKu+SOaXSc9ALF3k+t2Mh03bk/GYNfdPEmxbDdgvdD+xGfMzO
- 9CgwfDiJ42WcQ==
-Message-ID: <49b1d398-c422-80f4-231e-a04776358871@denx.de>
-Date: Mon, 14 Mar 2022 11:52:40 +0100
+ by ams.source.kernel.org (Postfix) with ESMTPS id 087DEB80D5B;
+ Mon, 14 Mar 2022 11:00:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id C6A85C340ED;
+ Mon, 14 Mar 2022 11:00:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1647255613;
+ bh=IiJhlYhZ6g/TA/bacm+eqYg+DkQp9+bkqaktgR5tNaM=;
+ h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
+ b=qZCXU+SIvg6ejPfjxgFwM94cwUr+dGrbSxKdwLCR582qjnMu4VvxbyChoa5R0+Kyy
+ CUhGsIXxr4u5VruBHQBwcQSzebAWtC0e+pt/9IMyEtJpVA/7hixf+ixW8RrsG9rqCz
+ rVgk2dDs7mEghjiR2R4IqYNPLfLzlc22fs0y7t6EHkksjrhqLjBv68PtshoiTwJZ27
+ SHx7PM1I0NLAGBuWurySVzSF/uwHLhrvb4PR5reHMI/VJRm9kXk5BDPpswg5dC02am
+ xkJ6O5ZkijqHch311ICB4xJ7Muq3Oke2n69Cq7pROywKk1sK7GQktXgBJHrA2r9aCT
+ Cnjs16i6Y8jPQ==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org
+ (localhost.localdomain [127.0.0.1])
+ by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id
+ A7636EAC095; Mon, 14 Mar 2022 11:00:13 +0000 (UTC)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.6.2
-Subject: Re: [PATCH] phy: freescale: imx8m-pcie: Handle
- IMX8_PCIE_REFCLK_PAD_UNUSED
-Content-Language: en-US
-To: Hongxing Zhu <hongxing.zhu@nxp.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
-Cc: Fabio Estevam <festevam@denx.de>, Kishon Vijay Abraham I <kishon@ti.com>, 
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- dl-linux-imx <linux-imx@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20220312013812.169671-1-marex@denx.de>
- <AS8PR04MB86766F6033FF0FDAB1E0693B8C0F9@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <7ebd66d1-0b16-9b6b-ff0a-4901f054217a@denx.de>
- <AS8PR04MB86760D239565D852334A95F28C0F9@AS8PR04MB8676.eurprd04.prod.outlook.com>
-From: Marek Vasut <marex@denx.de>
-In-Reply-To: <AS8PR04MB86760D239565D852334A95F28C0F9@AS8PR04MB8676.eurprd04.prod.outlook.com>
-X-Virus-Scanned: clamav-milter 0.103.5 at phobos.denx.de
-X-Virus-Status: Clean
+Subject: Re: [PATCH net-next v5 0/8] dpaa2-mac: add support for changing the
+ protocol at runtime
+From: patchwork-bot+netdevbpf@kernel.org
+Message-Id: <164725561368.8211.12808979702945617706.git-patchwork-notify@kernel.org>
+Date: Mon, 14 Mar 2022 11:00:13 +0000
+References: <20220311212228.3918494-1-ioana.ciornei@nxp.com>
+In-Reply-To: <20220311212228.3918494-1-ioana.ciornei@nxp.com>
+To: Ioana Ciornei <ioana.ciornei@nxp.com>
+Cc: davem@davemloft.net, kuba@kernel.org, netdev@vger.kernel.org,
+ kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, leoyang.li@nxp.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux@armlinux.org.uk, shawnguo@kernel.org, hongxing.zhu@nxp.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220314_035243_676047_BA332563 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20220314_040016_565697_F223DD0A 
+X-CRM114-Status: GOOD (  16.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,44 +73,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/14/22 04:29, Hongxing Zhu wrote:
+Hello:
 
-[...]
+This series was applied to netdev/net-next.git (master)
+by David S. Miller <davem@davemloft.net>:
 
->>>> Signed-off-by: Marek Vasut <marex@denx.de>
->>> Hi Marek:
->>> Thanks for your patch.
->>> I assume that you had tested this IMX8_PCIE_REFCLK_PAD_UNUSED option.
->>
->> Yes
->>
->>> The CLK_N/P pads are not connected on the tested board, right?
->>
->> They are connected from MX8MP SoC to MiniPCIe slot.
->> There is no external clock source like on the EVK, the MX8MP internal PLL is
->> the clock source.
->>
-> Got that, thanks.
-
-btw. if you plan to resend the MX8MP PCIe patches (assuming they didn't 
-get applied yet), CC me, I can provide a Tested-by .
-
->>> BTW, it's better to add the Fixes tag into the commit log.
->>
->> Do you think this should be considered a bugfix ?
-> Emm...
-> It's reasonable to consider it as new added.
-> Okay, I'm fine with it. Thanks again for your patch.
+On Fri, 11 Mar 2022 23:22:20 +0200 you wrote:
+> This patch set adds support for changing the Ethernet protocol at
+> runtime on Layerscape SoCs which have the Lynx 28G SerDes block.
 > 
-> Reviewed-by: Richard Zhu <hongxing.zhu@nxp.com>
+> The first two patches add a new generic PHY driver for the Lynx 28G and
+> the bindings file associated. The driver reads the PLL configuration at
+> probe time (the frequency provided to the lanes) and determines what
+> protocols can be supported.
+> Based on this the driver can deny or approve a request from the
+> dpaa2-mac to setup a new protocol.
+> 
+> [...]
 
-Let's wait for others' opinion, I'm really unsure whether this is a 
-Fixes: or not.
+Here is the summary with links:
+  - [net-next,v5,1/8] phy: add support for the Layerscape SerDes 28G
+    https://git.kernel.org/netdev/net-next/c/8f73b37cf3fb
+  - [net-next,v5,2/8] dt-bindings: phy: add bindings for Lynx 28G PHY
+    https://git.kernel.org/netdev/net-next/c/c553f22e0531
+  - [net-next,v5,3/8] dpaa2-mac: add the MC API for retrieving the version
+    https://git.kernel.org/netdev/net-next/c/38d28b02a08e
+  - [net-next,v5,4/8] dpaa2-mac: add the MC API for reconfiguring the protocol
+    https://git.kernel.org/netdev/net-next/c/332b9ea59e56
+  - [net-next,v5,5/8] dpaa2-mac: retrieve API version and detect features
+    https://git.kernel.org/netdev/net-next/c/dff953813e7d
+  - [net-next,v5,6/8] dpaa2-mac: move setting up supported_interfaces into a function
+    https://git.kernel.org/netdev/net-next/c/aa95c3711241
+  - [net-next,v5,7/8] dpaa2-mac: configure the SerDes phy on a protocol change
+    https://git.kernel.org/netdev/net-next/c/f978fe85b8d1
+  - [net-next,v5,8/8] arch: arm64: dts: lx2160a: describe the SerDes block #1
+    https://git.kernel.org/netdev/net-next/c/3cbe93a1f540
+
+You are awesome, thank you!
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/patchwork/pwbot.html
+
+
 
 -- 
 linux-phy mailing list
