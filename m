@@ -4,72 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A0DBC433F5
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Mar 2022 16:16:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 293ABC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Mar 2022 01:51:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4dntyLeJPNXY1O+5RLpOlsfGfiGomziDfEhY3bNV9zg=; b=CHDd8hO4oIbPHW
-	YHPfcPXTAhKScBryT5v6PMfSD5IlvqZPhB/asyqAs3V8TZVFuVD6GfrcsbedKhDegPf2xPYmD8dGH
-	0KK2ILeWPBDbGzeQey1nrif92sswlO0GrLGa+TQ5EJIYaau55auaoloQY7vr508QsEUR+Sa0S3MX3
-	YNI/ChsmzWr+cwHuFqxSHDhQxfbOcUSmyh+uILTorkcGGfck2HPvuJLt9wdpZMiiJQKx/uJwHkC2X
-	FbLRZZdVj74uyv0TUHtO89VWuoNv9Ud2sQUkhASnUITCzcE9kM16cUccGQSUm4p/orCRm4qhgv8ss
-	GbT0IzjGpAhOiXR/S6/Q==;
+	List-Owner; bh=yZ9QriGv7silUjqhYHjRm3UvlRaaxGAwVK49JUotkGQ=; b=Gzm6oGz3V4moon
+	vakX46t5O3RfWFX3Kir7ALSzPYHNMz2AgSdRwKuZ5KGHS7x9wbLNGhqYdRAtR7+DV6/SnIqFWQ0us
+	TPRWJloYIDLDlZ3Vuka9YIr0njdUXfIjBlPUHQliNWsehMcyxULm09QvEcrF7Th2u9iBb/0Wtt7oF
+	xzPUj2/pZQd8A1FscXQ4Z7TTCKlOWbBsoTbneW0iN1BgP3iBsMzP6WRr8BUjs1soYoo1i5br6yy5A
+	cSQPdwzgKffS/n0M+pyz2Bmp48eJBCzr4NfUnkDK1lP2QSLqHkP9VBgYIyc9STpn7W0RpIdXuiXFA
+	BuOO55BSY9YsmVl5nGEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nTQt4-00385m-OK; Sun, 13 Mar 2022 16:16:06 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1nTZrh-003aAm-Gw; Mon, 14 Mar 2022 01:51:17 +0000
+Received: from mail-vi1eur05on2060a.outbound.protection.outlook.com
+ ([2a01:111:f400:7d00::60a]
+ helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nTQsr-00382W-JH; Sun, 13 Mar 2022 16:15:56 +0000
-Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi
- [62.78.145.57])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 35208475;
- Sun, 13 Mar 2022 17:15:51 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1647188151;
- bh=kDZteoz/vLxKC+dAc2am0kAxaFB6dCfEEzjUoN5FEUo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kQpErlASlVm7jSj0F9neo0lEN2wjXCTNUnaDvyeaUi2BI/dx4jn7AAUpcNFsC4Pk9
- mc2xEv+/942NbznabvxF4qxzWyY+FSiMUkRSyPH08kkQTybqbif/AqMAQ2IoyOTVbx
- iZykGMLNYTDnXyqt44OoTJBPrYn46pyObsQRhjoA=
-Date: Sun, 13 Mar 2022 18:15:34 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Cc: Sakari Ailus <sakari.ailus@linux.intel.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-staging@lists.linux.dev,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2 61/66] dt-bindings: media: Add Allwinner A31 ISP
- bindings documentation
-Message-ID: <Yi4YpnMWguEMWYaA@pendragon.ideasonboard.com>
-References: <YgE/+UmP4nJVxtRT@pendragon.ideasonboard.com>
- <YgqAv2vLimYgRwDS@aptenodytes>
- <YgqM3ZdMfEz+ZKo/@pendragon.ideasonboard.com>
- <Ygt8LF8qx3rnxlgp@aptenodytes>
- <Ygt9j+rwEC+2aUjH@pendragon.ideasonboard.com>
- <Yh4+E9el5NdQ7qJq@aptenodytes>
- <YiH/kLakb/GOaYIT@pendragon.ideasonboard.com>
- <YiIa1SRFhtvURTbN@aptenodytes>
- <YiIdo4PF/5smLocf@pendragon.ideasonboard.com>
- <YitZ6y2JoNzeHUrp@aptenodytes>
+ id 1nTZrf-003aA4-4m; Mon, 14 Mar 2022 01:51:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DFI9I3Q+2QYk7K1qSfIqi+1VcSzJ4+NXx/XbHVy1nAfkecDMnBuhpwsCmzDUv1ga2bJwDFwAx4cKJRt+s8SvLR4h/yUS82RiCgoXQOD47A+Ixao80QuOFoEAeTssnAz7QGs3fKZy6eafXvIeDJxuaX6fVdTBJ3i8IllqKNRv2yDf3E9GeQGkyRnsNNSMr1Lc35RXQIQnSXt6tZhCrh/OeDXUWYQZkx+JDk6UQlTK+/6aX1gTytwLNrdjCZdYbyuA6rV0KJ/nt8mqXS5VH5Ktl/7DHUu6w7n97QJXQ9awYHHZQ94c69pdMKmWIMl4zWWLwTf4FCdb6fR/9um2MUJ4Rw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=hxgsk3ewk3Ucal9ioCqqI0SaWmS/bBDkJ+u9cojtU0g=;
+ b=ciXV/NHhM4cOdqffgUY5hRB9pP2V8nGI56TvtUJRC6fAXjrH/Bo+vhKRQvv1Dy+8NN7sk1yv+byRTYK1rM0qDw/vPV13FGJH5mlPAH0+23cLdSAJsqIAP2EkGC2onLUys3zmI48yP6EbiCTHb8mDkruJhEWxXFM2Q3JMRPsfBG+hy5AlXsWE0C5tZsSih49wncc6YX3G9NeYG9r/BRkeenWOlINRRicgyT0cKwbbNXZM3I7jja7ZBo4JqDaedA3b57xFdeqTIXfcpV5tsYWp43R44CEICG4GcRml/g13vsmlfaEDEKwEnJZMJVXZDniF1hYKw0yFXaJErDiUrMW5wQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hxgsk3ewk3Ucal9ioCqqI0SaWmS/bBDkJ+u9cojtU0g=;
+ b=IWBdwMgnm7K7yuJWXwbQZqXkK3E+xQMP9Jnc6IrM5r/oumfmGHoaNIhau6zUQvHnezi5LwxLc4uHKkP1z2hpsxseqL/It7wLNnTpyUedwGnVtHBVHHf9SjuemI4zUEMecqYxx26XKsFGNc50qaDJckTwu2XPIRfZST3hj/PZKcg=
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
+ by VE1PR04MB7312.eurprd04.prod.outlook.com (2603:10a6:800:1a5::6)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5061.28; Mon, 14 Mar
+ 2022 01:51:08 +0000
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::f4f1:fe49:d19e:4770]) by AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::f4f1:fe49:d19e:4770%9]) with mapi id 15.20.5061.028; Mon, 14 Mar 2022
+ 01:51:08 +0000
+From: Hongxing Zhu <hongxing.zhu@nxp.com>
+To: Marek Vasut <marex@denx.de>, "linux-phy@lists.infradead.org"
+ <linux-phy@lists.infradead.org>
+CC: Fabio Estevam <festevam@denx.de>, Kishon Vijay Abraham I <kishon@ti.com>, 
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, dl-linux-imx
+ <linux-imx@nxp.com>, Peng Fan <peng.fan@nxp.com>, Shawn Guo
+ <shawnguo@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] phy: freescale: imx8m-pcie: Handle
+ IMX8_PCIE_REFCLK_PAD_UNUSED
+Thread-Topic: [PATCH] phy: freescale: imx8m-pcie: Handle
+ IMX8_PCIE_REFCLK_PAD_UNUSED
+Thread-Index: AQHYNbHivMio6URy9EinOynKWYH9Pqy+E49A
+Date: Mon, 14 Mar 2022 01:51:08 +0000
+Message-ID: <AS8PR04MB86766F6033FF0FDAB1E0693B8C0F9@AS8PR04MB8676.eurprd04.prod.outlook.com>
+References: <20220312013812.169671-1-marex@denx.de>
+In-Reply-To: <20220312013812.169671-1-marex@denx.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 864aa4fd-1456-4e6d-90cf-08da055d1bd1
+x-ms-traffictypediagnostic: VE1PR04MB7312:EE_
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-microsoft-antispam-prvs: <VE1PR04MB7312D3811CB6DDE74AF4F6A38C0F9@VE1PR04MB7312.eurprd04.prod.outlook.com>
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: +fmskFZ0H013Z66JkBSXSew8I85WDBeori2cTJY6dAMdlzmPA8OzHYlu9wqnjThOsXQKOeYSMc5zQdlPH1J1LHayq4W3LMbMLiGNKe6TmNcSwmUKpjK0J/epKBEbkPvnGR8SiAGS7ya8LEO1dRQgRT4zAXxwXx8+Z4eLl3zrcXuavS1ZzNfKSq+JIpQV0as9ynn0tFPc7GkA4g2wBIXMJGuQ7HINf1tfInmVaVK59th3AiGgdRCmnbOpqh0FExN6GfauDzuiodovY1pE65DXtm9GEcMVLqX6veAkG13nQaijJOqnDPqj87ZdclZr19L33Xz/Cyk+VEMQbR65a6pjEEOh+buGzr/HHu5eDa12GM2JfuhyKvkdLqgc/yyvgZ5SYwBpPpl4qsqCZWEzz25+zIDnLe4WyeYEuCXK77RvQ11kvxotxhSd2nJBT33cZtrsbsOXCr9LcgGhnT2VSvy6lPedTF151nssebTOrvY5u030sFssnO0zpCvOYyPmE+W+cSD14+DQ845PWMpHUAtLT107qjUrDS8U4ZxMbHM9nEfTfELjUGBeilAHStdJTZ4KFmGJB6AKQ0bVoBBDRIl/moDcB0V1xZdRrX7jP3fcVg9hl8waAxxrMPSRWtsguMmAYQ2MgjABruOYl6CTVy6nlp3InfitvuCiVJ5X2VAHcFceSdYKMuJa67bm8ceNJPQJTrT1JYFbCsV4N/lFMDysb+xxYPh3IcC+MebEn+mSdy0=
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AS8PR04MB8676.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230001)(4636009)(366004)(53546011)(6506007)(7696005)(4326008)(8676002)(9686003)(66946007)(66446008)(64756008)(38100700002)(66476007)(76116006)(55016003)(66556008)(83380400001)(122000001)(186003)(2906002)(26005)(54906003)(316002)(508600001)(110136005)(44832011)(52536014)(38070700005)(71200400001)(33656002)(86362001)(8936002)(5660300002)(32563001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?gb2312?B?TFd6Qlg0aS85UlRaekQvQXUwYTN1RjhqeE12VlZlYUFEK0ZreDVuY3dNRlpy?=
+ =?gb2312?B?ZkhkNXo0Rzl5akpZVGs5VjFoZmpBR1JlVGdubCtIZzRDMnhibGZmSVVFSUJr?=
+ =?gb2312?B?T3R2MW5DbXVNVDBSejNrMFcxdmZTR2ZuczUyWkRKZ1lLZjhpNmxOY2owSWlX?=
+ =?gb2312?B?UUFLMTUyUVYydjMzTEx4K2dNTDdiU2pqY2VkRzVTU1ZpSXRCMURJbWE2VW1s?=
+ =?gb2312?B?V09BQjNwR08rME4yWnMybTdNcnQzdDBxQ3Fkb29hbVJ1YzBiOUM0Q29mWGp0?=
+ =?gb2312?B?SC9jQldtdXpCQ1J2TkJzMFBrUjNjQkpRUWVqNy8xT0JUU2p5YWJ0RjgweFR1?=
+ =?gb2312?B?TkJvNW5HdC80WSsxUWtFWlV0TkZRd3dZOTlDSUlJeERqc2RGT3A4bVlGUThv?=
+ =?gb2312?B?WGQyekI0UitQSUt5U3lyM3cweFR0ajVUWG4rMTg2bVY0SkJvUnFTakhqT0Nk?=
+ =?gb2312?B?a2VZSDhSK0RML1I3M0hvR0ZOaFhmSDFKZzd4ckgzTE1UaXNRMVpILzU5VHVj?=
+ =?gb2312?B?Wjhwa0dUV05FKy8yTkg4aVdlc2dZbWVmVnlSZGhwek1YL1pGcDQxZnhVcStj?=
+ =?gb2312?B?MGJyK1Z3eUxKcFRLVFJiYlJVNWNacW5qSDY5K01YcW1lbmdKTEorREN6RS9h?=
+ =?gb2312?B?NitiKzB0b3gvYnlSVDNuVFk3RTUxbnRiUUJ2d0JNQm1MWG5jZGhCVExzQlJR?=
+ =?gb2312?B?OGxNcW9WemtSaGUrK3hHM0NacVVKSFhsNlh0NDJyc1BURTFRamg5ZFRURXJP?=
+ =?gb2312?B?R3BoZ28vRzhBVG5IcjBod0RCMEhjSFZiODlycXJzK3VLRUZQS0l5bk50QXVs?=
+ =?gb2312?B?R2RWalliUzVRV0Z5bEFrMWw4MWVUU3dUTi9vSzcyQ0ppalRsR25pSzdlS1dj?=
+ =?gb2312?B?c2wwOXBEU2JrUzNjNmMyUUJLVnU1cFVSS0QzM1dNOWxRcXZZSzZQM0I5VjhF?=
+ =?gb2312?B?aUV0R0dvc2ZFaU12MXNmZXZXbjFTbDhweC9TQTNZVmFKQVk1L3cxT1ZuRnVo?=
+ =?gb2312?B?SHNoYnRoZDdQRy9qTlAzakFCeGtrOVlmMC90OE1lekZRdUxWZFhCdFFqWk0r?=
+ =?gb2312?B?Wk41T3RIbjY0c1VIVjZ4cjBKcDF3SUZVdmRadThQN3J5VG9IaEtTZ3M3MUdn?=
+ =?gb2312?B?U2d0WlN1dTJMRmtHbVNHcmZCbmpNSVA2ZDdsaXVQK0ZodFpIR1dBaWtnTVhK?=
+ =?gb2312?B?S0ZSUXlyRUwvbVg1MEFFdDl0RFlEdFVYYkxMWFlmblZMcG9aQmtSaVBXZnRy?=
+ =?gb2312?B?dkxTRWNVZ0Q5SFhNVE5rTTdVY0ZjRTh3K0hSenBpZ3NBeVBwakxaYWFJL1Rv?=
+ =?gb2312?B?d2s0aDRMMUh2ai9EQVRmb0tZVXJRVFlSSDR2V2FyV2NvTTY0RVAvN2RKK0Rk?=
+ =?gb2312?B?OGdqRmVjclJVd2dLYTRUOW1hM3UzdHJJWjJRWEVqTko1TnJDMHJyMHB4Z2Y2?=
+ =?gb2312?B?d2MxbzMvOUdsSjhybm9qTE5vT0RYTkNhdDJFdHNmUHdGSVdybGZGRm1BRDU3?=
+ =?gb2312?B?WnZMNEJEQlQ5UC9zSDF1V2p5RlJWaHl2TjdET0ErZ2x3OGlCRU5HNVRac3RN?=
+ =?gb2312?B?bDdySHp2WWo3QXI3NndCSXhaZDIzclFaZU9ubDE0ODVsQ1lDZ2NSdVd1K2Iw?=
+ =?gb2312?B?S0V4bi84ZGVJWTgyekp3RjluRmxHdGhKQ0dlMExxamJ0QnE3MTVDTVEzZVNT?=
+ =?gb2312?B?Z0FwOEM3SzhML1dxazBkdkxsQ0E4THFaZXE0R01GZmhDa3d1NndiVnNoY0tC?=
+ =?gb2312?B?RVdRTVkxelBaekVmUTRZQ0pVUHVRamhrY2c1Z2FTZHgzd2t0TzI2Q2Yyc0R0?=
+ =?gb2312?B?N3dnSEpyS2lGYVp2Z2hYa1NWMlVLOHJCQmpxdGZxMWNzWU5xWThGdGVqNFdO?=
+ =?gb2312?B?TDN2Zm9mTFBQVFd3d1JyZUcyZ2ZtWGdhT1VpMzFkQzdVYThjVkVOQ3ZVRGNl?=
+ =?gb2312?Q?vUHGP7+LTMVCRXXYAnuV6tpHBdnT5sEL?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <YitZ6y2JoNzeHUrp@aptenodytes>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 864aa4fd-1456-4e6d-90cf-08da055d1bd1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Mar 2022 01:51:08.2694 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: NJfuWvxCncCT5cnEP718AcTXcrx/0BVmBSVDfGyY6YXjVnQKqkTij4D/1kyH/niuroMGYUveBthC5CXAsGEJ2w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7312
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220313_091554_026033_6FE09A4C 
-X-CRM114-Status: GOOD (  85.27  )
+X-CRM114-CacheID: sfid-20220313_185115_326348_06D2CE5E 
+X-CRM114-Status: GOOD (  23.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,317 +144,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Paul,
-
-On Fri, Mar 11, 2022 at 03:17:15PM +0100, Paul Kocialkowski wrote:
-> On Fri 04 Mar 22, 16:09, Laurent Pinchart wrote:
-> > On Fri, Mar 04, 2022 at 02:57:41PM +0100, Paul Kocialkowski wrote:
-> > > On Fri 04 Mar 22, 14:01, Laurent Pinchart wrote:
-> > > > On Tue, Mar 01, 2022 at 04:38:59PM +0100, Paul Kocialkowski wrote:
-> > > > > On Tue 15 Feb 22, 12:16, Laurent Pinchart wrote:
-> > > > > > On Tue, Feb 15, 2022 at 11:10:52AM +0100, Paul Kocialkowski wrote:
-> > > > > > > On Mon 14 Feb 22, 19:09, Laurent Pinchart wrote:
-> > > > > > > > On Mon, Feb 14, 2022 at 05:18:07PM +0100, Paul Kocialkowski wrote:
-> > > > > > > > > On Mon 07 Feb 22, 17:51, Laurent Pinchart wrote:
-> > > > > > > > > > On Sat, Feb 05, 2022 at 07:54:24PM +0100, Paul Kocialkowski wrote:
-> > > > > > > > > > > This introduces YAML bindings documentation for the Allwinner A31 Image
-> > > > > > > > > > > Signal Processor (ISP).
-> > > > > > > > > > > 
-> > > > > > > > > > > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > > > > > > > > ---
-> > > > > > > > > > >  .../media/allwinner,sun6i-a31-isp.yaml        | 117 ++++++++++++++++++
-> > > > > > > > > > >  1 file changed, 117 insertions(+)
-> > > > > > > > > > >  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
-> > > > > > > > > > > 
-> > > > > > > > > > > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
-> > > > > > > > > > > new file mode 100644
-> > > > > > > > > > > index 000000000000..2d87022c43ce
-> > > > > > > > > > > --- /dev/null
-> > > > > > > > > > > +++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-isp.yaml
-> > > > > > > > > > > @@ -0,0 +1,117 @@
-> > > > > > > > > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > > > > > > > > > +%YAML 1.2
-> > > > > > > > > > > +---
-> > > > > > > > > > > +$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-isp.yaml#
-> > > > > > > > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > > > > > > > +
-> > > > > > > > > > > +title: Allwinner A31 Image Signal Processor Driver (ISP) Device Tree Bindings
-> > > > > > > > > > > +
-> > > > > > > > > > > +maintainers:
-> > > > > > > > > > > +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > > > > > > > > +
-> > > > > > > > > > > +properties:
-> > > > > > > > > > > +  compatible:
-> > > > > > > > > > > +    enum:
-> > > > > > > > > > > +      - allwinner,sun6i-a31-isp
-> > > > > > > > > > > +      - allwinner,sun8i-v3s-isp
-> > > > > > > > > > > +
-> > > > > > > > > > > +  reg:
-> > > > > > > > > > > +    maxItems: 1
-> > > > > > > > > > > +
-> > > > > > > > > > > +  interrupts:
-> > > > > > > > > > > +    maxItems: 1
-> > > > > > > > > > > +
-> > > > > > > > > > > +  clocks:
-> > > > > > > > > > > +    items:
-> > > > > > > > > > > +      - description: Bus Clock
-> > > > > > > > > > > +      - description: Module Clock
-> > > > > > > > > > > +      - description: DRAM Clock
-> > > > > > > > > > 
-> > > > > > > > > > That's interesting, does the ISP have a dedicated DRAM ?
-> > > > > > > > > 
-> > > > > > > > > It doesn't, it actually uses the main DRAM with the "mbus" interconnect.
-> > > > > > > > > The clock is probably for the DMA engine.
-> > > > > > > > > 
-> > > > > > > > > > > +
-> > > > > > > > > > > +  clock-names:
-> > > > > > > > > > > +    items:
-> > > > > > > > > > > +      - const: bus
-> > > > > > > > > > > +      - const: mod
-> > > > > > > > > > > +      - const: ram
-> > > > > > > > > > > +
-> > > > > > > > > > > +  resets:
-> > > > > > > > > > > +    maxItems: 1
-> > > > > > > > > > > +
-> > > > > > > > > > > +  ports:
-> > > > > > > > > > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > > > > > > > > > +
-> > > > > > > > > > > +    properties:
-> > > > > > > > > > > +      port@0:
-> > > > > > > > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > > > > > > > +        description: CSI0 input port
-> > > > > > > > > > > +
-> > > > > > > > > > > +        properties:
-> > > > > > > > > > > +          reg:
-> > > > > > > > > > > +            const: 0
-> > > > > > > > > > > +
-> > > > > > > > > > > +          endpoint:
-> > > > > > > > > > > +            $ref: video-interfaces.yaml#
-> > > > > > > > > > > +            unevaluatedProperties: false
-> > > > > > > > > > 
-> > > > > > > > > > If no other property than remote-endpoint are allowed, I'd write
-> > > > > > > > > > 
-> > > > > > > > > >           endpoint:
-> > > > > > > > > >             $ref: video-interfaces.yaml#
-> > > > > > > > > > 	    remote-endpoint: true
-> > > > > > > > > >             additionalProperties: false
-> > > > > > > > > > 
-> > > > > > > > > > Same below.
-> > > > > > > > > > 
-> > > > > > > > > > > +
-> > > > > > > > > > > +        additionalProperties: false
-> > > > > > > > > > > +
-> > > > > > > > > > > +      port@1:
-> > > > > > > > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > > > > > > > +        description: CSI1 input port
-> > > > > > > > > > > +
-> > > > > > > > > > > +        properties:
-> > > > > > > > > > > +          reg:
-> > > > > > > > > > > +            const: 0
-> > > > > > > > > > 
-> > > > > > > > > > This should be 1.
-> > > > > > > > > 
-> > > > > > > > > Correct, thanks!
-> > > > > > > > > 
-> > > > > > > > > > > +
-> > > > > > > > > > > +          endpoint:
-> > > > > > > > > > > +            $ref: video-interfaces.yaml#
-> > > > > > > > > > > +            unevaluatedProperties: false
-> > > > > > > > > > > +
-> > > > > > > > > > > +        additionalProperties: false
-> > > > > > > > > > > +
-> > > > > > > > > > > +    anyOf:
-> > > > > > > > > > > +      - required:
-> > > > > > > > > > > +        - port@0
-> > > > > > > > > > > +      - required:
-> > > > > > > > > > > +        - port@1
-> > > > > > > > > > 
-> > > > > > > > > > As ports are an intrinsic property of the ISP, both should be required,
-> > > > > > > > > > but they don't have to be connected.
-> > > > > > > > > 
-> > > > > > > > > Well the ISP does have the ability to source from either CSI0 and CSI1
-> > > > > > > > > but I don't really get the point of declaring both ports when only one
-> > > > > > > > > of the two controllers is present.
-> > > > > > > > 
-> > > > > > > > If it's within an SoC I don't mind too much. What I usually insist on is
-> > > > > > > > declaring all ports even when no external devices are connected on the
-> > > > > > > > board. It may however be easier to implement things on the driver side
-> > > > > > > > when all the ports are declared, even for internal devices. I won't
-> > > > > > > > insist either way here.
-> > > > > > > > 
-> > > > > > > > > > By the way, how do you select at runtime which CSI-2 RX the ISP gets its
-> > > > > > > > > > image stream from ? Is it configured through registers of the ISP ?
-> > > > > > > > > 
-> > > > > > > > > Actually what the ISP gets is fully dependent on what is received by the
-> > > > > > > > > CSI controller it is connected to (which can be the mipi csi-2 controller
-> > > > > > > > > or its direct parallel pins), so the configuration happens on the CSI side.
-> > > > > > > > 
-> > > > > > > > OK, then how do you select at runtime which CSI the ISP gets its image
-> > > > > > > > stream from ? :-)
-> > > > > > > 
-> > > > > > > What is done in the driver is that all available csi(s) entities pads are linked
-> > > > > > > to a single csi sink media pad, which allows userspace to enable one or the
-> > > > > > > other. If there's only one, it's enabled by default.
-> > > > > > > 
-> > > > > > > The actual stream source (isp_dev->proc.source) is selected at link_validate
-> > > > > > > time and the source bit is set in sun6i_isp_proc_enable.
-> > > > > > > 
-> > > > > > > I hope this answers your question!
-> > > > > > 
-> > > > > > Yes it does, thank you.
-> > > > > > 
-> > > > > > While this works, it makes life a bit more complicated for userspace, as
-> > > > > > switching between the two sources require disabling the link first and
-> > > > > > then enabling the new one. This is something that caused issues in the
-> > > > > > libcamera simple pipeline handler, I ended up having to implement a
-> > > > > > workaround.
-> > > > > 
-> > > > > That surprises me a bit, I thought this was a typical use-case for links.
-> > > > > So the fact that it's a two-step process causes issues somehow?
-> > > > 
-> > > > It's not so much that the links have to be configured in two steps
-> > > > (although it would be nice if that could be fixed), but the fact that
-> > > > the order of the operations matter. Userspace has to know what
-> > > > combination of links is acceptable in order to determine the order of
-> > > > the enable/disable operations, otherwise errors may be returned. That
-> > > > makes it more difficult to write generic userspace code.
-> > > 
-> > > Ah right, I understand that. Now it's pretty much trial-and-error if userspace
-> > > doesn't have prior knowledge about the hardware. But to be honest I assumed
-> > > that it was more or less understood that there cannot be fully generic
-> > > userspace for this and that knowedlege about the driver and pipeline flow
-> > > is required to do things right.
-> > 
-> > You're right, and that's why we have device-specific code in libcamera.
-> > However, the more generic-friendly the APIs can be, the more the
-> > device-specific userspace code will be able to use generic helpers, so
-> > it still matters.
-> > 
-> > > > > > Could you instead have two sink pads for the ISP, and select the sensor
-> > > > > > at stream on time instead of link validation time by checking which link
-> > > > > > is enabled ? If no links or both links are enabled, you can then return
-> > > > > > an error.
-> > > > > 
-> > > > > Yes that's totally doable.
-> > > > > 
-> > > > > There's a similar situation with the sun6i-csi bridge where the source pad
-> > > > > has two possible links: one for routing to sun6i-csi capture (video device)
-> > > > > and one for routing to the isp entity.
-> > > > > 
-> > > > > Would that also be best represented as two pads?
-> > > > 
-> > > > Are the two outputs mutually exclusive ? Sorry if I've asked before.
-> > > 
-> > > I don't think you have. Yes they are mutually exclusive, only one source
-> > > can be selected at a time. Same situation as the ISP where the two CSI unit
-> > > inputs are mutually exclusive.
-> > 
-> > On the sink (input) side that's quite common, if you have two different
-> > sources but a single sink, the sink can't (usually) process both sources
-> > at the same time. I understand that for the sun6i-csi bridge it's the
-> > other way around, with the bridge can output to either a DMA engine or
-> > to the ISP, but not both at the same time. That's less common, but can
-> > certainly happen. I think I'd go for two source pads in that case too.
-> > Sakari, any opinion ?
-> 
-> As I was reading this thread again, I think there might be a misunderstanding
-> here when you said that "switching between the two sources require disabling
-> the link first and then enabling the new one".
-> 
-> The driver is currently not checking the validity of the setup at link_setup
-> but at link_validate (which is called at streamon time), so userspace can
-> effectively disable/enable links in whichever order and a valid setup is only
-> required when streaming starts. I think that's already the situation that you
-> want to achieve.
-
-That's right. link_validate is probably not the best place though, as
-it's meant to validate one link, while here you need to perform
-validation of the state of multiple links, right ?
-
-> To summarize, the following pads can have multiple links:
-> - csi sink (parallel sensor source or mipi csi-2 bridge source)
-> - csi source (isp sink or video capture sink)
-> - isp sink (csi0 source or csi1 source)
-> 
-> I'll send my next versions without changes (one pad, multiple links)
-> but we can revisit this if there's an issue with that after all.
-
-OK.
-
-> > > > > > Ideally I'd say such internal routing should use the new V4L2 subdev
-> > > > > > routing API that is currently being implemented (see [1]), but I don't
-> > > > > > know when it will land, and I don't want to delay your patch series.
-> > > > > > 
-> > > > > > [1] https://lore.kernel.org/linux-media/20211130141536.891878-28-tomi.valkeinen@ideasonboard.com
-> > > > > 
-> > > > > I'm still a bit confused what problem this is trying to solve.
-> > > > > My understanding was that the current pad/link API allows representing complex
-> > > > > topologies and switching different paths with link enable/disable.
-> > > > 
-> > > > That was the intent of the MEDIA_IOC_SETUP_LINK ioctl, but we ended up
-> > > > with something that is fairly ill-defined, and doesn't have the ability
-> > > > to set multiple links atomically. It turned out to be less usable for
-> > > > userspace than expected. Mistakes happen (and I'll blame myself here,
-> > > > having designed that API) when we don't have real test cases during
-> > > > kernel development.
-> > > 
-> > > Yeah it's hard to predict these kinds of things in advance I suppose.
-> > > Thanks for the heads up!
-> > > 
-> > > > > > > > > > > +
-> > > > > > > > > > > +required:
-> > > > > > > > > > > +  - compatible
-> > > > > > > > > > > +  - reg
-> > > > > > > > > > > +  - interrupts
-> > > > > > > > > > > +  - clocks
-> > > > > > > > > > > +  - clock-names
-> > > > > > > > > > > +  - resets
-> > > > > > > > > > > +
-> > > > > > > > > > > +additionalProperties: false
-> > > > > > > > > > > +
-> > > > > > > > > > > +examples:
-> > > > > > > > > > > +  - |
-> > > > > > > > > > > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> > > > > > > > > > > +    #include <dt-bindings/clock/sun8i-v3s-ccu.h>
-> > > > > > > > > > > +    #include <dt-bindings/reset/sun8i-v3s-ccu.h>
-> > > > > > > > > > > +
-> > > > > > > > > > > +    isp: isp@1cb8000 {
-> > > > > > > > > > > +        compatible = "allwinner,sun8i-v3s-isp";
-> > > > > > > > > > > +        reg = <0x01cb8000 0x1000>;
-> > > > > > > > > > > +        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-> > > > > > > > > > > +        clocks = <&ccu CLK_BUS_CSI>,
-> > > > > > > > > > > +             <&ccu CLK_CSI1_SCLK>,
-> > > > > > > > > > > +             <&ccu CLK_DRAM_CSI>;
-> > > > > > > > > > > +        clock-names = "bus", "mod", "ram";
-> > > > > > > > > > > +        resets = <&ccu RST_BUS_CSI>;
-> > > > > > > > > > > +
-> > > > > > > > > > > +        ports {
-> > > > > > > > > > > +            #address-cells = <1>;
-> > > > > > > > > > > +            #size-cells = <0>;
-> > > > > > > > > > > +
-> > > > > > > > > > > +            port@0 {
-> > > > > > > > > > > +                reg = <0>;
-> > > > > > > > > > > +
-> > > > > > > > > > > +                isp_in_csi0: endpoint {
-> > > > > > > > > > > +                    remote-endpoint = <&csi0_out_isp>;
-> > > > > > > > > > > +                };
-> > > > > > > > > > > +            };
-> > > > > > > > > > > +        };
-> > > > > > > > > > > +    };
-> > > > > > > > > > > +
-> > > > > > > > > > > +...
-
--- 
-Regards,
-
-Laurent Pinchart
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBNYXJlayBWYXN1dCA8bWFyZXhA
+ZGVueC5kZT4NCj4gU2VudDogMjAyMsTqM9TCMTLI1SA5OjM4DQo+IFRvOiBsaW51eC1waHlAbGlz
+dHMuaW5mcmFkZWFkLm9yZw0KPiBDYzogTWFyZWsgVmFzdXQgPG1hcmV4QGRlbnguZGU+OyBGYWJp
+byBFc3RldmFtIDxmZXN0ZXZhbUBkZW54LmRlPjsNCj4gS2lzaG9uIFZpamF5IEFicmFoYW0gSSA8
+a2lzaG9uQHRpLmNvbT47IE1hcmNlbCBaaXN3aWxlcg0KPiA8bWFyY2VsLnppc3dpbGVyQHRvcmFk
+ZXguY29tPjsgZGwtbGludXgtaW14IDxsaW51eC1pbXhAbnhwLmNvbT47IFBlbmcgRmFuDQo+IDxw
+ZW5nLmZhbkBueHAuY29tPjsgSG9uZ3hpbmcgWmh1IDxob25neGluZy56aHVAbnhwLmNvbT47IFNo
+YXduIEd1bw0KPiA8c2hhd25ndW9Aa2VybmVsLm9yZz47IFZpbm9kIEtvdWwgPHZrb3VsQGtlcm5l
+bC5vcmc+Ow0KPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcNCj4gU3ViamVj
+dDogW1BBVENIXSBwaHk6IGZyZWVzY2FsZTogaW14OG0tcGNpZTogSGFuZGxlDQo+IElNWDhfUENJ
+RV9SRUZDTEtfUEFEX1VOVVNFRA0KPiANCj4gVGhlICdmc2wscmVmY2xrLXBhZC1tb2RlJyBEVCBw
+cm9wZXJ0eSB1c2VkIHRvIHNlbGVjdCBjbG9jayBzb3VyY2UgZm9yIFBDSWUgUEhZDQo+IGNhbiBo
+YXZlIGVpdGhlciBvZiB0aHJlZSB2YWx1ZXMsIElNWDhfUENJRV9SRUZDTEtfUEFEX0lOUFVULA0K
+PiBJTVg4X1BDSUVfUkVGQ0xLX1BBRF9PVVRQVVQsIElNWDhfUENJRV9SRUZDTEtfUEFEX1VOVVNF
+RC4gVGhlIGZpcnN0DQo+IHR3byBvcHRpb25zIGFyZSBoYW5kbGVkIGNvcnJlY3RseSBieSB0aGUg
+ZHJpdmVyLCB0aGUgbGFzdCBvbmUgaXMgbm90LCB0aGlzIHBhdGNoDQo+IGltcGxlbWVudHMgc3Vw
+cG9ydCBmb3IgdGhlIGxhc3Qgb3B0aW9uLg0KPiANCj4gVGhlIElNWDhfUENJRV9SRUZDTEtfUEFE
+X0lOUFVUIG1lYW5zIFBDSUVfUkVTUkVGIGlzIFBIWSBjbG9jayBpbnB1dCwNCj4gdGhlIElNWDhf
+UENJRV9SRUZDTEtfUEFEX09VVFBVVCBtZWFucyBQSFkgY2xvY2sgYXJlIHNvdXJjZWQgZnJvbSBT
+b0MNCj4gaW50ZXJuYWwgUExMIGFuZCBvdXRwdXQgdG8gUENJRV9SRVNSRUYgZXh0ZXJuYWwgSU8g
+cGluLiBUaGUgbGFzdA0KPiBJTVg4X1BDSUVfUkVGQ0xLX1BBRF9VTlVTRUQgaXMgYSBjb21iaW5h
+dGlvbiBvZiBwcmV2aW91cyB0d28sIFBIWSBjbG9jaw0KPiBhcmUgc291cmNlZCBmcm9tIFNvQyBp
+bnRlcm5hbCBQTEwgYW5kIG5vdCBvdXRwdXQgYW55d2hlcmUuDQo+IA0KPiBTaWduZWQtb2ZmLWJ5
+OiBNYXJlayBWYXN1dCA8bWFyZXhAZGVueC5kZT4NCkhpIE1hcmVrOg0KVGhhbmtzIGZvciB5b3Vy
+IHBhdGNoLg0KSSBhc3N1bWUgdGhhdCB5b3UgaGFkIHRlc3RlZCB0aGlzIElNWDhfUENJRV9SRUZD
+TEtfUEFEX1VOVVNFRCBvcHRpb24uDQpUaGUgQ0xLX04vUCBwYWRzIGFyZSBub3QgY29ubmVjdGVk
+IG9uIHRoZSB0ZXN0ZWQgYm9hcmQsIHJpZ2h0Pw0KQlRXLCBpdCdzIGJldHRlciB0byBhZGQgdGhl
+IEZpeGVzIHRhZyBpbnRvIHRoZSBjb21taXQgbG9nLg0KDQpCZXN0IFJlZ2FyZHMNClJpY2hhcmQg
+Wmh1DQoNCj4gQ2M6IEZhYmlvIEVzdGV2YW0gPGZlc3RldmFtQGRlbnguZGU+DQo+IENjOiBLaXNo
+b24gVmlqYXkgQWJyYWhhbSBJIDxraXNob25AdGkuY29tPg0KPiBDYzogTWFyY2VsIFppc3dpbGVy
+IDxtYXJjZWwuemlzd2lsZXJAdG9yYWRleC5jb20+DQo+IENjOiBOWFAgTGludXggVGVhbSA8bGlu
+dXgtaW14QG54cC5jb20+DQo+IENjOiBQZW5nIEZhbiA8cGVuZy5mYW5AbnhwLmNvbT4NCj4gQ2M6
+IFJpY2hhcmQgWmh1IDxob25neGluZy56aHVAbnhwLmNvbT4NCj4gQ2M6IFNoYXduIEd1byA8c2hh
+d25ndW9Aa2VybmVsLm9yZz4NCj4gQ2M6IFZpbm9kIEtvdWwgPHZrb3VsQGtlcm5lbC5vcmc+DQo+
+IENjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcNCj4gVG86IGxpbnV4LXBo
+eUBsaXN0cy5pbmZyYWRlYWQub3JnDQo+IC0tLQ0KPiAgZHJpdmVycy9waHkvZnJlZXNjYWxlL3Bo
+eS1mc2wtaW14OG0tcGNpZS5jIHwgMTAgKysrKysrKystLQ0KPiAgMSBmaWxlIGNoYW5nZWQsIDgg
+aW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkNCj4gDQo+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4bS1wY2llLmMNCj4gYi9kcml2ZXJzL3BoeS9mcmVl
+c2NhbGUvcGh5LWZzbC1pbXg4bS1wY2llLmMNCj4gaW5kZXggZTU2OTU0MDYzMTA4Yy4uN2Q4ZTY5
+OTEyNzlmNCAxMDA2NDQNCj4gLS0tIGEvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtaW14
+OG0tcGNpZS5jDQo+ICsrKyBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtLXBj
+aWUuYw0KPiBAQCAtMTU2LDE1ICsxNTYsMjEgQEAgc3RhdGljIGludCBpbXg4X3BjaWVfcGh5X2lu
+aXQoc3RydWN0IHBoeSAqcGh5KQ0KPiAgCQlicmVhazsNCj4gIAl9DQo+IA0KPiAtCWlmIChwYWRf
+bW9kZSA9PSBJTVg4X1BDSUVfUkVGQ0xLX1BBRF9JTlBVVCkgew0KPiArCWlmIChwYWRfbW9kZSA9
+PSBJTVg4X1BDSUVfUkVGQ0xLX1BBRF9JTlBVVCB8fA0KPiArCSAgICBwYWRfbW9kZSA9PSBJTVg4
+X1BDSUVfUkVGQ0xLX1BBRF9VTlVTRUQpIHsNCj4gIAkJLyogQ29uZmlndXJlIHRoZSBwYWQgYXMg
+aW5wdXQgKi8NCj4gIAkJdmFsID0gcmVhZGwoaW14OF9waHktPmJhc2UgKyBJTVg4TU1fUENJRV9Q
+SFlfQ01OX1JFRzA2MSk7DQo+ICAJCXdyaXRlbCh2YWwgJiB+QU5BX1BMTF9DTEtfT1VUX1RPX0VY
+VF9JT19FTiwNCj4gIAkJICAgICAgIGlteDhfcGh5LT5iYXNlICsgSU1YOE1NX1BDSUVfUEhZX0NN
+Tl9SRUcwNjEpOw0KPiAtCX0gZWxzZSBpZiAocGFkX21vZGUgPT0gSU1YOF9QQ0lFX1JFRkNMS19Q
+QURfT1VUUFVUKSB7DQo+ICsJfSBlbHNlIHsNCj4gIAkJLyogQ29uZmlndXJlIHRoZSBQSFkgdG8g
+b3V0cHV0IHRoZSByZWZjbG9jayB2aWEgcGFkICovDQo+ICAJCXdyaXRlbChBTkFfUExMX0NMS19P
+VVRfVE9fRVhUX0lPX0VOLA0KPiAgCQkgICAgICAgaW14OF9waHktPmJhc2UgKyBJTVg4TU1fUENJ
+RV9QSFlfQ01OX1JFRzA2MSk7DQo+ICsJfQ0KPiArDQo+ICsJaWYgKHBhZF9tb2RlID09IElNWDhf
+UENJRV9SRUZDTEtfUEFEX09VVFBVVCB8fA0KPiArCSAgICBwYWRfbW9kZSA9PSBJTVg4X1BDSUVf
+UkVGQ0xLX1BBRF9VTlVTRUQpIHsNCj4gKwkJLyogU291cmNlIGNsb2NrIGZyb20gU29DIGludGVy
+bmFsIFBMTCAqLw0KPiAgCQl3cml0ZWwoQU5BX1BMTF9DTEtfT1VUX1RPX0VYVF9JT19TRUwsDQo+
+ICAJCSAgICAgICBpbXg4X3BoeS0+YmFzZSArIElNWDhNTV9QQ0lFX1BIWV9DTU5fUkVHMDYyKTsN
+Cj4gIAkJd3JpdGVsKEFVWF9QTExfUkVGQ0xLX1NFTF9TWVNfUExMLA0KPiAtLQ0KPiAyLjM0LjEN
+Cg0KLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5
+Cg==
