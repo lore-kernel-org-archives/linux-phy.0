@@ -4,75 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1F72C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Mar 2022 13:35:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F319C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Mar 2022 15:33:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x8A/lWeOAqHHfIgespT0G96U6Efnjcskp2LRpJzpk9o=; b=1Vknmp99KHwU1j
-	nbTKzCBwzIzRKFgrKo8XssOnCzP7OXdnQJ9+UV9mLK6H87tgSxALEGHEq+2jIpjy3FLFE970QnrO1
-	wUDXYYa8vzDCGGKaAiw56oaWn2e4E4JR6oI89wviprMxc1m8nXe+VogVR89PAC7AQ7sJIr3ht4C+3
-	+LyIhgK8Bv3IdeFSQ+pOmwpRtJ7NOAilNdhu8ROaDkvxI1sB5LpSDoJHUm/jH4+SsJzatxODkuzRq
-	fdx46UrmYTLGzKGHDWRWlpBPVMQYAO73z2Zu6VDH3iWc1f/Cs8BYtbLlnmgAH96cvWPrlVhJLv0gd
-	996j+Ib95T8ok8uHmYHw==;
+	List-Owner; bh=mHcI+E76ZOm5S539uhI+zLSt0OsePCeURtjhqmSzmLE=; b=Vf54X3DSayrmB6
+	xeII55OhRpqiFl58kyYDdH9DfbLrutBrxa/TUcwGfWCuEkNWe6ZjFVtWFfeH3AdKlR/JxwPGtDDTH
+	eCMnCG8xEsW2183J/8cIYsG+PSTA1yGdhY9HnPtiSmu10nXgFRTSGXJvYHJhbt0TibrufFnZfjnOQ
+	hNAo6QgPG1zEFRutl1GqLBl/mu+mcZ/mZA3Nzewn9C7JPxhkjuTgwCxzkJ4OfD8m9smTlRI1fLhax
+	IQQy8jcla3Kuvy5NpxpnhQlwx+rt8f/XyNTw/6nY4LF2jzD8W9Gz42F+Az40tZ+SXDD9Xpgrq5BIv
+	6tG26mQBw2rV4GaVnhsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nUTo8-00D4Ee-3r; Wed, 16 Mar 2022 13:35:20 +0000
-Received: from mail-yb1-xb35.google.com ([2607:f8b0:4864:20::b35])
+	id 1nUVe4-00DaKn-G4; Wed, 16 Mar 2022 15:33:04 +0000
+Received: from mail-qk1-x734.google.com ([2607:f8b0:4864:20::734])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nUTo4-00D4A7-Hi
- for linux-phy@lists.infradead.org; Wed, 16 Mar 2022 13:35:18 +0000
-Received: by mail-yb1-xb35.google.com with SMTP id v130so4372457ybe.13
- for <linux-phy@lists.infradead.org>; Wed, 16 Mar 2022 06:35:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WNRIm2snhOLrjHDrRT45Al18e6yX+6IjtBw2hvIFtuc=;
- b=bl6xXHfUk0jza37f3JJNngv7+hb+rNkTVteG8qFGpuWSZHFNpW4/ck2144lMbppgke
- VedQEh+UgY27QEqhYUahKxZl39G0PAUbDtvPwRPCvG2MDO02K9a0KFdCt+8/lRSGUOHd
- lzT7xMJd3npkRtbQq5icH4pCvllCLjPtlpTzw=
+ id 1nUVch-00DZgC-Av
+ for linux-phy@lists.infradead.org; Wed, 16 Mar 2022 15:31:40 +0000
+Received: by mail-qk1-x734.google.com with SMTP id s16so2153737qks.4
+ for <linux-phy@lists.infradead.org>; Wed, 16 Mar 2022 08:31:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=fvUEMkANfvf1LokJRMq/1veBU2UqMcQQnQtywgAigRI=;
+ b=d80bWadomzISLDXuQxFymTYBDQhXnZ/mtf4OPE9nlrZvuhycUpl2BR/lqMnLjFexkA
+ cz93kqCvObc57xjq3czpcd98F7WCOFLuTgy89Jlu6YiZaWR2qG0Ofnh/IIB5sGS8QDPH
+ s555AxxndZayMBMuqYX5BZcSh8qXJgPIWcuQZRYjU8hFtQWRxN0tFuvz9gBlyKOYnsNj
+ 5LlQJ43C8qjEsJsEDf9UsdLk4X4pPb0gdjfO2INSV/eYPE5WvVjZ2V5sknTYvu+WAiyJ
+ mcmAI/v9qLw+9b2EW07rneccOuXY1qFjZ2eolCpce3CmVpz0L3ggkcNBfYKzX82tzc5t
+ C77w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WNRIm2snhOLrjHDrRT45Al18e6yX+6IjtBw2hvIFtuc=;
- b=05c6nShj1uzbvtUR8H287N0+4r0gbb8KicGdREvFYOGDgplWATW2adGuQwwGHRmqqH
- 1mXLduCoXDaOL/rE7j9pa672YwvX+O7b/9NZ7u4vQZkA3n3pNkL1yiVxVUteXxHGixLI
- +UrnqaL/mcsQalc4sMzx+PznKPkjZgVuivX0eaC70g0emrtlfROjp8P6jbnFt96SEbky
- pdZM+93jLex0Uo1m1O5Ov0Ahf2bSt6MZHDybzhNi+NBbpgJ48Dfd8NNSxWr/mvFdhCJr
- 2duTOrTJSMxgiU8tZksAc4qVS8liV5t02MdpyzNHuSMtWnIzyNdEj4rOlS3S3QrvwSW3
- y+Mw==
-X-Gm-Message-State: AOAM532O0zPIaO3q/buY3o0+GzkHDEsgaOFkCBZT/aQ2tzf1bq0I9hCY
- fTS9SGjfwBhV24gXJfO76hjfasnvcTIxfvzEFsyeGA==
-X-Google-Smtp-Source: ABdhPJzBoD2Jj2tGf6FiQyu4qnE17Z74AigshCqdfSdH9Nn6dOvJw3Guj90WJtvPBJPDHtGui5i1uCXGBcxMlWg7L7k=
-X-Received: by 2002:a25:3403:0:b0:628:a2e4:ae8a with SMTP id
- b3-20020a253403000000b00628a2e4ae8amr27494313yba.219.1647437712360; Wed, 16
- Mar 2022 06:35:12 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=fvUEMkANfvf1LokJRMq/1veBU2UqMcQQnQtywgAigRI=;
+ b=bV1H+1dFPTj1PtTGYezdnrAnSeAAOQ1ER9oJL71Ta4s1iYCefIdt16JfDYHXh9TRxu
+ A0gjxVhKdLGTcWVzJRzakA3/2DqVnpIxC7wWpxMzQyxWJt95W2bmMzvt5AzL5f3bzPrN
+ JUiSJR4xRzrAgYP+RWh1hmg8MqOqnDQtNHjePpmtUcusp5rw16QEmV289lmvnvB1685x
+ rdGHUlVRP1jpPkEB06XUEEwLnwpReNO/+l3GZFJS9A8fzxjrRNkFCQE/81UO1m5LqXYL
+ HAu88Aaq4Se7BJROfTSqv+Ie77/2AikvAFvt5m09gbKmbVFU23s8x5fBm2mZCYQsUphV
+ pYjQ==
+X-Gm-Message-State: AOAM532Qe9oRTasbBZXRO8zxYP5e0p3OjwRdFqFii4qliOz+8JE9M4yj
+ VQIWYMrqUFuhOQkFgnOwDK0=
+X-Google-Smtp-Source: ABdhPJzL0GnhUQijBfqEnzCXk3OMwUE1pADaOHXgKMBoVfqrxenHsrvZfR3aDWQ5vPE7LyP/+hd7bw==
+X-Received: by 2002:a05:620a:2808:b0:67d:730d:d4e4 with SMTP id
+ f8-20020a05620a280800b0067d730dd4e4mr244493qkp.431.1647444697108; 
+ Wed, 16 Mar 2022 08:31:37 -0700 (PDT)
+Received: from shaak (modemcable055.92-163-184.mc.videotron.ca.
+ [184.163.92.55]) by smtp.gmail.com with ESMTPSA id
+ k10-20020a05622a03ca00b002e0684cf81fsm1475321qtx.73.2022.03.16.08.31.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 16 Mar 2022 08:31:36 -0700 (PDT)
+Date: Wed, 16 Mar 2022 11:31:34 -0400
+From: Liam Beguin <liambeguin@gmail.com>
+To: Miaoqian Lin <linmq006@gmail.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: ti: omap-usb2: Fix error handling in
+ omap_usb2_enable_clocks
+Message-ID: <YjIC1hWuVN3qkdqx@shaak>
+References: <20220316024155.23464-1-linmq006@gmail.com>
 MIME-Version: 1.0
-References: <20220218145437.18563-1-granquet@baylibre.com>
- <20220218145437.18563-19-granquet@baylibre.com>
-In-Reply-To: <20220218145437.18563-19-granquet@baylibre.com>
-From: Chen-Yu Tsai <wenst@chromium.org>
-Date: Wed, 16 Mar 2022 21:35:01 +0800
-Message-ID: <CAGXv+5GfiVhK1cvgjnnxHxHnL7rQnUyQJD93d9NHNmT+txfgcg@mail.gmail.com>
-Subject: Re: [PATCH v8 18/19] drm/mediatek: change the aux retries times when
- receiving AUX_DEFER
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: chunkuang.hu@kernel.org, p.zabel@pengutronix.de, airlied@linux.ie, 
- daniel@ffwll.ch, robh+dt@kernel.org, maarten.lankhorst@linux.intel.com, 
- mripard@kernel.org, tzimmermann@suse.de, matthias.bgg@gmail.com, 
- chunfeng.yun@mediatek.com, kishon@ti.com, vkoul@kernel.org, deller@gmx.de, 
- ck.hu@mediatek.com, jitao.shi@mediatek.com, 
- angelogioacchino.delregno@collabora.com, dri-devel@lists.freedesktop.org, 
- linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-phy@lists.infradead.org, linux-fbdev@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <20220316024155.23464-1-linmq006@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220316_063516_610436_A8B0AA1F 
-X-CRM114-Status: UNSURE (   7.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220316_083139_417547_A61F6C46 
+X-CRM114-Status: GOOD (  16.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,21 +91,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Feb 18, 2022 at 11:15 PM Guillaume Ranquet
-<granquet@baylibre.com> wrote:
->
-> From: Jitao Shi <jitao.shi@mediatek.com>
->
-> DP 1.4a Section 2.8.7.1.5.6.1:
-> A DP Source device shall retry at least seven times upon receiving
-> AUX_DEFER before giving up the AUX transaction.
->
-> Aux should retry to send msg whether how many bytes.
->
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+On Wed, Mar 16, 2022 at 02:41:53AM +0000, Miaoqian Lin wrote:
+> The corresponding API for clk_prepare_enable is clk_disable_unprepare,
+> other than clk_disable_unprepare.
+> 
+> Fix this by changing clk_disable to clk_disable_unprepare.
 
-Reviewed-by: Chen-Yu Tsai <wenst@chromium.org>
+There seems to be a typo in the first sentence of the commit message.
+Maybe something like this would do:
+
+	The corresponding API for clk_prepare_enable is clk_disable_unprepare.
+	Make sure that the clock is unprepared on exit by changing clk_disable
+	to clk_disable_unprepare.
+
+> 
+> Fixes: ed31ee7cf1fe ("phy: ti: usb2: Fix logic on -EPROBE_DEFER")
+> Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+
+Other than that,
+
+Reviewed-by: Liam Beguin <liambeguin@gmail.com>
+
+> ---
+>  drivers/phy/ti/phy-omap-usb2.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
+> index 3a505fe5715a..31a775877f6e 100644
+> --- a/drivers/phy/ti/phy-omap-usb2.c
+> +++ b/drivers/phy/ti/phy-omap-usb2.c
+> @@ -215,7 +215,7 @@ static int omap_usb2_enable_clocks(struct omap_usb *phy)
+>  	return 0;
+>  
+>  err1:
+> -	clk_disable(phy->wkupclk);
+> +	clk_disable_unprepare(phy->wkupclk);
+>  
+>  err0:
+>  	return ret;
+> -- 
+> 2.17.1
+> 
 
 -- 
 linux-phy mailing list
