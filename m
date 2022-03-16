@@ -4,66 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C309C433FE
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Mar 2022 06:48:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB1BBC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Mar 2022 13:28:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OsIb2pLoT6DDgfB7vvoMGvta9H98UFd6a8Ou1pWq0zU=; b=xhNpZNdVej8osc
-	9djpan/tBx0pzhBe0yk+mNALEDKx5ISQSgfYQiLL+1zC413RZBw+Ng1Jp2Gs7bEhwtVYPwQGVuqVi
-	c+OPyhzc0e+2xMtDfYUqIe4ZFHPTe16/lwB8/gZPjE+8nfxFUSXe3B3aRdzNcAUnEpNYvtUeymOoP
-	XmrG13i5jSYLO22R19rtL05QregzssXKxgglYJwLnJY3+wciK+ue131+17eiWSoP0hsaM73CbNIOJ
-	nt0pnhWaTuCcv7iu0tKK5oLSsZ9UHKuClXjKnuD2HVdD0kWBmE3qT/10K4CZPNpJLSFOZ0nKIkwR3
-	DcfCSvgwnDwL3qpb88DA==;
+	List-Owner; bh=wLcmUvh7gS/eoniMtU/HPmEwDGI+H1RCQ+aVe/S6NNA=; b=ka+bML/pOF2ZYW
+	4336Sqy9K3omdvzJ63qw8aGuOJUJAdxWXQ2kS8d+d9IOsu0sLZX/uvoJfJCp580F7cKfxAWJrH+bC
+	yK+0Pi+8d6v+U1chZDC8do6K2Nvu6pN05folJG6+POGBDSQrybCgUSPS3YmWDHf3HPdX8pGJi/fiW
+	BilUMAFbjvTe3EKoyFQNN6I2bDTxpPfzpvsI+xkkAJNEK5NQa2d/yfVwNBuFWzrWuu1FA1pm1odO+
+	CEDD5Q5clo57+WYROzOygLDI0ODXUHSbRuFvo+rpzWPsCWMG9EsCPQZA7sglQSbz4v46BitkMYaw+
+	Tp7nV6CIaF8hOwZrq7lQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nUNSZ-00Bipj-52; Wed, 16 Mar 2022 06:48:39 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1nUThI-00D1rk-Ok; Wed, 16 Mar 2022 13:28:16 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nUNST-00BioE-32; Wed, 16 Mar 2022 06:48:36 +0000
-X-UUID: bf3eb1e912e14a80b2e284946dfb419c-20220315
-X-UUID: bf3eb1e912e14a80b2e284946dfb419c-20220315
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <rex-bc.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1998626393; Tue, 15 Mar 2022 23:48:27 -0700
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 15 Mar 2022 23:48:26 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 16 Mar 2022 14:48:24 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 16 Mar 2022 14:48:24 +0800
-Message-ID: <75015615bbd69d68e42c1fff70872ebc4bd48be5.camel@mediatek.com>
-Subject: Re: [PATCH v8 17/19] drm/mediatek: add hpd debounce
-From: Rex-BC Chen <rex-bc.chen@mediatek.com>
-To: Guillaume Ranquet <granquet@baylibre.com>, <chunkuang.hu@kernel.org>,
- <p.zabel@pengutronix.de>, <airlied@linux.ie>, <daniel@ffwll.ch>,
- <robh+dt@kernel.org>, <maarten.lankhorst@linux.intel.com>,
- <mripard@kernel.org>, <tzimmermann@suse.de>, <matthias.bgg@gmail.com>,
- <chunfeng.yun@mediatek.com>, <kishon@ti.com>, <vkoul@kernel.org>,
- <deller@gmx.de>, <ck.hu@mediatek.com>, <jitao.shi@mediatek.com>,
- <angelogioacchino.delregno@collabora.com>
-CC: <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <linux-fbdev@vger.kernel.org>,
- <Project_Global_Chrome_Upstream_Group@mediatek.com>
-Date: Wed, 16 Mar 2022 14:48:24 +0800
-In-Reply-To: <20220218145437.18563-18-granquet@baylibre.com>
-References: <20220218145437.18563-1-granquet@baylibre.com>
- <20220218145437.18563-18-granquet@baylibre.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+ id 1nUTfo-00D1KQ-9x; Wed, 16 Mar 2022 13:26:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+ t=1647437204; x=1678973204;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=vnRswGehRJLFAaBCzvBCJdjOnc3qj7r4WnbNFLMazzs=;
+ b=fHIzjIGZMBLpEp/nLYVPt/gypKHNC6wQFXPpRxiOJWlwbDJdmTihSXi/
+ cCfWEZTw8ok/O3VuTXy0avr8OeVYpf1yeKDqtt1hPVGn0e9Dk2Iiuw3tG
+ 4S0njzjAgIpnNKa3t7VOirRwZHdduQ+cy0WMP3AjI8TcXcG7jry/LZGxo
+ 8hWr2RGw0ItcYZ+U65H3iXCntPfz1ioK4lQBJVLBqFu7aTAK4eNZSqEUU
+ BxJmzwUYMNUA5f87yfkWj+AUVnHPAiMgiQQPJk0HFRMrKxHGm29ns7KGa
+ jyeFlpQGTIAXH+DCHTL8EfrHa0AXEv0GmCxi62LXThG+66zRO2kuiDhaH A==;
+X-IronPort-AV: E=McAfee;i="6200,9189,10286"; a="236530229"
+X-IronPort-AV: E=Sophos;i="5.90,186,1643702400"; d="scan'208";a="236530229"
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 16 Mar 2022 06:26:41 -0700
+X-IronPort-AV: E=Sophos;i="5.90,186,1643702400"; d="scan'208";a="634975950"
+Received: from punajuuri.fi.intel.com (HELO paasikivi.fi.intel.com)
+ ([10.237.72.43])
+ by fmsmga003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 16 Mar 2022 06:26:36 -0700
+Received: from paasikivi.fi.intel.com (localhost [127.0.0.1])
+ by paasikivi.fi.intel.com (Postfix) with SMTP id A50C620090;
+ Wed, 16 Mar 2022 15:26:34 +0200 (EET)
+Date: Wed, 16 Mar 2022 15:26:34 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v3 7/9] dt-bindings: media: Add Allwinner A83T MIPI CSI-2
+ bindings documentation
+Message-ID: <YjHlisNfdobeAta7@paasikivi.fi.intel.com>
+References: <20220302220739.144303-1-paul.kocialkowski@bootlin.com>
+ <20220302220739.144303-8-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20220302220739.144303-8-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220315_234833_184507_C9D823D2 
-X-CRM114-Status: GOOD (  24.69  )
+X-CRM114-CacheID: sfid-20220316_062644_409546_46F62749 
+X-CRM114-Status: GOOD (  19.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,149 +93,176 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2022-02-18 at 15:54 +0100, Guillaume Ranquet wrote:
-> From: Jitao Shi <jitao.shi@mediatek.com>
+Hi Paul,
+
+Thanks for the patch.
+
+On Wed, Mar 02, 2022 at 11:07:37PM +0100, Paul Kocialkowski wrote:
+> This introduces YAML bindings documentation for the Allwinner A83T
+> MIPI CSI-2 controller.
 > 
-> Implement the DP HDP debounce described in DP 1.4a 3.3.
-
-Hello Guillaume,
-
-Thanks for your patch, and here is some tests we do and I will explain
-the HPD deboucing. Maybe you can put these in commit message next time:
-
-From the DP spec 1.4a chapter 3.3, upstream devices should implement
-HPD signal de-bouncing on an external connection.
-A period of 100ms should be used for detecting an HPD connect event.
-To cover these cases, HPD de-bounce should be implemented only after
-HPD low has been detected for 100ms.
-
-Therefore,
-1. If HPD low (which means plugging out) is more than 100ms,
-   we need to do de-bouncing (which means we need to wait for 100ms).
-2. If HPD low is less than 100ms,
-   we don't need to care about the de-bouncing.
-
-In this patch, we can see the timer start to count 100ms and clear the
-need_debounce to false.
-
-There will be two situation when HPD high:
-1. If the timer is expired (which means it's more than 100ms):
-   - need_debounce will be set as true.
-   - When HPD high (plugging event comes), need_debounce will be true
-     and then we need to do de-bouncing (wait for 100ms).
-2. If the timer is not expired (which means it's less than 100ms):
-   - need_debounce keeps as false.
-   - When HPD high (plugging event comes), need_debounce will be false
-     and no need to do de-bouncing.
-
-HPD_______             __________________
-          |            |<-  100ms   ->
-          |____________|
-          <-  100ms   ->
-
-Original issue is that we do not implement the HPD de-bouncing and the
-device (Dell Adapter - USB-C to HDMI) will not be detected.
-After applying this patch, we can detect the device
-(Dell Adapter - USB-C to HDMI) successfully.
-
-We test the following devices and they can be detected successfully:
-- Dell Adapter - USB-C to HDMI
-- Acer 1in1 HDMI dongle
-- Ugreen 1in1 HDMI dongle
-- innowatt HDMI + USB3 hub
-- Acer 2in1 HDMI dongle
-- Apple 3in1 HDMI dongle (A2119)
-- J5Create 3in1 HDMI dongle (JAC379)
-
-Tested-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
-
-BRs,
-Rex
-> 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
 > ---
->  drivers/gpu/drm/mediatek/mtk_dp.c | 23 +++++++++++++++++++++++
->  1 file changed, 23 insertions(+)
+>  .../media/allwinner,sun8i-a83t-mipi-csi2.yaml | 138 ++++++++++++++++++
+>  1 file changed, 138 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dp.c
-> b/drivers/gpu/drm/mediatek/mtk_dp.c
-> index 2a3d5f15b651b..fe91ab8b2fd89 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_dp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_dp.c
-> @@ -178,6 +178,8 @@ struct mtk_dp {
->  	struct device *codec_dev;
->  	u8 connector_eld[MAX_ELD_BYTES];
->  	struct drm_connector *conn;
-> +	bool need_debounce;
-> +	struct timer_list debounce_timer;
->  };
->  
->  static struct regmap_config mtk_dp_regmap_config = {
-> @@ -1698,6 +1700,9 @@ static irqreturn_t mtk_dp_hpd_event_thread(int
-> hpd, void *dev)
->  	if (event < 0)
->  		return IRQ_HANDLED;
->  
-> +	if (mtk_dp->need_debounce && mtk_dp-
-> >train_info.cable_plugged_in)
-> +		msleep(100);
+> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
+> new file mode 100644
+> index 000000000000..75121b402435
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
+> @@ -0,0 +1,138 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/allwinner,sun8i-a83t-mipi-csi2.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
->  	if (mtk_dp->drm_dev) {
->  		dev_info(mtk_dp->dev, "drm_helper_hpd_irq_event\n");
->  		drm_helper_hpd_irq_event(mtk_dp->bridge.dev);
-> @@ -1776,6 +1781,13 @@ static irqreturn_t
-> mtk_dp_hpd_isr_handler(struct mtk_dp *mtk_dp)
->  	}
->  	train_info->cable_state_change = true;
->  
-> +	if (train_info->cable_state_change) {
-> +		if (!train_info->cable_plugged_in) {
-> +			mod_timer(&mtk_dp->debounce_timer, jiffies +
-> msecs_to_jiffies(100) - 1);
-> +			mtk_dp->need_debounce = false;
-> +		}
-> +	}
+> +title: Allwinner A83T MIPI CSI-2 Device Tree Bindings
 > +
->  	return IRQ_WAKE_THREAD;
->  }
->  
-> @@ -2239,6 +2251,13 @@ static const struct drm_bridge_funcs
-> mtk_dp_bridge_funcs = {
->  	.detect = mtk_dp_bdg_detect,
->  };
->  
-> +static void mtk_dp_debounce_timer(struct timer_list *t)
-> +{
-> +	struct mtk_dp *mtk_dp = from_timer(mtk_dp, t, debounce_timer);
+> +maintainers:
+> +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 > +
-> +	mtk_dp->need_debounce = true;
-> +}
+> +properties:
+> +  compatible:
+> +    const: allwinner,sun8i-a83t-mipi-csi2
 > +
->  static int mtk_dp_probe(struct platform_device *pdev)
->  {
->  	struct mtk_dp *mtk_dp;
-> @@ -2319,6 +2338,9 @@ static int mtk_dp_probe(struct platform_device
-> *pdev)
->  	else
->  		mtk_dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
->  
-> +	mtk_dp->need_debounce = true;
-> +	timer_setup(&mtk_dp->debounce_timer, mtk_dp_debounce_timer, 0);
+> +  reg:
+> +    maxItems: 1
 > +
->  	pm_runtime_enable(dev);
->  	pm_runtime_get_sync(dev);
->  
-> @@ -2332,6 +2354,7 @@ static int mtk_dp_remove(struct platform_device
-> *pdev)
->  	platform_device_unregister(mtk_dp->phy_dev);
->  
->  	mtk_dp_video_mute(mtk_dp, true);
-> +	del_timer_sync(&mtk_dp->debounce_timer);
->  
->  	pm_runtime_disable(&pdev->dev);
->  
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Bus Clock
+> +      - description: Module Clock
+> +      - description: MIPI-specific Clock
+> +      - description: Misc CSI Clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: bus
+> +      - const: mod
+> +      - const: mipi
+> +      - const: misc
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description: Input port, connect to a MIPI CSI-2 sensor
+> +
+> +        properties:
+> +          reg:
+> +            const: 0
+> +
+> +          endpoint:
+> +            $ref: video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +
+> +            properties:
+> +              clock-lanes:
+> +                maxItems: 1
 
+Does the hardware support lane reordering? If not, the property should be
+omitted here.
+
+I can also remove the three lines here while applying the patches.
+
+> +
+> +              data-lanes:
+> +                minItems: 1
+> +                maxItems: 4
+> +
+> +            required:
+> +              - data-lanes
+> +
+> +        additionalProperties: false
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description: Output port, connect to a CSI controller
+> +
+> +        properties:
+> +          reg:
+> +            const: 1
+> +
+> +          endpoint:
+> +            $ref: video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +
+> +        additionalProperties: false
+> +
+> +    required:
+> +      - port@0
+> +      - port@1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/sun8i-a83t-ccu.h>
+> +    #include <dt-bindings/reset/sun8i-a83t-ccu.h>
+> +
+> +    mipi_csi2: csi@1cb1000 {
+> +        compatible = "allwinner,sun8i-a83t-mipi-csi2";
+> +        reg = <0x01cb1000 0x1000>;
+> +        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
+> +        clocks = <&ccu CLK_BUS_CSI>,
+> +                 <&ccu CLK_CSI_SCLK>,
+> +                 <&ccu CLK_MIPI_CSI>,
+> +                 <&ccu CLK_CSI_MISC>;
+> +        clock-names = "bus", "mod", "mipi", "misc";
+> +        resets = <&ccu RST_BUS_CSI>;
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            mipi_csi2_in: port@0 {
+> +                reg = <0>;
+> +
+> +                mipi_csi2_in_ov8865: endpoint {
+> +                    data-lanes = <1 2 3 4>;
+> +
+> +                    remote-endpoint = <&ov8865_out_mipi_csi2>;
+> +                };
+> +            };
+> +
+> +            mipi_csi2_out: port@1 {
+> +                reg = <1>;
+> +
+> +                mipi_csi2_out_csi: endpoint {
+> +                    remote-endpoint = <&csi_in_mipi_csi2>;
+> +                };
+> +            };
+> +        };
+> +    };
+> +
+> +...
+
+-- 
+Kind regards,
+
+Sakari Ailus
 
 -- 
 linux-phy mailing list
