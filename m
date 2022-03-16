@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB1BBC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Mar 2022 13:28:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11857C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Mar 2022 13:29:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wLcmUvh7gS/eoniMtU/HPmEwDGI+H1RCQ+aVe/S6NNA=; b=ka+bML/pOF2ZYW
-	4336Sqy9K3omdvzJ63qw8aGuOJUJAdxWXQ2kS8d+d9IOsu0sLZX/uvoJfJCp580F7cKfxAWJrH+bC
-	yK+0Pi+8d6v+U1chZDC8do6K2Nvu6pN05folJG6+POGBDSQrybCgUSPS3YmWDHf3HPdX8pGJi/fiW
-	BilUMAFbjvTe3EKoyFQNN6I2bDTxpPfzpvsI+xkkAJNEK5NQa2d/yfVwNBuFWzrWuu1FA1pm1odO+
-	CEDD5Q5clo57+WYROzOygLDI0ODXUHSbRuFvo+rpzWPsCWMG9EsCPQZA7sglQSbz4v46BitkMYaw+
-	Tp7nV6CIaF8hOwZrq7lQ==;
+	List-Owner; bh=rt4moYzwEglgQge1/FwJkmeQ3qF5uwIKMPmrE6DbHfQ=; b=wa0CKluRF4QRAI
+	nu79fVpnp+r3o06vJZ5hr7LqMTPRg25lFZPxxs0Yqu/IGWu2tZkaz2beMXV1GdSIgugxCJAe1dEzw
+	GLWqyWnd2DOe2umLFKui+a3himXlt68rSvSFwZZrS2fgdbBIcQRFYJP5Xoo/HCy/6ghAYPloHl1Ed
+	O/NAfV7Mbl+iQ8zgwD8i8BY7nm8fzODPUgtBZMofyv2pvG/PXWakYJJPmkh02effGVqgS8cp69nac
+	LIp0Tkd5lc1FvLy3axcRoqvdiIF+hYe0vVYM05NEhodueVN5cgn11zZS7ygMVFvlaSmrS2RYYgpPp
+	BX2hEeN0g3zzlhmo4KkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nUThI-00D1rk-Ok; Wed, 16 Mar 2022 13:28:16 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1nUTiO-00D2Gb-DG; Wed, 16 Mar 2022 13:29:24 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nUTfo-00D1KQ-9x; Wed, 16 Mar 2022 13:26:46 +0000
+ id 1nUTga-00D1at-6S; Wed, 16 Mar 2022 13:27:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1647437204; x=1678973204;
+ t=1647437252; x=1678973252;
  h=date:from:to:cc:subject:message-id:references:
  mime-version:in-reply-to;
- bh=vnRswGehRJLFAaBCzvBCJdjOnc3qj7r4WnbNFLMazzs=;
- b=fHIzjIGZMBLpEp/nLYVPt/gypKHNC6wQFXPpRxiOJWlwbDJdmTihSXi/
- cCfWEZTw8ok/O3VuTXy0avr8OeVYpf1yeKDqtt1hPVGn0e9Dk2Iiuw3tG
- 4S0njzjAgIpnNKa3t7VOirRwZHdduQ+cy0WMP3AjI8TcXcG7jry/LZGxo
- 8hWr2RGw0ItcYZ+U65H3iXCntPfz1ioK4lQBJVLBqFu7aTAK4eNZSqEUU
- BxJmzwUYMNUA5f87yfkWj+AUVnHPAiMgiQQPJk0HFRMrKxHGm29ns7KGa
- jyeFlpQGTIAXH+DCHTL8EfrHa0AXEv0GmCxi62LXThG+66zRO2kuiDhaH A==;
-X-IronPort-AV: E=McAfee;i="6200,9189,10286"; a="236530229"
-X-IronPort-AV: E=Sophos;i="5.90,186,1643702400"; d="scan'208";a="236530229"
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 16 Mar 2022 06:26:41 -0700
-X-IronPort-AV: E=Sophos;i="5.90,186,1643702400"; d="scan'208";a="634975950"
+ bh=H3eR4ffkE3oVB+3S4NOOn5kmmmYiIAis+JFyVC1vbpw=;
+ b=cjpGcbEx2YlYg9nBf99imIrWjRn/heCkb0Efujf6hI9aMtIIUwehT70T
+ 6XJhnL7G4bF+eMubSAIWH0avCo52Z6XWjl19QdWWB5Datz60RgI97DIw5
+ G2qNzbc4dBsEn9MqhLqSML0taVxPOaB4qpMfVSqJkSHmBDJkY+RQoO9S6
+ Z2yoCa0yt1G20PFYY/vjTtX9hvlBF1iO38s3X4fJaIxvyRmda0uAlFUt9
+ diLg56OnR9pg5h/+CMbRQhyQ8uQ74RnWH8lJ+G/FFaREGJPNODtPb/866
+ +cAV2o0HX+lXJMSfKP7+YSLK7TLQ/ucbecpm/28K3kEe+fwZa6LSh0znu g==;
+X-IronPort-AV: E=McAfee;i="6200,9189,10286"; a="255415085"
+X-IronPort-AV: E=Sophos;i="5.90,186,1643702400"; d="scan'208";a="255415085"
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 16 Mar 2022 06:27:30 -0700
+X-IronPort-AV: E=Sophos;i="5.90,186,1643702400"; d="scan'208";a="516331411"
 Received: from punajuuri.fi.intel.com (HELO paasikivi.fi.intel.com)
  ([10.237.72.43])
- by fmsmga003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 16 Mar 2022 06:26:36 -0700
+ by orsmga006-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 16 Mar 2022 06:27:25 -0700
 Received: from paasikivi.fi.intel.com (localhost [127.0.0.1])
- by paasikivi.fi.intel.com (Postfix) with SMTP id A50C620090;
- Wed, 16 Mar 2022 15:26:34 +0200 (EET)
-Date: Wed, 16 Mar 2022 15:26:34 +0200
+ by paasikivi.fi.intel.com (Postfix) with SMTP id 2EEEA20090;
+ Wed, 16 Mar 2022 15:27:23 +0200 (EET)
+Date: Wed, 16 Mar 2022 15:27:23 +0200
 From: Sakari Ailus <sakari.ailus@linux.intel.com>
 To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
@@ -64,19 +64,18 @@ Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Kishon Vijay Abraham I <kishon@ti.com>,
  Vinod Koul <vkoul@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v3 7/9] dt-bindings: media: Add Allwinner A83T MIPI CSI-2
- bindings documentation
-Message-ID: <YjHlisNfdobeAta7@paasikivi.fi.intel.com>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH v3 5/9] media: sunxi: Add support for the A31 MIPI CSI-2
+ controller
+Message-ID: <YjHluwVnbPyHo1kp@paasikivi.fi.intel.com>
 References: <20220302220739.144303-1-paul.kocialkowski@bootlin.com>
- <20220302220739.144303-8-paul.kocialkowski@bootlin.com>
+ <20220302220739.144303-6-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220302220739.144303-8-paul.kocialkowski@bootlin.com>
+In-Reply-To: <20220302220739.144303-6-paul.kocialkowski@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220316_062644_409546_46F62749 
-X-CRM114-Status: GOOD (  19.67  )
+X-CRM114-CacheID: sfid-20220316_062732_308426_FF5B1D80 
+X-CRM114-Status: GOOD (  21.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,169 +94,109 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Paul,
 
-Thanks for the patch.
+Thanks for the set.
 
-On Wed, Mar 02, 2022 at 11:07:37PM +0100, Paul Kocialkowski wrote:
-> This introduces YAML bindings documentation for the Allwinner A83T
-> MIPI CSI-2 controller.
-> 
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
->  .../media/allwinner,sun8i-a83t-mipi-csi2.yaml | 138 ++++++++++++++++++
->  1 file changed, 138 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
-> new file mode 100644
-> index 000000000000..75121b402435
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi-csi2.yaml
-> @@ -0,0 +1,138 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/allwinner,sun8i-a83t-mipi-csi2.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+On Wed, Mar 02, 2022 at 11:07:35PM +0100, Paul Kocialkowski wrote:
+...
+> +static int sun6i_mipi_csi2_s_stream(struct v4l2_subdev *subdev, int on)
+> +{
+> +	struct sun6i_mipi_csi2_device *csi2_dev = v4l2_get_subdevdata(subdev);
+> +	struct v4l2_subdev *source_subdev = csi2_dev->bridge.source_subdev;
+> +	union phy_configure_opts dphy_opts = { 0 };
+> +	struct phy_configure_opts_mipi_dphy *dphy_cfg = &dphy_opts.mipi_dphy;
+> +	struct v4l2_mbus_framefmt *mbus_format = &csi2_dev->bridge.mbus_format;
+> +	const struct sun6i_mipi_csi2_format *format;
+> +	struct phy *dphy = csi2_dev->dphy;
+> +	struct device *dev = csi2_dev->dev;
+> +	struct v4l2_ctrl *ctrl;
+> +	unsigned int lanes_count =
+> +		csi2_dev->bridge.endpoint.bus.mipi_csi2.num_data_lanes;
+> +	unsigned long pixel_rate;
+> +	/* Initialize to 0 to use both in disable label (ret != 0) and off. */
+> +	int ret = 0;
 > +
-> +title: Allwinner A83T MIPI CSI-2 Device Tree Bindings
+> +	if (!source_subdev)
+> +		return -ENODEV;
 > +
-> +maintainers:
-> +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> +	if (!on) {
+> +		v4l2_subdev_call(source_subdev, video, s_stream, 0);
+> +		goto disable;
+> +	}
 > +
-> +properties:
-> +  compatible:
-> +    const: allwinner,sun8i-a83t-mipi-csi2
+> +	/* Runtime PM */
 > +
-> +  reg:
-> +    maxItems: 1
+> +	ret = pm_runtime_resume_and_get(dev);
+> +	if (ret < 0)
+> +		return ret;
 > +
-> +  interrupts:
-> +    maxItems: 1
+> +	/* Sensor Pixel Rate */
 > +
-> +  clocks:
-> +    items:
-> +      - description: Bus Clock
-> +      - description: Module Clock
-> +      - description: MIPI-specific Clock
-> +      - description: Misc CSI Clock
+> +	ctrl = v4l2_ctrl_find(source_subdev->ctrl_handler, V4L2_CID_PIXEL_RATE);
+> +	if (!ctrl) {
+> +		dev_err(dev, "missing sensor pixel rate\n");
+> +		ret = -ENODEV;
+> +		goto error_pm;
+> +	}
 > +
-> +  clock-names:
-> +    items:
-> +      - const: bus
-> +      - const: mod
-> +      - const: mipi
-> +      - const: misc
+> +	pixel_rate = (unsigned long)v4l2_ctrl_g_ctrl_int64(ctrl);
+> +	if (!pixel_rate) {
+> +		dev_err(dev, "missing (zero) sensor pixel rate\n");
+> +		ret = -ENODEV;
+> +		goto error_pm;
+> +	}
 > +
-> +  resets:
-> +    maxItems: 1
+> +	/* D-PHY */
 > +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        description: Input port, connect to a MIPI CSI-2 sensor
-> +
-> +        properties:
-> +          reg:
-> +            const: 0
-> +
-> +          endpoint:
-> +            $ref: video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +
-> +            properties:
-> +              clock-lanes:
-> +                maxItems: 1
+> +	if (!lanes_count) {
 
-Does the hardware support lane reordering? If not, the property should be
-omitted here.
+I first thought this check could be moved to the beginning, but it's also
+redundant. v4l2_fwnode_endpoint_parse() will check the configuration is
+valid, i.e. the number of lanes is not zero.
 
-I can also remove the three lines here while applying the patches.
+But should you add checks to make sure the hardware supports what has been
+configured? I'd do that right after parsing the endpoint.
 
+And you only seem to be using the number of data lanes, nothing more. So
+I'd store that, instead of the entire parsed v4l2_fwnode_endpoint.
+
+The same applies to patch 8.
+
+I think these could be done on top of this set after it is merged. Up to
+you.
+
+...
+
+> +static int
+> +sun6i_mipi_csi2_bridge_source_setup(struct sun6i_mipi_csi2_device *csi2_dev)
+> +{
+> +	struct v4l2_async_notifier *notifier = &csi2_dev->bridge.notifier;
+> +	struct v4l2_fwnode_endpoint *endpoint = &csi2_dev->bridge.endpoint;
+> +	struct v4l2_async_subdev *subdev_async;
+> +	struct fwnode_handle *handle;
+> +	struct device *dev = csi2_dev->dev;
+> +	int ret;
 > +
-> +              data-lanes:
-> +                minItems: 1
-> +                maxItems: 4
+> +	handle = fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), 0, 0,
+> +						 FWNODE_GRAPH_ENDPOINT_NEXT);
+> +	if (!handle)
+> +		return -ENODEV;
 > +
-> +            required:
-> +              - data-lanes
+> +	endpoint->bus_type = V4L2_MBUS_CSI2_DPHY;
 > +
-> +        additionalProperties: false
+> +	ret = v4l2_fwnode_endpoint_parse(handle, endpoint);
+> +	if (ret)
+> +		goto complete;
 > +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        description: Output port, connect to a CSI controller
+> +	subdev_async = v4l2_async_nf_add_fwnode_remote(notifier, handle,
+> +		struct v4l2_async_subdev);
+> +	if (IS_ERR(subdev_async))
+> +		ret = PTR_ERR(subdev_async);
 > +
-> +        properties:
-> +          reg:
-> +            const: 1
+> +complete:
+> +	fwnode_handle_put(handle);
 > +
-> +          endpoint:
-> +            $ref: video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +
-> +        additionalProperties: false
-> +
-> +    required:
-> +      - port@0
-> +      - port@1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - ports
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/sun8i-a83t-ccu.h>
-> +    #include <dt-bindings/reset/sun8i-a83t-ccu.h>
-> +
-> +    mipi_csi2: csi@1cb1000 {
-> +        compatible = "allwinner,sun8i-a83t-mipi-csi2";
-> +        reg = <0x01cb1000 0x1000>;
-> +        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-> +        clocks = <&ccu CLK_BUS_CSI>,
-> +                 <&ccu CLK_CSI_SCLK>,
-> +                 <&ccu CLK_MIPI_CSI>,
-> +                 <&ccu CLK_CSI_MISC>;
-> +        clock-names = "bus", "mod", "mipi", "misc";
-> +        resets = <&ccu RST_BUS_CSI>;
-> +
-> +        ports {
-> +            #address-cells = <1>;
-> +            #size-cells = <0>;
-> +
-> +            mipi_csi2_in: port@0 {
-> +                reg = <0>;
-> +
-> +                mipi_csi2_in_ov8865: endpoint {
-> +                    data-lanes = <1 2 3 4>;
-> +
-> +                    remote-endpoint = <&ov8865_out_mipi_csi2>;
-> +                };
-> +            };
-> +
-> +            mipi_csi2_out: port@1 {
-> +                reg = <1>;
-> +
-> +                mipi_csi2_out_csi: endpoint {
-> +                    remote-endpoint = <&csi_in_mipi_csi2>;
-> +                };
-> +            };
-> +        };
-> +    };
-> +
-> +...
+> +	return ret;
+> +}
 
 -- 
 Kind regards,
