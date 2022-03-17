@@ -4,70 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB1C5C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Mar 2022 09:34:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1972C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Mar 2022 16:21:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iITcwqk1dwna3pnb6CLhy3ABpXGkl1ybhYzKo4/NfpA=; b=mSDnUshfku8vnd
-	+vD0gbZMw2+mCQa/EGnkp9/d4q2VoNAIb8w0Hcpf83vI92p5NsUyBZlWwny/FbTJ50N9iwsfgWSOe
-	kznFVWHTmWxKBbkkz2+zK+rQzAClAgxRP9y8L2SU2ARftvcQeIYRgOVsnr563TaxB/wED56dUhISv
-	ybxBQllnhN0NvpdRcdd6FHazUqAUyVjXktbP6PVhIv2dZT4xQWEzVENoJ3bHPHqyNdbSidH3f0ZnY
-	9RX/PA037lixaRiGVr3h0uG4Qm8I8pi2sw1xXucCy7HoLrCJZqXHUnE1jWhXo2kXYtwLzjFuAAYW5
-	X7NM0JgLD2hHU3yStSOQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QXiO18J3VqS3DuZ01ekfTUD2Q6XcHa+AtpPaMRMG0xA=; b=N8dRULnCWsP1Yg614DLHHxOfPv
+	G1X3qwukgY0E9H9hsIojMclLbNlSj7T4uf1mfj84v3UFTHGM7tGKGjcJ5LZIFrkiaZEDqnopkbXNZ
+	QJGOyqUuyeAl9CHrChXArdRrCPAwYT+Hc2THsJSbbsib2cB+7agzG/r/+iUfb7tcHajKff5BII6vb
+	SYz//9Wiu1xOrPVaSK63u1zexTuBFAqerZFv1qA7fgvWvqXJl8R+Hj6PNWnudGDr1whBT/0ejEtjJ
+	voTEte+BTPcPRcu1eg25CM3F7cYEUteKvJF2vc4WP76I3OJ8a8AWDuem8SOJphx5ynWuq2O5Hl9ni
+	DcAIK5vQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nUmWW-00FWzT-9O; Thu, 17 Mar 2022 09:34:24 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nUssV-00GjuP-8w; Thu, 17 Mar 2022 16:21:31 +0000
+Received: from relay4-d.mail.gandi.net ([2001:4b98:dc4:8::224])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nUmWS-00FWxO-HL; Thu, 17 Mar 2022 09:34:22 +0000
-X-UUID: beb3dae994f44ccb82432e93c80a22db-20220317
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=265FHpxYKm14agRyQ41S4j481TaJhCs2vuSGbvukeGg=; 
- b=a+VWLx/DNCL8RBuXlRWLiIjW/Iv6IJ3/aHA1kx6igvwfTlVWD68O5xfyQk85QlJQ+BMahe+eLysHHgCymyD4FWfDvJQaFH71JhOpTR6cnPeAZWlFmlwfq0p9e8R9o0h2yNpEqSx586D3hMuTNli9n9KJ7an0F9wetnrnnSlKJtw=;
-X-UUID: beb3dae994f44ccb82432e93c80a22db-20220317
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <jianjun.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1531209285; Thu, 17 Mar 2022 02:34:14 -0700
-Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 17 Mar 2022 02:34:13 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by mtkexhb01.mediatek.inc
- (172.21.101.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Thu, 17 Mar 2022 17:34:11 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 17 Mar 2022 17:34:10 +0800
-Message-ID: <d0bd5a8da1ded6fd11aa5e0dac208e35dc04ce40.camel@mediatek.com>
-Subject: Re: [PATCH 1/2] phy: mediatek: Add PCIe PHY driver
-From: Jianjun Wang <jianjun.wang@mediatek.com>
-To: Chen-Yu Tsai <wenst@chromium.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <rex-bc.chen@mediatek.com>,
- <Randy.Wu@mediatek.com>, <jieyy.yang@mediatek.com>,
- <chuanjia.liu@mediatek.com>, <qizhong.cheng@mediatek.com>,
- <jian.yang@mediatek.com>
-Date: Thu, 17 Mar 2022 17:34:10 +0800
-In-Reply-To: <CAGXv+5GxML3Ga5ampXdLBpPr52C99OiJXg65qn2p_spzP4dhPw@mail.gmail.com>
-References: <20220311133527.5914-1-jianjun.wang@mediatek.com>
- <20220311133527.5914-2-jianjun.wang@mediatek.com>
- <CAGXv+5GxML3Ga5ampXdLBpPr52C99OiJXg65qn2p_spzP4dhPw@mail.gmail.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+ id 1nUssH-00Gjro-UL; Thu, 17 Mar 2022 16:21:20 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by mail.gandi.net (Postfix) with ESMTPSA id 01AC0E000E;
+ Thu, 17 Mar 2022 16:21:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+ t=1647534070;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=p+cYBkfFFvELqWc9QhQrIx+yztmy6I4JHGArTu/5pHI=;
+ b=DTjpkPO+Rd8PPKRBmDgIFf8CocPlPj+9wu7TQwKkH/W0cTGtcxwD+qkLdZ4vVrrK5894tJ
+ qjWmm6zNPvtp7WuOoZYPoAABdrfPmfdjfZP5alH9VGaORL5zNcW1tO/qyUMSX6N9AfWvHb
+ 9FtpA38vZpWNVGuIAL8VAY/jdqsLRy9GRiOiezU+eavHdCHz2CqFaHFQfKAU0Qa3D5f8Xl
+ ef2mEmAUL09Sfh6bPrDXj7UogiwjaJWP1CmTH1wXKu32D4wRi1/kLzHE7rWzx9Dm32lTYK
+ W0DPmtj0k73bDzoXYiEafY2Qh/JG7P24sh+DGhwDqUxrQlAK6mlG4BGScugF8A==
+Date: Thu, 17 Mar 2022 17:21:07 +0100
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v3 7/9] dt-bindings: media: Add Allwinner A83T MIPI CSI-2
+ bindings documentation
+Message-ID: <YjNf827KuySLowK1@aptenodytes>
+References: <20220302220739.144303-1-paul.kocialkowski@bootlin.com>
+ <20220302220739.144303-8-paul.kocialkowski@bootlin.com>
+ <YjHlisNfdobeAta7@paasikivi.fi.intel.com>
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <YjHlisNfdobeAta7@paasikivi.fi.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220317_023420_619718_0D6BD6BA 
-X-CRM114-Status: GOOD (  39.85  )
+X-CRM114-CacheID: sfid-20220317_092118_637007_BA9303AE 
+X-CRM114-Status: GOOD (  25.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,377 +77,251 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4716634582914912415=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Chen-Yu,
 
-Thanks for your review, I'll fix them in the next version based on your
-comments.
+--===============4716634582914912415==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="iiX+RlDO9qayM+ej"
+Content-Disposition: inline
 
-Thanks.
 
-On Thu, 2022-03-17 at 15:49 +0800, Chen-Yu Tsai wrote:
-> On Fri, Mar 11, 2022 at 9:46 PM Jianjun Wang <
-> jianjun.wang@mediatek.com> wrote:
-> > 
-> > Add PCIe GEN3 PHY driver support on MediaTek chipsets.
-> > 
-> > Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+--iiX+RlDO9qayM+ej
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Sakari,
+
+On Wed 16 Mar 22, 15:26, Sakari Ailus wrote:
+> Hi Paul,
+>=20
+> Thanks for the patch.
+
+And thanks for the review!
+
+> On Wed, Mar 02, 2022 at 11:07:37PM +0100, Paul Kocialkowski wrote:
+> > This introduces YAML bindings documentation for the Allwinner A83T
+> > MIPI CSI-2 controller.
+> >=20
+> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > Reviewed-by: Rob Herring <robh@kernel.org>
 > > ---
-> >  drivers/phy/mediatek/Kconfig        |  11 ++
-> >  drivers/phy/mediatek/Makefile       |   1 +
-> >  drivers/phy/mediatek/phy-mtk-pcie.c | 198
-> > ++++++++++++++++++++++++++++
-> >  3 files changed, 210 insertions(+)
-> >  create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
-> > 
-> > diff --git a/drivers/phy/mediatek/Kconfig
-> > b/drivers/phy/mediatek/Kconfig
-> > index 55f8e6c048ab..387ed1b3f2cc 100644
-> > --- a/drivers/phy/mediatek/Kconfig
-> > +++ b/drivers/phy/mediatek/Kconfig
-> > @@ -55,3 +55,14 @@ config PHY_MTK_MIPI_DSI
-> >         select GENERIC_PHY
-> >         help
-> >           Support MIPI DSI for Mediatek SoCs.
-> > +
-> > +config PHY_MTK_PCIE
-> > +       tristate "MediaTek PCIe-PHY Driver"
-> > +       depends on ARCH_MEDIATEK || COMPILE_TEST
-> > +       depends on OF
-> > +       select GENERIC_PHY
-> > +       help
-> > +         Say 'Y' here to add support for MediaTek PCIe PHY driver.
-> > +         This driver create the basic PHY instance and provides
-> > initialize
-> > +         callback for PCIe GEN3 port, it supports software efuse
-> > +         initialization.
-> > diff --git a/drivers/phy/mediatek/Makefile
-> > b/drivers/phy/mediatek/Makefile
-> > index ace660fbed3a..788c13147f63 100644
-> > --- a/drivers/phy/mediatek/Makefile
-> > +++ b/drivers/phy/mediatek/Makefile
-> > @@ -6,6 +6,7 @@
-> >  obj-$(CONFIG_PHY_MTK_TPHY)             += phy-mtk-tphy.o
-> >  obj-$(CONFIG_PHY_MTK_UFS)              += phy-mtk-ufs.o
-> >  obj-$(CONFIG_PHY_MTK_XSPHY)            += phy-mtk-xsphy.o
-> > +obj-$(CONFIG_PHY_MTK_PCIE)             += phy-mtk-pcie.o
-> > 
-> >  phy-mtk-hdmi-drv-y                     := phy-mtk-hdmi.o
-> >  phy-mtk-hdmi-drv-y                     += phy-mtk-hdmi-mt2701.o
-> > diff --git a/drivers/phy/mediatek/phy-mtk-pcie.c
-> > b/drivers/phy/mediatek/phy-mtk-pcie.c
+> >  .../media/allwinner,sun8i-a83t-mipi-csi2.yaml | 138 ++++++++++++++++++
+> >  1 file changed, 138 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/media/allwinner,s=
+un8i-a83t-mipi-csi2.yaml
+> >=20
+> > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun8i-a8=
+3t-mipi-csi2.yaml b/Documentation/devicetree/bindings/media/allwinner,sun8i=
+-a83t-mipi-csi2.yaml
 > > new file mode 100644
-> > index 000000000000..45a67d9171f6
+> > index 000000000000..75121b402435
 > > --- /dev/null
-> > +++ b/drivers/phy/mediatek/phy-mtk-pcie.c
-> > @@ -0,0 +1,198 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (c) 2022 MediaTek Inc.
-> > + * Author: Jianjun Wang <jianjun.wang@mediatek.com>
-> > + */
+> > +++ b/Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-mipi=
+-csi2.yaml
+> > @@ -0,0 +1,138 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/media/allwinner,sun8i-a83t-mipi-csi=
+2.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
-> 
-> Please include linux/bits.h for GENMASK().
-> 
-> > +#include <linux/io.h>
-> > +#include <linux/iopoll.h>
-> 
-> You don't need these two headers.
-> 
-> You could include linux/compiler_types.h for definition of __iomem.
-> 
-> > +#include <linux/module.h>
-> > +#include <linux/nvmem-consumer.h>
-> > +#include <linux/of_address.h>
-> > +#include <linux/of_device.h>
-> 
-> Nor do you need these two.
-> 
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/platform_device.h>
-> 
-> Please include linux/slab.h for kmalloc() and friends.
-> 
+> > +title: Allwinner A83T MIPI CSI-2 Device Tree Bindings
 > > +
-> > +#include "phy-mtk-io.h"
+> > +maintainers:
+> > +  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 > > +
-> > +#define PEXTP_ANA_GLB_00_REG           0x9000
-> > +#define PEXTP_ANA_LN0_TX_REG           0xA004
-> > +#define PEXTP_ANA_LN0_RX_REG           0xA03C
-> > +#define PEXTP_ANA_LN1_TX_REG           0xA104
-> > +#define PEXTP_ANA_LN1_RX_REG           0xA13c
+> > +properties:
+> > +  compatible:
+> > +    const: allwinner,sun8i-a83t-mipi-csi2
 > > +
-> > +/* PEXTP_GLB_00_RG[28:24] Internal Resistor Selection of TX Bias
-> > Current */
-> > +#define EFUSE_GLB_INTR_SEL             GENMASK(28, 24)
-> > +#define EFUSE_GLB_INTR_VAL(x)          ((0x1f & (x)) << 24)
+> > +  reg:
+> > +    maxItems: 1
 > > +
-> > +/* PEXTP_ANA_LN_RX_RG[3:0] LN0 RX impedance selection */
-> > +#define EFUSE_LN_RX_SEL                        GENMASK(3, 0)
-> > +#define EFUSE_LN_RX_VAL(x)             (0xf & (x))
+> > +  interrupts:
+> > +    maxItems: 1
 > > +
-> > +/* PEXTP_ANA_LN_TX_RG[5:2] LN0 TX PMOS impedance selection */
-> > +#define EFUSE_LN_TX_PMOS_SEL           GENMASK(5, 2)
-> > +#define EFUSE_LN_TX_PMOS_VAL(x)                ((0xf & (x)) << 2)
+> > +  clocks:
+> > +    items:
+> > +      - description: Bus Clock
+> > +      - description: Module Clock
+> > +      - description: MIPI-specific Clock
+> > +      - description: Misc CSI Clock
 > > +
-> > +/* PEXTP_ANA_LN_TX_RG[11:8] LN0 TX NMOS impedance selection */
-> > +#define EFUSE_LN_TX_NMOS_SEL           GENMASK(11, 8)
-> > +#define EFUSE_LN_TX_NMOS_VAL(x)                ((0xf & (x)) << 8)
-> 
-> Register definitions look good. I matched them to the datasheet.
-> 
-> > +struct mtk_pcie_phy {
-> > +       struct device *dev;
-> > +       struct phy *phy;
-> > +       void __iomem *sif_base;
-> > +};
+> > +  clock-names:
+> > +    items:
+> > +      - const: bus
+> > +      - const: mod
+> > +      - const: mipi
+> > +      - const: misc
 > > +
-> > +static int mtk_pcie_phy_init(struct phy *phy)
-> > +{
-> > +       struct mtk_pcie_phy *pcie_phy = phy_get_drvdata(phy);
-> > +       struct device *dev = pcie_phy->dev;
-> > +       bool nvmem_enabled;
-> > +       u32 glb_intr, tx_pmos, tx_nmos, rx_data;
-> > +       int ret;
+> > +  resets:
+> > +    maxItems: 1
 > > +
-> > +       nvmem_enabled = device_property_read_bool(dev, "nvmem-
-> > cells");
-> > +       if (!nvmem_enabled)
-> > +               return 0;
+> > +  ports:
+> > +    $ref: /schemas/graph.yaml#/properties/ports
 > > +
-> > +       /* Set efuse value for lane0 */
-> > +       ret = nvmem_cell_read_variable_le_u32(dev, "tx_ln0_pmos",
-> > &tx_pmos);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to read tx_ln0_pmos\n",
-> > __func__);
-> > +               return ret;
-> > +       }
+> > +    properties:
+> > +      port@0:
+> > +        $ref: /schemas/graph.yaml#/$defs/port-base
+> > +        description: Input port, connect to a MIPI CSI-2 sensor
 > > +
-> > +       ret = nvmem_cell_read_variable_le_u32(dev, "tx_ln0_nmos",
-> > &tx_nmos);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to read tx_ln0_nmos\n",
-> > __func__);
-> > +               return ret;
-> > +       }
+> > +        properties:
+> > +          reg:
+> > +            const: 0
 > > +
-> > +       ret = nvmem_cell_read_variable_le_u32(dev, "rx_ln0",
-> > &rx_data);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to read rx_ln0\n",
-> > __func__);
-> > +               return ret;
-> > +       }
+> > +          endpoint:
+> > +            $ref: video-interfaces.yaml#
+> > +            unevaluatedProperties: false
 > > +
-> > +       /* Don't wipe the old data if there is no data in efuse
-> > cell */
-> > +       if (!(tx_pmos || tx_nmos || rx_data)) {
-> > +               dev_warn(dev, "%s: No efuse data found, but dts
-> > enable it\n",
-> > +                        __func__);
-> > +               return 0;
-> > +       }
+> > +            properties:
+> > +              clock-lanes:
+> > +                maxItems: 1
+>=20
+> Does the hardware support lane reordering? If not, the property should be
+> omitted here.
+
+I'm not sure what this relates to. Is it about inverting the clock lane with
+a data lane? I'm a bit confused about logical vs physical lane in the conte=
+xt
+of MIPI CSI-2.
+
+The controller has dedicated pins for the clock and data lanes and supports
+filtering packets based on virtual channel or data type.
+
+Are the clock-lanes and data-lanes only relevant for reordering?
+IIRC they are also necessary to get the lanes count in the driver.
+
+> I can also remove the three lines here while applying the patches.
+
+I think this series will need another iteration anyway, so let's wait.
+
+Paul
+
 > > +
-> > +       mtk_phy_update_bits(pcie_phy->sif_base +
-> > PEXTP_ANA_LN0_TX_REG,
-> > +                           EFUSE_LN_TX_PMOS_SEL,
-> > +                           EFUSE_LN_TX_PMOS_VAL(tx_pmos));
+> > +              data-lanes:
+> > +                minItems: 1
+> > +                maxItems: 4
 > > +
-> > +       mtk_phy_update_bits(pcie_phy->sif_base +
-> > PEXTP_ANA_LN0_TX_REG,
-> > +                           EFUSE_LN_TX_NMOS_SEL,
-> > +                           EFUSE_LN_TX_NMOS_VAL(tx_nmos));
+> > +            required:
+> > +              - data-lanes
 > > +
-> > +       mtk_phy_update_bits(pcie_phy->sif_base +
-> > PEXTP_ANA_LN0_RX_REG,
-> > +                           EFUSE_LN_RX_SEL,
-> > EFUSE_LN_RX_VAL(rx_data));
+> > +        additionalProperties: false
 > > +
-> > +       /* Set global data */
-> > +       ret = nvmem_cell_read_variable_le_u32(dev, "glb_intr",
-> > &glb_intr);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to read glb_intr\n",
-> > __func__);
-> > +               return ret;
-> > +       }
+> > +      port@1:
+> > +        $ref: /schemas/graph.yaml#/$defs/port-base
+> > +        description: Output port, connect to a CSI controller
 > > +
-> > +       mtk_phy_update_bits(pcie_phy->sif_base +
-> > PEXTP_ANA_GLB_00_REG,
-> > +                           EFUSE_GLB_INTR_SEL,
-> > EFUSE_GLB_INTR_VAL(glb_intr));
+> > +        properties:
+> > +          reg:
+> > +            const: 1
 > > +
-> > +       /*
-> > +        * Set efuse value for lane1, only available for the
-> > platform which
-> > +        * supports two lane.
-> > +        */
-> > +       ret = nvmem_cell_read_variable_le_u32(dev, "tx_ln1_pmos",
-> > &tx_pmos);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to read tx_ln1_pmos, efuse
-> > value not support for lane 1\n",
-> > +                       __func__);
-> > +               return 0;
-> > +       }
+> > +          endpoint:
+> > +            $ref: video-interfaces.yaml#
+> > +            unevaluatedProperties: false
 > > +
-> > +       ret = nvmem_cell_read_variable_le_u32(dev, "tx_ln1_nmos",
-> > &tx_nmos);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to read tx_ln1_pmos\n",
-> > __func__);
-> > +               return ret;
-> > +       }
+> > +        additionalProperties: false
 > > +
-> > +       ret = nvmem_cell_read_variable_le_u32(dev, "rx_ln1",
-> > &rx_data);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to read rx_ln1\n",
-> > __func__);
-> > +               return ret;
-> > +       }
+> > +    required:
+> > +      - port@0
+> > +      - port@1
 > > +
-> > +       if (!(tx_pmos || tx_nmos || rx_data))
-> > +               return 0;
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - interrupts
+> > +  - clocks
+> > +  - clock-names
+> > +  - resets
+> > +  - ports
 > > +
-> > +       mtk_phy_update_bits(pcie_phy->sif_base +
-> > PEXTP_ANA_LN1_TX_REG,
-> > +                           EFUSE_LN_TX_PMOS_SEL,
-> > +                           EFUSE_LN_TX_PMOS_VAL(tx_pmos));
+> > +additionalProperties: false
 > > +
-> > +       mtk_phy_update_bits(pcie_phy->sif_base +
-> > PEXTP_ANA_LN1_TX_REG,
-> > +                           EFUSE_LN_TX_NMOS_SEL,
-> > +                           EFUSE_LN_TX_NMOS_VAL(tx_nmos));
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +    #include <dt-bindings/clock/sun8i-a83t-ccu.h>
+> > +    #include <dt-bindings/reset/sun8i-a83t-ccu.h>
 > > +
-> > +       mtk_phy_update_bits(pcie_phy->sif_base +
-> > PEXTP_ANA_LN1_RX_REG,
-> > +                           EFUSE_LN_RX_SEL,
-> > EFUSE_LN_RX_VAL(rx_data));
+> > +    mipi_csi2: csi@1cb1000 {
+> > +        compatible =3D "allwinner,sun8i-a83t-mipi-csi2";
+> > +        reg =3D <0x01cb1000 0x1000>;
+> > +        interrupts =3D <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
+> > +        clocks =3D <&ccu CLK_BUS_CSI>,
+> > +                 <&ccu CLK_CSI_SCLK>,
+> > +                 <&ccu CLK_MIPI_CSI>,
+> > +                 <&ccu CLK_CSI_MISC>;
+> > +        clock-names =3D "bus", "mod", "mipi", "misc";
+> > +        resets =3D <&ccu RST_BUS_CSI>;
 > > +
-> > +       return 0;
-> > +}
+> > +        ports {
+> > +            #address-cells =3D <1>;
+> > +            #size-cells =3D <0>;
 > > +
-> > +static const struct phy_ops mtk_pcie_phy_ops = {
-> > +       .init   = mtk_pcie_phy_init,
-> 
-> This function doesn't look like it is enabling any resources, and
-> there
-> is no .exit counterpart. You could simply call this in the probe
-> function.
-> 
-> Or maybe the hardware settings get reset during suspend, and you want
-> the
-> settings reinitialized when the consumer calls phy_init() again? This
-> design limitation and decision should be noted in a comment.
-> 
-> 
-> Also, it is better to do the NVMEM readout at probe time, so if
-> nvmem_cell_read_* returns -EPROBE_DEFER, you get proper probe
-> sequencing.
-> 
-> Consumers likely won't be expecting -EPROBE_DEFER from phy_init().
-> 
-> > +       .owner  = THIS_MODULE,
-> > +};
+> > +            mipi_csi2_in: port@0 {
+> > +                reg =3D <0>;
 > > +
-> > +static int mtk_pcie_phy_probe(struct platform_device *pdev)
-> > +{
-> > +       struct device *dev = &pdev->dev;
-> > +       struct phy_provider *provider;
-> > +       struct mtk_pcie_phy *pcie_phy;
+> > +                mipi_csi2_in_ov8865: endpoint {
+> > +                    data-lanes =3D <1 2 3 4>;
 > > +
-> > +       pcie_phy = devm_kzalloc(dev, sizeof(*pcie_phy),
-> > GFP_KERNEL);
-> > +       if (!pcie_phy)
-> > +               return -ENOMEM;
+> > +                    remote-endpoint =3D <&ov8865_out_mipi_csi2>;
+> > +                };
+> > +            };
 > > +
-> > +       pcie_phy->dev = dev;
+> > +            mipi_csi2_out: port@1 {
+> > +                reg =3D <1>;
 > > +
-> > +       pcie_phy->sif_base =
-> > devm_platform_ioremap_resource_byname(pdev, "sif");
-> > +       if (IS_ERR(pcie_phy->sif_base)) {
-> > +               dev_err(dev, "%s: Failed to map phy-sif base\n",
-> > __func__);
-> > +               return PTR_ERR(pcie_phy->sif_base);
-> 
-> Use "return dev_err_probe(...)".
-> 
-> > +       }
+> > +                mipi_csi2_out_csi: endpoint {
+> > +                    remote-endpoint =3D <&csi_in_mipi_csi2>;
+> > +                };
+> > +            };
+> > +        };
+> > +    };
 > > +
-> > +       pcie_phy->phy = devm_phy_create(dev, dev->of_node,
-> > &mtk_pcie_phy_ops);
-> > +       if (IS_ERR(pcie_phy->phy)) {
-> > +               dev_err(dev, "%s: Failed to create PCIe phy\n",
-> > __func__);
-> > +               return PTR_ERR(pcie_phy->phy);
-> 
-> Same here.
-> 
-> > +       }
-> > +
-> > +       phy_set_drvdata(pcie_phy->phy, pcie_phy);
-> > +
-> > +       provider = devm_of_phy_provider_register(dev,
-> > of_phy_simple_xlate);
-> > +
-> > +       return PTR_ERR_OR_ZERO(provider);
-> 
-> No error message if it fails?
-> 
-> Also, small nit: many prefer not to use PTR_ERR_OR_ZERO, as it adds a
-> line
-> that needs to be changed if the core needs to be extended.
-> 
-> > +}
-> > +
-> > +static const struct of_device_id mtk_pcie_phy_of_match[] = {
-> > +       { .compatible = "mediatek,pcie-phy" },
-> 
-> As mentioned for the binding patch, use a SoC specific compatible
-> string.
-> 
-> 
-> Regards
-> ChenYu
-> 
-> 
-> > +       { },
-> > +};
-> > +MODULE_DEVICE_TABLE(of, mtk_pcie_phy_of_match);
-> > +
-> > +static struct platform_driver mtk_pcie_phy_driver = {
-> > +       .probe  = mtk_pcie_phy_probe,
-> > +       .driver = {
-> > +               .name = "mtk-pcie-phy",
-> > +               .of_match_table = mtk_pcie_phy_of_match,
-> > +       },
-> > +};
-> > +module_platform_driver(mtk_pcie_phy_driver);
-> > +
-> > +MODULE_DESCRIPTION("MediaTek PCIe PHY driver");
-> > +MODULE_AUTHOR("Jianjun Wang <jianjun.wang@mediatek.com>");
-> > +MODULE_LICENSE("GPL v2");
-> > --
-> > 2.18.0
-> > 
-> > 
-> > _______________________________________________
-> > Linux-mediatek mailing list
-> > Linux-mediatek@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-mediatek
-> 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> > +...
+>=20
+> --=20
+> Kind regards,
+>=20
+> Sakari Ailus
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--iiX+RlDO9qayM+ej
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAmIzX/MACgkQ3cLmz3+f
+v9E+pQf+IeGzh1lXPZrMZDTECUlOPK5l/zgJtpRtE5Gd7qzKbZm59v2L4YYnaBzC
+uT+MIgMHxJtyX90UobiXOilMW/yxilQFh/i00T4HMXEZ+VFxY6wVVUZt0/yZM33n
+U3EqJqMWT/cb14jgNFBi9jEX7Y08cRih1u8JZxnDBDnq/1KZL/csvquJ2Ljwczw0
+cMOQ+1L8liSsQiq7AlorcZLuFSLttMlbIZg+E2u9FNSBKcoF1iUpsDhSggXEVvs9
+rVxpT+YhxM6hNls7XR3LyeE7KdAfdcub5JFhUiq7oTJxQK+K6/0IWv8qBrq35k3u
+qcCt2yH9UO9dmAyhBky+qbS06yaJjA==
+=IJLv
+-----END PGP SIGNATURE-----
+
+--iiX+RlDO9qayM+ej--
+
+
+--===============4716634582914912415==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4716634582914912415==--
+
