@@ -4,81 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6F55C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Mar 2022 18:39:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 672FDC433EF
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Mar 2022 14:40:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6yeZA4+5PS7CvvezKYTC8JbBH9C9tb3pETc7OFOaqW0=; b=PJ1fRinKmAr/o3
-	vkZ1ZHATG/z1cA/MpBDttRIq0NuLXYaKR8ZQxv6LxhJOjIwEoDbsgmDrhy+FnpR38mdItYHy82RZY
-	jtH9xtExT4FlvsghzKRy59AYOuCpkAHBPNBd3AGW+dU2b0Kaw4zfFJg4LGIwEBdn8VOg65WNrES3T
-	xHDP8jjwcXD6f3eGA7nAkFdg7mQdwmCvvobqdKJMA3g7cyFYgY2IrUgcodp6jXjtY59WiSDJBvsdY
-	jnOj60HhtAa6Ov0cbNbHYM4+9H6/v4xxxScfQOmbVQA9BaW2GPaUjCPzwoEU8o7xUvsz6LTRot3Zp
-	SXB6z/34WyjDp0l2gy0w==;
+	List-Owner; bh=vQpTod9QOhKI/yGB5j+fmK1vvRxeajYJDtxhzUAtpt0=; b=WUL1J+nDWHkpAp
+	oFU6D9y4jOXMAuPAS4Cm5u+6VsIvKsez/pgWFAgJSNp2MWSnWNOqRT5o6aFCDAbhacHZm6Ark5xw1
+	GeVIHDaB7EjUaMc9RIxr90iRhPuGqQQOZzsnPdsFmQ8V04NIDvcYnkn8mW+XuahcO3avXlEL6BG5y
+	+AwvdHmS9Ki1icvJFRo9CGxsX7ciREQjQ66+jfON1ceUieE7q9+S/AZIbcjtJ35cCoe0p5Y22gneA
+	GwIigIdLB+xOV0PoloayBjkOTpAkmuccOSWzWTWI5hcaJa0cBK7sIaboP3tunsATPmp8fA1DfVuve
+	XlnZqPqqaCdLoo2JUsIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nVHVF-002dAi-US; Fri, 18 Mar 2022 18:39:09 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1nVaFk-003vlN-TH; Sat, 19 Mar 2022 14:40:24 +0000
+Received: from mail-ej1-f41.google.com ([209.85.218.41])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nVHV7-002d8Z-2d
- for linux-phy@lists.infradead.org; Fri, 18 Mar 2022 18:39:08 +0000
-Received: by mail-wr1-x434.google.com with SMTP id r10so12858942wrp.3
- for <linux-phy@lists.infradead.org>; Fri, 18 Mar 2022 11:38:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fairphone.com; s=fair;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=rbg2RlFA/4puyAOuKWmpEc0rQD4bbwwHtg4uOvJP+0I=;
- b=CLaL56CILexB1XmewhSYD+RMOauS6TXFrSrM09e8FX6dz3NqqKNQuLoBTJMloetORm
- bdsFhPuyeJBgQwXMcWioPB3uOCRhCKZb15XtU05+uB3I/TOXoWs0CISSxKayf95mroVa
- zaN5A7mGN1VgxSGahkm6Hmy6lrxAOme+8PJ/Bg44Gec/QYLJhyXIkqJWp/aoVAjJBRDd
- iaJvbVkvpG1j0vgmX6D8dbAeG9ARk291ldzH5/YvTUVsXIBVvVMPQIy0XqBLGXbG8oyA
- rlLhDlE7/MTvg8kEayMeztg9JDPF7plFAz3CxDj+7gO6QzrJx2fjQ+NM9TO8eirumasp
- aoYA==
+ id 1nVaFi-003vkV-Jf
+ for linux-phy@lists.infradead.org; Sat, 19 Mar 2022 14:40:23 +0000
+Received: by mail-ej1-f41.google.com with SMTP id d10so21970347eje.10
+ for <linux-phy@lists.infradead.org>; Sat, 19 Mar 2022 07:40:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=rbg2RlFA/4puyAOuKWmpEc0rQD4bbwwHtg4uOvJP+0I=;
- b=JnFfLKH0imrc77r92JLtznZYku8nLVys45cKaJAhQzjZBU6EGRqSRrJQ6g6sErwwGY
- VHQtRvKn0TZUIamJg63GqtBwJemrQuNKl3a5cxtosB1Ps5sXRS6g4J8bDiEv9ttTeGlK
- bpXN3kkkMHty/DiYtzaDhBVIZAN5gsuycfhGh2OyG2Pe230DTVdI7CC6dT5HxRJ/q0nx
- xH0ntk8VJGr0+WRgCF1RA2QaS1Sib1j09bVW6Yo8uQYK9X2+rm+L+iQu8fjz6g2Ea06C
- o4DAjTaNpyEmdy8qJZsygh/ZZAfOGvWb1br8Mc58v9lDeibVjTcleXxGLxFg98F6uRkx
- ye4A==
-X-Gm-Message-State: AOAM530dsHJf90MbxI6H4w4+XhwFrt7r2mKuCL00xT5Aw9d0IATbn6WV
- U2zpKeZlrV+Ie8iIdBjtTEgmX9g+F7l/1w==
-X-Google-Smtp-Source: ABdhPJy9l9NnPcxCTwrHttfVSh2VeMF/NE86kvBCodu5fsRVccCePBYOvZuaZPfCKvJyw5yFTLlEtQ==
-X-Received: by 2002:a17:906:6a02:b0:6d7:cda:2cf7 with SMTP id
- qw2-20020a1709066a0200b006d70cda2cf7mr9874936ejc.53.1647628227733; 
- Fri, 18 Mar 2022 11:30:27 -0700 (PDT)
-Received: from otso.arnhem.chello.nl (a246182.upc-a.chello.nl.
- [62.163.246.182]) by smtp.gmail.com with ESMTPSA id
- y8-20020a50eb08000000b00418b114469csm4567551edp.52.2022.03.18.11.30.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Mar 2022 11:30:27 -0700 (PDT)
-From: Luca Weiss <luca.weiss@fairphone.com>
-To: linux-arm-msm@vger.kernel.org
-Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
- Luca Weiss <luca.weiss@fairphone.com>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 2/6] dt-bindings: phy: qcom,qmp: Add SM6350 UFS PHY bindings
-Date: Fri, 18 Mar 2022 19:30:00 +0100
-Message-Id: <20220318183004.858707-3-luca.weiss@fairphone.com>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220318183004.858707-1-luca.weiss@fairphone.com>
-References: <20220318183004.858707-1-luca.weiss@fairphone.com>
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=51MF7CMveV1FPVM1stqHHfoXDZB2HvnqZFW3qb4HPvg=;
+ b=zSrnO4xoQ3dLx2j4Rf37RYcYcH18Dk8mNv0xbvMRoIhka01kaNRlvJ7ApLDfcu+BlV
+ 7igIC9qHlLmkgimgp3/tofU5d/9RTGXCKSOwlbCf1BZZjzipTW+HMiFexc0Q3oca8v/J
+ Rtp44DvxZIFlMOn7op8gcHMV3kBd2pf6pFHMY499m4sjmPSG40QayNy3pHyUl7FRHliA
+ kg9SnwjiSs43gQK2pFooCCPL8rQDhNnovibKaXfd8chkHaDUR4vYW4LaMprSltj/6YRQ
+ 4o4KAzp6pxDD/SCRPn1Hzjp77de8kN8hXmrl8r/3OEZ/0SY80q8Qe52Ip1i7XLKPksBM
+ t2vg==
+X-Gm-Message-State: AOAM532F+mLyWB6Q793hprAyiPdnGS+apQydnJKyofmS1V1F7GKPy6Y7
+ ZfBV5kz1cLl9No7jSp3TPf0=
+X-Google-Smtp-Source: ABdhPJzTCHBns8Of5aWkggpbK2hL/YYJMUO6iz0EeO/XI+KIAn3YnmSkyRfVvIMxKQxf1sKzq+oq6A==
+X-Received: by 2002:a17:907:216f:b0:6ce:d85f:35cf with SMTP id
+ rl15-20020a170907216f00b006ced85f35cfmr13488896ejb.517.1647700820629; 
+ Sat, 19 Mar 2022 07:40:20 -0700 (PDT)
+Received: from [192.168.0.17] (78-11-189-27.static.ip.netia.com.pl.
+ [78.11.189.27]) by smtp.googlemail.com with ESMTPSA id
+ u10-20020a50d94a000000b004131aa2525esm5752540edj.49.2022.03.19.07.40.19
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 19 Mar 2022 07:40:20 -0700 (PDT)
+Message-ID: <ae73a362-cbfe-4e33-37a3-61614fcde9c0@kernel.org>
+Date: Sat, 19 Mar 2022 15:40:18 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH 2/6] dt-bindings: phy: qcom,qmp: Add SM6350 UFS PHY
+ bindings
+Content-Language: en-US
+To: Luca Weiss <luca.weiss@fairphone.com>, linux-arm-msm@vger.kernel.org
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20220318183004.858707-1-luca.weiss@fairphone.com>
+ <20220318183004.858707-3-luca.weiss@fairphone.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+In-Reply-To: <20220318183004.858707-3-luca.weiss@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220318_113901_125620_98473BBB 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220319_074022_689526_7B0EFE96 
+X-CRM114-Status: GOOD (  12.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,28 +88,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the compatible string for the UFS PHY found in SM6350.
+On 18/03/2022 19:30, Luca Weiss wrote:
+> Document the compatible string for the UFS PHY found in SM6350.
+> 
+> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> index e20d9b087bb8..934aa9101ddd 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> @@ -39,6 +39,7 @@ properties:
+>        - qcom,sdm845-qmp-usb3-phy
+>        - qcom,sdm845-qmp-usb3-uni-phy
+>        - qcom,sm6115-qmp-ufs-phy
+> +      - qcom,sm6350-qmp-ufs-phy
 
-Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
----
- Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+Please also add constraints to clocks, resets and any other necessary
+properties in allOf:if:then section.
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index e20d9b087bb8..934aa9101ddd 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -39,6 +39,7 @@ properties:
-       - qcom,sdm845-qmp-usb3-phy
-       - qcom,sdm845-qmp-usb3-uni-phy
-       - qcom,sm6115-qmp-ufs-phy
-+      - qcom,sm6350-qmp-ufs-phy
-       - qcom,sm8150-qmp-ufs-phy
-       - qcom,sm8150-qmp-usb3-phy
-       - qcom,sm8150-qmp-usb3-uni-phy
--- 
-2.35.1
 
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
