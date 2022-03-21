@@ -4,77 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAD12C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Mar 2022 13:33:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F708C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Mar 2022 13:41:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I2srjr5FMDYJKL6cEhXz/UWhPpuArvT+3RCdetUomNI=; b=S8GtFZwg+6yBd/
-	Z/eskWzCLTrdjweKkzc1D66p1KbgqXJp14220lEacsjuywGczp9d854i73Kwm+hfNGjxyTcdi4b73
-	kQ3YOV8oDIm1Xuw1zmoE+dByAOxAb4wLSij0sqx7OCRGSUxJvGzIiOpMidYQ4TMtynnPY7Isig5nN
-	GHGX/+Ji658gcgMvx3DQ60oO+hW3JDf7spQ9Z6IvxAwPS5ku/NZPs60DmSHoEl2m8QqZeo238SKMx
-	PSyP5gl6MzOodwdvf4R6q7RXkgn6Z8GbooLxvUXEk+1c8vCNVdWfmL2WCQpIjLy2zyK0aoc/4tf1/
-	T1LI/OksNMOzfAHsDqfg==;
+	List-Owner; bh=GAcJzBNWTwQtVYTXzUbSaKZc2IIykWBhsFOMZI4cOog=; b=Ku1j8syX55X9Zv
+	nlRwNQkpFriVFzQzTwsW4aZEAfO6lFqducsdQYQf4EIC6idoR0owMGnDe6sveqwj89TMTLm+rNK+I
+	ZojcKi1WOp3JpCqKDBLqa3sy/UWeuWNhF7RBQOGHog8IUiQc3TIVZv86td1ASKmbbU0t2vytnhf4S
+	KjoBP+UJTy/A9J/SUtVdd0gyrdeNrjDfTpR7OP1cLdnSchmFaG6F+EuQFhJ2tkurU9lXVAVGbawtF
+	JWWZOv6ha19QqiCE/Mg/pvm0MR4D1P+whsqB+4KSjYZYyb0oKyWFkhhdSF4lo2WM7gGmhMAYy06Kx
+	Nerss8PDULx7WuIRmpPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nWIAX-007sNu-91; Mon, 21 Mar 2022 13:33:57 +0000
-Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
+	id 1nWIHv-007tdW-0t; Mon, 21 Mar 2022 13:41:35 +0000
+Received: from mail-wm1-f45.google.com ([209.85.128.45])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nWIAU-007sLn-Af
- for linux-phy@lists.infradead.org; Mon, 21 Mar 2022 13:33:55 +0000
-Received: by mail-ed1-x52a.google.com with SMTP id t1so17869023edc.3
- for <linux-phy@lists.infradead.org>; Mon, 21 Mar 2022 06:33:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fairphone.com; s=fair;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=DsNby0a3KqzAfOnj6mSyZetKsm2cbFk7h9HIg7MUGdQ=;
- b=mVyqs6hGGEUzEFy32H/xYVc8XbIFlcX8m1ZC85sLopiDTeC1gHZcaYWZ1t9zaF9xhJ
- EYsabs6hRni0eEKMdAghJhsH5U/tcQt0EiS5EP4KZ3mRazXyLtVGD12H72iJ7mYDRQbN
- ORKFueJmChRJ5gjIlmvlPOvD4pVJq+PanCARu1rT8lQ00x+5dK3bfhHgP/vkmiURe5HT
- DOA0f9njkv3mDnFZUcDzZFW7Wl0UMIduQZmfJkKsip8jeIdDg5sq2WRbbvITTvKO+bIq
- AFN60dplhhuEVHC7vWPgmddrusV9fLlJEVQJETly7aK5vwYDy8tuXeSV18QY1Fc6qrrT
- VTlA==
+ id 1nWIHt-007tcq-6E
+ for linux-phy@lists.infradead.org; Mon, 21 Mar 2022 13:41:34 +0000
+Received: by mail-wm1-f45.google.com with SMTP id
+ j13-20020a05600c1c0d00b0038c8f94aac2so4150432wms.3
+ for <linux-phy@lists.infradead.org>; Mon, 21 Mar 2022 06:41:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=DsNby0a3KqzAfOnj6mSyZetKsm2cbFk7h9HIg7MUGdQ=;
- b=k53cE3LqALrrSIC7N1z1rnSB6aN/6VIs0mcyZvW9vN9N+oNdp0i/NQokqQNgMbXuYe
- 4LFz9sV8wTIBn2bmm8Ix0/AvxNvUjYQNdyTCB3dMWrVGUCPisibvq2QSBymYJReCFLBh
- 5f5ho/m7o3ZOG+X+yaNOVxtuNxEw++OYwN1M+yCu6Z4GXScJ7Ih9yYTt042OBDj4Mb0g
- uoF0xvcRDNL38qq74ooYdSzUIxcBrBBdhuGBOTIorX13TmJtJCMWCXtaUnYIl25ni9QZ
- Ym2xOCBmHj/jrOzlzOnvw9aa3KIvf/GwKxj95vHeG3a81bFyvvpcrmElAvbZbREQXH5L
- DVPQ==
-X-Gm-Message-State: AOAM532TrfFeqEUThGJ5q1+wSJBw8H+ahFpfPSGx2UMGOikABbrz1nEg
- 6PiYc1rrnnf5CxQfNfHHHpNA63OG5HqEQA==
-X-Google-Smtp-Source: ABdhPJwbmbOxiUJERj4MHNXeag+kdgbSCHJBfY82vjDCL38uvezqoHUBcVMRYz+Bz08iOVCcqVzlsg==
-X-Received: by 2002:a05:6402:51c7:b0:419:2bd7:efa4 with SMTP id
- r7-20020a05640251c700b004192bd7efa4mr8919920edd.135.1647869632531; 
- Mon, 21 Mar 2022 06:33:52 -0700 (PDT)
-Received: from otso.arnhem.chello.nl (a246182.upc-a.chello.nl.
- [62.163.246.182]) by smtp.gmail.com with ESMTPSA id
- r22-20020a17090638d600b006d584aaa9c9sm6862154ejd.133.2022.03.21.06.33.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Mar 2022 06:33:52 -0700 (PDT)
-From: Luca Weiss <luca.weiss@fairphone.com>
-To: linux-arm-msm@vger.kernel.org
-Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
- Luca Weiss <luca.weiss@fairphone.com>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v2 3/6] phy: qcom-qmp: Add SM6350 UFS PHY support
-Date: Mon, 21 Mar 2022 14:33:15 +0100
-Message-Id: <20220321133318.99406-4-luca.weiss@fairphone.com>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220321133318.99406-1-luca.weiss@fairphone.com>
-References: <20220321133318.99406-1-luca.weiss@fairphone.com>
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=bgZga+iTgZxl29E6bE+yhoQ9768MdEVBvsBU8JRRDE8=;
+ b=IUC0/V9F3RGcRoNbU4a5ZelYau94YQWucihESG9Ept7EDJ12NFejz4jUpc8rrPjMBF
+ fzgADWEF/pBvg/9gaZsGosGKelgn6cOBWu9Byyn566B7I2A+yL06NVKmb6mPPvBfX2kE
+ 5OEX/9B0RUzL8cvVj8qixJYUj9FuF2fR9mJ8IUlXqjCAVCKtcsS4g0P70UMg4GmEQnGE
+ XeEUQO1z2iOVoAuDyPeOVcGzP+pjPNZnCfM1G5Ak4HqUsmyVy3r7golVgzOZUbV3HHbe
+ zAYQcTjKlOf+P08560b4B+r1YMCG3DqZEz/44p2PMYvRz6A/BrVf/6CetOs53sW0R/EY
+ 7uuw==
+X-Gm-Message-State: AOAM533aJAjoVfjR93DLQAIPS8p6C43fNFevG9ccq300IUMuiW7rseFp
+ tjlycZ5+kjpSSgbK/H0ULZI=
+X-Google-Smtp-Source: ABdhPJyyMzjTIttlNJGT9aSGuFyu/LU1exiN5s7fn3fPiNcvUU7PK+DZCRuW+H0pR2coizCwfUGpWQ==
+X-Received: by 2002:a05:600c:5109:b0:38c:a4ce:ca1d with SMTP id
+ o9-20020a05600c510900b0038ca4ceca1dmr5084171wms.169.1647870091636; 
+ Mon, 21 Mar 2022 06:41:31 -0700 (PDT)
+Received: from [192.168.0.17] (78-11-189-27.static.ip.netia.com.pl.
+ [78.11.189.27]) by smtp.googlemail.com with ESMTPSA id
+ c24-20020a7bc018000000b0038a18068cf5sm16635323wmb.15.2022.03.21.06.41.30
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 21 Mar 2022 06:41:31 -0700 (PDT)
+Message-ID: <c662c6a9-032f-01c0-7605-1e6ff58eaa40@kernel.org>
+Date: Mon, 21 Mar 2022 14:41:30 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.5.0
+Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,qmp: Add SM6350 UFS PHY
+ bindings
+Content-Language: en-US
+To: Luca Weiss <luca.weiss@fairphone.com>, linux-arm-msm@vger.kernel.org
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20220321133318.99406-1-luca.weiss@fairphone.com>
+ <20220321133318.99406-3-luca.weiss@fairphone.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+In-Reply-To: <20220321133318.99406-3-luca.weiss@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220321_063354_389016_B124A363 
+X-CRM114-CacheID: sfid-20220321_064133_265324_C15E3281 
 X-CRM114-Status: UNSURE (   9.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
@@ -93,34 +90,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SM6350 UFS PHY is compatible with the one from SDM845. Add a
-compatible for that.
+On 21/03/2022 14:33, Luca Weiss wrote:
+> Document the compatible string for the UFS PHY found in SM6350.
+> 
+> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+> ---
+> Changes in v2:
+> - add second hunk for clock validation
+> 
+>  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
 
-Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
----
-Changes in v2:
-- nothing
 
- drivers/phy/qualcomm/phy-qcom-qmp.c | 3 +++
- 1 file changed, 3 insertions(+)
+Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index b144ae1f729a..1628275265b5 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -6007,6 +6007,9 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sm6115-qmp-ufs-phy",
- 		.data = &sm6115_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm6350-qmp-ufs-phy",
-+		.data = &sdm845_ufsphy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8150-qmp-ufs-phy",
- 		.data = &sm8150_ufsphy_cfg,
--- 
-2.35.1
 
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
