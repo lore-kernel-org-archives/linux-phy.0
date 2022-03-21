@@ -4,79 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B5CBC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Mar 2022 04:25:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAFEDC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Mar 2022 07:25:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FvVHqYhwljQqukuV3ZUj5H5aBSl48eHnH+b/Z8uLbIg=; b=aQAcBo5wx6I3SU
-	7IrlCypj7uM3YKeyvw3BiVxN54PbTpD8qwO/JSENhyOLGrCVHgsFX8z3g2946aS6ogVCCuDy8HQB+
-	G3uzdF5l2l+kZvblbqNYgekGwY9HZny2O+69PgCiLI67S8tR2LM5dE9Gbiuk61eWlVvlCpH5Iie9c
-	s3bfGne/MkLaJHBpYUP/jtRCdckrJlOl0c9gIunfFO8Y/mYogMPn4xhB/3NlfoVGvmVcJybfQ5iKg
-	l6fY0A+evJUcml0t5aD7m6op6jetK3PlDeREnRmDvyF4r6fmUVwIU27xN8nFNPCd3uAwugr+Awa40
-	AUqkkz47R8Cu9AqLKJ7g==;
+	List-Owner; bh=gKXnjhPQZMUG26gQIgMD5AyB6vpD57NWg2WA9KYPn58=; b=1/KIof0N17hstR
+	PnRKQ9s/KOSQy1GBiSbWMlRTR+UJsP5HgkotPqdaKD+sTCdIY964pVhhjtLiD+4XDemZGZaLBt+7y
+	zmngnxtmR+lMQpo1bluxHPBteMiR2Atpmf+J+8n2n2i/nzldRDIQkB0PANarillm0NwoXsClvGy8e
+	0Kubevfakqjjtmpz7TqIGq/XG28YrD3x8ujlpjCtYhYkginTrNTh4KPqpqF8v5NsqyxW71r4gbIzJ
+	kwUGozgLR87cBd1YjqIlJspLyNjUj7mi+yIy6e5EYaSOty8AUjLbXIOVUfn7AgFCwH6wWfy5UcEXj
+	uNPuiR6e+olcQ0NClnGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nW9bf-006T4l-S1; Mon, 21 Mar 2022 04:25:23 +0000
-Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
+	id 1nWCQE-006oY3-58; Mon, 21 Mar 2022 07:25:46 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nW9bS-006SzB-At
- for linux-phy@lists.infradead.org; Mon, 21 Mar 2022 04:25:11 +0000
-Received: by mail-yw1-x1135.google.com with SMTP id
- 00721157ae682-2e5827a76f4so142702567b3.6
- for <linux-phy@lists.infradead.org>; Sun, 20 Mar 2022 21:25:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4NSXl8x9VQewgRZHgqXMmZGOEdV3eFjb3sYvvvg6pNg=;
- b=J6gele5F7EmCQLLAJAVg85lJycQ/fkbtMV60Bxn6mvBD54K/cP91HfuCJSamixeAe6
- SMimZpLUVi6GEmvbVU07gyHdeCeiYdtk4dmtLUJ8nH0xQuKRP5nXagiIZ3LrTCv9YfDe
- C+mSOTSyfmPr+Jge0Xnm2nipVd5HfDakmx2EM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4NSXl8x9VQewgRZHgqXMmZGOEdV3eFjb3sYvvvg6pNg=;
- b=3vyhq8Mx0AYWcy88i6rOaTx20Np9mbuv5jh+smp1Rf4d1DVfOa5FMwwaLe8IzFB+Sa
- AygFRROp9ZDuzqvFOKnnjx6MG9JMHpmxlWFIdxlvD9vUWktM5HkgNNEkzplXMxlqyaF0
- MyCi+yUHG9L+0Un7T0n4+Wn/ugCQgjg/Rtcm157SoRDa25IyE/9klxwvpJVxxQQgphDN
- pJOAHk6YFpA9n42IeUYNRHK9OyRh0II0S2jb204FfsER5MWDEHCGEG84Pft9g8mq42ET
- Tq9lloFnG2UK87kdntjC+AP4IHZDwgBcmFVLhk3W4Ru4r4WQ9VmU6MZ1GKZ7oC8rrWy/
- W9Og==
-X-Gm-Message-State: AOAM532JsmYj17wd7TwETxua0yww+RLUfqvzMXxIJlz9fgmkqOrosb89
- MPpMHbRRFV65aYmE9MWmta4BCxjPenOBnt8qrNPn7w==
-X-Google-Smtp-Source: ABdhPJxzqdQkJL+E26J8ZUZbTwrpFeuieBZ6OBpvDJ70M8HbgvzqPpoqzxqTXlsc0yVVk8krFj2m/iV9tyn319SkBwY=
-X-Received: by 2002:a05:690c:9c:b0:2e6:4ca0:d140 with SMTP id
- be28-20020a05690c009c00b002e64ca0d140mr502772ywb.161.1647836709475; Sun, 20
- Mar 2022 21:25:09 -0700 (PDT)
+ id 1nWCPV-006oJZ-8P; Mon, 21 Mar 2022 07:25:04 +0000
+X-UUID: 030567ac65544feeafb518f5e19c86ec-20220321
+X-UUID: 030567ac65544feeafb518f5e19c86ec-20220321
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <rex-bc.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1114861679; Mon, 21 Mar 2022 00:24:55 -0700
+Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 21 Mar 2022 00:24:54 -0700
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by mtkexhb01.mediatek.inc
+ (172.21.101.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Mon, 21 Mar 2022 15:24:52 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkcas10.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 21 Mar 2022 15:24:52 +0800
+Message-ID: <dae3ccb3e2f658418d6b1c061181a0b9291c108f.camel@mediatek.com>
+Subject: Re: [PATCH v8 17/19] drm/mediatek: add hpd debounce
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: Guillaume Ranquet <granquet@baylibre.com>, <chunkuang.hu@kernel.org>,
+ <p.zabel@pengutronix.de>, <airlied@linux.ie>, <daniel@ffwll.ch>,
+ <robh+dt@kernel.org>, <maarten.lankhorst@linux.intel.com>,
+ <mripard@kernel.org>, <tzimmermann@suse.de>, <matthias.bgg@gmail.com>,
+ <chunfeng.yun@mediatek.com>, <kishon@ti.com>, <vkoul@kernel.org>,
+ <deller@gmx.de>, <ck.hu@mediatek.com>, <jitao.shi@mediatek.com>,
+ <angelogioacchino.delregno@collabora.com>
+CC: <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+ <linux-fbdev@vger.kernel.org>
+Date: Mon, 21 Mar 2022 15:24:52 +0800
+In-Reply-To: <20220218145437.18563-18-granquet@baylibre.com>
+References: <20220218145437.18563-1-granquet@baylibre.com>
+ <20220218145437.18563-18-granquet@baylibre.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-References: <20220318095417.2016-1-jianjun.wang@mediatek.com>
- <20220318095417.2016-2-jianjun.wang@mediatek.com>
- <2e0989c3-7132-6091-5c9e-5dc8d9af22e8@collabora.com>
- <319cf016-55fb-dcd4-9157-ad795c8e68ff@kernel.org>
- <e0adbb4d-aa87-49ea-d79f-11c5f4fc4bdd@collabora.com>
-In-Reply-To: <e0adbb4d-aa87-49ea-d79f-11c5f4fc4bdd@collabora.com>
-From: Chen-Yu Tsai <wenst@chromium.org>
-Date: Mon, 21 Mar 2022 12:24:58 +0800
-Message-ID: <CAGXv+5GzC_LFd_1uTBDT=2otiUrJn9NGa4g=R4NhED7-p-G9RA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: mediatek: Add YAML schema for
- PCIe PHY
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>,
- Jianjun Wang <jianjun.wang@mediatek.com>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, rex-bc.chen@mediatek.com, Randy.Wu@mediatek.com, 
- jieyy.yang@mediatek.com, chuanjia.liu@mediatek.com, 
- qizhong.cheng@mediatek.com, jian.yang@mediatek.com
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220320_212510_422666_FEC7A807 
-X-CRM114-Status: GOOD (  22.26  )
+X-CRM114-CacheID: sfid-20220321_002501_340712_4CF91E85 
+X-CRM114-Status: GOOD (  18.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,72 +79,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 18, 2022 at 9:56 PM AngeloGioacchino Del Regno
-<angelogioacchino.delregno@collabora.com> wrote:
->
-> Il 18/03/22 14:51, Krzysztof Kozlowski ha scritto:
-> > On 18/03/2022 12:12, AngeloGioacchino Del Regno wrote:
-> >> Il 18/03/22 10:54, Jianjun Wang ha scritto:
-> >>> Add YAML schema documentation for PCIe PHY on MediaTek chipsets.
-> >>>
-> >>> Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
-> >>> ---
-> >>>    .../bindings/phy/mediatek,pcie-phy.yaml       | 75 +++++++++++++++++++
-> >>>    1 file changed, 75 insertions(+)
-> >>>    create mode 100644 Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
-> >>>
-> >>> diff --git a/Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
-> >>> new file mode 100644
-> >>> index 000000000000..868bf976568b
-> >>> --- /dev/null
-> >>> +++ b/Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
-> >>> @@ -0,0 +1,75 @@
-> >>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> >>> +%YAML 1.2
-> >>> +---
-> >>> +$id: http://devicetree.org/schemas/phy/mediatek,pcie-phy.yaml#
-> >>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> >>> +
-> >>> +title: MediaTek PCIe PHY
-> >>> +
-> >>> +maintainers:
-> >>> +  - Jianjun Wang <jianjun.wang@mediatek.com>
-> >>> +
-> >>> +description: |
-> >>> +  The PCIe PHY supports physical layer functionality for PCIe Gen3 port.
-> >>> +
-> >>> +properties:
-> >>> +  compatible:
-> >>> +    const: mediatek,mt8195-pcie-phy
-> >>
-> >> Since I don't expect this driver to be only for MT8195, but to be extended to
-> >> support some more future MediaTek SoCs and, depending on the number of differences
-> >> in the possible future Gen4 PHYs, even different gen's, I propose to add a generic
-> >> compatible as const.
-> >>
-> >> So you'll have something like:
-> >>
-> >> - enum:
-> >>       - mediatek,mt8195-pcie-phy
-> >> - const: mediatek,pcie-gen3-phy
-> >
-> > I am not sure if this is a good idea. How sure are you that there will
-> > be no different PCIe Gen3 PHY not compatible with this one?
-> >
-> >
->
-> Thanks for pointing that out, I have underestimated this option.
->
-> Perhaps Jianjun may be more informed about whether my proposal is valid or not.
+On Fri, 2022-02-18 at 15:54 +0100, Guillaume Ranquet wrote:
+> From: Jitao Shi <jitao.shi@mediatek.com>
+> 
+> Implement the DP HDP debounce described in DP 1.4a 3.3.
+> 
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 
-Just FYI, for Allwinner and I believe Rockchip as well, the compatible strings
-always list the first SoC the hardware block was seen on known at the time
-of driver/binding submission. No generic compatible strings are ever used.
+Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
 
-Not sure if that's the general rule or not.
+> ---
+>  drivers/gpu/drm/mediatek/mtk_dp.c | 23 +++++++++++++++++++++++
+>  1 file changed, 23 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dp.c
+> b/drivers/gpu/drm/mediatek/mtk_dp.c
+> index 2a3d5f15b651b..fe91ab8b2fd89 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dp.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dp.c
+> @@ -178,6 +178,8 @@ struct mtk_dp {
+>  	struct device *codec_dev;
+>  	u8 connector_eld[MAX_ELD_BYTES];
+>  	struct drm_connector *conn;
+> +	bool need_debounce;
+> +	struct timer_list debounce_timer;
+>  };
+>  
+>  static struct regmap_config mtk_dp_regmap_config = {
+> @@ -1698,6 +1700,9 @@ static irqreturn_t mtk_dp_hpd_event_thread(int
+> hpd, void *dev)
+>  	if (event < 0)
+>  		return IRQ_HANDLED;
+>  
+> +	if (mtk_dp->need_debounce && mtk_dp-
+> >train_info.cable_plugged_in)
+> +		msleep(100);
+> +
+>  	if (mtk_dp->drm_dev) {
+>  		dev_info(mtk_dp->dev, "drm_helper_hpd_irq_event\n");
+>  		drm_helper_hpd_irq_event(mtk_dp->bridge.dev);
+> @@ -1776,6 +1781,13 @@ static irqreturn_t
+> mtk_dp_hpd_isr_handler(struct mtk_dp *mtk_dp)
+>  	}
+>  	train_info->cable_state_change = true;
+>  
+> +	if (train_info->cable_state_change) {
+> +		if (!train_info->cable_plugged_in) {
+> +			mod_timer(&mtk_dp->debounce_timer, jiffies +
+> msecs_to_jiffies(100) - 1);
+> +			mtk_dp->need_debounce = false;
+> +		}
+> +	}
+> +
+>  	return IRQ_WAKE_THREAD;
+>  }
+>  
+> @@ -2239,6 +2251,13 @@ static const struct drm_bridge_funcs
+> mtk_dp_bridge_funcs = {
+>  	.detect = mtk_dp_bdg_detect,
+>  };
+>  
+> +static void mtk_dp_debounce_timer(struct timer_list *t)
+> +{
+> +	struct mtk_dp *mtk_dp = from_timer(mtk_dp, t, debounce_timer);
+> +
+> +	mtk_dp->need_debounce = true;
+> +}
+> +
+>  static int mtk_dp_probe(struct platform_device *pdev)
+>  {
+>  	struct mtk_dp *mtk_dp;
+> @@ -2319,6 +2338,9 @@ static int mtk_dp_probe(struct platform_device
+> *pdev)
+>  	else
+>  		mtk_dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
+>  
+> +	mtk_dp->need_debounce = true;
+> +	timer_setup(&mtk_dp->debounce_timer, mtk_dp_debounce_timer, 0);
+> +
+>  	pm_runtime_enable(dev);
+>  	pm_runtime_get_sync(dev);
+>  
+> @@ -2332,6 +2354,7 @@ static int mtk_dp_remove(struct platform_device
+> *pdev)
+>  	platform_device_unregister(mtk_dp->phy_dev);
+>  
+>  	mtk_dp_video_mute(mtk_dp, true);
+> +	del_timer_sync(&mtk_dp->debounce_timer);
+>  
+>  	pm_runtime_disable(&pdev->dev);
+>  
 
-
-ChenYu
 
 -- 
 linux-phy mailing list
