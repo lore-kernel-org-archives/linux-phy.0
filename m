@@ -4,65 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAFEDC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Mar 2022 07:25:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB40FC433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Mar 2022 13:33:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gKXnjhPQZMUG26gQIgMD5AyB6vpD57NWg2WA9KYPn58=; b=1/KIof0N17hstR
-	PnRKQ9s/KOSQy1GBiSbWMlRTR+UJsP5HgkotPqdaKD+sTCdIY964pVhhjtLiD+4XDemZGZaLBt+7y
-	zmngnxtmR+lMQpo1bluxHPBteMiR2Atpmf+J+8n2n2i/nzldRDIQkB0PANarillm0NwoXsClvGy8e
-	0Kubevfakqjjtmpz7TqIGq/XG28YrD3x8ujlpjCtYhYkginTrNTh4KPqpqF8v5NsqyxW71r4gbIzJ
-	kwUGozgLR87cBd1YjqIlJspLyNjUj7mi+yIy6e5EYaSOty8AUjLbXIOVUfn7AgFCwH6wWfy5UcEXj
-	uNPuiR6e+olcQ0NClnGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wplzetxEHYyi36RfSntUOqZXzz8z21WvKi6AAt8sTfQ=; b=2fcQpjjO0VjHHw
+	lLYWPCvwZ9ovrCGodGHmcYGYZvNz5cv4SwTRPwRdA4ueOWgWK5Pq1+/O4fNGjVjIkLFG2GYYg0THc
+	vcWGQpoX96rBvbOgZUWsHO1KIf29W937XpeATT7mwnktQ3gkW0cQVjNuPeV+N5aw/G7StrNeMqF1i
+	DKIIL0G5NCuPoyLlt1YcLObaj98hI3/dEUN8FEQ4AP1DjXmmDr/5EErPd2S6YY4BekY5s2/yAUlDR
+	QoD7cTHVt8VZuARgp+u6ZWo/z9IVMDPbe8rAAYck+dHkzSnD0z0oDwgqrb+UDZmVRUok9kPtTa2GH
+	dGMbT4fASGPz+4mugsTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nWCQE-006oY3-58; Mon, 21 Mar 2022 07:25:46 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nWIAV-007sMw-2p; Mon, 21 Mar 2022 13:33:55 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nWCPV-006oJZ-8P; Mon, 21 Mar 2022 07:25:04 +0000
-X-UUID: 030567ac65544feeafb518f5e19c86ec-20220321
-X-UUID: 030567ac65544feeafb518f5e19c86ec-20220321
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <rex-bc.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1114861679; Mon, 21 Mar 2022 00:24:55 -0700
-Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 21 Mar 2022 00:24:54 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by mtkexhb01.mediatek.inc
- (172.21.101.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Mon, 21 Mar 2022 15:24:52 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 21 Mar 2022 15:24:52 +0800
-Message-ID: <dae3ccb3e2f658418d6b1c061181a0b9291c108f.camel@mediatek.com>
-Subject: Re: [PATCH v8 17/19] drm/mediatek: add hpd debounce
-From: Rex-BC Chen <rex-bc.chen@mediatek.com>
-To: Guillaume Ranquet <granquet@baylibre.com>, <chunkuang.hu@kernel.org>,
- <p.zabel@pengutronix.de>, <airlied@linux.ie>, <daniel@ffwll.ch>,
- <robh+dt@kernel.org>, <maarten.lankhorst@linux.intel.com>,
- <mripard@kernel.org>, <tzimmermann@suse.de>, <matthias.bgg@gmail.com>,
- <chunfeng.yun@mediatek.com>, <kishon@ti.com>, <vkoul@kernel.org>,
- <deller@gmx.de>, <ck.hu@mediatek.com>, <jitao.shi@mediatek.com>,
- <angelogioacchino.delregno@collabora.com>
-CC: <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <linux-fbdev@vger.kernel.org>
-Date: Mon, 21 Mar 2022 15:24:52 +0800
-In-Reply-To: <20220218145437.18563-18-granquet@baylibre.com>
-References: <20220218145437.18563-1-granquet@baylibre.com>
- <20220218145437.18563-18-granquet@baylibre.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+ id 1nWIAS-007sL1-4B
+ for linux-phy@lists.infradead.org; Mon, 21 Mar 2022 13:33:53 +0000
+Received: by mail-ej1-x633.google.com with SMTP id r13so29863397ejd.5
+ for <linux-phy@lists.infradead.org>; Mon, 21 Mar 2022 06:33:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fairphone.com; s=fair;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5GXEdYy1flkYD5H4ZjwtkKaTgHfQbeK4Fic81sbDM2g=;
+ b=U93LM0PPjvVS1NMUtHanmhanW3zHZ770C883frfTHWmu1t88XsHFJ/SEtXT6n/lMMt
+ re6IfjnHppIOC4ngM2HuHaGjJrVDx1YujqZCFxpIUF2EIr6QHsr5IefXFV395iZgIMOT
+ YuYCc2UNxihTIk8dpTKJtRls/VJrqYoN1jm955IKVdCwcvVQ+uiKrlwX48B4hZGHMmid
+ 5Oef/sbbEqSkxUG0zUMPUlutcFL1zpajN67vtPokaziudtmOagUAm3oL2tXePRIA0CeQ
+ UA3IVj6jtKwNiGl1XBj0ttF0J0RkHEkR0FKdlhmOkz/f0ksZyjranNksDpQ10DtlkOgK
+ b0dg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5GXEdYy1flkYD5H4ZjwtkKaTgHfQbeK4Fic81sbDM2g=;
+ b=cImf5xGrAQxTmFIviNfEbqY3JbHMIkkZorv6Y5RBhSgIN56G/Xc4tM1nKu8fcg8bKH
+ lMzStML/drFrvGGg/kSqvrONSbrnILVEb9Ak8AXy9nu5ZTdzz7WtrwCxFdCr2uAC7m7P
+ sRDEK2e1c/WA2NvWr6uVHYk1W4kryhbff/aDiXqopgOUHGmACrhdi9WRA7WVESaI1HNz
+ zSs/iHAXE6/pIii6CP98NUq+JFo7FPs4jdopODdXXwYqzsyrXDvgEeIXsZdWdHrONiJF
+ f3j3nMFhJVghk4DRkny2f8+2r4gfuWJ0CIegGUnX0TPE1HnKafrqymt31E92WZPr0rGj
+ kw4g==
+X-Gm-Message-State: AOAM533GQ9WHgerQfpSd6m69dH7hNJbofWrU4ooVq58U9r4LV2o6UAgn
+ 2MrWNQp1nF1JX7wzASET/qtkXA==
+X-Google-Smtp-Source: ABdhPJxin6D4QUUEy9OSv7n0xOixCN3MCojKkmBkEpsKwnbOXMZ/kz4iQiW1Uk2i6FUu2r7N4MPGjQ==
+X-Received: by 2002:a17:907:3f92:b0:6e0:2fed:968a with SMTP id
+ hr18-20020a1709073f9200b006e02fed968amr1743024ejc.658.1647869629410; 
+ Mon, 21 Mar 2022 06:33:49 -0700 (PDT)
+Received: from otso.arnhem.chello.nl (a246182.upc-a.chello.nl.
+ [62.163.246.182]) by smtp.gmail.com with ESMTPSA id
+ r22-20020a17090638d600b006d584aaa9c9sm6862154ejd.133.2022.03.21.06.33.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Mar 2022 06:33:48 -0700 (PDT)
+From: Luca Weiss <luca.weiss@fairphone.com>
+To: linux-arm-msm@vger.kernel.org
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+ Luca Weiss <luca.weiss@fairphone.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Andy Gross <agross@kernel.org>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@somainline.org>,
+ Avri Altman <avri.altman@wdc.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, devicetree@vger.kernel.org,
+ Konrad Dybcio <konrad.dybcio@somainline.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-scsi@vger.kernel.org, Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH v2 0/6] UFS support on SM6350 & FP4
+Date: Mon, 21 Mar 2022 14:33:12 +0100
+Message-Id: <20220321133318.99406-1-luca.weiss@fairphone.com>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220321_002501_340712_4CF91E85 
-X-CRM114-Status: GOOD (  18.57  )
+X-CRM114-CacheID: sfid-20220321_063352_190848_E42C24B4 
+X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,97 +96,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2022-02-18 at 15:54 +0100, Guillaume Ranquet wrote:
-> From: Jitao Shi <jitao.shi@mediatek.com>
-> 
-> Implement the DP HDP debounce described in DP 1.4a 3.3.
-> 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+This series adds support for UFS on SM6350 which is used for internal
+storage.
 
-Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
+Changes in v2:
+- see individual patches
 
-> ---
->  drivers/gpu/drm/mediatek/mtk_dp.c | 23 +++++++++++++++++++++++
->  1 file changed, 23 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dp.c
-> b/drivers/gpu/drm/mediatek/mtk_dp.c
-> index 2a3d5f15b651b..fe91ab8b2fd89 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_dp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_dp.c
-> @@ -178,6 +178,8 @@ struct mtk_dp {
->  	struct device *codec_dev;
->  	u8 connector_eld[MAX_ELD_BYTES];
->  	struct drm_connector *conn;
-> +	bool need_debounce;
-> +	struct timer_list debounce_timer;
->  };
->  
->  static struct regmap_config mtk_dp_regmap_config = {
-> @@ -1698,6 +1700,9 @@ static irqreturn_t mtk_dp_hpd_event_thread(int
-> hpd, void *dev)
->  	if (event < 0)
->  		return IRQ_HANDLED;
->  
-> +	if (mtk_dp->need_debounce && mtk_dp-
-> >train_info.cable_plugged_in)
-> +		msleep(100);
-> +
->  	if (mtk_dp->drm_dev) {
->  		dev_info(mtk_dp->dev, "drm_helper_hpd_irq_event\n");
->  		drm_helper_hpd_irq_event(mtk_dp->bridge.dev);
-> @@ -1776,6 +1781,13 @@ static irqreturn_t
-> mtk_dp_hpd_isr_handler(struct mtk_dp *mtk_dp)
->  	}
->  	train_info->cable_state_change = true;
->  
-> +	if (train_info->cable_state_change) {
-> +		if (!train_info->cable_plugged_in) {
-> +			mod_timer(&mtk_dp->debounce_timer, jiffies +
-> msecs_to_jiffies(100) - 1);
-> +			mtk_dp->need_debounce = false;
-> +		}
-> +	}
-> +
->  	return IRQ_WAKE_THREAD;
->  }
->  
-> @@ -2239,6 +2251,13 @@ static const struct drm_bridge_funcs
-> mtk_dp_bridge_funcs = {
->  	.detect = mtk_dp_bdg_detect,
->  };
->  
-> +static void mtk_dp_debounce_timer(struct timer_list *t)
-> +{
-> +	struct mtk_dp *mtk_dp = from_timer(mtk_dp, t, debounce_timer);
-> +
-> +	mtk_dp->need_debounce = true;
-> +}
-> +
->  static int mtk_dp_probe(struct platform_device *pdev)
->  {
->  	struct mtk_dp *mtk_dp;
-> @@ -2319,6 +2338,9 @@ static int mtk_dp_probe(struct platform_device
-> *pdev)
->  	else
->  		mtk_dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
->  
-> +	mtk_dp->need_debounce = true;
-> +	timer_setup(&mtk_dp->debounce_timer, mtk_dp_debounce_timer, 0);
-> +
->  	pm_runtime_enable(dev);
->  	pm_runtime_get_sync(dev);
->  
-> @@ -2332,6 +2354,7 @@ static int mtk_dp_remove(struct platform_device
-> *pdev)
->  	platform_device_unregister(mtk_dp->phy_dev);
->  
->  	mtk_dp_video_mute(mtk_dp, true);
-> +	del_timer_sync(&mtk_dp->debounce_timer);
->  
->  	pm_runtime_disable(&pdev->dev);
->  
+Luca Weiss (6):
+  scsi: ufs: dt-bindings: Add SM6350 compatible string
+  dt-bindings: phy: qcom,qmp: Add SM6350 UFS PHY bindings
+  phy: qcom-qmp: Add SM6350 UFS PHY support
+  pinctrl: qcom: sm6350: fix order of UFS & SDC pins
+  arm64: dts: qcom: sm6350: Add UFS nodes
+  arm64: dts: qcom: sm7225-fairphone-fp4: Enable UFS
+
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml |  2 +
+ .../devicetree/bindings/ufs/qcom,ufs.yaml     |  2 +
+ arch/arm64/boot/dts/qcom/sm6350.dtsi          | 77 +++++++++++++++++++
+ .../boot/dts/qcom/sm7225-fairphone-fp4.dts    | 18 +++++
+ drivers/phy/qualcomm/phy-qcom-qmp.c           |  3 +
+ drivers/pinctrl/qcom/pinctrl-sm6350.c         | 16 ++--
+ 6 files changed, 110 insertions(+), 8 deletions(-)
+
+-- 
+2.35.1
 
 
 -- 
