@@ -4,41 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 851DEC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Mar 2022 02:47:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BAD3C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Mar 2022 02:47:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=G5twhemLLlgnOvko6mfLhkV9jV0RYTGVP6Weogt/L+w=; b=0rQAHaR+2epsek
-	109+up7qLaJTos5yfWCoOZ3MGfoALPw6EUMwYmBndCe5GPr4Pp/pTxelwkeKwVGDvGmGJWoGWF0cc
-	9qmPRObqGVKmItIs91+J8QP9Xq2Bs33BcQtz+tzqzIHHunbqxsatv6SrIliQKuTxQjgUXraR66Fqg
-	8Zh0gJ+fj3oVZwNWAK1lH7iFw8YJ4Y8b979z7/4oeg1+V5W2uYRdvyzUvpoHjv8LU9BjNwPsBh5x8
-	bNxpN9rH+eb9N2scIDMTVYaNNSaoY0jcZGNi6SbTM+yoAGzl0Cb2Ti/9sfC9kK+8odZRGOk+CUtjz
-	MuXLXJqPR459lYE75jbw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ShThXsr7Lxu7QQnHcUR23nPv0lfGoQ3i/B7ErXNrcqM=; b=KD3CnMQWsb9w1H
+	FMRdGZSgijaHU2wfnIFrNsEljFe86/DCRMC7CnaZs2HtFqwGK/dU38+fzhB/JZYv/wcqh2BxwHDyO
+	QMhz4dJL1u8vEX6WWNfDE1NEv2bkZkWd2s9BgOTLUsKCbDaAkAGxNRcdj7mSagturzv68/J7l9e2e
+	TIRGcAEdmVEB6+UQxRf3mBuLNPNqNRrlVnjjT11YPZK+p6Qij4fe3aSoacVthtVobzlzSeZl2InGV
+	b+uyI57rxhV8i4l4X11+v7ELLCTCP6pRAbgfa7v73jwY0W2msgbLeLMoFdFsNfA2XItSWxLuYhq66
+	6ohJmDViCAwXfLlCXfBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nWUYJ-009lTQ-0s; Tue, 22 Mar 2022 02:47:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nWUYg-009lbf-OO; Tue, 22 Mar 2022 02:47:42 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nWUYE-009lSa-NG; Tue, 22 Mar 2022 02:47:17 +0000
-X-UUID: 89c9a3ca8c2e4e2f8cdffda6c0769145-20220321
-X-UUID: 89c9a3ca8c2e4e2f8cdffda6c0769145-20220321
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ id 1nWUYK-009lT1-BE; Tue, 22 Mar 2022 02:47:22 +0000
+X-UUID: fa1190b6d942411fa052f0a521c06c2f-20220321
+X-UUID: fa1190b6d942411fa052f0a521c06c2f-20220321
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <jianjun.wang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 68157237; Mon, 21 Mar 2022 19:47:10 -0700
-Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 21 Mar 2022 19:47:09 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by mtkexhb01.mediatek.inc
- (172.21.101.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 22 Mar 2022 10:47:07 +0800
+ with ESMTP id 951188924; Mon, 21 Mar 2022 19:47:12 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 21 Mar 2022 19:47:10 -0700
+Received: from mtkcas11.mediatek.inc (172.21.101.40) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
+ Tue, 22 Mar 2022 10:47:09 +0800
 Received: from localhost.localdomain (10.17.3.154) by mtkcas11.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 22 Mar 2022 10:47:06 +0800
+ Transport; Tue, 22 Mar 2022 10:47:07 +0800
 From: Jianjun Wang <jianjun.wang@mediatek.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
  <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
@@ -53,15 +54,18 @@ CC: Wei-Shun Chang <weishunc@google.com>, Jianjun Wang
  <rex-bc.chen@mediatek.com>, <randy.wu@mediatek.com>,
  <jieyy.yang@mediatek.com>, <chuanjia.liu@mediatek.com>,
  <qizhong.cheng@mediatek.com>, <jian.yang@mediatek.com>
-Subject: [PATCH v3 0/2] phy: mediatek: Add PCIe PHY driver
-Date: Tue, 22 Mar 2022 10:47:03 +0800
-Message-ID: <20220322024705.9665-1-jianjun.wang@mediatek.com>
+Subject: [PATCH v3 1/2] dt-bindings: phy: mediatek: Add YAML schema for PCIe
+ PHY
+Date: Tue, 22 Mar 2022 10:47:04 +0800
+Message-ID: <20220322024705.9665-2-jianjun.wang@mediatek.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20220322024705.9665-1-jianjun.wang@mediatek.com>
+References: <20220322024705.9665-1-jianjun.wang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220321_194714_787592_322273F0 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20220321_194720_432029_69FDF70F 
+X-CRM114-Status: GOOD (  13.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,31 +82,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-These series patches add support for PCIe PHY driver on MediaTek chipsets.
+Add YAML schema documentation for PCIe PHY on MediaTek chipsets.
 
-Changes in v3:
-1. Add introductions for structure members;
-2. Add SoC dependent data;
-3. Dynamically allocate efuse data;
-4. Check return value if it's an -EPROBE_DEFER.
-
-Changes in v2:
-1. Add specific compatible name;
-2. Read NVMEM data at probe time;
-3. Fix typos.
-
-Jianjun Wang (2):
-  dt-bindings: phy: mediatek: Add YAML schema for PCIe PHY
-  phy: mediatek: Add PCIe PHY driver
-
- .../bindings/phy/mediatek,pcie-phy.yaml       |  75 +++++
- drivers/phy/mediatek/Kconfig                  |  11 +
- drivers/phy/mediatek/Makefile                 |   1 +
- drivers/phy/mediatek/phy-mtk-pcie.c           | 271 ++++++++++++++++++
- 4 files changed, 358 insertions(+)
+Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+---
+ .../bindings/phy/mediatek,pcie-phy.yaml       | 75 +++++++++++++++++++
+ 1 file changed, 75 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
- create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
 
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
+new file mode 100644
+index 000000000000..422750cc4121
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
+@@ -0,0 +1,75 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/mediatek,pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MediaTek PCIe PHY
++
++maintainers:
++  - Jianjun Wang <jianjun.wang@mediatek.com>
++
++description: |
++  The PCIe PHY supports physical layer functionality for PCIe Gen3 port.
++
++properties:
++  compatible:
++    const: mediatek,mt8195-pcie-phy
++
++  reg:
++    maxItems: 1
++
++  reg-names:
++    items:
++      - const: sif
++
++  "#phy-cells":
++    const: 0
++
++  nvmem-cells:
++    maxItems: 7
++    description:
++      Phandles to nvmem cell that contains the efuse data, if unspecified,
++      default value is used.
++
++  nvmem-cell-names:
++    items:
++      - const: glb_intr
++      - const: tx_ln0_pmos
++      - const: tx_ln0_nmos
++      - const: rx_ln0
++      - const: tx_ln1_pmos
++      - const: tx_ln1_nmos
++      - const: rx_ln1
++
++  power-domains:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@11e80000 {
++        compatible = "mediatek,mt8195-pcie-phy";
++        #phy-cells = <0>;
++        reg = <0x11e80000 0x10000>;
++        reg-names = "sif";
++        nvmem-cells = <&pciephy_glb_intr>,
++                      <&pciephy_tx_ln0_pmos>,
++                      <&pciephy_tx_ln0_nmos>,
++                      <&pciephy_rx_ln0>,
++                      <&pciephy_tx_ln1_pmos>,
++                      <&pciephy_tx_ln1_nmos>,
++                      <&pciephy_rx_ln1>;
++        nvmem-cell-names = "glb_intr", "tx_ln0_pmos",
++                           "tx_ln0_nmos", "rx_ln0",
++                           "tx_ln1_pmos", "tx_ln1_nmos",
++                           "rx_ln1";
++        power-domains = <&spm 2>;
++    };
 -- 
 2.18.0
 
