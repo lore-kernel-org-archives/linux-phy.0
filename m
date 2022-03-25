@@ -4,88 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 625C3C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Mar 2022 17:18:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7534FC433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Mar 2022 17:20:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CWAuGlzx+soCSNup20ypoTDnfxGI76nVv1iB8y9pYl4=; b=sSzkfcS/BEzDP3
-	0p3kKgDXffPABG7wY3eFIW0srvOqgZzTsIkOadbAgrzJptdvnuVxKtgwE9poIL457Am/TjGBtTTFu
-	Ej+/VrIQuOMcqA8ajQTWnxaFW/7kcBNjlyUWPTfbaMqupJVSuHMhCtbIPbe4d0PcFShytm/HieYGR
-	kkOfM0hSF7zdWEkKoRTlwbtZaFKf2Pe6GMH8hmb+0HXuPsaM6sJrwN3twXnf/qJDbK9Wpmopungrr
-	+BUmtxJjmKZ+JW/pYGzJpYavgzNnIfXxJrLF3A39WPpnO5mKBE8AaAVGU2DWvy0zE5lEzK5Q2wmhV
-	XS99MFm6Dux1pJMeIpaw==;
+	List-Owner; bh=BFkALj2M1lLpBOA29i3cynzdU5VRZCzVhtSr8MU2nmA=; b=mFWBfj3hcYLKd1
+	kLjy7RmJ+Hpeq4X2fCog4cdbjvU/z1d5ZSq8FY7EtzZQajmvEloeuuaaL+BLVx84hZYWQjwS0gOfc
+	U4zZvXIlka/XOJaqwfFals3XYnIVkWLSJLBU0sn7mqXj9ouUCi2egOYmWbdre0pnXEkBRiJf70DkH
+	fkuQyU9v6YSYM9M3MVNLMLtWB86NFgXlo+dL8ptYGhnCI3XC+vrFyhl/ltIknsrfrp/xxb/P2cCGE
+	UqQh8WeCDUetWFwQvFmHkXktFW3mXU2YwKPNJSuMBM+ljEBbDlxxWUAUACkNktKRfp1DjX3XLM28u
+	PAuOgVoIPU85o7kJeN4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nXnZk-002iOO-5F; Fri, 25 Mar 2022 17:18:12 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1nXnbW-002jSW-5M; Fri, 25 Mar 2022 17:20:02 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nXnYQ-002hR7-Ml
- for linux-phy@lists.infradead.org; Fri, 25 Mar 2022 17:16:52 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id
- bg31-20020a05600c3c9f00b00381590dbb33so4783180wmb.3
- for <linux-phy@lists.infradead.org>; Fri, 25 Mar 2022 10:16:50 -0700 (PDT)
+ id 1nXnYW-002hSy-Dj
+ for linux-phy@lists.infradead.org; Fri, 25 Mar 2022 17:16:59 +0000
+Received: by mail-wm1-x333.google.com with SMTP id
+ p26-20020a05600c1d9a00b0038ccbff1951so3144157wms.1
+ for <linux-phy@lists.infradead.org>; Fri, 25 Mar 2022 10:16:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=JWuHqcRax2E7zzIXZh7ToC5GlWwIxifW/4CmtpMgB/Q=;
- b=e9fQyZ0WE4Z9h6IyESMybIA7h3EtJ5dTgMV5mf91m3HTYR3d6PR3x3ANzlsJDjJpFX
- xyZXVKaHjuCfMF0lwm2Qu9a7yuhgIE8FNiY3Ra2C5iqjAr38LTWfu0BJ1+fhXSTWmUih
- aM3pvBv9RdHz220XVpBcXT8iiq7aPvagI4hTcp8GseBYMM+pFmDDxSClw8erRNva9gEY
- 2imqr9DiFYjUmXQtnWctQLqe2NXNA30qtmtWcNWqvaW0TdlhnfPmu+EdWfkrn8Zm2deG
- A+8Q+xLGHP3uj/hxELbU2uz03u/3WDCI7leUQAxmTATuBJuts6p2eUn35MBM400RFU+U
- mxzA==
+ bh=NqdfmywTZ6fQ/7jJTAQIW5tJoHGg7kZG5yl6dza7Kzg=;
+ b=6bXchobGzN8pKvh+gXq4jQSUpRYYt6KibxSAsqSutu1/Yix1bAtFWio+4+5L2OT8gO
+ KRwuxVreNneXSQGczLUHqu/9HMPhxIRfgbJW/r3UPWCbrTyCufwjX5onl9UM5gV/JWhK
+ zUAlnmhVP2Md/IVwZvzxDWkkSGER0G02QgvLhUL/X7jArek2m0p9TQei65y4Fqg0z9RB
+ F6/adAuTQCOPL7XbJ907Vf3vNG3Pv+ViBiGQYC4xuV49DFVqBZv5yCQRWsvtbUueYzoS
+ Hl22196SiZd0bGZTvV+MLU+u/PO6RWkOpZhSUmnIt+Vic3k1GEXhwXmSAMdccnZ7lakM
+ fwnA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=JWuHqcRax2E7zzIXZh7ToC5GlWwIxifW/4CmtpMgB/Q=;
- b=mniyNl6hpYXt3hiWwR4pSvakNoiI5TfYyomkOzI+44nvvedI0DgAQs6qc/+D2Iu9HN
- ijkJ5iVPka0QFrdhfOSpTqA1sVid78ZG89CYsisxFvq5Xss/oe4f6UBOl/KacltPwK7V
- auBbuUe7ojw9rYgEuKrmUNCBNT1AQI6fKgywdKkmvypm09crCqz1diMvgf8nGNma/bjZ
- KxDC6vkQch5pa+MdVTfEWzZgmKwBp1qJfDe7c0g9sBxO/Itklw1xJQki3OEAzcLh+ch8
- tlF0K6TRFM43X3WaGMys4hKTpxlbbTtxgOYPfJ/sUVQWS7oR+EVHV8Z4IZTBXz0AYu1U
- ncSA==
-X-Gm-Message-State: AOAM531lN7wQNhah/wclaTZYiTE0iH9xgc3+EF5yDUwf2PfBTP91nhdk
- O071UWR2kGxpGvfs52KhR9DBvA==
-X-Google-Smtp-Source: ABdhPJyseADl0QeZy7YFh7ZKp586b0q8d6AxSePwH+EeyXqFYla8oR9D8vfPuUxPBa3bYk7yPTd2ig==
-X-Received: by 2002:a05:600c:4e91:b0:38c:c1ac:c018 with SMTP id
- f17-20020a05600c4e9100b0038cc1acc018mr15761137wmq.189.1648228609419; 
- Fri, 25 Mar 2022 10:16:49 -0700 (PDT)
+ bh=NqdfmywTZ6fQ/7jJTAQIW5tJoHGg7kZG5yl6dza7Kzg=;
+ b=JRjJp33f1yXwDF4/81T3S3jtdGU0dFFSjBIjRaI4fh9xqh0xalVsy+3PdL2wPXd2kz
+ RA+NWM8Xrzr+k6rMiy9cB8R07kXezQ6Y+jfRkJxDFEfUlHcsXBzGeg/p4UCSZzJ/o4/9
+ 45smipDqOVVqSATcGrH1tUjcnNPciEIeveCqkX24N2FIh0lqtYkA4np3k+JyY7W09N5K
+ L06X/zLPMKL9asPIyrB18n8fNskqowCKxtZc3E38Tl03W4v6gp5+FJWF6Sn7/N8rE849
+ dZJyn8rBtkL/kjtM/OevZUbGgoHjJaZl//4Oj933FQDyjdCZwiCSl4NQ6tcCfjX63Dra
+ UijA==
+X-Gm-Message-State: AOAM531cJItXn3nyzvRLSPPiokT4aCw7Tpq0RMnYDKMQsDjkA7rv0ZQl
+ 9r7CzTK0hC0rv0iMIg9UEN7diQ==
+X-Google-Smtp-Source: ABdhPJztbg41uIEn6kYbSEgV3LT+xnRXVt+kN+pXwZTNOue5R4lV3fouoQj4ndoTzsNVOsRmWuPg8Q==
+X-Received: by 2002:a7b:c30c:0:b0:38c:8ff1:625b with SMTP id
+ k12-20020a7bc30c000000b0038c8ff1625bmr20345780wmj.30.1648228611391; 
+ Fri, 25 Mar 2022 10:16:51 -0700 (PDT)
 Received: from localhost.localdomain
  (2a02-8440-6240-cc41-3074-96af-9642-0003.rev.sfr.net.
  [2a02:8440:6240:cc41:3074:96af:9642:3])
  by smtp.gmail.com with ESMTPSA id
- p16-20020a5d6390000000b00203ffebddf3sm7547464wru.99.2022.03.25.10.16.47
+ p16-20020a5d6390000000b00203ffebddf3sm7547464wru.99.2022.03.25.10.16.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Mar 2022 10:16:49 -0700 (PDT)
+ Fri, 25 Mar 2022 10:16:51 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
 To: chunkuang.hu@kernel.org, p.zabel@pengutronix.de, airlied@linux.ie,
  daniel@ffwll.ch, robh+dt@kernel.org, maarten.lankhorst@linux.intel.com,
  mripard@kernel.org, tzimmermann@suse.de, matthias.bgg@gmail.com,
  chunfeng.yun@mediatek.com, kishon@ti.com, vkoul@kernel.org, deller@gmx.de,
  ck.hu@mediatek.com, jitao.shi@mediatek.com,
- angelogioacchino.delregno@collabora.com,
- Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>
+ angelogioacchino.delregno@collabora.com
 Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  linux-fbdev@vger.kernel.org, markyacoub@google.com
-Subject: [PATCH 03/22] dt-bindings: mediatek,
- dp_phy: Add Display Port PHY binding
-Date: Fri, 25 Mar 2022 18:14:52 +0100
-Message-Id: <20220325171511.23493-4-granquet@baylibre.com>
+Subject: [PATCH 04/22] drm/edid: Convert cea_sad helper struct to kernelDoc
+Date: Fri, 25 Mar 2022 18:14:53 +0100
+Message-Id: <20220325171511.23493-5-granquet@baylibre.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220325171511.23493-1-granquet@baylibre.com>
 References: <20220325171511.23493-1-granquet@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220325_101650_789564_B8BD7155 
-X-CRM114-Status: GOOD (  12.06  )
+X-CRM114-CacheID: sfid-20220325_101656_495013_5D184716 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,63 +101,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This phy controller is embedded in the Display Port Controller on mt8195 SoCs.
-
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 ---
- .../bindings/phy/mediatek,dp-phy.yaml         | 43 +++++++++++++++++++
- 1 file changed, 43 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
+ include/drm/drm_edid.h | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
-new file mode 100644
-index 000000000000..4180d40f4fa7
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
-@@ -0,0 +1,43 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+# Copyright (c) 2022 MediaTek
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/mediatek,dp-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: MediaTek Display Port PHY binding
-+
-+maintainers:
-+  - CK Hu <ck.hu@mediatek.com>
-+  - Jitao shi <jitao.shi@mediatek.com>
-+
-+description: |
-+  Device tree bindings for the Mediatek (embedded) Display Port PHY
-+  present on some Mediatek SoCs.
-+
-+properties:
-+  compatible:
-+    enum:
-+      - mediatek,mt8195-dp-phy
-+
-+  regmap:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description: Phandle to the Display Port node.
-+
-+  "#phy-cells":
-+    const: 0
-+
-+required:
-+  - compatible
-+  - regmap
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    dp_phy: dp_phy {
-+      compatible = "mediatek,mt8195-dp-phy";
-+      regmap = <&dp_tx>;
-+      #phy-cells = <0>;
-+    };
+diff --git a/include/drm/drm_edid.h b/include/drm/drm_edid.h
+index 144c495b99c4..5d4d840b9904 100644
+--- a/include/drm/drm_edid.h
++++ b/include/drm/drm_edid.h
+@@ -359,12 +359,17 @@ struct edid {
+ 
+ #define EDID_PRODUCT_ID(e) ((e)->prod_code[0] | ((e)->prod_code[1] << 8))
+ 
+-/* Short Audio Descriptor */
++/* struct cea_sad - Short Audio Descriptor.
++	@format: See HDMI_AUDIO_CODING_TYPE_*.
++	@channels: max number of channels - 1.
++	@freq: See CEA_SAD_FREQ_*.
++	@byte2: meaning depends on format.
++*/
+ struct cea_sad {
+ 	u8 format;
+-	u8 channels; /* max number of channels - 1 */
++	u8 channels;
+ 	u8 freq;
+-	u8 byte2; /* meaning depends on format */
++	u8 byte2;
+ };
+ 
+ struct drm_encoder;
 -- 
 2.34.1
 
