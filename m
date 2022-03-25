@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 704AFC43217
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Mar 2022 17:17:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 625C3C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Mar 2022 17:18:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CnJbBxxPNHQdaJ/GqO0iF4ssWZZHVSEErARc4CZjZUg=; b=16ZCCtZ2GcA8R4
-	5+vm1b5Sdsr6UnzfmgdZDZJAEjYNn9Zyf+D1cTdJG+34savtOgcM+t6tWvifIwu5Jy0kPrT2oedzz
-	UWvyVyn//ZbIfeFIXe2RpXAzycgwSt2F4n351owS7A9MMjNRvTzSuY9Xtex+Uo2vh00R2qBddNo7t
-	l3skxfgpfTZ9MHJITUdz20u3G/n+UcwRKTyK6RvSixZTXwKj9KLwsyU66u+m1niaLv2hBkeYWz2R1
-	GOw6+EaitKs9BiZ+oy0DkTbWNL65TWgZq/ijmsiCZ0UqgwJ1OYw82/XmbvYP3Iak9GIC63rbeoEWF
-	i3KrDAiTL+L5uGkhB7Bg==;
+	List-Owner; bh=CWAuGlzx+soCSNup20ypoTDnfxGI76nVv1iB8y9pYl4=; b=sSzkfcS/BEzDP3
+	0p3kKgDXffPABG7wY3eFIW0srvOqgZzTsIkOadbAgrzJptdvnuVxKtgwE9poIL457Am/TjGBtTTFu
+	Ej+/VrIQuOMcqA8ajQTWnxaFW/7kcBNjlyUWPTfbaMqupJVSuHMhCtbIPbe4d0PcFShytm/HieYGR
+	kkOfM0hSF7zdWEkKoRTlwbtZaFKf2Pe6GMH8hmb+0HXuPsaM6sJrwN3twXnf/qJDbK9Wpmopungrr
+	+BUmtxJjmKZ+JW/pYGzJpYavgzNnIfXxJrLF3A39WPpnO5mKBE8AaAVGU2DWvy0zE5lEzK5Q2wmhV
+	XS99MFm6Dux1pJMeIpaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nXnYi-002hh9-Lt; Fri, 25 Mar 2022 17:17:08 +0000
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	id 1nXnZk-002iOO-5F; Fri, 25 Mar 2022 17:18:12 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nXnYM-002hNv-9k
- for linux-phy@lists.infradead.org; Fri, 25 Mar 2022 17:16:48 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id u16so11763475wru.4
- for <linux-phy@lists.infradead.org>; Fri, 25 Mar 2022 10:16:46 -0700 (PDT)
+ id 1nXnYQ-002hR7-Ml
+ for linux-phy@lists.infradead.org; Fri, 25 Mar 2022 17:16:52 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id
+ bg31-20020a05600c3c9f00b00381590dbb33so4783180wmb.3
+ for <linux-phy@lists.infradead.org>; Fri, 25 Mar 2022 10:16:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=NjQ/r5pco9RwC0sUJWXpp29RkJXQ6qdzLc/z+bngWRI=;
- b=JCQEwvmrbpZpX9TTkHxE1XfIMryiGXzsmmGV4TrzOuO6ttzQ/mxBa1RKj0VLV9x9UY
- 4g13irktKfzn6rPan75uwvJ6J8bDM+kY9QRiGd8wjdr2MKe1N1E/RsMr9ow7KUJk98qn
- ZVliZmMXo+/yp3qmfs7zCez21PLXH6qIsfXXBZk/wo28hSX2nfHo6WVEj5AGOmFa7uV8
- 57wOQ/7a26LDgckOUFGxL7R5buGa2DHr0We00A4Hh5sG26apUbdinar2B81MPjgMnV0W
- J4QVcdSJFbqo9AhrMpIVXtzKh1lp4zJzAySs1KG0pDx2Kpm6+Rv3gGeoUj3vYLvjCpSk
- lwag==
+ bh=JWuHqcRax2E7zzIXZh7ToC5GlWwIxifW/4CmtpMgB/Q=;
+ b=e9fQyZ0WE4Z9h6IyESMybIA7h3EtJ5dTgMV5mf91m3HTYR3d6PR3x3ANzlsJDjJpFX
+ xyZXVKaHjuCfMF0lwm2Qu9a7yuhgIE8FNiY3Ra2C5iqjAr38LTWfu0BJ1+fhXSTWmUih
+ aM3pvBv9RdHz220XVpBcXT8iiq7aPvagI4hTcp8GseBYMM+pFmDDxSClw8erRNva9gEY
+ 2imqr9DiFYjUmXQtnWctQLqe2NXNA30qtmtWcNWqvaW0TdlhnfPmu+EdWfkrn8Zm2deG
+ A+8Q+xLGHP3uj/hxELbU2uz03u/3WDCI7leUQAxmTATuBJuts6p2eUn35MBM400RFU+U
+ mxzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=NjQ/r5pco9RwC0sUJWXpp29RkJXQ6qdzLc/z+bngWRI=;
- b=OdjpexYMj64RPh31e7NbvcvN5kYMBuzczh7m1eFYQYMXOp2lT0YiVMnhANVuXE+mB0
- SMplSJMWHm+cbfHw1/PT9UQnaE/ZXv/9cLlAU5S1WEq0jciNjppjLUh0XUxEMqF26efr
- 9tkuav+e3hbImvifGx9l5xowm32vTk2HTdlX4XYoEkdH4YQDWDTV2hsedLlvAMbKxjKy
- v0xoXkCE7Z4zMzTJdEOwS0jg3Jjnz7Mp8P1Gl0kj0TxJ9khBmNr/XjZwGoA5ceTVEsmL
- v8gW02b8232QW7o0e2VhGRzqPkUPbasbDBwIREmhhA2hYmKcHCMMyiazjtJJ/yB7MdDP
- fw7g==
-X-Gm-Message-State: AOAM531fcrmSiHM5+BtsTnYqYHItBIBS+pk2PyY2v8yEmU4e4G84lyzV
- BbG/AX9H6uotEutCme2joab4Sw==
-X-Google-Smtp-Source: ABdhPJyrSxcXKaAP25ZBJ7/tCD9C7PS/Qy2PJKAsjuVE99MIZGYJl8Bk5UUwKOQluWdrhnCKdKIRIQ==
-X-Received: by 2002:adf:ebc7:0:b0:1ee:945a:ffb4 with SMTP id
- v7-20020adfebc7000000b001ee945affb4mr10145745wrn.641.1648228604779; 
- Fri, 25 Mar 2022 10:16:44 -0700 (PDT)
+ bh=JWuHqcRax2E7zzIXZh7ToC5GlWwIxifW/4CmtpMgB/Q=;
+ b=mniyNl6hpYXt3hiWwR4pSvakNoiI5TfYyomkOzI+44nvvedI0DgAQs6qc/+D2Iu9HN
+ ijkJ5iVPka0QFrdhfOSpTqA1sVid78ZG89CYsisxFvq5Xss/oe4f6UBOl/KacltPwK7V
+ auBbuUe7ojw9rYgEuKrmUNCBNT1AQI6fKgywdKkmvypm09crCqz1diMvgf8nGNma/bjZ
+ KxDC6vkQch5pa+MdVTfEWzZgmKwBp1qJfDe7c0g9sBxO/Itklw1xJQki3OEAzcLh+ch8
+ tlF0K6TRFM43X3WaGMys4hKTpxlbbTtxgOYPfJ/sUVQWS7oR+EVHV8Z4IZTBXz0AYu1U
+ ncSA==
+X-Gm-Message-State: AOAM531lN7wQNhah/wclaTZYiTE0iH9xgc3+EF5yDUwf2PfBTP91nhdk
+ O071UWR2kGxpGvfs52KhR9DBvA==
+X-Google-Smtp-Source: ABdhPJyseADl0QeZy7YFh7ZKp586b0q8d6AxSePwH+EeyXqFYla8oR9D8vfPuUxPBa3bYk7yPTd2ig==
+X-Received: by 2002:a05:600c:4e91:b0:38c:c1ac:c018 with SMTP id
+ f17-20020a05600c4e9100b0038cc1acc018mr15761137wmq.189.1648228609419; 
+ Fri, 25 Mar 2022 10:16:49 -0700 (PDT)
 Received: from localhost.localdomain
  (2a02-8440-6240-cc41-3074-96af-9642-0003.rev.sfr.net.
  [2a02:8440:6240:cc41:3074:96af:9642:3])
  by smtp.gmail.com with ESMTPSA id
- p16-20020a5d6390000000b00203ffebddf3sm7547464wru.99.2022.03.25.10.16.42
+ p16-20020a5d6390000000b00203ffebddf3sm7547464wru.99.2022.03.25.10.16.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Mar 2022 10:16:44 -0700 (PDT)
+ Fri, 25 Mar 2022 10:16:49 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
 To: chunkuang.hu@kernel.org, p.zabel@pengutronix.de, airlied@linux.ie,
  daniel@ffwll.ch, robh+dt@kernel.org, maarten.lankhorst@linux.intel.com,
@@ -73,18 +74,18 @@ To: chunkuang.hu@kernel.org, p.zabel@pengutronix.de, airlied@linux.ie,
 Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-fbdev@vger.kernel.org, markyacoub@google.com,
- Markus Schneider-Pargmann <msp@baylibre.com>, Rob Herring <robh@kernel.org>
-Subject: [PATCH 01/22] dt-bindings: mediatek,dpi: Add DP_INTF compatible
-Date: Fri, 25 Mar 2022 18:14:50 +0100
-Message-Id: <20220325171511.23493-2-granquet@baylibre.com>
+ linux-fbdev@vger.kernel.org, markyacoub@google.com
+Subject: [PATCH 03/22] dt-bindings: mediatek,
+ dp_phy: Add Display Port PHY binding
+Date: Fri, 25 Mar 2022 18:14:52 +0100
+Message-Id: <20220325171511.23493-4-granquet@baylibre.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20220325171511.23493-1-granquet@baylibre.com>
 References: <20220325171511.23493-1-granquet@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220325_101646_375033_2467B0BF 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20220325_101650_789564_B8BD7155 
+X-CRM114-Status: GOOD (  12.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,64 +102,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Markus Schneider-Pargmann <msp@baylibre.com>
+This phy controller is embedded in the Display Port Controller on mt8195 SoCs.
 
-DP_INTF is similar to DPI but does not have the exact same feature set
-or register layouts.
-
-DP_INTF is the sink of the display pipeline that is connected to the
-DisplayPort controller and encoder unit. It takes the same clocks as
-DPI.
-
-Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../bindings/display/mediatek/mediatek,dpi.yaml       | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ .../bindings/phy/mediatek,dp-phy.yaml         | 43 +++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
 
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-index dd2896a40ff0..53acf9a84f7f 100644
---- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-@@ -4,16 +4,16 @@
- $id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
- $schema: http://devicetree.org/meta-schemas/core.yaml#
- 
--title: mediatek DPI Controller Device Tree Bindings
-+title: mediatek DPI/DP_INTF Controller Device Tree Bindings
- 
- maintainers:
-   - CK Hu <ck.hu@mediatek.com>
-   - Jitao shi <jitao.shi@mediatek.com>
- 
- description: |
--  The Mediatek DPI function block is a sink of the display subsystem and
--  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
--  output bus.
-+  The Mediatek DPI and DP_INTF function blocks are a sink of the display
-+  subsystem and provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a
-+  parallel output bus.
- 
- properties:
-   compatible:
-@@ -23,6 +23,7 @@ properties:
-       - mediatek,mt8173-dpi
-       - mediatek,mt8183-dpi
-       - mediatek,mt8192-dpi
-+      - mediatek,mt8195-dpintf
- 
-   reg:
-     maxItems: 1
-@@ -54,7 +55,7 @@ properties:
-     $ref: /schemas/graph.yaml#/properties/port
-     description:
-       Output port node. This port should be connected to the input port of an
--      attached HDMI or LVDS encoder chip.
-+      attached HDMI, LVDS or DisplayPort encoder chip.
- 
- required:
-   - compatible
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
+new file mode 100644
+index 000000000000..4180d40f4fa7
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
+@@ -0,0 +1,43 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++# Copyright (c) 2022 MediaTek
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/mediatek,dp-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MediaTek Display Port PHY binding
++
++maintainers:
++  - CK Hu <ck.hu@mediatek.com>
++  - Jitao shi <jitao.shi@mediatek.com>
++
++description: |
++  Device tree bindings for the Mediatek (embedded) Display Port PHY
++  present on some Mediatek SoCs.
++
++properties:
++  compatible:
++    enum:
++      - mediatek,mt8195-dp-phy
++
++  regmap:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description: Phandle to the Display Port node.
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - regmap
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    dp_phy: dp_phy {
++      compatible = "mediatek,mt8195-dp-phy";
++      regmap = <&dp_tx>;
++      #phy-cells = <0>;
++    };
 -- 
 2.34.1
 
