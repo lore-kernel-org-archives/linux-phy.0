@@ -4,76 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EB88C43217
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Mar 2022 22:21:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1F7FC433F5
+	for <linux-phy@archiver.kernel.org>; Sat, 26 Mar 2022 01:56:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=84yAEe6vDHHqeiOxTUGD+VFUmFJXMmUDB/ud3J3Q3cM=; b=GH/H67tm8GAo6l
-	UnvDGBLkxehwZHigxKnodcoOS+qfnpiOtkGwysmFVGbmhQQF3QB8YIwSgZPN35v/dtCXq+lVuZi2i
-	sSdQxoSUGKkQZzw+qhZrt4DWKUEj5iF1MBEO5mFP0/B+h3kUT1kczOwwhoPL55qxLuJ5mBb14REMn
-	igqO39ZxJYkP03E5+KEkjCJvm/klD1r90CD1zKPgTnh7BDi9N17pENGJCgkgXzeDcJh+A44pWKUnP
-	V8EtKvfpa/9VPCnIi2JEqgjOWz6onEYReGSNRTWIg+YwuW5gych04PWhOe1eTQaPfPpSGUXwD1VMK
-	6kprDR+k0pNyG0H5NbRQ==;
+	List-Owner; bh=2e/mraBL3BF+MV/rns8hY/k5soxG0POOiKLslzW6Fw0=; b=MTchu27EOtQ3Bm
+	NZC5TDm1VmOOQIkfoQDsU8Q92S6KQXQoFLgopCQqikEJBOacJxBbpK5/JUnPajSwIZHjMs0k1U6kE
+	5UCv2GYMiKgXtTUGREwl99eMg2IEv784DprWih/PAHNC4Rt1u37Gu8YT1EMFFkvkGdoHdIeKCo0QD
+	SjwjxN+rAJIIG8jSoXNBqIrrqCjzUGVFctPwNR/QjEMnIvWLE3eVKHq/0M50cdF461xc8k08jd8Gh
+	9AW/ncqH9fa811roCImOKDduA5LCLI28tq5l0D48Z1uQI+/LTNe+dJGsLjUh30eYnlEvRuks7mKiS
+	69AX/mo80DEYwsnCjfdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nXsJX-003Pj1-Vj; Fri, 25 Mar 2022 22:21:47 +0000
-Received: from mail-pg1-x52a.google.com ([2607:f8b0:4864:20::52a])
+	id 1nXvfk-003Z9j-5Z; Sat, 26 Mar 2022 01:56:56 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nXsJV-003Pht-Oa
- for linux-phy@lists.infradead.org; Fri, 25 Mar 2022 22:21:47 +0000
-Received: by mail-pg1-x52a.google.com with SMTP id s72so7511558pgc.5
- for <linux-phy@lists.infradead.org>; Fri, 25 Mar 2022 15:21:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=v91blLz8wNwh0dLvtLpa8fJvSTejqJw9Y0LtRUMFiP8=;
- b=m7ImBBTPlMOEmnAIbp1aHzsL6z987ZMQXMfwRqwyhiCOh3sw0FwnLiCrCf4fCY2Ed7
- 2796sPOaghgEfwmq38VI00BNOSrsMlky4yCGJmOtYTG6KK04oGuSSIUbJTPtKvm3M9hq
- vrovnQwisek0WNHgVKPUdzhMI44PPDyW2ZS63aAt0fZDbTF1IkMJecntL1OHPQxK2U2Y
- 8/QXE1H8a47ldbU0GA16XanUNlSdhNjdtFexmOuKQhqv78PcJvWZEpojBZS8qRgKkFcd
- F2XfpLTuD64szeqRvRxyj5xqN1Gfq0dDOaRgcNU6Z4WhIyVOARG2WmDSkfqU+sXFKMD+
- U4bA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=v91blLz8wNwh0dLvtLpa8fJvSTejqJw9Y0LtRUMFiP8=;
- b=RxLJRsuXnnVrCP7dTom8wjj+Or85HeeGOWnal4Y9AS+rvhvsnfVaAlLI1dCpsZZxsg
- +Di7t+UPNTsuevoGFFoQIg6ZXGsm/66JaDgwrCs+MYVJM8S9QH8l6EGbhfVPvWmvxf8B
- CfoOjOa1F3VdoWXg5t6VgBKhqQrep6Qi254ImrDZMygImAeDn4kdEjn9QPX0Yiiubzhp
- kOxGqW6Gm4pZOfXH1cN15zYJWgRuK+oE0vOjyvIYXxa67OFlvyAbQYPpjY2RZfvDhE6N
- aIkFHRNpvVuhYwGwdIv7KPPpurWjmqeEbtIWH1MVebS3o+uQxaNF8m9hZ2gc9/Wzw7jL
- 1ftA==
-X-Gm-Message-State: AOAM531Sgy3+jq2oGm6Rfv6OoMxqn1Qw3NZqo6YmLuuLBPpD1Uzgw4PZ
- BUQF2xQeWe7vPV9zytZyeyoL/cJb99/H3Q==
-X-Google-Smtp-Source: ABdhPJy1DOkN3z3dEZ5hdjHML6seq7I5W6l0sQPXsizRWJsO4ml9TQYjzZ+NkQkLOpI4lfXWXi6hVA==
-X-Received: by 2002:a62:6403:0:b0:4fa:c74c:83c5 with SMTP id
- y3-20020a626403000000b004fac74c83c5mr12089783pfb.30.1648246904786; 
- Fri, 25 Mar 2022 15:21:44 -0700 (PDT)
-Received: from localhost.localdomain ([223.233.78.42])
- by smtp.gmail.com with ESMTPSA id
- x16-20020a637c10000000b00380b351aaacsm6006490pgc.16.2022.03.25.15.21.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Mar 2022 15:21:44 -0700 (PDT)
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-To: linux-phy@lists.infradead.org
-Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- vkoul@kernel.org, bjorn.andersson@linaro.org
-Subject: [PATCH v4 2/2] phy: qcom-qmp: Add SM8150 PCIe QMP PHYs
-Date: Sat, 26 Mar 2022 03:51:30 +0530
-Message-Id: <20220325222130.1783242-3-bhupesh.sharma@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220325222130.1783242-1-bhupesh.sharma@linaro.org>
-References: <20220325222130.1783242-1-bhupesh.sharma@linaro.org>
+ id 1nXvfW-003Z7p-Tb; Sat, 26 Mar 2022 01:56:45 +0000
+X-UUID: b3ebf3290af542e0bf1be8c4d66e867b-20220325
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Qdw5mwaNaKmHkuIDHCxo7IRBUT//54pEDa6FB7filGA=; 
+ b=eDsPc5JY8rubMBc3Ij6szVRZoZrZDdiSz0uIhytiQVAn2XxdbHXw0PCh7RmsuT50RwSDP9/beJeaueHD5Inez+bTUV10RKcocdMc2aDglELJq8T/pUSMCrjS0rWabI+VSYu34MnBSKjitf5AUcis8edo94NKDv4YsOPB2UaBVMI=;
+X-UUID: b3ebf3290af542e0bf1be8c4d66e867b-20220325
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <jianjun.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 2083630221; Fri, 25 Mar 2022 18:56:37 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 25 Mar 2022 18:56:35 -0700
+Received: from mtkcas11.mediatek.inc (172.21.101.40) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
+ Sat, 26 Mar 2022 09:56:27 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Sat, 26 Mar 2022 09:56:26 +0800
+Message-ID: <2ceb84aec51252cfb254525900480cc380fc2c03.camel@mediatek.com>
+Subject: Re: [PATCH v4 2/2] phy: mediatek: Add PCIe PHY driver
+From: Jianjun Wang <jianjun.wang@mediatek.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Chen-Yu
+ Tsai" <wenst@chromium.org>, Krzysztof Kozlowski <krzk@kernel.org>
+CC: Wei-Shun Chang <weishunc@google.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <rex-bc.chen@mediatek.com>,
+ <randy.wu@mediatek.com>, <jieyy.yang@mediatek.com>,
+ <chuanjia.liu@mediatek.com>, <qizhong.cheng@mediatek.com>,
+ <jian.yang@mediatek.com>
+Date: Sat, 26 Mar 2022 09:56:26 +0800
+In-Reply-To: <be06e57d-302e-e641-a134-c45ea89a6a6b@collabora.com>
+References: <20220323065608.27426-1-jianjun.wang@mediatek.com>
+ <20220323065608.27426-3-jianjun.wang@mediatek.com>
+ <be06e57d-302e-e641-a134-c45ea89a6a6b@collabora.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220325_152145_827799_36B27328 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20220325_185644_388634_83EDECD8 
+X-CRM114-Status: GOOD (  18.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,138 +87,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SM8150 has multiple (different) PHY versions:
-QMP GEN3x1 PHY - 1 lane
-QMP GEN3x2 PHY - 2 lanes
+On Fri, 2022-03-25 at 15:15 +0100, AngeloGioacchino Del Regno wrote:
+> Il 23/03/22 07:56, Jianjun Wang ha scritto:
+> > Add PCIe GEN3 PHY driver support on MediaTek chipsets.
+> > 
+> > Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+> > ---
+> >   drivers/phy/mediatek/Kconfig        |  11 ++
+> >   drivers/phy/mediatek/Makefile       |   1 +
+> >   drivers/phy/mediatek/phy-mtk-pcie.c | 272
+> > ++++++++++++++++++++++++++++
+> >   3 files changed, 284 insertions(+)
+> >   create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
+> > 
+> 
+> ..snip..
+> 
+> > diff --git a/drivers/phy/mediatek/phy-mtk-pcie.c
+> > b/drivers/phy/mediatek/phy-mtk-pcie.c
+> > new file mode 100644
+> > index 000000000000..44a2ad8d324e
+> > --- /dev/null
+> > +++ b/drivers/phy/mediatek/phy-mtk-pcie.c
+> > @@ -0,0 +1,272 @@
+> 
+> ..snip..
+> 
+> > +/**
+> > + * struct mtk_pcie_phy - PCIe phy driver main structure
+> > + * @dev: pointer to device
+> > + * @phy: pointer to generic phy
+> > + * @sif_base: IO mapped register base address of system interface
+> > + * @data: pointer to SoC dependent data
+> > + * @sw_efuse_en: software eFuse enable status
+> > + * @efuse_glb_intr: internal resistor selection of TX bias current
+> > data
+> > + * @efuse: pointer to eFues data for each lane
+> 
+> Oops! There's a typo! "eFues" => "eFuse"
+> 
+> After fixing this typo,
+> 
+> Reviewed-by: AngeloGioacchino Del Regno <
+> angelogioacchino.delregno@collabora.com>
 
-Add support for these with relevant init sequence.
+Thanks!
 
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>
-Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp.c | 90 +++++++++++++++++++++++++++++
- 1 file changed, 90 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index b144ae1f729a..8e928b9619b6 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -3294,6 +3294,11 @@ static const char * const sdm845_pciephy_clk_l[] = {
- 	"aux", "cfg_ahb", "ref", "refgen",
- };
- 
-+/* the pcie phy on sm8150 doesn't have a ref clock */
-+static const char * const sm8150_pciephy_clk_l[] = {
-+	"aux", "cfg_ahb", "refgen",
-+};
-+
- static const char * const qmp_v4_phy_clk_l[] = {
- 	"aux", "ref_clk_src", "ref", "com_aux",
- };
-@@ -3583,6 +3588,85 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
- 	.pwrdn_delay_max	= 1005,		/* us */
- };
- 
-+static const struct qmp_phy_cfg sm8150_qmp_gen3x1_pciephy_cfg = {
-+	.type = PHY_TYPE_PCIE,
-+	.nlanes = 1,
-+
-+	.serdes_tbl		= sm8250_qmp_pcie_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
-+	.serdes_tbl_sec		= sm8250_qmp_gen3x1_pcie_serdes_tbl,
-+	.serdes_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_serdes_tbl),
-+	.tx_tbl			= sm8250_qmp_pcie_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_tx_tbl),
-+	.rx_tbl			= sm8250_qmp_pcie_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_rx_tbl),
-+	.rx_tbl_sec		= sm8250_qmp_gen3x1_pcie_rx_tbl,
-+	.rx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_rx_tbl),
-+	.pcs_tbl		= sm8250_qmp_pcie_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_pcs_tbl),
-+	.pcs_tbl_sec		= sm8250_qmp_gen3x1_pcie_pcs_tbl,
-+	.pcs_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_tbl),
-+	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
-+	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
-+	.pcs_misc_tbl_sec		= sm8250_qmp_gen3x1_pcie_pcs_misc_tbl,
-+	.pcs_misc_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_misc_tbl),
-+	.clk_list		= sm8150_pciephy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sm8150_pciephy_clk_l),
-+	.reset_list		= sdm845_pciephy_reset_l,
-+	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= sm8250_pcie_regs_layout,
-+
-+	.start_ctrl		= PCS_START | SERDES_START,
-+	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-+	.phy_status		= PHYSTATUS,
-+
-+	.has_pwrdn_delay	= true,
-+	.pwrdn_delay_min	= 995,		/* us */
-+	.pwrdn_delay_max	= 1005,		/* us */
-+};
-+
-+static const struct qmp_phy_cfg sm8150_qmp_gen3x2_pciephy_cfg = {
-+	.type = PHY_TYPE_PCIE,
-+	.nlanes = 2,
-+
-+	.serdes_tbl		= sm8250_qmp_pcie_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
-+	.tx_tbl			= sm8250_qmp_pcie_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_tx_tbl),
-+	.tx_tbl_sec		= sm8250_qmp_gen3x2_pcie_tx_tbl,
-+	.tx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_tx_tbl),
-+	.rx_tbl			= sm8250_qmp_pcie_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_rx_tbl),
-+	.rx_tbl_sec		= sm8250_qmp_gen3x2_pcie_rx_tbl,
-+	.rx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_rx_tbl),
-+	.pcs_tbl		= sm8250_qmp_pcie_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_pcs_tbl),
-+	.pcs_tbl_sec		= sm8250_qmp_gen3x2_pcie_pcs_tbl,
-+	.pcs_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_tbl),
-+	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
-+	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
-+	.pcs_misc_tbl_sec		= sm8250_qmp_gen3x2_pcie_pcs_misc_tbl,
-+	.pcs_misc_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_misc_tbl),
-+	.clk_list		= sm8150_pciephy_clk_l,
-+	.num_clks		= ARRAY_SIZE(sm8150_pciephy_clk_l),
-+	.reset_list		= sdm845_pciephy_reset_l,
-+	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= sm8250_pcie_regs_layout,
-+
-+	.start_ctrl		= PCS_START | SERDES_START,
-+	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-+	.phy_status		= PHYSTATUS,
-+
-+	.is_dual_lane_phy	= true,
-+	.has_pwrdn_delay	= true,
-+	.pwrdn_delay_min	= 995,		/* us */
-+	.pwrdn_delay_max	= 1005,		/* us */
-+};
-+
- static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
- 	.type = PHY_TYPE_PCIE,
- 	.nlanes = 1,
-@@ -6007,6 +6091,12 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,sm6115-qmp-ufs-phy",
- 		.data = &sm6115_ufsphy_cfg,
-+	}, {
-+		.compatible = "qcom,sm8150-qmp-gen3x1-pcie-phy",
-+		.data = &sm8150_qmp_gen3x1_pciephy_cfg,
-+	}, {
-+		.compatible = "qcom,sm8150-qmp-gen3x2-pcie-phy",
-+		.data = &sm8150_qmp_gen3x2_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,sm8150-qmp-ufs-phy",
- 		.data = &sm8150_ufsphy_cfg,
--- 
-2.35.1
-
-
+> 
+> P.S.: Many thanks for the kerneldoc documentation!!!!
+> 
+> > + */
+> > +struct mtk_pcie_phy {
+> > +	struct device *dev;
+> > +	struct phy *phy;
+> > +	void __iomem *sif_base;
+> > +	const struct mtk_pcie_phy_data *data;
+> > +
+> > +	bool sw_efuse_en;
+> > +	u32 efuse_glb_intr;
+> > +	struct mtk_pcie_lane_efuse *efuse;
+> > +};
+> 
+> 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
