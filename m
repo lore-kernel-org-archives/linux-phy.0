@@ -4,66 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A45FC433EF
-	for <linux-phy@archiver.kernel.org>; Sat, 26 Mar 2022 02:38:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C19FC433EF
+	for <linux-phy@archiver.kernel.org>; Sun, 27 Mar 2022 22:41:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jbigc3PxJW26sLGDInRTPHGI7ZHpCUoxuMO+DF+RYHM=; b=B6O3ScYUD0VQSn
-	ch9ZxCLasHEI/AfNTibAWPlFZ05uftV5Ucrm0w8o3ESYxt+GseThoF9hRokArewELndfZdobynK8/
-	XcDxO6uOrWGvKUZYSE9voBSDeb0QcgZgF2OpppCptQPPEGJk1xO87RUA/RzTM4Gb6Gfcoy/fy7b3m
-	CA6DCWFaW1VNR8RypiONTQeX6sCZyNE1GDlIzNg8WflMZqsHeSoEmEhV32UKpCn2CQGmzDXbt1RyB
-	9w6Nm93XlJsNhUUpuD4REZr1LDuS+tNodxFBwcW4bZXo2NfDTT3jvOk6tbsLz2/4dUdZhIxcdtSaV
-	1rnxm1AwFJF4XFHrifqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=teQHm1fwJS9KhmQBm/K5+uMq3bTiOvrAsI9lox7ozj4=; b=u6m+Lj5BQE/OiU
+	F6+IbfMJHnf6NPysvpVZDocVay2DTdzQLBf73PqtOIrahAXcrrXeJDfVl3oHFzqftNcZhB1edilgZ
+	1B5lwgzhkFwdAVb6wj7c7/5JORg1l9Igojo8lkxwj+V3pMW0EFg+YevqUg4kyZBXItcKStLmNrMJi
+	Q8QhL0NSmGBFzzpV2iwlgKLH2t8dggQB5r6e5HBh9wgDYbC6CQLYz6GX13kVrt4UBmGbVbp/DU4y0
+	nOYhhSJsNXQfyHeptfa7gARTjbGjMNsK874kfxZ7mtKYzY2t89sEGt0/nKW31qHqEnRuWCo5VaoVY
+	MiylBOqMd8sBEBD/0/AA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nXwJn-003cfO-Qh; Sat, 26 Mar 2022 02:38:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nYbZI-006Uru-0y; Sun, 27 Mar 2022 22:41:04 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nXwJj-003ceh-Sv; Sat, 26 Mar 2022 02:38:18 +0000
-X-UUID: 8abda733b93442abb1c4a148e350db12-20220325
-X-UUID: 8abda733b93442abb1c4a148e350db12-20220325
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <jianjun.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1852833529; Fri, 25 Mar 2022 19:38:09 -0700
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 25 Mar 2022 19:28:06 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 26 Mar 2022 10:28:05 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sat, 26 Mar 2022 10:28:03 +0800
-From: Jianjun Wang <jianjun.wang@mediatek.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Chen-Yu Tsai
- <wenst@chromium.org>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, Krzysztof Kozlowski
- <krzk@kernel.org>
-CC: Wei-Shun Chang <weishunc@google.com>, Jianjun Wang
- <jianjun.wang@mediatek.com>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <rex-bc.chen@mediatek.com>, <randy.wu@mediatek.com>,
- <jieyy.yang@mediatek.com>, <chuanjia.liu@mediatek.com>,
- <qizhong.cheng@mediatek.com>, <jian.yang@mediatek.com>
-Subject: [PATCH v5 2/2] phy: mediatek: Add PCIe PHY driver
-Date: Sat, 26 Mar 2022 10:27:28 +0800
-Message-ID: <20220326022728.2969-3-jianjun.wang@mediatek.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220326022728.2969-1-jianjun.wang@mediatek.com>
-References: <20220326022728.2969-1-jianjun.wang@mediatek.com>
+ id 1nYbZD-006Uo4-6n
+ for linux-phy@lists.infradead.org; Sun, 27 Mar 2022 22:41:01 +0000
+Received: by mail-wr1-x432.google.com with SMTP id m30so17928566wrb.1
+ for <linux-phy@lists.infradead.org>; Sun, 27 Mar 2022 15:40:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ttvVODLTTBaqB4olSje/RjnCtKXgr801DvSo2q2eG0E=;
+ b=eB8kNh0eru6ENTfiF7I8ZxfQgc65hjixuwm+WdOYEGiiS0ZIji4HliGcQvmy7m4n8l
+ JSAC/LEPtDftUix2szlYowNNLRzxAEmYcKmE213cQwfTsW1PyKem+SvaoiJB5SzevEHj
+ p490rhnT34xKU67nlAfaoCjFSXDvaPqM5rBft90+Eu+ruMv9Q784a55+HiMwMwbFxNbB
+ lT4loCIWa8dqjvVMXBtUDE5c0sQTygs6cL3VKja9gTSUg6wv1IB8ps16ju7dt/c9lD+T
+ 55tgtAsvXxmb/p7j7e87S8PlYmb5jf480aEWzV+FgM+LN5m5x8HFF4xalRltUHETkgRk
+ +ORA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ttvVODLTTBaqB4olSje/RjnCtKXgr801DvSo2q2eG0E=;
+ b=bPJZO4yXGEAeO8IpzkifTZQ6ZOWqsZtyaD1rKLzp4GDPkpU99SvbNPBwUWZaN79Blo
+ o9u1vcb2PYZZCiaVhBlJm/nuOj7GeK2QqvNMYafW4op3MJxh+Q7y0aZabNiquLEXMYxk
+ ZIkTL7Ud0HMi0Fe+Ss0eJRMUfLbmLDuKx8bvaQEqQWEGz13EemWypY77JazPgAVKCwva
+ XLOsy9sVrsJdw5pvXOswwGikg/O5nIKJePgtPIbglJYsJT3kW609F5yGth76UgaAFcPX
+ 1Ug5sT4J3CTg6CRyjkr/N0aXVrxZCzlKZSfNjE/nmXdNULpA7UOSklsdJ058kXV3OANp
+ msVA==
+X-Gm-Message-State: AOAM530D0DeWZ3aM950iw+FbB+1sq3CZYRqTx0FLAM4RivC4opAozDsn
+ iU7xgVJneYjepJd4PeNVRhSBSA==
+X-Google-Smtp-Source: ABdhPJwJHwvmnudnZ78O/kb8n+VyIyx/4wcIM7aEIY4BUkHtQ+mFdwbAuOdLXigX6S01LsAJxrtNaw==
+X-Received: by 2002:adf:f94d:0:b0:1e5:5ca1:2b80 with SMTP id
+ q13-20020adff94d000000b001e55ca12b80mr19448508wrr.323.1648420856992; 
+ Sun, 27 Mar 2022 15:40:56 -0700 (PDT)
+Received: from localhost.localdomain
+ (2a02-8440-6341-357e-3074-96af-9642-0002.rev.sfr.net.
+ [2a02:8440:6341:357e:3074:96af:9642:2])
+ by smtp.gmail.com with ESMTPSA id
+ v5-20020adfe4c5000000b001edc1e5053esm10400867wrm.82.2022.03.27.15.40.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 27 Mar 2022 15:40:56 -0700 (PDT)
+From: Guillaume Ranquet <granquet@baylibre.com>
+To: airlied@linux.ie, angelogioacchino.delregno@collabora.com,
+ chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org, ck.hu@mediatek.com,
+ daniel@ffwll.ch, deller@gmx.de, jitao.shi@mediatek.com, kishon@ti.com,
+ krzk+dt@kernel.org, maarten.lankhorst@linux.intel.com,
+ matthias.bgg@gmail.com, mripard@kernel.org, p.zabel@pengutronix.de,
+ robh+dt@kernel.org, tzimmermann@suse.de, vkoul@kernel.org
+Cc: devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, markyacoub@google.com
+Subject: [PATCH 00/22] drm/mediatek: Add mt8195 DisplayPort driver
+Date: Mon, 28 Mar 2022 00:39:05 +0200
+Message-Id: <20220327223927.20848-1-granquet@baylibre.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220325_193815_972861_6A5A3620 
-X-CRM114-Status: GOOD (  26.69  )
+X-CRM114-CacheID: sfid-20220327_154059_343880_D2C9A8AA 
+X-CRM114-Status: GOOD (  21.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,328 +97,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add PCIe GEN3 PHY driver support on MediaTek chipsets.
+this series is built around the DisplayPort driver. The dpi/dpintf
+driver and the added helper functions are required for the DisplayPort
+driver to work.
 
-Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/phy/mediatek/Kconfig        |  11 ++
- drivers/phy/mediatek/Makefile       |   1 +
- drivers/phy/mediatek/phy-mtk-pcie.c | 272 ++++++++++++++++++++++++++++
- 3 files changed, 284 insertions(+)
- create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
+This v9 is not quite ready yet, as project constraints forces me to
+publish v9 this week, I'm sorry if it's not standard practice.
 
-diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
-index 55f8e6c048ab..387ed1b3f2cc 100644
---- a/drivers/phy/mediatek/Kconfig
-+++ b/drivers/phy/mediatek/Kconfig
-@@ -55,3 +55,14 @@ config PHY_MTK_MIPI_DSI
- 	select GENERIC_PHY
- 	help
- 	  Support MIPI DSI for Mediatek SoCs.
-+
-+config PHY_MTK_PCIE
-+	tristate "MediaTek PCIe-PHY Driver"
-+	depends on ARCH_MEDIATEK || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	help
-+	  Say 'Y' here to add support for MediaTek PCIe PHY driver.
-+	  This driver create the basic PHY instance and provides initialize
-+	  callback for PCIe GEN3 port, it supports software efuse
-+	  initialization.
-diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
-index ace660fbed3a..788c13147f63 100644
---- a/drivers/phy/mediatek/Makefile
-+++ b/drivers/phy/mediatek/Makefile
-@@ -6,6 +6,7 @@
- obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
- obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
- obj-$(CONFIG_PHY_MTK_XSPHY)		+= phy-mtk-xsphy.o
-+obj-$(CONFIG_PHY_MTK_PCIE)		+= phy-mtk-pcie.o
- 
- phy-mtk-hdmi-drv-y			:= phy-mtk-hdmi.o
- phy-mtk-hdmi-drv-y			+= phy-mtk-hdmi-mt2701.o
-diff --git a/drivers/phy/mediatek/phy-mtk-pcie.c b/drivers/phy/mediatek/phy-mtk-pcie.c
-new file mode 100644
-index 000000000000..d288655b6cff
---- /dev/null
-+++ b/drivers/phy/mediatek/phy-mtk-pcie.c
-@@ -0,0 +1,272 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2022 MediaTek Inc.
-+ * Author: Jianjun Wang <jianjun.wang@mediatek.com>
-+ */
-+
-+#include <linux/bits.h>
-+#include <linux/compiler_types.h>
-+#include <linux/module.h>
-+#include <linux/nvmem-consumer.h>
-+#include <linux/of_device.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/slab.h>
-+
-+#include "phy-mtk-io.h"
-+
-+#define PEXTP_ANA_GLB_00_REG		0x9000
-+#define PEXTP_ANA_LN0_TRX_REG		0xa000
-+#define PEXTP_ANA_TX_OFFSET		0x04
-+#define PEXTP_ANA_RX_OFFSET		0x3c
-+#define PEXTP_ANA_LANE_OFFSET		0x100
-+
-+/* PEXTP_GLB_00_REG[28:24] Internal Resistor Selection of TX Bias Current */
-+#define EFUSE_GLB_INTR_SEL		GENMASK(28, 24)
-+#define EFUSE_GLB_INTR_VAL(x)		((0x1f & (x)) << 24)
-+
-+/* PEXTP_ANA_LN_RX_REG[3:0] RX impedance selection */
-+#define EFUSE_LN_RX_SEL			GENMASK(3, 0)
-+#define EFUSE_LN_RX_VAL(x)		(0xf & (x))
-+
-+/* PEXTP_ANA_LN_TX_REG[5:2] TX PMOS impedance selection */
-+#define EFUSE_LN_TX_PMOS_SEL		GENMASK(5, 2)
-+#define EFUSE_LN_TX_PMOS_VAL(x)		((0xf & (x)) << 2)
-+
-+/* PEXTP_ANA_LN_TX_REG[11:8] TX NMOS impedance selection */
-+#define EFUSE_LN_TX_NMOS_SEL		GENMASK(11, 8)
-+#define EFUSE_LN_TX_NMOS_VAL(x)		((0xf & (x)) << 8)
-+
-+/**
-+ * struct mtk_pcie_lane_efuse - eFuse data for each lane
-+ * @tx_pmos: TX PMOS impedance selection data
-+ * @tx_nmos: TX NMOS impedance selection data
-+ * @rx_data: RX impedance selection data
-+ * @lane_efuse_supported: software eFuse data is supported for this lane
-+ */
-+struct mtk_pcie_lane_efuse {
-+	u32 tx_pmos;
-+	u32 tx_nmos;
-+	u32 rx_data;
-+	bool lane_efuse_supported;
-+};
-+
-+/**
-+ * struct mtk_pcie_phy_data - phy data for each SoC
-+ * @num_lanes: supported lane numbers
-+ * @sw_efuse_supported: support software to load eFuse data
-+ */
-+struct mtk_pcie_phy_data {
-+	int num_lanes;
-+	bool sw_efuse_supported;
-+};
-+
-+/**
-+ * struct mtk_pcie_phy - PCIe phy driver main structure
-+ * @dev: pointer to device
-+ * @phy: pointer to generic phy
-+ * @sif_base: IO mapped register base address of system interface
-+ * @data: pointer to SoC dependent data
-+ * @sw_efuse_en: software eFuse enable status
-+ * @efuse_glb_intr: internal resistor selection of TX bias current data
-+ * @efuse: pointer to eFuse data for each lane
-+ */
-+struct mtk_pcie_phy {
-+	struct device *dev;
-+	struct phy *phy;
-+	void __iomem *sif_base;
-+	const struct mtk_pcie_phy_data *data;
-+
-+	bool sw_efuse_en;
-+	u32 efuse_glb_intr;
-+	struct mtk_pcie_lane_efuse *efuse;
-+};
-+
-+static void mtk_pcie_efuse_set_lane(struct mtk_pcie_phy *pcie_phy,
-+				    unsigned int lane)
-+{
-+	struct mtk_pcie_lane_efuse *data = &pcie_phy->efuse[lane];
-+	void __iomem *addr;
-+
-+	if (!data->lane_efuse_supported)
-+		return;
-+
-+	addr = pcie_phy->sif_base + PEXTP_ANA_LN0_TRX_REG +
-+	       lane * PEXTP_ANA_LANE_OFFSET;
-+
-+	mtk_phy_update_bits(addr + PEXTP_ANA_TX_OFFSET, EFUSE_LN_TX_PMOS_SEL,
-+			    EFUSE_LN_TX_PMOS_VAL(data->tx_pmos));
-+
-+	mtk_phy_update_bits(addr + PEXTP_ANA_TX_OFFSET, EFUSE_LN_TX_NMOS_SEL,
-+			    EFUSE_LN_TX_NMOS_VAL(data->tx_nmos));
-+
-+	mtk_phy_update_bits(addr + PEXTP_ANA_RX_OFFSET, EFUSE_LN_RX_SEL,
-+			    EFUSE_LN_RX_VAL(data->rx_data));
-+}
-+
-+/**
-+ * mtk_pcie_phy_init() - Initialize the phy
-+ * @phy: the phy to be initialized
-+ *
-+ * Initialize the phy by setting the efuse data.
-+ * The hardware settings will be reset during suspend, it should be
-+ * reinitialized when the consumer calls phy_init() again on resume.
-+ */
-+static int mtk_pcie_phy_init(struct phy *phy)
-+{
-+	struct mtk_pcie_phy *pcie_phy = phy_get_drvdata(phy);
-+	int i;
-+
-+	if (!pcie_phy->sw_efuse_en)
-+		return 0;
-+
-+	/* Set global data */
-+	mtk_phy_update_bits(pcie_phy->sif_base + PEXTP_ANA_GLB_00_REG,
-+			    EFUSE_GLB_INTR_SEL,
-+			    EFUSE_GLB_INTR_VAL(pcie_phy->efuse_glb_intr));
-+
-+	for (i = 0; i < pcie_phy->data->num_lanes; i++)
-+		mtk_pcie_efuse_set_lane(pcie_phy, i);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops mtk_pcie_phy_ops = {
-+	.init	= mtk_pcie_phy_init,
-+	.owner	= THIS_MODULE,
-+};
-+
-+static int mtk_pcie_efuse_read_for_lane(struct mtk_pcie_phy *pcie_phy,
-+					unsigned int lane)
-+{
-+	struct mtk_pcie_lane_efuse *efuse = &pcie_phy->efuse[lane];
-+	struct device *dev = pcie_phy->dev;
-+	char efuse_id[16];
-+	int ret;
-+
-+	snprintf(efuse_id, sizeof(efuse_id), "tx_ln%d_pmos", lane);
-+	ret = nvmem_cell_read_variable_le_u32(dev, efuse_id, &efuse->tx_pmos);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Failed to read %s\n", efuse_id);
-+
-+	snprintf(efuse_id, sizeof(efuse_id), "tx_ln%d_nmos", lane);
-+	ret = nvmem_cell_read_variable_le_u32(dev, efuse_id, &efuse->tx_nmos);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Failed to read %s\n", efuse_id);
-+
-+	snprintf(efuse_id, sizeof(efuse_id), "rx_ln%d", lane);
-+	ret = nvmem_cell_read_variable_le_u32(dev, efuse_id, &efuse->rx_data);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Failed to read %s\n", efuse_id);
-+
-+	if (!(efuse->tx_pmos || efuse->tx_nmos || efuse->rx_data))
-+		return dev_err_probe(dev, -EINVAL,
-+				     "No eFuse data found for lane%d, but dts enable it\n",
-+				     lane);
-+
-+	efuse->lane_efuse_supported = true;
-+
-+	return 0;
-+}
-+
-+static int mtk_pcie_read_efuse(struct mtk_pcie_phy *pcie_phy)
-+{
-+	struct device *dev = pcie_phy->dev;
-+	bool nvmem_enabled;
-+	int ret, i;
-+
-+	/* nvmem data is optional */
-+	nvmem_enabled = device_property_read_bool(dev, "nvmem-cells");
-+	if (!nvmem_enabled)
-+		return 0;
-+
-+	ret = nvmem_cell_read_variable_le_u32(dev, "glb_intr",
-+					      &pcie_phy->efuse_glb_intr);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Failed to read glb_intr\n");
-+
-+	pcie_phy->sw_efuse_en = true;
-+
-+	pcie_phy->efuse = devm_kzalloc(dev, pcie_phy->data->num_lanes *
-+				       sizeof(*pcie_phy->efuse), GFP_KERNEL);
-+	if (!pcie_phy->efuse)
-+		return -ENOMEM;
-+
-+	for (i = 0; i < pcie_phy->data->num_lanes; i++) {
-+		ret = mtk_pcie_efuse_read_for_lane(pcie_phy, i);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int mtk_pcie_phy_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct phy_provider *provider;
-+	struct mtk_pcie_phy *pcie_phy;
-+	int ret;
-+
-+	pcie_phy = devm_kzalloc(dev, sizeof(*pcie_phy), GFP_KERNEL);
-+	if (!pcie_phy)
-+		return -ENOMEM;
-+
-+	pcie_phy->sif_base = devm_platform_ioremap_resource_byname(pdev, "sif");
-+	if (IS_ERR(pcie_phy->sif_base))
-+		return dev_err_probe(dev, PTR_ERR(pcie_phy->sif_base),
-+				     "Failed to map phy-sif base\n");
-+
-+	pcie_phy->phy = devm_phy_create(dev, dev->of_node, &mtk_pcie_phy_ops);
-+	if (IS_ERR(pcie_phy->phy))
-+		return dev_err_probe(dev, PTR_ERR(pcie_phy->phy),
-+				     "Failed to create PCIe phy\n");
-+
-+	pcie_phy->dev = dev;
-+	pcie_phy->data = of_device_get_match_data(dev);
-+	if (!pcie_phy->data)
-+		return dev_err_probe(dev, -EINVAL, "Failed to get phy data\n");
-+
-+	if (pcie_phy->data->sw_efuse_supported) {
-+		/*
-+		 * Failed to read the efuse data is not a fatal problem,
-+		 * ignore the failure and keep going.
-+		 */
-+		ret = mtk_pcie_read_efuse(pcie_phy);
-+		if (ret == -EPROBE_DEFER)
-+			return ret;
-+	}
-+
-+	phy_set_drvdata(pcie_phy->phy, pcie_phy);
-+
-+	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(provider))
-+		return dev_err_probe(dev, PTR_ERR(provider),
-+				     "PCIe phy probe failed\n");
-+
-+	return 0;
-+}
-+
-+static const struct mtk_pcie_phy_data mt8195_data = {
-+	.num_lanes = 2,
-+	.sw_efuse_supported = true,
-+};
-+
-+static const struct of_device_id mtk_pcie_phy_of_match[] = {
-+	{ .compatible = "mediatek,mt8195-pcie-phy", .data = &mt8195_data },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, mtk_pcie_phy_of_match);
-+
-+static struct platform_driver mtk_pcie_phy_driver = {
-+	.probe	= mtk_pcie_phy_probe,
-+	.driver	= {
-+		.name = "mtk-pcie-phy",
-+		.of_match_table = mtk_pcie_phy_of_match,
-+	},
-+};
-+module_platform_driver(mtk_pcie_phy_driver);
-+
-+MODULE_DESCRIPTION("MediaTek PCIe PHY driver");
-+MODULE_AUTHOR("Jianjun Wang <jianjun.wang@mediatek.com>");
-+MODULE_LICENSE("GPL v2");
+Moreover, it is still un-tested on a recent kernel.
+The integration kernel we are using is still based on 5.10... but we
+are actively working on bringing up a mt8195 integration branch on 5.17.
+The patches have been rebased on top of next-20220301 and have been
+tested to build sucessfully (no functional testing).
+
+Changes from v8:
+- The DP-Phy now has its own dt-bindings and now shares a regmap using the
+  syscon facility with the DP driver.
+- hot plug detection has been removed from the Embedded Display Port.
+  patch and moved to the patch adding External Display Port support.
+- started working on better error handling for the mtk_dp driver.
+- rebased on linux-next.
+- removal of tvd pll clocks re-introduced by mistake.
+- various coding style fixes.
+
+Things that are in my todolist for v10:
+- fixing the train_handler in the mtk_dp driver, as I haven't been able
+  to reproduce locally (hopefully migrating to running the tests on a
+  more recent kernel will help)
+- explaining the various sleep/delays introduced in the drivers
+- explaining some of the differences between mt8195 and "legacy"
+- retrieve CK/DE support from panel driver instead of hardcoding it into
+  the dpi driver.
+- better error handling/reporting in mtk_dp
+- look into re-implementing mtk_dp_aux_transfer() using drm_dp_dpcd_read and
+  drm_dp_dpcd_write as suggested by Rex.
+
+Older revisions:
+RFC - https://lore.kernel.org/linux-mediatek/20210816192523.1739365-1-msp@baylibre.com/
+v1  - https://lore.kernel.org/linux-mediatek/20210906193529.718845-1-msp@baylibre.com/
+v2  - https://lore.kernel.org/linux-mediatek/20210920084424.231825-1-msp@baylibre.com/
+v3  - https://lore.kernel.org/linux-mediatek/20211001094443.2770169-1-msp@baylibre.com/
+v4  - https://lore.kernel.org/linux-mediatek/20211011094624.3416029-1-msp@baylibre.com/
+v5  - https://lore.kernel.org/all/20211021092707.3562523-1-msp@baylibre.com/
+v6  - https://lore.kernel.org/linux-mediatek/20211110130623.20553-1-granquet@baylibre.com/
+v7  - https://lore.kernel.org/linux-mediatek/20211217150854.2081-1-granquet@baylibre.com/
+v8  - https://lore.kernel.org/linux-mediatek/20220218145437.18563-1-granquet@baylibre.com/
+
+Functional dependencies are:
+- Add Mediatek Soc DRM (vdosys0) support for mt8195
+  https://lore.kernel.org/all/20211026155911.17651-1-jason-jh.lin@mediatek.com/
+- Add MediaTek SoC DRM (vdosys1) support for mt8195
+  https://lore.kernel.org/all/20211029075203.17093-1-nancy.lin@mediatek.com/
+
+Guillaume Ranquet (15):
+  dt-bindings: mediatek,dp_phy: Add Display Port PHY binding
+  drm/edid: Convert cea_sad helper struct to kernelDoc
+  drm/edid: Add cea_sad helpers for freq/length
+  drm/mediatek: dpi: move dpi limits to SoC config
+  drm/mediatek: dpi: implement a CK/DE pol toggle in SoC config
+  drm/mediatek: dpi: implement a swap_input toggle in SoC config
+  drm/mediatek: dpi: move dimension mask to SoC config
+  drm/mediatek: dpi: move hvsize_mask to SoC config
+  drm/mediatek: dpi: move swap_shift to SoC config
+  drm/mediatek: dpi: move the yuv422_en_bit to SoC config
+  drm/mediatek: dpi: move the csc_enable bit to SoC config
+  drm/mediatek: dpi: Add dpintf support
+  drm/meditek: dpi: Add matrix_sel helper
+  drm/mediatek: Add mt8195 External DisplayPort support
+  drm/mediatek: DP audio support for mt8195
+
+Jitao Shi (2):
+  drm/mediatek: add hpd debounce
+  drm/mediatek: change the aux retries times when receiving AUX_DEFER
+
+Markus Schneider-Pargmann (5):
+  dt-bindings: mediatek,dpi: Add DP_INTF compatible
+  dt-bindings: mediatek,dp: Add Display Port binding
+  video/hdmi: Add audio_infoframe packing for DP
+  phy: phy-mtk-dp: Add driver for DP phy
+  drm/mediatek: Add mt8195 Embedded DisplayPort driver
+
+ .../display/mediatek/mediatek,dp.yaml         |   97 +
+ .../display/mediatek/mediatek,dpi.yaml        |   11 +-
+ .../bindings/phy/mediatek,dp-phy.yaml         |   43 +
+ MAINTAINERS                                   |    1 +
+ drivers/gpu/drm/drm_edid.c                    |   74 +
+ drivers/gpu/drm/mediatek/Kconfig              |    8 +
+ drivers/gpu/drm/mediatek/Makefile             |    2 +
+ drivers/gpu/drm/mediatek/mtk_dp.c             | 3204 +++++++++++++++++
+ drivers/gpu/drm/mediatek/mtk_dp_reg.h         |  568 +++
+ drivers/gpu/drm/mediatek/mtk_dpi.c            |  222 +-
+ drivers/gpu/drm/mediatek/mtk_dpi_regs.h       |   38 +
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c   |    8 +
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h   |    1 +
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c        |    6 +-
+ drivers/gpu/drm/mediatek/mtk_drm_drv.h        |    1 +
+ drivers/phy/mediatek/Kconfig                  |    8 +
+ drivers/phy/mediatek/Makefile                 |    1 +
+ drivers/phy/mediatek/phy-mtk-dp.c             |  202 ++
+ drivers/video/hdmi.c                          |   82 +-
+ include/drm/dp/drm_dp_helper.h                |    2 +
+ include/drm/drm_edid.h                        |   25 +-
+ include/linux/hdmi.h                          |    7 +-
+ include/linux/soc/mediatek/mtk-mmsys.h        |    3 +-
+ 23 files changed, 4541 insertions(+), 73 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
+ create mode 100644 drivers/gpu/drm/mediatek/mtk_dp.c
+ create mode 100644 drivers/gpu/drm/mediatek/mtk_dp_reg.h
+ create mode 100644 drivers/phy/mediatek/phy-mtk-dp.c
+
 -- 
-2.18.0
+2.34.1
 
 
 -- 
