@@ -4,52 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA407C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 02:06:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4E66C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 02:09:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S1KghcJWRF1Pc97kYf/RFz6ezqiCjKY/Y3L2Li6tjT0=; b=XxFfrl9b9CSuKh
-	xDmUIuPHwkt7qjx3pCs1E2INm/ixvG0eQaoT5eIfU8u7jI0GB1uVRXvHVKZ2WH/gNsqyykgvRqnVS
-	dGswoWkbHIeGBIBTAyfATtLSaDerzwUawtQckvJ8hYsOyQajj240N0PYsRP+IdDXrRqULQpwRofWN
-	qsUtzITjdzdcaRh2LZV5svKNv6kHt1xUTwiqLNq0BZw+MwmzWyOeDjyuJfWzRa4XKEq/rV4/VPcxV
-	FBI3UoMp4P7l7/otXGu4i32aA0+74iQE8j8qmqvNqKXOJmYsiFeHBxbuK66RdLnsdVqYInm9VOj8J
-	mY0gaAmWcK6hK6IWdEXg==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:CC
+	:To:From:Subject:Mime-Version:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=+Od0Cnu4kEcBq4gVErbQRIH4gx2IQczVM6+T5+YeN6w=; b=jjOGR/NYPtQC31
+	QORFUyyKkbuOP+MkEOeH81OR+luQrrv5CY1RRoPhyWNkmnNsrWbvbDniD6/C8SfzUmjoQtZegpYn0
+	IWF+Dz3OHHVkQlnvuEdfQkg0/ZEAIiQlAw2ufDhWEwPuoRhDufQ3kQz1sqc+a7UG9jiqxfX3jYa5B
+	qVjufE7Re0cGTyhHe6Af/XY6JGnEuQ3NVT/zE6EjURvsHTS1c98BaPT5qn839fjd1PHre/R/XyLVD
+	KbYRJXS/XG3V96Rb/MK3cHNmFMa0PpBvRbWw2V/fFxILZ4L7w3HvkScsepwjy7QTBkwlMOqR1HcLO
+	Rfxy4PVcmIAjy3BG19Vw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nYemE-00741e-4k; Mon, 28 Mar 2022 02:06:38 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nYelc-0073qF-QZ; Mon, 28 Mar 2022 02:06:02 +0000
-Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 28 Mar 2022 11:06:00 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id 1300E2058B50;
- Mon, 28 Mar 2022 11:06:00 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Mon, 28 Mar 2022 11:06:00 +0900
-Received: from plum.e01.socionext.com (unknown [10.212.243.119])
- by kinkan2.css.socionext.com (Postfix) with ESMTP id A943DB62B7;
- Mon, 28 Mar 2022 11:05:59 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>
-Cc: Masami Hiramatsu <mhiramat@kernel.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: [PATCH 3/3] dt-bindings: phy: uniphier-ahci: Fix missing reset-names
-Date: Mon, 28 Mar 2022 11:05:52 +0900
-Message-Id: <1648433152-23126-4-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1648433152-23126-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1648433152-23126-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1nYepS-00751Z-VX; Mon, 28 Mar 2022 02:09:58 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1nYepP-0074z4-3J
+ for linux-phy@lists.infradead.org; Mon, 28 Mar 2022 02:09:57 +0000
+Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20220328020950epoutp04eaba89d80e1dabdad7a254f3ed181433~gaW9UZEus3145631456epoutp04O
+ for <linux-phy@lists.infradead.org>; Mon, 28 Mar 2022 02:09:50 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20220328020950epoutp04eaba89d80e1dabdad7a254f3ed181433~gaW9UZEus3145631456epoutp04O
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1648433390;
+ bh=iuokl0K2CXgMI3+fhXbeLGRi9Qj1Yz9sNan7oHp3dAw=;
+ h=Subject:Reply-To:From:To:CC:Date:References:From;
+ b=mtP5kAbLg347WahyM+Y+kPpx/cF3eHSxLoHHl0Cju3hwLGnbOiPVj2Cd2f9aISRwD
+ EPD7hu6cHoX54GeWTuWFV2io13ERQZ6Jzm0vcI1pwzE8NUxpcqh/kWFEvsGKZPtyx0
+ gcAstpfJVKmJc927/AZNaQ1xucv53jY/5gZxmX20=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
+ epcas2p3.samsung.com (KnoxPortal) with ESMTP id
+ 20220328020949epcas2p319215359bf2ded2e0f388f51d12127bd~gaW8vvakI1241312413epcas2p3d;
+ Mon, 28 Mar 2022 02:09:49 +0000 (GMT)
+Received: from epsmges2p1.samsung.com (unknown [182.195.36.98]) by
+ epsnrtp1.localdomain (Postfix) with ESMTP id 4KRbk44VTDz4x9Ps; Mon, 28 Mar
+ 2022 02:09:48 +0000 (GMT)
+X-AuditID: b6c32a45-4fdff700000228cc-ef-624118eba8d9
+Received: from epcas2p3.samsung.com ( [182.195.41.55]) by
+ epsmges2p1.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 3D.47.10444.BE811426; Mon, 28 Mar 2022 11:09:47 +0900 (KST)
+Mime-Version: 1.0
+Subject: [PATCH 2/5] dt-bindings: phy: Add ARTPEC-8 PCIe phy
+From: =?UTF-8?B?7J207JmV7ISd?= <wangseok.lee@samsung.com>
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "krzk+dt@kernel.org"
+ <krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org"
+ <vkoul@kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "jesper.nilsson@axis.com"
+ <jesper.nilsson@axis.com>, "lars.persson@axis.com" <lars.persson@axis.com>
+CC: "bhelgaas@google.com" <bhelgaas@google.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, "kw@linux.com"
+ <kw@linux.com>, "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
+ "kernel@axis.com" <kernel@axis.com>, =?UTF-8?B?7KCE66y46riw?=
+ <moonki.jun@samsung.com>
+X-Priority: 3
+X-Content-Kind-Code: NORMAL
+X-CPGS-Detection: blocking_info_exchange
+X-Drm-Type: N,general
+X-Msg-Generator: Mail
+X-Msg-Type: PERSONAL
+X-Reply-Demand: N
+Message-ID: <20220328020947epcms2p2525f40ac5157735063927aedfbf6fc4f@epcms2p2>
+Date: Mon, 28 Mar 2022 11:09:47 +0900
+X-CMS-MailID: 20220328020947epcms2p2525f40ac5157735063927aedfbf6fc4f
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+X-CPGSPASS: Y
+X-CPGSPASS: Y
+CMS-TYPE: 102P
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrEJsWRmVeSWpSXmKPExsWy7bCmue5rCcckg5nHtS2WNGVYvDykaTH/
+ yDlWi+eHZjFbfGpRtbjwtIfN4uWse2wWDT2/WS2OvPnIbLH/+Eomi8u75rBZnJ13nM1iwqpv
+ LBZvfr9gtzi3ONOide8Rdoudd04wOwh6rJm3htHj+roAjwWbSj02repk83hyZTqTx+Yl9R59
+ W1Yxehy/sZ3J4/MmuQDOqGybjNTElNQihdS85PyUzLx0WyXv4HjneFMzA0NdQ0sLcyWFvMTc
+ VFslF58AXbfMHKAvlBTKEnNKgUIBicXFSvp2NkX5pSWpChn5xSW2SqkFKTkF5gV6xYm5xaV5
+ 6Xp5qSVWhgYGRqZAhQnZGWt/r2AuWC1c0fC0voHxCm8XIweHhICJxJlD8l2MXBxCAjsYJfa+
+ +MMOEucVEJT4u0O4i5GTQ1jARuLP7tnMILaQgJLEjjXzmCHi1hKfplxmAbHZBCwlLrY+ZASZ
+ IyJwlkni5t3trCAOs8BtZon5z9+DVUkI8ErMaH8KZUtLbF++lRHC1pD4sayXGcIWlbi5+i07
+ jP3+2HyoGhGJ1ntnoWoEJR783A0Vl5JY8OQQK4RdLbH/728mCLuBUaL/firEk/oSO64bg4R5
+ BXwl3i/bzgZiswioSpw/exHqHBeJ07tOg41kFpCX2P52DjNIK7OApsT6XfoQU5QljtyCe6Rh
+ 4292dDazAJ9Ex+G/cPEd855AHaMmMW/lTmaIMTISW1/6T2BUmoUI51lI1s5CWLuAkXkVo1hq
+ QXFuemqxUYEhPGKT83M3MYITs5brDsbJbz/oHWJk4mA8xCjBwawkwit71j5JiDclsbIqtSg/
+ vqg0J7X4EKMp0MMTmaVEk/OBuSGvJN7QxNLAxMzM0NzI1MBcSZzXK2VDopBAemJJanZqakFq
+ EUwfEwenVAPT+Qev2+qmerg8vbnRpPHiJ9aJvlv2HAtMP5K76P5B3eiYMjXJW7tYZrYxlE67
+ px2o1hxw1oz5ziKz4CjTqzc7n1f/2yQXJRpquDMurfLUcSbWoyply1V1X7IpffjWs2bJZOP1
+ fdG8nP9EFy48t0Y5gbGj/v2HXU1vZkybO3/l+a7LXA+2tLcu+q8cw6nedUPz4uSFm4zc/a/d
+ sA8vXTYlXbnUxmE+4xp368KVC+bzLlqR/sJl54/brPdmF2z4t2rqwcs9wn1185evfnRttdEq
+ PocVL3rE8k68Pbl++e5tpmX3d62QmdfjZ31rvc7zR/8co/gm93MJPn32bfnLHf6+LfWT559h
+ uii1g4+XUcT/pJISS3FGoqEWc1FxIgBgYiqxVQQAAA==
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220328020947epcms2p2525f40ac5157735063927aedfbf6fc4f
+References: <CGME20220328020947epcms2p2525f40ac5157735063927aedfbf6fc4f@epcms2p2>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220327_190601_031361_3E9C6ADD 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20220327_190955_649755_34794480 
+X-CRM114-Status: GOOD (  17.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,49 +116,181 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
+Reply-To: wangseok.lee@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add missing "phy" reset-names to fix the following warning:
+Add description to support Axis, ARTPEC-8 SoC.
 
-  uniphier-pro4-ace.dtb: ahci-phy@10: resets: [[26, 28], [26, 12], [26, 30], [36, 0], [36, 1], [36, 2]] is too long
-      From schema: Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-  uniphier-pro4-ace.dtb: ahci-phy@10: reset-names: 'oneOf' conditional failed, one must be fixed:
-      ['link', 'gio', 'phy', 'pm', 'tx', 'rx'] is too long
-      From schema: Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
+ARTPEC-8 is the SoC platform of Axis Communications
 
-Fixes: 34f92b67621f ("dt-bindings: phy: uniphier-ahci: Add bindings for Pro4 SoC")
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+and PCIe phy is designed based on SAMSUNG PHY.
+
+ 
+
+Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
+
 ---
- .../devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml   | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-index 3b400a85b44a..14f7579e7daa 100644
---- a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
-@@ -43,13 +43,14 @@ properties:
+ .../bindings/phy/axis,artpec8-pcie-phy.yaml        | 67 ++++++++++++++++++++++
+
+ 1 file changed, 67 insertions(+)
+
+ create mode 100644 Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
+
  
-   resets:
-     minItems: 2
--    maxItems: 5
-+    maxItems: 6
- 
-   reset-names:
-     oneOf:
-       - items:          # for Pro4
-           - const: link
-           - const: gio
-+          - const: phy
-           - const: pm
-           - const: tx
-           - const: rx
+
+diff --git a/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
+
+new file mode 100644
+
+index 0000000..f5f4166
+
+--- /dev/null
+
++++ b/Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
+
+@@ -0,0 +1,67 @@
+
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+
++%YAML 1.2
+
++---
+
++$id: http://devicetree.org/schemas/phy/axis,artpec8-pcie-phy.yaml#
+
++$schema: http://devicetree.org/meta-schemas/core.yaml#
+
++
+
++title: ARTPEC-8 SoC PCIe PHY Device Tree Bindings
+
++
+
++maintainers:
+
++  - Jesper Nilsson <jesper.nilsson@axis.com>
+
++
+
++properties:
+
++  compatible:
+
++    const: axis,artpec8-pcie-phy
+
++
+
++  reg:
+
++    items:
+
++      - description: PHY registers.
+
++      - description: PHY coding sublayer registers.
+
++
+
++  reg-names:
+
++    items:
+
++      - const: phy
+
++      - const: pcs
+
++
+
++  clocks:
+
++    items:
+
++      - description: PCIe PHY reference clock
+
++
+
++  clock-names:
+
++    items:
+
++      - const: ref_clk
+
++
+
++required:
+
++  - compatible
+
++  - "#phy-cells"
+
++  - reg
+
++  - reg-names
+
++  - clocks
+
++  - clock-names
+
++  - samsung,fsys-sysreg
+
++  - num-lanes
+
++
+
++
+
++additionalProperties: false
+
++
+
++examples:
+
++  - |
+
++    #include <dt-bindings/interrupt-controller/irq.h>
+
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
+
++
+
++    artec8 {
+
++        #address-cells = <2>;
+
++        #size-cells = <2>;
+
++        pcie_phy: pcie-phy@16c80000 {
+
++            compatible = "samsung,artpec8-pcie-phy";
+
++            #phy-cells = <0>;
+
++            reg = <0x0 0x16c80000 0x0 0x2000>,
+
++                    <0x0 0x16c90000 0x0 0x1000>;
+
++            reg-names = "phy", "pcs";
+
++            clocks = <&clock_cmu_fsys 53>;
+
++            clock-names = "ref_clk";
+
++            samsung,fsys-sysreg = <&syscon_fsys>;
+
++            num-lanes = <2>;
+
++        };
+
++    };
+
++...
+
 -- 
-2.25.1
 
+2.9.5
 
 -- 
 linux-phy mailing list
