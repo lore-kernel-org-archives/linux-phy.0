@@ -4,67 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2345AC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 07:31:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F029C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 08:04:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tw4pAtgAMSC3JkIfDNpKPPCUietSLYheKeXgsks2V5w=; b=PhPvbnnahCVRMd
-	GVczLKlN3WO+JPW2x4mCFvHXlLv32cVe1LlA75U6fdY27vmxQIngJm/KhDPPRs8h8lMdiz09bq/wX
-	5y5Anb4sNxHZE2vsD7iiW5FA12G73yszoeN0lPPN05nIj/rsINolfsTWF43Axw/nhuT+KGMqrI/Cs
-	tsebK+hVtfN73h/83i328TP5oXaeslqHUQoQwSQJAuQPgmsDVoZRrKK9CjLNmjoDSW12/CTVzqbGl
-	Dw8IblNSRnO+KGfR+Wj3dW3xjNypgMf/A4LoKPUxZUSVWCJso7pgGOl4kMhEp0arrezr8w9YAt7Ca
-	OC7xJ9SiaD/Fpx3hw4Uw==;
+	List-Owner; bh=/i9yLPEa7SuFKLIBXeh97+3Yy5f247IEMDkwqRPRU3w=; b=xq4F9kvMv3qgjJ
+	ptK1KuBDmdvstdRjte/CkUEGeqqa9MGJe4voYGzqNJYLRwptmy8XjmDWsGhOeA2Ldo5FQsUaTOdC3
+	1UaYpzYzmnPuMxZGXtmdQ3+vl3+sqI9FVjdj4UcmU8vT0fcRFe8+TN3TrbcUJoTeXeWI7rMRIpnEy
+	eEXuMN1EQcPd0RAdqbp+cJCvUdtdid1Bt1G0inLgDYh2M7rBB1+8d/DFtRFgBbsd8752tH0gfV48l
+	KcFX4+x0Uk7Ao05TSFBU5ymYorrpvcDUq0drht9Rh+OS1mFsDVem+CZZbGFIOTTkioG+hDth6TuLl
+	enWo96id8+EfeqW+1oKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nYjqz-007dF3-F7; Mon, 28 Mar 2022 07:31:53 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nYkMq-007inL-0B; Mon, 28 Mar 2022 08:04:48 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nYjql-007dB8-9Q; Mon, 28 Mar 2022 07:31:41 +0000
-X-UUID: d603054cef1a4c578a3e0b7242e7fad0-20220328
-X-UUID: d603054cef1a4c578a3e0b7242e7fad0-20220328
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <rex-bc.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 143643515; Mon, 28 Mar 2022 00:31:32 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 28 Mar 2022 00:31:30 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Mon, 28 Mar 2022 15:31:28 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 28 Mar 2022 15:31:28 +0800
-Message-ID: <8c7d47869dc8a9e8580740fe25bb2fd289253a4d.camel@mediatek.com>
-Subject: Re: [PATCH v9 08/22] drm/mediatek: dpi: implement a CK/DE pol
- toggle in SoC config
-From: Rex-BC Chen <rex-bc.chen@mediatek.com>
-To: Guillaume Ranquet <granquet@baylibre.com>, <airlied@linux.ie>,
- <angelogioacchino.delregno@collabora.com>, <chunfeng.yun@mediatek.com>,
- <chunkuang.hu@kernel.org>, <ck.hu@mediatek.com>, <daniel@ffwll.ch>,
- <deller@gmx.de>, <jitao.shi@mediatek.com>, <kishon@ti.com>,
- <krzk+dt@kernel.org>, <maarten.lankhorst@linux.intel.com>,
- <matthias.bgg@gmail.com>, <mripard@kernel.org>, <p.zabel@pengutronix.de>,
- <robh+dt@kernel.org>, <tzimmermann@suse.de>, <vkoul@kernel.org>
-CC: <devicetree@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-fbdev@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
- <linux-phy@lists.infradead.org>, <markyacoub@google.com>
-Date: Mon, 28 Mar 2022 15:31:28 +0800
-In-Reply-To: <20220327223927.20848-9-granquet@baylibre.com>
-References: <20220327223927.20848-1-granquet@baylibre.com>
- <20220327223927.20848-9-granquet@baylibre.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+ id 1nYkMa-007ihr-Ns; Mon, 28 Mar 2022 08:04:34 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: kholk11) with ESMTPSA id 6A11F1F42F03
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+ s=mail; t=1648454668;
+ bh=OgeZn3h62XRwSUZAUHSs6JjYPCvTevBe27bS/7gUpUU=;
+ h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+ b=RYSAAir6nrRU1Bv61iSlbrH6+U+cZjsjYqInwDj/OIUQpvqrymdIIn/bg8TvOTvun
+ U7K6MQUOZmaOMEzQ2bOcq3rv7glozuTwUnHAADB55ZmlByZyawn3Oh8hklLJuEM/Fx
+ F8jZNLKTAGZtBTykPIf/+nsEWBtpa7Tsp9kI05bCOHix34dlzPJzC/JZhl9dDjju0s
+ XHADgeqcLyRs9PlPLGlclF5ilyASiSDqC/pggNZRefQahGSBi2D0E7klkS4cHtNhZm
+ /t6CjUsFLlXSRFX2MhoHYXteDVyOGWJfhOKBmdRv9UNBkfBBGkiALXB/7UjOL0QFye
+ BoNjq6IFiSFcg==
+Message-ID: <0c523ad5-6a71-5c71-17b8-1f15c1860d89@collabora.com>
+Date: Mon, 28 Mar 2022 10:04:24 +0200
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.7.0
+Subject: Re: [PATCH v9 04/22] drm/edid: Convert cea_sad helper struct to
+ kernelDoc
+Content-Language: en-US
+To: Guillaume Ranquet <granquet@baylibre.com>, airlied@linux.ie,
+ chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org, ck.hu@mediatek.com,
+ daniel@ffwll.ch, deller@gmx.de, jitao.shi@mediatek.com, kishon@ti.com,
+ krzk+dt@kernel.org, maarten.lankhorst@linux.intel.com,
+ matthias.bgg@gmail.com, mripard@kernel.org, p.zabel@pengutronix.de,
+ robh+dt@kernel.org, tzimmermann@suse.de, vkoul@kernel.org
+Cc: devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, markyacoub@google.com
+References: <20220327223927.20848-1-granquet@baylibre.com>
+ <20220327223927.20848-5-granquet@baylibre.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220327223927.20848-5-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220328_003139_347633_12B0BC04 
-X-CRM114-Status: GOOD (  15.62  )
+X-CRM114-CacheID: sfid-20220328_010432_999588_4377559D 
+X-CRM114-Status: GOOD (  12.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,101 +72,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2022-03-28 at 00:39 +0200, Guillaume Ranquet wrote:
-> Adds a bit of flexibility to support SoCs without CK/DE pol support
-> 
+Il 28/03/22 00:39, Guillaume Ranquet ha scritto:
 > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> Reviewed-by: AngeloGioacchino Del Regno <
-> angelogioacchino.delregno@collabora.com>
 > ---
->  drivers/gpu/drm/mediatek/mtk_dpi.c | 22 +++++++++++++++++-----
->  1 file changed, 17 insertions(+), 5 deletions(-)
+>   include/drm/drm_edid.h | 11 ++++++++---
+>   1 file changed, 8 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c
-> b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> index 4746eb342567..545a1337cc89 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> @@ -125,6 +125,7 @@ struct mtk_dpi_conf {
->  	bool edge_sel_en;
->  	const u32 *output_fmts;
->  	u32 num_output_fmts;
-> +	bool is_ck_de_pol;
->  	const struct mtk_dpi_yc_limit *limit;
->  };
->  
-> @@ -211,13 +212,20 @@ static void mtk_dpi_config_pol(struct mtk_dpi
-> *dpi,
->  			       struct mtk_dpi_polarities *dpi_pol)
->  {
->  	unsigned int pol;
-> +	unsigned int mask;
->  
-> -	pol = (dpi_pol->ck_pol == MTK_DPI_POLARITY_RISING ? 0 : CK_POL)
-> |
-> -	      (dpi_pol->de_pol == MTK_DPI_POLARITY_RISING ? 0 : DE_POL)
-> |
-> -	      (dpi_pol->hsync_pol == MTK_DPI_POLARITY_RISING ? 0 :
-> HSYNC_POL) |
-> +	mask = HSYNC_POL | VSYNC_POL;
-> +	pol = (dpi_pol->hsync_pol == MTK_DPI_POLARITY_RISING ? 0 :
-> HSYNC_POL) |
->  	      (dpi_pol->vsync_pol == MTK_DPI_POLARITY_RISING ? 0 :
-> VSYNC_POL);
-> -	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, pol,
-> -		     CK_POL | DE_POL | HSYNC_POL | VSYNC_POL);
-> +	if (dpi->conf->is_ck_de_pol) {
-> +		mask |= CK_POL | DE_POL;
-> +		pol |= (dpi_pol->ck_pol == MTK_DPI_POLARITY_RISING ?
-> +			0 : CK_POL) |
-> +		       (dpi_pol->de_pol == MTK_DPI_POLARITY_RISING ?
-> +			0 : DE_POL);
-> +	}
-> +
-> +	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, pol, mask);
->  }
->  
->  static void mtk_dpi_config_3d(struct mtk_dpi *dpi, bool en_3d)
-> @@ -799,6 +807,7 @@ static const struct mtk_dpi_conf mt8173_conf = {
->  	.max_clock_khz = 300000,
->  	.output_fmts = mt8173_output_fmts,
->  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
-> +	.is_ck_de_pol = true,
->  	.limit = &mtk_dpi_limit,
->  };
->  
-> @@ -809,6 +818,7 @@ static const struct mtk_dpi_conf mt2701_conf = {
->  	.max_clock_khz = 150000,
->  	.output_fmts = mt8173_output_fmts,
->  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
-> +	.is_ck_de_pol = true,
->  	.limit = &mtk_dpi_limit,
->  };
->  
-> @@ -818,6 +828,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
->  	.max_clock_khz = 100000,
->  	.output_fmts = mt8183_output_fmts,
->  	.num_output_fmts = ARRAY_SIZE(mt8183_output_fmts),
-> +	.is_ck_de_pol = true,
->  	.limit = &mtk_dpi_limit,
->  };
->  
-> @@ -827,6 +838,7 @@ static const struct mtk_dpi_conf mt8192_conf = {
->  	.max_clock_khz = 150000,
->  	.output_fmts = mt8173_output_fmts,
->  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
-> +	.is_ck_de_pol = true,
->  	.limit = &mtk_dpi_limit,
->  };
->  
+> diff --git a/include/drm/drm_edid.h b/include/drm/drm_edid.h
+> index 144c495b99c4..5d4d840b9904 100644
+> --- a/include/drm/drm_edid.h
+> +++ b/include/drm/drm_edid.h
+> @@ -359,12 +359,17 @@ struct edid {
+>   
+>   #define EDID_PRODUCT_ID(e) ((e)->prod_code[0] | ((e)->prod_code[1] << 8))
+>   
+> -/* Short Audio Descriptor */
 
-Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
+Hello Guillaume,
 
+> +/* struct cea_sad - Short Audio Descriptor.
+> +	@format: See HDMI_AUDIO_CODING_TYPE_*.
+> +	@channels: max number of channels - 1.
+> +	@freq: See CEA_SAD_FREQ_*.
+> +	@byte2: meaning depends on format.
+> +*/
+
+I appreciate the effort, but this is not valid kerneldoc.
+
+Please refer to https://docs.kernel.org/doc-guide/kernel-doc.html
+
+Regards,
+Angelo
 
 -- 
 linux-phy mailing list
