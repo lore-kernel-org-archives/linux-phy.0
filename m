@@ -4,77 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6D75C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 12:51:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75070C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 12:56:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GNl6aoU60rsRXO641wyOO9n/ElV+O8Vrid+nYxkaXQ4=; b=Yzd+sUrmPutUo6
-	xUhU4+/HnrFpuZ2pPwKcC8ALJwqJL4IJ/ov2kqXg26tCwA0NQQUnvCpRlRDmKDsGuV5Dvm4idkaUK
-	H//HUE/Y4DQ4Jb4QeRFkBnsVBXNQm4qlzzQJzcYar6RhYeN6wkH4JQN6qmgW/hxKw4KUORmeG206m
-	2rbyn+CokaDCWr0KnySZq+pQD+GPrd6qvwyHLZzky1tJf/6o8t5enoIqiQ63KS1sroae0C95zReCe
-	8c3tT+tmiqLpIwiRZ1EUiyReUCvtIf4wLy7mYM2U+TjV2BBRjkEiPf9HMKmft/l/xmveCy+aik/n9
-	P/Yp5FgCebxvNfddrTyA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	MIME-Version:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe
+	:List-Id:Message-Id:Date:Subject:References:In-Reply-To:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=vEpdOijHfpv7J322drvQrcoC0Vr7Neal4rawMqCZOx0=; b=4IeaXUy3mUvVLW641EQOzUMCip
+	xRgYR4e2pI93fsTsffzLgdigNpluGLLa39llWpQ2ebTbhrrLyM6/qv+9/GZ8wc43tLuPBRbJe4dji
+	Cpqqf4cOABU7kpr4YJvZZlEcxrw3pUfNFvrDYhaL4xEzfocnReGja4nzme92BMiT1X9w9f1cW1rGf
+	zDOtSYBwM/yJSR37pRSdluWN/Dg1R4dWj1ebbRYTcQ6hc/kSJXkYPlRe0WULr+QOpUCyv5y9C+4QX
+	0qhiAu5jrzsRsi/x15C8KbYifdTzbCC7iwYMzjEcRZsznjbiPkHmyBFDGNM1+Ne8/UP8O0Y97nrOZ
+	qjWH7+gQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nYoq1-008b8C-4n; Mon, 28 Mar 2022 12:51:13 +0000
-Received: from mail-oa1-f43.google.com ([209.85.160.43])
+	id 1nYovE-008cHW-Ui; Mon, 28 Mar 2022 12:56:36 +0000
+Received: from mail-oa1-f51.google.com ([209.85.160.51])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nYopx-008b6V-Vz; Mon, 28 Mar 2022 12:51:11 +0000
-Received: by mail-oa1-f43.google.com with SMTP id
- 586e51a60fabf-ddfa38f1c1so15043721fac.11; 
- Mon, 28 Mar 2022 05:51:08 -0700 (PDT)
+ id 1nYovC-008cGp-MX
+ for linux-phy@lists.infradead.org; Mon, 28 Mar 2022 12:56:36 +0000
+Received: by mail-oa1-f51.google.com with SMTP id
+ 586e51a60fabf-df088cb155so1732583fac.1
+ for <linux-phy@lists.infradead.org>; Mon, 28 Mar 2022 05:56:34 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
  :message-id;
- bh=YKxyUK+Nou4xViHDx8TkfPYtGoA/VwvXE7HQXU1aq8I=;
- b=ZuhG9iulE+B99P6XR0lHhPojMTyJC49uYa2IhCdHeIpD/DyS8Bf7mhAhe8JOpNFSgS
- ry8Hcw9YSw7U002Nh668pJvBCin8l4NoJdDo4Axrz73X/sSdVx1tPL21V+4rwqjVcfqU
- d1FxGJY/Tx5jV/m4mcdHkVcn11yRwVMLpi34Utc1mlR2t5ln8uYH8+JF+xO0nQOHcqi2
- Czt5TFZzT8qMq+KD7HvJR1yy/Q5jd0tnuiWbiHWDSYO1d22JIP4I0l8KuG8usQloeyO/
- RbiyQe86eyAczXje1qnrPuc4Febbso+2wy3QPZYzYB8s3lJRftQ+R/oUXvErgHGr6FoU
- KM0Q==
-X-Gm-Message-State: AOAM5339OT4vyQHLYOLekqPcL/6Yk0mgL7iGPBY+ks5HW9Y92WMuJga2
- ibcq7VewJfC+CMK4ZDjVkw==
-X-Google-Smtp-Source: ABdhPJx44lE4vp2aYCeZ7I/lyjmousbKuU1sEX5HIWJFpKqkaVPGdwLqNEmBm4TX4iixQSE+3S145A==
-X-Received: by 2002:a05:6871:694:b0:dd:a43e:fca4 with SMTP id
- l20-20020a056871069400b000dda43efca4mr15486919oao.77.1648471867780; 
- Mon, 28 Mar 2022 05:51:07 -0700 (PDT)
+ bh=tvIH566M2naDeof99DqDztnAH/aJCYf9hZLfUroAlzE=;
+ b=zxazR715rgBWGdsXONx29ox7DOwjR/DZ8ZtdOgOzIM27tAytUblHL+TF0GjXMXLVWs
+ ap3pcex8JP2XSdMkqXpf0iQrolFgNh8JP7oQwR0IgcM564DQRMsvVigts6pAORQ0Tbn4
+ jz6Sfxl/NDEltJWE03Gav5AkWmvd0VAnuXRBRup4d44/21FHraUlknbtynREJfAUIE8n
+ nOhh8KSEEhSeADSY8H4K4rvcs/TLe/wRy9IJKBfZkSO5P2voPXBaoZ32uwYQBrDLJ+G+
+ BsNujSQmt69pfF4Zsr1xx9Bx6s+alz8PaFMWok9wxK98eWveih3fT0YY6tHKjK9LOeGb
+ VJBw==
+X-Gm-Message-State: AOAM533VpBWUEVeGTuq/VyVaiiFQLBBwbbNtVLSntSjcFeVFxX8UVC15
+ qMNaF2ICdZzLu7Dxl8i09yJ4qKb77w==
+X-Google-Smtp-Source: ABdhPJxHZ3DRiUohCXK1pGQxTd+pIpKejsX9Ww6u1GMMfHC1FdeHxhL7RxOkTMJMno7hIeqlfFYuOA==
+X-Received: by 2002:a05:6871:b22:b0:dd:9eeb:4292 with SMTP id
+ fq34-20020a0568710b2200b000dd9eeb4292mr14997931oab.223.1648471873557; 
+ Mon, 28 Mar 2022 05:51:13 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
  [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
- y67-20020a4a4546000000b0032476e1cb40sm6811033ooa.25.2022.03.28.05.51.06
+ m187-20020aca58c4000000b002ef721352easm7183219oib.14.2022.03.28.05.51.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Mar 2022 05:51:07 -0700 (PDT)
-Received: (nullmailer pid 2153569 invoked by uid 1000);
+ Mon, 28 Mar 2022 05:51:12 -0700 (PDT)
+Received: (nullmailer pid 2153572 invoked by uid 1000);
  Mon, 28 Mar 2022 12:51:05 -0000
 From: Rob Herring <robh@kernel.org>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: mripard@kernel.org, airlied@linux.ie, tzimmermann@suse.de,
- maarten.lankhorst@linux.intel.com, chunfeng.yun@mediatek.com,
- krzk+dt@kernel.org, linux-phy@lists.infradead.org, matthias.bgg@gmail.com,
- chunkuang.hu@kernel.org, jitao.shi@mediatek.com, vkoul@kernel.org,
- robh+dt@kernel.org, devicetree@vger.kernel.org, kishon@ti.com,
- linux-fbdev@vger.kernel.org, daniel@ffwll.ch,
- angelogioacchino.delregno@collabora.com,
- Markus Schneider-Pargmann <msp@baylibre.com>, p.zabel@pengutronix.de,
- linux-mediatek@lists.infradead.org, deller@gmx.de,
- linux-arm-kernel@lists.infradead.org, markyacoub@google.com,
- ck.hu@mediatek.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org
-In-Reply-To: <20220327223927.20848-3-granquet@baylibre.com>
-References: <20220327223927.20848-1-granquet@baylibre.com>
- <20220327223927.20848-3-granquet@baylibre.com>
-Subject: Re: [PATCH v9 02/22] dt-bindings: mediatek,
- dp: Add Display Port binding
+To: =?utf-8?b?7J207JmV7ISd?= <wangseok.lee@samsung.com>
+Cc: "kernel@axis.com" <kernel@axis.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "kw@linux.com" <kw@linux.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ =?utf-8?b?7KCE66y46riw?= <moonki.jun@samsung.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "jesper.nilsson@axis.com" <jesper.nilsson@axis.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "kishon@ti.com" <kishon@ti.com>,
+ "lars.persson@axis.com" <lars.persson@axis.com>
+In-Reply-To: <20220328084319epcms2p3670d7836bb111e0d9c648aeebfde8603@epcms2p3>
+References: <CGME20220328084319epcms2p3670d7836bb111e0d9c648aeebfde8603@epcms2p3>
+ <20220328084319epcms2p3670d7836bb111e0d9c648aeebfde8603@epcms2p3>
+Subject: Re: [PATCH 2/5] dt-bindings: phy: Add ARTPEC-8 PCIe phy
 Date: Mon, 28 Mar 2022 07:51:05 -0500
-Message-Id: <1648471865.772251.2153568.nullmailer@robh.at.kernel.org>
+Message-Id: <1648471865.787623.2153571.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220328_055110_061105_B175BB1D 
-X-CRM114-Status: GOOD (  14.61  )
+X-CRM114-CacheID: sfid-20220328_055634_749481_957C89F1 
+X-CRM114-Status: GOOD (  11.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,27 +89,23 @@ List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7774139751973987584=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 28 Mar 2022 00:39:07 +0200, Guillaume Ranquet wrote:
-> From: Markus Schneider-Pargmann <msp@baylibre.com>
+--===============7774139751973987584==
+Content-Type: text/plain
+
+On Mon, 28 Mar 2022 17:43:19 +0900, 이왕석 wrote:
+> Add description to support Axis, ARTPEC-8 SoC.
+> ARTPEC-8 is the SoC platform of Axis Communications
+> and PCIe phy is designed based on SAMSUNG PHY.
 > 
-> This controller is present on several mediatek hardware. Currently
-> mt8195 and mt8395 have this controller without a functional difference,
-> so only one compatible field is added.
-> 
-> The controller can have two forms, as a normal display port and as an
-> embedded display port.
-> 
-> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
 > ---
->  .../display/mediatek/mediatek,dp.yaml         | 100 ++++++++++++++++++
->  1 file changed, 100 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+>  .../bindings/phy/axis,artpec8-pcie-phy.yaml        | 67 ++++++++++++++++++++++
+>  1 file changed, 67 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
 > 
 
 My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
@@ -116,17 +114,11 @@ on your patch (DT_CHECKER_FLAGS is new in v5.13):
 yamllint warnings/errors:
 
 dtschema/dtc warnings/errors:
-Documentation/devicetree/bindings/display/mediatek/mediatek,dp.example.dts:24:18: fatal error: dt-bindings/power/mt8195-power.h: No such file or directory
-   24 |         #include <dt-bindings/power/mt8195-power.h>
-      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [scripts/Makefile.lib:378: Documentation/devicetree/bindings/display/mediatek/mediatek,dp.example.dt.yaml] Error 1
-make[1]: *** Waiting for unfinished jobs....
-make: *** [Makefile:1398: dt_binding_check] Error 2
+Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.example.dt.yaml:0:0: /example-0/artec8/pcie-phy@16c80000: failed to match any schema with compatible: ['samsung,artpec8-pcie-phy']
 
 doc reference errors (make refcheckdocs):
 
-See https://patchwork.ozlabs.org/patch/1609955
+See https://patchwork.ozlabs.org/patch/1610068
 
 This check can fail if there are any dependencies. The base for a patch
 series is generally the most recent rc1.
@@ -140,7 +132,16 @@ pip3 install dtschema --upgrade
 Please check and re-submit.
 
 
+
+--===============7774139751973987584==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7774139751973987584==--
