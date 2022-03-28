@@ -4,54 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ECA1C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 14:52:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3ED9C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 16:33:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qpf993pBddEoJ7ZrQj+O920ll7tDszAIK85r3sTmzm0=; b=Wwf3UKUQCuyF2k
-	fV1kNbO1mnSUsyq01VaZWe+S4DH1Gn8zGENgQiq9TRM+jBdz1j3H7FZ1fJYnpEmyEPpDDsWy9w5T9
-	rHK5JrfoTjGfzTTpxe121D9QSHFv7U7Kmts0gJCPEqCT0JiyqdWGbDmcHJ8MIUTscoKwKgRw4yivC
-	sPm9kPnJBoJuu/gzj/YNdk8yWeeQ2YxlzjaPyxIccMdIPXpD7UK1n+H+QK1JtCpi2skr1H4kVqCxJ
-	HNJSj6QKwavnsVgw/Z52FkXir5pZARCrKkQRp8ooZ//3nEt+l1Ks9Nc4tT65+r7nOECzaCIpjbEjy
-	Z7NcIrj5NtMSiTrE5ckA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=glRk9HiMMGHsgO3uMwXpK6IGsrjC4Pr34UdYdX/6Ysc=; b=muU+9d0tcP6KrD
+	yq/dGagmaNdZgcjch9wAntewa43czKSbLicYtSWPEGm8KbUHXzqXAiaRrrzJnoZMjRzBDA4HmT8kz
+	zYZ5f3W5xpP2NkevB7YGGjf8/J4uqUmF/3VAT+WQ44q9FkS10B0yO6khf+AVETetBfDssI/MHwFHu
+	wtdl2nE4mfntedfFoBCD2f5NrUTsdVj+t1T3R/RGaDB9zlvYoe5I3Fz14hhEJFnBDVgsVQF5fqCMl
+	dI/eGm712SJAq3o0xkzswDkIGOlCKs+NChyG7ZcDCPRQOWGA8jkPWSXreqNry/0NIr6H2jsI05hZZ
+	vxx2KPZSUTvgu+NlzoGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nYqjV-009AJc-V6; Mon, 28 Mar 2022 14:52:37 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1nYsJA-009Vr8-4R; Mon, 28 Mar 2022 16:33:32 +0000
+Received: from mail-oi1-f171.google.com ([209.85.167.171])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nYqjH-009AEm-Nf; Mon, 28 Mar 2022 14:52:25 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: kholk11) with ESMTPSA id CF2831F40887
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
- s=mail; t=1648479142;
- bh=XMWA9qgWgkC/u71lI6wm/PuAiM5oal1tM//wU28I3+Q=;
- h=From:To:Cc:Subject:Date:From;
- b=KpxYfx5mPacmgWtvt0niX7ZGuHbYIYeRj0xTOMgZP7XUOchwKhPwRxny07to7LuBj
- OJ9HizD4Ma3B8gwDFN+9W6uFPYL7qjVnfWl+BvvWvZ71uxSlsB1qTCFTtP7oNLmHt0
- VO60a4vdL+8Tzth/2i8qMPikMX4EvoI1wuoIsKaU+uGJ5GZ6SpZp01QjQAg07TETb5
- +2xfAt/nS2ciDJbTItTh6LFd1P+xmEahKdg5pFrj6iwE8nodPW0W/QA8WEJroO8oHn
- NyOHs7sVRdDzrysFgIdJhWpuwT5RolACCr4aozGJN2gMfrtIntI3EHQ8WngSSSThs3
- aVDTi9XfD5/GA==
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunkuang.hu@kernel.org
-Cc: p.zabel@pengutronix.de, chunfeng.yun@mediatek.com, kishon@ti.com,
- vkoul@kernel.org, matthias.bgg@gmail.com, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Subject: [PATCH v2] phy: mediatek: phy-mtk-mipi-dsi: Simplify with
- dev_err_probe()
-Date: Mon, 28 Mar 2022 16:52:17 +0200
-Message-Id: <20220328145217.228457-1-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.35.1
+ id 1nYsIx-009Vnj-1T; Mon, 28 Mar 2022 16:33:20 +0000
+Received: by mail-oi1-f171.google.com with SMTP id q129so16176825oif.4;
+ Mon, 28 Mar 2022 09:33:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=bIvjLAN1WghVKdHbiAwbpiS4KUlO9J5lK2uou4RVILk=;
+ b=wa2UaokmUWtPpfej6rW85dc/5pSFJI1kDiW3jwMZDcJyD9sV4aLvmI6utauUsElIU7
+ k749i5CwGy+iY7ifDAgtB3X6/q6GNC98F/DHn6tRbwEFKg4DKIb6rrTrtAIEq/HZd6p3
+ tW/kXjMHCaKH0mTXnqA+wXxYYcEw5hxltwMd9fNm6AylxM4nFJ6o6je7GGfOBgNHSvPV
+ iOZ1pSb3vf2PdUV0Jxp26URmaHjcYu5oU2lt9vzwKEmHlsbJ1czYDWhsHUEvOFQfTp9k
+ mAVWLWYgaqcNW/xvE0N0sMKmJ3dRCZSsHWF//D8LtG4MsZwLcD/fQzzsSdy0sYV+AlZ/
+ 8NKw==
+X-Gm-Message-State: AOAM5325HfTzHSpUyPBuWxEyKlU5xOwCK+Rz2fXTgXd1qsL2fPN1yjie
+ EIAMwkBLK1+XvSGuJczJnP3AqxCifQ==
+X-Google-Smtp-Source: ABdhPJwNVh5RZ1sp9MXlR5GlreRlGRTmHJKVh03oTfj9pol2juq4vLORJb84KwOjAAWD3ibi6+xCCg==
+X-Received: by 2002:a05:6808:1059:b0:2ed:b699:7f2e with SMTP id
+ c25-20020a056808105900b002edb6997f2emr909oih.240.1648485197630; 
+ Mon, 28 Mar 2022 09:33:17 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
+ [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
+ t15-20020a056808158f00b002e331356c87sm7218218oiw.39.2022.03.28.09.33.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 28 Mar 2022 09:33:16 -0700 (PDT)
+Received: (nullmailer pid 2515489 invoked by uid 1000);
+ Mon, 28 Mar 2022 16:33:15 -0000
+Date: Mon, 28 Mar 2022 11:33:15 -0500
+From: Rob Herring <robh@kernel.org>
+To: Guillaume Ranquet <granquet@baylibre.com>
+Cc: airlied@linux.ie, angelogioacchino.delregno@collabora.com,
+ chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org, ck.hu@mediatek.com,
+ daniel@ffwll.ch, deller@gmx.de, jitao.shi@mediatek.com, kishon@ti.com,
+ krzk+dt@kernel.org, maarten.lankhorst@linux.intel.com, matthias.bgg@gmail.com,
+ mripard@kernel.org, p.zabel@pengutronix.de, tzimmermann@suse.de,
+ vkoul@kernel.org, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, markyacoub@google.com,
+ Markus Schneider-Pargmann <msp@baylibre.com>
+Subject: Re: [PATCH v9 02/22] dt-bindings: mediatek,dp: Add Display Port
+ binding
+Message-ID: <YkHjS9ToXqyliItf@robh.at.kernel.org>
+References: <20220327223927.20848-1-granquet@baylibre.com>
+ <20220327223927.20848-3-granquet@baylibre.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220327223927.20848-3-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220328_075223_923799_544A8422 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20220328_093319_113600_B84BDA2F 
+X-CRM114-Status: GOOD (  17.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,74 +90,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use the dev_err_probe() helper to simplify error handling during probe.
+On Mon, Mar 28, 2022 at 12:39:07AM +0200, Guillaume Ranquet wrote:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
+> 
+> This controller is present on several mediatek hardware. Currently
+> mt8195 and mt8395 have this controller without a functional difference,
+> so only one compatible field is added.
+> 
+> The controller can have two forms, as a normal display port and as an
+> embedded display port.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
+>  .../display/mediatek/mediatek,dp.yaml         | 100 ++++++++++++++++++
+>  1 file changed, 100 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> new file mode 100644
+> index 000000000000..802cc406c72b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> @@ -0,0 +1,100 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Mediatek Display Port Controller
+> +
+> +maintainers:
+> +  - CK Hu <ck.hu@mediatek.com>
+> +  - Jitao shi <jitao.shi@mediatek.com>
+> +
+> +description: |
+> +  Device tree bindings for the Mediatek (embedded) Display Port controller
+> +  present on some Mediatek SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - const: mediatek,mt8195-dp-tx
+> +      - const: syscon
 
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
+Add something to the above description to convince me this is a syscon. 
 
-v2: Sorry, v1 was only partial as I have accidentally sent the
-    wrong patch file. Fixed for v2.
+If you need a regmap, the driver can create one. 'syscon' is really only 
+needed if there's not a specific driver.
 
- drivers/phy/mediatek/phy-mtk-mipi-dsi.c | 29 +++++++++----------------
- 1 file changed, 10 insertions(+), 19 deletions(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-index 67b005d5b9e3..28506932bd91 100644
---- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-@@ -154,11 +154,9 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
- 		return PTR_ERR(mipi_tx->regs);
- 
- 	ref_clk = devm_clk_get(dev, NULL);
--	if (IS_ERR(ref_clk)) {
--		ret = PTR_ERR(ref_clk);
--		dev_err(dev, "Failed to get reference clock: %d\n", ret);
--		return ret;
--	}
-+	if (IS_ERR(ref_clk))
-+		return dev_err_probe(dev, PTR_ERR(ref_clk),
-+				     "Failed to get reference clock\n");
- 
- 	ret = of_property_read_u32(dev->of_node, "drive-strength-microamp",
- 				   &mipi_tx->mipitx_drive);
-@@ -178,27 +176,20 @@ static int mtk_mipi_tx_probe(struct platform_device *pdev)
- 
- 	ret = of_property_read_string(dev->of_node, "clock-output-names",
- 				      &clk_init.name);
--	if (ret < 0) {
--		dev_err(dev, "Failed to read clock-output-names: %d\n", ret);
--		return ret;
--	}
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "Failed to read clock-output-names\n");
- 
- 	clk_init.ops = mipi_tx->driver_data->mipi_tx_clk_ops;
- 
- 	mipi_tx->pll_hw.init = &clk_init;
- 	mipi_tx->pll = devm_clk_register(dev, &mipi_tx->pll_hw);
--	if (IS_ERR(mipi_tx->pll)) {
--		ret = PTR_ERR(mipi_tx->pll);
--		dev_err(dev, "Failed to register PLL: %d\n", ret);
--		return ret;
--	}
-+	if (IS_ERR(mipi_tx->pll))
-+		return dev_err_probe(dev, PTR_ERR(mipi_tx->pll), "Failed to register PLL\n");
- 
- 	phy = devm_phy_create(dev, NULL, &mtk_mipi_tx_ops);
--	if (IS_ERR(phy)) {
--		ret = PTR_ERR(phy);
--		dev_err(dev, "Failed to create MIPI D-PHY: %d\n", ret);
--		return ret;
--	}
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy), "Failed to create MIPI D-PHY\n");
-+
- 	phy_set_drvdata(phy, mipi_tx);
- 
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
--- 
-2.35.1
-
+Rob
 
 -- 
 linux-phy mailing list
