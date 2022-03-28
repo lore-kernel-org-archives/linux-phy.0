@@ -4,63 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A703CC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 08:21:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CBDDC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 08:33:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O+IaklwYYutTBENkF3oGRWqMVhO9DCoY/kreFjnzoB0=; b=e+rlJ5EJccGmkC
-	P5dDrV5+B62lJCmre8poO5+CQGccQs8DDaxXhvACvt1p0XhtgavMJ2srhnpMFcD1dA+Rx/3VXXJDh
-	4S2BPCazitQw13jQzIklADZkWDOBb28Idf3Dwm+YaOMGd6rM0i5/TBAGQ3gNb+gg1DwaaBwEJB7c9
-	ycWbf7cQEnmfzUCchd5zkEttSRpdoLauc5VZ+AtVxSLAWKByfTA9+QyiT2yxpIVqWfFERQ+mHmhHX
-	I/ZpvERIUcrKDMtrkLX/4mUbaJ9a6GegtStdRGeS+H7DsuKrZxak5ZlUyL65ykjvGklQB2YFdaBGh
-	CHHToISnGk6DvpMPS+cg==;
+	List-Owner; bh=SowYQJ3/CsbZ0EDDxS2eaia9NOXsxOCVhdgMJDPLy0g=; b=4M963ryyjLFCwX
+	CjPaFmdltn4l7a1PZAGqfV7ie92R+RH1Auo/D8g5KvXXz3HIOcM1D/3zC8gt1Fr3qQoWrNTUtsHlL
+	PHuowenHVBLsTWYWjTnLAl6Vzgy4rf/NulqXJYdrMFWGDiVLLabd3PME6u6jVQsVYnu3cPvzIZeRP
+	7pXnEL9SFD8QPbWRGlKhmg9ED8WsuigMHiLvVfsro8ikR6FGt1rbJTiJevpoxR28jhSAfL6aeU+cq
+	J6isH0T2judz0tIHQ9fhJ0AbZ4Pqs4p5C2v7+3VhgLt8U9OtHH9jm6FhOPgsRq7OlbacGLrPfHiMj
+	zzH9cmmEiaKfVxeBmG1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nYkcX-007o2H-VF; Mon, 28 Mar 2022 08:21:01 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1nYkoq-007r0h-Ry; Mon, 28 Mar 2022 08:33:44 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nYkcC-007ns0-Sf; Mon, 28 Mar 2022 08:20:42 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: kholk11) with ESMTPSA id 099651F430ED
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
- s=mail; t=1648455639;
- bh=HQeSR6lP1YVK1RO4bOxyH8L1tAiJpL08/BP+E0788Es=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=PchX6yCNagZcmv/cIZIJ4xoFUc5KY5QbCuiRR37jrEqmzRqggK6rBEy4U6IALH/Cg
- nQg75bZpIBDhgWjVhrP+dt09LT6d6Y+7F5X7tlYzN02PalZ9AFWx3lHqu4f6M5QbBT
- qClRr8DTC6Se8DsJ7eAj7SamzrDrebtzkYD+T6kHkqTosplCkMTRDkFjsKCpAdbmb8
- dinN0voPiVoekx70EL0nQMLnt8k70i3vxr1GMYoTN4yLlavuNKnyxZX8tmR8HtYVBW
- 2pgMlThJOvOVn7YLTrd6X0SxA/B9wz51KXngl1+M4b8KPkM/UHAXRXPt/DMyptTYRQ
- MhQGu8sTxltIg==
-Message-ID: <9aade139-2e69-a061-de69-ab60ccc666bf@collabora.com>
-Date: Mon, 28 Mar 2022 10:20:34 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Subject: Re: [PATCH v9 12/22] drm/mediatek: dpi: move swap_shift to SoC config
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>, airlied@linux.ie,
- chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org, ck.hu@mediatek.com,
- daniel@ffwll.ch, deller@gmx.de, jitao.shi@mediatek.com, kishon@ti.com,
- krzk+dt@kernel.org, maarten.lankhorst@linux.intel.com,
- matthias.bgg@gmail.com, mripard@kernel.org, p.zabel@pengutronix.de,
- robh+dt@kernel.org, tzimmermann@suse.de, vkoul@kernel.org
-Cc: devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, markyacoub@google.com
+ id 1nYkoj-007qxS-VN; Mon, 28 Mar 2022 08:33:43 +0000
+X-UUID: b616ea5ffba14e5f95f6b1ac7e478d0b-20220328
+X-UUID: b616ea5ffba14e5f95f6b1ac7e478d0b-20220328
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <rex-bc.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1219832703; Mon, 28 Mar 2022 01:33:32 -0700
+Received: from mtkexhb02.mediatek.inc (172.21.101.103) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 28 Mar 2022 01:33:31 -0700
+Received: from mtkcas11.mediatek.inc (172.21.101.40) by mtkexhb02.mediatek.inc
+ (172.21.101.103) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Mon, 28 Mar 2022 16:33:29 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkcas11.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 28 Mar 2022 16:33:29 +0800
+Message-ID: <345fd758319f318738fe55d298bd5056320a130e.camel@mediatek.com>
+Subject: Re: [PATCH v9 09/22] drm/mediatek: dpi: implement a swap_input
+ toggle in SoC config
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: Guillaume Ranquet <granquet@baylibre.com>, <airlied@linux.ie>,
+ <angelogioacchino.delregno@collabora.com>, <chunfeng.yun@mediatek.com>,
+ <chunkuang.hu@kernel.org>, <ck.hu@mediatek.com>, <daniel@ffwll.ch>,
+ <deller@gmx.de>, <jitao.shi@mediatek.com>, <kishon@ti.com>,
+ <krzk+dt@kernel.org>, <maarten.lankhorst@linux.intel.com>,
+ <matthias.bgg@gmail.com>, <mripard@kernel.org>, <p.zabel@pengutronix.de>,
+ <robh+dt@kernel.org>, <tzimmermann@suse.de>, <vkoul@kernel.org>
+CC: <devicetree@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-fbdev@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
+ <linux-phy@lists.infradead.org>, <markyacoub@google.com>
+Date: Mon, 28 Mar 2022 16:33:29 +0800
+In-Reply-To: <20220327223927.20848-10-granquet@baylibre.com>
 References: <20220327223927.20848-1-granquet@baylibre.com>
- <20220327223927.20848-13-granquet@baylibre.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220327223927.20848-13-granquet@baylibre.com>
+ <20220327223927.20848-10-granquet@baylibre.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220328_012041_093009_34C3F2CF 
-X-CRM114-Status: UNSURE (   4.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220328_013338_071097_17B4FCE3 
+X-CRM114-Status: GOOD (  15.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,17 +75,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 28/03/22 00:39, Guillaume Ranquet ha scritto:
-> Add flexibility by moving the swap shift value to SoC specific config
+On Mon, 2022-03-28 at 00:39 +0200, Guillaume Ranquet wrote:
+> Adds a bit of flexibility to support SoCs without swap_input support
 > 
 > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Reviewed-by: AngeloGioacchino Del Regno <
+> angelogioacchino.delregno@collabora.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_dpi.c | 14 +++++++++++---
+>  1 file changed, 11 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> index 545a1337cc89..454f8563efae 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> @@ -126,6 +126,7 @@ struct mtk_dpi_conf {
+>  	const u32 *output_fmts;
+>  	u32 num_output_fmts;
+>  	bool is_ck_de_pol;
+> +	bool swap_input_support;
+>  	const struct mtk_dpi_yc_limit *limit;
+>  };
+>  
+> @@ -378,18 +379,21 @@ static void mtk_dpi_config_color_format(struct
+> mtk_dpi *dpi,
+>  	    (format == MTK_DPI_COLOR_FORMAT_YCBCR_444_FULL)) {
+>  		mtk_dpi_config_yuv422_enable(dpi, false);
+>  		mtk_dpi_config_csc_enable(dpi, true);
+> -		mtk_dpi_config_swap_input(dpi, false);
+> +		if (dpi->conf->swap_input_support)
+> +			mtk_dpi_config_swap_input(dpi, false);
+>  		mtk_dpi_config_channel_swap(dpi,
+> MTK_DPI_OUT_CHANNEL_SWAP_BGR);
+>  	} else if ((format == MTK_DPI_COLOR_FORMAT_YCBCR_422) ||
+>  		   (format == MTK_DPI_COLOR_FORMAT_YCBCR_422_FULL)) {
+>  		mtk_dpi_config_yuv422_enable(dpi, true);
+>  		mtk_dpi_config_csc_enable(dpi, true);
+> -		mtk_dpi_config_swap_input(dpi, true);
+> +		if (dpi->conf->swap_input_support)
+> +			mtk_dpi_config_swap_input(dpi, true);
+>  		mtk_dpi_config_channel_swap(dpi,
+> MTK_DPI_OUT_CHANNEL_SWAP_RGB);
+>  	} else {
+>  		mtk_dpi_config_yuv422_enable(dpi, false);
+>  		mtk_dpi_config_csc_enable(dpi, false);
+> -		mtk_dpi_config_swap_input(dpi, false);
+> +		if (dpi->conf->swap_input_support)
+> +			mtk_dpi_config_swap_input(dpi, false);
+>  		mtk_dpi_config_channel_swap(dpi,
+> MTK_DPI_OUT_CHANNEL_SWAP_RGB);
+>  	}
+>  }
+> @@ -808,6 +812,7 @@ static const struct mtk_dpi_conf mt8173_conf = {
+>  	.output_fmts = mt8173_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+>  	.is_ck_de_pol = true,
+> +	.swap_input_support = true,
+>  	.limit = &mtk_dpi_limit,
+>  };
+>  
+> @@ -819,6 +824,7 @@ static const struct mtk_dpi_conf mt2701_conf = {
+>  	.output_fmts = mt8173_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+>  	.is_ck_de_pol = true,
+> +	.swap_input_support = true,
+>  	.limit = &mtk_dpi_limit,
+>  };
+>  
+> @@ -829,6 +835,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
+>  	.output_fmts = mt8183_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8183_output_fmts),
+>  	.is_ck_de_pol = true,
+> +	.swap_input_support = true,
+>  	.limit = &mtk_dpi_limit,
+>  };
+>  
+> @@ -839,6 +846,7 @@ static const struct mtk_dpi_conf mt8192_conf = {
+>  	.output_fmts = mt8173_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+>  	.is_ck_de_pol = true,
+> +	.swap_input_support = true,
+>  	.limit = &mtk_dpi_limit,
+>  };
+>  
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
+
 
 -- 
 linux-phy mailing list
