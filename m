@@ -4,81 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5822EC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 07:12:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7443EC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 07:19:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lq5WHjcHr4FJRDsknP5EzgxPEQ4+HmBtWMMae/BkMnw=; b=rCFjAUBXxsNh30
-	m2F5r4ADM5sh2tTzkTPAi+6qD6xAk1Mk0Aea6gcNigD2zFdMu8sxheSdDCc0RS3vcs7UQGJGhpLk5
-	8SJNc0T4hEInsuufYZAu2f/zu+7SBxQhTAF/Mctb0GfYdosJk0J0TZcLGdci7KkhXeILCsBPDbXcM
-	DRexmxKrfbinNnCaOrv9VmKUskQ4G8krSUu+PTg2e2MLkR0fb24RJ9JcxTViemiiUdUog/NIMIUFW
-	LOmW1MvX9WMS2AOj0sO2oy6OMUkATTJCu2/ioepBSSnp/vZwgvlm4x2mhpkxBrqBRj1ZpxqDxngHy
-	sXPnC4ibEPadP5+/nXHQ==;
+	List-Owner; bh=TJHVSg3QUvHUPIyRnHFOWKkguvaoFbpSkM1hgEUQDCc=; b=NkzAXsfDXq2cIe
+	oJ7SD34snM3Ksq0mvv3I+PbUv2tLqDOjxVxeXPIuo/YxHn9CPhDsMIAZ3EQ3qKo1qEUdXdREEL51B
+	WijUKN61hifk7eFL0n1V0PwYEQN+VkteFDlbot6VznZiSMHA4uB/yrsK3KyuqumaBS73gzktaP0+e
+	IR3ZZVqAucJexngMyHGu5MNW9KkLNGQlWfgmtkG6R0CpVS1PHNj1NGN+JIv5oO6+3GWPVn0T5yn7b
+	+Rh/4pAu+I5KMEDz03vMmYXMqIUycKTmFL0xle/1vbQlwo454JegeeGznPgZNK+qoh7NL9dEbJgZ1
+	UqGO244BBapXNwb/8Yyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nYjXs-007Z3K-QO; Mon, 28 Mar 2022 07:12:08 +0000
-Received: from mail-ej1-f48.google.com ([209.85.218.48])
+	id 1nYjfQ-007Zv2-Vk; Mon, 28 Mar 2022 07:19:56 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nYjXq-007Z2U-4w
- for linux-phy@lists.infradead.org; Mon, 28 Mar 2022 07:12:07 +0000
-Received: by mail-ej1-f48.google.com with SMTP id bg10so26670645ejb.4
- for <linux-phy@lists.infradead.org>; Mon, 28 Mar 2022 00:12:05 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=A3bAA5yAZfqHAOyYK98ovGqRH+yACNii1ofYKDFYNqg=;
- b=EkyGYdZ2B/lCQkS40yG2ODJ5+5+pHc5aq892F4rBarQ9MrdAhiVTjydvm0s5nQzRba
- iLmoW/cmereQvKHeYJd1Hd6cqJ8izlx4TeJTtMuG/crLpA29BXtCtortNadGgZQQhacK
- 98wy1hXqIBKQ5Yl+Ax1tteaFteDCZ+mqfg0UtU+HBZPfCRHt+Jn84acHVAEKqAIYudP/
- scc9UglIJIhuk1/cmh22Cjn4HvB7vkNeU8vi+JJfb23oM9iKe71keLfymfNvM8VHGsTH
- bj2YnfvX9AXLeQ/7zWk9/4BtW+pUELfQIq3uEzkP1DLQ/5NDe7Z6diRjggEoi1n7r0u3
- 6iBw==
-X-Gm-Message-State: AOAM530MgXOtcGB7edvY4UO18mHU7sIDRWoUj7HKFZ3PIaWRM4FEnN/q
- tj88mfZzN4EgkkKleQdkPZQ=
-X-Google-Smtp-Source: ABdhPJyliJObAr4tF6MXCnCS1jZfcLUkeUAIEsIcEMEblJ5vxk1/HfCR8+JpaG+PrOtqQCO+7FboMg==
-X-Received: by 2002:a17:907:7ea5:b0:6e1:13c3:e35f with SMTP id
- qb37-20020a1709077ea500b006e113c3e35fmr2857957ejc.99.1648451521451; 
- Mon, 28 Mar 2022 00:12:01 -0700 (PDT)
-Received: from [192.168.0.162] (xdsl-188-155-201-27.adslplus.ch.
- [188.155.201.27]) by smtp.googlemail.com with ESMTPSA id
- j8-20020aa7c0c8000000b0041934547989sm6540772edp.55.2022.03.28.00.11.59
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 28 Mar 2022 00:12:00 -0700 (PDT)
-Message-ID: <0716d9e4-24e1-d16c-162c-00a8664296e1@kernel.org>
-Date: Mon, 28 Mar 2022 09:11:59 +0200
+ id 1nYjfE-007Zrw-8O; Mon, 28 Mar 2022 07:19:45 +0000
+X-UUID: 740cad0fba8f4c0481bb43884f7e45d2-20220328
+X-UUID: 740cad0fba8f4c0481bb43884f7e45d2-20220328
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <rex-bc.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1425020537; Mon, 28 Mar 2022 00:19:36 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 28 Mar 2022 00:18:49 -0700
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.2.792.15; Mon, 28 Mar 2022 15:18:47 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkcas10.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 28 Mar 2022 15:18:47 +0800
+Message-ID: <39a65a1d6b507803885cfe7edcdf364732b59cfa.camel@mediatek.com>
+Subject: Re: [PATCH v9 07/22] drm/mediatek: dpi: move dpi limits to SoC config
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: Guillaume Ranquet <granquet@baylibre.com>, <airlied@linux.ie>,
+ <angelogioacchino.delregno@collabora.com>, <chunfeng.yun@mediatek.com>,
+ <chunkuang.hu@kernel.org>, <ck.hu@mediatek.com>, <daniel@ffwll.ch>,
+ <deller@gmx.de>, <jitao.shi@mediatek.com>, <kishon@ti.com>,
+ <krzk+dt@kernel.org>, <maarten.lankhorst@linux.intel.com>,
+ <matthias.bgg@gmail.com>, <mripard@kernel.org>, <p.zabel@pengutronix.de>,
+ <robh+dt@kernel.org>, <tzimmermann@suse.de>, <vkoul@kernel.org>
+CC: <devicetree@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-fbdev@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
+ <linux-phy@lists.infradead.org>, <markyacoub@google.com>
+Date: Mon, 28 Mar 2022 15:18:44 +0800
+In-Reply-To: <20220327223927.20848-8-granquet@baylibre.com>
+References: <20220327223927.20848-1-granquet@baylibre.com>
+ <20220327223927.20848-8-granquet@baylibre.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.5.0
-Subject: Re: [PATCH 0/5] Add support for Axis, ARTPEC-8 PCIe driver
-Content-Language: en-US
-To: wangseok.lee@samsung.com, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jesper.nilsson@axis.com" <jesper.nilsson@axis.com>,
- "lars.persson@axis.com" <lars.persson@axis.com>
-Cc: "bhelgaas@google.com" <bhelgaas@google.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "kw@linux.com" <kw@linux.com>,
- "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
- "kernel@axis.com" <kernel@axis.com>, =?UTF-8?B?7KCE66y46riw?=
- <moonki.jun@samsung.com>
-References: <CGME20220328014430epcms2p7063834feb0abdf2f38a62723c96c9ff1@epcms2p7>
- <20220328014430epcms2p7063834feb0abdf2f38a62723c96c9ff1@epcms2p7>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-In-Reply-To: <20220328014430epcms2p7063834feb0abdf2f38a62723c96c9ff1@epcms2p7>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220328_001206_235749_6AB2321D 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20220328_001944_313490_ECBE5D32 
+X-CRM114-Status: GOOD (  16.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,30 +75,131 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjgvMDMvMjAyMiAwMzo0NCwg7J207JmV7ISdIHdyb3RlOgo+IFRoaXMgc2VyaWVzIHBhdGNo
-ZXMgaW5jbHVkZSBuZXdseSBQQ0llIHN1cHBvcnQgZm9yIEF4aXMgQVJUUEVDLTggU29DLgo+IEFS
-VFBFQy04IGlzIHRoZSBTb0MgcGxhdGZvcm0gb2YgQXhpcyBDb21tdW5pY2F0aW9ucy4KPiBQQ0ll
-IGNvbnRyb2xsZXIgZHJpdmVyIGFuZCBwaHkgZHJpdmVyIGhhdmUgYmVlbiBuZXdseSBhZGRlZC4K
-PiBUaGVyZSBpcyBhbHNvIGEgbmV3IE1BSU5UQUlORVIgaW4gdGhlIGFkZGl0aW9uIG9mIHBoeSBk
-cml2ZXIuCj4gUENJZSBjb250cm9sbGVyIGlzIGRlc2lnbmVkIGJhc2VkIG9uIERlc2lnbi1XYXJl
-IFBDSWUgY29udHJvbGxlciBJUAo+IGFuZCBQQ0llIHBoeSBpcyBkZXNpbmdlZCBiYXNlZCBvbiBT
-QU1TVU5HIFBIWSBJUC4KPiBJdCBhbHNvIGluY2x1ZGVzIG1vZGlmaWNhdGlvbnMgdG8gdGhlIERl
-c2lnbi1XYXJlIGNvbnRyb2xsZXIgZHJpdmVyIHRvIAo+IHJ1biB0aGUgNjRiaXQtYmFzZWQgQVJU
-UEVDLTggUENJZSBjb250cm9sbGVyIGRyaXZlci4KPiBJdCBjb25zaXN0cyBvZiA2IHBhdGNoZXMg
-aW4gdG90YWwuCj4gCj4gVGhpcyBzZXJpZXMgaGFzIGJlZW4gdGVzdGVkIG9uIEFYSVMgU1cgYnJp
-bmctdXAgYm9hcmQgCj4gd2l0aCBBUlRQRUMtOCBjaGlwc2V0LgoKWW91IGxvc3QgbWFpbCB0aHJl
-YWRpbmcuIFRoaXMgbWFrZXMgcmVhZGluZyB0aGlzIGRpZmZpY3VsdCBmb3IgdXMuIFBsdXMKeW91
-IHNlbnQgc29tZXRoaW5nIG5vbi1hcHBsaWNhYmxlIChwYXRjaCAjMiksIHNvIHBsZWFzZSByZXNl
-bmQuCgpLbm93aW5nIHJlY2VudCBTYW1zdW5nIHJlbHVjdGFuY2UgdG8gZXh0ZW5kIGV4aXN0aW5n
-IGRyaXZlcnMgYW5kIGFsd2F5cwpkdXBsaWNhdGUsIHBsZWFzZSBwcm92aWRlIGRlc2NyaXB0aW9u
-L2FuYWx5c2lzIHdoeSB0aGlzIGRyaXZlciBjYW5ub3QgYmUKY29tYmluZWQgd2l0aCBleGlzdGlu
-ZyBkcml2ZXIuIFRoZSBhbnN3ZXIgbGlrZTogd2UgbmVlZCBzZXZlcmFsIHN5c2NvbgpiZWNhdXNl
-IHdlIGRvIG5vdCBpbXBsZW1lbnQgb3RoZXIgZnJhbWV3b3JrcyAobGlrZSBpbnRlcmNvbm5lY3Qp
-IGFyZSBub3QKdmFsaWQuCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0gCmxpbnV4LXBoeSBt
-YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Mon, 2022-03-28 at 00:39 +0200, Guillaume Ranquet wrote:
+> Add flexibility by moving the dpi limits to the SoC specific config
+> 
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> Reviewed-by: AngeloGioacchino Del Regno <
+> angelogioacchino.delregno@collabora.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_dpi.c | 25 ++++++++++++++++---------
+>  1 file changed, 16 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> index 4554e2de1430..4746eb342567 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> @@ -125,6 +125,7 @@ struct mtk_dpi_conf {
+>  	bool edge_sel_en;
+>  	const u32 *output_fmts;
+>  	u32 num_output_fmts;
+> +	const struct mtk_dpi_yc_limit *limit;
+>  };
+>  
+>  static void mtk_dpi_mask(struct mtk_dpi *dpi, u32 offset, u32 val,
+> u32 mask)
+> @@ -235,9 +236,10 @@ static void mtk_dpi_config_fb_size(struct
+> mtk_dpi *dpi, u32 width, u32 height)
+>  	mtk_dpi_mask(dpi, DPI_SIZE, height << VSIZE, VSIZE_MASK);
+>  }
+>  
+> -static void mtk_dpi_config_channel_limit(struct mtk_dpi *dpi,
+> -					 struct mtk_dpi_yc_limit
+> *limit)
+> +static void mtk_dpi_config_channel_limit(struct mtk_dpi *dpi)
+>  {
+> +	const struct mtk_dpi_yc_limit *limit = dpi->conf->limit;
+> +
+>  	mtk_dpi_mask(dpi, DPI_Y_LIMIT, limit->y_bottom << Y_LIMINT_BOT,
+>  		     Y_LIMINT_BOT_MASK);
+>  	mtk_dpi_mask(dpi, DPI_Y_LIMIT, limit->y_top << Y_LIMINT_TOP,
+> @@ -449,7 +451,6 @@ static int mtk_dpi_power_on(struct mtk_dpi *dpi)
+>  static int mtk_dpi_set_display_mode(struct mtk_dpi *dpi,
+>  				    struct drm_display_mode *mode)
+>  {
+> -	struct mtk_dpi_yc_limit limit;
+>  	struct mtk_dpi_polarities dpi_pol;
+>  	struct mtk_dpi_sync_param hsync;
+>  	struct mtk_dpi_sync_param vsync_lodd = { 0 };
+> @@ -484,11 +485,6 @@ static int mtk_dpi_set_display_mode(struct
+> mtk_dpi *dpi,
+>  	dev_dbg(dpi->dev, "Got  PLL %lu Hz, pixel clock %lu Hz\n",
+>  		pll_rate, vm.pixelclock);
+>  
+> -	limit.c_bottom = 0x0010;
+> -	limit.c_top = 0x0FE0;
+> -	limit.y_bottom = 0x0010;
+> -	limit.y_top = 0x0FE0;
+> -
+>  	dpi_pol.ck_pol = MTK_DPI_POLARITY_FALLING;
+>  	dpi_pol.de_pol = MTK_DPI_POLARITY_RISING;
+>  	dpi_pol.hsync_pol = vm.flags & DISPLAY_FLAGS_HSYNC_HIGH ?
+> @@ -536,7 +532,7 @@ static int mtk_dpi_set_display_mode(struct
+> mtk_dpi *dpi,
+>  	else
+>  		mtk_dpi_config_fb_size(dpi, vm.hactive, vm.vactive);
+>  
+> -	mtk_dpi_config_channel_limit(dpi, &limit);
+> +	mtk_dpi_config_channel_limit(dpi);
+>  	mtk_dpi_config_bit_num(dpi, dpi->bit_num);
+>  	mtk_dpi_config_channel_swap(dpi, dpi->channel_swap);
+>  	mtk_dpi_config_yc_map(dpi, dpi->yc_map);
+> @@ -790,12 +786,20 @@ static const u32 mt8183_output_fmts[] = {
+>  	MEDIA_BUS_FMT_RGB888_2X12_BE,
+>  };
+>  
+> +static const struct mtk_dpi_yc_limit mtk_dpi_limit = {
+> +	.c_bottom = 0x0010,
+> +	.c_top = 0x0FE0,
+> +	.y_bottom = 0x0010,
+> +	.y_top = 0x0FE0,
+> +};
+> +
+>  static const struct mtk_dpi_conf mt8173_conf = {
+>  	.cal_factor = mt8173_calculate_factor,
+>  	.reg_h_fre_con = 0xe0,
+>  	.max_clock_khz = 300000,
+>  	.output_fmts = mt8173_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+> +	.limit = &mtk_dpi_limit,
+>  };
+>  
+>  static const struct mtk_dpi_conf mt2701_conf = {
+> @@ -805,6 +809,7 @@ static const struct mtk_dpi_conf mt2701_conf = {
+>  	.max_clock_khz = 150000,
+>  	.output_fmts = mt8173_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+> +	.limit = &mtk_dpi_limit,
+>  };
+>  
+>  static const struct mtk_dpi_conf mt8183_conf = {
+> @@ -813,6 +818,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
+>  	.max_clock_khz = 100000,
+>  	.output_fmts = mt8183_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8183_output_fmts),
+> +	.limit = &mtk_dpi_limit,
+>  };
+>  
+>  static const struct mtk_dpi_conf mt8192_conf = {
+> @@ -821,6 +827,7 @@ static const struct mtk_dpi_conf mt8192_conf = {
+>  	.max_clock_khz = 150000,
+>  	.output_fmts = mt8173_output_fmts,
+>  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+> +	.limit = &mtk_dpi_limit,
+>  };
+>  
+>  static int mtk_dpi_probe(struct platform_device *pdev)
+
+Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
