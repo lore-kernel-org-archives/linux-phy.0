@@ -4,73 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8318C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 18:52:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EED40C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Mar 2022 18:53:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x7EaGvpDgdF1rq0gVMjd0rlEVmhtaXpD/ixwLPESlJo=; b=rrRwsXkv0hmEU+
-	H+aV5CWehMyMH6mGDUopIwH7b6JYZyiWI/I35Me5JWs1d84OTPZ753vtwmG6126+keLrmsu80Tw22
-	rM2Ccn66g2aDDDtl1DutjtiNyv1Wh7QjR6nBaM7PRdgqdyrkBQmbq8eAJBS0RZDEywef2FJ6u/1Jh
-	T9aDhLVwm+x5VkL/BhlxoWtAHAJBb/imZZr2SrnT1LINPN5IYpu/mutr8qQCaXhyrtedCkznUCiWq
-	+YGZxq4xbZCBNhZKFOpTGapazwJjL0addZnjrw4Dt0kJKXZfQUep8MR3Zq4kVzykMb2vPiFYbWNTY
-	j0liMNSuGIKZnsVgUe6A==;
+	List-Owner; bh=sJ9MlsyrQMzhVTrJt+yFtHWcXdTUvCMq5YcAhXDd9TU=; b=lzoFSgpg3ZjPEj
+	JoCCrx+5Q3D/NdgzQKvrBqT1NT5o9qi+Ub/nNdy/eZhsY7N17xc/5nl3PUPMyNt9TfMkDHafnKFUO
+	j84YWRfVniyW7wuvthByFUfXpTkMeYxryQ5yE1kfSEfxfrwwmkuccUMZ8g080hvIDUxzWMEtafZqP
+	eojRlN6pLILuHZieU5JjgKuTUAcoFIxcAsR6BLNfTrwzb1y9+T63wSjgiDK4iGeLyHhdD1BK9otyC
+	HUOG7ESgKap37X3ODEjciUD8m+YP5XXzimkWl9hB+jKhhZhzYXAbueAe2E/5P98aEnhz/CcwLQGRz
+	flnWhwy5Qi5uYbtzVcZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nYuTM-009p0H-57; Mon, 28 Mar 2022 18:52:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nYuUl-009p9s-B6; Mon, 28 Mar 2022 18:53:39 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nYuTJ-009ozw-US
- for linux-phy@lists.infradead.org; Mon, 28 Mar 2022 18:52:11 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 64C8661222;
- Mon, 28 Mar 2022 18:52:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CCD98C004DD;
- Mon, 28 Mar 2022 18:52:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1648493528;
- bh=u5yZg0ynUEhZ3+K56tIjbNb4wQz9q4pZXSSN0Va1QRM=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=dHuq3HQI76JS7or/PSye/mbCBLHhmsQ8iHfU2Iz1h9HijDrIAaghYkjPOwwyBQWGB
- h+BarIKxRpEDThmdQC9RYTThbn+QRn0B6XcmPQaO4RpXu8g0TQdOc8mF5CYRSNcPEu
- vu9LEJpmPd0SQA7PptXC0rnZvaMJF+Gfp2DHy4Z/RTyoYfHhLGj4Ww9H512tGipZNI
- slfAMUq/f7bP6OmJOIgfN/nQKdUP7D4Ep0KIV4vgPU1H9hfxrjgjZSWdeU8Jx2SqL8
- ee9Jksk8v4rGeeXyf0c+vhPmjhMJcqEF4HqJmmRsgvnLilEOoL4ZoDXF2kUkQUczNe
- //KVxsqiYnTRg==
-Message-ID: <35d98937-40cb-7f57-ab53-49153aa5ce7d@kernel.org>
-Date: Mon, 28 Mar 2022 20:52:02 +0200
+ id 1nYuUi-009p7J-SN
+ for linux-phy@lists.infradead.org; Mon, 28 Mar 2022 18:53:38 +0000
+Received: by mail-ej1-x631.google.com with SMTP id c10so12187298ejs.13
+ for <linux-phy@lists.infradead.org>; Mon, 28 Mar 2022 11:53:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=message-id:date:mime-version:user-agent:subject:content-language:to
+ :cc:references:from:in-reply-to:content-transfer-encoding;
+ bh=of31JbXORDeHdHam9ibeujdbRpu90rcdHTXqJLVkyNg=;
+ b=HN8BGCiPD2Vr2BxwsvzuYwa0W9x80vgZAJYxpMiiCzdkql68NffIfNSJNUUNyu8H+F
+ s69fnkCIfAsj1YPk8Yyw158wm27kbD2Bx4TPnjXG0HUUf7H3EPxRS34NTj3fP7CSAOGw
+ QZTswN+nWSrPu/8eU8DP/Y9bnKIq/ppTtXiQO2BpGyZs6VIb/QyuqTkcgQM1Up98l6Mb
+ b9vW2K0PDdP5xUnehtuJASaknEjfXL+JU8rogMCyJWXdugZB7b2aoUTmKNK2rc3vdlsT
+ d2AJFC7pzE1ZbOlET7Pze9DBmiqnOuHioyo0GvuuouXzyv13+jIHYB7fzy3NRZ2y3uQc
+ y/fQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=of31JbXORDeHdHam9ibeujdbRpu90rcdHTXqJLVkyNg=;
+ b=X/nFYWlmkK10ov86IQFpYtoj3CBJYOrHOcL1WtLPmrc7z2EfHwVEgDreIJ8O0AV8rD
+ 9ais10Bz2MJMso+Riz2x35dg2ikLMhMxKjQH+o44jxKQk75HoC/Lz6XLR0707za4JMtw
+ 2UW9U3NQYRh3RfhmogbO3T03SqA5K7bvU40gicltrz06B/v1cUySmI2XKLMcjZjinkyO
+ utOTtUfNS7G/9NZ7TdaFnpGpZDCWXv9FH0lZ4nMzgyyDRFHZzzFnbtHVm8xvpTFd3/ZE
+ A2FaHn3mfAJFmDByVsrzV/E0ucouKqDLFlQrNvDlyUfjYkkGcwOYs5djLq51brCdArml
+ S7Yw==
+X-Gm-Message-State: AOAM5336prHz8jalSRtj5XRkzsktL9xd4KXeHVJJBjRCkz8Gir62FAaD
+ dPXxj3wb7/4UC2jEZmePkvXqIw==
+X-Google-Smtp-Source: ABdhPJw7CM/SHgFzeFhitNhooE1p7ZhIrNQbPiZZ+5Gxt8JwGu4Da4yOt4KuJ7PqnPrLtmMXn2iTWg==
+X-Received: by 2002:a17:906:9b89:b0:6da:ac6b:e785 with SMTP id
+ dd9-20020a1709069b8900b006daac6be785mr30179433ejc.295.1648493612434; 
+ Mon, 28 Mar 2022 11:53:32 -0700 (PDT)
+Received: from [192.168.0.162] (xdsl-188-155-201-27.adslplus.ch.
+ [188.155.201.27]) by smtp.gmail.com with ESMTPSA id
+ jg22-20020a170907971600b006df9ff416ccsm6088959ejc.137.2022.03.28.11.53.31
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 28 Mar 2022 11:53:32 -0700 (PDT)
+Message-ID: <d706c302-4604-e43c-864f-bccac1280363@linaro.org>
+Date: Mon, 28 Mar 2022 20:53:30 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.5.0
-Subject: Re: [PATCH 3/5] PCI: axis: Add ARTPEC-8 PCIe controller driver
+Subject: Re: [PATCH 1/3] dt-bindings: phy: uniphier-usb2: Add vbus-supply
 Content-Language: en-US
-To: wangseok.lee@samsung.com, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jesper.nilsson@axis.com" <jesper.nilsson@axis.com>,
- "lars.persson@axis.com" <lars.persson@axis.com>
-Cc: "bhelgaas@google.com" <bhelgaas@google.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "kw@linux.com" <kw@linux.com>,
- "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
- "kernel@axis.com" <kernel@axis.com>, =?UTF-8?B?7KCE66y46riw?=
- <moonki.jun@samsung.com>
-References: <CGME20220328021453epcms2p15977e72b6c96253ecaefcb71e6d2acfe@epcms2p1>
- <20220328021453epcms2p15977e72b6c96253ecaefcb71e6d2acfe@epcms2p1>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-In-Reply-To: <20220328021453epcms2p15977e72b6c96253ecaefcb71e6d2acfe@epcms2p1>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Masami Hiramatsu <mhiramat@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1648433152-23126-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1648433152-23126-2-git-send-email-hayashi.kunihiko@socionext.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <1648433152-23126-2-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220328_115210_045939_F092931E 
-X-CRM114-Status: GOOD (  16.26  )
+X-CRM114-CacheID: sfid-20220328_115336_960165_49B08814 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,37 +92,31 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjgvMDMvMjAyMiAwNDoxNCwg7J207JmV7ISdIHdyb3RlOgo+IEFkZCBzdXBwb3J0IEF4aXMs
-IEFSVFBFQy04IFNvQy4KPiBBUlRQRUMtOCBpcyB0aGUgU29DIHBsYXRmb3JtIG9mIEF4aXMgQ29t
-bXVuaWNhdGlvbnMuCj4gVGhpcyBpcyBiYXNlZCBvbiBhcm02NCBhbmQgc3VwcG9ydCBHRU40ICYg
-MmxhbmUuCj4gVGhpcyBQQ0llIGNvbnRyb2xsZXIgaXMgYmFzZWQgb24gRGVzaWduV2FyZSBIYXJk
-d2FyZSBjb3JlCj4gYW5kIHVzZXMgRGVzaWduV2FyZSBjb3JlIGZ1bmN0aW9ucyB0byBpbXBsZW1l
-bnQgdGhlIGRyaXZlci4KPiBUaGlzIGlzIGJhc2VkIG9uIGRyaXZlci9wY2kvY29udHJvbGxlci9k
-d2MvcGNpLWV4eW5vcy5jCj4gCj4gU2lnbmVkLW9mZi1ieTogV2FuZ3Nlb2sgTGVlIDx3YW5nc2Vv
-ay5sZWVAc2Ftc3VuZy5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL0tj
-b25maWcgICAgICAgIHwgIDMxICsKPiAgZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvTWFrZWZp
-bGUgICAgICAgfCAgIDEgKwo+ICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2llLWFydHBl
-YzguYyB8IDkxMiArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgMyBmaWxlcyBjaGFu
-Z2VkLCA5NDQgaW5zZXJ0aW9ucygrKQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9wY2kv
-Y29udHJvbGxlci9kd2MvcGNpZS1hcnRwZWM4LmMKPiAKCkkgdG9vayBhIGxvb2sgYXQgdGhlIHlv
-dXIgZHJpdmVyIGFuZCBhdCBleGlzdGluZyBQQ0llIEV4eW5vcyBkcml2ZXIuClVuZm9ydHVuYXRl
-bHkgUENJZSBFeHlub3MgZHJpdmVyIGlzIGluIHBvb3Igc2hhcGUsIHJlYWxseSBwb29yLiBUaGlz
-CndvdWxkIGV4cGxhaW4gdGhhdCBtYXliZSBpdCdzIGJldHRlciB0byBoYXZlIG5ldyBkcml2ZXIg
-aW5zdGVhZCBvZgptZXJnaW5nIHRoZW0sIGVzcGVjaWFsbHkgdGhhdCBoYXJkd2FyZSBpcyBkaWZm
-ZXJlbnQuIEFsdGhvdWdoIEkgYW0gc3RpbGwKd2FpdGluZyBmb3Igc29tZSBkZXNjcmlwdGlvbiBv
-ZiB0aGVzZSBkaWZmZXJlbmNlcy4uLgoKSSBzYWlkIHRoYXQgRXh5bm9zIFBDSWUgbG9va3MgcG9v
-ci4uLiBidXQgd2hhdCBpcyB3b3JzZSwgaXQgbG9va3MgbGlrZQp5b3UgYmFzZWQgb24gaXQgc28g
-eW91IGNvcGllZCBvciBzb21lIGJhZCBwYXR0ZXJucyBpdCBoYWQuCgpFeGNlcHQgdGhpcyB0aGUg
-ZHJpdmVyIGhhcyBzZXZlcmFsIGNvZGluZyBzdHlsZSBpc3N1ZXMsIHNvIHBsZWFzZSBiZQpzdXJl
-IHRvIHJ1biBjaGVja3BhdGNoLCBzcGFyc2UgYW5kIHNtYXRjaCBiZWZvcmUgc2VuZGluZyBpdC4K
-ClBsZWFzZSB3b3JrIG9uIHRoaXMgZHJpdmVyIHRvIG1ha2UgaXQgY2xvc2UgdG8gTGludXggY29k
-aW5nIHN0eWxlLCBzbwp0aGVyZSB3aWxsIGJlIG5vIG5lZWQgZm9yIHVzLCByZXZpZXdlcnMsIGZv
-Y3VzIG9uIGJhc2ljIHN0dWZmLgoKT3B0aW9uYWxseSwgc2VuZCBhbGwgdGhpcyB0byBzdGFnaW5n
-LiA6KQoKQmVzdCByZWdhcmRzLApLcnp5c3p0b2YKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
-CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 28/03/2022 04:05, Kunihiko Hayashi wrote:
+> UniPhier USB2 PHY controller can apply vbus-supply.
+> Add "vbus-supply" property to fix the following warning.
+> 
+>   uniphier-pro4-ace.dtb: usb-glue: phy@2: 'vbus-supply' does not match any of the regexes: 'pinctrl-[0-9]+'
+>       From schema: Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
+> 
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  .../devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml   | 3 +++
+>  1 file changed, 3 insertions(+)
+
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
