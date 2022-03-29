@@ -4,82 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C143C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Mar 2022 15:46:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A1D1C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Mar 2022 22:58:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dMn1MuNaS6alxPc23nweqVWcNbKX+/5zIGJQ4gUjtVM=; b=ZMdeOTTwaQdNJ3
-	a/fX8DfjP0liqqLy6QiI0abLOfnb8EJPb26NjJW5s6cmKMvCr1DxZRTokDxlk2F0egQucfexeQwah
-	ife3QOqycFx1VZmKNFEEo0+lxhfYn6qKjcJJz4iJDRT1GtTBk1isOiqig0q6M0F3pTNUQEO2HdFa7
-	SawiMWetvlOHM6G5EUmudCnXfITYDNWoYFGcP0EX0Jt6q1y5Jdh8hZaBt+De8BYSzcDULuPcuMsYd
-	9dmv/LAkeHEW5EwtiLI7PqoZbggz17/qXAczolgEv1cbjqjPjtjFKV1908M4IoGTGmPq/lm4LiSCU
-	u1Q5Cu7M6X85wjySSFHw==;
+	List-Owner; bh=frQat1FgHVXINvav+2CDsMt5YqDT74Gb0+/t7BkfOOc=; b=wgFPhJAIs9q5wq
+	V98HGuju8wC6jylpm2s6b+uc3SrZdJ0YOIjezlLb7wmTCHVmyds5pg5YjTtGrhJv7DzCjdPdNe9Ja
+	bkH9ZqTybJV9L+lhpi9f0vHbmPxtKzhaM8nGpW7TnlrwIAz26vrREH8a8Rm4lZ6Nwsqj8+8C5X6Gg
+	cCIULYYcxIx1dYhzkxreFVpp6nTgEv+Q5AuRME0ATy1+sbx/pOCcsmjah/bTjewDxIoHawSLlBHq4
+	AMiUrJQXgEfgBEry+6ov3LSfIWDZXfsjkgEYGrG/idQilEY2U7tygZyuLprGk74kO+W0Pve6+1RaT
+	Gf8SOkHsTU4KGeGUr/qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nZE31-00CnBv-HK; Tue, 29 Mar 2022 15:46:19 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1nZKnI-00Dgbd-Ng; Tue, 29 Mar 2022 22:58:32 +0000
+Received: from mail-oa1-f49.google.com ([209.85.160.49])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nZE2y-00Cn9i-BF
- for linux-phy@lists.infradead.org; Tue, 29 Mar 2022 15:46:18 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id s13so6923560ljd.5
- for <linux-phy@lists.infradead.org>; Tue, 29 Mar 2022 08:46:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tzsX+Z/Ob1Uq1Bl1zjv6NpTlPhHDx16mmOiOaqiohic=;
- b=hW0k5QP3S+OQzUO7KyNkwKzpkeUych1UA8cIIOUlFUiS1PALQl5iYa+c5Z2OWI3Et+
- +ASK2QEkL/qYaVTDJ73mN8Iul39x/qiuK6ymqkBWXNfpRs0glgDoqWm4qUGtVJ7wxQB/
- IPrdIDps5eVBIj1pp4R0U4FUR0DckGfB2Nmlc=
+ id 1nZKn4-00DgXb-E9; Tue, 29 Mar 2022 22:58:19 +0000
+Received: by mail-oa1-f49.google.com with SMTP id
+ 586e51a60fabf-de3ca1efbaso20349734fac.9; 
+ Tue, 29 Mar 2022 15:58:18 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tzsX+Z/Ob1Uq1Bl1zjv6NpTlPhHDx16mmOiOaqiohic=;
- b=Tfions4w1/g10nNmBBRh1WDFkPpQOU0EUniu46lbdVMJX7Nc7mhRVKK5B4/r0W7unR
- lLSqSaPj1LahfZlh5Chop083iU9Tmv9Um9cQ0Cjp7dkp+H7idmC6DjicrXrqmFg9uMuI
- sY+Pau8hr/mWYxZrh0ZcqN79VirpFNd5vFb3NzzT49/SXTqELx1/Y6msd9DweQH/xUeu
- kH61HXlAXQDHe0if9BideavzCmQHRDIBluyZ74rGYAsf7iUtJMZrHdpLQYTFUiachBok
- MRjpGX1W0BX9Y0QzRMR0R8hQLv7XM2Bc8emjwLS4mbNX7zrI5tHZTxpBbjxoW7J925eL
- j6RA==
-X-Gm-Message-State: AOAM531khRyXNJAlvktDLc0c1jDY0AZgVQoP367vcRGz+cThNpnNa9V8
- Zm0r9tC7KzkDoYLygXDSzTT1DXsYg8IGdD27
-X-Google-Smtp-Source: ABdhPJzENBRFd/Gn1Lzv1nji7SAjpx8hJOK9+mhIsYWj9CgllpJnLXAYQnMuswHGwjsuwDyCOrjbqA==
-X-Received: by 2002:a2e:a790:0:b0:249:906a:c6f1 with SMTP id
- c16-20020a2ea790000000b00249906ac6f1mr3187780ljf.164.1648568771975; 
- Tue, 29 Mar 2022 08:46:11 -0700 (PDT)
-Received: from mail-lj1-f176.google.com (mail-lj1-f176.google.com.
- [209.85.208.176]) by smtp.gmail.com with ESMTPSA id
- e17-20020ac25cb1000000b0044a145eb359sm2018846lfq.138.2022.03.29.08.46.09
- for <linux-phy@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 29 Mar 2022 08:46:10 -0700 (PDT)
-Received: by mail-lj1-f176.google.com with SMTP id b43so19461153ljr.10
- for <linux-phy@lists.infradead.org>; Tue, 29 Mar 2022 08:46:09 -0700 (PDT)
-X-Received: by 2002:a2e:9b10:0:b0:247:f28c:ffd3 with SMTP id
- u16-20020a2e9b10000000b00247f28cffd3mr3134201lji.152.1648568769399; Tue, 29
- Mar 2022 08:46:09 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=LWrhu1SJIKP91XWNKb4WbsxhL8e6xpsiZxtyqvL5Z0w=;
+ b=i2dMi1Nh5Hn61K7oRSsk7r4cL4PeanSZ+x9uOp9WK2vi1yeISfHzNVYa/9P//Pzxmn
+ kV8j6rtdfTO6qi5pUpiS0Dvy/ARr0uxXnVZEbCKKUXt6Jerz3oC4gN0tL4p1tGHZL4XW
+ 6b0r0PqbRnDyc6iefzD6crVxPbJw+MUpzXduJzbzxGLHAHP/OSGW3paXsKtvcxIPVa82
+ 62VlZWZhMw3C0kGwbnglWLb1xvzms702EtVEvU8kfOlu8zewe8Eyq/WGB89E+/kPhX1U
+ SakJPFOU+4+7HL/IlfaxwtwLYwOo2DM1YmQm8+30i004o1ceguCT0Mja3IpaFoeFG2h/
+ d+6A==
+X-Gm-Message-State: AOAM530B7oZynGfJGdj4gkcL0lfArPjn/thkuQz1X6JSnYwZQcwzucuV
+ hkQIRvCOaTIuJJM640SUGA==
+X-Google-Smtp-Source: ABdhPJz+emekgDFz5mKWRmNRlRNMSrX19JPwwY5w06pHDZVUQBWmNvGk1+vhyDXsbkBHNm4tAEBj9Q==
+X-Received: by 2002:a05:6870:a106:b0:de:de08:4e3d with SMTP id
+ m6-20020a056870a10600b000dede084e3dmr859501oae.256.1648594697439; 
+ Tue, 29 Mar 2022 15:58:17 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
+ [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
+ k22-20020a056870959600b000d277c48d18sm9802811oao.3.2022.03.29.15.58.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 29 Mar 2022 15:58:16 -0700 (PDT)
+Received: (nullmailer pid 1505955 invoked by uid 1000);
+ Tue, 29 Mar 2022 22:58:15 -0000
+Date: Tue, 29 Mar 2022 17:58:15 -0500
+From: Rob Herring <robh@kernel.org>
+To: Guillaume Ranquet <granquet@baylibre.com>
+Cc: airlied@linux.ie, angelogioacchino.delregno@collabora.com,
+ chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org, ck.hu@mediatek.com,
+ daniel@ffwll.ch, deller@gmx.de, jitao.shi@mediatek.com, kishon@ti.com,
+ krzk+dt@kernel.org, maarten.lankhorst@linux.intel.com, matthias.bgg@gmail.com,
+ mripard@kernel.org, p.zabel@pengutronix.de, tzimmermann@suse.de,
+ vkoul@kernel.org, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, markyacoub@google.com
+Subject: Re: [PATCH v9 03/22] dt-bindings: mediatek,dp_phy: Add Display Port
+ PHY binding
+Message-ID: <YkOPB5W7uXkOc72/@robh.at.kernel.org>
+References: <20220327223927.20848-1-granquet@baylibre.com>
+ <20220327223927.20848-4-granquet@baylibre.com>
 MIME-Version: 1.0
-References: <20220329125631.2915388-1-geert@linux-m68k.org>
-In-Reply-To: <20220329125631.2915388-1-geert@linux-m68k.org>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Tue, 29 Mar 2022 08:45:53 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wiQGp40pKtXquewb22ZpfiAFi-iWhE220SrpCRXQHy8EA@mail.gmail.com>
-Message-ID: <CAHk-=wiQGp40pKtXquewb22ZpfiAFi-iWhE220SrpCRXQHy8EA@mail.gmail.com>
-Subject: Re: [PATCH] phy: PHY_FSL_LYNX_28G should depend on ARCH_LAYERSCAPE
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Richard Zhu <hongxing.zhu@nxp.com>, 
- Ioana Ciornei <ioana.ciornei@nxp.com>, "David S . Miller" <davem@davemloft.net>,
- Greg KH <gregkh@linuxfoundation.org>, linux-phy@lists.infradead.org, 
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>
+Content-Disposition: inline
+In-Reply-To: <20220327223927.20848-4-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220329_084616_443611_CD1DDDC1 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20220329_155818_506126_142AF407 
+X-CRM114-Status: GOOD (  17.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,20 +90,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 29, 2022 at 5:56 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> Freescale Layerscape Lynx 28G SerDes PHYs are only present on
-> Freescale/NXP Layerscape SoCs.
->
-> Move PHY_FSL_LYNX_28G outside the block for ARCH_MXC, as the latter
-> is meant for i.MX8 SoCs, which is a different family than Layerscape.
-> Add a dependency on ARCH_LAYERSCAPE, to prevent asking the user about
-> this driver when configuring a kernel without Layerscape SoC support.
+On Mon, Mar 28, 2022 at 12:39:08AM +0200, Guillaume Ranquet wrote:
+> This phy controller is embedded in the Display Port Controller on mt8195 SoCs.
 
-I took this directly, since one of the bugs it fixed was mine.
+Sorry, but I think you need to go back to what you had in v8. While yes, 
+the phy and controller IP often do change independently, this h/w looks 
+pretty interwined. 
 
-Mea culpa,
-             Linus
+You could make the controller a phy provider to itself if you wanted.
+
+> 
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
+>  .../bindings/phy/mediatek,dp-phy.yaml         | 43 +++++++++++++++++++
+>  1 file changed, 43 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
+> new file mode 100644
+> index 000000000000..1f5ffca4e140
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
+> @@ -0,0 +1,43 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (c) 2022 MediaTek
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/mediatek,dp-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: MediaTek Display Port PHY
+> +
+> +maintainers:
+> +  - CK Hu <ck.hu@mediatek.com>
+> +  - Jitao shi <jitao.shi@mediatek.com>
+> +
+> +description: |
+> +  Device tree bindings for the Mediatek (embedded) Display Port PHY
+> +  present on some Mediatek SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - mediatek,mt8195-dp-phy
+> +
+> +  mediatek,dp-syscon:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description: Phandle to the Display Port node.
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - mediatek,dp-syscon
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    dp_phy: dp-phy {
+> +      compatible = "mediatek,mt8195-dp-phy";
+> +      mediatek,dp-syscon = <&dp_tx>;
+> +      #phy-cells = <0>;
+> +    };
+> -- 
+> 2.34.1
+> 
+> 
 
 -- 
 linux-phy mailing list
