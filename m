@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C3E1C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Mar 2022 12:56:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5FECC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Mar 2022 13:18:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vY+U9XkLkZmrgbKZRieco8PzcQGY3Rn3uPuLx2j9+jQ=; b=GVqArHPDY4OKim
-	TZPS9MiC+adaO0CWpsJc9qeooTT9T3nRCy+X+dGYK0r28A4vgH2OBBXQ+VQGI8ndGXHN8p0xmr/iU
-	2i7tV0xfanIIibP4XM63mZY7lsp4WHrSeewilPDF89yxQ6LtNyGaHTNllqfwr4TAhtooWoAUd+rnQ
-	sLd7XbMdDyaW/UKSd9WddsHGSrBhb+C4mExcR6D3aXQ7BqLaSmhdhk50pmRKpOYQEDEo/6S63mfl/
-	PRtSZydLuGFANOD+nb7DHAoSigP2ZAy6rZsPpruwuCF30/c3zl8iGPhWh6oaXUc2L4YXJOQuUVuRn
-	Kr85P0y100ZbS4Ud1Jvw==;
+	List-Owner; bh=9hazKDn7PCQZRFvbO/4TL2PwxEbLuESr7sl7TAzmekc=; b=w5F/Q3KfT2VI7j
+	CsZodTeph0jvee5C/7UNoL9US5LijCTEnkLnBDchkL0ImayySPmlMO/KOfYfsMQxDpu1nUvWzrGhy
+	fpJxhXFchonEsAfqsOKnPHz20yxylnl8Ref6hIXzgBGNZ/VmoF4DlvsT6bu9CqXgKrJOKX1Va/nlu
+	ahZyvLrjZ6AvWLRFrVNKSbtQOCJ2fk8tzUrrAmQVDRH7R53ObjmJTC7NgsUdm7+kfI5kQAoAK2Nki
+	pnIl74IdZOApCW7o2fkyRBk9rEFUhPdi52FOQv2lBeam+73P+BrYn8BKFY2e+WjFBCY9tCypnctnw
+	ZzfvpfAyD4kFGD/PysEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nZBOq-00CHBJ-2P; Tue, 29 Mar 2022 12:56:40 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1nZBkA-00CKCU-6V; Tue, 29 Mar 2022 13:18:42 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nZBOn-00CHAj-D9
- for linux-phy@lists.infradead.org; Tue, 29 Mar 2022 12:56:38 +0000
+ id 1nZBk7-00CKAR-BE
+ for linux-phy@lists.infradead.org; Tue, 29 Mar 2022 13:18:40 +0000
 Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed40:d553:ff0a:6830:6bde])
- by laurent.telenet-ops.be with bizsmtp
- id CCwa2700b49QC4401CwaKt; Tue, 29 Mar 2022 14:56:35 +0200
+ by xavier.telenet-ops.be with bizsmtp
+ id CDJb2700E49QC4401DJbrV; Tue, 29 Mar 2022 15:18:36 +0200
 Received: from rox.of.borg ([192.168.97.57])
  by ramsan.of.borg with esmtps (TLS1.3) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.93)
  (envelope-from <geert@linux-m68k.org>)
- id 1nZBOk-007Glv-69; Tue, 29 Mar 2022 14:56:34 +0200
+ id 1nZBk2-007Gv0-Nh; Tue, 29 Mar 2022 15:18:34 +0200
 Received: from geert by rox.of.borg with local (Exim 4.93)
  (envelope-from <geert@linux-m68k.org>)
- id 1nZBOj-00CERB-JT; Tue, 29 Mar 2022 14:56:33 +0200
-From: Geert Uytterhoeven <geert@linux-m68k.org>
+ id 1nZBk2-00CEos-5O; Tue, 29 Mar 2022 15:18:34 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Linus Torvalds <torvalds@linux-foundation.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Richard Zhu <hongxing.zhu@nxp.com>, Ioana Ciornei <ioana.ciornei@nxp.com>,
  "David S . Miller" <davem@davemloft.net>
 Cc: Greg KH <gregkh@linuxfoundation.org>, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH] phy: PHY_FSL_LYNX_28G should depend on ARCH_LAYERSCAPE
-Date: Tue, 29 Mar 2022 14:56:31 +0200
-Message-Id: <20220329125631.2915388-1-geert@linux-m68k.org>
+Subject: [PATCH v2] phy: PHY_FSL_LYNX_28G should depend on ARCH_LAYERSCAPE
+Date: Tue, 29 Mar 2022 15:18:29 +0200
+Message-ID: <20220329125631.2915388-1-geert@linux-m68k.org>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220329_055637_628965_2C793F27 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20220329_061839_573011_F5C560DC 
+X-CRM114-Status: GOOD (  12.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,8 +66,7 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
-
-From: Geert Uytterhoeven <geert+renesas@glider.be>
+Message-ID: <20220329131829.jhnBu8Ha1Q13X4AaLplmH-khfzpO7bgQmTmAkAbHm7A@z>
 
 Freescale Layerscape Lynx 28G SerDes PHYs are only present on
 Freescale/NXP Layerscape SoCs.
@@ -81,6 +80,9 @@ Fixes: 02e2af20f4f9f2aa ("Merge tag 'char-misc-5.18-rc1' of git://git.kernel.org
 Fixes: 8f73b37cf3fbda67 ("phy: add support for the Layerscape SerDes 28G")
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
+v2:
+  - Fix From/SoB chain.
+
  drivers/phy/freescale/Kconfig | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
