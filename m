@@ -4,36 +4,36 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA28CC433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 05:21:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11E3EC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 05:21:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u/0olbcA1BUSKWjifgqPgF13v12rjVuyuOMlJBgq25s=; b=KeR6FSdiTzjLtB
-	HFhiO7HfcUT3Wl6sLabUR38Pa2RD8r0ZEhQeQLSXMb7eP6HkiJupEsfVpV0j7XDrPR/Bngl0n0CE8
-	yEGMi3JL/cX6FsgZ9G/ZmkgcQvS5YdTjVghPg1qAZ9aHpF1PO410ACE/3fY2y8K+Ir4MuLz/o4Y2y
-	dmDljFCd6bbs7paxweptuufCBnTL8rBmuxnKavqErOM27AryrHFUYHchJ9fnsENZAPttlTHEp6uGK
-	1lwxYonqbf56ckszmaKHXRWdYiS/kQ2QNlFKqJXItXkge61ziQlcUbR+HN2XiUHugFxWKkNb6SN+s
-	EmPFO44EvyZTAs8AhLlQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zMCrVdcs4qgMGlrcCuN1ubp9nK8ZvNkpVU1wGEzmqWk=; b=Hv7vZEAOau+EM5
+	sjfY+WFkxOv8xS2FfAUKg9sUurddhWwM2HEEC1tvX9FRlf9ukioj/RKXImB3sOQOJLIXSnLKu3gKx
+	SIxvHUUupBQrVlCwH63fzvXTvehgJIIat0n1FXrOJT3HX4HJwKGwEtWyNaOHM9uij/A6UleQD2+Ty
+	2e7YGm6XDYO7B8/lKJK8Oh05wDwxaDTcNPEfhUXKgWzd+xE7RlLXTFRz2EAdNGa+0jK/p6DXCxfM7
+	IODsRe2xxsr3dOIsVW/t5la/B+wqt921nIrodZ4zhnrSbjTcfeGg57cS4b0Vz5W6g3JCy85AsbSZi
+	yiOVwmcMPcNy3gPnsUpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nZQlb-00EHXx-9O; Wed, 30 Mar 2022 05:21:11 +0000
+	id 1nZQlo-00EHeI-FY; Wed, 30 Mar 2022 05:21:24 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nZQlL-00EHPb-9I; Wed, 30 Mar 2022 05:20:56 +0000
-Received: from unknown (HELO kinkan2-ex.css.socionext.com) ([172.31.9.52])
+ id 1nZQlL-00EHQ8-O4; Wed, 30 Mar 2022 05:20:57 +0000
+Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 30 Mar 2022 14:20:54 +0900
 Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by kinkan2-ex.css.socionext.com (Postfix) with ESMTP id 65AE42058443;
+ by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id E3D1C2058B50;
  Wed, 30 Mar 2022 14:20:54 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
  Wed, 30 Mar 2022 14:20:54 +0900
 Received: from plum.e01.socionext.com (unknown [10.212.243.119])
- by kinkan2.css.socionext.com (Postfix) with ESMTP id ACB3EB62B7;
- Wed, 30 Mar 2022 14:20:53 +0900 (JST)
+ by kinkan2.css.socionext.com (Postfix) with ESMTP id A797FB62B7;
+ Wed, 30 Mar 2022 14:20:54 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
  Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>
@@ -41,13 +41,15 @@ Cc: Masami Hiramatsu <mhiramat@kernel.org>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org,
  Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: [PATCH v2 0/5] dt-bindings: phy: Fix uniphier descriptions
-Date: Wed, 30 Mar 2022 14:20:46 +0900
-Message-Id: <1648617651-9004-1-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v2 1/5] dt-bindings: phy: uniphier-usb2: Add vbus-supply
+Date: Wed, 30 Mar 2022 14:20:47 +0900
+Message-Id: <1648617651-9004-2-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1648617651-9004-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1648617651-9004-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220329_222055_461149_D655D446 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20220329_222055_913984_087169C9 
+X-CRM114-Status: GOOD (  11.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,31 +67,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series fixes dt-schema descriptions for all PHYs implemented in
-UniPhier SoCs.
+UniPhier USB2 PHY controller can apply vbus-supply.
+Add "vbus-supply" property to fix the following warning.
 
-Changes since v1:
-- Add "Reviewed-by:" line to patch 1 and 2
-- Remove result messages about unpublished nodes in patch 3
-- Add patch 4 for fixing incorrect properties in ahci-phy
-- Add patch 5 to rewrite properties using allOf-if-then in all phys
+  uniphier-pro4-ace.dtb: usb-glue: phy@2: 'vbus-supply' does not match any of the regexes: 'pinctrl-[0-9]+'
+      From schema: Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
 
-Kunihiko Hayashi (5):
-  dt-bindings: phy: uniphier-usb2: Add vbus-supply
-  dt-bindings: phy: uniphier-usb3ss: Treat vbus-supply as optional
-  dt-bindings: phy: uniphier-ahci: Fix missing reset-names
-  dt-bindings: phy: uniphier-usb3hs: Fix incorrect clock-names and
-    reset-names
-  dt-bindings: phy: uniphier: Clean up clock-names and reset-names using
-    compatible string
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ .../devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml   | 3 +++
+ 1 file changed, 3 insertions(+)
 
- .../phy/socionext,uniphier-ahci-phy.yaml      | 74 ++++++++++++-----
- .../phy/socionext,uniphier-pcie-phy.yaml      | 37 ++++++---
- .../phy/socionext,uniphier-usb2-phy.yaml      |  3 +
- .../phy/socionext,uniphier-usb3hs-phy.yaml    | 71 ++++++++++++----
- .../phy/socionext,uniphier-usb3ss-phy.yaml    | 80 ++++++++++++++-----
- 5 files changed, 194 insertions(+), 71 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
+index 479b203f7aa6..63dab914a48d 100644
+--- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
+@@ -43,6 +43,9 @@ patternProperties:
+       "#phy-cells":
+         const: 0
+ 
++      vbus-supply:
++        description: A phandle to the regulator for USB VBUS, only for USB host
++
+     required:
+       - reg
+       - "#phy-cells"
 -- 
 2.25.1
 
