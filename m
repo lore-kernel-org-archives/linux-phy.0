@@ -4,67 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B22D3C433F5
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 05:22:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6C23C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 08:09:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M9X+crEIvwDJ65oFd/tftFFPn+8ojMZkMDYarfYsbDI=; b=sOw/VHMgDDnEJg
-	xGVclxXje/Gj1RM0S8nvvspAv3PZ7+/H2VcU5oMz1uqvPDiX1c38u3ExIFJ0yIWAwr50YAVw/cFxN
-	Vz7OLZsNyv9unpo6IPPo+4OPQ9d9zZdBroZ9ZZpJtp7O7q7Qfh0orsb/kmToZbR6y8OoKVaCsnbj3
-	hn6tMbC34NcriQQ0j51TvgmQa5kP3so/rAOz2ImKPN0moY376DeR/K3/duuArD5Ymmx3CRjhGojoc
-	EYmrz+SJ/1SYuLERwm1NFr2UBsoKREpHXSPC/Ual2IntiFaOG8KlZQkahySsPU13GIZQWLhKaz0Z3
-	ZA301c17xdltf8G0I09g==;
+	List-Owner; bh=eQoVUHot9LZ4oef/yCcRfgqvvasPd1uCgWpHjkKZPf0=; b=wJLEcTQK42svHC
+	HJHWnhnKdj+6yE3YBxh0ubHXJA0YdZcc8YWuw91sLve+rdeHX7/n7y1ZSzlZBVsn65VsxSDchaZRD
+	uvXDz597OXCISCTZMaCRmg9co5V5RS3pksOi6EbLaWQzyr07bJN7w9mGAt9cAeF/QIu6N5X7Sp29U
+	sIhT0hItjCq3qQhp4Q7ZFUHE5vzWHLkIQqAxtM6P23VqjDt8qIHeB+Ugxy/TIdAqvfuaJ2W9GV4ev
+	XBw5M04SBbnfiHUOyIPvPykusxHJNV7WDbRgXa6U8Nc2j/BDnHoHJS6qfMOglgaZsnK2GTUzTN5oh
+	7VNZJWz2vEKpqEluruRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nZQnC-00EIKX-TH; Wed, 30 Mar 2022 05:22:50 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nZTO8-00EhZn-CQ; Wed, 30 Mar 2022 08:09:08 +0000
+Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nZQmd-00EI0F-Ly; Wed, 30 Mar 2022 05:22:17 +0000
-X-UUID: 5eb99a1faaf14d179bd0d03efb182068-20220329
-X-UUID: 5eb99a1faaf14d179bd0d03efb182068-20220329
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <miles.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1820507464; Tue, 29 Mar 2022 22:22:12 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 29 Mar 2022 22:12:09 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
- Wed, 30 Mar 2022 13:12:02 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Wed, 30 Mar 2022 13:12:02 +0800
-From: Miles Chen <miles.chen@mediatek.com>
-To: <granquet@baylibre.com>
-CC: <airlied@linux.ie>, <angelogioacchino.delregno@collabora.com>,
- <chunfeng.yun@mediatek.com>, <chunkuang.hu@kernel.org>, <ck.hu@mediatek.com>, 
- <daniel@ffwll.ch>, <deller@gmx.de>, <devicetree@vger.kernel.org>,
- <dri-devel@lists.freedesktop.org>, <jitao.shi@mediatek.com>, <kishon@ti.com>, 
- <krzk+dt@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-fbdev@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <maarten.lankhorst@linux.intel.com>, <markyacoub@google.com>,
- <matthias.bgg@gmail.com>, <mripard@kernel.org>, <msp@baylibre.com>,
- <p.zabel@pengutronix.de>, <robh+dt@kernel.org>, <tzimmermann@suse.de>,
- <vkoul@kernel.org>
-Subject: Re: [PATCH v9 02/22] dt-bindings: mediatek,
- dp: Add Display Port binding
-Date: Wed, 30 Mar 2022 13:12:02 +0800
-Message-ID: <20220330051202.19594-1-miles.chen@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20220327223927.20848-3-granquet@baylibre.com>
-References: <20220327223927.20848-3-granquet@baylibre.com>
+ id 1nZTNw-00EhVI-OJ
+ for linux-phy@lists.infradead.org; Wed, 30 Mar 2022 08:08:58 +0000
+Received: by mail-ed1-x535.google.com with SMTP id u26so23415098eda.12
+ for <linux-phy@lists.infradead.org>; Wed, 30 Mar 2022 01:08:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=message-id:date:mime-version:user-agent:subject:content-language:to
+ :cc:references:from:in-reply-to:content-transfer-encoding;
+ bh=+bFDAM4i/mghEhHfOqiWM3FM1dQ0+91OvIs26MogX8A=;
+ b=SFMAg8b/ke6ZRcvV67EvgWEeK7ykJWqswG5EpvT2o1xqTRtbd1mjTPL5mzf5NOpo/9
+ sv67NlHrMwvo/5p5vpITcbO5StJOLdIQZ8q8/G/wp3y1gtWdZEOLFmv2NbSYceQpyRa0
+ ldo4IR2Q157UiXXwsyC7r8Kf2c09VyZE4lXvVljWlsaN3v80w4JoeMBeiYJ2HhW/Ehk+
+ PDahMEwBRntaazsVVLLCCzUgqoFBmD4kSBba+oUwAHu2GRNIjQXck1DP9F37lvXkMs8z
+ +tN4bzuCtN2aRac/a1mlX/oUcM4V+34X7MyD/imRyplhlBI1inZ+uA7IJDY+1JBY95bM
+ giOg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=+bFDAM4i/mghEhHfOqiWM3FM1dQ0+91OvIs26MogX8A=;
+ b=H114oc/sCe/i2rnb5ClOTqN1IqKb4IPNtqU39DjwvNXxufoR1y9WmXOy319QEHpUt5
+ zjl/qWr8aBoLwcTxLNzDnIAFigOgSdZxHAQUqLv7yDtVbEaaKwZM4NeKXXRrxoY+MDr+
+ 5+saSLtOOfxdt9ghAAZnsG5aTsYLUBgJOh7GBFoCEPayIifMpug1hPGT/GPvBufkKBqM
+ nOuEGuoIvR+jwX/S9I3cAEvG5hNK40p6bNSxYEXGcku1hi7s1vNcOxew8mjbGHyCF+GP
+ oaqEk1xpbjegWcTiEduH2jBTBdnpLhX7aQRK1pcCC+gdKRS2IFE0wsXD6AA2CkNqb/bQ
+ J7/Q==
+X-Gm-Message-State: AOAM530vBvJCm3Gvop44CKrM4DmWFVjXDTD9FxxEpE84rdLCXLpQ9+op
+ QxP9S3w8Tj1rg+Asls+SiOjtsQ==
+X-Google-Smtp-Source: ABdhPJzpp8L+xtLq8L0IBcEiffxlbItbjgy88ADPX1RL1JQXUj/i60p49qaIu94HDmWs+yXlqBS6Xw==
+X-Received: by 2002:a05:6402:350d:b0:419:5099:1f10 with SMTP id
+ b13-20020a056402350d00b0041950991f10mr9295464edd.144.1648627733303; 
+ Wed, 30 Mar 2022 01:08:53 -0700 (PDT)
+Received: from [192.168.0.162] (xdsl-188-155-201-27.adslplus.ch.
+ [188.155.201.27]) by smtp.gmail.com with ESMTPSA id
+ d1-20020a17090694c100b006da91d57e93sm7852869ejy.207.2022.03.30.01.08.52
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 30 Mar 2022 01:08:52 -0700 (PDT)
+Message-ID: <b787a640-f26b-5642-13d3-c9d013b48b18@linaro.org>
+Date: Wed, 30 Mar 2022 10:08:51 +0200
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.7.0
+Subject: Re: [PATCH v2 3/5] dt-bindings: phy: uniphier-ahci: Fix missing
+ reset-names
+Content-Language: en-US
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Masami Hiramatsu <mhiramat@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1648617651-9004-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1648617651-9004-4-git-send-email-hayashi.kunihiko@socionext.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <1648617651-9004-4-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220329_222215_776964_B047C8E7 
-X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-CacheID: sfid-20220330_010856_810554_F1A20950 
+X-CRM114-Status: UNSURE (   9.69  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,139 +98,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
->This controller is present on several mediatek hardware. Currently
->mt8195 and mt8395 have this controller without a functional difference,
->so only one compatible field is added.
->
->The controller can have two forms, as a normal display port and as an
->embedded display port.
->
->Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
->Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
->---
-> .../display/mediatek/mediatek,dp.yaml         | 100 ++++++++++++++++++
-> 1 file changed, 100 insertions(+)
-> create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
->
->diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
->new file mode 100644
->index 000000000000..802cc406c72b
->--- /dev/null
->+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
->@@ -0,0 +1,100 @@
->+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->+%YAML 1.2
->+---
->+$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
->+$schema: http://devicetree.org/meta-schemas/core.yaml#
->+
->+title: Mediatek Display Port Controller
+On 30/03/2022 07:20, Kunihiko Hayashi wrote:
+> UniPhier AHCI PHY controller needs to specify 6 reset lines, so this adds
+> missing "phy" to reset-names and increases maxItems of resets.
+> 
+> Fixes: 34f92b67621f ("dt-bindings: phy: uniphier-ahci: Add bindings for Pro4 SoC")
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  .../devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml   | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
 
-s/Mediatek/MediaTek/
 
->+
->+maintainers:
->+  - CK Hu <ck.hu@mediatek.com>
->+  - Jitao shi <jitao.shi@mediatek.com>
->+
->+description: |
->+  Device tree bindings for the Mediatek (embedded) Display Port controller
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-s/Mediatek/MediaTek/
 
->+  present on some Mediatek SoCs.
-
-s/Mediatek/MediaTek/
-
->+
->+properties:
->+  compatible:
->+    items:
->+      - const: mediatek,mt8195-dp-tx
->+      - const: syscon
->+
->+  reg:
->+    maxItems: 1
->+
->+  interrupts:
->+    maxItems: 1
->+
->+  clocks:
->+    items:
->+      - description: faxi clock
->+
->+  clock-names:
->+    items:
->+      - const: faxi
->+
->+  phys:
->+    maxItems: 1
->+
->+  phy-names:
->+    items:
->+      - const: dp
->+
->+  power-domains:
->+    maxItems: 1
->+
->+  ports:
->+    $ref: /schemas/graph.yaml#/properties/ports
->+    properties:
->+      port@0:
->+        $ref: /schemas/graph.yaml#/properties/port
->+        description: Input endpoint of the controller, usually dp_intf
->+
->+      port@1:
->+        $ref: /schemas/graph.yaml#/properties/port
->+        description: Output endpoint of the controller
->+
->+    required:
->+      - port@0
->+
->+required:
->+  - compatible
->+  - reg
->+  - interrupts
->+  - ports
->+
->+additionalProperties: false
->+
->+examples:
->+  - |
->+    #include <dt-bindings/interrupt-controller/arm-gic.h>
->+    #include <dt-bindings/power/mt8195-power.h>
->+    edp_tx: edisplay-port-tx@1c500000 {
->+        compatible = "mediatek,mt8195-dp-tx","syscon";
->+        reg = <0 0x1c500000 0 0x8000>;
->+        interrupts = <GIC_SPI 676 IRQ_TYPE_LEVEL_HIGH 0>;
->+        power-domains = <&spm MT8195_POWER_DOMAIN_EPD_TX>;
->+        pinctrl-names = "default";
->+        pinctrl-0 = <&edp_pin>;
->+        phys = <&dp_phy>;
->+        phy-names = "dp";
->+
->+        ports {
->+            #address-cells = <1>;
->+            #size-cells = <0>;
->+
->+            port@0 {
->+                reg = <0>;
->+                edp_in: endpoint {
->+                    remote-endpoint = <&dp_intf0_out>;
->+                };
->+            };
->+            port@1 {
->+                reg = <1>;
->+                edp_out: endpoint {
->+                    remote-endpoint = <&panel_in>;
->+                };
->+            };
->+        };
->+    };
->-- 
->2.34.1
->
->
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
