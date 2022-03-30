@@ -4,60 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B12A7C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 10:24:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8238CC433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 10:55:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:Cc:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pQYLuEmPEVzFJZypDCplkAGKLEaIWMxNUq75d0KheqQ=; b=e2WIqNG5BQniTJWg8Q2V4hQip4
-	qvu2TeEMdVT7fKDYK3195Q6VoD6IfGfEzB/CJ1L1gCl+RJwmIbxk7rcuRIKTyF7cziTSpf0V06jtJ
-	grMA1MfX7QzobOAgIFq4vuB6cIvk4r9XpSeg+ycY4wnlP7yqTO/TudNGL4tfiyhvl2cxOs0s/6Y23
-	6CFbTBvwdG8Pq2DoKe2u9gKsEkKD0biEyZvuOKSERU6ErYaKyInPIWOHw3iwcdeGryMAq/hpxCIpM
-	jZPHFBJcKiDwJklKv93Tth5q/WN/NJSwqm2Q2VdvpgTF5XFA56ivJeVgjnvWftNsFgMcTGAcaCH7d
-	070oa/mQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qpGA42cxT2iWXzc0kIUrpfbV/BPgSrWyJVlZjtL9j9g=; b=UkO7pd0pcC/eem
+	DGSUb0qrtrmYLT+1bhpuwu1LPeA6AxOCh9TCKy9RXnIqN4S1V61pHMRPlQY9VlaWkJBCp8x6M6tw/
+	Bq2TzB7YGUstpNQOILjfgiHlYyH4uJp+LYx8DPnVwgD4EpiQMNx//2cx9gHNC/v/SV+bq+IR7gL/v
+	bzR/UQMt88ydCaWT1b/QehgMHO+BLFThON+x1vc2ivW616q0l8RKYvElRtC9yJypsgghatRsRARcM
+	+V2v5QQjLnX/37edE/5kMwsXCYcJo31lTb2L5Vg05MP92y/i3FCXVj2GPgI+WeTE75x+VMZXwWyxQ
+	8Gb22oCex9p1J1IpODdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nZVV2-00FBCg-4h; Wed, 30 Mar 2022 10:24:24 +0000
+	id 1nZVzN-00FGqm-VO; Wed, 30 Mar 2022 10:55:45 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nZVUp-00FBA7-7e; Wed, 30 Mar 2022 10:24:12 +0000
-Received: from unknown (HELO kinkan2-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 30 Mar 2022 19:24:09 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan2-ex.css.socionext.com (Postfix) with ESMTP id 831202058443;
- Wed, 30 Mar 2022 19:24:09 +0900 (JST)
+ id 1nZVz1-00FGgM-17; Wed, 30 Mar 2022 10:55:24 +0000
+Received: from unknown (HELO iyokan2-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 30 Mar 2022 19:55:20 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan2-ex.css.socionext.com (Postfix) with ESMTP id 05D462058B50;
+ Wed, 30 Mar 2022 19:55:20 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Wed, 30 Mar 2022 19:24:09 +0900
-Received: from [10.212.182.122] (unknown [10.212.182.122])
- by kinkan2.css.socionext.com (Postfix) with ESMTP id 94A70B62B7;
- Wed, 30 Mar 2022 19:24:08 +0900 (JST)
-Subject: Re: [PATCH v2 5/5] dt-bindings: phy: uniphier: Clean up clock-names
- and reset-names using compatible string
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Wed, 30 Mar 2022 19:55:19 +0900
+Received: from plum.e01.socionext.com (unknown [10.212.243.119])
+ by kinkan2.css.socionext.com (Postfix) with ESMTP id 7C28AB62B7;
+ Wed, 30 Mar 2022 19:55:19 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
  Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>
 Cc: Masami Hiramatsu <mhiramat@kernel.org>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <1648617651-9004-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1648617651-9004-6-git-send-email-hayashi.kunihiko@socionext.com>
- <ecc821cb-4dd0-48e6-668d-45c178efbbf0@linaro.org>
- <076c1292-053e-759d-3e6f-c262093d9d1c@socionext.com>
- <65d1eebd-f460-4073-4dc1-b1de62aa2ee4@linaro.org>
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Message-ID: <7f1c3ded-5405-44d8-c5c2-8f7d7a42b1fc@socionext.com>
-Date: Wed, 30 Mar 2022 19:24:08 +0900
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.11.0
-MIME-Version: 1.0
-In-Reply-To: <65d1eebd-f460-4073-4dc1-b1de62aa2ee4@linaro.org>
-Content-Language: en-US
+ linux-kernel@vger.kernel.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: [PATCH v3 0/5] dt-bindings: phy: Fix uniphier descriptions
+Date: Wed, 30 Mar 2022 19:55:10 +0900
+Message-Id: <1648637715-19262-1-git-send-email-hayashi.kunihiko@socionext.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220330_032411_432690_8FE2E478 
-X-CRM114-Status: GOOD (  19.29  )
+X-CRM114-CacheID: sfid-20220330_035523_206206_FC1B1E06 
+X-CRM114-Status: GOOD (  11.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,127 +59,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
+This series fixes dt-schema descriptions for all PHYs implemented in
+UniPhier SoCs.
 
-On 2022/03/30 18:45, Krzysztof Kozlowski wrote:
-> On 30/03/2022 11:16, Kunihiko Hayashi wrote:
->> Hi Krzysztof,
->>
->> On 2022/03/30 17:13, Krzysztof Kozlowski wrote:
->>> On 30/03/2022 07:20, Kunihiko Hayashi wrote:
->>>> Instead of "oneOf:" choices, use "allOf:" and "if:" to define
->>>> clock-names
->>>> and reset-names that can be taken by the compatible string.
->>>>
->>>> The order of clock-names and reset-names doesn't change here.
->>>>
->>>> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
->>>> ---
->>>>    .../phy/socionext,uniphier-ahci-phy.yaml      | 73 ++++++++++++------
->>>>    .../phy/socionext,uniphier-pcie-phy.yaml      | 37 ++++++---
->>>>    .../phy/socionext,uniphier-usb3hs-phy.yaml    | 75 +++++++++++++-----
->>>>    .../phy/socionext,uniphier-usb3ss-phy.yaml    | 77 ++++++++++++++-----
->>>>    4 files changed, 188 insertions(+), 74 deletions(-)
->>>>
->>>> diff --git
->>>> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>>> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>>> index 14f7579e7daa..61d9306e1852 100644
->>>> ---
->>>> a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>>> +++
->>>> b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
->>>> @@ -30,33 +30,62 @@ properties:
->>>>        minItems: 1
->>>>        maxItems: 2
->>>>
->>>> -  clock-names:
->>>> -    oneOf:
->>>> -      - items:          # for PXs2
->>>> -          - const: link
->>>> -      - items:          # for Pro4
->>>> -          - const: link
->>>> -          - const: gio
->>>> -      - items:          # for others
->>>> -          - const: link
->>>> -          - const: phy
->>>> +  clock-names: true
->>>>
->>>>      resets:
->>>>        minItems: 2
->>>>        maxItems: 6
->>>>
->>>> -  reset-names:
->>>> -    oneOf:
->>>> -      - items:          # for Pro4
->>>> -          - const: link
->>>> -          - const: gio
->>>> -          - const: phy
->>>> -          - const: pm
->>>> -          - const: tx
->>>> -          - const: rx
->>>> -      - items:          # for others
->>>> -          - const: link
->>>> -          - const: phy
->>>> +  reset-names: true
->>>> +
->>>> +allOf:
->>>> +  - if:
->>>> +      properties:
->>>> +        compatible:
->>>> +          contains:
->>>> +            const: socionext,uniphier-pro4-ahci-phy
->>>> +    then:
->>>> +      properties:
->>>> +        clock-names:
->>>> +          items:
->>>> +            - const: link
->>>> +            - const: gio
->>>> +        reset-names:
->>>> +          items:
->>>> +            - const: link
->>>> +            - const: gio
->>>> +            - const: phy
->>>> +            - const: pm
->>>> +            - const: tx
->>>> +            - const: rx
->>>
->>> Constrain also everywhere clocks and resets, so here should be:
->>>     resets:
->>>       minItems: 6
->>>       maxItems: 6
->>
->> If I put the constraint here, it would conflict with the original one.
->> Should I also replace the original resets
->>
->>       resets:
->>         minItems: 2
->>         maxItems: 6
->>
->> with "resets: true"?
-> 
-> It should not conflict. Check the bindings for Samsung Exynos clock I
-> sent you last time. In the main "properties" you put the widest
-> constraints, like you have now (2-6). Then for each compatible you
-> narrow it (2-2, 6-6).
-> 
-> You can later test it by adding/removing clocks to check if constraints
-> are properly working.
+Changes since v2:
+- Add "Reviewed-by:" line to patch 3 and 4
+- Add constraints of clocks and resets for compatible cases
 
-I understand. The main "properties" should be the widest constraints,
-and I checked that Exynos clock is set to the widest (1-10).
-I'll add the constraints.
+Changes since v1:
+- Add "Reviewed-by:" line to patch 1 and 2
+- Remove result messages about unpublished nodes in patch 3
+- Add patch 4 for fixing incorrect properties in ahci-phy
+- Add patch 5 to rewrite properties using allOf-if-then in all phys
 
-Thank you,
+Kunihiko Hayashi (5):
+  dt-bindings: phy: uniphier-usb2: Add vbus-supply
+  dt-bindings: phy: uniphier-usb3ss: Treat vbus-supply as optional
+  dt-bindings: phy: uniphier-ahci: Fix missing reset-names
+  dt-bindings: phy: uniphier-usb3hs: Fix incorrect clock-names and
+    reset-names
+  dt-bindings: phy: uniphier: Clean up clocks, resets, and their names
+    using compatible string
 
----
-Best Regards
-Kunihiko Hayashi
+ .../phy/socionext,uniphier-ahci-phy.yaml      | 91 ++++++++++++-----
+ .../phy/socionext,uniphier-pcie-phy.yaml      | 47 ++++++---
+ .../phy/socionext,uniphier-usb2-phy.yaml      |  3 +
+ .../phy/socionext,uniphier-usb3hs-phy.yaml    | 89 ++++++++++++++---
+ .../phy/socionext,uniphier-usb3ss-phy.yaml    | 98 ++++++++++++++-----
+ 5 files changed, 257 insertions(+), 71 deletions(-)
+
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
