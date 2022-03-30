@@ -4,95 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 130D4C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 16:57:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B28B0C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Mar 2022 17:40:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CeJ7VNlRgOUJv2yGWWc/PlRhol4hJsAxy8uzz402OsA=; b=neYHMTe+LbefRp
-	7Y9575cilyaLu/DmELVk7rOfZ32G3ik0vAX7XOSyYGYSiQbr+UjWx4jR80adlH0HxMUx5o8s4An5e
-	naMFtCgbHtgnq3uxzzLNZ4Ab084UcrjDivtGlt5qS/NyiIo5uAkjYGfwjGZCd6NQskkW+VneJcOBY
-	LcyG+PMEmlG8AWoHfJoqsvdKqlVbfwBbZmfjJF/blEjRCHY9VixQ8+rKY32jZ4Gcs8OfD2L2BjvA3
-	Sy899nKUu4WwRkeCrmy25lFeUZGgJUpqGb/qNp+Y+k3f+HZ89ubXXNaB7RCfoqXYT4CTTBSjKUX2S
-	7eGyG58fIPDPPY3ZS2Cg==;
+	List-Owner; bh=cUpMEnlxBbSEyIYctmxm/5nzcdVhg/9mxl+ATVMwOg8=; b=GKVBhgKhf8vv+a
+	YuU2WMnHhjKQ7wVin/1I//x4ISLI8C7nCzTrADvRw4SqNGC3zen4lnEjLVKwpT9LKV4pHp8fT7Ok5
+	EPcPWaejifAhsyT9ttmOv0HJ0dKXBQNNbv4hGwclAVrxh3hjnLQYWOIWX952IJngTiTmt68xUq+Ms
+	i9OY89x6q0U+3LcjepqdISIfx6n3d6E1dMNhZ5BYh08760PBcevrIfmJan8bXKB8V/UW9sZp2Fv63
+	bFEH3cHxr6/5Nt7+vpKuZ/w3Zf4eF4eCvKwjZ1DRgc7NrwfgMJHd7fRwByPVEZuuaq9SzoaknZ/qJ
+	XAqnrhHsRtBdgTQHY7Dw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nZbd7-00Guw3-F5; Wed, 30 Mar 2022 16:57:09 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1nZcJD-00H10G-2U; Wed, 30 Mar 2022 17:40:39 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nZbd2-00Guuf-DN
- for linux-phy@lists.infradead.org; Wed, 30 Mar 2022 16:57:07 +0000
-Received: by mail-ed1-x529.google.com with SMTP id y10so25146801edv.7
- for <linux-phy@lists.infradead.org>; Wed, 30 Mar 2022 09:57:03 -0700 (PDT)
+ id 1nZcJA-00H0z0-N2
+ for linux-phy@lists.infradead.org; Wed, 30 Mar 2022 17:40:38 +0000
+Received: by mail-ed1-x533.google.com with SMTP id h1so25340229edj.1
+ for <linux-phy@lists.infradead.org>; Wed, 30 Mar 2022 10:40:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=message-id:date:mime-version:user-agent:subject:content-language:to
  :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=fEzld4oIJa86hl09sRy64K2e8LGIGCRfWuc+U0PWYOs=;
- b=pz8Axq5e3iFbz7Jw0eIdKg+hWyV0eg5X/OrzwVODe4qALsVNW5P6XCIffz7jZBls1S
- Ay8G4ifJkD57k5cn7sKOqZqcX8jZz7AiV0A+xfY0usJu+I228VzlXlRNwtFfpvWDYChT
- tCTa4NX0jot2hZU9MZto6acQS6j1L5ezvPVFwjTq5mozRXGJ/05EDtzB/X0fdtun30yf
- E7wrNN00iG4bycxxZuXuO6Zu97SotlzoyB98sU++D3zFCPA3T7stPpKNzWvbRrSL+Hzq
- CLmsL7H9fVbfmMMXR72/C2K+zdLRiND4Sk71buZAy/vXVdCalN6MK04NuIfO07hJu1FF
- XYsQ==
+ bh=YGgEuO2+JFPK80wetBysVATEfSSmmFQ7dKqnJvZ/yF0=;
+ b=C7EjKku7df+a8GqKhOPDfYj3kb3TEpo3DG3jdawgzS//JNHlN1EDttotGPuPwtZJqM
+ 13D87HXLQB1i5Zu593BdRvAHvXU2KZCBghKr5ZLWbUc7+SnOCwc7yxNTP8xQIkWECbwj
+ x3r/HJ2H/u+PriS72aSR3Sf0AHoqNESldgoSj3jfUU6xdgfLQNatOWx4Dk2HIwMKZG/t
+ ru4+bBvbX1eqRI6dJS/5SpPN7MQ78ioWLTa1Nz4k4fHbBJb5Gby0TFttUbzYcSaLKJ94
+ GF23IZVQM50w9cL6RAnZA1kWRyAhc9QLJWfy1QFRG4lo6DIv/M5nk7ILGeU+nNs2QPjm
+ 9qZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
  :content-language:to:cc:references:from:in-reply-to
  :content-transfer-encoding;
- bh=fEzld4oIJa86hl09sRy64K2e8LGIGCRfWuc+U0PWYOs=;
- b=xc5XSbVIs9ij6nTmdTx8jLaPaCZ3uc7eNzJXvri9G4rfXHE8fko81kK3jYyBFqJsn4
- zMhAT3bCv1q2E8Ew/M323IU85Nj622xNGPKV0N4ozTk87VgLMeAfQwTikbiS0gqGpfan
- bswydVaFIU8aLPySFSXPlcPvpMK0qvj2Aw1PHnAz7gKw/gyp5kq3X4qZwFrR8Co0ymvc
- GSgRz6gfJ+SZ/BumqLnFaBfrwpJ1PGaLsfze81bmRexD/GlOnd+pTLe7KW3OvjdsAu8x
- 1gOY5ZpvUA/CDjIX+Xq+I6SqU8G75+96ppE09vzSqKPVDPweJufKxTsuENUmZStj2slI
- niQQ==
-X-Gm-Message-State: AOAM533hcFZJ+xX1O5qu6GfZeuh5nz/EmYCSRvneXdNLkZvtEZoXSYvW
- oBGYMVmPAASKq8QP7yLZ5F40WA==
-X-Google-Smtp-Source: ABdhPJyCpxyw7R6T+pFO1zsX01vbrvk5lvAApJ9RbFPs/LdEa4c5G+bltActTe6FNicQwS1ouiR2cg==
-X-Received: by 2002:a05:6402:d67:b0:419:48b:a762 with SMTP id
- ec39-20020a0564020d6700b00419048ba762mr11695300edb.291.1648659422507; 
- Wed, 30 Mar 2022 09:57:02 -0700 (PDT)
+ bh=YGgEuO2+JFPK80wetBysVATEfSSmmFQ7dKqnJvZ/yF0=;
+ b=opNBKiS+VYwkDiTYSgV8FMiMMMa2AXAOUwIqMqwkgahQQg8L6a1HKEPpoIvxKk8c/P
+ tbr3pge4DFUKWOrORPmq9mIqddtuq1cerBnAKhosYxVKY5n0DepnMRSE9DLgyUR5nrTo
+ w47RAHnkWU+exIBqmI6IbBh4j7aT0+2s4z4wq4KmRdVEKineNa3ddJd2LVRti8+avjZU
+ kCDR4ZCWRUj4tty6PAzu9wvh7m4yPb7zInl3EObv5EsI0WL3ARZ+mnYC3J+93afajVKy
+ 30HZR9weZXdP+Q43BsWr+BZIC3p8pb7Q6VZMpXLjMzBZFEI3ebj166Tp+/jDZMc92LNc
+ 7w/Q==
+X-Gm-Message-State: AOAM533161V924I6xL3Bst7OvzruTpNxxEcQOfvmeRG6O3Xv/oFtSkRu
+ 0+xObe5SFTzOUemApYVvTKHO1w==
+X-Google-Smtp-Source: ABdhPJxFwTarbPZKAhjXkXZlx0EdUDAVJlJ4obq31ATerLLtSuoVnaN+CJoSs2qJYnnkd0lo+8HTEg==
+X-Received: by 2002:a50:fd04:0:b0:419:9c4a:7d79 with SMTP id
+ i4-20020a50fd04000000b004199c4a7d79mr12268837eds.99.1648662035149; 
+ Wed, 30 Mar 2022 10:40:35 -0700 (PDT)
 Received: from [192.168.0.164] (xdsl-188-155-201-27.adslplus.ch.
  [188.155.201.27]) by smtp.gmail.com with ESMTPSA id
- q15-20020a1709060e4f00b006cdf4535cf2sm8394201eji.67.2022.03.30.09.57.00
+ dk21-20020a0564021d9500b0041b501eab8csm2718953edb.57.2022.03.30.10.40.34
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 30 Mar 2022 09:57:01 -0700 (PDT)
-Message-ID: <e13ceaad-d5f7-3c50-774e-28cabb2e1fe6@linaro.org>
-Date: Wed, 30 Mar 2022 18:57:00 +0200
+ Wed, 30 Mar 2022 10:40:34 -0700 (PDT)
+Message-ID: <a784ed61-965a-5c68-c2dd-3340cf18c7b5@linaro.org>
+Date: Wed, 30 Mar 2022 19:40:33 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.7.0
-Subject: Re: [PATCH] dt-bindings: Fix incomplete if/then/else schemas
+Subject: Re: [PATCH v3 5/5] dt-bindings: phy: uniphier: Clean up clocks,
+ resets, and their names using compatible string
 Content-Language: en-US
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- devicetree@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org, Lars-Peter Clausen <lars@metafoo.de>,
- Michael Hennerich <Michael.Hennerich@analog.com>,
- Jonathan Cameron <jic23@kernel.org>,
- Olivier Moysan <olivier.moysan@foss.st.com>,
- Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Georgi Djakov <djakov@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, "David S. Miller"
- <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Vinod Koul <vkoul@kernel.org>, Mark Brown <broonie@kernel.org>,
- Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Dmitry Osipenko <digetx@gmail.com>, linux-iio@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-mmc@vger.kernel.org,
- linux-tegra@vger.kernel.org, netdev@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20220330145741.3044896-1-robh@kernel.org>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Masami Hiramatsu <mhiramat@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1648637715-19262-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1648637715-19262-6-git-send-email-hayashi.kunihiko@socionext.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220330145741.3044896-1-robh@kernel.org>
+In-Reply-To: <1648637715-19262-6-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220330_095704_513669_19634DD2 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20220330_104036_798059_8D24EDA0 
+X-CRM114-Status: GOOD (  17.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,58 +97,260 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30/03/2022 16:57, Rob Herring wrote:
-> A recent review highlighted that the json-schema meta-schema allows any
-> combination of if/then/else schema keywords even though if, then or else
-> by themselves makes little sense. With an added meta-schema to only
-> allow valid combinations, there's a handful of schemas found which need
-> fixing in a variety of ways. Incorrect indentation is the most common
-> issue.
+On 30/03/2022 12:55, Kunihiko Hayashi wrote:
+> Instead of "oneOf:" choices, use "allOf:" and "if:" to define clocks,
+> clock-names, resets, and reset-names that can be taken by the compatible
+> string.
 > 
-> Cc: Lars-Peter Clausen <lars@metafoo.de>
-> Cc: Michael Hennerich <Michael.Hennerich@analog.com>
-> Cc: Jonathan Cameron <jic23@kernel.org>
-> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> Cc: Olivier Moysan <olivier.moysan@foss.st.com>
-> Cc: Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>
-> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-> Cc: Georgi Djakov <djakov@kernel.org>
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> Cc: Thierry Reding <thierry.reding@gmail.com>
-> Cc: Jonathan Hunter <jonathanh@nvidia.com>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: Jakub Kicinski <kuba@kernel.org>
-> Cc: Paolo Abeni <pabeni@redhat.com>
-> Cc: Kishon Vijay Abraham I <kishon@ti.com>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-> Cc: Grygorii Strashko <grygorii.strashko@ti.com>
-> Cc: Dmitry Osipenko <digetx@gmail.com>
-> Cc: linux-iio@vger.kernel.org
-> Cc: alsa-devel@alsa-project.org
-> Cc: linux-mmc@vger.kernel.org
-> Cc: linux-tegra@vger.kernel.org
-> Cc: netdev@vger.kernel.org
-> Cc: linux-phy@lists.infradead.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
+> The order of clock-names and reset-names doesn't change here.
+> 
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 > ---
->  .../bindings/iio/adc/adi,ad7476.yaml          |  1 +
->  .../bindings/iio/adc/st,stm32-dfsdm-adc.yaml  |  8 +-
->  .../bindings/iio/dac/adi,ad5360.yaml          |  6 +-
->  .../bindings/interconnect/qcom,rpm.yaml       | 84 +++++++++----------
->  .../bindings/mmc/nvidia,tegra20-sdhci.yaml    |  2 +
->  .../bindings/net/ti,davinci-mdio.yaml         |  1 +
->  .../bindings/phy/nvidia,tegra20-usb-phy.yaml  | 20 ++---
->  .../bindings/phy/qcom,usb-hs-phy.yaml         | 36 ++++----
->  .../bindings/regulator/fixed-regulator.yaml   | 34 ++++----
->  .../bindings/sound/st,stm32-sai.yaml          |  6 +-
->  .../devicetree/bindings/sram/sram.yaml        | 16 ++--
->  11 files changed, 108 insertions(+), 106 deletions(-)
+>  .../phy/socionext,uniphier-ahci-phy.yaml      | 90 +++++++++++++-----
+>  .../phy/socionext,uniphier-pcie-phy.yaml      | 47 ++++++---
+>  .../phy/socionext,uniphier-usb3hs-phy.yaml    | 93 ++++++++++++++----
+>  .../phy/socionext,uniphier-usb3ss-phy.yaml    | 95 +++++++++++++++----
+>  4 files changed, 251 insertions(+), 74 deletions(-)
+> 
 
-Looks good:
+(...)
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+> index 1bbd164f2527..21e4414eea60 100644
+> --- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+> @@ -34,30 +34,12 @@ properties:
+>      minItems: 2
+>      maxItems: 3
+>  
+> -  clock-names:
+> -    oneOf:
+> -      - items:               # for Pro5
+> -          - const: gio
+> -          - const: link
+> -      - items:               # for PXs3 with phy-ext
+> -          - const: link
+> -          - const: phy
+> -          - const: phy-ext
+> -      - items:               # for others
+> -          - const: link
+> -          - const: phy
+> +  clock-names: true
+>  
+>    resets:
+>      maxItems: 2
+>  
+> -  reset-names:
+> -    oneOf:
+> -      - items:               # for Pro5
+> -          - const: gio
+> -          - const: link
+> -      - items:               # for others
+> -          - const: link
+> -          - const: phy
+> +  reset-names: true
+>  
+>    vbus-supply:
+>      description: A phandle to the regulator for USB VBUS
+> @@ -80,6 +62,77 @@ properties:
+>        required for each port, if any one is omitted, the trimming data
+>        of the port will not be set at all.
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: socionext,uniphier-pro5-usb3-hsphy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 2
+> +          maxItems: 2
+> +        clock-names:
+> +          items:
+> +            - const: gio
+> +            - const: link
+> +        resets:
+> +          minItems: 2
+> +          maxItems: 2
+> +        reset-names:
+> +          items:
+> +            - const: gio
+> +            - const: link
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - socionext,uniphier-pxs2-usb3-hsphy
+> +              - socionext,uniphier-ld20-usb3-hsphy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 2
+> +          maxItems: 2
+> +        clock-names:
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +        resets:
+> +          minItems: 2
+> +          maxItems: 2
+> +        reset-names:
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - socionext,uniphier-pxs3-usb3-hsphy
+> +              - socionext,uniphier-nx1-usb3-hsphy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 2
+
+Why minItems:2? Is the last phy-ext clock optional?
+
+> +          maxItems: 3
+> +        clock-names:
+> +          minItems: 2
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +            - const: phy-ext
+> +        resets:
+> +          minItems: 2
+> +          maxItems: 2
+> +        reset-names:
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +
+>  required:
+>    - compatible
+>    - reg
+> diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+> index 06c957d52d23..4c26d2d2303d 100644
+> --- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+> @@ -35,34 +35,89 @@ properties:
+>      minItems: 2
+>      maxItems: 3
+>  
+> -  clock-names:
+> -    oneOf:
+> -      - items:             # for Pro4, Pro5
+> -          - const: gio
+> -          - const: link
+> -      - items:             # for PXs3 with phy-ext
+> -          - const: link
+> -          - const: phy
+> -          - const: phy-ext
+> -      - items:             # for others
+> -          - const: link
+> -          - const: phy
+> +  clock-names: true
+>  
+>    resets:
+>      maxItems: 2
+>  
+> -  reset-names:
+> -    oneOf:
+> -      - items:              # for Pro4,Pro5
+> -          - const: gio
+> -          - const: link
+> -      - items:              # for others
+> -          - const: link
+> -          - const: phy
+> +  reset-names: true
+>  
+>    vbus-supply:
+>      description: A phandle to the regulator for USB VBUS, only for USB host
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - socionext,uniphier-pro4-usb3-ssphy
+> +              - socionext,uniphier-pro5-usb3-ssphy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 2
+> +          maxItems: 2
+> +        clock-names:
+> +          items:
+> +            - const: gio
+> +            - const: link
+> +        resets:
+> +          minItems: 2
+> +          maxItems: 2
+> +        reset-names:
+> +          items:
+> +            - const: gio
+> +            - const: link
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - socionext,uniphier-pxs2-usb3-ssphy
+> +              - socionext,uniphier-ld20-usb3-ssphy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 2
+> +          maxItems: 2
+> +        clock-names:
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +        resets:
+> +          minItems: 2
+> +          maxItems: 2
+> +        reset-names:
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - socionext,uniphier-pxs3-usb3-ssphy
+> +              - socionext,uniphier-nx1-usb3-ssphy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 2
+
+Same question as above.
+
+> +          maxItems: 3
+> +        clock-names:
+> +          minItems: 2
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +            - const: phy-ext
+> +        resets:
+> +          minItems: 2
+> +          maxItems: 2
+> +        reset-names:
+> +          items:
+> +            - const: link
+> +            - const: phy
+> +
+>  required:
+>    - compatible
+>    - reg
+
 
 Best regards,
 Krzysztof
