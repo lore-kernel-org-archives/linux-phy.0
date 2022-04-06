@@ -4,76 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0099C433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Apr 2022 15:39:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 609CBC433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Apr 2022 15:50:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QGtcvCVawixs8GV4w/knFu3dksX10pzZARI7EoW9xTU=; b=BlqWIRMcNOt4Lb
-	3rR/chPACa7CZB4wELYzaGfbpSYljqVd9Jki2PvOvanlFPap+2sCc1bjoPPHDVXq7PpqBgSSs7uYC
-	Kx6zf4wAkm24MBwjxCsnqa+miEpKrNgfFUi418FWMNdpsmWqyVIkgXZZ8tjxFz/rjhCDxZq6hRHd2
-	R5mcJdfgllZUPEViXty+xuV8nt150Xo94urEfsnlLL6zrBYpX8X1Mb4MlL8zO1iySg8Abgwj86S5E
-	KmI+obx+5PZ188khZSkGbtu0uyQrnUVswE2PKSnfBfuJQWtRmhe50+MVU/OkSjILsEE2U1CM9EgwH
-	473KiRePPzr1Wo9DcVCw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sbaTwvN9wjGLKKsCR7cCOX4P25NAjhuDW5Kv6ucNzkw=; b=QBTmW9m/H6et5W
+	I/jj8WutQpVbI8+D44dg86BRGUkJCABp/3/OLgJg0twX5aOP3MN3sgUXjzquO138ItqhVCfO12sR0
+	i+r63K3uiLi3E196CSsOpb71AoDKLygjJ4ptV3GECPVbltTGK4HkIOwRGi+Ng1Uu686509ddvUNJn
+	1jRxf3HBQtoAyhQ6fw7uzEvUGu3mTHbN35NcNZQs5fQy04pH5Y0IED7epd4m7KuSoG4dhTK4QWy4I
+	NvzK2KZtIJdldPIpT0UQLZlhzjQSiKtlh2yLcKI695P8/4fVD10LFNwwoHpixp0IExJGcpLVrKIvw
+	lXw4L08jSMqjCU37+CiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nc7kU-006tGR-OC; Wed, 06 Apr 2022 15:39:10 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1nc7vd-006yGk-Ke; Wed, 06 Apr 2022 15:50:41 +0000
+Received: from smtpout140.security-mail.net ([85.31.212.148]
+ helo=fx408.security-mail.net)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nc7kB-006t6W-2P; Wed, 06 Apr 2022 15:38:52 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id A03AFB824B8;
- Wed,  6 Apr 2022 15:38:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 649ADC385AB;
- Wed,  6 Apr 2022 15:38:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1649259527;
- bh=j/cHGt1Adp/5ckJatmOAtFz8YwOh1uG9kyL0/rqOdAI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ZxMGCv64eYBNc1avTLYsfD8OTSDZAzQlny1jcKpgW7cpaNUn7n2lzRAB8KA+0J+lc
- blAso325sUH2hSDdGMBvrLnlq7sBAn7rt+3e0nMPFHgiaqm3WW7oDk8r6r0EjD/33C
- 3zJFZhJkYKMkbll+HRI/2m9zRNN7EtPN7AGtPU93fqfe75x7mw7W9LpfxSs0yNy968
- c3gGMTbxAhAO8iPe+QiMSfuQiT/dcs7TPgHbp29GUwEK7hdb12Zraumk5vV7L3JElu
- /kqCfIhCb3N2mHJnynG8r5EIciy+D8KcqFnwwcCTHtxXDyo3TtxOG/OZ8g9SvONgYu
- KHxSDu2GKbKkg==
-Received: by mail-pg1-f169.google.com with SMTP id 66so2494806pga.12;
- Wed, 06 Apr 2022 08:38:47 -0700 (PDT)
-X-Gm-Message-State: AOAM532iFU52KEse7fX7rOtPoO7XHuB1/HvLHG206LtFvuiYB5nF6tNb
- NuC2zWUS1ogwGjWGrnDypPgMdqA3Afa3hSRoLag=
-X-Google-Smtp-Source: ABdhPJx6nrBYoOc7Poen+QC3GhpAJV8qLRa+XzbVgFrkIodhg2moVi8VEmGesevH2qrojOojIBiXA0F7l3qLHy9jsCo=
-X-Received: by 2002:a05:6a00:1501:b0:4fb:2d19:b6a8 with SMTP id
- q1-20020a056a00150100b004fb2d19b6a8mr9579739pfu.21.1649259526810; Wed, 06 Apr
- 2022 08:38:46 -0700 (PDT)
-MIME-Version: 1.0
-References: <20220326022728.2969-1-jianjun.wang@mediatek.com>
- <06c9f2f8236f8dab6b27da9db0332b4ca45a1039.camel@mediatek.com>
-In-Reply-To: <06c9f2f8236f8dab6b27da9db0332b4ca45a1039.camel@mediatek.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 6 Apr 2022 17:38:35 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPfWH-XSogkWVy0Q5LcHSk9SXinR7AA_Odo-oTc32y1Ykg@mail.gmail.com>
-Message-ID: <CAJKOXPfWH-XSogkWVy0Q5LcHSk9SXinR7AA_Odo-oTc32y1Ykg@mail.gmail.com>
-Subject: Re: [PATCH v5 0/2] phy: mediatek: Add PCIe PHY driver
-To: Jianjun Wang <jianjun.wang@mediatek.com>
-Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, 
- Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, Chen-Yu Tsai <wenst@chromium.org>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Wei-Shun Chang <weishunc@google.com>, linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- rex-bc.chen@mediatek.com, 
- randy.wu@mediatek.com, jieyy.yang@mediatek.com, chuanjia.liu@mediatek.com, 
- qizhong.cheng@mediatek.com, jian.yang@mediatek.com
+ id 1nc7va-006yBz-Bh
+ for linux-phy@lists.infradead.org; Wed, 06 Apr 2022 15:50:39 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by fx408.security-mail.net (Postfix) with ESMTP id 73E631B7B15A
+ for <linux-phy@lists.infradead.org>; Wed,  6 Apr 2022 17:50:29 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kalray.eu;
+ s=sec-sig-email; t=1649260229;
+ bh=+o2CkbeGPFlQUU4RWdS7adwPvE25/1YzhKrWYcylJfQ=;
+ h=From:To:Cc:Subject:Date;
+ b=HlQWE4cDqOKqY1D4g2Ivv9+ntpaLA/s6D6xZSWnYDms4EUIcrn9wrSjwzvEFPILKJ
+ MG0nSEEZRjrLoUqBQVVhkPLo1V2QHzhej3/V6PDAXjjRyUPhNhBE0KO/5tAKZA6BRy
+ Pk6B1soUivWlhaQCh3bML3rnrC/5qvwr4nIJjGh0=
+Received: from fx408 (localhost [127.0.0.1])
+ by fx408.security-mail.net (Postfix) with ESMTP id 951C71B7AD73;
+ Wed,  6 Apr 2022 17:50:28 +0200 (CEST)
+X-Virus-Scanned: E-securemail
+Secumail-id: <cc81.624db6c4.1454.0>
+Received: from zimbra2.kalray.eu (unknown [217.181.231.53])
+ by fx408.security-mail.net (Postfix) with ESMTPS id 027541B7AC66;
+ Wed,  6 Apr 2022 17:50:28 +0200 (CEST)
+Received: from zimbra2.kalray.eu (localhost [127.0.0.1])
+ by zimbra2.kalray.eu (Postfix) with ESMTPS id D381927E0443;
+ Wed,  6 Apr 2022 17:50:27 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra2.kalray.eu (Postfix) with ESMTP id B95C427E0444;
+ Wed,  6 Apr 2022 17:50:27 +0200 (CEST)
+DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu B95C427E0444
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
+ s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1649260227;
+ bh=NQEYgCh4LErSGu4roSimJUphphp5nSmB7EWB2qyF0c0=;
+ h=From:To:Date:Message-Id;
+ b=kAQtCNajiGCpHlOHNmIuKzXDQM34zMdpc9tN1SrFw0QL/K8covinKRJH6R6WQ4elo
+ /drx8QF2EQZq1eN1LWTKPSe/LgBGzL8Cedo4jFtbTwY/DUcfWna7rRDK6jA0up3dRz
+ oxoBw6PEcGYHUdDbzNquCAD2fsXkr7GyD8bLcSQg=
+Received: from zimbra2.kalray.eu ([127.0.0.1])
+ by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id JWpYCBr2Lou8; Wed,  6 Apr 2022 17:50:27 +0200 (CEST)
+Received: from tellis.lin.mbt.kalray.eu (unknown [192.168.36.206])
+ by zimbra2.kalray.eu (Postfix) with ESMTPSA id 9612A27E0443;
+ Wed,  6 Apr 2022 17:50:27 +0200 (CEST)
+From: Jules Maselbas <jmaselbas@kalray.eu>
+To: linux-phy@lists.infradead.org
+Cc: linux-usb@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Ahmad Fatoum <a.fatoum@pengutronix.de>,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Amelie DELAUNAY <amelie.delaunay@foss.st.com>,
+ Yann Sionneau <ysionneau@kalray.eu>,
+ Michael Grzeschik <mgr@pengutronix.de>,
+ Randy Dunlap <rdunlap@infradead.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jules Maselbas <jmaselbas@kalray.eu>
+Subject: [PATCH v3 0/3] Cleanup the call ordering of phy_init and phy_power_on
+Date: Wed,  6 Apr 2022 17:50:16 +0200
+Message-Id: <20220406155019.22953-1-jmaselbas@kalray.eu>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: by Secumail
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220406_083851_314233_8C872243 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20220406_085038_588598_E0A72561 
+X-CRM114-Status: GOOD (  11.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,23 +93,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 6 Apr 2022 at 07:47, Jianjun Wang <jianjun.wang@mediatek.com> wrote:
->
-> Hello Maintainers,
->
-> Is there anything I can do to get these patches merged?
+Hi,
 
-Patience. :) You posted a patch during the merge window which finished
-three days ago, so basically one can assume you ping folks after three
-days. Three days is too fast for pinging. :(
+Last year Ahmad asked what is the correct order when calling phy_init
+and phy_power_on. Since then, I didn't see the situation improve much
+and I am once again toying around with usb phy driver.
 
-Best regards,
-Krzysztof
+The following two patches were in my tree for a year... Last year i
+previously tried to change the call order in the dwc2 driver but this
+requires the relevent phy to be also compatible with the "new" ordering.
+The stm32-usbphyc driver wasn't compatible, I am not sure if that is
+still is the case.
+
+For now simply add documentation, hopefully correct, but I am not an
+expert on actual phy sementics or usage in the kernel. And add warning
+when the order is not what's expected.
+
+Best,
+
+---
+v2: Updated the documentation syntax for returned value
+v3: Put the warning msg inside the locked section as suggested by Ahmad
+
+Jules Maselbas (3):
+  phy: core: Add documentation of phy operation order
+  phy: core: Update documentation syntax
+  phy: core: Warn when phy_power_on is called before phy_init
+
+ drivers/phy/phy-core.c | 44 +++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 41 insertions(+), 3 deletions(-)
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
