@@ -4,76 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A6CCC433F5
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Apr 2022 09:56:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF625C433EF
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Apr 2022 11:14:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=M/PSX/rzGsCdSEOTrxT2z57iej+8ZMB8Q3Ofk7lRe4c=; b=UnBhprw68LS6h0
-	so98JAX1ILMlFLU5s5u4aKarDGhUOa2j6YncWJBmIlN9T8HZ61Ve+yaaxQh2r8iZZytjOwJkfbT3O
-	Uqy8bSi6QIBWcaqVZTIpBaJF55NAU1gsfeF6c0/h3cmWovdFGHJWSznuWMpXGyPnIfU4wA1lbnJMY
-	JkgjnytK194JWC+x4HTsgtiRLXIRCQe0wBot1+prECJGYcFk+hQrpdZhi3U0bFfo8ktPeMomiJbiv
-	tRwikDB+yVlQ5I+8xqqb8SS4AHOMUswAQJXpcjmcfl4FYxIucLbb3tuMGdET41dc3LeKSvb7MdlZn
-	3sSaebPOym4Y2V4iR62g==;
+	List-Owner; bh=FmvIgZTMldskIwlvcp7zsP50CdMc2h9tC7gYGRLcugs=; b=3huA4szxsU0p5P
+	94u1EtXrRVE6KlfaAi7rMrjGf8kpmV9hgpQGFuHJQUrXoNqDcqOr7z5T6qVmQkVRAZsBAAz36PGQ4
+	IRWmDRgC0wF3tFpqmZK8FBwXIFzNN+rgAiYZbYn8aeZLFqAL+XnWuSSmxHNoPBK4Sp2OC6AbLftRe
+	dlQbyKoHBLZ1VBAvw/qdV67yQN8lCeffDVKywqP4KcoY5roTIlCHH5P1uk2uopw4cR2ZkImZQUFBm
+	RPgjZTTzChmaBX0+rHwLuLuCGFNgQ2whjbbUJ8eVKm8QYpLnl0GmNCnYuGVaU2rBVWAV3I/r/KCyy
+	PUJaI5WCLa3su3k/r7og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nclLv-00GDN2-Vy; Fri, 08 Apr 2022 09:56:28 +0000
-Received: from mail-qk1-x736.google.com ([2607:f8b0:4864:20::736])
+	id 1ncmZ9-00GVqJ-4s; Fri, 08 Apr 2022 11:14:11 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nclLt-00GDLp-3i
- for linux-phy@lists.infradead.org; Fri, 08 Apr 2022 09:56:26 +0000
-Received: by mail-qk1-x736.google.com with SMTP id b33so4359710qkp.13
- for <linux-phy@lists.infradead.org>; Fri, 08 Apr 2022 02:56:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zjH23Wya03LzbkbLO4xeU6GQ68cZ1wSb3Yi2WGQa36g=;
- b=kwZlD3/T+8qksiVvwDWjaBxxgIIVSYni2McJG2R8ABsKzH3XAndqvyO/puYitsTS6I
- hyMn439AjiX6+X7t0ybOotbpCUKestpjSQW+MwJ1tn4yHdhW/iHjc2WxVFtkKxfdhMAU
- DVfwk9KVG8qsFEUGmjkHd9pYPrhRDmsbMdOdVjHZwd+FqnmsWSchDQHJ9fRn+co8JGCF
- S64FHnf3u98DW7FeyG76CogW0Ge+PYcZgXfkzQ8n0D2kH6+QPg0CQu1Oa9OBJ8da223Q
- HpyDqiuyfos5Pwyf7YCGWgz9zahQ3CkyB9/mlOTc8gflv7vqJsXV1oQEHdGxbzldjx8D
- Cxmg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zjH23Wya03LzbkbLO4xeU6GQ68cZ1wSb3Yi2WGQa36g=;
- b=GfD2GU+DlamdWtVtt7XJdWJSzJCUvR5cJshZZB0HN+fpsE4cZYUC3fErNBasP+USC2
- OssnmLc3+PCS7yrCvv/0j20BaCYdE/jYoFZrVnTFgDjPPpNmBoxj1yF+tz78ZahVS9o9
- c4W9bxOFWfoS6NXmy/DFaVFBPskVdtcJ6HXiQbOx0cooKVOGmozfcZ57G/s4+8ehpeyo
- tW9wv5Xmjs8u6TsQmX3X6vCyP5PzdsdGAh82tK0yXXwErFMermReD3KadQ/dEHH+Jkbv
- 5V9HOKNlfWCPMYa7Mnbk9TwCX67P/8ZWjp1YbsZeRSto7PDJKG64jEPHI+0L9SYo5Yoj
- yIBw==
-X-Gm-Message-State: AOAM533TYWj6GCT3W6wTa7fuFjq+3PRFtJR05prAu/5u+Mah+CcdxaPx
- 6SfphjBYMm4ieT9w4FLLvnI=
-X-Google-Smtp-Source: ABdhPJzBDfUMRgrkFGRaQjb3JnVcxyXu1WVg91CC9KZq/9K2aRGRx1RKgyBqq018Jv1LGYCHzqJ3Qw==
-X-Received: by 2002:a05:620a:288c:b0:699:bbc6:9e54 with SMTP id
- j12-20020a05620a288c00b00699bbc69e54mr12416634qkp.226.1649411783812; 
- Fri, 08 Apr 2022 02:56:23 -0700 (PDT)
-Received: from localhost.localdomain ([193.203.214.57])
- by smtp.gmail.com with ESMTPSA id
- c10-20020ac87dca000000b002e1db1b7b10sm18053944qte.25.2022.04.08.02.56.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Apr 2022 02:56:23 -0700 (PDT)
-From: cgel.zte@gmail.com
-X-Google-Original-From: lv.ruyi@zte.com.cn
-To: kishon@ti.com,
-	vkoul@kernel.org
-Cc: lv.ruyi@zte.com.cn, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Zeal Robot <zealci@zte.com.cn>
-Subject: [PATCH] phy: ti: Fix missing of_node_put in ti_pipe3_get_sysctrl()
-Date: Fri,  8 Apr 2022 09:56:17 +0000
-Message-Id: <20220408095617.2495234-1-lv.ruyi@zte.com.cn>
-X-Mailer: git-send-email 2.25.1
+ id 1ncmZ5-00GVmC-Fw
+ for linux-phy@lists.infradead.org; Fri, 08 Apr 2022 11:14:09 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 238BDcR5122754;
+ Fri, 8 Apr 2022 06:13:38 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1649416418;
+ bh=+SNjO1IUOnRYTs23vqywM5c9gOYSHSLoyH11tDb5yOk=;
+ h=From:To:CC:Subject:Date;
+ b=MgooNM0+tVkvtFTMNkxHRB0uFY9BfyfabOgZebe4K/7PxBZXjjn3q8S7dPLJhN+dd
+ 0g/Z/rT+Nsponu1ySqHLn0fxKlOdBjP+3rB4gK35Z/vWTzE8S3hX5PeZKaN4lp2oV6
+ 1+p/6UiEXNV4JineYzcTfFc4p2Sqcdg8S7ms9RSo=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 238BDcqZ026182
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 8 Apr 2022 06:13:38 -0500
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Fri, 8
+ Apr 2022 06:13:37 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Fri, 8 Apr 2022 06:13:37 -0500
+Received: from gsaswath-HP-ProBook-640-G5.dal.design.ti.com
+ (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 238BDYJi018497;
+ Fri, 8 Apr 2022 06:13:35 -0500
+From: Aswath Govindraju <a-govindraju@ti.com>
+To: 
+CC: Aswath Govindraju <a-govindraju@ti.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Wolfgang Grandegger
+ <wg@grandegger.com>, Marc Kleine-Budde <mkl@pengutronix.de>,
+ <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <linux-can@vger.kernel.org>
+Subject: [PATCH v5] phy: phy-can-transceiver: Add support for setting mux
+Date: Fri, 8 Apr 2022 16:43:16 +0530
+Message-ID: <20220408111316.21189-1-a-govindraju@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220408_025625_193723_48747C5F 
-X-CRM114-Status: UNSURE (   7.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220408_041407_688922_BB57E102 
+X-CRM114-Status: GOOD (  20.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,31 +83,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Lv Ruyi <lv.ruyi@zte.com.cn>
+On some boards, for routing CAN signals from controller to transceiver,
+muxes might need to be set. Therefore, add support for setting the mux by
+reading the mux-states property from the device tree node.
 
-of_parse_phandle() returns node pointer with refcount incremented, use
-of_node_put() on it to decrease refcount when done.
-
-Reported-by: Zeal Robot <zealci@zte.com.cn>
-Signed-off-by: Lv Ruyi <lv.ruyi@zte.com.cn>
+Signed-off-by: Aswath Govindraju <a-govindraju@ti.com>
 ---
- drivers/phy/ti/phy-ti-pipe3.c | 1 +
- 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
-index 2cbc91e535d4..f502c36f3be5 100644
---- a/drivers/phy/ti/phy-ti-pipe3.c
-+++ b/drivers/phy/ti/phy-ti-pipe3.c
-@@ -696,6 +696,7 @@ static int ti_pipe3_get_sysctrl(struct ti_pipe3 *phy)
- 		}
+Changes since v4:
+- Rebased on top of latest next head.
+
+Changes since v3:
+- Rebased on top of the linux-next head
+- Dependencies are now merged in linux next.
+  84564481bc45 (mux: Add support for reading mux state from consumer DT node)
+- Dropped bindings patch from the series since it has been
+  picked up from the earlier version
+  https://lore.kernel.org/all/YieG22mgIzsL7TMn@robh.at.kernel.org/
+
+Changes since v2:
+- Fixed the bindings removing the description about
+  the arguments in mux-states property
+
+Changes since v1:
+- Fixed the description for mux-states property in bindings
+  file
+- appended declaration of variable ret in the end
+
+ drivers/phy/Kconfig               |  1 +
+ drivers/phy/phy-can-transceiver.c | 24 +++++++++++++++++++++++-
+ 2 files changed, 24 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 82b63e60c5a2..300b0f2b5f84 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -64,6 +64,7 @@ config USB_LGM_PHY
+ config PHY_CAN_TRANSCEIVER
+ 	tristate "CAN transceiver PHY"
+ 	select GENERIC_PHY
++	select MULTIPLEXER
+ 	help
+ 	  This option enables support for CAN transceivers as a PHY. This
+ 	  driver provides function for putting the transceivers in various
+diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+index 6f3fe37dee0e..95c6dbb52da7 100644
+--- a/drivers/phy/phy-can-transceiver.c
++++ b/drivers/phy/phy-can-transceiver.c
+@@ -10,6 +10,7 @@
+ #include<linux/module.h>
+ #include<linux/gpio.h>
+ #include<linux/gpio/consumer.h>
++#include <linux/mux/consumer.h>
  
- 		control_pdev = of_find_device_by_node(control_node);
-+		of_node_put(control_node);
- 		if (!control_pdev) {
- 			dev_err(dev, "Failed to get control device\n");
- 			return -EINVAL;
+ struct can_transceiver_data {
+ 	u32 flags;
+@@ -21,13 +22,22 @@ struct can_transceiver_phy {
+ 	struct phy *generic_phy;
+ 	struct gpio_desc *standby_gpio;
+ 	struct gpio_desc *enable_gpio;
++	struct mux_state *mux_state;
+ };
+ 
+ /* Power on function */
+ static int can_transceiver_phy_power_on(struct phy *phy)
+ {
+ 	struct can_transceiver_phy *can_transceiver_phy = phy_get_drvdata(phy);
+-
++	int ret;
++
++	if (can_transceiver_phy->mux_state) {
++		ret = mux_state_select(can_transceiver_phy->mux_state);
++		if (ret) {
++			dev_err(&phy->dev, "Failed to select CAN mux: %d\n", ret);
++			return ret;
++		}
++	}
+ 	if (can_transceiver_phy->standby_gpio)
+ 		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 0);
+ 	if (can_transceiver_phy->enable_gpio)
+@@ -45,6 +55,8 @@ static int can_transceiver_phy_power_off(struct phy *phy)
+ 		gpiod_set_value_cansleep(can_transceiver_phy->standby_gpio, 1);
+ 	if (can_transceiver_phy->enable_gpio)
+ 		gpiod_set_value_cansleep(can_transceiver_phy->enable_gpio, 0);
++	if (can_transceiver_phy->mux_state)
++		mux_state_deselect(can_transceiver_phy->mux_state);
+ 
+ 	return 0;
+ }
+@@ -95,6 +107,16 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+ 	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+ 	drvdata = match->data;
+ 
++	if (of_property_read_bool(dev->of_node, "mux-states")) {
++		struct mux_state *mux_state;
++
++		mux_state = devm_mux_state_get(dev, NULL);
++		if (IS_ERR(mux_state))
++			return dev_err_probe(&pdev->dev, PTR_ERR(mux_state),
++					     "failed to get mux\n");
++		can_transceiver_phy->mux_state = mux_state;
++	}
++
+ 	phy = devm_phy_create(dev, dev->of_node,
+ 			      &can_transceiver_phy_ops);
+ 	if (IS_ERR(phy)) {
 -- 
-2.25.1
+2.17.1
 
 
 -- 
