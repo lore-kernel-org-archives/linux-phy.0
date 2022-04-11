@@ -4,58 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02C1FC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Apr 2022 17:11:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6E91C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Apr 2022 17:16:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r5PQAGeickoIDyK6yheRfZds4VldLR3Pe63ZKuyGmO8=; b=xqlnGaohUH4PcO
-	CLQD0eaILM0jRrmabfTRxPbnYbl07uxFkwWN4sdhkHOm7ioLqCDCsdzls1lujeXCDOWTejzQgCfeK
-	QVomNN8httfPYLGIoQa/vUkT1TJzyypeSGVTTJpNzELtHJkE57H0DU0lGINfYXNAs/6ZxPJOGYSS1
-	F2cZRbMMqssAfhAaopxP0Ac2/60EXCFnlSLvyST+dTYF4JvlEx3Wfimg741g/FJ+quPelX8s+3CK9
-	iXtyHQ/Ba5zGyBZdQk1bBLjU/uvEAEyZOJZyFw3hHIZDmog7FkWz0A6vuOl/FoUtoBW1N697GYjGn
-	u04+ROmV5vwFcVfvIJ8w==;
+	List-Owner; bh=JFvvbXzqjrcBURqS9XhTwQwy4TOxg22SaDhb41KvY60=; b=CzHu+o4pAO+6yi
+	Me5UnAnFaNuMJyZ9FlW+jy4mw0sU05fxClR7bhzkWZwJTOpTDJFs1eMXhXRKokTu6UfCcVAL7H2AB
+	0T3spGDaj/S8rgymNi4AG75IwqrWoZA85un78vZTOAYUnNinVig+9n4Gl4S7oInzMjUkZQqMvRDyb
+	ePfgEvjNspEa59cDG9/PNUCXSN1dGLlLqra0ERA3K9F27qe2hTFbCxdKT6z1MWh7NwZIjoNacNWZW
+	UmTnj3PYv6jsUfZiTvMlFUaeVkhwcY7JM5jOcVoDsevh3xwtUiIPg8DZFybl+2rjA5FNJHURZZfzo
+	CIp6yQm2ksX4HtFdGx5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ndxZY-009qF5-DB; Mon, 11 Apr 2022 17:11:28 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1ndxet-009qnz-5H; Mon, 11 Apr 2022 17:16:59 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ndxZV-009qEJ-DH
- for linux-phy@lists.infradead.org; Mon, 11 Apr 2022 17:11:26 +0000
+ id 1ndxei-009qmG-7R; Mon, 11 Apr 2022 17:16:49 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id C8880B81721;
- Mon, 11 Apr 2022 17:11:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93574C385A4;
- Mon, 11 Apr 2022 17:11:21 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 93C7661752;
+ Mon, 11 Apr 2022 17:16:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6EB12C385A4;
+ Mon, 11 Apr 2022 17:16:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1649697082;
- bh=BGuusMW9bZqM7HMRmScsvZjSdzwjV66gHPQDF4gT+DQ=;
+ s=k20201202; t=1649697407;
+ bh=KEdgu5lNU5+HyVwZRaK/BbilKd+k1nntwkrHK/f5xnw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RiL1v+69Vj7tbmHgC+V8jgyLjIMNxK6BzfU/Q3q0vnJlqzsmOUIauCmOisBavqfsc
- b5dejDy6IdmrkkWGLOHalSqRYxMN0o01UryQhL5dsSscAjc5Iz9NXoNNX4t/FQjLiq
- /alTY47ZIvZxgTQhw6otZbQbl0Od4gtOmmj1luvnzrlYAGXO5Rg8Kkcl0GEJ8Mo7kI
- 1alwN/MSk0FSo4RWxhh+AJ2DwSzGLRJKFpJ9kzXQZ2m/MbJx8P7yprlnvvyerKzPoD
- WvwWFlnECADcjQifGw/NlUFwedgeJMRwA+QhJ53JmywqzZ4/II1Mzrw25MgOkSGaVL
- Ae6cpWn3n1zHg==
-Date: Mon, 11 Apr 2022 22:41:17 +0530
+ b=V4WfzENQiux5OP9lf3StinCx+vgGkRS2A4laKy+HlRnRR6VsoFKFgMfzCtt4fhKhG
+ 06WX+RdkGEg7LtoAnDYIsiujqtlfhRQQxe57BnIPBYZIaQAf5FXxSs46hFUMGtKDDp
+ V5w6uiUOcg/YmAr35lpe/CWzFkC7S66429CnY5yjCCaVNPASm5cZ41xa7eS9n2UDsU
+ +aRzR6SSjR10oUpgqJvfrwFoE0fdUqdVDy/wLjdweRJrL6jyOX/y4ntmZidVCJIIMT
+ xfBQ2S01tcotR5teWGVrpZglhFLZJ66S5j5Xb3EknMRysXsizb2BQp4bBmOBrTGg7H
+ Up2irQS7u3vXA==
+Date: Mon, 11 Apr 2022 22:46:42 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: cgel.zte@gmail.com
-Cc: kishon@ti.com, lv.ruyi@zte.com.cn, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Zeal Robot <zealci@zte.com.cn>
-Subject: Re: [PATCH] phy: ti: Fix missing of_node_put in ti_pipe3_get_sysctrl()
-Message-ID: <YlRhNZI8Fy5I2E6i@matsya>
-References: <20220408095617.2495234-1-lv.ruyi@zte.com.cn>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Girish K S <ks.giri@samsung.com>,
+ Yuvaraj Kumar C D <yuvaraj.cd@gmail.com>,
+ Vasanth Ananthan <vasanth.a@samsung.com>,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Miaoqian Lin <linmq006@gmail.com>
+Subject: Re: [RESEND PATCH 1/2] phy: samsung: Fix missing of_node_put() in
+ exynos_sata_phy_probe
+Message-ID: <YlRiev97AAS1GvnQ@matsya>
+References: <20220407091857.230386-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220408095617.2495234-1-lv.ruyi@zte.com.cn>
+In-Reply-To: <20220407091857.230386-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220411_101125_634990_7E22CA54 
-X-CRM114-Status: UNSURE (   6.67  )
+X-CRM114-CacheID: sfid-20220411_101648_341804_B525EFD3 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,13 +78,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-04-22, 09:56, cgel.zte@gmail.com wrote:
-> From: Lv Ruyi <lv.ruyi@zte.com.cn>
+On 07-04-22, 11:18, Krzysztof Kozlowski wrote:
+> From: Miaoqian Lin <linmq006@gmail.com>
 > 
-> of_parse_phandle() returns node pointer with refcount incremented, use
-> of_node_put() on it to decrease refcount when done.
+> The device_node pointer is returned by of_parse_phandle() with refcount
+> incremented. We should use of_node_put() on it when done.
 
-Applied, thanks
+Applied all, thanks
 
 -- 
 ~Vinod
