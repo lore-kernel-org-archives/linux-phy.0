@@ -4,61 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43118C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Apr 2022 17:37:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52488C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Apr 2022 18:04:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DxMZqsO+cPs1txAH7CXX4vRn49KyDQTiLcLMfkO3KnU=; b=YeztQKDjTZuWNY
-	zmxA28s1SL0e3Um8vbf/A1ToCEfxWMKSBNpQ6wFFobZzPUpP8ZnmCvIxNdxrzmxhOMUHUlg2XRnWf
-	wXpXuxYc2OlY8aKEPjU0dWvdPsBNpf6/rFgjPm7D23GE6YfpSZZxJKzssJni+pqR55M6nV4I8jZxw
-	KocKaYLZ56BxGkFckjswPeflzufXjJM+RKJcoMlYV1figmzqd19tmR8zsHGZhUyDUFtDOMaErAsFV
-	tGNbeDR7jY54i0TuDw/2AcxuAKnR0Rto/5HMSphn4h6dE5mvm5YkfeaYck8p5j5lraT8IafOn1A48
-	9eXtCv1NDnD3rthvlF4w==;
+	List-Owner; bh=yqTiNSzJ3sJTxd38JSbyFW6jZMrlrP+JUBZDJXvHm2U=; b=jALr5iSlZtu1m7
+	ejXhIJSZOuStYMNuCRufy63JACafD1Jt/vwdCHqpMOEK33F69uXNQIN3mm/x36CqokSggyC0AQMtt
+	ygL5IT62tCIllZLXyTGj39z/G1Vg/dgHKdWLBTcwHJI94h3iqHpGYBvgWqLAQZLTcw3ahgBOFu527
+	Ln+fxfDX0YRE83OdoUp8toMcRzBG3EowxmWrYfey3kXN6U7nmStKerRIY9aN6UVJ5wco0fot5oyTQ
+	MTEUOUk00wAhmIaRwQ6SuBSjgefB+JGxZ4k43e5ibGBs0Uv8hpDl0QFJj7dUmxDdMNt2vs/UjjNAu
+	1FIu7EvUfzcbp7D6L7CA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ndxyn-009wiZ-GL; Mon, 11 Apr 2022 17:37:33 +0000
+	id 1ndyOo-009yxM-Ez; Mon, 11 Apr 2022 18:04:26 +0000
 Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ndxyk-009wgO-6q
- for linux-phy@lists.infradead.org; Mon, 11 Apr 2022 17:37:31 +0000
+ id 1ndyOl-009yx5-KN
+ for linux-phy@lists.infradead.org; Mon, 11 Apr 2022 18:04:24 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 111FBB80F3B;
- Mon, 11 Apr 2022 17:37:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34B2DC385A4;
- Mon, 11 Apr 2022 17:37:25 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 50101B817F5;
+ Mon, 11 Apr 2022 18:04:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2F07AC385A3;
+ Mon, 11 Apr 2022 18:04:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1649698646;
- bh=kYbh6pX/FHME7Yaf3yi+julbzImYTc4dZfXcNYYWD5I=;
+ s=k20201202; t=1649700261;
+ bh=mEtcO+luL+M3MFSDWidwlLniHaY0sogkYUV/bgSCS6U=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TL/TnBpth40Ri4M7OsvCOZAPrXxbHxUkNB/eNmNclDjN2ERLvLC2oLVJ6AcW+m6wS
- LB6nN09+Z2grJ8aXoEXNt963h0cTvg1gnFTaibyDrJaznXn/quCC3Yj6aat5XTgiJS
- VT6tMd9hdI3PlXaD61qSCVQeXO1V/vRhMxzAIDQq7eNG2RwTrbCtoyLlE0AM+NM4SL
- KBe1v9Gc6rK1r2QDS6VqPqgw7TRS6cGMrsbEG1c8svwZyCM6QM+Aa7Be+WAiVsgUQh
- yE0FpXNby4nCq8Bbj6xvcFX+pvopWFOHurlqP9l/qEDw4JwzsaAgNrfZaC5wIMGA+F
- 4CBx39qUN2n/w==
-Date: Mon, 11 Apr 2022 23:07:22 +0530
+ b=febxVfGC1uZxrOXZD8gaO6VngV1he/m8F53duvNrhcH9XvdYR1J76jEHeG+zWyNeF
+ B3gL49CkYKWcYR+RS+xsBrrkaV5YWRAEp3NSYKw1WWedLc47i4axfb6Ky10awPHFXS
+ VCRubFB3mWmkH1vdymqVjI0CB5oQuC6nqqFxMZn8+d2D0z55njQj0mRuND0Qbfd+vW
+ yu6VTmDxwKQlhS063xQFWrNkg6zi5Jrh1wNzSGTvlfAkDz/fGQN83OKS0BQlmg6sH7
+ Vab5HzjIDDNhr/LIm5B5+1LgI6VQ4tvvuPwISHbmTeJsQ+9NmC5MUljN+7WQxie8xV
+ huDLqgMdLHIOw==
+Date: Mon, 11 Apr 2022 23:34:15 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Hans de Goede <hdegoede@redhat.com>,
- Stephan Gerhold <stephan@gerhold.net>, linux-kernel@vger.kernel.org,
- kernel-janitors@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH] phy: ti: tusb1210: Fix an error handling path in
- tusb1210_probe()
-Message-ID: <YlRnUqSpXAclhWqs@matsya>
-References: <07c4926c42243cedb3b6067a241bb486fdda01b5.1648991162.git.christophe.jaillet@wanadoo.fr>
+To: Luca Weiss <luca.weiss@fairphone.com>
+Cc: linux-arm-msm@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
+ phone-devel@vger.kernel.org, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,qmp: Add SM6350 UFS PHY
+ bindings
+Message-ID: <YlRtn6RhVQ7+oeep@matsya>
+References: <20220321133318.99406-1-luca.weiss@fairphone.com>
+ <20220321133318.99406-3-luca.weiss@fairphone.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <07c4926c42243cedb3b6067a241bb486fdda01b5.1648991162.git.christophe.jaillet@wanadoo.fr>
+In-Reply-To: <20220321133318.99406-3-luca.weiss@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220411_103730_435360_567D0F2A 
-X-CRM114-Status: UNSURE (   6.36  )
+X-CRM114-CacheID: sfid-20220411_110423_848230_991D72BB 
+X-CRM114-Status: UNSURE (   6.52  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,13 +80,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03-04-22, 15:06, Christophe JAILLET wrote:
-> tusb1210_probe_charger_detect() must be undone by a corresponding
-> tusb1210_remove_charger_detect() in the error handling path, as already
-> done in the remove function.
+On 21-03-22, 14:33, Luca Weiss wrote:
+> Document the compatible string for the UFS PHY found in SM6350.
 
 Applied, thanks
-
 -- 
 ~Vinod
 
