@@ -4,61 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28BC4C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Apr 2022 14:44:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02C1FC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Apr 2022 17:11:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y7bgCSqAXG6ZD36b8Sk1qUcO7GiP0YRBPRgH54JpZMo=; b=jditSZNvt81jar
-	Jgsl+HW8QpUYvxIkEFg/6SRzCd0/3mkFNcvw0g3Vy73ljb4E7UX5mg2IMAOyZvGlfeLjEIr7cD77z
-	BFf5VNwQND5t0iW+vrQZBkip0ORMmAwrRUaNt9HX6mV7RcFamfBjVrrvkTky8qofARNBkOwLGpcDk
-	mav4U3AdMiPvreSLu64c17RgkYd2gEI5qNSSXVBQa4s3DfEsZcYuhhs06A6bF6d46wjBLx5AXcsdC
-	/vEN3rfWnOD97//jCwkqpvMhctsBj+wSJ0dxJBCpOqfFMiXeIh3X0QBKo0AuA1kfmvWt5esEGw3Wq
-	GGa1Nt+h46PN1+/+Ue1w==;
+	List-Owner; bh=r5PQAGeickoIDyK6yheRfZds4VldLR3Pe63ZKuyGmO8=; b=xqlnGaohUH4PcO
+	CLQD0eaILM0jRrmabfTRxPbnYbl07uxFkwWN4sdhkHOm7ioLqCDCsdzls1lujeXCDOWTejzQgCfeK
+	QVomNN8httfPYLGIoQa/vUkT1TJzyypeSGVTTJpNzELtHJkE57H0DU0lGINfYXNAs/6ZxPJOGYSS1
+	F2cZRbMMqssAfhAaopxP0Ac2/60EXCFnlSLvyST+dTYF4JvlEx3Wfimg741g/FJ+quPelX8s+3CK9
+	iXtyHQ/Ba5zGyBZdQk1bBLjU/uvEAEyZOJZyFw3hHIZDmog7FkWz0A6vuOl/FoUtoBW1N697GYjGn
+	u04+ROmV5vwFcVfvIJ8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ndvHL-009Qgk-FQ; Mon, 11 Apr 2022 14:44:31 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1ndxZY-009qF5-DB; Mon, 11 Apr 2022 17:11:28 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ndvHJ-009Qfu-3G
- for linux-phy@lists.infradead.org; Mon, 11 Apr 2022 14:44:30 +0000
+ id 1ndxZV-009qEJ-DH
+ for linux-phy@lists.infradead.org; Mon, 11 Apr 2022 17:11:26 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 7C94A61489;
- Mon, 11 Apr 2022 14:44:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5956AC385AA;
- Mon, 11 Apr 2022 14:44:26 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id C8880B81721;
+ Mon, 11 Apr 2022 17:11:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93574C385A4;
+ Mon, 11 Apr 2022 17:11:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1649688266;
- bh=wRS32LY4IFKjyMTbt6v9mzrbqkRbajAdkzIV2R16PWI=;
+ s=k20201202; t=1649697082;
+ bh=BGuusMW9bZqM7HMRmScsvZjSdzwjV66gHPQDF4gT+DQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Git/6+GZ1V+us/4zFLZ8fdANLsQlRITLyulLhrvINrV5LqR2AaZI/UyjGhEzcJcry
- wACKmHj0qZjsxKV/Pk/Lt9b+AHGhdQHk6VXYnQCpJfB4Pk/Gty8ysaf2om4QHTJ9cu
- dTxIJ+O2gZefNQqfLiPSqm0BU0tVgldjywiluSceU45zhKCzY7PhoLuKAxy1xmK0Tw
- t5g7DJcLIjmL1N/NF82Des30DIrSuEcDvhfDIBHxYz8q8rqjaop8WVeasUx/08EW/C
- fKmHZjztkkuMtcNy00AA858gAJDyRS+YuquxgI+N3cb5EbNfpfxQu5msnHE4JV1BGx
- xTh9demcCpirQ==
-Date: Mon, 11 Apr 2022 20:14:23 +0530
+ b=RiL1v+69Vj7tbmHgC+V8jgyLjIMNxK6BzfU/Q3q0vnJlqzsmOUIauCmOisBavqfsc
+ b5dejDy6IdmrkkWGLOHalSqRYxMN0o01UryQhL5dsSscAjc5Iz9NXoNNX4t/FQjLiq
+ /alTY47ZIvZxgTQhw6otZbQbl0Od4gtOmmj1luvnzrlYAGXO5Rg8Kkcl0GEJ8Mo7kI
+ 1alwN/MSk0FSo4RWxhh+AJ2DwSzGLRJKFpJ9kzXQZ2m/MbJx8P7yprlnvvyerKzPoD
+ WvwWFlnECADcjQifGw/NlUFwedgeJMRwA+QhJ53JmywqzZ4/II1Mzrw25MgOkSGaVL
+ Ae6cpWn3n1zHg==
+Date: Mon, 11 Apr 2022 22:41:17 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Aswath Govindraju <a-govindraju@ti.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-can@vger.kernel.org
-Subject: Re: [PATCH v5] phy: phy-can-transceiver: Add support for setting mux
-Message-ID: <YlQ+x555++i4Vmlx@matsya>
-References: <20220408111316.21189-1-a-govindraju@ti.com>
+To: cgel.zte@gmail.com
+Cc: kishon@ti.com, lv.ruyi@zte.com.cn, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Zeal Robot <zealci@zte.com.cn>
+Subject: Re: [PATCH] phy: ti: Fix missing of_node_put in ti_pipe3_get_sysctrl()
+Message-ID: <YlRhNZI8Fy5I2E6i@matsya>
+References: <20220408095617.2495234-1-lv.ruyi@zte.com.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220408111316.21189-1-a-govindraju@ti.com>
+In-Reply-To: <20220408095617.2495234-1-lv.ruyi@zte.com.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220411_074429_190325_176C7F43 
-X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-CacheID: sfid-20220411_101125_634990_7E22CA54 
+X-CRM114-Status: UNSURE (   6.67  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,10 +73,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-04-22, 16:43, Aswath Govindraju wrote:
-> On some boards, for routing CAN signals from controller to transceiver,
-> muxes might need to be set. Therefore, add support for setting the mux by
-> reading the mux-states property from the device tree node.
+On 08-04-22, 09:56, cgel.zte@gmail.com wrote:
+> From: Lv Ruyi <lv.ruyi@zte.com.cn>
+> 
+> of_parse_phandle() returns node pointer with refcount incremented, use
+> of_node_put() on it to decrease refcount when done.
 
 Applied, thanks
 
