@@ -4,61 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E52BBC433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Apr 2022 09:41:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A0FDC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Apr 2022 09:47:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4I+JcsOj8Mq6IR7TpS0nfnCHRTtkD+0PWpaTHhvVE3M=; b=SQ1EoRsQaElZL5
-	D8AHn1EAeNmRlS5SIgRzBZOg9YWVbZB/9/i8Jq3u0ahcpndJ7rmIkjPm8VmbDb60FPCNpNBPcHSlM
-	KG1u1gCS7I+FPeEnoRcORGd9SiMa5TfBuuaynA8R7UhxaGWtVXccFavnViv5kfN33ix/OypDWTyD0
-	fblr9CL/geDrFoWsi2W19119n2ZznAp4H7yzUjbjQzB4dXkxnrT1RzkC9QplNotRx25FoWZs0bkad
-	5WroTC/9Bjt5We7EJA9ty10juAgDwIJ9+Rg/IjEYNn13yX+Objn8K9eHXOSRLGNqsk7OkrVk6w48P
-	pF3xW7wQjeGyxiYI7+zA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
+	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HMU0KuGB9qELgF8z02jcIGFKpBqW1k3EU3iHAsSTNrw=; b=D2BiFWNWiKg0q9lElJlOZwHLII
+	9QZMnyU9Ut4bOm/zIhk4S6xB6jptMgxOvBfzxgmGGsH/nZYI5vd6FfEtk1083bm0Kk3mTbAn97QI0
+	IJsnZLDOSfMGFzmHNkB8Rt9sXLud5W4LTYVRPvbqIQfXAgNkDAqXKpxr6U2upOz6shH5GmWt5uhYp
+	mm5kx2KRZRjzhsuYWKj2PyKRI7mXt8VVhF4hvM5i3ORVt2vwhAqT06nH0MJE2Dpffj+KODfLxFn4Q
+	N7LTGm1h15ISVWyVvqVAIOsS6VTOZf5zEaDPSIxno6BwW6dNkhn9yih0ruo/0K9hrVDbylkQQI60l
+	hb/F4Vvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1neD20-00CzvM-BZ; Tue, 12 Apr 2022 09:41:52 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1neD7L-00D1ev-5R; Tue, 12 Apr 2022 09:47:23 +0000
+Received: from mail-oa1-x29.google.com ([2001:4860:4864:20::29])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1neD1l-00CzqG-5I
- for linux-phy@lists.infradead.org; Tue, 12 Apr 2022 09:41:38 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1neD1N-0001dC-4R; Tue, 12 Apr 2022 11:41:13 +0200
-Message-ID: <439bd1aa1feaa0c43adb7b4c2dda57b5f2c5487c.camel@pengutronix.de>
-Subject: Re: [PATCH v0 00/10] i.MX8MP HDMI support
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring
- <robh+dt@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>, Shawn Guo
- <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,  Robert Foss
- <robert.foss@linaro.org>, Neil Armstrong <narmstrong@baylibre.com>, Andrzej
- Hajda <andrzej.hajda@intel.com>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@ti.com>, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org,  linux-phy@lists.infradead.org,
- patchwork-lst@pengutronix.de
-Date: Tue, 12 Apr 2022 11:41:11 +0200
-In-Reply-To: <3484598.R56niFO833@steina-w>
-References: <20220406160123.1272911-1-l.stach@pengutronix.de>
- <3484598.R56niFO833@steina-w>
-User-Agent: Evolution 3.40.4 (3.40.4-1.fc34) 
+ id 1neD6m-00D1O2-OA
+ for linux-phy@lists.infradead.org; Tue, 12 Apr 2022 09:46:51 +0000
+Received: by mail-oa1-x29.google.com with SMTP id
+ 586e51a60fabf-df02f7e2c9so20177913fac.10
+ for <linux-phy@lists.infradead.org>; Tue, 12 Apr 2022 02:46:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+ h=from:user-agent:references:in-reply-to:mime-version:date:message-id
+ :subject:to:cc;
+ bh=/jXr7871p381hezvOM6vz2wGQV6Q8hqnBtj8tP6/2+4=;
+ b=VHPkrbWcWhDRP0Ms+E2ACz/1QyUjPo0clFwBk6WOFH6mtQhSc+3trkDfS8BktiQTgk
+ jDvBk2DZx4OiU1b/J6vb/oI4wOcMcwlUy65k6UEgzkDpk3oiVv3mJjLy6Dmka/y+y0+2
+ 4+BMwv80HCcgjsoMfkcw6p40XjJOdZKMZRiLIR8jwRlH2b87swkcRxg3yfdEOmlwRFW+
+ r4D3j++ZdzxzoDaeuKzvKM1Y3mmKShpdDFb45gc7mJ6Lmh6yvJ3385iXuLs3ZIDz0LOV
+ RY/TmrM9YPtNOp0O5QVsedwn2E9tCmYw+iJ+yXRS6CVLyDLFDUoTGtq7lkiNbATkNr5a
+ E67Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:user-agent:references:in-reply-to
+ :mime-version:date:message-id:subject:to:cc;
+ bh=/jXr7871p381hezvOM6vz2wGQV6Q8hqnBtj8tP6/2+4=;
+ b=DK2155ucFI4LAUwyaNCax6PpEDoLB9pJx5nGN5rOc9pxivFSA6iXjfTeExZ8gGF5Gw
+ 7c2jmS17Z9hfMahcsCckRJCqOdoVKapV5la/aZo2Poz4gFJk6nK6muL0mtjQ1MkMYSai
+ OXnFW6uNyK2xqVadGNXUvBT0xjluF0hE9HNNI0OKgUzLbsgz9/0Ob9owjMepRGFjxr5V
+ J27kpFv4VqfzOxsvoKhnrOTAfKj4rIwT1ASaBVC/gRfdKFOigOjtdywoxZfBaUT1QHnc
+ 48c/TdhZpUuJBd8yRZ5xf2AQY/mcamg+yRD1TnYU0jsKb5TS67vmuwBOI8Op1Xr2AzN5
+ zRLA==
+X-Gm-Message-State: AOAM5326EL5cynsDZiDOrAxWbs6HJGvWTTkYR1zMM0CFG3Ea/qJdz5g1
+ CfVuW30L9Ktmr/y8sLWEbcubDh+FijqUk9OEJUw1Eg==
+X-Google-Smtp-Source: ABdhPJwabGFxqMM9aNBwQhX+XGgbWUrZp4HhkNVL1WH8Hx1XIVIXklfCi1gQEx/UMlxSIC+w3fsVzTCkbv7z8mjDFR0=
+X-Received: by 2002:a05:6870:d191:b0:dd:a91e:82dc with SMTP id
+ a17-20020a056870d19100b000dda91e82dcmr1599775oac.248.1649756807795; Tue, 12
+ Apr 2022 02:46:47 -0700 (PDT)
+Received: from 753933720722 named unknown by gmailapi.google.com with
+ HTTPREST; Tue, 12 Apr 2022 02:46:47 -0700
+From: Guillaume Ranquet <granquet@baylibre.com>
+User-Agent: meli 0.7.2
+References: <20220327223927.20848-1-granquet@baylibre.com>
+ <20220327223927.20848-19-granquet@baylibre.com>
+ <9a31c1ce-829b-acc7-6fc1-2a9df45e5c38@collabora.com>
+In-Reply-To: <9a31c1ce-829b-acc7-6fc1-2a9df45e5c38@collabora.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Date: Tue, 12 Apr 2022 02:46:47 -0700
+Message-ID: <CABnWg9tou2S-LX7SpW=ALEdLwu9dXbOsxhvQ2WBWaCJW-qt8_Q@mail.gmail.com>
+Subject: Re: [PATCH v9 18/22] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ vkoul@kernel.org, 
+ airlied@linux.ie, chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org, 
+ ck.hu@mediatek.com, daniel@ffwll.ch, deller@gmx.de, jitao.shi@mediatek.com, 
+ kishon@ti.com, krzk+dt@kernel.org, maarten.lankhorst@linux.intel.com, 
+ matthias.bgg@gmail.com, mripard@kernel.org, p.zabel@pengutronix.de, 
+ robh+dt@kernel.org, tzimmermann@suse.de
+Cc: devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org, 
+ linux-phy@lists.infradead.org, markyacoub@google.com, 
+ Markus Schneider-Pargmann <msp@baylibre.com>, kernel test robot <lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220412_024137_238743_B7A06797 
-X-CRM114-Status: GOOD (  32.87  )
+X-CRM114-CacheID: sfid-20220412_024648_879331_CEF57123 
+X-CRM114-Status: GOOD (  36.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,134 +101,462 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Alexander,
+On Mon, 28 Mar 2022 11:14, AngeloGioacchino Del Regno
+<angelogioacchino.delregno@collabora.com> wrote:
+>Il 28/03/22 00:39, Guillaume Ranquet ha scritto:
+>> From: Markus Schneider-Pargmann <msp@baylibre.com>
+>>
+>> This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
+>>
+>> It supports the mt8195, the embedded DisplayPort units. It offers
+>> DisplayPort 1.4 with up to 4 lanes.
+>>
+>> The driver shares its iomap range with the mtk-dp-phy driver using
+>> the regmap/syscon facility.
+>>
+>> This driver is based on an initial version by
+>> Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+>>
+>> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+>> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+>> Reported-by: kernel test robot <lkp@intel.com>
+>
+>Hello Guillaume,
+>as you know, there's some more work to do on this driver.
+>
+>I will also mention here, not on the code, that at this point, your
+>mtk_dp_aux_transfer() function has something VERY similar to function
+>drm_dp_dpcd_access(), so I really believe that you can instead use
+>functions drm_dp_dpcd_read() and drm_dp_dpcd_write(), avoiding code
+>duplication around.
+>
+>Please check drivers/gpu/drm/dp/drm_dp.c.
+>
 
-Am Dienstag, dem 12.04.2022 um 11:18 +0200 schrieb Alexander Stein:
-> Hello Lucas,
-> 
-> Am Mittwoch, 6. April 2022, 18:01:13 CEST schrieb Lucas Stach:
-> > Hi all,
-> > 
-> > this adds support for the HDMI output pipeline on the i.MX8MP.
-> > It currently depends on the i.MX8MP HDMI power domain series [1]
-> > and support for the new LCDIF [2] in the i.MX8MP. I guess the
-> > implementation presented here also still has some warts that
-> > require fixing and the individual patches most likely need to go
-> > through different maintainer trees, so I don't expect this series
-> > to be applied right away.
-> > 
-> > However this complete series should allow people to test it more
-> > easily and provide feedback on the implementation with the full
-> > picture available.
-> > 
-> > Compared to downstream this implementation actually allows to
-> > power down the separate HDMI PHY power domain when the display
-> > is inactive or no HDMI cable is connected.
-> 
-> Thanks for these patches.
-> I tried using them on my imx8mp based board (TQMa8MPxL + MBa8MPxL) but failed 
-> to get the display showing anything. I noticed several things though:
-> 
-> * For some reason the HDMI PHY PLL does not lock. I get the error
-> > fsl-samsung-hdmi-phy 32fdff00.phy: PLL failed to lock
-> Increasing timeout does not change anything.
-> 
-> * The HDMI bridge wants to use bus format 0x200f which is not supported by 
-> lcdif.
-> > lcdif 32fc6000.display-controller: Unknown media bus format 0x200f
-> I wonder which part in the DRM chain choses to use this.
+This is already in my TODO list as this has been suggested by Rex earlier.
 
-Do have a 4k HDMI display connected that wants to do YUV input? That's
-something I have to admit I didn't test yet and would be likely to
-cause this bus format selection.
+>> ---
+>>   drivers/gpu/drm/mediatek/Kconfig       |    8 +
+>>   drivers/gpu/drm/mediatek/Makefile      |    2 +
+>>   drivers/gpu/drm/mediatek/mtk_dp.c      | 2221 ++++++++++++++++++++++++
+>>   drivers/gpu/drm/mediatek/mtk_dp_reg.h  |  568 ++++++
+>>   drivers/gpu/drm/mediatek/mtk_drm_drv.c |    1 +
+>>   drivers/gpu/drm/mediatek/mtk_drm_drv.h |    1 +
+>>   6 files changed, 2801 insertions(+)
+>>   create mode 100644 drivers/gpu/drm/mediatek/mtk_dp.c
+>>   create mode 100644 drivers/gpu/drm/mediatek/mtk_dp_reg.h
+>>
+>> diff --git a/drivers/gpu/drm/mediatek/Kconfig b/drivers/gpu/drm/mediatek/Kconfig
+>> index 2976d21e9a34..03ffa9b896c3 100644
+>> --- a/drivers/gpu/drm/mediatek/Kconfig
+>> +++ b/drivers/gpu/drm/mediatek/Kconfig
+>> @@ -28,3 +28,11 @@ config DRM_MEDIATEK_HDMI
+>>   	select PHY_MTK_HDMI
+>>   	help
+>>   	  DRM/KMS HDMI driver for Mediatek SoCs
+>> +
+>> +config MTK_DPTX_SUPPORT
+>
+>Actually, I think that the best would be DRM_MEDIATEK_DP_TX or DRM_MEDIATEK_DP...
+>...also, ordering is important, please!
+>
+I will update the name.
+What do you mean by ordering? do you expect the configs to be ordered
+alphabetically?
 
-> But even hard limiting to 0x100a the screen stayed in suspend
-> 
-> * If the drivers are built as modules I get a hard lockup during boot. Using 
-> built-in drivers or 'clk_ignore_unused' workarounds this.
-> 
-> * DDC does actually work. The display is detected and EDID can be read.
-> 
-> * Sometimes I get the following error:
-> ------------[ cut here ]------------
-> [CRTC:33:crtc-0] vblank wait timed out
-> WARNING: CPU: 2 PID: 151 at drivers/gpu/drm/drm_atomic_helper.c:1529 
-> drm_atomic_helper_wait_for_vblanks.part.0+0x2ac/0x2fc
-> Modules linked in: caamhash_desc caamalg_desc crypto_engine rng_core mcp320x 
-> dw_hdmi_cec authenc libdes dw100 videobuf2_dma_contig lcdif crct10dif_ce 
-> phy_fsl_samsung_hdmi v4l2_mem2mem imx_sdma flexcan imx8mm_thermal can_dev caam 
-> error pwm_fan fuse ipv6
-> CPU: 2 PID: 151 Comm: kworker/u8:7 Not tainted 5.18.0-rc2-next-20220412+ #165 
-> d226098cac46ded24901c7090f909ca8f5098eb0
-> Hardware name: TQ-Systems i.MX8MPlus TQMa8MPxL on MBa8MPxL (DT)
-> Workqueue: events_unbound deferred_probe_work_func
-> pstate: 60000005 (nZCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
-> pc : drm_atomic_helper_wait_for_vblanks.part.0+0x2ac/0x2fc
-> lr : drm_atomic_helper_wait_for_vblanks.part.0+0x2ac/0x2fc
-> sp : ffff80000a133430
-> x29: ffff80000a133430 x28: 0000000000000000 x27: 0000000000000000
-> x26: 0000000000000000 x25: 0000000000000001 x24: ffff80000935f030
-> x23: ffff00000433e000 x22: ffff0000029e7000 x21: 0000000000000001
-> x20: ffff000002e7fb48 x19: 0000000000000000 x18: 0000000000000001
-> x17: 4d554e5145530065 x16: 6c75646f6d3d4d45 x15: 5453595342555300
-> x14: 0000000000000000 x13: 0a74756f2064656d x12: 6974207469617720
-> x11: 0000000000000000 x10: 000000000000003a x9 : ffff80000a133430
-> x8 : 00000000ffffffff x7 : 6974207469617720 x6 : 6b6e616c6276205d
-> x5 : ffff00007fb91b00 x4 : 0000000000000000 x3 : 0000000000000027
-> x2 : 0000000000000023 x1 : 0000000000000000 x0 : 0000000000000000
-> Call trace:
->  drm_atomic_helper_wait_for_vblanks.part.0+0x2ac/0x2fc
->  drm_atomic_helper_commit_tail_rpm+0x80/0xa0
->  commit_tail+0xcc/0x1f0
->  drm_atomic_helper_commit+0x13c/0x370
->  drm_atomic_commit+0xa4/0xe0
->  drm_client_modeset_commit_atomic+0x1fc/0x250
->  drm_client_modeset_commit_locked+0x58/0xa0
->  drm_client_modeset_commit+0x2c/0x50
->  __drm_fb_helper_restore_fbdev_mode_unlocked+0xec/0x140
->  drm_fb_helper_set_par+0x38/0x6c
->  fbcon_init+0x264/0x5e4
->  visual_init+0xc8/0x15c
->  do_bind_con_driver.isra.0+0x20c/0x470
->  do_take_over_console+0x44/0x60
->  do_fbcon_takeover+0x80/0x140
->  fbcon_fb_registered+0x1c4/0x260
->  do_register_framebuffer+0x1e0/0x2d0
->  register_framebuffer+0x2c/0x50
->  __drm_fb_helper_initial_config_and_unlock+0x9c/0x130
->  drm_fbdev_client_hotplug+0x1a8/0x20c
->  drm_fbdev_generic_setup+0xc0/0x1d0
->  lcdif_probe+0x7c/0xa0 [lcdif e756925430e957a7bc9e6376ad5964e4b1cb143e]
->  platform_probe+0x64/0x100
->  call_driver_probe+0x28/0x130
->  really_probe+0x178/0x310
->  __driver_probe_device+0xfc/0x144
->  driver_probe_device+0x38/0x12c
->  __device_attach_driver+0xd4/0x180
->  bus_for_each_drv+0x74/0xc4
->  __device_attach+0xd8/0x1e0
->  device_initial_probe+0x10/0x20
->  bus_probe_device+0x90/0xa0
->  deferred_probe_work_func+0x9c/0xf0
->  process_one_work+0x1d0/0x330
->  worker_thread+0x68/0x390
->  kthread+0xec/0xfc
->  ret_from_fork+0x10/0x20
-> ---[ end trace 0000000000000000 ]---
-> 
-> But given that the PLL did not lock I assume this is not too surprising.
-> 
-Yes, that's just the fallout of the LCDIF not seeing any pixel clock.
+>> +	tristate "DRM DPTX Support for Mediatek SoCs"
+>> +	depends on DRM_MEDIATEK
+>> +	select PHY_MTK_DP
+>> +	select DRM_DP_HELPER
+>> +	help
+>> +	  DRM/KMS Display Port driver for Mediatek SoCs.
+>> diff --git a/drivers/gpu/drm/mediatek/Makefile b/drivers/gpu/drm/mediatek/Makefile
+>> index 29098d7c8307..d86a6406055e 100644
+>> --- a/drivers/gpu/drm/mediatek/Makefile
+>> +++ b/drivers/gpu/drm/mediatek/Makefile
+>> @@ -21,3 +21,5 @@ mediatek-drm-hdmi-objs := mtk_cec.o \
+>>   			  mtk_hdmi_ddc.o
+>>
+>>   obj-$(CONFIG_DRM_MEDIATEK_HDMI) += mediatek-drm-hdmi.o
+>> +
+>> +obj-$(CONFIG_MTK_DPTX_SUPPORT) += mtk_dp.o
+>> diff --git a/drivers/gpu/drm/mediatek/mtk_dp.c b/drivers/gpu/drm/mediatek/mtk_dp.c
+>> new file mode 100644
+>> index 000000000000..7cd8459cf719
+>> --- /dev/null
+>> +++ b/drivers/gpu/drm/mediatek/mtk_dp.c
+>> @@ -0,0 +1,2221 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright (c) 2019 MediaTek Inc.
+>> + * Copyright (c) 2021 BayLibre
+>> + */
+>> +
+>> +#include <drm/drm_atomic_helper.h>
+>> +#include <drm/drm_bridge.h>
+>> +#include <drm/drm_crtc.h>
+>> +#include <drm/dp/drm_dp_helper.h>
+>> +#include <drm/drm_edid.h>
+>> +#include <drm/drm_of.h>
+>> +#include <drm/drm_panel.h>
+>> +#include <drm/drm_print.h>
+>> +#include <drm/drm_probe_helper.h>
+>> +#include <linux/arm-smccc.h>
+>> +#include <linux/clk.h>
+>> +#include <linux/delay.h>
+>> +#include <linux/errno.h>
+>> +#include <linux/kernel.h>
+>> +#include <linux/mfd/syscon.h>
+>> +#include <linux/nvmem-consumer.h>
+>> +#include <linux/of.h>
+>> +#include <linux/of_irq.h>
+>> +#include <linux/of_platform.h>
+>> +#include <linux/phy/phy.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/pm_runtime.h>
+>> +#include <linux/regmap.h>
+>> +#include <sound/hdmi-codec.h>
+>> +#include <video/videomode.h>
+>> +
+>> +#include "mtk_dp_reg.h"
+>> +
+>> +#define MTK_DP_AUX_WAIT_REPLY_COUNT 20
+>> +#define MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT 3
+>> +
+>> +//TODO: platform/device data or dts?
+>
+>Assuming that your TODO is about the maximum number of lanes,
+>{ .compatible = "mediatek,mt8195-edp-tx", .data = &some_const_structure },
 
-You could aid me in diagnosing this by posting the output of
-/sys/kernel/debug/clk/clk_summary and
-/sys/kernel/debug/pm_genpd/pm_genpd_summary when the system is in this
-failed state.
+Yes, exactly that, it'll be in v10.
+>
+>> +#define MTK_DP_MAX_LANES 4
+>> +#define MTK_DP_MAX_LINK_RATE MTK_DP_LINKRATE_HBR3
+>
+>..snip..
+>
+>> +
+>> +static int mtk_dp_bulk_16bit_write(struct mtk_dp *mtk_dp, u32 offset, u8 *buf,
+>> +				   size_t length)
+>> +{
+>> +	int i;
+>> +	int ret = 0;
+>> +	int num_regs = (length + 1) / 2;
+>> +
+>> +	/* 2 bytes per register */
+>> +	for (i = 0; i < num_regs; i++) {
+>> +		u32 val = buf[i * 2] |
+>> +			  (i * 2 + 1 < length ? buf[i * 2 + 1] << 8 : 0);
+>> +
+>> +		ret = mtk_dp_write(mtk_dp, offset + i * 4, val);
+>> +		if (ret)
+>> +			goto out;
+>
+>if (ret)
+>     return ret;
+>
+>> +	}
+>> +
+>> +out:
+>
+>Remove this label.
+>
+>> +	return ret;
+>> +}
+>> +
+>> +static unsigned long mtk_dp_sip_atf_call(unsigned int cmd, unsigned int para)
+>> +{
+>> +	struct arm_smccc_res res;
+>> +
+>> +	arm_smccc_smc(MTK_DP_SIP_CONTROL_AARCH32, cmd, para, 0, 0, 0, 0, 0,
+>> +		      &res);
+>> +
+>> +	pr_debug("[DPTX]%s cmd 0x%x, p1 0x%x, ret 0x%lx-0x%lx", __func__, cmd,
+>> +		 para, res.a0, res.a1);
+>> +	return res.a1;
+>> +}
+>> +
+>> +static int mtk_dp_msa_bypass_disable(struct mtk_dp *mtk_dp)
+>> +{
+>> +	const u16 bits_to_set =
+>> +		BIT(HTOTAL_SEL_DP_ENC0_P0_SHIFT) |
+>> +		BIT(VTOTAL_SEL_DP_ENC0_P0_SHIFT) |
+>> +		BIT(HSTART_SEL_DP_ENC0_P0_SHIFT) |
+>> +		BIT(VSTART_SEL_DP_ENC0_P0_SHIFT) |
+>> +		BIT(HWIDTH_SEL_DP_ENC0_P0_SHIFT) |
+>> +		BIT(VHEIGHT_SEL_DP_ENC0_P0_SHIFT) |
+>> +		BIT(HSP_SEL_DP_ENC0_P0_SHIFT) | BIT(HSW_SEL_DP_ENC0_P0_SHIFT) |
+>> +		BIT(VSP_SEL_DP_ENC0_P0_SHIFT) | BIT(VSW_SEL_DP_ENC0_P0_SHIFT);
+>> +	return mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3030, bits_to_set,
+>> +			   bits_to_set);
+>> +}
+>> +
+>> +#define MTK_UPD_BITS_OR_OUT(mtk_dp, offset, val, mask, ret, label) \
+>> +	do {\
+>> +		ret = mtk_dp_update_bits(mtk_dp, offset, val, mask); \
+>> +		if (ret) \
+>> +			goto label; \
+>> +	} while (0)
+>
+>I'm sorry, no offense - but this macro is a bit ugly...
+>
+>I think I understand why you have introduced it, but in my opinion this decreases
+>human readability a lot, I was even about to point out multiple functions that
+>you had unused labels before checking this macro, as that was totally unexpected...
+>
+>In my opinion, this should be open-coded everywhere... yes it makes the file a
+>bit fatter in terms of amount of text, but eh... it's life :)))
+>
+>
+No offense taken... I find the macro ugly too... but I couldn't think
+of anything less
+ugly... I'll bite the bullet and write all of the code then.
 
-Regards,
-Lucas
+>> +
+>
+>....snip....
+>
+>> +
+>> +static int mtk_dp_set_color_format(struct mtk_dp *mtk_dp,
+>> +				   enum mtk_dp_color_format color_format)
+>> +{
+>> +	u32 val;
+>> +	int ret;
+>> +
+>> +	mtk_dp->info.format = color_format;
+>> +
+>> +	/* Update MISC0 */
+>> +	ret = mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_3034,
+>> +				 color_format << DP_TEST_COLOR_FORMAT_SHIFT,
+>> +			   DP_TEST_COLOR_FORMAT_MASK);
+>> +
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	switch (color_format) {
+>> +	case MTK_DP_COLOR_FORMAT_YUV_422:
+>> +		val = PIXEL_ENCODE_FORMAT_DP_ENC0_P0_YCBCR422;
+>> +		break;
+>> +	case MTK_DP_COLOR_FORMAT_YUV_420:
+>> +		val = PIXEL_ENCODE_FORMAT_DP_ENC0_P0_YCBCR420;
+>> +		break;
+>> +	case MTK_DP_COLOR_FORMAT_YONLY:
+>> +	case MTK_DP_COLOR_FORMAT_RAW:
+>> +	case MTK_DP_COLOR_FORMAT_RESERVED:
+>> +	case MTK_DP_COLOR_FORMAT_UNKNOWN:
+>> +		drm_warn(mtk_dp->drm_dev, "Unsupported color format: %d\n",
+>> +			 color_format);
+>> +		fallthrough;
+>
+>Uhm, are you sure that you should fallthrough?
+>If we get a color format that we don't understand, the best thing that would
+>happen is that we'd get scrambled colors... which is something unwanted.
+>
+>The best idea is to return -EINVAL here, hence refuse to go on with an invalid
+>color format.
+>
 
+Will do.
 
+>> +	case MTK_DP_COLOR_FORMAT_RGB_444:
+>> +	case MTK_DP_COLOR_FORMAT_YUV_444:
+>> +		val = PIXEL_ENCODE_FORMAT_DP_ENC0_P0_RGB;
+>> +		break;
+>> +	}
+>> +
+>> +	return mtk_dp_update_bits(mtk_dp, MTK_DP_ENC0_P0_303C, val,
+>> +			   PIXEL_ENCODE_FORMAT_DP_ENC0_P0_MASK);
+>> +}
+>> +
+>
+>...snip...
+>
+>> +
+>> +static void mtk_dp_initialize_hpd_detect_settings(struct mtk_dp *mtk_dp)
+>> +{
+>> +	// Debounce threshold
+>
+>I think I already told you to fix comments style.
+>
+>> +	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3410,
+>> +			   8 << HPD_DEB_THD_DP_TRANS_P0_SHIFT,
+>> +			   HPD_DEB_THD_DP_TRANS_P0_MASK);
+>> +	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3410,
+>> +			   (HPD_INT_THD_DP_TRANS_P0_LOWER_500US |
+>> +			    HPD_INT_THD_DP_TRANS_P0_UPPER_1100US)
+>> +				   << HPD_INT_THD_DP_TRANS_P0_SHIFT,
+>> +			   HPD_INT_THD_DP_TRANS_P0_MASK);
+>> +
+>> +	// Connect threshold 1.5ms + 5 x 0.1ms = 2ms
+>> +	// Disconnect threshold 1.5ms + 5 x 0.1ms = 2ms
+>> +	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3410,
+>> +			   (5 << HPD_DISC_THD_DP_TRANS_P0_SHIFT) |
+>> +				   (5 << HPD_CONN_THD_DP_TRANS_P0_SHIFT),
+>> +			   HPD_DISC_THD_DP_TRANS_P0_MASK |
+>> +				   HPD_CONN_THD_DP_TRANS_P0_MASK);
+>> +	mtk_dp_update_bits(mtk_dp, MTK_DP_TRANS_P0_3430,
+>> +			   HPD_INT_THD_ECO_DP_TRANS_P0_HIGH_BOUND_EXT,
+>> +			   HPD_INT_THD_ECO_DP_TRANS_P0_MASK);
+>> +}
+>> +
+>
+>..snip..
+>
+>> +
+>> +static int mtk_dp_power_disable(struct mtk_dp *mtk_dp)
+>> +{
+>> +	int ret;
+>> +
+>> +	ret = mtk_dp_write(mtk_dp, MTK_DP_TOP_PWR_STATE, 0);
+>> +
+>> +	if (ret)
+>> +		goto out;
+>> +
+>> +	usleep_range(10, 200);
+>> +	ret = mtk_dp_write(mtk_dp, MTK_DP_0034,
+>> +			   DA_CKM_CKTX0_EN_FORCE_EN | DA_CKM_BIAS_LPF_EN_FORCE_VAL |
+>> +		     DA_CKM_BIAS_EN_FORCE_VAL |
+>> +		     DA_XTP_GLB_LDO_EN_FORCE_VAL |
+>> +		     DA_XTP_GLB_AVD10_ON_FORCE_VAL);
+>> +
+>> +	if (ret)
+>> +		goto out;
+>> +
+>> +	/* Disable RX */
+>> +	ret = mtk_dp_write(mtk_dp, MTK_DP_1040, 0);
+>> +
+>> +	if (ret)
+>> +		goto out;
+>> +
+>> +	ret = mtk_dp_write(mtk_dp, MTK_DP_TOP_MEM_PD,
+>> +			   0x550 | BIT(FUSE_SEL_SHIFT) | BIT(MEM_ISO_EN_SHIFT));
+>> +
+>> +out:
+>
+>You are using a goto instead of a return, but you're not reverting any change,
+>so this goto usage is not justified - hence, wrong.
+>
+>Please simply return ret when anything fails, and return 0 at the end of this
+>function.
+>
+>	.......
+>	(blahblah function code)
+>
+>	ret = something()
+>	if (ret)
+>		return ret;
+>
+>	return 0;
+>}
+>
+>> +	return ret;
+>> +}
+>> +
+>
+>...snip...
+
+I'll remove all the gotos that have no unwrapping then.
+
+>
+>> +
+>> +static int mtk_dp_dt_parse(struct mtk_dp *mtk_dp,
+>> +			   struct platform_device *pdev)
+>> +{
+>> +	struct device *dev = &pdev->dev;
+>> +	int ret = 0;
+>> +	void __iomem *base;
+>> +
+>> +	base = devm_platform_ioremap_resource(pdev, 0);
+>> +	if (IS_ERR(base))
+>> +		return PTR_ERR(base);
+>> +
+>> +	mtk_dp->regs = syscon_node_to_regmap(dev->of_node);
+>> +	if (IS_ERR(mtk_dp->regs))
+>> +		return PTR_ERR(mtk_dp->regs);
+>> +
+>> +	//TODO: optional clock?
+>
+>Well, if it's optional, you should use devm_clk_get_optional(), meaning
+>that......
+>
+>> +	mtk_dp->dp_tx_clk = devm_clk_get(dev, "faxi");
+>> +	if (IS_ERR(mtk_dp->dp_tx_clk)) {
+>> +		ret = PTR_ERR(mtk_dp->dp_tx_clk);
+>> +		dev_info(dev, "Failed to get dptx clock: %d\n", ret);
+>> +		mtk_dp->dp_tx_clk = NULL;
+>
+>...I shouldn't see this snippet of code, as it should be a bit different... :)
+>
+It is still unclear to me if this should be optional or not, hence the 'TODO'
+
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>
+>..snip..
+>
+>> +static void mtk_dp_bridge_atomic_disable(struct drm_bridge *bridge,
+>> +					 struct drm_bridge_state *old_state)
+>> +{
+>> +	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
+>> +
+>> +	mtk_dp_video_mute(mtk_dp, true);
+>> +	mtk_dp->state = MTK_DP_STATE_IDLE;
+>> +	mtk_dp->train_state = MTK_DP_TRAIN_STATE_STARTUP;
+>> +
+>> +	mtk_dp->enabled = false;
+>
+>> +	msleep(100);
+>
+>100 milliseconds is an eternity, why are we sleeping for *so long* here?
+>
+>Please, either add a comment that fully explains the resons for that, or
+>remove the sleep entirely: to my eyes, it doesn't look like this sleep is
+>really needed for anything important because here you are disabling the
+>bridge and *powering off* the IP entirely.
+>
+This sleep can be removed.
+I will also make an effort to document all the other delays in the code for v10.
+
+>> +	mtk_dp_poweroff(mtk_dp);
+>> +}
+>> +
+>
+>..snip..
+>
+>> +
+>> +static enum drm_mode_status
+>> +mtk_dp_bridge_mode_valid(struct drm_bridge *bridge,
+>> +			 const struct drm_display_info *info,
+>> +			 const struct drm_display_mode *mode)
+>> +{
+>> +	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
+>> +	u32 rx_linkrate = (u32)mtk_dp->train_info.link_rate * 27000;
+>> +	u32 bpp = info->color_formats & DRM_COLOR_FORMAT_YCBCR422 ? 16 : 24;
+>> +
+>> +	if (rx_linkrate * mtk_dp->train_info.lane_count < mode->clock * bpp / 8)
+>> +		return MODE_CLOCK_HIGH;
+>> +
+>> +	if (mode->clock > 600000)
+>> +		return MODE_CLOCK_HIGH;
+>> +
+>> +	//TODO: explain magic number: 62?
+>
+>Please fix this TODO for v10.
+>
+>> +	if ((mode->clock * 1000) / (mode->htotal * mode->vtotal) > 62)
+>> +		return MODE_CLOCK_HIGH;
+>> +
+>> +	return MODE_OK;
+>> +}
+>> +
+>
+>
+
+Thx a lot for your review,
+Guillaume.
 
 -- 
 linux-phy mailing list
