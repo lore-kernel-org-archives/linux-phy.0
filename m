@@ -4,83 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10F57C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Apr 2022 09:21:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EBB0C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Apr 2022 09:37:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pIsh7XNjwOgkytJjzF+GAeyh84vBYguJIcGHVdX44rA=; b=lKqp4FFYB1805Z
-	vW3r3As4ISLxgEV/1wi/pCtbBqCt0Kvq+3lR0WVz68eGNRFMl/Ghk/HTSO2PKoZYMqjqwOwSI1MlV
-	535frbxDOQfMBLiOCBP85uaZ9s2BhcLREc4Zbuuboy20slr4ina9lcuNzNiRX1eFO94XwrPLTqNwE
-	m+msiTWTaAMdpA1jyrHprtpJQmROPQKNfZVWsGPAzTqyyQH6yJB5gUYDplM5nLWybekOrvcLYJjhd
-	IFnBfnZxKiqJ2/jzrIuHpPqRp7QaDhjpoidlQZehUz5YVUqdXgvot2GipzKXN6JPEtwWIDhwpbW0F
-	Xfb7tL+LGK8Dmp2oJScg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
+	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=50S2qr3j1CuRLR5V84t5K4KaQPsPeRPQw2ZAY+QcdM4=; b=OORQfKwp96v6mnz3hcOtzSWK/z
+	c1IcRJ8c5+mx5NQMQHbSuofRZF6dMuDQR6PeDGjbTZO9W+FXUUUHJiXMqrs+QaAhKxf1uqSEOLWcb
+	MWAlmnxQz5gbPw4FLb2Xaf7gipQIgvARMTDXNztQ3ImFCuHDxsPM1yc5KlTYZbBG5+eRPztqQOBRl
+	GeeET2fxNpc4I5la3uZb3KyYQaPPrtkifRefAJVX2TArD1fBcnGvNf+p7BJDb3o1Y3mk46RK31bhT
+	kuQhKZ5hU6ecpzaT3gFCFNg8yfCMZMvdBML1wHCC9HdIR5gigg9jhjtpoDFJCWfxcnUm/6lIOM8rF
+	nwN6DklQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1neCiQ-00Ct6H-Es; Tue, 12 Apr 2022 09:21:38 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1neCxq-00CyR8-P8; Tue, 12 Apr 2022 09:37:34 +0000
+Received: from mail-oi1-x22c.google.com ([2607:f8b0:4864:20::22c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1neCiL-00Ct2p-4e
- for linux-phy@lists.infradead.org; Tue, 12 Apr 2022 09:21:36 +0000
-Received: by mail-ed1-x531.google.com with SMTP id b15so21608980edn.4
- for <linux-phy@lists.infradead.org>; Tue, 12 Apr 2022 02:21:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=JaTsKAtJSNi54rHJhG+hyScjwgHDH7ka4b7b1ta/ySE=;
- b=iJelTY48iYoGFyhaVFKLSxyokhQc4j93X9lAO5VhyZM9gCgpC+PF7tZeerg9RneIfw
- Eb70dzcx4VMDRiJEbpiXy+8uVTAXBY4jhu2+7BeoSYso4U5tRiab2Gj1RA3qgIUUyhl1
- mvn5o+J92QpBLV223Feml/8T2wb9WuAYrl9wiGwC6fL/hU8FsDjTbSSLWc36Jp6oaVHy
- EvfxX6ySNbJzY4TAoWCpUnP3I1iU5aUbqERMjyiRfzpGxWBBLlv6zs1sRXdREAHlFj7A
- Q9b8ze2DYdv3O4yZ+CMXhYuNm4K8ZmJptFpggymArTWdcckk5aCVuDck954SAUZ6JpuF
- UsSw==
+ id 1neCxc-00CyJG-VY
+ for linux-phy@lists.infradead.org; Tue, 12 Apr 2022 09:37:23 +0000
+Received: by mail-oi1-x22c.google.com with SMTP id e189so18426456oia.8
+ for <linux-phy@lists.infradead.org>; Tue, 12 Apr 2022 02:37:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+ h=from:user-agent:references:in-reply-to:mime-version:date:message-id
+ :subject:to:cc;
+ bh=evIZsLOQJjFi37tCwIrJkfpZ9gIHXQ0UW8l5PUtfRtM=;
+ b=4QAERHFJ8BTZGtY7E+DkrtJGJSnzxgQgHwbOYAwlxzZXnKMY9dp3NVgOGA1Cbx3AW0
+ FxY2zgabemqQKkM8yYWIKTkzeKaFcP40xAgE+1dbimqQ4CldI7+o8TQ8dE1kodW+jrQU
+ gYXrQIuo73uA51I8IaOWcFPhvw+t8g/pF4/eUcwWtHBUvZuNigXM/QZvceMRt4bz7R/Q
+ iRCQbyMV95o4pipHij2S0MaVqvssVGHgSj8Xz769fQj6HFHoNaTjIpDoiR+7ZrOU9ACV
+ kY13mSlQ12q7mCyqJQTWIMCVaZV8qk0mntRPEqqEkgTpq9DAW883/q4t7wQjC3Wogopk
+ 7VLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=JaTsKAtJSNi54rHJhG+hyScjwgHDH7ka4b7b1ta/ySE=;
- b=QGsvVpHYxfD1uQzsWctVKqMNdoyX15s/mOF1mvTN3x9FVKJ3Hjq7zkBd30wYBt58F/
- dolzE4s5OqL2j9yEuOy/nnKeLRrwLXwMJa1ihyD0FDixpOJ0nNAHq9KUcPzHJJHh5G3e
- CgNOoV+kipd5j7yQCn0bGYukFqV/CLzGio/j+/jdQyQ/wzpgQDFNSFNc1bLtPHN3IB0H
- q51FX85UN+ZvLM83BQr5S+hPD02KAczwNYikAmodYjvwqCYyNKjMyZhJ9qPbUAhRct0D
- J4NoDxLcUscfxRfoOmYHWMwggpF3s3MI06Rz+1izu5MfY9M/FXEUfq8P/J1mktea84zA
- ROAw==
-X-Gm-Message-State: AOAM532pV6WoyN2T9qNsDBntejnoEe9Azv5QqaZhSdqWIU+DrsXu/VMa
- qUbIok2aApLqtZ4gVFdRs4ewRg==
-X-Google-Smtp-Source: ABdhPJw5C5ynAEjOGwr/Emmjbh1RB5R+OcYH/bF0ZPE6x+rHILFMQ21c/S2l6KrpC8SuS8oQX3VIXQ==
-X-Received: by 2002:a05:6402:3713:b0:41d:96f6:8a09 with SMTP id
- ek19-20020a056402371300b0041d96f68a09mr1070881edb.136.1649755286201; 
- Tue, 12 Apr 2022 02:21:26 -0700 (PDT)
-Received: from [192.168.0.194] (xdsl-188-155-201-27.adslplus.ch.
- [188.155.201.27]) by smtp.gmail.com with ESMTPSA id
- dd6-20020a1709069b8600b006df08710d00sm13200550ejc.85.2022.04.12.02.21.25
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 12 Apr 2022 02:21:25 -0700 (PDT)
-Message-ID: <2853deaa-324a-6c54-2fe3-3f4b78d110bb@linaro.org>
-Date: Tue, 12 Apr 2022 11:21:24 +0200
+ h=x-gm-message-state:from:user-agent:references:in-reply-to
+ :mime-version:date:message-id:subject:to:cc;
+ bh=evIZsLOQJjFi37tCwIrJkfpZ9gIHXQ0UW8l5PUtfRtM=;
+ b=IMW/kYAXmYkUhzrKEEZbNTw0mHmaGlWQHbx/2J6qL7bBhYbwo6U8tIaRJRMu3FzuHk
+ /fLpwqo0kbNT7vjBIKyhZCM0X+IBlPZ9GNoa5VisCwIsX8EsYcNmZxMIhhhfiWpN8TA/
+ 0r2SMC9DazyfJ6RCSClYgAOK7AH+Id99ABoPhlkC6hZRyDkbF/1jraxb4it3IB17CveT
+ 1MI9ipsZsV1qGy+W3yiqB3D2foSgj1AKtY8FhM9w5Q/ee5Od9XZJAz6llaOXrr4iwiCD
+ FNnL9VF5+jNEWvgG0sfyYTz/HgHJ6yVrJ3Id4bSVMwHJNPBbyLi24l0Z9ZKVLWnvJe7c
+ 8pYQ==
+X-Gm-Message-State: AOAM533ZENOtr4HH3zI1hLmswYdrcs+G0PnzM26aT/IcdiWSKzlL6qbs
+ vL1YcsNkYdMryMKVmQvq6teLsk4Sx2xpguRG/lyNmw==
+X-Google-Smtp-Source: ABdhPJw50fakNZZtGphBh/3iA9VZT9nYrxLt56LrY9rUXQ7AMr4P93Xi3Vwjdes2KLA+ubvrsqu9MdqkL/hZl7jIqcA=
+X-Received: by 2002:a05:6808:1804:b0:2f9:65eb:c40b with SMTP id
+ bh4-20020a056808180400b002f965ebc40bmr1343724oib.78.1649756239335; Tue, 12
+ Apr 2022 02:37:19 -0700 (PDT)
+Received: from 753933720722 named unknown by gmailapi.google.com with
+ HTTPREST; Tue, 12 Apr 2022 02:37:18 -0700
+From: Guillaume Ranquet <granquet@baylibre.com>
+User-Agent: meli 0.7.2
+References: <20220327223927.20848-1-granquet@baylibre.com>
+ <20220327223927.20848-17-granquet@baylibre.com>
+ <736a7f6710f1ea31eff4abcc3d9c3ff79a1f0ddb.camel@mediatek.com>
+In-Reply-To: <736a7f6710f1ea31eff4abcc3d9c3ff79a1f0ddb.camel@mediatek.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom, qmp: Add SDX65 USB PHY binding
-Content-Language: en-US
-To: Rohit Agarwal <quic_rohiagar@quicinc.com>, agross@kernel.org,
- bjorn.andersson@linaro.org, kishon@ti.com, vkoul@kernel.org,
- robh+dt@kernel.org, krzk+dt@kernel.org
-Cc: manivannan.sadhasivam@linaro.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <1649740652-17515-1-git-send-email-quic_rohiagar@quicinc.com>
- <1649740652-17515-2-git-send-email-quic_rohiagar@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <1649740652-17515-2-git-send-email-quic_rohiagar@quicinc.com>
+Date: Tue, 12 Apr 2022 02:37:18 -0700
+Message-ID: <CABnWg9vfMJTbOTK-khgaj7RReLVSKJ3DCmJbDvgKMf+tUBwoSA@mail.gmail.com>
+Subject: Re: [PATCH v9 16/22] drm/meditek: dpi: Add matrix_sel helper
+To: Rex-BC Chen <rex-bc.chen@mediatek.com>, vkoul@kernel.org, airlied@linux.ie,
+ angelogioacchino.delregno@collabora.com, chunfeng.yun@mediatek.com, 
+ chunkuang.hu@kernel.org, ck.hu@mediatek.com, daniel@ffwll.ch, deller@gmx.de, 
+ jitao.shi@mediatek.com, kishon@ti.com, krzk+dt@kernel.org, 
+ maarten.lankhorst@linux.intel.com, matthias.bgg@gmail.com, mripard@kernel.org, 
+ p.zabel@pengutronix.de, robh+dt@kernel.org, tzimmermann@suse.de
+Cc: devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org, 
+ linux-phy@lists.infradead.org, markyacoub@google.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220412_022133_262869_10C1CDEC 
-X-CRM114-Status: UNSURE (   6.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220412_023721_081741_8812DEEF 
+X-CRM114-Status: GOOD (  12.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,18 +97,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/04/2022 07:17, Rohit Agarwal wrote:
-> Add devicetree YAML binding for Qualcomm QMP Super Speed (SS) PHY found
-> in SDX65.
-> 
-> Signed-off-by: Rohit Agarwal <quic_rohiagar@quicinc.com>
+On Mon, 28 Mar 2022 10:49, Rex-BC Chen <rex-bc.chen@mediatek.com> wrote:
+>On Mon, 2022-03-28 at 00:39 +0200, Guillaume Ranquet wrote:
+>> Add a mtk_dpi_matrix_sel() helper to update the DPI_MATRIX_SET
+>> register depending on the color format.
+>>
+>> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+>> ---
+>>  drivers/gpu/drm/mediatek/mtk_dpi.c | 21 +++++++++++++++++++++
+>>  1 file changed, 21 insertions(+)
+>>
+>> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c
+>> b/drivers/gpu/drm/mediatek/mtk_dpi.c
+>> index 8198d3cf23ac..82f97c687652 100644
+>> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+>> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+>> @@ -385,6 +385,25 @@ static void mtk_dpi_config_disable_edge(struct
+>> mtk_dpi *dpi)
+>>  		mtk_dpi_mask(dpi, dpi->conf->reg_h_fre_con, 0,
+>> EDGE_SEL_EN);
+>>  }
+>>
+>> +static void mtk_dpi_matrix_sel(struct mtk_dpi *dpi, enum
+>> mtk_dpi_out_color_format format)
+>> +{
+>> +	u32 matrix_sel = 0;
+>> +
+>> +	switch (format) {
+>> +	case MTK_DPI_COLOR_FORMAT_YCBCR_422:
+>> +	case MTK_DPI_COLOR_FORMAT_YCBCR_422_FULL:
+>> +	case MTK_DPI_COLOR_FORMAT_YCBCR_444:
+>> +	case MTK_DPI_COLOR_FORMAT_YCBCR_444_FULL:
+>> +	case MTK_DPI_COLOR_FORMAT_XV_YCC:
+>> +		if (dpi->mode.hdisplay <= 720)
+>> +			matrix_sel = 0x2;
+>> +		break;
+>> +	default:
+>> +		break;
+>> +	}
+>> +	mtk_dpi_mask(dpi, DPI_MATRIX_SET, matrix_sel,
+>> INT_MATRIX_SEL_MASK);
+>> +}
+>> +
+>>  static void mtk_dpi_config_color_format(struct mtk_dpi *dpi,
+>>  					enum mtk_dpi_out_color_format
+>> format)
+>>  {
+>> @@ -392,6 +411,7 @@ static void mtk_dpi_config_color_format(struct
+>> mtk_dpi *dpi,
+>>  	    (format == MTK_DPI_COLOR_FORMAT_YCBCR_444_FULL)) {
+>>  		mtk_dpi_config_yuv422_enable(dpi, false);
+>>  		mtk_dpi_config_csc_enable(dpi, true);
+>> +		mtk_dpi_matrix_sel(dpi, format);
+>>  		if (dpi->conf->swap_input_support)
+>>  			mtk_dpi_config_swap_input(dpi, false);
+>>  		mtk_dpi_config_channel_swap(dpi,
+>> MTK_DPI_OUT_CHANNEL_SWAP_BGR);
+>> @@ -399,6 +419,7 @@ static void mtk_dpi_config_color_format(struct
+>> mtk_dpi *dpi,
+>>  		   (format == MTK_DPI_COLOR_FORMAT_YCBCR_422_FULL)) {
+>>  		mtk_dpi_config_yuv422_enable(dpi, true);
+>>  		mtk_dpi_config_csc_enable(dpi, true);
+>> +		mtk_dpi_matrix_sel(dpi, format);
+>>  		if (dpi->conf->swap_input_support)
+>>  			mtk_dpi_config_swap_input(dpi, true);
+>>  		mtk_dpi_config_channel_swap(dpi,
+>> MTK_DPI_OUT_CHANNEL_SWAP_RGB);
+>
+>Hello Guillaume,
+>
+>Thanks for your patch.
+>I have one question:
+>Do this setting affect the dpi for previous SoCs?
+>(8183, 8192, or 8186)
+>If we can confirm the original register setting for this offset in
+>8183/8192/8186, I think we can clarify this question.
+>
 
+I've checked in the datasheet I have (8365/8385) that this register
+and setting exists.
+So yes, it will affect other platforms.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-
-Best regards,
-Krzysztof
+>BRs,
+>Rex
+>
 
 -- 
 linux-phy mailing list
