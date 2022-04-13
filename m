@@ -4,62 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0D01C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 09:37:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59938C4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 09:42:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pqNWH8hxOgwpYggrryCczbGhodewkPeWpyacmK9ApUY=; b=picINW6wWfNstq
-	hEsEBPCRdWF3UajbWn0oy3SWoS0uYPdRCWRDRMI3TtCM5oW7mJj+KbcF9lkdp/DmSm6WBgVr/MLh9
-	13TP/5WY3Wz1UJ1Qv1HBEqQsNCjv2McpLgDXjgt0e0bKWLG/V0hdz3p8Axe/uS9lemDdCEMB8nYxo
-	xptsIfX7Td6rhDxB2KzHCk9nh0un1bajgsxKzXZvrLWkLZlnTj9hVOp+q+HjhJSKigbIx9CKqjDsY
-	SicwSOHqtlvP5zFnj3ZjioVqZ/mp33O5iFw2VpAWr28fNadjLJ97vmgAA6+nGJf+NhhQ3m9lehOSM
-	8XRxg2c16LJNpq+UfasA==;
+	List-Owner; bh=8Vq3Lb8wGrm1phugGZtm16TVSD5GcFZdiYN9BQCCxH4=; b=r16eCSK6tmIjdl
+	ja95REIeTiCjWH0JgPqRiokVnB5d9/JFOErGm4yXYXpB8mD+BmA4AcDB7l2VwMEVilLHHlE2VQZI1
+	lWuAXtcIMZ7sL1xUmb+7fZZZvtEOGSY3G8Ip9YCbIOZNEB9eTFSJRycFHFvNTD8Bx1Tg1qtTs9xua
+	rJSe/BoUfDoAz0kOkmTB3g/0zNcByafiAJzH2dvYOVwL/U75zMgScxBKalEOLekUeS93myZD0Pvxl
+	i2QDz7cHSOwX/ec74eFpwXhwi267sPz2jxuqaXF2mety03MKYo0MRlxd4oj2URWRel8NCbZpkeGRB
+	8X9NQcMAIAYHy9VUrn6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1neZQu-000MTR-3X; Wed, 13 Apr 2022 09:37:04 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1neZVx-000OpB-ON; Wed, 13 Apr 2022 09:42:17 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1neZQg-000MLs-GY; Wed, 13 Apr 2022 09:36:51 +0000
+ id 1neZVu-000Ojm-Fe
+ for linux-phy@lists.infradead.org; Wed, 13 Apr 2022 09:42:16 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id C8CD8B82152;
- Wed, 13 Apr 2022 09:36:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9E52C385A3;
- Wed, 13 Apr 2022 09:36:46 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id C8D8A61C63;
+ Wed, 13 Apr 2022 09:42:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 737D4C385A4;
+ Wed, 13 Apr 2022 09:42:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1649842607;
- bh=ztmUj0miSZt/QYRlPYAWn4jbHD+9n7eoHp+CPON8Hm4=;
+ s=k20201202; t=1649842933;
+ bh=bZvkiToD1lv0wZ8rV5rLM4SZ1HEgqXqrLMsRJE9huTM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aSQjngG4u24G5MS93daRoZFEPXpjjZzaIHF6n/UPWFprURcQZHXVOZBBzBMiJbc1f
- QxsAWCFoy37e9TroGYXzvYHnrDZQJcFxKRLdmPTyzMdJxhX1asn+0X2nb3rj33o441
- LU/jvBw43Gy0ZN6x0A8yZdjxWfw6VAYLUqmVpueNy8Oe3EvkNJKv1fiYO+SBAe/hTi
- GhrYVCz9B71gvr/Q3Y5Kh7TnPV0GGfVDEwB9uKSDty5KiTJKq6Emttu1ca0pufwfBU
- f1QMzSW8NEHyFj/iAIZ6M952uOA/xmSwywq+HTCjgDhdNoonNtGeAUTcgd16rubcbh
- a00BUcOCofJpg==
-Date: Wed, 13 Apr 2022 15:06:42 +0530
+ b=gPYNWDjN4tZYe3KCBcWm4BuoceJVqcoCTceBluSnGvpqBOzhXIkLGDVY3BZbYn95g
+ uzdB6d0F9APfGppJDRjcJIXdDlOOfKftP3FnB3aFvLJ4f8q322jm9wu839tWE2igRb
+ JrBZ0hpHEHd448jkrbjxH8FLM2uoDbyaT9gdfXlZTjmd6joX/shS2VwvuE/1dm6iPP
+ j8vA3EVARlgdmtowbkNT3AaZkY8PcQq3KzGlMSzaMFQ70OQeint06fw7ALhygUiIza
+ rY1/oxoc4BtkyjvGiOeBrcgry8t1KSCK9wQDr5hgdtlaBv5ZwO7weXD3r6VjkQLkrm
+ XB6tyolyuQvfg==
+Date: Wed, 13 Apr 2022 15:12:09 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Marek Vasut <marex@denx.de>
-Cc: linux-phy@lists.infradead.org, Fabio Estevam <festevam@denx.de>,
+To: Sandeep Maheswaram <quic_c_sanm@quicinc.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- NXP Linux Team <linux-imx@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Richard Zhu <hongxing.zhu@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] phy: freescale: imx8m-pcie: Handle
- IMX8_PCIE_REFCLK_PAD_UNUSED
-Message-ID: <YlaZqvKAQeGCNOQ9@matsya>
-References: <20220312013812.169671-1-marex@denx.de>
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Wesley Cheng <wcheng@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
+ Doug Anderson <dianders@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@canonical.com>,
+ devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, quic_pkondeti@quicinc.com,
+ quic_ppratap@quicinc.com
+Subject: Re: [PATCH v2 2/3] phy: qcom-snps: Add support for overriding phy
+ tuning parameters
+Message-ID: <Ylaa8THv24KEEcJ4@matsya>
+References: <1646288011-32242-1-git-send-email-quic_c_sanm@quicinc.com>
+ <1646288011-32242-3-git-send-email-quic_c_sanm@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220312013812.169671-1-marex@denx.de>
+In-Reply-To: <1646288011-32242-3-git-send-email-quic_c_sanm@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220413_023650_728632_4E93CA78 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20220413_024214_646486_FB376C55 
+X-CRM114-Status: GOOD (  26.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,20 +84,271 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12-03-22, 02:38, Marek Vasut wrote:
-> The 'fsl,refclk-pad-mode' DT property used to select clock source for
-> PCIe PHY can have either of three values, IMX8_PCIE_REFCLK_PAD_INPUT,
-> IMX8_PCIE_REFCLK_PAD_OUTPUT, IMX8_PCIE_REFCLK_PAD_UNUSED. The first
-> two options are handled correctly by the driver, the last one is not,
-> this patch implements support for the last option.
+On 03-03-22, 11:43, Sandeep Maheswaram wrote:
+> Added support for overriding x0,x1,x2,x3 params for SNPS PHY by reading
+> values from device tree.
 > 
-> The IMX8_PCIE_REFCLK_PAD_INPUT means PCIE_RESREF is PHY clock input,
-> the IMX8_PCIE_REFCLK_PAD_OUTPUT means PHY clock are sourced from SoC
-> internal PLL and output to PCIE_RESREF external IO pin. The last
-> IMX8_PCIE_REFCLK_PAD_UNUSED is a combination of previous two, PHY
-> clock are sourced from SoC internal PLL and not output anywhere.
+> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 192 ++++++++++++++++++++++++++
+>  1 file changed, 192 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> index 7e61202..b5aa06d 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+> @@ -51,6 +51,48 @@
+>  #define USB2_SUSPEND_N				BIT(2)
+>  #define USB2_SUSPEND_N_SEL			BIT(3)
+>  
+> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0	(0x6c)
+> +
+> +/*USB_PHY_HS_PHY_OVERRIDE_X0 register bits*/
 
-This does not apply on phy-next, please rebase
+space after /* and before */ (checkpatch.pl --strict would warn you)
+Pls fix it everywhere
+
+> +#define HS_DISCONNECT_MASK			GENMASK(2, 0)
+> +#define HS_DISCONNECT_SHIFT			0x0
+> +
+> +#define SQUELCH_DETECTOR_MASK			GENMASK(7, 5)
+> +#define SQUELCH_DETECTOR_SHIFT			0x5
+> +
+> +
+> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1	(0x70)
+> +
+> +/*USB_PHY_HS_PHY_OVERRIDE_X1 register bits*/
+> +#define HS_AMPLITUDE_MASK			GENMASK(3, 0)
+> +#define HS_AMPLITUDE_SHIFT			0x0
+> +
+> +#define PREEMPHASIS_DURATION_MASK		BIT(5)
+> +#define PREEMPHASIS_DURATION_SHIFT		0x5
+> +
+> +#define PREEMPHASIS_AMPLITUDE_MASK		GENMASK(7, 6)
+> +#define PREEMPHASIS_AMPLITUDE_SHIFT		0x6
+> +
+> +
+> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2	(0x74)
+> +
+> +/*USB_PHY_HS_PHY_OVERRIDE_X2 register bits*/
+> +#define HS_RISE_FALL_MASK			GENMASK(1, 0)
+> +#define HS_RISE_FALL_SHIFT			0x0
+> +
+> +#define HS_CROSSOVER_VOLTAGE_MASK		GENMASK(3, 2)
+> +#define HS_CROSSOVER_VOLTAGE_SHIFT		0x2
+> +
+> +#define HS_OUTPUT_IMPEDANCE_MASK		GENMASK(5, 4)
+> +#define HS_OUTPUT_IMPEDANCE_SHIFT		0x4
+> +
+> +
+> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X3	(0x78)
+> +
+> +/*USB_PHY_HS_PHY_OVERRIDE_X3 register bits*/
+> +#define LS_FS_OUTPUT_IMPEDANCE_MASK		GENMASK(3, 0)
+> +#define LS_FS_OUTPUT_IMPEDANCE_SHIFT		0x0
+> +
+>  #define USB2_PHY_USB_PHY_CFG0			(0x94)
+>  #define UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN	BIT(0)
+>  #define UTMI_PHY_CMN_CTRL_OVERRIDE_EN		BIT(1)
+> @@ -65,6 +107,43 @@ static const char * const qcom_snps_hsphy_vreg_names[] = {
+>  
+>  #define SNPS_HS_NUM_VREGS		ARRAY_SIZE(qcom_snps_hsphy_vreg_names)
+>  
+> +/* struct override_param - structure holding snps phy overriding param
+> + * set override true if the  device tree property exists and read and assign
+> + * to value
+> + */
+> +struct override_param {
+> +	bool override;
+> +	u8 value;
+> +};
+> +
+> +/*struct override_params - structure holding snps phy overriding params
+> + * @hs_disconnect: disconnect threshold
+> + * @squelch_detector: threshold to detect valid high-speed data
+> + * @hs_amplitude: high-speed DC level voltage
+> + * @preemphasis_duration: duration for which the HS pre-emphasis current
+> + *  is sourced onto DP<#> or DM<#>
+> + * @preemphasis_amplitude: current sourced to DP<#> and DM<#> after
+> + *  a J-to-K or K-to-J transition.
+> + * @hs_rise_fall_time: rise/fall times of the high-speed waveform
+> + * @hs_crossover_voltage: voltage at which the DP<#> and DM<#>
+> + *  signals cross while transmitting in HS mode
+> + * @hs_output_impedance: driver source impedance to compensate for added series
+> + *  resistance on the USB
+> + * @ls_fs_output_impedance: low and full-speed single-ended source
+> + *  impedance while driving high
+> + */
+> +struct override_params {
+> +	struct override_param hs_disconnect;
+> +	struct override_param squelch_detector;
+> +	struct override_param hs_amplitude;
+> +	struct override_param preemphasis_duration;
+> +	struct override_param preemphasis_amplitude;
+> +	struct override_param hs_rise_fall_time;
+> +	struct override_param hs_crossover_voltage;
+> +	struct override_param hs_output_impedance;
+> +	struct override_param ls_fs_output_impedance;
+> +};
+> +
+>  /**
+>   * struct qcom_snps_hsphy - snps hs phy attributes
+>   *
+> @@ -87,6 +166,7 @@ struct qcom_snps_hsphy {
+>  	struct clk *ref_clk;
+>  	struct reset_control *phy_reset;
+>  	struct regulator_bulk_data vregs[SNPS_HS_NUM_VREGS];
+> +	struct override_params overrides;
+>  
+>  	bool phy_initialized;
+>  	enum phy_mode mode;
+> @@ -175,6 +255,7 @@ static int qcom_snps_hsphy_set_mode(struct phy *phy, enum phy_mode mode,
+>  static int qcom_snps_hsphy_init(struct phy *phy)
+>  {
+>  	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
+> +	struct override_params *or = &hsphy->overrides;
+>  	int ret;
+>  
+>  	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
+> @@ -222,6 +303,60 @@ static int qcom_snps_hsphy_init(struct phy *phy)
+>  	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_HS_PHY_CTRL1,
+>  					VBUSVLDEXT0, VBUSVLDEXT0);
+>  
+> +	if (or->hs_disconnect.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0,
+> +			HS_DISCONNECT_MASK,
+> +			or->hs_disconnect.value << HS_DISCONNECT_SHIFT);
+> +
+> +	if (or->squelch_detector.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0,
+> +			SQUELCH_DETECTOR_MASK,
+> +			or->squelch_detector.value << SQUELCH_DETECTOR_SHIFT);
+> +
+> +	if (or->hs_amplitude.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
+> +			HS_AMPLITUDE_MASK,
+> +			or->hs_amplitude.value << HS_AMPLITUDE_SHIFT);
+> +
+> +	if (or->preemphasis_duration.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
+> +			PREEMPHASIS_DURATION_MASK,
+> +			or->preemphasis_duration.value << PREEMPHASIS_DURATION_SHIFT);
+> +
+> +	if (or->preemphasis_amplitude.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
+> +			PREEMPHASIS_AMPLITUDE_MASK,
+> +			or->preemphasis_amplitude.value << PREEMPHASIS_AMPLITUDE_SHIFT);
+> +
+> +	if (or->hs_rise_fall_time.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
+> +			HS_RISE_FALL_MASK,
+> +			or->hs_rise_fall_time.value << HS_RISE_FALL_SHIFT);
+> +
+> +	if (or->hs_crossover_voltage.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
+> +			HS_CROSSOVER_VOLTAGE_MASK,
+> +			or->hs_crossover_voltage.value << HS_CROSSOVER_VOLTAGE_SHIFT);
+> +
+> +	if (or->hs_output_impedance.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
+> +			HS_OUTPUT_IMPEDANCE_MASK,
+> +			or->hs_output_impedance.value << HS_OUTPUT_IMPEDANCE_SHIFT);
+> +
+> +	if (or->ls_fs_output_impedance.override)
+> +		qcom_snps_hsphy_write_mask(hsphy->base,
+> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X3,
+> +			LS_FS_OUTPUT_IMPEDANCE_MASK,
+> +			or->ls_fs_output_impedance.value << LS_FS_OUTPUT_IMPEDANCE_SHIFT);
+> +
+>  	qcom_snps_hsphy_write_mask(hsphy->base,
+>  					USB2_PHY_USB_PHY_HS_PHY_CTRL_COMMON2,
+>  					VREGBYPASS, VREGBYPASS);
+> @@ -292,12 +427,15 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
+>  	struct qcom_snps_hsphy *hsphy;
+>  	struct phy_provider *phy_provider;
+>  	struct phy *generic_phy;
+> +	struct override_params *or;
+>  	int ret, i;
+>  	int num;
+> +	u32 value;
+>  
+>  	hsphy = devm_kzalloc(dev, sizeof(*hsphy), GFP_KERNEL);
+>  	if (!hsphy)
+>  		return -ENOMEM;
+> +	or = &hsphy->overrides;
+>  
+>  	hsphy->base = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(hsphy->base))
+> @@ -329,6 +467,60 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
+>  		return ret;
+>  	}
+>  
+> +	if (!of_property_read_u32(dev->of_node, "qcom,hs-disconnect",
+> +				  &value)) {
+> +		or->hs_disconnect.value = (u8)value;
+> +		or->hs_disconnect.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,squelch-detector",
+> +				  &value)) {
+> +		or->squelch_detector.value = (u8)value;
+> +		or->squelch_detector.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,hs-amplitude",
+> +				  &value)) {
+> +		or->hs_amplitude.value = (u8)value;
+> +		or->hs_amplitude.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,preemphasis-duration",
+> +				  &value)) {
+> +		or->preemphasis_duration.value = (u8)value;
+> +		or->preemphasis_duration.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,preemphasis-amplitude",
+> +				  &value)) {
+> +		or->preemphasis_amplitude.value = (u8)value;
+> +		or->preemphasis_amplitude.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,hs-rise-fall-time",
+> +				  &value)) {
+> +		or->hs_rise_fall_time.value = (u8)value;
+> +		or->hs_rise_fall_time.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,hs-crossover-voltage",
+> +				  &value)) {
+> +		or->hs_crossover_voltage.value = (u8)value;
+> +		or->hs_crossover_voltage.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,hs-output-impedance",
+> +				  &value)) {
+> +		or->hs_output_impedance.value = (u8)value;
+> +		or->hs_output_impedance.override = true;
+> +	}
+> +
+> +	if (!of_property_read_u32(dev->of_node, "qcom,ls-fs-output-impedance",
+> +				  &value)) {
+> +		or->ls_fs_output_impedance.value = (u8)value;
+> +		or->ls_fs_output_impedance.override = true;
+> +	}
+
+Are all these values board specific or IP specific? Can we add these
+values as tables in driver? 
+
+Bjorn what do you think about the above proposal?
 
 -- 
 ~Vinod
