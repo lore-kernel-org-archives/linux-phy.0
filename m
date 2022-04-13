@@ -4,85 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C65D5C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Apr 2022 10:06:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CB84C433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 06:02:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	MIME-Version:In-Reply-To:References:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=qMx/hzo78QcvEpPSYOO3BvkVN7wbqiEQhU/s8tsmU7Y=; b=lVQ2pmOHvwHtZcCxRxND2pgjaL
-	u7eVwC25qUKGNzKmAmMUbbDURXzb7dmP9Br6+LGp1GWLFW7r07qZ5CKFjYJI7lo4sYqXur0LXeehm
-	sOH5m8oiP0Ag2hmRC9sS6DYWLx0JoXBLwIRtoAgPwmdW46pQMZpxxdvXLaJ6FdksBX88nyP9BX/pp
-	uX7lebt5vbM5m5TY2Ze1ErFsNVNbhWiU2jZ5KV1IludlWtRYQGjmWjYQiKrFjcP5D9EOgjEHOTLIn
-	24tuQN6cvE/qA0xoyux4/QIDtLWcU5vZ/eGDbGQlfIboUky/pNJKXw6p1JVHUF88furh7zj2zkxTZ
-	KMlrE6xg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ww6AAt53KnuWm7EukdnF0R7QY5VXrtIFGrjP2D35hDk=; b=U4VhmTtlitGHx1
+	JNErplaAvmkbWF0cuOGB7Q4DASQIZR6PrLSrzlzw8+ig1sORCiXqBK1H3zUlS8ovzF20SoFm5DMPe
+	gjay9v1vpnebZO6BuH4LMyAn+8A81TQtv+YklUO3e7KOFkMzMaHrPneD6szlLpOTisbIVAfQfhDsB
+	cctAnM60FnZiaoNIfk1TsHXDNXHW+r/t99cNTHLu8MMtJTi5Ue3ZCGSbtcEfZr1HSzqIhTzG0+bmE
+	8teUm695pcbWON1BsTiIlzAS6VkiLqYgbUtrS0hcYF52Xk6UJA+u3oEHSd14AQwYmJUyKmvUBjvKz
+	/H+jfuPIW42FYwzmYxjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1neDQ2-00D9oO-70; Tue, 12 Apr 2022 10:06:42 +0000
-Received: from mail-oa1-x2b.google.com ([2001:4860:4864:20::2b])
+	id 1neW5N-00GyBW-B9; Wed, 13 Apr 2022 06:02:37 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1neDPX-00D9aF-Fa
- for linux-phy@lists.infradead.org; Tue, 12 Apr 2022 10:06:14 +0000
-Received: by mail-oa1-x2b.google.com with SMTP id
- 586e51a60fabf-de3eda6b5dso20302211fac.0
- for <linux-phy@lists.infradead.org>; Tue, 12 Apr 2022 03:06:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20210112.gappssmtp.com; s=20210112;
- h=from:user-agent:references:in-reply-to:mime-version:date:message-id
- :subject:to:cc;
- bh=tZvbGpFjILGpekjAvGDF0y9dQ6Kd+gBt4gVMWfKJuAk=;
- b=Xo8+YSn3qT7Jhf9u4FuGYXY6Bov1PRuEhL0/Es2kDk9T156ExPENxfB+L80w1q/WN8
- AY7X2X8pBC+egX5EAP7hbmLqVYYquyMaM+9TMa0V8rrwt4eOMwpnKS1rXrmKnJYddRKl
- WXqMioKIAM/xFynvUhz/5U8QrlcdzmdQycq7DES/Sco99BT/85Gs/jV5R1n5nlmInzkN
- Xusklq+2enfKbeU1Z/uYCXgSMZElx/lRCPsCgmbehOhUkX+zIy72zJ9+1JEhZnnHiF0b
- 7lrsXEthfoBv0c5BqbSXLUfcVprx8t79rP5dVaUdlBdoIR+brcAYyZc6c3+7XT7Jw7uM
- vcvQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:user-agent:references:in-reply-to
- :mime-version:date:message-id:subject:to:cc;
- bh=tZvbGpFjILGpekjAvGDF0y9dQ6Kd+gBt4gVMWfKJuAk=;
- b=YEOLKM55d9s9X8L2Os3+r1kPw2fDmND2e4BANOgUu58dnXCwcBxaVp5H6xnqHGMQv+
- 8cerYQb3w8wIWzIi6mYf9Sk1Q5rI6jzcbZ7E999h2s35kc+bSN/4jvQ3epIJzSHP0Iqh
- MbEkUwgyErJyKIg5vMsHkLabeEFaJFAvc0RB/nwEMbKG9zREQrUQHRR5AkOqqctlYlFj
- Bj9DWbtqDxWF0GfHxrvGGjICJApt4LRWzcLQbpPw6HSKWnjzbdGPMUDTnMLMcfjsAVOq
- 9g4cYLDDZJr5F1w1eVELnCYFAUEoNZFzcrmSmTTvQ3tJ539FDaEMpA1i93bKNzSGjQpU
- XDfw==
-X-Gm-Message-State: AOAM531yAIBr/qU8/1sQmqz48qQz2Ya6V+KoR+KoLynzQYWLbeeN1GfH
- W9Uan7kZ59YXwfOeZMr/ixPxp8EwyYZUGb/IzbQiTA==
-X-Google-Smtp-Source: ABdhPJw3WX7NFQkxU4ADRLrRdzB/pHuRSdo1xjaZj5zggo6wW/RSRVmkJtH7xxbo7eDcNYsrg++TE2K0RicigcNQMoo=
-X-Received: by 2002:a05:6870:f21a:b0:dd:9bec:caf8 with SMTP id
- t26-20020a056870f21a00b000dd9beccaf8mr1670792oao.78.1649757969594; Tue, 12
- Apr 2022 03:06:09 -0700 (PDT)
-Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Tue, 12 Apr 2022 03:06:08 -0700
-From: Guillaume Ranquet <granquet@baylibre.com>
-User-Agent: meli 0.7.2
-References: <20220327223927.20848-1-granquet@baylibre.com>
- <20220327223927.20848-4-granquet@baylibre.com>
- <YkOPB5W7uXkOc72/@robh.at.kernel.org>
-In-Reply-To: <YkOPB5W7uXkOc72/@robh.at.kernel.org>
+ id 1neW5G-00Gy51-5J
+ for linux-phy@lists.infradead.org; Wed, 13 Apr 2022 06:02:33 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ams.source.kernel.org (Postfix) with ESMTPS id BA315B820FE;
+ Wed, 13 Apr 2022 06:02:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1539C385A3;
+ Wed, 13 Apr 2022 06:02:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1649829747;
+ bh=HvrUsmz71cLj1divu5+NeKrK0QccgLx3LKBNNoPFmqY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IS7lC7N/coBra+4TEgAvwz0NGNcPYY06a6Aj7vRVJ/P0ZTjZ78RBVoXicQaqe6zuV
+ kQxUI7ozwL+lBiDN4rxqsKsRgsNoJPrKTh53Z6NuSc7NKJsmmonos0NIV1CWUTrTqf
+ MzJbiNtFjnBAqF4BontGHIkwvcpXmHHE4nlVzaVJdhnf3T5ItKrNfEjJLNjsKEeh6l
+ oAfUTrBrloqCAVyUPoYRO91/X9e9ytB/CYtP4kp+pYWtCQXvHC0v+Fy9gU/ant2Ulx
+ B4GQkYlVAiJVF+9FaAJf77+qnfxkaQmxpHpC01PpXMSUFVph18pIfAY66YbLa0OFj7
+ TmzZ8KPfKtIgg==
+Date: Wed, 13 Apr 2022 11:32:23 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Jules Maselbas <jmaselbas@kalray.eu>
+Cc: linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Ahmad Fatoum <a.fatoum@pengutronix.de>,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Amelie DELAUNAY <amelie.delaunay@foss.st.com>,
+ Yann Sionneau <ysionneau@kalray.eu>,
+ Michael Grzeschik <mgr@pengutronix.de>,
+ Randy Dunlap <rdunlap@infradead.org>, Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH RESEND v3 2/3] phy: core: Update documentation syntax
+Message-ID: <YlZnb2dJjaroDfyu@matsya>
+References: <20220407102108.24211-1-jmaselbas@kalray.eu>
+ <20220407102108.24211-3-jmaselbas@kalray.eu>
 MIME-Version: 1.0
-Date: Tue, 12 Apr 2022 03:06:08 -0700
-Message-ID: <CABnWg9tvh31wibtTO2nETfJ9XtST0Ejjea0_2q1Hd5GRs9DN4Q@mail.gmail.com>
-Subject: Re: [PATCH v9 03/22] dt-bindings: mediatek,dp_phy: Add Display Port
- PHY binding
-To: Rob Herring <robh@kernel.org>
-Cc: airlied@linux.ie, angelogioacchino.delregno@collabora.com, 
- chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org, ck.hu@mediatek.com, 
- daniel@ffwll.ch, deller@gmx.de, jitao.shi@mediatek.com, kishon@ti.com, 
- krzk+dt@kernel.org, maarten.lankhorst@linux.intel.com, matthias.bgg@gmail.com, 
- mripard@kernel.org, p.zabel@pengutronix.de, tzimmermann@suse.de, 
- vkoul@kernel.org, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org, 
- linux-phy@lists.infradead.org, markyacoub@google.com
+Content-Disposition: inline
+In-Reply-To: <20220407102108.24211-3-jmaselbas@kalray.eu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220412_030611_571091_A86A6BDD 
-X-CRM114-Status: GOOD (  11.28  )
+X-CRM114-CacheID: sfid-20220412_230230_406938_3A675338 
+X-CRM114-Status: GOOD (  21.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,84 +79,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 30 Mar 2022 00:58, Rob Herring <robh@kernel.org> wrote:
->On Mon, Mar 28, 2022 at 12:39:08AM +0200, Guillaume Ranquet wrote:
->> This phy controller is embedded in the Display Port Controller on mt8195 SoCs.
->
->Sorry, but I think you need to go back to what you had in v8. While yes,
->the phy and controller IP often do change independently, this h/w looks
->pretty interwined.
+On 07-04-22, 12:21, Jules Maselbas wrote:
+> Update the syntax used by the documentation of phy operation functions.
+> This is to unify the syntax with the newly added documentation.
 
-Understood, I'll revert back to v8.
+Is there any reason for using this sytax, is it documented somewhere..?
+How does this syntax help?
 
->
->You could make the controller a phy provider to itself if you wanted.
+> 
+> Signed-off-by: Jules Maselbas <jmaselbas@kalray.eu>
+> ---
+> v2: new patch
+> v3: no change
+> 
+>  drivers/phy/phy-core.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index d1817a0f2d09..d11b517e283a 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -467,7 +467,7 @@ EXPORT_SYMBOL_GPL(phy_reset);
+>   * runtime, which are otherwise lost after host controller reset and cannot
+>   * be applied in phy_init() or phy_power_on().
+>   *
+> - * Returns: 0 if successful, an negative error code otherwise
+> + * Return: %0 if successful, a negative error code otherwise
+>   */
+>  int phy_calibrate(struct phy *phy)
+>  {
+> @@ -493,7 +493,7 @@ EXPORT_SYMBOL_GPL(phy_calibrate);
+>   * on the phy. The configuration will be applied on the current phy
+>   * mode, that can be changed using phy_set_mode().
+>   *
+> - * Returns: 0 if successful, an negative error code otherwise
+> + * Return: %0 if successful, a negative error code otherwise
+>   */
+>  int phy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  {
+> @@ -527,7 +527,7 @@ EXPORT_SYMBOL_GPL(phy_configure);
+>   * PHY, so calling it as many times as deemed fit will have no side
+>   * effect.
+>   *
+> - * Returns: 0 if successful, an negative error code otherwise
+> + * Return: %0 if successful, a negative error code otherwise
+>   */
+>  int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+>  		 union phy_configure_opts *opts)
+> -- 
+> 2.17.1
+> 
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
-Not sure I follow, could you point me to an example?
-
-Thx,
-Guillaume.
->
->>
->> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
->> ---
->>  .../bindings/phy/mediatek,dp-phy.yaml         | 43 +++++++++++++++++++
->>  1 file changed, 43 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
->> new file mode 100644
->> index 000000000000..1f5ffca4e140
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/mediatek,dp-phy.yaml
->> @@ -0,0 +1,43 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +# Copyright (c) 2022 MediaTek
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/phy/mediatek,dp-phy.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: MediaTek Display Port PHY
->> +
->> +maintainers:
->> +  - CK Hu <ck.hu@mediatek.com>
->> +  - Jitao shi <jitao.shi@mediatek.com>
->> +
->> +description: |
->> +  Device tree bindings for the Mediatek (embedded) Display Port PHY
->> +  present on some Mediatek SoCs.
->> +
->> +properties:
->> +  compatible:
->> +    enum:
->> +      - mediatek,mt8195-dp-phy
->> +
->> +  mediatek,dp-syscon:
->> +    $ref: /schemas/types.yaml#/definitions/phandle
->> +    description: Phandle to the Display Port node.
->> +
->> +  "#phy-cells":
->> +    const: 0
->> +
->> +required:
->> +  - compatible
->> +  - mediatek,dp-syscon
->> +  - "#phy-cells"
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    dp_phy: dp-phy {
->> +      compatible = "mediatek,mt8195-dp-phy";
->> +      mediatek,dp-syscon = <&dp_tx>;
->> +      #phy-cells = <0>;
->> +    };
->> --
->> 2.34.1
->>
->>
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
