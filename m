@@ -4,60 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B465AC433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 09:54:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F3ADC4332F
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 09:54:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zaBcrGBBSXQoXVCk8EZ94tm7rGeApOYB0mEdFhkM4Oc=; b=tLilr1l/3Xvubr
-	yWz1zmnw56igegxtSEFxmq9b1onauKC2DCVc+hPAuQjnbcCI/FDCOgTR92hEzdKJlcmyBhjuSqfJX
-	j20wrarRLAZieo5+FT5OjHkd82ff3PM+tF9Hrt6Uaa/BKX60fGcn7iJe2f/UpAW4GyYd+CYnwSouZ
-	38lE4QWvHvuTs6MAMA/LzAgNeNwQRwOSegR+OstF0Jw3ZHxbkeXiJtuEvXUoDGZ0PR5pu99ftsWsc
-	3dpd5hVNrWghzi0rnDncKseyMFDlVlzEGyw0ipObAbexK0t9kUhPcXk5yrkaV2RMjbE/BZNDxnrSh
-	nCUKlkAy0dRRc3jGLjuQ==;
+	List-Owner; bh=Z0VIBVybFqcCsQ7oaS2ftrHQSIl1itg8emR6BoYWVns=; b=ccMB09fsnZkcXO
+	OLmyosug4p7GfEeXKOsIa4CLiCGBrLwIdkPcGiPLs0+Um/OxuqI9CFF2HPTSOd0l/xPTacAOx2CW/
+	rvz0hDLgWYrsh1fOoPba/o5Fz8zCd+aTDTr+pls9qdV05Dvp3dax8V3w1rnZzygtbE7oH+XJT85w9
+	wSkFGdMve9gYys2yz3hfY4v32/vUbsVuIrzgk3i3F1tmWUyGHMJuCqTSr6ercXxH1fDmsdu/TDacJ
+	0aa7vAcFCaiJRPQz1wylL+LpXOMoV8mysPHEqSgFihErIXmtlbti6UOy7W1haA201bHnpAEmXtL5d
+	+SQY4q/s5Rz488dX+y4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1neZhW-000Rme-7Q; Wed, 13 Apr 2022 09:54:14 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1neZhW-000RnF-Rv; Wed, 13 Apr 2022 09:54:14 +0000
+Received: from mxout.security-mail.net ([85.31.212.46]
+ helo=fx303.security-mail.net)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1neZhI-000Res-F8; Wed, 13 Apr 2022 09:54:01 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 2F533B82178;
- Wed, 13 Apr 2022 09:53:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63ABBC385A4;
- Wed, 13 Apr 2022 09:53:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1649843638;
- bh=Wb7p5+hjmHsBsLBQbro2bfTLXKiDwDGJXsLe1SdZawc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=puHkI3/HkSkrN6yHbSN3Cwbp/ra8pyXcR+01BYDczlqPHrVTYCJGpVMyeKm9CC+zC
- 0oey2Ew6vKXWXRUFY4uDh7kdhqXObpYTIUGqO7MTnJ8cFtznIxdrq93kALwZfHWZ80
- KYGnWV3KSWGd8CHJN5WlV6w2kAN56HLZPM8Nrg0hZ5bFqyE+XsNnp01B7WRzVMcKQE
- h5QreN7579WgkMAtaLWwr0BWXVt2Ge2m8k8MpSwtfns3fswQcV4fK39wKbY9UsKnG2
- IVJsCUnLxaLVv+nrUxFdeIyFx71U9Eu0jkHXqkB1OL892qCh4GVyKtki5fqxashd5a
- FBHFrRvI2qr5g==
-Date: Wed, 13 Apr 2022 15:23:53 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: cgel.zte@gmail.com
-Cc: kishon@ti.com, heiko@sntech.de, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- Minghao Chi <chi.minghao@zte.com.cn>, Zeal Robot <zealci@zte.com.cn>
-Subject: Re: [PATCH] phy/rockchip: Use of_device_get_match_data()
-Message-ID: <YladsfTMN4/SDo50@matsya>
-References: <20220304011755.2061529-1-chi.minghao@zte.com.cn>
+ id 1neZhK-000ReE-AP
+ for linux-phy@lists.infradead.org; Wed, 13 Apr 2022 09:54:04 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by fx303.security-mail.net (Postfix) with ESMTP id C91B9323609
+ for <linux-phy@lists.infradead.org>; Wed, 13 Apr 2022 11:53:52 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kalray.eu;
+ s=sec-sig-email; t=1649843632;
+ bh=HslCilQCgNPqoK7RN+fTQzHPEpFL1HfA4/WsCZMDqwY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To;
+ b=rQOoE6giazG+F3kUW8OuXpjL8DTZ+D29XylkokFhPVTqYyZWjlQBvZlv2oiPdQTR8
+ HcMfmChNNSwk+82ZHhhOQg4qV1Ybs9aft1Ypq1pW2fEvS9Lksm5ONknIaBlMSAxefy
+ KTfXoNdXzT0yc25TdcnofjPlqEe1gYXk8QUzcGOE=
+Received: from fx303 (localhost [127.0.0.1]) by fx303.security-mail.net
+ (Postfix) with ESMTP id 99549323712; Wed, 13 Apr 2022 11:53:51 +0200 (CEST)
+Received: from zimbra2.kalray.eu (unknown [217.181.231.53]) by
+ fx303.security-mail.net (Postfix) with ESMTPS id E4853323609; Wed, 13 Apr
+ 2022 11:53:50 +0200 (CEST)
+Received: from zimbra2.kalray.eu (localhost [127.0.0.1]) by
+ zimbra2.kalray.eu (Postfix) with ESMTPS id C871427E0470; Wed, 13 Apr 2022
+ 11:53:50 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1]) by zimbra2.kalray.eu
+ (Postfix) with ESMTP id AEE3127E045F; Wed, 13 Apr 2022 11:53:50 +0200 (CEST)
+Received: from zimbra2.kalray.eu ([127.0.0.1]) by localhost
+ (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026) with ESMTP id
+ uR_qJhiZIQBW; Wed, 13 Apr 2022 11:53:50 +0200 (CEST)
+Received: from tellis.lin.mbt.kalray.eu (unknown [192.168.36.206]) by
+ zimbra2.kalray.eu (Postfix) with ESMTPSA id 9724E27E045B; Wed, 13 Apr 2022
+ 11:53:50 +0200 (CEST)
+X-Virus-Scanned: E-securemail, by Secumail
+Secumail-id: <d178.62569dae.e1fd9.0>
+DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu AEE3127E045F
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
+ s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1649843630;
+ bh=Lm54Dkl0r0JniR6xVhnA0jJcCsE25KTaly6VP1Q1eps=;
+ h=Date:From:To:Message-ID:MIME-Version;
+ b=LXolY0Sy0/YQGCmecb2WOx946/21QCH9KFJNCXRTXqfZf3iAKJZf/be424/zx665E
+ DrhXPNTtuu/Xoqn6HUAX+0H5RdrQE7iIM2UTN+BEs9FpY80L2jkZD0xuwoE9tlbIcP
+ ZOIuGaSfrAc5jOKQkFN+E8TsrjRDaOLkUOazKSfA=
+Date: Wed, 13 Apr 2022 11:53:49 +0200
+From: Jules Maselbas <jmaselbas@kalray.eu>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, Kishon Vijay
+ Abraham I <kishon@ti.com>, Ahmad Fatoum <a.fatoum@pengutronix.de>, Minas
+ Harutyunyan <hminas@synopsys.com>, Amelie DELAUNAY
+ <amelie.delaunay@foss.st.com>, Yann Sionneau <ysionneau@kalray.eu>, Michael
+ Grzeschik <mgr@pengutronix.de>, Randy Dunlap <rdunlap@infradead.org>, Arnd
+ Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH RESEND v3 2/3] phy: core: Update documentation syntax
+Message-ID: <20220413095349.GA25550@tellis.lin.mbt.kalray.eu>
+References: <20220407102108.24211-1-jmaselbas@kalray.eu>
+ <20220407102108.24211-3-jmaselbas@kalray.eu> <YlZnb2dJjaroDfyu@matsya>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220304011755.2061529-1-chi.minghao@zte.com.cn>
+In-Reply-To: <YlZnb2dJjaroDfyu@matsya>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-ALTERMIMEV2_out: done
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220413_025400_692006_01C18113 
-X-CRM114-Status: UNSURE (   6.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220413_025402_699916_D2CD7A06 
+X-CRM114-Status: GOOD (  21.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,15 +99,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04-03-22, 01:17, cgel.zte@gmail.com wrote:
-> From: Minghao Chi (CGEL ZTE) <chi.minghao@zte.com.cn>
+On Wed, Apr 13, 2022 at 11:32:23AM +0530, Vinod Koul wrote:
+> On 07-04-22, 12:21, Jules Maselbas wrote:
+> > Update the syntax used by the documentation of phy operation functions.
+> > This is to unify the syntax with the newly added documentation.
 > 
-> Use of_device_get_match_data() to simplify the code.
+> Is there any reason for using this sytax, is it documented somewhere..?
+> How does this syntax help?
 
-Applied, thanks
+I don't have any particular reason for this syntax, this syntax have been
+suggested by Randy Dunlap.
 
--- 
-~Vinod
+> 
+> > 
+> > Signed-off-by: Jules Maselbas <jmaselbas@kalray.eu>
+> > ---
+> > v2: new patch
+> > v3: no change
+> > 
+> >  drivers/phy/phy-core.c | 6 +++---
+> >  1 file changed, 3 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> > index d1817a0f2d09..d11b517e283a 100644
+> > --- a/drivers/phy/phy-core.c
+> > +++ b/drivers/phy/phy-core.c
+> > @@ -467,7 +467,7 @@ EXPORT_SYMBOL_GPL(phy_reset);
+> >   * runtime, which are otherwise lost after host controller reset and cannot
+> >   * be applied in phy_init() or phy_power_on().
+> >   *
+> > - * Returns: 0 if successful, an negative error code otherwise
+> > + * Return: %0 if successful, a negative error code otherwise
+> >   */
+> >  int phy_calibrate(struct phy *phy)
+> >  {
+> > @@ -493,7 +493,7 @@ EXPORT_SYMBOL_GPL(phy_calibrate);
+> >   * on the phy. The configuration will be applied on the current phy
+> >   * mode, that can be changed using phy_set_mode().
+> >   *
+> > - * Returns: 0 if successful, an negative error code otherwise
+> > + * Return: %0 if successful, a negative error code otherwise
+> >   */
+> >  int phy_configure(struct phy *phy, union phy_configure_opts *opts)
+> >  {
+> > @@ -527,7 +527,7 @@ EXPORT_SYMBOL_GPL(phy_configure);
+> >   * PHY, so calling it as many times as deemed fit will have no side
+> >   * effect.
+> >   *
+> > - * Returns: 0 if successful, an negative error code otherwise
+> > + * Return: %0 if successful, a negative error code otherwise
+> >   */
+> >  int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+> >  		 union phy_configure_opts *opts)
+> > -- 
+> > 2.17.1
+> > 
+> > 
+> > -- 
+> > linux-phy mailing list
+> > linux-phy@lists.infradead.org
+> > https://lists.infradead.org/mailman/listinfo/linux-phy
+> 
+> -- 
+> ~Vinod
+
+
+
+
 
 -- 
 linux-phy mailing list
