@@ -4,142 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3015C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 12:55:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64B07C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 14:08:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1++UBRDll8nQp8KaO9a59RWMVlWfbJBEereU95unUoE=; b=QHXgv4nISUGca/
-	iopAIZAYEKxTjywNavfDfksOq9Swq4pPRltGZ0NOjNlf8plJ8Rws07U0aKS9GLr8V+48sK2GqIwRX
-	q8DXysO5FU5UQr+hx0jS/I4jbYZUeBL9VrtonkUsXVsmqXGSAXU2XpoFAWe818Y7eD3JIzm9Hxr1S
-	OI3/3oYE0t0/Tq6BywS/7jnjoXiy/4nSj/VGQGmBatNBVAWVIk7PGIamHTLBoFRgqg61dUyq0nZaw
-	Y9BXFroZiAY5rOeIMhj7FX45PpQOkipShmnhINvBMqj43YUqKXvD/46HjHx360lULiypZzZhf3h13
-	/BufxDK/iJzLcnw7HJoQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kRhC0BAjVCCOXGZLhNhlaYmznIllzTDNq7HE+LZJzOE=; b=or/BXK5WIwco7f
+	0MrrxIIyDhO0Y7wu+Lktc213LEk9ayDu+4G9ASxj1smoTEMqQ9371HEAZ+xuCmnrVFUu8f+U9wWOF
+	NCBE94wmATEtaxg7Qyfq+ZRMYdAtA5ahKVEyyv+ut21wWouFhxMprOe8iMwDlbhZmbkxdOMKAIETc
+	pe8v+30p7u4Ce7i3Xn60e8J48OPTZdAjZh/S1URFd3PD26+LLyvCqz19935BjXLSnfkjkusZJe8GI
+	02mGOLnJxo8pyhb2oWtLXtrSLoiDpPM3KuvbLdyjsJUK8SkYR4p34BaAfkRa0x53u4JsmJuD/gw6R
+	l1UkEIovAbA8WlycaBDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1necWq-0016R8-0P; Wed, 13 Apr 2022 12:55:24 +0000
-Received: from mail-am6eur05on2060a.outbound.protection.outlook.com
- ([2a01:111:f400:7e1b::60a]
- helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1nedfC-001Kzz-QH; Wed, 13 Apr 2022 14:08:06 +0000
+Received: from phobos.denx.de ([2a01:238:438b:c500:173d:9f52:ddab:ee01])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1necWa-0016N8-Tt; Wed, 13 Apr 2022 12:55:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Zw0FnIXtfNFNQAKXqK9eso9YQf0ux0Lrh3aCymjAj0XlQ2VMCtRRW3ewH35hqcbH3Gs0uz73ntfluzgYMgGM201WZlxAakIzq7iKL0vOmJNwkMhaPbxjQYZ8yLs46LKMNXYjKqahfJa6MBbq42ANfWCpz7FbLyNiDojf6p708gs7zRnh4FMhIdLOeMp+F+bQnzHBDRiaJ3axWlvobkGWCoiHG+7II39w3l7w1cd6CzaWl4x5KES6j3Qr6o2gDpWqXX+5FNmXkL7s3OT2vE61DmI3bm4Tf0Uhs3IrDmc0ROeE6u8g7LYkGgU4+s2QISJ2nXBuyXCfo2mei8RT5QRvlg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=5yPmxtQroAmndBeIUj30xlduBu0PQHu8UuZRj7HGYLw=;
- b=Xlkud9rCXXj5hrI4W5Cqhb9mXSS+UAR6HuNq/2NVrNAVN4r2IavX5nvk8+de7Un3dCB4dMipvS88dNTG6dkfI7+oJJ71bvHu3yLZDjHF/Jp95WAeTuPV+l0gJlBZXz1/H2qzqVC/nyRq2lBWuChKdgsqOc+JlmeTl+bUiSZI+XQH3zyRMkwec/sLecL1likUTGXzXCN2ZhEZUEfvHNJBPdkuF3h1OgkZHqfXBJN/fkCwbOiUy0NTGaBwb5w/ARmHKEH/ojldbCZfso1j0o8jxGc8E2x1P2LNRWEAgCRjAzUArPJ/qFdzX0wMoXFYXE8XlDF3Ii4vAo8oza2rxNEU4Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5yPmxtQroAmndBeIUj30xlduBu0PQHu8UuZRj7HGYLw=;
- b=h+Xot62jz+SQ4jEOP4zqkl5uiLctnO6H0QM0tgVj6GTc7Yyl4WOxfrsgSQG4ygxgfz6ZziuKqOYkLvoRm1V6iFL0Kbx9+cEGPKHP/BPQ37Hwo9kYsm+Qe2OyqDpgA0pT0/Fe0nYrkFqLiiQJCuCczKTkFTVm3irE1CNMcJIhqx8=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
- by AM0PR04MB6065.eurprd04.prod.outlook.com (2603:10a6:208:139::22)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5144.30; Wed, 13 Apr
- 2022 12:39:57 +0000
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::b09c:8ffe:8e02:7387]) by AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::b09c:8ffe:8e02:7387%9]) with mapi id 15.20.5164.018; Wed, 13 Apr 2022
- 12:39:57 +0000
-Message-ID: <a2731b2d77f9bf2adf36f0c05cb5e3b14a5a91a9.camel@nxp.com>
-Subject: Re: [PATCH v6 resend 2/5] phy: Add LVDS configuration options
-From: Liu Ying <victor.liu@nxp.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- linux-arm-kernel@lists.infradead.org, kishon@ti.com, robh+dt@kernel.org, 
- andrzej.hajda@intel.com, narmstrong@baylibre.com, 
- Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
- jernej.skrabec@gmail.com,  airlied@linux.ie, daniel@ffwll.ch,
- shawnguo@kernel.org, s.hauer@pengutronix.de,  kernel@pengutronix.de,
- festevam@gmail.com, linux-imx@nxp.com, agx@sigxcpu.org, 
- robert.chiras@nxp.com, martin.kepplinger@puri.sm, robert.foss@linaro.org
-Date: Wed, 13 Apr 2022 20:39:41 +0800
-In-Reply-To: <YlaqwoFCfusFgIIe@matsya>
-References: <20220402052451.2517469-1-victor.liu@nxp.com>
- <20220402052451.2517469-3-victor.liu@nxp.com> <YlZpnrKt9NbHZv26@matsya>
- <d77b41d911e126331138ddaca146a581d316bd09.camel@nxp.com>
- <YlaqwoFCfusFgIIe@matsya>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-X-ClientProxiedBy: HK2PR03CA0060.apcprd03.prod.outlook.com
- (2603:1096:202:17::30) To AM7PR04MB7046.eurprd04.prod.outlook.com
- (2603:10a6:20b:113::22)
+ id 1nedee-001Kau-Mt; Wed, 13 Apr 2022 14:07:36 +0000
+Received: from tr.lan (ip-86-49-12-201.net.upcbroadband.cz [86.49.12.201])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: marex@denx.de)
+ by phobos.denx.de (Postfix) with ESMTPSA id F150983BCF;
+ Wed, 13 Apr 2022 16:07:28 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=denx.de;
+ s=phobos-20191101; t=1649858849;
+ bh=KaTeEzMqM/HEqpeCFLAJ2/JNfUc4X+3DSIMmBPLQiTU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=iovkidPzcn796H+4gvM4dOBxjt4hj3MNnAkot+7RGOrUJqO0/qL8Jk/WfhPbA9az6
+ gA5BPvQiUWVCo5NacOoHoOVVQgx93eYwCxVPFnu8NdVWdMgtFZBNn0hBpSNA5HyMoV
+ bWXtGf1NXIZsfAVIu4AsjR/Xw50aKht2TozjHyv4dMwblmVy6Gazo8yqLTZtfQxvpc
+ JfKB47Zq6IhUYxmwqRb17FinaoCcEsfu6D5rRPSYep5hOJmrHB/kMKw3a7nT7VAgTr
+ 1DFEB2JwnvLMAvIUUBPyeqLcVV7cidCncR0JrXs2CxLBUnHAPFGiHAilbCLUDNBmQK
+ NUkQ9VTcMkjgQ==
+From: Marek Vasut <marex@denx.de>
+To: linux-phy@lists.infradead.org
+Cc: Marek Vasut <marex@denx.de>, Richard Zhu <hongxing.zhu@nxp.com>,
+ Fabio Estevam <festevam@denx.de>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] phy: freescale: imx8m-pcie: Handle
+ IMX8_PCIE_REFCLK_PAD_UNUSED
+Date: Wed, 13 Apr 2022 16:07:10 +0200
+Message-Id: <20220413140710.10074-1-marex@denx.de>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: b3768b46-dd34-4c21-9c7b-08da1d4ab7d6
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6065:EE_
-X-Microsoft-Antispam-PRVS: <AM0PR04MB60652B5C54DF6607A706C2CD98EC9@AM0PR04MB6065.eurprd04.prod.outlook.com>
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: jaiR/H6zsFmBVmHYV/dxnuYNSrALWA1DxfNWXRv9z9jJBBBalBK7KQkZ98hkiTUpvWADKaeZqH/r/fiNjofBgLamxvsIJbRPAFrlZNocdj3VZYhhW9PoqwEO95mbq8KSS/fznncjiD7LezJi7U56OcP0YWiSumBZWLQqs7IAvLADBIMLU7EmnRVwFWooFUEj5WNTmMtkVC+qrTWKEbvMeZPEr1QkbdORpG2O1Axg3gLX4wZ/7Cqhp9wLnWVP4WqQLyxpkhHc+MIsSDiJ41XXwJUei1vgDxONdO3Hb49D+U9pGbWz+voeur++2XBuVvsIu1HzjECtgPs7u74ceDpBQ80BaC8ZUJY//Ou/NddnJfNRZvaraJLnUmNtdVDedVGsMB65mzvd/ybzhayR9bhmXc/VLaHiM0lDP/UytHg9eGTJxa/m8HMUfDtj9NhHQsB3sUtIbjhJt4Rw+4A5yjFJqwvY1WPIiVhAGHdB0IbdudQvKS2TUX/4IAHXT2kxjjieNslOGb3y3EUXj78USbqZOqXiZlF9u9SnaGh/dBGr+U2u/yIVHqUWswXtDrVRAX1afiZSBIH7zksTccswMpTTPhB3pz/YW0Xbvms48KXqOYCbacHl+yYTRC30ScPWbbAL2LyZWqx6yaHCmyanvTaYLbUN7rb6X47A4d3ARR6lOQ46JMpyxcE/kSSul+iVAr1If4XH9nCQsGTf3azZ+cxtjYppc6a50/sl57N9xfA3i6E=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM7PR04MB7046.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230001)(4636009)(366004)(508600001)(186003)(38100700002)(38350700002)(4326008)(66946007)(66556008)(8676002)(66476007)(5660300002)(6666004)(6512007)(6506007)(36756003)(6916009)(316002)(52116002)(2616005)(83380400001)(7416002)(86362001)(2906002)(8936002)(26005)(53546011)(6486002)(99106002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?cFJkOGpxWU4yQ2hGRHpvNVZoTlNVNDhzNzdZcGVhWS9PYjdDeEVCdmg5dW5o?=
- =?utf-8?B?ZDFPYWdtY1ZxRkV0YWhBbzNrTk9Ba2wxR0pPUlgvRG1pRDVVZkg4bWNVb3Ri?=
- =?utf-8?B?MWpzMlJGNDJ1QVY0T21NVHRaV3FIOUJmUWhleklNRzZYK0VPcitmTEROM25m?=
- =?utf-8?B?R09lNFFyNmN5dU5NZ0xWUXI0bm1XUEtZZk1UK0hQM1lEM05ZZDhVbGpPSVEr?=
- =?utf-8?B?M1NiRnVWd3luNUFHOGRiRVJnaFR1MFhYaEd0K0NPUUl3WWRlNEMwUXdzSnY1?=
- =?utf-8?B?OHF2YmhUS0FYLzJOdS9GSUF1NjR4d0ZlQXBOdjdPNHpIRUp0dE1hN0VMdzBI?=
- =?utf-8?B?OFJrWDhERGJaazNVRnE0czZ4emZEUUw0NGFsYnpGeEJmTTBnblJIaWFrd2RN?=
- =?utf-8?B?Qmw4ekNrK3R2TTg3TEpyS0NvNElXa2NKOU0yWGQwamZpeG14N01OcmljN1JB?=
- =?utf-8?B?aFRmT3ZxRlMzd1Z6eUlCdmcraUUyNDNRNko1M1pEdG1veEt2eGhuL0xuQnA2?=
- =?utf-8?B?b3Via0hyVE9YdUlQS1IzTXVObGdENEE3OWM1U0I5TlNZTzlrWktSWTI5MkJr?=
- =?utf-8?B?S2RiU21XRlI5Z3hEUWx5RDRDOElkUGU3b0dmdkp6V3prL0Z2WkdaN3p0dlN2?=
- =?utf-8?B?ak5ZOUlIbFVkc3JKbUlWZTdqT1JGQzJRNEFNcmNScWpsVFBRdjNjUTZHa3Bm?=
- =?utf-8?B?c0ZaaC9rL0tVYi9VNDdaKzlJd0NjUW1Oc1kxU1VlZjJhNENLWG90NGQxMnQ4?=
- =?utf-8?B?bGdlWnhiWlRqa2w5R0VSNlZYQ0NBdGszSlh0dGZZaldWeHdIK0Z0TlRBaG1l?=
- =?utf-8?B?cXVLSUsvczlGamFrME9SMStWQUl3MmNFbkYrWnRjbDRROENzMFRpSU4zd20v?=
- =?utf-8?B?WW5ISE9JM25ydWoyRFFOME5qa3hCdHNvM1gxbFpncTI1YWJLVTRINlRCT1FN?=
- =?utf-8?B?cmhKa3ByVExCVTU2Rmk0QlozS2tJUEZtWW8reGt5enNwWFp5UHY4ZWpnQU15?=
- =?utf-8?B?cWhkbFRmdkgyS3dQazhxSmxBV0ZlOU1zZ2xYc1VIMDFtZjc5Y1ZGUVk0aWta?=
- =?utf-8?B?NHJtOHE5VGZQbUE4QWtiV3FpVTZnZ0hqeVdqblBEdTd3bUxMTTFnaGhNV0FT?=
- =?utf-8?B?Y0VjdFQrcXNsazMzVUxab1JOWlNiTCtOa3lzVGlBUTRBS0E0ZlUzUVdmWHR2?=
- =?utf-8?B?Z3JrNnFsZERhL3l4MUZSLzFyb2VuS0lVQkFGNUhwMEdsMm5pNGlVZlM1OEpX?=
- =?utf-8?B?U0oyU1IyZUswczBTNHdGTzNxdm1wNi83U2o3YktDT0tFTzBnU2x4UDhUOG1K?=
- =?utf-8?B?RmJiWkQwVU9rV3Jlc1RSNnpCRkdSWVYwSGNmbEtOekZvNERmL0lCdXhKNXVD?=
- =?utf-8?B?VmMreEsvNGdQTTR1MFRsOHNmbXZEQk40SXZEa295QmlEZWN5dzdPTjJ5Ynpm?=
- =?utf-8?B?RnpIaC9oZ1gyTlRBRVVTQXdNNHN4dEltdnRvUU9lZ3dMWU1Rc3ZDQWJhcWpv?=
- =?utf-8?B?WkdqSkF6QTl6b1J6WGdZbmJWNmsrd2tMRCs0WmNFZmZGU1UwRTZ1MTBxd0dz?=
- =?utf-8?B?aWhyVjBqSlcvenBnOWxuNStmcmoxU3RFZzMxSnNnUEtPS0I0aTM1R1cvYm1p?=
- =?utf-8?B?S2ZJVXRFRUdrSFFkMXFJWExLRlltZ3lVSXVaTXJvZ0NZMDBKVktXbk9RZWJw?=
- =?utf-8?B?SWhEMHBBaFZBejlpREU4dlg0KzlhTkV5d0xVWFRKQXQ0TUFrUkswV3RHcHB4?=
- =?utf-8?B?RkhmYUNPaTR0em84c3g4bFRlcDJkQWlUbnd1WVllRndPRDhHaHhKeEpOMmt1?=
- =?utf-8?B?RkpxUXBoQkFnNFU0WDVYZ25XbmVXTVBEQWVTVnRVUFpFeThiZ2RiS3ZzZzFV?=
- =?utf-8?B?K0ZQZEVxVXg5Q1ZJYktMVlROM3lYaUlJaER0SHpsbDNnL2syVlpuSld2MHJy?=
- =?utf-8?B?VHFHR0pWSkhYTTdneEZzVXZrdnBBRmJqQTRmenZNakxRZ0l6ODN5RzlZSXMv?=
- =?utf-8?B?Mjgybms1V2hrQ0RWR2xJSDIzeEIvVEVybnliVk1Qb24xWG9uSCs1bW1ZU1Zr?=
- =?utf-8?B?WkoxRlg0SDZyemhXaXhxZDB3OEc0Q29GWXlPdmxqQVZ2ZW0yMElXSDIrUEVM?=
- =?utf-8?B?KytacFBxSmc1T2pmQWlIVmo3Q3JpYzdwQlAwemh6QzV6K3VZV1g0Kzcya3BT?=
- =?utf-8?B?dk9GVlZYc0hPanZQQzBOUU81OVNwUjR6ZVRJdGtqQzZ2RHpRT29DajRRQ0Zx?=
- =?utf-8?B?dFlhVTJnK21IYXRlTTlwVE5ZSTNUbDM0Nmk5VzVVOU5DS0M4aHRjRUR4NUpj?=
- =?utf-8?B?eFR6TFhER1UwdUZidnJtNEZIWmlUT04zYzMrbnN2elZnRStWSkczZz09?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b3768b46-dd34-4c21-9c7b-08da1d4ab7d6
-X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Apr 2022 12:39:57.6676 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: VCTTW0z1QLClJL9tbZlQmpHVjGLUA4C+Q/0RYlPPTUZTSvKOv6XYUzEyS7S43YOxwpHXMLs3gfNP5fTBG90MIA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6065
+X-Virus-Scanned: clamav-milter 0.103.5 at phobos.denx.de
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220413_055509_006548_96D70969 
-X-CRM114-Status: GOOD (  29.35  )
+X-CRM114-CacheID: sfid-20220413_070733_182357_52A01256 
+X-CRM114-Status: GOOD (  12.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,118 +75,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2022-04-13 at 16:19 +0530, Vinod Koul wrote:
-> On 13-04-22, 18:04, Liu Ying wrote:
-> > Hi Vinod,
-> > 
-> > On Wed, 2022-04-13 at 11:41 +0530, Vinod Koul wrote:
-> > > On 02-04-22, 13:24, Liu Ying wrote:
-> > > > This patch allows LVDS PHYs to be configured through
-> > > > the generic functions and through a custom structure
-> > > > added to the generic union.
-> > > > 
-> > > > The parameters added here are based on common LVDS PHY
-> > > > implementation practices.  The set of parameters
-> > > > should cover all potential users.
-> > > > 
-> > > > Cc: Kishon Vijay Abraham I <kishon@ti.com>
-> > > > Cc: Vinod Koul <vkoul@kernel.org>
-> > > > Cc: NXP Linux Team <linux-imx@nxp.com>
-> > > > Signed-off-by: Liu Ying <victor.liu@nxp.com>
-> > > > ---
+The 'fsl,refclk-pad-mode' DT property used to select clock source for
+PCIe PHY can have either of three values, IMX8_PCIE_REFCLK_PAD_INPUT,
+IMX8_PCIE_REFCLK_PAD_OUTPUT, IMX8_PCIE_REFCLK_PAD_UNUSED. The first
+two options are handled correctly by the driver, the last one is not,
+this patch implements support for the last option.
 
-[...]
+The IMX8_PCIE_REFCLK_PAD_INPUT means PCIE_RESREF is PHY clock input,
+the IMX8_PCIE_REFCLK_PAD_OUTPUT means PHY clock are sourced from SoC
+internal PLL and output to PCIE_RESREF external IO pin. The last
+IMX8_PCIE_REFCLK_PAD_UNUSED is a combination of previous two, PHY
+clock are sourced from SoC internal PLL and not output anywhere.
 
-> > > > + */
-> > > > +
-> > > > +#ifndef __PHY_LVDS_H_
-> > > > +#define __PHY_LVDS_H_
-> > > > +
-> > > > +/**
-> > > > + * struct phy_configure_opts_lvds - LVDS configuration set
-> > > > + * @bits_per_lane_and_dclk_cycle:	Number of bits per data
-> > > > lane
-> > > > and
-> > > > + *					differential clock
-> > > > cycle.
-> > > 
-> > > What does it mean by bits per data lane and differential clock
-> > > cycle?
-> > 
-> > Please check
-> > Documentation/devicetree/bindings/display/panel/lvds.yaml.
-> > lvds.yaml metions slot.  'bits_per_lane_and_dclk_cycle' means the
-> > number of slots.  But, I don't find the word 'slot' in my lvds
-> > relevant
-> > specs which mentioned in lvds.yaml, so 'slots' is probably not a
-> > generic name(lvds.yaml is for display panel).  So, I use
-> > 'bits_per_lane_and_dclk_cycle' as the name tells what it means.
-> 
-> variable name is fine, explanation for bit per lane and differential
-> clock cycle didnt help, maybe add better explanation of what this
-> variable means
+Reviewed-by: Richard Zhu <hongxing.zhu@nxp.com>
+Signed-off-by: Marek Vasut <marex@denx.de>
+Cc: Fabio Estevam <festevam@denx.de>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Cc: NXP Linux Team <linux-imx@nxp.com>
+Cc: Peng Fan <peng.fan@nxp.com>
+Cc: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: linux-arm-kernel@lists.infradead.org
+To: linux-phy@lists.infradead.org
+---
+V2: Rebase on phy/next
+---
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-I may add an example diagram as below...
-
-> 
-> > 
-> > > 
-> > > > + * @differential_clk_rate:		Clock rate, in Hertz,
-> > > > of the
-> > > > LVDS
-> > > > + *					differential clock.
-> > > > + * @lanes:				Number of active,
-> > > > consecutive,
-> > > > + *					data lanes, starting
-> > > > from lane
-> > > > 0,
-> > > > + *					used for the
-> > > > transmissions.
-> > > > + * @is_slave:				Boolean, true if the
-> > > > phy is a slave
-> > > > + *					which works together
-> > > > with a
-> > > > master
-> > > > + *					phy to support dual
-> > > > link
-> > > > transmission,
-> > > > + *					otherwise a regular phy
-> > > > or a
-> > > > master phy.
-
----------------------------------8<------------------------------------
-+ * This is an example with 4 lanes and 7 bits per data lane and
-differential
-+ * clock cycle:
-+ *
-+ * ::
-+ *               |<------------- one differential clock cycle --------
------>|
+diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+index f1eb03ba25d61..ad7d2edfc4146 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
++++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+@@ -94,15 +94,21 @@ static int imx8_pcie_phy_init(struct phy *phy)
+ 			   IMX8MM_GPR_PCIE_CMN_RST);
+ 	usleep_range(200, 500);
+ 
+-	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT) {
++	if (pad_mode == IMX8_PCIE_REFCLK_PAD_INPUT ||
++	    pad_mode == IMX8_PCIE_REFCLK_PAD_UNUSED) {
+ 		/* Configure the pad as input */
+ 		val = readl(imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
+ 		writel(val & ~ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
+ 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
+-	} else if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT) {
++	} else {
+ 		/* Configure the PHY to output the refclock via pad */
+ 		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_EN,
+ 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG061);
++	}
 +
-*                ________________                         ____________
-_____
-+ *      Clock                     \_______________________/
-+
-*                  ______  ______  ______  ______  ______  ______  ____
-__
-+
-*      Lane0     ><_bit0_><_bit1_><_bit2_><_bit3_><_bit4_><_bit5_><_bit
-6_><
-+
-*      Lane1     ><_bit0_><_bit1_><_bit2_><_bit3_><_bit4_><_bit5_><_bit
-6_><
-+
-*      Lane2     ><_bit0_><_bit1_><_bit2_><_bit3_><_bit4_><_bit5_><_bit
-6_><
-+
-*      Lane3     ><_bit0_><_bit1_><_bit2_><_bit3_><_bit4_><_bit5_><_bit
-6_><
----------------------------------8<------------------------------------
-
-What do you think?
-
-Regards,
-Liu Ying
++	if (pad_mode == IMX8_PCIE_REFCLK_PAD_OUTPUT ||
++	    pad_mode == IMX8_PCIE_REFCLK_PAD_UNUSED) {
++		/* Source clock from SoC internal PLL */
+ 		writel(ANA_PLL_CLK_OUT_TO_EXT_IO_SEL,
+ 		       imx8_phy->base + IMX8MM_PCIE_PHY_CMN_REG062);
+ 		writel(AUX_PLL_REFCLK_SEL_SYS_PLL,
+-- 
+2.35.1
 
 
 -- 
