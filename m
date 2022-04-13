@@ -4,65 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B85F6C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 07:22:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0B0CC433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Apr 2022 07:27:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r6wbBbcfUh5moZI/gjMoyra8U2AvdWPGF+3bKpBR7TY=; b=lqM3gkdDKD9gNV
-	n/zi9Gk5g4/S+yq46I4p9415U73DQDQdQyvJGEQJsTbhtBNnoyrbERvVtkvFRi7UY8f/fAYgGefvV
-	gNbQktsD5nn9aAyEDsidsqDX3o/wN5b8qitHmM+vhf61WhMjvNRqHOUHyA3P4VgBFEW73JcMRSxnu
-	vMgBwrV5iGO+WIlFY6i517yPe+/jJoogsqSTxEVTtiv6832AbEh5c/RTrc4HfhmsDBq/Ky5EC/Tp2
-	+WypGURqDh5ZrH/mSu0Ka8x71AMVm4uwtf5IywwJZt73mKwBJbcMUGyWrxBISyIT8Jlqxcvy2OaCU
-	uObCC8lN3JgG0IsSFfHA==;
+	List-Owner; bh=ZTnHrVah+9/olaa13fQM5QqEu49R4UH6gkOXXEfeyhg=; b=3bg14BcXSWqJdr
+	qtSOQm6YZMl0Z1EAKiOhzOcX0DzVmv+GV0AOrrQ7poWfIpdE56aWJxPpzwY4nUfaPTNZLLJW6pRZV
+	E2DQpvhVU7oejqNrdRZZRCYYh2jlOuwk3y81IwQMZvlrOCpKD3/giNTTeTfAzgPHNH+e5rTWSM1q+
+	3AVHeqU3GVCV8jef4I1vP3vgr/I3JZXmfLseVA1/iR/eJ4kbVJYg5PheQZA2jaS+5yzuWsvnGc9k9
+	cnALPz15UfCBzWsAcRpJa0hVZu3scQRZtAq62y3//HB73D7ZK15EVCnjeoY1+lko2jLLCDZs5ccO5
+	tUQfauQXt4TKPskjRZqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1neXKS-00HNi9-VM; Wed, 13 Apr 2022 07:22:16 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1neXPU-00HOtz-Cm; Wed, 13 Apr 2022 07:27:28 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1neXKP-00HNfo-Bt
- for linux-phy@lists.infradead.org; Wed, 13 Apr 2022 07:22:15 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1neXK8-0002PA-B8; Wed, 13 Apr 2022 09:21:56 +0200
-Message-ID: <b112c517d5ee86ef09088ed3cc00291417101a6e.camel@pengutronix.de>
-Subject: Re: [PATCH v2 0/7] Add the iMX8MP PCIe support
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Hongxing Zhu <hongxing.zhu@nxp.com>, "tharvey@gateworks.com"
- <tharvey@gateworks.com>, Alexander Stein <alexander.stein@ew.tq-group.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, "bhelgaas@google.com"
- <bhelgaas@google.com>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob
- Herring <robh@kernel.org>, Shawn Guo <shawnguo@kernel.org>, Vinod Koul
- <vkoul@kernel.org>,  "linux-phy@lists.infradead.org"
- <linux-phy@lists.infradead.org>, Device Tree Mailing List
- <devicetree@vger.kernel.org>, "linux-pci@vger.kernel.org"
- <linux-pci@vger.kernel.org>, Linux ARM Mailing List
- <linux-arm-kernel@lists.infradead.org>, open list
- <linux-kernel@vger.kernel.org>,  Sascha Hauer <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>
-Date: Wed, 13 Apr 2022 09:21:53 +0200
-In-Reply-To: <AS8PR04MB867606A1E2E45A0C0A1525A48CEA9@AS8PR04MB8676.eurprd04.prod.outlook.com>
-References: <1646644054-24421-1-git-send-email-hongxing.zhu@nxp.com>
- <CAJ+vNU0McZxj_74DC0wCUyHq-NaT14URnvUP+kvudz7YLQq7fg@mail.gmail.com>
- <AS8PR04MB86766041887E97E22B0AC8C48CE99@AS8PR04MB8676.eurprd04.prod.outlook.com>
- <4f8f93c51fedc84d94534e962bc7c68c4a4e5616.camel@pengutronix.de>
- <AS8PR04MB867606A1E2E45A0C0A1525A48CEA9@AS8PR04MB8676.eurprd04.prod.outlook.com>
-User-Agent: Evolution 3.40.4 (3.40.4-1.fc34) 
+ id 1neXPR-00HOso-75
+ for linux-phy@lists.infradead.org; Wed, 13 Apr 2022 07:27:26 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id b21so1942976lfb.5
+ for <linux-phy@lists.infradead.org>; Wed, 13 Apr 2022 00:27:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=message-id:date:mime-version:user-agent:subject:content-language:to
+ :cc:references:from:in-reply-to:content-transfer-encoding;
+ bh=QARgvmkpr8VVbyyV9NCF/ci4KYaV871c1Ej+b6nyl0E=;
+ b=aSERqlI6AgOSiUivPNKdqIbmT5M9Xv2yCQJxrGNk7ZF/XMJYXIkpoKgA/YEvUsje1y
+ 090G2iyN7TJFvJqgRn2IQVPedZ7bIlDdZgkwACxORsQ2x47GASAOJ574hsEiNHtY+A6M
+ QP6guAS99tnF4hG5Mez/T74bgZbcRgageIJ5cDoirD1/URyjKP1zHU40n4Cv+Ry8dGq7
+ N6QvyW1QExYFHxrk7cBYKxObhUqiVaswFg+dbdwgDhVkVaeqZdK15cui+TR1pSjhdCTm
+ Xfl2vUq4bJROYc6z7yV+MR5BYUpJxIpxzNHJNDdb4PeudOFx44liJBr9QkHa+xzMXNn5
+ wonQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=QARgvmkpr8VVbyyV9NCF/ci4KYaV871c1Ej+b6nyl0E=;
+ b=m/MiRsOn3dOZTBzBqUQKc7bCKD+sbpvEO3pOBlzSvIas/pR+k5F9doGwJ1tS9ODbxd
+ 2pGmrWqinLLatJvLfcXGS9uFCMeaZLModG3OPyaXASJSRqaDZHcb/VFsLA9WsSQvvY9F
+ JtEx9v9MMF53DUhyyr19uFs/NKd8pipZTbs48GrzgnOZ+7xXX8x+HzxgMdzhTrB5eGfl
+ S9RoCCamNouKr3ZDbYb3qAw1ncRLE9U+RJyW+MT/Wy78b7XAIq8CtAFnnEFpvoVFefOm
+ B30C8+wGHDGiXKYNmU2HtACqMnUkF8CL+yZUMZcrYbWP5IytlwvZgssCh/m6W8bV/USC
+ enJw==
+X-Gm-Message-State: AOAM532xMvicurZABVdkqey11bQjSE3oSRBFKjg7Cn9xTSiG/uqku8Ki
+ 05PFcLmj7saAFm6Dw2g61JrO7Q==
+X-Google-Smtp-Source: ABdhPJyCMeaEoNC8ctpBkTlLeoBr7h/Q6l6by9SEIGLzZHnngd0lYcZwtTOD4kceei/TXW5O2Cm12Q==
+X-Received: by 2002:a05:6512:1526:b0:45d:cd2b:912d with SMTP id
+ bq38-20020a056512152600b0045dcd2b912dmr28578677lfb.409.1649834841264; 
+ Wed, 13 Apr 2022 00:27:21 -0700 (PDT)
+Received: from [192.168.1.211] ([37.153.55.125])
+ by smtp.gmail.com with ESMTPSA id
+ b6-20020a2ebc06000000b0024b5c9e91c4sm1125356ljf.63.2022.04.13.00.27.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 13 Apr 2022 00:27:20 -0700 (PDT)
+Message-ID: <bad40b1b-73af-a1f3-d0df-b59e4a599015@linaro.org>
+Date: Wed, 13 Apr 2022 10:27:19 +0300
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.7.0
+Subject: Re: [PATCH v4 2/2] phy: qcom-qmp: Add SM8150 PCIe QMP PHYs
+Content-Language: en-GB
+To: Bhupesh Sharma <bhupesh.sharma@linaro.org>, linux-phy@lists.infradead.org
+Cc: bhupesh.linux@gmail.com, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, bjorn.andersson@linaro.org
+References: <20220325222130.1783242-1-bhupesh.sharma@linaro.org>
+ <20220325222130.1783242-3-bhupesh.sharma@linaro.org>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220325222130.1783242-3-bhupesh.sharma@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220413_002213_447966_B232087A 
-X-CRM114-Status: GOOD (  39.17  )
+X-CRM114-CacheID: sfid-20220413_002725_308823_62F05BD6 
+X-CRM114-Status: GOOD (  17.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,79 +88,153 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgUmljaGFyZCwKCkFtIE1vbnRhZywgZGVtIDExLjA0LjIwMjIgdW0gMDM6MzIgKzAwMDAgc2No
-cmllYiBIb25neGluZyBaaHU6Cj4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+ID4gRnJv
-bTogTHVjYXMgU3RhY2ggPGwuc3RhY2hAcGVuZ3V0cm9uaXguZGU+Cj4gPiBTZW50OiAyMDIy5bm0
-NOaciDjml6UgMTY6MTMKPiA+IFRvOiBIb25neGluZyBaaHUgPGhvbmd4aW5nLnpodUBueHAuY29t
-PjsgdGhhcnZleUBnYXRld29ya3MuY29tOwo+ID4gQWxleGFuZGVyIFN0ZWluIDxhbGV4YW5kZXIu
-c3RlaW5AZXcudHEtZ3JvdXAuY29tPgo+ID4gQ2M6IFBoaWxpcHAgWmFiZWwgPHAuemFiZWxAcGVu
-Z3V0cm9uaXguZGU+OyBiaGVsZ2Fhc0Bnb29nbGUuY29tOwo+ID4gTG9yZW56bwo+ID4gUGllcmFs
-aXNpIDxsb3JlbnpvLnBpZXJhbGlzaUBhcm0uY29tPjsgUm9iIEhlcnJpbmcKPiA+IDxyb2JoQGtl
-cm5lbC5vcmc+OyBTaGF3bgo+ID4gR3VvIDxzaGF3bmd1b0BrZXJuZWwub3JnPjsgVmlub2QgS291
-bCA8dmtvdWxAa2VybmVsLm9yZz47Cj4gPiBsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZzsg
-RGV2aWNlIFRyZWUgTWFpbGluZyBMaXN0Cj4gPiA8ZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc+
-OyBsaW51eC1wY2lAdmdlci5rZXJuZWwub3JnOyBMaW51eCBBUk0KPiA+IE1haWxpbmcKPiA+IExp
-c3QgPGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZz47IG9wZW4gbGlzdAo+ID4g
-PGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc+OyBTYXNjaGEgSGF1ZXIKPiA+IDxrZXJuZWxA
-cGVuZ3V0cm9uaXguZGU+Owo+ID4gZGwtbGludXgtaW14IDxsaW51eC1pbXhAbnhwLmNvbT4KPiA+
-IFN1YmplY3Q6IFJlOiBbUEFUQ0ggdjIgMC83XSBBZGQgdGhlIGlNWDhNUCBQQ0llIHN1cHBvcnQK
-PiA+IAo+ID4gQW0gRnJlaXRhZywgZGVtIDA4LjA0LjIwMjIgdW0gMDM6MTQgKzAwMDAgc2Nocmll
-YiBIb25neGluZyBaaHU6Cj4gPiA+ID4gCj4gPiBbLi4uXQo+ID4gPiA+IFJpY2hhcmQsCj4gPiA+
-ID4gCj4gPiA+ID4gVGhhbmtzIGZvciB3b3JraW5nIG9uIHRoaXMhCj4gPiA+ID4gCj4gPiA+ID4g
-RG8geW91IHBsYW4gb24gc3VibWl0dGluZyBhbm90aGVyIHZlcnNpb24gc29vbj8gSSd2ZSB0cmll
-ZCB0bwo+ID4gPiA+IHRlc3QKPiA+ID4gPiB0aGlzIHdpdGggYW4gaW14OG1wIGJvYXJkIEknbSBi
-cmluZ2luZyB1cCBhbmQgd2hpbGUgdGhlIGhvc3QKPiA+ID4gPiBjb250cm9sbGVyIGVudW1lcmF0
-ZXMgSSBmYWlsIHRvIGdldCBhIGxpbmsgdG8gYSBkZXZpY2UuIEl0J3MKPiA+ID4gPiB2ZXJ5Cj4g
-PiA+ID4gbGlrZWx5IEkgYW0gbWlzc2luZyBzb21ldGhpbmcgYXMgdGhpcyBzZXJpZXMgZGVwZW5k
-cyBvbiB0aGUKPiA+ID4gPiBJTVg4TVAgYmxrLWN0cmwKPiA+IGFuZCBncGMgc2VyaWVzIHdoaWNo
-IEkgYWxzbyBjYW4ndCBjbGVhbmx5IGFwcGx5Lgo+ID4gPiA+IEx1Y2FzIGp1c3Qgc3VibWl0dGVk
-IGEgJ2NvbnNvbGlkYXRlZCBpLk1YOE1QIEhTSU8vTUVESUEvSERNSQo+ID4gPiA+IGJsay1jdHJs
-IHNlcmllcycgWzFdIHlldCBJIGNhbid0IGZpbmQgYSByZXBvL2JyYW5jaCB0aGF0Cj4gPiA+ID4g
-YXBwbGllcyB0byBlaXRoZXIuCj4gPiA+ID4gCj4gPiA+ID4gUGVyaGFwcyB5b3UgaGF2ZSBhIGdp
-dCByZXBvIHNvbWV3aGVyZSBJIGNhbiBsb29rIGF0IHdoaWxlIHdlCj4gPiA+ID4gd2FpdAo+ID4g
-PiA+IGZvciBpbXg4bXAgYmxrLWN0bC9ncGMgdG8gc2V0dGxlIGFuZCB5b3UgdG8gc3VibWl0IGEg
-djM/Cj4gPiA+IEhpIFRpbToKPiA+ID4gVGhhbmtzIGZvciB5b3VyIGtpbmRseSBoZWxwIHRvIGRv
-IHRoZSB0ZXN0cy4KPiA+ID4gSSBoYWQgbGlzdGVkIHRoZSBkZXBlbmRlbmNpZXMgaW4gdGhlIGNv
-dmVyLWxldHRlciBsb2cuCj4gPiA+IEFsZXhhbmRlciBhbmQgSSB1c2VkIHRvIHRlc3QgdGhpcyBz
-ZXJpZXMgY29tbWl0cyBiYXNlZCBvbiB0aGUKPiA+ID4gVjUuMTcga2VybmVsLgo+ID4gPiAKPiA+
-ID4gTHVjYXMgaGFkIHByb3ZpZGVkIHNvbWUgcmV2aWV3IGNvbW1lbnRzIGFuZCBzdWdnZXN0aW9u
-cyBhYm91dCB0aGUKPiA+ID4gUExMCj4gPiA+IGJpdHMKPiA+ID4gwqBtYW5pcHVsYXRpb25zIG9m
-IEhTSU9NSVggaW4gaS5NWDhNUCBQQ0llIFBIWSBkcml2ZXIgIzMgb2YgdGhpcwo+ID4gPiBzZXJp
-ZXMuCj4gPiA+IEFuZCBoZSBzdWdnZXN0ZWQgdG8gbGV0IHRoZSBIU0lPTUlYIGJsay1jdHJsIG1h
-a2UgdGhpcyBQTEwgYXMgYQo+ID4gPiByZWFsCj4gPiA+IGNsb2NrLAo+ID4gPiDCoGFuZCB1c2Vk
-IGJ5IGkuTVg4TVAgUENJZSBQSFkgZHJpdmVyIGxhdGVyLgo+ID4gPiAKPiA+ID4gQWx0aG91Z2gg
-SSBoYXZlIHNvbWUgY29uZnVzaW9ucywgaXQncyBiZXR0ZXIgbGV0J3Mgd2F0aW5nIGZvciB0aGUK
-PiA+ID4gYmxrLWN0cmwgc2V0dGxlIGRvd24gYW5kIGdldCBjbGVhciBkaXNjdXNzaW9uIHdpdGgg
-THVjYXMgbGF0ZXIuCj4gPiA+IEhvdyBkbyB5b3UgdGhpbmsgYWJvdXQgdGhhdD8KPiA+IAo+ID4g
-SnVzdCB0byBsZXQgeW91IGtub3cgbXkgcGxhbnM6IEkgd2FzIHF1aXRlIGJ1c3kgd2l0aCBnZXR0
-aW5nIHRoZQo+ID4gaS5NWDhNUAo+ID4gSERNSSBwYXJ0IHRvIHdvcmsuIE5vdyB0aGF0IHRoaXMg
-aXMgYXQgbGVhc3QgaW4gYSBzdGF0ZSB3aGVyZSBpdAo+ID4gY2FuIGNvbGxlY3QKPiA+IHNvbWUg
-ZmVlZGJhY2sgZnJvbSB1cHN0cmVhbSBJIGhhdmUgc29tZSB0aW1lIHRvIGNpcmNsZSBiYWNrIHRv
-IHRoaXMKPiA+IHRvcGljLiBJCj4gPiBjYW4ndCBjb21taXQgdG8gZG8gaXQgaW1tZWRpYXRlbHks
-IGJ1dCBJJ2xsIGdldCBhcm91bmQgdG8gbG9va2luZwo+ID4gYXQgdGhlIFBDSWUKPiA+IHNlcmll
-cyBhIGJpdCBtb3JlIGluLWRlcHRoIGFuZCBhcHBseSBteSBIU0lPIFBMTCBzdWdnZXN0aW9uIHRv
-IHRoZQo+ID4gYmxrLWN0cmwKPiA+IGRyaXZlciBkdXJpbmcgdGhlIG5leHQgd2Vlay4KPiAKPiBI
-aSBMdWNhczoKPiBUaGFua3MgZm9yIHlvdXIgaGVscGZ1bCByZXBseS4KPiBJIGtub3cgdGhhdCB5
-b3UncmUgYnVzeSB3aXRoIHRoZSBibGstY3RybCBzZXR0bGUgZG93biBub3csIGFuZCBoYWQKPiBl
-eHBsYWluZWQgdG8KPiBUaW0uCgpZZXN0ZXJkYXkgSSB0cmllZCB0byBnZXQgdGhpcyBzZXJpZXMg
-d29ya2luZyBvbiBteSA4TVAtRVZLIGJvYXJkLCBidXQKd2FzIHVuc3VjY2Vzc2Z1bCBmb3Igbm93
-LiBUaGUgUENJZSBsaW5rIGRvZXMgbm90IGNvbWUgdXAuIFBDSWUgUkVGX0NMSwppcyBwcmVzZW50
-IGFuZCBQRVJTVCBkZS1hc3NlcnRlZC4gSSdtIG5vdCBzdXJlIGlmIHRoaXMgaXMgZHVlIHRvIGEK
-ZmF1bHR5IEVQIGRldmljZSAoSSBkb24ndCBoYXZlIGFub3RoZXIgTS4yIEtleUUgZGV2aWNlIGFy
-b3VuZCB0byBjaGVjaykKb3IgaWYgdGhpcyBtYXkgYmUgZHVlIHRvIHRoZSBvbGQgcmV2aXNpb24g
-b2YgbXkgOE1QLUVWSywgYXMgSSdtIHN0aWxsCndvcmtpbmcgd2l0aCBhIFJldkEgYm9hcmQuIFRo
-ZSBzY2hlbWF0aWMgcmV2aXNpb24gbG9nIGRvZXNuJ3Qgc2hvdwphbnl0aGluZyB0aGF0IHdvdWxk
-IG9idmlvdXNseSBpbmZsdWVuY2UgUENJZSBvcGVyYXRpb24sIGJ1dCBJIGhhdmUgYWxzbwpub3Qg
-Zm91bmQgYW55IHNjaGVtYXRpY3MgZm9yIFJldkEuCgpEbyB5b3Uga25vdyBpZiB0aGVyZSBoYXZl
-IGJlZW4gYW55IFBDSWUgcmVsYXRlZCBjaGFuZ2VzL2ZpeGVzIGluIHRoZQpsYXRlciBFVksgYm9h
-cmQgcmV2aXNpb25zPwoKRm9yIG5vdyBJJ2xsIHRyeSB0byBnZXQgdGhpcyB3b3JraW5nIG9uIGEg
-Y3VzdG9tIGkuTVg4TVAgYm9hcmQsIHdoZXJlIEkKY2FuIHVzZSBhIGRpZmZlcmVudCBFUCBkZXZp
-Y2UuIE1heWJlIEknbGwgaGF2ZSBhIGJpdCBtb3JlIGx1Y2sgdGhlcmUuCgpSZWdhcmRzLApMdWNh
-cwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+On 26/03/2022 01:21, Bhupesh Sharma wrote:
+> SM8150 has multiple (different) PHY versions:
+> QMP GEN3x1 PHY - 1 lane
+> QMP GEN3x2 PHY - 2 lanes
+> 
+> Add support for these with relevant init sequence.
+> 
+> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Cc: Vinod Koul <vkoul@kernel.org>
+> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-qmp.c | 90 +++++++++++++++++++++++++++++
+>   1 file changed, 90 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> index b144ae1f729a..8e928b9619b6 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> @@ -3294,6 +3294,11 @@ static const char * const sdm845_pciephy_clk_l[] = {
+>   	"aux", "cfg_ahb", "ref", "refgen",
+>   };
+>   
+> +/* the pcie phy on sm8150 doesn't have a ref clock */
+> +static const char * const sm8150_pciephy_clk_l[] = {
+> +	"aux", "cfg_ahb", "refgen",
+
+On sm8250 we use GCC_WIFI/WIGIG/MDM_CLKREF_EN clocks as "ref". 
+Downstream dts lists them as "pcie_X_ldo". sm8150 also has these clocks 
+(GCC_PCIE_n_CLKREF_CLK). Is there any reason why we use CLKREF clocks on 
+sm8250, but ommit them on sm8150?
+
+> +};
+> +
+>   static const char * const qmp_v4_phy_clk_l[] = {
+>   	"aux", "ref_clk_src", "ref", "com_aux",
+>   };
+> @@ -3583,6 +3588,85 @@ static const struct qmp_phy_cfg sdm845_qhp_pciephy_cfg = {
+>   	.pwrdn_delay_max	= 1005,		/* us */
+>   };
+>   
+> +static const struct qmp_phy_cfg sm8150_qmp_gen3x1_pciephy_cfg = {
+> +	.type = PHY_TYPE_PCIE,
+> +	.nlanes = 1,
+> +
+> +	.serdes_tbl		= sm8250_qmp_pcie_serdes_tbl,
+> +	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
+> +	.serdes_tbl_sec		= sm8250_qmp_gen3x1_pcie_serdes_tbl,
+> +	.serdes_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_serdes_tbl),
+> +	.tx_tbl			= sm8250_qmp_pcie_tx_tbl,
+> +	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_tx_tbl),
+> +	.rx_tbl			= sm8250_qmp_pcie_rx_tbl,
+> +	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_rx_tbl),
+> +	.rx_tbl_sec		= sm8250_qmp_gen3x1_pcie_rx_tbl,
+> +	.rx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_rx_tbl),
+> +	.pcs_tbl		= sm8250_qmp_pcie_pcs_tbl,
+> +	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_pcs_tbl),
+> +	.pcs_tbl_sec		= sm8250_qmp_gen3x1_pcie_pcs_tbl,
+> +	.pcs_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_tbl),
+> +	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
+> +	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
+> +	.pcs_misc_tbl_sec		= sm8250_qmp_gen3x1_pcie_pcs_misc_tbl,
+> +	.pcs_misc_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x1_pcie_pcs_misc_tbl),
+> +	.clk_list		= sm8150_pciephy_clk_l,
+> +	.num_clks		= ARRAY_SIZE(sm8150_pciephy_clk_l),
+> +	.reset_list		= sdm845_pciephy_reset_l,
+> +	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+> +	.vreg_list		= qmp_phy_vreg_l,
+> +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> +	.regs			= sm8250_pcie_regs_layout,
+> +
+> +	.start_ctrl		= PCS_START | SERDES_START,
+> +	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> +	.phy_status		= PHYSTATUS,
+> +
+> +	.has_pwrdn_delay	= true,
+> +	.pwrdn_delay_min	= 995,		/* us */
+> +	.pwrdn_delay_max	= 1005,		/* us */
+> +};
+> +
+> +static const struct qmp_phy_cfg sm8150_qmp_gen3x2_pciephy_cfg = {
+> +	.type = PHY_TYPE_PCIE,
+> +	.nlanes = 2,
+> +
+> +	.serdes_tbl		= sm8250_qmp_pcie_serdes_tbl,
+> +	.serdes_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_serdes_tbl),
+> +	.tx_tbl			= sm8250_qmp_pcie_tx_tbl,
+> +	.tx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_tx_tbl),
+> +	.tx_tbl_sec		= sm8250_qmp_gen3x2_pcie_tx_tbl,
+> +	.tx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_tx_tbl),
+> +	.rx_tbl			= sm8250_qmp_pcie_rx_tbl,
+> +	.rx_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_rx_tbl),
+> +	.rx_tbl_sec		= sm8250_qmp_gen3x2_pcie_rx_tbl,
+> +	.rx_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_rx_tbl),
+> +	.pcs_tbl		= sm8250_qmp_pcie_pcs_tbl,
+> +	.pcs_tbl_num		= ARRAY_SIZE(sm8250_qmp_pcie_pcs_tbl),
+> +	.pcs_tbl_sec		= sm8250_qmp_gen3x2_pcie_pcs_tbl,
+> +	.pcs_tbl_num_sec		= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_tbl),
+> +	.pcs_misc_tbl		= sm8250_qmp_pcie_pcs_misc_tbl,
+> +	.pcs_misc_tbl_num	= ARRAY_SIZE(sm8250_qmp_pcie_pcs_misc_tbl),
+> +	.pcs_misc_tbl_sec		= sm8250_qmp_gen3x2_pcie_pcs_misc_tbl,
+> +	.pcs_misc_tbl_num_sec	= ARRAY_SIZE(sm8250_qmp_gen3x2_pcie_pcs_misc_tbl),
+> +	.clk_list		= sm8150_pciephy_clk_l,
+> +	.num_clks		= ARRAY_SIZE(sm8150_pciephy_clk_l),
+> +	.reset_list		= sdm845_pciephy_reset_l,
+> +	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+> +	.vreg_list		= qmp_phy_vreg_l,
+> +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> +	.regs			= sm8250_pcie_regs_layout,
+> +
+> +	.start_ctrl		= PCS_START | SERDES_START,
+> +	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+> +	.phy_status		= PHYSTATUS,
+> +
+> +	.is_dual_lane_phy	= true,
+> +	.has_pwrdn_delay	= true,
+> +	.pwrdn_delay_min	= 995,		/* us */
+> +	.pwrdn_delay_max	= 1005,		/* us */
+> +};
+> +
+>   static const struct qmp_phy_cfg sm8250_qmp_gen3x1_pciephy_cfg = {
+>   	.type = PHY_TYPE_PCIE,
+>   	.nlanes = 1,
+> @@ -6007,6 +6091,12 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
+>   	}, {
+>   		.compatible = "qcom,sm6115-qmp-ufs-phy",
+>   		.data = &sm6115_ufsphy_cfg,
+> +	}, {
+> +		.compatible = "qcom,sm8150-qmp-gen3x1-pcie-phy",
+> +		.data = &sm8150_qmp_gen3x1_pciephy_cfg,
+> +	}, {
+> +		.compatible = "qcom,sm8150-qmp-gen3x2-pcie-phy",
+> +		.data = &sm8150_qmp_gen3x2_pciephy_cfg,
+>   	}, {
+>   		.compatible = "qcom,sm8150-qmp-ufs-phy",
+>   		.data = &sm8150_ufsphy_cfg,
+
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
