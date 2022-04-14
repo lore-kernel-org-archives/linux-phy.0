@@ -4,88 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F317DC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Apr 2022 03:24:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0894AC433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Apr 2022 05:38:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K01fEA8nFH+ADU4q8pgy1QuoxrzInMHZY7SPYe7tuOc=; b=uPCaXo4hvy9sBs
-	/b+ZfkaahN9kKYZkVuuUbG52MCtR+Fvq75RkBojn1XvF6WhiPMjTZJsMQZ724Koh4PMKsMmKJjct1
-	FTCwemTBYCrMOMD8zwGVQtFE5UIgaKBAn6DsuLjxJ9rWtMl0jF3hMxcOkjuu1b8stdg58BEnSeZ9/
-	QHAQzNN04aSqzukP0awZLWCjabbdWVIvHHBcysTsviBwC8DKw/XIqMdMxWEbzeuMTdct2Y1o+S/QG
-	qDqqabwLLNc1MZyAirFwIo6bJCRihFrF18k3GdghBYAF6HzkRI4PXy9xBYnOsnOsMz2XOP+iqTLnl
-	4A1XTxE4eQ2F0k/LZ/ng==;
+	List-Owner; bh=18CPd+qx3ciTMkQQGiVEBabWJNoQoPOjz9Vii3uT/4I=; b=G4dl29FvwgL31w
+	/VLcEEvxZzwXw2B2i7dY2pxX02GuOQqyIwtSca4RuQyqAXHi920cwmjvqRFEav/BCALA19/60o31R
+	L6/2IHVQprFI7mSUNCj1+1zcWM1ngI6e27K2krFyV2tpAOHHbxFE6sHKNXcCUK6BXqA5/nMuGdDtg
+	izBFmJVpQ0nAJa3M6c45eeu2ACIH0nxqpYzzatyD9uVAR5olF3PzVTOFcmEmB98eYfBBFc8vCWpgw
+	e0R8MBytG44wkmapvWQ+R8jk/rXzq+dECcLSuKkompWMxovp6X3F58nEbChx6swRv6qzG+1N3U52y
+	zkeE8NSIef4BthBsHrIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1neq6E-003hVN-6V; Thu, 14 Apr 2022 03:24:50 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1nesB8-003wmk-Ce; Thu, 14 Apr 2022 05:38:02 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1neq4b-003gfc-KL; Thu, 14 Apr 2022 03:23:11 +0000
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
- by mailout.nyi.internal (Postfix) with ESMTP id 03AA25C059F;
- Wed, 13 Apr 2022 23:23:09 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute2.internal (MEProxy); Wed, 13 Apr 2022 23:23:09 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- cc:cc:content-transfer-encoding:date:date:from:from:in-reply-to
- :in-reply-to:message-id:mime-version:references:reply-to:sender
- :subject:subject:to:to; s=fm2; t=1649906588; x=1649992988; bh=oy
- Y0y0iDKvCprqGB7cUA56JPXS9meVq9Antz5/VLmEw=; b=PRhsrHf/KKEKGfwAht
- KhgQ62OpuPa9RENHhU+1ijtCcXsxDczA1T9Y7AYDuYJkUlmB7U4pe2u4ZZV67/CJ
- mr1yJAX+ufJHsQz5PIffjK5TA8YTe3cFrhoVKvZ3AePeVMQg43YKZ5UAePXZ28HL
- l78iVcz9pgKTLfi7157z3qYvqcKgrQrnsiYK3seJ2gb1UhaQVV6pIulLT5Um+QPA
- MD9KLET5FVsuFX5n9k9cIJ72gYCrpXmsM1747/jd9sII9X/zLMpWnoxPCqpCb/0Y
- RsbZH5li0tZXot6hOOkn/w5qZz94qsGh02lPxHSK5J6FTOH+WO2boFEUi5sy1fWV
- NWPA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding:date:date
- :from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:sender:subject:subject:to:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=
- 1649906588; x=1649992988; bh=oyY0y0iDKvCprqGB7cUA56JPXS9meVq9Ant
- z5/VLmEw=; b=VsMYKYmnJF7QxbhfMPpV73nRpY0JNdWHQuM5dOm9hb1KcG30o5G
- ixXIpEs8qvHj0GHfUfFHNg3ImPSBeYW8i7TZB8fqw+lbpITjl23rmPPEG1z+yLt8
- YEn8W7bAtznCxHUN4o7lCebH78anbIwsoRGNl0rX1Lyss4VHgnZpb97g1ZlmUa9U
- 3giTMXsZ2S8CjX9zZB1BrqfakqiziEYgDc69ziQ5QWdE2YSnyg9gAIxkKjCzczMv
- Abnq+JyTrvxoYjPdOsPCLagLtGCKLGlI48VaZoOy2CCbOxY808HFViZjbmFDwxsH
- bFauG+fY/6gab7Nm50gXTVhDdSHkbZ2WNow==
-X-ME-Sender: <xms:nJNXYl8m9cUrclXwsEPpP5U2to0lBJODMhxzoZBZXK-4JdqHcGwCuA>
- <xme:nJNXYpvMZJPKiVaV19rF0f0TAPtt-bJlAUB6AKLD2AbOeK76xQHfKmYRo5qQts8DF
- TOfbqPvs1aiPOMz3Q>
-X-ME-Received: <xmr:nJNXYjC4AlLKaPmSCJ8D6U1wFzm0Nwz4d4kIngF0JM0IwmBG30nhuGSys6MjIX4IOTAXbw3pOTCJ3nwbj7Vz5KcUIdbVHoY_ml6slelqhqG0lv6Lp4E_VVXrg6DVBrLcZdncbA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrudelvddgjedtucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucggtf
- frrghtthgvrhhnpeduhfejfedvhffgfeehtefghfeiiefgfeehgfdvvdevfeegjeehjedv
- gfejheeuieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhroh
- hmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:nJNXYpf4xg3xT8QbOYXRz0BhAvxTW_1VFuFTOwnMqM-cLU-EKkS2MA>
- <xmx:nJNXYqNGh_rTIA_zb9QQmbWgENj8Q50ruDYj3rZo5BK0exTscn0NTA>
- <xmx:nJNXYrkhOi5RNoipLIJK8dpPxssxI2tYkBi9T7SRhgoCQLDNlv--ig>
- <xmx:nJNXYpez1v4YJubj6ZeowsZdGmi03Kkt3PgtefsAwxmFSlUTZ4b4KA>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 13 Apr 2022 23:23:08 -0400 (EDT)
-From: Samuel Holland <samuel@sholland.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>
-Cc: Peter Geis <pgwipeout@gmail.com>, Samuel Holland <samuel@sholland.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org
-Subject: [PATCH 6/6] phy: rockchip-inno-usb2: Handle ID IRQ
-Date: Wed, 13 Apr 2022 22:22:57 -0500
-Message-Id: <20220414032258.40984-7-samuel@sholland.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220414032258.40984-1-samuel@sholland.org>
-References: <20220414032258.40984-1-samuel@sholland.org>
+ id 1nesAx-003wjK-8t; Thu, 14 Apr 2022 05:37:52 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id C4D6B61E35;
+ Thu, 14 Apr 2022 05:37:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F4D6C385A1;
+ Thu, 14 Apr 2022 05:37:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1649914669;
+ bh=OvCUBTX1ZAgB8ToDSbNbmHnIQ8kXnV7+uWxjqjVKne4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JvF5esoQdpTyrqK52quS/FxxjB6PsrHksGx2OwyQ32LgEPhrRjWvKRZApfVZzXLzw
+ mA/YzjocNeAB361OfVk1iLricCnMsGhmKaQQqqMfLFpVUocSK4EhKtAscdPfSwqhrq
+ 61hU3bfa98o3jlZ/v1AgXq1C3TVpQ0yveoZNwhXTnKyverfK8/aZ5gQ+2fv5F/6Yha
+ f763hQHqXQoT1EGd9LR0VdPPty+PIp2BUpsTOsGjGR8Te7nd4gHYNJPOaRk/g7SOWW
+ 4zLCRUHSSRU7olwtqyyhe8J0FK1EaMKmywiIk1SaQ+5kZ5/lRPH3EdDz8v3kaL4BRH
+ l0m1h0e63GeeQ==
+Date: Thu, 14 Apr 2022 11:07:44 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Liu Ying <victor.liu@nxp.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, kishon@ti.com,
+ robh+dt@kernel.org, andrzej.hajda@intel.com,
+ narmstrong@baylibre.com, Laurent.pinchart@ideasonboard.com,
+ jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@linux.ie,
+ daniel@ffwll.ch, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
+ agx@sigxcpu.org, robert.chiras@nxp.com, martin.kepplinger@puri.sm,
+ robert.foss@linaro.org
+Subject: Re: [PATCH v6 resend 2/5] phy: Add LVDS configuration options
+Message-ID: <YlezKAw+W8HOa322@matsya>
+References: <20220402052451.2517469-1-victor.liu@nxp.com>
+ <20220402052451.2517469-3-victor.liu@nxp.com>
+ <YlZpnrKt9NbHZv26@matsya>
+ <d77b41d911e126331138ddaca146a581d316bd09.camel@nxp.com>
+ <YlaqwoFCfusFgIIe@matsya>
+ <a2731b2d77f9bf2adf36f0c05cb5e3b14a5a91a9.camel@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a2731b2d77f9bf2adf36f0c05cb5e3b14a5a91a9.camel@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220413_202309_784682_F53E80FD 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20220413_223751_434985_289CA27C 
+X-CRM114-Status: GOOD (  25.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,234 +84,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This supports detecting host mode for the OTG port without an extcon.
+On 13-04-22, 20:39, Liu Ying wrote:
+> On Wed, 2022-04-13 at 16:19 +0530, Vinod Koul wrote:
+> > On 13-04-22, 18:04, Liu Ying wrote:
+> > > Hi Vinod,
+> > > 
+> > > On Wed, 2022-04-13 at 11:41 +0530, Vinod Koul wrote:
+> > > > On 02-04-22, 13:24, Liu Ying wrote:
+> > > > > This patch allows LVDS PHYs to be configured through
+> > > > > the generic functions and through a custom structure
+> > > > > added to the generic union.
+> > > > > 
+> > > > > The parameters added here are based on common LVDS PHY
+> > > > > implementation practices.  The set of parameters
+> > > > > should cover all potential users.
+> > > > > 
+> > > > > Cc: Kishon Vijay Abraham I <kishon@ti.com>
+> > > > > Cc: Vinod Koul <vkoul@kernel.org>
+> > > > > Cc: NXP Linux Team <linux-imx@nxp.com>
+> > > > > Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> > > > > ---
+> 
+> [...]
+> 
+> > > > > + */
+> > > > > +
+> > > > > +#ifndef __PHY_LVDS_H_
+> > > > > +#define __PHY_LVDS_H_
+> > > > > +
+> > > > > +/**
+> > > > > + * struct phy_configure_opts_lvds - LVDS configuration set
+> > > > > + * @bits_per_lane_and_dclk_cycle:	Number of bits per data
+> > > > > lane
+> > > > > and
+> > > > > + *					differential clock
+> > > > > cycle.
+> > > > 
+> > > > What does it mean by bits per data lane and differential clock
+> > > > cycle?
+> > > 
+> > > Please check
+> > > Documentation/devicetree/bindings/display/panel/lvds.yaml.
+> > > lvds.yaml metions slot.  'bits_per_lane_and_dclk_cycle' means the
+> > > number of slots.  But, I don't find the word 'slot' in my lvds
+> > > relevant
+> > > specs which mentioned in lvds.yaml, so 'slots' is probably not a
+> > > generic name(lvds.yaml is for display panel).  So, I use
+> > > 'bits_per_lane_and_dclk_cycle' as the name tells what it means.
+> > 
+> > variable name is fine, explanation for bit per lane and differential
+> > clock cycle didnt help, maybe add better explanation of what this
+> > variable means
+> 
+> I may add an example diagram as below...
 
-The rv1108 properties are not updated due to lack of documentation.
+Not really a diagram, you can add if you like.. But something which
+explains in a sentence or few about the variable.
 
-Signed-off-by: Samuel Holland <samuel@sholland.org>
----
+bits per lane per differential clock cycle ?
 
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 85 +++++++++++++++++++
- 1 file changed, 85 insertions(+)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 2b29f5dd8873..e377b958d9b6 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -116,11 +116,15 @@ struct rockchip_chg_det_reg {
-  * @bvalid_det_en: vbus valid rise detection enable register.
-  * @bvalid_det_st: vbus valid rise detection status register.
-  * @bvalid_det_clr: vbus valid rise detection clear register.
-+ * @id_det_en: id detection enable register.
-+ * @id_det_st: id detection state register.
-+ * @id_det_clr: id detection clear register.
-  * @ls_det_en: linestate detection enable register.
-  * @ls_det_st: linestate detection state register.
-  * @ls_det_clr: linestate detection clear register.
-  * @utmi_avalid: utmi vbus avalid status register.
-  * @utmi_bvalid: utmi vbus bvalid status register.
-+ * @utmi_id: utmi id state register.
-  * @utmi_ls: utmi linestate state register.
-  * @utmi_hstdet: utmi host disconnect register.
-  */
-@@ -129,11 +133,15 @@ struct rockchip_usb2phy_port_cfg {
- 	struct usb2phy_reg	bvalid_det_en;
- 	struct usb2phy_reg	bvalid_det_st;
- 	struct usb2phy_reg	bvalid_det_clr;
-+	struct usb2phy_reg	id_det_en;
-+	struct usb2phy_reg	id_det_st;
-+	struct usb2phy_reg	id_det_clr;
- 	struct usb2phy_reg	ls_det_en;
- 	struct usb2phy_reg	ls_det_st;
- 	struct usb2phy_reg	ls_det_clr;
- 	struct usb2phy_reg	utmi_avalid;
- 	struct usb2phy_reg	utmi_bvalid;
-+	struct usb2phy_reg	utmi_id;
- 	struct usb2phy_reg	utmi_ls;
- 	struct usb2phy_reg	utmi_hstdet;
- };
-@@ -161,6 +169,7 @@ struct rockchip_usb2phy_cfg {
-  * @suspended: phy suspended flag.
-  * @vbus_attached: otg device vbus status.
-  * @bvalid_irq: IRQ number assigned for vbus valid rise detection.
-+ * @id_irq: IRQ number assigned for ID pin detection.
-  * @ls_irq: IRQ number assigned for linestate detection.
-  * @otg_mux_irq: IRQ number which multiplex otg-id/otg-bvalid/linestate
-  *		 irqs to one irq in otg-port.
-@@ -179,6 +188,7 @@ struct rockchip_usb2phy_port {
- 	bool		suspended;
- 	bool		vbus_attached;
- 	int		bvalid_irq;
-+	int		id_irq;
- 	int		ls_irq;
- 	int		otg_mux_irq;
- 	struct mutex	mutex;
-@@ -419,6 +429,19 @@ static int rockchip_usb2phy_init(struct phy *phy)
- 			if (ret)
- 				goto out;
- 
-+			/* clear id status and enable id detect irq */
-+			ret = property_enable(rphy->grf,
-+					      &rport->port_cfg->id_det_clr,
-+					      true);
-+			if (ret)
-+				goto out;
-+
-+			ret = property_enable(rphy->grf,
-+					      &rport->port_cfg->id_det_en,
-+					      true);
-+			if (ret)
-+				goto out;
-+
- 			schedule_delayed_work(&rport->otg_sm_work,
- 					      OTG_SCHEDULE_DELAY * 3);
- 		} else {
-@@ -913,11 +936,30 @@ static irqreturn_t rockchip_usb2phy_bvalid_irq(int irq, void *data)
- 	return IRQ_HANDLED;
- }
- 
-+static irqreturn_t rockchip_usb2phy_id_irq(int irq, void *data)
-+{
-+	struct rockchip_usb2phy_port *rport = data;
-+	struct rockchip_usb2phy *rphy = dev_get_drvdata(rport->phy->dev.parent);
-+	bool id;
-+
-+	if (!property_enabled(rphy->grf, &rport->port_cfg->id_det_st))
-+		return IRQ_NONE;
-+
-+	/* clear id detect irq pending status */
-+	property_enable(rphy->grf, &rport->port_cfg->id_det_clr, true);
-+
-+	id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
-+	extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
-+
-+	return IRQ_HANDLED;
-+}
-+
- static irqreturn_t rockchip_usb2phy_otg_mux_irq(int irq, void *data)
- {
- 	irqreturn_t ret = IRQ_NONE;
- 
- 	ret |= rockchip_usb2phy_bvalid_irq(irq, data);
-+	ret |= rockchip_usb2phy_id_irq(irq, data);
- 
- 	return ret;
- }
-@@ -1015,6 +1057,25 @@ static int rockchip_usb2phy_port_irq_init(struct rockchip_usb2phy *rphy,
- 					"failed to request otg-bvalid irq handle\n");
- 				return ret;
- 			}
-+
-+			rport->id_irq = of_irq_get_byname(child_np, "otg-id");
-+			if (rport->id_irq < 0) {
-+				dev_err(rphy->dev, "no otg-id irq provided\n");
-+				ret = rport->id_irq;
-+				return ret;
-+			}
-+
-+			ret = devm_request_threaded_irq(rphy->dev, rport->id_irq,
-+							NULL,
-+							rockchip_usb2phy_id_irq,
-+							IRQF_ONESHOT,
-+							"rockchip_usb2phy_id",
-+							rport);
-+			if (ret) {
-+				dev_err(rphy->dev,
-+					"failed to request otg-id irq handle\n");
-+				return ret;
-+			}
- 		}
- 		break;
- 	default:
-@@ -1289,10 +1350,14 @@ static const struct rockchip_usb2phy_cfg rk3228_phy_cfgs[] = {
- 				.bvalid_det_en	= { 0x0680, 3, 3, 0, 1 },
- 				.bvalid_det_st	= { 0x0690, 3, 3, 0, 1 },
- 				.bvalid_det_clr	= { 0x06a0, 3, 3, 0, 1 },
-+				.id_det_en	= { 0x0680, 6, 5, 0, 3 },
-+				.id_det_st	= { 0x0690, 6, 5, 0, 3 },
-+				.id_det_clr	= { 0x06a0, 6, 5, 0, 3 },
- 				.ls_det_en	= { 0x0680, 2, 2, 0, 1 },
- 				.ls_det_st	= { 0x0690, 2, 2, 0, 1 },
- 				.ls_det_clr	= { 0x06a0, 2, 2, 0, 1 },
- 				.utmi_bvalid	= { 0x0480, 4, 4, 0, 1 },
-+				.utmi_id	= { 0x0480, 1, 1, 0, 1 },
- 				.utmi_ls	= { 0x0480, 3, 2, 0, 1 },
- 			},
- 			[USB2PHY_PORT_HOST] = {
-@@ -1348,11 +1413,15 @@ static const struct rockchip_usb2phy_cfg rk3308_phy_cfgs[] = {
- 				.bvalid_det_en	= { 0x3020, 3, 2, 0, 3 },
- 				.bvalid_det_st	= { 0x3024, 3, 2, 0, 3 },
- 				.bvalid_det_clr = { 0x3028, 3, 2, 0, 3 },
-+				.id_det_en	= { 0x3020, 5, 4, 0, 3 },
-+				.id_det_st	= { 0x3024, 5, 4, 0, 3 },
-+				.id_det_clr	= { 0x3028, 5, 4, 0, 3 },
- 				.ls_det_en	= { 0x3020, 0, 0, 0, 1 },
- 				.ls_det_st	= { 0x3024, 0, 0, 0, 1 },
- 				.ls_det_clr	= { 0x3028, 0, 0, 0, 1 },
- 				.utmi_avalid	= { 0x0120, 10, 10, 0, 1 },
- 				.utmi_bvalid	= { 0x0120, 9, 9, 0, 1 },
-+				.utmi_id	= { 0x0120, 6, 6, 0, 1 },
- 				.utmi_ls	= { 0x0120, 5, 4, 0, 1 },
- 			},
- 			[USB2PHY_PORT_HOST] = {
-@@ -1391,11 +1460,15 @@ static const struct rockchip_usb2phy_cfg rk3328_phy_cfgs[] = {
- 				.bvalid_det_en	= { 0x0110, 3, 2, 0, 3 },
- 				.bvalid_det_st	= { 0x0114, 3, 2, 0, 3 },
- 				.bvalid_det_clr = { 0x0118, 3, 2, 0, 3 },
-+				.id_det_en	= { 0x0110, 5, 4, 0, 3 },
-+				.id_det_st	= { 0x0114, 5, 4, 0, 3 },
-+				.id_det_clr	= { 0x0118, 5, 4, 0, 3 },
- 				.ls_det_en	= { 0x0110, 0, 0, 0, 1 },
- 				.ls_det_st	= { 0x0114, 0, 0, 0, 1 },
- 				.ls_det_clr	= { 0x0118, 0, 0, 0, 1 },
- 				.utmi_avalid	= { 0x0120, 10, 10, 0, 1 },
- 				.utmi_bvalid	= { 0x0120, 9, 9, 0, 1 },
-+				.utmi_id	= { 0x0120, 6, 6, 0, 1 },
- 				.utmi_ls	= { 0x0120, 5, 4, 0, 1 },
- 			},
- 			[USB2PHY_PORT_HOST] = {
-@@ -1453,8 +1526,12 @@ static const struct rockchip_usb2phy_cfg rk3399_phy_cfgs[] = {
- 				.bvalid_det_en	= { 0xe3c0, 3, 3, 0, 1 },
- 				.bvalid_det_st	= { 0xe3e0, 3, 3, 0, 1 },
- 				.bvalid_det_clr	= { 0xe3d0, 3, 3, 0, 1 },
-+				.id_det_en	= { 0xe3c0, 5, 4, 0, 3 },
-+				.id_det_st	= { 0xe3e0, 5, 4, 0, 3 },
-+				.id_det_clr	= { 0xe3d0, 5, 4, 0, 3 },
- 				.utmi_avalid	= { 0xe2ac, 7, 7, 0, 1 },
- 				.utmi_bvalid	= { 0xe2ac, 12, 12, 0, 1 },
-+				.utmi_id	= { 0xe2ac, 8, 8, 0, 1 },
- 			},
- 			[USB2PHY_PORT_HOST] = {
- 				.phy_sus	= { 0xe458, 1, 0, 0x2, 0x1 },
-@@ -1488,8 +1565,12 @@ static const struct rockchip_usb2phy_cfg rk3399_phy_cfgs[] = {
- 				.bvalid_det_en  = { 0xe3c0, 8, 8, 0, 1 },
- 				.bvalid_det_st  = { 0xe3e0, 8, 8, 0, 1 },
- 				.bvalid_det_clr = { 0xe3d0, 8, 8, 0, 1 },
-+				.id_det_en	= { 0xe3c0, 10, 9, 0, 3 },
-+				.id_det_st	= { 0xe3e0, 10, 9, 0, 3 },
-+				.id_det_clr	= { 0xe3d0, 10, 9, 0, 3 },
- 				.utmi_avalid	= { 0xe2ac, 10, 10, 0, 1 },
- 				.utmi_bvalid    = { 0xe2ac, 16, 16, 0, 1 },
-+				.utmi_id	= { 0xe2ac, 11, 11, 0, 1 },
- 			},
- 			[USB2PHY_PORT_HOST] = {
- 				.phy_sus	= { 0xe468, 1, 0, 0x2, 0x1 },
-@@ -1515,8 +1596,12 @@ static const struct rockchip_usb2phy_cfg rk3568_phy_cfgs[] = {
- 				.bvalid_det_en	= { 0x0080, 3, 2, 0, 3 },
- 				.bvalid_det_st	= { 0x0084, 3, 2, 0, 3 },
- 				.bvalid_det_clr = { 0x0088, 3, 2, 0, 3 },
-+				.id_det_en	= { 0x0080, 5, 4, 0, 3 },
-+				.id_det_st	= { 0x0084, 5, 4, 0, 3 },
-+				.id_det_clr	= { 0x0088, 5, 4, 0, 3 },
- 				.utmi_avalid	= { 0x00c0, 10, 10, 0, 1 },
- 				.utmi_bvalid	= { 0x00c0, 9, 9, 0, 1 },
-+				.utmi_id	= { 0x00c0, 6, 6, 0, 1 },
- 			},
- 			[USB2PHY_PORT_HOST] = {
- 				/* Select suspend control from controller */
 -- 
-2.35.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
