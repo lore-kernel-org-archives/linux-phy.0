@@ -4,70 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0894AC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Apr 2022 05:38:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 354B5C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Apr 2022 06:36:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=18CPd+qx3ciTMkQQGiVEBabWJNoQoPOjz9Vii3uT/4I=; b=G4dl29FvwgL31w
-	/VLcEEvxZzwXw2B2i7dY2pxX02GuOQqyIwtSca4RuQyqAXHi920cwmjvqRFEav/BCALA19/60o31R
-	L6/2IHVQprFI7mSUNCj1+1zcWM1ngI6e27K2krFyV2tpAOHHbxFE6sHKNXcCUK6BXqA5/nMuGdDtg
-	izBFmJVpQ0nAJa3M6c45eeu2ACIH0nxqpYzzatyD9uVAR5olF3PzVTOFcmEmB98eYfBBFc8vCWpgw
-	e0R8MBytG44wkmapvWQ+R8jk/rXzq+dECcLSuKkompWMxovp6X3F58nEbChx6swRv6qzG+1N3U52y
-	zkeE8NSIef4BthBsHrIg==;
+	List-Owner; bh=/HMy/g3+cxSLbXCRPMqXbHtw+0uJelL+bsCQm9nUFXQ=; b=AcWxyXzOBBO7Dn
+	aIEh/O0DKNHrXqvpxHZDhejqjgcoB0gF4szk6FJwE8rWUI6gVl2kZ95Is49WRn6yEvzn9Ya34eP7f
+	He94xhqz3+6A7GFaqACyScdSt/4zJm2ib8q4VB7vLQHO9mZ8XinC5wbqCsneVoTDh3nUqyqYFxu7H
+	NSyYFSM5L/j7YLJY1O94b4ZRzwPi1Dk/ZT8Zrp26A6xbsSYiqcl5Mpa0dD0DwGykhzfNtitoQuHfy
+	eE4nEYNX9pU+RU3zuytse6Y9LLDb7CrCnUwOkXYYn4LrSaPRqTxkvmOc9IucD/r5K7roTPPbQ1B+n
+	5Uep0DXzNC7bfzJ+Zlig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nesB8-003wmk-Ce; Thu, 14 Apr 2022 05:38:02 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1net5E-0047YX-IT; Thu, 14 Apr 2022 06:36:00 +0000
+Received: from mail-db5eur01on062e.outbound.protection.outlook.com
+ ([2a01:111:f400:fe02::62e]
+ helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nesAx-003wjK-8t; Thu, 14 Apr 2022 05:37:52 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id C4D6B61E35;
- Thu, 14 Apr 2022 05:37:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F4D6C385A1;
- Thu, 14 Apr 2022 05:37:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1649914669;
- bh=OvCUBTX1ZAgB8ToDSbNbmHnIQ8kXnV7+uWxjqjVKne4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JvF5esoQdpTyrqK52quS/FxxjB6PsrHksGx2OwyQ32LgEPhrRjWvKRZApfVZzXLzw
- mA/YzjocNeAB361OfVk1iLricCnMsGhmKaQQqqMfLFpVUocSK4EhKtAscdPfSwqhrq
- 61hU3bfa98o3jlZ/v1AgXq1C3TVpQ0yveoZNwhXTnKyverfK8/aZ5gQ+2fv5F/6Yha
- f763hQHqXQoT1EGd9LR0VdPPty+PIp2BUpsTOsGjGR8Te7nd4gHYNJPOaRk/g7SOWW
- 4zLCRUHSSRU7olwtqyyhe8J0FK1EaMKmywiIk1SaQ+5kZ5/lRPH3EdDz8v3kaL4BRH
- l0m1h0e63GeeQ==
-Date: Thu, 14 Apr 2022 11:07:44 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Liu Ying <victor.liu@nxp.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, kishon@ti.com,
- robh+dt@kernel.org, andrzej.hajda@intel.com,
- narmstrong@baylibre.com, Laurent.pinchart@ideasonboard.com,
- jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@linux.ie,
- daniel@ffwll.ch, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
- agx@sigxcpu.org, robert.chiras@nxp.com, martin.kepplinger@puri.sm,
- robert.foss@linaro.org
+ id 1net50-0047RL-65; Thu, 14 Apr 2022 06:35:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GzdmnTZQp+LmK+yLgvCpGH9B27ojtqxVbA7EWmdoIrnkhEa0CFnX/yEsUgOmYTnTioLRBcrhBfpesWPBAzuIgDEihgAOo6MJmUZzIdnIGBnEhSH+fmFSnd6moTmbgfkaEiYuvmcoA4CYGed4wE8acLEpheeeVlJ8iU+11ztmVhbf7323xxd98R25ZyL9fiK+IX+0m4lLkdzxTmtXW+Q02sXR08WqzuqtC1MIK2Ssdxv9iO7nXCDzs5PgQsuEjVIDFHJVHCwbp6lrnokTwDdMOiDWExjdKS5xxPxF8kE3iHC+TzflycRpA2sE0ytRR4b4T+vOchonSpvm3h9ic4kIHA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=yZEH8pckfb45IjilW+y76+7EinGytbJHFblhK2lI1kg=;
+ b=I6+qSffDFzzQBRXlpyMOj6pO2PbnwCYrhVTAC8bU6jsGuGCZC0/M9BUkNmOhGuqgymS/8tuk2r649n9BeF46khsAligxflvBr03MLkOJEvFxNo0ARiOMsOkEg0IZi0gCamyMHFW7gvmGyEaQ3GBqLRqtsJ/gA/eMVt6ZyoMIdByAwrtwQhMcwimuXarH1rljyDqbSJGuZC4ARZMlVCP+7uBqmk+ZdeYI0oZn7uHafzoy20hJV75RzujIttDeEvYXGVgJJJh19WuvE89OkcSXaGS2LAJYyV1TS3V5v45rOxaQ4flHVJEw1rMuQXl8b55MZGOu2JsB1oqSfuunBn6tVA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yZEH8pckfb45IjilW+y76+7EinGytbJHFblhK2lI1kg=;
+ b=hOgHyyR5ddakCU3CI8p/0spOcwzWX2HfjrIBuBUTpLpu9+NKS4q/R27vGSTCfxYzKPBuFRL0YiaeKqgntLUhvt5ihbd4woy/gHkbwtOjtokVv6kdwqdohJ1X5GsIVLPKHUaiM3NKgqGugkQoUPZYsAsgCgz3FIf+CeJJx0/VfWQ=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by AM6PR04MB5782.eurprd04.prod.outlook.com (2603:10a6:20b:aa::17)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5144.30; Thu, 14 Apr
+ 2022 06:35:41 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::b09c:8ffe:8e02:7387]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::b09c:8ffe:8e02:7387%9]) with mapi id 15.20.5164.018; Thu, 14 Apr 2022
+ 06:35:41 +0000
+Message-ID: <1bd1ab210eae96fdd0280b9ef6876ae918d48cb3.camel@nxp.com>
 Subject: Re: [PATCH v6 resend 2/5] phy: Add LVDS configuration options
-Message-ID: <YlezKAw+W8HOa322@matsya>
+From: Liu Ying <victor.liu@nxp.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-arm-kernel@lists.infradead.org, kishon@ti.com, robh+dt@kernel.org, 
+ andrzej.hajda@intel.com, narmstrong@baylibre.com, 
+ Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
+ jernej.skrabec@gmail.com,  airlied@linux.ie, daniel@ffwll.ch,
+ shawnguo@kernel.org, s.hauer@pengutronix.de,  kernel@pengutronix.de,
+ festevam@gmail.com, linux-imx@nxp.com, agx@sigxcpu.org, 
+ robert.chiras@nxp.com, martin.kepplinger@puri.sm, robert.foss@linaro.org
+Date: Thu, 14 Apr 2022 14:35:29 +0800
+In-Reply-To: <YlezKAw+W8HOa322@matsya>
 References: <20220402052451.2517469-1-victor.liu@nxp.com>
- <20220402052451.2517469-3-victor.liu@nxp.com>
- <YlZpnrKt9NbHZv26@matsya>
+ <20220402052451.2517469-3-victor.liu@nxp.com> <YlZpnrKt9NbHZv26@matsya>
  <d77b41d911e126331138ddaca146a581d316bd09.camel@nxp.com>
  <YlaqwoFCfusFgIIe@matsya>
  <a2731b2d77f9bf2adf36f0c05cb5e3b14a5a91a9.camel@nxp.com>
+ <YlezKAw+W8HOa322@matsya>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+X-ClientProxiedBy: HKAPR04CA0004.apcprd04.prod.outlook.com
+ (2603:1096:203:d0::14) To AM7PR04MB7046.eurprd04.prod.outlook.com
+ (2603:10a6:20b:113::22)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a2731b2d77f9bf2adf36f0c05cb5e3b14a5a91a9.camel@nxp.com>
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 8b21b07f-45e4-4a59-7091-08da1de0ff04
+X-MS-TrafficTypeDiagnostic: AM6PR04MB5782:EE_
+X-Microsoft-Antispam-PRVS: <AM6PR04MB5782C49E5919CDB84D5617A798EF9@AM6PR04MB5782.eurprd04.prod.outlook.com>
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: DfXLCfGGtFzWQSedK/1qqAyfZzMlFfPXbsMtYteOxpifr3f9NHafhFxPZwftOIpHUO8IxThpjYVIeULasP2dLv1c6vOfSuFjILOwSYe62J/tWRWAifNw9v4IxQQEi4oUvD0GcKRx+ADmVAjdUDhi6gOLG62WWGiKpOZNW2yklOkD9Fe/7SIlzT+EnXxMxf6tVllG0FX21jgRfrN8eR3lzCalSqVDA5EPVP0GmQ/NGWrTDgFGepAuZZI1aEIXREbyPEaa0MCAI9cqETumObSBdRRUuNvfVF+1F25+4IIudXU42owrEQni7ltY71HWWGTH5wYkONMA134KC0Wl0X9vpufbwnUAC00NpzRXxWKq3g3TNCvB+97fmIjCK+MQMPhm2/xW0HCtZuGvSBUqzIbPo+vr+lH4hhBQ8YBtEUeYe2HP/1Uwn2xRSRbbpIwIUhk60COq6cysKfPp7mlNUf4SZa9/iRXXX5eOmOj0Zm4lubr8dvz44B65aMM9bZSDqBhhb69aeg0761R/uawYvwy5BrXu9rJI8iknQOxvjxHQxvV9tlybiBa3DSSFE2BDoVDNHJpYVcWUGQENssc0lBY6EhZxydHrTk1AuZkuLYnclBvKqjQQSgFcJ5hhWkSIHdyfLn7QQFTlgcWi+dF3qPc/3TxqrtBSCa2MFuixLgxeYYIKc0HTT6DTD1KFXniJpDSIXdz/VJmo0ybCvLJ6LYLiHCOzVpE/uoHbiXjPisyg/b0=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM7PR04MB7046.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230001)(4636009)(366004)(38100700002)(66476007)(66946007)(66556008)(26005)(186003)(86362001)(8676002)(4326008)(508600001)(6486002)(8936002)(36756003)(316002)(7416002)(2906002)(2616005)(6512007)(83380400001)(6916009)(52116002)(6666004)(6506007)(53546011)(38350700002)(5660300002)(99106002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?R0JZQTA4dTRRaFZDOXdmNGFDcUlFRXhpU1dEeml6eG5zWkNDUTVoYlJLR2Fa?=
+ =?utf-8?B?azNVY3UxbVg2Z2JUM2hOMlNpblFZRFhLeHI1MW13OWViUmRCaHcrUk9JY25a?=
+ =?utf-8?B?RHd4NU45cDRWcU9NL2tpM04xcEpTQmc2UDdhYzM5QUtBWXdmSFFhbTl4T3dh?=
+ =?utf-8?B?UGl4T3dqSncvSllQcVBid1NpQlFNSWprTUluRHdSTlJDcm85ZHNIM3FuWjht?=
+ =?utf-8?B?MUcrYnd2RDlSZzlvQlkvbzF0aGRKcDM2L2xlN0tuUmxienJKeDRHVS9Jd3ZT?=
+ =?utf-8?B?MlhsN1h0Rkk2akx6Ym11L2QxQXRkYVRXQ0s2V1pJN1FUb0k0K1FoK1kyOStX?=
+ =?utf-8?B?WkExd2RwanhvQ0pHWGFDaDRkZW43bERvUkR2RHFvUUtheEk0T2FWb2RkZUZ5?=
+ =?utf-8?B?VXRwdi9ZREhvbFA3OHJqaGpRWXJBVXJwQW5MMjBMMnFqRFF2dXBNbXhBdDFB?=
+ =?utf-8?B?cXNEU2RaK2pGZGhKY01Qck1LY2drZkcvM2ZxNUdNTXRpOTZHcEZQWEM0N1V0?=
+ =?utf-8?B?d2VuS25wUUJhc3BHanZJdjNBbEk3YTBXeUxGdnoxa1ViTVBVUDhsOWF3M2hW?=
+ =?utf-8?B?OEp0b2llUTczbnFTTVg4Y2VlY0I2bnRKMFNEbjVqSWd3OTcvY0JYNW1hZjJu?=
+ =?utf-8?B?MEdsK1oyalZZaVVqbmpsWDR3ZU5kVFFZYzVzVGd5WlVTVEd1QkZNeDlySXpk?=
+ =?utf-8?B?WDNpREw3SVFnLzcza0I0b3F5dTV5VWpDRkhiaG1iOVh1VGx5TG5jbXBZczRl?=
+ =?utf-8?B?N2NUdk9XRmFoM2lCaGQ5TUlQQXc0Q2Q4d2daVzZRMTBuTk5LL0ZuUGVMM1BB?=
+ =?utf-8?B?c0VIQ1pzZVNKekZ2di9sV1pkcW5TcWFEeDRhb012dmhxeVYvN1RuaS8zNVdq?=
+ =?utf-8?B?dXZPTkFtcGc5djFuWm5yRnlrUFRHazhEdUJWMkN0N2tLdXhQR25hUUVLZjQz?=
+ =?utf-8?B?MGJlZDFRSDlLUTBCbWNpRjVjZzZDLy9HYXhEWHRXMm83b2hKcXVNOUN4dlFU?=
+ =?utf-8?B?aWwvQzdhVWdUbk04c1lNTjMvRkYrT1A4RHdCSzZvVDNscmZ2Si81TzNIYWxw?=
+ =?utf-8?B?ZnRLWi9ISlNrVm9XRE5vMnJsREJPTWhMMjJOTjI2bklSaHdGWVEvSlgrRytS?=
+ =?utf-8?B?SCt0Vy93MTlxZ25CdFc1VFY1aDloM2FKL2g1TUV3eDNUUVdYZTFaMWp6bldP?=
+ =?utf-8?B?My9ZZEN0Tk5uV2hhY0h4RnBtU1dMbnY3U1N5c2swY3NOTFYyNlZEd20vRHZj?=
+ =?utf-8?B?Y2pJeVVPU2x0bE51dmYzTHRYUHloNXIxd2hjNlppQWEwaFVuQTM5bjNQRzRv?=
+ =?utf-8?B?aUFNUVhSZ2czU2J5UXBXamVlWEc1ZDdOeTlSTnZkUE1lRUtNOEgxQWgxekR1?=
+ =?utf-8?B?WCs2ZUJFRDI2MDFVZXlqRU9LcnFsRTVuZUxXYURZRE9DRjlCaWd1UjRQOFU2?=
+ =?utf-8?B?aHhqdUZkSXlydjVrY2I5QUhPNWgyM0VRWXZuZE43b2l3b1ZHbU5RY1IwWEky?=
+ =?utf-8?B?Z2pkaTdjbXVFS1NzeDhkbTdlV2VTM0pVVFZ2S1dJZVhhZFNmbUlBclkvdXBz?=
+ =?utf-8?B?SGdaN2Z0VURLN0FNL0ZOWmRlWkRldXpGbUoxVUN6aFlYbUZQd0hDajd5S0Iz?=
+ =?utf-8?B?NXlPY1I1a3JnVCtFUHRpU2M3Z2kvam42QXFEejBtUmRtSWxYcXpJZEJnWlEy?=
+ =?utf-8?B?SVIwVTBCNm1zZ0wyMHVXeEhZanh1MDNXbFg3bHp5UXkydGNJNU1LMHFxbzkw?=
+ =?utf-8?B?eWFNUDVVUHMrWHVvbHQvdmZzVUg1RWVURFAzUkVVMVhCTmdVck92N25ZY2dp?=
+ =?utf-8?B?ZmlOUWxDeFJqQWhwT2ZrUmF2MzRERUY3SytNbGlUN3djMFJMbFNnTXF0UWhE?=
+ =?utf-8?B?YWxoWHhNdVI1SzlRU2hCWklNeHcrS1d1OWN1Y0txUGV2SEtjVXMrdmpFUkVU?=
+ =?utf-8?B?MU1LZE94WVoxc2xTRzdNblNPa29aampZQStncnZYM0JTcXkyanVzdlBkK2o1?=
+ =?utf-8?B?cDF2TWRIcXEyWmxGUXlsM29XbGVKcisrZXB5Szk0N1NRdkI0K2VhNWVtRkVF?=
+ =?utf-8?B?cEVkdHg0WmFkS2FFb2pwQkxRWTd3cnpiWmFDdmw4bm4rY3VUbW9lVUFCRXdS?=
+ =?utf-8?B?ZjgxVnZDcGlkUjdvMU5YMndLUkxtNldseVh2N2ExNzJGN29nVFpOUUEwa1Yx?=
+ =?utf-8?B?TjZKZTVCbGhqSFc5Vk82R29ZTHZ1YnRJYy82UDlac1U1VnVlSkhyUGRYOUpY?=
+ =?utf-8?B?eG1NS0oydHc2bjcvTlNabndodVFRTFhyelo1eWhvWVREbXNHTEpNZEF4aWFH?=
+ =?utf-8?B?eHc3UXVBRURTZFc5dXZuTWltV3cwT0lETEpVTW5vTWRyZDVIWU1FQT09?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8b21b07f-45e4-4a59-7091-08da1de0ff04
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Apr 2022 06:35:41.8000 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: RkB7V2kZiy1fMV8ODwU9rssbVnAXIalaG7qZ4g4nOgQBGm8mgPVBwAffjquBeUSvRD5el5Lh0/zdVYk6U34lHw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5782
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220413_223751_434985_289CA27C 
-X-CRM114-Status: GOOD (  25.67  )
+X-CRM114-CacheID: sfid-20220413_233546_510216_705F776E 
+X-CRM114-Status: GOOD (  26.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,67 +158,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-04-22, 20:39, Liu Ying wrote:
-> On Wed, 2022-04-13 at 16:19 +0530, Vinod Koul wrote:
-> > On 13-04-22, 18:04, Liu Ying wrote:
-> > > Hi Vinod,
-> > > 
-> > > On Wed, 2022-04-13 at 11:41 +0530, Vinod Koul wrote:
-> > > > On 02-04-22, 13:24, Liu Ying wrote:
-> > > > > This patch allows LVDS PHYs to be configured through
-> > > > > the generic functions and through a custom structure
-> > > > > added to the generic union.
-> > > > > 
-> > > > > The parameters added here are based on common LVDS PHY
-> > > > > implementation practices.  The set of parameters
-> > > > > should cover all potential users.
-> > > > > 
-> > > > > Cc: Kishon Vijay Abraham I <kishon@ti.com>
-> > > > > Cc: Vinod Koul <vkoul@kernel.org>
-> > > > > Cc: NXP Linux Team <linux-imx@nxp.com>
-> > > > > Signed-off-by: Liu Ying <victor.liu@nxp.com>
-> > > > > ---
-> 
-> [...]
-> 
-> > > > > + */
-> > > > > +
-> > > > > +#ifndef __PHY_LVDS_H_
-> > > > > +#define __PHY_LVDS_H_
-> > > > > +
-> > > > > +/**
-> > > > > + * struct phy_configure_opts_lvds - LVDS configuration set
-> > > > > + * @bits_per_lane_and_dclk_cycle:	Number of bits per data
-> > > > > lane
-> > > > > and
-> > > > > + *					differential clock
-> > > > > cycle.
+On Thu, 2022-04-14 at 11:07 +0530, Vinod Koul wrote:
+> On 13-04-22, 20:39, Liu Ying wrote:
+> > On Wed, 2022-04-13 at 16:19 +0530, Vinod Koul wrote:
+> > > On 13-04-22, 18:04, Liu Ying wrote:
+> > > > Hi Vinod,
 > > > > 
-> > > > What does it mean by bits per data lane and differential clock
-> > > > cycle?
-> > > 
-> > > Please check
-> > > Documentation/devicetree/bindings/display/panel/lvds.yaml.
-> > > lvds.yaml metions slot.  'bits_per_lane_and_dclk_cycle' means the
-> > > number of slots.  But, I don't find the word 'slot' in my lvds
-> > > relevant
-> > > specs which mentioned in lvds.yaml, so 'slots' is probably not a
-> > > generic name(lvds.yaml is for display panel).  So, I use
-> > > 'bits_per_lane_and_dclk_cycle' as the name tells what it means.
+> > > > On Wed, 2022-04-13 at 11:41 +0530, Vinod Koul wrote:
+> > > > > On 02-04-22, 13:24, Liu Ying wrote:
+> > > > > > This patch allows LVDS PHYs to be configured through
+> > > > > > the generic functions and through a custom structure
+> > > > > > added to the generic union.
+> > > > > > 
+> > > > > > The parameters added here are based on common LVDS PHY
+> > > > > > implementation practices.  The set of parameters
+> > > > > > should cover all potential users.
+> > > > > > 
+> > > > > > Cc: Kishon Vijay Abraham I <kishon@ti.com>
+> > > > > > Cc: Vinod Koul <vkoul@kernel.org>
+> > > > > > Cc: NXP Linux Team <linux-imx@nxp.com>
+> > > > > > Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> > > > > > ---
 > > 
-> > variable name is fine, explanation for bit per lane and differential
-> > clock cycle didnt help, maybe add better explanation of what this
-> > variable means
+> > [...]
+> > 
+> > > > > > + */
+> > > > > > +
+> > > > > > +#ifndef __PHY_LVDS_H_
+> > > > > > +#define __PHY_LVDS_H_
+> > > > > > +
+> > > > > > +/**
+> > > > > > + * struct phy_configure_opts_lvds - LVDS configuration set
+> > > > > > + * @bits_per_lane_and_dclk_cycle:	Number of bits per data
+> > > > > > lane
+> > > > > > and
+> > > > > > + *					differential clock
+> > > > > > cycle.
+> > > > > 
+> > > > > What does it mean by bits per data lane and differential
+> > > > > clock
+> > > > > cycle?
+> > > > 
+> > > > Please check
+> > > > Documentation/devicetree/bindings/display/panel/lvds.yaml.
+> > > > lvds.yaml metions slot.  'bits_per_lane_and_dclk_cycle' means
+> > > > the
+> > > > number of slots.  But, I don't find the word 'slot' in my lvds
+> > > > relevant
+> > > > specs which mentioned in lvds.yaml, so 'slots' is probably not
+> > > > a
+> > > > generic name(lvds.yaml is for display panel).  So, I use
+> > > > 'bits_per_lane_and_dclk_cycle' as the name tells what it means.
+> > > 
+> > > variable name is fine, explanation for bit per lane and
+> > > differential
+> > > clock cycle didnt help, maybe add better explanation of what this
+> > > variable means
+> > 
+> > I may add an example diagram as below...
 > 
-> I may add an example diagram as below...
+> Not really a diagram, you can add if you like.. But something which
+> explains in a sentence or few about the variable.
 
-Not really a diagram, you can add if you like.. But something which
-explains in a sentence or few about the variable.
+Ok, no diagram.
 
-bits per lane per differential clock cycle ?
+> 
+> bits per lane per differential clock cycle ?
 
--- 
-~Vinod
+Ok, will use this explaination.
+
+Regards,
+Liu Ying
+
 
 -- 
 linux-phy mailing list
