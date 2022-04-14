@@ -4,142 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4DADC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Apr 2022 14:00:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FEEFC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Apr 2022 20:45:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+ZzxYdYucXXrtq9TUB9O4rqsunR3+LrDvrGPYRvodLY=; b=all+nxxOunnZ6b9ZdyxuCaSt4/
-	sJ0Iy6ZkI089QNaVEwORoqKQWtbIEACEKFMMLnrDn70DM3P5LCMTMGsj8QZl/8JD9xd1fJ6RRpp6I
-	Kw0cjNpJH38STpn/EB5LKsES2vRsIT1voi83HLRSfC4CIP/NShgdQufyYPF5JGMRJzTcN7bZlkkDj
-	GOY5pubv3S6YClPAEC/KwDvuBsYzZqtubafMS/GELeZMPc81oCzzgo9jeFnhHCzi79XP+T7frO7DT
-	kZtwuxFYj3JtUjaiW24N1x/x8uLUbhBtzOJAKjm2/g4+BgxhRyaA1q1JAcCcUZpLNRWva/BmOhnth
-	PplyAe7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7bm5CTH6/VRDqroIDwzlUJsfMuLXk1N+SsCWvPGknrc=; b=j6/xn/fXmpGeE3
+	iJ0DSKD2h8AszY+DafTw7RMPaas1kmLgV5Vqn5XLMB/zQt7Qpc05Cq3Eb2QUup6u4976KdrmN8GT6
+	lyAB/qz40t1LRgnd4er/gKEuwAHjtCr3I50ytZH7yElQWlpY2jezLtASg/Fo6VNezBOf5B3rgeQ3I
+	EE5jRixmOsGUJQV4nvjmtZXam570DmzZ3nUjN19m8cF6mMuJZLchEm+1xiBwNXPPqJelhFJ6OsgBT
+	fB2N8Ypjjc1hN9wJjHlIfYqKVhfci3KSkqGuWmW67bVNlSRtU0XoMt1A/iCsKxi0HOa75V8RPsu1y
+	w8R8hhCrJzWOeADTAtKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nf01m-005v0n-9J; Thu, 14 Apr 2022 14:00:54 +0000
-Received: from mail-db8eur05on20624.outbound.protection.outlook.com
- ([2a01:111:f400:7e1a::624]
- helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1nf6LR-007FKN-P3; Thu, 14 Apr 2022 20:45:37 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nf01W-005urz-T7; Thu, 14 Apr 2022 14:00:42 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=I6tf+LwPemmOPhdfRjQzMrewDOkYsf1gfraWQnrbTx2gh7t2aeygv5Vp07fnqF7dUn+LfVLTSMo8asdoH6ZIawEUlh8Pjh4q0RjZuJNlU5Bqu+21yFDQod+oapYyZ3P7CJzklAIYA5rVBQc5dZxQKEXdKSplyboSHRYt0+TjDzHmlctRxPLUGv7mpwMfIQ6ErznmN+R4RoANAZ8KAH/mLDsKiGxPFJhrJFWZjKQ1jbO4o/oFubFzfDQSepXkPpxup2KynB6wWiZ/7B9SNiECrAcwoC52d/D0Q7mlONEL3qxZVbnWly6gUlE55SRyhQo5acsUTVyxVGVvsEOxjlNAHw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=W6WJG3z7+A6PkqIESPLap30LmEklT7FiyKydSqU2cVw=;
- b=eXZkyZSMZR1pEeqcz3CqdiiZx0VQXc+NkTRZyBIljodoD6axUWXOnvPG2NHS+qccTr68FUMP3uwExo581SDRbWILIroIs/1E9T1lINaJVFC2Q1eezuOpZv53MCu2crC1ilhtWSooDNoEiH79yg+dhTWkoQMhylOa5S9kJesr+QExUEQCTtIoq+3aNeB203G/5268wyjLK+CWtdvVHCJWeVhCG+vX8pzbgv/R0bp3NQb0IjDATFtfJWRCkAeCZMH4TyFYbRvauMioSUl2ddHbKuKpzRqv8YfWKwlgGrurE7/V2onhGAnkiwQ2tubgAfKKhLr4jJ63T6CVShZqIAoLXQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wolfvision.net; dmarc=pass action=none
- header.from=wolfvision.net; dkim=pass header.d=wolfvision.net; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wolfvision.net;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=W6WJG3z7+A6PkqIESPLap30LmEklT7FiyKydSqU2cVw=;
- b=Zr5BOiKnbhvUI2noTgYFMj1nqJqfeyFt9ZIi8VVPrK+m84nYT8w8Vv2KQPnan24Qovm12JdvKquu8yhn6cWHR4IyB9cx9nz0Xk+sgc1ggtsTaf9ASxIe8kS6DJpTG9EsYM1wNyjYsHyVDSf/XEjbwosK6aE4atMTEnUCdpGsZUo=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=wolfvision.net;
-Received: from HE1PR0802MB2426.eurprd08.prod.outlook.com (2603:10a6:3:e1::23)
- by DB9PR08MB7116.eurprd08.prod.outlook.com (2603:10a6:10:2c9::10)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5164.20; Thu, 14 Apr
- 2022 14:00:32 +0000
-Received: from HE1PR0802MB2426.eurprd08.prod.outlook.com
- ([fe80::3de2:62a:3915:9d6d]) by HE1PR0802MB2426.eurprd08.prod.outlook.com
- ([fe80::3de2:62a:3915:9d6d%7]) with mapi id 15.20.5144.030; Thu, 14 Apr 2022
- 14:00:31 +0000
-Message-ID: <8b67b7e8-29f2-49e0-ff99-5a13e73f4b62@wolfvision.net>
-Date: Thu, 14 Apr 2022 16:00:29 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.0
-Subject: Re: [PATCH 0/6] phy: rockchip-inno-usb2: RK356x OTG fix and
- enhancements
-Content-Language: en-US
-To: Samuel Holland <samuel@sholland.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>
-Cc: Peter Geis <pgwipeout@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-References: <20220414032258.40984-1-samuel@sholland.org>
-From: Michael Riesch <michael.riesch@wolfvision.net>
-In-Reply-To: <20220414032258.40984-1-samuel@sholland.org>
-X-ClientProxiedBy: ZR0P278CA0158.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:910:41::17) To HE1PR0802MB2426.eurprd08.prod.outlook.com
- (2603:10a6:3:e1::23)
+ id 1nf6LN-007FI3-EH
+ for linux-phy@lists.infradead.org; Thu, 14 Apr 2022 20:45:35 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1nf6L4-0005dK-5A; Thu, 14 Apr 2022 22:45:14 +0200
+Message-ID: <6221c3d0da08ef15f572593d67fd0e9c7ba03ab0.camel@pengutronix.de>
+Subject: Re: [PATCH v2 0/7] Add the iMX8MP PCIe support
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Richard Zhu <hongxing.zhu@nxp.com>, p.zabel@pengutronix.de, 
+ bhelgaas@google.com, lorenzo.pieralisi@arm.com, robh@kernel.org, 
+ shawnguo@kernel.org, vkoul@kernel.org, alexander.stein@ew.tq-group.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de, linux-imx@nxp.com
+Date: Thu, 14 Apr 2022 22:45:11 +0200
+In-Reply-To: <1646644054-24421-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1646644054-24421-1-git-send-email-hongxing.zhu@nxp.com>
+User-Agent: Evolution 3.40.4 (3.40.4-1.fc34) 
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 4ed427eb-ad00-4a74-17b0-08da1e1f2367
-X-MS-TrafficTypeDiagnostic: DB9PR08MB7116:EE_
-X-Microsoft-Antispam-PRVS: <DB9PR08MB71166DF27DF8E78132B120BCF2EF9@DB9PR08MB7116.eurprd08.prod.outlook.com>
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: QVTjAHpqRoRuCn0SYanS+8VViFr3hG6AKVY3llnUw2aaokZUkcu9jIKSCvwrgjcZ3DyQryVEjHK9VpknJfE5QYkJi6i2fpb6AbaDSjcANVizr8nPq5xkSprQxNLOAtP64OsEvC1LIj3qbA6/vdppfZVkplxeUayDwT028C3UzsPIJZswJd4LXuMF/m2wUeOK0+voiAby5tlF0qNHfLokUMqqEXeY7J3wcJEQR0DeIsF0IlIwvHgpCdVC83CQhGvGcNQufkv5tKGUggsMsa9ZRsJLOqSzOym5r/Y3IDpD5HFTzEUeImHAvpNFTM5xt6Ctlzz7RNRFHLjbBu0/g1PsyYPzzgDEO8MOJ5mrWzBwCcE3ptkpTbBSsNJXYvMtsWBjbDqlDRVa1jZzr62Gv7BnjcLa66Ry9ZSsg2ww1AQLNJNCEckS1EOwaY9yq0XAyX9v0JxOMtXBpWeo3iKuHffkKwMpMI1TAOx9SczOyrI2EAUAlsb0h6ozYiqyeD99QE46GmqPofOtHPZZi9L7HDuqq59J40tldElRzHV2Q1MLBqJa4XwW6BiUCYmMpzfVWSikQ2S5X+/DuaU1rC3gTpskH3Rsst+YEOk9mDAV8VcgUgENVtsvgwgTvowLVMkXOOPGiDAy7vFys/3gL2pifXwvnUG+BoCwsYaxr5vu3C8AGMqZaYsREQFH8ZX6hjw1cq9ibKItKsLB/bUduvU5xiM1ihYQUX4WnxwxNX53gaOz+SA=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:HE1PR0802MB2426.eurprd08.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230001)(4636009)(39840400004)(346002)(396003)(376002)(366004)(136003)(44832011)(53546011)(186003)(8676002)(2616005)(83380400001)(2906002)(38100700002)(52116002)(6506007)(6512007)(86362001)(31696002)(316002)(110136005)(508600001)(5660300002)(36756003)(6486002)(8936002)(66476007)(66946007)(66556008)(4326008)(31686004)(45980500001)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?cUkweVBScVNPc1JTa1U1VDJZUUNHRWtSWVoyTWFpUzFDaWVtK0dNVVVMdXVu?=
- =?utf-8?B?em9OUXB2TXQ5UU9aYkQ0c3R6K01xWnp6RURtbEJ5NEFZZnBOVXlSTTZjN3l6?=
- =?utf-8?B?dStKZE9PR1k2K0RFRTFYb0w3ZXhzV1d0dlVNVzZkbTNxRzhDYW9JaHJ6TVBI?=
- =?utf-8?B?UlVlam1yOURSd2NRN0Q0S0E3c1ZkbXZtK3JKcXhwbjZhM2g1VEVuODE4a2hF?=
- =?utf-8?B?LzVpbFJCalhJNE1XQ1ozSmZHOVpxdTEvSDdHbXpLMytDenNFSk90b0dmTjNi?=
- =?utf-8?B?NzAzS0NCVU10d3Y0VHBSWXhSbis0SHVkQjJjVllqOTJkcG5vM1NSRXNNd2Nr?=
- =?utf-8?B?MVdTUVRGRENnV2FUZjNIZWlVUUdBQm9nZ3h0OHZWdmtESk4zeU5kRGFpODdm?=
- =?utf-8?B?VE9VU3dCaHpDV0d1Ykx3ckFoQitJeGxqVnhNSFVCclcweUN5SW9pM2tFdndl?=
- =?utf-8?B?TFFwRG1yeVd2WFhJc1Y0VWU5d0gyWHZNbC9VbXZEQzFDU3doTTJudE1pRC9M?=
- =?utf-8?B?OGQ5ZDRjd1ljUzUzdG5MRVFGS0VrWUtQdDFiYmNxYW0waVVTSGhDYUpkbExl?=
- =?utf-8?B?alVHcmVTU3BVSEdJWndoR2RRVjg1LzkzdHA2SDJWVHdDMUkrQTRtVEtBT2J3?=
- =?utf-8?B?M0NLYkwvbHJPRlhHOFRHcWV5dkg4WGlteVE3blJYbU50QnBtK2UwSFpvUDhr?=
- =?utf-8?B?MGZXWGVQYWwxRUFuc05ZdCszTm5xYUdtQWIvWlByL2RUZkFCV1F6d08yYlBE?=
- =?utf-8?B?bEFaWUIvQ0pqdGlxREM5QndWVUY2WEtZOEZybXFNMGFpb25NZE53eVJBczdQ?=
- =?utf-8?B?QW4rSThJUVUrTEhnUmk2dHBTdDVlYTFONndHdGVBa1R6TVF4dFpNZ1duTk9j?=
- =?utf-8?B?Tjl1bzZ3RHJHNC93cjBsUGI4Z3ArRkJkZ1dLdkd1blZ6RHNCeEYxdWZCN0dD?=
- =?utf-8?B?MHQya01YNGxIZ0ZzSnhCTTlQUU5VZnQ1Z1U4STZRcEZsc0lmSGZ6ZnF2K1Jk?=
- =?utf-8?B?V0pyc0R6aGxVOUNPSGpCdVQ0ekxoS0h6RDFSUzJ0SCs2RS9kalVid1RYTTlF?=
- =?utf-8?B?WHM2dW4wOWZGdlQyekJXN3FrbTFBYmlkSlhmdzJkSXkrK2hsbnBzVVgrVFk2?=
- =?utf-8?B?M1lSa2I5R2JVc0ZLQXNQZ055eTczNmFhQXBWVER6anNucXliNkR6dWZRc2FD?=
- =?utf-8?B?NjBBb0dUdUs2a2NQODZOTmtTbG1EM0ZJQWxUWDRjK1hhVnJxempKK3JYOXF0?=
- =?utf-8?B?Ky80dmh6ZHBRNWlrYWNZMXNzejFFZk1jZXVMSDlwZ0wwSGl3bFZSQ0ZNcmp1?=
- =?utf-8?B?K2k3dXYxWG5JWEdPYVF3ZWFsaHV3N1NVQkg4bCt0ZjJGNkNTWUQwTEVFZG9Z?=
- =?utf-8?B?WnFyamdkUmF0R1dyK0xnWmFXaWVZMk1tdFhMT2ZRVDFqVHFRRkd1d0o3MnhM?=
- =?utf-8?B?a2xBZ3FlaU5Ta1lzRTJCdXpCSUVvZ3lWTWhJb0pQUW90bFBaeGxocks1RG9o?=
- =?utf-8?B?WmU0eC9wQ29wb0FVRnc4Njh4eFlFbnNXKzFPOFBkbnVUMFNsSy9vdW9kUHBN?=
- =?utf-8?B?dFNJaTZrK1JOZW4vR2ZJVGkvQ0cwdzh4M1lycDI4alY5SU1sS3h4Y3FaTTZE?=
- =?utf-8?B?QlBmY0RkamV6QjRuRDJNc1hqdi9aVWhqdkVtYzJLWE5SdmFyM29iQmxoeGti?=
- =?utf-8?B?SVhhcnJKSExOOGtSTXFkOXp1ZTlCY1BCZ2xBZHdjN0o3dVRCN2w5SVlMWjly?=
- =?utf-8?B?ajhxeWZ3cWpWdU1vZ2tXMWZ0SDJQSGl6L056SnEwcjFjSE5wYUhCNDAzSUVz?=
- =?utf-8?B?VElpa0NYNWtxNkJNcTFIcWNnb2I5TEYwMzBjMFZaU0drYWd0OXl3QUlWSmw3?=
- =?utf-8?B?ZDFodUFja0FhMmVBK1RidDkwTkVuK3o2S1N4emR0eVBOdXNnWEZoSktRMTJZ?=
- =?utf-8?B?RnVteklWci9zOGV1eDdaUkFPbklHempIWWZDdlBRNS9KbXR3SVFkcllsUUFw?=
- =?utf-8?B?N3RUUHFHVWFWNU5pREx0c1VRcGo1TjZDQi9TTjI0alNHanZBS0p6a3ZjTUxN?=
- =?utf-8?B?Vk9acDFzbE9LaTlaaG5sREQ2aEw5SHVHTVlLWUZCSHNieWlaMVBnZkU5dURn?=
- =?utf-8?B?NHlVWU1zMzQzK0NYRXZwZG9tRng5N0pSdzlTWjIrVXZZNWRHSnRLeXliczlS?=
- =?utf-8?B?OENiQld0bGtLSklqNGpESW9RMUhoSnJtcE9ZOXkyZ1NxaHZDL3RjV1IycWx2?=
- =?utf-8?B?ZVZxVXpodmppYWs4Z296cXUyS2c0N3NOWjFXSXZWYkJldHE0a0tlRDNBSWJU?=
- =?utf-8?B?YzRmODhtMU42ckV1UWRrbUZ3dVd6T2lDVzFYRjBEck91K3UxQWN2dWdyaDZI?=
- =?utf-8?Q?P4RnW+KKylN/14Spme8YKOsonm/meECW8R7Bca62krd62?=
-X-MS-Exchange-AntiSpam-MessageData-1: 5wOTIS7qCqknveexM++ERgNnNA/Xf3bUV7QOJDCWurHhfqO+4Qhjee9X
-X-OriginatorOrg: wolfvision.net
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4ed427eb-ad00-4a74-17b0-08da1e1f2367
-X-MS-Exchange-CrossTenant-AuthSource: HE1PR0802MB2426.eurprd08.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Apr 2022 14:00:31.6405 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: e94ec9da-9183-471e-83b3-51baa8eb804f
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Mobn5tfn3vPplffuV6ZJ1I9h14GX0l+jBGpS5da5yGT5PoTrKxV7JbO+QSbPUpER6RUKtGmQIid4OwLK7TkP77C68HbZ2ApA5cn7ZRsK/YA=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR08MB7116
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220414_070039_173680_BB2B2535 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20220414_134533_534554_70C9E5E3 
+X-CRM114-Status: GOOD (  21.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,42 +69,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Samuel,
+Hi Richard,
 
-On 4/14/22 05:22, Samuel Holland wrote:
-> This series gets USB OTG working on the RK356x SoCs, as used in the
-> PineNote tablet.
+I didn't get around to see what's wrong with the PCIe on my EVK, so I
+wasn't able to do any reworks to the series. As I will be on vacation
+from tomorrow until Apr. 25th, I'll just leave some more comments on
+this series for your consideration.
+
+Regards,
+Lucas
+
+Am Montag, dem 07.03.2022 um 17:07 +0800 schrieb Richard Zhu:
+> Based on the i.MX8MP GPC and blk-ctrl patch-set[1] issued by Lucas and the
+> following commits.
+>   - one codes refine patch-set[5].
+>   - two Fixes[2],[3].
+>   - one binding commit[4].
+>   - some dts changes in Shawn's git if you want to test PCIe on i.MX8MM EVK.
+>     b4d36c10bf17 arm64: dts: imx8mm-evk: Add the pcie support on imx8mm evk board
+>     aaeba6a8e226 arm64: dts: imx8mm: Add the pcie support
+>     cfc5078432ca arm64: dts: imx8mm: Add the pcie phy support
 > 
->  - Patch 1 fixes an interrupt storm issue specific to RK356x.
->  - Patches 2 and 3 are a couple of small optimizations.
->  - Patches 4 and 5 reduce the delay when unplugging from the OTG port.
->  - Patch 6 allows OTG ports to work in host mode without depending on
->    another driver to provide an extcon. The specific use case here is
->    a Type-C port controller that provides a hardware "ID pin" output.
+> Sorry about that there may be some conflictions when do the codes merge.
+> I'm waiting for the ack now, and will re-base them in a proper sequence later.
 > 
+> This series patches add the i.MX8MP PCIe support and tested on i.MX8MM EVK and
+> i.MX8MP EVk boards. The PCIe NVME works fine on both boards.
 > 
-> Samuel Holland (6):
->   phy: rockchip-inno-usb2: Fix muxed interrupt support
->   phy: rockchip-inno-usb2: Do not check bvalid twice
->   phy: rockchip-inno-usb2: Do not lock in bvalid IRQ handler
->   phy: rockchip-inno-usb2: Support multi-bit mask properties
->   phy: rockchip-inno-usb2: Handle bvalid falling
->   phy: rockchip-inno-usb2: Handle ID IRQ
+> - i.MX8MP PCIe PHY has two resets refer to the i.MX8MM PCIe PHY.
+>   Add one more PHY reset for i.MX8MP PCIe PHY accordingly.
+> - Add the i.MX8MP PCIe PHY support in the i.MX8M PCIe PHY driver.
+>   And share as much as possible codes with i.MX8MM PCIe PHY.
+> - Add the i.MX8MP PCIe support in binding document, DTS files, and PCIe
+>   driver.
 > 
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 125 +++++++++++++++---
->  1 file changed, 105 insertions(+), 20 deletions(-)
+> Main changes v1-->v2:
+> - It's my fault forget including Vinod, re-send v2 after include Vinod
+>   and linux-phy@lists.infradead.org.
+> - List the basements of this patch-set. The branch, codes changes and so on.
+> - Clean up some useless register and bit definitions in #3 patch.
+> 
+> [1]https://patchwork.kernel.org/project/linux-arm-kernel/cover/20220228201731.3330192-1-l.stach@pengutronix.de/
+> [2]https://patchwork.ozlabs.org/project/linux-pci/patch/1646289275-17813-1-git-send-email-hongxing.zhu@nxp.com/
+> [3]https://patchwork.ozlabs.org/project/linux-pci/patch/1645672013-8949-1-git-send-email-hongxing.zhu@nxp.com/
+> [4]https://patchwork.ozlabs.org/project/linux-pci/patch/1646293805-18248-1-git-send-email-hongxing.zhu@nxp.com/
+> [5]https://patchwork.ozlabs.org/project/linux-pci/cover/1645760667-10510-1-git-send-email-hongxing.zhu@nxp.com/
+> 
+> NOTE:
+> Based git <git://git.kernel.org/pub/scm/linux/kernel/git/lpieralisi/pci.git>
+> Based branch <pci/imx6>
+> 
+> Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.yaml    |   1 +
+> Documentation/devicetree/bindings/phy/fsl,imx8-pcie-phy.yaml |   4 +-
+> arch/arm64/boot/dts/freescale/imx8mp-evk.dts                 |  55 ++++++++++++++++++++++
+> arch/arm64/boot/dts/freescale/imx8mp.dtsi                    |  46 ++++++++++++++++++-
+> drivers/pci/controller/dwc/pci-imx6.c                        |  19 +++++++-
+> drivers/phy/freescale/phy-fsl-imx8m-pcie.c                   | 205 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------
+> drivers/reset/reset-imx7.c                                   |   1 +
+> 7 files changed, 286 insertions(+), 45 deletions(-)
+> 
+> [PATCH v2 1/7] reset: imx7: Add the iMX8MP PCIe PHY PERST support
+> [PATCH v2 2/7] dt-binding: phy: Add iMX8MP PCIe PHY binding
+> [PATCH v2 3/7] phy: freescale: imx8m-pcie: Add iMX8MP PCIe PHY
+> [PATCH v2 4/7] dt-bindings: imx6q-pcie: Add iMX8MP PCIe compatible
+> [PATCH v2 5/7] arm64: dts: imx8mp: add the iMX8MP PCIe support
+> [PATCH v2 6/7] arm64: dts: imx8mp-evk: Add PCIe support
+> [PATCH v2 7/7] PCI: imx6: Add the iMX8MP PCIe support
 
-Thanks a lot! This series fixes the USB gadget operation of my RK356x
-boards.
 
-With suitable DTS changes, the zero gadget module, and usbtest
-
-Tested-by: Michael Riesch <michael.riesch@wolfvision.net>
-
-on a RK3568 EVB1 and a Rock 3 Model A.
-
-Best regards,
-Michael
 
 -- 
 linux-phy mailing list
