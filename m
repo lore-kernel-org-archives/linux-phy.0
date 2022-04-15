@@ -4,79 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2491C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Apr 2022 14:03:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8D12C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Apr 2022 15:22:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nbz1nnSJiKOIh/k9xZWjpVTzyTZNv2LzUtCm+JKc7e4=; b=JBqeL1LNuNEW4o
-	1cnIOmXmgNFLqle+Ft7RpU//CwgtGV/6/Yed5IKG3OCvOX1pG2OMTrC65zQ3SaG9Vxob4MYO7UBPd
-	OjQAiXm94JI0FH6/oPFl9ZG/I6zbDdyPMkjxr82jvqle8HggZAO8rZlEICk3Ce1O3c1J5ef5MB216
-	jkBM0w6RudCx8NFI9EW0tsB1q6x6L6BAiQcicq7UH93xXJw1QL0m5Ewo7IythDNDouERvYcEamW++
-	+FS34ce1tga8p7VRqJNCzvNV8E/eAWXoZ+UObyOFy4HuVGEYZtPi/PvDz5voJQ5SC+9YCqQQMsB/o
-	klrwsw7qhEIjLxAQaLNg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UPb4qeMYC9p3vMP2dvS8SwEKlPQQBO6J7nfkh/CVg6c=; b=Dpenb5QwEkzJGC
+	/9GsQPjCN9decCLK0S/jdbHpzifxU4xLrehDYvNLpjJ3AJgkRqNDGO2gH//JhtJl8/e+V+Cm9OEEJ
+	de17W9wkqPVGBE2YsUASgjqfoJlTecK9/IEp8DmKq0flsrjSL3c/G0WA4Zl3xvHt5OmKsW6LtMnZG
+	J9dR+ifIaipwCmmOeNPItEMiCleD8ScbjGvyuPDYVjMAI6Uns3s+rlys9xR3koqbmiWpb6k9o46gd
+	kcfymytcExI0ueHpFSCpWZAwGGuyAvXcdKolGT2Qcn9yaT4eNmn/LEhjl8mM2/GZ/I0svwcp0/zjq
+	kh4UGdM9qCQLLjDRbvkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nfMXn-00AGz7-4Z; Fri, 15 Apr 2022 14:03:27 +0000
-Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
+	id 1nfNm4-00AUAx-59; Fri, 15 Apr 2022 15:22:16 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nfMXk-00AGyb-F7; Fri, 15 Apr 2022 14:03:25 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id t11so15482317eju.13;
- Fri, 15 Apr 2022 07:03:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=message-id:date:mime-version:user-agent:content-language:to:cc:from
- :subject:content-transfer-encoding;
- bh=D4t9NO5NWJPGH0i73+EeLfUPoJ/RYJ61BCd8WF3HY3U=;
- b=gJVfexSeMKIpTELwnxi0/aK+eQbdD4ybXANL0WSG3e8ojlhpGpCTz29IoOBWPmGCE7
- UysZIUlLD1wTvqhq2midcSyN5VSdysBGs9wQhnx1yDEk6mJs/fGzB7ApkSQ8dNLZXV0P
- 7gx3wF4/aYewcfqRfNTYo0bNgfjGDHJ5E8Xpl0Vl2NLLhHuxeAqNj631vEh8Wb2l+fxi
- pVWFxNFaspcU8cc4Nr8xMj57Nq1oVGFvW0kiDRi7mMGLIlsDQKzFQFI7BvqVCLRv4m4f
- t3LBwcvoiPH64GGntfQbfhC9XA9Sp60JHh/2Z2jwZs22/col97vp73vfA/sFCAGtK3xf
- Y0EQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent
- :content-language:to:cc:from:subject:content-transfer-encoding;
- bh=D4t9NO5NWJPGH0i73+EeLfUPoJ/RYJ61BCd8WF3HY3U=;
- b=dHFo+ykmdJRU9treIVGKFu+pEXUAD13HggQWmSH3n0V6/awYEbzQpOuoutXaXmkX+n
- 4ZQAcE/xSOo3b+9BzIizYiU2hgKKYWBY1hCqrDZsvA+xI8xhPf/1i+QWxEyaV4U5ZB9R
- DIInTELuNxibYBHpGH+aCyapVehwEtnIyQM+upQfnhl8xNx+w9M28OVp9kuvOaM90as4
- QvtB9ZnvOkBDtCMI+lez0y8IfJvKP7ATx7Oz5PCxLBAedwSTSerVDIicju+mvixV5CPK
- FGx87h5WxGdlANBHHS7untJWYQJzoqW7+UUCWEsPzJVoZIipiycOt48RGAHvISmF0hyY
- 9qDw==
-X-Gm-Message-State: AOAM530iLHFrrIvM3AtWCjE1R+TNOTBrtmG3Y/lf7yRupMSZBSGFtFR3
- 5+lWzcGL3nDetoIZokt38cvQKOOLmQg=
-X-Google-Smtp-Source: ABdhPJwguWo/qCKtqqQziyyXQFp4ykoVs3hQQo2jNNd6BGD/yWfFyG+adj4pmzYkTSqD0zrmwwis2Q==
-X-Received: by 2002:a17:907:9604:b0:6ec:9b5:c55b with SMTP id
- gb4-20020a170907960400b006ec09b5c55bmr5881200ejc.321.1650031401424; 
- Fri, 15 Apr 2022 07:03:21 -0700 (PDT)
-Received: from ?IPV6:2a01:c22:6faa:ed00:b906:e23f:946b:b9f7?
- (dynamic-2a01-0c22-6faa-ed00-b906-e23f-946b-b9f7.c22.pool.telefonica.de.
- [2a01:c22:6faa:ed00:b906:e23f:946b:b9f7])
- by smtp.googlemail.com with ESMTPSA id
- n14-20020a50934e000000b0042053e79386sm2700015eda.91.2022.04.15.07.03.20
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 15 Apr 2022 07:03:20 -0700 (PDT)
-Message-ID: <8e416f95-1084-ee28-860e-7884f7fa2e32@gmail.com>
-Date: Fri, 15 Apr 2022 16:03:10 +0200
+ id 1nfNlm-00ATyR-0q; Fri, 15 Apr 2022 15:21:59 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by mail.gandi.net (Postfix) with ESMTPSA id 07D7A240007;
+ Fri, 15 Apr 2022 15:21:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+ t=1650036114;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=VsUxuduSUSmT5cVDhch3xSuWAwRsl9IrVPZo+IvctwA=;
+ b=jeJ9wnGKPLZD9sEkT//XK2wPy5CnxYAhOtEEf/QB1cVtYyhQmB809YT54bF+h77Luy9+0L
+ WCySsqrjMw0pzXl2KgwEgb9pVhSPZdn1bnBMjjOMIukqnyeZImUT+eLT0kdj0pUMovvwTX
+ JEzvhXGPhgzgx5TqVGHHazRFtEHQNU84xc0BAH8Wnr/SrcdmuthgqNYR60P3hT16U9sVrG
+ WGZjBPqsJPRNfjp8ui/BF3k3AVizbfjKG1j1ZBywxDN8ml56eRunvbimffVEBPSnsr6HEp
+ 8ux5jaxaFIMNTiQVvUV5HthUiibQBkxi21m0BmfDk5D+KnMHc/NmQOxqYnV7Ag==
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Cc: Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Rob Herring <robh@kernel.org>
+Subject: [PATCH v4 1/8] dt-bindings: sun6i-a31-mipi-dphy: Add optional
+ direction property
+Date: Fri, 15 Apr 2022 17:21:31 +0200
+Message-Id: <20220415152138.635525-2-paul.kocialkowski@bootlin.com>
+X-Mailer: git-send-email 2.35.2
+In-Reply-To: <20220415152138.635525-1-paul.kocialkowski@bootlin.com>
+References: <20220415152138.635525-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.0
-Content-Language: en-US
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman
- <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
-From: Heiner Kallweit <hkallweit1@gmail.com>
-Subject: [PATCH] phy: amlogic: fix error path in phy_g12a_usb3_pcie_probe()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220415_070324_552615_20C83F7F 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20220415_082158_343537_74D67416 
+X-CRM114-Status: GOOD (  11.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,64 +83,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-If clk_prepare_enable() fails we call clk_disable_unprepare()
-in the error path what results in a warning that the clock
-is disabled and unprepared already.
-And if we fail later in phy_g12a_usb3_pcie_probe() then we
-bail out w/o calling clk_disable_unprepare().
-This patch fixes both errors.
+The Allwinner A31 MIPI D-PHY block supports both tx and rx directions,
+although each instance of the block is meant to be used in one
+direction only. There will typically be one instance for MIPI DSI and
+one for MIPI CSI-2 (it seems unlikely to ever see a shared instance).
 
-Fixes: 36077e16c050 ("phy: amlogic: Add Amlogic G12A USB3 + PCIE Combo PHY Driver")
-Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+Describe the direction with a new allwinner,direction property.
+For backwards compatibility, the property is optional and tx mode
+should be assumed by default.
+
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    | 20 +++++++++++--------
- 1 file changed, 12 insertions(+), 8 deletions(-)
+ .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml  | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-index 5b471ab80..54d65a6f0 100644
---- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-+++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-@@ -414,19 +414,19 @@ static int phy_g12a_usb3_pcie_probe(struct platform_device *pdev)
+diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
+index d0b541a461f3..22636c9fdab8 100644
+--- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
++++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
+@@ -37,6 +37,18 @@ properties:
+   resets:
+     maxItems: 1
  
- 	ret = clk_prepare_enable(priv->clk_ref);
- 	if (ret)
--		goto err_disable_clk_ref;
-+		return ret;
- 
- 	priv->reset = devm_reset_control_array_get_exclusive(dev);
--	if (IS_ERR(priv->reset))
--		return PTR_ERR(priv->reset);
-+	if (IS_ERR(priv->reset)) {
-+		ret = PTR_ERR(priv->reset);
-+		goto err_disable_clk_ref;
-+	}
- 
- 	priv->phy = devm_phy_create(dev, np, &phy_g12a_usb3_pcie_ops);
- 	if (IS_ERR(priv->phy)) {
- 		ret = PTR_ERR(priv->phy);
--		if (ret != -EPROBE_DEFER)
--			dev_err(dev, "failed to create PHY\n");
--
--		return ret;
-+		dev_err_probe(dev, ret, "failed to create PHY\n");
-+		goto err_disable_clk_ref;
- 	}
- 
- 	phy_set_drvdata(priv->phy, priv);
-@@ -434,8 +434,12 @@ static int phy_g12a_usb3_pcie_probe(struct platform_device *pdev)
- 
- 	phy_provider = devm_of_phy_provider_register(dev,
- 						     phy_g12a_usb3_pcie_xlate);
-+	if (IS_ERR(phy_provider)) {
-+		ret = PTR_ERR(phy_provider);
-+		goto err_disable_clk_ref;
-+	}
- 
--	return PTR_ERR_OR_ZERO(phy_provider);
-+	return 0;
- 
- err_disable_clk_ref:
- 	clk_disable_unprepare(priv->clk_ref);
++  allwinner,direction:
++    $ref: '/schemas/types.yaml#/definitions/string'
++    description: |
++      Direction of the D-PHY:
++      - "rx" for receiving (e.g. when used with MIPI CSI-2);
++      - "tx" for transmitting (e.g. when used with MIPI DSI).
++
++    enum:
++      - tx
++      - rx
++    default: tx
++
+ required:
+   - "#phy-cells"
+   - compatible
 -- 
 2.35.2
 
