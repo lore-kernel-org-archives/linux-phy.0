@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB1A5C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Apr 2022 15:23:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03287C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Apr 2022 15:23:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B2BVLKht4lgt34tJ9AC51sb5YbURHApzrktrk7TJ6os=; b=kbnOPiKxI23bHR
-	n1PToAcHdoKVVIg71PfQ+OfbuAn1wTtFAVVVD9hhXQcKiXxEz+9hcEx5DAXpKfDSMbDEEZRL4fsTb
-	LbD7/NG28p+R654DOgqwU0tPo4tYfzlHm+x3TFhsJSLiHjMZYFiAxqm7pYaY2XMr9LwCf1AKBzizt
-	Z3WQbiEQujt1Pxri2stcAtRYkhwbSO8LD3oSWIa98BaibyPL9SfIE+lZWIYJYZuks0gx+KYMXiaDi
-	38qXPQiD/V4/rrjhxRgP8C9J8XlNMvoHFJ9gbmDZfPDBSBR65NfQ7YFSF2uVxS2zjo8jtJr8JI+pb
-	EBmbZl6Ckgoq4cNhKQww==;
+	List-Owner; bh=O7kOyBpN7LZjqxpwViO4ffUFL08ioCuaIOUbdQuW8Dg=; b=lOlemm2pOotteq
+	zoowJGCthZOJNnXYOEQHsq9ZdsGZb2BiMhpISjco0VcvnA1+PCaBgdmz0GP13nSrVffGdp/ycpWUm
+	BOr2O4uoE6S6E7AO0h+PigdwVwhJvk8hIk6BSmqTMkQ0M9vyPvu/XQ3/ww/kRQcRMeuRvgAz07L+N
+	9zBHx+yXvziKFXInwhIKiqQ4UbWYTFltG39f6PMqA7jZTOMEKAOYUhe6JtehtcPu554f9raNgox8n
+	/U4LrHRzklAHm4oke3o20VnR0/8WdC/pwmsqEjccIIY4RsAchuyB57A+DK1vJ+GwfXnV6/rYXg0Dy
+	0CLesjXWTVPxcinkaW0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nfNnA-00AUu2-7a; Fri, 15 Apr 2022 15:23:24 +0000
+	id 1nfNnM-00AV0l-Ad; Fri, 15 Apr 2022 15:23:36 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nfNlq-00AU0L-8u; Fri, 15 Apr 2022 15:22:05 +0000
+ id 1nfNlt-00AU3I-Ux; Fri, 15 Apr 2022 15:22:08 +0000
 Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
- by mail.gandi.net (Postfix) with ESMTPSA id E27A024000E;
- Fri, 15 Apr 2022 15:21:58 +0000 (UTC)
+ by mail.gandi.net (Postfix) with ESMTPSA id C48F424000B;
+ Fri, 15 Apr 2022 15:22:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
- t=1650036120;
+ t=1650036124;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=dlmtqlwBZ9Nvsx0qmEc8iiAYxYop1xZMJTyPdpSB/UI=;
- b=R55tqNIupoPWJFsCA0AqbGUmypF8vKfwicxWgL39jREhj9DsVMvB/vVpplUIvl77cvuYt+
- Tje56pv07HOyK9yCu0Al3yM9C3o7Yf72LRld3DMacKBeT0uLuP16i5Nc+ZuHk1tIKjZqSE
- uflDtLfy5wHOv1OjZ/RfV/B7Xj9O6NiujLoMQ6MarswNnMbZ+f9XYxSJSeSt4neP+5mjwo
- p2PhnwndzknqlnW37JpQKndzE2HrY+MtmtKuip4wo0hSB/ZEt145kjAzuJURjK1dXyOqb5
- s9jbvwGDzZrL+WrqM4Mx+QzRqEYkcAaKGB3CLdZwBiVsWunjiC4QFXPtlmsveg==
+ bh=FK8arK2x+Qxc+gz/abj3rVz/2+9S6LmKDQQzh8/ySlE=;
+ b=mpMfeWAKdMrJ2O+Sogt2d3v3gS75EkjbPRc0zus4d9cTyYO0yzAouD8BoCZaqgEYcUpPYA
+ HRi/fa5MvAKUVKhHZvHvT0AT9npuKfB3+Ax4qBgp+dNzKRQDl6sKgWBVejKqCed5gv5dks
+ bUXAG0vV+/vKxTvRt6wh/hZ8LlZTDDab8BuRt6h8xzub1qA3jSgHiCV+7ImxL4PY/y+UWF
+ E+3eJukkMv02KWqsxugsQ+uGQEaMr8340ruT48YwtMpM/KhSk335YBqJNFycXW4QGGfi0i
+ YQUrwSguWgtWYPi53j6fUMiTsEzo4pwWrjcnKzolt0tpJSt4et6jA2hHJxMtiA==
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
@@ -54,19 +54,19 @@ Cc: Yong Deng <yong.deng@magewell.com>,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Maxime Ripard <mripard@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Rob Herring <robh@kernel.org>
-Subject: [PATCH v4 4/8] dt-bindings: media: Add Allwinner A31 MIPI CSI-2
- bindings documentation
-Date: Fri, 15 Apr 2022 17:21:34 +0200
-Message-Id: <20220415152138.635525-5-paul.kocialkowski@bootlin.com>
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: [PATCH v4 6/8] MAINTAINERS: Add entry for the Allwinner A31 MIPI
+ CSI-2 bridge driver
+Date: Fri, 15 Apr 2022 17:21:36 +0200
+Message-Id: <20220415152138.635525-7-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.35.2
 In-Reply-To: <20220415152138.635525-1-paul.kocialkowski@bootlin.com>
 References: <20220415152138.635525-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220415_082202_653497_3E2A0156 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20220415_082206_162583_A4585888 
+X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,170 +83,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This introduces YAML bindings documentation for the Allwinner A31 MIPI
-CSI-2 controller.
+Add myself as maintainer of the Allwinner A31 MIPI CSI-2 bridge media
+driver.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Reviewed-by: Maxime Ripard <mripard@kernel.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../media/allwinner,sun6i-a31-mipi-csi2.yaml  | 147 ++++++++++++++++++
- 1 file changed, 147 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun6i-a31-mipi-csi2.yaml
+ MAINTAINERS | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-mipi-csi2.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-mipi-csi2.yaml
-new file mode 100644
-index 000000000000..90597661e402
---- /dev/null
-+++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-mipi-csi2.yaml
-@@ -0,0 +1,147 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-mipi-csi2.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/MAINTAINERS b/MAINTAINERS
+index fd768d43e048..0c7a3c792837 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -761,6 +761,14 @@ T:	git git://linuxtv.org/media_tree.git
+ F:	Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+ F:	drivers/media/platform/sunxi/sun4i-csi/
+ 
++ALLWINNER A31 MIPI CSI-2 BRIDGE DRIVER
++M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
++L:	linux-media@vger.kernel.org
++S:	Maintained
++T:	git git://linuxtv.org/media_tree.git
++F:	Documentation/devicetree/bindings/media/allwinner,sun6i-a31-mipi-csi2.yaml
++F:	drivers/media/platform/sunxi/sun6i-mipi-csi2/
 +
-+title: Allwinner A31 MIPI CSI-2 Device Tree Bindings
-+
-+maintainers:
-+  - Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun6i-a31-mipi-csi2
-+      - items:
-+          - const: allwinner,sun8i-v3s-mipi-csi2
-+          - const: allwinner,sun6i-a31-mipi-csi2
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Bus Clock
-+      - description: Module Clock
-+
-+  clock-names:
-+    items:
-+      - const: bus
-+      - const: mod
-+
-+  phys:
-+    maxItems: 1
-+    description: MIPI D-PHY
-+
-+  phy-names:
-+    items:
-+      - const: dphy
-+
-+  resets:
-+    maxItems: 1
-+
-+  ports:
-+    $ref: /schemas/graph.yaml#/properties/ports
-+
-+    properties:
-+      port@0:
-+        $ref: /schemas/graph.yaml#/$defs/port-base
-+        description: Input port, connect to a MIPI CSI-2 sensor
-+
-+        properties:
-+          reg:
-+            const: 0
-+
-+          endpoint:
-+            $ref: video-interfaces.yaml#
-+            unevaluatedProperties: false
-+
-+            properties:
-+              data-lanes:
-+                minItems: 1
-+                maxItems: 4
-+
-+            required:
-+              - data-lanes
-+
-+        additionalProperties: false
-+
-+      port@1:
-+        $ref: /schemas/graph.yaml#/$defs/port-base
-+        description: Output port, connect to a CSI controller
-+
-+        properties:
-+          reg:
-+            const: 1
-+
-+          endpoint:
-+            $ref: /schemas/graph.yaml#/$defs/endpoint-base
-+            unevaluatedProperties: false
-+
-+        additionalProperties: false
-+
-+    required:
-+      - port@0
-+      - port@1
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - phys
-+  - phy-names
-+  - resets
-+  - ports
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/sun8i-v3s-ccu.h>
-+    #include <dt-bindings/reset/sun8i-v3s-ccu.h>
-+
-+    mipi_csi2: csi@1cb1000 {
-+        compatible = "allwinner,sun8i-v3s-mipi-csi2",
-+                     "allwinner,sun6i-a31-mipi-csi2";
-+        reg = <0x01cb1000 0x1000>;
-+        interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&ccu CLK_BUS_CSI>,
-+                 <&ccu CLK_CSI1_SCLK>;
-+        clock-names = "bus", "mod";
-+        resets = <&ccu RST_BUS_CSI>;
-+
-+        phys = <&dphy>;
-+        phy-names = "dphy";
-+
-+        ports {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            mipi_csi2_in: port@0 {
-+                reg = <0>;
-+
-+                mipi_csi2_in_ov5648: endpoint {
-+                    data-lanes = <1 2 3 4>;
-+
-+                    remote-endpoint = <&ov5648_out_mipi_csi2>;
-+                };
-+            };
-+
-+            mipi_csi2_out: port@1 {
-+                reg = <1>;
-+
-+                mipi_csi2_out_csi0: endpoint {
-+                    remote-endpoint = <&csi0_in_mipi_csi2>;
-+                };
-+            };
-+        };
-+    };
-+
-+...
+ ALLWINNER CPUFREQ DRIVER
+ M:	Yangtao Li <tiny.windzz@gmail.com>
+ L:	linux-pm@vger.kernel.org
 -- 
 2.35.2
 
