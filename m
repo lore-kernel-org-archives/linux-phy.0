@@ -4,69 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D4CBC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Apr 2022 16:57:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8D04C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Apr 2022 20:55:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CLFwJ+ugo0OVbJp7bnq45Qhd1bwJZiZH0i+DwmD87+o=; b=RBIx6tKPokpDOl
-	7FXshljzuLol+PqfOS5nUdYo/NAwaFuODh1rrYYoqRt9hA6pHD2+4lhNJ/5C3/d82QmTNlw/8NaM9
-	emAIuCx3cGenn+GOD5Q2BSMApgDATqRbxno37l2ZUaUIwldkx00owau40fJn0cjcs8fsAXFqrX/Jy
-	Ag4jg90e0aPycb+u2SWvJDOGw4EMVC7nRqePIcRcg3r4fdZHOV09betyAY/2VEymLpYpcQWfMVSqx
-	04oHmIr9XVnJWsdkFk3V1rCaANbHlW3xubK94TO7dooPkyWvGgrjsyqKFxmop2trLslpb4c1o8UfW
-	BP2EzDx6NR38NpfiF24Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=488M5tQKMlBsm8/hGXbRd78l5xZDHLfZ0DJjsMRrmxc=; b=aRAdLZ8oEt9qJZ
+	wPka//qgiuwflX5WA1K9MKitk4mC0HaGDe/ncQp61uyJDNkwWKGmrkHwPLDvlN2g3Uz/Q+Bij/kYa
+	K9F7CjQT+++UVlSdnuCLuUmVQEHyvnVFIMiY5TCr2/a9biTIgzAEl/8LVSb/wumk/KMFuDNHqCMFX
+	S+6czmwKeMDArNN6+Gux+okluppJrlk+vbINWXnz5ZwpTzm98DkM6+GHOspLMfEaslAhLL/NP4eZ/
+	besOS0SC3RWiHEhtjnPyNLmx/3J8iUlqIXkU6ZB1oGT4MUihwAzUzDyZS6N1hZPitVjBOse2vznH9
+	Dp7HQ4BUn4T9TUdlCHKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ngUgh-000BKH-1A; Mon, 18 Apr 2022 16:57:19 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1ngYP7-000ZMJ-7X; Mon, 18 Apr 2022 20:55:25 +0000
+Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ngUc2-0008ls-1N
- for linux-phy@lists.infradead.org; Mon, 18 Apr 2022 16:52:34 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id A2B91B8104D;
- Mon, 18 Apr 2022 16:52:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A77EC385AB;
- Mon, 18 Apr 2022 16:52:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1650300747;
- bh=FqA87CXgaTYslJKT4j5d//cmzCdvUZXSeGEszJTZZjk=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=MrkJSukFcEJ1Zk/lIRC80aIrInKZSSpKqmq0u5QlxlZaTrIQD21v5v5gzfcGmCjep
- ct6C7k7YyDekrWeXPAPWEaTd5TpLHVNFCwo3/NBmqVf5G6baM2QNZCL9pRaK63cHR2
- X8ZbexAFAFgFgzYYGNrk5TuH1uxiswgGzL02Zre2U2DEAQoRVZ7EdWNC3Rn8n2csaS
- efFeAva1gSESCMNUSVVhLP7ZbK3dTXPIdrEfFWdHfvYCFc6b5b3WPBvjtHRVvXmYTl
- 5lFEitQ/UCkh4zgieGEr1NVM9/JvlDzpIyvziiZNerRVaEWxLssdJiH1ajii+02gki
- uwvC9Jg/Oz0iw==
-Message-ID: <4a6dd90c-3f8e-ad18-0136-88b75f4d9cf9@kernel.org>
-Date: Mon, 18 Apr 2022 18:52:18 +0200
+ id 1ngYP4-000ZLp-6a
+ for linux-phy@lists.infradead.org; Mon, 18 Apr 2022 20:55:23 +0000
+Received: by mail-pg1-x532.google.com with SMTP id k29so20980201pgm.12
+ for <linux-phy@lists.infradead.org>; Mon, 18 Apr 2022 13:55:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fwdHbI+gWr2kmO8oEf6EWMg+aRRNzFtsHXg6Ha4SC3c=;
+ b=A9jx7UXl6zDK1LCgkYAt80Edgyydum7V4aNbBembSJJYjRHv1DtODpn/2CV+aG9dDG
+ d8f5Tj95SAIyNWRjcOvW8R5e4FBRh5GzwzH1ljxGgMoKuWRTYEMHoFmTNw77kH87LmhU
+ roSIyZd6rJ13uMswmXWUru4WEW8A+Hx2RjW0bBjTWDDQ604XHpIJRu/tEC/4stLEeETj
+ BqwClnkRWU4NY7I6N+s2s1ezuKLPiLbFJKH7F8E28KOemWiv8RNAFBQCRU3OdWWeDX7D
+ +9bLSESOQmr0xv3OLuSaZNUv+X6Bjc0OEJ8whUjgLxHyGMXL3OvRtBO1FHL/5NKBKJwR
+ ur8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fwdHbI+gWr2kmO8oEf6EWMg+aRRNzFtsHXg6Ha4SC3c=;
+ b=HG11gu02DRkJZjTSd89f0xqOmRNzIFJrEuYoXv0nR+W29aQf13jE9NjtzPTDSqO3z4
+ lpRyoXpYrw1bFzeh6ttE16tTTtLCATXOQCLZMQpX5BlUZPoeC2eEjnIxxT6+kwHO8KMR
+ xrRmpPunH1SKXcyDFabyzjDzs/QZOMkz/XcxyzsDDpK8CaVkroVY2t8mLUfHg+Y+hV13
+ IV3b5vLZdw1yHCvDz1HVw8agxF/Qt35vcPKN8yl/s4CsIoL0v9zVLIHrUW1gu1WmAEaj
+ jdgJL3MIALFPBFTzEdBsY2Thqs79cwUtM0leMQnORYNK+eWzxp9yAX00R/ezuNDQkfNe
+ sSRQ==
+X-Gm-Message-State: AOAM530KWnOIzGWSo6vcxzkCHLiNGNYzB9GwfRky2UYUhZWbhbHpagcP
+ guKYbFdT+vvpZbCfFVLfN6mAJg==
+X-Google-Smtp-Source: ABdhPJyQZdPawrK73wiDulg+k+oaaLLE5yDW1YuFAoP7VE1sQd6zLtPQoQYkLwO2yowwMnwzAJ9rsw==
+X-Received: by 2002:a65:6216:0:b0:39d:5e6c:7578 with SMTP id
+ d22-20020a656216000000b0039d5e6c7578mr11367085pgv.114.1650315319568; 
+ Mon, 18 Apr 2022 13:55:19 -0700 (PDT)
+Received: from localhost.localdomain ([223.233.64.97])
+ by smtp.gmail.com with ESMTPSA id
+ q60-20020a17090a17c200b001cd567fecaesm13498859pja.26.2022.04.18.13.55.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 Apr 2022 13:55:19 -0700 (PDT)
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+To: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com, agross@kernel.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ robh+dt@kernel.org, vkoul@kernel.org, bjorn.andersson@linaro.org,
+ Rob Herring <robh@kernel.org>
+Subject: [PATCH v3 0/4] Fix  dtbs_check warning(s) for Qualcomm QMP PHY
+Date: Tue, 19 Apr 2022 02:25:05 +0530
+Message-Id: <20220418205509.1102109-1-bhupesh.sharma@linaro.org>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Subject: Re: [PATCH 0/5] Add support for Axis, ARTPEC-8 PCIe driver
-Content-Language: en-US
-To: wangseok.lee@samsung.com, robh+dt <robh+dt@kernel.org>,
- krzk+dt <krzk+dt@kernel.org>, kishon <kishon@ti.com>,
- vkoul <vkoul@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- "jesper.nilsson" <jesper.nilsson@axis.com>,
- "lars.persson" <lars.persson@axis.com>
-Cc: bhelgaas <bhelgaas@google.com>, linux-phy
- <linux-phy@lists.infradead.org>, linux-pci <linux-pci@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi" <lorenzo.pieralisi@arm.com>, kw <kw@linux.com>,
- linux-arm-kernel <linux-arm-kernel@axis.com>, kernel <kernel@axis.com>,
- Moon-Ki Jun <moonki.jun@samsung.com>, Dongjin Yang <dj76.yang@samsung.com>
-References: <CGME20220418072049epcms2p463a9f01d8ae3e29f75b746a0dce934f1@epcms2p4>
- <20220418072049epcms2p463a9f01d8ae3e29f75b746a0dce934f1@epcms2p4>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-In-Reply-To: <20220418072049epcms2p463a9f01d8ae3e29f75b746a0dce934f1@epcms2p4>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220418_095230_455050_9F4C4B32 
-X-CRM114-Status: GOOD (  26.84  )
+X-CRM114-CacheID: sfid-20220418_135522_352419_5A06A092 
+X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,98 +91,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18/04/2022 09:20, Wangseok Lee wrote:
->>> Also, as you know,
->>> exynos driver is designed according to exynos SoC platform,
->>> so both function and variable names start with exynos.
->>
->> That's hardly a problem...
->>
->>> Compared to the existing exynos driver, 
->>> you can see that the structure and type of function are different.
->>
->> No, I cannot see it. You coded the driver that way, you can code it in
->> other way.
->>
->>> For this reason, it is difficult to use the existing exynos driver 
->>> for artpec.
->>
->> Naming of functions and structures is not making it difficult. That's
->> not the reason.
->>
->>> Our idea is to register a new PCIe driver for artpec-8 SoC platform 
->>> and maintain it in the future.
->>
->> We also want to maintain Exynos PCIe driver in the future.
->>
->> Best regards,
->> Krzysztof
-> 
-> Hi, 
-> Sorry for delay response.
+Changes since v2:
+-----------------
+- v2 can be found here: https://lore.kernel.org/linux-arm-msm/20220228123019.382037-1-bhupesh.sharma@linaro.org/
+- Addressed review comments from Rob and Shawn.
+- Collected ACK from Rob on [PATCH 2/4].
+- Since, Bjorn accepted 4 patches from v2 already, drop them for this series.
+- This series is rebased on linux-next/master.
 
-Sure, happens, but I don't remember the discussion, so replying that
-late will not help your cause.
+Changes since v1:
+-----------------
+- v1 can be found here: https://www.spinics.net/lists/linux-arm-msm/msg104871.html
+- Addressed review comments from Dmitry.
+- Addressed the remaining dtbs_check warnings rasied by Rob's bot on v1.
 
-You know that if you (you as Samsung) worked with upstream, e.g. by
-extending the drivers and keeping them in shape, it would be much easier
-for you (again you as Samsung) to actually add new features? It's much
-better/effective approach than the path of pushing every time new driver
-with explanation like "we do not want to maintain older driver, so we
-want a new one"...
+Shawn Guo recently fixed a large number of 'dtbs_check' warnings
+on Qualcomm DTS files for qmp phys. However a few warnings are still left
+(possibly due to new dts files being added over time).
 
-> I have listed some parts that are different from exynos pcie driver.
-> 
-> PHY driver
-> PHY is different, so register map is also different.
-> Three reference clock options are available in ARTPEC-8.
->   It operates by selecting one clock among XO, IO, and SOC PLL.
->   However, the exynos phy driver sets one ref clk though sysreg.
+So, I decided to clean them up.
+After this series, '$ make dtbs_check' leads to no warning for QCOM
+QMP PHY.
 
-It usually trivial to code such difference in the driver.
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Rob Herring <robh@kernel.org>
 
-> The reset method and type of PHY for initialization are different.
-> The overall sysreg configuration is different
+Bhupesh Sharma (4):
+  dt-bindings: phy: qcom,qmp: Mark '#clock-cells' as a 'optional'
+    property
+  dt-bindings: phy: qcom,qmp: Describe 'vdda-max-microamp' &
+    'vdda-pll-max-microamp' properties
+  dt-bindings: phy: qcom,qmp: Describe phy@ subnode properly
+  arm64: dts: qcom: sm8450: Fix qmp phy node (use phy@ instead of
+    lanes@)
 
-Indeed.
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 29 +++++++++++++++----
+ arch/arm64/boot/dts/qcom/sm8450.dtsi          |  4 +--
+ 2 files changed, 26 insertions(+), 7 deletions(-)
 
-> Artpec-8 requires a separate sequence for phy tuning,
-> but it does not exist in exynos phy driver.
-> Artpec-8 requires pcs resources, but exynos phy driver does not exist.
-> 
+-- 
+2.35.1
 
-For the phy driver indeed it might require much effort to create one driver.
-
-> Controller driver
-> Sub controller is different, so register map is also different.
-> And it is different handles lane control, link control, PHY clocking,
-> reset, interrupt control. 
-> The number and type of clock resources used are different.
-> The overall sysreg configuration is different
-> 
-> Also artpec-8 is performed in dual mode that supports both RC and EP.
-> As described above, the PHY and sub ontroller are different
-> and the regiser map is different.
-> sysreg is also different. And there are differences such as reset.
-> The driver will be much more complicated if both hardwares should be
-> supported in the same driver.
-
-Maybe, quite probably. The reluctance to extend any existing code makes
-me doubting this, but I admit that there are many differences.
-
-> For these reasons, my opinion is that better to create
-> a phy, controller both driver with a new file.
-> Please let me know your opinion.
-
-At the end it's mostly the decision of PCIe and phy subsystem
-maintainers whether they want to have separate drivers for DWC PCIe
-blocks in ARMv8 Samsung SoCs.
-
-In any case, the driver code looks like copied-pasted from some vendor
-sources, so you need to bring it to shape.
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
