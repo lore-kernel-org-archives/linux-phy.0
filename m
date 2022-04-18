@@ -4,105 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F8DDC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Apr 2022 07:21:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BAECC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Apr 2022 10:39:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:CC
-	:To:From:Subject:Mime-Version:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=ga+v/FWHKlcYQ/aIiHqaeo+c3oDhx2NQQbjEjZAe94c=; b=e63xW6K0wT6pR4
-	vymEoTycRh/FVl2Qzo/iZ3lpDQicbs+R2L3cj2khBOaHTmXmt+Ami5kj6ufNZIjLPKNHOC8DmKGXt
-	SoWvqQUxjyTB6vo9wrEye8SYbniTmQ6txPpXft/VDHp+0fKnlQ/cgvT1dV66LPOFbyxpv1JupfOVK
-	GKVF+g2nYIONRfs5yD8kPTZZlChpjxpVI+HLwJfuQ619u7ympcCx1b33itUt+uFMLGnmKW4+FNc+o
-	oNBBCoUx7VxB7NEDh7AdvwDFT/LgYvyzyuzp1T4SHGEacpHz7+jmPsp3q9fD8R0kDMETs+w6L0BIa
-	QbBFE1YyRnKExZEKsNXg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Bh17WgnA/TRI0tNPhNUQTPejMZ1OA1Egy5TLlR0GAXI=; b=umuzj9cBytf5vV
+	93xcVf2kxciV3zBtM+2pFaVjsdd6BzPHZwc0UA8YJx5w30VRKrmjhLvWlNGVDUNwyx32HR0GLg+YF
+	g5n/8LWyfsZNJL3ezSq+LOgMJb3Xi3IXWf/jLP2VR8M/lp++AFknA4Hm1+z8u7k5vC6bpa50HnFRI
+	jVpd7R8znWurmYi4IO+sq5C4XSm9oUEtoa9Rf8llZks+Ebtkm4O8LyJDi5jnQ9q8tt3yOCNB69Ers
+	jS3moS7AEwMuIoBvN9s4ordDt+EY/rdGvUmD524AgrVMKg65qsfytZDqXc0KDlt8K6gwXwD5HiRcw
+	RB7Bj0LplkJH27nQLCRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ngLh9-00Frl7-P2; Mon, 18 Apr 2022 07:21:11 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1ngOmp-00GKNt-FV; Mon, 18 Apr 2022 10:39:15 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ngLh4-00Frj6-OR
- for linux-phy@lists.infradead.org; Mon, 18 Apr 2022 07:21:10 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20220418072054epoutp036b71a50b3e8539611cae55c5d6145209~m7Ji0XvIh0506305063epoutp03d
- for <linux-phy@lists.infradead.org>; Mon, 18 Apr 2022 07:20:54 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20220418072054epoutp036b71a50b3e8539611cae55c5d6145209~m7Ji0XvIh0506305063epoutp03d
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1650266454;
- bh=YYtRa5V6YFOQcb0Dnb1EWlf8BLba7dBd1YOsZoRaqGg=;
- h=Subject:Reply-To:From:To:CC:Date:References:From;
- b=R3sZ/kYI0dAF69UFjK0TFWIMdS+SaeFMGIZb6bqwKnicAkHjDmPPfTHfdg9szjPR+
- qi8BqcARw+Wqu8MgpQFzZjrXheMo+YqsKetWMQgWGFNpB/rV+tDAuWw8U/I3YzwzQ3
- vPwIeiKSR6ww7bc5OLM9JQog3FlB/T8NiUMl3eWo=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
- epcas2p4.samsung.com (KnoxPortal) with ESMTP id
- 20220418072053epcas2p40c34b72d4534b5a70682d784f52aa5b5~m7JiQaIAe0288902889epcas2p4U;
- Mon, 18 Apr 2022 07:20:53 +0000 (GMT)
-Received: from epsmges2p2.samsung.com (unknown [182.195.36.90]) by
- epsnrtp3.localdomain (Postfix) with ESMTP id 4KhddG0R6Bz4x9Q3; Mon, 18 Apr
- 2022 07:20:50 +0000 (GMT)
-X-AuditID: b6c32a46-ba1ff70000009dd5-1e-625d11513e80
-Received: from epcas2p3.samsung.com ( [182.195.41.55]) by
- epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- DE.F2.40405.1511D526; Mon, 18 Apr 2022 16:20:49 +0900 (KST)
-Mime-Version: 1.0
-Subject: Re: [PATCH 0/5] Add support for Axis, ARTPEC-8 PCIe driver
-From: Wangseok Lee <wangseok.lee@samsung.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>, robh+dt <robh+dt@kernel.org>,
- krzk+dt <krzk+dt@kernel.org>, kishon <kishon@ti.com>, vkoul
- <vkoul@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- "jesper.nilsson" <jesper.nilsson@axis.com>, "lars.persson"
- <lars.persson@axis.com>
-CC: bhelgaas <bhelgaas@google.com>, linux-phy
- <linux-phy@lists.infradead.org>, linux-pci <linux-pci@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>, "lorenzo.pieralisi"
- <lorenzo.pieralisi@arm.com>, kw <kw@linux.com>, linux-arm-kernel
- <linux-arm-kernel@axis.com>, kernel <kernel@axis.com>, Moon-Ki Jun
- <moonki.jun@samsung.com>, Dongjin Yang <dj76.yang@samsung.com>
-X-Priority: 3
-X-Content-Kind-Code: NORMAL
-X-CPGS-Detection: blocking_info_exchange
-X-Drm-Type: N,general
-X-Msg-Generator: Mail
-X-Msg-Type: PERSONAL
-X-Reply-Demand: N
-Message-ID: <20220418072049epcms2p463a9f01d8ae3e29f75b746a0dce934f1@epcms2p4>
-Date: Mon, 18 Apr 2022 16:20:49 +0900
-X-CMS-MailID: 20220418072049epcms2p463a9f01d8ae3e29f75b746a0dce934f1
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-X-CPGSPASS: Y
-X-CPGSPASS: Y
-CMS-TYPE: 102P
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrHJsWRmVeSWpSXmKPExsWy7bCmuW6gYGySwbRVxhZLmjIsXh7StJh/
- 5Byrxe4Zy5ksnh+axWzxqUXV4sLTHjaLl7PusVmcP7+B3aKh5zerxZE3H5kt9h9fyWRxedcc
- Nouz846zWUxY9Y3F4s3vF+wW5xZnWrTuPcJusfPOCWYHYY8189YwelxfF+CxYFOpx6ZVnWwe
- T65MZ/LYvKTeo2/LKkaP4ze2M3l83iQXwBmVbZORmpiSWqSQmpecn5KZl26r5B0c7xxvamZg
- qGtoaWGupJCXmJtqq+TiE6DrlpkD9I+SQlliTilQKCCxuFhJ386mKL+0JFUhI7+4xFYptSAl
- p8C8QK84Mbe4NC9dLy+1xMrQwMDIFKgwITtjS+syxoJbcRWPTr1ha2CcEdPFyMkhIWAicWfu
- XKYuRi4OIYEdjBIXf/SxdTFycPAKCEr83SEMUiMs4Czx73YrM4gtJKAksWPNPGaIuL7E9RXd
- rCA2m4CuxL/FL9lA5ogILGCSuD93BthQZoH/TBKvGo+xQWzjlZjR/pQFwpaW2L58KyOErSHx
- Y1kvM4QtKnFz9Vt2GPv9sflQNSISrffOQtUISjz4uRsqLiWx4MkhVgi7WmL/399MEHYDo0T/
- /VSQZySALt1x3RgkzCvgKzGnqRHsHBYBVYlbU7uhznGR2PKtHWwks4C2xLKFr5lBWpkFNCXW
- 79KHmKIsceQWC8wjDRt/s6OzmQX4JDoO/4WL75j3BOoYNYl5K3cyQ4yRkdj60n8Co9IsRDjP
- QrJ2FsLaBYzMqxjFUguKc9NTi40KjOBRm5yfu4kRnLC13HYwTnn7Qe8QIxMH4yFGCQ5mJRHe
- niXRSUK8KYmVValF+fFFpTmpxYcYTYEensgsJZqcD8wZeSXxhiaWBiZmZobmRqYG5krivF4p
- GxKFBNITS1KzU1MLUotg+pg4OKUamGx9OFa95doc5LeDd3FpYfHEV3PjDjXs2/vr94o7iprb
- ZnZH52/5KxjaPHvi0TC3qrkBE2bdM3u+oM9tt2TEiT9eDgqf/j3IzXKr01e4qVWYvfBFdHyf
- QPqZfP37sgVyEyf/tSubnOh8w6nyzfyCLZ801dd+Dv9zmLO2auPK9a8av3i9XG9+U1HBupDD
- 9NAxaekZVzO27f2t8oHn5HwXsWqV+KC9c5rNEr59Vn/1+JxJ2QON1Or7rBd3XdiQzK3/+3RN
- l//xKyoe15NsEuZrpIftOGrxYpfahoQTa6dcy/T6//NMZ/GDjbbTlZ4o+n1z+86wMW5RUccU
- xl8pBQc2B3kbHlfXYhJXPWGV4S7ts1aJpTgj0VCLuag4EQBc2jCiYQQAAA==
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220418072049epcms2p463a9f01d8ae3e29f75b746a0dce934f1
-References: <CGME20220418072049epcms2p463a9f01d8ae3e29f75b746a0dce934f1@epcms2p4>
+ id 1ngOmd-00GKLZ-Uw; Mon, 18 Apr 2022 10:39:05 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 223A2611EC;
+ Mon, 18 Apr 2022 10:39:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A89F3C385A8;
+ Mon, 18 Apr 2022 10:38:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1650278340;
+ bh=kI59jYqj7rPLfRHyWTPL69LKjL3lZ4/Nnt35pCVLnBg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Jp7IJKFwT6c2TCPMTwuMO6BXKiO408/DU1GjgWcyArka9l8DEGMqGvJYSBQy9NUEx
+ 4MmsgFzxTyWL+FcJIRdARmZh0u46tsirEFTy2pkjEPMD9SOYdFbBvnHVlKvjTxQJ02
+ XFqXCe/TB3NfBg+5+4GJzx2g9DXkO/l0NRke+PmWpNEFuJGLc3pufqwKuVZtWZgeNL
+ BYeTqAmpETJzWlnhKNI1mIbkf68xILN/r78GDb86ZzZq7GDzwt8eFMA4JsDW9vZIiC
+ NdP/FOCtjC7Qj+njg9e0x/zgZqhRIIaM4dalY2amSIb9kPBd6p+Za4pvdu6lAJTHhE
+ 1KHdkNdia9Vxg==
+Date: Mon, 18 Apr 2022 16:08:55 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: linux-rockchip@lists.infradead.org,
+ Frank Wunderlich <frank-w@public-files.de>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Johan Jonker <jbx6244@gmail.com>, Peter Geis <pgwipeout@gmail.com>,
+ Michael Riesch <michael.riesch@wolfvision.net>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org
+Subject: Re: [RFC/RFT 3/6] phy: rockchip: Support pcie v3
+Message-ID: <Yl0/v2101wx6hy7B@matsya>
+References: <20220416135458.104048-1-linux@fw-web.de>
+ <20220416135458.104048-4-linux@fw-web.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20220416135458.104048-4-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220418_002107_198009_5F4F3715 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20220418_033904_113889_3A2F4BD8 
+X-CRM114-Status: GOOD (  29.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,144 +78,204 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: wangseok.lee@samsung.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PiAtLS0tLS0tLS0gT3JpZ2luYWwgTWVzc2FnZSAtLS0tLS0tLS0KPiBTZW5kZXIgOiBLcnp5c3p0
-b2YgS296bG93c2tpwqANCj4gRGF0ZSA6IDIwMjItMDMtMjkgMTU6NDEgKEdNVCswOTowMCkNCj4g
-VGl0bGUgOiBSZTogW1BBVENIIDAvNV0gQWRkIHN1cHBvcnQgZm9yIEF4aXMsIEFSVFBFQy04IFBD
-SWUgZHJpdmVyDQo+IMKgDQo+IE9uwqAyOS8wMy8yMDIywqAwNTo0OSzCoOydtOyZleyEncKgd3Jv
-dGU6DQo+Pj7CoC0tLS0tLS0tLcKgT3JpZ2luYWzCoE1lc3NhZ2XCoC0tLS0tLS0tLQ0KPj4+wqBT
-ZW5kZXLCoDrCoEtyenlzenRvZsKgS296bG93c2tpwqANCj4+PiBEYXRlIDogMjAyMi0wMy0yOCAy
-MDo0NCAoR01UKzkpDQo+Pj4gVGl0bGUgOiBSZTogW1BBVENIIDAvNV0gQWRkIHN1cHBvcnQgZm9y
-IEF4aXMsIEFSVFBFQy04IFBDSWUgZHJpdmVyDQo+Pj4NCj4+PiBPbsKgMjgvMDMvMjAyMsKgMTM6
-MjkswqDsnbTsmZXshJ3CoHdyb3RlOg0KPj4+Pj4gwqAtLS0tLS0tLS3CoE9yaWdpbmFswqBNZXNz
-YWdlwqAtLS0tLS0tLS0NCj4+Pj4+IMKgU2VuZGVywqA6wqBLcnp5c3p0b2bCoEtvemxvd3NracKg
-DQo+Pj4+PiDCoERhdGXCoDrCoDIwMjItMDMtMjjCoDE4OjM4wqAoR01UKzkpDQo+Pj4+PiDCoFRp
-dGxlwqA6wqBSZTrCoFtQQVRDSMKgMC81XcKgQWRkwqBzdXBwb3J0wqBmb3LCoEF4aXMswqBBUlRQ
-RUMtOMKgUENJZcKgZHJpdmVyDQo+Pj4+Pg0KPj4+Pj4gwqBPbsKgMjgvMDMvMjAyMsKgMTE6MDIs
-wqDsnbTsmZXshJ3CoHdyb3RlOg0KPj4+Pj4+PiDCoMKgLS0tLS0tLS0twqBPcmlnaW5hbMKgTWVz
-c2FnZcKgLS0tLS0tLS0tDQo+Pj4+Pj4+IMKgwqBTZW5kZXLCoDrCoEtyenlzenRvZsKgS296bG93
-c2tpwqANCj4+Pj4+Pj4gwqDCoERhdGXCoDrCoDIwMjItMDMtMjjCoDE2OjEywqAoR01UKzkpDQo+
-Pj4+Pj4+IMKgwqBUaXRsZcKgOsKgUmU6wqBbUEFUQ0jCoDAvNV3CoEFkZMKgc3VwcG9ydMKgZm9y
-wqBBeGlzLMKgQVJUUEVDLTjCoFBDSWXCoGRyaXZlcg0KPj4+Pj4+Pg0KPj4+Pj4+PiDCoMKgT27C
-oDI4LzAzLzIwMjLCoDAzOjQ0LMKg7J207JmV7ISdwqB3cm90ZToNCj4+Pj4+Pj4+IMKgwqDCoFRo
-aXPCoHNlcmllc8KgcGF0Y2hlc8KgaW5jbHVkZcKgbmV3bHnCoFBDSWXCoHN1cHBvcnTCoGZvcsKg
-QXhpc8KgQVJUUEVDLTjCoFNvQy4NCj4+Pj4+Pj4+IMKgwqDCoEFSVFBFQy04wqBpc8KgdGhlwqBT
-b0PCoHBsYXRmb3JtwqBvZsKgQXhpc8KgQ29tbXVuaWNhdGlvbnMuDQo+Pj4+Pj4+PiDCoMKgwqBQ
-Q0llwqBjb250cm9sbGVywqBkcml2ZXLCoGFuZMKgcGh5wqBkcml2ZXLCoGhhdmXCoGJlZW7CoG5l
-d2x5wqBhZGRlZC4NCj4+Pj4+Pj4+IMKgwqDCoFRoZXJlwqBpc8KgYWxzb8KgYcKgbmV3wqBNQUlO
-VEFJTkVSwqBpbsKgdGhlwqBhZGRpdGlvbsKgb2bCoHBoecKgZHJpdmVyLg0KPj4+Pj4+Pj4gwqDC
-oMKgUENJZcKgY29udHJvbGxlcsKgaXPCoGRlc2lnbmVkwqBiYXNlZMKgb27CoERlc2lnbi1XYXJl
-wqBQQ0llwqBjb250cm9sbGVywqBJUA0KPj4+Pj4+Pj4gwqDCoMKgYW5kwqBQQ0llwqBwaHnCoGlz
-wqBkZXNpbmdlZMKgYmFzZWTCoG9uwqBTQU1TVU5HwqBQSFnCoElQLg0KPj4+Pj4+Pj4gwqDCoMKg
-SXTCoGFsc2/CoGluY2x1ZGVzwqBtb2RpZmljYXRpb25zwqB0b8KgdGhlwqBEZXNpZ24tV2FyZcKg
-Y29udHJvbGxlcsKgZHJpdmVywqB0b8KgDQo+Pj4+Pj4+PiDCoMKgwqBydW7CoHRoZcKgNjRiaXQt
-YmFzZWTCoEFSVFBFQy04wqBQQ0llwqBjb250cm9sbGVywqBkcml2ZXIuDQo+Pj4+Pj4+PiDCoMKg
-wqBJdMKgY29uc2lzdHPCoG9mwqA2wqBwYXRjaGVzwqBpbsKgdG90YWwuDQo+Pj4+Pj4+PiDCoMKg
-wqANCj4+Pj4+Pj4+IMKgwqDCoFRoaXPCoHNlcmllc8KgaGFzwqBiZWVuwqB0ZXN0ZWTCoG9uwqBB
-WElTwqBTV8KgYnJpbmctdXDCoGJvYXJkwqANCj4+Pj4+Pj4+IMKgwqDCoHdpdGjCoEFSVFBFQy04
-wqBjaGlwc2V0Lg0KPj4+Pj4+Pg0KPj4+Pj4+PiDCoMKgWW91wqBsb3N0wqBtYWlswqB0aHJlYWRp
-bmcuwqBUaGlzwqBtYWtlc8KgcmVhZGluZ8KgdGhpc8KgZGlmZmljdWx0wqBmb3LCoHVzLsKgUGx1
-cw0KPj4+Pj4+PiDCoMKgeW91wqBzZW50wqBzb21ldGhpbmfCoG5vbi1hcHBsaWNhYmxlwqAocGF0
-Y2jCoCMyKSzCoHNvwqBwbGVhc2XCoHJlc2VuZC4NCj4+Pj4+Pj4NCj4+Pj4+Pj4gwqDCoEtub3dp
-bmfCoHJlY2VudMKgU2Ftc3VuZ8KgcmVsdWN0YW5jZcKgdG/CoGV4dGVuZMKgZXhpc3RpbmfCoGRy
-aXZlcnPCoGFuZMKgYWx3YXlzDQo+Pj4+Pj4+IMKgwqBkdXBsaWNhdGUswqBwbGVhc2XCoHByb3Zp
-ZGXCoGRlc2NyaXB0aW9uL2FuYWx5c2lzwqB3aHnCoHRoaXPCoGRyaXZlcsKgY2Fubm90wqBiZQ0K
-Pj4+Pj4+PiDCoMKgY29tYmluZWTCoHdpdGjCoGV4aXN0aW5nwqBkcml2ZXIuwqBUaGXCoGFuc3dl
-csKgbGlrZTrCoHdlwqBuZWVkwqBzZXZlcmFswqBzeXNjb24NCj4+Pj4+Pj4gwqDCoGJlY2F1c2XC
-oHdlwqBkb8Kgbm90wqBpbXBsZW1lbnTCoG90aGVywqBmcmFtZXdvcmtzwqAobGlrZcKgaW50ZXJj
-b25uZWN0KcKgYXJlwqBub3QNCj4+Pj4+Pj4gwqDCoHZhbGlkLg0KPj4+Pj4+Pg0KPj4+Pj4+PiDC
-oMKgQmVzdMKgcmVnYXJkcywNCj4+Pj4+Pj4gwqDCoEtyenlzenRvZg0KPj4+Pj4+IMKgwqANCj4+
-Pj4+PiDCoMKgSGVsbG8swqBLcnp5c3p0b2YNCj4+Pj4+PiDCoMKgVGhhbmtzwqBmb3LCoHlvdXLC
-oHJldmlldy4NCj4+Pj4+PiDCoMKgDQo+Pj4+Pj4gwqDCoHBhdGNoIzLCoHdhc8Kgc2VudMKgdG/C
-oHRoZcKgd3JvbmfCoGZvcm1hdMKgc2/CoHNlbnTCoGFnYWluLg0KPj4+Pj4+IMKgwqBTb3JyecKg
-Zm9ywqBjYXVzaW5nwqBjb25mdXNpb24uDQo+Pj4+PiDCoMKgDQo+Pj4+PiDCoFRoZcKgZmlyc3TC
-oHNlbmRpbmfCoHdhc8KgSFRNTC7CoFNlY29uZMKgd2FzwqBicm9rZW7CoHRleHQswqBzb8Kgc3Rp
-bGzCoG5vdMKgd29ya2luZy4NCj4+Pj4+DQo+Pj4+PiDCoFBsZWFzZcKgcmVzZW5kwqBldmVyeXRo
-aW5nwqB3aXRowqBwcm9wZXLCoHRocmVhZGluZy4NCj4+Pj4gwqANCj4+Pj4gwqBIZWxsbyzCoEty
-enlzenRvZg0KPj4+PiDCoA0KPj4+PiDCoEnCoHNlbnTCoHBhdGNoIzLCoHRocmVlwqB0aW1lcy4N
-Cj4+Pj4gwqBkdWXCoHRvwqB0aGXCoGluZmx1ZW5jZcKgb2bCoHRoZcKgZW1haWzCoHN5c3RlbSwN
-Cj4+Pj4gwqB0aGVyZcKgd2FzwqBzb21ldGhpbmfCoHdyb25nwqB3aXRowqB0aGXCoGZpcnN0wqBh
-bmTCoHNlY29uZMKgbWFpbHMuDQo+Pj4+IMKgU29ycnnCoGZvcsKgY2F1c2luZ8KgY29uZnVzaW9u
-Lg0KPj4+PiDCoERpZMKgeW91wqByZWNlaXZlwqB0aGXCoHRoaXJkwqBwYXRjaMKgacKgc2VudMKg
-eW91Pw0KPj4+DQo+Pj4gTWF5YmUswqBJwqBkb24ndMKga25vdy7CoEl0J3PCoG5vdMKgdGhyZWFk
-ZWTCoHNvwqBpdCdzwqBkaWZmaWN1bHTCoHRvwqBmaW5kwqBpdA0KPj4+IGFtb25nwqBvdGhlcsKg
-MTAwwqBlbWFpbHMuLi4NCj4+IA0KPj4gSSB0aGluayB5b3UgYWxzbyByZWNlaXZlZCBhIG5vcm1h
-bCBwYXRjaCMgMi4NCj4+IA0KPj4+PiDCoMKgDQo+Pj4+Pj4gwqDCoFRoaXPCoHBhdGNowqBpc8Kg
-c3BlY2lhbGl6ZWTCoGluwqBBcnRwZWMtOCzCoA0KPj4+Pj4+IMKgwqB0aGXCoFNvQ8KgUGxhdGZv
-cm3CoG9mwqBBeGlzwqBDb21tdW5pY2F0aW9uLMKgYW5kwqBpc8KgbmV3bHnCoGFwcGxpZWQuDQo+
-Pj4+Pj4gwqDCoFNpbmNlwqB0aGXCoHRhcmdldMKgU29DwqBwbGF0Zm9ybcKgaXPCoGRpZmZlcmVu
-dMKgZnJvbcKgdGhlwqBkcml2ZXLCoHByZXZpb3VzbHnCoA0KPj4+Pj4+IMKgwqB1c2VkwqBiecKg
-U2Ftc3VuZyzCoGl0wqBpc8KgZGlmZmljdWx0wqB0b8KgbWVyZ2XCoHdpdGjCoHRoZcKgZXhpc3Rp
-bmfCoGRyaXZlci4NCj4+Pj4+DQo+Pj4+PiDCoFJlY2VudGx5wqBJwqBhbHdheXPCoHNhd8Kgc3Vj
-aMKgYW5zd2Vyc8KgYW5kwqBzb21ldGltZXPCoGl0wqB3YXPCoHRydWUswqBzb21ldGltZXMNCj4+
-Pj4+IMKgbm90LsKgV2hhdMKgaXPCoGV4YWN0bHnCoGRpZmZlcmVudD8NCj4+Pj4+DQo+Pj4+PiDC
-oEJlc3TCoHJlZ2FyZHMsDQo+Pj4+PiDCoEtyenlzenRvZg0KPj4+PiDCoA0KPj4+PiDCoFRoZcKg
-bWFpbsKgcmVhc29uwqB0aGlzwqBwYXRjaMKgc2hvdWxkwqBiZcKgYWRkZWTCoGlzwqB0aGF0DQo+
-Pj4+IMKgdGhpc8KgcGF0Y2jCoGlzwqBub3TCoHRoZcKgZHJpdmVywqBhcHBsaWVkwqB0b8KgZXh5
-bm9zwqBwbGF0Zm9ybS4NCj4+Pg0KPj4+IFN0aWxswqB0aGlzwqBkb2VzwqBub3TCoGV4cGxhaW7C
-oHdoecKgeW91wqBuZWVkwqBzZXBhcmF0ZcKgZHJpdmVyLg0KPj4gDQo+PiBQQ0llIGRyaXZlciBv
-ZiBhcnRwZWMtOCBpcyBub3QgYXZhaWxhYmxlIGluIGV4eW5vcyBwbGF0Zm9ybS4NCj4+IGJlY2F1
-c2UgdGhlIFBDSWUgb2YgYXJ0cGVjIGFuZCBleHlub3MgaGF2ZSB2ZXJ5IGRpZmZlcmVudCANCj4+
-IGhhcmR3YXJlIGluIFNvQyBkZXNpZ24uDQo+PiBOb3Qgb25seSBpdCBpcyB0aGUgU29DIGRpZmZl
-cmVudCwgDQo+PiBidXQgdGhlIGhhcmR3YXJlIGRlc2lnbiBvZiBQQ0llIGlzIGFsc28gZGlmZmVy
-ZW50Lg0KPj4gVGhlcmVmb3JlLCB3ZSBhcmUgdXNpbmcgZHJpdmVyJ3MgY29tcGF0aWJsZSANCj4+
-IGFzIGF4aXMsIGFydHBlYzgtcGNpZSByYXRoZXIgdGhhbiBzYW1zdW5nLCBhcnRwZWM4LXBjaWUu
-DQo+IA0KPiBZb3Uga2VlcCByZXBlYXRpbmcgdGhlIHNhbWUgb3ZlciBhbmQgb3Zlci4gV2hhdCBp
-cyBkaWZmZXJlbnQ/IERyaXZlcnMNCj4gY2FuIHN1cHBvcnQgZGlmZmVyZW50IGRldmljZXMsIEkg
-YWxyZWFkeSB3cm90ZSBpdC4gSnVzdCBiZWNhdXNlIGRldmljZQ0KPiBpcyBkaWZmZXJlbnQgZG9l
-cyBub3QgbWVhbiBpdCBzaG91bGQgaGF2ZSBzZXBhcmF0ZSBkcml2ZXIuDQo+IA0KPj4gDQo+Pj4+
-IMKgQmVjYXVzZcKgdGhlwqBTb0PCoHBsYXRmb3JtwqBpc8KgZGlmZmVyZW50LMKgDQo+Pj4+IMKg
-dGhlwqBJUMKgY29uZmlndXJhdGlvbsKgb2bCoFBDSWXCoGlzwqBhbHNvwqBkaWZmZXJlbnQuDQo+
-Pj4NCj4+PiBXaGF0wqBpc8KgZXhhY3RsecKgZGlmZmVyZW50P8KgVXN1YWxsecKgZHJpdmVyc8Kg
-Y2FuwqBzdXBwb3J0wqBJUMKgYmxvY2tzwqB3aXRoDQo+Pj4gc29tZcKgZGlmZmVyZW5jZXMuLi4N
-Cj4+Pg0KPj4+PiDCoFdlwqB3aWxswqBvcmdhbml6ZcKgYcKgZHJpdmVywqBmb3LCoEFydHBlYy04
-wqBwbGF0Zm9ybcKgYW5kwqANCj4+Pj4gwqBpZsKgdGhlcmXCoGlzwqBub8Kgc3BlY2lhbMKgcmVh
-c29uLMKgbWFpbnRhaW7CoHRoaXPCoA0KPj4+PiDCoHdpdGhvdXTCoGFkZGluZ8KgaXTCoGZyb23C
-oHRoZcKgbmV4dMKgc2VyaWVzLg0KPj4+DQo+Pj4gScKgZG9uJ3TCoHVuZGVyc3RhbmTCoHRoaXMu
-DQo+Pj4NCj4+Pg0KPj4+IEJlc3TCoHJlZ2FyZHMsDQo+Pj4gS3J6eXN6dG9mDQo+PiANCj4+IEFs
-c28sIGFzIHlvdSBrbm93LA0KPj4gZXh5bm9zIGRyaXZlciBpcyBkZXNpZ25lZCBhY2NvcmRpbmcg
-dG8gZXh5bm9zIFNvQyBwbGF0Zm9ybSwNCj4+IHNvIGJvdGggZnVuY3Rpb24gYW5kIHZhcmlhYmxl
-IG5hbWVzIHN0YXJ0IHdpdGggZXh5bm9zLg0KPiANCj4gVGhhdCdzIGhhcmRseSBhIHByb2JsZW0u
-Li4NCj4gDQo+PiBDb21wYXJlZCB0byB0aGUgZXhpc3RpbmcgZXh5bm9zIGRyaXZlciwgDQo+PiB5
-b3UgY2FuIHNlZSB0aGF0IHRoZSBzdHJ1Y3R1cmUgYW5kIHR5cGUgb2YgZnVuY3Rpb24gYXJlIGRp
-ZmZlcmVudC4NCj4gDQo+IE5vLCBJIGNhbm5vdCBzZWUgaXQuIFlvdSBjb2RlZCB0aGUgZHJpdmVy
-IHRoYXQgd2F5LCB5b3UgY2FuIGNvZGUgaXQgaW4NCj4gb3RoZXIgd2F5Lg0KPiANCj4+IEZvciB0
-aGlzIHJlYXNvbiwgaXQgaXMgZGlmZmljdWx0IHRvIHVzZSB0aGUgZXhpc3RpbmcgZXh5bm9zIGRy
-aXZlciANCj4+IGZvciBhcnRwZWMuDQo+IA0KPiBOYW1pbmcgb2YgZnVuY3Rpb25zIGFuZCBzdHJ1
-Y3R1cmVzIGlzIG5vdCBtYWtpbmcgaXQgZGlmZmljdWx0LiBUaGF0J3MNCj4gbm90IHRoZSByZWFz
-b24uDQo+IA0KPj4gT3VyIGlkZWEgaXMgdG8gcmVnaXN0ZXIgYSBuZXcgUENJZSBkcml2ZXIgZm9y
-IGFydHBlYy04IFNvQyBwbGF0Zm9ybSANCj4+IGFuZCBtYWludGFpbiBpdCBpbiB0aGUgZnV0dXJl
-Lg0KPiANCj4gV2UgYWxzbyB3YW50IHRvIG1haW50YWluIEV4eW5vcyBQQ0llIGRyaXZlciBpbiB0
-aGUgZnV0dXJlLg0KPiANCj4gQmVzdCByZWdhcmRzLA0KPiBLcnp5c3p0b2YNCg0KSGksIA0KU29y
-cnkgZm9yIGRlbGF5IHJlc3BvbnNlLg0KSSBoYXZlIGxpc3RlZCBzb21lIHBhcnRzIHRoYXQgYXJl
-IGRpZmZlcmVudCBmcm9tIGV4eW5vcyBwY2llIGRyaXZlci4NCg0KUEhZIGRyaXZlcg0KUEhZIGlz
-IGRpZmZlcmVudCwgc28gcmVnaXN0ZXIgbWFwIGlzIGFsc28gZGlmZmVyZW50Lg0KVGhyZWUgcmVm
-ZXJlbmNlIGNsb2NrIG9wdGlvbnMgYXJlIGF2YWlsYWJsZSBpbiBBUlRQRUMtOC4NCiAgSXQgb3Bl
-cmF0ZXMgYnkgc2VsZWN0aW5nIG9uZSBjbG9jayBhbW9uZyBYTywgSU8sIGFuZCBTT0MgUExMLg0K
-ICBIb3dldmVyLCB0aGUgZXh5bm9zIHBoeSBkcml2ZXIgc2V0cyBvbmUgcmVmIGNsayB0aG91Z2gg
-c3lzcmVnLg0KVGhlIHJlc2V0IG1ldGhvZCBhbmQgdHlwZSBvZiBQSFkgZm9yIGluaXRpYWxpemF0
-aW9uIGFyZSBkaWZmZXJlbnQuDQpUaGUgb3ZlcmFsbCBzeXNyZWcgY29uZmlndXJhdGlvbiBpcyBk
-aWZmZXJlbnQNCkFydHBlYy04IHJlcXVpcmVzIGEgc2VwYXJhdGUgc2VxdWVuY2UgZm9yIHBoeSB0
-dW5pbmcsDQpidXQgaXQgZG9lcyBub3QgZXhpc3QgaW4gZXh5bm9zIHBoeSBkcml2ZXIuDQpBcnRw
-ZWMtOCByZXF1aXJlcyBwY3MgcmVzb3VyY2VzLCBidXQgZXh5bm9zIHBoeSBkcml2ZXIgZG9lcyBu
-b3QgZXhpc3QuDQoNCkNvbnRyb2xsZXIgZHJpdmVyDQpTdWIgY29udHJvbGxlciBpcyBkaWZmZXJl
-bnQsIHNvIHJlZ2lzdGVyIG1hcCBpcyBhbHNvIGRpZmZlcmVudC4NCkFuZCBpdCBpcyBkaWZmZXJl
-bnQgaGFuZGxlcyBsYW5lIGNvbnRyb2wsIGxpbmsgY29udHJvbCwgUEhZIGNsb2NraW5nLA0KcmVz
-ZXQsIGludGVycnVwdCBjb250cm9sLiANClRoZSBudW1iZXIgYW5kIHR5cGUgb2YgY2xvY2sgcmVz
-b3VyY2VzIHVzZWQgYXJlIGRpZmZlcmVudC4NClRoZSBvdmVyYWxsIHN5c3JlZyBjb25maWd1cmF0
-aW9uIGlzIGRpZmZlcmVudA0KDQpBbHNvIGFydHBlYy04IGlzIHBlcmZvcm1lZCBpbiBkdWFsIG1v
-ZGUgdGhhdCBzdXBwb3J0cyBib3RoIFJDIGFuZCBFUC4NCkFzIGRlc2NyaWJlZCBhYm92ZSwgdGhl
-IFBIWSBhbmQgc3ViIG9udHJvbGxlciBhcmUgZGlmZmVyZW50DQphbmQgdGhlIHJlZ2lzZXIgbWFw
-IGlzIGRpZmZlcmVudC4NCnN5c3JlZyBpcyBhbHNvIGRpZmZlcmVudC4gQW5kIHRoZXJlIGFyZSBk
-aWZmZXJlbmNlcyBzdWNoIGFzIHJlc2V0Lg0KVGhlIGRyaXZlciB3aWxsIGJlIG11Y2ggbW9yZSBj
-b21wbGljYXRlZCBpZiBib3RoIGhhcmR3YXJlcyBzaG91bGQgYmUNCnN1cHBvcnRlZCBpbiB0aGUg
-c2FtZSBkcml2ZXIuDQpGb3IgdGhlc2UgcmVhc29ucywgbXkgb3BpbmlvbiBpcyB0aGF0IGJldHRl
-ciB0byBjcmVhdGUNCmEgcGh5LCBjb250cm9sbGVyIGJvdGggZHJpdmVyIHdpdGggYSBuZXcgZmls
-ZS4NClBsZWFzZSBsZXQgbWUga25vdyB5b3VyIG9waW5pb24uDQoNClRoYW5rIHlvdS4KCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 16-04-22, 15:54, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
+> 
+> RK3568 supports PCIe v3 using not Combphy like PCIe v2 on rk3566.
+> It use a dedicated pcie-phy. Add support for this.
+> 
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> ---
+> driver was taken from linux 5.10 based on in
+> https://github.com/JeffyCN/mirrors
+> which now has disappeared
+> ---
+>  drivers/phy/rockchip/Kconfig                  |   9 +
+>  drivers/phy/rockchip/Makefile                 |   1 +
+>  .../phy/rockchip/phy-rockchip-snps-pcie3.c    | 278 ++++++++++++++++++
+>  include/dt-bindings/phy/phy-snps-pcie3.h      |  21 ++
+>  include/linux/phy/pcie.h                      |  12 +
+>  5 files changed, 321 insertions(+)
+>  create mode 100644 drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+>  create mode 100644 include/dt-bindings/phy/phy-snps-pcie3.h
+>  create mode 100644 include/linux/phy/pcie.h
+> 
+> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+> index 9022e395c056..94360fc96a6f 100644
+> --- a/drivers/phy/rockchip/Kconfig
+> +++ b/drivers/phy/rockchip/Kconfig
+> @@ -83,6 +83,15 @@ config PHY_ROCKCHIP_PCIE
+>  	help
+>  	  Enable this to support the Rockchip PCIe PHY.
+>  
+> +config PHY_ROCKCHIP_SNPS_PCIE3
+> +	tristate "Rockchip Snps PCIe3 PHY Driver"
+> +	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
+> +	depends on HAS_IOMEM
+> +	select GENERIC_PHY
+> +	select MFD_SYSCON
+> +	help
+> +	  Enable this to support the Rockchip snps PCIe3 PHY.
+> +
+>  config PHY_ROCKCHIP_TYPEC
+>  	tristate "Rockchip TYPEC PHY Driver"
+>  	depends on OF && (ARCH_ROCKCHIP || COMPILE_TEST)
+> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
+> index a5041efb5b8f..7eab129230d1 100644
+> --- a/drivers/phy/rockchip/Makefile
+> +++ b/drivers/phy/rockchip/Makefile
+> @@ -8,5 +8,6 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+= phy-rockchip-inno-hdmi.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+= phy-rockchip-inno-usb2.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)	+= phy-rockchip-naneng-combphy.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
+> +obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+= phy-rockchip-snps-pcie3.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+= phy-rockchip-typec.o
+>  obj-$(CONFIG_PHY_ROCKCHIP_USB)		+= phy-rockchip-usb.o
+> diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+> new file mode 100644
+> index 000000000000..992b9709a97a
+> --- /dev/null
+> +++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+> @@ -0,0 +1,278 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Rockchip PCIE3.0 phy driver
+> + *
+> + * Copyright (C) 2020 Rockchip Electronics Co., Ltd.
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/io.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/kernel.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/module.h>
+> +#include <linux/of_device.h>
+> +#include <linux/phy/pcie.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset.h>
+> +#include <dt-bindings/phy/phy-snps-pcie3.h>
+> +
+> +/* Register for RK3568 */
+> +#define GRF_PCIE30PHY_CON1 0x4
+> +#define GRF_PCIE30PHY_CON6 0x18
+> +#define GRF_PCIE30PHY_CON9 0x24
+> +#define GRF_PCIE30PHY_STATUS0 0x80
+> +#define SRAM_INIT_DONE(reg) (reg & BIT(14))
+> +
+> +/* Register for RK3588 */
+> +#define PHP_GRF_PCIESEL_CON 0x100
+> +#define RK3588_PCIE3PHY_GRF_CMN_CON0 0x0
+> +#define RK3588_PCIE3PHY_GRF_PHY0_STATUS1 0x904
+> +#define RK3588_PCIE3PHY_GRF_PHY1_STATUS1 0xa04
+> +#define RK3588_SRAM_INIT_DONE(reg) (reg & BIT(0))
+> +
+> +struct rockchip_p3phy_ops;
+> +
+> +struct rockchip_p3phy_priv {
+> +	const struct rockchip_p3phy_ops *ops;
+> +	void __iomem *mmio;
+> +	/* mode: RC, EP */
+> +	int mode;
+> +	/* pcie30_phymode: Aggregation, Bifurcation */
+> +	int pcie30_phymode;
+> +	struct regmap *phy_grf;
+> +	struct regmap *pipe_grf;
+> +	struct reset_control *p30phy;
+> +	struct phy *phy;
+> +	struct clk_bulk_data *clks;
+> +	int num_clks;
+> +	bool is_bifurcation;
+> +};
+> +
+> +struct rockchip_p3phy_ops {
+> +	int (*phy_init)(struct rockchip_p3phy_priv *priv);
+> +};
+> +
+> +static int rockchip_p3phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+> +{
+> +	struct rockchip_p3phy_priv *priv = phy_get_drvdata(phy);
+> +
+> +	/* Actually We don't care EP/RC mode, but just record it */
+> +	switch (submode) {
+> +	case PHY_MODE_PCIE_RC:
+> +		priv->mode = PHY_MODE_PCIE_RC;
+> +		break;
+> +	case PHY_MODE_PCIE_EP:
+> +		priv->mode = PHY_MODE_PCIE_EP;
+> +		break;
+> +	case PHY_MODE_PCIE_BIFURCATION:
+> +		priv->is_bifurcation = true;
+> +		break;
+> +	default:
+> +		pr_info("%s, invalid mode\n", __func__);
+
+this should be err log, also make it dev_err pls
+
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int rockchip_p3phy_rk3568_init(struct rockchip_p3phy_priv *priv)
+> +{
+> +	int ret = 0;
+
+initialization seems superfluous
+
+> +	u32 reg;
+> +
+> +	/* Deassert PCIe PMA output clamp mode */
+> +	regmap_write(priv->phy_grf, GRF_PCIE30PHY_CON9,
+> +		     (0x1 << 15) | (0x1 << 31));
+
+magic numbers.. sounds like BIT(15) and BIT(31)
+
+
+> +	/* Set bifurcation if needed, and it doesn't care RC/EP */
+> +	if (priv->is_bifurcation) {
+> +		regmap_write(priv->phy_grf, GRF_PCIE30PHY_CON6,
+> +			     0x1 | (0xf << 16));
+> +		regmap_write(priv->phy_grf, GRF_PCIE30PHY_CON1,
+> +			     (0x1 << 15) | (0x1 << 31));
+> +	}
+> +
+> +	reset_control_deassert(priv->p30phy);
+> +
+> +	ret = regmap_read_poll_timeout(priv->phy_grf,
+> +				       GRF_PCIE30PHY_STATUS0,
+> +				       reg, SRAM_INIT_DONE(reg),
+> +				       0, 500);
+> +	if (ret)
+> +		pr_err("%s: lock failed 0x%x, check input refclk and power supply\n",
+> +		       __func__, reg);
+
+dev_err() pls
+
+> +	return ret;
+> +}
+> +
+> +static const struct rockchip_p3phy_ops rk3568_ops = {
+> +	.phy_init = rockchip_p3phy_rk3568_init,
+> +};
+> +
+> +static int rockchip_p3phy_rk3588_init(struct rockchip_p3phy_priv *priv)
+> +{
+> +	int ret = 0;
+
+superfluous init again
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
