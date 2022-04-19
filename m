@@ -4,67 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40CC4C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Apr 2022 15:40:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAC74C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Apr 2022 17:40:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=1LQZJWU2TwGqZptUa5XPU2I5k9Dw1VNKIkrHXIVYojk=; b=1DFs+qZERRh4xj
-	kOUd04EktRtk5VegYj1r54y1xmD2U7PoIKcuDzgtPll8B7Zg97mhMUgXjs2KsEOAELPnf+SQNzpzR
-	01o/5Ge4V77UcBzjlD9U65megc1fIZ+W92KneGdWZMxOIne+MJ8zxGqjmxeVkQbtEx2Q6cLUKEuht
-	vztlYJY09N5fU6iXsESyGtMjQFxWX0acmkGWfbXpNc33if8XM/jET9Oxw2nIks6WR2EIWr0RyWtS4
-	XsXstDocl1bXXBrsVF552uFdbMXDwf00ppI9Rn5U7f9xL3ly3wBoX3VvvNrD/yi02Jm9R37w1M7td
-	wBVoLQJQN87wQI7eF0Ug==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
+	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bgZBEyp49P8uB82BUkQ3GyPnnGJHi7DrV9K/93muYdo=; b=OUmGT3EhiuuMUQ
+	mCvsruKHokS7++S3h75zoKGiRTAAjCMLGdX0FEwBT96syiPO3M3k/F8C45FPWkSb9iBBjwZlWo3G8
+	POfGwRslrYXF2xwcqjkNnbQRROX9st2I18HfUCFKhPtLspp/C4iWGB5kK6+87VEWcTcU/hN+kYwD7
+	7UaO7Z8MEcLzi9ijNQPD35JkR+xtGjigOFllXOLer9wXQKWvkp9Oh3JJSXdGubyc4SbwZqH0qxuuB
+	qJacOUdwOMCwFVnxu9Oq81+JPruaWCFvmvnNCwfSACEN6SqTJ25Ps7rDP/GQBf5kz+YQ44+s9c8Uj
+	vx2tnKnL2Dc+UbuX9acA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ngpxZ-004jr1-4i; Tue, 19 Apr 2022 15:40:09 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ngrps-005OUZ-2J; Tue, 19 Apr 2022 17:40:20 +0000
+Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ngpf0-004bXt-Ss
- for linux-phy@lists.infradead.org; Tue, 19 Apr 2022 15:21:01 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 1E77361683;
- Tue, 19 Apr 2022 15:20:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 986E0C385A7;
- Tue, 19 Apr 2022 15:20:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1650381657;
- bh=fJp7yQJNvvX2MmXaIzcbM8RzbPPUIBZ6s777OJkBTw8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=stfDx2eA/Mcz94iKo3DOA0RPzhMccdQGNrkEt2sncPJN1tHXJkY4dkgToWNjtWSgh
- 5qgpImpVdEVcj6Af6tGJUbe4n+fBt9/O7lS8RwSSpcUtEdudcF/4IRM8CdUGYIiOSy
- lvJMdYXLtQSuFc5HqmX3+toxjOFuZq/cbovViZl0F0RuWmbmEq5ZjD0UyxfsiH9SJH
- GiW+6FUmnlFgfB2+dKgGSqiptWAL5srKYTARRZ4VdZjw2Jc1CpGIYTFmaOKWTORTMS
- Dvl98RiVcWgP6dOyTgrVPkk/2kYZ36wdOcQKmNQRI1NORUhsbhiHHM2fedHABaYcCB
- 0bFBil9FeOuNA==
-Date: Tue, 19 Apr 2022 10:20:55 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: wangseok.lee@samsung.com, robh+dt <robh+dt@kernel.org>,
- krzk+dt <krzk+dt@kernel.org>, kishon <kishon@ti.com>,
- vkoul <vkoul@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- "jesper.nilsson" <jesper.nilsson@axis.com>,
- "lars.persson" <lars.persson@axis.com>, bhelgaas <bhelgaas@google.com>,
- linux-phy <linux-phy@lists.infradead.org>,
- linux-pci <linux-pci@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi" <lorenzo.pieralisi@arm.com>, kw <kw@linux.com>,
- linux-arm-kernel <linux-arm-kernel@axis.com>,
- kernel <kernel@axis.com>, Moon-Ki Jun <moonki.jun@samsung.com>,
- Dongjin Yang <dj76.yang@samsung.com>
-Subject: Re: [PATCH 3/5] PCI: axis: Add ARTPEC-8 PCIe controller driver
-Message-ID: <20220419152055.GA1203016@bhelgaas>
+ id 1ngrfT-005JjB-Vc; Tue, 19 Apr 2022 17:29:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1650389348;
+ bh=KwXzkV0B3f5e2tIrsLC+AOdAfv7m88ysNXObwXd6YFU=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=C3r0DjATYEqweUN70N+KSWm8s2Civ07dEeM21QTrj5r1m5ZISvnKT7EL2fK8jKQcG
+ YCjlBNclMYyRmEK6ZfE9at59azUaeOCjiGBJ+iM3/boiWJlrweKhokDKsRGFHpVm44
+ syEqyK5OLmSSqMe8pekmtoe+yOUERDkEvLQKcVvs=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.157.75] ([217.61.157.75]) by web-mail.gmx.net
+ (3c-app-gmx-bap70.server.lan [172.19.172.170]) (via HTTP); Tue, 19 Apr 2022
+ 19:29:08 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <62bbc2a6-92fb-ff2b-a43f-ecb402e8f90c@kernel.org>
+Message-ID: <trinity-c60358c4-ebd1-47bf-91e0-9ae0beefd39f-1650389348418@3c-app-gmx-bap70>
+From: Frank Wunderlich <frank-w@public-files.de>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Frank Wunderlich <linux@fw-web.de>, linux-rockchip@lists.infradead.org,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Lorenzo Pieralisi
+ <lorenzo.pieralisi@arm.com>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
+ <kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Johan Jonker <jbx6244@gmail.com>, Peter Geis
+ <pgwipeout@gmail.com>, Michael Riesch <michael.riesch@wolfvision.net>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org
+Subject: Aw: Re: [RFC/RFT 2/6] dt-bindings: soc: grf: add pcie30-{phy,pipe}-grf
+Date: Tue, 19 Apr 2022 19:29:08 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <02b3fe1c-12f9-8f96-a9b5-df44ca001825@linaro.org>
+References: <20220416135458.104048-1-linux@fw-web.de>
+ <20220416135458.104048-3-linux@fw-web.de>
+ <02b3fe1c-12f9-8f96-a9b5-df44ca001825@linaro.org>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:GSNIHIUWA/GRgjok62B+UG3JpReIUrnZJW4cJo6k+0piMPNyKFMYLVAFWEh1wrHmC12r3
+ jNiJtMLDXSgz8acJ/aJzo+jHp/laJRu0OT7D+X3jpnmIx10ZRP1JqBS5CgsRVh/9IdoFFvDn3g/d
+ rj15Lid9nt0dWx9ntE2Vb5tFhLn/8safPKxQPqCoi0HjiXWlBT+34uxmGYQ7RC1juT0PrxVRNTqc
+ +QTAlJ8jBUmU1xE8ALgCLTfOHz6M+dTJ9/YjpIsyksZMR+MkqhSHhbwhX6bzXV0vtETyR9yddXOr
+ u4=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:5J5RBFRzPTA=:MMjlPLuedJCMlAG5z+h8Bd
+ CK5NFPEE5BVigaDy2laiQ3hRh0HImsKvp9cX2T3LIVYqMkqSsdHqKNBebEb9780iJzIt8QM/K
+ y9CLpFPNgTk0uM/rfb3lgNeOPYy+VVHhEX/pWsHHxtLSpMVOZ9kppKDncbHeK2pBCqzqbBABV
+ 4Hq6qMPtbDPsmgM9C+lq8lfBsoCDZpGQltXuR+4tcZ0Da3h6jUHz2/UBW1FT1KHOA+laYVvMk
+ Riyj53Nwe+OUPmsJs7mnYI2iLWL6L/tUaf5WEUva+1mUYPHoJRbRcCeHcRQJDSOCmqBrYAbYF
+ +3s76mG4HUhtZ+cBaMiYRj3eeg8vHx0s6BybOeU3XzkVVYavGi/jCADVnpZYoCtxL4B66wO58
+ gjuekbExgepHeqNRmYJS+H+5VFOiH3YJLw4pwg/Q9OAiLjfe7XWTtdNO4nAN8eI9Ed0RIRNkp
+ gHPIBavKmNjNsvReK1OGzG2oGnejY7gC5GuhCvFYoAbLXF1/sndvItKF7jMz1MBMPBq8XWDD7
+ 1cQLVwUR/fFS0cW9+ozbdCHKY3I/95TDHgeGdXd93tAoRhBryWoYjZkSr8yFglnePJThlEqwR
+ 0pq235DHr7bdkoQieORurzxhhH4+Drw7BaTzq40uEnMMZMcPBhf26ZU45rosLjOpGUyJEJJM3
+ YTRUlTdc5HFiT33FAqSB83j9MTWyHTmUZJVzHrHq6mSdnFZOm7XeSsY6ZzxfPpgLX1VvmxbNe
+ 2z7dslB3GZNBFZ3wpYcTO44+RvZB9DlwXuzmx2QQVHRT5fbtdA1uaNeTflN5aK5nvUU03Wpe+
+ L6o34tm
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220419_082059_074944_62F3B9C6 
-X-CRM114-Status: GOOD (  34.67  )
+X-CRM114-CacheID: sfid-20220419_102936_603039_97E65169 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,69 +93,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBBcHIgMTksIDIwMjIgYXQgMDk6MTE6MDlBTSArMDIwMCwgS3J6eXN6dG9mIEtvemxv
-d3NraSB3cm90ZToKPiBPbiAxOS8wNC8yMDIyIDAyOjA3LCBXYW5nc2VvayBMZWUgd3JvdGU6Cj4g
-Pj4gT27CoDI4LzAzLzIwMjLCoDA0OjE0LMKg7J207JmV7ISdwqB3cm90ZToKPiA+Pj4gwqBBZGTC
-oHN1cHBvcnTCoEF4aXMswqBBUlRQRUMtOMKgU29DLgo+ID4+PiDCoEFSVFBFQy04wqBpc8KgdGhl
-wqBTb0PCoHBsYXRmb3JtwqBvZsKgQXhpc8KgQ29tbXVuaWNhdGlvbnMuCj4gPj4+IMKgVGhpc8Kg
-aXPCoGJhc2VkwqBvbsKgYXJtNjTCoGFuZMKgc3VwcG9ydMKgR0VONMKgJsKgMmxhbmUuCj4gPj4+
-IMKgVGhpc8KgUENJZcKgY29udHJvbGxlcsKgaXPCoGJhc2VkwqBvbsKgRGVzaWduV2FyZcKgSGFy
-ZHdhcmXCoGNvcmUKPiA+Pj4gwqBhbmTCoHVzZXPCoERlc2lnbldhcmXCoGNvcmXCoGZ1bmN0aW9u
-c8KgdG/CoGltcGxlbWVudMKgdGhlwqBkcml2ZXIuCj4gPj4+IMKgVGhpc8KgaXPCoGJhc2VkwqBv
-bsKgZHJpdmVyL3BjaS9jb250cm9sbGVyL2R3Yy9wY2ktZXh5bm9zLmMKPiA+Pj4gwqAKPiA+Pj4g
-wqBTaWduZWQtb2ZmLWJ5OsKgV2FuZ3Nlb2vCoExlZcKgCj4gPj4+IC0tLQo+ID4+PiAgZHJpdmVy
-cy9wY2kvY29udHJvbGxlci9kd2MvS2NvbmZpZyAgICAgICAgfCAgMzEgKwo+ID4+PiAgZHJpdmVy
-cy9wY2kvY29udHJvbGxlci9kd2MvTWFrZWZpbGUgICAgICAgfCAgIDEgKwo+ID4+PiAgZHJpdmVy
-cy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1hcnRwZWM4LmMgfCA5MTIgKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrCj4gPj4+ICAzIGZpbGVzIGNoYW5nZWQsIDk0NCBpbnNlcnRpb25zKCsp
-Cj4gPj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNp
-ZS1hcnRwZWM4LmMKPiA+Pj4KPiA+Pgo+ID4+IEkgdG9vayBhIGxvb2sgYXQgdGhlIHlvdXIgZHJp
-dmVyIGFuZCBhdCBleGlzdGluZyBQQ0llIEV4eW5vcyBkcml2ZXIuCj4gPj4gVW5mb3J0dW5hdGVs
-eSBQQ0llIEV4eW5vcyBkcml2ZXIgaXMgaW4gcG9vciBzaGFwZSwgcmVhbGx5IHBvb3IuIFRoaXMK
-PiA+PiB3b3VsZCBleHBsYWluIHRoYXQgbWF5YmUgaXQncyBiZXR0ZXIgdG8gaGF2ZSBuZXcgZHJp
-dmVyIGluc3RlYWQgb2YKPiA+PiBtZXJnaW5nIHRoZW0sIGVzcGVjaWFsbHkgdGhhdCBoYXJkd2Fy
-ZSBpcyBkaWZmZXJlbnQuIEFsdGhvdWdoIEkgYW0gc3RpbGwKPiA+PiB3YWl0aW5nIGZvciBzb21l
-IGRlc2NyaXB0aW9uIG9mIHRoZXNlIGRpZmZlcmVuY2VzLi4uCj4gPj4KPiA+PiBJIHNhaWQgdGhh
-dCBFeHlub3MgUENJZSBsb29rcyBwb29yLi4uIGJ1dCB3aGF0IGlzIHdvcnNlLCBpdCBsb29rcyBs
-aWtlCj4gPj4geW91IGJhc2VkIG9uIGl0IHNvIHlvdSBjb3BpZWQgb3Igc29tZSBiYWQgcGF0dGVy
-bnMgaXQgaGFkLgo+ID4+Cj4gPj4gRXhjZXB0IHRoaXMgdGhlIGRyaXZlciBoYXMgc2V2ZXJhbCBj
-b2Rpbmcgc3R5bGUgaXNzdWVzLCBzbyBwbGVhc2UgYmUKPiA+PiBzdXJlIHRvIHJ1biBjaGVja3Bh
-dGNoLCBzcGFyc2UgYW5kIHNtYXRjaCBiZWZvcmUgc2VuZGluZyBpdC4KPiA+Pgo+ID4+IFBsZWFz
-ZSB3b3JrIG9uIHRoaXMgZHJpdmVyIHRvIG1ha2UgaXQgY2xvc2UgdG8gTGludXggY29kaW5nIHN0
-eWxlLCBzbwo+ID4+IHRoZXJlIHdpbGwgYmUgbm8gbmVlZCBmb3IgdXMsIHJldmlld2VycywgZm9j
-dXMgb24gYmFzaWMgc3R1ZmYuCj4gPj4KPiA+PiBPcHRpb25hbGx5LCBzZW5kIGFsbCB0aGlzIHRv
-IHN0YWdpbmcuIDopCj4gPj4KPiA+PiBCZXN0IHJlZ2FyZHMsCj4gPj4gS3J6eXN6dG9mCj4gPiBI
-aSwKPiA+IAo+ID4gVGhhbmsgeW91IGZvciB5b3VyIGtpbmRuZXNzIHJldmlldy4KPiA+IEkgd2ls
-bCByZS13b3JrIGFnYWluIGNsb3NlIHRvIHRoZSBsaW51eCBjb2Rpbmcgc3R5bGUuCj4gPiBBZGRp
-bHRpb25hbHksIElmIHlvdSB0ZWxsIG1lIHdoYXQgImJhZCBwYXR0ZXJucyIgeW91IG1lbnRpb25l
-ZCwKPiA+IGl0IHdpbGwgYmUgdmVyeSBoZWxwZnVsIGZvciB0aGUgd29yay4KPiA+IENvdWxkIHlv
-dSBwbGVhc2UgdGVsbCBtZSB0aGF0Pwo+IAo+IEV4Y2VwdCB0aGUgdG9vbHMgSSBtZW50aW9uZWQg
-YmVmb3JlLCB0aGUgcGF0dGVybnMgYXJlOgo+IDEuIGRlYnVnIG1lc3NhZ2VzIGZvciBwcm9iZSBv
-ciBvdGhlciBmdW5jdGlvbnMgKHdlIGhhdmUgZnRyYWNlIGFuZCBvdGhlcgo+IHRvb2xzIGZvciB0
-aGF0KS4KPiAyLiBJbmNvbnNpc3RlbnQgY29kaW5nIHN0eWxlIChlLmcuIGRpZmZlcmVudCBpbmRl
-bnRhdGlvbiBpbiBzdHJ1Y3R1cmUKPiBtZW1iZXJzKS4KPiAzLiBJbmNvbnNpc3RlbnQgY29kZSAo
-ZS5nLiBhcnRwZWM4X3BjaWVfZ2V0X3N1YnN5c3RlbV9yZXNvdXJjZXMoKSBnZXRzCj4gZGV2aWNl
-IGZyb20gcGRldiBhbmQgZnJvbSBwY2kgc28geW91IGhhdmUgdHdvIHNhbWUgcG9pbnRlcnM7IG9y
-Cj4gYXJ0cGVjOF9wY2llX2dldF9lcF9tZW1fcmVzb3VyY2VzKCkgc3RvcmVzIGRldiBhcyBsb2Nh
-bCB2YXJpYWJsZSBidXQKPiB1c2VzIGluc3RlYWQgcGRldi0+ZGV2KS4KPiA0LiBOb3QgdXNpbmcg
-ZGV2bV9wbGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlKCkuCj4gNS4gV3JhcHBlcnMgb3ZlciB3cml0
-ZWwoKSBhbmQgcmVhZGwoKSB3aGljaCBkbyBub3RoaW5nIGVsc2UgdGhhbiB3cmFwCj4gb25lIGZ1
-bmN0aW9uLgo+IDYuIFByaW50aW5nIG1lc3NhZ2VzIGluIGludGVycnVwdCBoYW5kbGVycy4KPiA3
-LiBTZXZlcmFsIGxvY2FsL3N0YXRpYyBzdHJ1Y3R1cmVzIG9yIGFycmF5IGFyZSBub3QgY29uc3Qu
-IFBsdXMgdGhleSBhcmUKPiBkZWZpbmVkIGFsbCB0aHJvdWdoIHRoZSBjb2RlLCBpbnN0ZWFkIG9m
-IGJlZ2lubmluZyBvZiBhIGZpbGUuCgpUaGFua3MsIEtyenlzenRvZiwgYWxsIGdyZWF0IGFkdmlj
-ZS4KCk5vdCBoYXZpbmcgbG9va2VkIGF0IHRoZSBkcml2ZXIgYXQgYWxsLCBhbmQgYmVjYXVzZSBJ
-J20gbm90IGF0IGFsbApleHBlcnQgaW4gbmF0aXZlIGRyaXZlcnMgbGlrZSB0aGlzLCBhbHNvIHJl
-dXNlIGFzIG11Y2ggb2YgdGhlCnN0cnVjdHVyZSBvZiBvdGhlciBkcml2ZXJzIGFzIHBvc3NpYmxl
-LCBlc3BlY2lhbGx5IHRoZSBzaWJsaW5ncyBpbgpkcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy8u
-ICBUaGF0IG1lYW5zIHNpbWlsYXIgc3RydWN0dXJlLCBzaW1pbGFyCnZhcmlhYmxlIG5hbWVzLCBz
-aW1pbGFyIGZ1bmN0aW9uIG5hbWVzLCBldGMuICBUaGlzIG1ha2VzIGl0IGVhc2llciBmb3IKcGVv
-cGxlIHRvIGNvbXBhcmUgd2l0aCBvdGhlciBkcml2ZXJzIHRvIHNlZSB3aGljaCBhcmUgYWZmZWN0
-ZWQgYnkKZnV0dXJlIGJ1ZyBmaXhlcy4KCkJqb3JuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+> Gesendet: Montag, 18. April 2022 um 17:54 Uhr
+> Von: "Krzysztof Kozlowski" <krzysztof.kozlowski@linaro.org>
+
+> > --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> > +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> > @@ -14,6 +14,8 @@ properties:
+> >      oneOf:
+> >        - items:
+> >            - enum:
+> > +              - rockchip,pcie30-phy-grf
+> > +              - rockchip,pcie30-pipe-grf
+>
+> These are without SoC parts. Are these PCIe v3 General Register Files
+> part of some PCIe spec?
+
+imho they are shared across SoCs rk3568 and rk3588, but have only seen rk3568 implementation yet.
+PCIe driver currently supports these 2 Soc (different offsets in the Phy-GRF), but can only test rk3568.
+
+pipe-grf seems only be used for rk35688 (offset used in probe is defined for this SoC), which i cannot test.
+
+so i have left them SoC independed.
+
+> >                - rockchip,rk3288-sgrf
+> >                - rockchip,rk3566-pipe-grf
+> >                - rockchip,rk3568-usb2phy-grf
+
+regards Frank
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
