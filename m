@@ -4,95 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E430C433F5
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Apr 2022 20:48:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 963BCC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Apr 2022 20:59:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LZySi1pCYczPEUgqLfCTprxN8j0T0CK05b0il+oN5Pw=; b=CQWQA9qYOPd5N8
-	am7tTP9JBhqobXzR6C4BYGdUrZ7UfHFiR42tboFatq6CrqGMsjJdICpjuYWGgGKl6flApeHkbvQrd
-	rrJNVYS2UTECfYZ+DPzereLr8Kx2wigbmVcxWivytHVqTyipHj9SqWHvKEml7K08s+YENhogBpvJ7
-	GOUKqY4mSpgUT/6EyVbHcMy/fTPXhSsvn96+wZIt9Z4mmqRxXCefUa7Ia9uHfkaRyyL1RKnHknmVS
-	tGg5kRz2hB9cqOvVK16ixLC/NChULmGfBOGabQrxG3bNlK0HO7qMGWGBD887XhQJRt5pwA2yAT11D
-	uuUcGdgnwLfL9bpXw90Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OXgo03sVtujf8U5BZTBab29qSjgN1rhDTHxbsERkwVg=; b=hkus1OS6qE0PGx
+	z07/jagxNgbsfYiCtj1amQbTrKs9iHHS+ZMZLWIjCvA99spXRf6eaMHZoZS+HLSPY0W6GbLcn/8Ww
+	iNm66gWiVuBvbcsyr5616+vo6EVbj0IrO2lsi7TaeZLDNwIhk8CfsPXoYrAXKjHd/IecK8YgStBmp
+	bVrSUBqFr/+VfLlbrye6vLpRZBaZaYVc6EkfoXJuYZNg9ZbRZzSw7dNGVjoX8OLKe1j59HquCk1aO
+	b+MHZSKXohg9Cyo289VvSuzFm2SGqX9RqOv6KYBdIEmThih+3oxKbSEGGxHEny+W3Exjv3gRgUExX
+	apDhcO0jOQGNUSyyt77Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ngum2-0069kp-01; Tue, 19 Apr 2022 20:48:34 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1nguwJ-006DVh-RV; Tue, 19 Apr 2022 20:59:11 +0000
+Received: from mail-pl1-x633.google.com ([2607:f8b0:4864:20::633])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ngulz-0069jk-AC
- for linux-phy@lists.infradead.org; Tue, 19 Apr 2022 20:48:32 +0000
-Received: by mail-ej1-x635.google.com with SMTP id s18so35435734ejr.0
- for <linux-phy@lists.infradead.org>; Tue, 19 Apr 2022 13:48:28 -0700 (PDT)
+ id 1nguwF-006DQo-L3
+ for linux-phy@lists.infradead.org; Tue, 19 Apr 2022 20:59:09 +0000
+Received: by mail-pl1-x633.google.com with SMTP id v12so16954908plv.4
+ for <linux-phy@lists.infradead.org>; Tue, 19 Apr 2022 13:59:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=CJf6mwEn+nVa2WZGxE3mxgQWoFOnhgooJvM6BUiZrIU=;
- b=sadS+dg/MUv2FK1jNv4oLA4r90msuWn07eu+YnpcnwBkvjXKjO6ovMpPDB4WX89vRZ
- Zp1LuWysBPu4wG2p3ssLPAi/GQs4kZqU4H1VDgTVidl981CgDIxKMKFQinTJBI4I+yYW
- +0cOWB42lZ8nODDHXFHvfhNqDuWS9vmNUXhpVaaxc+Oc/oCltiOaLTAzHkyq4DtXDwXk
- BzYB9hk0fGEU2BJg6zqmWAJRDRpytwPPLr5LLYQv39gWv2eTN/AY2gr3/BWHrglqfIZG
- r34urJSf9o8CynG4VHbozLBcWTW0S+j6HzQPCeUOhvXYqe+V4somhsvQ6+oG4RPFWDr/
- cxDg==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0ETDPx0UexpMdL4JaVIwnmwwSk5TOGi0t/0oH1NiIks=;
+ b=Ou72ds/PMkguxSaaJuyaAXO8qfYGBAYEYhCOCdACo3QLflSWruXiHjOAkIaao9zrsk
+ dARfC65+kt2tPxLzjE/Gj5e7Lgp8atpyoQpNmsmH2fPep0VttZ17xq5vzeLb61l/7LUP
+ 50J5HMFLSO52Dsyw4lcVLLpbBFyC5gSRh5bdDyFzDI/g51tchX7BCvi4qk/zKi6Y5bOD
+ kFaIGQRyYSePyCrdUTbYiXmfu7IOx8+hc0WDB00U2dXMpmyANPsPnoTGQrtIbi9kzdfh
+ NMo109iMrH4Av/PBJdb2ju0JRz7plh+VoWT4L1IxA52bueKTZQdQeGDpng325Zz1Y+AP
+ WjVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=CJf6mwEn+nVa2WZGxE3mxgQWoFOnhgooJvM6BUiZrIU=;
- b=44Lz4Io1ScDB3NmHtNhUR3lFHmDYVRk1wMV9/p7JQYwmg2ZBlpt0gMjlnqGWCslzlm
- cmFheWOOjYBtoWqNqJmw2IuQ5viXmD2HjLEwRWGqcc2gfuCHbMYwZWLgt0dJuMv8FJGe
- h/3GXQZbibbXQK6eRcYc1L0NdWopvsHI9e3ae8xQ55CUcBn3rhByZjJ5gBU3J77ebfoL
- QELtUEilFfJ6QLNDaECl7NujOoamSSNang0I4vTihzXlKSrH+0Cr0ixtxmQxQZDsTLxB
- jzvCGXzK5rdiKwDzPfgTc5qEFFDHM2aaPHkUf42cEiFVFr/rI003PPcIfimuy/0zdo+l
- gAoA==
-X-Gm-Message-State: AOAM531q/M0Kxs4Z1H7ak0zzWLcAmGiLAKKm6ZmaVXJIUBzTmok+knsd
- TGdn8SapCYQipMUluMZV7fE+KQ==
-X-Google-Smtp-Source: ABdhPJyQtcbsYxBk301NPuwUiPCLtudHHdOKEJcHue01td/XXGeGWYHsjUmYm8cYC0OuP1gllTZtKQ==
-X-Received: by 2002:a17:907:9005:b0:6da:81ae:a798 with SMTP id
- ay5-20020a170907900500b006da81aea798mr4214344ejc.699.1650401307466; 
- Tue, 19 Apr 2022 13:48:27 -0700 (PDT)
-Received: from [192.168.0.222] (xdsl-188-155-176-92.adslplus.ch.
- [188.155.176.92]) by smtp.gmail.com with ESMTPSA id
- wi17-20020a170906fd5100b006e8b945ab94sm5905360ejb.216.2022.04.19.13.48.25
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 19 Apr 2022 13:48:26 -0700 (PDT)
-Message-ID: <09339568-8901-991d-a3a4-1061fe5c90fa@linaro.org>
-Date: Tue, 19 Apr 2022 22:48:25 +0200
+ bh=0ETDPx0UexpMdL4JaVIwnmwwSk5TOGi0t/0oH1NiIks=;
+ b=AoUlxs6b5vcFAGSYYScI2z3cJJ2ckCOmnSxEzLUj0F76e5NWlSVjoo0MEfo17hi1qU
+ lYedGkHuTSKO3ng8jf/+C8SRmEHJ1L1dylljjOlYBciLi2GpteIVtvantXw+QjNqNCbP
+ f77eTZ+CaFBoBxS64vSMPDkVJVtSJ8hSYhfF+JFlCMx2cIKmo6n8foOHW43mRGFBd3Wj
+ Urk+fW4PXqSnpDjX2c8BHMKnsqQSCmADZj+jegobI2KS4EaZOCJEvpGuOWCIaK4biW3A
+ K7YLiR3NIy9t6jsfv2LlP/lKLO1jw2+RHYAdnA5pW4LywyppxS83isV0/SLEZMO/5f24
+ iKGA==
+X-Gm-Message-State: AOAM531vnxnnOECBCigKPBTT35bOVlbWdjFYj2pdQHc6NG8nkayx4yxj
+ /++UlNcTXik8Y2/ACt5dVe60ekBS4DeQLw==
+X-Google-Smtp-Source: ABdhPJxjpKJo7gVFsLStPnTDzbXVPLwFGFvz90IgUgstbZsBWFBckrDw6TwgH8hIkp7aUjaR3SsXaA==
+X-Received: by 2002:a17:90a:db16:b0:1cb:9ba8:5707 with SMTP id
+ g22-20020a17090adb1600b001cb9ba85707mr551671pjv.32.1650401945806; 
+ Tue, 19 Apr 2022 13:59:05 -0700 (PDT)
+Received: from localhost.localdomain ([223.233.64.97])
+ by smtp.gmail.com with ESMTPSA id
+ u25-20020a62ed19000000b004f140515d56sm17215938pfh.46.2022.04.19.13.59.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 19 Apr 2022 13:59:05 -0700 (PDT)
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+To: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, bjorn.andersson@linaro.org,
+ konrad.dybcio@somainline.org,
+ Marijn Suijten <marijn.suijten@somainline.org>
+Subject: [PATCH v2 1/1] arm64: dts: qcom: sm8350-sagami: usb qmp phy node -
+ add 'vdda-pll-supply' & 'vdda-phy-supply'
+Date: Wed, 20 Apr 2022 02:28:54 +0530
+Message-Id: <20220419205854.1269922-1-bhupesh.sharma@linaro.org>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Subject: Re: Aw: Re: Re: [RFC/RFT 1/6] dt-bindings: phy: rockchip: add pcie3
- phy
-Content-Language: en-US
-To: Frank Wunderlich <frank-w@public-files.de>
-Cc: Frank Wunderlich <linux@fw-web.de>, linux-rockchip@lists.infradead.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Johan Jonker <jbx6244@gmail.com>, Peter Geis <pgwipeout@gmail.com>,
- Michael Riesch <michael.riesch@wolfvision.net>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org
-References: <20220416135458.104048-1-linux@fw-web.de>
- <20220416135458.104048-2-linux@fw-web.de>
- <38e60bb2-123b-09cf-d6ef-3a07c6984108@linaro.org>
- <trinity-597cf8a3-2ad4-41e6-b3c9-b949f8610533-1650390552136@3c-app-gmx-bap70>
- <fce0337a-0c71-a040-0a01-f20b55eb568b@linaro.org>
- <trinity-a5ae4007-e6e3-4869-80ad-3783109b6d4c-1650400612809@3c-app-gmx-bap70>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <trinity-a5ae4007-e6e3-4869-80ad-3783109b6d4c-1650400612809@3c-app-gmx-bap70>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220419_134831_406303_E7ECE87B 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220419_135907_775443_F0EEE80C 
+X-CRM114-Status: GOOD (  12.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,28 +91,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/04/2022 22:36, Frank Wunderlich wrote:
->> Just use default as I wrote above.
-> 
-> so like this?
-> 
->   rockchip,pcie30-phymode:
->     $ref: '/schemas/types.yaml#/definitions/uint32'
->     description: |
->       set the phy-mode for enabling bifurcation
->       bit0: bifurcation for port 0
->       bit1: bifurcation for port 1
->       bit2: aggregation
->       constants are defined in the dt-bindings/phy/phy-rockchip-pcie3.h
->     minimum: 0x0
->     maximum: 0x4
->     default: 0x4
+As suggested by Bjorn during review of [1], the 'vdda-pll-supply' &
+'vdda-phy-supply' supplies denote the power for the bus and the
+clock of the usb qmp phy and are used by the qcom qmp phy driver.
 
-Yes.
+So, its safe to assume that the two regulators are the same as on
+the MTP. So let's wire them up in the same way as the MTP.
 
+In absence of the same 'make dtbs_check' leads to following warnings:
 
-Best regards,
-Krzysztof
+arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dt.yaml:
+ phy-wrapper@88e9000: 'vdda-phy-supply' is a required property
+
+arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dt.yaml:
+ phy-wrapper@88e9000: 'vdda-pll-supply' is a required property
+
+[1]. https://lore.kernel.org/lkml/20220228123019.382037-9-bhupesh.sharma@linaro.org/
+
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: konrad.dybcio@somainline.org
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: Marijn Suijten <marijn.suijten@somainline.org>
+Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+---
+Changes since v1:
+-----------------
+- v1 can be found here: https://www.spinics.net/lists/linux-arm-msm/msg108467.html
+- Fixed the commit message to read usb qmp phy instead of ufs phy (which
+  was introduced erroraneously in the commit log).
+
+ .../dts/qcom/sm8350-sony-xperia-sagami.dtsi   | 25 +++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi b/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi
+index 90b13cbe2fa6..238ac9380ca2 100644
+--- a/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi
+@@ -3,6 +3,7 @@
+  * Copyright (c) 2021, Konrad Dybcio <konrad.dybcio@somainline.org>
+  */
+ 
++#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
+ #include "sm8350.dtsi"
+ #include "pm8350.dtsi"
+ #include "pm8350b.dtsi"
+@@ -75,6 +76,27 @@ ramoops@ffc00000 {
+ 	};
+ };
+ 
++&apps_rsc {
++	pm8350-rpmh-regulators {
++		compatible = "qcom,pm8350-rpmh-regulators";
++		qcom,pmic-id = "b";
++
++		vreg_l1b_0p88: ldo1 {
++			regulator-name = "vreg_l1b_0p88";
++			regulator-min-microvolt = <912000>;
++			regulator-max-microvolt = <920000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l6b_1p2: ldo6 {
++			regulator-name = "vreg_l6b_1p2";
++			regulator-min-microvolt = <1200000>;
++			regulator-max-microvolt = <1208000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++	};
++};
++
+ &adsp {
+ 	status = "okay";
+ 	firmware-name = "qcom/adsp.mbn";
+@@ -256,4 +278,7 @@ &usb_1_hsphy {
+ 
+ &usb_1_qmpphy {
+ 	status = "okay";
++
++	vdda-phy-supply = <&vreg_l6b_1p2>;
++	vdda-pll-supply = <&vreg_l1b_0p88>;
+ };
+-- 
+2.35.1
+
 
 -- 
 linux-phy mailing list
