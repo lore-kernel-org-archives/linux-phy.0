@@ -4,72 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E15D4C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Apr 2022 22:34:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73194C433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Apr 2022 00:07:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8VV2Hm0JJRgBeAz1EJibzIQ+lgA4ZPHYRToHZ+AJDFE=; b=K7OQ156mK864Ht
-	M5Ox2i2nZwNAh6WBZex0hNsBrL4f9ZwNVPfP2V10GnPkvuz3ggMH6Xfc5z0dMQF9HIaxS1di+hWme
-	lXjKJQIhIZVQrpg0UWDz2HxMXNi8Ih+fY8DNBfkOBgsa43Uj9hoDAUOXCaMb1xQGjEhpomsdWl19f
-	Chx2oaVClCaY5y8ONYunScP0IZMOW89Vv9CPD7XQHjl1hRuohXe6vO7iV66eXPHek8yCg3GsR9vgk
-	OaQjkjQUGLDgC2nURhHqjXsx9h42X+CMNmTVvDdn0u3sTA8fzoQ13SnNaVbt9WrFjMN9M03wWBys4
-	Ns5MzH1CsPGuyjQGpL4A==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:CC
+	:To:From:Subject:Mime-Version:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=uYDDAD9o88I28juwyzlOkHIguWSFGsGu5rIzSoGPT40=; b=ac+F3T/ar6j6y9
+	UtxFAPDV0fomALubptPgsGUWKz8XGgPZOXTzNK9DbZwStli1p9NqmToTfJYOKMA5ef/kqAuieOoaw
+	FjTkXgQ5vpEwzQsYyywnhKCF7/4nxtZigLGxR6s5epitIMXY1ew8ao31gpwUT5qZQ21x9ird9emZV
+	PvQCBMssOiYWySWIR0Lz29pyifNIfpsMEEmOQ3OrUOXnFPUqhAIKACsOz2OfsocBqBFnjKR2CIBVm
+	y9nAUySZ7/u6rD6s0++moDKvZz7lXjn6bZmtOX0SHxhWiz56svn6Ll+2HPohwMkCBTDiC7qLh4HFC
+	krjM9t/is/ly/ACY8SxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ngZx5-000jJq-KI; Mon, 18 Apr 2022 22:34:35 +0000
-Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
+	id 1ngbPI-000tXo-L7; Tue, 19 Apr 2022 00:07:48 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ngZx3-000jIg-1H
- for linux-phy@lists.infradead.org; Mon, 18 Apr 2022 22:34:34 +0000
-Received: by mail-yb1-xb2c.google.com with SMTP id p65so27957860ybp.9
- for <linux-phy@lists.infradead.org>; Mon, 18 Apr 2022 15:34:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=K4bp7iL2yyspTqvnvsBL/XA5iBMINfoj3Y9MqEf5ias=;
- b=XdZ6lm3r6iGJEWoX2xq3dAAIzSePIvfMd+0qhDZi9Eu+cByTIUZXD8xXzbt8FjLMeX
- kJ6OWM/IMrZBDIfcG3ZYOoSufnV9NFcdStTZZEnaPQ2yF5n+QHyrigww7uw2R1k5qRqF
- 31x27LkiOOsSxvtf2ai4WlCSF+zVPTv2f7Byz5gr5r2HAnBN3i7QCvHDDPEhx9t5DD2W
- w23OW+bllYbf10kRb4nreZ2LQyFYreVyTeRmCLeW3Tl9vVQADUjuPpvVy12e+ROnaxeI
- yvFXGNxiGQLhaKKLz0wnxTQX1YDlAKosP8us1rlaVKrA2hD5yPjZ6JZSPynBk2cuhREs
- IAeg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=K4bp7iL2yyspTqvnvsBL/XA5iBMINfoj3Y9MqEf5ias=;
- b=7EOAt2LfeIR+bVcog8zO7B79tEc+xAruZsQkNRnygu20XvQg1ldSl+WgUrLmNUWB1T
- +az5pnF0qJ9EdP53kq8i7ryRQFnthczguxBV6pPQn4a8/i13qUVH41APVG7fRKrogoYm
- rYubuH7N/YsBTjwFeVkBaZcmRy9wsPzPYjpXcdV1J8nULwnCZtKICRIPjAaNvXZwwHoY
- K1/2RZWJKvAP9GdRIX+cQ/U2RGnPsuzAIV2PpM/b+M62KJzgTGAvQalj9QnXF5psXAfk
- k/zEhnuWfrbGSWBJXnxjB86pUBAiJVZPzAkdOLDHkDY2O24WZ+G9nwMdRZWqXZWPMKDF
- hKhQ==
-X-Gm-Message-State: AOAM531iR9GMpeOK/6fXmKurF+j3cYPdMNOCSVdcn2pLVkSrP67QOtHG
- RhyXObyvPA+a8b12JOaWMDWwunoZlBJ9JRrA2rIA8Q==
-X-Google-Smtp-Source: ABdhPJwpC2AeuDc6EDutWUIMPkpQ03faH9GU9Uc9JsUqK7xQEFvl1zcCNPXqdBezv2UU/sFi5kHmUekjVpiyAfONTkI=
-X-Received: by 2002:a25:2e45:0:b0:642:875d:c9a5 with SMTP id
- b5-20020a252e45000000b00642875dc9a5mr11488600ybn.314.1650321270240; Mon, 18
- Apr 2022 15:34:30 -0700 (PDT)
-MIME-Version: 1.0
-References: <20220418205509.1102109-1-bhupesh.sharma@linaro.org>
- <20220418205509.1102109-3-bhupesh.sharma@linaro.org>
-In-Reply-To: <20220418205509.1102109-3-bhupesh.sharma@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 19 Apr 2022 01:34:19 +0300
-Message-ID: <CAA8EJpqh1pTfNR2Qd7p69i4VvqPNtbd5gOjO-TYdWTTG1rKrrA@mail.gmail.com>
-Subject: Re: [PATCH v3 2/4] dt-bindings: phy: qcom,qmp: Describe
- 'vdda-max-microamp' & 'vdda-pll-max-microamp' properties
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- bhupesh.linux@gmail.com, agross@kernel.org, linux-kernel@vger.kernel.org, 
- devicetree@vger.kernel.org, robh+dt@kernel.org, vkoul@kernel.org, 
- bjorn.andersson@linaro.org, Rob Herring <robh@kernel.org>
+ id 1ngbPC-000tVt-Vh
+ for linux-phy@lists.infradead.org; Tue, 19 Apr 2022 00:07:46 +0000
+Received: from epcas2p2.samsung.com (unknown [182.195.41.54])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20220419000733epoutp02d634ece8b9d9aad8137464ff87a7955d~nI4d4e_Wi0774107741epoutp02u
+ for <linux-phy@lists.infradead.org>; Tue, 19 Apr 2022 00:07:33 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20220419000733epoutp02d634ece8b9d9aad8137464ff87a7955d~nI4d4e_Wi0774107741epoutp02u
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1650326853;
+ bh=AChNfJQWMXjSwwKi12gVmv2Q77//iQk0dtbyPaoW1Ls=;
+ h=Subject:Reply-To:From:To:CC:Date:References:From;
+ b=Kgxtor4qALYW5tJjrytsesasDEb6okogLTiBAPEqKcE/Zv/7zZ+FIAeywTCPq423j
+ Url6N7Qa3RFbNHAeWSfT0f+nc71Sbgsvd+XI2cppeNSLEq5+9Y8E1bhRTEj4cHfFDH
+ 3x+m4TbI4O3xQvMqW+DaaE4YLBE+lkBJTKQDDtOE=
+Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
+ epcas2p1.samsung.com (KnoxPortal) with ESMTP id
+ 20220419000732epcas2p1b9493d582a4b17b4ef6bdc5e24ef5ce3~nI4c_DA3O0349203492epcas2p1H;
+ Tue, 19 Apr 2022 00:07:32 +0000 (GMT)
+Received: from epsmges2p1.samsung.com (unknown [182.195.36.68]) by
+ epsnrtp2.localdomain (Postfix) with ESMTP id 4Kj3yp6jvCz4x9Qb; Tue, 19 Apr
+ 2022 00:07:30 +0000 (GMT)
+X-AuditID: b6c32a45-4fdff700000228cc-45-625dfd42be01
+Received: from epcas2p2.samsung.com ( [182.195.41.54]) by
+ epsmges2p1.samsung.com (Symantec Messaging Gateway) with SMTP id
+ C6.47.10444.24DFD526; Tue, 19 Apr 2022 09:07:30 +0900 (KST)
+Mime-Version: 1.0
+Subject: Re: [PATCH 3/5] PCI: axis: Add ARTPEC-8 PCIe controller driver
+From: Wangseok Lee <wangseok.lee@samsung.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>, robh+dt <robh+dt@kernel.org>,
+ krzk+dt <krzk+dt@kernel.org>, kishon <kishon@ti.com>, vkoul
+ <vkoul@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ "jesper.nilsson" <jesper.nilsson@axis.com>, "lars.persson"
+ <lars.persson@axis.com>
+CC: bhelgaas <bhelgaas@google.com>, linux-phy
+ <linux-phy@lists.infradead.org>, linux-pci <linux-pci@vger.kernel.org>,
+ devicetree <devicetree@vger.kernel.org>, "lorenzo.pieralisi"
+ <lorenzo.pieralisi@arm.com>, kw <kw@linux.com>, linux-arm-kernel
+ <linux-arm-kernel@axis.com>, kernel <kernel@axis.com>, Moon-Ki Jun
+ <moonki.jun@samsung.com>, Dongjin Yang <dj76.yang@samsung.com>
+X-Priority: 3
+X-Content-Kind-Code: NORMAL
+X-CPGS-Detection: blocking_info_exchange
+X-Drm-Type: N,general
+X-Msg-Generator: Mail
+X-Msg-Type: PERSONAL
+X-Reply-Demand: N
+Message-ID: <20220419000730epcms2p77c94d5e55db13ebf2f88b25d16b6ef7a@epcms2p7>
+Date: Tue, 19 Apr 2022 09:07:30 +0900
+X-CMS-MailID: 20220419000730epcms2p77c94d5e55db13ebf2f88b25d16b6ef7a
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+X-CPGSPASS: Y
+X-CPGSPASS: Y
+CMS-TYPE: 102P
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrLJsWRmVeSWpSXmKPExsWy7bCmma7T39gkgzdt8hZLmjIsXh7StJh/
+ 5Byrxe4Zy5ksnh+axWzxqUXV4sLTHjaLl7PusVmcP7+B3aKh5zerxZE3H5kt9h9fyWRxedcc
+ Nouz846zWUxY9Y3F4s3vF+wW5xZnWrTuPcJusfPOCWYHYY8189YwelxfF+CxYFOpx6ZVnWwe
+ T65MZ/LYvKTeo2/LKkaP4ze2M3l83iQXwBmVbZORmpiSWqSQmpecn5KZl26r5B0c7xxvamZg
+ qGtoaWGupJCXmJtqq+TiE6DrlpkD9I+SQlliTilQKCCxuFhJ386mKL+0JFUhI7+4xFYptSAl
+ p8C8QK84Mbe4NC9dLy+1xMrQwMDIFKgwITvjePs51oLNYhWzX31iamB8IdrFyMkhIWAicXta
+ IzOILSSwg1Fi2R32LkYODl4BQYm/O4RBwsIC7hKTmqayQ5QoSexYM48ZIq4vcX1FNyuIzSag
+ K/Fv8Uu2LkYuDhGBBUwS9+fOYAJxmAX+M0m8ajzGBrGMV2JG+1MWCFtaYvvyrYwQtobEj2W9
+ zBC2qMTN1W/ZYez3x+ZD1YhItN47C1UjKPHg526ouJTEgieHWCHsaon9f38zQdgNjBL991NB
+ npEAunTHdWOQMK+Ar0TnsQ9gJSwCqhKnn8yBOsdF4tHBWWAjmQW0JZYtfM0M0sosoCmxfpc+
+ xBRliSO3WGAeadj4mx2dzSzAJ9Fx+C9cfMe8J1DHqEnMW7mTGWKMjMTWl/4TGJVmIcJ5FpK1
+ sxDWLmBkXsUollpQnJueWmxUYAiP2eT83E2M4HSt5bqDcfLbD3qHGJk4GA8xSnAwK4nw9iyJ
+ ThLiTUmsrEotyo8vKs1JLT7EaAr08ERmKdHkfGDGyCuJNzSxNDAxMzM0NzI1MFcS5/VK2ZAo
+ JJCeWJKanZpakFoE08fEwSnVwNTtV1KZ9vDXG4NcxbA5CYwhegJd6n/rn9mH+vlIrGVlXOx+
+ 4qKPHpuEQ9rpJRe25eX/ySzJr557rmdKnQaP8uMd3dukl+UsWHa+a2b5vuXenUX6Xp9cWWZ3
+ +wlWlU+P+O2w/6rDu8kc/Gpf7LdUnb83h02oLorp8tQXUtoprDP9uqLWp8nVtBiJ8zDtuur/
+ 9eqqffLf3vGsr5oZsbL54M0mgfsClkE7iqytLaakNsV9vpmsxGY/sZrP0egMW00By8zKi/lM
+ UvOOM95qWDLNw9fvmebSNwVb6qTFL73pWJv2Z3vuruDVn+a42DtI8UtYV+zr2NB7++ZRway6
+ fWxZiVnGAe9c41/x/WxOfsCgxFKckWioxVxUnAgAgmXUsGAEAAA=
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220419000730epcms2p77c94d5e55db13ebf2f88b25d16b6ef7a
+References: <CGME20220419000730epcms2p77c94d5e55db13ebf2f88b25d16b6ef7a@epcms2p7>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220418_153433_178807_4308579C 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20220418_170743_407549_CB994894 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,66 +114,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: wangseok.lee@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 18 Apr 2022 at 23:55, Bhupesh Sharma <bhupesh.sharma@linaro.org> wrote:
->
-> Since a few boards based on QCoM qmp phy use the
-> 'vdda-max-microamp' & 'vdda-pll-max-microamp' properties to
-> describe the ufs phy nodes, add them to the dt-bindings doc as well.
-
-Ugh. They give a false sense that they are supported. I think in
-reality they are not used by the kernel.
-So, ideally, this patch should be accompanied with regulator core change.
-Or (better) drop them completely.
-
->
-> This fixes the following '$ make dtbs_check' warning(s):
->
-> sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
->   'vdda-max-microamp', 'vdda-pll-max-microamp' do not match any of
->    the regexes: '^phy@[0-9a-f]+$', 'pinctrl-[0-9]+'
->
-> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Acked-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 ++++++++
->  1 file changed, 8 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> index c39ead81ecd7..411c79dbfa15 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> @@ -90,6 +90,14 @@ properties:
->      minItems: 1
->      maxItems: 3
->
-> +  vdda-max-microamp:
-> +    description:
-> +      Specifies max. load that can be drawn from phy supply.
-> +
-> +  vdda-pll-max-microamp:
-> +    description:
-> +      Specifies max. load that can be drawn from pll supply.
-> +
->    vdda-phy-supply:
->      description:
->        Phandle to a regulator supply to PHY core block.
-> --
-> 2.35.1
->
-
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiBPbsKgMjgvMDMvMjAyMsKgMDQ6MTQswqDsnbTsmZXshJ3CoHdyb3RlOg0KPj7CoEFkZMKgc3Vw
+cG9ydMKgQXhpcyzCoEFSVFBFQy04wqBTb0MuDQo+PsKgQVJUUEVDLTjCoGlzwqB0aGXCoFNvQ8Kg
+cGxhdGZvcm3CoG9mwqBBeGlzwqBDb21tdW5pY2F0aW9ucy4NCj4+wqBUaGlzwqBpc8KgYmFzZWTC
+oG9uwqBhcm02NMKgYW5kwqBzdXBwb3J0wqBHRU40wqAmwqAybGFuZS4NCj4+wqBUaGlzwqBQQ0ll
+wqBjb250cm9sbGVywqBpc8KgYmFzZWTCoG9uwqBEZXNpZ25XYXJlwqBIYXJkd2FyZcKgY29yZQ0K
+Pj7CoGFuZMKgdXNlc8KgRGVzaWduV2FyZcKgY29yZcKgZnVuY3Rpb25zwqB0b8KgaW1wbGVtZW50
+wqB0aGXCoGRyaXZlci4NCj4+wqBUaGlzwqBpc8KgYmFzZWTCoG9uwqBkcml2ZXIvcGNpL2NvbnRy
+b2xsZXIvZHdjL3BjaS1leHlub3MuYw0KPj7CoA0KPj7CoFNpZ25lZC1vZmYtYnk6wqBXYW5nc2Vv
+a8KgTGVlwqANCj4+IC0tLQ0KPj4gIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL0tjb25maWcg
+ICAgICAgIHwgIDMxICsNCj4+ICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9NYWtlZmlsZSAg
+ICAgICB8ICAgMSArDQo+PiAgZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1hcnRwZWM4
+LmMgfCA5MTIgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrDQo+PiAgMyBmaWxlcyBjaGFu
+Z2VkLCA5NDQgaW5zZXJ0aW9ucygrKQ0KPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3Bj
+aS9jb250cm9sbGVyL2R3Yy9wY2llLWFydHBlYzguYw0KPj4gDQo+IA0KPiBJIHRvb2sgYSBsb29r
+IGF0IHRoZSB5b3VyIGRyaXZlciBhbmQgYXQgZXhpc3RpbmcgUENJZSBFeHlub3MgZHJpdmVyLg0K
+PiBVbmZvcnR1bmF0ZWx5IFBDSWUgRXh5bm9zIGRyaXZlciBpcyBpbiBwb29yIHNoYXBlLCByZWFs
+bHkgcG9vci4gVGhpcw0KPiB3b3VsZCBleHBsYWluIHRoYXQgbWF5YmUgaXQncyBiZXR0ZXIgdG8g
+aGF2ZSBuZXcgZHJpdmVyIGluc3RlYWQgb2YNCj4gbWVyZ2luZyB0aGVtLCBlc3BlY2lhbGx5IHRo
+YXQgaGFyZHdhcmUgaXMgZGlmZmVyZW50LiBBbHRob3VnaCBJIGFtIHN0aWxsDQo+IHdhaXRpbmcg
+Zm9yIHNvbWUgZGVzY3JpcHRpb24gb2YgdGhlc2UgZGlmZmVyZW5jZXMuLi4NCj4gDQo+IEkgc2Fp
+ZCB0aGF0IEV4eW5vcyBQQ0llIGxvb2tzIHBvb3IuLi4gYnV0IHdoYXQgaXMgd29yc2UsIGl0IGxv
+b2tzIGxpa2UNCj4geW91IGJhc2VkIG9uIGl0IHNvIHlvdSBjb3BpZWQgb3Igc29tZSBiYWQgcGF0
+dGVybnMgaXQgaGFkLg0KPiANCj4gRXhjZXB0IHRoaXMgdGhlIGRyaXZlciBoYXMgc2V2ZXJhbCBj
+b2Rpbmcgc3R5bGUgaXNzdWVzLCBzbyBwbGVhc2UgYmUNCj4gc3VyZSB0byBydW4gY2hlY2twYXRj
+aCwgc3BhcnNlIGFuZCBzbWF0Y2ggYmVmb3JlIHNlbmRpbmcgaXQuDQo+IA0KPiBQbGVhc2Ugd29y
+ayBvbiB0aGlzIGRyaXZlciB0byBtYWtlIGl0IGNsb3NlIHRvIExpbnV4IGNvZGluZyBzdHlsZSwg
+c28NCj4gdGhlcmUgd2lsbCBiZSBubyBuZWVkIGZvciB1cywgcmV2aWV3ZXJzLCBmb2N1cyBvbiBi
+YXNpYyBzdHVmZi4NCj4gDQo+IE9wdGlvbmFsbHksIHNlbmQgYWxsIHRoaXMgdG8gc3RhZ2luZy4g
+OikNCj4gDQo+IEJlc3QgcmVnYXJkcywNCj4gS3J6eXN6dG9mDQpIaSwNCg0KVGhhbmsgeW91IGZv
+ciB5b3VyIGtpbmRuZXNzIHJldmlldy4NCkkgd2lsbCByZS13b3JrIGFnYWluIGNsb3NlIHRvIHRo
+ZSBsaW51eCBjb2Rpbmcgc3R5bGUuDQpBZGRpbHRpb25hbHksIElmIHlvdSB0ZWxsIG1lIHdoYXQg
+ImJhZCBwYXR0ZXJucyIgeW91IG1lbnRpb25lZCwNCml0IHdpbGwgYmUgdmVyeSBoZWxwZnVsIGZv
+ciB0aGUgd29yay4NCkNvdWxkIHlvdSBwbGVhc2UgdGVsbCBtZSB0aGF0Pw0KDQpUaGFuayB5b3Uu
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
