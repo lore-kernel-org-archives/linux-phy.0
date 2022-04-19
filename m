@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EE6DC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Apr 2022 01:07:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6795EC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Apr 2022 01:07:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1nxk237xHoTBuCZACa/ms2bRP/ALGzaXnf5bOS954+0=; b=xFgdF1oiJbmzJu
-	DGhFaeKb/E6fNgN8L2V3RJIfFl55ULBwZUbdEh7+N3Vr7FnZPgoNgeczRotawGupP0A2elGqMVxS1
-	fDCNyOhFZvD3INSci5V0b8GCq7bLJn8CE+0PzGhbnXD/KO6kSu2+5QhuPWAslFXqmqs7gibLJYQco
-	soW7/eQ1PNPzaKlPFnlhyR+EAhMPdbYC8YN4tr1Ti4EwDacTHdXqzZcSiNZF0ytQgOyjClN8CoAzf
-	sjIDWk9NGUWybSxrdrf2F9kV1241/4fAkJJwVwDc8ePVChP5QDB4DLwKWSeODffVG74vg6mJpGDMm
-	feZPHII3EvSpTnNg2iiw==;
+	List-Owner; bh=h10pThUKnWa6y5jGwHeDhfFrIuMlVx0mtivX9DeqL3k=; b=riYAeL7yUkqamJ
+	2bzIOe9eWqz2bK7vK0ts4rKYuNVkqCcbt+1BCi7bRDjJuQ2GgvTXYN/gjnc27cZrQjjYt0gkNv21L
+	Tuowqw5EbXDRLBPeT5VBbczuhshFml5KkOurlGeuTT8OWKbsPNCg2iMFYFtlmu7ybS9pMAujCR0Vw
+	HTgSIKveeUAgRWKg7ZKXaKVikNy4cMycsBL0wrT2T+IWvM8tmEVdKt0MiKtgAx7w9z/MduLkXdPZl
+	q/5jYzVJxYUj2dkgVc85JJiKGfZAPYpnURZyP6T7ugfoXPf1iHw5qDaLgM5ZHr/+fMW/l1RbftFfg
+	bfhrL7kpby9wBkgqzTAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ngcL4-0010Uj-LP; Tue, 19 Apr 2022 01:07:30 +0000
-Received: from mail-vi1eur05on20620.outbound.protection.outlook.com
- ([2a01:111:f400:7d00::620]
- helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1ngcLF-0010a6-R0; Tue, 19 Apr 2022 01:07:41 +0000
+Received: from mail-am6eur05on20610.outbound.protection.outlook.com
+ ([2a01:111:f400:7e1b::610]
+ helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ngcKu-0010Pj-4L; Tue, 19 Apr 2022 01:07:22 +0000
+ id 1ngcL1-0010T2-RP; Tue, 19 Apr 2022 01:07:29 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=oQPxRp8iZzxMUzdZg6YDW7f0Nbp63RgVrWFHv7RZTMK2QMTER2eoHy4tdpTSiIBb9pEvmnvckTc6pJIpsljayrLEWO7l4D6Rz+ibiGxNFpAcsEm8RVPRrEs+z6hq/5NPc3CvadsnweglIQ+aK6ZANCPUB1ERQna1fiJL7cRXxXEgzv1hkUeGO5y9VvwYdn7BZPPjl0gnblCTKAth6xkeWVU/jAICdaxHMW8NP+jlMunSoH7pgryZRgoQ0RgvsCMtCA7FWfWC89TZy111PNxB0GSQG7giml97JToohc6mzaWIUt3grnFN/TapXGxDqlvQZ/gQN2hqARM67qacCdAOUA==
+ b=N+HCX+u4AxWM9SdQEN7TPGMZvsvs3EzV6IIMdw/f6ISA08cJ/y89+fX/1k18Q9QJGXTWwG9AJAcfg16fcK7Fcy9Zwss08xI3G/D0dpi0UFSr6Z7QVV947VRHn3YowOOOJdl22W+VWFssjtVEX7vKmqjpjVdvBSZl+v72xAefcJ5qC9YfSbGcrnaOG54OuCR00z9cd5bJ5PKSWSaCr5LiqU62puHgC274/3gjX+0OQrvjjBafliHth4LBxlYNvq8ZN2EOJ8Mn+E42V2TzWcW7sgGCsc1a7fcmNCVtjrTCTD2NblaykHH5Unlrin0m8CS6iURvhshPHXLsKwQeaqwzyg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=oslkYcgQ48zUnKLesDh+7ZOPuZ0okPDV5oPLB5C+n30=;
- b=Dhg5xAWoTgq0yl3T6ffQEy2RuGYtvASonwr8m0GPZiECASxxe+1oJMGSioSA+I3QXbqfLr6j/333kf7Ph0YLUjp9Q0c7pNyokv6G2i8Oy8N2qIHr1ZYcDNEE3nj0BLCQgReso3fUeoiAW41whszNizwGJLGO9QtOCC0CxEnVbZ78XyypEdf5Dnt+FPxh+niGRqJSRfzznqNjNz9cMlOsoarO6fT3H8u6Dm1wGyYfkQWp2CBDQITpzCndrqpu8Bo8/g4ixmA0paE4OSn5SP8lmfphnisgbT5C5vuv+xmNRKMljekMkylRiwGOvSAk0IdmfoTmEs5F96mpJ1zK5OYNyg==
+ bh=zikVNYi3cS+FrIsX3tOfjPXYjapqrG9gbDqBXBxuQPQ=;
+ b=eD6iU9wHDlJS8W6q+lagTNRVg+TkPcajCKPWrshoaab1b5XUaLUoGviWa3V2nFDH6wIHwM5XNizIGAlqxwpnFCAepVZBgcK5fnC4+DK4jJMfHW+PsDaGuqM6YfXxT0ChhjJ8C2vn+4rKIeP5ewLNZYtKEyB8jBpM9dsIjToEk0C7UjFm89BdAzutyNcxa060NAXFaU03ET9kmZrRO0cchKOGRFFHnxsw8YxjvYgS2seZ899oh9Nscpk+E5k+Voi2b7ot48vV0Jz7HqS4srO2+OHncZvFms9PTOffXlAnkuux9lJVhnrgMyefL6BHE2yUaZPJxEr0glGidBdqVBrFaw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oslkYcgQ48zUnKLesDh+7ZOPuZ0okPDV5oPLB5C+n30=;
- b=kOGoCGQ0ihKK169HgyeuWeODWSeLSUXnSwxpe3eAHVmTqYZgr7kFZOHPQlfYGGwU1VCiDMuCNNCUKdm3e5zq3ZY8HpvnRpmANbayPlPr+xZ6KSfSUwWznFANJrpbJRuvwkgrJNcIIFQMdd0VFXzJMLDsGFUCo71rQOmgyhTmDYk=
+ bh=zikVNYi3cS+FrIsX3tOfjPXYjapqrG9gbDqBXBxuQPQ=;
+ b=AOhFs3fFlRFlIu14lBGBqyi7ChPAZG9hQPsd6N0g3ydteIWhyjjY1umVCTBOE+7IJIAXIGbYIy5H/JFOIy1vYzpxD0OFrIPH6sAWvHXh6fqaWQplwrhiuXvzoTeqn6JmeRX2izfOe3N3qvksY8t8RzLqZGTcobmQGtYXnoDyZTM=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
  by HE1PR04MB3291.eurprd04.prod.outlook.com (2603:10a6:7:18::31) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5164.20; Tue, 19 Apr
- 2022 01:07:17 +0000
+ 2022 01:07:23 +0000
 Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
  ([fe80::b09c:8ffe:8e02:7387]) by AM7PR04MB7046.eurprd04.prod.outlook.com
  ([fe80::b09c:8ffe:8e02:7387%9]) with mapi id 15.20.5164.026; Tue, 19 Apr 2022
- 01:07:16 +0000
+ 01:07:23 +0000
 From: Liu Ying <victor.liu@nxp.com>
 To: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
@@ -62,10 +62,9 @@ Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, krzk+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, linux-imx@nxp.com, agx@sigxcpu.org,
  robert.chiras@nxp.com, martin.kepplinger@puri.sm
-Subject: [PATCH resend v8 1/5] drm/bridge: nwl-dsi: Set PHY mode in
- nwl_dsi_mode_set()
-Date: Tue, 19 Apr 2022 09:08:48 +0800
-Message-Id: <20220419010852.452169-2-victor.liu@nxp.com>
+Subject: [PATCH resend v8 2/5] phy: Add LVDS configuration options
+Date: Tue, 19 Apr 2022 09:08:49 +0800
+Message-Id: <20220419010852.452169-3-victor.liu@nxp.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20220419010852.452169-1-victor.liu@nxp.com>
 References: <20220419010852.452169-1-victor.liu@nxp.com>
@@ -74,70 +73,61 @@ X-ClientProxiedBy: SI2P153CA0023.APCP153.PROD.OUTLOOK.COM (2603:1096:4:190::6)
  (2603:10a6:20b:113::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 8bf39387-859e-435b-acf7-08da21a0f21a
+X-MS-Office365-Filtering-Correlation-Id: 382e2425-80bd-482b-d915-08da21a0f61a
 X-MS-TrafficTypeDiagnostic: HE1PR04MB3291:EE_
-X-Microsoft-Antispam-PRVS: <HE1PR04MB32913CA1D9C8BF5219AE665398F29@HE1PR04MB3291.eurprd04.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <HE1PR04MB329188B4CA4785ADADD12D0798F29@HE1PR04MB3291.eurprd04.prod.outlook.com>
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: nL/pFJA02ZzuemXlJL3P1PATUtkJ5u/Lf4RIBp49gjaJK5t7us6zygQe56W2GUIqDJwBlk9bKc4XdqxQXdtYTsgtTScHdavchI47QBZY6LKOhyfPlKiBLupq/URltnYi7buWQ5G9oDDoZJHggB/5IxMBwPPijc4rvfPMzYZghpjuHWs7GeJGiFRNwMcEOmb4JGv2Zw3E/eUlPkclWLDPfVebO/5JmF7hTuiHGkm1g/e0vbhhPfjcbzlrMLzCMo/g+eIVBEd+du2au9TAzK62uuoE89EmeSTxPYpwFCOHhtLrsnipRBnoq+O9NsyfKqlvMrXcuXlkqkond/O7pKEdQkBwei02h72ydCGkWB8KGuKXZUwrCtiLI/+0V6qLGq6KuDxoAHBiGqzVvQ3YXsE6CgNxME3N91mq/xD4vadB9VsMCejbDPqM2+E40uYEgaBuHuuM3Bq5siFvgXUPYRKROta+VjE8gYgJ6yFRAW3Sz/2NiVzfJu92mRQnBH8ndatG4dLx7PoxxQ/8HgE04Xr55a4blRoxRYP8eT9YWXRKCMcdHLDhhBBLqgDsgCY8gnRJtxPiFmvDfduIvRbqSLYL3fFubNDmdWbb8pKkfTjWeZpmsyw9Bei1331AkkWkzAcjCCx6sjc140B164N59OUgu6GX5rfs9jHASAU3cIM5qHoCX7blo38gUMPfbf105ennBGzFAc+Pj3nImUC3tm4qZQ==
+X-Microsoft-Antispam-Message-Info: /rEIucyih/0UqZg3TZ/BE1bbJBtFS9/bJOT80Nm/IgAbns5mKHTaYr4s70vLnuaG+akElLKx0xtJtW0Y9d8sltGanikNK9w561QuekUExjBglbLeha7CKq3QKqngW/BzLFewJo1+XmP+jzBiuHy7aaOOCB5LOez9v/u4ftAfmCCzve2liWBcarf5TBM6C4/n5AMAYv7y/cWUnOACxi4xnU4pEP5C7y19k7qz35MYM/KRivcIUDc4/ztC9q2uWzw6w1h2ZC1UxriY8p8V63oLHe5UF57renTviVLdfkiOZ+3+nzNLCBhaWa1RYwYCP++EvkOf8XO7EAHCh0QxsqNNllIvSVaURezg8xAiuWfATgZaqKwhuYcFxvpq7BeN2mwHOvu17RUy1dfCKcahvwnOq+lm8vRDftv+E0hYVLqnEOm8jUxBuRMG247XJSdr3+yvWLQOtCOPXJQmlJCWHK03leOqO0qoUlxiB4jJPI1HjmGK83NyhNO4CDxgRUZSz+sA75aCTRayYFLxnF7W02TwcY/oEmahZdNjoOcYNv/SiPYprQutpzUiae9/MegRwffQSijbjX5696uVUFe1KTK8WJThqg81K2ilNQk7YfsOYpFoAQO7WqFGMYelOByLnN2aXnXKe+JWhmLdTVh7q7VlYk/bbNSMxtMvx2o6CaP8iNFhD4TdDM7zuCfobqHCGCiDARhx86kjeny3JO6g/CbZaw==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM7PR04MB7046.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFS:(13230001)(4636009)(366004)(66946007)(508600001)(8676002)(4326008)(86362001)(6486002)(36756003)(52116002)(6512007)(6506007)(6666004)(316002)(66556008)(66476007)(2906002)(26005)(186003)(83380400001)(2616005)(1076003)(5660300002)(7416002)(8936002)(38100700002)(38350700002);
  DIR:OUT; SFP:1101; 
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?UVdOQkNOZVFhMjluSXJieEdvSmUySXJ1VjNqcks5bmhrc3U2d0g0UWlHMitm?=
- =?utf-8?B?Z0UxOFlaek1PQ1dYOW9QTEk1ckJ1UGVnVEpwVHBoRDdXTVl0YmsxaHAwWVFn?=
- =?utf-8?B?VXBoMW02Qnp6MnU0UGdtVHFaTjcxa01DZ3JrTGJPeEJDVDJVRkdPMm54VVZr?=
- =?utf-8?B?SUNEcEhjK3lLeXpJbGdCVTloZHlJcTVZcFoyYTROOTF4V2lGd3liZ0lGQnQz?=
- =?utf-8?B?Z1pjVHdUZFpGT0pIOU1xRTFoY04vekN5WnNvSkdVWHROVmMvUVZJNy8rUFJo?=
- =?utf-8?B?UDVQM21uQnNKNFZrS0pTMnhLRjlVZWhiajZpcmVMUjZXYVVkVmpDWnhkMzJh?=
- =?utf-8?B?QjQ1QnIrMFl6VzAyZlozYldFMCtyVkpUNTNWQ2pCNm1WeVovNDA0OXg2VDV3?=
- =?utf-8?B?MUVoV0tUUHBXb0tyT1NuMzI4UmpUVEFBYVI0cFljdjNVNFlINmlndndKcU94?=
- =?utf-8?B?QVFxSEZPeWVWNXYxRjNLTjdhR1RhVDNpS0xNZ2dRVnF0NE94b3JUakUrYW1W?=
- =?utf-8?B?VVJBOEZpaEhkaVpPNnR6NzVqQ01WVWV1TmthR0tyTXRHUW92UVlLcCtzYjVY?=
- =?utf-8?B?aysraUlFRnpRU1JJM0tNaFRJRlUzWEZldHplWitOYjljZFl6TjRJVkZZOVJa?=
- =?utf-8?B?cUpiZk5NeitqK21XZVhPZldkZ1VGK2tWNkRoaHB6WGdGWm5uaGJwdWRFMHFz?=
- =?utf-8?B?YUhiM2pYeFdyMS9xVzFGSWlZQzY0TUl3MTRLOHJyYkV3ZzI0QkV6QTlSdnFp?=
- =?utf-8?B?dFh2cE91M2hPREs1OHdhVTlYbytEVzZWVjZCNlFIQkFvTXdKQXNDVXovb2Jw?=
- =?utf-8?B?bm5kSEdCY0ZwQXRJeXhuQUdFeE5mMlRCQzVwZ2NWa0xtRHp0UnY5a2xvaXBs?=
- =?utf-8?B?MU5FMmRsdDJKWHpUZUFtQm5YbW9nNU5RSDBTMGlJY09uM2tqa1ROUHBvTmN2?=
- =?utf-8?B?UHlUMUh2c2NhRGVhaTNEMFVvalhYUENRTmhkR2ZTMnJLRFRybHJHZmVyZmkr?=
- =?utf-8?B?bkJ2MXk5ay9QZmRrcjhjcUVlSzYrOFhaTFY1eEZhM2tnWHQwMFJ6L2pDMXZx?=
- =?utf-8?B?RGZnYk9lT1hwUCtpRW5CaWEvNFNkNDBjRFBDVmJpSEFsamxvWnAySTQybi90?=
- =?utf-8?B?bUh3cUV4bjZkclpxZVV6L3FUZ0doZ2JCYUppKzZ5TDRXNnRrbktoaUkvbFU3?=
- =?utf-8?B?VkY3a2F0RnREZ3M3YlROVmFycEdUQ3VQWXNkWm94aENwTjFTSU9VMU9JeHNB?=
- =?utf-8?B?NzF1OEkxODY3eVNLTUhucitFeVlCenVpa0JDQ3NCNWN6eVhzWXl5NlFJREQz?=
- =?utf-8?B?S1kxY2hBeEtVdXBaTHlNcTg4K2lURk9NajNLVjNON3h3dHZMNnlmN1ZmV1Vy?=
- =?utf-8?B?MWZBbncrUno5b3RWS3Rac1hucC9lckZodEc5QkVSSmJTeXN4cHQ1aHdBWDQ5?=
- =?utf-8?B?bVFOY2YvV0c1THd4NDBOVVRZTUNlRkEzRE9jaGIxNXkzNjA0Y2xLbFJXbnpt?=
- =?utf-8?B?QWxLZUNhZzZ1b2xMajIyQk40QXRTUjViZDBGVG1XbW1UYy9IY3hNOXVrNDdw?=
- =?utf-8?B?UjRvYjdSM3pDRUF4ZnorblJrQnV1L3dYRjZpaWFDTllVeXZQOTY5ancrTjJ3?=
- =?utf-8?B?OStpQlVEdHNTVXhpenhReFNHeWhqZnN4OFU2dWRNeUdxKzRpOEdSS0VwYTlq?=
- =?utf-8?B?UFFaMWVyWDdNVVBMT00zRlhHditGWjRSWmhXQnBnVXZSNDViRUVyR25McFBM?=
- =?utf-8?B?a1p0Y0dRcUZTS0VpVXdhbFJhT0x3SGdjUVdMTHVnQ2NscUlqZ0RJRFVPdjFj?=
- =?utf-8?B?WFQwZEJLTDZpallVT1VFdGpTLy9tRER6VFNNTlI1d3RoNHFwMVU5dGwyZDB1?=
- =?utf-8?B?VE1FMGFSeXduRUFLUjhQcWtmR2VDcHNJTkl1L1VnMWgrZlRDUXB2TTlYcGRp?=
- =?utf-8?B?SCtFUlFsdndSb0V5TVNSMkVrOGVUaXRCQWdaZjV5cU1HVEFNMWgrZFlxSTdG?=
- =?utf-8?B?dk9uVnJYVmZST21McDM0N1FwZDQwMFVncFoyZGdLMkU1TVV5aWRkalpaMWNU?=
- =?utf-8?B?cnRmaDVObkMza3FGV3NZMkVPQ1Y3b282KytBdDNZWndsK0ViWkJlZEpHUndn?=
- =?utf-8?B?dEFhc1Jyby9nTGIvQlZRUGlXTzNSU2dKQTIvYjc0Q2p1MDAxL0lVcTdyMjdN?=
- =?utf-8?B?TnczTHp2TmV2U21LL2c1T01ldXRSRTdYZmRMWG00dVNPUHJ2U2xRaXhMNGx3?=
- =?utf-8?B?aUpmRWtsWUFGUm05Si9rN2dwcmk0YU00T2ptWFpVUXFFVDBWQ2J3WTV5MGZ4?=
- =?utf-8?B?YXBLZXZVRklacitEcEJTV2JWZGtxRUM3anp2MkpUajNLNXJTTDBxdz09?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?mdpiAyV7BO6TVzJ8AUCngKK92OL6vdd1J6qz59LCkHYCnxSUzHR8R9RL7hKL?=
+ =?us-ascii?Q?9j3zJ55F+7quTHRG7d5J25mAayMsoZDSJxKEkm9tN8nAXMvx17xpPIal0cMc?=
+ =?us-ascii?Q?KhX+ZV5CthCdaue1ml2fCqfx3kC0Pncsr42qNSkzw5eH6935BhBd1n7kusCm?=
+ =?us-ascii?Q?djaneAfV5cBypHNNk+/deeHcg+KjjqWbOclGttKSLjcJe+G8M+f7vEpvScuX?=
+ =?us-ascii?Q?HMRE1ekNb2Fdf56FT9BjDv9VTJ+jtu+8YQei/FjWlGevFbY54vsbuI+DHIig?=
+ =?us-ascii?Q?DsvKiJ/B1KHFOBvoZoz1ReG2IFkeGmE0Jcb+xgNyK5UdMeTy/KDIbo1ayg5n?=
+ =?us-ascii?Q?ivepsuLppb6nqhUECGYLSUxCaYPwArwbbQVSI34PM6CgEXRvZY1wiyb9H5eY?=
+ =?us-ascii?Q?Idj305+WhjM+sJtqY2VnAAGy40vv82KRioDYqNr0R6MYZfnZDlpagQgE+dbj?=
+ =?us-ascii?Q?pWjUuj1plfkxYrCF8pCzUOygfxGmMfBq4aKFj+DiCNWeoti9sSa+HVjwvZdV?=
+ =?us-ascii?Q?UTZgCq1mTxW80tAPfZeKxvAl6ApODfC24bdlfD/xGtI7I69OF5uUcdSmar0u?=
+ =?us-ascii?Q?qbyZgYkSbQ2DYG2MVRDJ/k3OP+NcilUyJT2xKrNpQ+laa2zSdSVZk5Yp99gW?=
+ =?us-ascii?Q?4y2uC8PJj8WdH8Z8okoGDsZdrpV+StUJRPDdEnp+t2BOCmi0TbyOH3G9iVVr?=
+ =?us-ascii?Q?L2LcGxuVdREhUGBqlGu9NmWz0YSPQghPeWchDm1V0zJTQ6YiqFt1KV4CzFNS?=
+ =?us-ascii?Q?+0jbSHfHgqDfAgcP28G8EYYiPZSKseAcaPvy+0Wc8KlUs2JSpKWwr2eYN93r?=
+ =?us-ascii?Q?DTTkCotNjyP295wSEaDE/21ojp0bY43yuxTJtijmqKMU+8BumrtRWmSWazfE?=
+ =?us-ascii?Q?GhZKv/TEKMTMDHr44VIldxFUo51orI2dPN3U+8SjIX1OSXhCNm8C6GYAaknc?=
+ =?us-ascii?Q?kk8ZX+lFFyMpdekq3DWzUDmh2kqI8z0vixSQd+gl9Xvi/qZZm4FXe8o3Cy9v?=
+ =?us-ascii?Q?RjQNqtTsbhAplZKVgw3bx1gD+sYIc34tpN1sZGCVDu/wRvL1FZjDNdpEST+B?=
+ =?us-ascii?Q?AwbECDTAq6dHmc6I1GPEhnGKr+lK22ERnftQpp6hQyZTENkddgx+xOtjNjGn?=
+ =?us-ascii?Q?+ttZnrkeyecK/rZzhjIQ0VroZ5CYnvJ9bhQB+xweL/b7bjFqabRArk5QVjUA?=
+ =?us-ascii?Q?ZLM4g+moBGsYS6rWplYjWb9yk5qFssf7zc3aKzRD7tptej0GsPMjmqfZhoyA?=
+ =?us-ascii?Q?YXIrhmaWOmWz/TJiEy/ZHb3ql+SE5SfVEvew6Nfe3SW1sUWVJdawN9uPtRqG?=
+ =?us-ascii?Q?Yjf4rNv4eQzyAmUMAlKdharqCM5YO2Se2JEIJectTqPh8i/mFXO5pQvnAvUM?=
+ =?us-ascii?Q?Du81XZrebm6HN4ah3JIO0hf3ChqIEhzfuk77/4ZGWGsyyOJ2viIUQ9cXS3pS?=
+ =?us-ascii?Q?sj7HkPILkk6xNom6xRr+SWYx/hO0DJFX68/9s3J8uIp7dyN/+XbGbxgbmGwg?=
+ =?us-ascii?Q?TiYvQNtfIdfAE+LGidOznPty7oB3P/jmvw/QQrQ1J0YJJhlBGusuCYK6ARNQ?=
+ =?us-ascii?Q?DPZsn7d0gDpzwYky9cTwT11pHcuWunXe6xfIvkupJABiHrNtWw576aN/p7gl?=
+ =?us-ascii?Q?fvr455CysUhLCEsJCSM0TlP3ZvEFP6V/7L9y8SI+xWL1TReyTd93ycLtPGnt?=
+ =?us-ascii?Q?Cmcnwlp9PWnoTvxNjVVgll8TO/dTFOGPHZwvPdu85RsaKlI2AOSyoBGnzX/f?=
+ =?us-ascii?Q?XQzrKP+Wjw=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8bf39387-859e-435b-acf7-08da21a0f21a
+X-MS-Exchange-CrossTenant-Network-Message-Id: 382e2425-80bd-482b-d915-08da21a0f61a
 X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Apr 2022 01:07:16.8227 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Apr 2022 01:07:23.6284 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: HLRPclahNG4QUxk7/OJ9RbHl+rWD3isTjXQ8yDJ2+o5cC1Kc+myJyHxpzVp5UWRO9R9hJY7JNN9Zlipv8Fu31A==
+X-MS-Exchange-CrossTenant-UserPrincipalName: duWNk1GP3LcN+pSd2XYyk3E640VGcsT6mASYGcOjswO0HQBW41zsGbcpesGgd8BQVskmr6q935GfFxVwdedLFg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR04MB3291
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220418_180720_214060_FA87544F 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20220418_180727_956501_CC2E0A1C 
+X-CRM114-Status: GOOD (  18.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,43 +139,122 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhlIE5vcnRod2VzdCBMb2dpYyBNSVBJIERTSSBob3N0IGNvbnRyb2xsZXIgZW1iZWRkZWQgaW4g
-aS5NWDhxeHAKd29ya3Mgd2l0aCBhIE1peGVsIE1JUEkgRFBIWSArIExWRFMgUEhZIGNvbWJvIHRv
-IHN1cHBvcnQgZWl0aGVyCmEgTUlQSSBEU0kgZGlzcGxheSBvciBhIExWRFMgZGlzcGxheS4gIFNv
-LCB0aGlzIHBhdGNoIGNhbGxzCnBoeV9zZXRfbW9kZSgpIGZyb20gbndsX2RzaV9tb2RlX3NldCgp
-IHRvIHNldCBQSFkgbW9kZSB0byBNSVBJIERQSFkKZXhwbGljaXRseS4KCkNjOiBHdWlkbyBHw7xu
-dGhlciA8YWd4QHNpZ3hjcHUub3JnPgpDYzogUm9iZXJ0IENoaXJhcyA8cm9iZXJ0LmNoaXJhc0Bu
-eHAuY29tPgpDYzogTWFydGluIEtlcHBsaW5nZXIgPG1hcnRpbi5rZXBwbGluZ2VyQHB1cmkuc20+
-CkNjOiBBbmRyemVqIEhhamRhIDxhbmRyemVqLmhhamRhQGludGVsLmNvbT4KQ2M6IE5laWwgQXJt
-c3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT4KQ2M6IExhdXJlbnQgUGluY2hhcnQgPExh
-dXJlbnQucGluY2hhcnRAaWRlYXNvbmJvYXJkLmNvbT4KQ2M6IEpvbmFzIEthcmxtYW4gPGpvbmFz
-QGt3aWJvby5zZT4KQ2M6IEplcm5laiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BnbWFpbC5jb20+
-CkNjOiBEYXZpZCBBaXJsaWUgPGFpcmxpZWRAbGludXguaWU+CkNjOiBEYW5pZWwgVmV0dGVyIDxk
-YW5pZWxAZmZ3bGwuY2g+CkNjOiBOWFAgTGludXggVGVhbSA8bGludXgtaW14QG54cC5jb20+ClNp
-Z25lZC1vZmYtYnk6IExpdSBZaW5nIDx2aWN0b3IubGl1QG54cC5jb20+Ci0tLQp2Ny0+djg6Ciog
-UmVzZW5kIHdpdGggQW5kcnplaidzIGFuZCBKZXJuZWoncyBtYWlsIGFkZHJlc3NlZCB1cGRhdGVk
-LgoKdjYtPnY3OgoqIE5vIGNoYW5nZS4KCnY1LT52NjoKKiBSZWJhc2UgdGhlIHNlcmllcyB1cG9u
-IHY1LjE3LXJjMS4KKiBTZXQgUEhZIG1vZGUgaW4gLT5tb2RlX3NldCgpIGluc3RlYWQgb2YgLT5w
-cmVfZW5hYmxlKCkgaW4gdGhlIG53bC1kc2kKICBicmlkZ2UgZHJpdmVyIGR1ZSB0byB0aGUgcmVi
-YXNlLgoqIERyb3AgR3VpZG8ncyBSLWIgdGFnIGR1ZSB0byB0aGUgcmViYXNlLgoKdjQtPnY1Ogoq
-IE5vIGNoYW5nZS4KCnYzLT52NDoKKiBObyBjaGFuZ2UuCgp2Mi0+djM6CiogTm8gY2hhbmdlLgoK
-djEtPnYyOgoqIEFkZCBHdWlkbydzIFItYiB0YWcuCgogZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9u
-d2wtZHNpLmMgfCA2ICsrKysrKwogMSBmaWxlIGNoYW5nZWQsIDYgaW5zZXJ0aW9ucygrKQoKZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS5jIGIvZHJpdmVycy9ncHUv
-ZHJtL2JyaWRnZS9ud2wtZHNpLmMKaW5kZXggZDU5NDU1MDFhNWVlLi44NWJhYjczNzJhZjEgMTAw
-NjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS5jCisrKyBiL2RyaXZlcnMv
-Z3B1L2RybS9icmlkZ2UvbndsLWRzaS5jCkBAIC02NjYsNiArNjY2LDEyIEBAIHN0YXRpYyBpbnQg
-bndsX2RzaV9tb2RlX3NldChzdHJ1Y3QgbndsX2RzaSAqZHNpKQogCQlyZXR1cm4gcmV0OwogCX0K
-IAorCXJldCA9IHBoeV9zZXRfbW9kZShkc2ktPnBoeSwgUEhZX01PREVfTUlQSV9EUEhZKTsKKwlp
-ZiAocmV0IDwgMCkgeworCQlEUk1fREVWX0VSUk9SKGRldiwgIkZhaWxlZCB0byBzZXQgRFNJIHBo
-eSBtb2RlOiAlZFxuIiwgcmV0KTsKKwkJZ290byB1bmluaXRfcGh5OworCX0KKwogCXJldCA9IHBo
-eV9jb25maWd1cmUoZHNpLT5waHksIHBoeV9jZmcpOwogCWlmIChyZXQgPCAwKSB7CiAJCURSTV9E
-RVZfRVJST1IoZGV2LCAiRmFpbGVkIHRvIGNvbmZpZ3VyZSBEU0kgcGh5OiAlZFxuIiwgcmV0KTsK
-LS0gCjIuMjUuMQoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+This patch allows LVDS PHYs to be configured through
+the generic functions and through a custom structure
+added to the generic union.
+
+The parameters added here are based on common LVDS PHY
+implementation practices.  The set of parameters
+should cover all potential users.
+
+Cc: Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: NXP Linux Team <linux-imx@nxp.com>
+Signed-off-by: Liu Ying <victor.liu@nxp.com>
+---
+v7->v8:
+* Trivial kernel doc style fix - add '*'.
+
+v6->v7:
+* Update the year of copyright.
+* Better variable explanation for bits_per_lane_and_dclk_cycle.
+
+v5->v6:
+* Rebase upon v5.17-rc1.
+
+v4->v5:
+* Align kernel-doc style to include/linux/phy/phy.h. (Vinod)
+* Trivial tweaks.
+* Drop Robert's R-b tag.
+
+v3->v4:
+* Add Robert's R-b tag.
+
+v2->v3:
+* No change.
+
+v1->v2:
+* No change.
+
+ include/linux/phy/phy-lvds.h | 32 ++++++++++++++++++++++++++++++++
+ include/linux/phy/phy.h      |  4 ++++
+ 2 files changed, 36 insertions(+)
+ create mode 100644 include/linux/phy/phy-lvds.h
+
+diff --git a/include/linux/phy/phy-lvds.h b/include/linux/phy/phy-lvds.h
+new file mode 100644
+index 000000000000..09931d080a6d
+--- /dev/null
++++ b/include/linux/phy/phy-lvds.h
+@@ -0,0 +1,32 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright 2020,2022 NXP
++ */
++
++#ifndef __PHY_LVDS_H_
++#define __PHY_LVDS_H_
++
++/**
++ * struct phy_configure_opts_lvds - LVDS configuration set
++ * @bits_per_lane_and_dclk_cycle:	Number of bits per lane per differential
++ *					clock cycle.
++ * @differential_clk_rate:		Clock rate, in Hertz, of the LVDS
++ *					differential clock.
++ * @lanes:				Number of active, consecutive,
++ *					data lanes, starting from lane 0,
++ *					used for the transmissions.
++ * @is_slave:				Boolean, true if the phy is a slave
++ *					which works together with a master
++ *					phy to support dual link transmission,
++ *					otherwise a regular phy or a master phy.
++ *
++ * This structure is used to represent the configuration state of a LVDS phy.
++ */
++struct phy_configure_opts_lvds {
++	unsigned int	bits_per_lane_and_dclk_cycle;
++	unsigned long	differential_clk_rate;
++	unsigned int	lanes;
++	bool		is_slave;
++};
++
++#endif /* __PHY_LVDS_H_ */
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index f3286f4cd306..b1413757fcc3 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -17,6 +17,7 @@
+ #include <linux/regulator/consumer.h>
+ 
+ #include <linux/phy/phy-dp.h>
++#include <linux/phy/phy-lvds.h>
+ #include <linux/phy/phy-mipi-dphy.h>
+ 
+ struct phy;
+@@ -57,10 +58,13 @@ enum phy_media {
+  *		the MIPI_DPHY phy mode.
+  * @dp:		Configuration set applicable for phys supporting
+  *		the DisplayPort protocol.
++ * @lvds:	Configuration set applicable for phys supporting
++ *		the LVDS phy mode.
+  */
+ union phy_configure_opts {
+ 	struct phy_configure_opts_mipi_dphy	mipi_dphy;
+ 	struct phy_configure_opts_dp		dp;
++	struct phy_configure_opts_lvds		lvds;
+ };
+ 
+ /**
+-- 
+2.25.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
