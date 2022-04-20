@@ -4,86 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F55CC433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Apr 2022 13:05:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B59D3C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Apr 2022 15:25:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MYgdmEo7Wqrt5pZB86gXL0bsC4pg9b835Wk6pRPxHNI=; b=r3J1OC0PmD853G
-	zWa+4D47OM/0rKA/4nGAt+O8eMRmb32Umsr3f4bv59DfnHtJIzeDLycfF3xP1Qe20b3MohQI7wD8/
-	Gk1vRFGlX1UebqoCK3+k50gOoaeHV8jPad4GOgJznI++oc3bftu6FNHYw0tYBczBddgSteYRGIez9
-	SX0QcaSapyJEOJx+DgN7jjSzg8YNPOvdnjqotzAALHcfx4ECqYXvBbJKJW6ermrnGMtvseIC295/s
-	rrC4uIZhIPtUuKqqgRMCSHggo9FoKuPqbWtJP8jtVbRjtt/71NAtpu2YFrSyujObhakJqjfA0lysT
-	TZfEUnBjpU7PvaiZJL8w==;
+	List-Owner; bh=4t4GHA+/qTRR5Df7juYQjfCup8c27GLmik5lTXcBq7c=; b=V0GWBSHrPBoXQ3
+	hX5gnNxRRmlbEPdYfec5GORr3k+v68atqtuMJFSRbFBD8grWQxMcJF2P0gkKG+Rdl3n8FX180D3/3
+	go+7nWIbF06EJdj/PGYgI1YyjdAD8a16z31vvL8aQjkDphdN2o/XhF+mS4vuSRLqDV5dnNYMbmhLl
+	BvgvBV8SMuiUhRejRj08mMEM9/Grd0fRTu//CK//u1xYMnTWsqMGV+DCHxVGZ2NYCiYpZKo10LTX6
+	jcYEMjzZbKig4o2NtL/s2QgYrptu+0D84dMkyKdXKxWUiU2WP5qm/VuMEdpRM7bIh0rVsdzGKgU8u
+	VZnW0yNvRfyoKOZNV7Zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nhA1H-0094SQ-D7; Wed, 20 Apr 2022 13:05:19 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1nhCDH-009Z8M-3n; Wed, 20 Apr 2022 15:25:51 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhA13-0094O7-9R; Wed, 20 Apr 2022 13:05:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1650459879;
- bh=wOmewmRrbd5TBpBZqdHt25VeQoHFPRad0GP83DFE/KA=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=KnsycIGSKRyZ0zSYB26Acbmgps+aknmDjPdrIVk97n9wZCzqTb9JUdQPb+kLOgW9s
- 1eiGH1oOYrToBBcafHSbdNfR0kCycUlJ8Mltx4UTkg8M3VmXVzi+V0E9A3d0zyMJmy
- 6TXFZ+TQ3Lk+jyJLchu4+Lw+zbDqL7teMZ1oh1rs=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [217.61.147.126] ([217.61.147.126]) by web-mail.gmx.net
- (3c-app-gmx-bap05.server.lan [172.19.172.75]) (via HTTP); Wed, 20 Apr 2022
- 15:04:38 +0200
+ id 1nhCDF-009Z79-23
+ for linux-phy@lists.infradead.org; Wed, 20 Apr 2022 15:25:50 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id DC3D761947;
+ Wed, 20 Apr 2022 15:25:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C25F1C385A1;
+ Wed, 20 Apr 2022 15:25:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1650468346;
+ bh=IFO7zkqpAOdI3qLxiErIiXVRmsyaS2XtE7709e9/pfk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=XE3+Jgt/WUc1wrYPDIy4lj0c/50nxH5J+kZkGxQiWpBbyubqdMBIQcE6mzq2w2nSZ
+ +A3qDqwP2IvTK7Svc/D9oXdHOqKpaqQj2xICTE502RnER3BMIx7Z/frwUYTev8xIr9
+ yZIpLyzCs0OXA1URxzFM+W5NAcv7FTnJYsJVAPw41wfF0ttJHwXLEmDsx3aUDiiNkz
+ U3yzXJ3yoosw464XcZpsSO2h9Vg5RBDovaaRKoF6mlWVx+0WLUr4tPMvJjENKDTpaD
+ VHc+f7rktWx5rnmtiXkluzxwJa0iTri3vUyR5QHtPeWFSDJGPcjBxYuT2U/LEMBCOA
+ TBMBuLj9tmQzA==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+ (envelope-from <johan+linaro@kernel.org>)
+ id 1nhCD6-0001Sc-1l; Wed, 20 Apr 2022 17:25:40 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Johan Hovold <johan+linaro@kernel.org>,
+ Evan Green <evgreen@chromium.org>
+Subject: [PATCH 2/2] phy: qcom-qmp: fix pipe-clock imbalance on power-on
+ failure
+Date: Wed, 20 Apr 2022 17:23:31 +0200
+Message-Id: <20220420152331.5527-3-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220420152331.5527-1-johan+linaro@kernel.org>
+References: <20220420152331.5527-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Message-ID: <trinity-bf1af823-9e46-4da7-bec5-6e749a4dc2e3-1650459878842@3c-app-gmx-bap05>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Frank Wunderlich <linux@fw-web.de>, linux-rockchip@lists.infradead.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
- <kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel
- <p.zabel@pengutronix.de>, Johan Jonker <jbx6244@gmail.com>, Peter Geis
- <pgwipeout@gmail.com>, Michael Riesch <michael.riesch@wolfvision.net>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org
-Subject: Aw: Re:  Re: [RFC/RFT 2/6] dt-bindings: soc: grf: add
- pcie30-{phy,pipe}-grf
-Date: Wed, 20 Apr 2022 15:04:38 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <8b9ad0a6-acc0-aad9-c49d-e4a4b38374bb@linaro.org>
-References: <20220416135458.104048-1-linux@fw-web.de>
- <20220416135458.104048-3-linux@fw-web.de>
- <02b3fe1c-12f9-8f96-a9b5-df44ca001825@linaro.org>
- <trinity-c60358c4-ebd1-47bf-91e0-9ae0beefd39f-1650389348418@3c-app-gmx-bap70>
- <8b9ad0a6-acc0-aad9-c49d-e4a4b38374bb@linaro.org>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:9xmgXgx0V9zQ9oJQ2v4jyZ8k5GDOHaZWDau5uvMohn+mtj1rU3a888flYq5JkzAbi24mD
- FHd6jW/TzjLC2M3aDwNp3kInEFdlDMp+mq2ha/0uYCNocwhoVXzNtHCUDW7cXu16sKCUH7D36rOs
- Ew8bePdsiJqO5iuOwaJ7KZfa213xpuyDOaVzLGmQW0VEb7L3Qr3ka6J3KZZOLDxdbz0DTagUk4HL
- FwkqjHfbMegxDqz0IhXu0RQO3z9bvFV+F2dOOCG/bw04UaHRR/FCH+hlHTqequG6P/qVknBwxrSN
- Gs=
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3yJGss0AXv8=:3z9IDXCNImRErPGVveLkWg
- 9FT2mUQ/uub+5d3eCaoGXd8z2JJQJ/cbe3gPEp1CpWlXoCK1YZu2z2vCf8SSfXIL1vfVKLsa9
- uZU/9l50P7Fzg+caJijuhBzryf2tfXTOUVtRuT/nxeYZbwOBle3xBUqNdyqqI975vBwyydTan
- BDBPMZm4975M4ANAAYxWJQ0XFVy9wdpSuE02aTa/9q96WzGnyTeiwkIV3pKE9btu+H1eidmcL
- NVYNXBWtRxfs/WMYzclPMAgrKHAqRyP9TcaUtEkCiaPG23o6UPHdlWj0sB8xSGYk0go2NPbH6
- 2npwGihW0ljkW+dulz39OoBpJmnAPzjJltc/9A8E42yXqB1N0qcATtrTE0BNTMQB0/R+5GyFP
- Gp/kgCGlpHQEw+kkHMXi9m9byjZu4qjgBlOR5KsHxgZv0pgI3yiwg2FSVQAgzQ7ADvqp3On+G
- 5pGfPsM0nZLXqHwjBEeOTSl/i3s5SNw1WiNnXEH3GesYaBvMRPWwzAIyPrJlAGPLaPyI14Izl
- +Q8adU+ytcdUVAtt9bFmjJqfHOg755J1UDNVsBOSeHMnopes1sP6LIkrcqQi7DNjKDVtTVgmi
- qs8w2EXFR/n5kqKO3AkdVso57wm/v3dxxGErPIQkuCEg3JE/52lrMITvVODGmWkewej5Y/jfX
- 3uBxui4FFo3Vv0RUVTD3k3/gj0hV4diJ5Zp4jCf5RyWfmssGdNL6/an0zz/sVu7wbNRBGjxzv
- FbDUW7w2OuiN+EVheyKLggtZM2QoweeZGeiUdz9rh8IAbHNuPgK5qxCt4tt6ogkiIeEj4jZ7C
- UBYIbbG
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220420_060505_911139_35D1D611 
-X-CRM114-Status: GOOD (  14.17  )
+X-CRM114-CacheID: sfid-20220420_082549_176189_B417DAFC 
+X-CRM114-Status: GOOD (  10.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,47 +80,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> Gesendet: Dienstag, 19. April 2022 um 21:40 Uhr
-> Von: "Krzysztof Kozlowski" <krzysztof.kozlowski@linaro.org>
-> On 19/04/2022 19:29, Frank Wunderlich wrote:
-> >> Gesendet: Montag, 18. April 2022 um 17:54 Uhr
-> >> Von: "Krzysztof Kozlowski" <krzysztof.kozlowski@linaro.org>
-> >
-> >>> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> >>> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> >>> @@ -14,6 +14,8 @@ properties:
-> >>>      oneOf:
-> >>>        - items:
-> >>>            - enum:
-> >>> +              - rockchip,pcie30-phy-grf
-> >>> +              - rockchip,pcie30-pipe-grf
-> >>
-> >> These are without SoC parts. Are these PCIe v3 General Register Files
-> >> part of some PCIe spec?
-> >
-> > imho they are shared across SoCs rk3568 and rk3588, but have only seen rk3568 implementation yet.
-> > PCIe driver currently supports these 2 Soc (different offsets in the Phy-GRF), but can only test rk3568.
-> >
-> > pipe-grf seems only be used for rk35688 (offset used in probe is defined for this SoC), which i cannot test.
-> >
-> > so i have left them SoC independed.
->
-> Compatibles should be SoC dependent, with some exceptions. Lack of
-> documentation or lack of possibility of testing is actually argument
-> against any exception, so they should be SoC specific/dependent.
+Make sure to disable the pipe clock also if ufs-reset deassertion fails
+during power on.
 
-so i will change to
+Note that the ufs-reset is asserted in qcom_qmp_phy_com_exit().
 
-              - rockchip,rk3568-pcie30-phy-grf
-              - rockchip,rk3588-pcie30-pipe-grf
+Fixes: c9b589791fc1 ("phy: qcom: Utilize UFS reset controller")
+Cc: Evan Green <evgreen@chromium.org>
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
-and maybe add
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
+index 8c2300bfe489..7d2d1ab061f7 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
+@@ -5375,14 +5375,14 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
+ 		if (ret) {
+ 			dev_err(qmp->dev, "lane%d reset deassert failed\n",
+ 				qphy->index);
+-			goto err_lane_rst;
++			return ret;
+ 		}
+ 	}
+ 
+ 	ret = clk_prepare_enable(qphy->pipe_clk);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
+-		goto err_clk_enable;
++		goto err_reset_lane;
+ 	}
+ 
+ 	/* Tx, Rx, and PCS configurations */
+@@ -5433,7 +5433,7 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
+ 
+ 	ret = reset_control_deassert(qmp->ufs_reset);
+ 	if (ret)
+-		goto err_lane_rst;
++		goto err_disable_pipe_clk;
+ 
+ 	qcom_qmp_phy_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl,
+ 			       cfg->pcs_misc_tbl_num);
+@@ -5472,17 +5472,17 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
+ 					 PHY_INIT_COMPLETE_TIMEOUT);
+ 		if (ret) {
+ 			dev_err(qmp->dev, "phy initialization timed-out\n");
+-			goto err_pcs_ready;
++			goto err_disable_pipe_clk;
+ 		}
+ 	}
+ 	return 0;
+ 
+-err_pcs_ready:
++err_disable_pipe_clk:
+ 	clk_disable_unprepare(qphy->pipe_clk);
+-err_clk_enable:
++err_reset_lane:
+ 	if (cfg->has_lane_rst)
+ 		reset_control_assert(qphy->lane_rst);
+-err_lane_rst:
++
+ 	return ret;
+ }
+ 
+-- 
+2.35.1
 
-              - rockchip,rk3588-pcie30-phy-grf
-
-these compatibles are not directly taken by any driver as the nodes be linked via phandle (rockchip,phy-grf property) from the phy driver (rockchip,rk3568-pcie3-phy / rockchip,rk3588-pcie3-phy). So these compatibles are only in the yaml and dts present.
-
-regards Frank
 
 -- 
 linux-phy mailing list
