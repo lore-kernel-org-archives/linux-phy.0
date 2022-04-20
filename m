@@ -4,66 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACDE6C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Apr 2022 07:30:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B4FCC433FE
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Apr 2022 08:50:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rlkw4jUNWUQlzEKJGonSuG1PJJhVt3UMrzGgQPQgEfA=; b=fK5E2ixFDkOy24
-	8obO/Tt6ydiOZZRg5aqk8WCvPbpbHtrZaWkI3n1cdh/9bmCD8VG9USmwwHckbhCRHbSBRmDuP6z89
-	GDKC0HaiqQSZXyj1GWlOk2gyX1YgLlkFOESgitMV8gjQ77byn3K3XAryQEPcng9S4FOK5s99KFaKg
-	fsWPOslrypo48JgNH4vEPtJAGp8/LLHddZrN4uEa3rccIfO9UQMERqtf6z+jnGwvlva5436iO345K
-	QquGcw9kyELQdn/Sz6rJHYCYQp93vsgusaDFF8Kop3/ytEQwbu5L1QR0PFib1C4cwe5yv9fGhjmNE
-	QTE4FpHVuLjUOMgon3eg==;
+	List-Owner; bh=O+3mCVtfkOdH4Jq8iV3+VFgUZa1lCG4chkxUd4CjsXE=; b=J48Uiv0sL1Lg/h
+	ZG7wvU+b1UrIoJReX2fyxhhzrA0POgvYtr0oOf86wrsQHgtGlYNfw1p8vd64O3CgWDU3dEODrFKw2
+	jNQeNLqBAxKZBoEnvWvJ+MbOEydcDPbuPkUYYifCy1Lz7Hn8mcaX/ZB80UvkFKT21ryg9nev6BlY/
+	YBKA3nDqYTiYOKlnannGpUkmNMxvhVzE/NKs6J5wiIUlesUwwafT/TXYAGkEs2fu7yZx90HW/+yDk
+	pd+P663R31t2ukblYPk0rphkjXX3ADrWqNkLG4gNCpV4a8Rs2jc+/gvkDZg4zE1UkTFTmmNF32BR8
+	C6VK7e7pahQa/W7XIt4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nh4nK-007lkj-3F; Wed, 20 Apr 2022 07:30:34 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nh62S-0089lV-M6; Wed, 20 Apr 2022 08:50:16 +0000
+Received: from m-r2.th.seeweb.it ([5.144.164.171])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nh4n4-007ldX-SC; Wed, 20 Apr 2022 07:30:20 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 8368C618B3;
- Wed, 20 Apr 2022 07:30:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF1DAC385A0;
- Wed, 20 Apr 2022 07:30:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1650439816;
- bh=+EDTmtai/jQZPWiRlzQLKQkboIqyWdx84ej+J0tgCT0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lbzpvm/rXJqIP40ZLzhNxJqSNboD4Hfk+B9K54hBNd9SBa1jZSKJAq2lqjHx5lTiF
- mHqnxAuKK9c96NUFSxyh9indJmJNNrFm60iDqkFLKpSBXKxorqWucVtDyZ4Rak6JAf
- tkWpFesOVCPMSmHBmRJgtbWu/RPnPFf4ojkPRdkbJpfkztunS9KhCVQVBBQjtqWM46
- KCAxxbGuDm+ycKV08gp9I0xd/vBXuTSv3ZScZh4X0VpsBD8Xwnd3TefnrnK+N6O/9B
- TLysoHxyA4HDXUahRW9izrVaarTquVdArJyMsTK1QHAgD20fmAbYVTFYXIH6hUhaaE
- K9CmiG516V9AA==
-Date: Wed, 20 Apr 2022 13:00:12 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Liu Ying <victor.liu@nxp.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, kishon@ti.com,
- robh+dt@kernel.org, krzk+dt@kernel.org, andrzej.hajda@intel.com,
- narmstrong@baylibre.com, robert.foss@linaro.org,
- Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
- jernej.skrabec@gmail.com, airlied@linux.ie, daniel@ffwll.ch,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, linux-imx@nxp.com, agx@sigxcpu.org,
- robert.chiras@nxp.com, martin.kepplinger@puri.sm
-Subject: Re: [PATCH resend v8 0/5] phy: phy-fsl-imx8-mipi-dphy: Add i.MX8qxp
- LVDS PHY mode support
-Message-ID: <Yl+2hOIcr6CrOv+T@matsya>
-References: <20220419010852.452169-1-victor.liu@nxp.com>
+ id 1nh62O-0089go-JM
+ for linux-phy@lists.infradead.org; Wed, 20 Apr 2022 08:50:15 +0000
+Received: from SoMainline.org (D57D4C6E.static.ziggozakelijk.nl
+ [213.125.76.110])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest
+ SHA256) (No client certificate requested)
+ by m-r2.th.seeweb.it (Postfix) with ESMTPSA id 9AB6F3F7B4;
+ Wed, 20 Apr 2022 10:50:01 +0200 (CEST)
+Date: Wed, 20 Apr 2022 10:49:59 +0200
+From: Marijn Suijten <marijn.suijten@somainline.org>
+To: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ konrad.dybcio@somainline.org, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, bhupesh.linux@gmail.com,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org
+Subject: Re: [PATCH v2 1/1] arm64: dts: qcom: sm8350-sagami: usb qmp phy node
+ - add 'vdda-pll-supply' & 'vdda-phy-supply'
+Message-ID: <20220420084959.fvswkrcimkvxleii@SoMainline.org>
+References: <20220419205854.1269922-1-bhupesh.sharma@linaro.org>
+ <Yl9y668H/N+bcrP4@builder.lan>
+ <CAH=2NtwCsRmPbBJ6SAb4fL_Di3SxfUsw=mZMrRGyefd+NW=PQQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220419010852.452169-1-victor.liu@nxp.com>
+In-Reply-To: <CAH=2NtwCsRmPbBJ6SAb4fL_Di3SxfUsw=mZMrRGyefd+NW=PQQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220420_003019_018276_58A8EC20 
-X-CRM114-Status: GOOD (  15.29  )
+X-CRM114-CacheID: sfid-20220420_015012_982570_420FA55E 
+X-CRM114-Status: GOOD (  33.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,38 +67,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19-04-22, 09:08, Liu Ying wrote:
-> Hi,
+On 2022-04-20 12:28:24, Bhupesh Sharma wrote:
+> Hi Bjorn,
 > 
-> This is the v8 series to add i.MX8qxp LVDS PHY mode support for the Mixel
-> PHY in the Freescale i.MX8qxp SoC.
+> On Wed, 20 Apr 2022 at 08:11, Bjorn Andersson
+> <bjorn.andersson@linaro.org> wrote:
+> >
+> > On Tue 19 Apr 15:58 CDT 2022, Bhupesh Sharma wrote:
+> >
+> > How about making the subject:
+> >
+> > "arm64: dts: qcom: sm8350-sagami: add supplies to USB phy node"
+> >
+> > It still says the same thing, but in much less characters.
 > 
-> The Mixel PHY is MIPI DPHY + LVDS PHY combo, which can works in either
-> MIPI DPHY mode or LVDS PHY mode.  The PHY mode is controlled by i.MX8qxp
-> SCU firmware.  The PHY driver would call a SCU function to configure the
-> mode.
+> Sure, this wording seems better to me. Will fix this in v3.
 > 
-> The PHY driver is already supporting the Mixel MIPI DPHY in i.MX8mq SoC,
-> where it appears to be a single MIPI DPHY.
+> > > As suggested by Bjorn during review of [1], the 'vdda-pll-supply' &
+> > > 'vdda-phy-supply' supplies denote the power for the bus and the
+> > > clock of the usb qmp phy and are used by the qcom qmp phy driver.
+> > >
+> > > So, its safe to assume that the two regulators are the same as on
+> > > the MTP. So let's wire them up in the same way as the MTP.
+> > >
+> >
+> > I'm not sure it's "safe to assume", so I would like to get Konrad's
+> > input before merging this.
 > 
-> 
-> Patch 1/5 sets PHY mode in the Northwest Logic MIPI DSI host controller
-> bridge driver, since i.MX8qxp SoC embeds this controller IP to support
-> MIPI DSI displays together with the Mixel PHY.
-> 
-> Patch 2/5 allows LVDS PHYs to be configured through the generic PHY functions
-> and through a custom structure added to the generic PHY configuration union.
-> 
-> Patch 3/5 converts mixel,mipi-dsi-phy plain text dt binding to json-schema.
-> 
-> Patch 4/5 adds dt binding support for the Mixel combo PHY in i.MX8qxp SoC.
-> 
-> Patch 5/5 adds the i.MX8qxp LVDS PHY mode support in the Mixel PHY driver.
+> Right. @Konrad Dybcio , @Marijn Suijten - Any comments on this fix?
+> Please share your thoughts.
 
-Applied patch 2-5 to phy-next, thanks
+All we can do is read downstream sources (and/or check compiled DTS
+after all overrides have been flattened together), or read sysfs to
+validate values where applicable.
 
--- 
-~Vinod
+These are indeed the two regulators used by USB in:
+
+	https://github.com/sonyxperiadev/kernel/blob/7378fb627b546e0eae24cccd3ab37fa9e0802f95/arch/arm64/boot/dts/qcom/lahaina-usb.dtsi#L146-L149
+
+And the voltages are correct for our board too as per:
+
+	https://github.com/sonyxperiadev/kernel/blob/7378fb627b546e0eae24cccd3ab37fa9e0802f95/arch/arm64/boot/dts/qcom/lahaina-regulators.dtsi
+
+It appears only L6 is used by other hardware nodes, but that should be
+fine.
+
+As such, with the suggestions from Bjorn applied:
+
+	Reviewed-by: Marijn Suijten <marijn.suijten@somainline.org>
+
+- Marijn
+
+> Thanks,
+> Bhupesh
+> 
+> > > In absence of the same 'make dtbs_check' leads to following warnings:
+> > >
+> > > arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dt.yaml:
+> > >  phy-wrapper@88e9000: 'vdda-phy-supply' is a required property
+> > >
+> > > arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dt.yaml:
+> > >  phy-wrapper@88e9000: 'vdda-pll-supply' is a required property
+> > >
+> >
+> > This is good!
+> >
+> > Thanks for the patch Bhupesh,
+> > Bjorn
+> >
+> > > [1]. https://lore.kernel.org/lkml/20220228123019.382037-9-bhupesh.sharma@linaro.org/
+> > >
+> > > Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > > Cc: konrad.dybcio@somainline.org
+> > > Cc: Vinod Koul <vkoul@kernel.org>
+> > > Cc: Marijn Suijten <marijn.suijten@somainline.org>
+> > > Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+> > > ---
+> > > Changes since v1:
+> > > -----------------
+> > > - v1 can be found here: https://www.spinics.net/lists/linux-arm-msm/msg108467.html
+> > > - Fixed the commit message to read usb qmp phy instead of ufs phy (which
+> > >   was introduced erroraneously in the commit log).
+> > >
+> > >  .../dts/qcom/sm8350-sony-xperia-sagami.dtsi   | 25 +++++++++++++++++++
+> > >  1 file changed, 25 insertions(+)
+> > >
+> > > diff --git a/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi b/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi
+> > > index 90b13cbe2fa6..238ac9380ca2 100644
+> > > --- a/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi
+> > > +++ b/arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami.dtsi
+> > > @@ -3,6 +3,7 @@
+> > >   * Copyright (c) 2021, Konrad Dybcio <konrad.dybcio@somainline.org>
+> > >   */
+> > >
+> > > +#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
+> > >  #include "sm8350.dtsi"
+> > >  #include "pm8350.dtsi"
+> > >  #include "pm8350b.dtsi"
+> > > @@ -75,6 +76,27 @@ ramoops@ffc00000 {
+> > >       };
+> > >  };
+> > >
+> > > +&apps_rsc {
+> > > +     pm8350-rpmh-regulators {
+> > > +             compatible = "qcom,pm8350-rpmh-regulators";
+> > > +             qcom,pmic-id = "b";
+> > > +
+> > > +             vreg_l1b_0p88: ldo1 {
+> > > +                     regulator-name = "vreg_l1b_0p88";
+> > > +                     regulator-min-microvolt = <912000>;
+> > > +                     regulator-max-microvolt = <920000>;
+> > > +                     regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
+> > > +             };
+> > > +
+> > > +             vreg_l6b_1p2: ldo6 {
+> > > +                     regulator-name = "vreg_l6b_1p2";
+> > > +                     regulator-min-microvolt = <1200000>;
+> > > +                     regulator-max-microvolt = <1208000>;
+> > > +                     regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
+> > > +             };
+> > > +     };
+> > > +};
+> > > +
+> > >  &adsp {
+> > >       status = "okay";
+> > >       firmware-name = "qcom/adsp.mbn";
+> > > @@ -256,4 +278,7 @@ &usb_1_hsphy {
+> > >
+> > >  &usb_1_qmpphy {
+> > >       status = "okay";
+> > > +
+> > > +     vdda-phy-supply = <&vreg_l6b_1p2>;
+> > > +     vdda-pll-supply = <&vreg_l1b_0p88>;
+> > >  };
+> > > --
+> > > 2.35.1
+> > >
 
 -- 
 linux-phy mailing list
