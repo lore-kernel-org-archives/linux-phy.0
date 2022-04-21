@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ADA2C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 10:23:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A1E6C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 10:23:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y6Lt56oy1btUc/fpGU53BUJoL0V2Z3uGrA3uRTWKXhI=; b=uUj2gM/E5OX+yM
-	gpgn3cRY+pyZNlra5AjfH9hk2bgxxFy8AXNNkcRJOFxJlCiULSTMoSXpBG/43jtcZH4qJUnGjVIpN
-	txFBjB6e0lz6z2qMfM1SKFqFUUk7yXxJQHEg2jaxUmieydKpDVbrYkhsfzClOtIyy/nPHHv+Syol/
-	heif3J2uKLui8mLbi61EpnThi/t17WQx3nYpV3FD5Y3+XJnmEbUaHZOWM80c7nTOj3Yh02xw5dmsS
-	jKLm3Jq0zRRDTa8qzb7eSomUbzKcMKOghk7nJgVZwhFWRkX6h/Dny3Cl5SUCNZkdrajVNKS5RkhjM
-	FejSQESBmB42NpybKj1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6YewFTrisAieUGr+nrM/ngSKkCkxj272+lGzmHbe3UU=; b=nvpQWxfG2dZOlL
+	0lk3rdWztlqMlpXKrFtvfbOw90ooWUnRckv9pggAWfVMsBlLvF1YJjdIQ0qe5gIUBZDpjtQ2VV8LZ
+	HmW4LJwL4z3amhtl+Cfovk1tg1cBtC3zk0eJsKwAjKe3mSqQb68WRo8WUpeeHXBgraxE8ldGsJN5y
+	OASgLrNqNBw5RyH7M9gWikBJRvFmL+rlfEYVRQlU4VR/EqLW1xbKU4yaXoxZJfRiSLLvlldxL14Id
+	ztUBSH+58Iew6dQxeS4c6ZBiCqwNv30Hb+3QeAWnaI6PJMyiwFjprL4PIfHlC2/w9J+qGnbRWx0OA
+	+NBSWkwNwbACIunN4SNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nhTyN-00D1CI-M6; Thu, 21 Apr 2022 10:23:39 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nhTyQ-00D1DM-V1; Thu, 21 Apr 2022 10:23:42 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhTyJ-00D19h-GQ
- for linux-phy@lists.infradead.org; Thu, 21 Apr 2022 10:23:38 +0000
+ id 1nhTyL-00D1Af-6I
+ for linux-phy@lists.infradead.org; Thu, 21 Apr 2022 10:23:39 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 4AC63619D7;
- Thu, 21 Apr 2022 10:23:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A53C7C385A1;
+ by ams.source.kernel.org (Postfix) with ESMTPS id 9A04AB8233A;
+ Thu, 21 Apr 2022 10:23:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B6AE8C385AD;
  Thu, 21 Apr 2022 10:23:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=k20201202; t=1650536613;
- bh=7GtaheXDo0Wz45oqsEBVEP7Qvw6FlqTw7YTi2BpvukQ=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DgodGQmB62XI0kG3Z+hJsbIUpXQxppBmzHlQezGqeNDA39jYkelcUjFxqSr3WKd6K
- 75pVa95DjrWIdQ8DRHN5P3LJ0C37uKFnZ1rG4NNeOojx2dzc1K0nPbA/CYrN3OnktH
- Bz2q84RGOwD8fghdDfKM9mlCh+SggDJol+JRUa2sRcJlKWQsvcbE7zkgtPvc5pvyH6
- PEUO+2KDSvaADGy6i/5GqQZp1P51Zs+xoNG5O+aF2Qxn+gnMQ4niLZAZzOYbXgph76
- 0Cc2S8VeMJnQak7q6/LhXCWcSERc9V3If/o9firUGi8Rmk64efPs3GCANR6/6sl/MJ
- kovzwkFcKpI7w==
+ bh=OPcQi8PNLxtf9QqmHXSHr2vOBK8ZZT68KQP3kx1rv+E=;
+ h=From:To:Cc:Subject:Date:From;
+ b=qbA6edcrA92ddaDuiDgGIQ8er1FIBNdhw16dpGwwZRTMNAZmAWJ4MjfSCPscdF4BU
+ 5qI71065k50tiLpfjRfpHEr1H926epJOCV9jebBB7ROGCIIUbLkFnAbmSVFzH4rbl4
+ maIrJTsdNvzsYVTzKl+ew6rtiqGgHtM+s/mX39cQRVHiaIFibeWk6+X0H7lOzS7f/8
+ c66O4O1FCb0nxGFiGN3YVPpVnYJLyMasC4O5HZe/mrQ2ocitChiZ+y+oTmzUYVVj8Y
+ dxzndsOM+XUXlziAoTjs2F9+CfXj0kTpYtfV+hq2QNxaDMgLudsjOlZi/oULOZ+Fob
+ guX8zs+eUWbsQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
  (envelope-from <johan+linaro@kernel.org>)
- id 1nhTyB-0004Xi-Fj; Thu, 21 Apr 2022 12:23:27 +0200
+ id 1nhTyA-0004Xc-Fq; Thu, 21 Apr 2022 12:23:27 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -60,16 +60,14 @@ Cc: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
  linux-phy@lists.infradead.org, Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH RFC 3/5] PCI: qcom: Remove unnecessary pipe_clk handling
-Date: Thu, 21 Apr 2022 12:20:39 +0200
-Message-Id: <20220421102041.17345-4-johan+linaro@kernel.org>
+Subject: [PATCH RFC 0/5] phy: qcom-qmp: add support for pipe clock muxing
+Date: Thu, 21 Apr 2022 12:20:36 +0200
+Message-Id: <20220421102041.17345-1-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220421102041.17345-1-johan+linaro@kernel.org>
-References: <20220421102041.17345-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220421_032335_682032_5087F522 
-X-CRM114-Status: GOOD (  14.68  )
+X-CRM114-CacheID: sfid-20220421_032337_575988_2D22D97F 
+X-CRM114-Status: GOOD (  14.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,138 +84,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Some QMP PHYs need to remux to their pipe clock input to the pipe clock
+output generated by the PHY before powering on the PHY and restore the
+default source during power down.
 
-QMP PHY driver already does clk_prepare_enable()/_disable() pipe_clk.
-Remove extra calls to enable/disable this clock from the PCIe driver, so
-that the PHY driver can manage the clock on its own.
+         +---------------+
+         |   PHY block   |<<---------------------------------------+
+         |               |                   +-----+               |
+         |   +-------+   |                   | GCC |               |
+   I/P---^-->|  PLL  |---^--->pipe_clksrc--->|-\   |		   |
+    clk  |   +-------+   |                   |  +--|--->pipe_clk---+
+    	 |		 |	       xo--->|-/   |  
+         +---------------+	             +-----|
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/pci/controller/dwc/pcie-qcom.c | 44 ++------------------------
- 1 file changed, 3 insertions(+), 41 deletions(-)
+This series moves the pipe clock mux handling from PCIe controller
+driver into the PHY driver which already manages the pipe clock as the
+PHY is both the producer of the pipe clock as well as its (primary)
+consumer.
 
-diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-index 774d486bf2f7..6e6e40fbfc13 100644
---- a/drivers/pci/controller/dwc/pcie-qcom.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom.c
-@@ -128,7 +128,6 @@ struct qcom_pcie_resources_2_3_2 {
- 	struct clk *master_clk;
- 	struct clk *slave_clk;
- 	struct clk *cfg_clk;
--	struct clk *pipe_clk;
- 	struct regulator_bulk_data supplies[QCOM_PCIE_2_3_2_MAX_SUPPLY];
- };
- 
-@@ -165,7 +164,6 @@ struct qcom_pcie_resources_2_7_0 {
- 	int num_clks;
- 	struct regulator_bulk_data supplies[2];
- 	struct reset_control *pci_reset;
--	struct clk *pipe_clk;
- 	struct clk *pipe_clk_src;
- 	struct clk *phy_pipe_clk;
- 	struct clk *ref_clk_src;
-@@ -597,8 +595,7 @@ static int qcom_pcie_get_resources_2_3_2(struct qcom_pcie *pcie)
- 	if (IS_ERR(res->slave_clk))
- 		return PTR_ERR(res->slave_clk);
- 
--	res->pipe_clk = devm_clk_get(dev, "pipe");
--	return PTR_ERR_OR_ZERO(res->pipe_clk);
-+	return 0;
- }
- 
- static void qcom_pcie_deinit_2_3_2(struct qcom_pcie *pcie)
-@@ -613,13 +610,6 @@ static void qcom_pcie_deinit_2_3_2(struct qcom_pcie *pcie)
- 	regulator_bulk_disable(ARRAY_SIZE(res->supplies), res->supplies);
- }
- 
--static void qcom_pcie_post_deinit_2_3_2(struct qcom_pcie *pcie)
--{
--	struct qcom_pcie_resources_2_3_2 *res = &pcie->res.v2_3_2;
--
--	clk_disable_unprepare(res->pipe_clk);
--}
--
- static int qcom_pcie_init_2_3_2(struct qcom_pcie *pcie)
- {
- 	struct qcom_pcie_resources_2_3_2 *res = &pcie->res.v2_3_2;
-@@ -694,22 +684,6 @@ static int qcom_pcie_init_2_3_2(struct qcom_pcie *pcie)
- 	return ret;
- }
- 
--static int qcom_pcie_post_init_2_3_2(struct qcom_pcie *pcie)
--{
--	struct qcom_pcie_resources_2_3_2 *res = &pcie->res.v2_3_2;
--	struct dw_pcie *pci = pcie->pci;
--	struct device *dev = pci->dev;
--	int ret;
--
--	ret = clk_prepare_enable(res->pipe_clk);
--	if (ret) {
--		dev_err(dev, "cannot prepare/enable pipe clock\n");
--		return ret;
--	}
--
--	return 0;
--}
--
- static int qcom_pcie_get_resources_2_4_0(struct qcom_pcie *pcie)
- {
- 	struct qcom_pcie_resources_2_4_0 *res = &pcie->res.v2_4_0;
-@@ -1198,8 +1172,7 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
- 			return PTR_ERR(res->ref_clk_src);
- 	}
- 
--	res->pipe_clk = devm_clk_get(dev, "pipe");
--	return PTR_ERR_OR_ZERO(res->pipe_clk);
-+	return 0;
- }
- 
- static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
-@@ -1292,14 +1265,7 @@ static int qcom_pcie_post_init_2_7_0(struct qcom_pcie *pcie)
- 	if (pcie->cfg->pipe_clk_need_muxing)
- 		clk_set_parent(res->pipe_clk_src, res->phy_pipe_clk);
- 
--	return clk_prepare_enable(res->pipe_clk);
--}
--
--static void qcom_pcie_post_deinit_2_7_0(struct qcom_pcie *pcie)
--{
--	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
--
--	clk_disable_unprepare(res->pipe_clk);
-+	return 0;
- }
- 
- static int qcom_pcie_link_up(struct dw_pcie *pci)
-@@ -1449,9 +1415,7 @@ static const struct qcom_pcie_ops ops_1_0_0 = {
- static const struct qcom_pcie_ops ops_2_3_2 = {
- 	.get_resources = qcom_pcie_get_resources_2_3_2,
- 	.init = qcom_pcie_init_2_3_2,
--	.post_init = qcom_pcie_post_init_2_3_2,
- 	.deinit = qcom_pcie_deinit_2_3_2,
--	.post_deinit = qcom_pcie_post_deinit_2_3_2,
- 	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
- };
- 
-@@ -1478,7 +1442,6 @@ static const struct qcom_pcie_ops ops_2_7_0 = {
- 	.deinit = qcom_pcie_deinit_2_7_0,
- 	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
- 	.post_init = qcom_pcie_post_init_2_7_0,
--	.post_deinit = qcom_pcie_post_deinit_2_7_0,
- };
- 
- /* Qcom IP rev.: 1.9.0 */
-@@ -1488,7 +1451,6 @@ static const struct qcom_pcie_ops ops_1_9_0 = {
- 	.deinit = qcom_pcie_deinit_2_7_0,
- 	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
- 	.post_init = qcom_pcie_post_init_2_7_0,
--	.post_deinit = qcom_pcie_post_deinit_2_7_0,
- 	.config_sid = qcom_pcie_config_sid_sm8250,
- };
- 
+This is an alternative to the series posted here
+
+	https://lore.kernel.org/r/20220413233144.275926-1-dmitry.baryshkov@linaro.org
+
+which instead moves the mux handling into the clock drivers and ties
+remuxing to the gating/ungating of the pipe clock in the GCC. That
+approach means that it is still possible to have the pipe clock ungated
+without providing a valid source, somethings which can cause hangs when
+enabling/disabling the GDSC (presumably as some entity is consuming the
+pipe clock).
+
+Implementing this in the clock drivers also means that the
+implementation is spread out over multiple files and makes it harder to
+add support for new SoCs as it may not be clear that every pipe clock
+mux definition needs to be updated with safe and non-safe parent-clock
+indexes and an ad-hoc mux ops implementation.
+
+The custom mux implementation currently also hides the actual topology
+of the clock tree by always reporting the pipe mux source as being
+provided by the PHY (e.g. as reported by debugfs).
+
+This series, by contrast, ties the muxing to when the pipe clock source
+is enabled, that is, when the PHY is powered on, so that the GCC pipe
+clock always has a valid source.
+
+The implementation is more straight-forward, avoids the one-off clock
+mux implementation, and allows for documenting this once and for all in
+the PHY driver.
+
+Note that the devicetree bindings remains to be updated but that this
+was left out of this RFC.
+
+This series depends on the two qcom-qmp fixlets posted here:
+
+	https://lore.kernel.org/all/20220420152331.5527-1-johan+linaro@kernel.org/
+
+Johan
+
+
+Dmitry Baryshkov (1):
+  PCI: qcom: Remove unnecessary pipe_clk handling
+
+Johan Hovold (4):
+  phy: qcom-qmp: add support for pipe clock muxing
+  arm64: dts: qcom: sc7280: move pipe mux handling to phy
+  PCI: qcom: Drop pipe clock muxing
+  PCI: qcom: Drop unused post-init callbacks
+
+ arch/arm64/boot/dts/qcom/sc7280.dtsi   | 18 ++---
+ drivers/pci/controller/dwc/pcie-qcom.c | 96 ++------------------------
+ drivers/phy/qualcomm/phy-qcom-qmp.c    | 71 +++++++++++++++++--
+ 3 files changed, 76 insertions(+), 109 deletions(-)
+
 -- 
 2.35.1
 
