@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5EC7C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 11:08:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D40EC433FE
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 11:36:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ociyDQdgfa9BR5qBakBUYWlmhIoAVii7hxiD3bUM7FQ=; b=mIsiOHYPYpyGFZ
-	9KGNCMTcOba5oJjdXwnltSS5sTdlr/cn5FRW6oHA4RuVOCc0uYniP78eR+DmpvXYbN+pEhwbYghof
-	WWPUKVk4TXFz+YC5twGaV2Aq5gmXww1YipSal/w43lwiKUhuJStL1lcrSnGm2nVKyk0Vebuz6G8Lv
-	p/GWU/k0e001bQtrCppCwb55vrKdNBJTLOZs48IdBvUXC4UV1tRwtzcBxw7ryFuHuKt8YppvzPY+3
-	H6s7BQZ5KCgv1y6oQVgMMPs2dENHtOnUKLqMxCoV3ECxUVOUHs1fg6EDeRVZttxhZs0l/VxTTWK0e
-	WkPhrIzqhiimzBGQdxew==;
+	List-Owner; bh=SHmzpaQubUjauxAMabJwDWC/prrxZgQ+xIpjv/qJ9Dw=; b=Ze35cShi7+lhHY
+	NrYm/w7QByAO2ZmFfopMqTDNALE/qgIAt4eM/P2aUSTrEfQzX4RxjvcvcEWZdMF5o2WOuo13htnaZ
+	EsANvzW2/GN+/aafD7L4ZTiobyo8y9O9i2EhBZakI9ZbS1bTkjjFe5tfex9HDW83ob7cBf5abP3dx
+	jLEXgk3q6ViIauuC2DhvWymBeQI3K0hj9wfD/zJUDfqhVlbk3CYHVjFseiUo/5S+cKO52wrFzym0e
+	rRpW6vRjpgQqJjvmP8ZQ2WS0jUTVFgEZ9wsQBcFaRHqedL1R6rUtuGmIGnLObLE8OnYughn77q4v3
+	ocWIif/8U2iEt+OPci/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nhUfx-00D9AJ-85; Thu, 21 Apr 2022 11:08:41 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1nhV6d-00DDA0-KO; Thu, 21 Apr 2022 11:36:15 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhUfu-00D982-4G
- for linux-phy@lists.infradead.org; Thu, 21 Apr 2022 11:08:39 +0000
-Received: by mail-lf1-x133.google.com with SMTP id bq30so8059325lfb.3
- for <linux-phy@lists.infradead.org>; Thu, 21 Apr 2022 04:08:29 -0700 (PDT)
+ id 1nhV6a-00DD8f-HI
+ for linux-phy@lists.infradead.org; Thu, 21 Apr 2022 11:36:14 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id y32so8174577lfa.6
+ for <linux-phy@lists.infradead.org>; Thu, 21 Apr 2022 04:36:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=message-id:date:mime-version:user-agent:subject:content-language:to
  :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=lQpM5TBDz77TdM7yk6XHt2oHp2HL+z/14qpcwF/pmG0=;
- b=IJ2ystDfkpqLxJeN0WS3y5iTnrQAMSQAPqsRxS8dn1pCQGtvLWiqKUcTErC6y310sh
- Ugp+RGYieXrFPtyXAlCE2rRWE5VzcHRGvsrhvYVbv9V6ZWgCuwq7BWXazXKD5HNtFENN
- Ur63VwYS9qzXk5uL7vwLNy7BMS6/khH/keiBj1Xul8khnoiU8MAZ9MXAT0E3P6O3FqpE
- AmYg6Q7fdtrA8HTLQmArjnw21IgEk+TRXf4pkVsjwjUWCyE+2q8NUeQsH+FoIcDYiZQf
- uGJi2MIbjTPQD5vt4WCtr3lCZU32Yjx6NJ6A1xY5Zbe7swaMN0EFekIN8wSi/CEU7dkO
- iPww==
+ bh=nhxnVej2CIUMLhdNzrsZoPwHkHCS1xzrTTmqvH/njl8=;
+ b=JlgcvbzqGUzAWxfa2H0VDGBAue1ylSoHDEeaowQLuS7QB3U10bKI92k3Pnhi1se7Ud
+ wpwpruPBzEMnxiE7eHnnKLc66ErVKGoZvKUyfHQ2vPJhU1DGoELOMXZmjnpVGu6K6jkr
+ eQvTqyvE30q2iQHVz9GJyPhs2GKEs38GL4BSLyh8P1Pl+q+2RW3pOHYHHh1Ll4mPBsMD
+ aBq8q69v28bV2iMJXb3jOCDDkM6LwDUWlwjZ8a7i0MJHAgnsylmaKSI4jTWoq7NPFlb+
+ XNHQvFIl7FDBe/E6Z+H7VyGrw9afFBEfOGHZTU/IqrWwNR3zv0NhSPTjHMe1czKyWxds
+ Jynw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
  :content-language:to:cc:references:from:in-reply-to
  :content-transfer-encoding;
- bh=lQpM5TBDz77TdM7yk6XHt2oHp2HL+z/14qpcwF/pmG0=;
- b=nEs//CKvYdCBYX+uUBOihHgJsr3/Y96R9wowzEuMrpsnK6Y0ntscyOcFrxCZv3R9ph
- qfrAzslZMVic0L4ziNUAp2zhzLcb1Umkq0K6XYbtI39yJ37XwC+DwSezKLjyihFwDRpW
- vO0tGc9X7iZzo6pj1bEfjKYupI0IVo/H0NivN+c5WIACKHDmdiQuVmyieJ0j3hTYmBzs
- fAscZJttYvSGYwOfC4mdfYrkY0GD3ZIzl3Rd/A25kOWlSyyJaAMSeanPi1xcAcifuy23
- u2xreVrXjI8bOBnVMqXvHb6VOlrwkfWksHJIn1liq/8w6o6YNYiKQ6bTwy4soN5S1uAx
- ajVA==
-X-Gm-Message-State: AOAM5317sU9hg7aoJIEFcB3y2rgCMZiJ+39tJHsRmc7IiG7cakKt7ICv
- sSHHVovz/bhp7SrBwGwqz7xtYg==
-X-Google-Smtp-Source: ABdhPJxV+GssN0hDSnuW3Ph3Wjyua4dePmUV+iy2gwS6Wvvy4HbR159vt36fH/7kulO3OzhWARNoxQ==
-X-Received: by 2002:a05:6512:12c6:b0:44a:650f:3b86 with SMTP id
- p6-20020a05651212c600b0044a650f3b86mr18708668lfg.79.1650539308358; 
- Thu, 21 Apr 2022 04:08:28 -0700 (PDT)
+ bh=nhxnVej2CIUMLhdNzrsZoPwHkHCS1xzrTTmqvH/njl8=;
+ b=tXwnfj6nABP2TgkfK3JuEyY86sq3s9PP5A0QgjcR7e7JyXqcR2KqvQ/mxuIOhQQYfw
+ gHQRcEzmoYVlG6qmtp1Vv2S6idrhx4r2wr+j6hOa3OsaNcyBNdaIwBOlaCZrbhV/94hD
+ mAZATRVm+gkseMC0o+xYjpFujBhe7p59Zx1wgTe8caQfoTwhtwI+UY06BwXG0t3LTvKz
+ VYfjEn55v1jOKlvVOjbs47TFsJ3rF+nl6TET90BXdwDBLcbYNB6Sx0e2uAFjHbVwSt1l
+ WiC+9rahmnVkelMxbVR4hHGEJYW8QSL/+VU1WJvAaQ16oks/xI5RCBnHPLGTwLYdQKIW
+ 5fDg==
+X-Gm-Message-State: AOAM533kdvEq/D1iZcQKqM6WWfoyPyfaYFaW3R/HYI2a+8USz7IpJABM
+ wzZsZgZesa426Rf+P4RFSg/eDg==
+X-Google-Smtp-Source: ABdhPJzUhkWLfAN2qyBuzif4rSkuHafqFixxn6fwtjaFjUpPSgYzT8HvoUwrlPrV9m9YTT0Id8YCBA==
+X-Received: by 2002:ac2:5339:0:b0:46b:c20a:b5f9 with SMTP id
+ f25-20020ac25339000000b0046bc20ab5f9mr17943098lfh.105.1650540968641; 
+ Thu, 21 Apr 2022 04:36:08 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
  by smtp.gmail.com with ESMTPSA id
- l11-20020a2e834b000000b00246308690e2sm2015005ljh.85.2022.04.21.04.08.27
+ h6-20020a2e5306000000b00247e893075asm2007916ljb.37.2022.04.21.04.36.07
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 21 Apr 2022 04:08:28 -0700 (PDT)
-Message-ID: <de4f9514-5132-f208-d43f-4c50afcda203@linaro.org>
-Date: Thu, 21 Apr 2022 14:08:27 +0300
+ Thu, 21 Apr 2022 04:36:08 -0700 (PDT)
+Message-ID: <f4cfc1b3-2a85-f948-ff2c-27588cbe2210@linaro.org>
+Date: Thu, 21 Apr 2022 14:36:05 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.8.0
@@ -84,8 +84,8 @@ References: <20220421102041.17345-1-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 In-Reply-To: <20220421102041.17345-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220421_040838_254770_EFDE4745 
-X-CRM114-Status: GOOD (  29.50  )
+X-CRM114-CacheID: sfid-20220421_043612_630728_D517E8A1 
+X-CRM114-Status: GOOD (  27.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,9 +143,6 @@ On 21/04/2022 13:20, Johan Hovold wrote:
 >   
 >   	struct clk_bulk_data *clks;
 > +	struct clk *pipe_clksrc;
-
-Please move this to qmp_phy too.
-
 >   	struct reset_control **resets;
 >   	struct regulator_bulk_data *vregs;
 >   
@@ -168,6 +165,17 @@ Please move this to qmp_phy too.
 > +		dev_err(qmp->dev, "failed to enable pipe clock: %d\n", ret);
 > +		goto err_restore_parent;
 > +	}
+
+So, what you do here is you manually set the parent of 
+GCC_PCIE_1_PIPE_CLK_SRC to PHY pipe clock right before enabling 
+GCC_PCIE_1_PIPE_CLK and set it back to XO after disabling 
+GCC_PCIE_1_PIPE_CLK.
+
+My proposal is doing exactly the same, but doing that automatically 
+through the clock infrastructure. After removing pipe_clock handling 
+from pcie driver itself, we can be sure that nobody is playing dirty 
+tricks around the pipe_clock.
+
 > +
 > +	return 0;
 > +
@@ -245,13 +253,6 @@ Please move this to qmp_phy too.
 > +			return ret;
 > +
 > +		qphy->pipemux_clk = NULL;
-
-This makes the driver ignore every possible erorr except -EPROBE_DEFER. 
-However the driver should behave in quite the oppposite way. Please use 
-devm_clk_get_optional() instead. It would do that in better way.
-
-Not to mention that this code leaks a refcount on the clock.
-
 > +	} else {
 > +		qphy->piperef_clk = of_clk_get_by_name(np, "ref");
 > +		if (IS_ERR(qphy->piperef_clk)) {
@@ -262,15 +263,6 @@ Not to mention that this code leaks a refcount on the clock.
 > +		}
 > +	}
 > +
-
-As a second thought.
-This needs to be more explicit. If the chipset requires the pipe clock 
-remuxing, we must fail if the clocks were not provided. So depending on 
-the qmp instance/property the driver should either use devm_clk_get() 
-(instead of _optional) or skip this block completely.
-
-But this will not work with earlier DTS files.
-
 >   	/* Get lane reset, if any */
 >   	if (cfg->has_lane_rst) {
 >   		snprintf(prop_name, sizeof(prop_name), "lane%d", id);
