@@ -4,69 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8FE5C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 10:59:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5EC7C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 11:08:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cbYwaIU65mrlwytxCCqluOWEIWR+i/rA2OSNnoq7oFI=; b=BC3+U9e1kN1p3W
-	zlW0pXzaei9OAJOrqIO+GL2ds0nn7IgkL6YVZR5SyoTsUmXZGeG3RCjza5UQuHBkmyjTNQxwcCEcL
-	9ZgMx6LX7n9B1b4BUKi7kJRCmEkpCdxalxKVV75P8fnVHnBhCJKZgzqGaZkQwZb9XvUpjK8du/jLM
-	N+6OYdut0r5j0t2zSd44oFUS6nmaL+k8xOHR2zWfI911Yt5KmQZBOwM35ggj6UHuMdOf3I8SZFd0B
-	nH/P/omY3L9Y6R1ilc8huRlXfqlkC8jLr8DcI6xo/X4Qj3cr2Z627O9hi3tvNWa6faL6UuQ9v+FCG
-	iNqu9JXaKMpfwtCOKE8A==;
+	List-Owner; bh=ociyDQdgfa9BR5qBakBUYWlmhIoAVii7hxiD3bUM7FQ=; b=mIsiOHYPYpyGFZ
+	9KGNCMTcOba5oJjdXwnltSS5sTdlr/cn5FRW6oHA4RuVOCc0uYniP78eR+DmpvXYbN+pEhwbYghof
+	WWPUKVk4TXFz+YC5twGaV2Aq5gmXww1YipSal/w43lwiKUhuJStL1lcrSnGm2nVKyk0Vebuz6G8Lv
+	p/GWU/k0e001bQtrCppCwb55vrKdNBJTLOZs48IdBvUXC4UV1tRwtzcBxw7ryFuHuKt8YppvzPY+3
+	H6s7BQZ5KCgv1y6oQVgMMPs2dENHtOnUKLqMxCoV3ECxUVOUHs1fg6EDeRVZttxhZs0l/VxTTWK0e
+	WkPhrIzqhiimzBGQdxew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nhUWl-00D7Zu-8V; Thu, 21 Apr 2022 10:59:11 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1nhUfx-00D9AJ-85; Thu, 21 Apr 2022 11:08:41 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhUWi-00D7Yf-Fk
- for linux-phy@lists.infradead.org; Thu, 21 Apr 2022 10:59:09 +0000
-Received: by mail-lf1-x129.google.com with SMTP id bq30so8017138lfb.3
- for <linux-phy@lists.infradead.org>; Thu, 21 Apr 2022 03:59:06 -0700 (PDT)
+ id 1nhUfu-00D982-4G
+ for linux-phy@lists.infradead.org; Thu, 21 Apr 2022 11:08:39 +0000
+Received: by mail-lf1-x133.google.com with SMTP id bq30so8059325lfb.3
+ for <linux-phy@lists.infradead.org>; Thu, 21 Apr 2022 04:08:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=message-id:date:mime-version:user-agent:subject:content-language:to
  :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=fWzbz0uK61AwfD+yiXMsbQRKrFNjfCltGVfKBy1niE4=;
- b=OkHo6k4V3Od8Y9k7bmR5u7hmBKOfMahHiIlwoiA0TohJ7+6U1/S38EXZg5mFiACLqV
- QCIKeei0tPByChIuHTCEFnFBuChGPSMCsiqF53H5baVVmqWJDmTlqRnbt7ScvOWj7bzT
- WVhMf3hWTai/yWOAkOggQiRru5QgciR+HqurdCUVOemB1DCtWhIfNHNUwqGegIXrJvhb
- PVTrfPzOqdR3XiV8xBFWjKFixz7V3IzSigpvvlYgFMzIBRhbKNjhHG1x79wjPvn/aM+j
- L9hbuKu0pWW32ull9aQ4gfpdXxe2yCNjkw3CU4cGM8H5ieq9inAiu53ZG2saXY5hPAxe
- giKQ==
+ bh=lQpM5TBDz77TdM7yk6XHt2oHp2HL+z/14qpcwF/pmG0=;
+ b=IJ2ystDfkpqLxJeN0WS3y5iTnrQAMSQAPqsRxS8dn1pCQGtvLWiqKUcTErC6y310sh
+ Ugp+RGYieXrFPtyXAlCE2rRWE5VzcHRGvsrhvYVbv9V6ZWgCuwq7BWXazXKD5HNtFENN
+ Ur63VwYS9qzXk5uL7vwLNy7BMS6/khH/keiBj1Xul8khnoiU8MAZ9MXAT0E3P6O3FqpE
+ AmYg6Q7fdtrA8HTLQmArjnw21IgEk+TRXf4pkVsjwjUWCyE+2q8NUeQsH+FoIcDYiZQf
+ uGJi2MIbjTPQD5vt4WCtr3lCZU32Yjx6NJ6A1xY5Zbe7swaMN0EFekIN8wSi/CEU7dkO
+ iPww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
  :content-language:to:cc:references:from:in-reply-to
  :content-transfer-encoding;
- bh=fWzbz0uK61AwfD+yiXMsbQRKrFNjfCltGVfKBy1niE4=;
- b=7ICb44bXVvjVi5EqAxqxjec5xaKNDi+MtSsIsGoLZM0R4HZ/bMM4QVOooz8R+VUwTT
- 0GPEMVkLuxs8N2hOx0j0NHSenrGtpYiok5IuQaFjfUoDWqqZgVMWjvBE7tyMSVY4hlnk
- jq6rLjCeekjUZV5lQhdZv4AQVaPyqP6M22KDDks0AAPCNWUcaMHMfyjLvT5ot89yzDiG
- bTkYeSRBtgQKWWW0s+oGR1YLeh7XeIY/SLno0cZn7VwkVhWh80MNXqmHRzQqq/ujDrm+
- mZO2vtyWUGUnpcS43KOFFyVo1m4D9FHokOlSMWDjsyLnyM9UEOjDezNTU+oQ36Jxxnkw
- FUiw==
-X-Gm-Message-State: AOAM533X6hr6d6gzaT6ftMr8bkZ36Ztqj5JgAPNXkJj98ifGHekvCNDV
- TI2tzD8mIjdb4ONHRzFsLA6fNg==
-X-Google-Smtp-Source: ABdhPJxhGbbAtY3JdnXrm5gM7UPgEd3lOaM94kpLzor20vzd+pu5M1xuypG+GGFQTvA/Gy36/z3n+Q==
-X-Received: by 2002:a05:6512:21cd:b0:46b:b89e:186c with SMTP id
- d13-20020a05651221cd00b0046bb89e186cmr17933321lft.250.1650538745402; 
- Thu, 21 Apr 2022 03:59:05 -0700 (PDT)
+ bh=lQpM5TBDz77TdM7yk6XHt2oHp2HL+z/14qpcwF/pmG0=;
+ b=nEs//CKvYdCBYX+uUBOihHgJsr3/Y96R9wowzEuMrpsnK6Y0ntscyOcFrxCZv3R9ph
+ qfrAzslZMVic0L4ziNUAp2zhzLcb1Umkq0K6XYbtI39yJ37XwC+DwSezKLjyihFwDRpW
+ vO0tGc9X7iZzo6pj1bEfjKYupI0IVo/H0NivN+c5WIACKHDmdiQuVmyieJ0j3hTYmBzs
+ fAscZJttYvSGYwOfC4mdfYrkY0GD3ZIzl3Rd/A25kOWlSyyJaAMSeanPi1xcAcifuy23
+ u2xreVrXjI8bOBnVMqXvHb6VOlrwkfWksHJIn1liq/8w6o6YNYiKQ6bTwy4soN5S1uAx
+ ajVA==
+X-Gm-Message-State: AOAM5317sU9hg7aoJIEFcB3y2rgCMZiJ+39tJHsRmc7IiG7cakKt7ICv
+ sSHHVovz/bhp7SrBwGwqz7xtYg==
+X-Google-Smtp-Source: ABdhPJxV+GssN0hDSnuW3Ph3Wjyua4dePmUV+iy2gwS6Wvvy4HbR159vt36fH/7kulO3OzhWARNoxQ==
+X-Received: by 2002:a05:6512:12c6:b0:44a:650f:3b86 with SMTP id
+ p6-20020a05651212c600b0044a650f3b86mr18708668lfg.79.1650539308358; 
+ Thu, 21 Apr 2022 04:08:28 -0700 (PDT)
 Received: from [192.168.1.211] ([37.153.55.125])
  by smtp.gmail.com with ESMTPSA id
- bi2-20020a0565120e8200b0044826a117bcsm2150569lfb.44.2022.04.21.03.59.04
+ l11-20020a2e834b000000b00246308690e2sm2015005ljh.85.2022.04.21.04.08.27
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 21 Apr 2022 03:59:05 -0700 (PDT)
-Message-ID: <55d6e32b-9cf4-384c-1036-1adfb867ece8@linaro.org>
-Date: Thu, 21 Apr 2022 13:59:04 +0300
+ Thu, 21 Apr 2022 04:08:28 -0700 (PDT)
+Message-ID: <de4f9514-5132-f208-d43f-4c50afcda203@linaro.org>
+Date: Thu, 21 Apr 2022 14:08:27 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.8.0
-Subject: Re: [PATCH RFC 2/5] arm64: dts: qcom: sc7280: move pipe mux handling
- to phy
+Subject: Re: [PATCH RFC 1/5] phy: qcom-qmp: add support for pipe clock muxing
 Content-Language: en-GB
 To: Johan Hovold <johan+linaro@kernel.org>, Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -81,12 +80,12 @@ Cc: Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20220421102041.17345-1-johan+linaro@kernel.org>
- <20220421102041.17345-3-johan+linaro@kernel.org>
+ <20220421102041.17345-2-johan+linaro@kernel.org>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20220421102041.17345-3-johan+linaro@kernel.org>
+In-Reply-To: <20220421102041.17345-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220421_035908_579948_51233F0A 
-X-CRM114-Status: GOOD (  15.29  )
+X-CRM114-CacheID: sfid-20220421_040838_254770_EFDE4745 
+X-CRM114-Status: GOOD (  29.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,63 +103,177 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 21/04/2022 13:20, Johan Hovold wrote:
-> The QMP PHY pipe clock remuxing is part of the PHY, which is both the
-> producer and the consumer of the pipe clock.
+> Some QMP PHYs need to remux to their pipe clock input to the pipe clock
+> output generated by the PHY before powering on the PHY and restore the
+> default source during power down.
 > 
-> Update the PCIe controller and PHY node to reflect the new binding.
+> Add support for an optional pipe clock mux which will be reparented to
+> the generated pipe clock before powering on the PHY and restored to the
+> default reference source on power off.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   arch/arm64/boot/dts/qcom/sc7280.dtsi | 18 ++++++------------
->   1 file changed, 6 insertions(+), 12 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp.c | 71 ++++++++++++++++++++++++++---
+>   1 file changed, 65 insertions(+), 6 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/sc7280.dtsi b/arch/arm64/boot/dts/qcom/sc7280.dtsi
-> index c07765df9303..b3a9630262dc 100644
-> --- a/arch/arm64/boot/dts/qcom/sc7280.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sc7280.dtsi
-> @@ -1837,11 +1837,7 @@ pcie1: pci@1c08000 {
->   					<0 0 0 3 &intc 0 0 0 438 IRQ_TYPE_LEVEL_HIGH>,
->   					<0 0 0 4 &intc 0 0 0 439 IRQ_TYPE_LEVEL_HIGH>;
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> index 7d2d1ab061f7..bc6db9670291 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> @@ -3292,6 +3292,8 @@ struct qmp_phy_combo_cfg {
+>    * @rx2: iomapped memory space for second lane's rx (in dual lane PHYs)
+>    * @pcs_misc: iomapped memory space for lane's pcs_misc
+>    * @pipe_clk: pipe clock
+> + * @pipemux_clk: pipe clock source mux
+> + * @piperef_clk: pipe clock default reference source
+>    * @index: lane index
+>    * @qmp: QMP phy to which this lane belongs
+>    * @lane_rst: lane's reset controller
+> @@ -3311,6 +3313,8 @@ struct qmp_phy {
+>   	void __iomem *rx2;
+>   	void __iomem *pcs_misc;
+>   	struct clk *pipe_clk;
+> +	struct clk *pipemux_clk;
+> +	struct clk *piperef_clk;
+>   	unsigned int index;
+>   	struct qcom_qmp *qmp;
+>   	struct reset_control *lane_rst;
+> @@ -3346,6 +3350,7 @@ struct qcom_qmp {
+>   	void __iomem *dp_com;
 >   
-> -			clocks = <&gcc GCC_PCIE_1_PIPE_CLK>,
-> -				 <&gcc GCC_PCIE_1_PIPE_CLK_SRC>,
-> -				 <&pcie1_lane 0>,
-> -				 <&rpmhcc RPMH_CXO_CLK>,
-> -				 <&gcc GCC_PCIE_1_AUX_CLK>,
-> +			clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
->   				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
->   				 <&gcc GCC_PCIE_1_MSTR_AXI_CLK>,
->   				 <&gcc GCC_PCIE_1_SLV_AXI_CLK>,
-> @@ -1849,11 +1845,7 @@ pcie1: pci@1c08000 {
->   				 <&gcc GCC_AGGRE_NOC_PCIE_TBU_CLK>,
->   				 <&gcc GCC_DDRSS_PCIE_SF_CLK>;
->   
-> -			clock-names = "pipe",
-> -				      "pipe_mux",
-> -				      "phy_pipe",
-> -				      "ref",
-> -				      "aux",
-> +			clock-names = "aux",
->   				      "cfg",
->   				      "bus_master",
->   				      "bus_slave",
-> @@ -1910,8 +1902,10 @@ pcie1_lane: lanes@1c0e200 {
->   				      <0 0x01c0e600 0 0x170>,
->   				      <0 0x01c0e800 0 0x200>,
->   				      <0 0x01c0ee00 0 0xf4>;
-> -				clocks = <&gcc GCC_PCIE_1_PIPE_CLK>;
-> -				clock-names = "pipe0";
-> +				clocks = <&gcc GCC_PCIE_1_PIPE_CLK>,
-> +					 <&gcc GCC_PCIE_1_PIPE_CLK_SRC>,
-> +					 <&rpmhcc RPMH_CXO_CLK>;
-> +				clock-names = "pipe0", "mux", "ref";
+>   	struct clk_bulk_data *clks;
+> +	struct clk *pipe_clksrc;
 
-This will not be compatible with earlier DTB files, which was a problem 
-up to now.
+Please move this to qmp_phy too.
 
+>   	struct reset_control **resets;
+>   	struct regulator_bulk_data *vregs;
 >   
->   				#phy-cells = <0>;
->   				#clock-cells = <1>;
+> @@ -5355,6 +5360,42 @@ static int qcom_qmp_phy_init(struct phy *phy)
+>   	return 0;
+>   }
+>   
+> +static int qcom_qmp_phy_pipe_clk_enable(struct qmp_phy *qphy)
+> +{
+> +	struct qcom_qmp *qmp = qphy->qmp;
+> +	int ret;
+> +
+> +	ret = clk_set_parent(qphy->pipemux_clk, qmp->pipe_clksrc);
+> +	if (ret)
+> +		dev_err(qmp->dev, "failed to reparent pipe clock: %d\n", ret);
+> +
+> +
+> +	ret = clk_prepare_enable(qphy->pipe_clk);
+> +	if (ret) {
+> +		dev_err(qmp->dev, "failed to enable pipe clock: %d\n", ret);
+> +		goto err_restore_parent;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_restore_parent:
+> +	clk_set_parent(qphy->pipemux_clk, qphy->piperef_clk);
+> +
+> +	return ret;
+> +}
+> +
+> +static void qcom_qmp_phy_pipe_clk_disable(struct qmp_phy *qphy)
+> +{
+> +	struct qcom_qmp *qmp = qphy->qmp;
+> +	int ret;
+> +
+> +	clk_disable_unprepare(qphy->pipe_clk);
+> +
+> +	ret = clk_set_parent(qphy->pipemux_clk, qphy->piperef_clk);
+> +	if (ret)
+> +		dev_err(qmp->dev, "failed to reparent pipe clock: %d\n", ret);
+> +}
+> +
+>   static int qcom_qmp_phy_power_on(struct phy *phy)
+>   {
+>   	struct qmp_phy *qphy = phy_get_drvdata(phy);
+> @@ -5379,11 +5420,9 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
+>   		}
+>   	}
+>   
+> -	ret = clk_prepare_enable(qphy->pipe_clk);
+> -	if (ret) {
+> -		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
+> +	ret = qcom_qmp_phy_pipe_clk_enable(qphy);
+> +	if (ret)
+>   		goto err_reset_lane;
+> -	}
+>   
+>   	/* Tx, Rx, and PCS configurations */
+>   	qcom_qmp_phy_configure_lane(tx, cfg->regs,
+> @@ -5478,7 +5517,7 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
+>   	return 0;
+>   
+>   err_disable_pipe_clk:
+> -	clk_disable_unprepare(qphy->pipe_clk);
+> +	qcom_qmp_phy_pipe_clk_disable(qphy);
+>   err_reset_lane:
+>   	if (cfg->has_lane_rst)
+>   		reset_control_assert(qphy->lane_rst);
+> @@ -5491,7 +5530,7 @@ static int qcom_qmp_phy_power_off(struct phy *phy)
+>   	struct qmp_phy *qphy = phy_get_drvdata(phy);
+>   	const struct qmp_phy_cfg *cfg = qphy->cfg;
+>   
+> -	clk_disable_unprepare(qphy->pipe_clk);
+> +	qcom_qmp_phy_pipe_clk_disable(qphy);
+>   
+>   	if (cfg->type == PHY_TYPE_DP) {
+>   		/* Assert DP PHY power down */
+> @@ -5777,6 +5816,8 @@ static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
+>   	if (ret)
+>   		return ret;
+>   
+> +	qmp->pipe_clksrc = fixed->hw.clk;
+> +
+>   	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
+>   	if (ret)
+>   		return ret;
+> @@ -6091,6 +6132,24 @@ int qcom_qmp_phy_create(struct device *dev, struct device_node *np, int id,
+>   		qphy->pipe_clk = NULL;
+>   	}
+>   
+> +	/* Get optional pipe clock mux and default reference source clock. */
+> +	qphy->pipemux_clk = of_clk_get_by_name(np, "mux");
+> +	if (IS_ERR(qphy->pipemux_clk)) {
+> +		ret = PTR_ERR(qphy->pipemux_clk);
+> +		if (ret == -EPROBE_DEFER)
+> +			return ret;
+> +
+> +		qphy->pipemux_clk = NULL;
+
+This makes the driver ignore every possible erorr except -EPROBE_DEFER. 
+However the driver should behave in quite the oppposite way. Please use 
+devm_clk_get_optional() instead. It would do that in better way.
+
+Not to mention that this code leaks a refcount on the clock.
+
+> +	} else {
+> +		qphy->piperef_clk = of_clk_get_by_name(np, "ref");
+> +		if (IS_ERR(qphy->piperef_clk)) {
+> +			ret = PTR_ERR(qphy->piperef_clk);
+> +			return dev_err_probe(dev, ret,
+> +					     "failed to get lane%d piperef_clk\n",
+> +					     id);
+> +		}
+> +	}
+> +
+
+As a second thought.
+This needs to be more explicit. If the chipset requires the pipe clock 
+remuxing, we must fail if the clocks were not provided. So depending on 
+the qmp instance/property the driver should either use devm_clk_get() 
+(instead of _optional) or skip this block completely.
+
+But this will not work with earlier DTS files.
+
+>   	/* Get lane reset, if any */
+>   	if (cfg->has_lane_rst) {
+>   		snprintf(prop_name, sizeof(prop_name), "lane%d", id);
 
 
 -- 
