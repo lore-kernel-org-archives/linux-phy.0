@@ -4,81 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 726C6C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 16:22:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9875C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Apr 2022 20:31:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7ecU1mbryUZ61J8/SvGeQCy4Ot259S7i6um7pU5jY+8=; b=afhU/CJ84Fdic1
-	ju8iHL5muJ7GMSAZqAGRYw3CqTJmcfrdOHZ5S9B4JC9dfT2ueH3hyU1GPeEGJ523usI0dNSCX4J42
-	jJHQet2o7aQ1xF1qSsrKGBmiRHYsadcEMhfRPkckrUnmxHl5e/U9a9E76Gkn9ZQur+r/zu0vemaHD
-	cnJAYan+thEsDuBHCS2sMZFw8krgPvMgzb/Kj8SmL/S/MSqDfu3PiXRgYMoyuu1A7q5oPMVedMwaB
-	J7duutqHF6cB90VOjpvLZkyOcStHkcNgJ8j/XjKBtQq0nD/30OZXIJvJO31SHA99ifFwlu+kKVK43
-	kXW/R1Hcgr7B8SUB8VNA==;
+	List-Owner; bh=JwOcFRnrczie/QzYqd0jc04qXbqvGiaSQLc8lWM0C4k=; b=cwslMSek0ngulu
+	j4JyQEehpyk1ukXgLZ2g8wvcwjdExPCmzkBH+gVEu+7NPVC+Jca33DIbygHM8e+scafmDINmw205E
+	pAHx3TAXhbZD6Q78COnL1NIct16M3i1zLXVhyFQMLEEylGVEVlD/7arccm8lAhYugnxkIJS/etEXy
+	RPCnnFMzK1lgvQ4xh2Uu/qZg7GimsFOm0lR4w1vqVZoLRK4JklByQTQf7LnTpup34haom6b8O4mID
+	+AGFCgegv5mpBXhwVksHBSSU7oTk/y2i1VsSmFu0Y6i4cn2ew4hXRgvsTPrRCKrNSEs6tZtOFCInq
+	y99oWhKshY2mv3Ayp0iA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nhZZO-00ECuY-TQ; Thu, 21 Apr 2022 16:22:14 +0000
-Received: from smtpout140.security-mail.net ([85.31.212.143]
- helo=fx403.security-mail.net)
+	id 1nhdSD-00Eu3K-43; Thu, 21 Apr 2022 20:31:05 +0000
+Received: from out30-131.freemail.mail.aliyun.com ([115.124.30.131])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhZZL-00ECsM-OA
- for linux-phy@lists.infradead.org; Thu, 21 Apr 2022 16:22:14 +0000
-Received: from localhost (localhost [127.0.0.1])
- by fx403.security-mail.net (Postfix) with ESMTP id 19F6799D23C
- for <linux-phy@lists.infradead.org>; Thu, 21 Apr 2022 18:22:04 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kalray.eu;
- s=sec-sig-email; t=1650558124;
- bh=tj8i4TVvS/HCKko4aWZMtkRdcatK082SIgrkqjMkpDQ=;
- h=From:To:Cc:Subject:Date;
- b=Hly3ZqWjd2Ptb0wXtiGeF8aGNxPpBMdpeYRa3hbkXowMlc6yIssWFv3qbXqDfbB2O
- jy//D7W6dS93ptac31Ap2PlseBu0/PMJEMda82wMBe6Vq297ij73+uO/1Fb5Pfgcgq
- k8tbX5jcf9D5UMFPByq4bP2M8b9hLk1H2TDNS03I=
-Received: from fx403 (localhost [127.0.0.1])
- by fx403.security-mail.net (Postfix) with ESMTP id DEF8D99D206;
- Thu, 21 Apr 2022 18:22:02 +0200 (CEST)
-X-Virus-Scanned: E-securemail
-Secumail-id: <2bb2.626184aa.271f9.0>
-Received: from zimbra2.kalray.eu (unknown [217.181.231.53])
- by fx403.security-mail.net (Postfix) with ESMTPS id 2874B99D1E8;
- Thu, 21 Apr 2022 18:22:02 +0200 (CEST)
-Received: from zimbra2.kalray.eu (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTPS id 02E0127E0457;
- Thu, 21 Apr 2022 18:22:02 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id DD3CD27E0456;
- Thu, 21 Apr 2022 18:22:01 +0200 (CEST)
-DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu DD3CD27E0456
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
- s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1650558121;
- bh=LflrGUYlsm8UQp1TacL+Qq10ExNuNTFJ1al770Q/+u0=;
- h=From:To:Date:Message-Id;
- b=MwebgSvcXcDuC6oJZ8UVm6PCkRnQ7vtFPLjEoKlU1YctnWkTdRMAe1kc+xxxqd/4M
- Or+c/8cvSavmzA9qAsK8qbAiJWW7KDvVFy6H24KVJ63gPCM6O5D6LRUCUP05TyG1UA
- m0rIhCgDkkdE1s5BkEr8x1ErBynG792u2J6P5qI4=
-Received: from zimbra2.kalray.eu ([127.0.0.1])
- by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id ioz485KrBp_I; Thu, 21 Apr 2022 18:22:01 +0200 (CEST)
-Received: from tellis.lin.mbt.kalray.eu (unknown [192.168.36.206])
- by zimbra2.kalray.eu (Postfix) with ESMTPSA id B966527E0444;
- Thu, 21 Apr 2022 18:22:01 +0200 (CEST)
-From: Jules Maselbas <jmaselbas@kalray.eu>
-To: linux-usb@vger.kernel.org
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- Mark Brown <broonie@kernel.org>, linux-kernel@vger.kernel.org,
- Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnd Bergmann <arnd@arndb.de>, Jules Maselbas <jmaselbas@kalray.eu>
-Subject: [RFC PATCH] phy: Convert usb-nop-xceiv to the generic phy subsystem
-Date: Thu, 21 Apr 2022 18:21:58 +0200
-Message-Id: <20220421162158.31364-1-jmaselbas@kalray.eu>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: by Secumail
+ id 1nhdS2-00Eu1j-7Q; Thu, 21 Apr 2022 20:30:55 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R901e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04407;
+ MF=jiapeng.chong@linux.alibaba.com; NM=1; PH=DS; RN=9; SR=0;
+ TI=SMTPD_---0VAhNpK0_1650573041; 
+Received: from localhost(mailfrom:jiapeng.chong@linux.alibaba.com
+ fp:SMTPD_---0VAhNpK0_1650573041) by smtp.aliyun-inc.com(127.0.0.1);
+ Fri, 22 Apr 2022 04:30:46 +0800
+From: Jiapeng Chong <jiapeng.chong@linux.alibaba.com>
+To: kishon@ti.com
+Cc: vkoul@kernel.org, heiko@sntech.de, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Jiapeng Chong <jiapeng.chong@linux.alibaba.com>,
+ Abaci Robot <abaci@linux.alibaba.com>
+Subject: [PATCH] phy: rockchip-inno-usb2: Clean up some inconsistent indenting
+Date: Fri, 22 Apr 2022 04:30:38 +0800
+Message-Id: <20220421203038.4550-1-jiapeng.chong@linux.alibaba.com>
+X-Mailer: git-send-email 2.20.1.7.g153144c
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220421_092212_160971_A7279416 
-X-CRM114-Status: GOOD (  34.29  )
+X-CRM114-CacheID: sfid-20220421_133054_463043_81DB22E6 
+X-CRM114-Status: UNSURE (   8.31  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,339 +58,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-I recently encountered some limitations when using the usb-nop-xceiv
-driver using the usb-phy subsystem. The situation is: I have a board
-with two external usb phys (ULPI) that only needs to be reset by the
-USB controller. However both phys shares the same reset line, which
-will get toggled twice by the USB driver, once by controller.
+Eliminate the follow smatch warning:
 
-This is what I observed with the current Linux usb-nop-xceiv driver:
-          _______                            ___      _________
-   RESET:        \__________________________/   \____/
-                1^                         2^  3^   4^
- 1. and 2. first controller toggle the reset
- 3. and 4. second controller toggle the reset
+drivers/phy/rockchip/phy-rockchip-inno-usb2.c:1203
+rockchip_usb2phy_probe() warn: inconsistent indenting.
 
-After the second toggle the first driver didn't expected the reset and
-causing issues, but I don't recall what exactly, it is maybe a driver
-that simply fail to get probed.
-
-The following is what I observed when using the "usb-nop-xceiv"
-driver in Barebox, which is a bit different than the Linux one.
-
-           _______                            _________________
-    RESET:        \__________________________/
-                 1^                         2^
-
-In this case the reset is only toggled once, this is because the phy
-driver count the number of time it has called init and power_on, which
-is exactly what is done by the generic phy subsystem in Linux, but not
-by the "legacy" usb-nop-xceiv usb-phy driver.
-
-This difference in behavior is what motivated to "port" the existing
-usb-nop-xceiv driver to the generic phy subsystem. However this is far
-from being complete... I've only tested the reset function for this nop
-phy, and it lack a lot of features from the original driver to be a
-valid replacement for it.
-
-I would like to know if there is an interest in converting the current
-usb-nop-xceiv driver to the generic phy subsystem?
-
-I would like to keep the usb-nop-xceiv compatible as it used by Barebox
-and it works OK. If a new compatible is added then device-tree nodes
-shouldn't have both, the new and usb-nop-xceiv, compatible because of
-the specific check in phy-core.c which will always return ENODEV.
-
-Signed-off-by: Jules Maselbas <jmaselbas@kalray.eu>
+Reported-by: Abaci Robot <abaci@linux.alibaba.com>
+Signed-off-by: Jiapeng Chong <jiapeng.chong@linux.alibaba.com>
 ---
- drivers/phy/Makefile          |   1 +
- drivers/phy/phy-core.c        |   4 -
- drivers/phy/phy-usb-generic.c | 241 ++++++++++++++++++++++++++++++++++
- 3 files changed, 242 insertions(+), 4 deletions(-)
- create mode 100644 drivers/phy/phy-usb-generic.c
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index 6eb2916773c5..8eeecf6d6f74 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -4,6 +4,7 @@
- #
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index e377b958d9b6..6711659f727c 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1200,8 +1200,8 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
  
- obj-$(CONFIG_GENERIC_PHY)		+= phy-core.o
-+obj-$(CONFIG_GENERIC_PHY)		+= phy-usb-generic.o
- obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
- obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
- obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 71cb10826326..e09fd1cb4455 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -506,10 +506,6 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
- 	if (ret)
- 		return ERR_PTR(-ENODEV);
+ 	else {
+ 		rphy->grf = syscon_node_to_regmap(dev->parent->of_node);
+-			if (IS_ERR(rphy->grf))
+-				return PTR_ERR(rphy->grf);
++		if (IS_ERR(rphy->grf))
++			return PTR_ERR(rphy->grf);
+ 	}
  
--	/* This phy type handled by the usb-phy subsystem for now */
--	if (of_device_is_compatible(args.np, "usb-nop-xceiv"))
--		return ERR_PTR(-ENODEV);
--
- 	mutex_lock(&phy_provider_mutex);
- 	phy_provider = of_phy_provider_lookup(args.np);
- 	if (IS_ERR(phy_provider) || !try_module_get(phy_provider->owner)) {
-diff --git a/drivers/phy/phy-usb-generic.c b/drivers/phy/phy-usb-generic.c
-new file mode 100644
-index 000000000000..fdd05bbd98f2
---- /dev/null
-+++ b/drivers/phy/phy-usb-generic.c
-@@ -0,0 +1,241 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * derived from driver/usb/phy/phy-generic.c
-+ *
-+ * Generic USB PHY driver for all USB "nop" transceiver which are mostly
-+ * autonomous. This driver is derived from the usb-nop-xceiv driver, but
-+ * this one use the new generic phy api.
-+ *
-+ * Copyright (c) 2022 Kalray Inc.
-+ * Author(s): Jules Maselbas
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/err.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regulator/consumer.h>
-+#include <linux/gpio/consumer.h>
-+#include <linux/delay.h>
-+#include <linux/usb/otg.h>
-+
-+struct phy_usb_generic {
-+	struct device *dev;
-+	struct clk *clk;
-+	struct regulator *vcc;
-+	struct gpio_desc *gpiod_reset;
-+	unsigned long mA;
-+	unsigned int vbus;
-+	enum usb_dr_mode dr_mode;
-+};
-+
-+static int phy_usb_generic_init(struct phy *phy)
-+{
-+	struct phy_usb_generic *priv = phy_get_drvdata(phy);
-+
-+	if (priv->clk)
-+		clk_prepare(priv->clk);
-+
-+	return 0;
-+}
-+
-+static int phy_usb_generic_exit(struct phy *phy)
-+{
-+	struct phy_usb_generic *priv = phy_get_drvdata(phy);
-+
-+	if (priv->clk)
-+		clk_unprepare(priv->clk);
-+
-+	return 0;
-+}
-+
-+static int phy_usb_generic_power_on(struct phy *phy)
-+{
-+	struct phy_usb_generic *priv = phy_get_drvdata(phy);
-+	int ret;
-+
-+	if (priv->vcc) {
-+		ret = regulator_enable(priv->vcc);
-+		if (ret) {
-+			dev_err(priv->dev, "Failed to enable power\n");
-+			return ret;
-+		}
-+	}
-+
-+	if (priv->clk) {
-+		ret = clk_enable(priv->clk);
-+		if (ret) {
-+			dev_err(priv->dev, "Failed to enable clock\n");
-+			return ret;
-+		}
-+	}
-+
-+	if (priv->gpiod_reset) {
-+		dev_dbg(priv->dev, "Reset toggle\n");
-+		gpiod_set_value_cansleep(priv->gpiod_reset, 1);
-+		usleep_range(10000, 20000);
-+		gpiod_set_value_cansleep(priv->gpiod_reset, 0);
-+	}
-+
-+	return 0;
-+}
-+
-+static int phy_usb_generic_power_off(struct phy *phy)
-+{
-+	struct phy_usb_generic *priv = phy_get_drvdata(phy);
-+	int ret;
-+
-+	if (priv->gpiod_reset)
-+		gpiod_set_value_cansleep(priv->gpiod_reset, 1);
-+
-+	if (priv->clk)
-+		clk_disable_unprepare(priv->clk);
-+
-+	if (priv->vcc) {
-+		ret = regulator_disable(priv->vcc);
-+		if (ret) {
-+			dev_err(priv->dev, "Failed to disable power\n");
-+			return ret;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int phy_usb_generic_set_mode(struct phy *phy,
-+				    enum phy_mode mode, int submode)
-+{
-+	struct phy_usb_generic *priv = phy_get_drvdata(phy);
-+	enum usb_dr_mode new_mode;
-+	const char *s = "";
-+
-+	switch (mode) {
-+	case PHY_MODE_USB_HOST:
-+	case PHY_MODE_USB_HOST_LS:
-+	case PHY_MODE_USB_HOST_HS:
-+	case PHY_MODE_USB_HOST_FS:
-+		new_mode = USB_DR_MODE_HOST;
-+		s = "host";
-+		break;
-+	case PHY_MODE_USB_DEVICE:
-+	case PHY_MODE_USB_DEVICE_LS:
-+	case PHY_MODE_USB_DEVICE_HS:
-+	case PHY_MODE_USB_DEVICE_FS:
-+		new_mode = USB_DR_MODE_PERIPHERAL;
-+		s = "peripheral";
-+		break;
-+	case PHY_MODE_USB_OTG:
-+		new_mode = USB_DR_MODE_OTG;
-+		s = "otg";
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	if (new_mode != priv->dr_mode) {
-+		dev_info(priv->dev, "Changing dr_mode to %s\n", s);
-+		priv->dr_mode = new_mode;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops phy_usb_generic_ops = {
-+	.init = phy_usb_generic_init,
-+	.exit = phy_usb_generic_exit,
-+	.power_on = phy_usb_generic_power_on,
-+	.power_off = phy_usb_generic_power_off,
-+	.set_mode  = phy_usb_generic_set_mode,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int phy_usb_generic_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	struct phy_usb_generic *priv;
-+	struct phy_provider *provider;
-+	struct phy *phy;
-+	int err;
-+	u32 clk_rate = 0;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+	priv->dev = &pdev->dev;
-+	platform_set_drvdata(pdev, priv);
-+
-+	priv->gpiod_reset = devm_gpiod_get_optional(dev, "reset", GPIOD_ASIS);
-+	if (IS_ERR(priv->gpiod_reset)) {
-+		err = PTR_ERR(priv->gpiod_reset);
-+		dev_err(dev, "Failed to get reset gpio: %d\n", err);
-+		return err;
-+	}
-+
-+	if (np && of_property_read_u32(np, "clock-frequency", &clk_rate))
-+		clk_rate = 0;
-+
-+	priv->clk = devm_clk_get_optional(dev, "main_clk");
-+	if (IS_ERR(priv->clk)) {
-+		err = PTR_ERR(priv->clk);
-+		dev_err(dev, "Can't get phy clock: %d\n", err);
-+		return err;
-+	}
-+	if (priv->clk && clk_rate) {
-+		err = clk_set_rate(priv->clk, clk_rate);
-+		if (err) {
-+			dev_err(dev, "Error setting clock rate\n");
-+			return err;
-+		}
-+	}
-+
-+	priv->vcc = devm_regulator_get_optional(dev, "vcc");
-+	if (IS_ERR(priv->vcc)) {
-+		err = PTR_ERR(priv->vcc);
-+		if (err == -ENODEV || err == -ENOENT) {
-+			priv->vcc = NULL;
-+		} else {
-+			dev_err(dev, "Error getting vcc regulator: %d\n", err);
-+			return err;
-+		}
-+	}
-+
-+	phy = devm_phy_create(dev, NULL, &phy_usb_generic_ops);
-+	if (IS_ERR(phy)) {
-+		err = PTR_ERR(phy);
-+		dev_err(dev, "Failed to create PHY: %d\n", err);
-+		return err;
-+	}
-+	phy_set_drvdata(phy, priv);
-+
-+	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(provider)) {
-+		err = PTR_ERR(provider);
-+		dev_err(dev, "Failed to register PHY provider: %d\n", err);
-+		return err;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id phy_usb_nop_dt_ids[] = {
-+	{ .compatible = "phy-usb-generic" },
-+	{ .compatible = "usb-nop-xceiv" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, phy_usb_nop_dt_ids);
-+
-+static struct platform_driver phy_usb_generic_driver = {
-+	.probe		= phy_usb_generic_probe,
-+	.driver		= {
-+		.name	= "phy_usb_generic",
-+		.of_match_table = phy_usb_nop_dt_ids,
-+	},
-+};
-+module_platform_driver(phy_usb_generic_driver);
-+
-+MODULE_AUTHOR("Kalray Inc");
-+MODULE_DESCRIPTION("Generic USB PHY driver");
-+MODULE_LICENSE("GPL");
+ 	if (of_device_is_compatible(np, "rockchip,rv1108-usb2phy")) {
 -- 
-2.17.1
+2.20.1.7.g153144c
 
 
 -- 
