@@ -4,57 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40BCEC433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Apr 2022 17:29:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D86F0C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Apr 2022 19:21:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MmU3BGKDRLkR4WkbAlt9X9FQLGBfM7Xr1QW2TLbQ5no=; b=c0/OuJNEV7ph5G
-	VnTH4Iw9nmnD+oig+ksSHK5wKt8d1HsPimt5ZpAyLUdtxuY0vfW8YkSR3vFTmzyh4WDeh2gdUSI1w
-	2begZ4LN/0rNna80oor0cmoVWD1HctZxyDX5+As5fudKYGEv0GVpT/8zu4E+7szMVgayIP22DyqX/
-	0o6zqNBdG4wrcNA5oTITCgmIxdRHk0OqdNNRxk+DFEJnm70oP82q9+XGYLK5tOV5NI1ZVB3MLOcVH
-	ye5OmMDi8kIvpDfq3L7AYno6dpEAqFh4BMYNWtiXr+F/b1+05X3bCsEnGimSw6XZKShY98xPJDhpG
-	c+CpQi6NVO8LDDgi/1Ig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KQkqbzqlPPHPBBeSufy7kj1xUCtMuciHKmJN1ILe0/c=; b=2pDLwqwTF2gThY
+	ZfTcZYcrOrg++yqnAlk53/iMP0DR9rbA8OzeleQb4Q0H1HkHxlSv6aSaAU0WL6/K1Z8LBGGtjpI9R
+	NRmmO15gXtsdd0lv5CFJupiJiwWSboDX8fq0CS4pV0ZranXxEbcqdKU2m+WcOTT4+zoqbFFyRx9PN
+	EoQ4m7RGzeK2x5rVdfEiI9iWcQwAcbglFKX0dSBPYj1gql3LGB3L6ntxyp6LYW+qAvhKPf1rzdF6n
+	7x4zXsdY4AFYjnyXWxudh1KW81oxcBsBspos5bx4GSGJq5SoGUrgtF8xmy9KvVhP/hd02pSDU78Gn
+	hpcYPh6kdi77Dkp/JMdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nhx5h-001mEd-HK; Fri, 22 Apr 2022 17:29:09 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1nhyq1-0027ER-9s; Fri, 22 Apr 2022 19:21:05 +0000
+Received: from mail-oa1-f53.google.com ([209.85.160.53])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhx1H-001k7C-RF; Fri, 22 Apr 2022 17:24:37 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 653F8FB04;
- Fri, 22 Apr 2022 19:24:24 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id FUzJat0K8MxW; Fri, 22 Apr 2022 19:24:21 +0200 (CEST)
-Date: Fri, 22 Apr 2022 19:24:15 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <guido.gunther@puri.sm>
-To: Liu Ying <victor.liu@nxp.com>
+ id 1nhypy-0027Dh-Qz
+ for linux-phy@lists.infradead.org; Fri, 22 Apr 2022 19:21:04 +0000
+Received: by mail-oa1-f53.google.com with SMTP id
+ 586e51a60fabf-e2442907a1so9608073fac.8
+ for <linux-phy@lists.infradead.org>; Fri, 22 Apr 2022 12:21:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hyQzhiKlkaWZxWD1O6avqa7n3KAQtOMS3NT5kofLOHw=;
+ b=BBDzh0xVStNzeAzUTkZRow42VwuduIKZfGdZdpF5Gny9m9USsGznStxo1Km6jFZ7ni
+ sxjdFaFLDqjcl6686wHWdEgOISOLKPDFhQqpZQK8oY0MQESXCqpcRrDvAajNGAlV360a
+ AwZRmtt6A1OaInyh4/EeAOe0rm0Su0EXWU/7OLnP7Exzm2/m7d+w+bwmVFOWIJIcvOh0
+ eO0pj+nE2dOjit7jk2LoZX1UB7BXqF/vnI0blqn8LOuI176O0evuj1iXOwEeXs500C/C
+ E2lvrf9jhyPlzuxqvojBTmXK/Q4BgV61tLkIthHniV239hXiUcDhOwwAS3wyWPCLpgxx
+ 55mQ==
+X-Gm-Message-State: AOAM5321neRWG852SQFy57FCC+PYyms1rLnPOYOEikmKzMQ3wB+S+/km
+ pZCWXiL7NBxaPQMyJhx7IA==
+X-Google-Smtp-Source: ABdhPJzraLj00H7QigmfLMJVZWg2j+VnUjRuG4VeBvp5ivyV/JjFzQ+GWydMwMXrzDgEtpfCtjpqcQ==
+X-Received: by 2002:a05:6871:893:b0:e5:bfed:cf08 with SMTP id
+ r19-20020a056871089300b000e5bfedcf08mr6776760oaq.25.1650655260843; 
+ Fri, 22 Apr 2022 12:21:00 -0700 (PDT)
+Received: from xps15.. (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+ by smtp.googlemail.com with ESMTPSA id
+ i7-20020a9d68c7000000b006054aec0025sm1034946oto.69.2022.04.22.12.20.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 22 Apr 2022 12:21:00 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, kishon@ti.com,
- vkoul@kernel.org, robh+dt@kernel.org, krzk+dt@kernel.org,
- andrzej.hajda@intel.com, narmstrong@baylibre.com,
- robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com,
- jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@linux.ie,
- daniel@ffwll.ch, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
- robert.chiras@nxp.com, martin.kepplinger@puri.sm
-Subject: Re: [PATCH resend v8 1/5] drm/bridge: nwl-dsi: Set PHY mode in
- nwl_dsi_mode_set()
-Message-ID: <YmLkv4PYsi+XiFr5@qwark.sigxcpu.org>
-References: <20220419010852.452169-1-victor.liu@nxp.com>
- <20220419010852.452169-2-victor.liu@nxp.com>
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] dt-bindings: phy: marvell,
+ armada-3700-utmi-host-phy: Fix incorrect compatible in example
+Date: Fri, 22 Apr 2022 14:20:54 -0500
+Message-Id: <20220422192054.2591093-1-robh@kernel.org>
+X-Mailer: git-send-email 2.32.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220419010852.452169-2-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220422_102436_063770_1EB90023 
-X-CRM114-Status: GOOD (  17.86  )
+X-CRM114-CacheID: sfid-20220422_122102_904729_275C1C34 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,104 +77,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-On Tue, Apr 19, 2022 at 09:08:48AM +0800, Liu Ying wrote:
-> The Northwest Logic MIPI DSI host controller embedded in i.MX8qxp
-> works with a Mixel MIPI DPHY + LVDS PHY combo to support either
-> a MIPI DSI display or a LVDS display.  So, this patch calls
-> phy_set_mode() from nwl_dsi_mode_set() to set PHY mode to MIPI DPHY
-> explicitly.
-> =
+Fix the example using the incorrect compatible string.
 
-> Cc: Guido G=FCnther <agx@sigxcpu.org>
-> Cc: Robert Chiras <robert.chiras@nxp.com>
-> Cc: Martin Kepplinger <martin.kepplinger@puri.sm>
-> Cc: Andrzej Hajda <andrzej.hajda@intel.com>
-> Cc: Neil Armstrong <narmstrong@baylibre.com>
-> Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-> Cc: Jonas Karlman <jonas@kwiboo.se>
-> Cc: Jernej Skrabec <jernej.skrabec@gmail.com>
-> Cc: David Airlie <airlied@linux.ie>
-> Cc: Daniel Vetter <daniel@ffwll.ch>
-> Cc: NXP Linux Team <linux-imx@nxp.com>
-> Signed-off-by: Liu Ying <victor.liu@nxp.com>
-> ---
-> v7->v8:
-> * Resend with Andrzej's and Jernej's mail addressed updated.
-> =
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+ .../devicetree/bindings/phy/marvell,armada-3700-utmi-phy.yaml   | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> v6->v7:
-> * No change.
-> =
-
-> v5->v6:
-> * Rebase the series upon v5.17-rc1.
-> * Set PHY mode in ->mode_set() instead of ->pre_enable() in the nwl-dsi
->   bridge driver due to the rebase.
-> * Drop Guido's R-b tag due to the rebase.
-> =
-
-> v4->v5:
-> * No change.
-> =
-
-> v3->v4:
-> * No change.
-> =
-
-> v2->v3:
-> * No change.
-> =
-
-> v1->v2:
-> * Add Guido's R-b tag.
-> =
-
->  drivers/gpu/drm/bridge/nwl-dsi.c | 6 ++++++
->  1 file changed, 6 insertions(+)
-> =
-
-> diff --git a/drivers/gpu/drm/bridge/nwl-dsi.c b/drivers/gpu/drm/bridge/nw=
-l-dsi.c
-> index d5945501a5ee..85bab7372af1 100644
-> --- a/drivers/gpu/drm/bridge/nwl-dsi.c
-> +++ b/drivers/gpu/drm/bridge/nwl-dsi.c
-> @@ -666,6 +666,12 @@ static int nwl_dsi_mode_set(struct nwl_dsi *dsi)
->  		return ret;
->  	}
->  =
-
-> +	ret =3D phy_set_mode(dsi->phy, PHY_MODE_MIPI_DPHY);
-> +	if (ret < 0) {
-> +		DRM_DEV_ERROR(dev, "Failed to set DSI phy mode: %d\n", ret);
-> +		goto uninit_phy;
-> +	}
-> +
->  	ret =3D phy_configure(dsi->phy, phy_cfg);
->  	if (ret < 0) {
->  		DRM_DEV_ERROR(dev, "Failed to configure DSI phy: %d\n",
-> ret);
-
-I can't currently test this but it still looks good so
-
-Reviewed-by: Guido G=FCnther <agx@sigxcpu.org>
-
-Cheers,
- -- Guido
-
-> -- =
-
-> 2.25.1
-> =
+diff --git a/Documentation/devicetree/bindings/phy/marvell,armada-3700-utmi-phy.yaml b/Documentation/devicetree/bindings/phy/marvell,armada-3700-utmi-phy.yaml
+index 2437c3683326..632d61c07f40 100644
+--- a/Documentation/devicetree/bindings/phy/marvell,armada-3700-utmi-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/marvell,armada-3700-utmi-phy.yaml
+@@ -45,7 +45,7 @@ additionalProperties: false
+ examples:
+   - |
+     usb2_utmi_host_phy: phy@5f000 {
+-      compatible = "marvell,armada-3700-utmi-host-phy";
++      compatible = "marvell,a3700-utmi-host-phy";
+       reg = <0x5f000 0x800>;
+       marvell,usb-misc-reg = <&usb2_syscon>;
+       #phy-cells = <0>;
+-- 
+2.32.0
 
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
