@@ -4,96 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B80E5C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Apr 2022 10:57:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A67F8C433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Apr 2022 11:22:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uWcUTBUj36ihB9qREVBIWclxSzvNiAQpvuL0+i51wbY=; b=k1mL1eaf0ZQXRrojgYq7ypNYHv
-	OtsxnyHbDUGzuV+J2lotpJUS3Y3pwdm0nU4+nJAA4sBk8v5QhpiETI38ReCvTI7O+8czKNNqdJrY7
-	4JnPHEm0jOP4yqHNaAdoqLuqtKyHP2dU/oMy/MEeF31qkTsBzrrgByBXdAepPqZ5hAL7WEYmqsFwx
-	dMuRhprapb9B4kQ7SSMH9hwM08ecUZ5invuCCIpEQdNh8s1vVMxcnJD2qg7PA0d0gIkzzLxAH4CCI
-	cEt3SiTPvfoO0IoJl+V+tHPY/lDvfouilmShmGMfSWXTRoI9bfJYhtrsQRlY8rygVcAC14pXLtj0+
-	ktBSGcdQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9KGR26gFj/jAm8LU1IEnRLzG5f90o5qrkBVFNqMz0uw=; b=XwAt9WSrxfTQAB
+	g6AuQN0mmy44VmB7d1tUx9Iwm52DQFEGbtjpB8tXwrTmVf0H63gv8lmduy7CFSlKY7jxXItJy14xQ
+	eo7gL5jqAXMy5qED4J30tH8i4EQBCLDJx2f6SzJaeldc92MuuJAPLMk6xdjuvxZha61VBD1oxUXbs
+	hrQmC9o9ZXM3CP7RkA0+oD6MXMF+rd+YVVXv4dkUmZiYJows2m3QR9ZgcYaWcjayPK5MXvGmX+MJX
+	4aq6yIsz2AwTliMla8lUznHxOz/rmAe3ArHpKNRUif0xK13JHkJvzYI3Kh+1p8IkBNtuJEy+B9lwM
+	4BrNLqbjk315icePo4uA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nhqyj-0006zh-5k; Fri, 22 Apr 2022 10:57:33 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1nhrMi-000BmJ-Vz; Fri, 22 Apr 2022 11:22:21 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhqyS-0006sZ-O6; Fri, 22 Apr 2022 10:57:18 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id CB776580F59;
- Fri, 22 Apr 2022 06:57:15 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Fri, 22 Apr 2022 06:57:15 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
- :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to; s=fm3; t=1650625035; x=1650632235; bh=t0Vm9xILeM
- tEm0+ZRmoAPUxhxs4H3KoDqpfSFpCeFCw=; b=YyohwOWwHOsgUBEhklxIw81jQH
- 9k7QTlQ/m1chfbM67m+0hW+J9gC6M6REt0RZOv0kxcV3mVU0ScXWAtz8bTJoRWfr
- h39uvBYqPEsgR7nFb0qijB/+vstZUi0TZ/how9i+VZQaoGnq2HsUShd/DZjOM72Y
- UbnN0SFcAOLXFNkmucRsE7gGWzHf/I8SXDQN841DdKmdE9P+1T0UqTQn74Vi2pm9
- /b13SwhKwJOQaaABmogrWklj6+cOSFo6dwcSWlMJIipbLw2teTqkYit9CbvlQsHx
- /2bmmHf76lj9iXG9hJRVNy5Yt8FDk3ftKcfgEw2cx0UoIH9ztTjiHZ/MdTOg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-type:date:date:from:from
- :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1650625035; x=
- 1650632235; bh=t0Vm9xILeMtEm0+ZRmoAPUxhxs4H3KoDqpfSFpCeFCw=; b=i
- U8nPM70ubfTAq9JEpnksZSiKccgJS/v8kX9pGTdKcgUiBHN4rDQM/c4Lgq4JL2HR
- iDy00wOWuSCQAZXoDyWtLxu1Utf5X88aPC0doymtVSzDLd4/S2Ep2Jj6cHBekpTG
- 2KZkDoTxrrlmJNmgj449qTFBH3KZS9w2tLHkCrodp5EGzuuDP6/3hLw1mQSAdjb3
- vF3oeIRT3hw/ReJoP7uA6fQkrPBGSbt9Ygbsgu7hVv2UgL2mdrMmSkVY9ABIAUMC
- X2hou/ZnmrbeIWf6MhaZEYnc30U7xcYJ5cRUuwMU3+tTmOc3CpYO5qaufhDCnjhF
- YPdaRylLN7MKSl4PYIogw==
-X-ME-Sender: <xms:CopiYvpMg8hB7wNpmcKj2c9-fUTff0aV2fB5qx5MxUk88lFsfRZuXA>
- <xme:CopiYpp-fmHr5lxSrNy6k0HXJwDwH2MfQqaD6w-jP_5XDLZehoZDf5xqH0_9PwF2D
- _3Q7UW1zdGwZMDyILI>
-X-ME-Received: <xmr:CopiYsOb8mHfLnR-4-ETneMFMMtqW8Xf_gwFS7tf9GX0HylDPpLpF5Xhk194DVmeXTKHVfvIXDostCKkkkARyFRA6elGSxqRXSK26Ws>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrtdeggdefvdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvvefukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepledvueduvdegleeufeetjeeuvefhieehjedutddtffekleekgeduiefgffdt
- hffgnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdrohhrghenucevlhhushhtvghruf
- hiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdr
- thgvtghh
-X-ME-Proxy: <xmx:CopiYi7w5KJVhVmQgmTJeLJvfycuQZkbrISLSqb7SB_NXdvUAZyoPA>
- <xmx:CopiYu5b75WZpoAisop1NSRQcW46FVY3pRultQY6ns1ZPAx292OLXA>
- <xmx:CopiYqiU0Ie1XFuc5PcX1rrVtTeSuAFCCFvXYu8cAeqaid2zrKOvxQ>
- <xmx:C4piYhwlFs3WkiNwqadkyWiP3PYOKVYUrZAEDGBE5fWMd4iufn3zFw>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 22 Apr 2022 06:57:14 -0400 (EDT)
-Date: Fri, 22 Apr 2022 12:57:12 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: airlied@linux.ie, angelogioacchino.delregno@collabora.com,
- chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org,
- ck.hu@mediatek.com, daniel@ffwll.ch, deller@gmx.de,
- jitao.shi@mediatek.com, kishon@ti.com, krzk+dt@kernel.org,
- maarten.lankhorst@linux.intel.com, matthias.bgg@gmail.com,
- p.zabel@pengutronix.de, robh+dt@kernel.org, tzimmermann@suse.de,
- vkoul@kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, markyacoub@google.com,
- Markus Schneider-Pargmann <msp@baylibre.com>, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v9 01/22] dt-bindings: mediatek,dpi: Add DP_INTF compatible
-Message-ID: <20220422105712.bdpbwliificvon4j@houat>
-References: <20220327223927.20848-1-granquet@baylibre.com>
- <20220327223927.20848-2-granquet@baylibre.com>
+ id 1nhrMf-000Bl1-On
+ for linux-phy@lists.infradead.org; Fri, 22 Apr 2022 11:22:19 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 6AC0DB82C15;
+ Fri, 22 Apr 2022 11:22:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25151C385A0;
+ Fri, 22 Apr 2022 11:22:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1650626535;
+ bh=SVW4zVvibn9z+IjAwyBEd5JkQQkXUtOD1zca6C1BokE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qqInEFY2cO4FTnCH8Gno5qENJk/44n3MG8a3wISfMNbDgBokbaZ7vvr+qaZVsI27K
+ i/VwnIIIbXQceDYv0RAf7WYyxiTpWag2UFtrdfL2mC/attGJ1kr9GGgJxyTL35FDt0
+ SVEs8jdWWJveITVcdjC1Z+BBasxW4ilFyxeyNQGEWMhhl2oarOsIo5ZRE/s7n8WK29
+ E8FRNSTUeDUZ+HPQ7tnDqqlvzH/oG0ZspRVjbDvuzfsktZUAxzVXzMIUzFWa9ks5+Q
+ QkvKB3D94/j5v/Xc8a3s47FqgRn5wUTZWUkSJzw+PhcuThk+V5rwoy4G28IWV7jeTt
+ 9sm4LcyOh1m0Q==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+ (envelope-from <johan@kernel.org>)
+ id 1nhrMW-0002mB-2D; Fri, 22 Apr 2022 13:22:08 +0200
+Date: Fri, 22 Apr 2022 13:22:08 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Stephen Boyd <swboyd@chromium.org>,
+ Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Stanimir Varbanov <svarbanov@mm-sol.com>,
+ Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Prasad Malisetty <quic_pmaliset@quicinc.com>,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH RFC 1/5] phy: qcom-qmp: add support for pipe clock muxing
+Message-ID: <YmKP4FXXm6NhQFYK@hovoldconsulting.com>
+References: <20220421102041.17345-1-johan+linaro@kernel.org>
+ <20220421102041.17345-2-johan+linaro@kernel.org>
+ <de4f9514-5132-f208-d43f-4c50afcda203@linaro.org>
+ <YmKBgGHtfDcO1Mkg@hovoldconsulting.com>
+ <CAA8EJpqTzcwAtxk+XtAWdZaKEx2=VduPiVBp+CWj=_C-921YJg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20220327223927.20848-2-granquet@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <CAA8EJpqTzcwAtxk+XtAWdZaKEx2=VduPiVBp+CWj=_C-921YJg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220422_035716_880623_A6063BA0 
-X-CRM114-Status: GOOD (  20.28  )
+X-CRM114-CacheID: sfid-20220422_042218_146243_54869C6E 
+X-CRM114-Status: GOOD (  33.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,107 +85,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7533863016776211437=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+[ Again, please trim unnecessary context from your replies. ]
 
---===============7533863016776211437==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="anrqwesp6j2b4lfg"
-Content-Disposition: inline
+On Fri, Apr 22, 2022 at 01:35:01PM +0300, Dmitry Baryshkov wrote:
+> On Fri, 22 Apr 2022 at 13:20, Johan Hovold <johan@kernel.org> wrote:
+> >
+> > On Thu, Apr 21, 2022 at 02:08:27PM +0300, Dmitry Baryshkov wrote:
+> > > On 21/04/2022 13:20, Johan Hovold wrote:
 
+> > > > +   /* Get optional pipe clock mux and default reference source clock. */
+> > > > +   qphy->pipemux_clk = of_clk_get_by_name(np, "mux");
+> > > > +   if (IS_ERR(qphy->pipemux_clk)) {
+> > > > +           ret = PTR_ERR(qphy->pipemux_clk);
+> > > > +           if (ret == -EPROBE_DEFER)
+> > > > +                   return ret;
+> > > > +
+> > > > +           qphy->pipemux_clk = NULL;
 
---anrqwesp6j2b4lfg
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> > > > +   } else {
+> > > > +           qphy->piperef_clk = of_clk_get_by_name(np, "ref");
+> > > > +           if (IS_ERR(qphy->piperef_clk)) {
+> > > > +                   ret = PTR_ERR(qphy->piperef_clk);
+> > > > +                   return dev_err_probe(dev, ret,
+> > > > +                                        "failed to get lane%d piperef_clk\n",
+> > > > +                                        id);
+> > > > +           }
+> > > > +   }
+> > > > +
+> > >
+> > > As a second thought.
+> > > This needs to be more explicit. If the chipset requires the pipe clock
+> > > remuxing, we must fail if the clocks were not provided. So depending on
+> > > the qmp instance/property the driver should either use devm_clk_get()
+> > > (instead of _optional) or skip this block completely.
+> >
+> > No, the kernel is not a DT validator (and we have the YAML bindings for
+> > that now).
+> 
+> It is not about DT validation. It is about passing a correct DT.
 
-Hi,
+Heh. That's the same thing.
 
-On Mon, Mar 28, 2022 at 12:39:06AM +0200, Guillaume Ranquet wrote:
-> From: Markus Schneider-Pargmann <msp@baylibre.com>
->=20
-> DP_INTF is similar to DPI but does not have the exact same feature set
-> or register layouts.
->=20
-> DP_INTF is the sink of the display pipeline that is connected to the
-> DisplayPort controller and encoder unit. It takes the same clocks as
-> DPI.
->=20
-> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
->  .../bindings/display/mediatek/mediatek,dpi.yaml       | 11 ++++++-----
->  1 file changed, 6 insertions(+), 5 deletions(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,=
-dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.=
-yaml
-> index dd2896a40ff0..2dba80ad3b18 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-> @@ -4,16 +4,16 @@
->  $id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
->  $schema: http://devicetree.org/meta-schemas/core.yaml#
-> =20
-> -title: mediatek DPI Controller Device Tree Bindings
-> +title: mediatek DPI/DP_INTF Controller
-> =20
->  maintainers:
->    - CK Hu <ck.hu@mediatek.com>
->    - Jitao shi <jitao.shi@mediatek.com>
-> =20
->  description: |
-> -  The Mediatek DPI function block is a sink of the display subsystem and
-> -  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parall=
-el
-> -  output bus.
-> +  The Mediatek DPI and DP_INTF function blocks are a sink of the display
-> +  subsystem and provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel da=
-ta on a
-> +  parallel output bus.
-> =20
->  properties:
->    compatible:
-> @@ -23,6 +23,7 @@ properties:
->        - mediatek,mt8173-dpi
->        - mediatek,mt8183-dpi
->        - mediatek,mt8192-dpi
-> +      - mediatek,mt8195-dpintf
+> The file can come up from the kernel. It can come from the older
+> kernel.  OR it can come from the vendor. Or it even might be being a
+> part of firmware flashed into the device.  So we can not assume that
+> the DT is correct just because the in-kernel DT passes YAML
+> validation.
 
-It seems a bit weird to have all instances of DP_INTF with a separator
-but the compatible doesn't have one?
+Again, no. The kernel does not need to implement DT validation and can
+assume that the DT describes the hardware accurately. If the DT says
+there's a mux, the driver can use it. If there's no mux in DT, the
+driver can assume it isn't there.
 
-Is there a reason to not use dp-intf?
+The only thing that complicates things here is the sc7280 dts which has
+been released in 5.16. We don't care about Qualcomm's kernels and dts.
 
-Maxime
+> So, as I wrote, the whole patchset needs much more care about compatibility.
+> 
+> > > But this will not work with earlier DTS files.
+> >
+> > So this is not a problem (but if we really wanted to have the driver
+> > validate the DT it can be done by updating the compatible strings).
+> 
+> We should not update compatible strings just because the driver
+> changes. Compat strings describe the hardware, not the Linux point of
+> view on it.
 
---anrqwesp6j2b4lfg
-Content-Type: application/pgp-signature; name="signature.asc"
+We can, it's a documented practise in case a binding needs to be
+updated in an incompatible way:
 
------BEGIN PGP SIGNATURE-----
+	https://www.kernel.org/doc/html/latest/devicetree/bindings/ABI.html
 
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYmKKCAAKCRDj7w1vZxhR
-xWHVAP9XOs5mllTpT84nKFlJqhBvEdANoAc/yLINNdL4rTwK/AEA2W/abW6SXtii
-kYk/IHsQm/a6SEpxbGGVFYXWq6N3fQE=
-=Cd+2
------END PGP SIGNATURE-----
+But I don't think it'll be needed here.
 
---anrqwesp6j2b4lfg--
-
-
---===============7533863016776211437==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Johan
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7533863016776211437==--
-
