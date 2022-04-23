@@ -4,82 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95520C433F5
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Apr 2022 11:25:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58F09C433F5
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Apr 2022 12:49:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=geSVYLUl615smDIwZob/bwtm4mhykuZYYTBKHkV8ZJI=; b=3UnxyrurNTmdwS
-	kY9MNYIGpQvVUEP1cwfULEWdYX9sTeAW4lkesq5kBbdCYuxU9UHZie5qN/qDVXiFcbfUqvhDY1pNl
-	MThrSQnpzUoiFWbyfoaPmPYBFREUZW29/6qSSrRPouMOV9pqT7qTTPkmRNYUNC1EjGQ0Jt/1TAjkm
-	sDlZv5RpUvqO095JgLoFtcVUOEzxwhv01ygCnbqq0wlgQEbtBb2NYKnPX6unZ+DaV/K73RieanRIk
-	SMvsDoRMeOkynas9lDq7mCTttLsKy3vm3dXbIk7K680h94VXFMQ8wd93AMsKgBle3c9TZSP7J+BnN
-	NCKdqoOyn9jHEH81QPkg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xOVP02xUYC6mL03CVgqc8ARCsrzfMfEILSn4JoAn1g0=; b=G36ypmQeFo0nWF
+	kzDmq6IzAHkOut++dLr5om2abvex6rwtxWVtvbQm/uSM5sqNMBG91+xP7AWr0c434yXVnXXtV8hrQ
+	xzVkN5ij2Q/r0I6tvtWH3ALHvz4UbfaRmVufLSYqPwnCPvtLBikx/u6GRA7dfZP4cwWavg//7N40D
+	putofUOlwiNQSxUpqAXgpmzdzHWy01wwQQx9AO+yxl/13YSjXx1rmO2Kf0XucqbUnrPdK9KVZnaSb
+	ImKoLmSIoaZKSm/pdSQur7+Jn6yKUt5Obth1h6O/MDTdtRgz9Y/236dqMszPgBONhfpEglHOvWbGE
+	lUGTinT96CZYzs2bCqRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1niDt4-004GEG-W5; Sat, 23 Apr 2022 11:25:15 +0000
-Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
+	id 1niFCN-004MmT-6I; Sat, 23 Apr 2022 12:49:15 +0000
+Received: from mail-mw2nam12on2060d.outbound.protection.outlook.com
+ ([2a01:111:f400:fe5a::60d]
+ helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1niDt3-004GDo-6V
- for linux-phy@lists.infradead.org; Sat, 23 Apr 2022 11:25:14 +0000
-Received: by mail-ej1-x636.google.com with SMTP id l7so20971947ejn.2
- for <linux-phy@lists.infradead.org>; Sat, 23 Apr 2022 04:25:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=b0QHbEfjhdFjBQohwIb3mVsJsYj7ByjobrCCQyighNY=;
- b=OWWWrhwA+sfgjaEEgSVqN+h+Zolso0GHgxGLbXaAmv/G+zvfsKo1V2V7wlW70jg1q6
- nG0T1MuhNxoirWsGTIdJieUZlPpgafXSDj0Z2tgroyjzhE03kXfYmTsuPr37vzAzt83Y
- hYCfppSyrak8z5DjQ3oDCWonqpdXuoLo5v0/o1Fwp0JKTgXHn1X6eR/Uc9uX48C8pBJd
- K5uyXXj71TnWF4CpnknbDshZy03N3q2nqoHRjmB5nxY15r6F8oLMwn3e5REiWTZqx6fz
- UH7ePgOFvqCcQ9ZdYReEXiSDiiE5eCsjWFEiul2g1Lre4bD63Xh6zFWeUIOujSu8QGIO
- xJBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=b0QHbEfjhdFjBQohwIb3mVsJsYj7ByjobrCCQyighNY=;
- b=IMBrFdfJfPNr+1h1m0+809B5QOYzrLxaBVAe78UFN9+j9zRT7N1uU3RiOmLcXD/FIj
- nLvRohx2jFp6TJadNsHCLe8A3N0kPg0DF8Ghn0/6oAe7+0Iop050LfZtsl2QX6OdUIdH
- tAmsWLRjUbF1UtKLmtx074ipgkbDPjVfXXz2i/svAVra+W0DtcbnJgh6NhPgE7+GP0TV
- RWYaw5ozcc/32jYskkdPcBA/d4gSXzXP/5RrCXG+CJ3jBn6+3Av1ffhL1rajYgwA7PwR
- 8ebsmAJVGxXvxUrI058vzfUu/IIr7ntolYyUTY0nZrSebjAb4mnDb4Id4K9GUmT5Cdt0
- tH4w==
-X-Gm-Message-State: AOAM533u/Wu81I+SUbt364DgNgvVRI49PJil/fEHrEryxSMaWZzdJNHl
- V3SOg7crIaVTW6TYh4Dug8pmFw==
-X-Google-Smtp-Source: ABdhPJykneMY5JCtqucAvuVw5uFTMjnYXBQJbrUzg8v0zp5Q2N9doiRsAbkBlDcBP0r3mcI0+hg3sA==
-X-Received: by 2002:a17:907:6d9f:b0:6f0:1077:eaf4 with SMTP id
- sb31-20020a1709076d9f00b006f01077eaf4mr8081863ejc.708.1650713111613; 
- Sat, 23 Apr 2022 04:25:11 -0700 (PDT)
-Received: from [192.168.0.234] (xdsl-188-155-176-92.adslplus.ch.
- [188.155.176.92]) by smtp.gmail.com with ESMTPSA id
- ay17-20020a170906d29100b006e88f246fdbsm1589880ejb.152.2022.04.23.04.25.10
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 23 Apr 2022 04:25:11 -0700 (PDT)
-Message-ID: <0c4c5e9d-7222-69d3-1dea-1a499acf0f6c@linaro.org>
-Date: Sat, 23 Apr 2022 13:25:10 +0200
+ id 1niFCK-004Mkl-Fu
+ for linux-phy@lists.infradead.org; Sat, 23 Apr 2022 12:49:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=R330jNaAtkZ6WpvIVfXh/8qvdexOEp9PkaqYxliVvpEzLMEwzmzSdYsPWQMhSlxbv/lpoAhwDUWOvRNgaOjl8Pl3FXcHCSxn8wha93InlYDcmL2yKwGTUfGI4NsfkNIRDBLi4o1d+wfEE6Ns/W3QH2vWvttcXQCWYBh10EuY0PMjJUCb+wgpaMRJFgvBybRtBBHyv1M9MqGLzwcQk+rKFsd3HMxnwOSYv0GRUkVtEmxfj8FnFBGNuDZKILWOwF0i2RC1hjRrkMgeD42pO7wAeseU6PRfIInnZBd9r/E2SV7TmGPYViR/IrkkFyDLDUl0LGRi4xQ89IXALLK9QEVZfQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ZTSc/AQ+PQCUuR104LNTU5MGKut8AGJpqoDYM65l76A=;
+ b=f8mQclWBznbDXBlMRMTbO1Rc0+cHauO7CeyjiUALLiLwq70ILAbRPPcZW0vRkaOq1vzJihB3SFsklwh3GbJDm0rkXB8E9xiKH9Xg43dTuGr+zoOZX6j4vSKcfHf72kwd6PoVR10P2czCOH/pdCQdqlL0SPeQifgrOG7Tcgw9Ymobbt8mP3eQey+T27CKmF80QdYFS3t/2mKf4yFv89JE/MRP2h6wjsjbzpTMZ/Z69WmutYHW3ufoX7cFrO1mkT0JA6YLNISyuwIz7URlFG5XiKiWa/RahB+hwKNvAp/U4P3NjtPKNeL2Wc7yCqYoXOfNxIZYnlWdnP+oILWm4Jf4vw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 12.22.5.236) smtp.rcpttodomain=ti.com smtp.mailfrom=nvidia.com; dmarc=pass
+ (p=reject sp=reject pct=100) action=none header.from=nvidia.com; dkim=none
+ (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ZTSc/AQ+PQCUuR104LNTU5MGKut8AGJpqoDYM65l76A=;
+ b=OJNu1e3kgWe0JbVCZz9ERHJRsZ9phSys0IjXpug6Iio0irHcSN7yJ9g3Qq1XZkT0rMCZL53FdQRDta5GwOIm65hplyI/JXOi+hcIu+z4KJRUyVjkWydban5vt1MQiVdNR22QhfAxKxURgkbg+tyy5/+bG88qYR4+6Vn/fG+fP7cUfb8rfiZkuwF5z7KTFIN5WW4QhDuigTfYCS6vjQDeOXeycQwiwjEBigdMSFh4BOfPfVv6mPMt6mXAI1qmGASrdQreSE9+Q44OQ7RTesgOZ8YDxLGoxIEibCf6v4GeV7GppPm+fsm8kqWbVpxeap7RlZs4y77KdDN3A9f+THzIgg==
+Received: from BN9P221CA0004.NAMP221.PROD.OUTLOOK.COM (2603:10b6:408:10a::12)
+ by DM8PR12MB5493.namprd12.prod.outlook.com (2603:10b6:8:3d::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5186.14; Sat, 23 Apr
+ 2022 12:49:07 +0000
+Received: from BN8NAM11FT050.eop-nam11.prod.protection.outlook.com
+ (2603:10b6:408:10a:cafe::1a) by BN9P221CA0004.outlook.office365.com
+ (2603:10b6:408:10a::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5186.13 via Frontend
+ Transport; Sat, 23 Apr 2022 12:49:07 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 12.22.5.236)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 12.22.5.236 as permitted sender) receiver=protection.outlook.com;
+ client-ip=12.22.5.236; helo=mail.nvidia.com;
+Received: from mail.nvidia.com (12.22.5.236) by
+ BN8NAM11FT050.mail.protection.outlook.com (10.13.177.5) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.5186.14 via Frontend Transport; Sat, 23 Apr 2022 12:49:06 +0000
+Received: from drhqmail202.nvidia.com (10.126.190.181) by
+ DRHQMAIL109.nvidia.com (10.27.9.19) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.32; Sat, 23 Apr 2022 12:49:06 +0000
+Received: from drhqmail201.nvidia.com (10.126.190.180) by
+ drhqmail202.nvidia.com (10.126.190.181) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Sat, 23 Apr 2022 05:49:05 -0700
+Received: from vidyas-desktop.nvidia.com (10.127.8.9) by mail.nvidia.com
+ (10.126.190.180) with Microsoft SMTP Server id 15.2.986.22 via Frontend
+ Transport; Sat, 23 Apr 2022 05:49:00 -0700
+From: Vidya Sagar <vidyas@nvidia.com>
+To: <bhelgaas@google.com>, <lorenzo.pieralisi@arm.com>, <robh+dt@kernel.org>, 
+ <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+CC: <kishon@ti.com>, <vkoul@kernel.org>, <kw@linux.com>, <krzk@kernel.org>,
+ <p.zabel@pengutronix.de>, <mperttunen@nvidia.com>,
+ <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <kthota@nvidia.com>,
+ <mmaddireddy@nvidia.com>, <vidyas@nvidia.com>, <sagar.tv@gmail.com>
+Subject: [PATCH V2 0/8] PCI: tegra: Add Tegra234 PCIe support
+Date: Sat, 23 Apr 2022 18:18:50 +0530
+Message-ID: <20220423124858.25946-1-vidyas@nvidia.com>
+X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Subject: Re: [PATCH] dt-bindings: phy: marvell, armada-3700-utmi-host-phy: Fix
- incorrect compatible in example
-Content-Language: en-US
-To: Rob Herring <robh@kernel.org>, Miquel Raynal <miquel.raynal@bootlin.com>, 
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20220422192054.2591093-1-robh@kernel.org>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220422192054.2591093-1-robh@kernel.org>
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 477b2588-ff8d-4561-6e45-08da2527a783
+X-MS-TrafficTypeDiagnostic: DM8PR12MB5493:EE_
+X-Microsoft-Antispam-PRVS: <DM8PR12MB549396645C1AA0DA5E1DC2A8B8F69@DM8PR12MB5493.namprd12.prod.outlook.com>
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: W4gmupU7LbknwZEcHYdDCkrX2Sf8F71j2c+3uuOi6c9U3Nbf8gcnLA9lFdV2pjQJNyih7XMVarjTOg/p6/+idQW+t6cvUVtcqfWLuELuL4zZTWZqfkeAYdO6rBiZtoIDR9lWVfh2yPii3AUhG56kCCOJR6ms64K091UubVBn38bvhDYQx661EXtyqXJirnanlJizag5tuFydubIKoQiFWPXJUbUUTl+4S066NLP+UguFRBpGp+VNUnfuIgsLj/pQpA7wIOBSRGMD0ud8qhUishfV/SpwNz5pZXps38Dsoi3Oqbs4Iw7TTHJOHjbRIsgepoVg4PxF5XCWnRKcumlxv9fdMpmDvZObStxEIKwgJ7JyCePS5/mhxrFCGVf1aLO3SdXpFlt5Dp1ARg5pebxo/C6qoUcGoNO+duWeeMOiydjmmDqP32I+Pix4dF47UgD2i45+yla6EwhdTQsNz1hj+Vp0vSYA0BKABk6jBs4qjYXnwVX/RHKFu/lCWzw2PTs9z8nIjlN9rAYjudyRfB5pG/M5RxLOe/zYkDhKDhqC9lqd8UdtUBrk3wAQEeiPA9bIhjQpM1F3v42EqTnATfpOjau7M/1ACDbVmX14DU0vR/PkSBLYCxw8vC7V6mXM/RsaFz5TrjsZmmpVuh9Ug2KuVPqpv1DRsDI1m7NkT8NXOKK9oTEBMNG420PFlU0YbM+lijRWUD4rOOTdEjV+lnZYbg==
+X-Forefront-Antispam-Report: CIP:12.22.5.236; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:mail.nvidia.com; PTR:InfoNoRecords; CAT:NONE;
+ SFS:(13230001)(4636009)(40470700004)(36840700001)(46966006)(36860700001)(356005)(81166007)(5660300002)(40460700003)(6636002)(54906003)(110136005)(8936002)(508600001)(7416002)(4326008)(336012)(8676002)(70206006)(70586007)(316002)(26005)(186003)(2906002)(1076003)(2616005)(83380400001)(426003)(47076005)(6666004)(7696005)(82310400005)(86362001)(36756003)(36900700001);
+ DIR:OUT; SFP:1101; 
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Apr 2022 12:49:06.8988 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 477b2588-ff8d-4561-6e45-08da2527a783
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a; Ip=[12.22.5.236];
+ Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN8NAM11FT050.eop-nam11.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM8PR12MB5493
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220423_042513_287762_CBB2F199 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220423_054912_557523_2027E3EF 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,20 +130,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/04/2022 21:20, Rob Herring wrote:
-> Fix the example using the incorrect compatible string.
-> 
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  .../devicetree/bindings/phy/marvell,armada-3700-utmi-phy.yaml   | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
+Tegra234 has a total of 11 PCIe controllers based on Synopsys DesignWare core.
+There are three Universal PHY (UPHY) blocks (viz. HSIO, NVHS and GBE) with
+each block supporting 8 lanes respectively. Controllers:0~4 use UPHY lanes
+from HSIO block, Controllers:5,6 use UPHY lanes from NVHS block and
+Controllers:7~10 use UPHY lanes from GBE block. Lane mapping in each block
+is controlled in XBAR module by BPMP-FW. Since PCIe core has PIPE interface,
+a glue module called PIPE-to-UPHY (P2U) is used to connect each UPHY lane
+(applicable to all three UPHY bricks i.e. HSIO/NVHS/GBE) to PCIe controller.
+This patch series
+- Adds support for Tegra234 in the existing P2U PHY driver
+- Adds support for Tegra234 in the existing PCIe platform controller driver
+- Adds device tree nodes for all PCIe controllers
+- Enables nodes applicable to P3737-0000 platform
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Testing done on P3737-0000 platform
+- PCIe link is up with on-board Broadcom WiFi controller
 
+- PCIe link is up with an NVMe drive connected to M.2 Key-M slot and its
+  functionality is verified
 
-Best regards,
-Krzysztof
+- PCIe link is up with a variety of cards (NICs and USB3.0 add-on cards)
+  connected to CEM slot and their functionality is verified
+
+V2:
+* Dropped 3 patches that add clocks & resets IDs, power-domain IDs and
+  memory IDs for PCIe controllers as the patches are already available
+  in linux-next
+* Based on Bjorn's review comment, reverted the commit b57256918399 ("PCI:
+  tegra194: Rename tegra_pcie_dw to tegra194_pcie") and pushed it as a
+  separate patch before adding support for T234 in the existing driver
+* Addressed review comments from Rob for the other changes
+
+Vidya Sagar (8):
+  dt-bindings: PHY: P2U: Add support for Tegra234 P2U block
+  dt-bindings: PCI: tegra: Add device tree support for Tegra234
+  arm64: tegra: Add P2U and PCIe controller nodes to Tegra234 DT
+  arm64: tegra: Enable PCIe slots in P3737-0000 board
+  phy: tegra: Add PCIe PIPE2UPHY support for Tegra234
+  PCI: Disable MSI for Tegra234 root ports
+  Revert "PCI: tegra194: Rename tegra_pcie_dw to tegra194_pcie"
+  PCI: tegra: Add Tegra234 PCIe support
+
+ .../bindings/pci/nvidia,tegra194-pcie.txt     | 104 ++-
+ .../bindings/phy/phy-tegra194-p2u.yaml        |  17 +-
+ .../nvidia/tegra234-p3737-0000+p3701-0000.dts |  25 +
+ arch/arm64/boot/dts/nvidia/tegra234.dtsi      | 775 ++++++++++++++++++
+ drivers/pci/controller/dwc/pcie-tegra194.c    | 622 +++++++++-----
+ drivers/pci/quirks.c                          |  13 +-
+ drivers/phy/tegra/phy-tegra194-p2u.c          |  48 +-
+ 7 files changed, 1396 insertions(+), 208 deletions(-)
+
+-- 
+2.17.1
+
 
 -- 
 linux-phy mailing list
