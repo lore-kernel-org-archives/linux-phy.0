@@ -4,79 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8998BC433FE
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Apr 2022 15:54:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 067ABC433F5
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Apr 2022 16:04:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iaTwOJdZLThdpVTnIlPxOPIhTb2kzkNCt2RjUJwJYXI=; b=FZxcCvJPq1hsWR
-	zLZQtsAm0QjJJ6mzuOzMLF04Wb3rk15yVfgRiWzvOt8bcbMSfIfMPn9kCoSmVn+y1/IwOGwUER66n
-	jAOrTLgi1mLfdqmQvbNCvyxtUy13O0iWYeKf0lGeJShAl7txCWaMYhcN4UIAwdtNFERGjZSG/nqyO
-	7Bn4kTfAJA/H2g4dJaiJqyKY1gcIh/Bfs7plMu62CoTePj6jNEwGqfudOmivZi6e5wYDKPMkrdhhE
-	8aYXtvTlnTo/mR/tQZY0rA8z/B65HWBwQ+WNDGOq//Gl14x4PJo1T0Cktv7GogceypUEirxz6SbTf
-	I4tScC11DBnQKhvQNCNA==;
+	List-Owner; bh=OAQjLnrrFZkaR4iITjS2IfRkHz0YtbD8qrwIwYklXYA=; b=VE7uSL+Ptjk3Wg
+	sJPBX3XK1rjKbEDNWc2fHlN9UCN6jqUq0HF/Pp6mG8dvuWsqIJp+IHkreeOvgePf0O9yeg5c5ja3n
+	w5O4xBjoXdVnn9k4sbvKi89BSjfAU8ps41d1UbdrlVAZCPeWr7hZCc48VFKKvww7VjTcAGeMszIWw
+	JfkQYP1pucNq9Y/Hh4pO5ezumHjCsXlyXr1YxFgQ/0VUHm8dMa5enCLF0YfMqir9K618zwGNi9n3X
+	zZLgnSOBzzAKvHlzNl84Cd71BVcvEbZwMQGmkApcJJAzbi8O/0IVnUyGo0+Lq5UDqkUPV9O0CXBUJ
+	MN95wB4bUIyTTpgVZuGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1niI5Z-004b2o-US; Sat, 23 Apr 2022 15:54:25 +0000
-Received: from mail-oi1-x22e.google.com ([2607:f8b0:4864:20::22e])
+	id 1niIEv-004boA-Dn; Sat, 23 Apr 2022 16:04:05 +0000
+Received: from mail-oa1-x31.google.com ([2001:4860:4864:20::31])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1niI5X-004b2F-T6
- for linux-phy@lists.infradead.org; Sat, 23 Apr 2022 15:54:25 +0000
-Received: by mail-oi1-x22e.google.com with SMTP id l203so1490697oif.0
- for <linux-phy@lists.infradead.org>; Sat, 23 Apr 2022 08:54:23 -0700 (PDT)
+ id 1niIEs-004bl9-G7
+ for linux-phy@lists.infradead.org; Sat, 23 Apr 2022 16:04:04 +0000
+Received: by mail-oa1-x31.google.com with SMTP id
+ 586e51a60fabf-e5c42b6e31so11726203fac.12
+ for <linux-phy@lists.infradead.org>; Sat, 23 Apr 2022 09:03:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=hrGPwkbDgIWnJ4Onq4/Uw+01BRMLP89hoICAxPX1lZg=;
- b=phBNBzVskW/COz4zfKD/DezyL5LTtjRofDqci3Srne5x2R+gtrqEhHytCh78rJsO90
- mtHvp8Qtrz3S4xvbF4AHktkGtMBk0X1nmUcWk660VXeYJObzTHlHNRmZIe3m6Cq8duQ5
- gKMISYiBRrToNq6aId2OMigdjXLMCrCeLz7XBkufalIkbnO5dDM9C3vttXXpApWepY6i
- EK3RlAZyAvH16nYOhmlzO0fgiRadqi4I0C4bMQLaPODTuP4bgy8BHmay6ZZi3ptFiYdG
- 2Eo9LsMk6nVaruBUA/CTeyIG2WiK18d31FQAnOHE50/xc3G4uyvAOIpr4x4ZDcwbusIk
- CAxA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=h8PXDVWhKSWBJ0C2lTa3ybMUBrdTmN9u1QzT/Ihk3Pk=;
+ b=nP0ktGxiJzcu0Clehe5GCxRzS2iKxF48fxVgutSfIYOUswhkoQQVHsJy/YrznvUhIs
+ BMzo/fVq7L1AlUpI4B4rUb1BqRTBpfcVnrIM30czanR61YO671Q0hPAI+s6dgLLJ/sw7
+ L/kyYpB+5dTfqfw/J7JdZsx1OwHC3eWkcUqOODNj23DDTWc7DILTpjvKpxv1aH9NK8+l
+ 5hJXkEHPJZKBw71PPLwvTlXE0LGLihgzpcx2HgtZLy28Fl1qHns9F6OtpKz7/hrNIjJ1
+ fbWIpcHfk+fTchwO6egooikNX5YUoqvjpeVmynlgz7FFJ6ygG9NXkYXjERfl9KZ4max7
+ 8WLg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=hrGPwkbDgIWnJ4Onq4/Uw+01BRMLP89hoICAxPX1lZg=;
- b=s81+CkojmCJfs4lVkzCU6nSNQnCp2VCpZyB/Gaua3LzW5MsvZLdO4OU8+aGyOj5iJg
- Ozu56jB9GxXmC3Honu1soGwLKm2qyqtyLAa/QyzWWj9NMkb8DtZgJxR7XcztqqnSRVfa
- kxTcu0E1JbgHcAWmxxUwTQi3ibSlUstb6TtJY69gN3OVj3nWvOOdNYXauHGweBvMAZ0V
- u5K5xxIiYRHwmizoYknDH50XvKlBzogzXCZqJq399t0RH0+RrUUQyIcz2WMTCxcfcjVb
- rbAkIuaOwm3lxvlY99RXZ0AVnHUIngpTOgoqfaBH9hR110osB7OipkvbvEeW7AKPJS0a
- 8FuQ==
-X-Gm-Message-State: AOAM5323gMAJi37zOvKtMSkijWwISUA/cGB6W3uP08wQEOjEn9T8dGRS
- cSNOStstdq7120TN1nKPv8IydA==
-X-Google-Smtp-Source: ABdhPJwLI+vAZIQMAK7ev1g3Xpqgo1rOXHieHQmvJPiguFY8z0G2GNpRD4EJ2n+MK1ojus7g7RX6jw==
-X-Received: by 2002:a05:6808:f90:b0:325:4a7:5555 with SMTP id
- o16-20020a0568080f9000b0032504a75555mr1422399oiw.157.1650729262444; 
- Sat, 23 Apr 2022 08:54:22 -0700 (PDT)
-Received: from ripper ([2600:1700:a0:3dc8:205:1bff:fec0:b9b3])
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=h8PXDVWhKSWBJ0C2lTa3ybMUBrdTmN9u1QzT/Ihk3Pk=;
+ b=F3BzZcxOCzUb+iQYipp8LH8AI7rPb1OijHWfgD9HUY7TrEZDzu7JtMF4IePU+q6yuS
+ +w7inJs4prHbQL8/M7o2I+kNHtskiNjp9uLPLEoHd1pBsAd4juFrkzN0yidesMqYL1Vx
+ zYc/r7+7mQkWqMMkzvNUMUBx+9erHQHOBPVgkMuDayIVee9fswzUjpirmvfQNta/iKrw
+ Dd840yFz3bP5ITHhx/RLt4AKRmq0FguKHUuTjR0iorfnrutdKmoaMTY17Stv4lkCMZR+
+ F6pnLgXwDy0f6WvZuXdkpnxWdWb69Sc9f3LiqQd58u1cMUXykEoI2gzuwcj+lQGILELI
+ XzXQ==
+X-Gm-Message-State: AOAM530YzLkHXl4ud6Es0QIjkulyTPen5WD/jd02YxdTl9axDiw/ntmA
+ kLWYWT+GLqSw0YCe/zwytkcnsThixVoIMgLd
+X-Google-Smtp-Source: ABdhPJyfoXu/6v5iR7R2/jWDr/7XAZoB+zpsxrUBkKAVnoaBYOT0r3a7pCIcYsGHGuHEn8JXNwum5A==
+X-Received: by 2002:a05:6870:33a5:b0:dd:f6e6:7837 with SMTP id
+ w37-20020a05687033a500b000ddf6e67837mr3879028oae.154.1650729827416; 
+ Sat, 23 Apr 2022 09:03:47 -0700 (PDT)
+Received: from builder.lan ([2600:1700:a0:3dc8:3697:f6ff:fe85:aac9])
  by smtp.gmail.com with ESMTPSA id
- s6-20020a4ae546000000b0032480834193sm2098338oot.46.2022.04.23.08.54.21
+ c9-20020a4a8ec9000000b0032438ba79b0sm2123856ool.0.2022.04.23.09.03.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 23 Apr 2022 08:54:21 -0700 (PDT)
-Date: Sat, 23 Apr 2022 08:56:22 -0700
+ Sat, 23 Apr 2022 09:03:46 -0700 (PDT)
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- bhupesh.linux@gmail.com, agross@kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- robh+dt@kernel.org, vkoul@kernel.org, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v3 2/4] dt-bindings: phy: qcom,qmp: Describe
- 'vdda-max-microamp' & 'vdda-pll-max-microamp' properties
-Message-ID: <YmQhpsmiYJzR99LK@ripper>
+To: Bhupesh Sharma <bhupesh.sharma@linaro.org>, linux-phy@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org
+Cc: robh+dt@kernel.org, agross@kernel.org, Rob Herring <robh@kernel.org>,
+ bhupesh.linux@gmail.com, vkoul@kernel.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org
+Subject: Re: (subset) [PATCH v3 4/4] arm64: dts: qcom: sm8450: Fix qmp phy
+ node (use phy@ instead of lanes@)
+Date: Sat, 23 Apr 2022 11:03:43 -0500
+Message-Id: <165072980563.2810336.17249658876538804302.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.32.0
+In-Reply-To: <20220418205509.1102109-5-bhupesh.sharma@linaro.org>
 References: <20220418205509.1102109-1-bhupesh.sharma@linaro.org>
- <20220418205509.1102109-3-bhupesh.sharma@linaro.org>
+ <20220418205509.1102109-5-bhupesh.sharma@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220418205509.1102109-3-bhupesh.sharma@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220423_085423_983790_9918ECF0 
-X-CRM114-Status: GOOD (  16.76  )
+X-CRM114-CacheID: sfid-20220423_090402_560855_31B1D873 
+X-CRM114-Status: UNSURE (   5.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,59 +95,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon 18 Apr 13:55 PDT 2022, Bhupesh Sharma wrote:
-
-> Since a few boards based on QCoM qmp phy use the
-> 'vdda-max-microamp' & 'vdda-pll-max-microamp' properties to
-> describe the ufs phy nodes, add them to the dt-bindings doc as well.
+On Tue, 19 Apr 2022 02:25:09 +0530, Bhupesh Sharma wrote:
+> Fix the following 'make dtbs_check' warning(s) by
+> using phy@ instead of lanes@:
+> arch/arm64/boot/dts/qcom/sm8450-hdk.dtb: phy@1c0f000: 'lanes@1c0e000'
+>   does not match any of the regexes: '^phy@[0-9a-f]+$', 'pinctrl-[0-9]+'
 > 
-> This fixes the following '$ make dtbs_check' warning(s):
 > 
-> sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
->   'vdda-max-microamp', 'vdda-pll-max-microamp' do not match any of
->    the regexes: '^phy@[0-9a-f]+$', 'pinctrl-[0-9]+'
-> 
-> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Acked-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 ++++++++
->  1 file changed, 8 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> index c39ead81ecd7..411c79dbfa15 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> @@ -90,6 +90,14 @@ properties:
->      minItems: 1
->      maxItems: 3
->  
-> +  vdda-max-microamp:
-> +    description:
-> +      Specifies max. load that can be drawn from phy supply.
-> +
-> +  vdda-pll-max-microamp:
-> +    description:
-> +      Specifies max. load that can be drawn from pll supply.
 
-It's not clear to me what an implementation would do with this
-information. As expressed here it sounds like it's a property of the
-specified regulator, so the driver should just request that information
-from the regulator framework.
+Applied, thanks!
 
-So let's wait with introducing such properties until we know.
+[4/4] arm64: dts: qcom: sm8450: Fix qmp phy node (use phy@ instead of lanes@)
+      commit: 2a31f958f8326c263f2af2511cd6d8256d81e810
 
-Thanks,
-Bjorn
-
-> +
->    vdda-phy-supply:
->      description:
->        Phandle to a regulator supply to PHY core block.
-> -- 
-> 2.35.1
-> 
+Best regards,
+-- 
+Bjorn Andersson <bjorn.andersson@linaro.org>
 
 -- 
 linux-phy mailing list
