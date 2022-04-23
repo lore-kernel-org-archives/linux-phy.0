@@ -4,58 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60C7EC4332F
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Apr 2022 14:27:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3ACFEC433F5
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Apr 2022 15:12:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rC0j3u4/1qdNeLOC0DY2sWoh4OtCKzmIBUwq5xsDhVM=; b=Ye7QPDorirbTuo
-	fNDYGpNV/VLFGPBx8KD0mo6ef9QFy7sBLihhPM8Dy5RsdHJf50y65H8Ne6X4p/DdLzSNUj9g2yDAl
-	SIR8sFPV2nTBTdj1DVMAtVBIAwGqY5dFSMS1Cb4q8cDDBvu01+85LPeKzjTMNuKGw4xz95zX4M8ns
-	xqirk7Vnn1MsOM+SMx1QR8wUlhNrtERk/fIzwjhIgh2Yxe3zxzVbbaIzqHpLI8O3TWr1enm8jqVmQ
-	G68oHLnOBngZ3H/0/u+PqytyLBciI0cmkcN4qu5kqyMlL/Wxqzf3kAbv5dX5EKdWM1L8iC7cx3lmE
-	Wseg/PcZ7sc2MD9yVyDQ==;
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=4OobvSjkEsWRiLbMlzbB/g0hH3ebicFOwsrcIBJBRuM=; b=H2kXXWmIX266K+P/CZ8SZieRWj
+	Dn/uMFtz6mKMaUAGfqB/enSbRtqyecVJ6fceAdJvNlfqikoZ2lqxvS4VIebARBOo2Sc7lFsgcpnwZ
+	oD09gjIIFokuVbSSTi/02kxfxxHwNuROr09jo8kLnXcnbIO40zf8SRFtOJZfwFdTDAQKkiSETf1cv
+	bh4YjiXywt6O3O1T3eR3eLATeSOqcsxrprGoL8wYkNhVm37wPyqFDP4IHaB8TWePl44rxSia2TiEh
+	/2hygYL51LCpFE0ZDvGif2s5U37dQ0zrLI+MLRtSD/yqNsutmmFOZHEMV32vmJ2Y2PhF90N4pQ+Im
+	pgJ50QhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1niGjY-004Ssp-KB; Sat, 23 Apr 2022 14:27:36 +0000
-Received: from mail.tambre.ee ([2a01:7e01:e001:cc::3])
+	id 1niHQc-004VQQ-Dn; Sat, 23 Apr 2022 15:12:06 +0000
+Received: from mail-co1nam11on20623.outbound.protection.outlook.com
+ ([2a01:111:f400:7eab::623]
+ helo=NAM11-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1niGjT-004Ss3-Ts
- for linux-phy@lists.infradead.org; Sat, 23 Apr 2022 14:27:36 +0000
-Received: from [IPV6:2001:7d0:8a11:4700:d8bd:7f1f:5e8b:fc58]
- (fc58-5e8b-7f1f-d8bd-4700-8a11-07d0-2001.dyn.estpak.ee
- [IPv6:2001:7d0:8a11:4700:d8bd:7f1f:5e8b:fc58])
- (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested) (Authenticated sender: raul)
- by mail.tambre.ee (Postfix) with ESMTPSA id 8855980062;
- Sat, 23 Apr 2022 17:27:24 +0300 (EEST)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.tambre.ee 8855980062
-Authentication-Results: mail.tambre.ee;
- dmarc=fail (p=reject dis=none) header.from=tambre.ee
-Authentication-Results: mail.tambre.ee; spf=fail smtp.mailfrom=tambre.ee
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail.tambre.ee 8855980062
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tambre.ee; s=201812;
- t=1650724045; bh=9gYBnH9KPURUghbXDsxTxayhdYgcj3IoMHz0DPDiA00=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=YFgvVKD7HJJ9Dxt3j4BzH1t+gogs0lTsdo/enGYiXmC3VXwnRvQ3t57zMMt0iZ+9u
- Jq8Tz1pauz57NTsXO5SiXynbah+A6+ha5nqC4k3sxntLvGPG2geobXEyLphQ+AuEVQ
- iYiQV19jWpvftSMs3dpA1XLNdylbAPuz7lv1tjUks0SW91D1PlFhJEePXndrLmM+rD
- ikX5KpU9FGz3Rx+vUhn+9sQ3swxSMHZHaYzK1pi93hOFGrD7CbbqSH1P+dV0WtViIl
- wKd75cZX/ZjdDfdzDOf0+l2ccErKsDzSqYtZDX96R7FvnavUjmMR5kBTQidW+GsD0V
- CqQNvyZsmn+0w==
-Message-ID: <50b80804-e95c-2137-5d74-2451e5bb826f@tambre.ee>
-Date: Sat, 23 Apr 2022 17:27:21 +0300
-MIME-Version: 1.0
+ id 1niHQZ-004VPE-40
+ for linux-phy@lists.infradead.org; Sat, 23 Apr 2022 15:12:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BiRJ3WPYFkToh2aqbqYWxhiUjJHS5ncO3OWZpLdswLg7QojD6J9soUP/KIeEEIakBdfyaFCKILm3h9ICXCvGLX9aVOk/o7l7Vk0KE3oGZnIHttsn2PJbs5wBZEF4oCzxrP+6JoElB2kEtxkRrsCERbmWt+S7iI4TiY8eSRXBxEnYNVVLBtgMet4thy99U2RzvipVJ4WMFVIKgbvhG/g8JGTuastPg4fnzdSo0PM2OlqKyAhq+jnyqVSXnc9020ulwj2T3AApkvspn3fo2xB4rZY9Vg6uKPo+sHgFfS2DVA7e+8UA+IGfR7tYivLoTvK2EAV+2CAovKht7pA2s3n9hg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Hjm2kv8OjSC3rIvc4Xzxt3MjjwYEjDPfroBJ6aJY1Tc=;
+ b=LnNQay3qSWBwizz/nvWOSBKg7bUxeh9yyO+UkR4QIVAzJLYcAHfT/iOousSr26hwd1Y5F6vkv6dRkCs1MxqO8iohT+RNpl1CcYe1Hz/iV+hnbbWhkLioVy0OcmozjmTOeKqrLluhFU6OqYqPmgztZVXdi+BzeBz94NEus0PlRsRCO/oHSNUh9PywQYpjk2336lxDOOmH8F45936JOvVnWztz+s9jnDddK6HDVjdBJB0VgU7Oz7KZskrt+VWggLryoyAKi+cYZUlwdNyNTjAralWWFpw5UdJAzfBOrc1ySFc66nkUfMIm3USKINZU3Cz+M4VbkX5WTQZzjXS+EwWHQg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Hjm2kv8OjSC3rIvc4Xzxt3MjjwYEjDPfroBJ6aJY1Tc=;
+ b=QMrA0Fc466wXbmSkDFGbwyFp4sMq6PNBsWI1f1XNw0vO9CX/Vl3gfL/NL7MFFrJ5k+seWcB+1qJVVEiyXWo6PJQASjc1h1CEwL0hoDXCgMHnuYQtTPFpfkZ40AIG6j6V+YBAmV0W/tWtDb0CGi9rAvuOYLZtmnjJ8DSXK/MgMaSOmrAFsCieKRxWPil87ary0VWYdAewzcHkShZ3V5VaJ23qZgKN75dRGqI+qf6FxP/NlOpPgQntFz1Tkk+COFvkgg/RTqg2vCxsZXTCmzSH5NvIRVTBJhcKjWGj7JrsFHRqc48Rw1m7xAUeSSRLpXUlObl2AovUQHAriXQ2ftoG7Q==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from BN8PR12MB2900.namprd12.prod.outlook.com (2603:10b6:408:69::18)
+ by BN9PR12MB5305.namprd12.prod.outlook.com (2603:10b6:408:102::5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5186.13; Sat, 23 Apr
+ 2022 15:11:56 +0000
+Received: from BN8PR12MB2900.namprd12.prod.outlook.com
+ ([fe80::f917:a955:6b35:6425]) by BN8PR12MB2900.namprd12.prod.outlook.com
+ ([fe80::f917:a955:6b35:6425%6]) with mapi id 15.20.5186.015; Sat, 23 Apr 2022
+ 15:11:56 +0000
+Message-ID: <26c0caf1-4cfc-9c7d-ac51-180ba4501bf5@nvidia.com>
+Date: Sat, 23 Apr 2022 20:41:39 +0530
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.1
+ Thunderbird/91.3.2
 Subject: Re: [PATCH V2 2/8] dt-bindings: PCI: tegra: Add device tree support
  for Tegra234
-Content-Language: en-GB
-To: Vidya Sagar <vidyas@nvidia.com>, bhelgaas@google.com,
+Content-Language: en-US
+To: Raul Tambre <raul@tambre.ee>, bhelgaas@google.com,
  lorenzo.pieralisi@arm.com, robh+dt@kernel.org, thierry.reding@gmail.com,
  jonathanh@nvidia.com
 Cc: kishon@ti.com, vkoul@kernel.org, kw@linux.com, krzk@kernel.org,
@@ -65,11 +70,78 @@ Cc: kishon@ti.com, vkoul@kernel.org, kw@linux.com, krzk@kernel.org,
  kthota@nvidia.com, mmaddireddy@nvidia.com, sagar.tv@gmail.com
 References: <20220423124858.25946-1-vidyas@nvidia.com>
  <20220423124858.25946-3-vidyas@nvidia.com>
-From: Raul Tambre <raul@tambre.ee>
-In-Reply-To: <20220423124858.25946-3-vidyas@nvidia.com>
+ <50b80804-e95c-2137-5d74-2451e5bb826f@tambre.ee>
+From: Vidya Sagar <vidyas@nvidia.com>
+In-Reply-To: <50b80804-e95c-2137-5d74-2451e5bb826f@tambre.ee>
+X-ClientProxiedBy: MA1PR0101CA0072.INDPRD01.PROD.OUTLOOK.COM
+ (2603:1096:a00:20::34) To BN8PR12MB2900.namprd12.prod.outlook.com
+ (2603:10b6:408:69::18)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: b04b1e0b-906d-449f-1bb2-08da253b9b30
+X-MS-TrafficTypeDiagnostic: BN9PR12MB5305:EE_
+X-Microsoft-Antispam-PRVS: <BN9PR12MB530504941B536CAB95BE9894B8F69@BN9PR12MB5305.namprd12.prod.outlook.com>
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: K2AMMXZX1AJFoE9/XkozZm/IdKjw2SrSrVLuSDZVwHBc4KkeB1EtaP/fcimG06hGHSLqkLRQ7CBSt/i4ihw8Z+CwgoFTUAHKETSMqflmXsAsMbY+blIHc+aseduwheA9HhX63W2F09hm15ARuzVZybU0McL+yq/RVw46/KEmswwWWbXhTmWW/wjyDZmZEa33/zheAad3L6WbHTML+8X/1Y5EwLyj5K1nbtiOs86HdcoYF6mQKMAHxWO3qIeH/iAYig/q5dAhq4S1S3tI6nrMzrY8y/IGZ9aROUiAzTKgfDlbIe2Y3T7EzvWKHsamAfb4k4jCqzvxnbs0yVTlrx6JnnUI4aptBs3km8Eeve10cpnbvSKmv5wB5Uxli/5tmMcJxeIaSp0m+jL5ImR8dCKyCsm2rpOOSZCSJGRSjBbGuXieIILS9Bv9MlDYhSURyMJ3l7XUledW1T2p0G2A4nNRvg4DwIkRj/QU7bvz80LtRTmYI2L+LP0zlzyDSWBe9gjCuuF/0oVGMDkBdf5BWjLdyWxiJBpSuGT7rgZIqKm3x8iHMcf0BNyMt7MH9MXFoq8Rqhldu1vwxeg2rPEnB7YHgGPn7IZsMn1I3tptxv8w70Lu3PJXK5Xfq2UDEjdlrD+8mWrKj//1Btx+1NCLSDVitxEdCVT9JQ5MvmFJCY8KkwrTRgOEvQm5a7YjHqYHvqdO5eH3rvGKrQT5ag+ntnP10dg49lgTMsiYwOGE0w6lIMk=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BN8PR12MB2900.namprd12.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230001)(4636009)(366004)(53546011)(2616005)(6506007)(6512007)(26005)(6666004)(6486002)(508600001)(38100700002)(31696002)(186003)(86362001)(6636002)(4744005)(2906002)(8936002)(5660300002)(7416002)(36756003)(66476007)(8676002)(4326008)(66556008)(66946007)(31686004)(316002)(43740500002)(45980500001);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?eVkvRjFjQWRVV0NNdjVPZm9ReXBNVGtaNFBPQk42R0Y0WnVzTG4vLzhDWWEy?=
+ =?utf-8?B?MUNFaEtvL0x2cEtIellRdE9zc1VON1E1MVRJUHhxcWpOUmhzbWpWdlZEaXBn?=
+ =?utf-8?B?MUh0VGUwSlFhOEhoSmZuejR6Q2ZQa1MzK2xwL092Y0tMemU5bk11Y3U3K0E4?=
+ =?utf-8?B?TmhHT3F0UitLcVoyS1MzNVJJTzZsUlg0Q01QSWIzeWw5bDFWWTQ0UDI2OUJq?=
+ =?utf-8?B?K1BYbFVESXVqL0V5dkY5aTNacGxsb1hlNE43NWdiRGVUYzd3b0Y4WUhlYzBZ?=
+ =?utf-8?B?OTdnblczZTlWakR3SXVmWHZhM21qMjFjL2ZIeHpKWmtmSi9POENNU3BKR0VD?=
+ =?utf-8?B?OFR3WkdIVnArTlM4dkx5TWN6aHdrSEk4bExWTHo2cU1rMHNjbGVwQWljNTg1?=
+ =?utf-8?B?dlhjY3BhQklyTmpQRjJRUFRuV2pReTdDUTRDODhCOTZyUlhQKy9rblZGcnVR?=
+ =?utf-8?B?MnY1R0ZYOElRcWhqamY2elduOVg0emZDVlVPS3MvRjh6Znd1SUpxRjVGRENK?=
+ =?utf-8?B?d0QrK1lLbjdIY0RKYTUyTDRmRVlnR0RGQU5PZGQrbmI3MGp0YlZETmxuU0h4?=
+ =?utf-8?B?UE1oUmdVeC9UM1ZaT0JWZkdjRkRMaFdTb2c2eFJzbGowQ2JhZytSZGUzMW1j?=
+ =?utf-8?B?RnBuMWF3YnVlUGdWdk1XOWtOMlp4Z1VQTFpkUzZ5OUhmc0R0NnJDTFVoZGZU?=
+ =?utf-8?B?Q2tVYzlROUxnQktZSW50OUNRWHJCTlUwYUNoanlEeEM5VGR0SWFraTNncFZQ?=
+ =?utf-8?B?VmFtMVNRUHhObklkanlXNUx5WmZJc3BWL3h1Vk40RTlsS0l5aVVzNXNtU21N?=
+ =?utf-8?B?di84Ui9iWmVKeDdDK005VEZXV21rcTBRNmwvNnVqcUVRYytxYytuSStlcWJy?=
+ =?utf-8?B?L2VGZUZja1pteUhwTXNjajZYYUxJa09aSjNlWU1VV2pnTUVnamNJaFk2VWsw?=
+ =?utf-8?B?R3hEODJ6MWxzakhXS2sybzNaTDdGR3F6QTNLUXBpVDdqZzR3M3ZEeDE1dlk1?=
+ =?utf-8?B?Qkh1bTlnb3hNOW1mYlZBSTl1WkhuckpGRExNbFdsRjI2eURMUERpc293THR5?=
+ =?utf-8?B?emRHRkRUOGF5aUVKY1VGU1ZqYkpWd000dzhtQ0NJbjczVlFWcEJuZTlmYWxq?=
+ =?utf-8?B?cUhrNGlZK09ZaXJXQnlrK0NnZ1lnajgrbU5jYTEyVUdzbHEzTzJmWWdEUEJn?=
+ =?utf-8?B?dEZnM3d4Zk9GRHh4ZmN0TWduNy94OVpmN2o2UWs3T3FYT01ZM1hneHpqMHY3?=
+ =?utf-8?B?T3ZEdUYvL29kZU50aFltT0VnWURCT0p5LzJqRjVJcTBkSE5JTnl6ZmdUL09F?=
+ =?utf-8?B?YTg2YjNPOEdjMW5FaEFpcEVUMEZ0bFVSMkM5VXgyVHM5NDNpSkpRN2Ntdkp1?=
+ =?utf-8?B?UlQyZzdFUlRpSDQ1cXVnK2d4TWJkalpKSHRTcWcwMjBwQXlGaytoTlBwdVJI?=
+ =?utf-8?B?Z1V0RDloOTNBMFcvZGFDSjRKN0hmeXI1NjRHb3ltd25lNmVhRENDYVpRNmUz?=
+ =?utf-8?B?VlhaOHdseVFzT2lWZUphZVgxcUtFQTJqd3VlVDRGOXE1QWg5aENRWWowRHZj?=
+ =?utf-8?B?V2s5ZUFvamNsckJ6YkVkMldXbGN5ZE81SGRvNE0va3lDeUhYNTdaNmxOS0xE?=
+ =?utf-8?B?MExjd3Rnc3NvSmlHQ2JoVXhYcHkySC9yTUdrZmFSWmh6R1AwdjBxcGsyZEN1?=
+ =?utf-8?B?TytSK0YxbHZXRW4yTEhQMldHb1ZNS2hBbkE5THpra3BYSmxWZmhTK2NHdkN0?=
+ =?utf-8?B?bVR1eWxOUmRnWjBjUENZckhHZFVzMCtuYVNMKzVkV2VsdFc0eGdQd3IxZjh1?=
+ =?utf-8?B?bUVzNzFQeHNQTkoyTi95YXo4bGZDdXU2ejBBY3hQVWh5OGVDUnB2MHdqN0kz?=
+ =?utf-8?B?Y3pTb3h0RGVObVVoWWJpM1kwbGFDa2VSdlVjYTlHOSsvWWFFMElJQkkvVjBm?=
+ =?utf-8?B?ZmgxUFEwdSs3S3Bvak5VZFlkOGM3Tkhqdkt1SDdlL2NYamJKTVhwUS9GNkpC?=
+ =?utf-8?B?d21nUXBESzZacCt1OHRSeFRxaUVGVzJQOW03UEZ4eHdVdUtTQi8valUrWm1w?=
+ =?utf-8?B?SmVWUHZpMGkvVmFIeStNZGxueWVyZUs4ZUp3TGk4MGx5cXFNeU5OMXkrUytP?=
+ =?utf-8?B?OWVxa3Y1Z0FNR0toWVJ5bklHTERnWkd3bnZmQlZ5Y2lQQzVhVGphM1FuMjN3?=
+ =?utf-8?B?ckg4SjREUU00R0hkTjFPRENHQXBqV3NuNk9RYUxkeE5MNVF5alNPRDZoNTY4?=
+ =?utf-8?B?TjFGRTZnd0FRN3BmSkZvNDJNb2k0T2xUUGdzNk1nZEtkQmducTc3Wmp0Vm5U?=
+ =?utf-8?B?SGR0VVZMSEx1MXhvS0NOdUZmWmlPRzd2ckVPN002WmZhS2IzazFmZz09?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b04b1e0b-906d-449f-1bb2-08da253b9b30
+X-MS-Exchange-CrossTenant-AuthSource: BN8PR12MB2900.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Apr 2022 15:11:56.7328 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 4ZI3ZloztobfNGPyvxG4y3k886hYfNB7hULIyjlG3Zmefw13JBrpcpK+SfP8Fgsd6YhqdTRxBsc5zvZHVE0lpg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN9PR12MB5305
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220423_072732_441180_39BE4FAA 
-X-CRM114-Status: UNSURE (   3.04  )
+X-CRM114-CacheID: sfid-20220423_081203_487804_DCCF6104 
+X-CRM114-Status: UNSURE (   5.14  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,43 +154,27 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2022-04-23 15:48, Vidya Sagar wrote:
-> @@ -47,16 +64,33 @@ Required properties:
->     "p2u-N": where N ranges from 0 to one less than the total number of lanes
->   - nvidia,bpmp: Must contain a pair of phandle to BPMP controller node followed
->     by controller-id. Following are the controller ids for each controller.
-> +  Tegra194:
-> +  ---------
->       0: C0
->       1: C1
->       2: C2
->       3: C3
->       4: C4
->       5: C5
-> +  Tegra194:
-
-Should this be Tegra234?
-
-> +  ---------
-> +    0 : C0
-> +    1 : C1
-> +    2 : C2
-> +    3 : C3
-> +    4 : C4
-> +    5 : C5
-> +    6 : C6
-> +    7 : C7
-> +    8 : C8
-> +    9 : C9
-> +    10: C10
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiA0LzIzLzIwMjIgNzo1NyBQTSwgUmF1bCBUYW1icmUgd3JvdGU6Cj4gRXh0ZXJuYWwgZW1h
+aWw6IFVzZSBjYXV0aW9uIG9wZW5pbmcgbGlua3Mgb3IgYXR0YWNobWVudHMKPiAKPiAKPiBPbiAy
+MDIyLTA0LTIzIDE1OjQ4LCBWaWR5YSBTYWdhciB3cm90ZToKPj4gQEAgLTQ3LDE2ICs2NCwzMyBA
+QCBSZXF1aXJlZCBwcm9wZXJ0aWVzOgo+PiDCoMKgwqAgInAydS1OIjogd2hlcmUgTiByYW5nZXMg
+ZnJvbSAwIHRvIG9uZSBsZXNzIHRoYW4gdGhlIHRvdGFsIG51bWJlciAKPj4gb2YgbGFuZXMKPj4g
+wqAgLSBudmlkaWEsYnBtcDogTXVzdCBjb250YWluIGEgcGFpciBvZiBwaGFuZGxlIHRvIEJQTVAg
+Y29udHJvbGxlciAKPj4gbm9kZSBmb2xsb3dlZAo+PiDCoMKgwqAgYnkgY29udHJvbGxlci1pZC4g
+Rm9sbG93aW5nIGFyZSB0aGUgY29udHJvbGxlciBpZHMgZm9yIGVhY2ggCj4+IGNvbnRyb2xsZXIu
+Cj4+ICvCoCBUZWdyYTE5NDoKPj4gK8KgIC0tLS0tLS0tLQo+PiDCoMKgwqDCoMKgIDA6IEMwCj4+
+IMKgwqDCoMKgwqAgMTogQzEKPj4gwqDCoMKgwqDCoCAyOiBDMgo+PiDCoMKgwqDCoMKgIDM6IEMz
+Cj4+IMKgwqDCoMKgwqAgNDogQzQKPj4gwqDCoMKgwqDCoCA1OiBDNQo+PiArwqAgVGVncmExOTQ6
+Cj4gCj4gU2hvdWxkIHRoaXMgYmUgVGVncmEyMzQ/CgpZZXMuCk9vcHMuLi4gSG93IGRpZCBJIG1p
+c3MgdGhpcz8gTXkgYmFkLgoKPiAKPj4gK8KgIC0tLS0tLS0tLQo+PiArwqDCoMKgIDAgOiBDMAo+
+PiArwqDCoMKgIDEgOiBDMQo+PiArwqDCoMKgIDIgOiBDMgo+PiArwqDCoMKgIDMgOiBDMwo+PiAr
+wqDCoMKgIDQgOiBDNAo+PiArwqDCoMKgIDUgOiBDNQo+PiArwqDCoMKgIDYgOiBDNgo+PiArwqDC
+oMKgIDcgOiBDNwo+PiArwqDCoMKgIDggOiBDOAo+PiArwqDCoMKgIDkgOiBDOQo+PiArwqDCoMKg
+IDEwOiBDMTAKPiAKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LXBoeQo=
