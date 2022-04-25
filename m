@@ -4,64 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27C7EC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Apr 2022 09:45:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CD94C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Apr 2022 13:13:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5w8n4sNbqetazBDUzd4EYVGmJ8rfeb6B+h8l/BNiwzY=; b=COQmEaxIOJTXfh
-	/zx6hosY79wxBt68tnvhx93HeEUvc6nS6Cle86K0NnaJQGo0r8JwR7/AlXjrNW2p5NghwRFJhNO7x
-	55pYwG8Sb87a9oJ9/NFYWPsxF8KvjTaQegyglzX8AgUOQlq0HjxPDI7JIjld35FV6IY+iku+fDhQT
-	HWLZO6Pm502LLCWJXLYuFtboz6fLFgcDNIXQd6xGViuJSDT/UAxFCD7Aifsp8FFj4k8lCFeAtP9GL
-	9Fzl56TxlKh9ioHlBrzdr8k8kL+oJPH39pv2D0bZrq1eB2d6WW16R3TWjGZ6iGVC4+RkTwqhIaBpG
-	VchwUNWt/7H/DycuqMZw==;
+	List-Owner; bh=WI4Mmxf3vqQyKm+S+V9DDwp71IFOCBOOSXXMU7crchU=; b=1q3QaUtIIbSwAA
+	3dzCkduHUOX0quwyh4Rb++Aq6sU/Hi57eJkEvQR2+OjEySPbqs7G4cIrEOQr/d/ibp2UE/27Ho+ID
+	ehAPe6x1S2K95KzLiQYxqAmbYHvGbQ93KRFuA09JQruokXW7YcbF+MKUXNpG0bP8Zfi+F6WJBgDsI
+	+GSeg3ADkem1mLxqHcJi91u0WwzWFbZYb7HH8IhwW2dXpOT0FDhmWYIOrnQZjWS5gUqqfkRlIXIKh
+	82BREgijLxU+KOjZ1ujXrztbfuznIEzRpgPYA/dvn/wJu6vWjupN4PhP2fqcXhmNW2TjL5lQje8Sn
+	KFs361ervbPfloGLncfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nivHu-008yEw-I4; Mon, 25 Apr 2022 09:45:46 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1niyWw-009cEk-Bn; Mon, 25 Apr 2022 13:13:30 +0000
+Received: from mail-qv1-f43.google.com ([209.85.219.43])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nivHp-008yEG-Gc
- for linux-phy@lists.infradead.org; Mon, 25 Apr 2022 09:45:45 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1nivHg-0006sC-Bl; Mon, 25 Apr 2022 11:45:32 +0200
-Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
- by drehscheibe.grey.stw.pengutronix.de with esmtp (Exim 4.94.2)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1nivHf-0057VX-Sy; Mon, 25 Apr 2022 11:45:30 +0200
-Received: from pza by lupine with local (Exim 4.94.2)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1nivHd-0004pV-OZ; Mon, 25 Apr 2022 11:45:29 +0200
-Message-ID: <59b135206b456fd8f8df30a4e474e385a922bf77.camel@pengutronix.de>
-Subject: Re: [PATCH 2/2] phy: qcom-qmp: fix reset-controller leak on probe
- errors
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Johan Hovold <johan+linaro@kernel.org>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>,  linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org,  linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Vivek Gautam <vivek.gautam@codeaurora.org>
-Date: Mon, 25 Apr 2022 11:45:29 +0200
-In-Reply-To: <20220422130941.2044-3-johan+linaro@kernel.org>
-References: <20220422130941.2044-1-johan+linaro@kernel.org>
- <20220422130941.2044-3-johan+linaro@kernel.org>
-User-Agent: Evolution 3.38.3-1 
+ id 1niyWu-009cDZ-FU
+ for linux-phy@lists.infradead.org; Mon, 25 Apr 2022 13:13:29 +0000
+Received: by mail-qv1-f43.google.com with SMTP id k12so3818911qvc.4
+ for <linux-phy@lists.infradead.org>; Mon, 25 Apr 2022 06:13:27 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=cPhFN097SNSAA6DApz7uxkKT4+Ug0TC0TFUbciBcqio=;
+ b=alAKORz9TQm0uYxY9d6sxHwD9DmgkmTAFnPI1zAUlEEIqCcy5CUqObSmqdtETFsDuG
+ Epya3P56njVb8xUIvy7MyrlRMk+6SRtMJNRS4pdzv0kvKVnX6Q800kQFvuCWcW6bgUSN
+ VvRG/bLC1VkwnNz+rD48OrflfHBCszTNQQRwBGssembFc7WF63cvTp0sTuuVLhMcqvTD
+ ty7TCyr2oIWhepHnHeHq1fNleFaJahbW+8mn0tjupJiREwTmPhN4+CkLW1E06bwSlySJ
+ L5dcNwnTCUU/rzM4ZXPOywj2ECFUSBlBwB2wxCWbMic+D8NoJ68j14W4FHgI9Y2EFk80
+ mHGw==
+X-Gm-Message-State: AOAM5324WTdJK43j71PznR6dSKI6zGjZgdRxX6akSUB2EvyU3fmPU0Ff
+ O6zy2LO4W2TDjIzat25cZKz/CSljtpX3qA==
+X-Google-Smtp-Source: ABdhPJxZikrz5S55SeGb5t1zST1rfEB5hWpSgrOunNTN8fRpxClajk2s8kY9MMDTM/mrepfA3uI+FA==
+X-Received: by 2002:ad4:5769:0:b0:446:5740:e0d0 with SMTP id
+ r9-20020ad45769000000b004465740e0d0mr12257082qvx.129.1650892405843; 
+ Mon, 25 Apr 2022 06:13:25 -0700 (PDT)
+Received: from mail-yw1-f177.google.com (mail-yw1-f177.google.com.
+ [209.85.128.177]) by smtp.gmail.com with ESMTPSA id
+ bm1-20020a05620a198100b0047bf910892bsm5206842qkb.65.2022.04.25.06.13.25
+ for <linux-phy@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 25 Apr 2022 06:13:25 -0700 (PDT)
+Received: by mail-yw1-f177.google.com with SMTP id
+ 00721157ae682-2f7bb893309so67506577b3.12
+ for <linux-phy@lists.infradead.org>; Mon, 25 Apr 2022 06:13:25 -0700 (PDT)
+X-Received: by 2002:a81:8489:0:b0:2f7:edff:239f with SMTP id
+ u131-20020a818489000000b002f7edff239fmr4050001ywf.256.1650892404998; Mon, 25
+ Apr 2022 06:13:24 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+References: <20220423134752.143090-1-biju.das.jz@bp.renesas.com>
+In-Reply-To: <20220423134752.143090-1-biju.das.jz@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 25 Apr 2022 15:13:12 +0200
+X-Gmail-Original-Message-ID: <CAMuHMdW9tG7oV9bf_zrsQ5Y8_UWNJ9w4SKf+YANxGL2ytBRZ5A@mail.gmail.com>
+Message-ID: <CAMuHMdW9tG7oV9bf_zrsQ5Y8_UWNJ9w4SKf+YANxGL2ytBRZ5A@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: phy: renesas,
+ usb2-phy: Document RZ/G2UL phy bindings
+To: Biju Das <biju.das.jz@bp.renesas.com>
+Cc: Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+ linux-phy@lists.infradead.org, 
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>, 
+ Biju Das <biju.das@bp.renesas.com>, 
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220425_024543_905620_38B93618 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220425_061328_550701_95AFFB09 
+X-CRM114-Status: GOOD (  16.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,32 +95,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Johan,
+On Sat, Apr 23, 2022 at 3:48 PM Biju Das <biju.das.jz@bp.renesas.com> wrote:
+> Document USB phy bindings for RZ/G2UL SoC. RZ/G2UL USB phy is identical to
+> one found on the RZ/G2L SoC. No driver changes are required as generic
+> compatible string "renesas,rzg2l-usb2-phy" will be used as a fallback.
+>
+> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
 
-On Fr, 2022-04-22 at 15:09 +0200, Johan Hovold wrote:
-> Make sure to release the lane reset controller in case of a late probe
-> error (e.g. probe deferral).
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-Right. grepping for "of_reset_control_get", there seem to be are a few
-other drivers that might share the same issue...
+Gr{oetje,eeting}s,
 
-> Note that due to the reset controller being defined in devicetree in
-> (questionable) "lane" child nodes, devm_reset_control_get_exclusive()
-> cannot be used (and we shouldn't add devres helpers for the legacy reset
-> controller API).
+                        Geert
 
-Do you mean of_reset_control_get()? Maybe you could switch to
-of_reset_control_get_exclusive() while at it?
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-That one might warrant a devres helper if other drivers were to adopt
-the same pattern.
-
-The patch itself looks fine to me,
-
-Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
-
-regards
-Philipp
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
