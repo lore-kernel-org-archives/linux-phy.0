@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5767C43219
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2C16C43217
 	for <linux-phy@archiver.kernel.org>; Mon, 25 Apr 2022 21:07:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dxte2WfaBWYqj9eerU8bIM64EM9aLX7OOUNQgZQOFM0=; b=x9HmlAkbL5sr/c
-	tthnIADiQfEErhyiVTD3rcHs7gHN3gjt+Ez0QWU8IsfnckLcOC4zkrPEdvD86gx/aOSsA6N2pWXRY
-	CpPbhCVVS1DhzWf+XFBm13la04qORaz+Bm1J3OeMx2EXGQtyxKgJ5HWV4lIgAp/54HtbJx3hknICi
-	Hk64NgByLExLTj9ebM6IUlWMz8suFmaJqUXCbpSzQjNnhtp0w98bUmNKPkcN0oWCotJn7ut94RnRq
-	DhuQLRpaRdVqmQazcE/XM8cwjZpAUjOVx4zVelJf1v8ORx90vEqywhKGNYQtzEKm2ntbUc8Q0MEAt
-	i3B1yL8JfMarvvDMIhOg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PTVFVmvCXgHJpJ6NOXayiB7qkRppzYnuQdI400sagZs=; b=Hu28etNOC/MMmn
+	mQ0fYgFQu2dMtigZhK1/4qGtm8uDyl+9tj5hzDDWQ6Jo7aNqdoyvkppJvMpPtXfHdh4onHk9BBz5T
+	j0cGLMvuqNsKCY3VHAQ92tEEDXiMH38319+/ADFm8NrppTeCn+Ma7FkzTCh53hZAbyPdlCgPfucOA
+	iPrLjJxk6DE5DVrohjilDw7t+QEymh/3Rj8p61iY7bSCMnYMqFRrZPSqy6bUu/TKERhWcKK/wSF7/
+	qFYQfaUs05/uRwfkYSFgCcYAUHI5ZXpGrjiY99xjUIXI/ljKL+aQjcTMtAp25Q/vYFsm1RbOoh7zI
+	RrQkmjiw8LbNccqFIdfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nj5vW-00BS6A-32; Mon, 25 Apr 2022 21:07:22 +0000
-Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
+	id 1nj5vW-00BS6H-7W; Mon, 25 Apr 2022 21:07:22 +0000
+Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nj5vT-00BS2a-6G
+ id 1nj5vS-00BS2Q-Fu
  for linux-phy@lists.infradead.org; Mon, 25 Apr 2022 21:07:21 +0000
-Received: by mail-pj1-x102b.google.com with SMTP id
- n33-20020a17090a5aa400b001d28f5ee3f9so547394pji.4
- for <linux-phy@lists.infradead.org>; Mon, 25 Apr 2022 14:07:13 -0700 (PDT)
+Received: by mail-pj1-x102c.google.com with SMTP id
+ j8-20020a17090a060800b001cd4fb60dccso554639pjj.2
+ for <linux-phy@lists.infradead.org>; Mon, 25 Apr 2022 14:07:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=7pa6zrNLxEFTJIYew9I+MslyE/BqjUU2Vfh9xpblR54=;
- b=Shoz3tJtEfbeJHLbZbbAtm+y0n+qLrUd1IsVnLxx+HlgH0lU5Bzat9UjXBvtUxxkcZ
- fWVUxh4HAjy8+bLXQnIQG4pqK/T/ki1Ts5oXpNSWDKVq5nlj2zefrPxGz04zSJctnqww
- MdFeL7gkO8jwSYpuKBh4ELKQF7TnQPSYm6R2w=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ho4lFHBriP83EBuh7im6oUALrBEwYKd1HOs+QqrsoEY=;
+ b=akQVBkH/VtMlmKfIuInlT+qJDziMVsZPpZ+hQ5uV3NeVNRFOVaH7CY1xTOQH14tJuw
+ 9+tODS+z8YOYzTHVdwEEGgsej/Zlk7M/54/cctu2l86RumWCo+GvIQ1ryP6QoC8Fzvx0
+ WV/ceo4PnlqfPWY3LRXcb3JxC7fsxQyjQwzzE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=7pa6zrNLxEFTJIYew9I+MslyE/BqjUU2Vfh9xpblR54=;
- b=mFts2Q+GAcF6HvrT6IhGNlb60tJZyLTYqcdL5x/vQ4Ppp/UBh8VuYlkiSmyurcWSR0
- ZgYb9BvBxhpxE8hB2KhxDtkiirKdPFzQ/48+ATxvSc7uJRNwdm7uXjgP9SrZ7Ezivbjp
- nMQfdfK2fA4+0CyhikdhfNJdK59ulnDSMMy8U6VVODH1BdOoQxBa+2ueRVtNdwDn+aaR
- 7Urzp1H/uJLsZ65lPa2MrV6SCDDzDJymVRmyVRNYmOJyMWD0E/awol+4NIwPw7LgzcxY
- KzOjncMoPbnqGA6TnxUsvbsp13igatJv00Ab6B0U1WejroWHBdnGaL51QTCB/JLVwPAZ
- hKxA==
-X-Gm-Message-State: AOAM532/6z7ySy/+lF7MwH2xRAFgtUIDAxNp3lJzVC9XST/4fFhydH75
- oU9vuShRgXwznYBdY9tpV/jIQA==
-X-Google-Smtp-Source: ABdhPJx+uxbkSaPe2+0BH9EheOMTgYzUOtVzJymppogmrFVLTMjQ1PWdb8ch86SegBtXfRZtKHInSQ==
-X-Received: by 2002:a17:902:cf0f:b0:15a:24e0:d9b0 with SMTP id
- i15-20020a170902cf0f00b0015a24e0d9b0mr19745380plg.42.1650920833478; 
- Mon, 25 Apr 2022 14:07:13 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ho4lFHBriP83EBuh7im6oUALrBEwYKd1HOs+QqrsoEY=;
+ b=VAoinq+heFJz+GpndMxKiqXuGxlOa4EebU2LBPmqD6yJwkWR88hn8Sfl5WdAb8qF1j
+ GkiA9HeFuA7DT23VX9Vg5YYACwZ1kziEqxv4UJb67+2LhLspmOEoal32B5etfqBzxH82
+ Wep4UMMXaeNiwCP71t1GqRlDXAF8Ux371zwIwGoa5S8gbjt98tJXKWfmTTISebf7Xoeq
+ f4uWcTeuJLSrd7GQnNVhiXR5KAgCVaxDmQj2WRwElZd2h9Pa4PskKromFeNAloi24ylB
+ 0BpNgaM9MtAtuaX8jgckWeQrIdT/zAZNA8CtcQELiwTi5iSsNeEbFGpycPEdXdcmOf3J
+ 9Y9g==
+X-Gm-Message-State: AOAM533uEkE/r+lEmtNWiXo2rkmpcSNKyHupTz3mxxCo2iDVZ+vsz59k
+ d0v5bUsCr0DAz038vTUioKGqKA==
+X-Google-Smtp-Source: ABdhPJz9TipniGjuLfdSJHo77yegNcYEj0amTSj6sKn2dZa2BF4vcvsJfC2yD92BSkXEdeOLzSPIxA==
+X-Received: by 2002:a17:903:181:b0:15c:9035:2b18 with SMTP id
+ z1-20020a170903018100b0015c90352b18mr16668520plg.8.1650920831241; 
+ Mon, 25 Apr 2022 14:07:11 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:201:b820:7f63:f3dd:3da])
  by smtp.gmail.com with ESMTPSA id
- b20-20020a62a114000000b0050d231e08ffsm8523202pff.37.2022.04.25.14.07.11
+ b20-20020a62a114000000b0050d231e08ffsm8523202pff.37.2022.04.25.14.07.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Apr 2022 14:07:13 -0700 (PDT)
+ Mon, 25 Apr 2022 14:07:10 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Bjorn Andersson <bjorn.andersson@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
@@ -70,20 +70,18 @@ Cc: Abhinav Kumar <quic_abhinavk@quicinc.com>, linux-phy@lists.infradead.org,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
  linux-arm-msm@vger.kernel.org, quic_kalyant@quicinc.com,
  Kuogee Hsieh <quic_khsieh@quicinc.com>,
- Douglas Anderson <dianders@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, Rob Clark <robdclark@gmail.com>,
- Sean Paul <sean@poorly.run>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] dt-bindings: msm/dp: List supplies in the bindings
-Date: Mon, 25 Apr 2022 14:06:42 -0700
-Message-Id: <20220425140619.1.Ibfde5a26a7182c4b478d570c23d2649823ac2cce@changeid>
+ Douglas Anderson <dianders@chromium.org>, Andy Gross <agross@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 0/2] dt-bindings: List supplies needed for sc7280 eDP
+Date: Mon, 25 Apr 2022 14:06:41 -0700
+Message-Id: <20220425210643.2420919-1-dianders@chromium.org>
 X-Mailer: git-send-email 2.36.0.rc2.479.g8af0fa9b8e-goog
-In-Reply-To: <20220425210643.2420919-1-dianders@chromium.org>
-References: <20220425210643.2420919-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220425_140719_257020_D0FCD9C1 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20220425_140718_565053_CB77E22A 
+X-CRM114-Status: GOOD (  11.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,48 +98,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-We're supposed to list the supplies in the dt bindings but there are
-none in the DP controller bindings. Looking at the Linux driver and
-existing device trees, we can see that two supplies are expected:
-- vdda-0p9-supply
-- vdda-1p2-supply
+While looking through dts changes for sc7280 eDP I found that none of
+the regulators that were being defined were listed in the
+bindings. That being said, the current Linux drivers _were_ looking
+for regulators. This series tries to document the reality to the best
+of my ability.
 
-Let's list them both in the bindings. Note that the datasheet for
-sc7280 doesn't describe these supplies very verbosely. For the 0p9
-supply, for instance, it says "Power for eDP 0.9 V circuits". This
-this is obvious from the property name, we don't bother cluttering the
-bindings with a description.
+If someone from Qualcomm has better documentation than I do and wants
+to correct anything here then I'd be more than happy. For the PHY
+patch especially I don't have a great way to map what I see in
+datasheets / schematics to figure out which is the supply for the
+"phy" and the "pll".
 
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
+Assuming these look OK, I'd expect the PHY patch to land through the
+PHY tree and the display patch to land through msm-next. I can split
+the series up if need be--the two patches are just in one series
+because they have a similar topic--there are no actual dependencies
+here.
+
+
+Douglas Anderson (2):
+  dt-bindings: msm/dp: List supplies in the bindings
+  dt-bindings: phy: List supplies for qcom,edp-phy
 
  .../devicetree/bindings/display/msm/dp-controller.yaml      | 6 ++++++
- 1 file changed, 6 insertions(+)
+ Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml     | 6 ++++++
+ 2 files changed, 12 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
-index cd05cfd76536..dba31108db51 100644
---- a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
-+++ b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
-@@ -76,6 +76,9 @@ properties:
-   "#sound-dai-cells":
-     const: 0
- 
-+  vdda-0p9-supply: true
-+  vdda-1p2-supply: true
-+
-   ports:
-     $ref: /schemas/graph.yaml#/properties/ports
-     properties:
-@@ -137,6 +140,9 @@ examples:
- 
-         power-domains = <&rpmhpd SC7180_CX>;
- 
-+        vdda-0p9-supply = <&vdda_usb_ss_dp_core>;
-+        vdda-1p2-supply = <&vdda_usb_ss_dp_1p2>;
-+
-         ports {
-             #address-cells = <1>;
-             #size-cells = <0>;
 -- 
 2.36.0.rc2.479.g8af0fa9b8e-goog
 
