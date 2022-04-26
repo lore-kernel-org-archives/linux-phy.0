@@ -4,83 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26879C4321E
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Apr 2022 17:28:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEEE1C433FE
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Apr 2022 23:35:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tBDydq4q3W2wIfoIQkZSqpoo0hBoZMqNuYgu+cbha+c=; b=TwF3g0uhHgoDCr
-	+XAMu4x/X5ek/mPUUB5B+ByLFdJIL5tELsRVlK3LQC4lFcFYOmWKOBVcCfepr/chu5XXirDJAR7Ok
-	PzfryL9rjqgEdVHA+3x4XfT02FCHDHFjk/k/AOsAZBlbEU3dvsPVMrp5oQ81pfE4WqB2sVBEb/IOo
-	NRcz7ZLCosu02oLlqNCIA52IiknB2KlLeOm0IAegvWtQRGraSOcpnK/V0B0IetYpKMa3632hCFbDt
-	BaTVLazGMR0y8gFCyWqdWG5T5VniqW2dQcZBe7lCqjTZfK4Z+34CL2U28qWZt81nv8uemDGMSk6Ch
-	qyiaJMjfMdzAJNCzfDhw==;
+	List-Owner; bh=o5oKA7Sc27sxLU3MQ8kJCtcHjT/rKxtnqNVSeEHRpWk=; b=VJt5xnyhk35Tt5
+	bqGr1zM0BXrEP3whVwCe6OxhCIKTN6+yu26ydNPUCFUkIByAFNJWqzyH44yAW8SRwIaBcl9Z9lhSx
+	W0DDOGhLGa6xEhDroU/r2wiVtcgoUMAcGqc29BLIJ4XUz/LRkINP7dgdDRSIoZtujYCxTyUz+vrLb
+	CAdZVr5WgSplg6XmVFbkn90ndhDtbAySuJ8bQXB/wa5Z5MVoyQCexyUGHPk7907JFYJgIK61Bx7HO
+	T5huWEEEJdOi40xMUSqFZqUX3pR4a2XS3a1XnZzx7ptX6W3CEy8vL+0d9vq8rEhN6LVHxD0zFe6rc
+	+vlRQ81HTqc/bRnnU8oA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1njOz1-00FWCp-DT; Tue, 26 Apr 2022 17:28:15 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1njUhw-00GgdJ-5Z; Tue, 26 Apr 2022 23:35:00 +0000
+Received: from mail-oa1-x32.google.com ([2001:4860:4864:20::32])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1njOyn-00FW9T-P3; Tue, 26 Apr 2022 17:28:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1650994054;
- bh=Ji+YlFlgCJoaZr9s7YJfnFKefy+/b9Uqn2Dl6qplgqs=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=PvlYceu8Uw36m7FLf8OmUfJ0plYzd9gG4Vk1xj7VhqKa7DiQ6hYZaAaT9vt1Ac4jQ
- MkAhYUu6CK2oXBB2uAW/jFJZW+IFXkCdTm1RqzMwWKUw+Ib4cdGWeAhk3h2lU/oQkK
- mc4+eIpkQbEQXmNYd/H6M0lEEq5Fshz0mt1/ucnc=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [80.245.77.37] ([80.245.77.37]) by web-mail.gmx.net
- (3c-app-gmx-bs69.server.lan [172.19.170.214]) (via HTTP); Tue, 26 Apr 2022
- 19:27:34 +0200
+ id 1njUht-00GgcE-SP
+ for linux-phy@lists.infradead.org; Tue, 26 Apr 2022 23:34:59 +0000
+Received: by mail-oa1-x32.google.com with SMTP id
+ 586e51a60fabf-e2fa360f6dso310270fac.2
+ for <linux-phy@lists.infradead.org>; Tue, 26 Apr 2022 16:34:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=rqUfSOGZ1teIwHlqjTqKW5qefctpAygnKO2drKsH9dI=;
+ b=D/qioClAQ+KU8gvRilbYlhEYHKiT+0H/WIBXw23GyCqUBT5D8fmk9R1OIc44TEA7js
+ +LJywEt/aWtxDDGmaIb3x7OIM9HUv4+VQCyEeqSNT3F9YE2mgLgWg6InNomvU/TLopSj
+ SPjIXyKBWIW+4Pe3DeDI3Y01BJlrBk79IPWZmRFqwmC3rPlB0eiLtSEBBUrueNP3krfd
+ GsXNnOCv1ouynGD/puxrVQzOADywScBxVEXDVOp35gElrUGBKctk4MTsxyXLlwt9RSfb
+ YLeojdMQg5/efwjxkeMR2EADPGvVf5NrUJgSFqU0870iNFTTEF0O21XVoVCBFHEDoZVn
+ HBvw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=rqUfSOGZ1teIwHlqjTqKW5qefctpAygnKO2drKsH9dI=;
+ b=nxd5k7eP0k5fQgpPDjToc6x6EeIHGCBHCFnsVmpa6iEUmO9ixebkZgNAWkVM3yL7JJ
+ R6BGu1J+BNYmKrBvHB4ahnySdJO/RQUgQrsS34afJdV0pPQ9xvYbtyl/tv19P+KjTePb
+ efYsrxex+EpBEElqcxXOHA926OuxEXb25E7zlL9AwK3Qug4tr1F+NJaZ3TjvzMxVfD/X
+ zhpU3yYUuC4aXvU7X034MnSmQF0nFhZx19eZhp48pIjVgxMrLiQdfi3JrGOmZOArDwC8
+ AuxMpO5xlIAUGZoGoZ8azctikC+9kgd9uucUWTaGuO/AzHrN0fN+Hl6sCPOfMNnMWJq/
+ iCgA==
+X-Gm-Message-State: AOAM530Ibej6xD3IQqOBQaE7j72byu9eK/HM4lihuNQTtPvz7gmqMHC6
+ WhtC10vSit3ZOqErVZ27jLbEAQ==
+X-Google-Smtp-Source: ABdhPJwVdqnpXywCFOoorgAPIFV29CT0TZAoi/FfYZqaI//R10zdLuGPYfllUCuqMHyeD6k33aytKw==
+X-Received: by 2002:a05:6870:d5a2:b0:de:f682:6c4d with SMTP id
+ u34-20020a056870d5a200b000def6826c4dmr10417337oao.283.1651016095986; 
+ Tue, 26 Apr 2022 16:34:55 -0700 (PDT)
+Received: from ripper ([2600:1700:a0:3dc8:205:1bff:fec0:b9b3])
+ by smtp.gmail.com with ESMTPSA id
+ t22-20020a056870e75600b000e915a9121csm1341699oak.52.2022.04.26.16.34.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 26 Apr 2022 16:34:55 -0700 (PDT)
+Date: Tue, 26 Apr 2022 16:36:51 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Andy Gross <agross@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Vivek Gautam <vivek.gautam@codeaurora.org>
+Subject: Re: [PATCH 1/2] phy: qcom-qmp: fix struct clk leak on probe errors
+Message-ID: <YmiCE35hvUzQW2Bc@ripper>
+References: <20220422130941.2044-1-johan+linaro@kernel.org>
+ <20220422130941.2044-2-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Message-ID: <trinity-645b0d5b-4366-492c-9cdb-71d9e8664d31-1650994054170@3c-app-gmx-bs69>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: Frank Wunderlich <linux@fw-web.de>, linux-rockchip@lists.infradead.org,
- Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Heiko Stuebner
- <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul
- <vkoul@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, Philipp Zabel
- <p.zabel@pengutronix.de>, Johan Jonker <jbx6244@gmail.com>, Peter Geis
- <pgwipeout@gmail.com>, Michael Riesch <michael.riesch@wolfvision.net>,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Aw: Re: [RFC/RFT v2 09/11] dt-bindings: pci: add lane-map to
- rockchip PCIe binding
-Date: Tue, 26 Apr 2022 19:27:34 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <20220426160409.GA1731042@bhelgaas>
-References: <20220426132139.26761-10-linux@fw-web.de>
- <20220426160409.GA1731042@bhelgaas>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:1rhhhhwJUPynO1hGrbADbceOZiAPFPYXAkcyO4s521P1UX6wtPdRfIHJy4WiMKxdAl9Ga
- GZ036BRlqUZgnEmkKqpDYX10GXbjs7L7gj77aheAhHIJ4WhJQAEKJqna8qKGVMGnDu9UDoumdOQT
- jjis+uJsD/gDlM3RfgRLoo6M+sFc8wmx0Gvy2QV84L4tYdvHno4qokH1GLC1vMM0XIJka0HR8wlS
- 7+fTOSkAPhiU4QTyr4LuIZmXLg0SIlDvdIe5iqorZl41D5rOBZTYkdzBbAAWoSSyOFfjDiqtaMwq
- jY=
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ojw4Vv6ZXVk=:EcxcpbnZ5B5Qr+pY1IynEG
- HH4mjHal3oseLf72R3WAZEcL/SuJ/yx8lZpb86KWRYFS9a5rxZVjLU6LKBqVGv5ox2CIn1f01
- zdpazMYqLhnAWqlezZj9eyhc2THUi1xpIZ3UNgg8tIlSGA8WVYjfzTyq6FbElu5nDhN+OQR2T
- lNoCp4oy5jb7QKDtcjL4b2RKbHkzw0di4mzCalljbLq41w3xuANAd9s+bjd4mXsjCRYywZKke
- ZXdQ2MAbfdRZubwuqVgBCE+gIeTMZZmFGZhVHuZtorufufPF1mOjsVCpYuBvezvy9eEUR1z5r
- gDJofj9bBKvlK9VKZCDgYyZwBQ3Q14wdEF4SLcl6kxZIpNtQN/ZlCgqqlwhxN+94HtB8X3QyN
- ZQKTVn3FxCGyKY7tt8AY2PSvtNxL0FWSOY7z9INBhnaTIy3Ul0o2F0YgH+dxhcpAnLr8qEmET
- rnp1BV762m7kZJhzPyJl35gWC+bmHTEZhOE83O2a30DBmt64E/RS9dUbg/9QE4VJxbXEBVi9q
- Be1w1LHwPJwJgKGxYsaLQRQt1J8zz84p0IuGU0vzkLcINXeytxDsA1cmQXeBahH/CdosgylEw
- OLia6Xzw52zK+uwGm4Ri3/3Lbt5N4s8w6b5h0mm902JHSj1F6jrTUfdK3wQZrCno/H2AyP2R4
- //pXv6VwHSLc0Nr0h8n3OscVtmrTC+wrCx/jffY5fv+b/DMRB/3BQ7o4zawD2qlTAAqKrONLh
- sgACckEnTD4Mcjdn+2UoLcdYbC+S8aoaHUtbjJL11j5Sh5L5g1VK/yNdez9R9F7sT34Kz+STn
- KI/Arl9
+Content-Disposition: inline
+In-Reply-To: <20220422130941.2044-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220426_102802_151274_0E174EF1 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20220426_163457_960429_CD3A5E4C 
+X-CRM114-Status: GOOD (  15.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,28 +94,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Fri 22 Apr 06:09 PDT 2022, Johan Hovold wrote:
 
-> Gesendet: Dienstag, 26. April 2022 um 18:04 Uhr
-> Von: "Bjorn Helgaas" <helgaas@kernel.org>
+> Make sure to release the pipe clock reference in case of a late probe
+> error (e.g. probe deferral).
+> 
+> Fixes: e78f3d15e115 ("phy: qcom-qmp: new qmp phy driver for qcom-chipsets")
+> Cc: stable@vger.kernel.org      # 4.12
+> Cc: Vivek Gautam <vivek.gautam@codeaurora.org>
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 
-> > -  bifurcation: true
-> > -
->
-> Why are you adding "bifurcation" earlier in the series, then
-> immediately removing it?  Why not just add "lane-map" directly and
-> never mention "bifurcation" in the DT at all?
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-The original driver used the bifurcation property with vendor prefix which i have dropped.
+Regards,
+Bjorn
 
-In v1 there was an Idea to replace this bifurcation setting by something more
-generic supporting more that just true/false. So i added lane-map to start
-discussion if this is the right way or if i should leave the bifurcation property.
-
-if the lane-map is right, i squash the commits before the commits should land in linux...
-this is one cause i tagged the series as RFC.
-
-regards Frank
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> index 7d2d1ab061f7..a84f7d1fc9b7 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> @@ -6077,7 +6077,7 @@ int qcom_qmp_phy_create(struct device *dev, struct device_node *np, int id,
+>  	 * all phys that don't need this.
+>  	 */
+>  	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
+> -	qphy->pipe_clk = of_clk_get_by_name(np, prop_name);
+> +	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
+>  	if (IS_ERR(qphy->pipe_clk)) {
+>  		if (cfg->type == PHY_TYPE_PCIE ||
+>  		    cfg->type == PHY_TYPE_USB3) {
+> -- 
+> 2.35.1
+> 
 
 -- 
 linux-phy mailing list
