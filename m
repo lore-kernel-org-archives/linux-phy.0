@@ -4,69 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E562C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Apr 2022 13:27:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E746C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Apr 2022 16:02:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=59gO4q7nI499nIzauUWoz/ElGzmqUruiOGRjuMqgLk0=; b=S6RRui6dBE+IuF
-	s/sENnOXSOMd7D32LTw+3CmtupFWIsqpAtXWMbxc02raBpicWBbhw0tbLQ022eqxAHkxc6Jqwmw5c
-	30YaqQIWy+odNLxwLkVHfyiqk+2qfGfPeDyvQQt8MZr92a3T/hrqTjxPfAX2I68mYA38GFs8GvlLZ
-	yfmkzRoiFvqQNqhjbzOcRIY7BCAJK8g/9R8G/dTrcSI6f2n/rJg+aBnYdcAUQQiRsUyIjyxCys5C/
-	WnKRz6kgkIRJw4RbsiOwS5H76dGp5Jq2gmMMED6fi01G0bgGWXXZZceF1PRHJ7x+B8xYg9WJYu/7Y
-	aoUoQ9QGRaIY90PGqbIA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=iQOr/7V9+vnWHE0ulubKGyfUR/U0lol9IWbbaougwsM=; b=dwjBU1WJxcDLCU
+	+x3hEmznbSbppfjY2L9/xAH7UNw1ToGWq0SGDN6PAvGE5LK388uWAU1vbS7ea1PLKJ7WaAsG55G/S
+	AYq/HklhZA5qrmXJzWLwJ3CdTyhIFeV6VxG9a3ku4h/pAwgrTcnC0Te2qkDRpIFO+YVYHisYdzBs0
+	7AcUmLuLRjln/PQOgQwv3oUk3e3d0fmcZvngfbr50RJhfz5abmWbU6ySkUgid+hcJfmqx5DolJXuA
+	lWPrMPjpXN1HtZ/etyGT6ChkttnlxHb94qhOLvH/1N5SGzIZnOvnvLJxneANdL+3MFMNBgICG+Hv4
+	u/hS1VY97lwKNMlZDcYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1njLDf-00EaX4-Re; Tue, 26 Apr 2022 13:27:07 +0000
-Received: from mxout4.routing.net ([2a03:2900:1:a::9])
+	id 1njNdf-00FG8i-Pv; Tue, 26 Apr 2022 16:02:07 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1njL8o-00EXot-LQ; Tue, 26 Apr 2022 13:22:09 +0000
-Received: from mxbox1.masterlogin.de (unknown [192.168.10.88])
- by mxout4.routing.net (Postfix) with ESMTP id BEF5B1012BA;
- Tue, 26 Apr 2022 13:22:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
- s=20200217; t=1650979323;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=B/o+aZmZqbDN+W8wwcgvmIIxF46ejgzm+QWN1Vica30=;
- b=X9XN2KY38MKbzCm2GypSgq3PNZqDZrxRaS/HrAOGJ1/rfzGaeBwOXeUPVpOXNXbnWqf14O
- v9i4YcENuV1YPLdJJ9+M1MhGpGXXRMxBK1IAqqW0xGGNg0r0k9UlL2MYrTbTX6xja4mz6r
- iBV+PP1K0eU9SQeaMddRc/xDD1CSHOw=
-Received: from localhost.localdomain (fttx-pool-80.245.77.37.bambit.de
- [80.245.77.37])
- by mxbox1.masterlogin.de (Postfix) with ESMTPSA id C010B4059D;
- Tue, 26 Apr 2022 13:22:02 +0000 (UTC)
-From: Frank Wunderlich <linux@fw-web.de>
-To: linux-rockchip@lists.infradead.org
-Cc: Frank Wunderlich <frank-w@public-files.de>,
+ id 1njNdB-00FFyE-Mj; Tue, 26 Apr 2022 16:01:39 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 34702B820FA;
+ Tue, 26 Apr 2022 16:01:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEC57C385AA;
+ Tue, 26 Apr 2022 16:01:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1650988894;
+ bh=V9bqxROuLoIKwO7jBdqPsf9/DBBXipHAZ1xgMxIrwxc=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=lZkoCILrM0a540ltNPfzBZw+KIGbs4o67Vfcqb0kEq1d0i/snNsZGdNE1pSmcf0mB
+ h/yCk72Itf+O/wLTMqFm3kJI54aKe+D4p/cj1tb7N2+V0jZI9NfMZV/7Ti5nPCe4Sj
+ kzzxrWTvu5dDz9ZKFQrwD+p5luJrRL6LeZmddGgW0RIHci4pmO8VQzk1hYdugZSNOm
+ 1MfYeJ1JfhhAqZZ/nk0yGl3w35hrzh2EkbiaVlrbo4H/T16ki0b1yapu+31ippsUcZ
+ dXnjDP3s9gSSOEF96HbzT8CS2uMK4400Q5gUS2RMUsFuuxDEJf78veGXM12WkVsG19
+ cfVESoP/NLSIQ==
+Date: Tue, 26 Apr 2022 11:01:32 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: linux-rockchip@lists.infradead.org,
+ Frank Wunderlich <frank-w@public-files.de>,
  Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
  Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>,
  Vinod Koul <vkoul@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- =?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Johan Jonker <jbx6244@gmail.com>,
- Peter Geis <pgwipeout@gmail.com>,
- Michael Riesch <michael.riesch@wolfvision.net>, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: [RFC/RFT v2 09/11] dt-bindings: pci: add lane-map to rockchip PCIe
- binding
-Date: Tue, 26 Apr 2022 15:21:37 +0200
-Message-Id: <20220426132139.26761-10-linux@fw-web.de>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220426132139.26761-1-linux@fw-web.de>
-References: <20220426132139.26761-1-linux@fw-web.de>
+ Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Johan Jonker <jbx6244@gmail.com>, Peter Geis <pgwipeout@gmail.com>,
+ Michael Riesch <michael.riesch@wolfvision.net>,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [RFC/RFT v2 00/11] RK3568 PCIe V3 support
+Message-ID: <20220426160132.GA1724099@bhelgaas>
 MIME-Version: 1.0
-X-Mail-ID: c57ef808-9a8e-4e63-a04d-41225c07add3
+Content-Disposition: inline
+In-Reply-To: <20220426132139.26761-1-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220426_062206_933393_31E3E9A4 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20220426_090138_123645_F500C86B 
+X-CRM114-Status: GOOD (  23.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,85 +82,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Frank Wunderlich <frank-w@public-files.de>
+On Tue, Apr 26, 2022 at 03:21:28PM +0200, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
+> 
+> This series adds Rockchip PCIe V3 support found on rk3568 SOC.
+> 
+> It is based on "Enable rk356x PCIe controller" series of Peter Geis
+> v8: https://patchwork.kernel.org/project/linux-rockchip/list/?series=634925
+> 
+> Compared to PCIeV2 which uses the Naneng combphy, pciev3
+> uses a dedicated pci-phy.
+> 
+> This Version is still an RFC/RFT because i cannot only test PCIe-slot on R2Pro
+> as the other is a M.2 Key-E where i don't have any Hardware.
+> 
+> last 3 Patches show a replacement for bifurcation setting to make it more
+> useful for vendor-indepent lane-mapping.
+> 
+> Frank Wunderlich (11):
+>   dt-bindings: phy: rockchip: add PCIe v3 phy
+>   dt-bindings: soc: grf: add pcie30-{phy,pipe}-grf
+>   dt-bindings: phy: rockchip: add PCIe v3 constants
+>   phy: rockchip: Support PCIe v3
+>   dt-bindings: pci: add bifurcation option to Rockchip DesignWare
+>     binding
+>   PCI: rockchip-dwc: add PCIe bifurcation
+>   arm64: dts: rockchip: rk3568: Add PCIe v3 nodes
+>   arm64: dts: rockchip: Add PCIe v3 nodes to BPI-R2-Pro
+>   dt-bindings: pci: add lane-map to rockchip PCIe binding
+>   PCI: rockchip: add a lane-map to rockchip pcie driver
+>   arm64: dts: rockchip: add basic lane-map and drop bifurcation from
+>     r2pro
 
-Create new property for (rockchip) PCIe controller binding to
-define lane mapping.
+Don't just make up new prefixes; copy what's been done in the past.
 
-Rockchip driver uses this for bifurcation (true/false) based
-on lanes should be splitted across controllers or not.
+  PCI: rockchip-dwc: add PCIe bifurcation
+  PCI: rockchip: add a lane-map to rockchip pcie driver
 
-On rk3568 there are 2 PCIe Controllers which share 2 PCIe lanes.
+I think we decided [1] to use "rockchip-dwc" for this driver to
+distinguish it from the pcie-rockchip-host.c driver.
 
-pcie3x1: pcie@fe270000 //lane1 when using 1+1
-pcie3x2: pcie@fe280000 //lane0 when using 1+1
+So both of these should use "PCI: rockchip-dwc:" as the prefix.
 
-This ends up in one Controller (pcie3x1) uses lane-map = <0 1>; and
-the other lane-map = <1 0>; (pcie3x2)
+At least for the drivers/pci/ patches, capitalize the first word of
+the subject, i.e., "Add PCIe bifurcation" and "Add lane-map ..."  I
+don't know the dt-bindings convention (I would use "git log --oneline"
+to find out).
 
-This means there are 2 lanes (count of numbers), one (by position)
-is mapped to the first controller, the other one is used on the other
-controller.
+s/pcie/PCIe/ in subjects, commit logs, comments, etc.
 
-In rockchip PCIe driver the lane-map is simply converted to the
-bifurcation bool instead of direct mapping a specific lane to a
-controller.
+Wrap commit logs to fill 75 columns and add blank lines between
+paragraphs.  Readers should not need to wonder "oh, the previous line
+was shorter than usual; is this one a new paragraph?"
 
-There is not yet any slot mapping below one controller.
-But for binding this may be possible like:
+[1] https://lore.kernel.org/r/20210624180723.GA3543267@bjorn-Precision-5520
 
-lane-map = <1 2 3 3 4 4 4 4>;
-            | | | ...
-        lane0 | |
-          lane1 |
-            lane2
-
-on a 8-lane phy.
-
-This can map lane0 to port1 (number used at this position),
-lane1 to port2, lanes 2+3 to port 3 and lanes 4,5,6,7 to port 4.
-
-Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
----
-v2:
-- new patch
----
- Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml b/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
-index a992970e8b85..998b20b3a9dc 100644
---- a/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml
-@@ -52,6 +52,8 @@ properties:
-       - const: pclk
-       - const: aux
- 
-+  lane-map: true
-+
-   msi-map: true
- 
-   num-lanes: true
-@@ -74,8 +76,6 @@ properties:
-   reset-names:
-     const: pipe
- 
--  bifurcation: true
--
-   vpcie3v3-supply: true
- 
- required:
-@@ -115,6 +115,7 @@ examples:
-                           "aclk_dbi", "pclk",
-                           "aux";
-             device_type = "pci";
-+            lane-map = <0 1>;
-             linux,pci-domain = <2>;
-             max-link-speed = <2>;
-             msi-map = <0x2000 &its 0x2000 0x1000>;
--- 
-2.25.1
-
+>  .../bindings/pci/rockchip-dw-pcie.yaml        |   3 +
+>  .../bindings/phy/rockchip,pcie3-phy.yaml      |  84 ++++++
+>  .../devicetree/bindings/soc/rockchip/grf.yaml |   3 +
+>  .../boot/dts/rockchip/rk3568-bpi-r2-pro.dts   |  79 +++++
+>  arch/arm64/boot/dts/rockchip/rk3568.dtsi      | 122 ++++++++
+>  drivers/pci/controller/dwc/pcie-dw-rockchip.c |  22 ++
+>  drivers/phy/rockchip/Kconfig                  |   9 +
+>  drivers/phy/rockchip/Makefile                 |   1 +
+>  .../phy/rockchip/phy-rockchip-snps-pcie3.c    | 278 ++++++++++++++++++
+>  include/dt-bindings/phy/phy-rockchip-pcie3.h  |  21 ++
+>  include/linux/phy/pcie.h                      |  12 +
+>  11 files changed, 634 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+>  create mode 100644 drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+>  create mode 100644 include/dt-bindings/phy/phy-rockchip-pcie3.h
+>  create mode 100644 include/linux/phy/pcie.h
+> 
+> -- 
+> 2.25.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 -- 
 linux-phy mailing list
