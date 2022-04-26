@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D8E1C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Apr 2022 13:26:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2B25C433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Apr 2022 13:27:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2HGhlGRNJlxT350M2Hzu6MtGUIH2KYm60A0ICStNVj0=; b=EpCcmcBXhDGsn/
-	0nd76tGJ4wTA0nKhFR85X0v3cTXv7h/mwZAGyGr0KZb816pcd4qFEh5Rrj9xSWWimgkGjlajizxoC
-	jE/vGPrDWjZLcX1RlXoDTSTqGZ1du3Gq8k5w0e3EMhjcX6S8+MAHzAF2GtpDGjIg1xM2HZIkcDHHA
-	asuPeTfCvXOvE9YoaDDn9SAniNpV4t+puOeMO+75OQki+dmQROeJokqRVvYOWG0i3V0BSBDaF5doE
-	AG9gANowagBr9ud5jJn+H1M7HRGo0CJt2Z4TYojfE7BncGHUmu+2Nei/Mpq80q7hp1RRzsALT2GEV
-	UEioFt268h0ULPokExKQ==;
+	List-Owner; bh=qMYdxJ0ks+qkMs2Iimdu/JA29RdEBFDzGEFlONauGZk=; b=CKd4vBbLY3QOZz
+	PBBUTjStDxlBa2OEKOqEqAuBqPSkJDUsSoUStxkPOCeBB9oG/TRT9DNpNt88uqaObidK2evBaiz6y
+	+CTZy7r1L/eXrRSDkTQ9LITKXTtXGqktKOBDN/3Rj69OeviVdVjM4/6PcUH3za9pweJEwvXlluSLI
+	N4OVmENFCfGmJwz1fjcd4yrXK8yUTIZyvpgdPwyxwEaKwzBZYQ6oZXrZvmSSDCNiLRRueKHw/dtTD
+	z7r9QFToh1y3D4mZeMaSMTwm0ad/FZrvQ6OUhnexsP2st/Y0sbZn1FgGLoV/j/jkrRj0C39fLn8aF
+	PVWPe1dbwCoR6Ka8cZXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1njLCp-00Ea4C-IE; Tue, 26 Apr 2022 13:26:15 +0000
+	id 1njLDg-00EaXO-0G; Tue, 26 Apr 2022 13:27:08 +0000
 Received: from mxout2.routing.net ([2a03:2900:1:a::b])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1njL8o-00EXoe-Hf; Tue, 26 Apr 2022 13:22:09 +0000
+ id 1njL8p-00EXpT-EU; Tue, 26 Apr 2022 13:22:09 +0000
 Received: from mxbox1.masterlogin.de (unknown [192.168.10.88])
- by mxout2.routing.net (Postfix) with ESMTP id D60AD6050E;
- Tue, 26 Apr 2022 13:22:02 +0000 (UTC)
+ by mxout2.routing.net (Postfix) with ESMTP id CE8E1615D8;
+ Tue, 26 Apr 2022 13:22:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
- s=20200217; t=1650979323;
+ s=20200217; t=1650979325;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=vuWlHfN3JgFqKKesI9l7PLuSp2+j8jmbjUAK9QIFAIE=;
- b=nFJZwRcfG5Hy9mjDm4TriMXk6t1OZx3QFlOPTT7aFjVlet8gzSP+0IwmqHx0mikVR6nfHS
- aR+b/mFK6PeSE5KqZqxjdz+qk1KlWwhQjmoWJdYvPGnwrVbUv4Rd0NPuPTZVFTsJcXnnk4
- fzb/+c6Jk2Rhix5fxCrweHpVrj3UWFQ=
+ bh=+PqOAHHD5Ke/d891B5zhwO1Haizd/LoBpwF8/ijmhnc=;
+ b=KAgrYqHCHmGjb56eabZZY/0kH2URSzS+1Iyy32AoENGlppkXWjuMkLjjJwabq3wAXflkLB
+ n5v3i074u2gai9tBxQ/Y7ZBrnm9XUz3VaYBrMhhyNeOrUi6EF1pb9EvEWWgh4lHcFpJLkg
+ AU6HlL6u+TA8XmH65AkDdavhXbJj198=
 Received: from localhost.localdomain (fttx-pool-80.245.77.37.bambit.de
  [80.245.77.37])
- by mxbox1.masterlogin.de (Postfix) with ESMTPSA id CC41C401C9;
- Tue, 26 Apr 2022 13:22:01 +0000 (UTC)
+ by mxbox1.masterlogin.de (Postfix) with ESMTPSA id C83704059D;
+ Tue, 26 Apr 2022 13:22:04 +0000 (UTC)
 From: Frank Wunderlich <linux@fw-web.de>
 To: linux-rockchip@lists.infradead.org
 Cc: Frank Wunderlich <frank-w@public-files.de>,
@@ -55,18 +55,18 @@ Cc: Frank Wunderlich <frank-w@public-files.de>,
  Michael Riesch <michael.riesch@wolfvision.net>, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: [RFC/RFT v2 08/11] arm64: dts: rockchip: Add PCIe v3 nodes to
- BPI-R2-Pro
-Date: Tue, 26 Apr 2022 15:21:36 +0200
-Message-Id: <20220426132139.26761-9-linux@fw-web.de>
+Subject: [RFC/RFT v2 11/11] arm64: dts: rockchip: add basic lane-map and drop
+ bifurcation from r2pro
+Date: Tue, 26 Apr 2022 15:21:39 +0200
+Message-Id: <20220426132139.26761-12-linux@fw-web.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20220426132139.26761-1-linux@fw-web.de>
 References: <20220426132139.26761-1-linux@fw-web.de>
 MIME-Version: 1.0
-X-Mail-ID: 99508860-c35f-4da4-b0c0-5a882f905d66
+X-Mail-ID: 684376ed-9bc4-4c48-93b3-5deaca47720a
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220426_062206_771467_84C24DE8 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20220426_062207_679193_725F43D7 
+X-CRM114-Status: GOOD (  10.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,116 +85,39 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Frank Wunderlich <frank-w@public-files.de>
 
-Add Nodes to Bananapi-R2-Pro board to support PCIe v3 and
-set PCIe related regulators to always on.
+Change DTS-Property from bifurcation to the new lane-map.
+The lane-map is more generic but PCIe controller driver
+converts it back to the bifurcation-bool.
 
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 ---
 changes in v2:
-- underscores in nodenames
-- rockchip,bifurcation to vendor unspecific bifurcation
-- fix trailing space
+- new patch
 ---
- .../boot/dts/rockchip/rk3568-bpi-r2-pro.dts   | 79 +++++++++++++++++++
- 1 file changed, 79 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts b/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts
-index 2700fb18a3bc..86506d7896c6 100644
+index 86506d7896c6..9acd85db3a3a 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3568-bpi-r2-pro.dts
-@@ -74,6 +74,67 @@ vcc5v0_sys: vcc5v0-sys {
- 		vin-supply = <&dc_12v>;
- 	};
- 
-+	pcie30_avdd0v9: pcie30-avdd0v9 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "pcie30_avdd0v9";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <900000>;
-+		regulator-max-microvolt = <900000>;
-+		vin-supply = <&vcc3v3_sys>;
-+	};
-+
-+	pcie30_avdd1v8: pcie30-avdd1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "pcie30_avdd1v8";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		vin-supply = <&vcc3v3_sys>;
-+	};
-+
-+	/* pi6c pcie clock generator feeds both ports */
-+	vcc3v3_pi6c_05: vcc3v3-pi6c-05-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3_pcie";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		enable-active-high;
-+		gpios = <&gpio0 RK_PD4 GPIO_ACTIVE_HIGH>;
-+		startup-delay-us = <20000>;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
-+	/* actually fed by vcc3v3_sys, dependent on pi6c clock generator */
-+	vcc3v3_minipcie: vcc3v3-minipcie-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3_minipcie";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		enable-active-high;
-+		gpio = <&gpio0 RK_PC6 GPIO_ACTIVE_HIGH>;
-+		startup-delay-us = <5000>;
-+		vin-supply = <&vcc3v3_pi6c_05>;
-+	};
-+
-+	/* actually fed by vcc3v3_sys, dependent on pi6c clock generator */
-+	vcc3v3_ngff: vcc3v3-ngff-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3_ngff";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-boot-on;
-+		enable-active-high;
-+		gpio = <&gpio4 RK_PC1 GPIO_ACTIVE_HIGH>;
-+		startup-delay-us = <5000>;
-+		vin-supply = <&vcc3v3_pi6c_05>;
-+	};
-+
- 	vbus: vbus {
- 		compatible = "regulator-fixed";
- 		regulator-name = "vbus";
-@@ -411,6 +472,24 @@ rgmii_phy1: ethernet-phy@0 {
- 	};
+@@ -477,14 +477,14 @@ &pcie30phy {
  };
  
-+&pcie30phy {
-+	status = "okay";
-+};
-+
-+&pcie3x1 {
-+	bifurcation;
-+	reset-gpios = <&gpio3 RK_PA1 GPIO_ACTIVE_HIGH>;
-+	vpcie3v3-supply = <&vcc3v3_ngff>;
-+	status = "okay";
-+};
-+
-+&pcie3x2 {
-+	bifurcation;
-+	reset-gpios = <&gpio2 RK_PD6 GPIO_ACTIVE_HIGH>;
-+	vpcie3v3-supply = <&vcc3v3_minipcie>;
-+	status = "okay";
-+};
-+
- &pinctrl {
- 	leds {
- 		blue_led_pin: blue-led-pin {
+ &pcie3x1 {
+-	bifurcation;
++	lane-map = <0 1>;
+ 	reset-gpios = <&gpio3 RK_PA1 GPIO_ACTIVE_HIGH>;
+ 	vpcie3v3-supply = <&vcc3v3_ngff>;
+ 	status = "okay";
+ };
+ 
+ &pcie3x2 {
+-	bifurcation;
++	lane-map = <1 0>;
+ 	reset-gpios = <&gpio2 RK_PD6 GPIO_ACTIVE_HIGH>;
+ 	vpcie3v3-supply = <&vcc3v3_minipcie>;
+ 	status = "okay";
 -- 
 2.25.1
 
