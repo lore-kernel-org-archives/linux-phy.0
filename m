@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5076C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Apr 2022 07:01:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4A8FC433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Apr 2022 07:01:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1UBHxomtrZ6+X8HUJewDpwf2CTv+BGa2gScsspdBrv8=; b=HYT3hEj8+dX3lf
-	8u5+abGHkMrfKKjeoIcYkp2/L0zP8nnvvjfb+aCddVp+zUQojZ19JCGtSVlDPAIqQcM0lBFLB+oX1
-	abSekPZLjroYINxbY5sQBfPnenewTt+ipIalaAX82nyfENmuiaFYvrVgkpUB+6Ai0XGZFLPjDSOlL
-	yhCpgcyxKtDDHAQ1q1L2AFOVTv+QWdckwAvfq5TS09VAJ22QslUU9lEMM+vb8Iq+l/5xeT35DoBZj
-	44osufYTI6cuVeN29IYuNFkzb8AVpQs65AB7G7Bl9K/X0h/PcdElEoz0uQdCaBIBDH3SUoyMJ2cQn
-	E0awaVoBazh/RVLX+UDg==;
+	List-Owner; bh=qAZmj1cbpuO/FpxyKIQybk7pcKn2PQKCUBYueXrzzL0=; b=HCLXvHL0BE9S3a
+	n23z/TRZmLfmW7qz/AWgub2/BMsSfzWr6RmwuR7euOg8ZRlS3z1oIzH8FRB8r+DvDq/YPUyb5DLzN
+	iqxXuOG2TNF0GEWdAsjdQmlI2voS7S4LHgED3Oz+fpE6dE2yMG2/bWKuYmr4cywq8X/wMB8B1RXGX
+	qk3on0Jn92yOjl4TmYXK5iVZRi/7QZovCFUsCqOc1Qniy2wxFtwrkk2EM8k5k8gZb0sDp2q66JTiW
+	h/tKfv3RCU1oVGcdvaSWLogdXSrrpeCyhHnIW5xnfItC/YPrXKYDJD0cr5CI47eQDLUXjypuN65Mh
+	Zp/f1v8l/rN8DEF9T4Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nkKdN-009u1H-4r; Fri, 29 Apr 2022 07:01:45 +0000
-Received: from mail-pg1-x534.google.com ([2607:f8b0:4864:20::534])
+	id 1nkKdP-009u2C-9c; Fri, 29 Apr 2022 07:01:47 +0000
+Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nkKdJ-009txm-Ij
- for linux-phy@lists.infradead.org; Fri, 29 Apr 2022 07:01:43 +0000
-Received: by mail-pg1-x534.google.com with SMTP id 7so1976335pga.12
- for <linux-phy@lists.infradead.org>; Fri, 29 Apr 2022 00:01:39 -0700 (PDT)
+ id 1nkKdM-009tzg-Iz
+ for linux-phy@lists.infradead.org; Fri, 29 Apr 2022 07:01:46 +0000
+Received: by mail-pf1-x431.google.com with SMTP id y38so6201797pfa.6
+ for <linux-phy@lists.infradead.org>; Fri, 29 Apr 2022 00:01:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=z2EBEXpBv9EPRs2ABOXKmLkAk88CEehciQnn+WWQkas=;
- b=eYyJ1z4k6RDLTrhjPoPk0ctStY4P4dX9tk0rHBi1JgwDCoAN3bG4HNcZt2tlClyKMG
- 97H4fGg6X55UtY7EgzZZx4e6AIiycZJXp/tmsq7VNwuM7v5rqaE4FX1NJa/knt/X4cUO
- 1d57DBgBSVUSviJEWudF/UxWycmRZyLxFEbMU6H1xEJaZEhVpfTT0NQ7rk8SwVVt5rqB
- XQ+q65C0YRdZwX/X/7n/i1yRhl1Tfb9GEou0n3+u3pAyxy4vMA0e1hZj74Jx0EvQDG1v
- uuKfmzBEkBej8ooTarxBsFOiOYjbxGWpPllS2JbR3J/CVv29dYG1Qwn9gXTHtNxmDOxW
- qs5A==
+ bh=sPglW94tnj8XZLFLi8TD5DyZuTLeLJOzEQaitrD47Rk=;
+ b=UWmiesA9J6CPk3EH2Rwr/isQLTArC8YOhw1jnhhf3WMHhNhx9x9tqBPHV3PRqDJHBG
+ 0+v9RrtZvlYN+Fu+pEv7ZkPlE/iYt4CeCwOgZ0q6GL44YFbXu8jILacoU/8zVoJeduM1
+ PobrlU4x/QfSDNQnByx3rdIGByv58ynZN6q9G3K45Xc45GJU2+cyQVCDWYM2YdfvZp7N
+ ZMRLd/J3GZja3dyNuiE1wZqcuhI65qcoLSV0Km8OaW1f6tifqcJ7JI3R10cUd39b0cpd
+ jD9vsyGkDsNFaJs29ZjSlFJ+gP0+OITHN2GrGfN6gRZlweVUsBCVh76SPCv61yq78RSL
+ pA4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=z2EBEXpBv9EPRs2ABOXKmLkAk88CEehciQnn+WWQkas=;
- b=SFGjiWm1fOn3KDpYa7X1M0WiESq53QFDP8PFl1+m2ZL19fdtDY1b1MGInqqreTPUYl
- UyXiYDq+wPBiOsqMf2zI9tjc/OWWHgSHDRUdZZOtyOWV8SmLsDjy7vidCz9D3Pefm1xS
- lOh+6s/75YCIeObGy/jcnveqYB4/57woMmOOgX6sFFhSuwMAXVsFaaRtVrCanvFDCwI7
- vB2elhvNl0WUVIIaM4BSTAA/feEkCEIUeq2ndL5uuS25vynE8+8KX6/40FvpqJUkYT+J
- KarGwUlRfcBZaRxHMIlutqcIE1A813hd31LytnqSVWbZ59TKzbNz6d9d5fJc5iLprw/w
- mT8w==
-X-Gm-Message-State: AOAM5320oAmNhyq6RSHGkgnJ/WvJ+nf69ChCz/Ig5rG5v/NR+4Os5mW0
- PvyMyar2XK1XNjkRnc14z2nf9ozmvkHdoA==
-X-Google-Smtp-Source: ABdhPJyzGLR7x+BDuGuRaiyl8y0G/VTd6v5k50vjiJ/nK8mxUajpw+qwZIgEnQnrC2aVASR1n7CyKg==
-X-Received: by 2002:a05:6a00:1249:b0:50d:b4c6:fb8e with SMTP id
- u9-20020a056a00124900b0050db4c6fb8emr1311394pfi.85.1651215698155; 
- Fri, 29 Apr 2022 00:01:38 -0700 (PDT)
+ bh=sPglW94tnj8XZLFLi8TD5DyZuTLeLJOzEQaitrD47Rk=;
+ b=PL4snpbu8ZPKSC8gwrqjis8fhGExxX5/KQ6/WBzY/Ovbv76JBOEOW4+wQLxJo5SFeJ
+ PYHlAdiDEutBdsO7aMlKc+OJldCQr84gikzjgiOGgjIQ/hN+ksJ3ytk+fGcRxq6Vqx4i
+ 5amFG5kqlSqOQU4tJmviRq9ljAeaZehaxOE8mpcBzaIgMLcFjKKGygisxKkcYc95hiN8
+ vh0Q/QhMEH71Ck4UnxVWK2T3wP8ObKCGff+RXvaFbO4D2D/jAy16x3vXrXZBO1g3EZqx
+ CRnvsqYdx9So4RPEiIwnOuZjipkC7BcurW7qXAYQag1kmLKuMFbzMcq7Z65vLxb+V8uK
+ 5gyQ==
+X-Gm-Message-State: AOAM531i+9V3mP5pbIEJRTOHW+TmOIA175uaLVsYHJaaPAh2Y9/ZRV0L
+ v2INTp4G+EOma2FeJ3byzHA=
+X-Google-Smtp-Source: ABdhPJxHO/t1cCtZO8hv2a8P7Ok20cXuZ2lrAN2/4UXIlDNv+BJ53aXaRe17sCGSdg6u0RA042r5Hw==
+X-Received: by 2002:a63:e80a:0:b0:3c1:6c84:de53 with SMTP id
+ s10-20020a63e80a000000b003c16c84de53mr7076534pgh.224.1651215701291; 
+ Fri, 29 Apr 2022 00:01:41 -0700 (PDT)
 Received: from scdiu3.sunplus.com ([113.196.136.192])
  by smtp.googlemail.com with ESMTPSA id
- iy19-20020a17090b16d300b001cd4989fee6sm13148106pjb.50.2022.04.29.00.01.35
+ iy19-20020a17090b16d300b001cd4989fee6sm13148106pjb.50.2022.04.29.00.01.38
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 29 Apr 2022 00:01:37 -0700 (PDT)
+ Fri, 29 Apr 2022 00:01:40 -0700 (PDT)
 From: Vincent Shih <vincent.sunplus@gmail.com>
 To: kishon@ti.com, vkoul@kernel.org, p.zabel@pengutronix.de,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
@@ -65,15 +65,16 @@ To: kishon@ti.com, vkoul@kernel.org, p.zabel@pengutronix.de,
  krzysztof.kozlowski+dt@linaro.org, devicetree@vger.kernel.org,
  wells.lu@sunplus.com
 Cc: Vincent Shih <vincent.sunplus@gmail.com>
-Subject: [PATCH v2 1/2] phy: usb: Add USB2.0 phy driver for Sunplus SP7021
-Date: Fri, 29 Apr 2022 15:00:55 +0800
-Message-Id: <1651215656-19024-2-git-send-email-vincent.sunplus@gmail.com>
+Subject: [PATCH v2 2/2] dt-bindings: phy: Add bindings doc for Sunplus USB2
+ PHY driver
+Date: Fri, 29 Apr 2022 15:00:56 +0800
+Message-Id: <1651215656-19024-3-git-send-email-vincent.sunplus@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1651215656-19024-1-git-send-email-vincent.sunplus@gmail.com>
 References: <1651215656-19024-1-git-send-email-vincent.sunplus@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220429_000141_696412_792596CD 
-X-CRM114-Status: GOOD (  25.89  )
+X-CRM114-CacheID: sfid-20220429_000144_663895_EB5581A7 
+X-CRM114-Status: GOOD (  15.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,396 +92,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB2.0 phy driver for Sunplus SP7021
+Add bindings doc for Sunplus USB2 PHY driver
 
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Vincent Shih <vincent.sunplus@gmail.com>
 ---
-Changes in v2:
- - Addressed the comments from Mr. Vinod Koul
+Changes in v2
+ - No change
 
- MAINTAINERS                            |   8 +
- drivers/phy/Kconfig                    |   1 +
- drivers/phy/Makefile                   |   1 +
- drivers/phy/sunplus/Kconfig            |  13 ++
- drivers/phy/sunplus/Makefile           |   2 +
- drivers/phy/sunplus/phy-sunplus-usb2.c | 296 +++++++++++++++++++++++++++++++++
- 6 files changed, 321 insertions(+)
- create mode 100644 drivers/phy/sunplus/Kconfig
- create mode 100644 drivers/phy/sunplus/Makefile
- create mode 100644 drivers/phy/sunplus/phy-sunplus-usb2.c
+ .../bindings/phy/sunplus,sp7021-usb2-phy.yaml      | 73 ++++++++++++++++++++++
+ MAINTAINERS                                        |  1 +
+ 2 files changed, 74 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml
 
+diff --git a/Documentation/devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml
+new file mode 100644
+index 0000000..52cf20e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml
+@@ -0,0 +1,73 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++# Copyright (C) Sunplus Co., Ltd. 2021
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/phy/sunplus,sp7021-usb2-phy.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++
++title: Sunplus SP7021 USB 2.0 PHY Controller Device Tree bindings
++
++maintainers:
++  - Vincent Shih <vincent.sunplus@gmail.com>
++
++properties:
++  compatible:
++    const: sunplus,sp7021-usb2-phy
++
++  reg:
++    items:
++      - description: UPHY register region
++      - description: MOON4 register region
++
++  reg-names:
++    items:
++      - const: phy
++      - const: moon4
++
++  clocks:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 0
++
++  nvmem-cell-names:
++    description: names corresponding to the nvmem cells of disconnect voltage
++    const: disc_vol
++
++  nvmem-cells:
++    description: nvmem cell address of disconnect voltage
++    maxItems: 1
++
++  sunplus,disc-vol-addr-off:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description: the otp address offset of disconnect voltage
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - resets
++  - "#phy-cells"
++  - nvmem-cell-names
++  - nvmem-cells
++  - sunplus,disc-vol-addr-off
++
++additionalProperties: false
++
++examples:
++  - |
++    sp_uphy0: uphy@9c004a80 {
++      compatible = "sunplus,sp7021-usb2-phy";
++      reg = <0x9c004a80 0x80>, <0x9c000248 0x10>;
++      reg-names = "phy", "moon4";
++      clocks = <&clkc 0x3d>;
++      resets = <&rstc 0x2d>;
++      #phy-cells = <0>;
++      nvmem-cell-names = "disc_vol";
++      nvmem-cells = <&disc_vol>;
++      sunplus,disc-vol-addr-off = <0>;
++    };
 diff --git a/MAINTAINERS b/MAINTAINERS
-index dd61684..6b88a7b 100644
+index 6b88a7b..bddf6c7 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -18914,6 +18914,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/serial/sunplus,sp7021-uart.yaml
- F:	drivers/tty/serial/sunplus-uart.c
- 
-+SUNPLUS USB2 PHY DRIVER
-+M:	Vincent Shih <vincent.sunplus@gmail.com>
-+L:	linux-usb@vger.kernel.org
-+S:	Maintained
-+F:	drivers/phy/sunplus/Kconfig
-+F:	drivers/phy/sunplus/Makefile
-+F:	drivers/phy/sunplus/phy-sunplus-usb2.c
-+
- SUPERH
- M:	Yoshinori Sato <ysato@users.sourceforge.jp>
- M:	Rich Felker <dalias@libc.org>
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 82b63e6..d97e22e 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -90,6 +90,7 @@ source "drivers/phy/rockchip/Kconfig"
- source "drivers/phy/samsung/Kconfig"
- source "drivers/phy/socionext/Kconfig"
- source "drivers/phy/st/Kconfig"
-+source "drivers/phy/sunplus/Kconfig"
- source "drivers/phy/tegra/Kconfig"
- source "drivers/phy/ti/Kconfig"
- source "drivers/phy/intel/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index 01e9eff..54f312c 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -31,6 +31,7 @@ obj-y					+= allwinner/	\
- 					   samsung/	\
- 					   socionext/	\
- 					   st/		\
-+					   sunplus/	\
- 					   tegra/	\
- 					   ti/		\
- 					   xilinx/
-diff --git a/drivers/phy/sunplus/Kconfig b/drivers/phy/sunplus/Kconfig
-new file mode 100644
-index 0000000..bad4cf6
---- /dev/null
-+++ b/drivers/phy/sunplus/Kconfig
-@@ -0,0 +1,13 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+
-+config PHY_SUNPLUS_USB
-+	tristate "Sunplus SP7021 USB 2.0 PHY driver"
-+	depends on OF && (SOC_SP7021 || COMPILE_TEST)
-+	select GENERIC_PHY
-+	select NVMEM_SUNPLUS_OCOTP
-+	help
-+	  Enable this to support the USB 2.0 PHY on Sunplus SP7021
-+	  SoC. The USB 2.0 PHY controller supports battery charger
-+	  and synchronous signals, various power down modes including
-+	  operating, partial and suspend modes, and high-speed,
-+	  full-speed and low-speed data transfer.
-diff --git a/drivers/phy/sunplus/Makefile b/drivers/phy/sunplus/Makefile
-new file mode 100644
-index 0000000..71754d5
---- /dev/null
-+++ b/drivers/phy/sunplus/Makefile
-@@ -0,0 +1,2 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+obj-$(CONFIG_PHY_SUNPLUS_USB)	+= phy-sunplus-usb2.o
-diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
-new file mode 100644
-index 0000000..2707b6f
---- /dev/null
-+++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
-@@ -0,0 +1,296 @@
-+// SPDX-License-Identifier: GPL-2.0
-+
-+/*
-+ * Sunplus SP7021 USB 2.0 phy driver
-+ *
-+ * Copyright (C) 2022 Sunplus Technology Inc., All rights reserved.
-+ *
-+ * Note 1 : non-posted write command for the registers accesses of
-+ * Sunplus SP7021.
-+ *
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/module.h>
-+#include <linux/nvmem-consumer.h>
-+#include <linux/of_platform.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+
-+#define HIGH_MASK_BITS				GENMASK(31, 16)
-+#define LOW_MASK_BITS				GENMASK(15, 0)
-+#define OTP_DISC_LEVEL_DEFAULT			0xd
-+
-+/* GROUP UPHY */
-+#define CONFIG1					0x4
-+#define J_HS_TX_PWRSAV				BIT(5)
-+#define CONFIG3					0xc
-+#define J_FORCE_DISC_ON				BIT(5)
-+#define J_DEBUG_CTRL_ADDR_MACRO			BIT(0)
-+#define CONFIG7					0x1c
-+#define J_DISC					0X1f
-+#define CONFIG9					0x24
-+#define J_ECO_PATH				BIT(6)
-+#define CONFIG16				0x40
-+#define J_TBCWAIT_MASK				GENMASK(6, 5)
-+#define J_TBCWAIT_1P1_MS			FIELD_PREP(J_TBCWAIT_MASK, 0)
-+#define J_TVDM_SRC_DIS_MASK			GENMASK(4, 3)
-+#define J_TVDM_SRC_DIS_8P2_MS			FIELD_PREP(J_TVDM_SRC_DIS_MASK, 3)
-+#define J_TVDM_SRC_EN_MASK			GENMASK(2, 1)
-+#define J_TVDM_SRC_EN_1P6_MS			FIELD_PREP(J_TVDM_SRC_EN_MASK, 0)
-+#define J_BC_EN					BIT(0)
-+#define CONFIG17				0x44
-+#define IBG_TRIM0_MASK				GENMASK(7, 5)
-+#define IBG_TRIM0_SSLVHT			FIELD_PREP(IBG_TRIM0_MASK, 4)
-+#define J_VDATREE_TRIM_MASK			GENMASK(4, 1)
-+#define J_VDATREE_TRIM_DEFAULT			FIELD_PREP(J_VDATREE_TRIM_MASK, 9)
-+#define CONFIG23				0x5c
-+#define PROB_MASK				GENMASK(5, 3)
-+#define PROB					FIELD_PREP(PROB_MASK, 7)
-+
-+/* GROUP MOON4 */
-+#define UPHY_CONTROL0				0x0
-+#define UPHY_CONTROL1				0x4
-+#define UPHY_CONTROL2				0x8
-+#define MO1_UPHY_RX_CLK_SEL			BIT(6)
-+#define MASK_MO1_UPHY_RX_CLK_SEL		BIT(6 + 16)
-+#define UPHY_CONTROL3				0xc
-+#define MO1_UPHY_PLL_POWER_OFF_SEL		BIT(7)
-+#define MASK_MO1_UPHY_PLL_POWER_OFF_SEL		BIT(7 + 16)
-+#define MO1_UPHY_PLL_POWER_OFF			BIT(3)
-+#define MASK_UPHY_PLL_POWER_OFF			BIT(3 + 16)
-+
-+struct sp_usbphy {
-+	struct device *dev;
-+	struct resource *phy_res_mem;
-+	struct resource *moon4_res_mem;
-+	struct reset_control *rstc;
-+	struct clk *phy_clk;
-+	void __iomem *phy_regs;
-+	void __iomem *moon4_regs;
-+	u32 disc_vol_addr_off;
-+};
-+
-+static int update_disc_vol(struct sp_usbphy *usbphy)
-+{
-+	struct nvmem_cell *cell;
-+	char *disc_name = "disc_vol";
-+	ssize_t otp_l = 0;
-+	char *otp_v;
-+	u32 val, set;
-+
-+	cell = nvmem_cell_get(usbphy->dev, disc_name);
-+	if (IS_ERR_OR_NULL(cell)) {
-+		if (PTR_ERR(cell) == -EPROBE_DEFER)
-+			return -EPROBE_DEFER;
-+	}
-+
-+	otp_v = nvmem_cell_read(cell, &otp_l);
-+	nvmem_cell_put(cell);
-+
-+	if (otp_v) {
-+		set = *(otp_v + 1);
-+		set = (set << (sizeof(char) * 8)) | *otp_v;
-+		set = (set >> usbphy->disc_vol_addr_off) & J_DISC;
-+	}
-+
-+	if (!otp_v || set == 0)
-+		set = OTP_DISC_LEVEL_DEFAULT;
-+
-+	val = readl(usbphy->phy_regs + CONFIG7);
-+	val = (val & ~J_DISC) | set;
-+	writel(val, usbphy->phy_regs + CONFIG7);
-+
-+	return 0;
-+}
-+
-+static int sp_uphy_init(struct phy *phy)
-+{
-+	struct sp_usbphy *usbphy = phy_get_drvdata(phy);
-+	u32 val;
-+	int ret;
-+
-+	ret = clk_prepare_enable(usbphy->phy_clk);
-+	if (ret)
-+		goto err_clk;
-+
-+	ret = reset_control_deassert(usbphy->rstc);
-+	if (ret)
-+		goto err_reset;
-+
-+	/* Default value modification */
-+	writel(HIGH_MASK_BITS | 0x4002, usbphy->moon4_regs + UPHY_CONTROL0);
-+	writel(HIGH_MASK_BITS | 0x8747, usbphy->moon4_regs + UPHY_CONTROL1);
-+
-+	/* disconnect voltage */
-+	ret = update_disc_vol(usbphy);
-+	if (ret < 0)
-+		return ret;
-+
-+	/* board uphy 0 internal register modification for tid certification */
-+	val = readl(usbphy->phy_regs + CONFIG9);
-+	val &= ~(J_ECO_PATH);
-+	writel(val, usbphy->phy_regs + CONFIG9);
-+
-+	val = readl(usbphy->phy_regs + CONFIG1);
-+	val &= ~(J_HS_TX_PWRSAV);
-+	writel(val, usbphy->phy_regs + CONFIG1);
-+
-+	val = readl(usbphy->phy_regs + CONFIG23);
-+	val = (val & ~PROB) | PROB;
-+	writel(val, usbphy->phy_regs + CONFIG23);
-+
-+	/* port 0 uphy clk fix */
-+	writel(MASK_MO1_UPHY_RX_CLK_SEL | MO1_UPHY_RX_CLK_SEL,
-+	       usbphy->moon4_regs + UPHY_CONTROL2);
-+
-+	/* battery charger */
-+	writel(J_TBCWAIT_1P1_MS | J_TVDM_SRC_DIS_8P2_MS | J_TVDM_SRC_EN_1P6_MS | J_BC_EN,
-+	       usbphy->phy_regs + CONFIG16);
-+	writel(IBG_TRIM0_SSLVHT | J_VDATREE_TRIM_DEFAULT, usbphy->phy_regs + CONFIG17);
-+
-+	/* chirp mode */
-+	writel(J_FORCE_DISC_ON | J_DEBUG_CTRL_ADDR_MACRO, usbphy->phy_regs + CONFIG3);
-+
-+	return 0;
-+
-+err_reset:
-+	reset_control_assert(usbphy->rstc);
-+err_clk:
-+	clk_disable_unprepare(usbphy->phy_clk);
-+
-+	return ret;
-+}
-+
-+static int sp_uphy_power_on(struct phy *phy)
-+{
-+	struct sp_usbphy *usbphy = phy_get_drvdata(phy);
-+	u32 pll_pwr_on, pll_pwr_off;
-+
-+	/* PLL power off/on twice */
-+	pll_pwr_off = (readl(usbphy->moon4_regs + UPHY_CONTROL3) & ~LOW_MASK_BITS)
-+			| MO1_UPHY_PLL_POWER_OFF_SEL | MO1_UPHY_PLL_POWER_OFF;
-+	pll_pwr_on = (readl(usbphy->moon4_regs + UPHY_CONTROL3) & ~LOW_MASK_BITS)
-+			| MO1_UPHY_PLL_POWER_OFF_SEL;
-+
-+	writel(MASK_MO1_UPHY_PLL_POWER_OFF_SEL | MASK_UPHY_PLL_POWER_OFF | pll_pwr_off,
-+	       usbphy->moon4_regs + UPHY_CONTROL3);
-+	mdelay(1);
-+	writel(MASK_MO1_UPHY_PLL_POWER_OFF_SEL | MASK_UPHY_PLL_POWER_OFF | pll_pwr_on,
-+	       usbphy->moon4_regs + UPHY_CONTROL3);
-+	mdelay(1);
-+	writel(MASK_MO1_UPHY_PLL_POWER_OFF_SEL | MASK_UPHY_PLL_POWER_OFF | pll_pwr_off,
-+	       usbphy->moon4_regs + UPHY_CONTROL3);
-+	mdelay(1);
-+	writel(MASK_MO1_UPHY_PLL_POWER_OFF_SEL | MASK_UPHY_PLL_POWER_OFF | pll_pwr_on,
-+	       usbphy->moon4_regs + UPHY_CONTROL3);
-+	mdelay(1);
-+	writel(MASK_MO1_UPHY_PLL_POWER_OFF_SEL | MASK_UPHY_PLL_POWER_OFF | 0x0,
-+	       usbphy->moon4_regs + UPHY_CONTROL3);
-+
-+	return 0;
-+}
-+
-+static int sp_uphy_power_off(struct phy *phy)
-+{
-+	struct sp_usbphy *usbphy = phy_get_drvdata(phy);
-+	u32 pll_pwr_off;
-+
-+	pll_pwr_off = (readl(usbphy->moon4_regs + UPHY_CONTROL3) & ~LOW_MASK_BITS)
-+			| MO1_UPHY_PLL_POWER_OFF_SEL | MO1_UPHY_PLL_POWER_OFF;
-+	writel(MASK_MO1_UPHY_PLL_POWER_OFF_SEL | MASK_UPHY_PLL_POWER_OFF | pll_pwr_off,
-+	       usbphy->moon4_regs + UPHY_CONTROL3);
-+	mdelay(1);
-+	writel(MASK_MO1_UPHY_PLL_POWER_OFF_SEL | MASK_UPHY_PLL_POWER_OFF | 0x0,
-+	       usbphy->moon4_regs + UPHY_CONTROL3);
-+
-+	return 0;
-+}
-+
-+static int sp_uphy_exit(struct phy *phy)
-+{
-+	struct sp_usbphy *usbphy = phy_get_drvdata(phy);
-+
-+	reset_control_assert(usbphy->rstc);
-+	clk_disable_unprepare(usbphy->phy_clk);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops sp_uphy_ops = {
-+	.init		= sp_uphy_init,
-+	.power_on	= sp_uphy_power_on,
-+	.power_off	= sp_uphy_power_off,
-+	.exit		= sp_uphy_exit,
-+};
-+
-+static const struct of_device_id sp_uphy_dt_ids[] = {
-+	{.compatible = "sunplus,sp7021-usb2-phy", },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, sp_uphy_dt_ids);
-+
-+static int sp_usb_phy_probe(struct platform_device *pdev)
-+{
-+	struct sp_usbphy *usbphy;
-+	struct phy_provider *phy_provider;
-+	struct phy *phy;
-+	int ret;
-+
-+	usbphy = devm_kzalloc(&pdev->dev, sizeof(*usbphy), GFP_KERNEL);
-+	if (!usbphy)
-+		return -ENOMEM;
-+
-+	usbphy->dev = &pdev->dev;
-+
-+	usbphy->phy_res_mem = platform_get_resource_byname(pdev, IORESOURCE_MEM, "phy");
-+	usbphy->phy_regs = devm_ioremap_resource(&pdev->dev, usbphy->phy_res_mem);
-+	if (IS_ERR(usbphy->phy_regs))
-+		return PTR_ERR(usbphy->phy_regs);
-+
-+	usbphy->moon4_res_mem = platform_get_resource_byname(pdev, IORESOURCE_MEM, "moon4");
-+	usbphy->moon4_regs = devm_ioremap(&pdev->dev, usbphy->moon4_res_mem->start,
-+					  resource_size(usbphy->moon4_res_mem));
-+	if (IS_ERR(usbphy->moon4_regs))
-+		return PTR_ERR(usbphy->moon4_regs);
-+
-+	usbphy->phy_clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(usbphy->phy_clk))
-+		return PTR_ERR(usbphy->phy_clk);
-+
-+	usbphy->rstc = devm_reset_control_get_exclusive(&pdev->dev, NULL);
-+	if (IS_ERR(usbphy->rstc))
-+		return PTR_ERR(usbphy->rstc);
-+
-+	of_property_read_u32(pdev->dev.of_node, "sunplus,disc-vol-addr-off",
-+			     &usbphy->disc_vol_addr_off);
-+
-+	phy = devm_phy_create(&pdev->dev, NULL, &sp_uphy_ops);
-+	if (IS_ERR(phy)) {
-+		ret = -PTR_ERR(phy);
-+		return ret;
-+	}
-+
-+	phy_set_drvdata(phy, usbphy);
-+	phy_provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static struct platform_driver sunplus_usb_phy_driver = {
-+	.probe		= sp_usb_phy_probe,
-+	.driver		= {
-+		.name	= "sunplus-usb2-phy",
-+		.of_match_table = sp_uphy_dt_ids,
-+	},
-+};
-+module_platform_driver(sunplus_usb_phy_driver);
-+
-+MODULE_AUTHOR("Vincent Shih <vincent.shih@sunplus.com>");
-+MODULE_DESCRIPTION("Sunplus USB 2.0 phy driver");
-+MODULE_LICENSE("GPL");
-+
+@@ -18918,6 +18918,7 @@ SUNPLUS USB2 PHY DRIVER
+ M:	Vincent Shih <vincent.sunplus@gmail.com>
+ L:	linux-usb@vger.kernel.org
+ S:	Maintained
++F:	Documentation/devicetree/bindings/phy/sunplus,sp7021-usb2-phy.yaml
+ F:	drivers/phy/sunplus/Kconfig
+ F:	drivers/phy/sunplus/Makefile
+ F:	drivers/phy/sunplus/phy-sunplus-usb2.c
 -- 
 2.7.4
 
