@@ -4,82 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C55FC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Apr 2022 16:15:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13FD9C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Apr 2022 06:53:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k9v0SYuqmDL/9YCMdIwTYsixIfVVOVVL048qjNtpQ6M=; b=LaEoUek7wTfXaj
-	uqC9DOlKdTM+vAOBzhGxNeyNRe5by60dNiB4xihy2bfp7tZQUD2wKeD7QMnozN6qpC17iLMdOGYrx
-	hsZbn1/By3I8QKal7Utolz4Lp23vgfBb65UFFZ3MUyW1X0S+kpSdKpMpJEACFG6YDpjFdI/RCdeh4
-	PAbvFv0AtlkWsrOKIIST52gHk4+KPbAKU73u6q4ffHfjrB4uY9F5VBFBWxzB2CBCFIlbu8Tz/AHyG
-	B+qdHoCfxOV5iw/wS8DPANgAUVPqlla77A0bRZlg6dY5u9Mr76zDVzZ79T3uHeM2ATVddnf1DbdSG
-	rlvTbZdP8PnOoi/EcGBQ==;
+	List-Owner; bh=HDgDu5tP5rxIMnQFGtlKcm3cKuNA2EJimkGsrvOM75Q=; b=33vxfT58DiyK2U
+	E5aAiprJS2TOkQOJi8KIlAspW2S5NtdO907oX4Q7C9+KFEDDfkoTLTNTGtaC88TJWKZH7cyvcakwP
+	jHb6ErSAaeEexUR3YzHbxrivyMclodOOZSKVEPRLyRo3waOy8PPVGm0UWIBy2tIV1m6GdAEfc6inE
+	KOi7VlMDwkgm/k33yxFtd6GIl3wTlZhBsPIFFOStxiyCnT75YW9I1ocjIv4qP5vW3dK1Wn1V3Q27y
+	K0dMHTbTjhrHshU55GxP77UT2S0EDauqsqCf5P4Ut+ShuTmrZtcaMJSpjkNequgx0yK6K8uZbAnYj
+	WeVy/Cdk2LB9EQ0yAOPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nk6nX-007s8K-Ur; Thu, 28 Apr 2022 16:15:20 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nkKVR-009rTs-FU; Fri, 29 Apr 2022 06:53:33 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nk6nV-007s6j-A8
- for linux-phy@lists.infradead.org; Thu, 28 Apr 2022 16:15:18 +0000
+ id 1nkKVO-009rSJ-Ap
+ for linux-phy@lists.infradead.org; Fri, 29 Apr 2022 06:53:32 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 46A4162040
- for <linux-phy@lists.infradead.org>; Thu, 28 Apr 2022 16:15:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 254A2C385B2
- for <linux-phy@lists.infradead.org>; Thu, 28 Apr 2022 16:15:14 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTPS id F1891B832F1;
+ Fri, 29 Apr 2022 06:53:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B806DC385AC;
+ Fri, 29 Apr 2022 06:53:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1651162514;
- bh=ITjlQ9g4B0gG723l683GuIOlpyn+saWXawbyT3upTSg=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=gydywKUF2PJ/Z+XCGdoURVO8Xu7MmunrcWN9ck3aC2UWj3xv/rAFHrMc4EA/Rb3/g
- dpRe75K6y46Jm5gEMux0dZl+qGHCu6SgDVHxR+6OeoY/VH6vWGB61e3ooREjaRPoDF
- b6eNMdhrK8W0V27HcoUtdk7zEVgndcfj+zezhqU9zGS1ZJY/ORJ0RvQcYBjATn2U/0
- IWLRejijOuO0bm5NVM0tvkj8USH6xGeqbiCQvpIz66SCo4YhlchLlGs/fWJ1TyITAE
- YFBhzjpF20pQe0PViDJD6TjSha4laT9JglwvI1kJJTrUH2Pm2c2KBmtmc5YE+n5U8L
- X2GQCoMzYH5vg==
-Received: by mail-pf1-f171.google.com with SMTP id t13so4675507pfg.2
- for <linux-phy@lists.infradead.org>; Thu, 28 Apr 2022 09:15:14 -0700 (PDT)
-X-Gm-Message-State: AOAM532gABLBQztsKy6+QGC0r4/XNhpwefmowVfLApJMf8gAv7blBjpZ
- Rw3cLfT1F0PEMd10Mp391NuYFzOv29V33mK8pw==
-X-Google-Smtp-Source: ABdhPJxWGKldChLEEW78VL6JusmO+ABexzsxV/SQewmd+Y9FRmG85Z5pK95W6eSIzbOvdvdIEpSvnklBPlyKXQUKU8s=
-X-Received: by 2002:a63:ff4b:0:b0:3aa:3083:5131 with SMTP id
- s11-20020a63ff4b000000b003aa30835131mr29087326pgk.148.1651162513664; Thu, 28
- Apr 2022 09:15:13 -0700 (PDT)
-MIME-Version: 1.0
+ s=k20201202; t=1651215204;
+ bh=jFzLIgFDBXvEXK9brj3GiRx598j1W1BP4ZGK9938VXo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=TYg+QiGKPQu2FAiyx7bvU2SOo7ce9+OXiJ0n1cAuExR2I38Zq8OapYQCAgiO2T8bV
+ lTY+gdKLQKEKrpiuBBs8AgJje9vxzh9f2nQd9Zyk3aeWv9u6CnW4fjlhykrxXOYPfR
+ pMuewp9WzGC0sO5SHR6BGUlzm/0KxwkerfQwrzBJq17sHM1ukKURBvoO3Hsc2bECHs
+ lRf+J4LuM2YTV0bTPnyI/zMZQO+DudRZTBsAe2x8DAefgFrqKYC+QAXpCLnOsriNZu
+ nxPKOtA+EKE9ILxmzg8Kc5bDPZ9VYIJKt78U5qxiaRTSa9QUZOvH9lyhOU2l65ZBI3
+ fQHdYTnQyNfNg==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+ (envelope-from <johan@kernel.org>)
+ id 1nkKVI-0001ir-A6; Fri, 29 Apr 2022 08:53:25 +0200
+Date: Fri, 29 Apr 2022 08:53:24 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Andy Gross <agross@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Vinod Koul <vkoul@kernel.org>, Stephen Boyd <swboyd@chromium.org>,
+ Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Stanimir Varbanov <svarbanov@mm-sol.com>,
+ Krzysztof Wilczy??ski <kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Prasad Malisetty <quic_pmaliset@quicinc.com>,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Subject: Re: [PATCH RFC 1/5] phy: qcom-qmp: add support for pipe clock muxing
+Message-ID: <YmuLZNg+91HW2lsY@hovoldconsulting.com>
 References: <20220421102041.17345-1-johan+linaro@kernel.org>
  <20220421102041.17345-2-johan+linaro@kernel.org>
- <de4f9514-5132-f208-d43f-4c50afcda203@linaro.org>
- <YmKBgGHtfDcO1Mkg@hovoldconsulting.com>
- <CAA8EJpqTzcwAtxk+XtAWdZaKEx2=VduPiVBp+CWj=_C-921YJg@mail.gmail.com>
-In-Reply-To: <CAA8EJpqTzcwAtxk+XtAWdZaKEx2=VduPiVBp+CWj=_C-921YJg@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 28 Apr 2022 11:15:01 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqLmy1-=5=NpWuVo9RYBXAvLisREJoMp1cWEychGmfFN=w@mail.gmail.com>
-Message-ID: <CAL_JsqLmy1-=5=NpWuVo9RYBXAvLisREJoMp1cWEychGmfFN=w@mail.gmail.com>
-Subject: Re: [PATCH RFC 1/5] phy: qcom-qmp: add support for pipe clock muxing
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Johan Hovold <johan@kernel.org>, Johan Hovold <johan+linaro@kernel.org>, 
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, 
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Stephen Boyd <swboyd@chromium.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Stanimir Varbanov <svarbanov@mm-sol.com>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
- Bjorn Helgaas <bhelgaas@google.com>,
- Prasad Malisetty <quic_pmaliset@quicinc.com>, 
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, devicetree@vger.kernel.org, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- PCI <linux-pci@vger.kernel.org>, 
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
+ <YmqSkP++4xzisJHp@ripper>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <YmqSkP++4xzisJHp@ripper>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220428_091517_479679_34C5CBB2 
-X-CRM114-Status: GOOD (  36.03  )
+X-CRM114-CacheID: sfid-20220428_235330_698619_95B81BEE 
+X-CRM114-Status: GOOD (  35.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,78 +87,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Apr 22, 2022 at 5:35 AM Dmitry Baryshkov
-<dmitry.baryshkov@linaro.org> wrote:
->
-> On Fri, 22 Apr 2022 at 13:20, Johan Hovold <johan@kernel.org> wrote:
-> >
-> > On Thu, Apr 21, 2022 at 02:08:27PM +0300, Dmitry Baryshkov wrote:
-> > > On 21/04/2022 13:20, Johan Hovold wrote:
-> > > > Some QMP PHYs need to remux to their pipe clock input to the pipe clock
-> > > > output generated by the PHY before powering on the PHY and restore the
-> > > > default source during power down.
-> > > >
-> > > > Add support for an optional pipe clock mux which will be reparented to
-> > > > the generated pipe clock before powering on the PHY and restored to the
-> > > > default reference source on power off.
-> > > >
-> > > > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+On Thu, Apr 28, 2022 at 06:11:44AM -0700, Bjorn Andersson wrote:
+> On Thu 21 Apr 03:20 PDT 2022, Johan Hovold wrote:
+> 
+> > Some QMP PHYs need to remux to their pipe clock input to the pipe clock
+> > output generated by the PHY before powering on the PHY and restore the
+> > default source during power down.
+> > 
+> > Add support for an optional pipe clock mux which will be reparented to
+> > the generated pipe clock before powering on the PHY and restored to the
+> > default reference source on power off.
+> > 
+> 
+> After considering this for a while, I have two objections to doing this
+> explicitly:
+> 
+> 1) The QMP block is fed &gcc_pcie_N_pipe_clk (and on sc8280xp)
+> gcc_pcie_N_pipediv2_clk. But neither of these clocks are the mux, so
+> what this patch (and the existing muxing logic in the controller) does
+> is to poke into gcc "internals".
 
-[...]
+I agree that this is perhaps the strongest argument against describing
+the mux in DT (as is also currently done for sc7280).
 
-> > > > +   } else {
-> > > > +           qphy->piperef_clk = of_clk_get_by_name(np, "ref");
-> > > > +           if (IS_ERR(qphy->piperef_clk)) {
-> > > > +                   ret = PTR_ERR(qphy->piperef_clk);
-> > > > +                   return dev_err_probe(dev, ret,
-> > > > +                                        "failed to get lane%d piperef_clk\n",
-> > > > +                                        id);
-> > > > +           }
-> > > > +   }
-> > > > +
-> > >
-> > > As a second thought.
-> > > This needs to be more explicit. If the chipset requires the pipe clock
-> > > remuxing, we must fail if the clocks were not provided. So depending on
-> > > the qmp instance/property the driver should either use devm_clk_get()
-> > > (instead of _optional) or skip this block completely.
-> >
-> > No, the kernel is not a DT validator (and we have the YAML bindings for
-> > that now).
->
-> It is not about DT validation. It is about passing a correct DT. The
-> file can come up from the kernel. It can come from the older kernel.
-> OR it can come from the vendor. Or it even might be being a part of
-> firmware flashed into the device.
+> 2) The actual reason for the mux dance is that toggling the associated
+> GDSC without a valid parent of this clock would cause the clock to lock
+> up and GDSC transition to time out. This property is shared with a wide
+> range of other clocks (so far we have 84 users of clk_rcg2_shared_ops on
+> sc8280xp).
 
-As of dtschema 2022.03, validation of dtb's from firmware (or anywhere
-else) is supported. Of course, as the old saying goes, if it's not
-upstream, it doesn't exist. We can't control what vendors do in their
-DTs.
+Right, but the situation with rcg2 is a little different. From what I
+gather the problem there is that some downstream clock could have been
+enabled by some other part of the system behind the kernel's back and
+then things go wrong when the kernel configures the clock.
 
-> So we can not assume that the DT is correct just because the in-kernel
-> DT passes YAML validation.
+Here it is the kernel that controls the source of the pipe clock mux
+(the PHY PLL) and knows when the source is valid (and the PHY is both
+provider and consumer of the pipe clock).
 
-I agree with Johan on this. In terms of ensuring correctness, the
-kernel does a horrible job. It never will be as long as it is done in
-ad hoc code.
+For rcg2, there's no choice but to work around the hardware in the clock
+driver, while for QMP the PHY power sequences could be made explicit in
+the driver:
 
-> So, as I wrote, the whole patchset needs much more care about compatibility.
->
-> > > But this will not work with earlier DTS files.
-> >
-> > So this is not a problem (but if we really wanted to have the driver
-> > validate the DT it can be done by updating the compatible strings).
->
-> We should not update compatible strings just because the driver
-> changes. Compat strings describe the hardware, not the Linux point of
-> view on it.
+	clk_prepare_enable(pipe);
+	clk_set_parent(pipe_src, pll);
+	start_pll();
+	
+	stop_pll();
+	clk_set_parent(pipe_src, xo);
+	clk_disable_unprepare(pipe);
 
-Yes and no. It is the OS/client view of the h/w. If a binding is
-deemed horribly broken we could do a new compatible string and
-binding. That's not something we want to be doing frequently though.
+Note that with the above sequences it would be possible to drop the pipe
+clock BRANCH_HALT_SKIP flag, which is only there in the clock driver
+because of the how the PHY works (i.e. that the pipe clock must be
+ungated before the PLL is started).
 
-Rob
+(This wouldn't be possible with a pipe-mux implementation in the clock
+driver since the parent mux would be enabled before the child pipe
+clock.)
+
+But sure, the requirement to restore XO to prevent a later GDSC hang has
+little to do with the PHY.
+
+> It would be nice if clk_summary would represent the real state of these
+> clocks, but unfortunately I don't think the state matches reality with
+> this approach either.
+> 
+> E.g. we prepare/enable the pipe clock before setting
+> QPHY_POWER_DOWN_CONTROL, during this time there's shouldn't be any pipe
+> clock coming out of the PHY...
+
+Right, there's a small window there where the source is still off (due
+to hardware requirements), but at least the topology is always reported
+correctly, which is really useful when dealing with boot handover.
+
+I have an sc8280xp here where the boot firmware leaves the pipe clock
+muxed in despite the GDSC being disabled. Fortunately, it doesn't seem
+to trigger the lockup when toggling the GDSC as it does on an sa8540p.
+
+My concerns are otherwise mostly related to the implementation of the
+safe-mux (e.g. ad-hoc, missing locking) and can probably be addressed.
+
+As an example, with the current implementation it is not possible to use
+an assigned clock parent in DT to make sure that the XO source is
+selected before toggling the GDSC. The muxing doesn't happen until the
+pipe clock is enabled, which is much too late in case the boot firmware
+left the pipe clock muxed in, and when enabling the pipe clock you
+really want the PHY PLL as source and not the cached XO.
+
+Can you still drop the current safe-mux patches from your tree or would
+they need to be fixed up incrementally? I think you merged v2, but
+there's already a v3 out (addressing the hardcoded mux configuration
+values).
+
+Johan
 
 -- 
 linux-phy mailing list
