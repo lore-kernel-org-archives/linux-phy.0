@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02D1EC433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  2 May 2022 10:09:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3DA0C433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  2 May 2022 10:10:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4T4lrxY8fvYXIvCzekit8CQieGkPhvZhTFC7u6AoJBU=; b=ReK1BVMdyZFhLa
-	6nYCtAUgybFP0yBN1KdLAZrSqNHVua5KEn1eyckmFDEOl9MvfQ9M1H50r03w+LxxaKdKOBZuJR9pa
-	/rYksM16Ea9Py6X21JrJ6wQHbQnfuERM1bsJJLAGJo0XH1nja4aD+acNrfN1GD9flOYkm7Y2/Tz7Y
-	mRJDrtEBrGT8YOrMDsFKyyZQpXsrfUIxv+pRDdvzbXi14hcg/XcF3lxJ5F3+7liRn1eBI8qTpEvHS
-	VQEq3zmFRfmW0E+u3wrKJ+T0adrYPAYIgAOgebtr3KsuutjLXH15eiSZr9+HxXi9SaqRiJzkvMIc4
-	bBPHhcIRecSeMsdo9uVA==;
+	List-Owner; bh=xP7adFGqclzrAdLn5SNMvGdO2sPcYqTzLFx8lPGUbNA=; b=h+GMHmOCv1/NMf
+	8Q+EBOCZ2hhWFydcb8TpBDJVUUmjL4Yt8L4ONJcevQiUfZUj6ZKGEtxsn/yEVJn9ZbYEwGt0n40ay
+	LckSkI96aGDW2ICeyxHZ5sOitP1nh1KZIwIfGM5sxlSCOKbIywpPZjZhD+uvsqXl7Dj7GDyLXBwqt
+	rxGae5APdM5MqDIPNcNFywAEh8GlCEr+Tg/iSPrpw1R0VwiiSpB3DRx/EkGrNBTVYh5W1mad0Xq5F
+	q1o3IQK+A7PTB/++cdGaifDmH0QzZXZz3LuEonkyb64NFdGpOHHUajGyVLAgcGHY4YvwAZrLO67yR
+	FkZxWSoMMV8QCJJWQECw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nlT03-000lcm-D0; Mon, 02 May 2022 10:09:51 +0000
+	id 1nlT0e-000ljj-3Z; Mon, 02 May 2022 10:10:28 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nlT00-000lbj-O2
- for linux-phy@lists.infradead.org; Mon, 02 May 2022 10:09:50 +0000
+ id 1nlT0b-000ljF-Hn
+ for linux-phy@lists.infradead.org; Mon, 02 May 2022 10:10:26 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 43B53611CD;
- Mon,  2 May 2022 10:09:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA2D2C385B1;
- Mon,  2 May 2022 10:09:45 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 1E63161215;
+ Mon,  2 May 2022 10:10:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A25B6C385AF;
+ Mon,  2 May 2022 10:10:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1651486186;
- bh=eeqZLYnN/1wfZnDKzK6bSzgVXoLjuy6VTAHe1gNkj8o=;
+ s=k20201202; t=1651486224;
+ bh=TMRGhDsQ5rlUJNgc/r4GHPu8kNEPVqY0brpK4SH6Z4c=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hsc67eFIgRE7zQI8bJj/bWCd3viDNCuupn72WdNqIh++Rl3YiVQDwYJanG8HxO7b5
- FBswIPm3WwF7+07yGmXLqxYIaC465p/QHQ+B1cXVwdjnDRnSgmx5RA17P8jbjGNYFz
- 2Mdtodt7TsFdfPeuBw/Qw63VkapSVAv+jCasPJWK2d/2rQIVXSL5NQfNz7sQQtfwRd
- LSO1+3umf7xkx/TZ2pXmXtUsCDDYWDv5XdxMH68+k7oRDsJe+fTz0m9nv04H5E+32l
- nqGgS1FNlkPPpEJs9bS6NbQaxYVZ96tBcukCbCoekgklvkLejMr5EjojUvgQmQYsXo
- Zv0VqyzgaUi9Q==
-Date: Mon, 2 May 2022 15:39:41 +0530
+ b=ammL2rugX2l643ddfB4/HsVMRNkcmuAcjYQirLhDVjU1GT4dSxbv0oAb4IlAQh0au
+ 1y9UYsfTZOhUPGiaOfUgiW9cD9HyN558tJFO2zQCg7cij+BymxfjMKk2PximvXXKC/
+ MdTv+cg1OKsTIW2mxrxIKWx2txT+YcWnWBJeYDMyT+WKPefZUmoy6YgwaJRVhf+6bl
+ WLDEBH2JqffsBuQYd8b9V/8MFj9wVC0bDh+ssR94no3JR4o0i2An+xaN0+SRmvJx71
+ 6HN2fCHb3tpzzCOg7uncUmAd+usYzhDN0ZoA8QwM9zobDgMasvJU2Pl+D3klWBI2kI
+ OXQbdXs+W0lZg==
+Date: Mon, 2 May 2022 15:40:19 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Johan Hovold <johan+linaro@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@ti.com>, Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>
-Subject: Re: [PATCH 2/2] phy: qcom-qmp: fix pipe-clock imbalance on power-on
- failure
-Message-ID: <Ym+t5YVL8HdJaBl4@matsya>
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] phy: qcom-qmp: fix phy-descriptor kernel-doc typo
+Message-ID: <Ym+uC0eDP97q+lyy@matsya>
 References: <20220420152331.5527-1-johan+linaro@kernel.org>
- <20220420152331.5527-3-johan+linaro@kernel.org>
+ <20220420152331.5527-2-johan+linaro@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220420152331.5527-3-johan+linaro@kernel.org>
+In-Reply-To: <20220420152331.5527-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220502_030948_861646_02A43C29 
-X-CRM114-Status: GOOD (  18.91  )
+X-CRM114-CacheID: sfid-20220502_031025_674937_3F09AC52 
+X-CRM114-Status: UNSURE (   6.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,86 +77,10 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 20-04-22, 17:23, Johan Hovold wrote:
-> Make sure to disable the pipe clock also if ufs-reset deassertion fails
-> during power on.
-> 
-> Note that the ufs-reset is asserted in qcom_qmp_phy_com_exit().
-> 
-> Fixes: c9b589791fc1 ("phy: qcom: Utilize UFS reset controller")
-> Cc: Evan Green <evgreen@chromium.org>
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp.c | 14 +++++++-------
->  1 file changed, 7 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-> index 8c2300bfe489..7d2d1ab061f7 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-> @@ -5375,14 +5375,14 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
->  		if (ret) {
->  			dev_err(qmp->dev, "lane%d reset deassert failed\n",
->  				qphy->index);
-> -			goto err_lane_rst;
-> +			return ret;
+> Fix misspelled "clock" in the description of the pipe_clk field in the
+> PHY-descriptor kernel-doc comment.
 
-This can be skipped if we retain the err_lane_rst label
-
->  		}
->  	}
->  
->  	ret = clk_prepare_enable(qphy->pipe_clk);
->  	if (ret) {
->  		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
-> -		goto err_clk_enable;
-> +		goto err_reset_lane;
->  	}
->  
->  	/* Tx, Rx, and PCS configurations */
-> @@ -5433,7 +5433,7 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
->  
->  	ret = reset_control_deassert(qmp->ufs_reset);
->  	if (ret)
-> -		goto err_lane_rst;
-> +		goto err_disable_pipe_clk;
-
-this is the actual fix...
-
->  
->  	qcom_qmp_phy_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl,
->  			       cfg->pcs_misc_tbl_num);
-> @@ -5472,17 +5472,17 @@ static int qcom_qmp_phy_power_on(struct phy *phy)
->  					 PHY_INIT_COMPLETE_TIMEOUT);
->  		if (ret) {
->  			dev_err(qmp->dev, "phy initialization timed-out\n");
-> -			goto err_pcs_ready;
-> +			goto err_disable_pipe_clk;
-
-same rename here
-
->  		}
->  	}
->  	return 0;
->  
-> -err_pcs_ready:
-> +err_disable_pipe_clk:
->  	clk_disable_unprepare(qphy->pipe_clk);
-> -err_clk_enable:
-> +err_reset_lane:
->  	if (cfg->has_lane_rst)
->  		reset_control_assert(qphy->lane_rst);
-> -err_lane_rst:
-> +
->  	return ret;
-
-while I feel the names given by this patch are better, they should not
-be in a fix patch. We should just add the one line fix here and do
-renames later
-
->  }
->  
-> -- 
-> 2.35.1
+Applied, thanks
 
 -- 
 ~Vinod
