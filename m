@@ -4,45 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8B55C433F5
-	for <linux-phy@archiver.kernel.org>; Tue,  3 May 2022 16:42:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4088DC433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  3 May 2022 18:18:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/QGTh+991uCurNb4Cff5fLrKCxLrugYccDvuywzW8N8=; b=XQ8F2F5TlOQC/ObNbLA/ZuGb+H
-	jPKvA7qAiPxKOC0Yz8IIEFVkKt3H5SxlEXWxSGEA6HjfvtT2uiSHiKBHyDjL/Gbv6W6b+Gb6UomWw
-	HG544jVWZxEFwxEtpO+C5/dF/E7fd6GeSm2tSVTBzj5eqIcFbSXtLkGBWG1oc+rnYxVk65ngRhIB2
-	nTbzJ9eehT5iy9A6tLqkBy19RVLzL7RzMrKNPKCcwNLLNhC+1TbZjcBTzWr+jP4QBDlIQuBjmYuD4
-	Y6k+sVK/zBhSzWPl4Cjzt4xl7R68cQH5U+wpwagN6G21NFUusurvr9LOzbeBoqFaw5Qj2959YUiDU
-	G+E4YcDg==;
+	bh=gr9RLdQ9L1OvCQP5/WbvejnIy48/o+VaC7ByRSgZE2I=; b=nyr5+zmqMIw30XrA6O7xUyDjoI
+	DnBnKo4Sm0paj9G+asi716qpmZTk0968ygL5Em3JGpqDPkT2VK+KO2Xy0sWAgc8kZSiUsEMeF4CZU
+	K7F4SURkPVuEm2EURfvvaUVpMUP8QqKoY0ymTp/xEvPbQCc/uxWLiC1zUSWaZAO1+uXp2i5ys7LwL
+	P2qXK230ExmunKoC3SZVHtTZD/S/zK5yAedLgfZ+U2bmCsaPi/QzGdFZo1fctZ1EbFqXQIX1ddJl7
+	q40whkBF32sswx/53PYX7JwQMcjlFSNmg9lIdGEBavbUJo0fARWdhPlDuEjecf69XPgApP0LdiW6J
+	oUq2HswQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nlvbe-006n0N-AZ; Tue, 03 May 2022 16:42:34 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nlx6L-007BTm-IC; Tue, 03 May 2022 18:18:21 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nlvbZ-006mwl-Q4; Tue, 03 May 2022 16:42:31 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 9812561772;
- Tue,  3 May 2022 16:42:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDCEFC385AF;
- Tue,  3 May 2022 16:42:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1651596146;
- bh=RdmnwE+iucpL+/8qT85xaKQLpnn8IQBlp7A0PPpBkjc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MBuAO2xSVQR0Es2Khy87In4R8Y100/OP9420inSPVtGjNodMGqIXGDeoQHgu0zdtp
- ZSMtkeQgwnC2B29WSRQCYL/O4jCHnME+f80aw4Fo5XWoHHVCVGx/BOqioVIUben+m7
- dAMycifIRkxwmDNlXwHi1GwZNR0O1uzfUUGAcwMMFdw8KhKSWf9AkZmD379wvLv9fh
- Uaih7P0/38fdDXOhFQTx4yM432rKEcsSGfyxP2ivUAyVZhwEsQe0HLwzNoIPwQXGpI
- dxuPOzqD0QB+YJpXI7AwZY3EEZfQI0H8Fxh83x1xt1dkQXlECEzWDKnz//DiA0KIY/
- DnUedifNgT+/g==
-Date: Tue, 3 May 2022 17:42:13 +0100
-From: Mark Brown <broonie@kernel.org>
+ id 1nlx6G-007BS9-E3
+ for linux-phy@lists.infradead.org; Tue, 03 May 2022 18:18:17 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1nlx5e-0000ix-89; Tue, 03 May 2022 20:17:38 +0200
+Received: from pengutronix.de (unknown [86.103.140.108])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (Client did not present a certificate)
+ (Authenticated sender: mkl-all@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 0B74E75107;
+ Tue,  3 May 2022 18:17:23 +0000 (UTC)
+Date: Tue, 3 May 2022 20:17:23 +0200
+From: Marc Kleine-Budde <mkl@pengutronix.de>
 To: Rob Herring <robh@kernel.org>
 Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Abel Vesa <abel.vesa@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
@@ -55,7 +52,6 @@ Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
  Wolfgang Grandegger <wg@grandegger.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>,
  "David S. Miller" <davem@davemloft.net>,
  Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
@@ -63,10 +59,10 @@ Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Chen-Yu Tsai <wens@csie.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
+ Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
  Zhang Rui <rui.zhang@intel.com>,
- Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>,
+ Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
  Anson Huang <Anson.Huang@nxp.com>,
  Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
  Han Xu <han.xu@nxp.com>, Dario Binacchi <dariobin@libero.it>,
@@ -81,14 +77,18 @@ Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  linux-pm@vger.kernel.org
 Subject: Re: [PATCH] dt-bindings: Drop redundant 'maxItems/minItems' in
  if/then schemas
-Message-ID: <YnFbZaARRe13BqEU@sirena.org.uk>
+Message-ID: <20220503181723.wczerdgfrfoxj5xf@pengutronix.de>
 References: <20220503162738.3827041-1-robh@kernel.org>
 MIME-Version: 1.0
 In-Reply-To: <20220503162738.3827041-1-robh@kernel.org>
-X-Cookie: Drop that pickle!
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220503_094229_958641_B3E3E864 
-X-CRM114-Status: GOOD (  13.58  )
+X-CRM114-CacheID: sfid-20220503_111816_497559_C1F9D9D0 
+X-CRM114-Status: GOOD (  18.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,47 +100,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1222228178197997488=="
+Content-Type: multipart/mixed; boundary="===============0619232716862100335=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============1222228178197997488==
+--===============0619232716862100335==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Ie5Q9u0aDDvYlHNh"
+	protocol="application/pgp-signature"; boundary="vn735wunl5rhhwdp"
 Content-Disposition: inline
 
 
---Ie5Q9u0aDDvYlHNh
-Content-Type: text/plain; charset=us-ascii
+--vn735wunl5rhhwdp
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Tue, May 03, 2022 at 11:27:38AM -0500, Rob Herring wrote:
+On 03.05.2022 11:27:38, Rob Herring wrote:
 > Another round of removing redundant minItems/maxItems when 'items' list is
 > specified. This time it is in if/then schemas as the meta-schema was
 > failing to check this case.
+>=20
+> If a property has an 'items' list, then a 'minItems' or 'maxItems' with t=
+he
+> same size as the list is redundant and can be dropped. Note that is DT
+> schema specific behavior and not standard json-schema behavior. The tooli=
+ng
+> will fixup the final schema adding any unspecified minItems/maxItems.
 
-Acked-by: Mark Brown <broonie@kernel.org>
+>  .../bindings/net/can/bosch,c_can.yaml         |  3 ---
 
---Ie5Q9u0aDDvYlHNh
+For net/can:
+
+Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
+
+regards,
+Marc
+
+--=20
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
+
+--vn735wunl5rhhwdp
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmJxW2QACgkQJNaLcl1U
-h9AhOwgAgCQAzTimr9tUAEV2YxMIwidmRC9yH7j14TLxr45y9aG5gyGDcabEWvNT
-1G+vE5DtD9PAsO0tkipn9eZam4zgKttaLGOTql3iSuyYP4IJZLz5B0UQdfH/Rblq
-lwN3vZgGQIDC0Bq4GZFntPO4DgtMJRUjLYBkqZ9VRrAc0BtdLx0s2eLXna86GqsS
-JRPrW4CqJ9evXkLhz4oWrns5IFYbbkZQBRDahnYbYEShXBVarN07FHDyJR7e563l
-wHOqrXEThke2dA9JPWeaBTp7h9SiE6UhFUpzyFAd9YF+0t0k3slgr1oj89o28M6t
-855bZNK3+42p+Ytiewlr25+J4xL31Q==
-=Z4ML
+iQEzBAABCgAdFiEEBsvAIBsPu6mG7thcrX5LkNig010FAmJxcbAACgkQrX5LkNig
+010+7wf+Mqx1TWITM4zoyD5krckfHGf4qplQOx8GgcvjVUhJVQ0mDXx9PgM7D2fF
+HjL7mYlg2zj+lrwhgLeH/YNvoCAKzXmbKRVFjs2HfzIEe3xaC1xFXt+vXRU4v1mE
+DXW0vVKC/oYmGqIWCSda8MeqjOhR+hFoQLC1RefyFIHijbaa/4+8W9Qe+oayuzIo
+aDASB5q9KGJUVxeh15402et6p4EqI6rJ8LiKW79xwtgfqRlqBGDQ1LBuBYf0LKFE
+Whl4mJRw2P0razAapZrvNWK6osSzN2ERLC7qQ9dnUOJvHYffN5IFcO8X3GbdpEkX
+SPDiKbA08vY8R9xmqlH4PzUcrR46zg==
+=MWdl
 -----END PGP SIGNATURE-----
 
---Ie5Q9u0aDDvYlHNh--
+--vn735wunl5rhhwdp--
 
 
---===============1222228178197997488==
+--===============0619232716862100335==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -151,5 +172,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============1222228178197997488==--
+--===============0619232716862100335==--
 
