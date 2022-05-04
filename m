@@ -4,42 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4088DC433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  3 May 2022 18:18:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB197C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  4 May 2022 06:41:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gr9RLdQ9L1OvCQP5/WbvejnIy48/o+VaC7ByRSgZE2I=; b=nyr5+zmqMIw30XrA6O7xUyDjoI
-	DnBnKo4Sm0paj9G+asi716qpmZTk0968ygL5Em3JGpqDPkT2VK+KO2Xy0sWAgc8kZSiUsEMeF4CZU
-	K7F4SURkPVuEm2EURfvvaUVpMUP8QqKoY0ymTp/xEvPbQCc/uxWLiC1zUSWaZAO1+uXp2i5ys7LwL
-	P2qXK230ExmunKoC3SZVHtTZD/S/zK5yAedLgfZ+U2bmCsaPi/QzGdFZo1fctZ1EbFqXQIX1ddJl7
-	q40whkBF32sswx/53PYX7JwQMcjlFSNmg9lIdGEBavbUJo0fARWdhPlDuEjecf69XPgApP0LdiW6J
-	oUq2HswQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Nz9VU00L6YbSbv7IsZw2xvbvlLbwxS4dDQeWviJzkBQ=; b=T3g6KK2f2/mNBs
+	JCOFOvuJXQLlVmFvsW02jB7n0+U75LqT9RBCAI191Gmkx4IYesZAwFusc8L7/LhEwLfLf8h+A23xx
+	2RqNMvou3i+RVEbcm7I/RxHjEkbzFrgQGt55GqLabwX7Spou5c2YK3LsPLhowkEtRLWngqtm3QUiu
+	GmGjJNK9rRo7dOI7RiHRgbTXT6RvsMHo/C759P9DyJaVmNEAO6MheHPUH+oUdbZiu/YxsMOUNMONE
+	zRRLel663gElo7ojOKzufQ7GMNH12aYEnGQSZOpqSqjt1iYYByUBotHNnuHGXDWZCZ8LOd5EhD4Dp
+	hWpBfD2E7U2LiOXtAeXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nlx6L-007BTm-IC; Tue, 03 May 2022 18:18:21 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1nm8hA-0092L2-BK; Wed, 04 May 2022 06:41:08 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nlx6G-007BS9-E3
- for linux-phy@lists.infradead.org; Tue, 03 May 2022 18:18:17 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mkl@pengutronix.de>)
- id 1nlx5e-0000ix-89; Tue, 03 May 2022 20:17:38 +0200
-Received: from pengutronix.de (unknown [86.103.140.108])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (Client did not present a certificate)
- (Authenticated sender: mkl-all@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id 0B74E75107;
- Tue,  3 May 2022 18:17:23 +0000 (UTC)
-Date: Tue, 3 May 2022 20:17:23 +0200
-From: Marc Kleine-Budde <mkl@pengutronix.de>
+ id 1nm8h5-0092FU-AT; Wed, 04 May 2022 06:41:04 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ams.source.kernel.org (Postfix) with ESMTPS id CE695B821D7;
+ Wed,  4 May 2022 06:41:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 929DBC385A4;
+ Wed,  4 May 2022 06:40:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1651646459;
+ bh=ZGMwwfSt9WgGcP9EzHW/QosFc70Yb/XaCBfaIMon8lM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=hCMa156AuRtjnImdRRFb6sjNT7gi2K+aKH0x8uKbL7AEODCLcmpA+AldqhNahLoMc
+ Jjbn4PU2sZC0QO3tUog7PiYYrqIfJDpXhjQPR0ah9UBAo6hM2LqRyEviiRxk8BR/Z/
+ PswEhJLlhaaJETbJ+cDB+HgHVFfdIRtcQWjx3W6kmEYtvsvtdX1D61teQWllRNYd4Y
+ 4rq0yVjTAy3gemypN42SU8Wvxydjxbsf9n9Yu7PohyC0omGj3kKtLN8XGs6TxWmKd5
+ RbuiHnFactE1ob6Dd26hg53PXFe++MOjqEkVBKu+OdQv2rpx3HjFyo1wUYQL3DAF3f
+ 4Lj9rl6MCVe6w==
+Date: Wed, 4 May 2022 12:10:55 +0530
+From: Vinod Koul <vkoul@kernel.org>
 To: Rob Herring <robh@kernel.org>
 Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Abel Vesa <abel.vesa@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
@@ -52,9 +55,10 @@ Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
  Wolfgang Grandegger <wg@grandegger.com>,
+ Marc Kleine-Budde <mkl@pengutronix.de>,
  "David S. Miller" <davem@davemloft.net>,
  Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
  Alessandro Zummo <a.zummo@towertech.it>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Chen-Yu Tsai <wens@csie.org>,
@@ -62,7 +66,7 @@ Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
  Zhang Rui <rui.zhang@intel.com>,
- Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
+ Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>,
  Anson Huang <Anson.Huang@nxp.com>,
  Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
  Han Xu <han.xu@nxp.com>, Dario Binacchi <dariobin@libero.it>,
@@ -77,18 +81,14 @@ Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  linux-pm@vger.kernel.org
 Subject: Re: [PATCH] dt-bindings: Drop redundant 'maxItems/minItems' in
  if/then schemas
-Message-ID: <20220503181723.wczerdgfrfoxj5xf@pengutronix.de>
+Message-ID: <YnIf95FnuC01qxIp@matsya>
 References: <20220503162738.3827041-1-robh@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <20220503162738.3827041-1-robh@kernel.org>
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220503_111816_497559_C1F9D9D0 
-X-CRM114-Status: GOOD (  18.28  )
+X-CRM114-CacheID: sfid-20220503_234103_536421_5D891F46 
+X-CRM114-Status: GOOD (  14.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,77 +100,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0619232716862100335=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============0619232716862100335==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="vn735wunl5rhhwdp"
-Content-Disposition: inline
-
-
---vn735wunl5rhhwdp
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 03.05.2022 11:27:38, Rob Herring wrote:
+On 03-05-22, 11:27, Rob Herring wrote:
 > Another round of removing redundant minItems/maxItems when 'items' list is
 > specified. This time it is in if/then schemas as the meta-schema was
 > failing to check this case.
->=20
-> If a property has an 'items' list, then a 'minItems' or 'maxItems' with t=
-he
+> 
+> If a property has an 'items' list, then a 'minItems' or 'maxItems' with the
 > same size as the list is redundant and can be dropped. Note that is DT
-> schema specific behavior and not standard json-schema behavior. The tooli=
-ng
+> schema specific behavior and not standard json-schema behavior. The tooling
 > will fixup the final schema adding any unspecified minItems/maxItems.
 
->  .../bindings/net/can/bosch,c_can.yaml         |  3 ---
+For phy:
 
-For net/can:
+Acked-By: Vinod Koul <vkoul@kernel.org>
 
-Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
-
-regards,
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde           |
-Embedded Linux                   | https://www.pengutronix.de  |
-Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
-
---vn735wunl5rhhwdp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEBsvAIBsPu6mG7thcrX5LkNig010FAmJxcbAACgkQrX5LkNig
-010+7wf+Mqx1TWITM4zoyD5krckfHGf4qplQOx8GgcvjVUhJVQ0mDXx9PgM7D2fF
-HjL7mYlg2zj+lrwhgLeH/YNvoCAKzXmbKRVFjs2HfzIEe3xaC1xFXt+vXRU4v1mE
-DXW0vVKC/oYmGqIWCSda8MeqjOhR+hFoQLC1RefyFIHijbaa/4+8W9Qe+oayuzIo
-aDASB5q9KGJUVxeh15402et6p4EqI6rJ8LiKW79xwtgfqRlqBGDQ1LBuBYf0LKFE
-Whl4mJRw2P0razAapZrvNWK6osSzN2ERLC7qQ9dnUOJvHYffN5IFcO8X3GbdpEkX
-SPDiKbA08vY8R9xmqlH4PzUcrR46zg==
-=MWdl
------END PGP SIGNATURE-----
-
---vn735wunl5rhhwdp--
-
-
---===============0619232716862100335==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0619232716862100335==--
-
