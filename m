@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CC76C433FE
-	for <linux-phy@archiver.kernel.org>; Thu,  5 May 2022 18:47:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CEF7C433EF
+	for <linux-phy@archiver.kernel.org>; Thu,  5 May 2022 18:47:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AHRYD17QPvFBuPhi0Ol7Qeb+vp9hDRvW6FhAUFg8wWY=; b=NgCjGwmtTA+xIA
-	6wnh08gs63oEJNMClqpYUgwlrXMsh9+FMUpeM5I9TOUsad2JPujv2zOzGIirUQcSsKSmzwl9wI5Sx
-	qqZVcdP4HAY6Tj8O33tbHmemo3SDUvIyQIkpw6c8d+3GP7XinV3K5+p445N4L28Tj9N+4EtWR1AbO
-	Tla2JnBE5tGWADPYHeW6N8ET71vKj4+6eZ+YBKSJheYv/XI4+BFHdh6T9U+P4+mX3rzMiT0Z0Og1/
-	nBh5e9xuB8swcLGwWtkP68XZT3MXUcUArUxQHA2znD+1Aip9wBChw8XMNiuxuqLOaTp3ANWHugfXE
-	E1zXnycWT0pbb7Sowi2Q==;
+	List-Owner; bh=BhHb44/Spio6rA+mjjFnKoslpKSDQs7b1UMprYi9kWs=; b=1qGs9RQRYGxg4q
+	U3RpRNTGXO78nx0DmF+Q9AMr0ZlYmG9U4GdwdH8OgQNL8qUDUWx/kzPq/eKsOcJ5FNkNjSEzlk33q
+	b4OFQfuOTxYZDY2BLSmgxztGp8YqxFHrLRQgCg8DQHSQxLibJ4DGA90J61Kn/hZpfeCoLGuFYoCSj
+	jlS+9g7oUXD4wEEs6Q6rNp9WBebtAKONyjjm97QBSY0kZEfYNN11vkbqxd3IlyuB0NVgb4tSXDid0
+	Z2iZdJuTOPXzp5jkNInaFMSo1TyrpLnW3i0wSSnbCvMv7SFuhuBbhNUXNu8F5F8jgsNrUuQwn2B+k
+	F0NQzEJX7PVneE6v2rMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nmgVh-00HOhY-N6; Thu, 05 May 2022 18:47:33 +0000
-Received: from esa.hc3962-90.iphmx.com ([216.71.140.77])
+	id 1nmgVz-00HOuB-9D; Thu, 05 May 2022 18:47:51 +0000
+Received: from esa.hc3962-90.iphmx.com ([216.71.142.165])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nmgVe-00HOc2-1C
- for linux-phy@lists.infradead.org; Thu, 05 May 2022 18:47:31 +0000
+ id 1nmgVv-00HOrU-FS
+ for linux-phy@lists.infradead.org; Thu, 05 May 2022 18:47:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qccesdkim1;
- t=1651776449; x=1652381249;
+ t=1651776467; x=1652381267;
  h=from:to:cc:subject:date:message-id:references:
  in-reply-to:content-transfer-encoding:mime-version;
- bh=Y8AcrwkJicKVO/PlBEgosDSKNFGQpROLAVtBFdeZFgw=;
- b=ntCVuTkT0Rz76tS2/PaDR33HomviYBV8E7lNUK6CKRLe47roQ+Kv2F1q
- 44hlkBhBx9imq5pMcZnXUVLdGqFDCLFI53p/yw8Kg4WPt5mDx1znjQ+z0
- ECk4NApVIv1TORjUhc6NeIHVAb8bkg7cgwNbl5AD3JF78er7b6Lmp1S/O c=;
-Received: from mail-dm6nam11lp2169.outbound.protection.outlook.com (HELO
- NAM11-DM6-obe.outbound.protection.outlook.com) ([104.47.57.169])
+ bh=qiuH9qnYJh59GDGYGczP60NjXQZtP13SH2dX45KQqp0=;
+ b=kQHhrsjZCfrrUFw4x9xKrAP2fvE+TKiBNlcdqOglIMzaWrZDeGZoyfId
+ 9c4BkWlNyUtSOB4yTwh0+bYkVuwHfqMYIjDtlJr8YZH1Ge1ntX5f2iBbO
+ VDWD12vSrmbmyqiyLBp2T9swyCNAMfsOKEWqX42JItb6k/duPTbPoQ0yR Y=;
+Received: from mail-mw2nam10lp2101.outbound.protection.outlook.com (HELO
+ NAM10-MW2-obe.outbound.protection.outlook.com) ([104.47.55.101])
  by ob1.hc3962-90.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 05 May 2022 18:47:23 +0000
+ 05 May 2022 18:47:45 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RuPLAqyq1CFdsZ8d5PlYhhR7M9QQkTXcwi1T17m/XBa4W773+g0qVi0AImZ8iwdIlTVj8dGF7ZQjFdnFquOkA2+Iw2oW+BKROoffcQ5XxQp9p7hrTwpvg80ABbelGDBzNGmIJ4BW+HABF7VBDD4GPo6KgQW+P2YaMyelcvyrlwSngZ8LuGu+GtAwfm+Az8Jyg9fz09tsWhHKxL8XySlSvnuc3FiR1d6Yu3RdSsLtkrzl0+n/jGNzuMzj09CyJkP0qLaeqf5IM4nQo/fK7uSogSFbzjMyzD395itY6jnVdxE2SajIKM6KHKFTLVATjB/9gKCqnlCSmuMM20dwngRi2w==
+ b=cdVCeG8AYDYmtrTG6wSgc3g06EjtSDuIRLuyW9qfVjVvrlUdwPLgowo+dyBe5YBMUD/b6R2xfpeGMsXod3v6+MW+FcCKlhbr1HgYLZpPuQxKmteYNbt4vv9s5IqxZkYvqJgDAuuLN3R0JQcBgaYiWWlE0SsBwmO37Y7ys7OndZFEMgwR4ZamGF0S22Heo29nzO9dDMNORjzFsikvX4mOnLCw2WwbUoodgj9C4a1NAxSh9JO4aA/yfK9/TPFJ+YPHt7gosQGgHNytnVUkrdD7B/dlvcO+onWTEaifgXg7O5sRgeLi5s+cWiX+N8vbhJ+VTfzyXtc2c6J1//VSzirqEg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Y8AcrwkJicKVO/PlBEgosDSKNFGQpROLAVtBFdeZFgw=;
- b=NJJcuMdMCl4UOtcJVTqcP4u4SNCFhVL0Tg75cnUBb+3jFuuQ6UEndozF9HSjLsq1qwfnv2p46Ny96pwJ5v5/y3HV8YIbYN/Z2+B5CrqX05aXWYLlevgUu60atHXQv/JlOGJmUEYFLGwgGj2Cysq2JJ0uu4rt6MsyQT5X/I9HNPQhdY5CdrbLBRmKcZKhinIiSoAsHA6cntspM/g8VcZjL2NZxdx2DbM81iDj4iW5Fw/pjvnJUR0rimi8TWA2+fTuvb9ZsD60LKeUhR9iGX57wgcBdYxbYM0ZoveHdN1nfn99IFB3WT2ApTOB3WwmQ8fCqU3/NAJgHSseAX5/FA6MvQ==
+ bh=qiuH9qnYJh59GDGYGczP60NjXQZtP13SH2dX45KQqp0=;
+ b=Ee+gF+j6JGF5b53dlZcsHjB3RWoCwqSxbD+RNQoK9oIJjPIPm5IaI90X2LrBj4sClXflnV5bW5i69xFwWeugA/HB39QFuBOse4qVDdK/nXcp0Wwm7RuN9jZs1P37FCBMs9oNRC24HzHgqjJ1C52Fw82EVhQ9bAc9sV4uZZuPVASIL8GJGsgPp/EQ3jM+vbehl5ViJjL5UeBarHWY5ohY8d//d9ofQ3CkQCi93/JwaYzc9rKf2EXX0lbl6cN/wWbPYtARJGShpOhGTmnBwDVYIwBDY61bFK4Npr/6WcDaztOSKDTOQ1YMduf8ldTLTcpxXkT8PqZFUs4o9DYZxvsFfQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=quicinc.com; dmarc=pass action=none header.from=quicinc.com;
  dkim=pass header.d=quicinc.com; arc=none
@@ -52,40 +52,36 @@ Received: from MW4PR02MB7186.namprd02.prod.outlook.com (2603:10b6:303:73::6)
  by DM5PR02MB3704.namprd02.prod.outlook.com (2603:10b6:4:af::29) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5206.25; Thu, 5 May
- 2022 18:47:20 +0000
+ 2022 18:47:43 +0000
 Received: from MW4PR02MB7186.namprd02.prod.outlook.com
  ([fe80::1d18:abb7:c311:543f]) by MW4PR02MB7186.namprd02.prod.outlook.com
  ([fe80::1d18:abb7:c311:543f%4]) with mapi id 15.20.5206.025; Thu, 5 May 2022
- 18:47:20 +0000
+ 18:47:43 +0000
 From: "Sankeerth Billakanti (QUIC)" <quic_sbillaka@quicinc.com>
-To: Stephen Boyd <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>
-CC: "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "dmitry.baryshkov@linaro.org" <dmitry.baryshkov@linaro.org>, Rob Clark
- <robdclark@chromium.org>, Rob Herring <robh+dt@kernel.org>, Vinod Koul
- <vkoul@kernel.org>, "Abhinav Kumar (QUIC)" <quic_abhinavk@quicinc.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, dri-devel
- <dri-devel@lists.freedesktop.org>, freedreno
+To: Douglas Anderson <dianders@chromium.org>, "bjorn.andersson@linaro.org"
+ <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, "dmitry.baryshkov@linaro.org"
+ <dmitry.baryshkov@linaro.org>, Rob Clark <robdclark@chromium.org>
+CC: "Abhinav Kumar (QUIC)" <quic_abhinavk@quicinc.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, Stephen Boyd
+ <swboyd@chromium.org>, "dri-devel@lists.freedesktop.org"
+ <dri-devel@lists.freedesktop.org>, "freedreno@lists.freedesktop.org"
  <freedreno@lists.freedesktop.org>, Kishon Vijay Abraham I <kishon@ti.com>,
  "Sankeerth Billakanti (QUIC)" <quic_sbillaka@quicinc.com>, Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-arm-msm
- <linux-arm-msm@vger.kernel.org>, "Kalyan Thota (QUIC)"
- <quic_kalyant@quicinc.com>, "Kuogee Hsieh (QUIC)" <quic_khsieh@quicinc.com>,
- Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>, Rob Clark
- <robdclark@gmail.com>, Sean Paul <sean@poorly.run>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, LKML
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH 1/2] dt-bindings: msm/dp: List supplies in the bindings
-Thread-Topic: [PATCH 1/2] dt-bindings: msm/dp: List supplies in the bindings
-Thread-Index: AQHYWOh0LkcVWva+fESk6uZPP3V7t60BIRCAgAABL4CAD35OcIAABpoAgAADzZA=
-Date: Thu, 5 May 2022 18:47:20 +0000
-Message-ID: <MW4PR02MB71867A18732B266DE8FA2040E1C29@MW4PR02MB7186.namprd02.prod.outlook.com>
+ Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>, "Kalyan
+ Thota (QUIC)" <quic_kalyant@quicinc.com>, "Kuogee Hsieh (QUIC)"
+ <quic_khsieh@quicinc.com>, Andy Gross <agross@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH 2/2] dt-bindings: phy: List supplies for qcom,edp-phy
+Thread-Topic: [PATCH 2/2] dt-bindings: phy: List supplies for qcom,edp-phy
+Thread-Index: AQHYWOh7BkuFl+/0hUSepVh/V0WkyK0QoxMQ
+Date: Thu, 5 May 2022 18:47:43 +0000
+Message-ID: <MW4PR02MB7186F7F6D6D174B03FDF32CEE1C29@MW4PR02MB7186.namprd02.prod.outlook.com>
 References: <20220425210643.2420919-1-dianders@chromium.org>
- <20220425140619.1.Ibfde5a26a7182c4b478d570c23d2649823ac2cce@changeid>
- <CAE-0n51eZpAKprRQ0HqjLciF_BVQHBDN8SMFNVmmOd=B9UBEzg@mail.gmail.com>
- <CAD=FV=WmVK3wTQf_EAxSi0WPXedSFGCsKdyqRnHsskmMYTHDQA@mail.gmail.com>
- <MW4PR02MB718610FAA14F966ADE1B1585E1C29@MW4PR02MB7186.namprd02.prod.outlook.com>
- <CAE-0n51Q=cGwrMec3JEQENqWHV3pAUjLPT6RwZLA5xV080sgxQ@mail.gmail.com>
-In-Reply-To: <CAE-0n51Q=cGwrMec3JEQENqWHV3pAUjLPT6RwZLA5xV080sgxQ@mail.gmail.com>
+ <20220425140619.2.Iae013f0ff4599294189f3a6e91376fad137bbabf@changeid>
+In-Reply-To: <20220425140619.2.Iae013f0ff4599294189f3a6e91376fad137bbabf@changeid>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -94,72 +90,63 @@ authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=quicinc.com;
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a25f7260-ded6-4afc-4217-08da2ec7af9c
+x-ms-office365-filtering-correlation-id: 339470f6-4153-45e6-cb10-08da2ec7bd25
 x-ms-traffictypediagnostic: DM5PR02MB3704:EE_
 x-ld-processed: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d,ExtAddr
-x-microsoft-antispam-prvs: <DM5PR02MB3704564FA513AE3B5679BC219DC29@DM5PR02MB3704.namprd02.prod.outlook.com>
+x-microsoft-antispam-prvs: <DM5PR02MB3704BCEBF423AD5AB0CE29149DC29@DM5PR02MB3704.namprd02.prod.outlook.com>
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: gUl5pJrT3P6pllD1iYt8zrpqWCC695vVifHDIk8lR2iHKb/6pTYOR/yY1nr5T1ARxUQbJ++7WuCn10hdRzcp3WifvwlC+Ypj/UnPvACSDIGJ8zFmrfJChekHa6xUPVdatUyftLgMRYjCj+swVt0bbQ10T/85rcKxI4FTnHzu+ZVpX81BEEO1VkG7ryJoV9bqPS3ycImRRLFzj2vqUah/GHu5j4dFsugPwIESIFzTvIm1bfIcZHyTIsp2zg9f24ldB37/hbVQ7+c3EPkpEBKrO0lI8kuEogPKtQqVYItiyed07wyyhkXmG6HZ46mT6Ojm3KCnYm5yOMQv3wDHGeLep/pQ91Vqctd9CKEA/TtmRYI8bnt82ik28jX8UJJ44Ecs+fV9+tigcNFRZv1LUMxnv01BhPI5IBqBApDKLEAy/71UJQVLkkP6RT7MNeOkZnuNm/hZunulmXCtWHq+r/XiQ2phLAQlEUdPQBia18gsctAxHxMU20pNitNoX8msPmyGO46b+Dy+u+qz+L9/b93dvFlT2RMmWlRWvW2jiyDjciUdhY1UTFpIxtK0cLiqDOwdnZtCtNpZEYZD4vNw9IzJVuLvNJckwn0FGQtJdsHksgJeBT6HZLubS6me3KnhOhZStw1WEkPNKzKLjfxtV1KiXi1gtbgw2W9l9e/sVWSjaYkcHAURXJH/R4D2Kyo97QbfTFJtKwZ0ivNaIK+dvgnaSQ==
+x-microsoft-antispam-message-info: dEesA5C+zchly+1ldRl2gTWC8YX3MnR0mAvTR7tJ/LdrmS133Uiaa7h83J+bFhjt1xc76UOpStag9QqHNlWuhMUNqlL9BbFMv/0RIsXczL3b7GirYmO2JgSZrfYfLSDn786PR/ry5h6h0bypzDPjkLVjzdZPywOZW+cHztcUOCEtNDMFvJcdywl5EfYXlkzs+PlEd9s/OuJHpadAYAcp33uZ5gAvbIicvcYXjSrzt646MB60w1cf5wQip6YEtiMC6jSfRhe2bKyZnw4ScaoBVeMfLfKx5Vmuf5wiFrVXUxy/m2ZBftOyq7g2URy8UrdCJFnvHLzN4zcZEQPOnyWYJkCCdNrKF35Hp7CNs0p7RLPkVBM1KFfm36TE9XVigKTId+6YLcWB/iUCqRIh5Zpbi04tGi4O8jh79pJ+m2NjYiFBTATzD07dPO9rRfnrnsfW/Eb/HptMFcG4Vwh96pEqZgC0WK+jxHJGsAThmXYoW4SahrBO+joLzPD5xO/xg+YLOITAuGgiRgwmGahYh6vU3NEdurM8UmiMAnqR9I9c1YmaDuggyVzUxKDgcasCCAXOCv2P2FrlZVQAoKdj5B8vR5M5naN+AaR/8m0XMOxWzMIBDHAJB5mxUq5n9Y2kIHCjiqUTkinTd4vz+zYb850qmmSG3PgrnDUqYfN5+XvmxFI1vE5gqxNrShzuj5sh7Od/FTtix9abIGa2i76zMx8wzA==
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:MW4PR02MB7186.namprd02.prod.outlook.com; PTR:; CAT:NONE;
  SFS:(13230001)(4636009)(366004)(186003)(6506007)(26005)(33656002)(7696005)(9686003)(122000001)(8936002)(86362001)(38070700005)(38100700002)(55016003)(54906003)(83380400001)(110136005)(52536014)(5660300002)(7416002)(508600001)(316002)(66446008)(66946007)(66476007)(64756008)(71200400001)(8676002)(76116006)(66556008)(2906002)(4326008);
  DIR:OUT; SFP:1102; 
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?WGZoQll5UXlvQ2dUUTYwY1lxNmQzSWpUMnJvQ2JLTFZLZ3dYRGw5dUN4TmlY?=
- =?utf-8?B?YzV4RXUvcWlQcHA1elZTMUREL0ZucUdmdGxVNWd1N2N3S1l1VnU2dmkrZ1l0?=
- =?utf-8?B?TDFMS2JYSWw4Z2xLdm1ia2dlcm9DMGE3ZXQ5Tlh6NzYzNmVaaEZpMlF4K2l3?=
- =?utf-8?B?N1BRRlFVUUtYNFQxVXhnKzJ0dG01aWlNSU1aUzNhRENEMkxFNHNaYWpWRGtv?=
- =?utf-8?B?WHFxelAwM2RIbS9xVll2enRFN2kvdDhlWUV1cEE2K1NQQUpvd2xlWkVRb3Av?=
- =?utf-8?B?enNKT1k2NERsSzRONGFiNXY4RDRkeWJMVEFTZ3hGNmZIMHRMMmpZS0JUMlU2?=
- =?utf-8?B?VlR2T3kya2RWMHB5ekpqc1Uwd3lIN1NKaTFQKy9HYXNCZ1Q1TlZqSmtROVNi?=
- =?utf-8?B?SWFWbGorVXU4SHFWQXB1ZGdZK3lUS2k3WDB1MCszTDh2QjRISjdtZmtsUzh6?=
- =?utf-8?B?dTBLRlVHSzhtYmlwMGRDS01wc0JLdmplM0hnMEljSW5ObytFdnpZS013S0Ey?=
- =?utf-8?B?V3RQYjJ4TjNVdmVxQlJtS0hIZzVBaS80UnhrdDlaV01kT3VseStKZHRNZWFD?=
- =?utf-8?B?YUhON0YrMGtqM0lNbGc3K3JpRFI5RFdMSFNjOVdYbVNZREdyb0tTRFkvVmZv?=
- =?utf-8?B?WitGbmQwRXV6Qzh4ZjhTVEVVd2NuakkvN0dYODBFOUhkT2M3SzlyOG5CM1dI?=
- =?utf-8?B?czRUYk9kdHY2RVl0TFNIQzNrcWRLQXRIWlY2d2dsK21uVUlBMVRBdXJDajJr?=
- =?utf-8?B?cGVZSUphUTVBRGtxRVRkWmlCNldJQXpBMjRjN0d0YnpXRTNqeGVJRklDZGh4?=
- =?utf-8?B?bzkwOW5Nc3BpdmFKY1VjclZaOGJteGxZaHU2bmNodGFHdmxIWWhDUStHREdF?=
- =?utf-8?B?RXFGQ3lBWDI1ZkwxS0FSN2tpQ1VWN0dXN1krZGpveHVTc0tqdHZ4NVJXRDY2?=
- =?utf-8?B?bG5sR09IOElST2xSKzVnSUVvL3A3ZGhTUG1yTDhBWWhTZXRPWng0cllONldK?=
- =?utf-8?B?QkEvKzAvcEJ6b1ZNTGwwOVh3T3VaYXpJU0xGNFVMajVJR2daRUo1Y2N4UnFj?=
- =?utf-8?B?SWRYUWZNNnRUN1A0WDFNYmVyUXh2dUloM0J4b3NMQWd3THg1eklpOXlrU2JB?=
- =?utf-8?B?d2svbjBkWEU0ZUxnQThyaHc2R0w5QkNDZ2JvWGpkWVZMS0hLbDlOUDFTWWxs?=
- =?utf-8?B?ZFUwZjJMN3lscXRrbmNteTJSZnN2dlREMkp3N29DMzI0dXNxeXN4Q1VRUkVs?=
- =?utf-8?B?Z1VvMkxMRFpLRXRIc1J2V3Z4a0pJSFVkOXRkWnNRdlJGQVRsN2d2cXBIaFh0?=
- =?utf-8?B?TWxiZVhkb3h1STJkMHJhMjRUNlFRRmJMSnJ0a2tZcXdjM3lQblpiQkc0c01O?=
- =?utf-8?B?RXlBT0lKUnQrOFFCQUd5NkY4REN4RFhMRDM2Q0dxQmNxaTZJZXBtNnVMcnFv?=
- =?utf-8?B?d3Fwb0ZyWm5PdkVScklGSEkzWDVYT0tHMVZ3WXVhZHFsQlBXcTljQmxOOVBp?=
- =?utf-8?B?TkYrTXFreFlGWjNWbUdkNVRaTFZ5cDZ4OEFuZi9RRUV0ZERxUVRjeGNnYTFo?=
- =?utf-8?B?eXI3YVFSbzVBckN3RkhYcWliSHhFemFUNlRUb3d0SVVDd1hoaGk2Y2Y3NDVQ?=
- =?utf-8?B?N0VqWEF1dVpER3p5bUMyV21Na0RLbjQybHlzekUvLzFzZE5WaUJRb0xCV05L?=
- =?utf-8?B?SSsrc3BRQlYrdWphdjlrS2xXcElYZi9rU2pZVjhlWURJU0tFUzdxT1hpWGln?=
- =?utf-8?B?eTJMSlNGYjJ1Zk5meHhud2dzTmxyR1JReFdIemF5M1NuTktubElUallWTlpw?=
- =?utf-8?B?STAwR0YyU0QxQk9TT2dnUjJJcHVqbk5kaTMzWU0yRG8xWjBzMEJ4bUk0TjFB?=
- =?utf-8?B?YzhwNUxKR3VIMjRHNEtZdjJQUGJVOHpPcTRJa0xYa2F3dTlUUFBLdHEzOFRF?=
- =?utf-8?B?Z2RPYzZkTUtwVXAvcVpnRFM0djI0UGxIVnlqaEFHaHUyTkpvOG1uK2RvQWtj?=
- =?utf-8?B?MTZvcEQzZzhoRzA2a094NmU2Y0QwQkhvdjBrZGZNbVZORzZqd0x3Nm1yaWxw?=
- =?utf-8?B?MG9waTkzTzlBWlNOYWZSSVV1VW9TSnp6RFNBSWdobnN2N3RvZWROb3E3Y0lw?=
- =?utf-8?B?SEI0RExlS2ZSLzJ3b0VMZFIzOUZYNlFSSU9xS24wdzdBSHFKV2RGa0pZL0hG?=
- =?utf-8?B?NUNTOEtMZUZSNmJJcWhJQUFBbmlJVVd5OUhtQTNSUEpsWlFLVTZDRjNYcUY5?=
- =?utf-8?B?by91QWZud2VnTFpHUWI2OE1ta0xYeVRGN2NLWUNQQVZBRmtldEcrYlAySFo1?=
- =?utf-8?B?MmNUZm01dVMrZFVNbmVUUnowNnhOSWtxOHhlUlh4cWVtdVpCTG1LZz09?=
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?5vyjJzjxo2VeMLJrfxEyKNVxWBPw94SPqjOylnZFLzSZRksMLR/wYXTJv1v9?=
+ =?us-ascii?Q?ikShnM9BSa+LApQp/xA45fH9fzGBgE1dw2DPNadb7217a0MclPgfd4L9T5Yg?=
+ =?us-ascii?Q?ruNxY+SGr4na1ENJlOtrydrga6H1alSgZZzCLBz+i/TlB/Rewgv2ZNXx5ct1?=
+ =?us-ascii?Q?uCF8P+1Z2YiZKJA8ggO/rWiszU0KAmlM+d4lX+5BguaWs9Hb27POiFSofPnm?=
+ =?us-ascii?Q?dm/rYrf72CmFAaohK1VHQ2vbbiZxjf5P+UbQLbYyfADdMEsJdS/ynn/47Uc/?=
+ =?us-ascii?Q?MamAO/ZmXlSC9XrGmII/Vj04SkPBK+7/o1fz4GuEwutkJVvAUnV8BpWkEYkK?=
+ =?us-ascii?Q?zpu0r3ybcRBTnC/u7Dn/YNMu5eseeW6sX1FLcHnPwl1Qs/U4XV6AXN+6vnQx?=
+ =?us-ascii?Q?0lmZFaNuKAURf94bz6XpzyP7Eg6kLqGUJkrYzUzKO5IMV9D8CbNYI65rNV3S?=
+ =?us-ascii?Q?91e/0u83rUuSL4M+/4K7aYTnXqLvQtzkqMEFkEXKwKntpUYVQWg+WBvCKw8E?=
+ =?us-ascii?Q?Kys5qAcpp0ih2NEokFpIByMRej38aqKE2xJcND1VPS4E1BQ4K7yobrrFfsT6?=
+ =?us-ascii?Q?n7hdCc/e/W1xoGeDh1xuKJ/lLxvSgqjWgzMhxUFBJf93Ws1WGIyGTkGNKomB?=
+ =?us-ascii?Q?IIAT1Ms+dZ8ZWsljtnJw5BwBzLeyofWkz/G1gITOS1tpUPSl3KKtKFHtILBF?=
+ =?us-ascii?Q?fJrog1mqgtgNjUog2APrpwQwrZ6i4S1AoPbXDkyvag1sXgJxSTpXyXGFLXNj?=
+ =?us-ascii?Q?Yp2n1B4mpQpsw2edFXenXHXGd/sGSm9jdxmz71wKoPqent7rANckoP71Wip7?=
+ =?us-ascii?Q?zjp6z3MDbKF3D0YtvT176kbNNTqiYr95b3BhThVYoihpJBkILzBBphvMYk46?=
+ =?us-ascii?Q?FaiaSJZ+WzUYNIKhI+N4rfGAw+CY+YUaRwQ6RjI+0tkhZb4SOgJtntKnYNA7?=
+ =?us-ascii?Q?McEh38iNmGtaOVcyIMGbSIaV02G6WCPzPIp01GAmN964xzed6uvgxNgMAcar?=
+ =?us-ascii?Q?bw6I/EQ1GRYndxdFCk5o8lMATxHGT04tz5vfXCSh6lJzBW2bYjiqv7++X0Od?=
+ =?us-ascii?Q?I8fwRxhCgdltn6KcMA3GPrRmTx1KyHdyJc6l4x9iIWMRIKvOL9m9xnioEax+?=
+ =?us-ascii?Q?rmjB/7QFM54qixXLzLowWukumwlyIVY5mKBY+GmKocuqZLYW1qRmglc2eQHf?=
+ =?us-ascii?Q?Xv7CshLF+Anzz+DeSQxV/HPWxsLnNYWtTMRqNv9XvuI+IfPQajbcSHFM3Snv?=
+ =?us-ascii?Q?pgxvJzUenIPrA8EyRXgN3on5x15tvG2Nb5P2hbpETKBdwJhCyppG2BjWNxQq?=
+ =?us-ascii?Q?ZN+IQ2OeNJ/gNMsAHnurGwCNcJ8UBrRIwz7Jx0TdYgswGjocYb3S6VDjY8St?=
+ =?us-ascii?Q?vwefaw+9vJQcYemfhS0K6Ju/2TnTrnQniYZLFkaOahexFyh7T3tPPPPQdi98?=
+ =?us-ascii?Q?ilWCg7alAkzheBslzT539vae1mb2Wd6oOBG6h/FhKttIWIWoj6v6+g7GCHog?=
+ =?us-ascii?Q?cPLoN4qKAkafZOsblFqxBZa39sd0mF7jVLB1VcQjX4OXhVID4/6A+c5/ty6X?=
+ =?us-ascii?Q?gBs7mcQJf5b4qDU1NyJrrbM2ip0xq2Qtpo+of3CoU+yI4IkC2612NH5yp/Ki?=
+ =?us-ascii?Q?6cLxBffbb+2ua5QnXkVcxmLM6jbt0QeVw41YcvBMOHTzlHj6YIr+S4Kokyew?=
+ =?us-ascii?Q?m7xDzsHeQxC7xhcIddOAokuJCvlq7jjR9UvYeB0YthbOni0Y7LVi9zCYvf8B?=
+ =?us-ascii?Q?GgXhh/KAFA=3D=3D?=
 MIME-Version: 1.0
 X-OriginatorOrg: quicinc.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: MW4PR02MB7186.namprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a25f7260-ded6-4afc-4217-08da2ec7af9c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2022 18:47:20.5500 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 339470f6-4153-45e6-cb10-08da2ec7bd25
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2022 18:47:43.2773 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 98e9ba89-e1a1-4e38-9007-8bdabc25de1d
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 1lvC3a1lWP/vHW+GTclxsOIq0A6SSa7FtkG2OJoDA2wh3zJZClfe3MLb5ibANDqqlWntCUS8Wu7lkR4B0vZao6HddPeGSMV6d/wK6y3xKyg=
+X-MS-Exchange-CrossTenant-userprincipalname: OXrx2ZzhgRCW2eE/7jgKV6lbqCVjB3QbddMaxpF3Gk9qR8FPDU7qidiId/nGGe47cYhuxoFm6DlTc5eziv2j1E3uD4pwpioecVIWik0SA30=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR02MB3704
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220505_114730_222522_87C00BDD 
-X-CRM114-Status: GOOD (  18.37  )
+X-CRM114-CacheID: sfid-20220505_114747_570361_CE0DFD25 
+X-CRM114-Status: GOOD (  11.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -176,53 +163,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
->Quoting Sankeerth Billakanti (2022-05-05 11:02:36)
->> >>
->> >> Quoting Douglas Anderson (2022-04-25 14:06:42)
->> >>
->> >> Having 'a' in 'vdda' typically means 'analog' for 'analog'
->> >> circuits, so I'd expect this to only matter for the phy that
->> >> contains the analog circuitry. It would be great to remove the
->> >> regulator code from drivers/gpu/drm/msm/dp/dp_power.c and move
->the
->> >> regulator_set_load() call to the phy driver if possible. Hopefully
->> >> qcom folks can help clarify here.
->> >
->> >Interesting. Oddly enough, the sc7280 datasheet doesn't list the "_A".
->> >It calls these "VDD_VREF_0P9" and "VDD_VREF_1P2". However, on the
->> >schematic in front of me someone labeled these pins on the sc7280
->> >with the "A". ...and the driver looks for a supply with the "a". :-/
->> >
->> >It would be good to get clarification from someone with better
->information.
->> >
->> >-Doug
->>
->> Our internal power grid documents list the regulators as VDD_A_*_1P2
->> and VDD_A_*_0P9 for all the platforms.
+>We're supposed to list the supplies in the dt bindings but there are none in
+>the eDP PHY bindings.
 >
->Do your internal power grid documents indicate what these supplies are
->powering? The question is if these supplies power any of the logic inside the
->eDP controller or if they only supply power to the analog circuits in the eDP
->phy. If it's the eDP phy only then the regulator usage in the eDP driver should
->be removed. I would suspect this is the case because the controller is
->probably all digital logic and runs at the typical 1.8V that the rest of the SoC
->uses. Similarly, these are voltage references which sound like a PLL reference
->voltage.
+>Looking at the driver in Linux, I can see that there seem to be two relevant
+>supplies: "vdda-phy" and "vdda-pll". Let's add those to the bindings.
 >
->Please clarify this further.
+>NOTE: from looking at the Qualcomm datasheet for sc7280, it's not
+>immediately clear how to figure out how to fill in these supplies. The only two
+>eDP related supplies are simply described as "power for eDP 0.9V circuits" and
+>"power for eDP 1.2V circuits". From guessing and from comparing how a
+>similar PHY is hooked up on other similar Qualcomm boards, I'll make the
+>educated guess that the 1.2V supply goes to "vdda-phy" and the 0.9V supply
+>goes to "vdda-pll" and I'll use that in the example here.
 >
+>Signed-off-by: Douglas Anderson <dianders@chromium.org>
+>---
+>
+> Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 6 ++++++
+> 1 file changed, 6 insertions(+)
+>
+>diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+>b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+>index a5850ff529f8..cf9e9b8011cb 100644
+>--- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+>+++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+>@@ -41,6 +41,9 @@ properties:
+>   "#phy-cells":
+>     const: 0
+>
+>+  vdda-phy-supply: true
+>+  vdda-pll-supply: true
+>+
+> required:
+>   - compatible
+>   - reg
+>@@ -65,5 +68,8 @@ examples:
+>
+>       #clock-cells = <1>;
+>       #phy-cells = <0>;
+>+
+>+      vdda-phy-supply = <&vdd_a_edp_0_1p2>;
+>+      vdda-pll-supply = <&vdd_a_edp_0_0p9>;
+>     };
+> ...
+>--
+>2.36.0.rc2.479.g8af0fa9b8e-goog
 
-For the DP driver using the usb-dp combo phy, there were cases where the usb driver
-was turning off the phy and pll regulators whenever usb-dp concurrent mode need not be supported.
-This caused phy and pll to be powered down causing aux transaction failures and display blankouts. 
-From then on, it became a practice for the controller driver to vote for the phy and pll regulators also.
+Reviewed-by: Sankeerth Billakanti <quic_sbillaka@quicinc.com>
 
->>
->> So, as a practice, we put the same name in the DT files. Hence,
->>
->> Reviewed-by: Sankeerth Billakanti <quic_sbillaka@quicinc.com>
->>
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
