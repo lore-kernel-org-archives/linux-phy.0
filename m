@@ -4,98 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 292CFC4332F
-	for <linux-phy@archiver.kernel.org>; Wed,  4 May 2022 21:19:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3598C433F5
+	for <linux-phy@archiver.kernel.org>; Thu,  5 May 2022 12:12:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VqI3RGbqC0nRxucsWfktClrcJMviJqhw7i64dGKb36I=; b=a5AxpiqH1d+l2Z
-	J7w/V0QLJOxcBKCOuAUQi5SHENpQs2O0SUtJ0u0m6BbGIZN2avo2JHVGK8gSUxtsUdz/z6JazJzo2
-	ZUqLJB6FGTtyF08iBobr+vY91jwPsJue2FZkgcTWASc+lSx9Nk8gkHy9dUxbWTviiAlxu2Mim0X2Y
-	mkFwbN7foGy29RWoegZt06A5XbONmr2gz0dzcMzDe69pTV9mEgnRwmi40pVVOSSqiEHpvyx3q/LOe
-	P9X+OnEW/PdXTgCo6F7JxgihPu5DqrdQGxutMQs10zJCeHM9Swn6fIVGzKAWJFjSV41g0hRe25XUW
-	4Yg6G0AcqVnicZzpk18A==;
+	List-Owner; bh=7m8GT68vXwx3ZYhrXqujhnMGq6219FYxhCUztGwM3Vc=; b=Gci0UZZroJTLiP
+	v6D7IqOJSvPFqHTivgrHnal61ITcKQURsnhZ2X+hpISugjMGNZTC+BB7hYhP2bfHKpfXz9WBzzd2h
+	jLk7hZylkCGO/OoYvm4917FkCu0qJ8IhxBjFRuvmy6s2GX2pRy3UzrYCcn4Rjbhww2lJBdNOoAVK+
+	sAXY+hbckOC/0/7sEjwqF1kbA6vmwlzVmLx9ILhqIGigZJPkJb3cobVWGCK8MW8VtIPnO3UtzjfDY
+	e9+QOEumGKvsADD7C5AfNpyD85wRmJa7ciIrNA24t2j//AcIACQqt6CHCELRw/h+omKxZrpZ/agry
+	RpmtOb8efcB4FvDIzVqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nmMOj-00Cm1I-DC; Wed, 04 May 2022 21:19:01 +0000
-Received: from mail-oa1-f44.google.com ([209.85.160.44])
+	id 1nmaL9-00FjI3-JR; Thu, 05 May 2022 12:12:15 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nmMOe-00Clyi-Gp; Wed, 04 May 2022 21:18:58 +0000
-Received: by mail-oa1-f44.google.com with SMTP id
- 586e51a60fabf-ed9ac77cbbso2504010fac.1; 
- Wed, 04 May 2022 14:18:55 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=S5KOsETtEM/tlLh5aE4TllMhkuOxHv7tKaCHP6S4dRs=;
- b=K1yDhs6XuvUY9kf4R5Xva/GzZqsqlY9BrlC5gwSmTNx/JseexQkITRluE5NCNlTQwu
- Xh4yKv1tq6o9wsuZYX4upd2UJk4YJUEEHuB12hGPGPEBubGNL73OROc2nvpYbMBg2x8Y
- hVtmFjXAN6z3m0ljGl8HTMkc2m5AtF5hjOOQFYALuA5JWhWGzf0ZEJN40O/izB8sMt8D
- z23lWoYjzGaUy53x+F1yEzvqoCxlWkZ1K3lbl1eorszTmvy6+JhTeaSO2dkexqCUUUpV
- ouToJUZ9yFxH63odk/bsCv+XATx2hSbs2DS64Fjwsrym00wfxitbInaRVK6GLgY/izZZ
- rStQ==
-X-Gm-Message-State: AOAM531gL1me3UeE03tbb+SA9F4+HmF2/W6m0MfMSmpvRXGLKfo+5ndY
- f6aED1uEiDTaTTWeW6gfWA==
-X-Google-Smtp-Source: ABdhPJx70C27VXLkiWuEEIrWSrTpQJyJY8Bcpnd3QFecXI5OFZqDfycowXXO+amY4bM1axvVUtwzWg==
-X-Received: by 2002:a05:6870:7a8:b0:e5:d471:1e82 with SMTP id
- en40-20020a05687007a800b000e5d4711e82mr785288oab.138.1651699135188; 
- Wed, 04 May 2022 14:18:55 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
- [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
- m1-20020a056808024100b00325cda1ff88sm15372oie.7.2022.05.04.14.18.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 May 2022 14:18:54 -0700 (PDT)
-Received: (nullmailer pid 2242697 invoked by uid 1000);
- Wed, 04 May 2022 21:18:52 -0000
-Date: Wed, 4 May 2022 16:18:52 -0500
-From: Rob Herring <robh@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: Zhang Rui <rui.zhang@intel.com>, Wolfgang Grandegger <wg@grandegger.com>, 
- Jonathan Cameron <jic23@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, devicetree@vger.kernel.org, 
- Marc Kleine-Budde <mkl@pengutronix.de>, Vinod Koul <vkoul@kernel.org>, 
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>, 
- Vignesh Raghavendra <vigneshr@ti.com>,
- Thierry Reding <thierry.reding@gmail.com>, linux-clk@vger.kernel.org, 
- Ulf Hansson <ulf.hansson@linaro.org>, netdev@vger.kernel.org, 
- Dario Binacchi <dariobin@libero.it>, Han Xu <han.xu@nxp.com>, 
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Anson Huang <Anson.Huang@nxp.com>, Richard Weinberger <richard@nod.at>,
- Chen-Yu Tsai <wens@csie.org>, 
- linux-mtd@lists.infradead.org, linux-can@vger.kernel.org, 
- linux-iio@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>, 
- Jakub Kicinski <kuba@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>, 
- "David S. Miller" <davem@davemloft.net>, Mark Brown <broonie@kernel.org>, 
- Peter Ujfalusi <peter.ujfalusi@ti.com>, alsa-devel@alsa-project.org, 
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-serial@vger.kernel.org, 
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-phy@lists.infradead.org, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Stephen Boyd <sboyd@kernel.org>, 
- Fabrice Gasnier <fabrice.gasnier@foss.st.com>, Abel Vesa <abel.vesa@nxp.com>, 
- Lars-Peter Clausen <lars@metafoo.de>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rtc@vger.kernel.org, 
- Jonathan Hunter <jonathanh@nvidia.com>, Paolo Abeni <pabeni@redhat.com>, 
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Maxime Ripard <mripard@kernel.org>, 
- dri-devel@lists.freedesktop.org, linux-mmc@vger.kernel.org, 
- =?UTF-8?Q?Niklas_S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>, 
- linux-pm@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: Drop redundant 'maxItems/minItems' in
- if/then schemas
-Message-ID: <YnLtvA9hWMSIfSP7@robh.at.kernel.org>
-References: <20220503162738.3827041-1-robh@kernel.org>
+ id 1nmaL2-00FjDB-DV; Thu, 05 May 2022 12:12:11 +0000
+X-UUID: a39654655816493aa1ade73466eb4110-20220505
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=9InUCIjH53RNAgxIe88Zm8ZVGpeN3UPxElsoLUC9bzA=; 
+ b=chXrvaA7JQ7RtZjFw1W57ek/eN1wKOLzeZisX0n91EBo1jgdW6VrTrNoSMW9h5BSv35Sp6MZTzZo9wFS1IED0jrb6Tzg/72heaA8KhfO3zHIi0saxGl+d+Y72YBT+RM77J7riM2tkXNBvomZfWKUnSBIH8F+kQpu6d4+N2a2elI=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.4, REQID:59890fc8-7388-4be8-b805-0408d7a16852, OB:0,
+ LO
+ B:0,IP:0,URL:8,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+ ON:release,TS:8
+X-CID-META: VersionHash:faefae9, CLOUDID:3b4d5216-2e53-443e-b81a-655c13977218,
+ C
+ OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,File:nil,QS:0,BEC:nil
+X-UUID: a39654655816493aa1ade73466eb4110-20220505
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <jianjun.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 546856815; Thu, 05 May 2022 05:12:02 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 5 May 2022 05:12:01 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3; 
+ Thu, 5 May 2022 20:11:59 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Thu, 5 May 2022 20:11:58 +0800
+Message-ID: <d017583a2472e7d4bf4684b1aabeebd93c80c68b.camel@mediatek.com>
+Subject: Re: [PATCH v7 2/2] phy: mediatek: Add PCIe PHY driver
+From: Jianjun Wang <jianjun.wang@mediatek.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Chen-Yu
+ Tsai" <wenst@chromium.org>, Krzysztof Kozlowski <krzk@kernel.org>
+CC: Wei-Shun Chang <weishunc@google.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <rex-bc.chen@mediatek.com>,
+ <randy.wu@mediatek.com>, <jieyy.yang@mediatek.com>,
+ <chuanjia.liu@mediatek.com>, <qizhong.cheng@mediatek.com>,
+ <jian.yang@mediatek.com>
+Date: Thu, 5 May 2022 20:11:58 +0800
+In-Reply-To: <bad44be8-abc7-169f-bc7a-cef3692c9a71@collabora.com>
+References: <20220422142331.17173-1-jianjun.wang@mediatek.com>
+ <20220422142331.17173-3-jianjun.wang@mediatek.com>
+ <bad44be8-abc7-169f-bc7a-cef3692c9a71@collabora.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220503162738.3827041-1-robh@kernel.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220504_141856_601662_52A19E40 
-X-CRM114-Status: GOOD (  19.95  )
+X-CRM114-CacheID: sfid-20220505_051208_518575_E9B4E750 
+X-CRM114-Status: GOOD (  18.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,96 +90,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 03 May 2022 11:27:38 -0500, Rob Herring wrote:
-> Another round of removing redundant minItems/maxItems when 'items' list is
-> specified. This time it is in if/then schemas as the meta-schema was
-> failing to check this case.
-> =
+Hi Angelo,
 
-> If a property has an 'items' list, then a 'minItems' or 'maxItems' with t=
-he
-> same size as the list is redundant and can be dropped. Note that is DT
-> schema specific behavior and not standard json-schema behavior. The tooli=
-ng
-> will fixup the final schema adding any unspecified minItems/maxItems.
-> =
+On Tue, 2022-04-26 at 18:06 +0200, AngeloGioacchino Del Regno wrote:
+> Il 22/04/22 16:23, Jianjun Wang ha scritto:
+> > Add PCIe GEN3 PHY driver support on MediaTek chipsets.
+> > 
+> > Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+> 
+> Hello Jianjun,
+> there's only one last bit to fix, check below:
+> 
+> > ---
+> >   drivers/phy/mediatek/Kconfig        |  11 ++
+> >   drivers/phy/mediatek/Makefile       |   1 +
+> >   drivers/phy/mediatek/phy-mtk-pcie.c | 267
+> > ++++++++++++++++++++++++++++
+> >   3 files changed, 279 insertions(+)
+> >   create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
+> > 
+> 
+> ..snip..
+> 
+> > +static int mtk_pcie_read_efuse(struct mtk_pcie_phy *pcie_phy)
+> > +{
+> > +	struct device *dev = pcie_phy->dev;
+> > +	bool nvmem_enabled;
+> > +	int ret, i;
+> > +
+> > +	/* nvmem data is optional */
+> > +	nvmem_enabled = device_property_read_bool(dev, "nvmem-cells");
+> 
+> device_property_read_bool() returns device_property_present().
+> 
+> I would prefer that, instead, you call the latter:
+> 
+> 	nvmem_enabled = device_property_present(dev, "nvmem-cells");
+> 
+> It's the same, yes, but this will increase human readability, as the
+> function
+> name clearly states the intention here.
 
-> Cc: Abel Vesa <abel.vesa@nxp.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Cc: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
-> Cc: Jonathan Cameron <jic23@kernel.org>
-> Cc: Lars-Peter Clausen <lars@metafoo.de>
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> Cc: Thierry Reding <thierry.reding@gmail.com>
-> Cc: Jonathan Hunter <jonathanh@nvidia.com>
-> Cc: Miquel Raynal <miquel.raynal@bootlin.com>
-> Cc: Richard Weinberger <richard@nod.at>
-> Cc: Vignesh Raghavendra <vigneshr@ti.com>
-> Cc: Wolfgang Grandegger <wg@grandegger.com>
-> Cc: Marc Kleine-Budde <mkl@pengutronix.de>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: Jakub Kicinski <kuba@kernel.org>
-> Cc: Paolo Abeni <pabeni@redhat.com>
-> Cc: Kishon Vijay Abraham I <kishon@ti.com>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Cc: Alessandro Zummo <a.zummo@towertech.it>
-> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Cc: Chen-Yu Tsai <wens@csie.org>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
-> Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
-> Cc: Zhang Rui <rui.zhang@intel.com>
-> Cc: "Niklas S=F6derlund" <niklas.soderlund@ragnatech.se>
-> Cc: Anson Huang <Anson.Huang@nxp.com>
-> Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-> Cc: Han Xu <han.xu@nxp.com>
-> Cc: Dario Binacchi <dariobin@libero.it>
-> Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Maxime Ripard <mripard@kernel.org>
-> Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> Cc: linux-clk@vger.kernel.org
-> Cc: dri-devel@lists.freedesktop.org
-> Cc: linux-iio@vger.kernel.org
-> Cc: linux-mmc@vger.kernel.org
-> Cc: linux-mtd@lists.infradead.org
-> Cc: linux-can@vger.kernel.org
-> Cc: netdev@vger.kernel.org
-> Cc: linux-phy@lists.infradead.org
-> Cc: linux-rtc@vger.kernel.org
-> Cc: linux-serial@vger.kernel.org
-> Cc: alsa-devel@alsa-project.org
-> Cc: linux-pm@vger.kernel.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  .../bindings/clock/imx8m-clock.yaml           |  4 ----
->  .../bindings/display/bridge/renesas,lvds.yaml |  4 ----
->  .../bindings/display/renesas,du.yaml          | 23 -------------------
->  .../bindings/iio/adc/st,stm32-adc.yaml        |  2 --
->  .../bindings/mmc/nvidia,tegra20-sdhci.yaml    |  7 +-----
->  .../devicetree/bindings/mtd/gpmi-nand.yaml    |  2 --
->  .../bindings/net/can/bosch,c_can.yaml         |  3 ---
->  .../bindings/phy/brcm,sata-phy.yaml           | 10 ++++----
->  .../bindings/rtc/allwinner,sun6i-a31-rtc.yaml | 10 --------
->  .../bindings/serial/samsung_uart.yaml         |  4 ----
->  .../sound/allwinner,sun4i-a10-i2s.yaml        |  1 -
->  .../bindings/sound/ti,j721e-cpb-audio.yaml    |  2 --
->  .../bindings/thermal/rcar-gen3-thermal.yaml   |  1 -
->  13 files changed, 5 insertions(+), 68 deletions(-)
-> =
+Thanks for your review and sorry for the late response, I'll replace it
+with 'device_property_present' in the next version.
 
+Thanks.
 
-Applied, thanks!
-
--- =
-
+> 
+> Thanks,
+> Angelo
+> 
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
