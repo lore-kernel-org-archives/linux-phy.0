@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE2E1C43217
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEC7DC4332F
 	for <linux-phy@archiver.kernel.org>; Fri,  6 May 2022 18:12:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,23 +12,23 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AIZngmNVxOYdRGcS+cwRcQ/OD8w8+C5O4TpMPsTdfck=; b=uwsfqNXeurxpb6
-	5W27Ho0sj2zPiDzfezyTbUGThiccbQFY3zbT0yea807WA3Ha8/b9l5/5D6IRvhjRvMmHnvTnaOTw7
-	L/PU1yX8ikULwfZLVJHrvvD/qqCQUTSDQwWnbA+iOu9oaY9HrWTKdBYgfqRDT3CEXnLo2i9SScuNS
-	TQWCQSVk8VhCD18RHV6C8fZPXyn0IqRO6xc5e68sWwJDGSlJc0xbg6QifU57Korki/GAUAXcOZmXM
-	edh/MPQOTMgl+KsN+mlRNeVpravBFL/8pK+AfiogsNuBWuoUCWkZIWIMT/D2/RapIkA0HLj1e0Uxa
-	33SSxKc9UZv1AaFDAqLQ==;
+	List-Owner; bh=ajcqKcbOtMvEXSscZFwozKEEB2x0RtXS2Y4EfA3Kjf4=; b=jufXYxuyh529eY
+	2fW9mU66imd967XrtnFwOTZAxzDJmP8baWpA7WCJe0KpcbMKhs/sMonvzX+duDgQvi/zuYedp3//j
+	YKc0I9EcT5kfwp1xpJwDpsm5NlaMcpqs/aUROf9dQ6TSZpigUfd9nEF2olWWg5xDAeUsSH3uyxfjm
+	dbx2KtB7Nr1tmyX7aKh1VctEomOi0kan0F2ALGNwIHrXbDyphjss6RjS6jKKTUWN4RaTvadsupPKz
+	n6TOU0aEx+MOMvCMzmjfdx6n5oBohmaKjA+I+Ol/MQ7mnjjgsIPurVyh8xW1zxFL0mCeEM4nTMWk2
+	9rg5GyhEy17Sw4Dh0tKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nn2RO-004cpX-Vw; Fri, 06 May 2022 18:12:35 +0000
+	id 1nn2RP-004cpl-3a; Fri, 06 May 2022 18:12:35 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nn2Pk-004byk-GI
+ id 1nn2Pl-004bz3-3t
  for linux-phy@lists.infradead.org; Fri, 06 May 2022 18:10:55 +0000
 Received: from dude03.red.stw.pengutronix.de ([2a0a:edc0:0:1101:1d::39])
  by metis.ext.pengutronix.de with esmtp (Exim 4.92)
  (envelope-from <l.stach@pengutronix.de>)
- id 1nn2PU-0005VY-Pm; Fri, 06 May 2022 20:10:36 +0200
+ id 1nn2Pa-0005VY-LD; Fri, 06 May 2022 20:10:42 +0200
 From: Lucas Stach <l.stach@pengutronix.de>
 To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  dri-devel@lists.freedesktop.org
@@ -42,10 +42,9 @@ Cc: Shawn Guo <shawnguo@kernel.org>,
  Robert Foss <robert.foss@linaro.org>,
  Andrzej Hajda <andrzej.hajda@intel.com>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Subject: [PATCH v0.5 1/9] dt-bindings: display: imx: add binding for i.MX8MP
- HDMI TX
-Date: Fri,  6 May 2022 20:10:26 +0200
-Message-Id: <20220506181034.2001548-2-l.stach@pengutronix.de>
+Subject: [PATCH v0.5 9/9] arm64: dts: imx8mp-evk: enable HDMI
+Date: Fri,  6 May 2022 20:10:34 +0200
+Message-Id: <20220506181034.2001548-10-l.stach@pengutronix.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220506181034.2001548-1-l.stach@pengutronix.de>
 References: <20220506181034.2001548-1-l.stach@pengutronix.de>
@@ -56,8 +55,9 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220506_111052_600096_BF8B3589 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20220506_111053_181654_9D734907 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,94 +74,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The HDMI TX controller on the i.MX8MP SoC is a Synopsys designware IP
-core with a little bit of SoC integration around it.
+Enable the DT nodes for HDMI TX and PHY and add the pinctrl for the few
+involved pins that are configurable.
 
 Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 ---
- .../bindings/display/imx/fsl,imx8mp-hdmi.yaml | 73 +++++++++++++++++++
- 1 file changed, 73 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml
+ arch/arm64/boot/dts/freescale/imx8mp-evk.dts | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml
-new file mode 100644
-index 000000000000..bd9a2b135176
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml
-@@ -0,0 +1,73 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/imx/fsl,imx8mp-hdmi.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+index 4c3ac4214a2c..fdf851865ba9 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+@@ -197,6 +197,16 @@ ethphy1: ethernet-phy@1 {
+ 	};
+ };
+ 
++&hdmi_tx {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_hdmi>;
++	status = "okay";
++};
 +
-+title: Freescale i.MX8MP DWC HDMI TX Encoder
++&hdmi_tx_phy {
++	status = "okay";
++};
 +
-+maintainers:
-+  - Lucas Stach <l.stach@pengutronix.de>
+ &i2c1 {
+ 	clock-frequency = <400000>;
+ 	pinctrl-names = "default";
+@@ -465,6 +475,15 @@ MX8MP_IOMUXC_NAND_READY_B__GPIO3_IO16	0x19
+ 		>;
+ 	};
+ 
++	pinctrl_hdmi: hdmigrp {
++		fsl,pins = <
++			MX8MP_IOMUXC_HDMI_DDC_SCL__HDMIMIX_HDMI_SCL	0x1c3
++			MX8MP_IOMUXC_HDMI_DDC_SDA__HDMIMIX_HDMI_SDA	0x1c3
++			MX8MP_IOMUXC_HDMI_HPD__HDMIMIX_HDMI_HPD		0x19
++			MX8MP_IOMUXC_HDMI_CEC__HDMIMIX_HDMI_CEC		0x19
++		>;
++	};
 +
-+description: |
-+  The HDMI transmitter is a Synopsys DesignWare HDMI 2.0 TX controller IP.
-+
-+allOf:
-+  - $ref: ../bridge/synopsys,dw-hdmi.yaml#
-+
-+properties:
-+  compatible:
-+    enum:
-+      - fsl,imx8mp-hdmi
-+
-+  reg:
-+    maxItems: 1
-+
-+  reg-io-width:
-+    const: 1
-+
-+  clocks:
-+    maxItems: 5
-+
-+  clock-names:
-+    items:
-+      - {}
-+      - {}
-+      - const: cec
-+      - const: pix
-+      - const: fdcc 
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  power-domains:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - interrupts
-+  - power-domains
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    #include <dt-bindings/clock/imx8mp-clock.h>
-+    #include <dt-bindings/power/imx8mp-power.h>
-+
-+    hdmi@32fd8000 {
-+        compatible = "fsl,imx8mp-hdmi";
-+        reg = <0x32fd8000 0x7eff>;
-+        interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&clk IMX8MP_CLK_HDMI_APB>,
-+                 <&clk IMX8MP_CLK_HDMI_REF_266M>,
-+                 <&clk IMX8MP_CLK_32K>,
-+                 <&hdmi_tx_phy>;
-+        clock-names = "iahb", "isfr", "cec", "pix";
-+        power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_HDMI_TX>;
-+        reg-io-width = <1>;
-+    };
+ 	pinctrl_i2c1: i2c1grp {
+ 		fsl,pins = <
+ 			MX8MP_IOMUXC_I2C1_SCL__I2C1_SCL		0x400001c3
 -- 
 2.30.2
 
