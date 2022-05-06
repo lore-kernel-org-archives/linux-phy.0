@@ -4,74 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0190C433F5
-	for <linux-phy@archiver.kernel.org>; Fri,  6 May 2022 22:40:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8F81C433EF
+	for <linux-phy@archiver.kernel.org>; Fri,  6 May 2022 22:40:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Bf4U0wWYmtwyTukD13twIv2GTRkpCX82PkNFUiBHYI=; b=L21/LNLZ2HfTUR
-	+PiOZ5ATjFejA/PPnIlenn3K1xIwkEcnhbnx0zlfCb5HyaIEfG8bORi+8qHSfG3qppdiMSaZ8LmNX
-	esWUSsCfgTtdj2OVa1/j6IlbFQ0v3dC3I3zNyotw5NB8vdWa0IZ+X0u22otIJ5MUwRIm9M6iJy8wV
-	7gS8QQEUzNE6L5A+Z0vRPd68YUMBLZ9NdnFPaJHNsFOY9ZyE2tvlVo5IpxReKyiLl0c5nnn+icyUV
-	vag2UaWpawx1X9vXxZjNJA9RjKduJvq6aEnf56WFSGeuNaVMUr463dM9XRqdot0H73hEvkG1ttzI1
-	dAoGHDqxnPB36hTHBMbw==;
+	List-Owner; bh=87DDpal/0VQ76jBawWQKVczayfV9d0F314UZMmKH/jw=; b=jwF6NnrVVcXODf
+	d8BO+g7R2IGe5/z2t5ERy/6pAkllyCRXihYUgw31N8x/l6yE9o0lm7Egmp3gvHKgTAMH+fpLph/xA
+	OjRfZIsJysJisyt8ZN2o1W8UZRH+/KIQJm1wiDTx8ROe0aRWtjEic4O3+O8RDIN17FuhxkFZLLAJl
+	EfohEoXIUIOFnxcuOe7qM2/Ir5rVV60D86DPmyjSmOLylMncU5clYYU3fWA6NBPqSWaC1QZvDeKv3
+	OVnyjLN0wRcglGKxS8dGkYpbI12JTNm7yteQTzHi6xwmERJj2kFeB5G2FRWG9ujBI3/4BGKU87Sbt
+	AjmifSlRjhCO5JoYdEqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nn6cM-005EWV-1I; Fri, 06 May 2022 22:40:10 +0000
-Received: from mail-oa1-f53.google.com ([209.85.160.53])
+	id 1nn6cd-005Ean-5Z; Fri, 06 May 2022 22:40:27 +0000
+Received: from mail-oa1-f54.google.com ([209.85.160.54])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nn6c9-005EPS-JX; Fri, 06 May 2022 22:39:59 +0000
-Received: by mail-oa1-f53.google.com with SMTP id
- 586e51a60fabf-d6e29fb3d7so8686405fac.7; 
- Fri, 06 May 2022 15:39:56 -0700 (PDT)
+ id 1nn6cC-005EQ2-2B; Fri, 06 May 2022 22:40:01 +0000
+Received: by mail-oa1-f54.google.com with SMTP id
+ 586e51a60fabf-e93bbb54f9so8671903fac.12; 
+ Fri, 06 May 2022 15:39:58 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
  :message-id;
- bh=EARAirmRDARZJDnc2wIGPiTE3SCh1Sk7ihIbfULQouQ=;
- b=L5Om3Oy8ePtrjJhq+DrECZoYJGhmvHvakTl8VZ3O/W06qevGkK4G9/iQGRv81HeoZc
- T1ydRJLUzU9+ptQ6s2AsW5+fEQ9RpVSF1h0vevrSgv0BRp2QqY5+nxwfGI/s6ALXsACA
- j/fR7yy6zwWOHP5rP9xG5z7mcJA4hztUiImz25FGwHXojMAACoDi/ttHvk9wNTv85kkf
- AZWUWeY3XucqMo+MjoUzJ0VOVf9+U2U7hlq6o1OEUukRJFFR9gRcEo807yFWtlL7pJbE
- VKlxT1DGlwQJbA/qLZmVNm4oFzqnucu0zxqLudiA9dX7z/N/6bZE43pyHLLri9QJIY2k
- iXVQ==
-X-Gm-Message-State: AOAM532yxAfNu0HbYDDvYGxIYMqepTSaMFzyR84yfv5nyqUVBH77FvKB
- +srkCcm1yfwt1BHDwHQyWw==
-X-Google-Smtp-Source: ABdhPJyCG67cLedleTEytlah9EbrGMeFPIlbBbUWhHQVbzJSRnDcIllrDprW/uYuVOEWDyz152z+xg==
-X-Received: by 2002:a05:6870:c59a:b0:e9:3d37:1bbd with SMTP id
- ba26-20020a056870c59a00b000e93d371bbdmr5428453oab.91.1651876795325; 
- Fri, 06 May 2022 15:39:55 -0700 (PDT)
+ bh=gdnoN48c4OtIQTvkUpqjNfjiuzwFbiiCs1QABjCyBsY=;
+ b=WSfqzxJFh2WCjBKbaeRVpVH2lUt6iMQLD2AzqhN68qc/KWlmW8O2TOGOxrpOXFbOlQ
+ vrQTuzHCOzKb4/mN0pGZDbHqbed7C/bAAKJ2DKinL5qhSu/zM69sckozQPuBpy4ATkov
+ pgpmdO2UiIkoIWnA3lnEvNCVAUXtQLDMOHBAn3i3pciH5kosIeM5qfLdtE7l5tpMkv7d
+ 8Q7UtbPVF44Eu3itYwUSMGbfHEN5ddFHKgT94NTbs0RVujnNn0/y7eC7YgTO6Opa1ZvS
+ e9cPMMXqxOgIivuBj2s7DlFz3EduTy6YGu343CHsp54n1t73//NkwH4bp5gjAG3Quwh6
+ sbFA==
+X-Gm-Message-State: AOAM531ix7rG8jx8eP6JK2tEB6cJrv2s279SCOZ+3l6kX/gU866MbT/0
+ uQaXMMGlv5IcxadWokOoRQ==
+X-Google-Smtp-Source: ABdhPJypMneSibUbRivL8Yoczz0j4CFSkTRWYurL+negj4qJZ/gZTxYlBuqjNPARGG9bxw2fstna9g==
+X-Received: by 2002:a05:6870:d68e:b0:e2:af08:6cc3 with SMTP id
+ z14-20020a056870d68e00b000e2af086cc3mr5506584oap.189.1651876798315; 
+ Fri, 06 May 2022 15:39:58 -0700 (PDT)
 Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
  [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
- e6-20020aca1306000000b00325cda1ffb5sm2059016oii.52.2022.05.06.15.39.54
+ g93-20020a9d2de6000000b0060603221240sm2113095otb.16.2022.05.06.15.39.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 May 2022 15:39:54 -0700 (PDT)
-Received: (nullmailer pid 2407412 invoked by uid 1000);
+ Fri, 06 May 2022 15:39:57 -0700 (PDT)
+Received: (nullmailer pid 2407415 invoked by uid 1000);
  Fri, 06 May 2022 22:39:53 -0000
 From: Rob Herring <robh@kernel.org>
 To: Lucas Stach <l.stach@pengutronix.de>
-Cc: Marek Vasut <marex@denx.de>, Robert Foss <robert.foss@linaro.org>,
- devicetree@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  Alexander Stein <alexander.stein@ew.tq-group.com>,
- linux-arm-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-phy@lists.infradead.org,
+ linux-phy@lists.infradead.org, Sandor Yu <Sandor.yu@nxp.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, dri-devel@lists.freedesktop.org,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Shawn Guo <shawnguo@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>,
- dri-devel@lists.freedesktop.org, NXP Linux Team <linux-imx@nxp.com>,
- Sandor Yu <Sandor.yu@nxp.com>, patchwork-lst@pengutronix.de
-In-Reply-To: <20220506181034.2001548-2-l.stach@pengutronix.de>
+ Marek Vasut <marex@denx.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Robert Foss <robert.foss@linaro.org>, patchwork-lst@pengutronix.de,
+ Pengutronix Kernel Team <kernel@pengutronix.de>
+In-Reply-To: <20220506181034.2001548-4-l.stach@pengutronix.de>
 References: <20220506181034.2001548-1-l.stach@pengutronix.de>
- <20220506181034.2001548-2-l.stach@pengutronix.de>
-Subject: Re: [PATCH v0.5 1/9] dt-bindings: display: imx: add binding for
- i.MX8MP HDMI TX
+ <20220506181034.2001548-4-l.stach@pengutronix.de>
+Subject: Re: [PATCH v0.5 3/9] dt-bindings: display: imx: add binding for
+ i.MX8MP HDMI PVI
 Date: Fri, 06 May 2022 17:39:53 -0500
-Message-Id: <1651876793.638106.2407411.nullmailer@robh.at.kernel.org>
+Message-Id: <1651876793.651712.2407414.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220506_153957_684967_9C342507 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20220506_154000_140226_19C18691 
+X-CRM114-Status: GOOD (  10.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,15 +89,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 06 May 2022 20:10:26 +0200, Lucas Stach wrote:
-> The HDMI TX controller on the i.MX8MP SoC is a Synopsys designware IP
-> core with a little bit of SoC integration around it.
+On Fri, 06 May 2022 20:10:28 +0200, Lucas Stach wrote:
+> Add binding for the i.MX8MP HDMI parallel video interface block.
 > 
 > Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 > ---
->  .../bindings/display/imx/fsl,imx8mp-hdmi.yaml | 73 +++++++++++++++++++
->  1 file changed, 73 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml
+>  .../display/imx/fsl,imx8mp-hdmi-pvi.yaml      | 83 +++++++++++++++++++
+>  1 file changed, 83 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.yaml
 > 
 
 My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
@@ -106,9 +105,9 @@ on your patch (DT_CHECKER_FLAGS is new in v5.13):
 yamllint warnings/errors:
 
 dtschema/dtc warnings/errors:
-Error: Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.example.dts:36.45-46 syntax error
+Error: Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.example.dts:26.45-46 syntax error
 FATAL ERROR: Unable to parse input tree
-make[1]: *** [scripts/Makefile.lib:364: Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.example.dtb] Error 1
+make[1]: *** [scripts/Makefile.lib:364: Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.example.dtb] Error 1
 make[1]: *** Waiting for unfinished jobs....
 make: *** [Makefile:1401: dt_binding_check] Error 2
 
