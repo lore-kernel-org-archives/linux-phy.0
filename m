@@ -4,31 +4,31 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF1D9C4332F
-	for <linux-phy@archiver.kernel.org>; Fri,  6 May 2022 18:12:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2505CC433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  6 May 2022 18:13:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7zQ9tXQCToMMUpnDJRgk963vS7HquoSDLo9ZK9f97L8=; b=b26Fe8Zg+y8rvw
-	EKzSxrsAw89jsUwzUKab+9RO0yzLSaImAysnaq6s9glfijLPCkTeePhqL2xzzzb3mPjfvh+agXJk9
-	38D7P8rBGMTRfQu8qYv+s7a/2LAsQxA+c4Pu/HR5BHCkpZ1G80gDJD0EFviKXc6G5Byrdd99CeScM
-	1yevwC6ZruBntTH9BNDI4NXIhBY2AH8MoNWfQ4ro1wl59g4CA6Rj4hNvWZxqBcKazISBi/MUd03zK
-	GzUumgl9JjTNvj6Xc/loj7bMQIM0dXCE/njS1soZh50Qttqf17xmT4knG2lk7sYCwnhumFXrvS1w0
-	ebZOGC4emwXQ4Z9siWvw==;
+	List-Owner; bh=Hdg9ybokGiSECPBwFl4LIWRaiLpUT7AWKbxzmauemyU=; b=0v5vvRh+T+tYAG
+	cvbKET4M6yUy/cX/V6+pm1FPuPEWCUVWLSan6bYp8koiiabfstnzlt6AFOE/zTPQ6dMaZigZwhz8Z
+	b39zdd7tvn7ABLh8PRkzg9qqTHfgntTMXxh/oLdUQLGoJ8JVtjkEyupkK8Vs031HdFlg5oI1BEFCZ
+	AnfTlkAwqgM1/KyUNQhnNK7H7ufOcut5zkWn5JG4FzivEq46UXjUzU4jAaBlzXJRNyvuQphJOomLP
+	Lzn14cUOuGpIa+hSINFgz7iTvaHkVuT8naCus2qYPPFjJ7ebpc65aU1USrX+nkgsxkhSl0LzZyqQ0
+	B4Z7ag2L00nQvv6+87/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nn2Rn-004d64-1B; Fri, 06 May 2022 18:12:59 +0000
+	id 1nn2Rn-004d6N-CM; Fri, 06 May 2022 18:12:59 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nn2Pl-004bzO-SJ
+ id 1nn2Pm-004bzx-5T
  for linux-phy@lists.infradead.org; Fri, 06 May 2022 18:10:58 +0000
 Received: from dude03.red.stw.pengutronix.de ([2a0a:edc0:0:1101:1d::39])
  by metis.ext.pengutronix.de with esmtp (Exim 4.92)
  (envelope-from <l.stach@pengutronix.de>)
- id 1nn2PW-0005VY-7t; Fri, 06 May 2022 20:10:38 +0200
+ id 1nn2PX-0005VY-Mh; Fri, 06 May 2022 20:10:39 +0200
 From: Lucas Stach <l.stach@pengutronix.de>
 To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  dri-devel@lists.freedesktop.org
@@ -42,10 +42,10 @@ Cc: Shawn Guo <shawnguo@kernel.org>,
  Robert Foss <robert.foss@linaro.org>,
  Andrzej Hajda <andrzej.hajda@intel.com>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Subject: [PATCH v0.5 3/9] dt-bindings: display: imx: add binding for i.MX8MP
- HDMI PVI
-Date: Fri,  6 May 2022 20:10:28 +0200
-Message-Id: <20220506181034.2001548-4-l.stach@pengutronix.de>
+Subject: [PATCH v0.5 5/9] dt-bindings: phy: add binding for the i.MX8MP HDMI
+ PHY
+Date: Fri,  6 May 2022 20:10:30 +0200
+Message-Id: <20220506181034.2001548-6-l.stach@pengutronix.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220506181034.2001548-1-l.stach@pengutronix.de>
 References: <20220506181034.2001548-1-l.stach@pengutronix.de>
@@ -56,8 +56,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220506_111054_019300_17AFD52C 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20220506_111054_260283_6083798D 
+X-CRM114-Status: GOOD (  11.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,71 +74,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add binding for the i.MX8MP HDMI parallel video interface block.
+Add a DT binding for the HDMI PHY found on the i.MX8MP SoC.
 
 Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
 ---
- .../display/imx/fsl,imx8mp-hdmi-pvi.yaml      | 83 +++++++++++++++++++
- 1 file changed, 83 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.yaml
+ .../bindings/phy/fsl,imx8mp-hdmi-phy.yaml     | 62 +++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
 
-diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.yaml
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
 new file mode 100644
-index 000000000000..bf25d29c03ab
+index 000000000000..bc21c073e92a
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.yaml
-@@ -0,0 +1,83 @@
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
+@@ -0,0 +1,62 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/display/imx/fsl,imx8mp-hdmi-pvi.yaml#
++$id: http://devicetree.org/schemas/phy/fsl,imx8mp-hdmi-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Freescale i.MX8MP HDMI Parallel Video Interface
++title: Freescale i.MX8MP HDMI PHY binding
 +
 +maintainers:
 +  - Lucas Stach <l.stach@pengutronix.de>
 +
-+description: |
-+  The HDMI parallel video interface is timing and sync generator block in the
-+  i.MX8MP SoC, that sits between the video source and the HDMI TX controller.
-+
 +properties:
 +  compatible:
 +    enum:
-+      - fsl,imx8mp-hdmi-pvi
++      - fsl,imx8mp-hdmi-phy
 +
 +  reg:
 +    maxItems: 1
 +
++  "#clock-cells":
++    const: 0
++
++  clocks:
++    minItems: 2
++    maxItems: 2
++
++  clock-names:
++    items:
++      - const: apb
++      - const: ref
++
++  "#phy-cells":
++    const: 0
++
 +  power-domains:
 +    maxItems: 1
-+
-+  ports:
-+    $ref: /schemas/graph.yaml#/properties/ports
-+    description: |
-+      This device has two video ports.
-+
-+    properties:
-+      port@0:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Input from the LCDIF controller.
-+
-+      port@1:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Output to the HDMI TX controller
-+
-+    anyOf:
-+      - required:
-+          - port@0
-+      - required:
-+          - port@1
 +
 +required:
 +  - compatible
 +  - reg
++  - "#clock-cells"
++  - clocks
++  - clock-names
 +  - power-domains
-+  - ports
 +
 +additionalProperties: false
 +
@@ -147,29 +140,15 @@ index 000000000000..bf25d29c03ab
 +    #include <dt-bindings/clock/imx8mp-clock.h>
 +    #include <dt-bindings/power/imx8mp-power.h>
 +
-+    display-bridge@32fc4000 {
-+        compatible = "fsl,imx8mp-hdmi-pvi";
-+        reg = <0x32fc4000 0x40>;
-+        power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_PVI>;
-+
-+        ports {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            port@0 {
-+                reg = <0>;
-+                pvi_from_lcdif3: endpoint {
-+                    remote-endpoint = <&lcdif3_to_pvi>;
-+                };
-+            };
-+
-+            port@1 {
-+                reg = <1>;
-+                pvi_to_hdmi_tx: endpoint {
-+                    remote-endpoint = <&hdmi_tx_from_pvi>;
-+                };
-+            };
-+        };
++    phy@32fdff00 {
++        compatible = "fsl,imx8mp-hdmi-phy";
++        reg = <0x32fdff00 0x100>;
++        clocks = <&clk IMX8MP_CLK_HDMI_APB>,
++                 <&clk IMX8MP_CLK_HDMI_24M>;
++        clock-names = "apb", "ref";
++        power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_HDMI_TX_PHY>;
++        #clock-cells = <0>;
++        #phy-cells = <0>;
 +    };
 -- 
 2.30.2
