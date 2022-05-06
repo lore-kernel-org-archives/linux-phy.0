@@ -4,91 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF830C4332F
-	for <linux-phy@archiver.kernel.org>; Thu,  5 May 2022 19:06:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E81AC433F5
+	for <linux-phy@archiver.kernel.org>; Fri,  6 May 2022 08:54:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vob3a8HBzoWLBPEN9iFNsuEEYJX3l5LPZzLhAiec2Jc=; b=Sk46PjJ8VjMx0X
-	+bqzKOQxjK5l2rAZGeDWVaKnRXba9UGu+CmBrOsw1w9srbCOt0pnEMYh8VSqDFjVpLktMSXPRUe/d
-	+gvyv3Kdo5Vt7+MlbHia4VuIrZt3QYJWZJWZDJ6PGdDEC6iSUo8a3T8ZB10z2l4NR163s82QeU6Wi
-	3qHxpgzSc6ZiOvMXuSXIQbWzwpYMweByJtxsbU9+IwTU5MnBHC0TpW1o2QQWyu9A7+lDmCwaJs+7E
-	aRHMBpohR4C+l3CztKzS9XGDYYmTbNrdzflevoyNpJSmY4aiE+uCNrK9XYQpxibzBc6VVjV2PVyP8
-	jYoK0t3lsWhaKorMOW0w==;
+	List-Owner; bh=aVxKAqG4bzHCeRHGwzEkwG3LUurgG7oZkm7PVgug2Qs=; b=zs7UOfxo9AwRw0
+	dc3s/7b4Kp/x4xKro2VxJJqlToRgTITCZaz3zZnQlkFs73CYG4Bqj5c+iLoliOm+MENRhQmQweiM2
+	k+qqtZqAWzyvXH+kyoPPAgM9kLvW6eAGdYPzLztFhV1VnAb5wfbdtk3uNiwZ15SjZRdJLUZ4TlQGe
+	owWkmliDVKRBOYggQWohxrRNX0bf3Ko1igncFDIE8OrJCrZ4SGYnFa03nEBtPFDih+uNwNaNsWIMr
+	QHyEjwL01uF6iCMez3XvTVJn3lxR/cku3HENAQS5IxrNPjs/Ob5DicmsixSlIXrzIfIo2p3oop63m
+	In3yV1Da7GmK+CA5JdTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nmgnp-00HSAk-72; Thu, 05 May 2022 19:06:17 +0000
-Received: from mail-oi1-x231.google.com ([2607:f8b0:4864:20::231])
+	id 1nmtit-002DKK-JU; Fri, 06 May 2022 08:54:03 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nmgnn-00HS9T-1R
- for linux-phy@lists.infradead.org; Thu, 05 May 2022 19:06:16 +0000
-Received: by mail-oi1-x231.google.com with SMTP id l16so5295456oil.6
- for <linux-phy@lists.infradead.org>; Thu, 05 May 2022 12:06:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:in-reply-to:references:from:user-agent:date:message-id
- :subject:to:cc;
- bh=D0hIIaQCI/Dh7yD1DKDpvDpYdxU4Kww1YfWBC7PJ66o=;
- b=Y5TZ8gwH28OUdcotbTOTVpcbR4pDhTI/YaqLz24TF+cgaEBsGrcHfKJ6FBpz5fI8YD
- 0ZQoF6vw49X7WRHB1KNIwNnaHPbGRAeoDQ27rWR0fcMzDbA4qQ8IRsYiuu1tu/cgCh6i
- 7ztBLJfvDKa2BhXMW2eS+XrHhX8up86RwTwaI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:in-reply-to:references:from
- :user-agent:date:message-id:subject:to:cc;
- bh=D0hIIaQCI/Dh7yD1DKDpvDpYdxU4Kww1YfWBC7PJ66o=;
- b=UTaAfTCoJlbSDzpjsN5REtXqrb95iFpzZjWfkfJj6ksb+wnWuNHNbTfxA/wAphF6+I
- kUqJzxoJA+6Uwnz2NclmmtYtZyDbPkpBe2Q4YZPBmMBv1/E7fMuI4A8vd/FgIwBfTjZd
- Nv8xPupRvaXFQ57ShwH7etSJQ/RgN9U62zVYOy2hopzSWju455VCSKCKQOmiINavIxn4
- QV4kY6WTV5gM2YO6f6U26ANFkLdU7EQqWylLbdNFtZBWAVjuwsGejBrkdR+R5Hu0dDcf
- lWOyRLlHMx28BHypIufCqqb+nlEL3Ya1/jcgfu4vihQcKgBjPxmv1mKpQhxGdew3eQf/
- lmaA==
-X-Gm-Message-State: AOAM533I+4Nz4mhrXwctePCTwjsciaksoBc0A3p4IvOFlTuBniRW92/O
- GGCj9VV5xNJ7houy/6syuxAwjbaJoPHn/IFv2yioRg==
-X-Google-Smtp-Source: ABdhPJynlWjxd2luIxa71ND0gePgQJv4YZ4ySZIIn/1gXDonkO41PQ/jE3q3+0goFTuJnjQr8o6y5FLtPhweRHmec9s=
-X-Received: by 2002:aca:bd41:0:b0:2ec:ff42:814f with SMTP id
- n62-20020acabd41000000b002ecff42814fmr3286599oif.63.1651777571605; Thu, 05
- May 2022 12:06:11 -0700 (PDT)
-Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Thu, 5 May 2022 15:06:10 -0400
+ id 1nmtih-002DEN-GD; Fri, 06 May 2022 08:53:53 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 64CF7FB03;
+ Fri,  6 May 2022 10:53:45 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id pWt2Bo0FRgjE; Fri,  6 May 2022 10:53:44 +0200 (CEST)
+Date: Fri, 6 May 2022 10:53:39 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <guido.gunther@puri.sm>
+To: Liu Ying <victor.liu@nxp.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, kishon@ti.com,
+ vkoul@kernel.org, robh@kernel.org, krzk@kernel.org,
+ andrzej.hajda@intel.com, narmstrong@baylibre.com,
+ robert.foss@linaro.org, Laurent.pinchart@ideasonboard.com,
+ jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@linux.ie,
+ daniel@ffwll.ch, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, linux-imx@nxp.com,
+ robert.chiras@nxp.com, martin.kepplinger@puri.sm
+Subject: Re: [PATCH resend v8 1/5] drm/bridge: nwl-dsi: Set PHY mode in
+ nwl_dsi_mode_set()
+Message-ID: <YnTiEw5Drg4uHHJw@qwark.sigxcpu.org>
+References: <20220419010852.452169-1-victor.liu@nxp.com>
+ <20220419010852.452169-2-victor.liu@nxp.com>
+ <YmLkv4PYsi+XiFr5@qwark.sigxcpu.org>
+ <538339829534d8ef10c68198016d198a9ec037fc.camel@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <MW4PR02MB71867A18732B266DE8FA2040E1C29@MW4PR02MB7186.namprd02.prod.outlook.com>
-References: <20220425210643.2420919-1-dianders@chromium.org>
- <20220425140619.1.Ibfde5a26a7182c4b478d570c23d2649823ac2cce@changeid>
- <CAE-0n51eZpAKprRQ0HqjLciF_BVQHBDN8SMFNVmmOd=B9UBEzg@mail.gmail.com>
- <CAD=FV=WmVK3wTQf_EAxSi0WPXedSFGCsKdyqRnHsskmMYTHDQA@mail.gmail.com>
- <MW4PR02MB718610FAA14F966ADE1B1585E1C29@MW4PR02MB7186.namprd02.prod.outlook.com>
- <CAE-0n51Q=cGwrMec3JEQENqWHV3pAUjLPT6RwZLA5xV080sgxQ@mail.gmail.com>
- <MW4PR02MB71867A18732B266DE8FA2040E1C29@MW4PR02MB7186.namprd02.prod.outlook.com>
-From: Stephen Boyd <swboyd@chromium.org>
-User-Agent: alot/0.10
-Date: Thu, 5 May 2022 15:06:10 -0400
-Message-ID: <CAE-0n53MEBYhyRtGWOCmjj923UQU_iVE_SEBQw6_FUci8NLz3w@mail.gmail.com>
-Subject: RE: [PATCH 1/2] dt-bindings: msm/dp: List supplies in the bindings
-To: Doug Anderson <dianders@chromium.org>,
- Sankeerth Billakanti <quic_sbillaka@quicinc.com>
-Cc: "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>, 
- "dmitry.baryshkov@linaro.org" <dmitry.baryshkov@linaro.org>,
- Rob Clark <robdclark@chromium.org>, 
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Abhinav Kumar <quic_abhinavk@quicinc.com>, 
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, 
- freedreno <freedreno@lists.freedesktop.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Kalyan Thota <quic_kalyant@quicinc.com>, 
- Kuogee Hsieh <quic_khsieh@quicinc.com>, Daniel Vetter <daniel@ffwll.ch>, 
- David Airlie <airlied@linux.ie>, Rob Clark <robdclark@gmail.com>,
- Sean Paul <sean@poorly.run>, 
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <538339829534d8ef10c68198016d198a9ec037fc.camel@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220505_120615_137384_E58FE73D 
-X-CRM114-Status: GOOD (  16.06  )
+X-CRM114-CacheID: sfid-20220506_015351_735671_445C6F9D 
+X-CRM114-Status: GOOD (  24.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,43 +68,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting Sankeerth Billakanti (QUIC) (2022-05-05 11:47:20)
-> >Quoting Sankeerth Billakanti (2022-05-05 11:02:36)
-> >>
-> >> Our internal power grid documents list the regulators as VDD_A_*_1P2
-> >> and VDD_A_*_0P9 for all the platforms.
-> >
-> >Do your internal power grid documents indicate what these supplies are
-> >powering? The question is if these supplies power any of the logic inside the
-> >eDP controller or if they only supply power to the analog circuits in the eDP
-> >phy. If it's the eDP phy only then the regulator usage in the eDP driver should
-> >be removed. I would suspect this is the case because the controller is
-> >probably all digital logic and runs at the typical 1.8V that the rest of the SoC
-> >uses. Similarly, these are voltage references which sound like a PLL reference
-> >voltage.
-> >
-> >Please clarify this further.
-> >
->
-> For the DP driver using the usb-dp combo phy, there were cases where the usb driver
-> was turning off the phy and pll regulators whenever usb-dp concurrent mode need not be supported.
-> This caused phy and pll to be powered down causing aux transaction failures and display blankouts.
-> From then on, it became a practice for the controller driver to vote for the phy and pll regulators also.
->
+Hi Liu,
+On Fri, Apr 29, 2022 at 08:30:43PM +0800, Liu Ying wrote:
+> Hi,
+> =
 
-That sounds like USB-DP combo phy driver had improper regulator power
-management where aux transactions from DP didn't keep the power on to
-the phy. Where does the power physically go? If the power isn't
-physically going to the DP controller it shouldn't be controlled from
-the DP controller driver. If the aux bus needs the DP phy enabled, the
-DP controller driver should enable the phy power (via phy_power_on()?).
+> On Fri, 2022-04-22 at 19:24 +0200, Guido G=FCnther wrote:
+> > Hi,
+> > On Tue, Apr 19, 2022 at 09:08:48AM +0800, Liu Ying wrote:
+> > > The Northwest Logic MIPI DSI host controller embedded in i.MX8qxp
+> > > works with a Mixel MIPI DPHY + LVDS PHY combo to support either
+> > > a MIPI DSI display or a LVDS display.  So, this patch calls
+> > > phy_set_mode() from nwl_dsi_mode_set() to set PHY mode to MIPI DPHY
+> > > explicitly.
+> > > =
 
--- 
+> > > Cc: Guido G=FCnther <agx@sigxcpu.org>
+> > > Cc: Robert Chiras <robert.chiras@nxp.com>
+> > > Cc: Martin Kepplinger <martin.kepplinger@puri.sm>
+> > > Cc: Andrzej Hajda <andrzej.hajda@intel.com>
+> > > Cc: Neil Armstrong <narmstrong@baylibre.com>
+> > > Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+> > > Cc: Jonas Karlman <jonas@kwiboo.se>
+> > > Cc: Jernej Skrabec <jernej.skrabec@gmail.com>
+> > > Cc: David Airlie <airlied@linux.ie>
+> > > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > > Cc: NXP Linux Team <linux-imx@nxp.com>
+> > > Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> =
+
+> Hope this patch won't fall through the cracks.
+> Can someone please apply it to drm-misc-next? Robert?
+
+Applied to drm-misc-next.
+Cheers,
+ -- Guido
+
+> =
+
+> Thanks,
+> Liu Ying
+> =
+
+> > > ---
+> > > v7->v8:
+> > > * Resend with Andrzej's and Jernej's mail addressed updated.
+> > > =
+
+> > > v6->v7:
+> > > * No change.
+> > > =
+
+> > > v5->v6:
+> > > * Rebase the series upon v5.17-rc1.
+> > > * Set PHY mode in ->mode_set() instead of ->pre_enable() in the
+> > > nwl-dsi
+> > >   bridge driver due to the rebase.
+> > > * Drop Guido's R-b tag due to the rebase.
+> > > =
+
+> > > v4->v5:
+> > > * No change.
+> > > =
+
+> > > v3->v4:
+> > > * No change.
+> > > =
+
+> > > v2->v3:
+> > > * No change.
+> > > =
+
+> > > v1->v2:
+> > > * Add Guido's R-b tag.
+> > > =
+
+> > >  drivers/gpu/drm/bridge/nwl-dsi.c | 6 ++++++
+> > >  1 file changed, 6 insertions(+)
+> > > =
+
+> > > diff --git a/drivers/gpu/drm/bridge/nwl-dsi.c
+> > > b/drivers/gpu/drm/bridge/nwl-dsi.c
+> > > index d5945501a5ee..85bab7372af1 100644
+> > > --- a/drivers/gpu/drm/bridge/nwl-dsi.c
+> > > +++ b/drivers/gpu/drm/bridge/nwl-dsi.c
+> > > @@ -666,6 +666,12 @@ static int nwl_dsi_mode_set(struct nwl_dsi
+> > > *dsi)
+> > >  		return ret;
+> > >  	}
+> > >  =
+
+> > > +	ret =3D phy_set_mode(dsi->phy, PHY_MODE_MIPI_DPHY);
+> > > +	if (ret < 0) {
+> > > +		DRM_DEV_ERROR(dev, "Failed to set DSI phy mode: %d\n",
+> > > ret);
+> > > +		goto uninit_phy;
+> > > +	}
+> > > +
+> > >  	ret =3D phy_configure(dsi->phy, phy_cfg);
+> > >  	if (ret < 0) {
+> > >  		DRM_DEV_ERROR(dev, "Failed to configure DSI phy: %d\n",
+> > > ret);
+> > =
+
+> > I can't currently test this but it still looks good so
+> > =
+
+> > Reviewed-by: Guido G=FCnther <agx@sigxcpu.org>
+> > =
+
+> > Cheers,
+> >  -- Guido
+> > =
+
+> > > -- =
+
+> > > 2.25.1
+> > > =
+
+> =
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
