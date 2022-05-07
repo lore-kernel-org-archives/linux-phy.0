@@ -4,74 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 440A1C433EF
-	for <linux-phy@archiver.kernel.org>; Fri,  6 May 2022 22:40:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46332C433EF
+	for <linux-phy@archiver.kernel.org>; Sat,  7 May 2022 06:06:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fiX1H2CPSXdBjCXGrNJuO/5j1oN/yWubMoN7ABIi1zI=; b=Sa9g9SsmecgIUp
-	mj0lStbxpFacSGvbyCtrw0Jc27Ab4O0CgV4ew2G4fsf3/FyHmqxTwapT9Fl/amCcO8BsTgoQEHEng
-	Q6N7isq1QQcUpTFGvb4TJcZH3kfJ+IPhmktLzYyDUGZ/25Lzt4FAlorZhXPhn9gmGodcMYNvgkIHP
-	Z4tYtS053xnMP4QNznUvZCpeUruDG+IN0KzSf5TCYhc64lkF1UIYO6+K+W33Ejn9jTBh/Z1hjcB42
-	6RYnzZVpNM30xrjSI9vL+uMcH0M4xUdAU/bTXnjc9Wcd36zBhM/RrQ5Yvykf2k2RcmT39BAzoiaOQ
-	qaXVQJ+vYqcP0xUVzRog==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HdBZjgLo3Q3q7iEUUDdx/G9YBYd+iwvQV4otgpr9qLo=; b=XOrN5PHsVaN4sT
+	cw+/1qsrTRYENi03XoY3xmyPWOoeIR1ndIGtl1nstBOB2ZZAkK351FlP0W6ng39u+4XHZXnLVoB3r
+	AfCDIoRk37Y6oOo6YekMKZUD+GBlUAT3B/IkwJ8UoTWucWXgPJ0q4VUqe7l5ejUTtgSHeYVCDHg70
+	MIUU66Ls3jAp80O119jj+KAgabjUTK9Od+OquOyMBuMJbd/VQsgiye80Y991Gd2PilOBOWZp60tpE
+	D5rtvAOAG4DkPc9v9XQUvrjycARCs7oFLSb49apgloGdFo/efih57320GiDvBgoDiYekNFAMgYBZy
+	85ggBMv25v+vgSiAzrHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nn6cm-005EeG-Ds; Fri, 06 May 2022 22:40:36 +0000
-Received: from mail-oi1-f170.google.com ([209.85.167.170])
+	id 1nnDaW-006AIz-B7; Sat, 07 May 2022 06:06:44 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nn6cE-005ERS-Gi; Fri, 06 May 2022 22:40:04 +0000
-Received: by mail-oi1-f170.google.com with SMTP id m25so9040891oih.2;
- Fri, 06 May 2022 15:40:01 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
- :message-id;
- bh=6BDcq2/11wXT5ygpG8JsCxIz2tjuPiA5pRN86PbS0vI=;
- b=nmPWXaWGRiJ81abOJrP07EFcapY3Ni5hi41fIa4YmYqK4T1lncgKiJ4XGv0HC9LqhR
- 5zp5+SMv+VvD4XdreK8vcvSbW1SunDWavX7/9Cs0NfTx6mB0tROEq80g1MYAiWePgToA
- TTCmwPAj8bIKTSZrZ62qkn7gsg55ktzsyBeMx6tqYJBTgWRmYSPm0rV3cfY8WQ1SO3WK
- PQ1/Ll+JZV38U+LvN5/ukj8IpVostkt/zsgJ4QqoL0lEaAeWZPWtPoF2wj9jNdkbMn39
- JR7Ifbh837Jln4plBmvA8N4IvYoIY9XQDiTzc312SFc59G3dK4J0tToR8kbVuIb6sNOQ
- z2qg==
-X-Gm-Message-State: AOAM530t2yGerW656G7y0glLAHsXeHzqysQqjTsB8okDAf3JPlIx9Y8l
- IChJmxfPQ5qRLUGaUiEuiA==
-X-Google-Smtp-Source: ABdhPJykNbPqgTnhxpQ3+9FySStpxKn6CnG4HKiaM88MdReBQJlRzfsjbL84a8XB3b8YS+Vagne/ig==
-X-Received: by 2002:a54:460b:0:b0:322:7964:1b60 with SMTP id
- p11-20020a54460b000000b0032279641b60mr2534634oip.16.1651876801265; 
- Fri, 06 May 2022 15:40:01 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
- [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
- k2-20020a056870570200b000edae17a8cesm2166063oap.3.2022.05.06.15.40.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 May 2022 15:40:00 -0700 (PDT)
-Received: (nullmailer pid 2407417 invoked by uid 1000);
- Fri, 06 May 2022 22:39:53 -0000
-From: Rob Herring <robh@kernel.org>
-To: Lucas Stach <l.stach@pengutronix.de>
-Cc: Marek Vasut <marex@denx.de>, patchwork-lst@pengutronix.de,
- Pengutronix Kernel Team <kernel@pengutronix.de>, devicetree@vger.kernel.org,
- Sandor Yu <Sandor.yu@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Robert Foss <robert.foss@linaro.org>,
- Alexander Stein <alexander.stein@ew.tq-group.com>,
- linux-phy@lists.infradead.org,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- dri-devel@lists.freedesktop.org, NXP Linux Team <linux-imx@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Andrzej Hajda <andrzej.hajda@intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-In-Reply-To: <20220506181034.2001548-6-l.stach@pengutronix.de>
-References: <20220506181034.2001548-1-l.stach@pengutronix.de>
- <20220506181034.2001548-6-l.stach@pengutronix.de>
-Subject: Re: [PATCH v0.5 5/9] dt-bindings: phy: add binding for the i.MX8MP
- HDMI PHY
-Date: Fri, 06 May 2022 17:39:53 -0500
-Message-Id: <1651876793.663191.2407416.nullmailer@robh.at.kernel.org>
+ id 1nnDaT-006AIF-0A; Sat, 07 May 2022 06:06:42 +0000
+X-UUID: 7df2ebcf14544e4ea72e94d804740d18-20220506
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.4, REQID:15b45c2d-1092-4044-8a8d-5edcfc70f9ac, OB:0,
+ LO
+ B:0,IP:0,URL:8,TC:0,Content:-20,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,AC
+ TION:release,TS:-12
+X-CID-META: VersionHash:faefae9, CLOUDID:ebbce8b2-56b5-4c9e-8d83-0070b288eb6a,
+ C
+ OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,File:nil,QS:0,BEC:nil
+X-UUID: 7df2ebcf14544e4ea72e94d804740d18-20220506
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <jianjun.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 559711576; Fri, 06 May 2022 23:06:34 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 6 May 2022 23:06:32 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3; 
+ Sat, 7 May 2022 14:06:31 +0800
+Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Sat, 7 May 2022 14:06:30 +0800
+From: Jianjun Wang <jianjun.wang@mediatek.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Chen-Yu Tsai
+ <wenst@chromium.org>, AngeloGioacchino Del Regno
+ <angelogioacchino.delregno@collabora.com>, Krzysztof Kozlowski
+ <krzk@kernel.org>
+CC: Wei-Shun Chang <weishunc@google.com>, Jianjun Wang
+ <jianjun.wang@mediatek.com>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <rex-bc.chen@mediatek.com>, <randy.wu@mediatek.com>,
+ <jieyy.yang@mediatek.com>, <chuanjia.liu@mediatek.com>,
+ <qizhong.cheng@mediatek.com>, <jian.yang@mediatek.com>
+Subject: [PATCH v8 0/2] phy: mediatek: Add PCIe PHY driver
+Date: Sat, 7 May 2022 14:06:19 +0800
+Message-ID: <20220507060621.32252-1-jianjun.wang@mediatek.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220506_154002_606111_FA875904 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20220506_230641_089562_1A8D8653 
+X-CRM114-Status: GOOD (  11.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,48 +82,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 06 May 2022 20:10:30 +0200, Lucas Stach wrote:
-> Add a DT binding for the HDMI PHY found on the i.MX8MP SoC.
-> 
-> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-> ---
->  .../bindings/phy/fsl,imx8mp-hdmi-phy.yaml     | 62 +++++++++++++++++++
->  1 file changed, 62 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
-> 
+These series patches add support for PCIe PHY driver on MediaTek chipsets.
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+Changes in v8:
+1. Use "device_property_present()" to increase human readability;
+2. Use "GPL" instead of "GPL v2" in MODULE_LICENSE as suggested in
+   checkpatch.pl.
 
-yamllint warnings/errors:
+Changes in v7:
+1. Add bitfield.h header to fix the build error on non-arm64 platforms.
 
-dtschema/dtc warnings/errors:
-Error: Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.example.dts:29.45-46 syntax error
-FATAL ERROR: Unable to parse input tree
-make[1]: *** [scripts/Makefile.lib:364: Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.example.dtb] Error 1
-make[1]: *** Waiting for unfinished jobs....
-make: *** [Makefile:1401: dt_binding_check] Error 2
+Changes in v6:
+1. Remove unnecessary header files;
+2. Use FILELD_PREP in bitfield.h to set value.
 
-doc reference errors (make refcheckdocs):
+Changes in v5:
+1. Fix typo in kerneldoc: "eFues" => "eFuse".
 
-See https://patchwork.ozlabs.org/patch/
+Changes in v4:
+1. Fix no return when calling dev_err_probe.
 
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
+Changes in v3:
+1. Add introductions for structure members;
+2. Add SoC dependent data;
+3. Dynamically allocate efuse data;
+4. Check return value if it's an -EPROBE_DEFER.
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
+Changes in v2:
+1. Add specific compatible name;
+2. Read NVMEM data at probe time;
+3. Fix typos.
 
-pip3 install dtschema --upgrade
+Jianjun Wang (2):
+  dt-bindings: phy: mediatek: Add YAML schema for PCIe PHY
+  phy: mediatek: Add PCIe PHY driver
 
-Please check and re-submit.
+ .../bindings/phy/mediatek,pcie-phy.yaml       |  75 +++++
+ drivers/phy/mediatek/Kconfig                  |  11 +
+ drivers/phy/mediatek/Makefile                 |   1 +
+ drivers/phy/mediatek/phy-mtk-pcie.c           | 267 ++++++++++++++++++
+ 4 files changed, 354 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
+ create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
+
+-- 
+2.18.0
 
 
 -- 
