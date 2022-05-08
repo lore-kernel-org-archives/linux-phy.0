@@ -4,49 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CDC3C433F5
-	for <linux-phy@archiver.kernel.org>; Sun,  8 May 2022 12:12:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6048C433FE
+	for <linux-phy@archiver.kernel.org>; Sun,  8 May 2022 12:12:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yHG/uiIbOD8fOkP69ZDHS7cs6k2scR5Q2NrUco6LK2U=; b=afEkbI0fYM/Ctc
-	ML4ecmG67pSunEanyT4JZF69uu7O1c2WHOSCzEcLf2kWAwmp7xHnmJ3rvNxSSo3P7z4Anc0Vyl3aK
-	OKRr0DN2uGTHrHO2JY6jPru/Uk1Ws4PQDH6DL6YGpcr4dx/aJ7LCTyogySEz/1hEx+xfwpLkw+1Z3
-	ysjpZjJ6XDt0RajVfE5COgwoiOanHFMA9DGbgOtoCGZU+FQLdImeAz+FuPYCwul/MiI6wsnRFJQfu
-	Emo+XmxT1Z5O2nXsEnvdoEfgslcn1JwBsUpmGJ8QWZ8CA/TKz0KINwpzf5zx83mx+uQRKeqAuMg4M
-	2lrOxiexPKEbcyt6poLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KeSJrRcsqXtwe/PHJs6kd6gL77SfYQ4dWjfgj+ugBKU=; b=x50tE/30hvV+Ga
+	3r6P45UT00T5b4vPqOPDyBNY8gbDy5EF6RCrGegbuxWpmICHPS3tDlZMBHXLhXxN/YqqDTJ5oN83P
+	wFyfyxRaNF3XDA8VdPWbkkGczj+N+N3FbkqjN+YzYVRLvF5ErtjYnkgXLXH+PnBRAjjXgFsac/RKY
+	xq52k9Or7Bd7Y8gQq6JY1tDe5Rd1E5OCWNTnUipS+L7K4YsAXfjvqhfeyaRir35UWOCED15dgx4Ae
+	HLBKrWUS0qgSF1XwHU66/CgmONim7jwxAI3+K8r31II8hATx2nQJzSk8xUeD/1GfjOT0dpAdU+pb+
+	zTDfLJgBJplh/uZqtz5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nnfmH-00A5FC-By; Sun, 08 May 2022 12:12:45 +0000
-Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
+	id 1nnfmP-00A5I1-34; Sun, 08 May 2022 12:12:53 +0000
+Received: from alexa-out.qualcomm.com ([129.46.98.28])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nnfmF-00A5EI-2z
- for linux-phy@lists.infradead.org; Sun, 08 May 2022 12:12:44 +0000
+ id 1nnfmL-00A5GC-2d
+ for linux-phy@lists.infradead.org; Sun, 08 May 2022 12:12:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
- t=1652011963; x=1683547963;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=6rnWEHeEX+XKODlHAQn1lzCSCnz29X+Ks2qhyPPDDlk=;
- b=Poy9xiYEE//mWab5QcanUslXoVRfsK6Q8oKtLbb40VxS3RoSJFYVId4k
- UZfT3X8dpFgEvXrycXnndzFQCBBwQFuQTj84EEahc+8qFMR4WqwrNH7HF
- WLvAHxi1o+H13If+zry3stMMFfVymIeFe6VXXbr2y8vnpwdpXfY0yErgr 8=;
-Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
- by alexa-out-sd-01.qualcomm.com with ESMTP; 08 May 2022 05:12:40 -0700
+ t=1652011969; x=1683547969;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version;
+ bh=fnNHJxAPXycISLahZG/ArDLNjEE5mOeO6vA5iZnDJfs=;
+ b=XBNwTc61vvLH2AVZMxNwRIalwdK/bsi5k9jQU7czkEzk5lRem3Yhneo8
+ 4ogOT82oWjzbTNRXRduInSM79bjFynZuIVjJyrYDSbw3TRP6RoB4KEr/r
+ TVj66dOS3H/K8AB4CtVjFqiZTya9L8aO2FjHC61LBlyTJdA73Hw5pch2v Q=;
+Received: from ironmsg09-lv.qualcomm.com ([10.47.202.153])
+ by alexa-out.qualcomm.com with ESMTP; 08 May 2022 05:12:48 -0700
 X-QCInternal: smtphost
 Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
- by ironmsg05-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 08 May 2022 05:12:40 -0700
+ by ironmsg09-lv.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 08 May 2022 05:12:46 -0700
 Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
  nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.22; Sun, 8 May 2022 05:12:39 -0700
+ 15.2.986.22; Sun, 8 May 2022 05:12:46 -0700
 Received: from hu-kriskura-hyd.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.22; Sun, 8 May 2022 05:12:33 -0700
+ 15.2.986.22; Sun, 8 May 2022 05:12:40 -0700
 From: Krishna Kurapati <quic_kriskura@quicinc.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
  <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson
@@ -57,20 +58,22 @@ To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
 CC: <devicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
  <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <linux-phy@lists.infradead.org>, <quic_pkondeti@quicinc.com>,
- <quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>, Krishna Kurapati
- <quic_kriskura@quicinc.com>
-Subject: [v3 0/3] Add QCOM SNPS PHY overriding params support
-Date: Sun, 8 May 2022 17:42:24 +0530
-Message-ID: <1652011947-18575-1-git-send-email-quic_kriskura@quicinc.com>
+ <quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>, Sandeep Maheswaram
+ <quic_c_sanm@quicinc.com>, Krishna Kurapati <quic_kriskura@quicinc.com>
+Subject: [v3 1/3] dt-bindings: phy: qcom,
+ usb-snps-femto-v2: Add phy override params bindings
+Date: Sun, 8 May 2022 17:42:25 +0530
+Message-ID: <1652011947-18575-2-git-send-email-quic_kriskura@quicinc.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1652011947-18575-1-git-send-email-quic_kriskura@quicinc.com>
+References: <1652011947-18575-1-git-send-email-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220508_051243_195331_4D2D440D 
-X-CRM114-Status: UNSURE (   7.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220508_051249_182450_319CEC72 
+X-CRM114-Status: GOOD (  13.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,30 +90,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Added support for overriding tuning parameters in QCOM SNPS PHY
-from device tree.
+From: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
 
-changes in v3:
-Added support for phy tuning paramters to be represented in bps and
-corresponding register values to be written are obtained by traversing
-through data map declared in the driver.
+Add device tree bindings for SNPS phy tuning parameters.
 
-changes in v2:
-Reading the individual fields in each overriding register from device tree.
+Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
+---
+ .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 87 ++++++++++++++++++++++
+ 1 file changed, 87 insertions(+)
 
-Krishna Kurapati (2):
-  phy: qcom-snps: Add support for overriding phy tuning parameters
-  arm64: dts: qcom: sc7280: Update SNPS Phy params for SC7280 IDP device
-
-Sandeep Maheswaram (1):
-  dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy override params
-    bindings
-
- .../bindings/phy/qcom,usb-snps-femto-v2.yaml       |  87 +++++++
- arch/arm64/boot/dts/qcom/sc7280-idp.dtsi           |   6 +
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 252 ++++++++++++++++++++-
- 3 files changed, 343 insertions(+), 2 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+index 1ce251d..6c2ecdd 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+@@ -53,6 +53,93 @@ properties:
+   vdda33-supply:
+     description: phandle to the regulator 3.3V supply node.
+ 
++  qcom,hs-disconnect-bps:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This adjusts the voltage level for the threshold used to
++      detect a disconnect event at the host. Possible values are.
++      The values defined are in multiples of basis points (1bp = 0.01%).
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
++  qcom,squelch-detector-bps:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This adjusts the voltage level for the threshold used to
++      detect valid high-speed data.
++      The values defined are in multiples of basis points (1bp = 0.01%).
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
++  qcom,hs-amplitude-bps:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This adjusts the high-speed DC level voltage.
++      The values defined are in multiples of basis points (1bp = 0.01%).
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
++  qcom,pre-emphasis-duration-bps:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This signal controls the duration for which the
++      HS pre-emphasis current is sourced onto DP<#> or DM<#>.
++      The HS Transmitter pre-emphasis duration is defined in terms of
++      unit amounts. One unit of pre-emphasis duration is approximately
++      650 ps and is defined as 1X pre-emphasis duration.
++      The values defined are in multiples of basis points (1bp = 0.01%).
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
++  qcom,pre-emphasis-amplitude-bps:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This signal controls the amount of current sourced to
++      DP<#> and DM<#> after a J-to-K or K-to-J transition.
++      The HS Transmitter pre-emphasis current is defined in terms of unit
++      amounts. One unit amount is approximately 2 mA and is defined as
++      1X pre-emphasis current.
++      The values defined are in multiples of basis points (1bp = 0.01%).
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
++  qcom,hs-rise-fall-time-bps:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This adjusts the rise/fall times of the high-speed waveform.
++      The values defined are in multiples of basis points (1bp = 0.01%).
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
++  qcom,hs-crossover-voltage:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This adjusts the voltage at which the DP<#> and DM<#>
++      signals cross while transmitting in HS mode.
++      The values defined are in milli volts. The hardware accepts only
++      discrete values. The value closest to the provided input will be
++      chosen as the override value for this param.
++
++  qcom,hs-output-impedance:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      In some applications, there can be significant series resistance
++      on the D+ and D- paths between the transceiver and cable. This adjusts
++      the driver source impedance to compensate for added series
++      resistance on the USB. The values defined are in milliohms.
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
++  qcom,ls-fs-output-impedance-bps:
++    $ref: /schemas/types.yaml#/definitions/int32
++    description:
++      This adjusts the low- and full-speed single-ended source
++      impedance while driving high. The following adjustment values are based
++      on nominal process, voltage, and temperature.
++      The values defined are in multiples of basis points (1bp = 0.01%).
++      The hardware accepts only discrete values. The value closest to the
++      provided input will be chosen as the override value for this param.
++
+ required:
+   - compatible
+   - reg
 -- 
 2.7.4
 
