@@ -4,86 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EB53C433EF
-	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 09:45:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A14DAC433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 12:41:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=epj8amw90bAKALK7YyfhB35Tn9viwwgBoFMiLnykF/Q=; b=joB5TPuNQ8dsbS
-	sD/dCk0rREhl2dy9820KS0ieRNO5m1jZRQKwv2SonupJjUdlCLmDlOhQfQfs1K83ni27J3T2o4mU8
-	quTFME2dMWsDdLwnkdb9QOWVtMSy/pVfVUV/WbmUtp/rFhaG8AHuN7hpDwz5TDp+ZXKXHA9AfCim4
-	hHNwrOdX87N+asL1dnkiMyKCaoIExzNEUWJE7jUmP4EI2KW/YOpdakx4b1eWAdyDY+A1LcAMMIWQW
-	ViZGZ3zSNyFAyIGSoAJjRb+9pFNly23z99c6VU47W+gunMemZ6YEHyuowTcboOK31nLALcz1g34sz
-	aJ8vfBij+PgaR9toT1VQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O5E2CnjM8aovHWAS7gtqEpNAqkkucigN/yPLwWyBhlo=; b=yuCxyfBWxYt1d3
+	V4ufSUKcEZUTvynXKTsbOLIT7eUJMDOGDY/rSxDQi/9TsWhCeLJoTlEIHFt1iJ1ozl8c4cgab6O9X
+	0mQ0jHsVq9pxoF3GVGyTWKgYIOsbs/xT79UR4oBCOZv03sYa6LkvaWEibhztGP5HEe9JdG+VThzs0
+	TYtz0Vu8q4QpL/0e5nRzTD/0JA/rr2lWQAso74fXif4paE3PeJhKP4UJu0fccyGZ9BYICYnZD3kqV
+	F1u2//eecx+gIklges7NmnYhrRMP9moB+v8UQTs0IS/kYMlHH/cQ2BmjqEpRK07be2vlDMGVz4zqm
+	1MXh8goqoiYN/0Zje8Bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nnzwu-00DYjD-SS; Mon, 09 May 2022 09:45:04 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1no2i0-00EQi8-2G; Mon, 09 May 2022 12:41:52 +0000
+Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nnzwf-00DYdX-5U; Mon, 09 May 2022 09:44:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
- t=1652089489; x=1683625489;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=VPe5bQ0AH2k58Lhmif6E/vGhwkVh6E3gGg8UK1RI4KI=;
- b=PelnU0S4VPPqdvgwb1G1kbN//AAq44Jl5nQ+Sk5hqUSRMh2X1R88WPFf
- jrF259c+JysJu4m7qaOmjNZSiD19p/Ih8hpHwSXk3EnzoyvoWmiOaZKFt
- Rras0OtU0K9TEXUgTEV/gW+KI3i3QX4FCqL5YQluLM1UxYO2MORZRJgEF
- LRqMSvsWi5wDbA5btxbpwO8htoALmOHmgBmiYUpZQeySa/cCI6mof9xA5
- T0sKaf+CYHAwTIrK2iXTUFvhHZumWykTD5/A0IR7r2K8IZUZ2r1G30hBN
- 5Qav2q1aG89tqu/HlHjB8YoPFJyic1Bk2BGpcvf4yinIGQ0Nb4QDjbo/7 g==;
-X-IronPort-AV: E=Sophos;i="5.91,211,1647298800"; d="scan'208";a="23749691"
-Received: from unknown (HELO tq-pgp-pr1.tq-net.de) ([192.168.6.15])
- by mx1-pgp.tq-group.com with ESMTP; 09 May 2022 11:44:43 +0200
-Received: from mx1.tq-group.com ([192.168.6.7])
- by tq-pgp-pr1.tq-net.de (PGP Universal service);
- Mon, 09 May 2022 11:44:43 +0200
-X-PGP-Universal: processed;
- by tq-pgp-pr1.tq-net.de on Mon, 09 May 2022 11:44:43 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
- t=1652089483; x=1683625483;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=VPe5bQ0AH2k58Lhmif6E/vGhwkVh6E3gGg8UK1RI4KI=;
- b=HF9WAV9C1P6/xdmxozWgl/PPvOVckycJNxQj3yOj3fAIQXSFg69E/Acz
- PLQvWoOYqAv3fSEQDDrcW4YG90O0bICHl9okbbCpZEPg2i22DZlAZRk/u
- GTrS/7liHoJyvoEfXvx/VQBqvt2xhIgHbGBLXQ8e+k07pdVPtcdPbX2Tj
- +Trexs2Gu482B9ap302r2QF7RsP5hcm20YcfkAh0+qVQnzQxUhM/0GitJ
- nKixUTPAY38Kpy0uJhmzmtQqbBLh8rIkmaWIuTUwY6KR5pXefbn/XSKMZ
- ofxLcLpHCIUsPcve0+4xAI0EceF7eyCbIZQPACWs7ABNCvFrRmFT1RYAf w==;
-X-IronPort-AV: E=Sophos;i="5.91,211,1647298800"; d="scan'208";a="23749690"
-Received: from vtuxmail01.tq-net.de ([10.115.0.20])
- by mx1.tq-group.com with ESMTP; 09 May 2022 11:44:43 +0200
-Received: from steina-w.localnet (unknown [10.123.49.12])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 0504C280070;
- Mon,  9 May 2022 11:44:43 +0200 (CEST)
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Lucas Stach <l.stach@pengutronix.de>
-Cc: Shawn Guo <shawnguo@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>, Marek Vasut <marex@denx.de>,
- patchwork-lst@pengutronix.de, Sandor Yu <Sandor.yu@nxp.com>,
- linux-phy@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Robert Foss <robert.foss@linaro.org>, Andrzej Hajda <andrzej.hajda@intel.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Subject: Re: (EXT) [PATCH v0.5 0/9] i.MX8MP HDMI support
-Date: Mon, 09 May 2022 11:44:42 +0200
-Message-ID: <2112379.Mh6RI2rZIc@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <20220506181034.2001548-1-l.stach@pengutronix.de>
-References: <20220506181034.2001548-1-l.stach@pengutronix.de>
+ id 1no2hv-00EQgC-UY
+ for linux-phy@lists.infradead.org; Mon, 09 May 2022 12:41:51 +0000
+Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed40:8886:2b92:63eb:2922])
+ by andre.telenet-ops.be with bizsmtp
+ id Uchg2700Y0moLbn01chgfJ; Mon, 09 May 2022 14:41:41 +0200
+Received: from rox.of.borg ([192.168.97.57])
+ by ramsan.of.borg with esmtps (TLS1.3) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.93)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1no2ho-003XWs-9j; Mon, 09 May 2022 14:41:40 +0200
+Received: from geert by rox.of.borg with local (Exim 4.93)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1no2hn-003Gm1-S8; Mon, 09 May 2022 14:41:39 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH] dt-bindings: phy: renesas,
+ rcar-gen2-usb-phy: Convert to json-schema
+Date: Mon,  9 May 2022 14:41:38 +0200
+Message-Id: <8e48edc5e7b65f8dfd8b76c583e0265b9b97e62b.1652099944.git.geert+renesas@glider.be>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220509_024449_576664_D279977B 
-X-CRM114-Status: GOOD (  30.96  )
+X-CRM114-CacheID: sfid-20220509_054148_156790_81CBB5C4 
+X-CRM114-Status: GOOD (  21.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,137 +70,292 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Lucas,
+Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
+to json-schema.
 
-Am Freitag, 6. Mai 2022, 20:10:25 CEST schrieb Lucas Stach:
-> second round of the i.MX8MP HDMI work. Still not split up into proper
-> parts for merging through the various trees this needs to go into, but
-> should make it easy for people to test.
-> 
-> I've worked in the feedback I got from the last round, including fixing
-> the system hang that could happen when the drivers were built as modules.
-> 
-> Series is based on linux-next/master, as there are some prerequisite
-> patches in both the drm and imx tree already. The last patch from [1]
-> and the patches from [2] need to be applied. Please note that this series
-> expects the sync polarity from the LCDIF to be set according to the
-> comments I made in [2]. Please test and provide feedback.
+Add missing properties.
+Drop the second example, as it doesn't add any value.
 
-Thanks for the 2nd round of HDMI support patches. Sorry I wasn't able to reply 
-to your questions, but the PLL locking seems to be gone on my system.
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+Validation gives:
 
-I still get the error
-> imx-lcdif 32fc6000.display-controller: Unknown media bus format 0x200f
+    Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.example.dtb: usb
+    -phy@e6590100: '#phy-cells' is a required property
+	    From schema: dt-schema/dtschema/schemas/phy/phy-provider.yaml
 
-To answer the other question on the last patchset
-> Do have a 4k HDMI display connected that wants to do YUV input? That's
-> something I have to admit I didn't test yet and would be likely to
-> cause this bus format selection.
+The latter considers '#phy-cells' a required property, as the node name
+matches "usb-phy".  But in this binding the actual PHY providers are the
+child nodes.
 
-This is a FullHD HDMI monitor, ASUS PB238Q. Apparently the color format is 
-YCBCR422. From what I can see is that 
-dw_hdmi_bridge_atomic_get_output_bus_fmts() adds MEDIA_BUS_FMT_UYVY8_1X16 
-(0x200f) to the output formats. This is then passed to 
-select_bus_fmt_recursive() on the bridge chain. For 0x200f 
-dw_hdmi_bridge_atomic_get_input_bus_fmts() returns 3 input formats with 
-MEDIA_BUS_FMT_UYVY8_1X16 being the 1st.
-Each entry is then probed on pvi_bridge_get_input_bus_fmts(), which just 
-forwards to dw_hdmi_bridge_atomic_get_input_bus_fmts().
-Note: At this point it is only checked whether the input format can be output.
-As 0x200f is supported by dw_hdmi this format will finally be selected, which 
-is not supported by lcdif_kms, resulting in the error message above.
+Is there a way to fix this? Overriding "#phy-cells" to "false" doesn't
+work.
+Should all nodes and child nodes be renamed? The (Linux) driver doesn't
+care about the names of the children.
 
-A quick&dirty hack to workaround is the following diff which just changes the 
-order of the format to be tested:
----8<---
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-@@ -2816,9 +2816,9 @@ static u32 
-*dw_hdmi_bridge_atomic_get_input_bus_fmts(struct drm_bridge *bridge,
-                input_fmts[i++] = MEDIA_BUS_FMT_RGB888_1X24;
-                break;
-        case MEDIA_BUS_FMT_UYVY8_1X16:
-+               input_fmts[i++] = MEDIA_BUS_FMT_RGB888_1X24;
-                input_fmts[i++] = MEDIA_BUS_FMT_UYVY8_1X16;
-                input_fmts[i++] = MEDIA_BUS_FMT_YUV8_1X24;
--               input_fmts[i++] = MEDIA_BUS_FMT_RGB888_1X24;
-                break;
- 
-        /* 10bit */
----8<---
-With this MEDIA_BUS_FMT_RGB888_1X24 is probed 1st (and selected) which 
-actually is supported by lcdif_kms.
+---
+This is the final conversion to json-schema of DT bindings for Renesas
+ARM SoCs, hurray!
 
-For the records, I used this diff for lcdif driver to fix the polarity issue
----8<---
---- a/drivers/gpu/drm/mxsfb/lcdif_kms.c
-+++ b/drivers/gpu/drm/mxsfb/lcdif_kms.c
-@@ -89,12 +89,12 @@ static void lcdif_set_mode(struct lcdif_drm_private 
-*lcdif, u32 bus_flags)
-        struct drm_display_mode *m = &lcdif->crtc.state->adjusted_mode;
-        u32 ctrl = 0;
- 
--       if (m->flags & DRM_MODE_FLAG_PHSYNC)
-+       if (m->flags & DRM_MODE_FLAG_NHSYNC)
-                ctrl |= CTRL_INV_HS;
--       if (m->flags & DRM_MODE_FLAG_PVSYNC)
-+       if (m->flags & DRM_MODE_FLAG_NVSYNC)
-                ctrl |= CTRL_INV_VS;
-        /* Make sure Data Enable is high active by default */
--       if (!(bus_flags & DRM_BUS_FLAG_DE_LOW))
-+       if ((bus_flags & DRM_BUS_FLAG_DE_LOW))
-                ctrl |= CTRL_INV_DE;
-        if (bus_flags & DRM_BUS_FLAG_PIXDATA_DRIVE_NEGEDGE)
-                ctrl |= CTRL_INV_PXCK;
----8<---
+Note that there are still a few plain text bindings left for Renesas IP
+cores that are present on non-Renesas SoCs (nbpfaxi and usdhi6rol0).
+And H8/300 is being removed.
+---
+ .../devicetree/bindings/phy/rcar-gen2-phy.txt | 112 ----------------
+ .../phy/renesas,rcar-gen2-usb-phy.yaml        | 123 ++++++++++++++++++
+ 2 files changed, 123 insertions(+), 112 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
 
-With both changes from above I can see the weston desktop.
-
-Alexander
-
-> [1]
-> https://lore.kernel.org/all/20220406153402.1265474-1-l.stach@pengutronix.de
-> / [2] https://lore.kernel.org/all/20220322142853.125880-1-marex@denx.de/
-> 
-> Lucas Stach (9):
->   dt-bindings: display: imx: add binding for i.MX8MP HDMI TX
->   drm/imx: add bridge wrapper driver for i.MX8MP DWC HDMI
->   dt-bindings: display: imx: add binding for i.MX8MP HDMI PVI
->   drm/imx: add driver for HDMI TX Parallel Video Interface
->   dt-bindings: phy: add binding for the i.MX8MP HDMI PHY
->   phy: freescale: add Samsung HDMI PHY
->   arm64: dts: imx8mp: add HDMI irqsteer
->   arm64: dts: imx8mp: add HDMI display pipeline
->   arm64: dts: imx8mp-evk: enable HDMI
-> 
->  .../display/imx/fsl,imx8mp-hdmi-pvi.yaml      |   83 ++
->  .../bindings/display/imx/fsl,imx8mp-hdmi.yaml |   73 ++
->  .../bindings/phy/fsl,imx8mp-hdmi-phy.yaml     |   62 +
->  arch/arm64/boot/dts/freescale/imx8mp-evk.dts  |   19 +
->  arch/arm64/boot/dts/freescale/imx8mp.dtsi     |   94 ++
->  drivers/gpu/drm/imx/Kconfig                   |    1 +
->  drivers/gpu/drm/imx/Makefile                  |    2 +
->  drivers/gpu/drm/imx/bridge/Kconfig            |   18 +
->  drivers/gpu/drm/imx/bridge/Makefile           |    4 +
->  drivers/gpu/drm/imx/bridge/imx-hdmi-pvi.c     |  201 +++
->  drivers/gpu/drm/imx/bridge/imx-hdmi.c         |  141 +++
->  drivers/phy/freescale/Kconfig                 |    6 +
->  drivers/phy/freescale/Makefile                |    1 +
->  drivers/phy/freescale/phy-fsl-samsung-hdmi.c  | 1078 +++++++++++++++++
->  14 files changed, 1783 insertions(+)
->  create mode 100644
-> Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.yaml
-> create mode 100644
-> Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml create
-> mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
-> create mode 100644 drivers/gpu/drm/imx/bridge/Kconfig
->  create mode 100644 drivers/gpu/drm/imx/bridge/Makefile
->  create mode 100644 drivers/gpu/drm/imx/bridge/imx-hdmi-pvi.c
->  create mode 100644 drivers/gpu/drm/imx/bridge/imx-hdmi.c
->  create mode 100644 drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-
-
-
+diff --git a/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt b/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
+deleted file mode 100644
+index a3bd1c4499b75bdb..0000000000000000
+--- a/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
++++ /dev/null
+@@ -1,112 +0,0 @@
+-* Renesas R-Car generation 2 USB PHY
+-
+-This file provides information on what the device node for the R-Car generation
+-2 USB PHY contains.
+-
+-Required properties:
+-- compatible: "renesas,usb-phy-r8a7742" if the device is a part of R8A7742 SoC.
+-	      "renesas,usb-phy-r8a7743" if the device is a part of R8A7743 SoC.
+-	      "renesas,usb-phy-r8a7744" if the device is a part of R8A7744 SoC.
+-	      "renesas,usb-phy-r8a7745" if the device is a part of R8A7745 SoC.
+-	      "renesas,usb-phy-r8a77470" if the device is a part of R8A77470 SoC.
+-	      "renesas,usb-phy-r8a7790" if the device is a part of R8A7790 SoC.
+-	      "renesas,usb-phy-r8a7791" if the device is a part of R8A7791 SoC.
+-	      "renesas,usb-phy-r8a7794" if the device is a part of R8A7794 SoC.
+-	      "renesas,rcar-gen2-usb-phy" for a generic R-Car Gen2 or
+-					  RZ/G1 compatible device.
+-
+-	      When compatible with the generic version, nodes must list the
+-	      SoC-specific version corresponding to the platform first
+-	      followed by the generic version.
+-
+-- reg: offset and length of the register block.
+-- #address-cells: number of address cells for the USB channel subnodes, must
+-		  be <1>.
+-- #size-cells: number of size cells for the USB channel subnodes, must be <0>.
+-- clocks: clock phandle and specifier pair.
+-- clock-names: string, clock input name, must be "usbhs".
+-
+-The USB PHY device tree node should have the subnodes corresponding to the USB
+-channels. These subnodes must contain the following properties:
+-- reg: the USB controller selector; see the table below for the values.
+-- #phy-cells: see phy-bindings.txt in the same directory, must be <1>.
+-
+-The phandle's argument in the PHY specifier is the USB controller selector for
+-the USB channel other than r8a77470 SoC; see the selector meanings below:
+-
+-+-----------+---------------+---------------+
+-|\ Selector |               |               |
+-+ --------- +       0       |       1       |
+-| Channel  \|               |               |
+-+-----------+---------------+---------------+
+-| 0         | PCI EHCI/OHCI | HS-USB        |
+-| 2         | PCI EHCI/OHCI | xHCI          |
+-+-----------+---------------+---------------+
+-
+-For r8a77470 SoC;see the selector meaning below:
+-
+-+-----------+---------------+---------------+
+-|\ Selector |               |               |
+-+ --------- +       0       |       1       |
+-| Channel  \|               |               |
+-+-----------+---------------+---------------+
+-| 0         | EHCI/OHCI     | HS-USB        |
+-+-----------+---------------+---------------+
+-
+-Example (Lager board):
+-
+-	usb-phy@e6590100 {
+-		compatible = "renesas,usb-phy-r8a7790", "renesas,rcar-gen2-usb-phy";
+-		reg = <0 0xe6590100 0 0x100>;
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		clocks = <&cpg CPG_MOD 704>;
+-		clock-names = "usbhs";
+-		power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
+-		resets = <&cpg 704>;
+-
+-		usb0: usb-channel@0 {
+-			reg = <0>;
+-			#phy-cells = <1>;
+-		};
+-		usb2: usb-channel@2 {
+-			reg = <2>;
+-			#phy-cells = <1>;
+-		};
+-	};
+-
+-Example (iWave RZ/G1C sbc):
+-
+-	usbphy0: usb-phy0@e6590100 {
+-		compatible = "renesas,usb-phy-r8a77470",
+-			     "renesas,rcar-gen2-usb-phy";
+-		reg = <0 0xe6590100 0 0x100>;
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		clocks = <&cpg CPG_MOD 704>;
+-		clock-names = "usbhs";
+-		power-domains = <&sysc R8A77470_PD_ALWAYS_ON>;
+-		resets = <&cpg 704>;
+-
+-		usb0: usb-channel@0 {
+-			reg = <0>;
+-			#phy-cells = <1>;
+-		};
+-	};
+-
+-	usbphy1: usb-phy@e6598100 {
+-		compatible = "renesas,usb-phy-r8a77470",
+-			     "renesas,rcar-gen2-usb-phy";
+-		reg = <0 0xe6598100 0 0x100>;
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		clocks = <&cpg CPG_MOD 706>;
+-		clock-names = "usbhs";
+-		power-domains = <&sysc R8A77470_PD_ALWAYS_ON>;
+-		resets = <&cpg 706>;
+-
+-		usb1: usb-channel@0 {
+-			reg = <0>;
+-			#phy-cells = <1>;
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
+new file mode 100644
+index 0000000000000000..aa2bbc7e35dd4ace
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
+@@ -0,0 +1,123 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/renesas,rcar-gen2-usb-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Renesas R-Car Gen2 USB PHY
++
++maintainers:
++  - Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
++
++properties:
++  compatible:
++    items:
++      - enum:
++          - renesas,usb-phy-r8a7742      # RZ/G1H
++          - renesas,usb-phy-r8a7743      # RZ/G1M
++          - renesas,usb-phy-r8a7744      # RZ/G1N
++          - renesas,usb-phy-r8a7745      # RZ/G1E
++          - renesas,usb-phy-r8a77470     # RZ/G1C
++          - renesas,usb-phy-r8a7790      # R-Car H2
++          - renesas,usb-phy-r8a7791      # R-Car M2-W
++          - renesas,usb-phy-r8a7794      # R-Car E2
++      - const: renesas,rcar-gen2-usb-phy # R-Car Gen2 or RZ/G1
++
++  reg:
++    maxItems: 1
++
++  '#address-cells':
++    const: 1
++
++  '#size-cells':
++    const: 0
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    items:
++      - const: usbhs
++
++  power-domains:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++patternProperties:
++  "^usb-channel@[02]$":
++    type: object
++    description: Subnode corresponding to a USB channel.
++
++    properties:
++      reg:
++        description: FIXME RZ/G1C supports channel 0 only
++        enum: [0, 2]
++
++      '#phy-cells':
++        description: |
++          The phandle's argument in the PHY specifier is the USB controller
++          selector for the USB channel.
++          For RZ/G1C:
++            - 0 for EHCI/OHCI
++            - 1 for HS-USB
++          For all other SoCS:
++            - 0 for PCI EHCI/OHCI
++            - 1 for HS-USB (channel 0) or xHCI (channel 2)
++        const: 1
++
++    required:
++      - reg
++      - '#phy-cells'
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - '#address-cells'
++  - '#size-cells'
++  - clocks
++  - clock-names
++  - resets
++  - power-domains
++  - usb-channel@0
++
++if:
++  properties:
++    compatible:
++      contains:
++        const: renesas,usb-phy-r8a77470
++then:
++  properties:
++    usb-channel@2: false
++else:
++  required:
++    - usb-channel@2
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/r8a7790-cpg-mssr.h>
++    #include <dt-bindings/power/r8a7790-sysc.h>
++    usb-phy@e6590100 {
++        compatible = "renesas,usb-phy-r8a7790", "renesas,rcar-gen2-usb-phy";
++        reg = <0xe6590100 0x100>;
++        #address-cells = <1>;
++        #size-cells = <0>;
++        clocks = <&cpg CPG_MOD 704>;
++        clock-names = "usbhs";
++        power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
++        resets = <&cpg 704>;
++
++        usb0: usb-channel@0 {
++            reg = <0>;
++            #phy-cells = <1>;
++        };
++        usb2: usb-channel@2 {
++            reg = <2>;
++            #phy-cells = <1>;
++        };
++    };
+-- 
+2.25.1
 
 
 -- 
