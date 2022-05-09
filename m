@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A14DAC433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 12:41:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 493A2C433FE
+	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 12:53:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=O5E2CnjM8aovHWAS7gtqEpNAqkkucigN/yPLwWyBhlo=; b=yuCxyfBWxYt1d3
-	V4ufSUKcEZUTvynXKTsbOLIT7eUJMDOGDY/rSxDQi/9TsWhCeLJoTlEIHFt1iJ1ozl8c4cgab6O9X
-	0mQ0jHsVq9pxoF3GVGyTWKgYIOsbs/xT79UR4oBCOZv03sYa6LkvaWEibhztGP5HEe9JdG+VThzs0
-	TYtz0Vu8q4QpL/0e5nRzTD/0JA/rr2lWQAso74fXif4paE3PeJhKP4UJu0fccyGZ9BYICYnZD3kqV
-	F1u2//eecx+gIklges7NmnYhrRMP9moB+v8UQTs0IS/kYMlHH/cQ2BmjqEpRK07be2vlDMGVz4zqm
-	1MXh8goqoiYN/0Zje8Bw==;
+	List-Owner; bh=bXGcTHM8MVhsdy65vYjMo/8GyAO4e5XGTtdhTHamaCw=; b=T8IKzNVP9l3kzJ
+	hb1z1O635EHjErSOHLIYKSBB4EMROGeEaoSr810YjnFC+t9keiSmgdLk03p6WFybaLA3GXxph7fGg
+	v8J/HRAwHLI0giXZadVKfZypOWZ/beXEv5Q3S9z2BJNWAEQw++Dlw22zcJPXFc15YdnHa8hm1csJ8
+	W8csn6p//+OuFFTe66ETQwpy9shcR9ayeDRR5831bNcczpj+yHPESU54krfNWRoPIxeUYu0QVhOTN
+	BE4HdIoaIygd50t9tzoS6oefDwxr4tRR9dwxgsFWzie7IaZshRzIfPkZmt48mSmCmAWXSriD1v9nr
+	zxA+hCZG3nDrGIG1BguQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1no2i0-00EQi8-2G; Mon, 09 May 2022 12:41:52 +0000
-Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
+	id 1no2tT-00EThf-Lw; Mon, 09 May 2022 12:53:43 +0000
+Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1no2hv-00EQgC-UY
- for linux-phy@lists.infradead.org; Mon, 09 May 2022 12:41:51 +0000
+ id 1no2tR-00ETh8-AW
+ for linux-phy@lists.infradead.org; Mon, 09 May 2022 12:53:42 +0000
 Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed40:8886:2b92:63eb:2922])
- by andre.telenet-ops.be with bizsmtp
- id Uchg2700Y0moLbn01chgfJ; Mon, 09 May 2022 14:41:41 +0200
+ by baptiste.telenet-ops.be with bizsmtp
+ id Uctc2700B0moLbn01ctcwb; Mon, 09 May 2022 14:53:37 +0200
 Received: from rox.of.borg ([192.168.97.57])
  by ramsan.of.borg with esmtps (TLS1.3) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.93)
  (envelope-from <geert@linux-m68k.org>)
- id 1no2ho-003XWs-9j; Mon, 09 May 2022 14:41:40 +0200
+ id 1no2tL-003XZG-Tr; Mon, 09 May 2022 14:53:35 +0200
 Received: from geert by rox.of.borg with local (Exim 4.93)
  (envelope-from <geert@linux-m68k.org>)
- id 1no2hn-003Gm1-S8; Mon, 09 May 2022 14:41:39 +0200
+ id 1no2tL-003Jou-3Z; Mon, 09 May 2022 14:53:35 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-renesas-soc@vger.kernel.org,
  Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH] dt-bindings: phy: renesas,
- rcar-gen2-usb-phy: Convert to json-schema
-Date: Mon,  9 May 2022 14:41:38 +0200
-Message-Id: <8e48edc5e7b65f8dfd8b76c583e0265b9b97e62b.1652099944.git.geert+renesas@glider.be>
+Subject: [PATCH] dt-bindings: phy: renesas: usb3-phy: Spelling
+ s/funcional/functional/
+Date: Mon,  9 May 2022 14:53:34 +0200
+Message-Id: <3da9bd360e1c83007af0e0e90fa4e6c2b50fdab3.1652100633.git.geert+renesas@glider.be>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220509_054148_156790_81CBB5C4 
-X-CRM114-Status: GOOD (  21.38  )
+X-CRM114-CacheID: sfid-20220509_055341_537258_8C397A28 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,290 +70,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
-to json-schema.
-
-Add missing properties.
-Drop the second example, as it doesn't add any value.
+Fix a misspelling of the word "functional".
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
-Validation gives:
+ Documentation/devicetree/bindings/phy/renesas,usb3-phy.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-    Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.example.dtb: usb
-    -phy@e6590100: '#phy-cells' is a required property
-	    From schema: dt-schema/dtschema/schemas/phy/phy-provider.yaml
-
-The latter considers '#phy-cells' a required property, as the node name
-matches "usb-phy".  But in this binding the actual PHY providers are the
-child nodes.
-
-Is there a way to fix this? Overriding "#phy-cells" to "false" doesn't
-work.
-Should all nodes and child nodes be renamed? The (Linux) driver doesn't
-care about the names of the children.
-
----
-This is the final conversion to json-schema of DT bindings for Renesas
-ARM SoCs, hurray!
-
-Note that there are still a few plain text bindings left for Renesas IP
-cores that are present on non-Renesas SoCs (nbpfaxi and usdhi6rol0).
-And H8/300 is being removed.
----
- .../devicetree/bindings/phy/rcar-gen2-phy.txt | 112 ----------------
- .../phy/renesas,rcar-gen2-usb-phy.yaml        | 123 ++++++++++++++++++
- 2 files changed, 123 insertions(+), 112 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
-
-diff --git a/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt b/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
-deleted file mode 100644
-index a3bd1c4499b75bdb..0000000000000000
---- a/Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
-+++ /dev/null
-@@ -1,112 +0,0 @@
--* Renesas R-Car generation 2 USB PHY
--
--This file provides information on what the device node for the R-Car generation
--2 USB PHY contains.
--
--Required properties:
--- compatible: "renesas,usb-phy-r8a7742" if the device is a part of R8A7742 SoC.
--	      "renesas,usb-phy-r8a7743" if the device is a part of R8A7743 SoC.
--	      "renesas,usb-phy-r8a7744" if the device is a part of R8A7744 SoC.
--	      "renesas,usb-phy-r8a7745" if the device is a part of R8A7745 SoC.
--	      "renesas,usb-phy-r8a77470" if the device is a part of R8A77470 SoC.
--	      "renesas,usb-phy-r8a7790" if the device is a part of R8A7790 SoC.
--	      "renesas,usb-phy-r8a7791" if the device is a part of R8A7791 SoC.
--	      "renesas,usb-phy-r8a7794" if the device is a part of R8A7794 SoC.
--	      "renesas,rcar-gen2-usb-phy" for a generic R-Car Gen2 or
--					  RZ/G1 compatible device.
--
--	      When compatible with the generic version, nodes must list the
--	      SoC-specific version corresponding to the platform first
--	      followed by the generic version.
--
--- reg: offset and length of the register block.
--- #address-cells: number of address cells for the USB channel subnodes, must
--		  be <1>.
--- #size-cells: number of size cells for the USB channel subnodes, must be <0>.
--- clocks: clock phandle and specifier pair.
--- clock-names: string, clock input name, must be "usbhs".
--
--The USB PHY device tree node should have the subnodes corresponding to the USB
--channels. These subnodes must contain the following properties:
--- reg: the USB controller selector; see the table below for the values.
--- #phy-cells: see phy-bindings.txt in the same directory, must be <1>.
--
--The phandle's argument in the PHY specifier is the USB controller selector for
--the USB channel other than r8a77470 SoC; see the selector meanings below:
--
--+-----------+---------------+---------------+
--|\ Selector |               |               |
--+ --------- +       0       |       1       |
--| Channel  \|               |               |
--+-----------+---------------+---------------+
--| 0         | PCI EHCI/OHCI | HS-USB        |
--| 2         | PCI EHCI/OHCI | xHCI          |
--+-----------+---------------+---------------+
--
--For r8a77470 SoC;see the selector meaning below:
--
--+-----------+---------------+---------------+
--|\ Selector |               |               |
--+ --------- +       0       |       1       |
--| Channel  \|               |               |
--+-----------+---------------+---------------+
--| 0         | EHCI/OHCI     | HS-USB        |
--+-----------+---------------+---------------+
--
--Example (Lager board):
--
--	usb-phy@e6590100 {
--		compatible = "renesas,usb-phy-r8a7790", "renesas,rcar-gen2-usb-phy";
--		reg = <0 0xe6590100 0 0x100>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		clocks = <&cpg CPG_MOD 704>;
--		clock-names = "usbhs";
--		power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
--		resets = <&cpg 704>;
--
--		usb0: usb-channel@0 {
--			reg = <0>;
--			#phy-cells = <1>;
--		};
--		usb2: usb-channel@2 {
--			reg = <2>;
--			#phy-cells = <1>;
--		};
--	};
--
--Example (iWave RZ/G1C sbc):
--
--	usbphy0: usb-phy0@e6590100 {
--		compatible = "renesas,usb-phy-r8a77470",
--			     "renesas,rcar-gen2-usb-phy";
--		reg = <0 0xe6590100 0 0x100>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		clocks = <&cpg CPG_MOD 704>;
--		clock-names = "usbhs";
--		power-domains = <&sysc R8A77470_PD_ALWAYS_ON>;
--		resets = <&cpg 704>;
--
--		usb0: usb-channel@0 {
--			reg = <0>;
--			#phy-cells = <1>;
--		};
--	};
--
--	usbphy1: usb-phy@e6598100 {
--		compatible = "renesas,usb-phy-r8a77470",
--			     "renesas,rcar-gen2-usb-phy";
--		reg = <0 0xe6598100 0 0x100>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		clocks = <&cpg CPG_MOD 706>;
--		clock-names = "usbhs";
--		power-domains = <&sysc R8A77470_PD_ALWAYS_ON>;
--		resets = <&cpg 706>;
--
--		usb1: usb-channel@0 {
--			reg = <0>;
--			#phy-cells = <1>;
--		};
--	};
-diff --git a/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
-new file mode 100644
-index 0000000000000000..aa2bbc7e35dd4ace
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
-@@ -0,0 +1,123 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/renesas,rcar-gen2-usb-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Renesas R-Car Gen2 USB PHY
-+
-+maintainers:
-+  - Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          - renesas,usb-phy-r8a7742      # RZ/G1H
-+          - renesas,usb-phy-r8a7743      # RZ/G1M
-+          - renesas,usb-phy-r8a7744      # RZ/G1N
-+          - renesas,usb-phy-r8a7745      # RZ/G1E
-+          - renesas,usb-phy-r8a77470     # RZ/G1C
-+          - renesas,usb-phy-r8a7790      # R-Car H2
-+          - renesas,usb-phy-r8a7791      # R-Car M2-W
-+          - renesas,usb-phy-r8a7794      # R-Car E2
-+      - const: renesas,rcar-gen2-usb-phy # R-Car Gen2 or RZ/G1
-+
-+  reg:
-+    maxItems: 1
-+
-+  '#address-cells':
-+    const: 1
-+
-+  '#size-cells':
-+    const: 0
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    items:
-+      - const: usbhs
-+
-+  power-domains:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+patternProperties:
-+  "^usb-channel@[02]$":
-+    type: object
-+    description: Subnode corresponding to a USB channel.
-+
-+    properties:
-+      reg:
-+        description: FIXME RZ/G1C supports channel 0 only
-+        enum: [0, 2]
-+
-+      '#phy-cells':
-+        description: |
-+          The phandle's argument in the PHY specifier is the USB controller
-+          selector for the USB channel.
-+          For RZ/G1C:
-+            - 0 for EHCI/OHCI
-+            - 1 for HS-USB
-+          For all other SoCS:
-+            - 0 for PCI EHCI/OHCI
-+            - 1 for HS-USB (channel 0) or xHCI (channel 2)
-+        const: 1
-+
-+    required:
-+      - reg
-+      - '#phy-cells'
-+
-+    additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - '#address-cells'
-+  - '#size-cells'
-+  - clocks
-+  - clock-names
-+  - resets
-+  - power-domains
-+  - usb-channel@0
-+
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        const: renesas,usb-phy-r8a77470
-+then:
-+  properties:
-+    usb-channel@2: false
-+else:
-+  required:
-+    - usb-channel@2
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/r8a7790-cpg-mssr.h>
-+    #include <dt-bindings/power/r8a7790-sysc.h>
-+    usb-phy@e6590100 {
-+        compatible = "renesas,usb-phy-r8a7790", "renesas,rcar-gen2-usb-phy";
-+        reg = <0xe6590100 0x100>;
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        clocks = <&cpg CPG_MOD 704>;
-+        clock-names = "usbhs";
-+        power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
-+        resets = <&cpg 704>;
-+
-+        usb0: usb-channel@0 {
-+            reg = <0>;
-+            #phy-cells = <1>;
-+        };
-+        usb2: usb-channel@2 {
-+            reg = <2>;
-+            #phy-cells = <1>;
-+        };
-+    };
+diff --git a/Documentation/devicetree/bindings/phy/renesas,usb3-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb3-phy.yaml
+index b8483f9edbfc316a..fe57c5373d18a5d5 100644
+--- a/Documentation/devicetree/bindings/phy/renesas,usb3-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/renesas,usb3-phy.yaml
+@@ -34,7 +34,7 @@ properties:
+     # must not be 0.
+     minItems: 2
+     items:
+-      - const: usb3-if # The funcional clock
++      - const: usb3-if # The functional clock
+       - const: usb3s_clk # The usb3's external clock
+       - const: usb_extal # The usb2's external clock
+ 
 -- 
 2.25.1
 
