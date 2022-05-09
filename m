@@ -4,67 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 550F2C433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 01:55:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E344C433EF
+	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 02:53:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5B/5tWig76tu51r0pxkPFQ5mbha5NWy6c/nmOo4CkDU=; b=D9c+lYjH/P/sYU
-	MBP0axsVlSFNKUAac+8PUVoIZx7Y0eCzY4RBHQKrztCslwHxBYoEiFhjnut8vYnc+mRJoPgL7oDlw
-	T4MJzHo3AoiuFwkBZPMVOdhIxd64sGHBxJeAeXwl3Izf2b9DO1I12yh44h/oT7jOnw8/qjxThAjCN
-	+jpfDUCwBSvOvIIbEK4N4iBKMvkvUMTd/tN7qpxzfApQs2RjFJSkuyYBACn3JiSJUTMpx/4A9ZjtV
-	yS1lzXJ7HB8+DZCo2lOObOFpoxNmns00vOHA/5Wb8Vl6YIodKYzRgbCD0M9sllGsrQr1D7fuEs4qK
-	0x9I6+Rt/K+URy3dP0Cw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/+sIRTgALca20vyDUmp7yQJYykDa5YPfzsvvBehZq18=; b=aJ0eaPNeCGrM7x
+	UnGLCtkBjJOC4F2eIYxoiCn77358ZL4ZDLdJb7bB+oCvZ6IgK02tESSUnWPPZDb/wNA4kr4wMAfh6
+	fGMTS60tMeDSmuVBFYwJzGLix3OZSZaNLv1tOPy+2uJ4j/PHQr5/4qa7PfSSI6vq/uTQc7HmvzVJM
+	cbFTCy4iE2m2wVNsIy5S3qdB++cXiwgP77CUmIezkIcY0ykK24QPm1SeTGX1sY8+DWRnAAy1L60d7
+	jjgtVqWuKZI/Xq2bZ7ORI7g6UlyWSFtHGTZ9Fb+48CRPA/zbCN4OUNOu9LPlc2FtL6N9HpzDFUisk
+	Y91pMD++MeNjdhliw28A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nnsc4-00C0sZ-Nf; Mon, 09 May 2022 01:55:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nntWP-00C6C4-L5; Mon, 09 May 2022 02:53:17 +0000
+Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nnsbr-00C0pl-5Y; Mon, 09 May 2022 01:54:54 +0000
-X-UUID: 8c570b0ef5134c0db6e6cc41db7c6bd1-20220508
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.4, REQID:f2b41f93-cce9-43e5-a369-b33ae9f8e468, OB:0,
- LO
- B:0,IP:0,URL:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACT
- ION:release,TS:25
-X-CID-META: VersionHash:faefae9, CLOUDID:ae0b09b3-56b5-4c9e-8d83-0070b288eb6a,
- C
- OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,File:nil,QS:0,BEC:nil
-X-UUID: 8c570b0ef5134c0db6e6cc41db7c6bd1-20220508
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 120135678; Sun, 08 May 2022 18:54:44 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sun, 8 May 2022 18:45:25 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
- Mon, 9 May 2022 09:45:24 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 9 May 2022 09:45:23 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Rob Herring
- <robh+dt@kernel.org>
-CC: Matthias Brugger <matthias.bgg@gmail.com>, Chunfeng Yun
- <chunfeng.yun@mediatek.com>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, Eddie Hung
- <eddie.hung@mediatek.com>, Andrew-CT Chen <andrew-ct.chen@mediatek.com>
-Subject: [PATCH v4] dt-bindings: nvmem: convert mtk-efuse.txt to YAML schema
-Date: Mon, 9 May 2022 09:45:21 +0800
-Message-ID: <20220509014521.10248-1-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.25.1
+ id 1nntWM-00C6BR-Jd
+ for linux-phy@lists.infradead.org; Mon, 09 May 2022 02:53:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
+ t=1652064794; x=1683600794;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=6Wxg3fLn0A0xQwJ99WIYxTRHGTymqsdyy7BxyjO6OG8=;
+ b=FeIVCH1bae0vfiL+0IyiE/DgboeVKquD+wCjOVKynmBzhiWb3RoFrp/h
+ wHlYHUDivw7QShQYInPcqz6mqsSL01Q8gsAip6thl0AIsahcR2KOYsk+Q
+ qeZ1r+C2RQoI+XTHMTYdbTN28HCeknPp+4BEI7PZZtNUdjxE16oYCWEms 0=;
+Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
+ by alexa-out-sd-01.qualcomm.com with ESMTP; 08 May 2022 19:53:09 -0700
+X-QCInternal: smtphost
+Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
+ by ironmsg05-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 08 May 2022 19:53:08 -0700
+Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
+ nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Sun, 8 May 2022 19:53:08 -0700
+Received: from hu-pkondeti-hyd.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Sun, 8 May 2022 19:53:02 -0700
+Date: Mon, 9 May 2022 08:22:58 +0530
+From: Pavan Kondeti <quic_pkondeti@quicinc.com>
+To: Krishna Kurapati <quic_kriskura@quicinc.com>
+CC: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Stephen Boyd <swboyd@chromium.org>, "Doug
+ Anderson" <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+ Wesley Cheng <wcheng@codeaurora.org>, <devicetree@vger.kernel.org>,
+ <linux-arm-msm@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <quic_pkondeti@quicinc.com>, <quic_ppratap@quicinc.com>,
+ <quic_vpulyala@quicinc.com>, Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+Subject: Re: [v3 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
+ override params bindings
+Message-ID: <20220509025258.GH4640@hu-pkondeti-hyd.qualcomm.com>
+References: <1652011947-18575-1-git-send-email-quic_kriskura@quicinc.com>
+ <1652011947-18575-2-git-send-email-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1652011947-18575-2-git-send-email-quic_kriskura@quicinc.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220508_185451_243757_CB261506 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20220508_195314_717036_D44D76F7 
+X-CRM114-Status: GOOD (  17.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,170 +92,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert mtk-efuse.txt to YAML schema mediatek,efuse.yaml
+Hi Krishna,
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v4: fix duplicated unit-address in example;
-    drop reviewed-by Rob, due to changes;
+On Sun, May 08, 2022 at 05:42:25PM +0530, Krishna Kurapati wrote:
+> From: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+> 
+> Add device tree bindings for SNPS phy tuning parameters.
+> 
+> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
+> ---
+>  .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 87 ++++++++++++++++++++++
+>  1 file changed, 87 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> index 1ce251d..6c2ecdd 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> @@ -53,6 +53,93 @@ properties:
+>    vdda33-supply:
+>      description: phandle to the regulator 3.3V supply node.
+>  
 
-v3: add reviewed-by Rob
+<snip>
 
-v2:
-   1. remove description of subnodes which is covered by nvmem.yaml suggested by Rob
-   2. change the example which is commoner than mt8173's
+> +
+> +  qcom,hs-rise-fall-time-bps:
+> +    $ref: /schemas/types.yaml#/definitions/int32
+> +    description:
+> +      This adjusts the rise/fall times of the high-speed waveform.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +
+> +  qcom,hs-crossover-voltage:
+> +    $ref: /schemas/types.yaml#/definitions/int32
+> +    description:
+> +      This adjusts the voltage at which the DP<#> and DM<#>
+> +      signals cross while transmitting in HS mode.
+> +      The values defined are in milli volts. The hardware accepts only
+> +      discrete values. The value closest to the provided input will be
+> +      chosen as the override value for this param.
+> +
+> +  qcom,hs-output-impedance:
+> +    $ref: /schemas/types.yaml#/definitions/int32
+> +    description:
+> +      In some applications, there can be significant series resistance
+> +      on the D+ and D- paths between the transceiver and cable. This adjusts
+> +      the driver source impedance to compensate for added series
+> +      resistance on the USB. The values defined are in milliohms.
 
----
- .../bindings/nvmem/mediatek,efuse.yaml        | 86 +++++++++++++++++++
- .../devicetree/bindings/nvmem/mtk-efuse.txt   | 43 ----------
- 2 files changed, 86 insertions(+), 43 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml
- delete mode 100644 Documentation/devicetree/bindings/nvmem/mtk-efuse.txt
+%s/milliohms/mill ohms
 
-diff --git a/Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml b/Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml
-new file mode 100644
-index 000000000000..abb8b85655fe
---- /dev/null
-+++ b/Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml
-@@ -0,0 +1,86 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/nvmem/mediatek,efuse.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: MediaTek efuse device tree bindings
-+
-+description: |
-+  MediaTek's efuse is used for storing calibration data, it can be accessed
-+  on ARM devices usiong I/O mapped memory.
-+
-+maintainers:
-+  - Andrew-CT Chen <andrew-ct.chen@mediatek.com>
-+
-+allOf:
-+  - $ref: "nvmem.yaml#"
-+
-+properties:
-+  $nodename:
-+    pattern: "^efuse@[0-9a-f]+$"
-+
-+  compatible:
-+    oneOf:
-+      - items:
-+          - enum:
-+              - mediatek,mt7622-efuse
-+              - mediatek,mt7623-efuse
-+              - mediatek,mt8173-efuse
-+              - mediatek,mt8192-efuse
-+              - mediatek,mt8195-efuse
-+              - mediatek,mt8516-efuse
-+          - const: mediatek,efuse
-+      - const: mediatek,mt8173-efuse
-+        deprecated: true
-+
-+  reg:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    efuse@11c10000 {
-+        compatible = "mediatek,mt8195-efuse", "mediatek,efuse";
-+        reg = <0x11c10000 0x1000>;
-+        #address-cells = <1>;
-+        #size-cells = <1>;
-+
-+        u3_tx_imp_p0: usb3-tx-imp@184,1 {
-+            reg = <0x184 0x1>;
-+            bits = <0 5>;
-+        };
-+        u3_rx_imp_p0: usb3-rx-imp@184,2 {
-+            reg = <0x184 0x2>;
-+            bits = <5 5>;
-+        };
-+        u3_intr_p0: usb3-intr@185 {
-+            reg = <0x185 0x1>;
-+            bits = <2 6>;
-+        };
-+        comb_tx_imp_p1: usb3-tx-imp@186,1 {
-+            reg = <0x186 0x1>;
-+            bits = <0 5>;
-+        };
-+        comb_rx_imp_p1: usb3-rx-imp@186,2 {
-+            reg = <0x186 0x2>;
-+            bits = <5 5>;
-+        };
-+        comb_intr_p1: usb3-intr@187 {
-+            reg = <0x187 0x1>;
-+            bits = <2 6>;
-+        };
-+        u2_intr_p0: usb2-intr-p0@188,1 {
-+            reg = <0x188 0x1>;
-+            bits = <0 5>;
-+        };
-+        u2_intr_p1: usb2-intr-p1@188,2 {
-+            reg = <0x188 0x2>;
-+            bits = <5 5>;
-+        };
-+    };
-diff --git a/Documentation/devicetree/bindings/nvmem/mtk-efuse.txt b/Documentation/devicetree/bindings/nvmem/mtk-efuse.txt
-deleted file mode 100644
-index 39d529599444..000000000000
---- a/Documentation/devicetree/bindings/nvmem/mtk-efuse.txt
-+++ /dev/null
-@@ -1,43 +0,0 @@
--= Mediatek MTK-EFUSE device tree bindings =
--
--This binding is intended to represent MTK-EFUSE which is found in most Mediatek SOCs.
--
--Required properties:
--- compatible: should be
--	      "mediatek,mt7622-efuse", "mediatek,efuse": for MT7622
--	      "mediatek,mt7623-efuse", "mediatek,efuse": for MT7623
--	      "mediatek,mt8173-efuse" or "mediatek,efuse": for MT8173
--	      "mediatek,mt8192-efuse", "mediatek,efuse": for MT8192
--	      "mediatek,mt8195-efuse", "mediatek,efuse": for MT8195
--	      "mediatek,mt8516-efuse", "mediatek,efuse": for MT8516
--- reg: Should contain registers location and length
--- bits: contain the bits range by offset and size
--
--= Data cells =
--Are child nodes of MTK-EFUSE, bindings of which as described in
--bindings/nvmem/nvmem.txt
--
--Example:
--
--	efuse: efuse@10206000 {
--		compatible = "mediatek,mt8173-efuse";
--		reg	   = <0 0x10206000 0 0x1000>;
--		#address-cells = <1>;
--		#size-cells = <1>;
--
--		/* Data cells */
--		thermal_calibration: calib@528 {
--			reg = <0x528 0xc>;
--		};
--	};
--
--= Data consumers =
--Are device nodes which consume nvmem data cells.
--
--For example:
--
--	thermal {
--		...
--		nvmem-cells = <&thermal_calibration>;
--		nvmem-cell-names = "calibration";
--	};
--- 
-2.25.1
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +
 
+What are the units for HS crossover voltage and output impedence? can you add
+units as a suffix like other parameters?
+
+Thanks,
+Pavan
 
 -- 
 linux-phy mailing list
