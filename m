@@ -4,64 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE7D1C433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 08:08:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EB53C433EF
+	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 09:45:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Om/UaKkK/fNEbZdkEFnbewhMv8SjWU2ymOPravqY9f0=; b=KpWGWmcl62MIrs
-	YGeogpID4frFCX+vNkr7XlnSsZlI5LSMs5vzEcwE/aTC4yXyFKA8yr0UCvLqibElvf3HOMv7eB88d
-	umHqwU2L+svqyp7rgrTFZg3VYqeKO+30Z+lYbDSbB7gr/LFzQc/qL3UnObK7vqp1xAGlkP0bSGsHO
-	udUmsaBBwU+aLp3smvUpso7Ivhl09yxqSdJIXYuqeyioklpkNYzJSd7xfHgYumkCs8Uvb6vEj5y+A
-	zPoOjVitjo/VR5HO44mV745Fo1KMQkDGQfVmMbgCEiaj+oCnM8uJRSx1x1Wsh4mN5lTTYYkZ7N9wZ
-	dPfnFN4gwYiymLv91S1Q==;
+	List-Owner; bh=epj8amw90bAKALK7YyfhB35Tn9viwwgBoFMiLnykF/Q=; b=joB5TPuNQ8dsbS
+	sD/dCk0rREhl2dy9820KS0ieRNO5m1jZRQKwv2SonupJjUdlCLmDlOhQfQfs1K83ni27J3T2o4mU8
+	quTFME2dMWsDdLwnkdb9QOWVtMSy/pVfVUV/WbmUtp/rFhaG8AHuN7hpDwz5TDp+ZXKXHA9AfCim4
+	hHNwrOdX87N+asL1dnkiMyKCaoIExzNEUWJE7jUmP4EI2KW/YOpdakx4b1eWAdyDY+A1LcAMMIWQW
+	ViZGZ3zSNyFAyIGSoAJjRb+9pFNly23z99c6VU47W+gunMemZ6YEHyuowTcboOK31nLALcz1g34sz
+	aJ8vfBij+PgaR9toT1VQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nnyRY-00D3BN-3G; Mon, 09 May 2022 08:08:36 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1nnzwu-00DYjD-SS; Mon, 09 May 2022 09:45:04 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nnyRM-00D3A9-IY; Mon, 09 May 2022 08:08:26 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: kholk11) with ESMTPSA id CA6D11F43962
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
- s=mail; t=1652083700;
- bh=Ci9YeTkiERXxEyN0uHAckbygOm03b3gSoys0gEWkatg=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=lu6CSgcBkNxkj+rtHKpudaiQFms5D8/IHGzvYxKIceXMeY9ow6WkzNphJXQzVG8/H
- YpIvmIWMc0Lsv+jRPUAQOYH4/qX9Eo6ZW7mfibHFgBQCAg/aVZbqKTbi+m+80VsR3f
- XBSAXXqjI4YIqEl/A3S+eYyOUYdhakyTDvlVx7lapZCuHTGJsrELSEWusIG5LdpcFN
- GQdwqMj8BN+Bg1hRfYiKmi5j1t7bzVn1VJ5T7sNzNmIBoRpCfKkinbu7PGFOwhcF7C
- KxlpzMGUkALypqUucXwngY+oyZwauCCXuYIKIcuA88LxNVU/rN+bnFWnheTFif05o2
- vLPbXmcGVgGEQ==
-Message-ID: <40d49a43-9e90-7af0-5af3-5a61a384e442@collabora.com>
-Date: Mon, 9 May 2022 10:08:16 +0200
+ id 1nnzwf-00DYdX-5U; Mon, 09 May 2022 09:44:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+ t=1652089489; x=1683625489;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version:content-transfer-encoding;
+ bh=VPe5bQ0AH2k58Lhmif6E/vGhwkVh6E3gGg8UK1RI4KI=;
+ b=PelnU0S4VPPqdvgwb1G1kbN//AAq44Jl5nQ+Sk5hqUSRMh2X1R88WPFf
+ jrF259c+JysJu4m7qaOmjNZSiD19p/Ih8hpHwSXk3EnzoyvoWmiOaZKFt
+ Rras0OtU0K9TEXUgTEV/gW+KI3i3QX4FCqL5YQluLM1UxYO2MORZRJgEF
+ LRqMSvsWi5wDbA5btxbpwO8htoALmOHmgBmiYUpZQeySa/cCI6mof9xA5
+ T0sKaf+CYHAwTIrK2iXTUFvhHZumWykTD5/A0IR7r2K8IZUZ2r1G30hBN
+ 5Qav2q1aG89tqu/HlHjB8YoPFJyic1Bk2BGpcvf4yinIGQ0Nb4QDjbo/7 g==;
+X-IronPort-AV: E=Sophos;i="5.91,211,1647298800"; d="scan'208";a="23749691"
+Received: from unknown (HELO tq-pgp-pr1.tq-net.de) ([192.168.6.15])
+ by mx1-pgp.tq-group.com with ESMTP; 09 May 2022 11:44:43 +0200
+Received: from mx1.tq-group.com ([192.168.6.7])
+ by tq-pgp-pr1.tq-net.de (PGP Universal service);
+ Mon, 09 May 2022 11:44:43 +0200
+X-PGP-Universal: processed;
+ by tq-pgp-pr1.tq-net.de on Mon, 09 May 2022 11:44:43 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+ t=1652089483; x=1683625483;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version:content-transfer-encoding;
+ bh=VPe5bQ0AH2k58Lhmif6E/vGhwkVh6E3gGg8UK1RI4KI=;
+ b=HF9WAV9C1P6/xdmxozWgl/PPvOVckycJNxQj3yOj3fAIQXSFg69E/Acz
+ PLQvWoOYqAv3fSEQDDrcW4YG90O0bICHl9okbbCpZEPg2i22DZlAZRk/u
+ GTrS/7liHoJyvoEfXvx/VQBqvt2xhIgHbGBLXQ8e+k07pdVPtcdPbX2Tj
+ +Trexs2Gu482B9ap302r2QF7RsP5hcm20YcfkAh0+qVQnzQxUhM/0GitJ
+ nKixUTPAY38Kpy0uJhmzmtQqbBLh8rIkmaWIuTUwY6KR5pXefbn/XSKMZ
+ ofxLcLpHCIUsPcve0+4xAI0EceF7eyCbIZQPACWs7ABNCvFrRmFT1RYAf w==;
+X-IronPort-AV: E=Sophos;i="5.91,211,1647298800"; d="scan'208";a="23749690"
+Received: from vtuxmail01.tq-net.de ([10.115.0.20])
+ by mx1.tq-group.com with ESMTP; 09 May 2022 11:44:43 +0200
+Received: from steina-w.localnet (unknown [10.123.49.12])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by vtuxmail01.tq-net.de (Postfix) with ESMTPSA id 0504C280070;
+ Mon,  9 May 2022 11:44:43 +0200 (CEST)
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Lucas Stach <l.stach@pengutronix.de>
+Cc: Shawn Guo <shawnguo@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>, Marek Vasut <marex@denx.de>,
+ patchwork-lst@pengutronix.de, Sandor Yu <Sandor.yu@nxp.com>,
+ linux-phy@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Robert Foss <robert.foss@linaro.org>, Andrzej Hajda <andrzej.hajda@intel.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Subject: Re: (EXT) [PATCH v0.5 0/9] i.MX8MP HDMI support
+Date: Mon, 09 May 2022 11:44:42 +0200
+Message-ID: <2112379.Mh6RI2rZIc@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <20220506181034.2001548-1-l.stach@pengutronix.de>
+References: <20220506181034.2001548-1-l.stach@pengutronix.de>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.0
-Subject: Re: [PATCH v8 2/2] phy: mediatek: Add PCIe PHY driver
-Content-Language: en-US
-To: Jianjun Wang <jianjun.wang@mediatek.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Chen-Yu Tsai <wenst@chromium.org>, Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Wei-Shun Chang <weishunc@google.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, rex-bc.chen@mediatek.com,
- randy.wu@mediatek.com, jieyy.yang@mediatek.com, chuanjia.liu@mediatek.com,
- qizhong.cheng@mediatek.com, jian.yang@mediatek.com
-References: <20220507060621.32252-1-jianjun.wang@mediatek.com>
- <20220507060621.32252-3-jianjun.wang@mediatek.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220507060621.32252-3-jianjun.wang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220509_010824_873415_42440251 
-X-CRM114-Status: UNSURE (   6.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220509_024449_576664_D279977B 
+X-CRM114-Status: GOOD (  30.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,17 +95,142 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 07/05/22 08:06, Jianjun Wang ha scritto:
-> Add PCIe GEN3 PHY driver support on MediaTek chipsets.
-> 
-> Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+Hi Lucas,
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Am Freitag, 6. Mai 2022, 20:10:25 CEST schrieb Lucas Stach:
+> second round of the i.MX8MP HDMI work. Still not split up into proper
+> parts for merging through the various trees this needs to go into, but
+> should make it easy for people to test.
+> 
+> I've worked in the feedback I got from the last round, including fixing
+> the system hang that could happen when the drivers were built as modules.
+> 
+> Series is based on linux-next/master, as there are some prerequisite
+> patches in both the drm and imx tree already. The last patch from [1]
+> and the patches from [2] need to be applied. Please note that this series
+> expects the sync polarity from the LCDIF to be set according to the
+> comments I made in [2]. Please test and provide feedback.
+
+Thanks for the 2nd round of HDMI support patches. Sorry I wasn't able to reply 
+to your questions, but the PLL locking seems to be gone on my system.
+
+I still get the error
+> imx-lcdif 32fc6000.display-controller: Unknown media bus format 0x200f
+
+To answer the other question on the last patchset
+> Do have a 4k HDMI display connected that wants to do YUV input? That's
+> something I have to admit I didn't test yet and would be likely to
+> cause this bus format selection.
+
+This is a FullHD HDMI monitor, ASUS PB238Q. Apparently the color format is 
+YCBCR422. From what I can see is that 
+dw_hdmi_bridge_atomic_get_output_bus_fmts() adds MEDIA_BUS_FMT_UYVY8_1X16 
+(0x200f) to the output formats. This is then passed to 
+select_bus_fmt_recursive() on the bridge chain. For 0x200f 
+dw_hdmi_bridge_atomic_get_input_bus_fmts() returns 3 input formats with 
+MEDIA_BUS_FMT_UYVY8_1X16 being the 1st.
+Each entry is then probed on pvi_bridge_get_input_bus_fmts(), which just 
+forwards to dw_hdmi_bridge_atomic_get_input_bus_fmts().
+Note: At this point it is only checked whether the input format can be output.
+As 0x200f is supported by dw_hdmi this format will finally be selected, which 
+is not supported by lcdif_kms, resulting in the error message above.
+
+A quick&dirty hack to workaround is the following diff which just changes the 
+order of the format to be tested:
+---8<---
+--- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
++++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+@@ -2816,9 +2816,9 @@ static u32 
+*dw_hdmi_bridge_atomic_get_input_bus_fmts(struct drm_bridge *bridge,
+                input_fmts[i++] = MEDIA_BUS_FMT_RGB888_1X24;
+                break;
+        case MEDIA_BUS_FMT_UYVY8_1X16:
++               input_fmts[i++] = MEDIA_BUS_FMT_RGB888_1X24;
+                input_fmts[i++] = MEDIA_BUS_FMT_UYVY8_1X16;
+                input_fmts[i++] = MEDIA_BUS_FMT_YUV8_1X24;
+-               input_fmts[i++] = MEDIA_BUS_FMT_RGB888_1X24;
+                break;
+ 
+        /* 10bit */
+---8<---
+With this MEDIA_BUS_FMT_RGB888_1X24 is probed 1st (and selected) which 
+actually is supported by lcdif_kms.
+
+For the records, I used this diff for lcdif driver to fix the polarity issue
+---8<---
+--- a/drivers/gpu/drm/mxsfb/lcdif_kms.c
++++ b/drivers/gpu/drm/mxsfb/lcdif_kms.c
+@@ -89,12 +89,12 @@ static void lcdif_set_mode(struct lcdif_drm_private 
+*lcdif, u32 bus_flags)
+        struct drm_display_mode *m = &lcdif->crtc.state->adjusted_mode;
+        u32 ctrl = 0;
+ 
+-       if (m->flags & DRM_MODE_FLAG_PHSYNC)
++       if (m->flags & DRM_MODE_FLAG_NHSYNC)
+                ctrl |= CTRL_INV_HS;
+-       if (m->flags & DRM_MODE_FLAG_PVSYNC)
++       if (m->flags & DRM_MODE_FLAG_NVSYNC)
+                ctrl |= CTRL_INV_VS;
+        /* Make sure Data Enable is high active by default */
+-       if (!(bus_flags & DRM_BUS_FLAG_DE_LOW))
++       if ((bus_flags & DRM_BUS_FLAG_DE_LOW))
+                ctrl |= CTRL_INV_DE;
+        if (bus_flags & DRM_BUS_FLAG_PIXDATA_DRIVE_NEGEDGE)
+                ctrl |= CTRL_INV_PXCK;
+---8<---
+
+With both changes from above I can see the weston desktop.
+
+Alexander
+
+> [1]
+> https://lore.kernel.org/all/20220406153402.1265474-1-l.stach@pengutronix.de
+> / [2] https://lore.kernel.org/all/20220322142853.125880-1-marex@denx.de/
+> 
+> Lucas Stach (9):
+>   dt-bindings: display: imx: add binding for i.MX8MP HDMI TX
+>   drm/imx: add bridge wrapper driver for i.MX8MP DWC HDMI
+>   dt-bindings: display: imx: add binding for i.MX8MP HDMI PVI
+>   drm/imx: add driver for HDMI TX Parallel Video Interface
+>   dt-bindings: phy: add binding for the i.MX8MP HDMI PHY
+>   phy: freescale: add Samsung HDMI PHY
+>   arm64: dts: imx8mp: add HDMI irqsteer
+>   arm64: dts: imx8mp: add HDMI display pipeline
+>   arm64: dts: imx8mp-evk: enable HDMI
+> 
+>  .../display/imx/fsl,imx8mp-hdmi-pvi.yaml      |   83 ++
+>  .../bindings/display/imx/fsl,imx8mp-hdmi.yaml |   73 ++
+>  .../bindings/phy/fsl,imx8mp-hdmi-phy.yaml     |   62 +
+>  arch/arm64/boot/dts/freescale/imx8mp-evk.dts  |   19 +
+>  arch/arm64/boot/dts/freescale/imx8mp.dtsi     |   94 ++
+>  drivers/gpu/drm/imx/Kconfig                   |    1 +
+>  drivers/gpu/drm/imx/Makefile                  |    2 +
+>  drivers/gpu/drm/imx/bridge/Kconfig            |   18 +
+>  drivers/gpu/drm/imx/bridge/Makefile           |    4 +
+>  drivers/gpu/drm/imx/bridge/imx-hdmi-pvi.c     |  201 +++
+>  drivers/gpu/drm/imx/bridge/imx-hdmi.c         |  141 +++
+>  drivers/phy/freescale/Kconfig                 |    6 +
+>  drivers/phy/freescale/Makefile                |    1 +
+>  drivers/phy/freescale/phy-fsl-samsung-hdmi.c  | 1078 +++++++++++++++++
+>  14 files changed, 1783 insertions(+)
+>  create mode 100644
+> Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi-pvi.yaml
+> create mode 100644
+> Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml create
+> mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8mp-hdmi-phy.yaml
+> create mode 100644 drivers/gpu/drm/imx/bridge/Kconfig
+>  create mode 100644 drivers/gpu/drm/imx/bridge/Makefile
+>  create mode 100644 drivers/gpu/drm/imx/bridge/imx-hdmi-pvi.c
+>  create mode 100644 drivers/gpu/drm/imx/bridge/imx-hdmi.c
+>  create mode 100644 drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+
+
+
 
 
 -- 
