@@ -4,75 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B09B7C433F5
-	for <linux-phy@archiver.kernel.org>; Sun,  8 May 2022 13:24:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EDFFC433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 00:47:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=evokxi0oSGiwYV1HBGMx8z9u8CEk/1vb9PzrMk4dU/A=; b=3rlpWlg8fNdq3y
-	Keb6QQXBiqUICGA7a+K4Eoir0crqeZEksxeL+CYxpCa4WZJJq2zWc3RM3AT1MqHwr/eX64bF0qMte
-	8Un9lyzESHo6UnBWCKw1TPpX8Zhc7nx+MwqLV90qQZU0+a56lPhZdKn/TysFRR46GCEKvwIokZIoN
-	H4GX1MBZ5ccc9Z52/a485VmprGZuf27osJQk9MTkab05VrlVBm3kP5isf7EqW4vMdEtooIopmBb8Z
-	89xLh7TCv7PbCKfsuSIlOilKqMf70FO8EzPbTvU4pZvigGGQIfccQIG4+Azvqv4TJsc6yMO10Wn/7
-	o+p1WpeHuHdNVdlkHV+w==;
+	List-Owner; bh=FrrrvZ+4EtsH3Dd/Pry7oL+EGDOjOGqI4Ep3ohrkq5Q=; b=iXYOLn7MBCjw/t
+	W6oKq2RI6UsqAdK2NE4/LG4tc4Ljjj3bo8qXKLbnUy/LMyEEeuMwnXxqulM/netb9uL+kmIk5GWgY
+	MJyzaWIlKH2mwDNEhTnWzm3WIGT0BM/cr0R9k8edCMyNTdyC6n1eADnqEImPOhBAWF65ghQSXrO8B
+	4UfHLGc1DNob4IzgkwRSHfkFkAyNqF5lIO+P6ezxSJqOJ+Vz7HcZdWYIbJBxRpoSR0N7kVdD6b95g
+	BAyYnHi+1LD/t8QzKY1zCBW+5I1OqaKlWPzcSsMg3LfKc4Mb2NldVmstgRoLcbB3n8/X4OVdsat5M
+	k9ZlrwGMp2CS3szbhe3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nngtD-00AEN9-U4; Sun, 08 May 2022 13:23:59 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1nnrYj-00BsNI-Sh; Mon, 09 May 2022 00:47:33 +0000
+Received: from phobos.denx.de ([85.214.62.61])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nngtA-00AEMQ-E8
- for linux-phy@lists.infradead.org; Sun, 08 May 2022 13:23:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1652016236; x=1683552236;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=psDk1P7wyWAseUdXJBcbmzY0aYvncXmFOfzhn5uJ3xM=;
- b=WHgVS5i9ZOt9++eYXkyvQMsoqRIPgQ+8bfuHKuooRBNW3nHGHN5S/FfK
- KI9p1GPMsl5vLHagsCg+zpnPBaRKZIwIgUHE0P2RyxSVT/0Ix2krH+EGZ
- aw289wTAI3JbCkVtDP6YG+PfWkSgM1Xkpwn2NtGjL1rNxJYEu5uNqehZW
- SGotBAzybvI9Rth0oJJp3WUtf+qJ/8kN0ToHwmxXn/jnZucRxr79UUjpL
- o6QdCBJm1+ktFd8BvyW8XD+f5ciqwu/ZQ9/fVjXEw0JDXpxkTAhEP0k+W
- hTSJxnfOmKJjBKS2fWAVZWD35wyRn5EpAHzNL3b7DxNL3jdH826MoBIow g==;
-X-IronPort-AV: E=McAfee;i="6400,9594,10341"; a="248741901"
-X-IronPort-AV: E=Sophos;i="5.91,208,1647327600"; d="scan'208";a="248741901"
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 08 May 2022 06:23:54 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.91,208,1647327600"; d="scan'208";a="622565927"
-Received: from lkp-server01.sh.intel.com (HELO 5056e131ad90) ([10.239.97.150])
- by fmsmga008.fm.intel.com with ESMTP; 08 May 2022 06:23:50 -0700
-Received: from kbuild by 5056e131ad90 with local (Exim 4.95)
- (envelope-from <lkp@intel.com>) id 1nngt4-000FVH-16;
- Sun, 08 May 2022 13:23:50 +0000
-Date: Sun, 8 May 2022 21:22:50 +0800
-From: kernel test robot <lkp@intel.com>
-To: Krishna Kurapati <quic_kriskura@quicinc.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Stephen Boyd <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>,
- Matthias Kaehlcke <mka@chromium.org>, Wesley Cheng <wcheng@codeaurora.org>
-Cc: kbuild-all@lists.01.org, devicetree@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- quic_pkondeti@quicinc.com, quic_ppratap@quicinc.com,
- quic_vpulyala@quicinc.com, Krishna Kurapati <quic_kriskura@quicinc.com>
-Subject: Re: [v3 2/3] phy: qcom-snps: Add support for overriding phy tuning
- parameters
-Message-ID: <202205082118.cd3B5WOH-lkp@intel.com>
-References: <1652011947-18575-3-git-send-email-quic_kriskura@quicinc.com>
+ id 1nnrYZ-00BsLR-7H; Mon, 09 May 2022 00:47:24 +0000
+Received: from [127.0.0.1] (p578adb1c.dip0.t-ipconnect.de [87.138.219.28])
+ (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: marex@denx.de)
+ by phobos.denx.de (Postfix) with ESMTPSA id 46CE38010E;
+ Mon,  9 May 2022 02:47:17 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=denx.de;
+ s=phobos-20191101; t=1652057238;
+ bh=aaMwZW73eqBNyFeIlh3lkpzFj5DJZEzMGdRfT5LOgxM=;
+ h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+ b=CIYv5V+DJTtrCAyqlV7sAQE5iMHlS/9c1jlQP4UWEWQQaUvJy6rcYSgAmNQkPFYMo
+ S30svEkAncqTboNmRIdXKS9cbdIl0dbc2MaeXMQ1lTwi6IiauuEADXAIQbyPja2EHA
+ invoxsqeNI+FqodhbYvkBKMasv820uGu02VCvEIUU80EgBt6adAmu8LrOWkpwZkaM6
+ HkYbTRzoMF1P8HumNrKsDxOCT4tBEVjqEO2HLWfPlpqFP73p2zXJYcnyGMtcgiwCG6
+ NducV4vgoyRfx4286dSWIuUFzprLwpy2jbM+dOz1GB4a2kLNCF+TZtL4rhC4DvYj1a
+ qAWtB4UolSDwA==
+Message-ID: <1a9a412f-9b3d-022c-f90b-ee46e5beddd1@denx.de>
+Date: Mon, 9 May 2022 02:47:16 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1652011947-18575-3-git-send-email-quic_kriskura@quicinc.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.8.1
+Subject: Re: [PATCH v0.5 6/9] phy: freescale: add Samsung HDMI PHY
+Content-Language: en-US
+To: Lucas Stach <l.stach@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org
+Cc: Shawn Guo <shawnguo@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Alexander Stein <alexander.stein@ew.tq-group.com>,
+ patchwork-lst@pengutronix.de, Sandor Yu <Sandor.yu@nxp.com>,
+ linux-phy@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Robert Foss <robert.foss@linaro.org>, Andrzej Hajda
+ <andrzej.hajda@intel.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+References: <20220506181034.2001548-1-l.stach@pengutronix.de>
+ <20220506181034.2001548-7-l.stach@pengutronix.de>
+From: Marek Vasut <marex@denx.de>
+In-Reply-To: <20220506181034.2001548-7-l.stach@pengutronix.de>
+X-Virus-Scanned: clamav-milter 0.103.5 at phobos.denx.de
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220508_062356_564968_4DDEA990 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20220508_174723_655903_BC0BCFF1 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,70 +80,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krishna,
+[...]
 
-Thank you for the patch! Perhaps something to improve:
+> +static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
+> +{
+> +	struct fsl_samsung_hdmi_phy *phy;
+> +	int ret;
+> +
+> +	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
+> +	if (!phy)
+> +		return -ENOMEM;
+> +
+> +	platform_set_drvdata(pdev, phy);
+> +	phy->dev = &pdev->dev;
+> +
+> +	phy->regs = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(phy->regs))
+> +		return PTR_ERR(phy->regs);
+> +
+> +	phy->apbclk = devm_clk_get(phy->dev, "apb");
+> +	if (IS_ERR(phy->apbclk))
+> +		return dev_err_probe(phy->dev, PTR_ERR(phy->apbclk),
+> +				     "failed to get apb clk\n");
+> +
+> +	phy->refclk = devm_clk_get(phy->dev, "ref");
+> +	if (IS_ERR(phy->refclk))
+> +		return dev_err_probe(phy->dev, PTR_ERR(phy->refclk),
+> +				     "failed to get ref clk\n");
+> +
+> +	ret = clk_prepare_enable(phy->apbclk);
+> +	if (ret) {
+> +		dev_err(phy->dev, "failed to enable apbclk\n");
+> +		return ret;
+> +	}
 
-[auto build test WARNING on robh/for-next]
-[also build test WARNING on krzk/for-next linus/master v5.18-rc5 next-20220506]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Krishna-Kurapati/Add-QCOM-SNPS-PHY-overriding-params-support/20220508-201506
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-config: m68k-allyesconfig (https://download.01.org/0day-ci/archive/20220508/202205082118.cd3B5WOH-lkp@intel.com/config)
-compiler: m68k-linux-gcc (GCC) 11.3.0
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # https://github.com/intel-lab-lkp/linux/commit/4f3771418951e9e3fcb6357959dbd668cdb54fb1
-        git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review Krishna-Kurapati/Add-QCOM-SNPS-PHY-overriding-params-support/20220508-201506
-        git checkout 4f3771418951e9e3fcb6357959dbd668cdb54fb1
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-11.3.0 make.cross W=1 O=build_dir ARCH=m68k SHELL=/bin/bash drivers/phy/
-
-If you fix the issue, kindly add following tag as appropriate
-Reported-by: kernel test robot <lkp@intel.com>
-
-All warnings (new ones prefixed by >>):
-
-   drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c: In function 'phy_read_param_override_seq':
->> drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c:530:33: warning: variable 'hsphy' set but not used [-Wunused-but-set-variable]
-     530 |         struct qcom_snps_hsphy *hsphy;
-         |                                 ^~~~~
-
-
-vim +/hsphy +530 drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-
-   524	
-   525	static void phy_read_param_override_seq(struct device *dev)
-   526	{
-   527		struct device_node *node = dev->of_node;
-   528		s32 val;
-   529		int ret, i;
- > 530		struct qcom_snps_hsphy *hsphy;
-   531		struct override_param_map *cfg = (struct override_param_map* ) of_device_get_match_data(dev);
-   532		hsphy = dev_get_drvdata(dev);
-   533	
-   534		for (i = 0; i < ARRAY_SIZE(phy_seq_props); i++) {
-   535			ret = of_property_read_s32(node, phy_seq_props[i], &val);
-   536			if (!ret)
-   537				hsphy_override_param_update_val(cfg[i], val, &update_seq_cfg[i]);
-   538		}
-   539	}
-   540	
-
--- 
-0-DAY CI Kernel Test Service
-https://01.org/lkp
+dev_err_probe() here too ?
 
 -- 
 linux-phy mailing list
