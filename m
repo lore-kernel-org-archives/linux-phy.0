@@ -4,72 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73BCDC433F5
-	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 00:55:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 550F2C433F5
+	for <linux-phy@archiver.kernel.org>; Mon,  9 May 2022 01:55:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=go3C2sA1iUzOcUX4bkhqyMdiet17f/IqjGPfDG+nmgk=; b=SzBUV9QTxCjMbs
-	Ja+muModPmldoR4s5MZfGOkMdv6DuJt56jUrgTTOkisb7QHpuMQ1+DStgB0jFMQRyhwUwmdVd0KFc
-	eLc2J32E3aj1zS/VktAI85fUSAC5ZZgsn2/0O2oxcz2QQxusaRuBBuxezWoiA0wWEA93aNs7wkurj
-	OJdsrRdbtp7NpjW25endYU3vcyVw+8bL/az8329gFjaDXCRaujinUwBqIQDRfJSoQ+076p5JvqRJB
-	0XYbFcTHMB3M4eSj8xUhG62aiBadonu3mxQxIFRdJ+qUOr28rhtgb/nfIdfia9vEBx6yMVzouTEh6
-	FCvHzFWzTwGRKOPl27mw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5B/5tWig76tu51r0pxkPFQ5mbha5NWy6c/nmOo4CkDU=; b=D9c+lYjH/P/sYU
+	MBP0axsVlSFNKUAac+8PUVoIZx7Y0eCzY4RBHQKrztCslwHxBYoEiFhjnut8vYnc+mRJoPgL7oDlw
+	T4MJzHo3AoiuFwkBZPMVOdhIxd64sGHBxJeAeXwl3Izf2b9DO1I12yh44h/oT7jOnw8/qjxThAjCN
+	+jpfDUCwBSvOvIIbEK4N4iBKMvkvUMTd/tN7qpxzfApQs2RjFJSkuyYBACn3JiSJUTMpx/4A9ZjtV
+	yS1lzXJ7HB8+DZCo2lOObOFpoxNmns00vOHA/5Wb8Vl6YIodKYzRgbCD0M9sllGsrQr1D7fuEs4qK
+	0x9I6+Rt/K+URy3dP0Cw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nnrgC-00BtK5-P9; Mon, 09 May 2022 00:55:16 +0000
-Received: from phobos.denx.de ([2a01:238:438b:c500:173d:9f52:ddab:ee01])
+	id 1nnsc4-00C0sZ-Nf; Mon, 09 May 2022 01:55:04 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nnrg2-00BtHh-51; Mon, 09 May 2022 00:55:07 +0000
-Received: from [127.0.0.1] (p578adb1c.dip0.t-ipconnect.de [87.138.219.28])
- (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: marex@denx.de)
- by phobos.denx.de (Postfix) with ESMTPSA id 4047D83E97;
- Mon,  9 May 2022 02:55:02 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=denx.de;
- s=phobos-20191101; t=1652057703;
- bh=6VbSF+hKaVGBfe+6zzKjUIGGJbomWB66Y/CvZtJaWTM=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=qC8JUB/PuORuk0E3CeclZYfPz/8SR3SskEbBBCknLD7SnxdVSfE1sBarVgWIA0GaA
- EVpNvdWHgLyk14TayIEQ3FVKYXlG7gyYMxeigYNcwGMXGZtBOd4E9WDKRmNsAmVwQU
- p1ruxlDh50YpUyGvM9MtdXilXibyqk7WM1kyCCphDZaZVnBSedgb+EwwSIDi07YpPe
- NzhbGmDS5H5Ip85ikOmzAjzi3yZxWO/Pj9HlsLZDIGDdgXIno72EBdpec45zmlDYic
- MzA4dtaExEcSyE2+8/WU6V9o14oLyAzSaNeU5cCFwf3C4dgI+j7+brwbmIsfEKUZ98
- z5CJxqe7YStsw==
-Message-ID: <df6572a4-82ed-5f55-2297-2c7fe69941fd@denx.de>
-Date: Mon, 9 May 2022 02:55:01 +0200
+ id 1nnsbr-00C0pl-5Y; Mon, 09 May 2022 01:54:54 +0000
+X-UUID: 8c570b0ef5134c0db6e6cc41db7c6bd1-20220508
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.4, REQID:f2b41f93-cce9-43e5-a369-b33ae9f8e468, OB:0,
+ LO
+ B:0,IP:0,URL:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACT
+ ION:release,TS:25
+X-CID-META: VersionHash:faefae9, CLOUDID:ae0b09b3-56b5-4c9e-8d83-0070b288eb6a,
+ C
+ OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,File:nil,QS:0,BEC:nil
+X-UUID: 8c570b0ef5134c0db6e6cc41db7c6bd1-20220508
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 120135678; Sun, 08 May 2022 18:54:44 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 8 May 2022 18:45:25 -0700
+Received: from mtkcas11.mediatek.inc (172.21.101.40) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
+ Mon, 9 May 2022 09:45:24 +0800
+Received: from localhost.localdomain (10.17.3.154) by mtkcas11.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 9 May 2022 09:45:23 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>
+CC: Matthias Brugger <matthias.bgg@gmail.com>, Chunfeng Yun
+ <chunfeng.yun@mediatek.com>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, Eddie Hung
+ <eddie.hung@mediatek.com>, Andrew-CT Chen <andrew-ct.chen@mediatek.com>
+Subject: [PATCH v4] dt-bindings: nvmem: convert mtk-efuse.txt to YAML schema
+Date: Mon, 9 May 2022 09:45:21 +0800
+Message-ID: <20220509014521.10248-1-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.1
-Subject: Re: [PATCH v0.5 1/9] dt-bindings: display: imx: add binding for
- i.MX8MP HDMI TX
-Content-Language: en-US
-To: Lucas Stach <l.stach@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org
-Cc: Shawn Guo <shawnguo@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Alexander Stein <alexander.stein@ew.tq-group.com>,
- patchwork-lst@pengutronix.de, Sandor Yu <Sandor.yu@nxp.com>,
- linux-phy@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Robert Foss <robert.foss@linaro.org>, Andrzej Hajda
- <andrzej.hajda@intel.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-References: <20220506181034.2001548-1-l.stach@pengutronix.de>
- <20220506181034.2001548-2-l.stach@pengutronix.de>
-From: Marek Vasut <marex@denx.de>
-In-Reply-To: <20220506181034.2001548-2-l.stach@pengutronix.de>
-X-Virus-Scanned: clamav-milter 0.103.5 at phobos.denx.de
-X-Virus-Status: Clean
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220508_175506_394203_19475E14 
-X-CRM114-Status: UNSURE (   5.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220508_185451_243757_CB261506 
+X-CRM114-Status: GOOD (  14.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,20 +76,175 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/6/22 20:10, Lucas Stach wrote:
-> The HDMI TX controller on the i.MX8MP SoC is a Synopsys designware IP
-> core with a little bit of SoC integration around it.
+Convert mtk-efuse.txt to YAML schema mediatek,efuse.yaml
 
-You can add
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v4: fix duplicated unit-address in example;
+    drop reviewed-by Rob, due to changes;
 
-Tested-by: Marek Vasut <marex@denx.de>
+v3: add reviewed-by Rob
 
-to the entire series.
+v2:
+   1. remove description of subnodes which is covered by nvmem.yaml suggested by Rob
+   2. change the example which is commoner than mt8173's
+
+---
+ .../bindings/nvmem/mediatek,efuse.yaml        | 86 +++++++++++++++++++
+ .../devicetree/bindings/nvmem/mtk-efuse.txt   | 43 ----------
+ 2 files changed, 86 insertions(+), 43 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml
+ delete mode 100644 Documentation/devicetree/bindings/nvmem/mtk-efuse.txt
+
+diff --git a/Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml b/Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml
+new file mode 100644
+index 000000000000..abb8b85655fe
+--- /dev/null
++++ b/Documentation/devicetree/bindings/nvmem/mediatek,efuse.yaml
+@@ -0,0 +1,86 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/nvmem/mediatek,efuse.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MediaTek efuse device tree bindings
++
++description: |
++  MediaTek's efuse is used for storing calibration data, it can be accessed
++  on ARM devices usiong I/O mapped memory.
++
++maintainers:
++  - Andrew-CT Chen <andrew-ct.chen@mediatek.com>
++
++allOf:
++  - $ref: "nvmem.yaml#"
++
++properties:
++  $nodename:
++    pattern: "^efuse@[0-9a-f]+$"
++
++  compatible:
++    oneOf:
++      - items:
++          - enum:
++              - mediatek,mt7622-efuse
++              - mediatek,mt7623-efuse
++              - mediatek,mt8173-efuse
++              - mediatek,mt8192-efuse
++              - mediatek,mt8195-efuse
++              - mediatek,mt8516-efuse
++          - const: mediatek,efuse
++      - const: mediatek,mt8173-efuse
++        deprecated: true
++
++  reg:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    efuse@11c10000 {
++        compatible = "mediatek,mt8195-efuse", "mediatek,efuse";
++        reg = <0x11c10000 0x1000>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++
++        u3_tx_imp_p0: usb3-tx-imp@184,1 {
++            reg = <0x184 0x1>;
++            bits = <0 5>;
++        };
++        u3_rx_imp_p0: usb3-rx-imp@184,2 {
++            reg = <0x184 0x2>;
++            bits = <5 5>;
++        };
++        u3_intr_p0: usb3-intr@185 {
++            reg = <0x185 0x1>;
++            bits = <2 6>;
++        };
++        comb_tx_imp_p1: usb3-tx-imp@186,1 {
++            reg = <0x186 0x1>;
++            bits = <0 5>;
++        };
++        comb_rx_imp_p1: usb3-rx-imp@186,2 {
++            reg = <0x186 0x2>;
++            bits = <5 5>;
++        };
++        comb_intr_p1: usb3-intr@187 {
++            reg = <0x187 0x1>;
++            bits = <2 6>;
++        };
++        u2_intr_p0: usb2-intr-p0@188,1 {
++            reg = <0x188 0x1>;
++            bits = <0 5>;
++        };
++        u2_intr_p1: usb2-intr-p1@188,2 {
++            reg = <0x188 0x2>;
++            bits = <5 5>;
++        };
++    };
+diff --git a/Documentation/devicetree/bindings/nvmem/mtk-efuse.txt b/Documentation/devicetree/bindings/nvmem/mtk-efuse.txt
+deleted file mode 100644
+index 39d529599444..000000000000
+--- a/Documentation/devicetree/bindings/nvmem/mtk-efuse.txt
++++ /dev/null
+@@ -1,43 +0,0 @@
+-= Mediatek MTK-EFUSE device tree bindings =
+-
+-This binding is intended to represent MTK-EFUSE which is found in most Mediatek SOCs.
+-
+-Required properties:
+-- compatible: should be
+-	      "mediatek,mt7622-efuse", "mediatek,efuse": for MT7622
+-	      "mediatek,mt7623-efuse", "mediatek,efuse": for MT7623
+-	      "mediatek,mt8173-efuse" or "mediatek,efuse": for MT8173
+-	      "mediatek,mt8192-efuse", "mediatek,efuse": for MT8192
+-	      "mediatek,mt8195-efuse", "mediatek,efuse": for MT8195
+-	      "mediatek,mt8516-efuse", "mediatek,efuse": for MT8516
+-- reg: Should contain registers location and length
+-- bits: contain the bits range by offset and size
+-
+-= Data cells =
+-Are child nodes of MTK-EFUSE, bindings of which as described in
+-bindings/nvmem/nvmem.txt
+-
+-Example:
+-
+-	efuse: efuse@10206000 {
+-		compatible = "mediatek,mt8173-efuse";
+-		reg	   = <0 0x10206000 0 0x1000>;
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-
+-		/* Data cells */
+-		thermal_calibration: calib@528 {
+-			reg = <0x528 0xc>;
+-		};
+-	};
+-
+-= Data consumers =
+-Are device nodes which consume nvmem data cells.
+-
+-For example:
+-
+-	thermal {
+-		...
+-		nvmem-cells = <&thermal_calibration>;
+-		nvmem-cell-names = "calibration";
+-	};
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
