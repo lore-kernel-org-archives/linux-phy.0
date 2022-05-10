@@ -4,79 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 277EFC4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 10 May 2022 17:35:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AC30C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 10 May 2022 18:13:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sWL1GQN/7jxOUGLEfXjv36LtMy4gaGR2aUCYphJU7r8=; b=dmuCurrQiPzrdt
-	X2yIaO0D3zqPxEYENsdMaL07h01PVIs36sZX504z4pG4VOcVBUVEh34kI2Chj/jlOfNWoQPL4RFpB
-	e98r5aTe4Zn1Iw3i0Kjb5vtXXhRtkiPdTcRIpL+QTkUKFMmlAhfuIlEPHOu5+VMW6aAD3+mE8cA5e
-	zpd/l5ymr7P6FkWilM7N9sQrxk/OCh1S7AMOqyJVtuw26+Miqhl/tdiLE2nYYL/KN8n+9AX6dZLNS
-	/p68jNPunZrK5cC9xVmnvjip2+JtgA2d0hQmxYPt5Lt/L7Kjo7Nbje0P0Sr6UuVuMfGTRs4WdSy2S
-	1GY9N9X38tCSXGBkt+jA==;
+	List-Owner; bh=bkGzAZZ0eThJBK/ep/mF1kHyIYHZaF6A9uQdTmL/1jU=; b=GUVeZ3/+ApeSII
+	cTlzKkbhpOPFdH/Ab5m73r6vANHlOxDNOe2/Q2Pgi+UMU2hRFXjtfiucKZZzAxHIdjulBDX3d62ZL
+	OPaNuVgRWRFvqPi8R3rQS+Yf9DMm2GACQgVOub0jItJRDkCxrO6hGu9JmmKRkpK4zYlUzd0Fd2QHO
+	IgNcseT12gi1gutL04WGR9+Pcth6Z+83Ck3wKnm/BwWswSKN+vCn3gA3gc8relqqP/DQ+e94wq6j+
+	AiVxqoqPbfKL6BW4BUqBu3h6AlXyrQm8boRhF3g/xxNUbGxoVAJUF6QGndePQXlcNA2eWN007e+7z
+	NyxIvGOUY4DenqeRmhWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1noTm9-003SZH-GO; Tue, 10 May 2022 17:35:57 +0000
-Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
+	id 1noUM1-003YGj-Lv; Tue, 10 May 2022 18:13:01 +0000
+Received: from mail-oo1-f44.google.com ([209.85.161.44])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1noTm5-003SXR-4s
- for linux-phy@lists.infradead.org; Tue, 10 May 2022 17:35:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
- t=1652204153; x=1683740153;
- h=message-id:date:mime-version:subject:to:cc:references:
- from:in-reply-to:content-transfer-encoding;
- bh=r8ZcV1vuUcmf0/igLjZxMrCayIbyMQkN9WHg1UvKdEo=;
- b=G7dRNKVFa30ytU44Y9h0fTme10Y/LSMkJzKcUt3vrqS5kvJ1ot/oS8mZ
- FdwNDsu6Cn1H3JmmGfHPWY+LK8TlsuVu1oTLF2NOLA3Fq6bwSUVqjkqyb
- v9HldPJigTu4WYX8kbnwMwlawXHqkUuliP9tuzayxBivShHrLVACJegkm Q=;
-Received: from unknown (HELO ironmsg04-sd.qualcomm.com) ([10.53.140.144])
- by alexa-out-sd-01.qualcomm.com with ESMTP; 10 May 2022 10:35:52 -0700
-X-QCInternal: smtphost
-Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
- by ironmsg04-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 10 May 2022 10:35:51 -0700
-Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
- nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.22; Tue, 10 May 2022 10:35:51 -0700
-Received: from [10.216.55.79] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Tue, 10 May
- 2022 10:35:45 -0700
-Message-ID: <7ef88262-4292-3077-00a1-dc06b2483b10@quicinc.com>
-Date: Tue, 10 May 2022 23:05:42 +0530
+ id 1noULq-003YDT-Q5; Tue, 10 May 2022 18:12:52 +0000
+Received: by mail-oo1-f44.google.com with SMTP id
+ q73-20020a4a334c000000b0035eb110dd0dso3526330ooq.10; 
+ Tue, 10 May 2022 11:12:46 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=HmymxRR+ksr9VrQPHV790/Jh7jRadzKxsCWOza1c70w=;
+ b=mFlXN8PNes059HuwY7iGRACJHQJPEoCd377awWRN0E+/5riDru9JqQ6JsovLyhPOyI
+ pOCu8pmXaZ0twUiW/bqDi8K6Oh7Sh9vnxAntmqvjI6r8udYGUjdT0pfGpIF9s2bAXOFe
+ 8hMiAsxaMF6FNYUPVTcwSw7RzPqMx1OsUDt0q8wZl6bgf9ZjjC5aLrFGy+2i3oZVnsIs
+ NnAkNLZYeX3YtHQuhv03gK0KvrFnILPFn7EVebfml+KYM81890gkn4qet5qOt/Trb1RY
+ k7d6WMn4gu22R2zePjrRlm+1bMW/KVZKeTsdKrzuwIoELqvAnIJEoV15tF4CTXOTifCj
+ i4eg==
+X-Gm-Message-State: AOAM531YRcvz3hwhuUD/mMGm3NNeVj5wl5e5TnIbM1HIWMLKK5nA7RAU
+ hqodCGQyMfwLsFonEXiOWw==
+X-Google-Smtp-Source: ABdhPJxAzmwoJIZQQ8eXmfS+c3bMoePPmVC7M/trAZdarHcHlNBnbpOTvXUdIKQcdPb4hVHPegPFiw==
+X-Received: by 2002:a9d:3b5:0:b0:603:f8ac:a780 with SMTP id
+ f50-20020a9d03b5000000b00603f8aca780mr8170434otf.26.1652206366306; 
+ Tue, 10 May 2022 11:12:46 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
+ [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
+ p1-20020a0568301d4100b0060603221270sm5895979oth.64.2022.05.10.11.12.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 May 2022 11:12:45 -0700 (PDT)
+Received: (nullmailer pid 2316486 invoked by uid 1000);
+ Tue, 10 May 2022 18:12:45 -0000
+Date: Tue, 10 May 2022 13:12:44 -0500
+From: Rob Herring <robh@kernel.org>
+To: Lucas Stach <l.stach@pengutronix.de>
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Shawn Guo <shawnguo@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Alexander Stein <alexander.stein@ew.tq-group.com>, Marek Vasut <marex@denx.de>,
+ patchwork-lst@pengutronix.de, Sandor Yu <Sandor.yu@nxp.com>,
+ linux-phy@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Robert Foss <robert.foss@linaro.org>, Andrzej Hajda <andrzej.hajda@intel.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Subject: Re: [PATCH v0.5 1/9] dt-bindings: display: imx: add binding for
+ i.MX8MP HDMI TX
+Message-ID: <YnqrHDi6yBT/d9PK@robh.at.kernel.org>
+References: <20220506181034.2001548-1-l.stach@pengutronix.de>
+ <20220506181034.2001548-2-l.stach@pengutronix.de>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Subject: Re: [v3 3/3] arm64: dts: qcom: sc7280: Update SNPS Phy params for
- SC7280 IDP device
-Content-Language: en-US
-To: Pavan Kondeti <quic_pkondeti@quicinc.com>
-CC: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
- <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Stephen Boyd <swboyd@chromium.org>, "Doug
- Anderson" <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- Wesley Cheng <wcheng@codeaurora.org>, <devicetree@vger.kernel.org>,
- <linux-arm-msm@vger.kernel.org>, <linux-usb@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>
-References: <1652011947-18575-1-git-send-email-quic_kriskura@quicinc.com>
- <1652011947-18575-4-git-send-email-quic_kriskura@quicinc.com>
- <20220509032005.GJ4640@hu-pkondeti-hyd.qualcomm.com>
-From: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>
-In-Reply-To: <20220509032005.GJ4640@hu-pkondeti-hyd.qualcomm.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+Content-Disposition: inline
+In-Reply-To: <20220506181034.2001548-2-l.stach@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220510_103553_280302_939D5E9B 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20220510_111250_888042_BA223F5A 
+X-CRM114-Status: GOOD (  16.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,49 +85,107 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, May 06, 2022 at 08:10:26PM +0200, Lucas Stach wrote:
+> The HDMI TX controller on the i.MX8MP SoC is a Synopsys designware IP
+> core with a little bit of SoC integration around it.
+> 
+> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> ---
+>  .../bindings/display/imx/fsl,imx8mp-hdmi.yaml | 73 +++++++++++++++++++
+>  1 file changed, 73 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml
+> new file mode 100644
+> index 000000000000..bd9a2b135176
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8mp-hdmi.yaml
+> @@ -0,0 +1,73 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/imx/fsl,imx8mp-hdmi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX8MP DWC HDMI TX Encoder
+> +
+> +maintainers:
+> +  - Lucas Stach <l.stach@pengutronix.de>
+> +
+> +description: |
+> +  The HDMI transmitter is a Synopsys DesignWare HDMI 2.0 TX controller IP.
+> +
+> +allOf:
+> +  - $ref: ../bridge/synopsys,dw-hdmi.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,imx8mp-hdmi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  reg-io-width:
+> +    const: 1
+> +
+> +  clocks:
+> +    maxItems: 5
+> +
+> +  clock-names:
+> +    items:
+> +      - {}
+> +      - {}
+> +      - const: cec
+> +      - const: pix
+> +      - const: fdcc 
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - interrupts
+> +  - power-domains
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    #include <dt-bindings/clock/imx8mp-clock.h>
+> +    #include <dt-bindings/power/imx8mp-power.h>
+> +
+> +    hdmi@32fd8000 {
+> +        compatible = "fsl,imx8mp-hdmi";
+> +        reg = <0x32fd8000 0x7eff>;
+> +        interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+> +        clocks = <&clk IMX8MP_CLK_HDMI_APB>,
+> +                 <&clk IMX8MP_CLK_HDMI_REF_266M>,
+> +                 <&clk IMX8MP_CLK_32K>,
+> +                 <&hdmi_tx_phy>;
+> +        clock-names = "iahb", "isfr", "cec", "pix";
 
-On 5/9/2022 8:50 AM, Pavan Kondeti wrote:
-> Hi Krishna,
->
-> On Sun, May 08, 2022 at 05:42:27PM +0530, Krishna Kurapati wrote:
->> Overriding the SNPS Phy tuning parameters for SC7280 IDP device.
->>
->> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
->> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
->> ---
->>   arch/arm64/boot/dts/qcom/sc7280-idp.dtsi | 6 ++++++
->>   1 file changed, 6 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi b/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi
->> index 5eb6689..ad85ffb 100644
->> --- a/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/sc7280-idp.dtsi
->> @@ -325,6 +325,12 @@
->>   	vdda-pll-supply = <&vreg_l10c_0p8>;
->>   	vdda33-supply = <&vreg_l2b_3p0>;
->>   	vdda18-supply = <&vreg_l1c_1p8>;
->> +	qcom,hs-rise-fall-time-bps = <0>;
->> +	qcom,squelch-detector-bps = <(-2090)>;
->> +	qcom,hs-disconnect-bps = <1743>;
->> +	qcom,hs-amplitude-bps = <1780>;
->> +	qcom,hs-crossover-voltage = <(-31)>;
->> +	qcom,hs-output-impedance = <2600>;
->>   };
-> Is this an example change or do we see any HS electrical compliance failures
-> on SC7280 IDP that will get fixed with these override sequence?
->
-> Thanks,
-> Pavan
+The schema says there are 5 entries.
 
-Hi Pavan,
-
-These results were based on compliance testing results.
-
+> +        power-domains = <&hdmi_blk_ctrl IMX8MP_HDMIBLK_PD_HDMI_TX>;
+> +        reg-io-width = <1>;
+> +    };
+> -- 
+> 2.30.2
+> 
+> 
 
 -- 
 linux-phy mailing list
