@@ -4,77 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BE24C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 14:41:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8732C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 16:09:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+MXZfX63y9BpMzqFw/s6Yi3VZSZ3d5i/sfgkqAanVvw=; b=Ooo3Hy2uBCPca7
-	Y3XUkkKrfcFeIxYMIjpHTWYQtJp5c5l6T5lfjEexHEpOnzyaa73mu6OEqq6qkxG6yucmi0aDmAEej
-	VvYGweZCnKPNqhOIlOiBjBDTOrzILLCIcvx/ss/GxHcLQLJ0IMgH9v/sBowU6ns94mayPTisYrPLw
-	hLJwx/gcDfmMc62WFM+koUqYVrf+1Texm+HICtUuHL4XiRle8XUi05uABWQFOs/NFUxD72+Jm0o+s
-	0CXaBIq9xfYjY8YcAZO1E+xCeNs4ePc98H4fkTBO31U0YuwMEgpfFoV6BLTQCaEkIIlV+zyBUMIbr
-	+JJ9cXUrWsHcxhCsLrWw==;
+	List-Owner; bh=foHZqkEu3cEbIJG599CDSCQ4fvt1mQDMZatTOyugsR4=; b=RcyJ1rv62lS7+9
+	AP4i2eM+G5rBcv17yc0p+VnxMOcFsrub6c5WnaYJJ3zUut71cogX8sPMVO1mAp9mCAUHhiITa/Bzm
+	qRl50oloyNOsfMdgnl7RFLWVvQyQKH+Gi6QBTgI0pLcEEzev1wcx2XQpmeQ+qSLTorhdsIcSbJ8Wr
+	BC4qE5rrSBQa6dyW59LiEZup2Gj491ZTOhXdGwDUhKOSjUjmO0SgCYQjh8QFWGu8dAFQ/Fjva/361
+	0hiQz/KBnYihEEnIt4hR1kuzWjAwainNNHaF++iQCyinlFTqI108R+91x5YruZMaO6L2Kbrf2p8fn
+	GogGY1SSxb3qSxaqWSyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1npA0K-00CT8s-Rf; Thu, 12 May 2022 14:41:24 +0000
-Received: from mail-qv1-xf30.google.com ([2607:f8b0:4864:20::f30])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1npA0I-00CT7W-7C
- for linux-phy@lists.infradead.org; Thu, 12 May 2022 14:41:23 +0000
-Received: by mail-qv1-xf30.google.com with SMTP id p3so4469960qvi.7
- for <linux-phy@lists.infradead.org>; Thu, 12 May 2022 07:41:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=5glS7uZd76ZDuYG8T+JyK/h9FeySdt8lV4erqmgs1dI=;
- b=Fnj14Ih1flSLaJf3Sb3wiw3Kx6b3Gmqup6F21OFYa/PjkOlL7ZZbdPlb+oWbYQLp0a
- K39QgjVzXoTAgSTmWzLdlEbrPjzJi5pnzNYL0cziZZiCCI50wgWgcPqVVydJAEku6oMx
- ixd1J+9LhzTJB+515dm0poCh7iiPWFE1Ua9G5S8qrqgVHIOWiJdkgfnvcRScplAeSO3X
- KxlZbjo9WAvJd4SYVHHM2nSPgywSncOj89zIdenammpW8s+HKzS9fbnz4Vz0TOYetpg2
- AauxoGnagnwAq94V3ofsT7fzGlR5TPPmUC1G46qjxbl3JMoJRaE3tsLphQwpceloOSqY
- eR2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=5glS7uZd76ZDuYG8T+JyK/h9FeySdt8lV4erqmgs1dI=;
- b=Yzv6dePZM0bb51fPkqVLNk3pdQOIjrB+mwmR4AqjoE4aTDUDvhl33AL8XuJrmAJ6sC
- PuuVf03D/D8FqaMw2k8z42U1IzDIgmjf2MJZgErjkjZeggHfRRWYNh/sVEtUp3Fh1QeK
- 30vmicUbx98pooBeCnFsRlfHAebMrVQCbXPa0gm1h0mLckOCqLRzO03uAm2JJl9gz6Nt
- pK9b47L9LuqLGsqn4Dlx0bc5bO/c+/KVPVB0Fomwoz800+mg5Okjo+NtmQj24xld+SUD
- kKsyYVhCxThxujrMYVDTGlZJXygVaG11O7Rkftqii93mNaRLMX/KDLvkSENp3Wn3asAJ
- OOLg==
-X-Gm-Message-State: AOAM531BNQeptSNEUx4i/t6/ODStC6vU1ov+UJsQaRcabFVUvkvt2C9f
- VOm5bZBSo6icJ3fd6Q8Efh0=
-X-Google-Smtp-Source: ABdhPJxTOrWLUEqkRknLwLE7F3yYQ5+iQTsGI/rPnaW0KEt7l46C4L3hxqMRuw+Z7czCdxVnwTmQEg==
-X-Received: by 2002:a05:6214:5292:b0:45a:80bc:c642 with SMTP id
- kj18-20020a056214529200b0045a80bcc642mr57015qvb.30.1652366479314; 
- Thu, 12 May 2022 07:41:19 -0700 (PDT)
-Received: from shaak (modemcable055.92-163-184.mc.videotron.ca.
- [184.163.92.55]) by smtp.gmail.com with ESMTPSA id
- t4-20020ae9df04000000b006a09faf5c1asm3082820qkf.30.2022.05.12.07.41.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 May 2022 07:41:18 -0700 (PDT)
-Date: Thu, 12 May 2022 10:41:17 -0400
-From: Liam Beguin <liambeguin@gmail.com>
-To: Miaoqian Lin <linmq006@gmail.com>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: ti: omap-usb2: Fix refcount leak in omap_usb2_probe
-Message-ID: <Yn0cjaaqfr5wphh3@shaak>
-References: <20220512043238.63252-1-linmq006@gmail.com>
+	id 1npBNB-00CmAo-21; Thu, 12 May 2022 16:09:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1npBN0-00Cm73-0P; Thu, 12 May 2022 16:08:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85395106F;
+ Thu, 12 May 2022 09:08:50 -0700 (PDT)
+Received: from lpieralisi (unknown [10.57.2.156])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 596513F73D;
+ Thu, 12 May 2022 09:08:48 -0700 (PDT)
+Date: Thu, 12 May 2022 17:08:45 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: p.zabel@pengutronix.de, l.stach@pengutronix.de, bhelgaas@google.com,
+ robh@kernel.org, shawnguo@kernel.org, vkoul@kernel.org,
+ alexander.stein@ew.tq-group.com, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel@pengutronix.de, linux-imx@nxp.com
+Subject: Re: [PATCH v2 7/7] PCI: imx6: Add the iMX8MP PCIe support
+Message-ID: <20220512160845.GB2506@lpieralisi>
+References: <1646644054-24421-1-git-send-email-hongxing.zhu@nxp.com>
+ <1646644054-24421-8-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220512043238.63252-1-linmq006@gmail.com>
+In-Reply-To: <1646644054-24421-8-git-send-email-hongxing.zhu@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220512_074122_299825_D4EB214D 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20220512_090854_168986_8EBAF861 
+X-CRM114-Status: GOOD (  20.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,36 +66,148 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 12, 2022 at 08:32:33AM +0400, Miaoqian Lin wrote:
-> of_parse_phandle() returns a node pointer with refcount
-> incremented, we should use of_node_put() on it when done.
-> Add missing of_node_put() to avoid refcount leak.
+On Mon, Mar 07, 2022 at 05:07:34PM +0800, Richard Zhu wrote:
+> Add the i.MX8MP PCIe support.
 > 
-> Fixes: 478b6c7436c2 ("usb: phy: omap-usb2: Don't use omap_get_control_dev()")
-> Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 > ---
->  drivers/phy/ti/phy-omap-usb2.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
-> index 31a775877f6e..98133e5fc9de 100644
-> --- a/drivers/phy/ti/phy-omap-usb2.c
-> +++ b/drivers/phy/ti/phy-omap-usb2.c
-> @@ -421,6 +421,7 @@ static int omap_usb2_probe(struct platform_device *pdev)
->  		}
+>  drivers/pci/controller/dwc/pci-imx6.c | 19 ++++++++++++++++++-
+>  1 file changed, 18 insertions(+), 1 deletion(-)
+
+I expect this series will eventually go via the imx6 platform tree.
+
+To avoid you waiting for me when this series is deemed acceptable:
+
+Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+
+I will mark it as "handled elsewhere" in the PCI tree patchwork.
+
+Lorenzo
+
+> diff --git a/drivers/pci/controller/dwc/pci-imx6.c b/drivers/pci/controller/dwc/pci-imx6.c
+> index bb662f90d4f3..4d34f0c88550 100644
+> --- a/drivers/pci/controller/dwc/pci-imx6.c
+> +++ b/drivers/pci/controller/dwc/pci-imx6.c
+> @@ -51,6 +51,7 @@ enum imx6_pcie_variants {
+>  	IMX7D,
+>  	IMX8MQ,
+>  	IMX8MM,
+> +	IMX8MP,
+>  };
 >  
->  		control_pdev = of_find_device_by_node(control_node);
-> +		of_node_put(control_node);
->  		if (!control_pdev) {
->  			dev_err(&pdev->dev, "Failed to get control device\n");
->  			return -EINVAL;
+>  #define IMX6_PCIE_FLAG_IMX6_PHY			BIT(0)
+> @@ -379,6 +380,7 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
+>  		reset_control_assert(imx6_pcie->pciephy_reset);
+>  		fallthrough;
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		reset_control_assert(imx6_pcie->apps_reset);
+>  		break;
+>  	case IMX6SX:
+> @@ -407,7 +409,8 @@ static void imx6_pcie_assert_core_reset(struct imx6_pcie *imx6_pcie)
+>  static unsigned int imx6_pcie_grp_offset(const struct imx6_pcie *imx6_pcie)
+>  {
+>  	WARN_ON(imx6_pcie->drvdata->variant != IMX8MQ &&
+> -		imx6_pcie->drvdata->variant != IMX8MM);
+> +		imx6_pcie->drvdata->variant != IMX8MM &&
+> +		imx6_pcie->drvdata->variant != IMX8MP);
+>  	return imx6_pcie->controller_id == 1 ? IOMUXC_GPR16 : IOMUXC_GPR14;
+>  }
+>  
+> @@ -448,6 +451,7 @@ static int imx6_pcie_enable_ref_clk(struct imx6_pcie *imx6_pcie)
+>  		break;
+>  	case IMX8MM:
+>  	case IMX8MQ:
+> +	case IMX8MP:
+>  		ret = clk_prepare_enable(imx6_pcie->pcie_aux);
+>  		if (ret) {
+>  			dev_err(dev, "unable to enable pcie_aux clock\n");
+> @@ -503,6 +507,7 @@ static int imx6_pcie_clk_enable(struct imx6_pcie *imx6_pcie)
+>  
+>  	switch (imx6_pcie->drvdata->variant) {
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		if (phy_power_on(imx6_pcie->phy))
+>  			dev_err(dev, "unable to power on PHY\n");
+>  		break;
+> @@ -603,6 +608,7 @@ static int imx6_pcie_deassert_core_reset(struct imx6_pcie *imx6_pcie)
+>  		reset_control_deassert(imx6_pcie->pciephy_reset);
+>  		break;
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		if (phy_init(imx6_pcie->phy))
+>  			dev_err(dev, "waiting for phy ready timeout!\n");
+>  		break;
+> @@ -678,6 +684,7 @@ static void imx6_pcie_init_phy(struct imx6_pcie *imx6_pcie)
+>  {
+>  	switch (imx6_pcie->drvdata->variant) {
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		/*
+>  		 * The PHY initialization had been done in the PHY
+>  		 * driver, break here directly.
+> @@ -823,6 +830,7 @@ static void imx6_pcie_ltssm_enable(struct device *dev)
+>  	case IMX7D:
+>  	case IMX8MQ:
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		reset_control_deassert(imx6_pcie->apps_reset);
+>  		break;
+>  	}
+> @@ -938,6 +946,7 @@ static void imx6_pcie_host_exit(struct pcie_port *pp)
+>  		imx6_pcie_clk_disable(imx6_pcie);
+>  		switch (imx6_pcie->drvdata->variant) {
+>  		case IMX8MM:
+> +		case IMX8MP:
+>  			if (phy_power_off(imx6_pcie->phy))
+>  				dev_err(dev, "unable to power off phy\n");
+>  			phy_exit(imx6_pcie->phy);
+> @@ -972,6 +981,7 @@ static void imx6_pcie_ltssm_disable(struct device *dev)
+>  		break;
+>  	case IMX7D:
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		reset_control_assert(imx6_pcie->apps_reset);
+>  		break;
+>  	default:
+> @@ -1028,6 +1038,7 @@ static int imx6_pcie_suspend_noirq(struct device *dev)
+>  	imx6_pcie_clk_disable(imx6_pcie);
+>  	switch (imx6_pcie->drvdata->variant) {
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		if (phy_power_off(imx6_pcie->phy))
+>  			dev_err(dev, "unable to power off PHY\n");
+>  		phy_exit(imx6_pcie->phy);
+> @@ -1177,6 +1188,7 @@ static int imx6_pcie_probe(struct platform_device *pdev)
+>  		}
+>  		break;
+>  	case IMX8MM:
+> +	case IMX8MP:
+>  		imx6_pcie->pcie_aux = devm_clk_get(dev, "pcie_aux");
+>  		if (IS_ERR(imx6_pcie->pcie_aux))
+>  			return dev_err_probe(dev, PTR_ERR(imx6_pcie->pcie_aux),
+> @@ -1327,6 +1339,10 @@ static const struct imx6_pcie_drvdata drvdata[] = {
+>  		.variant = IMX8MM,
+>  		.flags = IMX6_PCIE_FLAG_SUPPORTS_SUSPEND,
+>  	},
+> +	[IMX8MP] = {
+> +		.variant = IMX8MP,
+> +		.flags = IMX6_PCIE_FLAG_SUPPORTS_SUSPEND,
+> +	},
+>  };
+>  
+>  static const struct of_device_id imx6_pcie_of_match[] = {
+> @@ -1336,6 +1352,7 @@ static const struct of_device_id imx6_pcie_of_match[] = {
+>  	{ .compatible = "fsl,imx7d-pcie",  .data = &drvdata[IMX7D],  },
+>  	{ .compatible = "fsl,imx8mq-pcie", .data = &drvdata[IMX8MQ], },
+>  	{ .compatible = "fsl,imx8mm-pcie", .data = &drvdata[IMX8MM], },
+> +	{ .compatible = "fsl,imx8mp-pcie", .data = &drvdata[IMX8MP], },
+>  	{},
+>  };
+>  
 > -- 
 > 2.25.1
 > 
-
-Reviewed-by: Liam Beguin <liambeguin@gmail.com>
-
-Thanks!
 
 -- 
 linux-phy mailing list
