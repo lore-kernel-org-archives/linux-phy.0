@@ -4,77 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 525F8C433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 01:30:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5673C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 02:01:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mm1bkeSfreuxhOYTVwwiVS3+0JhYmnrnHfOnSrnSOLw=; b=MSRltq+RcCkFyG
-	3lj6hyEmlR3j1wpbpHdNp23cIusdcsiSSZxabUjDIQwc39hCQTdY5lqMcZFWEJwoPePvOtTFbCj2p
-	oNb2UyYeJ8ws5HZrs/PD1Q1bDKkEtHzbGEWdA4jC3O7vDIhLlzU5fER1AzgdG+j3AeiOH2EzmkP4B
-	zFA13XjF5+pq30/LusKP6C/cqJCCbPmHug/5D+584O6Q5iqFuVTddy99M2OLmEaO1gegRqS1dBz7o
-	uI5GdvDFuTVTKmm1IWxkd3FmdCcQsGQ80tqoxPnpJU44ymax0Sq654TfGutCc+WO2WyeUQudOjJf3
-	fedRCocqyZJoGsAcBJXA==;
+	List-Owner; bh=Winnj7KSr30+jkUzvJX56T4GvxdZ3IDhml61IaYhLhk=; b=CqrQ7U5DvT3JjG
+	kX4IDP4jU4UFsNp+spn1m0IAQgj7e9VSpFk3LnjGS7HiUyVYkuOvygvQlWuLbbg6HHzn1L/T14l6c
+	VdC8ILPEj9d+MxuFBD1i8qA+uJvDPHY6Ywr1TxEvTS+go2h2fz7Y3pTf1s5E7UrsXhiTxUV7/JMY0
+	8C2CKz+yt11eUD5FAkDkQw5CKNhWgU3otmlxgh/TEvUXc+dlnSd953i+AfZuJCy7lABA/0PtVCjKT
+	nY4hbysl7R6lVjMySJV6YyDUZwm2GBfbxvyZYzliFhDGiqJ/7Gc3qALz2b2uvsYOmrA1J7g2WRX/2
+	cNbzY8gQiU8zZ/MWYX7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1noxec-009I49-Mw; Thu, 12 May 2022 01:30:10 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1noy98-009LY8-3m; Thu, 12 May 2022 02:01:42 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1noxeY-009Hzi-8m
- for linux-phy@lists.infradead.org; Thu, 12 May 2022 01:30:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1652319006; x=1683855006;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=FmzxLobn0K8eUJokt43bdYb1Kp6hZ00M7lRWrjyhUwY=;
- b=SKeOnlZmmXRXW1DKAasjKtvf6ApCGk+x3DLPODK8l0L+JabxLMnFJfzp
- m7UVKz3uculOAPYDdc64yIkSIEj3KpWJR9tKlmnn5h5qZrvWsoUgrfDVl
- SLhrv4GOGlWmIZj+HEvqItztlQypeWYlMk534fxnCb61TeSqkKXnI9BbR
- x5zgwbY4B6CZGGBKL9dZTagQvSb14XMVDA/GXpWMgVv0W2MWFUuVRfIYF
- 57sM0W2rw+IqipldUXxK2G5dChfh3rSH+aPd2tP5Csj/IvSbtlPMBPBQi
- LL2cHJK6GRX1ZnLwMc7oo5GwUDtuuIghxvpVa8wnTEXLDxga2TOvaT0Qw Q==;
-X-IronPort-AV: E=McAfee;i="6400,9594,10344"; a="269796495"
-X-IronPort-AV: E=Sophos;i="5.91,218,1647327600"; d="scan'208";a="269796495"
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 11 May 2022 18:30:03 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.91,218,1647327600"; d="scan'208";a="542554715"
-Received: from lkp-server01.sh.intel.com (HELO 5056e131ad90) ([10.239.97.150])
- by orsmga006.jf.intel.com with ESMTP; 11 May 2022 18:29:58 -0700
-Received: from kbuild by 5056e131ad90 with local (Exim 4.95)
- (envelope-from <lkp@intel.com>) id 1noxeQ-000Jmk-2Z;
- Thu, 12 May 2022 01:29:58 +0000
-Date: Thu, 12 May 2022 09:29:38 +0800
-From: kernel test robot <lkp@intel.com>
-To: Krishna Kurapati <quic_kriskura@quicinc.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Stephen Boyd <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Wesley Cheng <quic_wcheng@quicinc.com>, Vinod Koul <vkoul@kernel.org>
-Cc: llvm@lists.linux.dev, kbuild-all@lists.01.org,
- devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, quic_pkondeti@quicinc.com,
- quic_ppratap@quicinc.com, quic_vpulyala@quicinc.com,
- Krishna Kurapati <quic_kriskura@quicinc.com>
-Subject: Re: [v4 2/3] phy: qcom-snps: Add support for overriding phy tuning
- parameters
-Message-ID: <202205120931.JrA2orb3-lkp@intel.com>
-References: <1652282793-5580-3-git-send-email-quic_kriskura@quicinc.com>
+ id 1noy8w-009LVn-0r; Thu, 12 May 2022 02:01:31 +0000
+X-UUID: f176c00af0d349a79f34000dfa78167c-20220511
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=6nYDcaJCcIYR23pRLi1a1auimYGYkrRCoRA7PnOQx18=; 
+ b=cwKcHEVumfBtRK4vmhTEGbv8gvrLaX/Y1kNKQSlms5s0YWJA/exD1HRTVMvtfyeRtxQvf+P/m1JDFkE3g1ZkfuOtNZ3GciJBlXkfThnQwxxM6RVuNnS9KvCJyADTrE8De/P6jAkaWrAGChTPcQFeovW5RZVHEhiCbq2+2epISd0=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.4, REQID:3a48050c-9861-4756-9418-3b37fb4f09a0, OB:0,
+ LO
+ B:0,IP:0,URL:5,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+ ON:release,TS:5
+X-CID-META: VersionHash:faefae9, CLOUDID:b15c8727-a01c-4223-8f5a-12d972216e7b,
+ C
+ OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,File:nil,QS:0,BEC:nil
+X-UUID: f176c00af0d349a79f34000dfa78167c-20220511
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+ with ESMTP id 1781367604; Wed, 11 May 2022 19:00:46 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 11 May 2022 19:00:44 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3; 
+ Thu, 12 May 2022 10:00:42 +0800
+Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Thu, 12 May 2022 10:00:40 +0800
+Message-ID: <40c12cdf833113405fce1146234db26e883eaf35.camel@mediatek.com>
+Subject: Re: [PATCH v4] dt-bindings: nvmem: convert mtk-efuse.txt to YAML
+ schema
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+CC: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>, Eddie Hung
+ <eddie.hung@mediatek.com>, Andrew-CT Chen <andrew-ct.chen@mediatek.com>
+Date: Thu, 12 May 2022 10:00:40 +0800
+In-Reply-To: <20220511151733.GA313710-robh@kernel.org>
+References: <20220509014521.10248-1-chunfeng.yun@mediatek.com>
+ <20220511151733.GA313710-robh@kernel.org>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1652282793-5580-3-git-send-email-quic_kriskura@quicinc.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220511_183006_556145_AA978AF9 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20220511_190130_109517_155FD240 
+X-CRM114-Status: GOOD (  13.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,73 +89,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krishna,
+On Wed, 2022-05-11 at 10:17 -0500, Rob Herring wrote:
+> On Mon, May 09, 2022 at 09:45:21AM +0800, Chunfeng Yun wrote:
+> > Convert mtk-efuse.txt to YAML schema mediatek,efuse.yaml
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> > v4: fix duplicated unit-address in example;
+> >     drop reviewed-by Rob, due to changes;
+> > 
+> > v3: add reviewed-by Rob
+> > 
+> > v2:
+> >    1. remove description of subnodes which is covered by nvmem.yaml
+> > suggested by Rob
+> >    2. change the example which is commoner than mt8173's
+> 
+> I'm assuming this will be resent with all the changes from the other 
+> conversion posted[1].
+Yes, I'm doing it now, thanks
 
-Thank you for the patch! Yet something to improve:
-
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on krzk/for-next linus/master v5.18-rc6 next-20220511]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Krishna-Kurapati/Add-QCOM-SNPS-PHY-overriding-params-support/20220511-232858
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-config: riscv-randconfig-r033-20220509 (https://download.01.org/0day-ci/archive/20220512/202205120931.JrA2orb3-lkp@intel.com/config)
-compiler: clang version 15.0.0 (https://github.com/llvm/llvm-project 18dd123c56754edf62c7042dcf23185c3727610f)
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # install riscv cross compiling tool for clang build
-        # apt-get install binutils-riscv64-linux-gnu
-        # https://github.com/intel-lab-lkp/linux/commit/48c46f24873c92d3e16904af9e654962d0b923f1
-        git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review Krishna-Kurapati/Add-QCOM-SNPS-PHY-overriding-params-support/20220511-232858
-        git checkout 48c46f24873c92d3e16904af9e654962d0b923f1
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=riscv SHELL=/bin/bash
-
-If you fix the issue, kindly add following tag as appropriate
-Reported-by: kernel test robot <lkp@intel.com>
-
-All errors (new ones prefixed by >>):
-
->> drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c:541:29: error: initializing 'struct override_param_map *' with an expression of type 'const void *' discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
-           struct override_param_map *cfg = of_device_get_match_data(dev);
-                                      ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   1 error generated.
-
-
-vim +541 drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-
-   534	
-   535	static void qcom_snps_hsphy_read_override_param_seq(struct device *dev)
-   536	{
-   537		struct device_node *node = dev->of_node;
-   538		s32 val;
-   539		int ret, i;
-   540		struct qcom_snps_hsphy *hsphy;
- > 541		struct override_param_map *cfg = of_device_get_match_data(dev);
-   542	
-   543		hsphy = dev_get_drvdata(dev);
-   544	
-   545		for (i = 0; i < ARRAY_SIZE(phy_seq_props); i++) {
-   546			ret = of_property_read_s32(node, phy_seq_props[i], &val);
-   547			if (!ret) {
-   548				dev_dbg(&hsphy->phy->dev, "Read param: %s val: %d\n",
-   549							phy_seq_props[i], val);
-   550				qcom_snps_hsphy_override_param_update_val(cfg[i], val,
-   551							&hsphy->update_seq_cfg[i]);
-   552			}
-   553		}
-   554	}
-   555	
-
--- 
-0-DAY CI Kernel Test Service
-https://01.org/lkp
-
+> 
+> Rob
+> 
+> [1] 
+> https://lore.kernel.org/all/73b1feab3ecb20fef0339b322a61d63146b5790a.camel@mediatek.com/
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
