@@ -4,102 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 942AFC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 07:45:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5BEEC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 10:30:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LEMsIhhoj0OZhbj07AH/kpFxICVkvCFL01Mqck5FIvk=; b=fjomHtAFJligXf
-	7a9sEkrj1hSebLwlOS9vlAlwxHclAaGPo+8y6HmN1TUI8QzX8jCzzNLzAFP83mhFPUBSYu1fjJEzY
-	924501PtPOheIMS2mKpWUKm5ZsfnIXAJ1Ve28YWgNmjz6M7O2wD5s2RYQNCZsJ/n05hy3/X8pX+ok
-	Ob52BjXUprKliKH41xvIDs9NPqbyB3FzHc0v65JVPogqUmmkep8LFBgf9nAsZV5rh+mKhwmsU8vdp
-	C4DJ6CKA+JqoUY0DcERoyJR2nD4OFO0BYFvq3mQMOLs+rEVKpTE86gBa3OyS7Mium/6JAMgGenNc2
-	2VhMjInJhVdS+XfAF3Dg==;
+	List-Owner; bh=nRdlq9AOwY3FeW2hw7enBnzoHf1Svo0nrMxdFJbF8hQ=; b=Ed/oU7eqnalhfO
+	YYRymFFOE0sQaTiWwLXQkO9AYvtQwKToVay+IX2omQKzAQw7njmiqRPpiBAf8zW82ie1XG5sKtpTp
+	qFORtwgvZSB36titoH5Z0ZFWYJFk2LtYUsoDiWz05VlxVu2Ms84zP9AyyDLmEAkdglspq/OFjJDFO
+	LHyPAOhZDi98zMODFoBUTwFMHjqKwBzqUa0HpQzzqcPxDx68QhJvaiFNIV5CTOJ6mbE6kYghoAMQ5
+	XyserK6Ut4JQbOpp40e7xU70WvH3MhvlxKjbEUFQIggoWwTxBJv0Ir61o/fPcAblsfh4O5LL8dGm+
+	8fKAQ8CAlFM3KLYgs6Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1np3VY-00Anvw-U0; Thu, 12 May 2022 07:45:12 +0000
-Received: from wnew4-smtp.messagingengine.com ([64.147.123.18])
+	id 1np65T-00BOCi-9c; Thu, 12 May 2022 10:30:27 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1np3VL-00Anr5-MM; Thu, 12 May 2022 07:45:02 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id DB9CC2B059AE;
- Thu, 12 May 2022 03:44:50 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Thu, 12 May 2022 03:44:53 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
- :cc:content-transfer-encoding:content-type:date:date:from:from
- :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to; s=fm3; t=1652341490; x=
- 1652348690; bh=F/3C1V38ahUzifyHzEs+CWDQJfKIOWf16zUshCZyYK4=; b=f
- oyo14B5q77HWBztYyB6jy0JiEQ9Ii/BiEb6AG0JsU2fDxdZqUcK68yNGAC7EoaS0
- MLdiGoW2wTpmdb51vgwhwQiNWtPftgTIU60n5uuzPE360fUVgjTUAya9IPqnwNKb
- BnviiRI1bsbrEa+UsHZFVi+kJ9LICkw7R3oWYCMgAfhrwml2d5eev3yTn9skCxBg
- VH8/RSJY4M5b81xtpsc+F9ey0/umPWOxbsk7XMP+7d9G9PDaBbhhl/f5taTsz5RB
- 6dmN6bGq0hhSJ7jW2s6IqG39WvMgsRgpCq0P2vXnglINSYJVGREHl0DALEPDRllK
- ioGt2OrO1hw7MXf06E+fg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm1; t=1652341490; x=1652348690; bh=F/3C1V38ahUzi
- fyHzEs+CWDQJfKIOWf16zUshCZyYK4=; b=PwYCoCpllwsaeQDZ/UbNYqufIcU3D
- ZUWgY8F7k7Saqv2O6zyjaOoYF5xcDIWEnLSGiwdoo9z8lCBMr/tHJh5b0zfeFWE6
- /Z2RCJLc+r2pnrvNhImcW02ht7w/mv4bgobAnb9k0gXLDcWXAQYuz3K1z9POKN/y
- S/eqJzDh+501oGPp9exuG3dzomL2dp5vuGlGULmmWXC8cqRqYHf4z9q8S2BE/UHo
- 6LyF8q2ZC7+aDXKLXASdRi94nP7is08wABRLovnl/szz04ritVADLELl1cAAm1+2
- 90qcou1rCuxePxCOn11vTIOW78qBQGe0KsUAxnEyD9NN9GYZScntiuXrg==
-X-ME-Sender: <xms:8bp8YqcK-fdwBudEcm5H1P_35GB8Y7LkLxZ4zJkH7TKJFPY--ts9wQ>
- <xme:8bp8YkOvhUAnmlQU_F1xaAbi92HOEjaEU2MhKVss9NVtJC1EMVj_Hk3wd-nXqt7XK
- R68JXUE9Mg8QkPMOf4>
-X-ME-Received: <xmr:8bp8Yrgphjel3L9AUZeENPZqw0iDm42eTLMqQ_jugzMVv5Ex1vLAqdXFGcdo-J9RZVw2IZo3EkihHmK8LVQqL50inCCR6S8SR81EWos>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrgeeigdduvdduucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvfevuffkfhggtggugfgjsehtqhertddttddvnecuhfhrohhmpeforgig
- ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
- grthhtvghrnhepheejffefgefgieevjedvfffgvdfghedtgfdvueejvdejgfffvdeuteei
- vedufedvnecuffhomhgrihhnpegsohhothhlihhnrdgtohhmnecuvehluhhsthgvrhfuih
- iivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordht
- vggthh
-X-ME-Proxy: <xmx:8bp8Yn9_Hnhd8voI202NNd_FlS4bmUHGt3SBFFkI5a5B-1Sfmlps8Q>
- <xmx:8bp8Ymsn4HLY6Dqe7h0m9lGhr8Ulxluora9B7319zC42M3vRgIlJhg>
- <xmx:8bp8YuGGZe5sCyNbypDOt_k8OycLAKInPJrliLcAmGL5wufwJB_p0w>
- <xmx:8rp8Yu2wRlaVZOp8yBGYU65RItWFtHlRMmFrvZtBCrOu7SA0hzrdwpMFxjs>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
- 12 May 2022 03:44:48 -0400 (EDT)
-Date: Thu, 12 May 2022 09:44:46 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: airlied@linux.ie, angelogioacchino.delregno@collabora.com,
- chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org,
- ck.hu@mediatek.com, daniel@ffwll.ch, deller@gmx.de,
- jitao.shi@mediatek.com, kishon@ti.com, krzk+dt@kernel.org,
- maarten.lankhorst@linux.intel.com, matthias.bgg@gmail.com,
- p.zabel@pengutronix.de, robh+dt@kernel.org, tzimmermann@suse.de,
- vkoul@kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, markyacoub@google.com,
- Markus Schneider-Pargmann <msp@baylibre.com>,
- kernel test robot <lkp@intel.com>
-Subject: Re: [PATCH v9 18/22] drm/mediatek: Add mt8195 Embedded DisplayPort
- driver
-Message-ID: <20220512074446.ihilbbnbuwesxbbg@houat>
-References: <20220327223927.20848-1-granquet@baylibre.com>
- <20220327223927.20848-19-granquet@baylibre.com>
- <20220429083933.q3w75q3zuyyuvo4w@houat>
- <CABnWg9tzhZjrdKT4chkDrY-uH8BMUoxyNLUSwfuG6Sv1J+8ddg@mail.gmail.com>
+ id 1np65P-00BOAR-Jx
+ for linux-phy@lists.infradead.org; Thu, 12 May 2022 10:30:25 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id ba17so5698515edb.5
+ for <linux-phy@lists.infradead.org>; Thu, 12 May 2022 03:30:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=message-id:date:mime-version:user-agent:subject:content-language:to
+ :cc:references:from:in-reply-to:content-transfer-encoding;
+ bh=Jl+ZZLPEmKFGVogvW81THWaOFnfrMcq7xgsxNJKbp8Y=;
+ b=GzHOlN0ZzVY4PrqYpKqPssLC3MnbSsdquS7slbkn7dcdXDOrQpCRO8USwHNEsG3Ysf
+ jju6K0tEIHtYxB4vhKQcLCXTFcb2Y9juE/nPZnI9LSD+xuSwFndkivKRNQ+dZA+wYnyD
+ oYxi6rdcJ3ZBUG08tLjCMUb3wUfGdt1yHBdL754NRw1j1CoCHU1rkKgEl8haN/BCf0k3
+ qzmFdXoKxi+jkWpLJSnhloCSptQ+ruWOvyhvxxsimbDX+8Xl6g9xn3e8ZsaYaKvdCClH
+ w8qbLG6rSSGpdpTFjHHKAV3ZKzzLMCLF4hWyUZVEL5r/gyg+vxdCkctA67GXkCCWANDg
+ 8ulA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=Jl+ZZLPEmKFGVogvW81THWaOFnfrMcq7xgsxNJKbp8Y=;
+ b=f0AXC/YU99zl5ixHxqGtJ/ly/iFzF/2BYjonx7WT9ZYxSPcPSsaMGCmduEAK9rm9J/
+ xAmItvJy6+0B2xJ68cyloTtWOv6ldgslAVN/v0rCajB3m2Y8BE9sRVjMtaSDGAwnzNGv
+ czwata9NGcKFk73kHG2ns1sFVAx4ha0CmM8fn3opSbSJ+tLoekDAa1VRj7JK8p6jGvJG
+ WjzRnTFWqqI9LM4n7dOqbUMLMkRgdZPeu1aNSLVVujCS90FbpLzFf/jt8UyhW5v+GQyQ
+ q0sOSBcOOxRF52rX25NRMSlBzDiuvULm8zE0B9WP34t9tjlQmG8KzQzFwr17nTBxReML
+ kHCA==
+X-Gm-Message-State: AOAM5301mp0IPXIuJz9vU9gkSOmHQCCB2qDWfOt7E2DZT+pRNPpgyfu9
+ oXU7LUpLfsYR4OBrpW9uX8U83A==
+X-Google-Smtp-Source: ABdhPJyfG2D7eWQvDaS2cd6jcMEovgXAcO4kNIJd+zFA4btjO+0kmpY2e/uHtr9ENXd4dF29PFCiUA==
+X-Received: by 2002:a05:6402:948:b0:425:ea37:96b8 with SMTP id
+ h8-20020a056402094800b00425ea3796b8mr34018713edz.90.1652351421995; 
+ Thu, 12 May 2022 03:30:21 -0700 (PDT)
+Received: from [192.168.0.158] (xdsl-188-155-176-92.adslplus.ch.
+ [188.155.176.92]) by smtp.gmail.com with ESMTPSA id
+ q20-20020a170906941400b006f3ef214dd1sm1991452ejx.55.2022.05.12.03.30.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 12 May 2022 03:30:21 -0700 (PDT)
+Message-ID: <5b32cecf-873a-6367-df87-1b8d45e63cec@linaro.org>
+Date: Thu, 12 May 2022 12:30:20 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABnWg9tzhZjrdKT4chkDrY-uH8BMUoxyNLUSwfuG6Sv1J+8ddg@mail.gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.8.1
+Subject: Re: [v4 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
+ override params bindings
+Content-Language: en-US
+To: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Stephen Boyd <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Wesley Cheng
+ <quic_wcheng@quicinc.com>, Vinod Koul <vkoul@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, quic_pkondeti@quicinc.com,
+ quic_ppratap@quicinc.com, quic_vpulyala@quicinc.com,
+ Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+References: <1652282793-5580-1-git-send-email-quic_kriskura@quicinc.com>
+ <1652282793-5580-2-git-send-email-quic_kriskura@quicinc.com>
+ <d296720d-ccbe-27f0-8ba1-9653af25dd52@linaro.org>
+ <9644d608-4ab9-ed0d-50fb-0016e4331361@quicinc.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <9644d608-4ab9-ed0d-50fb-0016e4331361@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220512_004500_313292_EC3548B9 
-X-CRM114-Status: GOOD (  30.85  )
+X-CRM114-CacheID: sfid-20220512_033023_744611_964DEFE0 
+X-CRM114-Status: GOOD (  18.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,155 +101,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On Wed, May 11, 2022 at 05:59:13AM -0700, Guillaume Ranquet wrote:
-> >> +#include <drm/drm_atomic_helper.h>
-> >> +#include <drm/drm_bridge.h>
-> >> +#include <drm/drm_crtc.h>
-> >> +#include <drm/dp/drm_dp_helper.h>
-> >> +#include <drm/drm_edid.h>
-> >> +#include <drm/drm_of.h>
-> >> +#include <drm/drm_panel.h>
-> >> +#include <drm/drm_print.h>
-> >> +#include <drm/drm_probe_helper.h>
-> >> +#include <linux/arm-smccc.h>
-> >> +#include <linux/clk.h>
-> >> +#include <linux/delay.h>
-> >> +#include <linux/errno.h>
-> >> +#include <linux/kernel.h>
-> >> +#include <linux/mfd/syscon.h>
-> >> +#include <linux/nvmem-consumer.h>
-> >> +#include <linux/of.h>
-> >> +#include <linux/of_irq.h>
-> >> +#include <linux/of_platform.h>
-> >> +#include <linux/phy/phy.h>
-> >> +#include <linux/platform_device.h>
-> >> +#include <linux/pm_runtime.h>
-> >> +#include <linux/regmap.h>
-> >> +#include <sound/hdmi-codec.h>
-> >> +#include <video/videomode.h>
-> >> +
-> >> +#include "mtk_dp_reg.h"
-> >> +
-> >> +#define MTK_DP_AUX_WAIT_REPLY_COUNT 20
-> >> +#define MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT 3
-> >> +
-> >> +//TODO: platform/device data or dts?
-> >
-> >DTS :)
-> 
-> It's probably going to be a platform_data struct for v10...
-> If I have time, I'll change it to a dts property for v10.
-
-I can't really imagine a case where we would need platform_data
-nowadays. If you have a device tree, then it should be part of the
-binding.
-
-What issue would you like to address by using a platform_data?
-
-> >> +static enum drm_connector_status mtk_dp_bdg_detect(struct drm_bridge *bridge)
-> >> +{
-> >> +	return connector_status_connected;
-> >> +}
-> >
-> >I'm not quite sure what's going on there. You seem to have some support
-> >for HPD interrupts above, but you always report the display as
-> >connected?
-> >
-> >I'd assume that either you don't have HPD support and then always report
-> >it as connected, or you have HPD support and report the current status
-> >in detect, but that combination seems weird.
-> 
-> The HPD logic needs more work, some things have been broken when I split
-> the driver into three patches eDP - DP - Audio
-> The assumption at first was that eDP didn't need any HPD handling... but it
-> seems I was wrong and the eDP driver needs to be reworked.
-
-That can be made into a patch of its own if you prefer.
-
-You first introduce the driver without status reporting (always
-returning connected or unknown), and then add the needed bits for HPD.
-
-However, that first patch shouldn't contain the interrupt plumbing and
-so on, it's just confusing.
-
-> >> +static struct edid *mtk_dp_get_edid(struct drm_bridge *bridge,
-> >> +				    struct drm_connector *connector)
-> >> +{
-> >> +	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-> >> +	bool enabled = mtk_dp->enabled;
-> >> +	struct edid *new_edid = NULL;
-> >> +
-> >> +	if (!enabled)
-> >> +		drm_bridge_chain_pre_enable(bridge);
-> >> +
-> >> +	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_SET_POWER, DP_SET_POWER_D0);
-> >> +	usleep_range(2000, 5000);
-> >> +
-> >> +	if (mtk_dp_plug_state(mtk_dp))
-> >> +		new_edid = drm_get_edid(connector, &mtk_dp->aux.ddc);
-> >> +
-> >> +	if (!enabled)
-> >> +		drm_bridge_chain_post_disable(bridge);
-> >
-> >Are you sure we can't get a mode set while get_edid is called?
-> >
-> >If we can, then you could end up disabling the device while it's being
-> >powered on.
-> 
-> I'm a bit unsure, I need to spend more time in the drm stack to make sure.
-> I'll get back to you when I have a definitive answer.
-
-So, it looks like it's ok.
-
-get_edid is your implementation of get_modes, which is called by
-drm_helper_probe_single_connector_modes
-
-https://elixir.bootlin.com/linux/latest/source/drivers/gpu/drm/drm_probe_helper.c#L416
-
-This is the standard implemantion of fill_modes, which is called
-whenever the get_connector ioctl is called (or similar paths, like
-drm_client_modeset_probe)
-
-drm_helper_probe_single_connector_modes is under the assumption that the
-mode_config.mutex is held though, and that the big lock. So it should be
-serialized there.
-
-Just for future proofing though, it would be better to use refcounting
-there. Would runtime_pm work for you there?
-
-> >> +static void mtk_dp_parse_drm_mode_timings(struct mtk_dp *mtk_dp,
-> >> +					  struct drm_display_mode *mode)
-> >> +{
-> >> +	struct mtk_dp_timings *timings = &mtk_dp->info.timings;
-> >> +
-> >> +	drm_display_mode_to_videomode(mode, &timings->vm);
-> >> +	timings->frame_rate = mode->clock * 1000 / mode->htotal / mode->vtotal;
-> >
-> >drm_mode_vrefresh()
-> >
-> >> +	timings->htotal = mode->htotal;
-> >> +	timings->vtotal = mode->vtotal;
-> >> +}
-> >
-> >It's not really clear to me why you need to duplicate drm_display_mode
-> >here?
-> >
-> It's saved to be re-used in mtk_dp_set_msa().
-> It's not ideal, I'll check if I can get the mode directly from mtk_dp_set_msa()
-
-Yeah, it looks like mtk_dp_set_msa() uses fairly straightforward values,
-this will be just as easy with drm_display_mode.
-
-Maxime
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTIvMDUvMjAyMiAwNzo1NywgS3Jpc2huYSBLdXJhcGF0aSBQU1NOViB3cm90ZToKPiAKPiBP
+biA1LzExLzIwMjIgMTE6NDkgUE0sIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4+IE9uIDEx
+LzA1LzIwMjIgMTc6MjYsIEtyaXNobmEgS3VyYXBhdGkgd3JvdGU6Cj4+PiBGcm9tOiBTYW5kZWVw
+IE1haGVzd2FyYW0gPHF1aWNfY19zYW5tQHF1aWNpbmMuY29tPgo+Pj4KPj4+IEFkZCBkZXZpY2Ug
+dHJlZSBiaW5kaW5ncyBmb3IgU05QUyBwaHkgdHVuaW5nIHBhcmFtZXRlcnMuCj4+Pgo+Pj4gU2ln
+bmVkLW9mZi1ieTogU2FuZGVlcCBNYWhlc3dhcmFtIDxxdWljX2Nfc2FubUBxdWljaW5jLmNvbT4K
+Pj4+IFNpZ25lZC1vZmYtYnk6IEtyaXNobmEgS3VyYXBhdGkgPHF1aWNfa3Jpc2t1cmFAcXVpY2lu
+Yy5jb20+Cj4+PiAtLS0KPj4+ICAgLi4uL2JpbmRpbmdzL3BoeS9xY29tLHVzYi1zbnBzLWZlbXRv
+LXYyLnlhbWwgICAgICAgfCA4NyArKysrKysrKysrKysrKysrKysrKysrCj4+PiAgIDEgZmlsZSBj
+aGFuZ2VkLCA4NyBpbnNlcnRpb25zKCspCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNvbSx1c2Itc25wcy1mZW10by12Mi55YW1sIGIv
+RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHVzYi1zbnBzLWZlbXRv
+LXYyLnlhbWwKPj4+IGluZGV4IDFjZTI1MWQuLjcwZWZmZmUgMTAwNjQ0Cj4+PiAtLS0gYS9Eb2N1
+bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20sdXNiLXNucHMtZmVtdG8tdjIu
+eWFtbAo+Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29t
+LHVzYi1zbnBzLWZlbXRvLXYyLnlhbWwKPj4+IEBAIC01Myw2ICs1Myw5MyBAQCBwcm9wZXJ0aWVz
+Ogo+Pj4gICAgIHZkZGEzMy1zdXBwbHk6Cj4+PiAgICAgICBkZXNjcmlwdGlvbjogcGhhbmRsZSB0
+byB0aGUgcmVndWxhdG9yIDMuM1Ygc3VwcGx5IG5vZGUuCj4+PiAgIAo+Pj4gKyAgcWNvbSxocy1k
+aXNjb25uZWN0LWJwczoKPj4+ICsgICAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5p
+dGlvbnMvaW50MzIKPj4+ICsgICAgZGVzY3JpcHRpb246Cj4+PiArICAgICAgVGhpcyBhZGp1c3Rz
+IHRoZSB2b2x0YWdlIGxldmVsIGZvciB0aGUgdGhyZXNob2xkIHVzZWQgdG8KPj4+ICsgICAgICBk
+ZXRlY3QgYSBkaXNjb25uZWN0IGV2ZW50IGF0IHRoZSBob3N0LiBQb3NzaWJsZSB2YWx1ZXMgYXJl
+Lgo+Pj4gKyAgICAgIFRoZSB2YWx1ZXMgZGVmaW5lZCBhcmUgaW4gbXVsdGlwbGVzIG9mIGJhc2lz
+IHBvaW50cyAoMWJwID0gMC4wMSUpLgo+PiBUaGlzIG1lYW5zIHRoZXJlIGlzIHNvbWUgbWluaW11
+bSBhbmQgbWF4aW11bSAoMTAwJSk/Cj4gCj4gSGkgS3J6eXN0b2YsCj4gCj4gWWVzIHRoZXJlIGFy
+ZSBtYXggYW5kIG1pbiBmb3IgZWFjaCBwYXJhbWV0ZXIgKG5vdCBuZWNlc3NhcmlseSAwJS8xMDAl
+KQo+IAo+IEFzIGFuIGV4YW1wbGUgaWYgd2UgdGFrZSBzcXVlbGNoIGRldGVjdG9yIHRocmVzaG9s
+ZCwgdGhlIHJlZ2lzdGVyIHZhbHVlIAo+IHZzIGFjdHVhbCBwZXJjZW50YWdlIGNoYW5nZXIgYXMg
+cGVyIGRhdGEgYm9vayBpcyBhcyBmb2xsb3dzIDoKPiAKPiAlIGNoYW5nZSBpbiB2b2x0YWdlwqDC
+oMKgIHzCoMKgwqDCoCBjb3JyZXNwb25kaW5nIHJlZyB2YWx1ZQo+IAo+ICDCoC0yMC45MCXCoMKg
+IMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgwqAgfCDCoMKgIDcKPiAgwqAtMTUuNjAlwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqDCoMKgIDYKPiAt
+MTAuMzAlwqDCoCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKg
+wqDCoCA1Cj4gLTUuMzAlIMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgfMKgIMKgIDQKPiAwJcKgIMKgIMKgIMKgIMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgwqDCoCAzCj4gNS4zMCXCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfCDCoMKgIDIKPiAxMC42
+MCXCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqDC
+oMKgIDEKPiAxNS45MCUgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgIHzCoMKgwqAgMAo+IAo+IEhlcmUgdGhlIG1pbiBhbmQgbWF4IGFyZSAxNS45JSB0byAt
+MjAuOSUKPiAKPiBUaGUgbWluIGFuZCBtYXggZGlmZmVyIGZvciBlYWNoIHBhcmFtZXRlciBhbmQg
+bWlnaHQgbm90IGJlIG5lY2Vzc2FyaWx5IAo+IDAlIGFuZCAxMDAlCgpUaGVuIGl0IHNlZW1zIHBv
+c3NpYmxlIHRvIGRlZmluZSBtaW5pbXVtIGFuZCBtYXhpbXVtIHZhbHVlcyAtIHBsZWFzZSBhZGQK
+dGhlbSAoIm1pbmltdW06IHh4eHgiKS4KCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0gCmxp
+bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
