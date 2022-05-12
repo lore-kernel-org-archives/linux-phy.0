@@ -4,86 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB029C433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 02:58:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 001C2C433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 04:32:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:From:CC:To:Subject
-	:MIME-Version:References:In-Reply-To:Date:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LgQApdFcA/rQpodnhUfMH+U57NAtLyUqf0zpY9d/iJw=; b=BPzDQH2e42xcK0
-	zyATi6l/eLqAf0COFhUXnBv6cpAkMdaWuZRpvYBKhRxSCloz9TWvXz8DOATE2pwsjHlrLLSgdlyrO
-	gV1sVGetpL3Nwr4Og2MF0M1/Ptb+vguhyur/fw/aDQ7hgod3b1uKAbhQO/r6PKvz/BpEeow1f354w
-	/xcxHMTMmNqVVm0OKf0RMi9PsFjpN1/YtyvVwTHFzr1vPT9GalABUNdsMb/ifrm7QmYhesug54/dS
-	XiA5zkgcP83lvq7dgwLS/u5CnJ7rjrMNr4+MuAVbura8DUuma02cw4FXbUASTT+/eJ1k7c3tUKpu7
-	vJOZ6Tbm8YMGcyT12tpw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QNTcwO1f+CA1l3+J5HZCxtbHE3lRMcT1opQ+qOL3Zfs=; b=dSafdHfjuK3NUk
+	CWrNgg/Giwna5lwi7AIyLZ5vcIPqwhfbCBnFUuwE8DLNO2YH/jwvfmj581Vd6BxqJl/TJwly4PR8N
+	l4GmCrWWQsG80OeBP9XJiph9rPZkHFNU8Dp2tfrkYbtT0zBh+EtLc1la/ivIsac2i6Wn66L5QgUxp
+	K6+JMH7oqSIQFv87oqpDCnQ0erMgdbx0Ae3bzLP4i7N+j9MIEg0XYFvhZInyjCr/D0LnTEMpPF7lc
+	aj0l++mF2u6p3KEhHGY6/PagT3iISHNre0RYxUVNCUxXxeABVz0k5j3nKsdXREP+a4ofZAeLLuOwY
+	WoYvLwMTf8tmIYhjTzWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1noz1s-009bT3-5D; Thu, 12 May 2022 02:58:16 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1np0VW-009xn0-Bw; Thu, 12 May 2022 04:32:58 +0000
+Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1noz1h-009bRt-BT; Thu, 12 May 2022 02:58:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1652324278;
- bh=rBD/54OGORHu5g6jadCEHPsFOTceD/67+Fe7usVP7p8=;
- h=X-UI-Sender-Class:Date:In-Reply-To:References:Subject:Reply-to:To:
- CC:From;
- b=KazeE55U8nVvK+M0iSc2xW8hilgl4LsQh0p2Hq+oB/1oNOLtC363o4x+bhzvFnLGt
- 11eZ7OXsCyqvkkhvXjJMdKGeAj5+8gaGINwEqt/Y0rWBpiJhGOCZQ0nZ+6qV/mYn66
- pOP7N2clL4x0FJHOvbaAUhA85AzuCIk5cdGIkdro=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from frank-s9 ([157.180.226.179]) by mail.gmx.net (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1N33Il-1nutRi0pbh-013LOo; Wed, 11
- May 2022 22:10:23 +0200
-Date: Wed, 11 May 2022 22:10:19 +0200
-User-Agent: K-9 Mail for Android
-In-Reply-To: <9E2565E4-DBF3-4324-BE1F-4C20C6FB95EA@gmail.com>
-References: <20220416135458.104048-1-linux@fw-web.de>
- <9E2565E4-DBF3-4324-BE1F-4C20C6FB95EA@gmail.com>
+ id 1np0VU-009xlj-8y
+ for linux-phy@lists.infradead.org; Thu, 12 May 2022 04:32:57 +0000
+Received: by mail-pj1-x1031.google.com with SMTP id
+ a15-20020a17090ad80f00b001dc2e23ad84so6730157pjv.4
+ for <linux-phy@lists.infradead.org>; Wed, 11 May 2022 21:32:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9Uc4xBWgLXbLJMyH+huZ6Mz3VJQ2nWjRyAfnIg3aZiQ=;
+ b=oxcVRMOM881LdBYCU30dlLdCih7eOom1/eJBRocu7FvqlnMUWhM4x4n4Y/EwJE1olU
+ VQII192HRJNlZfi6N6rZ9u851ZpOc8MWvkNr3PewicA8pryF4PBL4W5P+zkm9gqgeddI
+ TTnTDZeGoArtP3U8jmz74bncxK60Xld7Fb7s8YPiO/fucxmyN7yBoOm9BQi2mdD82s5p
+ kl83J0VASbqv5ZpMPiMuYjmAUImuiUhW9FSHzQWcuCSlPOZA10eq1J0KvpsIrcg3npPX
+ E9VFtr7LHp5izVioeknY/Itlne5s/x750DuIO6Y1ARwojNt4v4a43fqppUtLdlKXB+hX
+ 4f2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9Uc4xBWgLXbLJMyH+huZ6Mz3VJQ2nWjRyAfnIg3aZiQ=;
+ b=a5XpXP6qXw90aDvLczOSafrVBEkHs3v4BtC3UV8I6aeHaixkq1DkH7uKHZP2tXVp8D
+ JSMHegsw8g0eMUFoly4vQC4J9r4e8okXU1eFeAQ4GgRLv7DDrfC/poXyCPbJNH24TLBr
+ 3GWkQyGu6E7GpKoVan7aHl/hGwlnYOjENCUm7t+Tp9xFMVXnlF2zYIwllr6zrIVs+2+b
+ qv44iitf90jeNic3tgy9T2Ap4SYOwZVjd6h7Yg760/gc4hUB9Ry7RCXOLV7Ite91+VQU
+ jGJOSVZPqecQSmRdpJTaP3/d97qVNNnKbnlqDatlSNaYos1cv+OQjH3PMl5PmURMn0ef
+ NRhg==
+X-Gm-Message-State: AOAM5323OkKyGNX1WafivzEVrct307xobK6tl7tV/R9Sp6wrhfUwtmhV
+ IB5PAIlHzzw47zqNgVvY0UM=
+X-Google-Smtp-Source: ABdhPJxMOc2HWrWVi1oHSB01QOZcOR8Nqm5Dh9k+Q40lirt3i16jlPiGR102+ferGO+gxf1iQhIhOw==
+X-Received: by 2002:a17:902:ba97:b0:15f:16f9:30ad with SMTP id
+ k23-20020a170902ba9700b0015f16f930admr15778824pls.12.1652329972039; 
+ Wed, 11 May 2022 21:32:52 -0700 (PDT)
+Received: from localhost.localdomain ([202.120.234.246])
+ by smtp.googlemail.com with ESMTPSA id
+ u21-20020a17090ae01500b001d5e1b124a0sm798724pjy.7.2022.05.11.21.32.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 May 2022 21:32:51 -0700 (PDT)
+From: Miaoqian Lin <linmq006@gmail.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Miaoqian Lin <linmq006@gmail.com>, Liam Beguin <liambeguin@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: ti: omap-usb2: Fix refcount leak in omap_usb2_probe
+Date: Thu, 12 May 2022 08:32:33 +0400
+Message-Id: <20220512043238.63252-1-linmq006@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Subject: Re: [RFC/RFT 0/6] RK3568 PCIe V3 support
-To: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
- Frank Wunderlich <linux@fw-web.de>, Peter Geis <pgwipeout@gmail.com>
-CC: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Johan Jonker <jbx6244@gmail.com>,
- Michael Riesch <michael.riesch@wolfvision.net>, linux-phy@lists.infradead.org,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-pci@vger.kernel.org
-From: Frank Wunderlich <frank-w@public-files.de>
-Message-ID: <A93F0CED-D363-4B16-BB49-2EFB569F0EFE@public-files.de>
-X-Provags-ID: V03:K1:xhkaGCZurrZq98AQosYA1qdyfC2dWrfKqJ5+bZbZfcK7P8zcRjz
- AJs3LMH3ZRysCQK+yzpB9g5BzhV12dHBLpsi0IEhxg6r/jWwfIUFv9liVu1Cq/HrCNpgb1F
- SBZltFMe5jjMHL6cgsK3URh38YciE7y9fbSuq6WjdQ5Nvs4LlfUQQyyFXTYbNX7aYA5Dj1h
- L3+HRpoCa/YhN8u4q8sZw==
-X-UI-Out-Filterresults: notjunk:1;V03:K0:48iYLKn43ug=:EomdsiWGstqYll791xh343
- LX+AGgncrsaHMEBEc/hZAog/juX8bJdJ/fFNABJRqfIoH1gmN8hClxOBHtwFNvqYxIju7Rrzx
- EOIJ5BCrz71ccFnIYFcw5RbGeyavpruNZPD4WB3MZgK2bGU/34DcnGbQ6wyAC6nFJW3nfEjaT
- 4rfuSknRt/gTEenUrtct1d2xnN2TnyNPwSdLIM4NhBkFYV0tUAXCUFldXbng5UZULTb/aQUbI
- MCH8W6yMGa54sabsnzYtzdxnQl5+oA3CpnxRdLEn/IGYb74ettqB1OpzAJPFdsR2ySKtEkrwJ
- dPuI9jDrCKMQqSXRW2Nk1ZElXT1rBJAoLWCcXN/38gD2wa/o/lZC97mf2LrS94ck89x2wDlWx
- 4Q8R8ac4zr/q+Nuv131osGDgw/RPRH5CLOJCMBRKX/1g1Rlzk8LSuLljpBrYLCA5rETUmzq/C
- V6VhQQuHQTQ0CD1mf7d7Chkn1YIYPICCDlXnyfJ8JELK4ZAPtt5L6WXJdor2dmvhqtBqwGPBy
- w74+zvt2+64yWmHqK65RUgwuXzys/kw0QpWH8musne3wD6yISVDq1U4bOKymRxEAs1NQfdbi9
- 2L36PmRFje7Ci1CuoJVxRGigQUS6Z+ItvPIQ4xv76S04fTO/hZ9lMd0h3Dz6XLZexH/rmpDWU
- mdkQwZD6yIF2uBU4I0AlvmxaGd/aKB/qgJW8lft3h2j6KoK8wwM6t1HsHSx6tVvC2K6F+MGFS
- zchQTHUJ0IWCgxOpud2PNV6Va54Dzdc89P+7ekwq9fmR6HhaU8Uv6L1sSk6kaG6c14xo1jRjh
- P4smfK9Saf4iKAE10qb1377sxWjx+5i9UqvXWAv5P//1TKcrGSNaGm/4iM3/6UADC6jQgBkF0
- CMVS/QH81Q2h8/FIARlWvsPKCSVOm+qsxK/ikkziHzd6S6W9ABDzZAMxwS/2YYDtTJxy2WCcv
- rJMpYQVNMhGwQco89p2kpRmnCh+t2iL7yj+ZoEdZspyoCAARRUC9v/HJ+q3w3mWb+IXNGf2Yx
- o2qq4k7InhSMRtElZzk68mXKvhEFt4htJsGXD3i3yeRcsgpSp92jYnh0nla7MEkanPUVRBq2L
- FO5FAQjwwGhgmd3xGC6C7j16MR5exENjXrC3TB9f4EA9CAE21osg7CEEg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220511_195805_868064_2224C022 
-X-CRM114-Status: UNSURE (   4.70  )
+X-CRM114-CacheID: sfid-20220511_213256_348218_A4230700 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,27 +86,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: frank-w@public-files.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am 11. Mai 2022 21:26:09 MESZ schrieb Piotr Oniszczuk <piotr.oniszczuk@gmail.com>:
+of_parse_phandle() returns a node pointer with refcount
+incremented, we should use of_node_put() on it when done.
+Add missing of_node_put() to avoid refcount leak.
 
->Frank, Peter
->
->FYI: 
->This series gives me nicely working PCI-e WiFi M2 iwl7265 module on
->rock3-a.
->Great work!
+Fixes: 478b6c7436c2 ("usb: phy: omap-usb2: Don't use omap_get_control_dev()")
+Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+---
+ drivers/phy/ti/phy-omap-usb2.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Hi,
+diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
+index 31a775877f6e..98133e5fc9de 100644
+--- a/drivers/phy/ti/phy-omap-usb2.c
++++ b/drivers/phy/ti/phy-omap-usb2.c
+@@ -421,6 +421,7 @@ static int omap_usb2_probe(struct platform_device *pdev)
+ 		}
+ 
+ 		control_pdev = of_find_device_by_node(control_node);
++		of_node_put(control_node);
+ 		if (!control_pdev) {
+ 			dev_err(&pdev->dev, "Failed to get control device\n");
+ 			return -EINVAL;
+-- 
+2.25.1
 
-Peter recently made some fixes and improvements. I plan to send new version soon.
-
-You're welcome to test it on your board and give a Tested-by tag
-regards Frank
 
 -- 
 linux-phy mailing list
