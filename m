@@ -4,92 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5BEEC433EF
-	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 10:30:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC6BDC433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 12 May 2022 12:22:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nRdlq9AOwY3FeW2hw7enBnzoHf1Svo0nrMxdFJbF8hQ=; b=Ed/oU7eqnalhfO
-	YYRymFFOE0sQaTiWwLXQkO9AYvtQwKToVay+IX2omQKzAQw7njmiqRPpiBAf8zW82ie1XG5sKtpTp
-	qFORtwgvZSB36titoH5Z0ZFWYJFk2LtYUsoDiWz05VlxVu2Ms84zP9AyyDLmEAkdglspq/OFjJDFO
-	LHyPAOhZDi98zMODFoBUTwFMHjqKwBzqUa0HpQzzqcPxDx68QhJvaiFNIV5CTOJ6mbE6kYghoAMQ5
-	XyserK6Ut4JQbOpp40e7xU70WvH3MhvlxKjbEUFQIggoWwTxBJv0Ir61o/fPcAblsfh4O5LL8dGm+
-	8fKAQ8CAlFM3KLYgs6Kg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VI0xr0J3Pezxgvx9fxDvKJQEDLmN1hgO1vndmQId8SY=; b=k6+
+	4+5eWMyfD5y6MFmc5wVeHvfvJV2f+YM3DylU1F1qPmdPrhvi7XSLiJLo1oCF3VS3KPkuL7+sURwyb
+	b0FbLSURqz+LHz1EkTppWtrl2qOTOUEDELYpqlbImi5sbq9bJePYlTbEhf2XKdOOv6tId2mWla6Vz
+	hsH3Tnz4hujKY1F85VEqI4i0VPE+9M/zuHSoXu4QNhhQDbPwY1C91lmpCZp5bZD4RfE07stV8dbeS
+	Anpm5WPv/G+tFZSg7crP+96x5k76P+92aAjcRMdmGqq6nW5PVHpYqfe2npfOSHbE8FtNrgszwIEyC
+	luHPhypisSoFiCSuCAvPM8LGnbA8Hkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1np65T-00BOCi-9c; Thu, 12 May 2022 10:30:27 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1np7pf-00Bkpe-98; Thu, 12 May 2022 12:22:15 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1np65P-00BOAR-Jx
- for linux-phy@lists.infradead.org; Thu, 12 May 2022 10:30:25 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id ba17so5698515edb.5
- for <linux-phy@lists.infradead.org>; Thu, 12 May 2022 03:30:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=Jl+ZZLPEmKFGVogvW81THWaOFnfrMcq7xgsxNJKbp8Y=;
- b=GzHOlN0ZzVY4PrqYpKqPssLC3MnbSsdquS7slbkn7dcdXDOrQpCRO8USwHNEsG3Ysf
- jju6K0tEIHtYxB4vhKQcLCXTFcb2Y9juE/nPZnI9LSD+xuSwFndkivKRNQ+dZA+wYnyD
- oYxi6rdcJ3ZBUG08tLjCMUb3wUfGdt1yHBdL754NRw1j1CoCHU1rkKgEl8haN/BCf0k3
- qzmFdXoKxi+jkWpLJSnhloCSptQ+ruWOvyhvxxsimbDX+8Xl6g9xn3e8ZsaYaKvdCClH
- w8qbLG6rSSGpdpTFjHHKAV3ZKzzLMCLF4hWyUZVEL5r/gyg+vxdCkctA67GXkCCWANDg
- 8ulA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=Jl+ZZLPEmKFGVogvW81THWaOFnfrMcq7xgsxNJKbp8Y=;
- b=f0AXC/YU99zl5ixHxqGtJ/ly/iFzF/2BYjonx7WT9ZYxSPcPSsaMGCmduEAK9rm9J/
- xAmItvJy6+0B2xJ68cyloTtWOv6ldgslAVN/v0rCajB3m2Y8BE9sRVjMtaSDGAwnzNGv
- czwata9NGcKFk73kHG2ns1sFVAx4ha0CmM8fn3opSbSJ+tLoekDAa1VRj7JK8p6jGvJG
- WjzRnTFWqqI9LM4n7dOqbUMLMkRgdZPeu1aNSLVVujCS90FbpLzFf/jt8UyhW5v+GQyQ
- q0sOSBcOOxRF52rX25NRMSlBzDiuvULm8zE0B9WP34t9tjlQmG8KzQzFwr17nTBxReML
- kHCA==
-X-Gm-Message-State: AOAM5301mp0IPXIuJz9vU9gkSOmHQCCB2qDWfOt7E2DZT+pRNPpgyfu9
- oXU7LUpLfsYR4OBrpW9uX8U83A==
-X-Google-Smtp-Source: ABdhPJyfG2D7eWQvDaS2cd6jcMEovgXAcO4kNIJd+zFA4btjO+0kmpY2e/uHtr9ENXd4dF29PFCiUA==
-X-Received: by 2002:a05:6402:948:b0:425:ea37:96b8 with SMTP id
- h8-20020a056402094800b00425ea3796b8mr34018713edz.90.1652351421995; 
- Thu, 12 May 2022 03:30:21 -0700 (PDT)
-Received: from [192.168.0.158] (xdsl-188-155-176-92.adslplus.ch.
- [188.155.176.92]) by smtp.gmail.com with ESMTPSA id
- q20-20020a170906941400b006f3ef214dd1sm1991452ejx.55.2022.05.12.03.30.20
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 12 May 2022 03:30:21 -0700 (PDT)
-Message-ID: <5b32cecf-873a-6367-df87-1b8d45e63cec@linaro.org>
-Date: Thu, 12 May 2022 12:30:20 +0200
+ id 1np7pc-00Bkns-8x
+ for linux-phy@lists.infradead.org; Thu, 12 May 2022 12:22:13 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 0A40E61F2E;
+ Thu, 12 May 2022 12:22:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB047C385B8;
+ Thu, 12 May 2022 12:22:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1652358130;
+ bh=xBvJ+NEzbcrMHgxSHTdgneNbEkOjaQal2OdHHEGDOnk=;
+ h=Date:From:To:Cc:Subject:From;
+ b=e59s6kMe1C2DA3arRhPn7+PEEUUDfJ7eM4AXLvhOe5l/Y4xP4/2ZknknxkK9czXaV
+ QZbnTpuH5b96astiM/zo4pHLa7/6p7G1C1plRz10gio7sOiDeF2etWlVsmhDIadlHv
+ BmXtKhkPYJo3yWeuKJoQjKyVinV1MyngieJNjF9wYByT0u7x54KIJ2tR5uESGqHLxj
+ Qy+NwvBNx68vOHlS6qHhy7IOJHCvxKCKQp1vDIiX6ajwxxwj3rqNSPzpzjj3A5laCV
+ lyv17YPXUzU6jgzByAOijVoRl9Otdp/zxS+/8BUlCAx8oB+L01vrnKJl2XoCSLmBEC
+ tX7q/0frRHBLw==
+Date: Thu, 12 May 2022 17:52:06 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Greg KH <gregkh@linuxfoundation.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Linux Phy <linux-phy@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>
+Subject: [GIT PULL]: Generic phy updates for v5.19
+Message-ID: <Ynz77p8KWnLzSzK3@matsya>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.1
-Subject: Re: [v4 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
- override params bindings
-Content-Language: en-US
-To: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Stephen Boyd <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>,
- Matthias Kaehlcke <mka@chromium.org>, Wesley Cheng
- <quic_wcheng@quicinc.com>, Vinod Koul <vkoul@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, quic_pkondeti@quicinc.com,
- quic_ppratap@quicinc.com, quic_vpulyala@quicinc.com,
- Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-References: <1652282793-5580-1-git-send-email-quic_kriskura@quicinc.com>
- <1652282793-5580-2-git-send-email-quic_kriskura@quicinc.com>
- <d296720d-ccbe-27f0-8ba1-9653af25dd52@linaro.org>
- <9644d608-4ab9-ed0d-50fb-0016e4331361@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <9644d608-4ab9-ed0d-50fb-0016e4331361@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220512_033023_744611_964DEFE0 
-X-CRM114-Status: GOOD (  18.48  )
+X-CRM114-CacheID: sfid-20220512_052212_436538_79129520 
+X-CRM114-Status: GOOD (  16.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,54 +65,206 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============7190769604283316619=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTIvMDUvMjAyMiAwNzo1NywgS3Jpc2huYSBLdXJhcGF0aSBQU1NOViB3cm90ZToKPiAKPiBP
-biA1LzExLzIwMjIgMTE6NDkgUE0sIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4+IE9uIDEx
-LzA1LzIwMjIgMTc6MjYsIEtyaXNobmEgS3VyYXBhdGkgd3JvdGU6Cj4+PiBGcm9tOiBTYW5kZWVw
-IE1haGVzd2FyYW0gPHF1aWNfY19zYW5tQHF1aWNpbmMuY29tPgo+Pj4KPj4+IEFkZCBkZXZpY2Ug
-dHJlZSBiaW5kaW5ncyBmb3IgU05QUyBwaHkgdHVuaW5nIHBhcmFtZXRlcnMuCj4+Pgo+Pj4gU2ln
-bmVkLW9mZi1ieTogU2FuZGVlcCBNYWhlc3dhcmFtIDxxdWljX2Nfc2FubUBxdWljaW5jLmNvbT4K
-Pj4+IFNpZ25lZC1vZmYtYnk6IEtyaXNobmEgS3VyYXBhdGkgPHF1aWNfa3Jpc2t1cmFAcXVpY2lu
-Yy5jb20+Cj4+PiAtLS0KPj4+ICAgLi4uL2JpbmRpbmdzL3BoeS9xY29tLHVzYi1zbnBzLWZlbXRv
-LXYyLnlhbWwgICAgICAgfCA4NyArKysrKysrKysrKysrKysrKysrKysrCj4+PiAgIDEgZmlsZSBj
-aGFuZ2VkLCA4NyBpbnNlcnRpb25zKCspCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNvbSx1c2Itc25wcy1mZW10by12Mi55YW1sIGIv
-RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHVzYi1zbnBzLWZlbXRv
-LXYyLnlhbWwKPj4+IGluZGV4IDFjZTI1MWQuLjcwZWZmZmUgMTAwNjQ0Cj4+PiAtLS0gYS9Eb2N1
-bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20sdXNiLXNucHMtZmVtdG8tdjIu
-eWFtbAo+Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29t
-LHVzYi1zbnBzLWZlbXRvLXYyLnlhbWwKPj4+IEBAIC01Myw2ICs1Myw5MyBAQCBwcm9wZXJ0aWVz
-Ogo+Pj4gICAgIHZkZGEzMy1zdXBwbHk6Cj4+PiAgICAgICBkZXNjcmlwdGlvbjogcGhhbmRsZSB0
-byB0aGUgcmVndWxhdG9yIDMuM1Ygc3VwcGx5IG5vZGUuCj4+PiAgIAo+Pj4gKyAgcWNvbSxocy1k
-aXNjb25uZWN0LWJwczoKPj4+ICsgICAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5p
-dGlvbnMvaW50MzIKPj4+ICsgICAgZGVzY3JpcHRpb246Cj4+PiArICAgICAgVGhpcyBhZGp1c3Rz
-IHRoZSB2b2x0YWdlIGxldmVsIGZvciB0aGUgdGhyZXNob2xkIHVzZWQgdG8KPj4+ICsgICAgICBk
-ZXRlY3QgYSBkaXNjb25uZWN0IGV2ZW50IGF0IHRoZSBob3N0LiBQb3NzaWJsZSB2YWx1ZXMgYXJl
-Lgo+Pj4gKyAgICAgIFRoZSB2YWx1ZXMgZGVmaW5lZCBhcmUgaW4gbXVsdGlwbGVzIG9mIGJhc2lz
-IHBvaW50cyAoMWJwID0gMC4wMSUpLgo+PiBUaGlzIG1lYW5zIHRoZXJlIGlzIHNvbWUgbWluaW11
-bSBhbmQgbWF4aW11bSAoMTAwJSk/Cj4gCj4gSGkgS3J6eXN0b2YsCj4gCj4gWWVzIHRoZXJlIGFy
-ZSBtYXggYW5kIG1pbiBmb3IgZWFjaCBwYXJhbWV0ZXIgKG5vdCBuZWNlc3NhcmlseSAwJS8xMDAl
-KQo+IAo+IEFzIGFuIGV4YW1wbGUgaWYgd2UgdGFrZSBzcXVlbGNoIGRldGVjdG9yIHRocmVzaG9s
-ZCwgdGhlIHJlZ2lzdGVyIHZhbHVlIAo+IHZzIGFjdHVhbCBwZXJjZW50YWdlIGNoYW5nZXIgYXMg
-cGVyIGRhdGEgYm9vayBpcyBhcyBmb2xsb3dzIDoKPiAKPiAlIGNoYW5nZSBpbiB2b2x0YWdlwqDC
-oMKgIHzCoMKgwqDCoCBjb3JyZXNwb25kaW5nIHJlZyB2YWx1ZQo+IAo+ICDCoC0yMC45MCXCoMKg
-IMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgwqAgfCDCoMKgIDcKPiAgwqAtMTUuNjAlwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqDCoMKgIDYKPiAt
-MTAuMzAlwqDCoCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKg
-wqDCoCA1Cj4gLTUuMzAlIMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgfMKgIMKgIDQKPiAwJcKgIMKgIMKgIMKgIMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgwqDCoCAzCj4gNS4zMCXCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfCDCoMKgIDIKPiAxMC42
-MCXCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqDC
-oMKgIDEKPiAxNS45MCUgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIHzCoMKgwqAgMAo+IAo+IEhlcmUgdGhlIG1pbiBhbmQgbWF4IGFyZSAxNS45JSB0byAt
-MjAuOSUKPiAKPiBUaGUgbWluIGFuZCBtYXggZGlmZmVyIGZvciBlYWNoIHBhcmFtZXRlciBhbmQg
-bWlnaHQgbm90IGJlIG5lY2Vzc2FyaWx5IAo+IDAlIGFuZCAxMDAlCgpUaGVuIGl0IHNlZW1zIHBv
-c3NpYmxlIHRvIGRlZmluZSBtaW5pbXVtIGFuZCBtYXhpbXVtIHZhbHVlcyAtIHBsZWFzZSBhZGQK
-dGhlbSAoIm1pbmltdW06IHh4eHgiKS4KCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0gCmxp
-bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+
+--===============7190769604283316619==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="JeNhZ5GR7yUpIzDM"
+Content-Disposition: inline
+
+
+--JeNhZ5GR7yUpIzDM
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hello Greg,
+
+Please pull to receive the Generic phy updates for v5.19. This time no
+new driver, few driver with new chip support and driver updates. As
+usual the changes are already in linux-next.
+
+The following changes since commit 3123109284176b1532874591f7c81f3837bbdc17:
+
+  Linux 5.18-rc1 (2022-04-03 14:08:21 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-=
+for-5.19
+
+for you to fetch changes up to d413a34932f98cc5bf0ffdd332884a8b63a1a7f9:
+
+  phy: qcom-qmp: rename error labels (2022-05-03 10:12:03 +0530)
+
+----------------------------------------------------------------
+phy-for-5.19
+
+  - New support:
+        - LVDS configuration support and implementation in fsl driver
+	- Qualcomm UFS phy support for SM6350 and USB PHY for SDX65
+	- Allwinner D-PHY Rx mode support
+	- Yamilfy Mixel mipi-dsi-phy
+
+  - Updates:
+	- Documentation for phy ops order
+        - Can transceiver mux support
+	- Qualcomm QMP phy updates
+	- Uniphier phy updates
+
+----------------------------------------------------------------
+AngeloGioacchino Del Regno (2):
+      phy: mediatek: phy-mtk-mipi-dsi: Simplify with dev_err_probe()
+      phy: mediatek: phy-mtk-hdmi: Simplify with dev_err_probe()
+
+Aswath Govindraju (1):
+      phy: phy-can-transceiver: Add support for setting mux
+
+Biju Das (1):
+      dt-bindings: phy: renesas,usb2-phy: Document RZ/G2UL phy bindings
+
+Jiapeng Chong (1):
+      phy: rockchip-inno-usb2: Clean up some inconsistent indenting
+
+Johan Hovold (6):
+      phy: qcom-qmp: fix phy-descriptor kernel-doc typo
+      phy: qcom-qmp: fix struct clk leak on probe errors
+      phy: qcom-qmp: fix reset-controller leak on probe errors
+      phy: qcom-qmp: switch to explicit reset helpers
+      phy: qcom-qmp: fix pipe-clock imbalance on power-on failure
+      phy: qcom-qmp: rename error labels
+
+Jules Maselbas (3):
+      phy: core: Add documentation of phy operation order
+      phy: core: Update documentation syntax
+      phy: core: Warn when phy_power_on is called before phy_init
+
+Kunihiko Hayashi (5):
+      dt-bindings: phy: uniphier-usb2: Add vbus-supply
+      dt-bindings: phy: uniphier-usb3ss: Treat vbus-supply as optional
+      dt-bindings: phy: uniphier-ahci: Fix missing reset-names
+      dt-bindings: phy: uniphier-usb3hs: Fix incorrect clock-names and rese=
+t-names
+      dt-bindings: phy: uniphier: Clean up clocks, resets, and their names =
+using compatible string
+
+Liu Ying (4):
+      phy: Add LVDS configuration options
+      dt-bindings: phy: Convert mixel,mipi-dsi-phy to json-schema
+      dt-bindings: phy: mixel: mipi-dsi-phy: Add Mixel combo PHY support fo=
+r i.MX8qxp
+      phy: freescale: phy-fsl-imx8-mipi-dphy: Add i.MX8qxp LVDS PHY mode su=
+pport
+
+Luca Weiss (2):
+      dt-bindings: phy: qcom,qmp: Add SM6350 UFS PHY bindings
+      phy: qcom-qmp: Add SM6350 UFS PHY support
+
+Marek Vasut (1):
+      phy: freescale: imx8m-pcie: Handle IMX8_PCIE_REFCLK_PAD_UNUSED
+
+Minghao Chi (CGEL ZTE) (2):
+      phy/rockchip: Use of_device_get_match_data()
+      phy/rockchip: Use of_device_get_match_data()
+
+Paul Kocialkowski (2):
+      dt-bindings: sun6i-a31-mipi-dphy: Add optional direction property
+      phy: allwinner: phy-sun6i-mipi-dphy: Support D-PHY Rx mode for MIPI C=
+SI-2
+
+Rob Herring (1):
+      dt-bindings: phy: marvell,armada-3700-utmi-host-phy: Fix incorrect co=
+mpatible in example
+
+Rohit Agarwal (2):
+      dt-bindings: phy: qcom,qmp: Add SDX65 USB PHY binding
+      phy: qcom-qmp: Add support for SDX65 QMP PHY
+
+Samuel Holland (6):
+      phy: rockchip-inno-usb2: Fix muxed interrupt support
+      phy: rockchip-inno-usb2: Do not check bvalid twice
+      phy: rockchip-inno-usb2: Do not lock in bvalid IRQ handler
+      phy: rockchip-inno-usb2: Support multi-bit mask properties
+      phy: rockchip-inno-usb2: Handle bvalid falling
+      phy: rockchip-inno-usb2: Handle ID IRQ
+
+Swapnil Jakhade (1):
+      phy: cadence: Sierra: Add TI J721E specific PCIe multilink lane confi=
+guration
+
+ .../phy/allwinner,sun6i-a31-mipi-dphy.yaml         |  12 +
+ .../bindings/phy/marvell,armada-3700-utmi-phy.yaml |   2 +-
+ .../devicetree/bindings/phy/mixel,mipi-dsi-phy.txt |  29 ---
+ .../bindings/phy/mixel,mipi-dsi-phy.yaml           | 107 ++++++++
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml      |   4 +
+ .../devicetree/bindings/phy/renesas,usb2-phy.yaml  |   1 +
+ .../bindings/phy/socionext,uniphier-ahci-phy.yaml  |  91 +++++--
+ .../bindings/phy/socionext,uniphier-pcie-phy.yaml  |  47 +++-
+ .../bindings/phy/socionext,uniphier-usb2-phy.yaml  |   3 +
+ .../phy/socionext,uniphier-usb3hs-phy.yaml         |  89 +++++--
+ .../phy/socionext,uniphier-usb3ss-phy.yaml         |  98 ++++++--
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/allwinner/phy-sun6i-mipi-dphy.c        | 166 ++++++++++++-
+ drivers/phy/cadence/phy-cadence-sierra.c           | 193 +++++++++++++-
+ drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c     | 276 +++++++++++++++++=
++++-
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c         |  10 +-
+ drivers/phy/mediatek/phy-mtk-hdmi.c                |  50 ++--
+ drivers/phy/mediatek/phy-mtk-mipi-dsi.c            |  29 +--
+ drivers/phy/phy-can-transceiver.c                  |  24 +-
+ drivers/phy/phy-core.c                             |  44 +++-
+ drivers/phy/qualcomm/phy-qcom-qmp.c                | 124 +++++++--
+ drivers/phy/rockchip/phy-rockchip-dphy-rx0.c       |   7 +-
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c      | 129 ++++++++--
+ drivers/phy/rockchip/phy-rockchip-typec.c          |   6 +-
+ include/linux/phy/phy-lvds.h                       |  32 +++
+ include/linux/phy/phy.h                            |   4 +
+ 26 files changed, 1353 insertions(+), 225 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/mixel,mipi-dsi-ph=
+y.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/mixel,mipi-dsi-ph=
+y.yaml
+ create mode 100644 include/linux/phy/phy-lvds.h
+
+--=20
+~Vinod
+
+--JeNhZ5GR7yUpIzDM
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE+vs47OPLdNbVcHzyfBQHDyUjg0cFAmJ8++4ACgkQfBQHDyUj
+g0cGzxAAgGr+s+6ht/6AAbizNY56JA2rElQpCaBVFfEqcXors8hOcqE8a6q6c9gI
+oagi0MxqZTDEaHLfqyfMZ0wGRYvJEcBZSM6TWBWzhXAefPWyIjm/8oxN6UQ0soZR
+ZBgmuG067K5hTE1fd43BAlc3SfDqdu2iPr3QBpi6dwNx7uvKs5qSqNtyDv14mNEP
+ElRS0ghnowZERYw6EYQ5JuD+YHJXCMkH6gIuT5/KT/ygMN/kC1evqgWiOV68Eh9r
+wjGo7QaFZYK+LCqARmSE7E7QTv6AZ4Uc71WK3wDyoI6pDJK10VLi3GHQntmoT6xR
+AXXR1i93+Wa8cv3O5coi/5/ers4EqYUZ5TOBpWDijG1Nk+beNlpgUjCsQzZloQMv
+9hH/QHKusm1HrV65XhozXOHXTQ+Mqy3hnEzqDfFK5/vDx9f2SMbA+NDewLUNlJ8S
+GOiKT1NS8ppJisS7Udxlvz6EO1jzEUNL2l3nxw+Ml5rNeywcgBwTkyBlr1yC/yiM
+MvNZD8xwyfrsfsEcZL6TZ1ZdenKuPwiv44ba80p013sPJZnv07lxzAwOJZxpw3ZT
+8KxEBVHoXlSVUsZZzp36j51jSsY4pFboSJS1YmMQOlvCGqptqvr/EdFHscYRfxqV
+NI3IyMKTFPuZBnRTTsujgYyoSIpdqooyxOn+Sr5WpMF2GDmVBAA=
+=3OAW
+-----END PGP SIGNATURE-----
+
+--JeNhZ5GR7yUpIzDM--
+
+
+--===============7190769604283316619==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7190769604283316619==--
+
