@@ -4,85 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E961C433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 13 May 2022 18:32:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E866AC433F5
+	for <linux-phy@archiver.kernel.org>; Fri, 13 May 2022 22:51:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L4vGU+jtMJo/Qr2hM9rul2NEUFsMROsmx0IjWPuxaSw=; b=ZDMvuw4OpGiJPQ
-	874CcjVVI0NeDz4Oh8BSwbtGU2uRs721dzVeeXNSBJcZ9pMfX+gofTC44KpkcJOi6Jrh6l9R5e2aA
-	pf+BaDyCSncBn5NXPIwD9PChj6DPV6HPHF3lj93B++1aoixUVJG5UE9iUvbJgxBCQdb/aG8zg0k2Q
-	pNQ94fpW8cE8G7IG4pxuTwjpqeck5w88TWVFqAsFZFU3hwfElX40CI2Jb5Q2gcmJJV487TGv+z9Zc
-	pUePR7uYsKnporh2qu93kjj6/TWFAn2kuHJyLiWicUEv3ssONL+Wa0wvYJ0w/8KQgmCOP/xzm4oQD
-	7aecwjAGXMtRtbiIUsSw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5O8raibIl7Uff1oLT8IidADYyvvp/Bxhoni0IGY319E=; b=2pyCpf6aZp8yWl
+	7r8p6WdZo8ZSPpYldzWb81OruujoetGCkSidNejAcz2+WvP8+xY9uCnOr90ngAwnZ2wqfLcau//XH
+	zeBVvjFGdh+aAwZEFAsmt89U1skvWL8mCTdJXDsJClV/WoViYkTbs83ViZQObP0ptIYRIuYxkRY9q
+	mslhoNm6KCv/0tgvIndMkXfGeFblS3lYPQaQIrx9vb6/ApKy6M9ibxHMcCcCGFTRxJrT29afFG8eu
+	RF/ALqqkkMs2bONPWUAjsYEZ/mi5YRhkjTKNtz3QwlLso8zULiQ2su4R+xrczw/Sorufl6OB4SUrq
+	T4ffzVXFjNoNtxIFiVYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1npa5r-00HCOU-L1; Fri, 13 May 2022 18:32:51 +0000
-Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
+	id 1npe85-000GDH-5v; Fri, 13 May 2022 22:51:25 +0000
+Received: from mail-oo1-xc29.google.com ([2607:f8b0:4864:20::c29])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1npa5p-00HCN4-EC
- for linux-phy@lists.infradead.org; Fri, 13 May 2022 18:32:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
- t=1652466769; x=1684002769;
- h=message-id:date:mime-version:subject:to:cc:references:
- from:in-reply-to:content-transfer-encoding;
- bh=YOK46qDISBsrGEWSqHAgMbbES1yAcOFXE7P+HSzlFp8=;
- b=S8UAF36WvGtrQCyG/Fc5W3vNtCiLRxaPHDLywffbc9GoZaVMDwqPdvqM
- TLnFfmgY/eriwOCIGkilh5oQhbxjdGHOZCMfCg+vt1mWvjNO7eCbH/Kok
- DUi8PuMvDwIgDhT5Y3vKx9OVcHZpCgh4oaE0urQTQN/Q7xMC0+f1lvfDT 4=;
-Received: from unknown (HELO ironmsg01-sd.qualcomm.com) ([10.53.140.141])
- by alexa-out-sd-01.qualcomm.com with ESMTP; 13 May 2022 11:32:48 -0700
-X-QCInternal: smtphost
-Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
- by ironmsg01-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 13 May 2022 11:32:48 -0700
-Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
- nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.22; Fri, 13 May 2022 11:32:47 -0700
-Received: from [10.216.60.143] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Fri, 13 May
- 2022 11:32:40 -0700
-Message-ID: <4411bca2-5590-e6a8-ceb9-57bd8b293cc9@quicinc.com>
-Date: Sat, 14 May 2022 00:02:37 +0530
+ id 1npe82-000GCU-Sb
+ for linux-phy@lists.infradead.org; Fri, 13 May 2022 22:51:24 +0000
+Received: by mail-oo1-xc29.google.com with SMTP id
+ q7-20020a4adc47000000b0035f4d798376so2995414oov.6
+ for <linux-phy@lists.infradead.org>; Fri, 13 May 2022 15:51:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e/NkuoBvgXYvzbAWwDOMbCfFkUOSLZa+w7ZV3Xisx9Q=;
+ b=q6a2UCZsF6tRfpudX73+ygATvEqE3U/hHfuBCYlGVgjWXvCDSW/ooU2SkKFmpaOLS7
+ YPpH0IJZTg6k1W03pYag5iFNAVKNKh4v7OCFnWiYnxn3CaPjUEKIvSM6bxQDufFc6f9/
+ GD6o2mcO0TrehK8pAaOFj0Tg314Q26WSVg9rvleROfG4P43JYbhkvNiJiWGcBrLCW3vc
+ AaetJgKnbR2vO2uUMIKppHQshRWUF8XugOfLyni+kHaagH7WdeNaEF7qmXo1w+oFY1Ov
+ lIngYXjfhjKfXDHnctftngoOo3V11HEGeUk7Fo0gzYlrigRN578xuJc0pfTAIBOIUdn7
+ NJwQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e/NkuoBvgXYvzbAWwDOMbCfFkUOSLZa+w7ZV3Xisx9Q=;
+ b=XV2n/hFnPrpTfujgsIfQ0UWuqCvAWzp9quBjMGrMRtyjFjc6/gB0sEFGna+BFq+0PT
+ LkEKpmlqjY5y+N2gx5tJOHZ+MgP+KUm+Ht4j4eFfRfKQGOXOtvuiTNrJJ4MjtXnFKfrQ
+ JBg8Xop2hpTYHDIDPjC8k9uC/mYFSfyTwnwH7JsEjAlIk2o71ihMRYXtfhTA30mbS64f
+ jgB23qZGF7K7W5ZcoWJLKQjZfJ2SOMIbIYgQh7E6Qd3Y2TmDh53MPFnkd8RPt2n6HtXU
+ 9CUCOE8oLO/xRpRDJvXTJuHBsUP7Jv5HkoDgR+YvCYFliQeS42T0EynhVp3Isw8KM9j5
+ r8Fg==
+X-Gm-Message-State: AOAM5327mK2ohDUBMDQqTlkwXaVj7MPzgL+7TpangDyIFYXOb1x2q8Db
+ peJ7oP6wEAxc/Vwzfntf+X7Dpg==
+X-Google-Smtp-Source: ABdhPJzMxFG/WXvLdVMsesmbtKJjSkP4lUdqfhD8ANxWOAUX1Kn0kFoSk2IBFcRPKM7kdFvPu67Axw==
+X-Received: by 2002:a4a:a602:0:b0:35f:2658:f34f with SMTP id
+ e2-20020a4aa602000000b0035f2658f34fmr2737335oom.17.1652482280733; 
+ Fri, 13 May 2022 15:51:20 -0700 (PDT)
+Received: from ripper.. (104-57-184-186.lightspeed.austtx.sbcglobal.net.
+ [104.57.184.186]) by smtp.gmail.com with ESMTPSA id
+ l9-20020a4ae2c9000000b0035eb4e5a6d4sm1592679oot.42.2022.05.13.15.51.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 May 2022 15:51:19 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 0/3] phy: qcom-qmp: Add SC8280XP USB3 UNI phy
+Date: Fri, 13 May 2022 15:53:45 -0700
+Message-Id: <20220513225348.1671639-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.0
-Subject: Re: [v4 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
- override params bindings
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- "Andy
- Gross" <agross@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Stephen Boyd
- <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>, "Matthias
- Kaehlcke" <mka@chromium.org>, Wesley Cheng <quic_wcheng@quicinc.com>, "Vinod
- Koul" <vkoul@kernel.org>
-CC: <devicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
- <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <quic_pkondeti@quicinc.com>,
- <quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>, Sandeep Maheswaram
- <quic_c_sanm@quicinc.com>
-References: <1652282793-5580-1-git-send-email-quic_kriskura@quicinc.com>
- <1652282793-5580-2-git-send-email-quic_kriskura@quicinc.com>
- <d296720d-ccbe-27f0-8ba1-9653af25dd52@linaro.org>
- <3abbb26f-9396-d024-67f6-f24f7db3408d@quicinc.com>
- <5f7dfcba-7e65-4f54-8699-e44ce11e216e@linaro.org>
- <75d18fec-44fe-6bc6-5ff2-af5d87b43787@linaro.org>
-From: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>
-In-Reply-To: <75d18fec-44fe-6bc6-5ff2-af5d87b43787@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220513_113249_550537_66E11ABD 
-X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-CacheID: sfid-20220513_155123_011716_CDCF55D3 
+X-CRM114-Status: UNSURE (   6.16  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,31 +86,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The SC8280XP platform has two instances of the 5nm USB3 UNI phy attached
+to the multi-port USB controller, this series adds definitions for this
+PHY.
 
-On 5/13/2022 5:50 PM, Krzysztof Kozlowski wrote:
-> On 13/05/2022 12:32, Krzysztof Kozlowski wrote:
->>> Would it be possible to add bps (basis point) to the list of standard
->>> units if it makes sense to use it ?
->> There is already 'percent' so 'bp' could be as well, makes sense to me.
->> I can send a patch for it and we'll see what Rob says.
->
-> Merged:
-> https://github.com/devicetree-org/dt-schema/pull/73
->
->
-> Best regards,
-> Krzysztof
+Bjorn Andersson (3):
+  dt-bindings: phy: qcom,qmp: Add compatible for SC8280XP USB3 UNI phy
+  phy: qcom-qmp: Add USB3 5NM QMP UNI registers
+  phy: qcom-qmp: Add SC8280XP USB3 UNI phy
 
-Thanks Krzysztof, Will refresh the patches with new changes.
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp.c           | 138 ++++
+ .../phy/qualcomm/phy-qcom-usb3-5nm-qmp-uni.h  | 617 ++++++++++++++++++
+ 3 files changed, 756 insertions(+)
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-usb3-5nm-qmp-uni.h
 
-Regards,
-
-Krishna,
+-- 
+2.35.1
 
 
 -- 
