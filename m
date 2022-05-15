@@ -4,71 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DFC2C433EF
-	for <linux-phy@archiver.kernel.org>; Sun, 15 May 2022 06:36:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC013C433FE
+	for <linux-phy@archiver.kernel.org>; Sun, 15 May 2022 11:50:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
+	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cUK2cHN5A6idVcKIxEO7S9D1+zyBjKEsq7pxe+D0hBY=; b=cKWrSO7SHdYU0D
-	ryHFbU3f5TfAuDsNXdaypqmGl8+6gdwswUboze4POz8XdldunLhQwcrp3Jvambf3OTa1pkbiuU47M
-	pjxYndLCy05OqmD5L1FIIsPfGpsuiecVfdqhmErwoxLFIpEssph863YymybU0SpVzqr9ZneR/fz+g
-	EbkltXLiCBeQ4vhqKGGHTQ08km7f9Haes7SM28Y+LR1Q2OJOLXkB5jKgTs5T2leDPAJV5QhN1yVut
-	EoPTNzGpG6beLZRqsho/VxeoKrk14BhcHe1Bdzd5eGiNXCd0RtEokTIxK4dZ7zQ2dFuh8ZAnb0BuP
-	jk01ZpnLb/MywidlaTYw==;
+	List-Owner; bh=mr6el0sQLIJE1P2NlQ+lVb2nn40DTWhy9/LLx7dAmf8=; b=wRSy5yAMi+AC7w
+	khMgWNWaJuS4Prk2vc3CL0gmk/KqlCEH/jid9Ur12rQgWYhtlwMusqEGAErsmG2xRPoGPaJuhmdj2
+	m+Wz2ZVhKq38PZvnEcDb1qUu5zaplYiI2qod3cc4xmjo/n2zoj9N57sGw4FQx/eEpvszZf2Z9H2YN
+	WOgv1JMYRI/nDnLgMIHsgzIjeNAbYoNaS31x3Ln9ghHTJtXs/kJkZYBkKbaLtVrL5CxbfoDoCiEIE
+	tIQ31w+tLYYLHik4HbTHX7sBmexWcNlawMNI6C+49b9D+mNHhm/F2JZrGcjPBugNpdzJp198dtagJ
+	SrfQ8MynS4+W961fnjfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nq7sA-003JKI-AO; Sun, 15 May 2022 06:36:58 +0000
-Received: from mail-oi1-x234.google.com ([2607:f8b0:4864:20::234])
+	id 1nqClX-003vgY-38; Sun, 15 May 2022 11:50:27 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nq7s7-003JJl-9z
- for linux-phy@lists.infradead.org; Sun, 15 May 2022 06:36:56 +0000
-Received: by mail-oi1-x234.google.com with SMTP id q8so15015090oif.13
- for <linux-phy@lists.infradead.org>; Sat, 14 May 2022 23:36:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=abJLZGgjMfh8rX+ZbBZ6JRfVrVVL/LGIcKNrpQhfC6Y=;
- b=dNcMrWiXPhoSPTPD7rYo6oHnpWej3ftK/aEsS7ZG3mLHGEdc021KTOLN4BM/XHaDgZ
- Sg3f23g6pqjHlV6RNZFBaS5NCICddZLu2Wp8lVDciiiEMGlYn/ppyWvFJibpAjo9j1id
- PMpN+ZQit8Yg4yXMogWGuqsosp4c7ItvCmmYVoXo2LGKFXuox6tPZRDCA6g0ntAnLuBI
- Zr1xz5A3aYC2i6kau0Mw86sU8HuLczhZDc36+YHfhAus6f20QW0noDr1NreFrT3V+bxR
- 2zRgIp5nytpyZOyduMqFD2hK1qKhUN3ZkKRRIdSYU2a0matUT6H23NTZfHpIm6BxH4eI
- vghA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=abJLZGgjMfh8rX+ZbBZ6JRfVrVVL/LGIcKNrpQhfC6Y=;
- b=xj9qkJ7dNqvNaiBpSOLAJgQNibaHBNEEBMHz9i4oJVSTGl13k5JYOQ9KjGovJ7Zjpf
- VA6mA1kXAnDZ+mw1eeQwvF5nwOIzeOrGhrkw3hC0oLlUMsq1ZCTg6pZUydQzof2Mezr+
- 8+Fmnn1x+wh7w7y/GcO1ifgdzxcCEPh3czcYPzd48EMwCAKbfGXTnHW/wp1XucLf8Y2k
- z9yweYe2dvcZav8F6pA+AtJgd4GjXPtYdT/30ontv/8sK4NwqhbuKoQ8TdfwSI0HsbGp
- 95Np7fVgwOVIeHLWleX0iXP5lpjE+391vS2f8C5t/g/JlrXKMnyXsdTUeOgRV8I8kVBN
- EfiQ==
-X-Gm-Message-State: AOAM533LLszkr9oF94Gz3ZFDZbUVcqmNhb6pxOCGPyKro9HGdgbOWJCA
- KhDS5H7EkLA32UUh2tdhifO80HiPIiqfdAMtwynanA==
-X-Google-Smtp-Source: ABdhPJz+cF7Kgs9VRE4OciEFza03OApRMb4mZkLk1e9pqh/Cf7HxV9If/lRjpTi+G192d0vuzGfI8DTUQ9JaQqo3XL4=
-X-Received: by 2002:a05:6808:dc3:b0:2ef:86e7:a0b with SMTP id
- g3-20020a0568080dc300b002ef86e70a0bmr5601383oic.48.1652596612750; Sat, 14 May
- 2022 23:36:52 -0700 (PDT)
+ id 1nqClK-003vcg-Eo; Sun, 15 May 2022 11:50:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1652615387;
+ bh=B54b8i/DJeeMKAG6eeLRs8Eg71xNxoV1yns596upSxo=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=KZU3p+Wx1KBt/Lqv9OJbTi7Ehf3YdK1vP//M3q2xGBD0rekA1/r7t0037nVPPzgqg
+ OpkXodRp8QArExZJmHXpP23WW0wvJ5GXzn3lyWvJpZxQyvdjj+3LRFsCL9Q+D7O3Kb
+ bdSOJCr/Z0EaBW8OrHyet4TzApAZHrjf9oG9M6go=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.155.220] ([217.61.155.220]) by web-mail.gmx.net
+ (3c-app-gmx-bap15.server.lan [172.19.172.85]) (via HTTP); Sun, 15 May 2022
+ 13:49:47 +0200
 MIME-Version: 1.0
-References: <20220418205509.1102109-1-bhupesh.sharma@linaro.org>
- <20220418205509.1102109-2-bhupesh.sharma@linaro.org> <YmQfZ+h5tD6KbMID@ripper>
-In-Reply-To: <YmQfZ+h5tD6KbMID@ripper>
-From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
-Date: Sun, 15 May 2022 12:06:39 +0530
-Message-ID: <CAH=2NtzEBwuo+vm8-2Drn4P7SiUbV-aNL1zVDs8OahFEargCiQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/4] dt-bindings: phy: qcom, qmp: Mark '#clock-cells' as
- a 'optional' property
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- bhupesh.linux@gmail.com, agross@kernel.org, linux-kernel@vger.kernel.org, 
- devicetree@vger.kernel.org, robh+dt@kernel.org, vkoul@kernel.org
+Message-ID: <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
+From: Frank Wunderlich <frank-w@public-files.de>
+To: Rob Herring <robh@kernel.org>
+Cc: Frank Wunderlich <linux@fw-web.de>, Michael Riesch
+ <michael.riesch@wolfvision.net>, Vinod Koul <vkoul@kernel.org>, Johan
+ Jonker <jbx6244@gmail.com>, linux-rockchip@lists.infradead.org,
+ linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Bjorn Helgaas
+ <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>, Peter Geis <pgwipeout@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>
+Subject: Aw: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
+Date: Sun, 15 May 2022 13:49:47 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
+References: <20220514115946.8858-1-linux@fw-web.de>
+ <20220514115946.8858-2-linux@fw-web.de>
+ <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:vyz+cZ1FBTfjDhfQEhv1JzESF6L56qiBrPOQZS9cHKD6f4k7h++sUqzAQ7FmgPedf81JC
+ U48uvEu/vudC4ZpfT/fIWI9vVoLc8tNndbfZsqX0t7UFqMM00+4CSKXxw2aARFB+ZM2nBFucDWCt
+ jm125jW3y59zpsu1G3UIRZWmMwTOzvONPEjvyTvOwLuHceoIsVsOxzZZEXsq1BgNyzcvRhugBlZt
+ AJJ87wLTUxaLMgyFoRqkwSdJUddjxr3JGhC2Sh1cgKGXyS918z8pOFI8yYFaIr48XVG7rG67/uDg
+ Uc=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:S/t/BYr4iXI=:8wqNb/mB9PaXLXn1njkTeV
+ hOHvGGfN3VE+cgjjRhr1zCt4qjbvjx1NmiPGQQYA28B5Z9ftYVAmN7zvzVa9t2M18+t8SIkRc
+ EIvVnlSitX6gs5p443xj8JynkKVYTYFAKKO2zv9J70EkEiGQIkXIpMjrlNtRt4jm7xsDprNEV
+ diKQwQrcGed0x09qWJ8Mlvc2zPk9ECCCdBtT+8EPE0eHu7GO2OdALNoe+YrpSP2Nt0e/rpkwD
+ 77lapCoazyx4Ee5jjTQ9HZCQBq8/hah+QiDNd6y/ShkOS+cl/DAbQNr0G8liqWE/TKEwY1PWL
+ 7TTQjRViOUHYkpXhHAQFZd73CCAslqZ6dyGssEI5ERtsmEjsLGkmh2P8zDBNWunETwUN28M/j
+ HvirtANDkBFM3Ybm6HImIb7CU6CQ/fZ2TKHYrDMPqqPqA7SqTMWmXArtq1uYo9GE4jBGPU3DW
+ Cl3ijgnJujsGqc+hfsesetmrCcM6T13jON1scUX1uMNNAciZL5n7kzcOLSw0fm/50eWlE2rf1
+ P+rf/7Z2FQ1prZduh0N1rM1rDFKeRGbjlDTpBpniEktom7Jd+qEtNQroC48NkzPktKa5M+vsy
+ OSMwYEqBocV/w8MSxZBSCsT5Vbu16h1mHYE0AlIscgWyd89cWtgef3aoJvYz1hITdNYeF0R7X
+ AuQgnB729Uw0tVZr04bsAGh7pnUfq0Gi6rtUA++edXIVVlnLte49gpShgrJ5mQWFHGWpvg/7u
+ 7V38Z4bgTTRHQCFZB38ikUMslJO/bM4BJzgjD6gK4io2xLPml/828389C0YEWkLUoCmotR89J
+ ZnC15/y
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220514_233655_406080_7D26F17A 
-X-CRM114-Status: GOOD (  23.35  )
+X-CRM114-CacheID: sfid-20220515_045014_993977_C87F16B3 
+X-CRM114-Status: GOOD (  19.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,105 +97,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Bjorn,
+Hi
 
-On Sat, 23 Apr 2022 at 21:14, Bjorn Andersson
-<bjorn.andersson@linaro.org> wrote:
->
-> On Mon 18 Apr 13:55 PDT 2022, Bhupesh Sharma wrote:
->
-> > '#clock-cells' is not a required property for qmp-phy(s) in the
-> > '/' node, but it should be is used in 'phy@' subnode (where it is
-> > actually a 'required' property). Fix the same.
-> >
->
-> It's not that #clock-cells is "not a required property", it's that the
-> clock comes out of the phy (the child node), so there is no clocks
-> provided by the parent device.
->
->
-> Please rewrite the commit message.
+> Gesendet: Sonntag, 15. Mai 2022 um 01:14 Uhr
+> Von: "Rob Herring" <robh@kernel.org>
 
-Ok.
-
-> > This also fixes the following 'make dtbs_check' warning(s):
+> On Sat, 14 May 2022 13:59:42 +0200, Frank Wunderlich wrote:
+> > From: Frank Wunderlich <frank-w@public-files.de>
 > >
-> > sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
-> >   '#clock-cells' is a required property
+> > Add a new binding file for Rockchip PCIe v3 phy driver.
 > >
-> > Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > Cc: Vinod Koul <vkoul@kernel.org>
-> > Cc: Rob Herring <robh+dt@kernel.org>
-> > Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+> > Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> >
 > > ---
-> >  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 +++-----
-> >  1 file changed, 3 insertions(+), 5 deletions(-)
+> > v3:
+> > - drop quotes
+> > - drop rk3588
+> > - make clockcount fixed to 3
+> > - full path for binding header file
+> > - drop phy-mode and its header and add lane-map
 > >
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> > index 8b850c5ab116..c39ead81ecd7 100644
-> > --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-> > @@ -66,9 +66,6 @@ properties:
-> >        - description: Address and length of PHY's common serdes block.
-> >        - description: Address and length of PHY's DP_COM control block.
+> > v2:
+> > dt-bindings: rename yaml for PCIe v3
+> > rockchip-pcie3-phy.yaml => rockchip,pcie3-phy.yaml
 > >
-> > -  "#clock-cells":
-> > -    enum: [ 1, 2 ]
-> > -
-> >    "#address-cells":
-> >      enum: [ 1, 2 ]
+> > changes in pcie3 phy yaml
+> > - change clock names to ordered const list
+> > - extend pcie30-phymode description
+> > - add phy-cells to required properties
+> > - drop unevaluatedProperties
+> > - example with 1 clock each line
+> > - use default property instead of text describing it
+> > - update license
+> > ---
+> >  .../bindings/phy/rockchip,pcie3-phy.yaml      | 82 +++++++++++++++++++
+> >  1 file changed, 82 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
 > >
-> > @@ -112,11 +109,13 @@ patternProperties:
-> >      description:
-> >        Each device node of QMP phy is required to have as many child nodes as
-> >        the number of lanes the PHY has.
-> > +    properties:
-> > +      "#clock-cells":
-> > +        enum: [ 0, 1, 2 ]
 >
-> The commit message doesn't mention the fact that 0 is also a valid
-> value. Perhaps just keep it [1, 2] in this patch?
+> My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+> on your patch (DT_CHECKER_FLAGS is new in v5.13):
+>
+> yamllint warnings/errors:
+>
+> dtschema/dtc warnings/errors:
+> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml: properties:clock-names: 'oneOf' conditional failed, one must be fixed:
+> 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}] is too long
+> 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}] is too short
+> 	False schema does not allow 3
+> 	1 was expected
+> 	3 is greater than the maximum of 2
+> 	hint: "minItems" is only needed if less than the "items" list length
+> 	from schema $id: http://devicetree.org/meta-schemas/items.yaml#
+> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml: ignoring, error in schema: properties: clock-names
+> Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.example.dtb:0:0: /example-0/phy@fe8c0000: failed to match any schema with compatible: ['rockchip,rk3568-pcie3-phy']
 
-0 is a valid value as mentioned in the example inside the dt-binding
-example itself.
-For e.g. see the 'sdm845-qmp-pcie-phy' node:
+seems this is fixed when i remove the "minItems: 3" from clock names (which is already fixed length because of the list).
 
-    pcie0_phy: phy@1c06000 {
-            compatible = "qcom,sdm845-qmp-pcie-phy";
-            <..snip..>
+needed to change type of lane-map to this:
 
-            pcie0_lane: phy@1c06200 {
-                    <..snip..>
+$ref: /schemas/types.yaml#/definitions/uint8-array
 
-                #clock-cells = <0>;
+then it looks clean for it....
 
-So, without [ 0, 1, 2 ] in the yaml bindings we get the following
-error while running '$ make dt_binding_check' :
-qcom,qmp-phy.example.dtb: phy-wrapper@88eb000:
-phy@200:#clock-cells:0:0: 0 is not one of [1, 2]
+-m causes many errors unrelated to this schema-file even if i pass
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
 
-Thanks,
-Bhupesh
+will wait a bit for other comments (for driver) till i send another version. maybe you can confirm my changes are the right way to fix.
 
-> >
-> >  required:
-> >    - compatible
-> >    - reg
-> > -  - "#clock-cells"
-> >    - "#address-cells"
-> >    - "#size-cells"
-> >    - ranges
-> > @@ -468,7 +467,6 @@ examples:
-> >      usb_2_qmpphy: phy-wrapper@88eb000 {
-> >          compatible = "qcom,sdm845-qmp-usb3-uni-phy";
-> >          reg = <0x088eb000 0x18c>;
-> > -        #clock-cells = <1>;
-> >          #address-cells = <1>;
-> >          #size-cells = <1>;
-> >          ranges = <0x0 0x088eb000 0x2000>;
-> > --
-> > 2.35.1
-> >
+regards Frank
 
 -- 
 linux-phy mailing list
