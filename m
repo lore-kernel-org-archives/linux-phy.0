@@ -4,76 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B560C433F5
-	for <linux-phy@archiver.kernel.org>; Sat, 14 May 2022 23:14:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DFC2C433EF
+	for <linux-phy@archiver.kernel.org>; Sun, 15 May 2022 06:36:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rV5qIsocLV2oQ/8tpiCql6EQLHLY048j6zxJ+8n1j4k=; b=EH0u80vxAVp4hC
-	kHC6kX9tZFJNTth7qOqTdm6voH2YnawWnXtvgkvR6eItLeFjCDyvlblqmBBZvCRDZdBizjs/l+O08
-	Y1rNr/44K9flaf9IX3Yr+GR8SB29SXCwBp1+z2tSY9kTFBJXAK4J9d4AjTquAaTp5UU7LkDJUmf4C
-	IwbssoggzACduZkerND60oY0ZCByY5OfEo18NOU9yINPKoVVno9CNaTiGUqDFdZFKfuJ7/WnVCBrk
-	+866Nth59KLmYqlWgVsntXXNW6D7kdgSjhCCQZpmlEJKTMAtBJhMgnzc9uzErkxkUrQ91hGgc+6e/
-	fnYmVadoNfvkJn2C4tiQ==;
+	List-Owner; bh=cUK2cHN5A6idVcKIxEO7S9D1+zyBjKEsq7pxe+D0hBY=; b=cKWrSO7SHdYU0D
+	ryHFbU3f5TfAuDsNXdaypqmGl8+6gdwswUboze4POz8XdldunLhQwcrp3Jvambf3OTa1pkbiuU47M
+	pjxYndLCy05OqmD5L1FIIsPfGpsuiecVfdqhmErwoxLFIpEssph863YymybU0SpVzqr9ZneR/fz+g
+	EbkltXLiCBeQ4vhqKGGHTQ08km7f9Haes7SM28Y+LR1Q2OJOLXkB5jKgTs5T2leDPAJV5QhN1yVut
+	EoPTNzGpG6beLZRqsho/VxeoKrk14BhcHe1Bdzd5eGiNXCd0RtEokTIxK4dZ7zQ2dFuh8ZAnb0BuP
+	jk01ZpnLb/MywidlaTYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nq0yG-002XvB-KM; Sat, 14 May 2022 23:14:48 +0000
-Received: from mail-ot1-f41.google.com ([209.85.210.41])
+	id 1nq7sA-003JKI-AO; Sun, 15 May 2022 06:36:58 +0000
+Received: from mail-oi1-x234.google.com ([2607:f8b0:4864:20::234])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nq0yC-002Xud-LY; Sat, 14 May 2022 23:14:46 +0000
-Received: by mail-ot1-f41.google.com with SMTP id
- m15-20020a9d608f000000b00606a788887aso7556164otj.0; 
- Sat, 14 May 2022 16:14:43 -0700 (PDT)
+ id 1nq7s7-003JJl-9z
+ for linux-phy@lists.infradead.org; Sun, 15 May 2022 06:36:56 +0000
+Received: by mail-oi1-x234.google.com with SMTP id q8so15015090oif.13
+ for <linux-phy@lists.infradead.org>; Sat, 14 May 2022 23:36:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=abJLZGgjMfh8rX+ZbBZ6JRfVrVVL/LGIcKNrpQhfC6Y=;
+ b=dNcMrWiXPhoSPTPD7rYo6oHnpWej3ftK/aEsS7ZG3mLHGEdc021KTOLN4BM/XHaDgZ
+ Sg3f23g6pqjHlV6RNZFBaS5NCICddZLu2Wp8lVDciiiEMGlYn/ppyWvFJibpAjo9j1id
+ PMpN+ZQit8Yg4yXMogWGuqsosp4c7ItvCmmYVoXo2LGKFXuox6tPZRDCA6g0ntAnLuBI
+ Zr1xz5A3aYC2i6kau0Mw86sU8HuLczhZDc36+YHfhAus6f20QW0noDr1NreFrT3V+bxR
+ 2zRgIp5nytpyZOyduMqFD2hK1qKhUN3ZkKRRIdSYU2a0matUT6H23NTZfHpIm6BxH4eI
+ vghA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
- :message-id;
- bh=8fcWrSCf5x/oR5brHV5SFMq/ic1IdVWzznom0Nby5jg=;
- b=TluS2KhCLA9MaCRnYWyniZXDyA7NQbH9C1KEBTFQvcRHIdZzAoFmkPT9S//PFNuxFW
- 8uw9CjVsP2PHL386A2hn2dTU7hjJRvRsGv1JaklufgcIVn+C82U5/QMySVZPY+To2Ck3
- e8sCGYUDxYeSlInZq56OvuRcafbd5w9hZwFdnYZMD0qQderPGFuS4U3vmtz+5kSXvQRM
- IOGwq+IVJc08bqXJr1Q+MK7xTtdenqeO2fH4AO2ZMJg7fMPxYBATcXmquZZuPWowPiK8
- E63FAOcAabNJCdmQLXZdSEdjnyu85oTA8Y6AF7L8TiTDn6fJ6FiTn1mxQ28wnX7JjRC1
- EIaw==
-X-Gm-Message-State: AOAM5335V3EsScnb8+/jRjVmjuFMLK0cZ12FqIeQczuZYPj0yXvNe+AJ
- eqJZLBaYDLtXwF8dX9e7Wg==
-X-Google-Smtp-Source: ABdhPJwl9oHK5hDNNxA5VHeDQnmNJ6i+NfFWt4ZnjKEwX0WwdMarfDgU2sJkk1jCO8U1nV6WMPCTsw==
-X-Received: by 2002:a05:6830:d2:b0:605:ee58:2dc5 with SMTP id
- x18-20020a05683000d200b00605ee582dc5mr4057650oto.252.1652570082831; 
- Sat, 14 May 2022 16:14:42 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
- [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
- k101-20020a9d19ee000000b006060322123fsm2633837otk.15.2022.05.14.16.14.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 14 May 2022 16:14:42 -0700 (PDT)
-Received: (nullmailer pid 3276246 invoked by uid 1000);
- Sat, 14 May 2022 23:14:41 -0000
-From: Rob Herring <robh@kernel.org>
-To: Frank Wunderlich <linux@fw-web.de>
-Cc: Michael Riesch <michael.riesch@wolfvision.net>,
- Vinod Koul <vkoul@kernel.org>, Johan Jonker <jbx6244@gmail.com>,
- linux-rockchip@lists.infradead.org, linux-pci@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-kernel@vger.kernel.org,
- Frank Wunderlich <frank-w@public-files.de>, linux-phy@lists.infradead.org,
- Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- devicetree@vger.kernel.org,
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>
-In-Reply-To: <20220514115946.8858-2-linux@fw-web.de>
-References: <20220514115946.8858-1-linux@fw-web.de>
- <20220514115946.8858-2-linux@fw-web.de>
-Subject: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
-Date: Sat, 14 May 2022 18:14:40 -0500
-Message-Id: <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=abJLZGgjMfh8rX+ZbBZ6JRfVrVVL/LGIcKNrpQhfC6Y=;
+ b=xj9qkJ7dNqvNaiBpSOLAJgQNibaHBNEEBMHz9i4oJVSTGl13k5JYOQ9KjGovJ7Zjpf
+ VA6mA1kXAnDZ+mw1eeQwvF5nwOIzeOrGhrkw3hC0oLlUMsq1ZCTg6pZUydQzof2Mezr+
+ 8+Fmnn1x+wh7w7y/GcO1ifgdzxcCEPh3czcYPzd48EMwCAKbfGXTnHW/wp1XucLf8Y2k
+ z9yweYe2dvcZav8F6pA+AtJgd4GjXPtYdT/30ontv/8sK4NwqhbuKoQ8TdfwSI0HsbGp
+ 95Np7fVgwOVIeHLWleX0iXP5lpjE+391vS2f8C5t/g/JlrXKMnyXsdTUeOgRV8I8kVBN
+ EfiQ==
+X-Gm-Message-State: AOAM533LLszkr9oF94Gz3ZFDZbUVcqmNhb6pxOCGPyKro9HGdgbOWJCA
+ KhDS5H7EkLA32UUh2tdhifO80HiPIiqfdAMtwynanA==
+X-Google-Smtp-Source: ABdhPJz+cF7Kgs9VRE4OciEFza03OApRMb4mZkLk1e9pqh/Cf7HxV9If/lRjpTi+G192d0vuzGfI8DTUQ9JaQqo3XL4=
+X-Received: by 2002:a05:6808:dc3:b0:2ef:86e7:a0b with SMTP id
+ g3-20020a0568080dc300b002ef86e70a0bmr5601383oic.48.1652596612750; Sat, 14 May
+ 2022 23:36:52 -0700 (PDT)
+MIME-Version: 1.0
+References: <20220418205509.1102109-1-bhupesh.sharma@linaro.org>
+ <20220418205509.1102109-2-bhupesh.sharma@linaro.org> <YmQfZ+h5tD6KbMID@ripper>
+In-Reply-To: <YmQfZ+h5tD6KbMID@ripper>
+From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+Date: Sun, 15 May 2022 12:06:39 +0530
+Message-ID: <CAH=2NtzEBwuo+vm8-2Drn4P7SiUbV-aNL1zVDs8OahFEargCiQ@mail.gmail.com>
+Subject: Re: [PATCH v3 1/4] dt-bindings: phy: qcom, qmp: Mark '#clock-cells' as
+ a 'optional' property
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ bhupesh.linux@gmail.com, agross@kernel.org, linux-kernel@vger.kernel.org, 
+ devicetree@vger.kernel.org, robh+dt@kernel.org, vkoul@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220514_161444_747245_4C68F88F 
-X-CRM114-Status: GOOD (  16.84  )
+X-CRM114-CacheID: sfid-20220514_233655_406080_7D26F17A 
+X-CRM114-Status: GOOD (  23.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,77 +80,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 14 May 2022 13:59:42 +0200, Frank Wunderlich wrote:
-> From: Frank Wunderlich <frank-w@public-files.de>
-> 
-> Add a new binding file for Rockchip PCIe v3 phy driver.
-> 
-> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> 
-> ---
-> v3:
-> - drop quotes
-> - drop rk3588
-> - make clockcount fixed to 3
-> - full path for binding header file
-> - drop phy-mode and its header and add lane-map
-> 
-> v2:
-> dt-bindings: rename yaml for PCIe v3
-> rockchip-pcie3-phy.yaml => rockchip,pcie3-phy.yaml
-> 
-> changes in pcie3 phy yaml
-> - change clock names to ordered const list
-> - extend pcie30-phymode description
-> - add phy-cells to required properties
-> - drop unevaluatedProperties
-> - example with 1 clock each line
-> - use default property instead of text describing it
-> - update license
-> ---
->  .../bindings/phy/rockchip,pcie3-phy.yaml      | 82 +++++++++++++++++++
->  1 file changed, 82 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-> 
+Hi Bjorn,
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+On Sat, 23 Apr 2022 at 21:14, Bjorn Andersson
+<bjorn.andersson@linaro.org> wrote:
+>
+> On Mon 18 Apr 13:55 PDT 2022, Bhupesh Sharma wrote:
+>
+> > '#clock-cells' is not a required property for qmp-phy(s) in the
+> > '/' node, but it should be is used in 'phy@' subnode (where it is
+> > actually a 'required' property). Fix the same.
+> >
+>
+> It's not that #clock-cells is "not a required property", it's that the
+> clock comes out of the phy (the child node), so there is no clocks
+> provided by the parent device.
+>
+>
+> Please rewrite the commit message.
 
-yamllint warnings/errors:
+Ok.
 
-dtschema/dtc warnings/errors:
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml: properties:clock-names: 'oneOf' conditional failed, one must be fixed:
-	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}] is too long
-	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}] is too short
-	False schema does not allow 3
-	1 was expected
-	3 is greater than the maximum of 2
-	hint: "minItems" is only needed if less than the "items" list length
-	from schema $id: http://devicetree.org/meta-schemas/items.yaml#
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml: ignoring, error in schema: properties: clock-names
-Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.example.dtb:0:0: /example-0/phy@fe8c0000: failed to match any schema with compatible: ['rockchip,rk3568-pcie3-phy']
+> > This also fixes the following 'make dtbs_check' warning(s):
+> >
+> > sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
+> >   '#clock-cells' is a required property
+> >
+> > Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > Cc: Vinod Koul <vkoul@kernel.org>
+> > Cc: Rob Herring <robh+dt@kernel.org>
+> > Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+> > ---
+> >  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 +++-----
+> >  1 file changed, 3 insertions(+), 5 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> > index 8b850c5ab116..c39ead81ecd7 100644
+> > --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+> > @@ -66,9 +66,6 @@ properties:
+> >        - description: Address and length of PHY's common serdes block.
+> >        - description: Address and length of PHY's DP_COM control block.
+> >
+> > -  "#clock-cells":
+> > -    enum: [ 1, 2 ]
+> > -
+> >    "#address-cells":
+> >      enum: [ 1, 2 ]
+> >
+> > @@ -112,11 +109,13 @@ patternProperties:
+> >      description:
+> >        Each device node of QMP phy is required to have as many child nodes as
+> >        the number of lanes the PHY has.
+> > +    properties:
+> > +      "#clock-cells":
+> > +        enum: [ 0, 1, 2 ]
+>
+> The commit message doesn't mention the fact that 0 is also a valid
+> value. Perhaps just keep it [1, 2] in this patch?
 
-doc reference errors (make refcheckdocs):
+0 is a valid value as mentioned in the example inside the dt-binding
+example itself.
+For e.g. see the 'sdm845-qmp-pcie-phy' node:
 
-See https://patchwork.ozlabs.org/patch/
+    pcie0_phy: phy@1c06000 {
+            compatible = "qcom,sdm845-qmp-pcie-phy";
+            <..snip..>
 
-This check can fail if there are any dependencies. The base for a patch
-series is generally the most recent rc1.
+            pcie0_lane: phy@1c06200 {
+                    <..snip..>
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
+                #clock-cells = <0>;
 
-pip3 install dtschema --upgrade
+So, without [ 0, 1, 2 ] in the yaml bindings we get the following
+error while running '$ make dt_binding_check' :
+qcom,qmp-phy.example.dtb: phy-wrapper@88eb000:
+phy@200:#clock-cells:0:0: 0 is not one of [1, 2]
 
-Please check and re-submit.
+Thanks,
+Bhupesh
 
+> >
+> >  required:
+> >    - compatible
+> >    - reg
+> > -  - "#clock-cells"
+> >    - "#address-cells"
+> >    - "#size-cells"
+> >    - ranges
+> > @@ -468,7 +467,6 @@ examples:
+> >      usb_2_qmpphy: phy-wrapper@88eb000 {
+> >          compatible = "qcom,sdm845-qmp-usb3-uni-phy";
+> >          reg = <0x088eb000 0x18c>;
+> > -        #clock-cells = <1>;
+> >          #address-cells = <1>;
+> >          #size-cells = <1>;
+> >          ranges = <0x0 0x088eb000 0x2000>;
+> > --
+> > 2.35.1
+> >
 
 -- 
 linux-phy mailing list
