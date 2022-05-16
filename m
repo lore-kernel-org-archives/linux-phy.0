@@ -4,77 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FAE2C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 16 May 2022 06:32:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E440C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 16 May 2022 06:32:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S/7aRwj7IZtBq5P1212Gdal+YRBeg1AvOv5S2vOCX2A=; b=vK2Iqt1352iRIp
-	VGiNl4AOntSe2DuAcw51Mfylcr7eYsB2OMAnf+ly20+qtf3ra6pdJ7N2xzBs9WhILSDA+czITNH2M
-	rwOsgYnj4FFPa0qmWykubGlfpaNlrKbswlu3OCF+XVwIlwc1o5q/ZVj5fKZUsJvqYwvBPab/SzSnU
-	btO9N+14XaP4hP3fCMRJHUXYOvNNcyLX2pXG3rGIUYGdXccEyml/6UBlcWZXtoj7oXQIN0oVPBf0a
-	QMKpq2kZCZRO3U+djtrt8g9Ndxc1Gw9re5qs7JWaMTbbXeyXqmQAe0EOXkMlvz5OrHYdZU3ME3SHP
-	OeM+zCUtf3dGrdaovfPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f6d8smQnUOwDBlHydPBm7ImxNHaUshyPlDOe8TV2IRI=; b=eNm23auR5g7DvO
+	kv7HVGPAKNfWHr33RJXSK3CUxmNukeo67PmtbNhcBwE4e930HkQCm6MdLZH66vwXbKNP1pCZORfD2
+	DhvcaVeg/7HcDqbzP7rzows4F34Qq9NQJvpm6uZt6jxiyF0BG45Dv1CD16mzkosI3Ad+hVso/x6/H
+	4d/148AjCZ7SDOqAX0Vxbk5kBLQrc1UZBPzyVoPmuuR7iI2b+lxh5g1rTIxmMrA73bw8SJ53U90AM
+	uK+AzKcSYJ0dLckBZFNoBb1oJ3/UB9NpNyo6Po2cIcY8Nabk8r3om02gFwLjYVWSeGq4I6a4v6HvD
+	SlpdlWoPuPpp+NMMm1+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nqUH9-006CnJ-ER; Mon, 16 May 2022 06:32:15 +0000
-Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
+	id 1nqUHB-006CoB-Iw; Mon, 16 May 2022 06:32:17 +0000
+Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nqUH6-006Cm8-G9
- for linux-phy@lists.infradead.org; Mon, 16 May 2022 06:32:14 +0000
-Received: by mail-pj1-x102c.google.com with SMTP id
- t11-20020a17090ad50b00b001d95bf21996so16478398pju.2
- for <linux-phy@lists.infradead.org>; Sun, 15 May 2022 23:32:09 -0700 (PDT)
+ id 1nqUH9-006Cmv-AE
+ for linux-phy@lists.infradead.org; Mon, 16 May 2022 06:32:16 +0000
+Received: by mail-pf1-x431.google.com with SMTP id c14so13200668pfn.2
+ for <linux-phy@lists.infradead.org>; Sun, 15 May 2022 23:32:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=MWyLCcRrtXqaWbV9pz/nch+ilZHclG5FSEfzAoH1u1I=;
- b=H4Ik+y7eaE6vP9bww4+V6BXwts9KNfHrkG9uHkhBAAzRDO+8hEjZKmG2dyJstYkLZ9
- UZGuJBANxWsQsBSJPKdAG0ZfloaCZjbib0rbxp7mvMq9BgSLDHXwFQhP4I1wZwQEMXy8
- ULkl7fY00L61ZQ57aDoPumRtf1LBSrWjrwm/l1PWQlf+x7d6B8GXeJFSSEt7G+VPRp++
- pe8P6/EldPxjiI3WwhvrpznZ79lGX5KR3s35Mm5BjB/CiwkLqZuDghz4w/mqmTjOkkMI
- UBNzEruSFYJTaBiZ4x2Jtz64l+Llh4DHIGLWPLVo+0FHGNcDXffm2KCKfeN9yEidBXDH
- D+YA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=BKuEdgC6cXyYmX22Bawlaq+lxNFeROynSrx/FPpZN2U=;
+ b=yyRQJNFN3bheE/7sJQmOi2/U7LkTDZgn11qd5B8F7C3RUduRmNCpQFKnBRicWBQYgE
+ 54Q7IoSIuLalehwp/NBc3OYqoZxzC62YKARj1o9B0Ah/+5zyAP/8Y55FOCmnGosUqyZz
+ Xygp1oEkZtV1pgATydDV16MLY18jF3Ts/W/Aj0lKBJLql+yoKb7bhAM7GwI48ythZHNi
+ bqzsrQz3QbZj9GmGRwyjjBrbWRys4wED29qnMzz+w4s9tRWGaQ5XeO7S9BvF99hEZ1Go
+ ap9dBAoct/rNjxt0uTJxlIFjG7JDHlOGOHNz41SHfJ8WPHyKv7gTaxZT2zL3e9X7ISU8
+ lIQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=MWyLCcRrtXqaWbV9pz/nch+ilZHclG5FSEfzAoH1u1I=;
- b=6wXDN7gFI61bYu6Y54lB+iFD6HRsFc0OzCnPTQahc/pHqmEFFXZCNAEJy3GjmD+8YY
- yexeal7HWzrYEk3mJqRKCDs1Q2idjJHqQlxZ4fr7c6A5aPjM1kZ2bJzZfYagzZnT32++
- fiUg65v7z49V/qzuo/Tx3QM9QLHaW6aJIWQP5YvkMpfoKf26LiFb2OUfumrJqsTuTGZy
- 1+dZx5zTVNIOS1njy66Elzm2ZeEALJC6AGPgb44e5LBNjTE8+qHRpOqzcE9jGKZTwrE/
- QFPRpsB3DUezIrM2TrKf5qKQebUSWZjp9WWSRxGvcuwl+LbiotDGDjBS2RAHbXSj0iWI
- vC1Q==
-X-Gm-Message-State: AOAM530L7+mrcs8nRsGxHO9X0MwV7esyLQKz2K8+JiX4fmOj/+ce7I/n
- qyNZLVDmyxUyPcbkRNLgusic0w==
-X-Google-Smtp-Source: ABdhPJxYi8ELNV89KBzQB1W5es4pcM1Hvra1FK7aPNMReCpXqzLqp7e+aaZ+kxqKuk8m52xBkIbsfA==
-X-Received: by 2002:a17:903:215:b0:15e:cae9:7622 with SMTP id
- r21-20020a170903021500b0015ecae97622mr16091224plh.28.1652682729308; 
- Sun, 15 May 2022 23:32:09 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=BKuEdgC6cXyYmX22Bawlaq+lxNFeROynSrx/FPpZN2U=;
+ b=l1ZcQYZQF8JkDQTbx5XsfWW+01PSr5S87W575MVsEnEx7Qtmvv4ZoJvav93NcanmEB
+ ogQGKjo7WrK90yvsSQOhHYGnoS8FlfE3Lb0tvBUjKIaHTjLCNYOpWkeqqe/Eum0N+PEJ
+ H3Ivg6n8krIRisHj8l+iflBhdkBOc7ui8U08Buu0K8M4uPu8q+c356bVDqlvq1POx+uz
+ Q6VKz+jt3/bnHZ9pFPTw5ckPWCzb+XgsmQcWnfxPWGuC0i6DB4mq5l4ryyNLSJPeQX9a
+ DqIXY3Wic1UD9SXZzF4N0nmM4qza4N5oN3ulbGj9L0wKzWAomgBgp6jP95GOczuzknlr
+ VVHg==
+X-Gm-Message-State: AOAM532fAl1afKzxA+RtzWoj087Chvuf2QXzF9fexe1kU2Ih7//fOYwU
+ Ne2Ff8+HLqtiOdSM2kXyp2rQEw==
+X-Google-Smtp-Source: ABdhPJylXrsnGYYOIsSy3nL9TLYTDxgzeFreC7InjnzrowQmv5f7yCP4WAAR0UUE/P4Ioe8gBkkSWA==
+X-Received: by 2002:a65:6d15:0:b0:382:4e6d:dd0d with SMTP id
+ bf21-20020a656d15000000b003824e6ddd0dmr13758141pgb.333.1652682733250; 
+ Sun, 15 May 2022 23:32:13 -0700 (PDT)
 Received: from localhost.localdomain ([2401:4900:1c60:931c:dd30:fa99:963:d0be])
  by smtp.gmail.com with ESMTPSA id
- t9-20020a1709027fc900b0015e8d4eb1e2sm6053647plb.44.2022.05.15.23.32.05
+ t9-20020a1709027fc900b0015e8d4eb1e2sm6053647plb.44.2022.05.15.23.32.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 15 May 2022 23:32:09 -0700 (PDT)
+ Sun, 15 May 2022 23:32:13 -0700 (PDT)
 From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
 To: linux-arm-msm@vger.kernel.org
 Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com,
  linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org, robh@kernel.org,
  linux-phy@lists.infradead.org, vkoul@kernel.org,
- konrad.dybcio@somainline.org
-Subject: [PATCH v4 0/4] Fix  dtbs_check warning(s) for Qualcomm QMP PHY
-Date: Mon, 16 May 2022 12:01:51 +0530
-Message-Id: <20220516063155.1332683-1-bhupesh.sharma@linaro.org>
+ konrad.dybcio@somainline.org, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v4 1/4] dt-bindings: phy: qcom,
+ qmp: Shift '#clock-cells' property to phy (child) node
+Date: Mon, 16 May 2022 12:01:52 +0530
+Message-Id: <20220516063155.1332683-2-bhupesh.sharma@linaro.org>
 X-Mailer: git-send-email 2.35.3
+In-Reply-To: <20220516063155.1332683-1-bhupesh.sharma@linaro.org>
+References: <20220516063155.1332683-1-bhupesh.sharma@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220515_233212_612949_F695C273 
-X-CRM114-Status: UNSURE (   9.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220515_233215_392226_F2F9D4D8 
+X-CRM114-Status: GOOD (  10.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,57 +92,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Changes since v3:
------------------
-- v3 can be found here: https://lore.kernel.org/linux-arm-msm/20220418205509.1102109-1-bhupesh.sharma@linaro.org/
-- Addressed review comments from Bjorn.
-- Dropped [PATCH 4/4] (sent in v3) from v4, as it is accepted in
-  linux-next now.
-- Added a new [PATCH 3/4] which added 'power-domains' property
-  to the dt-binding.
+Since the clock comes out of the phy (child) node,
+so clocks are actually not provided by the parent device.
+The qmp-phy dt-bindings specify the same incorrectly at
+present. Fix the same.
 
-Changes since v2:
------------------
-- v2 can be found here: https://lore.kernel.org/linux-arm-msm/20220228123019.382037-1-bhupesh.sharma@linaro.org/
-- Addressed review comments from Rob and Shawn.
-- Collected ACK from Rob on [PATCH 2/4].
-- Since, Bjorn accepted 4 patches from v2 already, drop them for this series.
-- This series is rebased on linux-next/master.
+This change helps fix the following 'make dtbs_check' warning(s):
 
-Changes since v1:
------------------
-- v1 can be found here: https://www.spinics.net/lists/linux-arm-msm/msg104871.html
-- Addressed review comments from Dmitry.
-- Addressed the remaining dtbs_check warnings rasied by Rob's bot on v1.
-
-Shawn Guo recently fixed a large number of 'dtbs_check' warnings
-on Qualcomm DTS files for qmp phys. However a few warnings are still left
-(possibly due to new dts files being added over time).
-
-So, I decided to clean them up.
-After this series, '$ make dtbs_check' leads to only one warning for QCOM
-QMP PHY bindings, which as discussed with Konrad (see [1]), will be sent as
-a separate fix with Konrad's sm8350-sony-xperia-sagami regulator fixes.
+sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
+  '#clock-cells' is a required property
 
 Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Rob Herring <robh@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
-[1]. https://lore.kernel.org/linux-arm-msm/eb54c810-8121-7de1-e2cf-008bd59552ce@somainline.org/
-
-Bhupesh Sharma (4):
-  dt-bindings: phy: qcom,qmp: Shift '#clock-cells' property to phy
-    (child) node
-  dt-bindings: phy: qcom,qmp: Describe phy@ subnode properly
-  dt-bindings: phy: qcom,qmp: Add 'power-domains' property
-  arm64: dts: qcom: Remove unused 'vdda-max-microamp' &
-    'vdda-pll-max-microamp' properties
-
- .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 24 +++++++++++++++----
- .../qcom/sm8350-microsoft-surface-duo2.dts    |  2 --
- arch/arm64/boot/dts/qcom/sm8450-hdk.dts       |  2 --
- arch/arm64/boot/dts/qcom/sm8450-qrd.dts       |  2 --
- 4 files changed, 19 insertions(+), 11 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+index 8b850c5ab116..c39ead81ecd7 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+@@ -66,9 +66,6 @@ properties:
+       - description: Address and length of PHY's common serdes block.
+       - description: Address and length of PHY's DP_COM control block.
+ 
+-  "#clock-cells":
+-    enum: [ 1, 2 ]
+-
+   "#address-cells":
+     enum: [ 1, 2 ]
+ 
+@@ -112,11 +109,13 @@ patternProperties:
+     description:
+       Each device node of QMP phy is required to have as many child nodes as
+       the number of lanes the PHY has.
++    properties:
++      "#clock-cells":
++        enum: [ 0, 1, 2 ]
+ 
+ required:
+   - compatible
+   - reg
+-  - "#clock-cells"
+   - "#address-cells"
+   - "#size-cells"
+   - ranges
+@@ -468,7 +467,6 @@ examples:
+     usb_2_qmpphy: phy-wrapper@88eb000 {
+         compatible = "qcom,sdm845-qmp-usb3-uni-phy";
+         reg = <0x088eb000 0x18c>;
+-        #clock-cells = <1>;
+         #address-cells = <1>;
+         #size-cells = <1>;
+         ranges = <0x0 0x088eb000 0x2000>;
 -- 
 2.35.3
 
