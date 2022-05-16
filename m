@@ -4,78 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E440C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 16 May 2022 06:32:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58CB8C433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 16 May 2022 06:32:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f6d8smQnUOwDBlHydPBm7ImxNHaUshyPlDOe8TV2IRI=; b=eNm23auR5g7DvO
-	kv7HVGPAKNfWHr33RJXSK3CUxmNukeo67PmtbNhcBwE4e930HkQCm6MdLZH66vwXbKNP1pCZORfD2
-	DhvcaVeg/7HcDqbzP7rzows4F34Qq9NQJvpm6uZt6jxiyF0BG45Dv1CD16mzkosI3Ad+hVso/x6/H
-	4d/148AjCZ7SDOqAX0Vxbk5kBLQrc1UZBPzyVoPmuuR7iI2b+lxh5g1rTIxmMrA73bw8SJ53U90AM
-	uK+AzKcSYJ0dLckBZFNoBb1oJ3/UB9NpNyo6Po2cIcY8Nabk8r3om02gFwLjYVWSeGq4I6a4v6HvD
-	SlpdlWoPuPpp+NMMm1+w==;
+	List-Owner; bh=MI94mEjo3Xj0xeCn3UJwunzeNLonlDsJHsB3O//ew9Y=; b=lc+243ELiOMrDE
+	PhM14JKxDY1gafsvAGZwYc6GG4sSqgX4j9xLepqIv/c9Z+5hDW/huxObgLR61x8CUderNd1lFhV41
+	UGe9SpP5KRvC3TfTvu4XmpOiwrfw0ajQxKgleBpGCHLlAW32Yfd4fiPwqxeSJVKRWJtOkcRCi6ukj
+	DSmffp1PX23azBpqfARwqnxm0qXUdKYR6K6nVjE6tQ0ZCLMXhANpCO/Nza7OW1I/87MsZotFwU+wi
+	Ibx8E3NBuhUWhi6/+f8TsYHs9NfwdoYCvlxrx4Ir8wpjg7B+c8e3sSrIFbPS13saUEYjAR+s7GDak
+	y1pMORA3N9vOOwq99rEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nqUHB-006CoB-Iw; Mon, 16 May 2022 06:32:17 +0000
-Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
+	id 1nqUHF-006Cq1-Nx; Mon, 16 May 2022 06:32:21 +0000
+Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nqUH9-006Cmv-AE
- for linux-phy@lists.infradead.org; Mon, 16 May 2022 06:32:16 +0000
-Received: by mail-pf1-x431.google.com with SMTP id c14so13200668pfn.2
- for <linux-phy@lists.infradead.org>; Sun, 15 May 2022 23:32:13 -0700 (PDT)
+ id 1nqUHD-006Co9-Dm
+ for linux-phy@lists.infradead.org; Mon, 16 May 2022 06:32:20 +0000
+Received: by mail-pj1-x1032.google.com with SMTP id l14so2624511pjk.2
+ for <linux-phy@lists.infradead.org>; Sun, 15 May 2022 23:32:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=BKuEdgC6cXyYmX22Bawlaq+lxNFeROynSrx/FPpZN2U=;
- b=yyRQJNFN3bheE/7sJQmOi2/U7LkTDZgn11qd5B8F7C3RUduRmNCpQFKnBRicWBQYgE
- 54Q7IoSIuLalehwp/NBc3OYqoZxzC62YKARj1o9B0Ah/+5zyAP/8Y55FOCmnGosUqyZz
- Xygp1oEkZtV1pgATydDV16MLY18jF3Ts/W/Aj0lKBJLql+yoKb7bhAM7GwI48ythZHNi
- bqzsrQz3QbZj9GmGRwyjjBrbWRys4wED29qnMzz+w4s9tRWGaQ5XeO7S9BvF99hEZ1Go
- ap9dBAoct/rNjxt0uTJxlIFjG7JDHlOGOHNz41SHfJ8WPHyKv7gTaxZT2zL3e9X7ISU8
- lIQQ==
+ bh=jdmbUEtqc6R+81RJjn7yVPjYknzOyR+oSn5z7Aqd9e0=;
+ b=OH/1ky2VLUE2JS1lwgNAgz7VzWT3JSE38g+I2NFeWPMCH3lpuj0/n7IL7mhhoIFM+a
+ LxNU01lpE0Gvd3GFM11YxCrbG8ud8lTtM739fvPEUU9upSV0QMrvAME9ApZ48FFFM80b
+ PZKVE4puJ/DgiqPqkQ6cX8JXTZoqwaZ9+tBaiLhHQkciGp66v6+uANjn0asf9Ea5HaU7
+ 1tRSQB5uIuQsyiMyEmNrtWAxTBY0FxW8LO2IJahyrgf/CzFd0oBB2mUVn87oYb/IWzZY
+ Z1Xyi3YwigWdmbO/vfrTq4wAQPN3ff3uC6ec6MBjR0M6zUYLSWECCyYJZV5aMopuvWUs
+ LTiA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=BKuEdgC6cXyYmX22Bawlaq+lxNFeROynSrx/FPpZN2U=;
- b=l1ZcQYZQF8JkDQTbx5XsfWW+01PSr5S87W575MVsEnEx7Qtmvv4ZoJvav93NcanmEB
- ogQGKjo7WrK90yvsSQOhHYGnoS8FlfE3Lb0tvBUjKIaHTjLCNYOpWkeqqe/Eum0N+PEJ
- H3Ivg6n8krIRisHj8l+iflBhdkBOc7ui8U08Buu0K8M4uPu8q+c356bVDqlvq1POx+uz
- Q6VKz+jt3/bnHZ9pFPTw5ckPWCzb+XgsmQcWnfxPWGuC0i6DB4mq5l4ryyNLSJPeQX9a
- DqIXY3Wic1UD9SXZzF4N0nmM4qza4N5oN3ulbGj9L0wKzWAomgBgp6jP95GOczuzknlr
- VVHg==
-X-Gm-Message-State: AOAM532fAl1afKzxA+RtzWoj087Chvuf2QXzF9fexe1kU2Ih7//fOYwU
- Ne2Ff8+HLqtiOdSM2kXyp2rQEw==
-X-Google-Smtp-Source: ABdhPJylXrsnGYYOIsSy3nL9TLYTDxgzeFreC7InjnzrowQmv5f7yCP4WAAR0UUE/P4Ioe8gBkkSWA==
-X-Received: by 2002:a65:6d15:0:b0:382:4e6d:dd0d with SMTP id
- bf21-20020a656d15000000b003824e6ddd0dmr13758141pgb.333.1652682733250; 
- Sun, 15 May 2022 23:32:13 -0700 (PDT)
+ bh=jdmbUEtqc6R+81RJjn7yVPjYknzOyR+oSn5z7Aqd9e0=;
+ b=qnJUUNR6ASR+Dj3ulIoR8me8aueCjoos1EmBvFY/BWWQouq6RMd8BaAWs9mno574ic
+ zhCHekK0YOvImjqt1SdtDrRaDFnIgshgYuYJz4uaM5UbYM22wOnuM8vKcmRC3oKbPe0H
+ GMPqLsbCR9dywaOPRSTHJ3Ao6E3Z79H+fyWOXUnE6Rb4dudNVOQTXNafLxQnQuUd+zcL
+ ASsTzdNleR/TDeGK1hxxI+fXVVNTcvdl7NNn3GYY601YqPwFZBzjv7x1W9R0LiKXYpi5
+ 2Pu7LNuAirTq3tf/OXiVgQci/ZCm7fT3Y7/oI+NBdSfSROsGFqzPJmi7rtbH3W11t6ZK
+ KE7A==
+X-Gm-Message-State: AOAM531danWopQ+Vcex4GGb5hd77U/UHVdOxUJyLbDi4gmrbF4wLxJQn
+ nCMsha/3C0nOzH9zcZX/xBlf4i3YvZlzPQ==
+X-Google-Smtp-Source: ABdhPJxCFLmPGA6bODEQcTTvzOch+nxeO70Q+PGp3WF7oG5Mzni+CVw4ui0J66Xm0GpgK8Rj3Vm/Wg==
+X-Received: by 2002:a17:90b:1a88:b0:1dc:8e84:9133 with SMTP id
+ ng8-20020a17090b1a8800b001dc8e849133mr17692222pjb.231.1652682737013; 
+ Sun, 15 May 2022 23:32:17 -0700 (PDT)
 Received: from localhost.localdomain ([2401:4900:1c60:931c:dd30:fa99:963:d0be])
  by smtp.gmail.com with ESMTPSA id
- t9-20020a1709027fc900b0015e8d4eb1e2sm6053647plb.44.2022.05.15.23.32.09
+ t9-20020a1709027fc900b0015e8d4eb1e2sm6053647plb.44.2022.05.15.23.32.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 15 May 2022 23:32:13 -0700 (PDT)
+ Sun, 15 May 2022 23:32:16 -0700 (PDT)
 From: Bhupesh Sharma <bhupesh.sharma@linaro.org>
 To: linux-arm-msm@vger.kernel.org
 Cc: bhupesh.sharma@linaro.org, bhupesh.linux@gmail.com,
  linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org, robh@kernel.org,
  linux-phy@lists.infradead.org, vkoul@kernel.org,
- konrad.dybcio@somainline.org, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 1/4] dt-bindings: phy: qcom,
- qmp: Shift '#clock-cells' property to phy (child) node
-Date: Mon, 16 May 2022 12:01:52 +0530
-Message-Id: <20220516063155.1332683-2-bhupesh.sharma@linaro.org>
+ konrad.dybcio@somainline.org
+Subject: [PATCH v4 2/4] dt-bindings: phy: qcom,
+ qmp: Describe phy@ subnode properly
+Date: Mon, 16 May 2022 12:01:53 +0530
+Message-Id: <20220516063155.1332683-3-bhupesh.sharma@linaro.org>
 X-Mailer: git-send-email 2.35.3
 In-Reply-To: <20220516063155.1332683-1-bhupesh.sharma@linaro.org>
 References: <20220516063155.1332683-1-bhupesh.sharma@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220515_233215_392226_F2F9D4D8 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20220515_233219_512380_30AE41BD 
+X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,61 +93,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since the clock comes out of the phy (child) node,
-so clocks are actually not provided by the parent device.
-The qmp-phy dt-bindings specify the same incorrectly at
-present. Fix the same.
+Currently the qcom,qmp-phy dt-binding doesn't describe
+the 'reg' and '#phy-cells' properties for the phy@ subnode.
 
-This change helps fix the following 'make dtbs_check' warning(s):
-
-sm8350-microsoft-surface-duo2.dt.yaml: phy@1d87000:
-  '#clock-cells' is a required property
+Fix the same.
 
 Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Rob Herring <robh@kernel.org>
 Signed-off-by: Bhupesh Sharma <bhupesh.sharma@linaro.org>
 ---
- Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ .../devicetree/bindings/phy/qcom,qmp-phy.yaml        | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-index 8b850c5ab116..c39ead81ecd7 100644
+index c39ead81ecd7..60ab494df975 100644
 --- a/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
 +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
-@@ -66,9 +66,6 @@ properties:
-       - description: Address and length of PHY's common serdes block.
-       - description: Address and length of PHY's DP_COM control block.
- 
--  "#clock-cells":
--    enum: [ 1, 2 ]
--
-   "#address-cells":
-     enum: [ 1, 2 ]
- 
-@@ -112,11 +109,13 @@ patternProperties:
-     description:
+@@ -110,6 +110,18 @@ patternProperties:
        Each device node of QMP phy is required to have as many child nodes as
        the number of lanes the PHY has.
-+    properties:
-+      "#clock-cells":
-+        enum: [ 0, 1, 2 ]
+     properties:
++      reg:
++        minItems: 1
++        maxItems: 6
++        description: |
++          List of offset and length pairs of register sets for PHY blocks.
++          There are two possible cases::
++            - tx, rx, pcs and pcs_misc.
++            - tx, rx, pcs, tx2, rx2 and pcs_misc.
++
++      "#phy-cells":
++        const: 0
++
+       "#clock-cells":
+         enum: [ 0, 1, 2 ]
  
- required:
-   - compatible
-   - reg
--  - "#clock-cells"
-   - "#address-cells"
-   - "#size-cells"
-   - ranges
-@@ -468,7 +467,6 @@ examples:
-     usb_2_qmpphy: phy-wrapper@88eb000 {
-         compatible = "qcom,sdm845-qmp-usb3-uni-phy";
-         reg = <0x088eb000 0x18c>;
--        #clock-cells = <1>;
-         #address-cells = <1>;
-         #size-cells = <1>;
-         ranges = <0x0 0x088eb000 0x2000>;
 -- 
 2.35.3
 
