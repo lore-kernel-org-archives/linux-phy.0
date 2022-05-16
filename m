@@ -4,78 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F658C4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 16 May 2022 17:35:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B990EC4332F
+	for <linux-phy@archiver.kernel.org>; Mon, 16 May 2022 17:50:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9NpzcSnq8mR6fjcY1d5iQXdb78lzQYWtRzhZzuUioRA=; b=3PPTLloilh8EVh
-	OAajILvWYWwLIOmC65VGprsWjUF+e8el0bSG3s/JuI/dnajKhA+Y+1qtZfONtdr/KZiaYwRPwRkKq
-	MljV78B3hNm10P9XMupemdIMDZSJyU0W4azFLONBT1uH+HA7XKoTUBtKDHdLxXOIrA0Cx4EA1pu8R
-	Vk/BNP1kLwxhVAt/HPDWhKLhuz3Xt0dqkzl5ppy0dgNszxrggDwrtFTGt+7hvK177WFn0J5+0zhC5
-	21j+9MTa4b7huhmt5gL8sZToNnRcAvsZt5SoQEeaWbb6uq0gg2s5DIHmJ2Fma79W8MN7URYGmVAcC
-	kWh+eoIa23QFN8+J3wxQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cphs9KZD4Cf1jXibuz4eoCB+tjt1Rva5uxpJ0Pv924k=; b=BP6402FMpBRzqO
+	+l0IIW9tKKERsCAQCEnPTPodBD0D6g3FLQZB8JkWXu43deRNu2OduEsmlLL4Q7sR94tUK5AYPunLx
+	P4US0EWbzyDA+AGd3tybIKsgJLzRO7wDO1uMkoLowtQE+PQyEUIfVvbvRr71KQbIdQDOS8Sd+7Qeh
+	YNnt3p+MIanzlbpUKmiWVi+mWJttr5qlcQvNEMoC+swSg7a0d+QUxs5j+Z5buFhgG/OwZL2aGf5tX
+	cW2jeZZujDwhFxOVWpaXPEORLipBGiFSs9vsBJyRZ5s1K5gCDro5rNptDYz6ewZ42yYgZpUEw9143
+	HX+5fiz7vDb8pv7/NG7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nqedE-009N78-02; Mon, 16 May 2022 17:35:44 +0000
-Received: from mail-oi1-f170.google.com ([209.85.167.170])
+	id 1nqerU-009R3v-44; Mon, 16 May 2022 17:50:28 +0000
+Received: from alexa-out.qualcomm.com ([129.46.98.28])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nqedA-009N5t-9I; Mon, 16 May 2022 17:35:42 +0000
-Received: by mail-oi1-f170.google.com with SMTP id v66so19486772oib.3;
- Mon, 16 May 2022 10:35:39 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=yRCFWuG9Oqb4uyJxObAmt3C9VXrpqbJosiPlLmLl9sI=;
- b=cY5/phDNkhgEnbYvxsUetBKegrIl47DHkZPGRJxTjcnRjPxvTYOP8mpF9fbhyZQ04h
- rp6ahnEUOUPfixzORglfPz3Lo6gHBoVkhoLA3u/nY4aApRXdcUocqa08cCa5GB84vqtb
- YkYNbmy9Mp8HQ8iugYhZ5OP1oL7d+ERoLYIudM1MwauojtIWm7WjYbR5e7n0NGSdDBMV
- JBSF/I1ZdbzdAYbBoA8oV8H4wSVOhpCVElWvdMhHgSSpSzZS2sreZkLAfXqsEuXqy39H
- 3/GxDedT+4gbP3ona0aT33Jkomxtnh1vEBZdt9/lm0GLZot3xjjawN3DL8+22kG+dkT1
- KdkQ==
-X-Gm-Message-State: AOAM530y626j+MstvbB9rOGGC/k4Bq3evd3fhpN1+Ac2lDJQymzcBRpZ
- txy7safc0qMk4X7ny1BKzQ==
-X-Google-Smtp-Source: ABdhPJxuclwaDZzyOItOmmGD3yThwcNVeOZQs+WOMuvGRRbmejydML51xYl4owmx8halO8SP4Fl2pw==
-X-Received: by 2002:a05:6808:1703:b0:2f9:cd2d:41c5 with SMTP id
- bc3-20020a056808170300b002f9cd2d41c5mr14114818oib.77.1652722539072; 
- Mon, 16 May 2022 10:35:39 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
- [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
- v2-20020a056870310200b000e686d1386csm5670158oaa.6.2022.05.16.10.35.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 May 2022 10:35:38 -0700 (PDT)
-Received: (nullmailer pid 2952486 invoked by uid 1000);
- Mon, 16 May 2022 17:35:37 -0000
-Date: Mon, 16 May 2022 12:35:37 -0500
-From: Rob Herring <robh@kernel.org>
-To: Frank Wunderlich <frank-w@public-files.de>
-Cc: Frank Wunderlich <linux@fw-web.de>,
- Michael Riesch <michael.riesch@wolfvision.net>, Vinod Koul <vkoul@kernel.org>,
- Johan Jonker <jbx6244@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>
-Subject: Re: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
-Message-ID: <20220516173537.GA2942634-robh@kernel.org>
-References: <20220514115946.8858-1-linux@fw-web.de>
- <20220514115946.8858-2-linux@fw-web.de>
- <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
- <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
+ id 1nqerQ-009R2o-TL
+ for linux-phy@lists.infradead.org; Mon, 16 May 2022 17:50:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
+ t=1652723425; x=1684259425;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=dNW0Yne65zg4Fas/aEDKjmRAlYKXRokS8AGQ1jNWy+g=;
+ b=q3MIkZ31Sr/WyAQL3hxed+eNBj0LJtFN51KBPeW8ODXgfyyVmFKGeZvj
+ ikgy0Q5+XDRl1NsOTJ8G1WRcLc2uFpyjAll+lRQIJ0jiEGJmFx8f7ggNr
+ pLtveUeQDwLv8fJUkQgHWOOn/K8J/WosWl3gTkG1JQCUunjKpthWeaD0e Q=;
+Received: from ironmsg07-lv.qualcomm.com ([10.47.202.151])
+ by alexa-out.qualcomm.com with ESMTP; 16 May 2022 10:50:21 -0700
+X-QCInternal: smtphost
+Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
+ by ironmsg07-lv.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 16 May 2022 10:50:21 -0700
+Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
+ nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Mon, 16 May 2022 10:50:20 -0700
+Received: from hu-kriskura-hyd.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Mon, 16 May 2022 10:50:14 -0700
+From: Krishna Kurapati <quic_kriskura@quicinc.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Stephen Boyd <swboyd@chromium.org>, "Doug
+ Anderson" <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+ Wesley Cheng <quic_wcheng@quicinc.com>
+CC: <devicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+ <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <quic_pkondeti@quicinc.com>,
+ <quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>, Krishna Kurapati
+ <quic_kriskura@quicinc.com>
+Subject: [v5 0/3] Add QCOM SNPS PHY overriding params support
+Date: Mon, 16 May 2022 23:20:07 +0530
+Message-ID: <1652723410-1630-1-git-send-email-quic_kriskura@quicinc.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220516_103540_362044_0F3E8F17 
-X-CRM114-Status: GOOD (  24.72  )
+X-CRM114-CacheID: sfid-20220516_105025_020309_DEC736BE 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,82 +87,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, May 15, 2022 at 01:49:47PM +0200, Frank Wunderlich wrote:
-> Hi
-> 
-> > Gesendet: Sonntag, 15. Mai 2022 um 01:14 Uhr
-> > Von: "Rob Herring" <robh@kernel.org>
-> 
-> > On Sat, 14 May 2022 13:59:42 +0200, Frank Wunderlich wrote:
-> > > From: Frank Wunderlich <frank-w@public-files.de>
-> > >
-> > > Add a new binding file for Rockchip PCIe v3 phy driver.
-> > >
-> > > Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> > >
-> > > ---
-> > > v3:
-> > > - drop quotes
-> > > - drop rk3588
-> > > - make clockcount fixed to 3
-> > > - full path for binding header file
-> > > - drop phy-mode and its header and add lane-map
-> > >
-> > > v2:
-> > > dt-bindings: rename yaml for PCIe v3
-> > > rockchip-pcie3-phy.yaml => rockchip,pcie3-phy.yaml
-> > >
-> > > changes in pcie3 phy yaml
-> > > - change clock names to ordered const list
-> > > - extend pcie30-phymode description
-> > > - add phy-cells to required properties
-> > > - drop unevaluatedProperties
-> > > - example with 1 clock each line
-> > > - use default property instead of text describing it
-> > > - update license
-> > > ---
-> > >  .../bindings/phy/rockchip,pcie3-phy.yaml      | 82 +++++++++++++++++++
-> > >  1 file changed, 82 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-> > >
-> >
-> > My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-> > on your patch (DT_CHECKER_FLAGS is new in v5.13):
-> >
-> > yamllint warnings/errors:
-> >
-> > dtschema/dtc warnings/errors:
-> > /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml: properties:clock-names: 'oneOf' conditional failed, one must be fixed:
-> > 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}] is too long
-> > 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}] is too short
-> > 	False schema does not allow 3
-> > 	1 was expected
-> > 	3 is greater than the maximum of 2
-> > 	hint: "minItems" is only needed if less than the "items" list length
-> > 	from schema $id: http://devicetree.org/meta-schemas/items.yaml#
-> > /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml: ignoring, error in schema: properties: clock-names
-> > Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.example.dtb:0:0: /example-0/phy@fe8c0000: failed to match any schema with compatible: ['rockchip,rk3568-pcie3-phy']
-> 
-> seems this is fixed when i remove the "minItems: 3" from clock names 
-> (which is already fixed length because of the list).
+Added support for overriding tuning parameters in QCOM SNPS PHY
+from device tree. This parameter tuning is required to tune the
+hs signal on dp/dm lines for electrical compliance to be successful.
 
-Yes.
+changes in v5:
+Fixed nitpicks in code.
+Added minimum and maximum for each parameter added in dt-bindings.
+Added proper suffixes to each parameter as per dtschema.
 
-> needed to change type of lane-map to this:
-> 
-> $ref: /schemas/types.yaml#/definitions/uint8-array
+changes in v4:
+Fixed nitpicks in code.
+Initial compliance test results showed overshoot in the middle of eye
+diagram. The current dt values were put in place to correct it and fix
+overshoot issue.
 
-Why? That's not a standard property though, so needs a 'rockchip' 
-prefix. Though maybe a common property would be appropriate here.
+changes in v3:
+Added support for phy tuning parameters to be represented in bps and
+corresponding register values to be written are obtained by traversing
+through data map declared in the driver.
 
-> then it looks clean for it....
-> 
-> -m causes many errors unrelated to this schema-file even if i pass
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+changes in v2:
+Reading the individual fields in each overriding register from
+device tree.
 
-The fix is fixing the remaining 40 or so '-m' errors.
+Krishna Kurapati (2):
+  phy: qcom-snps: Add support for overriding phy tuning parameters
+  arm64: dts: qcom: sc7280: Update SNPS Phy params for SC7280 IDP device
 
-Rob
+Sandeep Maheswaram (1):
+  dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy override params
+    bindings
+
+ .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 105 ++++++++
+ arch/arm64/boot/dts/qcom/sc7280-idp.dtsi           |   6 +
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 268 ++++++++++++++++++++-
+ 3 files changed, 377 insertions(+), 2 deletions(-)
+
+-- 
+2.7.4
+
 
 -- 
 linux-phy mailing list
