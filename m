@@ -4,86 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4787CC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 16 May 2022 19:22:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21AA7C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 17 May 2022 01:04:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:From:CC:To:Subject
-	:MIME-Version:References:In-Reply-To:Date:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BeN4oCGmH9x0eDTd3ZPdvU84djlJT45DQsTlj/IKAvY=; b=corYowMX90eoac
-	MtcrkcHTsMwOYGAh1yhuR8gPhemtaRLkpKbg5ov5mgI5oPsvY5hfiU268UgLBkkDEq44uM5jxj1fs
-	FscnBzBHHTR4hkQgxnmtbF8OWzbPMTWETjOontXGuVakse69eBBpoFb7D8YKdNKKcIN9x0Y483A1s
-	UlQdCKh+kREBrbc43brPWSLEgofqzPrIG4BbWruYPN64sWaw6P9zqIcUphNJoXGua7oeDp8kvn5CR
-	IkSg83aspcwA9yyW3ik9xzhBD2hoamQIt/eUfeyxLFt7VCHPl0kZHwtblkGt6eRGou51qi5p8rHSF
-	Kvz6FQQyXcKWM8mW/48Q==;
+	List-Owner; bh=LM+u2y3K012P3tBT0inXTVJJVhdefHSKI7k209UUn4Y=; b=vlnNT2NEnQsvJz
+	GBpP3x8/svLqAWcSRjbzjTCjH03ncho7XhK1ECzVBKx0MYTnIDmSJeMkCecw80m9qsfj8Gur+UNsl
+	3srsXy8Otw+LKnOh1cdsc3oLlgR968wvpC9trgYhflXUcUBxhgUIMp+lk0MEvmyBd9iOtdsFptYSP
+	Q7MSbmdLxd6r8x80seoSqJTWvkpEBF551e8mIfWjHJ+tILWnbzckxLHGzTL+kDQQ0OnE70i5pMsdd
+	EZaCHh0XKLgwjSJ0/veq2iHrwjawOaTRXm5lnqLTA3LwGQKH7L6YeRiAQMHhvS9hYI45Gsq8p7ctQ
+	xHaaU+d4NIAk45ojkV2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nqgI6-009m9u-Hy; Mon, 16 May 2022 19:22:02 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1nqldH-00B548-By; Tue, 17 May 2022 01:04:15 +0000
+Received: from mail-oi1-f179.google.com ([209.85.167.179])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nqgI2-009m77-R1; Mon, 16 May 2022 19:22:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1652728896;
- bh=n3B1tFZFIsJ89uIoiL7dX/rVRMmDUZ1088RdBsJpfxE=;
- h=X-UI-Sender-Class:Date:In-Reply-To:References:Subject:Reply-to:To:
- CC:From;
- b=iAqc3i/yie0yQ2RO4KjEodO6JlsmEeoCluKIjQQeD5VvGXK2FMakTvhlaCwZTxZSO
- +AzMBHyTlzQIQMaEQ316PydcD87/HFx5pXYq2+cMNj7A9Gvv91zdDVmJwriY3yGh6i
- 6WBPQ5hsPF1ev6OmpV54UGGyP8a06ZCPvBlzup2c=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from frank-s9 ([80.245.74.14]) by mail.gmx.net (mrgmx105
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MGyxX-1o3ajL2Lzf-00E7Xg; Mon, 16
- May 2022 21:21:36 +0200
-Date: Mon, 16 May 2022 21:21:31 +0200
-User-Agent: K-9 Mail for Android
-In-Reply-To: <20220516173537.GA2942634-robh@kernel.org>
-References: <20220514115946.8858-1-linux@fw-web.de>
- <20220514115946.8858-2-linux@fw-web.de>
- <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
- <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
- <20220516173537.GA2942634-robh@kernel.org>
-MIME-Version: 1.0
-Subject: Re: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
-To: Rob Herring <robh@kernel.org>
-CC: Frank Wunderlich <linux@fw-web.de>,
- Michael Riesch <michael.riesch@wolfvision.net>, Vinod Koul <vkoul@kernel.org>,
- Johan Jonker <jbx6244@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
+ id 1nqldD-00B53Z-VL
+ for linux-phy@lists.infradead.org; Tue, 17 May 2022 01:04:13 +0000
+Received: by mail-oi1-f179.google.com with SMTP id v66so20709851oib.3
+ for <linux-phy@lists.infradead.org>; Mon, 16 May 2022 18:04:10 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=KY+QPIdpY9AYCIk1QlFa7rVHWIHqF8P4GNI2gsYC8vE=;
+ b=aGEHQ1lynkEmfSnmv3uc7459PXBNd635vhObvXBqIrFrNffMnWJcgJexsMBP3YUnrU
+ hSz48SnKENius9Ov0zbrPvQ87AMjrK2JhH1uBKUVqiJYuzJudp8dR9llpqPWqsF/WWFU
+ +cofioHfGc/X7/Ub+9BNFzXWI+NY3tKinjxfgkK1RcvwCJkWYbJY+9IWwSngnjXJVgCH
+ hscl8eJAg9hZh+6cCQZjJHrurGB/BJwjv80FSa3wN40LAGHfIBe50gzucd9hCxReZqQ1
+ Q0pdLSdfxsRSruPYbWuxBmOJ8cWvY1Jl9H1uHPelXdRBXxTjYuRb82plmTT9c6bslNUx
+ Ka3w==
+X-Gm-Message-State: AOAM532/562UG/FhTqg66CDKYXAteIJX/LIb/ehWm6RvQd369cKAkjwb
+ +BDEbmDAKRRGZPWI35Q36Q==
+X-Google-Smtp-Source: ABdhPJw/iV8lYByMOe+HPVx71PPh6yhbeRQslmXszUH81CIxDaZRhTLo7U7V3vLLE/kPr/t/N3vkWw==
+X-Received: by 2002:a05:6808:d52:b0:328:acfc:d265 with SMTP id
+ w18-20020a0568080d5200b00328acfcd265mr14773980oik.290.1652749449949; 
+ Mon, 16 May 2022 18:04:09 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
+ [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
+ d12-20020a056871040c00b000ee2bb503d0sm5914393oag.50.2022.05.16.18.04.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 May 2022 18:04:09 -0700 (PDT)
+Received: (nullmailer pid 3712320 invoked by uid 1000);
+ Tue, 17 May 2022 01:04:08 -0000
+Date: Mon, 16 May 2022 20:04:08 -0500
+From: Rob Herring <robh@kernel.org>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>
-From: Frank Wunderlich <frank-w@public-files.de>
-Message-ID: <9496CAFB-6CB6-4BDA-A539-3A6E1B562299@public-files.de>
-X-Provags-ID: V03:K1:f5Irn2u3e6Zhnd5do173aOUv5ETb+hLAEAT30DBf0+1ZrVkoATS
- Fhws/gr/3BwWNsggKEhfSKQkuKdL2wcpALEinrn8h6gKmm20zJmzf3QTFk3lHJlZjBMttx8
- SBN/2jVpFWVUSFkg+pdar6rvQxC24N68914q1lpLgr6mh56mrI47hOdOOiqsN2BIO4LVmoA
- 55GtwGo3goKFxsQZm5N6Q==
-X-UI-Out-Filterresults: notjunk:1;V03:K0:mRgqnWkK9Sg=:YTdRH5LtJInU/r+qpgpHTp
- RkdHzdHcEvxu7D7CwcHrfaWdoYRljfDrihJYlHodROSRLr7fcp7ZVLDwlAfAj2SQ7ABS6rvix
- FUSMNn7R1Uw/eep6ikgEjSetAPpQ3ovZr6hPl1H26FBChTQX8uEQg0fji9RBXE4hkMfLEYgRj
- qi1IThmmCXf8ruHD3NZF+MtfyAm+yMlowRrf/hAeb494As4sPPs8qjUjZ0uGZ8XKDzi0WPZGb
- pUfNnutYtGbnB129EOlQEMxbdeKCczFMhHimE/8ajesstSfHFzd1JNbjDmDcCg7rpzidmQdXr
- 4Z7wy/UB5TcHfzptUdOZZSWGOXNkGMPFiBVhusjhAY2scwkxwXAPd5G++7Q1ZBTagos7sp3pU
- 3g5r8paoFTrw0u/zBC5b7THS8qm7ojKQoY3ABU5rBo181Dcax8wW5R9Mwea4ylhEdbmRhL0WI
- HctnSZH8CP89tV+aFOIvDuWKV7y5Vs0MmczPLz95pmq/5AaEwzPCbbjbn2etye/9Rl7tih67O
- D/aHepkA7IUWi6rDA7GSPTa6cXxYNslD7+suV7ReIBLuIdKd3ptfM2xMsofZ6Vg1mwq1dEnVC
- pE4fe4ypJ6EZ1c14gUDANN8b3eGXA+3XqEuO0AqaM71t5Q4CM4rAmNcDXMcHtaVgtUJN7/Xbf
- MzdP+CJo81lBGDeth+6cW8nkP6ias3KfYPNg67lR8Zp7Sb/ErzQPZ3aW7eLTwHrYZsgaX1rvP
- QBBMBjBeK9gib4axMHxAX7UoCGuY2SNoNYqc63ymHbj2Vw8UJVw19bVtqdjXdFiuzZATlDzyX
- MP2H5mKv8T6PlnNdFzn85gFEqS3J07cyApRMrAjM5PFlK7DE4qs4+dspPeOBEHPa18BMnBHT/
- DufwIomMAa2L65GCXfO3zLkPu6ZRWp5vdMNbMvxXO52yCnLqn6beF8z5fRLkoTYh7Wr7nZ/Rs
- CnOGakp5eqt3eMJXbdyPlIBwfjg+0j05Z/hEX55/wYUxOlety08eHvKqD58ZzN2cG77jclmci
- xQ19HjerZpf+P4LlW+Y0ZJ/wm0PfvAjH1E0Xix1ywyrrXTHJrBNH95hpbZWZyOqELguiFVRlc
- flu7VLme4boB+0=
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: phy: renesas,rcar-gen2-usb-phy: Convert to
+ json-schema
+Message-ID: <20220517010408.GA3690472-robh@kernel.org>
+References: <8e48edc5e7b65f8dfd8b76c583e0265b9b97e62b.1652099944.git.geert+renesas@glider.be>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <8e48edc5e7b65f8dfd8b76c583e0265b9b97e62b.1652099944.git.geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220516_122159_203993_09160A0A 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20220516_180412_046035_50169582 
+X-CRM114-Status: GOOD (  19.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,82 +80,129 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: frank-w@public-files.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am 16. Mai 2022 19:35:37 MESZ schrieb Rob Herring <robh@kernel.org>:
->On Sun, May 15, 2022 at 01:49:47PM +0200, Frank Wunderlich wrote:
->> Hi
->> 
->> > Gesendet: Sonntag, 15. Mai 2022 um 01:14 Uhr
->> > Von: "Rob Herring" <robh@kernel.org>
->> 
->> > On Sat, 14 May 2022 13:59:42 +0200, Frank Wunderlich wrote:
+On Mon, May 09, 2022 at 02:41:38PM +0200, Geert Uytterhoeven wrote:
+> Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
+> to json-schema.
+> 
+> Add missing properties.
+> Drop the second example, as it doesn't add any value.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
+> Validation gives:
+> 
+>     Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.example.dtb: usb
+>     -phy@e6590100: '#phy-cells' is a required property
+> 	    From schema: dt-schema/dtschema/schemas/phy/phy-provider.yaml
+> 
+> The latter considers '#phy-cells' a required property, as the node name
+> matches "usb-phy".  But in this binding the actual PHY providers are the
+> child nodes.
+> 
+> Is there a way to fix this? Overriding "#phy-cells" to "false" doesn't
+> work.
+> Should all nodes and child nodes be renamed? The (Linux) driver doesn't
+> care about the names of the children.
 
->Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
->> > >
->> >
->> > My bot found errors running 'make DT_CHECKER_FLAGS=-m
->dt_binding_check'
->> > on your patch (DT_CHECKER_FLAGS is new in v5.13):
->> >
->> > yamllint warnings/errors:
->> >
->> > dtschema/dtc warnings/errors:
->> >
->/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml:
->properties:clock-names: 'oneOf' conditional failed, one must be fixed:
->> > 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}]
->is too long
->> > 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}]
->is too short
->> > 	False schema does not allow 3
->> > 	1 was expected
->> > 	3 is greater than the maximum of 2
->> > 	hint: "minItems" is only needed if less than the "items" list
->length
->> > 	from schema $id: http://devicetree.org/meta-schemas/items.yaml#
->> >
->/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml:
->ignoring, error in schema: properties: clock-names
->> >
->Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.example.dtb:0:0:
->/example-0/phy@fe8c0000: failed to match any schema with compatible:
->['rockchip,rk3568-pcie3-phy']
->> 
->> seems this is fixed when i remove the "minItems: 3" from clock names 
->> (which is already fixed length because of the list).
->
->Yes.
->
->> needed to change type of lane-map to this:
->> 
->> $ref: /schemas/types.yaml#/definitions/uint8-array
->
->Why? That's not a standard property though, so needs a 'rockchip' 
->prefix. Though maybe a common property would be appropriate here.
+There's an open issue in dtschema for this. I don't have an answer other 
+than don't use 'phy' in the parent node name.
 
-Originally it was a bool property named "rockchip,bifurcation" and we changed it (after comments) to be a more generic property "lane-map" that can be re-used on other vendors/controllers/phys.
+> 
+> ---
+> This is the final conversion to json-schema of DT bindings for Renesas
+> ARM SoCs, hurray!
 
-Driver reads as u8 array and range is small enough for u8 even if used for larger controllers (e.g. PCIe x16).
+Great, certainly looking better than some! My tracking in linux-next 
+gives me this:
 
->> then it looks clean for it....
->> 
->> -m causes many errors unrelated to this schema-file even if i pass
->>
->DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
->
->The fix is fixing the remaining 40 or so '-m' errors.
+For arm:
 
-So now clean for you(r bot), too? Did only get a bunch of other unrelated messages.
+Processing (r7|r8|r9|emev2|sh73a|gr-|iwg): 
+warnings: 283
+undocumented compat: 32
 
->Rob
+arch/arm/boot/dts/(r7|r8|r9|emev2|sh73a|gr-|iwg):32
+['ams,as3711']
+['arm,coresight-etm3x']
+['dlg,da9063-onkey']
+['dlg,da9063-rtc']
+['dlg,da9063-watchdog']
+['dlg,da9063l']
+['dlg,da9210']
+['i2c-demux-pinctrl']
+['renesas,pci-r8a7742', 'renesas,pci-rcar-gen2']
+['renesas,pci-r8a7743', 'renesas,pci-rcar-gen2']
+['renesas,pci-r8a7744', 'renesas,pci-rcar-gen2']
+['renesas,pci-r8a7745', 'renesas,pci-rcar-gen2']
+['renesas,pci-r8a7790', 'renesas,pci-rcar-gen2']
+['renesas,pci-r8a7791', 'renesas,pci-rcar-gen2']
+['renesas,pci-r8a7794', 'renesas,pci-rcar-gen2']
+['renesas,pci-r9a06g032', 'renesas,pci-rzn1']
+['renesas,r2a11302ft']
+['renesas,r9a06g032-dma', 'renesas,rzn1-dma']
+['renesas,r9a06g032-rtc', 'renesas,rzn1-rtc']
+['renesas,r9a06g032-wdt', 'renesas,rzn1-wdt']
+['renesas,rzn1-dmamux']
+['renesas,usb-phy-r8a7742', 'renesas,rcar-gen2-usb-phy']
+['renesas,usb-phy-r8a7743', 'renesas,rcar-gen2-usb-phy']
+['renesas,usb-phy-r8a7744', 'renesas,rcar-gen2-usb-phy']
+['renesas,usb-phy-r8a7745', 'renesas,rcar-gen2-usb-phy']
+['renesas,usb-phy-r8a77470', 'renesas,rcar-gen2-usb-phy']
+['renesas,usb-phy-r8a7790', 'renesas,rcar-gen2-usb-phy']
+['renesas,usb-phy-r8a7791', 'renesas,rcar-gen2-usb-phy']
+['renesas,usb-phy-r8a7794', 'renesas,rcar-gen2-usb-phy']
+['sil,sii9022']
+['st,stmpe-ts']
+['st,stmpe811']
 
+For arm64:
 
-regards Frank
+Processing renesas: 
+warnings: 312
+undocumented compat: 15
+
+undocumented here means no schema.
+
+arch/arm64/boot/dts/renesas:15
+['ilitek,ili2117']
+['micron,mt25qu512a', 'jedec,spi-nor']
+['nxp,tda998x']
+['ovti,ov5645']
+['renesas,r8a7795-mlp', 'renesas,rcar-gen3-mlp']
+['renesas,r8a7796-mlp', 'renesas,rcar-gen3-mlp']
+['renesas,r8a77961-mlp', 'renesas,rcar-gen3-mlp']
+['renesas,r8a77965-mlp', 'renesas,rcar-gen3-mlp']
+['renesas,r8a77990-mlp', 'renesas,rcar-gen3-mlp']
+['renesas,r8a77995-mlp', 'renesas,rcar-gen3-mlp']
+['renesas,r9a07g043-ssi', 'renesas,rz-ssi']
+['renesas,r9a07g043-tsu', 'renesas,rzg2l-tsu']
+['renesas,r9a07g043-usbphy-ctrl', 'renesas,rzg2l-usbphy-ctrl']
+['renesas,r9a07g043-wdt', 'renesas,rzg2l-wdt']
+['ti,pcm3168a']
+
+I guess board level components don't count and some might be pending.
+
+All this comes from here: https://gitlab.com/robherring/linux-dt/-/jobs
+
+> 
+> Note that there are still a few plain text bindings left for Renesas IP
+> cores that are present on non-Renesas SoCs (nbpfaxi and usdhi6rol0).
+> And H8/300 is being removed.
+> ---
+>  .../devicetree/bindings/phy/rcar-gen2-phy.txt | 112 ----------------
+>  .../phy/renesas,rcar-gen2-usb-phy.yaml        | 123 ++++++++++++++++++
+>  2 files changed, 123 insertions(+), 112 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/phy/rcar-gen2-phy.txt
+>  create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.yaml
+
+Ignoring the node names for now,
+
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-phy mailing list
