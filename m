@@ -4,89 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91B07C4332F
-	for <linux-phy@archiver.kernel.org>; Tue, 17 May 2022 06:23:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FAFAC433F5
+	for <linux-phy@archiver.kernel.org>; Tue, 17 May 2022 06:59:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9rBrKBlGy56g8Jc/8ED8ZIpevJTPLW+uOOlrBoJk/oE=; b=vZm5A0Ubx4mQkQ
-	a/w4rj8ZL0hSp3+biAV+BjsPGqfGFGMY/1hXtA5pmDbvfkRjwK/wF68jMwSb4oE9+tsY1NubYnflc
-	0QswGYTRlp3YoLLaRc7Jm98BMqNTP08Y6VE7N0m1SgTwvR5OZvv79/weHeWL9b80FaIo3ZeIU6oX5
-	93p/42n43NR91h1wFGiKoCXsUmdbS7yACkWw8A47CQsAY1VJvd9HpmecSeIaqPtndPgVuqQ54H943
-	+oepQrZgXah0rD0N1G1uD8p9c6tgmy+RyU3+a8BgKEEU/ct9PoHwlz35RyYFOVQKK1uuSkdYeae3C
-	7VzrKYJM5tPNUQyD6xfQ==;
+	List-Owner; bh=FnKWXIDzID3TwcrIghATb7uPPdXHPpwXRzZImQJB+5g=; b=HzJPkLrSeNVZYD
+	xAXLcctkf4VWYMBrQ3wS2L858JoLVpGu7rRl8dLB8wauQ3HEBYxxy6oE21sYr8C/6PAOWES3TgpQe
+	gqSrcBAjbzgm6eFTkA7+kC/eOVygquB5qllgjo2sc+CnSlnwcOMB+xZFS5K8J0Wy9ibKScTAVG9i7
+	8dAvN/xHDSJNcTtxmN1toD7zLUIIhAHxLrjioteYFxGHG7V4/KaUbNswnrEtDj/HaQK4RGN9PUQ7Z
+	I3T5xyPw95RGpBxJLNg6crqP1yeac/cL8RwJVfpzPThtydkyxAGqTrEDnBuLr5auC4+IhW1WDbJVH
+	aUvoGwUcGSEYVjssRYvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nqqbu-00BnIF-Vl; Tue, 17 May 2022 06:23:11 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1nqrAi-00Bx5r-9a; Tue, 17 May 2022 06:59:08 +0000
+Received: from mail-qv1-f53.google.com ([209.85.219.53])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nqqbs-00BnGy-EJ
- for linux-phy@lists.infradead.org; Tue, 17 May 2022 06:23:10 +0000
-Received: by mail-ej1-x635.google.com with SMTP id g6so32694018ejw.1
- for <linux-phy@lists.infradead.org>; Mon, 16 May 2022 23:23:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=message-id:date:mime-version:user-agent:subject:content-language:to
- :cc:references:from:in-reply-to:content-transfer-encoding;
- bh=c4ENXCjOLk1+dgXS0L44HTmpqaPYATePjr2C7PlRSnY=;
- b=X54KsWPB0NVyyxAopjnRgU4ZOBrGbvlQ4FaNzE7BKYrtEqYlqOMCstiCOL//lQ8Dxw
- 8rkRpqoCADABAM8/OuegxD/25O7f/nJPZoaLKTmjnmcO5e/rG65jTmm9ahJBsk4RyVNC
- Vtyp//l1Ok5j+8NwCWJlc+n3TbV44X5yO22wosq8xZ3qMCEdUvredEedxwk4R+boPRiu
- Y/1FTQlZj740YLjErI3CrutAOuImvAvRxoE+x8k9T/MFztuJvet3PY16TBgTKaNMVbhE
- zFw2Fsf+IcZ/qt9hwH4PXj1GSzulCd1cyTs95kQF8d8BeoEy/+RzVvtiuP/D6WKh/1XG
- bjRA==
+ id 1nqrAe-00Bx4M-7k
+ for linux-phy@lists.infradead.org; Tue, 17 May 2022 06:59:06 +0000
+Received: by mail-qv1-f53.google.com with SMTP id kk28so13800322qvb.3
+ for <linux-phy@lists.infradead.org>; Mon, 16 May 2022 23:59:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
- :content-transfer-encoding;
- bh=c4ENXCjOLk1+dgXS0L44HTmpqaPYATePjr2C7PlRSnY=;
- b=F1DgRaplGRVRGMEOxJ7AYlxbdCTxOY6E5yVpH/v8ArqlH1Qjd+4Jbgoc8nePWMn3qn
- PBI2IWWSN39pJDaGkBlIjHRrQF0drNtrarwtUO/+dRIMGQE6E8qqCDWOQHYTxD16rQt/
- i35YetwR9mzqxKLfWX5d3EUBK4kEkrYNyrcFeTlHyCcMOZ/FKE8/VM8l4crCTsuoUpkH
- uTt8Cs/L01tdorwmEGWPbdfzDDwFJ7SgbzoZtkqQduynNuO2cHqFm+YU6dKSAndvlpN1
- NNTW1K6drtpb/YfR3XRcCj0JkXOby45eFfDZMhylfCZ5QPLslqETOJZqhF5CEJrOL9v1
- MrmQ==
-X-Gm-Message-State: AOAM531/GaWKVA/PVDikGHxD+IhrX201+C7s48qPgyxBKK9IAaPTjAPz
- MZoFLKxX67ofsnI+7MfyExii8g==
-X-Google-Smtp-Source: ABdhPJwEc9IVtajjmC4AchKGNCO1Lk9VipryyhfwItsHVzbgcFpffhGt50uBwsKK0NreDqXTje0i+g==
-X-Received: by 2002:a17:906:656:b0:6f4:ebc2:da81 with SMTP id
- t22-20020a170906065600b006f4ebc2da81mr18501914ejb.757.1652768583817; 
- Mon, 16 May 2022 23:23:03 -0700 (PDT)
-Received: from [192.168.0.17] (78-11-189-27.static.ip.netia.com.pl.
- [78.11.189.27]) by smtp.gmail.com with ESMTPSA id
- es16-20020a056402381000b0042a96c77e9esm4448347edb.91.2022.05.16.23.23.02
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=S7g/R0oDW9fAvwgkkRy9KZG6rWZymEuKVEhzrVDAwow=;
+ b=bg9iqV2F2gjysgOvjuP896KHAuH7ZggUY1CExXK4qiMDjy9dCMayBfJWffGUdn/rph
+ MQMNpl8qRzdJefWmGWXxZF/KriEQgau2Blh3TK4MHN5hbW7IJdsSkOvV0k4NrEIWU6o9
+ 4mKGtOf4bjOc4PhUK+wnQw7WO3jUUGgJ2Ef2vgilQM8IgfxZB7+RyWUwpJPxjrtTw7/3
+ U/yfKNg0sDhEnhZ8sX2qy5pnldjH2rNHoHrhjBr16VDoC6/w6cr6a6Zu0PbxgjrBLtTU
+ bJc8pRtHiACuoGUIev7IfPD7f4LmgnrnDhjIJGXmm7frO7AR9eHI5omQin9OJlT9c8mi
+ RnNA==
+X-Gm-Message-State: AOAM5329E249M8C1u9tjjjV58UX2Q0Lh5l1R4NWB4WDKVwT0Op+AcNdQ
+ WspIJQ8i/7ZKq6MPQfBba/alThOMrLl0Rw==
+X-Google-Smtp-Source: ABdhPJxytsYX0hZDsNIBa3F/FzQZHuViSC6Kf30fdNDxTMYMJtsfJESPRNC6dhGK29pBHJBGO/2BAw==
+X-Received: by 2002:a05:6214:29c3:b0:461:cec5:1ee with SMTP id
+ gh3-20020a05621429c300b00461cec501eemr7139841qvb.108.1652770742516; 
+ Mon, 16 May 2022 23:59:02 -0700 (PDT)
+Received: from mail-yw1-f169.google.com (mail-yw1-f169.google.com.
+ [209.85.128.169]) by smtp.gmail.com with ESMTPSA id
+ d15-20020ac8118f000000b002f39b99f693sm6866477qtj.45.2022.05.16.23.59.02
+ for <linux-phy@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 16 May 2022 23:23:03 -0700 (PDT)
-Message-ID: <f042abfc-25c8-2684-3fec-fea17bab8087@linaro.org>
-Date: Tue, 17 May 2022 08:23:02 +0200
+ Mon, 16 May 2022 23:59:02 -0700 (PDT)
+Received: by mail-yw1-f169.google.com with SMTP id
+ 00721157ae682-2fee010f509so61282987b3.11
+ for <linux-phy@lists.infradead.org>; Mon, 16 May 2022 23:59:02 -0700 (PDT)
+X-Received: by 2002:a81:9b0c:0:b0:2f4:c522:7d3c with SMTP id
+ s12-20020a819b0c000000b002f4c5227d3cmr24431985ywg.316.1652770741766; Mon, 16
+ May 2022 23:59:01 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.1
-Subject: Re: [v5 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
- override params bindings
-Content-Language: en-US
-To: Krishna Kurapati <quic_kriskura@quicinc.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Stephen Boyd <swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>,
- Matthias Kaehlcke <mka@chromium.org>, Wesley Cheng <quic_wcheng@quicinc.com>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, quic_pkondeti@quicinc.com,
- quic_ppratap@quicinc.com, quic_vpulyala@quicinc.com,
- Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-References: <1652723410-1630-1-git-send-email-quic_kriskura@quicinc.com>
- <1652723410-1630-2-git-send-email-quic_kriskura@quicinc.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <1652723410-1630-2-git-send-email-quic_kriskura@quicinc.com>
+References: <8e48edc5e7b65f8dfd8b76c583e0265b9b97e62b.1652099944.git.geert+renesas@glider.be>
+ <20220517010408.GA3690472-robh@kernel.org>
+In-Reply-To: <20220517010408.GA3690472-robh@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 17 May 2022 08:58:50 +0200
+X-Gmail-Original-Message-ID: <CAMuHMdWnvYx93Xo4XHRi3vv8c1OCvX7zqGswHApRnc7VYM+X4g@mail.gmail.com>
+Message-ID: <CAMuHMdWnvYx93Xo4XHRi3vv8c1OCvX7zqGswHApRnc7VYM+X4g@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: phy: renesas,
+ rcar-gen2-usb-phy: Convert to json-schema
+To: Rob Herring <robh@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+ Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-phy@lists.infradead.org,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, 
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220516_232308_544988_52792107 
-X-CRM114-Status: GOOD (  19.96  )
+X-CRM114-CacheID: sfid-20220516_235904_325832_DDD0AB82 
+X-CRM114-Status: GOOD (  29.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,116 +93,200 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/05/2022 19:50, Krishna Kurapati wrote:
-> From: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-> 
-> Add device tree bindings for SNPS phy tuning parameters.
-> 
-> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
-> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
-> ---
->  .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 105 +++++++++++++++++++++
->  1 file changed, 105 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> index 1ce251d..0a78db7 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
-> @@ -53,6 +53,111 @@ properties:
->    vdda33-supply:
->      description: phandle to the regulator 3.3V supply node.
->  
-> +  qcom,hs-disconnect-bp:
-> +    $ref: /schemas/types.yaml#/definitions/int32
+Hi Rob,
 
-No need for ref for standard units.
+On Tue, May 17, 2022 at 3:04 AM Rob Herring <robh@kernel.org> wrote:
+> On Mon, May 09, 2022 at 02:41:38PM +0200, Geert Uytterhoeven wrote:
+> > Convert the Renesas R-Car Gen2 USB PHY Device Tree binding documentation
+> > to json-schema.
+> >
+> > Add missing properties.
+> > Drop the second example, as it doesn't add any value.
+> >
+> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > ---
+> > Validation gives:
+> >
+> >     Documentation/devicetree/bindings/phy/renesas,rcar-gen2-usb-phy.example.dtb: usb
+> >     -phy@e6590100: '#phy-cells' is a required property
+> >           From schema: dt-schema/dtschema/schemas/phy/phy-provider.yaml
+> >
+> > The latter considers '#phy-cells' a required property, as the node name
+> > matches "usb-phy".  But in this binding the actual PHY providers are the
+> > child nodes.
+> >
+> > Is there a way to fix this? Overriding "#phy-cells" to "false" doesn't
+> > work.
+> > Should all nodes and child nodes be renamed? The (Linux) driver doesn't
+> > care about the names of the children.
+>
+> There's an open issue in dtschema for this. I don't have an answer other
+> than don't use 'phy' in the parent node name.
 
-> +    description:
-> +      This adjusts the voltage level for the threshold used to
-> +      detect a disconnect event at the host. Possible values are.
-> +      The values defined are in multiples of basis points (1bp = 0.01%).
-> +      The hardware accepts only discrete values. The value closest to the
-> +      provided input will be chosen as the override value for this param.
-> +    minimum: -272
-> +    maximum: 2156
-> +
-> +  qcom,squelch-detector-bp:
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    description:
-> +      This adjusts the voltage level for the threshold used to
-> +      detect valid high-speed data.
-> +      The values defined are in multiples of basis points (1bp = 0.01%).
-> +      The hardware accepts only discrete values. The value closest to the
-> +      provided input will be chosen as the override value for this param.
-> +    minimum: -2090
-> +    maximum: 1590
-> +
-> +  qcom,hs-amplitude-bp:
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    description:
-> +      This adjusts the high-speed DC level voltage.
-> +      The values defined are in multiples of basis points (1bp = 0.01%).
-> +      The hardware accepts only discrete values. The value closest to the
-> +      provided input will be chosen as the override value for this param.
-> +    minimum: -660
-> +    maximum: 2670
-> +
-> +  qcom,pre-emphasis-duration-bp:
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    description:
-> +      This signal controls the duration for which the
-> +      HS pre-emphasis current is sourced onto DP<#> or DM<#>.
-> +      The HS Transmitter pre-emphasis duration is defined in terms of
-> +      unit amounts. One unit of pre-emphasis duration is approximately
-> +      650 ps and is defined as 1X pre-emphasis duration.
-> +      The values defined are in multiples of basis points (1bp = 0.01%).
-> +      The hardware accepts only discrete values. The value closest to the
-> +      provided input will be chosen as the override value for this param.
-> +    minimum: 10000
-> +    maximum: 20000
-> +
-> +  qcom,pre-emphasis-amplitude-bp:
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    description:
-> +      This signal controls the amount of current sourced to
-> +      DP<#> and DM<#> after a J-to-K or K-to-J transition.
-> +      The HS Transmitter pre-emphasis current is defined in terms of unit
-> +      amounts. One unit amount is approximately 2 mA and is defined as
-> +      1X pre-emphasis current.
-> +      The values defined are in multiples of basis points (1bp = 0.01%).
-> +      The hardware accepts only discrete values. The value closest to the
-> +      provided input will be chosen as the override value for this param.
-> +    minimum: 10000
-> +    maximum: 40000
-> +
-> +  qcom,hs-rise-fall-time-bp:
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    description:
-> +      This adjusts the rise/fall times of the high-speed waveform.
-> +      The values defined are in multiples of basis points (1bp = 0.01%).
-> +      The hardware accepts only discrete values. The value closest to the
-> +      provided input will be chosen as the override value for this param.
-> +    minimim: -4100
-> +    maximum: 5430
-> +
-> +  qcom,hs-crossover-voltage-microvolt:
-> +    $ref: /schemas/types.yaml#/definitions/int32
-> +    description:
-> +      This adjusts the voltage at which the DP<#> and DM<#>
-> +      signals cross while transmitting in HS mode.
-> +      The values defined are in milli volts. The hardware accepts only
-> +      discrete values. The value closest to the provided input will be
-> +      chosen as the override value for this param.
-> +    minimum: -31000
-> +    maximum: 28000
-> +
-> +  qcom,hs-output-impedance-micro-ohm:
+IC...
 
-Please use standard unit suffixes, so micro-ohms.
+> > ---
+> > This is the final conversion to json-schema of DT bindings for Renesas
+> > ARM SoCs, hurray!
+>
+> Great, certainly looking better than some! My tracking in linux-next
+> gives me this:
+>
+> For arm:
+>
+> Processing (r7|r8|r9|emev2|sh73a|gr-|iwg):
+> warnings: 283
+> undocumented compat: 32
+>
+> arch/arm/boot/dts/(r7|r8|r9|emev2|sh73a|gr-|iwg):32
+> ['ams,as3711']
 
+Board component
 
-Best regards,
-Krzysztof
+> ['arm,coresight-etm3x']
+
+ARM core
+
+> ['dlg,da9063-onkey']
+> ['dlg,da9063-rtc']
+> ['dlg,da9063-watchdog']
+> ['dlg,da9063l']
+> ['dlg,da9210']
+
+Board components
+
+> ['i2c-demux-pinctrl']
+
+I2C framework
+
+> ['renesas,pci-r8a7742', 'renesas,pci-rcar-gen2']
+> ['renesas,pci-r8a7743', 'renesas,pci-rcar-gen2']
+> ['renesas,pci-r8a7744', 'renesas,pci-rcar-gen2']
+> ['renesas,pci-r8a7745', 'renesas,pci-rcar-gen2']
+> ['renesas,pci-r8a7790', 'renesas,pci-rcar-gen2']
+> ['renesas,pci-r8a7791', 'renesas,pci-rcar-gen2']
+> ['renesas,pci-r8a7794', 'renesas,pci-rcar-gen2']
+> ['renesas,pci-r9a06g032', 'renesas,pci-rzn1']
+
+https://lore.kernel.org/r/20220429134143.628428-3-herve.codina@bootlin.com
+
+> ['renesas,r2a11302ft']
+
+I2C device without bindings or upstream driver.
+
+> ['renesas,r9a06g032-dma', 'renesas,rzn1-dma']
+
+https://lore.kernel.org/r/20220427095653.91804-2-miquel.raynal@bootlin.com
+
+> ['renesas,r9a06g032-rtc', 'renesas,rzn1-rtc']
+
+https://lore.kernel.org/r/20220512143920.238987-2-miquel.raynal@bootlin.com
+
+> ['renesas,r9a06g032-wdt', 'renesas,rzn1-wdt']
+
+https://lore.kernel.org/r/20220413082527.155740-2-jjhiblot@traphandler.com
+
+> ['renesas,rzn1-dmamux']
+
+https://lore.kernel.org/r/20220421085112.78858-2-miquel.raynal@bootlin.com
+
+> ['renesas,usb-phy-r8a7742', 'renesas,rcar-gen2-usb-phy']
+> ['renesas,usb-phy-r8a7743', 'renesas,rcar-gen2-usb-phy']
+> ['renesas,usb-phy-r8a7744', 'renesas,rcar-gen2-usb-phy']
+> ['renesas,usb-phy-r8a7745', 'renesas,rcar-gen2-usb-phy']
+> ['renesas,usb-phy-r8a77470', 'renesas,rcar-gen2-usb-phy']
+> ['renesas,usb-phy-r8a7790', 'renesas,rcar-gen2-usb-phy']
+> ['renesas,usb-phy-r8a7791', 'renesas,rcar-gen2-usb-phy']
+> ['renesas,usb-phy-r8a7794', 'renesas,rcar-gen2-usb-phy']
+
+This patch.
+
+> ['sil,sii9022']
+
+https://lore.kernel.org/r/3b2619682694050696e5c85269ccc4f864590e66.1638540704.git.geert+renesas@glider.be
+
+> ['st,stmpe-ts']
+> ['st,stmpe811']
+
+Board components
+
+>
+> For arm64:
+>
+> Processing renesas:
+> warnings: 312
+> undocumented compat: 15
+>
+> undocumented here means no schema.
+>
+> arch/arm64/boot/dts/renesas:15
+> ['ilitek,ili2117']
+
+https://lore.kernel.org/r/0c5f06c9d262c1720b40d068b6eefe58ca406601.1638539806.git.geert+renesas@glider.be
+
+> ['micron,mt25qu512a', 'jedec,spi-nor']
+
+Board component
+
+> ['nxp,tda998x']
+
+https://lore.kernel.org/r/1f6bf58d76efc2e869b800534b818d1451ef98a2.1634822085.git.geert+renesas@glider.be
+
+> ['ovti,ov5645']
+
+Board component
+
+> ['renesas,r8a7795-mlp', 'renesas,rcar-gen3-mlp']
+> ['renesas,r8a7796-mlp', 'renesas,rcar-gen3-mlp']
+> ['renesas,r8a77961-mlp', 'renesas,rcar-gen3-mlp']
+> ['renesas,r8a77965-mlp', 'renesas,rcar-gen3-mlp']
+> ['renesas,r8a77990-mlp', 'renesas,rcar-gen3-mlp']
+> ['renesas,r8a77995-mlp', 'renesas,rcar-gen3-mlp']
+
+Driver in staging without any bindings
+
+> ['renesas,r9a07g043-ssi', 'renesas,rz-ssi']
+
+https://lore.kernel.org/r/20220423133154.141027-1-biju.das.jz@bp.renesas.com
+
+> ['renesas,r9a07g043-tsu', 'renesas,rzg2l-tsu']
+
+https://lore.kernel.org/r/20220501081930.23743-1-biju.das.jz@bp.renesas.com
+
+> ['renesas,r9a07g043-usbphy-ctrl', 'renesas,rzg2l-usbphy-ctrl']
+
+https://lore.kernel.org/r/20220423134601.141975-1-biju.das.jz@bp.renesas.com
+
+> ['renesas,r9a07g043-wdt', 'renesas,rzg2l-wdt']
+
+https://lore.kernel.org/r/20220424071323.151757-1-biju.das.jz@bp.renesas.com
+
+> ['ti,pcm3168a']
+
+Board component
+
+> I guess board level components don't count and some might be pending.
+
+Some have been pending (or blocked) for a long time...
+
+> All this comes from here: https://gitlab.com/robherring/linux-dt/-/jobs
+
+> Ignoring the node names for now,
+>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+
+Thanks!
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
