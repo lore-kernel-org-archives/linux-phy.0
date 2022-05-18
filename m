@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D135C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 18 May 2022 02:21:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 743C5C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 18 May 2022 15:56:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uzmxIfpvCwzGhucKrC0BGRc4Hj1BsvD96Q1rq19CFhI=; b=quWI3RrH/ZsQ04
-	4JXZgTXR/e7V3jVQLZYp1OXh+6aYWV7DeeZziwvq+77jS8Df/94d1IUnPxJitDq7DQVyXMHU/hz4q
-	R7NMDkmSLHjMW8t3SdDjLze2QvZ03gyIsdn2OqfylrFAZGlGosDXEprq5XTKkQWnX4FQB9bQt2G1F
-	eEIzR/GgHmFi/7w8ykgV4jskMC7a2gEFk2Lcxd+4LwN4eb5AjYHL989FYxvcK5GuHeGxFIzUvUwlO
-	GNqZfzEwefxdZE9HMzg6PWbookKKnxjrGu8RMZtGlKn9mMt6kHZhLdbCurrrbfjeiRwyWMOCBisDc
-	XZRpEbYasqsync8srTEg==;
+	List-Owner; bh=5lkod+677tp075KQskq9X0cDRnJIb+rDqkCA91/pccI=; b=J8YG09fI1TuEfw
+	ptMuZCVBRECFlzutGFnJa+tZhUq9KLwAEYZyBEfnvmeWEpWhpZQifxEo1Er8LtgriJq3ZhqAVIYYw
+	XUfkCWb4k1cpEs/U0UNt4n1oIw7QTZ1KMwd6Rx9LcfCuVOo+yvFd8ryJzuLfHo6V9k3pGammIpS9r
+	nw9LdVgqJ05LaeIDsTI/4IOay05I7X8jrLu73NiSBfvQpdmsEp54ASfBf12ZEIlL8eIpJsyTIoIX6
+	667BLn0RVnIhwf5ZjU5s2/CzMlKD8GJgMNuAw1jPXbXiOH4dtQChmvgAvlfIwbyJCL/9SkWTHUOqu
+	y7ZceZjQ76vEaNm+d9bA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nr9Jm-00GhXN-Qg; Wed, 18 May 2022 02:21:42 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1nrM1n-002w0I-Qr; Wed, 18 May 2022 15:55:59 +0000
+Received: from mail-ot1-f48.google.com ([209.85.210.48])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nr9Jb-00GhWA-MX; Wed, 18 May 2022 02:21:33 +0000
-X-UUID: cf2b76ce1b9f4e44907190b481b53d66-20220517
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=LXkOG9D6XEdFm7SxKof7YFQUeMPJyp1wipk9Vmb2i+c=; 
- b=TB4MeCqETDmzNycOUZt+BIN0aoPp7bDPqsM9EzU807FrKgCMG9jrrDONAMHpyb9IV/BGY1jdcFRh+ko/3WTcdtUM/QuZ6Jl/zfdFeqTGgYGT3HnyVrHH0TIa6KPdtGANF1CQjXoFoVTRKK481/cQRbijIPkDRlNqTQicvxLPtWA=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5, REQID:60738092-3589-4c22-8443-559cafd8969d, OB:0,
- LO
- B:0,IP:0,URL:5,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
- ON:release,TS:5
-X-CID-META: VersionHash:2a19b09, CLOUDID:c08f8fe2-edbf-4bd4-8a34-dfc5f7bb086d,
- C
- OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
- ,QS:0,BEC:nil
-X-UUID: cf2b76ce1b9f4e44907190b481b53d66-20220517
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <jianjun.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 1998545340; Tue, 17 May 2022 19:21:28 -0700
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 17 May 2022 19:21:27 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 18 May 2022 10:21:25 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Wed, 18 May 2022 10:21:23 +0800
-Message-ID: <124a48372c1ce0c28433f5c93ba1b4ac222ae9b8.camel@mediatek.com>
-Subject: Re: [PATCH v8 2/2] phy: mediatek: Add PCIe PHY driver
-From: Jianjun Wang <jianjun.wang@mediatek.com>
-To: Rex-BC Chen <rex-bc.chen@mediatek.com>, Chunfeng Yun
- <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, "Vinod
- Koul" <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, Chen-Yu Tsai <wenst@chromium.org>,
- "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>,
- Krzysztof Kozlowski <krzk@kernel.org>
-CC: Wei-Shun Chang <weishunc@google.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <randy.wu@mediatek.com>,
- <jieyy.yang@mediatek.com>, <chuanjia.liu@mediatek.com>,
- <qizhong.cheng@mediatek.com>, <jian.yang@mediatek.com>
-Date: Wed, 18 May 2022 10:21:20 +0800
-In-Reply-To: <8affe58a4952d6c405dd41f18c6a7f40b2313fde.camel@mediatek.com>
-References: <20220507060621.32252-1-jianjun.wang@mediatek.com>
- <20220507060621.32252-3-jianjun.wang@mediatek.com>
- <8affe58a4952d6c405dd41f18c6a7f40b2313fde.camel@mediatek.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+ id 1nrM1k-002vy6-Le; Wed, 18 May 2022 15:55:58 +0000
+Received: by mail-ot1-f48.google.com with SMTP id
+ m15-20020a9d608f000000b00606a788887aso1671099otj.0; 
+ Wed, 18 May 2022 08:55:54 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=pL9sXlkxO4wUxq+I5961tw5THWjp2m8gWvZxMl5uTTs=;
+ b=QrCCS7YspsbT/bkrhAUeq60VOfBSdfRUBsnxtBLc3FoCOomQdKsOKQR5DSYnBU9fU3
+ 5S6sFBeVwSmhgYkqrBfHLGZHGM6iuNSetGJMejl+OmDkgaBpbGs0UTQ2VqNlxiwBeTp2
+ jMKkSjxQV9wmp3KtZdEZoXN2EcGouq057eig0aZCwOO0v4dPJscNpb0T1j/Gz/Mf4B9t
+ CnVsi6QSyE6dUHC8pLCQtw3G4G9/LxDBrcvR3N5RLMMr/XEvNNF6cYpmbKfmtrHIKuzo
+ Z7v8+fVCyvnCnszGLU8zweK/7BSkmlsm0uvb4BfXy39erlclWn+wntBAy/szsGQ1bxSG
+ OBoA==
+X-Gm-Message-State: AOAM530l3tczO5RAGgS0Gz+aHPidZ/Fw1xyadsjuj26ONhVJNWcztQlM
+ 6Jia5hGasMDwl8aEB7z1Nlg7Gj4Nmw==
+X-Google-Smtp-Source: ABdhPJxiry19r1K5KnHA2+Vc2jieYBIM7bIX3w1IUZHtsbb6TFULxR9rOzLG/JZJSgpOalKPbr31YA==
+X-Received: by 2002:a05:6830:2387:b0:606:4470:133 with SMTP id
+ l7-20020a056830238700b0060644700133mr120520ots.133.1652889353575; 
+ Wed, 18 May 2022 08:55:53 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
+ [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
+ i131-20020acaea89000000b00325cda1ffbasm846556oih.57.2022.05.18.08.55.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 May 2022 08:55:52 -0700 (PDT)
+Received: (nullmailer pid 3393244 invoked by uid 1000);
+ Wed, 18 May 2022 15:55:51 -0000
+Date: Wed, 18 May 2022 10:55:51 -0500
+From: Rob Herring <robh@kernel.org>
+To: Frank Wunderlich <frank-w@public-files.de>
+Cc: Frank Wunderlich <linux@fw-web.de>,
+ Michael Riesch <michael.riesch@wolfvision.net>, Vinod Koul <vkoul@kernel.org>,
+ Johan Jonker <jbx6244@gmail.com>, linux-rockchip@lists.infradead.org,
+ linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>
+Subject: Re: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
+Message-ID: <20220518155551.GB3302100-robh@kernel.org>
+References: <20220514115946.8858-1-linux@fw-web.de>
+ <20220514115946.8858-2-linux@fw-web.de>
+ <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
+ <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
+ <20220516173537.GA2942634-robh@kernel.org>
+ <9496CAFB-6CB6-4BDA-A539-3A6E1B562299@public-files.de>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <9496CAFB-6CB6-4BDA-A539-3A6E1B562299@public-files.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220517_192131_787034_0D54C010 
-X-CRM114-Status: GOOD (  24.47  )
+X-CRM114-CacheID: sfid-20220518_085556_762162_DA0C1A96 
+X-CRM114-Status: GOOD (  22.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,104 +95,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2022-05-11 at 11:22 +0800, Rex-BC Chen wrote:
-> On Sat, 2022-05-07 at 14:06 +0800, Jianjun Wang wrote:
-> > Add PCIe GEN3 PHY driver support on MediaTek chipsets.
-> > 
-> > +
-> > +static int mtk_pcie_phy_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct phy_provider *provider;
-> > +	struct mtk_pcie_phy *pcie_phy;
-> > +	int ret;
-> > +
-> > +	pcie_phy = devm_kzalloc(dev, sizeof(*pcie_phy), GFP_KERNEL);
-> > +	if (!pcie_phy)
-> > +		return -ENOMEM;
-> > +
-> > +	pcie_phy->sif_base =
-> > devm_platform_ioremap_resource_byname(pdev, "sif");
-> > +	if (IS_ERR(pcie_phy->sif_base))
-> > +		return dev_err_probe(dev, PTR_ERR(pcie_phy->sif_base),
-> > +				     "Failed to map phy-sif base\n");
-> > +
-> > +	pcie_phy->phy = devm_phy_create(dev, dev->of_node,
-> > &mtk_pcie_phy_ops);
-> > +	if (IS_ERR(pcie_phy->phy))
-> > +		return dev_err_probe(dev, PTR_ERR(pcie_phy->phy),
-> > +				     "Failed to create PCIe phy\n");
-> > +
-> > +	pcie_phy->dev = dev;
-> > +	pcie_phy->data = of_device_get_match_data(dev);
-> > +	if (!pcie_phy->data)
-> > +		return dev_err_probe(dev, -EINVAL, "Failed to get phy
-> > data\n");
-> > +
-> > +	if (pcie_phy->data->sw_efuse_supported) {
-> > +		/*
-> > +		 * Failed to read the efuse data is not a fatal
-> > problem,
-> > +		 * ignore the failure and keep going.
-> > +		 */
-> > +		ret = mtk_pcie_read_efuse(pcie_phy);
-> > +		if (ret == -EPROBE_DEFER)
-> > +			return ret;
+On Mon, May 16, 2022 at 09:21:31PM +0200, Frank Wunderlich wrote:
+> Am 16. Mai 2022 19:35:37 MESZ schrieb Rob Herring <robh@kernel.org>:
+> >On Sun, May 15, 2022 at 01:49:47PM +0200, Frank Wunderlich wrote:
+> >> Hi
+> >> 
+> >> > Gesendet: Sonntag, 15. Mai 2022 um 01:14 Uhr
+> >> > Von: "Rob Herring" <robh@kernel.org>
+> >> 
+> >> > On Sat, 14 May 2022 13:59:42 +0200, Frank Wunderlich wrote:
 > 
-> Hello Jianjun,
+> >Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+> >> > >
+> >> >
+> >> > My bot found errors running 'make DT_CHECKER_FLAGS=-m
+> >dt_binding_check'
+> >> > on your patch (DT_CHECKER_FLAGS is new in v5.13):
+> >> >
+> >> > yamllint warnings/errors:
+> >> >
+> >> > dtschema/dtc warnings/errors:
+> >> >
+> >/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml:
+> >properties:clock-names: 'oneOf' conditional failed, one must be fixed:
+> >> > 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}]
+> >is too long
+> >> > 	[{'const': 'refclk_m'}, {'const': 'refclk_n'}, {'const': 'pclk'}]
+> >is too short
+> >> > 	False schema does not allow 3
+> >> > 	1 was expected
+> >> > 	3 is greater than the maximum of 2
+> >> > 	hint: "minItems" is only needed if less than the "items" list
+> >length
+> >> > 	from schema $id: http://devicetree.org/meta-schemas/items.yaml#
+> >> >
+> >/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml:
+> >ignoring, error in schema: properties: clock-names
+> >> >
+> >Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.example.dtb:0:0:
+> >/example-0/phy@fe8c0000: failed to match any schema with compatible:
+> >['rockchip,rk3568-pcie3-phy']
+> >> 
+> >> seems this is fixed when i remove the "minItems: 3" from clock names 
+> >> (which is already fixed length because of the list).
+> >
+> >Yes.
+> >
+> >> needed to change type of lane-map to this:
+> >> 
+> >> $ref: /schemas/types.yaml#/definitions/uint8-array
+> >
+> >Why? That's not a standard property though, so needs a 'rockchip' 
+> >prefix. Though maybe a common property would be appropriate here.
 > 
-> even though it's not a fatal problem if we can not read efuse, but I
-> tink "ret = -ENOMEM" does not mean we can't read it?
-> 
-> Do we need to handle this?
+> Originally it was a bool property named "rockchip,bifurcation" and we 
+> changed it (after comments) to be a more generic property "lane-map" 
+> that can be re-used on other vendors/controllers/phys.
 
-Yes, I think we should handle it in this case, I'll fix it in the next
-version, thanks for your review.
+Fair enough. The type needs to be defined in a common binding though. 
+phy/phy-provider.yaml in dtschema probably.
 
-Thanks.
+We already have clock-lanes and data-lanes for other serdes interfaces. 
+Maybe data-lanes works here?
+
+> Driver reads as u8 array and range is small enough for u8 even if 
+> used for larger controllers (e.g. PCIe x16).
+
+Not arguing that it shouldn't be, just confused how the type was related 
+to warnings.
 
 > 
-> BRs,
-> Rex
-> > +	}
-> > +
-> > +	phy_set_drvdata(pcie_phy->phy, pcie_phy);
-> > +
-> > +	provider = devm_of_phy_provider_register(dev,
-> > of_phy_simple_xlate);
-> > +	if (IS_ERR(provider))
-> > +		return dev_err_probe(dev, PTR_ERR(provider),
-> > +				     "PCIe phy probe failed\n");
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct mtk_pcie_phy_data mt8195_data = {
-> > +	.num_lanes = 2,
-> > +	.sw_efuse_supported = true,
-> > +};
-> > +
-> > +static const struct of_device_id mtk_pcie_phy_of_match[] = {
-> > +	{ .compatible = "mediatek,mt8195-pcie-phy", .data =
-> > &mt8195_data },
-> > +	{ },
-> > +};
-> > +MODULE_DEVICE_TABLE(of, mtk_pcie_phy_of_match);
-> > +
-> > +static struct platform_driver mtk_pcie_phy_driver = {
-> > +	.probe	= mtk_pcie_phy_probe,
-> > +	.driver	= {
-> > +		.name = "mtk-pcie-phy",
-> > +		.of_match_table = mtk_pcie_phy_of_match,
-> > +	},
-> > +};
-> > +module_platform_driver(mtk_pcie_phy_driver);
-> > +
-> > +MODULE_DESCRIPTION("MediaTek PCIe PHY driver");
-> > +MODULE_AUTHOR("Jianjun Wang <jianjun.wang@mediatek.com>");
-> > +MODULE_LICENSE("GPL");
+> >> then it looks clean for it....
+> >> 
+> >> -m causes many errors unrelated to this schema-file even if i pass
+> >>
+> >DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+> >
+> >The fix is fixing the remaining 40 or so '-m' errors.
 > 
-> 
+> So now clean for you(r bot), too? Did only get a bunch of other unrelated messages.
+
+No, the bot does a baseline build and extracts the diff in warnings. 
+Still too many warnings popping up frequently... :(
+
+Rob
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
