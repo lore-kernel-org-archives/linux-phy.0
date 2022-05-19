@@ -4,82 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBFDFC433F5
-	for <linux-phy@archiver.kernel.org>; Thu, 19 May 2022 13:42:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88ABCC433F5
+	for <linux-phy@archiver.kernel.org>; Thu, 19 May 2022 15:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M2mqB6e+sep0KEnc2U8KGSo3PhX9clBXbHbCb8ZHf0E=; b=F0mvCRT0gviix2
-	/PBs/1+ABn0gMapcLL+6CF+Cf0x3eAEs/hg68leSK5tBmIad1cNQseci9MbYT77i22EvRJW/H2ijh
-	d0bS212v6GAiCdqvPn7iXdqLMTWytykYLkQqzTPZ88hkTBn8fjJMhk+dzd+m3/mwi8olguJxaRXiy
-	FMl3GRWp/jhDjmvrBeBeNuVBif+Y/PNty2SZP/KBi5/YMcy+Tx91C7FMdAfabjEeGPFdbJ4eBF2/7
-	FWZsFdrmppQ5cPXwrlRwbTPYlf1mubJ+wR5+1sj8dFWKBG1f4FzLR/cZwddaRlbKbn2ijw0LYa9yh
-	2jvD/RWkEBwBBCt1mbiw==;
+	List-Owner; bh=k8Bn9g5lMJ3y8piq7BXAtiB5jBfcUqsD51lOjzTSbfc=; b=RzMzMSvruBQWfz
+	zy34xTssCKkMsvphe/l+M3QIWZEnVZZAi4cnJimcnVeC3aXeqUWs0XGGaZtiHSaoi+uCz6G+XL4Pl
+	l68H1xs8bOmPpsJPg0t1hvN5rUS5r4kixWp2+EG2n8T1oXX1jpecaCXktMLqwOQwOYISaaR8ixeRd
+	n2J0mfmQdlSxoCFPdvEYEUYtpJbIQKW04EVRYFqSgvT9NeAlpDyr1cPkgB4sGya/6hfmWo0751PJq
+	bYixtegkxzTsogAiWw/gfgqnxo9aCYx8DnhEaCPSbE9kFYw4Z32SQD9NpN1MfIL/Q/9Hj7/VLoKXh
+	BcoGD6fUstnTEoPBt+OQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nrgPs-0074xl-4c; Thu, 19 May 2022 13:42:12 +0000
-Received: from mail-qt1-f171.google.com ([209.85.160.171])
+	id 1nrhz4-007txt-CI; Thu, 19 May 2022 15:22:38 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nrgPp-0074x3-C2
- for linux-phy@lists.infradead.org; Thu, 19 May 2022 13:42:11 +0000
-Received: by mail-qt1-f171.google.com with SMTP id u3so4794240qta.8
- for <linux-phy@lists.infradead.org>; Thu, 19 May 2022 06:42:07 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=El+m1CxX/rNHNaXQ8cQdCXt5KnbDuSU+6SgAu6jPXuA=;
- b=DGBy0B7NxNo3HdR98ojSjLHbv7iw64wPhlngojSLANbUClid0vk4bVcaMGLf17NOfJ
- Iob25UC5biO2vdjp1BzMPSXVPkzllvUNeYnwJVPPBj0Sp6VVu/uir5Xa+yPYrYtIsPLB
- hFtLnvvD5JGEKOThEets8tX4XJSRo7qodV8DP8Pf58/QkykXvE79ZncjrsBNNjJHEY4K
- dIre56C7X8UzA0Rl6K9dfCUBTSYzs6hcXK5fV67dM0/odRAZ0dchu+TSwjUag3k9pAo9
- zAQdHHrbY61tBpCQodLVOMLsDMXJNceLDMoVbyAoA1vRHEKK29eJBhEjHX1FKWVAQAeS
- 2ODA==
-X-Gm-Message-State: AOAM531rKHZQxZ8xl+HdtEwkXVdx/b53eBoctyJgJ4zC4+eet3+Ni84G
- pDOl6dNLySP4vk+F/boiKA7VLLccdOv8bQ==
-X-Google-Smtp-Source: ABdhPJxC2dlpHHDSbSFheRrQeJYmr+Dv/L8fCfjh+WU6yTat53t+s35ekkcjUbexJgpeKvfQ86ClRA==
-X-Received: by 2002:ac8:5852:0:b0:2f3:cdbd:d5a0 with SMTP id
- h18-20020ac85852000000b002f3cdbdd5a0mr3905758qth.207.1652967726134; 
- Thu, 19 May 2022 06:42:06 -0700 (PDT)
-Received: from mail-yw1-f182.google.com (mail-yw1-f182.google.com.
- [209.85.128.182]) by smtp.gmail.com with ESMTPSA id
- n142-20020a37a494000000b0069fc13ce253sm1236812qke.132.2022.05.19.06.42.04
- for <linux-phy@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 19 May 2022 06:42:04 -0700 (PDT)
-Received: by mail-yw1-f182.google.com with SMTP id
- 00721157ae682-2ff1ed64f82so57473927b3.1
- for <linux-phy@lists.infradead.org>; Thu, 19 May 2022 06:42:04 -0700 (PDT)
-X-Received: by 2002:a81:6588:0:b0:2f8:b75e:1e1a with SMTP id
- z130-20020a816588000000b002f8b75e1e1amr4923917ywb.358.1652967724157; Thu, 19
- May 2022 06:42:04 -0700 (PDT)
+ id 1nrhes-007gII-47
+ for linux-phy@lists.infradead.org; Thu, 19 May 2022 15:01:48 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ams.source.kernel.org (Postfix) with ESMTPS id 80DCAB82565;
+ Thu, 19 May 2022 15:01:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C58FEC385AA;
+ Thu, 19 May 2022 15:01:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+ s=korg; t=1652972504;
+ bh=2peLXIHGWglCmyR/bvzZxIAVGwKGih10obviZg1W3hM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BUf0dvh8lhk2JTFzx9yx6uy38NdQrALC+6Vqh/QplD20CpkZV+WR1FAsj7LDzE8RB
+ Z883selXnhhvgYU0sIjUmGDN3pqkBqnLBLDn2k6s1cJjJyxNcEPQoVOrl3ieXExHZ+
+ gni+NxAu+zVtfYQ+m4o2ZA6V+T/q0uYf3uRSUnIw=
+Date: Thu, 19 May 2022 16:56:58 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ Linux Phy <linux-phy@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>
+Subject: Re: [GIT PULL]: Generic phy updates for v5.19
+Message-ID: <YoZaurFLJJe8mYNv@kroah.com>
+References: <Ynz77p8KWnLzSzK3@matsya>
 MIME-Version: 1.0
-References: <8e48edc5e7b65f8dfd8b76c583e0265b9b97e62b.1652099944.git.geert+renesas@glider.be>
- <20220517010408.GA3690472-robh@kernel.org>
- <CAMuHMdWnvYx93Xo4XHRi3vv8c1OCvX7zqGswHApRnc7VYM+X4g@mail.gmail.com>
- <CAL_JsqJo-p+bh6VOKANq8pmMPbm1vZwmHt73yYaEhe9GfQ50dw@mail.gmail.com>
-In-Reply-To: <CAL_JsqJo-p+bh6VOKANq8pmMPbm1vZwmHt73yYaEhe9GfQ50dw@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 19 May 2022 15:41:52 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdVdCP3hsSABq5J4bxo-5hTRS4ZggQwQG99srkc6z_EHuw@mail.gmail.com>
-Message-ID: <CAMuHMdVdCP3hsSABq5J4bxo-5hTRS4ZggQwQG99srkc6z_EHuw@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: phy: renesas,
- rcar-gen2-usb-phy: Convert to json-schema
-To: Rob Herring <robh@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
- Wolfram Sang <wsa+renesas@sang-engineering.com>, 
- "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, 
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, 
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <Ynz77p8KWnLzSzK3@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220519_064209_447757_B8CA7747 
-X-CRM114-Status: GOOD (  20.03  )
+X-CRM114-CacheID: sfid-20220519_080146_369620_8F0ABF69 
+X-CRM114-Status: GOOD (  10.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,35 +70,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
+On Thu, May 12, 2022 at 05:52:06PM +0530, Vinod Koul wrote:
+> Hello Greg,
+> 
+> Please pull to receive the Generic phy updates for v5.19. This time no
+> new driver, few driver with new chip support and driver updates. As
+> usual the changes are already in linux-next.
+> 
+> The following changes since commit 3123109284176b1532874591f7c81f3837bbdc17:
+> 
+>   Linux 5.18-rc1 (2022-04-03 14:08:21 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git tags/phy-for-5.19
 
-On Tue, May 17, 2022 at 3:57 PM Rob Herring <robh@kernel.org> wrote:
-> On Tue, May 17, 2022 at 1:59 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > On Tue, May 17, 2022 at 3:04 AM Rob Herring <robh@kernel.org> wrote:
-> > > I guess board level components don't count and some might be pending.
-> >
-> > Some have been pending (or blocked) for a long time...
->
-> Can you tell me which ones and I can apply them. If they have my tag
-> already, then I tend to ignore them.
+Pulled and pushed out, thanks.
 
-I think you can safely take the following:
-https://lore.kernel.org/r/0c5f06c9d262c1720b40d068b6eefe58ca406601.1638539806.git.geert+renesas@glider.be
-
-I have also sent a v3 of the sil,sii9022 conversion.
-
-Thanks!
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+greg k-h
 
 -- 
 linux-phy mailing list
