@@ -4,63 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6396CC433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 20 May 2022 08:57:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4979AC433FE
+	for <linux-phy@archiver.kernel.org>; Fri, 20 May 2022 11:51:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
+	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QMk6cHALigUXGkP7Fqn/N7BCY2WPbpSdIWtWa1+xfmU=; b=fbKl7s42PYAvd5
-	fTr9mpDUe0A9e/zwsAlkg3ecAxowlV8fbktIZAR6Ra7v4gUO0qGhLY1dVJ+uw1xnunbpVe4Uco8FW
-	FSbFgFVngdhi9jvNUbqYpGL3LenU8KoU+51RyICyBTMTeTJ3rIPiphDi05H/xulavWGxxw7AqvdDL
-	d8FqGY3GW7dLWf54+Wg1wKaPtUJ3kY7Hiz+LsIoDY/qiEryny1IFX7qf/HMs1pWya7RMW5WamjgOC
-	k4C0AGOtEh0S37di5heG5gVQWJZF2EujpFEkgOowQCqqids6O+HA0oIwN+8hUviH86cfDi/w3UHfw
-	zdf/xG2ItinKYZx9qygQ==;
+	List-Owner; bh=cL30Akjtu8Mf/pvgYRc0nL5aq84Ok1f4ALwXvNbn8Fw=; b=XLLzTSaesOoqCn
+	fvOVtKuL+9K2MiNzK770j873MWqLWlXnRZr/IXJYxyDMi2KxKmR9Jg3aCn0Iv+/ddmI27mzcBYwor
+	TAvhFdMB9wdk1Pkp/Kz2k27qV95RNSUsMRTBoma5VhgDD1G8OYRsRXGE/FlQdV0eM0hmFJK1qz3JV
+	TsIU4lBBQ0Iu2krLOrrYDbr2CBXZD/VndoTMw/xkB0kCutSw0KpgGNh5quO/kfsl7ljfSVDZjWP7t
+	YLrlmMtFi5Yu3DE1/iun5pozszvSfqqixChAtZRt72fbO/tDtlVQyzdoGyMpgKBEKSrHsnIRi3Cyn
+	+60KDKJkcKdtoAk1Sf2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nrySD-00BPQR-QD; Fri, 20 May 2022 08:57:49 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ns1A2-00CAPO-I5; Fri, 20 May 2022 11:51:14 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nryS0-00BPL6-Eh; Fri, 20 May 2022 08:57:37 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: kholk11) with ESMTPSA id 1AE511F4611B
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
- s=mail; t=1653037055;
- bh=bqpd3VkSlKvqr9XIfRMDAcgIUFokqBJv8l2n4vWSWT4=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=Oes80px/qqzIMK0FO5G0U7jtE5bl4FwQ6jiWSQlnTGHzjRtgtyBCtxrFiRmUJTiy0
- fUzI/Nd7mKddu6jnQQlCmGQUnr+TZ/Kq8c4Bgt/lgwL6PitEi1MFmRNLM+mic5nLa9
- kHckyLkTOMWY73pLzAICer2+G89R3OMSWvcJPdacto4PKuGegoXo5r+pIX9IEZE2rT
- wVWqLeesySlIKiO5uuLJLkHwM+Ph6W5Celhy9g36+5wWZsMLevsx2uM7RYs82xh6HR
- qP1Wdcl2NdMbXy4bsHFnTd9ifbMDmuQrM6Wh2L5LrP8bgghcjh2+UNGR3ehjumbshE
- Sq2z5/hFCjtPA==
-Message-ID: <a3ebc189-de28-3991-0cd9-1b1cb44f78b7@collabora.com>
-Date: Fri, 20 May 2022 10:57:31 +0200
+ id 1ns19p-00CAJl-P4; Fri, 20 May 2022 11:51:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1653047440;
+ bh=k4fKVQvURjqEQ8MtrJ2m1VCLQBvog7lyn9M2Wt/lV0Q=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=MKjD+jclEwCeFylv0hyyBS+WvHTmuPewzMPlTAPq4SzQ7HIxWMHCty6ASa4JQwjts
+ i4zZ0vYjycUJIHJPXmCz4RSB5WtmU7htC0/jVaXw49EzRSz0Oe593S1T5DNGJ3Bj8A
+ duJ+9EBhv28L9SHCZLW8pavMUMEJSrR/3AitmwCI=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.152.153] ([217.61.152.153]) by web-mail.gmx.net
+ (3c-app-gmx-bap67.server.lan [172.19.172.67]) (via HTTP); Fri, 20 May 2022
+ 13:50:39 +0200
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.0
-Subject: Re: [PATCH v9 2/2] phy: mediatek: Add PCIe PHY driver
-Content-Language: en-US
-To: Jianjun Wang <jianjun.wang@mediatek.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Chen-Yu Tsai <wenst@chromium.org>, Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Wei-Shun Chang <weishunc@google.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, rex-bc.chen@mediatek.com,
- randy.wu@mediatek.com, jieyy.yang@mediatek.com, chuanjia.liu@mediatek.com,
- qizhong.cheng@mediatek.com, jian.yang@mediatek.com
-References: <20220520064920.27313-1-jianjun.wang@mediatek.com>
- <20220520064920.27313-3-jianjun.wang@mediatek.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220520064920.27313-3-jianjun.wang@mediatek.com>
+Message-ID: <trinity-940b8fcf-17e7-4445-8aeb-e17f36b41b4b-1653047439840@3c-app-gmx-bap67>
+From: Frank Wunderlich <frank-w@public-files.de>
+To: Rob Herring <robh@kernel.org>
+Cc: Frank Wunderlich <linux@fw-web.de>, Michael Riesch
+ <michael.riesch@wolfvision.net>, Vinod Koul <vkoul@kernel.org>, Johan
+ Jonker <jbx6244@gmail.com>, linux-rockchip@lists.infradead.org,
+ linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Bjorn Helgaas
+ <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>, Peter Geis <pgwipeout@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
+ <kw@linux.com>
+Subject: Aw: Re: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3 phy
+Date: Fri, 20 May 2022 13:50:39 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <20220518155551.GB3302100-robh@kernel.org>
+References: <20220514115946.8858-1-linux@fw-web.de>
+ <20220514115946.8858-2-linux@fw-web.de>
+ <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
+ <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
+ <20220516173537.GA2942634-robh@kernel.org>
+ <9496CAFB-6CB6-4BDA-A539-3A6E1B562299@public-files.de>
+ <20220518155551.GB3302100-robh@kernel.org>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:SD3Edrf+NaJ//x8ye3V+dsdMGeWh8sRcrH6vyLezIFMvvRfi2kD/w+du5767L1pt7TB3A
+ 9diq3JRpFJSmaDntiITaiJm2eZhpyfFCpjcf93y/5BMa+mMkKuIkHOmuN6fjAMElAvyjrbt9h18s
+ Amtj5SSaEGyHSUtMkNjocxpSMH1INw1kDjl/7AAAPbCPR0mgoLp+E63LMkBfCG09Z4O0eh1HeXkl
+ 47XVC40CdkXePpbMILRd5yP3FSHED6RQrQaoKM95aJmTccxHuQRmMjL4SS33OZ+NxgGLSUqzUKr4
+ KE=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ldW5S2z+XIU=:UXxS08Sj+aFSCv9KzQQTl2
+ 1XnLZLY0FknaXahW1slqvCuFzb2THKkDUdph5QOpPyccApSaQNyeQNhYPecZryHHRWDOx8uga
+ QIgdI3TCF3BNeFm047mDBshfAQ8psCtAMxAKCxojFBNNP9lLT9+nbg6LjUdWukSQCPPDbYpjD
+ hot81cTZ7C3snYY/gUT9GE7zCEPV+M7OZMLBjktjReL4t32VaHwn/du6LM9G22CigWHx27jAq
+ 6L16V9eeFWFRy8/rAxw3p+Wa8jCMFdcRuUPGSrEZgML3oRmkOK2KFrREdnOvg4I+knqORYl1k
+ pxjxw+AKFkrZiSgX+2pGV3bwCi9iudf70ZU+lpIsPDPX3pYezIyfYHlzxLKmf2v1kiyfM1hiC
+ a3EtG1Y0sIPo1sTnWDWBkmcby0riINfmxzTAqZytZ6RUIlHpmxebFsyxFxXskq+GGz63GDjmz
+ ZLHoeoRMb5EwAJCf1W1/o7GCSSi8HGqkOEFoFvxY4RDU3Gj9jILxOJfxNiF3A1cuukwBfhum6
+ C6wWfevuyyn7z3AgZdiIed+IgAVCYQRdPkz3JJ9zu/n6l+KFbhzebzwbcoLoOqW5twRWa4vw8
+ BXsNil/j02qVXJm5RaYlhMsjbHBAvnU8X7LnCCuv9FS4C5NaXy4zKI+FA/gAWXMn4bLErlz69
+ RtPNKV8cf+qA4/tQYbR2TZ+gI34nUo2dSlpvDbaIYN08WxG+AGf+qkZAqRS2wJGZPCL6zcgxy
+ GI5EFSSu3thLB62bHwpa/wmuTpY5N8hblFje+N0jkUQL7fexaX5FgO8DamSspHAIWKCAESzvO
+ jMNrQLd
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220520_015736_671564_257DCFB4 
-X-CRM114-Status: UNSURE (   6.00  )
+X-CRM114-CacheID: sfid-20220520_045102_331459_78A279D5 
+X-CRM114-Status: UNSURE (   5.57  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,19 +97,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 20/05/22 08:49, Jianjun Wang ha scritto:
-> Add PCIe GEN3 PHY driver support on MediaTek chipsets.
-> 
-> Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+Hi,
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+fixed reg-error by using 32bit-address in example, in my test output is clean.
+
++++ b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+@@ -68,7 +68,7 @@ examples:
+     #include <dt-bindings/clock/rk3568-cru.h>
+     pcie30phy: phy@fe8c0000 {
+       compatible = "rockchip,rk3568-pcie3-phy";
+-      reg = <0x0 0xfe8c0000 0x0 0x20000>;
++      reg = <0xfe8c0000 0x20000>;
 
 
+i hope yours is clean too
+
+
+regarding data-lanes instead of own lane-map, Peter and me only find this in special
+bindings outside the phy-"namespace" like this.
+
+https://elixir.bootlin.com/linux/v5.18-rc7/source/Documentation/devicetree/bindings/media/video-interfaces.yaml#L157
+
+do you mean converting this binding and add it there and base out binding on it?
+
+https://elixir.bootlin.com/linux/v5.18-rc7/source/Documentation/devicetree/bindings/phy/phy-bindings.txt
+
+regards Frank
 
 -- 
 linux-phy mailing list
