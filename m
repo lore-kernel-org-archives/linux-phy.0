@@ -4,74 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAA1FC433F5
-	for <linux-phy@archiver.kernel.org>; Fri, 20 May 2022 06:50:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6396CC433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 20 May 2022 08:57:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C33l96Y1QsPIsLM0mR3Q7OgL3J5QBA49QSTk0N83Kos=; b=HKqOCtR+sXWTEw
-	znVfATFB8u/uSJOhEn5u+O0dtdwzKU36FFbR/xx4+hh0HY3gYlfXmqKQvXIRS7lJ+Q3IJs9jXeHlz
-	ix3o19FVOFqZ/0apfoCvwP3c7l7DV6IKt+YV5AE5jhC6drtXFQqqxN0bvbn0AAxalI2YpeUenSLpd
-	j4WOlNzDNznVVCVpMA29vEFS0gsGTufT5eF2BqDEl1ThQP65jOlu+1EtL69G13XMVEjYKYx7EwEak
-	a/SzPBccfUXhuVIyr7aVEs+hGXo/9WC7cH1P04e5sU3TUbKlQEjzURIfaiwc1BKuvS/DFDYQV8HXK
-	RIgCupd3gnKLIVgyBtZg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QMk6cHALigUXGkP7Fqn/N7BCY2WPbpSdIWtWa1+xfmU=; b=fbKl7s42PYAvd5
+	fTr9mpDUe0A9e/zwsAlkg3ecAxowlV8fbktIZAR6Ra7v4gUO0qGhLY1dVJ+uw1xnunbpVe4Uco8FW
+	FSbFgFVngdhi9jvNUbqYpGL3LenU8KoU+51RyICyBTMTeTJ3rIPiphDi05H/xulavWGxxw7AqvdDL
+	d8FqGY3GW7dLWf54+Wg1wKaPtUJ3kY7Hiz+LsIoDY/qiEryny1IFX7qf/HMs1pWya7RMW5WamjgOC
+	k4C0AGOtEh0S37di5heG5gVQWJZF2EujpFEkgOowQCqqids6O+HA0oIwN+8hUviH86cfDi/w3UHfw
+	zdf/xG2ItinKYZx9qygQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nrwSo-00ArWU-9I; Fri, 20 May 2022 06:50:18 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1nrySD-00BPQR-QD; Fri, 20 May 2022 08:57:49 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nrwSI-00ArIr-4K; Fri, 20 May 2022 06:49:48 +0000
-X-UUID: 338b7ad3bccf46f28b1808dbee933c0b-20220519
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5, REQID:f7694b93-5dde-4a21-ae87-14ded0681441, OB:0,
- LO
- B:0,IP:0,URL:0,TC:0,Content:-5,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACT
- ION:release,TS:-5
-X-CID-META: VersionHash:2a19b09, CLOUDID:2437f979-5ef6-470b-96c9-bdb8ced32786,
- C
- OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
- ,QS:0,BEC:nil
-X-UUID: 338b7ad3bccf46f28b1808dbee933c0b-20220519
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <jianjun.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 139095887; Thu, 19 May 2022 23:49:39 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 19 May 2022 23:49:26 -0700
-Received: from mtkcas10.mediatek.inc (172.21.101.39) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
- Fri, 20 May 2022 14:49:25 +0800
-Received: from localhost.localdomain (10.17.3.154) by mtkcas10.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 20 May 2022 14:49:22 +0800
-From: Jianjun Wang <jianjun.wang@mediatek.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Chen-Yu Tsai
- <wenst@chromium.org>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, Krzysztof Kozlowski
- <krzk@kernel.org>
-CC: Wei-Shun Chang <weishunc@google.com>, Jianjun Wang
- <jianjun.wang@mediatek.com>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <rex-bc.chen@mediatek.com>, <randy.wu@mediatek.com>,
- <jieyy.yang@mediatek.com>, <chuanjia.liu@mediatek.com>,
- <qizhong.cheng@mediatek.com>, <jian.yang@mediatek.com>
-Subject: [PATCH v9 0/2] phy: mediatek: Add PCIe PHY driver
-Date: Fri, 20 May 2022 14:49:18 +0800
-Message-ID: <20220520064920.27313-1-jianjun.wang@mediatek.com>
-X-Mailer: git-send-email 2.25.1
+ id 1nryS0-00BPL6-Eh; Fri, 20 May 2022 08:57:37 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: kholk11) with ESMTPSA id 1AE511F4611B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+ s=mail; t=1653037055;
+ bh=bqpd3VkSlKvqr9XIfRMDAcgIUFokqBJv8l2n4vWSWT4=;
+ h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+ b=Oes80px/qqzIMK0FO5G0U7jtE5bl4FwQ6jiWSQlnTGHzjRtgtyBCtxrFiRmUJTiy0
+ fUzI/Nd7mKddu6jnQQlCmGQUnr+TZ/Kq8c4Bgt/lgwL6PitEi1MFmRNLM+mic5nLa9
+ kHckyLkTOMWY73pLzAICer2+G89R3OMSWvcJPdacto4PKuGegoXo5r+pIX9IEZE2rT
+ wVWqLeesySlIKiO5uuLJLkHwM+Ph6W5Celhy9g36+5wWZsMLevsx2uM7RYs82xh6HR
+ qP1Wdcl2NdMbXy4bsHFnTd9ifbMDmuQrM6Wh2L5LrP8bgghcjh2+UNGR3ehjumbshE
+ Sq2z5/hFCjtPA==
+Message-ID: <a3ebc189-de28-3991-0cd9-1b1cb44f78b7@collabora.com>
+Date: Fri, 20 May 2022 10:57:31 +0200
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.0
+Subject: Re: [PATCH v9 2/2] phy: mediatek: Add PCIe PHY driver
+Content-Language: en-US
+To: Jianjun Wang <jianjun.wang@mediatek.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Chen-Yu Tsai <wenst@chromium.org>, Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Wei-Shun Chang <weishunc@google.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, rex-bc.chen@mediatek.com,
+ randy.wu@mediatek.com, jieyy.yang@mediatek.com, chuanjia.liu@mediatek.com,
+ qizhong.cheng@mediatek.com, jian.yang@mediatek.com
+References: <20220520064920.27313-1-jianjun.wang@mediatek.com>
+ <20220520064920.27313-3-jianjun.wang@mediatek.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220520064920.27313-3-jianjun.wang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220519_234946_215856_4C3CE9DC 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20220520_015736_671564_257DCFB4 
+X-CRM114-Status: UNSURE (   6.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,59 +73,18 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-These series patches add support for PCIe PHY driver on MediaTek chipsets.
+Il 20/05/22 08:49, Jianjun Wang ha scritto:
+> Add PCIe GEN3 PHY driver support on MediaTek chipsets.
+> 
+> Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
 
-Changes in v9:
-1. Check if the return value is -ENOMEM when reading efuse data fails.
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
-Changes in v8:
-1. Use "device_property_present()" to increase human readability;
-2. Use "GPL" as recommended in commit bf7fbeeae6db ("module: Cure
-   the MODULE_LICENSE "GPL" vs. "GPL v2" bogosity").
-
-Changes in v7:
-1. Add bitfield.h header to fix the build error on non-arm64 platforms.
-
-Changes in v6:
-1. Remove unnecessary header files;
-2. Use FILELD_PREP in bitfield.h to set value.
-
-Changes in v5:
-1. Fix typo in kerneldoc: "eFues" => "eFuse".
-
-Changes in v4:
-1. Fix no return when calling dev_err_probe.
-
-Changes in v3:
-1. Add introductions for structure members;
-2. Add SoC dependent data;
-3. Dynamically allocate efuse data;
-4. Check return value if it's an -EPROBE_DEFER.
-
-Changes in v2:
-1. Add specific compatible name;
-2. Read NVMEM data at probe time;
-3. Fix typos.
-
-Jianjun Wang (2):
-  dt-bindings: phy: mediatek: Add YAML schema for PCIe PHY
-  phy: mediatek: Add PCIe PHY driver
-
- .../bindings/phy/mediatek,pcie-phy.yaml       |  75 +++++
- drivers/phy/mediatek/Kconfig                  |  11 +
- drivers/phy/mediatek/Makefile                 |   1 +
- drivers/phy/mediatek/phy-mtk-pcie.c           | 267 ++++++++++++++++++
- 4 files changed, 354 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
- create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
-
--- 
-2.18.0
 
 
 -- 
