@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4330C433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 11:35:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16CF9C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 11:36:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hkG52phPc8RCs21bF2HiaZmFjFxpaD1WeaxF+KsRW7M=; b=yzfFFzY/bTZR+3
-	ITjGL6RUCBYy5dKx7ACl/XVUVJTHPEZr7wh1GsjRqhw/VHLHpfnumGnrzt9S6kfk5VsKByLZHXqBh
-	bieaT1Z9WlvKPt3F4okEohDHtMZMZQQgQekluDAmAwnta952/dQLa0s3Np9kGR832sLox5EM7yNTw
-	WYqbDflpT3PEZS6P+ugCw3CqIyHF6lDG+0RZYfGjkwiUsUB5TkJbg+L2r8qNhS8a3twzQeTfzJ3vX
-	nTpk7dtf8jniLYtjexmRZDpUwAv9ZuS8Z3t6IB4POEmGKn4mytCfMZx35K8JKk5mtoyY25mBIa3PV
-	40pZkULwJlzcsLzk2DjA==;
+	List-Owner; bh=IZrdc4K90JvRmT4017rGf7WHQYHLZdDDQC8TBAGn2GA=; b=2jIsRvx++LRb0e
+	qEh30ja5HI4Sw08EwuQq48oQ3RcYFj2F5VwxbPKkyaeO12NfB3JDGsEQldlWgK31ppkBF1O1RwOY3
+	INSdn+T1zXIJspPBxFlXvH4VK8uf8WwJXVIvGN2W2CVLYfQ2rJ2rW14ukuWUWZJOU7A/QDVHAkua0
+	yfYS0LFs1Q6deX8NhSbRFVkpZoQ5XztpT3P49OV2uiL4dee4XbRqJ6D9/alo2BROd0jGFQcgztzlh
+	aYjEo1sBFIXK5DBD62Y0CPs7km5R9D9sAVVb8ijYd2PflS5BZTIywv7+gdJmO3pU8SKCxlh9Zw+jk
+	yOeQIJ2MjaZJ7Pgulcng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nt6LL-003kep-VT; Mon, 23 May 2022 11:35:23 +0000
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	id 1nt6ML-003l4Y-F0; Mon, 23 May 2022 11:36:25 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nt5eU-003Pxl-1S
- for linux-phy@lists.infradead.org; Mon, 23 May 2022 10:51:07 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id r23so20786552wrr.2
- for <linux-phy@lists.infradead.org>; Mon, 23 May 2022 03:51:04 -0700 (PDT)
+ id 1nt5eY-003PgF-7q
+ for linux-phy@lists.infradead.org; Mon, 23 May 2022 10:51:11 +0000
+Received: by mail-wr1-x432.google.com with SMTP id u3so20779268wrg.3
+ for <linux-phy@lists.infradead.org>; Mon, 23 May 2022 03:51:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=rtIhUcdCaZnm7jziZDR5Z3AGZFSQmzw1Ey7uWgPET0o=;
- b=wah1jbM7UwwnnOKN9R9SdQNDY2U+2LnBjvHDreFlkmgM6crp7LUE26axhsKHnETs9x
- fR1xJvrqPq4sbqRbxc1TWAN6DPtHiy6slEa8Gvp4dEmJjrC4hKyo7MFmbXD73ikJVWEf
- ZBzqgF1U/EHOPF0GOGPVzUmCKzg3rgNZgVVLV7Hu3dpnKUFmmlX+DIrLoSkUCLm/8GKA
- pSAPX1B6YfDSSalkTcXADWGOYATuLN1r8GlTGFgqjUn51EtxUcvU6gYeyr62c2AR8w15
- XT+EC5FzCBl/Lx1yYauc0D2j8Zy6baO/AXzprpopx8OTp6idfNVzdhb30T/y0T0uEKVg
- mSwA==
+ bh=kkts/Sde7nd98mjIi3GzZQjBJaHLHDi+m6EizH3TGsU=;
+ b=Y+0CSVrVS9WyATu6S94zU3DJBrKkpYqrPk4RjAlg+rGcjnyUqrCJg+azA8JDCMwU0r
+ ctrd6MkYGDUg+6pbznzAvb0PgsPTdD+/lOzCOl9XAb544vL4VO8YZhTGixUYTWw1u2oW
+ Nzybx0A4TrE2m+pvcTZucGhaxExy8IKjASDaO15+2xgMlBFvrde0q+y8jLa9tj3V31Me
+ DS6uJFgXHK+gd0s7sGhST20vJimYNdXe53w79y8/56FfATf6WruA1Hc9fiaMuG5bi5ZA
+ ZsHw2ZGxUS7e35uN/EXRBG8LSKrLjtVVNSYRu/17aMNx80FNvXLXTJ6YMg1EKrY1F6GI
+ CM/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=rtIhUcdCaZnm7jziZDR5Z3AGZFSQmzw1Ey7uWgPET0o=;
- b=0isyHaIRRHGEurST0QHxfeMGMhnEC3cBI9joniUuf+Eiz/7Qt4roUN/DIHON2woiUb
- aaS2BL49aup5skLxvH6w3TeN75x/xwv/BADpe5PM6l8FKeOivIRpU06ylKgohnSkyaS0
- gytOCGHSGkw7EhjWYshs0BUF2caFuLnQm5ss9UIZtSjJ36HVCTHqCqLVxjvenAvi8zVd
- OqeHGWv9QKtH9ie9wO4h41xPvLitYcjcIxTayorbqACKMRgAsx3JVVA6296WlupqvwHZ
- 2kLzXcbfAxYYHIjs+lcMcrgwHA1KgQcPlmrCzg9J9u0l0oXl9U1pUCAPpZAudx0bdcJ0
- yG1Q==
-X-Gm-Message-State: AOAM530ZBpFmwJnVmUxH/afppiPxI55zGPfzkl1+xvX8y3ISkAv5lfiH
- Rf3rOu+oSKrQoCL1hGHUrBtm8Q==
-X-Google-Smtp-Source: ABdhPJwlpN+bAQcOMXPxLl3HE4/+S7AO5UZT/ZO654uU7ZtC36wAyqvn+dcGu2/sz9tF0vCBLin/Vw==
-X-Received: by 2002:adf:f584:0:b0:20d:431:27f8 with SMTP id
- f4-20020adff584000000b0020d043127f8mr18646173wro.577.1653303063102; 
- Mon, 23 May 2022 03:51:03 -0700 (PDT)
+ bh=kkts/Sde7nd98mjIi3GzZQjBJaHLHDi+m6EizH3TGsU=;
+ b=CEq8pw4HyZHaGRoMhQRDy2q3aS+mhPMQidaI7A0El9uCN96KDPCygLyZikoDIJtYlb
+ 2SE9XWa9nVbVXUz2KlHYEXX99gB0wdKeQ2rgeQ0PYtaLzeQ+YvLGC7zt76zDyXafwFhZ
+ cvWpNKuQq5WAy9M4qeGlRF67h4Z2OyWyIKeEEzF0ywisuvuVMFBTJd/hDQ7ykzzRFFtz
+ 0VZd31SVa95Koa8N0bxD16TkcSEroBrFVB4svYiJM+0/xdvCoGXELNaIjiYcIE/uym4d
+ bHQ/O0mG7Pm9PP8m4Uo9y0MEEk9nQD1gl7LnIO2xSia+IK0hXUqRWNwk1k93eli1eWff
+ urBQ==
+X-Gm-Message-State: AOAM530AV6URFGG6nTenaXxsUTwwja2HxwZKTVcwURdDXzyf2BrXLbhN
+ EUU6WXQcDyrn9Zd4eWaYF2OEdg==
+X-Google-Smtp-Source: ABdhPJw++Udgn1IeBKegHsQgscxxX+V01340gZv0n6oYlTpZVbPptZM9/TVKjK2WhSSYg5Z+1aCntg==
+X-Received: by 2002:a5d:6446:0:b0:20e:667b:a9dd with SMTP id
+ d6-20020a5d6446000000b0020e667ba9ddmr18387744wrw.345.1653303069745; 
+ Mon, 23 May 2022 03:51:09 -0700 (PDT)
 Received: from localhost.localdomain
  (2a02-8440-6141-9d1b-3074-96af-9642-0003.rev.sfr.net.
  [2a02:8440:6141:9d1b:3074:96af:9642:3])
  by smtp.gmail.com with ESMTPSA id
- n11-20020a7bc5cb000000b003942a244f38sm8453607wmk.17.2022.05.23.03.51.01
+ n11-20020a7bc5cb000000b003942a244f38sm8453607wmk.17.2022.05.23.03.51.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 May 2022 03:51:02 -0700 (PDT)
+ Mon, 23 May 2022 03:51:09 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
 To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
@@ -80,16 +80,16 @@ Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, linux-fbdev@vger.kernel.org
-Subject: [PATCH v10 09/21] drm/mediatek: dpi: move dimension mask to SoC config
-Date: Mon, 23 May 2022 12:47:42 +0200
-Message-Id: <20220523104758.29531-10-granquet@baylibre.com>
+Subject: [PATCH v10 10/21] drm/mediatek: dpi: move hvsize_mask to SoC config
+Date: Mon, 23 May 2022 12:47:43 +0200
+Message-Id: <20220523104758.29531-11-granquet@baylibre.com>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220523104758.29531-1-granquet@baylibre.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220523_035106_121069_89D46D5E 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20220523_035110_333925_BDE07193 
+X-CRM114-Status: GOOD (  12.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,98 +106,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add flexibility by moving the dimension mask to the SoC config
+Add flexibility by moving the hvsize mask to SoC specific config
 
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_dpi.c | 26 ++++++++++++++++----------
- 1 file changed, 16 insertions(+), 10 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_dpi.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
-index 454f8563efae..bf098f36a466 100644
+index bf098f36a466..6eeda222a973 100644
 --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
 +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-@@ -127,6 +127,8 @@ struct mtk_dpi_conf {
- 	u32 num_output_fmts;
- 	bool is_ck_de_pol;
+@@ -129,6 +129,8 @@ struct mtk_dpi_conf {
  	bool swap_input_support;
-+	/* Mask used for HWIDTH, HPORCH, VSYNC_WIDTH and VSYNC_PORCH (no shift) */
-+	u32 dimension_mask;
+ 	/* Mask used for HWIDTH, HPORCH, VSYNC_WIDTH and VSYNC_PORCH (no shift) */
+ 	u32 dimension_mask;
++	/* HSIZE and VSIZE mask (no shift) */
++	u32 hvsize_mask;
  	const struct mtk_dpi_yc_limit *limit;
  };
  
-@@ -156,30 +158,30 @@ static void mtk_dpi_disable(struct mtk_dpi *dpi)
- static void mtk_dpi_config_hsync(struct mtk_dpi *dpi,
- 				 struct mtk_dpi_sync_param *sync)
+@@ -243,8 +245,10 @@ static void mtk_dpi_config_interface(struct mtk_dpi *dpi, bool inter)
+ 
+ static void mtk_dpi_config_fb_size(struct mtk_dpi *dpi, u32 width, u32 height)
  {
--	mtk_dpi_mask(dpi, DPI_TGEN_HWIDTH,
--		     sync->sync_width << HPW, HPW_MASK);
--	mtk_dpi_mask(dpi, DPI_TGEN_HPORCH,
--		     sync->back_porch << HBP, HBP_MASK);
-+	mtk_dpi_mask(dpi, DPI_TGEN_HWIDTH, sync->sync_width << HPW,
-+		     dpi->conf->dimension_mask << HPW);
-+	mtk_dpi_mask(dpi, DPI_TGEN_HPORCH, sync->back_porch << HBP,
-+		     dpi->conf->dimension_mask << HBP);
- 	mtk_dpi_mask(dpi, DPI_TGEN_HPORCH, sync->front_porch << HFP,
--		     HFP_MASK);
-+		     dpi->conf->dimension_mask << HFP);
+-	mtk_dpi_mask(dpi, DPI_SIZE, width << HSIZE, HSIZE_MASK);
+-	mtk_dpi_mask(dpi, DPI_SIZE, height << VSIZE, VSIZE_MASK);
++	mtk_dpi_mask(dpi, DPI_SIZE, width << HSIZE,
++		     dpi->conf->hvsize_mask << HSIZE);
++	mtk_dpi_mask(dpi, DPI_SIZE, height << VSIZE,
++		     dpi->conf->hvsize_mask << VSIZE);
  }
  
- static void mtk_dpi_config_vsync(struct mtk_dpi *dpi,
- 				 struct mtk_dpi_sync_param *sync,
- 				 u32 width_addr, u32 porch_addr)
- {
--	mtk_dpi_mask(dpi, width_addr,
--		     sync->sync_width << VSYNC_WIDTH_SHIFT,
--		     VSYNC_WIDTH_MASK);
- 	mtk_dpi_mask(dpi, width_addr,
- 		     sync->shift_half_line << VSYNC_HALF_LINE_SHIFT,
- 		     VSYNC_HALF_LINE_MASK);
-+	mtk_dpi_mask(dpi, width_addr,
-+		     sync->sync_width << VSYNC_WIDTH_SHIFT,
-+		     dpi->conf->dimension_mask << VSYNC_WIDTH_SHIFT);
- 	mtk_dpi_mask(dpi, porch_addr,
- 		     sync->back_porch << VSYNC_BACK_PORCH_SHIFT,
--		     VSYNC_BACK_PORCH_MASK);
-+		     dpi->conf->dimension_mask << VSYNC_BACK_PORCH_SHIFT);
- 	mtk_dpi_mask(dpi, porch_addr,
- 		     sync->front_porch << VSYNC_FRONT_PORCH_SHIFT,
--		     VSYNC_FRONT_PORCH_MASK);
-+		     dpi->conf->dimension_mask << VSYNC_FRONT_PORCH_SHIFT);
- }
- 
- static void mtk_dpi_config_vsync_lodd(struct mtk_dpi *dpi,
-@@ -813,6 +815,7 @@ static const struct mtk_dpi_conf mt8173_conf = {
- 	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+ static void mtk_dpi_config_channel_limit(struct mtk_dpi *dpi)
+@@ -816,6 +820,7 @@ static const struct mtk_dpi_conf mt8173_conf = {
  	.is_ck_de_pol = true,
  	.swap_input_support = true,
-+	.dimension_mask = HPW_MASK,
+ 	.dimension_mask = HPW_MASK,
++	.hvsize_mask = HSIZE_MASK,
  	.limit = &mtk_dpi_limit,
  };
  
-@@ -825,6 +828,7 @@ static const struct mtk_dpi_conf mt2701_conf = {
- 	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+@@ -829,6 +834,7 @@ static const struct mtk_dpi_conf mt2701_conf = {
  	.is_ck_de_pol = true,
  	.swap_input_support = true,
-+	.dimension_mask = HPW_MASK,
+ 	.dimension_mask = HPW_MASK,
++	.hvsize_mask = HSIZE_MASK,
  	.limit = &mtk_dpi_limit,
  };
  
-@@ -836,6 +840,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
- 	.num_output_fmts = ARRAY_SIZE(mt8183_output_fmts),
+@@ -841,6 +847,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
  	.is_ck_de_pol = true,
  	.swap_input_support = true,
-+	.dimension_mask = HPW_MASK,
+ 	.dimension_mask = HPW_MASK,
++	.hvsize_mask = HSIZE_MASK,
  	.limit = &mtk_dpi_limit,
  };
  
-@@ -847,6 +852,7 @@ static const struct mtk_dpi_conf mt8192_conf = {
- 	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
+@@ -853,6 +860,7 @@ static const struct mtk_dpi_conf mt8192_conf = {
  	.is_ck_de_pol = true,
  	.swap_input_support = true,
-+	.dimension_mask = HPW_MASK,
+ 	.dimension_mask = HPW_MASK,
++	.hvsize_mask = HSIZE_MASK,
  	.limit = &mtk_dpi_limit,
  };
  
