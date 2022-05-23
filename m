@@ -4,73 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82B1BC433F5
-	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 09:53:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26978C433FE
+	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 11:22:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xzWpBZzXubbG0wgkRhn/nCzynhxQRQllARwrFACnWco=; b=suWofYiGRg7VQ9
-	4RP6S6eVjv65PvPgdweQl7S+qarCzwunGZxj5ZWTn+ophf+MCb/3VTpem6BLecac78v81umXytswL
-	POe4Vzgs1nQQUIYr3Vb74gwl5KQY1sqX/Ab425PQnMlgE+2lfL1RelzdItdSyvgpUIQNcnK9ebgOa
-	PggW0By9F4B/6OaUyRTMjIXqVbq/WxYNVJJ6ucG6mgRUcqgK3KZp4FsWckDCOHYry5ZKbRK5PEUnx
-	hTer82NY0auxd61ZTFGD3F9oFLACGF6bhFLn0ggke5aJbQNq3ZyL3nkz+ka445cVEQuSu0HgjC+sS
-	O/7G5BTkTUsecgXEW58Q==;
+	List-Owner; bh=RbBqcA0cJhCqNdZ8yRs6WtinTFJfOwK79TXumBhaTWQ=; b=X7wW1aqAQdVVod
+	Wc1zYR4a9BzQqsvnLwI9KNtKrVKzuANkqZ9LNzZXJ4xudvWFIb8AAkRrld+YpQsyy5hpgR+BKaSWV
+	o30HNh+NeIyXcez46hQs0SLDETcAdT2WsmiIzdTOzONHpKbNF0Eq3OZoMZjOm3tcQhe466MkuRxw2
+	RCuEBAXSaNxXiTlEH8kYhIKdot9jifi2ZRtBaUJzYoneXYTT6zACHGrVZc/aMG7cjEI5i+Wyz1PsH
+	aqMhYYYjE1gX3N1uadMv0Cndo8VzVHHc/kCEFgdZkg5mINV5A8PWgzWtsR564QNSthfNr2e3T6dYI
+	N+3T+SDGZw5pLBAKfyqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nt4kM-0030A7-NI; Mon, 23 May 2022 09:53:06 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1nt68z-003eyu-B9; Mon, 23 May 2022 11:22:37 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nt3rr-002cLz-Ja; Mon, 23 May 2022 08:56:49 +0000
-X-UUID: e6402987c7624fc09551ffc59a5bdc86-20220523
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=HLFu1xluDxItNbDVBy6/EjJzUNNNXGXBCYjSL92vSF8=; 
- b=JimQYUGoyIiYhbtAISFll9rCZdsYxh3V5JMd72U5nNnX16mTQYGgyjT+4q+/7SroiFLnmZn+uzcMp5zhO5e3fHnVuf3jVe7p4rIlu3bXEzg39Y3VCBw069t2jBx2DB5BO5oAmfQL9K1KzylZ50tW77339tImBaAKsi+3HUjFCmg=;
+ id 1nt5Op-003ICQ-6q; Mon, 23 May 2022 10:34:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+ :Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID:
+ Sender:Reply-To:Content-ID:Content-Description;
+ bh=8lOqa/U0iFZJZQRNdd6qSOqIGzqgaiyfkqFSIzGSEUY=; b=QxtwxnURxFp4Om6xJGfBnGr603
+ yMs8ZEE4TNXA7WdAUQ8nswCcCbqLVJYbKyCVjOd+wteiJ5tqaWq+gGHIH6Mzf24ZH5eoPb6+dxAME
+ cU14JfSw0IccrzQqXi3Rbu1bR1vherWvF1mnLqpBrN4hytob4xoRUvFttbtrWuBlmcmIuzon34da2
+ lxEU/V/Tg2YZj8uVy0osRMke+cfWQLSjWwyj/Yxv/1jgtCaGcOTsPxrAWs8QS0MWkxB4+J8wfqSYT
+ vRoC/rbj3BTWqAWfaYYePcFnZN8qFMAeXSuJeX1DCsAkiK+a2vPKeYemRhNq6ZrOiSDm8pcn3gkF/
+ es+XP1LA==;
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1nt5Og-0011Mu-DZ; Mon, 23 May 2022 10:34:50 +0000
+X-UUID: cf89804a35a648208611da97dfb03eb3-20220523
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5, REQID:0d99a5a3-0ff9-4b50-be75-caa1152aa13d, OB:0,
+X-CID-O-INFO: VERSION:1.1.5, REQID:1fb87a92-4261-44fd-b758-da8c962361d3, OB:0,
  LO
  B:0,IP:0,URL:5,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
  ON:release,TS:5
-X-CID-META: VersionHash:2a19b09, CLOUDID:d730467a-5ef6-470b-96c9-bdb8ced32786,
+X-CID-META: VersionHash:2a19b09, CLOUDID:35043ae3-edbf-4bd4-8a34-dfc5f7bb086d,
  C
  OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
  ,QS:0,BEC:nil
-X-UUID: e6402987c7624fc09551ffc59a5bdc86-20220523
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
+X-UUID: cf89804a35a648208611da97dfb03eb3-20220523
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <rex-bc.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
- with ESMTP id 643938292; Mon, 23 May 2022 01:56:35 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ with ESMTP id 1389118437; Mon, 23 May 2022 03:34:37 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 23 May 2022 01:46:33 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Mon, 23 May 2022 16:46:32 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
+ 15.0.1497.2; Mon, 23 May 2022 03:34:36 -0700
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3; 
+ Mon, 23 May 2022 18:34:34 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkcas10.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 23 May 2022 16:46:31 +0800
-Message-ID: <bf6ee6a14e03e718f4ab608aa952f7c233b84e92.camel@mediatek.com>
+ Transport; Mon, 23 May 2022 18:34:34 +0800
+Message-ID: <cfc1799482e74c6610993773eb7ee2ec056c6787.camel@mediatek.com>
 Subject: Re: [PATCH v9 2/2] phy: mediatek: Add PCIe PHY driver
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Jianjun Wang <jianjun.wang@mediatek.com>, Kishon Vijay Abraham I
- <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Chen-Yu
- Tsai" <wenst@chromium.org>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, Krzysztof Kozlowski
- <krzk@kernel.org>
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: Jianjun Wang <jianjun.wang@mediatek.com>, Chunfeng Yun
+ <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, "Vinod
+ Koul" <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Chen-Yu Tsai <wenst@chromium.org>,
+ "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>
 CC: Wei-Shun Chang <weishunc@google.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
  <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <rex-bc.chen@mediatek.com>,
- <randy.wu@mediatek.com>, <jieyy.yang@mediatek.com>,
- <chuanjia.liu@mediatek.com>, <qizhong.cheng@mediatek.com>,
- <jian.yang@mediatek.com>
-Date: Mon, 23 May 2022 16:46:29 +0800
+ <linux-kernel@vger.kernel.org>, <randy.wu@mediatek.com>,
+ <jieyy.yang@mediatek.com>, <chuanjia.liu@mediatek.com>,
+ <qizhong.cheng@mediatek.com>, <jian.yang@mediatek.com>
+Date: Mon, 23 May 2022 18:34:34 +0800
 In-Reply-To: <20220520064920.27313-3-jianjun.wang@mediatek.com>
 References: <20220520064920.27313-1-jianjun.wang@mediatek.com>
  <20220520064920.27313-3-jianjun.wang@mediatek.com>
@@ -78,8 +85,8 @@ X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220523_015647_753582_B4F3F4AE 
-X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-CacheID: sfid-20220523_113447_448452_3F63FEDF 
+X-CRM114-Status: UNSURE (   8.71  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -106,10 +113,10 @@ On Fri, 2022-05-20 at 14:49 +0800, Jianjun Wang wrote:
 >  drivers/phy/mediatek/Makefile       |   1 +
 >  drivers/phy/mediatek/phy-mtk-pcie.c | 267
 > ++++++++++++++++++++++++++++
->  3 files changed, 279 insertions(+)
->  create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
-> 
-Reviewed-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+
+Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
+
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
