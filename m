@@ -4,79 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90CF8C433FE
-	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 11:32:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CEECDC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 11:32:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ctwHoeJKVI1j5hzHbKaOVD7oeB4aE3eE78Goiv4PPn4=; b=slJCC6pparUema
-	3+MczVxqGUrm0aQp3BlBqDe4YSAYS/Vsb2suecZ7TCxrnTQuywjysg6hMmdHdHHZUzji2aWoTnUwN
-	7+puDpjZwqkRbYPgW6kMbnZ9JB4G/zYjBt0i8SUKJ8kxCqv0AxgwlQkzNFMt6578bRsrl0wCnxeyG
-	TbkWaYUQ6bK7iQFwD7vAb5iBrPCw1pPHeWIQdqAqY6iMaLBFKPKDt83SeE8d1aNb1IK1zbPT9Idri
-	lSTkVfALnv0z+vAtwd2s0fYX84kDMo5o48Gy4tD4E7RbF0JOcrXGLNfTFtveVfBLDqwlIO5+btHAa
-	JK99C9Sz8jjDEQu2RQGg==;
+	List-Owner; bh=ekUNjFfpH5WDNw1dgSczlUCL6SI8NO93XIEY4FF8ihA=; b=CgLdHIXyiyT2AO
+	y2qvloyrxyHn6GZv5qlIxyxS9BQkG0uHuRKO/wy3hXz1jotTEItmISlytkD6zjReE+rQfaL1Wn4pT
+	x5+MJkdZxyV/+hy6thkahqGgQ0TE0DlL+7C+y2BmO7zxTyU3X5c3P0erKAibO71sHZyOAjkn8q11X
+	dMGd1SIUJx3wCKYWF6En7hq18qzOxK1RIQl0aVOdQe94AMy3v+Szzs2nPYTaTM0No6T4bnA5i7G+k
+	nj26M5ALOBlnrer1+3Rn9VNQzFIRC1V490BQ7i6O0y8eexEWq6sFe6yxbMK0GV7t/T2UB/fJFwJON
+	KeyW5wSndz2IhrFn/jbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nt6IF-003jJ5-QZ; Mon, 23 May 2022 11:32:11 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1nt6II-003jKs-VQ; Mon, 23 May 2022 11:32:14 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nt5e9-003PnS-Cn
- for linux-phy@bombadil.infradead.org; Mon, 23 May 2022 10:50:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=9kcLUBotzLBWsSM+XKMOYKEqXoBbWAI2/g1wkvMXv9A=; b=fjOp6xAfOZhURpu1esTj64msvw
- LU//dpAkW2aQkDSlLlflq2PYy5FlrIjNXxjaiZUpuGOsddrdlGdGGIs+3/CohXhyqhEnWP7SjSk5d
- z0i3Ovel6NqNpFQ4lgyrcdvjNXt4qWOYyByNfNJrb1IX9F7tYZd26KMKiZ2gXNF+OVqqAMEL2Sj26
- kFI4+zqZa5UX1Fe7C+/000aMwgdjBVrjUKKxeXDYKLlSaL26U6Hc8exiScBCWr6B7rgO4iKdhQOMd
- y3c5h1jZoT3o/v7UXGVoS0014PGVVb1VbI3UyS4Kc7SCMLRMm8CYm+2X1o5JPgp9Z6sOJ3oC5NWtF
- 8e6b6kCw==;
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
- by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nt5e3-0011WX-3M
- for linux-phy@lists.infradead.org; Mon, 23 May 2022 10:50:43 +0000
-Received: by mail-wm1-x334.google.com with SMTP id
- r9-20020a1c4409000000b00397345f2c6fso6338297wma.4
- for <linux-phy@lists.infradead.org>; Mon, 23 May 2022 03:50:38 -0700 (PDT)
+ id 1nt5eE-003PgF-Ny
+ for linux-phy@lists.infradead.org; Mon, 23 May 2022 10:50:52 +0000
+Received: by mail-wr1-x432.google.com with SMTP id u3so20779268wrg.3
+ for <linux-phy@lists.infradead.org>; Mon, 23 May 2022 03:50:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=9kcLUBotzLBWsSM+XKMOYKEqXoBbWAI2/g1wkvMXv9A=;
- b=wh38wPdib0QZVPJgdOnloTBSSVwn+v2SiQsXc+HMxTSw4dJvGqZExNPjO/Qogfw91k
- UHfx2YhMeUYRKKs7nJhga6joi//bW8xGvS511Fwo1T5BuG+4tObMV2E/4aOGQTjbT1mY
- H2gf9SYcD4YHeVfY4NEqicSWSWdZ7KYAp/lf/IqZrJj+O9h6Z5vPvgw9daQiBKT/N8Y2
- 1RWYR875LwJNFuER+4S4D5Iz86KK+t9LBeQxlbrvyEabwJuhmCDgAtWOvDTMJVGLW2V5
- SFYhoO4GKq1salmQs2DYIJa6iaukVGFbia1FCU9gHUNexDzgZ1Fp9zw1YBrHfZDPmQR4
- jNBw==
+ bh=xJFzCnziuzO8gtG7cVYt2h81Bi7LdQGE5xz4NqwQAZE=;
+ b=EsuvaRpaBPjPspnZmyIitQ4illZAHjDrYUY/jr4vxohXj4mPgY3qtmv9bS9Oo0qG5T
+ hTJpkQvVCGLVdr1OcwzZhoIfF+HSnNP6SUWuqf+HesSrcXkNxGfzZ6p3EmGmMKygMI5s
+ aaZtv2av4kcC3zTncyiioTxeMZoxtYEeMTiNTAdrnKO/2gkPtCZs1ZaBzAteiUKx+z+d
+ CeYX6k/SwCuMf4e5i7JjgAYx3VejfDYpYa7k/cBJHyVWUSXpt+rN223HFIgPxEQN4Tyf
+ Vq1h4FdTef/lIcUdUs3FUVOWCle7fD5L9LVHFEfD6INqpKXdFzK5KfHtoPFQ/cFN9baa
+ r8yA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=9kcLUBotzLBWsSM+XKMOYKEqXoBbWAI2/g1wkvMXv9A=;
- b=xJ+mNk2OoYlziMe57FUp2aX2H/Bxtl3xZ5YyiFiVuu85Kz4BnwF37kXuUzmwH7M+HE
- 2pw7X9voDL71svCJqfqPyUveyzqdNXXd7QEWKEEgs/WDFHARzQmCExGXGjMDiRMgTc3b
- 5CR+SGAJCOqkgFE3FPYvPK8ZvARxOezdUCCwG02QFmOcrGNTVaETNM5m/cmn27+aBCjh
- GujsGWdkyr56+fzWsdLIyEObgxZYFhl1xwk8g8VdkBbqJm0XEB4EYpw4OrU+d4dB3/vt
- r38flePWS996Lxaf+B/hOqe97EuCTTAQDjTunKgT6pZk0hXW6D1y/BCd0mN+ROyqXJ7I
- nMxQ==
-X-Gm-Message-State: AOAM530DHcyOUyw0N2gi5iEfhwiky2PsMWU2pDHAwuO/p6rBHSHP5MxO
- ajR3YZwZDm8NbemYqmcEFFW1Zg==
-X-Google-Smtp-Source: ABdhPJxPS+KTZasA5ageYxTFjUEG0m36tj6pEdAqsaM2Y2Wpquy5awACSjaGeKvPrs5SAhDfVgQ9XA==
-X-Received: by 2002:a05:600c:35c6:b0:394:856d:fb07 with SMTP id
- r6-20020a05600c35c600b00394856dfb07mr19475094wmq.131.1653303037284; 
- Mon, 23 May 2022 03:50:37 -0700 (PDT)
+ bh=xJFzCnziuzO8gtG7cVYt2h81Bi7LdQGE5xz4NqwQAZE=;
+ b=F/Os9K/x4zUtmx53+beaRK9sr3AqpCHuRGINEdPHaYWTqfi8zDRl3eiV3pxQgfbyUa
+ 4cdJOGZb9TV1UMLZxHNV1QiqhoIIiJN9b28JZXsmjgFNX1Qfb26GIGVtFrweJg98hdv7
+ Xu6LUG9Tgx/9YYLJNO02XOvsCuIpYrmmrre6rsBq7o7EIm7C/51geKq8co2ayYXGOvGP
+ EpvJFuyyM0Z4+1PUFjoSqNQpIGJ0Qms+/AvkhSwyORWMT1ko/OUemDkOyVhHZeSWXhmn
+ HT2QS6f1/KlLQqLz8Tr3q1l+Ia08aMG1CLxJq6OFPjzU7qNiOZ7EUgy9P36QXYF+PSnV
+ MYVw==
+X-Gm-Message-State: AOAM533tFTzkm9PfzQ0lAhONO7n/f4q1PaZYQD1k0Cjz5Vo6FwTW1Z6Q
+ huaCuZAauZX2j9vwqZois9pp0g==
+X-Google-Smtp-Source: ABdhPJywDF5lfl2vLEx1Py2Iar0foyNQXqONIrWsCZKNHCX7kA/yZcJf7V5i1heCUswQIbZwujRe6w==
+X-Received: by 2002:a5d:47c9:0:b0:20f:e7da:6a48 with SMTP id
+ o9-20020a5d47c9000000b0020fe7da6a48mr1598325wrc.315.1653303050201; 
+ Mon, 23 May 2022 03:50:50 -0700 (PDT)
 Received: from localhost.localdomain
  (2a02-8440-6141-9d1b-3074-96af-9642-0003.rev.sfr.net.
  [2a02:8440:6141:9d1b:3074:96af:9642:3])
  by smtp.gmail.com with ESMTPSA id
- n11-20020a7bc5cb000000b003942a244f38sm8453607wmk.17.2022.05.23.03.50.35
+ n11-20020a7bc5cb000000b003942a244f38sm8453607wmk.17.2022.05.23.03.50.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 May 2022 03:50:36 -0700 (PDT)
+ Mon, 23 May 2022 03:50:49 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
 To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
@@ -90,21 +75,22 @@ To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Helge Deller <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>,
  Jitao shi <jitao.shi@mediatek.com>
-Cc: Markus Schneider-Pargmann <msp@baylibre.com>,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-fbdev@vger.kernel.org
-Subject: [PATCH v10 05/21] video/hdmi: Add audio_infoframe packing for DP
-Date: Mon, 23 May 2022 12:47:38 +0200
-Message-Id: <20220523104758.29531-6-granquet@baylibre.com>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Rex-BC Chen <rex-bc.chen@mediatek.com>, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-fbdev@vger.kernel.org
+Subject: [PATCH v10 07/21] drm/mediatek: dpi: implement a CK/DE pol toggle in
+ SoC config
+Date: Mon, 23 May 2022 12:47:40 +0200
+Message-Id: <20220523104758.29531-8-granquet@baylibre.com>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220523104758.29531-1-granquet@baylibre.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220523_115041_536099_1A2F631D 
-X-CRM114-Status: GOOD (  20.26  )
+X-CRM114-CacheID: sfid-20220523_035050_844328_8EB837C0 
+X-CRM114-Status: GOOD (  13.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,189 +107,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Markus Schneider-Pargmann <msp@baylibre.com>
+Adds a bit of flexibility to support SoCs without CK/DE pol support
 
-Similar to HDMI, DP uses audio infoframes as well which are structured
-very similar to the HDMI ones.
-
-This patch adds a helper function to pack the HDMI audio infoframe for
-DP, called hdmi_audio_infoframe_pack_for_dp().
-hdmi_audio_infoframe_pack_only() is split into two parts. One of them
-packs the payload only and can be used for HDMI and DP.
-
-Also constify the frame parameter in hdmi_audio_infoframe_check() as
-it is passed to hdmi_audio_infoframe_check_only() which expects a const.
-
-Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
 ---
- drivers/video/hdmi.c           | 82 ++++++++++++++++++++++++++--------
- include/drm/dp/drm_dp_helper.h |  2 +
- include/linux/hdmi.h           |  7 ++-
- 3 files changed, 71 insertions(+), 20 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_dpi.c | 22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/video/hdmi.c b/drivers/video/hdmi.c
-index 947be761dfa4..5f50237554ed 100644
---- a/drivers/video/hdmi.c
-+++ b/drivers/video/hdmi.c
-@@ -21,6 +21,7 @@
-  * DEALINGS IN THE SOFTWARE.
-  */
+diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
+index 4746eb342567..545a1337cc89 100644
+--- a/drivers/gpu/drm/mediatek/mtk_dpi.c
++++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+@@ -125,6 +125,7 @@ struct mtk_dpi_conf {
+ 	bool edge_sel_en;
+ 	const u32 *output_fmts;
+ 	u32 num_output_fmts;
++	bool is_ck_de_pol;
+ 	const struct mtk_dpi_yc_limit *limit;
+ };
  
-+#include <drm/dp/drm_dp_helper.h>
- #include <linux/bitops.h>
- #include <linux/bug.h>
- #include <linux/errno.h>
-@@ -381,12 +382,34 @@ static int hdmi_audio_infoframe_check_only(const struct hdmi_audio_infoframe *fr
-  *
-  * Returns 0 on success or a negative error code on failure.
-  */
--int hdmi_audio_infoframe_check(struct hdmi_audio_infoframe *frame)
-+int hdmi_audio_infoframe_check(const struct hdmi_audio_infoframe *frame)
+@@ -211,13 +212,20 @@ static void mtk_dpi_config_pol(struct mtk_dpi *dpi,
+ 			       struct mtk_dpi_polarities *dpi_pol)
  {
- 	return hdmi_audio_infoframe_check_only(frame);
+ 	unsigned int pol;
++	unsigned int mask;
+ 
+-	pol = (dpi_pol->ck_pol == MTK_DPI_POLARITY_RISING ? 0 : CK_POL) |
+-	      (dpi_pol->de_pol == MTK_DPI_POLARITY_RISING ? 0 : DE_POL) |
+-	      (dpi_pol->hsync_pol == MTK_DPI_POLARITY_RISING ? 0 : HSYNC_POL) |
++	mask = HSYNC_POL | VSYNC_POL;
++	pol = (dpi_pol->hsync_pol == MTK_DPI_POLARITY_RISING ? 0 : HSYNC_POL) |
+ 	      (dpi_pol->vsync_pol == MTK_DPI_POLARITY_RISING ? 0 : VSYNC_POL);
+-	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, pol,
+-		     CK_POL | DE_POL | HSYNC_POL | VSYNC_POL);
++	if (dpi->conf->is_ck_de_pol) {
++		mask |= CK_POL | DE_POL;
++		pol |= (dpi_pol->ck_pol == MTK_DPI_POLARITY_RISING ?
++			0 : CK_POL) |
++		       (dpi_pol->de_pol == MTK_DPI_POLARITY_RISING ?
++			0 : DE_POL);
++	}
++
++	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, pol, mask);
  }
- EXPORT_SYMBOL(hdmi_audio_infoframe_check);
  
-+static void
-+hdmi_audio_infoframe_pack_payload(const struct hdmi_audio_infoframe *frame,
-+				  u8 *buffer)
-+{
-+	u8 channels;
-+
-+	if (frame->channels >= 2)
-+		channels = frame->channels - 1;
-+	else
-+		channels = 0;
-+
-+	buffer[0] = ((frame->coding_type & 0xf) << 4) | (channels & 0x7);
-+	buffer[1] = ((frame->sample_frequency & 0x7) << 2) |
-+		 (frame->sample_size & 0x3);
-+	buffer[2] = frame->coding_type_ext & 0x1f;
-+	buffer[3] = frame->channel_allocation;
-+	buffer[4] = (frame->level_shift_value & 0xf) << 3;
-+
-+	if (frame->downmix_inhibit)
-+		buffer[4] |= BIT(7);
-+}
-+
- /**
-  * hdmi_audio_infoframe_pack_only() - write HDMI audio infoframe to binary buffer
-  * @frame: HDMI audio infoframe
-@@ -404,7 +427,6 @@ EXPORT_SYMBOL(hdmi_audio_infoframe_check);
- ssize_t hdmi_audio_infoframe_pack_only(const struct hdmi_audio_infoframe *frame,
- 				       void *buffer, size_t size)
- {
--	unsigned char channels;
- 	u8 *ptr = buffer;
- 	size_t length;
- 	int ret;
-@@ -420,28 +442,13 @@ ssize_t hdmi_audio_infoframe_pack_only(const struct hdmi_audio_infoframe *frame,
+ static void mtk_dpi_config_3d(struct mtk_dpi *dpi, bool en_3d)
+@@ -799,6 +807,7 @@ static const struct mtk_dpi_conf mt8173_conf = {
+ 	.max_clock_khz = 300000,
+ 	.output_fmts = mt8173_output_fmts,
+ 	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
++	.is_ck_de_pol = true,
+ 	.limit = &mtk_dpi_limit,
+ };
  
- 	memset(buffer, 0, size);
+@@ -809,6 +818,7 @@ static const struct mtk_dpi_conf mt2701_conf = {
+ 	.max_clock_khz = 150000,
+ 	.output_fmts = mt8173_output_fmts,
+ 	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
++	.is_ck_de_pol = true,
+ 	.limit = &mtk_dpi_limit,
+ };
  
--	if (frame->channels >= 2)
--		channels = frame->channels - 1;
--	else
--		channels = 0;
--
- 	ptr[0] = frame->type;
- 	ptr[1] = frame->version;
- 	ptr[2] = frame->length;
- 	ptr[3] = 0; /* checksum */
+@@ -818,6 +828,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
+ 	.max_clock_khz = 100000,
+ 	.output_fmts = mt8183_output_fmts,
+ 	.num_output_fmts = ARRAY_SIZE(mt8183_output_fmts),
++	.is_ck_de_pol = true,
+ 	.limit = &mtk_dpi_limit,
+ };
  
--	/* start infoframe payload */
--	ptr += HDMI_INFOFRAME_HEADER_SIZE;
--
--	ptr[0] = ((frame->coding_type & 0xf) << 4) | (channels & 0x7);
--	ptr[1] = ((frame->sample_frequency & 0x7) << 2) |
--		 (frame->sample_size & 0x3);
--	ptr[2] = frame->coding_type_ext & 0x1f;
--	ptr[3] = frame->channel_allocation;
--	ptr[4] = (frame->level_shift_value & 0xf) << 3;
--
--	if (frame->downmix_inhibit)
--		ptr[4] |= BIT(7);
-+	hdmi_audio_infoframe_pack_payload(frame,
-+					  ptr + HDMI_INFOFRAME_HEADER_SIZE);
+@@ -827,6 +838,7 @@ static const struct mtk_dpi_conf mt8192_conf = {
+ 	.max_clock_khz = 150000,
+ 	.output_fmts = mt8173_output_fmts,
+ 	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
++	.is_ck_de_pol = true,
+ 	.limit = &mtk_dpi_limit,
+ };
  
- 	hdmi_infoframe_set_checksum(buffer, length);
- 
-@@ -479,6 +486,43 @@ ssize_t hdmi_audio_infoframe_pack(struct hdmi_audio_infoframe *frame,
- }
- EXPORT_SYMBOL(hdmi_audio_infoframe_pack);
- 
-+/**
-+ * hdmi_audio_infoframe_pack_for_dp - Pack a HDMI Audio infoframe for DisplayPort
-+ *
-+ * @frame:      HDMI Audio infoframe
-+ * @sdp:        secondary data packet for display port. This is filled with the
-+ * appropriate: data
-+ * @dp_version: Display Port version to be encoded in the header
-+ *
-+ * Packs a HDMI Audio Infoframe to be sent over Display Port. This function
-+ * fills the secondary data packet to be used for Display Port.
-+ *
-+ * Return: Number of total written bytes or a negative errno on failure.
-+ */
-+ssize_t
-+hdmi_audio_infoframe_pack_for_dp(const struct hdmi_audio_infoframe *frame,
-+				 struct dp_sdp *sdp, u8 dp_version)
-+{
-+	int ret;
-+
-+	ret = hdmi_audio_infoframe_check(frame);
-+	if (ret)
-+		return ret;
-+
-+	memset(sdp->db, 0, sizeof(sdp->db));
-+
-+	/* Secondary-data packet header */
-+	sdp->sdp_header.HB0 = 0;
-+	sdp->sdp_header.HB1 = frame->type;
-+	sdp->sdp_header.HB2 = DP_SDP_AUDIO_INFOFRAME_HB2;
-+	sdp->sdp_header.HB3 = (dp_version & 0x3f) << 2;
-+
-+	hdmi_audio_infoframe_pack_payload(frame, sdp->db);
-+
-+	return frame->length + 4;
-+}
-+EXPORT_SYMBOL(hdmi_audio_infoframe_pack_for_dp);
-+
- /**
-  * hdmi_vendor_infoframe_init() - initialize an HDMI vendor infoframe
-  * @frame: HDMI vendor infoframe
-diff --git a/include/drm/dp/drm_dp_helper.h b/include/drm/dp/drm_dp_helper.h
-index 51e02cf75277..d4adb479263e 100644
---- a/include/drm/dp/drm_dp_helper.h
-+++ b/include/drm/dp/drm_dp_helper.h
-@@ -1576,6 +1576,8 @@ int drm_dp_bw_code_to_link_rate(u8 link_bw);
- #define DP_SDP_VSC_EXT_CEA		0x21 /* DP 1.4 */
- /* 0x80+ CEA-861 infoframe types */
- 
-+#define DP_SDP_AUDIO_INFOFRAME_HB2	0x1b
-+
- /**
-  * struct dp_sdp_header - DP secondary data packet header
-  * @HB0: Secondary Data Packet ID
-diff --git a/include/linux/hdmi.h b/include/linux/hdmi.h
-index c8ec982ff498..2f4dcc8d060e 100644
---- a/include/linux/hdmi.h
-+++ b/include/linux/hdmi.h
-@@ -336,7 +336,12 @@ ssize_t hdmi_audio_infoframe_pack(struct hdmi_audio_infoframe *frame,
- 				  void *buffer, size_t size);
- ssize_t hdmi_audio_infoframe_pack_only(const struct hdmi_audio_infoframe *frame,
- 				       void *buffer, size_t size);
--int hdmi_audio_infoframe_check(struct hdmi_audio_infoframe *frame);
-+int hdmi_audio_infoframe_check(const struct hdmi_audio_infoframe *frame);
-+
-+struct dp_sdp;
-+ssize_t
-+hdmi_audio_infoframe_pack_for_dp(const struct hdmi_audio_infoframe *frame,
-+				 struct dp_sdp *sdp, u8 dp_version);
- 
- enum hdmi_3d_structure {
- 	HDMI_3D_STRUCTURE_INVALID = -1,
 -- 
 2.35.1
 
