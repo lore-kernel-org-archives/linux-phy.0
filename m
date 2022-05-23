@@ -4,107 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56C5DC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 12:14:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 194DBC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 12:37:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cI8XmMkwhYtihnd8GCPdh+QeFXMNz39QE4NCpjii9E0=; b=GoU5BTj1uMMD+K
-	vQHRkJhfMiGuHKPQMKJHYSOGyfnhWutgayyiEchFyZclpifXwpCBUfJEVj8zTUMxc8oq8IFPXwD0R
-	f3CqX2IyGEtM4Uzf1e26DjBa5+LQDlpi+bErtbyt6MkIhNzQzft4uCsAniygspz7H6ZGN+1873f/h
-	589ugXnkET5zm8vGHLOgaD8TH1C7AGSrYZKmlysXFHHawO662wHgtz/FH/ZUTq50qagA/f1nYSuBe
-	tzcMBvJZzNsvAfERoX3+c+iDFDDw5AHoYS9cCVTaqeOwXOTR4ReDdkLTi59lZGNmXE6zZfLBbYcLa
-	A3BeGjd8/wBMVdz00K8w==;
+	List-Owner; bh=RHDgPKCUopC3wMugtMIwQSHEUuNRzPtiqXmHJNDxRVg=; b=Spd/UtJ9PPmMSa
+	0wFiO2i0XHF2prx6IFVXFHT67aTxfnjO61z77QJms0K5XwOpx4qbg8BcJOWmIZM9dFKvbcCoCIwWp
+	2vGZ+clK+8CNY7Ctv09qzLHrYokKzdBXKY7nru2Q6SVEK2cshg/uiN8h1NOi5UctsV/1sf60LQEDS
+	gpAHzqPxliDCtz4u7GBTXfKynQwvlYJpdr2hZyJ2ftUX6JSEKGjj1wClAdBEW274X+mZKF0axP7F0
+	e3PB6LsqdK0/ApzbOlhoBj6VEmm0SQD++OoFMIK+M9SUmfgWwjDnve0jMWynolnxhOcZkJ879EIuU
+	JU8404duoXUhKh8XP4HA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nt6xQ-0042Ik-9r; Mon, 23 May 2022 12:14:44 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1nt7Iy-004D7f-WD; Mon, 23 May 2022 12:37:01 +0000
+Received: from mail-oa1-f52.google.com ([209.85.160.52])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nt6R0-003nAx-N1
- for linux-phy@bombadil.infradead.org; Mon, 23 May 2022 11:41:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=TQgiy1XDkMEG62oOfcg26Pc/4FzYdvAn//3gC4/v5Zk=; b=WJVo6Jz2s6/7M0Fz88sARrF2FK
- wPylo8r0TO34JpS6rWMp5vvykMutcHrIzbuGWRd/Jjwo+qjU4WM/0Nppi8XYTSsESMauvXKjIFwlv
- DEMdxBDxd2eAegG0Y+KvWSZPN50+ErDyb2EUtRf3GDR9yi1yQXE0MveXhOLAH3yB2sDNfvDGQuLBf
- IcxjFz5+s6CyZ9mFNPDAFmp234WlDFcE98ylzqAREy32C0Mn1mXJRBxpXdnXQPRT4/WPSKCnshR3N
- eDwtpD34K0EIOSB6d64/9Un1+G4Ne9DgTIFo7lbCz009tZv+TQG+XKy2ZuR0LMG8sKO0a4xpmpT7Y
- Qz8Nwu7A==;
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
- by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nt5fX-0011bV-MC
- for linux-phy@lists.infradead.org; Mon, 23 May 2022 10:52:13 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id
- i20-20020a05600c355400b0039456976dcaso7201084wmq.1
- for <linux-phy@lists.infradead.org>; Mon, 23 May 2022 03:52:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20210112.gappssmtp.com; s=20210112;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=TQgiy1XDkMEG62oOfcg26Pc/4FzYdvAn//3gC4/v5Zk=;
- b=LcJeSLll7b7XkxZOi6oFcPOcwisKrRD0mKGyBx9w1MSB6d6m5DWVFg+LaA0SincQow
- oyzfkP5EDVmZk0dtwla8VMOpO/tosI75OjowyRXVkOZe2MeBMDjxq+Zk8snOoEMjWg0Q
- e/QfpCSe2NvmjVZXesEBnQOJdrlPMpVDEmKuOkM9TfsNGHZ2CgnhA3FbJ3K0Pa3REJ2n
- 81sj5lHqvQ5iY3Jfe+4/6ff/SKGA7PY7FYnWMhhhZtZdS34UfthIjH4/hzLfy1Q/ZU1e
- TCTrXbKnVX1w/mcNDiB5mUgtpVDdBmNv20D1GoAsmV79HnLBHL06Bd4v926F+IGgF5TR
- jNoQ==
+ id 1nt7Fj-004BDN-Hr; Mon, 23 May 2022 12:33:41 +0000
+Received: by mail-oa1-f52.google.com with SMTP id
+ 586e51a60fabf-f17f1acffeso18232006fac.4; 
+ Mon, 23 May 2022 05:33:36 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=TQgiy1XDkMEG62oOfcg26Pc/4FzYdvAn//3gC4/v5Zk=;
- b=pKaCzHnn7M+885jS/5BnDXAtEOYR/MKPAQofrxoTterWX3Cn2lDbegM5Q0juNIIvST
- uO9bqvya35GoJidHCMLk17VtYrk4Aew8tlxuU1Hso6SMCNpxKd+N8psT/PoJ+HNWYji0
- IKqqXEptQp7kWzdvTdwn03QHnwYMEuE1orxVlTlRkH+cDldpsWnio0YICDc4Ma38BUc2
- ByS2Jc9nb1mhe8MeC4Zehs73XZKH99/z8/9upCddkHwjCMWV0oWo8dtAgnhsku+k7sMO
- EqwcuwfE7b5+j1s7Pi9Bwen8Hv71IZ9JTaz0cAE3mIgvyYLu8u1c4ZTvg2VPuN6keJjc
- xKxQ==
-X-Gm-Message-State: AOAM5301VhvDu88ZuAGwJNrDVl1PRFIWA86JH/SEUNDlynN5vr7yaHTw
- 0hY2hBwBXN1l+zWeTHQP05WdnQ==
-X-Google-Smtp-Source: ABdhPJzczxM2TesbfgdsrX4MxRcH1xman2Bx9FG8eZM/Ao5Fw16Apten6hubxh/MzctCsyR7U2x5rA==
-X-Received: by 2002:a05:600c:6015:b0:397:54e1:8279 with SMTP id
- az21-20020a05600c601500b0039754e18279mr1177859wmb.100.1653303129870; 
- Mon, 23 May 2022 03:52:09 -0700 (PDT)
-Received: from localhost.localdomain
- (2a02-8440-6141-9d1b-3074-96af-9642-0003.rev.sfr.net.
- [2a02:8440:6141:9d1b:3074:96af:9642:3])
- by smtp.gmail.com with ESMTPSA id
- n11-20020a7bc5cb000000b003942a244f38sm8453607wmk.17.2022.05.23.03.52.08
+ h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
+ :message-id;
+ bh=X6MWkN+MXwESjJ8VLjim2DGGoViFUAGh9+IlVSr0qvY=;
+ b=12UsGWVPv4GX4i9rra3IDreh8Lj+JOePumfvWD3z77ckIcUfVURC8aOk0iDx/POgeg
+ QgdSKWSDfJV5ywnfDaGx2nMZrHNIyXh76FkO1BWEhEjepKMTCkdQQImePOtIWPxzP20v
+ G1XEQDn4g115g8uUYMLmo3hwoyT7NcwXYkHppRyg+3PQzEc0x1DzOQT+n08vm4Pu2UOA
+ BsRrBuGyYHWrlqHux+Ie2U3LdovrMrCeruKweqRnGYhwc5NX/Y+3XHEb2bbpGNwSZ3lE
+ wiWMPT5zGpksQPbRgMGO+kHHVTmcKKHMD58eQ/mjP7pjqm0Z6+HSe2wlXUNx0V3NyDkd
+ D3jg==
+X-Gm-Message-State: AOAM5330h4nuDhIvQT/XPq1UAnJaWwBMPhbayDKvcXqPq2wBOWWUjjur
+ NCAFKmCViM4KMy9StTIGxQ==
+X-Google-Smtp-Source: ABdhPJwOO+O7zT8r+lLhmyii8LgBtwlqTtnM90LxBsJkZOoKNqifzuh0NKNv8CMKNI9UWvO60BSKmA==
+X-Received: by 2002:a05:6870:d581:b0:f1:82de:958c with SMTP id
+ u1-20020a056870d58100b000f182de958cmr12298708oao.27.1653309214834; 
+ Mon, 23 May 2022 05:33:34 -0700 (PDT)
+Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net.
+ [66.90.144.107]) by smtp.gmail.com with ESMTPSA id
+ z1-20020a9d7a41000000b0060603221264sm3898554otm.52.2022.05.23.05.33.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 May 2022 03:52:09 -0700 (PDT)
-From: Guillaume Ranquet <granquet@baylibre.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Mon, 23 May 2022 05:33:34 -0700 (PDT)
+Received: (nullmailer pid 1378078 invoked by uid 1000);
+ Mon, 23 May 2022 12:33:31 -0000
+From: Rob Herring <robh@kernel.org>
+To: Guillaume Ranquet <granquet@baylibre.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, Jitao shi <jitao.shi@mediatek.com>,
+ linux-mediatek@lists.infradead.org, CK Hu <ck.hu@mediatek.com>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-fbdev@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
  Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Helge Deller <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>,
- Jitao shi <jitao.shi@mediatek.com>
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-fbdev@vger.kernel.org
-Subject: [PATCH v10 19/21] drm/mediatek: Add mt8195 External DisplayPort
- support
-Date: Mon, 23 May 2022 12:47:52 +0200
-Message-Id: <20220523104758.29531-20-granquet@baylibre.com>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220523104758.29531-1-granquet@baylibre.com>
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Helge Deller <deller@gmx.de>, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-phy@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@linux.ie>,
+ Markus Schneider-Pargmann <msp@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20220523104758.29531-2-granquet@baylibre.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
-MIME-Version: 1.0
+ <20220523104758.29531-2-granquet@baylibre.com>
+Subject: Re: [PATCH v10 01/21] dt-bindings: mediatek,
+ dpi: Add DPINTF compatible
+Date: Mon, 23 May 2022 07:33:31 -0500
+Message-Id: <1653309211.141261.1378077.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220523_115211_888784_B472EA29 
-X-CRM114-Status: GOOD (  17.31  )
+X-CRM114-CacheID: sfid-20220523_053339_636242_F460C83B 
+X-CRM114-Status: GOOD (  14.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,184 +88,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch adds External DisplayPort support to the mt8195 eDP driver.
+On Mon, 23 May 2022 12:47:34 +0200, Guillaume Ranquet wrote:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
+> 
+> DPINTF is similar to DPI but does not have the exact same feature set
+> or register layouts.
+> 
+> DPINTF is the sink of the display pipeline that is connected to the
+> DisplayPort controller and encoder unit. It takes the same clocks as
+> DPI.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
+>  .../bindings/display/mediatek/mediatek,dpi.yaml     | 13 ++++++++-----
+>  1 file changed, 8 insertions(+), 5 deletions(-)
+> 
 
-Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
----
- drivers/gpu/drm/mediatek/mtk_dp.c | 104 +++++++++++++++++++++++-------
- 1 file changed, 81 insertions(+), 23 deletions(-)
+Running 'make dtbs_check' with the schema in this patch gives the
+following warnings. Consider if they are expected or the schema is
+incorrect. These may not be new warnings.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dp.c b/drivers/gpu/drm/mediatek/mtk_dp.c
-index 8eb17ae82bfd..4789853ec5ff 100644
---- a/drivers/gpu/drm/mediatek/mtk_dp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dp.c
-@@ -164,6 +164,11 @@ static struct regmap_config mtk_dp_regmap_config = {
- 	.name = "mtk-dp-registers",
- };
- 
-+static bool mtk_dp_is_edp(struct mtk_dp *mtk_dp)
-+{
-+	return mtk_dp->next_bridge;
-+}
-+
- static struct mtk_dp *mtk_dp_from_bridge(struct drm_bridge *b)
- {
- 	return container_of(b, struct mtk_dp, bridge);
-@@ -1054,26 +1059,49 @@ static int mtk_dp_get_calibration_data(struct mtk_dp *mtk_dp)
- 	if (!cal_data->ln_tx_impsel_pmos)
- 		return -ENOMEM;
- 
--	cal_data->glb_bias_trim =
--		check_cal_data_valid(mtk_dp, 1, 0x1e, (buf[3] >> 27) & 0x1f, 0xf);
--	cal_data->clktx_impse =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[0] >> 9) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_pmos[0] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 28) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_nmos[0] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 24) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_pmos[1] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 20) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_nmos[1] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 16) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_pmos[2] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 12) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_nmos[2] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 8) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_pmos[3] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 4) & 0xf, 0x8);
--	cal_data->ln_tx_impsel_nmos[3] =
--		check_cal_data_valid(mtk_dp, 1, 0xe, buf[2] & 0xf, 0x8);
-+	if (mtk_dp_is_edp(mtk_dp)) {
-+		cal_data->glb_bias_trim =
-+			check_cal_data_valid(mtk_dp, 1, 0x1e, (buf[3] >> 27) & 0x1f, 0xf);
-+		cal_data->clktx_impse =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[0] >> 9) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[0] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 28) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[0] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 24) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[1] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 20) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[1] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 16) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[2] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 12) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[2] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 8) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[3] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[2] >> 4) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[3] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, buf[2] & 0xf, 0x8);
-+	} else {
-+		cal_data->glb_bias_trim =
-+			check_cal_data_valid(mtk_dp, 1, 0x1e, (buf[0] >> 27) & 0x1f, 0xf);
-+		cal_data->clktx_impse =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[0] >> 13) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[0] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[1] >> 28) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[0] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[1] >> 24) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[1] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[1] >> 20) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[1] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[1] >> 16) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[2] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[1] >> 12) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[2] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[1] >> 8) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_pmos[3] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, (buf[1] >> 4) & 0xf, 0x8);
-+		cal_data->ln_tx_impsel_nmos[3] =
-+			check_cal_data_valid(mtk_dp, 1, 0xe, buf[1] & 0xf, 0x8);
-+	}
- 
- 	kfree(buf);
- 
-@@ -1224,7 +1252,10 @@ static void mtk_dp_video_mute(struct mtk_dp *mtk_dp, bool enable)
- 			   VIDEO_MUTE_SEL_DP_ENC0_P0_MASK |
- 			   VIDEO_MUTE_SW_DP_ENC0_P0_MASK);
- 
--	mtk_dp_sip_atf_call(MTK_DP_SIP_ATF_EDP_VIDEO_UNMUTE, enable);
-+	if (mtk_dp_is_edp(mtk_dp))
-+		mtk_dp_sip_atf_call(MTK_DP_SIP_ATF_EDP_VIDEO_UNMUTE, enable);
-+	else
-+		mtk_dp_sip_atf_call(MTK_DP_SIP_ATF_VIDEO_UNMUTE, enable);
- }
- 
- static int mtk_dp_power_enable(struct mtk_dp *mtk_dp)
-@@ -2066,6 +2097,24 @@ static int mtk_dp_dt_parse(struct mtk_dp *mtk_dp,
- 	return ret;
- }
- 
-+static enum drm_connector_status mtk_dp_bdg_detect(struct drm_bridge *bridge)
-+{
-+	struct mtk_dp *mtk_dp = mtk_dp_from_bridge(bridge);
-+	enum drm_connector_status ret = connector_status_disconnected;
-+	u8 sink_count = 0;
-+
-+	if (mtk_dp_is_edp(mtk_dp))
-+		return connector_status_connected;
-+
-+	if (mtk_dp_plug_state(mtk_dp)) {
-+		drm_dp_dpcd_readb(&mtk_dp->aux, DP_SINK_COUNT, &sink_count);
-+		if (DP_GET_SINK_COUNT(sink_count))
-+			ret = connector_status_connected;
-+	}
-+
-+	return ret;
-+}
-+
- static struct edid *mtk_dp_get_edid(struct drm_bridge *bridge,
- 				    struct drm_connector *connector)
- {
-@@ -2422,6 +2471,7 @@ static const struct drm_bridge_funcs mtk_dp_bridge_funcs = {
- 	.atomic_disable = mtk_dp_bridge_atomic_disable,
- 	.mode_valid = mtk_dp_bridge_mode_valid,
- 	.get_edid = mtk_dp_get_edid,
-+	.detect = mtk_dp_bdg_detect,
- };
- 
- static int mtk_dp_probe(struct platform_device *pdev)
-@@ -2443,7 +2493,11 @@ static int mtk_dp_probe(struct platform_device *pdev)
- 
- 
- 	mtk_dp->next_bridge = devm_drm_of_get_bridge(dev, dev->of_node, 1, 0);
--	if (IS_ERR(mtk_dp->next_bridge)) {
-+	if (IS_ERR(mtk_dp->next_bridge) && PTR_ERR(mtk_dp->next_bridge) == -ENODEV) {
-+		dev_info(dev,
-+			 "No panel connected in devicetree, continuing as external DP\n");
-+		mtk_dp->next_bridge = NULL;
-+	} else if (IS_ERR(mtk_dp->next_bridge)) {
- 		return dev_err_probe(dev, PTR_ERR(mtk_dp->next_bridge), "Failed to get bridge\n");
- 	}
- 
-@@ -2488,7 +2542,10 @@ static int mtk_dp_probe(struct platform_device *pdev)
- 	mtk_dp->bridge.ops =
- 		DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID | DRM_BRIDGE_OP_HPD;
- 	drm_bridge_add(&mtk_dp->bridge);
--	mtk_dp->bridge.type = DRM_MODE_CONNECTOR_eDP;
-+	if (mtk_dp_is_edp(mtk_dp))
-+		mtk_dp->bridge.type = DRM_MODE_CONNECTOR_eDP;
-+	else
-+		mtk_dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
- 
- 	pm_runtime_enable(dev);
- 	pm_runtime_get_sync(dev);
-@@ -2550,6 +2607,7 @@ static SIMPLE_DEV_PM_OPS(mtk_dp_pm_ops, mtk_dp_suspend, mtk_dp_resume);
- 
- static const struct of_device_id mtk_dp_of_match[] = {
- 	{ .compatible = "mediatek,mt8195-edp-tx" },
-+	{ .compatible = "mediatek,mt8195-dp-tx" },
- 	{},
- };
- MODULE_DEVICE_TABLE(of, mtk_dp_of_match);
--- 
-2.35.1
+Note that it is not yet a requirement to have 0 warnings for dtbs_check.
+This will change in the future.
+
+Full log is available here: https://patchwork.ozlabs.org/patch/
+
+
+dpi@14014000: Additional properties are not allowed ('ports' was unexpected)
+	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
+	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
+
+dpi@14014000: clock-names: ['pixel', 'engine', 'pll'] is too short
+	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
+	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
+
+dpi@14014000: clocks: [[59, 26], [59, 27], [3, 6]] is too short
+	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
+
+dpi@14014000: clocks: [[61, 26], [61, 27], [3, 6]] is too short
+	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
+
+dpi@14014000: compatible: ['mediatek,mt7623-dpi', 'mediatek,mt2701-dpi'] is too long
+	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
+	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
+
+dpi@14014000: 'port' is a required property
+	arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dtb
+	arch/arm/boot/dts/mt7623n-rfb-emmc.dtb
+
+dpi@1401d000: Additional properties are not allowed ('power-domains' was unexpected)
+	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
+
+dpi@1401d000: clock-names: ['pixel', 'engine', 'pll'] is too short
+	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
+
+dpi@1401d000: clocks: [[57, 40], [57, 41], [8, 8]] is too short
+	arch/arm64/boot/dts/mediatek/mt8173-evb.dtb
+
+dpi@1401d000: clocks: [[68, 40], [68, 41], [8, 8]] is too short
+	arch/arm64/boot/dts/mediatek/mt8173-elm.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb
+	arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb
 
 
 -- 
