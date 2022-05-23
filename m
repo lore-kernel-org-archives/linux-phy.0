@@ -4,65 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F91FC4332F
-	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 11:29:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E517AC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 23 May 2022 11:31:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/RnxX45yHWvloc+r05p3LsfXrgy2jmAC+5rCnR1ACYs=; b=Mryp/+1VSDiDp7
-	EvF4u86ro8SB6NOt5LTSK5Wh1zEjw3AIq1RzU/CFKgj5d3ECOvnHXodia2iDdE46FNTfJru75YJ6N
-	zhW+64BXMsttsJoVW1KKI4S/sv1J6gsPuNdXl9qnew/VSn2NmBhXdAL3zsugjacdqMVyWrs2joJME
-	lqZBuskgqgip87Bmn4JKc34ShQTQsfO/0kBiU1nGJP7bfxT5j5iS6KJD7f7gc+FAb7IJg2I6eeJZL
-	5TxtKDg5jfn8sC+Op13swifp6iF8V6hjuCNGhPT+HmNMZqnmRkzbGj6yY2yoKt8Q81LMI/VsT3rbW
-	F1r9WWIpmlmWiGV7jHYg==;
+	List-Owner; bh=lDhbwRcvSy6Xv/ywiaWz99BzuRaOcwNGEZWvB2+1fSM=; b=37O7fFkpH6/Ahj
+	dfT4YZPjPLP/FguaPrV4pvnWsOLKcNx3xGscPNkkHmRPBH3MqOtpFYA2v39TDbCgWyNGgK1F/7qcE
+	Tyu4Y5znQOoj6FJPKZlbmRIVhUoo25unWTOjhzC8V2btL1Y8tYdStf+IhmvfowTucmDrqcMXcWaI5
+	psnwoK+oMT/9JLidBFfw7Nxw2hqJNwuY6ZeK5YaTSpBAY6aAtoVzI+/57pXsxVQmXPEV8s02F9lNz
+	oJ04xCjlni1ElCR/6PX073kcIyPgfHdoRDtvAyZz8Psg++R+eIa4hANQw3WQCw39qAK1TGYQ4PcRb
+	VRgdeqdQrcBljIQpAz/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nt6Fc-003iGy-H8; Mon, 23 May 2022 11:29:28 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1nt6HL-003ivL-3L; Mon, 23 May 2022 11:31:15 +0000
+Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nt5dr-003Pc8-5k
- for linux-phy@lists.infradead.org; Mon, 23 May 2022 10:50:28 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id
- c9-20020a7bc009000000b0039750ec5774so813091wmb.5
- for <linux-phy@lists.infradead.org>; Mon, 23 May 2022 03:50:25 -0700 (PDT)
+ id 1nt5dx-003PgI-Kk
+ for linux-phy@lists.infradead.org; Mon, 23 May 2022 10:50:35 +0000
+Received: by mail-wr1-x431.google.com with SMTP id m20so9618247wrb.13
+ for <linux-phy@lists.infradead.org>; Mon, 23 May 2022 03:50:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20210112.gappssmtp.com; s=20210112;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=BTipBQpMUHbzIB78SpRWE0aZpYF7CdaIwWlizpfEkA0=;
- b=ePI8JS1mctfDL3dO9htUkRnfmok+YrhIapLwhHYJPfR8R6GHhgxiX+EigQq0lWaOpa
- lUd2frUxdmDwV7VrhqQr91fhoNYg/dCnRsaUbXVQH/n0MSOxc2u6ym2Eo/FzjARm3FZZ
- gT+TczI/6Ypbtptd2PpNgkl04Scq72HVRoijaHEUnKF373aE9elxK0gAB/R0Up6QO3Xh
- jHMDPMiEaZfbkMsRtMjLLS+doUDFrhZavCPihsU9CxC8ITzIaWeNfpcDzlCiSHix1Kfb
- B1GW23MiJ0rJWCpI3iknt5r8G47/AngXfA0crnTiZtsLb3jjXWVeWCOZXcAjy/UlQFcP
- vVLQ==
+ bh=FDUYn8cSKi190xy1Yoj7AgQQXe/6NoP0U/SFF23PsOA=;
+ b=qslf5RL0JGSs8SyIhe+TjKCebf6N8Zx7A/KkiHzfSvQQJ0dBo2BdV1LNUeKcZ3HdC1
+ bGDP7RCOTJPGKA/yxPuQMQlHQdGWtR+beYXyoVch08XmJA/0B8+MdY7GOt732kH5W/uK
+ gdlKB62ds69Xx6ofbHaABlk3bVaRdGJYupebz/XREkj/+4FAn1NhJJCyF/dh90krSr9H
+ B2/+VIV4I6psrQKH7Hlt3y4qG/J5RJUFbI5V/tHT7AZOw0jIwSQcGN3htwm8AfCMU09P
+ Dbv+zgivZSQgDV6Q8WLNGJ4zOu+H8U9LRJldKifH6/IO4fVqrA663REGasLPNVm2VbRx
+ kJ5w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=BTipBQpMUHbzIB78SpRWE0aZpYF7CdaIwWlizpfEkA0=;
- b=sGMSo+vseoOfnEFGjzopbOOqPpHDKngA7BPB7hmSsEoOjDWZyE2ZCZClASEL2ovtI0
- eAuDWYzPEoPCHack4FnjWHUvinHUWLBhLYhXAolyyU8qYsqIg/1FuphUhGAcXnpSQZe8
- KDrFiAl+OkC70rSOoTQsXc1c6vltXsvMcIUBjAGB838W7NiscdiuMw5whKPkY6CEtQCw
- ZWvWGidX0IVvKen2SwCa+khzEKxfbBMZ2suH2MKuuK1cDourLw8QmbHQfUzx93UJygeb
- CXubQybIvO/myeDIHH/H9iqLmI7DHmwyPUzLSjxl1As05ZFMIjlcl9SEmK6QNGp4sIfx
- GnxA==
-X-Gm-Message-State: AOAM532++8XQbJ8zf/DGEF+Q//inShR6KMajavz0zeWvzl4uvPeGFvFP
- 79WvpDwFc/Ntz2yKpirn4vpmzg==
-X-Google-Smtp-Source: ABdhPJygVo7Uq8Hm69+Q7YlNBB/Vn/rNG0nxqMPhhVn6Gufk9PmyiPIHQHKU66sNdjrJCeJcttYnEw==
-X-Received: by 2002:a05:600c:348c:b0:397:4f69:775f with SMTP id
- a12-20020a05600c348c00b003974f69775fmr2120929wmq.24.1653303024598; 
- Mon, 23 May 2022 03:50:24 -0700 (PDT)
+ bh=FDUYn8cSKi190xy1Yoj7AgQQXe/6NoP0U/SFF23PsOA=;
+ b=x7qjrb6Qflv0UdXRbUIzME2mUsFSWnvYN/siY9TvJOoBr5B7/9l6AHVE2C5IIgYFJW
+ enxE8tGLb4tnSh4Q2F4x6KVN1e+VRYdfu2WhX584DnsXcGpgXWZf3BVU76cT6JEwgsCS
+ Pz9oIhL1+cpXorM7z/W46IYZYbyCiF9moS+4zvOTB+bX3jj6NKRJAQNhQVfHVcAaDAnq
+ qOAFO6LehBU2V8XhyIdS5HR5OOy+2bsPdb0XgQ7y5I1jJGOrjkk2osCldCF12let3D+T
+ VJdCDm/Obx9ros0mlqx+DCNPhekNb2AoOv1Fs3jK29KKHcw+TIsexHQy12cpCkGlqHGr
+ 6XeQ==
+X-Gm-Message-State: AOAM53387Qb6Er+/ZJ/2JOTJ3ugBBBJ8wOrSS+Mvmog/154WEI6Z8FVT
+ U+7F8DlRz/04N1v68HixjU1caw==
+X-Google-Smtp-Source: ABdhPJzE0Qv4VA9u7coJiou+usu938kD9Ut7aayqEOUmFkVn+Ezo6bsKgGZ2G3/I33F9aqOg1eZDhA==
+X-Received: by 2002:a5d:4207:0:b0:20e:63c3:e398 with SMTP id
+ n7-20020a5d4207000000b0020e63c3e398mr18889448wrq.642.1653303031027; 
+ Mon, 23 May 2022 03:50:31 -0700 (PDT)
 Received: from localhost.localdomain
  (2a02-8440-6141-9d1b-3074-96af-9642-0003.rev.sfr.net.
  [2a02:8440:6141:9d1b:3074:96af:9642:3])
  by smtp.gmail.com with ESMTPSA id
- n11-20020a7bc5cb000000b003942a244f38sm8453607wmk.17.2022.05.23.03.50.22
+ n11-20020a7bc5cb000000b003942a244f38sm8453607wmk.17.2022.05.23.03.50.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 May 2022 03:50:24 -0700 (PDT)
+ Mon, 23 May 2022 03:50:30 -0700 (PDT)
 From: Guillaume Ranquet <granquet@baylibre.com>
 To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
@@ -76,20 +75,21 @@ To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Helge Deller <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>,
  Jitao shi <jitao.shi@mediatek.com>
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+Cc: Markus Schneider-Pargmann <msp@baylibre.com>,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  linux-fbdev@vger.kernel.org
-Subject: [PATCH v10 03/21] drm/edid: Convert cea_sad helper struct to kernelDoc
-Date: Mon, 23 May 2022 12:47:36 +0200
-Message-Id: <20220523104758.29531-4-granquet@baylibre.com>
+Subject: [PATCH v10 04/21] drm/edid: Add cea_sad helpers for freq/length
+Date: Mon, 23 May 2022 12:47:37 +0200
+Message-Id: <20220523104758.29531-5-granquet@baylibre.com>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220523104758.29531-1-granquet@baylibre.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220523_035027_267444_28A9CD93 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20220523_035033_734304_81DAB549 
+X-CRM114-Status: GOOD (  13.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,37 +106,136 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This patch adds two helper functions that extract the frequency and word
+length from a struct cea_sad.
+
+For these helper functions new defines are added that help translate the
+'freq' and 'byte2' fields into real numbers.
+
+Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 ---
- include/drm/drm_edid.h | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/drm_edid.c | 74 ++++++++++++++++++++++++++++++++++++++
+ include/drm/drm_edid.h     | 14 ++++++++
+ 2 files changed, 88 insertions(+)
 
+diff --git a/drivers/gpu/drm/drm_edid.c b/drivers/gpu/drm/drm_edid.c
+index 561f53831e29..61ef1b1c972c 100644
+--- a/drivers/gpu/drm/drm_edid.c
++++ b/drivers/gpu/drm/drm_edid.c
+@@ -4758,6 +4758,80 @@ int drm_edid_to_speaker_allocation(struct edid *edid, u8 **sadb)
+ }
+ EXPORT_SYMBOL(drm_edid_to_speaker_allocation);
+ 
++/**
++ * drm_cea_sad_get_sample_rate - Extract the sample rate from cea_sad
++ * @sad: Pointer to the cea_sad struct
++ *
++ * Extracts the cea_sad frequency field and returns the sample rate in Hz.
++ *
++ * Return: Sample rate in Hz or a negative errno if parsing failed.
++ */
++int drm_cea_sad_get_sample_rate(const struct cea_sad *sad)
++{
++	switch (sad->freq) {
++	case DRM_CEA_SAD_FREQ_32KHZ:
++		return 32000;
++	case DRM_CEA_SAD_FREQ_44KHZ:
++		return 44100;
++	case DRM_CEA_SAD_FREQ_48KHZ:
++		return 48000;
++	case DRM_CEA_SAD_FREQ_88KHZ:
++		return 88200;
++	case DRM_CEA_SAD_FREQ_96KHZ:
++		return 96000;
++	case DRM_CEA_SAD_FREQ_176KHZ:
++		return 176400;
++	case DRM_CEA_SAD_FREQ_192KHZ:
++		return 192000;
++	default:
++		return -EINVAL;
++	}
++}
++EXPORT_SYMBOL(drm_cea_sad_get_sample_rate);
++
++static bool drm_cea_sad_is_uncompressed(const struct cea_sad *sad)
++{
++	switch (sad->format) {
++	case HDMI_AUDIO_CODING_TYPE_STREAM:
++	case HDMI_AUDIO_CODING_TYPE_PCM:
++		return true;
++	default:
++		return false;
++	}
++}
++
++/**
++ * drm_cea_sad_get_uncompressed_word_length - Extract word length
++ * @sad: Pointer to the cea_sad struct
++ *
++ * Extracts the cea_sad byte2 field and returns the word length for an
++ * uncompressed stream.
++ *
++ * Note: This function may only be called for uncompressed audio.
++ *
++ * Return: Word length in bits or a negative errno if parsing failed.
++ */
++int drm_cea_sad_get_uncompressed_word_length(const struct cea_sad *sad)
++{
++	if (!drm_cea_sad_is_uncompressed(sad)) {
++		DRM_WARN("Unable to get the uncompressed word length for a compressed format: %u\n",
++			 sad->format);
++		return -EINVAL;
++	}
++
++	switch (sad->byte2) {
++	case DRM_CEA_SAD_UNCOMPRESSED_WORD_16BIT:
++		return 16;
++	case DRM_CEA_SAD_UNCOMPRESSED_WORD_20BIT:
++		return 20;
++	case DRM_CEA_SAD_UNCOMPRESSED_WORD_24BIT:
++		return 24;
++	default:
++		return -EINVAL;
++	}
++}
++EXPORT_SYMBOL(drm_cea_sad_get_uncompressed_word_length);
++
+ /**
+  * drm_av_sync_delay - compute the HDMI/DP sink audio-video sync delay
+  * @connector: connector associated with the HDMI/DP sink
 diff --git a/include/drm/drm_edid.h b/include/drm/drm_edid.h
-index 144c495b99c4..37c420423625 100644
+index 37c420423625..7a939cb95b38 100644
 --- a/include/drm/drm_edid.h
 +++ b/include/drm/drm_edid.h
-@@ -359,12 +359,18 @@ struct edid {
- 
- #define EDID_PRODUCT_ID(e) ((e)->prod_code[0] | ((e)->prod_code[1] << 8))
- 
--/* Short Audio Descriptor */
-+/**
-+ * struct cea_sad - Short Audio Descriptor.
-+ * @format: See HDMI_AUDIO_CODING_TYPE_*.
-+ * @channels: max number of channels - 1.
-+ * @freq: See CEA_SAD_FREQ_*.
-+ * @byte2: meaning depends on format.
-+ */
- struct cea_sad {
- 	u8 format;
--	u8 channels; /* max number of channels - 1 */
-+	u8 channels;
- 	u8 freq;
--	u8 byte2; /* meaning depends on format */
-+	u8 byte2;
+@@ -373,6 +373,18 @@ struct cea_sad {
+ 	u8 byte2;
  };
  
++#define DRM_CEA_SAD_FREQ_32KHZ  BIT(0)
++#define DRM_CEA_SAD_FREQ_44KHZ  BIT(1)
++#define DRM_CEA_SAD_FREQ_48KHZ  BIT(2)
++#define DRM_CEA_SAD_FREQ_88KHZ  BIT(3)
++#define DRM_CEA_SAD_FREQ_96KHZ  BIT(4)
++#define DRM_CEA_SAD_FREQ_176KHZ BIT(5)
++#define DRM_CEA_SAD_FREQ_192KHZ BIT(6)
++
++#define DRM_CEA_SAD_UNCOMPRESSED_WORD_16BIT BIT(0)
++#define DRM_CEA_SAD_UNCOMPRESSED_WORD_20BIT BIT(1)
++#define DRM_CEA_SAD_UNCOMPRESSED_WORD_24BIT BIT(2)
++
  struct drm_encoder;
+ struct drm_connector;
+ struct drm_connector_state;
+@@ -380,6 +392,8 @@ struct drm_display_mode;
+ 
+ int drm_edid_to_sad(struct edid *edid, struct cea_sad **sads);
+ int drm_edid_to_speaker_allocation(struct edid *edid, u8 **sadb);
++int drm_cea_sad_get_sample_rate(const struct cea_sad *sad);
++int drm_cea_sad_get_uncompressed_word_length(const struct cea_sad *sad);
+ int drm_av_sync_delay(struct drm_connector *connector,
+ 		      const struct drm_display_mode *mode);
+ 
 -- 
 2.35.1
 
