@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 592A4C433FE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D9DEC433EF
 	for <linux-phy@archiver.kernel.org>; Wed, 25 May 2022 23:58:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,52 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HFBVbf088G8mAjlLtqBzp6u/p5+kmk827/V1jp40Hqs=; b=jbE1CWfzETiMCP
-	mz4BFoIGmO6ZQFOd6L98z2++alaAq+k2QOuU4UD/3YrFo+ZazR22vTo7ABzx6zzD6hRPzZHqyNrS6
-	pOCDmxSfPpFvwDwjj6ZGg86K+HhPIu2uvjfw5fBKd9ziH5yAfLvBDRF/cnbIL1+zTTrz8ptiJEJ5d
-	OZtu1TXjAHfXFLzGqBn42h+sBZTHCPL5mBE9kP5rmTyCj/2RfhVoVX/VVzQw3CFdkO9W3QLZgzeZU
-	GvlzmpqWSxYi8y3VlorIa66xWiydw1hAy/inX6jrk9SceCMnPB7QptB/tJ2AvunZCLBq+OHeh+MTp
-	dh2OlwavmymJW9G8VpIQ==;
+	List-Owner; bh=PboUTAhkPr2crfsc1ZN9YEqXkdNxhTlrtPEFSW77OzM=; b=AFdb2fIcrsgPT4
+	fUvZqzXtJLYGDZfJXJULtqt8Ct1eoEPvrXzP93L6chuLbwalsSnVeOyV9Opso6mRMigCtnvAHft/j
+	WcHIyvDKpM1DC8CYxjX7zKl2avsSpnX4sca3ZICHZBIo0y6nBooVvqCZso8wEEw/wjpP1DLvJKNGr
+	ef1fHYuINLtxDsGSNRd4RUf1XOnEKY1LBT1I0i6XEMeXHwAvvhkxbgEoUEa0l2hhPZ3VkMdKkYujY
+	VwKQfpdbJ+yqrTToHl/kLlzu/KKyq3MRuh/5478iZPKvUd3S4c5DXk1ZkZX2xIfyiN65IysnUqzcp
+	QDktwIHheVg3xSflxbew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nu0u1-00CzC4-Nj; Wed, 25 May 2022 23:58:57 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1nu0u1-00CzCA-RF; Wed, 25 May 2022 23:58:57 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nu0tw-00Cz8a-St
+	id 1nu0tx-00Cz5q-6H
 	for linux-phy@lists.infradead.org; Wed, 25 May 2022 23:58:55 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id g12so57528lja.3
-        for <linux-phy@lists.infradead.org>; Wed, 25 May 2022 16:58:51 -0700 (PDT)
+Received: by mail-lf1-x129.google.com with SMTP id v8so80735lfd.8
+        for <linux-phy@lists.infradead.org>; Wed, 25 May 2022 16:58:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=6iWhrvv4od6TeMXwlwfe/Pl2Q5oNJght52O30b0sGu8=;
-        b=LB/5EctCebFvch03ojs6LlZO8gMjsdpMVereHAlVtFK5m+yUmo1B5UKKgww8UKfK/9
-         rfO7GE3Nbuom0fFzap+Y+HQudfQOhjSmZvWVT1G5sC/cbqlH4RUYrmHlcasyBUt0PF7T
-         MuL0cJQe01hGejLCXliIv+97DrYiSc5PR4VzJ5r5v6h8HK+rifmdTcEK0+BHTpzwIaw2
-         l1rxLmx62rPbNTw62KrmgxVmFXB6QBq0yNLQAmBJ0w8RyJjvK91EDDNG7ntoGn+ZiGSb
-         CWQ9nHAk6ZEtdVlH1vn/LE2c9/1YHnu/01YTI4V94lSEM5en2Ykh3MR8ui0Hk9vWS6ul
-         4SUw==
+        bh=IAKGAT+Va6XhxvC1IK7P7tDDbs9oCmPzj6PzZc4oKek=;
+        b=P8cDFOV0Mw6tPDEA17aHFUVWHG1CqwMRDcUExKNJ1zM0V8ZIDYOwCYa2p4KI1UDLE4
+         BBH6blHHhCDsE3kIo8h7+J+NW68+PSOzsJGkHEwwfrjCAZjc3GSJavhh33Ge0p8DYyp6
+         svD+mFiB1PrX2UMV6GaTUdjz0/OZeyAnKujFaXXUw4Shtrxuu7CydClsG8e/d1EpqO0v
+         9+G2XRIODJSxh88AgWWZkQ2V2Hnup0rHo/jHOTm5e4QkiQVLojXrvq0gi2mKXiKrbQ5S
+         oQD1Ximkcj/9bwOiNniEvuncJYR/bcHIypfTj7MR30ZEiAUIEDbJwZlJ1uqBFos7ta58
+         O2Pg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=6iWhrvv4od6TeMXwlwfe/Pl2Q5oNJght52O30b0sGu8=;
-        b=ooUKlGh+W1e5bOF/OePMCH6HP5rwR26YbbY/dUQFP8nUhCkPX+BCv+oVqdEI9sfPoL
-         Xfo4GX4QEstuCDqLFtmUs956NFCsmi/Dtl5o+fh1F89GfhtWWxBxHywK17aYDGcHEvje
-         V4T0ZB7B2YtJ6f46NxbAhWgtanCVu1AWJ5XonwPUCyMI7IKD/7fTuquPd4MH34zovQkS
-         F92uIKuj76XT7ncmIvdoVt33kXosNVGF3YT36a/LHvUObtwhZmn0hNAZrn0ikXvOLKPK
-         gW/bSH9alJwmbF7dE8KrQHZQVLn9apYG4Sg6ZwlpqKAZMq/pUcfgwwoBa6OGGKP4L4WU
-         153Q==
-X-Gm-Message-State: AOAM533ncDhtEfDPiAYXBuN5PnyxvmXFiB9GyqS+cWi6LPW+he67UIIL
-	Edgogymq5rCFd4KKJDyjbyjfFw==
-X-Google-Smtp-Source: ABdhPJy17RMjrg9turTv5wk95lZwZbED+S8aO7MD8sQ5uMwze7s8pWP579ktwC801UAePPqZqGz7Rg==
-X-Received: by 2002:a2e:a286:0:b0:253:bff6:ed52 with SMTP id k6-20020a2ea286000000b00253bff6ed52mr21074223lja.229.1653523130315;
-        Wed, 25 May 2022 16:58:50 -0700 (PDT)
+        bh=IAKGAT+Va6XhxvC1IK7P7tDDbs9oCmPzj6PzZc4oKek=;
+        b=2lPG+r57MqQVEmYE4TXXcAzAlQT10xRMjAdrhALHc+0AC02DosOJr0+KdE7QitQvTG
+         X05Mqxd4vmAN8xFMrMSImDDHhBbQFHboCfnqLpQjBaLz91pzhK89SlT1+fQxlRs9mafo
+         BmA+yraxNS2KcMUNzqqEvDjMJ9ZNm3guE4c1nGXuvgahqdo1zHcxUrWM535SgsnNhEOt
+         0Hhi6YFUA2itySz/4ruU0AhETpqj0j5lUd3HdEOLcFEzZKeKYFw15qFmm9riRwo5otBY
+         DGW9pJFzQevTf83JGwqsZxdcxRrZQ04jkqrq4EiOjH9ZXcnwCdIvxyWldn6YR19lQbtL
+         5Fig==
+X-Gm-Message-State: AOAM533FzbFSc4iBQvm+eK9584YKkj81wLE+iB+sbOmOKmnYJ1O4YUMi
+	ZCr6euX1qpcVn8X4Q9q/i6cvtQ==
+X-Google-Smtp-Source: ABdhPJy7Ph9xvRCOjzNYizcsVQYZwVy/a8DF0zyYFiFpuoQ61jv0UzWN+E8DANsl7sp+hv1xcoLvKw==
+X-Received: by 2002:a05:6512:1398:b0:448:bda0:99f2 with SMTP id p24-20020a056512139800b00448bda099f2mr24496198lfa.681.1653523132695;
+        Wed, 25 May 2022 16:58:52 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id u28-20020a056512041c00b0047255d21203sm9557lfk.306.2022.05.25.16.58.49
+        by smtp.gmail.com with ESMTPSA id u28-20020a056512041c00b0047255d21203sm9557lfk.306.2022.05.25.16.58.51
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 May 2022 16:58:49 -0700 (PDT)
+        Wed, 25 May 2022 16:58:52 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -66,16 +66,16 @@ To: Andy Gross <agross@kernel.org>,
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [RFC PATCH v2 07/34] phy: qcom-qmp: move IPQ6018 PCIe PHY to new QMP driver
-Date: Thu, 26 May 2022 02:58:14 +0300
-Message-Id: <20220525235841.852301-8-dmitry.baryshkov@linaro.org>
+Subject: [RFC PATCH v2 09/34] phy: qcom-qmp: move SC8180x PCIe PHY to new QMP driver
+Date: Thu, 26 May 2022 02:58:16 +0300
+Message-Id: <20220525235841.852301-10-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220525235841.852301-1-dmitry.baryshkov@linaro.org>
 References: <20220525235841.852301-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220525_165853_051099_77DB2497 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20220525_165853_305734_2FF04AC8 
+X-CRM114-Status: GOOD (  11.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,369 +92,348 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Move support for the PCIe PHY driver on IPQ6018 platform to new QMP
+Move support for the PCIe PHY driver on SC8180x platform to new QMP
 driver.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 143 ++++++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp.c      | 147 -----------------------
- 2 files changed, 143 insertions(+), 147 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 143 +++++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.c      | 140 ----------------------
+ 2 files changed, 143 insertions(+), 140 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index cb354805413b..3dca9ac8f7be 100644
+index 90ad97ed3bb7..7c6b1c450f50 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -103,6 +103,113 @@ static const unsigned int sm8250_pcie_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_POWER_DOWN_CONTROL]	= 0x40,
+@@ -447,6 +447,113 @@ static const struct qmp_phy_init_tbl msm8998_pcie_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V3_PCS_SIGDET_CNTRL, 0x03),
  };
  
-+static const struct qmp_phy_init_tbl ipq6018_pcie_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_PER1, 0x7d),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE1_MODE0, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE2_MODE0, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE1_MODE1, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE2_MODE1, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_BIAS_EN_CLKBUFLR_EN, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_CLK_ENABLE1, 0x90),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SYS_CLK_CTRL, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SYSCLK_BUF_ENABLE, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP1_MODE0, 0xd4),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP2_MODE0, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP1_MODE1, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP2_MODE1, 0x29),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_CP_CTRL_MODE0, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_CP_CTRL_MODE1, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_CCTRL_MODE1, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_BIAS_EN_CTRL_BY_PSM, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SYSCLK_EN_SEL, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_RESETSM_CNTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP_EN, 0x42),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DEC_START_MODE0, 0x68),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DEC_START_MODE1, 0x53),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START1_MODE0, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START2_MODE0, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START3_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START1_MODE1, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START2_MODE1, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START3_MODE1, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_INTEGLOOP_GAIN0_MODE0, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_INTEGLOOP_GAIN0_MODE1, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE1_MODE0, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE1_MODE1, 0xb4),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE2_MODE1, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_CLK_SELECT, 0x32),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_HSCLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_CMN_CONFIG, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_SVS_MODE_CLK_SEL, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_PLL_CORECLK_DIV_MODE1, 0x08),
++static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_SELECT, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CORECLK_DIV_MODE1, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_IVCO, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP_EN, 0x42),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE1_MODE0, 0x24),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE2_MODE1, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE1_MODE1, 0xb4),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE_MAP, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_HSCLK_SEL, 0x11),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DEC_START_MODE0, 0x82),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START3_MODE0, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START2_MODE0, 0x55),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START1_MODE0, 0x55),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP2_MODE0, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP1_MODE0, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DEC_START_MODE1, 0x68),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START3_MODE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START2_MODE1, 0xaa),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START1_MODE1, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP2_MODE1, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP1_MODE1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_HSCLK_SEL, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CP_CTRL_MODE0, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_RCTRL_MODE0, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_CCTRL_MODE0, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CP_CTRL_MODE1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_RCTRL_MODE1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_CCTRL_MODE1, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1e),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xca),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x18),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0xa2),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_BUF_ENABLE, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_EN_CENTER, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_PER1, 0x31),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_PER2, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE1_MODE0, 0xde),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE2_MODE0, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE2_MODE1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_ENABLE1, 0x90),
 +};
 +
-+static const struct qmp_phy_init_tbl ipq6018_pcie_tx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_TX0_RES_CODE_LANE_OFFSET_TX, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_TX0_LANE_MODE_1, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_TX0_RCV_DETECT_LVL_2, 0x12),
++static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_tx_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_RCV_DETECT_LVL_2, 0x12),
++	QMP_PHY_INIT_CFG(QSERDES_V4_TX_LANE_MODE_1, 0x5),
 +};
 +
-+static const struct qmp_phy_init_tbl ipq6018_pcie_rx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_FO_GAIN, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_SO_GAIN, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_SO_SATURATION_AND_ENABLE, 0x7f),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_PI_CONTROLS, 0x70),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQU_ADAPTOR_CNTRL2, 0x61),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQU_ADAPTOR_CNTRL3, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQU_ADAPTOR_CNTRL4, 0x1e),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_IDAC_TSETTLE_LOW, 0xc0),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_IDAC_TSETTLE_HIGH, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x73),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_OFFSET_ADAPTOR_CNTRL2, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_SIGDET_ENABLES, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_SIGDET_CNTRL, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_SIGDET_DEGLITCH_CNTRL, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_LOW, 0xf0),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH2, 0x2f),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH3, 0xd3),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH4, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_LOW, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH2, 0xc8),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH3, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH4, 0xb1),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_LOW, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH2, 0xc8),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH3, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH4, 0xb1),
-+	QMP_PHY_INIT_CFG(QSERDES_RX0_DFE_EN_TIMER, 0x04),
++static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_rx_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_CNTRL, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_ENABLES, 0x1c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_DEGLITCH_CNTRL, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL1, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL2, 0x6e),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL3, 0x6e),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL4, 0x4a),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DFE_EN_TIMER, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CONTROLS, 0x70),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_VGA_CAL_CNTRL1, 0x54),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_VGA_CAL_CNTRL2, 0x37),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_LOW, 0xd4),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH, 0x54),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH2, 0xdb),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH3, 0x39),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH4, 0x31),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_LOW, 0x24),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH, 0xe4),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH2, 0xec),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH3, 0x39),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH4, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_LOW, 0x7f),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH2, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH3, 0xdb),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH4, 0x75),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_HIGH, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_LOW, 0xc0),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_AUX_DATA_TCOARSE_TFINE, 0xa0),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RCLK_AUXDATA_SEL, 0xc0),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DCC_CTRL1, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_GM_CAL, 0x05),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FO_GAIN, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_GAIN, 0x03),
 +};
 +
-+static const struct qmp_phy_init_tbl ipq6018_pcie_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(PCS_COM_FLL_CNTRL1, 0x01),
-+	QMP_PHY_INIT_CFG(PCS_COM_REFGEN_REQ_CONFIG1, 0x0d),
-+	QMP_PHY_INIT_CFG(PCS_COM_G12S1_TXDEEMPH_M3P5DB, 0x10),
-+	QMP_PHY_INIT_CFG(PCS_COM_RX_SIGDET_LVL, 0xaa),
-+	QMP_PHY_INIT_CFG(PCS_COM_P2U3_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
-+	QMP_PHY_INIT_CFG(PCS_COM_RX_DCC_CAL_CONFIG, 0x01),
-+	QMP_PHY_INIT_CFG(PCS_COM_EQ_CONFIG5, 0x01),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_POWER_STATE_CONFIG2, 0x0d),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_POWER_STATE_CONFIG4, 0x07),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_EQ_CONFIG1, 0x11),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_PRESET_P10_PRE, 0x00),
-+	QMP_PHY_INIT_CFG(PCS_PCIE_PRESET_P10_POST, 0x58),
++static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_pcs_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_SIGDET_LVL, 0xaa),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RATE_SLEW_CNTRL1, 0x0b),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_REFGEN_REQ_CONFIG1, 0x0d),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_EQ_CONFIG5, 0x01),
 +};
 +
- static const struct qmp_phy_init_tbl msm8996_pcie_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
- 	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_ENABLE1, 0x10),
-@@ -630,6 +737,9 @@ static const struct qmp_phy_init_tbl sm8250_qmp_gen3x2_pcie_pcs_misc_tbl[] = {
++static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_INT_AUX_CLK_CONFIG1, 0x00),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_PRESET_P10_PRE, 0x00),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_PRESET_P10_POST, 0x58),
++	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
++};
++
+ static const struct qmp_phy_init_tbl sdm845_qhp_pcie_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(PCIE_GEN3_QHP_COM_SYSCLK_EN_SEL, 0x27),
+ 	QMP_PHY_INIT_CFG(PCIE_GEN3_QHP_COM_SSC_EN_CENTER, 0x01),
+@@ -966,6 +1073,39 @@ static const struct qmp_phy_pcie_cfg msm8998_pciephy_cfg = {
+ 	},
  };
  
- /* list of clocks required by phy */
-+static const char * const ipq_pciephy_clk_l[] = {
-+	"aux", "cfg_ahb",
-+};
- static const char * const msm8996_phy_clk_l[] = {
- 	"aux", "cfg_ahb", "ref",
- };
-@@ -656,6 +766,36 @@ static const char * const qmp_phy_vreg_l[] = {
- 	"vdda-phy", "vdda-pll",
- };
- 
-+static const struct qmp_phy_pcie_cfg ipq6018_pciephy_cfg = {
++static const struct qmp_phy_pcie_cfg sc8180x_pciephy_cfg = {
 +	.base = {
-+		.type			= PHY_TYPE_PCIE,
-+		.nlanes			= 1,
++		.type = PHY_TYPE_PCIE,
++		.nlanes = 1,
 +
-+		.serdes_tbl		= ipq6018_pcie_serdes_tbl,
-+		.serdes_tbl_num		= ARRAY_SIZE(ipq6018_pcie_serdes_tbl),
-+		.tx_tbl			= ipq6018_pcie_tx_tbl,
-+		.tx_tbl_num		= ARRAY_SIZE(ipq6018_pcie_tx_tbl),
-+		.rx_tbl			= ipq6018_pcie_rx_tbl,
-+		.rx_tbl_num		= ARRAY_SIZE(ipq6018_pcie_rx_tbl),
-+		.pcs_tbl		= ipq6018_pcie_pcs_tbl,
-+		.pcs_tbl_num		= ARRAY_SIZE(ipq6018_pcie_pcs_tbl),
-+		.clk_list		= ipq_pciephy_clk_l,
-+		.num_clks		= ARRAY_SIZE(ipq_pciephy_clk_l),
-+		.reset_list		= qmp_pciephy_reset_l,
-+		.num_resets		= ARRAY_SIZE(qmp_pciephy_reset_l),
-+		.vreg_list		= NULL,
-+		.num_vregs		= 0,
++		.serdes_tbl		= sc8180x_qmp_pcie_serdes_tbl,
++		.serdes_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_serdes_tbl),
++		.tx_tbl			= sc8180x_qmp_pcie_tx_tbl,
++		.tx_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_tx_tbl),
++		.rx_tbl			= sc8180x_qmp_pcie_rx_tbl,
++		.rx_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_rx_tbl),
++		.pcs_tbl		= sc8180x_qmp_pcie_pcs_tbl,
++		.pcs_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_tbl),
++		.clk_list		= sdm845_pciephy_clk_l,
++		.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
++		.reset_list		= sdm845_pciephy_reset_l,
++		.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
++		.vreg_list		= qmp_phy_vreg_l,
++		.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
 +		.regs			= sm8250_pcie_regs_layout,
 +
-+		.start_ctrl		= SERDES_START | PCS_START,
++		.start_ctrl		= PCS_START | SERDES_START,
 +		.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
 +	},
++
++	.pcs_misc_tbl		= sc8180x_qmp_pcie_pcs_misc_tbl,
++	.pcs_misc_tbl_num	= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_misc_tbl),
 +
 +	.has_pwrdn_delay	= true,
 +	.pwrdn_delay_min	= 995,		/* us */
 +	.pwrdn_delay_max	= 1005,		/* us */
 +};
 +
- static const struct qmp_phy_pcie_cfg msm8996_pciephy_cfg = {
+ static const struct qmp_phy_pcie_cfg sdm845_qhp_pciephy_cfg = {
  	.base = {
- 		.type			= PHY_TYPE_PCIE,
-@@ -1192,6 +1332,9 @@ int qcom_qmp_phy_pcie_create(struct device *dev, struct device_node *np, int id,
- 
- static const struct of_device_id qcom_qmp_phy_pcie_of_match_table[] = {
- 	{
-+		.compatible = "qcom,ipq6018-qmp-pcie-phy",
-+		.data = &ipq6018_pciephy_cfg,
-+	}, {
- 		.compatible = "qcom,msm8996-qmp-pcie-phy",
- 		.data = &msm8996_pciephy_cfg,
+ 		.type = PHY_TYPE_PCIE,
+@@ -1451,6 +1591,9 @@ static const struct of_device_id qcom_qmp_phy_pcie_of_match_table[] = {
  	}, {
+ 		.compatible = "qcom,msm8998-qmp-pcie-phy",
+ 		.data = &msm8998_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sc8180x-qmp-pcie-phy",
++		.data = &sc8180x_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sdm845-qhp-pcie-phy",
+ 		.data = &sdm845_qhp_pciephy_cfg,
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
-index c2d53918df40..4529be5fe0cc 100644
+index 2576ccf8ccf1..82a96396244b 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
-@@ -146,13 +146,6 @@ static const unsigned int msm8996_ufsphy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_READY_STATUS]		= 0x168,
+@@ -1540,113 +1540,6 @@ static const struct qmp_phy_init_tbl qmp_v4_dp_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_TX_EMP_POST1_LVL, 0x20),
  };
  
--static const unsigned int ipq_pciephy_gen3_regs_layout[QPHY_LAYOUT_SIZE] = {
--	[QPHY_SW_RESET]				= 0x00,
--	[QPHY_START_CTRL]			= 0x44,
--	[QPHY_PCS_STATUS]			= 0x14,
--	[QPHY_PCS_POWER_DOWN_CONTROL]		= 0x40,
+-static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_serdes_tbl[] = {
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_EN_SEL, 0x08),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_SELECT, 0x34),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CORECLK_DIV_MODE1, 0x08),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_IVCO, 0x0f),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP_EN, 0x42),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE1_MODE0, 0x24),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE2_MODE1, 0x03),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE1_MODE1, 0xb4),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_VCO_TUNE_MAP, 0x02),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_HSCLK_SEL, 0x11),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DEC_START_MODE0, 0x82),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START3_MODE0, 0x03),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START2_MODE0, 0x55),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START1_MODE0, 0x55),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP2_MODE0, 0x1a),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP1_MODE0, 0x0a),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DEC_START_MODE1, 0x68),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START3_MODE1, 0x02),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START2_MODE1, 0xaa),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_DIV_FRAC_START1_MODE1, 0xab),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP2_MODE1, 0x34),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_LOCK_CMP1_MODE1, 0x14),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_HSCLK_SEL, 0x01),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CP_CTRL_MODE0, 0x06),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_RCTRL_MODE0, 0x16),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_CCTRL_MODE0, 0x36),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CP_CTRL_MODE1, 0x06),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_RCTRL_MODE1, 0x16),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_PLL_CCTRL_MODE1, 0x36),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1e),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xca),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x18),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0xa2),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SYSCLK_BUF_ENABLE, 0x07),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_EN_CENTER, 0x01),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_PER1, 0x31),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_PER2, 0x01),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE1_MODE0, 0xde),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE2_MODE0, 0x07),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_SSC_STEP_SIZE2_MODE1, 0x06),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_COM_CLK_ENABLE1, 0x90),
 -};
 -
- static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_COM_SW_RESET]		= 0x400,
- 	[QPHY_COM_POWER_DOWN_CONTROL]	= 0x404,
-@@ -467,113 +460,6 @@ static const struct qmp_phy_init_tbl msm8996_usb3_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_POWER_STATE_CONFIG2, 0x08),
+-static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_tx_tbl[] = {
+-	QMP_PHY_INIT_CFG(QSERDES_V4_TX_RCV_DETECT_LVL_2, 0x12),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_TX_LANE_MODE_1, 0x5),
+-};
+-
+-static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_rx_tbl[] = {
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_CNTRL, 0x03),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_ENABLES, 0x1c),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_SIGDET_DEGLITCH_CNTRL, 0x14),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL1, 0x07),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL2, 0x6e),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL3, 0x6e),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQU_ADAPTOR_CNTRL4, 0x4a),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DFE_EN_TIMER, 0x04),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7f),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_PI_CONTROLS, 0x70),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_VGA_CAL_CNTRL1, 0x54),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_VGA_CAL_CNTRL2, 0x37),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_LOW, 0xd4),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH, 0x54),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH2, 0xdb),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH3, 0x39),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_10_HIGH4, 0x31),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_LOW, 0x24),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH, 0xe4),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH2, 0xec),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH3, 0x39),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_01_HIGH4, 0x36),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_LOW, 0x7f),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH, 0xff),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH2, 0xff),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH3, 0xdb),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_MODE_00_HIGH4, 0x75),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_HIGH, 0x00),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RX_IDAC_TSETTLE_LOW, 0xc0),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_AUX_DATA_TCOARSE_TFINE, 0xa0),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_RCLK_AUXDATA_SEL, 0xc0),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_DCC_CTRL1, 0x0c),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_GM_CAL, 0x05),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_FO_GAIN, 0x0c),
+-	QMP_PHY_INIT_CFG(QSERDES_V4_RX_UCDR_SO_GAIN, 0x03),
+-};
+-
+-static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_pcs_tbl[] = {
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RX_SIGDET_LVL, 0xaa),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_RATE_SLEW_CNTRL1, 0x0b),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_REFGEN_REQ_CONFIG1, 0x0d),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_EQ_CONFIG5, 0x01),
+-};
+-
+-static const struct qmp_phy_init_tbl sc8180x_qmp_pcie_pcs_misc_tbl[] = {
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_INT_AUX_CLK_CONFIG1, 0x00),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_PRESET_P10_PRE, 0x00),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_PRESET_P10_POST, 0x58),
+-	QMP_PHY_INIT_CFG(QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
+-};
+-
+ static const struct qmp_phy_init_tbl sdx55_usb3_uniphy_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_RCV_DETECT_LVL_2, 0x12),
+ 	QMP_PHY_INIT_CFG(QSERDES_V4_TX_LANE_MODE_1, 0xd5),
+@@ -2985,36 +2878,6 @@ static const struct qmp_phy_cfg sm8150_usb3phy_cfg = {
+ 	.is_dual_lane_phy	= true,
  };
  
--static const struct qmp_phy_init_tbl ipq6018_pcie_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_PER1, 0x7d),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_PER2, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE1_MODE0, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE2_MODE0, 0x05),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE1_MODE1, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SSC_STEP_SIZE2_MODE1, 0x04),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_BIAS_EN_CLKBUFLR_EN, 0x18),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_CLK_ENABLE1, 0x90),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SYS_CLK_CTRL, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SYSCLK_BUF_ENABLE, 0x07),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP1_MODE0, 0xd4),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP2_MODE0, 0x14),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP1_MODE1, 0xaa),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP2_MODE1, 0x29),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_BG_TRIM, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_CP_CTRL_MODE0, 0x09),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_CP_CTRL_MODE1, 0x09),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_RCTRL_MODE1, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_PLL_CCTRL_MODE1, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_BIAS_EN_CTRL_BY_PSM, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SYSCLK_EN_SEL, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_RESETSM_CNTRL, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_LOCK_CMP_EN, 0x42),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DEC_START_MODE0, 0x68),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DEC_START_MODE1, 0x53),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START1_MODE0, 0xab),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START2_MODE0, 0xaa),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START3_MODE0, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START1_MODE1, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START2_MODE1, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_DIV_FRAC_START3_MODE1, 0x05),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_INTEGLOOP_GAIN0_MODE0, 0xa0),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_INTEGLOOP_GAIN0_MODE1, 0xa0),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE1_MODE0, 0x24),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE2_MODE0, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE1_MODE1, 0xb4),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_VCO_TUNE2_MODE1, 0x03),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_CLK_SELECT, 0x32),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_HSCLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_CMN_CONFIG, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_SVS_MODE_CLK_SEL, 0x05),
--	QMP_PHY_INIT_CFG(QSERDES_PLL_CORECLK_DIV_MODE1, 0x08),
--};
+-static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+-	.type = PHY_TYPE_PCIE,
+-	.nlanes = 1,
 -
--static const struct qmp_phy_init_tbl ipq6018_pcie_tx_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_TX0_RES_CODE_LANE_OFFSET_TX, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_TX0_LANE_MODE_1, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_TX0_RCV_DETECT_LVL_2, 0x12),
--};
+-	.serdes_tbl		= sc8180x_qmp_pcie_serdes_tbl,
+-	.serdes_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_serdes_tbl),
+-	.tx_tbl			= sc8180x_qmp_pcie_tx_tbl,
+-	.tx_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_tx_tbl),
+-	.rx_tbl			= sc8180x_qmp_pcie_rx_tbl,
+-	.rx_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_rx_tbl),
+-	.pcs_tbl		= sc8180x_qmp_pcie_pcs_tbl,
+-	.pcs_tbl_num		= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_tbl),
+-	.pcs_misc_tbl		= sc8180x_qmp_pcie_pcs_misc_tbl,
+-	.pcs_misc_tbl_num	= ARRAY_SIZE(sc8180x_qmp_pcie_pcs_misc_tbl),
+-	.clk_list		= sdm845_pciephy_clk_l,
+-	.num_clks		= ARRAY_SIZE(sdm845_pciephy_clk_l),
+-	.reset_list		= sdm845_pciephy_reset_l,
+-	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+-	.vreg_list		= qmp_phy_vreg_l,
+-	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+-	.regs			= sm8250_pcie_regs_layout,
 -
--static const struct qmp_phy_init_tbl ipq6018_pcie_rx_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_FO_GAIN, 0x0c),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_SO_GAIN, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_SO_SATURATION_AND_ENABLE, 0x7f),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_UCDR_PI_CONTROLS, 0x70),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQU_ADAPTOR_CNTRL2, 0x61),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQU_ADAPTOR_CNTRL3, 0x04),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQU_ADAPTOR_CNTRL4, 0x1e),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_IDAC_TSETTLE_LOW, 0xc0),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_IDAC_TSETTLE_HIGH, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x73),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_OFFSET_ADAPTOR_CNTRL2, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_SIGDET_ENABLES, 0x1c),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_SIGDET_CNTRL, 0x03),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_SIGDET_DEGLITCH_CNTRL, 0x14),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_LOW, 0xf0),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH2, 0x2f),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH3, 0xd3),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_00_HIGH4, 0x40),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_LOW, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH2, 0xc8),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH3, 0x09),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_01_HIGH4, 0xb1),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_LOW, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH2, 0xc8),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH3, 0x09),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_RX_MODE_10_HIGH4, 0xb1),
--	QMP_PHY_INIT_CFG(QSERDES_RX0_DFE_EN_TIMER, 0x04),
--};
--
--static const struct qmp_phy_init_tbl ipq6018_pcie_pcs_tbl[] = {
--	QMP_PHY_INIT_CFG(PCS_COM_FLL_CNTRL1, 0x01),
--	QMP_PHY_INIT_CFG(PCS_COM_REFGEN_REQ_CONFIG1, 0x0d),
--	QMP_PHY_INIT_CFG(PCS_COM_G12S1_TXDEEMPH_M3P5DB, 0x10),
--	QMP_PHY_INIT_CFG(PCS_COM_RX_SIGDET_LVL, 0xaa),
--	QMP_PHY_INIT_CFG(PCS_COM_P2U3_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
--	QMP_PHY_INIT_CFG(PCS_COM_RX_DCC_CAL_CONFIG, 0x01),
--	QMP_PHY_INIT_CFG(PCS_COM_EQ_CONFIG5, 0x01),
--	QMP_PHY_INIT_CFG(PCS_PCIE_POWER_STATE_CONFIG2, 0x0d),
--	QMP_PHY_INIT_CFG(PCS_PCIE_POWER_STATE_CONFIG4, 0x07),
--	QMP_PHY_INIT_CFG(PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
--	QMP_PHY_INIT_CFG(PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
--	QMP_PHY_INIT_CFG(PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L, 0x01),
--	QMP_PHY_INIT_CFG(PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
--	QMP_PHY_INIT_CFG(PCS_PCIE_EQ_CONFIG1, 0x11),
--	QMP_PHY_INIT_CFG(PCS_PCIE_PRESET_P10_PRE, 0x00),
--	QMP_PHY_INIT_CFG(PCS_PCIE_PRESET_P10_POST, 0x58),
--};
--
- static const struct qmp_phy_init_tbl ipq8074_pcie_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x18),
- 	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_ENABLE1, 0x10),
-@@ -2963,36 +2849,6 @@ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
- 	.pwrdn_delay_max	= 1005,		/* us */
- };
- 
--static const struct qmp_phy_cfg ipq6018_pciephy_cfg = {
--	.type			= PHY_TYPE_PCIE,
--	.nlanes			= 1,
--
--	.serdes_tbl		= ipq6018_pcie_serdes_tbl,
--	.serdes_tbl_num		= ARRAY_SIZE(ipq6018_pcie_serdes_tbl),
--	.tx_tbl			= ipq6018_pcie_tx_tbl,
--	.tx_tbl_num		= ARRAY_SIZE(ipq6018_pcie_tx_tbl),
--	.rx_tbl			= ipq6018_pcie_rx_tbl,
--	.rx_tbl_num		= ARRAY_SIZE(ipq6018_pcie_rx_tbl),
--	.pcs_tbl		= ipq6018_pcie_pcs_tbl,
--	.pcs_tbl_num		= ARRAY_SIZE(ipq6018_pcie_pcs_tbl),
--	.clk_list		= ipq8074_pciephy_clk_l,
--	.num_clks		= ARRAY_SIZE(ipq8074_pciephy_clk_l),
--	.reset_list		= ipq8074_pciephy_reset_l,
--	.num_resets		= ARRAY_SIZE(ipq8074_pciephy_reset_l),
--	.vreg_list		= NULL,
--	.num_vregs		= 0,
--	.regs			= ipq_pciephy_gen3_regs_layout,
--
--	.start_ctrl		= SERDES_START | PCS_START,
+-	.start_ctrl		= PCS_START | SERDES_START,
 -	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
 -
--	.has_phy_com_ctrl	= false,
--	.has_lane_rst		= false,
 -	.has_pwrdn_delay	= true,
 -	.pwrdn_delay_min	= 995,		/* us */
 -	.pwrdn_delay_max	= 1005,		/* us */
 -};
 -
- static const struct qmp_phy_cfg qmp_v3_usb3phy_cfg = {
- 	.type			= PHY_TYPE_USB3,
+ static const struct qmp_phy_cfg sc8180x_dpphy_cfg = {
+ 	.type			= PHY_TYPE_DP,
  	.nlanes			= 1,
-@@ -5297,9 +5153,6 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
+@@ -5026,9 +4889,6 @@ static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
  	}, {
- 		.compatible = "qcom,ipq8074-qmp-pcie-phy",
- 		.data = &ipq8074_pciephy_cfg,
+ 		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
+ 		/* It's a combo phy */
 -	}, {
--		.compatible = "qcom,ipq6018-qmp-pcie-phy",
--		.data = &ipq6018_pciephy_cfg,
+-		.compatible = "qcom,sc8180x-qmp-pcie-phy",
+-		.data = &sc8180x_pciephy_cfg,
  	}, {
- 		.compatible = "qcom,ipq6018-qmp-usb3-phy",
- 		.data = &ipq8074_usb3phy_cfg,
+ 		.compatible = "qcom,sc8180x-qmp-ufs-phy",
+ 		.data = &sm8150_ufsphy_cfg,
 -- 
 2.35.1
 
