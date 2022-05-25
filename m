@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 534B7C4332F
-	for <linux-phy@archiver.kernel.org>; Wed, 25 May 2022 13:05:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1410C433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 25 May 2022 15:30:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pLUUUDxVLtw7341B6lznJB8NKGrRfds2VV/5NNggFlc=; b=n4nyOrCD8Sq18i
-	/1uKdX/VThTXKcFhpCo+WRLvvvljC2cRr3lO7vmzj3U/R14/Yl5EZuDFD1+t+lzsrp2iJ7UjIqGPL
-	Ok0lq7/TpaXhH9qZs5zvg9eWUBN02e1sV9TSw4NUYUuDVlIXP+fyh90hAUZqDfLOXHQnyta2aM5g4
-	pjMFW9yVfty+52hMnmo5hgH7Qi3arifd5e8EjlkRx+v9QY/lt2tYLK7Vv9lChkbTd8RiLkY+5LYKu
-	Y5TQBjFA8eaRlisn+z+n+zOdH4bN0IYty1m+Wge/f+STVQkZRFvL8bB3PEDYj7TIqveVJwoWzVnGt
-	v4MQpCQUMuA95KlTeCaw==;
+	List-Owner; bh=n+G7EM8MJQp8On7rsbjBznDkUF6mp+JtP9ilfOqih5U=; b=vPC3ybZRl9+zlD
+	VoA4vXgWt+14CUBOdoOfSeEHkC0PfrgHnC6O5rkQtRsaJ+TdM2WsVfFLPWAjm0eQKt6KOzlZgBcoY
+	CYyoLfu5/b5w7d5O+6AbRM69uvIeMCyNsC1+HJbXoWq9AOc70QrNbV12JpPjU4I7VC3EwmLpG+i8p
+	FhMeHxppft+Z8t8cChDDCX4rw7EgMcWdxaiAfWI+1KqnyBYC55i19zcLmIMjbd0WWqDlBbhGdTp9r
+	HPFlzo3bHs7WqQtt/qj61EmrmHb6ejiqPx80JMs5ClYE/wi939laZfFbWe2Qem/G38i3BVPwdSJ7f
+	0OEkwjrtRzyj9+a3irXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ntqhR-00BBlT-Kj; Wed, 25 May 2022 13:05:17 +0000
+	id 1ntsyO-00BaV9-6r; Wed, 25 May 2022 15:30:56 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ntqhE-00BBiH-QE; Wed, 25 May 2022 13:05:06 +0000
+	id 1ntsyB-00BaRl-9W; Wed, 25 May 2022 15:30:45 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
 	(Authenticated sender: kholk11)
-	with ESMTPSA id 098BF1F44E8C
+	with ESMTPSA id 9C1F61F450E4
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1653483902;
-	bh=gViAEDYmrng0CSzEk780jnUimbEF/5qLDHyneG+N2y0=;
+	s=mail; t=1653492638;
+	bh=mGX881tfLiNKIMFbpkJ51Yg+RQ+F9f5Vkk6XOh4uNGc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=l1YD1DbCcvxx0b2C9BAQPdR3sMaZT6pjm6m0/b9f9Z53w11xMF/QGKDJdQu4/dO+8
-	 Ddj4Wvok1u9FMBprtouSjtEb1qRwZo3tKrnTgJ9ZJG6+bbPtQsrmOnyRs61TuCcFtA
-	 JPe3ei96GsuPKoIr9igulzhrqsJCh9+Ie3I5+qTVA8As9U+HjdJpPmu3KPGfmyuFxC
-	 NtVRDyRnENOxfwqvpxkopl+p4LDlvsUaQHCnSSsp0iR0FHweY9ZaqME94NXDUQidC8
-	 jnUp6b2Wankw5/iPlTSEleo90ERD5EpGQpw0pKy2k2TtVBUyYcdsgidMzBiqLRS6No
-	 4OJr/vKoGaM/Q==
-Message-ID: <5cc99fd7-1401-511d-37c3-77f18b08e597@collabora.com>
-Date: Wed, 25 May 2022 15:04:59 +0200
+	b=XiLCHHbHnd1Of9D/ytssYwCUsRsP+P8gc8sVErDFW2KN0nriCpd0EnGi8pD+i7k4K
+	 xEcmVmjE6akfuOKNi5dPUssQ1UQIMYMVW1VlWa8IkEUWQofaE3Qau4yswACMZT/YGR
+	 wiCDrQ++snvDecCL/AL48FhDsVlYmvgGmQyhh4Z10Pf6eIGiCecdncslLCBuW/w8qA
+	 H1x7wi6Wf8tWIBmV53OjicRhpeMB0HttD0TeyXge4RNnx2x8cyzglTtwlepmhgN3o9
+	 TkxwHho3xnEiQxK/eXPcxX/pWdv806oz0wMRAGjIiScBpjm1TgQM/0YEzRgGLRj3t3
+	 RXWyV6ddLadRA==
+Message-ID: <f2856b8f-9465-2638-aabf-d2dda842766b@collabora.com>
+Date: Wed, 25 May 2022 17:30:33 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.9.0
-Subject: Re: [PATCH v10 19/21] drm/mediatek: Add mt8195 External DisplayPort
- support
+Subject: Re: [PATCH v10 02/21] dt-bindings: mediatek,dp: Add Display Port
+ binding
 Content-Language: en-US
 To: Guillaume Ranquet <granquet@baylibre.com>,
  Chun-Kuang Hu <chunkuang.hu@kernel.org>,
@@ -57,18 +57,18 @@ To: Guillaume Ranquet <granquet@baylibre.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
  Helge Deller <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>,
  Jitao shi <jitao.shi@mediatek.com>
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+Cc: Markus Schneider-Pargmann <msp@baylibre.com>,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  linux-fbdev@vger.kernel.org
 References: <20220523104758.29531-1-granquet@baylibre.com>
- <20220523104758.29531-20-granquet@baylibre.com>
+ <20220523104758.29531-3-granquet@baylibre.com>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220523104758.29531-20-granquet@baylibre.com>
+In-Reply-To: <20220523104758.29531-3-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220525_060505_032919_C2116801 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220525_083043_650718_53515385 
+X-CRM114-Status: GOOD (  21.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,18 +86,159 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Il 23/05/22 12:47, Guillaume Ranquet ha scritto:
-> This patch adds External DisplayPort support to the mt8195 eDP driver.
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
 > 
+> This controller is present on several mediatek hardware. Currently
+> mt8195 and mt8395 have this controller without a functional difference,
+> so only one compatible field is added.
+> 
+> The controller can have two forms, as a normal display port and as an
+> embedded display port.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
 > ---
->   drivers/gpu/drm/mediatek/mtk_dp.c | 104 +++++++++++++++++++++++-------
->   1 file changed, 81 insertions(+), 23 deletions(-)
+>   .../display/mediatek/mediatek,dp.yaml         | 99 +++++++++++++++++++
+>   1 file changed, 99 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
 > 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> new file mode 100644
+> index 000000000000..36ae0a6df299
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> @@ -0,0 +1,99 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: MediaTek Display Port Controller
+> +
+> +maintainers:
+> +  - CK Hu <ck.hu@mediatek.com>
+> +  - Jitao shi <jitao.shi@mediatek.com>
+> +
+> +description: |
+> +  Device tree bindings for the MediaTek (embedded) Display Port controller
+> +  present on some MediaTek SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - mediatek,mt8195-dp-tx
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: faxi clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: faxi
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Input endpoint of the controller, usually dp_intf
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Output endpoint of the controller
+> +
 
-Your patch [18/21], contained in this series, introduces mtk_dp.c.
-This patch [19/21] cannot be applied cleanly on top of 18/21.
+You should add port@0 (and port@1, probably) as required... with what you've done
+here, you're saying that "ports" is required, but you're allowing it to be empty..
 
-What happened here?!?
+   ports:
+     $ref: /schemas/graph.yaml#/properties/ports
+     properties:
+       port@0:
+         $ref: /schemas/graph.yaml#/properties/port
+         description: Input endpoint of the controller, usually dp_intf
+
+       port@1:
+         $ref: /schemas/graph.yaml#/properties/port
+         description: Output endpoint of the controller
+
+     required:
+       - port@0
+       - port@1
+
+^^^ that's how it should look.
+
+> +  max-lanes:
+> +    maxItems: 1
+> +    description: maximum number of lanes supported by the hardware
+> +
+> +  max-linkrate:
+> +    maxItems: 1
+> +    description: maximum link rate supported by the hardware
+
+As you've put it (in the example below), the max-linkrate property wants a value
+that corresponds to what you find in the HW registers... this is wrong.
+
+Devicetree bindings should be generic and devicetrees shouldn't have hardware
+specific bits inside, hence, please change this property to accept a link rate
+specified in Mbps and also specify that in the description.
+
+Thanks,
+Angelo
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - ports
+> +  - max-lanes
+> +  - max-linkrate
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/power/mt8195-power.h>
+> +    edp_tx: edp_tx@1c500000 {
+> +        compatible = "mediatek,mt8195-dp-tx";
+> +        reg = <0 0x1c500000 0 0x8000>;
+> +        interrupts = <GIC_SPI 676 IRQ_TYPE_LEVEL_HIGH 0>;
+> +        power-domains = <&spm MT8195_POWER_DOMAIN_EPD_TX>;
+> +        pinctrl-names = "default";
+> +        pinctrl-0 = <&edp_pin>;
+> +        max-lanes = /bits/ 8 <4>;
+> +        max-linkrate = /bits/ 8 <0x1e>;
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                reg = <0>;
+> +                edp_in: endpoint {
+> +                    remote-endpoint = <&dp_intf0_out>;
+> +                };
+> +            };
+> +            port@1 {
+> +                reg = <1>;
+> +                edp_out: endpoint {
+> +                	remote-endpoint = <&panel_in>;
+> +                };
+> +            };
+> +        };
+> +    };
 
 -- 
 linux-phy mailing list
