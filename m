@@ -4,103 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C662C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 25 May 2022 09:45:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53804C433F5
+	for <linux-phy@archiver.kernel.org>; Wed, 25 May 2022 11:55:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hpsAh/BhUCybpldwvrKZd7HHNaL2yP7XXgL9Up5iA4E=; b=0nmn4fZ5lCpM6jiGYAUwmKK33K
-	97Zzo4/kBCdkkxdFhgTzHRe+7MMS0gkVikzwvbN2tS9s1Y7mV0y9Upb5BxLBJHZhnlHfhLYvRrhod
-	HfdIQ7BaIlexnFc2xHUpO9fJNHcF6FEWuNfkHcpSryaha4oaqoRnRk9tsFWrk6OC/cw1s8TIaF5AW
-	BlNTdpN+Oksd3O3xjX9PN0GY6rgsWwedC3DUFi5oJJqY9vb88059MlsFe7RDKvzEAZX0vh9ZHMnC7
-	ytuOkySPC9t9JT7qa+ULAMUiMP2Hz/CKCFUvk47TRyrf4blMdbOpHKZQRHPRz/sUA70uXXY5j1+tb
-	h1TYPZWg==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1/pERSXalgJGHawtw3FkuqbAXQwT1F9PQpIUb96UHZA=; b=qdiM8Loh9GNGyh
+	01sX4xdWLxXj2x187HDDcuvN89kK/uWA+MM8YsQzVbefvZPrK86kh/eRzzm04LW/tdoaL5AkCMpD1
+	e8+YMd0cJTWHujY2DzMs8d4gqT8lCH1m3XIYc+/NEknyzVu4g9slRiCPYLDvyurI3rNCUBTjXL+N7
+	GezVlfPMPE3VKEJQft6uLgsFWaoU4txa81xzraregPKkSaXMK+fO/sji8EGB1avT+iZQBqrz8hZtD
+	GLStkxEnb2pkeZdpow79cgdQtqZ4dAzKNhdDk+sGHsnT7sGsTdpR/ZHPivwYKwYKf/Uk3F5tn/9n5
+	8nLhcIGPuqDh1d6wu5lA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ntnZc-00AdEJ-Uy; Wed, 25 May 2022 09:45:00 +0000
-Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ntnZO-00Ad9P-6c; Wed, 25 May 2022 09:44:49 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id B141D2B05006;
- Wed, 25 May 2022 05:44:38 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Wed, 25 May 2022 05:44:41 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=cc
- :cc:content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to; s=fm3; t=1653471878; x=1653479078; bh=ys3iQzhNHF
- k+i8WtIf+H8WQ46WfOZFCztCK2dX/C9P0=; b=N/JRB+WnexRIZ9dX5PcEm/8f/H
- cPBsMsbDuSTmVpILRSXnNlFoPgXwTnB9sG5c2CBpqvmmZti7TCvET1ygVyPq4fwA
- fQ5OKTgoJNLZ2M0ZTBEABVgD9xQIGnhTbnxt6XkIAVCIzuLJXBs7WAGfC96irWbw
- lr6953LnsKHvebopgcw5k3L/zNh8kVTad2/799qbT1ZNmy0HBuUmu2c1k8Ro/kCY
- bvMC07VkU0pJwn8wysn6o8m1M2Ne1dICZCA2GfRKAkRG+uRlxyGobz3yN2r1jOok
- pxntt2LaG8S5EYl12Kr5IDS1ImVsXzQyl8d4WYDx7OYzrJX/5YAypClUA6hQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
- :feedback-id:from:from:in-reply-to:in-reply-to:message-id
- :mime-version:references:reply-to:sender:subject:subject:to:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; t=1653471878; x=1653479078; bh=ys3iQzhNHFk+i8WtIf+H8WQ46WfO
- ZFCztCK2dX/C9P0=; b=XJwcQJysHomLv8q3I/a024YNpcHuA7CVVSfdAKLSNh3e
- yCo6zETnKg3Mmiy6LoUaiq2nQu9FmR/S85oMTwF7btYoM842Xj+nV71rUSMChwSf
- dqf2GI+aNWNs5ombF58vGOinb8gsdVPNIx+xirIXrd2MM5HTFxrTtiWm/87u7xJG
- g2dLVRdU0LdTz2v5YPgzkl1T0mdMsa+3PlpXoMfDj0mFo5gdyV+0rNllM1Gs6YzH
- v42Dafl6F/jY8Nx/xQNz9BWuJQwjez2vm5rfwevvrJNdAG3j0FQLxK/8UQJ0nJ0c
- WDUETgLd5XsVCXp/jcUW6Bu92Nyy4tEdyF1vOAVWKg==
-X-ME-Sender: <xms:hfqNYq_j5GFf5Uz1mDgmLdV70fLnuq6aSKWevLqyWIawg4NmhGrHQg>
- <xme:hfqNYqtHTkLzDuf9wZyjFbHZAlnHbcr-0YckTlhEp7Xi4YnN4O9Rj5_Rgh6byONs6
- vUf5M6n4txqCdpV9vw>
-X-ME-Received: <xmr:hfqNYgB-vOJM3N79sWpwTBKgf_FqXdlgWKqgCm2OFJA94fiDo67jizwJV9YM_HUjfM0eagMIdOKEsmwTFs1RY076g0I827v4G1dOjck>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrjeehgddukecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvvefukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepgfeuuedtfefgveevheejfeeghedvjeejfeehkeffudetuedtgfeiieeiffeu
- tdffnecuffhomhgrihhnpegsohhothhlihhnrdgtohhmnecuvehluhhsthgvrhfuihiivg
- eptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggt
- hh
-X-ME-Proxy: <xmx:hfqNYicSWVCNxtPjO2OP-dTZTG5RnA-8HT0mTEUaKkDRVcwql_I2Ug>
- <xmx:hfqNYvOIcwaM76cNjFwwp5PA3zMSONCG2MMRXEw6yETvTmp88gEfoQ>
- <xmx:hfqNYsk9JgcQt1Fcfw7pvS3BYvWH_sfA1sMh1fLYGKJSYXOJnHLW1A>
- <xmx:hvqNYpW3xzQCmkMOuNOuoVddp28C1T8FymU-PtWuCJdZO9MFWihypK9P9TQ>
-Feedback-ID: i8771445c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 25 May 2022 05:44:36 -0400 (EDT)
-Date: Wed, 25 May 2022 11:44:34 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: airlied@linux.ie, angelogioacchino.delregno@collabora.com,
- chunfeng.yun@mediatek.com, chunkuang.hu@kernel.org,
- ck.hu@mediatek.com, daniel@ffwll.ch, deller@gmx.de,
- jitao.shi@mediatek.com, kishon@ti.com, krzk+dt@kernel.org,
- maarten.lankhorst@linux.intel.com, matthias.bgg@gmail.com,
- p.zabel@pengutronix.de, robh+dt@kernel.org, tzimmermann@suse.de,
- vkoul@kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, markyacoub@google.com,
- Markus Schneider-Pargmann <msp@baylibre.com>,
- kernel test robot <lkp@intel.com>
-Subject: Re: [PATCH v9 18/22] drm/mediatek: Add mt8195 Embedded DisplayPort
- driver
-Message-ID: <20220525094434.7qhycnobrmgiihuf@houat>
-References: <20220327223927.20848-1-granquet@baylibre.com>
- <20220327223927.20848-19-granquet@baylibre.com>
- <20220429083933.q3w75q3zuyyuvo4w@houat>
- <CABnWg9tzhZjrdKT4chkDrY-uH8BMUoxyNLUSwfuG6Sv1J+8ddg@mail.gmail.com>
- <20220512074446.ihilbbnbuwesxbbg@houat>
- <CABnWg9tHRc_7VZ1z6NeMEDfQvxam_xOimBnM=hzBUqkhzPOSCA@mail.gmail.com>
+	id 1ntpbv-00B088-IX; Wed, 25 May 2022 11:55:31 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1ntpbj-00B049-4I; Wed, 25 May 2022 11:55:20 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+	(Authenticated sender: kholk11)
+	with ESMTPSA id 893E61F44CFB
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1653479715;
+	bh=nuxGWQWNesZ/7a6N1/y9rDh1aXO9s7JIDe0xC4nw6GQ=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=j9yTx8cauhT8UcAVv4U59s0oW4k8pz/Z6K1faqEFRrVipgEVU4Jv55Tslk4Us4zdn
+	 qelGzQ1noPB9csE56IIuB+fKDpZc5pnfYXAhBIQLYSItE6nPTl/Y/B6Cv3hGWjYDQP
+	 3jjkwRoUKkNMAtFTCNOaYAYgwjlm4+G1FhaN201qJOEwKLkvDbc6FE8kew5EWq8Sgu
+	 neVTNTi35gFOCfBXTVj6l2wpwsriJwCvwCwQldtO2r9Dbc+uqLJvHXY4RIU4p27NFI
+	 w7ek15EnwpP0EQxN3qTbEFz0J3kygxhtjj2xq6LO+TbHW9GTMMTmgMcqZORZmT5ptW
+	 kqVK/YQdIvofg==
+Message-ID: <c1dacdd0-f25e-a522-5d5f-1ef2fe297094@collabora.com>
+Date: Wed, 25 May 2022 13:55:11 +0200
 MIME-Version: 1.0
-In-Reply-To: <CABnWg9tHRc_7VZ1z6NeMEDfQvxam_xOimBnM=hzBUqkhzPOSCA@mail.gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.0
+Subject: Re: [PATCH v10 01/21] dt-bindings: mediatek,dpi: Add DPINTF
+ compatible
+Content-Language: en-US
+To: Guillaume Ranquet <granquet@baylibre.com>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+ Helge Deller <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>,
+ Jitao shi <jitao.shi@mediatek.com>
+Cc: Markus Schneider-Pargmann <msp@baylibre.com>,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-fbdev@vger.kernel.org
+References: <20220523104758.29531-1-granquet@baylibre.com>
+ <20220523104758.29531-2-granquet@baylibre.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20220523104758.29531-2-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220525_024446_812145_CCEE1074 
-X-CRM114-Status: GOOD (  33.64  )
+X-CRM114-CacheID: sfid-20220525_045519_331387_26415EF4 
+X-CRM114-Status: GOOD (  21.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,169 +80,93 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4626698617757849122=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Il 23/05/22 12:47, Guillaume Ranquet ha scritto:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
+> 
+> DPINTF is similar to DPI but does not have the exact same feature set
+> or register layouts.
+> 
+> DPINTF is the sink of the display pipeline that is connected to the
+> DisplayPort controller and encoder unit. It takes the same clocks as
+> DPI.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
+>   .../bindings/display/mediatek/mediatek,dpi.yaml     | 13 ++++++++-----
+>   1 file changed, 8 insertions(+), 5 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> index dd2896a40ff0..6d9f6c11806e 100644
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> @@ -4,16 +4,16 @@
+>   $id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
+>   $schema: http://devicetree.org/meta-schemas/core.yaml#
+>   
+> -title: mediatek DPI Controller Device Tree Bindings
+> +title: mediatek DPI/DPINTF Controller
+>   
+>   maintainers:
+>     - CK Hu <ck.hu@mediatek.com>
+>     - Jitao shi <jitao.shi@mediatek.com>
+>   
+>   description: |
+> -  The Mediatek DPI function block is a sink of the display subsystem and
+> -  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
+> -  output bus.
+> +  The Mediatek DPI and DPINTF function blocks are a sink of the display
+> +  subsystem and provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a
+> +  parallel output bus.
+>   
+>   properties:
+>     compatible:
+> @@ -23,6 +23,7 @@ properties:
+>         - mediatek,mt8173-dpi
+>         - mediatek,mt8183-dpi
+>         - mediatek,mt8192-dpi
+> +      - mediatek,mt8195-dpintf
+>   
+>     reg:
+>       maxItems: 1
+> @@ -35,12 +36,14 @@ properties:
+>         - description: Pixel Clock
+>         - description: Engine Clock
+>         - description: DPI PLL
+> +      - description: Optional CK CG Clock
+>   
+>     clock-names:
+>       items:
+>         - const: pixel
+>         - const: engine
+>         - const: pll
+> +      - const: ck_cg
 
---===============4626698617757849122==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="frqxb4oy2hxaw6mk"
-Content-Disposition: inline
+This is my understanding on how the DisplayPort Interface clocks work on 8195:
 
+The "engine" clock is for the *VPP Engine's DisplayPort ip/block*,
+"pll" is for TVD PLL divider selection
+"pixel" is the gate for the pixel clock to the connected display.
 
---frqxb4oy2hxaw6mk
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+"ck_cg" is useless, as that's the parent of "pixel" (and will always be)... for
+example, on mt8195... check clk/mediatek/clk-mt8195-vdo0.c - the
+CLK_VDO0_DP_INTF0_DP_INTF clock already has CLK_TOP_EDP as its parent, hence
+enabling the first will enable the latter.
 
-On Thu, May 19, 2022 at 09:26:59AM -0700, Guillaume Ranquet wrote:
-> On Thu, 12 May 2022 09:44, Maxime Ripard <maxime@cerno.tech> wrote:
-> >Hi,
-> >
-> >On Wed, May 11, 2022 at 05:59:13AM -0700, Guillaume Ranquet wrote:
-> >> >> +#include <drm/drm_atomic_helper.h>
-> >> >> +#include <drm/drm_bridge.h>
-> >> >> +#include <drm/drm_crtc.h>
-> >> >> +#include <drm/dp/drm_dp_helper.h>
-> >> >> +#include <drm/drm_edid.h>
-> >> >> +#include <drm/drm_of.h>
-> >> >> +#include <drm/drm_panel.h>
-> >> >> +#include <drm/drm_print.h>
-> >> >> +#include <drm/drm_probe_helper.h>
-> >> >> +#include <linux/arm-smccc.h>
-> >> >> +#include <linux/clk.h>
-> >> >> +#include <linux/delay.h>
-> >> >> +#include <linux/errno.h>
-> >> >> +#include <linux/kernel.h>
-> >> >> +#include <linux/mfd/syscon.h>
-> >> >> +#include <linux/nvmem-consumer.h>
-> >> >> +#include <linux/of.h>
-> >> >> +#include <linux/of_irq.h>
-> >> >> +#include <linux/of_platform.h>
-> >> >> +#include <linux/phy/phy.h>
-> >> >> +#include <linux/platform_device.h>
-> >> >> +#include <linux/pm_runtime.h>
-> >> >> +#include <linux/regmap.h>
-> >> >> +#include <sound/hdmi-codec.h>
-> >> >> +#include <video/videomode.h>
-> >> >> +
-> >> >> +#include "mtk_dp_reg.h"
-> >> >> +
-> >> >> +#define MTK_DP_AUX_WAIT_REPLY_COUNT 20
-> >> >> +#define MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT 3
-> >> >> +
-> >> >> +//TODO: platform/device data or dts?
-> >> >
-> >> >DTS :)
-> >>
-> >> It's probably going to be a platform_data struct for v10...
-> >> If I have time, I'll change it to a dts property for v10.
-> >
-> >I can't really imagine a case where we would need platform_data
-> >nowadays. If you have a device tree, then it should be part of the
-> >binding.
-> >
-> >What issue would you like to address by using a platform_data?
-> >
->=20
-> Ok, I'll migrate to dt then. I didn't realize platform_data were deprecia=
-ted.
->=20
-> Angelo wants the MAX_LINRATE and MAX_LANES defines to be configurable.
-> I imagined platform_data would be more appropriate as (per my understandi=
-ng) the
-> limitation is associated with a specific SoC.
-
-The entire device tree is nothing but a collection of data associated to
-a specific SoC though :)
-
-> >> >> +static struct edid *mtk_dp_get_edid(struct drm_bridge *bridge,
-> >> >> +				    struct drm_connector *connector)
-> >> >> +{
-> >> >> +	struct mtk_dp *mtk_dp =3D mtk_dp_from_bridge(bridge);
-> >> >> +	bool enabled =3D mtk_dp->enabled;
-> >> >> +	struct edid *new_edid =3D NULL;
-> >> >> +
-> >> >> +	if (!enabled)
-> >> >> +		drm_bridge_chain_pre_enable(bridge);
-> >> >> +
-> >> >> +	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_SET_POWER, DP_SET_POWER_D0);
-> >> >> +	usleep_range(2000, 5000);
-> >> >> +
-> >> >> +	if (mtk_dp_plug_state(mtk_dp))
-> >> >> +		new_edid =3D drm_get_edid(connector, &mtk_dp->aux.ddc);
-> >> >> +
-> >> >> +	if (!enabled)
-> >> >> +		drm_bridge_chain_post_disable(bridge);
-> >> >
-> >> >Are you sure we can't get a mode set while get_edid is called?
-> >> >
-> >> >If we can, then you could end up disabling the device while it's being
-> >> >powered on.
-> >>
-> >> I'm a bit unsure, I need to spend more time in the drm stack to make s=
-ure.
-> >> I'll get back to you when I have a definitive answer.
-> >
-> >So, it looks like it's ok.
-> >
-> >get_edid is your implementation of get_modes, which is called by
-> >drm_helper_probe_single_connector_modes
-> >
-> >https://elixir.bootlin.com/linux/latest/source/drivers/gpu/drm/drm_probe=
-_helper.c#L416
-> >
-> >This is the standard implemantion of fill_modes, which is called
-> >whenever the get_connector ioctl is called (or similar paths, like
-> >drm_client_modeset_probe)
-> >
-> >drm_helper_probe_single_connector_modes is under the assumption that the
-> >mode_config.mutex is held though, and that the big lock. So it should be
-> >serialized there.
-> >
-> >Just for future proofing though, it would be better to use refcounting
-> >there. Would runtime_pm work for you there?
-> >
->=20
-> Thx for looking into this for me.
-> Not sure runtime_pm works here as it would only refcount if compiled
-> with CONFIG_PM?
-
-It should be enabled in most configurations these days, and you can
-always depend on it in your Kconfig option.
-
-> I'd rather use the enabled field as a refcounter instead of a boolean.
-
-It's a bit more ad-hoc, but that would work too. Make sure to use a lock
-or atomic operations though
-
-Maxime
-
---frqxb4oy2hxaw6mk
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCYo36ggAKCRDj7w1vZxhR
-xZ8uAQD4p9FP6n4HWaV/eeMy9XLCytn17FejCmxsGJ+BVRXkngEA7rKJQeM++TcT
-7XF+Ij2881A16a/1Cfs+sVBCS9T7/Ao=
-=cDEf
------END PGP SIGNATURE-----
-
---frqxb4oy2hxaw6mk--
+That said... you can most probably avoid adding the ck_cg clock, as if you try
+to turn that off while it's in use by its children, you'll be only decrementing
+a refcount, but no "real action" will ever take place.
 
 
---===============4626698617757849122==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Regards,
+Angelo
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4626698617757849122==--
-
