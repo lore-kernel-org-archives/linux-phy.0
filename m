@@ -4,71 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1410C433EF
-	for <linux-phy@archiver.kernel.org>; Wed, 25 May 2022 15:30:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E17BC433EF
+	for <linux-phy@archiver.kernel.org>; Wed, 25 May 2022 19:04:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n+G7EM8MJQp8On7rsbjBznDkUF6mp+JtP9ilfOqih5U=; b=vPC3ybZRl9+zlD
-	VoA4vXgWt+14CUBOdoOfSeEHkC0PfrgHnC6O5rkQtRsaJ+TdM2WsVfFLPWAjm0eQKt6KOzlZgBcoY
-	CYyoLfu5/b5w7d5O+6AbRM69uvIeMCyNsC1+HJbXoWq9AOc70QrNbV12JpPjU4I7VC3EwmLpG+i8p
-	FhMeHxppft+Z8t8cChDDCX4rw7EgMcWdxaiAfWI+1KqnyBYC55i19zcLmIMjbd0WWqDlBbhGdTp9r
-	HPFlzo3bHs7WqQtt/qj61EmrmHb6ejiqPx80JMs5ClYE/wi939laZfFbWe2Qem/G38i3BVPwdSJ7f
-	0OEkwjrtRzyj9+a3irXw==;
+	List-Owner; bh=5gW38tyG1lt8Bd3dtb/a4FCqMVAC9RAxmrZnmCRGy5o=; b=E3RlLJCLl6kqqP
+	hlVb/jDe04yWvnb3lRBOmTdHoaLZGYvUEUz86ddzpAmNEywEFlg8p1IY3M8SLuATOCqrZrt3MsIUw
+	wUIVzk1MJ3NjoomjgsxqMVSXhHDgo28jNMxaTlCoI8t2nk9KGaG4xb+kIHnyoskfwgKhmSwFQLKPv
+	jcphv0DXC68Z54qULHWqZqWvY8gyjvzP6KkKBQFGzrs+vaT9n0nrg5xOP6ZRR7Xe+T7OGN6ZL98sV
+	eNYs31kO9How9xwaqNl8PLB9/HO2DlzHuUujNfuryKsKkThZeD1vhvWITSkK0+3ZWvh2fjd+At6Ya
+	IlmF7NhZHr5Nigp5nhBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ntsyO-00BaV9-6r; Wed, 25 May 2022 15:30:56 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ntwIw-00CCzE-Sd; Wed, 25 May 2022 19:04:22 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1ntsyB-00BaRl-9W; Wed, 25 May 2022 15:30:45 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
-	(Authenticated sender: kholk11)
-	with ESMTPSA id 9C1F61F450E4
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1653492638;
-	bh=mGX881tfLiNKIMFbpkJ51Yg+RQ+F9f5Vkk6XOh4uNGc=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=XiLCHHbHnd1Of9D/ytssYwCUsRsP+P8gc8sVErDFW2KN0nriCpd0EnGi8pD+i7k4K
-	 xEcmVmjE6akfuOKNi5dPUssQ1UQIMYMVW1VlWa8IkEUWQofaE3Qau4yswACMZT/YGR
-	 wiCDrQ++snvDecCL/AL48FhDsVlYmvgGmQyhh4Z10Pf6eIGiCecdncslLCBuW/w8qA
-	 H1x7wi6Wf8tWIBmV53OjicRhpeMB0HttD0TeyXge4RNnx2x8cyzglTtwlepmhgN3o9
-	 TkxwHho3xnEiQxK/eXPcxX/pWdv806oz0wMRAGjIiScBpjm1TgQM/0YEzRgGLRj3t3
-	 RXWyV6ddLadRA==
-Message-ID: <f2856b8f-9465-2638-aabf-d2dda842766b@collabora.com>
-Date: Wed, 25 May 2022 17:30:33 +0200
+	id 1ntwHw-00CCYo-5V; Wed, 25 May 2022 19:03:22 +0000
+Received: (Authenticated sender: paul.kocialkowski@bootlin.com)
+	by mail.gandi.net (Postfix) with ESMTPSA id 0264A1C0005;
+	Wed, 25 May 2022 19:03:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1653505398;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=E5Ivzqdo/JBA4o+eUAqBDzhn7mSLI4fwx2yKDCnGEbI=;
+	b=M+4qOrGs8YMSh+RsBPzKlPlPaH5omGTAsB2WiM+PEgI6vI9mQTRf1WpnFhdJAXlQRdLoL2
+	jh6LUn2f5Xd46OGOQdDpBIQu80yKhUs4a45eQWxwO+S/l/LnfBQoH6/DwK4vNl/E8r1ZK9
+	m/4jzKoik6V4qLBZ+dcqDWQKCEABp2i8FNFm7YzhZNzft94WU8CIJEDnnNzYi9K9ZlnXF7
+	xJCg7/87mftq/36TMuZDQyJcC0c98FU3lrYcMNm6e6S5TgyEtUmJlXCvp+R2pRLvtsXM5g
+	QmdVFXbwlFYrmqRuPDpceIy3i/IANB539xy59e6NfD1pdMnRzRZ99Z1Y9Ghofw==
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: linux-media@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: Yong Deng <yong.deng@magewell.com>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Sakari Ailus <sakari.ailus@linux.intel.com>,
+	Hans Verkuil <hans.verkuil@cisco.com>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: [PATCH v5 4/6] MAINTAINERS: Add entry for the Allwinner A31 MIPI CSI-2 bridge driver
+Date: Wed, 25 May 2022 21:02:58 +0200
+Message-Id: <20220525190300.696269-5-paul.kocialkowski@bootlin.com>
+X-Mailer: git-send-email 2.36.1
+In-Reply-To: <20220525190300.696269-1-paul.kocialkowski@bootlin.com>
+References: <20220525190300.696269-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.0
-Subject: Re: [PATCH v10 02/21] dt-bindings: mediatek,dp: Add Display Port
- binding
-Content-Language: en-US
-To: Guillaume Ranquet <granquet@baylibre.com>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Helge Deller <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>,
- Jitao shi <jitao.shi@mediatek.com>
-Cc: Markus Schneider-Pargmann <msp@baylibre.com>,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-fbdev@vger.kernel.org
-References: <20220523104758.29531-1-granquet@baylibre.com>
- <20220523104758.29531-3-granquet@baylibre.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20220523104758.29531-3-granquet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220525_083043_650718_53515385 
-X-CRM114-Status: GOOD (  21.38  )
+X-CRM114-CacheID: sfid-20220525_120320_418046_14C288A2 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,165 +82,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 23/05/22 12:47, Guillaume Ranquet ha scritto:
-> From: Markus Schneider-Pargmann <msp@baylibre.com>
-> 
-> This controller is present on several mediatek hardware. Currently
-> mt8195 and mt8395 have this controller without a functional difference,
-> so only one compatible field is added.
-> 
-> The controller can have two forms, as a normal display port and as an
-> embedded display port.
-> 
-> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> ---
->   .../display/mediatek/mediatek,dp.yaml         | 99 +++++++++++++++++++
->   1 file changed, 99 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
-> new file mode 100644
-> index 000000000000..36ae0a6df299
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
-> @@ -0,0 +1,99 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dp.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: MediaTek Display Port Controller
-> +
-> +maintainers:
-> +  - CK Hu <ck.hu@mediatek.com>
-> +  - Jitao shi <jitao.shi@mediatek.com>
-> +
-> +description: |
-> +  Device tree bindings for the MediaTek (embedded) Display Port controller
-> +  present on some MediaTek SoCs.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - mediatek,mt8195-dp-tx
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: faxi clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: faxi
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Input endpoint of the controller, usually dp_intf
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Output endpoint of the controller
-> +
+Add myself as maintainer of the Allwinner A31 MIPI CSI-2 bridge media
+driver.
 
-You should add port@0 (and port@1, probably) as required... with what you've done
-here, you're saying that "ports" is required, but you're allowing it to be empty..
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Acked-by: Jernej Skrabec <jernej.skrabec@gmail.com>
+---
+ MAINTAINERS | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-   ports:
-     $ref: /schemas/graph.yaml#/properties/ports
-     properties:
-       port@0:
-         $ref: /schemas/graph.yaml#/properties/port
-         description: Input endpoint of the controller, usually dp_intf
+diff --git a/MAINTAINERS b/MAINTAINERS
+index e22a79ffa4d0..484f47690ea2 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -762,6 +762,14 @@ T:	git git://linuxtv.org/media_tree.git
+ F:	Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+ F:	drivers/media/platform/sunxi/sun4i-csi/
+ 
++ALLWINNER A31 MIPI CSI-2 BRIDGE DRIVER
++M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
++L:	linux-media@vger.kernel.org
++S:	Maintained
++T:	git git://linuxtv.org/media_tree.git
++F:	Documentation/devicetree/bindings/media/allwinner,sun6i-a31-mipi-csi2.yaml
++F:	drivers/media/platform/sunxi/sun6i-mipi-csi2/
++
+ ALLWINNER CPUFREQ DRIVER
+ M:	Yangtao Li <tiny.windzz@gmail.com>
+ L:	linux-pm@vger.kernel.org
+-- 
+2.36.1
 
-       port@1:
-         $ref: /schemas/graph.yaml#/properties/port
-         description: Output endpoint of the controller
-
-     required:
-       - port@0
-       - port@1
-
-^^^ that's how it should look.
-
-> +  max-lanes:
-> +    maxItems: 1
-> +    description: maximum number of lanes supported by the hardware
-> +
-> +  max-linkrate:
-> +    maxItems: 1
-> +    description: maximum link rate supported by the hardware
-
-As you've put it (in the example below), the max-linkrate property wants a value
-that corresponds to what you find in the HW registers... this is wrong.
-
-Devicetree bindings should be generic and devicetrees shouldn't have hardware
-specific bits inside, hence, please change this property to accept a link rate
-specified in Mbps and also specify that in the description.
-
-Thanks,
-Angelo
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - ports
-> +  - max-lanes
-> +  - max-linkrate
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/power/mt8195-power.h>
-> +    edp_tx: edp_tx@1c500000 {
-> +        compatible = "mediatek,mt8195-dp-tx";
-> +        reg = <0 0x1c500000 0 0x8000>;
-> +        interrupts = <GIC_SPI 676 IRQ_TYPE_LEVEL_HIGH 0>;
-> +        power-domains = <&spm MT8195_POWER_DOMAIN_EPD_TX>;
-> +        pinctrl-names = "default";
-> +        pinctrl-0 = <&edp_pin>;
-> +        max-lanes = /bits/ 8 <4>;
-> +        max-linkrate = /bits/ 8 <0x1e>;
-> +
-> +        ports {
-> +            #address-cells = <1>;
-> +            #size-cells = <0>;
-> +
-> +            port@0 {
-> +                reg = <0>;
-> +                edp_in: endpoint {
-> +                    remote-endpoint = <&dp_intf0_out>;
-> +                };
-> +            };
-> +            port@1 {
-> +                reg = <1>;
-> +                edp_out: endpoint {
-> +                	remote-endpoint = <&panel_in>;
-> +                };
-> +            };
-> +        };
-> +    };
 
 -- 
 linux-phy mailing list
