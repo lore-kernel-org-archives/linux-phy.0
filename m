@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1E0BC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 30 May 2022 09:35:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03BBAC433F5
+	for <linux-phy@archiver.kernel.org>; Mon, 30 May 2022 10:08:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JhZe0sM8t6/AHfdCRc3ojVHWxEUvu3ZOAIonv1JTHDY=; b=nW9x3fjPpfmN9j
-	c0XlpAPaQzY0Xp7xgcAw3rLNaYgU0sXAZ4f74vdDzlNEC25fstNfUt78lWCtw7ewvW/8gowrPRLv4
-	x+93UpTM/X1QJfIW8+rmiPZ4iai9y8IndAMeCjexdoQcJZ0JSm6R9yN8ccPDkA8/9IoIDPMxrf+Gk
-	Gmk2xM1lL/Fi+GYEiXeImhrgmWe/GBwcWbhD1tvtxAwqmP29Ku6jLAdw9pfoTTiftAQxYad1obDFS
-	A6skqcLs+aA2clw0Z/ggl6G/ru01wYeOVWYmdxclZY2+4tdBLhAc2gCbBgQiaFw9VzQTZ0OqKXLbY
-	rNpePGfCuqIdoh1+5lJg==;
+	List-Owner; bh=3TuRnYKfB0B+rLPsPWNvX8gC/FoRMNorjOz0rSt8fbU=; b=sEqX1Cym54EjAq
+	AklCczKxv37Xiwv4Rry3HP5DFBwFTb4ZFldvoQmbhkt9JQJORN8MWTrMJcz8wEcnQqzNPJ1zi2nVW
+	ZlUiE2QOWCDeFTXjoX27JcwFhTjhAan7hszaKhy+xggZ+QFUrQlbATwxGRmryhxXjYEIKp/NZpnwM
+	XOHzYJPvVbE9io1pyOOrbRuTj7c+x9lvuiBn3HVezf5O+a/qFzpyNRth16K7S9MOOur/mAM3sobDP
+	J1mDnGAEwTa3k0NSGPO5ldc/yisIZurHf68/qW/7czroHg1a/haxG9K71nIxU41me3Td5lgoNX3wl
+	P3M4zl0qGQ0Lz6e/AMqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nvbnn-0068SQ-AE; Mon, 30 May 2022 09:35:07 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1nvcKZ-006EWY-Es; Mon, 30 May 2022 10:08:59 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nvbnZ-0068OS-5A; Mon, 30 May 2022 09:34:56 +0000
-X-UUID: add0bce945884312a68ecf817c5440c8-20220530
+	id 1nvcKO-006ES9-Cx; Mon, 30 May 2022 10:08:50 +0000
+X-UUID: fcaae020de7348fb9e61c7497d61bd2c-20220530
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5,REQID:9c193e2e-b9b4-4a76-bf71-fb4c7add843b,OB:0,LO
+X-CID-O-INFO: VERSION:1.1.5,REQID:ea7a6186-1b05-4bd0-8d0c-b6ff392be814,OB:0,LO
 	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
 	ON:release,TS:0
-X-CID-META: VersionHash:2a19b09,CLOUDID:2c610148-4fb1-496b-8f1d-39e733fed1ea,C
+X-CID-META: VersionHash:2a19b09,CLOUDID:88ba0248-4fb1-496b-8f1d-39e733fed1ea,C
 	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
 	,QS:0,BEC:nil
-X-UUID: add0bce945884312a68ecf817c5440c8-20220530
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+X-UUID: fcaae020de7348fb9e61c7497d61bd2c-20220530
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
 	(envelope-from <ck.hu@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
-	with ESMTP id 1512981265; Mon, 30 May 2022 02:34:49 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 30 May 2022 02:34:47 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.792.3;
- Mon, 30 May 2022 17:34:46 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkcas11.mediatek.inc
+	with ESMTP id 1907799424; Mon, 30 May 2022 03:08:36 -0700
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 30 May 2022 03:08:34 -0700
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 30 May 2022 18:08:33 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkcas10.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 30 May 2022 17:34:46 +0800
-Message-ID: <719320a455d4dc5d142cea48577c3a1b0317bb9a.camel@mediatek.com>
+ Transport; Mon, 30 May 2022 18:08:33 +0800
+Message-ID: <828da579f872747943dbb7684b35f58bc592c6ca.camel@mediatek.com>
 Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
  driver
 From: CK Hu <ck.hu@mediatek.com>
@@ -66,7 +65,7 @@ CC: Markus Schneider-Pargmann <msp@baylibre.com>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
 	<linux-fbdev@vger.kernel.org>
-Date: Mon, 30 May 2022 17:34:46 +0800
+Date: Mon, 30 May 2022 18:08:33 +0800
 In-Reply-To: <20220523104758.29531-19-granquet@baylibre.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
 	 <20220523104758.29531-19-granquet@baylibre.com>
@@ -74,8 +73,8 @@ X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220530_023453_257175_EAEEF11C 
-X-CRM114-Status: GOOD (  24.05  )
+X-CRM114-CacheID: sfid-20220530_030848_470386_2ADD4FD6 
+X-CRM114-Status: GOOD (  23.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,164 +116,52 @@ On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
 > 
 > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
 > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> 
+> ---
+>  
 
 [snip]
 
 > +
-> +static void mtk_dp_read_link_status(struct mtk_dp *mtk_dp,
-> +				    u8
-> link_status[DP_LINK_STATUS_SIZE])
+> +static irqreturn_t mtk_dp_hpd_isr_handler(struct mtk_dp *mtk_dp)
 > +{
-> +	drm_dp_dpcd_read(&mtk_dp->aux, DP_LANE0_1_STATUS, link_status,
-> +			 DP_LINK_STATUS_SIZE);
-> +}
+> +	bool connected;
+> +	u16 swirq_status = mtk_dp_swirq_get_clear(mtk_dp);
+> +	u8 hwirq_status = mtk_dp_hwirq_get_clear(mtk_dp);
+> +	struct mtk_dp_train_info *train_info = &mtk_dp->train_info;
 > +
-> +static int mtk_dp_train_tps_1(struct mtk_dp *mtk_dp,
-> +			      u8 target_lane_count, int
-> *iteration_count, u8 *lane_adjust,  int *status_control, u8
-> *prev_lane_adjust)
-> +{
-> +	int ret;
-> +	u8 val;
-> +	u8 link_status[DP_LINK_STATUS_SIZE] = {};
-> +
-> +	ret = mtk_dp_training_set_scramble(mtk_dp, false);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (*status_control == 0) {
-> +		ret = mtk_dp_train_set_pattern(mtk_dp, 1);
-> +		if (ret)
-> +			return ret;
-> +
-> +		val = DP_LINK_SCRAMBLING_DISABLE |
-> +			DP_TRAINING_PATTERN_1;
-> +		drm_dp_dpcd_writeb(&mtk_dp->aux,
-> +				   DP_TRAINING_PATTERN_SET,
-> +				DP_LINK_SCRAMBLING_DISABLE |
-> +				DP_TRAINING_PATTERN_1);
-> +		drm_dp_dpcd_read(&mtk_dp->aux,
-> +				 DP_ADJUST_REQUEST_LANE0_1,
-> +				lane_adjust,
-> +				sizeof(*lane_adjust) * 2);
-> +
-> +		mtk_dp_train_update_swing_pre(mtk_dp,
-> +					      target_lane_count,
-> lane_adjust);
-> +		*status_control = 1;
-> +		(*iteration_count)++;
-> +	}
-> +
-> +	drm_dp_link_train_clock_recovery_delay(&mtk_dp->aux,
-> +					       mtk_dp->rx_cap);
-> +	mtk_dp_read_link_status(mtk_dp, link_status);
+> +	train_info->irq_status |= hwirq_status | swirq_status;
 
-drm_dp_dpcd_read_link_status(&mtk_dp->aux, link_status);
+You mix software control variable and irq status here. Break each flag
+in irq_status to variables in train_info to decouple software control
+variable and irq status.
 
 > +
-> +	if (drm_dp_clock_recovery_ok(link_status,
-> +				     target_lane_count)) {
-> +		mtk_dp->train_info.cr_done = true;
-> +		*iteration_count = 1;
-> +		dev_dbg(mtk_dp->dev, "Link train CR pass\n");
-> +		return 0;
-> +	} else if (*prev_lane_adjust == link_status[4]) {
-> +		(*iteration_count)++;
-> +		if (*prev_lane_adjust &
-> DP_ADJUST_VOLTAGE_SWING_LANE0_MASK) {
-> +			dev_dbg(mtk_dp->dev, "Link train CQ fail\n");
-> +			return -EINVAL;
-> +		}
+> +	if (!train_info->irq_status)
+> +		return IRQ_HANDLED;
+> +
+> +	connected = mtk_dp_plug_state(mtk_dp);
+> +	if (connected || !train_info->cable_plugged_in)
+> +		train_info->irq_status &= ~MTK_DP_HPD_DISCONNECT;
+> +	else if (!connected || train_info->cable_plugged_in)
+> +		train_info->irq_status &= ~MTK_DP_HPD_CONNECT;
+> +
+> +	if (!(train_info->irq_status &
+> +	      (MTK_DP_HPD_CONNECT | MTK_DP_HPD_DISCONNECT)))
+> +		return IRQ_HANDLED;
+> +
+> +	if (train_info->irq_status & MTK_DP_HPD_CONNECT) {
+> +		train_info->irq_status &= ~MTK_DP_HPD_CONNECT;
+> +		train_info->cable_plugged_in = true;
 > +	} else {
-> +		*prev_lane_adjust = link_status[4];
+> +		train_info->irq_status &= ~MTK_DP_HPD_DISCONNECT;
+> +		train_info->cable_plugged_in = false;
+> +		mtk_dp->train_state = MTK_DP_TRAIN_STATE_STARTUP;
 > +	}
-> +	return -EAGAIN;
+> +	train_info->cable_state_change = true;
+> +
+> +	return IRQ_WAKE_THREAD;
 > +}
 > +
-> +static int mtk_dp_train_tps_2_3(struct mtk_dp *mtk_dp, u8
-> target_linkrate,
-> +				u8 target_lane_count, int
-> *iteration_count, u8 *lane_adjust,  int *status_control, u8
-> *prev_lane_adjust)
-> +{
-> +	int ret;
-> +	u8 val;
-> +	u8 link_status[DP_LINK_STATUS_SIZE] = {};
-> +
-> +	if (*status_control == 1) {
-> +		if (mtk_dp->train_info.tps4) {
-> +			ret = mtk_dp_train_set_pattern(mtk_dp, 4);
-> +			if (ret)
-> +				return -EINVAL;
-> +
-> +			val = DP_TRAINING_PATTERN_4;
-> +		} else if (mtk_dp->train_info.tps3) {
-> +			ret = mtk_dp_train_set_pattern(mtk_dp, 3);
-> +			if (ret)
-> +				return -EINVAL;
-> +
-> +			val = DP_LINK_SCRAMBLING_DISABLE |
-> +				DP_TRAINING_PATTERN_3;
-> +		} else {
-> +			ret = mtk_dp_train_set_pattern(mtk_dp, 2);
-> +			if (ret)
-> +				return -EINVAL;
-> +
-> +			val = DP_LINK_SCRAMBLING_DISABLE |
-> +				DP_TRAINING_PATTERN_2;
-> +		}
-> +		drm_dp_dpcd_writeb(&mtk_dp->aux,
-> +				   DP_TRAINING_PATTERN_SET,
-> +				val);
-> +
-> +		drm_dp_dpcd_read(&mtk_dp->aux,
-> +				 DP_ADJUST_REQUEST_LANE0_1,
-> +				lane_adjust,
-> +				sizeof(*lane_adjust) * 2);
-> +
-> +		mtk_dp_train_update_swing_pre(mtk_dp,
-> +					      target_lane_count,
-> lane_adjust);
-> +		*status_control = 2;
-> +		(*iteration_count)++;
-> +	}
-> +
-> +	drm_dp_link_train_channel_eq_delay(&mtk_dp->aux,
-> +					   mtk_dp->rx_cap);
-> +
-> +	mtk_dp_read_link_status(mtk_dp, link_status);
-
-drm_dp_dpcd_read_link_status(&mtk_dp->aux, link_status);
-
-Regards,
-CK
-
-> +
-> +	if (!drm_dp_clock_recovery_ok(link_status,
-> +				      target_lane_count)) {
-> +		mtk_dp->train_info.cr_done = false;
-> +		mtk_dp->train_info.eq_done = false;
-> +		dev_dbg(mtk_dp->dev, "Link train EQ fail\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (drm_dp_channel_eq_ok(link_status,
-> +				 target_lane_count)) {
-> +		mtk_dp->train_info.eq_done = true;
-> +		dev_dbg(mtk_dp->dev, "Link train EQ pass\n");
-> +		return 0;
-> +	}
-> +
-> +	if (*prev_lane_adjust == link_status[4])
-> +		(*iteration_count)++;
-> +	else
-> +		*prev_lane_adjust = link_status[4];
-> +
-> +	return -EAGAIN;
-> +}
-> +
-> 
 
 
 -- 
