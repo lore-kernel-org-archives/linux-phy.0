@@ -4,100 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66494C43219
-	for <linux-phy@archiver.kernel.org>; Tue, 31 May 2022 13:50:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09EBFC433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 31 May 2022 14:00:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5HvSUT+4Rh/H9iFgD9uslh52T41flhJhUaoFlJSxeYw=; b=23OUNcoPPL9Bqc
-	Ga6LWI5h2znGVsRW2ysA3amlaFallzckNAZgf7Hdmwo0CWNkKg7LfnQZiFIwbxwlbYXbHxzM9BN4E
-	dqTXuBpHfa+R8QAGMiEmN1NcBZz/zId+uYjvG/t7lmzIC2NGLVxNBrGlUoJU9HCeAZsr4PKOfV6AD
-	4iD3A99kX7qiXVu5QS24zfOkUweezQbAfNWZQnL1Nz8TeA52kKmn9KVb8/+nc0ZAF/gJJk4l8YAy4
-	QnDuLrRk+OBsN0Ssi+IQlXyRPvI9EQPs9viK5h6HU9Vq0h7Zr4sv45AVQWk9vBSegeWULFz7XtKZP
-	vcKGESKi8Tn5gW5P4bcQ==;
+	List-Owner; bh=1/iiHexYYGdHeRz3RboJ9BFQHCfVaJ6HoTO1gymXH+w=; b=MlGkpoykubNrwu
+	qXrM0BxwAgEliSZiYf2m025094TMxfAziRvo3voyhPrY8Yv1EL2CIELQHIkqVI8ExaNn1iZVXAGgb
+	xNNm8kZZbloOssvWXJyugLJef+0ZaQB3b8pshWDKCl7YuCTSnp+O6+Dv+dYSJMuXuvHRHCAXXkO6/
+	CpAlajUZRNA1KdaGVdTOjWPKJYTfM4mervTmfWWFbHJKoy95jRRmAhT2OV/SvrVMCNSm8N+KHEWEP
+	+T7qvFJY244OWqocWCpZDzwGNzy19d4t1b/VtcsdXjF/XTFfSLqZLK1JrBopwHAfvr071jRK2b5gz
+	O7u6V//1U/ZOxUkR07Gw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nw2Gq-00BA98-QP; Tue, 31 May 2022 13:50:52 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1nw2Q1-00BCbR-EV; Tue, 31 May 2022 14:00:21 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nw2Gj-00BA1V-3h
-	for linux-phy@lists.infradead.org; Tue, 31 May 2022 13:50:48 +0000
-Received: by mail-wr1-x431.google.com with SMTP id x17so9726537wrg.6
-        for <linux-phy@lists.infradead.org>; Tue, 31 May 2022 06:50:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=Rhg9XywWcUEQoXHHOkH8KOfZLNdD9cfZxq1k510SeME=;
-        b=f2TCBVdVqKs2d3bbpFlUz+bWim4u2lr3QjfXJSMkoYBGOJYBjmbpfVuuCPQ1M+/GfY
-         CbyJz8AQWlH91yhnuVv3nNs8GwIZwLBuX3BDAG45srkoVImN6bE4xdnOY1rAlYuj3xoB
-         ltsrFFCgDV4Ptd+v9uov9/wx5GOZSM77RWXPgXFKgVPbFwg44eAcSYuTn6oRbXZEGMk1
-         Tmj5VB9r+XBDB8Aj7zbDgRMN12yOUFGc3C6F8no0PQe7fyMLm8nrwonj9KIwk/3CR0me
-         xu7R27ux8IQaCAI4io7kuQvP2U3r/U5gDA8icYuJ7PrpVi0sDuuLHkOCq84Ayiw7cxHZ
-         W13w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=Rhg9XywWcUEQoXHHOkH8KOfZLNdD9cfZxq1k510SeME=;
-        b=kXK4cmfvus0nr4FOCamLJxiGdvCkH4R5ZnLm3Fi4LY34dyZGunZgGLI1r1g10CvwcL
-         1assEE/rN1c4gE0cJxFn/P0jUcMZPhnK31AjWZDOoOvi2bgeffbfsoP/y34b2c+z/Sh/
-         oCiBm31gruGPiQw5o4DfjISAj2c8neH0C/8LwZI1st8Sel8qdW213pKqrYdfgsxbAS8M
-         eB5MnnK6MI8abuivW6TCCd8OT96PfPdJGriH+z+BiaYWD+OpqWm4uEuvlTaO74aXxzZa
-         YIvLWiqkn8z56TK7UB199GKBW2emCNStnWkC+NNPZOEtAnRcb5sLrDuiA6+AJhLckyZu
-         HX2Q==
-X-Gm-Message-State: AOAM532Pl90QiccKp9FgA6ncCvtNOepN69aK/FeN1Am8YAtzYC52vd/Y
-	IcVWtLwfFjnbJex4xwnPALPYmg==
-X-Google-Smtp-Source: ABdhPJzbtZjU9hBgzu5sIg7U9W9xnNGsVfv5g3LxRDNansPDMf8fBBZCHyOij4j/XzBQXQe15IzqMw==
-X-Received: by 2002:a5d:55c1:0:b0:210:27e0:ec9c with SMTP id i1-20020a5d55c1000000b0021027e0ec9cmr13763855wrw.420.1654005043342;
-        Tue, 31 May 2022 06:50:43 -0700 (PDT)
-Received: from localhost.localdomain ([88.160.162.107])
-        by smtp.gmail.com with ESMTPSA id l11-20020a05600c1d0b00b00394351e35edsm2404806wms.26.2022.05.31.06.50.41
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 31 May 2022 06:50:42 -0700 (PDT)
-From: Fabien Parent <fparent@baylibre.com>
-To: robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	vkoul@kernel.org,
-	qii.wang@mediatek.com,
-	matthias.bgg@gmail.com,
-	jic23@kernel.org,
-	chaotian.jing@mediatek.com,
-	ulf.hansson@linaro.org,
-	srinivas.kandagatla@linaro.org,
-	chunfeng.yun@mediatek.com,
-	broonie@kernel.org,
-	wim@linux-watchdog.org,
-	linux@roeck-us.net,
-	Wenbin Mei <wenbin.mei@mediatek.com>
-Cc: devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	dmaengine@vger.kernel.org,
-	linux-i2c@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-iio@vger.kernel.org,
-	linux-mmc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	linux-watchdog@vger.kernel.org,
-	Fabien Parent <fparent@baylibre.com>
-Subject: [PATCH 03/17] dt-bindings: mmc: mtk-sd: add bindings for MT8365 SoC
-Date: Tue, 31 May 2022 15:50:12 +0200
-Message-Id: <20220531135026.238475-4-fparent@baylibre.com>
-X-Mailer: git-send-email 2.36.1
-In-Reply-To: <20220531135026.238475-1-fparent@baylibre.com>
-References: <20220531135026.238475-1-fparent@baylibre.com>
+	id 1nw2Py-00BCaq-KM
+	for linux-phy@lists.infradead.org; Tue, 31 May 2022 14:00:20 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 211E561295;
+	Tue, 31 May 2022 14:00:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9CA15C385A9;
+	Tue, 31 May 2022 14:00:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1654005616;
+	bh=q/6sgbATI5IGKHza9C0MgvErESqSH3PyBoPWgxa+OIM=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=CX/ReGNQTm/xRh0Gu3mVUAMSIxbKbyeaz9KU7M9FazOhhK8BFzC+T/fsJEwCh3YUp
+	 pQ9U8v2JwbvcH6PKll7nIR70yaZMvzebvClMn/TOXwRqM/2MdCDOCxrnbt1lrNtkdQ
+	 yK8AQawwlqeAGY4JvL3Mc1AlqFK3Omd6OPByuRu3Jk5FcF6hBMYGEYAr4nj/wAcYMF
+	 4drs03/YHZqud99fhgVGvZWrJxtln/YQm6hSbRZePCy5cnb9d+Mct2V6hTEip1DmD4
+	 xY/urZXJml2htgPtFgKEFjgUHU3dxX3uyc8PAKnWDi3vYkrMoFipWaFAKLfluBf0QT
+	 yNIBgRDMEPAZA==
+Date: Tue, 31 May 2022 16:00:12 +0200
+From: Marek =?UTF-8?B?QmVow7pu?= <kabel@kernel.org>
+To: Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "pali@kernel.org" <pali@kernel.org>, Damien Le Moal <Damien.LeMoal@wdc.com>
+Subject: Re: ARMADA espressobin SATA drive detection failure
+Message-ID: <20220531160012.1e7e1b48@dellmb>
+In-Reply-To: <20220531124159.3e4lgn2v462irbtz@shindev>
+References: <20220531124159.3e4lgn2v462irbtz@shindev>
+X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220531_065045_280001_A278CADC 
-X-CRM114-Status: UNSURE (   8.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220531_070018_796097_071FBFF6 
+X-CRM114-Status: GOOD (  16.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,30 +72,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add MMC bindings for MT8365 bindings.
+On Tue, 31 May 2022 12:41:59 +0000
+Shinichiro Kawasaki <shinichiro.kawasaki@wdc.com> wrote:
 
-Signed-off-by: Fabien Parent <fparent@baylibre.com>
----
- Documentation/devicetree/bindings/mmc/mtk-sd.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+> Hello Pali, Marek,
+> 
+> I have an ARMADA espressobin board, and I'm setting up SATA drive test
+> environment on it. Using that board, I observe that SATA drives are not
+> detected after merging two commits [1]. They were merged in the kernel at
+> v5.18-rc1. With v5.17 kernel, the SATA drives were successfully detected.
+> Reverting the commits from v5.18, SATA drives can be detected.
+> 
+> [1] ee995101fde6 ("Revert "ata: ahci: mvebu: Make SATA PHY optional for Armada 3720"")
+>     934337080c6c ("phy: marvell: phy-mvebu-a3700-comphy: Add native kernel implementation")
+> 
+> FYI, here I share related kernel messsages:
+> 
+> $ dmesg | grep -e ata -e mvebu
+> [    4.007130] ahci-mvebu d00e0000.sata: supply ahci not found, using dummy regulator
+> [    4.014963] ahci-mvebu d00e0000.sata: supply phy not found, using dummy regulator
+> [    4.022596] ahci-mvebu d00e0000.sata: supply target not found, using dummy regulator
+> [    4.031123] ahci-mvebu d00e0000.sata: AHCI 0001.0300 32 slots 1 ports 6 Gbps 0x1 impl platform mode
+> [    4.040180] ahci-mvebu d00e0000.sata: flags: ncq sntf led only pmp fbs pio slum part sxs 
+> [    4.050150] scsi host0: ahci-mvebu
+> [    4.053949] ata1: SATA max UDMA/133 mmio [mem 0xd00e0000-0xd00e0177] port 0x100 irq 30
+> [    4.388934] ata1: SATA link down (SStatus 0 SControl 300)
+> [    5.239165] EXT4-fs (mmcblk0p1): mounted filesystem with ordered data mode. Quota mode: none.
+> [   10.751378] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+> [   45.727407] ata1: SATA link down (SStatus 100 SControl 300)   (... I connected a drive to the SATA port)
+> [   46.497413] ata1: SATA link down (SStatus 100 SControl 300)
+> [   47.267411] ata1: SATA link down (SStatus 100 SControl 300)
+> [   48.047412] ata1: SATA link down (SStatus 100 SControl 300)
+> [   48.827416] ata1: SATA link down (SStatus 100 SControl 300)
+> [   49.597411] ata1: SATA link down (SStatus 100 SControl 300)
+> [   50.577414] ata1: SATA link down (SStatus 100 SControl 300)
+> [   51.357409] ata1: SATA link down (SStatus 100 SControl 300)
+> [   52.587418] ata1: SATA link down (SStatus 100 SControl 300)
+> [   53.367419] ata1: SATA link down (SStatus 100 SControl 300)
+> [   54.147413] ata1: SATA link down (SStatus 100 SControl 300)
+> [   54.917412] ata1: SATA link down (SStatus 100 SControl 300)
+> [   55.697410] ata1: SATA link down (SStatus 100 SControl 300)
+> [   56.477411] ata1: SATA link down (SStatus 100 SControl 300)
+> [   57.247415] ata1: SATA link down (SStatus 100 SControl 300)
+> [   58.017413] ata1: SATA link down (SStatus 100 SControl 300)
+> [   58.797412] ata1: SATA link down (SStatus 0 SControl 300)     (... I removed the drive from the SATA port)
+> 
+> As shown above, the message: "ata1: SATA link down (SStatus 100 SControl 300)"
+> is repeated. It looks like the function mvebu_a3700_comphy_sata_power_on()
+> fails to set up SATA phy correctly, but I'm not sure how to investigate further.
+> Could you advise next action to fix this issue?
+> 
 
-diff --git a/Documentation/devicetree/bindings/mmc/mtk-sd.yaml b/Documentation/devicetree/bindings/mmc/mtk-sd.yaml
-index 2a2e9fa8c188..3195b80ef057 100644
---- a/Documentation/devicetree/bindings/mmc/mtk-sd.yaml
-+++ b/Documentation/devicetree/bindings/mmc/mtk-sd.yaml
-@@ -38,6 +38,9 @@ properties:
-       - items:
-           - const: mediatek,mt8195-mmc
-           - const: mediatek,mt8183-mmc
-+      - items:
-+          - const: mediatek,mt8365-mmc
-+          - const: mediatek,mt8183-mmc
- 
-   reg:
-     minItems: 1
--- 
-2.36.1
-
+Weird, I tested this. I am taking my Espressobin and will look into
+this tomorrow.
+Marek
 
 -- 
 linux-phy mailing list
