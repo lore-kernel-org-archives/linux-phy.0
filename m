@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAB19C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 31 May 2022 03:44:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49EB3C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 31 May 2022 03:47:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dPNMsNKPB2df0ZBfE+NwqPCLcl6byxT8QqV1VU7B+k0=; b=2AfDXg7D4cQTgj
-	sGsBsZwB7ZVyOlVj++KG01Jg3RmcOJPrp8lnpgErdMZBNDqRpkAqF2+R/GG1p6d2gFRDaIMYOZpqY
-	vJOIxhHn7fZgGnZtawbTEsXgsSjqHFE6rW+6UHTop58EvK+V4I8GBJr5b0v9WpoKlXWQdUoUgWzFW
-	Jw6TxyXKZvkLWAwMSrrv87ufo3MRwWuRiiUAUjDGS6gZrxCkCfTjLSqhwkwBBwY9edHeYoYguMU2f
-	7Knk8HynaXw6DdUSeUBVx/nH8LOgNbAyixZHxirmUEKBasV377WPKWlLyclFM5dBv1YS6la8nBW8e
-	z4O2NhZym2czKHP1lf+A==;
+	List-Owner; bh=bN3BndPijHKyAWXKocFNzvieWtS9vE9pn2UqzQEWveQ=; b=RH0FriPvqTGO5R
+	H7oL4IeCl+gfoCaXaUM/fotdsfJ9SGTPu/yACzT8rhi/4epzuO7AcmtLXn27M13/2sHN3jSvER5R9
+	Lp0DSRBMkEq/c48iFdqTDsT091el1n6eON8B8fT9jScWpeoTWYg4OFFwE0+Y9Akm0bhGMqugC9jx1
+	zukOFF1ZMWzqvSYCR6+SAGFxFXp0JNAOnBYO8RWcsX3RYuRHjLfuyeswJtKg434lxNcv9w6Ci8fVo
+	uIZf5BGlGus29KNtxX5axPGQV77Gq937fy4Y4LBxMRyLNP5T+o+hLUMTZIqD7eaET0UaSzh8Df7Kd
+	RQVDfKRWTnc/6zzqjqrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nvsns-0096u2-1T; Tue, 31 May 2022 03:44:20 +0000
-Received: from mail-pf1-f180.google.com ([209.85.210.180])
+	id 1nvsrO-0097hb-JU; Tue, 31 May 2022 03:47:58 +0000
+Received: from mail-pg1-f174.google.com ([209.85.215.174])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nvsng-0096qn-SF; Tue, 31 May 2022 03:44:10 +0000
-Received: by mail-pf1-f180.google.com with SMTP id g205so946795pfb.11;
-        Mon, 30 May 2022 20:44:05 -0700 (PDT)
+	id 1nvsrD-0097c7-QA; Tue, 31 May 2022 03:47:48 +0000
+Received: by mail-pg1-f174.google.com with SMTP id g184so11694937pgc.1;
+        Mon, 30 May 2022 20:47:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=GAS4if3QmSgkBQk84oxb36i3hcj+BJ5KC+SnP5v10YI=;
-        b=E3XT/vnplugDg6PKoS2fQwzKUvb4VG++v4JBkHkOL9PN8D25yU+bJcRxqWdYUrtqC+
-         ouKG0/ndGWOZBDkJNGq1DzwCDSZzjq/izI0xn9S1Z4nWvWjXx1F18GsC4aYzhESBTynk
-         Guju9eb61Zd09Jtks1PuDTERdtTWalkvRjYI/Hmd1EuXiL4b+0YEkEwI1pwRG4IHnsKQ
-         85bONAGpBjIA3wRjngWDACZuO6T70HJslvo31bpLvj/zcRWzczhpD2YlQXd2vtUVp4uQ
-         z9M+WwXMtTNQF6OguSOeJ9mcThk2UK6met9x8YQUJgJ7o9/LxY7L+PFAVpU8bkvnKmEQ
-         AR2w==
-X-Gm-Message-State: AOAM531sh8Y7uvDAeZQKpezdtkrbt6ouyaorMWhDNQTwgMNs9J/Sy/pg
-	wf5KqZbKegD3E9qYF0NUrv4=
-X-Google-Smtp-Source: ABdhPJy3R+SEKpYof3apU+H/Lqu9cLFpPv2T1M1iRnABqADktJfJvoRXA+aytj78uxglaVYgQTUAQQ==
-X-Received: by 2002:a63:234d:0:b0:3fc:20f0:ec42 with SMTP id u13-20020a63234d000000b003fc20f0ec42mr6335327pgm.239.1653968645183;
-        Mon, 30 May 2022 20:44:05 -0700 (PDT)
+        bh=J88H2LWRLwC+ieC8JScbnG8mP43mgFvekYycMO4/ses=;
+        b=kqUmtq/KOcDmfXTkDLtHpmemdW9dUHAv6fZdUVw2WdQMc0aHNWn7DdGkngGzJCP1Ln
+         tDbTI6QyJZy1YfEok140cmR4DQ4B2cRUD9zxnMWnhRwIepcmfD5iap9Ukl8pwb/qzlR6
+         cCkFcOx2ad2byOyn8MlEJbcG+tkHVbZ69ZOeeXZwx4USDmI5Yr9Msprmnf7CNGQmnlny
+         +0CE1MMT2KSiJFe7Rs/g3EGkDCc5BV2Igp4JhYcZoRYsp6wjgxqyaM8sbcICYJgjAljw
+         aS2eqMhMMtEfhjSlhaoEEWSKEffTDG2NAq1QS3EgIdEhZRV9Id5RpPL37DQww8H+ZnOT
+         aS2w==
+X-Gm-Message-State: AOAM532pDeD9zGTJsGxt/jQKmqo/Mu2QQUjZWvj9yK1IzXArYgfCH1Mn
+	tWhdXJfA6JGN/WRP1OvDkys=
+X-Google-Smtp-Source: ABdhPJxAE16L0kA27cz2/U35A3Ni4sJOYW6n1ipy9pryUT7sj/V99AF3l1wrhV+18hPF5ybqLWP40A==
+X-Received: by 2002:a05:6a00:1ac9:b0:518:a48a:d8f6 with SMTP id f9-20020a056a001ac900b00518a48ad8f6mr41016280pfv.16.1653968858746;
+        Mon, 30 May 2022 20:47:38 -0700 (PDT)
 Received: from ?IPV6:2601:647:4000:d7:feaa:14ff:fe9d:6dbd? ([2601:647:4000:d7:feaa:14ff:fe9d:6dbd])
-        by smtp.gmail.com with ESMTPSA id z6-20020a170903018600b0015e8d4eb25bsm10067380plg.165.2022.05.30.20.44.03
+        by smtp.gmail.com with ESMTPSA id nh9-20020a17090b364900b001d903861194sm521563pjb.30.2022.05.30.20.47.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 30 May 2022 20:44:04 -0700 (PDT)
-Message-ID: <8be31be0-8766-061c-2544-25e296048528@acm.org>
-Date: Mon, 30 May 2022 20:44:02 -0700
+        Mon, 30 May 2022 20:47:37 -0700 (PDT)
+Message-ID: <f4e1d900-5755-c57f-029a-eade78a17476@acm.org>
+Date: Mon, 30 May 2022 20:47:36 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.9.1
-Subject: Re: [PATCH 1/6] dt-bindings: phy: Add FSD UFS PHY bindings
+Subject: Re: [PATCH 3/6] phy: samsung-ufs: add support for FSD ufs phy driver
 Content-Language: en-US
 To: Alim Akhtar <alim.akhtar@samsung.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
@@ -63,14 +63,13 @@ Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
  pankaj.dubey@samsung.com, linux-fsd@tesla.com,
  Bharat Uppal <bharat.uppal@samsung.com>
 References: <20220531012220.80563-1-alim.akhtar@samsung.com>
- <CGME20220531012336epcas5p2fcafe14c90ad3e3a0901fccd62d15437@epcas5p2.samsung.com>
- <20220531012220.80563-2-alim.akhtar@samsung.com>
+ <CGME20220531012347epcas5p48262cae18c75bb6ed029f7cd920800b4@epcas5p4.samsung.com>
+ <20220531012220.80563-4-alim.akhtar@samsung.com>
 From: Bart Van Assche <bvanassche@acm.org>
-In-Reply-To: <20220531012220.80563-2-alim.akhtar@samsung.com>
+In-Reply-To: <20220531012220.80563-4-alim.akhtar@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220530_204408_961401_AB94C274 
-X-CRM114-Status: UNSURE (   7.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220530_204747_895380_DE85DB0F 
+X-CRM114-Status: GOOD (  11.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,9 +87,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 5/30/22 18:22, Alim Akhtar wrote:
-> Adds tesla,fsd-ufs-phy compatible for Tesla FSD SoC
+> diff --git a/drivers/phy/samsung/phy-fsd-ufs.c b/drivers/phy/samsung/phy-fsd-ufs.c
+> new file mode 100644
+> index 000000000000..a03656006093
+> --- /dev/null
+> +++ b/drivers/phy/samsung/phy-fsd-ufs.c
+> @@ -0,0 +1,63 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * UFS PHY driver data for FSD SoC
+> + *
+> + * Copyright (C) 2022 Samsung Electronics Co., Ltd.
+> + *
+> + */
+> +#ifndef _PHY_FSD_UFS_H_
+> +#define _PHY_FSD_UFS_H_
 
-What does FSD stand for? Please clarify this in the patch description.
+Please do not use header file guards in a .c file.
 
 Thanks,
 
