@@ -4,74 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B991AC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 31 May 2022 14:41:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CE62C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 31 May 2022 14:42:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ek0k2kLYT6R7y+ntAnniVD7xPAKvqXFJrS98BCUZJwM=; b=kYAyb8lbNfqSdQ
-	oKkY1p+ijJwDk4w82z5CP0v+qqn8w7aVzG6ikk3YyHYFP9OlxzElO7mCmVUQnXLJ71SrOkB7vB8iu
-	FCS7Wsb55etq2MXCdQf9ltiWa5p1oI6HqMnQNOCcqN3kJCpPs2u7Uvubji081sj+XJdKJdIA6yVH6
-	aDlLDhtjK4gkl8hRK3J/2lCZsPGjTeK2qd5cUU5zhfpPPexJn2HZdLQ7t4XYJvFbsJSa23burd+g2
-	SXOaNAI4RqpllNDhGvrV2VaFNNXtTXi+rdbh3Eb3RQzjPnPgxyXLVTEx0HXRRts6WVtot/ZQrGPKJ
-	ACYT4d+qK4gVuZvacutg==;
+	List-Owner; bh=4bU9huRgaSPuZZml2lPeieSxTBXvEKW4qqssbE/aBTM=; b=Bdi4irjVpVqSw0
+	kOBYp5sCeyGnS51mVtECs7Uaqy5+nJow2eUd7W5bM+76ZfyKvV0/2bZEhEP3i7uNMc1C/kEkuRnqA
+	2+BoXrntwU2sDGSMBSVLS8+tRIRUUpBoZTU4a1xsV6lZ0P9z0Gl9I8NcmWF+GxMHQ8yXl1tKM77Oh
+	/at7p+jWA9VdxraeALBLD9ZJreSpAH0qbBBYqeHKC2JRHBAi1Do37dga6pNzUvAgfIT8cVNgqAQau
+	/hxcZ2J3GLKCcGxsos6udVHn6oTplXv0FQFmCpoZlOC/8VpU5Wq5SwvCAIO2JKF+wqQmh5TDLbgL1
+	gv/X5OFs5QQvqb1WoD4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nw34C-00BJUy-4u; Tue, 31 May 2022 14:41:52 +0000
+	id 1nw34c-00BJhp-Pk; Tue, 31 May 2022 14:42:18 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nw34A-00BIzQ-15
-	for linux-phy@bombadil.infradead.org; Tue, 31 May 2022 14:41:50 +0000
+	id 1nw34I-00BIzQ-QK
+	for linux-phy@bombadil.infradead.org; Tue, 31 May 2022 14:41:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=3wGkmcChS3N6J5I1U5dOklUlfdbKJPPT1/iNxESisgg=; b=HwQTK5wp3Rzqh+elgwVA96A7La
-	WrEu22Ty/5zaH9xcFi9CFdfobOOUdP8OyQ5NDOUB7gF79HGcb5EgUpRXfnCFkfXxbMIKrUq125ZPr
-	f4/LePWgMNjzL6+lJJ+q0Ve9x55qt8Nu+4pw57Yldi+sCdq7QVwOwzol/DuijcQhizXfwiSnbp+v5
-	HYSxQqJhafz/thRblYL71MK3pdtL7gSjk4AIEubQbDh6f7WiJqVK5Af/kFtokR50a78YC45dl2ieg
-	lPT7f9+W9ZbMxk3aC2h5aSVvikKKAMKkeC0mJfRgJ3OSVjCm/+LJ6wHOMsbHuo3ODv49LXPk3hUQF
-	KRCQhBWQ==;
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	bh=Wl0eUhfQkf22AJDmTLSjt67Vrs4AO/BddtK22iFmA/I=; b=oCfBmQZjXElWtSfMWQ3pQysRTp
+	4GPaN247DzlSCprR1jUw828J4vBk66sHdJnnTZgEhFs3Jdrpusa9XK5UMOABZ0uvggIlMWJ074i4+
+	sVyliVjzz+j42wIp1N+g0XvHP6/g8KhzCoq48wkJWpPOrbpz0H7bRP6rpnOpPS7++J+niXZxycIPk
+	+aYk66STPQc1NB8M178TuB2/Z3zgF0zK0tS6kN9shIs2u2QQAK4lpsDyCSQ5NxKByNx+KFeDAZypW
+	AzyVOv3cWj/E1kLar0kDdPNAl8YJt9DfQnBb0BBJY9GZxQKbAIafnDFcDfAjvAmCxXJVwVQNNIxCB
+	QctZdN3w==;
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nw2H1-003Sdb-4k
-	for linux-phy@lists.infradead.org; Tue, 31 May 2022 13:51:14 +0000
-Received: by mail-wr1-x435.google.com with SMTP id e2so18822056wrc.1
-        for <linux-phy@lists.infradead.org>; Tue, 31 May 2022 06:51:03 -0700 (PDT)
+	id 1nw2Gw-003Sfi-VQ
+	for linux-phy@lists.infradead.org; Tue, 31 May 2022 13:51:02 +0000
+Received: by mail-wm1-x335.google.com with SMTP id f7-20020a1c3807000000b0039c1a10507fso1225636wma.1
+        for <linux-phy@lists.infradead.org>; Tue, 31 May 2022 06:50:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=baylibre-com.20210112.gappssmtp.com; s=20210112;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=3wGkmcChS3N6J5I1U5dOklUlfdbKJPPT1/iNxESisgg=;
-        b=fikIkFwWuhYcaTcEmINCMiakOznAvwOTyoARO2Ked0fxXRKlokFWxS4v+L3ZHkVXNE
-         KJo6JQRplqeWtr7bcHSDaD9wimVN6J5/aFLVwkOlxuupl3wfaWdmJLh5kAYbdtTckmjS
-         7ZGd0V7af7yBcvxj28ftOe7vntKmkUDl58co3QLQMh7EDttwJw6VIn65mWVSUtVSY17w
-         C+pC6wz1nhlOvs9cYDgkL55ay0oOBepTQ5OOmFShvRgJzHHRi41+K+1jqITOGGjVGPtn
-         sjkv7Mviq+G4VnQO6P1IU33v5RSiZUvtdFZ0EWYtGwnjrF0dBp7r7qRY6vrkRwHkHUXK
-         npvQ==
+        bh=Wl0eUhfQkf22AJDmTLSjt67Vrs4AO/BddtK22iFmA/I=;
+        b=YZO96mhcYG0MG87d8UPaolLiT4EBhzbYR+2tvzycFKH95/lqHD4Jvzk66jQVmww9GM
+         Kfuya/cPBUoxIoak9XlXW8H5NmofpLD8gqIUsA33sVyo/Yuc72GVVUFaMBT1tI9z/EKt
+         NS0T+fZwjd0jYvUswsjsKudEOEmH7IyunZjW0vI6BwdFL1QiOfrQQQndMC6y+6yEGjoo
+         WUJ3xntSihv5qvWX5bY6EsT4t/XTIGneUSkxDd+JFVeUG0kyU5v35dRrRxEPhkSvKohE
+         Q/wmLZ/0Dfhgbn0UZjwaY0AWfzaLcCmgbdayY/VxweaTPGhE8DjhUj3npWKQfucbxM0R
+         2K/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=3wGkmcChS3N6J5I1U5dOklUlfdbKJPPT1/iNxESisgg=;
-        b=c5ZL1kbqKlK4YpPAOXjKXrBEtGc3ot/2Os08ML6TqIDlUjgOA5SUqldzSUxvT8wAw6
-         J3FeA0U6Jxr7BiICOkEpmiCAzUuJc0Zow8B7GzVo+rYdGU3gw9wzq964AhqEVKnyFF6p
-         1Esl8E94LjglPhgNFZDTg8d2Iq2FCZsR6nKah0SAWr9xQrVBElRcfSnmu3Zt6x5egIy0
-         c6ZC05ueGsGfp1YoonYB2+ey1vQpMy+cyMRBhZYo/VypxQepJiQskoXO757hcJsRx1+G
-         6IgzJ5yAq+KJKflGqL83kGAk/v8QdQLO3l7PBS3ZuQBuUyD7Qh0ubT55lDmQ//ivwvXt
-         q9Rg==
-X-Gm-Message-State: AOAM532fkodOUcLNeahHk+1jIs9Vlx+AQNUgFzVXfTjWQzkkX55sjh/K
-	jKJfJ6kdQXO/Xi4suAyW2tBaEg==
-X-Google-Smtp-Source: ABdhPJxcPkJR1D9vj54qvl0alyjM+fo9L7Ht5RN1swDsTiyvQa4xekfb3jUiJKdRl+jEckFF9F7nug==
-X-Received: by 2002:adf:e0c5:0:b0:206:1ba3:26aa with SMTP id m5-20020adfe0c5000000b002061ba326aamr50251741wri.645.1654005062859;
-        Tue, 31 May 2022 06:51:02 -0700 (PDT)
+        bh=Wl0eUhfQkf22AJDmTLSjt67Vrs4AO/BddtK22iFmA/I=;
+        b=tENfLluVgkB1S9cHWFuiR8XJxes8DdXZ0dwKRMHvini/0vq2O5leYBgqj7RhaRMwM5
+         8sjh2BKv2V7M0uNvC1iJhe4Qqzq09kcAzQXetVFB6S3/7grHAVr3agLx/yaCwEztACql
+         NsAEQ4FcCm9p7PQ5m2ar83/ub5WTmT+l68hvBfjiNIHuALhDqbR+4g66zJDcwzg8cz+N
+         oJhId1minUxUvQkMKGexczzE3NZs0noICAT4rNgAFUG4TIgUGrFaKAd7+8CRR0SQMXD7
+         DkHu38LnszE/WI2XfdyrkwxxUp5FM7HalL5yCB2HU3ATTNxMwjyRFfgaLtAHnvjATqS+
+         5U3w==
+X-Gm-Message-State: AOAM533MDhLJl6E9GXy23KJUjD00qVxfCguO0z5o/nuaAcMhReWjdgPh
+	JGtj5i3IKgxXBSBz0u9ObuiXgA==
+X-Google-Smtp-Source: ABdhPJzY1EA1gKYAjC0/wFLQ8zOis9WUaThFryPbsCAa6HYcRuwOQnBjCPCWIyToQh8i4anN2+EsDQ==
+X-Received: by 2002:a05:600c:2182:b0:397:58f5:c6cf with SMTP id e2-20020a05600c218200b0039758f5c6cfmr23289080wme.86.1654005057059;
+        Tue, 31 May 2022 06:50:57 -0700 (PDT)
 Received: from localhost.localdomain ([88.160.162.107])
-        by smtp.gmail.com with ESMTPSA id l11-20020a05600c1d0b00b00394351e35edsm2404806wms.26.2022.05.31.06.51.01
+        by smtp.gmail.com with ESMTPSA id l11-20020a05600c1d0b00b00394351e35edsm2404806wms.26.2022.05.31.06.50.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 31 May 2022 06:51:02 -0700 (PDT)
+        Tue, 31 May 2022 06:50:56 -0700 (PDT)
 From: Fabien Parent <fparent@baylibre.com>
 To: robh+dt@kernel.org,
 	krzysztof.kozlowski+dt@linaro.org,
@@ -101,16 +101,16 @@ Cc: devicetree@vger.kernel.org,
 	linux-usb@vger.kernel.org,
 	linux-watchdog@vger.kernel.org,
 	Fabien Parent <fparent@baylibre.com>
-Subject: [PATCH 13/17] dt-bindings: usb: mediatek,mtu3: add MT8365 SoC bindings
-Date: Tue, 31 May 2022 15:50:22 +0200
-Message-Id: <20220531135026.238475-14-fparent@baylibre.com>
+Subject: [PATCH 10/17] dt-bindings: serial: mediatek: add MT8365 bindings
+Date: Tue, 31 May 2022 15:50:19 +0200
+Message-Id: <20220531135026.238475-11-fparent@baylibre.com>
 X-Mailer: git-send-email 2.36.1
 In-Reply-To: <20220531135026.238475-1-fparent@baylibre.com>
 References: <20220531135026.238475-1-fparent@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220531_145103_787774_DD0A6B67 
-X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-CacheID: sfid-20220531_145059_717995_AC6AEBBE 
+X-CRM114-Status: UNSURE (   8.67  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -132,21 +132,21 @@ Add binding documentation for the MT8365 SoC.
 
 Signed-off-by: Fabien Parent <fparent@baylibre.com>
 ---
- Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml | 1 +
+ Documentation/devicetree/bindings/serial/mediatek,uart.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml b/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml
-index df766f8de872..9ede6069d9e6 100644
---- a/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml
-+++ b/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml
-@@ -25,6 +25,7 @@ properties:
-           - mediatek,mt8173-mtu3
-           - mediatek,mt8183-mtu3
-           - mediatek,mt8192-mtu3
-+          - mediatek,mt8365-mtu3
-       - const: mediatek,mtu3
+diff --git a/Documentation/devicetree/bindings/serial/mediatek,uart.yaml b/Documentation/devicetree/bindings/serial/mediatek,uart.yaml
+index 4ff27d6d4d5b..71e78f285e47 100644
+--- a/Documentation/devicetree/bindings/serial/mediatek,uart.yaml
++++ b/Documentation/devicetree/bindings/serial/mediatek,uart.yaml
+@@ -44,6 +44,7 @@ properties:
+               - mediatek,mt8186-uart
+               - mediatek,mt8192-uart
+               - mediatek,mt8195-uart
++              - mediatek,mt8365-uart
+               - mediatek,mt8516-uart
+           - const: mediatek,mt6577-uart
  
-   reg:
 -- 
 2.36.1
 
