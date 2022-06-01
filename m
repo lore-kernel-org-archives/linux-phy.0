@@ -4,75 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 475EFC4167D
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 10:41:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA6A7C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 10:45:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TeskJFViVeXDMkBNy/R2VJ9RpTdTZa9bVeJEJ2tQWfw=; b=WhL6MCA4IUeGeL
-	L9Ti1Tchrhea6SeTicRG9rlF3E4+LopktHuTFvjbKvSNWW1VLGtQbORrj69zOx1hSBvWbsrMqAOMV
-	WXqYKA73Z4BaDLb1BP/WSkA18Q0BNSULYOS/2W69PKeHS5x+TQ2TxUzm3pt792k4jjU60yRQszzNS
-	UE6wl6MvX88fLtsd9+uZdO4iH9DEZrILmMYVhb3HmJH2qP/Ibe9cmL15vLh6+HZcLvSlMWcmyZUvH
-	JthORo1G/QtppDFibKxh0taa3n+ATeeJErCk8XSgpf7MtmDRjXmtX6qNl9+tmQRoRaxKljN5I9k9g
-	sW/4huAdqVd+3Db8n0VA==;
+	List-Owner; bh=EhHKCALNfQZvIga7zi4p2qoLLv2dR5PUEPh3YeSSu8g=; b=fjagpaBdpEfg/7
+	/P3W4/db1PD0sfmdRkZ/fIER1gmvDYYlpT+znnmuSaGTqNRW0s9d2OzxJNJ0KsxmGcVJk+PXpd3nE
+	Xbv03j4q03iA2rKUV/pxpWBkihU14xXWO5cyviVBzSnkBEo66oGvmtZnX607fe3kvopxNzNN1ipec
+	RCC+6n3J2G3E8vKzCOwGxYZa0DiCOBtk4hy5+SI8Ezy2hp2iwCwk5up8hXZsto9fkkqfTWJb+GRyJ
+	kTO4Vu4ibqvCVwseKib76NBlbrUCFqsiwkZ0xtEecfLL0ONcI9UsDp29r2k3p2jQA2omLn+wXy8oP
+	Ei/FqhwhxP3nYQdOnD+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwLms-00FNwX-LP; Wed, 01 Jun 2022 10:41:14 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1nwLr5-00FPNh-R5; Wed, 01 Jun 2022 10:45:35 +0000
+Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwLmk-00FNtB-CD
-	for linux-phy@lists.infradead.org; Wed, 01 Jun 2022 10:41:12 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id f9so2948187ejc.0
-        for <linux-phy@lists.infradead.org>; Wed, 01 Jun 2022 03:41:06 -0700 (PDT)
+	id 1nwKmg-00ExVo-Q6
+	for linux-phy@lists.infradead.org; Wed, 01 Jun 2022 09:37:00 +0000
+Received: by mail-ej1-x629.google.com with SMTP id q1so2511632ejz.9
+        for <linux-phy@lists.infradead.org>; Wed, 01 Jun 2022 02:36:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=YnwlxkEskig5qSEZkf1OUJFDCbLfIauiQR7owBPAAo8=;
-        b=o3oy882DW5XoM121QxgLAIqDZmLSK6/PrEQb4XvQeRV0EbxfAnEYajgac3QLI9FcMp
-         4SF5C5oNQogqHKHnGl1RjMphuthUgorSKRQaD3mLQrEnRwutFisd/3XW2m/RJCzJ0+1v
-         tkp0rArEAuR2Tk4/dlGSFfTxR/sxOC1Cdk3lvFAiSzaUJCoeqQvk34iQ3YtoEwYP9jQC
-         vqMMi5q+lDHqZkOawknPynNZ7RJd/5GHehRkUcT7oK0EPZ21LSkvWGONymsEa+4JEP7i
-         qjK82e59DvTe0ppOR5EgGlx6B82dcRv5j9w7gCLxi/yDXx5qJ39cTI5FpLvoPg4bTzNf
-         MbMw==
+        bh=BvJY1lFnsr0Ymr0p7fEBBy1zBdInDHqv2gZieFwic/w=;
+        b=H9oMDfi9FTLslshDgNUeUCSTiDMS6SPqQwQ4xmvp2YZvpk8mRC3cDlTC3xpYhnqMtp
+         nPH5zKM7d+MOUcflu/CWX3v4wWpaT9OposzSM/Dxx78jsQELZDS5MGcQrSkywIX6o5Uh
+         4MpGtaojX5vTHNuVIp8cnOB/0ztfpdpeB3mh/avFuWHvaJ19hKjRBAfWOWCvpf81qUhb
+         PX1Cb+q3YAxaR3A5LiSjRG9kjKmrWrFqrOgbDUopVp1qK7P6ID4hzxjnsii4gTsV3W5k
+         rOX8IHcJbZ2vzaD1PmxLhGXES4FfrspfYMIIDx5GmxITFiWW0RHW7uODZtl6Lpz4t4Xu
+         p4SA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=YnwlxkEskig5qSEZkf1OUJFDCbLfIauiQR7owBPAAo8=;
-        b=i2MTcqaCzG0mJbJbHlsrT4UWoJRZ7vHCczgROClUyrVJy3veH8xT9nIBKeggHUAsVc
-         3/46YwkvrAqERNM0QM+1yw5pGhsaTBkrumZ6MZUVOZpWIWSOSK09WBzWZtd5FB4ZM0n4
-         w2PmyWLgfEPb7a0jiBH3TUM8Tf7O3cvaBQgxiGtlkjWMKOPMvH+zBkUOUL0n/lhkb3gB
-         QOS9G/IV8jtpZ2Q3lnM1zaWMWGaSJXVR6UAnZmiljnekTn1g0YPvsr0Le0faTeCUE64V
-         MbVLcH1Szsf8XcM4iLy6FXzwSc1ohYFYhO8Kv6xY9M88Zj9oC5QJVGoBxVxefLYPOjAA
-         h1CQ==
-X-Gm-Message-State: AOAM531mVt2ecPdDiDgYo3TUbvgmKHrypvPl1n0EE9+T3DBFtlNCkYvL
-	q3DqdmTiY21YZePihAvXrwJWVK65FA/LjBFG
-X-Google-Smtp-Source: ABdhPJyobmFzrAd7aGPFPzNizVmWKEMaqJL/SVLVJ4JJ7gg9SZs/2Gv6F8acA22LJi7CFkPE62rb6g==
-X-Received: by 2002:a17:907:9805:b0:6f4:fe0e:5547 with SMTP id ji5-20020a170907980500b006f4fe0e5547mr56262621ejc.426.1654080064935;
-        Wed, 01 Jun 2022 03:41:04 -0700 (PDT)
+        bh=BvJY1lFnsr0Ymr0p7fEBBy1zBdInDHqv2gZieFwic/w=;
+        b=KlT6d49ynmmDMqZgcQxA+rgYFit0ePabUHgZu1aKRR1qJ62Ds7aSflC3Beyvdc85x6
+         oL/4hIQLvT+WXNzDBLcuro9e/A+55JPdCWDk8DLY2cf0DXYa39gQ93wtbb9cYOM/hTJf
+         6SyYPiOroWULWkQ56vWiG3oz+bHfmUrZSqQWDUiyZWNz6bh8qDbSeoE6y7fDvSkwXfpy
+         bVavzoYrCYdHCPiaPvamfZ3iMYYYXrn/ZOOub/IoGTXMg4GPpoNLnD5Hehq4/KkX8Y48
+         ZfZ+fSsw9R7aAP455Gaw35px42WZWwZxLlg6Av4ea+HdfZ5RsyvOX2HVp8WbdYxVDtTS
+         FFhA==
+X-Gm-Message-State: AOAM531UXfJZhabgL1VTv9pA3awDeQ/CcHzBaaSoqR1Mzp7sgmurf5R3
+	8xNWke+QIMQrswWz00noiHNssw==
+X-Google-Smtp-Source: ABdhPJw2rvaPJFhu2OJTcgjX9RCpncnnG8SPTMWTUMQWrgzBxKr8ze5Lrm8qBjOHLVpPw2RtdL3afA==
+X-Received: by 2002:a17:907:97d2:b0:6ff:288d:1bf2 with SMTP id js18-20020a17090797d200b006ff288d1bf2mr26274477ejc.664.1654076217545;
+        Wed, 01 Jun 2022 02:36:57 -0700 (PDT)
 Received: from [192.168.0.179] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id b17-20020a50e791000000b0042ac2705444sm774652edn.58.2022.06.01.03.41.03
+        by smtp.gmail.com with ESMTPSA id u18-20020a170906069200b006f3ef214e13sm494920ejb.121.2022.06.01.02.36.55
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 01 Jun 2022 03:41:04 -0700 (PDT)
-Message-ID: <72329bd9-3d8d-a18c-236d-8a84e5dcc455@linaro.org>
-Date: Wed, 1 Jun 2022 12:41:03 +0200
+        Wed, 01 Jun 2022 02:36:57 -0700 (PDT)
+Message-ID: <8924ef92-d8f7-1f10-b1f7-7f9bc1e2d444@linaro.org>
+Date: Wed, 1 Jun 2022 11:36:55 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.9.1
-Subject: Re: [PATCH 17/17] arm64: dts: mediatek: add mt8365-evk board
- device-tree
+Subject: Re: [PATCH 05/17] dt-bindings: dma: mediatek,uart-dma: add MT8365
+ bindings
 Content-Language: en-US
 To: Fabien Parent <fparent@baylibre.com>, robh+dt@kernel.org,
  krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, qii.wang@mediatek.com,
  matthias.bgg@gmail.com, jic23@kernel.org, chaotian.jing@mediatek.com,
  ulf.hansson@linaro.org, srinivas.kandagatla@linaro.org,
  chunfeng.yun@mediatek.com, broonie@kernel.org, wim@linux-watchdog.org,
- linux@roeck-us.net
+ linux@roeck-us.net, Long Cheng <long.cheng@mediatek.com>
 Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
@@ -81,12 +81,13 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
  linux-watchdog@vger.kernel.org
 References: <20220531135026.238475-1-fparent@baylibre.com>
- <20220531135026.238475-18-fparent@baylibre.com>
+ <20220531135026.238475-6-fparent@baylibre.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220531135026.238475-18-fparent@baylibre.com>
+In-Reply-To: <20220531135026.238475-6-fparent@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220601_034106_490063_CD65F3CF 
-X-CRM114-Status: GOOD (  21.63  )
+X-CRM114-CacheID: sfid-20220601_023658_868973_30899654 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,337 +105,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 31/05/2022 15:50, Fabien Parent wrote:
-> Add device-tree for the MT8365-EVK board. The MT8365 EVK board
-> has the following IOs:
-> * DPI <-> HDMI bridge and HDMI connector.
-> * 2 audio jack
-> * 1 USB Type-A Host port
-> * 2 UART to USB port
-> * 1 battery connector
-> * 1 eMMC
-> * 1 SD card
-> * 2 camera connectors
-> * 1 M.2 slot for connectivity
-> * 1 DSI connector + touchscreen connector
-> * RPI compatible header
-> * 1 Ethernet port
-
-Thank you for your patch. There is something to discuss/improve.
-
+> Add binding documentation in order to support the MT8365 SoC.
 > 
 > Signed-off-by: Fabien Parent <fparent@baylibre.com>
 > ---
->  arch/arm64/boot/dts/mediatek/Makefile       |   1 +
->  arch/arm64/boot/dts/mediatek/mt8365-evk.dts | 578 ++++++++++++++++++++
->  2 files changed, 579 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/mediatek/mt8365-evk.dts
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/Makefile b/arch/arm64/boot/dts/mediatek/Makefile
-> index c7d4636a2cb7..02a9f784358e 100644
-> --- a/arch/arm64/boot/dts/mediatek/Makefile
-> +++ b/arch/arm64/boot/dts/mediatek/Makefile
-> @@ -40,4 +40,5 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt8183-pumpkin.dtb
->  dtb-$(CONFIG_ARCH_MEDIATEK) += mt8192-evb.dtb
->  dtb-$(CONFIG_ARCH_MEDIATEK) += mt8195-demo.dtb
->  dtb-$(CONFIG_ARCH_MEDIATEK) += mt8195-evb.dtb
-> +dtb-$(CONFIG_ARCH_MEDIATEK) += mt8365-evk.dtb
->  dtb-$(CONFIG_ARCH_MEDIATEK) += mt8516-pumpkin.dtb
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8365-evk.dts b/arch/arm64/boot/dts/mediatek/mt8365-evk.dts
-> new file mode 100644
-> index 000000000000..8f472caa06a3
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/mediatek/mt8365-evk.dts
-> @@ -0,0 +1,578 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2021 BayLibre, SAS.
-> + * Author: Fabien Parent <fparent@baylibre.com>
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
-> +#include <dt-bindings/pinctrl/mt8365-pinfunc.h>
-> +#include "mt8365.dtsi"
-> +#include "mt6357.dtsi"
-> +
-> +/ {
-> +	model = "MediaTek MT8365 Open Platform EVK";
-> +	compatible = "mediatek,mt8365-evk", "mediatek,mt8365";
-> +
-> +	aliases {
-> +		serial0 = &uart0;
-> +	};
-> +
-> +	chosen {
-> +		stdout-path = "serial0:921600n8";
-> +	};
-> +
-> +	connector {
-> +		compatible = "hdmi-connector";
-> +		label = "hdmi";
-> +		type = "a";
-> +
-> +		port {
-> +			hdmi_connector_in: endpoint {
-> +				remote-endpoint = <&hdmi_connector_out>;
-> +			};
-> +		};
-> +	};
-> +
-> +	firmware {
-> +		optee {
-> +			compatible = "linaro,optee-tz";
-> +			method = "smc";
-> +		};
-> +	};
-> +
-> +	gpio-keys {
-> +		compatible = "gpio-keys";
-> +		input-name = "gpio-keys";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&gpio_keys>;
-> +
-> +		volume-up {
+>  Documentation/devicetree/bindings/dma/mediatek,uart-dma.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
-key-volume-up, volume-up-key or key-0
 
-> +			gpios = <&pio 24 GPIO_ACTIVE_LOW>;
-> +			label = "volume_up";
-> +			linux,code = <KEY_VOLUMEUP>;
-> +			wakeup-source;
-> +			debounce-interval = <15>;
-> +		};
-> +	};
-> +
-> +	memory@40000000 {
-> +		device_type = "memory";
-> +		reg = <0 0x40000000 0 0xc0000000>;
-> +	};
-> +
-> +	usb_otg_vbus: regulator-2 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "otg_vbus";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +		gpio = <&pio 16 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +	};
-> +
-> +	reserved-memory {
-> +		#address-cells = <2>;
-> +		#size-cells = <2>;
-> +		ranges;
-> +
-> +		/* 12 MiB reserved for OP-TEE (BL32)
-> +		 * +-----------------------+ 0x43e0_0000
-> +		 * |      SHMEM 2MiB       |
-> +		 * +-----------------------+ 0x43c0_0000
-> +		 * |        | TA_RAM  8MiB |
-> +		 * + TZDRAM +--------------+ 0x4340_0000
-> +		 * |        | TEE_RAM 2MiB |
-> +		 * +-----------------------+ 0x4320_0000
-> +		 */
-> +		optee_reserved: optee@43200000 {
-> +			no-map;
-> +			reg = <0 0x43200000 0 0x00c00000>;
-> +		};
-> +	};
-> +};
-> +
-> +&cpu0 {
-> +	proc-supply = <&mt6357_vproc_reg>;
-> +	sram-supply = <&mt6357_vsram_proc_reg>;
-> +};
-> +
-> +&cpu1 {
-> +	proc-supply = <&mt6357_vproc_reg>;
-> +	sram-supply = <&mt6357_vsram_proc_reg>;
-> +};
-> +
-> +&cpu2 {
-> +	proc-supply = <&mt6357_vproc_reg>;
-> +	sram-supply = <&mt6357_vsram_proc_reg>;
-> +};
-> +
-> +&cpu3 {
-> +	proc-supply = <&mt6357_vproc_reg>;
-> +	sram-supply = <&mt6357_vsram_proc_reg>;
-> +};
-> +
-> +&dpi0 {
-> +	pinctrl-names = "default", "sleep";
-> +	pinctrl-0 = <&dpi_func_pins>;
-> +	pinctrl-1 = <&dpi_idle_pins>;
-> +	assigned-clocks = <&topckgen CLK_TOP_DPI0_SEL>;
-> +	assigned-clock-parents = <&topckgen CLK_TOP_LVDSPLL_D4>;
-> +
-> +	/*
-> +	 * Ethernet and HDMI are sharing pins.
-> +	 * Only one can be enabled at a time and require the physical switch
-> +	 * SW2101 to be set on DPI position
-> +	 */
-> +	status = "okay";
-> +
-> +	port {
-> +		dpi_out: endpoint {
-> +			remote-endpoint = <&it66121_in>;
-> +		};
-> +	};
-> +};
-> +
-> +&ethernet {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&ethernet_pins>;
-> +	phy-handle = <&eth_phy>;
-> +	phy-mode = "rmii";
-> +	mac-address = [00 00 00 00 00 00];
-> +
-> +	/*
-> +	 * Ethernet and HDMI are sharing pins.
-> +	 * Only one can be enabled at a time and require the physical switch
-> +	 * SW2101 to be set on LAN position
-> +	 */
-> +	status = "disabled";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		eth_phy: ethernet-phy@0 {
-> +			reg = <0>;
-> +		};
-> +	};
-> +};
-> +
-> +&i2c1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&i2c1_pins>;
-> +	clock-frequency = <100000>;
-> +	status = "okay";
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-
-You defined address/size in DTSI.
-
-> +
-> +	it66121hdmitx: hdmi@4c {
-> +		compatible = "ite,it66121";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&ite_pins>;
-> +		vcn33-supply = <&mt6357_vibr_reg>;
-> +		vcn18-supply = <&mt6357_vsim2_reg>;
-> +		vrf12-supply = <&mt6357_vrf12_reg>;
-> +		reset-gpios = <&pio 69 GPIO_ACTIVE_LOW>;
-> +		interrupts-extended = <&pio 68 IRQ_TYPE_LEVEL_LOW>;
-> +		#sound-dai-cells = <0>;
-> +		reg = <0x4c>;
-
-Put reg after compatible.
-
-> +
-> +		ports {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +
-> +			port@0 {
-> +				reg = <0>;
-> +
-> +				it66121_in: endpoint {
-> +					bus-width = <12>;
-> +					remote-endpoint = <&dpi_out>;
-> +				};
-> +			};
-> +
-> +			port@1 {
-> +				reg = <1>;
-> +
-> +				hdmi_connector_out: endpoint {
-> +					remote-endpoint = <&hdmi_connector_in>;
-> +				};
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&mmc0 {
-> +	status = "okay";
-
-Status okay goes to the end. In some nodes you keep that style, in some
-not. Confusing.
-
-> +	pinctrl-names = "default", "state_uhs";
-> +	pinctrl-0 = <&mmc0_pins_default>;
-> +	pinctrl-1 = <&mmc0_pins_uhs>;
-> +	bus-width = <8>;
-> +	max-frequency = <200000000>;
-> +	cap-mmc-highspeed;
-> +	mmc-hs200-1_8v;
-> +	mmc-hs400-1_8v;
-> +	cap-mmc-hw-reset;
-> +	no-sdio;
-> +	no-sd;
-> +	hs400-ds-delay = <0x12012>;
-> +	vmmc-supply = <&mt6357_vemc_reg>;
-> +	vqmmc-supply = <&mt6357_vio18_reg>;
-> +	assigned-clocks = <&topckgen CLK_TOP_MSDC50_0_SEL>;
-> +	assigned-clock-parents = <&topckgen CLK_TOP_MSDCPLL>;
-> +	non-removable;
-> +};
-> +
-> +&mmc1 {
-> +	pinctrl-names = "default", "state_uhs";
-> +	pinctrl-0 = <&mmc1_pins_default>;
-> +	pinctrl-1 = <&mmc1_pins_uhs>;
-> +	cd-gpios = <&pio 76 GPIO_ACTIVE_LOW>;
-> +	bus-width = <4>;
-> +	max-frequency = <200000000>;
-> +	cap-sd-highspeed;
-> +	sd-uhs-sdr50;
-> +	sd-uhs-sdr104;
-> +	vmmc-supply = <&mt6357_vmch_reg>;
-> +	vqmmc-supply = <&mt6357_vio18_reg>;
-> +	status = "okay";
-> +};
-> +
-> +&mt6357_pmic {
-> +	interrupt-parent = <&pio>;
-> +	interrupts = <145 IRQ_TYPE_LEVEL_HIGH>;
-> +	interrupt-controller;
-> +	#interrupt-cells = <2>;
-> +};
-> +
-> +&mt6357_vibr_reg {
-> +	regulator-always-on;
-> +};
-> +
-> +/* Needed by MSDC1 */
-> +&mt6357_vmc_reg {
-> +	regulator-always-on;
-> +};
-> +
-> +&mt6357_vrf12_reg {
-> +	regulator-always-on;
-> +};
-> +
-> +&mt6357_vsim2_reg {
-> +	regulator-always-on;
-> +};
-> +
-> +&mt6357keys {
-> +	power-key {
-> +		label = "power";
-> +		linux,keycodes = <KEY_POWER>;
-> +		wakeup-source;
-> +	};
-> +
-> +	volume-down {
-
-volume-down-key
-
-> +		label = "volume_down";
-> +		linux,keycodes = <KEY_VOLUMEDOWN>;
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 
 Best regards,
