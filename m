@@ -4,74 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78789C433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 09:32:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E515C433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 09:34:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UHW1vS0aHgs59/sNghVTN8aiV/la0j7ZJJs7PCh0EC0=; b=viWDY5SI9X1+2l
-	Y+DQk1TLWylwNz1/ldpPaTqXj97fKh5YryvC2Ns0LrnprkfEcReETv/oo+f1COKVIs2jxEbUaasro
-	hTqwx0q5WiCHVNIu6g+HJ021pFZ+36vUyLqkobgjPVz2n6XKNhYpQQ+jYkznTdb1I/skg32l6U77/
-	Z1oxHb1Z4DNLf6tEkKWlzunA4HxI3+rHnhzIoxQD00b1w2wdOk8Q6ElzQpqO18mohureXfMD6fQUo
-	7jfMK3Sa6QHd65qQbIuS1NdpviuhUoLXuUdWsvbTdsxDKiINt/zNBc/smMGgv+1h4HNYMvEbkZOVQ
-	POsnky+MoGWJtdfb79ZA==;
+	List-Owner; bh=RbJViA2sw7wIji8MzDfP/7oaLupMe614C9cYY6Rrz/8=; b=oVnABKiPUXKBJG
+	f62QTuCPH6Brf0hgtvoD4RPPx26310xqbfR2oz3Cogsoupc5PUbv2ysOO03Rh7ERNIfGDGVBjFSE7
+	2PNMZJISl3xVniwbs/Bv4BDiDGgB1eg9wmllYud0D7PumL4t4bGpsnJL9XSZfgjcu/rc+wAyny96Y
+	c65/L1/Dt2t2aYSSj8HLmqp1f30I8EVdaNnvXZD11BISJb8SDt06q9pPaZj5ipgH4R1LN1hoO82YD
+	3QauoCeBNE2xphbuNFYr72X4JFAq1MWexFZdzD2TXx3/v7YhwdMJWgm7hAJXrg0oQToElUK7baMWb
+	l6ft5JgcFQHPw24YJ/1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwKi3-00EvoM-PV; Wed, 01 Jun 2022 09:32:11 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1nwKkM-00EwYz-Fk; Wed, 01 Jun 2022 09:34:34 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwKi1-00EvnM-Ka
-	for linux-phy@lists.infradead.org; Wed, 01 Jun 2022 09:32:11 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id c2so1353264edf.5
-        for <linux-phy@lists.infradead.org>; Wed, 01 Jun 2022 02:32:09 -0700 (PDT)
+	id 1nwKkB-00EwUY-3t
+	for linux-phy@lists.infradead.org; Wed, 01 Jun 2022 09:34:24 +0000
+Received: by mail-ed1-x536.google.com with SMTP id b8so1338365edf.11
+        for <linux-phy@lists.infradead.org>; Wed, 01 Jun 2022 02:34:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=9rLHj//9k/15fypiFbMELs3ChxXWRGpeQMJrEmUMxUs=;
-        b=QIpbmzzYJ0HAltV9KIinq7hcn1/hnXtpRXtMmZG9J7qu9J+yvPLSDMoa7T1mF07mXK
-         H0apr2OZxGQd0U1WCKeMv8lb+Fm0H/mDYSMtRdWizypZAKluo8iAZmIxB1zzo1cgkxVD
-         8FqROBoannHWns4ltnEoaFMetuFzZVnMg34x8TBZHDiL1S+h+agEWmJXOJBPr45zEleE
-         wIN4pLzhGLnCkSJ6swE6lcLnjUX895KzSJg8xs9oTGRBgvcXRQgxWZs0dfq2tVdBw1lA
-         e+iovxTxiCiSptWs6zjF6xpsc90sU1LjwN9TwlBSRUrniu3cN+/+/2A8nwrc4UNO1Pv1
-         qyIQ==
+        bh=roNxqKUu0+AV4DeO1JbEmmYOyNX8wIcqoT9AzN3Cm2M=;
+        b=bRYOQ9fGbJR0V+y0wEZKLfg/TqqyZIxzKGA17cV2dYd4XNtRdHyH4/yeq/LxJn/NsU
+         j6OqB6oDPLhE4+MsUHuxGDg87PixqxiwzQaEWzu7LQlfhqmrcWF4UkzqEBolU2arg+t6
+         ZEwzrsNkZLoDZczkN8gxN3A8zioU+OYUAKXz6M2fKE+P44DYTD4hjyLrpXG1BBn8GjtJ
+         Zwt1N2HkZX6pvO+XccPH+zn+GyEdE+57hkLjfHZB8pbh1tqGeuiAAR6NSEznBiagvjAc
+         M1xkmzTZ28Y8eJe5MQO0kbBJUDQjPWxbeeOzk7JlypHCfAslHnHPBBQFMRZo+sI+F7y6
+         ilhw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=9rLHj//9k/15fypiFbMELs3ChxXWRGpeQMJrEmUMxUs=;
-        b=pLIq5L1E54y3LnaLsRiQ41AFilcMNpeTCiMbYCM7lRfTb9pEhx+COJGsnwLz+LnTwv
-         OwZRoR+R8moe2EDqdTI+VNahNlmH2oUMDrhuOz3e29itU5cGCInyxIf81dXZ0+I3clG0
-         xexi/pPvny7m+0wLYFFO5J9Cdo6MMAyROhUgdEqo7jD4AVnxN5HiUr+a/voVbaXwONY+
-         9Es/E3ixnkrbHbC3Un0F0nXoX+kUyT7BU6Ug2I09W++ZQ4rd9lgOtfKrp1770h5k7wge
-         JRPNdrtvJDV9GvS57W23HUqJqeqZJyXpHH35SMYo+M/JG5SUIkHmG38WcvPbngK4Sm9X
-         CIPA==
-X-Gm-Message-State: AOAM531FeerCWHEnEstXYrMeqcq6rZsXVeIdMQk/LJYUKkXJBk6R9ycO
-	vTrqh+a/ssIKCxPkPK1FbDGE4w==
-X-Google-Smtp-Source: ABdhPJxIaNQdmdCizYbGGHKjK+me0jgNnS5X6cMWDDf2h3DFwSO74zQhHh65gXy+skv8i/8hh9yGoQ==
-X-Received: by 2002:a05:6402:e9f:b0:41c:df21:b113 with SMTP id h31-20020a0564020e9f00b0041cdf21b113mr69039921eda.217.1654075928172;
-        Wed, 01 Jun 2022 02:32:08 -0700 (PDT)
+        bh=roNxqKUu0+AV4DeO1JbEmmYOyNX8wIcqoT9AzN3Cm2M=;
+        b=eCfZjLEjGRFbmzH+LWJgrWgYlKhUc/YqYyNYdAda715ijD/KovpLhRDnxKDwdZSrFL
+         D9OHrOa9YXoXxHoDha7ib/eA3xO8wU9VZbtDKZOgkDjoMEOP4MjW2ySi1XpU8v3Qw4AO
+         IVXqQl+W5V4W8mBpG5DRLnFAK18/axC9D0cIZW7rVKvPkgVKbe/tU34DbX5T7RM5AfMe
+         PhpHIN5vDpn6B/Ufr8T2qB/ZeiYwkNSdMe6qMoamNQUjw9BV7wRNP/SJoR+pJFbLhqel
+         RlQGtPIoDp2K/5iXjR8O4gWMWA0pa+RvwHgtR3syhTf2MLuvO74Kz86/RkNVuqqVaz62
+         cKeQ==
+X-Gm-Message-State: AOAM532kifJ1lx0whbEbtuHKdECnODD5YOyuDyvFWt0dzmb4OUksiZqv
+	i0PwTcJ+7iN/eGgZbrWlUU3tzQ==
+X-Google-Smtp-Source: ABdhPJzh9Lf8L/NKchmFQc388SPcHvGUJvGg8NbDDJ7Sxuy5dahguWAyQXRYAWLbvqWHCJKhyvlBgQ==
+X-Received: by 2002:a05:6402:42c1:b0:42d:fba6:d5c5 with SMTP id i1-20020a05640242c100b0042dfba6d5c5mr1180660edc.295.1654076059375;
+        Wed, 01 Jun 2022 02:34:19 -0700 (PDT)
 Received: from [192.168.0.179] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id i23-20020a1709061e5700b00708a2ae7620sm102525ejj.67.2022.06.01.02.32.06
+        by smtp.gmail.com with ESMTPSA id b8-20020aa7c6c8000000b0042617ba637bsm710427eds.5.2022.06.01.02.34.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 01 Jun 2022 02:32:07 -0700 (PDT)
-Message-ID: <efdbb151-8213-d1e7-a935-0e857947d450@linaro.org>
-Date: Wed, 1 Jun 2022 11:32:06 +0200
+        Wed, 01 Jun 2022 02:34:18 -0700 (PDT)
+Message-ID: <c510cf8e-4111-8886-99e0-8ad35b3086a8@linaro.org>
+Date: Wed, 1 Jun 2022 11:34:17 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.9.1
-Subject: Re: [PATCH 00/17] Add support for MT8365 EVK board
+Subject: Re: [PATCH 02/17] dt-bindings: memory: add mt8365 SoC binding
+ documentation
 Content-Language: en-US
 To: Fabien Parent <fparent@baylibre.com>, robh+dt@kernel.org,
  krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, qii.wang@mediatek.com,
  matthias.bgg@gmail.com, jic23@kernel.org, chaotian.jing@mediatek.com,
  ulf.hansson@linaro.org, srinivas.kandagatla@linaro.org,
  chunfeng.yun@mediatek.com, broonie@kernel.org, wim@linux-watchdog.org,
- linux@roeck-us.net
+ linux@roeck-us.net, Yong Wu <yong.wu@mediatek.com>
 Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
@@ -80,11 +81,12 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
  linux-watchdog@vger.kernel.org
 References: <20220531135026.238475-1-fparent@baylibre.com>
+ <20220531135026.238475-3-fparent@baylibre.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220531135026.238475-1-fparent@baylibre.com>
+In-Reply-To: <20220531135026.238475-3-fparent@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220601_023209_756482_5F46062F 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20220601_023423_207026_7C9CB4A0 
+X-CRM114-Status: GOOD (  13.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,26 +104,73 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 31/05/2022 15:50, Fabien Parent wrote:
-> This patch series adds support for the MT8365 EVK board.
+> Add MediaTek SMI bindings for MT8365 SoC.
 > 
-> This series has dependencies on the following series:
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646256
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646091
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646083
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646081
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646076
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646068
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646020
-> https://patchwork.kernel.org/project/linux-mediatek/list/?series=646052
-> https://lore.kernel.org/r/20220504091923.2219-2-rex-bc.chen@mediatek.com 
-> https://lore.kernel.org/r/20220512062622.31484-2-chunfeng.yun@mediatek.com 
-> https://lore.kernel.org/r/20220512062622.31484-1-chunfeng.yun@mediatek.com
-> https://lore.kernel.org/r/20220524115019.97246-1-angelogioacchino.delregno@collabora.com
-> https://lore.kernel.org/all/20220127015857.9868-1-biao.huang@mediatek.com/
+> Signed-off-by: Fabien Parent <fparent@baylibre.com>
+> ---
+>  .../bindings/memory-controllers/mediatek,smi-common.yaml    | 6 ++++++
+>  .../bindings/memory-controllers/mediatek,smi-larb.yaml      | 6 ++++++
+>  2 files changed, 12 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml
+> index a98b359bf909..e1029ac99ab4 100644
+> --- a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml
+> +++ b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml
+> @@ -46,6 +46,11 @@ properties:
+>            - const: mediatek,mt7623-smi-common
+>            - const: mediatek,mt2701-smi-common
+>  
+> +      - description: for mt8365
 
-Eh... and how we are supposed to test or apply this? Such dependencies
-could mean none of automated tools will pick it up, so your patchset has
-to wait till dependencies got merged.
+Skip description and:
+
+> +        items:
+> +          - const: mediatek,mt8365-smi-common
+
+This should be rather enum. I see existing code did that way, but this
+way makes it bloated. If new device compatible with mt8186 comes, should
+be added to this enum, not to new items.
+
+> +          - const: mediatek,mt8186-smi-common
+> +
+>    reg:
+>      maxItems: 1
+>  
+> @@ -130,6 +135,7 @@ allOf:
+>              - mediatek,mt8192-smi-common
+>              - mediatek,mt8195-smi-common-vdo
+>              - mediatek,mt8195-smi-common-vpp
+> +            - mediatek,mt8365-smi-common
+>  
+>      then:
+>        properties:
+> diff --git a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml
+> index c886681f62a7..815d87fc64a0 100644
+> --- a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml
+> +++ b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml
+> @@ -32,6 +32,11 @@ properties:
+>            - const: mediatek,mt7623-smi-larb
+>            - const: mediatek,mt2701-smi-larb
+>  
+> +      - description: for mt8365
+> +        items:
+> +          - const: mediatek,mt8365-smi-larb
+> +          - const: mediatek,mt8186-smi-larb
+
+Ditto.
+
+> +
+>    reg:
+>      maxItems: 1
+>  
+> @@ -78,6 +83,7 @@ allOf:
+>              - mediatek,mt8183-smi-larb
+>              - mediatek,mt8186-smi-larb
+>              - mediatek,mt8195-smi-larb
+> +            - mediatek,mt8365-smi-larb
+>  
+>      then:
+>        properties:
 
 
 Best regards,
