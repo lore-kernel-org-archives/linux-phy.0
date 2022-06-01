@@ -4,89 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E515C433F5
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 09:34:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6ADAAC433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 09:35:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RbJViA2sw7wIji8MzDfP/7oaLupMe614C9cYY6Rrz/8=; b=oVnABKiPUXKBJG
-	f62QTuCPH6Brf0hgtvoD4RPPx26310xqbfR2oz3Cogsoupc5PUbv2ysOO03Rh7ERNIfGDGVBjFSE7
-	2PNMZJISl3xVniwbs/Bv4BDiDGgB1eg9wmllYud0D7PumL4t4bGpsnJL9XSZfgjcu/rc+wAyny96Y
-	c65/L1/Dt2t2aYSSj8HLmqp1f30I8EVdaNnvXZD11BISJb8SDt06q9pPaZj5ipgH4R1LN1hoO82YD
-	3QauoCeBNE2xphbuNFYr72X4JFAq1MWexFZdzD2TXx3/v7YhwdMJWgm7hAJXrg0oQToElUK7baMWb
-	l6ft5JgcFQHPw24YJ/1w==;
+	List-Owner; bh=vHvVkd4SvQ3KgR506YzT3osJLsK+cOxqC0j90NluJG0=; b=csMEfF8UJo4R/j
+	tlw9IxDI4jUIpU1UiKqRP6rgei9qWnxK5eU0hVII4H+dhIX0RqV9I1TXWSeHohwkjEztmO0yz4LrJ
+	nntcoJSPq4yLQrhoYQwax5HN+IWR0tktbxXrWNa8+jPRZY5MEBjD6yEUcMlEg1CIqtGek1/N6Mc4W
+	STsfC0HzdKpV5tNkzfv5hbDWtXn4FkyevDW6tqtHzNgsAoeJAIl3xIrNzCbBFaiwCHJnFh1ZsGWbk
+	8ZESPk4j2g+vlYqmkYhiXCPId59iy/Pntns1nhllPo2D3SyH7WZEYVk43ZaNb5cWegby+bTRBy0a9
+	VyTEIbrVJ+VbZPmVz4ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwKkM-00EwYz-Fk; Wed, 01 Jun 2022 09:34:34 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1nwKkp-00EwiH-Pb; Wed, 01 Jun 2022 09:35:03 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwKkB-00EwUY-3t
-	for linux-phy@lists.infradead.org; Wed, 01 Jun 2022 09:34:24 +0000
-Received: by mail-ed1-x536.google.com with SMTP id b8so1338365edf.11
-        for <linux-phy@lists.infradead.org>; Wed, 01 Jun 2022 02:34:20 -0700 (PDT)
+	id 1nwKkl-00Ewg0-6x
+	for linux-phy@lists.infradead.org; Wed, 01 Jun 2022 09:35:00 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id fd25so1369450edb.3
+        for <linux-phy@lists.infradead.org>; Wed, 01 Jun 2022 02:34:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=roNxqKUu0+AV4DeO1JbEmmYOyNX8wIcqoT9AzN3Cm2M=;
-        b=bRYOQ9fGbJR0V+y0wEZKLfg/TqqyZIxzKGA17cV2dYd4XNtRdHyH4/yeq/LxJn/NsU
-         j6OqB6oDPLhE4+MsUHuxGDg87PixqxiwzQaEWzu7LQlfhqmrcWF4UkzqEBolU2arg+t6
-         ZEwzrsNkZLoDZczkN8gxN3A8zioU+OYUAKXz6M2fKE+P44DYTD4hjyLrpXG1BBn8GjtJ
-         Zwt1N2HkZX6pvO+XccPH+zn+GyEdE+57hkLjfHZB8pbh1tqGeuiAAR6NSEznBiagvjAc
-         M1xkmzTZ28Y8eJe5MQO0kbBJUDQjPWxbeeOzk7JlypHCfAslHnHPBBQFMRZo+sI+F7y6
-         ilhw==
+        bh=1np58l0Ga8gAPyEnQM7qbTnnn39ozk3WmSTf/pHhsMA=;
+        b=FxTMvGpBCFeg1BoYbwmxDdCMOXat0Dl6sDzqkF2MpWnJq2pZtTCNhwmj6W3PeB75qP
+         rcPx+5D0Z3FQ8MKmJFh/4q9tShdIZea0l5zEmH43NfBWqwvsk6nv0b014UeFfKZuOIJM
+         7M6cZtmof8mF6X4ZH6LWCm95ou26ImCaBaNzOi46ZR1WrbeDHmwdISTvPIMCZ+QsDJVR
+         uH4HT1Lkl+X2M7UexFy4Duv1Fo88VNVCnN9YDMcqSCBEKdUv05UNVIBxHxknJwA6DqC1
+         c4qXXwjka6hHBGl8n5xtVoZrADjT5c1LU9AIHJO+9vwtz1FHXKKeq1M2uC0Ws2BGju+k
+         uZTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=roNxqKUu0+AV4DeO1JbEmmYOyNX8wIcqoT9AzN3Cm2M=;
-        b=eCfZjLEjGRFbmzH+LWJgrWgYlKhUc/YqYyNYdAda715ijD/KovpLhRDnxKDwdZSrFL
-         D9OHrOa9YXoXxHoDha7ib/eA3xO8wU9VZbtDKZOgkDjoMEOP4MjW2ySi1XpU8v3Qw4AO
-         IVXqQl+W5V4W8mBpG5DRLnFAK18/axC9D0cIZW7rVKvPkgVKbe/tU34DbX5T7RM5AfMe
-         PhpHIN5vDpn6B/Ufr8T2qB/ZeiYwkNSdMe6qMoamNQUjw9BV7wRNP/SJoR+pJFbLhqel
-         RlQGtPIoDp2K/5iXjR8O4gWMWA0pa+RvwHgtR3syhTf2MLuvO74Kz86/RkNVuqqVaz62
-         cKeQ==
-X-Gm-Message-State: AOAM532kifJ1lx0whbEbtuHKdECnODD5YOyuDyvFWt0dzmb4OUksiZqv
-	i0PwTcJ+7iN/eGgZbrWlUU3tzQ==
-X-Google-Smtp-Source: ABdhPJzh9Lf8L/NKchmFQc388SPcHvGUJvGg8NbDDJ7Sxuy5dahguWAyQXRYAWLbvqWHCJKhyvlBgQ==
-X-Received: by 2002:a05:6402:42c1:b0:42d:fba6:d5c5 with SMTP id i1-20020a05640242c100b0042dfba6d5c5mr1180660edc.295.1654076059375;
-        Wed, 01 Jun 2022 02:34:19 -0700 (PDT)
+        bh=1np58l0Ga8gAPyEnQM7qbTnnn39ozk3WmSTf/pHhsMA=;
+        b=BEmbW821TbcvvOFJHYK3TaINtjvrhLieGKTL0E9I8N9pb3fx8aaaOOxnJJoCobNAtl
+         mp3WvszNsFKO2IwGgOWmsB/LL5QZhgMCIJlglsCksjBaf7A1tOxI1sV5++44s/90x4Qg
+         j7EMur0QDUXKDsb2F826zVb9Di5tHo+hIcZcDYv1nV78YEWxYpYWAvLkV1nxulkRGDnr
+         +dcIIvFSrhxDAg53kflFN/TkoEf1Qa3dBEbrKYMvNZNeRc1CiihLcw2QRZqdA3xZC4C2
+         TkFxFEivIxeZsU5Bb4FzVzL28CGznDzV6NErmfHSB/x9AFto12HioCWZs5FRbkpd0E1i
+         5o6w==
+X-Gm-Message-State: AOAM532QL0OgVb2Hotq7EkNhsxyELWz0157hDZJBzrOUm+msgW5n5ilq
+	ENpFqqStktXXoWYP5aHs4fbfKg==
+X-Google-Smtp-Source: ABdhPJxEdF+CfXbx7tU2wd905loniQlDvsO66TbxWB3RqmGrBCz/WUwZDXZTrxvdJ4CljmwLTrODcA==
+X-Received: by 2002:a05:6402:1941:b0:413:2555:53e3 with SMTP id f1-20020a056402194100b00413255553e3mr69664287edz.164.1654076097997;
+        Wed, 01 Jun 2022 02:34:57 -0700 (PDT)
 Received: from [192.168.0.179] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id b8-20020aa7c6c8000000b0042617ba637bsm710427eds.5.2022.06.01.02.34.17
+        by smtp.gmail.com with ESMTPSA id s9-20020a056402164900b0042ddfbea36asm709513edx.62.2022.06.01.02.34.56
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 01 Jun 2022 02:34:18 -0700 (PDT)
-Message-ID: <c510cf8e-4111-8886-99e0-8ad35b3086a8@linaro.org>
-Date: Wed, 1 Jun 2022 11:34:17 +0200
+        Wed, 01 Jun 2022 02:34:57 -0700 (PDT)
+Message-ID: <eab5fecb-8e75-06d5-d598-ff0221406252@linaro.org>
+Date: Wed, 1 Jun 2022 11:34:55 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.9.1
-Subject: Re: [PATCH 02/17] dt-bindings: memory: add mt8365 SoC binding
- documentation
+Subject: Re: [PATCH 01/17] dt-bindings: i2c: i2c-mt65xx: add binding for
+ MT8365 SoC
 Content-Language: en-US
 To: Fabien Parent <fparent@baylibre.com>, robh+dt@kernel.org,
  krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org, qii.wang@mediatek.com,
  matthias.bgg@gmail.com, jic23@kernel.org, chaotian.jing@mediatek.com,
  ulf.hansson@linaro.org, srinivas.kandagatla@linaro.org,
  chunfeng.yun@mediatek.com, broonie@kernel.org, wim@linux-watchdog.org,
- linux@roeck-us.net, Yong Wu <yong.wu@mediatek.com>
+ linux@roeck-us.net
 Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  dmaengine@vger.kernel.org, linux-i2c@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
  linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-serial@vger.kernel.org,
  linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-watchdog@vger.kernel.org
+ linux-watchdog@vger.kernel.org, Rob Herring <robh@kernel.org>
 References: <20220531135026.238475-1-fparent@baylibre.com>
- <20220531135026.238475-3-fparent@baylibre.com>
+ <20220531135026.238475-2-fparent@baylibre.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220531135026.238475-3-fparent@baylibre.com>
+In-Reply-To: <20220531135026.238475-2-fparent@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220601_023423_207026_7C9CB4A0 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20220601_023459_312301_9CC9D6DB 
+X-CRM114-Status: GOOD (  12.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,73 +104,32 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 31/05/2022 15:50, Fabien Parent wrote:
-> Add MediaTek SMI bindings for MT8365 SoC.
+> Add binding documentation for the MT8365 I2C controllers.
 > 
 > Signed-off-by: Fabien Parent <fparent@baylibre.com>
+> Acked-by: Rob Herring <robh@kernel.org>
 > ---
->  .../bindings/memory-controllers/mediatek,smi-common.yaml    | 6 ++++++
->  .../bindings/memory-controllers/mediatek,smi-larb.yaml      | 6 ++++++
->  2 files changed, 12 insertions(+)
+>  Documentation/devicetree/bindings/i2c/i2c-mt65xx.yaml | 4 ++++
+>  1 file changed, 4 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml
-> index a98b359bf909..e1029ac99ab4 100644
-> --- a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml
-> +++ b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.yaml
-> @@ -46,6 +46,11 @@ properties:
->            - const: mediatek,mt7623-smi-common
->            - const: mediatek,mt2701-smi-common
+> diff --git a/Documentation/devicetree/bindings/i2c/i2c-mt65xx.yaml b/Documentation/devicetree/bindings/i2c/i2c-mt65xx.yaml
+> index 16a1a3118204..a6fe0d8b0cbe 100644
+> --- a/Documentation/devicetree/bindings/i2c/i2c-mt65xx.yaml
+> +++ b/Documentation/devicetree/bindings/i2c/i2c-mt65xx.yaml
+> @@ -43,6 +43,10 @@ properties:
+>            - enum:
+>                - mediatek,mt8195-i2c
+>            - const: mediatek,mt8192-i2c
+> +      - items:
+> +          - enum:
+> +              - mediatek,mt8365-i2c
+> +          - const: mediatek,mt8168-i2c
+
+Order entries by last item, so this goes before mt8192
+
 >  
-> +      - description: for mt8365
-
-Skip description and:
-
-> +        items:
-> +          - const: mediatek,mt8365-smi-common
-
-This should be rather enum. I see existing code did that way, but this
-way makes it bloated. If new device compatible with mt8186 comes, should
-be added to this enum, not to new items.
-
-> +          - const: mediatek,mt8186-smi-common
-> +
 >    reg:
->      maxItems: 1
->  
-> @@ -130,6 +135,7 @@ allOf:
->              - mediatek,mt8192-smi-common
->              - mediatek,mt8195-smi-common-vdo
->              - mediatek,mt8195-smi-common-vpp
-> +            - mediatek,mt8365-smi-common
->  
->      then:
->        properties:
-> diff --git a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml
-> index c886681f62a7..815d87fc64a0 100644
-> --- a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml
-> +++ b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.yaml
-> @@ -32,6 +32,11 @@ properties:
->            - const: mediatek,mt7623-smi-larb
->            - const: mediatek,mt2701-smi-larb
->  
-> +      - description: for mt8365
-> +        items:
-> +          - const: mediatek,mt8365-smi-larb
-> +          - const: mediatek,mt8186-smi-larb
-
-Ditto.
-
-> +
->    reg:
->      maxItems: 1
->  
-> @@ -78,6 +83,7 @@ allOf:
->              - mediatek,mt8183-smi-larb
->              - mediatek,mt8186-smi-larb
->              - mediatek,mt8195-smi-larb
-> +            - mediatek,mt8365-smi-larb
->  
->      then:
->        properties:
+>      items:
 
 
 Best regards,
