@@ -4,70 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E98DBC433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 05:33:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 205EFC433F5
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jun 2022 06:01:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d17x1Ba+LbJWlugLiTrmACjs4j3mB+WWbCkpmuwCDdw=; b=lF5eD0ShsMeMl4
-	y6b9VLvAsKaLRke5Lp5+Qr4MrEgyk2OS8jtum6kocJJPh/rcw3/Ie7FjyHJHY9Dkr9yb7HIgWSu1A
-	8Jdpmlyp1MRSt/rMWwFqmcvznVe0zCAUX+6+W57IpVjDRZh/Ka2Tz/x5u0YmKaIbI1X8YTk4U6xtR
-	E37hwQpgMOa0W6j1H6ZL7cY9UOAgzdw85G+9tUbDihh+XHqCsZ5Qnymrhi746xN7YwE8+FiLVe9Ti
-	vNCmcwoJCralHSAkkVa/7ddpEXryU5wzvVTXht3tK1vPM2CVwwsyV/J5dmYMey25U9UdEpt+1L4a6
-	xMHVTRZCL1gTcUVmnSrA==;
+	List-Owner; bh=Ip2KENLue0Pzzhs0NiHZDxTJ3oWmpcZIvRKA62mo9Js=; b=PNTtglvYuop6yp
+	SlcDx05X6fh4Xdz2J4aHLawyE7fHRRFhvt30z5k1utIHyPMh0jvHCNNGsxKikvSfgKc5S/wRQZC0C
+	RHP7fLwiE80yuVEt8xGM9197noLVNiP+rpFCm3xaCal2B8C+PPuZOZ2oUFoOXuyI0n+JTeNW04TVz
+	NSeI96RuLoe5FiRLlDdLmeLQrSEKh050NuTPZrat2Vp/34fNyEP2OuuMyBUCWBHhaSCnnPpymGOrb
+	dH0KlWj6f4jtA1LU8pUIG8tgypDBFO0O3vzfeM4LKOWzMPxJ0uQ3ulTYMuRYIbi7bw5e0APWNRFul
+	pV9w5pPjqSxQXm2OtPeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwGym-00DwLJ-3k; Wed, 01 Jun 2022 05:33:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1nwHQM-00E2KJ-FQ; Wed, 01 Jun 2022 06:01:42 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwGyW-00DwFq-IF; Wed, 01 Jun 2022 05:32:57 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 22DF4611B7;
-	Wed,  1 Jun 2022 05:32:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8DB0C385A5;
-	Wed,  1 Jun 2022 05:32:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1654061574;
-	bh=iQER32CU/sUTRxMxTf/FVOO/vpKLn4BYxmNWOMU1Q5A=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=py1GvzmMMyjfRNmngOj/y8UvpccVWhIIU9HkNDRPc+VIpmfUT5xzceY16Ml6a7YF8
-	 JZpnQQC9kuU7m1I0xBjJK4+y2sjajb4kmqbZnZWACbXOvqMG2+ClNL6hOYaY/IgsQr
-	 ZHnVKFYVypiskCsbyu8HcWz7G5bKq4uz1XcLLD4a4gHvRWsGOfDyA8BBRd7T+fips4
-	 k2/fMrgoYK02fldXgqKnRL45L6ESGmYzNZNy+aQOj8V/LlviXvkKL8fkk8ICsnENsO
-	 +PjLJ5Cc0sbGWQq1xnuVlCJPYgmKiyf3RHwHKcKEnifcbRKy0FlAMHIx3mCiO+8RBY
-	 9EtQrISZve5rQ==
-Date: Wed, 1 Jun 2022 11:02:49 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Jianjun Wang <jianjun.wang@mediatek.com>
-Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Chen-Yu Tsai <wenst@chromium.org>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Wei-Shun Chang <weishunc@google.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	rex-bc.chen@mediatek.com, randy.wu@mediatek.com,
-	jieyy.yang@mediatek.com, chuanjia.liu@mediatek.com,
-	qizhong.cheng@mediatek.com, jian.yang@mediatek.com
-Subject: Re: [PATCH v9 0/2] phy: mediatek: Add PCIe PHY driver
-Message-ID: <Ypb6AS6oj2en/Roi@matsya>
-References: <20220520064920.27313-1-jianjun.wang@mediatek.com>
- <96f7cc90171bb6e088ce0ed88e10ad14f06a98bb.camel@mediatek.com>
+	id 1nwHQJ-00E2I5-B2
+	for linux-phy@lists.infradead.org; Wed, 01 Jun 2022 06:01:40 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 25161Zak111534;
+	Wed, 1 Jun 2022 01:01:35 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1654063295;
+	bh=+aCCojRMiq5xMMa2smOMLWywfcMjA8WBVUZc2agFKro=;
+	h=Date:Subject:To:CC:References:From:In-Reply-To;
+	b=zLvqwmLzLBFdgDsmYNrzpfTjIocb1yyGcJIcj2XS9wPqywSh6iznmIQliBc9LVtiP
+	 YKhguYdLs+0A9P9hqUE+dEH47aHFXf6Jj5fqNipHNz/zJzr3XGsdCP4NWQNNkGN84u
+	 df5Wq0tiluRWgwEM7U2t3Wbo8N1kRJ4U+KMEbXLc=
+Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
+	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 25161ZPT018041
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 1 Jun 2022 01:01:35 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE114.ent.ti.com
+ (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Wed, 1
+ Jun 2022 01:01:34 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
+ Frontend Transport; Wed, 1 Jun 2022 01:01:34 -0500
+Received: from [172.24.222.108] (ileax41-snat.itg.ti.com [10.172.224.153])
+	by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 25161TfB020842;
+	Wed, 1 Jun 2022 01:01:30 -0500
+Message-ID: <b5353c06-c8b4-c065-3843-28b2a34e1867@ti.com>
+Date: Wed, 1 Jun 2022 11:31:29 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <96f7cc90171bb6e088ce0ed88e10ad14f06a98bb.camel@mediatek.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.1
+Subject: Re: [PATCH 1/2] dt-bindings: phy: ti: phy-gmii-sel: Add bindings for
+ J7200
+Content-Language: en-US
+To: Roger Quadros <rogerq@kernel.org>, <robh+dt@kernel.org>,
+        <lee.jones@linaro.org>, <krzysztof.kozlowski+dt@linaro.org>,
+        <kishon@ti.com>, <vkoul@kernel.org>, <dan.carpenter@oracle.com>,
+        <grygorii.strashko@ti.com>
+CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+References: <20220531111221.22963-1-s-vadapalli@ti.com>
+ <20220531111221.22963-2-s-vadapalli@ti.com>
+ <26603540-8887-ef8d-8f4d-26f2f33d2a6f@kernel.org>
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+In-Reply-To: <26603540-8887-ef8d-8f4d-26f2f33d2a6f@kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220531_223256_722087_EA5402D7 
-X-CRM114-Status: GOOD (  22.51  )
+X-CRM114-CacheID: sfid-20220531_230139_521951_A58B7CE4 
+X-CRM114-Status: GOOD (  30.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,74 +89,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-06-22, 10:21, Jianjun Wang wrote:
-> Hello Maintainers,
+Hello Roger,
+
+On 31/05/22 17:15, Roger Quadros wrote:
+> Hi Siddharth,
 > 
-> Gentle ping for this patch series, if there is anything I can do to get
-> these patches merged, please let me know.
+> On 31/05/2022 14:12, Siddharth Vadapalli wrote:
+>> TI's J7200 SoC supports additional PHY modes like QSGMII and SGMII
+>> that are not supported on earlier SoCs. Add a compatible for it.
+>>
+>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+>> ---
+>>  .../mfd/ti,j721e-system-controller.yaml       |  5 ++++
+>>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 24 ++++++++++++++++++-
+>>  2 files changed, 28 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
+>> index fa86691ebf16..e381ba62a513 100644
+>> --- a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
+>> +++ b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
+>> @@ -48,6 +48,11 @@ patternProperties:
+>>      description:
+>>        This is the SERDES lane control mux.
+>>  
+>> +  "phy@[0-9a-f]+$":
+>> +    type: object
+>> +    description:
+>> +      This is the register to set phy mode through phy-gmii-sel driver.
+>> +
+> 
+> Is this really required? The system controller has 100s of different such registers and it is not practical to mention about all.
 
-Patience my friend patience. This was received very late in cycle and I
-will review after merge window closes..
-
+The property has to be mentioned in order to pass: make dtbs_check.
 
 > 
-> Thanks.
+>>  required:
+>>    - compatible
+>>    - reg
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> index ff8a6d9eb153..7427758451e7 100644
+>> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
+>> @@ -53,12 +53,21 @@ properties:
+>>        - ti,am43xx-phy-gmii-sel
+>>        - ti,dm814-phy-gmii-sel
+>>        - ti,am654-phy-gmii-sel
+>> +      - ti,j7200-cpsw5g-phy-gmii-sel
 > 
-> On Fri, 2022-05-20 at 14:49 +0800, Jianjun Wang wrote:
-> > These series patches add support for PCIe PHY driver on MediaTek
-> > chipsets.
-> > 
-> > Changes in v9:
-> > 1. Check if the return value is -ENOMEM when reading efuse data
-> > fails.
-> > 
-> > Changes in v8:
-> > 1. Use "device_property_present()" to increase human readability;
-> > 2. Use "GPL" as recommended in commit bf7fbeeae6db ("module: Cure
-> >    the MODULE_LICENSE "GPL" vs. "GPL v2" bogosity").
-> > 
-> > Changes in v7:
-> > 1. Add bitfield.h header to fix the build error on non-arm64
-> > platforms.
-> > 
-> > Changes in v6:
-> > 1. Remove unnecessary header files;
-> > 2. Use FILELD_PREP in bitfield.h to set value.
-> > 
-> > Changes in v5:
-> > 1. Fix typo in kerneldoc: "eFues" => "eFuse".
-> > 
-> > Changes in v4:
-> > 1. Fix no return when calling dev_err_probe.
-> > 
-> > Changes in v3:
-> > 1. Add introductions for structure members;
-> > 2. Add SoC dependent data;
-> > 3. Dynamically allocate efuse data;
-> > 4. Check return value if it's an -EPROBE_DEFER.
-> > 
-> > Changes in v2:
-> > 1. Add specific compatible name;
-> > 2. Read NVMEM data at probe time;
-> > 3. Fix typos.
-> > 
-> > Jianjun Wang (2):
-> >   dt-bindings: phy: mediatek: Add YAML schema for PCIe PHY
-> >   phy: mediatek: Add PCIe PHY driver
-> > 
-> >  .../bindings/phy/mediatek,pcie-phy.yaml       |  75 +++++
-> >  drivers/phy/mediatek/Kconfig                  |  11 +
-> >  drivers/phy/mediatek/Makefile                 |   1 +
-> >  drivers/phy/mediatek/phy-mtk-pcie.c           | 267
-> > ++++++++++++++++++
-> >  4 files changed, 354 insertions(+)
-> >  create mode 100644
-> > Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
-> >  create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
-> > 
+> Why not just "ti,j7200-phy-gmii-sel" so it is consistent naming.
 
--- 
-~Vinod
+In TI's J7200 device, there are two CPSW MACs, namely CPSW2G and CPSW5G. While
+CPSW5G supports QSGMII mode, CPSW2G does not. Hence, the compatible being added
+with the extra mode (QSGMII) enabled is applicable only for CPSW5G and not for
+CPSW2G. Thus, to highlight this, the word "CPSW5G" has been included in the name
+of the compatible.
+
+> 
+>>  
+>>    reg:
+>>      maxItems: 1
+>>  
+>>    '#phy-cells': true
+>>  
+>> +  ti,enet-ctrl-qsgmii:
+>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>> +    description: |
+>> +      Required only for QSGMII mode. Bitmask to select the port for
+>> +      QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
+>> +      ports automatically. Any of the 4 CPSW5G ports can act as the
+>> +      main port with the rest of them being the QSGMII_SUB ports.
+>> +
+> 
+> This is weird way of doing things.
+> 
+> The Ethernet controller driver already knows which mode the port is
+> supposed to operate.
+
+From the ethernet driver perspective, there is no difference between the QSGMII
+or QSGMII-SUB modes and both are treated the same. However, the phy-gmii-sel
+driver configures CPSW MAC registers differently depending on the mode being
+QSGMII or QSGMII-SUB. Hence, the ti,enet-ctrl-qsgmii property is used to
+identify the QSGMII main port and the rest are configured in CPSW MAC as
+QSGMII-SUB ports.
+
+> 
+> e.g.
+> +&cpsw0_port1 {
+> +	phy-handle = <&cpsw5g_phy0>;
+> +	phy-mode = "qsgmii";
+> +	mac-address = [00 00 00 00 00 00];
+> +	phys = <&cpsw0_phy_gmii_sel 1>;
+> +};
+> +
+> +&cpsw0_port2 {
+> +	phy-handle = <&cpsw5g_phy1>;
+> +	phy-mode = "qsgmii-sub";
+> +	mac-address = [00 00 00 00 00 00];
+> +	phys = <&cpsw0_phy_gmii_sel 2>;
+> 
+> And it can convey the mode to the PHY driver via phy_ops->set_mode.
+> So you should be depending on that instead of adding this new property.
+
+QSGMII-SUB is not a standard mode in the Linux kernel. In order to proceed with
+the suggested implementation, a new phy mode named PHY_INTERFACE_MODE_QSGMII_SUB
+has to be introduced to the kernel. Additionally, all existing phy drivers will
+have to be updated to recognize the new phy mode.
+
+Since the QSGMII-SUB mode is TI specific, it was decided that it would be better
+to add a new property in TI specific files for identifying the QSGMII main port
+and treating the rest as QSGMII-SUB ports.
+
+Thanks,
+Siddharth.
 
 -- 
 linux-phy mailing list
