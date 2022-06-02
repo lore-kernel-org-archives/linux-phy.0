@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68906C43334
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8EA2C433EF
 	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 08:15:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,52 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=36LBs54JY2z6E9kYWIBENerMtmjoLrXe8ORfg6TEV4U=; b=aGbJeNrvqfrXDe
-	ZxHGKKCqDDd1MQMz2nrzbDhZzI47hnQd49Zrjld279lH1mMV9imJLsv53vc5Hhc3ifZxk1TXPEsNZ
-	o5TJx7U3k76DSHU48a6TVWH965XbP+VLoRCXiQBWkk7MVM7Cjrj7Wewl8vT/mUlenHvYQco4pTePb
-	drB+kraBb3hwBXTvhK0Avt7IrruUDlTZeUj7aMkv8RlCgy/7jyMmYc7N4Sac/4wOFVu1ABigWQpBo
-	lZhBZiVs1s/8KzSvd3QZHnkNSceNtPxZuJysUcgsr4jO+XP/iXFUNZSVqTS7l/WU8KoFcUEUrvSbk
-	p+G8RU6S2NfQy06dUAyQ==;
+	List-Owner; bh=8WnVSsvsPagxfftHZmDAitF/vbovXXITnLyrwew9LE4=; b=G79BQodrQCFTd2
+	cRrB17GtRkKpI0Hw9EtDsw2b4SghE3IlcrCS/XATec+Pa2W2lt0EbbfZe+ZFPEUXEw2rF7VCo2jqm
+	cnWWE8BUOjHv9xwYlrSaNetzZPsnqabqx4VQdji6C/iVp4f1epntYQbhWXK4jukOfUFBhS97UywP8
+	3iyC3HUq2ld15n4bZhz2Z6xKIEVdH5Nq9BmknEr4ZMItUPL3kbMFwiZrYduHjmYUL6f+VXPgSfg15
+	7Upi8hn48cgneP92lJ0OCSNcVuk00x7xG6oRpXzYaF8SNxe7TTomKA7EW81dv0gpPB5mRCtXB8ylX
+	cti3o2eGt7ooPw0YMV1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwfzk-002BLk-M7; Thu, 02 Jun 2022 08:15:52 +0000
+	id 1nwfzk-002BM3-QS; Thu, 02 Jun 2022 08:15:52 +0000
 Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwexZ-001xPy-OX
-	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 07:09:35 +0000
-Received: by mail-lj1-x230.google.com with SMTP id 1so4305194ljp.8
-        for <linux-phy@lists.infradead.org>; Thu, 02 Jun 2022 00:09:33 -0700 (PDT)
+	id 1nwexb-001xPK-Ho
+	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 07:09:37 +0000
+Received: by mail-lj1-x230.google.com with SMTP id r8so3747828ljp.1
+        for <linux-phy@lists.infradead.org>; Thu, 02 Jun 2022 00:09:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=s3y6uxL9GWMiIU5MJAD/kaZnxjYJSgwQ2CdF81MUFk8=;
-        b=Kg1K4zTLvzUNEjpElrfNZbI6MtnUXCTox19zjg3A/YUHA8CfNtLHgfMeXL0RXN21co
-         DdQPEP12IS59j7UwqTa4i8fSBI8DuOpUU9nEtR11LwjrADqfHcWaalKWBHhBU0lIbCka
-         c3C3w5rbQt7ZMePIw8p5CoWDJkEPTXgp87W4kdT7fJHpQ+xY3vy1Y4DMp3mvxHCx8G05
-         iDTTm764I2B5AaqjNyM95xAH9dVm9QuqeJz2wWQsZkF87uFOE/RsfU3hQtYzxbJ1w/TG
-         7jpUsSE6DgmhipxGKJWsyEkKRdKc4ArPoqIZNAD6K9hEKCTUjO/Pw7sqO5puQBIWH9Pc
-         HBjQ==
+        bh=7STra2ppWviST4fEmSbxheGWkzqe4bH+WhSd88tTfjc=;
+        b=Rz1eR8d99I4lLfQxw+GFRNA8ElX/Yz5npKMK4pPBDeR+8YLJUgknHiuJJBjevI4lJX
+         EFGRmqcCMbY3K7gcjVpg7jd+TvmTySM6Ji32YFSK163o0zgjTGlwCTbGkQKZDfWI6uN/
+         Q8vYX8onW4xK87P6NAiHDqa9Fokd/xgRGwOn5pqTKj/l/batfasTGbCyCTBhLlvLqn0F
+         TT3pCQoeZHMWffhh5x1szvRQd3WQAGFCX96lQ/geSmH96j8KfK0gTQW2Mb+8qsFo9C9e
+         eTPaCOX1fhbUb+NsGBA3VWuybpx76u9IFlvCSWAc6+qdw4YpWNq5nsvidXyBlVFpaUjO
+         86wQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=s3y6uxL9GWMiIU5MJAD/kaZnxjYJSgwQ2CdF81MUFk8=;
-        b=8CbkIwCQE/+tJg/4HD6+OI1f8v7Gmb2RJPR7CeapP18mBCj4Fpv4uWBb5irtnw1I7o
-         wRD1STIIEYJKJIkVqxWHq+XfPgNSFSuvMRf6PN+yKWgOctgOiJPE2O2kGmDfJAJWoIhX
-         4sNRotvwClb7TJasV9/CwElKiFaM4NNj7RAaTEjXwUGPXC14+uWoaoe8LesXUA1W/NYA
-         Kia6vmVBgA7K4pgKP4iiZa5mAWyDgPKtpUNLSO4MA3tzZ4OUHz8VAF5MrBlRf+fALDGo
-         0B5NgxoePVO3FMNxf2Y3t/gVrEdb/RRp8hZL5Pj4ehMCitCmhP9tQtXtSUyUzFrzbKzE
-         NeYA==
-X-Gm-Message-State: AOAM530kxU9RFqlOaLyO24sd5RxVxHOdtRdXK6T4HWNy/YI68pSpFXtg
-	kVcu46WISJGlukBaad4k9ofvng==
-X-Google-Smtp-Source: ABdhPJz65js20LKHzgFUkIDnOm2dLEtBsXPFiNhEUzdxMnAWRide8zmZeDWRG/zw6nFnbKG0Qexc0Q==
-X-Received: by 2002:a2e:b88d:0:b0:253:ee2a:6b70 with SMTP id r13-20020a2eb88d000000b00253ee2a6b70mr30005757ljp.247.1654153773267;
-        Thu, 02 Jun 2022 00:09:33 -0700 (PDT)
+        bh=7STra2ppWviST4fEmSbxheGWkzqe4bH+WhSd88tTfjc=;
+        b=ISkUG9Kaiio0E/JgddAQU0N9g64sWyW3JRLGc5xoZWtT/WKDaXtSFCU9zXAN7ofG2A
+         etsiDFohecW7GvXvuBy8HvQk46JQaX6mFWDyLORKMz45cYULwJg1rzx/0GpzIz7lusqv
+         pn40hav/UfoltjqmYatAe5dUpCRsoAVUfidT1CIsmQE4uT8yAJVi/rmJqRdU2Q8cLefp
+         QOvgEP+JIfNGaxkAaCxZdEMyivAbvxa4ZwQHSfoc9mDRcANI71z7XlSIE1L37fmmgn5b
+         oVBk9BgQPaD1noEZS2SkQpVrMgWI4eflj1tXEaIXIhXIsdC6oYKW0AgYOllquT8ZZc2H
+         B0Og==
+X-Gm-Message-State: AOAM5312/PyJynPa5NtGLTe3+MIXLnFOfCMnd6YBI1J3RKjpcGf5nmW5
+	1EVBduPcr6mdJ2B3lEG3od0xgA==
+X-Google-Smtp-Source: ABdhPJyftYaXzst5H4OBZYD60Ot3bDQJTl2v5xDd0u8DrJ9AdTEkACJTUPDNQZK9qeaIR3FK2JYReQ==
+X-Received: by 2002:a05:651c:98d:b0:24d:b554:7d18 with SMTP id b13-20020a05651c098d00b0024db5547d18mr40675355ljq.87.1654153775065;
+        Thu, 02 Jun 2022 00:09:35 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id d25-20020a056512369900b0047255d21114sm870218lfs.67.2022.06.02.00.09.32
+        by smtp.gmail.com with ESMTPSA id d25-20020a056512369900b0047255d21114sm870218lfs.67.2022.06.02.00.09.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Jun 2022 00:09:32 -0700 (PDT)
+        Thu, 02 Jun 2022 00:09:34 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -66,16 +66,16 @@ To: Andy Gross <agross@kernel.org>,
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [RFC PATCH v3 24/30] phy: qcom-qmp-pcie: drop multi-PHY support
-Date: Thu,  2 Jun 2022 10:09:03 +0300
-Message-Id: <20220602070909.1666068-25-dmitry.baryshkov@linaro.org>
+Subject: [RFC PATCH v3 26/30] phy: qcom-qmp-usb: drop multi-PHY support
+Date: Thu,  2 Jun 2022 10:09:05 +0300
+Message-Id: <20220602070909.1666068-27-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220602070909.1666068-1-dmitry.baryshkov@linaro.org>
 References: <20220602070909.1666068-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_000933_835825_9D762A9F 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20220602_000935_626950_CD9627D7 
+X-CRM114-Status: GOOD (  15.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,19 +92,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Each PCIe QMP PHY device provides just a single PCIe PHY. Drop support
-for handling multiple child PHYs.
+Each USB QMP PHY device provides just a single UFS PHY. Drop support
+for handling multiple child PHYs. Use phy->init_count to check if the
+PHY was initialized rather than duplicating this count.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 33 +++---------------------
- 1 file changed, 3 insertions(+), 30 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 37 ++++---------------------
+ 1 file changed, 5 insertions(+), 32 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index d9e8a3e88890..0676b67d3ff6 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1329,8 +1329,6 @@ struct qmp_phy {
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index a633263c900d..969253e7bdd9 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -1440,8 +1440,6 @@ struct qmp_phy {
   * @vregs: regulator supplies bulk data
   *
   * @phys: array of per-lane phy descriptors
@@ -113,7 +114,7 @@ index d9e8a3e88890..0676b67d3ff6 100644
   */
  struct qcom_qmp {
  	struct device *dev;
-@@ -1340,9 +1338,6 @@ struct qcom_qmp {
+@@ -1452,9 +1450,6 @@ struct qcom_qmp {
  	struct regulator_bulk_data *vregs;
  
  	struct qmp_phy **phys;
@@ -123,8 +124,8 @@ index d9e8a3e88890..0676b67d3ff6 100644
  };
  
  static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-@@ -1796,17 +1791,11 @@ static int qcom_qmp_phy_pcie_com_init(struct qmp_phy *qphy)
- 	void __iomem *pcs = qphy->pcs;
+@@ -2016,17 +2011,11 @@ static int qcom_qmp_phy_usb_com_init(struct qmp_phy *qphy)
+ 	void __iomem *dp_com = qmp->dp_com;
  	int ret, i;
  
 -	mutex_lock(&qmp->phy_mutex);
@@ -142,16 +143,16 @@ index d9e8a3e88890..0676b67d3ff6 100644
  	}
  
  	for (i = 0; i < cfg->num_resets; i++) {
-@@ -1839,8 +1828,6 @@ static int qcom_qmp_phy_pcie_com_init(struct qmp_phy *qphy)
+@@ -2082,8 +2071,6 @@ static int qcom_qmp_phy_usb_com_init(struct qmp_phy *qphy)
  		qphy_setbits(pcs, QPHY_POWER_DOWN_CONTROL,
- 				cfg->pwrdn_ctrl);
+ 			     cfg->pwrdn_ctrl);
  
 -	mutex_unlock(&qmp->phy_mutex);
 -
  	return 0;
  
  err_assert_reset:
-@@ -1848,8 +1835,6 @@ static int qcom_qmp_phy_pcie_com_init(struct qmp_phy *qphy)
+@@ -2091,8 +2078,6 @@ static int qcom_qmp_phy_usb_com_init(struct qmp_phy *qphy)
  		reset_control_assert(qmp->resets[i]);
  err_disable_regulators:
  	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
@@ -160,7 +161,7 @@ index d9e8a3e88890..0676b67d3ff6 100644
  
  	return ret;
  }
-@@ -1860,12 +1845,6 @@ static int qcom_qmp_phy_pcie_com_exit(struct qmp_phy *qphy)
+@@ -2103,12 +2088,6 @@ static int qcom_qmp_phy_usb_com_exit(struct qmp_phy *qphy)
  	const struct qmp_phy_cfg *cfg = qphy->cfg;
  	int i = cfg->num_resets;
  
@@ -173,7 +174,7 @@ index d9e8a3e88890..0676b67d3ff6 100644
  	while (--i >= 0)
  		reset_control_assert(qmp->resets[i]);
  
-@@ -1873,8 +1852,6 @@ static int qcom_qmp_phy_pcie_com_exit(struct qmp_phy *qphy)
+@@ -2116,8 +2095,6 @@ static int qcom_qmp_phy_usb_com_exit(struct qmp_phy *qphy)
  
  	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
  
@@ -182,7 +183,25 @@ index d9e8a3e88890..0676b67d3ff6 100644
  	return 0;
  }
  
-@@ -2334,7 +2311,7 @@ static int qcom_qmp_phy_pcie_probe(struct platform_device *pdev)
+@@ -2332,7 +2309,7 @@ static int __maybe_unused qcom_qmp_phy_usb_runtime_suspend(struct device *dev)
+ 	if (cfg->type != PHY_TYPE_USB3)
+ 		return 0;
+ 
+-	if (!qmp->init_count) {
++	if (!qphy->phy->init_count) {
+ 		dev_vdbg(dev, "PHY not initialized, bailing out\n");
+ 		return 0;
+ 	}
+@@ -2358,7 +2335,7 @@ static int __maybe_unused qcom_qmp_phy_usb_runtime_resume(struct device *dev)
+ 	if (cfg->type != PHY_TYPE_USB3)
+ 		return 0;
+ 
+-	if (!qmp->init_count) {
++	if (!qphy->phy->init_count) {
+ 		dev_vdbg(dev, "PHY not initialized, bailing out\n");
+ 		return 0;
+ 	}
+@@ -2673,7 +2650,7 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
  	struct phy_provider *phy_provider;
  	void __iomem *serdes;
  	const struct qmp_phy_cfg *cfg = NULL;
@@ -191,18 +210,18 @@ index d9e8a3e88890..0676b67d3ff6 100644
  	int ret;
  
  	qmp = devm_kzalloc(dev, sizeof(*qmp), GFP_KERNEL);
-@@ -2354,10 +2331,6 @@ static int qcom_qmp_phy_pcie_probe(struct platform_device *pdev)
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
+@@ -2700,10 +2677,6 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
+ 			return PTR_ERR(qmp->dp_com);
+ 	}
  
 -	expected_phys = cfg->nlanes;
 -
 -	mutex_init(&qmp->phy_mutex);
 -
- 	ret = qcom_qmp_phy_pcie_clk_init(dev, cfg);
+ 	ret = qcom_qmp_phy_usb_clk_init(dev, cfg);
  	if (ret)
  		return ret;
-@@ -2376,7 +2349,7 @@ static int qcom_qmp_phy_pcie_probe(struct platform_device *pdev)
+@@ -2722,7 +2695,7 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
  
  	num = of_get_available_child_count(dev->of_node);
  	/* do we have a rogue child node ? */
