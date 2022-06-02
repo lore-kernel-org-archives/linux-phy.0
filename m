@@ -4,129 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD6A0CCA478
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 10:10:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0043C43334
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 11:42:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jj/myS+gi0FMunwA2/OYi/17ncEE86QQocPWSDBDZZc=; b=Wi8rsE5FgU22CL
-	/5419XD9vN1+AMNYB/NYGcZ3npAyS0fG4LTwT2uR+D5QXJkhqVjSXsiZZ9XrzO3pfoAqVhA/Zl0Xc
-	/LXvADJXGQcYI+bWn/PnnhTj15hPgYNhQGbvDoZvWrcj/5q4p4OnGH97LqvUCr115YCIa7Noabwhf
-	j95U+nYrgBcSIwSW18+2Sxz8EIaepNL8K6GCtHtKDm+RTuOTXDD5sYq1qLrg8ozaSnB24gR52nueA
-	2mXndsbRazXIg+LTw3GTdCQd+m+m81ldqvekRmBnK37QWe5xPWByA4jQuceTir0Z3ldvFLW5LDRRh
-	MOOaJSJy+FemGF3Jn+yQ==;
+	List-Owner; bh=qNLcoVUqKdTJPh1c0nzJoGnNVB0dv4xpQQKq6t0nGwM=; b=Gax/taVUsm9F8r
+	T8+cB1KXilPVNM+3XAjEIB4vLDpj6V0oJ2afN3IRtFWqFAFDADD/XLijZQZIpttDJXaZW5h+b4RGm
+	KhIyWlgyqU0Dx9ePn7+zYso6lOztH/VWIU6WRzC7GH8jy2+uFSWdGK4GEmwMgqlgTTkAnfzRaZPSJ
+	uyENBTfoFjNDSWwXmDK028bdMqVIoPiz2PHCs2mavh9X5z8+JUQA9qJKetg6Xnt9yMPgGtPDtjdmc
+	lFuLHiheffSZ166+OUpg4lg7irIQ7BQXZizkz4i4sZv9DMX1SVVf/yf0hVNFY2OciESGwL+OgCZsA
+	wFlUtn/egk2Xdpqg2QuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwhmr-002hP1-4S; Thu, 02 Jun 2022 10:10:41 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1nwjDg-002yf7-6n; Thu, 02 Jun 2022 11:42:28 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwhmm-002hMT-IR
-	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 10:10:40 +0000
-Received: from epcas2p2.samsung.com (unknown [182.195.41.54])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20220602101029epoutp04faf5df427edcc77f612c0f38998af3c0~0xfeCc9vo0567105671epoutp04Y
-	for <linux-phy@lists.infradead.org>; Thu,  2 Jun 2022 10:10:29 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20220602101029epoutp04faf5df427edcc77f612c0f38998af3c0~0xfeCc9vo0567105671epoutp04Y
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1654164630;
-	bh=7koIz/DVucBKimOwAVWE0zWB8XnPg8smoktAvfpidIs=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=SyUD3e+Uv/SsYcgNF/K8P5bOqj6SBv4rziub1PyPZzluhw6EUPghpUJjwWDgq4Gm/
-	 PoApE7MOK9g+eY/16bSjgePYXRNn3GMaaBJgdhpyHSaA9V35iVmWSLPno9+HsoyNeE
-	 61sZr40AJ7SZMjajtwTFU5qKPGY4Oakt+F9ZIBjE=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
-	epcas2p1.samsung.com (KnoxPortal) with ESMTP id
-	20220602101029epcas2p1ed37f5efcef816e7b5631b2c5ed6d998~0xfdcNpuY1582215822epcas2p15;
-	Thu,  2 Jun 2022 10:10:29 +0000 (GMT)
-Received: from epsmges2p3.samsung.com (unknown [182.195.36.98]) by
-	epsnrtp3.localdomain (Postfix) with ESMTP id 4LDMGC6qpRz4x9Pp; Thu,  2 Jun
-	2022 10:10:27 +0000 (GMT)
-Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
-	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
-	33.0B.10028.39C88926; Thu,  2 Jun 2022 19:10:27 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
-	epcas2p4.samsung.com (KnoxPortal) with ESMTPA id
-	20220602101027epcas2p41c9f5360805c7aa8479560bae156286e~0xfbbOhHn2389023890epcas2p4T;
-	Thu,  2 Jun 2022 10:10:27 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
-	epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
-	20220602101027epsmtrp2fb1a4c04dfb28473f8df4503086c9b8a~0xfbWXZsj2707927079epsmtrp2O;
-	Thu,  2 Jun 2022 10:10:27 +0000 (GMT)
-X-AuditID: b6c32a47-573ff7000000272c-45-62988c93388a
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
-	epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
-	14.BC.11276.29C88926; Thu,  2 Jun 2022 19:10:27 +0900 (KST)
-Received: from KORCO082417 (unknown [10.229.8.121]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20220602101026epsmtip1e563cad0eb0f88870ebbd2945dffbc82~0xfbLn3tS2748227482epsmtip1d;
-	Thu,  2 Jun 2022 10:10:26 +0000 (GMT)
-From: "Chanho Park" <chanho61.park@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzysztof.kozlowski@linaro.org>, "'Kishon Vijay
- Abraham I'" <kishon@ti.com>, "'Vinod Koul'" <vkoul@kernel.org>, "'Alim
- Akhtar'" <alim.akhtar@samsung.com>, "'Rob Herring'" <robh+dt@kernel.org>,
-	"'Krzysztof	Kozlowski'" <krzysztof.kozlowski+dt@linaro.org>
-Cc: <devicetree@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-samsung-soc@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-In-Reply-To: <b16915f7-a4b7-4512-77fb-b2cdd8e7cdb4@linaro.org>
-Subject: RE: [PATCH v2 1/6] dt-bindings: phy: samsung,ufs-phy: make
- pmu-syscon as phandle-array
-Date: Thu, 2 Jun 2022 19:10:26 +0900
-Message-ID: <035e01d87668$fb2bfcf0$f183f6d0$@samsung.com>
+	id 1nwjDd-002ye5-UP
+	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 11:42:27 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id x5so820173edi.2
+        for <linux-phy@lists.infradead.org>; Thu, 02 Jun 2022 04:42:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=message-id:date:mime-version:user-agent:subject:content-language:to
+         :cc:references:from:in-reply-to:content-transfer-encoding;
+        bh=ZpLQeQeQdZ8PTsl6QzkAMoq8cM5CGyVXLb6GbT76BN8=;
+        b=Lmlc5otPHPBiZqkehmSeYYqoo3/95heIBc/+gbh6YpzM/0f5eOv/657FiggDeOdJjA
+         4J43hf8bVwXMpb0QsHXqeDF3g/VVBtJyp67DlPLL3/uZZSBWsiWC+2WWkPTBZ/80Yx+f
+         TjbXUu4yFkpE02sn2O+JMok11f/baTwo6w/ywXd2N0cUMSWAbMCp/bU6Xn3Y5OxeqX91
+         dcJQTdK/9cYOgRM5aj2bC0QicxU6EXnhN3cGZozrGWhUiB136eXah1Mfwjtw8tirTvC3
+         yBAoOIhXkBDAYWdKobyKN9QnwhMgGzkgNhJIkZEPW+9dQtudnM4udrjBFbg0hy409Bki
+         Zuew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :content-transfer-encoding;
+        bh=ZpLQeQeQdZ8PTsl6QzkAMoq8cM5CGyVXLb6GbT76BN8=;
+        b=skqL9OUv6Zqr4fbjjoNjYdh8IJdo1MLK6UqnK1P1i2aqa0BgQ9EDhE6MvZ7c7YxIyi
+         Zdaf1EZ9+eipVeTJ1BZMfM+H9ms6PJSQXz3VBNSsi8wLS/C0RhO1kSpiMnlauZw2sk6F
+         akn+4FRZnKTrGOPSWVZsLU4NI3p/rB0xneOEZ/Wu7zAzJ7S43u5XyP2J7SZDu/LjbkrB
+         0OuowpCW5Ti8Re2HShDanPeaBSnUoVtxJPhjemhaBMyDeeAld+mKjQbfNvVUzY7qHgd9
+         G8l90VT0vmvgRK8wB4jfzq+1Q6EkSrU73TTim8WW5NK241pNBvos8R38n1kE7ZhnNEPo
+         fE2w==
+X-Gm-Message-State: AOAM531M3UgwKJ+nbnz8frXFI8qha7MjnNrqIdYGvUEzPl6/XfSeWW1C
+	8xnKaw0L96PfNiHjqlqLOoVoig==
+X-Google-Smtp-Source: ABdhPJwMBE3w8FcUsIappA+XgJgb3UE5rqzszgUOgdP3LXRDNy7ES7plawOr1PMvjECiQYsVoZm8Zg==
+X-Received: by 2002:aa7:cb8d:0:b0:42b:e414:8019 with SMTP id r13-20020aa7cb8d000000b0042be4148019mr5000940edt.151.1654170143563;
+        Thu, 02 Jun 2022 04:42:23 -0700 (PDT)
+Received: from [192.168.0.181] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
+        by smtp.gmail.com with ESMTPSA id cq16-20020a056402221000b0042dd022787esm2325479edb.6.2022.06.02.04.42.22
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 02 Jun 2022 04:42:23 -0700 (PDT)
+Message-ID: <b5cf82bc-363a-81f8-e3ad-7671c7c0ca4f@linaro.org>
+Date: Thu, 2 Jun 2022 13:42:22 +0200
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQLWkTnA63V9WykH3rm22/0hqLdk6gLMec0AAc0/rTIBlco14ALgFz+bqvcxoOA=
-Content-Language: ko
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrDJsWRmVeSWpSXmKPExsWy7bCmqe7knhlJBvOfG1s8mLeNzWL+kXOs
-	Fhee9rBZ9L14yGyx9/VWdotNj6+xWkxY9Y3FYsb5fUwWrXuPsFvsvHOC2YHLY9OqTjaPO9f2
-	sHlsXlLv0bdlFaPH8RvbmTw+b5ILYIvKtslITUxJLVJIzUvOT8nMS7dV8g6Od443NTMw1DW0
-	tDBXUshLzE21VXLxCdB1y8wBukxJoSwxpxQoFJBYXKykb2dTlF9akqqQkV9cYquUWpCSU2Be
-	oFecmFtcmpeul5daYmVoYGBkClSYkJ3R+3EyY8El3ormT9uYGxhXcHUxcnJICJhITDqxhqWL
-	kYtDSGAHo0TPp49MEM4nRonmS5OhnG+MEvu33WGFaZl48TA7RGIvo8TsVVtZIZwXjBIbfy1m
-	AqliE9CXeNmxDSwhIjCfSeJp51WwBLPABEaJlZ+8QWxOATuJdyu7WUBsYYFEietTXzGC2CwC
-	KhKH/kDYvAKWEhN/zmGHsAUlTs58wgIxR1ti2cLXzBAnKUj8fLoM7DwRAT+Jj/8XMkPUiEjM
-	7mxjBjlCQmALh8STmVOYIBpcJObv2s8OYQtLvDq+BcqWkvj8bi8bhF0ssXTWJyaI5gZGicvb
-	fkEljCVmPWsHuo4DaIOmxPpd+iCmhICyxJFbULfxSXQc/ssOEeaV6GgTgmhUlziwfToLhC0r
-	0T3nM+sERqVZSD6bheSzWUg+mIWwawEjyypGsdSC4tz01GKjAmN4dCfn525iBCdbLfcdjDPe
-	ftA7xMjEwXiIUYKDWUmEt2TX1CQh3pTEyqrUovz4otKc1OJDjKbAsJ7ILCWanA9M93kl8YYm
-	lgYmZmaG5kamBuZK4rxeKRsShQTSE0tSs1NTC1KLYPqYODilGphiWebtWNByLaMv+4cty978
-	k/qS0ss4mr/N2yvoEWD+7/vM8moJ1QBD1+osg6tTdj15vNjQ+/6X4yxGpbs890TMeJ3w/PSh
-	nCqZtviqJR+8Q5a8Kn0ss/aDs3TTx7a9mZ4Kf1MbhDu/J6338n3Gd6vuyYVNHxRFFTQ2sHwu
-	M92YeeS0rpmgNFtPYfpktvcp3lsLBRTLZ57t00vi00i9/ZpvzZkr0W+F3aMNjx99tdj/q2cm
-	u1t26rStnZPcF1tyr52l77xqYVS68M/dD4VX14WpPfb/xOYpV1nt4fbQ2S/t/5mKGbbaOY4c
-	IbvPFVxbKFiZfl3u9ZHfC6dH86pUzdS587NW8QuDYcGWvL1Wm5VYijMSDbWYi4oTAWfE65g/
-	BAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprJIsWRmVeSWpSXmKPExsWy7bCSnO7knhlJBrNuMFo8mLeNzWL+kXOs
-	Fhee9rBZ9L14yGyx9/VWdotNj6+xWkxY9Y3FYsb5fUwWrXuPsFvsvHOC2YHLY9OqTjaPO9f2
-	sHlsXlLv0bdlFaPH8RvbmTw+b5ILYIvisklJzcksSy3St0vgyljXdI+lYA9vxbezL1gbGPu4
-	uhg5OSQETCQmXjzM3sXIxSEksJtRYu2Ee8wQCVmJZ+92sEPYwhL3W46wQhQ9Y5T4/30/E0iC
-	TUBf4mXHNrCEiMBiJon+E2fZQBxmgSmMEpevvmSBaFnOJDH7/XGwWZwCdhLvVnazgNjCAvES
-	H+70s4HYLAIqEof+vGIEsXkFLCUm/pzDDmELSpyc+QSsnllAW+Lpzadw9rKFr6FuVZD4+XQZ
-	K4gtIuAn8fH/QmaIGhGJ2Z1tzBMYhWchGTULyahZSEbNQtKygJFlFaNkakFxbnpusWGBYV5q
-	uV5xYm5xaV66XnJ+7iZGcOxpae5g3L7qg94hRiYOxkOMEhzMSiK8JbumJgnxpiRWVqUW5ccX
-	leakFh9ilOZgURLnvdB1Ml5IID2xJDU7NbUgtQgmy8TBKdXAJGfqbSg3/ahtpdlx8wClQ3qy
-	bRckVvjXT3J/5NB4z0A1xTwg/F/ZPU3DYxekI5/0LL19UZV7trvtHYXJvrYi6+buPLTR4v+E
-	/iPTwmavbFv2dOlv/91Pt+f8OyH9dDLPX+P26JLSuCU737618mVera+bra5+47yE/QrFxjz7
-	+b4C/O9v/d+8y3PvN+Za/8UdIasusv3+8U51Uzpf943r178x/ZpfE9dbktalWBh4KFXaZHfu
-	TfaGRzr/hKVFn3N5fSrpaGxI+Oh+2NWz7r/GRWf7LPsVaoKPyk9dOiKgoPFoRxe77jH5N8vU
-	3DcFd/evWcoj9CVHcnnG9ccxjfubdiurv3xx/8r523suJwa9VmIpzkg01GIuKk4EAGe7vdMs
-	AwAA
-X-CMS-MailID: 20220602101027epcas2p41c9f5360805c7aa8479560bae156286e
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220602053329epcas2p4c2baca2d161814f5d51dc48722f904b1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.10.0
+Subject: Re: [PATCH v2 1/6] dt-bindings: phy: samsung,ufs-phy: make pmu-syscon
+ as phandle-array
+Content-Language: en-US
+To: Chanho Park <chanho61.park@samsung.com>,
+ 'Kishon Vijay Abraham I' <kishon@ti.com>, 'Vinod Koul' <vkoul@kernel.org>,
+ 'Alim Akhtar' <alim.akhtar@samsung.com>, 'Rob Herring' <robh+dt@kernel.org>,
+ 'Krzysztof Kozlowski' <krzysztof.kozlowski+dt@linaro.org>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 References: <20220602053250.62593-1-chanho61.park@samsung.com>
-	<CGME20220602053329epcas2p4c2baca2d161814f5d51dc48722f904b1@epcas2p4.samsung.com>
-	<20220602053250.62593-2-chanho61.park@samsung.com>
-	<44fceb66-fd33-4b2d-fe8e-9a1a5837a51a@linaro.org>
-	<b16915f7-a4b7-4512-77fb-b2cdd8e7cdb4@linaro.org>
+ <CGME20220602053329epcas2p4c2baca2d161814f5d51dc48722f904b1@epcas2p4.samsung.com>
+ <20220602053250.62593-2-chanho61.park@samsung.com>
+ <44fceb66-fd33-4b2d-fe8e-9a1a5837a51a@linaro.org>
+ <b16915f7-a4b7-4512-77fb-b2cdd8e7cdb4@linaro.org>
+ <035e01d87668$fb2bfcf0$f183f6d0$@samsung.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <035e01d87668$fb2bfcf0$f183f6d0$@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_031038_775897_A655526E 
-X-CRM114-Status: GOOD (  15.13  )
+X-CRM114-CacheID: sfid-20220602_044226_058323_5319117E 
+X-CRM114-Status: GOOD (  13.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,46 +100,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> >>    samsung,pmu-syscon:
-> >> -    $ref: '/schemas/types.yaml#/definitions/phandle'
-> >> -    description: phandle for PMU system controller interface, used to
-> >> -                 control pmu registers bits for ufs m-phy
-> >> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-> >> +    items:
-> >> +      minItems: 1
-> >> +      items:
-> >> +        - description: phandle for PMU system controller interface, used
-> to
-> >> +                       control pmu registers bits for ufs m-phy
-> >> +        - description: offset of the pmu control register
-> >
-> > This does not work... Please test your bindings with different cases.
+On 02/06/2022 12:10, Chanho Park wrote:
+>>>>    samsung,pmu-syscon:
+>>>> -    $ref: '/schemas/types.yaml#/definitions/phandle'
+>>>> -    description: phandle for PMU system controller interface, used to
+>>>> -                 control pmu registers bits for ufs m-phy
+>>>> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
+>>>> +    items:
+>>>> +      minItems: 1
+>>>> +      items:
+>>>> +        - description: phandle for PMU system controller interface, used
+>> to
+>>>> +                       control pmu registers bits for ufs m-phy
+>>>> +        - description: offset of the pmu control register
+>>>
+>>> This does not work... Please test your bindings with different cases.
+>>
+>> Just to be clear - when I mentioned that minItems should be on second
+>> items level, I meant it should affect the second items list, not the first.
+>> Now you can have 1, 2 or 10 phandles.
 > 
-> Just to be clear - when I mentioned that minItems should be on second
-> items level, I meant it should affect the second items list, not the first.
-> Now you can have 1, 2 or 10 phandles.
+> I put the minItems to the second level as you mentioned but I got below error from dt_binding_check.
+> 
+> --- a/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> @@ -42,8 +42,8 @@ properties:
+>    samsung,pmu-syscon:
+>      $ref: '/schemas/types.yaml#/definitions/phandle-array'
+>      items:
+> -      minItems: 1
+>        items:
+> +        - minItems: 1
 
-I put the minItems to the second level as you mentioned but I got below error from dt_binding_check.
+Ah, you are right. This above is not good, but your original code was
+almost good. I think it should be:
 
---- a/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-@@ -42,8 +42,8 @@ properties:
-   samsung,pmu-syscon:
-     $ref: '/schemas/types.yaml#/definitions/phandle-array'
-     items:
--      minItems: 1
-       items:
-+        - minItems: 1
-         - description: phandle for PMU system controller interface, used to
-                        control pmu registers bits for ufs m-phy
-         - description: offset of the pmu control register
+43     $ref: '/schemas/types.yaml#/definitions/phandle-array'
 
-$ make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-ufs-phy@15571800: samsung,pmu-syscon:0: [4294967295, 1828] is too short
+44     maxItems: 1
 
-Best Regards,
-Chanho Park
+45     items:
 
+46       minItems: 1
+
+47       items:
+
+48         - description: phandle for PMU sysused to
+
+50         - description: offset of the pmu control register
+
+
+Apologies for the confusion.
+
+>          - description: phandle for PMU system controller interface, used to
+>                         control pmu registers bits for ufs m-phy
+>          - description: offset of the pmu control register
+> 
+> $ make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> ufs-phy@15571800: samsung,pmu-syscon:0: [4294967295, 1828] is too short
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
