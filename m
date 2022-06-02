@@ -4,86 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0043C43334
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 11:42:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C7C4C43334
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 11:49:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNLcoVUqKdTJPh1c0nzJoGnNVB0dv4xpQQKq6t0nGwM=; b=Gax/taVUsm9F8r
-	T8+cB1KXilPVNM+3XAjEIB4vLDpj6V0oJ2afN3IRtFWqFAFDADD/XLijZQZIpttDJXaZW5h+b4RGm
-	KhIyWlgyqU0Dx9ePn7+zYso6lOztH/VWIU6WRzC7GH8jy2+uFSWdGK4GEmwMgqlgTTkAnfzRaZPSJ
-	uyENBTfoFjNDSWwXmDK028bdMqVIoPiz2PHCs2mavh9X5z8+JUQA9qJKetg6Xnt9yMPgGtPDtjdmc
-	lFuLHiheffSZ166+OUpg4lg7irIQ7BQXZizkz4i4sZv9DMX1SVVf/yf0hVNFY2OciESGwL+OgCZsA
-	wFlUtn/egk2Xdpqg2QuA==;
+	List-Owner; bh=NMrcw7MPA+WTC4+93k7shusXXOURM36Zbo+WPdjfb3I=; b=WRgFdd0Ltu0LD/
+	9GwVkK1+pieqgCxAfurpxvpXjVpq3PVjkB//kmaR5/iAJCpMzbeZNewAXZdG9eLpSChqblofYhItH
+	V+Fz30lzrlZ60FNQXM3A+uKg7N1on3SGt5tdjx/LTB+r81B/HXtHXvfY34anYReTDhDuQUe020sGP
+	Zgp/9O5+iqZ8Vx9cZgcepDtal30356kqb1c912nERCLWghvU6M6E/ASukTB9RLRwwRFZFiFy3eNTh
+	KQ7uifzrzxdrYIrfBHwbqtPk8oQpYYRWcIsAG46BjJJEVNd00HqvELq19beu85LzYyLQWf4X2n0AQ
+	muLFyl5Lh4XWxUw3BoPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwjDg-002yf7-6n; Thu, 02 Jun 2022 11:42:28 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1nwjKH-0031N9-HG; Thu, 02 Jun 2022 11:49:17 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwjDd-002ye5-UP
-	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 11:42:27 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id x5so820173edi.2
-        for <linux-phy@lists.infradead.org>; Thu, 02 Jun 2022 04:42:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=ZpLQeQeQdZ8PTsl6QzkAMoq8cM5CGyVXLb6GbT76BN8=;
-        b=Lmlc5otPHPBiZqkehmSeYYqoo3/95heIBc/+gbh6YpzM/0f5eOv/657FiggDeOdJjA
-         4J43hf8bVwXMpb0QsHXqeDF3g/VVBtJyp67DlPLL3/uZZSBWsiWC+2WWkPTBZ/80Yx+f
-         TjbXUu4yFkpE02sn2O+JMok11f/baTwo6w/ywXd2N0cUMSWAbMCp/bU6Xn3Y5OxeqX91
-         dcJQTdK/9cYOgRM5aj2bC0QicxU6EXnhN3cGZozrGWhUiB136eXah1Mfwjtw8tirTvC3
-         yBAoOIhXkBDAYWdKobyKN9QnwhMgGzkgNhJIkZEPW+9dQtudnM4udrjBFbg0hy409Bki
-         Zuew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=ZpLQeQeQdZ8PTsl6QzkAMoq8cM5CGyVXLb6GbT76BN8=;
-        b=skqL9OUv6Zqr4fbjjoNjYdh8IJdo1MLK6UqnK1P1i2aqa0BgQ9EDhE6MvZ7c7YxIyi
-         Zdaf1EZ9+eipVeTJ1BZMfM+H9ms6PJSQXz3VBNSsi8wLS/C0RhO1kSpiMnlauZw2sk6F
-         akn+4FRZnKTrGOPSWVZsLU4NI3p/rB0xneOEZ/Wu7zAzJ7S43u5XyP2J7SZDu/LjbkrB
-         0OuowpCW5Ti8Re2HShDanPeaBSnUoVtxJPhjemhaBMyDeeAld+mKjQbfNvVUzY7qHgd9
-         G8l90VT0vmvgRK8wB4jfzq+1Q6EkSrU73TTim8WW5NK241pNBvos8R38n1kE7ZhnNEPo
-         fE2w==
-X-Gm-Message-State: AOAM531M3UgwKJ+nbnz8frXFI8qha7MjnNrqIdYGvUEzPl6/XfSeWW1C
-	8xnKaw0L96PfNiHjqlqLOoVoig==
-X-Google-Smtp-Source: ABdhPJwMBE3w8FcUsIappA+XgJgb3UE5rqzszgUOgdP3LXRDNy7ES7plawOr1PMvjECiQYsVoZm8Zg==
-X-Received: by 2002:aa7:cb8d:0:b0:42b:e414:8019 with SMTP id r13-20020aa7cb8d000000b0042be4148019mr5000940edt.151.1654170143563;
-        Thu, 02 Jun 2022 04:42:23 -0700 (PDT)
-Received: from [192.168.0.181] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id cq16-20020a056402221000b0042dd022787esm2325479edb.6.2022.06.02.04.42.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 02 Jun 2022 04:42:23 -0700 (PDT)
-Message-ID: <b5cf82bc-363a-81f8-e3ad-7671c7c0ca4f@linaro.org>
-Date: Thu, 2 Jun 2022 13:42:22 +0200
+	id 1nwjK4-0031Il-AW; Thu, 02 Jun 2022 11:49:06 +0000
+X-UUID: 6d6248aef46840bcbfb2c294a8435add-20220602
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.5,REQID:079752b3-5c98-4f9f-b49f-65bc9d4580f5,OB:0,LO
+	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+	ON:release,TS:0
+X-CID-META: VersionHash:2a19b09,CLOUDID:9065e837-9855-4915-a138-f5705f1f3d02,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
+	,QS:0,BEC:nil
+X-UUID: 6d6248aef46840bcbfb2c294a8435add-20220602
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+	(envelope-from <rex-bc.chen@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 1358563642; Thu, 02 Jun 2022 04:49:01 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 2 Jun 2022 04:38:59 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Thu, 2 Jun 2022 19:38:57 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Thu, 2 Jun 2022 19:38:57 +0800
+Message-ID: <be98423304bd51959dd9334215114bd179ec1e6b.camel@mediatek.com>
+Subject: Re: [PATCH v10 11/21] drm/mediatek: dpi: move swap_shift to SoC
+ config
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
+	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
+	<matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Kishon
+ Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao shi <jitao.shi@mediatek.com>
+CC: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<linux-fbdev@vger.kernel.org>
+Date: Thu, 2 Jun 2022 19:38:57 +0800
+In-Reply-To: <76ddd49bb2bb46923900b085056ce22d7bfa0b0a.camel@mediatek.com>
+References: <20220523104758.29531-1-granquet@baylibre.com>
+	 <20220523104758.29531-12-granquet@baylibre.com>
+	 <76ddd49bb2bb46923900b085056ce22d7bfa0b0a.camel@mediatek.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.10.0
-Subject: Re: [PATCH v2 1/6] dt-bindings: phy: samsung,ufs-phy: make pmu-syscon
- as phandle-array
-Content-Language: en-US
-To: Chanho Park <chanho61.park@samsung.com>,
- 'Kishon Vijay Abraham I' <kishon@ti.com>, 'Vinod Koul' <vkoul@kernel.org>,
- 'Alim Akhtar' <alim.akhtar@samsung.com>, 'Rob Herring' <robh+dt@kernel.org>,
- 'Krzysztof Kozlowski' <krzysztof.kozlowski+dt@linaro.org>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20220602053250.62593-1-chanho61.park@samsung.com>
- <CGME20220602053329epcas2p4c2baca2d161814f5d51dc48722f904b1@epcas2p4.samsung.com>
- <20220602053250.62593-2-chanho61.park@samsung.com>
- <44fceb66-fd33-4b2d-fe8e-9a1a5837a51a@linaro.org>
- <b16915f7-a4b7-4512-77fb-b2cdd8e7cdb4@linaro.org>
- <035e01d87668$fb2bfcf0$f183f6d0$@samsung.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <035e01d87668$fb2bfcf0$f183f6d0$@samsung.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_044226_058323_5319117E 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20220602_044904_396501_2DC10D8A 
+X-CRM114-Status: GOOD (  23.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,68 +93,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02/06/2022 12:10, Chanho Park wrote:
->>>>    samsung,pmu-syscon:
->>>> -    $ref: '/schemas/types.yaml#/definitions/phandle'
->>>> -    description: phandle for PMU system controller interface, used to
->>>> -                 control pmu registers bits for ufs m-phy
->>>> +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
->>>> +    items:
->>>> +      minItems: 1
->>>> +      items:
->>>> +        - description: phandle for PMU system controller interface, used
->> to
->>>> +                       control pmu registers bits for ufs m-phy
->>>> +        - description: offset of the pmu control register
->>>
->>> This does not work... Please test your bindings with different cases.
->>
->> Just to be clear - when I mentioned that minItems should be on second
->> items level, I meant it should affect the second items list, not the first.
->> Now you can have 1, 2 or 10 phandles.
+On Mon, 2022-05-30 at 16:38 +0800, CK Hu wrote:
+> Hi, Guillaume:
 > 
-> I put the minItems to the second level as you mentioned but I got below error from dt_binding_check.
+> On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> > Add flexibility by moving the swap shift value to SoC specific
+> > config
+> > 
+> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> > Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
+> > Reviewed-by: AngeloGioacchino Del Regno <
+> > angelogioacchino.delregno@collabora.com>
+> > ---
+> >  drivers/gpu/drm/mediatek/mtk_dpi.c | 8 +++++++-
+> >  1 file changed, 7 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> > b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> > index 6eeda222a973..6d4d8c6ec47d 100644
+> > --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> > +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> > @@ -131,6 +131,7 @@ struct mtk_dpi_conf {
+> >  	u32 dimension_mask;
+> >  	/* HSIZE and VSIZE mask (no shift) */
+> >  	u32 hvsize_mask;
+> > +	u32 channel_swap_shift;
+> >  	const struct mtk_dpi_yc_limit *limit;
+> >  };
+> >  
+> > @@ -349,7 +350,8 @@ static void mtk_dpi_config_channel_swap(struct
+> > mtk_dpi *dpi,
+> >  		break;
+> >  	}
+> >  
+> > -	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, val << CH_SWAP,
+> > CH_SWAP_MASK);
+> > +	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, val << dpi->conf-
+> > > channel_swap_shift,
+> > 
+> > +		     CH_SWAP_MASK);
+> > From the definiton:
 > 
-> --- a/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-> @@ -42,8 +42,8 @@ properties:
->    samsung,pmu-syscon:
->      $ref: '/schemas/types.yaml#/definitions/phandle-array'
->      items:
-> -      minItems: 1
->        items:
-> +        - minItems: 1
-
-Ah, you are right. This above is not good, but your original code was
-almost good. I think it should be:
-
-43     $ref: '/schemas/types.yaml#/definitions/phandle-array'
-
-44     maxItems: 1
-
-45     items:
-
-46       minItems: 1
-
-47       items:
-
-48         - description: phandle for PMU sysused to
-
-50         - description: offset of the pmu control register
-
-
-Apologies for the confusion.
-
->          - description: phandle for PMU system controller interface, used to
->                         control pmu registers bits for ufs m-phy
->          - description: offset of the pmu control register
+>  #define CH_SWAP				0
+> +#define DPINTF_CH_SWAP			BIT(1)
+>  #define CH_SWAP_MASK			(0x7 << 0)
+> +#define DPINTF_CH_SWAP_MASK		(0x7 << 1)
 > 
-> $ make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-> ufs-phy@15571800: samsung,pmu-syscon:0: [4294967295, 1828] is too short
+> This statement should be:
+> 
+> mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, val << dpi->conf-
+> > channel_swap_shift, CH_SWAP_MASK << dpi->conf->channel_swap_shift);
+> 
+> dpi->conf->channel_swap_shift is 1 for MT8195-DP_INTF and 0 for
+> others.
+> And drop the definition of DPINTF_CH_SWAP and DPINTF_CH_SWAP_MASK,
+> 
+> Regards,
+> CK
+> 
 
+Hello CK,
 
-Best regards,
-Krzysztof
+I think we should keep DPINTF_CH_SWAP?
+BIT(1) = 2 so the shift should be:
+dpi->conf->channel_swap_shift is 2 for MT8195-DP_INTF and 0 for
+others.
+
+BRs,
+Bo-Chen
+> 
+> >  }
+> >  
+> >  static void mtk_dpi_config_yuv422_enable(struct mtk_dpi *dpi, bool
+> > enable)
+> > @@ -821,6 +823,7 @@ static const struct mtk_dpi_conf mt8173_conf =
+> > {
+> >  	.swap_input_support = true,
+> >  	.dimension_mask = HPW_MASK,
+> >  	.hvsize_mask = HSIZE_MASK,
+> > +	.channel_swap_shift = CH_SWAP,
+> >  	.limit = &mtk_dpi_limit,
+> >  };
+> >  
+> > @@ -835,6 +838,7 @@ static const struct mtk_dpi_conf mt2701_conf =
+> > {
+> >  	.swap_input_support = true,
+> >  	.dimension_mask = HPW_MASK,
+> >  	.hvsize_mask = HSIZE_MASK,
+> > +	.channel_swap_shift = CH_SWAP,
+> >  	.limit = &mtk_dpi_limit,
+> >  };
+> >  
+> > @@ -848,6 +852,7 @@ static const struct mtk_dpi_conf mt8183_conf =
+> > {
+> >  	.swap_input_support = true,
+> >  	.dimension_mask = HPW_MASK,
+> >  	.hvsize_mask = HSIZE_MASK,
+> > +	.channel_swap_shift = CH_SWAP,
+> >  	.limit = &mtk_dpi_limit,
+> >  };
+> >  
+> > @@ -861,6 +866,7 @@ static const struct mtk_dpi_conf mt8192_conf =
+> > {
+> >  	.swap_input_support = true,
+> >  	.dimension_mask = HPW_MASK,
+> >  	.hvsize_mask = HSIZE_MASK,
+> > +	.channel_swap_shift = CH_SWAP,
+> >  	.limit = &mtk_dpi_limit,
+> >  };
+> >  
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 
 -- 
 linux-phy mailing list
