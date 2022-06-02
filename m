@@ -4,79 +4,127 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B75DC43334
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 12:21:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C5ADC43334
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 13:00:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gXu6kvC7MPhM9xqnhHLYKK8l8dELGGVuVxRKQhKK00Y=; b=Nvpe/10IPWB6pX
-	K+2s2X2Obb7EgEVMrdg0zBnF0XNcsuPwqr/T+8aeU7UlTaxJQYPHkfyAcOy/cLFW0CzOwOcspbmuQ
-	+dDvBHz1uZYeca5+YHFmVnyI1NYf8/Smy91KrKfOFJXXL6n7nqKW69LRbNISKJhsQmUsdfh2kfbri
-	IARwAW5+b2pP0zqcliDLcM0Npe0uim0S/z2XJVKa77qD+QghfSu4kqF2z7bzeQYvidAqgTHAYjxDC
-	A5mhqXTsN8YL7tQnfv78CTIr7fLENDWWSQDzBFriG7pFAgZfuY6hHjUBfy7rYjMk+ppKJSk3KMTYG
-	Shcry/dRUoP0lCdLhcMQ==;
+	List-Owner; bh=/+B4JU0WkOtoWbv8Zmqflo+CBg1vy5g5e3IcQZ2U7dc=; b=SHZTH+Stvx6GAb
+	smL/+tiy7aBE4ULPwJX3h8dsPyv92vzZsh+aFwwAEZylnybPMlhXI70ehZDx5v5LcwiiN10Yk0ydm
+	BVwUdXBOds+4qHXB1E4qSE9+q2Xjy67v9OMdqLnzKwRId41qYLct8VRtDKX9SFrcy/UWRlh2XN04x
+	GkX3NgLRi0uWpW2u95B3j3hUkvH8oTzoz1ldNo3zpaa+cCsK91RDXeTIGlLOkWklfvQbOLbz+RpxY
+	CpgXH9JAuDHjfBSkSxHyXVU2M9fc7jTs3EGZ8O5KVDFGlenkh5ImMHl14FLqo/HpiUwKAimsae7uy
+	2G+t1PVVQrMZEraOrBWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwjpF-003BaZ-Tz; Thu, 02 Jun 2022 12:21:17 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nwkR0-003IkS-2i; Thu, 02 Jun 2022 13:00:18 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwjoy-003BUK-OA; Thu, 02 Jun 2022 12:21:02 +0000
-X-UUID: 572106883553470eb9c8ff6587268fdd-20220602
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5,REQID:2ae712af-c170-4d23-9bc6-0a550e475d0a,OB:0,LO
-	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
-	ON:release,TS:0
-X-CID-META: VersionHash:2a19b09,CLOUDID:273fe937-9855-4915-a138-f5705f1f3d02,C
-	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
-	,QS:0,BEC:nil
-X-UUID: 572106883553470eb9c8ff6587268fdd-20220602
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
-	(envelope-from <rex-bc.chen@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
-	with ESMTP id 2073146982; Thu, 02 Jun 2022 05:20:54 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 2 Jun 2022 05:19:06 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
- Thu, 2 Jun 2022 20:19:05 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Thu, 2 Jun 2022 20:19:05 +0800
-Message-ID: <1b2c534c189944b388ff7ca9adc013e8878fe37e.camel@mediatek.com>
-Subject: Re: [PATCH v10 11/21] drm/mediatek: dpi: move swap_shift to SoC
- config
-From: Rex-BC Chen <rex-bc.chen@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
-	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
-	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
-	<matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Kishon
- Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
- Deller" <deller@gmx.de>, Jitao shi <jitao.shi@mediatek.com>
-CC: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-fbdev@vger.kernel.org>
-Date: Thu, 2 Jun 2022 20:19:05 +0800
-In-Reply-To: <76ddd49bb2bb46923900b085056ce22d7bfa0b0a.camel@mediatek.com>
-References: <20220523104758.29531-1-granquet@baylibre.com>
-	 <20220523104758.29531-12-granquet@baylibre.com>
-	 <76ddd49bb2bb46923900b085056ce22d7bfa0b0a.camel@mediatek.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+	id 1nwkQn-003If1-Gx
+	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 13:00:08 +0000
+Received: from epcas2p2.samsung.com (unknown [182.195.41.54])
+	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20220602125954epoutp0164a3445c7449fa06c7efcd4fb4709505~0zzYyf-ih1245712457epoutp01P
+	for <linux-phy@lists.infradead.org>; Thu,  2 Jun 2022 12:59:54 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20220602125954epoutp0164a3445c7449fa06c7efcd4fb4709505~0zzYyf-ih1245712457epoutp01P
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1654174794;
+	bh=S20/HwX9GYZeobEXd5xhvGD8lYXj/+otH2CE8CuoLc0=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=i3u7s6j9PKt2FMDm+SkwD20Ehdtv/CQCMBmOPRe+lr9SpEPYynmqWW/q5b1udFJLf
+	 R4C3HBAG0rg91F3o+DsMTAdkO2xFCDJFxLRhEwqNXG7hX3L2XiLfcu6qZfSFiTHPgx
+	 MqdngWD6rCzwbitdC7Qvz3j8+ctmEeT5oRKPZOz8=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
+	epcas2p2.samsung.com (KnoxPortal) with ESMTP id
+	20220602125953epcas2p20fceca1c060d530134d2925404fa6f1e~0zzXdlF3C1682116821epcas2p2O;
+	Thu,  2 Jun 2022 12:59:53 +0000 (GMT)
+Received: from epsmges2p2.samsung.com (unknown [182.195.36.90]) by
+	epsnrtp1.localdomain (Postfix) with ESMTP id 4LDR1h3v3Yz4x9Ps; Thu,  2 Jun
+	2022 12:59:52 +0000 (GMT)
+Received: from epcas2p2.samsung.com ( [182.195.41.54]) by
+	epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	3D.23.09764.844B8926; Thu,  2 Jun 2022 21:59:52 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+	epcas2p1.samsung.com (KnoxPortal) with ESMTPA id
+	20220602125951epcas2p16f49a30d4fdfbdcd03a433fa1c8f1610~0zzWGMFTK0086600866epcas2p1g;
+	Thu,  2 Jun 2022 12:59:51 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+	epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+	20220602125951epsmtrp29823529eb79b86f2ec2a769324feacbd~0zzWFXrEn2833528335epsmtrp2e;
+	Thu,  2 Jun 2022 12:59:51 +0000 (GMT)
+X-AuditID: b6c32a46-f75ff70000002624-d7-6298b448fd67
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	A4.EE.08924.744B8926; Thu,  2 Jun 2022 21:59:51 +0900 (KST)
+Received: from KORCO082417 (unknown [10.229.8.121]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20220602125951epsmtip2c7ae99be55f55d7e1d00ce6f9852d238~0zzV3sNne0775007750epsmtip2i;
+	Thu,  2 Jun 2022 12:59:51 +0000 (GMT)
+From: "Chanho Park" <chanho61.park@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzysztof.kozlowski@linaro.org>, "'Kishon Vijay
+ Abraham I'" <kishon@ti.com>, "'Vinod Koul'" <vkoul@kernel.org>, "'Alim
+ Akhtar'" <alim.akhtar@samsung.com>, "'Rob Herring'" <robh+dt@kernel.org>,
+	"'Krzysztof	Kozlowski'" <krzysztof.kozlowski+dt@linaro.org>
+Cc: <devicetree@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-samsung-soc@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
+In-Reply-To: <42b8c793-caa7-e14d-0a6c-dec7aa914dff@linaro.org>
+Subject: RE: [PATCH v2 3/6] phy: samsung: ufs: support secondary ufs phy
+Date: Thu, 2 Jun 2022 21:59:51 +0900
+Message-ID: <050301d87680$a5dac8e0$f1905aa0$@samsung.com>
 MIME-Version: 1.0
-X-MTK: N
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQLWkTnA63V9WykH3rm22/0hqLdk6gJT4k6aAmvBrIgA/M7PUqsR+cUg
+Content-Language: ko
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrJJsWRmVeSWpSXmKPExsWy7bCmma7HlhlJBk8Pylg8mLeNzWL+kXOs
+	Fhee9rBZ9L14yGyx9/VWdotNj6+xWkxY9Y3FYsb5fUwWrXuPsFvsvHOC2YHLY9OqTjaPO9f2
+	sHlsXlLv0bdlFaPH8RvbmTw+b5ILYIvKtslITUxJLVJIzUvOT8nMS7dV8g6Od443NTMw1DW0
+	tDBXUshLzE21VXLxCdB1y8wBukxJoSwxpxQoFJBYXKykb2dTlF9akqqQkV9cYquUWpCSU2Be
+	oFecmFtcmpeul5daYmVoYGBkClSYkJ2xfONR1oJ1bBWn9nUzNTDOZu1i5OSQEDCR2LNlFXsX
+	IxeHkMAORonJx7dAOZ8YJTa/fsYM4XxmlDj17RkjTMubPytYIBK7GCXeLtkOVfWCUWLKnS0s
+	IFVsAvoSLzu2sYIkRATmM0k87bzKBJJgFpjAKLHyk3cXIwcHp4CdxPsHriCmsICHxN5ViiAV
+	LAIqEp+e32MGCfMKWEr82B8GEuYVEJQ4OfMJC8QQbYllC18zQ9yjIPHz6TKwd0QE3CSm7DrN
+	DlEjIjG7sw3sNAmBHRwS7z8dgPrZReJuTwc7hC0s8QrsZRBbSuLzu71sEHaxxNJZn5ggmhsY
+	JS5v+wWVMJaY9aydEeQ4ZgFNifW79EFMCQFliSO3oG7jk+g4/JcdIswr0dEmBNGoLnFg+3QW
+	CFtWonvOZ9YJjEqzkHw2C8lns5B8MAth1wJGllWMYqkFxbnpqcVGBUbwuE7Oz93ECE6zWm47
+	GKe8/aB3iJGJg/EQowQHs5IIb8muqUlCvCmJlVWpRfnxRaU5qcWHGE2BQT2RWUo0OR+Y6PNK
+	4g1NLA1MzMwMzY1MDcyVxHm9UjYkCgmkJ5akZqemFqQWwfQxcXBKNTDJh7gwyPz0qiz5Lmhj
+	YeFzeH6ghRCHgb58lti5BSbnju9iVd68KIgtYGKnYmCkfYmf0WxZ9ZsO5Vw++putg3qMJf5z
+	J3Wa/3xutbN2vvTOENP3y35VRZh3rA/qrpM4oN0mHu038XUp39PfzhXn78648+Sh3VP5s/d2
+	Su/v3/P2R9wFjqOmPh5du1Lm/bdIm7LdR5prwom5Pb8uSrzY+sGBd89/Vv2Tr5WX8MR+ylnN
+	JzSXUTM+43/apBWMUxIuTIhbePCiyVQDh6m5wktW21icWGCrduGA+clTNXHRetIhblX77/7e
+	c2mb85XwvwqTLIMYNlyvqbzJM817ry+fh3BA8d+E9Wsc+FdkrFwaO0GJpTgj0VCLuag4EQDA
+	j3WXPAQAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprGIsWRmVeSWpSXmKPExsWy7bCSvK77lhlJBvPXGVo8mLeNzWL+kXOs
+	Fhee9rBZ9L14yGyx9/VWdotNj6+xWkxY9Y3FYsb5fUwWrXuPsFvsvHOC2YHLY9OqTjaPO9f2
+	sHlsXlLv0bdlFaPH8RvbmTw+b5ILYIvisklJzcksSy3St0vgynjdsYixYDNbxY9NV5kaGGex
+	djFyckgImEi8+bOCpYuRi0NIYAejxNtZc5khErISz97tYIewhSXutxxhhSh6xiixY91rFpAE
+	m4C+xMuObWAJEYHFTBL9J86ygTjMAlMYJS5ffQk19yujxPw/M4BmcXBwCthJvH/gCmIKC3hI
+	7F2lCDKIRUBF4tPze8wgYV4BS4kf+8NAwrwCghInZz4B28UsoC3x9OZTOHvZwtdQhypI/Hy6
+	DOwbEQE3iSm7TrND1IhIzO5sY57AKDwLyahZSEbNQjJqFpKWBYwsqxglUwuKc9Nziw0LjPJS
+	y/WKE3OLS/PS9ZLzczcxgqNOS2sH455VH/QOMTJxMB5ilOBgVhLhLdk1NUmINyWxsiq1KD++
+	qDQntfgQozQHi5I474Wuk/FCAumJJanZqakFqUUwWSYOTqkGppJ8zSnbg/ofyuyaMPHeFrVS
+	uy9fuafkTv9fvOrrLafnE34eMVpgPSVI/uluxlv5H+2EVu2yEjzy6U5iSsUFVf6Z8kLy+zpc
+	Dq5a6Jb6ReTgmZnd01ZPKRSQiLk0PeT9yTnnb7zJunqm9mMA3741s9Ql95V8tY9tZzRbd9Hr
+	tcQXnxz2S5f2iPjVa7f8l5oT8vN3QmzlupLzJuqHE4wMTnrymfxidXG0iDcJyHE7LrOy962T
+	e+Ekvo3tS+tbrSK++h2vVtBaM8s7g9Pr2f2LR1ir9p7snPTxxtu9Fb61W/67+B65/26jXJ6/
+	7xudC0KrxUWazkx7uGH50QlXlzA1t53+yrJ2+uWMPatmxYcd9jJTYinOSDTUYi4qTgQAPUfF
+	/SkDAAA=
+X-CMS-MailID: 20220602125951epcas2p16f49a30d4fdfbdcd03a433fa1c8f1610
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220602053329epcas2p19785735bcbf08ad274ff887797485b8c
+References: <20220602053250.62593-1-chanho61.park@samsung.com>
+	<CGME20220602053329epcas2p19785735bcbf08ad274ff887797485b8c@epcas2p1.samsung.com>
+	<20220602053250.62593-4-chanho61.park@samsung.com>
+	<42b8c793-caa7-e14d-0a6c-dec7aa914dff@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_052100_821219_9507C72B 
-X-CRM114-Status: GOOD (  22.92  )
+X-CRM114-CacheID: sfid-20220602_060005_978858_F4C898B2 
+X-CRM114-Status: GOOD (  14.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,127 +141,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2022-05-30 at 16:38 +0800, CK Hu wrote:
-> Hi, Guillaume:
+> > +	phy->isol = devm_kzalloc(dev, sizeof(struct pmu_isol), GFP_KERNEL);
 > 
-> On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
-> > Add flexibility by moving the swap shift value to SoC specific
-> > config
-> > 
-> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> > Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
-> > Reviewed-by: AngeloGioacchino Del Regno <
-> > angelogioacchino.delregno@collabora.com>
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_dpi.c | 8 +++++++-
-> >  1 file changed, 7 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > index 6eeda222a973..6d4d8c6ec47d 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > @@ -131,6 +131,7 @@ struct mtk_dpi_conf {
-> >  	u32 dimension_mask;
-> >  	/* HSIZE and VSIZE mask (no shift) */
-> >  	u32 hvsize_mask;
-> > +	u32 channel_swap_shift;
-> >  	const struct mtk_dpi_yc_limit *limit;
-> >  };
-> >  
-> > @@ -349,7 +350,8 @@ static void mtk_dpi_config_channel_swap(struct
-> > mtk_dpi *dpi,
-> >  		break;
-> >  	}
-> >  
-> > -	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, val << CH_SWAP,
-> > CH_SWAP_MASK);
-> > +	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, val << dpi->conf-
-> > > channel_swap_shift,
-> > 
-> > +		     CH_SWAP_MASK);
-> > From the definiton:
+> 1. Looks like devm_kmemdup
+> 2. sizeof(*variable), not sizeof(struct)
 > 
->  #define CH_SWAP				0
-> +#define DPINTF_CH_SWAP			BIT(1)
->  #define CH_SWAP_MASK			(0x7 << 0)
-> +#define DPINTF_CH_SWAP_MASK		(0x7 << 1)
+> 3. and actually you can simplify all that by storing struct pmu_isol
+> directly in struct samsung_ufs_phy, not as pointer.
 > 
-> This statement should be:
-> 
-> mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, val << dpi->conf-
-> > channel_swap_shift, CH_SWAP_MASK << dpi->conf->channel_swap_shift);
-> 
-> dpi->conf->channel_swap_shift is 1 for MT8195-DP_INTF and 0 for
-> others.
-> And drop the definition of DPINTF_CH_SWAP and DPINTF_CH_SWAP_MASK,
-> 
-> Regards,
-> CK
-> 
+> After all that storing drvdata in samsung_ufs_phy does not make any sense
+> - only one field is left still used (has_symbol_clk), so this should be
+> simplified here as well.
 
-Hello CK,
+It would be better storing struct pmu_isol directly and remove drvdata from samsung_ufs_phy as you suggested.
+Furthermore, definition of struct pmu_isol looks odd in the definition of samsung_ufs_phy_drvdata.
+So, I'll pop it out and change the naming to "struct samsung_ufs_phy_pmu_isol"
 
-I have checked this with Jitao,
-it's all shift 1 bit including mask and value.
-
-I will modify like this:
-#define DPINTF_CH_SWAP 1
-
-mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING,
-val << dpi->conf-> channel_swap_shift,
-CH_SWAP_MASK << dpi->conf->channel_swap_shift);
-
-
-BR,
-Bo-Chen
-> 
-> >  }
-> >  
-> >  static void mtk_dpi_config_yuv422_enable(struct mtk_dpi *dpi, bool
-> > enable)
-> > @@ -821,6 +823,7 @@ static const struct mtk_dpi_conf mt8173_conf =
-> > {
-> >  	.swap_input_support = true,
-> >  	.dimension_mask = HPW_MASK,
-> >  	.hvsize_mask = HSIZE_MASK,
-> > +	.channel_swap_shift = CH_SWAP,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> > @@ -835,6 +838,7 @@ static const struct mtk_dpi_conf mt2701_conf =
-> > {
-> >  	.swap_input_support = true,
-> >  	.dimension_mask = HPW_MASK,
-> >  	.hvsize_mask = HSIZE_MASK,
-> > +	.channel_swap_shift = CH_SWAP,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> > @@ -848,6 +852,7 @@ static const struct mtk_dpi_conf mt8183_conf =
-> > {
-> >  	.swap_input_support = true,
-> >  	.dimension_mask = HPW_MASK,
-> >  	.hvsize_mask = HSIZE_MASK,
-> > +	.channel_swap_shift = CH_SWAP,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> > @@ -861,6 +866,7 @@ static const struct mtk_dpi_conf mt8192_conf =
-> > {
-> >  	.swap_input_support = true,
-> >  	.dimension_mask = HPW_MASK,
-> >  	.hvsize_mask = HSIZE_MASK,
-> > +	.channel_swap_shift = CH_SWAP,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Best Regards,
+Chanho Park
 
 
 -- 
