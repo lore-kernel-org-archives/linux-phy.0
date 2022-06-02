@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C7C4C43334
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 11:49:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B75DC43334
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 12:21:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NMrcw7MPA+WTC4+93k7shusXXOURM36Zbo+WPdjfb3I=; b=WRgFdd0Ltu0LD/
-	9GwVkK1+pieqgCxAfurpxvpXjVpq3PVjkB//kmaR5/iAJCpMzbeZNewAXZdG9eLpSChqblofYhItH
-	V+Fz30lzrlZ60FNQXM3A+uKg7N1on3SGt5tdjx/LTB+r81B/HXtHXvfY34anYReTDhDuQUe020sGP
-	Zgp/9O5+iqZ8Vx9cZgcepDtal30356kqb1c912nERCLWghvU6M6E/ASukTB9RLRwwRFZFiFy3eNTh
-	KQ7uifzrzxdrYIrfBHwbqtPk8oQpYYRWcIsAG46BjJJEVNd00HqvELq19beu85LzYyLQWf4X2n0AQ
-	muLFyl5Lh4XWxUw3BoPg==;
+	List-Owner; bh=gXu6kvC7MPhM9xqnhHLYKK8l8dELGGVuVxRKQhKK00Y=; b=Nvpe/10IPWB6pX
+	K+2s2X2Obb7EgEVMrdg0zBnF0XNcsuPwqr/T+8aeU7UlTaxJQYPHkfyAcOy/cLFW0CzOwOcspbmuQ
+	+dDvBHz1uZYeca5+YHFmVnyI1NYf8/Smy91KrKfOFJXXL6n7nqKW69LRbNISKJhsQmUsdfh2kfbri
+	IARwAW5+b2pP0zqcliDLcM0Npe0uim0S/z2XJVKa77qD+QghfSu4kqF2z7bzeQYvidAqgTHAYjxDC
+	A5mhqXTsN8YL7tQnfv78CTIr7fLENDWWSQDzBFriG7pFAgZfuY6hHjUBfy7rYjMk+ppKJSk3KMTYG
+	Shcry/dRUoP0lCdLhcMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwjKH-0031N9-HG; Thu, 02 Jun 2022 11:49:17 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1nwjpF-003BaZ-Tz; Thu, 02 Jun 2022 12:21:17 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwjK4-0031Il-AW; Thu, 02 Jun 2022 11:49:06 +0000
-X-UUID: 6d6248aef46840bcbfb2c294a8435add-20220602
+	id 1nwjoy-003BUK-OA; Thu, 02 Jun 2022 12:21:02 +0000
+X-UUID: 572106883553470eb9c8ff6587268fdd-20220602
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5,REQID:079752b3-5c98-4f9f-b49f-65bc9d4580f5,OB:0,LO
+X-CID-O-INFO: VERSION:1.1.5,REQID:2ae712af-c170-4d23-9bc6-0a550e475d0a,OB:0,LO
 	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
 	ON:release,TS:0
-X-CID-META: VersionHash:2a19b09,CLOUDID:9065e837-9855-4915-a138-f5705f1f3d02,C
+X-CID-META: VersionHash:2a19b09,CLOUDID:273fe937-9855-4915-a138-f5705f1f3d02,C
 	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
 	,QS:0,BEC:nil
-X-UUID: 6d6248aef46840bcbfb2c294a8435add-20220602
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+X-UUID: 572106883553470eb9c8ff6587268fdd-20220602
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
 	(envelope-from <rex-bc.chen@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
-	with ESMTP id 1358563642; Thu, 02 Jun 2022 04:49:01 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 2 Jun 2022 04:38:59 -0700
-Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Thu, 2 Jun 2022 19:38:57 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n2.mediatek.inc
+	with ESMTP id 2073146982; Thu, 02 Jun 2022 05:20:54 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 2 Jun 2022 05:19:06 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Thu, 2 Jun 2022 20:19:05 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Thu, 2 Jun 2022 19:38:57 +0800
-Message-ID: <be98423304bd51959dd9334215114bd179ec1e6b.camel@mediatek.com>
+ Transport; Thu, 2 Jun 2022 20:19:05 +0800
+Message-ID: <1b2c534c189944b388ff7ca9adc013e8878fe37e.camel@mediatek.com>
 Subject: Re: [PATCH v10 11/21] drm/mediatek: dpi: move swap_shift to SoC
  config
 From: Rex-BC Chen <rex-bc.chen@mediatek.com>
@@ -66,7 +66,7 @@ CC: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
 	<linux-fbdev@vger.kernel.org>
-Date: Thu, 2 Jun 2022 19:38:57 +0800
+Date: Thu, 2 Jun 2022 20:19:05 +0800
 In-Reply-To: <76ddd49bb2bb46923900b085056ce22d7bfa0b0a.camel@mediatek.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
 	 <20220523104758.29531-12-granquet@baylibre.com>
@@ -75,8 +75,8 @@ X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_044904_396501_2DC10D8A 
-X-CRM114-Status: GOOD (  23.38  )
+X-CRM114-CacheID: sfid-20220602_052100_821219_9507C72B 
+X-CRM114-Status: GOOD (  22.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,12 +154,18 @@ On Mon, 2022-05-30 at 16:38 +0800, CK Hu wrote:
 
 Hello CK,
 
-I think we should keep DPINTF_CH_SWAP?
-BIT(1) = 2 so the shift should be:
-dpi->conf->channel_swap_shift is 2 for MT8195-DP_INTF and 0 for
-others.
+I have checked this with Jitao,
+it's all shift 1 bit including mask and value.
 
-BRs,
+I will modify like this:
+#define DPINTF_CH_SWAP 1
+
+mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING,
+val << dpi->conf-> channel_swap_shift,
+CH_SWAP_MASK << dpi->conf->channel_swap_shift);
+
+
+BR,
 Bo-Chen
 > 
 > >  }
