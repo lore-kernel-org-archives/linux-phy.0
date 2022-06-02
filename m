@@ -4,127 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9A1DC43334
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 13:04:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65740C43334
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 13:09:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ggHHp2ogjbJqMb3RV1MoAVZAq16LdpwYqnDdaKebNTI=; b=ECIhwVwSNchmtC
-	7yVb9hcHWWG8SgScbqGwAPw/KHluMy0QATTEnt6Hiunzbl3mGQK4eqMbCNXRscAY4zH5xVopAzPxw
-	iTfA/dH1ljJ/SEpxEsDeMyB52DoxYZEsJshC2aRjZqsMcBs9xrd54ISzjr0nkFr9UdDHiiNsnQeL8
-	yh4j9si6e6W8e1n9ADWwNGDJcfjnlRGv3A1Oc+eACWB2q4niaga0aZ5i59/QYEIIzX4GMZNRAkQom
-	SSxvj8FswxZ3gQQ+oXyg6ZqRVAE3oJJa4hjD7dBjPckpDONbnKMODdU5FgtsNLjT3K4dJPSdXSsJ7
-	DlP8ra0MI7fx0nrNyANQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gQLdPrA8ZxjxfGM8mzgzccYdl6qzzu73zHc0iKmpxAA=; b=n6+989gtBVUc86
+	Z+P8w4ZAavaWccEYlOopeZMTNdFRQDnOUGDbQSiJXz7R6mr1u3cxETriXswK8uGRQKwwu10JeQ3s7
+	qhf3yJGzr1yMR6dmVuUMf7finEMA/oGjan5jajEHEyjImQ5JGCJCow9GVLmkL2m+hbcF5keAFCkMu
+	PgFutEZi2cAfmVBixTPPITSCTG3XEZq0JOFLmiozFZNgvKwcIyO94qbAVKQbhOeUHt5uHfePL72U1
+	d9t7jM8ntoJXNnZYN7959z5Djf2rFPUs8wBPIYmHdh5Fh8fRDf+4/ihQI9OtzAZivQG7ihqpJtpBm
+	PjlBP3qnmIwgng46DO3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwkV6-003JQP-64; Thu, 02 Jun 2022 13:04:32 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1nwkZr-003Kvp-NY; Thu, 02 Jun 2022 13:09:27 +0000
+Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwkUx-003JNT-OZ
-	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 13:04:26 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20220602130417epoutp03b0e105b5aabb3c3ff0bb48d525102af0~0z3NpE_7F2223222232epoutp03s
-	for <linux-phy@lists.infradead.org>; Thu,  2 Jun 2022 13:04:17 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20220602130417epoutp03b0e105b5aabb3c3ff0bb48d525102af0~0z3NpE_7F2223222232epoutp03s
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1654175057;
-	bh=7429YeZ9Hyu90o3eIAgz56jiehI3KDgsZbfulkTdugI=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=caob5pWVeCEYuGImGjDoUsA+i6qr0nlCQu564YAgQCltWCY7B3qQmp5Q74jaQ+lo7
-	 TkcJNug1Ts0t5QVBlrOk9Si1jWql6QP/wV6yEqLBEFNA5MyZ/xqn8OEluqWhOoEp9P
-	 yK3DHsgf8YOzoW04jVjgwy4gzF3QJR/hmRse4Fgo=
-Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
-	epcas2p2.samsung.com (KnoxPortal) with ESMTP id
-	20220602130416epcas2p24b4c67e69d3a4d93a7ab3585db29c2f9~0z3M689mY1685816858epcas2p2V;
-	Thu,  2 Jun 2022 13:04:16 +0000 (GMT)
-Received: from epsmges2p3.samsung.com (unknown [182.195.36.92]) by
-	epsnrtp1.localdomain (Postfix) with ESMTP id 4LDR6l6YzFz4x9Pv; Thu,  2 Jun
-	2022 13:04:15 +0000 (GMT)
-Received: from epcas2p3.samsung.com ( [182.195.41.55]) by
-	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
-	23.F7.10028.F45B8926; Thu,  2 Jun 2022 22:04:15 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
-	epcas2p2.samsung.com (KnoxPortal) with ESMTPA id
-	20220602130415epcas2p22dd936d7686731681a22fe6cfd6c0173~0z3LcyOUD2782627826epcas2p2s;
-	Thu,  2 Jun 2022 13:04:15 +0000 (GMT)
-Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
-	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
-	20220602130415epsmtrp112e0bc2d5e6f547bc288b40feb4efb4f~0z3Lb58kV2151821518epsmtrp1g;
-	Thu,  2 Jun 2022 13:04:15 +0000 (GMT)
-X-AuditID: b6c32a47-589ff7000000272c-26-6298b54fefa3
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
-	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
-	BF.0F.08924.F45B8926; Thu,  2 Jun 2022 22:04:15 +0900 (KST)
-Received: from KORCO082417 (unknown [10.229.8.121]) by epsmtip2.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20220602130415epsmtip2c7027309bcdd4b51a6ac04812825f005~0z3LQm-Qj1820818208epsmtip2R;
-	Thu,  2 Jun 2022 13:04:15 +0000 (GMT)
-From: "Chanho Park" <chanho61.park@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzysztof.kozlowski@linaro.org>, "'Kishon Vijay
- Abraham I'" <kishon@ti.com>, "'Vinod Koul'" <vkoul@kernel.org>, "'Alim
- Akhtar'" <alim.akhtar@samsung.com>, "'Rob Herring'" <robh+dt@kernel.org>,
-	"'Krzysztof	Kozlowski'" <krzysztof.kozlowski+dt@linaro.org>
-Cc: <devicetree@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-samsung-soc@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-In-Reply-To: <58e06727-a9ae-7466-6bc3-feee92bd9bf1@linaro.org>
-Subject: RE: [PATCH v2 2/6] phy: samsung: ufs: constify samsung_ufs_phy_cfg
-Date: Thu, 2 Jun 2022 22:04:15 +0900
-Message-ID: <050401d87681$42e6cb70$c8b46250$@samsung.com>
+	id 1nwkZp-003Ksy-AG
+	for linux-phy@lists.infradead.org; Thu, 02 Jun 2022 13:09:26 +0000
+Received: by mail-pj1-x1033.google.com with SMTP id cx11so4897200pjb.1
+        for <linux-phy@lists.infradead.org>; Thu, 02 Jun 2022 06:09:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=from:to:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=K/kcUz7iGlHGzh5+WMm96tVRqgBGqVmBjrJsf3+xK1w=;
+        b=O/Ff5ZsLRl2HcI4aExUbCpE+GcliUTIzcwvVM7kXO9pTFrOQTLBizn50/Mf9pORGgJ
+         ewAq5ypsSDVJh0Jlo0KSu9kfSdi+x8bYT+Mozq64lvhjjoSORz9MtszYss5ObJ3JArOf
+         K3Yh3zXbJn4r0466KlrdhjdU1PAzRPawDF7uYyd0Bfg5RBXIuDaNOQblQ35r5E3Fg+0C
+         jE+iPXqXwRApvQPnAVt1E82R2WbExNaLfeb+qJqXmnIRFetjicyRg8RbKqLE0sh2IRYm
+         wt2RheEa82blIOfGQwtFiMl8K59N10gvevjzUDj1e+nyR40qw7IPMGTCxFvfgHibTGus
+         4snQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=K/kcUz7iGlHGzh5+WMm96tVRqgBGqVmBjrJsf3+xK1w=;
+        b=lZHf0rby7LQtcPnU51T7ncTaE/mS5cr2vs8WMV+Oz8bbwkJnRINmq2WODX0raT8GII
+         AcjBiPE867APU7bKoWPDbDyxxxk6mgMxzOEZmiN6Dh7r9eATZTrZ9Y6PvrRO6ulFMLOu
+         yXVnsb1Ww6G/AIJloGoa0+x34eplbhvN9irwMYysxll6YglIeFw1Y7FaNbXb1TVdgWfr
+         7svWnChqt4V+Dilf/EpHmXjZArHaABq1CZryRMjpmVhYTdDgBiP/YGIRdgEzHRSm0+xl
+         CisycMcTu2LEuD6bE7m8ibmEu2Hl4rKjwEk00rWZDZtc3uME2wSQFsU/wrMhta8zbgmQ
+         gyxA==
+X-Gm-Message-State: AOAM532egp5NGy55UUuMEgexrjVw/oRS/XOM21Ih24XYDp9hD+LQW1yO
+	sNL2Exiu2WFzzBNVbF/gZGY=
+X-Google-Smtp-Source: ABdhPJzWOPeBb7ZR5wPCa08NQ2QSqxMgQ+VgmGCVXylXS1SERSV4H2spF22sy/9jxcqjLVLYcD3Vmw==
+X-Received: by 2002:a17:902:e947:b0:163:91e5:d3c with SMTP id b7-20020a170902e94700b0016391e50d3cmr4755418pll.39.1654175357990;
+        Thu, 02 Jun 2022 06:09:17 -0700 (PDT)
+Received: from localhost.localdomain ([202.120.234.246])
+        by smtp.googlemail.com with ESMTPSA id w2-20020a17090a15c200b001e32a7f876dsm3291062pjd.16.2022.06.02.06.09.14
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 02 Jun 2022 06:09:17 -0700 (PDT)
+From: Miaoqian Lin <linmq006@gmail.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Miaoqian Lin <linmq006@gmail.com>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: ti: j721e-wiz: Fix refcount leak in wiz_get_lane_phy_types
+Date: Thu,  2 Jun 2022 17:09:03 +0400
+Message-Id: <20220602130906.18095-1-linmq006@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQLWkTnA63V9WykH3rm22/0hqLdk6gLx1W7JAUiDJCwCxuJ30qsH1R0w
-Content-Language: ko
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrBJsWRmVeSWpSXmKPExsWy7bCmua7/1hlJBs9vGls8mLeNzWL+kXOs
-	Fhee9rBZ9L14yGyx9/VWdotNj6+xWkxY9Y3FYsb5fUwWrXuPsFvsvHOC2YHLY9OqTjaPO9f2
-	sHlsXlLv0bdlFaPH8RvbmTw+b5ILYIvKtslITUxJLVJIzUvOT8nMS7dV8g6Od443NTMw1DW0
-	tDBXUshLzE21VXLxCdB1y8wBukxJoSwxpxQoFJBYXKykb2dTlF9akqqQkV9cYquUWpCSU2Be
-	oFecmFtcmpeul5daYmVoYGBkClSYkJ3RtiCh4DdLxZFJb1gbGLtZuhg5OSQETCQ2H/jK1MXI
-	xSEksINR4v7vm2wQzidGibktfewQzmdGicfH5gKVcYC1zHjEAxHfxSix6ekuRpBRQgIvGCUu
-	LBMGsdkE9CVedmxjBSkSEZjPJPG08yoTSIJZYAKjxMpP3iA2p4CdxOVpp9lAhgoLeEus7gkH
-	CbMIqEgs/vkF7DxeAUuJo69eQtmCEidnPmGBGKMtsWzha2aIFxQkfj5dxgpiiwi4STTfvs0K
-	USMiMbuzjRnkBgmBLRwSSzedZIVocJHYvf0JI4QtLPHq+BZ2CFtK4mV/G5RdLLF01icmiOYG
-	RonL236xQSSMJWY9a2cEOZpZQFNi/S59SKAoSxy5BXUbn0TH4b/sEGFeiY42IYhGdYkD26dD
-	Q11WonvOZ9YJjEqzkHw2C8lns5B8MAth1wJGllWMYqkFxbnpqcVGBcbwqE7Oz93ECE6yWu47
-	GGe8/aB3iJGJg/EQowQHs5IIb8muqUlCvCmJlVWpRfnxRaU5qcWHGE2BYT2RWUo0OR+Y5vNK
-	4g1NLA1MzMwMzY1MDcyVxHm9UjYkCgmkJ5akZqemFqQWwfQxcXBKNTAZRH0oEiiu3SbNJBW8
-	8PcxnoXxC7y/vzm547ndE5GOXdn3p70Vc+d5nrhwtrGIek1RxcroJfWVezfYXfrxYvdCrbte
-	YlP7Vr439jvQ0Prlr37OUuPquON20rvT/77ftmv7tqDqnjk6/yNeJBtnLj1jsHf21twNHtrf
-	5++Z2H2/6+wm5fcGsaK8FksXuLdoJYkVORf1u+///m9q90crq88Fmi4Llua1hMocb7h43jHu
-	ptl0HsUr8rpuU03qPRtaSl71xXQV/ubXdlr5SfzAglfJAqrn43KTZj4/ldqped8hWdBLZ2tP
-	5K3ARb8q9A3T/RsU1EpDN76XltR4yeYiXqKyqntm1NEry6/Jcjd9favEUpyRaKjFXFScCABa
-	9peuOwQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprOIsWRmVeSWpSXmKPExsWy7bCSvK7/1hlJBk+vCVo8mLeNzWL+kXOs
-	Fhee9rBZ9L14yGyx9/VWdotNj6+xWkxY9Y3FYsb5fUwWrXuPsFvsvHOC2YHLY9OqTjaPO9f2
-	sHlsXlLv0bdlFaPH8RvbmTw+b5ILYIvisklJzcksSy3St0vgyli66wlLwUeWig1dXYwNjI0s
-	XYwcHBICJhIzHvF0MXJxCAnsYJRYNOE0WxcjJ1BcVuLZux3sELawxP2WI6wQRc8YJS5damAE
-	SbAJ6Eu87NgGlhARWMwk0X/iLBuIwywwhVHi8tWXLBAtXxkl/u5qAZvLKWAncXkayA4ODmEB
-	b4nVPeEgYRYBFYnFP7+wgNi8ApYSR1+9hLIFJU7OfAJmMwtoSzy9+RTOXrbwNTPEeQoSP58u
-	YwWxRQTcJJpv32aFqBGRmN3ZxjyBUXgWklGzkIyahWTULCQtCxhZVjFKphYU56bnFhsWGOWl
-	lusVJ+YWl+al6yXn525iBMedltYOxj2rPugdYmTiYDzEKMHBrCTCW7JrapIQb0piZVVqUX58
-	UWlOavEhRmkOFiVx3gtdJ+OFBNITS1KzU1MLUotgskwcnFINTGJtZ266fN+rt3C3eiBPIUes
-	eN1d36nJIiWVcsqJjtUK27obrt6aubyEe/c5Udut6rUqYf3bp/m/mvLBaumSLq9V0exXlU+7
-	SSqell9X+ut257G+13sDnMPnZc3685H3xqFtusW6frZ8SUFf/pSJJn5IO/jw58MfcjVhD07c
-	PPCZ+aNZQaOyxGXLbWus2yZaW7N5L9Gz1WCZ31vh+tXGee6d/guxTF7fmb5bnc5f2Zk8oWay
-	voA197poUa/HHJeTo32TGCwdSu5/3H/IVnjXAuXLzmGcqmYn/a+eCFmy7fHanR5RE6RUKzNX
-	d058cWb/0hsz534QkHjg/y+Cr3yyU8aG/xt0Axa1fdu6ofx6tRJLcUaioRZzUXEiAGem2cgq
-	AwAA
-X-CMS-MailID: 20220602130415epcas2p22dd936d7686731681a22fe6cfd6c0173
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220602053329epcas2p238f5019ff98e4d9fcf5fea0001a773a9
-References: <20220602053250.62593-1-chanho61.park@samsung.com>
-	<CGME20220602053329epcas2p238f5019ff98e4d9fcf5fea0001a773a9@epcas2p2.samsung.com>
-	<20220602053250.62593-3-chanho61.park@samsung.com>
-	<58e06727-a9ae-7466-6bc3-feee92bd9bf1@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_060424_203001_7EAEA753 
-X-CRM114-Status: UNSURE (   8.44  )
+X-CRM114-CacheID: sfid-20220602_060925_393748_4662BF7D 
+X-CRM114-Status: UNSURE (   9.76  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -142,21 +90,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> > @@ -75,7 +75,7 @@ static int samsung_ufs_phy_wait_for_lock_acq(struct
-> > phy *phy)  static int samsung_ufs_phy_calibrate(struct phy *phy)  {
-> >  	struct samsung_ufs_phy *ufs_phy = get_samsung_ufs_phy(phy);
-> > -	struct samsung_ufs_phy_cfg **cfgs = ufs_phy->cfg;
-> > +	const struct samsung_ufs_phy_cfg **cfgs = ufs_phy->cfg;
-> 
-> This should be rather array of const pointers to const data.
+of_get_child_by_name() returns a node pointer with refcount
+incremented, we should use of_node_put() on it when not need anymore.
+Add missing of_node_put() to avoid refcount leak.
 
-The prototype of ufs_phy->cfg is 'const struct samsung_ufs_phy_cfg **' by this patch.
-So, it should be,
+Fixes: format:7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
+Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+---
+ drivers/phy/ti/phy-j721e-wiz.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-const struct samsung_ufs_phy_cfg ** const cfgs = ufs_phy->cfg;
-
-Best Regards,
-Chanho Park
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index da546c35d1d5..c6b53d4f6643 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -1113,6 +1113,7 @@ static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
+ 		ret = of_property_read_u32(subnode, "reg", &reg);
+ 		if (ret) {
+ 			of_node_put(subnode);
++			of_node_put(serdes);
+ 			dev_err(dev,
+ 				"%s: Reading \"reg\" from \"%s\" failed: %d\n",
+ 				__func__, subnode->name, ret);
+@@ -1127,6 +1128,7 @@ static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
+ 		for (i = reg; i < reg + num_lanes; i++)
+ 			wiz->lane_phy_type[i] = phy_type;
+ 	}
++	of_node_put(serdes);
+ 
+ 	return 0;
+ }
+-- 
+2.25.1
 
 
 -- 
