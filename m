@@ -4,65 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89C47C43334
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 13:20:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B831CC43334
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 13:48:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
+	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QT/rRPeAvpS9AZXBLUPfUaHFxoHRSIyDg+ZsEsuECkE=; b=4PvjrY4cIvJUw/
-	hcB1xCMKPB73dsvyeDUWpe4pPJ70wQqjfSE/s8xpW8V/AYhxlmXcDIT1bIJs0oe3zxWqwyupRgwcL
-	Zk5e48HatjAqls4IvI3GH86X09fcVAp/4P7AlqIRUFXwfzLoWvBxIjX9/7k/1o0G7wiIseuUrgpvb
-	v7dCZPBhmF6+SkDROChYokC+grtbipm4Y9CD7UbUMsDvzzGcar/4d+3A58FiPBXoO1lMlMFH7Q9h8
-	qq2pYr+Rsmb2clECOUxOU1lS42hvu5Yag0qEDpFjixNymEcRCR3QgcTR745l/f/bTzTPq1A6u6uBf
-	k/T4rhVNe1Vr3WyQrBwA==;
+	List-Owner; bh=DPtr867bNOOvmmTZwrIcSqQlUrCx3Hn+x6OU9CFUQqY=; b=Vg0dTjLwPQDr7H
+	R3Xv61YS5DFX+3bPsrX+UiRrqmbRN0ZpZiNFNE6Q38a3UosZePWxKuMaCXcdeuqY2Rbkq3u62aJEB
+	0OVSowrerhPSzl2xB18W+KHOlYqb9zPJjTDDJslVd5na+dEILdNv25GYHbpa01TQWdQll7WoOdBLf
+	8Gx8SXPBWJDh5kgwmcgfGMEqH0L85VKpeMP7G6dO14iwSdpUuzqKaZx/h0Zu+MOxXeu2DG5o+3Ctg
+	f8ogFLRQs+7OP5rm7CxOKTtBbYkNv+X/+GeqCR/OO4rOWhQ1vApKW5B60zm0GFiYB0Row8snTRmoY
+	70a96iQ/CcqB5G4h8R7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwkkj-003Mbm-Ue; Thu, 02 Jun 2022 13:20:41 +0000
-Received: from mail-oa1-f53.google.com ([209.85.160.53])
+	id 1nwlBJ-003Std-2o; Thu, 02 Jun 2022 13:48:09 +0000
+Received: from mout.gmx.net ([212.227.15.15])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwkkW-003MWb-Dk; Thu, 02 Jun 2022 13:20:29 +0000
-Received: by mail-oa1-f53.google.com with SMTP id 586e51a60fabf-f314077115so6724589fac.1;
-        Thu, 02 Jun 2022 06:20:27 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to;
-        bh=bTbwu+Mz+i2T1fupPqwAFML/HPc02MWUuXZGeQCvXZ8=;
-        b=1VjyDAffuCWUfXFAAC+N+N5x2l4T7TtW0HUA48MeJXoLFoQCfty29o8gRXG/3AsfiA
-         lYdIOgbuTWfxMtBmvPo6X/U17PcBnzul4b/DKTHNBxaXg1elTG9P+jS6ckGFJECW7bmP
-         yQS4lxnJqxejJsjdxHxTg/rorSQmZY6OBeNbsbd9QFqfIv7pzETXLOo/Y1bpJGBbUKWC
-         K5wMTN4483mMFinv3tzfvO8mm9zqqkSDUQRo2NVD1vkBZ+PaeB3jbIrpPGOcLbig246O
-         WtKWcUeStb37KLWpeZExqppSopZb8oO/4ldgwNdRq6xELuiAGloF0WQemv8ExGUgq1Ip
-         gKLw==
-X-Gm-Message-State: AOAM530PC0R/C+ngApNl2bndqLLb5WwNeNHqGDWNUfRDuATh7sOQGLVO
-	GWY6edKYViE0nc3UzC0YsQ==
-X-Google-Smtp-Source: ABdhPJx8+7c641wEUgu8STii4oQje/7ttveo4f3P9XPnuvNlZ3Xg+IQx39aBP3kiPfMlhnetHIGGwg==
-X-Received: by 2002:a05:6870:3456:b0:e9:23d3:e701 with SMTP id i22-20020a056870345600b000e923d3e701mr2756689oah.11.1654176027237;
-        Thu, 02 Jun 2022 06:20:27 -0700 (PDT)
-Received: from robh.at.kernel.org (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
-        by smtp.gmail.com with ESMTPSA id w2-20020a9d5a82000000b0060603221240sm2220019oth.16.2022.06.02.06.20.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Jun 2022 06:20:26 -0700 (PDT)
-Received: (nullmailer pid 2133915 invoked by uid 1000);
-	Thu, 02 Jun 2022 13:20:25 -0000
-Date: Thu, 2 Jun 2022 08:20:25 -0500
-From: Rob Herring <robh@kernel.org>
-To: Guillaume Ranquet <granquet@baylibre.com>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger <matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Helge Deller <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>, Jitao shi <jitao.shi@mediatek.com>, Markus Schneider-Pargmann <msp@baylibre.com>, dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, linux-fbdev@vger.kernel.org
-Subject: Re: [PATCH v10 02/21] dt-bindings: mediatek,dp: Add Display Port
- binding
-Message-ID: <20220602132025.GA2110588-robh@kernel.org>
-References: <20220523104758.29531-1-granquet@baylibre.com>
- <20220523104758.29531-3-granquet@baylibre.com>
+	id 1nwlBF-003SsM-AT; Thu, 02 Jun 2022 13:48:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+	s=badeba3b8450; t=1654177662;
+	bh=2iYMbjgyUAEmKKRbCPL6Jl2Wqx6/vlykoO1h/cdX9pU=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=B2lwuKhhses728holgAZp4oZnvnVyjpESpX5d4Wahe78tNJd3f7G3iHZN30VkwjsH
+	 1q3k8Lea6OztCKRlH2bP/S9GAYekJz/0C+n+sKdRpScjskIa9I1rRRD5u26It9R98s
+	 VtpCdQQEYQDUF5VyLUAzEr47GXRxAufe1baxqXxE=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.145.102] ([217.61.145.102]) by web-mail.gmx.net
+ (3c-app-gmx-bs39.server.lan [172.19.170.91]) (via HTTP); Thu, 2 Jun 2022
+ 15:47:42 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220523104758.29531-3-granquet@baylibre.com>
+Message-ID: <trinity-b1d8205a-3354-42e7-8784-0a0cfd7e8a36-1654177662388@3c-app-gmx-bs39>
+From: Frank Wunderlich <frank-w@public-files.de>
+To: Rob Herring <robh@kernel.org>
+Cc: Frank Wunderlich <linux@fw-web.de>, Michael Riesch
+ <michael.riesch@wolfvision.net>, Vinod Koul <vkoul@kernel.org>, Johan
+ Jonker <jbx6244@gmail.com>, linux-rockchip@lists.infradead.org,
+ linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Bjorn Helgaas
+ <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>, Peter Geis <pgwipeout@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski
+ <krzysztof.kozlowski+dt@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
+ <kw@linux.com>
+Subject: Aw: Re: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3
+ phy
+Date: Thu, 2 Jun 2022 15:47:42 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <trinity-940b8fcf-17e7-4445-8aeb-e17f36b41b4b-1653047439840@3c-app-gmx-bap67>
+References: <20220514115946.8858-1-linux@fw-web.de>
+ <20220514115946.8858-2-linux@fw-web.de>
+ <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
+ <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
+ <20220516173537.GA2942634-robh@kernel.org>
+ <9496CAFB-6CB6-4BDA-A539-3A6E1B562299@public-files.de>
+ <20220518155551.GB3302100-robh@kernel.org>
+ <trinity-940b8fcf-17e7-4445-8aeb-e17f36b41b4b-1653047439840@3c-app-gmx-bap67>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:Ou72G3HO5kBx6mld4VIc7l+uMCSnBYkop7SJ5NIcA1Q3jsvlKS/T+4A2TSpMYReYX1Th0
+ GAypuTa3Dp5BK76Enhpr3QRdwCqTSZRqGvWRg8QAKYTGYvWejEs9dbpyaEqq1FTO8xZ16d538kB5
+ eY9I2r3Q0tpRm2I9dUl60ZMM4o41OGb7zWBlZPLHfp4gZlwFehrFuARn0k53XVU1e8bI19FDn7pR
+ qURa9QP8VTUcbDNiMTKY7o/g6JQGRjPw2uNLkyeSpz/dp0nuEC+MWu+Iff69VEglUCvsEE4gwi++
+ +E=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:AM77h1kBGk8=:BFWCs43+kuOa1+j+QUaBrc
+ xUewSLTR6sWjcX/t/JXh6voUcMsVSiBagkHDIcOTlNTHngfeHJSZy8Qj7NHOeJQYRHMfHHpHi
+ OBI7kmLwzjW23tCFGSYcTTeGYqr2gzMT4Bnzae8XSCvQrD1LwapSpYhvVKv64Qs4wMAkMZSIl
+ M+ydn9ktzWPygx0j0usL15amBFWotiOtewmog1LE7yNkOU0RUIjZgFTP66BCQF7JszrotpQ4J
+ DaqDPvH6nNl5DnOAtVyWx1GhR+E4hKsdmDo31jw0rmPgzhFzc2SyKU1IM4oBuJ1jSHW+F2RVC
+ T2Ag9HLokhVoa0xIWI9gTRE2IojuWWwxplNXf64p7laHinWjbw+7Bjefi9gLm6OK2KiwuH9jl
+ D1PbqX0gA9KwsI6peS5UrWANHghNgDGBLS+8hz6ecsFnVm/FhvWhSY1tAhnxlQSDq9OCVcYkq
+ EEG1LoMz7j3VrpzjjZdh8VzhiBNG8urgDCdnoH0QsbbtIsIPZjmFoLwe/GoUHRCNrsv6G2CBi
+ /khwDm2OWPOJ8Qr3lVaN8Lb8NoroO89YRCX28sgqrBe5ROrHU2AvXtRvbBCBR6B35whGF4Lgf
+ N9RYAy4YdWkc3DYijq2gAUA79W1kl4vFpsD62UNn1p+x7qv9jmVBH5oRbx1X+ZvA8Y9dVftqr
+ XTYPb/N4sU55JUh6+t6k5wOWcRzlOfW3I0uiKjPp2l0wu1Wa92JKn+DS7AIbsXsSMJx2EQFP+
+ q4ydhp2uVyKH89+WcAnpuDKsndqtgejGlenvaSIWRY/adCbtrkjuBFgf4/BEtVcmYb8b+ErdN
+ qXsGcYA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_062028_505989_BABDCF18 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20220602_064805_869170_BF7ED5AD 
+X-CRM114-Status: GOOD (  11.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,24 +103,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 23, 2022 at 12:47:35PM +0200, Guillaume Ranquet wrote:
-> From: Markus Schneider-Pargmann <msp@baylibre.com>
-> 
-> This controller is present on several mediatek hardware. Currently
-> mt8195 and mt8395 have this controller without a functional difference,
-> so only one compatible field is added.
-> 
-> The controller can have two forms, as a normal display port and as an
-> embedded display port.
-> 
-> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> ---
->  .../display/mediatek/mediatek,dp.yaml         | 99 +++++++++++++++++++
->  1 file changed, 99 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dp.yaml
+> Gesendet: Freitag, 20. Mai 2022 um 13:50 Uhr
+> Von: "Frank Wunderlich" <frank-w@public-files.de>
+> An: "Rob Herring" <robh@kernel.org>
+> Hi,
+>
+> fixed reg-error by using 32bit-address in example, in my test output is clean.
+>
+> +++ b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
+> @@ -68,7 +68,7 @@ examples:
+>      #include <dt-bindings/clock/rk3568-cru.h>
+>      pcie30phy: phy@fe8c0000 {
+>        compatible = "rockchip,rk3568-pcie3-phy";
+> -      reg = <0x0 0xfe8c0000 0x0 0x20000>;
+> +      reg = <0xfe8c0000 0x20000>;
+>
+>
+> i hope yours is clean too
 
-The example has warnings. Run 'make dt_binding_check' before submitting.
+have you tried it?
+
+> regarding data-lanes instead of own lane-map, Peter and me only find this in special
+> bindings outside the phy-"namespace" like this.
+>
+> https://elixir.bootlin.com/linux/v5.18-rc7/source/Documentation/devicetree/bindings/media/video-interfaces.yaml#L157
+>
+> do you mean converting this binding and add it there and base out binding on it?
+>
+> https://elixir.bootlin.com/linux/v5.18-rc7/source/Documentation/devicetree/bindings/phy/phy-bindings.txt
+
+is this the right binding to add the data-lanes or do you refer another one (have not found phy-provider)?
+
+regards Frank
 
 -- 
 linux-phy mailing list
