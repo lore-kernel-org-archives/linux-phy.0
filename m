@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6415BC433EF
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jun 2022 02:05:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E38EC43334
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jun 2022 02:05:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
-	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=TCwQ8Vs5XJlOyzLtSmWh0B/BhT0jtTnAYtBhTV/q/aY=; b=YkS7kVk2UvOEEs
-	qegeTOFl7lqxR7JM/dCxmrpAooEPzHDw2I1x8m6+X76bjZpkXLtIqN2QHLrXbYCVCKyQC+qhs8RQ5
-	HE0dE/VNnYQhVYtQ9ekTTJHWoXzshVSF9jF1JbUjajCgSrJXGYVQC1vsZiMZQJAFTYVALApXfyL30
-	gIQZkQz79tFW1702MUZpMO5RRwFjKP8q7ad9QD1rn04ToxrSRws7Yz1ms6qZShbtnHB8iBgai1gAR
-	ON0Td59nTZe7XRPxei1KPLwgP4heRma7j4ANdMq/N0OnzaY/KbSpQX1ViOAyG3UD9JdFNvnV9sdVp
-	OqTwEzEVsTznjOsaVddw==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AZeQ/C+LHjE5R/2JwoP6EjtngYvlCOwgMk7C4QQ+CGA=; b=fdYFUR+nw1zEsB
+	UdqfxiVq/Xu2lCxc4nmgt8qtgyPc0c8qXT8sHFt5g34p706YTbC5v13oZtwfmE6Sbo7UB7I0Lnhdi
+	YIpdsjIdz4XU3CkaumsXv9Zdp1COzf/DqT0c8xuBHVb5M3JWmW29dNueJh+z+Mc20Rt3plsB3atIX
+	QIb+2cuk25tlDJBM679+fRfs3t0x1QOCPLtTNRSw7sdobYKbJED5pcOv/w+nFoNe0wWUjhByypHLN
+	qyIpeNQHimMArDW8EfkX1tpaahMjbSYPmSXyhyx8aMe44NKqPlFyxDUH+Qzwa/UO+off/sGgTgQZB
+	IIyW7G/5Ipu2KYPoj1uw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwwgd-005RXJ-NU; Fri, 03 Jun 2022 02:05:15 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1nwwh9-005Rja-MP; Fri, 03 Jun 2022 02:05:47 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwwfw-005RJn-1V
-	for linux-phy@lists.infradead.org; Fri, 03 Jun 2022 02:04:37 +0000
+	id 1nwwfx-005RJk-AG
+	for linux-phy@lists.infradead.org; Fri, 03 Jun 2022 02:04:38 +0000
 Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20220603020429epoutp049e5f77c9b5dbaa1505a84b4019ea90c4~0_ga7as4K2088320883epoutp04e
+	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20220603020429epoutp02c690984029b5238a20ae6726eafb6e6f~0_gazc4qt0743907439epoutp02W
 	for <linux-phy@lists.infradead.org>; Fri,  3 Jun 2022 02:04:29 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20220603020429epoutp049e5f77c9b5dbaa1505a84b4019ea90c4~0_ga7as4K2088320883epoutp04e
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20220603020429epoutp02c690984029b5238a20ae6726eafb6e6f~0_gazc4qt0743907439epoutp02W
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1654221870;
-	bh=1xDi2uqdIZyRSSKjAMcD4/NNmO07IOtQu/3O9HtKFN0=;
-	h=From:To:Cc:Subject:Date:References:From;
-	b=jNvVxxSio4avKTxxplZ63N5lAjnoNEWZ3ywL8QRc+fvl3V+ZhznakNfp0M32sBtWh
-	 WToOpagEu/p8nSL/EYuhafWOCbg+753DpPpYdbLUInFiZCzBTohlG4wGp4wTi+IuWK
-	 2mMh2Cv/COdW3yUhc+haf85e50wF2wEkvcYebmg0=
-Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
+	s=mail20170921; t=1654221869;
+	bh=J1b1YzG7fCcaLDe0+O1yUP/X0404BWjJ2qJu95CE+nc=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=UoLqi8fDR323OtxraMbspI93f9zAX2rZYOyndc+1z668EZ3TTSRmsrv1O9os6sboI
+	 a7uIreilHCG9cpioJ1M8c6BvTfnd1c4WXSTACybXJDmIEr9QELsDdmG7311Ojy4rhw
+	 YNiyeCaUVtgvP/YPL7w5+Afbmq6YSCH9WZ6CdYuw=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
 	epcas2p2.samsung.com (KnoxPortal) with ESMTP id
-	20220603020429epcas2p2da19fa79623f0fa45797a62b5e6b263c~0_gaVwIDX1635416354epcas2p2d;
+	20220603020429epcas2p2c12d82ba4017ee76d7eb03781253beb2~0_gaLYKwY1635016350epcas2p2d;
 	Fri,  3 Jun 2022 02:04:29 +0000 (GMT)
-Received: from epsmges2p3.samsung.com (unknown [182.195.36.92]) by
-	epsnrtp2.localdomain (Postfix) with ESMTP id 4LDmQy5Tvwz4x9Q9; Fri,  3 Jun
-	2022 02:04:26 +0000 (GMT)
-Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
-	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
-	A8.BD.10028.A2C69926; Fri,  3 Jun 2022 11:04:26 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+Received: from epsmges2p2.samsung.com (unknown [182.195.36.100]) by
+	epsnrtp1.localdomain (Postfix) with ESMTP id 4LDmR01mtTz4x9Q2; Fri,  3 Jun
+	2022 02:04:28 +0000 (GMT)
+Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
+	epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	71.F9.09764.B2C69926; Fri,  3 Jun 2022 11:04:27 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
 	epcas2p4.samsung.com (KnoxPortal) with ESMTPA id
-	20220603020426epcas2p4799d10beba3455061b8d8e965904cafe~0_gXe6YyW2972129721epcas2p4Y;
+	20220603020426epcas2p43c70afe414dc36f3abb18cbdb1d450a4~0_gXsrGqo2972129721epcas2p4b;
 	Fri,  3 Jun 2022 02:04:26 +0000 (GMT)
 Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
-	epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
-	20220603020426epsmtrp20caaccfffcc77cecdb47de4cd274f111~0_gXcbwqa0586805868epsmtrp2K;
+	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+	20220603020426epsmtrp15d7668f406c1327a9a43d687506526fd~0_gXrgC111338013380epsmtrp1h;
 	Fri,  3 Jun 2022 02:04:26 +0000 (GMT)
-X-AuditID: b6c32a47-573ff7000000272c-cc-62996c2aa266
+X-AuditID: b6c32a46-79619a8000002624-a4-62996c2bc3ae
 Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
 	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
-	92.FF.08924.A2C69926; Fri,  3 Jun 2022 11:04:26 +0900 (KST)
+	D4.FF.08924.A2C69926; Fri,  3 Jun 2022 11:04:26 +0900 (KST)
 Received: from localhost.localdomain (unknown [10.229.9.51]) by
 	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20220603020426epsmtip140820b0d69c3e19e575a2b34e614134e~0_gXPtNzg2995029950epsmtip1W;
+	20220603020426epsmtip1410415a756c30d1e70ed40e4f0cf4024~0_gXgJX2o2850828508epsmtip1o;
 	Fri,  3 Jun 2022 02:04:26 +0000 (GMT)
 From: Chanho Park <chanho61.park@samsung.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
@@ -70,54 +70,58 @@ To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
 Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	Chanho Park <chanho61.park@samsung.com>
-Subject: [PATCH v3 0/5] support secondary ufs for Exynos Auto v9 SoC
-Date: Fri,  3 Jun 2022 11:04:05 +0900
-Message-Id: <20220603020410.2976-1-chanho61.park@samsung.com>
+Subject: [PATCH v3 4/5] phy: samsung: ufs: remove drvdata from struct
+ samsung_ufs_phy
+Date: Fri,  3 Jun 2022 11:04:09 +0900
+Message-Id: <20220603020410.2976-5-chanho61.park@samsung.com>
 X-Mailer: git-send-email 2.36.1
+In-Reply-To: <20220603020410.2976-1-chanho61.park@samsung.com>
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprGJsWRmVeSWpSXmKPExsWy7bCmha5Wzswkg67L2hYP5m1js7i8X9ti
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrMJsWRmVeSWpSXmKPExsWy7bCmqa52zswkg28drBYP5m1js7i8X9ti
 	/pFzrBYXnvawWfS9eMhssff1VnaLTY+vsVpMWPWNxWLG+X1MFq17j7Bb7LxzgtmB22PTqk42
 	jzvX9rB5bF5S79G3ZRWjx/Eb25k8Pm+SC2CLyrbJSE1MSS1SSM1Lzk/JzEu3VfIOjneONzUz
 	MNQ1tLQwV1LIS8xNtVVy8QnQdcvMAbpOSaEsMacUKBSQWFyspG9nU5RfWpKqkJFfXGKrlFqQ
-	klNgXqBXnJhbXJqXrpeXWmJlaGBgZApUmJCdce/5FcaCMzwVU6ecZ29g/M/ZxcjJISFgIrHm
-	9iTmLkYuDiGBHYwSbb+OMkI4nxglprf0s0A4nxklDi6+B1TGAdYye2ElSLeQwC5Gibm/4yBq
-	PjJKtFzpZQRJsAnoSmx5/gpskohAO5PEiXtz2UEcZoHNjBInJ2wAmyQs4CJxaUMRSAOLgKrE
-	l2sfWUBsXgFbiWf9b9kg7pOX2DC/lxkiLihxcuYTsBpmoHjz1tlgd0sI/GSX+Pn1EBNEg4vE
-	m7Yr7BC2sMSr41ugbCmJz+/2Qg0tllg66xMTRHMDo8Tlbb+gEsYSs561M4IcxyygKbF+lz7E
-	x8oSR25B7eWT6Dj8lx0izCvR0SYE0agucWD7dBYIW1aie85nVgjbQ+Lli8MskMCKlTjV08sy
-	gVF+FpJvZiH5ZhbC3gWMzKsYxVILinPTU4uNCozhkZqcn7uJEZxAtdx3MM54+0HvECMTB+Mh
-	RgkOZiUR3pJdU5OEeFMSK6tSi/Lji0pzUosPMZoCw3cis5Rocj4wheeVxBuaWBqYmJkZmhuZ
-	GpgrifN6pWxIFBJITyxJzU5NLUgtgulj4uCUamByUn5hVnUyd53cEjZV+5MOj9q6b2V+bP6i
-	KBHz6Dpv79GShVcSue3XWX5ZV1+1nbE4p+ZfzjevjPdnDnOovjHXf/Ft/wxD6bjZU/4J/u/3
-	5JESZKuTlD8d5XfiusJ1c/fA1ZEF2ySFN9U+9j5+dGvi6a+V0rergn/cbHVZ+vn6xFf675o0
-	DbhW8r0S3Tyl+5VtWeTs077td+Pm6TGIaxjO1Jt2uL1suu/ueacsbfg7jvFa2Rp2P24qvpb/
-	O53t8aG913S2Mtj9y93mpHr03Z4t52sPyV0KNXuzadLRtz+blcL33bL41bekUDonpFld1fvq
-	+mkCL9W/L3Er31XVOo/xz7QvkRMNFNS3rj1bsdxHiaU4I9FQi7moOBEAvJ/+PikEAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrGLMWRmVeSWpSXmKPExsWy7bCSnK5Wzswkg3MPOS0ezNvGZnF5v7bF
+	klNgXqBXnJhbXJqXrpeXWmJlaGBgZApUmJCdcWmbasEKqYpJBxewNDDOFuti5OSQEDCR2PXm
+	P0sXIxeHkMAORolTc7eyQzifGCUerf8P5XxmlJi04QkbTEv/wxuMEIldjBIzf/2Gcj4ySuw8
+	3cICUsUmoCux5fkrsISIQDuTxIl7c8FmMQtsZpQ4OWEDM0iVsEC4ROeLs6wgNouAqsSb2RDd
+	vAK2EpcWT2SE2CcvsWF+L1g9p4CdxPVpX5khagQlTs58AlbPDFTTvHU2M0R9K4fE9XsOELaL
+	xKXP65kgbGGJV8e3sEPYUhIv+9ug7GKJpbM+MYEcJyHQwChxedsvqEeNJWY9awc6ggNogabE
+	+l36IKaEgLLEkVtQa/kkOg7/ZYcI80p0tAlBNKpLHNg+nQXClpXonvOZFcL2kOh+dhAsLiQw
+	kVHifX/wBEaFWUiemYXkmVkIexcwMq9iFEstKM5NTy02KjCCx3Byfu4mRnBq1XLbwTjl7Qe9
+	Q4xMHIyHGCU4mJVEeEt2TU0S4k1JrKxKLcqPLyrNSS0+xGgKDOqJzFKiyfnA5J5XEm9oYmlg
+	YmZmaG5kamCuJM7rlbIhUUggPbEkNTs1tSC1CKaPiYNTqoFp3c9laUfD9zya3/CauSu8kd+3
+	eJnjp21X7jL7yBo8WZ8/cf3EED32Z3piiT+lDUtFpxtLZ6w+sH6KQVwOr6my9O9jkr/eiL05
+	6OD0wkfdyj/33KetK24um/ZB0krn+RQuBmM2RY/fp3Z+UxWUrq7JvRL/1W2V+MeCvLm5xw1/
+	/lApy1+bJd+UkVv9S/Jrcp/z9VsKB9f/jVt/58Rfpdg9ky42LLsU+LZDl6dv74OSBdWxSzbr
+	V282+Va9hs/iw1eZubf5Jy3iOHqwv//ZldKrExQDBLyvKWmcTjxdU99Wb/BwSUlDwM5jep9S
+	1s+Ub7putSTZ93f/15dKKzqu5fM/K9u4a2PHuskRJ0PmLrXdpcRSnJFoqMVcVJwIAAsYbbI2
+	BAAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrPLMWRmVeSWpSXmKPExsWy7bCSnK5WzswkgwMfJCwezNvGZnF5v7bF
 	/CPnWC0uPO1hs+h78ZDZYu/rrewWmx5fY7WYsOobi8WM8/uYLFr3HmG32HnnBLMDt8emVZ1s
-	Hneu7WHz2Lyk3qNvyypGj+M3tjN5fN4kF8AWxWWTkpqTWZZapG+XwJVx7/kVxoIzPBVTp5xn
-	b2D8z9nFyMEhIWAiMXthZRcjF4eQwA5GictbprF3MXICxWUlnr3bAWULS9xvOcIKUfSeUaLj
-	5nomkASbgK7EluevGEESIgLdTBJzNvUzgTjMAtsZJT4sXccCskJYwEXi0oYikAYWAVWJL9c+
-	soDYvAK2Es/637JBbJCX2DC/lxkiLihxcuYTsBpmoHjz1tnMExj5ZiFJzUKSWsDItIpRMrWg
-	ODc9t9iwwCgvtVyvODG3uDQvXS85P3cTIziotbR2MO5Z9UHvECMTB+MhRgkOZiUR3pJdU5OE
-	eFMSK6tSi/Lji0pzUosPMUpzsCiJ817oOhkvJJCeWJKanZpakFoEk2Xi4JRqYFrQNLdzc7bB
-	M9knKd5/FjRtXrby/K942R+Rd0+01VemfMuTdBWdq5OonNVdriQcNedNzoXYaZd2llyZWdH4
-	/fUC6S8TrO8mr9r455y4hsS/n4kPGie7tb0yXlUq8nuScLwBb/j6mRMXLF3QuXLqvPim54qz
-	WlitZR8vLVp7IibpWcruKzd/TbysuKpgWTrH1e71x05bM/0WsLDfyTD7737bkpL+zl0CR7dW
-	85n/8OZJWPfKdvoTFa5ZBcvCquwc3f/N3c8R90ltzR+38P/7JSWubL6yWpKn2ZzpzL2PSmKR
-	szYoNBxc87L5gG7tffeQy3X/NdnyWB+z/O0NKTivX3Kj6uV07fL5y+w3MYruPcusxFKckWio
-	xVxUnAgA9q/3wdkCAAA=
-X-CMS-MailID: 20220603020426epcas2p4799d10beba3455061b8d8e965904cafe
+	Hneu7WHz2Lyk3qNvyypGj+M3tjN5fN4kF8AWxWWTkpqTWZZapG+XwJVxaZtqwQqpikkHF7A0
+	MM4W62Lk5JAQMJHof3iDsYuRi0NIYAejxNnT5xkhErISz97tYIewhSXutxxhhSh6zyix9eRB
+	ZpAEm4CuxJbnr8C6RQS6mSTmbOpnAnGYBbYzSnxYuo4FpEpYIFRi5sQfYDaLgKrEm9ktYDav
+	gK3EpcUTodbJS2yY3ws2lVPATuL6tK9gthBQzfO+Z1D1ghInZz4Bs5mB6pu3zmaewCgwC0lq
+	FpLUAkamVYySqQXFuem5xYYFRnmp5XrFibnFpXnpesn5uZsYwXGgpbWDcc+qD3qHGJk4GA8x
+	SnAwK4nwluyamiTEm5JYWZValB9fVJqTWnyIUZqDRUmc90LXyXghgfTEktTs1NSC1CKYLBMH
+	p1QDk8rH0tvbS1RCV96TmbX43bO7n5P/bnkq+E04Ulouwn/ChS+bHpplb2PInNExo+1EpsS7
+	rGOBF27eCk3cH5DZ9v9nj1ylccLmZf9lPaKSdob8rDySJug/c+Obc2ZtCx79dvvrPNG6PnfG
+	7DOKl1Qs9FezfE9nmWz4O/vsEi6LQ/ZSc1dJmBUYv+FbEy3lm+ecafise67W84US29wnH3Nk
+	rbinWMDr5Od/aLNCh+JmG02782cM3z3PvMe0NuHWzssbq+V+5C/pWZDpl1a12eDQ0hX/Xwen
+	f407fmxVwwzRyslf9wToOQdteR28gNdmqwDzb4nFQWX5l9vvrNBr1czyUTxeNJPJRNZ7zj3/
+	uDuh/5VYijMSDbWYi4oTAZcowULyAgAA
+X-CMS-MailID: 20220603020426epcas2p43c70afe414dc36f3abb18cbdb1d450a4
 X-Msg-Generator: CA
 X-Sendblock-Type: AUTO_CONFIDENTIAL
 CMS-TYPE: 102P
 DLP-Filter: Pass
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220603020426epcas2p4799d10beba3455061b8d8e965904cafe
-References: <CGME20220603020426epcas2p4799d10beba3455061b8d8e965904cafe@epcas2p4.samsung.com>
+X-CMS-RootMailID: 20220603020426epcas2p43c70afe414dc36f3abb18cbdb1d450a4
+References: <20220603020410.2976-1-chanho61.park@samsung.com>
+	<CGME20220603020426epcas2p43c70afe414dc36f3abb18cbdb1d450a4@epcas2p4.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_190432_460304_80BB23E9 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20220602_190433_760390_45449D0D 
+X-CRM114-Status: GOOD (  16.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,42 +138,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-To support ufs #1 for Exynos Auto v9 SoC, we need to control its own pmu
-register. So, we need to specify the offset of the register via an
-argument of syscon node.
+To change an offset of pmu_isol, we need to store its data instead of
+having drvdata's pointer. The definition of the pmu_isol structure
+should be extracted from samsung_ufs_phy_drvdata and rename the name
+with samsung_ufs_phy_ prefix.
 
-Changes from v2:
-- Exclude dts patchset because they'll be queued by Krzysztof after
-  v5.19 merge window.
-- 0001-dt-bindings: Add "maxItems: 1" to the first level pmu-syscon
-  items as suggested by Krzysztof
-- 0002: The patch has been added to clarify the variable name
-- 0004: The patch has been added to remove drvdata pointer as suggested
-  by Krzysztof
+Suggested-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Chanho Park <chanho61.park@samsung.com>
+---
+ drivers/phy/samsung/phy-samsung-ufs.c |  9 +++++----
+ drivers/phy/samsung/phy-samsung-ufs.h | 20 +++++++++++---------
+ 2 files changed, 16 insertions(+), 13 deletions(-)
 
-Changes from v1:
-- dt-bindings: Correct tab align and add "minItems: 1" to make the second
-  cell as optional.
-- Add 0001- patch to constify phy_cfg.
-- Allocate phy->isol and copy data from drvdata to avoid const qualifier
-  error
-- Add 0004- patch to apply dt style for ufs0 as Krzysztof's suggestion
-- Align tab and apply ufs node naming for device tree nodes
-
-Chanho Park (5):
-  dt-bindings: phy: samsung,ufs-phy: make pmu-syscon as phandle-array
-  phy: samsung: ufs: rename cfg to cfgs for clarification
-  phy: samsung: ufs: constify samsung_ufs_phy_cfg
-  phy: samsung: ufs: remove drvdata from struct samsung_ufs_phy
-  phy: samsung: ufs: support secondary ufs phy
-
- .../bindings/phy/samsung,ufs-phy.yaml         | 14 ++++++++---
- drivers/phy/samsung/phy-exynos7-ufs.c         |  2 +-
- drivers/phy/samsung/phy-exynosautov9-ufs.c    |  2 +-
- drivers/phy/samsung/phy-samsung-ufs.c         | 18 +++++++++-----
- drivers/phy/samsung/phy-samsung-ufs.h         | 24 ++++++++++---------
- 5 files changed, 38 insertions(+), 22 deletions(-)
-
+diff --git a/drivers/phy/samsung/phy-samsung-ufs.c b/drivers/phy/samsung/phy-samsung-ufs.c
+index e1e26da27245..0530513f2263 100644
+--- a/drivers/phy/samsung/phy-samsung-ufs.c
++++ b/drivers/phy/samsung/phy-samsung-ufs.c
+@@ -207,7 +207,7 @@ static int samsung_ufs_phy_init(struct phy *phy)
+ 	ss_phy->lane_cnt = phy->attrs.bus_width;
+ 	ss_phy->ufs_phy_state = CFG_PRE_INIT;
+ 
+-	if (ss_phy->drvdata->has_symbol_clk) {
++	if (ss_phy->has_symbol_clk) {
+ 		ret = samsung_ufs_phy_symbol_clk_init(ss_phy);
+ 		if (ret)
+ 			dev_err(ss_phy->dev, "failed to set ufs phy symbol clocks\n");
+@@ -259,7 +259,7 @@ static int samsung_ufs_phy_exit(struct phy *phy)
+ 
+ 	clk_disable_unprepare(ss_phy->ref_clk);
+ 
+-	if (ss_phy->drvdata->has_symbol_clk) {
++	if (ss_phy->has_symbol_clk) {
+ 		clk_disable_unprepare(ss_phy->tx0_symbol_clk);
+ 		clk_disable_unprepare(ss_phy->rx0_symbol_clk);
+ 		clk_disable_unprepare(ss_phy->rx1_symbol_clk);
+@@ -326,9 +326,10 @@ static int samsung_ufs_phy_probe(struct platform_device *pdev)
+ 
+ 	drvdata = match->data;
+ 	phy->dev = dev;
+-	phy->drvdata = drvdata;
+ 	phy->cfgs = drvdata->cfgs;
+-	phy->isol = &drvdata->isol;
++	phy->has_symbol_clk = drvdata->has_symbol_clk;
++	memcpy(&phy->isol, &drvdata->isol, sizeof(phy->isol));
++
+ 	phy->lane_cnt = PHY_DEF_LANE_CNT;
+ 
+ 	phy_set_drvdata(gen_phy, phy);
+diff --git a/drivers/phy/samsung/phy-samsung-ufs.h b/drivers/phy/samsung/phy-samsung-ufs.h
+index 101497698f23..79b535923844 100644
+--- a/drivers/phy/samsung/phy-samsung-ufs.h
++++ b/drivers/phy/samsung/phy-samsung-ufs.h
+@@ -101,13 +101,15 @@ struct samsung_ufs_phy_cfg {
+ 	u8 id;
+ };
+ 
++struct samsung_ufs_phy_pmu_isol {
++	u32 offset;
++	u32 mask;
++	u32 en;
++};
++
+ struct samsung_ufs_phy_drvdata {
+ 	const struct samsung_ufs_phy_cfg **cfgs;
+-	struct pmu_isol {
+-		u32 offset;
+-		u32 mask;
+-		u32 en;
+-	} isol;
++	struct samsung_ufs_phy_pmu_isol isol;
+ 	bool has_symbol_clk;
+ };
+ 
+@@ -120,9 +122,9 @@ struct samsung_ufs_phy {
+ 	struct clk *tx0_symbol_clk;
+ 	struct clk *rx0_symbol_clk;
+ 	struct clk *rx1_symbol_clk;
+-	const struct samsung_ufs_phy_drvdata *drvdata;
+ 	const struct samsung_ufs_phy_cfg **cfgs;
+-	const struct pmu_isol *isol;
++	struct samsung_ufs_phy_pmu_isol isol;
++	bool has_symbol_clk;
+ 	u8 lane_cnt;
+ 	int ufs_phy_state;
+ 	enum phy_mode mode;
+@@ -136,8 +138,8 @@ static inline struct samsung_ufs_phy *get_samsung_ufs_phy(struct phy *phy)
+ static inline void samsung_ufs_phy_ctrl_isol(
+ 		struct samsung_ufs_phy *phy, u32 isol)
+ {
+-	regmap_update_bits(phy->reg_pmu, phy->isol->offset,
+-			   phy->isol->mask, isol ? 0 : phy->isol->en);
++	regmap_update_bits(phy->reg_pmu, phy->isol.offset,
++			   phy->isol.mask, isol ? 0 : phy->isol.en);
+ }
+ 
+ extern const struct samsung_ufs_phy_drvdata exynos7_ufs_phy;
 -- 
 2.36.1
 
