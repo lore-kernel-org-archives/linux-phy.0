@@ -4,89 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B831CC43334
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jun 2022 13:48:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 047FDC43334
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jun 2022 01:20:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DPtr867bNOOvmmTZwrIcSqQlUrCx3Hn+x6OU9CFUQqY=; b=Vg0dTjLwPQDr7H
-	R3Xv61YS5DFX+3bPsrX+UiRrqmbRN0ZpZiNFNE6Q38a3UosZePWxKuMaCXcdeuqY2Rbkq3u62aJEB
-	0OVSowrerhPSzl2xB18W+KHOlYqb9zPJjTDDJslVd5na+dEILdNv25GYHbpa01TQWdQll7WoOdBLf
-	8Gx8SXPBWJDh5kgwmcgfGMEqH0L85VKpeMP7G6dO14iwSdpUuzqKaZx/h0Zu+MOxXeu2DG5o+3Ctg
-	f8ogFLRQs+7OP5rm7CxOKTtBbYkNv+X/+GeqCR/OO4rOWhQ1vApKW5B60zm0GFiYB0Row8snTRmoY
-	70a96iQ/CcqB5G4h8R7A==;
+	List-Owner; bh=/Stb+lDgfuxy/VCZ3PCjX01YvMNQXAHNuAlcOPbuXr0=; b=dUTEC0ADTGJhuZ
+	UWcP9CGDVrrYRCPjbcGM8Od3iyr9IU9cfulggAu8cKo8guRaK6Hof+XgfUppaQl4f/NU5/XhrS/Oq
+	4xWgRGdJWifMpooE+wNF6JS+DdRHCnomfbnJrQ1ptaFcQfimoc6p+TOZgJ186BkeOu9l1u1tKQiM0
+	gZvZYJcX7YlfctuomcDTTLPOIscmw3xXCY7tNSDyyTL58YqBzB8x8/FXebhdPClH9U75wzRph4QHv
+	zIhACOh6QfbPD7wdQ0pSz3kEv7wIAVHlJJ3pLfnXpF40pZAo3MbFOEcNZXsLv1qlo7TL1UeY3U8Vy
+	IdwZqplLrz6YcERscVeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwlBJ-003Std-2o; Thu, 02 Jun 2022 13:48:09 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1nwvzf-005H8Q-A3; Fri, 03 Jun 2022 01:20:51 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwlBF-003SsM-AT; Thu, 02 Jun 2022 13:48:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
-	s=badeba3b8450; t=1654177662;
-	bh=2iYMbjgyUAEmKKRbCPL6Jl2Wqx6/vlykoO1h/cdX9pU=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=B2lwuKhhses728holgAZp4oZnvnVyjpESpX5d4Wahe78tNJd3f7G3iHZN30VkwjsH
-	 1q3k8Lea6OztCKRlH2bP/S9GAYekJz/0C+n+sKdRpScjskIa9I1rRRD5u26It9R98s
-	 VtpCdQQEYQDUF5VyLUAzEr47GXRxAufe1baxqXxE=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [217.61.145.102] ([217.61.145.102]) by web-mail.gmx.net
- (3c-app-gmx-bs39.server.lan [172.19.170.91]) (via HTTP); Thu, 2 Jun 2022
- 15:47:42 +0200
+	id 1nwvzS-005Gzd-C5
+	for linux-phy@lists.infradead.org; Fri, 03 Jun 2022 01:20:40 +0000
+Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
+	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20220603012026epoutp01bd28a461302013b39ba7caf0a7ba7fd4~09589yZTn0945909459epoutp01R
+	for <linux-phy@lists.infradead.org>; Fri,  3 Jun 2022 01:20:26 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20220603012026epoutp01bd28a461302013b39ba7caf0a7ba7fd4~09589yZTn0945909459epoutp01R
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1654219226;
+	bh=OlGafxioBWPpmv2XvGx7UEtLeu872g/B/PGHZaTWFu4=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=nhIhyzHFifLcdvjE5j0A6mgSz4MfJztf5LWCWOZUHh4d/hyvhsFIZQGQplqkR5Sf2
+	 LrrMpU3jd6SBB4xkl8qlythy0KVuE1z/v4IB7P1PIfhEZDTP4pBtWrNOmyOTeDktIi
+	 m7ooOntiyCGmYGWtxwjrTplgwW1bx/NIkbBE4ifU=
+Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+	20220603012025epcas5p185f04a84e9e38e23f0966dfa9250461e~0958cfg4v1445014450epcas5p1p;
+	Fri,  3 Jun 2022 01:20:25 +0000 (GMT)
+Received: from epsmges5p1new.samsung.com (unknown [182.195.38.181]) by
+	epsnrtp4.localdomain (Postfix) with ESMTP id 4LDlS71HTrz4x9Q7; Fri,  3 Jun
+	2022 01:20:23 +0000 (GMT)
+Received: from epcas5p4.samsung.com ( [182.195.41.42]) by
+	epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+	22.66.10063.7D169926; Fri,  3 Jun 2022 10:20:23 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20220603012022epcas5p1cb88b549bf569608b631f526730043df~0955ZWK7-1444914449epcas5p1f;
+	Fri,  3 Jun 2022 01:20:22 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+	epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+	20220603012022epsmtrp2c2ad1b7cb25b0f7bd9968ef0e0eb6859~0955X-ZPQ1215912159epsmtrp27;
+	Fri,  3 Jun 2022 01:20:22 +0000 (GMT)
+X-AuditID: b6c32a49-4b5ff7000000274f-b8-629961d7c5b8
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+	epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+	94.7E.11276.6D169926; Fri,  3 Jun 2022 10:20:22 +0900 (KST)
+Received: from alimakhtar03 (unknown [107.122.12.5]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20220603012020epsmtip202e2263aa8523ad5f21a558e4c2eac31~0953SA6lZ0464904649epsmtip2C;
+	Fri,  3 Jun 2022 01:20:20 +0000 (GMT)
+From: "Alim Akhtar" <alim.akhtar@samsung.com>
+To: "'Bart Van Assche'" <bvanassche@acm.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<linux-scsi@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Cc: <devicetree@vger.kernel.org>, <robh+dt@kernel.org>,
+	<krzysztof.kozlowski+dt@linaro.org>, <vkoul@kernel.org>,
+	<avri.altman@wdc.com>, <martin.petersen@oracle.com>,
+	<chanho61.park@samsung.com>, <pankaj.dubey@samsung.com>,
+	<linux-fsd@tesla.com>, "'Bharat Uppal'" <bharat.uppal@samsung.com>
+In-Reply-To: <8be31be0-8766-061c-2544-25e296048528@acm.org>
+Subject: RE: [PATCH 1/6] dt-bindings: phy: Add FSD UFS PHY bindings
+Date: Fri, 3 Jun 2022 06:50:18 +0530
+Message-ID: <000001d876e8$18957d50$49c077f0$@samsung.com>
 MIME-Version: 1.0
-Message-ID: <trinity-b1d8205a-3354-42e7-8784-0a0cfd7e8a36-1654177662388@3c-app-gmx-bs39>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Rob Herring <robh@kernel.org>
-Cc: Frank Wunderlich <linux@fw-web.de>, Michael Riesch
- <michael.riesch@wolfvision.net>, Vinod Koul <vkoul@kernel.org>, Johan
- Jonker <jbx6244@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-pci@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Bjorn Helgaas
- <bhelgaas@google.com>, Philipp Zabel <p.zabel@pengutronix.de>, Lorenzo
- Pieralisi <lorenzo.pieralisi@arm.com>, Peter Geis <pgwipeout@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski
- <krzysztof.kozlowski+dt@linaro.org>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
- <kw@linux.com>
-Subject: Aw: Re: Re: [RFC v3 1/5] dt-bindings: phy: rockchip: add PCIe v3
- phy
-Date: Thu, 2 Jun 2022 15:47:42 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <trinity-940b8fcf-17e7-4445-8aeb-e17f36b41b4b-1653047439840@3c-app-gmx-bap67>
-References: <20220514115946.8858-1-linux@fw-web.de>
- <20220514115946.8858-2-linux@fw-web.de>
- <1652570081.002742.3276245.nullmailer@robh.at.kernel.org>
- <trinity-02ad648c-f6f8-4383-b389-a0578d5a02d2-1652615387162@3c-app-gmx-bap15>
- <20220516173537.GA2942634-robh@kernel.org>
- <9496CAFB-6CB6-4BDA-A539-3A6E1B562299@public-files.de>
- <20220518155551.GB3302100-robh@kernel.org>
- <trinity-940b8fcf-17e7-4445-8aeb-e17f36b41b4b-1653047439840@3c-app-gmx-bap67>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:Ou72G3HO5kBx6mld4VIc7l+uMCSnBYkop7SJ5NIcA1Q3jsvlKS/T+4A2TSpMYReYX1Th0
- GAypuTa3Dp5BK76Enhpr3QRdwCqTSZRqGvWRg8QAKYTGYvWejEs9dbpyaEqq1FTO8xZ16d538kB5
- eY9I2r3Q0tpRm2I9dUl60ZMM4o41OGb7zWBlZPLHfp4gZlwFehrFuARn0k53XVU1e8bI19FDn7pR
- qURa9QP8VTUcbDNiMTKY7o/g6JQGRjPw2uNLkyeSpz/dp0nuEC+MWu+Iff69VEglUCvsEE4gwi++
- +E=
-X-UI-Out-Filterresults: notjunk:1;V03:K0:AM77h1kBGk8=:BFWCs43+kuOa1+j+QUaBrc
- xUewSLTR6sWjcX/t/JXh6voUcMsVSiBagkHDIcOTlNTHngfeHJSZy8Qj7NHOeJQYRHMfHHpHi
- OBI7kmLwzjW23tCFGSYcTTeGYqr2gzMT4Bnzae8XSCvQrD1LwapSpYhvVKv64Qs4wMAkMZSIl
- M+ydn9ktzWPygx0j0usL15amBFWotiOtewmog1LE7yNkOU0RUIjZgFTP66BCQF7JszrotpQ4J
- DaqDPvH6nNl5DnOAtVyWx1GhR+E4hKsdmDo31jw0rmPgzhFzc2SyKU1IM4oBuJ1jSHW+F2RVC
- T2Ag9HLokhVoa0xIWI9gTRE2IojuWWwxplNXf64p7laHinWjbw+7Bjefi9gLm6OK2KiwuH9jl
- D1PbqX0gA9KwsI6peS5UrWANHghNgDGBLS+8hz6ecsFnVm/FhvWhSY1tAhnxlQSDq9OCVcYkq
- EEG1LoMz7j3VrpzjjZdh8VzhiBNG8urgDCdnoH0QsbbtIsIPZjmFoLwe/GoUHRCNrsv6G2CBi
- /khwDm2OWPOJ8Qr3lVaN8Lb8NoroO89YRCX28sgqrBe5ROrHU2AvXtRvbBCBR6B35whGF4Lgf
- N9RYAy4YdWkc3DYijq2gAUA79W1kl4vFpsD62UNn1p+x7qv9jmVBH5oRbx1X+ZvA8Y9dVftqr
- XTYPb/N4sU55JUh6+t6k5wOWcRzlOfW3I0uiKjPp2l0wu1Wa92JKn+DS7AIbsXsSMJx2EQFP+
- q4ydhp2uVyKH89+WcAnpuDKsndqtgejGlenvaSIWRY/adCbtrkjuBFgf4/BEtVcmYb8b+ErdN
- qXsGcYA
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQEGJiXAXdobboEKZTBkhZkj5AOCHwEV9a8PAbDHaMoB6uoGq6679h+A
+Content-Language: en-us
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrHJsWRmVeSWpSXmKPExsWy7bCmlu71xJlJBvs/s1q8/HmVzeLaywvs
+	FtM+/GS2uLxf22L+kXOsFn0vHjJbbHp8jdXi4atwi8u75rBZTFj1jcWi+/oONovlx/8xWSza
+	+oXdonXvEXaLnXdOMDvwe1y+4u2xaVUnm8eda3vYPDYvqff4+PQWi0ffllWMHv+a5rJ7fN4k
+	59F+oJspgDMq2yYjNTEltUghNS85PyUzL91WyTs43jne1MzAUNfQ0sJcSSEvMTfVVsnFJ0DX
+	LTMH6HwlhbLEnFKgUEBicbGSvp1NUX5pSapCRn5xia1SakFKToFJgV5xYm5xaV66Xl5qiZWh
+	gYGRKVBhQnbG5pULGQvmsFe8/OnTwLiErYuRg0NCwESiaatEFyMXh5DAbkaJMysPMEM4nxgl
+	ds3dw97FyAnkfGOU2P8gDcQGaVj5+CMjRNFeRok7hxazQzgvGSXWLvzPAlLFJqArsWNxGxuI
+	LSKwnVGib38giM0ssJJJYt1UO5DVnALWErtv5YOEhQWcJd5emwi2jEVARWL9+mesIDavgKXE
+	goeToWxBiZMzn7BAjJGX2P52DjPEQQoSP58uY4VY5Sax6fcnVogacYmXR4+A3SYh8IJD4tzP
+	P4wQDS4SH+bMZoKwhSVeHd/CDmFLSXx+txcaLB4Si/5IQYQzJN4uXw/Vai9x4MocFpASZgFN
+	ifW79CFW8Un0/n7CBNHJK9HRJgRRrSrR/O4qC4QtLTGxu5sVwvaQuPDuOvMERsVZSB6bheSx
+	WUgemIWwbAEjyypGydSC4tz01GLTAsO81HJ4XCfn525iBCdsLc8djHcffNA7xMjEwXiIUYKD
+	WUmEt2TX1CQh3pTEyqrUovz4otKc1OJDjKbA0J7ILCWanA/MGXkl8YYmlgYmZmZmJpbGZoZK
+	4rwC/xuThATSE0tSs1NTC1KLYPqYODilGphWnZriqVh0bmP0gy/rzhQeb78ocsDAVmTVo8VB
+	16dd3vvkwCZGv4ecYglF77vrrtnsMbSs5Xp+UW1r/RKhQ+Kyxz5vPexx7sCMfYeOnnquxnr5
+	1H3WpNALe3r+/k88H2JQatukviK7dOEtSy8dlXLLDbN8/po7KfB+Z11n+yBd/9etHRLfP307
+	+GqGzsOMRdmzrh7csuTj7ELZ7Wzik9a2ZooFHJBd993g4EbHSmaulyvDw/U2vzJwq9mW1h1w
+	bwfXsbU8v+YtUDgt4/0z8tqLDqmgc4vFvJXfea3rto34d1qsouPqhokfyzcLuC1hMrHurnnp
+	3yX234B9b/DGZ8nXN+offbnohsxsF+2pZgcmPlJiKc5INNRiLipOBACbD1g5YQQAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrNIsWRmVeSWpSXmKPExsWy7bCSvO61xJlJBj8nKVq8/HmVzeLaywvs
+	FtM+/GS2uLxf22L+kXOsFn0vHjJbbHp8jdXi4atwi8u75rBZTFj1jcWi+/oONovlx/8xWSza
+	+oXdonXvEXaLnXdOMDvwe1y+4u2xaVUnm8eda3vYPDYvqff4+PQWi0ffllWMHv+a5rJ7fN4k
+	59F+oJspgDOKyyYlNSezLLVI3y6BK2PzyoWMBXPYK17+9GlgXMLWxcjJISFgIrHy8UfGLkYu
+	DiGB3YwSqza+Y4dISEtc3zgByhaWWPnvOTtE0XNGiU393YwgCTYBXYkdi9vYQBIiIN0vz74E
+	G8sssJlJYu8GZYiOd4wSD7ctY+pi5ODgFLCW2H0rH6RGWMBZ4u21iWAbWARUJNavf8YKYvMK
+	WEoseDgZyhaUODnzCQvETG2JpzefQtnyEtvfzmGGuE5B4ufTZWD1IgJuEpt+f2KFqBGXeHn0
+	CPsERuFZSEbNQjJqFpJRs5C0LGBkWcUomVpQnJueW2xYYJiXWq5XnJhbXJqXrpecn7uJERy/
+	Wpo7GLev+qB3iJGJg/EQowQHs5IIb8muqUlCvCmJlVWpRfnxRaU5qcWHGKU5WJTEeS90nYwX
+	EkhPLEnNTk0tSC2CyTJxcEo1ME1+2CSe3n2lnYX38XOVxMwd79edLrXOkAyeV7Z/S7eWYu6T
+	J7qmE3YdnpeT9sQ7+V619rE7b//taqwv+pf3d5aP9dWa+ssfsvImLN1r4vFihSnb2+Mzpyr1
+	an5+mf2bYcWnZcLPO95rTsnR+bPXPU224d59n0cWqX2zmUrqDbxObDdIyqhgjzrx3N0mMb1K
+	p7NGrfUDW94z3a3d22wat5QV/MtLWbF82QPOc9Z81dfPxKxQN1uYG/1zqvjhYEXev0Ycaquk
+	s59uN018FfBZTGYazzNn0Q0fEjyNJ+7VX3/luMca+4eX8u0lMn5/sP+z78KrXuVllvrl4ctn
+	XDmyx2LfYqNFQjMr64Rcs5e17VBiKc5INNRiLipOBAA8pEppTgMAAA==
+X-CMS-MailID: 20220603012022epcas5p1cb88b549bf569608b631f526730043df
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220531012336epcas5p2fcafe14c90ad3e3a0901fccd62d15437
+References: <20220531012220.80563-1-alim.akhtar@samsung.com>
+	<CGME20220531012336epcas5p2fcafe14c90ad3e3a0901fccd62d15437@epcas5p2.samsung.com>
+	<20220531012220.80563-2-alim.akhtar@samsung.com>
+	<8be31be0-8766-061c-2544-25e296048528@acm.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_064805_869170_BF7ED5AD 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20220602_182038_820554_E254D233 
+X-CRM114-Status: GOOD (  12.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,38 +142,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> Gesendet: Freitag, 20. Mai 2022 um 13:50 Uhr
-> Von: "Frank Wunderlich" <frank-w@public-files.de>
-> An: "Rob Herring" <robh@kernel.org>
-> Hi,
->
-> fixed reg-error by using 32bit-address in example, in my test output is clean.
->
-> +++ b/Documentation/devicetree/bindings/phy/rockchip,pcie3-phy.yaml
-> @@ -68,7 +68,7 @@ examples:
->      #include <dt-bindings/clock/rk3568-cru.h>
->      pcie30phy: phy@fe8c0000 {
->        compatible = "rockchip,rk3568-pcie3-phy";
-> -      reg = <0x0 0xfe8c0000 0x0 0x20000>;
-> +      reg = <0xfe8c0000 0x20000>;
->
->
-> i hope yours is clean too
 
-have you tried it?
 
-> regarding data-lanes instead of own lane-map, Peter and me only find this in special
-> bindings outside the phy-"namespace" like this.
+>-----Original Message-----
+>From: Bart Van Assche [mailto:bvanassche@acm.org]
+>Sent: Tuesday, May 31, 2022 9:14 AM
+>To: Alim Akhtar <alim.akhtar@samsung.com>; linux-arm-
+>kernel@lists.infradead.org; linux-kernel@vger.kernel.org; linux-
+>scsi@vger.kernel.org; linux-phy@lists.infradead.org
+>Cc: devicetree@vger.kernel.org; robh+dt@kernel.org;
+>krzysztof.kozlowski+dt@linaro.org; vkoul@kernel.org; avri.altman@wdc.com;
+>martin.petersen@oracle.com; chanho61.park@samsung.com;
+>pankaj.dubey@samsung.com; linux-fsd@tesla.com; Bharat Uppal
+><bharat.uppal@samsung.com>
+>Subject: Re: [PATCH 1/6] dt-bindings: phy: Add FSD UFS PHY bindings
 >
-> https://elixir.bootlin.com/linux/v5.18-rc7/source/Documentation/devicetree/bindings/media/video-interfaces.yaml#L157
+>On 5/30/22 18:22, Alim Akhtar wrote:
+>> Adds tesla,fsd-ufs-phy compatible for Tesla FSD SoC
 >
-> do you mean converting this binding and add it there and base out binding on it?
+>What does FSD stand for? Please clarify this in the patch description.
 >
-> https://elixir.bootlin.com/linux/v5.18-rc7/source/Documentation/devicetree/bindings/phy/phy-bindings.txt
+Thanks Bart for review, I will update the commit message with about FSD SoC.
 
-is this the right binding to add the data-lanes or do you refer another one (have not found phy-provider)?
+>Thanks,
+>
+>Bart.
 
-regards Frank
 
 -- 
 linux-phy mailing list
