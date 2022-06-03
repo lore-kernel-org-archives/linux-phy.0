@@ -4,105 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09754C43334
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jun 2022 01:54:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 200FDCCA47F
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jun 2022 02:04:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:CC
-	:To:From:Subject:Mime-Version:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=sGPmwvM+bzL1Dob2yyTF7SiNsVwioxrz3LDNj59iLLA=; b=1aqL7MAHHWt8Yk
-	HIveGWhe8tk7CTd0EI7r0tyaUYVN4TjRXtB05fsW/QfGhBTpGGbDzI48rqe0SUnuQnjOjg1vN5Tch
-	VHKDjuDQkqUPnfsl8mcWBKYIL7QHi6izbRk2x4MZL60ebX2LQ22zgbIKpucv8vs/pK3tUZ3OT3iLe
-	NRTWYOMOi1P8uYuZaFGxDuixPe4KF93Jk1XtyKspiJ7TSgdFm/PDkd7CcE3zHf1oJ3wAmun/B5s21
-	zUnZ4/8rccTv8oukXFsa5f8M/EuDFHZPgACXLxHVb/u50S3cMgd6ZOmFACZO9sMCQ3eI27SZjAq8e
-	nyhjDL+76SzrQIbB1HYA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oYQKhs8PvWGYf6SldlpSWRTonNnb+03rdJkcx5Um7/8=; b=l3NTNiuUNfBEb/
+	nUbIyFHE22NUDEFT9Ib3QFsKTatd4HCtKQU/kpp7xrdBgyKTQiXOrghaSEgXR1grE01jDtEwm2zKZ
+	S292+s5HagCHvXUGIf4l3IiWzz9yjOfRryQtV7KZmAp2q9TTTOgeRKFFeDVHxIxIIoTe8orKJQxXM
+	IS4z+6S4hHSXUF8JyVvDVg4JxtEyX9R5Er27HSz6kvRu3kgvIiBDGNHlLeglH10g3A+hvHX+6WX7D
+	5FI0Ar8FAkE3wWRtJDU0XfT+E9fwEpDIB8CPCQor06+M/eKqzme5qu1C03EMkfuxOBOFQkQT6pfq4
+	VZv8+qEVz75m3N2X5Riw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwwWW-005QhD-E6; Fri, 03 Jun 2022 01:54:48 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1nwwg0-005RNJ-Ei; Fri, 03 Jun 2022 02:04:36 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwwWS-005QgF-7n
-	for linux-phy@lists.infradead.org; Fri, 03 Jun 2022 01:54:46 +0000
-Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20220603015435epoutp02c38b620ce83dc96daefcfb6e4657633e~0_XxCtlFD2763727637epoutp02K
-	for <linux-phy@lists.infradead.org>; Fri,  3 Jun 2022 01:54:35 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20220603015435epoutp02c38b620ce83dc96daefcfb6e4657633e~0_XxCtlFD2763727637epoutp02K
+	id 1nwwfv-005RJR-A2
+	for linux-phy@lists.infradead.org; Fri, 03 Jun 2022 02:04:34 +0000
+Received: from epcas2p4.samsung.com (unknown [182.195.41.56])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20220603020428epoutp04e7a133b49d74a8c162bd23c4703332b6~0_gZrozJ22088320883epoutp04c
+	for <linux-phy@lists.infradead.org>; Fri,  3 Jun 2022 02:04:28 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20220603020428epoutp04e7a133b49d74a8c162bd23c4703332b6~0_gZrozJ22088320883epoutp04c
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1654221275;
-	bh=iltdJsmgnbu0JcWYL1RKkqqbZCa+Qc8BFE7Yie5EMQA=;
-	h=Subject:Reply-To:From:To:CC:Date:References:From;
-	b=dL5Za0uDl67LA6TIx2HJ2iyHzjFxGqeSN0ZO1XtqJwJQAEefbRzewssDnOpUTa505
-	 IXFzjJxvJimPbu6pYv+9BTSFvZklmItP5Qo11aTbctsm52w1kr8uxE+h26n3O5nBF6
-	 qrPyiGiL3YigY1p/E0e9Wj72h4xP5pbg+gko1FYE=
+	s=mail20170921; t=1654221868;
+	bh=UTtOf85zXL4qy9IJi0G0xNbHM+kypzzRxzeINEGKtrU=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=RTucJ35vk/Kbv4E2eV+ZC+GgO/5EyrMG1hbW6V+kfj9Uxb2SrfC9JWlU/Guzclhqf
+	 +3jtEy0y9i3VHQR6UK+ePd1pqmwyZDhssS05/4TwQUWxXyE+maKCQSsbZIpFCEQind
+	 cWScLWCb2f0c60FLqAmxPAJUN8ZzQ9aGFCQ/thRY=
 Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
-	epcas2p3.samsung.com (KnoxPortal) with ESMTP id
-	20220603015434epcas2p33cfb84fa687df58be91884a5d4ccd113~0_Xv-e9b23019030190epcas2p3Y;
-	Fri,  3 Jun 2022 01:54:34 +0000 (GMT)
-Received: from epsmges2p3.samsung.com (unknown [182.195.36.70]) by
-	epsnrtp1.localdomain (Postfix) with ESMTP id 4LDmCX3pgdz4x9QG; Fri,  3 Jun
-	2022 01:54:32 +0000 (GMT)
-X-AuditID: b6c32a47-573ff7000000272c-bc-629969d82301
-Received: from epcas2p2.samsung.com ( [182.195.41.54]) by
-	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
-	6E.F4.10028.8D969926; Fri,  3 Jun 2022 10:54:32 +0900 (KST)
-Mime-Version: 1.0
-Subject: [PATCH v2 0/5] Add support for Axis, ARTPEC-8 PCIe driver
-From: Wangseok Lee <wangseok.lee@samsung.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "jesper.nilsson@axis.com"
-	<jesper.nilsson@axis.com>, "lars.persson@axis.com" <lars.persson@axis.com>
-CC: "bhelgaas@google.com" <bhelgaas@google.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, "kw@linux.com"
-	<kw@linux.com>, "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
-	"kernel@axis.com" <kernel@axis.com>, Moon-Ki Jun <moonki.jun@samsung.com>,
-	Sang Min Kim <hypmean.kim@samsung.com>, Dongjin Yang <dj76.yang@samsung.com>
-X-Priority: 3
-X-Content-Kind-Code: NORMAL
-X-CPGS-Detection: blocking_info_exchange
-X-Drm-Type: N,general
-X-Msg-Generator: Mail
-X-Msg-Type: PERSONAL
-X-Reply-Demand: N
-Message-ID: <20220603015431epcms2p6203908cebe6a320854136559a32b54cb@epcms2p6>
-Date: Fri, 03 Jun 2022 10:54:31 +0900
-X-CMS-MailID: 20220603015431epcms2p6203908cebe6a320854136559a32b54cb
+	epcas2p2.samsung.com (KnoxPortal) with ESMTP id
+	20220603020428epcas2p26ebe72cd24a10e5e6c44254ef5ce7c03~0_gZMBl4C1635416354epcas2p2U;
+	Fri,  3 Jun 2022 02:04:28 +0000 (GMT)
+Received: from epsmges2p1.samsung.com (unknown [182.195.36.88]) by
+	epsnrtp1.localdomain (Postfix) with ESMTP id 4LDmQz1GsGz4x9Ps; Fri,  3 Jun
+	2022 02:04:27 +0000 (GMT)
+Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
+	epsmges2p1.samsung.com (Symantec Messaging Gateway) with SMTP id
+	0C.A4.10069.B2C69926; Fri,  3 Jun 2022 11:04:27 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+	epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
+	20220603020426epcas2p3f50ebe570e01c7f10972a857659a5625~0_gXzuN7U1599315993epcas2p3e;
+	Fri,  3 Jun 2022 02:04:26 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+	20220603020426epsmtrp14bf070f6e42049c51fc9494964c3e569~0_gXxxIJv1338013380epsmtrp1i;
+	Fri,  3 Jun 2022 02:04:26 +0000 (GMT)
+X-AuditID: b6c32a45-a8fff70000002755-41-62996c2b71df
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	95.FF.08924.A2C69926; Fri,  3 Jun 2022 11:04:26 +0900 (KST)
+Received: from localhost.localdomain (unknown [10.229.9.51]) by
+	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+	20220603020426epsmtip1272e6b0f82b21b3862457bc92983f522~0_gXkGfEN2995029950epsmtip1X;
+	Fri,  3 Jun 2022 02:04:26 +0000 (GMT)
+From: Chanho Park <chanho61.park@samsung.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Alim Akhtar
+	<alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof
+	Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	Chanho Park <chanho61.park@samsung.com>
+Subject: [PATCH v3 5/5] phy: samsung: ufs: support secondary ufs phy
+Date: Fri,  3 Jun 2022 11:04:10 +0900
+Message-Id: <20220603020410.2976-6-chanho61.park@samsung.com>
+X-Mailer: git-send-email 2.36.1
+In-Reply-To: <20220603020410.2976-1-chanho61.park@samsung.com>
+MIME-Version: 1.0
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrCJsWRmVeSWpSXmKPExsWy7bCmha52zswkgymrWC0ezNvGZnF5v7bF
+	/CPnWC0uPO1hs+h78ZDZYu/rrewWmx5fY7WYsOobi8WM8/uYLFr3HmG32HnnBLMDt8emVZ1s
+	Hneu7WHz2Lyk3qNvyypGj+M3tjN5fN4kF8AWlW2TkZqYklqkkJqXnJ+SmZduq+QdHO8cb2pm
+	YKhraGlhrqSQl5ibaqvk4hOg65aZA3SdkkJZYk4pUCggsbhYSd/Opii/tCRVISO/uMRWKbUg
+	JafAvECvODG3uDQvXS8vtcTK0MDAyBSoMCE7o+PtZqaCOVwVz7YeZ2pgvMLRxcjBISFgIvHk
+	s28XIxeHkMAORonWo+fYIZxPjBLTbu0FcjiBnM+MErt+RYDYIA1/+o+zQBTtYpR4+mQOE4Tz
+	kVFi//MeFpAqNgFdiS3PXzGCJEQE2pkkTtybCzaXWWAzo8TJCRuYQaqEBVwktvxaDNbBIqAq
+	MfnwMSYQm1fAVuLGpAfsEPvkJTbM7wWr5xSwk7g+7SszRI2gxMmZT8B6mYFqmrfOZgZZICHQ
+	ySGx/dkFJohmF4mnrx5DDRKWeHV8C5QtJfGyvw3KLpZYOusTE0RzA6PE5W2/2CASxhKznrUz
+	goKJWUBTYv0ufUiIKUscuQW1l0+i4/Bfdogwr0RHmxBEo7rEge3TWSBsWYnuOZ9ZIWwPibNP
+	nrFBQmsio8T/P0dYJzAqzELyziwk78xCWLyAkXkVo1hqQXFuemqxUYEhPIqT83M3MYKTq5br
+	DsbJbz/oHWJk4mA8xCjBwawkwluya2qSEG9KYmVValF+fFFpTmrxIUZTYGBPZJYSTc4Hpve8
+	knhDE0sDEzMzQ3MjUwNzJXFer5QNiUIC6YklqdmpqQWpRTB9TBycUg1MBw5Hlkh8aL6ZZ9/x
+	wHC9DHeJ8TLp3703Q/kXSJrL2K/Zeegd39XgN4ytU+Yvv7qadW3AtqeG006n3xL53q4q++ek
+	Ksf20/azk8vZQlekK+wxqJF9Pql5n/YttuQfm7c12X/ZJDe56nVs+bqJKjNb8rNj7q5i9+7p
+	XZyzYonNv7huXnlRjxvcyQ+5vc0Olh9/vKFo/mrxwKbzB10ufMz5axJ+6FjOXlmtM9tvz+Vs
+	Fz/2bfmhg0cufMpaKZm74tKW3mSJ2j/+AW9Puc//4SK5f4eFEW9L9dZv4mLKm6J3Gi96ybHn
+	bndJrcolz0yz2HSxI4t6Le8HhKx+m323j2uunP+yr8E171tEj7X9czSXUmIpzkg01GIuKk4E
+	AFdopi03BAAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrALMWRmVeSWpSXmKPExsWy7bCSnK5Wzswkg7+N8hYP5m1js7i8X9ti
+	/pFzrBYXnvawWfS9eMhssff1VnaLTY+vsVpMWPWNxWLG+X1MFq17j7Bb7LxzgtmB22PTqk42
+	jzvX9rB5bF5S79G3ZRWjx/Eb25k8Pm+SC2CL4rJJSc3JLEst0rdL4MroeLuZqWAOV8WzrceZ
+	GhivcHQxcnJICJhI/Ok/ztLFyMUhJLCDUeJL81FGiISsxLN3O9ghbGGJ+y1HWCGK3jNKNC7e
+	xQSSYBPQldjy/BUjSEJEoJtJYs6mfiYQh1lgO6PEh6XrWECqhAVcJLb8WgxmswioSkw+fAys
+	m1fAVuLGpAdQK+QlNszvZQaxOQXsJK5P+wpmCwHVPO97xgJRLyhxcuYTMJsZqL5562zmCYwC
+	s5CkZiFJLWBkWsUomVpQnJueW2xYYJSXWq5XnJhbXJqXrpecn7uJERwJWlo7GPes+qB3iJGJ
+	g/EQowQHs5IIb8muqUlCvCmJlVWpRfnxRaU5qcWHGKU5WJTEeS90nYwXEkhPLEnNTk0tSC2C
+	yTJxcEo1MHG9D573f7WT0YrZz24c2njo26WmMJlVrcdajqfO+5KYdrsq31rur0G5/vsGXrFG
+	+yvzCoNVu5piPZyq/v42+xU44WpVumirV74Ch7jewds8msWfYxYdfnouYbXbXt2ezcoFMdm2
+	dU/Ed+Xe38gz/S3Tbd3YuXrPnt3kqJY0uCdwVOrdlAU1l5fKp/LO+X42cN32mnWeCsaLGLrE
+	a9vL3Dln3eKzbpXX9QtZos7wnnlKplmp7AN1dfavC0Ri2Xf9vbrigITjgplZfDUKDsnnHetl
+	NdqVUwy4b2uKTzuTX6EpVPDardtMw3Km5Tdl3WWii6Sv7y8InL4+P3nFarZL7asZ9lY+uN5k
+	O8W+YPsKJZbijERDLeai4kQADGa5IfMCAAA=
+X-CMS-MailID: 20220603020426epcas2p3f50ebe570e01c7f10972a857659a5625
+X-Msg-Generator: CA
 X-Sendblock-Type: AUTO_CONFIDENTIAL
-X-CPGSPASS: Y
-X-CPGSPASS: Y
 CMS-TYPE: 102P
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDJsWRmVeSWpSXmKPExsWy7bCmme6NzJlJBnsXiVssacqweHlI02L+
-	kXOsFrtnLGeymDn1DLPF80OzmC0+tahaXHjaw2bxctY9NouGnt+sFkfefGS22H98JZPF5V1z
-	2CzOzjvOZjFh1TcWize/X7BbnFucadG69wi7xc47J5gdhD3WzFvD6HF9XYDHgk2lHptWdbJ5
-	PLkynclj85J6j74tqxg9jt/YzuTxeZNcAGdUtk1GamJKapFCal5yfkpmXrqtkndwvHO8qZmB
-	oa6hpYW5kkJeYm6qrZKLT4CuW2YO0D9KCmWJOaVAoYDE4mIlfTubovzSklSFjPziElul1IKU
-	nALzAr3ixNzi0rx0vbzUEitDAwMjU6DChOyM4w0nmQumi1b0X5/K3MB4WKCLkZNDQsBEomnl
-	F0YQW0hgB6PElOfeXYwcHLwCghJ/dwiDhIUFnCQ+LWxnhyhRktixZh4zRFxf4vqKblYQm01A
-	V+Lf4pdsXYxcHCICZ5kkbt7dzgriMAvMYZG43vyBFWIZr8SM9qcsELa0xPblWxkhbA2JH8t6
-	mSFsUYmbq9+yw9jvj82HqhGRaL13FqpGUOLBz91QcSmJBU8OQc2vltj/9zcThN3AKNF/PxXk
-	GQmgS3dcNwYJ8wr4SiyYvhZsPIuAqsSWHW2sECUuEnd2aIOEmQXkJba/ncMMEmYW0JRYv0sf
-	okJZ4sgtFpg/Gjb+ZkdnMwvwSXQc/gsX3zHvCdQtahLzVu5khhgjI7H1pf8ERqVZiGCehWTt
-	LIS1CxiZVzGKpRYU56anFhsVGMMjNjk/dxMjOFlrue9gnPH2g94hRiYOxkOMEhzMSiK8Jbum
-	JgnxpiRWVqUW5ccXleakFh9iNAX6dyKzlGhyPjBf5JXEG5pYGpiYmRmaG5kamCuJ83qlbEgU
-	EkhPLEnNTk0tSC2C6WPi4JRqYJJ6LyOnLTJt6euWROkXT37aiqwt0FWyXqVr3XKG9e29oyZP
-	z0eUqagsmXtjmuLpYu9dy1YEtzadd1ne4pObGH1l7rOfwTGzz2Vt3RpwZOZdFbOlpZs12YvM
-	m57xL22Le7Q0nWFt3KPcAAG7S5vn6X3N+ymx4fHjaSzHllyOWlC3yN1k0T8TT40XGXprpryM
-	+l9W8lsm/omtuX/VC8nPvAduT0t9H/dZTdZq5bnlUxNzvf1Op4QEskgzKpw7F+xhU8I21fLu
-	e58HP7c6xaVolBsqzbqySdiw7Udgc4qai0sN45enIoGBZ/9sltCM1hN8adPZ+4Db7nCzZFLB
-	+ZV/GH/nsu/+fWdOp0Pg+7D2g0osxRmJhlrMRcWJANKw5a5fBAAA
 DLP-Filter: Pass
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220603015431epcms2p6203908cebe6a320854136559a32b54cb
-References: <CGME20220603015431epcms2p6203908cebe6a320854136559a32b54cb@epcms2p6>
+X-CMS-RootMailID: 20220603020426epcas2p3f50ebe570e01c7f10972a857659a5625
+References: <20220603020410.2976-1-chanho61.park@samsung.com>
+	<CGME20220603020426epcas2p3f50ebe570e01c7f10972a857659a5625@epcas2p3.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220602_185444_669594_05410E52 
-X-CRM114-Status: GOOD (  18.99  )
+X-CRM114-CacheID: sfid-20220602_190431_932204_19F09883 
+X-CRM114-Status: GOOD (  15.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,67 +132,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: wangseok.lee@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This v2 patchset is improvement several review comments received from patchset v1.
+To support secondary ufs phy device, we need to get an offset for phy
+isolation from the syscon DT node. If the first index argument of the
+node is existing, we can read the offset value and set it as isol->offset.
 
-Main changes since v1 [1]:
--'make dt_binding_check' result improvement
--Add the missing property list
--improvement review comment of Krzysztof on driver code
--change folder name of phy driver to axis from artpec
+Signed-off-by: Chanho Park <chanho61.park@samsung.com>
+---
+ drivers/phy/samsung/phy-samsung-ufs.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-[1] https://lore.kernel.org/lkml/20220328014430epcms2p7063834feb0abdf2f38a62723c96c9ff1@epcms2p7/
-
---------------------------------------------------------------
-This series patches include newly PCIe support for Axis ARTPEC-8 SoC.
-ARTPEC-8 is the SoC platform of Axis Communications.
-PCIe controller driver and phy driver have been newly added.
-There is also a new MAINTAINER in the addition of phy driver.
-PCIe controller is designed based on Design-Ware PCIe controller IP
-and PCIe phy is desinged based on SAMSUNG PHY IP.
-It also includes modifications to the Design-Ware controller driver to 
-run the 64bit-based ARTPEC-8 PCIe controller driver.
-It consists of 6 patches in total.
-
-This series has been tested on AXIS SW bring-up board 
-with ARTPEC-8 chipset.
---------------------------------------------------------------
-
-Wangseok Lee (5):
-  dt-bindings: pci: Add ARTPEC-8 PCIe controller
-  dt-bindings: phy: Add ARTPEC-8 PCIe phy
-  PCI: axis: Add ARTPEC-8 PCIe controller driver
-  phy: Add ARTPEC-8 PCIe PHY driver
-  MAINTAINERS: Add maintainer for Axis ARTPEC-8 PCIe PHY driver
-
- .../bindings/pci/axis,artpec8-pcie-ep.yaml         | 108 +++
- .../devicetree/bindings/pci/axis,artpec8-pcie.yaml | 123 +++
- .../bindings/phy/axis,artpec8-pcie-phy.yaml        |  70 ++
- MAINTAINERS                                        |   2 +
- drivers/pci/controller/dwc/Kconfig                 |  31 +
- drivers/pci/controller/dwc/Makefile                |   1 +
- drivers/pci/controller/dwc/pcie-artpec8.c          | 864 +++++++++++++++++++++
- drivers/phy/Kconfig                                |   1 +
- drivers/phy/Makefile                               |   1 +
- drivers/phy/axis/Kconfig                           |   9 +
- drivers/phy/axis/Makefile                          |   2 +
- drivers/phy/axis/phy-artpec8-pcie.c                | 806 +++++++++++++++++++
- 12 files changed, 2018 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
- create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/axis,artpec8-pcie-phy.yaml
- create mode 100644 drivers/pci/controller/dwc/pcie-artpec8.c
- create mode 100644 drivers/phy/axis/Kconfig
- create mode 100644 drivers/phy/axis/Makefile
- create mode 100644 drivers/phy/axis/phy-artpec8-pcie.c
-
+diff --git a/drivers/phy/samsung/phy-samsung-ufs.c b/drivers/phy/samsung/phy-samsung-ufs.c
+index 0530513f2263..22b9e04ec39b 100644
+--- a/drivers/phy/samsung/phy-samsung-ufs.c
++++ b/drivers/phy/samsung/phy-samsung-ufs.c
+@@ -288,6 +288,7 @@ static int samsung_ufs_phy_probe(struct platform_device *pdev)
+ 	struct phy *gen_phy;
+ 	struct phy_provider *phy_provider;
+ 	const struct samsung_ufs_phy_drvdata *drvdata;
++	u32 isol_offset;
+ 	int err = 0;
+ 
+ 	match = of_match_node(samsung_ufs_phy_match, dev->of_node);
+@@ -330,6 +331,10 @@ static int samsung_ufs_phy_probe(struct platform_device *pdev)
+ 	phy->has_symbol_clk = drvdata->has_symbol_clk;
+ 	memcpy(&phy->isol, &drvdata->isol, sizeof(phy->isol));
+ 
++	if (!of_property_read_u32_index(dev->of_node, "samsung,pmu-syscon", 1,
++					&isol_offset))
++		phy->isol.offset = isol_offset;
++
+ 	phy->lane_cnt = PHY_DEF_LANE_CNT;
+ 
+ 	phy_set_drvdata(gen_phy, phy);
 -- 
-2.9.5
+2.36.1
+
 
 -- 
 linux-phy mailing list
