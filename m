@@ -4,71 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B31FC43334
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jun 2022 12:36:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BE22C43334
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jun 2022 13:05:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uXBSQsSGo13hd1iRJjQ5w3r082Dd9ZqbS7KO+y7oRZc=; b=unzrmuz5p4MPZP
-	rHduNLvb3k8ODB8DgeIRNXNPeMH5pwLRhvuYbZGE4UYt4D6mSbXGAhdR6qEGCGY7dFmjQ+i6V17pt
-	LLTSmm0IIyXom4GMMiUXg4xgdZtFGqNJvlYaVdQDyRJrbb6HqJYr5lPhnq6JemWO/kDxXBMr+ulQD
-	jkm9Cqbb2tH6UihjR/ToROrNYTC5dBIcMNGcR9MXeDCWLVNESQpaiOgyJgjGTPT2Dw9SHmOuLYSiL
-	VeDlpvLFt0FmD3sEC6PcJNad4u65gRjo+QWPcujPpeCqytnlNPaP5tonv0q0tvSkb35/q0q10vK0i
-	+BghzcwmECeOu9RISkDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3BrK6tImsCJYWtjZpDlQdMlGapadxrPUFxwGNuVq9Kw=; b=UsN6ufgRcI2eh9
+	vupvoSDZfo9LxKBrLVHynICt502ELAv5LTkfvlaHkmfBZql5p5b3I5KAxki+k5rOrWqeANVqPS4Ff
+	mKbz/JXQpqSwWAjxIBrxyk8vDl+vhMMSEUJk3hn/5dvZ/W9zOTMG9qEO1FhHVTOBzbnQh+Nodnsl2
+	/p3B1K0y3mRVnOR28g7fmqM0jFgVt9mx260IM+mZssxSutRUIydDpYx1sjsn9wgNZnuZ0ADI5gOQW
+	oqE86DDJzhdaTWT8DWeRoRahZtO2lZIhL4d5pB6h1QDbwkMnYrJM6hy3P11S0ZFBsMhVOrxUxugIi
+	bNXLFk45MGmlypis1d0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nx6Xi-007STW-L9; Fri, 03 Jun 2022 12:36:42 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nx6z6-007VdJ-IN; Fri, 03 Jun 2022 13:05:00 +0000
+Received: from mail-pj1-x1029.google.com ([2607:f8b0:4864:20::1029])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nx6Xf-007SSg-1S
-	for linux-phy@lists.infradead.org; Fri, 03 Jun 2022 12:36:41 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 2A6F8B822D1;
-	Fri,  3 Jun 2022 12:36:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 89C26C385B8;
-	Fri,  3 Jun 2022 12:36:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1654259796;
-	bh=X5+Q4bdVh1TVXN5s2RYm5wbG5xeVTt7YcpesFs/f8wg=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=XZAHQ3GUKS4+wsCT5hKKLDDpTa8PN2NY2cOPfP8XQozb1Zl5CLtB2n6o4ci5PZTut
-	 huFY7zAUo8DD8QshWmjfvvn0i93KLJ4IaVTMnmzVYoX6G4nWaIU4HzaHgPEli5ceTV
-	 coUB544Bt/I6R1DtZ+LuNYpF3YwBOCK5TND1B5f9RJ/aZfNgVXg+Ryz9u89NztlRwI
-	 e+9KdFycjaiFxuUxqgaQQFEm2XKWERFv/fLWbNwdld8hR/1MlVX09DaMr/SYBF0opU
-	 jEV/bEWyg6WEh2C0XaKHlQUHkpKdJzb9aJXpWiACPT2bhqU5YtobPG4hWKLoVz31kT
-	 mBYDHi1S3Qk+A==
-Message-ID: <e8bc3470-11fe-16d0-a967-92bd4352d411@kernel.org>
-Date: Fri, 3 Jun 2022 15:36:30 +0300
+	id 1nx6z3-007VcX-Do
+	for linux-phy@lists.infradead.org; Fri, 03 Jun 2022 13:04:58 +0000
+Received: by mail-pj1-x1029.google.com with SMTP id j7so7314062pjn.4
+        for <linux-phy@lists.infradead.org>; Fri, 03 Jun 2022 06:04:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=from:to:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=rgx3vHNyJbaOi/OKE5EKg7IR7hr4OygDFxk7UQieO18=;
+        b=cVglTdj9MVE0vlUFsrXgWQ3B5eWCleCCPkLjgPBT2Ik+i4PYzM55ENiK561uDJc5kr
+         oKcjPQeto/5Xx2WiEQug+CqXlqw98LpBqFCX+doTWXvTGH548sazDYwe2SRFsgYWKGmk
+         ApdmlNLIYZRFYDwyPM2wfB6USMvZjN13PxVpLXdZbCbrBCo5Q3TDJbJXMYrWE178tAHN
+         1qC/NgJfXjoZfbEJTHsb/emXaDEpFR06vwlLBXinial7us4oToDa1VpH0dxTPeY1EcFG
+         9okxNJJ23Gj2bUo0U/PJU8d+2l/mb4caQ0CtdvqxR6a8hgz9QXrsfaN7QTiIO5hpw3PU
+         WpfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=rgx3vHNyJbaOi/OKE5EKg7IR7hr4OygDFxk7UQieO18=;
+        b=tWHzE5WXYaeW3quCXv2XRIyEs4Dm3yd4eUZVzOKxj+sVRlrUohCK4Q9ggJoERHMBdR
+         GJUttcXvH1vG4Lbyr+WNhBrGNoTkiWvL3Ow3veoc1OxjJIEMKk3/rhvhBY7hKsRhhwxF
+         R+YsV6TP3nmswJLYEr0cC5pvXH4Bgsw2RSGdWkZ6rbyxldjNN7xTmOcOrEa+4PETSY9N
+         WBxqugp3T76lSmVrr+Mxxt937au+IBdOY8UGAClbF3BMJrOHd3ToLr7no3W2xcG3bzcg
+         qAf+YGKTSB7SY8EhPc+ZHRLv+KeqLbgOnoNy9cDuZX/EmjZ5fmPea1pqBi/ypT1YbdQh
+         ks8g==
+X-Gm-Message-State: AOAM530x8d0BfvdK7iDj8Due2FLHvM7ICPiS/jvrlHw/hB6/8uvwgzEo
+	HEMn7/APd4Ppx9vgRodqlzM=
+X-Google-Smtp-Source: ABdhPJwruDljVXqATyDd4k7ZLwZ0z6BzXJRH7II470dwr72K7QZ1irkVJ9/f5Du5DV97WEQhocWG6A==
+X-Received: by 2002:a17:90b:3b45:b0:1dd:1f37:d159 with SMTP id ot5-20020a17090b3b4500b001dd1f37d159mr46298929pjb.44.1654261495269;
+        Fri, 03 Jun 2022 06:04:55 -0700 (PDT)
+Received: from localhost.localdomain ([202.120.234.246])
+        by smtp.googlemail.com with ESMTPSA id s1-20020a63e801000000b003c14af505f8sm5226110pgh.16.2022.06.03.06.04.51
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 03 Jun 2022 06:04:54 -0700 (PDT)
+From: Miaoqian Lin <linmq006@gmail.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Miaoqian Lin <linmq006@gmail.com>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Jyri Sarha <jsarha@ti.com>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2] phy: ti: j721e-wiz: Fix refcount leak in wiz_get_lane_phy_types
+Date: Fri,  3 Jun 2022 17:04:42 +0400
+Message-Id: <20220603130446.36924-1-linmq006@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: ti: phy-gmii-sel: Add bindings for
- J7200
-Content-Language: en-US
-To: Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: robh+dt@kernel.org, lee.jones@linaro.org,
- krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
- dan.carpenter@oracle.com, kishon@ti.com, grygorii.strashko@ti.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20220531111221.22963-1-s-vadapalli@ti.com>
- <20220531111221.22963-2-s-vadapalli@ti.com>
- <26603540-8887-ef8d-8f4d-26f2f33d2a6f@kernel.org>
- <b5353c06-c8b4-c065-3843-28b2a34e1867@ti.com>
- <a7754c31-bfc6-6451-8340-5d3aa671e3c4@kernel.org>
- <985ab302-17aa-c0de-ccac-63525589918a@ti.com>
- <12afd8fc-ad03-a0f1-fad4-a9902e8a690c@kernel.org>
- <1baaa67e-43e9-49c6-f99b-5f24da4c2f1b@ti.com>
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <1baaa67e-43e9-49c6-f99b-5f24da4c2f1b@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220603_053639_444232_2A4A1508 
-X-CRM114-Status: GOOD (  48.41  )
+X-CRM114-CacheID: sfid-20220603_060457_519141_EF5485AB 
+X-CRM114-Status: GOOD (  10.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,223 +90,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Siddharth,
+of_get_child_by_name() returns a node pointer with refcount
+incremented, we should use of_node_put() on it when not need anymore.
+Add missing of_node_put() to avoid refcount leak.
 
-On 03/06/2022 13:49, Siddharth Vadapalli wrote:
-> Hello Roger,
-> 
-> On 03/06/22 14:18, Roger Quadros wrote:
->> Hi Siddharth,
->>
->> On 01/06/2022 14:27, Siddharth Vadapalli wrote:
->>> Hello Roger,
->>>
->>> On 01/06/22 15:08, Roger Quadros wrote:
->>>> Siddharth,
->>>>
->>>> On 01/06/2022 09:01, Siddharth Vadapalli wrote:
->>>>> Hello Roger,
->>>>>
->>>>> On 31/05/22 17:15, Roger Quadros wrote:
->>>>>> Hi Siddharth,
->>>>>>
->>>>>> On 31/05/2022 14:12, Siddharth Vadapalli wrote:
->>>>>>> TI's J7200 SoC supports additional PHY modes like QSGMII and SGMII
->>>>>>> that are not supported on earlier SoCs. Add a compatible for it.
->>>>>>>
->>>>>>> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
->>>>>>> ---
->>>>>>>  .../mfd/ti,j721e-system-controller.yaml       |  5 ++++
->>>>>>>  .../bindings/phy/ti,phy-gmii-sel.yaml         | 24 ++++++++++++++++++-
->>>>>>>  2 files changed, 28 insertions(+), 1 deletion(-)
->>>>>>>
->>>>>>> diff --git a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->>>>>>> index fa86691ebf16..e381ba62a513 100644
->>>>>>> --- a/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->>>>>>> +++ b/Documentation/devicetree/bindings/mfd/ti,j721e-system-controller.yaml
->>>>>>> @@ -48,6 +48,11 @@ patternProperties:
->>>>>>>      description:
->>>>>>>        This is the SERDES lane control mux.
->>>>>>>  
->>>>>>> +  "phy@[0-9a-f]+$":
->>>>>>> +    type: object
->>>>>>> +    description:
->>>>>>> +      This is the register to set phy mode through phy-gmii-sel driver.
->>>>>>> +
->>>>>>
->>>>>> Is this really required? The system controller has 100s of different such registers and it is not practical to mention about all.
->>>>>
->>>>> The property has to be mentioned in order to pass: make dtbs_check.
->>>>>
->>>>>>
->>>>>>>  required:
->>>>>>>    - compatible
->>>>>>>    - reg
->>>>>>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->>>>>>> index ff8a6d9eb153..7427758451e7 100644
->>>>>>> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->>>>>>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
->>>>>>> @@ -53,12 +53,21 @@ properties:
->>>>>>>        - ti,am43xx-phy-gmii-sel
->>>>>>>        - ti,dm814-phy-gmii-sel
->>>>>>>        - ti,am654-phy-gmii-sel
->>>>>>> +      - ti,j7200-cpsw5g-phy-gmii-sel
->>>>>>
->>>>>> Why not just "ti,j7200-phy-gmii-sel" so it is consistent naming.
->>>>>
->>>>> In TI's J7200 device, there are two CPSW MACs, namely CPSW2G and CPSW5G. While
->>>>> CPSW5G supports QSGMII mode, CPSW2G does not. Hence, the compatible being added
->>>>> with the extra mode (QSGMII) enabled is applicable only for CPSW5G and not for
->>>>> CPSW2G. Thus, to highlight this, the word "CPSW5G" has been included in the name
->>>>> of the compatible.
->>>>
->>>> Here we are talking about the PHY driver (phy-gmii-sel) and not the MAC (CPSW2G / CPSW5G)
->>>> Does this PHY on J7200 always support QSGMII mode? if yes then embedding "cpsw5g" in compatible is wrong.
->>>
->>> The PHY on J7200 is part of the Add-On Ethernet card. It is possible to connect
->>> RGMII, QSGMII and SGMII PHY. The CPSW5G MAC supports all these modes. With the
->>> current patch, I am adding just QSGMII mode as an extra mode, but in a future
->>> patch, I will be adding SGMII also as an extra mode. For this reason, CPSW5G is
->>> being mentioned in the compatible name, to differentiate supported modes for
->>> CPSW2G and CPSW5G. Also, the phy-gmii-sel driver actually configures CPSW MAC
->>> registers and not the PHY.
->>
->> phy-gmii-sel configures CTRL MMR register right? How does it configure CPSW MAC register?
->>
->> Anyways, I just looked at the TRM and there are in fact separate phy-gmii-sel (ENET_CTRL)
->> registers for CPSW2g and CPSW5g. So they warrant for separate compatibles as they are
->> not identical.
-> 
-> By CPSW MAC registers being configured, I meant that the configuration being
-> done is for the MAC and not for the PHY. As per the TRM, for CPSW2G, the
-> CTRLMMR_MCU_ENET_CTRL register is configured and for CPSW5G, the
-> CTRLMMR_ENETx_CTRL registers are configured, with x ranging from 1 to 4
-> (corresponding to the 4 ports of CPSW5G). These registers configure the CPSW MAC
-> (CPSW2G/CPSW5G) and not the PHY. For this reason, I think that it would be
-> appropriate to use cpsw5g in the compatible name, to indicate which CTRLMMR
-> registers are being configured.
+Fixes: 7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
+Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+---
+changes in v2:
+- update Fixes tag.
+v1 Link: https://lore.kernel.org/r/20220602130906.18095-1-linmq006@gmail.com
+---
+ drivers/phy/ti/phy-j721e-wiz.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Yes, I already agreed that separate compatible is fine :).
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index da546c35d1d5..c6b53d4f6643 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -1113,6 +1113,7 @@ static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
+ 		ret = of_property_read_u32(subnode, "reg", &reg);
+ 		if (ret) {
+ 			of_node_put(subnode);
++			of_node_put(serdes);
+ 			dev_err(dev,
+ 				"%s: Reading \"reg\" from \"%s\" failed: %d\n",
+ 				__func__, subnode->name, ret);
+@@ -1127,6 +1128,7 @@ static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
+ 		for (i = reg; i < reg + num_lanes; i++)
+ 			wiz->lane_phy_type[i] = phy_type;
+ 	}
++	of_node_put(serdes);
+ 
+ 	return 0;
+ }
+-- 
+2.25.1
 
-> 
->>>
->>>>
->>>> You need to use a different compatible in CPSW driver and make sure CPSW2G doesn't initiate QSGMII mode.
->>>
->>> Yes, I will add a check there too by using a different compatible in the CPSW
->>> driver, but shouldn't the phy-gmii-sel driver also have a check to ensure that
->>> it doesn't try configuring QSGMII mode for CPSW2G?
->>
->> Yes, additional check in phy-gmii-sel driver is fine.
->>
->>>
->>>>
->>>>>
->>>>>>
->>>>>>>  
->>>>>>>    reg:
->>>>>>>      maxItems: 1
->>>>>>>  
->>>>>>>    '#phy-cells': true
->>>>>>>  
->>>>>>> +  ti,enet-ctrl-qsgmii:
->>>>>>> +    $ref: /schemas/types.yaml#/definitions/uint32
->>>>>>> +    description: |
->>>>>>> +      Required only for QSGMII mode. Bitmask to select the port for
->>>>>>> +      QSGMII main mode. Rest of the ports are selected as QSGMII_SUB
->>>>>>> +      ports automatically. Any of the 4 CPSW5G ports can act as the
->>>>>>> +      main port with the rest of them being the QSGMII_SUB ports.
->>>>>>> +
->>>>>>
->>>>>> This is weird way of doing things.
->>>>>>
->>>>>> The Ethernet controller driver already knows which mode the port is
->>>>>> supposed to operate.
->>>>>
->>>>> From the ethernet driver perspective, there is no difference between the QSGMII
->>>>> or QSGMII-SUB modes and both are treated the same. However, the phy-gmii-sel
->>>>> driver configures CPSW MAC registers differently depending on the mode being
->>
->> You mean the ENET_CTRL register in CTRL_MMR space?
-> 
-> Yes I am referring to the CTRLMMR_ENETx_CTRL registers as per the J7200 TRM,
-> corresponding to the CPSW5G MAC.
-> 
->>
->>>>> QSGMII or QSGMII-SUB. Hence, the ti,enet-ctrl-qsgmii property is used to
->>>>> identify the QSGMII main port and the rest are configured in CPSW MAC as
->>>>> QSGMII-SUB ports.
->>>>>
->>>>>>
->>>>>> e.g.
->>>>>> +&cpsw0_port1 {
->>>>>> +	phy-handle = <&cpsw5g_phy0>;
->>>>>> +	phy-mode = "qsgmii";
->>>>>> +	mac-address = [00 00 00 00 00 00];
->>>>>> +	phys = <&cpsw0_phy_gmii_sel 1>;
->>>>>> +};
->>>>>> +
->>>>>> +&cpsw0_port2 {
->>>>>> +	phy-handle = <&cpsw5g_phy1>;
->>>>>> +	phy-mode = "qsgmii-sub";
->>>>>> +	mac-address = [00 00 00 00 00 00];
->>>>>> +	phys = <&cpsw0_phy_gmii_sel 2>;
->>>>>>
->>>>>> And it can convey the mode to the PHY driver via phy_ops->set_mode.
->>>>>> So you should be depending on that instead of adding this new property.
->>>>>
->>>>> QSGMII-SUB is not a standard mode in the Linux kernel. In order to proceed with
->>>>> the suggested implementation, a new phy mode named PHY_INTERFACE_MODE_QSGMII_SUB
->>>>> has to be introduced to the kernel. Additionally, all existing phy drivers will
->>>>> have to be updated to recognize the new phy mode.
->>>>>
->>>>> Since the QSGMII-SUB mode is TI specific, it was decided that it would be better
->>>>> to add a new property in TI specific files for identifying the QSGMII main port
->>>>> and treating the rest as QSGMII-SUB ports.
->>>>
->>>> Who decides which port should be MAIN and which should be SUB? Can all ports be MAIN?
->>>> Can all ports be SUB or there has to be at least one MAIN?
->>>
->>> All 4 ports in CPSW5G have the capability to be the MAIN port, with the only
->>> restriction being that only one of them should be the MAIN port at a time. The
->>> role of the CPSW5G ports is decided based on what PHY port each of the CPSW5G
->>> ports connects to.
->>
->> OK, then instead of using bitmask and property being named "ti,enet-ctrl-qsgmii", why not
->> just say "ti,qsgmii-main-port" = <main_port_number>;
-> 
-> I plan to send patches for J721e device which has CPSW9G (8 external ports) MAC.
-> CPSW9G can work with two sets of QSGMII interfaces (4 ports + 4 ports). Thus,
-> using a bitmask for the QSGMII main port will help identify the QSGMII main port
-> across both sets of QSGMII interfaces. The bitmask in case of J721e CPSW9G will
-> consider the first 4 bits for the first interface's 4 ports and the next 4 bits
-> for the second interface's 4 ports. In this manner, it will be possible to
-> extend it for 8 port CPSW9G MAC as well, without having to add a new property
-> for the second QSGMII interface.
-> 
->>
->> Also do some sanity check when getting that property.
-> 
-> To ensure that multiple QSGMII ports are not declared as the main port, the
-> "ti,enet-ctrl-qsgmii" property has been declared as an enum: [1,2,4,8]. If a
-
-All I'm saying is that instead of bitmask please use port number to specify main port.
-You can use minimum/maximum to limit the values.
-
-Take care of limit checking per compatible and converting into bitmask in the driver.
-
-> different value other than the value in enum were to be used, then "make
-> dtbs_check" would raise an error. This will prevent configuring multiple QSGMII
-> ports as the main port at once. Also, in the phy-gmii-sel driver, a default
-> value of 1 is being assigned to the variable that will store the value
-> corresponding to the ti,enet-ctrl-qsgmii property from the device tree, thereby
-> treating the first CPSW5G port as the QSGMII main port by default.
-> 
-> Thanks,
-> Siddharth.
-
-cheers,
--roger
 
 -- 
 linux-phy mailing list
