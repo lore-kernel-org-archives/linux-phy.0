@@ -4,79 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8DFFC433EF
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jun 2022 20:53:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 054CBC43334
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jun 2022 20:54:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DtnDNlrdS+t5+OlLnpz6lvzxsjwPUylSRG+QuFre3fg=; b=UpGX1GZYJTv7yG
-	nrtAe98sHno5UasUDR59PMQxH5k+LHbryMvZH5RhlK98dJYpiBLAaCH3SlHrCOTJJ81brfS74KaiE
-	CorML/0r349na+kjcFqDQw5sfsc9c9vV0rPHf8M7yrpDUXmrRYw51wga+HjmK8pxoRXbqs/rvC5JD
-	sg6pyam6mEsmjns4YaNWKUAM0vwg2bMY2LikDAJYnXsnELo+PhGzvI/Zd80NMnCj096vLvkSsL7na
-	vp77RCyA5kYE//A224K8nfFD27tR4UcM+Wp9P4XL0+/OeAc9Oqoe7Uj9IoW78SuSyKOw8SllkR7cD
-	DQFmqCPdCa06IMsykgcQ==;
+	List-Owner; bh=94la3yFtoIAoGj6JBz/WtyA1J0vrBs1y987aCxdopTU=; b=w9y7furkwMR2sX
+	wo2LV7cO5ib1oPGMMx6wScOipqb9fpRx5eiLX2xiknTFCOMmh9sF8/mJhz2XfnXdkxzsPwPlDopkF
+	2gvRFDhZhCXsl6nGIQ3RxQty4hhyVV6//ZBk7LTt+tPNRf6DhmJVtFvr4NmipuVgj3dTc9v8g927E
+	Zg7uolsA1ujYrgQ21VP6FP8t3RhFQ92gZP2qz4d42ikrfpqIwYMTRsWskA35Wkt/dqyH67hmfSCaH
+	VX0wtdJl9ZC+spjgaEj9xyVC5xfmVmh1hviPlQuncVUGY4bJospW9w2cRqH5qXvCU4oRKIkcoXm2T
+	UqOQwvT+P4nS/Ce0L8og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyJif-002nGA-6Y; Mon, 06 Jun 2022 20:53:01 +0000
-Received: from mail-oi1-x229.google.com ([2607:f8b0:4864:20::229])
+	id 1nyJjr-002nQX-9u; Mon, 06 Jun 2022 20:54:15 +0000
+Received: from mail-oa1-x2f.google.com ([2001:4860:4864:20::2f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyJid-002nE5-5I
-	for linux-phy@lists.infradead.org; Mon, 06 Jun 2022 20:53:00 +0000
-Received: by mail-oi1-x229.google.com with SMTP id q184so4383331oia.1
-        for <linux-phy@lists.infradead.org>; Mon, 06 Jun 2022 13:52:58 -0700 (PDT)
+	id 1nyJjo-002nPx-W2
+	for linux-phy@lists.infradead.org; Mon, 06 Jun 2022 20:54:14 +0000
+Received: by mail-oa1-x2f.google.com with SMTP id 586e51a60fabf-f314077115so20680820fac.1
+        for <linux-phy@lists.infradead.org>; Mon, 06 Jun 2022 13:54:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=date:from:to:cc:subject:message-id:references:mime-version
          :content-disposition:in-reply-to;
-        bh=qWLu0CGS3iy/7eiKhm2guxzvJONBYd1dV/WdYo5dJpE=;
-        b=i/mVanbw0l1c5Plh1b8EGgefhDVl6cQ8HOGlffP/jC1czKVR20tOIn2UrYsnJEdqcf
-         Jb5sI1Q9mJx8bXj88OkW8Wy2toEebeg/etBFTSsJ2OHh9ZY6I5sELyEdxGANZeUZ9SPu
-         EPmebXBDsg8WhUHOXoaeWxK0rntJlyenlWcsVB983xCePzDgLkTh8XyYU20E5Il71Kcm
-         MNgvRCzMrkEr/sZ0D4jLw5Cvy1UxgayY2+KaEDe/169mepptXHXDmGlWmyil/z5AVBH0
-         dvs7nZ4lbebX4cNH/KrZPewyFwXmPieFfWAhzmSDR6tCRAb7+jQVB1x9wtN718eoDgBG
-         wCfg==
+        bh=KZR4S4tS0zB38NFydiChxkC66+hB8f39WxVtHRzvgFU=;
+        b=rH1LfLU1pouy+FGVOvz1daFsN0Q3d9uK80+SC3LnT4b9FdBUuuMwO36myTgh8Wbcye
+         eh+LzYZA0zxTM9RnaxMnYirlm6QcPU6c+76LIP1E1vwcC5JzugEeGmVrYf8Ks/JTwDa3
+         rt4Pu34ZxYNoZYb8kZd6DlDZ2xweSJvR5K9JZl1a8at2FHMiK2X+AILZaGn/jOBm/cXX
+         IvVQjztMNLlZSwNzTV4dLBA/3dBasx8jv6bgBJ3JaG7jqVGmOIch98qQOAO7fFgdIpSt
+         Koh8nZXEoMmLPffhfXNCMXpDSXGOYpNBEbh8RtvPKYC49QLnt0A9qYIEQ6QdP/Fvro1d
+         +Agg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:date:from:to:cc:subject:message-id:references
          :mime-version:content-disposition:in-reply-to;
-        bh=qWLu0CGS3iy/7eiKhm2guxzvJONBYd1dV/WdYo5dJpE=;
-        b=tSF5+v0PCEd0nrqoF/YJyavApWmHlcz5TewpaaQdAUwhS4xEZQ442gdTHyIjtovYeM
-         01jVdAri9q7czI/ZN5Xf8ySSQiti2+NKDGaKHNzWHeWv53a6hiFmtRjt0K05xfe7ydx8
-         4wuoXtsIZnjF/zr1JBeK27eu38+YA9ptsKxSg3X32gVKtMcGzD8+KrUSOR59cUXMzNdY
-         7Am/eeoazmBL8XM3qi1s2uCg36j0pBUq27ojQxBYTxpe/3SkfzsTe1lZfO1WfDuap8H9
-         QYXHNrfrs/rmEJFvgP9qenjhKsvvtTeLv2VIVHm1mxVdQJrf35jDlPRk95D3cqkFmB35
-         NuTw==
-X-Gm-Message-State: AOAM532lQfj4eHgCBnkwpX1J6V00Wh+PtHXb8Xo51UHpOGblaVrEmZGl
-	UuvNvFwIagZF7Am79XsGH7G1sg==
-X-Google-Smtp-Source: ABdhPJzL4s6TLZ9AhDazX7Tvme0iMN+u41SxUQJIUaUD7bX/YsUYtr7jQajm3VydOPSIo14SAhbcDg==
-X-Received: by 2002:a05:6808:1703:b0:2f9:cd2d:41c5 with SMTP id bc3-20020a056808170300b002f9cd2d41c5mr31957591oib.77.1654548777755;
-        Mon, 06 Jun 2022 13:52:57 -0700 (PDT)
+        bh=KZR4S4tS0zB38NFydiChxkC66+hB8f39WxVtHRzvgFU=;
+        b=GXxd20sdd6oQJvkaiRVzOYKdNjiCbPnCxfN8RqNDx7BBvMXu6p4ibN0i4UFAg1bcVW
+         FsoXONQsa0lHvq1vx2jjcrwGbwCxQl/coyRD0z86aOiqBNSvIDqJj+z0S+fxEZn+dmPg
+         +zAFtizMXRRqNy6psgazKvXEQq9LzC2IiFO8Ru84LoW9PDFjYPJA0mvGt4Fds2x7QUXO
+         3B/SW7N3KRxRAQ/PCHy2QE+3faxYkDtRq24rILOzpJJacX6t6WOZ1xEsu+9PZ+JGv3Xy
+         EpIqeHI6O0UHikQX1eCDH/GG6rIEcF62uUQ5i9sWczUHmXsCr5PX0H3YBVVDuLVEku00
+         zGKQ==
+X-Gm-Message-State: AOAM532yhPy4p08wj5evvTq3RKpvz8JJjW0WyrQmBi/FkB3w2lElCW2F
+	eDILs7xRZuB7fg7grtEWmrQM1A==
+X-Google-Smtp-Source: ABdhPJx4V+4+mgi3g71iq5hEroP90EmOGF2DT9TGEv3LwcnWMgt6lB9Xsg7jkhKkUaIME4M99jEgXw==
+X-Received: by 2002:a05:6870:8181:b0:f3:2682:ea6b with SMTP id k1-20020a056870818100b000f32682ea6bmr14652136oae.215.1654548852134;
+        Mon, 06 Jun 2022 13:54:12 -0700 (PDT)
 Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net. [104.57.184.186])
-        by smtp.gmail.com with ESMTPSA id r25-20020a4a7019000000b0041b768b58basm2522657ooc.22.2022.06.06.13.52.56
+        by smtp.gmail.com with ESMTPSA id bg10-20020a056820080a00b0040e6e53f6bfsm8928165oob.15.2022.06.06.13.54.11
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 06 Jun 2022 13:52:57 -0700 (PDT)
-Date: Mon, 6 Jun 2022 13:55:21 -0700
+        Mon, 06 Jun 2022 13:54:11 -0700 (PDT)
+Date: Mon, 6 Jun 2022 13:56:36 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Andy Gross <agross@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [RFC PATCH v3 02/30] phy: qcom-qmp-combo: drop all non-combo
- compatibles support
-Message-ID: <Yp5puQCGOVXN9G8p@ripper>
+Subject: Re: [RFC PATCH v3 00/30] phy: qcom-qmp: split the QMP PHY driver
+Message-ID: <Yp5qBJUh3T/qTne0@ripper>
 References: <20220602070909.1666068-1-dmitry.baryshkov@linaro.org>
- <20220602070909.1666068-3-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220602070909.1666068-3-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220602070909.1666068-1-dmitry.baryshkov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220606_135259_275468_39A5752A 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220606_135413_082120_A19D75DA 
+X-CRM114-Status: GOOD (  22.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,23 +91,95 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Thu 02 Jun 00:08 PDT 2022, Dmitry Baryshkov wrote:
-> -MODULE_DEVICE_TABLE(of, qcom_qmp_phy_of_match_table);
-> -
->  static const struct of_device_id qcom_qmp_combo_phy_of_match_table[] = {
->  	{
->  		.compatible = "qcom,sc7180-qmp-usb3-dp-phy",
-> @@ -6175,6 +2594,7 @@ static const struct of_device_id qcom_qmp_combo_phy_of_match_table[] = {
->  	},
->  	{ }
->  };
-> +MODULE_DEVICE_TABLE(of, qcom_qmp_phy_of_match_table);
 
-You forgot to update this to qcom_qmp_combo_phy_of_match_table, then in
-the later patch where you update the prefix you're making it
-qcom_qmp_combo_phy_of_match_table (combo_phy vs phy_combo).
+> While adding support for the PCIe EP mode support to the QMP driver I
+> couldn't help but notice that the QMP PHY driver has slowly become the a
+> beast with tons of conditions and corner cases being inserted here and
+> there.r
+> 
+> This an RFC for an attempt to to cleanup the QMP driver by splitting the
+> QMP PHY driver into five smaller drivers, each targeting a particular
+> family of PHY backends (DP/combo, PCIe, UFS, USB and a separate driver
+> for the MSM8996 PCIe PHY). Yes, this results in some code duplication,
+> but I hope that the end result is still better than the current
+> situation.
+> 
+
+With the MODULE_DEVICE_TABLE of the combo PHY corrected, this looks good
+to me.
+
+Acked-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+Tested-by: Bjorn Andersson <bjorn.andersson@linaro.org> # UFS, PCIe and USB on SC8180X
 
 Regards,
 Bjorn
+
+> Changes since RFC v2:
+>  - After dicussion with Vinod, revert back to the approach from RFC v1:
+>    copy the source and clean it up rather than creating new drivers from
+>    the blank space. This lowers the risc of breaking any of the platforms.
+>  - Drop common phy-qcom-qmp-lib.c for now. The goal of this patchseries
+>    is to be merged early during the development cycle to unblock further
+>    QMP driver development. Additional cleanups and code unification can
+>    come up later.
+> 
+> Changes since RFC v1:
+>  - Split the patchset to be able to get through the email size
+>    limitations
+>  - Minor correcions to the split drivers
+> 
+> Dmitry Baryshkov (30):
+>   phy: qcom-qmp: create copies of QMP PHY driver
+>   phy: qcom-qmp-combo: drop all non-combo compatibles support
+>   phy: qcom-qmp-pcie: drop all non-PCIe compatibles support
+>   phy: qcom-qmp-pcie-msm8996: drop all compatibles except
+>     msm8996-pcie-phy
+>   phy: qcom-qmp-ufs: drop all non-UFS compatibles support
+>   phy: qcom-qmp-usb: drop all non-USB compatibles support
+>   phy: qcom-qmp-combo: change symbol prefix to qcom_qmp_phy_combo
+>   phy: qcom-qmp-pcie: change symbol prefix to qcom_qmp_phy_pcie
+>   phy: qcom-qmp-pcie: change symbol prefix to qcom_qmp_phy_pcie_msm8996
+>   phy: qcom-qmp-ufs: change symbol prefix to qcom_qmp_phy_ufs
+>   phy: qcom-qmp-usb: change symbol prefix to qcom_qmp_phy_usb
+>   phy: qcom-qmp: switch to new split QMP PHY driver
+>   phy: qcom-qmp: drop old QMP PHY driver source
+>   phy: qcom-qmp-combo: drop support for PCIe,UFS PHY types
+>   phy: qcom-qmp-pcie: drop support for non-PCIe PHY types
+>   phy: qcom-qmp-pcie-msm8996: drop support for non-PCIe PHY types
+>   phy: qcom-qmp-ufs: drop support for non-UFS PHY types
+>   phy: qcom-qmp-usb: drop support for non-USB PHY types
+>   phy: qcom-qmp-combo: cleanup the driver
+>   phy: qcom-qmp-pcie: cleanup the driver
+>   phy: qcom-qmp-pcie-msm8996: cleanup the driver
+>   phy: qcom-qmp-ufs: cleanup the driver
+>   phy: qcom-qmp-usb: cleanup the driver
+>   phy: qcom-qmp-pcie: drop multi-PHY support
+>   phy: qcom-qmp-ufs: drop multi-PHY support
+>   phy: qcom-qmp-usb: drop multi-PHY support
+>   phy: qcom-qmp-combo: use bulk reset_control API
+>   phy: qcom-qmp-pcie: use bulk reset_control API
+>   phy: qcom-qmp-pcie-msm8996: use bulk reset_control API
+>   phy: qcom-qmp-usb: use bulk reset_control API
+> 
+>  drivers/phy/qualcomm/Makefile                 |    8 +-
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 2579 +++++++
+>  .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 1081 +++
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 2404 +++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 1390 ++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 2751 +++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp.c           | 6350 -----------------
+>  7 files changed, 10212 insertions(+), 6351 deletions(-)
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+>  delete mode 100644 drivers/phy/qualcomm/phy-qcom-qmp.c
+> 
+> -- 
+> 2.35.1
+> 
 
 -- 
 linux-phy mailing list
