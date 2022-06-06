@@ -4,73 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEABDC433EF
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jun 2022 14:20:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11A18C43334
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jun 2022 15:29:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t0sd2bbbAZj+Y7daEIiODB9mqjx+HX6VeSppVTFRPIg=; b=a6dVWotEcfzTqq
-	LcsA8ZdpDVrvzZt+qno0YHwL0azs1X/tIYbSOqOPYNrTtZOUO8ZcYj320C9Qr/FgQ1F7OZRfQhjpU
-	6WD2xLIInwx36XfSsWzgDhE7lQ5X93QzKO+3hgRUIuepvsvcSDHJqi4ZPot/01xNwmYozycbftDa7
-	7wpy7l6gcP1Rgauw1IAL5DuD+cVP8r3t9y/bKsOQZqGTkYmm/IwrYY82f5l9DBmBS99qxYMphT08t
-	sHvjgnVL1aOrbcU8VdM3ZjjNpT76xuQFJFhpwi7ZQ8b4OMb8NHY9B8ob5DoDuRD5+4ZVEitGJbjUN
-	FW+NrezY2VqCCfNSsSdg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YotqozpkFj1xnuD1dH765mG/X39PS2zh0S4ia4O37zQ=; b=PkPEXCTv+cfMgU
+	3AXehSsv6EWyjLy/LcNwzmBXaUl8/6k5RCI8a7ffUHxVHs2Ayxigf4c9kGPyOxy12olaa0hVs/T7Q
+	81BLhOv6hHHpIoe416mRo5Z6tUQnGKtWQhI4wxW2nk1r6zAqRDJwH5OF3d6uzgGQay9r26j6tajqQ
+	U84GsYdbwyWnxXexChtRjIeyNhtaybErzp1T4yoZ0kgxbbTR9vn7RXkEv3GDMEgEI5TE8IpoNK2jo
+	WE5YpN3qiWRlVg2x/m+4vwBcgDuAxTh4JpN02/ytZajW+33rdQLYjXZ1W6+3gtvMPjTMGnP6IPOMj
+	ArMdfeyfABGdSqDXg59g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyDaX-001TLX-4F; Mon, 06 Jun 2022 14:20:13 +0000
-Received: from mail-qk1-x733.google.com ([2607:f8b0:4864:20::733])
+	id 1nyEfe-001orj-Bf; Mon, 06 Jun 2022 15:29:34 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyDaU-001TK3-Vj
-	for linux-phy@lists.infradead.org; Mon, 06 Jun 2022 14:20:12 +0000
-Received: by mail-qk1-x733.google.com with SMTP id bi27so4373851qkb.10
-        for <linux-phy@lists.infradead.org>; Mon, 06 Jun 2022 07:20:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
-         :cc;
-        bh=dM396G/2QLfKioc1syDLOcBhUV6ELRzsPLGNpLhwVM4=;
-        b=g/K66wRRBcNu+YwOGEtjZAqNUaihQbAWupXjLyzDpylwhn+yPd+Mi4ri/fttRxQhOV
-         FZEjlrRRUKoNEb9thvv3KUAKQyteO+16cCf58RkrZtqwstKu8ubKTV/em7u6Pvwnlmu5
-         dGTlkM9OMXw6qYx1ke5p9aubbbITIQlnl4BpIdzdo0969hwe2VLjxe8AuTYoirmeS7cs
-         Ng3wpe8nR7oRUeq1Z0piMCn29dTuu0vZON050LeGxzCC1YoNb3LZJgqFj8VNUp9WGy6D
-         lj6QNZ0MxL2MdDHGR5RFs/50yVpEJLfcPzKhpwwKfq1U3+HrkATdt55kq2aE6NlPx/9z
-         69Jw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
-         :message-id:subject:to:cc;
-        bh=dM396G/2QLfKioc1syDLOcBhUV6ELRzsPLGNpLhwVM4=;
-        b=CzCyI/4qYUvuLEFt1QgfWhy7kxy4RV3NMjtClaw1QihBN5vZUBKBZHa12q5LCMXQdv
-         tQ2cyngTHqVAq259LdeHhv6yA2ZX/5gMfHphx15UkwcaA6TuUbrT2REHMknqYl3LSw6x
-         8uuz2zoGq5tDsITgGbxnkIEAdd4Dp875lutGnYvpeH2gXpg9PT/6MUoBt/5xk8No/EKh
-         NBUJ0DhscpyNF6y/nitLksKos3KZv6kDoDn2Idq+/GBBzeZ3qrZNq+MdzwptV2nPf5Sx
-         TFdQSN5qU2LxRQcp2WEOAbld0izda56KnQtqgYYxdQZmLg0I5D/GhJPvJnZIMckFG3cA
-         5aEw==
-X-Gm-Message-State: AOAM531JFIY25WudLYUryQPHyyUBq9ISdqaJq5OgpELZH7wC+EfuVLe9
-	iffN8D+eSuo0XG2zpWzBoTeqwpEXcPo1fwu8/JlpFw==
-X-Google-Smtp-Source: ABdhPJwCgwyEqFtCYUGmUxfsE/3NhDjPqELI8Rn6UPGZ90g6qh5uCPgZURSpTtOodpN0uMsuaVhi3qToGDahMVVVHq8=
-X-Received: by 2002:a37:b081:0:b0:6a6:7ae4:aa0c with SMTP id
- z123-20020a37b081000000b006a67ae4aa0cmr14350164qke.203.1654525208867; Mon, 06
- Jun 2022 07:20:08 -0700 (PDT)
+	id 1nyEc4-001msP-28; Mon, 06 Jun 2022 15:25:57 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 84DF061559;
+	Mon,  6 Jun 2022 15:25:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F9A7C341DE;
+	Mon,  6 Jun 2022 15:25:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1654529149;
+	bh=JJt0IO+HD16nKaMzBkekejjxzH6zJTBr5QCuFRGczGE=;
+	h=From:To:Cc:Subject:Date:From;
+	b=FQvjxVAjYkRkMlnXeUbGK/ffXS9EGiIGJB6czmy41m7BUi+gGlw+X1Vu+xVWhr8kL
+	 VZmd7RutDKDJkQ6+PNC2k4EBuWcMiwehnWLeUgcaztEFymFfTpyADom9iKEZ2r0U6R
+	 8QTKxcO8tqR2nN17KQ7uaYrNw3fG0aG82GOK9/YW0npuVqsyv4lNhNtBEPuUTmVVIT
+	 XOE4wPosVqLjYqBNBMuGPxA5PXF0QCAYswfnxGdyJu5zTk6VkYY/y8ZNnVzT895FLj
+	 P6YX/uUQeJAT8yJ01In++Ksk7XfTNpL0aA6OZ6qjgQfLIhLB4De2E2AivHQOnNJprR
+	 rbUcjc+xUJibQ==
+Received: from mchehab by mail.kernel.org with local (Exim 4.95)
+	(envelope-from <mchehab@kernel.org>)
+	id 1nyEby-0012On-0x;
+	Mon, 06 Jun 2022 16:25:46 +0100
+From: Mauro Carvalho Chehab <mchehab@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+	Jonathan Corbet <corbet@lwn.net>
+Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	"H. Peter Anvin" <hpa@zytor.com>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Borislav Petkov <bp@alien8.de>,
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+	Dave Hansen <dave.hansen@linux.intel.com>,
+	Federico Vaga <federico.vaga@vaga.pv.it>,
+	Geert Uytterhoeven <geert@linux-m68k.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Ingo Molnar <mingo@redhat.com>,
+	Jarkko Sakkinen <jarkko@kernel.org>,
+	Jean Delvare <jdelvare@suse.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Markus Mayer <mmayer@broadcom.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Thomas Gleixner <tglx@linutronix.de>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Viresh Kumar <viresh.kumar@linaro.org>,
+	alsa-devel@alsa-project.org,
+	devicetree@vger.kernel.org,
+	keyrings@vger.kernel.org,
+	kvm@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-cachefs@redhat.com,
+	linux-gpio@vger.kernel.org,
+	linux-hwmon@vger.kernel.org,
+	linux-m68k@lists.linux-m68k.org,
+	linux-mmc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org,
+	linux-samsung-soc@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	x86@kernel.org
+Subject: [PATCH 00/23] Update Documentation/ cross-references
+Date: Mon,  6 Jun 2022 16:25:22 +0100
+Message-Id: <cover.1654529011.git.mchehab@kernel.org>
+X-Mailer: git-send-email 2.36.1
 MIME-Version: 1.0
-References: <20220602070909.1666068-1-dmitry.baryshkov@linaro.org>
- <20220602070909.1666068-3-dmitry.baryshkov@linaro.org> <Yp4HDG4Bus1FOHId@ripper>
-In-Reply-To: <Yp4HDG4Bus1FOHId@ripper>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 6 Jun 2022 17:19:57 +0300
-Message-ID: <CAA8EJpoj0ps=iBfx97XmaVrbMoXmzyM35QVS7MdB=_D8Y4p02g@mail.gmail.com>
-Subject: Re: [RFC PATCH v3 02/30] phy: qcom-qmp-combo: drop all non-combo
- compatibles support
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Cc: Andy Gross <agross@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@ti.com>, Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220606_072011_064026_13A2D0BB 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20220606_082552_245569_06348088 
+X-CRM114-Status: GOOD (  12.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,44 +109,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 6 Jun 2022 at 16:51, Bjorn Andersson <bjorn.andersson@linaro.org> wrote:
->
-> On Thu 02 Jun 00:08 PDT 2022, Dmitry Baryshkov wrote:
-> > -static const struct of_device_id qcom_qmp_phy_of_match_table[] = {
-> [..]
-> > -     }, {
-> > -             .compatible = "qcom,sdm845-qmp-usb3-phy",
->
-> We have a few examples of these, where we have a compatible for the
-> USB-half of the combo PHY. For backwards compatibility I think we would
-> want to retain these, but if we move them to the UNI phy driver wouldn't
-> we end up with duplicate USB configuration tables between the two files?
+Hi John,
 
-Yes. Unlike previous approaches (RFC v1, v2) this series ends up with
-duplicate USB configuration tables for these three PHYs. We can export
-them from -combo and use them in the -usb driver.
-In previous attempts I tried to use the USB subdriver from the combo
-one. However at this point I'd prefer first to sort out the combo PHY
-init/reinit/switch issues, fix the register layout for the USB parts
-and remove duplication afterwards.
+There were a number of DT binding conversions and other docs change that
+were not updated. Address them, in order to keep the cross-references on
+a sane state.
 
->
-> Should we keep the combo instances here as well?
+Patch series is against v5.19-rc1 (and applies cleanly on the top of
+today's -next).
 
-We keep combo instances in qcom_qmp_combo_phy_of_match_table.
+Mauro Carvalho Chehab (23):
+  dt-bindings: mfd: bd9571mwv: update rohm,bd9571mwv.yaml reference
+  dt-bindings: interrupt-controller: update brcm,l2-intc.yaml reference
+  dt-bindings: arm: update vexpress-config.yaml references
+  dt-bindings: reset: update st,stih407-powerdown.yaml references
+  dt-bindings: mfd: rk808: update rockchip,rk808.yaml reference
+  dt-bindings: mmc: exynos-dw-mshc: update samsung,pinctrl.yaml
+    reference
+  docs: netdev: update maintainer-netdev.rst reference
+  docs: filesystems: update netfs-api.rst reference
+  Documentation: update watch_queue.rst references
+  Documentation: KVM: update s390-pv.rst reference
+  Documentation: KVM: update amd-memory-encryption.rst references
+  Documentation: KVM: update msr.rst reference
+  Documentation: KVM: update s390-diag.rst reference
+  MAINTAINERS: update arm,hdlcd.yaml reference
+  MAINTAINERS: update arm,komeda.yaml reference
+  MAINTAINERS: update arm,malidp.yaml reference
+  MAINTAINERS: update cortina,gemini-ethernet.yaml reference
+  MAINTAINERS: update dongwoon,dw9807-vcm.yaml reference
+  MAINTAINERS: update maxim,max77693.yaml reference
+  MAINTAINERS: update snps,axs10x-reset.yaml reference
+  objtool: update objtool.txt references
+  ASoC: wm8731: update wlf,wm8731.yaml reference
+  arch: m68k: q40: README: drop references to IDE driver
 
->
-> Regards,
-> Bjorn
->
-> > -             .data = &qmp_v3_usb3phy_cfg,
-> > -     }, {
-
-
+ .../ABI/testing/sysfs-driver-bd9571mwv-regulator   |  2 +-
+ Documentation/admin-guide/kernel-parameters.txt    |  2 +-
+ .../bindings/cpufreq/brcm,stb-avs-cpu-freq.txt     |  2 +-
+ .../devicetree/bindings/hwmon/vexpress.txt         |  2 +-
+ .../devicetree/bindings/mmc/exynos-dw-mshc.txt     |  2 +-
+ .../devicetree/bindings/phy/phy-stih407-usb.txt    |  2 +-
+ .../devicetree/bindings/pinctrl/pinctrl-rk805.txt  |  2 +-
+ .../devicetree/bindings/regulator/vexpress.txt     |  2 +-
+ .../bindings/sound/atmel-sam9x5-wm8731-audio.txt   |  2 +-
+ Documentation/devicetree/bindings/usb/dwc3-st.txt  |  2 +-
+ Documentation/devicetree/bindings/usb/ehci-st.txt  |  2 +-
+ Documentation/devicetree/bindings/usb/ohci-st.txt  |  2 +-
+ Documentation/security/keys/core.rst               |  2 +-
+ Documentation/security/secrets/coco.rst            |  2 +-
+ .../translations/it_IT/networking/netdev-FAQ.rst   |  2 +-
+ Documentation/virt/kvm/api.rst                     |  4 ++--
+ Documentation/virt/kvm/s390/s390-pv-boot.rst       |  2 +-
+ Documentation/virt/kvm/x86/hypercalls.rst          |  2 +-
+ Documentation/x86/orc-unwinder.rst                 |  2 +-
+ MAINTAINERS                                        | 14 +++++++-------
+ arch/m68k/q40/README                               |  4 +---
+ include/linux/fscache.h                            |  2 +-
+ include/linux/objtool.h                            |  2 +-
+ include/linux/watch_queue.h                        |  2 +-
+ init/Kconfig                                       |  2 +-
+ kernel/watch_queue.c                               |  2 +-
+ lib/Kconfig.debug                                  |  2 +-
+ tools/include/linux/objtool.h                      |  2 +-
+ tools/objtool/check.c                              |  2 +-
+ 29 files changed, 36 insertions(+), 38 deletions(-)
 
 -- 
-With best wishes
-Dmitry
+2.36.1
+
+
 
 -- 
 linux-phy mailing list
