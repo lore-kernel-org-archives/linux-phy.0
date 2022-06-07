@@ -4,85 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A639C43334
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 06:34:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82F4EC43334
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 06:45:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Skq8dAU/T33BUUcwhNvDB2dWG3+iCd+mgvkwAfG6ecM=; b=uOON332d1CHigP
-	gVX00ptry5h/zAhYRMq/w74by4AMuCgpbNTXUZG6x9z68sb63WRR7ytrtdIjuY7CivFAwVExlBe7Q
-	Afu04Xy1KwboAaj+UDF0hqG6Az/45qX5a6pX1UKpkE31Xdkz4+heHdmXFbfNjJJqNTWnnMNgdveOB
-	9b/ShH7cLHbcXkCQMsFJUa5GiLfhckB8+hcbZyH5dyRNj+uszjqjtf3NLwsxiEH83yooZ0q/djSWQ
-	RNhJca25LeJ4tAoeNV4HSLKtp9dNOZ0yS/J41/m5OuJYLbJphziC5Hbzzi2+FB7Cd0LChAp/DEZne
-	lDe/nSGpr+ZSnxBAcQ5A==;
+	List-Owner; bh=uAuZEgi7LIp6W5rJj04riUPWFsseS1YZ9pwTNM7a/hk=; b=JV/uZlmTqypotZ
+	CPb9uHYY9N80V58Kb4+w7CJKu5vZgDH18VQHX+PY6DghaS90n1/Wu62rhm2rf2UNThI5QwmF6tdZf
+	Wjhfi5c7XGbwShJOVPxYyJmy5zFwF/MzNh2ShhItOUqQY7SEYbgqAJ+5wzpNDAc33dXGM1FN8YGiz
+	bH+p1gFy0TNoz6gLEbpEVIR1lA0FL9lG3wsODLW5yPSeMDK9yOSdA453EBT8tnC9OmqA10fjgDZNo
+	sytQObv0Gk2LXJODGgSrCVCQhZrJWkjUsmNRdtb5CCTBm+cNfnx/+dPRY7fbWkufTBEYQvrs5g2IV
+	MMUjqXe3rVKZVeta0bVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nySmt-00533e-De; Tue, 07 Jun 2022 06:33:59 +0000
-Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
+	id 1nySyJ-0058oh-KX; Tue, 07 Jun 2022 06:45:47 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nySmo-0052z2-NG
-	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 06:33:57 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id n10so33144813ejk.5
-        for <linux-phy@lists.infradead.org>; Mon, 06 Jun 2022 23:33:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=MrBdSE+grn8LT47tXLayVexkMgaXUe8RtWJBxBXFaqk=;
-        b=bnFho8U7nOdhZMVpWkDFScj100VJe75OnkuyHoq42OR4uIYhU90/7FN5WdL1S5BX5F
-         7l+inS94sggjLvtlgi40e2NrqQTewUKWTUIrW5vxFbzfOUkllvrxaLlEFPZXsXO9KA+C
-         YP1cjAT++nZIF4ixUlk9Q+wPLXj1425e2L2Gc6avVyzDZ/EAPN9gjoj/3zMMEZQZ3CFv
-         /oqQYM8gNcwCd7rxbkjeMqk/nUtQnRLnQWbjBk2SjpDs/fe+8ndEbpDb+Fwp9h/h/P1s
-         JzyM9Ddj2CNbjD4r8E687StGwMCNPu5p8WQ+LP9lZKSIT9nk7C3NPnGJF4wUpk7BkB7M
-         +rPg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=MrBdSE+grn8LT47tXLayVexkMgaXUe8RtWJBxBXFaqk=;
-        b=Wdyyeg+jy2HY35ZhrYCzHtEjEA7WMIR6dEGznn9esaUqmvj36KDt0HdCWK+UKg/fR+
-         YlrMwtrr6pbIYcJCfc0rEW8lucrjwMGPIsFTNQpWQ+Pnp3OJfHKQxwH6FT0wwnUo4CA7
-         tg+sh7Wy1cv0me8tKdOX7CW6G4aF4Cyoe081xzUO1ec7pSOdLjKmgRODSr4nULq2RYMc
-         ZmAtxTEfZpKJPRyca8+cKD153tcQ92tihUKQmfheHPfleWAgfPCk6ckfxDtJ1P1SZKmZ
-         4DCWCUmiA6QTEjZDvim/PNU18LqPlWAHXvAC3zrEBhMYiNpuOHfR9CY0f43xnAvfDjY1
-         3DCQ==
-X-Gm-Message-State: AOAM5337xAKTOIsbmASu+CU2XbSjRwlekaCCLa9TVoCRPFyeWUfX2whw
-	4yN3WwbYvIuyfckHoB3u4woq8Zq5pNwCeg==
-X-Google-Smtp-Source: ABdhPJyplNyPIe/T6bYyLSDq3aa3CWsQKbpcGxl+tx+4NoectMYlag5lodWutJKGoaF/yraYpIb5uA==
-X-Received: by 2002:a17:907:3e99:b0:6fe:f823:ab96 with SMTP id hs25-20020a1709073e9900b006fef823ab96mr25335841ejc.428.1654583631036;
-        Mon, 06 Jun 2022 23:33:51 -0700 (PDT)
-Received: from [192.168.0.181] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id e2-20020a1709062d4200b006fec2097d53sm7160736eji.118.2022.06.06.23.33.49
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 06 Jun 2022 23:33:50 -0700 (PDT)
-Message-ID: <2fad1706-563d-72c3-eab2-5f464bf92681@linaro.org>
-Date: Tue, 7 Jun 2022 08:33:49 +0200
+	id 1nySxE-0058EQ-7T; Tue, 07 Jun 2022 06:44:43 +0000
+X-UUID: 217ad874c463465faf447f1c62ccdc1f-20220606
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.5,REQID:56ad6212-97e7-4b55-bde6-7868df165c00,OB:0,LO
+	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+	ON:release,TS:0
+X-CID-META: VersionHash:2a19b09,CLOUDID:7ed5e5e4-2ba2-4dc1-b6c5-11feb6c769e0,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
+	,QS:0,BEC:nil
+X-UUID: 217ad874c463465faf447f1c62ccdc1f-20220606
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+	(envelope-from <ck.hu@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 261825984; Mon, 06 Jun 2022 23:44:35 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 6 Jun 2022 23:44:34 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Tue, 7 Jun 2022 14:44:32 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Tue, 7 Jun 2022 14:44:32 +0800
+Message-ID: <b8aef76cef2fa434401b6a016de291eb24198faa.camel@mediatek.com>
+Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+From: CK Hu <ck.hu@mediatek.com>
+To: Rex-BC Chen <rex-bc.chen@mediatek.com>, Guillaume Ranquet
+	<granquet@baylibre.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, "Philipp
+ Zabel" <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, "Daniel
+ Vetter" <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, "Krzysztof
+ Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
+	<matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Kishon
+ Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao shi <jitao.shi@mediatek.com>
+CC: Markus Schneider-Pargmann <msp@baylibre.com>,
+	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<linux-fbdev@vger.kernel.org>
+Date: Tue, 7 Jun 2022 14:44:32 +0800
+In-Reply-To: <20220523104758.29531-19-granquet@baylibre.com>
+References: <20220523104758.29531-1-granquet@baylibre.com>
+	 <20220523104758.29531-19-granquet@baylibre.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.10.0
-Subject: Re: [PATCH v2 4/6] arm64: dts: exynosautov9: adjust DT style of ufs
- nodes
-Content-Language: en-US
-To: Chanho Park <chanho61.park@samsung.com>,
- 'Kishon Vijay Abraham I' <kishon@ti.com>, 'Vinod Koul' <vkoul@kernel.org>,
- 'Alim Akhtar' <alim.akhtar@samsung.com>, 'Rob Herring' <robh+dt@kernel.org>,
- 'Krzysztof Kozlowski' <krzysztof.kozlowski+dt@linaro.org>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20220602053250.62593-1-chanho61.park@samsung.com>
- <CGME20220602053329epcas2p407039a6087b6c460d6687b1cc1f3872a@epcas2p4.samsung.com>
- <20220602053250.62593-5-chanho61.park@samsung.com>
- <c86cb9c3-5fac-a990-f4cf-5aa8e4fe8a75@linaro.org>
- <000001d87a2e$6ed35ea0$4c7a1be0$@samsung.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <000001d87a2e$6ed35ea0$4c7a1be0$@samsung.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220606_233354_826603_8B3FB2D9 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20220606_234440_346299_AFFEAF19 
+X-CRM114-Status: GOOD (  28.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,33 +92,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/06/2022 07:21, Chanho Park wrote:
->> Subject: Re: [PATCH v2 4/6] arm64: dts: exynosautov9: adjust DT style of
->> ufs nodes
->>
->> On 02/06/2022 07:32, Chanho Park wrote:
->>> Drop "ufs0-" label name usage of ufs phy and hci nodes.
->>> Regarding the comments of reg properties, we don't need to illustrate
->>> here because we can find the description from the dt-binding doc.
->>>
->>> Suggested-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->>> Signed-off-by: Chanho Park <chanho61.park@samsung.com>
->>
->> This does not apply. Can you rebase and send the DTS patches as separate
->> patchset?
+Hi, Rex:
+
+On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
 > 
-> I forgot to point the baseline of this patchset. I stacked this patch on top of below patch.
-> If you do not apply below patch or put this separate branch, I'll rebase this patchset without below patch.
+> This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
 > 
-> https://lore.kernel.org/linux-samsung-soc/20220526204323.832243-1-krzysztof.kozlowski@linaro.org/
+> It supports the mt8195, the embedded DisplayPort units. It offers
+> DisplayPort 1.4 with up to 4 lanes.
+> 
+> The driver creates a child device for the phy. The child device will
+> never exist without the parent being active. As they are sharing a
+> register range, the parent passes a regmap pointer to the child so
+> that
+> both can work with the same register range. The phy driver sets
+> device
+> data that is read by the parent to get the phy device that can be
+> used
+> to control the phy properties.
+> 
+> This driver is based on an initial version by
+> Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
 
-Oh, thanks! Unfortunately it helped for the patch #4 (first of DTS) but
-not for the next one. Maybe some other patch caused the hunks to differ.
-Please rebase remaining two DTS patches.
+[snip]
 
+> +
+> +static int mtk_dp_train_handler(struct mtk_dp *mtk_dp)
+> +{
+> +	bool training_done = false;
+> +	short max_retry = 50;
+> +	int ret = 0;
+> +
+> +	do {
+> +		switch (mtk_dp->train_state) {
+> +		case MTK_DP_TRAIN_STATE_STARTUP:
 
-Best regards,
-Krzysztof
+mtk_dp->train_state is initialized as MTK_DP_TRAIN_STATE_STARTUP even
+though HPD ISR does not exist. Does this mean HPD ISR is redundant? If
+HPD ISR is not redundant, create a new state MTK_DP_TRAIN_STATE_NONE
+for init state.
+
+> +			mtk_dp_state_handler(mtk_dp);
+> +			mtk_dp->train_state =
+> MTK_DP_TRAIN_STATE_CHECKCAP;
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_CHECKCAP:
+> +			if (mtk_dp_parse_capabilities(mtk_dp)) {
+> +				mtk_dp->train_info.check_cap_count = 0;
+> +				mtk_dp->train_state =
+> MTK_DP_TRAIN_STATE_CHECKEDID;
+> +			} else {
+> +				mtk_dp->train_info.check_cap_count++;
+> +
+> +				if (mtk_dp->train_info.check_cap_count
+> >
+> +				    MTK_DP_CHECK_SINK_CAP_TIMEOUT_COUNT
+> ) {
+> +					mtk_dp-
+> >train_info.check_cap_count = 0;
+> +					mtk_dp->train_state =
+> MTK_DP_TRAIN_STATE_DPIDLE;
+> +					ret = -ETIMEDOUT;
+> +				}
+> +			}
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_CHECKEDID:
+> +			mtk_dp->train_state =
+> MTK_DP_TRAIN_STATE_TRAINING_PRE;
+
+MTK_DP_TRAIN_STATE_CHECKEDID is a redundant state, drop it.
+
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_TRAINING_PRE:
+> +			mtk_dp_state_handler(mtk_dp);
+> +			mtk_dp->train_state =
+> MTK_DP_TRAIN_STATE_TRAINING;
+> +			break;
+> +
+> +		case MTK_DP_TRAIN_STATE_TRAINING:
+> +			ret = mtk_dp_train_start(mtk_dp);
+> +			if (ret == 0) {
+> +				mtk_dp_video_mute(mtk_dp, true);
+> +				mtk_dp->train_state =
+> MTK_DP_TRAIN_STATE_NORMAL;
+> +				mtk_dp_fec_enable(mtk_dp, mtk_dp-
+> >has_fec);
+> +			} else if (ret != -EAGAIN) {
+> +				mtk_dp->train_state =
+> MTK_DP_TRAIN_STATE_DPIDLE;
+> +			}
+> +			break;
+> +		case MTK_DP_TRAIN_STATE_NORMAL:
+> +			mtk_dp_state_handler(mtk_dp);
+> +			training_done = true;
+> +			break;
+> +		case MTK_DP_TRAIN_STATE_DPIDLE:
+
+When would this case happen?
+
+Regards,
+CK
+
+> +			break;
+> +		default:
+> +			break;
+> +		}
+> +
+> +		if (ret) {
+> +			if (ret == -EAGAIN)
+> +				continue;
+> +			/*
+> +			 * If we get any other error number, it doesn't
+> +			 * make any sense to keep iterating.
+> +			 */
+> +			break;
+> +		}
+> +	} while (!training_done || --max_retry);
+> +
+> +	return ret;
+> +}
+
 
 -- 
 linux-phy mailing list
