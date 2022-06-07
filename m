@@ -4,124 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D2A4CCA485
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 07:30:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCAE2C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 07:34:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wSLgOQtM0Uv+DeO1JF7LwcUmhxMgMZMQZ92UY6TEEAo=; b=vMQQS+VsAh5cOd
-	XFvtvfccDnG1Y/JqGPGjnqD7e+2+9ZHNzJyYuGp6oLL4Bdttc1mX9OAG1Lj4cPhGGSqhfFbFMzRbk
-	zmLI2BbMxCAbeODGWJhG1buYPP3XD8q7cK0HIGrQNagvQIx+oJ1mkfdWnFBp0W5+SK3t8yTW2RULm
-	aOnt203aq4QvOrmDJFksxOUOy0yFdFfswWnbKxdVF+0AQnuFmxW0P82BKlBVnPTU6f5hdIxVJEzIJ
-	NzX9X2tch2iCviRuZfGzsQ0APOBSoNpYQlj5Wx8JI2kIPTwRsnweRVBUKF3nqgFrpchKPpFywf+4H
-	QNZ8DwxIfhDZvsZwILSw==;
+	List-Owner; bh=90vA3syKdC16epXtmLo9dhfXKkDuOnBvO1Tmcj+0KkI=; b=IF+P/kFYuUBeDi
+	6QeICtqEblXg+/GC3M8HiDdim16rFwUZSfEdeCbrto3H/gjkbGRZaak+P6kzzf3emFGXvRj99ohAq
+	w4pvWqkO9RQqUXftxiMRFjSEt/2gbaLLT8bhiufIcdDL5iQBHdx5QrzbnGFqBqSH7mMOSNSRivp1y
+	ItGwOhwcmNQnx14g2+yyIc6pZcF1kTAFzKmbM/x8i7H7hdrh6ODCBe522NF8N+vNVR3QJAFg2/5Bt
+	TDbbFE4Q9GNke13O2Uo/1u3GNJ+vHlkFCaGTx+cA8/WEkrynBpipxmVuKMzlAaq4Slg5VTABQKf49
+	SbcLrBBEjBbplAj8EhxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyTfQ-005SPV-8f; Tue, 07 Jun 2022 07:30:20 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1nyTjc-005Txm-8W; Tue, 07 Jun 2022 07:34:40 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyTeq-005SCl-6N
-	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 07:29:49 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20220607072940epoutp03d070bba216cd20c15adfd51fb6cbc1f4~2Rhe4WRu_0967009670epoutp03G
-	for <linux-phy@lists.infradead.org>; Tue,  7 Jun 2022 07:29:40 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20220607072940epoutp03d070bba216cd20c15adfd51fb6cbc1f4~2Rhe4WRu_0967009670epoutp03G
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1654586980;
-	bh=Mrq6OfP6yPWQ0z5aKHyFj01E3CKeWm9uQOPbAQlNB/c=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=bw25qpBnuiWj5rSANqsywvXt9cppdI7/IfYlFqp0GkGAi3FhNeUn6zGB6x/3InyZx
-	 3Nuv8OmhRY4CGRJnquu+aCShHOm4ls32XnGwXFIFaqGeTnM0cAPrOQAi5Bj9Zx3VkZ
-	 Jauqw2VWCZXKVGreaPJU2uLGTIXzf8BKMSL605l4=
-Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
-	epcas2p1.samsung.com (KnoxPortal) with ESMTP id
-	20220607072940epcas2p1456bc03421304c923b96fcc93f387546~2RheXfEaj1900219002epcas2p16;
-	Tue,  7 Jun 2022 07:29:40 +0000 (GMT)
-Received: from epsmges2p2.samsung.com (unknown [182.195.36.101]) by
-	epsnrtp1.localdomain (Postfix) with ESMTP id 4LHMSL6hxfz4x9QP; Tue,  7 Jun
-	2022 07:29:38 +0000 (GMT)
-Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
-	epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
-	D2.3E.09764.26EFE926; Tue,  7 Jun 2022 16:29:38 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
-	epcas2p1.samsung.com (KnoxPortal) with ESMTPA id
-	20220607072938epcas2p1e9047a52882d77423e6f790939186d5b~2RhcUVVJw1461414614epcas2p1b;
-	Tue,  7 Jun 2022 07:29:38 +0000 (GMT)
-Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
-	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
-	20220607072938epsmtrp12c96474531e79cc1617eb8fdd3be71ef~2RhcTkB8X0498404984epsmtrp17;
-	Tue,  7 Jun 2022 07:29:38 +0000 (GMT)
-X-AuditID: b6c32a46-f75ff70000002624-fd-629efe624e26
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
-	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
-	EA.53.08924.16EFE926; Tue,  7 Jun 2022 16:29:37 +0900 (KST)
-Received: from localhost.localdomain (unknown [10.229.9.51]) by
-	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20220607072937epsmtip1335e36c5244f1a4933366c3a586f1f99~2RhcI5X3s0977909779epsmtip1C;
-	Tue,  7 Jun 2022 07:29:37 +0000 (GMT)
-From: Chanho Park <chanho61.park@samsung.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Alim Akhtar
-	<alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>, Krzysztof
-	Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	Chanho Park <chanho61.park@samsung.com>
-Subject: [PATCH v4 1/5] dt-bindings: phy: samsung,ufs-phy: make pmu-syscon
- as phandle-array
-Date: Tue,  7 Jun 2022 16:29:03 +0900
-Message-Id: <20220607072907.127000-2-chanho61.park@samsung.com>
-X-Mailer: git-send-email 2.36.1
-In-Reply-To: <20220607072907.127000-1-chanho61.park@samsung.com>
+	id 1nyTjN-005TrN-Eb; Tue, 07 Jun 2022 07:34:28 +0000
+X-UUID: 9d4d10640e9d4482884a403c91b01b33-20220607
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.5,REQID:d0e2a25d-01a6-4c03-b2c2-b08bf3425eea,OB:0,LO
+	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+	ON:release,TS:0
+X-CID-META: VersionHash:2a19b09,CLOUDID:6e11e8e4-2ba2-4dc1-b6c5-11feb6c769e0,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
+	,QS:0,BEC:nil
+X-UUID: 9d4d10640e9d4482884a403c91b01b33-20220607
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+	(envelope-from <ck.hu@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 1552557497; Tue, 07 Jun 2022 00:34:11 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 7 Jun 2022 00:30:24 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Tue, 7 Jun 2022 15:30:23 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Tue, 7 Jun 2022 15:30:23 +0800
+Message-ID: <a93e5600ca3526651b728eceba51145b96d58037.camel@mediatek.com>
+Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+From: CK Hu <ck.hu@mediatek.com>
+To: Rex-BC Chen <rex-bc.chen@mediatek.com>, Guillaume Ranquet
+	<granquet@baylibre.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, "Philipp
+ Zabel" <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, "Daniel
+ Vetter" <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, "Krzysztof
+ Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
+	<matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Kishon
+ Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao shi <jitao.shi@mediatek.com>
+CC: Markus Schneider-Pargmann <msp@baylibre.com>,
+	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<linux-fbdev@vger.kernel.org>
+Date: Tue, 7 Jun 2022 15:30:20 +0800
+In-Reply-To: <20220523104758.29531-19-granquet@baylibre.com>
+References: <20220523104758.29531-1-granquet@baylibre.com>
+	 <20220523104758.29531-19-granquet@baylibre.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrKJsWRmVeSWpSXmKPExsWy7bCmhW7Sv3lJBv++aVg8mLeNzeLyfm2L
-	+UfOsVpceNrDZtH34iGzxd7XW9ktNj2+xmoxYdU3FosZ5/cxWbTuPcJusfPOCWYHbo9NqzrZ
-	PO5c28PmsXlJvUffllWMHsdvbGfy+LxJLoAtKtsmIzUxJbVIITUvOT8lMy/dVsk7ON453tTM
-	wFDX0NLCXEkhLzE31VbJxSdA1y0zB+g6JYWyxJxSoFBAYnGxkr6dTVF+aUmqQkZ+cYmtUmpB
-	Sk6BeYFecWJucWleul5eaomVoYGBkSlQYUJ2Rt/d6cwFs7grfs5Zx9bA+IWji5GTQ0LARGL5
-	rk3MXYxcHEICOxgl9i7+AOV8YpS4eXgNI4TzmVHi6YXFrDAtvxf9Z4VI7GKU2Lp1HhOE85FR
-	YtuLjewgVWwCuhJbnr8CaxcRaGeSOHFvLjuIwyywmVHi5IQNzCBVwgKxEpfaJ7OB2CwCqhLT
-	121hArF5BewlLn/qZ4HYJy+xYX4vUD0HB6eAg8SS01oQJYISJ2c+ASthBipp3job7HAJgYkc
-	Eg3XvkL1ukj8Xn0J6m5hiVfHt7BD2FISL/vboOxiiaWzPjFBNDcwSlze9osNImEsMetZOyPI
-	YmYBTYn1u/RBTAkBZYkjt6D28kl0HP7LDhHmlehoE4JoVJc4sH061AWyEt1zPkNd4CHx6tYv
-	aPhOZpTY8+sn+wRGhVlI3pmF5J1ZCIsXMDKvYhRLLSjOTU8tNiowgsdxcn7uJkZwetVy28E4
-	5e0HvUOMTByMhxglOJiVRHj9J89NEuJNSaysSi3Kjy8qzUktPsRoCgzricxSosn5wASfVxJv
-	aGJpYGJmZmhuZGpgriTO65WyIVFIID2xJDU7NbUgtQimj4mDU6qBaeOpXTt/n738JdhEVujh
-	oWflU8/sV1+k8KP9VfCzA5pdoZmr37ywklnHc3/NYuZZFQulVXIO6+65njU9b2/ePc0ct2jX
-	A1NKHBjnch3NCXh607VX5vvd+V6i3jVbF8eVStsdWuiidrm3KyzQM/Xm9vkCIZODp0wyTGaQ
-	WlX+pCFJbn2Ig9Aase/CbyMc/eT+2pkL2OeypS/YZbanxroy5mp0YcmFHzY7edvvFruK6hm9
-	6dOZfzOptUuL763hPo1tScyW65PmZyfqaC/w+rxI4durWRnbo3vz3IsjTvi9i+e6edXm/pUv
-	S294q2112KGxQ+9OV8cuZtbfk982bV+yq5u1NPevTIDtzwXfJ5QfUWIpzkg01GIuKk4EAPNA
-	w+s4BAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrHLMWRmVeSWpSXmKPExsWy7bCSnG7iv3lJBl1PrSwezNvGZnF5v7bF
-	/CPnWC0uPO1hs+h78ZDZYu/rrewWmx5fY7WYsOobi8WM8/uYLFr3HmG32HnnBLMDt8emVZ1s
-	Hneu7WHz2Lyk3qNvyypGj+M3tjN5fN4kF8AWxWWTkpqTWZZapG+XwJXRd3c6c8Es7oqfc9ax
-	NTB+4ehi5OSQEDCR+L3oP2sXIxeHkMAORokvJ9awQiRkJZ6928EOYQtL3G85AlX0nlFiT8te
-	NpAEm4CuxJbnrxhBEiIC3UwSczb1M4E4zALbGSU+LF3H0sXIwSEsEC3R9scQpIFFQFVi+rot
-	TCA2r4C9xOVP/SwQG+QlNszvZQYp5xRwkFhyWgskLARUMuvIZxaIckGJkzOfgNnMQOXNW2cz
-	T2AUmIUkNQtJagEj0ypGydSC4tz03GLDAqO81HK94sTc4tK8dL3k/NxNjOAo0NLawbhn1Qe9
-	Q4xMHIyHGCU4mJVEeP0nz00S4k1JrKxKLcqPLyrNSS0+xCjNwaIkznuh62S8kEB6Yklqdmpq
-	QWoRTJaJg1OqgWm1yr3CD4XxRT3zDlwR3Hfi5J6KiNzZYj0bmW36D5uJrJ1e+z/k9sWDGq8O
-	GBdu6N5RrmJ+x+Zh7/pajSux2w6wZ7y3nfayN62pqfwh08VnjWlCZ74nLZjnJ3co5em+tLu+
-	Hce2t0/lObIqQjnZVEmDf2fB5cT1knka+pWb9YLz3wmeVdL5sfvHhi2KqVc2Ptpau6az9C3H
-	qvWWfe1KljUf7rAHPI8qSdLNzl5tGs4V+iQnYIm5ZIqmQsLqw98nlrV9j9M5ypGjlFny+v/9
-	A2uX/v9pzhn5I1d0C1fW7KL2mV//Zh94cOJ04x3uJVHP+la1STUsNmFLtN2g/CC3bWcu1wE+
-	kRMz47xbXBaLhSqxFGckGmoxFxUnAgAzHHnj8QIAAA==
-X-CMS-MailID: 20220607072938epcas2p1e9047a52882d77423e6f790939186d5b
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20220607072938epcas2p1e9047a52882d77423e6f790939186d5b
-References: <20220607072907.127000-1-chanho61.park@samsung.com>
-	<CGME20220607072938epcas2p1e9047a52882d77423e6f790939186d5b@epcas2p1.samsung.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220607_002944_615761_9957BCA8 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20220607_003425_531654_97BFD2CF 
+X-CRM114-Status: GOOD (  25.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,42 +92,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-To support secondary ufs phy devices, we need to get an offset value
-from pmu-syscon.
+Hi, Rex:
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Signed-off-by: Chanho Park <chanho61.park@samsung.com>
----
- .../devicetree/bindings/phy/samsung,ufs-phy.yaml   | 14 +++++++++++---
- 1 file changed, 11 insertions(+), 3 deletions(-)
+On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
+> 
+> This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
+> 
+> It supports the mt8195, the embedded DisplayPort units. It offers
+> DisplayPort 1.4 with up to 4 lanes.
+> 
+> The driver creates a child device for the phy. The child device will
+> never exist without the parent being active. As they are sharing a
+> register range, the parent passes a regmap pointer to the child so
+> that
+> both can work with the same register range. The phy driver sets
+> device
+> data that is read by the parent to get the phy device that can be
+> used
+> to control the phy properties.
+> 
+> This driver is based on an initial version by
+> Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
 
-diff --git a/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-index f6ed1a005e7a..17897a3b5c9e 100644
---- a/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-@@ -40,9 +40,17 @@ properties:
-       - const: tx0_symbol_clk
- 
-   samsung,pmu-syscon:
--    $ref: '/schemas/types.yaml#/definitions/phandle'
--    description: phandle for PMU system controller interface, used to
--                 control pmu registers bits for ufs m-phy
-+    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-+    maxItems: 1
-+    items:
-+      minItems: 1
-+      items:
-+        - description: phandle for PMU system controller interface, used to
-+                       control pmu registers bits for ufs m-phy
-+        - description: offset of the pmu control register
-+    description:
-+      It can be phandle/offset pair. The second cell which can represent an
-+      offset is optional.
- 
- required:
-   - "#phy-cells"
--- 
-2.36.1
+[snip]
+
+> +
+> +static ssize_t mtk_dp_aux_transfer(struct drm_dp_aux *mtk_aux,
+> +				   struct drm_dp_aux_msg *msg)
+> +{
+> +	struct mtk_dp *mtk_dp;
+> +	bool is_read;
+> +	u8 request;
+> +	size_t accessed_bytes = 0;
+> +	int ret = 0;
+> +
+> +	mtk_dp = container_of(mtk_aux, struct mtk_dp, aux);
+> +
+> +	if (!mtk_dp->train_info.cable_plugged_in ||
+> +	    mtk_dp->train_info.irq_status & MTK_DP_HPD_DISCONNECT) {
+> +		mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKCAP;
+
+Changing state here has no any effect, so drop this.
+
+> +		return -EAGAIN;
+> +	}
+> +
+> +	switch (msg->request) {
+> +	case DP_AUX_I2C_MOT:
+> +	case DP_AUX_I2C_WRITE:
+> +	case DP_AUX_NATIVE_WRITE:
+> +	case DP_AUX_I2C_WRITE_STATUS_UPDATE:
+> +	case DP_AUX_I2C_WRITE_STATUS_UPDATE | DP_AUX_I2C_MOT:
+> +		request = msg->request &
+> ~DP_AUX_I2C_WRITE_STATUS_UPDATE;
+> +		is_read = false;
+> +		break;
+> +	case DP_AUX_I2C_READ:
+> +	case DP_AUX_NATIVE_READ:
+> +	case DP_AUX_I2C_READ | DP_AUX_I2C_MOT:
+> +		request = msg->request;
+> +		is_read = true;
+> +		break;
+> +	default:
+> +		drm_err(mtk_aux->drm_dev, "invalid aux cmd = %d\n",
+> +			msg->request);
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (msg->size == 0) {
+> +		ret = mtk_dp_aux_do_transfer(mtk_dp, is_read, request,
+> +					     msg->address +
+> accessed_bytes,
+> +					     msg->buffer +
+> accessed_bytes, 0);
+> +	} else {
+> +		while (accessed_bytes < msg->size) {
+> +			size_t to_access =
+> +				min_t(size_t, DP_AUX_MAX_PAYLOAD_BYTES,
+> +				      msg->size - accessed_bytes);
+> +
+> +			ret = mtk_dp_aux_do_transfer(mtk_dp,
+> +						     is_read, request,
+> +							 msg->address +
+> accessed_bytes,
+> +							 msg->buffer +
+> accessed_bytes,
+> +							 to_access);
+> +
+> +			if (ret) {
+> +				drm_info(mtk_dp->drm_dev,
+> +					 "Failed to do AUX transfer:
+> %d\n", ret);
+> +				break;
+> +			}
+> +			accessed_bytes += to_access;
+> +		}
+> +	}
+> +
+> +	if (ret) {
+> +		msg->reply = DP_AUX_NATIVE_REPLY_NACK |
+> DP_AUX_I2C_REPLY_NACK;
+> +		return ret;
+> +	}
+> +
+> +	msg->reply = DP_AUX_NATIVE_REPLY_ACK | DP_AUX_I2C_REPLY_ACK;
+> +	return msg->size;
+> +}
 
 
 -- 
