@@ -4,81 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EABB1C43334
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 22:35:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86AB2C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 22:40:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EA8BPFgXWy0hte1iA+mlphCwqtiZHelc1GW3qfOa1fo=; b=E2TcxBDVp4Ot+V
-	c6w6NdF6EN3dqbdXdd4tJ97Wm5Rq82qh3cC2yXv5n3uKb+XbTU3rJmkgYp0HePMhZZreCLxWFMz4u
-	ywB0xwRzkPc95Iagi8YF2TCqjqDu65xlw9svbXZ/MFzZ0SEpFiqGRxQzZ6RgcIH2uJ9EklG7x1Tsf
-	+dmJVUoqDzFtrS6AsNbrLwOiw8FI8W8AhQO+A9Q+oEF7E5dKbx2XcaYdpo9ffvFHzlY44iSACnzEY
-	gZo1AL97NKCKs3PXL4Uc9wFd8iyqpk9DR38PF5nMJIYFWIjqCHgcWgFIeHcuw5EKjCHJNh91zQdbT
-	r1LVK2fv6UJVSLcCHzyw==;
+	List-Owner; bh=AoJT9N5i9PGNEk3UqoXYrO0J8R/VtzjjmL3io5Bweyo=; b=d0yuYDtVNlkXjl
+	D4bjq8nfkI2qF/1v0TaYk9ai5h0DsRvMTCipoXJGoDhJPI+TGe4Ly+eMNGfSHXke236mjbLKfWpR7
+	ep4nG0R2Vmmcr3AJ1CjrWiORh6MBQtsHDh03d1Gvkjrjd1VhObf82xzTt152qAbSm0Z//aL8OFyUW
+	dAaa1CPkF5N0j+QnmuA93hOqiLVgSh7XESJYEkE5OZVMaydgsQTijtAK323gAOuXsKVC94b+S6nxd
+	mx5vySAnUOiMQDOxC6Lu7d8U5XYCb/x8h43uK7yBhskkUIqnm0EbIwHuy8s/MobT1w2WA4Anm+nbD
+	oN2Gt05/Bm5tJb/NcbqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyhmz-009tUm-9B; Tue, 07 Jun 2022 22:35:05 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1nyhsJ-009uVg-Op; Tue, 07 Jun 2022 22:40:35 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyhmw-009tSw-KC
-	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 22:35:04 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id u26so29737784lfd.8
-        for <linux-phy@lists.infradead.org>; Tue, 07 Jun 2022 15:34:56 -0700 (PDT)
+	id 1nyhsI-009uUV-9n
+	for linux-phy@bombadil.infradead.org; Tue, 07 Jun 2022 22:40:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=fF4LijbDfT4JefOzp7UdYAr+EfQ5/5blmMbjsXFHank=; b=Bffcxjmy/MrCwvXOCjRLSesy8b
+	ai4k2Dk9cI7fvGs8XTW7q17PMZyNEvlhYQEgOPwVcDVXVWq/hWmcTQWWZx01gdbPmMbnVgF6dGULc
+	FPM4DdlpIM0+3EuyxLg/g7uAvZE8FEo1T/rdanJXS/PCvYvWh6b9wHbUaXzvuGnpe9QYQBbvnypv8
+	MdGrqnYtFxEfO3DycJWNRAAuvk/L/fHbCnotyNapj2xa7BXggFKtrBCpyolJJLS3fNHs/KTxp8VnA
+	Qs1TMri5KR9IxxOekri/DmlXq9yPoi/vLcsAQu0ZE6xUPNRpijt5cE3TzWcBgtgazQRZDUPC8beSQ
+	zQYT0ZqA==;
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
+	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1nygog-005pnL-3H
+	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 21:32:53 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id s13so20646906ljd.4
+        for <linux-phy@lists.infradead.org>; Tue, 07 Jun 2022 14:32:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=qoW1gmVljAUL2+6Knzn6x1gPtTMWpq+iXyTdn9hlFNI=;
-        b=AxPXfe8Xqon4nlX+FDGyThgVp0Nb8SmKaPWlg+LsEItxm+v26x/Q/zKjDd9PdWlC0o
-         Rkyh1ZjBkn+P2P0RRC6C6NFdXQeLsxI2Yo985tlacocLxk7Obpyoa173oDBH/yIjPW/o
-         WkSvmlIfAQRMvMSG0gF3+POYP/X1/SbeVtj6VGXakmpPNElBmtlfytt+9VCHX9ukcGCa
-         42OVURr34xEWPmvTIQ1J6Dn7qsNBN9AnI0lAMKqagsEuxZOXBZscPl3fWji8hXzn1x72
-         TzqIuYdHEWuK+L9AzgIBL2YuI/C1Kzd+W5zOkCny2v9CTz1HR1joCZotKiHQDm7JNeQC
-         pGUw==
+        h=from:to:cc:subject:date:message-id:in-reply-to:references
+         :mime-version:content-transfer-encoding;
+        bh=fF4LijbDfT4JefOzp7UdYAr+EfQ5/5blmMbjsXFHank=;
+        b=NzKE7qkr8gsr/JL7rFgPpeulg+CPzyuP+hY6oa709bKQ++KIdK4fUhE2LIL+mnyxUa
+         D6mVy/+r5k49UN02ZeQLXPmf7vapIERQfwwuhK6Jga3COW0mwzZbzYG+pYaHW0KbG+xS
+         uJcmiR6679vZUunpZWEz4k4JyosPTnhPm/lEkBeXweEodeDsJ0KCak9xAeXUBSI4b7QM
+         mtTAKQ0fCtGY5/ulYgQHXXJykPvq6MKm2EYHUr89HaH+b0G5NZdakXT9XUmA1eF92k1G
+         GYZQfC4z3eXu40mF70KL3RdZavDj9peZ/7mJiRIkoa4IDobsuBguBjyHu5G5VigPqWF+
+         N+dw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=qoW1gmVljAUL2+6Knzn6x1gPtTMWpq+iXyTdn9hlFNI=;
-        b=cj78X/ymiNOI64d9CHp3RsV7io4BIgbiNaafe+B3P3CUKtxIRdQjla92faIm7dCU1s
-         4A2JHyF4Wb+rTOOjvAzIdUTSp7gRByMr6VL0NqoE82waqOk5LXoeFczl09yHQDiEhNmo
-         4KljkUyPyxubiDJRYdZfWRNZjvG0S7kGSsPekgEqI1HvPHWl0mz77rX3aObNAatl8W0c
-         FhuNbBSLZEql2/QRDMaT9Ynuo7ZjzHVSVQmX1vr2LkcOCRjJJM0q5IrxcWygy2b+iW9v
-         7AeeiKyQi51cxPnedoCDn66XyoHfBrr9vSkn9GBPnoETmTREG0r4foyEJ2p/OVzh4c15
-         gtAA==
-X-Gm-Message-State: AOAM5306JGff/CbF21Yo+ByoiuuGFhLkOSEqcrsc6i8/adJIeq4dpgQf
-	sCRzOmNV5pqnkEv/vtHClTuExA==
-X-Google-Smtp-Source: ABdhPJzCfE5fl1O6+eZqnTJpd4HzsWT6PV949KVeMp1srMc//o0rggoboGViIvouXtvg2Af4hURThg==
-X-Received: by 2002:a05:6512:545:b0:479:b15:6671 with SMTP id h5-20020a056512054500b004790b156671mr19852457lfl.579.1654641295093;
-        Tue, 07 Jun 2022 15:34:55 -0700 (PDT)
-Received: from [192.168.1.211] ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id p4-20020a056512312400b0047255d211f7sm3418559lfd.294.2022.06.07.15.34.54
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 07 Jun 2022 15:34:54 -0700 (PDT)
-Message-ID: <9077f91b-0e1d-25bc-56a9-66a500e16ff4@linaro.org>
-Date: Wed, 8 Jun 2022 01:34:54 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.0
-Subject: Re: [PATCH v2 0/5] phy: qcom: Add SC8280XP UNI and COMBO USB phys
-Content-Language: en-GB
-To: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Manu Gautam <mgautam@codeaurora.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20220607213543.4057620-1-bjorn.andersson@linaro.org>
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+         :references:mime-version:content-transfer-encoding;
+        bh=fF4LijbDfT4JefOzp7UdYAr+EfQ5/5blmMbjsXFHank=;
+        b=M3lMbnmxo8O6XemsdeRVOBQv2DV1ES/1MHZGO5gZEgTSuRV11Qg5cS6Um0d/O2yeVQ
+         qOD+1rlZxT7UPMWQ4IRLqh3Oypwlw5JwTuzhiYv8yEuAOuAv4JprqqSZkN4pDe8Q3IhN
+         NzDqztNuuS9zFwDufsZfWQedqRwcXcYhFCfIhZaXuf6sOFMJaPzTJgAaHmlwH5E2OyDb
+         PlId/WNOO/MZNA4oXMcu4cwNwdj6za8PusFYaXjOwXbueL+sDrM2Cd2NLiOd470r+n88
+         gOIVZhAPQ93sH9rh2+XfLIWHfuR5wd9CxpOl5JsdX8npj+ArkrcEeT+NPY1Rcao7gEqC
+         mr4Q==
+X-Gm-Message-State: AOAM533UohZDIbsy+0EmZf/xXZjH51qkP7KrRcuQKgwVJFPDG2+kxy+u
+	JE8JD0qXlGHjqGpblAQyKptNUg==
+X-Google-Smtp-Source: ABdhPJzAVAqqy6N+Lvbykyd5AuatgMAfK0/3UNTxy+Tx+koXIo1iO57kMjjoIpRRNCJxtRB2P/aLdQ==
+X-Received: by 2002:a2e:881a:0:b0:255:7c2c:46d8 with SMTP id x26-20020a2e881a000000b002557c2c46d8mr13961393ljh.364.1654637562750;
+        Tue, 07 Jun 2022 14:32:42 -0700 (PDT)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id g23-20020ac24d97000000b0047255d21153sm3411343lfe.130.2022.06.07.14.32.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 07 Jun 2022 14:32:42 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20220607213543.4057620-1-bjorn.andersson@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v1 29/30] phy: qcom-qmp-pcie-msm8996: use bulk reset_control API
+Date: Wed,  8 Jun 2022 00:32:02 +0300
+Message-Id: <20220607213203.2819885-30-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220607213203.2819885-1-dmitry.baryshkov@linaro.org>
+References: <20220607213203.2819885-1-dmitry.baryshkov@linaro.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220607_153502_715556_B7288963 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20220607_223246_820715_FDD48E04 
+X-CRM114-Status: GOOD (  15.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,48 +101,136 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/06/2022 00:35, Bjorn Andersson wrote:
-> The Qualcomm SC8280XP has two pairs of USB phys; a pair of combo phys and a
-> pair of uni phys. Introduce support for these.
-> 
-> This is based ontop of Dmitry's refactoring of the QMP driver:
-> https://lore.kernel.org/all/20220602070909.1666068-1-dmitry.baryshkov@linaro.org/
-> 
-> A first version of this series was posted with only the UNI phy, this fixes a
-> few comments and add the combo phy as well.
-> 
-> Bjorn Andersson (5):
->    dt-bindings: phy: qcom,qmp: Add compatible for SC8280XP USB phys
->    phy: qcom-qmp: Add USB3 5NM QMP UNI registers
->    phy: qcom-qmp: Add USB4 5NM QMP combo PHY registers
+Switch qcom-qmp-pcie-msm8996 driver to use reset_control_bulk_assert /
+_deassert functions rather than hardcoding the loops in the driver
+itself.
 
-I've noted, which symbols look close enough to be folded into existing 
-namespaces. Could you please doublecheck my analysis and merge the tables?
+Acked-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Tested-by: Bjorn Andersson <bjorn.andersson@linaro.org> # UFS, PCIe and USB on SC8180X
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 49 +++++++------------
+ 1 file changed, 18 insertions(+), 31 deletions(-)
 
->    phy: qcom-qmp: Add SC8280XP USB3 UNI phy
->    phy: qcom-qmp: Add sc8280xp USB/DP combo phys
-> 
->   .../devicetree/bindings/phy/qcom,qmp-phy.yaml |    2 +
->   .../bindings/phy/qcom,qmp-usb3-dp-phy.yaml    |    1 +
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |  205 +++
->   drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |  138 ++
->   drivers/phy/qualcomm/phy-qcom-qmp.h           |   13 +
->   .../phy/qualcomm/phy-qcom-usb3-5nm-qmp-uni.h  |  617 +++++++
->   .../qualcomm/phy-qcom-usb4-5nm-qmp-combo.h    | 1547 +++++++++++++++++
->   7 files changed, 2523 insertions(+)
->   create mode 100644 drivers/phy/qualcomm/phy-qcom-usb3-5nm-qmp-uni.h
->   create mode 100644 drivers/phy/qualcomm/phy-qcom-usb4-5nm-qmp-combo.h
-> 
-
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+index 51da3a3a199e..48ea1de81d7c 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+@@ -340,7 +340,7 @@ struct qcom_qmp {
+ 	struct device *dev;
+ 
+ 	struct clk_bulk_data *clks;
+-	struct reset_control **resets;
++	struct reset_control_bulk_data *resets;
+ 	struct regulator_bulk_data *vregs;
+ 
+ 	struct qmp_phy **phys;
+@@ -489,7 +489,7 @@ static int qcom_qmp_phy_pcie_msm8996_com_init(struct qmp_phy *qphy)
+ 	struct qcom_qmp *qmp = qphy->qmp;
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+ 	void __iomem *serdes = qphy->serdes;
+-	int ret, i;
++	int ret;
+ 
+ 	mutex_lock(&qmp->phy_mutex);
+ 	if (qmp->init_count++) {
+@@ -504,22 +504,16 @@ static int qcom_qmp_phy_pcie_msm8996_com_init(struct qmp_phy *qphy)
+ 		goto err_unlock;
+ 	}
+ 
+-	for (i = 0; i < cfg->num_resets; i++) {
+-		ret = reset_control_assert(qmp->resets[i]);
+-		if (ret) {
+-			dev_err(qmp->dev, "%s reset assert failed\n",
+-				cfg->reset_list[i]);
+-			goto err_disable_regulators;
+-		}
++	ret = reset_control_bulk_assert(cfg->num_resets, qmp->resets);
++	if (ret) {
++		dev_err(qmp->dev, "reset assert failed\n");
++		goto err_disable_regulators;
+ 	}
+ 
+-	for (i = cfg->num_resets - 1; i >= 0; i--) {
+-		ret = reset_control_deassert(qmp->resets[i]);
+-		if (ret) {
+-			dev_err(qmp->dev, "%s reset deassert failed\n",
+-				qphy->cfg->reset_list[i]);
+-			goto err_assert_reset;
+-		}
++	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
++	if (ret) {
++		dev_err(qmp->dev, "reset deassert failed\n");
++		goto err_disable_regulators;
+ 	}
+ 
+ 	ret = clk_bulk_prepare_enable(cfg->num_clks, qmp->clks);
+@@ -534,8 +528,7 @@ static int qcom_qmp_phy_pcie_msm8996_com_init(struct qmp_phy *qphy)
+ 	return 0;
+ 
+ err_assert_reset:
+-	while (++i < cfg->num_resets)
+-		reset_control_assert(qmp->resets[i]);
++	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+ err_disable_regulators:
+ 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
+ err_unlock:
+@@ -549,7 +542,6 @@ static int qcom_qmp_phy_pcie_msm8996_com_exit(struct qmp_phy *qphy)
+ 	struct qcom_qmp *qmp = qphy->qmp;
+ 	const struct qmp_phy_cfg *cfg = qphy->cfg;
+ 	void __iomem *serdes = qphy->serdes;
+-	int i = cfg->num_resets;
+ 
+ 	mutex_lock(&qmp->phy_mutex);
+ 	if (--qmp->init_count) {
+@@ -564,8 +556,7 @@ static int qcom_qmp_phy_pcie_msm8996_com_exit(struct qmp_phy *qphy)
+ 	qphy_setbits(serdes, cfg->regs[QPHY_COM_POWER_DOWN_CONTROL],
+ 		     SW_PWRDN);
+ 
+-	while (--i >= 0)
+-		reset_control_assert(qmp->resets[i]);
++	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+ 
+ 	clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
+ 
+@@ -769,23 +760,19 @@ static int qcom_qmp_phy_pcie_msm8996_reset_init(struct device *dev, const struct
+ {
+ 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
+ 	int i;
++	int ret;
+ 
+ 	qmp->resets = devm_kcalloc(dev, cfg->num_resets,
+ 				   sizeof(*qmp->resets), GFP_KERNEL);
+ 	if (!qmp->resets)
+ 		return -ENOMEM;
+ 
+-	for (i = 0; i < cfg->num_resets; i++) {
+-		struct reset_control *rst;
+-		const char *name = cfg->reset_list[i];
++	for (i = 0; i < cfg->num_resets; i++)
++		qmp->resets[i].id = cfg->reset_list[i];
+ 
+-		rst = devm_reset_control_get_exclusive(dev, name);
+-		if (IS_ERR(rst)) {
+-			dev_err(dev, "failed to get %s reset\n", name);
+-			return PTR_ERR(rst);
+-		}
+-		qmp->resets[i] = rst;
+-	}
++	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_resets, qmp->resets);
++	if (ret)
++		return dev_err_probe(dev, ret, "failed to get resets\n");
+ 
+ 	return 0;
+ }
 -- 
-With best wishes
-Dmitry
+2.35.1
+
 
 -- 
 linux-phy mailing list
