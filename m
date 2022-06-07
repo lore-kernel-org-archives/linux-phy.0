@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCAE2C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 07:34:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29F48C43334
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 07:47:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90vA3syKdC16epXtmLo9dhfXKkDuOnBvO1Tmcj+0KkI=; b=IF+P/kFYuUBeDi
-	6QeICtqEblXg+/GC3M8HiDdim16rFwUZSfEdeCbrto3H/gjkbGRZaak+P6kzzf3emFGXvRj99ohAq
-	w4pvWqkO9RQqUXftxiMRFjSEt/2gbaLLT8bhiufIcdDL5iQBHdx5QrzbnGFqBqSH7mMOSNSRivp1y
-	ItGwOhwcmNQnx14g2+yyIc6pZcF1kTAFzKmbM/x8i7H7hdrh6ODCBe522NF8N+vNVR3QJAFg2/5Bt
-	TDbbFE4Q9GNke13O2Uo/1u3GNJ+vHlkFCaGTx+cA8/WEkrynBpipxmVuKMzlAaq4Slg5VTABQKf49
-	SbcLrBBEjBbplAj8EhxA==;
+	List-Owner; bh=LNf5Lf3LjQu0sQoy5zcXW4QWp8Cr4mmsJXBX8zCOlvQ=; b=Y7chZ1ZCzfVUwO
+	F5yP4WFlEet0fDFg9kJf5jUYjFhgtzmYtX6TFzF4jGYYEQz0PvCZvus4O7UagX3yVw2/Y489xaVzf
+	rCwCSxzvK0tA2yhJPDCfzltZo7AWjlCeRCBcb6WU99JwfjEMJ06e0W32YcYTfNLmfZxCbwu8gWJvm
+	Ea/uo/jtzWDSI95eereHihKC01Eszpm2mmBO3d0wuOsctxYIkGfgt1kn5Nnven/YnJk6kf9RNvCfu
+	XL1RTv64TcEJiupOT+5mZDEeQfZU1tI/ouaeLslp9WuZ6TliecsUtfhwtslR64yv/R4mS3F/aAjT2
+	QRElq+BrydQYyK6MPABQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyTjc-005Txm-8W; Tue, 07 Jun 2022 07:34:40 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1nyTw6-005Zae-IM; Tue, 07 Jun 2022 07:47:34 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyTjN-005TrN-Eb; Tue, 07 Jun 2022 07:34:28 +0000
-X-UUID: 9d4d10640e9d4482884a403c91b01b33-20220607
+	id 1nyTvr-005ZUb-S6; Tue, 07 Jun 2022 07:47:21 +0000
+X-UUID: cb67215c543b4e0290c9e60f08264a21-20220607
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5,REQID:d0e2a25d-01a6-4c03-b2c2-b08bf3425eea,OB:0,LO
+X-CID-O-INFO: VERSION:1.1.5,REQID:bb9175ec-9a7a-4ab5-a256-efe0e330e1e0,OB:0,LO
 	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
 	ON:release,TS:0
-X-CID-META: VersionHash:2a19b09,CLOUDID:6e11e8e4-2ba2-4dc1-b6c5-11feb6c769e0,C
+X-CID-META: VersionHash:2a19b09,CLOUDID:2ea5e8e4-2ba2-4dc1-b6c5-11feb6c769e0,C
 	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
 	,QS:0,BEC:nil
-X-UUID: 9d4d10640e9d4482884a403c91b01b33-20220607
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+X-UUID: cb67215c543b4e0290c9e60f08264a21-20220607
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
 	(envelope-from <ck.hu@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
-	with ESMTP id 1552557497; Tue, 07 Jun 2022 00:34:11 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 7 Jun 2022 00:30:24 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
+	with ESMTP id 608213774; Tue, 07 Jun 2022 00:47:10 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 7 Jun 2022 00:47:09 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
- Tue, 7 Jun 2022 15:30:23 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
+ Tue, 7 Jun 2022 15:47:07 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n2.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Tue, 7 Jun 2022 15:30:23 +0800
-Message-ID: <a93e5600ca3526651b728eceba51145b96d58037.camel@mediatek.com>
+ Transport; Tue, 7 Jun 2022 15:47:07 +0800
+Message-ID: <f791f46c6307a18818574cb7fb8653bcc84aa9ad.camel@mediatek.com>
 Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
  driver
 From: CK Hu <ck.hu@mediatek.com>
@@ -66,7 +66,7 @@ CC: Markus Schneider-Pargmann <msp@baylibre.com>,
 	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
 	<linux-fbdev@vger.kernel.org>
-Date: Tue, 7 Jun 2022 15:30:20 +0800
+Date: Tue, 7 Jun 2022 15:47:07 +0800
 In-Reply-To: <20220523104758.29531-19-granquet@baylibre.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
 	 <20220523104758.29531-19-granquet@baylibre.com>
@@ -74,8 +74,8 @@ X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220607_003425_531654_97BFD2CF 
-X-CRM114-Status: GOOD (  25.17  )
+X-CRM114-CacheID: sfid-20220607_004719_957219_C7A79EC1 
+X-CRM114-Status: GOOD (  24.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,87 +122,68 @@ On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
 [snip]
 
 > +
-> +static ssize_t mtk_dp_aux_transfer(struct drm_dp_aux *mtk_aux,
-> +				   struct drm_dp_aux_msg *msg)
+> +static int mtk_dp_hpd_sink_event(struct mtk_dp *mtk_dp)
 > +{
-> +	struct mtk_dp *mtk_dp;
-> +	bool is_read;
-> +	u8 request;
-> +	size_t accessed_bytes = 0;
-> +	int ret = 0;
+> +	ssize_t ret;
+> +	u8 sink_count;
+> +	bool locked;
+> +	u8 link_status[DP_LINK_STATUS_SIZE] = {};
+> +	u32 sink_count_reg = DP_SINK_COUNT_ESI;
+> +	u32 link_status_reg = DP_LANE0_1_STATUS;
 > +
-> +	mtk_dp = container_of(mtk_aux, struct mtk_dp, aux);
-> +
-> +	if (!mtk_dp->train_info.cable_plugged_in ||
-> +	    mtk_dp->train_info.irq_status & MTK_DP_HPD_DISCONNECT) {
-> +		mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKCAP;
-
-Changing state here has no any effect, so drop this.
-
-> +		return -EAGAIN;
-> +	}
-> +
-> +	switch (msg->request) {
-> +	case DP_AUX_I2C_MOT:
-> +	case DP_AUX_I2C_WRITE:
-> +	case DP_AUX_NATIVE_WRITE:
-> +	case DP_AUX_I2C_WRITE_STATUS_UPDATE:
-> +	case DP_AUX_I2C_WRITE_STATUS_UPDATE | DP_AUX_I2C_MOT:
-> +		request = msg->request &
-> ~DP_AUX_I2C_WRITE_STATUS_UPDATE;
-> +		is_read = false;
-> +		break;
-> +	case DP_AUX_I2C_READ:
-> +	case DP_AUX_NATIVE_READ:
-> +	case DP_AUX_I2C_READ | DP_AUX_I2C_MOT:
-> +		request = msg->request;
-> +		is_read = true;
-> +		break;
-> +	default:
-> +		drm_err(mtk_aux->drm_dev, "invalid aux cmd = %d\n",
-> +			msg->request);
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (msg->size == 0) {
-> +		ret = mtk_dp_aux_do_transfer(mtk_dp, is_read, request,
-> +					     msg->address +
-> accessed_bytes,
-> +					     msg->buffer +
-> accessed_bytes, 0);
-> +	} else {
-> +		while (accessed_bytes < msg->size) {
-> +			size_t to_access =
-> +				min_t(size_t, DP_AUX_MAX_PAYLOAD_BYTES,
-> +				      msg->size - accessed_bytes);
-> +
-> +			ret = mtk_dp_aux_do_transfer(mtk_dp,
-> +						     is_read, request,
-> +							 msg->address +
-> accessed_bytes,
-> +							 msg->buffer +
-> accessed_bytes,
-> +							 to_access);
-> +
-> +			if (ret) {
-> +				drm_info(mtk_dp->drm_dev,
-> +					 "Failed to do AUX transfer:
-> %d\n", ret);
-> +				break;
-> +			}
-> +			accessed_bytes += to_access;
-> +		}
-> +	}
-> +
-> +	if (ret) {
-> +		msg->reply = DP_AUX_NATIVE_REPLY_NACK |
-> DP_AUX_I2C_REPLY_NACK;
+> +	ret = drm_dp_dpcd_readb(&mtk_dp->aux, sink_count_reg,
+> &sink_count);
+> +	if (ret < 0) {
+> +		drm_err(mtk_dp->drm_dev, "Read sink count failed:
+> %ld\n", ret);
 > +		return ret;
 > +	}
 > +
-> +	msg->reply = DP_AUX_NATIVE_REPLY_ACK | DP_AUX_I2C_REPLY_ACK;
-> +	return msg->size;
+> +	ret = drm_dp_dpcd_read(&mtk_dp->aux, link_status_reg,
+> link_status,
+> +			       sizeof(link_status));
+> +	if (!ret) {
+> +		drm_err(mtk_dp->drm_dev, "Read link status failed:
+> %ld\n",
+> +			ret);
+> +		return ret;
+> +	}
+> +
+> +	locked = drm_dp_channel_eq_ok(link_status,
+> +				      mtk_dp->train_info.lane_count);
+> +	if (!locked && mtk_dp->train_state >
+> MTK_DP_TRAIN_STATE_TRAINING_PRE)
+
+Before enter this function, mtk_dp->train_state is set to
+MTK_DP_TRAIN_STATE_STARTUP, so this never happen, drop this.
+
+> +		mtk_dp->train_state = MTK_DP_TRAIN_STATE_TRAINING_PRE;
+> +
+> +	if (link_status[1] & DP_REMOTE_CONTROL_COMMAND_PENDING)
+> +		drm_dp_dpcd_writeb(&mtk_dp->aux,
+> DP_DEVICE_SERVICE_IRQ_VECTOR,
+> +				   DP_REMOTE_CONTROL_COMMAND_PENDING);
+> +
+> +	if (DP_GET_SINK_COUNT(sink_count) &&
+> +	    (link_status[2] & DP_DOWNSTREAM_PORT_STATUS_CHANGED)) {
+> +		mtk_dp->train_info.check_cap_count = 0;
+> +		mtk_dp->train_state = MTK_DP_TRAIN_STATE_CHECKEDID;
+
+Why change state from MTK_DP_TRAIN_STATE_STARTUP to
+MTK_DP_TRAIN_STATE_CHECKEDID? In mtk_dp_train_handler(),
+mtk_dp_parse_capabilities() is true then change to
+MTK_DP_TRAIN_STATE_CHECKEDID. Give a reason why these two are
+different.
+
+Regards,
+CK
+
+> +		msleep(20);
+> +	}
+> +
+> +	return 0;
 > +}
+> +
 
 
 -- 
