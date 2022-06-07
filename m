@@ -4,74 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C0A6C43334
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 22:41:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 785C5CCA47F
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 22:41:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NltdoHAA2Ud6jmf/wf1qEl6ioqmUmSHJtmBwHsBFx+g=; b=aQZHTboJPwgSfX
-	GAy5cj13e5EAIVetiD84WIv7BuequcmOtPUqwqVJcbnt0dfmu8ubo+GZKbnsqFLmP1BcieMmIoePQ
-	K8yXOj2f6SNC42OyjB4jv0w6q186/DZGOw+P38Bo5hFGywHQ1Yk/1mvgrSX4WHOVe2QMw6QPsdFAH
-	X9y/Psr5YNwSuX3l6rd/M/kf+g4gWl0pk2x5KZn8U5OcK6i5/hAkVCqU0HYw6N65SA2wQgjInU5rY
-	scYVyTuJrkK8XV8c3SoRW05MD5rrWPFgNsznF+VdCbw5WsllBRoKj8H00dA4ET2id97JfWfNF4xjp
-	h0rkAe01OdteUKMHaqoA==;
+	List-Owner; bh=UkZPX/vaOP5/F6dl67IIaX6rqaVJU0qS7t/wyHfDhQ4=; b=fKICNsNiBic7Zx
+	QMcWyzQS7qqx/BytiNtU/vcjBTaeVB1Q2Ka2DE09pNRpqJDb9f5IHACMreIgdO/mcEzRXIE7N9mH3
+	QjVI7FhgaB6ZtCVl2XEc36KisoYsiOMv6L9t4HzgO5EpPzf+JvV3ophiESW/rvmuiiMtNNe9Uolq8
+	kQx/CmPQ9o8Z3KA+A96IzopxOgOqEGnMf+KW1kTDiHE1TQV6ZsWf7wMDdvzyaQrT9DSxOOJ2N+lBK
+	Se1x+wFIUf4dKPnSaRCqenA66FTE5+gSW3bEddTRLxHEuwgm9gDZlZR9hruKLCg7MjJVYCvMIHe6g
+	7Ia7g9PKpMbZrenj+Zow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyhsn-009ufk-MW; Tue, 07 Jun 2022 22:41:05 +0000
+	id 1nyhso-009ugG-Sl; Tue, 07 Jun 2022 22:41:06 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyhsl-009uUV-BY
-	for linux-phy@bombadil.infradead.org; Tue, 07 Jun 2022 22:41:03 +0000
+	id 1nyhsm-009uUV-DR
+	for linux-phy@bombadil.infradead.org; Tue, 07 Jun 2022 22:41:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=Uv8fCJ2lMkxd/vYi4XRfq/grsPGO3XaS9NGpJZg3Axs=; b=JjmFBRjBuj6Ngeb7zLQ7uVm//c
-	nLPm63dU90tRRbIbwQi7MJQnIf9gZQOcQzfiG9zkbVaX4xnkxKQEIvrk/sOdxCg6AIdOtXLBG0ob2
-	ycrmTTUwDKlDwIYWGoWXtqVQ/LzpB+QAUMGbsIe/NRlbpsvgf3SOXcxkyiIQm9ZFtr8iwTLVzyezU
-	cGmpPIM4OjPqzi7phZTAv+6Qj81olZdJyoict+YlTLfzeL0dlAoqeQoEl1qVT8mPhzg3B8QfASOgx
-	58SMKSNMSFo1sMgVimFJ9D5eNdt0orSzj62Ol9CuNxp5Q2MJn3NEqzDAAOG7Uhz4hWzF27EAi0HBT
-	ArH6RFng==;
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	bh=IOgvbccEmY2EAAw8SBRBQUpYKc7/xkzN9edkEzDNBjU=; b=HY+xNVmyZr1G57iX+anr95z3X8
+	zfJmakOOI1q+86Y3zxfrwzrGOH3mbBXO2Z/2p3qcOnQTj17tJ9gar8DmWsj2eR+wOYxR2GtZMJNTw
+	NrhHkbbscsuYEUtqBzcYk0T1DipxoD/2kfKG8W9Fak1TVHttPv4c3SWeHJEJL0qzklvgMnSyOcUNB
+	Acn9jUweZ5U6yijvVMc9VQS6hOQ8gt72sMO7sCUirIYZ4MRS6QyLCkRp/bhh0dTSWTrdN+a5CPJNx
+	FAeOQSc9MXhVOsT2c2bvV7RtnxzWPsjp9Acob5jOpODD4vgSmq4lEdJgMay+u6oUE9xEKeKPQ7KLU
+	muXyYpKw==;
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nygof-005pnE-Fa
-	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 21:32:53 +0000
-Received: by mail-lf1-x131.google.com with SMTP id i29so13521527lfp.3
+	id 1nygof-005pnF-Ps
+	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 21:32:51 +0000
+Received: by mail-lf1-x132.google.com with SMTP id i29so13521589lfp.3
         for <linux-phy@lists.infradead.org>; Tue, 07 Jun 2022 14:32:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=Uv8fCJ2lMkxd/vYi4XRfq/grsPGO3XaS9NGpJZg3Axs=;
-        b=kjnO8vbfkbBasfkjaM7yaYM/f6JCZeDPrwz6KDZXM3pho7I2WwLemSWT1/hmFFlYUw
-         OybpqruKbh9z/qQ8qlt0ZN5r2y06D4gKpFs3utEtzGvNm0GHT0tmVSd2OW2b4XzCVMlt
-         mFFmu87mrGUlGaIPel7D+c4YOv0X59xdJCdfvjCyQxNbpB2cPnBsdjX6LGCdK3L/53bU
-         E82mbCicXL+8byrf3boEUTGC8+gs32ehfoAW88tlyrCLtgS59dQMdcPconcbTotMvSX6
-         VdMujbq+MBT5pSLsfF1Xn+wf3cHbFSs6KIRUJbl1GHf2L/Y/G3gZfSnllYdSEOYw7Ka7
-         zvTA==
+        bh=IOgvbccEmY2EAAw8SBRBQUpYKc7/xkzN9edkEzDNBjU=;
+        b=KgzKSfzbOxzyogRAhypzpdHR8AnKExs/9Pk6pI3D4xHYD5+fgdGnZpXI0POw6r1gWr
+         kVN6F/xNW/gSwlW8DAWKKFfX7qCbhICjbEfJUY2A6y9+3G+7wx7tyuAtedRLoXdhSIv3
+         0UPy2ZXum9bzmrjmpUxc0XTjp8nBgTU6imd0y//EUQA+UFOfUbh9QuxcTzoQzj5V4vg8
+         fYuFbR3PPaK9Aw/e38tM7ulqn9ON5BzP9VaMzlfvbXOu8WDUEUW5RPFyaP001bF6k1dy
+         lCsy9KMnFL850kmkzToQ+r+GQh+a5982xm5E8K91Hp4Cy/J1gGFNfSLgjXHukrpDvNVg
+         WcwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=Uv8fCJ2lMkxd/vYi4XRfq/grsPGO3XaS9NGpJZg3Axs=;
-        b=AMNqzEzY9sG1ZFKZJAOwgSQIgM2Sjs/a7lN71Cw3mMcC2Eo0hILq08hg+9Gp8KsSQ0
-         a1GWfc1vSgIr6QtleWwP3gpemRbnglYAZjG0N/t5hP6EH4cFYmQ8hpn6TTybdkXOhIHu
-         1aEqhTu3HQwUVfGslcj7gZP8qdidqNR5UQm9LXgliJ2kYukJfTbZSl3QL2nxCT85jNoF
-         SMCWLCsXV0inFlwpswLEGiVMg0rtaQMRZdoqPjcijXEv5GGV2QceBGIQ5hmp8eauX6/z
-         oB6puuEscY7qtd4S3/1VwGLE6cNj/gh6mcJ7eVj0mxZok9uBdLbYvGYT+9OAdXIMAej0
-         a7Sw==
-X-Gm-Message-State: AOAM5326kR1T8f5u2x31AnradWraGfyFqAcO1p/asCIL6iSSex4JCqRx
-	5u5nSgPW2VAoUcQzMbxhNnajrw==
-X-Google-Smtp-Source: ABdhPJyo2ein0pnGFDiIKxr+pdlsnAnX+m6cL41PCtD4eQXnt0Xe2D0GSjU0KA9HrYFFMLgapGqaPQ==
-X-Received: by 2002:a05:6512:20a:b0:479:8fb:2214 with SMTP id a10-20020a056512020a00b0047908fb2214mr21138768lfo.473.1654637550301;
-        Tue, 07 Jun 2022 14:32:30 -0700 (PDT)
+        bh=IOgvbccEmY2EAAw8SBRBQUpYKc7/xkzN9edkEzDNBjU=;
+        b=Y/N3QtDuYWEOQgn0mSqp2NhLLA20jiv8OJGoHm0kTK16j490uvUcmKbH7CGVKAVQ/e
+         1E1fYUBWpBm+/GWr6rrNswYspjLsglmSvklYTElTfNcO2btgcCvJ4usd6ZzVZGoR3Eq6
+         IpMwvUJnBmAhQjMgwYOTApqF2KcQBwgQR3o34lBA91xOSb2UlSw4tpwRKOoJyD5DYzWO
+         PnHQAmWJtyn8+H76CvP+yUKvqhMdHi745EpUNAuHVk04z8EtLnTjDeikI5f5ryJVxUWZ
+         h91OKBj0CT6ZqLnYYFdIg+M2EfXmT8+zvdoMq4g7YuJSu4i3u+M6Qr4nBxyV7iL/7SSJ
+         R7rA==
+X-Gm-Message-State: AOAM5327NoU5d4Jt3rnDAfcnFEJ9cknQ69rUKJctab6cOYuzbFzXt8xV
+	5C0aJUKNjA2pRrdcCeF5yLavng==
+X-Google-Smtp-Source: ABdhPJxEOC7Y0khF2naM3OdlHRxMcsVJw0zts5Oe2IjrEB3cJvurkxK/HQujc7TOMdxD4wvyiv2v/w==
+X-Received: by 2002:ac2:48a2:0:b0:478:f822:c44e with SMTP id u2-20020ac248a2000000b00478f822c44emr20314733lfg.88.1654637551341;
+        Tue, 07 Jun 2022 14:32:31 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id g23-20020ac24d97000000b0047255d21153sm3411343lfe.130.2022.06.07.14.32.29
+        by smtp.gmail.com with ESMTPSA id g23-20020ac24d97000000b0047255d21153sm3411343lfe.130.2022.06.07.14.32.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Jun 2022 14:32:29 -0700 (PDT)
+        Tue, 07 Jun 2022 14:32:30 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -80,16 +80,16 @@ To: Andy Gross <agross@kernel.org>,
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v1 17/30] phy: qcom-qmp-ufs: drop support for non-UFS PHY types
-Date: Wed,  8 Jun 2022 00:31:50 +0300
-Message-Id: <20220607213203.2819885-18-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v1 18/30] phy: qcom-qmp-usb: drop support for non-USB PHY types
+Date: Wed,  8 Jun 2022 00:31:51 +0300
+Message-Id: <20220607213203.2819885-19-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220607213203.2819885-1-dmitry.baryshkov@linaro.org>
 References: <20220607213203.2819885-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220607_223246_471103_DA5C8E5A 
-X-CRM114-Status: GOOD (  19.63  )
+X-CRM114-CacheID: sfid-20220607_223246_582799_D5C68CE6 
+X-CRM114-Status: GOOD (  17.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,20 +106,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Drop remaining support for PHY types other than UFS.
+Drop remaining support for PHY types other than USB.
 
 Acked-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 Tested-by: Bjorn Andersson <bjorn.andersson@linaro.org> # UFS, PCIe and USB on SC8180X
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 612 ++----------------------
- 1 file changed, 35 insertions(+), 577 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 435 +++---------------------
+ 1 file changed, 48 insertions(+), 387 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index a8d48c70532c..0bf1990651b6 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -986,7 +986,6 @@ static int qcom_qmp_phy_ufs_serdes_init(struct qmp_phy *qphy)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 4deafdd4a93b..f2e927e30e6a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -2059,7 +2059,6 @@ static int qcom_qmp_phy_usb_serdes_init(struct qmp_phy *qphy)
  	struct qcom_qmp *qmp = qphy->qmp;
  	const struct qmp_phy_cfg *cfg = qphy->cfg;
  	void __iomem *serdes = qphy->serdes;
@@ -127,29 +127,29 @@ index a8d48c70532c..0bf1990651b6 100644
  	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
  	int serdes_tbl_num = cfg->serdes_tbl_num;
  	int ret;
-@@ -996,35 +995,6 @@ static int qcom_qmp_phy_ufs_serdes_init(struct qmp_phy *qphy)
- 		qcom_qmp_phy_ufs_configure(serdes, cfg->regs, cfg->serdes_tbl_sec,
+@@ -2069,35 +2068,6 @@ static int qcom_qmp_phy_usb_serdes_init(struct qmp_phy *qphy)
+ 		qcom_qmp_phy_usb_configure(serdes, cfg->regs, cfg->serdes_tbl_sec,
  				       cfg->serdes_tbl_num_sec);
  
 -	if (cfg->type == PHY_TYPE_DP) {
 -		switch (dp_opts->link_rate) {
 -		case 1620:
--			qcom_qmp_phy_ufs_configure(serdes, cfg->regs,
+-			qcom_qmp_phy_usb_configure(serdes, cfg->regs,
 -					       cfg->serdes_tbl_rbr,
 -					       cfg->serdes_tbl_rbr_num);
 -			break;
 -		case 2700:
--			qcom_qmp_phy_ufs_configure(serdes, cfg->regs,
+-			qcom_qmp_phy_usb_configure(serdes, cfg->regs,
 -					       cfg->serdes_tbl_hbr,
 -					       cfg->serdes_tbl_hbr_num);
 -			break;
 -		case 5400:
--			qcom_qmp_phy_ufs_configure(serdes, cfg->regs,
+-			qcom_qmp_phy_usb_configure(serdes, cfg->regs,
 -					       cfg->serdes_tbl_hbr2,
 -					       cfg->serdes_tbl_hbr2_num);
 -			break;
 -		case 8100:
--			qcom_qmp_phy_ufs_configure(serdes, cfg->regs,
+-			qcom_qmp_phy_usb_configure(serdes, cfg->regs,
 -					       cfg->serdes_tbl_hbr3,
 -					       cfg->serdes_tbl_hbr3_num);
 -			break;
@@ -163,7 +163,7 @@ index a8d48c70532c..0bf1990651b6 100644
  	if (cfg->has_phy_com_ctrl) {
  		void __iomem *status;
  		unsigned int mask, val;
-@@ -1048,32 +1018,6 @@ static int qcom_qmp_phy_ufs_serdes_init(struct qmp_phy *qphy)
+@@ -2121,32 +2091,6 @@ static int qcom_qmp_phy_usb_serdes_init(struct qmp_phy *qphy)
  	return 0;
  }
  
@@ -193,10 +193,10 @@ index a8d48c70532c..0bf1990651b6 100644
 -	return 0;
 -}
 -
- static int qcom_qmp_phy_ufs_com_init(struct qmp_phy *qphy)
+ static int qcom_qmp_phy_usb_com_init(struct qmp_phy *qphy)
  {
  	struct qcom_qmp *qmp = qphy->qmp;
-@@ -1243,9 +1187,6 @@ static int qcom_qmp_phy_ufs_init(struct phy *phy)
+@@ -2316,9 +2260,6 @@ static int qcom_qmp_phy_usb_init(struct phy *phy)
  	if (ret)
  		return ret;
  
@@ -206,7 +206,7 @@ index a8d48c70532c..0bf1990651b6 100644
  	return 0;
  }
  
-@@ -1296,10 +1237,6 @@ static int qcom_qmp_phy_ufs_power_on(struct phy *phy)
+@@ -2369,10 +2310,6 @@ static int qcom_qmp_phy_usb_power_on(struct phy *phy)
  						    cfg->tx_tbl_num_sec, 2);
  	}
  
@@ -214,31 +214,30 @@ index a8d48c70532c..0bf1990651b6 100644
 -	if (cfg->type == PHY_TYPE_DP)
 -		cfg->configure_dp_tx(qphy);
 -
- 	qcom_qmp_phy_ufs_configure_lane(rx, cfg->regs,
+ 	qcom_qmp_phy_usb_configure_lane(rx, cfg->regs,
  				    cfg->rx_tbl, cfg->rx_tbl_num, 1);
  	if (cfg->rx_tbl_sec)
-@@ -1315,15 +1252,10 @@ static int qcom_qmp_phy_ufs_power_on(struct phy *phy)
- 						    cfg->rx_tbl_num_sec, 2);
+@@ -2389,14 +2326,10 @@ static int qcom_qmp_phy_usb_power_on(struct phy *phy)
  	}
  
--	/* Configure link rate, swing, etc. */
+ 	/* Configure link rate, swing, etc. */
 -	if (cfg->type == PHY_TYPE_DP) {
 -		cfg->configure_dp_phy(qphy);
 -	} else {
--		qcom_qmp_phy_ufs_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+-		qcom_qmp_phy_usb_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
 -		if (cfg->pcs_tbl_sec)
--			qcom_qmp_phy_ufs_configure(pcs, cfg->regs, cfg->pcs_tbl_sec,
+-			qcom_qmp_phy_usb_configure(pcs, cfg->regs, cfg->pcs_tbl_sec,
 -					       cfg->pcs_tbl_num_sec);
 -	}
-+	qcom_qmp_phy_ufs_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qcom_qmp_phy_usb_configure(pcs, cfg->regs, cfg->pcs_tbl, cfg->pcs_tbl_num);
 +	if (cfg->pcs_tbl_sec)
-+		qcom_qmp_phy_ufs_configure(pcs, cfg->regs, cfg->pcs_tbl_sec,
++		qcom_qmp_phy_usb_configure(pcs, cfg->regs, cfg->pcs_tbl_sec,
 +				       cfg->pcs_tbl_num_sec);
  
  	ret = reset_control_deassert(qmp->ufs_reset);
  	if (ret)
-@@ -1335,39 +1267,24 @@ static int qcom_qmp_phy_ufs_power_on(struct phy *phy)
- 		qcom_qmp_phy_ufs_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl_sec,
+@@ -2408,40 +2341,26 @@ static int qcom_qmp_phy_usb_power_on(struct phy *phy)
+ 		qcom_qmp_phy_usb_configure(pcs_misc, cfg->regs, cfg->pcs_misc_tbl_sec,
  				       cfg->pcs_misc_tbl_num_sec);
  
 -	/*
@@ -279,9 +278,9 @@ index a8d48c70532c..0bf1990651b6 100644
 -			dev_err(qmp->dev, "phy initialization timed-out\n");
 -			goto err_disable_pipe_clk;
 -		}
-+	status = pcs + cfg->regs[QPHY_PCS_READY_STATUS];
-+	mask = PCS_READY;
-+	ready = PCS_READY;
++	status = pcs + cfg->regs[QPHY_PCS_STATUS];
++	mask = cfg->phy_status;
++	ready = 0;
 +
 +	ret = readl_poll_timeout(status, val, (val & mask) == ready, 10,
 +				 PHY_INIT_COMPLETE_TIMEOUT);
@@ -289,9 +288,11 @@ index a8d48c70532c..0bf1990651b6 100644
 +		dev_err(qmp->dev, "phy initialization timed-out\n");
 +		goto err_disable_pipe_clk;
  	}
++
  	return 0;
  
-@@ -1387,25 +1304,20 @@ static int qcom_qmp_phy_ufs_power_off(struct phy *phy)
+ err_disable_pipe_clk:
+@@ -2460,25 +2379,20 @@ static int qcom_qmp_phy_usb_power_off(struct phy *phy)
  
  	clk_disable_unprepare(qphy->pipe_clk);
  
@@ -329,183 +330,10 @@ index a8d48c70532c..0bf1990651b6 100644
  	}
  
  	return 0;
-@@ -1459,112 +1371,6 @@ static int qcom_qmp_phy_ufs_set_mode(struct phy *phy,
- 	return 0;
+@@ -2755,223 +2669,13 @@ static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
+ 	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
  }
  
--static void qcom_qmp_phy_ufs_enable_autonomous_mode(struct qmp_phy *qphy)
--{
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
--	void __iomem *pcs = qphy->pcs;
--	void __iomem *pcs_misc = qphy->pcs_misc;
--	u32 intr_mask;
--
--	if (qphy->mode == PHY_MODE_USB_HOST_SS ||
--	    qphy->mode == PHY_MODE_USB_DEVICE_SS)
--		intr_mask = ARCVR_DTCT_EN | ALFPS_DTCT_EN;
--	else
--		intr_mask = ARCVR_DTCT_EN | ARCVR_DTCT_EVENT_SEL;
--
--	/* Clear any pending interrupts status */
--	qphy_setbits(pcs, cfg->regs[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR], IRQ_CLEAR);
--	/* Writing 1 followed by 0 clears the interrupt */
--	qphy_clrbits(pcs, cfg->regs[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR], IRQ_CLEAR);
--
--	qphy_clrbits(pcs, cfg->regs[QPHY_PCS_AUTONOMOUS_MODE_CTRL],
--		     ARCVR_DTCT_EN | ALFPS_DTCT_EN | ARCVR_DTCT_EVENT_SEL);
--
--	/* Enable required PHY autonomous mode interrupts */
--	qphy_setbits(pcs, cfg->regs[QPHY_PCS_AUTONOMOUS_MODE_CTRL], intr_mask);
--
--	/* Enable i/o clamp_n for autonomous mode */
--	if (pcs_misc)
--		qphy_clrbits(pcs_misc, QPHY_V3_PCS_MISC_CLAMP_ENABLE, CLAMP_EN);
--}
--
--static void qcom_qmp_phy_ufs_disable_autonomous_mode(struct qmp_phy *qphy)
--{
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
--	void __iomem *pcs = qphy->pcs;
--	void __iomem *pcs_misc = qphy->pcs_misc;
--
--	/* Disable i/o clamp_n on resume for normal mode */
--	if (pcs_misc)
--		qphy_setbits(pcs_misc, QPHY_V3_PCS_MISC_CLAMP_ENABLE, CLAMP_EN);
--
--	qphy_clrbits(pcs, cfg->regs[QPHY_PCS_AUTONOMOUS_MODE_CTRL],
--		     ARCVR_DTCT_EN | ARCVR_DTCT_EVENT_SEL | ALFPS_DTCT_EN);
--
--	qphy_setbits(pcs, cfg->regs[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR], IRQ_CLEAR);
--	/* Writing 1 followed by 0 clears the interrupt */
--	qphy_clrbits(pcs, cfg->regs[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR], IRQ_CLEAR);
--}
--
--static int __maybe_unused qcom_qmp_phy_ufs_runtime_suspend(struct device *dev)
--{
--	struct qcom_qmp *qmp = dev_get_drvdata(dev);
--	struct qmp_phy *qphy = qmp->phys[0];
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
--
--	dev_vdbg(dev, "Suspending QMP phy, mode:%d\n", qphy->mode);
--
--	/* Supported only for USB3 PHY and luckily USB3 is the first phy */
--	if (cfg->type != PHY_TYPE_USB3)
--		return 0;
--
--	if (!qmp->init_count) {
--		dev_vdbg(dev, "PHY not initialized, bailing out\n");
--		return 0;
--	}
--
--	qcom_qmp_phy_ufs_enable_autonomous_mode(qphy);
--
--	clk_disable_unprepare(qphy->pipe_clk);
--	clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
--
--	return 0;
--}
--
--static int __maybe_unused qcom_qmp_phy_ufs_runtime_resume(struct device *dev)
--{
--	struct qcom_qmp *qmp = dev_get_drvdata(dev);
--	struct qmp_phy *qphy = qmp->phys[0];
--	const struct qmp_phy_cfg *cfg = qphy->cfg;
--	int ret = 0;
--
--	dev_vdbg(dev, "Resuming QMP phy, mode:%d\n", qphy->mode);
--
--	/* Supported only for USB3 PHY and luckily USB3 is the first phy */
--	if (cfg->type != PHY_TYPE_USB3)
--		return 0;
--
--	if (!qmp->init_count) {
--		dev_vdbg(dev, "PHY not initialized, bailing out\n");
--		return 0;
--	}
--
--	ret = clk_bulk_prepare_enable(cfg->num_clks, qmp->clks);
--	if (ret)
--		return ret;
--
--	ret = clk_prepare_enable(qphy->pipe_clk);
--	if (ret) {
--		dev_err(dev, "pipe_clk enable failed, err=%d\n", ret);
--		clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
--		return ret;
--	}
--
--	qcom_qmp_phy_ufs_disable_autonomous_mode(qphy);
--
--	return 0;
--}
--
- static int qcom_qmp_phy_ufs_vreg_init(struct device *dev, const struct qmp_phy_cfg *cfg)
- {
- 	struct qcom_qmp *qmp = dev_get_drvdata(dev);
-@@ -1622,277 +1428,7 @@ static int qcom_qmp_phy_ufs_clk_init(struct device *dev, const struct qmp_phy_cf
- 	return devm_clk_bulk_get(dev, num, qmp->clks);
- }
- 
--static void phy_clk_release_provider(void *res)
--{
--	of_clk_del_provider(res);
--}
--
--/*
-- * Register a fixed rate pipe clock.
-- *
-- * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-- * controls it. The <s>_pipe_clk coming out of the GCC is requested
-- * by the PHY driver for its operations.
-- * We register the <s>_pipe_clksrc here. The gcc driver takes care
-- * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-- * Below picture shows this relationship.
-- *
-- *         +---------------+
-- *         |   PHY block   |<<---------------------------------------+
-- *         |               |                                         |
-- *         |   +-------+   |                   +-----+               |
-- *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-- *    clk  |   +-------+   |                   +-----+
-- *         +---------------+
-- */
--static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
--{
--	struct clk_fixed_rate *fixed;
--	struct clk_init_data init = { };
--	int ret;
--
--	ret = of_property_read_string(np, "clock-output-names", &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
--		return ret;
--	}
--
--	fixed = devm_kzalloc(qmp->dev, sizeof(*fixed), GFP_KERNEL);
--	if (!fixed)
--		return -ENOMEM;
--
--	init.ops = &clk_fixed_rate_ops;
--
--	/* controllers using QMP phys use 125MHz pipe clock interface */
--	fixed->fixed_rate = 125000000;
--	fixed->hw.init = &init;
--
--	ret = devm_clk_hw_register(qmp->dev, &fixed->hw);
--	if (ret)
--		return ret;
--
--	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
--	if (ret)
--		return ret;
--
--	/*
--	 * Roll a devm action because the clock provider is the child node, but
--	 * the child node is not actually a device.
--	 */
--	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
--}
--
 -/*
 - * Display Port PLL driver block diagram for branch clocks
 - *
@@ -698,30 +526,36 @@ index a8d48c70532c..0bf1990651b6 100644
 -	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
 -}
 -
--static const struct phy_ops qcom_qmp_phy_ufs_gen_ops = {
--	.init		= qcom_qmp_phy_ufs_enable,
--	.exit		= qcom_qmp_phy_ufs_disable,
--	.set_mode	= qcom_qmp_phy_ufs_set_mode,
--	.owner		= THIS_MODULE,
--};
--
--static const struct phy_ops qcom_qmp_phy_ufs_dp_ops = {
--	.init		= qcom_qmp_phy_ufs_init,
+-static const struct phy_ops qcom_qmp_phy_usb_gen_ops = {
++static const struct phy_ops qcom_qmp_phy_usb_ops = {
+ 	.init		= qcom_qmp_phy_usb_enable,
+ 	.exit		= qcom_qmp_phy_usb_disable,
+ 	.set_mode	= qcom_qmp_phy_usb_set_mode,
+ 	.owner		= THIS_MODULE,
+ };
+ 
+-static const struct phy_ops qcom_qmp_phy_usb_dp_ops = {
+-	.init		= qcom_qmp_phy_usb_init,
 -	.configure	= qcom_qmp_dp_phy_configure,
--	.power_on	= qcom_qmp_phy_ufs_power_on,
+-	.power_on	= qcom_qmp_phy_usb_power_on,
 -	.calibrate	= qcom_qmp_dp_phy_calibrate,
--	.power_off	= qcom_qmp_phy_ufs_power_off,
--	.exit		= qcom_qmp_phy_ufs_exit,
--	.set_mode	= qcom_qmp_phy_ufs_set_mode,
+-	.power_off	= qcom_qmp_phy_usb_power_off,
+-	.exit		= qcom_qmp_phy_usb_exit,
+-	.set_mode	= qcom_qmp_phy_usb_set_mode,
 -	.owner		= THIS_MODULE,
 -};
 -
 -static const struct phy_ops qcom_qmp_pcie_ufs_ops = {
-+static const struct phy_ops qcom_qmp_ufs_ops = {
- 	.power_on	= qcom_qmp_phy_ufs_enable,
- 	.power_off	= qcom_qmp_phy_ufs_disable,
- 	.set_mode	= qcom_qmp_phy_ufs_set_mode,
-@@ -1911,7 +1447,6 @@ int qcom_qmp_phy_ufs_create(struct device *dev, struct device_node *np, int id,
+-	.power_on	= qcom_qmp_phy_usb_enable,
+-	.power_off	= qcom_qmp_phy_usb_disable,
+-	.set_mode	= qcom_qmp_phy_usb_set_mode,
+-	.owner		= THIS_MODULE,
+-};
+-
+ static void qcom_qmp_reset_control_put(void *data)
+ {
+ 	reset_control_put(data);
+@@ -2984,7 +2688,6 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
  	struct qcom_qmp *qmp = dev_get_drvdata(dev);
  	struct phy *generic_phy;
  	struct qmp_phy *qphy;
@@ -729,20 +563,10 @@ index a8d48c70532c..0bf1990651b6 100644
  	char prop_name[MAX_PROP_NAME];
  	int ret;
  
-@@ -1968,28 +1503,6 @@ int qcom_qmp_phy_ufs_create(struct device *dev, struct device_node *np, int id,
- 	if (!qphy->pcs_misc)
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
- 
--	/*
--	 * Get PHY's Pipe clock, if any. USB3 and PCIe are PIPE3
--	 * based phys, so they essentially have pipe clock. So,
--	 * we return error in case phy is USB3 or PIPE type.
--	 * Otherwise, we initialize pipe clock to NULL for
--	 * all phys that don't need this.
--	 */
--	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
--	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
--	if (IS_ERR(qphy->pipe_clk)) {
+@@ -3051,16 +2754,12 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
+ 	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
+ 	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
+ 	if (IS_ERR(qphy->pipe_clk)) {
 -		if (cfg->type == PHY_TYPE_PCIE ||
 -		    cfg->type == PHY_TYPE_USB3) {
 -			ret = PTR_ERR(qphy->pipe_clk);
@@ -753,40 +577,32 @@ index a8d48c70532c..0bf1990651b6 100644
 -			return ret;
 -		}
 -		qphy->pipe_clk = NULL;
--	}
--
++		ret = PTR_ERR(qphy->pipe_clk);
++		if (ret != -EPROBE_DEFER)
++			dev_err(dev,
++				"failed to get lane%d pipe_clk, %d\n",
++				id, ret);
++		return ret;
+ 	}
+ 
  	/* Get lane reset, if any */
- 	if (cfg->has_lane_rst) {
- 		snprintf(prop_name, sizeof(prop_name), "lane%d", id);
-@@ -2004,14 +1517,7 @@ int qcom_qmp_phy_ufs_create(struct device *dev, struct device_node *np, int id,
+@@ -3077,14 +2776,7 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
  			return ret;
  	}
  
 -	if (cfg->type == PHY_TYPE_UFS || cfg->type == PHY_TYPE_PCIE)
 -		ops = &qcom_qmp_pcie_ufs_ops;
 -	else if (cfg->type == PHY_TYPE_DP)
--		ops = &qcom_qmp_phy_ufs_dp_ops;
+-		ops = &qcom_qmp_phy_usb_dp_ops;
 -	else
--		ops = &qcom_qmp_phy_ufs_gen_ops;
+-		ops = &qcom_qmp_phy_usb_gen_ops;
 -
 -	generic_phy = devm_phy_create(dev, np, ops);
-+	generic_phy = devm_phy_create(dev, np, &qcom_qmp_ufs_ops);
++	generic_phy = devm_phy_create(dev, np, &qcom_qmp_phy_usb_ops);
  	if (IS_ERR(generic_phy)) {
  		ret = PTR_ERR(generic_phy);
  		dev_err(dev, "failed to create qphy %d\n", ret);
-@@ -2066,11 +1572,6 @@ static const struct of_device_id qcom_qmp_phy_ufs_of_match_table[] = {
- };
- MODULE_DEVICE_TABLE(of, qcom_qmp_phy_ufs_of_match_table);
- 
--static const struct dev_pm_ops qcom_qmp_phy_ufs_pm_ops = {
--	SET_RUNTIME_PM_OPS(qcom_qmp_phy_ufs_runtime_suspend,
--			   qcom_qmp_phy_ufs_runtime_resume, NULL)
--};
--
- static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
- {
- 	struct qcom_qmp *qmp;
-@@ -2078,12 +1579,7 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
+@@ -3172,12 +2864,7 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
  	struct device_node *child;
  	struct phy_provider *phy_provider;
  	void __iomem *serdes;
@@ -799,7 +615,7 @@ index a8d48c70532c..0bf1990651b6 100644
  	int num, id, expected_phys;
  	int ret;
  
-@@ -2100,28 +1596,18 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
+@@ -3194,28 +2881,18 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
  		return -EINVAL;
  
  	/* per PHY serdes; usually located at base address */
@@ -831,7 +647,7 @@ index a8d48c70532c..0bf1990651b6 100644
  
  	mutex_init(&qmp->phy_mutex);
  
-@@ -2160,14 +1646,6 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
+@@ -3254,14 +2931,6 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
  
  	id = 0;
  	for_each_available_child_of_node(dev->of_node, child) {
@@ -844,16 +660,12 @@ index a8d48c70532c..0bf1990651b6 100644
 -		}
 -
  		/* Create per-lane phy */
- 		ret = qcom_qmp_phy_ufs_create(dev, child, id, serdes, cfg);
+ 		ret = qcom_qmp_phy_usb_create(dev, child, id, serdes, cfg);
  		if (ret) {
-@@ -2176,25 +1654,6 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
- 			goto err_node_put;
- 		}
- 
--		/*
--		 * Register the pipe clock provided by phy.
--		 * See function description to see details of this pipe clock.
--		 */
+@@ -3274,21 +2943,13 @@ static int qcom_qmp_phy_usb_probe(struct platform_device *pdev)
+ 		 * Register the pipe clock provided by phy.
+ 		 * See function description to see details of this pipe clock.
+ 		 */
 -		if (cfg->type == PHY_TYPE_USB3 || cfg->type == PHY_TYPE_PCIE) {
 -			ret = phy_pipe_clk_register(qmp, child);
 -			if (ret) {
@@ -868,18 +680,16 @@ index a8d48c70532c..0bf1990651b6 100644
 -					"failed to register DP clock source\n");
 -				goto err_node_put;
 -			}
--		}
++		ret = phy_pipe_clk_register(qmp, child);
++		if (ret) {
++			dev_err(qmp->dev,
++				"failed to register pipe clock source\n");
++			goto err_node_put;
+ 		}
++
  		id++;
  	}
  
-@@ -2216,7 +1675,6 @@ static struct platform_driver qcom_qmp_phy_ufs_driver = {
- 	.probe		= qcom_qmp_phy_ufs_probe,
- 	.driver = {
- 		.name	= "qcom-qmp-ufs-phy",
--		.pm	= &qcom_qmp_phy_ufs_pm_ops,
- 		.of_match_table = qcom_qmp_phy_ufs_of_match_table,
- 	},
- };
 -- 
 2.35.1
 
