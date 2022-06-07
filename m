@@ -4,92 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C40FFCCA482
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 22:41:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F951C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 22:43:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qdBFOo/NuDiTs4uXM5/09YK1VJhc8+KtGCDzVFOcqWs=; b=Gsh4IdyHaD1jmZ
-	3UvpD931abrNE0GxWfycv1H8ddATC5stm9v16ZRtgUINWDtsRFWTUS7ZE5G0rd1i+GP4zLrcUWo5x
-	4kcnFfIHa7Qx7ZyM2UifVq31tq+Rlphd3IWp/FDviQa9SzTnQrt41Ymu6nYvI3YGpoARFbCKXDNkw
-	ZEKMXfrrdbs4yocxGw3DKQYyht9MseahwMyB04Uom9J+URZWbK4ZCMi3nGHDsPePe2GfXcps/Vtnx
-	crUpSZ+mn8xhsoIkW1eLHVtD98pAMTPOVxK6izXMnJlg087R+e3y5p2/x8wv5TzNUhb1rtAavMERw
-	KQAfGmnNzmEuCw2Z3+rQ==;
+	List-Owner; bh=FWJZGk3cTP1hpav1vAo5jL8pNRJDBi8zUZWliF4cuzU=; b=3cNS/D34clLhfI
+	aZIyQJDgbFb5ostJnSR3XGNfArTuRyRqkb0d8VC1tBnk9sD9451957cehsPxR112E4wTiY0ofvhjd
+	2FsnICz2KPolZce7QB6vXDd/TsgDPVq/b1KuzCbV/nhC2yZ3PrPG5CCBtk0f6qDjbAzpqL9HNaiXF
+	g4yX/hFk6FUfE9kjsVo24TIJsjygwa0AObGmUtQOcKQ9ygZ8sIGJpx0AEBRVx+SkrnCAirzyQ5UyN
+	iSJvK5RP9zgzE24MSUr63kADVx6JWUnOWhaXSX5JnbeUaCb+CDuUEYX7jErZk2rvZzxhqhrOVPg4l
+	hp0arira8yJq2LdFWuGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyhss-009uhm-7n; Tue, 07 Jun 2022 22:41:10 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1nyhuq-009vJB-Ep; Tue, 07 Jun 2022 22:43:12 +0000
+Received: from mail-ot1-x332.google.com ([2607:f8b0:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyhso-009uUV-Bv
-	for linux-phy@bombadil.infradead.org; Tue, 07 Jun 2022 22:41:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=2imGqpmmUYIL/vBXDX4AMR6VhO9AAPmsJkl/66iJTZA=; b=Q8XnPGXhV2Dq1TsUHYpiXtqQFH
-	YMbO2Ms6iiGAPDSCHJFxOYW9QIwgj0d8cavhHkicHa5+UJ5VKMX/LXRn119ZOwvU992xoN/XOVEj2
-	cYI+l1/LwBhtuFq3uFUyu66cz9SEK8xUfttFlAP7yFelC/tKqFYAt68U3j9nMu+vaVUEPEHDRXgmk
-	qgBg7gCSncH0+Zal/HbNmTjNKHRZgLrhVjYbZjyx36CZeZIjJ1GHKoRQQonegVylwNbCmM9VkDIVx
-	9U058wv5hmry2PHwpIvR2Sc/PAS8pvvJVot9Vy6KKhGlC8iYZzUyW7XWd0evy0HH0Ne3ELwh69CZk
-	nTGXeJwg==;
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
-	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nygof-005pnJ-SG
-	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 21:32:51 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id y32so30276606lfa.6
-        for <linux-phy@lists.infradead.org>; Tue, 07 Jun 2022 14:32:40 -0700 (PDT)
+	id 1nyhun-009vHA-IK
+	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 22:43:11 +0000
+Received: by mail-ot1-x332.google.com with SMTP id r12-20020a056830448c00b0060aec7b7a54so13904156otv.5
+        for <linux-phy@lists.infradead.org>; Tue, 07 Jun 2022 15:43:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=2imGqpmmUYIL/vBXDX4AMR6VhO9AAPmsJkl/66iJTZA=;
-        b=wgyLw1ukIv27Jr7FA2UHBVDIW9I5o/409G8LQ9nro6bXSfsSl/TFXOinq21vCTFEeI
-         cF5dvLd3L6VAc703EkdJdX9GVWHqFj3hZbWFwTQV10hHlty6g3Kaf5fRv3p2xAmVbOrw
-         3m34tcLZ/6n6kh9uBNEoLUItkQAj1XntUTJosrpGAmypdiNRU5WQxAPtD/8aZpIGbCWH
-         p6euAtnd9cuvFYP557qQBIPPd6kQIsUX3Bk1psVeid/+6UBZPBrasL01eA10tgyJuNxi
-         6FaktP3dtytm4v/GCTwC1lPhe85rjV+WpRnUyYBwaeP4m+rxv3yyoyJzhPsbyjcOAc/e
-         bTbg==
+        h=date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:in-reply-to;
+        bh=2fKoWW6NOg5lxeXgt4oK9futpOxTdvNtK6BCDtPAU98=;
+        b=SolS7aXqDUswytp1fIPeZ8E1O3SQf6wC7YBU78MIsnycc/aht7NFwCUavHoI6an47Y
+         TUuuc48GSuMVJYOpJ14Z5Y+qsODzrZYwDUObm1f8e4XyCvphW5hPQrTajc6XPdZKzCb5
+         LlCje7mUunZrQIvSOEXGVBawzYxgCxwUeMkYQ+SkapFy5RW4cxafIQosi3FzQhYE/G6u
+         aqQW/J4nFuZ2gbrnANdIzSDKP1fwBuWLt40+SkGe1cGhRDeMOojyaJPQG64uf6DJ/buU
+         Fi9TXW46Rs2RP/CenV0BX0mwXdkI4o+sHrahqRUdSVkraBny2sYLjM9Hs90H4S/+7FYl
+         li8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=2imGqpmmUYIL/vBXDX4AMR6VhO9AAPmsJkl/66iJTZA=;
-        b=jQyaNWo3AkwIdclFOunDV2F2sFySNPIlzewRJE+eaj6rWjRBSjhy3ZHJllC1exEtqH
-         Oy/+r/rjTCsHFKoI7/tglWe/ydNQQmIdHNM//uBGtrkgoyO3CdhQJSBadYGvGU0bZVV8
-         wZMzlfTfnQc5wKOgD9AYLBKghlZG4Cd2cFOghHSXKJyr3A829JWjjkgfGSJXRlg+fpIp
-         yfMTL0fsOn4w6uIqBzFNyxL/Ucp2PhLvglZhNLFKbBpc662On3O5NDmFdvsRbJuFW+l2
-         N0IXIxNusHYQyPsLMR51exr2r7wO65Tn8C9RwUHbtJ1dNmxc3nTj/gExHiu43t7x112v
-         JR8A==
-X-Gm-Message-State: AOAM531Yyj8MC++dRPmeA15Nl4EzkyiLpOG53iQfRbxtkI9bE6kXRzCx
-	AGH/WoV96HlfwtSkWqDKuZlr46v0mLz5BgHbNEbMqA==
-X-Google-Smtp-Source: ABdhPJwFMyzjnfwFMJTEVGamo8VIoOOTzr7r22uif+Mr+AFqfKxBSwM8n6+HCBp/2K2axHKxLqqKBw==
-X-Received: by 2002:a05:6512:1052:b0:479:1f92:13b4 with SMTP id c18-20020a056512105200b004791f9213b4mr13089936lfb.200.1654637559197;
-        Tue, 07 Jun 2022 14:32:39 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id g23-20020ac24d97000000b0047255d21153sm3411343lfe.130.2022.06.07.14.32.38
+        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+         :mime-version:content-disposition:in-reply-to;
+        bh=2fKoWW6NOg5lxeXgt4oK9futpOxTdvNtK6BCDtPAU98=;
+        b=mNR2U93f8G27ReQQZhyK97feXD2AXZyjDeYkXg3BjzNQOZEVA3gEjrd5pBEo1PJXo7
+         Q/MpPxWJpoLraBSajkxplLMkznT36S8owciTRnmWn13/Bg1KkYTGBGJi0BHUpjT46fNK
+         t0XGB5+5KDuvDke/yESETKF1m8/P9SIx36Ti2l3cwG8bE3L570eXVV5+AuycMEuLuh7k
+         wlx824RbeoDqRcAZLFaGOIZiqqrcKgYSCHac5bMOyufmRp+qTZR54ohtQ66YN7tk2RJt
+         IDcb2Xfmte4/Nlm26AJeDv0wGJUozMShqxwE+lQgXy7wQToSSkS0IvrmclvoITbV9fq+
+         KNag==
+X-Gm-Message-State: AOAM531PKOm1vPOP8mXv2EdatEJeynULlwkpIyYEfrkO0LrbCQvolVFb
+	sGbwwkQSphaXq7adYCkMjzGc8Q==
+X-Google-Smtp-Source: ABdhPJySCSkrxVapnCB2pbL3mqq6c/Ha6taOEPIvN6imZnQFuRSIOn++8Bc839jTB8lMMNU1tRmMyA==
+X-Received: by 2002:a05:6830:9c2:b0:606:1e0a:cc8d with SMTP id y2-20020a05683009c200b006061e0acc8dmr13468851ott.265.1654641787842;
+        Tue, 07 Jun 2022 15:43:07 -0700 (PDT)
+Received: from ripper (104-57-184-186.lightspeed.austtx.sbcglobal.net. [104.57.184.186])
+        by smtp.gmail.com with ESMTPSA id u13-20020a056871008d00b000f5d4e5b9a0sm8903477oaa.2.2022.06.07.15.43.06
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Jun 2022 14:32:38 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v1 25/30] phy: qcom-qmp-ufs: drop multi-PHY support
-Date: Wed,  8 Jun 2022 00:31:58 +0300
-Message-Id: <20220607213203.2819885-26-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220607213203.2819885-1-dmitry.baryshkov@linaro.org>
-References: <20220607213203.2819885-1-dmitry.baryshkov@linaro.org>
+        Tue, 07 Jun 2022 15:43:07 -0700 (PDT)
+Date: Tue, 7 Jun 2022 15:45:30 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
+	Manu Gautam <mgautam@codeaurora.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/5] phy: qcom-qmp: Add USB3 5NM QMP UNI registers
+Message-ID: <Yp/VCg3UznbLKLuk@ripper>
+References: <20220607213543.4057620-1-bjorn.andersson@linaro.org>
+ <20220607213543.4057620-3-bjorn.andersson@linaro.org>
+ <f16657a3-15e5-f7d6-1f2b-58e2ea83dddc@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <f16657a3-15e5-f7d6-1f2b-58e2ea83dddc@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220607_223246_696171_05C71AEC 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20220607_154309_626521_25278E97 
+X-CRM114-Status: GOOD (  20.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,126 +94,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Each UFS QMP PHY device provides just a single UFS PHY. Drop support
-for handling multiple child PHYs.
+On Tue 07 Jun 14:58 PDT 2022, Dmitry Baryshkov wrote:
+> On 08/06/2022 00:35, Bjorn Andersson wrote:
+[..]
+> > +#define USB3_V5_5NM_UNI_QSERDES_COM_BIN_VCOCAL_CMP_CODE2_MODE0	0x1b0
+> > +#define USB3_V5_5NM_UNI_QSERDES_COM_BIN_VCOCAL_CMP_CODE1_MODE1	0x1b4
+> > +#define USB3_V5_5NM_UNI_QSERDES_COM_BIN_VCOCAL_CMP_CODE2_MODE1	0x1b8
+> > +#define USB3_V5_5NM_UNI_QSERDES_COM_BIN_VCOCAL_HSCLK_SEL		0x1bc
+> > +#define USB3_V5_5NM_UNI_QSERDES_COM_RESERVED_1			0x1c0
+> > +#define USB3_V5_5NM_UNI_QSERDES_COM_MODE_OPERATION_STATUS		0x1c4
+> 
+> These defines look completely compatible with the existing ones in the
+> QSERDES_V5_COM_ namespace. Please use them instead.
+> 
 
-Acked-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Tested-by: Bjorn Andersson <bjorn.andersson@linaro.org> # UFS, PCIe and USB on SC8180X
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 33 +++----------------------
- 1 file changed, 3 insertions(+), 30 deletions(-)
+Can you please confirm that all these constants are exactly the same as
+the existing V5 entries?
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index e9b32a3d5adb..a2526068232b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -669,8 +669,6 @@ struct qmp_phy {
-  * @vregs: regulator supplies bulk data
-  *
-  * @phys: array of per-lane phy descriptors
-- * @phy_mutex: mutex lock for PHY common block initialization
-- * @init_count: phy common block initialization count
-  * @ufs_reset: optional UFS PHY reset handle
-  */
- struct qcom_qmp {
-@@ -681,9 +679,6 @@ struct qcom_qmp {
- 
- 	struct qmp_phy **phys;
- 
--	struct mutex phy_mutex;
--	int init_count;
--
- 	struct reset_control *ufs_reset;
- };
- 
-@@ -931,17 +926,11 @@ static int qcom_qmp_phy_ufs_com_init(struct qmp_phy *qphy)
- 	void __iomem *pcs = qphy->pcs;
- 	int ret;
- 
--	mutex_lock(&qmp->phy_mutex);
--	if (qmp->init_count++) {
--		mutex_unlock(&qmp->phy_mutex);
--		return 0;
--	}
--
- 	/* turn on regulator supplies */
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
--		goto err_unlock;
-+		return ret;
- 	}
- 
- 	ret = clk_bulk_prepare_enable(cfg->num_clks, qmp->clks);
-@@ -956,14 +945,10 @@ static int qcom_qmp_phy_ufs_com_init(struct qmp_phy *qphy)
- 		qphy_setbits(pcs, QPHY_POWER_DOWN_CONTROL,
- 			     cfg->pwrdn_ctrl);
- 
--	mutex_unlock(&qmp->phy_mutex);
--
- 	return 0;
- 
- err_disable_regulators:
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
--err_unlock:
--	mutex_unlock(&qmp->phy_mutex);
- 
- 	return ret;
- }
-@@ -973,20 +958,12 @@ static int qcom_qmp_phy_ufs_com_exit(struct qmp_phy *qphy)
- 	struct qcom_qmp *qmp = qphy->qmp;
- 	const struct qmp_phy_cfg *cfg = qphy->cfg;
- 
--	mutex_lock(&qmp->phy_mutex);
--	if (--qmp->init_count) {
--		mutex_unlock(&qmp->phy_mutex);
--		return 0;
--	}
--
- 	reset_control_assert(qmp->ufs_reset);
- 
- 	clk_bulk_disable_unprepare(cfg->num_clks, qmp->clks);
- 
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
- 
--	mutex_unlock(&qmp->phy_mutex);
--
- 	return 0;
- }
- 
-@@ -1322,7 +1299,7 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
- 	struct phy_provider *phy_provider;
- 	void __iomem *serdes;
- 	const struct qmp_phy_cfg *cfg = NULL;
--	int num, id, expected_phys;
-+	int num, id;
- 	int ret;
- 
- 	qmp = devm_kzalloc(dev, sizeof(*qmp), GFP_KERNEL);
-@@ -1342,10 +1319,6 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
- 	if (IS_ERR(serdes))
- 		return PTR_ERR(serdes);
- 
--	expected_phys = cfg->nlanes;
--
--	mutex_init(&qmp->phy_mutex);
--
- 	ret = qcom_qmp_phy_ufs_clk_init(dev, cfg);
- 	if (ret)
- 		return ret;
-@@ -1360,7 +1333,7 @@ static int qcom_qmp_phy_ufs_probe(struct platform_device *pdev)
- 
- 	num = of_get_available_child_count(dev->of_node);
- 	/* do we have a rogue child node ? */
--	if (num > expected_phys)
-+	if (num > 1)
- 		return -EINVAL;
- 
- 	qmp->phys = devm_kcalloc(dev, num, sizeof(*qmp->phys), GFP_KERNEL);
--- 
-2.35.1
+[..]
+> > +/* Module: USB3_UNI_PCS_USB3_PCIE_USB3_UNI_PCS_USB3 */
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_POWER_STATE_CONFIG1		0x00
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_AUTONOMOUS_MODE_STATUS		0x04
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_AUTONOMOUS_MODE_CTRL		0x08
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_AUTONOMOUS_MODE_CTRL2		0x0c
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_LFPS_RXTERM_IRQ_SOURCE_STATUS	0x10
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR		0x14
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL		0x18
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_LFPS_TX_ECSTART			0x1c
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_LFPS_PER_TIMER_VAL		0x20
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_LFPS_TX_END_CNT_U3_START		0x24
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_LFPS_CONFIG1			0x28
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RXEQTRAINING_LOCK_TIME		0x2c
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RXEQTRAINING_WAIT_TIME		0x30
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RXEQTRAINING_CTLE_TIME		0x34
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RXEQTRAINING_WAIT_TIME_S2		0x38
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RXEQTRAINING_DFE_TIME_S2		0x3c
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RCVR_DTCT_DLY_U3_L		0x40
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RCVR_DTCT_DLY_U3_H		0x44
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_ARCVR_DTCT_EN_PERIOD		0x48
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_ARCVR_DTCT_CM_DLY			0x4c
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_TXONESZEROS_RUN_LENGTH		0x50
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_ALFPS_DEGLITCH_VAL		0x54
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_SIGDET_STARTUP_TIMER_VAL		0x58
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_TEST_CONTROL			0x5c
+> > +#define USB3_V5_5NM_UNI_PCS_USB3_RXTERMINATION_DLY_SEL		0x60
+> 
+> These look like QPHY_V5_PCS_USB3, but without additional 0x300 offset. I'd
+> suggest modifying qcom-qmp-phy-usb.c to allocate another register space for
+> pcs_usb and updating QPHY_V4_PCS_USB3_foo / QPHY_V5_PCS_USB3_foo defines to
+> remove this offset.
+> 
+> Afterwards most if not all constants from this header can be merged into
+> phy-qcom-qmp.h I do not think that it makes sense to split this header at
+> this moment. The QSERDES_COM/_TX/_RX/_PCS defines are common to all PHY
+> types.
+> 
 
+You might be right, but I spent considerable time debugging the combo
+phy (which is version 5.0.0) and in the end it turned out that it's not
+the same offsets.
+
+I really would prefer that we stop haphazardly try to fit things into
+the phy-qcom-qmp.h with version numbers that we essentially make up
+base, when Qualcomm dumps the register layout for each generation in
+their downstream kernel.
+
+Regards,
+Bjorn
 
 -- 
 linux-phy mailing list
