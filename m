@@ -4,83 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C88F0C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 11:28:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95D7BC433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jun 2022 12:28:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Wx8P7S0N1mZ52LzOmr1fLtzGorWHHab8mNQ9WgprQg=; b=yrTzSmlmsA3Jq6
-	pTZcYQw/miDoyDgyFk8d+87U/3repy691HeQzeH+z37HtfxYYWJPurj0zxFSCNFxNB3vHdBn4ILEC
-	LHBYdWcbGLCUySXx1siAN4qMYWcZWtqw5m8J05xjXh0rHTryMB06BF6Eojhy44YwzD0NA+XPXutDs
-	twAjxL1JeciafxyApKb8hHBe4ZXUV/cueo0bAEBQBJZGJcKBXZUXHrizmyWwVIwhcgyx+PfmUle55
-	TPu3SsK38NdKqG4wYtREa1H9KU5alON308fBIEyl/eqkgMvLPck3aeRCPhchDoBI9MridibLa3ERL
-	PFSv7dDFhzcgQE/x7N9w==;
+	List-Owner; bh=8rKvHbF3vez1Ir/eIllRH/LwCI/czAS/1fiZPsy6Df0=; b=QUnaw/mxgDQFQ5
+	bdKizXnIjnxXLf/gfUNBuegTxmNNFUFinud5llg2y3LwZQSATWb0nBZAiTRFrjbpCPcwB8b5EKVTO
+	1HoE6qN/ahzpp5exEIOAZWNS8PrHZWXgEY1EPDnPtm1gjNtj1cPwA/EzMQBmSvB9SMm07hWagvjpn
+	uerO+S+VSMTgN0Cs827v+xaTzxOkT9q7hZpzfrvmpTvUiF7v+Xcu0ETCvxXTIoG3q8Terg7yqTOvT
+	+syAandx8GcVClTFZH2C14aRFHM5rKOIoh3DGiI3fk+kT5mE0QYDVVrF9o2k1sciK9Lw8+z3C8/R/
+	gsa6vFXcknAkpQJJiOcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyXNc-00744T-Un; Tue, 07 Jun 2022 11:28:12 +0000
-Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
+	id 1nyYJe-007LaA-MD; Tue, 07 Jun 2022 12:28:10 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyXJK-0072K8-0X
-	for linux-phy@lists.infradead.org; Tue, 07 Jun 2022 11:23:47 +0000
-Received: by mail-ej1-x62e.google.com with SMTP id v1so23843872ejg.13
-        for <linux-phy@lists.infradead.org>; Tue, 07 Jun 2022 04:23:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=0bdzMNhV+eEkaALdIGf5lJGoFxZEf1N7uScazlN3ABI=;
-        b=AQj3G2h/moiSY90+Zprxhki7NKUcfZ1jVdtK2htMWc0U8/rII/5R9GJjcrR72PktfO
-         9jrq77utdRXjm5SzKL/KKU7spjaJDcX0kyTgg6E1zrAEqbvONK1PcpW5njWT0DxGArui
-         natuICTBSPCEHXt3GEXrzkEymw9VNlesh8sAkC9JWIulSeRn4GwEb4E4nGHCc+JrZAjr
-         ppTjacxZZMuAfiAyKTl4NTLIRnuiYtq2GnHMpyiHrZZF0x5Ah46IyMoBkYYcj2u37he9
-         TFWZCU3DCn/phiPXxHfHxWx3FS4B9HPjXgLTpIFHg1DuxwJXz74NEhIS8OOvt7TR3cdL
-         7fqw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=0bdzMNhV+eEkaALdIGf5lJGoFxZEf1N7uScazlN3ABI=;
-        b=U68Dd6m1uv9CyL94z/EdAe/H+eJ4JwQ+u2R6Dwm9iOQLkg9/610ybViAYJmDmlQbSC
-         kZeXv3ceiMaH5TI4cE45Q9fyQhfKpXnwUXfSZE2D3cCtMuILHTYObV6SeT9z6UL43CIH
-         4VSgcGLF8fPpj0nrPUobrF2hi2d1PjFsHc65Bh8/z6MUrrn/7eJC1d/5/woMhy1DIQ7v
-         FsMaiuV1QwSNFl4B2gcPgfQm3KKdnkNezIuCWErl2mRP7ImxfU0XVs95fOAFtR3Ud0JU
-         XQaZJHyaQZEwPQ8FCgfjRDfIYlFtkTGMED32jMhL0d65xsCtv5mJ5J+zORfz1y84hfV0
-         2ssg==
-X-Gm-Message-State: AOAM531DxmSBDNAXtHW6WCPSuAusF9GJn+LWCW4xgveV7gwTjnDx4BwZ
-	aztwlcLzsFUF/K+cjOm7gHXhPg==
-X-Google-Smtp-Source: ABdhPJyNkoR93R7Td3RPfDitzwFDD3/QZ+0tDUF3Fae0/IAJyHXMcRvv/v3MvfX+oytsSYwgkF8F1Q==
-X-Received: by 2002:a17:906:99ca:b0:711:bdca:b85a with SMTP id s10-20020a17090699ca00b00711bdcab85amr12530244ejn.224.1654601020710;
-        Tue, 07 Jun 2022 04:23:40 -0700 (PDT)
-Received: from [192.168.0.183] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id v2-20020a170906b00200b006ff05d4726esm7512210ejy.50.2022.06.07.04.23.39
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 07 Jun 2022 04:23:40 -0700 (PDT)
-Message-ID: <d5310b6a-ffe9-a72d-f324-2c00db036ae0@linaro.org>
-Date: Tue, 7 Jun 2022 13:23:39 +0200
+	id 1nyYJ5-007LKs-Hf; Tue, 07 Jun 2022 12:27:38 +0000
+X-UUID: e98ae71e228e404eae696004532dd6b0-20220607
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.5,REQID:3f3f5662-2e3d-45f4-9efa-149a66c15148,OB:0,LO
+	B:0,IP:0,URL:5,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+	ON:release,TS:5
+X-CID-META: VersionHash:2a19b09,CLOUDID:a166f3e4-2ba2-4dc1-b6c5-11feb6c769e0,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
+	,QS:0,BEC:nil
+X-UUID: e98ae71e228e404eae696004532dd6b0-20220607
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+	(envelope-from <rex-bc.chen@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 82989194; Tue, 07 Jun 2022 05:27:26 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 7 Jun 2022 05:24:32 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Tue, 7 Jun 2022 20:24:31 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Tue, 7 Jun 2022 20:24:31 +0800
+Message-ID: <8af7938ae9244e4b7caf62e0c6ce0bcdddc13889.camel@mediatek.com>
+Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
+	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
+	<matthias.bgg@gmail.com>, Chunfeng Yun
+ =?UTF-8?Q?=28=E4=BA=91=E6=98=A5=E5=B3=B0=29?= <Chunfeng.Yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao Shi
+ =?UTF-8?Q?=28=E7=9F=B3=E8=AE=B0=E6=B6=9B=29?= <jitao.shi@mediatek.com>
+CC: Markus Schneider-Pargmann <msp@baylibre.com>,
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-fbdev@vger.kernel.org"
+	<linux-fbdev@vger.kernel.org>
+Date: Tue, 7 Jun 2022 20:24:31 +0800
+In-Reply-To: <0bd8b0c66b9e2a1b63280e7eab63048bee7fe786.camel@mediatek.com>
+References: <20220523104758.29531-1-granquet@baylibre.com>
+	 <20220523104758.29531-19-granquet@baylibre.com>
+	 <0bd8b0c66b9e2a1b63280e7eab63048bee7fe786.camel@mediatek.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.10.0
-Subject: Re: [PATCH v4 3/5] phy: samsung: ufs: constify samsung_ufs_phy_cfg
-Content-Language: en-US
-To: Chanho Park <chanho61.park@samsung.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20220607072907.127000-1-chanho61.park@samsung.com>
- <CGME20220607072938epcas2p4aa59fc2826fe0563bc1f8f68301e2bb4@epcas2p4.samsung.com>
- <20220607072907.127000-4-chanho61.park@samsung.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220607072907.127000-4-chanho61.park@samsung.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220607_042346_132993_1E8B89E6 
-X-CRM114-Status: UNSURE (   6.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220607_052735_619458_686B8546 
+X-CRM114-Status: GOOD (  37.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,18 +99,156 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/06/2022 09:29, Chanho Park wrote:
-> Put const qualifier of samsung_ufs_phy_cfg pointer because they will
-> not be changed from drvdata.
+On Tue, 2022-06-07 at 14:21 +0800, CK Hu wrote:
+> Hi, Rex:
 > 
-> Signed-off-by: Chanho Park <chanho61.park@samsung.com>
+> On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> > From: Markus Schneider-Pargmann <msp@baylibre.com>
+> > 
+> > This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
+> > 
+> > It supports the mt8195, the embedded DisplayPort units. It offers
+> > DisplayPort 1.4 with up to 4 lanes.
+> > 
+> > The driver creates a child device for the phy. The child device
+> > will
+> > never exist without the parent being active. As they are sharing a
+> > register range, the parent passes a regmap pointer to the child so
+> > that
+> > both can work with the same register range. The phy driver sets
+> > device
+> > data that is read by the parent to get the phy device that can be
+> > used
+> > to control the phy properties.
+> > 
+> > This driver is based on an initial version by
+> > Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> > 
+> > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> > ---
+> 
+> [snip]
+> 
+> > +
+> > +static irqreturn_t mtk_dp_hpd_event_thread(int hpd, void *dev)
+> > +{
+> > +	struct mtk_dp *mtk_dp = dev;
+> > +	int event;
+> > +	u8 buf[DP_RECEIVER_CAP_SIZE] = {};
+> > +
+> > +	event = mtk_dp_plug_state(mtk_dp) ? connector_status_connected
+> > :
+> > +						  connector_status_disc
+> > onnected;
+> > +
+> > +	if (event < 0)
+> 
+> event is always > 0, isn't it?
+> 
+Hello CK,
 
+ok, I will move this to dp patch.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> > +		return IRQ_HANDLED;
+> > +
+> > +	if (mtk_dp->drm_dev) {
+> > +		dev_info(mtk_dp->dev, "drm_helper_hpd_irq_event\n");
+> > +		drm_helper_hpd_irq_event(mtk_dp->bridge.dev);
+> 
+> I think this ISR would come once. If bridge has not attached, the drm
+> core would lost this event. Maybe you should enable eDP hardware
+> after
+> bridge attached or send this event when attached.
+> 
 
+for edp patch, I will move it to (mtk_dp_bridge_attach).
+for dp patch, I will add it back.
 
-Best regards,
-Krzysztof
+> > +	}
+> > +
+> > +	if (mtk_dp->train_info.cable_state_change) {
+> 
+> Executing this thread imply cable_state_change = true, so drop
+> cable_state_change.
+> 
+
+In mtk_dp_hpd_isr_handler(), there is another irq
+"MTK_DP_HPD_INTERRUPT" which means the sink devices give a interrupt to
+source device. it's not about connected status, so I think we still
+need this.
+
+> > +		mtk_dp->train_info.cable_state_change = false;
+> > +
+> > +		mtk_dp->train_state = MTK_DP_TRAIN_STATE_STARTUP;
+> > +
+> > +		if (!mtk_dp->train_info.cable_plugged_in ||
+> > +		    !mtk_dp_plug_state(mtk_dp)) {
+> 
+> I do not like two variable to present one thing. If
+> 
+> mtk_dp->train_info.cable_plugged_in = false
+> and
+> mtk_dp_plug_state(mtk_dp) = ture
+> 
+> What does this mean? I think this mean 'now' is connected because
+> cable_plugged_in is old information and mtk_dp_plug_state() is
+> current
+> information.
+> 
+> But I would like to keep cable_plugged_in and drop
+> mtk_dp_plug_state()
+> because cable_plugged_in would be changed in isr and it would be the
+> same as mtk_dp_plug_state().
+> 
+> Regards,
+> CK
+> 
+
+ok, I will drop this.
+
+BRs,
+Rex
+
+> > +			mtk_dp_video_mute(mtk_dp, true);
+> > +
+> > +			mtk_dp_initialize_priv_data(mtk_dp);
+> > +			mtk_dp_set_idle_pattern(mtk_dp, true);
+> > +			if (mtk_dp->has_fec)
+> > +				mtk_dp_fec_enable(mtk_dp, false);
+> > +
+> > +			mtk_dp_update_bits(mtk_dp,
+> > MTK_DP_TOP_PWR_STATE,
+> > +					   DP_PWR_STATE_BANDGAP_TPLL,
+> > +					   DP_PWR_STATE_MASK);
+> > +		} else {
+> > +			mtk_dp_update_bits(mtk_dp,
+> > MTK_DP_TOP_PWR_STATE,
+> > +					   DP_PWR_STATE_BANDGAP_TPLL_LA
+> > NE,
+> > +					   DP_PWR_STATE_MASK);
+> > +			drm_dp_read_dpcd_caps(&mtk_dp->aux, buf);
+> > +			mtk_dp->train_info.link_rate =
+> > +				min_t(int, mtk_dp->max_linkrate,
+> > +				      buf[mtk_dp->max_linkrate]);
+> > +			mtk_dp->train_info.lane_count =
+> > +				min_t(int, mtk_dp->max_lanes,
+> > +				      drm_dp_max_lane_count(buf));
+> > +		}
+> > +	}
+> > +
+> > +	if (mtk_dp->train_info.irq_status & MTK_DP_HPD_INTERRUPT) {
+> > +		dev_dbg(mtk_dp->dev, "MTK_DP_HPD_INTERRUPT\n");
+> > +		mtk_dp->train_info.irq_status &= ~MTK_DP_HPD_INTERRUPT;
+> > +		mtk_dp_hpd_sink_event(mtk_dp);
+> > +	}
+> > +
+> > +	return IRQ_HANDLED;
+> > +}
+> > +
+> 
+> 
+
 
 -- 
 linux-phy mailing list
