@@ -4,64 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CB79C43334
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 16:24:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AC85C43334
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 16:26:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LuwnLsSKyFpED5AqaOzcAuMetnpuO3qxlLkZDArWcHs=; b=JYb8irE0bhCV/W
-	gxsJ2SkPtLSozMhkxuKfXsQbF8JN2GEFfrWov2Q29F/nzA2kmHI4ZzEf5f/6xmjHQ0Wn4w6r37NF0
-	21l0mwrsRtlACn54PO8pBDQRyr0K1tq+mBwJbgViA/QGNetTjfIl7eZgkUZXJRJM1qYZq92xOZMto
-	mqy+tYNDJaWaT9Ha4KvR/Xk9NTBDmbU5KhSj8Gv/UA6rw8WvIBkjU66j7dXwZ2NETAviV3j9rhzCV
-	KNDXKh4uScRpombI0emDMKz9vox0KDhbvZOl+JW3/Rw1nvjdna2A8u5+AEwjgrOVbKwHUxG3V6Q9n
-	uGBNMchjmEcP/h/0CPYA==;
+	List-Owner; bh=CRlah5bNrqV76girtJOtJAwXcjlunxUBA135X1ifOZQ=; b=ffymDByFDOIhrC
+	5QVG7a+FBotTIzQCp9nMOzrJCQV/hQzJH8XyVIw6cf1AX3C/iXd5zBEKi0yLDAoJwMkpsdWd3BLC9
+	qgXLmYah3l18oiaiAn3vcfG6hQRvN3MHdCNzVh8A70WugxPX8GO+gTOjLJR0WE4M0/MJutB+7aJAU
+	hFqxLccTGTLG9tueKZ3c2HBQp/qIRRp8K0D2qPqzRFUreFScGcn1376EV0jITrIPvyA0nbS3B5PmD
+	IHtyczCMFpPTSsECN4LzChgVqI2f/qZOirZfK+VGxMetD8fTwHhi3cebLrHBZZf2+IWS1+I/FxuQB
+	MpMwfKtAO6bKguqKPQVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyyUM-00EI3Q-Gn; Wed, 08 Jun 2022 16:24:58 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1nyyW4-00EIXu-Mc; Wed, 08 Jun 2022 16:26:44 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyyUJ-00EI2V-Vz
-	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 16:24:57 +0000
+	id 1nyyVs-00EITl-E3; Wed, 08 Jun 2022 16:26:33 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 75C94B82615;
-	Wed,  8 Jun 2022 16:24:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CAECC34116;
-	Wed,  8 Jun 2022 16:24:52 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id CFA2261797;
+	Wed,  8 Jun 2022 16:26:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7A331C34116;
+	Wed,  8 Jun 2022 16:26:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1654705493;
-	bh=qbDIxo78te+eB8Fn0aTs9JNutyJfPowSyC5v29AtvOQ=;
+	s=k20201202; t=1654705591;
+	bh=7/IFX0N2QuG0F550izghh0woR6TSscFQ9Ozz+uwyO4I=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=iUu0tt/0mQU6v+tmxBiIUwZXW+yAMPfobkaxbA+vg0lXh33oSaQjmPkMmt8cEs2mu
-	 LExj345EDd1J3l+eYVQipLav9LP4oywtRNJ6BfnPHPRuDziBJKQt7+fApAyQoefkTO
-	 nqsoXp4MYAIyul+l+bx5watENLV2/wVUE4CzTAoleUH90iUq+AVCOgsKGp8d6jVagf
-	 kTuiQnMX6bsUf/GDB31l7bFlOEleF29Rvt4TEfda3jQnY9wKvp4VCUb4snDhPu3Ewd
-	 l/r6AUpYznq3foHLBxC7XLi+yIrXs/VczoaQPuOQgRrGb38tDs8+pRF54Zm4cyQLkH
-	 1smrSE4AP1mnw==
-Date: Wed, 8 Jun 2022 21:54:48 +0530
+	b=n8PqrbgUHO5J7ywnOBmi9zVVv9b1xTnxrMm1Ql1DdvKvEkwbE00Zi7Q46uSgJhvMi
+	 AcHGG0Ub/FMmCJBuDr5Axk4A0nIBzXiNkdq1Pb1htVzQTwab9AeHguR86t2tbONjQo
+	 /2Ob3hrjCgcfMYT2CIz270U2/JUrWEZtQpFkl77Qh9wIHPTvL7I7vU/nNA0qAbcaw6
+	 YC3bC2nj5/4XZ/Z8t6twQ4RVqrRiM45coqLAD0dOlT8vhPPyZ0MIVEIlWgwQVCAuDe
+	 6In2Z4vUWoJpBiyFv4Q/+K7qT4DXc15VSmKgXSk720Vk84So9RWfWTq/acUxv01O7o
+	 icRVz+Ssp1+1g==
+Date: Wed, 8 Jun 2022 21:56:26 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Wesley Cheng <quic_wcheng@quicinc.com>
-Cc: krzysztof.kozlowski+dt@linaro.org, lgirdwood@gmail.com,
-	broonie@kernel.org, gregkh@linuxfoundation.org,
-	bjorn.andersson@linaro.org, kishon@ti.com, robh+dt@kernel.org,
-	agross@kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	quic_jackp@quicinc.com
-Subject: Re: [PATCH] dt-bindings: Update QCOM USB subsystem maintainer
- information
-Message-ID: <YqDNUN7g6IVPMdQB@matsya>
-References: <20220603021432.13365-1-quic_wcheng@quicinc.com>
+To: Chanho Park <chanho61.park@samsung.com>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH RESEND] phy: samsung: exynosautov9-ufs: correct TSRV
+ register configurations
+Message-ID: <YqDNsqCyXvZ9P5Jg@matsya>
+References: <CGME20220603050554epcas2p27d36b694e2f48cc796ddc34432c5808f@epcas2p2.samsung.com>
+ <20220603050536.61957-1-chanho61.park@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220603021432.13365-1-quic_wcheng@quicinc.com>
+In-Reply-To: <20220603050536.61957-1-chanho61.park@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220608_092456_210314_01C31D60 
-X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-CacheID: sfid-20220608_092632_532735_D9C478DD 
+X-CRM114-Status: UNSURE (   7.44  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,20 +76,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02-06-22, 19:14, Wesley Cheng wrote:
-> Update devicetree binding files with the proper maintainer, and updated
-> contact email.
+On 03-06-22, 14:05, Chanho Park wrote:
+> For exynos auto v9's UFS MPHY, We should use 0x50 offset of TSRV register
+> configurations. So, it must be
 > 
-> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,qmp-usb3-dp-phy.yaml | 2 +-
->  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml       | 2 +-
->  .../devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml         | 2 +-
->  .../devicetree/bindings/regulator/qcom,usb-vbus-regulator.yaml  | 2 +-
->  Documentation/devicetree/bindings/usb/qcom,dwc3.yaml            | 2 +-
+> s/PHY_TRSV_REG_CFG/PHY_TRSV_REG_CFG_AUTOV9/g
 
-pls split to per subsystem, phy, regulator and usb so that respective
-maintainer can do the needful
+Applied, thanks
 
 -- 
 ~Vinod
