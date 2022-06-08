@@ -4,68 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21B2CC433EF
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 15:39:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FDD4C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 15:54:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+mRw8JAJg5NA5irg8IDJOuh7KkbYSEqLt1IEu7I7rNU=; b=KhLYTBZfETU+/x
-	ODm8zB3vPLTBIa4ZzvFpDGOwMXRJrOEBTGn1BDfkJsW6B1/qcnhpRFdIOVnNKCseGw9Atp5wYrvfk
-	xbwkvNotWz1Bt6ellJc0JXXuNChlsZW2P3Gt635THR44Q6CT3qXsnVBoyCi9bxleVsqtt6kIiZ4qw
-	CGe8zH4DOTH/Dx2tVufbSwV1VD0zJn8LN7bPn58e/UZgVxkoqn0072d6z/DJNWD/pk74ktELFWMDk
-	54oo5eE3xH34Nd5LXAb3n4R2zJ31hk2o2QzFFo+sZFkoiCbP7Q7j9Yr3Whi7QPc/im5KU7UJdThXu
-	6j1zY55xTiWdVYWVyuvQ==;
+	List-Owner; bh=NcJHXX8KcgW4JRpEDBaFVGhr7xzYzsdhvqGtvoP0yF0=; b=167JPAsTZT65PV
+	I47nAuxe2PhLF8rHVQwrAM6Efxj0r+HNFUpBXL8jNGJ7+q8TSUIZinIj3rhpTmwptDKLJjhKs3T2c
+	KGp9JTbflZpWN48xq6mDVjIKeoSyISzpbE/nP3NuhmaOvKhERKpB1N3lQoLDjHLbx2gh9GnsRqgEN
+	08jeuNyIMCB3+m7oH9eFP5V05y8+5IoGaaTywHGPTWHPNfbUAGOWuRvs+1LV5A9sl51lwBzZs9hNL
+	FruWwxPDDaRNcMmQtC7CK3au5ghoKhvDFkEfKCD4a3C2o3DUf+aZdG6xeXY9ZUAgyGv9kCb+Rx+k8
+	H6Dq5OaLicx6KkP4bLnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyxlz-00E412-AF; Wed, 08 Jun 2022 15:39:07 +0000
+	id 1nyy0N-00E9Rz-5l; Wed, 08 Jun 2022 15:53:59 +0000
 Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyxlw-00E40T-O8
-	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 15:39:06 +0000
+	id 1nyy0J-00E9Q4-65
+	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 15:53:57 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 5F159B8261C;
-	Wed,  8 Jun 2022 15:39:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1300BC34116;
-	Wed,  8 Jun 2022 15:39:00 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id D7968B82615;
+	Wed,  8 Jun 2022 15:53:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC017C34116;
+	Wed,  8 Jun 2022 15:53:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1654702742;
-	bh=nsyJF3pXdweJoPkZuCtmk2FLBqcSIdPNeR+uaAPmkd0=;
+	s=k20201202; t=1654703632;
+	bh=8I9ndSA8ysJ7knYeBSEFb57EYrZdMtUNTBUVavgL6Ps=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=K1qQ8DTPCBBnskV/dUbQ3macERVbOoszjDUywAD2ERkwPhgvDEGLjnFpgnUR18t4C
-	 RGMyuR5Wwrucrbgy8Pf+xazXJYk3lOvvGv5pGLR6mh9YtZHYOu20IqRjAv5n3QlFFu
-	 hZ6JwUdIy1qhQBXmp+2tUfwWe7BaxrGdDpuhAhf70st36XwV2v4A/24VvTP1ZHIBBa
-	 HOD4Nz+ek1Shig3aNVsl/qAZXMDmL5equZF9oFi/XF7Z54DFGDHsJnv0hSaP27LBKj
-	 7/M5acZoNzTOUQQ2+gtWusi2QLKckrBnvVVBWfqC/6rPXKwaLpb9kX7Se6unhYkjPZ
-	 3Qm+zgxTU7sSw==
-Date: Wed, 8 Jun 2022 21:08:56 +0530
+	b=iNqS7+kwRIEJTkFaKfhMjyNuUif81BXeSUlY3Bm+JAsumIZ2HOzTGPasB8FI0/LtI
+	 6N3cvj0pjeDeELM+xWcvAW3cf/WOl4tuMASrBgk+cNKa8+ir1oLlDcMlYLfA2blNHD
+	 jpKxukCE41eG9rXu3LoPMz8zf2ebJmfKFJ+dbeNjNknQQmT9PTZWhi5nstYkhPSCqm
+	 Ks3boxM2pa/rJyX3lr4Es30CY/B8k+2L2aV9xM16E3L9MuVvenUY0ptSKUrPXezYaN
+	 cr+oeUcVhJ6MnMHh48V93QGLmTNt1qC6iDk/5cd+mjytZotTftD18AF9//nEtcIGcE
+	 l2TeD0jCVfARg==
+Date: Wed, 8 Jun 2022 21:23:47 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Manu Gautam <mgautam@codeaurora.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 3/5] phy: qcom-qmp: Add USB4 5NM QMP combo PHY
- registers
-Message-ID: <YqDCkNB9Ss0D9PnO@matsya>
-References: <20220607213543.4057620-1-bjorn.andersson@linaro.org>
- <20220607213543.4057620-4-bjorn.andersson@linaro.org>
- <d9658f54-e594-8f0e-071e-ef627285d281@linaro.org>
- <Yp/ZkxNltUgE79nC@ripper>
- <CAA8EJppSKfWXoNhqj+XOVV18P+uP=5fo7kaOGNWdYnN-NH8xNw@mail.gmail.com>
+To: Krishna Kurapati <quic_kriskura@quicinc.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Stephen Boyd <swboyd@chromium.org>,
+	Doug Anderson <dianders@chromium.org>,
+	Matthias Kaehlcke <mka@chromium.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>, devicetree@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	quic_pkondeti@quicinc.com, quic_ppratap@quicinc.com,
+	quic_vpulyala@quicinc.com,
+	Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+Subject: Re: [PATCH v8 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
+ override params bindings
+Message-ID: <YqDGCxWFvxYWWoZh@matsya>
+References: <1654066564-20518-1-git-send-email-quic_kriskura@quicinc.com>
+ <1654066564-20518-2-git-send-email-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAA8EJppSKfWXoNhqj+XOVV18P+uP=5fo7kaOGNWdYnN-NH8xNw@mail.gmail.com>
+In-Reply-To: <1654066564-20518-2-git-send-email-quic_kriskura@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220608_083905_133888_676C3A7D 
-X-CRM114-Status: GOOD (  47.25  )
+X-CRM114-CacheID: sfid-20220608_085355_583807_FA071942 
+X-CRM114-Status: GOOD (  23.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,117 +85,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-06-22, 02:52, Dmitry Baryshkov wrote:
-> On Wed, 8 Jun 2022 at 02:02, Bjorn Andersson <bjorn.andersson@linaro.org> wrote:
-> >
-> > On Tue 07 Jun 15:24 PDT 2022, Dmitry Baryshkov wrote:
-> >
-> > > On 08/06/2022 00:35, Bjorn Andersson wrote:
-> > > > Add all registers defines from qcom,usb4-5nm-qmp-combo.h of the msm-5.4
-> > > > kernel. Offsets are adjusted to be relative to each sub-block, as we
-> > > > describe the individual pieces in the upstream kernel and "v5_5NM" are
-> > > > injected in the defines to not collide with existing constants.
-> > > >
-> > > > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > > > ---
-> > > >
-> > > > Changes since v1:
-> > > > - New patch
-> > > >
-> > > >   .../qualcomm/phy-qcom-usb4-5nm-qmp-combo.h    | 1547 +++++++++++++++++
-> > > >   1 file changed, 1547 insertions(+)
-> > > >   create mode 100644 drivers/phy/qualcomm/phy-qcom-usb4-5nm-qmp-combo.h
-> > > >
-> > > > diff --git a/drivers/phy/qualcomm/phy-qcom-usb4-5nm-qmp-combo.h b/drivers/phy/qualcomm/phy-qcom-usb4-5nm-qmp-combo.h
-> > > > new file mode 100644
-> > > > index 000000000000..7be8a50269ec
-> > > > --- /dev/null
-> > > > +++ b/drivers/phy/qualcomm/phy-qcom-usb4-5nm-qmp-combo.h
-> > > > @@ -0,0 +1,1547 @@
-> > > > +/* SPDX-License-Identifier: GPL-2.0-only */
-> > > > +/*
-> > > > + * Copyright (c) 2021, The Linux Foundation. All rights reserved.
-> > > > + */
-> > > > +
-> > > > +#ifndef PHY_QCOM_V5_5NM_QMP_COMBO_USB4_H
-> > > > +#define PHY_QCOM_V5_5NM_QMP_COMBO_USB4_H
-> > > > +
-> > > > +/* USB4-USB3-DP Combo PHY register offsets */
-> > > > +/* Module: USB43DP_COM_USB43DP_COM_USB4_USB3_DP_COM */
-> > > > +#define USB43DP_V5_5NM_COM_PHY_MODE_CTRL                           0x00
-> > > > +#define USB43DP_V5_5NM_COM_SW_RESET                                        0x04
-> > > > +#define USB43DP_V5_5NM_COM_POWER_DOWN_CTRL                         0x08
-> > > > +#define USB43DP_V5_5NM_COM_SWI_CTRL                                        0x0c
-> > > > +#define USB43DP_V5_5NM_COM_TYPEC_CTRL                                      0x10
-> > > > +#define USB43DP_V5_5NM_COM_TYPEC_PWRDN_CTRL                                0x14
-> > > > +#define USB43DP_V5_5NM_COM_DP_BIST_CFG_0                           0x18
-> > > > +#define USB43DP_V5_5NM_COM_RESET_OVRD_CTRL1                                0x1c
-> > > > +#define USB43DP_V5_5NM_COM_RESET_OVRD_CTRL2                                0x20
-> > > > +#define USB43DP_V5_5NM_COM_DBG_CLK_MUX_CTRL                                0x24
-> > > > +#define USB43DP_V5_5NM_COM_TYPEC_STATUS                                    0x28
-> > > > +#define USB43DP_V5_5NM_COM_PLACEHOLDER_STATUS                              0x2c
-> > > > +#define USB43DP_V5_5NM_COM_REVISION_ID0                                    0x30
-> > > > +#define USB43DP_V5_5NM_COM_REVISION_ID1                                    0x34
-> > > > +#define USB43DP_V5_5NM_COM_REVISION_ID2                                    0x38
-> > > > +#define USB43DP_V5_5NM_COM_REVISION_ID3                                    0x3c
-> > >
-> > > QPHY_V5_DP_COM_foo ?
-> > >
-> >
-> > My first version of the QMP patch used V5 defines and USB worked
-> > sometimes. So I hacked up a thing to dump the phy sequences of the
-> > downstream and upstream kernels, compared the magic numbers and then
-> > tried to fit suitable constants.
-> >
-> > But it obviously was a waste of time and I would have to make up a
-> > different naming scheme for the ones that doesn't match the existing
-> > constants - when we could just use the autogenerated files that exist in
-> > the downstream kernels.
+On 01-06-22, 12:26, Krishna Kurapati wrote:
+> From: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
 > 
-> I decided that I should write more about it. My main issue with using
-> downstream tables is that we end up with tons of repetitive defines.
-> Each chip generation would bring 2-4 sets of tables, wouldn't it? This
-> can easily become an unsupported beast.
-> I'd propose to follow the opposite path. Let's split the existing
-> tables on a per-generation, per-region basis. Yes, we'd end up with
-> tens of the header files. However then when new generation arrives, we
-> can split corresponding header files on a region-by-region basis, and
-> compare each region with existing tables. If the region matches, use
-> it. If it does not, create a new header. Yes, I can do this for the
-> existing header as a continuation of the QMP split saga, if everybody
-> agrees that this is a good path.
+> Add device tree bindings for SNPS phy tuning parameters.
 > 
-> You can ask, why do I suggest such a scheme? Because it looks like the
-> lowest common scheme. If we check downstream, we have USB/USB+DP with
-> huge autogenerated tables. Then comes UFS, which mostly follows naming
-> of the phy-qcom-qmp.h.
+> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 96 ++++++++++++++++++++++
+>  1 file changed, 96 insertions(+)
 > 
-> And the last one is a PCIe. I do not know about the sc8280xp, but for
-> the rest of the platforms we do not have register names at all. When I
-> was porting the SM8450 PCIe PHY support, I had to guess the correct
-> generation beforehand. With just 5 QSERDES_COM_ namespaces, guessing
-> is easy. If  we had separate namespaces for the UFS and for several
-> USB PHY instances, guessing would be next to impossible. And then
-> creating a correct table would also be impossible. Well, as long as we
-> do not accept tables without register names.
-> 
-> Thus I think we should resort to using a single naming scheme rather
-> than following downstream here. If you dislike existing
-> QSERDES_Vn/QPHY_Vn, let's come up with something more sensible.
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> index 1ce251d..daeeb04 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
+> @@ -53,6 +53,102 @@ properties:
+>    vdda33-supply:
+>      description: phandle to the regulator 3.3V supply node.
+>  
+> +  qcom,hs-disconnect-bp:
+> +    description:
+> +      This adjusts the voltage level for the threshold used to
+> +      detect a disconnect event at the host. Possible values are.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: -272
+> +    maximum: 2156
+> +
+> +  qcom,squelch-detector-bp:
+> +    description:
+> +      This adjusts the voltage level for the threshold used to
+> +      detect valid high-speed data.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: -2090
+> +    maximum: 1590
+> +
+> +  qcom,hs-amplitude-bp:
+> +    description:
+> +      This adjusts the high-speed DC level voltage.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: -660
+> +    maximum: 2670
+> +
+> +  qcom,pre-emphasis-duration-bp:
+> +    description:
+> +      This signal controls the duration for which the
+> +      HS pre-emphasis current is sourced onto DP<#> or DM<#>.
+> +      The HS Transmitter pre-emphasis duration is defined in terms of
+> +      unit amounts. One unit of pre-emphasis duration is approximately
+> +      650 ps and is defined as 1X pre-emphasis duration.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: 10000
+> +    maximum: 20000
+> +
+> +  qcom,pre-emphasis-amplitude-bp:
+> +    description:
+> +      This signal controls the amount of current sourced to
+> +      DP<#> and DM<#> after a J-to-K or K-to-J transition.
+> +      The HS Transmitter pre-emphasis current is defined in terms of unit
+> +      amounts. One unit amount is approximately 2 mA and is defined as
+> +      1X pre-emphasis current.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: 10000
+> +    maximum: 40000
+> +
+> +  qcom,hs-rise-fall-time-bp:
+> +    description:
+> +      This adjusts the rise/fall times of the high-speed waveform.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: -4100
+> +    maximum: 5430
+> +
+> +  qcom,hs-crossover-voltage-microvolt:
+> +    description:
+> +      This adjusts the voltage at which the DP<#> and DM<#>
+> +      signals cross while transmitting in HS mode.
+> +      The values defined are in milli volts. The hardware accepts only
+> +      discrete values. The value closest to the provided input will be
+> +      chosen as the override value for this param.
+> +    minimum: -31000
+> +    maximum: 28000
+> +
+> +  qcom,hs-output-impedance-micro-ohms:
+> +    description:
+> +      In some applications, there can be significant series resistance
+> +      on the D+ and D- paths between the transceiver and cable. This adjusts
+> +      the driver source impedance to compensate for added series
+> +      resistance on the USB. The values defined are in milli ohms.
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: -2300000
+> +    maximum: 6100000
+> +
+> +  qcom,ls-fs-output-impedance-bp:
+> +    description:
+> +      This adjusts the low- and full-speed single-ended source
+> +      impedance while driving high. The following adjustment values are based
+> +      on nominal process, voltage, and temperature.
+> +      The values defined are in multiples of basis points (1bp = 0.01%).
+> +      The hardware accepts only discrete values. The value closest to the
+> +      provided input will be chosen as the override value for this param.
+> +    minimum: -1053
+> +    maximum: 1310
 
-Bjorn has a valid point that we should not tinker with downstream
-auto-generated headers and use as is. But Dmitry also has a good
-argument of this becoming unmanageable mess.
+do we need all these values in DT, till now we have these in driver..
+what is the reasoning to add these in DT instead?
 
-So which of the lesser devils should we deal with... Former is easy to
-do, latter involves a bit of work for kernel developers...
-
-TBH My personal taste would be latter as that keeps the code clean... We
-have seen the versions are getting managed terribly downstream.. Maybe
-splitting the headers up is a good idea in that direction...
-
-Thought...?
- 
 -- 
 ~Vinod
 
