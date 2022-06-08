@@ -4,70 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 394ADCCA482
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 16:04:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37A79C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 16:15:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ty7OTauqXuGQ/5xAiLvmo+bB3bBHLGoAZTKjtjKDYbM=; b=IKUK10J2Mzsr0c
-	y80lL0UtJcI8ObzsH1xUhSMV9lfK/cTzKCj8qhkwJsDL2eKc6SSaNsIz+JRMrPNfuja1haq/FHI2C
-	3eibdSXifzQA74UFOKpoUuCerd8g+K1m8Mtf/U5whJZCG49ca/23ct4DerDszddWZ0zqMSy0VbXzN
-	K90tSR6wKZRfnWf10mmD4SjTnHT5wBpH6QcuL3ckDHoCaaUZyPDlsSSCIfQ9aNkai7JvQBpgVRIlh
-	NNi8JW79KlsTt/qyHaRAoWgbriNF9h/IA3kO51Tu90FA5b4LKUz1dEd+DQHYg4SidDOV26L/Fcair
-	nserDqx6fUmoDT2E5pAg==;
+	List-Owner; bh=6UlEhw7B8aSsq+pAjEVb3KXbKAYr4vsArXWmLujny2E=; b=zY3VFR4IJl3uHN
+	skK0HMsFIo7/2DHktMo9hmaxW91t5FEOqooETaEXVJ3LstIy7izJb2xFp+u6TF4BupdskgOdRwg3Y
+	tzl0CDglUxoPaC53WyvZlRHbR8CLwOJ8JSjeEVw7z3Dodls1UQt2whOeEehOEi1KPiguOzRh3tS+r
+	CKDwDzn228LXiF0mK0SyFkAq0GozFa4o8EfEBTLmD53ILLW9Dd6PgAlNg+H2JUHU/gokVkI6+CCiG
+	OV5mppFq1gloty7Awbahe51tK/rsn1bJeeXlPk4GnCuGlxQNZt081ro2APuaRsabNL2YpOlU61Uqc
+	vBIsAN64ozYCxJbBMDnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyyAJ-00ECYt-Jg; Wed, 08 Jun 2022 16:04:15 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nyyKt-00EExN-K5; Wed, 08 Jun 2022 16:15:11 +0000
+Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyyAG-00ECXU-3m
-	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 16:04:14 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 93EB1B82877;
-	Wed,  8 Jun 2022 16:04:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A09AFC34116;
-	Wed,  8 Jun 2022 16:04:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1654704249;
-	bh=3hF4Dfivrgsri0WKYoSZW/YCIYLQ9tF79gWu6kakKVA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=cCxvZC1JbIpDcx28LiIFf2s2woUVH/MYQJtLK0I14o4CuEgB5hgI0vQk5N1Xbff4z
-	 zlAQZ3zDkaQQr+5IFtOP65jnorAkdNR2+fZribNN/gjzZneQVq6GqYf5QBHySe815m
-	 Kzd2fLTjw1q0jH0BUC0jdcADDj3Q30ta0EUs9m6HvwgEwPlIVKUJK/Nb5MpF9oFh2P
-	 kp/GyprW4+w5au3wQ2scelosIN4bsdJ/TBVrzCYumT88ZpPYPLkDNZ8gqk0FVCeszX
-	 wuWLPLw1M7uK8V1igmKCj6U8pvWXy88XQ3vBHEbXSxMUT91egYiY5bRJIOAc0Egqm2
-	 XHL0BGox989LA==
-Date: Wed, 8 Jun 2022 21:34:04 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Krishna Kurapati <quic_kriskura@quicinc.com>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Rob Herring <robh+dt@kernel.org>, Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Stephen Boyd <swboyd@chromium.org>,
-	Doug Anderson <dianders@chromium.org>,
-	Matthias Kaehlcke <mka@chromium.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>, devicetree@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	quic_pkondeti@quicinc.com, quic_ppratap@quicinc.com,
-	quic_vpulyala@quicinc.com
-Subject: Re: [PATCH v8 2/3] phy: qcom-snps: Add support for overriding phy
- tuning parameters
-Message-ID: <YqDIdAnMA9A4taWR@matsya>
-References: <1654066564-20518-1-git-send-email-quic_kriskura@quicinc.com>
- <1654066564-20518-3-git-send-email-quic_kriskura@quicinc.com>
+	id 1nyyKq-00EEw8-B0
+	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 16:15:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
+  t=1654704908; x=1686240908;
+  h=message-id:date:mime-version:subject:to:cc:references:
+   from:in-reply-to:content-transfer-encoding;
+  bh=/Z87esyQGQnwIqrnliOSqFPtMlfM+AiPadqlZdDyIlA=;
+  b=i4WHrZHckSiEFYsgHRyiJNn+TBD0dMFLzLtp1T/c4UjSFTS9eplQgfj1
+   6ldZ0hw9/gW3VyjkAbQdRjy5LLiHDv5ORRf0r2m1cKc4LbRJ2acRCWx4E
+   uiG2xVYc2p5CW+VDxYcg3jT2DtivO+i69v+lLMqwp/2Pwng5n9fm5TxO/
+   U=;
+Received: from unknown (HELO ironmsg04-sd.qualcomm.com) ([10.53.140.144])
+  by alexa-out-sd-02.qualcomm.com with ESMTP; 08 Jun 2022 09:15:07 -0700
+X-QCInternal: smtphost
+Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
+  by ironmsg04-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Jun 2022 09:15:06 -0700
+Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
+ nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Wed, 8 Jun 2022 09:15:06 -0700
+Received: from [10.216.14.169] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Wed, 8 Jun 2022
+ 09:14:59 -0700
+Message-ID: <c8c3775c-6724-1726-7c2e-cdfb8bf71e1b@quicinc.com>
+Date: Wed, 8 Jun 2022 21:44:56 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1654066564-20518-3-git-send-email-quic_kriskura@quicinc.com>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.1
+Subject: Re: [PATCH v8 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
+ override params bindings
+Content-Language: en-US
+To: Vinod Koul <vkoul@kernel.org>
+CC: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
+	<robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson
+	<bjorn.andersson@linaro.org>, Greg Kroah-Hartman
+	<gregkh@linuxfoundation.org>, Stephen Boyd <swboyd@chromium.org>, "Doug
+ Anderson" <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>, <devicetree@vger.kernel.org>,
+	<linux-arm-msm@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<quic_pkondeti@quicinc.com>, <quic_ppratap@quicinc.com>,
+	<quic_vpulyala@quicinc.com>, Sandeep Maheswaram <quic_c_sanm@quicinc.com>
+References: <1654066564-20518-1-git-send-email-quic_kriskura@quicinc.com>
+ <1654066564-20518-2-git-send-email-quic_kriskura@quicinc.com>
+ <YqDGCxWFvxYWWoZh@matsya>
+From: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>
+In-Reply-To: <YqDGCxWFvxYWWoZh@matsya>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220608_090412_542809_032AD33A 
-X-CRM114-Status: GOOD (  30.20  )
+X-CRM114-CacheID: sfid-20220608_091508_424376_6B3FB3C0 
+X-CRM114-Status: GOOD (  17.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,394 +89,123 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-06-22, 12:26, Krishna Kurapati wrote:
-> Add support for overriding electrical signal tuning parameters for
-> SNPS HS Phy.
-> 
-> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
-> Reviewed-by: Pavankumar Kondeti <quic_pkondeti@quicinc.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 267 +++++++++++++++++++++++++-
->  1 file changed, 265 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> index 5d20378..14bbb06 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> @@ -52,6 +52,12 @@
->  #define USB2_SUSPEND_N				BIT(2)
->  #define USB2_SUSPEND_N_SEL			BIT(3)
->  
-> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0		(0x6c)
-> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1		(0x70)
-> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2		(0x74)
-> +#define USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X3		(0x78)
-> +#define PARAM_OVRD_MASK				0xFF
-> +
->  #define USB2_PHY_USB_PHY_CFG0			(0x94)
->  #define UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN	BIT(0)
->  #define UTMI_PHY_CMN_CTRL_OVERRIDE_EN		BIT(1)
-> @@ -60,12 +66,76 @@
->  #define REFCLK_SEL_MASK				GENMASK(1, 0)
->  #define REFCLK_SEL_DEFAULT			(0x2 << 0)
->  
-> +#define HS_DISCONNECT_MASK			GENMASK(2, 0)
-> +
-> +#define SQUELCH_DETECTOR_MASK			GENMASK(7, 5)
-> +
-> +#define HS_AMPLITUDE_MASK			GENMASK(3, 0)
-> +
-> +#define PREEMPHASIS_DURATION_MASK		BIT(5)
-> +
-> +#define PREEMPHASIS_AMPLITUDE_MASK		GENMASK(7, 6)
-
-I guess this is a register, pls remove blank lines between them, serves
-no purpose
-
-> +
-> +#define HS_RISE_FALL_MASK			GENMASK(1, 0)
-> +
-> +#define HS_CROSSOVER_VOLTAGE_MASK		GENMASK(3, 2)
-> +
-> +#define HS_OUTPUT_IMPEDANCE_MASK		GENMASK(5, 4)
-> +
-> +#define LS_FS_OUTPUT_IMPEDANCE_MASK		GENMASK(3, 0)
-
-here two..
-
-> +
-> +
-
-One line suffices here (checkpatch with --strict would have warned you)
-
-
->  static const char * const qcom_snps_hsphy_vreg_names[] = {
->  	"vdda-pll", "vdda33", "vdda18",
->  };
->  
->  #define SNPS_HS_NUM_VREGS		ARRAY_SIZE(qcom_snps_hsphy_vreg_names)
->  
-> +struct override_param {
-> +	s32	value;
-> +	u8	reg;
-> +};
-> +
-> +#define OVERRIDE_PARAM(bps, val)\
-> +{				\
-
-this should be in preceding line
-
-> +	.value = bps,		\
-> +	.reg = val,		\
-> +}
-> +
-> +struct override_param_map {
-> +	struct override_param *param_table;
-> +	u8 table_size;
-> +	u8 reg_offset;
-> +	u8 param_mask;
-> +};
-> +
-> +#define OVERRIDE_PARAM_MAP(table, num_elements, offset, mask)		\
-> +{									\
-> +	.param_table = table,						\
-> +	.table_size = num_elements,					\
-> +	.reg_offset = offset,						\
-> +	.param_mask = mask,						\
-> +}
-
-
-> +
-> +struct phy_override_seq {
-> +	bool	need_update;
-> +	u8	offset;
-> +	u8	value;
-> +	u8	mask;
-> +};
-> +
-> +static const char *phy_seq_props[] = {
-> +	"qcom,hs-disconnect-bp",
-> +	"qcom,squelch-detector-bp",
-> +	"qcom,hs-amplitude-bp",
-> +	"qcom,pre-emphasis-duration-bp",
-> +	"qcom,pre-emphasis-amplitude-bp",
-> +	"qcom,hs-rise-fall-time-bp",
-> +	"qcom,hs-crossover-voltage-microvolt",
-> +	"qcom,hs-output-impedance-micro-ohms",
-> +	"qcom,ls-fs-output-impedance-bp",
-> +};
-> +
->  /**
->   * struct qcom_snps_hsphy - snps hs phy attributes
->   *
-> @@ -91,6 +161,7 @@ struct qcom_snps_hsphy {
->  
->  	bool phy_initialized;
->  	enum phy_mode mode;
-> +	struct phy_override_seq update_seq_cfg[ARRAY_SIZE(phy_seq_props)];
->  };
->  
->  static inline void qcom_snps_hsphy_write_mask(void __iomem *base, u32 offset,
-> @@ -173,10 +244,147 @@ static int qcom_snps_hsphy_set_mode(struct phy *phy, enum phy_mode mode,
->  	return 0;
->  }
->  
-> +static struct override_param hs_disconnect_sc7280[] = {
-> +	OVERRIDE_PARAM(-272, 0),
-> +	OVERRIDE_PARAM(0, 1),
-> +	OVERRIDE_PARAM(317, 2),
-> +	OVERRIDE_PARAM(630, 3),
-> +	OVERRIDE_PARAM(973, 4),
-> +	OVERRIDE_PARAM(1332, 5),
-> +	OVERRIDE_PARAM(1743, 6),
-> +	OVERRIDE_PARAM(2156, 7),
-> +};
-
-use constants for registers please
-
-> +
-> +static struct override_param squelch_det_threshold_sc7280[] = {
-> +	OVERRIDE_PARAM(-2090, 7),
-> +	OVERRIDE_PARAM(-1560, 6),
-> +	OVERRIDE_PARAM(-1030, 5),
-> +	OVERRIDE_PARAM(-530, 4),
-> +	OVERRIDE_PARAM(0, 3),
-> +	OVERRIDE_PARAM(530, 2),
-> +	OVERRIDE_PARAM(1060, 1),
-> +	OVERRIDE_PARAM(1590, 0),
-> +};
-> +
-> +static struct override_param hs_amplitude_sc7280[] = {
-> +	OVERRIDE_PARAM(-660, 0),
-> +	OVERRIDE_PARAM(-440, 1),
-> +	OVERRIDE_PARAM(-220, 2),
-> +	OVERRIDE_PARAM(0, 3),
-> +	OVERRIDE_PARAM(230, 4),
-> +	OVERRIDE_PARAM(440, 5),
-> +	OVERRIDE_PARAM(650, 6),
-> +	OVERRIDE_PARAM(890, 7),
-> +	OVERRIDE_PARAM(1110, 8),
-> +	OVERRIDE_PARAM(1330, 9),
-> +	OVERRIDE_PARAM(1560, 10),
-> +	OVERRIDE_PARAM(1780, 11),
-> +	OVERRIDE_PARAM(2000, 12),
-> +	OVERRIDE_PARAM(2220, 13),
-> +	OVERRIDE_PARAM(2430, 14),
-> +	OVERRIDE_PARAM(2670, 15),
-> +};
-> +
-> +static struct override_param preemphasis_duration_sc7280[] = {
-> +	OVERRIDE_PARAM(10000, 1),
-> +	OVERRIDE_PARAM(20000, 0),
-> +};
-> +
-> +static struct override_param preemphasis_amplitude_sc7280[] = {
-> +	OVERRIDE_PARAM(10000, 1),
-> +	OVERRIDE_PARAM(20000, 2),
-> +	OVERRIDE_PARAM(30000, 3),
-> +	OVERRIDE_PARAM(40000, 0),
-> +};
-> +
-> +static struct override_param hs_rise_fall_time_sc7280[] = {
-> +	OVERRIDE_PARAM(-4100, 3),
-> +	OVERRIDE_PARAM(0, 2),
-> +	OVERRIDE_PARAM(2810, 1),
-> +	OVERRIDE_PARAM(5430, 0),
-> +};
-> +
-> +static struct override_param hs_crossover_voltage_sc7280[] = {
-> +	OVERRIDE_PARAM(-31000, 1),
-> +	OVERRIDE_PARAM(0, 3),
-> +	OVERRIDE_PARAM(28000, 2),
-> +};
-> +
-> +static struct override_param hs_output_impedance_sc7280[] = {
-> +	OVERRIDE_PARAM(-2300000, 3),
-> +	OVERRIDE_PARAM(0, 2),
-> +	OVERRIDE_PARAM(2600000, 1),
-> +	OVERRIDE_PARAM(6100000, 0),
-> +};
-> +
-> +static struct override_param ls_fs_output_impedance_sc7280[] = {
-> +	OVERRIDE_PARAM(-1053, 15),
-> +	OVERRIDE_PARAM(-557, 7),
-> +	OVERRIDE_PARAM(0, 3),
-> +	OVERRIDE_PARAM(612, 1),
-> +	OVERRIDE_PARAM(1310, 0),
-> +};
-> +
-> +struct override_param_map sc7280_idp[] = {
-> +	OVERRIDE_PARAM_MAP(
-> +			hs_disconnect_sc7280,
-> +			ARRAY_SIZE(hs_disconnect_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0,
-> +			HS_DISCONNECT_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			squelch_det_threshold_sc7280,
-> +			ARRAY_SIZE(squelch_det_threshold_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X0,
-> +			SQUELCH_DETECTOR_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			hs_amplitude_sc7280,
-> +			ARRAY_SIZE(hs_amplitude_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
-> +			HS_AMPLITUDE_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			preemphasis_duration_sc7280,
-> +			ARRAY_SIZE(preemphasis_duration_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
-> +			PREEMPHASIS_DURATION_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			preemphasis_amplitude_sc7280,
-> +			ARRAY_SIZE(preemphasis_amplitude_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X1,
-> +			PREEMPHASIS_AMPLITUDE_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			hs_rise_fall_time_sc7280,
-> +			ARRAY_SIZE(hs_rise_fall_time_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
-> +			HS_RISE_FALL_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			hs_crossover_voltage_sc7280,
-> +			ARRAY_SIZE(hs_crossover_voltage_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
-> +			HS_CROSSOVER_VOLTAGE_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			hs_output_impedance_sc7280,
-> +			ARRAY_SIZE(hs_output_impedance_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X2,
-> +			HS_OUTPUT_IMPEDANCE_MASK),
-> +
-> +	OVERRIDE_PARAM_MAP(
-> +			ls_fs_output_impedance_sc7280,
-> +			ARRAY_SIZE(ls_fs_output_impedance_sc7280),
-> +			USB2_PHY_USB_PHY_HS_PHY_OVERRIDE_X3,
-> +			LS_FS_OUTPUT_IMPEDANCE_MASK),
-> +};
-> +
->  static int qcom_snps_hsphy_init(struct phy *phy)
->  {
->  	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
-> -	int ret;
-> +	int ret, i;
->  
->  	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
->  
-> @@ -223,6 +431,14 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->  	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_HS_PHY_CTRL1,
->  					VBUSVLDEXT0, VBUSVLDEXT0);
->  
-> +	for (i = 0; i < ARRAY_SIZE(hsphy->update_seq_cfg); i++) {
-> +		if (hsphy->update_seq_cfg[i].need_update)
-> +			qcom_snps_hsphy_write_mask(hsphy->base,
-> +					hsphy->update_seq_cfg[i].offset,
-> +					hsphy->update_seq_cfg[i].mask,
-> +					hsphy->update_seq_cfg[i].value);
-> +	}
-> +
->  	qcom_snps_hsphy_write_mask(hsphy->base,
->  					USB2_PHY_USB_PHY_HS_PHY_CTRL_COMMON2,
->  					VREGBYPASS, VREGBYPASS);
-> @@ -280,7 +496,10 @@ static const struct phy_ops qcom_snps_hsphy_gen_ops = {
->  static const struct of_device_id qcom_snps_hsphy_of_match_table[] = {
->  	{ .compatible	= "qcom,sm8150-usb-hs-phy", },
->  	{ .compatible	= "qcom,usb-snps-hs-5nm-phy", },
-> -	{ .compatible	= "qcom,usb-snps-hs-7nm-phy", },
-> +	{
-> +		.compatible	= "qcom,usb-snps-hs-7nm-phy",
-> +		.data		= &sc7280_idp,
-> +	},
->  	{ .compatible	= "qcom,usb-snps-femto-v2-phy",	},
->  	{ }
->  };
-> @@ -291,6 +510,49 @@ static const struct dev_pm_ops qcom_snps_hsphy_pm_ops = {
->  			   qcom_snps_hsphy_runtime_resume, NULL)
->  };
->  
-> +static void qcom_snps_hsphy_override_param_update_val(
-> +			const struct override_param_map map,
-> +			s32 dt_val, struct phy_override_seq *seq_entry)
-> +{
-> +	int i;
-> +
-> +	/*
-> +	 * Param table for each param is in increasing order
-> +	 * of dt values. We need to iterate over the list to
-> +	 * select the entry that has equal or the next highest value.
-> +	 */
-> +	for (i = 0; i < map.table_size - 1; i++) {
-> +		if (map.param_table[i].value >= dt_val)
-> +			break;
-> +	}
-> +
-> +	seq_entry->need_update = true;
-> +	seq_entry->offset = map.reg_offset;
-> +	seq_entry->mask = map.param_mask;
-> +	seq_entry->value =  map.param_table[i].reg << __ffs(map.param_mask);
-
-okay am nor sure I get the idea, if we have values in DT why do we need
-these table in driver or vice-versa?
-
-
-> +}
-> +
-> +static void qcom_snps_hsphy_read_override_param_seq(struct device *dev)
-> +{
-> +	struct device_node *node = dev->of_node;
-> +	s32 val;
-> +	int ret, i;
-> +	struct qcom_snps_hsphy *hsphy;
-> +	const struct override_param_map *cfg = of_device_get_match_data(dev);
-> +
-> +	hsphy = dev_get_drvdata(dev);
-> +
-> +	for (i = 0; i < ARRAY_SIZE(phy_seq_props); i++) {
-> +		ret = of_property_read_s32(node, phy_seq_props[i], &val);
-> +		if (!ret) {
-> +			dev_dbg(&hsphy->phy->dev, "Read param: %s val: %d\n",
-> +						phy_seq_props[i], val);
-> +			qcom_snps_hsphy_override_param_update_val(cfg[i], val,
-> +						&hsphy->update_seq_cfg[i]);
-> +		}
-> +	}
-> +}
-> +
->  static int qcom_snps_hsphy_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> @@ -352,6 +614,7 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
->  
->  	dev_set_drvdata(dev, hsphy);
->  	phy_set_drvdata(generic_phy, hsphy);
-> +	qcom_snps_hsphy_read_override_param_seq(dev);
->  
->  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
->  	if (!IS_ERR(phy_provider))
-> -- 
-> 2.7.4
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
-
--- 
-~Vinod
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIDYvOC8yMDIyIDk6MjMgUE0sIFZpbm9kIEtvdWwgd3JvdGU6Cj4gT24gMDEtMDYtMjIsIDEy
+OjI2LCBLcmlzaG5hIEt1cmFwYXRpIHdyb3RlOgo+PiBGcm9tOiBTYW5kZWVwIE1haGVzd2FyYW0g
+PHF1aWNfY19zYW5tQHF1aWNpbmMuY29tPgo+Pgo+PiBBZGQgZGV2aWNlIHRyZWUgYmluZGluZ3Mg
+Zm9yIFNOUFMgcGh5IHR1bmluZyBwYXJhbWV0ZXJzLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBTYW5k
+ZWVwIE1haGVzd2FyYW0gPHF1aWNfY19zYW5tQHF1aWNpbmMuY29tPgo+PiBTaWduZWQtb2ZmLWJ5
+OiBLcmlzaG5hIEt1cmFwYXRpIDxxdWljX2tyaXNrdXJhQHF1aWNpbmMuY29tPgo+PiBSZXZpZXdl
+ZC1ieTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6eXN6dG9mLmtvemxvd3NraUBsaW5hcm8ub3Jn
+Pgo+PiAtLS0KPj4gICAuLi4vYmluZGluZ3MvcGh5L3Fjb20sdXNiLXNucHMtZmVtdG8tdjIueWFt
+bCAgICAgICB8IDk2ICsrKysrKysrKysrKysrKysrKysrKysKPj4gICAxIGZpbGUgY2hhbmdlZCwg
+OTYgaW5zZXJ0aW9ucygrKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL3BoeS9xY29tLHVzYi1zbnBzLWZlbXRvLXYyLnlhbWwgYi9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20sdXNiLXNucHMtZmVtdG8tdjIueWFtbAo+
+PiBpbmRleCAxY2UyNTFkLi5kYWVlYjA0IDEwMDY0NAo+PiAtLS0gYS9Eb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20sdXNiLXNucHMtZmVtdG8tdjIueWFtbAo+PiArKysg
+Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20sdXNiLXNucHMtZmVt
+dG8tdjIueWFtbAo+PiBAQCAtNTMsNiArNTMsMTAyIEBAIHByb3BlcnRpZXM6Cj4+ICAgICB2ZGRh
+MzMtc3VwcGx5Ogo+PiAgICAgICBkZXNjcmlwdGlvbjogcGhhbmRsZSB0byB0aGUgcmVndWxhdG9y
+IDMuM1Ygc3VwcGx5IG5vZGUuCj4+ICAgCj4+ICsgIHFjb20saHMtZGlzY29ubmVjdC1icDoKPj4g
+KyAgICBkZXNjcmlwdGlvbjoKPj4gKyAgICAgIFRoaXMgYWRqdXN0cyB0aGUgdm9sdGFnZSBsZXZl
+bCBmb3IgdGhlIHRocmVzaG9sZCB1c2VkIHRvCj4+ICsgICAgICBkZXRlY3QgYSBkaXNjb25uZWN0
+IGV2ZW50IGF0IHRoZSBob3N0LiBQb3NzaWJsZSB2YWx1ZXMgYXJlLgo+PiArICAgICAgVGhlIHZh
+bHVlcyBkZWZpbmVkIGFyZSBpbiBtdWx0aXBsZXMgb2YgYmFzaXMgcG9pbnRzICgxYnAgPSAwLjAx
+JSkuCj4+ICsgICAgICBUaGUgaGFyZHdhcmUgYWNjZXB0cyBvbmx5IGRpc2NyZXRlIHZhbHVlcy4g
+VGhlIHZhbHVlIGNsb3Nlc3QgdG8gdGhlCj4+ICsgICAgICBwcm92aWRlZCBpbnB1dCB3aWxsIGJl
+IGNob3NlbiBhcyB0aGUgb3ZlcnJpZGUgdmFsdWUgZm9yIHRoaXMgcGFyYW0uCj4+ICsgICAgbWlu
+aW11bTogLTI3Mgo+PiArICAgIG1heGltdW06IDIxNTYKPj4gKwo+PiArICBxY29tLHNxdWVsY2gt
+ZGV0ZWN0b3ItYnA6Cj4+ICsgICAgZGVzY3JpcHRpb246Cj4+ICsgICAgICBUaGlzIGFkanVzdHMg
+dGhlIHZvbHRhZ2UgbGV2ZWwgZm9yIHRoZSB0aHJlc2hvbGQgdXNlZCB0bwo+PiArICAgICAgZGV0
+ZWN0IHZhbGlkIGhpZ2gtc3BlZWQgZGF0YS4KPj4gKyAgICAgIFRoZSB2YWx1ZXMgZGVmaW5lZCBh
+cmUgaW4gbXVsdGlwbGVzIG9mIGJhc2lzIHBvaW50cyAoMWJwID0gMC4wMSUpLgo+PiArICAgICAg
+VGhlIGhhcmR3YXJlIGFjY2VwdHMgb25seSBkaXNjcmV0ZSB2YWx1ZXMuIFRoZSB2YWx1ZSBjbG9z
+ZXN0IHRvIHRoZQo+PiArICAgICAgcHJvdmlkZWQgaW5wdXQgd2lsbCBiZSBjaG9zZW4gYXMgdGhl
+IG92ZXJyaWRlIHZhbHVlIGZvciB0aGlzIHBhcmFtLgo+PiArICAgIG1pbmltdW06IC0yMDkwCj4+
+ICsgICAgbWF4aW11bTogMTU5MAo+PiArCj4+ICsgIHFjb20saHMtYW1wbGl0dWRlLWJwOgo+PiAr
+ICAgIGRlc2NyaXB0aW9uOgo+PiArICAgICAgVGhpcyBhZGp1c3RzIHRoZSBoaWdoLXNwZWVkIERD
+IGxldmVsIHZvbHRhZ2UuCj4+ICsgICAgICBUaGUgdmFsdWVzIGRlZmluZWQgYXJlIGluIG11bHRp
+cGxlcyBvZiBiYXNpcyBwb2ludHMgKDFicCA9IDAuMDElKS4KPj4gKyAgICAgIFRoZSBoYXJkd2Fy
+ZSBhY2NlcHRzIG9ubHkgZGlzY3JldGUgdmFsdWVzLiBUaGUgdmFsdWUgY2xvc2VzdCB0byB0aGUK
+Pj4gKyAgICAgIHByb3ZpZGVkIGlucHV0IHdpbGwgYmUgY2hvc2VuIGFzIHRoZSBvdmVycmlkZSB2
+YWx1ZSBmb3IgdGhpcyBwYXJhbS4KPj4gKyAgICBtaW5pbXVtOiAtNjYwCj4+ICsgICAgbWF4aW11
+bTogMjY3MAo+PiArCj4+ICsgIHFjb20scHJlLWVtcGhhc2lzLWR1cmF0aW9uLWJwOgo+PiArICAg
+IGRlc2NyaXB0aW9uOgo+PiArICAgICAgVGhpcyBzaWduYWwgY29udHJvbHMgdGhlIGR1cmF0aW9u
+IGZvciB3aGljaCB0aGUKPj4gKyAgICAgIEhTIHByZS1lbXBoYXNpcyBjdXJyZW50IGlzIHNvdXJj
+ZWQgb250byBEUDwjPiBvciBETTwjPi4KPj4gKyAgICAgIFRoZSBIUyBUcmFuc21pdHRlciBwcmUt
+ZW1waGFzaXMgZHVyYXRpb24gaXMgZGVmaW5lZCBpbiB0ZXJtcyBvZgo+PiArICAgICAgdW5pdCBh
+bW91bnRzLiBPbmUgdW5pdCBvZiBwcmUtZW1waGFzaXMgZHVyYXRpb24gaXMgYXBwcm94aW1hdGVs
+eQo+PiArICAgICAgNjUwIHBzIGFuZCBpcyBkZWZpbmVkIGFzIDFYIHByZS1lbXBoYXNpcyBkdXJh
+dGlvbi4KPj4gKyAgICAgIFRoZSB2YWx1ZXMgZGVmaW5lZCBhcmUgaW4gbXVsdGlwbGVzIG9mIGJh
+c2lzIHBvaW50cyAoMWJwID0gMC4wMSUpLgo+PiArICAgICAgVGhlIGhhcmR3YXJlIGFjY2VwdHMg
+b25seSBkaXNjcmV0ZSB2YWx1ZXMuIFRoZSB2YWx1ZSBjbG9zZXN0IHRvIHRoZQo+PiArICAgICAg
+cHJvdmlkZWQgaW5wdXQgd2lsbCBiZSBjaG9zZW4gYXMgdGhlIG92ZXJyaWRlIHZhbHVlIGZvciB0
+aGlzIHBhcmFtLgo+PiArICAgIG1pbmltdW06IDEwMDAwCj4+ICsgICAgbWF4aW11bTogMjAwMDAK
+Pj4gKwo+PiArICBxY29tLHByZS1lbXBoYXNpcy1hbXBsaXR1ZGUtYnA6Cj4+ICsgICAgZGVzY3Jp
+cHRpb246Cj4+ICsgICAgICBUaGlzIHNpZ25hbCBjb250cm9scyB0aGUgYW1vdW50IG9mIGN1cnJl
+bnQgc291cmNlZCB0bwo+PiArICAgICAgRFA8Iz4gYW5kIERNPCM+IGFmdGVyIGEgSi10by1LIG9y
+IEstdG8tSiB0cmFuc2l0aW9uLgo+PiArICAgICAgVGhlIEhTIFRyYW5zbWl0dGVyIHByZS1lbXBo
+YXNpcyBjdXJyZW50IGlzIGRlZmluZWQgaW4gdGVybXMgb2YgdW5pdAo+PiArICAgICAgYW1vdW50
+cy4gT25lIHVuaXQgYW1vdW50IGlzIGFwcHJveGltYXRlbHkgMiBtQSBhbmQgaXMgZGVmaW5lZCBh
+cwo+PiArICAgICAgMVggcHJlLWVtcGhhc2lzIGN1cnJlbnQuCj4+ICsgICAgICBUaGUgdmFsdWVz
+IGRlZmluZWQgYXJlIGluIG11bHRpcGxlcyBvZiBiYXNpcyBwb2ludHMgKDFicCA9IDAuMDElKS4K
+Pj4gKyAgICAgIFRoZSBoYXJkd2FyZSBhY2NlcHRzIG9ubHkgZGlzY3JldGUgdmFsdWVzLiBUaGUg
+dmFsdWUgY2xvc2VzdCB0byB0aGUKPj4gKyAgICAgIHByb3ZpZGVkIGlucHV0IHdpbGwgYmUgY2hv
+c2VuIGFzIHRoZSBvdmVycmlkZSB2YWx1ZSBmb3IgdGhpcyBwYXJhbS4KPj4gKyAgICBtaW5pbXVt
+OiAxMDAwMAo+PiArICAgIG1heGltdW06IDQwMDAwCj4+ICsKPj4gKyAgcWNvbSxocy1yaXNlLWZh
+bGwtdGltZS1icDoKPj4gKyAgICBkZXNjcmlwdGlvbjoKPj4gKyAgICAgIFRoaXMgYWRqdXN0cyB0
+aGUgcmlzZS9mYWxsIHRpbWVzIG9mIHRoZSBoaWdoLXNwZWVkIHdhdmVmb3JtLgo+PiArICAgICAg
+VGhlIHZhbHVlcyBkZWZpbmVkIGFyZSBpbiBtdWx0aXBsZXMgb2YgYmFzaXMgcG9pbnRzICgxYnAg
+PSAwLjAxJSkuCj4+ICsgICAgICBUaGUgaGFyZHdhcmUgYWNjZXB0cyBvbmx5IGRpc2NyZXRlIHZh
+bHVlcy4gVGhlIHZhbHVlIGNsb3Nlc3QgdG8gdGhlCj4+ICsgICAgICBwcm92aWRlZCBpbnB1dCB3
+aWxsIGJlIGNob3NlbiBhcyB0aGUgb3ZlcnJpZGUgdmFsdWUgZm9yIHRoaXMgcGFyYW0uCj4+ICsg
+ICAgbWluaW11bTogLTQxMDAKPj4gKyAgICBtYXhpbXVtOiA1NDMwCj4+ICsKPj4gKyAgcWNvbSxo
+cy1jcm9zc292ZXItdm9sdGFnZS1taWNyb3ZvbHQ6Cj4+ICsgICAgZGVzY3JpcHRpb246Cj4+ICsg
+ICAgICBUaGlzIGFkanVzdHMgdGhlIHZvbHRhZ2UgYXQgd2hpY2ggdGhlIERQPCM+IGFuZCBETTwj
+Pgo+PiArICAgICAgc2lnbmFscyBjcm9zcyB3aGlsZSB0cmFuc21pdHRpbmcgaW4gSFMgbW9kZS4K
+Pj4gKyAgICAgIFRoZSB2YWx1ZXMgZGVmaW5lZCBhcmUgaW4gbWlsbGkgdm9sdHMuIFRoZSBoYXJk
+d2FyZSBhY2NlcHRzIG9ubHkKPj4gKyAgICAgIGRpc2NyZXRlIHZhbHVlcy4gVGhlIHZhbHVlIGNs
+b3Nlc3QgdG8gdGhlIHByb3ZpZGVkIGlucHV0IHdpbGwgYmUKPj4gKyAgICAgIGNob3NlbiBhcyB0
+aGUgb3ZlcnJpZGUgdmFsdWUgZm9yIHRoaXMgcGFyYW0uCj4+ICsgICAgbWluaW11bTogLTMxMDAw
+Cj4+ICsgICAgbWF4aW11bTogMjgwMDAKPj4gKwo+PiArICBxY29tLGhzLW91dHB1dC1pbXBlZGFu
+Y2UtbWljcm8tb2htczoKPj4gKyAgICBkZXNjcmlwdGlvbjoKPj4gKyAgICAgIEluIHNvbWUgYXBw
+bGljYXRpb25zLCB0aGVyZSBjYW4gYmUgc2lnbmlmaWNhbnQgc2VyaWVzIHJlc2lzdGFuY2UKPj4g
+KyAgICAgIG9uIHRoZSBEKyBhbmQgRC0gcGF0aHMgYmV0d2VlbiB0aGUgdHJhbnNjZWl2ZXIgYW5k
+IGNhYmxlLiBUaGlzIGFkanVzdHMKPj4gKyAgICAgIHRoZSBkcml2ZXIgc291cmNlIGltcGVkYW5j
+ZSB0byBjb21wZW5zYXRlIGZvciBhZGRlZCBzZXJpZXMKPj4gKyAgICAgIHJlc2lzdGFuY2Ugb24g
+dGhlIFVTQi4gVGhlIHZhbHVlcyBkZWZpbmVkIGFyZSBpbiBtaWxsaSBvaG1zLgo+PiArICAgICAg
+VGhlIGhhcmR3YXJlIGFjY2VwdHMgb25seSBkaXNjcmV0ZSB2YWx1ZXMuIFRoZSB2YWx1ZSBjbG9z
+ZXN0IHRvIHRoZQo+PiArICAgICAgcHJvdmlkZWQgaW5wdXQgd2lsbCBiZSBjaG9zZW4gYXMgdGhl
+IG92ZXJyaWRlIHZhbHVlIGZvciB0aGlzIHBhcmFtLgo+PiArICAgIG1pbmltdW06IC0yMzAwMDAw
+Cj4+ICsgICAgbWF4aW11bTogNjEwMDAwMAo+PiArCj4+ICsgIHFjb20sbHMtZnMtb3V0cHV0LWlt
+cGVkYW5jZS1icDoKPj4gKyAgICBkZXNjcmlwdGlvbjoKPj4gKyAgICAgIFRoaXMgYWRqdXN0cyB0
+aGUgbG93LSBhbmQgZnVsbC1zcGVlZCBzaW5nbGUtZW5kZWQgc291cmNlCj4+ICsgICAgICBpbXBl
+ZGFuY2Ugd2hpbGUgZHJpdmluZyBoaWdoLiBUaGUgZm9sbG93aW5nIGFkanVzdG1lbnQgdmFsdWVz
+IGFyZSBiYXNlZAo+PiArICAgICAgb24gbm9taW5hbCBwcm9jZXNzLCB2b2x0YWdlLCBhbmQgdGVt
+cGVyYXR1cmUuCj4+ICsgICAgICBUaGUgdmFsdWVzIGRlZmluZWQgYXJlIGluIG11bHRpcGxlcyBv
+ZiBiYXNpcyBwb2ludHMgKDFicCA9IDAuMDElKS4KPj4gKyAgICAgIFRoZSBoYXJkd2FyZSBhY2Nl
+cHRzIG9ubHkgZGlzY3JldGUgdmFsdWVzLiBUaGUgdmFsdWUgY2xvc2VzdCB0byB0aGUKPj4gKyAg
+ICAgIHByb3ZpZGVkIGlucHV0IHdpbGwgYmUgY2hvc2VuIGFzIHRoZSBvdmVycmlkZSB2YWx1ZSBm
+b3IgdGhpcyBwYXJhbS4KPj4gKyAgICBtaW5pbXVtOiAtMTA1Mwo+PiArICAgIG1heGltdW06IDEz
+MTAKPiBkbyB3ZSBuZWVkIGFsbCB0aGVzZSB2YWx1ZXMgaW4gRFQsIHRpbGwgbm93IHdlIGhhdmUg
+dGhlc2UgaW4gZHJpdmVyLi4KPiB3aGF0IGlzIHRoZSByZWFzb25pbmcgdG8gYWRkIHRoZXNlIGlu
+IERUIGluc3RlYWQ/CgpIaSBWaW5vZCwKCiDCoCBUaGUgcGF0Y2ggc2VyaWVzIHN0YXJ0ZWQgb3V0
+IGFzIHlvdSBtZW50aW9uZWQuIFdlIHVzZWQgdG8gaGF2ZSBwaHkgCnR1bmUgcmVnaXN0ZXIgdmFs
+dWVzIHBhc3NlZCBmcm9tIGRUIHRvIGRyaXZlciBhbmQgd3JpdHRlbiB0byByZXNwZWN0aXZlIApy
+ZWdpc3RlcnMgaW4gdGhlIGRyaXZlciBjb2RlLgoKQnV0IGl0IHdhcyBsYXRlciBzdWdnZXN0ZWQg
+bm90IHRvIHBhc3MgcmVnaXN0ZXIgdmFsdWVzIGZyb20gZFQuIEluc3RlYWQgCmRlZmluZSB0aGUg
+bWVhbmluZ2Z1bCBwcm9wZXJ0aWVzIHRoYXQgbWFrZSB1cCB0aGUgcGh5IHR1bmluZyBwYXJhbWV0
+ZXJzIAphbmQgcGFzcyB0aGVpciB2YWx1ZXMgZnJvbSBkVC4gVGhlIGRyaXZlciBjb2RlIGlzIHN1
+cHBvc2VkIHRvIGNvbnZlcnQgCnRoZXNlIHZhbHVlcyBhbmQgbWFwIHRoZW0gdG8gcmVxdWlyZWQg
+cmVnaXN0ZXIgdmFsdWVzLiBUaGlzIGlzIHdoeSB3ZSAKaGFkIHRvIGNvbWUgdXAgd2l0aCB0aGVz
+ZSBwYXJhbWV0ZXJzIGFuZCBkZWNsYXJlIHRoZW0gaW4gYmluZGluZ3MgYW5kIGRULgoKTW9yZSBp
+bmZvIHJlZ2FyZGluZyB0aGUgZGlzY3Vzc2lvbiBhdCA6IApodHRwczovL2xvcmUua2VybmVsLm9y
+Zy9saW51eC11c2IvYjQ1YjNiN2UtZTFjMC03OWI2LTgxYzAtNTNjNzA0MjdkZDEwQGNhbm9uaWNh
+bC5jb20vCgoKUmVnYXJkcywKCktyaXNobmEsCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
