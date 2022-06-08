@@ -4,77 +4,127 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DECB1C43334
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 00:31:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7689FC43334
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 01:37:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=avJu5S9kjIiH7orJtgI6h4w0xx/yvZk27rIZirDmI24=; b=l0sozhI6IjN1WO
-	N2CkPYEE7PJ1KH14NJyOXvp1ZfIZXmhynL6hmXk9QrJ3UH14O9MINIt6VR1aEgc32miP6tZbsSwa6
-	UbVpoy3fEbtAhbFKVXZ5t6SboHYyk1aXVs/c1z+darVXqOpoc0WO63BFZzb+BNuoKtyTb++d/wokR
-	GP78LuHDBWyhzcRZ3euPW4W33mNX3i6VMsSvBmBeD+KA1iam2SgeOuk+xIaNH5lF9wc6RN04CVQjD
-	LEpbxG7WQ/7qNGEGuKaqO+CjtUf8Yy43f0C9BOyBn0V0JX8T2U7Q17Yy1igfWOezhOPcGdzCWU8cM
-	w6v+3uJajQOPFomr0m8A==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FaTi+rXNXn66u82A39dq1aqmnVombcI0c1Z25KIhHXc=; b=xUrNRQQl35KoE3
+	U8+B7lEm9FJUmtV0Flz7FPdbrtPQcDLExRJRZBrlnigWcxFgF/TCgoxrOHrkYKVQ8dGJ5dStqOPzX
+	LKSidOBGQaFbSOgmf8bR1LFFVjIrSTO3YgKoXEG94UxbyR/22xWAuAQmizepxIUOnHD9iSD0GF7n8
+	kpFOqSfMKSkh/5BjqNoP6D/ghhBHemYgLyCBUtJbDSLahXdL9llkTz9O5W7QgE/WeLu/WoZ3p+C18
+	mmT0QJp09eBFgVf10ZcIU2m74ZKHgEh8qV6agsIeiB80avqGS4YzZde6ggA6xnfmU6frDiDflPdoW
+	/3J6gGjxryga5wlkc4dA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyjbN-00A7nY-5l; Wed, 08 Jun 2022 00:31:13 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1nykdl-00AFkm-P6; Wed, 08 Jun 2022 01:37:45 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyjbK-00A7m7-1E
-	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 00:31:11 +0000
-Received: by mail-lj1-x230.google.com with SMTP id s13so20985696ljd.4
-        for <linux-phy@lists.infradead.org>; Tue, 07 Jun 2022 17:31:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:mime-version
-         :content-transfer-encoding;
-        bh=9MGv6IyB1L5mu7VLeRV9tquByEyT+sp+41ahlI9F4EE=;
-        b=fWl0cpDQkNqevyWPzASipVNityB1KjuX9jTlByMvlMMJWjgIscZQN6H6+23Iop8MOn
-         lcjhv+1qj/QIhsB2FUT7/ej448lONWu6L9c2mYUwRjCilj6gy06EHx9/fp/7AR5e+REi
-         h04VulMUdBz8oRORac4Now3cQv3JLzpOaWhot7l0bdVyE7xzZ8ykapT7yEFozZexmvie
-         3SjlyJqlkvPzx/OqpYj74+IPPmWr5TyLMBbyDfBOkvO3DmZ3ezQRRBHDbLjooofHFbgE
-         hPsuPa8lVJuMpwIUO3OoNWrsu1kK95zs+CD4+gNOSdr2qLaLc486dYr4oJ7bmsF0dpmg
-         Hvtw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
-         :content-transfer-encoding;
-        bh=9MGv6IyB1L5mu7VLeRV9tquByEyT+sp+41ahlI9F4EE=;
-        b=IhvAWWk/CENiFD8vQw2w87hMiIPo02SqagrmlQuH9iEXYAVBTtX5CzCAP/d5tenURm
-         5wzJmpfvNZSHHPhbpy0bECV3Y61iNRE66YY281qVBpgMHpBoCKWoLEAnpmPzQfPPert1
-         3ibKaRpwTmbabfYCNYWRzLOEzs6zOnZgKGiXrXmwFTnmIiddDze1q8ODKEtlwzCLYFOZ
-         f4Ua8zj/cBoMY1UWw+9PCZg1rlOMYDU/AZ79XRtb30yPE1tnxo83lA+NUK1jVJYaCseO
-         jIRo75Ma7Krhx97+UXDv/azUlQqYCyjv+RpSBxY5sqXAqZomGVx3IQHXoC2xuCWBYEbl
-         M9UQ==
-X-Gm-Message-State: AOAM530TOMQ85JshPRPewBpZ94ONSNAyE5SStom8TPUFJLnfcAmjMwPW
-	GDWUDO7hEMeqiQyWWUWrrRtZ7w==
-X-Google-Smtp-Source: ABdhPJzKxQOsc+sTDWBkvjfgo3SED+f/UgG8Bg6yKNNtKMAM655HLJsxtR3AGm98Q+icncTnLq2ZBw==
-X-Received: by 2002:a05:651c:233:b0:255:58b9:1f53 with SMTP id z19-20020a05651c023300b0025558b91f53mr23134700ljn.143.1654648264790;
-        Tue, 07 Jun 2022 17:31:04 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id h28-20020ac2597c000000b00478635ebdccsm3464569lfp.251.2022.06.07.17.31.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Jun 2022 17:31:04 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH 1/2] phy: qcom-qmp: fix the QSERDES_V5_COM_CMN_MODE register
-Date: Wed,  8 Jun 2022 03:30:58 +0300
-Message-Id: <20220608003059.2910252-1-dmitry.baryshkov@linaro.org>
-X-Mailer: git-send-email 2.35.1
+	id 1nykdZ-00AFiB-GM
+	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 01:37:36 +0000
+Received: from epcas2p2.samsung.com (unknown [182.195.41.54])
+	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20220608013723epoutp0112ccb1928ff36ad5c1b82bf0cecd1e8b~2gXLgrvQ23079230792epoutp01l
+	for <linux-phy@lists.infradead.org>; Wed,  8 Jun 2022 01:37:23 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20220608013723epoutp0112ccb1928ff36ad5c1b82bf0cecd1e8b~2gXLgrvQ23079230792epoutp01l
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1654652243;
+	bh=opXGkGbRe/ErGUghcNtoq7K7Ws9fOuLrbwVHZpDOy3A=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=mLWgLsfLoiNhjQzY61FaaTwZyuv6dC2Xx0HAPMYNpJ3tTV1P7ISIq4ZylhqzLdBXN
+	 ZJ7KjdWD7W+/K2E40epmM9JuzGriMwO7XJyBjRNOB/QvsWrEcj3MO+HJhC8LB+oVZl
+	 YiHjpXmNvguVNPbi6UjpAC9KyU451HIqcZ5ys1h8=
+Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
+	epcas2p3.samsung.com (KnoxPortal) with ESMTP id
+	20220608013722epcas2p39188b5686cb3b868a8688159d040bad4~2gXK74ALD2152521525epcas2p3E;
+	Wed,  8 Jun 2022 01:37:22 +0000 (GMT)
+Received: from epsmges2p3.samsung.com (unknown [182.195.36.98]) by
+	epsnrtp2.localdomain (Postfix) with ESMTP id 4LHqbQ1KMgz4x9QP; Wed,  8 Jun
+	2022 01:37:22 +0000 (GMT)
+Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
+	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
+	B7.DC.10028.25DFF926; Wed,  8 Jun 2022 10:37:22 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+	epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
+	20220608013721epcas2p3a1505f7ade7ad2a41a3a8d477c5b0188~2gXJyNTDI0960809608epcas2p32;
+	Wed,  8 Jun 2022 01:37:21 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+	20220608013721epsmtrp1bac4215603a142cf7349c3a89c2028c7~2gXJxVmfh3218032180epsmtrp1A;
+	Wed,  8 Jun 2022 01:37:21 +0000 (GMT)
+X-AuditID: b6c32a47-573ff7000000272c-c0-629ffd522376
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+	epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+	0D.63.11276.15DFF926; Wed,  8 Jun 2022 10:37:21 +0900 (KST)
+Received: from KORCO082417 (unknown [10.229.8.121]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20220608013721epsmtip272c4a5caf8d0c7d83dc3e875652ad4bb~2gXJlqiVm0080300803epsmtip2U;
+	Wed,  8 Jun 2022 01:37:21 +0000 (GMT)
+From: "Chanho Park" <chanho61.park@samsung.com>
+To: "'Alim Akhtar'" <alim.akhtar@samsung.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<linux-scsi@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Cc: <devicetree@vger.kernel.org>, <robh+dt@kernel.org>,
+	<krzysztof.kozlowski+dt@linaro.org>, <vkoul@kernel.org>,
+	<avri.altman@wdc.com>, <bvanassche@acm.org>, <martin.petersen@oracle.com>,
+	<pankaj.dubey@samsung.com>, "'Bharat	Uppal'" <bharat.uppal@samsung.com>
+In-Reply-To: <20220603154714.30532-3-alim.akhtar@samsung.com>
+Subject: RE: [PATCH v2 2/7] phy: samsung-ufs: move cdr offset to drvdata
+Date: Wed, 8 Jun 2022 10:37:21 +0900
+Message-ID: <002c01d87ad8$4c0f8600$e42e9200$@samsung.com>
 MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: ko
+Thread-Index: AQFSBQ9Zoh1+pG8sApsbls4ebot9jgJwO85AAlq0dRmuK062cA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrOJsWRmVeSWpSXmKPExsWy7bCmhW7Q3/lJBlf6OCwezNvGZvHy51U2
+	i2svL7BbTPvwk9li/pFzrBZ9Lx4yW2x6fI3V4vKuOWwWE1Z9Y7Hovr6DzWL58X9MFou2fmG3
+	aN17hN1i550TzA58HpeveHtsWtXJ5nHn2h42j81L6j0+Pr3F4tG3ZRWjx+dNch7tB7qZAjii
+	sm0yUhNTUosUUvOS81My89JtlbyD453jTc0MDHUNLS3MlRTyEnNTbZVcfAJ03TJzgM5WUihL
+	zCkFCgUkFhcr6dvZFOWXlqQqZOQXl9gqpRak5BSYF+gVJ+YWl+al6+WlllgZGhgYmQIVJmRn
+	zHyykqVgMXPFr6YtzA2M15i6GDk5JARMJNaf+cDWxcjFISSwg1Gi//JiJgjnE6NEw4FXrBDO
+	N0aJ7r637DAth9e/YAGxhQT2MkqcWSgCUfSCUWLdpsVgc9kE9CVedmwD6xYBmft5xScWEIdZ
+	oJNJovvIBbAqTgFbiV+LJ7OB2MICHhLzrnQxdzFycLAIqEj0rwsGCfMKWEpsf7SSGcIWlDg5
+	8wnYZmYBeYntb+cwQ1ykIPHz6TJWiLiIxOzONrC4iICTxIX3U6BqnnBInLhuCmG7SDxue8MG
+	YQtLvDq+BeozKYmX/W1QdrHE0lmfwGEhIdDAKHF52y+oBmOJWc/aGUHuZBbQlFi/Sx/ElBBQ
+	ljhyC+o0PomOw3/ZIcK8Eh1tQhCN6hIHtk9ngbBlJbrnfGadwKg0C8ljs5A8NgvJM7MQdi1g
+	ZFnFKJZaUJybnlpsVGAMj+zk/NxNjOAUreW+g3HG2w96hxiZOBgPMUpwMCuJ8EqGz08S4k1J
+	rKxKLcqPLyrNSS0+xGgKDOmJzFKiyfnALJFXEm9oYmlgYmZmaG5kamCuJM7rlbIhUUggPbEk
+	NTs1tSC1CKaPiYNTqoGp31v2af3Tkqluej1TAx4cytTRlDp0cUtH5ffHwjkp8Wt+RIdrrTJK
+	Otbj8Wbj9xnJ8pFXG7VWTV2jtdRzdtsN+bgjJUYXFSV+SOTGfTzjvlRyqvG1NI8P6l+v/fxw
+	hSdNd9KMS8t/+uw9G1y385++Q+KZw1l6dren87if3Hkzd1N2z68GNhUFE9ktZ8VjhO5O0s/8
+	t4G1R+L+vIgrS2Itcr06r1/jswydbOgYHLBVJ+am5SILJyteq5JbSslHOVQ3yD19qha5110m
+	69JbX4M12sszvz/WZTlz2ir9hLawRL0gk9OTDWlZy27GqZVotP0LVzqrLvR9rkFESZ/S/c8H
+	5Ptrfl9/emInw/Ee4XYlluKMREMt5qLiRAAvr9uPWgQAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrKIsWRmVeSWpSXmKPExsWy7bCSvG7g3/lJBsvfKlk8mLeNzeLlz6ts
+	FtdeXmC3mPbhJ7PF/CPnWC36Xjxkttj0+BqrxeVdc9gsJqz6xmLRfX0Hm8Xy4/+YLBZt/cJu
+	0br3CLvFzjsnmB34PC5f8fbYtKqTzePOtT1sHpuX1Ht8fHqLxaNvyypGj8+b5DzaD3QzBXBE
+	cdmkpOZklqUW6dslcGXMfLKSpWAxc8Wvpi3MDYzXmLoYOTkkBEwkDq9/wdLFyMUhJLCbUWLv
+	xmcsEAlZiWfvdrBD2MIS91uOsEIUPWOUWNP/nBEkwSagL/GyYxtYQkRgD6NE27xT7CAOs8Bk
+	JolJDV+h5u5nlFi2ahNYC6eArcSvxZPZQGxhAQ+JeVe6mLsYOThYBFQk+tcFg4R5BSwltj9a
+	yQxhC0qcnPkE7CRmAW2J3oetjBC2vMT2t3OYIc5TkPj5dBkrRFxEYnZnG1hcRMBJ4sL7KcwT
+	GIVnIRk1C8moWUhGzULSvoCRZRWjZGpBcW56brFhgWFearlecWJucWleul5yfu4mRnDMamnu
+	YNy+6oPeIUYmDsZDjBIczEoivJLh85OEeFMSK6tSi/Lji0pzUosPMUpzsCiJ817oOhkvJJCe
+	WJKanZpakFoEk2Xi4JRqYGrd+3zWrfysxQmNO8qFr7tdTpvuacL+K+2dovtLNb/r/0KehAuU
+	XRPvX7CNRy+89+W0oz6BNyNXn1/+O/xf5vkjDsWG+qcaBVdxvX5zafo5m4qzeQmXr3iJ7NdV
+	+pK0kdG9ce3xjOYLhiFckc+4bHs+cob2Tjy27J6IH19du3noO4a9P9x7leY0aM9ap/reqzZg
+	arTR9u5fRvPttwu9mPiJ8W3Z9/kKO9WqQm6vcNEtzlVQWZxwucFO8PUal4fpWiFne3Y+P7R2
+	0eWibVah3FWrdkx53G1Ws+BMc92JLVoyLHGrV0ufub6nOGXDzRU/aj/9fFa4wkp3qiFPs3HM
+	dJ+NBnaTZbp4+XbpvjtwYqUSS3FGoqEWc1FxIgBuNA77SAMAAA==
+X-CMS-MailID: 20220608013721epcas2p3a1505f7ade7ad2a41a3a8d477c5b0188
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220603154853epcas5p1f072d462edae5584d1cce601189ab85b
+References: <20220603154714.30532-1-alim.akhtar@samsung.com>
+	<CGME20220603154853epcas5p1f072d462edae5584d1cce601189ab85b@epcas5p1.samsung.com>
+	<20220603154714.30532-3-alim.akhtar@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220607_173110_175625_FAEF354F 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220607_183734_877721_80A07B5A 
+X-CRM114-Status: GOOD (  11.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,32 +141,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Change QSERDES_V5_COM_CMN_MODE to be defined to 0x1a0 rather than 0x1a4.
-The only user of this register name (sm8450_qmp_gen4x2_pcie_serdes_tbl)
-should use the 0x1a0 register, as stated in the downstream dtsi tree.
+> Subject: [PATCH v2 2/7] phy: samsung-ufs: move cdr offset to drvdata
+> 
+> Move CDR lock offset to drv data so that it can be extended for other SoCs
+> which are having CDR lock at different register offset.
+> 
+> Signed-off-by: Bharat Uppal <bharat.uppal@samsung.com>
+> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
 
-Fixes: 2c91bf6bf290 ("phy: qcom-qmp: Add SM8450 PCIe1 PHY support")
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp.h | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Reviewed-by: Chanho Park <chanho61.park@samsung.com>
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index 06b2556ed93a..b9a91520439c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -1116,7 +1116,8 @@
- #define QSERDES_V5_COM_CORE_CLK_EN			0x174
- #define QSERDES_V5_COM_CMN_CONFIG			0x17c
- #define QSERDES_V5_COM_CMN_MISC1			0x19c
--#define QSERDES_V5_COM_CMN_MODE				0x1a4
-+#define QSERDES_V5_COM_CMN_MODE				0x1a0
-+#define QSERDES_V5_COM_CMN_MODE_CONTD			0x1a4
- #define QSERDES_V5_COM_VCO_DC_LEVEL_CTRL		0x1a8
- #define QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE1_MODE0	0x1ac
- #define QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE2_MODE0	0x1b0
--- 
-2.35.1
+Best Regards,
+Chanho Park
 
 
 -- 
