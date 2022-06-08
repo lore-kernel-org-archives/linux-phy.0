@@ -4,80 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE329C43334
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 12:08:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C163C433EF
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jun 2022 13:04:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mvTJxkRappghsjsX3Sra6xNpi287/wsINGKJmT9yorw=; b=AzAurWsIM7/ei8
-	Agk3HkCL3T1vX7DB56eni+er7cmkbk+wn0g2viVoxdgSHo4K3RGyWKZ0cVdKhuNr7li8Jv2e7O0+U
-	zQU39ZyUrPzDanzM2j8Ocgw+jekv9fc/rrdcJcfa7XjXkR9GaaiY8XniD0OfUTjJwgAbBZyPfNL+I
-	4iXnk2/voPph8Km6rdIwBW3z1S2snuxdCjor0C+vrD2V0KNUc0MGc8Ydoa5GqrmnlI0idJcyxwa8I
-	oqVnnJdk60zblvqgT8tD/WI6VGIpPvRU21D+kN8csCZHiq6Mgd3djCT6AwTDBbIBY6Fhmc9kasvWN
-	F5sEwRYlTa0Z13qt55xw==;
+	List-Owner; bh=NOcEJ2u9rruMc5VId7TIUWF89vBDr3bteeIItBq8hzc=; b=3ohKcxeTHeJQpz
+	445C8GMQ8tp2H4HkyOLt3tU9GjQcnYcJOEHgcsErIFs7atJljuu2EwKnCEfclyXkFYY1bNB6Nb4Fe
+	pfGpBbnSoCGtS7OKBDUwUMMM4XLpODs9Nictc0V4Qyzkp+H5lpdM0+OvJwvXZem76/DF+3A/oaaIi
+	3j3BJGYjdhbrtjnBmfSJrgpVUlx/n7VV8PeBtOKSqhycv1/qukam2aGO6mIgPbKeQKTeYrESX0cC3
+	HlIZj7Fo26tkl4sDfGJqRLO3MGI0UgUGis7mRKW7AZcdMrY4JCw9Im1056KOQrWfPrAYkAw328CgP
+	53TN4pgW1P4EeOYc5DVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyuTi-00D0Sh-5b; Wed, 08 Jun 2022 12:08:02 +0000
-Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
+	id 1nyvMT-00D8Gr-M6; Wed, 08 Jun 2022 13:04:37 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyuTX-00D0Kh-DA
-	for linux-phy@lists.infradead.org; Wed, 08 Jun 2022 12:07:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
-  t=1654690071; x=1686226071;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=eixAlGC3/66qXleJOQL13o9s1uPtPCDR9p1TUd1YkLw=;
-  b=mLVA1Muay7CeupBgGjMoBV9ftJ99wslPcOH9cdpz3FAyNqCcUPpclAm+
-   ADT2RVK6J6u54cJ/FPBt2yUN/GYhyaE/yNpRN0sjQdEZ6UdJOI29reuK7
-   S3OAMnL/jqDoKqFNngOdmhsP3HRJvk8oPpRaQEZ0KAenHexnnmEhtxryP
-   8=;
-Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
-  by alexa-out-sd-01.qualcomm.com with ESMTP; 08 Jun 2022 05:07:50 -0700
-X-QCInternal: smtphost
-Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
-  by ironmsg05-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Jun 2022 05:07:49 -0700
-Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
- nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.22; Wed, 8 Jun 2022 05:07:49 -0700
-Received: from [10.216.33.38] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Wed, 8 Jun 2022
- 05:07:43 -0700
-Message-ID: <e4c67862-d173-906f-e9c7-d26408135e3a@quicinc.com>
-Date: Wed, 8 Jun 2022 17:37:40 +0530
+	id 1nyvMI-00D8Fv-59; Wed, 08 Jun 2022 13:04:27 +0000
+X-UUID: 47c37155e2cf49d6b7aff95caa64f948-20220608
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.5,REQID:e6033d57-210a-4946-8e76-6ecbd7ee2afa,OB:0,LO
+	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+	ON:release,TS:0
+X-CID-META: VersionHash:2a19b09,CLOUDID:a69c1de5-2ba2-4dc1-b6c5-11feb6c769e0,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
+	,QS:0,BEC:nil
+X-UUID: 47c37155e2cf49d6b7aff95caa64f948-20220608
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+	(envelope-from <rex-bc.chen@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 1881958074; Wed, 08 Jun 2022 06:04:17 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 8 Jun 2022 05:54:15 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Wed, 8 Jun 2022 20:54:14 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Wed, 8 Jun 2022 20:54:14 +0800
+Message-ID: <61ed067bc117a67ccdf64420401605c2fadfe43a.camel@mediatek.com>
+Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
+	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
+	<matthias.bgg@gmail.com>, Chunfeng Yun
+ =?UTF-8?Q?=28=E4=BA=91=E6=98=A5=E5=B3=B0=29?= <Chunfeng.Yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao Shi
+ =?UTF-8?Q?=28=E7=9F=B3=E8=AE=B0=E6=B6=9B=29?= <jitao.shi@mediatek.com>
+CC: Markus Schneider-Pargmann <msp@baylibre.com>,
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-fbdev@vger.kernel.org"
+	<linux-fbdev@vger.kernel.org>
+Date: Wed, 8 Jun 2022 20:54:14 +0800
+In-Reply-To: <79bea587e20de842d48dcb2e1da19e276f9d635b.camel@mediatek.com>
+References: <20220523104758.29531-1-granquet@baylibre.com>
+	 <20220523104758.29531-19-granquet@baylibre.com>
+	 <b8aef76cef2fa434401b6a016de291eb24198faa.camel@mediatek.com>
+	 <4329859ca11c13e7f6a9951b01a779fc391f029b.camel@mediatek.com>
+	 <79bea587e20de842d48dcb2e1da19e276f9d635b.camel@mediatek.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.0
-Subject: Re: [PATCH v8 1/3] dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy
- override params bindings
-Content-Language: en-US
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Rob Herring <robh+dt@kernel.org>, "Andy
- Gross" <agross@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Stephen Boyd
-	<swboyd@chromium.org>, Doug Anderson <dianders@chromium.org>, "Matthias
- Kaehlcke" <mka@chromium.org>, Wesley Cheng <quic_wcheng@quicinc.com>
-CC: <devicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
-	<linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <quic_pkondeti@quicinc.com>,
-	<quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>, Sandeep Maheswaram
-	<quic_c_sanm@quicinc.com>
-References: <1654066564-20518-1-git-send-email-quic_kriskura@quicinc.com>
- <1654066564-20518-2-git-send-email-quic_kriskura@quicinc.com>
- <00cf0a30-46d5-f566-af35-9f7c33ec4182@linaro.org>
-From: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>
-In-Reply-To: <00cf0a30-46d5-f566-af35-9f7c33ec4182@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220608_050751_538706_50ABFCBB 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20220608_060426_239055_8B3EFCEC 
+X-CRM114-Status: GOOD (  45.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,129 +96,210 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Wed, 2022-06-08 at 10:44 +0800, CK Hu wrote:
+> Hi, Rex:
+> 
+> On Tue, 2022-06-07 at 20:44 +0800, Rex-BC Chen wrote:
+> > On Tue, 2022-06-07 at 14:44 +0800, CK Hu wrote:
+> > > Hi, Rex:
+> > > 
+> > > On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> > > > From: Markus Schneider-Pargmann <msp@baylibre.com>
+> > > > 
+> > > > This patch adds a DisplayPort driver for the Mediatek mt8195
+> > > > SoC.
+> > > > 
+> > > > It supports the mt8195, the embedded DisplayPort units. It
+> > > > offers
+> > > > DisplayPort 1.4 with up to 4 lanes.
+> > > > 
+> > > > The driver creates a child device for the phy. The child device
+> > > > will
+> > > > never exist without the parent being active. As they are
+> > > > sharing
+> > > > a
+> > > > register range, the parent passes a regmap pointer to the child
+> > > > so
+> > > > that
+> > > > both can work with the same register range. The phy driver sets
+> > > > device
+> > > > data that is read by the parent to get the phy device that can
+> > > > be
+> > > > used
+> > > > to control the phy properties.
+> > > > 
+> > > > This driver is based on an initial version by
+> > > > Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> > > > 
+> > > > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> > > > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> > > > ---
+> > > 
+> > > [snip]
+> > > 
+> > > > +
+> > > > +static int mtk_dp_train_handler(struct mtk_dp *mtk_dp)
+> > > > +{
+> > > > +	bool training_done = false;
+> > > > +	short max_retry = 50;
+> > > > +	int ret = 0;
+> > > > +
+> > > > +	do {
+> > > > +		switch (mtk_dp->train_state) {
+> > > > +		case MTK_DP_TRAIN_STATE_STARTUP:
+> > > 
+> > > mtk_dp->train_state is initialized as MTK_DP_TRAIN_STATE_STARTUP
+> > > even
+> > > though HPD ISR does not exist. Does this mean HPD ISR is
+> > > redundant?
+> > > If
+> > > HPD ISR is not redundant, create a new state
+> > > MTK_DP_TRAIN_STATE_NONE
+> > > for init state.
+> > > 
+> > 
+> > Hello CK,
+> > 
+> > I think we don't need MTK_DP_TRAIN_STATE_NONE.
+> > Because it's "DP_TRAIN_STATE" not "DP_STATE", I think it's ok if we
+> > start this state machine with "MTK_DP_TRAIN_STATE_STARTUP".
+> 
+> The initial state is MTK_DP_TRAIN_STATE_STARTUP, and HPD thread would
+> change state from MTK_DP_TRAIN_STATE_STARTUP to
+> MTK_DP_TRAIN_STATE_STARTUP, this is redundant. So drop the state
+> change
+> in HPD thread.
+> 
 
-On 6/8/2022 3:06 PM, Krzysztof Kozlowski wrote:
-> On 01/06/2022 08:56, Krishna Kurapati wrote:
->> From: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
->>
->> Add device tree bindings for SNPS phy tuning parameters.
->>
->> Signed-off-by: Sandeep Maheswaram <quic_c_sanm@quicinc.com>
->> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
->> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->> ---
->>   .../bindings/phy/qcom,usb-snps-femto-v2.yaml       | 96 ++++++++++++++++++++++
->>   1 file changed, 96 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
->> index 1ce251d..daeeb04 100644
->> --- a/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
->> +++ b/Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml
->> @@ -53,6 +53,102 @@ properties:
->>     vdda33-supply:
->>       description: phandle to the regulator 3.3V supply node.
->>   
->> +  qcom,hs-disconnect-bp:
->> +    description:
->> +      This adjusts the voltage level for the threshold used to
->> +      detect a disconnect event at the host. Possible values are.
->> +      The values defined are in multiples of basis points (1bp = 0.01%).
->> +      The hardware accepts only discrete values. The value closest to the
->> +      provided input will be chosen as the override value for this param.
->> +    minimum: -272
->> +    maximum: 2156
->> +
->> +  qcom,squelch-detector-bp:
->> +    description:
->> +      This adjusts the voltage level for the threshold used to
->> +      detect valid high-speed data.
->> +      The values defined are in multiples of basis points (1bp = 0.01%).
->> +      The hardware accepts only discrete values. The value closest to the
->> +      provided input will be chosen as the override value for this param.
->> +    minimum: -2090
->> +    maximum: 1590
->> +
->> +  qcom,hs-amplitude-bp:
->> +    description:
->> +      This adjusts the high-speed DC level voltage.
->> +      The values defined are in multiples of basis points (1bp = 0.01%).
->> +      The hardware accepts only discrete values. The value closest to the
->> +      provided input will be chosen as the override value for this param.
->> +    minimum: -660
->> +    maximum: 2670
->> +
->> +  qcom,pre-emphasis-duration-bp:
->> +    description:
->> +      This signal controls the duration for which the
->> +      HS pre-emphasis current is sourced onto DP<#> or DM<#>.
->> +      The HS Transmitter pre-emphasis duration is defined in terms of
->> +      unit amounts. One unit of pre-emphasis duration is approximately
->> +      650 ps and is defined as 1X pre-emphasis duration.
->> +      The values defined are in multiples of basis points (1bp = 0.01%).
->> +      The hardware accepts only discrete values. The value closest to the
->> +      provided input will be chosen as the override value for this param.
->> +    minimum: 10000
->> +    maximum: 20000
->> +
->> +  qcom,pre-emphasis-amplitude-bp:
->> +    description:
->> +      This signal controls the amount of current sourced to
->> +      DP<#> and DM<#> after a J-to-K or K-to-J transition.
->> +      The HS Transmitter pre-emphasis current is defined in terms of unit
->> +      amounts. One unit amount is approximately 2 mA and is defined as
->> +      1X pre-emphasis current.
->> +      The values defined are in multiples of basis points (1bp = 0.01%).
->> +      The hardware accepts only discrete values. The value closest to the
->> +      provided input will be chosen as the override value for this param.
->> +    minimum: 10000
->> +    maximum: 40000
->> +
->> +  qcom,hs-rise-fall-time-bp:
->> +    description:
->> +      This adjusts the rise/fall times of the high-speed waveform.
->> +      The values defined are in multiples of basis points (1bp = 0.01%).
->> +      The hardware accepts only discrete values. The value closest to the
->> +      provided input will be chosen as the override value for this param.
->> +    minimum: -4100
->> +    maximum: 5430
->> +
->> +  qcom,hs-crossover-voltage-microvolt:
->> +    description:
->> +      This adjusts the voltage at which the DP<#> and DM<#>
->> +      signals cross while transmitting in HS mode.
->> +      The values defined are in milli volts.
-> It's not accurate anymore - it's microvolt. I propose to skip this one
-> sentence, because unit is obvious from the type.
+ok, in edp it's redundant in mtk_dp_hpd_event_thread(), but I will add
+it back in dp patch.
 
-Hi Krzysztof,
+> > 
+> > > > +			mtk_dp_state_handler(mtk_dp);
+> > > > +			mtk_dp->train_state =
+> > > > MTK_DP_TRAIN_STATE_CHECKCAP;
+> > > > +			break;
+> > > > +
+> > > > +		case MTK_DP_TRAIN_STATE_CHECKCAP:
+> > > > +			if (mtk_dp_parse_capabilities(mtk_dp))
+> > > > {
+> > > > +				mtk_dp-
+> > > > >train_info.check_cap_count = 0;
+> > > > +				mtk_dp->train_state =
+> > > > MTK_DP_TRAIN_STATE_CHECKEDID;
+> > > > +			} else {
+> > > > +				mtk_dp-
+> > > > >train_info.check_cap_count++;
+> > > > +
+> > > > +				if (mtk_dp-
+> > > > >train_info.check_cap_count
+> > > > > 
+> > > > 
+> > > > +				    MTK_DP_CHECK_SINK_CAP_TIMEO
+> > > > UT_COUNT
+> > > > ) {
+> > > > +					mtk_dp-
+> > > > > train_info.check_cap_count = 0;
+> > > > 
+> > > > +					mtk_dp->train_state =
+> > > > MTK_DP_TRAIN_STATE_DPIDLE;
+> > > > +					ret = -ETIMEDOUT;
+> > > > +				}
+> > > > +			}
+> > > > +			break;
+> > > > +
+> > > > +		case MTK_DP_TRAIN_STATE_CHECKEDID:
+> > > > +			mtk_dp->train_state =
+> > > > MTK_DP_TRAIN_STATE_TRAINING_PRE;
+> > > 
+> > > MTK_DP_TRAIN_STATE_CHECKEDID is a redundant state, drop it.
+> > > 
+> > > > +			break;
+> > > > +
+> > > > +		case MTK_DP_TRAIN_STATE_TRAINING_PRE:
+> > > > +			mtk_dp_state_handler(mtk_dp);
+> > > > +			mtk_dp->train_state =
+> > > > MTK_DP_TRAIN_STATE_TRAINING;
+> > > > +			break;
+> > > > +
+> > > > +		case MTK_DP_TRAIN_STATE_TRAINING:
+> > > > +			ret = mtk_dp_train_start(mtk_dp);
+> > > > +			if (ret == 0) {
+> > > > +				mtk_dp_video_mute(mtk_dp,
+> > > > true);
+> > > > +				mtk_dp->train_state =
+> > > > MTK_DP_TRAIN_STATE_NORMAL;
+> > > > +				mtk_dp_fec_enable(mtk_dp,
+> > > > mtk_dp-
+> > > > > has_fec);
+> > > > 
+> > > > +			} else if (ret != -EAGAIN) {
+> > > > +				mtk_dp->train_state =
+> > > > MTK_DP_TRAIN_STATE_DPIDLE;
+> > > > +			}
+> > > > +			break;
+> > > > +		case MTK_DP_TRAIN_STATE_NORMAL:
+> > > > +			mtk_dp_state_handler(mtk_dp);
+> > > > +			training_done = true;
+> > > > +			break;
+> > > > +		case MTK_DP_TRAIN_STATE_DPIDLE:
+> > > 
+> > > When would this case happen?
+> > > 
+> > > Regards,
+> > > CK
+> > 
+> > Yes, if it's disconnected if we are still training for dp.
+> > or failed to training min spec RBR.
+> 
+> I mean, every time state change to MTK_DP_TRAIN_STATE_DPIDLE, it
+> would
+> jump out of this loop and would not get into this loop, so this case
+> would never get in. This is redundant, so remove this.
+> 
+> Regards,
+> CK
+> 
 
-Sure, will omit this line in the next series.
+ok, I will remove it
 
->> +    maximum: 28000
->> +
->> +  qcom,hs-output-impedance-micro-ohms:
->> +    description:
->> +      In some applications, there can be significant series resistance
->> +      on the D+ and D- paths between the transceiver and cable. This adjusts
->> +      the driver source impedance to compensate for added series
->> +      resistance on the USB. The values defined are in milli ohms.
-> The same. Other places might need similar change.
->
-> Best regards,
-> Krzysztof
+BRs,
+Bo-Chen
 
-Sure, Will make sure to remove the basis points sentence from other 
-params as well as bp has been added to dtschema and is self-explanatory.
-
-
-Thanks,
-
-Krishna,
+> > 
+> > BRs,
+> > Rex
+> > > 
+> > > > +			break;
+> > > > +		default:
+> > > > +			break;
+> > > > +		}
+> > > > +
+> > > > +		if (ret) {
+> > > > +			if (ret == -EAGAIN)
+> > > > +				continue;
+> > > > +			/*
+> > > > +			 * If we get any other error number, it
+> > > > doesn't
+> > > > +			 * make any sense to keep iterating.
+> > > > +			 */
+> > > > +			break;
+> > > > +		}
+> > > > +	} while (!training_done || --max_retry);
+> > > > +
+> > > > +	return ret;
+> > > > +}
+> > > 
+> > > 
+> > 
+> > 
+> 
+> 
 
 
 -- 
