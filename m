@@ -4,72 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4626BC43334
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jun 2022 05:58:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 434AFC43334
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jun 2022 07:24:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hHCSaHK2DDIplQ03xxXXGsUCu7B6fDS0kXMHr5UlGhM=; b=4t+4HliGXeOfAz
-	lema1ZKzK46rW6N92fkZGoi8KVeEcrZp/sJqGufae7H+JNZo5bsCokwLNZYZ9UofZLJRPUjHByeRS
-	Q/ztwITwyXOOMLOUHaV5Y2QmjOXFBQaUWL77bXOcLaipuTV+GX44gX2vishSuKmpeb0pR0+BdmrqG
-	WDrQVYUK3MMhYtxcD38jE0c2vwJHeff6d70ZXH1iUYmrxgowSLBvJEY1KbQkDXcFb5dKzUbFfpCrZ
-	4iTNCxceQGVKNkEuuQI0d2gka36jSzDbrvdXrr3cLP1dM32etnC7vEvYQmxZz6trzjBKY+LKjhklY
-	BUX38ACOh3TZoHuT4RYg==;
+	List-Owner; bh=MjWqdA0+mFB3CC9/buwhvahckgux4SFIJvIuf7gd0I8=; b=q/JO3qeCaXaVSu
+	4zuw8t8IA/aYRfavJtYVN1LrHXZjz7XYPgckfUnrOEfvehk5ar3h+VoWVEh1e0tr2HM2og1AXiWFW
+	MklMfLBp8rsA1XZfv04XBvhLgkPHeRZXn70Ir3beia6pIbYXsOlW0zzmQfobmChoJDKBKpGTKJwig
+	2a7ZHET4sA6G3sj3Q0nSFaoAxzH8QB78TC2yzkmM9q6v3nSnwEPoNhqyrUzZFl/hbavVf7ZWcWTaF
+	T9FEjCcvzdhXr4f+3WfzN8+n1SxyJ0gil1+Lj6dKCiupXmte635ieLPQumTCMKKKGq6/dXtpuemi/
+	hJOI+fL3P5Ptcoc05MVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzBBV-00Gud1-LB; Thu, 09 Jun 2022 05:58:21 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1nzCWg-00HMry-LO; Thu, 09 Jun 2022 07:24:18 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzBBJ-00GuZV-MG; Thu, 09 Jun 2022 05:58:10 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id E3E9B61D68;
-	Thu,  9 Jun 2022 05:58:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5841FC34114;
-	Thu,  9 Jun 2022 05:58:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1654754288;
-	bh=wxhS37iA9AJMgWUEVwHHfukO1BCczUN2/ZYuUq9Ar/k=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=hqJLw4phQClKtl4+2ZplQU8hPrYIg4FxKrhoRp97zppzIf8jgUJ8Ab2oI3kvhEaDj
-	 4lx4mI0FDsGS7aEYWaS595raHsHgZreqsJfI14nU+K7n4Gcnu1X55SHhzi54jLdsYV
-	 P+34lQepioNGFSu88IzI0hBgmwiRDSiS45RUZarBtX7C76UU1hQD8ssPwWqq0hiU6v
-	 i8BX09LEoEbO6khb75x3zwB0SNhxQCgq1wsx1bpJT0fUa6EcndFKg1rU12dhrKAPEj
-	 EMGHCVdVkfnM7jzllcUTWnfDzC3Q72+UKgGSN13AWoSI7bBYUplIf/rdjQbhAxbldn
-	 RVtP5mThZFFBQ==
-Date: Thu, 9 Jun 2022 11:28:03 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Fabien Parent <fparent@baylibre.com>
-Cc: robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	qii.wang@mediatek.com, matthias.bgg@gmail.com, jic23@kernel.org,
-	chaotian.jing@mediatek.com, ulf.hansson@linaro.org,
-	srinivas.kandagatla@linaro.org, chunfeng.yun@mediatek.com,
-	broonie@kernel.org, wim@linux-watchdog.org, linux@roeck-us.net,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, dmaengine@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-iio@vger.kernel.org,
-	linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: Re: [PATCH 11/17] dt-bindings: phy: mediatek,dsi-phy: Add MT8365 SoC
- bindings
-Message-ID: <YqGL6/JztR6J7w8y@matsya>
-References: <20220531135026.238475-1-fparent@baylibre.com>
- <20220531135026.238475-12-fparent@baylibre.com>
+	id 1nzCWJ-00HMeA-PY; Thu, 09 Jun 2022 07:23:58 +0000
+X-UUID: 818a8b9f4cf347edb88d5c6cc6fd3469-20220609
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.5,REQID:58195933-d9d4-46d4-acef-acd6e12b5d9c,OB:0,LO
+	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+	ON:release,TS:0
+X-CID-META: VersionHash:2a19b09,CLOUDID:212bc37e-c8dc-403a-96e8-6237210dceee,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
+	,QS:0,BEC:nil
+X-UUID: 818a8b9f4cf347edb88d5c6cc6fd3469-20220609
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+	(envelope-from <rex-bc.chen@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 1262517250; Thu, 09 Jun 2022 00:23:47 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 9 Jun 2022 00:19:21 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
+ Thu, 9 Jun 2022 15:18:50 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Thu, 9 Jun 2022 15:18:49 +0800
+Message-ID: <dda245fbb0dd0d98dff4a332c311db5f588594a2.camel@mediatek.com>
+Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
+	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
+	<matthias.bgg@gmail.com>, Chunfeng Yun
+ =?UTF-8?Q?=28=E4=BA=91=E6=98=A5=E5=B3=B0=29?= <Chunfeng.Yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao Shi
+ =?UTF-8?Q?=28=E7=9F=B3=E8=AE=B0=E6=B6=9B=29?= <jitao.shi@mediatek.com>
+CC: Markus Schneider-Pargmann <msp@baylibre.com>,
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-fbdev@vger.kernel.org"
+	<linux-fbdev@vger.kernel.org>
+Date: Thu, 9 Jun 2022 15:18:49 +0800
+In-Reply-To: <387fc4f9a65b87467fbff3878ad371bee4552e6e.camel@mediatek.com>
+References: <20220523104758.29531-1-granquet@baylibre.com>
+	 <20220523104758.29531-19-granquet@baylibre.com>
+	 <387fc4f9a65b87467fbff3878ad371bee4552e6e.camel@mediatek.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220531135026.238475-12-fparent@baylibre.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220608_225809_787582_0F351AB4 
-X-CRM114-Status: UNSURE (   5.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220609_002355_931720_3D7D2D55 
+X-CRM114-Status: GOOD (  26.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,13 +99,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31-05-22, 15:50, Fabien Parent wrote:
-> Add binding documentation for the MT8365 SoC.
+On Tue, 2022-06-07 at 16:01 +0800, CK Hu wrote:
+> Hi, Rex:
+> 
+> On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> > From: Markus Schneider-Pargmann <msp@baylibre.com>
+> > 
+> > This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
+> > 
+> > It supports the mt8195, the embedded DisplayPort units. It offers
+> > DisplayPort 1.4 with up to 4 lanes.
+> > 
+> > The driver creates a child device for the phy. The child device
+> > will
+> > never exist without the parent being active. As they are sharing a
+> > register range, the parent passes a regmap pointer to the child so
+> > that
+> > both can work with the same register range. The phy driver sets
+> > device
+> > data that is read by the parent to get the phy device that can be
+> > used
+> > to control the phy properties.
+> > 
+> > This driver is based on an initial version by
+> > Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> > 
+> > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> > ---
+> 
+> [snip]
+> 
+> > +
+> > +static void mtk_dp_state_handler(struct mtk_dp *mtk_dp)
+> > +{
+> > +	switch (mtk_dp->state) {
+> 
+> Does mtk_dp->state has any relation with mtk_dp->train_state. If yes,
+> mix mtk_dp->state and mtk_dp->train_state into one state. If no, move
+> calling mtk_dp_state_handler() out of mtk_dp_train_handler().
+> 
+> Regards,
+> CK
+> 
 
-Applied 11, 12 to phy-next, thanks
+Hello CK,
 
--- 
-~Vinod
+OK, I will refine this flow.
+About the state machine of traning flow, we can review in v11.
+
+BRs,
+Bo-Chen
+
+> > +	case MTK_DP_STATE_INITIAL:
+> > +		mtk_dp_video_mute(mtk_dp, true);
+> > +		mtk_dp->state = MTK_DP_STATE_IDLE;
+> > +		break;
+> > +
+> > +	case MTK_DP_STATE_IDLE:
+> > +		if (mtk_dp->train_state == MTK_DP_TRAIN_STATE_NORMAL)
+> > +			mtk_dp->state = MTK_DP_STATE_PREPARE;
+> > +		break;
+> > +
+> > +	case MTK_DP_STATE_PREPARE:
+> > +		mtk_dp_video_config(mtk_dp);
+> > +		mtk_dp_video_enable(mtk_dp, true);
+> > +
+> > +		mtk_dp->state = MTK_DP_STATE_NORMAL;
+> > +		break;
+> > +
+> > +	case MTK_DP_STATE_NORMAL:
+> > +		if (mtk_dp->train_state != MTK_DP_TRAIN_STATE_NORMAL) {
+> > +			mtk_dp_video_mute(mtk_dp, true);
+> > +			mtk_dp->state = MTK_DP_STATE_IDLE;
+> > +		}
+> > +		break;
+> > +
+> > +	default:
+> > +		break;
+> > +	}
+> > +}
+> 
+> 
+
 
 -- 
 linux-phy mailing list
