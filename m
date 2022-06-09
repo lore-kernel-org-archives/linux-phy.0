@@ -4,85 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2F31C43334
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jun 2022 08:13:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16ABEC433EF
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jun 2022 09:37:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lijBcD66HL0BI7nDiJwrF/Hlj2PsJkHL0Vwhc0ncupY=; b=1eq/L4p5M9DFFp
-	wGODJa9FjCIyveiqJ2YLFbU2CGGxhla0HMISUfY5dsErP9BRlJXUnPaitAi16+fc//QtJXQKcZwFn
-	Z3NLcAl8AAuXa2It4sMXyo21JrdbdEvMSVWxzR10pbMmaWFKcBkHzap3qZ1PuMx1kT2Dl4IAlpk3p
-	PyXZ4Q6fb+xgI6mOn2E02o1QaAEhqm602/OAtSTJdu8ZjCWOVnRX3evi7KN4QNptrmiZDkVweCkFz
-	v4QU9XVaXPPm4Rqh5Ev4VwrgC0xzjjTAx4hrUcPwhJq+rHkoxBireRPe+tluow0ls17OlX8xlWH1n
-	nH3A65BrkC+N2KbzyXxg==;
+	List-Owner; bh=wzT9dkk0Pfczx+Wp1W96yoB1VI/CE+r/GQAdtbHuKHw=; b=eLfwS2Aof4r0f2
+	FvtyBkX4hBVVFpJgc9xP3WYaxax7MS83UXUfUkSjXzHiN0xzYiNp1YKVdB7+aooSH/Dd/6wtivyj8
+	1EsmtOG571hXKOVyaFnyNBdxvndhFnSOFZv5KRWEnSzTkFm1VlZfXP9CBnj1o+ORbkd9NISoKjgS5
+	n7+KeygqYWAPHkRDfoZGUWGYY7GJQnJ0cRWt5EF8LHBfWru0arx2csJhUfXa46O6CbFJtMxq3md39
+	FCwxZBkTZ9UddTTuh4MTjko4BlvVbvdnVXiylLWW51WqQZRqCd/C3v/sjvhKRM31s++sw0xiBSY7n
+	0m9nyQjH8nL6frcJwncw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzDIb-00092G-03; Thu, 09 Jun 2022 08:13:49 +0000
+	id 1nzEbl-000hO9-Fc; Thu, 09 Jun 2022 09:37:41 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzDIP-00090F-HK; Thu, 09 Jun 2022 08:13:39 +0000
-X-UUID: 8a4f809055354ecfb0b7a2e4e088daee-20220609
+	id 1nzEbU-000hGj-Vb; Thu, 09 Jun 2022 09:37:27 +0000
+X-UUID: e47e8d172eb8416e8b890a83f61e5b87-20220609
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5,REQID:ba79fff0-a90b-4a4e-b689-0b0bd04863e6,OB:0,LO
+X-CID-O-INFO: VERSION:1.1.5,REQID:6b705a66-68eb-4be1-ba20-23420dc589c3,OB:0,LO
 	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
 	ON:release,TS:0
-X-CID-META: VersionHash:2a19b09,CLOUDID:bc65c57e-c8dc-403a-96e8-6237210dceee,C
+X-CID-META: VersionHash:2a19b09,CLOUDID:d902c97e-c8dc-403a-96e8-6237210dceee,C
 	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
 	,QS:0,BEC:nil
-X-UUID: 8a4f809055354ecfb0b7a2e4e088daee-20220609
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
-	(envelope-from <rex-bc.chen@mediatek.com>)
+X-UUID: e47e8d172eb8416e8b890a83f61e5b87-20220609
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+	(envelope-from <ck.hu@mediatek.com>)
 	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
-	with ESMTP id 971183097; Thu, 09 Jun 2022 01:13:34 -0700
+	with ESMTP id 732579605; Thu, 09 Jun 2022 02:37:15 -0700
 Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 9 Jun 2022 01:03:32 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
+ 15.0.1497.2; Thu, 9 Jun 2022 02:37:13 -0700
+Received: from mtkcas10.mediatek.inc (172.21.101.39) by
  mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.792.15; Thu, 9 Jun 2022 16:03:31 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Thu, 9 Jun 2022 16:03:31 +0800
-Message-ID: <49162f7d313478f13472eb0f3b07ffa2a47cbeba.camel@mediatek.com>
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.2.792.15; Thu, 9 Jun 2022 17:37:11 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkcas10.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 9 Jun 2022 17:37:11 +0800
+Message-ID: <d86e62ab8613f32a50e905f6ac14173b25d36006.camel@mediatek.com>
 Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
  driver
-From: Rex-BC Chen <rex-bc.chen@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
-	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
-	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+From: CK Hu <ck.hu@mediatek.com>
+To: Rex-BC Chen <rex-bc.chen@mediatek.com>, Guillaume Ranquet
+	<granquet@baylibre.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, "Philipp
+ Zabel" <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, "Daniel
+ Vetter" <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, "Krzysztof
+ Kozlowski" <krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
 	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
 	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
-	<matthias.bgg@gmail.com>, Chunfeng Yun
- =?UTF-8?Q?=28=E4=BA=91=E6=98=A5=E5=B3=B0=29?= <Chunfeng.Yun@mediatek.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
- Deller" <deller@gmx.de>, Jitao Shi
- =?UTF-8?Q?=28=E7=9F=B3=E8=AE=B0=E6=B6=9B=29?= <jitao.shi@mediatek.com>
+	<matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Kishon
+ Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao shi <jitao.shi@mediatek.com>
 CC: Markus Schneider-Pargmann <msp@baylibre.com>,
-	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
-	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-fbdev@vger.kernel.org"
+	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
 	<linux-fbdev@vger.kernel.org>
-Date: Thu, 9 Jun 2022 16:03:30 +0800
-In-Reply-To: <651e6b993562d53c893d0325d33fa137e98ab596.camel@mediatek.com>
+Date: Thu, 9 Jun 2022 17:37:11 +0800
+In-Reply-To: <20220523104758.29531-19-granquet@baylibre.com>
 References: <20220523104758.29531-1-granquet@baylibre.com>
 	 <20220523104758.29531-19-granquet@baylibre.com>
-	 <651e6b993562d53c893d0325d33fa137e98ab596.camel@mediatek.com>
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220609_011337_609908_44550AF3 
-X-CRM114-Status: GOOD (  27.62  )
+X-CRM114-CacheID: sfid-20220609_023725_069297_AC7C5983 
+X-CRM114-Status: GOOD (  20.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,117 +92,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2022-06-08 at 16:30 +0800, CK Hu wrote:
-> Hi, Rex:
-> 
-> On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
-> > From: Markus Schneider-Pargmann <msp@baylibre.com>
-> > 
-> > This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
-> > 
-> > It supports the mt8195, the embedded DisplayPort units. It offers
-> > DisplayPort 1.4 with up to 4 lanes.
-> > 
-> > The driver creates a child device for the phy. The child device
-> > will
-> > never exist without the parent being active. As they are sharing a
-> > register range, the parent passes a regmap pointer to the child so
-> > that
-> > both can work with the same register range. The phy driver sets
-> > device
-> > data that is read by the parent to get the phy device that can be
-> > used
-> > to control the phy properties.
-> > 
-> > This driver is based on an initial version by
-> > Jason-JH.Lin <jason-jh.lin@mediatek.com>.
-> > 
-> > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> > ---
-> 
-> [snip]
-> 
-> > +
-> > +static bool mtk_dp_parse_capabilities(struct mtk_dp *mtk_dp)
-> > +{
-> > +	u8 buf[DP_RECEIVER_CAP_SIZE] = {};
-> > +	u8 val;
-> > +	struct mtk_dp_train_info *train_info = &mtk_dp->train_info;
-> > +
-> > +	if (!mtk_dp_plug_state(mtk_dp))
-> > +		return false;
-> > +
-> > +	drm_dp_dpcd_writeb(&mtk_dp->aux, DP_SET_POWER,
-> > DP_SET_POWER_D0);
-> > +	/* Wait for power on */
-> > +	usleep_range(2000, 5000);
-> > +
-> > +	drm_dp_read_dpcd_caps(&mtk_dp->aux, buf);
-> > +
-> > +	memcpy(mtk_dp->rx_cap, buf, min(sizeof(mtk_dp->rx_cap),
-> > sizeof(buf)));
-> 
-> sizeof(mtk_dp->rx_cap) is identical to sizeof(buf), so
-> 
-> drm_dp_read_dpcd_caps(&mtk_dp->aux, mtk_dp->rx_cap);
-> 
-> 
+Hi, Rex:
 
-Hello CK,
-
-I will drop buf[].
-
-> > +	mtk_dp->rx_cap[DP_TRAINING_AUX_RD_INTERVAL] &=
-> > DP_TRAINING_AUX_RD_MASK;
-> > +
-> > +	train_info->link_rate =
-> > +		min_t(int, mtk_dp->max_linkrate, buf[mtk_dp-
-> > > max_linkrate]);
-> > 
-> > +	train_info->lane_count =
-> > +		min_t(int, mtk_dp->max_lanes,
-> > drm_dp_max_lane_count(buf));
-> > +
-> > +	train_info->tps3 = drm_dp_tps3_supported(buf);
-> > +	train_info->tps4 = drm_dp_tps4_supported(buf);
-> > +
-> > +	train_info->sink_ssc =
-> > +		!!(buf[DP_MAX_DOWNSPREAD] & DP_MAX_DOWNSPREAD_0_5);
-> > +
-> > +	train_info->sink_ssc = false;
+On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> From: Markus Schneider-Pargmann <msp@baylibre.com>
 > 
-> What does these two statement do?
+> This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
 > 
+> It supports the mt8195, the embedded DisplayPort units. It offers
+> DisplayPort 1.4 with up to 4 lanes.
+> 
+> The driver creates a child device for the phy. The child device will
+> never exist without the parent being active. As they are sharing a
+> register range, the parent passes a regmap pointer to the child so
+> that
+> both can work with the same register range. The phy driver sets
+> device
+> data that is read by the parent to get the phy device that can be
+> used
+> to control the phy properties.
+> 
+> This driver is based on an initial version by
+> Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> 
+> Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> ---
 
-ssc = Spread spectrum clock.
-it's for both edp and dp.
+[snip]
 
-BRs,
-Bo-Chen
+> +
+> +static int mtk_dp_power_disable(struct mtk_dp *mtk_dp)
+> +{
+> +	int ret;
+> +
+> +	ret = mtk_dp_write(mtk_dp, MTK_DP_TOP_PWR_STATE, 0);
+> +
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = mtk_dp_write(mtk_dp, MTK_DP_0034,
 
-> Regards,
-> CK
-> 
-> > +
-> > +	drm_dp_dpcd_readb(&mtk_dp->aux, DP_MSTM_CAP, &val);
-> > +	if (val & DP_MST_CAP) {
-> > +		/* Clear DP_DEVICE_SERVICE_IRQ_VECTOR_ESI0 */
-> > +		drm_dp_dpcd_readb(&mtk_dp->aux,
-> > +				  DP_DEVICE_SERVICE_IRQ_VECTOR_ESI0,
-> > &val);
-> > +		if (val)
-> > +			drm_dp_dpcd_writeb(&mtk_dp->aux,
-> > +					   DP_DEVICE_SERVICE_IRQ_VECTOR
-> > _ESI0,
-> > +					   val);
-> > +	}
-> > +
-> > +	return true;
-> > +}
-> > +
-> 
-> 
+MTK_DP_0034 is defined as:
+
++#define MTK_DP_0034		      (BIT(2) | BIT(4) | BIT(5))
+
+I think this a weird address.
+
+> +			   DA_CKM_CKTX0_EN_FORCE_EN |
+> DA_CKM_BIAS_LPF_EN_FORCE_VAL |
+> +		     DA_CKM_BIAS_EN_FORCE_VAL |
+> +		     DA_XTP_GLB_LDO_EN_FORCE_VAL |
+> +		     DA_XTP_GLB_AVD10_ON_FORCE_VAL);
+> +
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* Disable RX */
+> +	ret = mtk_dp_write(mtk_dp, MTK_DP_1040, 0);
+
+
+MTK_DP_1040 is defined as:
+
++#define MTK_DP_1040		      (BIT(6) | BIT(12))
+
+I think this a weird address.
+
+Regards,
+CK
+
+> +
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = mtk_dp_write(mtk_dp, MTK_DP_TOP_MEM_PD,
+> +			   0x550 | BIT(FUSE_SEL_SHIFT) |
+> BIT(MEM_ISO_EN_SHIFT));
+> +
+> +	return ret;
+> +}
 
 
 -- 
