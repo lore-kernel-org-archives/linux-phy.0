@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59AC5CCA47B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4464FC43334
 	for <linux-phy@archiver.kernel.org>; Fri, 10 Jun 2022 18:55:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mWR1tuhPFEiSM2V8xtABJaKtJeA+kY2bg1yBnSkgCXo=; b=MDnM3bjYvEeiWq
-	HIZA0q9XTPkWfcBjbQwqFqwL/mAROp6l0APxAOhN+3gm3rMQi0nFK8g9o6IS2GSaO1aEg44DcootJ
-	ejaW+AgjtO0UmIx+BYoiah3bhHYJLFxBJiOYi0t4floJjCdSqeOiv03HkXXeDe+dKPISPbxrkSVLI
-	Dnd4guYBK5BNn0YVtSa4L4Wrk1/hT1nSKSfAEaACke1YCEbeYV11OiNmORUpfpdLMVGA3100WXHP+
-	eI5pzP/PdY3aqV0OaPNyTZlv6+rqSuoAEZnN4AcUSt0ID42N+sd3Ut1EJG2UMS1Cjdtbax6cGNkdd
-	9/KmC+eyMmUMWdtAIfuA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kaNWgPZusu+4WK0m4TAlExyhveDffgowCjKbU1baHp0=; b=rX+8QD1FhJxxXK
+	AqwIzVVRr8H3CTTYtmj9JsGcLgEtzlBcRyxn8r6xeRz566pYOxeyhhYv6w9aVEZ+I1FnoygbHX694
+	ZPYK/bX930i0I8UIGdgVfK24HEjvmwTXAnCePkYcXUOk6YbXSE44YnaZhKAsgdPVsbBCO+OBBYLt9
+	aenvzrIK9zkvVdTllr0hyCqZqeMMH8pI5Dmf2A0t5J9/XhdAdg90HOI2Am+oY7AHleLg12bvpz4Jl
+	jkgtYdWKmnmKlQO4udQBemE0/trZz9OohB6MgoTjP8H7m984r2MVUxKC1FLXJc+414tt7gUGFOdvo
+	82PaGG/4INqaLX7mMgDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzjnU-009S0K-O7; Fri, 10 Jun 2022 18:55:52 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1nzjnU-009S04-KN; Fri, 10 Jun 2022 18:55:52 +0000
+Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzjnS-009Rxq-6p
-	for linux-phy@lists.infradead.org; Fri, 10 Jun 2022 18:55:51 +0000
-Received: by mail-lj1-x235.google.com with SMTP id d18so104969ljc.4
+	id 1nzjnR-009Rxr-OO
+	for linux-phy@lists.infradead.org; Fri, 10 Jun 2022 18:55:50 +0000
+Received: by mail-lj1-x22a.google.com with SMTP id s10so66501ljh.12
         for <linux-phy@lists.infradead.org>; Fri, 10 Jun 2022 11:55:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=g2xdbCbqDzIncuP45i58XD17g/B6emE4ldK55IkqvnU=;
-        b=HzfSCXgWRJfxYCIZZCARYTSb2XczWHRaBN33MxBNh+UyIwO4QaHTE0t22vI52miHYY
-         pN/BaE8UlpdGYhIOrDRjo5yBSxWGZe8WbetqfcrZVsgesQI52CZyG6/J1hDvb6wGL68X
-         xxUtGiQgdJjdE29NQXXQniypyGWaSs6mrUic7pEvupXl52fq3CzB/x2uCjOoW7tNmmEQ
-         iEBxt1XlEQel85s7SKueE5t5zJC4aTw8nCPZJUj7LXS4h4VcgVCZ/f4dWXY1YHJulbdu
-         H9jsVNn0DlFVP4IvktCow+l/n7wapL2I3F9qxkwV63/sFayPys4KxdsariUqMRf5GFAi
-         E3Bw==
+        h=from:to:cc:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=DL/v6Vwo9BkFl30Z9CxnNgezCjx47K1shb9q1wseJlI=;
+        b=DhNyCaZ/swphAvcB34TYeT8JCAeTakrcqQ9LlA5PVt+FLZB1Y7eigx5NvL/XDOK/4D
+         mq+fGHRW/oxpyztBvM8I0UcPMPQqZ1mxJv1pDJKc9lMlvqb4pVEnCVF1jgfUEIhR9oO8
+         wJDaSt9NWntkB0Bhi8cT37+SxJfXDqKsCNPSmLzbqgijDjWaCWnD8QU/p6EaxNxud6uw
+         gbYb3PVa8Cy3K33wl4FQl7eZddwQVlztXuvIpgBomqjGcJIFAz1PV/rhLM92nSwchV7o
+         dNu6+Y8nzxR1Dr4gvOLmCBehA+mT9chJiLKb+zigk/l/v0vR7Cq4flWZZPyFEiFpAyRz
+         3pMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=g2xdbCbqDzIncuP45i58XD17g/B6emE4ldK55IkqvnU=;
-        b=G5cE7NKbSWggOidgs9MfABdawt8ug7QSMm3Lx60C0JLwAa5XKurOZbri6mAuHts8NR
-         wSaFbjg1lVlIXFg7nrtY7IgpsWg60TZBEa6bDJ/pGqqN8poJwEHKopM+g7IhITv4jJct
-         Qpr1Lp1xNi/iKokS/LDSEC5VhMsThNpYiNzd86R6f9uKH3DdR2jk3x3tHVUy2yK0XEfa
-         zVaUGmMhSRa8D9jfc75A2bFvgsUAdalSU830zn291Ad8xV1uAc7PLfx7uN4rad9Ki335
-         qtFqzDDzzE9ACXjOK/6qVmAIm4k3cdRQ5iWG20KWgWcnhcLTMCwDiei+/cL1dmLMgVID
-         rpgA==
-X-Gm-Message-State: AOAM532ycAJx+svDnqhMmkDS1Kqw9o6LLcNODD9h4Am1Wtg9SCKM6fhy
-	elI6LPqX1eirghdM/bVV/NdGZv+ZkhoM53Hf
-X-Google-Smtp-Source: ABdhPJzPKyEEKA9IXKYOpC3AalNHY6eqp5J+wftUS9vE+slOHtINp2E/Bu9ig+dXQvnCSC5tl3cfBQ==
-X-Received: by 2002:a2e:8803:0:b0:255:8be7:c03a with SMTP id x3-20020a2e8803000000b002558be7c03amr17533376ljh.487.1654887347060;
-        Fri, 10 Jun 2022 11:55:47 -0700 (PDT)
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=DL/v6Vwo9BkFl30Z9CxnNgezCjx47K1shb9q1wseJlI=;
+        b=qsPgfjOsnJkblTHhKlNtK4uIEGjISm1RV+YYw3As/COqpQJ/ePy6UMppblRCdMQ0YX
+         /VCleu+T77xkM9ibUvL11x9oOxJund4M5ikYPhJG2oxwrb6UJTs0KK/QCc3/lEpL6p0Y
+         NsT5la1AV/JtDCohnTUff0oWjprXYJDqmqwXwJbPzwMQzaVv1x4E8vTq3kiPcW7p8Gh4
+         vytGoU4zem/u2aOLuwzrLjyx6NTf3VJ9Du5UBKMVS2cwM3aIk50Yl/BT63ntsAmuOzw+
+         /GpxvNCbTH4sZRd1W1hodMVtRdv1NeLgmn3Rh+SfVeZWdJzCLFhcUN5ArhZS6ANxk1Dv
+         JIAg==
+X-Gm-Message-State: AOAM5307dioty0n73RcYnF32ZI7sXnlM8MaVBfDFm+l21BbqwL4L3sNF
+	+6S5PFv/WuN1UuWROC2XDJ+aZg==
+X-Google-Smtp-Source: ABdhPJx7Hd3RcxQarfYg4FmWjPNKIuDJYZ2UWyZWCvRYDmgYaKNWRiAY/3i6g47DheC5CSwwZsz0ow==
+X-Received: by 2002:a2e:f12:0:b0:250:bf9c:3d2d with SMTP id 18-20020a2e0f12000000b00250bf9c3d2dmr62932063ljp.452.1654887344730;
+        Fri, 10 Jun 2022 11:55:44 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id i14-20020ac2522e000000b0047255d2118esm4816218lfl.189.2022.06.10.11.55.45
+        by smtp.gmail.com with ESMTPSA id i14-20020ac2522e000000b0047255d2118esm4816218lfl.189.2022.06.10.11.55.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 10 Jun 2022 11:55:46 -0700 (PDT)
+        Fri, 10 Jun 2022 11:55:43 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -66,16 +66,15 @@ To: Andy Gross <agross@kernel.org>,
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH 2/2] phy: qcom-qmp: fix PCIe PHY support
-Date: Fri, 10 Jun 2022 21:55:42 +0300
-Message-Id: <20220610185542.3662484-3-dmitry.baryshkov@linaro.org>
+Subject: [PATCH 0/2] phy: qcom-qmp: fix QMP PCIe PHY init
+Date: Fri, 10 Jun 2022 21:55:40 +0300
+Message-Id: <20220610185542.3662484-1-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220610185542.3662484-1-dmitry.baryshkov@linaro.org>
-References: <20220610185542.3662484-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220610_115550_282275_AA423BC6 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20220610_115549_831755_64C0B13B 
+X-CRM114-Status: UNSURE (   6.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,30 +91,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Replace init/exit ops with power_on/power_off which should be used for
-the PCIe PHYs to fix PHY initialization.
+These two patches fix PCIe PHY init after the previous QMP PHY rework
+([1]). They were generated on top of phy/next, but I'm fine with them
+being squashed to the corresponding patches.
 
-Fixes: da07a06b905f ("phy: qcom-qmp-pcie: drop support for non-PCIe PHY types")
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Dmitry Baryshkov (2):
+  phy: qcom-qmp: fix msm8996 PCIe PHY support
+  phy: qcom-qmp: fix PCIe PHY support
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index bd9f71456e32..b2cd0cf965d8 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2141,8 +2141,8 @@ static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
- }
- 
- static const struct phy_ops qcom_qmp_phy_pcie_ops = {
--	.init		= qcom_qmp_phy_pcie_enable,
--	.exit		= qcom_qmp_phy_pcie_disable,
-+	.power_on	= qcom_qmp_phy_pcie_enable,
-+	.power_off	= qcom_qmp_phy_pcie_disable,
- 	.set_mode	= qcom_qmp_phy_pcie_set_mode,
- 	.owner		= THIS_MODULE,
- };
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 4 ++--
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
 -- 
 2.35.1
 
