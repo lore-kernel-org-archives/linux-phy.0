@@ -4,66 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36278CCA473
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jun 2022 12:14:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00A79C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jun 2022 02:11:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OqJ41E2MvvyL1Nz5IvRIbqEDTlHRUPhqqURcp24AbTo=; b=gP0PONS0X5U+cI
-	XjssFqT7wGtovtvGlpu/qvok1D0LcSApJcYrEa+4bQnqeWVi64Dhp7ZrcapqJmxuqtJhxmz0wiUMU
-	1tlU50+1pdUXieVF+JfeE6k8k87ZzuUl2osVWVgebFpi3R6GwvmXGUbl2EIS6nG/HT7znU6r49stF
-	6WyXOSKN07oOeNip/g6mXcp8KvE+ucvhJUvg2wwN+r1OoMO9RR8SN3dtUZAiBFq3d2U7VXmMrFdaJ
-	3Byd2mUadqIpKVjQWLMrrz/eaU7WzmJ42HaXUkhvM86q8yMBNkUrvbZZoOMMfRjOK1/69x7W4VGs3
-	VCqoCEzL+dzJGqSYSh+A==;
+	List-Owner; bh=ueLrfGElu+4GHs3ig8bVwx5uWgxH9bHXxBmM0dw/YTg=; b=1ffaiw09UcOc7S
+	gI5uqU0tQlNnqWG85sA4U3ojk0OlHzSXcEBRUA+Eu8Yr6JY1hR5yok17/XtjkW55uqWKV8JkpCnh/
+	ypiQksksB8Fbp3+3uc1yz8sg0xM93j0vTBoduS1mBqku2jiLxIHLOIvrnBDmLf71G3Ow70dKtfJJY
+	6ZU1bb3UJJOOMDNYWl3LLaodL6k6vyEL0vBSmcjLb/U12Fy6RBThFU4wF0KEd0KRMk2Cffp7ESU/D
+	seyD1mWYuia1BzflqtCCE22vK6Y/SauqTy43mrorCkuFpqlpXG0Uqm7UKbJXh3CXnz1O6PeKHm+jd
+	Dxc7s/bFJ9UP5fYdak/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzH3k-001dqd-Vt; Thu, 09 Jun 2022 12:14:44 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1nzU7P-005BIG-9S; Fri, 10 Jun 2022 02:11:23 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzGtN-001ZCo-Jy
-	for linux-phy@lists.infradead.org; Thu, 09 Jun 2022 12:04:04 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 31431B82D45;
-	Thu,  9 Jun 2022 12:04:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CC20CC3411F;
-	Thu,  9 Jun 2022 12:03:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1654776237;
-	bh=oaoo6MX5VQAXmrWYJ2witm5KxE0LsmNFvQE0kXLGRNg=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=HCLqF5TITtjSg7G57lNOyd/djeztt68Y6WSb6NFOaiPwEYNyI7HUP87PQm6yiCUP2
-	 MMgBmMfAB7ZkkWX5MzLrcakdYvS83fK8C76OTGge/pazdtJxJll3jQ3bZUvF5f+9jd
-	 4cj6v9c4BRIgsq8o0/m02nTCmnGRDUQXqIvdY29GujBNYi9EIMfq4Yyg/XveLzgakq
-	 cNUMxY+rjwq68y2FVII+5m71p1sHsAoaxatoDKyFoSfGLsaWWjmOkkHmohw91FjqHH
-	 UFMpJWo2xChPmbgbg5uGDkYG0HnR5nAIzHNk07pVmZRt7XbFvzJJFC4+P/i1AjAjza
-	 EhMr98JKgeH1Q==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1nzGtF-00014F-QU; Thu, 09 Jun 2022 14:03:53 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 2/3] phy: qcom-qmp: clean up define alignment
-Date: Thu,  9 Jun 2022 14:03:37 +0200
-Message-Id: <20220609120338.4080-3-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220609120338.4080-1-johan+linaro@kernel.org>
-References: <20220609120338.4080-1-johan+linaro@kernel.org>
+	id 1nzU76-005B9m-Go; Fri, 10 Jun 2022 02:11:06 +0000
+X-UUID: 34feaacd251a4f259a90dcb80d8405b3-20220609
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.5,REQID:ed81d1a9-476b-4296-9c63-1dc573811b2b,OB:0,LO
+	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
+	ON:release,TS:0
+X-CID-META: VersionHash:2a19b09,CLOUDID:d7eb52e5-2ba2-4dc1-b6c5-11feb6c769e0,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
+	,QS:0,BEC:nil
+X-UUID: 34feaacd251a4f259a90dcb80d8405b3-20220609
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+	(envelope-from <rex-bc.chen@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 1181242574; Thu, 09 Jun 2022 19:10:57 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 9 Jun 2022 19:10:55 -0700
+Received: from mtkmbs11n1.mediatek.inc (172.21.101.186) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.792.15; Fri, 10 Jun 2022 10:10:54 +0800
+Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Fri, 10 Jun 2022 10:10:48 +0800
+Message-ID: <3ced724e0067e105c11889a5d1bf3247ed57e520.camel@mediatek.com>
+Subject: Re: [PATCH v10 18/21] drm/mediatek: Add mt8195 Embedded DisplayPort
+ driver
+From: Rex-BC Chen <rex-bc.chen@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
+	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
+	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
+	<matthias.bgg@gmail.com>, Chunfeng Yun
+ =?UTF-8?Q?=28=E4=BA=91=E6=98=A5=E5=B3=B0=29?= <Chunfeng.Yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
+ Deller" <deller@gmx.de>, Jitao Shi
+ =?UTF-8?Q?=28=E7=9F=B3=E8=AE=B0=E6=B6=9B=29?= <jitao.shi@mediatek.com>
+CC: Markus Schneider-Pargmann <msp@baylibre.com>,
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-fbdev@vger.kernel.org"
+	<linux-fbdev@vger.kernel.org>
+Date: Fri, 10 Jun 2022 10:10:40 +0800
+In-Reply-To: <d86e62ab8613f32a50e905f6ac14173b25d36006.camel@mediatek.com>
+References: <20220523104758.29531-1-granquet@baylibre.com>
+	 <20220523104758.29531-19-granquet@baylibre.com>
+	 <d86e62ab8613f32a50e905f6ac14173b25d36006.camel@mediatek.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220609_050402_016977_F3567E54 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20220609_191104_619091_00AE78AF 
+X-CRM114-Status: GOOD (  27.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,97 +99,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Clean up the QMP defines by removing some stray white space and making
-sure values are aligned.
+On Thu, 2022-06-09 at 17:37 +0800, CK Hu wrote:
+> Hi, Rex:
+> 
+> On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
+> > From: Markus Schneider-Pargmann <msp@baylibre.com>
+> > 
+> > This patch adds a DisplayPort driver for the Mediatek mt8195 SoC.
+> > 
+> > It supports the mt8195, the embedded DisplayPort units. It offers
+> > DisplayPort 1.4 with up to 4 lanes.
+> > 
+> > The driver creates a child device for the phy. The child device
+> > will
+> > never exist without the parent being active. As they are sharing a
+> > register range, the parent passes a regmap pointer to the child so
+> > that
+> > both can work with the same register range. The phy driver sets
+> > device
+> > data that is read by the parent to get the phy device that can be
+> > used
+> > to control the phy properties.
+> > 
+> > This driver is based on an initial version by
+> > Jason-JH.Lin <jason-jh.lin@mediatek.com>.
+> > 
+> > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
+> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
+> > ---
+> 
+> [snip]
+> 
+> > +
+> > +static int mtk_dp_power_disable(struct mtk_dp *mtk_dp)
+> > +{
+> > +	int ret;
+> > +
+> > +	ret = mtk_dp_write(mtk_dp, MTK_DP_TOP_PWR_STATE, 0);
+> > +
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	ret = mtk_dp_write(mtk_dp, MTK_DP_0034,
+> 
+> MTK_DP_0034 is defined as:
+> 
+> +#define MTK_DP_0034		      (BIT(2) | BIT(4) | BIT(5))
+> 
+> I think this a weird address.
+> 
+> > +			   DA_CKM_CKTX0_EN_FORCE_EN |
+> > DA_CKM_BIAS_LPF_EN_FORCE_VAL |
+> > +		     DA_CKM_BIAS_EN_FORCE_VAL |
+> > +		     DA_XTP_GLB_LDO_EN_FORCE_VAL |
+> > +		     DA_XTP_GLB_AVD10_ON_FORCE_VAL);
+> > +
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	/* Disable RX */
+> > +	ret = mtk_dp_write(mtk_dp, MTK_DP_1040, 0);
+> 
+> 
+> MTK_DP_1040 is defined as:
+> 
+> +#define MTK_DP_1040		      (BIT(6) | BIT(12))
+> 
+> I think this a weird address.
+> 
+> Regards,
+> CK
+> 
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp.h | 48 ++++++++++++++---------------
- 1 file changed, 24 insertions(+), 24 deletions(-)
+Hello CK,
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index 626be0ccede2..6d410826ae90 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -627,8 +627,8 @@
- #define QSERDES_V4_TX_INTERFACE_SELECT			0x2c
- #define QSERDES_V4_TX_RES_CODE_LANE_TX			0x34
- #define QSERDES_V4_TX_RES_CODE_LANE_RX			0x38
--#define QSERDES_V4_TX_RES_CODE_LANE_OFFSET_TX 		0x3c
--#define QSERDES_V4_TX_RES_CODE_LANE_OFFSET_RX 		0x40
-+#define QSERDES_V4_TX_RES_CODE_LANE_OFFSET_TX		0x3c
-+#define QSERDES_V4_TX_RES_CODE_LANE_OFFSET_RX		0x40
- #define QSERDES_V4_TX_TRANSCEIVER_BIAS_EN		0x54
- #define QSERDES_V4_TX_HIGHZ_DRVR_EN			0x58
- #define QSERDES_V4_TX_TX_POL_INV			0x5c
-@@ -678,7 +678,7 @@
- #define QSERDES_V4_RX_UCDR_SB2_THRESH2			0x050
- #define QSERDES_V4_RX_UCDR_SB2_GAIN1			0x054
- #define QSERDES_V4_RX_UCDR_SB2_GAIN2			0x058
--#define QSERDES_V4_RX_AUX_DATA_TCOARSE_TFINE			0x060
-+#define QSERDES_V4_RX_AUX_DATA_TCOARSE_TFINE		0x060
- #define QSERDES_V4_RX_RCLK_AUXDATA_SEL			0x064
- #define QSERDES_V4_RX_AC_JTAG_ENABLE			0x068
- #define QSERDES_V4_RX_AC_JTAG_MODE			0x078
-@@ -759,26 +759,26 @@
- #define QSERDES_V4_20_RX_MARG_COARSE_CTRL2		0x23c
- 
- /* Only for QMP V4 PHY - UFS PCS registers */
--#define QPHY_V4_PCS_UFS_PHY_START				0x000
--#define QPHY_V4_PCS_UFS_POWER_DOWN_CONTROL			0x004
--#define QPHY_V4_PCS_UFS_SW_RESET				0x008
--#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB		0x00c
--#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB		0x010
--#define QPHY_V4_PCS_UFS_PLL_CNTL				0x02c
--#define QPHY_V4_PCS_UFS_TX_LARGE_AMP_DRV_LVL			0x030
--#define QPHY_V4_PCS_UFS_TX_SMALL_AMP_DRV_LVL			0x038
--#define QPHY_V4_PCS_UFS_BIST_FIXED_PAT_CTRL			0x060
--#define QPHY_V4_PCS_UFS_TX_HSGEAR_CAPABILITY			0x074
--#define QPHY_V4_PCS_UFS_RX_HSGEAR_CAPABILITY			0x0b4
--#define QPHY_V4_PCS_UFS_DEBUG_BUS_CLKSEL			0x124
--#define QPHY_V4_PCS_UFS_LINECFG_DISABLE				0x148
--#define QPHY_V4_PCS_UFS_RX_MIN_HIBERN8_TIME			0x150
--#define QPHY_V4_PCS_UFS_RX_SIGDET_CTRL2				0x158
--#define QPHY_V4_PCS_UFS_TX_PWM_GEAR_BAND			0x160
--#define QPHY_V4_PCS_UFS_TX_HS_GEAR_BAND				0x168
-+#define QPHY_V4_PCS_UFS_PHY_START			0x000
-+#define QPHY_V4_PCS_UFS_POWER_DOWN_CONTROL		0x004
-+#define QPHY_V4_PCS_UFS_SW_RESET			0x008
-+#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB	0x00c
-+#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB	0x010
-+#define QPHY_V4_PCS_UFS_PLL_CNTL			0x02c
-+#define QPHY_V4_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x030
-+#define QPHY_V4_PCS_UFS_TX_SMALL_AMP_DRV_LVL		0x038
-+#define QPHY_V4_PCS_UFS_BIST_FIXED_PAT_CTRL		0x060
-+#define QPHY_V4_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
-+#define QPHY_V4_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0b4
-+#define QPHY_V4_PCS_UFS_DEBUG_BUS_CLKSEL		0x124
-+#define QPHY_V4_PCS_UFS_LINECFG_DISABLE			0x148
-+#define QPHY_V4_PCS_UFS_RX_MIN_HIBERN8_TIME		0x150
-+#define QPHY_V4_PCS_UFS_RX_SIGDET_CTRL2			0x158
-+#define QPHY_V4_PCS_UFS_TX_PWM_GEAR_BAND		0x160
-+#define QPHY_V4_PCS_UFS_TX_HS_GEAR_BAND			0x168
- #define QPHY_V4_PCS_UFS_READY_STATUS			0x180
--#define QPHY_V4_PCS_UFS_TX_MID_TERM_CTRL1			0x1d8
--#define QPHY_V4_PCS_UFS_MULTI_LANE_CTRL1			0x1e0
-+#define QPHY_V4_PCS_UFS_TX_MID_TERM_CTRL1		0x1d8
-+#define QPHY_V4_PCS_UFS_MULTI_LANE_CTRL1		0x1e0
- 
- /* PCIE GEN3 COM registers */
- #define PCIE_GEN3_QHP_COM_SSC_EN_CENTER			0x14
-@@ -1140,8 +1140,8 @@
- /* Only for QMP V5 PHY - TX registers */
- #define QSERDES_V5_TX_RES_CODE_LANE_TX			0x34
- #define QSERDES_V5_TX_RES_CODE_LANE_RX			0x38
--#define QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX 		0x3c
--#define QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX 		0x40
-+#define QSERDES_V5_TX_RES_CODE_LANE_OFFSET_TX		0x3c
-+#define QSERDES_V5_TX_RES_CODE_LANE_OFFSET_RX		0x40
- #define QSERDES_V5_TX_LANE_MODE_1			0x84
- #define QSERDES_V5_TX_LANE_MODE_2			0x88
- #define QSERDES_V5_TX_LANE_MODE_3			0x8c
--- 
-2.35.1
+I will change them to 0x34 and 0x1040.
+
+BRs,
+Rex
+
+> > +
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	ret = mtk_dp_write(mtk_dp, MTK_DP_TOP_MEM_PD,
+> > +			   0x550 | BIT(FUSE_SEL_SHIFT) |
+> > BIT(MEM_ISO_EN_SHIFT));
+> > +
+> > +	return ret;
+> > +}
+> 
+> 
 
 
 -- 
