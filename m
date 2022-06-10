@@ -4,80 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E5D0C43334
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jun 2022 06:55:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 410A8C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jun 2022 07:08:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w1/Jn12M9WY0tfnE0UvM81NogmnTMg50wNAG+rk8Pko=; b=qhjHBk3QALaZPi
-	LQET6HmlekDt9CXpPVDfmANHCj7wjp8Ggl+Pmm1Z7wLMhH1dwQpQxy2dXQlr8z6PsrU3oHSXwmema
-	nDywW29pMWC/dEvvnwoY02/OVYxreOpRbYZx6dJM+G8FSuf7qaZa6fi09my4MJEMWIu2FCjNXzFkZ
-	hjJQI/cTPbNVKNcf5A+er50OYj+laLw1GXX3Pt3WMhbBUC6+egMoukxjYf6ttPppBX9ZeHWQQ9wG0
-	JggMadE6UrWRfzF3gFPeDScJJ15cWd8aoxUSezG5GxGOjTWLvoXZ2AlrOzHgdC5r+0/FH5QtqzBzD
-	UbtaRpaAzK1J4q4UZkpg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Message-Id:Date:
+	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=oRYhCSac9NwpZIP0E+njFOn2gvFRLgvdEQgcHuLnl8A=; b=xNB+XhKGZE/Uyc
+	Pd4iSbA1jEHJnmXWl6E5/SekgQ/QR7K1KUEryj1BcibPBow/lelpKLbH3Uvlrve3RhjXzV2S5FCLU
+	IkZtsYuHsDPO65Ido1ZmpomI7HN2V1hjiQL6NXX8/hKcxDzjHu9KdSwM5VjrzKSfY7S5xL0tyiV8F
+	WJ6O5sZnOTQtL4D0OorEpfMt8IkEspL0D9al3AIF8ReOrnmdNWy0eScGZjjrLfN09M1o2YG4n+XX9
+	FfWnAOiopcv+VWaSM4ff6Vkdsm8aXl6tdj6ywKoAWJ5W+MdPzIYUmBoN3cBG7qEZJNiBMkkWdETJN
+	N3eKoKYcihAT/ssPVUhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzYYi-006I3O-Nq; Fri, 10 Jun 2022 06:55:52 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1nzYl4-006LIw-Lo; Fri, 10 Jun 2022 07:08:38 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzYYA-006HpD-JG; Fri, 10 Jun 2022 06:55:23 +0000
-X-UUID: f967fcfce2bf4ea4a26aac5db80c8779-20220609
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5,REQID:4d2239ec-9743-4b82-b01d-63098269afaf,OB:0,LO
-	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
-	ON:release,TS:0
-X-CID-META: VersionHash:2a19b09,CLOUDID:7d7ee87e-c8dc-403a-96e8-6237210dceee,C
-	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
-	,QS:0,BEC:nil
-X-UUID: f967fcfce2bf4ea4a26aac5db80c8779-20220609
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
-	(envelope-from <rex-bc.chen@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
-	with ESMTP id 896903044; Thu, 09 Jun 2022 23:55:10 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 9 Jun 2022 23:51:01 -0700
-Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
- mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
- Fri, 10 Jun 2022 14:50:59 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n2.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Fri, 10 Jun 2022 14:50:59 +0800
-Message-ID: <ad31ed6f7a70babddbb2fa859b1b9c8199705f70.camel@mediatek.com>
-Subject: Re: [PATCH v10 04/21] drm/edid: Add cea_sad helpers for freq/length
-From: Rex-BC Chen <rex-bc.chen@mediatek.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Guillaume Ranquet <granquet@baylibre.com>, Chun-Kuang Hu
-	<chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, "David
- Airlie" <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>, Rob Herring
-	<robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
-	<matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Kishon
- Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
- Deller" <deller@gmx.de>, CK Hu <ck.hu@mediatek.com>, Jitao shi
-	<jitao.shi@mediatek.com>
-CC: Markus Schneider-Pargmann <msp@baylibre.com>,
-	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-fbdev@vger.kernel.org>
-Date: Fri, 10 Jun 2022 14:50:59 +0800
-In-Reply-To: <62abad94-fe4a-2505-506d-6e4bc6b425ff@collabora.com>
-References: <20220523104758.29531-1-granquet@baylibre.com>
-	 <20220523104758.29531-5-granquet@baylibre.com>
-	 <62abad94-fe4a-2505-506d-6e4bc6b425ff@collabora.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-MIME-Version: 1.0
-X-MTK: N
+	id 1nzYko-006LBo-5O
+	for linux-phy@lists.infradead.org; Fri, 10 Jun 2022 07:08:37 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20220610070815epoutp04317ef7a4d9125c680c859bc68187bd60~3MKpDRDaV0178501785epoutp04c
+	for <linux-phy@lists.infradead.org>; Fri, 10 Jun 2022 07:08:15 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20220610070815epoutp04317ef7a4d9125c680c859bc68187bd60~3MKpDRDaV0178501785epoutp04c
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1654844895;
+	bh=hE7iC05RZWf8cGsOVWjbFzqwioyOOV6K8wR0RQ5vlLI=;
+	h=From:To:Cc:Subject:Date:References:From;
+	b=n2tGyuUyPmb0ZPXvJ2HXq7TApW0eaHqTjMGwBBNO2inoxrRoQ0Gmx2y/0Zhkh96qv
+	 xgCp7C2M6s076tgXYH0LSzhYiw+HH/dZhR1DsRVhA+X3RzpgOLYLWc9b0OUunwBOJm
+	 5PKDF2Xrb8LmiBe6gEp2UwQx6F25hc4VvNGP+66U=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
+	epcas5p4.samsung.com (KnoxPortal) with ESMTP id
+	20220610070815epcas5p475c7251b8e61e3f3c89dc12edc928610~3MKovvqBY0300703007epcas5p4D;
+	Fri, 10 Jun 2022 07:08:15 +0000 (GMT)
+Received: from epsmges5p3new.samsung.com (unknown [182.195.38.177]) by
+	epsnrtp1.localdomain (Postfix) with ESMTP id 4LKBrD1ByQz4x9Ps; Fri, 10 Jun
+	2022 07:08:12 +0000 (GMT)
+Received: from epcas5p1.samsung.com ( [182.195.41.39]) by
+	epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
+	6E.EC.09762.BDDE2A26; Fri, 10 Jun 2022 16:08:12 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
+	20220610070811epcas5p3c62ef9ad9c82092deac59ff9be896677~3MKlJaWKP2559525595epcas5p3S;
+	Fri, 10 Jun 2022 07:08:11 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+	epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+	20220610070811epsmtrp20254b3377146c11187baf87f3c2e2b2a~3MKlImCGS0032200322epsmtrp2L;
+	Fri, 10 Jun 2022 07:08:11 +0000 (GMT)
+X-AuditID: b6c32a4b-213ff70000002622-cf-62a2eddb6480
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	8C.DB.08924.BDDE2A26; Fri, 10 Jun 2022 16:08:11 +0900 (KST)
+Received: from Jaguar.sa.corp.samsungelectronics.net (unknown
+	[107.108.73.139]) by epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20220610070810epsmtip290a240d007d93f0c38a07a18332ccd4d~3MKjyNClE1143511435epsmtip2h;
+	Fri, 10 Jun 2022 07:08:10 +0000 (GMT)
+From: Alim Akhtar <alim.akhtar@samsung.com>
+To: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Cc: krzysztof.kozlowski+dt@linaro.org, vkoul@kernel.org,
+	chanho61.park@samsung.com, pankaj.dubey@samsung.com, Alim Akhtar
+	<alim.akhtar@samsung.com>
+Subject: [PATCH -next] phy: samsung-ufs: fix NULL pointer dereference
+Date: Fri, 10 Jun 2022 12:35:47 +0530
+Message-Id: <20220610070547.71193-1-alim.akhtar@samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrIKsWRmVeSWpSXmKPExsWy7bCmuu6dt4uSDHr3Mlk8mLeNzeLyfm2L
+	vhcPmS0u75rDZjFh1TcWi0Vbv7Bb7LxzgtmB3WPTqk42jzvX9rB5bF5S79G3ZRWjx+dNcgGs
+	Udk2GamJKalFCql5yfkpmXnptkrewfHO8aZmBoa6hpYW5koKeYm5qbZKLj4Bum6ZOUBHKCmU
+	JeaUAoUCEouLlfTtbIryS0tSFTLyi0tslVILUnIKTAr0ihNzi0vz0vXyUkusDA0MjEyBChOy
+	M86ceMxYMFGk4ufLpSwNjKsFuxg5OCQETCQ6uuS6GLk4hAR2M0o8brvNBuF8YpTY03KOFcL5
+	zCjxc9YkdpiOhVPKuxg5geK7GCXunYiFqGlhkmg+dZ8VJMEmoC1xd/oWJhBbRMBeor33H9gg
+	ZoHpjBIPF65kBkkIC7hKHNkzlx3EZhFQldi48iWYzStgI/FnzSOwZgkBeYnVGw4wgzRLCGxi
+	l+ibtJ0VIuEi8WROMzuELSzx6vgWKFtK4vO7vWwQl3pILPojBRHOkHi7fD0jhG0vceDKHBaQ
+	EmYBTYn1u/RBwswCfBK9v58wQXTySnS0CUFUq0o0v7vKAmFLS0zs7maFGX5rbiQkGGIlLjx9
+	wTyBUWYWwswFjIyrGCVTC4pz01OLTQuM81LL4RGTnJ+7iRGclrS8dzA+evBB7xAjEwfjIUYJ
+	DmYlEd6A24uShHhTEiurUovy44tKc1KLDzGaAgNpIrOUaHI+MDHmlcQbmlgamJiZmZlYGpsZ
+	KonzCvxvTBISSE8sSc1OTS1ILYLpY+LglGpg4lfeUt6cne1bsc5qs/PtZZduvUtLtlkhF/fs
+	8S8pn5ZvvKvXv3GYovyGVeLB5PPCEZlltesLJcNuPrH/ZXBSevZpE5uCRRtVd+290G9nwKor
+	OV9eNLjgaqiA6e7KZfN2Kl97/rZi1eGavbEOXpzh67dKxDO+rLDW896xpe39760l6Z3pZ+80
+	H25NX2Rv2NyUmdX2Ysrs3a2mBcwHbq/8fvXTpKjZU955qF58MN9f0Pz/AteFCX4nDmjteOd1
+	cv45x5+l09gTd2SHzNDO75/291DwrkVfJJr6X6pfbrt/X2+Xm3mHbNv0ywwmO5l3uTNaRT0P
+	ED/foHren9unvZ6n+BYzT/vHP4yTl5hdDzS+qcRSnJFoqMVcVJwIAAwulAPUAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrLJMWRmVeSWpSXmKPExsWy7bCSvO7tt4uSDN4vVrZ4MG8bm8Xl/doW
+	fS8eMltc3jWHzWLCqm8sFou2fmG32HnnBLMDu8emVZ1sHneu7WHz2Lyk3qNvyypGj8+b5AJY
+	o7hsUlJzMstSi/TtErgyzpx4zFgwUaTi58ulLA2MqwW7GDk4JARMJBZOKe9i5OIQEtjBKHF7
+	1nHmLkZOoLi0xPWNE9ghbGGJlf+es0MUNTFJ7HmxFqyITUBb4u70LUwgtoiAo8SX/z9ZQIqY
+	BWYzSqxpWcMGkhAWcJU4smcu2CQWAVWJjStfgtm8AjYSf9Y8YoLYIC+xesMB5gmMPAsYGVYx
+	SqYWFOem5xYbFhjlpZbrFSfmFpfmpesl5+duYgSHkJbWDsY9qz7oHWJk4mA8xCjBwawkwhtw
+	e1GSEG9KYmVValF+fFFpTmrxIUZpDhYlcd4LXSfjhQTSE0tSs1NTC1KLYLJMHJxSDUxbJbQk
+	ZqRY/Fj8c2GlhvcrnVPZjPKhR9bvPP2rsuX4tILt8cGsqRHRfv97trI3ikY9/VvYpGJ+bm77
+	Ne7MXYvkupyC3bnmG3++eOtYLcuHOBeTiZzsyh+5y56VL/G5cN1v7n8jTRZ5vrBuv4qpm8Mm
+	K3LsODTl/zsTGf6kL8derPGIuh0jZ994f9tVhalzpvHL1exdL1VoLnb41zXe4mezZr9YVWFn
+	n7H1e/PErqTyj6+X7rZW2VJz62utkP1V1qeLtqcwbYtmbj//d7JY+4ePeufir0SvnLCgv39l
+	bpzdr0KxU5LaFspyLIkn1d7yX3zSeJ1V9mdWWPybk3ENoioTuK1Uz0nt3yLv4X88TUyJpTgj
+	0VCLuag4EQBR0E+qkAIAAA==
+X-CMS-MailID: 20220610070811epcas5p3c62ef9ad9c82092deac59ff9be896677
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220610070811epcas5p3c62ef9ad9c82092deac59ff9be896677
+References: <CGME20220610070811epcas5p3c62ef9ad9c82092deac59ff9be896677@epcas5p3.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220609_235518_692549_186EE1BD 
-X-CRM114-Status: GOOD (  32.62  )
+X-CRM114-CacheID: sfid-20220610_000826_824094_9704B0DF 
+X-CRM114-Status: GOOD (  15.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,216 +122,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2022-05-25 at 14:26 +0200, AngeloGioacchino Del Regno wrote:
-> Il 23/05/22 12:47, Guillaume Ranquet ha scritto:
-> > This patch adds two helper functions that extract the frequency and
-> > word
-> > length from a struct cea_sad.
-> > 
-> > For these helper functions new defines are added that help
-> > translate the
-> > 'freq' and 'byte2' fields into real numbers.
-> > 
-> > Signed-off-by: Markus Schneider-Pargmann <msp@baylibre.com>
-> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> > ---
-> >   drivers/gpu/drm/drm_edid.c | 74
-> > ++++++++++++++++++++++++++++++++++++++
-> >   include/drm/drm_edid.h     | 14 ++++++++
-> >   2 files changed, 88 insertions(+)
-> > 
-> > diff --git a/drivers/gpu/drm/drm_edid.c
-> > b/drivers/gpu/drm/drm_edid.c
-> > index 561f53831e29..61ef1b1c972c 100644
-> > --- a/drivers/gpu/drm/drm_edid.c
-> > +++ b/drivers/gpu/drm/drm_edid.c
-> > @@ -4758,6 +4758,80 @@ int drm_edid_to_speaker_allocation(struct
-> > edid *edid, u8 **sadb)
-> >   }
-> >   EXPORT_SYMBOL(drm_edid_to_speaker_allocation);
-> >   
-> > +/**
-> > + * drm_cea_sad_get_sample_rate - Extract the sample rate from
-> > cea_sad
-> > + * @sad: Pointer to the cea_sad struct
-> > + *
-> > + * Extracts the cea_sad frequency field and returns the sample
-> > rate in Hz.
-> > + *
-> > + * Return: Sample rate in Hz or a negative errno if parsing
-> > failed.
-> > + */
-> > +int drm_cea_sad_get_sample_rate(const struct cea_sad *sad)
-> > +{
-> > +	switch (sad->freq) {
-> > +	case DRM_CEA_SAD_FREQ_32KHZ:
-> > +		return 32000;
-> > +	case DRM_CEA_SAD_FREQ_44KHZ:
-> > +		return 44100;
-> > +	case DRM_CEA_SAD_FREQ_48KHZ:
-> > +		return 48000;
-> > +	case DRM_CEA_SAD_FREQ_88KHZ:
-> > +		return 88200;
-> > +	case DRM_CEA_SAD_FREQ_96KHZ:
-> > +		return 96000;
-> > +	case DRM_CEA_SAD_FREQ_176KHZ:
-> > +		return 176400;
-> > +	case DRM_CEA_SAD_FREQ_192KHZ:
-> > +		return 192000;
-> > +	default:
-> > +		return -EINVAL;
-> > +	}
-> > +}
-> > +EXPORT_SYMBOL(drm_cea_sad_get_sample_rate);
-> > +
-> > +static bool drm_cea_sad_is_uncompressed(const struct cea_sad *sad)
-> > +{
-> > +	switch (sad->format) {
-> > +	case HDMI_AUDIO_CODING_TYPE_STREAM:
-> 
-> As far as I know, bit 0 is reserved, so HDMI_AUDIO_CODING_TYPE_STREAM
-> should
-> never occur here?
-> 
+commit f86c1d0a58b1f63a ("phy: samsung: ufs: remove drvdata from struct
+samsung_ufs_phy")
 
-Hello Angelo,
+removes _drvdata_ initialization which resulting in NULL pointer
+dereferencing in samsung_ufs_phy_wait_for_lock_acq(). Fix this by
+initializing drvdata.
 
-because we do not know whether "HDMI_AUDIO_CODING_TYPE_STREAM" is
-compressed, we decide to change this function name to
-drm_cea_sad_is_pcm to prevent misunderstanding.
-For this, I will drop case HDMI_AUDIO_CODING_TYPE_STREAM
+The said commit also duplicate "has_symbol_clk" both in drvdata struct
+and in samsung_ufs_phy struct, let's go back and use only one
+"has_symbol_clk".
 
-> > +	case HDMI_AUDIO_CODING_TYPE_PCM:
-> > +		return true;
-> > +	default:
-> > +		return false;
-> > +	}
-> > +}
-> > +
-> 
-> Also, I think that implementing a
-> drm_cea_sad_get_compressed_max_bitrate()
-> function should be pretty straightforward... the spec says that this
-> is
-> 8 bits, byte 3 (your byte2) contains the max bitrate divided by 8kHz,
-> so to extract it, you read byte2 and multiply it by 8000Hz.
-> 
-> /**
->   * drm_cea_sad_get_compressed_max_bitrate - Extract maximum bitrate
->   * @sad: Pointer to the cea_sad structure
->   *
->   * Extracts the cea_sad byte2 field and returns the maximum bit rate
->   * of a compressed audio stream.
->   *
->   * Note: This function may only be called for compressed audio.
->   *
->   * Return: Maximum bitrate of compressed audio stream in bit/s or
->   *         negative number for error
->   */
-> int drm_cea_sad_get_compressed_max_bitrate(const struct cea_sad *sad)
-> {
-> 	if (drm_cea_sad_is_uncompressed(sad)) {
-> 		DRM_ERROR("Not supported: tried to get max bitrate for
-> uncompressed format: %u\n",
-> 			 sad->format);
-> 		return -EINVAL;
-> 	}
-> 
-> 	return sad->byte2 * 8000;
-> }
-> 
+Fixes: f86c1d0a58b1 phy: samsung: ufs: remove drvdata from struct samsung_ufs_phy
+Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
+---
+ drivers/phy/samsung/phy-samsung-ufs.c | 6 +++---
+ drivers/phy/samsung/phy-samsung-ufs.h | 1 -
+ 2 files changed, 3 insertions(+), 4 deletions(-)
 
-After sync with Jitao, we think this function is not correct.
-refer to table of "Short Audio Descriptor" in [1].
+diff --git a/drivers/phy/samsung/phy-samsung-ufs.c b/drivers/phy/samsung/phy-samsung-ufs.c
+index 206a79c69a6c..6708877b20d7 100644
+--- a/drivers/phy/samsung/phy-samsung-ufs.c
++++ b/drivers/phy/samsung/phy-samsung-ufs.c
+@@ -207,7 +207,7 @@ static int samsung_ufs_phy_init(struct phy *phy)
+ 	ss_phy->lane_cnt = phy->attrs.bus_width;
+ 	ss_phy->ufs_phy_state = CFG_PRE_INIT;
+ 
+-	if (ss_phy->has_symbol_clk) {
++	if (ss_phy->drvdata->has_symbol_clk) {
+ 		ret = samsung_ufs_phy_symbol_clk_init(ss_phy);
+ 		if (ret)
+ 			dev_err(ss_phy->dev, "failed to set ufs phy symbol clocks\n");
+@@ -259,7 +259,7 @@ static int samsung_ufs_phy_exit(struct phy *phy)
+ 
+ 	clk_disable_unprepare(ss_phy->ref_clk);
+ 
+-	if (ss_phy->has_symbol_clk) {
++	if (ss_phy->drvdata->has_symbol_clk) {
+ 		clk_disable_unprepare(ss_phy->tx0_symbol_clk);
+ 		clk_disable_unprepare(ss_phy->rx0_symbol_clk);
+ 		clk_disable_unprepare(ss_phy->rx1_symbol_clk);
+@@ -327,8 +327,8 @@ static int samsung_ufs_phy_probe(struct platform_device *pdev)
+ 
+ 	drvdata = match->data;
+ 	phy->dev = dev;
++	phy->drvdata = drvdata;
+ 	phy->cfgs = drvdata->cfgs;
+-	phy->has_symbol_clk = drvdata->has_symbol_clk;
+ 	memcpy(&phy->isol, &drvdata->isol, sizeof(phy->isol));
+ 
+ 	if (!of_property_read_u32_index(dev->of_node, "samsung,pmu-syscon", 1,
+diff --git a/drivers/phy/samsung/phy-samsung-ufs.h b/drivers/phy/samsung/phy-samsung-ufs.h
+index 854b53bdf347..b9144586daf5 100644
+--- a/drivers/phy/samsung/phy-samsung-ufs.h
++++ b/drivers/phy/samsung/phy-samsung-ufs.h
+@@ -125,7 +125,6 @@ struct samsung_ufs_phy {
+ 	const struct samsung_ufs_phy_drvdata *drvdata;
+ 	const struct samsung_ufs_phy_cfg * const *cfgs;
+ 	struct samsung_ufs_phy_pmu_isol isol;
+-	bool has_symbol_clk;
+ 	u8 lane_cnt;
+ 	int ufs_phy_state;
+ 	enum phy_mode mode;
 
-[1]:https://en.wikipedia.org/wiki/Extended_Display_Identification_Data
-
-BRs,
-Bo-Chen
-> > +/**
-> > + * drm_cea_sad_get_uncompressed_word_length - Extract word length
-> > + * @sad: Pointer to the cea_sad struct
-> > + *
-> > + * Extracts the cea_sad byte2 field and returns the word length
-> > for an
-> > + * uncompressed stream.
-> > + *
-> > + * Note: This function may only be called for uncompressed audio.
-> > + *
-> > + * Return: Word length in bits or a negative errno if parsing
-> > failed.
-> > + */
-> > +int drm_cea_sad_get_uncompressed_word_length(const struct cea_sad
-> > *sad)
-> > +{
-> > +	if (!drm_cea_sad_is_uncompressed(sad)) {
-> > +		DRM_WARN("Unable to get the uncompressed word length
-> > for a compressed format: %u\n",
-> > +			 sad->format);
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	switch (sad->byte2) {
-> > +	case DRM_CEA_SAD_UNCOMPRESSED_WORD_16BIT:
-> > +		return 16;
-> > +	case DRM_CEA_SAD_UNCOMPRESSED_WORD_20BIT:
-> > +		return 20;
-> > +	case DRM_CEA_SAD_UNCOMPRESSED_WORD_24BIT:
-> > +		return 24;
-> > +	default:
-> > +		return -EINVAL;
-> > +	}
-> > +}
-> > +EXPORT_SYMBOL(drm_cea_sad_get_uncompressed_word_length);
-> > +
-> >   /**
-> >    * drm_av_sync_delay - compute the HDMI/DP sink audio-video sync
-> > delay
-> >    * @connector: connector associated with the HDMI/DP sink
-> > diff --git a/include/drm/drm_edid.h b/include/drm/drm_edid.h
-> > index 37c420423625..7a939cb95b38 100644
-> > --- a/include/drm/drm_edid.h
-> > +++ b/include/drm/drm_edid.h
-> > @@ -373,6 +373,18 @@ struct cea_sad {
-> >   	u8 byte2;
-> >   };
-> >   
-> > +#define DRM_CEA_SAD_FREQ_32KHZ  BIT(0)
-> > +#define DRM_CEA_SAD_FREQ_44KHZ  BIT(1)
-> > +#define DRM_CEA_SAD_FREQ_48KHZ  BIT(2)
-> > +#define DRM_CEA_SAD_FREQ_88KHZ  BIT(3)
-> > +#define DRM_CEA_SAD_FREQ_96KHZ  BIT(4)
-> > +#define DRM_CEA_SAD_FREQ_176KHZ BIT(5)
-> > +#define DRM_CEA_SAD_FREQ_192KHZ BIT(6)
-> > +
-> > +#define DRM_CEA_SAD_UNCOMPRESSED_WORD_16BIT BIT(0)
-> > +#define DRM_CEA_SAD_UNCOMPRESSED_WORD_20BIT BIT(1)
-> > +#define DRM_CEA_SAD_UNCOMPRESSED_WORD_24BIT BIT(2)
-> > +
-> >   struct drm_encoder;
-> >   struct drm_connector;
-> >   struct drm_connector_state;
-> > @@ -380,6 +392,8 @@ struct drm_display_mode;
-> >   
-> >   int drm_edid_to_sad(struct edid *edid, struct cea_sad **sads);
-> >   int drm_edid_to_speaker_allocation(struct edid *edid, u8 **sadb);
-> > +int drm_cea_sad_get_sample_rate(const struct cea_sad *sad);
-> > +int drm_cea_sad_get_uncompressed_word_length(const struct cea_sad
-> > *sad);
-> >   int drm_av_sync_delay(struct drm_connector *connector,
-> >   		      const struct drm_display_mode *mode);
-> >   
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+base-commit: ff539ac73ea559a8c146d99ab14bfcaddd30547a
+-- 
+2.25.1
 
 
 -- 
