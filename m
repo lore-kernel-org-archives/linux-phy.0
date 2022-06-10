@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BC70CCA47D
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jun 2022 19:10:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E102C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jun 2022 19:10:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9zWT29SVpPp33TSXNz4NShfX/HV1HaHBsOeuyUReW08=; b=d056N0WsYMdim8
-	KIUQCOe7/bWKcdi8e/GeRzg8emNrn4B+Q4T5JQmLhdJvHCvQihUhzSED8+lQShvYHHmDKb33FQfos
-	itzAQVeWqdgHmFwp+Oef9cACVnnTxYgSmkOx+3xt8hulnGMy08ufRRHDEIEAXz491grH6vtc3qqrI
-	b1vRnVqTzEWXtOkKx6UtX1stJQRcvH3SX1ie824yRpNIYwxWr/CcLEvmhIoUaqJEGXs07IHmrIjbb
-	B6nGasfMOwEyscrOKG8tbBnvjwS+iLiwaHFHDcbU0p7fRN8MHr/VfVV6MgyancRRzUomc+IIsKmfQ
-	zV3wS3WTCwV1S+1A6ocg==;
+	List-Owner; bh=vlKPPDf90I/jpUW7efAcSwKjIM7pEPobTHGG8FIhhsI=; b=RGchRm8oGn61ib
+	E1xMzLCHrxL0F6ILcs/QDzANrxs8avIgptDyFzZ059YoJXA3RPl0d4u6x0G35jf73Lyh50PLadb6C
+	2R3YbK1jBI/iTNVc/mZhN5XJleVQVzvfrCLF0nsDnnR3PdAv2liMVwVsbzcwLVs7eN5Nt6ZtJMaM5
+	AY6IP/HfLicvXUcxYIIQj97+nGTWMnfv0E65khtsMBzVo0PTUbioOoNjnmaNH0jD+cHiTvfwMV7r5
+	9jZ38mSlUIyBfRI2N3X8gCwoD0ILnSx1nO8joym6sfKVl9p0BePPU+oZxREcYbO/lX8y37T7A0Xhg
+	SSU75j76eK5TktmuZ2hA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzk1P-009V48-Ke; Fri, 10 Jun 2022 19:10:15 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1nzk1R-009V4w-Uu; Fri, 10 Jun 2022 19:10:17 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nzk1N-009Uv2-6B
-	for linux-phy@lists.infradead.org; Fri, 10 Jun 2022 19:10:14 +0000
-Received: by mail-lj1-x236.google.com with SMTP id g2so134302ljk.5
-        for <linux-phy@lists.infradead.org>; Fri, 10 Jun 2022 12:10:13 -0700 (PDT)
+	id 1nzk1O-009V23-E2
+	for linux-phy@lists.infradead.org; Fri, 10 Jun 2022 19:10:16 +0000
+Received: by mail-lj1-x234.google.com with SMTP id d18so141832ljc.4
+        for <linux-phy@lists.infradead.org>; Fri, 10 Jun 2022 12:10:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=ccj6V6QGB2UfFukZSEFRfD15FtvXsbdPIyE/SsNZRzI=;
-        b=g1TI68KUGFOJdqhB4h5Fi9dMlxE/bV/tjsP/Cl3s8jU3ssHvOUp8LWe30WZi2ZiUO3
-         FOU53YNdOgwWuUuukaoxi0LiAj+v6W1WECTFjGczNNgv2E/in2kHWCgxEjc7mXMjsjIa
-         +U7xpsttIotjFUGIgCAaroX9IOzWTJ0K9rNxa4cZ0vhXwT0+I+mU+dvh/Lbc+jrbrUMn
-         CA/lt2qudGlPbwyRNANyu4jokKjQRyq0v4z79pLlM6h0AFNgS/k4FgmWOJcLWw7Xkzv5
-         Rf2tdq3J3NvMWmyjKxDPD57U/ip5apn99w6hoT8QLhzVm8DXI7Zx2QDif4gt45Mdfc4v
-         wRXw==
+        bh=MUejcEUBOlGy0+QEeY0SWSm0DJwBNAice3z2nR2K0iQ=;
+        b=xMsL7t1PafQsJrvk7ePusx+RWVDKRd1/pNR8rYc7fx+OzthY0xWdH6sBjMHtyoW/Bw
+         YB0ifpyA3prZxg0mGFNnE12boDNzgluUDuRf3Cow71c+sKlTPNaXqehX2Fx1gpFHuQbb
+         mHmEDpXiTrP2ghgZAF+/26E6478sq6/bAsif/NGiQny9Sm5oJAJdd0w4HE2GYLrCVeNW
+         gOyMu7fdig2jEOBhw1th5hMU3lDTOTkDUHGAkheBrUXtW7QfJ3HJ88DmgkfllarnYWq4
+         tMrDfrbta6PKZdfN4vLiAGsKXXvbw3lBNuvqWxpE9snWg5J1t5fO5CQLn+njID69L7Ep
+         wkJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=ccj6V6QGB2UfFukZSEFRfD15FtvXsbdPIyE/SsNZRzI=;
-        b=bP9uwsK1UAiFWfK2OxJoEzy2+BQ7A4VrCG/TTVaA7aHC1qo/m1j3wu7C7URx5i+RHC
-         q+60QNCWCvMTdyqw2nN6hNLFcmhWQNsBhoICdhAbDljI86bxilTEqhaHjCK+Cw3GsezV
-         swrgDBEU9iscyTgewYxns32cox5NoD6bjQd3qk/kVTIzH7MKTFdIhAxUnwpdvYlS43xV
-         HwlETq2JP2LtPYYiWLoV9bEvmWvi+tvH7/W4BWTenmwcyl7YBaOs5as4idtD3VUgfyJo
-         /uD7nvhw8HJqp6KivCJAY5dwP0eicusCpx4kUvv2g70gTL2LUkd7bkSsNxMFLd40KtOD
-         sDzA==
-X-Gm-Message-State: AOAM533tI5HRDFHgk0pFQtliJ6AM0HfDsLpM1SRqY1h5nJac/cJxRagx
-	HpGpfpcrxWFLAabNt85i9wxKsw==
-X-Google-Smtp-Source: ABdhPJyBPNCEPS3H1t8z9nZWRkqcYLhYXuKmpAumKkR6Zt0dd2g+QtGLCPLRbw/aKrlucN0p+rI29A==
-X-Received: by 2002:a2e:934b:0:b0:24f:cce:5501 with SMTP id m11-20020a2e934b000000b0024f0cce5501mr64268868ljh.443.1654888212679;
-        Fri, 10 Jun 2022 12:10:12 -0700 (PDT)
+        bh=MUejcEUBOlGy0+QEeY0SWSm0DJwBNAice3z2nR2K0iQ=;
+        b=EUDZEmbJN2W+FQkf3jCx2KTZN+wqWgeuug1ST6PhHtkZrRFwISVyCyjkMKFwqmWQcL
+         mhdrfsqM+vKiIJodHR1KXfFQJuVty6ewsc4bLc3AVKkl+L8L56+3Nw4XqAw5tFeQcr6v
+         i/6I7QjNwsaK8XyOQf4Zp8Ir3IsyJkiMtEnq5cYiwRJrGoxVt+kgjgRpBhX6GQMXX7QH
+         DhqTpsEbBwTBzfWAn4crUP9k/r7zAjiuqSvNTWQLf9rwSGKJyq3/zlun4Kgb1O6I2Sy4
+         /ydNz7ypK5aFHp5Z0Af/5jFoLI24lcyo9JcK5wF2j3IjfoOOhY89IJXLo9PleWKSGi5E
+         6brQ==
+X-Gm-Message-State: AOAM5300H+qT0/ywMi3z8phEoWl24pJJX748oS6NGWOgKe4oLuju8Iv3
+	FC67v1AaQ1ga/RgVaxXFt2deog==
+X-Google-Smtp-Source: ABdhPJygjKFTxDyKxnOzhsykwtb0KxMxOAZ9q6BnbTQeskIFS42cZQRBr7u7izFbY9F5SL003HDDuA==
+X-Received: by 2002:a05:651c:1a13:b0:256:39d4:f630 with SMTP id by19-20020a05651c1a1300b0025639d4f630mr7056286ljb.84.1654888211385;
+        Fri, 10 Jun 2022 12:10:11 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id h2-20020a2e9002000000b00253e1833e8bsm26614ljg.117.2022.06.10.12.10.11
+        by smtp.gmail.com with ESMTPSA id h2-20020a2e9002000000b00253e1833e8bsm26614ljg.117.2022.06.10.12.10.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 10 Jun 2022 12:10:12 -0700 (PDT)
+        Fri, 10 Jun 2022 12:10:10 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -67,16 +67,17 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Johan Hovold <johan@kernel.org>
-Subject: [RFC PATCH 27/28] phy: qcom-qmp-usb: replace FLL layout writes for msm8996
-Date: Fri, 10 Jun 2022 22:09:24 +0300
-Message-Id: <20220610190925.3670081-28-dmitry.baryshkov@linaro.org>
+Subject: [RFC PATCH 26/28] phy: qcom-qmp: pcs-pcie-v4: add missing registers
+Date: Fri, 10 Jun 2022 22:09:23 +0300
+Message-Id: <20220610190925.3670081-27-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220610190925.3670081-1-dmitry.baryshkov@linaro.org>
 References: <20220610190925.3670081-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220610_121013_256619_3517CDE1 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20220610_121014_489065_3A49DDCB 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,171 +94,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Other PHYs tables directly reference FLL registers without using
-reglayout. Define corresponding registers to be used by msm8996 PHY
-tables and use them directly.
+Add missing registers, verified against:
+- msm-4.19's qcom,kona-qmp-usb3.h
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |  5 -----
- .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 10 ----------
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 10 ----------
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h    |  7 +++++++
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       |  5 -----
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 20 +++++--------------
- 6 files changed, 12 insertions(+), 45 deletions(-)
+ .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h   | 49 +++++++++++++++++++
+ 1 file changed, 49 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 2335658affdb..3f2c89ffee21 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -122,11 +122,6 @@ enum qphy_reg_layout {
- 	QPHY_COM_PCS_READY_STATUS,
- 	/* PCS registers */
- 	QPHY_PLL_LOCK_CHK_DLY_TIME,
--	QPHY_FLL_CNTRL1,
--	QPHY_FLL_CNTRL2,
--	QPHY_FLL_CNT_VAL_L,
--	QPHY_FLL_CNT_VAL_H_TOL,
--	QPHY_FLL_MAN_CODE,
- 	QPHY_SW_RESET,
- 	QPHY_START_CTRL,
- 	QPHY_PCS_READY_STATUS,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index 90a4bb8e86a4..5bbdf5675974 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -122,11 +122,6 @@ enum qphy_reg_layout {
- 	QPHY_COM_PCS_READY_STATUS,
- 	/* PCS registers */
- 	QPHY_PLL_LOCK_CHK_DLY_TIME,
--	QPHY_FLL_CNTRL1,
--	QPHY_FLL_CNTRL2,
--	QPHY_FLL_CNT_VAL_L,
--	QPHY_FLL_CNT_VAL_H_TOL,
--	QPHY_FLL_MAN_CODE,
- 	QPHY_SW_RESET,
- 	QPHY_START_CTRL,
- 	QPHY_PCS_READY_STATUS,
-@@ -147,11 +142,6 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_COM_START_CONTROL]	= 0x408,
- 	[QPHY_COM_PCS_READY_STATUS]	= 0x448,
- 	[QPHY_PLL_LOCK_CHK_DLY_TIME]	= 0xa8,
--	[QPHY_FLL_CNTRL1]		= 0xc4,
--	[QPHY_FLL_CNTRL2]		= 0xc8,
--	[QPHY_FLL_CNT_VAL_L]		= 0xcc,
--	[QPHY_FLL_CNT_VAL_H_TOL]	= 0xd0,
--	[QPHY_FLL_MAN_CODE]		= 0xd4,
- 	[QPHY_SW_RESET]			= 0x00,
- 	[QPHY_START_CTRL]		= 0x08,
- 	[QPHY_PCS_STATUS]		= 0x174,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 5b3f612d1c2c..4d17169c5eb0 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -122,11 +122,6 @@ enum qphy_reg_layout {
- 	QPHY_COM_PCS_READY_STATUS,
- 	/* PCS registers */
- 	QPHY_PLL_LOCK_CHK_DLY_TIME,
--	QPHY_FLL_CNTRL1,
--	QPHY_FLL_CNTRL2,
--	QPHY_FLL_CNT_VAL_L,
--	QPHY_FLL_CNT_VAL_H_TOL,
--	QPHY_FLL_MAN_CODE,
- 	QPHY_SW_RESET,
- 	QPHY_START_CTRL,
- 	QPHY_PCS_READY_STATUS,
-@@ -154,11 +149,6 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_COM_START_CONTROL]	= 0x408,
- 	[QPHY_COM_PCS_READY_STATUS]	= 0x448,
- 	[QPHY_PLL_LOCK_CHK_DLY_TIME]	= 0xa8,
--	[QPHY_FLL_CNTRL1]		= 0xc4,
--	[QPHY_FLL_CNTRL2]		= 0xc8,
--	[QPHY_FLL_CNT_VAL_L]		= 0xcc,
--	[QPHY_FLL_CNT_VAL_H_TOL]	= 0xd0,
--	[QPHY_FLL_MAN_CODE]		= 0xd4,
- 	[QPHY_SW_RESET]			= 0x00,
- 	[QPHY_START_CTRL]		= 0x08,
- 	[QPHY_PCS_STATUS]		= 0x174,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h
-index 3fc3c0562d16..9593277cbd3a 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h
-@@ -24,6 +24,13 @@
- #define QPHY_V2_PCS_LOCK_DETECT_CONFIG3			0x088
- #define QPHY_V2_PCS_PWRUP_RESET_DLY_TIME_AUXCLK		0x0a0
- #define QPHY_V2_PCS_LP_WAKEUP_DLY_TIME_AUXCLK		0x0a4
-+#define QPHY_V2_PCS_FLL_CNTRL1				0x0c0
-+#define QPHY_V2_PCS_FLL_CNTRL2				0x0c4
-+#define QPHY_V2_PCS_FLL_CNT_VAL_L			0x0c8
-+#define QPHY_V2_PCS_FLL_CNT_VAL_H_TOL			0x0cc
-+#define QPHY_V2_PCS_FLL_MAN_CODE			0x0d0
-+
-+/* UFS only ? */
- #define QPHY_V2_PCS_RX_MIN_STALL_NOCONFIG_TIME_CAP	0x0cc
- #define QPHY_V2_PCS_RX_SYM_RESYNC_CTRL			0x13c
- #define QPHY_V2_PCS_RX_MIN_HIBERN8_TIME			0x140
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index 701b03a13b17..7ab129cd739b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -122,11 +122,6 @@ enum qphy_reg_layout {
- 	QPHY_COM_PCS_READY_STATUS,
- 	/* PCS registers */
- 	QPHY_PLL_LOCK_CHK_DLY_TIME,
--	QPHY_FLL_CNTRL1,
--	QPHY_FLL_CNTRL2,
--	QPHY_FLL_CNT_VAL_L,
--	QPHY_FLL_CNT_VAL_H_TOL,
--	QPHY_FLL_MAN_CODE,
- 	QPHY_SW_RESET,
- 	QPHY_START_CTRL,
- 	QPHY_PCS_READY_STATUS,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 98c6b5c8e2fc..da2e6fe1336f 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -122,11 +122,6 @@ enum qphy_reg_layout {
- 	QPHY_COM_PCS_READY_STATUS,
- 	/* PCS registers */
- 	QPHY_PLL_LOCK_CHK_DLY_TIME,
--	QPHY_FLL_CNTRL1,
--	QPHY_FLL_CNTRL2,
--	QPHY_FLL_CNT_VAL_L,
--	QPHY_FLL_CNT_VAL_H_TOL,
--	QPHY_FLL_MAN_CODE,
- 	QPHY_SW_RESET,
- 	QPHY_START_CTRL,
- 	QPHY_PCS_READY_STATUS,
-@@ -142,11 +137,6 @@ enum qphy_reg_layout {
- };
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h
+index 5a97867c5ba6..4cc02288d418 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h
+@@ -7,17 +7,66 @@
+ #define QCOM_PHY_QMP_PCS_PCIE_V4_H_
  
- static const unsigned int usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
--	[QPHY_FLL_CNTRL1]		= 0xc0,
--	[QPHY_FLL_CNTRL2]		= 0xc4,
--	[QPHY_FLL_CNT_VAL_L]		= 0xc8,
--	[QPHY_FLL_CNT_VAL_H_TOL]	= 0xcc,
--	[QPHY_FLL_MAN_CODE]		= 0xd0,
- 	[QPHY_SW_RESET]			= 0x00,
- 	[QPHY_START_CTRL]		= 0x08,
- 	[QPHY_PCS_STATUS]		= 0x17c,
-@@ -318,11 +308,11 @@ static const struct qmp_phy_init_tbl msm8996_usb3_rx_tbl[] = {
+ /* Only for QMP V4 PHY - PCS_PCIE registers (same as PCS_MISC?) */
++#define QPHY_V4_PCS_PCIE_INT_AUX_CLK_STATUS		0x00
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_STATUS		0x04
++#define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG1		0x08
+ #define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG2		0x0c
++#define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG3		0x10
+ #define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG4		0x14
++#define QPHY_V4_PCS_PCIE_PCS_TX_RX_CONFIG		0x18
+ #define QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x1c
++#define QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_CNTRL		0x20
++#define QPHY_V4_PCS_PCIE_EPCLK_PRE_PLL_LOCK_DLY_AUXCLK	0x24
++#define QPHY_V4_PCS_PCIE_EPCLK_DLY_COUNT_VAL_L		0x28
++#define QPHY_V4_PCS_PCIE_EPCLK_DLY_COUNT_VAL_H		0x2c
++#define QPHY_V4_PCS_PCIE_RX_IDLE_DTCT_CNTRL1		0x30
++#define QPHY_V4_PCS_PCIE_RX_IDLE_DTCT_CNTRL2		0x34
++#define QPHY_V4_PCS_PCIE_SIGDET_CNTRL			0x38
++#define QPHY_V4_PCS_PCIE_SIGDET_LOW_2_IDLE_TIME		0x3c
+ #define QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L	0x40
++#define QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_H	0x44
+ #define QPHY_V4_PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L	0x48
++#define QPHY_V4_PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_H	0x4c
+ #define QPHY_V4_PCS_PCIE_INT_AUX_CLK_CONFIG1		0x50
++#define QPHY_V4_PCS_PCIE_INT_AUX_CLK_CONFIG2		0x54
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_CONFIG1		0x58
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_CONFIG2		0x5c
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_CONFIG3		0x60
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_CONFIG4		0x64
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_CONFIG5		0x68
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_CONFIG6		0x6c
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_CONFIG7		0x70
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG1		0x74
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG2		0x78
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG3		0x7c
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG4		0x80
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG5		0x84
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG6		0x88
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_MODE2_CONFIG7		0x8c
+ #define QPHY_V4_PCS_PCIE_OSC_DTCT_ACTIONS		0x90
++#define QPHY_V4_PCS_PCIE_LOCAL_FS			0x94
++#define QPHY_V4_PCS_PCIE_LOCAL_LF			0x98
++#define QPHY_V4_PCS_PCIE_LOCAL_FS_RS			0x9c
+ #define QPHY_V4_PCS_PCIE_EQ_CONFIG1			0xa0
+ #define QPHY_V4_PCS_PCIE_EQ_CONFIG2			0xa4
++#define QPHY_V4_PCS_PCIE_PRESET_P0_P1_PRE		0xa8
++#define QPHY_V4_PCS_PCIE_PRESET_P2_P3_PRE		0xac
++#define QPHY_V4_PCS_PCIE_PRESET_P4_P5_PRE		0xb0
+ #define QPHY_V4_PCS_PCIE_PRESET_P6_P7_PRE		0xb4
++#define QPHY_V4_PCS_PCIE_PRESET_P8_P9_PRE		0xb8
+ #define QPHY_V4_PCS_PCIE_PRESET_P10_PRE			0xbc
++#define QPHY_V4_PCS_PCIE_PRESET_P1_P3_PRE_RS		0xc0
++#define QPHY_V4_PCS_PCIE_PRESET_P4_P5_PRE_RS		0xc4
++#define QPHY_V4_PCS_PCIE_PRESET_P6_P9_PRE_RS		0xc8
++#define QPHY_V4_PCS_PCIE_PRESET_P0_P1_POST		0xcc
++#define QPHY_V4_PCS_PCIE_PRESET_P2_P3_POST		0xd0
++#define QPHY_V4_PCS_PCIE_PRESET_P4_P5_POST		0xd4
++#define QPHY_V4_PCS_PCIE_PRESET_P6_P7_POST		0xd8
++#define QPHY_V4_PCS_PCIE_PRESET_P8_P9_POST		0xdc
+ #define QPHY_V4_PCS_PCIE_PRESET_P10_POST		0xe0
++#define QPHY_V4_PCS_PCIE_PRESET_P1_P3_POST_RS		0xe4
++#define QPHY_V4_PCS_PCIE_PRESET_P4_P5_POST_RS		0xe8
++#define QPHY_V4_PCS_PCIE_PRESET_P6_P9_POST_RS		0xec
++#define QPHY_V4_PCS_PCIE_RXEQEVAL_TIME			0xf0
  
- static const struct qmp_phy_init_tbl msm8996_usb3_pcs_tbl[] = {
- 	/* FLL settings */
--	QMP_PHY_INIT_CFG_L(QPHY_FLL_CNTRL2, 0x03),
--	QMP_PHY_INIT_CFG_L(QPHY_FLL_CNTRL1, 0x02),
--	QMP_PHY_INIT_CFG_L(QPHY_FLL_CNT_VAL_L, 0x09),
--	QMP_PHY_INIT_CFG_L(QPHY_FLL_CNT_VAL_H_TOL, 0x42),
--	QMP_PHY_INIT_CFG_L(QPHY_FLL_MAN_CODE, 0x85),
-+	QMP_PHY_INIT_CFG(QPHY_V2_PCS_FLL_CNTRL2, 0x03),
-+	QMP_PHY_INIT_CFG(QPHY_V2_PCS_FLL_CNTRL1, 0x02),
-+	QMP_PHY_INIT_CFG(QPHY_V2_PCS_FLL_CNT_VAL_L, 0x09),
-+	QMP_PHY_INIT_CFG(QPHY_V2_PCS_FLL_CNT_VAL_H_TOL, 0x42),
-+	QMP_PHY_INIT_CFG(QPHY_V2_PCS_FLL_MAN_CODE, 0x85),
- 
- 	/* Lock Det settings */
- 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_LOCK_DETECT_CONFIG1, 0xd1),
+ #endif
 -- 
 2.35.1
 
