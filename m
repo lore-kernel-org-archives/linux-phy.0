@@ -4,79 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DCF5C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jun 2022 03:20:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B841DC433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jun 2022 04:47:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qk0GG8YK1DBb78s+qXBdjoTZAP9LFiEmMV1g6BCpK9w=; b=aIPdh9ECb1x7Vl
-	FZ1DIKRS7yoFkmlkGUfiLWgHsk5Rd1wJgMgE/rxUasU/knn6NIa2i3D25qZkcDhgc92SCrAroxzzn
-	THqYoBmnmD6CLrY7VWmhfPrFr0SurmYNfImT8Z3V1zu+g/lv3WDDfKeBHzbpzJKLN+CU1WjtwAn/Z
-	Jvj4qN1HZOD/1Pv2+ZrH1NWlzg1Kw8rUrv6lEbaH8cX205TdsoqmwNAhewgVK00EQAA4G+Y7PFRlt
-	DnSvNXFSGKhgoOalCEdj2pwLt+d8lkqljjgB8cRVpHHNmSfasZ/0z7QAc4emrlTiV99/yYdl5wYOB
-	H0+5cNBiW40mX70w9FnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cm4e7AW9kNzTEYg9vbVJW079z25kObil1T0O6VxROXk=; b=rKNTaAST/Cgz8G
+	GLp5HGix9QhpTsFpudtRQ7ssXDA2J4gnBYTQ36svPYeGeCQNOI5C4Mu3M7zwTWxQoM4dkL2ik4NVf
+	NHOXNVsYajeqrIk27fsWnahklRNvQ5wyzXrnk7vNkX+qdwL1EEZ9amg/7uTy9DQwtInq08fv8Nu4z
+	VrylALRjCFUEoijX5i7tgAIw0TSUlXPGyo61WsZz85Xpb0FvLjcxN3L6YMHCjvVg3XbwV6y6miZF0
+	6RaPBC6CMhBLgJ9WDDz1dTfps7zVrLHVB5kEo2pKJZ+GubCUAtnOvq3IXIeWhGSc+97xbvPekaXP2
+	FVCQNZ7SEuH3auXgPWNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o0adL-0010QD-Hn; Mon, 13 Jun 2022 03:20:55 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1o0bzV-001NWh-2A; Mon, 13 Jun 2022 04:47:53 +0000
+Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o0ad8-0010MA-Ux; Mon, 13 Jun 2022 03:20:45 +0000
-X-UUID: 40e758a1f9da4d3eba12ebefba251532-20220612
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.5,REQID:bd144ae9-3214-41f7-8adc-8db22c522cfa,OB:0,LO
-	B:0,IP:0,URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
-	ON:release,TS:0
-X-CID-META: VersionHash:2a19b09,CLOUDID:d54452c6-12ba-4305-bfdf-9aefbdc32516,C
-	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
-	,QS:0,BEC:nil
-X-UUID: 40e758a1f9da4d3eba12ebefba251532-20220612
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
-	(envelope-from <rex-bc.chen@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
-	with ESMTP id 1194842458; Sun, 12 Jun 2022 20:20:33 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sun, 12 Jun 2022 20:12:40 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
- mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.792.3;
- Mon, 13 Jun 2022 11:12:33 +0800
-Received: from mtksdccf07 (172.21.84.99) by mtkmbs11n1.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
- Transport; Mon, 13 Jun 2022 11:12:33 +0800
-Message-ID: <fc301b26d4e0fea003a9b6c2237eaca16a4929f6.camel@mediatek.com>
-Subject: Re: [PATCH v10 08/21] drm/mediatek: dpi: implement a swap_input
- toggle in SoC config
-From: Rex-BC Chen <rex-bc.chen@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Guillaume Ranquet <granquet@baylibre.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel
-	<p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, Daniel Vetter
-	<daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>, Krzysztof Kozlowski
-	<krzysztof.kozlowski+dt@linaro.org>, Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Matthias Brugger
-	<matthias.bgg@gmail.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Kishon
- Vijay Abraham I" <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, "Helge
- Deller" <deller@gmx.de>, Jitao shi <jitao.shi@mediatek.com>
-CC: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	<dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<linux-fbdev@vger.kernel.org>
-Date: Mon, 13 Jun 2022 11:12:33 +0800
-In-Reply-To: <2c88fd4c308e86536d5996b3f32f68d05d452e23.camel@mediatek.com>
-References: <20220523104758.29531-1-granquet@baylibre.com>
-	 <20220523104758.29531-9-granquet@baylibre.com>
-	 <2c88fd4c308e86536d5996b3f32f68d05d452e23.camel@mediatek.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+	id 1o0bzR-001NVK-P6
+	for linux-phy@lists.infradead.org; Mon, 13 Jun 2022 04:47:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
+  t=1655095669; x=1686631669;
+  h=from:to:cc:subject:date:message-id:mime-version;
+  bh=UkYht2RkVgYw2EPEYPQSO1L+NBiGiYb4mBU+npLmjJU=;
+  b=Wy+aBWyMgu8x1nK/iC6u+SnycGaExU6lcwMIHt3CS7g5GIEgPaWtLLco
+   UwEqEbCKbSNcOuK3GQ6Mxh6hKybp4Tu/1u+hvp5V78YJkbZuzLppDGLvk
+   nFVCSlC2pW4MnROBaJIxLdIwWnjImHUvuyOrzJQkpQsqJct3a15ZbFbPz
+   8=;
+Received: from unknown (HELO ironmsg03-sd.qualcomm.com) ([10.53.140.143])
+  by alexa-out-sd-01.qualcomm.com with ESMTP; 12 Jun 2022 21:47:47 -0700
+X-QCInternal: smtphost
+Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
+  by ironmsg03-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jun 2022 21:47:47 -0700
+Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
+ nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Sun, 12 Jun 2022 21:47:47 -0700
+Received: from hu-kriskura-hyd.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.986.22; Sun, 12 Jun 2022 21:47:41 -0700
+From: Krishna Kurapati <quic_kriskura@quicinc.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
+	<robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson
+	<bjorn.andersson@linaro.org>, Greg Kroah-Hartman
+	<gregkh@linuxfoundation.org>, Stephen Boyd <swboyd@chromium.org>, "Doug
+ Anderson" <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>
+CC: <devicetree@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+	<linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <quic_pkondeti@quicinc.com>,
+	<quic_ppratap@quicinc.com>, <quic_vpulyala@quicinc.com>, Krishna Kurapati
+	<quic_kriskura@quicinc.com>
+Subject: [v9 0/3] Add QCOM SNPS PHY overriding params support
+Date: Mon, 13 Jun 2022 10:17:30 +0530
+Message-ID: <1655095653-27892-1-git-send-email-quic_kriskura@quicinc.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-MTK: N
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220612_202043_037280_ED236F91 
-X-CRM114-Status: GOOD (  20.93  )
+X-CRM114-CacheID: sfid-20220612_214749_884859_6D95680B 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,123 +87,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2022-05-30 at 15:50 +0800, CK Hu wrote:
-> Hi, Guillaume:
-> 
-> 
-> On Mon, 2022-05-23 at 12:47 +0200, Guillaume Ranquet wrote:
-> > Adds a bit of flexibility to support SoCs without swap_input
-> > support
-> > 
-> > Signed-off-by: Guillaume Ranquet <granquet@baylibre.com>
-> > Reviewed-by: AngeloGioacchino Del Regno <
-> > angelogioacchino.delregno@collabora.com>
-> > Reviewed-by: Rex-BC Chen <rex-bc.chen@mediatek.com>
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_dpi.c | 14 +++++++++++---
-> >  1 file changed, 11 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > index 545a1337cc89..454f8563efae 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-> > @@ -126,6 +126,7 @@ struct mtk_dpi_conf {
-> >  	const u32 *output_fmts;
-> >  	u32 num_output_fmts;
-> >  	bool is_ck_de_pol;
-> > +	bool swap_input_support;
-> >  	const struct mtk_dpi_yc_limit *limit;
-> >  };
-> >  
-> > @@ -378,18 +379,21 @@ static void
-> > mtk_dpi_config_color_format(struct
-> > mtk_dpi *dpi,
-> >  	    (format == MTK_DPI_COLOR_FORMAT_YCBCR_444_FULL)) {
-> >  		mtk_dpi_config_yuv422_enable(dpi, false);
-> >  		mtk_dpi_config_csc_enable(dpi, true);
-> > -		mtk_dpi_config_swap_input(dpi, false);
-> > +		if (dpi->conf->swap_input_support)
-> > +			mtk_dpi_config_swap_input(dpi, false);
-> >  		mtk_dpi_config_channel_swap(dpi,
-> > MTK_DPI_OUT_CHANNEL_SWAP_BGR);
-> >  	} else if ((format == MTK_DPI_COLOR_FORMAT_YCBCR_422) ||
-> >  		   (format == MTK_DPI_COLOR_FORMAT_YCBCR_422_FULL)) {
-> >  		mtk_dpi_config_yuv422_enable(dpi, true);
-> >  		mtk_dpi_config_csc_enable(dpi, true);
-> > -		mtk_dpi_config_swap_input(dpi, true);
-> > +		if (dpi->conf->swap_input_support)
-> > +			mtk_dpi_config_swap_input(dpi, true);
-> 
-> As [1], please keep in touch with Mediatek engineer.
-> 
-> Regards,
-> CK
-> 
-> [1] 
-> 
-https://patchwork.kernel.org/project/linux-mediatek/patch/20220218145437.18563-8-granquet@baylibre.com/
-> 
+Added support for overriding tuning parameters in QCOM SNPS PHY
+from device tree. This parameter tuning is required to tune the
+hs signal on dp/dm lines for electrical compliance to be successful.
 
-Hello CK,
+changes in v9:
+Fixed nitpick in driver code.
 
-the reason is the hardware design of dp_intf does not support input
-swap.
-I will add this in commit message.
+changes in v8:
+Fixed nitpick in driver code.
 
-BRs,
-Bo-Chen
+changes in v7:
+Fixed nitpick in driver code and dtsi file.
 
-> >  		mtk_dpi_config_channel_swap(dpi,
-> > MTK_DPI_OUT_CHANNEL_SWAP_RGB);
-> >  	} else {
-> >  		mtk_dpi_config_yuv422_enable(dpi, false);
-> >  		mtk_dpi_config_csc_enable(dpi, false);
-> > -		mtk_dpi_config_swap_input(dpi, false);
-> > +		if (dpi->conf->swap_input_support)
-> > +			mtk_dpi_config_swap_input(dpi, false);
-> >  		mtk_dpi_config_channel_swap(dpi,
-> > MTK_DPI_OUT_CHANNEL_SWAP_RGB);
-> >  	}
-> >  }
-> > @@ -808,6 +812,7 @@ static const struct mtk_dpi_conf mt8173_conf =
-> > {
-> >  	.output_fmts = mt8173_output_fmts,
-> >  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
-> >  	.is_ck_de_pol = true,
-> > +	.swap_input_support = true,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> > @@ -819,6 +824,7 @@ static const struct mtk_dpi_conf mt2701_conf =
-> > {
-> >  	.output_fmts = mt8173_output_fmts,
-> >  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
-> >  	.is_ck_de_pol = true,
-> > +	.swap_input_support = true,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> > @@ -829,6 +835,7 @@ static const struct mtk_dpi_conf mt8183_conf =
-> > {
-> >  	.output_fmts = mt8183_output_fmts,
-> >  	.num_output_fmts = ARRAY_SIZE(mt8183_output_fmts),
-> >  	.is_ck_de_pol = true,
-> > +	.swap_input_support = true,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> > @@ -839,6 +846,7 @@ static const struct mtk_dpi_conf mt8192_conf =
-> > {
-> >  	.output_fmts = mt8173_output_fmts,
-> >  	.num_output_fmts = ARRAY_SIZE(mt8173_output_fmts),
-> >  	.is_ck_de_pol = true,
-> > +	.swap_input_support = true,
-> >  	.limit = &mtk_dpi_limit,
-> >  };
-> >  
-> 
-> 
+changes in v6:
+Fixed errors in dt-bindings.
+Fixed nitpick in driver code.
+
+changes in v5:
+Fixed nitpicks in code.
+Added minimum and maximum for each parameter added in dt-bindings.
+Added proper suffixes to each parameter as per dtschema.
+
+changes in v4:
+Fixed nitpicks in code.
+Initial compliance test results showed overshoot in the middle of eye
+diagram. The current dt values were put in place to correct it and fix
+overshoot issue.
+
+changes in v3:
+Added support for phy tuning parameters to be represented in bps and
+corresponding register values to be written are obtained by traversing
+through data map declared in the driver.
+
+changes in v2:
+Reading the individual fields in each overriding register from
+device tree.
+
+Krishna Kurapati (2):
+  phy: qcom-snps: Add support for overriding phy tuning parameters
+  arm64: dts: qcom: sc7280: Update SNPS Phy params for SC7280 IDP device
+
+Sandeep Maheswaram (1):
+  dt-bindings: phy: qcom,usb-snps-femto-v2: Add phy override params
+    bindings
+
+ .../bindings/phy/qcom,usb-snps-femto-v2.yaml       |  88 +++++++
+ arch/arm64/boot/dts/qcom/sc7280-idp.dtsi           |   6 +
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 260 ++++++++++++++++++++-
+ 3 files changed, 352 insertions(+), 2 deletions(-)
+
+-- 
+2.7.4
 
 
 -- 
