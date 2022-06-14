@@ -4,92 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B465C43334
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jun 2022 15:49:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D106BC43334
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jun 2022 16:13:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tbmsa9fCxIi9ZiG6htwns5/QOppgV7RQCbcyowRQ204=; b=QkOeRu0Nqe6aVJ
-	2xGfkKRtPuPxvs+/SMTlOahEXbLPHjq7CtLEGDEDMd/27BhhNGOGWkM9AhQnyggWshkyoyPzs4471
-	4g5pGNrXVSiUe38+ly7qr8ob47H2G53soj0+vTt1Mgv5T1mElnEayUp4bU2n4akyMZeYIPg9Ub5gD
-	iE27sqpPrjFVqIEI1+13WVmsDFppKdP+E5su3qBRNvauiEPl+6M14nQgAU3+W8kIWbFf+IspoyveS
-	Nsbq4QdCJOxpOQGKibZwc/IR1alyMGkJd0dpRCWd/HIpzAEefzhxIxvb5r/tBFbGzd+m5vfaki/r4
-	viKwega1vF45s59oAVvg==;
+	List-Owner; bh=XL1wB4Gtfj5dzpg1vKxfGUnVtYhpM1kg4LwmomVADCo=; b=0zlzoMn1TEPRFk
+	bBWcrXRDOtzafKFeqSjrKCZj2xglIMxli8kaNK226Xg2OJckBvCUkULLaqEgmgdBO9e1MRes4mZ62
+	Bffhe8+xEwXqTAkeAKgFp+iNB5Y/h/Jq81kCgPtlop7oPOFYvYc1kYKF0y6AfQELJc/s2dkUm92IQ
+	I8AJc3+q5bt9XVgLAiXpe6BXI1m6eefN/MrmD/H3bpyTOqFyikCE6xXTKhf9G3haDYh+YC9kW9XhZ
+	RZezk76U2/k/ZFcZvAvr65fG230/5YKZ3Qf5Ov/kUrpi4TFRz0TvbiIHVVkXDkH/ECu7X4o6M9ZuS
+	PwUJoVFuwBQ5XBBDVo/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o18nL-00AE06-R4; Tue, 14 Jun 2022 15:49:31 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1o19B0-00AHpF-K9; Tue, 14 Jun 2022 16:13:58 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o18nI-00ADxx-Km
-	for linux-phy@lists.infradead.org; Tue, 14 Jun 2022 15:49:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1655221766;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=H0LqbJsXhqPV5D+p7TkqXnodF2x40k1XJHNKS73Qf8s=;
-	b=Hca6aUUqLrf+V3nXra6rBlxwPgyBgYta9SsleRH4rQZDEgw4LPDkMASPputH9eriFw+hvD
-	vl4NAZwPZWMFrMgm8Z2mtTRUPVCdFTtW0P5d8tc5vhbbi4LsXeOjZu7YIh3GOiD2k0wZ8x
-	K35oBAozEaRwrf3DuzVatsSIUyuZC6w=
-Received: from mail-ed1-f72.google.com (mail-ed1-f72.google.com
- [209.85.208.72]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- us-mta-189-Cl9F8QxaMjqKk_34EQIzbA-1; Tue, 14 Jun 2022 11:49:25 -0400
-X-MC-Unique: Cl9F8QxaMjqKk_34EQIzbA-1
-Received: by mail-ed1-f72.google.com with SMTP id o17-20020a50fd91000000b0042dbded81deso6466177edt.0
-        for <linux-phy@lists.infradead.org>; Tue, 14 Jun 2022 08:49:25 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=H0LqbJsXhqPV5D+p7TkqXnodF2x40k1XJHNKS73Qf8s=;
-        b=0sYjvYka4Pcn7YpF0UpNWl/edLSj+6nRh/GQkIptu8brdBS35dQEktCqPbtyul5Xpa
-         oGcUigX4TqbXrwt8Jq5bJ1aYaYxrNX3SYUut7ICJYBovZ2o/t6TW6Wl0ReFrPPh/a/F8
-         Mc5SZ6e3DZtLWSK/jfvQHyh+1VHcVTdc43tqgfj6UNOwodRRqpGv3f7/WaabThdAU7SB
-         +9B20flfOJ5MxLrlXuEXdS04Oqf1qjy8dnAQgJ52MdklU6JDukRnzgNWXKkpkMkWgx+s
-         vzpAvfp+qwHM5dKRhk6I9dF31MHH0C27T8QHZ04Yt6P3ax1hn/5dPjFdC5jW6LNggcr7
-         chWg==
-X-Gm-Message-State: AOAM530xTvHZ96+EJj6qSq+kj1MtJ4VBtSHt83kZP5tcNlRG+DC3HAx9
-	ftahH9UbdUgv4XUXcl0KAT1yt3iXCFq3v+2sGz7DwpKpf8J+h4HIJXIdIkX1avIfYT41hL991xB
-	71XOqLBEOMVK+qbsbQJ4hNxSjxQ==
-X-Received: by 2002:a17:907:7245:b0:711:d1ff:2ca4 with SMTP id ds5-20020a170907724500b00711d1ff2ca4mr4977407ejc.753.1655221763966;
-        Tue, 14 Jun 2022 08:49:23 -0700 (PDT)
-X-Google-Smtp-Source: AGRyM1vPyve1+0RUr74qY0pNAm4r3dLI3EHLVJQ2aR4cVSenNQC/56jmGFGGus4kQCdlAK0D9v8mXw==
-X-Received: by 2002:a17:907:7245:b0:711:d1ff:2ca4 with SMTP id ds5-20020a170907724500b00711d1ff2ca4mr4977383ejc.753.1655221763715;
-        Tue, 14 Jun 2022 08:49:23 -0700 (PDT)
-Received: from ?IPV6:2001:1c00:c1e:bf00:d69d:5353:dba5:ee81? (2001-1c00-0c1e-bf00-d69d-5353-dba5-ee81.cable.dynamic.v6.ziggo.nl. [2001:1c00:c1e:bf00:d69d:5353:dba5:ee81])
-        by smtp.gmail.com with ESMTPSA id d9-20020a1709063ec900b006feb6dee4absm5211929ejj.137.2022.06.14.08.49.23
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 14 Jun 2022 08:49:23 -0700 (PDT)
-Message-ID: <390cf16c-f07c-ebfc-08ad-25b242548953@redhat.com>
-Date: Tue, 14 Jun 2022 17:49:22 +0200
+	id 1o19Aj-00AHeq-6u
+	for linux-phy@lists.infradead.org; Tue, 14 Jun 2022 16:13:46 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20220614161328epoutp04c7dfe532ebaa69797b8692f895182a10~4iLz1tHHM1635116351epoutp04H
+	for <linux-phy@lists.infradead.org>; Tue, 14 Jun 2022 16:13:28 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20220614161328epoutp04c7dfe532ebaa69797b8692f895182a10~4iLz1tHHM1635116351epoutp04H
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1655223208;
+	bh=/E2y2QIl7hooCGcl99PvQlTV2UQaMHrzp2xlErPJ2Ak=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=fxsSu9BFy1GeQ7fmRhd83B8wyrIIOyHj9hF7KwKKpRUdnBfw+7lOcpPYz4lNPYQ6C
+	 C2qAqc3CWMDCqEnUu0rskdm6iuKsbTuxKo6Ub3urmw2X724RG2LUgwTD4J5MTU7LrV
+	 ovqBEAdSTtjbQ9SR2oxweu6dEA9qXmoHnABTIpG0=
+Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+	20220614161326epcas5p169be98a6e3a82517467840054fcd7c9a~4iLyZoPqY1049110491epcas5p16;
+	Tue, 14 Jun 2022 16:13:26 +0000 (GMT)
+Received: from epsmges5p1new.samsung.com (unknown [182.195.38.175]) by
+	epsnrtp3.localdomain (Postfix) with ESMTP id 4LMtlR4x85z4x9Pr; Tue, 14 Jun
+	2022 16:13:23 +0000 (GMT)
+Received: from epcas5p3.samsung.com ( [182.195.41.41]) by
+	epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+	7C.79.10063.3A3B8A26; Wed, 15 Jun 2022 01:13:23 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
+	20220614161323epcas5p469e5d499764dbe18ad96a7ede156d346~4iLvLDoZi3008830088epcas5p4S;
+	Tue, 14 Jun 2022 16:13:23 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+	20220614161323epsmtrp13f6697dd2e418292ccfa6247e53e7c61~4iLvGrtSz3260132601epsmtrp1O;
+	Tue, 14 Jun 2022 16:13:23 +0000 (GMT)
+X-AuditID: b6c32a49-4cbff7000000274f-e7-62a8b3a3007d
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	E8.D6.08924.2A3B8A26; Wed, 15 Jun 2022 01:13:22 +0900 (KST)
+Received: from alimakhtar03 (unknown [107.122.12.5]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20220614161321epsmtip20b8d61e04d315ffe7d4b5bb0ebbed5d3~4iLtS1RIK1769317693epsmtip2T;
+	Tue, 14 Jun 2022 16:13:21 +0000 (GMT)
+From: "Alim Akhtar" <alim.akhtar@samsung.com>
+To: <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<linux-scsi@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<vkoul@kernel.org>
+Cc: <devicetree@vger.kernel.org>, <robh+dt@kernel.org>,
+	<krzysztof.kozlowski+dt@linaro.org>, <avri.altman@wdc.com>,
+	<bvanassche@acm.org>, <martin.petersen@oracle.com>,
+	<chanho61.park@samsung.com>, <pankaj.dubey@samsung.com>
+In-Reply-To: <20220610104119.66401-1-alim.akhtar@samsung.com>
+Subject: RE: [PATCH v4 0/6] Add support for UFS controller found in FSD SoC
+Date: Tue, 14 Jun 2022 21:43:19 +0530
+Message-ID: <003301d88009$ab90e390$02b2aab0$@samsung.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.0
-Subject: Re: [PATCH v1 1/1] phy: ti: tusb1210: Don't check for write errors
- when powering on
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Stephan Gerhold <stephan@gerhold.net>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Ferry Toth <ftoth@exalondelft.nl>
-References: <20220613160848.82746-1-andriy.shevchenko@linux.intel.com>
- <bd21d5c6-ed5f-dd8c-f0bf-73f54ca8ee58@redhat.com>
- <YqiGocQ+vr9KjUHK@smile.fi.intel.com>
-From: Hans de Goede <hdegoede@redhat.com>
-In-Reply-To: <YqiGocQ+vr9KjUHK@smile.fi.intel.com>
-Authentication-Results: relay.mimecast.com;
-	auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=hdegoede@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQIu/OPxqgZFceAsQzYNdQjDR0m3fgEGezFsrJnkvnA=
+Content-Language: en-us
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrKJsWRmVeSWpSXmKPExsWy7bCmpu7izSuSDK79VrR4+fMqm8W0Dz+Z
+	LS7v17aYf+Qcq0Xfi4fMFpseX2O1uLxrDpvFhFXfWCy6r+9gs1h+/B+TxaKtX9gtWvceYbfY
+	eecEswOvx+Ur3h6bVnWyedy5tofNY/OSeo+PT2+xePRtWcXo8XmTnEf7gW6mAI6obJuM1MSU
+	1CKF1Lzk/JTMvHRbJe/geOd4UzMDQ11DSwtzJYW8xNxUWyUXnwBdt8wcoIOVFMoSc0qBQgGJ
+	xcVK+nY2RfmlJakKGfnFJbZKqQUpOQUmBXrFibnFpXnpenmpJVaGBgZGpkCFCdkZG2/+ZC/o
+	Eqk40f+esYFxikAXIyeHhICJxLn5G5hAbCGB3YwSsy+YdzFyAdmfGCWWf/3LAuF8ZpT4O+ks
+	I0zH/deHoRK7GCX+r73DDOG8ZJRYP2c22Cw2AV2JHYvb2EASIgILGSXe/V/KBOIwCzxllFh5
+	ei0zSBWngK3Es/WXWUFsYQFviSfrv7OD2CwCqhKrT79iAbF5BSwlNp/8zwZhC0qcnPkELM4s
+	oC2xbOFrZoibFCR+Pl0GNkdEwEpi9/dTTBA14hIvjx5hB1ksIXCFQ2Lj4YNQDS4Sv3duYIOw
+	hSVeHd/CDmFLSbzsbwOyOYBsD4lFf6QgwhkSb5evh/rfXuLAlTksICXMApoS63fpQ6zik+j9
+	/YQJopNXoqNNCKJaVaL53VUWCFtaYmJ3NyuE7SHx8+tyxgmMirOQPDYLyWOzkDwwC2HZAkaW
+	VYySqQXFuempxaYFhnmp5fAIT87P3cQITs9anjsY7z74oHeIkYmD8RCjBAezkgjv5IvLkoR4
+	UxIrq1KL8uOLSnNSiw8xmgJDeyKzlGhyPjBD5JXEG5pYGpiYmZmZWBqbGSqJ8wr8b0wSEkhP
+	LEnNTk0tSC2C6WPi4JRqYGr6P2MCZ94fgdOFKWkVIToJ23aaWqQpqEx6dvRWl69EzsnNd7ik
+	d1574xhnNZ9V+Zd/veKpV6KfaiIc/7XOeyW5xXfC2v/zJ2yQ9knIntFlWfn6a2S2y7bU2CcT
+	D/SrBG58fuVF9JMdXvYuT1YcOW1yq7RW672NxhKz9XHTTzJNdHLapfNosrao1Pyvq3fbCope
+	bHjwNalp+XSDLfwZS+3LootMz65a49c1N+Hr9PmTdr2PVt1zpOuagvKc+Y63ul3qCsU/7tt8
+	xFBt9jnrwpfRLppfozYtE28+M3v+BDZ7/7UfjV5rXDqwWtpV61SrX3pTfNlbTU9xb685YoL5
+	hhsUNI6IRLdXK3IlmLcvDVZiKc5INNRiLipOBADLJWfyWAQAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrPIsWRmVeSWpSXmKPExsWy7bCSvO7izSuSDF5yW7z8eZXNYtqHn8wW
+	l/drW8w/co7Vou/FQ2aLTY+vsVpc3jWHzWLCqm8sFt3Xd7BZLD/+j8li0dYv7Bate4+wW+y8
+	c4LZgdfj8hVvj02rOtk87lzbw+axeUm9x8ent1g8+rasYvT4vEnOo/1AN1MARxSXTUpqTmZZ
+	apG+XQJXxtlXPcwFZ4QrLjRPZmpgvMbfxcjJISFgInH/9WGWLkYuDiGBHYwS927fYYRISEtc
+	3ziBHcIWllj57zk7RNFzRonJJxvZQBJsAroSOxa3sYEkRASWMkr8XvYVbBSzwFtGiVUfbzBC
+	tPQxSnRP/coK0sIpYCvxbP1lMFtYwFviyfrvYDtYBFQlVp9+xQJi8wpYSmw++Z8NwhaUODnz
+	CVicWUBb4unNp3D2soWvmSHuU5D4+XQZ2EwRASuJ3d9PMUHUiEu8PHqEfQKj8Cwko2YhGTUL
+	yahZSFoWMLKsYpRMLSjOTc8tNiwwykst1ytOzC0uzUvXS87P3cQIjlMtrR2Me1Z90DvEyMTB
+	eIhRgoNZSYR38sVlSUK8KYmVValF+fFFpTmpxYcYpTlYlMR5L3SdjBcSSE8sSc1OTS1ILYLJ
+	MnFwSjUwcZRPWiP4ckI2v+XtlWWz9v7n/Jul+8NsvsThQ4z//N6ybS2+aMx0uNblsvQBce/0
+	xuor/QVlAQq9kkuldW7ryMUYCnx8JB7dqPlKeJbBjKlqRTtzArcp6Qe9a1RYkpjgmxNtWzTn
+	bIfVkp/dD2v2JB6c8uBTHHf6i38Wrv5XNl1o9vzxYM4lpYWbpi6f6WaTzmRzTPz/Wz3vif3M
+	mQfUfmTcWSQz3W7L/i9LdCZ/VrV47ZQ767f984mnVrhIXLjZlL361Me1t69NuOgzWch2/37D
+	tx5xi3LNY9u/eS+5emarYJt70ZPg+QunVLxdVMe74JCSYNQteambZmvTlaTFK68HeGudnRLr
+	7aUStqHyshJLcUaioRZzUXEiAMJpVwpCAwAA
+X-CMS-MailID: 20220614161323epcas5p469e5d499764dbe18ad96a7ede156d346
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220610104340epcas5p1d6cee31aba4dc2952ef09003c9e67863
+References: <CGME20220610104340epcas5p1d6cee31aba4dc2952ef09003c9e67863@epcas5p1.samsung.com>
+	<20220610104119.66401-1-alim.akhtar@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220614_084928_877568_99CD6566 
-X-CRM114-Status: GOOD (  22.15  )
+X-CRM114-CacheID: sfid-20220614_091343_359132_8EEB1A5C 
+X-CRM114-Status: GOOD (  12.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,88 +139,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hi Vinod
 
-On 6/14/22 15:01, Andy Shevchenko wrote:
-> On Tue, Jun 14, 2022 at 01:23:21PM +0200, Hans de Goede wrote:
->> On 6/13/22 18:08, Andy Shevchenko wrote:
->>> On some platforms, like Intel Merrifield, the writing values during power on
->>> may timeout:
->>>
->>>    tusb1210 dwc3.0.auto.ulpi: error -110 writing val 0x41 to reg 0x80
->>>    phy phy-dwc3.0.auto.ulpi.0: phy poweron failed --> -110
->>>    dwc3 dwc3.0.auto: error -ETIMEDOUT: failed to initialize core
->>>    dwc3: probe of dwc3.0.auto failed with error -110
->>>
->>> which effectively fails the probe of the USB controller.
->>> Drop the check as it was before the culprit commit (see Fixes tag).
->>>
->>> Fixes: 09a3512681b3 ("phy: ti: tusb1210: Improve ulpi_read()/_write() error checking")
->>> Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
->>
->> Copy and pasting my reply about this in another thread to keep everyone up2date:
-> 
-> Thanks! My replies below.
-> 
->> """
->> In my experience with using the phy for charger-type detection on some
->> x86 android tablets which don't have any other way to do charger detection,
->> these errors indicate a real communication issue for reading/writing
->> phy registers. At the same time this usually does not seem to be a big
->> problem since the phy seems to work fine with its power-on defaults.
->>
->> In case of Bay Trail these errors were related to 2 things:
->>
->> 1. Autosuspend of the phy-interface block in the dwc3, fixed by:
->>
->> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7c93a903f33ff35aa0e6b5a8032eb9755b00826
->>
->> But dwc3_pci_mrfld_properties[] already sets "snps,dis_u2_susphy_quirk",
->> so I guess it is not this.
->>
->> 2. There being no delay in tusb1210_power_on() between toggling the
->> reset IO and then trying to communicate with the phy, fixed in:
->>
->> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=df37c99815d9e0775e67276d70c93cbc25f31c70
->>
->> Maybe the:
->>
->> #define TUSB1210_RESET_TIME_MS				30
-> 
-> Actually it's 50.
-> 
->> Added by that commit needs to be a bit bigger for the possibly
->> older phy revision used on the merifield boards?
->>
->> (note it is fine to just increase it a bit everywhere).
->> """
->>
->> IMHO it would be good to try and increase TUSB1210_RESET_TIME_MS (start with say 100
->> and then see if e.g. 50 also works). If increasing that does not work
-> 
-> No help
-> 
-> [   35.126397] tusb1210 dwc3.0.auto.ulpi: GPIO lookup for consumer reset
-> [   35.126418] tusb1210 dwc3.0.auto.ulpi: using ACPI for GPIO lookup
-> [   35.126455] tusb1210 dwc3.0.auto.ulpi: using lookup tables for GPIO lookup
-> [   35.126465] tusb1210 dwc3.0.auto.ulpi: No GPIO consumer reset found
-> [   35.126476] tusb1210 dwc3.0.auto.ulpi: GPIO lookup for consumer cs
-> [   35.126485] tusb1210 dwc3.0.auto.ulpi: using ACPI for GPIO lookup
-> [   35.126538] tusb1210 dwc3.0.auto.ulpi: using lookup tables for GPIO lookup
-> [   35.126548] tusb1210 dwc3.0.auto.ulpi: No GPIO consumer cs found
-> [   40.534107] tusb1210 dwc3.0.auto.ulpi: error -110 writing val 0x41 to reg 0x80
-> 
-> (I put 5000 ms there to be sure)
-> 
->> I'm fine with going with this workaround patch to fix things.
+>-----Original Message-----
+>From: Alim Akhtar [mailto:alim.akhtar@samsung.com]
+>Sent: Friday, June 10, 2022 4:11 PM
+>To: linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; linux-
+>scsi@vger.kernel.org; linux-phy@lists.infradead.org
+>Cc: devicetree@vger.kernel.org; robh+dt@kernel.org;
+>krzysztof.kozlowski+dt@linaro.org; vkoul@kernel.org; avri.altman@wdc.com;
+>bvanassche@acm.org; martin.petersen@oracle.com;
+>chanho61.park@samsung.com; pankaj.dubey@samsung.com; Alim Akhtar
+><alim.akhtar@samsung.com>
+>Subject: [PATCH v4 0/6] Add support for UFS controller found in FSD SoC
+>
+>
+>This series adds support for UFS controller found in FSD SoC.
+>The HCI is almost same as found on other Exynos SoCs with minor differences.
+>This also adds the required UFS-PHY driver changes.
+>
+>Patch 2/6: common change to handle different CDR offsets
+>
+>*Changes since v3:
+>- Addressed review comments on patch 6/6 from Chanho
+>
+>*Changes since v2:
+>- Addressed review comments from Chanho
+>- collected reviewed-by, tested-by tags
+>- rebased on next-20220609
+>
+>*Changes since v1:
+>- Addressed review comments from Bart, Krzysztof, Chanho
+>- collected Ack-by tags
+>- rebased on next-20220602
+>
+>
+>Alim Akhtar (6):
+>  dt-bindings: phy: Add FSD UFS PHY bindings
+>  phy: samsung-ufs: move cdr offset to drvdata
+>  phy: samsung-ufs: add support for FSD ufs phy driver
 
-Ok, so I guess we should just apply this workaround patch to make
-the error non fatal. Still would be good to dig a little deeper one
-of these days and see what is going on here...
+Can you please take patch-{1/6, 2/6 and 3/6} via phy tree?
 
-Regards,
+The UFS patches has been picked by Martin via SCSI tree.
 
-Hans
+Thanks.
+
+>  dt-bindings: ufs: exynos-ufs: add fsd compatible
+>  ufs: host: ufs-exynos: add mphy apb clock mask
+>  ufs: host: ufs-exynos: add support for fsd ufs hci
+>
+> .../bindings/phy/samsung,ufs-phy.yaml         |   1 +
+> .../bindings/ufs/samsung,exynos-ufs.yaml      |   1 +
+> drivers/phy/samsung/Makefile                  |   1 +
+> drivers/phy/samsung/phy-exynos7-ufs.c         |   3 +
+> drivers/phy/samsung/phy-exynosautov9-ufs.c    |   2 +
+> drivers/phy/samsung/phy-fsd-ufs.c             |  58 +++++++
+> drivers/phy/samsung/phy-samsung-ufs.c         |   7 +-
+> drivers/phy/samsung/phy-samsung-ufs.h         |   3 +-
+> drivers/ufs/host/ufs-exynos.c                 | 143 +++++++++++++++++-
+> drivers/ufs/host/ufs-exynos.h                 |   1 +
+> 10 files changed, 217 insertions(+), 3 deletions(-)  create mode 100644
+>drivers/phy/samsung/phy-fsd-ufs.c
+>
+>
+>base-commit: ff539ac73ea559a8c146d99ab14bfcaddd30547a
+>--
+>2.25.1
+
 
 
 -- 
