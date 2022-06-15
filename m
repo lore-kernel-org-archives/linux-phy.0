@@ -4,94 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01920C43334
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Jun 2022 16:11:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5710DC43334
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Jun 2022 23:30:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NL8sraRi0aD1U6KZgYHyPz4OSTkMtvQeHsDdOpSZLLM=; b=acHVij3eT5UglI
-	kcCMadgTAxJfC7L6UVgPyoDF7NL37UgzGz1RsZPmEpN2Rd1kVeLlYuFMsMxDnQO8t8gKPxboYXl1/
-	Z3BWLUZlHZMjI2A9sm3AMGTgpBKczh3z1kNhlLDE6Rn0SGX9/rbR9JcPAXNpO60nxC8TMBCP2Mkg5
-	O/FDhHqyk9g+7mKUhTtezgjAWi+7L6DWq6rO8EVdQBBvwVudPoQlPcoYKJuNAm1AS6Sxg7iDVM+HR
-	aq1yI3yBe3KRn1K7MwYj1CZaRSWcndV2HMvCz7x0eyN3fgC/bw5gw0BmibZgd+bIlDubs2LSWIgYu
-	t03jlzoltLBQPf0sYgBA==;
+	List-Owner; bh=AJk2vbErsNPWiS38+Ox8sujkQ8JfkaY5YFSYoTue8sI=; b=3x+zR9NXw7AH2Y
+	i/Sf7WOZcJP+bR0b2ePpfkua64bOHENwRsxcr31L1NnrdlmpNW1Co3MjzrULakoarnE5Th53i0Vi0
+	7hUT4N3Vtj7uPkDWt+0Za0hkajDsMdiF2mlJaxQZst9WEMHGN2HNjzTIIDn5YLAVhTURfB6baF/uV
+	YsqUtdHa//KbOuuUF3S33OCDIr0qy4oCqX/tiaBMmig5xULhJoKTsru8JH1jiDntnw1gF02zpxjja
+	kkV0g6bXpnQl9TRFX/6L57gQan2aYsnQ+UJzrAPBqMCScnYz7qDQ7F7PCsQu5DP3PntEAy07vKLYk
+	KevR11W28stDMrl9vNsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o1VcB-00FJ7R-CM; Wed, 15 Jun 2022 16:11:31 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1o1cSk-00Gv18-OG; Wed, 15 Jun 2022 23:30:14 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o1Vc7-00FJ4z-MM
-	for linux-phy@lists.infradead.org; Wed, 15 Jun 2022 16:11:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1655309485;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=SYwgKkQjGzy4vjuONVP2nbTWiQ6a3KB6AbIHQDB6eZ4=;
-	b=WMyt7o1pxo+pikkTmLlzx9W1tOwARYKRixPLU76ATblwNIvC4uYoI7KkV3cK3oamlkH2Ok
-	ImsjNF2vBDfPxcNgIoske3sy2rAUFfPIA52RG/m/hv0l07cJj5hmTpZ6NcCzZcQ/YonurS
-	xoWezKtWthmzs+HMUKveTI2j3h8Ky3k=
-Received: from mail-ej1-f70.google.com (mail-ej1-f70.google.com
- [209.85.218.70]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- us-mta-91-s-JSIAZzPdC_j2DhXUcLVw-1; Wed, 15 Jun 2022 12:11:23 -0400
-X-MC-Unique: s-JSIAZzPdC_j2DhXUcLVw-1
-Received: by mail-ej1-f70.google.com with SMTP id kf3-20020a17090776c300b0070d149300e9so4468955ejc.15
-        for <linux-phy@lists.infradead.org>; Wed, 15 Jun 2022 09:11:23 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=SYwgKkQjGzy4vjuONVP2nbTWiQ6a3KB6AbIHQDB6eZ4=;
-        b=tAEt0uILDRhw4SGqXVHoJdbv/wAiyArBBJ+Fcp4cbGXnCf0bc3hIP/RxTTU3/jiXxM
-         p1/rmmkPq6cviq6NtJ+TuetAnOPU864A9sCc1yvDNgwgbykN1a3XaMiVZFI/boW4m10/
-         l7V4038XZgO7pg5u5XmJUbGOlVRyJ2NjxmClbm8GN3s8yOgrWPZ6ngzZAD6G/+KBGmEm
-         9VXSllkGpGrQxbhfrDey7M3z41+NVwvLLaXqBnci5cVnm0yrSFseB3fctgCjXqqOR7FJ
-         y42mL9XodpzEgsGmj6J45NsuwlADYL8Amx/lo8XAGrfrvMJP0LtZpRzGpMsMaCEHLV7f
-         WNlQ==
-X-Gm-Message-State: AJIora89XJbt/2B1RftISkzlo9bMEUKUyufrZHW4K5EkSfuzmwGs6wjY
-	jwP71S++G1i8r4rgsx7xL1EUeT9pr+wWjV7QjFckIpDANTn2KzYW62vycqXLanT4eINPGLaeMq2
-	dZuE0H/RnvWraeWN74jwXdvyvew==
-X-Received: by 2002:a05:6402:1c91:b0:42d:c9b6:506b with SMTP id cy17-20020a0564021c9100b0042dc9b6506bmr632409edb.166.1655309482632;
-        Wed, 15 Jun 2022 09:11:22 -0700 (PDT)
-X-Google-Smtp-Source: AGRyM1tAtdJfLowzWrTXaHYr/672zwCo8kH9O7E4MnmuGCakvRsxz/A0LCNz5NAEZ4eNEwjazTGy8w==
-X-Received: by 2002:a05:6402:1c91:b0:42d:c9b6:506b with SMTP id cy17-20020a0564021c9100b0042dc9b6506bmr632068edb.166.1655309479499;
-        Wed, 15 Jun 2022 09:11:19 -0700 (PDT)
-Received: from ?IPV6:2001:1c00:c1e:bf00:d69d:5353:dba5:ee81? (2001-1c00-0c1e-bf00-d69d-5353-dba5-ee81.cable.dynamic.v6.ziggo.nl. [2001:1c00:c1e:bf00:d69d:5353:dba5:ee81])
-        by smtp.gmail.com with ESMTPSA id bq15-20020a056402214f00b0042ab2127051sm9677479edb.64.2022.06.15.09.11.18
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 15 Jun 2022 09:11:18 -0700 (PDT)
-Message-ID: <402d2059-d0ab-2229-870c-f511cd6f29ee@redhat.com>
-Date: Wed, 15 Jun 2022 18:11:18 +0200
+	id 1o1cSi-00GuyT-Cb
+	for linux-phy@lists.infradead.org; Wed, 15 Jun 2022 23:30:14 +0000
+Received: from epcas2p2.samsung.com (unknown [182.195.41.54])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20220615233006epoutp04287256a6616ac770f6fd1426ecd75891~47yVegqpz1019510195epoutp04a
+	for <linux-phy@lists.infradead.org>; Wed, 15 Jun 2022 23:30:06 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20220615233006epoutp04287256a6616ac770f6fd1426ecd75891~47yVegqpz1019510195epoutp04a
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1655335806;
+	bh=VfdnilvGwyw2Gtx+bvH89i6cp4sH16STcDvEivtCMVc=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=bD1bZR69VPpBM6UimykQt2KtYgWUsOODHRj938fEywTu4W2kEmKd9AsNQGN/A7FWb
+	 ylWnz0UjB24+drqJ7IRS+SoEdrkgZBShQuS+hk/IG+ghg+oDIrgIfPOdVzQ5/Ks8/R
+	 ChP6Le2gUYmKPoO4iRiBTU59BfCN7zU+6Ljs4iW8=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
+	epcas2p4.samsung.com (KnoxPortal) with ESMTP id
+	20220615233006epcas2p4cb9c4fedf20ad07307af300d10435105~47yVDiesa2820628206epcas2p4z;
+	Wed, 15 Jun 2022 23:30:06 +0000 (GMT)
+Received: from epsmges2p3.samsung.com (unknown [182.195.36.99]) by
+	epsnrtp1.localdomain (Postfix) with ESMTP id 4LNhNs6grYz4x9Py; Wed, 15 Jun
+	2022 23:30:05 +0000 (GMT)
+Received: from epcas2p2.samsung.com ( [182.195.41.54]) by
+	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
+	E1.EA.10028.D7B6AA26; Thu, 16 Jun 2022 08:30:05 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+	epcas2p4.samsung.com (KnoxPortal) with ESMTPA id
+	20220615233005epcas2p4d5ea0e441c1b2e8ddeea093f425b233d~47yUSpYqz2820628206epcas2p4q;
+	Wed, 15 Jun 2022 23:30:05 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+	20220615233005epsmtrp1d709cdca229d9aaffc2686fc98054809~47yURjsFJ0872308723epsmtrp1X;
+	Wed, 15 Jun 2022 23:30:05 +0000 (GMT)
+X-AuditID: b6c32a47-589ff7000000272c-d9-62aa6b7d364c
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+	epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+	31.86.08924.D7B6AA26; Thu, 16 Jun 2022 08:30:05 +0900 (KST)
+Received: from KORCO082417 (unknown [10.229.8.121]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20220615233005epsmtip21dd13d0c8bd664fdec537d25e1ab39b1~47yUA9mgp2583125831epsmtip2G;
+	Wed, 15 Jun 2022 23:30:05 +0000 (GMT)
+From: "Chanho Park" <chanho61.park@samsung.com>
+To: "'Alim Akhtar'" <alim.akhtar@samsung.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<linux-scsi@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Cc: <beanhuo@micron.com>, <krzysztof.kozlowski+dt@linaro.org>,
+	<avri.altman@wdc.com>, <bvanassche@acm.org>, <martin.petersen@oracle.com>,
+	<linux-samsung-soc@vger.kernel.org>
+In-Reply-To: <20220615121204.16642-1-alim.akhtar@samsung.com>
+Subject: RE: [PATCH 1/3] ufs: host: ufs-exynos: remove unused defines
+Date: Thu, 16 Jun 2022 08:30:05 +0900
+Message-ID: <000001d8810f$d7d913d0$878b3b70$@samsung.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.0
-Subject: Re: [PATCH v1 1/1] phy: ti: tusb1210: Don't check for write errors
- when powering on
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Stephan Gerhold <stephan@gerhold.net>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, Ferry Toth <ftoth@exalondelft.nl>
-References: <20220613160848.82746-1-andriy.shevchenko@linux.intel.com>
- <bd21d5c6-ed5f-dd8c-f0bf-73f54ca8ee58@redhat.com>
- <YqiGocQ+vr9KjUHK@smile.fi.intel.com>
- <390cf16c-f07c-ebfc-08ad-25b242548953@redhat.com>
- <YqnHpXvZJEfhX21/@smile.fi.intel.com>
-From: Hans de Goede <hdegoede@redhat.com>
-In-Reply-To: <YqnHpXvZJEfhX21/@smile.fi.intel.com>
-Authentication-Results: relay.mimecast.com;
-	auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=hdegoede@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHFEeTTG4xV+/czXfbyAHavs5YYnAHvmU5DrWh+5UA=
+Content-Language: ko
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrJJsWRmVeSWpSXmKPExsWy7bCmmW5t9qokg97vphYP5m1js3j58yqb
+	xcGHnSwW0z78ZLboe/GQ2WLT42usFpd3zWGzmLDqG4vFjPP7mCy6r+9gs1h+/B+TA7fH5Sve
+	Hneu7WHz2Lyk3uP7+g42j49Pb7F49G1ZxejxeZOcR/uBbqYAjqhsm4zUxJTUIoXUvOT8lMy8
+	dFsl7+B453hTMwNDXUNLC3MlhbzE3FRbJRefAF23zBygO5UUyhJzSoFCAYnFxUr6djZF+aUl
+	qQoZ+cUltkqpBSk5BeYFesWJucWleel6eaklVoYGBkamQIUJ2RnNr46wFbxirLgzfzdrA+Mu
+	xi5GTg4JAROJ/a/3AdlcHEICOxglTnU1sUM4nxglHv5pYoZwPjNK/Lu3iw2mZdaliawQiV2M
+	Ep9uXwRLCAm8YJQ4s4wHxGYT0Jd42bENrEgEZO7nFZ9YQBxmgY2MEr2NW4EcDg5OAVuJMw8t
+	QBqEBVwl1s9/yA5iswioSlzuXAg2lFfAUuLCg1vMELagxMmZT1hAbGYBeYntb+cwQ1ykIPHz
+	6TJWEFtEwErixqSn7BA1IhKzO9vAXpAQOMMhceX/K6gGF4mFMw9AvSMs8er4FnYIW0riZX8b
+	lF0ssXTWJyaI5gZGicvbfkE1GEvMetbOCPIAs4CmxPpd+iCmhICyxJFbULfxSXQc/ssOEeaV
+	6GgTgmhUlziwfToLhC0r0T3nM+sERqVZSD6bheSzWUg+mIWwawEjyypGsdSC4tz01GKjAmN4
+	bCfn525iBKdhLfcdjDPeftA7xMjEwXiIUYKDWUmE1yx4ZZIQb0piZVVqUX58UWlOavEhRlNg
+	WE9klhJNzgdmgrySeEMTSwMTMzNDcyNTA3MlcV6vlA2JQgLpiSWp2ampBalFMH1MHJxSDUzl
+	15o5zvKEHWHY0+vYGbmVyTtUXas2a5G/ttaZGv2N3w5yCBhnpfAu/JHg3LWx9MJTvr08r+7N
+	E/x0yGzewj317s6C4o7d/Wk2S/I2BiVNPj/RPGhWdfdUX/d0g6prlsZsjb61udltK1luFv/c
+	1FSXIXpUw5tRNHRWTPPvG1aS853txT9Lh675HbLvU4Ov9nk2K9flL5dezpAuFZQpfWz3a1eD
+	osGZgrxzpTw3JiodDLk3W23zRN7dDsvaX33d5Gk9QffDIcWqCbl9R3aUZb4+ql3yP+HyZhGT
+	+Zp7BZaU77wkt5Ur4+rLvTvZK4qmSbi+14i+6Dh7PSPj2s1uTPLFWSfeOs17sWmBhgRTiBJL
+	cUaioRZzUXEiAOYICoVMBAAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrGIsWRmVeSWpSXmKPExsWy7bCSvG5t9qokg552KYsH87axWbz8eZXN
+	4uDDThaLaR9+Mlv0vXjIbLHp8TVWi8u75rBZTFj1jcVixvl9TBbd13ewWSw//o/Jgdvj8hVv
+	jzvX9rB5bF5S7/F9fQebx8ent1g8+rasYvT4vEnOo/1AN1MARxSXTUpqTmZZapG+XQJXRvOr
+	I2wFrxgr7szfzdrAuIuxi5GTQ0LARGLWpYmsXYxcHEICOxglpj37ywSRkJV49m4HO4QtLHG/
+	5QhU0TNGiZ73z1lBEmwC+hIvO7aBJUQE9jBKtM07xQ7iMAtsZ5TYuPgCC0RLH6PE9lNbmbsY
+	OTg4BWwlzjy0AOkWFnCVWD//IdgKFgFVicudC9lAbF4BS4kLD24xQ9iCEidnPmEBsZkFtCWe
+	3nwKZctLbH87hxniPAWJn0+XgV0kImAlcWPSU3aIGhGJ2Z1tzBMYhWchGTULyahZSEbNQtKy
+	gJFlFaNkakFxbnpusWGBUV5quV5xYm5xaV66XnJ+7iZGcFRqae1g3LPqg94hRiYOxkOMEhzM
+	SiK8ZsErk4R4UxIrq1KL8uOLSnNSiw8xSnOwKInzXug6GS8kkJ5YkpqdmlqQWgSTZeLglGpg
+	kj48T3j+4nyOYt6044zTnyX2XD3v4fhm64EvuTvD0uuP5bM/2qO+5+58IdP3NrwOlZJuDIrr
+	TR/wCDR3bJ//2cngxvGQRPfJqbKxyTdP6+bf3Wgi8Ovw5jMvvIV+sN24+8i24u3pt1ukf1So
+	zf7PE8fFx7maI7h+S4zKux1PL36LVc55UuJ39b8dh6+nrJ32lNl67W+XfXh0bNnenifXSl7p
+	+a/7LlH6vr/j1VZRnltOS4VXFXJ0upcuvqJ0gWWKezV3+xupVU6eL7OOP5QuZK8zn9CjtSaT
+	yT8wd0IM+/RJJasY5TxlN8pmXzlmvXJe+PH/2xPOtM+PujvjzwwJZy7W1mYOteKMkKzP8uvO
+	K7EUZyQaajEXFScCAJebwtM5AwAA
+X-CMS-MailID: 20220615233005epcas2p4d5ea0e441c1b2e8ddeea093f425b233d
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220615121508epcas5p3a42f8503bb6c6120cb4c0606109fe9c4
+References: <CGME20220615121508epcas5p3a42f8503bb6c6120cb4c0606109fe9c4@epcas5p3.samsung.com>
+	<20220615121204.16642-1-alim.akhtar@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220615_091127_953560_D49D7889 
-X-CRM114-Status: GOOD (  12.68  )
+X-CRM114-CacheID: sfid-20220615_163012_969155_0752F9A2 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,43 +140,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 6/15/22 13:51, Andy Shevchenko wrote:
-> On Tue, Jun 14, 2022 at 05:49:22PM +0200, Hans de Goede wrote:
->> On 6/14/22 15:01, Andy Shevchenko wrote:
->>> On Tue, Jun 14, 2022 at 01:23:21PM +0200, Hans de Goede wrote:
->>>> On 6/13/22 18:08, Andy Shevchenko wrote:
+> Subject: [PATCH 1/3] ufs: host: ufs-exynos: remove unused defines
 > 
-> ...
+> Remove #defines as those are not used anywhere in the driver file
 > 
->>> [   35.126397] tusb1210 dwc3.0.auto.ulpi: GPIO lookup for consumer reset
->>> [   35.126418] tusb1210 dwc3.0.auto.ulpi: using ACPI for GPIO lookup
->>> [   35.126455] tusb1210 dwc3.0.auto.ulpi: using lookup tables for GPIO lookup
->>> [   35.126465] tusb1210 dwc3.0.auto.ulpi: No GPIO consumer reset found
->>> [   35.126476] tusb1210 dwc3.0.auto.ulpi: GPIO lookup for consumer cs
->>> [   35.126485] tusb1210 dwc3.0.auto.ulpi: using ACPI for GPIO lookup
->>> [   35.126538] tusb1210 dwc3.0.auto.ulpi: using lookup tables for GPIO lookup
->>> [   35.126548] tusb1210 dwc3.0.auto.ulpi: No GPIO consumer cs found
->>> [   40.534107] tusb1210 dwc3.0.auto.ulpi: error -110 writing val 0x41 to reg 0x80
->>>
->>> (I put 5000 ms there to be sure)
->>>
->>>> I'm fine with going with this workaround patch to fix things.
->>
->> Ok, so I guess we should just apply this workaround patch to make
->> the error non fatal. Still would be good to dig a little deeper one
->> of these days and see what is going on here...
-> 
-> Can you give a formal tag?
 
-Sure:
+Reviewed-by: Chanho Park <chanho61.park@samsung.com>
 
-Acked-by: Hans de Goede <hdegoede@redhat.com>
-
-Regards,
-
-Hans
+Best Regards,
+Chanho Park
 
 
 -- 
