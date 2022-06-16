@@ -4,78 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 876D7C43334
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Jun 2022 13:38:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5B70C43334
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Jun 2022 15:42:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q0b4xuxNj64do9wC/xHoB2heQNv+c/jzmBgiuSDJwbg=; b=s/5tGiep14JU45
-	vX+i8a8L6+6QQcTmBnjaJJ0jAa6uoQfXtNQEDKcV8DG79keqZRpxrj++W82QzZ5KXFMPKG8+sizxi
-	pkwy0FZhj5/3BtyX7jqY49yEJ+/g9ZrOydTNByyMO3XtOSiJFTZV1IpW3uoyv1my6bIGjo7xFttdT
-	DMS1nbkl55beB8lDfMCkQGBY2EmVqjLcFNr24uJ/W8jnIN1pt/b7/hKyLM5axgyS7M2wyqoJBRkH6
-	MLovN9We7T+2tUExYyFnPkTB1EVryP2dnDjzTMv5UH0avkZp7w94l0/A927nF29rwq7KLOgS/EPnZ
-	OPmSCtmDRadHPebsCJrw==;
+	List-Owner; bh=QI5opokr0XqoH6cQC8bbR7CGrt+DnU8CpiHPdDyU+3M=; b=tyH6lwCkTpDNZv
+	e93+j01eDtwrUFmuH5iyCcIJE9zAMqiX8NziWXGblDEzkZ5oIij2BJUM5s7rCWsLA3huvQf7zqBp9
+	ekQZaxCCxSDzgBCoAGFkLCJQFa0Jr1jwLhV8reIc1Mwtr5OtCk02rffnjKYEJkcKHbYh5cqM/NhIM
+	X3mBlAeX64d8RgFdcLP9+m2lp6jB+Bw84QgwbKzMUe+id9BQGqplHluBCU5MKBcytO1I4xjPW91Kn
+	b+0k02CZElzxo6SoGpLhuE4VbpRly7lmldLr0wpXD8E5mceDiSpxnMRxZEgTYrNlzGEeZVtPwUzfr
+	P7zF/tPwdw+3lDFKH9+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o1pi4-002Uo9-To; Thu, 16 Jun 2022 13:38:56 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1o1rds-003DfE-A6; Thu, 16 Jun 2022 15:42:44 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o1phY-002Ubx-Iq
-	for linux-phy@lists.infradead.org; Thu, 16 Jun 2022 13:38:28 +0000
-Received: by mail-wr1-x430.google.com with SMTP id o8so1938664wro.3
-        for <linux-phy@lists.infradead.org>; Thu, 16 Jun 2022 06:38:22 -0700 (PDT)
+	id 1o1rdp-003Dd8-4D
+	for linux-phy@lists.infradead.org; Thu, 16 Jun 2022 15:42:42 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id c2so2854320lfk.0
+        for <linux-phy@lists.infradead.org>; Thu, 16 Jun 2022 08:42:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=F/SPXYyJ9pOv+57/VRPyN+3QaTNRZ+8Q87oNWa1ed6U=;
-        b=sZnvhiQPTbFhgH01BZXK9frx5kA9oJjPA7EMRswq3DvCa7aU2L5g/j16bM8oXtkyta
-         +6FFNp85niS7md8GlEVv6dVl98KHd4ItmqnZyV5UZ21UaR5BSI2QdXVgdK4P7F9/05c0
-         tz9W+4UPJzYD9RjCidvYnXljAXw39h2u+Vj86JfR+Vj/Jects2tXu53R5vpYJe1s4lkJ
-         9/gCtdFoTGn1fpcZyy2sFS4ezcNNDRTrdnb3u8Scp7rv27YI5dnx1psDIityA7Qkd/VM
-         L0ApCvLQWYvfmo5Xnk66wXKtIiFm1NUtKDIPDeBmdNlb33mfMSiHnd38NEKWn5KOTktH
-         RwKg==
+        d=chromium.org; s=google;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=5dVDuCM8VRK665zH/HV+gDuurZlzqRaw3AF4f+4QEQY=;
+        b=YpSpNH3K+KjKkXCuVKrFBcVrP5SWlYv3RWSSUdRdHJUnj+BZbndMy/7IyaCo4ZQ5rb
+         d5YerNu+HSuaHbXK9sCxIH2I4yswgUI5cbWPgvOV+jsqmpGVVOzFPK8wchjbBtnuyFNC
+         yiHYfw8thWjslkqgb7sZ31mB5KIv7561wqhQw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=F/SPXYyJ9pOv+57/VRPyN+3QaTNRZ+8Q87oNWa1ed6U=;
-        b=r6Q91ci1z+K2uNqWsAM0gNA2DNLrXMEWXbNnAsS3AGm2QkL9Uv6dRra11zk4ZEirN/
-         9nw/GgO1mGYcE28TZINnS3cCbD0v1Fu9ig8n8EjsDfBj+6BKV6BAFJOExDRkSocEUJwX
-         A1FJj26n6343iZ/xD4OcJ10xgLW11dQEB0Cnwecq2pZjOEeCLLHtZk46uDudp17KRY9k
-         9MnPU6F8BT8HgJgo7LJbNCvMJaTf3wR3OsWKgPu1O4GEAvq7PMLEkFKb2FU6CtSdoy4h
-         FO2JYlF1wT+M6qYHgrZDgcugm68fOM+x+LIZDSBDDs3qS1+qFqIK5z/jfsvKbdd8LjL3
-         blyQ==
-X-Gm-Message-State: AJIora/r5S0FCGepfa8G7tnSeLkpZHSN2EjImJJi6RE8Anc2P7vdne6L
-	1pG2QhiiykRUhQk4xmmSeqairg==
-X-Google-Smtp-Source: AGRyM1uzUj7FAN/10Bu3b+bPtVXXKsugwJewcCZ3H2BR0vg8eYeVP6T8bZOBrzVRTv2yR+QDna/jIA==
-X-Received: by 2002:a5d:4d8f:0:b0:210:3e14:ff27 with SMTP id b15-20020a5d4d8f000000b002103e14ff27mr4601797wru.81.1655386701496;
-        Thu, 16 Jun 2022 06:38:21 -0700 (PDT)
-Received: from localhost.localdomain ([2a0d:e487:34f:da80:9c48:d9f8:5c33:3dd5])
-        by smtp.gmail.com with ESMTPSA id v12-20020a5d678c000000b0020c5253d90asm1935423wru.86.2022.06.16.06.38.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 16 Jun 2022 06:38:21 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: kishon@ti.com,
-	vkoul@kernel.org
-Cc: linux-phy@lists.infradead.org,
-	linux-amlogic@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Neil Armstrong <narmstrong@baylibre.com>
-Subject: [PATCH v4 2/2] phy: amlogic: Add G12A Analog MIPI D-PHY driver
-Date: Thu, 16 Jun 2022 15:38:11 +0200
-Message-Id: <20220616133811.1674777-3-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20220616133811.1674777-1-narmstrong@baylibre.com>
-References: <20220616133811.1674777-1-narmstrong@baylibre.com>
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=5dVDuCM8VRK665zH/HV+gDuurZlzqRaw3AF4f+4QEQY=;
+        b=urgpK++xLAIKOtSc/eAxiNGFrjahI+YLNikbnh2agS0+qfVF2rBYtF1CCVeGzetzbo
+         zFcgXmPZg5qRML3qvfVM7TzzkXlM+QbbBKP/ejlN9Hilv7evJek7KhEr6a0+tPqfPHvs
+         nHyC9lqD3AWoWgJTf7Bue/TiM31efp2Dq+ugOxKlzmBIIl+a/iYRJOSap3IebfIhY1Uj
+         qj0XnBUge7nZhQLIiFFuROBkoxbgTUEQM1fGWL+hlvam/em7OuLcfFy0kn2rj3j3Qspb
+         vyVWo2ipEDR6UNAQHvtt5tFJm1RCFYYpmqEj+WjjSopyWbp26S1pkSK985BB/3lj7rsd
+         e2Mw==
+X-Gm-Message-State: AJIora8CN85eEt41bdhCtDTFpSQDlQtTyht71iOmrEiBcQSIVPJjjWkX
+	zcackXADZddEJUkEvExxR78kMv/I9ivyJM9iuX0=
+X-Google-Smtp-Source: AGRyM1vqYm/jEF+Nr2zSruBrfwW8pNFDBlTBS3fkI1Q6jt8QGU5iW8ypdPnNUbzOA3kS0nbbK5tUnQ==
+X-Received: by 2002:a05:6512:32c1:b0:479:33ba:4680 with SMTP id f1-20020a05651232c100b0047933ba4680mr3001914lfg.535.1655394156335;
+        Thu, 16 Jun 2022 08:42:36 -0700 (PDT)
+Received: from mail-lf1-f43.google.com (mail-lf1-f43.google.com. [209.85.167.43])
+        by smtp.gmail.com with ESMTPSA id q7-20020a19f207000000b0047861c163d0sm281638lfh.37.2022.06.16.08.42.35
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 16 Jun 2022 08:42:36 -0700 (PDT)
+Received: by mail-lf1-f43.google.com with SMTP id i29so2830351lfp.3
+        for <linux-phy@lists.infradead.org>; Thu, 16 Jun 2022 08:42:35 -0700 (PDT)
+X-Received: by 2002:a5d:68d2:0:b0:210:31cc:64a6 with SMTP id
+ p18-20020a5d68d2000000b0021031cc64a6mr5183133wrw.679.1655393766098; Thu, 16
+ Jun 2022 08:36:06 -0700 (PDT)
 MIME-Version: 1.0
+References: <20220425210643.2420919-1-dianders@chromium.org> <20220425140619.2.Iae013f0ff4599294189f3a6e91376fad137bbabf@changeid>
+In-Reply-To: <20220425140619.2.Iae013f0ff4599294189f3a6e91376fad137bbabf@changeid>
+From: Doug Anderson <dianders@chromium.org>
+Date: Thu, 16 Jun 2022 08:35:53 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Wbi=CXhPpOUJj=1PdgB8i6Lf1Sfr=T7wrQsgBx790S_w@mail.gmail.com>
+Message-ID: <CAD=FV=Wbi=CXhPpOUJj=1PdgB8i6Lf1Sfr=T7wrQsgBx790S_w@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: phy: List supplies for qcom,edp-phy
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Abhinav Kumar <quic_abhinavk@quicinc.com>, linux-phy@lists.infradead.org, 
+	Stephen Boyd <swboyd@chromium.org>, dri-devel <dri-devel@lists.freedesktop.org>, 
+	freedreno <freedreno@lists.freedesktop.org>, Kishon Vijay Abraham I <kishon@ti.com>, 
+	Sankeerth Billakanti <quic_sbillaka@quicinc.com>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+	linux-arm-msm <linux-arm-msm@vger.kernel.org>, quic_kalyant <quic_kalyant@quicinc.com>, 
+	Kuogee Hsieh <quic_khsieh@quicinc.com>, Andy Gross <agross@kernel.org>, 
+	"open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>, 
+	Rob Herring <robh+dt@kernel.org>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+	Rob Clark <robdclark@chromium.org>, Bjorn Andersson <bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220616_063824_661309_41D53E10 
-X-CRM114-Status: GOOD (  20.27  )
+X-CRM114-CacheID: sfid-20220616_084241_223092_ABD8E988 
+X-CRM114-Status: GOOD (  17.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,238 +99,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Amlogic G12A SoCs embeds an Analog MIPI D-PHY used to communicate with DSI
-panels.
+Hi,
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/phy/amlogic/Kconfig                   |  12 ++
- drivers/phy/amlogic/Makefile                  |   1 +
- .../amlogic/phy-meson-g12a-mipi-dphy-analog.c | 177 ++++++++++++++++++
- 3 files changed, 190 insertions(+)
- create mode 100644 drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
+On Mon, Apr 25, 2022 at 2:07 PM Douglas Anderson <dianders@chromium.org> wrote:
+>
+> We're supposed to list the supplies in the dt bindings but there are
+> none in the eDP PHY bindings.
+>
+> Looking at the driver in Linux, I can see that there seem to be two
+> relevant supplies: "vdda-phy" and "vdda-pll". Let's add those to the
+> bindings.
+>
+> NOTE: from looking at the Qualcomm datasheet for sc7280, it's not
+> immediately clear how to figure out how to fill in these supplies. The
+> only two eDP related supplies are simply described as "power for eDP
+> 0.9V circuits" and "power for eDP 1.2V circuits". From guessing and
+> from comparing how a similar PHY is hooked up on other similar
+> Qualcomm boards, I'll make the educated guess that the 1.2V supply
+> goes to "vdda-phy" and the 0.9V supply goes to "vdda-pll" and I'll use
+> that in the example here.
+>
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> ---
+>
+>  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
 
-diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-index 486ca23aba32..e4d1170efd54 100644
---- a/drivers/phy/amlogic/Kconfig
-+++ b/drivers/phy/amlogic/Kconfig
-@@ -59,6 +59,18 @@ config PHY_MESON_G12A_USB3_PCIE
- 	  in Meson G12A SoCs.
- 	  If unsure, say N.
- 
-+config PHY_MESON_G12A_MIPI_DPHY_ANALOG
-+	tristate "Meson G12A MIPI Analog DPHY driver"
-+	default ARCH_MESON
-+	depends on OF && (ARCH_MESON || COMPILE_TEST)
-+	select GENERIC_PHY
-+	select REGMAP_MMIO
-+	select GENERIC_PHY_MIPI_DPHY
-+	help
-+	  Enable this to support the Meson MIPI Analog DPHY found in Meson G12A
-+	  SoCs.
-+	  If unsure, say N.
-+
- config PHY_MESON_AXG_PCIE
- 	tristate "Meson AXG PCIE PHY driver"
- 	default ARCH_MESON
-diff --git a/drivers/phy/amlogic/Makefile b/drivers/phy/amlogic/Makefile
-index c0886c850bb0..91e3b9790c03 100644
---- a/drivers/phy/amlogic/Makefile
-+++ b/drivers/phy/amlogic/Makefile
-@@ -4,6 +4,7 @@ obj-$(CONFIG_PHY_MESON8B_USB2)			+= phy-meson8b-usb2.o
- obj-$(CONFIG_PHY_MESON_GXL_USB2)		+= phy-meson-gxl-usb2.o
- obj-$(CONFIG_PHY_MESON_G12A_USB2)		+= phy-meson-g12a-usb2.o
- obj-$(CONFIG_PHY_MESON_G12A_USB3_PCIE)		+= phy-meson-g12a-usb3-pcie.o
-+obj-$(CONFIG_PHY_MESON_G12A_MIPI_DPHY_ANALOG)	+= phy-meson-g12a-mipi-dphy-analog.o
- obj-$(CONFIG_PHY_MESON_AXG_PCIE)		+= phy-meson-axg-pcie.o
- obj-$(CONFIG_PHY_MESON_AXG_MIPI_PCIE_ANALOG)	+= phy-meson-axg-mipi-pcie-analog.o
- obj-$(CONFIG_PHY_MESON_AXG_MIPI_DPHY)		+= phy-meson-axg-mipi-dphy.o
-diff --git a/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c b/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
-new file mode 100644
-index 000000000000..adfcca38a952
---- /dev/null
-+++ b/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
-@@ -0,0 +1,177 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Meson G12A MIPI DSI Analog PHY
-+ *
-+ * Copyright (C) 2018 Amlogic, Inc. All rights reserved
-+ * Copyright (C) 2020 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/bitops.h>
-+#include <linux/module.h>
-+#include <linux/phy/phy.h>
-+#include <linux/regmap.h>
-+#include <linux/delay.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/platform_device.h>
-+#include <dt-bindings/phy/phy.h>
-+
-+#define HHI_MIPI_CNTL0 0x00
-+#define		HHI_MIPI_CNTL0_DIF_REF_CTL1	GENMASK(31, 16)
-+#define		HHI_MIPI_CNTL0_DIF_REF_CTL0	GENMASK(15, 0)
-+
-+#define HHI_MIPI_CNTL1 0x04
-+#define		HHI_MIPI_CNTL1_BANDGAP		BIT(16)
-+#define		HHI_MIPI_CNTL2_DIF_REF_CTL2	GENMASK(15, 0)
-+
-+#define HHI_MIPI_CNTL2 0x08
-+#define		HHI_MIPI_CNTL2_DIF_TX_CTL1	GENMASK(31, 16)
-+#define		HHI_MIPI_CNTL2_CH_EN		GENMASK(15, 11)
-+#define		HHI_MIPI_CNTL2_DIF_TX_CTL0	GENMASK(10, 0)
-+
-+#define DSI_LANE_0				BIT(4)
-+#define DSI_LANE_1				BIT(3)
-+#define DSI_LANE_CLK				BIT(2)
-+#define DSI_LANE_2				BIT(1)
-+#define DSI_LANE_3				BIT(0)
-+
-+struct phy_g12a_mipi_dphy_analog_priv {
-+	struct phy *phy;
-+	struct regmap *regmap;
-+	struct phy_configure_opts_mipi_dphy config;
-+};
-+
-+static int phy_g12a_mipi_dphy_analog_configure(struct phy *phy,
-+					       union phy_configure_opts *opts)
-+{
-+	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = phy_mipi_dphy_config_validate(&opts->mipi_dphy);
-+	if (ret)
-+		return ret;
-+
-+	memcpy(&priv->config, opts, sizeof(priv->config));
-+
-+	return 0;
-+}
-+
-+static int phy_g12a_mipi_dphy_analog_power_on(struct phy *phy)
-+{
-+	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
-+	unsigned int reg;
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL0,
-+		     FIELD_PREP(HHI_MIPI_CNTL0_DIF_REF_CTL0, 0x8) |
-+		     FIELD_PREP(HHI_MIPI_CNTL0_DIF_REF_CTL1, 0xa487));
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL1,
-+		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_REF_CTL2, 0x2e) |
-+		     HHI_MIPI_CNTL1_BANDGAP);
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL2,
-+		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_TX_CTL0, 0x459) |
-+		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_TX_CTL1, 0x2680));
-+
-+	reg = DSI_LANE_CLK;
-+	switch (priv->config.lanes) {
-+	case 4:
-+		reg |= DSI_LANE_3;
-+		fallthrough;
-+	case 3:
-+		reg |= DSI_LANE_2;
-+		fallthrough;
-+	case 2:
-+		reg |= DSI_LANE_1;
-+		fallthrough;
-+	case 1:
-+		reg |= DSI_LANE_0;
-+		break;
-+	default:
-+		reg = 0;
-+	}
-+
-+	regmap_update_bits(priv->regmap, HHI_MIPI_CNTL2,
-+			   HHI_MIPI_CNTL2_CH_EN,
-+			   FIELD_PREP(HHI_MIPI_CNTL2_CH_EN, reg));
-+
-+	return 0;
-+}
-+
-+static int phy_g12a_mipi_dphy_analog_power_off(struct phy *phy)
-+{
-+	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
-+
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL0, 0);
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL1, 0);
-+	regmap_write(priv->regmap, HHI_MIPI_CNTL2, 0);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops phy_g12a_mipi_dphy_analog_ops = {
-+	.configure = phy_g12a_mipi_dphy_analog_configure,
-+	.power_on = phy_g12a_mipi_dphy_analog_power_on,
-+	.power_off = phy_g12a_mipi_dphy_analog_power_off,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int phy_g12a_mipi_dphy_analog_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy;
-+	struct device *dev = &pdev->dev;
-+	struct phy_g12a_mipi_dphy_analog_priv *priv;
-+	struct device_node *np = dev->of_node;
-+	struct regmap *map;
-+	int ret;
-+
-+	priv = devm_kmalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	/* Get the hhi system controller node */
-+	map = syscon_node_to_regmap(of_get_parent(dev->of_node));
-+	if (IS_ERR(map)) {
-+		dev_err(dev,
-+			"failed to get HHI regmap\n");
-+		return PTR_ERR(map);
-+	}
-+
-+	priv->regmap = map;
-+
-+	priv->phy = devm_phy_create(dev, np, &phy_g12a_mipi_dphy_analog_ops);
-+	if (IS_ERR(priv->phy)) {
-+		ret = PTR_ERR(priv->phy);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(dev, "failed to create PHY\n");
-+		return ret;
-+	}
-+
-+	phy_set_drvdata(priv->phy, priv);
-+	dev_set_drvdata(dev, priv);
-+
-+	phy = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy);
-+}
-+
-+static const struct of_device_id phy_g12a_mipi_dphy_analog_of_match[] = {
-+	{
-+		.compatible = "amlogic,g12a-mipi-dphy-analog",
-+	},
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, phy_g12a_mipi_dphy_analog_of_match);
-+
-+static struct platform_driver phy_g12a_mipi_dphy_analog_driver = {
-+	.probe = phy_g12a_mipi_dphy_analog_probe,
-+	.driver = {
-+		.name = "phy-meson-g12a-mipi-dphy-analog",
-+		.of_match_table = phy_g12a_mipi_dphy_analog_of_match,
-+	},
-+};
-+module_platform_driver(phy_g12a_mipi_dphy_analog_driver);
-+
-+MODULE_AUTHOR("Neil Armstrong <narmstrong@baylibre.com>");
-+MODULE_DESCRIPTION("Meson G12A MIPI Analog D-PHY driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.25.1
+Even though patch #1 in this series should be dropped, this patch
+(patch #2) is still valid. Vinod: I assume this would land in your
+tree along with the first two patches in Kuogee's series [1], which
+are related. Please let me know if you need me to re-send or anything.
+Thanks!
 
+[1] https://lore.kernel.org/r/1653507433-22585-1-git-send-email-quic_khsieh@quicinc.com/
+
+-Doug
 
 -- 
 linux-phy mailing list
