@@ -4,68 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D5AFCCA47A
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Jun 2022 16:00:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C84C43334
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Jun 2022 22:54:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2oUEaseSmHVUeN8jHrMmpSCor0cVOkKxm71AgJGXiE8=; b=IrCedto7z3eaqp
-	FARABQ45S+X8BulISPn4GLFXKtjkF9UYecGd2j+hi0HQBpa6cv9g8WLvnc/9UghbeXvMjnkBuZP//
-	n8PeDmBKHQ8TNI0RaKf5w8Z4bLlPFPd2taMRvIRGX07ILx4PMWwl/HdNTqw0wqzG/lD+jY96M9Hhn
-	gEbP6+HOpJhl68kOSt32ucuESIiMfe8appbHwg6xw8JwEhFhKuV/w7+IWwFF5ZYWDlhOExRhq2IyI
-	swW9MgyFnQLjDV+2htAIazyaDT0TswhiRt5zNFS2JhTL8bKO3WlDVTS/sMsMoVEYczaLOxNwbcpoS
-	OQ2+Mlo5DaqK8a0L6fWQ==;
+	List-Owner; bh=RBE4R/nh7cNOj5YXfMt/GBuglKIuhcoTZ9wq/+cQRSw=; b=eKtwNwpCGJz0qL
+	MhBgtDktmd/uUXM09ctiRh/csjrJF/NgSAjoJTOnXnAjGASqvDP3M6hECAtXBgYJpx0ARwjJKTk9Q
+	q3MAX6fMxjN3sagkolD7slvMmuZX0w4Rdaq/qufAsCO6z4Cy6R9ugvc/T01Imi1lP9FEiU9BREoYM
+	F0nomKnPRIdh1lDlh9ZIqaJwdMO3RNX6IhME3XQFiiSaBpIkrJdxgXSYjuzRzUmuFOMPJSvFKqMQq
+	b/Gl4ov2lgv4Ex0Ij82/7pOziJjEceytD+Gt5twnHjI6jHgJ8OJdyqFxmkbn/R4eigZaJKI+qK5WJ
+	rwanRkGZiDc9+6d3/rjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o1ruu-003HY8-Db; Thu, 16 Jun 2022 16:00:20 +0000
-Received: from mail-il1-f173.google.com ([209.85.166.173])
+	id 1o1yNo-004iAv-0U; Thu, 16 Jun 2022 22:54:36 +0000
+Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o1ruE-003H5w-RL; Thu, 16 Jun 2022 15:59:40 +0000
-Received: by mail-il1-f173.google.com with SMTP id v7so1225899ilo.3;
-        Thu, 16 Jun 2022 08:59:37 -0700 (PDT)
+	id 1o1yNk-004i9I-UD
+	for linux-phy@lists.infradead.org; Thu, 16 Jun 2022 22:54:34 +0000
+Received: by mail-pl1-x62d.google.com with SMTP id a17so443056pls.6
+        for <linux-phy@lists.infradead.org>; Thu, 16 Jun 2022 15:54:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=message-id:date:mime-version:user-agent:subject:content-language:to
+         :cc:references:from:in-reply-to:content-transfer-encoding;
+        bh=KvdFdybzsfCrVLJiE6jE28GhzC47Iq7vrpUoy7lQWTA=;
+        b=hJtSAjHgQBG7RZVsQrUmH9gCs/GTX59zAbc8l1SsA2LzCowbx/R5AvPzFON5JgVLeU
+         dn+uev+AAYMsJjrfmNUzPaeNJ02nsUxEzEJNVhK54AfgTN2D+BOkz/NYf18MJl36x3sO
+         73v0wR3XlHJ0L0Hg7gnz8Yd7Iw346TNE7Yj2apcsMhfsUc4mRShvbyVypJ5W5XqvqbT3
+         5mPUh9NJ930n2Ypt3mmbMPUGuhTFeKeu41w2PZkSfolc+YhxxSM4PeUyHhUz7dYFpOV6
+         NXdjTEalcXxXahk7eUcmZ4s9rKZTXCed6WhdzHw3kGRkLSFlnmRSmibIGqXiGUGFoTPS
+         uw/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:content-transfer-encoding
-         :in-reply-to;
-        bh=9X8XVpxanme0vyK5ZysC7xWSiXXF1IS6YVmw346xm58=;
-        b=YiuSCznwJhHsEYD9yaHukyqs0Q5/91XXnH2n8VvtXhGKLBbaMURPSBoqZ8tc8VxwEN
-         ES7RTTn+vMo0rzO0RSu1ZCwqqvExiWu0DVAg1Jm/fMT3ITZvHDwlikogrF56RbB+vmA0
-         3wfTAL3yjyOS/AIqKMqnMw7E060/l74/o1tGAcSH9nTk5RcW7fA3AH+6XHGt82XqpQPF
-         r5Zv9ZvxnbphAS6TgReT2hOww4T3kPZgzl1LXnwLEyIcz0Jf4vKV4XLFlWOKEZdAKzUW
-         aDXgO/g/WQKuQOYCOAN3F+eT4KL8hM7h4qm83RFVQz1kzkzKvKUlBvwzUsXDrtLj4/qe
-         fs2A==
-X-Gm-Message-State: AJIora9Y7l3MCAn8BqdMs3muqS4D7hkECDxh+ac0Pp/8bfqPX4s0iyaB
-	UVE3L2xxsMIH7C5p+DMt4w==
-X-Google-Smtp-Source: AGRyM1tsF2fjNAC99BuE4yG5HgXIsLOoQnQ86Je1QQ5KdittiSk3qv10mDZg/0Ysw1DP6C4MAwPFUQ==
-X-Received: by 2002:a05:6e02:1521:b0:2d1:5e40:b94b with SMTP id i1-20020a056e02152100b002d15e40b94bmr3152904ilu.182.1655395176743;
-        Thu, 16 Jun 2022 08:59:36 -0700 (PDT)
-Received: from robh.at.kernel.org ([64.188.179.251])
-        by smtp.gmail.com with ESMTPSA id c9-20020a6bb309000000b00669ae49f762sm1311642iof.19.2022.06.16.08.59.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 16 Jun 2022 08:59:36 -0700 (PDT)
-Received: (nullmailer pid 3554362 invoked by uid 1000);
-	Thu, 16 Jun 2022 15:59:34 -0000
-Date: Thu, 16 Jun 2022 09:59:34 -0600
-From: Rob Herring <robh@kernel.org>
-To: Icenowy Zheng <uwu@icenowy.me>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Bin Liu <b-liu@ti.com>, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, linux-usb@vger.kernel.org
-Subject: Re: [PATCH 2/7] dt-bindings: phy: add binding document for Allwinner
- F1C100s USB PHY
-Message-ID: <20220616155934.GA3543984-robh@kernel.org>
-References: <20220608070452.338006-1-uwu@icenowy.me>
- <20220608070452.338006-3-uwu@icenowy.me>
- <20220608144939.GA1366879-robh@kernel.org>
- <3628fbc2eb9a8c21dc0742b929ee14da76f9adf5.camel@icenowy.me>
+        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :content-transfer-encoding;
+        bh=KvdFdybzsfCrVLJiE6jE28GhzC47Iq7vrpUoy7lQWTA=;
+        b=pG7RVDkdJm6DoYay1eA5nBvkQXx1CTC7K67rqnNSXHu42capyx1HsBsDIhp5/B8Hpp
+         bpx373APo8J1q4jnywQ1/Ts0ryKpkbz4WIQYVWoHs7tvTBiZ+6udKDr68wUJrS2CqsmZ
+         E/wQvK85ChDmmi1Dh5q2N9UhtBxG7Hy3Zz1sxeCbgik9M7fvTwNYjiQTgx9VF8iZiZIT
+         6nJeT8CXZag9vdTNQNfAERxGL2+1j6TJYGQToo5xii9wiIMOwTX3xysZuFd0SZKwI4R7
+         xzM4Kt2tSdRGbFbnfJmc+vFj2FBtE9Mn1ZC4hnVg6VVZkLr3y7olBpGMFmutjS0ZoQLN
+         nAqg==
+X-Gm-Message-State: AJIora+CZBbvUuL/7RGLxqf3QsVAfQxShV9crd0k4qoAOzE1f/Azgf0B
+	JIY1KyZrCbz++/BYUdVT436uOw==
+X-Google-Smtp-Source: AGRyM1tUQAz1x5ZGtXe2AU2lhklwM3xE7SHjf9AUkKRbU20CnWAFSWAxen6PCWze2dccrry4SWdCsA==
+X-Received: by 2002:a17:903:25c5:b0:16a:30e:34b8 with SMTP id jc5-20020a17090325c500b0016a030e34b8mr1153769plb.170.1655420069803;
+        Thu, 16 Jun 2022 15:54:29 -0700 (PDT)
+Received: from [172.22.33.138] ([192.77.111.2])
+        by smtp.gmail.com with ESMTPSA id m2-20020a170902768200b0015eb200cc00sm2108938pll.138.2022.06.16.15.54.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 16 Jun 2022 15:54:29 -0700 (PDT)
+Message-ID: <8d806fc9-0067-2c8d-ec41-13787c7644a2@linaro.org>
+Date: Thu, 16 Jun 2022 15:54:28 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3628fbc2eb9a8c21dc0742b929ee14da76f9adf5.camel@icenowy.me>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.10.0
+Subject: Re: [PATCH v3 1/5] dt-bindings: pci: Add ARTPEC-8 PCIe controller
+Content-Language: en-US
+To: wangseok.lee@samsung.com, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "kishon@ti.com" <kishon@ti.com>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "jesper.nilsson@axis.com" <jesper.nilsson@axis.com>,
+ "lars.persson@axis.com" <lars.persson@axis.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ "kw@linux.com" <kw@linux.com>,
+ "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
+ "kernel@axis.com" <kernel@axis.com>
+Cc: Moon-Ki Jun <moonki.jun@samsung.com>,
+ Sang Min Kim <hypmean.kim@samsung.com>, Dongjin Yang
+ <dj76.yang@samsung.com>, Yeeun Kim <yeeun119.kim@samsung.com>
+References: <20220614011616epcms2p7dcaa67c53b7df5802dd7a697e2d472d7@epcms2p7>
+ <CGME20220614011616epcms2p7dcaa67c53b7df5802dd7a697e2d472d7@epcms2p8>
+ <20220614012713epcms2p810386a5137fbcf6aefc41fe086badc0b@epcms2p8>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220614012713epcms2p810386a5137fbcf6aefc41fe086badc0b@epcms2p8>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220616_085938_914220_A5E68FAD 
-X-CRM114-Status: GOOD (  29.39  )
+X-CRM114-CacheID: sfid-20220616_155433_035930_8BC683AA 
+X-CRM114-Status: GOOD (  20.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,75 +102,248 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBKdW4gMDgsIDIwMjIgYXQgMTA6NTI6NTJQTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3
-cm90ZToKPiDlnKggMjAyMi0wNi0wOOaYn+acn+S4ieeahCAwODo0OSAtMDYwMO+8jFJvYiBIZXJy
-aW5n5YaZ6YGT77yaCj4gPiBPbiBXZWQsIEp1biAwOCwgMjAyMiBhdCAwMzowNDo0N1BNICswODAw
-LCBJY2Vub3d5IFpoZW5nIHdyb3RlOgo+ID4gPiBBbGx3aW5uZXIgRjFDMTAwcyBoYXMgdGhlIG1v
-c3Qgc2ltcGxlIFVTQiBQSFkgYW1vbmcgYWxsIEFsbHdpbm5lcgo+ID4gPiBTb0NzLAo+ID4gPiBi
-ZWNhdXNlIGl0IGhhcyBvbmx5IG9uZSBPVEcgVVNCIGNvbnRyb2xsZXIsIG5vIGhvc3Qtb25seSBP
-SENJL0VIQ0kKPiA+ID4gY29udHJvbGxlcnMuCj4gPiA+IAo+ID4gPiBBZGQgYSBiaW5kaW5nIGRv
-Y3VtZW50IGZvciBpdC4KPiA+ID4gCj4gPiA+IFNpZ25lZC1vZmYtYnk6IEljZW5vd3kgWmhlbmcg
-PHV3dUBpY2Vub3d5Lm1lPgo+ID4gPiAtLS0KPiA+ID4gwqAuLi4vcGh5L2FsbHdpbm5lcixzdW5p
-di1mMWMxMDBzLXVzYi1waHkueWFtbMKgIHwgODMKPiA+ID4gKysrKysrKysrKysrKysrKysrKwo+
-ID4gPiDCoDEgZmlsZSBjaGFuZ2VkLCA4MyBpbnNlcnRpb25zKCspCj4gPiA+IMKgY3JlYXRlIG1v
-ZGUgMTAwNjQ0Cj4gPiA+IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvYWxs
-d2lubmVyLHN1bml2LWYxYzEwMHMtdXNiLQo+ID4gPiBwaHkueWFtbAo+ID4gPiAKPiA+ID4gZGlm
-ZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvYWxsd2lubmVy
-LHN1bml2LQo+ID4gPiBmMWMxMDBzLXVzYi1waHkueWFtbAo+ID4gPiBiL0RvY3VtZW50YXRpb24v
-ZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvYWxsd2lubmVyLHN1bml2LWYxYzEwMHMtCj4gPiA+IHVz
-Yi1waHkueWFtbAo+ID4gPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+ID4gPiBpbmRleCAwMDAwMDAw
-MDAwMDAuLjE4MGZhODg0MGJmNwo+ID4gPiAtLS0gL2Rldi9udWxsCj4gPiA+ICsrKyBiL0RvY3Vt
-ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvYWxsd2lubmVyLHN1bml2LQo+ID4gPiBm
-MWMxMDBzLXVzYi1waHkueWFtbAo+ID4gPiBAQCAtMCwwICsxLDgzIEBACj4gPiA+ICsjIFNQRFgt
-TGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCj4gPiAKPiA+IER1YWwgbGljZW5zZSBwbGVhc2Uu
-Cj4gCj4gSSBhbSBiYXNlZCBvbiBhbm90aGVyIEFsbHdpbm5lciBVU0IgUEhZIGJpbmRpbmcgZmls
-ZSBpbiB0aGUgc2FtZQo+IGRpcmVjdG9yeSwgYW5kIHRoYXQgZmlsZSBpcyBzaW5nbGUgbGljZW5z
-ZWQuIEkgY3JlYXRlZCBhIG5ldyBmaWxlCj4gYmVjYXVzZSBlYWNoIHZhcmlhbnQgb2YgdGhlIFBI
-WSBoYXMgYSBzaW5nbGUgZmlsZSBub3cuCgpPa2F5LCBkZXNjcmliaW5nIHRoZSBzb3VyY2UgYW5k
-IHRoZSBkaWZmZXJlbmNlcyBpbiB0aGUgY29tbWl0IG1lc3NhZ2UgCndvdWxkIGJlIGhlbHBmdWwu
-Cgo+IAo+ID4gCj4gPiA+ICslWUFNTCAxLjIKPiA+ID4gKy0tLQo+ID4gPiArJGlkOgo+ID4gPiBo
-dHRwOi8vZGV2aWNldHJlZS5vcmcvc2NoZW1hcy9waHkvYWxsd2lubmVyLHN1bml2LWYxYzEwMHMt
-dXNiLXBoeS55YW1sIwo+ID4gPiArJHNjaGVtYTogaHR0cDovL2RldmljZXRyZWUub3JnL21ldGEt
-c2NoZW1hcy9jb3JlLnlhbWwjCj4gPiA+ICsKPiA+ID4gK3RpdGxlOiBBbGx3aW5uZXIgRjFDMTAw
-cyBVU0IgUEhZIERldmljZSBUcmVlIEJpbmRpbmdzCj4gPiA+ICsKPiA+ID4gK21haW50YWluZXJz
-Ogo+ID4gPiArwqAgLSBDaGVuLVl1IFRzYWkgPHdlbnNAY3NpZS5vcmc+Cj4gPiA+ICvCoCAtIE1h
-eGltZSBSaXBhcmQgPG1yaXBhcmRAa2VybmVsLm9yZz4KPiA+ID4gKwo+ID4gPiArcHJvcGVydGll
-czoKPiA+ID4gK8KgICIjcGh5LWNlbGxzIjoKPiA+ID4gK8KgwqDCoCBjb25zdDogMQo+ID4gPiAr
-Cj4gPiA+ICvCoCBjb21wYXRpYmxlOgo+ID4gPiArwqDCoMKgIGNvbnN0OiBhbGx3aW5uZXIsc3Vu
-aXYtZjFjMTAwcy11c2ItcGh5Cj4gPiA+ICsKPiA+ID4gK8KgIHJlZzoKPiA+ID4gK8KgwqDCoCBt
-YXhJdGVtczogMQo+ID4gPiArwqDCoMKgIGRlc2NyaXB0aW9uOiBQSFkgQ29udHJvbCByZWdpc3Rl
-cnMKPiA+ID4gKwo+ID4gPiArwqAgcmVnLW5hbWVzOgo+ID4gPiArwqDCoMKgIGNvbnN0OiBwaHlf
-Y3RybAo+ID4gPiArCj4gPiA+ICvCoCBjbG9ja3M6Cj4gPiA+ICvCoMKgwqAgbWF4SXRlbXM6IDEK
-PiA+ID4gK8KgwqDCoCBkZXNjcmlwdGlvbjogVVNCIE9URyBQSFkgYnVzIGNsb2NrCj4gPiA+ICsK
-PiA+ID4gK8KgIGNsb2NrLW5hbWVzOgo+ID4gPiArwqDCoMKgIGNvbnN0OiB1c2IwX3BoeQo+ID4g
-Cj4gPiAqLW5hbWVzIGlzIG5vdCBuZWVkZWQgd2l0aCBvbmx5IG9uZSBlbnRyeS4gUGx1cywganVz
-dCB1c2luZyB0aGUKPiA+IG1vZHVsZSAKPiA+IG5hbWUgaXMgbm90IGEgZ3JlYXQgY2hvaWNlLgo+
-IAo+IEhvd2V2ZXIgdGhlIGRyaXZlciBleHBlY3RzIGl0Li4uCj4gCj4gU2hvdWxkIEkgcGF0Y2gg
-dGhlIGRyaXZlciB0byB1c2Ugbm8gbmFtZSBvbiBGMUMxMDBzPwo+IAo+ID4gCj4gPiA+ICsKPiA+
-ID4gK8KgIHJlc2V0czoKPiA+ID4gK8KgwqDCoCBtYXhJdGVtczogMQo+ID4gPiArwqDCoMKgIGRl
-c2NyaXB0aW9uOiBVU0IgT1RHIHJlc2V0Cj4gPiA+ICsKPiA+ID4gK8KgIHJlc2V0LW5hbWVzOgo+
-ID4gPiArwqDCoMKgIGNvbnN0OiB1c2IwX3Jlc2V0Cj4gPiAKPiA+IFNhbWUgaGVyZS4KPiA+IAo+
-ID4gPiArwqAgdXNiMF9pZF9kZXQtZ3Bpb3M6Cj4gPiA+ICvCoMKgwqAgbWF4SXRlbXM6IDEKPiA+
-ID4gK8KgwqDCoCBkZXNjcmlwdGlvbjogR1BJTyB0byB0aGUgVVNCIE9URyBJRCBwaW4KPiA+ID4g
-Kwo+ID4gPiArwqAgdXNiMF92YnVzX2RldC1ncGlvczoKPiA+ID4gK8KgwqDCoCBtYXhJdGVtczog
-MQo+ID4gPiArwqDCoMKgIGRlc2NyaXB0aW9uOiBHUElPIHRvIHRoZSBVU0IgT1RHIFZCVVMgZGV0
-ZWN0IHBpbgo+ID4gPiArCj4gPiA+ICvCoCB1c2IwX3ZidXNfcG93ZXItc3VwcGx5Ogo+ID4gPiAr
-wqDCoMKgIGRlc2NyaXB0aW9uOiBQb3dlciBzdXBwbHkgdG8gZGV0ZWN0IHRoZSBVU0IgT1RHIFZC
-VVMKPiA+ID4gKwo+ID4gPiArwqAgdXNiMF92YnVzLXN1cHBseToKPiA+ID4gK8KgwqDCoCBkZXNj
-cmlwdGlvbjogUmVndWxhdG9yIGNvbnRyb2xsaW5nIFVTQiBPVEcgVkJVUwo+ID4gCj4gPiBXaHkg
-dGhlICd1c2IwXycgcHJlZml4Pwo+ID4gCj4gPiBBcmUgdGhlc2UgR1BJT3MgYW5kIFZidXMgc3Vw
-cGx5IGNvbm5lY3RlZCB0byB0aGUgcGh5PyBJZiBub3QsIHRoZXNlCj4gPiBhbGwgCj4gPiBiZWxv
-bmcgaW4gYSBjb25uZWN0b3Igbm9kZSAoYXMgdGhhdCBpcyB3aGVyZSB0aGV5IGFyZSBjb25uZWN0
-ZWQgdG8gaW4KPiA+IGgvdykuCj4gCj4gV2VsbCB0aGVzZSBhcmUgaGlzdG9yaWNhbCB0aGluZ3Mg
-b2YgcGh5LXN1bjRpLXVzYiBkcml2ZXIgdG9vLgoKT2theSwgdGhlcmUgc2hvdWxkIHBlcmhhcHMg
-YmUgYSBjb21tb24gc2NoZW1hIHNvIHRoaXMgc2hhcmluZyBpcyBjbGVhci4gClRob3VnaCBsb25n
-ZXIgdGVybSB0aGVyZSBzaG91bGQgYmUgYSBtb3ZlIHRvIHRoZSBjb21tb24gd2F5IG9mIGhhbmRs
-aW5nIAp0aGVzZSBmb3IgbmV3IHBsYXRmb3Jtcy4KClNvIEkgZ3Vlc3MgaW4gc3VtbWFyeToKClJl
-dmlld2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3JnPgoKLS0gCmxpbnV4LXBoeSBt
-YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 13/06/2022 18:27, Wangseok Lee wrote:
+> Add description to support Axis, ARTPEC-8 SoC.
+> ARTPEC-8 is the SoC platform of Axis Communications
+> and PCIe controller is designed based on Design-Ware PCIe controller.
+> 
+> Signed-off-by: Wangseok Lee <wangseok.lee@samsung.com>
+> ---
+> v2->v3 :
+> - modify version history to fit the linux commit rule
+> - remove 'Device Tree Bindings' on title
+> - remove the interrupt-names, phy-names entries
+> - remove '_clk' suffix
+> - add the compatible entries on required
+> - change node name to soc from artpec8 on examples
+> 
+> v1->v2 :
+> -'make dt_binding_check' result improvement
+> -Add the missing property list
+> -Align the indentation of continued lines/entries
+> ---
+>  .../bindings/pci/axis,artpec8-pcie-ep.yaml         | 109 +++++++++++++++++++
+>  .../devicetree/bindings/pci/axis,artpec8-pcie.yaml | 120 +++++++++++++++++++++
+>  2 files changed, 229 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+>  create mode 100644 Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+> new file mode 100644
+> index 0000000..d802bba
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie-ep.yaml
+> @@ -0,0 +1,109 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/axis,artpec8-pcie-ep.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ARTPEC-8 SoC PCIe Controller
+> +
+> +maintainers:
+> +  - Jesper Nilsson <jesper.nilsson@axis.com>
+> +
+> +description: |+
+> +  This PCIe end-point controller is based on the Synopsys DesignWare PCIe IP
+> +  and thus inherits all the common properties defined in snps,dw-pcie-ep.yaml.
+> +
+> +allOf:
+> +  - $ref: /schemas/pci/snps,dw-pcie-ep.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    const: axis,artpec8-pcie-ep
+> +
+> +  reg:
+> +    items:
+> +      - description: Data Bus Interface (DBI) registers.
+> +      - description: Data Bus Interface (DBI2) registers.
+> +      - description: PCIe address space region.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: dbi
+> +      - const: dbi2
+> +      - const: addr_space
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: PIPE clock, used by the controller to clock the PIPE
+> +      - description: PCIe dbi clock, ungated version
+> +      - description: PCIe master clock, ungated version
+> +      - description: PCIe slave clock, ungated version
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pipe
+> +      - const: dbi
+> +      - const: mstr
+> +      - const: slv
+> +
+> +  phys:
+> +    maxItems: 1
+> +
+> +  num-lanes:
+> +    const: 2
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +  - interrupt-names
+> +  - clocks
+> +  - clock-names
+> +  - samsung,fsys-sysreg
+> +  - samsung,syscon-phandle
+> +  - samsung,syscon-bus-s-fsys
+> +  - samsung,syscon-bus-p-fsys
+
+
+We are making circles... This was before and I commented already it is
+wrong. You cannot have some unknown/random properties in "required:"
+without describing them in "properties:". Please list all your
+properties in "properties:", except the ones coming from snps
+bindings/schema.
+
+> +  - phys
+> +  - num-lanes
+> +
+> +unevaluatedProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    soc {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +        pcie_ep: pcie-ep@17200000 {
+> +            compatible = "axis,artpec8-pcie-ep";
+> +            reg = <0x0 0x17200000 0x0 0x1000>,
+> +                  <0x0 0x17201000 0x0 0x1000>,
+> +                  <0x2 0x00000000 0x6 0x00000000>;
+> +            reg-names = "dbi", "dbi2", "addr_space";
+> +            #interrupt-cells = <1>;
+> +            interrupts = <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>;
+> +            interrupt-names = "intr";
+> +            clocks = <&clock_cmu_fsys 39>,
+> +                     <&clock_cmu_fsys 38>,
+> +                     <&clock_cmu_fsys 37>,
+> +                     <&clock_cmu_fsys 36>;
+> +            clock-names = "pipe", "dbi", "mstr", "slv";
+> +            samsung,fsys-sysreg = <&syscon_fsys>;
+> +            samsung,syscon-phandle = <&pmu_system_controller>;
+> +            samsung,syscon-bus-s-fsys = <&syscon_bus_s_fsys>;
+> +            samsung,syscon-bus-p-fsys = <&syscon_bus_p_fsys>;
+> +            phys = <&pcie_phy>;
+> +            phy-names = "pcie_phy";
+> +            num-lanes = <2>;
+> +            bus-range = <0x00 0xff>;
+> +            num-ib-windows = <16>;
+> +            num-ob-windows = <16>;
+> +        };
+> +    };
+> +...
+> diff --git a/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
+> new file mode 100644
+> index 0000000..dbbe1fd
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/axis,artpec8-pcie.yaml
+> @@ -0,0 +1,120 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/axis,artpec8-pcie.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Artpec-8 SoC PCIe Controller
+> +
+> +maintainers:
+> +  - Jesper Nilsson <jesper.nilsson@axis.com>
+> +
+> +description: |+
+> +  This PCIe host controller is based on the Synopsys DesignWare PCIe IP
+> +  and thus inherits all the common properties defined in snps,dw-pcie.yaml.
+> +
+> +allOf:
+> +  - $ref: /schemas/pci/snps,dw-pcie.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    const: axis,artpec8-pcie
+> +
+> +  reg:
+> +    items:
+> +      - description: Data Bus Interface (DBI) registers.
+> +      - description: External Local Bus interface (ELBI) registers.
+> +      - description: PCIe configuration space region.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: dbi
+> +      - const: elbi
+> +      - const: config
+> +
+> +  ranges:
+> +    maxItems: 2
+> +
+> +  num-lanes:
+> +    const: 2
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: PIPE clock, used by the controller to clock the PIPE
+> +      - description: PCIe dbi clock, ungated version
+> +      - description: PCIe master clock,  ungated version
+> +      - description: PCIe slave clock, ungated version
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pipe
+> +      - const: dbi
+> +      - const: mstr
+> +      - const: slv
+> +
+> +  phys:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - device_type
+> +  - ranges
+> +  - num-lanes
+> +  - interrupts
+> +  - interrupt-names
+> +  - clocks
+> +  - clock-names
+> +  - samsung,fsys-sysreg
+> +  - samsung,syscon-phandle
+> +  - samsung,syscon-bus-s-fsys
+> +  - samsung,syscon-bus-p-fsys
+
+Same problem.
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
