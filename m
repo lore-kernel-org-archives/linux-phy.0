@@ -4,79 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F020C43334
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Jun 2022 04:39:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 417FAC433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Jun 2022 07:05:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SkOABivqdGgvBei/D767aPI5a7GfRoVOkoA4nxPcATU=; b=xFMDq9DEo8tADN
-	xUIzPvPh+MuttwVjauB/+VmlciiGw6A10JTXFoxHUTR1EqIbEp7MTS7guSqPTkHYJTkXFkIBr6qsl
-	y2ZhG0vpbwKhKzFfmncAu4YEnWNsSpMS2inooQvvHKjjHgcF4sCR8hhSragubzDQhwJGmEMKaUNC3
-	LSFos/fIhGrOVTayPUAAJ/eOhMrBeZqODvHjpPm1Xvz822o5nYCmpyRRAQ1WlE9okolTwRf9jVNaN
-	oBdOGS3vP3eY0d2tkIH1PWphUSBXsNL84g8aZDP3UsSOvbNCx7s5jzSGMFwFpHDEVK0sUv42baCAN
-	b+Peu9sh0aCI9Xl6FpDQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zIrojJGVOj6Z8bPDBFq1QJrrsryGc8pXVBwEHeeUBhE=; b=SrrXAzP49Mhm+k
+	0EZZG4TKrZc1+sHW+5K+JS+ccdOgkyyCxrdWVv2L0ZmaL9bypSuTQ2SWjPe6m4s1dbaEeAJSorcDL
+	T0oqT+AcL6xsPmuYsZw3sXn8P8dTyaldZ4w9wfNNUYGNE/tOoK5fsFEXEIf5nGyc9DrHLJN+vc9Un
+	61G3/J5BbwfRztmOefNiufoSTNUbtAtphZ6759D1OvHrvXDdvDNG++rk136sNukLy0jVE2B/CAESx
+	QtqbJ1MhOgbhDxxOjVgXsRAPHhJHkPoePYOOcgfF1b4cGbmR40lhsl28DOh3CMcJ31opmrhOyhpPb
+	XhbzRj+LMYzi/eXsrH+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o23lH-005Rfq-Gw; Fri, 17 Jun 2022 04:39:11 +0000
-Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
+	id 1o2632-005pqX-M9; Fri, 17 Jun 2022 07:05:40 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o23lF-005Rf9-Cy
-	for linux-phy@lists.infradead.org; Fri, 17 Jun 2022 04:39:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
-  t=1655440749; x=1686976749;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=Ja0s88mcLhGaCnksbRpgCWF+y4ZCmmJXP7DCNkAt4Gk=;
-  b=Q30/XnJM6BE59ByD67tV3AUtGOk1pcSDZolzxp4eUhOeXG8I6GssbOs4
-   jRQX+/lYug9rAcdl3vWuORvXBFOHm41879Fiq9x1YUdLH1qKZTfn5PNNq
-   ORMs7NPwIZ58E9ce+tkykUu6fOUIhIzUZjj8er7DJWB2rblkx+TZDmJjK
-   8=;
-Received: from unknown (HELO ironmsg02-sd.qualcomm.com) ([10.53.140.142])
-  by alexa-out-sd-02.qualcomm.com with ESMTP; 16 Jun 2022 21:39:06 -0700
-X-QCInternal: smtphost
-Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
-  by ironmsg02-sd.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Jun 2022 21:39:06 -0700
-Received: from nalasex01a.na.qualcomm.com (10.47.209.196) by
- nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
+	id 1o262p-005pni-Dz; Fri, 17 Jun 2022 07:05:30 +0000
+X-UUID: a0625164a2de4f88b4ae183f3ffb9930-20220617
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.6,REQID:50a2c8e1-fc99-4b97-8142-b4c0a6cc8392,OB:0,LO
+	B:0,IP:0,URL:0,TC:0,Content:-5,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACT
+	ION:release,TS:-5
+X-CID-META: VersionHash:b14ad71,CLOUDID:5a969bf6-e099-41ba-a32c-13b8bfe63214,C
+	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:0,File:nil
+	,QS:nil,BEC:nil,COL:0
+X-UUID: a0625164a2de4f88b4ae183f3ffb9930-20220617
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+	(envelope-from <jianjun.wang@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-SHA384 256/256)
+	with ESMTP id 1880842832; Fri, 17 Jun 2022 00:05:17 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 17 Jun 2022 00:02:50 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.986.22; Thu, 16 Jun 2022 21:39:06 -0700
-Received: from [10.216.62.99] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.986.22; Thu, 16 Jun
- 2022 21:38:59 -0700
-Message-ID: <69ae40c9-1c23-2c1b-f4fd-d079fb3b2f84@quicinc.com>
-Date: Fri, 17 Jun 2022 10:08:56 +0530
+ 15.2.792.15; Fri, 17 Jun 2022 15:02:48 +0800
+Received: from localhost.localdomain (10.17.3.154) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.792.3 via Frontend
+ Transport; Fri, 17 Jun 2022 15:02:47 +0800
+From: Jianjun Wang <jianjun.wang@mediatek.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I
+	<kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
+	<robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Chen-Yu Tsai
+	<wenst@chromium.org>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>, Krzysztof Kozlowski
+	<krzk@kernel.org>
+CC: Wei-Shun Chang <weishunc@google.com>, Jianjun Wang
+	<jianjun.wang@mediatek.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<rex-bc.chen@mediatek.com>, <randy.wu@mediatek.com>,
+	<jieyy.yang@mediatek.com>, <chuanjia.liu@mediatek.com>,
+	<qizhong.cheng@mediatek.com>, <jian.yang@mediatek.com>
+Subject: [PATCH v10 0/2] phy: mediatek: Add PCIe PHY driver
+Date: Fri, 17 Jun 2022 15:02:44 +0800
+Message-ID: <20220617070246.20142-1-jianjun.wang@mediatek.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.1
-Subject: Re: [v9 0/3] Add QCOM SNPS PHY overriding params support
-Content-Language: en-US
-To: Vinod Koul <vkoul@kernel.org>
-CC: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
-	<robh+dt@kernel.org>, Andy Gross <agross@kernel.org>, Bjorn Andersson
-	<bjorn.andersson@linaro.org>, Greg Kroah-Hartman
-	<gregkh@linuxfoundation.org>, Stephen Boyd <swboyd@chromium.org>, "Doug
- Anderson" <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>, <devicetree@vger.kernel.org>,
-	<linux-arm-msm@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<quic_pkondeti@quicinc.com>, <quic_ppratap@quicinc.com>,
-	<quic_vpulyala@quicinc.com>
-References: <1655095653-27892-1-git-send-email-quic_kriskura@quicinc.com>
- <YqvLrN+ZgC9QRbKE@matsya>
-From: Krishna Kurapati PSSNV <quic_kriskura@quicinc.com>
-In-Reply-To: <YqvLrN+ZgC9QRbKE@matsya>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220616_213909_519284_DB9F9A07 
-X-CRM114-Status: UNSURE (   5.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220617_000527_514732_49A52851 
+X-CRM114-Status: GOOD (  12.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,22 +81,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 6/17/2022 6:02 AM, Vinod Koul wrote:
-> On 13-06-22, 10:17, Krishna Kurapati wrote:
->> Added support for overriding tuning parameters in QCOM SNPS PHY
->> from device tree. This parameter tuning is required to tune the
->> hs signal on dp/dm lines for electrical compliance to be successful.
-> Why is [PATCH....] not appearing in title (hint dont touch these
-> manually, use -v 9 in git format-patch to generate...
-My bad. Missed it while pushing v9 patches. Will make sure to take care 
-of this.
-Regards,
-Krishna,
+These series patches add support for PCIe PHY driver on MediaTek chipsets.
+
+Changes in v10:
+1. Sort the order in Kconfig and Makefile.
+
+Changes in v9:
+1. Check if the return value is -ENOMEM when reading efuse data fails.
+
+Changes in v8:
+1. Use "device_property_present()" to increase human readability;
+2. Use "GPL" as recommended in commit bf7fbeeae6db ("module: Cure
+   the MODULE_LICENSE "GPL" vs. "GPL v2" bogosity").
+
+Changes in v7:
+1. Add bitfield.h header to fix the build error on non-arm64 platforms.
+
+Changes in v6:
+1. Remove unnecessary header files;
+2. Use FILELD_PREP in bitfield.h to set value.
+
+Changes in v5:
+1. Fix typo in kerneldoc: "eFues" => "eFuse".
+
+Changes in v4:
+1. Fix no return when calling dev_err_probe.
+
+Changes in v3:
+1. Add introductions for structure members;
+2. Add SoC dependent data;
+3. Dynamically allocate efuse data;
+4. Check return value if it's an -EPROBE_DEFER.
+
+Changes in v2:
+1. Add specific compatible name;
+2. Read NVMEM data at probe time;
+3. Fix typos.
+
+Jianjun Wang (2):
+  dt-bindings: phy: mediatek: Add YAML schema for PCIe PHY
+  phy: mediatek: Add PCIe PHY driver
+
+ .../bindings/phy/mediatek,pcie-phy.yaml       |  75 +++++
+ drivers/phy/mediatek/Kconfig                  |  11 +
+ drivers/phy/mediatek/Makefile                 |   1 +
+ drivers/phy/mediatek/phy-mtk-pcie.c           | 267 ++++++++++++++++++
+ 4 files changed, 354 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,pcie-phy.yaml
+ create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
+
+-- 
+2.18.0
+
 
 -- 
 linux-phy mailing list
