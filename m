@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76CB5C43334
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94969CCA479
 	for <linux-phy@archiver.kernel.org>; Fri, 17 Jun 2022 10:36:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,52 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OiO9ODX7HG28If/cuxA0t+E5ZEL3JNNYp0RMtssnv+U=; b=KAjC6MSj7Ip00J
-	KMe2HbNTObbYiZc6gsTw7ID7te3nLC62YdxvOLiELDk9YXIJfG4VwnGEs5LcuA+qMRvNsnppmfXdb
-	KfgZDTfuEas9PCPQbC3UBT8JKn8mdznhspFP+dRFowhcZzSVAxNk3ct7ySChYVYBkuUlp2f0/sN+D
-	0G1IgvTedyRmeNZeTC9QC3zogOKpte/UrpAxsPnPIn4iqQaf/VAzVkCzINCKovFGtRmy3DAX+1D9m
-	qHHDIrS9QZXXSrqs/uAvwFQRh5cYV6snSCUtQ4CoA8hRFRlHRbQkKQyvtikJYvr/Gtc2GiFfP2xfl
-	UUkZcRRn9nPKxjUsajTg==;
+	List-Owner; bh=SbQzPx9dKSk7Fwz63Y/SUvoZvBHmxIYJ6CF7TQyiJ+Q=; b=hOJJnrM/33Rgaf
+	WaQkt/G/yWu1QEATdf2cMGONOkjR2rMF0A4B31gzFuwK1k4ae3K377i055P+1WL30V+ttkmjg2quS
+	CmCPXRC40Euc1Fyn7eHLAtPcB0DeaC13Me0DQ+31QPyG8WXqydoOFuTppXMHHDx4bQVnBXZApO9dE
+	YDodbenZQ2D3vafGrcCPOtafWUR+dXZx7uD1KkPnOMfUBvUjsW65fGvv199wO/7diEVeVswGmZemJ
+	Orq54nWhLp1NC5UKzPlyGNfcRYDqxvqvALt6vEDJQZpzNcqgCj8tx7bK5blyzrWPTaY4eC9au/XiD
+	jJhrAnxZIcSl0Vvp5qNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o29Kz-006z5E-Qm; Fri, 17 Jun 2022 10:36:25 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1o29Kz-006z5O-WB; Fri, 17 Jun 2022 10:36:26 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o29Kw-006z1a-2U
-	for linux-phy@lists.infradead.org; Fri, 17 Jun 2022 10:36:23 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id y32so6299001lfa.6
-        for <linux-phy@lists.infradead.org>; Fri, 17 Jun 2022 03:36:19 -0700 (PDT)
+	id 1o29Kx-006z1r-54
+	for linux-phy@lists.infradead.org; Fri, 17 Jun 2022 10:36:24 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id i29so6308054lfp.3
+        for <linux-phy@lists.infradead.org>; Fri, 17 Jun 2022 03:36:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=ehJ1FDrt934m71egzidi3dn4Z02wK65douizV/opsWo=;
-        b=z79ORX0B2DG0WrKHIrtYGnr8wOwlKxv4xsaBo4JFTQc4qQmfeSf2gVd1WkwwxDSOQa
-         qQvEuLg36Hlv6KRFC7PyW2qJzglgB5PqFHd9VxY+IrzwcqOVzt/fBkVaum8YNytMOJ75
-         egZEaoWAnBwzyQtbegQ0u+OuekCffMbqGTCTLb7BDFmbtb4NJehNKGhMw4VzV4SMOZPi
-         IxMkR7A7GcVQpx5zpRU+SyKCfCjki2cbs2gnIWJz+vg3+vyuKLepD38aBh/N18CEZVAK
-         u+1DXxI42JAy4mu4jiSHhtv+IQvJ5juK1+r/dv+xHFe7nUD7wk/zy07+MOBJ6ly1kE+G
-         /ZKg==
+        bh=BPM1lPElVRKHfSfZkivxc6Klx1L3jnABydrUVBQMP0U=;
+        b=T3xd5AFu0aHBgrFvV/NHxWYh+71RiAe0Eb5xnkHI0menhC2kuEo3wShfU2B58UUOvG
+         CmBDiAG7ci86yMRjHj8W1NDYKgv9K908P/mPrNJkRxgXcFzTTPnnOxtJ6UzQMTix2MxJ
+         3UXIms+ZEue6hENMMfsLhxjUTlR1oE7pPk3paU4X8FPaBXcND8kG2m1B7XFzrySfbH78
+         7QcBiVWV7PN3e1u/bEfLiiozdny8GMg0M9olf3tWIQ7G4cO4z/uV1vgYzHe4GYufp3BW
+         6DiUZ/JKvVenxBKCRUOp8pTwHsmV3oVD7fsu8wt4UaBigHI6hyMadTnwsn2BuKwnUVFv
+         BxGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=ehJ1FDrt934m71egzidi3dn4Z02wK65douizV/opsWo=;
-        b=Kv+W0BqU0jCmyhY/ZjXw0teySoDNc9RquXTeHWqvLymknWi30yn06U3v5UhhVmhzWv
-         bwZl+0fhOkuuGWcdjYGdPUp2ocNQ5neJFN3zbc59qwiDftYH1u4SP03A1ep6q/XEz11G
-         rGirHTdQ5GhOuiM02ex8RzvGuGI8wKDtqi9zqcVFkZbxrANqWpmmYD7jI2NOvgbggSQe
-         ShoIsILliEGcfKESlHfiy6GMQuX4z8BJH+7ix+t6RINg0k/PO4Y7BncbhIhjAXj2Z6Yc
-         87jf2Qb5tDJLKjFqIg234rIEXIg6fGdiy/1W89sH0F2cDzOuboseHAt6DH4xTnenBnIr
-         onIw==
-X-Gm-Message-State: AJIora/quaXc0SQHgQzAkgqR+XFChtGTOkQx2K3YCnp+xajbLJIxoQOs
-	MruDY0oxZ9vzEcJM5YPtdftAsQ==
-X-Google-Smtp-Source: AGRyM1tolUPsyooXC8CKG0Qb9ywl2kd818tLY9kYd7mx7VhHgEdlvr9dZjbttKc3d4gGijpPelmF5Q==
-X-Received: by 2002:a05:6512:281:b0:478:f324:6c0c with SMTP id j1-20020a056512028100b00478f3246c0cmr5236328lfp.287.1655462178370;
-        Fri, 17 Jun 2022 03:36:18 -0700 (PDT)
+        bh=BPM1lPElVRKHfSfZkivxc6Klx1L3jnABydrUVBQMP0U=;
+        b=C06B8JhLH/1dRQrNLJMve/XSUx4QbTIRjQkS9Pg6Hj2keoEDEeX7gapOKqJwnvGtCi
+         DSHzhJSV/xtWIFXOPsW0QDCZImG8dkYM/raZ/kXOfNZoX1LhLyQIJkHRAQmIF+r2w1A/
+         WVQxhO8PyVTtUbWwqAex9re3Kg4ka/c4mFc6BTI4efG5hxmYKqhF0sMcRnOoUBhOyKuH
+         LtOo+IGz5EFAYn7VFaoTGTnuLOyoB0MWl41dscf+bovrjQA7PE5+K8pV0RnI7t5g9XvT
+         91nz/xEw4qDzM7PCwqYvg4T7ZYatlgLeHG0F7HXwNbmRgRPZ85r/whOnjhLSGpuHsNLT
+         MSbQ==
+X-Gm-Message-State: AJIora+R5yabrVLLtImig3NmogWnlBfLaP5irOSiM81uFuw7uWyXDArY
+	UeOfF25Wnw+GTRtWJJDuA/8lBIH0V7k2ZPlD
+X-Google-Smtp-Source: AGRyM1vQFxmhM36CJpjLmGbKY/c+jI34RGfZYGRL2Wt7y8RQnl89EqIsPtHq0/HJz1sNjOM5CrFERw==
+X-Received: by 2002:ac2:4e86:0:b0:479:242:61da with SMTP id o6-20020ac24e86000000b00479024261damr5242193lfr.40.1655462179436;
+        Fri, 17 Jun 2022 03:36:19 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id d3-20020a056512368300b00478ff020832sm591803lfs.106.2022.06.17.03.36.17
+        by smtp.gmail.com with ESMTPSA id d3-20020a056512368300b00478ff020832sm591803lfs.106.2022.06.17.03.36.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 17 Jun 2022 03:36:17 -0700 (PDT)
+        Fri, 17 Jun 2022 03:36:18 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Rob Clark <robdclark@gmail.com>,
 	Sean Paul <sean@poorly.run>,
@@ -71,16 +71,17 @@ Cc: Stephen Boyd <swboyd@chromium.org>,
 	freedreno@lists.freedesktop.org,
 	Vinod Koul <vkoul@kernel.org>,
 	linux-phy@lists.infradead.org
-Subject: [PATCH 2/3] drm/msm/hdmi: make hdmi_phy_8996 OF clk provider
-Date: Fri, 17 Jun 2022 13:36:07 +0300
-Message-Id: <20220617103608.605898-3-dmitry.baryshkov@linaro.org>
+Subject: [PATCH 3/3] arm64: dts: qcom: msm8996: add #clock-cells to the HDMI PHY node
+Date: Fri, 17 Jun 2022 13:36:08 +0300
+Message-Id: <20220617103608.605898-4-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220617103608.605898-1-dmitry.baryshkov@linaro.org>
 References: <20220617103608.605898-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220617_033622_150472_501D0968 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20220617_033623_235751_7CE25CD5 
+X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,49 +98,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On MSM8996 the HDMI PHY provides the PLL clock to the MMCC. As we are
-preparing to convert the MSM8996 to use DT clocks properties (rather
-than global clock names), register the OF clock provider.
+Add #clock-cells property to the HDMI PHY device node to let other nodes
+resolve the hdmipll clock.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c | 15 ++++++++++-----
- 1 file changed, 10 insertions(+), 5 deletions(-)
+ arch/arm64/boot/dts/qcom/msm8996.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c b/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c
-index b06d9d25a189..cfb83e9dd810 100644
---- a/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c
-+++ b/drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c
-@@ -707,8 +707,7 @@ int msm_hdmi_pll_8996_init(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct hdmi_pll_8996 *pll;
--	struct clk *clk;
--	int i;
-+	int i, ret;
+diff --git a/arch/arm64/boot/dts/qcom/msm8996.dtsi b/arch/arm64/boot/dts/qcom/msm8996.dtsi
+index 9932186f7ceb..f94f10947f26 100644
+--- a/arch/arm64/boot/dts/qcom/msm8996.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8996.dtsi
+@@ -964,6 +964,8 @@ hdmi_phy: hdmi-phy@9a0600 {
+ 				clock-names = "iface",
+ 					      "ref";
  
- 	pll = devm_kzalloc(dev, sizeof(*pll), GFP_KERNEL);
- 	if (!pll)
-@@ -735,10 +734,16 @@ int msm_hdmi_pll_8996_init(struct platform_device *pdev)
- 	}
- 	pll->clk_hw.init = &pll_init;
- 
--	clk = devm_clk_register(dev, &pll->clk_hw);
--	if (IS_ERR(clk)) {
-+	ret = devm_clk_hw_register(dev, &pll->clk_hw);
-+	if (ret) {
- 		DRM_DEV_ERROR(dev, "failed to register pll clock\n");
--		return -EINVAL;
-+		return ret;
-+	}
++				#clock-cells = <0>;
 +
-+	ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get, &pll->clk_hw);
-+	if (ret) {
-+		DRM_DEV_ERROR(dev, "%s: failed to register clk provider: %d\n", __func__, ret);
-+		return ret;
- 	}
- 
- 	return 0;
+ 				status = "disabled";
+ 			};
+ 		};
 -- 
 2.35.1
 
