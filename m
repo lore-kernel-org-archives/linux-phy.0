@@ -4,156 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D90F4C433EF
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Jun 2022 01:48:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9484C433EF
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Jun 2022 02:22:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	References:Message-ID:From:Subject:Cc:To:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=gZ9sJlo36D3qardnCpvzK7bw5EN0+bxyR1C8fppBNs0=; b=XoxhKlvxMavv76+x42STiGKNed
-	nIYgqv4G7nn9IzzvHsJx+pJyArErg34H7iK+vw8xjljsVu9OVFE6qJ7StmUz5nxDo23TzE8nKWprk
-	T4d2QactsgKkY+hibiJX9t2uWj6FYs57OHb5IBVrjPs4jm/KP45cjzKnVwNn5vZeTkaidv1yqHFBU
-	Yu41sHlqC91jisrhwzw76EMH9zH6MPG6nvNa3I7xwXjApi1jDvjFumsoB38Hy3eCUZVUq4ZsQFpPe
-	swAs13ONSr0EolgRF5uBVpbAeJKG1IrbCu0aPvuNWyuTgy3rWME5P9kdouBofkI8gEI1M3FBrlYzL
-	T8APnaBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OAbO+vzURMtoIh9DWMTgz/U4CEnHY9QfENhvuTJnNEE=; b=rHYCG6qXs9ertX
+	gJKmevoSq6w9gTnfdnUnv37G3wHX/2XRieJCfwVJwH/1nYvKNp8oIVkyc7DC/6y087IAVIlkByY8/
+	DAXJB8qINMEQzgUmWB6Ib93AqPV+BuvqJrYH1EYXJHJj2GGqaLA/bkHoVNPrRyr6u+emqdv2BShkR
+	wLDTKTFxV6SsUfb2saY+h3k7VYw2x5JN9yBUwWnz2Wm3MM8c+i1NABLg4ZwsLEqa43JSCq0KjavnZ
+	4NqilGBvMnudxhkX9SgnyGSBGN6cuZk9a0g+wm/mhKrdhLKYUUH17p1ZZYbZuRl2VPJgfPVdY210E
+	g8V4EcOsZ7zkB0YCa59Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o216F-0053Rv-92; Fri, 17 Jun 2022 01:48:39 +0000
-Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
+	id 1o21cd-0057W7-9b; Fri, 17 Jun 2022 02:22:07 +0000
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o2163-0053Py-TW; Fri, 17 Jun 2022 01:48:29 +0000
-Received: from pps.filterd (m0246627.ppops.net [127.0.0.1])
-	by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 25H0qMhX026649;
-	Fri, 17 Jun 2022 01:48:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=to : cc : subject :
- from : message-id : references : date : in-reply-to : content-type :
- mime-version; s=corp-2021-07-09;
- bh=wt689crj3pOysbwsczbLz8BmmCMbgiZGtDf4c1bAWoA=;
- b=wFSt3a+Fp6ULt/5tOpF5gUpP1QKsjQ9U96qVzTnPkqaqN6zSHZB4PfDk+25yWjhvwIeZ
- 7+56X/pNdLG/uUZLKUAlxKVaFVdpxRyY9754Vke4DTpg/q1GJZi/oyc+Aw23ZWofBByN
- 5BHcmBEZv0rxfYhYgsdl0E0NmUjDhz4ZOqA6ay5qMSUlxf5lb2hiN0GjT2VQVQqfAi8L
- rvn2tsEsfKXvwrUbcyjAPVtDKFFBHNT4URUzS0Cf5d3kv7YtAe8x4eAXmLcRO1MsXF2n
- HiWEJzt4D2hlIgzK4fApp+bDzGZ0CtHxRCwQOBjfJqGMvYMX0v99HIfH1Bb+1mnckMlX ew== 
-Received: from phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com (phxpaimrmta02.appoci.oracle.com [147.154.114.232])
-	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3gmhn0ms4n-1
+	id 1o21cI-0057Qj-VQ; Fri, 17 Jun 2022 02:21:48 +0000
+Received: from pps.filterd (m0246632.ppops.net [127.0.0.1])
+	by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 25H0ZXnF005223;
+	Fri, 17 Jun 2022 02:21:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type : content-transfer-encoding; s=corp-2021-07-09;
+ bh=/IDfscGJbigkTQvOBIhJWEmer8zIUjgMWO9p5PQgSQA=;
+ b=c+Hn4UMWKOScbRTcOFtwxKFgBLh2TVaTVZ+UpGSuOhFkF7ZgPT0yMXG9RKusN8dnxo/D
+ 2F9XadrPzyUSAxQQnk734c51g4ZsI2egC59UWlbNjvJVw71rTS49Uam5dhw9T6SEgVLD
+ Gvw2EUHCoqiu6XV7qnpuNbYbTz7WAVtGjxzkJezINC2FECsk7QNBt+z0TxPWR9nu3yzX
+ jTLNW/tyP1JGXEs94wIZ+dtdOyVb1VVAcklEr3duVu0VjP87Knb0L8sJpXMbmHzJc3WL
+ wutrwGcILSIwxk7T7VcKSxq/+wzyUgFoovHI4YHUJXBZ7hIhnTnPVyE8WN5oATkkMFwO lg== 
+Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (phxpaimrmta03.appoci.oracle.com [138.1.37.129])
+	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3gmjnscqr2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Fri, 17 Jun 2022 01:48:19 +0000
-Received: from pps.filterd (phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
-	by phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com (8.16.1.2/8.16.1.2) with SMTP id 25H1k2kQ001364;
-	Fri, 17 Jun 2022 01:48:18 GMT
-Received: from nam12-bn8-obe.outbound.protection.outlook.com (mail-bn8nam12lp2175.outbound.protection.outlook.com [104.47.55.175])
-	by phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com with ESMTP id 3gpr7qq1p3-1
+	Fri, 17 Jun 2022 02:21:42 +0000
+Received: from pps.filterd (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (8.16.1.2/8.16.1.2) with SMTP id 25H2G6v8029102;
+	Fri, 17 Jun 2022 02:21:41 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com with ESMTP id 3gpr27jd7u-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Fri, 17 Jun 2022 01:48:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=K5g1j0SZ5B9pYNvwhrCovOfGPkKAlGrA7UvEIZugVvRqUzaSsgmjv0h5rpX238qpTTIwvUcM7qb9mY+5HqhzXUWZjViRWoyng/9MHgpMJkkI+hxABAcFMuG2M1tJL4//QrV+S2frgaw52VsbPCVhs54TJ8o8EBC6cd73bTcRIPZoa+U7BgVxGv9PYFsTQSqajWcPLsZPR8ybeSgEIEF6IA4UmTEPOnsu4z35Leh2fLBeC+hDHMhVhYItt1iv3dPu6aHMYAOvZXQQj2376L9L85ah5G7JEvZy5/rwV5dPzjDa6dpG6fXP7UJ9GtmZ8Y1YH/EmoKpRKibE8qjSmEWRbg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wt689crj3pOysbwsczbLz8BmmCMbgiZGtDf4c1bAWoA=;
- b=QRqp3//gelUD+3J4A40q4Pk7nicdWrqZfqtq6OlgT8nGAVvSiQIPVz4bmNitSv+ThTCjuUaAahXwpdzm9hbpWxIBQZKM5aQ2dNIvSs6bKAmuo7QQr6ZLxLtuTMLgJ45lRn1Kpw/gLg8aCIdhzs1pvJ/Y0Znz+3xM2hwA/4nPCtVOlCyT2iptu47+hlq9IpN/h6WTlf45tYONZ95nNY9KWScpaJHDnNn3iXtGzH6135MyWrYPpFZpwbUaabmSV9k5doExeNsSiWOakY245dk4m1dWMijOCDSqoW57rtwH5sVaPktR+3q1MguqdHQGMnsjz/gsjOi8ORvwUQpYGDpexA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wt689crj3pOysbwsczbLz8BmmCMbgiZGtDf4c1bAWoA=;
- b=HxJSgnO5T3pyY/BvaRMAhKd0xuIrB+y9YeD5U4/MZsW6pOUPgwt8rnrbr7kgnFP2RDV8fCDk+2rTtNl7sPGpfhxWNp9wHxVQoU6xtwVeffvZZM9giY1DnXoAZaPtrzK6uLJ/EyRgvMZNRe6mcdZUkDRhkbT/i2boS9uj5U4KJuQ=
-Received: from PH0PR10MB4759.namprd10.prod.outlook.com (2603:10b6:510:3d::12)
- by SN4PR10MB5621.namprd10.prod.outlook.com (2603:10b6:806:20f::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5314.13; Fri, 17 Jun
- 2022 01:48:16 +0000
-Received: from PH0PR10MB4759.namprd10.prod.outlook.com
- ([fe80::6516:e908:d2bd:ca45]) by PH0PR10MB4759.namprd10.prod.outlook.com
- ([fe80::6516:e908:d2bd:ca45%5]) with mapi id 15.20.5353.015; Fri, 17 Jun 2022
- 01:48:16 +0000
-To: Alim Akhtar <alim.akhtar@samsung.com>
-Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
-        beanhuo@micron.com, krzysztof.kozlowski+dt@linaro.org,
-        avri.altman@wdc.com, bvanassche@acm.org, martin.petersen@oracle.com,
-        chanho61.park@samsung.com, linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 1/3] ufs: host: ufs-exynos: remove unused defines
+	Fri, 17 Jun 2022 02:21:41 +0000
+Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
+	by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 25H2LejF040352;
+	Fri, 17 Jun 2022 02:21:40 GMT
+Received: from ca-mkp.mkp.ca.oracle.com (ca-mkp.ca.oracle.com [10.156.108.201])
+	by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com with ESMTP id 3gpr27jd7c-1;
+	Fri, 17 Jun 2022 02:21:40 +0000
 From: "Martin K. Petersen" <martin.petersen@oracle.com>
-Organization: Oracle Corporation
-Message-ID: <yq18rpwoyaw.fsf@ca-mkp.ca.oracle.com>
-References: <CGME20220615121508epcas5p3a42f8503bb6c6120cb4c0606109fe9c4@epcas5p3.samsung.com>
-	<20220615121204.16642-1-alim.akhtar@samsung.com>
-Date: Thu, 16 Jun 2022 21:48:14 -0400
-In-Reply-To: <20220615121204.16642-1-alim.akhtar@samsung.com> (Alim Akhtar's
-	message of "Wed, 15 Jun 2022 17:42:02 +0530")
-X-ClientProxiedBy: SJ0PR03CA0085.namprd03.prod.outlook.com
- (2603:10b6:a03:331::30) To PH0PR10MB4759.namprd10.prod.outlook.com
- (2603:10b6:510:3d::12)
+To: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-arm-kernel@lists.infradead.org,
+        Alim Akhtar <alim.akhtar@samsung.com>, linux-scsi@vger.kernel.org
+Cc: "Martin K . Petersen" <martin.petersen@oracle.com>,
+        pankaj.dubey@samsung.com, krzysztof.kozlowski+dt@linaro.org,
+        robh+dt@kernel.org, devicetree@vger.kernel.org,
+        chanho61.park@samsung.com, vkoul@kernel.org, avri.altman@wdc.com,
+        bvanassche@acm.org
+Subject: Re: [PATCH v4 0/6] Add support for UFS controller found in FSD SoC
+Date: Thu, 16 Jun 2022 22:21:34 -0400
+Message-Id: <165543243408.26207.2708974889131816023.b4-ty@oracle.com>
+X-Mailer: git-send-email 2.35.2
+In-Reply-To: <20220610104119.66401-1-alim.akhtar@samsung.com>
+References: <CGME20220610104340epcas5p1d6cee31aba4dc2952ef09003c9e67863@epcas5p1.samsung.com> <20220610104119.66401-1-alim.akhtar@samsung.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 6425e697-30ed-46fc-ea43-08da50037289
-X-MS-TrafficTypeDiagnostic: SN4PR10MB5621:EE_
-X-Microsoft-Antispam-PRVS: 	<SN4PR10MB5621C69B4376949F78434D5E8EAF9@SN4PR10MB5621.namprd10.prod.outlook.com>
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	oX9+OxVo0WQ863dnoEpBKmraZZ/loArj046/5ZZdaIvJmorogyprux3+eGQWBVU1u60VQvuoyue4aaEJJoij+pPCCN7G1X5B+19tAlKQMlwKkWt9whAkam+Rq5fKpCqcQpUO3XdDhQ3grh4t2JwdxuvtMmw6P2Ke/6/L2wptZ1EfPdXyrgNrCvbh/vh9M9FfFQMfLgdcIvzGBSzsoVThjf1eTTmcUs4WJ9ekdjBDLQZD175d2mTfqsFezV2xiUHX4v6Dk2C+hGcLJGiI3hgdMuhZLRtVNHN7oQBsNW5cNtpY2e6LQIts4UJcNYYOvzEDDCW9J1s6JleK6RQt6Q1uxm8O6+ziYkmOQyhwSL7eo9X8eQL/21vD1O1FRTIbY3v1Cq1RAex3uDrx7T25lJuetJGEF9HECajRTeze4/88oq19qhTyRTpZKXNuyh5k/inHIqwxB7DG+XiQ5fzpNyui+vKbk7UYrMCfXROOTHZbOHmFzXG6q5PXqrja565wbnA09Zoi8uK5NBl2o8ZoIlBK6Nwcx6r5Qj0ikEI3QsK4E1CqG2eNqX9WzTV7TgQm/BGZX1Czyy/CEqocaEXTdgTAncl0hc+MC1Y9d6tmAoMaEsbvy87bcMqdzJY6EBlBXK3mo967RT/xzlfWuHvXqEzxDPHavE2mrWc4xoGv+cZJeyHcvvbpeZlNSwMFocdn3Tlya5ZIaSQGrg1s3NWINQFbuQ==
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR10MB4759.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(366004)(66556008)(6916009)(2906002)(508600001)(36916002)(6512007)(38100700002)(5660300002)(26005)(66946007)(8936002)(52116002)(38350700002)(6486002)(66476007)(6506007)(4326008)(316002)(7416002)(8676002)(186003)(558084003)(86362001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?JBorLIrv4G4ymRKGCa9nJsA4gpL7CZ0mrp2liikt/HuqA3YBnkGmmuMZtYwZ?=
- =?us-ascii?Q?wSKuqhAm6lX+9obVlAMJdUZds28DW8h82aWJiznf3YLO//dw6VQAXzhqKB9o?=
- =?us-ascii?Q?y1vMhx9G9BjS+D9AXmADsCsfYhAE5G8Pqco0In/rCNJAHu6v/raXowwSlLZW?=
- =?us-ascii?Q?4D5tr+dplVlonSBGcvl5nW5NlikfoXfymOjyEvWIIp33wSSSSidZDWyEny2F?=
- =?us-ascii?Q?GZysOmVmUi2ngWadp/MPXDDk8upCVud76bPSt/qXpot5u/KDB3y7xXoIPMB2?=
- =?us-ascii?Q?AGrrRQp04JbYMMu+BfN0vOZYuSbJ3vy/AKtUAzWEdvnkbNuyyEe4guT+PR+K?=
- =?us-ascii?Q?v0/U2bmmYI0L0lytZDRcrPhDuN/JW4d65lKw8mgjXaAOS7ZtnwDqmt18wLhg?=
- =?us-ascii?Q?igK5rhdlAvaeiOk8ZKKTrZTiKqFdM3kq23s0R7WfDKvWAOTn1wWJgDV7Jv7X?=
- =?us-ascii?Q?PK8j9u25eKRO76mXIsAjFDWQy8UuVeqI6h0SVTBMzFQAKqMHSwFtyzNynhWq?=
- =?us-ascii?Q?cDtTDd9ymQYpXstIVN88ILFbgDI61RugKXW4gSaCiLTQ1HJSa0+fcmmF05kL?=
- =?us-ascii?Q?9lYvWk+swVYFTs/vV+sPZg5WVYT2gwrPBOtCxLsDV7VJbky48CSHDTl7Lacd?=
- =?us-ascii?Q?5cQzPIuVo498giNQGOocWEWGK0yhz2iXKk/87JsTUsxuSunsyzLo+ZuhyyS5?=
- =?us-ascii?Q?N6NqciDywazOIhNhCznMUWd0zrwfDVd0b5jtWq68/lyeiZAH56RYyJaRw59C?=
- =?us-ascii?Q?+TBl5PvkALSsuUICPu93t5eGnhi4ml/g00k0PhohKnhP8EbkikFcNWOSSYOy?=
- =?us-ascii?Q?grqSNb8g97mfjl0c7HVn6mw5guGNf27GOlbCZlm41SqONhUt2dmAfp2UJc3r?=
- =?us-ascii?Q?nT+t4iDHq9pBiWu9OsWApkuUH3uqVUi3o4hMGNbRNlx4XJDRDg3vb0WL0a9G?=
- =?us-ascii?Q?jriv+S7zPrxyE+0Uku0Eur5/jls+umgUbb1jqw4ZqqEkhyOFxBG4r0KQgk5E?=
- =?us-ascii?Q?LuF/BRHLuQpAbhlh81vJ5Yn+oAxjBNo0CLiEbCVSA+RelxgiGSl+/+eEw2tO?=
- =?us-ascii?Q?wh42bwJU77w4JUzxgFCXsVk1p4W0RAf2+gaJ66kauKTitL3qvC3UNSKPTyth?=
- =?us-ascii?Q?+RhiouLWMzrxXZA5vjq69kiUWqQcFRFJVx6Oc6GyNBjPXtS/CtaxXQTpIond?=
- =?us-ascii?Q?UsaeSpNzJ4xNgp1B9IVrkpqUSVYWvWJKfAWHTYYa8P5dKwYFu+/IPYd2uiKQ?=
- =?us-ascii?Q?TxkiiP72xjvYbfyQ+STWbdSbT9EPf+XeoLPucVotJqvVPX4D0JyI0irTz1X2?=
- =?us-ascii?Q?OPJ/n3x7z17alCvLLAQMvLrhFU0RKs81PH9SCQgNRugrYT8dq5BUsGahP6cS?=
- =?us-ascii?Q?18JamO2qhx5sXYL8C+NSefR4hUEh8vo+dNIP9rS+0UIbWviu4wIMHUZoNYGl?=
- =?us-ascii?Q?UfmgkonSnXyV8e+y2i3EbtG3XwBe1FodxNsl1VFK/UIdiOeQAFNwiB2VZ4K8?=
- =?us-ascii?Q?8w63joIuqe09jr1TVSMgJwysiG9uwbRH4wD1AS2enQQg8MpqWiWeUETuz/+f?=
- =?us-ascii?Q?ZqZ+Nddd5rAVqC4y3O4qCcEzmlbmS46SDDSBD5OSotEQ0MAzFniqRBPOv2wa?=
- =?us-ascii?Q?RMWGYvAtlU9+Tq4aFUqvtVKWFwOytryIKHoyyIE5ijTqOaQoykaxXNUyPd16?=
- =?us-ascii?Q?7GICnkWlNnqvDvDX5uC/azeNunfpnV6wze6P03kD3pcUK0R3QrtNYFfn9w6b?=
- =?us-ascii?Q?nwoH8JCiPVuaUVdKHYVdaI/V1O4Lw38=3D?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6425e697-30ed-46fc-ea43-08da50037289
-X-MS-Exchange-CrossTenant-AuthSource: PH0PR10MB4759.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jun 2022 01:48:16.4517
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: a+FzZA+gr19Gv15ySk2hy8RxuZuU1xAz8sE13x7s+raoo8jfSj/qfBfR2CvR8ye5Gqjn9U9c5OdRUYhuhrK9tjjwNy2fwWqbOAZf4N/mf64=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN4PR10MB5621
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.517,18.0.883
- definitions=2022-06-16_18:2022-06-16,2022-06-16 signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0 malwarescore=0 mlxscore=0
- adultscore=0 suspectscore=0 mlxlogscore=657 spamscore=0 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2204290000
- definitions=main-2206170006
-X-Proofpoint-GUID: gy0pHELY2up0thdguwigKfFv8AqDZTFi
-X-Proofpoint-ORIG-GUID: gy0pHELY2up0thdguwigKfFv8AqDZTFi
+X-Proofpoint-GUID: fsCGy7F8DmoNCfScTqg5Z8WQ6kU3MqkU
+X-Proofpoint-ORIG-GUID: fsCGy7F8DmoNCfScTqg5Z8WQ6kU3MqkU
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220616_184827_996347_300038AC 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220616_192147_164162_E0A22FB5 
+X-CRM114-Status: GOOD (  14.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -170,12 +90,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, 10 Jun 2022 16:11:13 +0530, Alim Akhtar wrote:
 
-Alim,
+> This series adds support for UFS controller found in FSD SoC.
+> The HCI is almost same as found on other Exynos SoCs with minor
+> differences. This also adds the required UFS-PHY driver changes.
+> 
+> Patch 2/6: common change to handle different CDR offsets
+> 
+> *Changes since v3:
+> - Addressed review comments on patch 6/6 from Chanho
+> 
+> [...]
 
-> Remove #defines as those are not used anywhere in the driver file
+Applied to 5.20/scsi-queue, thanks!
 
-Applied to 5.20/scsi-staging, thanks!
+[4/6] dt-bindings: ufs: exynos-ufs: add fsd compatible
+      https://git.kernel.org/mkp/scsi/c/ea83df8e3bd0
+[5/6] ufs: host: ufs-exynos: add mphy apb clock mask
+      https://git.kernel.org/mkp/scsi/c/daa782a51ec8
+[6/6] ufs: host: ufs-exynos: add support for fsd ufs hci
+      https://git.kernel.org/mkp/scsi/c/216f74e8059a
 
 -- 
 Martin K. Petersen	Oracle Linux Engineering
