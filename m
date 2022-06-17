@@ -4,76 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4363CCA479
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Jun 2022 21:11:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03215C43334
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Jun 2022 23:27:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NaXE4efJbHdBgQ/2zvGH0V4Nt2bo1A0BQjAFCsMgREM=; b=2tOfdLuUMHa0Gi
-	AkZIAi133nD9Z7Jt81kWShdPuY9ckmAB23FjwejHEys+vHVztxNHH8US+yH8TzBt6G4gC27rItC2Z
-	1rWWtOZ3GpIjagdLnaM58GXgNsZ7gxOoFNQ0wUzszPPCM/b6ISVSCZZynkOz39W6SfDVZW1Y+ljzJ
-	Pjep7MnPrRWwW+swdfTuzFEIQRHV+7t9sx31chHdIFrGDlURJQk4yLGorLvj7tTvjjiAqY0L87KK0
-	gfPGRySt7a7671yE1ptb5+Cm1mrVU+voL8zT90B+1MSoQibg3Cax95k4c7zgnYN1ZHlUrIwIIs34F
-	e9h9elSwKgM36M489/LQ==;
+	List-Owner; bh=5pylo2Y1dDaCDFroA0zx5Xe/6qFrCZaugsoIJ7i8RlQ=; b=wdgSr6NUevCKt7
+	xw+eKy3DKaU2fJXVja19dtB44GGMs7hjj+G7GqxUjtRGNaWzdOnLIfz2gn5V2sM1qPdyiNvYAoa19
+	P8LPn8nqn8cPO/UOy2sEDTEEoO6/QEKHwnI/GMlI9dlcFcfFSwOxOOGD1QOzEfQJbq5GX0z8dG+Nj
+	KDIm8B933qe4h5LSXZWCNcrZ5uJMS0sQYVbiu0ddwvx9UVayKtbK5r3QEOea4meFyxgeRuxeDaIBk
+	9IOC1dkXYyVBiNoIONopKmBaBPRcrs2uTg9EotyJ/3ZbrH++XdooUPakVIzlMI6M10eFFm9X3cCB6
+	5fKSpUvYrmqyohX8aoFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o2JFH-0099lh-JN; Fri, 17 Jun 2022 21:11:11 +0000
-Received: from mail-ot1-x32c.google.com ([2607:f8b0:4864:20::32c])
+	id 1o2LND-009dD7-AC; Fri, 17 Jun 2022 23:27:31 +0000
+Received: from mail-io1-f46.google.com ([209.85.166.46])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o2J1d-0095PP-58
-	for linux-phy@lists.infradead.org; Fri, 17 Jun 2022 20:57:06 +0000
-Received: by mail-ot1-x32c.google.com with SMTP id a8-20020a05683012c800b0060c027c8afdso3927743otq.10
-        for <linux-phy@lists.infradead.org>; Fri, 17 Jun 2022 13:57:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=chromium.org; s=google;
-        h=mime-version:in-reply-to:references:from:user-agent:date:message-id
-         :subject:to:cc;
-        bh=vMRFR0GXyCuyzUO1zmdvO0SdG3g9jDS3szGGSmZwvdo=;
-        b=EoWrsaIdWmfmOGr1BtwEg2WSZK+OU+lG3deDCXDzb74IKSuCLjUw48r/Au0ZdFbBld
-         CtADV5mdsqtHPiJQnM6grFYj+RXcVZ25BiaOF+SeT3sWq4i0Z9auBAbHmX9HOV5Xn+AO
-         W4/IHFd1Zk/BzdQQ1hCIwfywNaHuB2eYr/RVE=
+	id 1o2LMy-009d6q-1p; Fri, 17 Jun 2022 23:27:17 +0000
+Received: by mail-io1-f46.google.com with SMTP id q11so5960893iod.8;
+        Fri, 17 Jun 2022 16:27:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:mime-version:in-reply-to:references:from
-         :user-agent:date:message-id:subject:to:cc;
-        bh=vMRFR0GXyCuyzUO1zmdvO0SdG3g9jDS3szGGSmZwvdo=;
-        b=SvzMHB7ePy+k/xCDqbVJy8RK1ING+tD+Ffb8N7uBCjzJmsrRRgEu2sAmMnYjmA4fBf
-         BtzQRgaZNnc1Vl7Qn3DqYUZ51PJcUWkJYx+cr6lln7e0C2Zsy75VIe8yO6BI/aW+DJVN
-         u4Y/eTCm+Z50RGdZNYL3Rh8t+Jv7N4FG6O/lNJE1N4wcBSjFaJ1f4zdWZfiH0yylYu/F
-         xcGRFUMp7y7x8c0n8JTZIBSl3fDwysPE+3YOVqujraSnyU87Mpdg6qN5QH4mTWtxwLE8
-         nTgjthcb+fGmIoqwP4E9Cf/u0G5e5z6+kQG2T97PKlBYMO+8guStAWWdr1zwj5e/a0vr
-         r+Rg==
-X-Gm-Message-State: AJIora+I/DH9NOvWJkCXhiehfSlKG4h6eJ3CEpun3G1/ysCwtw8FplMb
-	ltn+D9R+K2nYloZGhii2Zq30EGPo104U/SAxOezVNA==
-X-Google-Smtp-Source: AGRyM1sfzKoW9WyzAhvY11tv9iFwse5ymjpHxzBQ0uh1UWvv6lmB401+6sUT+IuSWkFK2+PScwaSfV3+9PXqLXqk5Zw=
-X-Received: by 2002:a9d:6484:0:b0:60b:eb0b:4054 with SMTP id
- g4-20020a9d6484000000b0060beb0b4054mr4760290otl.159.1655499423686; Fri, 17
- Jun 2022 13:57:03 -0700 (PDT)
-Received: from 753933720722 named unknown by gmailapi.google.com with
- HTTPREST; Fri, 17 Jun 2022 13:57:03 -0700
-MIME-Version: 1.0
-In-Reply-To: <20220617103608.605898-4-dmitry.baryshkov@linaro.org>
-References: <20220617103608.605898-1-dmitry.baryshkov@linaro.org> <20220617103608.605898-4-dmitry.baryshkov@linaro.org>
-From: Stephen Boyd <swboyd@chromium.org>
-User-Agent: alot/0.10
-Date: Fri, 17 Jun 2022 13:57:03 -0700
-Message-ID: <CAE-0n50=Lbrs84oivqni0oBNk0KSY9yGvkYFXggekwVDQ80fyQ@mail.gmail.com>
-Subject: Re: [PATCH 3/3] arm64: dts: qcom: msm8996: add #clock-cells to the
- HDMI PHY node
-To: Abhinav Kumar <quic_abhinavk@quicinc.com>, 
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Rob Clark <robdclark@gmail.com>, 
-	Sean Paul <sean@poorly.run>
-Cc: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>, 
-	Bjorn Andersson <bjorn.andersson@linaro.org>, linux-arm-msm@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
-	Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org
+        h=x-gm-message-state:from:to:cc:in-reply-to:references:subject:date
+         :message-id;
+        bh=mrnGJfuJSJ8KmPJjJNK/2HMET0pHuhxW1Qzfgjvk8ws=;
+        b=rZsogEkXbKXYx4Ev+PgB5ScDpx/5WmqwwcEzsjhwMZl5FhsWZ1KpJcY3CJP0TVvIYf
+         EfcJ8WioZ/WrTjwu0Z9xtbtTWNARK4VUKxttEqb8zcH6NSKfUz552hmwV/ISUSI4IELq
+         NGl12ivpZ6b9LVBpF+D3Oi6EMwOaHZROl5tiO6bP0NjE78S4pCnP6T3c/9fjxOu9UbVc
+         FeC0EoUZwATpmz0kA2lyzEDTCjkBLDoI4G7YxnQCUrQkM+cQfsdHRYbAT3ZmzPGhpHUZ
+         mkFNnlarjMUa19YvJif6OLywS+pXYse0TwCgM39JV0w8hGz20k1D9wUqEwf8YxjBCa8x
+         sbzg==
+X-Gm-Message-State: AJIora9+VH+JCgVhIEEQaPrbGekDz0SyeZuBi00c7hz8gSvEoWmNbU5p
+	a6J7XY3Pi7ClxNu7rcx71g==
+X-Google-Smtp-Source: AGRyM1tifihKpTdp799WxK6Tc+JX6s/X9nrpMyulN4Y0ijrWTb5i6wkhgCyeLD424gLNC7G3gBG1Aw==
+X-Received: by 2002:a05:6638:138f:b0:332:1c0:1e81 with SMTP id w15-20020a056638138f00b0033201c01e81mr6550749jad.293.1655508434839;
+        Fri, 17 Jun 2022 16:27:14 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.251])
+        by smtp.gmail.com with ESMTPSA id h20-20020a02b614000000b0032e70c4e12fsm2771998jam.28.2022.06.17.16.27.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 17 Jun 2022 16:27:14 -0700 (PDT)
+Received: (nullmailer pid 2635209 invoked by uid 1000);
+	Fri, 17 Jun 2022 23:27:12 -0000
+From: Rob Herring <robh@kernel.org>
+To: Sean Anderson <sean.anderson@seco.com>
+Cc: Eric Dumazet <edumazet@google.com>, Vinod Koul <vkoul@kernel.org>, netdev@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, Jakub Kicinski <kuba@kernel.org>, Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>, "David S . Miller" <davem@davemloft.net>, linux-phy@lists.infradead.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Madalin Bucur <madalin.bucur@nxp.com>
+In-Reply-To: <20220617203312.3799646-2-sean.anderson@seco.com>
+References: <20220617203312.3799646-1-sean.anderson@seco.com> <20220617203312.3799646-2-sean.anderson@seco.com>
+Subject: Re: [PATCH net-next 01/28] dt-bindings: phy: Add QorIQ SerDes binding
+Date: Fri, 17 Jun 2022 17:27:12 -0600
+Message-Id: <1655508432.548094.2635208.nullmailer@robh.at.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220617_135705_237900_DCEBC3E4 
-X-CRM114-Status: UNSURE (   4.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220617_162716_129611_5DA19DDC 
+X-CRM114-Status: GOOD (  23.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,19 +70,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting Dmitry Baryshkov (2022-06-17 03:36:08)
-> Add #clock-cells property to the HDMI PHY device node to let other nodes
-> resolve the hdmipll clock.
->
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+On Fri, 17 Jun 2022 16:32:45 -0400, Sean Anderson wrote:
+> This adds a binding for the SerDes module found on QorIQ processors. The
+> phy reference has two cells, one for the first lane and one for the
+> last. This should allow for good support of multi-lane protocols when
+> (if) they are added. There is no protocol option, because the driver is
+> designed to be able to completely reconfigure lanes at runtime.
+> Generally, the phy consumer can select the appropriate protocol using
+> set_mode. For the most part there is only one protocol controller
+> (consumer) per lane/protocol combination. The exception to this is the
+> B4860 processor, which has some lanes which can be connected to
+> multiple MACs. For that processor, I anticipate the easiest way to
+> resolve this will be to add an additional cell with a "protocol
+> controller instance" property.
+> 
+> Each serdes has a unique set of supported protocols (and lanes). The
+> support matrix is stored in the driver and is selected based on the
+> compatible string. It is anticipated that a new compatible string will
+> need to be added for each serdes on each SoC that drivers support is
+> added for.
+> 
+> There are two PLLs, each of which can be used as the master clock for
+> each lane. Each PLL has its own reference. For the moment they are
+> required, because it simplifies the driver implementation. Absent
+> reference clocks can be modeled by a fixed-clock with a rate of 0.
+> 
+> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
 > ---
+> 
+>  .../bindings/phy/fsl,qoriq-serdes.yaml        | 78 +++++++++++++++++++
+>  1 file changed, 78 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,qoriq-serdes.yaml
+> 
 
-Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/fsl,qoriq-serdes.example.dtb: phy@1ea0000: reg: [[0, 32112640], [0, 8192]] is too long
+	From schema: /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/fsl,qoriq-serdes.yaml
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/patch/
+
+This check can fail if there are any dependencies. The base for a patch
+series is generally the most recent rc1.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit.
+
 
 -- 
 linux-phy mailing list
