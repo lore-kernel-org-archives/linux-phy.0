@@ -4,68 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 883ADC433EF
-	for <linux-phy@archiver.kernel.org>; Sun, 19 Jun 2022 12:12:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16C3FC43334
+	for <linux-phy@archiver.kernel.org>; Sun, 19 Jun 2022 12:15:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tSXZLSAozugJrg/nKT8/275FhUs6dTSI4VHu8rWbDL4=; b=ER6nbfKCZ0mTmf
-	a3R1F3grCvP62G37QkHyYoJbw1r6CUgNV+T9XSTDa6r9q5TbzFIERhhDUwIlrbXW9IwJcotlyUD/Z
-	YPHSvRou63UN4PLixw0Dc4SlZ9O3hwC40EX7pdFLHnBtkdEqgXM7WWEsjM+hpWgbV/ZyeW9cdjqOB
-	Oxo06DL+HuJWH+0xwITm7keSCNfFXihM9dZ7lo+CnLoqG2O+qk+gf5YjBnxkVCQhFep+tg4g19T9b
-	yBgYCBzbtU8RpdsVywuLYRaZkjOjbiQ1uhYhe7PJ/UvKT2dmqlGRw0bOwyw6gHX7QUlmfR/bzn7et
-	DE0vwmlEJOH4wFXXNGKA==;
+	List-Owner; bh=s3V7BL88ksSBQR7H9SPEKijjfO6K4LPCL4Ep/Lcl6bo=; b=AF6pPKJJLJ2uXl
+	kqHXZFysWR2aUxOoDwX5rdVNxs+YRX8trhlmbCiDAxf++Pgv48NRgVKPbtgdS0Y668JrL/JDyGlzJ
+	Mubqe41xL38weNR0UurVIWWRXS2TuiwQKIIUkfM4vlXJN3FNvgz6WuGLzIHr5+7JXZYI8Zaob4CgC
+	Z5jRBXvvDVRl98QwZit7LaIwJgguDck48K12TkVP7yvK5NIqcCpUwxBVJJ5Ij1W+onK215RuAmlMn
+	5mGBht9NMrUHHquqao/v77enVe1NoXGeN+GOaSaaEta8Kn9lC1CCF4kvDICCgOl9lPl2z5Iff1yaF
+	GGiBJ6tWiZNqZK5VYP+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o2tmj-00EAVW-TZ; Sun, 19 Jun 2022 12:12:09 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1o2tpm-00EBHA-B5; Sun, 19 Jun 2022 12:15:18 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o2tmZ-00EASC-0S
-	for linux-phy@lists.infradead.org; Sun, 19 Jun 2022 12:12:00 +0000
-Received: by mail-ej1-x629.google.com with SMTP id v1so16280573ejg.13
-        for <linux-phy@lists.infradead.org>; Sun, 19 Jun 2022 05:11:57 -0700 (PDT)
+	id 1o2tpb-00EBEB-PG
+	for linux-phy@lists.infradead.org; Sun, 19 Jun 2022 12:15:09 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id y19so16322163ejq.6
+        for <linux-phy@lists.infradead.org>; Sun, 19 Jun 2022 05:15:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=LXtHu+WmKe/B+Jenv3JS6I7UJdcvW4l/57HkN5jkG/E=;
-        b=PFGWDfSmTZqllQbv0OyEqVrcIkXlXTB2/7LoSQSGLEpW5i8azV07nix9S/j7bUd6m2
-         afWCLA2StC3+eLDwUkgDglLrczYOAxTRwcCxdBinEf1T7tBYzqIZTcry72ITwGQLwKbR
-         +5Ts1NpfLQlxfMXoOcFyfo7SBxddgDRDm0e87Ix9qaHF25Ny6J/upwztpDi2Nh3Ubsht
-         sx7lY4n4iosRrHZrJkE3nuJy7TkZDGcob0XY57s8vRz9uTwPvujH1tuhEb1z93aI5OnP
-         aqcZdNBaLoZ8xwcY0JEmydzrca6xgk0lG/A808nR9cFQEMMUhmMkpL0ELkr2l6EhTL34
-         pHOQ==
+        bh=gF0Gwj/C6L3cvjiNQzt6cTyk+/JhZh42zyr/6Goldgo=;
+        b=jk1vJCJ5PJNuNIF31F3TriYuG/cKMk6gSZXn9/46qluGbFdq554Tw30GpVbfYDtlTr
+         4SKkenAYbWkGo/VzdrT2ggXlK7vYOW0z9dMzwuBFXHuumftIsv/5nuYdhI7wijet7u/j
+         TLOsWQxK9xfV+TJ7oCOVLPDhDTYgBXJfV4E6oDdpIFMjqOZk8KDXX2BPnefVfB8vIi98
+         sjTNRdPCpNcoHNr0EJV7Tgsip/zuH49nUkU7vYcpesBBHC7M7e1vpwB5+aiTAuuefK1/
+         lFpBI0+3JDjyfI3p1UsqxIClJAztMWj+AZ1FJnUhsGyQLAqTa0cCD+wPIYD6o4k+WZUA
+         J+lA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=LXtHu+WmKe/B+Jenv3JS6I7UJdcvW4l/57HkN5jkG/E=;
-        b=srtPmfqqaOX9yTHIs0wADzhpnHxj9nomyl/flRKLp2OaP29+ICffixfM7UdMG+TGFd
-         +aHHncsJtYWMz9EITRoCi3nG0tBlWxqAtYWZHzHIayflzu9uHAuvczHiDuQgoJnXYR+G
-         aUDXP7JVJxfjIfGel9o1fH6HsUj7qmyoERS0IwlMtehVrorjOXYKI3x2OdOoPebj1YzX
-         lS23Coromzh1ZBxrrP0use1gp7mDWdBt6za5bcFi/HvXTm0Ak50R8xV6OaTxwsJkE/CW
-         N23k2rc49v3NNZDF23l8Iwl8LTYhdhHOrgZ2BmcxH6liM06FvnegOp7pDA0miLu2GILK
-         uOcg==
-X-Gm-Message-State: AJIora+9c4fgn3oLlaIdaYAm8Ms5t+tYJrY2ctwKveaG6WptfEdIvTFf
-	eJ9KgFh1VZMVOfGFvIMHlFNVvw==
-X-Google-Smtp-Source: AGRyM1uG+PuErMAkaEo90qS9M2upNFHsa8Bcj+5LXtlWfhBGMg5qJoUykz+gZaY6engmOnI9dCwIkw==
-X-Received: by 2002:a17:907:7f0e:b0:722:a7e9:6f7f with SMTP id qf14-20020a1709077f0e00b00722a7e96f7fmr2699714ejc.228.1655640716378;
-        Sun, 19 Jun 2022 05:11:56 -0700 (PDT)
+        bh=gF0Gwj/C6L3cvjiNQzt6cTyk+/JhZh42zyr/6Goldgo=;
+        b=cnWTluTRC84PW1mfis7JOepY24f9aSDJEZuKopQtNfa7nibtAlUPaSzeIogqgxtBws
+         5JsNbsv3y3NWKCPyzHw4bGkoyUDwW4zv/FnyKuFTxi9G5Bgr0FbXeYsDjQ3MvsrLlH86
+         nvWSButXZ9MG5j4Y+R2KYwKQTYhLFki5CvUcL/LWnR2G/pv5GXBR51jiZ9SM8jzkZtcX
+         FZpwRClJ7xl2shSU1zATHT+Zb2Gk9E6SOn+RACNBJY9zVUlW+kU+hw4H1PJ5i8pyCRbq
+         obGIad+Ywt8ASBfxqmAQE6pCIal3X0wPqWuyEX8eSMn93x9+qE3pjW16EJ6FGsYVQ7Yi
+         FwyQ==
+X-Gm-Message-State: AJIora+xu87HMaV9BwZ59vgLgE1ULkyeBJQw4aCmh4diGWN7Vn2Cf0D/
+	jQ8jERPhCnhZIzHHtaZpEAMNsZphOc/3LQ==
+X-Google-Smtp-Source: AGRyM1vsL+KbYeV1UgaR5Avi+XNA499NYMSUFF6Gtwgp4n16enUFH9kgWZ4YFWACkwFqRYf5XwW5qA==
+X-Received: by 2002:a17:907:1dd1:b0:715:73d2:df1f with SMTP id og17-20020a1709071dd100b0071573d2df1fmr17030479ejc.46.1655640906086;
+        Sun, 19 Jun 2022 05:15:06 -0700 (PDT)
 Received: from [192.168.0.206] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id j1-20020a17090623e100b006fe9209a9edsm4504865ejg.128.2022.06.19.05.11.54
+        by smtp.gmail.com with ESMTPSA id kv8-20020a17090778c800b0070e1adff390sm4522943ejc.34.2022.06.19.05.15.04
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 19 Jun 2022 05:11:55 -0700 (PDT)
-Message-ID: <b83e3100-edd6-4f91-75e0-8a87447d8a4c@linaro.org>
-Date: Sun, 19 Jun 2022 14:11:54 +0200
+        Sun, 19 Jun 2022 05:15:05 -0700 (PDT)
+Message-ID: <8a1d7575-1334-e5ab-5228-f75ae67a3d13@linaro.org>
+Date: Sun, 19 Jun 2022 14:15:03 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.10.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Freescale i.MX8qm Mixel LVDS
- PHY binding
+Subject: Re: [PATCH 2/2] phy: freescale: Add i.MX8qm Mixel LVDS PHY support
 Content-Language: en-US
 To: Liu Ying <victor.liu@nxp.com>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
@@ -75,12 +74,12 @@ Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  linux-imx@nxp.com
 References: <20220618092201.3837791-1-victor.liu@nxp.com>
- <20220618092201.3837791-2-victor.liu@nxp.com>
+ <20220618092201.3837791-3-victor.liu@nxp.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220618092201.3837791-2-victor.liu@nxp.com>
+In-Reply-To: <20220618092201.3837791-3-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220619_051159_176558_47356534 
-X-CRM114-Status: GOOD (  22.62  )
+X-CRM114-CacheID: sfid-20220619_051507_853751_582F021F 
+X-CRM114-Status: GOOD (  16.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,95 +97,137 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 18/06/2022 11:22, Liu Ying wrote:
-> This patch adds bindings for Mixel LVDS PHY found on
-> Freescale i.MX8qm SoC.
+> This patch adds Freescale i.MX8qm LVDS PHY support.
+
+
+Don't use "This patch".
+https://elixir.bootlin.com/linux/v5.17.1/source/Documentation/process/submitting-patches.rst#L95
+
+> The PHY IP is from Mixel, Inc.
 > 
 > Signed-off-by: Liu Ying <victor.liu@nxp.com>
-> ---
->  .../bindings/phy/mixel,lvds-phy.yaml          | 64 +++++++++++++++++++
->  1 file changed, 64 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml b/Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml
-> new file mode 100644
-> index 000000000000..de964ffb9356
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml
-> @@ -0,0 +1,64 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/mixel,lvds-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Mixel LVDS PHY for Freescale i.MX8qm SoC
 
-If Mixel is a vendor, it needs it's vendor prefix documented and used in
-compatible. Filename should match compatible. If it is not a vendor,
-then filename should be "fsl,imx8qm-lvds-phy.yaml"
 
-> +
-> +maintainers:
-> +  - Liu Ying <victor.liu@nxp.com>
-> +
-> +description: |
-> +  The Mixel LVDS PHY IP block is found on Freescale i.MX8qm SoC.
-> +  It converts two groups of four 7/10 bits of CMOS data into two
-> +  groups of four data lanes of LVDS data streams. A phase-locked
-> +  transmit clock is transmitted in parallel with each group of
-> +  data streams over a fifth LVDS link. Every cycle of the transmit
-> +  clock, 56/80 bits of input data are sampled and transmitted
-> +  through the two groups of LVDS data streams. Together with the
-> +  transmit clocks, the two groups of LVDS data streams form two
-> +  LVDS channels.
-> +
-> +  The Mixel LVDS PHY found on Freescale i.MX8qm SoC is controlled
-> +  by Control and Status Registers(CSR) module in the SoC. The CSR
-> +  module, as a system controller, contains the PHY's registers.
-> +
-> +properties:
-> +  compatible:
-> +    const: fsl,imx8qm-lvds-phy
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +    description: |
-> +      Cell allows setting the LVDS channel index of the PHY.
-> +      Index 0 is for LVDS channel0 and index 1 is for LVDS channel1.
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    const: phy_ref
 
-Maybe just skip the clock-names, it's not bringing anything useful,
-unless you expect some more clocks to be documented later? (but in such
-case question would be why they are not documented now)
+> +static int mixel_lvds_phy_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct phy_provider *phy_provider;
+> +	struct mixel_lvds_phy_priv *priv;
+> +	struct mixel_lvds_phy *lvds_phy;
+> +	struct phy *phy;
+> +	int i;
+> +	int ret;
+> +
+> +	if (!dev->of_node)
+> +		return -ENODEV;
+> +
+> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	priv->regmap = syscon_node_to_regmap(dev->of_node->parent);
+> +	if (IS_ERR(priv->regmap)) {
+> +		ret = PTR_ERR(priv->regmap);
+> +		dev_err_probe(dev, ret, "failed to get regmap\n");
+> +		return ret;
 
+All such calls are one-liners.
+
+> +	}
 > +
-> +  power-domains:
-> +    maxItems: 1
+> +	priv->phy_ref_clk = devm_clk_get(dev, "phy_ref");
+> +	if (IS_ERR(priv->phy_ref_clk)) {
+> +		ret = PTR_ERR(priv->phy_ref_clk);
+> +		dev_err_probe(dev, ret, "failed to get PHY reference clock\n");
+> +		return ret;
+
+Again, one line instead of three.
+
+> +	}
 > +
-> +required:
-> +  - compatible
-> +  - "#phy-cells"
-> +  - clocks
-> +  - clock-names
-> +  - power-domains
+> +	mutex_init(&priv->lock);
 > +
-> +additionalProperties: false
+> +	dev_set_drvdata(dev, priv);
 > +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/firmware/imx/rsrc.h>
-> +    phy {
-> +        compatible = "fsl,imx8qm-lvds-phy";
-> +        #phy-cells = <1>;
-> +        clocks = <&clk IMX_SC_R_LVDS_0 IMX_SC_PM_CLK_PHY>;
-> +        clock-names = "phy_ref";
-> +        power-domains = <&pd IMX_SC_R_LVDS_0>;
-> +    };
+> +	pm_runtime_enable(dev);
+> +
+> +	ret = mixel_lvds_phy_reset(dev);
+> +	if (ret) {
+> +		dev_err(dev, "failed to do POR reset: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	for (i = 0; i < PHY_NUM; i++) {
+> +		lvds_phy = devm_kzalloc(dev, sizeof(*lvds_phy), GFP_KERNEL);
+> +		if (!lvds_phy) {
+> +			ret = -ENOMEM;
+> +			goto err;
+> +		}
+> +
+> +		phy = devm_phy_create(dev, NULL, &mixel_lvds_phy_ops);
+> +		if (IS_ERR(phy)) {
+> +			ret = PTR_ERR(phy);
+> +			dev_err(dev, "failed to create PHY for channel%d: %d\n",
+> +				i, ret);
+> +			goto err;
+> +		}
+> +
+> +		lvds_phy->phy = phy;
+> +		lvds_phy->id = i;
+> +		priv->phys[i] = lvds_phy;
+> +
+> +		phy_set_drvdata(phy, lvds_phy);
+> +	}
+> +
+> +	phy_provider = devm_of_phy_provider_register(dev, mixel_lvds_phy_xlate);
+> +	if (IS_ERR(phy_provider)) {
+> +		ret = PTR_ERR(phy_provider);
+> +		dev_err(dev, "failed to register PHY provider: %d\n", ret);
+> +		goto err;
+> +	}
+> +
+> +	return 0;
+> +err:
+> +	pm_runtime_disable(dev);
+> +
+> +	return ret;
+> +}
+> +
+> +static int mixel_lvds_phy_remove(struct platform_device *pdev)
+> +{
+> +	pm_runtime_disable(&pdev->dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static int __maybe_unused mixel_lvds_phy_runtime_suspend(struct device *dev)
+> +{
+> +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(dev);
+> +
+> +	/* power down */
+> +	mutex_lock(&priv->lock);
+> +	regmap_write(priv->regmap, PHY_CTRL + REG_SET, PD);
+> +	mutex_unlock(&priv->lock);
+> +
+> +	dev_dbg(dev, "runtime suspended\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static int __maybe_unused mixel_lvds_phy_runtime_resume(struct device *dev)
+> +{
+> +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(dev);
+> +
+> +	/* power up + control initialization */
+> +	mutex_lock(&priv->lock);
+> +	regmap_update_bits(priv->regmap, PHY_CTRL,
+> +			   CTRL_INIT_MASK | PD, CTRL_INIT_VAL);
+> +	mutex_unlock(&priv->lock);
+> +
+> +	dev_dbg(dev, "runtime resumed\n");
+
+No such debug messages.
 
 
 Best regards,
