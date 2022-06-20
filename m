@@ -4,134 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D659C43334
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jun 2022 03:08:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA966C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jun 2022 03:44:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lRzlFktMuhdaJ6hvEsFLL96/OVQp1/hvmcsEnw96PWY=; b=j3n7P+9hxPdQ5P
-	W/ZBRIPj6DUIlzt6sw6wQCY9mCvcDqI2489/c6cYAfCbR2a52gxIkIBPOuvmnJxT+3uBSmmnllOmA
-	dhR/D1J9bqA29O2g1Ws6aCX6M8OpGIkO8Nqw0833NrVkWS1Us8ue9ol8G2T2mKXhpRbxlEbjCKSNz
-	rWpQilMd/LFrBZdAA0b2rSGtYRm5pbNjNYD/g0srT62RET/gqW6DxpA+5dMQn6vWYnq3GuGZwsR80
-	RSr5MM4oktSv4+LX1s2b1wlCUobIqGHT5jY7tlwzi0MhMjvFfFRrNDjOsHGKBmrzMsklEF9C2CBvX
-	rr/kodLC3ypHgVlEdYWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QCM1lndPNnIomCOG25mePp7TAJp7buB6bQQu89E+TO8=; b=vCFnHL8DmZ98Ie
+	Z3lXhNW9Oq4W/7GluzDKe5qZbNR62wci5otCpyXlnYA+C1zXg1EGJTDA2ZQuCsGm94JWfY4C+ravf
+	j7nxx/hlajzcM2BoXZAkfpZKQLMHbkqYgAyfuRJoNMiOcnj9ESRkZQ52F8ui5AZr4Ku7dJ1AzKcMK
+	wPFEYT1f/Lx/oY5HQo2f75E3ksksYoe5w3l1JUqcxhH7u44YRiNFfhPPe/LqvCivsL0zoNb9LKJnX
+	RXH89CcyVzD/NN3TfOVhBFo7xfJ9BrSnEvV7tPD30fcHBg7DIDaMcOnqDl5LtRVboLEOJgVcFR7SW
+	qa7jdJTHrr7T/1VnmFJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o37m7-00Fvhf-Up; Mon, 20 Jun 2022 03:08:27 +0000
-Received: from mail-he1eur04on0619.outbound.protection.outlook.com ([2a01:111:f400:fe0d::619] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1o38LO-00G19Q-02; Mon, 20 Jun 2022 03:44:54 +0000
+Received: from mail-am6eur05on20626.outbound.protection.outlook.com ([2a01:111:f400:7e1b::626] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o37m5-00FvgH-G0; Mon, 20 Jun 2022 03:08:27 +0000
+	id 1o38Kk-00G0jL-VL; Mon, 20 Jun 2022 03:44:16 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=U/KqbsqU16X9m9Q2pPcfAHBs1OPSt9JOlqWbUR0y2pdXyI+MLOMjC8U1QsnZ8vAkDbd6KwwLGbeHvlYgMtD6gO4lw9mxypJpc42MN8kQIFtI61t/6g8Bw4E4TO8SRWqmGkmrq9nXisfA7+JwWpf+BBgzePeD3ZrWGZweDUCqHJNEkEwiAkq3BOPS9P6oDmLmct1XdyIqLUqd8V9Dv53cZWtf45u6eaJFZ+9Xq+kFN/0a9Tqpuq6xIhhh+Iu4Z/GW8OFV9po9o5chBbFMTFw5HQ1K/h3QZCtJWL/RrVQ/p7GBrzwOxZqw01xKWd3xlXLQec7uo7k+5Z5JEBN8Et3DQg==
+ b=czlAYbO9eJhyLqar+5zpM39u07BT6p67rZ1lDMKYI5h8BcLOOHaMORh44K3U6uRsD/vrlb9V0BqmxmP6kM/luUxC5Aa3bUR5R+xvZK0EZW7YD44yC3v96xTrJY2wBP0ouL6XosHkKyJ1JvnyfHkL5krzlGyOymZCffqBgBjppuYNiyiHT3NzwsWB/DY1fr3QuxeNO4QdypC7hZKW+y/SOXjkKQ+6f1pOEKm7Kv4/jNJStSfQb9ZrmNZmMiX8TMK/jtZiRGr6qKMCMfSvpMxsNJa2vlK5t9SZq4NY2gHLImOslZmya08zEcn4HJErusyV/0fY6Od/HLbmbqLIr38wmg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=25mMPcScMgkUJtAJgIbBofSUyiw5mC5wIaV6BCT+eLw=;
- b=VA6Ip4gKIaVX7gaCfzlIXaOZepnDX3LHgUa33JWZKRssv9TcyVRopFGqbPfILiXobXXl613niA3SFUoNlO/Y1F+yCb8HxDqBHtdcx1T5t0T4+9o8R8mSgPYDvy78aQ7Hx3pgFl8DwHdy4olApX9SM1M23bD1G1gxuzQXswLYWlSySmSCyOH+hQnGld30FiefzY4u+R1iTyq0ZgKB0CEt5gc2BAjF/Y//hGhwgPdhm4c3q+W6HTkC0qOzG5oXjEcojI2W2eGxSmCDvp1L5sLAE/1W+xAVgvaymSUuQXVtVwIGWqnhefhmplTTJjw8BjOU5gU3VspSk7+0nog7D1x3EA==
+ bh=yizgp67pNldag0XQAD19mh7rryGfiSb3vJKiopj3hEg=;
+ b=nfmLzJxmobLTsp6TH+PX0ndtxyiD/B0Q1yibKPyd8EpuF0tnJvmWVHYlOxsOw/zCkW+P6cyXBNfC7H9nRamBFc6HFctWbT/iVnmRvDf/Z+Y0pWJN8tnLFE20AuvJ8VV7xb9bYflsjV2NCertpDiD5s2c9QmEwxvLulDCWVzzhFK19iCYK5Lk6GJ2mJt6D5f9+PsyUg2GYf39hkYfD7bN2StsAn/sZZXuB/IA/Lu/ig/XgSHLaPJpfv+th3gZzlcRfM9nBBc6R0HI7Jo3054CgNVMsGNieDScnS86WJsaPtd7tLb6kMkP5QWGi9L/0onWkwdXBK5RVR2zTFmvzCmiMg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=25mMPcScMgkUJtAJgIbBofSUyiw5mC5wIaV6BCT+eLw=;
- b=X/shV83jyC9GTpmFB0hTXSm1v5/3Vgil3sBDMm7215cfxk25eIwRfPgkxK64n1i5i5xQiBj9V06UAYPVLqzGUq0Ygj/fIq1YlLodIlI8QSiwi/oZRiqdtTcJjkkm1Eu4esvPeaxotlg4AnP+vIsknLt5cQxOhy8RiD/x37lNQgc=
+ bh=yizgp67pNldag0XQAD19mh7rryGfiSb3vJKiopj3hEg=;
+ b=o9Gv0VflWg7osDlH6Lt5aHElR2lFd8v2oJoMd5o7fBPlHvLvU0agagGRldRhTjUIfAYO2fFdvEIoUw0CRzYn2Eir5kmAxfkdRbMa4XQHIy2x1UVwPvnVoTJjXRTQlPBCjbnBRYOVSSHqlzK83vjKXoqvyGalcBQYT717UJmp9Uw=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
- by HE1PR0401MB2602.eurprd04.prod.outlook.com (2603:10a6:3:84::20) with
+ by AM6PR04MB4664.eurprd04.prod.outlook.com (2603:10a6:20b:25::23) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5353.20; Mon, 20 Jun
- 2022 03:08:22 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5353.21; Mon, 20 Jun
+ 2022 03:44:11 +0000
 Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
  ([fe80::3c82:f63b:711a:502]) by AM7PR04MB7046.eurprd04.prod.outlook.com
  ([fe80::3c82:f63b:711a:502%6]) with mapi id 15.20.5353.021; Mon, 20 Jun 2022
- 03:08:22 +0000
-Message-ID: <7bbc3b55928a579413d87becacb26c444e2c3450.camel@nxp.com>
-Subject: Re: [PATCH 2/2] phy: freescale: Add i.MX8qm Mixel LVDS PHY support
+ 03:44:11 +0000
 From: Liu Ying <victor.liu@nxp.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, 
- krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de,  kernel@pengutronix.de, festevam@gmail.com,
- linux-imx@nxp.com
-Date: Mon, 20 Jun 2022 11:08:13 +0800
-In-Reply-To: <8a1d7575-1334-e5ab-5228-f75ae67a3d13@linaro.org>
-References: <20220618092201.3837791-1-victor.liu@nxp.com>
-	 <20220618092201.3837791-3-victor.liu@nxp.com>
-	 <8a1d7575-1334-e5ab-5228-f75ae67a3d13@linaro.org>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-X-ClientProxiedBy: SG2PR02CA0027.apcprd02.prod.outlook.com
- (2603:1096:3:18::15) To AM7PR04MB7046.eurprd04.prod.outlook.com
+To: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: kishon@ti.com,
+	vkoul@kernel.org,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	linux-imx@nxp.com,
+	krzysztof.kozlowski@linaro.org
+Subject: [PATCH v2 0/3] phy: freescale: Add i.MX8qm Mixel LVDS PHY support
+Date: Mon, 20 Jun 2022 11:45:30 +0800
+Message-Id: <20220620034533.4108170-1-victor.liu@nxp.com>
+X-Mailer: git-send-email 2.25.1
+X-ClientProxiedBy: SI2PR02CA0049.apcprd02.prod.outlook.com
+ (2603:1096:4:196::7) To AM7PR04MB7046.eurprd04.prod.outlook.com
  (2603:10a6:20b:113::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: cac65d8c-e7cd-4be4-0449-08da526a2220
-X-MS-TrafficTypeDiagnostic: HE1PR0401MB2602:EE_
-X-Microsoft-Antispam-PRVS: 	<HE1PR0401MB2602BC675CAEA91815F01D2F98B09@HE1PR0401MB2602.eurprd04.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: abf9cbbe-9024-4b80-46c7-08da526f2342
+X-MS-TrafficTypeDiagnostic: AM6PR04MB4664:EE_
+X-Microsoft-Antispam-PRVS: 	<AM6PR04MB4664A6B2CD13242E374AEF6598B09@AM6PR04MB4664.eurprd04.prod.outlook.com>
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	1Y0AyPV5YScRxJRVyeldJrd4gX/VguIblD7MdWQWu2+FnEtSWqGMiZcecyswZ7wz++NiD65m8PGNLwV90wwsmtmqNEarDQIreUpY8cngHmARe1GYbk23KDpeoebsCLhylT3GCnB+iC3TMG/UMHlQM3nqmJeY03awof6bC+P9jtcayOj+cGu67jk95i18q0Ky1/4cLMX1asop/wFCgGzaP9kjjTAkNm8W50WItiKdeRUxjP0bsRQd+zvDHixNKQV1UHlerT+/rEJCLrnhG/IIXpLlDJAQzYvHAL8M0qUGhUoaC+TyamwkOL33SBMMAkpbqSCRU5N9OVnD8CCeJlbf8HLb3G48MNRDtPO2Gn3EkEKUoPVH0qaewQbj4NDARITmKp0CpBbTZQ1/zrOPaKJYhzl00HZE/gO8XmXi1p68SKREqncxL0YtxQKILpYFZKGmx7W73Pvo+KTuKNll2yC6KhMXsZDPPA60fzNdwmaz0Z/KrbAMcV6qzEYAfNqL25Raby1F1qCBbXHexAPwZ5k8VFKvxwFhic+scwQSB1WHjjKJkv5p293O/zBl3rn7Xha0Uqt9K1P7/W5rF8jzRWQN0zPYDOrTJtaI2K5SGkD2A6LhMpqDDvxr8VTTkCO8l/eb58wBKFnSPKUr/tvjgipiLbg8Dh0rxS9FmrIoqdIF3jGeeJjQpssCeA6KweFKTwC1hBEP5P7dyCKZlczUnO8mBhYgre4WGxgoJzVMnR4TBiZsUr/EycV5JjVDSLq6bZg9PWz240ZUPw3gZROXeMmYgM1mPcy1qeLbkluuuARvEiNouOX7RH3rbjR1Me92cS6s
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(396003)(136003)(346002)(366004)(376002)(39860400002)(4326008)(316002)(66946007)(36756003)(26005)(2616005)(7416002)(45080400002)(5660300002)(186003)(41300700001)(8676002)(83380400001)(6512007)(86362001)(52116002)(53546011)(478600001)(8936002)(38350700002)(6486002)(966005)(66476007)(2906002)(66556008)(38100700002)(6666004)(6506007)(99106002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	oVXKu3wkILYdmlQvzr+pg6HZMajjEhW3AjZHMbh56nc3T/xTB+Cwj035+DUkdCbESmyGNurGc8zXRori76BYSJe4YTw2tvSQR63/tiN1zmhfvTmHdQlN8T1cG4Ffr2lu1+1g/EwprbvlTsWSnjr5BhrLIR5uFpk0DnNhCU+SFT+edF+8af5hJ5yvojUnU+LlUKbUb1A7l+/bJtjG/EDjKbqlJ2VM1LEnZFGCZfc2CL1I8Tid/BFw9IdRfd6+mGnE4yj+fbZIqJ2n+4FvGWTbJPP+Ya586O0YEMYkyCzYP9G9P3FEPKjyhDJyCX/VzysQKo4lo6VpT8g6aPSpWgu9g0IaqL79bKvHWrYFx5SYceHtMCbCyqBHBB9PrVaoxPFmhJ7sRlYzY79Ck1PD8b7BqrcCed4BoI0WniPtjMHt5PXWCECB+KjoXdTO6gSA7ZkRerxZEq9wQTHq6muFAnuSHBfcNYEUHd+3D/7KSeDpwg8w8cLz44IxPRmYXLmfwHpC/dBk1d9iXDaiZLyBnwL+pWQiNi5QtmyGP/XIygnaSLz4OtTZ96IME5hB0B+ktnKUCplLcWmQmL/Z6AOFHt41ciKeKD547KZZD6sF6wU+YRPLbMnI9K2M9FHgH7mDRgC7P1Gk+0EJe30qVtjdxEK0o9arNCztJTxEfBt1WpTWeYQ3rVqJ6b0d2HFVcP2Ju5oYPpJCVxXYxvb99jCCKd4AEQ==
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(376002)(346002)(136003)(39860400002)(396003)(366004)(83380400001)(66476007)(66946007)(6486002)(8676002)(4326008)(316002)(478600001)(66556008)(86362001)(186003)(2616005)(6506007)(52116002)(1076003)(6512007)(6666004)(38350700002)(26005)(38100700002)(7416002)(5660300002)(2906002)(8936002)(36756003)(41300700001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?VGlvN2JqR3huYmNtYnhzcTlkY0U2N1R6dkgwMEEwaE9CMDZNenFIRy96MkFH?=
- =?utf-8?B?a1pjR2E3cG5BenBmZ2tRQjdWd2RnaFFDUTVvSTlPUktwSmFlWVJZakx1VlVP?=
- =?utf-8?B?K0x0Y3IraVlQbEZBVUk1MGtwOWZ6N3NaenNyN0k2THdiV01rVUg2TStFQzNQ?=
- =?utf-8?B?dStUN1U5OWFnWUpYczd6VXZPRmJMNm42TVFDdjBBc2dOTDRKYzBPemg4VytW?=
- =?utf-8?B?cWROeHBRdkg0VjBsenNZYUVJV294dEYzMzdxQWp1bXJwaDNla1ZNSFZ2UStC?=
- =?utf-8?B?ckkwb0JsY21UNm0rMG04c2dPcTMzSE5RQ21mVGhRdVp0SUZJZk1waUZOekUw?=
- =?utf-8?B?RDhYZ0tiY05rZlpTdUUzb2FwNWVNZmM2ZEJvUnZ3LytGNGFmUXFxYmRSalov?=
- =?utf-8?B?MUVOQWFlNzFBMlBsTlI4dkVnMXp1U2hQejA1MWJ4Zk1Objd6VFRZcU9KZTdy?=
- =?utf-8?B?SGgyZEY0aHg3SXBEdHhyUDRrenFIK2hvV0ZWYlhGbkt1V2dndEp1MjlDbm9q?=
- =?utf-8?B?aXpsUGFRS1JFQy9MK2hkZ2tOMU01MVZheURMUzRqbkhmL3hBTzFxdUNUWWc0?=
- =?utf-8?B?MVBzdUpiSFJiMnFHMWFGUzc0d0FaYzREVDN0RmtUakZWYVBTQ01UR1ZhTVhm?=
- =?utf-8?B?b3crNG9PcEliejVCUGkzdlYvZnRjVDFxZEpMME5TTnNlMUJsTVdOWmhMZFNx?=
- =?utf-8?B?bExNL2tycjBSVWt6MDVyNHZma1RIN3hmT0Q5UW1tQkdDTFFyYUh4NEdkQmxx?=
- =?utf-8?B?ZDN5NHYwd0ZScEJSSVd0QUhFZ25jNllQV0l2cFJIUGFyOHJNZzlvOHZoNHd6?=
- =?utf-8?B?L3U1N3duRnpFNVhmMHQxdmd2dmIrYjZtUisrcWNybm1tOW9jNVFnRkNZMkFr?=
- =?utf-8?B?UnZRZ3A3VHRFaG96cGEwQzlDV25Ia2cyQVNjY1A5NGJTemt5ZVFqL2s2cEMx?=
- =?utf-8?B?MVVRY3c5L0pFaEdaNFkvcHdRVVRXRFREL0FCKzFOYmxjWVlKQVZkUDBpT00v?=
- =?utf-8?B?YmZjWVNINWZxa2FUMndETEJKdjN4OHVkOHY2dFpYMDROTEY1L1ZaQk5yUEJL?=
- =?utf-8?B?V0x3V2RqRlQ3RkRvdUhZOG9DY2phcUlmeUdRdENVSmZxYzVvTUNza01XRGhI?=
- =?utf-8?B?YlR4Qkh0MGxZWFhIRHpiemJPQ2FZUHpaR2p2bFZUUU5MbEJ2M0RsWFcvUHIv?=
- =?utf-8?B?Y0xOVjIxd2JxWHZ5T2JjT3ZrWkgyUkRTVXgrZ25oU0xPWkpSOWFIQ2dQZllw?=
- =?utf-8?B?eVVzTEJwSVF1TEVjbU02VTZ3dy9MSlJXNmtJeFBON3VrejBOMkRhMXFCelBL?=
- =?utf-8?B?UkQwdnhvYzRIYVEvc3A0NkdYRVBSSGxGR1ZROVh4cXhueU5tcjZLNDZoSFNT?=
- =?utf-8?B?Q3JjSDV5a2cwMzBYL3JyOXh1ZGQ5WWY2TG1WVEd5SjJTT2JDaTZtdG9PQWhQ?=
- =?utf-8?B?bVl1WlVZbHBEZ3VXMHRObkI3bndsblprcTdRUFNoR3hWWjA4VHRvY3RibG81?=
- =?utf-8?B?UG81WlI1YnR4dVhrMHJNVk1qeUxISm1rZWh1b0svb0RhbUtSUlFpaFF5TDIr?=
- =?utf-8?B?VGdCTHM5N1hvcGRVU0tRUnJBVXRRV0FBTTlNcmNmWGdwOWJwRDdtbktiY0V1?=
- =?utf-8?B?cnhWUnp6SVJrRjdVUnBCUk40eVQrQzNKQ2MvMmx5TUVudk9rbU1seU4weWZF?=
- =?utf-8?B?bUdybGxHN29OR2N6bngzWm5ZZFMwaWhWVzVyRDBPQ2ZyRmIzSnFTcVFzZDk4?=
- =?utf-8?B?WGVLNDl0bk5UWmdXbHNHak5LUkh6ZmZxWnlPZmcxbnFqelVOdGJHZ25WcFV2?=
- =?utf-8?B?dDNIa2NxRXNlaXJ3QUoxV2lOZUFVMDFMTS9hTXZrQTRPWFRYRWQxajl2YjFI?=
- =?utf-8?B?VDZuNWJqNzh2YVErQkx3cU1yM2lKVFVybGVGYkVMZ0RQMEZKZHZFRlp1Umlo?=
- =?utf-8?B?VlRXVGxNT0Z6djZrZ0wvcFVFcWtQQXczVHFJSGZSRjArNHJ2U29KbFpkSEpE?=
- =?utf-8?B?Si96UjFsaWdMY1UvUjJETzg3czNYcEVtKzNKK3FZMXpIOTFadzN3MjBzalZ4?=
- =?utf-8?B?NWNYTGhNelk1bVFnZWg5SE9aWjF6eGlWT1ZsdDlaMW1kSGY2cWFnZm1hYmlQ?=
- =?utf-8?B?U2xyM1pKWmtWb2hMc3VIa1VlSm5HdUtvS01uTXpMdHpPcVNZWlJvaEFGcEU1?=
- =?utf-8?B?bWJURktkTUVybXFLdS84NWNvZ2V0aEJTNnNBNFNlMWFNRDhzb09JUGtmWFlI?=
- =?utf-8?B?Q1BzTUdqQ1VQeDlseGdLUUxZMHRFWnNFY3RmTERla1NkeFBHa1N4RERaQUZn?=
- =?utf-8?B?NWVIdHpHc1h2S3liWVRWOG5aZGIxNU9uZ1h0QlJjZWIyVEhxS05nQT09?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?X4mOQjAtC9p2YDklEzlk8at5saTRI8qvz3ibmqzeQxuXfmw93qTZ4pPWYebj?=
+ =?us-ascii?Q?4LwzINIWTGV5Mddc03zMp56ajIMpvG4oF541v6VgRUEIbZkkpx7cc4FXaeIL?=
+ =?us-ascii?Q?PXJoDddN1gYH4HKwG+6e9GpJxeBQoEEg/gZO72R8+XZ/PpXqa+YPtLATp6jh?=
+ =?us-ascii?Q?nCDPv3VSCLEK8OIbplDQiiW7GT5n/NQouJ9jsYqahSTeoKjF1UOjAbJ4iTay?=
+ =?us-ascii?Q?UM+Ze83i42R3XCezO2boESxoColNyRamhmVykRpn/rRxKBEsGFt2pkzLM7Pa?=
+ =?us-ascii?Q?omWGXyLEwcMwQJSPNeE+JRgfb7Sw19L9Xtj2d2x9qmfPJMzYLGX0TFx9LhqA?=
+ =?us-ascii?Q?BKBPcIocBaoeVkkI0u4tUiWe2VXD3fHwNVGyigOBEiIpnFbNEWupiUnUr0gV?=
+ =?us-ascii?Q?e6CaDP+NWocMvSWqY4v9NnVf2/LOhx7IsFJwyKmBS1vpUoaF4rTDK4Npg1Dw?=
+ =?us-ascii?Q?dLaCwSALLTFKJ2HYEkY6I0P9H4omwJQFHtz0iAA1uZKIBhmjiZGJvzpuyksf?=
+ =?us-ascii?Q?wEV6SaWMy8d40Us0gVqGdB8bfP00WncPgesdl+B3dwzPr9xbwv+ATyS1ZoUH?=
+ =?us-ascii?Q?qGS6jI5Q3kxxS3a6lg48GRT9d42vSYx5xxRVAlevTzlWg56LfqTxpUQ9a05G?=
+ =?us-ascii?Q?fqXJWQtik0A/Ck8R9t51O5vkRfiUN69uOZvwdL1a3nalqRLVHYaaLrv0yK85?=
+ =?us-ascii?Q?ji5E85m/yWj4EK7ThFrPNFltuCpI+QXDlfP3C4DLPFJrFprktkg9iBT768sF?=
+ =?us-ascii?Q?T1RENXORy5McSCwTN2jPHVLwiBYW20r+Ee027zvIM9afE4poFA6mrwVKumLL?=
+ =?us-ascii?Q?lGKQQd7KOXZNsa17SyrMeX8p/9piKdmDS6B//pzVfnaK8jqejHQJUBPEe7Eb?=
+ =?us-ascii?Q?NxOCX3AedIPj2wCd73Lk/vSJ3fiTxe4zzNOk0PF70EGj48vfYZEHk950rbDZ?=
+ =?us-ascii?Q?wjcj3wE7664uAxC5xPxGqO5VEQ88zicNlTRIfsq/Tm585Ae/of62qWvT13BG?=
+ =?us-ascii?Q?w6OvBZzSalU8mz7p25i4Dv7DWFG5iba1EL6h8HUN2PKXZHIRKyBAqFZS8cMh?=
+ =?us-ascii?Q?i+iYaTlcx0WwldQwbF2y5Z9XRWPBss2YQtwKnAjPuHt5IdDh7Wy0Ff7N7bKc?=
+ =?us-ascii?Q?eNtW8rR0RS7pIVQT/K3PjZdcMspCtxWP9BRbLOidRnNe8yuVTb5luBWtvXz4?=
+ =?us-ascii?Q?XK1WFfUeHXT1WiWNRWhsTY7aNWyDqbmn6iDVrfdknNu/Wsx68MjeoBMjazAV?=
+ =?us-ascii?Q?ADWF32nmoXfzpBaY1dKuoF6PbAb18YRuMPk/IxSKdTuCZMfxgg2v7KWbrytP?=
+ =?us-ascii?Q?0qDIdrkVE/Wd+RgJuruaX0EYfh+avv3o1Af0vlSCAsnSurSR5nkOTV6o5LjB?=
+ =?us-ascii?Q?9iwd2yJUkYWBy26yugLl0UZDQP+iG7BzQYrNkKFGwga9h71Bh/c/om1Ih2SD?=
+ =?us-ascii?Q?XnpPyGZ8cupfM6JMT1SWAQAMdgc7EBp65h3YreZZxtMJTGgfXRymbtAsCldU?=
+ =?us-ascii?Q?u4mIWjpLy/RH66heyLTTkdeewLMWgo1yFsPtd3GWQx3woTPmdhidbqI4T6m+?=
+ =?us-ascii?Q?0lcDzHYEXhz0f9sBaNmoIhY0kAL0R2IRFXVgurFyGZMOICokt9peRDSob2y3?=
+ =?us-ascii?Q?iHJRRvFOhI6qsA+fdr1XZnGqq9RVAK1FF3XmePLsg2PZ4XF9eSGP/QXKE07f?=
+ =?us-ascii?Q?Ra3CcG1XwuEQR+mJDGNxcmuNjg3KglfZhIAxpfgrbYXtuNNZk92n1Fkgo5kw?=
+ =?us-ascii?Q?cfwM+hAtPg=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cac65d8c-e7cd-4be4-0449-08da526a2220
+X-MS-Exchange-CrossTenant-Network-Message-Id: abf9cbbe-9024-4b80-46c7-08da526f2342
 X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jun 2022 03:08:21.9818
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jun 2022 03:44:11.4614
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: fhnI1hX6nBP1fNu7mGL1mDDuAQbR11/YYZD1upzftEo0HIfQJ9AVgKbqDbZndKR25qJfCEQXi+7bP02QgdF8/Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0401MB2602
+X-MS-Exchange-CrossTenant-UserPrincipalName: cw54ItY04PdMjC7JUKj1uC1fDZVBGgkrQsoN1+ABxn1EMHpmWM9BtJixwP8448R1xHreQadupOD8j86Vb6ZBVg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4664
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220619_200825_589932_BAD4359B 
-X-CRM114-Status: GOOD (  20.01  )
+X-CRM114-CacheID: sfid-20220619_204415_052430_56027D84 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,166 +143,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 2022-06-19 at 14:15 +0200, Krzysztof Kozlowski wrote:
-> On 18/06/2022 11:22, Liu Ying wrote:
-> > This patch adds Freescale i.MX8qm LVDS PHY support.
-> 
-> 
-> Don't use "This patch".
+Hi,
 
-Fair enough. Won't use it.
+This series aims to add Freescale i.MX8qm LVDS PHY driver and dt-binding
+support.
 
-> 
-https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Felixir.bootlin.com%2Flinux%2Fv5.17.1%2Fsource%2FDocumentation%2Fprocess%2Fsubmitting-patches.rst%23L95&amp;data=05%7C01%7Cvictor.liu%40nxp.com%7C82050bf711fb4a8eb28108da51ed5912%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637912377082315453%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=nloK3581LSb7%2BUF%2FTMR4b5J4GYRw4SKKRfK%2FRfP3UrM%3D&amp;reserved=0
-> 
-> > The PHY IP is from Mixel, Inc.
-> > 
-> > Signed-off-by: Liu Ying <victor.liu@nxp.com>
-> 
-> 
-> 
-> > +static int mixel_lvds_phy_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct phy_provider *phy_provider;
-> > +	struct mixel_lvds_phy_priv *priv;
-> > +	struct mixel_lvds_phy *lvds_phy;
-> > +	struct phy *phy;
-> > +	int i;
-> > +	int ret;
-> > +
-> > +	if (!dev->of_node)
-> > +		return -ENODEV;
-> > +
-> > +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> > +	if (!priv)
-> > +		return -ENOMEM;
-> > +
-> > +	priv->regmap = syscon_node_to_regmap(dev->of_node->parent);
-> > +	if (IS_ERR(priv->regmap)) {
-> > +		ret = PTR_ERR(priv->regmap);
-> > +		dev_err_probe(dev, ret, "failed to get regmap\n");
-> > +		return ret;
-> 
-> All such calls are one-liners.
+The PHY IP is from Mixel, Inc.
+The PHY IP supports two LVDS PHYs, thus two LVDS channels.
 
-Will do.
+Each LVDS PHY may work by itself to support a LVDS display device.
 
-> 
-> > +	}
-> > +
-> > +	priv->phy_ref_clk = devm_clk_get(dev, "phy_ref");
-> > +	if (IS_ERR(priv->phy_ref_clk)) {
-> > +		ret = PTR_ERR(priv->phy_ref_clk);
-> > +		dev_err_probe(dev, ret, "failed to get PHY reference
-> > clock\n");
-> > +		return ret;
-> 
-> Again, one line instead of three.
+When two LVDS PHYs are enabled simultaneously, PHY configurations and reference
+clock rate have to be the same since there is only one set of PHY registers.
+In this case, the two LVDS PHYs are usually used to support a dual LVDS link
+display device, one as master PHY and the other as slave PHY.
 
-Will do.
+Patch 1/3 adds vendor prefix for the PHY IP vendor 'Mixel, Inc.'.
+Patch 2/3 adds dt-binding for the PHY IP.
+Patch 3/3 adds PHY driver support.
 
-> 
-> > +	}
-> > +
-> > +	mutex_init(&priv->lock);
-> > +
-> > +	dev_set_drvdata(dev, priv);
-> > +
-> > +	pm_runtime_enable(dev);
-> > +
-> > +	ret = mixel_lvds_phy_reset(dev);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to do POR reset: %d\n", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	for (i = 0; i < PHY_NUM; i++) {
-> > +		lvds_phy = devm_kzalloc(dev, sizeof(*lvds_phy),
-> > GFP_KERNEL);
-> > +		if (!lvds_phy) {
-> > +			ret = -ENOMEM;
-> > +			goto err;
-> > +		}
-> > +
-> > +		phy = devm_phy_create(dev, NULL, &mixel_lvds_phy_ops);
-> > +		if (IS_ERR(phy)) {
-> > +			ret = PTR_ERR(phy);
-> > +			dev_err(dev, "failed to create PHY for
-> > channel%d: %d\n",
-> > +				i, ret);
-> > +			goto err;
-> > +		}
-> > +
-> > +		lvds_phy->phy = phy;
-> > +		lvds_phy->id = i;
-> > +		priv->phys[i] = lvds_phy;
-> > +
-> > +		phy_set_drvdata(phy, lvds_phy);
-> > +	}
-> > +
-> > +	phy_provider = devm_of_phy_provider_register(dev,
-> > mixel_lvds_phy_xlate);
-> > +	if (IS_ERR(phy_provider)) {
-> > +		ret = PTR_ERR(phy_provider);
-> > +		dev_err(dev, "failed to register PHY provider: %d\n",
-> > ret);
-> > +		goto err;
-> > +	}
-> > +
-> > +	return 0;
-> > +err:
-> > +	pm_runtime_disable(dev);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int mixel_lvds_phy_remove(struct platform_device *pdev)
-> > +{
-> > +	pm_runtime_disable(&pdev->dev);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int __maybe_unused mixel_lvds_phy_runtime_suspend(struct
-> > device *dev)
-> > +{
-> > +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(dev);
-> > +
-> > +	/* power down */
-> > +	mutex_lock(&priv->lock);
-> > +	regmap_write(priv->regmap, PHY_CTRL + REG_SET, PD);
-> > +	mutex_unlock(&priv->lock);
-> > +
-> > +	dev_dbg(dev, "runtime suspended\n");
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int __maybe_unused mixel_lvds_phy_runtime_resume(struct
-> > device *dev)
-> > +{
-> > +	struct mixel_lvds_phy_priv *priv = dev_get_drvdata(dev);
-> > +
-> > +	/* power up + control initialization */
-> > +	mutex_lock(&priv->lock);
-> > +	regmap_update_bits(priv->regmap, PHY_CTRL,
-> > +			   CTRL_INIT_MASK | PD, CTRL_INIT_VAL);
-> > +	mutex_unlock(&priv->lock);
-> > +
-> > +	dev_dbg(dev, "runtime resumed\n");
-> 
-> No such debug messages.
+v1->v2:
+* Document vendor prefix for the PHY IP vendor 'Mixel, Inc.'. (Krzysztof)
+* Set fsl,imx8qm-lvds-phy' and 'mixel,lvds-phy' as compatible's enum. (Krzysztof)
+* Skip 'clock-names' property. (Krzysztof)
+* Drop 'This patch' from commit messages. (Krzysztof)
+* Make dev_err_probe() function calls as one-liners. (Krzysztof)
+* Drop unnecessary debug messages. (Krzysztof)
 
-Will remove the debug messages.
+Liu Ying (3):
+  dt-bindings: vendor-prefixes: Add prefix for Mixel, Inc.
+  dt-bindings: phy: Add Freescale i.MX8qm Mixel LVDS PHY binding
+  phy: freescale: Add i.MX8qm Mixel LVDS PHY support
 
-Thanks,
-Liu Ying
+ .../bindings/phy/mixel,lvds-phy.yaml          |  61 +++
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ drivers/phy/freescale/Kconfig                 |   9 +
+ drivers/phy/freescale/Makefile                |   1 +
+ .../phy/freescale/phy-fsl-imx8qm-lvds-phy.c   | 440 ++++++++++++++++++
+ 5 files changed, 513 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml
+ create mode 100644 drivers/phy/freescale/phy-fsl-imx8qm-lvds-phy.c
 
-> 
-> 
-> Best regards,
-> Krzysztof
+-- 
+2.25.1
 
 
 -- 
