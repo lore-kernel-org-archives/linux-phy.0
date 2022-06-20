@@ -4,88 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19FDCC433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jun 2022 10:54:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 975F8C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jun 2022 12:08:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T0o9tk6nhQiHK/M70HG98hC+qdTxT+paO70kzp6iRKE=; b=BjCScak8T7UaiG
-	O/s8LIs0k4+YszySULrSB6HkhlYQCKQCsl5OSNBNI7hm+ZrXo3ync8V3rQxVdGcUDZM8LUYgUEaLu
-	VHQd0Uk9fNJaa1ipALmV3jex1ALRZuKirmgvaNIQil7YAUWpSqarfJfx4w69l8Vgldq4ONKd5vCWz
-	edMDQBKz5Yaygw94tnpeUFFzPFaeirMub6iTgGDhNGFoyRgJ9EYQmz6hLC5TJlrpXCbX4WmykU9PB
-	K5sg3AHPuh9sLliKUDMIlRinqZSn0T1wg6ocFC4/nVwGii0PG8d9DuN72Tur5gVo565aM0PSEubBI
-	0IV6+DtmmYXwTsCdwSYg==;
+	List-Owner; bh=b9hI0FLdtSJ4ApLf1iXjb7c2aHlmfZESwmWppmh1bVM=; b=Zz5by1Usbujc3d
+	BCuS83NLCc4cl9LbZ8yEldj/eYNQGG/brQj6mPHVoC1rq/lr3xa7YKfH+5mJkihhnlN2dM9mAt5uG
+	p9TzPQMSi7HvjO3YFrH6IKFmHcXfi5u/TX3KHmxSgsdx5a89lxpQx5Nv05BZU/wpyb2QZM4/TH3F6
+	o49WxLHs/W4ALHEt51QTJGvUkEKOOcHW6Fu+nBtHPYFWtY7V/5dic9JyRUZ4XN5GLftEmOSbpxePx
+	q4ONvMWMcfOd3kbDvtSrp/QvYq1uWl4nl1YxHNqrSGomlQOYWRwmvTcX/5kOQdiD2pzxTtKVu3l3K
+	BB/rRgDi9Z9PoYNQ+txQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3F2x-00HYEx-Gh; Mon, 20 Jun 2022 10:54:19 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1o3GD5-000HPI-Vl; Mon, 20 Jun 2022 12:08:52 +0000
+Received: from mail-am5eur03on0617.outbound.protection.outlook.com ([2a01:111:f400:fe08::617] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3F2l-00HYBk-AL
-	for linux-phy@lists.infradead.org; Mon, 20 Jun 2022 10:54:10 +0000
-Received: by mail-ej1-x635.google.com with SMTP id v1so20250400ejg.13
-        for <linux-phy@lists.infradead.org>; Mon, 20 Jun 2022 03:54:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=hp2WGbyJPQrcYBr/XiNMK7doTTxfiplTJX+MgBeSAjk=;
-        b=V8WuZTzz4RLhzrXaT34PRQdsAHlsY8b4gwm8fGjpLSJJOe6u3ktfPj/62DdTwHFl5k
-         ADcxTvmNnD5PRE859vDuFkAown69AnrqSYdG3xAbvnZcdTnmxqo+BTfqM4Ofn0Bt3pEV
-         ugXo2fWqMOsiBsbxbrLaa329Eh8tGnUKdjAO3gQo/QkW4djLKAsozmmt5uycJUUpeyv/
-         SMjSLyz+91sntPIx0jV9KxbA9rk+z1J9790XIkDErj89KiRqcR8XqRsSLTh7vdDc1SjM
-         3tugJYgoVw+PQMrWtRjy18m5Ej4ucOfMigWX7zhGB/ZWD355fhmECQKR4fyKO7uYSBnd
-         yjlw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=hp2WGbyJPQrcYBr/XiNMK7doTTxfiplTJX+MgBeSAjk=;
-        b=zMJQEBKN6aVxxxoroQC3VzeGC+h026rS6Z7O4qYHBoUvuTluqtVbCbtYp0GaWd0GA3
-         N4Zfz468mg0vUZUHZoSQ4qh1uuV9GtaeYUAY8m7NPVlWjFk6H3H248vc7LonlA8LwzzR
-         M0eOzILJJmNNrzEKuUv5VgU2DRfXdbnkFe7/SNMnDIreri/wr+39FU3hFCfEbES/OIxi
-         d97cC0NAJbTM3kFDhrPbzpP7i2CeWLetirUGbnRQjTaTH4khBMsN7mLv2/8riLbTVWAB
-         SOJ/RZ2m6DecGYkO94xSqRFBDEiURpumphkMFyfUY592urtmnkV2vO8+qFsYx2S3UyJY
-         oKPw==
-X-Gm-Message-State: AJIora9XE+Yu8kYQc+rdrCLJ4Hgmj2yoHaFBhNloyMgXHzBy5DyffZPv
-	uK0TRHiQvo9O17+xGevNOvcFgw==
-X-Google-Smtp-Source: AGRyM1vta/B1wtP+ozKz/g12g4uYiSh9+ViwTSAraXtw87o3jK9uGbeGbfea9n+cTO//cMif3CbwAQ==
-X-Received: by 2002:a17:907:6f07:b0:715:7e23:bbb7 with SMTP id sy7-20020a1709076f0700b007157e23bbb7mr19703837ejc.462.1655722444039;
-        Mon, 20 Jun 2022 03:54:04 -0700 (PDT)
-Received: from [192.168.0.209] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id y3-20020a056402358300b0042dc25fdf5bsm10214203edc.29.2022.06.20.03.54.02
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 20 Jun 2022 03:54:03 -0700 (PDT)
-Message-ID: <16684442-35d4-df51-d9f7-4de36d7cf6fd@linaro.org>
-Date: Mon, 20 Jun 2022 12:54:02 +0200
+	id 1o3GD2-000HJq-9h; Mon, 20 Jun 2022 12:08:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=WW0c89ae+2HgNk6ahWrts40hcQA674ryEY0nAP+p+3dcxEGJbrtW16gigc+NBiB78fyjLCQMv1obYw9+Ucf/H9q+T/MRRAMozOg3bb2wgorzibBAkciSPLBIzcuCgR+qGwwA80/sgf9yp73pv3eMZ4/yMyW0iWR3vPapASTOz+WXbRZj7Kuri+DzWDfMveKtijK+xWWM2sngCYO+kLEtK6hLR5YTG4GOrNpNyIJPoI5w3i6gFNXFa9UB1gTOf7hL74RIsvgamjW0MdqQOsDkBccrve+ueZSXrpirYnerRZib0xjH+nVe/9igTrFk98LLA3/EUYjy4zCNBYSSFnh3jQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=UAu12xdVxw+GOhi1bBmjZVoDtl3Gt5OuOWnKSVE7jHo=;
+ b=gJ/xB9ORX86B4y9vNX7PxLS6QEgmJ5fSRNnf2lmulhxAaI5ueRBbeHppKardtixwLX0RmiHEt2ey99X6hyqUBa5VCWcVaHRTqrn/cn7F1lFWuDYnMWHlaAqMMxpzf/v5nYW1pG8wGg21SW/W3hRr/gJUds8V85I6P4F3lsCN3kt4SdnY7FbxYnxJKaW1LtdjOS7qzWftCLzR8dHYzFFiwcDyYlB/dtvqrT1PwhA92BE0pUe8FRbAd/QcNP0idWZ4JYtCfKYVqmjVXORIkL5oPJYbKhrld1xYi4C3ze9hMPcW5x3jrw1T9aiTXGTfZHu68GuF4b8AQ2PokI0Hwrf1pA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UAu12xdVxw+GOhi1bBmjZVoDtl3Gt5OuOWnKSVE7jHo=;
+ b=BQVsaxyrNNJhm+8LoRsUjkqaOPUsg0TKQJtOQo+/HBdwsIs/oyUOU77R2SX+bMwGtDcgU4Zw9o9FpmVB5wAapWBiH98FwwOCXdMA+nlap1Gu7oZ2orIsSuAS8ysbVkxYeEJsPQdMCj3M6eDciIr4DPQqQiB+a7SVM1QzsOX+H1w=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by AM9PR04MB8399.eurprd04.prod.outlook.com (2603:10a6:20b:3e6::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5353.22; Mon, 20 Jun
+ 2022 12:08:41 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::3c82:f63b:711a:502]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::3c82:f63b:711a:502%6]) with mapi id 15.20.5353.021; Mon, 20 Jun 2022
+ 12:08:40 +0000
+Message-ID: <b067735796b36730e3ca4e63aa1be8cd899b9cac.camel@nxp.com>
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Freescale i.MX8qm Mixel LVDS
+ PHY binding
+From: Liu Ying <victor.liu@nxp.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org, 
+ krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de,  kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com
+Date: Mon, 20 Jun 2022 20:08:30 +0800
+In-Reply-To: <7c47bab1-cd64-cde1-a4cd-cca6514bc57f@linaro.org>
+References: <20220618092201.3837791-1-victor.liu@nxp.com>
+	 <20220618092201.3837791-2-victor.liu@nxp.com>
+	 <b83e3100-edd6-4f91-75e0-8a87447d8a4c@linaro.org>
+	 <89a29795e918343583f45b0f8a65a002592f8b15.camel@nxp.com>
+	 <3f805983-47c0-9be1-f221-4cd23b847018@linaro.org>
+	 <d8af25c1d5e81d6b308c3162aae670f091b59bd4.camel@nxp.com>
+	 <7c47bab1-cd64-cde1-a4cd-cca6514bc57f@linaro.org>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+X-ClientProxiedBy: SG2PR02CA0110.apcprd02.prod.outlook.com
+ (2603:1096:4:92::26) To AM7PR04MB7046.eurprd04.prod.outlook.com
+ (2603:10a6:20b:113::22)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.10.0
-Subject: Re: [PATCH net-next 01/28] dt-bindings: phy: Add QorIQ SerDes binding
-Content-Language: en-US
-To: Sean Anderson <sean.anderson@seco.com>,
- "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
- Madalin Bucur <madalin.bucur@nxp.com>, netdev@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Paolo Abeni <pabeni@redhat.com>, Russell King <linux@armlinux.org.uk>,
- Eric Dumazet <edumazet@google.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20220617203312.3799646-1-sean.anderson@seco.com>
- <20220617203312.3799646-2-sean.anderson@seco.com>
- <110c4a4b-8007-1826-ee27-02eaedd22d8f@linaro.org>
- <535a0389-6c97-523d-382f-e54d69d3907e@seco.com>
- <d79239ce-3959-15f8-7121-478fc6d432e4@linaro.org>
- <e6ed314d-290f-ace5-b0ff-01a9a2edca88@seco.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <e6ed314d-290f-ace5-b0ff-01a9a2edca88@seco.com>
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 1503adfb-1e34-4b04-75c2-08da52b59d37
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8399:EE_
+X-Microsoft-Antispam-PRVS: 	<AM9PR04MB8399CE13B4F87D2FFC18537098B09@AM9PR04MB8399.eurprd04.prod.outlook.com>
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 	1bIwU/5cj/PoFk2OZEetTZDXzPRbALTzfr7hxBr2yfzkj/8VP5aJBpBkuwS1MiacMUqehca/4QtfX2brHPOIOjXOOe0FzryJVeXcKjoXNpPaQCDIqLkzQMlRLFCUs8/8A6VUfeHjitle8SPTU4fSkualnNiCZKmdu00/ppz5D+37eA7cTJrk4KDoNVWuv9fnhPbaHG77uRkeuNztpLfy07G+5fqUe35HFzPTFBMrQg1IxS5I6yH027w1WbH9bZUGhGh/Jgb+uGrTvA15Zi4EPw2xAg6jPE6TDo5l/g59doMY8/CBojQ82T6LWDIGOyw0ojZ/VnzbbNOFT5Z3+r0tNkydk3rNqoBx7hbOByE87C8QRSd8C/9P/UaBNhD0zXpY6l/+QlrNTUalaUh19lGoqrdLBWG6lRT/nsqsKKsC0BRVn5HvWflFta2pIAfjCL8lq+IqgItVp4cmra05vFPaw5rvsdgvSeGmCV26dv6PoR1EUXhc+G9WZSXCX2SCeebiykC62y91H8V3/NMmD08VQX+jjZNo/T6zXk9M2N0fs3rPrTEJOCro0PM8onSmljocfRvDth+17YImvlMvetF/sINJylxsQtlelggwJAVqb2QdmChVuyKbWAeJFxXGek9H3PYdOe0oofo7T/UT2bLxReil0DxWI3/Qi6WlqIUtlovbWbDIK2YyEi6+dQlUeU5hVELuqNMNxTx56OcZoq4BLiolPVeK0SkbK8MItcNPhvdL5fxzRpI+AgdejnlYJrQeeOkyjLHIQfkT+uoX1cymVp8WoMwmN1jPtDboo93MfiFtspB6VK8BWT7hZTT3Kzdbi+O2ULbRzI9cDtBKIcp3TcPLWbTgub+a0kCewDSbY9M=
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(4636009)(136003)(366004)(376002)(396003)(39860400002)(346002)(6486002)(966005)(45080400002)(6506007)(41300700001)(2616005)(8676002)(4326008)(36756003)(5660300002)(6512007)(8936002)(478600001)(7416002)(66476007)(2906002)(86362001)(316002)(66946007)(66556008)(38100700002)(38350700002)(53546011)(186003)(6666004)(52116002)(26005)(99106002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?djhLV2tzTGlWTk1mR3M1eEx2M2RtYzVHNTVrZXF3WWpwa0RBSGc5bzNrUFg1?=
+ =?utf-8?B?QjFBY3NHWW44TnlaZllHZ3dZS3ZIWkJQWTdFU2NabHBwVjFscVVDSGxuRTFu?=
+ =?utf-8?B?blhWamtjSTZqN2JWZEpBOXE3NmEwUzdUT052Q0szbXBrNjV4MDZZOHE1YVQ0?=
+ =?utf-8?B?dXNpMjdDWSs5YzJzTzZxeGIvaEpVR2lKK0xZWFdiTXlXMGpNL2ozK2NIYXdW?=
+ =?utf-8?B?SHdaQkFxSGNIVFdMRzg4WCtmSGkvQjJGTklGUG1BQVk2VUZ6R2p2MmlvZDZ0?=
+ =?utf-8?B?VFJ1cXBzUWUrQmVkRVRwNkFoTFBBbGYvZDg0VUZNWThxekpUTnJENFNMZHVk?=
+ =?utf-8?B?Yi9zS1o3L0owb3JuaVUwZUlpcFpuSFFuTllmdlZTRjYwaDJHNlV3NXlxaS9P?=
+ =?utf-8?B?OWk1bnc3UEc0aFlYNTNWck1pdHFrWG1UYmoxL2lNNDZYSjdENFlFK3NoVHRh?=
+ =?utf-8?B?ajhpRGlrcGFQYldYcHB6ZlNGU1JZTS8xRUdEZk1lTElxejFKaDFJd2FVSXMx?=
+ =?utf-8?B?eHBYWWxiR2xBOVA4MGVxeWdXRHJFMFdFWFVlQkFWMThhTGx2aThNU09FbUxy?=
+ =?utf-8?B?SmlKOG1nQ3VvUEZSR2hYam9YNWtQd3ZWVTYrcFh0YWwwUDllc1JmMXdBdDE4?=
+ =?utf-8?B?MDNqQTJFLzVhMUx5cTRrUmhQLy84T2FiVUNhZHlvclMzUXIzaENNVUNrMkRs?=
+ =?utf-8?B?UjFNQnVjeDZOVW9QQkRXd1JIWTB6RFJnZzVuMnNKQ2ZuSEZwSmwrUFlKbVVl?=
+ =?utf-8?B?WGxLRDFCalJXa0FIbEVWUEMzbnN2RituU2hlcEsxMHg2YStKWlkwU3BMa1lX?=
+ =?utf-8?B?WHowU3pFUElkcnFQOU40bW1lZk1OM3lDVFRTSVkvNWxRM01hRnhuaklqWTkz?=
+ =?utf-8?B?ekVGN0x3OEl0eU1MZTlwSzhnci9oTWZBUXlPKzlScHExVGJ2UGJZV2plUDN2?=
+ =?utf-8?B?UzFYZWJrekFBL1p1WHBXUTlad3FtNXdVSkhpMVVkcDJKS0IwVEg4eDNTUGt4?=
+ =?utf-8?B?OVlqbXFRQ21zSVBFU3RaY2ZvSWFkK1M5aDZodE55Tmx6V2YyZWlMbHZLRzhE?=
+ =?utf-8?B?UmplcmhQdi9URmNOM1dVaEM5c3oxZTdnd1pDWXhjbjRzWWFkamNIQWphTHEy?=
+ =?utf-8?B?ZUUvSmY5TjRUdXIwMDY1T1hLTWZaNW0yajVjcE56OGtML3dvL25tcEhSa1Vx?=
+ =?utf-8?B?RWozc2pDRkd4UkJwTlNzUmRGQ0J2R2R1ZnJaMUg2d2ZJeG82MFRjVTl2VGho?=
+ =?utf-8?B?Z1NDUkdQWmV1dGlqNmJpMDhDczYzVFEwNmd6YkZiV1MyTng3bzRxWXlPaElK?=
+ =?utf-8?B?QU05Ym9KWDNhTWdSS3VFWU5iM3V6dEFtQVhWNlNNZjYwZGd4UStYRlV3RlA2?=
+ =?utf-8?B?QzBzUWViUHpwUEIrcWtva0kwR3M5TkJXK0FqVVZCSENSdFk1L1V5a2l4cVJ0?=
+ =?utf-8?B?dHgwSlUrV2g4UWh6Ny9Pc0MwejNkSW9jaW9XcTJSaEFoOWtmaGQ4ZVk1R2ha?=
+ =?utf-8?B?aUNmMkZDL05DS3p3ZjdlV0IwOVdNS3c1UGpRc2lYeTJaRkZiK1dwNDhYVHN3?=
+ =?utf-8?B?VWtrcnNqZEJzS01idzB4UEpKS0Q0N00wZitZSk5vUm00NldnampvaVRGK0ZX?=
+ =?utf-8?B?aVlXSlRFODl5RS9QSUYxS2Y0SlNEdHkyRjZxVjZrOW9ZUlRQN1VlM3FMVXF1?=
+ =?utf-8?B?bFE2dkVVMkVYdkpEZGJxL2FiaWJuODJ5V0xNd1o0WEtwS3pjR1VWb0ZsWG9v?=
+ =?utf-8?B?aXZiVjRUYzVHL0NpUSsyc2krK3VMU25aeG5ycU1jNEkreTdFUlBYdUg3eUQx?=
+ =?utf-8?B?aDJkWnkwR3Z0R2J2d21PeGdDNjhDSC90SWF3bkVNdk93OXd1OFhaNmlCVURx?=
+ =?utf-8?B?NmhXQ0lMbm5KbUROZXI0NlhkNExwVkhpV3Z6dy9QSkdBZEkxOUt2S1BMN3Y0?=
+ =?utf-8?B?cWJ4ckNmazZsdm9GejZrb3JyNzl0MHJCTmVUTUx5aDNXUjRRNzlGcEt4VVhn?=
+ =?utf-8?B?emtvcU5rdWhJajRyMkNRYnJYejR3RHJxNFYzLzIxcmtWWG5CRFVRRHhmOUo1?=
+ =?utf-8?B?SDltbzZSdGl2WnhHQ0paa3lCaG9IcU5tQWVXTWZ5dTF5MTZXTnZEbnF1eHBV?=
+ =?utf-8?B?cy85RVIrR2JUTytTYXVEbWg2MU1zOTJzdnRKVGJWeXNVUUFVZjFNL3p5aG1N?=
+ =?utf-8?B?Wk1mVXNVcjJwMjJYMjA2Q083TVJncFRmdk94ZDk0RFgrcDBXcmhLSE4wenA1?=
+ =?utf-8?B?UGNydzcvQ2crdFE5R0pYYXZHd2YyREIxTmZzVlYyMVdNVlNhZFQyYzVYcW1K?=
+ =?utf-8?B?T2lwN3R1UzM1czkzZmN1SmExZk5iaHB6eGdwTmVCVHZDVzFKbUhudz09?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1503adfb-1e34-4b04-75c2-08da52b59d37
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jun 2022 12:08:40.8905
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: XRXFK53Dv7bIPzHusNhqQNP8U5ktzYg6oybffd5Ry7vw83oti+ebPPae83S32x5Yoelaqh6N2wcRXuNnVa+akw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8399
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220620_035407_418760_66F95AFB 
-X-CRM114-Status: GOOD (  41.84  )
+X-CRM114-CacheID: sfid-20220620_050848_394780_438E7609 
+X-CRM114-Status: GOOD (  29.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,170 +153,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/06/2022 17:53, Sean Anderson wrote:
->>>
->>>>> +          The first lane in the group. Lanes are numbered based on the register
->>>>> +          offsets, not the I/O ports. This corresponds to the letter-based
->>>>> +          ("Lane A") naming scheme, and not the number-based ("Lane 0") naming
->>>>> +          scheme. On most SoCs, "Lane A" is "Lane 0", but not always.
->>>>> +        minimum: 0
->>>>> +        maximum: 7
->>>>> +      - description: |
->>>>> +          Last lane. For single-lane protocols, this should be the same as the
->>>>> +          first lane.
->>>>> +        minimum: 0
->>>>> +        maximum: 7
->>>>> +
->>>>> +  compatible:
->>>>> +    enum:
->>>>> +      - fsl,ls1046a-serdes-1
->>>>> +      - fsl,ls1046a-serdes-2
->>>>
->>>> Does not look like proper compatible and your explanation from commit
->>>> msg did not help me. What "1" and "2" stand for? Usually compatibles
->>>> cannot have some arbitrary properties encoded.
->>>
->>> Each serdes has a different set of supported protocols for each lane. This is encoded
->>> in the driver data associated with the compatible
->>
->> Implementation does not matter.
+On Mon, 2022-06-20 at 12:38 +0200, Krzysztof Kozlowski wrote:
+> On 20/06/2022 09:56, Liu Ying wrote:
+> > On Mon, 2022-06-20 at 09:35 +0200, Krzysztof Kozlowski wrote:
+> > > On 20/06/2022 05:06, Liu Ying wrote:
+> > > > On Sun, 2022-06-19 at 14:11 +0200, Krzysztof Kozlowski wrote:
+> > > > > On 18/06/2022 11:22, Liu Ying wrote:
+> > > > > > This patch adds bindings for Mixel LVDS PHY found on
+> > > > > > Freescale i.MX8qm SoC.
+> > > > > > 
+> > > > > > Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> > > > > > ---
+> > > > > >  .../bindings/phy/mixel,lvds-phy.yaml          | 64
+> > > > > > +++++++++++++++++++
+> > > > > >  1 file changed, 64 insertions(+)
+> > > > > >  create mode 100644
+> > > > > > Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml
+> > > > > > diff --git
+> > > > > > a/Documentation/devicetree/bindings/phy/mixel,lvds-
+> > > > > > phy.yaml
+> > > > > > b/Documentation/devicetree/bindings/phy/mixel,lvds-
+> > > > > > phy.yaml
+> > > > > > new file mode 100644
+> > > > > > index 000000000000..de964ffb9356
+> > > > > > --- /dev/null
+> > > > > > +++ b/Documentation/devicetree/bindings/phy/mixel,lvds-
+> > > > > > phy.yaml
+> > > > > > @@ -0,0 +1,64 @@
+> > > > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > > > > +%YAML 1.2
+> > > > > > +---
+> > > > > > +$id: 
+> > > > > > 
+> > 
+> > 
+https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fschemas%2Fphy%2Fmixel%2Clvds-phy.yaml%23&amp;data=05%7C01%7Cvictor.liu%40nxp.com%7C968d5a1e2f5c4ccdd77908da52a9148d%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637913183390683087%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=h8JmjvGBnTcMn2Uk3CVgq%2BB4%2BlbCBA5iDD7OhtFZyZo%3D&amp;reserved=0
+> > > > > > +$schema: 
+> > > > > > 
+> > 
+> > 
+https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=05%7C01%7Cvictor.liu%40nxp.com%7C968d5a1e2f5c4ccdd77908da52a9148d%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637913183390683087%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=bLsmtGPC8tzZSHPqblHOhx0gnsgFHlKVu0P8dN6G15s%3D&amp;reserved=0
+> > > > > > +
+> > > > > > +title: Mixel LVDS PHY for Freescale i.MX8qm SoC
+> > > > > 
+> > > > > If Mixel is a vendor, it needs it's vendor prefix documented
+> > > > > and
+> > > > > used
+> > > > > in
+> > > > > compatible. Filename should match compatible. If it is not a
+> > > > > vendor,
+> > > > > then filename should be "fsl,imx8qm-lvds-phy.yaml"
+> > > > 
+> > > > Mixel is a vendor. I'll document the vendor prefix and set
+> > > > 'fsl,imx8qm-lvds-phy' and 'mixel,lvds-phy' as compatible's
+> > > > enum.
+> > > > I'll keep the filename as-is.
+> > > 
+> > > mixel,lvds-phy is not a good compatible (and filename) because it
+> > > is
+> > > not
+> > > specific about component version. Please use specific compatibles
+> > > only
+> > > thus also specific filename (filename should match first
+> > > compatible).
+> > 
+> > All the information about component version I can find in the PHY
+> > IP's
+> > data sheet is '28FDSOI-LVDS-1250-8CH-TX-PLL'. '28FDSOI' looks like
+> > the
+> > technology name. Do you think the compatible name can be
+> > 'mixel,lvds-1250-8ch-tx-pll'? Or, any better option?
+> > 
+> > If the compatible name is ok, does the below compabitle property
+> > look
+> > ok?
+> > 
+> > ===================8<==============
+> >   compatible:
+> >     enum:
+> >       - mixel,lvds-1250-8ch-tx-pll
+> >       - fsl,imx8qm-lvds-phy
+> > ===================8<==============
 > 
-> Of *course* implementation matters. Devicetree bindings do not happen in a vacuum. They
-> describe the hardware, but only in service to the implementation.
-
-This is so not true. Bindings do not service implementation. Bindings
-happen in vacuum, because they are used by different implementations:
-Linux, u-Boot, BSD and several other quite different systems.
-
-Any references to implemention from the bindings is questionable,
-although of course not always wrong.
-
-Building bindings per specific implementation is as well usually not
-correct.
-
 > 
->>> , along with the appropriate values
->>> to plug into the protocol control registers. Because each serdes has a different set
->>> of supported protocols
->>
->> Another way is to express it with a property.
->>
->>> and register configuration,
->>
->> What does it mean exactly? The same protocols have different programming
->> model on the instances?
+https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmixel.com%2Fwp-content%2Fmixel%2Fpdf%2F2018%2FMXL-LVDS-1250-8CH-TX-PLL_SS_28FDSOI.pdf&amp;data=05%7C01%7Cvictor.liu%40nxp.com%7C968d5a1e2f5c4ccdd77908da52a9148d%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637913183390683087%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=PWK82Pf%2FbBti6PXNq9wvFbjM6QmnZWcj7bWSh2FYAzA%3D&amp;reserved=0
 > 
-> (In the below paragraph, when I say "register" I mean "register or field within a
-> register")
-> 
-> Yes. Every serdes instance has a different way to program protocols into lanes. While
-> there is a little bit of orthogonality (the same registers are typically used for the
-> same protocols), each serdes is different. The values programmed into the registers are
-> unique to the serdes, and the lane which they apply to is also unique (e.g. the same
-> register may be used to program a different lane with a different protocol).
+> mentions entire name as a device name, so with 28FDSOI, but your
+> choice
+> is also good.
 
-That's not answering the point here, but I'll respond to the later
-paragraph.
+Will use the entire name with 28FDSOI.
 
-> 
->>> adding support for a new SoC will
->>> require adding the appropriate configuration to the driver, and adding a new compatible
->>> string. Although most of the driver is generic, this critical portion is shared only
->>> between closely-related SoCs (such as variants with differing numbers of cores).
->>>
->>
->> Again implementation - we do not talk here about driver, but the bindings.
->>
->>> The 1 and 2 stand for the number of the SerDes on that SoC. e.g. the documentation will
->>> refer to SerDes1 and SerDes2.
->>>    
->>> So e.g. other compatibles might be
->>>
->>> - fsl,ls1043a-serdes-1 # There's only one serdes on this SoC
->>> - fsl,t4042-serdes-1 # This SoC has four serdes
->>> - fsl,t4042-serdes-2
->>> - fsl,t4042-serdes-3
->>> - fsl,t4042-serdes-4
->>
->> If the devices are really different - there is no common parts in the
->> programming model (registers) - then please find some descriptive
->> compatible. However if the programming model of common part is
->> consistent and the differences are only for different protocols (kind of
->> expected), this should be rather a property describing which protocols
->> are supported.
->>
-> 
-> I do not want to complicate the driver by attempting to encode such information in the
-> bindings. Storing the information in the driver is extremely common. Please refer to e.g.
+Thanks,
+Liu Ying
 
-Yes, quirks are even more common, more flexible and are in general
-recommended for more complicated cases. Yet you talk about driver
-implementation, which I barely care.
-
-> 
-> - mvebu_comphy_cp110_modes in drivers/phy/marvell/phy-mvebu-cp110-comphy.c
-> - mvebu_a3700_comphy_modes in drivers/phy/marvell/phy-mvebu-a3700-comphy.c
-> - icm_matrix in drivers/phy/xilinx/phy-zynqmp.c
-> - samsung_usb2_phy_config in drivers/phy/samsung/
-
-This one is a good example - where do you see there compatibles with
-arbitrary numbers attached?
-
-> - qmp_phy_init_tbl in drivers/phy/qualcomm/phy-qcom-qmp.c
-> 
-> All of these drivers (and there are more)
-> 
-> - Use a driver-internal struct to encode information specific to different device models.
-> - Select that struct based on the compatible
-
-Driver implementation. You can do it in many different ways. Does not
-matter for the bindings.
-
-> 
-> The other thing is that while the LS1046A SerDes are fairly generic, other SerDes of this
-> type have particular restructions on the clocks. E.g. on some SoCs, certain protocols
-> cannot be used together (even if they would otherwise be legal), and some protocols must
-> use particular PLLs (whereas in general there is no such restriction). There are also
-> some register fields which are required to program on some SoCs, and which are reserved
-> on others.
-
-Just to be clear, because you are quite unspecific here ("some
-protocols") - we talk about the same protocol programmed on two of these
-serdes (serdes-1 and serdes-2 how you call it). Does it use different
-registers? Are some registers - for the same protocol - reserved in one
-version?
-
-> 
-> There is, frankly, a large amount of variation between devices as implemented on different
-> SoCs. 
-
-This I don't get. You mean different SoCs have entirely different
-Serdes? Sure, no problem. We talk here only about this SoC, this
-serdes-1 and serdes-2.
-
-> Especially because (AIUI) drivers must remain compatible with old devicetrees, I
-> think using a specific compatible string is especially appropriate here. 
-
-This argument does not make any sense in case of new bindings and new
-drivers, unless you build on top of existing implementation. Anyway no
-one asks you to break existing bindings...
-
-> It will give us
-> the ability to correct any implementation quirks as they are discovered (and I anticipate
-> that there will be) rather than having to determine everything up front.
-
-All the quirks can be also chosen by respective properties.
-
-Anyway, "serdes-1" and "serdes-2" are not correct compatibles, so my NAK
-stays. These might be separate compatibles, although that would require
-proper naming and proper justification (as you did not answer my actual
-questions about differences when using same protocols). Judging by the
-bindings and your current description (implementation does not matter),
-this also looks like a property.
-
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
