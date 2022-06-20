@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77569C433EF
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jun 2022 10:39:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFD9FC43334
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jun 2022 10:39:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/umBXWOuTUUsE2ciCSI1fp1GWUYP+TDaUrw2NP29oLc=; b=Xaf9xpn7gvuxwX
-	vnpTwv56wdnmr83xWRS4ZKIFqACAn6zmtunay7IFIqUExDIwQ6SoqGtb4FzpFXku99UuQFby3am5C
-	g8jD8jEQKiZ+38GwBKJKh1cwK5XFYXUZlWmcmHNNmAqrr8jrk+wi41zz4YHB06N8O83nbeddQxIdb
-	c6cSUsvM3kmxGHvEl3L+e/JwUef7MQOwZGX53Hqq9GWAQVG5lrTGs+az331O6lsRlhMb0HHob01Td
-	rQA52yPafh8tzkrGSb0FUxcTq+XGlwLbkirJ3BUbx3V2FVyygEslcQfxr71t11tbWp2+eeBHigynL
-	DW1+TULZU6X7s+G0N4Eg==;
+	List-Owner; bh=8q+H8R4Kqx85kAHGVtsRTkmGPCRjxMMBYJ8NPjSDoOU=; b=YNlN/0iFrJOmBg
+	NKPNzDRQTkuJxRYTdRc8WfJ3r1BT4Q4iovDGmMU7BhRNp0hi8s2rqC7hFoCHl7BR9D0fvJq6ErJMT
+	g0XnqXNHYpvkUhA1aHyRdR9Bg3T8gVOthV2htImP6eTnv8de/F0CzlEBbE/GwN/+ayZ1gs51++8eC
+	VMhYS3R5m4eZOYtqxsuHJRVeN1lj/bSBgWjJ93mgoj+FFP4zr7bOIO44j3E92pHWlzI70o4ePr6I5
+	idfoupKzzqPSDbX+4H9o2Sz/fCmA1RXCMYyBsOAvuRRnPITqEdMKYhtsynS7Yglphn7KAacmsVGj3
+	NpsqEJehGHSr2gPkDavQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3EoA-00HUx8-PE; Mon, 20 Jun 2022 10:39:02 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1o3Eoy-00HVCA-1x; Mon, 20 Jun 2022 10:39:52 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3Eo6-00HUv6-Sl
-	for linux-phy@lists.infradead.org; Mon, 20 Jun 2022 10:39:00 +0000
-Received: by mail-ej1-x634.google.com with SMTP id fu3so20223106ejc.7
-        for <linux-phy@lists.infradead.org>; Mon, 20 Jun 2022 03:38:57 -0700 (PDT)
+	id 1o3Eoc-00HV3H-1X
+	for linux-phy@lists.infradead.org; Mon, 20 Jun 2022 10:39:31 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id me5so20240975ejb.2
+        for <linux-phy@lists.infradead.org>; Mon, 20 Jun 2022 03:39:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=+s1fQfW6DNhIDr3s4ER+coLI9K2pOkuofyZ5KAduIYE=;
-        b=pespo32PKkFYzEq5EJWqDcxOhszBLeBhEb5WldaDOvrawNQ0XUVPX9Qx2JeaoUljDD
-         N6oWawR1CV1MzBMPr/nOyuaL2Cehvs++OP2Am+VqYjlxQ9T8PSkDt3fW+dMc8v2rMs4W
-         2RuBLcENxv2KZpo/dJpvfcM/zadlQN3VZzcI+o+0fkPYN8A+d9Grx3xleh+ohLiEX2WO
-         m57jHavyliHkxhHSKGKUouJUJtcQwcbuwld3kt5tU5rs2rJb+lZ8E6TMXo6epM1XyGEd
-         SJhPXK+9FmeAZ9meMT35SoXasnpS236pNShuY7+LXcakYxSeSIoLptC4Sua2HFIweXNa
-         CKtg==
+        bh=Wu7OjQauT8VsAEcCNOR8tTiMvlUSYPeipgtsHwYY4Vg=;
+        b=m8op4FixOAAlfFZ7egA7dw9XYWx1MedsRDNb/RiDDswivswf1dRO3JJr8j/dB6U8b0
+         wG1V5eA/LYFuOiUxauvTX1kFoE58uC+7lIApV24t1QqUfrlEdBkeiYdRYVgO8VVV5B3m
+         jPlzFxqwsU7KOcgnyBRxDPuMzMxryRAXpnoBnH906aLguQ16CafUqTcdhR8ML9FBGAsq
+         Q3XTgGHED3qelMs+zISNTJBb66zeIDaCzP4HIuMXZM+Sya3peej5uQ8Sc35IWTB8xPqo
+         eFNjunF8X1gBRtP5rVsjNvLSjMAkbL6VLJFinF/mlNcaldTExFi/tx1RsW2mxCD2Fic4
+         GftQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=+s1fQfW6DNhIDr3s4ER+coLI9K2pOkuofyZ5KAduIYE=;
-        b=bxTkpAKYgZkd8blSaEAzYuVN/0nQK/upRmkq1ojlse4YJk4N7OjtXpFKhxe2a/LEQD
-         n/y1ldLa1IVehvTAheWMPWT4zLlU3IjBoAb8V49AP9cj+IM+i1B37hwfyx2utRspOzQb
-         aPmhuee985S9UBG5ZrmM68X0cBP1M68tpIiIYiso4kBW30fwVvVdTXM/NxPrNEU7hUu9
-         qP+q2WwVSvOlc1GiE0p93hvvUUX1Wx6Dv5xKkc3nxxiqI8Gw5+Zvwh5zAlTx/z9vxtGJ
-         teh3LybvjJrPRCHYpgHNR0DBb3587vIwa/jROxsXYuSEuNapw0j4VEbhn0iI8mOnE10g
-         7Epw==
-X-Gm-Message-State: AJIora/ZJ8005nOa2Tf5JJfOSNpGgirZ+SUWKOsVB4WtJL1IyvOCW1Ew
-	TB7UPRgBpigDV3WqCTOZxqLBaA==
-X-Google-Smtp-Source: AGRyM1sP4TDttzlpu+tHrmPr9qEAwS7y6wDB+zQXWLVNnZGSmSp9/92ifj3N22k13BDkZ3sEzyxRfg==
-X-Received: by 2002:a17:906:73d4:b0:715:701c:ae96 with SMTP id n20-20020a17090673d400b00715701cae96mr19568704ejl.50.1655721536603;
-        Mon, 20 Jun 2022 03:38:56 -0700 (PDT)
+        bh=Wu7OjQauT8VsAEcCNOR8tTiMvlUSYPeipgtsHwYY4Vg=;
+        b=TLFl2H6jLOFKZHKu8vRP82ZSy7ePPBn08Lxvbr/wB9PVRhWL+L8W0ggxoJaLn44uL/
+         tNQETFEjwByJtfaAXXJqXT2I8593dfyaCQdQva37wvorFMBEhj4e9YJJYFDctqGtERuD
+         w8AvZoNvuJMmR7U5Q1kl0hZrEwmk0ywvmo20C1MODu2DFvlz9vizoBcKHai7y4ry/cBT
+         RmAPlCubT3fPhf29Q9JOzELiEKLMorUqnIPF7usyq+WJ5Usdj2I9vDSbNrKt3bB1AMG+
+         +/0O0e7NZsa3uDjWTmHpjAUwIN8ll1oZnZSwxZ28SlEY0/C0bsLuOTQvkf4+LCbgBTqC
+         oq/g==
+X-Gm-Message-State: AJIora8+HKp692PwxRL+/qgIpJkFHGrrYVsQ/5T3xT+IhMExxm186pS0
+	jvB+/w/KKji5YHdg2FSnV3A66w==
+X-Google-Smtp-Source: AGRyM1sOCeciJIgUmFsu++sl3HilovcjqIj6UVBWntWzocHHiukB6fjy1Eq8qCfxMertj/cHx6/Q/w==
+X-Received: by 2002:a17:907:7f8b:b0:721:9c02:37f1 with SMTP id qk11-20020a1709077f8b00b007219c0237f1mr9006305ejc.211.1655721566494;
+        Mon, 20 Jun 2022 03:39:26 -0700 (PDT)
 Received: from [192.168.0.209] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id fq36-20020a1709069da400b006fecef65fc4sm5807864ejc.179.2022.06.20.03.38.53
+        by smtp.gmail.com with ESMTPSA id c18-20020a05640227d200b0042617ba6396sm10335480ede.32.2022.06.20.03.39.24
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 20 Jun 2022 03:38:55 -0700 (PDT)
-Message-ID: <7c47bab1-cd64-cde1-a4cd-cca6514bc57f@linaro.org>
-Date: Mon, 20 Jun 2022 12:38:53 +0200
+        Mon, 20 Jun 2022 03:39:25 -0700 (PDT)
+Message-ID: <6e9f17a7-677e-e4b6-54ae-77ad07bf5204@linaro.org>
+Date: Mon, 20 Jun 2022 12:39:24 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.10.0
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Freescale i.MX8qm Mixel LVDS
- PHY binding
+Subject: Re: [PATCH v2 1/3] dt-bindings: vendor-prefixes: Add prefix for
+ Mixel, Inc.
 Content-Language: en-US
 To: Liu Ying <victor.liu@nxp.com>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
@@ -74,17 +74,14 @@ Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org,
  krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  linux-imx@nxp.com
-References: <20220618092201.3837791-1-victor.liu@nxp.com>
- <20220618092201.3837791-2-victor.liu@nxp.com>
- <b83e3100-edd6-4f91-75e0-8a87447d8a4c@linaro.org>
- <89a29795e918343583f45b0f8a65a002592f8b15.camel@nxp.com>
- <3f805983-47c0-9be1-f221-4cd23b847018@linaro.org>
- <d8af25c1d5e81d6b308c3162aae670f091b59bd4.camel@nxp.com>
+References: <20220620034533.4108170-1-victor.liu@nxp.com>
+ <20220620034533.4108170-2-victor.liu@nxp.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <d8af25c1d5e81d6b308c3162aae670f091b59bd4.camel@nxp.com>
+In-Reply-To: <20220620034533.4108170-2-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220620_033859_030990_84C3F13C 
-X-CRM114-Status: GOOD (  17.01  )
+X-CRM114-CacheID: sfid-20220620_033930_174361_95A91522 
+X-CRM114-Status: UNSURE (   6.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,77 +98,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/06/2022 09:56, Liu Ying wrote:
-> On Mon, 2022-06-20 at 09:35 +0200, Krzysztof Kozlowski wrote:
->> On 20/06/2022 05:06, Liu Ying wrote:
->>> On Sun, 2022-06-19 at 14:11 +0200, Krzysztof Kozlowski wrote:
->>>> On 18/06/2022 11:22, Liu Ying wrote:
->>>>> This patch adds bindings for Mixel LVDS PHY found on
->>>>> Freescale i.MX8qm SoC.
->>>>>
->>>>> Signed-off-by: Liu Ying <victor.liu@nxp.com>
->>>>> ---
->>>>>  .../bindings/phy/mixel,lvds-phy.yaml          | 64
->>>>> +++++++++++++++++++
->>>>>  1 file changed, 64 insertions(+)
->>>>>  create mode 100644
->>>>> Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml
->>>>> diff --git a/Documentation/devicetree/bindings/phy/mixel,lvds-
->>>>> phy.yaml b/Documentation/devicetree/bindings/phy/mixel,lvds-
->>>>> phy.yaml
->>>>> new file mode 100644
->>>>> index 000000000000..de964ffb9356
->>>>> --- /dev/null
->>>>> +++ b/Documentation/devicetree/bindings/phy/mixel,lvds-phy.yaml
->>>>> @@ -0,0 +1,64 @@
->>>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->>>>> +%YAML 1.2
->>>>> +---
->>>>> +$id: 
->>>>>
-> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fschemas%2Fphy%2Fmixel%2Clvds-phy.yaml%23&amp;data=05%7C01%7Cvictor.liu%40nxp.com%7Cc7d6216ac12148ec95d008da528f78eb%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637913073407696040%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=m588CiXOaJhWFbpEal3MjZaHtvOTUOVIujydIdPxSHg%3D&amp;reserved=0
->>>>> +$schema: 
->>>>>
-> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=05%7C01%7Cvictor.liu%40nxp.com%7Cc7d6216ac12148ec95d008da528f78eb%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637913073407696040%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=IGn5f05QrzyX05k%2FKgTitdq6OYN2FmdpsO6qHXun55Y%3D&amp;reserved=0
->>>>> +
->>>>> +title: Mixel LVDS PHY for Freescale i.MX8qm SoC
->>>>
->>>> If Mixel is a vendor, it needs it's vendor prefix documented and
->>>> used
->>>> in
->>>> compatible. Filename should match compatible. If it is not a
->>>> vendor,
->>>> then filename should be "fsl,imx8qm-lvds-phy.yaml"
->>>
->>> Mixel is a vendor. I'll document the vendor prefix and set
->>> 'fsl,imx8qm-lvds-phy' and 'mixel,lvds-phy' as compatible's enum.
->>> I'll keep the filename as-is.
->>
->> mixel,lvds-phy is not a good compatible (and filename) because it is
->> not
->> specific about component version. Please use specific compatibles
->> only
->> thus also specific filename (filename should match first compatible).
+On 20/06/2022 05:45, Liu Ying wrote:
+> Add a vendor prefix entry for Mixel, Inc. (https://www.mixel.com).
 > 
-> All the information about component version I can find in the PHY IP's
-> data sheet is '28FDSOI-LVDS-1250-8CH-TX-PLL'. '28FDSOI' looks like the
-> technology name. Do you think the compatible name can be
-> 'mixel,lvds-1250-8ch-tx-pll'? Or, any better option?
-> 
-> If the compatible name is ok, does the below compabitle property look
-> ok?
-> 
-> ===================8<==============
->   compatible:
->     enum:
->       - mixel,lvds-1250-8ch-tx-pll
->       - fsl,imx8qm-lvds-phy
-> ===================8<==============
+> Signed-off-by: Liu Ying <victor.liu@nxp.com>
 
-https://mixel.com/wp-content/mixel/pdf/2018/MXL-LVDS-1250-8CH-TX-PLL_SS_28FDSOI.pdf
 
-mentions entire name as a device name, so with 28FDSOI, but your choice
-is also good.
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 
 Best regards,
