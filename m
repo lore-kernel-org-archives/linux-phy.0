@@ -4,84 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A85B7C43334
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jun 2022 07:54:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ED08C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Jun 2022 07:56:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:Date:Message-ID:
+	In-Reply-To:CC:To:From:Subject:Mime-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2clzTdoFmPwFPMfqek9jptRHuPjva/kw4j9Wy2gB8Ig=; b=XdN/UGPMLu9rAW
-	U2HA6K/0RHTZ3BTx8oORh1HfPBoJ2Apm2cXZSY/qD+JL6iE/XT8VbjpT7FlY4FmxZlZ7NcYX/zKaq
-	twYcj2Hz04Bn9LVAK4JLexuLte5dr3kuyOQnecnnI/c+exLVW8sBFSIbUzoZ7juHfyZfVWnEWqVdC
-	dPEx7dqJ9lyyZIsjvHJsvtGJmU7S2V4KzBlrHLgi0Wq9u5nNOpvDYCn3genok1l6HNQ+DOAIvXclL
-	CaHkGAwVDYNzpUGtD8Hjqiz1pf5S+6PrwUYZcavbhdruSzWkPVXVOyLakTvhW56fJ6YdwXEJSG3FL
-	3lGTPxVmsRDRexk0DYjw==;
+	List-Owner; bh=FIwHwOfpKZO3IfsbtY/AnOR+0/PmV+WGpsKsS4a1cMo=; b=TdChW3vxJRROMs
+	5fl+x1sR7Gh8JmseTgEYyTeuATi/BbQak+/w1YzPowyxTHBX7QBebUr/Zi/CK0DkgahwtWtjJ1uBZ
+	8Ad17tl+XMLyT37DDpdqWp2BJz/EAO2o/IF7fa49325RObyEsdf3mmOS/tt+/Ha0P7ZCg2DU9BzUT
+	hhZ0UZBlT0ht4IiugAMgsUyVkpdzTXwdAkZkI1dVylgTkkBwv/sYISQzs578RvA6MoSizIKFb3z/6
+	gjk8aAKhdLcVknv2pyo8qwveUhhWXsgj11bH4k+SADGMBmugxZCMrDAg9/1TwZIEKzUvpmb7IjMXx
+	cOFYGEngBZlPatUHvliA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3YiR-004Dni-2f; Tue, 21 Jun 2022 07:54:27 +0000
-Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
+	id 1o3Ykg-004EgS-Jg; Tue, 21 Jun 2022 07:56:46 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3YiD-004Dif-L0
-	for linux-phy@lists.infradead.org; Tue, 21 Jun 2022 07:54:14 +0000
-Received: by mail-ej1-x62b.google.com with SMTP id cw10so1948458ejb.3
-        for <linux-phy@lists.infradead.org>; Tue, 21 Jun 2022 00:54:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=TGYC+CLd/1M+90gJK8/fomR0IeIc2wCPl2XftG7b1eQ=;
-        b=GOJ/6dBufOQs/zj+50TNdmUKIpAC87FLuWO1xJhB6j1TTpS+L2sNXMXSSAxNGtGuUm
-         meb69bguCusL1BrbM1+PrgqZf79Ag/Y+EpWCNsurXDkqtg0LKUF3J2ScC3Z6ZRBICknb
-         Mj1RMLBfpDF3ycYFTlvBu1c+1KvGjKajpjjTkbroNgktweP0B86GRdCdfzx9LVGYgbWM
-         KJy2Hdvxd6Hd7gNuTqZX2YcgFYZcoiiRH1LnnBFX6QjFZkbRgVAgF6UB+sHRGrFloDNl
-         1A7aMEbgVFzXlaGs0FZRyec0JR7LgnfrkdJLI3Orh1LrXg5DlRF7uMDn7+2qRJS1/TtG
-         3D5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=TGYC+CLd/1M+90gJK8/fomR0IeIc2wCPl2XftG7b1eQ=;
-        b=TikNrYCH6sHlCzkZwP5sbL3rDqLonWvzIhliLfNOznpmkxlTf/79MKMSRdOjfmozGA
-         ciCSidkC44/ksGnW8LhUwXDnDGYsdVuBnKfb6Vg1aOj3MFRI1IuQgI3i9+XwqXZrcglW
-         /gebZ/LWM9IroR2085LfrJL82anO9+bDTFHg1VrBUK/rLf+AAl6YtWSoj+LyBVQHDUk5
-         nEyIsy86Tg+vkfol7mq6LBnbH7HKZSaBbxYUj1RDdbyRiuuAbEZyO/OUyp8d78reUO9o
-         SYY63/hpndx0VL9Wh5XgHw0fFilYPIKcZPiRTJ7dXhEgq689kshfV+MKXMA5AWfORDEN
-         dPkg==
-X-Gm-Message-State: AJIora/G0Igp/Yz4GZaDl8fL8DEVI0ST4uYohvU5eS5Cjo1HQgCeleSP
-	8+tXKF9q8iBaXaG8h7x5yY1FAw==
-X-Google-Smtp-Source: AGRyM1uqA1FeXdA7Ei4IAR94TJhY69e1fk/nKllBETSu+3zHFfG1fV4TXg6TMSv3VrOLqbYXeneMZg==
-X-Received: by 2002:a17:907:2da6:b0:711:d86d:ccab with SMTP id gt38-20020a1709072da600b00711d86dccabmr24360889ejc.356.1655798050004;
-        Tue, 21 Jun 2022 00:54:10 -0700 (PDT)
-Received: from [192.168.0.216] (xdsl-188-155-176-92.adslplus.ch. [188.155.176.92])
-        by smtp.gmail.com with ESMTPSA id l2-20020a056402124200b004357738e04esm6105915edw.21.2022.06.21.00.54.09
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 21 Jun 2022 00:54:09 -0700 (PDT)
-Message-ID: <626cd8f2-8f54-2877-5b73-c0239a243d99@linaro.org>
-Date: Tue, 21 Jun 2022 09:54:08 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.10.0
-Subject: Re: [PATCH v3 2/3] dt-bindings: phy: Add Freescale i.MX8qm Mixel LVDS
- PHY binding
-Content-Language: en-US
-To: Liu Ying <victor.liu@nxp.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Cc: kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-imx@nxp.com
-References: <20220620123854.1138028-1-victor.liu@nxp.com>
- <20220620123854.1138028-3-victor.liu@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220620123854.1138028-3-victor.liu@nxp.com>
+	id 1o3Yke-004EdT-7P
+	for linux-phy@lists.infradead.org; Tue, 21 Jun 2022 07:56:46 +0000
+Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
+	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20220621075637epoutp020158dbf5d35b53ad55401eb36ea64453~6k6-7-o7I1157811578epoutp02v
+	for <linux-phy@lists.infradead.org>; Tue, 21 Jun 2022 07:56:37 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20220621075637epoutp020158dbf5d35b53ad55401eb36ea64453~6k6-7-o7I1157811578epoutp02v
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1655798197;
+	bh=qMkIU/60yigSbDip1bHSim25RSYjPC0FSsBXInxoocM=;
+	h=Subject:Reply-To:From:To:CC:In-Reply-To:Date:References:From;
+	b=o7R+wTJBc5EhObtTVKXwC4+1x0VG19r6NWLBhmL3dKXnF3i+XF+Vg1cKGG/U5Wdn/
+	 ibX9od4PrX/0W5NdPqFXinmCWq0hGiS1eeJHoknqNhnRsbcYtMZl1pdGMXIUkICAmx
+	 ewkBhzjoKd4zW7md2LErCXt20IIBiya80ZUEWH4I=
+Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
+	epcas2p1.samsung.com (KnoxPortal) with ESMTP id
+	20220621075635epcas2p153d2731cc2986f491bb6d4accaf87ee7~6k6_7SzU62117621176epcas2p1T;
+	Tue, 21 Jun 2022 07:56:35 +0000 (GMT)
+Received: from epsmges2p3.samsung.com (unknown [182.195.36.89]) by
+	epsnrtp3.localdomain (Postfix) with ESMTP id 4LRzNz4RbGz4x9Pp; Tue, 21 Jun
+	2022 07:56:35 +0000 (GMT)
+X-AuditID: b6c32a47-5e1ff700000025aa-5d-62b179b32e90
+Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
+	epsmges2p3.samsung.com (Symantec Messaging Gateway) with SMTP id
+	67.39.09642.3B971B26; Tue, 21 Jun 2022 16:56:35 +0900 (KST)
+Mime-Version: 1.0
+Subject: Re: [PATCH v3 3/5] PCI: axis: Add ARTPEC-8 PCIe controller driver
+From: Wangseok Lee <wangseok.lee@samsung.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>, "robh+dt@kernel.org"
+	<robh+dt@kernel.org>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"kishon@ti.com" <kishon@ti.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"jesper.nilsson@axis.com" <jesper.nilsson@axis.com>, "lars.persson@axis.com"
+	<lars.persson@axis.com>, "bhelgaas@google.com" <bhelgaas@google.com>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>, "kw@linux.com"
+	<kw@linux.com>, "linux-arm-kernel@axis.com" <linux-arm-kernel@axis.com>,
+	"kernel@axis.com" <kernel@axis.com>
+CC: Moon-Ki Jun <moonki.jun@samsung.com>, Sang Min Kim
+	<hypmean.kim@samsung.com>, Dongjin Yang <dj76.yang@samsung.com>, Yeeun Kim
+	<yeeun119.kim@samsung.com>
+X-Priority: 3
+X-Content-Kind-Code: NORMAL
+In-Reply-To: <e3411d6c-ec64-f20e-4c58-13245fe255b5@kernel.org>
+X-CPGS-Detection: blocking_info_exchange
+X-Drm-Type: N,general
+X-Msg-Generator: Mail
+X-Msg-Type: PERSONAL
+X-Reply-Demand: N
+Message-ID: <20220621075635epcms2p79d73dfb24d1d8d49af7467db48598e6f@epcms2p7>
+Date: Tue, 21 Jun 2022 16:56:35 +0900
+X-CMS-MailID: 20220621075635epcms2p79d73dfb24d1d8d49af7467db48598e6f
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+X-CPGSPASS: Y
+X-CPGSPASS: Y
+CMS-TYPE: 102P
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrJJsWRmVeSWpSXmKPExsWy7bCmqe7myo1JBmsPyVksacqweHlI02L+
+	kXOsFrtnLGeymDn1DLPF80OzmC0+tahaXHjaw2bxctY9Novz5zewWzT0/Ga1OPLmI7PF/uMr
+	mSwu75rDZnF23nE2iwmrvrFYvPn9gt3i3OJMi9a9R9gtdt45wWzxa+sfJgdRjzXz1jB6XF8X
+	4LFgU6nHplWdbB5Prkxn8ti8pN6jb8sqRo/jN7YzeXzeJBfAGZVtk5GamJJapJCal5yfkpmX
+	bqvkHRzvHG9qZmCoa2hpYa6kkJeYm2qr5OIToOuWmQP0mZJCWWJOKVAoILG4WEnfzqYov7Qk
+	VSEjv7jEVim1ICWnwLxArzgxt7g0L10vL7XEytDAwMgUqDAhO2PTy27mgu1cFQvOTWdsYJzM
+	1cXIySEhYCLRvuATaxcjF4eQwA5Gid2PDjJ2MXJw8AoISvzdIQxSIyzgJfGmtYkRxBYSUJLY
+	sWYeM0RcX+L6im5WEJtNQFfi3+KXbCBzRARmsUks+bqUCcRhFljAKLH/9z5GiG28EjPan7JA
+	2NIS25dvBYtzCthJHD06gx0iriHxY1kvM4QtKnFz9Vt2GPv9sflQc0QkWu+dhaoRlHjwczdU
+	XEpiwZNDrBB2tcT+v7+ZIOwGRon++6kgj0kAXb3jujFImFfAV6J/3zewchYBVYmzL09BneYi
+	0ftuCRuIzSygLbFs4WtmkFZmAU2J9bv0IaYoSxy5xQLzVMPG3+zobGYBPomOw3/h4jvmPYE6
+	Rk1i3sqdzBMYlWchAnoWkl2zEHYtYGRexSiWWlCcm55abFRgDI/b5PzcTYzgNK7lvoNxxtsP
+	eocYmTgYDzFKcDArifDacG9IEuJNSaysSi3Kjy8qzUktPsRoCvTlRGYp0eR8YCbJK4k3NLE0
+	MDEzMzQ3MjUwVxLn9UrZkCgkkJ5YkpqdmlqQWgTTx8TBKdXAJLhlg+rju0+m2H6UOz5H0/Xb
+	xLNemg6zCnUPcuv82N0k1uHMsC936umcDIvohSasF++2r5H1bp6Y+HZNhPi2VRw5ajuvqX27
+	dsoqTSC39PH9M7OiV/F+kytTf6lWOddGcfuh/du+L2Jaseh6YtsOb56f77qO6Nosn2nd+8bC
+	hqU6769f2OxVrCnrPhjKnzkyXejUtoDzff23ZsZ0LT9Znf4sdjXTw91RnHO5r8aZ1k4vN/wl
+	H1ZuslmM2/Xyzp1BazO/nDkXtvX0kTA2tdL/HoV3dcJtZqm+M1S6+dN34vmmSReMDabaKkjv
+	XZq0XedJ/OfQe3HzsqZ1Pz/EHdWZqi4j9LRhx2ZtV3vZjX+WzFdiKc5INNRiLipOBACKymWD
+	bAQAAA==
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20220614011616epcms2p7dcaa67c53b7df5802dd7a697e2d472d7
+References: <e3411d6c-ec64-f20e-4c58-13245fe255b5@kernel.org>
+	<20220614011616epcms2p7dcaa67c53b7df5802dd7a697e2d472d7@epcms2p7>
+	<20220614013042epcms2p36f88b7eb7f879fefb2f3fbd4548ad705@epcms2p3>
+	<CGME20220614011616epcms2p7dcaa67c53b7df5802dd7a697e2d472d7@epcms2p7>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220621_005413_716848_F893204E 
-X-CRM114-Status: UNSURE (   6.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220621_005644_644891_D7298E8A 
+X-CRM114-Status: GOOD (  11.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,24 +121,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: wangseok.lee@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/06/2022 14:38, Liu Ying wrote:
-> Add bindings for Mixel LVDS PHY found on Freescale i.MX8qm SoC.
-> 
-> Signed-off-by: Liu Ying <victor.liu@nxp.com>
-
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-
-Best regards,
-Krzysztof
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T27CoDIwLzA2LzIwMjLCoDE3OjM1LMKgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToNCj4gT27C
+oDE0LzA2LzIwMjLCoDAzOjMwLMKgV2FuZ3Nlb2vCoExlZcKgd3JvdGU6DQo+PsKgQWRkwqBzdXBw
+b3J0wqBBeGlzLMKgQVJUUEVDLTjCoFNvQy4NCj4+wqBBUlRQRUMtOMKgaXPCoHRoZcKgU29DwqBw
+bGF0Zm9ybcKgb2bCoEF4aXPCoENvbW11bmljYXRpb25zLg0KPj7CoA0KPiANCj4gKC4uLikNCj4g
+DQo+PsKgKw0KPj7CoCtlbnVtwqBhcnRwZWM4X3BjaWVfaXNvbGF0aW9uwqB7DQo+PsKgK8KgwqDC
+oMKgwqDCoMKgwqBQQ0lFX0NMRUFSX0lTT0xBVElPTsKgPcKgMCwNCj4+wqArwqDCoMKgwqDCoMKg
+wqDCoFBDSUVfU0VUX0lTT0xBVElPTsKgPcKgMQ0KPj7CoCt9Ow0KPj7CoCsNCj4+wqArZW51bcKg
+YXJ0cGVjOF9wY2llX3JlZ19iaXTCoHsNCj4+wqArwqDCoMKgwqDCoMKgwqDCoFBDSUVfUkVHX0JJ
+VF9MT1fCoD3CoDAsDQo+PsKgK8KgwqDCoMKgwqDCoMKgwqBQQ0lFX1JFR19CSVRfSElHSMKgPcKg
+MQ0KPj7CoCt9Ow0KPiANCj4gUmVtb3ZlwqB0aGlzwqBlbnVtLsKgVGhpc8KgaXPCoHJlZGVmaW5p
+dGlvbsKgb2bCoHRydWUvZmFsc2XCoG9ywqAxLzAuDQo+IA0KPiBCZXN0wqByZWdhcmRzLA0KPiBL
+cnp5c3p0b2YNCg0Kb2ssIGkgd2lsbCBjaGFuZ2UgdGhlIGFib3ZlIGVudW0gdHlwZXMgdG8gYm9v
+bGVhbi4NCg0KVGhhbmsgeW91IGZvciBraW5kbmVzcyByZWl2ZXcuDQoNCkJlc3QgcmVnYXJkcywN
+CldhbmdzZW9rIExlZQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cg==
