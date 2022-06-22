@@ -4,56 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64ED4C43334
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jun 2022 08:16:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68887C43334
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jun 2022 08:31:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2JdTXoQMprpMfs/WEozXd0DrvCuCKWR/i1weyXWuyZ0=; b=bP6HHO9x9v9FPm
-	xsBYrZNUTkifweRVY1hwhbu4ileoiemEcyxX6JRwG32t0ye5TveTrSCf5Sg29w5NwnTmV7FSzrkwD
-	f9C/oEyjScmrj2Fe7dMn+jrlRQ+crhqD5nSGb9wC7ahDwViN+ANb91VRoMxJzKOJ0wDEqWnY7Eui+
-	KzqBrGJ7r90PYBbuZ1UESCjzzKozP3PmA9SRd0TRBd4y40ZHzcmrnXUhsMhpKn9f+2pBZdDONT1Cb
-	zLbklgAs2P1mhrfJM6mv4Ue8WYWEQQ3ZMruPT5Vh/RIzRPswnQ5CXFl+/dHSIaI1n2YdxJ9VCZj8V
-	vNfERg+wTEcbyhv5kfGQ==;
+	List-Owner; bh=MBYg4KI6UlFx7H1Pgb0bUeHBDCfiINcGWcLaexFOoM8=; b=FMZ9Wp/owVoXQt
+	IduN0sM/aDDRPELv3N3gR7VQ4LALrh6l/nTnuxub+VsjFGwyg8lxhxf+fuQmCq4GXddBmyblpaI5h
+	gjKv7/VTrGdjd1ZfLbcBnNTpT8AnDO/+a0z/LGLBJDl9eNJHUVh67X4K3jWAK1mlRGR1MCJrh6BBc
+	SHVBecICQCVEEtd1N6/rXZEiYh38Z2rypJ46SyqVBUFdeMCAzGkxE0SHPkzqdz7wOOxNl3i4dH/l3
+	FUnFmDL0mLJ7aXJ5e8dcHfHJqw5nlR3XcTDvRNwm+Dtg4jt3yVAPwNBx/C3FOgPOSEJmuIv5I4C/v
+	AkvwAhESSW7x0ptWheNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3vXP-009CyA-QW; Wed, 22 Jun 2022 08:16:35 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1o3vmG-009GEC-Q5; Wed, 22 Jun 2022 08:31:56 +0000
+Received: from mail-yb1-xb31.google.com ([2607:f8b0:4864:20::b31])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3vXN-009CxD-Av
-	for linux-phy@lists.infradead.org; Wed, 22 Jun 2022 08:16:34 +0000
-Received: from pendragon.ideasonboard.com (62-78-145-57.bb.dnainternet.fi [62.78.145.57])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 77E09DD;
-	Wed, 22 Jun 2022 10:16:31 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1655885791;
-	bh=o/8M/AtaamVFopYKkMx1sa2lwn1VegUHtyrRHa/IWOk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=L9p11OcIJcNLYNiqzb68LXCP4ckIJUTeYL2Hz0AunxMz/b6+gIdEmgsVqTLwr3SqB
-	 74cPcYzcz5qfiVawhNkcdu9KOcWH/LYlYfgBuB4KKXIBz6KdiOfrYyj3ap2zBlsmgT
-	 bvruwAu6UchrpT21oEhASXuEtpTef/ywJVZg6Fz4=
-Date: Wed, 22 Jun 2022 11:16:15 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Rahul T R <r-ravikumar@ti.com>
-Cc: linux-phy@lists.infradead.org, kishon@ti.com, vkoul@kernel.org,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	p.yadav@ti.com, tomi.valkeinen@ideasonboard.com,
-	linux-kernel@vger.kernel.org, jpawar@cadence.com,
-	sjakhade@cadence.com, mparab@cadence.com,
-	devicetree@vger.kernel.org, vigneshr@ti.com, lee.jones@linaro.org
-Subject: Re: [PATCH v2 2/3] phy: cdns-dphy: Add band config for dphy tx
-Message-ID: <YrLPz8OTaMImArC4@pendragon.ideasonboard.com>
-References: <20220622075340.16915-1-r-ravikumar@ti.com>
- <20220622075340.16915-3-r-ravikumar@ti.com>
+	id 1o3vmD-009GCW-Qq; Wed, 22 Jun 2022 08:31:55 +0000
+Received: by mail-yb1-xb31.google.com with SMTP id i15so24081149ybp.1;
+        Wed, 22 Jun 2022 01:31:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=VFrveWQWOlqWcE+PwPZMC1GnolqDyvG7Ts1DbfGLvCQ=;
+        b=qMZCgEKp956uUcAUTe+B8J619t80BEuZ4z2ufxolLgnN0UpgjefaBLUZGLJ7MkQz+h
+         lZmtXys0aHG6vlihf1FYI4hX92qR1UVsa5kY7j05PkODaMym/k7HXP4MgUcM87+IwLKq
+         2BE+Vh+b6iIH6zWlQrdoli+7Pzc9dA25AYExTbtVZLPLDnmf0LMlCemZu38bJCLOeh2W
+         fOJfhrIap5ILiYtfWBHSHZ6NY0Fw/eQQTIUOy4fqOJkeqjvWnryd9yxqxsXZ4yHU87vu
+         uLDMAXGBNIHyETi/QArYYxjDj2jR49Pv/w9dCjoomBmaqabbZl9v76N3jHQd0Db1bTul
+         ZWPg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=VFrveWQWOlqWcE+PwPZMC1GnolqDyvG7Ts1DbfGLvCQ=;
+        b=NEqmULbAuZ1ORpBNiOtW5qia1OUR+aHlXQ+yg8Tx1HDWgW1yAm26/L7z2OnZfLkMVc
+         6w86ovjrzTfA2EacwHR5dAbL4ofsex3M8jhOl6p1//6uD2//oc72Hr+hu5tVQzJlO07N
+         kgnBniun6Kby82Q+BaugsaKj9oZs4C9uZvo6phMOjPCHU/Sz9mXgnskQBcIlOjiA5nQB
+         3KeKBeg2yF9NNMPKEYjC8mck0NnKWEl+vWGerPajPk+0pHu4Kbi6P7ycZbyFJmwv5QqK
+         rtS5E8a/WFUhNywT0/elOvHVpG92zBj9e9awPvJ6od5v1P63ZKyy9ohClL6ZNEM2Twp/
+         smdA==
+X-Gm-Message-State: AJIora+iWRO38r2z6oKo3UzyCf7l+WEf1QVYXJYH99GKb63JZw9151rn
+	jonrS4qtC5bW8ong7X7jMr29A7KmOvOTO2o4KDI=
+X-Google-Smtp-Source: AGRyM1s6E87UN9fAajyCnVuoFZYmpttt79hpuA32cQUOGZs0yCkUCL5v86qQ56q2D3KhgDJIaUGbrR9kQCZ2Zs9mAmE=
+X-Received: by 2002:a25:c60e:0:b0:668:b55e:4a2a with SMTP id
+ k14-20020a25c60e000000b00668b55e4a2amr2634974ybf.372.1655886710409; Wed, 22
+ Jun 2022 01:31:50 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220622075340.16915-3-r-ravikumar@ti.com>
+References: <20220622003140.30365-1-pgwipeout@gmail.com> <f252c182-e306-174e-dd32-51c9a406d3f7@sholland.org>
+In-Reply-To: <f252c182-e306-174e-dd32-51c9a406d3f7@sholland.org>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Wed, 22 Jun 2022 04:31:39 -0400
+Message-ID: <CAMdYzYqUsr+orVtSbD023=GAyNLg4VdP9Wcrg6gON+Ut9FdzZA@mail.gmail.com>
+Subject: Re: [PATCH] phy: rockchip-inno-usb2: Sync initial otg state
+To: Samuel Holland <samuel@sholland.org>
+Cc: Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, 
+	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, 
+	arm-mail-list <linux-arm-kernel@lists.infradead.org>, 
+	"open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, 
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220622_011633_572079_53F6AAD7 
-X-CRM114-Status: GOOD (  22.73  )
+X-CRM114-CacheID: sfid-20220622_013153_911707_4D12A000 
+X-CRM114-Status: GOOD (  20.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,137 +86,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rahul,
+On Wed, Jun 22, 2022 at 1:16 AM Samuel Holland <samuel@sholland.org> wrote:
+>
+> On 6/21/22 7:31 PM, Peter Geis wrote:
+> > The initial otg state for the phy defaults to device mode. The actual
+> > state isn't detected until an ID IRQ fires. Fix this by syncing the ID
+> > state during initialization.
+> >
+> > Fixes: 51a9b2c03dd3 ("phy: rockchip-inno-usb2: Handle ID IRQ")
+> > Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+>
+> One comment below. Either way it fixes a bug, so:
+>
+> Reviewed-by: Samuel Holland <samuel@sholland.org>
 
-Thank you for the patch.
+Thanks!
 
-On Wed, Jun 22, 2022 at 01:23:39PM +0530, Rahul T R wrote:
-> Add support for band ctrl config for dphy tx.
-> 
-> Signed-off-by: Rahul T R <r-ravikumar@ti.com>
-> ---
->  drivers/phy/cadence/cdns-dphy.c | 52 ++++++++++++++++++++++++++++++++-
->  1 file changed, 51 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index ba042e39cfaf..ddfa524d8ce7 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -4,6 +4,7 @@
->   */
->  
->  #include <linux/bitops.h>
-> +#include <linux/bitfield.h>
+>
+> > ---
+> >  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 6 ++++++
+> >  1 file changed, 6 insertions(+)
+> >
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> > index 6711659f727c..6e44069617df 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> > @@ -1162,6 +1162,12 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+> >                                       EXTCON_USB_HOST, &rport->event_nb);
+> >               if (ret)
+> >                       dev_err(rphy->dev, "register USB HOST notifier failed\n");
+> > +
+> > +             if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
+>
+> Currently the IRQ handler does not care who created the extcon. We should at
+> least be consistent between here and there.
 
-Nitpicking, bitfield goes before bitops :-)
+We care in this instance because if there is an external extcon it is
+responsible for setting the initial state. Our ID pin may or may not
+be used in this case and if it isn't we would overwrite the initial
+state with an invalid one.
 
->  #include <linux/clk.h>
->  #include <linux/io.h>
->  #include <linux/module.h>
-> @@ -45,6 +46,10 @@
->  #define DPHY_CMN_OPDIV_FROM_REG		BIT(6)
->  #define DPHY_CMN_OPDIV(x)		((x) << 7)
->  
-> +#define DPHY_BAND_CFG			DPHY_PCS(0x0)
-> +#define DPHY_BAND_CFG_LEFT_BAND		GENMASK(4, 0)
-> +#define DPHY_BAND_CFG_RIGHT_BAND	GENMASK(9, 5)
-> +
->  #define DPHY_PSM_CFG			DPHY_PCS(0x4)
->  #define DPHY_PSM_CFG_FROM_REG		BIT(0)
->  #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
-> @@ -92,6 +97,22 @@ struct cdns_dphy {
->  	struct phy *phy;
->  };
->  
-> +struct cdns_dphy_band {
-> +	unsigned int min_rate;
-> +	unsigned int max_rate;
-> +};
-> +
-> +/* Order of bands is important since the index is the band number. */
-> +static struct cdns_dphy_band tx_bands[] = {
-
-static const
-
-> +	{80, 100}, {100, 120}, {120, 160}, {160, 200}, {200, 240},
-> +	{240, 320}, {320, 390}, {390, 450}, {450, 510}, {510, 560},
-> +	{560, 640}, {640, 690}, {690, 770}, {770, 870}, {870, 950},
-> +	{950, 1000}, {1000, 1200}, {1200, 1400}, {1400, 1600}, {1600, 1800},
-> +	{1800, 2000}, {2000, 2200}, {2200, 2500}
-
-The max_rate value of band N is always equal to the min_rate value of
-band N+1. Could we store one only ?
-
-> +};
-> +
-> +static int num_tx_bands = ARRAY_SIZE(tx_bands);
-
-You can use ARRAY_SIZE(tx_bands) directly below and drop this.
-
-> +
->  static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
->  				     struct cdns_dphy_cfg *cfg,
->  				     struct phy_configure_opts_mipi_dphy *opts,
-> @@ -232,6 +253,26 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
->  	return 0;
->  }
->  
-> +static int cdns_dphy_tx_get_band_ctrl(unsigned long hs_clk_rate)
-> +{
-> +	unsigned int rate;
-> +	int i;
-> +
-> +	rate = hs_clk_rate / 1000000UL;
-> +
-> +	if (rate < tx_bands[0].min_rate || rate >= tx_bands[num_tx_bands - 1].max_rate)
-> +		return -EOPNOTSUPP;
-> +
-> +	for (i = 0; i < num_tx_bands; i++) {
-> +		if (rate >= tx_bands[i].min_rate && rate < tx_bands[i].max_rate)
-> +			return i;
-> +	}
-> +
-> +	/* Unreachable. */
-> +	WARN(1, "Reached unreachable code.");
-
-I'd drop the WARN() if it's really unreachable.
-
-> +	return -EINVAL;
-> +}
-> +
->  static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
->  			      union phy_configure_opts *opts)
->  {
-> @@ -247,7 +288,8 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
->  {
->  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
->  	struct cdns_dphy_cfg cfg = { 0 };
-> -	int ret;
-> +	int ret, band_ctrl;
-> +	unsigned int reg;
->  
->  	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
->  	if (ret)
-> @@ -276,6 +318,14 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
->  	 */
->  	cdns_dphy_set_pll_cfg(dphy, &cfg);
->  
-> +	band_ctrl = cdns_dphy_tx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-> +	if (band_ctrl < 0)
-> +		return band_ctrl;
-> +
-> +	reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
-> +	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
-> +	writel(reg, dphy->regs + DPHY_BAND_CFG);
-> +
->  	return 0;
->  }
->  
-
--- 
-Regards,
-
-Laurent Pinchart
+>
+> Regards,
+> Samuel
+>
+> > +                     /* do initial sync of usb state */
+> > +                     ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
+> > +                     extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
+> > +             }
+> >       }
+> >
+> >  out:
+> >
+>
 
 -- 
 linux-phy mailing list
