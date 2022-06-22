@@ -4,74 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD411C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jun 2022 23:08:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F369ACCA473
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jun 2022 00:31:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=43mDUxSqU4UrZtx1AZFzrUpMc7K+dMLIgT3Kb7FZhhA=; b=eJi6YEUbHpkl5h
-	y789GqcuizqyztLMPA/cSBGN+lH0Lc1JxunBDiqF1qbUF7ESDMWbxGE1cEVQiC8y4ZOu+r8ow2iLU
-	QJOID9GheAn34NmM62BLE8arlmZzzuw7hMtxRJct+o1MZTX5ynqAK6Vxao+CfCZPIxI/VEY4s6P40
-	iU1Ypv5ebNPGGOHO2JkotM0XPLlYASpQ6vvPgX7/67DHsrNco0tBh2Ix2WHk6BJTd6VQl5gBk2xi+
-	Bigot6igbPPcX9TRdcMoSUU6skP+egmXcoo0/9ZH49FVe5gNlJjQgdIldy5u9YZD8szUGb6mr3cW6
-	T+mXT9nCdbza72BoqX9g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VsmwH6Iz2scLKJqTXBS4ROF+CPFuNhdWAX5p0eaDD4k=; b=zbnxOTjA5Yf5FM
+	aP7Gm6FO8dooY5SLzivJlmAfGblaRROOFbm4htHbjR8RqO+1vLrO3GQESVdUa4PHDT4ZGqIzmlSd/
+	NIaYHlMPRDU3pI7KFM25Z1WMfG+5szGD6V69WbbGDDy5/G9dThUKXbOa8ywiATGY593IX3/AuNKHb
+	41HROx7Dg3GrE/aarm8L5dN7cRlBGvxbOYX9AtihrK/bycMoRw9J7aToqiwsr99Tsst1BtOy4hiaB
+	qZWylytyCC8BqrycPv88f1Xa+hxKhUhO7jdyS8qp1gvnEVmvlUIxZuFCvysKMSgZjYdDzch4UgmA6
+	YiBAbOAydW1pQxh2N/WA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3myy-007fnF-7s; Tue, 21 Jun 2022 23:08:28 +0000
-Received: from mga06b.intel.com ([134.134.136.31] helo=mga06.intel.com)
+	id 1o3oHh-007pgq-CA; Wed, 22 Jun 2022 00:31:53 +0000
+Received: from mail-qv1-xf32.google.com ([2607:f8b0:4864:20::f32])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o3myu-007fmo-Vu
-	for linux-phy@lists.infradead.org; Tue, 21 Jun 2022 23:08:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1655852904; x=1687388904;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=fbNcvbxt2AEX50zg7N51mEeNHFJNVXxxyBoLBKPjpeg=;
-  b=SWyw4bO5kiqJnEBGrh0YbzolbYW44A2IpDN7+cET10Wodzy7kOm5wCSZ
-   /epUrDCYpx26dXBmu8g76izo/xynXdLKfxKxwcAxAdrslY86MG+6ou/a+
-   3G0nbrIE0TyHX0Xo2O+Z0x1kvLSPApLWOe4BfHp3PkQgQTX2HG+tW0Kfd
-   XM7sWAGeIm4SeGO1EcWRIUwD527Pa3YC9ijk9nHD4oxJlZrZNMPTHtuEv
-   cziUDmfmQUmK5rlD+hHbDJC/nqIgJlXdf1Xwtvnog3e807P2xKN46HH22
-   OfKGOLf1WYSrgu4l/2Aa0PqFPW08l79Tu/XC8zVTdOY0aQeXBBWbQX6Z8
-   Q==;
-X-IronPort-AV: E=McAfee;i="6400,9594,10385"; a="341945022"
-X-IronPort-AV: E=Sophos;i="5.92,210,1650956400"; 
-   d="scan'208";a="341945022"
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
-  by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jun 2022 16:08:22 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.92,210,1650956400"; 
-   d="scan'208";a="586435848"
-Received: from lkp-server02.sh.intel.com (HELO a67cc04a5eeb) ([10.239.97.151])
-  by orsmga002.jf.intel.com with ESMTP; 21 Jun 2022 16:08:17 -0700
-Received: from kbuild by a67cc04a5eeb with local (Exim 4.95)
-	(envelope-from <lkp@intel.com>)
-	id 1o3myn-0000X2-9P;
-	Tue, 21 Jun 2022 23:08:17 +0000
-Date: Wed, 22 Jun 2022 07:07:47 +0800
-From: kernel test robot <lkp@intel.com>
-To: Rahul T R <r-ravikumar@ti.com>, linux-phy@lists.infradead.org,
-	kishon@ti.com, vkoul@kernel.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org
-Cc: llvm@lists.linux.dev, kbuild-all@lists.01.org, p.yadav@ti.com,
-	tomi.valkeinen@ideasonboard.com, laurent.pinchart@ideasonboard.com,
-	linux-kernel@vger.kernel.org, jpawar@cadence.com,
-	sjakhade@cadence.com, mparab@cadence.com,
-	devicetree@vger.kernel.org, vigneshr@ti.com, lee.jones@linaro.org,
-	Rahul T R <r-ravikumar@ti.com>
-Subject: Re: [PATCH 2/3] phy: cdns-dphy: Add band config for dphy tx
-Message-ID: <202206220747.oBZNVia0-lkp@intel.com>
-References: <20220621180332.28767-3-r-ravikumar@ti.com>
+	id 1o3oHe-007pfm-HQ; Wed, 22 Jun 2022 00:31:51 +0000
+Received: by mail-qv1-xf32.google.com with SMTP id cs6so18473895qvb.6;
+        Tue, 21 Jun 2022 17:31:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=from:to:cc:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=X0QEIToI/CFI0cgM+A/tlMGHfHXlQisMEaSeYjXmHHA=;
+        b=mcheo+5zMZDnjR6yyVGONRNMiaAHvA2/guCw8onol6soGX3VbyfFTK6rQVCNsXmGam
+         Cm/poHlz4TL9ELqEcUp6ys6TOGDmjhgwma9ywr01ijnH0TFaTjwiGGYDbfEMjdO8/+sa
+         xmUoSbN7ffpWwOru8LeRV/YwF5vGOQzlNQ+YejH9HZdESi1teiYLv9ELSjWKfx3RFn9J
+         36/hGmieXG6lC/CKbgMB98xoZMKyz0JvmxDMuLfC5uG7BxUJjBWj0+Xl6acSxKtfXfLv
+         m/CswqG5/PeTF4TOpMb1+eZ+dqxcxr4EBbPhBv2+vs3fWwDkMm7QlUUoji7IngrxSIaZ
+         vitg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=X0QEIToI/CFI0cgM+A/tlMGHfHXlQisMEaSeYjXmHHA=;
+        b=xc2terd4Jxy1hkDKvV/T4Mu+qjKOrk6JVpL+yiB+LOvnbLNGp3gkJJ1TQJw4VotT5/
+         pV96tDClm80BVzwCGggfXMt/3kc98Vnr86myKO7ySBjoGO0u+efdKomAYX9TWMs8Fd9Q
+         qe73RVjjh0/ZabsgvvKYMjEGsQm9xTyK6BfAEjYxw5ZowYdYjHA8hvCddj+qJbOzVxB1
+         mbQhgRfp32XpKRsiw8qgbz2BkLhh0NCXTCwAqZbsV52NeWZKlyOphoWsz+31IuRhpN+E
+         2afBai6Ssz9ca+Hj+ElF7gja1A3JNh4Rrowr+FUyvvm1FaRLKcM0I2OO9hNdWa8ZY8HC
+         6weg==
+X-Gm-Message-State: AJIora8pmD6rL7FW2/vSRi124Be40qbxuQ8WmGljrf/7fnTfzvs8tD7w
+	qi2shHLc4snqpIHzfG44MEA=
+X-Google-Smtp-Source: AGRyM1s6iU9poE7Ijqhj7rTba2yRmxwLcqau0ytkVnEFTWbNOaSpLsfzAFR6VZ05/rfC8yBTvB6fxQ==
+X-Received: by 2002:a05:6214:cc4:b0:470:2c94:4fdf with SMTP id 4-20020a0562140cc400b004702c944fdfmr18133964qvx.2.1655857908195;
+        Tue, 21 Jun 2022 17:31:48 -0700 (PDT)
+Received: from master-x64.sparksnet ([2601:153:980:85b1::10])
+        by smtp.gmail.com with ESMTPSA id b19-20020ac87553000000b00304ef50af9fsm13496995qtr.2.2022.06.21.17.31.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 21 Jun 2022 17:31:47 -0700 (PDT)
+From: Peter Geis <pgwipeout@gmail.com>
+To: Heiko Stuebner <heiko@sntech.de>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Samuel Holland <samuel@sholland.org>
+Cc: Peter Geis <pgwipeout@gmail.com>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: rockchip-inno-usb2: Sync initial otg state
+Date: Tue, 21 Jun 2022 20:31:40 -0400
+Message-Id: <20220622003140.30365-1-pgwipeout@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220621180332.28767-3-r-ravikumar@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220621_160825_109112_AB093737 
-X-CRM114-Status: GOOD (  14.98  )
+X-CRM114-CacheID: sfid-20220621_173150_632826_A94CFBD7 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,94 +92,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rahul,
+The initial otg state for the phy defaults to device mode. The actual
+state isn't detected until an ID IRQ fires. Fix this by syncing the ID
+state during initialization.
 
-Thank you for the patch! Yet something to improve:
+Fixes: 51a9b2c03dd3 ("phy: rockchip-inno-usb2: Handle ID IRQ")
+Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+---
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on linus/master v5.19-rc3 next-20220621]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Rahul-T-R/Add-support-for-DPHY-TX-on-J721E/20220622-020528
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-config: hexagon-randconfig-r041-20220622 (https://download.01.org/0day-ci/archive/20220622/202206220747.oBZNVia0-lkp@intel.com/config)
-compiler: clang version 15.0.0 (https://github.com/llvm/llvm-project af6d2a0b6825e71965f3e2701a63c239fa0ad70f)
-reproduce (this is a W=1 build):
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        # https://github.com/intel-lab-lkp/linux/commit/846aa076b0d86dd2ebc49c2a437c7b452305691d
-        git remote add linux-review https://github.com/intel-lab-lkp/linux
-        git fetch --no-tags linux-review Rahul-T-R/Add-support-for-DPHY-TX-on-J721E/20220622-020528
-        git checkout 846aa076b0d86dd2ebc49c2a437c7b452305691d
-        # save the config file
-        mkdir build_dir && cp config build_dir/.config
-        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=hexagon SHELL=/bin/bash drivers/phy/cadence/
-
-If you fix the issue, kindly add following tag where applicable
-Reported-by: kernel test robot <lkp@intel.com>
-
-All errors (new ones prefixed by >>):
-
->> drivers/phy/cadence/cdns-dphy.c:324:8: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-           reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
-                 ^
-   1 error generated.
-
-
-vim +/FIELD_PREP +324 drivers/phy/cadence/cdns-dphy.c
-
-   285	
-   286	static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
-   287	{
-   288		struct cdns_dphy *dphy = phy_get_drvdata(phy);
-   289		struct cdns_dphy_cfg cfg = { 0 };
-   290		int ret, band_ctrl;
-   291		unsigned int reg;
-   292	
-   293		ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
-   294		if (ret)
-   295			return ret;
-   296	
-   297		/*
-   298		 * Configure the internal PSM clk divider so that the DPHY has a
-   299		 * 1MHz clk (or something close).
-   300		 */
-   301		ret = cdns_dphy_setup_psm(dphy);
-   302		if (ret)
-   303			return ret;
-   304	
-   305		/*
-   306		 * Configure attach clk lanes to data lanes: the DPHY has 2 clk lanes
-   307		 * and 8 data lanes, each clk lane can be attache different set of
-   308		 * data lanes. The 2 groups are named 'left' and 'right', so here we
-   309		 * just say that we want the 'left' clk lane to drive the 'left' data
-   310		 * lanes.
-   311		 */
-   312		cdns_dphy_set_clk_lane_cfg(dphy, DPHY_CLK_CFG_LEFT_DRIVES_LEFT);
-   313	
-   314		/*
-   315		 * Configure the DPHY PLL that will be used to generate the TX byte
-   316		 * clk.
-   317		 */
-   318		cdns_dphy_set_pll_cfg(dphy, &cfg);
-   319	
-   320		band_ctrl = cdns_dphy_tx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
-   321		if (band_ctrl < 0)
-   322			return band_ctrl;
-   323	
- > 324		reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
-   325		      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
-   326		writel(reg, dphy->regs + DPHY_BAND_CFG);
-   327	
-   328		return 0;
-   329	}
-   330	
-
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 6711659f727c..6e44069617df 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1162,6 +1162,12 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+ 					EXTCON_USB_HOST, &rport->event_nb);
+ 		if (ret)
+ 			dev_err(rphy->dev, "register USB HOST notifier failed\n");
++
++		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
++			/* do initial sync of usb state */
++			ret = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
++			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !ret);
++		}
+ 	}
+ 
+ out:
 -- 
-0-DAY CI Kernel Test Service
-https://01.org/lkp
+2.25.1
+
 
 -- 
 linux-phy mailing list
