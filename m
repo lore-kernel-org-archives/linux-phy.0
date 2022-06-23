@@ -4,73 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50BD4C43334
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jun 2022 09:45:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FED4C43334
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jun 2022 11:33:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SAbJIHuRMThMatKTW28YlsmaQd/Gr7RLxZBis3UeYkY=; b=Fwj9Hhmimg4FcJ
-	tD7pc356BnT/Iq5cJ8HMUijeSpt6i2KHRQnOcXYSw13L75fZJ2cGkQCfU0y6+szsrfY0BkeGBWumM
-	Ev5c6SL30nvXqP0vJFiHC97GYtNuVLnWY+/sSt89P9lFcdGLwh69RMJlIgbqoazMjSZwmOz35ILqk
-	MJheOAXfZVnMvE4xZBPeoIsS+ZCea1Ca1mpyCgVpS/qUDAHFem4pYvt+UM9wUu7mTdGEVcPUhtJVs
-	GyqAhXFwJ9f2yZ4qCmfLWARcNc7URKQwGoR/ClXRuxCK/sfL8nPtqNbiecbMOGX1DjAXDfLXPl4Lj
-	HJgvZG8XubSWWKpVvskA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=22vnHdSxNJataPaf+nE2Sr7Z8IKnquNpItcq1pZ8zQ8=; b=rsugo0ykQBD8S7
+	T+lLQQ5E1jtqyzLpO1HQg79hzQ6TCj2yz5hF31/3ZoyiUKUqle59ahVbQ4ZfBZm+YpGukBTGR7Kw7
+	1HY2Ua+mN/ANNkw4LFAUmF/MMqgZkDwwLHbV+7uhEHzsfpasGkxHStJ3emk6CsG/o+9IsP1aqDLl2
+	RqjVZ5LUCxrXr0mWdgfyi8XMjYS6ksSX/Llp6AzTP4lIpzCuoc1auQjsjWmQcAF8Aqee+9fm9FBmL
+	MUnhnAhSoEfMHkBO95kammi40BnOPqKsxT3DvP3dNd0YAGi+qt35Jznx8WByiqYjtBamS7bHpDq9u
+	C68Q0unf7OWQ3dEqMwbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o4JP4-00EN7h-Mg; Thu, 23 Jun 2022 09:45:34 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1o4L5l-00EjjY-DS; Thu, 23 Jun 2022 11:33:45 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o4JP1-00EN79-RU
-	for linux-phy@lists.infradead.org; Thu, 23 Jun 2022 09:45:33 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 25N9jPcr047116;
-	Thu, 23 Jun 2022 04:45:25 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1655977525;
-	bh=Pi/6nVVvO0gXMhT7Kn1W6gxKOmLcIzaVRT/1b0Zz+xc=;
-	h=Date:From:To:CC:Subject:References:In-Reply-To;
-	b=VyY23mELmk/vUp2ZjpDn+yDkNkSebXrzlrA9+S24zuqYsBD9VoLXBXns1tQGSPlbZ
-	 MyxchKa7cKJvNLKvvegOwlUlVNuEIY93paEhOnWW682fJ1JSq14d2XtoJ07YheyBWd
-	 MekidNOMeV4cPweDn7pFtU+lilAs+SP5pFgcg9Fw=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 25N9jP3F043556
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 23 Jun 2022 04:45:25 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14; Thu, 23
- Jun 2022 04:45:24 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.14 via
- Frontend Transport; Thu, 23 Jun 2022 04:45:24 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
-	by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 25N9jNaI007380;
-	Thu, 23 Jun 2022 04:45:24 -0500
-Date: Thu, 23 Jun 2022 15:15:23 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Rahul T R <r-ravikumar@ti.com>
-CC: <linux-phy@lists.infradead.org>, <kishon@ti.com>, <vkoul@kernel.org>,
-        <robh+dt@kernel.org>, <krzysztof.kozlowski+dt@linaro.org>,
-        <laurent.pinchart@ideasonboard.com>, <tomi.valkeinen@ideasonboard.com>,
-        <linux-kernel@vger.kernel.org>, <jpawar@cadence.com>,
-        <sjakhade@cadence.com>, <mparab@cadence.com>,
-        <devicetree@vger.kernel.org>, <vigneshr@ti.com>,
-        <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 3/3] phy: cdns-dphy: Add support for DPHY TX on J721e
-Message-ID: <20220623094523.ccrsmw477a5btgcf@ti.com>
-References: <20220622105311.21415-1-r-ravikumar@ti.com>
- <20220622105311.21415-4-r-ravikumar@ti.com>
+	id 1o4L5j-00EjiL-3l
+	for linux-phy@lists.infradead.org; Thu, 23 Jun 2022 11:33:44 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 7C25CB8223E;
+	Thu, 23 Jun 2022 11:33:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 451BBC341C0;
+	Thu, 23 Jun 2022 11:33:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1655984019;
+	bh=4EDHfLFPyMm+mvSkkeJIautqlPxXEeD7CW/b/RawN68=;
+	h=From:To:Cc:Subject:Date:From;
+	b=OexC5FuUH9H5meCvL8nxn4EjKfDCkYacvBWDoo2093yLe7Z9RCyZmGKfIgk2FaJj5
+	 3iGXxxBf3NHtc3UaEJBdHlvDwjgPvm9Fn2ZGP7jvDYpfpp2EY3vQJjLomTN2/NneXO
+	 JvJoN6WMR/uZkjpHYMGk+Op1aRxVuwNi9/EYsAGtjP2vOUmXxL9qRCKSKA731ul+sE
+	 d2oA9q0uLDb107GNDvNN4R14QjRZOtmFsJRxHYN9gh6EhPaYABPRbUB0YBhKX992/9
+	 tfOjDS1HLrzkk6MKM5zs+BvnC9btBQX6ug3CxedrCy+i3HROCU/d+nJIWMGE+PKhBF
+	 f+GnPZFj6+oag==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1o4L5b-0007kJ-RP; Thu, 23 Jun 2022 13:33:36 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 0/3] phy: qcom-qmp: pipe clock cleanups
+Date: Thu, 23 Jun 2022 13:33:11 +0200
+Message-Id: <20220623113314.29761-1-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20220622105311.21415-4-r-ravikumar@ti.com>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220623_024532_015171_4DFC5F78 
-X-CRM114-Status: GOOD (  27.65  )
+X-CRM114-CacheID: sfid-20220623_043343_307735_3EF51661 
+X-CRM114-Status: UNSURE (   6.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,168 +80,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rahul,
+Here are some follow-up cleanups after the recent driver split.
 
-On 22/06/22 04:23PM, Rahul T R wrote:
-> Add support new compatible for dphy-tx on j721e
-> and implement dphy ops required.
-> 
-> Signed-off-by: Rahul T R <r-ravikumar@ti.com>
-> ---
->  drivers/phy/cadence/Kconfig     | 10 ++++++
->  drivers/phy/cadence/cdns-dphy.c | 62 +++++++++++++++++++++++++++++++++
->  2 files changed, 72 insertions(+)
-> 
-> diff --git a/drivers/phy/cadence/Kconfig b/drivers/phy/cadence/Kconfig
-> index 1adde2d99ae7..18024ac6d511 100644
-> --- a/drivers/phy/cadence/Kconfig
-> +++ b/drivers/phy/cadence/Kconfig
-> @@ -22,6 +22,16 @@ config PHY_CADENCE_DPHY
->  	  system. If M is selected, the module will be called
->  	  cdns-dphy.
->  
-> +if PHY_CADENCE_DPHY
-> +
-> +config PHY_CADENCE_DPHY_J721E
-> +	depends on ARCH_K3 || COMPILE_TEST
-> +	bool "J721E DPHY TX Wiz support"
-> +	default y
-> +	help
-> +	  Support J721E Cadence DPHY TX Wiz configuration.
-> +endif
-> +
->  config PHY_CADENCE_DPHY_RX
->  	tristate "Cadence D-PHY Rx Support"
->  	depends on HAS_IOMEM && OF
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index 14f951013b4f..a6b7d696f77a 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -7,6 +7,7 @@
->  #include <linux/bitops.h>
->  #include <linux/clk.h>
->  #include <linux/io.h>
-> +#include <linux/iopoll.h>
->  #include <linux/module.h>
->  #include <linux/of_address.h>
->  #include <linux/of_device.h>
-> @@ -18,6 +19,7 @@
->  
->  #define REG_WAKEUP_TIME_NS		800
->  #define DPHY_PLL_RATE_HZ		108000000
-> +#define POLL_TIMEOUT_US			1000
->  
->  /* DPHY registers */
->  #define DPHY_PMA_CMN(reg)		(reg)
-> @@ -62,6 +64,18 @@
->  #define DSI_NULL_FRAME_OVERHEAD		6
->  #define DSI_EOT_PKT_SIZE		4
->  
-> +#define DPHY_TX_J721E_WIZ_PLL_CTRL	0xF04
-> +#define DPHY_TX_J721E_WIZ_STATUS	0xF08
-> +#define DPHY_TX_J721E_WIZ_RST_CTRL	0xF0C
-> +#define DPHY_TX_J721E_WIZ_PSM_FREQ	0xF10
-> +
-> +#define DPHY_TX_J721E_WIZ_IPDIV		GENMASK(4, 0)
-> +#define DPHY_TX_J721E_WIZ_OPDIV		GENMASK(13, 8)
-> +#define DPHY_TX_J721E_WIZ_FBDIV		GENMASK(25, 16)
-> +#define DPHY_TX_J721E_WIZ_LANE_RSTB	BIT(31)
-> +#define DPHY_TX_WIZ_PLL_LOCK		BIT(31)
-> +#define DPHY_TX_WIZ_O_CMN_READY		BIT(31)
-> +
->  struct cdns_dphy_cfg {
->  	u8 pll_ipdiv;
->  	u8 pll_opdiv;
-> @@ -210,6 +224,43 @@ static void cdns_dphy_ref_set_psm_div(struct cdns_dphy *dphy, u8 div)
->  	       dphy->regs + DPHY_PSM_CFG);
->  }
->  
-> +#ifdef CONFIG_PHY_CADENCE_DPHY_J721E
+Johan
 
-Honestly, I don't think there is much use for using this config here. I 
-prefer to have as little ifdefs scattered in code as possible. And I 
-don't think the code you add makes much of a difference in terms of 
-size.
+Johan Hovold (3):
+  phy: qcom-qmp-pcie: drop obsolete pipe clock type check
+  phy: qcom-qmp-pcie-msm8996: drop obsolete pipe clock type check
+  phy: qcom-qmp-usb: clean up pipe clock handling
 
-I have not looked much into the WIZ module but the code looks fine to 
-me.
-
-> +static unsigned long cdns_dphy_j721e_get_wakeup_time_ns(struct cdns_dphy *dphy)
-> +{
-> +	return 1000000;
-> +}
-> +
-> +static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
-> +					const struct cdns_dphy_cfg *cfg)
-> +{
-> +	u32 status;
-> +
-> +	writel(DPHY_CMN_PWM_HIGH(6) | DPHY_CMN_PWM_LOW(0x101) |
-> +	       DPHY_CMN_PWM_DIV(0x8),
-
-Please avoid using magic numbers. Or if you are going to use them, at 
-least explain in a comment what they are doing.
-
-> +	       dphy->regs + DPHY_CMN_PWM);
-> +
-> +	writel((FIELD_PREP(DPHY_TX_J721E_WIZ_IPDIV, cfg->pll_ipdiv) |
-> +		FIELD_PREP(DPHY_TX_J721E_WIZ_OPDIV, cfg->pll_opdiv) |
-> +		FIELD_PREP(DPHY_TX_J721E_WIZ_FBDIV, cfg->pll_fbdiv)),
-> +		dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL);
-> +
-> +	writel(DPHY_TX_J721E_WIZ_LANE_RSTB,
-> +	       dphy->regs + DPHY_TX_J721E_WIZ_RST_CTRL);
-> +
-> +	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
-> +			   (status & DPHY_TX_WIZ_PLL_LOCK), 0, POLL_TIMEOUT_US);
-> +
-> +	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
-> +			   (status & DPHY_TX_WIZ_O_CMN_READY), 0,
-> +			   POLL_TIMEOUT_US);
-> +}
-> +
-> +static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
-> +{
-> +	writel(div, dphy->regs + DPHY_TX_J721E_WIZ_PSM_FREQ);
-> +}
-> +#endif /* !CONFIG_PHY_CADENCE_DPHY_J721E */
-> +
->  /*
->   * This is the reference implementation of DPHY hooks. Specific integration of
->   * this IP may have to re-implement some of them depending on how they decided
-> @@ -221,6 +272,14 @@ static const struct cdns_dphy_ops ref_dphy_ops = {
->  	.set_psm_div = cdns_dphy_ref_set_psm_div,
->  };
->  
-> +#ifdef CONFIG_PHY_CADENCE_DPHY_J721E
-> +static const struct cdns_dphy_ops j721e_dphy_ops = {
-> +	.get_wakeup_time_ns = cdns_dphy_j721e_get_wakeup_time_ns,
-> +	.set_pll_cfg = cdns_dphy_j721e_set_pll_cfg,
-> +	.set_psm_div = cdns_dphy_j721e_set_psm_div,
-> +};
-> +#endif /* !CONFIG_PHY_CADENCE_DPHY_J721E */
-> +
->  static int cdns_dphy_config_from_opts(struct phy *phy,
->  				      struct phy_configure_opts_mipi_dphy *opts,
->  				      struct cdns_dphy_cfg *cfg)
-> @@ -408,6 +467,9 @@ static int cdns_dphy_remove(struct platform_device *pdev)
->  
->  static const struct of_device_id cdns_dphy_of_match[] = {
->  	{ .compatible = "cdns,dphy", .data = &ref_dphy_ops },
-> +#ifdef CONFIG_PHY_CADENCE_DPHY_J721E
-> +	{ .compatible = "ti,j721e-dphy", .data = &j721e_dphy_ops },
-> +#endif /* !CONFIG_PHY_CADENCE_DPHY_J721E */
->  	{ /* sentinel */ },
->  };
->  MODULE_DEVICE_TABLE(of, cdns_dphy_of_match);
-> -- 
-> 2.36.1
-> 
+ .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  | 19 ++-----------------
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 19 ++-----------------
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 15 ++-------------
+ 3 files changed, 6 insertions(+), 47 deletions(-)
 
 -- 
-Regards,
-Pratyush Yadav
-Texas Instruments Inc.
+2.35.1
+
 
 -- 
 linux-phy mailing list
