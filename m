@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 261FBC43334
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Jun 2022 22:29:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9B13C433EF
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Jun 2022 23:47:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qxbzKfHoWovsO/kZXEzoBCYDHkeagkTfBoiiWFW3ML0=; b=kEkXhgAIAt9H+G
-	YrsjAlDkAnMv2L+zSvTyisIdOzJEGa7f6ers9pz9Zqfetblr9GIsIwRHDZZ/OUr9u6l7vLVOwplmF
-	cTCGO+oArYx+jL7GGDHlRz5JcsCPBhaNNjidwbbuw2HQT49Clcfbf3OpNILMTZCUp/E8bWAPi9IXp
-	kzheg53XVWbudUAtZL9I+VFwCEZKMEc+e+SNge+FJBI21dnyfi8IwomSkihEzLSAnaS/iftEXEJ4k
-	xZhcg76RqsMtvdPzc/jgp4eb+pt+qe1dPGCaoiCPC8mqe/aqkdIYisWbwtaofj3Db8cRahTIocxiJ
-	1B+O2OLSebvAELBhPy8Q==;
+	List-Owner; bh=rDsN+tPaptKtURja7rNjBiZrIVDljJJhb1dKmnwiqTc=; b=RiuSVhRKTLjgip
+	IgngDz9o6Wq+EY4wAXiT2HsfeOECKKV4PrvGwVYxf4aMXdZRVOkv2EtTBFU7Iomek1J5A06EMf9AF
+	kPUvIzZq5EIdFh7ZKKpISRA4m7GY2aKi6ZxLZ12HtsmvjK3cJOEbCOMUnhbKb/ZE007zImrCjLJzO
+	1nzKB6beIeqibCrlm2wNZzEnav5T4D2A6QzqZDWk4uTM+MTUSrIYljaXDQdYhQztVG4wR9ihLVMnT
+	/j1qMx6pZAUUJB6dDvqFslBkmmsW8jSz+xA6yHz8/7JQSRXsW6GQwK5K/v6EgiEMl501/jNHL7EkB
+	JQeCWRavs+10xn2A5E4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o5xEG-0036mI-Hy; Mon, 27 Jun 2022 22:29:12 +0000
-Received: from mail-io1-f48.google.com ([209.85.166.48])
+	id 1o5ySI-003KvQ-BN; Mon, 27 Jun 2022 23:47:46 +0000
+Received: from mail-io1-f41.google.com ([209.85.166.41])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o5xE6-0036kL-0G; Mon, 27 Jun 2022 22:29:03 +0000
-Received: by mail-io1-f48.google.com with SMTP id y18so11146025iof.2;
-        Mon, 27 Jun 2022 15:29:01 -0700 (PDT)
+	id 1o5yS7-003Ktx-LB; Mon, 27 Jun 2022 23:47:36 +0000
+Received: by mail-io1-f41.google.com with SMTP id a10so11264932ioe.9;
+        Mon, 27 Jun 2022 16:47:33 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:date:from:to:cc:subject:message-id:references
          :mime-version:content-disposition:in-reply-to;
-        bh=M7JsswKtKFMmct/59/l3KSgs3sKO9aTj7Vg2773Jtg8=;
-        b=WIWA4CaYUlV2ldMfQFl0PTcZ4yvUtWthjXpAPpPKfBntY6UVcCo3amNKNkIIqYh9KX
-         GijIj0f4QxgSa5rjtdcZ9uJC7ODmUq28SnGxGfxVgGOejME3jfFpvUSMjNXuJBKl9dQQ
-         voMNlDD1U/4Ehw6e114B8i2SY5MphJtCXyIOJa0SHAxFTA3uzhNxNN1qrh/afthAIRc1
-         adJYqYE3EPVshsvfompaq5NQWmg7r8X5mfjz9dfomIpGGbg5/wqaR6qh3rxtz2Y/JMXy
-         nrQB4RPrKfnNsVv8JWpTEO4e6G6g1tfPvcqbDo+geQ0QLdVXAsrW7X5xeurYcDnrVVYA
-         Kd3w==
-X-Gm-Message-State: AJIora/H17lWI+EtN90R4So+JBPkjbv65QP4jN+pXikkHN6k1NtRpoAk
-	wCmk+0ixAK5BZvaGLQOodA==
-X-Google-Smtp-Source: AGRyM1s5cyucj24BXjf2ZzIwSpTRK+LqWKYr3SfB5a36Pzs8Y0301ZfisVKbg0gnNo7Gx6l14bDoAw==
-X-Received: by 2002:a05:6638:38a0:b0:331:ec50:d191 with SMTP id b32-20020a05663838a000b00331ec50d191mr9258099jav.40.1656368940397;
-        Mon, 27 Jun 2022 15:29:00 -0700 (PDT)
+        bh=oRvWZ9TeKvYoId4Is7bsf/P3csJZYeH6unVDw+FoBLU=;
+        b=2cAz3UHhU6DWqTWw3aVldUrKdf/nlok2VLwOmKlmaUFXAtwaVkq03Zw69qL0Iea8Wi
+         WuV6b7OtnOT+phqiJfYVDYHGKgVSQcYXLXt8/0pTpQLSDrAIHNJ3X6CR5TOuhbgigl9X
+         XOeWMgJ+M+OHNWneibZhotq+xA7VmSq/yzj+5vqWQ9MxaJwc99H0qkJSHAZT3d4Jposg
+         7SjHZwAi36XzuJBY16aN2TDNE99ryHA4YBsQpV/dEQK+JkDM2tAzH2bv/wxoMHI71cA5
+         FxHGkMVjYP+tlaec9+0FdOBZw3eCIk93nntx1Wz982OFIwjwpJg/EpH99bhS5R6OkoDf
+         qS4Q==
+X-Gm-Message-State: AJIora9aLip4zDcbNIHu1FCWqe366Cat0va8TYxrUyLFnmHv0bUXGW8e
+	AJdn+YFhL+CRPTXrsuUl1A==
+X-Google-Smtp-Source: AGRyM1sfviI8ea8JVeUGZ7ysyjsRGHtyP3Kc3Y6dB0rkpSKEubWLB6skv7nEn5awW3d9L+56SWnBOg==
+X-Received: by 2002:a05:6638:1344:b0:331:f546:69e with SMTP id u4-20020a056638134400b00331f546069emr9894555jad.131.1656373653305;
+        Mon, 27 Jun 2022 16:47:33 -0700 (PDT)
 Received: from robh.at.kernel.org ([64.188.179.253])
-        by smtp.gmail.com with ESMTPSA id j194-20020a0263cb000000b00331f8fff9a3sm5266869jac.64.2022.06.27.15.28.59
+        by smtp.gmail.com with ESMTPSA id b201-20020a6bb2d2000000b00674c8448c3csm5993564iof.6.2022.06.27.16.47.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 27 Jun 2022 15:28:59 -0700 (PDT)
-Received: (nullmailer pid 3081821 invoked by uid 1000);
-	Mon, 27 Jun 2022 22:28:58 -0000
-Date: Mon, 27 Jun 2022 16:28:58 -0600
+        Mon, 27 Jun 2022 16:47:32 -0700 (PDT)
+Received: (nullmailer pid 3193779 invoked by uid 1000);
+	Mon, 27 Jun 2022 23:47:29 -0000
+Date: Mon, 27 Jun 2022 17:47:29 -0600
 From: Rob Herring <robh@kernel.org>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, vkoul@kernel.org, linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, kishon@ti.com
-Subject: Re: [PATCH v4 1/2] dt-bindings: phy: add Amlogic G12A Analog MIPI
- D-PHY bindings
-Message-ID: <20220627222858.GA3081761-robh@kernel.org>
-References: <20220616133811.1674777-1-narmstrong@baylibre.com>
- <20220616133811.1674777-2-narmstrong@baylibre.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Anurag Kumar Vulisha <anurag.kumar.vulisha@xilinx.com>, Michal Simek <michal.simek@xilinx.com>, Matthias Brugger <matthias.bgg@gmail.com>, linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Sean Anderson <sean.anderson@seco.com>
+Subject: Re: [PATCH] dt-bindings: phy: make phy-cells description a text
+Message-ID: <20220627234729.GA3169775-robh@kernel.org>
+References: <20220619113325.21396-1-krzysztof.kozlowski@linaro.org>
+ <Yq8LHN+WGVpXDwiM@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220616133811.1674777-2-narmstrong@baylibre.com>
+In-Reply-To: <Yq8LHN+WGVpXDwiM@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220627_152902_066305_BCEF499A 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220627_164735_734383_3B1B5D2E 
+X-CRM114-Status: GOOD (  16.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,20 +78,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 16 Jun 2022 15:38:10 +0200, Neil Armstrong wrote:
-> The Amlogic G12A SoCs embeds an Analog MIPI D-PHY to communicate with DSI
-> panels, this adds the bindings.
+On Sun, Jun 19, 2022 at 02:40:12PM +0300, Laurent Pinchart wrote:
+> Hi Krzysztof,
 > 
-> This Analog D-PHY works with a separate Digital MIPI D-PHY.
+> Thank you for the patch.
 > 
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  .../phy/amlogic,g12a-mipi-dphy-analog.yaml    | 35 +++++++++++++++++++
->  1 file changed, 35 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/amlogic,g12a-mipi-dphy-analog.yaml
+> On Sun, Jun 19, 2022 at 01:33:25PM +0200, Krzysztof Kozlowski wrote:
+> > The description field is a string, so using YAML inside phy-cells
+> > description is not actually helpful.
 > 
+> Does it hurt though ? 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Unfortunately, I see this a bit. It's convenient because the schema 
+passes all the checks. Doh! And I usually stare at it wondering how it 
+passed.
+
+Though I probably did review this, so IDK...
+
+> For xlnx,zynqmp-psgtr.yaml I wrote it that way to
+> prepare for a future where it could be described using a YAML schema
+> (but such future may never come).
+
+There's 2 parts. There's the resolving the defines and then applying the 
+schema to the cells. I actually think the latter would be easier. At 
+least from a documenting standpoint, we just need to define our own 
+keyword to stick the schema under. With the tools doing dtb based 
+validation now, the tools already get the phandle node and get the cell 
+size from the DT. It's just another step to extract the 
+node's compatible, find it's schema, and get its cell format schema. Any 
+volunteers?
+
+Rob
 
 -- 
 linux-phy mailing list
