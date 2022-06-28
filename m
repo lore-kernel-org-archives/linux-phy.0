@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4679BCCA480
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 12:23:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97414C43334
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 12:23:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b9jIR1S16CHi7KadOlQaYutPv5EO6ugfAmzYn+hhO7Y=; b=L6BD5sOmAss7Tu
-	PNuOm2S8cWn7weWcAn2mvaZQciCJ+xtBNEEDaD9Wb7BZWIjozRPdhJ7mWIDKK7fZ7qOn13UKO6GPj
-	MtfMYNhnTBENFRIPckO3PwaDf7KtFfyoMsfeR1OdUd5jRyDKoqAJBrnuoEm7eft5BxQr43wrm61/M
-	hk/4ttz29ORN+BXXDAd3xFiaqc8ndywnGy1v/ZhS3r40K+5RTeN/1+4/GG6YAqGvH/azeAHUX7+LE
-	pX6UaBPEaS+M5ltYjZczZJNsl2IuP0V/hQLxeAGX/a/+v8dRwvLKAuIry0SjOtiaU71R8qn9dZRaU
-	g4Av9zzHf5Fg0Jq9qy+w==;
+	List-Owner; bh=jCO+YicP4dtxbS/XTqeS4MWaz0Y8ItTLhA1Fbco+Zas=; b=pw7GdJBxEyq+tj
+	DXzllzPnkb+ugpTzoU8/GEWzJPeAGC7s779pzsbm/m+bISCfMmDaEOiXoOdqG1QoxcsBLUhMVVddy
+	qXaXnq2VkSHcZmYZzK4+PVEZOQwHq98+VujJRGCfQsd9jnmp89F134dZnJqncM9Ab4VogS8iFStWm
+	HAJMUTe0FI8BKUPt5k04oI+EYRUBe+ZnBF5g31SohNafauwZR10+KgMmgViAjxhRpAD17CrIWaX2B
+	UMo+4AsEfLuXVp+LDkyjGvLNCmx1pi1kE0RC/loFSkKuUks1dsAqOabsDKNYGRCWYddNARWWNZyXU
+	cTcbdhZvqXP4JWmIzB+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6AFU-0069Yy-Lz; Tue, 28 Jun 2022 12:23:20 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1o6AFZ-0069cK-Uz; Tue, 28 Jun 2022 12:23:25 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6AFR-0069X3-Ip
-	for linux-phy@lists.infradead.org; Tue, 28 Jun 2022 12:23:18 +0000
+	id 1o6AFW-0069ZX-Jz
+	for linux-phy@lists.infradead.org; Tue, 28 Jun 2022 12:23:24 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 1D87C60FFD;
-	Tue, 28 Jun 2022 12:23:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E02C9C341CA;
-	Tue, 28 Jun 2022 12:23:13 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 4839EB81E06;
+	Tue, 28 Jun 2022 12:23:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0516CC341CF;
+	Tue, 28 Jun 2022 12:23:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1656418996;
-	bh=624BIf6Kfhc5tEzLjhEHS2z9HYf+RPyNRQJ7oltMkMA=;
+	s=k20201202; t=1656418999;
+	bh=1V8MXkUgNi2dcarHxNrHOzzjdAUMNaQOkHe4RSHwLdE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=sVyNz+LD5Bzl+G6SrVV0hsBlc31CCNV7+hQ9xo+8NhYcuUaqVIAHHZseLxwNAKzMz
-	 8G2+gcfGqAdvaz6BI4f60EKoSzJ1idQJRyi16zqBlR99e3/39XWBHiPdBoy1mWAHQD
-	 T19hdhQnQy/Fa67QiVmbSLlQ4dDhFZbUxJgjScELv1UTUAr+DA4rYLQ94IC/tod/jy
-	 bG+DYcrnz4kvcHw5Iy/iLh4ApjmvQE9gbOB+UTE8HtU86/rJkjiZrSttzgH8Sh4PtH
-	 BcbcLm94HSn3I6qKf5JQUu2qNiH2VsQegYv1hFmj9V3pD9KPKYoAMhyaRRc9WwDUDG
-	 ZGvF7qxteSUcw==
+	b=Amuzenp5fcgyTfrovE+uSCAOii+Rs7Qv7Lq3/mE/7CYVxIvODoc1UZjkPtSXL85A6
+	 Gy/zJhBflTXxNN7ruQUVRD31IlK5R4Ahi30scRUZmZ/clkjGQqOyGZO8ptFb1Pdat1
+	 G4DovSYjlHjW72EGPn6r8ZuyL7/apGo2edAGvfvFfVgOVuIOCKiYQL6sKiDjFjwh6b
+	 eDcu6gV8muOJSutU7wI+szP3gxJfiNBl5c7ynFL3Sh/FS4795lw2j+vKMQpr/WG9n1
+	 twluTyfRRl+yiNbbxnqlJ7iNsl29GXJg8JBJA9I6jOqPyCgSp5IJyMOfAdEmWwUeMk
+	 ScWI3Xwj3pZFA==
 From: Roger Quadros <rogerq@kernel.org>
 To: kishon@ti.com,
 	vkoul@kernel.org
@@ -52,18 +52,16 @@ Cc: vigneshr@ti.com,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	devicetree@vger.kernel.org,
-	Rob Herring <robh@kernel.org>,
 	Roger Quadros <rogerq@kernel.org>
-Subject: [PATCH 2/7] dt-bindings: phy: Add PHY_TYPE_USXGMII definition
-Date: Tue, 28 Jun 2022 15:22:50 +0300
-Message-Id: <20220628122255.24265-3-rogerq@kernel.org>
+Subject: [PATCH 3/7] phy: ti: phy-j721e-wiz.c: Add usxgmii support in wiz driver
+Date: Tue, 28 Jun 2022 15:22:51 +0300
+Message-Id: <20220628122255.24265-4-rogerq@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20220628122255.24265-1-rogerq@kernel.org>
 References: <20220628122255.24265-1-rogerq@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220628_052317_697682_6CB0E5B4 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220628_052322_986738_10A54D94 
+X-CRM114-Status: GOOD (  14.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,28 +79,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Swapnil Jakhade <sjakhade@cadence.com>
+From: Tanmay Patil <t-patil@ti.com>
 
-Add definition for USXGMII phy type.
+Changes the wiz_p_mac_div_sel() and wiz_mode_select() to
+configure serdes for USXGMII.
 
-Cc: Rob Herring <robh@kernel.org>
-Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Adds the support to configure mac_src_sel, refclk_sel and
+rxfclk_sel in the LANECTL register and configures the serdes for
+usxgmii.
+
+[rogerq] Fix MAC_SRC_SEL to 0x3 for USXGMII as per CSL code.
+
+Signed-off-by: Tanmay Patil <t-patil@ti.com>
 Signed-off-by: Roger Quadros <rogerq@kernel.org>
 ---
- include/dt-bindings/phy/phy.h | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/ti/phy-j721e-wiz.c | 51 +++++++++++++++++++++++++++++++++-
+ 1 file changed, 50 insertions(+), 1 deletion(-)
 
-diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
-index f48c9acf251e..6b901b342348 100644
---- a/include/dt-bindings/phy/phy.h
-+++ b/include/dt-bindings/phy/phy.h
-@@ -22,5 +22,6 @@
- #define PHY_TYPE_QSGMII		9
- #define PHY_TYPE_DPHY		10
- #define PHY_TYPE_CPHY		11
-+#define PHY_TYPE_USXGMII	12
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index 8c10ee8e2707..77accea6ec2f 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -129,6 +129,26 @@ static const struct reg_field p0_fullrt_div[WIZ_MAX_LANES] = {
+ 	REG_FIELD(WIZ_LANECTL(3), 22, 23),
+ };
  
- #endif /* _DT_BINDINGS_PHY */
++static const struct reg_field p0_mac_src_sel[WIZ_MAX_LANES] = {
++	REG_FIELD(WIZ_LANECTL(0), 20, 21),
++	REG_FIELD(WIZ_LANECTL(1), 20, 21),
++	REG_FIELD(WIZ_LANECTL(2), 20, 21),
++	REG_FIELD(WIZ_LANECTL(3), 20, 21),
++};
++
++static const struct reg_field p0_rxfclk_sel[WIZ_MAX_LANES] = {
++	REG_FIELD(WIZ_LANECTL(0), 6, 7),
++	REG_FIELD(WIZ_LANECTL(1), 6, 7),
++	REG_FIELD(WIZ_LANECTL(2), 6, 7),
++	REG_FIELD(WIZ_LANECTL(3), 6, 7),
++};
++
++static const struct reg_field p0_refclk_sel[WIZ_MAX_LANES] = {
++	REG_FIELD(WIZ_LANECTL(0), 18, 19),
++	REG_FIELD(WIZ_LANECTL(1), 18, 19),
++	REG_FIELD(WIZ_LANECTL(2), 18, 19),
++	REG_FIELD(WIZ_LANECTL(3), 18, 19),
++};
+ static const struct reg_field p_mac_div_sel0[WIZ_MAX_LANES] = {
+ 	REG_FIELD(WIZ_LANEDIV(0), 16, 22),
+ 	REG_FIELD(WIZ_LANEDIV(1), 16, 22),
+@@ -280,6 +300,9 @@ struct wiz {
+ 	struct regmap_field	*p_mac_div_sel0[WIZ_MAX_LANES];
+ 	struct regmap_field	*p_mac_div_sel1[WIZ_MAX_LANES];
+ 	struct regmap_field	*p0_fullrt_div[WIZ_MAX_LANES];
++	struct regmap_field	*p0_mac_src_sel[WIZ_MAX_LANES];
++	struct regmap_field	*p0_rxfclk_sel[WIZ_MAX_LANES];
++	struct regmap_field	*p0_refclk_sel[WIZ_MAX_LANES];
+ 	struct regmap_field	*pma_cmn_refclk_int_mode;
+ 	struct regmap_field	*pma_cmn_refclk_mode;
+ 	struct regmap_field	*pma_cmn_refclk_dig_div;
+@@ -326,7 +349,8 @@ static int wiz_p_mac_div_sel(struct wiz *wiz)
+ 
+ 	for (i = 0; i < num_lanes; i++) {
+ 		if (wiz->lane_phy_type[i] == PHY_TYPE_SGMII ||
+-		    wiz->lane_phy_type[i] == PHY_TYPE_QSGMII) {
++		    wiz->lane_phy_type[i] == PHY_TYPE_QSGMII ||
++		    wiz->lane_phy_type[i] == PHY_TYPE_USXGMII) {
+ 			ret = regmap_field_write(wiz->p_mac_div_sel0[i], 1);
+ 			if (ret)
+ 				return ret;
+@@ -355,6 +379,13 @@ static int wiz_mode_select(struct wiz *wiz)
+ 		else
+ 			continue;
+ 
++		if (wiz->lane_phy_type[i] == PHY_TYPE_USXGMII) {
++			ret = regmap_field_write(wiz->p0_mac_src_sel[i], 0x3);
++			ret = regmap_field_write(wiz->p0_rxfclk_sel[i], 0x3);
++			ret = regmap_field_write(wiz->p0_refclk_sel[i], 0x3);
++			mode = LANE_MODE_GEN1;
++		}
++
+ 		ret = regmap_field_write(wiz->p_standard_mode[i], mode);
+ 		if (ret)
+ 			return ret;
+@@ -524,6 +555,24 @@ static int wiz_regfield_init(struct wiz *wiz)
+ 			return PTR_ERR(wiz->p0_fullrt_div[i]);
+ 		}
+ 
++		wiz->p0_mac_src_sel[i] = devm_regmap_field_alloc(dev, regmap, p0_mac_src_sel[i]);
++		if (IS_ERR(wiz->p0_mac_src_sel[i])) {
++			dev_err(dev, "P%d_MAC_SRC_SEL reg field init failed\n", i);
++			return PTR_ERR(wiz->p0_mac_src_sel[i]);
++		}
++
++		wiz->p0_rxfclk_sel[i] = devm_regmap_field_alloc(dev, regmap, p0_rxfclk_sel[i]);
++		if (IS_ERR(wiz->p0_rxfclk_sel[i])) {
++			dev_err(dev, "P%d_RXFCLK_SEL reg field init failed\n", i);
++			return PTR_ERR(wiz->p0_rxfclk_sel[i]);
++		}
++
++		wiz->p0_refclk_sel[i] = devm_regmap_field_alloc(dev, regmap, p0_refclk_sel[i]);
++		if (IS_ERR(wiz->p0_refclk_sel[i])) {
++			dev_err(dev, "P%d_REFCLK_SEL reg field init failed\n", i);
++			return PTR_ERR(wiz->p0_refclk_sel[i]);
++		}
++
+ 		wiz->p_mac_div_sel0[i] =
+ 		  devm_regmap_field_alloc(dev, regmap, p_mac_div_sel0[i]);
+ 		if (IS_ERR(wiz->p_mac_div_sel0[i])) {
 -- 
 2.17.1
 
