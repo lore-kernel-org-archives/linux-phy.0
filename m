@@ -4,75 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 646BFC433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 08:24:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7A58C433EF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 12:23:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:CC:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IkQ48X15mDFlQVoQzIvX7JHzt8ThdmfImRLPhjw5OUg=; b=LZ/iOfRgjvAuLR
-	MKyjgrd1geE0jEzINc0yZA178shrf5Up36RghO2hA3luJu0F+B6hnSoLDzYCTK6SvAxsuSgdrdwLt
-	6On1T5zS6uTfkpWxkV9rdZ7WURCkmreZxEIvPXKZCKfv9PXDUryAPvPKNU8o6qUtc7WMQ014mzQbJ
-	wfaagViRVqPmNkNQLQGESs6nDez5y/7ZOl1aAP+lxQf/5uflryuLdCtzVr2834HluO5spw/XK+bOn
-	JDBtExA90tmPRNXdiVJKE2HLnQTUR2qIS8xkjMIe5Pdtm2ATkqYrWXQXTIgmscYtMl2x3L9FBpfy3
-	Bano/PtKAUgXzEGg2JDA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4cu3OlHlLZA6X4Q2VpCn2LZGxrat9E44z0hL8rggubw=; b=A0B4SPKq9QmgG3
+	XHuKzQdOrzkt07oR8QGgK78LDq67afzAmikK0lPWsJbmRXZsGO8dKnZ5DfXRXIBfn8l7o+gHw9qf+
+	WLxNlxvk+yhWWe12jvWtHwiwUqMfjqOwyE339Epjg7cGSGLGYtVJAv9WRsmxcXYEXiK+s9/BmZ3iY
+	IwftFJyrFEfDRG9bSstkf04Fi2f2IawSNvZ970gfmB2uP94n93XwUhTwThMp5wCER9M/snVA3IPsx
+	0QZc9lpnu35gIMZS8y/HqZVd2cgIG8JpZkRrRcQsqwqjLgGCnO431QbK63sCTFMXhqfKc+W0bixpU
+	J2PXXm7+DjJQCoEE2EAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o66W2-005En1-B2; Tue, 28 Jun 2022 08:24:10 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1o6AFO-0069WE-9F; Tue, 28 Jun 2022 12:23:14 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o66Ru-005CgP-DG; Tue, 28 Jun 2022 08:19:56 +0000
-X-UUID: 95f692fe3d8a4da58203d4288d8d3e3f-20220628
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=xU7QE9xsJQx9Qz2iPrK6TRetQaJpLDQiwCYJOKUwq5c=;
-	b=cnBARmfWbmAcvrdihDh1SxswtF3i4ggbXLvP6KkJy/pwjeu8d0p4qAcgmlR/rssmBiMV91p7NEeGBzoWnCFuFY6xXIChlQ6xsOcU39vtQTKRUPdVjGmShfIhIvuVnJNbFThT0kRXDaOUXgm0KO7AlGHKRZkMwglSYSvFt7iqPpA=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.7,REQID:cbc1d79b-30ec-4b64-b5e3-692a7f675024,OB:0,LO
-	B:0,IP:0,URL:5,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,RULE:Release_Ham,ACTI
-	ON:release,TS:5
-X-CID-META: VersionHash:87442a2,CLOUDID:b712d762-0b3f-4b2c-b3a6-ed5c044366a0,C
-	OID:IGNORED,Recheck:0,SF:nil,TC:nil,Content:0,EDM:-3,IP:nil,URL:1,File:nil
-	,QS:nil,BEC:nil,COL:0
-X-UUID: 95f692fe3d8a4da58203d4288d8d3e3f-20220628
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 790976983; Tue, 28 Jun 2022 01:19:44 -0700
-Received: from mtkcas11.mediatek.inc (172.21.101.40) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.2.792.15; Tue, 28 Jun 2022 16:19:32 +0800
-Received: from mhfsdcap04 (10.17.3.154) by mtkcas11.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 28 Jun 2022 16:19:31 +0800
-Message-ID: <4dbbdd1f5886f72d5603ea45fd24602087ac01fc.camel@mediatek.com>
-Subject: Re: [PATCH v10 2/2] phy: mediatek: Add PCIe PHY driver
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Jianjun Wang <jianjun.wang@mediatek.com>, Kishon Vijay Abraham I
-	<kishon@ti.com>, Vinod Koul <vkoul@kernel.org>, Rob Herring
-	<robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, "Chen-Yu
- Tsai" <wenst@chromium.org>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>, Krzysztof Kozlowski
-	<krzk@kernel.org>
-CC: Wei-Shun Chang <weishunc@google.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <rex-bc.chen@mediatek.com>,
-	<randy.wu@mediatek.com>, <jieyy.yang@mediatek.com>,
-	<chuanjia.liu@mediatek.com>, <qizhong.cheng@mediatek.com>,
-	<jian.yang@mediatek.com>
-Date: Tue, 28 Jun 2022 16:19:31 +0800
-In-Reply-To: <20220617070246.20142-3-jianjun.wang@mediatek.com>
-References: <20220617070246.20142-1-jianjun.wang@mediatek.com>
-	 <20220617070246.20142-3-jianjun.wang@mediatek.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-MIME-Version: 1.0
-X-MTK: N
+	id 1o6AFL-0069VC-Of
+	for linux-phy@lists.infradead.org; Tue, 28 Jun 2022 12:23:13 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2468460FC7;
+	Tue, 28 Jun 2022 12:23:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25DFEC3411D;
+	Tue, 28 Jun 2022 12:23:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1656418990;
+	bh=rEXIp99qfQP4RlG//sn4CD2PHI+woj98TshooNb5NZQ=;
+	h=From:To:Cc:Subject:Date:From;
+	b=muvApXaNZ5aCqcwN6Nuwpr6dc1BUN1WCsu4N+QxeVkNWY7ucg7YLJrawG5aNQ+MY+
+	 SPRaVVaPnC1680P47Y64jMPzvA61172b/aYSuHiyGgpxE47aOm3/V5rcsV2eWZ/lNZ
+	 naeZTVE9U6dLTxhMa/jy3oIl4DTlCt5lo6VSvokWlG1pyVALNMEVT5oyH1gneP+6Tx
+	 dK1cBuSx5dkRnOBdZx2KPBKD6u3bDPqgweevzGrtLKFjnBQ84s8gpxFj2z5S1G4sw3
+	 H/69+tG54Y0bm4l/lAcDnx+0M5nMyPpbD/REnKTqxVEIx6T6wkoEMZrP9PH+3addGq
+	 Cp4WnAt1HwkGg==
+From: Roger Quadros <rogerq@kernel.org>
+To: kishon@ti.com,
+	vkoul@kernel.org
+Cc: vigneshr@ti.com,
+	t-patil@ti.com,
+	sjakhade@cadence.com,
+	s-vadapalli@ti.com,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	Roger Quadros <rogerq@kernel.org>
+Subject: [PATCH 0/7] phy: ti: phy-j721e-wiz: Add support for j7200-wiz-10g
+Date: Tue, 28 Jun 2022 15:22:48 +0300
+Message-Id: <20220628122255.24265-1-rogerq@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220628_011954_594972_15E2520F 
-X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-CacheID: sfid-20220628_052311_880178_EA387868 
+X-CRM114-Status: UNSURE (   9.02  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -85,26 +72,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 2022-06-17 at 15:02 +0800, Jianjun Wang wrote:
-> Add PCIe GEN3 PHY driver support on MediaTek chipsets.
-> 
-> Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
-> ---
->  drivers/phy/mediatek/Kconfig        |  11 ++
->  drivers/phy/mediatek/Makefile       |   1 +
->  drivers/phy/mediatek/phy-mtk-pcie.c | 267
-> ++++++++++++++++++++++++++++
->  3 files changed, 279 insertions(+)
->  create mode 100644 drivers/phy/mediatek/phy-mtk-pcie.c
-> 
-Reviewed-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Hi,
 
-Thanks
+The SERDES in J7200 SR2.0 supports 2 reference clocks.
+The second reference clock (core_ref1_clk) is hardwired to
+MAIN_PLL3_HSDIV4_CLKOUT (100/125/156.25 MHz).
+
+Add a new compatible "j7200-wiz-10g" for this device.
+
+The external clocks to SERDES PLL refclock mapping is now
+controlled by a special register in System Control Module
+(SCM) space. Add a property "ti,scm" to reference it and
+configure it in the driver.
+
+cheers,
+-roger
+
+Roger Quadros (4):
+  dt-bindings: phy: ti,phy-j721e-wiz: deprecate clock MUX nodes
+  dt-bindings: phy: ti,phy-j721e-wiz: Add support for ti,j7200-wiz-10g
+  phy: ti: phy-j721e-wiz: add support for j7200-wiz-10g
+  phy: ti: phy-j721e-wiz: set PMA_CMN_REFCLK_DIG_DIV based on reflk rate
+
+Siddharth Vadapalli (1):
+  phy: ti: phy-j721e-wiz: Add SGMII support in wiz driver for J7200
+
+Swapnil Jakhade (1):
+  dt-bindings: phy: Add PHY_TYPE_USXGMII definition
+
+Tanmay Patil (1):
+  phy: ti: phy-j721e-wiz.c: Add usxgmii support in wiz driver
+
+ .../bindings/phy/ti,phy-j721e-wiz.yaml        |  24 +-
+ drivers/phy/ti/phy-j721e-wiz.c                | 230 ++++++++++++++++--
+ include/dt-bindings/phy/phy.h                 |   1 +
+ 3 files changed, 239 insertions(+), 16 deletions(-)
+
+-- 
+2.17.1
+
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
