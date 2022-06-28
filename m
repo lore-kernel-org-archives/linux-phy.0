@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7A58C433EF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 12:23:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0668BC43334
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 12:23:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4cu3OlHlLZA6X4Q2VpCn2LZGxrat9E44z0hL8rggubw=; b=A0B4SPKq9QmgG3
-	XHuKzQdOrzkt07oR8QGgK78LDq67afzAmikK0lPWsJbmRXZsGO8dKnZ5DfXRXIBfn8l7o+gHw9qf+
-	WLxNlxvk+yhWWe12jvWtHwiwUqMfjqOwyE339Epjg7cGSGLGYtVJAv9WRsmxcXYEXiK+s9/BmZ3iY
-	IwftFJyrFEfDRG9bSstkf04Fi2f2IawSNvZ970gfmB2uP94n93XwUhTwThMp5wCER9M/snVA3IPsx
-	0QZc9lpnu35gIMZS8y/HqZVd2cgIG8JpZkRrRcQsqwqjLgGCnO431QbK63sCTFMXhqfKc+W0bixpU
-	J2PXXm7+DjJQCoEE2EAw==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vlbZlpY1BZ2KFhmxBaeYQJ1levAG3hoJQ+EV+9YFU64=; b=gbq4u1ecNIbWq3
+	o8ecj1WVsWoYsGdXYasl/0cUQnP3rOQPg8+EL8JCdQHhA5Nr5dDjiptrRNc4OmhAeeR5pNXn1hVbq
+	raDOW3u2CwN3bdsRDSZtFt1Sw0GXb3lKfJs2DXAgx8abbkQk9qn3o0WnT0Y/6YQKPvMpuBBYYS4tP
+	sJttQgM5yYs9cfe9HPjTOZvXPf9aJ2LhYHwGdaCxucSUEyR3A9qvLtTBw8owHfZLIFON4Pi8G/c7M
+	zlZsdg6nVFKppUHONGnwyzq3U398ldao3DhYhvGfpI8YGCi+7cY7xkDaU1YAnljTfBcVXlRTR7Bg5
+	2K/8zM5zMRITiRe8nC/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6AFO-0069WE-9F; Tue, 28 Jun 2022 12:23:14 +0000
+	id 1o6AFR-0069X4-Cr; Tue, 28 Jun 2022 12:23:17 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6AFL-0069VC-Of
-	for linux-phy@lists.infradead.org; Tue, 28 Jun 2022 12:23:13 +0000
+	id 1o6AFO-0069WA-D1
+	for linux-phy@lists.infradead.org; Tue, 28 Jun 2022 12:23:15 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2468460FC7;
-	Tue, 28 Jun 2022 12:23:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25DFEC3411D;
-	Tue, 28 Jun 2022 12:23:07 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0562661471;
+	Tue, 28 Jun 2022 12:23:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D657C341CE;
+	Tue, 28 Jun 2022 12:23:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1656418990;
-	bh=rEXIp99qfQP4RlG//sn4CD2PHI+woj98TshooNb5NZQ=;
-	h=From:To:Cc:Subject:Date:From;
-	b=muvApXaNZ5aCqcwN6Nuwpr6dc1BUN1WCsu4N+QxeVkNWY7ucg7YLJrawG5aNQ+MY+
-	 SPRaVVaPnC1680P47Y64jMPzvA61172b/aYSuHiyGgpxE47aOm3/V5rcsV2eWZ/lNZ
-	 naeZTVE9U6dLTxhMa/jy3oIl4DTlCt5lo6VSvokWlG1pyVALNMEVT5oyH1gneP+6Tx
-	 dK1cBuSx5dkRnOBdZx2KPBKD6u3bDPqgweevzGrtLKFjnBQ84s8gpxFj2z5S1G4sw3
-	 H/69+tG54Y0bm4l/lAcDnx+0M5nMyPpbD/REnKTqxVEIx6T6wkoEMZrP9PH+3addGq
-	 Cp4WnAt1HwkGg==
+	s=k20201202; t=1656418993;
+	bh=bw4JxdKBLg5YZjdvIpofcV0Tb/wNIuvBvilj7qW7zR0=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=NlG8+Oki4S49DTX5lyXPrUoA0zvZXhni38IAMJwdfhYUd4J+oLh2DRXIkSVheOAti
+	 yJFyC5rKCtSd6XL0SVdjXDRLEqdXlcGge+Mwh0dDaXyOWSXJOizEiMqmOx8QnQE6SV
+	 y9qpA8gxoEag9lZ29lEgdyf+C5RnI3G9pZNKtJsSh6FDL/lMXyVtGa+kQU+5AUzolR
+	 rsq5m0DCeBMhlZ2ccc0lZ64mEmmjJu6rgHpZpJoO3cJpKF2kWQozMRZn4cNf+Qnkj0
+	 FuriCOXpjGQDOu4frPjvIGlJTRSrHZYySz4plDp1O67yom+/0ScHw0f1xZIBAnVBlL
+	 dyoUGJlFHAAIQ==
 From: Roger Quadros <rogerq@kernel.org>
 To: kishon@ti.com,
 	vkoul@kernel.org
@@ -53,14 +53,15 @@ Cc: vigneshr@ti.com,
 	linux-kernel@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	Roger Quadros <rogerq@kernel.org>
-Subject: [PATCH 0/7] phy: ti: phy-j721e-wiz: Add support for j7200-wiz-10g
-Date: Tue, 28 Jun 2022 15:22:48 +0300
-Message-Id: <20220628122255.24265-1-rogerq@kernel.org>
+Subject: [PATCH 1/7] phy: ti: phy-j721e-wiz: Add SGMII support in wiz driver for J7200
+Date: Tue, 28 Jun 2022 15:22:49 +0300
+Message-Id: <20220628122255.24265-2-rogerq@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20220628122255.24265-1-rogerq@kernel.org>
+References: <20220628122255.24265-1-rogerq@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220628_052311_880178_EA387868 
-X-CRM114-Status: UNSURE (   9.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220628_052314_523891_25B5807C 
+X-CRM114-Status: GOOD (  13.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,42 +79,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
 
-The SERDES in J7200 SR2.0 supports 2 reference clocks.
-The second reference clock (core_ref1_clk) is hardwired to
-MAIN_PLL3_HSDIV4_CLKOUT (100/125/156.25 MHz).
+Select the same mac divider for SGMII too as the one being used for
+QSGMII.
 
-Add a new compatible "j7200-wiz-10g" for this device.
+Enable full rate divider configuration support for J721E_WIZ_10G for
+SGMII.
 
-The external clocks to SERDES PLL refclock mapping is now
-controlled by a special register in System Control Module
-(SCM) space. Add a property "ti,scm" to reference it and
-configure it in the driver.
+Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+Signed-off-by: Roger Quadros <rogerq@kernel.org>
+---
+ drivers/phy/ti/phy-j721e-wiz.c | 19 +++++++++++++------
+ 1 file changed, 13 insertions(+), 6 deletions(-)
 
-cheers,
--roger
-
-Roger Quadros (4):
-  dt-bindings: phy: ti,phy-j721e-wiz: deprecate clock MUX nodes
-  dt-bindings: phy: ti,phy-j721e-wiz: Add support for ti,j7200-wiz-10g
-  phy: ti: phy-j721e-wiz: add support for j7200-wiz-10g
-  phy: ti: phy-j721e-wiz: set PMA_CMN_REFCLK_DIG_DIV based on reflk rate
-
-Siddharth Vadapalli (1):
-  phy: ti: phy-j721e-wiz: Add SGMII support in wiz driver for J7200
-
-Swapnil Jakhade (1):
-  dt-bindings: phy: Add PHY_TYPE_USXGMII definition
-
-Tanmay Patil (1):
-  phy: ti: phy-j721e-wiz.c: Add usxgmii support in wiz driver
-
- .../bindings/phy/ti,phy-j721e-wiz.yaml        |  24 +-
- drivers/phy/ti/phy-j721e-wiz.c                | 230 ++++++++++++++++--
- include/dt-bindings/phy/phy.h                 |   1 +
- 3 files changed, 239 insertions(+), 16 deletions(-)
-
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index 70bac931f99a..8c10ee8e2707 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -325,7 +325,8 @@ static int wiz_p_mac_div_sel(struct wiz *wiz)
+ 	int i;
+ 
+ 	for (i = 0; i < num_lanes; i++) {
+-		if (wiz->lane_phy_type[i] == PHY_TYPE_QSGMII) {
++		if (wiz->lane_phy_type[i] == PHY_TYPE_SGMII ||
++		    wiz->lane_phy_type[i] == PHY_TYPE_QSGMII) {
+ 			ret = regmap_field_write(wiz->p_mac_div_sel0[i], 1);
+ 			if (ret)
+ 				return ret;
+@@ -1025,12 +1026,18 @@ static int wiz_phy_reset_assert(struct reset_controller_dev *rcdev,
+ 
+ static int wiz_phy_fullrt_div(struct wiz *wiz, int lane)
+ {
+-	if (wiz->type != AM64_WIZ_10G)
++	switch (wiz->type) {
++	case AM64_WIZ_10G:
++		if (wiz->lane_phy_type[lane] == PHY_TYPE_PCIE)
++			return regmap_field_write(wiz->p0_fullrt_div[lane], 0x1);
++		break;
++	case J721E_WIZ_10G:
++		if (wiz->lane_phy_type[lane] == PHY_TYPE_SGMII)
++			return regmap_field_write(wiz->p0_fullrt_div[lane], 0x2);
++		break;
++	default:
+ 		return 0;
+-
+-	if (wiz->lane_phy_type[lane] == PHY_TYPE_PCIE)
+-		return regmap_field_write(wiz->p0_fullrt_div[lane], 0x1);
+-
++	}
+ 	return 0;
+ }
+ 
 -- 
 2.17.1
 
