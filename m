@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB42CCCA47F
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 12:45:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DED48C43334
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jun 2022 12:45:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Et4NLBCpf75cG3CnkpeS2B91l69CXCOJ/e7lcjFG/YQ=; b=mRxwvGlAGGTRkk
-	M8vXepIDC/9WBKaNzQqp1Nqt4yLN4z3DvEAtIChQiaabTBlxRsn1KRSasmhV7COMFKa4VM0TAZegq
-	fE0YEAvSwYGsj4hvpKy56+KdcLkYHNTnCXy/9SUYTvbWGHaCOya/uVQfl6jNgOy6ahy5iPl54w7ti
-	CNI3d8nQuOT/AX6Zoj1wk29CigKyvRtcr21Ck4fCu/Bcp6jR13EmPqpIzGGOJe9Kb5FAT/MXow0fD
-	gnoRhSb9Jp2gVhdGg74DtUR5y+P9kalDWwYp9Yv9jCE+AbWq27ts/qiYKj/30nBqFtIdFOV+CYHW4
-	yjMNIfuUhlWWSrqY/sgg==;
+	List-Owner; bh=A8c8SXi3xzfjqYZj4SwPClJ7k20vNgyp0+bhGiFQXsY=; b=w5vEMSXd8Dhkz/
+	gmEu0AOmN6VLvVOQlWamcCFqIb3lmzKI7Wa9OJlbGu+ygIkPGB3V3urKBmZ+xKLWiaV4ss14o+rR1
+	I0iLXrh/KjvIfFzRklRHgsabY+GEnoXk7ubo9kmlLbo1qFu0MwnU9Neq9TQ09T/LuGlPhQmW91S8i
+	TfuC7DXVbBW2A1aYN0WgkzZRY/sltTWw4sdCI2P75prrAqIIwb6urP4x7ufa8NDRqkp97bv74N2Mi
+	2W+bfYZy3NBiN1gyVIB4o60Zioh3BPqZ2jyvRjubWM+Ydsdi0rx8TQXsr6tJ3/0CaFdZ4RuuSLpoy
+	VDigEG4ui38IAdFXRZjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6Aau-006Dp4-1M; Tue, 28 Jun 2022 12:45:28 +0000
-Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
+	id 1o6Aaw-006Dri-BX; Tue, 28 Jun 2022 12:45:30 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6Aao-006DlE-Mv
-	for linux-phy@lists.infradead.org; Tue, 28 Jun 2022 12:45:23 +0000
-Received: by mail-ed1-x534.google.com with SMTP id fd6so17391007edb.5
-        for <linux-phy@lists.infradead.org>; Tue, 28 Jun 2022 05:45:22 -0700 (PDT)
+	id 1o6Aat-006Dlp-JH
+	for linux-phy@lists.infradead.org; Tue, 28 Jun 2022 12:45:28 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id n8so3436972eda.0
+        for <linux-phy@lists.infradead.org>; Tue, 28 Jun 2022 05:45:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=googlemail.com; s=20210112;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=OC/Q0ZHSYivrSfFoAF8zUByQ32IP+ZgOcCZoC0yMQAM=;
-        b=MHL34CI71jL8wxvfIo3kffmm6/Bzw/zxa4CCePVNSukTsqOG4zJCqZbR4IQ1WfSXda
-         23Cw8J9CMbGMEBKxBYOSkHrh3hqgyXrY2wjsTguu+bx9/hVf6/bJrHYeZXa//qVQAvqV
-         ixOQEP8JPKMDauiCghdNu0zNGLPYfXSyVxJzTG0BI5K63EPR/gAhM5dKetJkrJmW/fR9
-         xXurrBhZHaOiYR2QC+De+xa+UbtcJk1Vv+rUmi8kSfu/3lv0L0DqWmkiwQzRfrTednpo
-         fLbWFah/u1N234w0DqNvtk3UE/yt7Eh6z8M3ei1Pd0f5l51wej/FKIhVZyDeaIarLQh3
-         r7gg==
+        bh=QkD5ZdlMfFp9BqXoXwOYIRoxn3i+2Ef4KXobvEMyiVo=;
+        b=RARWGWYAnD1Tn9kDygIdnwtnUPjcHumdDo4lilQszfGD18lQdgNgi/Ryn1jc+D1oug
+         D96C3smjnVPUr1RCcaPTZBUpoNhJsICKCnWV07vAJ+dil1HAN8mhg+3mc8S2vm0PAlDP
+         tx6BBB8nKfouvX5z+OZPqAKaSu5FlF1sIgUgb7ml2HV5BKV16WYJx2jhYQYRirHYFpcH
+         ongbZI5osfzqM9O1WAGweu+dmoyVyh7X66dqEPYg56HWLqVhBRX0Jjail790UpANcCmU
+         3L34pCNmjrfoVERLs7tKWqbCa0iwLMJcHEwa+k0+sjm3gYzkTxIsGzv8NTUgsz9vCGhI
+         wx9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=OC/Q0ZHSYivrSfFoAF8zUByQ32IP+ZgOcCZoC0yMQAM=;
-        b=S+ulXWIlv7Nxz3t7eet9yxkIDwOTUxpdvnEcyLp1JnC5k2kZnTXC1lD4YPRYk6ZU6g
-         Xrdyr3KeM8LxcS4H6Sg0SbIBshl6O9SZf35bo6GRoPxjzCYS8aE1UKYtSE7lRo/YUuwZ
-         EBIQI6v8tvZjMJY2BHv+O8zZv4+qYdlf82KL/ssN1FrpyIhTm968u+v4cOUy4IxcBvLe
-         T+Qktw5vi+SPeNuhbb21Ae5l023Qfwvw+5ZDrUNH3+/oD5U+XUdBy9okVDm6KKR5xgbl
-         bHih3vCWsQMrNgbhI+Ya4reTeZu9vhohWZwRqXQiOfnqKsVl74zyLUp5Z78E6Crnucq4
-         VpIQ==
-X-Gm-Message-State: AJIora990xTdS1InoTwntCXBLE1+tPrBaOOdYh7Tc1FSXdmVYYEgdkqL
-	JteRHC96PZgPJ9+zSK5pkwQz9lo9o4o=
-X-Google-Smtp-Source: AGRyM1vqBRQVrT6TUJUFUK5kgHWfZrgH/Pox3xpk7zeJlTAV5RZe6o1hdfy1TmD9IPFIQ71bSiek+Q==
-X-Received: by 2002:a05:6402:5306:b0:437:8bbd:b313 with SMTP id eo6-20020a056402530600b004378bbdb313mr14675188edb.123.1656420321414;
-        Tue, 28 Jun 2022 05:45:21 -0700 (PDT)
+        bh=QkD5ZdlMfFp9BqXoXwOYIRoxn3i+2Ef4KXobvEMyiVo=;
+        b=Q2HPxUdSenUDAtJiyTjwKmV3uVJVZsiZygCqVaXRlJR/1ie3P+UtTJJvf45RjYwy3w
+         sJFLFsPHP0/aA6gpgRW9XDoez7HKVOAtVeqp4UQKz+Ir1qJuSkYtevYuFn6QMpeaoREW
+         YVQoR3jtLyyFJ+immD2poLxvC4Z9h9TwMUN4vWT7E638EZQXWTFhv1hpNK8WJzjxn+Wr
+         dQ/aPwz+TMrPH+Te1os+2KM7PVUnjAsxn2UB4Hiv88PzgosXmXa5f5LWsVvRPRrUOdro
+         R/84heQKWqgwhV6/DfCj3N8Kky3DXr1gne7q0/UF6yhO9iNIIC8iyYgYN+oqVuV1BqPf
+         WXSQ==
+X-Gm-Message-State: AJIora8mvXLrNcxiBgMUkW9XX1exw5hHscwWw4k48AaSIdwcN9+YaeQZ
+	azM7H37yEJc3AdEf5t5/ewp/5QLE9pg=
+X-Google-Smtp-Source: AGRyM1ssn0vDK56CFH/r87RlWCyxx7oYUzSFnXO1WBdJwdhLCtV04NDaUAeCU7F3U3g+HfhhvVTPDg==
+X-Received: by 2002:a05:6402:51c7:b0:437:a22c:60f5 with SMTP id r7-20020a05640251c700b00437a22c60f5mr8917530edd.281.1656420322252;
+        Tue, 28 Jun 2022 05:45:22 -0700 (PDT)
 Received: from localhost.localdomain (dynamic-095-114-061-215.95.114.pool.telefonica.de. [95.114.61.215])
-        by smtp.googlemail.com with ESMTPSA id f13-20020a170906824d00b00726e108b566sm622871ejx.173.2022.06.28.05.45.20
+        by smtp.googlemail.com with ESMTPSA id f13-20020a170906824d00b00726e108b566sm622871ejx.173.2022.06.28.05.45.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Tue, 28 Jun 2022 05:45:21 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
@@ -68,16 +68,16 @@ Cc: linux-kernel@vger.kernel.org,
 	kishon@ti.com,
 	rtanwar@maxlinear.com,
 	Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: [PATCH v1 5/9] reset: intel: Allow enabling the driver on "LANTIQ" (MIPS) platforms
-Date: Tue, 28 Jun 2022 14:44:37 +0200
-Message-Id: <20220628124441.2385023-6-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v1 6/9] reset: intel: Add and update compatible strings Lantiq SoCs
+Date: Tue, 28 Jun 2022 14:44:38 +0200
+Message-Id: <20220628124441.2385023-7-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.36.1
 In-Reply-To: <20220628124441.2385023-1-martin.blumenstingl@googlemail.com>
 References: <20220628124441.2385023-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220628_054522_793066_83330E65 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20220628_054527_718344_C6098ABC 
+X-CRM114-Status: GOOD (  13.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,28 +94,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Lantiq MIPS SoC use CONFIG_LANTIQ. Allow enabling the Intel GW reset
-driver there as well so we can get rid of the reset-lantiq driver in
-future.
+Amazon-SE, Danube and xRX100 only have one reset request and one status
+register whereas xRX200 has two of each. Add compatible strings for the
+former three and update the compatible string for xRX200 to the same as
+in Documentation/devicetree/bindings/mips/lantiq/rcu.txt (old RCU
+binding documentation).
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/reset/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/reset/reset-intel-gw.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-index 93c8d07ee328..68a5ea44612e 100644
---- a/drivers/reset/Kconfig
-+++ b/drivers/reset/Kconfig
-@@ -84,7 +84,7 @@ config RESET_IMX7
+diff --git a/drivers/reset/reset-intel-gw.c b/drivers/reset/reset-intel-gw.c
+index effc177db80a..46ed7a693666 100644
+--- a/drivers/reset/reset-intel-gw.c
++++ b/drivers/reset/reset-intel-gw.c
+@@ -223,7 +223,7 @@ static int intel_reset_probe(struct platform_device *pdev)
+ 	return 0;
+ }
  
- config RESET_INTEL_GW
- 	bool "Intel Reset Controller Driver"
--	depends on X86 || COMPILE_TEST
-+	depends on X86 || LANTIQ || COMPILE_TEST
- 	depends on OF && HAS_IOMEM
- 	select REGMAP_MMIO
- 	help
+-static const struct intel_reset_soc xrx200_data = {
++static const struct intel_reset_soc xway_data = {
+ 	.legacy =		true,
+ 	.reset_cell_count =	3,
+ };
+@@ -235,7 +235,10 @@ static const struct intel_reset_soc lgm_data = {
+ 
+ static const struct of_device_id intel_reset_match[] = {
+ 	{ .compatible = "intel,rcu-lgm", .data = &lgm_data },
+-	{ .compatible = "intel,rcu-xrx200", .data = &xrx200_data },
++	{ .compatible = "lantiq,ase-rcu", .data = &xway_data },
++	{ .compatible = "lantiq,danube-rcu", .data = &xway_data },
++	{ .compatible = "lantiq,xrx100-rcu", .data = &xway_data },
++	{ .compatible = "lantiq,xrx200-rcu", .data = &xway_data },
+ 	{}
+ };
+ 
 -- 
 2.36.1
 
