@@ -4,134 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 272B0C43334
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jun 2022 15:57:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C89C8C433EF
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jun 2022 17:27:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qBZKWwYkMPvgdajxxQfDOwtTvxdosoHgZ8tj+W4Drho=; b=3L+C4K4vVtJsqd
-	DsMYIH86CMWtAGqKIdCCNW6PvcXQx6mGB3hgIJuRCxeRiiNb6rpNLB0YYLOlJbsOIrkeWcXNW1pkA
-	bMGPGL/zxnoOjdlr7U/1FwT4yA8hqqrJu5DDJ1Gh/RG1D3dPsHK4OkAFKPDKWIRKn+ku01qNpGKSG
-	oRnHPlFwksBeaaXDgpes0ZY0JJWcSB9x+NTV2JCOfEkLOtRH2tCqjNQpIqseZYodgwQcnN1WR/56O
-	joiHo5E8nVTWformF0jdMQ+2O/MNXdgounLz/X5jPHhJD3/xyQe5ECNfbDof0OZ06yjLJMkCme7KM
-	jzhQZ2PURWicfhUdBFmQ==;
+	List-Owner; bh=AMHgOB9vFy1RYoqa6NKm/3ZiS9zPzCHs9R+U2MLsqrw=; b=4/YfPamJx1Ldhe
+	dgu569wolgs9ouDlwGOs2j1A6CDGVZibbtaQ+BZWmGVqDASz7meRMut6WC+J6ST7B45MSL/9yPh5C
+	CdbE6J2hCwUjT6W7UxxyEEJ4HzkJ6yeSiuBkEbH1lx0XpUfZhEC2+7nh+inPBlbBN3nTKExZngaY3
+	iG+CQ2DoXRl7TDfSL6LZEk/yJl12iIZBsomMzFqlzzZco3xXHv/XP1XeiPUvfwjmAeOStxBKXykPk
+	53/utPls08ahZmQaJZXluyN3gPN+s+m8J0Cyq0SX0k/dkQZIXi/8rj3k6MMf5JMMdYiRKAHDvdiGj
+	UNkmpZr2YGaY3Xc3oLEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6wXt-000STH-FC; Thu, 30 Jun 2022 15:57:33 +0000
-Received: from mail-eopbgr130053.outbound.protection.outlook.com ([40.107.13.53] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1o6xwx-000oyE-3t; Thu, 30 Jun 2022 17:27:31 +0000
+Received: from mail-io1-f52.google.com ([209.85.166.52])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6wXW-000SL9-Th; Thu, 30 Jun 2022 15:57:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LvSKYwHUGbg6BU2OS4UWRSe6GtQeu7lwUtfmhoHkTbWILksj50D70gEDgRlYVH8G0v7VOjlcCdgbQdVdw4K3kLh5mz4ETlsPh6VczvlGKc9/iH45ONZp9h0XfZdtXyjwwF4DsJneoPu/GYYlXE6crd+sBPuu7TJ7wfdWAWYQ8jholiqi0HIZDutnhq+NREVYsRuXGI0/FQyGUw/0KcemspXFxeeu2UpWzKkJlGQs8OwdsvOyCxRgHgYJ+ko0KRJRV8oPPXS83wp3BydR8EYw4cjDS35298LTGKETU8wvJvahd+6EfT/JJSTNo7l3dhXWrWR4/Rw3fI0V+LH9Z9rAOQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2B/TpdNAQsvKQS1Wwy4Bbvo5O0XPVDMPIH4NJwxfIB0=;
- b=cgkI7Ml2ZR2l7Wx+FFSVGWk3TUFus/LHoAa1Z2SDMzo9tgQw9lI0FuGYy0lPbt4Nn6kZiKSzHUrUH7L/N2kMHH8l08g4C5xJMeEGMyt+mH6aqxhCZkjmV2SBvCZ7YFqcTMkGfPX3eHkN/lV9KE1YYZ7/qcLnuBb17N5khcyiXdhlnCKalr+XFVsThjJjZVNc3Hya4VfjvkOIDcgd23OZECRnUVsRKSgpmCxIfZog/2tC7SiIHqImK36xwpHDHcQ1pmKskcpffqByZg1DU90WF8shwJ8X6xl5Pvmbk/XDPudIYAJ+gNu+92hvSEnsYkkmbEkWXJRb5OoBvmlMUGwT2Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2B/TpdNAQsvKQS1Wwy4Bbvo5O0XPVDMPIH4NJwxfIB0=;
- b=lbu7hV2HsS87HWyXUAr0w0EgCWIH1wvCfQxIZ0ITH5OhmmlOnI8Cs9Wvzl9DHkPfRbdCBEH/gvJYFhnpdG/4APQKAk4HPmi+80sEz+uZFWToCR2Vir/EC/EPepR+JhzdBxxKQln+hwsnp/2OS0NgNpSGQM2/899QYNr91G9XfEg=
-Received: from GV1PR04MB9055.eurprd04.prod.outlook.com (2603:10a6:150:1e::22)
- by AM6PR04MB5845.eurprd04.prod.outlook.com (2603:10a6:20b:aa::26) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5395.14; Thu, 30 Jun
- 2022 15:57:00 +0000
-Received: from GV1PR04MB9055.eurprd04.prod.outlook.com
- ([fe80::4c14:c403:a8a4:b4e4]) by GV1PR04MB9055.eurprd04.prod.outlook.com
- ([fe80::4c14:c403:a8a4:b4e4%5]) with mapi id 15.20.5373.018; Thu, 30 Jun 2022
- 15:57:00 +0000
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
+	id 1o6xwl-000ouU-Po; Thu, 30 Jun 2022 17:27:21 +0000
+Received: by mail-io1-f52.google.com with SMTP id y18so19821320iof.2;
+        Thu, 30 Jun 2022 10:27:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+         :mime-version:content-disposition:in-reply-to;
+        bh=gAIq4Rl9pd6TxPRv3sr3GJgtDudvjHKIBCMW/VUrpdE=;
+        b=w/egnnVftZtO07fYlU3TMTPCPtJw7U74WSLY0WE4LpM6es2IE+bYENde5QdSaAmgE6
+         R3oYU4IXgFs4QWpDpSHElC3jF7alZlIS0RZqxTlfbYpuJyUYJ7C6ixe91D6Tt9AJ9PZ7
+         dlwa1Whnaf394K0+ulnZ6gekNRSwQaUffIqg+2envEYoMiBEbc3d5tsjESSlkSnpK1rx
+         TNd43nh/bHieKqd2xQIWG3A9F7mea0GScfQPBnbpDm2lFve1RsKvFfkJRxcf9kJzGOBj
+         wwrrc8Xy6G3z5qfvsin9uBuEUjpMy4zN6PrmGOHIshJxy02xCwt7EtINb7y19CMPG5PJ
+         cE+A==
+X-Gm-Message-State: AJIora++RobSOpGIcPkQzQjhwcgTeSenoxlZeK9tPAm6nGH5knM9Z2IH
+	gCMmWeoSnwQN9ANvtEGL5g==
+X-Google-Smtp-Source: AGRyM1uTqecJG4oLM0Hqt1nbSkcVzYR2SuSmzltnPom8Dgg7oWRL1d/WE3gL0+M9bu23yw3WQc4lpg==
+X-Received: by 2002:a05:6638:1686:b0:33e:9977:2e1f with SMTP id f6-20020a056638168600b0033e99772e1fmr160037jat.7.1656610035981;
+        Thu, 30 Jun 2022 10:27:15 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+        by smtp.gmail.com with ESMTPSA id p192-20020a0229c9000000b0033cd5a2b231sm1818537jap.47.2022.06.30.10.27.14
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 30 Jun 2022 10:27:15 -0700 (PDT)
+Received: (nullmailer pid 2943107 invoked by uid 1000);
+	Thu, 30 Jun 2022 17:27:13 -0000
+Date: Thu, 30 Jun 2022 11:27:13 -0600
+From: Rob Herring <robh@kernel.org>
 To: Sean Anderson <sean.anderson@seco.com>
-CC: "David S . Miller" <davem@davemloft.net>, Jakub Kicinski
-	<kuba@kernel.org>, Madalin Bucur <madalin.bucur@nxp.com>,
-	"netdev@vger.kernel.org" <netdev@vger.kernel.org>, Russell King
-	<linux@armlinux.org.uk>, Paolo Abeni <pabeni@redhat.com>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, Eric Dumazet <edumazet@google.com>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Jonathan
- Corbet <corbet@lwn.net>, Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof
- Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Rob Herring
-	<robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH net-next v2 04/35] [RFC] phy: fsl: Add Lynx 10G SerDes
- driver
-Thread-Topic: [PATCH net-next v2 04/35] [RFC] phy: fsl: Add Lynx 10G SerDes
- driver
-Thread-Index: AQHYizxxgRetEOVzUEGZ10DjfnbHAK1oHZSA
-Date: Thu, 30 Jun 2022 15:56:59 +0000
-Message-ID: <20220630155657.wa2z45z25s4e74m4@skbuf>
+Cc: "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, Madalin Bucur <madalin.bucur@nxp.com>, netdev@vger.kernel.org, Russell King <linux@armlinux.org.uk>, Paolo Abeni <pabeni@redhat.com>, linux-arm-kernel@lists.infradead.org, Eric Dumazet <edumazet@google.com>, linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH net-next v2 01/35] dt-bindings: phy: Add QorIQ SerDes
+ binding
+Message-ID: <20220630172713.GA2921749-robh@kernel.org>
 References: <20220628221404.1444200-1-sean.anderson@seco.com>
- <20220628221404.1444200-5-sean.anderson@seco.com>
-In-Reply-To: <20220628221404.1444200-5-sean.anderson@seco.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c0504e31-8992-4ac8-5b3e-08da5ab12ac4
-x-ms-traffictypediagnostic: AM6PR04MB5845:EE_
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info:  BR1TYXqcnPIpzPFQtrurn+AZ7DrP4yZDrdv2tpj4lmiEfWB0KBRH9iJ/qWYRJdBQM8Zzq9/5U0DrKtv5eDm9wfg6T72wN1FiWXaGePtTQ+t/8D5LR+upqLd2tPyuMBlmThpXvz23pYbBYJ/8Tfqz7TUgxPJgGqT9PRJQdY2LJpcYi6PnGmgxcPib09nJrBMVSw37JdEReY8XMkZ4758xJgSlmDfxmOcpdFvU9qmRn6vUq3NKAWQPqe9QdEt4anV0+Pwm49xvqK6ZEgcbhIOsW4XEWCsaAgi+y88Xg1O5k7uB+JqvlDueK8wnhkRFyg/P9UuJ5hVRUS10bdwfi48CHWFiTFpfMaji2r/HJsNUa9G4M6pcVqHZj9rTGhpzUlaLwa+VPoTLAiNz/6hS7cAuOZzyKpf8BMMttTCvXLIOD3oTFCGC7cKCjqzWF/MX4pgRu6f8PTWN9Agc4h9NLmLXnfXwxTn2b0ACQwKLfNposA+xwPmPVYhTwhTd9xoe5zijbnAxOBwqgthd28PttjZJKaeDG8mvKLgdreobfXDLlR/5cLbAsEJ5GDTLayb32dtXY6w7fDSj39PCgI0aZjbGHMBNFzsMzuFZ8drGRb/wZ8mGXkSC8gylVjITrhxIKF925dhqcsxpDVm+ZQCBNvITltPoS8rWaTYo5ErU90Si6mckPZOAK+YiEUN5lNhy1X09ip5rCHNfiU/qEIemvsV5d3vud3tMCvZIru32MoBMoLL8ZHAoBR+I6/zH9Po5gqmStOhrjf0ZLcA3g8nhL0UCyQ96jlKLpiV28GT37PNE2ENgcsUgKHmHFCWlYl4bmVsL
-x-forefront-antispam-report:  CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV1PR04MB9055.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(7916004)(4636009)(39860400002)(376002)(396003)(136003)(366004)(346002)(7416002)(66476007)(66446008)(64756008)(86362001)(8676002)(33716001)(66556008)(6506007)(71200400001)(66946007)(4326008)(26005)(2906002)(76116006)(5660300002)(83380400001)(122000001)(6512007)(9686003)(6486002)(1076003)(316002)(38070700005)(8936002)(54906003)(6916009)(186003)(91956017)(41300700001)(478600001)(44832011)(38100700002);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:  =?us-ascii?Q?91oiVdU8Rc0YLz4wnhHkz5hrxtIVjUtfimQUy1LqI+MfKyQ+yo7p+mLwAYYb?=
- =?us-ascii?Q?ePweV6fgp8dxrErxtg4vSsHFlaE+5rOobH5sMtpwjAebzk6nt348OReumoDp?=
- =?us-ascii?Q?VKbq87TyT2toOQwQsQHucfwVDIPNZXK29BV1rw0lb+RLLRQxp3e5CeeypT5V?=
- =?us-ascii?Q?Y6Bm81dG4zw7PS1BuXySbPvFc/hdtBHMIx9b5JaoZSc/ozuuotYj7JFlldFR?=
- =?us-ascii?Q?7WiH1gUuc6H9ZidzWECGyacVDYtXKIFnTaBg/EJjEhXNPm0Kzy8/j8lGGmFj?=
- =?us-ascii?Q?eJJI4+9L15g09Fe43LVJd/iZAb4CgVkcjcD1+M4op8b3zenfXWcTTz8I6TGD?=
- =?us-ascii?Q?NGs087+JDLaJp3DNk7WiSefoJosRwd+Dh+7ybgWs3xPI3KlZPcCfyRWzNYYm?=
- =?us-ascii?Q?P0cNQ8ya6O/l7aiom4RLCoVBz+tFbQgVWMu4kWRW7yzMaMOyKYUipF2DtseG?=
- =?us-ascii?Q?eqyhPUz47xOr81zFReJYXlak4wfczXSnNLWwJcJlYWeiavmi8TJMZzq9QbQG?=
- =?us-ascii?Q?RUz9pxr2Zo7VW9rCIPy87d2tMezN5sG04l9prlMLnGKkksQdFe2T/Im9IkxA?=
- =?us-ascii?Q?2Z3JXOEjg80ze/KKLMzl3TXy0+ed6Dzi9vmim0p1e9QaWyivC9yMvzaNdOtA?=
- =?us-ascii?Q?EdCH5WXj1OGmKZ0Iz9WHhrMmStWJXCdA/3nEi+r6lkzJzrJ2gEyLdWO0Lba9?=
- =?us-ascii?Q?URmgZD0cPWQ73QTnTef37TblnXnQnU4lb3Npmn0Wo4GaFqziy/+87eP8GjmN?=
- =?us-ascii?Q?5ipB04Zlu0PyjMxghiZQFHhzS1D0kQXGOwY51RtftG2D3d9q879zc8kJHpGL?=
- =?us-ascii?Q?tu+41Uqbi/UFtfId2ywKU6yhlU1pxcapJS3jRzkK+gG+QCSr5ujAEPWL7sOD?=
- =?us-ascii?Q?d4bWMAi8bhaIY1JQJlBmy1TpL7g3hw07XYJotnkP5q7n8Sq5UjSkGyynJN7B?=
- =?us-ascii?Q?GO6NCughJ6kZ78Q8G+Ywa2UO4v8qFUYcXeHIu8mbyJNu+eqzIji+XtA87chm?=
- =?us-ascii?Q?eA/I+GS0BR59q2X34tEifvHhLrKTRZsNKlTcvolDVfZopBQUvffAwY+CmLIF?=
- =?us-ascii?Q?eeW6GhNSB+M5xEiLJEC9J/KI4hjhd/MSA86iC2MOZnBFZfCgV15UJb6joD0W?=
- =?us-ascii?Q?RLTGV7ZE+s8GA7Zt5FprcA00YXDGLDyV3kfUlfswvPHYW/FPgMmUUI4D6XTJ?=
- =?us-ascii?Q?RmqDNG43WeZBTv6wEPP6fxheFtdJXNA2OO2YKXjhFVurSJO2o9S70uolALyl?=
- =?us-ascii?Q?rjVQntJnBRwInFl6dNzUIB4g0pNVzUAExDOsJOrzuPzKdmVuk4w6L1qT3WLN?=
- =?us-ascii?Q?GMK783RM7l32kpXfPkKkrcb5G1sv0EA+33zVCr+ImWCHLDjxRzW6tn6tDTeq?=
- =?us-ascii?Q?MLSmrtAbUBLaAPu+ahI768xxdTaRJdechaLr3WoWj7eQFxvLUuEcLAFKLEP4?=
- =?us-ascii?Q?A3kdtPhj5Xyxjam9LiqgVgKh0lCT/D1s5SyWdMRYzb91hYwcvRRk30R7V2rg?=
- =?us-ascii?Q?PNI4r0JNabb8M35NJp05ZerjO3R+hPFdFHC5XOQ6FnktwAuBt5NKMpugX8D1?=
- =?us-ascii?Q?1ha31Owo5lrPSbFAnovbldKarAVAUDgo2vlxZXBsbRyFt1j8kD6Zq4eTRZhL?=
- =?us-ascii?Q?pg=3D=3D?=
-Content-ID: <8F32EDF25F7E624F8AC22CCD68F99060@eurprd04.prod.outlook.com>
+ <20220628221404.1444200-2-sean.anderson@seco.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: GV1PR04MB9055.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0504e31-8992-4ac8-5b3e-08da5ab12ac4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Jun 2022 15:56:59.9100
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: TcREKIFaVae6xpJcgEl+xHPhoVn9d2HlDSWxjws+jHlqhEXyZE0u4ujSONIdtGAmLzDGDVe04ZtNOiLuq6rbQg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5845
+Content-Disposition: inline
+In-Reply-To: <20220628221404.1444200-2-sean.anderson@seco.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220630_085711_188538_26A166DE 
-X-CRM114-Status: GOOD (  45.50  )
+X-CRM114-CacheID: sfid-20220630_102719_880467_A58E15A9 
+X-CRM114-Status: GOOD (  43.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,220 +79,182 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Jun 28, 2022 at 06:13:30PM -0400, Sean Anderson wrote:
+> This adds a binding for the SerDes module found on QorIQ processors. The
+> phy reference has two cells, one for the first lane and one for the
+> last. This should allow for good support of multi-lane protocols when
+> (if) they are added. There is no protocol option, because the driver is
+> designed to be able to completely reconfigure lanes at runtime.
+> Generally, the phy consumer can select the appropriate protocol using
+> set_mode. For the most part there is only one protocol controller
+> (consumer) per lane/protocol combination. The exception to this is the
+> B4860 processor, which has some lanes which can be connected to
+> multiple MACs. For that processor, I anticipate the easiest way to
+> resolve this will be to add an additional cell with a "protocol
+> controller instance" property.
+> 
+> Each serdes has a unique set of supported protocols (and lanes). The
+> support matrix is stored in the driver and is selected based on the
+> compatible string. It is anticipated that a new compatible string will
+> need to be added for each serdes on each SoC that drivers support is
+> added for. There is no "generic" compatible string for this reason.
+> 
+> There are two PLLs, each of which can be used as the master clock for
+> each lane. Each PLL has its own reference. For the moment they are
+> required, because it simplifies the driver implementation. Absent
+> reference clocks can be modeled by a fixed-clock with a rate of 0.
+> 
+> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+> ---
+> 
+> Changes in v2:
+> - Add #clock-cells. This will allow using assigned-clocks* to configure
+>   the PLLs.
+> - Allow a value of 1 for phy-cells. This allows for compatibility with
+>   the similar (but according to Ioana Ciornei different enough) lynx-28g
+>   binding.
+> - Document phy cells in the description
+> - Document the structure of the compatible strings
+> - Fix example binding having too many cells in regs
+> - Move compatible first
+> - Refer to the device in the documentation, rather than the binding
+> - Remove minItems
+> - Rename to fsl,lynx-10g.yaml
+> - Use list for clock-names
+> 
+>  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 93 +++++++++++++++++++
+>  1 file changed, 93 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> new file mode 100644
+> index 000000000000..b5a6f631df9f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> @@ -0,0 +1,93 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP Lynx 10G SerDes
+> +
+> +maintainers:
+> +  - Sean Anderson <sean.anderson@seco.com>
+> +
+> +description: |
+> +  These Lynx "SerDes" devices are found in NXP's QorIQ line of processors. The
+> +  SerDes provides up to eight lanes. Each lane may be configured individually,
+> +  or may be combined with adjacent lanes for a multi-lane protocol. The SerDes
+> +  supports a variety of protocols, including up to 10G Ethernet, PCIe, SATA, and
+> +  others. The specific protocols supported for each lane depend on the
+> +  particular SoC.
+> +
+> +properties:
+> +  compatible:
+> +    description: |
+> +      Each compatible is of the form "fsl,<soc-name>-serdes-<instance>".
+> +      Although many registers are compatible between different SoCs, the
+> +      supported protocols and lane assignments tend to be unique to each SerDes.
+> +      Additionally, the method of activating protocols may also be unique.
 
-Hi Sean,
+We typically have properties for handling these variables. Numbering 
+instances is something we avoid.
 
-I am in the process of adding the necessary configuration for this
-driver to work on a LS1088A based board. At the moment, I can see that
-the lane's PLL is changed depending on the SFP module plugged, I have a
-CDR lock but no PCS link.
+> +      Because of this, each SerDes instance will need its own compatible string.
 
-I'll let you know when I get to the bottom of this.
+> +      In cases where two SoCs share the same SerDes implementation (such as the
+> +      LS1046A and LS1026A), both SoCs should share the same compatible strings.
 
-I didn't go through the driver in detail but added some comments below.
+No, not unless the 2 parts are just fuse or package pinout differences. 
+Otherwise, there's always the chance they are not 'the same' and have 
+different bugs.
 
-On Tue, Jun 28, 2022 at 06:13:33PM -0400, Sean Anderson wrote:
-> This adds support for the Lynx 10G "SerDes" devices found on various NXP
-> QorIQ SoCs. There may be up to four SerDes devices on each SoC, each
-> supporting up to eight lanes. Protocol support for each SerDes is highly
-> heterogeneous, with each SoC typically having a totally different
-> selection of supported protocols for each lane. Additionally, the SerDes
-> devices on each SoC also have differing support. One SerDes will
-> typically support Ethernet on most lanes, while the other will typically
-> support PCIe on most lanes.
+You could have "fsl,ls1046a-serdes", "fsl,ls1026a-serdes" (whichever SoC 
+is older last) if you think they are 'the same'.
+
+
+> +    enum:
+> +      - fsl,ls1046a-serdes-1
+> +      - fsl,ls1046a-serdes-2
+> +
+> +  "#clock-cells":
+> +    const: 1
+> +    description: |
+> +      The cell contains the index of the PLL, starting from 0. Note that when
+> +      assigning a rate to a PLL, the PLLs' rates are divided by 1000 to avoid
+> +      overflow. A rate of 5000000 corresponds to 5GHz.
+> +
+> +  "#phy-cells":
+> +    minimum: 1
+> +    maximum: 2
+> +    description: |
+> +      The cells contain the following arguments:
+> +      - The first lane in the group. Lanes are numbered based on the register
+> +        offsets, not the I/O ports. This corresponds to the letter-based ("Lane
+> +        A") naming scheme, and not the number-based ("Lane 0") naming scheme. On
+> +        most SoCs, "Lane A" is "Lane 0", but not always.
+> +      - Last lane. For single-lane protocols, this should be the same as the
+> +        first lane.
+> +      If no lanes in a SerDes can be grouped, then #phy-cells may be 1, and the
+> +      first cell will specify the only lane in the group.
+
+Usually when we have per lane phys, the consumer side will have a 'phys' 
+entry per lane.
+
+Having a variable number of cells isn't great either. We usually only do 
+that when we have to extend an existing binding.
+
+> +
+> +  clocks:
+> +    maxItems: 2
+> +    description: |
+> +      Clock for each PLL reference clock input.
+> +
+> +  clock-names:
+> +    items:
+> +      - enum: &clocks
+> +          - ref0
+> +          - ref1
+> +      - enum: *clocks
+
+Whoa, there's a first. Don't use YAML anchors and references. We only 
+support JSON subset of YAML.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +required:
+> +  - "#clock-cells"
+> +  - "#phy-cells"
+> +  - compatible
+> +  - clocks
+> +  - clock-names
+> +  - reg
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    serdes1: phy@1ea0000 {
+> +      #clock-cells = <1>;
+> +      #phy-cells = <2>;
+> +      compatible = "fsl,ls1046a-serdes-1";
+> +      reg = <0x1ea0000 0x2000>;
+> +      clocks = <&clk_100mhz>, <&clk_156mhz>;
+> +      clock-names = "ref0", "ref1";
+> +      assigned-clocks = <&serdes1 0>;
+> +      assigned-clock-rates = <5000000>;
+> +    };
+> +
+> +...
+> -- 
+> 2.35.1.1320.gc452695387.dirty
+> 
 > 
 
-(...)
-
-> +For example, the configuration for SerDes1 of the LS1046A is::
-> +
-> +    static const struct lynx_mode ls1046a_modes1[] = {
-> +        CONF_SINGLE(1, PCIE, 0x0, 1, 0b001),
-> +        CONF_1000BASEKX(0, 0x8, 0, 0b001),
-> +        CONF_SGMII25KX(1, 0x8, 1, 0b001),
-> +        CONF_SGMII25KX(2, 0x8, 2, 0b001),
-> +        CONF_SGMII25KX(3, 0x8, 3, 0b001),
-> +        CONF_SINGLE(1, QSGMII, 0x9, 2, 0b001),
-> +        CONF_XFI(2, 0xB, 0, 0b010),
-> +        CONF_XFI(3, 0xB, 1, 0b001),
-> +    };
-> +
-> +    static const struct lynx_conf ls1046a_conf1 = {
-> +        .modes = ls1046a_modes1,
-> +        .mode_count = ARRAY_SIZE(ls1046a_modes1),
-> +        .lanes = 4,
-> +        .endian = REGMAP_ENDIAN_BIG,
-> +    };
-> +
-> +There is an additional set of configuration for SerDes2, which supports a
-> +different set of modes. Both configurations should be added to the match
-> +table::
-> +
-> +    { .compatible = "fsl,ls1046-serdes-1", .data = &ls1046a_conf1 },
-> +    { .compatible = "fsl,ls1046-serdes-2", .data = &ls1046a_conf2 },
-
-I am not 100% sure that different compatible strings are needed for each
-SerDes block. I know that in the 'supported SerDes options' tables only
-a certain list of combinations are present, different for each block.
-Even with this, I find it odd to believe that, for example, SerDes block
-2 from LS1046A was instantiated so that it does not support any Ethernet
-protocols.
-
-I'll ask around to see if indeed this happens.
-
-> +
-> +Supporting Protocols
-> +--------------------
-> +
-> +Each protocol is a combination of values which must be programmed into the lane
-> +registers. To add a new protocol, first add it to :c:type:`enum lynx_protocol
-> +<lynx_protocol>`. If it is in ``UNSUPPORTED_PROTOS``, remove it. Add a new
-> +entry to `lynx_proto_params`, and populate the appropriate fields. You may need
-> +to add some new members to support new fields. Modify `lynx_lookup_proto` to
-> +map the :c:type:`enum phy_mode <phy_mode>` to :c:type:`enum lynx_protocol
-> +<lynx_protocol>`. Ensure that :c:func:`lynx_proto_mode_mask` and
-> +:c:func:`lynx_proto_mode_shift` have been updated with support for your
-> +protocol.
-> +
-> +You may need to modify :c:func:`lynx_set_mode` in order to support your
-> +procotol. This can happen when you have added members to :c:type:`struct
-> +lynx_proto_params <lynx_proto_params>`. It can also happen if you have specific
-> +clocking requirements, or protocol-specific registers to program.
-> +
-> +Internal API Reference
-> +----------------------
-> +
-> +.. kernel-doc:: drivers/phy/freescale/phy-fsl-lynx-10g.c
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index ca95b1833b97..ef65e2acdb48 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -7977,6 +7977,12 @@ F:	drivers/ptp/ptp_qoriq.c
->  F:	drivers/ptp/ptp_qoriq_debugfs.c
->  F:	include/linux/fsl/ptp_qoriq.h
->  
-> +FREESCALE QORIQ SERDES DRIVER
-> +M:	Sean Anderson <sean.anderson@seco.com>
-> +S:	Maintained
-> +F:	Documentation/driver-api/phy/qoriq.rst
-> +F:	drivers/phy/freescale/phy-qoriq.c
-> +
-
-These file names have to be changed as well.
-
-(...)
-
-> +enum lynx_protocol {
-> +	LYNX_PROTO_NONE = 0,
-> +	LYNX_PROTO_SGMII,
-> +	LYNX_PROTO_SGMII25,
-> +	LYNX_PROTO_1000BASEKX,
-> +	LYNX_PROTO_QSGMII,
-> +	LYNX_PROTO_XFI,
-> +	LYNX_PROTO_10GKR,
-> +	LYNX_PROTO_PCIE, /* Not implemented */
-> +	LYNX_PROTO_SATA, /* Not implemented */
-> +	LYNX_PROTO_LAST,
-> +};
-> +
-> +static const char lynx_proto_str[][16] = {
-> +	[LYNX_PROTO_NONE] = "unknown",
-> +	[LYNX_PROTO_SGMII] = "SGMII",
-> +	[LYNX_PROTO_SGMII25] = "2.5G SGMII",
-> +	[LYNX_PROTO_1000BASEKX] = "1000Base-KX",
-> +	[LYNX_PROTO_QSGMII] = "QSGMII",
-> +	[LYNX_PROTO_XFI] = "XFI",
-> +	[LYNX_PROTO_10GKR] = "10GBase-KR",
-> +	[LYNX_PROTO_PCIE] = "PCIe",
-> +	[LYNX_PROTO_SATA] = "SATA",
-> +};
-
-> +
-> +#define PROTO_MASK(proto) BIT(LYNX_PROTO_##proto)
-> +#define UNSUPPORTED_PROTOS (PROTO_MASK(SATA) | PROTO_MASK(PCIE))
-
-From what I know, -KX and -KR need software level link training.
-Did you test these protocols?
-
-I would be much more comfortable if we only add to the supported
-protocols list what was tested.
-
-(...)
-
-> +	/* Deselect anything configured by the RCW/bootloader */
-> +	for (i = 0; i < conf->mode_count; i++) {
-> +		const struct lynx_mode *mode = &conf->modes[i];
-> +		u32 pccr = lynx_read(serdes, PCCRn(mode->pccr));
-> +
-> +		if (lynx_proto_mode_get(mode, pccr) == mode->cfg) {
-> +			if (mode->protos & UNSUPPORTED_PROTOS) {
-> +				/* Don't mess with modes we don't support */
-> +				serdes->used_lanes |= mode->lanes;
-> +				if (grabbed_clocks)
-> +					continue;
-> +
-> +				grabbed_clocks = true;
-> +				clk_prepare_enable(serdes->pll[0].hw.clk);
-> +				clk_prepare_enable(serdes->pll[1].hw.clk);
-> +				clk_rate_exclusive_get(serdes->pll[0].hw.clk);
-> +				clk_rate_exclusive_get(serdes->pll[1].hw.clk);
-
-Am I understanding correctly that if you encounter a protocol which is
-not supported (PCIe, SATA) both PLLs will not be capable of changing,
-right?
-
-Why aren't you just getting exclusivity on the PLL that is actually used
-by a lane configured with a protocol which the driver does not support?
-
-
-> +			} else {
-> +				/* Otherwise, clear out the existing config */
-> +				pccr = lynx_proto_mode_prep(mode, pccr,
-> +							    LYNX_PROTO_NONE);
-> +				lynx_write(serdes, pccr, PCCRn(mode->pccr));
-> +			}
-
-Hmmm, do you need this?
-
-Wouldn't it be better to just leave the lane untouched (as it was setup
-by the RCW) just in case the lane is not requested by a consumer driver
-but actually used in practice. I am referring to the case in which some
-ethernet nodes have the 'phys' property, some don't.
-
-If you really need this, maybe you can move it in the phy_init callback.
-
-> +
-> +			/* Disable the SGMII PCS until we're ready for it */
-> +			if (mode->protos & LYNX_PROTO_SGMII) {
-> +				u32 cr1;
-> +
-> +				cr1 = lynx_read(serdes, SGMIIaCR1(mode->idx));
-> +				cr1 &= ~SGMIIaCR1_SGPCS_EN;
-> +				lynx_write(serdes, cr1, SGMIIaCR1(mode->idx));
-> +			}
-> +		}
-> +	}
-> +
-> +	/* Power off all lanes; used ones will be powered on later */
-> +	for (i = 0; i < conf->lanes; i++)
-> +		lynx_power_off_lane(serdes, i);
-
-This means that you are powering-off any lane, PCIe/SATA lanes
-which are not integrated with this driver at all, right?.
-I don't think we want to break stuff that used to be working.
-
-(...)
-
-> +MODULE_DEVICE_TABLE(of, lynx_of_match);
-> +
-> +static struct platform_driver lynx_driver = {
-> +	.probe = lynx_probe,
-> +	.driver = {
-> +		.name = "qoriq_serdes",
-
-Please change the driver's name as well.
-
-Ioana
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
