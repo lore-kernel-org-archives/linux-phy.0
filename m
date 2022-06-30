@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6250CCA473
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jun 2022 18:11:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EA2CCCA473
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jun 2022 18:16:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,132 +13,132 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gcet0G2mKmNhRkCUZ/AIHCWN0s6DtSxIDRhgWgISLQk=; b=GwCOd4dH0+KmBxc1hOVF70aMnZ
-	7/wQvOQhgS/4P2QutP2dULbk27Zl8128tLuDZYmZCoIu3Lb6hyqXq/z2whbUJmmRBBi7QvpKGiStQ
-	jdpoABaQH4JbVhFH/udd8H5B5kuHoN9MOPvaR2zkVtt9ccZm6GjJqD0qeeCLlfBJgN6nSSbQ1DsgG
-	25GaUJgU37xFEAncYiKosljvtatSrOmOZ9KLMCrMyaV/J4MtOh5yKPQb8UacAo24crCo+rTg1UR39
-	My4R5R4IdjO2B7f9Z386tYBl/dfTCydyu0kFzaM8g4+xYtF3tzwgT8s+2ViliteAxkarc1+1S+5Wp
-	pAUGSVKQ==;
+	bh=PIHcZHd8lK1F7Brxzu7mSi9mzN3KngzGkVaC2wPSIlI=; b=KI0L/j5/9GI2v8YHtoLnzvE6Ub
+	hmbroPV6/8LD/f14Np72f9ALl4tPW4ic43JHBHkBciwpJu3AqEsSJJ2zgodnHsK8yShN4Gp13S2Or
+	uFCy5mAk0yizfxf+9Km16At55Gs0HBzn7peEcxB8QrYYtkKUvLUzTPelmrpsYNcbYwpd4zJTTS2n3
+	f31utvTpoGQnCNHxawLU34CRwL2QGKYTt/2zVW9Runqg11TAaxZiw8KybkGiAYnX8yZS9jiq/QWql
+	TsIPjqTacUWDcnSBbwIHtb8rl3qA42n4fS+4ta9i5VYx8WRj8LTsCAk7ilLZwEz5PLnvVBbXOagbM
+	+PBMv71A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6ydW-0010AT-7P; Thu, 30 Jun 2022 18:11:30 +0000
-Received: from mail-am6eur05on2052.outbound.protection.outlook.com ([40.107.22.52] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1o6yiO-0011WM-Pd; Thu, 30 Jun 2022 18:16:32 +0000
+Received: from mail-db8eur05on2070.outbound.protection.outlook.com ([40.107.20.70] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6ydS-001080-Iz; Thu, 30 Jun 2022 18:11:28 +0000
+	id 1o6yiM-0011V7-9T; Thu, 30 Jun 2022 18:16:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lDU+Ox3BPdK4UEpkGourcHw+gJV5jDnfUwlst6Moz/d8AIA0Ga76gPvhcN5UGMuPgCgLPp8itgGFd0FXv420aotgOflLFNRG270J1mW693ljWDuVEHhDg/2EIBy8NHIrcCRWoqjKHP1NGSYheakUWm4fkRGXq0uG3OLZEtYduxAOiepzT2xQddGXVmob5vEXJ6kTeQ2W3FOzWi7I1o4YQY/Uy18Bx0NM7mgYfIKBYBj0eSeQk2k3QbJMIYlyVPFMy3kOQjbXBoaoDrLpYUfwPml6rxShv+zf46Y/ZqpYLNMCdQr0WtbN9K89RF1o2U7kR/lfTcLBqH0DYnjUCRZljg==
+ b=Vne4qCIUoKXhUhoGqid3HGxlXOr4Cs838Fux3E4y03KuAnnKhGcZeivQUlcTqJjhJmNMA3Het0E+UTczqFVbujy3A0rOEh4baHu5SEntnRCqxJ2YRmEM1dvPqX4OpGkYdCtXepp8F0jTfKfcIwQMAzSAZTJpuOEPiQBTOMuhdnW+K0tO992EpdzkCpNgB44x3VL0uCAcJYfEHeWYuGpLcs3eFm28IloJQp1biwoJDerlKROYl46NfmY4HdvOq4bKypX+h1lNqJKP9UV8KyyIIFWIdKQskFj68tL9ZH3o2cf6IKT+u0jQOyWIk8Gmg/PkVICvR3YppnO6W9fKrHh1qQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=/88wiFDdYcoPBOaQpefSVmBhNllDXt3mI7vc9YGu9Ak=;
- b=TVmpafUDmyIXEzYEhrgC+Ms0CCaF2POZ0ttuGmNJaop9xnV4oEXk8N9qHVufYCeZo/i0eu9Z1HnFuIKkemYLv2xl07S2O5vX+PVYMIGPgio8NS14qo44p365+1rZA/XaJ0ZGuUOEZ9vWlkFYE6xkjp/SCwKEkmwO+5Wdb9ZVmzQDUI+FKbc/m04R1zv/KbSm3cU/CfDQ7u9+Pipik8pu1yCv5xVIeQKPNDYFsLuLvjuD1LvM2LHlOcXryGC8UiH96Hyhgda+RVRdIAc5q7mHhHy2J6UkVYMiK5yQfk5EgcCzoFq7Ae4EC5ws0UFSWyhQUPWcUCImf8O3WT4sYTNZ/A==
+ bh=BOICn4qH9/D8aPei/PPXmQjacloYyubgARWZ74Yfdj4=;
+ b=My6+oDWJtVYUQouimy9fCy9ilPeYORKy8pfWsLylxhRXRY+rbYg9l+UffHBTuapyr25X1h7Ng9Lo6ZhsKyFbFqoth57N64JN2N/J+Alvl4FKTudhYfUhDDXz+ZE79MzV/RTSE36H+qC8dy/Imke+7++du9KSIgkDSr2GzH+9j11PUN/7fVO3vQRGg1FwS+EdVZKKlYHb/lIciqIIjFhsE7twl8NTp86pI8JvKYUHkArFmz0qGV6P6MnWhV5c2v0Fm7W11ruUAoM+NR+cH/fi3XE+gbIKa3bdvYaGYMCMyCMB3M3d7EDCuGGYARxOpU++9DKA9ZGZqkGhMD8hbHlTfg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
  dkim=pass header.d=seco.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/88wiFDdYcoPBOaQpefSVmBhNllDXt3mI7vc9YGu9Ak=;
- b=bAhFzmgXy4GM+LptfPjxd8fnHoGf75+nrKMSnPrTB5VkqfSMAx5oghvi7B/xYKym0M0gfYhH12XUhWc6oUTETJeSNPW4L3ez7no1OxzX1u1zv/6wkLt43GTrOYS+LcEAF+ZaAbmjbBS254+I8bhOU8s5o+JWbevHsLaTjz+hP4qKAhZ9Ax9OQ0XEqaTj0gn8OQK6DVF0m3q/4Yh9repbVDV+t9hoJgLpi3MWM762nf3W7+QyFPX8GeTk7SlVMBhCqoKpsXki9cFKNQtYkNwJopVVv/wLRPbgli4TdQiCSjgTH21FTVrCN1Ev6XjdhmEWgpGgXiQoIRXgjYP5jkoWEA==
+ bh=BOICn4qH9/D8aPei/PPXmQjacloYyubgARWZ74Yfdj4=;
+ b=Tu/QwyyfVfKcy2lyli5CUs2pwACinEjGPlal0U/toepodB/hjoOCWDF65GneySdt1ubFG+yn245hK6WgeH0GkGV4SdGQ7RMJ5kB1r/HrucxES8+sxjue9MT3XDdNBOj8fE8mgVsJ7b5cq2xck668acI+Zoi2egXfcEffUs0tEMQdF+gGIJsO8Yqy6h87DSY8W1o1w+gi6y6smuzS6ni23FpRzm8G9uX5jtxvYThIb3ZzxR3VxQO0r+fR0IA7EGgqZ0vHYWpnjqrJP/K31UtxWeJscHIWa7CYuY7esx813RhLh2S6bfRL5kOyKghAuR2cA9nLUDXcG48wTcTFG1AJ3g==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=seco.com;
 Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
- by AM0PR0302MB3332.eurprd03.prod.outlook.com (2603:10a6:208:3::18) with
+ by AM5PR03MB3027.eurprd03.prod.outlook.com (2603:10a6:206:1a::13) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5395.14; Thu, 30 Jun
- 2022 18:11:22 +0000
+ 2022 18:16:26 +0000
 Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
  ([fe80::757e:b75f:3449:45b1]) by DB7PR03MB4972.eurprd03.prod.outlook.com
  ([fe80::757e:b75f:3449:45b1%6]) with mapi id 15.20.5395.015; Thu, 30 Jun 2022
- 18:11:22 +0000
-Subject: Re: [PATCH net-next v2 04/35] [RFC] phy: fsl: Add Lynx 10G SerDes
- driver
-To: Ioana Ciornei <ioana.ciornei@nxp.com>
+ 18:16:26 +0000
+Subject: Re: [PATCH net-next v2 01/35] dt-bindings: phy: Add QorIQ SerDes
+ binding
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Rob Herring <robh@kernel.org>
 Cc: "David S . Miller" <davem@davemloft.net>, Jakub Kicinski
  <kuba@kernel.org>, Madalin Bucur <madalin.bucur@nxp.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Paolo Abeni <pabeni@redhat.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, Eric Dumazet <edumazet@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jonathan Corbet <corbet@lwn.net>, Kishon Vijay Abraham I <kishon@ti.com>,
+ netdev@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ Paolo Abeni <pabeni@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Eric Dumazet <edumazet@google.com>, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org
 References: <20220628221404.1444200-1-sean.anderson@seco.com>
- <20220628221404.1444200-5-sean.anderson@seco.com>
- <20220630155657.wa2z45z25s4e74m4@skbuf>
+ <20220628221404.1444200-2-sean.anderson@seco.com>
+ <20220630172713.GA2921749-robh@kernel.org>
+ <7fe84856-7115-b0f4-b0e1-0b47acbddb7a@seco.com>
+ <db9d9455-37af-1616-8f7f-3d752e7930f1@linaro.org>
 From: Sean Anderson <sean.anderson@seco.com>
-Message-ID: <0ed86fb5-4d26-4fb2-8867-adf9df1eea2a@seco.com>
-Date: Thu, 30 Jun 2022 14:11:17 -0400
+Message-ID: <537d0c0f-8f29-ddb9-dc02-a9e9ad63702a@seco.com>
+Date: Thu, 30 Jun 2022 14:16:21 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.10.0
-In-Reply-To: <20220630155657.wa2z45z25s4e74m4@skbuf>
+In-Reply-To: <db9d9455-37af-1616-8f7f-3d752e7930f1@linaro.org>
 Content-Language: en-US
-X-ClientProxiedBy: MN2PR01CA0037.prod.exchangelabs.com (2603:10b6:208:23f::6)
- To DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
+X-ClientProxiedBy: MN2PR12CA0031.namprd12.prod.outlook.com
+ (2603:10b6:208:a8::44) To DB7PR03MB4972.eurprd03.prod.outlook.com
+ (2603:10a6:10:7d::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 5e836e72-4ef8-473a-6339-08da5ac3f06d
-X-MS-TrafficTypeDiagnostic: AM0PR0302MB3332:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8ca48084-c524-486c-d5ac-08da5ac4a576
+X-MS-TrafficTypeDiagnostic: AM5PR03MB3027:EE_
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	HrKaPgl9otAipp17pBSuQLrccU7iX8QYibWi9iPNqYYkYx2woS3sPPvg8Cgk7Z14w9HbmBJJ/RDZoFr/tbKgMVBOm2YzV0NyLQcrpXePLJXtMMvHDs68LnnQw6G2hR8liXSuJiMuxRHc8Npk7Ikn5P1NqurkZkAcAftyQwrDbioegeg6nP1oWImhk2I0Ltq9WXq2iJLwFdJutb2fwwl4UdSPLgXhbLtJ3vxozt8GEsZnBt3WYnWvw8U7JMWCEgo23GDkgYGbzS6GHkqOswWMihjwGrh1WLc6KfudIbPJFbxXZGEmd6x2KoHhhxbGOlKai8nGSR7/cllkgqg4riFeK7MXnS5EdW4pFmq+tmthfmWH/hPuN0yUXwpkdtxadWwDXV/ZEZzur9qxjZS9lT/GXf+PfDwGRO83fi2FBwwZ4aFCSubNCdbldPqifeLQlObBy4E1KMOZjTTw0mA1hQQhlzDSmqBMcvjJ6ovRwBXHCXh1yu0v+plF+wf1QokF68Y6xS2JNyJJiXWrQwt94hcHC/hILsiZ3rnVEvDv3Gh8Dyu3V2x3ne4IXMAbfcS+u16fJ2m5X4a+Fi94qFBtst+q4qgFq23sOvbWwFsHrHbN3bGsU9oGLF1Trlg6Tb/PHbaaR0jh3fznWBuLqI6AELtGZtt1Cce89BM/pBylB7BunyWpBu7rHxv82U+UmJNhkc//unNci/QdPL/W2VwgyNk9DfhfRXR2ErGXbu9vvonmUgQhF82EpDwiDX/8LoVRCmYpZbvsVPE7BQ1/uRKc4M/+tpnHCdrKoCWu1ATS7FUAIx3EeDOrXTZ0EFOQolyNhoGKLo4BTENXAZljY0C/b+NiuhKq6LhbkG2M9Q68yX/uvFfzpdL1OPiRdAlvHGIbmLwj
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(136003)(376002)(346002)(39850400004)(366004)(396003)(52116002)(6512007)(26005)(2616005)(53546011)(66476007)(86362001)(5660300002)(38100700002)(186003)(83380400001)(6506007)(38350700002)(2906002)(44832011)(7416002)(8936002)(66556008)(41300700001)(478600001)(6486002)(6666004)(6916009)(4326008)(54906003)(31686004)(36756003)(66946007)(8676002)(316002)(31696002)(43740500002)(45980500001);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 	H2TQyH0MhxsV3vL7Bg993yHBjArQcYQCQwMW38MLTLbNZ6Xv4R+JDeBlE2s6XsmPuyAMQAbU9n9tyylELvbWZDCBePinrs7Dha/8SJpphsO0ZtkmPySwE+TD0/ZloM2MMZB943XD+bP1VXrCEg4DHjgnOHAMKUZujCVWoJD7FSxi6R0DX7QBH91mVrskm/przpmzEhftDC9028tZ0EsfSwuKFJ03Pdd5SRbACxZ5++u4ZygC1hllWcRF9gVKrRjruZb972ljlooFUIkBRnGfcrFF3ISHWyPUTyZEZM862cWYh1idK5A76Fd+2vrgcJVYxPOy1NmOH04cnkd/UCy9ytebrhSRhTUXz5uMzafivRdQ41iJK26uMK0bNmzXPMiVGHKFUrKr1BzNX5hYBi5jxfnr1R1XwIhEqUgV3zEBkTqZIqBbYW1LepTPW1bfox0ymxx0z0i9lL0kwvhHssNXR4DSk652ZiVI6vAZ6Jz7ijopkdy8L0aYK5rIqY9evhk8xMuD1OOmA7WsYOuZ91mHSO31bJM60UNjv/MK/VbCIEjVT0luFfs1gTdzvMPQwN8j48CtMXUBh6eH0gD/NBqgbfGtZQjMHaexeEbBHCBfVCdhfqPu1TYJsXBIgTDpr1AP++7siiWPkVpu2lR8nneCQ3928/4LOv+txLDpz97iqqI5Aj3LiR6Or/SSjPy3ZAykvHuYOQcvUcuN6xFrTHdkmgS/K2vmqq0XzBcoPSuX7LtFJ2Cv/UM94z2vuyzr06rtOq37R83Y0rKoNYxQ+gPvZwe0QR/mJNIOEjBsXVdr7XP48SBexbeG84bocJrgoYuks7yHrd0uO+hvjPzQSdXM0KgeirYvgcsppkXwPRHluuQLE/mvBxpeBwCv5gzBW8gK57lw9oyDAKT4serefkwr4qXgp9xITh4EDClijGJPw6U1ZFpn0LjjsJYpC599WQYx
+X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(39850400004)(396003)(366004)(376002)(346002)(136003)(66476007)(66556008)(38350700002)(4326008)(38100700002)(8676002)(83380400001)(26005)(66946007)(31686004)(110136005)(54906003)(31696002)(36756003)(86362001)(316002)(7416002)(2906002)(2616005)(966005)(6486002)(53546011)(52116002)(8936002)(6512007)(5660300002)(6666004)(44832011)(478600001)(6506007)(186003)(41300700001)(43740500002)(45980500001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?SnpmbGd5M0llOG9wYlh2b0lkWk1JTDJ2Z0VSaUZpVkdHemtkZDZEVGNSVXFu?=
- =?utf-8?B?MS9hc1E1WHJJRTNBRlZlTUlSVmNramhwQTU2WDZXKzNmMGhob2hsSldlNzFJ?=
- =?utf-8?B?TXFsWU1qL0hRWUl5TFhYZndrdkNzQzdzdkMyRXFHbGVVL2ZHN2JrZi9LSnQw?=
- =?utf-8?B?WWNpS1ljY04zdkY2UllFaXVZbDlWNzlqempCK0JOVDZhT1NpRzgxNEpVSGh6?=
- =?utf-8?B?alR3VU53TkxwSjIxU2JUWDF1WXY3WFJIa1AvNGNIVjVseGtUR0dyZ3VDT0h4?=
- =?utf-8?B?OXIxWHFRWExSN2oyRWw4WVFHaGNRcjd6Nkp3c01Sc2lsbzQrbUJpYzc3cDcz?=
- =?utf-8?B?NjR0bllHNjlOTDV3VmtqN1JmRjFNYTFkaFAwMng2enNsems1bGpiSzhBUlBt?=
- =?utf-8?B?R0tZZ2xYdXF3V292cGVKZWxjcDNaek5HUWJ5aHBJcWpZOG9ZWldBTktGWjI2?=
- =?utf-8?B?R1NTNzZmVnNTUzRSWjYxdFBwZlU1U0xKTUUycWZPT3h2UmlRNjZHdDNtTVNs?=
- =?utf-8?B?SmthK2RmM0tYVTBoaTY4QlU3d28wYWdOVlhtRHdDS3dQMU9QWXBqTmsxdlkw?=
- =?utf-8?B?c3FOOG5JTXdkYmwxOUI4VTdJT1hDWm0yeFFlZ28ybENFNjgxY0JGN2x5R1la?=
- =?utf-8?B?K01oRVByaVBIeG9KUVlrYUNZUmpoUDdXVkluUTM5RXVSbjZSeURhY2tNdldk?=
- =?utf-8?B?YVVpR3hIUGlQYU5vc1BDTjUrSG5zUUlUcGx2WXVZeXB4b0toVUVmc3BtNXIw?=
- =?utf-8?B?UHhwdWZMNTBxKzZKekJHTmdpaytIRUFYUTZ5UVF5S2tzUHBUNFBVNTlXS2NU?=
- =?utf-8?B?a21sM3BsYTVCelVpMXBudXc4Y2ZwWkliMVNBKzA2VFE0ZnVob2ZoeDJydldK?=
- =?utf-8?B?cDFwK2NSa0lWTVNjSWlidWlOOTlPTlNrek01S3NDQ25VREtCSnhYanhFS3Zw?=
- =?utf-8?B?WkpIaDh4YXlPYVRFZFE2REZvVG41L29XSDNFempkVDZWd05IZkJFT3F2U2pZ?=
- =?utf-8?B?ZE82V2xnamxJZjBjaDdPRDNNM2Z3eXJNRGJhOWd5dHd6U1VsSTlYbW9jeklI?=
- =?utf-8?B?SnYxVkR6S0ZlUWZiMlY0NWxWZUdFcWVyNWdTdnhOUXVHTlNpbGUzZEZzN09s?=
- =?utf-8?B?d0ptQmplR3NKOEUybjhUVU5xWW5Ma3A4dndSSHBEN1h4Zm41Y2RqazNqVGU0?=
- =?utf-8?B?emFCRWdTZk1pZXNSaE42U01Pc0puU1grODZ3dElTQjJXeHEzcnduOTVPSTNK?=
- =?utf-8?B?dHV4TmRBYUFkUjlHY3I4cjJmSkk1MEsxWXJlaVFyUW44WEFvVUEvZHhQNTh5?=
- =?utf-8?B?czdwRldxWXdjZ0hsSi9zeFcrczhXSG5PQ1gzbEQram92bmJKMWdsd1J0eXVR?=
- =?utf-8?B?Nkt2eEY5MWpCclFPL0hrVHBLSW1QM3RqNmV6RDJxOEN5R1IrVkZnOFdGWUlT?=
- =?utf-8?B?KzN6NUliUmRHZTAxdjFiM29NbExURjgzVnVaeE41MmFCM0JKWURYZDd6UldJ?=
- =?utf-8?B?TGlXZjIxczJoa0JBdXRiY01EL0pObDROYW5pTEJUWGM2WVYzK3piUFBQMnVN?=
- =?utf-8?B?UGlsTitGQ1pGbjFoazlCU0dTOE16Z0ZvME55OFMzQ2I5ZXVVS0UyUHhiTE5z?=
- =?utf-8?B?SWRXZUZmQXdCSU9SbG16NTVaMkRJdUJiandnemwycEhYbmVCTUs2VDYxbC90?=
- =?utf-8?B?NWhnZ0pSYThFYkpjT1VJRVpVbzl6Syt1akNENVpuUVhFVm5tNDg4SldFU2NK?=
- =?utf-8?B?VXArYkJJS1RyeXFIZ0RleHhGUFEwWHZZZldjT2FYN2RsZEE2a1JpRXpkQXhZ?=
- =?utf-8?B?aFhzNm5vUkx2bk0va0puOUxiMzNGVm5udjllZWRKSytkZ3BGdCtnd2ozTkg1?=
- =?utf-8?B?bTQrNUZPam1lWmcxZzBnWlNjcmRLaEtKUXJVU1JuYnZ4YVQ3bGw4WFp2b0wv?=
- =?utf-8?B?MEllVlNDMjRpZjFnZlNKN003MzdQaEhtdlluaVBEV3pxb29SNkw1WVhMUUsz?=
- =?utf-8?B?ZzBsU004bkJ3MDczNHpZMVZUKy9sVXJrTk9ERWFBblhvTFhNcjFCdzJxOS9M?=
- =?utf-8?B?NlAzTFQxVmxXZjdkL2RHTG54VTRkU2w3bks2UTdMYmlWZU9PM2Z2S0JBVzlF?=
- =?utf-8?B?UVRWU1kwTHNSQzRCUHBCZHJjMzh5YUNFMjFJNHFkODBVR3VUTkQxS1lYbDJj?=
- =?utf-8?B?Rmc9PQ==?=
+X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?T3RQRU5kTUVPc1hNUW5hOWR3NTlBbkRDaEpCd1RFaGpxWVJaemxydVVNL0Vs?=
+ =?utf-8?B?ZFBCL2luTFF4emdjUXNhaVh1allkWk1KMk9pM29URDVjSjhkeVI5a3c3OG9o?=
+ =?utf-8?B?R0Mrcm1xVTh5ZzhPc2pRNDRkVi9IOVU4ZXJYeHBFcnlEdGRLTnFYc1B0WmIw?=
+ =?utf-8?B?VnQ5N1NPVm1VcnNVeXZmU2Zld3NGTXhrdFZ4Y1ducExyWVVKOEY3TWFQYlNE?=
+ =?utf-8?B?Z3pQQi8vbDJvRUgwbG01d2Q1Y0xFQjNmQkNMUDgrZXNJN2h2NmVOSE1CZ2t4?=
+ =?utf-8?B?Y3A4YStST01QNHBKQjE1K3h1U2ljYTZpQURRdk5ydkJORi95NEtNRCs1Nzhr?=
+ =?utf-8?B?UjZVeWM1VzBhandhaUNENFJ1akhRMU1KZEhKTWV2Wmo0cFRjWnpxRkdhZERS?=
+ =?utf-8?B?dlhyOW9QMncrTFFHMy9BWlFWeStrZGkwUnI5SzNIRlFSTnNpb1FldnI4RHBC?=
+ =?utf-8?B?VEJNYkZqbjluS2xzK0FNN0RJTXN2M3dDV3pPd09zeHE3QkZGb1RXb3BsSU5m?=
+ =?utf-8?B?WEloNzc0Wm02NWFJdW1WdEFKay8yZGZCZEkwUUtCR3pkdlQxUFNkR3hYRDVZ?=
+ =?utf-8?B?RklTZWZtSE1oQWhzeE4rdU56SGRUa3duNnVpWXZjSUFBZnZWbkpUNm5hRmlO?=
+ =?utf-8?B?Umt1UHQ1VmxjZjZNcE9tSU9uenZGc050Z0NOOXRmeHRwRVE0QUZycXhCM3g2?=
+ =?utf-8?B?K2c3N3VXK3I0U0cyYTE4SlNtL3d0TDN4c3ZNOXArZjBZYStXSUVXcHZPZTVD?=
+ =?utf-8?B?T28vT2VIZmpPY0o1WG9IZHRlK0tGbGs5QUozUnlwRnNWazFKdVZXR21WVUZn?=
+ =?utf-8?B?cE1hZ3BvT2dNV2QyTjMzeGN6NVBvUnNNK3UyY0wxd1hISWN1SEZxKy9uWjQr?=
+ =?utf-8?B?UWl2aGxPZkF3NDZnOUVLNHNzemNKOE9SQ29pU29PMFZIQ1p2YUI1cnE0YjB2?=
+ =?utf-8?B?bE1MNGpEQkZDY2ZRRVJuQ0d6cWlyUUprclIvcXVTNi96aUhMOGROY21VVkRj?=
+ =?utf-8?B?R3U3RTlNTXp1YmkxUFdueXhydjdnWGVSMVlUVXMwZXVULytqWmNUZ3RGdCtM?=
+ =?utf-8?B?R3hBb2ZBTzVxQnVFK1drY3ZEUmV5RWNYd2duWCtBdEQxTVVYWTNLWkE3S1Ja?=
+ =?utf-8?B?SnJoaFkyYnhMOFdpNVo3RG1mbndONXUzY2tzdVRiNlNaNHNhSldNTUxLUllC?=
+ =?utf-8?B?WkM0VGFxUFNVblZVQzlaWGFBWGE2RytiSDJJblBkWXVLSWk4cjIrWkxGSytP?=
+ =?utf-8?B?NHZLbFBzQ2t5TEVGai84RU85RFpEcXhuUVhoa2x6cGRUNFBobEd5cW9NeXpi?=
+ =?utf-8?B?MXd0WlByU3pwUHdjVS9mT0cvZW81OXZVdUhwN1Q2aU1tRnI5d2I0NVNLTHJy?=
+ =?utf-8?B?aU9zNWw1MlE5SGJCczEraElQTnBaSUpJNHVvcHBkWkVhMkpTQlRHeVp2ajdC?=
+ =?utf-8?B?bjROK1RVNC82WnFQZTBDZGh5SFpUa1hoS2RUS0J3K3ZtYWVYSldNS2FKUXBC?=
+ =?utf-8?B?S3J3YUhYR1hlNkN5SE81bk9HcHIzMmEzYnZBKy9tY3ZyV0hzRFp1L283SS9j?=
+ =?utf-8?B?WDVKQ0VWNXM4MUhDaCtSVnRJT21vMmJ6R1V3d1dpVDluYmJDcTloNU8wdFgz?=
+ =?utf-8?B?YVA0c0U2engrdCtJTzg3VUtVeTdGVC9sWlZpZlk1SmFrMVpoNEExMmNyNURJ?=
+ =?utf-8?B?eVF4bkFNSTRUcU9kei9RbHRaOW9jVEMrM3dVTzU4am01NGZzK2ZKMlpNa1pP?=
+ =?utf-8?B?UkNhcWxWWk5hUVlOalBlbSt3SFpPVDd1Q2NhbGRaZFVZbWh3VzZ5VHV0SVVz?=
+ =?utf-8?B?eFNVb21RRU5aWEl3MGNMdnVEc0thZGlGVmlWREg4aEdWejhDSDI3dXJGZDVN?=
+ =?utf-8?B?V0ZkMmF0OFo3SzVXelpQc2JrTnErdUlBR1hqWnpZT0JiZG1lWVJSUkMwOW9s?=
+ =?utf-8?B?ejcrV2lMMUlidTJXdzB6ZmlSaEhlelBMbmFnTkVwbTU1YzNyQ1QwNi90dUlh?=
+ =?utf-8?B?RC9CeXFrR0lKVE5lNFhIMTBXUGlYanQvbXNXWHNzZXQ5TStFZElCZkFjWU04?=
+ =?utf-8?B?TmVYWlJDelZ4amhNQkZvOWU5Y2FsQ2FqYnpMMVdHMnp5Qnloa0pqM3lKSFNI?=
+ =?utf-8?B?ZFNta1B4THRMZjV4UmZITGlMVHBjUXo3U2ZaU0lvV2ZKWmtsbEFYamRncUlW?=
+ =?utf-8?B?Z0E9PQ==?=
 X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5e836e72-4ef8-473a-6339-08da5ac3f06d
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8ca48084-c524-486c-d5ac-08da5ac4a576
 X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2022 18:11:22.5950
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2022 18:16:26.4339
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5PS4d6KK+Monyxpj+OM5u+/VapyTc62Nbw0t9seogAj/mdLodZfx1Zq19vfU5jps2Xu96ayFWe3OtK9piPgblg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0302MB3332
+X-MS-Exchange-CrossTenant-UserPrincipalName: iXrOju9w7gP1VWhcfSAfvlbMnk+AwNkuLQbwrMeE7WTeKwDbd8VOa65mNWEpp2p1XGjZ/Auvn4M7XT3GeMEodQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR03MB3027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220630_111126_846315_9A5A2AE9 
-X-CRM114-Status: GOOD (  41.69  )
+X-CRM114-CacheID: sfid-20220630_111630_388035_CD207763 
+X-CRM114-Status: GOOD (  28.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,258 +157,109 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 6/30/22 11:56 AM, Ioana Ciornei wrote:
-> 
-> Hi Sean,
-> 
-> I am in the process of adding the necessary configuration for this
-> driver to work on a LS1088A based board. At the moment, I can see that
-> the lane's PLL is changed depending on the SFP module plugged, I have a
-> CDR lock but no PCS link.
-
-I have a LS1088A board which I can test on.
-
-> I'll let you know when I get to the bottom of this.
-> 
-> I didn't go through the driver in detail but added some comments below.
-> 
-> On Tue, Jun 28, 2022 at 06:13:33PM -0400, Sean Anderson wrote:
->> This adds support for the Lynx 10G "SerDes" devices found on various NXP
->> QorIQ SoCs. There may be up to four SerDes devices on each SoC, each
->> supporting up to eight lanes. Protocol support for each SerDes is highly
->> heterogeneous, with each SoC typically having a totally different
->> selection of supported protocols for each lane. Additionally, the SerDes
->> devices on each SoC also have differing support. One SerDes will
->> typically support Ethernet on most lanes, while the other will typically
->> support PCIe on most lanes.
+On 6/30/22 2:08 PM, Krzysztof Kozlowski wrote:
+> On 30/06/2022 20:01, Sean Anderson wrote:
+>> Hi Rob,
 >> 
+>> On 6/30/22 1:27 PM, Rob Herring wrote:
+>>> On Tue, Jun 28, 2022 at 06:13:30PM -0400, Sean Anderson wrote:
+>>>> This adds a binding for the SerDes module found on QorIQ processors. The
+>>>> phy reference has two cells, one for the first lane and one for the
+>>>> last. This should allow for good support of multi-lane protocols when
+>>>> (if) they are added. There is no protocol option, because the driver is
+>>>> designed to be able to completely reconfigure lanes at runtime.
+>>>> Generally, the phy consumer can select the appropriate protocol using
+>>>> set_mode. For the most part there is only one protocol controller
+>>>> (consumer) per lane/protocol combination. The exception to this is the
+>>>> B4860 processor, which has some lanes which can be connected to
+>>>> multiple MACs. For that processor, I anticipate the easiest way to
+>>>> resolve this will be to add an additional cell with a "protocol
+>>>> controller instance" property.
+>>>>
+>>>> Each serdes has a unique set of supported protocols (and lanes). The
+>>>> support matrix is stored in the driver and is selected based on the
+>>>> compatible string. It is anticipated that a new compatible string will
+>>>> need to be added for each serdes on each SoC that drivers support is
+>>>> added for. There is no "generic" compatible string for this reason.
+>>>>
+>>>> There are two PLLs, each of which can be used as the master clock for
+>>>> each lane. Each PLL has its own reference. For the moment they are
+>>>> required, because it simplifies the driver implementation. Absent
+>>>> reference clocks can be modeled by a fixed-clock with a rate of 0.
+>>>>
+>>>> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
+>>>> ---
+>>>>
+>>>> Changes in v2:
+>>>> - Add #clock-cells. This will allow using assigned-clocks* to configure
+>>>>   the PLLs.
+>>>> - Allow a value of 1 for phy-cells. This allows for compatibility with
+>>>>   the similar (but according to Ioana Ciornei different enough) lynx-28g
+>>>>   binding.
+>>>> - Document phy cells in the description
+>>>> - Document the structure of the compatible strings
+>>>> - Fix example binding having too many cells in regs
+>>>> - Move compatible first
+>>>> - Refer to the device in the documentation, rather than the binding
+>>>> - Remove minItems
+>>>> - Rename to fsl,lynx-10g.yaml
+>>>> - Use list for clock-names
+>>>>
+>>>>  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 93 +++++++++++++++++++
+>>>>  1 file changed, 93 insertions(+)
+>>>>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+>>>> new file mode 100644
+>>>> index 000000000000..b5a6f631df9f
+>>>> --- /dev/null
+>>>> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+>>>> @@ -0,0 +1,93 @@
+>>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>>>> +%YAML 1.2
+>>>> +---
+>>>> +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
+>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>>> +
+>>>> +title: NXP Lynx 10G SerDes
+>>>> +
+>>>> +maintainers:
+>>>> +  - Sean Anderson <sean.anderson@seco.com>
+>>>> +
+>>>> +description: |
+>>>> +  These Lynx "SerDes" devices are found in NXP's QorIQ line of processors. The
+>>>> +  SerDes provides up to eight lanes. Each lane may be configured individually,
+>>>> +  or may be combined with adjacent lanes for a multi-lane protocol. The SerDes
+>>>> +  supports a variety of protocols, including up to 10G Ethernet, PCIe, SATA, and
+>>>> +  others. The specific protocols supported for each lane depend on the
+>>>> +  particular SoC.
+>>>> +
+>>>> +properties:
+>>>> +  compatible:
+>>>> +    description: |
+>>>> +      Each compatible is of the form "fsl,<soc-name>-serdes-<instance>".
+>>>> +      Although many registers are compatible between different SoCs, the
+>>>> +      supported protocols and lane assignments tend to be unique to each SerDes.
+>>>> +      Additionally, the method of activating protocols may also be unique.
+>>>
+>> 
+>> On v1, Krzysztof said that this was a better route...
 > 
-> (...)
+> I commented about "-1" and "-2" saying you have to make them properties.
+> You disagreed and with long messages were convincing me that "-1" and
+> "-2" is the only reasonable approach. I never said it is a better route.
+> I explicitly asked in several places for defining these as properties,
+> not as compatibles.
 > 
->> +For example, the configuration for SerDes1 of the LS1046A is::
->> +
->> +    static const struct lynx_mode ls1046a_modes1[] = {
->> +        CONF_SINGLE(1, PCIE, 0x0, 1, 0b001),
->> +        CONF_1000BASEKX(0, 0x8, 0, 0b001),
->> +        CONF_SGMII25KX(1, 0x8, 1, 0b001),
->> +        CONF_SGMII25KX(2, 0x8, 2, 0b001),
->> +        CONF_SGMII25KX(3, 0x8, 3, 0b001),
->> +        CONF_SINGLE(1, QSGMII, 0x9, 2, 0b001),
->> +        CONF_XFI(2, 0xB, 0, 0b010),
->> +        CONF_XFI(3, 0xB, 1, 0b001),
->> +    };
->> +
->> +    static const struct lynx_conf ls1046a_conf1 = {
->> +        .modes = ls1046a_modes1,
->> +        .mode_count = ARRAY_SIZE(ls1046a_modes1),
->> +        .lanes = 4,
->> +        .endian = REGMAP_ENDIAN_BIG,
->> +    };
->> +
->> +There is an additional set of configuration for SerDes2, which supports a
->> +different set of modes. Both configurations should be added to the match
->> +table::
->> +
->> +    { .compatible = "fsl,ls1046-serdes-1", .data = &ls1046a_conf1 },
->> +    { .compatible = "fsl,ls1046-serdes-2", .data = &ls1046a_conf2 },
-> 
-> I am not 100% sure that different compatible strings are needed for each
-> SerDes block. I know that in the 'supported SerDes options' tables only
-> a certain list of combinations are present, different for each block.
-> Even with this, I find it odd to believe that, for example, SerDes block
-> 2 from LS1046A was instantiated so that it does not support any Ethernet
-> protocols.
+> You are twisting the entire discussion now.
 
-As it happens, it does support SGMII on lane B, but it mainly supports
-SATA/PCIe.
+Sorry, I didn't mean to come off that way.
 
-If you happen to have some additional info about the internal structure of
-the SerDes, I'd be very interested. However, as far as I can tell from the
-public documentation the protocols supported are different for each SerDes
-on each SoC.
+>>> We typically have properties for handling these variables. Numbering 
+>>> instances is something we avoid.
 
-E.g. the LS1043A has a completely different set of supported protocols on its SerDes.
-
-> I'll ask around to see if indeed this happens.
-> 
->> +
->> +Supporting Protocols
->> +--------------------
->> +
->> +Each protocol is a combination of values which must be programmed into the lane
->> +registers. To add a new protocol, first add it to :c:type:`enum lynx_protocol
->> +<lynx_protocol>`. If it is in ``UNSUPPORTED_PROTOS``, remove it. Add a new
->> +entry to `lynx_proto_params`, and populate the appropriate fields. You may need
->> +to add some new members to support new fields. Modify `lynx_lookup_proto` to
->> +map the :c:type:`enum phy_mode <phy_mode>` to :c:type:`enum lynx_protocol
->> +<lynx_protocol>`. Ensure that :c:func:`lynx_proto_mode_mask` and
->> +:c:func:`lynx_proto_mode_shift` have been updated with support for your
->> +protocol.
->> +
->> +You may need to modify :c:func:`lynx_set_mode` in order to support your
->> +procotol. This can happen when you have added members to :c:type:`struct
->> +lynx_proto_params <lynx_proto_params>`. It can also happen if you have specific
->> +clocking requirements, or protocol-specific registers to program.
->> +
->> +Internal API Reference
->> +----------------------
->> +
->> +.. kernel-doc:: drivers/phy/freescale/phy-fsl-lynx-10g.c
->> diff --git a/MAINTAINERS b/MAINTAINERS
->> index ca95b1833b97..ef65e2acdb48 100644
->> --- a/MAINTAINERS
->> +++ b/MAINTAINERS
->> @@ -7977,6 +7977,12 @@ F:	drivers/ptp/ptp_qoriq.c
->>  F:	drivers/ptp/ptp_qoriq_debugfs.c
->>  F:	include/linux/fsl/ptp_qoriq.h
->>  
->> +FREESCALE QORIQ SERDES DRIVER
->> +M:	Sean Anderson <sean.anderson@seco.com>
->> +S:	Maintained
->> +F:	Documentation/driver-api/phy/qoriq.rst
->> +F:	drivers/phy/freescale/phy-qoriq.c
->> +
-> 
-> These file names have to be changed as well.
-> 
-> (...)
-
-Will fix.
-
->> +enum lynx_protocol {
->> +	LYNX_PROTO_NONE = 0,
->> +	LYNX_PROTO_SGMII,
->> +	LYNX_PROTO_SGMII25,
->> +	LYNX_PROTO_1000BASEKX,
->> +	LYNX_PROTO_QSGMII,
->> +	LYNX_PROTO_XFI,
->> +	LYNX_PROTO_10GKR,
->> +	LYNX_PROTO_PCIE, /* Not implemented */
->> +	LYNX_PROTO_SATA, /* Not implemented */
->> +	LYNX_PROTO_LAST,
->> +};
->> +
->> +static const char lynx_proto_str[][16] = {
->> +	[LYNX_PROTO_NONE] = "unknown",
->> +	[LYNX_PROTO_SGMII] = "SGMII",
->> +	[LYNX_PROTO_SGMII25] = "2.5G SGMII",
->> +	[LYNX_PROTO_1000BASEKX] = "1000Base-KX",
->> +	[LYNX_PROTO_QSGMII] = "QSGMII",
->> +	[LYNX_PROTO_XFI] = "XFI",
->> +	[LYNX_PROTO_10GKR] = "10GBase-KR",
->> +	[LYNX_PROTO_PCIE] = "PCIe",
->> +	[LYNX_PROTO_SATA] = "SATA",
->> +};
-> 
->> +
->> +#define PROTO_MASK(proto) BIT(LYNX_PROTO_##proto)
->> +#define UNSUPPORTED_PROTOS (PROTO_MASK(SATA) | PROTO_MASK(PCIE))
-> 
-> From what I know, -KX and -KR need software level link training.
-
-There was no mention of that in the datasheet, but I suspect that's
-a PCS issue.
-
-> Did you test these protocols?
-
-No, as noted in the commit message.
-
-> I would be much more comfortable if we only add to the supported
-> protocols list what was tested.
-
-Fine by me.
-
->> +	/* Deselect anything configured by the RCW/bootloader */
->> +	for (i = 0; i < conf->mode_count; i++) {
->> +		const struct lynx_mode *mode = &conf->modes[i];
->> +		u32 pccr = lynx_read(serdes, PCCRn(mode->pccr));
->> +
->> +		if (lynx_proto_mode_get(mode, pccr) == mode->cfg) {
->> +			if (mode->protos & UNSUPPORTED_PROTOS) {
->> +				/* Don't mess with modes we don't support */
->> +				serdes->used_lanes |= mode->lanes;
->> +				if (grabbed_clocks)
->> +					continue;
->> +
->> +				grabbed_clocks = true;
->> +				clk_prepare_enable(serdes->pll[0].hw.clk);
->> +				clk_prepare_enable(serdes->pll[1].hw.clk);
->> +				clk_rate_exclusive_get(serdes->pll[0].hw.clk);
->> +				clk_rate_exclusive_get(serdes->pll[1].hw.clk);
-> 
-> Am I understanding correctly that if you encounter a protocol which is
-> not supported (PCIe, SATA) both PLLs will not be capable of changing,
-> right?
-
-Correct.
-
-> Why aren't you just getting exclusivity on the PLL that is actually used
-> by a lane configured with a protocol which the driver does not support?
-
-PCIe will automatically switch between PLLs in order to switch speeds. So
-we can't change either, because the currently-used PLL could change at any
-time. SATA doesn't have this restriction. Its rates have power-of-two
-relationships with each other, so it can just change the divider. However,
-I've chosen to get things exclusively in both cases for simplicity.
-
->> +			} else {
->> +				/* Otherwise, clear out the existing config */
->> +				pccr = lynx_proto_mode_prep(mode, pccr,
->> +							    LYNX_PROTO_NONE);
->> +				lynx_write(serdes, pccr, PCCRn(mode->pccr));
->> +			}
-> 
-> Hmmm, do you need this?
-> 
-> Wouldn't it be better to just leave the lane untouched (as it was setup
-> by the RCW) just in case the lane is not requested by a consumer driver
-> but actually used in practice. I am referring to the case in which some
-> ethernet nodes have the 'phys' property, some don't.
-
-The reason why I do this is to make sure that no other protocols are selected.
-We only clear out the protocol configuration registers for a protocol that we've
-configured (e.g when we go from SGMII to XFI we clear out the SGMII register).
-But if the RCW e.g. configured QSGMII, we need to disable it because otherwise we
-will accidentally leave it enabled.
-
-> If you really need this, maybe you can move it in the phy_init callback.
-
-That's fine by me.
-
->> +
->> +			/* Disable the SGMII PCS until we're ready for it */
->> +			if (mode->protos & LYNX_PROTO_SGMII) {
->> +				u32 cr1;
->> +
->> +				cr1 = lynx_read(serdes, SGMIIaCR1(mode->idx));
->> +				cr1 &= ~SGMIIaCR1_SGPCS_EN;
->> +				lynx_write(serdes, cr1, SGMIIaCR1(mode->idx));
->> +			}
->> +		}
->> +	}
->> +
->> +	/* Power off all lanes; used ones will be powered on later */
->> +	for (i = 0; i < conf->lanes; i++)
->> +		lynx_power_off_lane(serdes, i);
-> 
-> This means that you are powering-off any lane, PCIe/SATA lanes
-> which are not integrated with this driver at all, right?.
-> I don't think we want to break stuff that used to be working.
-
-You're right. This should really check used_lanes first.
-
-> (...)
-> 
->> +MODULE_DEVICE_TABLE(of, lynx_of_match);
->> +
->> +static struct platform_driver lynx_driver = {
->> +	.probe = lynx_probe,
->> +	.driver = {
->> +		.name = "qoriq_serdes",
-> 
-> Please change the driver's name as well.
-
-Will do.
+But I would like to point out that for the phy subsystem, it is typical
+to select using the compatible (or just write a new driver).
 
 --Sean
 
