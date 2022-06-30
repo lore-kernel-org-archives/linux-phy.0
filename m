@@ -4,141 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EA2CCCA473
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jun 2022 18:16:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEC95C43334
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jun 2022 21:05:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	Message-ID:From:References:Cc:To:Subject:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PIHcZHd8lK1F7Brxzu7mSi9mzN3KngzGkVaC2wPSIlI=; b=KI0L/j5/9GI2v8YHtoLnzvE6Ub
-	hmbroPV6/8LD/f14Np72f9ALl4tPW4ic43JHBHkBciwpJu3AqEsSJJ2zgodnHsK8yShN4Gp13S2Or
-	uFCy5mAk0yizfxf+9Km16At55Gs0HBzn7peEcxB8QrYYtkKUvLUzTPelmrpsYNcbYwpd4zJTTS2n3
-	f31utvTpoGQnCNHxawLU34CRwL2QGKYTt/2zVW9Runqg11TAaxZiw8KybkGiAYnX8yZS9jiq/QWql
-	TsIPjqTacUWDcnSBbwIHtb8rl3qA42n4fS+4ta9i5VYx8WRj8LTsCAk7ilLZwEz5PLnvVBbXOagbM
-	+PBMv71A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3XViJNOPWLAruu6i3kslaen68D54wyzoXkkZiXf8Ugk=; b=324gKJbD9gV1WZ
+	F5Ckqv8aXPTzkiRaq8IcnbWgK1CrgA3zc274qiosEAms6i5971MAVLt+FJWXb2dw1dEsX4wvB/Mb1
+	h5IwDsiSsqmQux9kHnp9Zp/+SJIErLk6Cs37wK4Xm9Opqvk/xiUlj5CYvjLVx/AISfQtl44izR6Tf
+	Oh3xbDT8UBTSWj46u/NmndDJdC06itOJsUzK8r96fK7852D3aGnuoxJY5QX+5VnTUwJE7FtFZN32d
+	CvuAEWPAHmTgHzUcPtkiJaI0pgBG+m273RDwxPVNzg62AbbAML56Y4V7b1fYDTFJtKYI8DV7uZHFH
+	2h1+voV8aKJMZPeY89HQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6yiO-0011WM-Pd; Thu, 30 Jun 2022 18:16:32 +0000
-Received: from mail-db8eur05on2070.outbound.protection.outlook.com ([40.107.20.70] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1o71LU-001ZDZ-B2; Thu, 30 Jun 2022 21:05:04 +0000
+Received: from mail-io1-f49.google.com ([209.85.166.49])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o6yiM-0011V7-9T; Thu, 30 Jun 2022 18:16:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Vne4qCIUoKXhUhoGqid3HGxlXOr4Cs838Fux3E4y03KuAnnKhGcZeivQUlcTqJjhJmNMA3Het0E+UTczqFVbujy3A0rOEh4baHu5SEntnRCqxJ2YRmEM1dvPqX4OpGkYdCtXepp8F0jTfKfcIwQMAzSAZTJpuOEPiQBTOMuhdnW+K0tO992EpdzkCpNgB44x3VL0uCAcJYfEHeWYuGpLcs3eFm28IloJQp1biwoJDerlKROYl46NfmY4HdvOq4bKypX+h1lNqJKP9UV8KyyIIFWIdKQskFj68tL9ZH3o2cf6IKT+u0jQOyWIk8Gmg/PkVICvR3YppnO6W9fKrHh1qQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=BOICn4qH9/D8aPei/PPXmQjacloYyubgARWZ74Yfdj4=;
- b=My6+oDWJtVYUQouimy9fCy9ilPeYORKy8pfWsLylxhRXRY+rbYg9l+UffHBTuapyr25X1h7Ng9Lo6ZhsKyFbFqoth57N64JN2N/J+Alvl4FKTudhYfUhDDXz+ZE79MzV/RTSE36H+qC8dy/Imke+7++du9KSIgkDSr2GzH+9j11PUN/7fVO3vQRGg1FwS+EdVZKKlYHb/lIciqIIjFhsE7twl8NTp86pI8JvKYUHkArFmz0qGV6P6MnWhV5c2v0Fm7W11ruUAoM+NR+cH/fi3XE+gbIKa3bdvYaGYMCMyCMB3M3d7EDCuGGYARxOpU++9DKA9ZGZqkGhMD8hbHlTfg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=seco.com; dmarc=pass action=none header.from=seco.com;
- dkim=pass header.d=seco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seco.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BOICn4qH9/D8aPei/PPXmQjacloYyubgARWZ74Yfdj4=;
- b=Tu/QwyyfVfKcy2lyli5CUs2pwACinEjGPlal0U/toepodB/hjoOCWDF65GneySdt1ubFG+yn245hK6WgeH0GkGV4SdGQ7RMJ5kB1r/HrucxES8+sxjue9MT3XDdNBOj8fE8mgVsJ7b5cq2xck668acI+Zoi2egXfcEffUs0tEMQdF+gGIJsO8Yqy6h87DSY8W1o1w+gi6y6smuzS6ni23FpRzm8G9uX5jtxvYThIb3ZzxR3VxQO0r+fR0IA7EGgqZ0vHYWpnjqrJP/K31UtxWeJscHIWa7CYuY7esx813RhLh2S6bfRL5kOyKghAuR2cA9nLUDXcG48wTcTFG1AJ3g==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=seco.com;
-Received: from DB7PR03MB4972.eurprd03.prod.outlook.com (2603:10a6:10:7d::22)
- by AM5PR03MB3027.eurprd03.prod.outlook.com (2603:10a6:206:1a::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5395.14; Thu, 30 Jun
- 2022 18:16:26 +0000
-Received: from DB7PR03MB4972.eurprd03.prod.outlook.com
- ([fe80::757e:b75f:3449:45b1]) by DB7PR03MB4972.eurprd03.prod.outlook.com
- ([fe80::757e:b75f:3449:45b1%6]) with mapi id 15.20.5395.015; Thu, 30 Jun 2022
- 18:16:26 +0000
-Subject: Re: [PATCH net-next v2 01/35] dt-bindings: phy: Add QorIQ SerDes
- binding
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Rob Herring <robh@kernel.org>
-Cc: "David S . Miller" <davem@davemloft.net>, Jakub Kicinski
- <kuba@kernel.org>, Madalin Bucur <madalin.bucur@nxp.com>,
- netdev@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- Paolo Abeni <pabeni@redhat.com>, linux-arm-kernel@lists.infradead.org,
- Eric Dumazet <edumazet@google.com>, linux-kernel@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20220628221404.1444200-1-sean.anderson@seco.com>
- <20220628221404.1444200-2-sean.anderson@seco.com>
- <20220630172713.GA2921749-robh@kernel.org>
- <7fe84856-7115-b0f4-b0e1-0b47acbddb7a@seco.com>
- <db9d9455-37af-1616-8f7f-3d752e7930f1@linaro.org>
-From: Sean Anderson <sean.anderson@seco.com>
-Message-ID: <537d0c0f-8f29-ddb9-dc02-a9e9ad63702a@seco.com>
-Date: Thu, 30 Jun 2022 14:16:21 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
-In-Reply-To: <db9d9455-37af-1616-8f7f-3d752e7930f1@linaro.org>
-Content-Language: en-US
-X-ClientProxiedBy: MN2PR12CA0031.namprd12.prod.outlook.com
- (2603:10b6:208:a8::44) To DB7PR03MB4972.eurprd03.prod.outlook.com
- (2603:10a6:10:7d::22)
+	id 1o71LP-001ZAL-O5
+	for linux-phy@lists.infradead.org; Thu, 30 Jun 2022 21:05:03 +0000
+Received: by mail-io1-f49.google.com with SMTP id k15so403340iok.5
+        for <linux-phy@lists.infradead.org>; Thu, 30 Jun 2022 14:04:55 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+         :mime-version:content-disposition:in-reply-to;
+        bh=PhSVd0JOecePkftCBvpSDtMdAzDP1glhK+X+TZwV99g=;
+        b=MVP+cnKADJ3kwEaqMGNV5YU+TqE689+fqzvc7eSd9UPydVsklL4a9uR8oy/MLtuSC4
+         tL/LAqZX7Kol2o9uE/M14FeptQ0pBY7txCPD57xYxiS1wsilOXmnlT+3WZojr01Ron8m
+         nXT78KQ9rW8g2+mdL1i2uBkiVsD6JqDjeZ9OqvW6qQjONs/tfUMPYRAHR78G7jnOPN0M
+         OXM8ijGrHJ6yLHH7TeaWF0uniw9/SaY5yejtkkkuTLEEnvf38iIBDsJQSt5IS5ryhZjT
+         eVtKjdIugCJbuU2TTZgtBhZTb7zERrlrA6d+psfq0rW1b+shMPOFTcdxhegM4BmRiaTA
+         FKvQ==
+X-Gm-Message-State: AJIora8ecev7r27DwOL9LKlvK+lpEIxoLR1mAYJ43IsaFl1sZPM6sv/8
+	vX8WKHuWv7hAHg3E0UfoRw==
+X-Google-Smtp-Source: AGRyM1uMnZC2TqBwJSDTjNi/ZPptB1BluWtV4a1sWD9pgHiI0+hwL12PIGNwpjmsAQq09IJn9xMomA==
+X-Received: by 2002:a05:6638:2645:b0:332:55e1:10 with SMTP id n5-20020a056638264500b0033255e10010mr6601092jat.121.1656623094523;
+        Thu, 30 Jun 2022 14:04:54 -0700 (PDT)
+Received: from robh.at.kernel.org ([64.188.179.248])
+        by smtp.gmail.com with ESMTPSA id k6-20020a02cb46000000b00331743a983asm7634734jap.179.2022.06.30.14.04.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 30 Jun 2022 14:04:54 -0700 (PDT)
+Received: (nullmailer pid 3294372 invoked by uid 1000);
+	Thu, 30 Jun 2022 21:04:49 -0000
+Date: Thu, 30 Jun 2022 15:04:49 -0600
+From: Rob Herring <robh@kernel.org>
+To: Vidya Sagar <vidyas@nvidia.com>
+Cc: bhelgaas@google.com, lorenzo.pieralisi@arm.com, thierry.reding@gmail.com, jonathanh@nvidia.com, kishon@ti.com, vkoul@kernel.org, kw@linux.com, krzk@kernel.org, p.zabel@pengutronix.de, mperttunen@nvidia.com, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, kthota@nvidia.com, mmaddireddy@nvidia.com, sagar.tv@gmail.com, Thierry Reding <treding@nvidia.com>
+Subject: Re: [PATCH V3 02/11] dt-bindings: pci: tegra: Convert to json-schema
+Message-ID: <20220630210449.GA3283899-robh@kernel.org>
+References: <20220629060435.25297-1-vidyas@nvidia.com>
+ <20220629060435.25297-3-vidyas@nvidia.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 8ca48084-c524-486c-d5ac-08da5ac4a576
-X-MS-TrafficTypeDiagnostic: AM5PR03MB3027:EE_
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	H2TQyH0MhxsV3vL7Bg993yHBjArQcYQCQwMW38MLTLbNZ6Xv4R+JDeBlE2s6XsmPuyAMQAbU9n9tyylELvbWZDCBePinrs7Dha/8SJpphsO0ZtkmPySwE+TD0/ZloM2MMZB943XD+bP1VXrCEg4DHjgnOHAMKUZujCVWoJD7FSxi6R0DX7QBH91mVrskm/przpmzEhftDC9028tZ0EsfSwuKFJ03Pdd5SRbACxZ5++u4ZygC1hllWcRF9gVKrRjruZb972ljlooFUIkBRnGfcrFF3ISHWyPUTyZEZM862cWYh1idK5A76Fd+2vrgcJVYxPOy1NmOH04cnkd/UCy9ytebrhSRhTUXz5uMzafivRdQ41iJK26uMK0bNmzXPMiVGHKFUrKr1BzNX5hYBi5jxfnr1R1XwIhEqUgV3zEBkTqZIqBbYW1LepTPW1bfox0ymxx0z0i9lL0kwvhHssNXR4DSk652ZiVI6vAZ6Jz7ijopkdy8L0aYK5rIqY9evhk8xMuD1OOmA7WsYOuZ91mHSO31bJM60UNjv/MK/VbCIEjVT0luFfs1gTdzvMPQwN8j48CtMXUBh6eH0gD/NBqgbfGtZQjMHaexeEbBHCBfVCdhfqPu1TYJsXBIgTDpr1AP++7siiWPkVpu2lR8nneCQ3928/4LOv+txLDpz97iqqI5Aj3LiR6Or/SSjPy3ZAykvHuYOQcvUcuN6xFrTHdkmgS/K2vmqq0XzBcoPSuX7LtFJ2Cv/UM94z2vuyzr06rtOq37R83Y0rKoNYxQ+gPvZwe0QR/mJNIOEjBsXVdr7XP48SBexbeG84bocJrgoYuks7yHrd0uO+hvjPzQSdXM0KgeirYvgcsppkXwPRHluuQLE/mvBxpeBwCv5gzBW8gK57lw9oyDAKT4serefkwr4qXgp9xITh4EDClijGJPw6U1ZFpn0LjjsJYpC599WQYx
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR03MB4972.eurprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(39850400004)(396003)(366004)(376002)(346002)(136003)(66476007)(66556008)(38350700002)(4326008)(38100700002)(8676002)(83380400001)(26005)(66946007)(31686004)(110136005)(54906003)(31696002)(36756003)(86362001)(316002)(7416002)(2906002)(2616005)(966005)(6486002)(53546011)(52116002)(8936002)(6512007)(5660300002)(6666004)(44832011)(478600001)(6506007)(186003)(41300700001)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?utf-8?B?T3RQRU5kTUVPc1hNUW5hOWR3NTlBbkRDaEpCd1RFaGpxWVJaemxydVVNL0Vs?=
- =?utf-8?B?ZFBCL2luTFF4emdjUXNhaVh1allkWk1KMk9pM29URDVjSjhkeVI5a3c3OG9o?=
- =?utf-8?B?R0Mrcm1xVTh5ZzhPc2pRNDRkVi9IOVU4ZXJYeHBFcnlEdGRLTnFYc1B0WmIw?=
- =?utf-8?B?VnQ5N1NPVm1VcnNVeXZmU2Zld3NGTXhrdFZ4Y1ducExyWVVKOEY3TWFQYlNE?=
- =?utf-8?B?Z3pQQi8vbDJvRUgwbG01d2Q1Y0xFQjNmQkNMUDgrZXNJN2h2NmVOSE1CZ2t4?=
- =?utf-8?B?Y3A4YStST01QNHBKQjE1K3h1U2ljYTZpQURRdk5ydkJORi95NEtNRCs1Nzhr?=
- =?utf-8?B?UjZVeWM1VzBhandhaUNENFJ1akhRMU1KZEhKTWV2Wmo0cFRjWnpxRkdhZERS?=
- =?utf-8?B?dlhyOW9QMncrTFFHMy9BWlFWeStrZGkwUnI5SzNIRlFSTnNpb1FldnI4RHBC?=
- =?utf-8?B?VEJNYkZqbjluS2xzK0FNN0RJTXN2M3dDV3pPd09zeHE3QkZGb1RXb3BsSU5m?=
- =?utf-8?B?WEloNzc0Wm02NWFJdW1WdEFKay8yZGZCZEkwUUtCR3pkdlQxUFNkR3hYRDVZ?=
- =?utf-8?B?RklTZWZtSE1oQWhzeE4rdU56SGRUa3duNnVpWXZjSUFBZnZWbkpUNm5hRmlO?=
- =?utf-8?B?Umt1UHQ1VmxjZjZNcE9tSU9uenZGc050Z0NOOXRmeHRwRVE0QUZycXhCM3g2?=
- =?utf-8?B?K2c3N3VXK3I0U0cyYTE4SlNtL3d0TDN4c3ZNOXArZjBZYStXSUVXcHZPZTVD?=
- =?utf-8?B?T28vT2VIZmpPY0o1WG9IZHRlK0tGbGs5QUozUnlwRnNWazFKdVZXR21WVUZn?=
- =?utf-8?B?cE1hZ3BvT2dNV2QyTjMzeGN6NVBvUnNNK3UyY0wxd1hISWN1SEZxKy9uWjQr?=
- =?utf-8?B?UWl2aGxPZkF3NDZnOUVLNHNzemNKOE9SQ29pU29PMFZIQ1p2YUI1cnE0YjB2?=
- =?utf-8?B?bE1MNGpEQkZDY2ZRRVJuQ0d6cWlyUUprclIvcXVTNi96aUhMOGROY21VVkRj?=
- =?utf-8?B?R3U3RTlNTXp1YmkxUFdueXhydjdnWGVSMVlUVXMwZXVULytqWmNUZ3RGdCtM?=
- =?utf-8?B?R3hBb2ZBTzVxQnVFK1drY3ZEUmV5RWNYd2duWCtBdEQxTVVYWTNLWkE3S1Ja?=
- =?utf-8?B?SnJoaFkyYnhMOFdpNVo3RG1mbndONXUzY2tzdVRiNlNaNHNhSldNTUxLUllC?=
- =?utf-8?B?WkM0VGFxUFNVblZVQzlaWGFBWGE2RytiSDJJblBkWXVLSWk4cjIrWkxGSytP?=
- =?utf-8?B?NHZLbFBzQ2t5TEVGai84RU85RFpEcXhuUVhoa2x6cGRUNFBobEd5cW9NeXpi?=
- =?utf-8?B?MXd0WlByU3pwUHdjVS9mT0cvZW81OXZVdUhwN1Q2aU1tRnI5d2I0NVNLTHJy?=
- =?utf-8?B?aU9zNWw1MlE5SGJCczEraElQTnBaSUpJNHVvcHBkWkVhMkpTQlRHeVp2ajdC?=
- =?utf-8?B?bjROK1RVNC82WnFQZTBDZGh5SFpUa1hoS2RUS0J3K3ZtYWVYSldNS2FKUXBC?=
- =?utf-8?B?S3J3YUhYR1hlNkN5SE81bk9HcHIzMmEzYnZBKy9tY3ZyV0hzRFp1L283SS9j?=
- =?utf-8?B?WDVKQ0VWNXM4MUhDaCtSVnRJT21vMmJ6R1V3d1dpVDluYmJDcTloNU8wdFgz?=
- =?utf-8?B?YVA0c0U2engrdCtJTzg3VUtVeTdGVC9sWlZpZlk1SmFrMVpoNEExMmNyNURJ?=
- =?utf-8?B?eVF4bkFNSTRUcU9kei9RbHRaOW9jVEMrM3dVTzU4am01NGZzK2ZKMlpNa1pP?=
- =?utf-8?B?UkNhcWxWWk5hUVlOalBlbSt3SFpPVDd1Q2NhbGRaZFVZbWh3VzZ5VHV0SVVz?=
- =?utf-8?B?eFNVb21RRU5aWEl3MGNMdnVEc0thZGlGVmlWREg4aEdWejhDSDI3dXJGZDVN?=
- =?utf-8?B?V0ZkMmF0OFo3SzVXelpQc2JrTnErdUlBR1hqWnpZT0JiZG1lWVJSUkMwOW9s?=
- =?utf-8?B?ejcrV2lMMUlidTJXdzB6ZmlSaEhlelBMbmFnTkVwbTU1YzNyQ1QwNi90dUlh?=
- =?utf-8?B?RC9CeXFrR0lKVE5lNFhIMTBXUGlYanQvbXNXWHNzZXQ5TStFZElCZkFjWU04?=
- =?utf-8?B?TmVYWlJDelZ4amhNQkZvOWU5Y2FsQ2FqYnpMMVdHMnp5Qnloa0pqM3lKSFNI?=
- =?utf-8?B?ZFNta1B4THRMZjV4UmZITGlMVHBjUXo3U2ZaU0lvV2ZKWmtsbEFYamRncUlW?=
- =?utf-8?B?Z0E9PQ==?=
-X-OriginatorOrg: seco.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8ca48084-c524-486c-d5ac-08da5ac4a576
-X-MS-Exchange-CrossTenant-AuthSource: DB7PR03MB4972.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2022 18:16:26.4339
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: bebe97c3-6438-442e-ade3-ff17aa50e733
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: iXrOju9w7gP1VWhcfSAfvlbMnk+AwNkuLQbwrMeE7WTeKwDbd8VOa65mNWEpp2p1XGjZ/Auvn4M7XT3GeMEodQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR03MB3027
+Content-Disposition: inline
+In-Reply-To: <20220629060435.25297-3-vidyas@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220630_111630_388035_CD207763 
-X-CRM114-Status: GOOD (  28.17  )
+X-CRM114-CacheID: sfid-20220630_140459_830253_BCAB7EC6 
+X-CRM114-Status: GOOD (  35.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,113 +79,822 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 6/30/22 2:08 PM, Krzysztof Kozlowski wrote:
-> On 30/06/2022 20:01, Sean Anderson wrote:
->> Hi Rob,
->> 
->> On 6/30/22 1:27 PM, Rob Herring wrote:
->>> On Tue, Jun 28, 2022 at 06:13:30PM -0400, Sean Anderson wrote:
->>>> This adds a binding for the SerDes module found on QorIQ processors. The
->>>> phy reference has two cells, one for the first lane and one for the
->>>> last. This should allow for good support of multi-lane protocols when
->>>> (if) they are added. There is no protocol option, because the driver is
->>>> designed to be able to completely reconfigure lanes at runtime.
->>>> Generally, the phy consumer can select the appropriate protocol using
->>>> set_mode. For the most part there is only one protocol controller
->>>> (consumer) per lane/protocol combination. The exception to this is the
->>>> B4860 processor, which has some lanes which can be connected to
->>>> multiple MACs. For that processor, I anticipate the easiest way to
->>>> resolve this will be to add an additional cell with a "protocol
->>>> controller instance" property.
->>>>
->>>> Each serdes has a unique set of supported protocols (and lanes). The
->>>> support matrix is stored in the driver and is selected based on the
->>>> compatible string. It is anticipated that a new compatible string will
->>>> need to be added for each serdes on each SoC that drivers support is
->>>> added for. There is no "generic" compatible string for this reason.
->>>>
->>>> There are two PLLs, each of which can be used as the master clock for
->>>> each lane. Each PLL has its own reference. For the moment they are
->>>> required, because it simplifies the driver implementation. Absent
->>>> reference clocks can be modeled by a fixed-clock with a rate of 0.
->>>>
->>>> Signed-off-by: Sean Anderson <sean.anderson@seco.com>
->>>> ---
->>>>
->>>> Changes in v2:
->>>> - Add #clock-cells. This will allow using assigned-clocks* to configure
->>>>   the PLLs.
->>>> - Allow a value of 1 for phy-cells. This allows for compatibility with
->>>>   the similar (but according to Ioana Ciornei different enough) lynx-28g
->>>>   binding.
->>>> - Document phy cells in the description
->>>> - Document the structure of the compatible strings
->>>> - Fix example binding having too many cells in regs
->>>> - Move compatible first
->>>> - Refer to the device in the documentation, rather than the binding
->>>> - Remove minItems
->>>> - Rename to fsl,lynx-10g.yaml
->>>> - Use list for clock-names
->>>>
->>>>  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 93 +++++++++++++++++++
->>>>  1 file changed, 93 insertions(+)
->>>>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
->>>> new file mode 100644
->>>> index 000000000000..b5a6f631df9f
->>>> --- /dev/null
->>>> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
->>>> @@ -0,0 +1,93 @@
->>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->>>> +%YAML 1.2
->>>> +---
->>>> +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
->>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->>>> +
->>>> +title: NXP Lynx 10G SerDes
->>>> +
->>>> +maintainers:
->>>> +  - Sean Anderson <sean.anderson@seco.com>
->>>> +
->>>> +description: |
->>>> +  These Lynx "SerDes" devices are found in NXP's QorIQ line of processors. The
->>>> +  SerDes provides up to eight lanes. Each lane may be configured individually,
->>>> +  or may be combined with adjacent lanes for a multi-lane protocol. The SerDes
->>>> +  supports a variety of protocols, including up to 10G Ethernet, PCIe, SATA, and
->>>> +  others. The specific protocols supported for each lane depend on the
->>>> +  particular SoC.
->>>> +
->>>> +properties:
->>>> +  compatible:
->>>> +    description: |
->>>> +      Each compatible is of the form "fsl,<soc-name>-serdes-<instance>".
->>>> +      Although many registers are compatible between different SoCs, the
->>>> +      supported protocols and lane assignments tend to be unique to each SerDes.
->>>> +      Additionally, the method of activating protocols may also be unique.
->>>
->> 
->> On v1, Krzysztof said that this was a better route...
+On Wed, Jun 29, 2022 at 11:34:26AM +0530, Vidya Sagar wrote:
+> From: Thierry Reding <treding@nvidia.com>
 > 
-> I commented about "-1" and "-2" saying you have to make them properties.
-> You disagreed and with long messages were convincing me that "-1" and
-> "-2" is the only reasonable approach. I never said it is a better route.
-> I explicitly asked in several places for defining these as properties,
-> not as compatibles.
+> Convert the Tegra194 PCIe bindings from the free-form text format to
+> json-schema.
 > 
-> You are twisting the entire discussion now.
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> Signed-off-by: Thierry Reding <treding@nvidia.com>
+> ---
+> V3:
+> * New patch in this series. Added as part of addressing Rob's review
+>   comment to convert the existing .txt file to .yaml schema
+> 
+>  .../bindings/pci/nvidia,tegra194-pcie-ep.yaml | 239 ++++++++++++++++
+>  .../bindings/pci/nvidia,tegra194-pcie.txt     | 245 -----------------
+>  .../bindings/pci/nvidia,tegra194-pcie.yaml    | 254 ++++++++++++++++++
+>  .../devicetree/bindings/pci/snps,dw-pcie.yaml |   2 +-
+>  4 files changed, 494 insertions(+), 246 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
+>  create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.yaml
+> new file mode 100644
+> index 000000000000..4f7cb7fe378e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.yaml
+> @@ -0,0 +1,239 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/nvidia,tegra194-pcie-ep.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NVIDIA Tegra194 (and later) PCIe endpoint controller (Synopsys DesignWare Core based)
+> +
+> +maintainers:
+> +  - Thierry Reding <thierry.reding@gmail.com>
+> +  - Jon Hunter <jonathanh@nvidia.com>
+> +  - Vidya Sagar <vidyas@nvidia.com>
+> +
+> +description: |
+> +  This PCIe controller is based on the Synopsis Designware PCIe IP and thus inherits all the common
 
-Sorry, I didn't mean to come off that way.
+Wrap lines at 80 unless there's a benefit to a longer line.
 
->>> We typically have properties for handling these variables. Numbering 
->>> instances is something we avoid.
+> +  properties defined in snps,dw-pcie-ep.yaml. Some of the controller instances are dual mode where
+> +  in they can work either in root port mode or endpoint mode but one at a time.
+> +
+> +  On Tegra194, controllers C0, C4 and C5 support endpoint mode.
+> +
+> +  Note: On Tegra194's P2972-0000 platform, only C5 controller can be enabled to operate in the
+> +  endpoint mode because of the way the platform is designed.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - nvidia,tegra194-pcie-ep
+> +
+> +  reg:
+> +    items:
+> +      - description: controller's application logic registers
+> +      - description: iATU and DMA registers. This is where the iATU (internal Address Translation
+> +          Unit) registers of the PCIe core are made available for software access.
+> +      - description: The aperture where the root port's own configuration registers are available.
+> +      - description: Aperture used to map the remote root-complex' address space.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: appl
+> +      - const: atu_dma
+> +      - const: dbi
+> +      - const: addr_space
+> +
+> +  interrupts:
+> +    items:
+> +      - description: controller interrupt
 
-But I would like to point out that for the phy subsystem, it is typical
-to select using the compatible (or just write a new driver).
+Just 'maxItems: 1' is enough.
 
---Sean
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: intr
+> +
+> +  clocks:
+> +    items:
+> +      - description: module clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: core
+> +
+> +  resets:
+> +    items:
+> +      - description: APB bus interface reset
+> +      - description: module reset
+> +
+> +  reset-names:
+> +    items:
+> +      - const: apb
+> +      - const: core
+> +
+> +  reset-gpios:
+> +    description: Must contain a phandle to a GPIO controller followed by GPIO that is being used as
+> +      PERST input signal. Please refer to pci.txt document.
+> +
+> +  phys:
+> +    minItems: 1
+> +    maxItems: 16
+
+One per lane?
+
+> +
+> +  phy-names:
+> +    minItems: 1
+> +    maxItems: 16
+> +    items:
+> +      pattern: "^p2u-[0-9]+$"
+> +
+> +  power-domains:
+> +    description: |
+> +      A phandle to the node that controls power to the respective PCIe controller and a specifier
+> +      name for the PCIe controller. Following are the specifiers for the different PCIe
+> +      controllers:
+> +
+> +        - TEGRA194_POWER_DOMAIN_PCIEX8B: C0
+> +        - TEGRA194_POWER_DOMAIN_PCIEX1A: C1
+> +        - TEGRA194_POWER_DOMAIN_PCIEX1A: C2
+> +        - TEGRA194_POWER_DOMAIN_PCIEX1A: C3
+> +        - TEGRA194_POWER_DOMAIN_PCIEX4A: C4
+> +        - TEGRA194_POWER_DOMAIN_PCIEX8A: C5
+> +
+> +      these specifiers are defined in "include/dt-bindings/power/tegra194-powergate.h" file.
+> +
+> +  interconnects:
+> +    items:
+> +      - description: memory read client
+> +      - description: memory write client
+> +
+> +  interconnect-names:
+> +    items:
+> +      - const: dma-mem # read
+> +      - const: write
+> +
+> +  dma-coherent: true
+> +
+> +  num-ib-windows:
+> +    description: number of inbound address translation windows
+> +    maxItems: 1
+> +    deprecated: true
+> +
+> +  num-ob-windows:
+> +    description: number of outbound address translation windows
+> +    maxItems: 1
+> +    deprecated: true
+> +
+> +  nvidia,bpmp:
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    description: |
+> +      Must contain a pair of phandle to BPMP controller node followed by controller ID. Following
+> +      are the controller IDs for each controller:
+> +
+> +        0: C0
+> +        1: C1
+> +        2: C2
+> +        3: C3
+> +        4: C4
+> +        5: C5
+> +    items:
+> +      - items:
+> +          - minimum: 0
+> +            maximum: 0xffffffff
+
+That's already the limit. Just a description is fine.
+
+> +          - enum: [ 0, 1, 2, 3, 4, 5 ]
+
+maximum: 5
+
+> +
+> +  nvidia,aspm-cmrt-us:
+> +    description: Common Mode Restore Time for proper operation of ASPM to be specified in
+> +      microseconds
+> +
+> +  nvidia,aspm-pwr-on-t-us:
+> +    description: Power On time for proper operation of ASPM to be specified in microseconds
+> +
+> +  nvidia,aspm-l0s-entrance-latency-us:
+> +    description: ASPM L0s entrance latency to be specified in microseconds
+> +
+> +  vddio-pex-ctl-supply:
+> +    description: A phandle to the regulator supply for PCIe side band signals.
+> +
+> +  nvidia,refclk-select-gpios:
+> +    description: Must contain a phandle to a GPIO controller followed by GPIO that is being used to
+
+Don't need generic description of the GPIO binding.
+
+> +      enable REFCLK to controller from host
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+
+Already has a type.
+
+> +
+> +allOf:
+> +  - $ref: "/schemas/pci/pci-ep.yaml#"
+> +
+> +unevaluatedProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - num-ib-windows
+> +  - num-ob-windows
+> +  - interrupts
+> +  - interrupt-names
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - power-domains
+> +  - reset-gpios
+> +  - num-lanes
+> +  - phys
+> +  - phy-names
+> +  - nvidia,bpmp
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/tegra194-clock.h>
+> +    #include <dt-bindings/gpio/tegra194-gpio.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/power/tegra194-powergate.h>
+> +    #include <dt-bindings/reset/tegra194-reset.h>
+> +
+> +    bus@0 {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +        ranges = <0x0 0x0 0x0 0x8 0x0>;
+> +
+> +        pcie-ep@141a0000 {
+> +            compatible = "nvidia,tegra194-pcie-ep";
+> +            reg = <0x00 0x141a0000 0x0 0x00020000>, /* appl registers (128K)      */
+> +                  <0x00 0x3a040000 0x0 0x00040000>, /* iATU_DMA reg space (256K)  */
+> +                  <0x00 0x3a080000 0x0 0x00040000>, /* DBI reg space (256K)       */
+> +                  <0x1c 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
+> +            reg-names = "appl", "atu_dma", "dbi", "addr_space";
+> +            interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
+> +            interrupt-names = "intr";
+> +
+> +            clocks = <&bpmp TEGRA194_CLK_PEX1_CORE_5>;
+> +            clock-names = "core";
+> +
+> +            resets = <&bpmp TEGRA194_RESET_PEX1_CORE_5_APB>,
+> +                     <&bpmp TEGRA194_RESET_PEX1_CORE_5>;
+> +            reset-names = "apb", "core";
+> +
+> +            power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8A>;
+> +            pinctrl-names = "default";
+> +            pinctrl-0 = <&clkreq_c5_bi_dir_state>;
+> +
+> +            nvidia,bpmp = <&bpmp 5>;
+> +
+> +            nvidia,aspm-cmrt-us = <60>;
+> +            nvidia,aspm-pwr-on-t-us = <20>;
+> +            nvidia,aspm-l0s-entrance-latency-us = <3>;
+> +
+> +            vddio-pex-ctl-supply = <&vdd_1v8ao>;
+> +
+> +            reset-gpios = <&gpio TEGRA194_MAIN_GPIO(GG, 1) GPIO_ACTIVE_LOW>;
+> +
+> +            nvidia,refclk-select-gpios = <&gpio_aon TEGRA194_AON_GPIO(AA, 5)
+> +                                          GPIO_ACTIVE_HIGH>;
+> +
+> +            num-lanes = <8>;
+> +            num-ib-windows = <2>;
+> +            num-ob-windows = <8>;
+> +
+> +            phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
+> +                   <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
+> +                   <&p2u_nvhs_6>, <&p2u_nvhs_7>;
+> +
+> +            phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
+> +                        "p2u-5", "p2u-6", "p2u-7";
+> +        };
+> +    };
+> diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
+> deleted file mode 100644
+> index 8e4f9bfb316d..000000000000
+> --- a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
+> +++ /dev/null
+> @@ -1,245 +0,0 @@
+> -NVIDIA Tegra PCIe controller (Synopsys DesignWare Core based)
+> -
+> -This PCIe controller is based on the Synopsis Designware PCIe IP
+> -and thus inherits all the common properties defined in snps,dw-pcie.yaml and
+> -snps,dw-pcie-ep.yaml.
+> -Some of the controller instances are dual mode where in they can work either
+> -in root port mode or endpoint mode but one at a time.
+> -
+> -Required properties:
+> -- power-domains: A phandle to the node that controls power to the respective
+> -  PCIe controller and a specifier name for the PCIe controller. Following are
+> -  the specifiers for the different PCIe controllers
+> -    TEGRA194_POWER_DOMAIN_PCIEX8B: C0
+> -    TEGRA194_POWER_DOMAIN_PCIEX1A: C1
+> -    TEGRA194_POWER_DOMAIN_PCIEX1A: C2
+> -    TEGRA194_POWER_DOMAIN_PCIEX1A: C3
+> -    TEGRA194_POWER_DOMAIN_PCIEX4A: C4
+> -    TEGRA194_POWER_DOMAIN_PCIEX8A: C5
+> -  these specifiers are defined in
+> -  "include/dt-bindings/power/tegra194-powergate.h" file.
+> -- reg: A list of physical base address and length pairs for each set of
+> -  controller registers. Must contain an entry for each entry in the reg-names
+> -  property.
+> -- reg-names: Must include the following entries:
+> -  "appl": Controller's application logic registers
+> -  "config": As per the definition in snps,dw-pcie.yaml
+> -  "atu_dma": iATU and DMA registers. This is where the iATU (internal Address
+> -             Translation Unit) registers of the PCIe core are made available
+> -             for SW access.
+> -  "dbi": The aperture where root port's own configuration registers are
+> -         available
+> -- interrupts: A list of interrupt outputs of the controller. Must contain an
+> -  entry for each entry in the interrupt-names property.
+> -- interrupt-names: Must include the following entries:
+> -  "intr": The Tegra interrupt that is asserted for controller interrupts
+> -- clocks: Must contain an entry for each entry in clock-names.
+> -  See ../clocks/clock-bindings.txt for details.
+> -- clock-names: Must include the following entries:
+> -  - core
+> -- resets: Must contain an entry for each entry in reset-names.
+> -  See ../reset/reset.txt for details.
+> -- reset-names: Must include the following entries:
+> -  - apb
+> -  - core
+> -- phys: Must contain a phandle to P2U PHY for each entry in phy-names.
+> -- phy-names: Must include an entry for each active lane.
+> -  "p2u-N": where N ranges from 0 to one less than the total number of lanes
+> -- nvidia,bpmp: Must contain a pair of phandle to BPMP controller node followed
+> -  by controller-id. Following are the controller ids for each controller.
+> -    0: C0
+> -    1: C1
+> -    2: C2
+> -    3: C3
+> -    4: C4
+> -    5: C5
+> -- vddio-pex-ctl-supply: Regulator supply for PCIe side band signals
+> -
+> -RC mode:
+> -- compatible: Tegra19x must contain  "nvidia,tegra194-pcie"
+> -- device_type: Must be "pci" for RC mode
+> -- interrupt-names: Must include the following entries:
+> -  "msi": The Tegra interrupt that is asserted when an MSI is received
+> -- bus-range: Range of bus numbers associated with this controller
+> -- #address-cells: Address representation for root ports (must be 3)
+> -  - cell 0 specifies the bus and device numbers of the root port:
+> -    [23:16]: bus number
+> -    [15:11]: device number
+> -  - cell 1 denotes the upper 32 address bits and should be 0
+> -  - cell 2 contains the lower 32 address bits and is used to translate to the
+> -    CPU address space
+> -- #size-cells: Size representation for root ports (must be 2)
+> -- ranges: Describes the translation of addresses for root ports and standard
+> -  PCI regions. The entries must be 7 cells each, where the first three cells
+> -  correspond to the address as described for the #address-cells property
+> -  above, the fourth and fifth cells are for the physical CPU address to
+> -  translate to and the sixth and seventh cells are as described for the
+> -  #size-cells property above.
+> -  - Entries setup the mapping for the standard I/O, memory and
+> -    prefetchable PCI regions. The first cell determines the type of region
+> -    that is setup:
+> -    - 0x81000000: I/O memory region
+> -    - 0x82000000: non-prefetchable memory region
+> -    - 0xc2000000: prefetchable memory region
+> -  Please refer to the standard PCI bus binding document for a more detailed
+> -  explanation.
+> -- #interrupt-cells: Size representation for interrupts (must be 1)
+> -- interrupt-map-mask and interrupt-map: Standard PCI IRQ mapping properties
+> -  Please refer to the standard PCI bus binding document for a more detailed
+> -  explanation.
+> -
+> -EP mode:
+> -In Tegra194, Only controllers C0, C4 & C5 support EP mode.
+> -- compatible: Tegra19x must contain "nvidia,tegra194-pcie-ep"
+> -- reg-names: Must include the following entries:
+> -  "addr_space": Used to map remote RC address space
+> -- reset-gpios: Must contain a phandle to a GPIO controller followed by
+> -  GPIO that is being used as PERST input signal. Please refer to pci.txt
+> -  document.
+> -
+> -Optional properties:
+> -- pinctrl-names: A list of pinctrl state names.
+> -  It is mandatory for C5 controller and optional for other controllers.
+> -  - "default": Configures PCIe I/O for proper operation.
+> -- pinctrl-0: phandle for the 'default' state of pin configuration.
+> -  It is mandatory for C5 controller and optional for other controllers.
+> -- supports-clkreq: Refer to Documentation/devicetree/bindings/pci/pci.txt
+> -- nvidia,update-fc-fixup: This is a boolean property and needs to be present to
+> -    improve performance when a platform is designed in such a way that it
+> -    satisfies at least one of the following conditions thereby enabling root
+> -    port to exchange optimum number of FC (Flow Control) credits with
+> -    downstream devices
+> -    1. If C0/C4/C5 run at x1/x2 link widths (irrespective of speed and MPS)
+> -    2. If C0/C1/C2/C3/C4/C5 operate at their respective max link widths and
+> -       a) speed is Gen-2 and MPS is 256B
+> -       b) speed is >= Gen-3 with any MPS
+> -- nvidia,aspm-cmrt-us: Common Mode Restore Time for proper operation of ASPM
+> -   to be specified in microseconds
+> -- nvidia,aspm-pwr-on-t-us: Power On time for proper operation of ASPM to be
+> -   specified in microseconds
+> -- nvidia,aspm-l0s-entrance-latency-us: ASPM L0s entrance latency to be
+> -   specified in microseconds
+> -
+> -RC mode:
+> -- vpcie3v3-supply: A phandle to the regulator node that supplies 3.3V to the slot
+> -  if the platform has one such slot. (Ex:- x16 slot owned by C5 controller
+> -  in p2972-0000 platform).
+> -- vpcie12v-supply: A phandle to the regulator node that supplies 12V to the slot
+> -  if the platform has one such slot. (Ex:- x16 slot owned by C5 controller
+> -  in p2972-0000 platform).
+> -
+> -EP mode:
+> -- nvidia,refclk-select-gpios: Must contain a phandle to a GPIO controller
+> -  followed by GPIO that is being used to enable REFCLK to controller from host
+> -
+> -NOTE:- On Tegra194's P2972-0000 platform, only C5 controller can be enabled to
+> -operate in the endpoint mode because of the way the platform is designed.
+> -
+> -Examples:
+> -=========
+> -
+> -Tegra194 RC mode:
+> ------------------
+> -
+> -	pcie@14180000 {
+> -		compatible = "nvidia,tegra194-pcie";
+> -		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8B>;
+> -		reg = <0x00 0x14180000 0x0 0x00020000   /* appl registers (128K)      */
+> -		       0x00 0x38000000 0x0 0x00040000   /* configuration space (256K) */
+> -		       0x00 0x38040000 0x0 0x00040000>; /* iATU_DMA reg space (256K)  */
+> -		reg-names = "appl", "config", "atu_dma";
+> -
+> -		#address-cells = <3>;
+> -		#size-cells = <2>;
+> -		device_type = "pci";
+> -		num-lanes = <8>;
+> -		linux,pci-domain = <0>;
+> -
+> -		pinctrl-names = "default";
+> -		pinctrl-0 = <&pex_rst_c5_out_state>, <&clkreq_c5_bi_dir_state>;
+> -
+> -		clocks = <&bpmp TEGRA194_CLK_PEX0_CORE_0>;
+> -		clock-names = "core";
+> -
+> -		resets = <&bpmp TEGRA194_RESET_PEX0_CORE_0_APB>,
+> -			 <&bpmp TEGRA194_RESET_PEX0_CORE_0>;
+> -		reset-names = "apb", "core";
+> -
+> -		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>,	/* controller interrupt */
+> -			     <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>;	/* MSI interrupt */
+> -		interrupt-names = "intr", "msi";
+> -
+> -		#interrupt-cells = <1>;
+> -		interrupt-map-mask = <0 0 0 0>;
+> -		interrupt-map = <0 0 0 0 &gic GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
+> -
+> -		nvidia,bpmp = <&bpmp 0>;
+> -
+> -		supports-clkreq;
+> -		nvidia,aspm-cmrt-us = <60>;
+> -		nvidia,aspm-pwr-on-t-us = <20>;
+> -		nvidia,aspm-l0s-entrance-latency-us = <3>;
+> -
+> -		bus-range = <0x0 0xff>;
+> -		ranges = <0x81000000 0x0  0x38100000 0x0  0x38100000 0x0 0x00100000    /* downstream I/O (1MB) */
+> -			  0x82000000 0x0  0x38200000 0x0  0x38200000 0x0 0x01E00000    /* non-prefetchable memory (30MB) */
+> -			  0xc2000000 0x18 0x00000000 0x18 0x00000000 0x4 0x00000000>;  /* prefetchable memory (16GB) */
+> -
+> -		vddio-pex-ctl-supply = <&vdd_1v8ao>;
+> -		vpcie3v3-supply = <&vdd_3v3_pcie>;
+> -		vpcie12v-supply = <&vdd_12v_pcie>;
+> -
+> -		phys = <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
+> -		       <&p2u_hsio_5>;
+> -		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3";
+> -	};
+> -
+> -Tegra194 EP mode:
+> ------------------
+> -
+> -	pcie-ep@141a0000 {
+> -		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
+> -		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8A>;
+> -		reg = <0x00 0x141a0000 0x0 0x00020000   /* appl registers (128K)      */
+> -		       0x00 0x3a040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
+> -		       0x00 0x3a080000 0x0 0x00040000   /* DBI reg space (256K)       */
+> -		       0x1c 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
+> -		reg-names = "appl", "atu_dma", "dbi", "addr_space";
+> -
+> -		num-lanes = <8>;
+> -		num-ib-windows = <2>;
+> -		num-ob-windows = <8>;
+> -
+> -		pinctrl-names = "default";
+> -		pinctrl-0 = <&clkreq_c5_bi_dir_state>;
+> -
+> -		clocks = <&bpmp TEGRA194_CLK_PEX1_CORE_5>;
+> -		clock-names = "core";
+> -
+> -		resets = <&bpmp TEGRA194_RESET_PEX1_CORE_5_APB>,
+> -			 <&bpmp TEGRA194_RESET_PEX1_CORE_5>;
+> -		reset-names = "apb", "core";
+> -
+> -		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;	/* controller interrupt */
+> -		interrupt-names = "intr";
+> -
+> -		nvidia,bpmp = <&bpmp 5>;
+> -
+> -		nvidia,aspm-cmrt-us = <60>;
+> -		nvidia,aspm-pwr-on-t-us = <20>;
+> -		nvidia,aspm-l0s-entrance-latency-us = <3>;
+> -
+> -		vddio-pex-ctl-supply = <&vdd_1v8ao>;
+> -
+> -		reset-gpios = <&gpio TEGRA194_MAIN_GPIO(GG, 1) GPIO_ACTIVE_LOW>;
+> -
+> -		nvidia,refclk-select-gpios = <&gpio_aon TEGRA194_AON_GPIO(AA, 5)
+> -					      GPIO_ACTIVE_HIGH>;
+> -
+> -		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
+> -		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
+> -		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
+> -
+> -		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
+> -			    "p2u-5", "p2u-6", "p2u-7";
+> -	};
+> diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.yaml b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.yaml
+> new file mode 100644
+> index 000000000000..4a49dddf33bb
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.yaml
+> @@ -0,0 +1,254 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/nvidia,tegra194-pcie.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NVIDIA Tegra194 (and later) PCIe controller (Synopsys DesignWare Core based)
+> +
+> +maintainers:
+> +  - Thierry Reding <thierry.reding@gmail.com>
+> +  - Jon Hunter <jonathanh@nvidia.com>
+> +  - Vidya Sagar <vidyas@nvidia.com>
+> +
+> +description: |
+> +  This PCIe controller is based on the Synopsis Designware PCIe IP and thus inherits all the common
+> +  properties defined in snps,dw-pcie.yaml. Some of the controller instances are dual mode where in
+> +  they can work either in root port mode or endpoint mode but one at a time.
+> +
+> +  See nvidia,tegra194-pcie-ep.yaml for details on the endpoint mode device tree bindings.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - nvidia,tegra194-pcie
+> +
+> +  reg:
+> +    items:
+> +      - description: controller's application logic registers
+> +      - description: configuration registers
+> +      - description: iATU and DMA registers. This is where the iATU (internal Address Translation
+> +          Unit) registers of the PCIe core are made available for software access.
+> +      - description: The aperture where the root port's own configuration registers are available.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: appl
+> +      - const: config
+> +      - const: atu_dma
+> +      - const: dbi
+> +
+> +  interrupts:
+> +    items:
+> +      - description: controller interrupt
+> +      - description: MSI interrupt
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: intr
+> +      - const: msi
+> +
+> +  clocks:
+> +    items:
+> +      - description: module clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: core
+> +
+> +  resets:
+> +    items:
+> +      - description: APB bus interface reset
+> +      - description: module reset
+> +
+> +  reset-names:
+> +    items:
+> +      - const: apb
+> +      - const: core
+> +
+> +  phys:
+> +    minItems: 1
+> +    maxItems: 16
+> +
+> +  phy-names:
+> +    minItems: 1
+> +    maxItems: 16
+> +    items:
+> +      pattern: "^p2u-[0-9]+$"
+> +
+> +  power-domains:
+> +    description: |
+> +      A phandle to the node that controls power to the respective PCIe controller and a specifier
+> +      name for the PCIe controller. Following are the specifiers for the different PCIe
+> +      controllers:
+> +
+> +        - TEGRA194_POWER_DOMAIN_PCIEX8B: C0
+> +        - TEGRA194_POWER_DOMAIN_PCIEX1A: C1
+> +        - TEGRA194_POWER_DOMAIN_PCIEX1A: C2
+> +        - TEGRA194_POWER_DOMAIN_PCIEX1A: C3
+> +        - TEGRA194_POWER_DOMAIN_PCIEX4A: C4
+> +        - TEGRA194_POWER_DOMAIN_PCIEX8A: C5
+> +
+> +      these specifiers are defined in "include/dt-bindings/power/tegra194-powergate.h" file.
+> +
+> +  interconnects:
+> +    items:
+> +      - description: memory read client
+> +      - description: memory write client
+> +
+> +  interconnect-names:
+> +    items:
+> +      - const: dma-mem # read
+> +      - const: write
+> +
+> +  dma-coherent: true
+> +
+> +  supports-clkreq:
+> +    description: see pci.txt for details
+> +
+> +  nvidia,bpmp:
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    description: |
+> +      Must contain a pair of phandle to BPMP controller node followed by controller ID. Following
+> +      are the controller IDs for each controller:
+> +
+> +        0: C0
+> +        1: C1
+> +        2: C2
+> +        3: C3
+> +        4: C4
+> +        5: C5
+> +    items:
+> +      - items:
+> +          - minimum: 0
+> +            maximum: 0xffffffff
+> +          - enum: [ 0, 1, 2, 3, 4, 5 ]
+> +
+> +  nvidia,update-fc-fixup:
+> +    description: |
+> +      This is a boolean property and needs to be present to improve performance when a platform is
+> +      designed in such a way that it satisfies at least one of the following conditions thereby
+> +      enabling root port to exchange optimum number of FC (Flow Control) credits with downstream
+> +      devices:
+> +
+> +        1. If C0/C4/C5 run at x1/x2 link widths (irrespective of speed and MPS)
+> +        2. If C0/C1/C2/C3/C4/C5 operate at their respective max link widths and
+> +          a) speed is Gen-2 and MPS is 256B
+> +          b) speed is >= Gen-3 with any MPS
+> +
+> +    $ref: /schemas/types.yaml#/definitions/flag
+> +
+> +  nvidia,aspm-cmrt-us:
+> +    description: Common Mode Restore Time for proper operation of ASPM to be specified in
+> +      microseconds
+> +
+> +  nvidia,aspm-pwr-on-t-us:
+> +    description: Power On time for proper operation of ASPM to be specified in microseconds
+> +
+> +  nvidia,aspm-l0s-entrance-latency-us:
+> +    description: ASPM L0s entrance latency to be specified in microseconds
+> +
+> +  vddio-pex-ctl-supply:
+> +    description: A phandle to the regulator supply for PCIe side band signals.
+> +
+> +  vpcie3v3-supply:
+> +    description: A phandle to the regulator node that supplies 3.3V to the slot if the platform has
+> +      one such slot. (Ex:- x16 slot owned by C5 controller in p2972-0000 platform).
+> +
+> +  vpcie12v-supply:
+> +    description: A phandle to the regulator node that supplies 12V to the slot if the platform has
+> +      one such slot. (Ex:- x16 slot owned by C5 controller in p2972-0000 platform).
+> +
+> +allOf:
+> +  - $ref: "/schemas/pci/pci-bus.yaml#"
+> +  - $ref: "/schemas/pci/snps,dw-pcie.yaml#"
+> +
+> +unevaluatedProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +  - interrupt-names
+> +  - interrupt-map
+> +  - interrupt-map-mask
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - power-domains
+> +  - bus-range
+> +  - ranges
+> +  - vddio-pex-ctl-supply
+> +  - num-lanes
+> +  - phys
+> +  - phy-names
+> +  - nvidia,bpmp
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/tegra194-clock.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/power/tegra194-powergate.h>
+> +    #include <dt-bindings/reset/tegra194-reset.h>
+> +
+> +    bus@0 {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +        ranges = <0x0 0x0 0x0 0x8 0x0>;
+> +
+> +        pcie@14180000 {
+> +            compatible = "nvidia,tegra194-pcie";
+> +            power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8B>;
+> +            reg = <0x0 0x14180000 0x0 0x00020000>, /* appl registers (128K)      */
+> +                  <0x0 0x38000000 0x0 0x00040000>, /* configuration space (256K) */
+> +                  <0x0 0x38040000 0x0 0x00040000>, /* iATU_DMA reg space (256K)  */
+> +                  <0x0 0x38080000 0x0 0x00040000>; /* DBI reg space (256K)       */
+> +            reg-names = "appl", "config", "atu_dma", "dbi";
+> +
+> +            #address-cells = <3>;
+> +            #size-cells = <2>;
+> +            device_type = "pci";
+> +            num-lanes = <8>;
+> +            linux,pci-domain = <0>;
+> +
+> +            pinctrl-names = "default";
+> +            pinctrl-0 = <&pex_rst_c5_out_state>, <&clkreq_c5_bi_dir_state>;
+> +
+> +            clocks = <&bpmp TEGRA194_CLK_PEX0_CORE_0>;
+> +            clock-names = "core";
+> +
+> +            resets = <&bpmp TEGRA194_RESET_PEX0_CORE_0_APB>,
+> +                     <&bpmp TEGRA194_RESET_PEX0_CORE_0>;
+> +            reset-names = "apb", "core";
+> +
+> +            interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>, /* controller interrupt */
+> +                         <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>; /* MSI interrupt */
+> +            interrupt-names = "intr", "msi";
+> +
+> +            #interrupt-cells = <1>;
+> +            interrupt-map-mask = <0 0 0 0>;
+> +            interrupt-map = <0 0 0 0 &gic GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
+> +
+> +            nvidia,bpmp = <&bpmp 0>;
+> +
+> +            supports-clkreq;
+> +            nvidia,aspm-cmrt-us = <60>;
+> +            nvidia,aspm-pwr-on-t-us = <20>;
+> +            nvidia,aspm-l0s-entrance-latency-us = <3>;
+> +
+> +            bus-range = <0x0 0xff>;
+> +            ranges = <0x81000000 0x0  0x38100000 0x0  0x38100000 0x0 0x00100000>, /* downstream I/O */
+> +                     <0x82000000 0x0  0x38200000 0x0  0x38200000 0x0 0x01e00000>, /* non-prefetch memory */
+> +                     <0xc2000000 0x18 0x00000000 0x18 0x00000000 0x4 0x00000000>; /* prefetchable memory */
+> +
+> +            vddio-pex-ctl-supply = <&vdd_1v8ao>;
+> +            vpcie3v3-supply = <&vdd_3v3_pcie>;
+> +            vpcie12v-supply = <&vdd_12v_pcie>;
+> +
+> +            phys = <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
+> +                   <&p2u_hsio_5>;
+> +            phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3";
+> +        };
+> +    };
+> diff --git a/Documentation/devicetree/bindings/pci/snps,dw-pcie.yaml b/Documentation/devicetree/bindings/pci/snps,dw-pcie.yaml
+> index c90e5e2d25f6..7e0bf941fbfe 100644
+> --- a/Documentation/devicetree/bindings/pci/snps,dw-pcie.yaml
+> +++ b/Documentation/devicetree/bindings/pci/snps,dw-pcie.yaml
+> @@ -35,7 +35,7 @@ properties:
+>      maxItems: 5
+>      items:
+>        enum: [ dbi, dbi2, config, atu, app, elbi, mgmt, ctrl, parf, cfg, link,
+> -              ulreg, smu, mpu, apb, phy ]
+> +              ulreg, smu, mpu, apb, phy, appl, atu_dma ]
+>  
+>    num-lanes:
+>      description: |
+> -- 
+> 2.17.1
+> 
+> 
 
 -- 
 linux-phy mailing list
