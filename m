@@ -4,66 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52E6ACCA479
-	for <linux-phy@archiver.kernel.org>; Fri,  1 Jul 2022 16:18:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FECCCCA479
+	for <linux-phy@archiver.kernel.org>; Fri,  1 Jul 2022 16:20:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mg2+L9B48ABCMfJ9u4fHqLlXv9pibhWv3+VJTZLDP9A=; b=ygSMdI00SLFfOZ
-	VmaeQ/7nrZPiA9/gzR2kKQn1hujD1Rrm/8iFuirLi6nA9HQnKUSWZNHiypbjhwrM2q7TNVXLUjI9U
-	MKcIFREUfhtTOQQmhnZBTiR0KJ5H6Xfyy9f3I0q4OPv0wf+Ay7YgFwCrFsbdO2Enlu8XfZe1Ay48m
-	QqmzkJBFumtlwb+Oh6YncOoNxLM0oSx0NSTlN1p8ewUYZrAepK+XwUyB7qJ5dDD7Tltkeri+jZEea
-	PCor1Sw57TdSFb9bofzm2BG4pgsn7kK7+96AFlxCIuVR+8kgwZYJMhyzNBFjGIa3Ky/ZQ+eibU27T
-	tFmpHuP4vnHkfg0OiELw==;
+	List-Owner; bh=Gf96w5tjc0WtcOua/Mal+8A3XB1vfY4Zbs51yz+TVaA=; b=T6TORKp1GGGshN
+	pl2kR3remsL2EzE6Rt92+f1VL4nfgRIbaFm166zVTJ+OWhr1JndRaaJd1dvPhEXe5ZkegZ1vEEpFO
+	1y6tU3abzGXOufkfZ2JkDezvsfgQfDNdJUDUCqptECpp89bigNJ5BBh8bKTvXfKjtOgP+77rUMH+p
+	UD8CZ14T0U6Hm4FxHhXNsguzs35EY9Fa3aTTt4ct6k29JBSRx8MI5lirFmaYKIJCQBqtebGE4QhjE
+	1MMI49cbeMXI0BqzeisIsS+eMOxSaX3556iVRLuSJv7lV69vPxPJfFM0OWtOVjA/GsMNe/nlGt7Qu
+	Gg7S9DeDX4NV6ULvMyiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o7JM8-005vhY-O1; Fri, 01 Jul 2022 16:18:56 +0000
-Received: from mail-il1-f176.google.com ([209.85.166.176])
+	id 1o7JND-005vye-00; Fri, 01 Jul 2022 16:20:03 +0000
+Received: from mail-io1-f54.google.com ([209.85.166.54])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o7JM5-005veo-QB
-	for linux-phy@lists.infradead.org; Fri, 01 Jul 2022 16:18:55 +0000
-Received: by mail-il1-f176.google.com with SMTP id h5so1719744ili.3
-        for <linux-phy@lists.infradead.org>; Fri, 01 Jul 2022 09:18:42 -0700 (PDT)
+	id 1o7JNA-005vx9-DV
+	for linux-phy@lists.infradead.org; Fri, 01 Jul 2022 16:20:01 +0000
+Received: by mail-io1-f54.google.com with SMTP id p128so2762831iof.1
+        for <linux-phy@lists.infradead.org>; Fri, 01 Jul 2022 09:19:58 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:date:from:to:cc:subject:message-id:references
          :mime-version:content-disposition:in-reply-to;
-        bh=VVq9FhmaSCUNqqcPRzai6+Yorwbl6Z9gJF6zzAz/I1o=;
-        b=ANM6bnhE3aXgVGxSad0L7U/miQu21jRQsblryFpBb0I+6oE5w6Nbf0SiErAeKqYMMe
-         Vwbea33rLGdr6Jkomtg5x1AasBt9EGTdJf2BLs7o86ADTYlWUWknMFOhrFRTwJ+fC01C
-         wqpuVeabiqseRybuG1fKIcM/g0IBTaVq32aSxDODLouIR+jJXy5ycOKrcwBJL2229JJW
-         mQxloex+0G2YMuOe8wcQrSBxvmquAS35zTzMkjCoMJdBi9FwxyBzii+qTszm3MxRiUGB
-         oF6Zw2S7V1UQKlWijYlSy36kUtpPn1g5oO0ejH/yXlF/FiRef/O0dFBBV/g/T9lXFUjp
-         Arrw==
-X-Gm-Message-State: AJIora/rVNtPOu2/yprfTj8XUU4+efju4QHfCr9S4gubQn4bb+Fpueaf
-	Mn5QT7fssxKWVQpcRXYF7FZthNUyhw==
-X-Google-Smtp-Source: AGRyM1uKu4ZHeXlBk47g/1Kn+xIxVsoVCeJJK86OxxIz1zMtHypyobrtFZSlf2w6duKGphDJrzQIhQ==
-X-Received: by 2002:a05:6e02:194b:b0:2da:8568:99da with SMTP id x11-20020a056e02194b00b002da856899damr8933917ilu.80.1656692321453;
-        Fri, 01 Jul 2022 09:18:41 -0700 (PDT)
+        bh=ZQCylsq9M4rPkFWxs4C1uvnNMPUdbfbfI4jjvjvy8og=;
+        b=4qUV5Gp8GwN59/Ywt3xROHRl37bKgPEKT/iwwjzW63/LDBd9Ys/anhNlrbjDn2c/fm
+         qCDsz3lyO/GbPLfklsjlS9eaLeMPe/MXw68lxwqOWH3fvBYvWu/t9IrZ08ypG2RVVhB/
+         DeKHoD0KuOeMP33PinqN4d3ctB0WWT4jYJws3Jth0MNzDTgFZ3iZ+Q7Zi9lp1oWooED6
+         MLN05SjnTfawJvgdr063YhqiCucOeyZRt1a0m3jT1wRiOGzJUt9g0pLHIGiIgYDSzA0b
+         2s2ykmrcMtkGErpem/H7KOaIBZeWbnpGc0g0dudCmmpf147JB4yqovojqheOFbhtan47
+         FA2A==
+X-Gm-Message-State: AJIora9TRUT/ZDg6TKncCHxV8/hz6O5s4YFoFFjOMm+ZliY4Ns9aDnrt
+	GNQKHzzvSmGEdZBmb9R4oHUzrQK5wg==
+X-Google-Smtp-Source: AGRyM1u3Qr+tXqjLIi/7Jr5GJVG/S9BRBU00/78V+UB90jdiTjI+ZtZU2goYTjMedm+wRJ06+ao5sQ==
+X-Received: by 2002:a05:6638:10c:b0:339:e949:b332 with SMTP id x12-20020a056638010c00b00339e949b332mr9136760jao.22.1656692398271;
+        Fri, 01 Jul 2022 09:19:58 -0700 (PDT)
 Received: from robh.at.kernel.org ([64.188.179.248])
-        by smtp.gmail.com with ESMTPSA id a3-20020a029403000000b0032e6358ccefsm9862984jai.77.2022.07.01.09.18.40
+        by smtp.gmail.com with ESMTPSA id b11-20020a05663801ab00b0033a3d88cebbsm10036931jaq.105.2022.07.01.09.19.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 01 Jul 2022 09:18:41 -0700 (PDT)
-Received: (nullmailer pid 1065573 invoked by uid 1000);
-	Fri, 01 Jul 2022 16:18:39 -0000
-Date: Fri, 1 Jul 2022 10:18:39 -0600
+        Fri, 01 Jul 2022 09:19:57 -0700 (PDT)
+Received: (nullmailer pid 1067780 invoked by uid 1000);
+	Fri, 01 Jul 2022 16:19:56 -0000
+Date: Fri, 1 Jul 2022 10:19:56 -0600
 From: Rob Herring <robh@kernel.org>
 To: Roger Quadros <rogerq@kernel.org>
-Cc: sjakhade@cadence.com, vigneshr@ti.com, kishon@ti.com, linux-phy@lists.infradead.org, s-vadapalli@ti.com, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org, t-patil@ti.com
-Subject: Re: [PATCH 4/7] dt-bindings: phy: ti,phy-j721e-wiz: deprecate clock
- MUX nodes
-Message-ID: <20220701161839.GA1065515-robh@kernel.org>
+Cc: t-patil@ti.com, s-vadapalli@ti.com, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, vigneshr@ti.com, kishon@ti.com, linux-kernel@vger.kernel.org, sjakhade@cadence.com, vkoul@kernel.org
+Subject: Re: [PATCH 5/7] dt-bindings: phy: ti,phy-j721e-wiz: Add support for
+ ti,j7200-wiz-10g
+Message-ID: <20220701161956.GA1067719-robh@kernel.org>
 References: <20220628122255.24265-1-rogerq@kernel.org>
- <20220628122255.24265-5-rogerq@kernel.org>
+ <20220628122255.24265-6-rogerq@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220628122255.24265-5-rogerq@kernel.org>
+In-Reply-To: <20220628122255.24265-6-rogerq@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220701_091853_885964_02749676 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20220701_092000_491581_93AA5643 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,16 +81,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 28 Jun 2022 15:22:52 +0300, Roger Quadros wrote:
-> Mark "pll[0|1]-refclk", "refclk-dig" and "cmn-refclk1?-dig-div"
-> as deprecated. The clock muxes are provided by the device driver
-> so not required in device tree.
+On Tue, 28 Jun 2022 15:22:53 +0300, Roger Quadros wrote:
+> ti,j7200-wiz-10g supports an additional reference clock.
+> Add compatible and the additional clock.
 > 
 > Cc: Rob Herring <robh@kernel.org>
 > Signed-off-by: Roger Quadros <rogerq@kernel.org>
 > ---
->  Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml | 3 +++
->  1 file changed, 3 insertions(+)
+>  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 21 ++++++++++++++++++-
+>  1 file changed, 20 insertions(+), 1 deletion(-)
 > 
 
 Acked-by: Rob Herring <robh@kernel.org>
