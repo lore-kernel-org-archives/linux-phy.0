@@ -4,62 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D24FC433EF
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Jul 2022 08:45:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA705CCA481
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Jul 2022 16:11:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=R4LkJpB8bOo+JAoOlwUEFRaR9tU5z7teF7LX8hb40ec=; b=hTBM5gk1OfXDhh
-	eojgfILCCg/zcxn9S+eQDgVtgeBQyKguOYVQfQ8WUua+kClDq/0NAYgEgMvHOD/w61t3zf3k2zYwD
-	HOvzWO+SYPDlBdmQKFs4VFNg1JwwIY5PF91DbR6WVshAZzaL7mvrSXq2xUX99ySiuRsnOvU1JrLfC
-	DC+CEpN4+voRmRDhMZvVFPc0FEn6zk4gm7s7hbsiOUDUKzUpToKgzSOCHUxKOYQD6jA3iZK1r3bJY
-	imBlraqKb9DQarf/QP44ucWyVaFWzX6d1UzVbbZ0NBqLtGT90ERKsSwMlNfIPZaXTIQju6cCbpp4G
-	deFne4QdQssDtMgO01wA==;
+	List-Owner; bh=W8CxDUj+uFxSR1CkNwVvalkejLWMNGIw85r8nJ7ryf8=; b=cq3UuU4UHAj7Hx
+	zoJKLQ5v62GOKg3CMlZ4+TiipeBgbXMdP0rmtewwsU4w9RxZj4KtS0y4OgQfxNu0lLHCHaVPZ6LeU
+	Pgvc0oyy40fxqu3MqleL7GYLVHBVATpkeclfo40KDPTXL5U1YQgdvr/5/iWR8i+KgNkL63JBsRDYS
+	Dvqqe53BOOkv3ccNesWG3pVog/01QLo7FcEQjrXSFChDFvnj5uybN4WW711gKUtGZFdJKcjMe7bDy
+	87l1oB2/mQoq8lsmGNMv66nOKZ3hv5mpZB4/YSJ6rD3ZGa62tMggpigHT5JlEGUUAp5Iep+ztwTmV
+	vrm9XWkzkJNIP8/Os3gQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8HiD-0068jd-RC; Mon, 04 Jul 2022 08:45:45 +0000
-Received: from m15112.mail.126.com ([220.181.15.112])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8HiB-0068f4-0s
-	for linux-phy@lists.infradead.org; Mon, 04 Jul 2022 08:45:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=126.com;
-	s=s110527; h=From:Subject:Date:Message-Id:MIME-Version; bh=MuDoe
-	08dNNBH2iR8u2GDQUkfwsc1EfDvNcbXMBWHLU8=; b=lgHMQbjTZUcowQct5rv/4
-	4H8skZKzpEHwGMudVTI3zMjcRt2EKSJ45nhLLQoKQPlD0YlTBwvEJdxsuiB9J92v
-	GBxvYfXMH4wgWYZjQIRrIIA6VMAuHqWH5omEZK1tvjcXPFi8mo0xnWuqhXoWEorp
-	yiYYCzUJmds76c6Qu11ZOg=
-Received: from localhost.localdomain (unknown [124.16.139.61])
-	by smtp2 (Coremail) with SMTP id DMmowAD3Yf6bqMJi275fEQ--.34864S2;
-	Mon, 04 Jul 2022 16:45:16 +0800 (CST)
-From: Liang He <windhl@126.com>
-To: jckuo@nvidia.com,
-	kishon@ti.com,
-	vkoul@kernel.org,
-	thierry.reding@gmail.com,
-	jonathanh@nvidia.com,
-	p.zabel@pengutronix.de,
-	linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org,
-	windhl@126.com,
-	linmq006@gmail.com
-Subject: [PATCH] phy: tegra: Fix missing of_node_put() in tegra210_xusb_padctl_probe()
-Date: Mon,  4 Jul 2022 16:45:14 +0800
-Message-Id: <20220704084514.277005-1-windhl@126.com>
-X-Mailer: git-send-email 2.25.1
+	id 1o8Og1-009uN2-58; Mon, 04 Jul 2022 16:11:57 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1o8Ofy-009uLb-5I
+	for linux-phy@lists.infradead.org; Mon, 04 Jul 2022 16:11:56 +0000
+Received: by mail-lf1-x131.google.com with SMTP id t19so15884017lfl.5
+        for <linux-phy@lists.infradead.org>; Mon, 04 Jul 2022 09:11:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=from:to:cc:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=rvpMkL8rwQeoEo+SMzO+GF3s7pNzolh8BqnzxKkFoo4=;
+        b=PRa8oeritKHlX5Cuo59DeIr0jqFFxqZ1SUAiCm7V/3n46EK/pO7XM36ROBw3DzXSXQ
+         YxJhUduCoQbUeCSf4f+YyP0BecLCr5Bdx0rzFxhPwJiYWfbtX1FSwGRSAoCvzxET1Aze
+         d8bQuCcF05gDIgavHgfmsknIUBq4J7Cv/dhY0Q7FDmoPhqCMKh/YwDkOgUpXAZTVm6kx
+         xj6PcFZA+zxLttELoWt2i3Nsro/aZyINoJiHx3vMmZ313zFWalf6OIYMpBFqs/QB+Zh2
+         facRBNtre9zuGmBE7bQfhiLwEWoNOsuccYUiGxdwwsf9Fwk8OCu0Shq5UH8A38/eTp84
+         QPig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+         :content-transfer-encoding;
+        bh=rvpMkL8rwQeoEo+SMzO+GF3s7pNzolh8BqnzxKkFoo4=;
+        b=pEW2YMipNJ3rxDF63ZO53YeXw1Hl9IsQfg9kw25XxzUzbCgAcqL+kdjNtrJ7fdNAk6
+         EiBdxnHxy33u2o+3DHwrT8F9UrkMT8DiCsub5UzxfXvGvqi6wI2k3PnAo9RlTG2W8xIT
+         751namQNygytSGLeo7eNKfedzHD0yqHMidfOCc6AO6g5nnpa5gh3My7A9ONUOx5g1Br9
+         sV5flv64pal46BUt1DiYpod87s6Lt/r2R2gzMbTZey2gpET0zxJevFUFcGKrlPkwyyKR
+         DwkM+Z4RH1foECx7Q+GxW87ED4VAxYcgTFuUP2KkuPz3UKPXNVJp9rlLpOGXJe3z++Ol
+         NX7w==
+X-Gm-Message-State: AJIora8K9VSbgJ93nyVjRwS6CKm0nZQwHB+arn+dRJoCazl924i8Dv5F
+	oeGW5u0VqQmiCZKsgQP/+cLlvj28Rt6exQ==
+X-Google-Smtp-Source: AGRyM1tTn7DtmPOMMB8Ftu3ZrQuStfkpwldPqX63M2wVWQqfl+bhBR3Ly0in/NV3wLfdHb+lrvQP0g==
+X-Received: by 2002:ac2:489c:0:b0:47f:6c54:7c56 with SMTP id x28-20020ac2489c000000b0047f6c547c56mr18196383lfc.529.1656951110018;
+        Mon, 04 Jul 2022 09:11:50 -0700 (PDT)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id bj16-20020a2eaa90000000b0025d254180d7sm381273ljb.113.2022.07.04.09.11.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 04 Jul 2022 09:11:49 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Rob Clark <robdclark@gmail.com>,
+	Sean Paul <sean@poorly.run>,
+	Abhinav Kumar <quic_abhinavk@quicinc.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Stephen Boyd <swboyd@chromium.org>,
+	David Airlie <airlied@linux.ie>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v3 0/3] drm/msm/hdmi: turn MSM8996 HDMI PHY into OF clock provider
+Date: Mon,  4 Jul 2022 19:11:45 +0300
+Message-Id: <20220704161148.814510-1-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-X-CM-TRANSID: DMmowAD3Yf6bqMJi275fEQ--.34864S2
-X-Coremail-Antispam: 1Uf129KBjvdXoWruw4fWF1ktFWUtF13Jw1UJrb_yoW3tFg_WF
-	1xZr97XrWvgr4IvFyaqFyIyasrZ3W0qFsYgrs2vr93Ka1jqw1jyryDXry5ur12vw4DJFy7
-	Aa4DZF1UAr4rZjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7xREKZXDUUUUU==
-X-Originating-IP: [124.16.139.61]
-X-CM-SenderInfo: hzlqvxbo6rjloofrz/1tbiuBw0F2JVkLyEqQAAsx
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220704_014543_454257_D6CF59C7 
-X-CRM114-Status: UNSURE (   4.99  )
+X-CRM114-CacheID: sfid-20220704_091154_240095_59961CC3 
+X-CRM114-Status: UNSURE (   9.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,30 +101,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-We should call of_node_put() for the reference 'np' returned by
-of_parse_phandle() which will increase the refcount.
+On MSM8996 the HDMI PHY is the QMP PHY, it provides an HDMI PLL clock
+used by the MMCC. Add support for providing this clock to the OF
+framework by registerding the clock provider and adding #clock-cells
+property to the DT node.
 
-Fixes: 2d1021487273 ("phy: tegra: xusb: Add wake/sleepwalk for Tegra210")
-Co-authored-by: Miaoqian Lin <linmq006@gmail.com>
-Signed-off-by: Liang He <windhl@126.com>
----
- drivers/phy/tegra/xusb-tegra210.c | 1 +
- 1 file changed, 1 insertion(+)
+The dt-bindings from this series depends on changes from [1] (part of
+linux-next, but not of the msm-next yet).
 
-diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
-index eedfc7c2cc05..d5eebb7a266c 100644
---- a/drivers/phy/tegra/xusb-tegra210.c
-+++ b/drivers/phy/tegra/xusb-tegra210.c
-@@ -3165,6 +3165,7 @@ tegra210_xusb_padctl_probe(struct device *dev,
- 	}
- 
- 	pdev = of_find_device_by_node(np);
-+	of_node_put(np);
- 	if (!pdev) {
- 		dev_warn(dev, "PMC device is not available\n");
- 		goto out;
+[1]: https://patchwork.freedesktop.org/series/104836/
+
+Changes since v2:
+- Added minItems: 2 to clock-names property (Rob)
+- Explicitly mentioned dependencies
+
+Changes since v1:
+- Also handle the xo clock (include it into the dtsi, use parent_data
+  instead of parent_names). The patches were changed, so I didn't pick
+  up the R-b tags.
+
+Dmitry Baryshkov (3):
+  dt-bindings: phy: qcom,hdmi-phy-qmp: add clock-cells and XO clock
+  drm/msm/hdmi: make hdmi_phy_8996 OF clk provider
+  arm64: dts: qcom: msm8996: add #clock-cells and XO clock to the HDMI
+    PHY node
+
+ .../bindings/phy/qcom,hdmi-phy-qmp.yaml       | 15 ++++++++---
+ arch/arm64/boot/dts/qcom/msm8996.dtsi         |  8 ++++--
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c      | 25 +++++++++++--------
+ 3 files changed, 32 insertions(+), 16 deletions(-)
+
 -- 
-2.25.1
+2.35.1
 
 
 -- 
