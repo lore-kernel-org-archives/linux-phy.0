@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA705CCA481
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Jul 2022 16:11:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD95FCCA483
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Jul 2022 16:11:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W8CxDUj+uFxSR1CkNwVvalkejLWMNGIw85r8nJ7ryf8=; b=cq3UuU4UHAj7Hx
-	zoJKLQ5v62GOKg3CMlZ4+TiipeBgbXMdP0rmtewwsU4w9RxZj4KtS0y4OgQfxNu0lLHCHaVPZ6LeU
-	Pgvc0oyy40fxqu3MqleL7GYLVHBVATpkeclfo40KDPTXL5U1YQgdvr/5/iWR8i+KgNkL63JBsRDYS
-	Dvqqe53BOOkv3ccNesWG3pVog/01QLo7FcEQjrXSFChDFvnj5uybN4WW711gKUtGZFdJKcjMe7bDy
-	87l1oB2/mQoq8lsmGNMv66nOKZ3hv5mpZB4/YSJ6rD3ZGa62tMggpigHT5JlEGUUAp5Iep+ztwTmV
-	vrm9XWkzkJNIP8/Os3gQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c/mWPHvb5W7reWfA19B33GlDPJJSEdHk3+Ve7QUyznQ=; b=deE/bb2fhL7/Pn
+	nnVggrNiICQ8zlkCe+4yVam5snSF3CfUiSAED6VP483N7lh83/wOfO/8Qqn9LVcgRjj8yj4B8QDQy
+	S/g0dXpQ18ZAOxNibVK8SW7FjrefnjSVS2dDVttFRoEHCsgC0S+Ya0oAlTLB73QtcvYY54ZRjzS+d
+	WBJn7tk7cnFLG1e1R7rMRRSZRBUcTPYNa/nWSRoKM0bYMXggcYXlBgC9QChKcofDsUpQzgsM8moA2
+	SiuPNp9CuJLqIuT2TWabiwNfMoeitrQc6vgk1H7it1K4nykN3mWs2s3WrxUgOmxjkVqgX21WxLqaK
+	8x10HiuEHNXElC//C9IA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8Og1-009uN2-58; Mon, 04 Jul 2022 16:11:57 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1o8Og3-009uNt-B2; Mon, 04 Jul 2022 16:11:59 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8Ofy-009uLb-5I
-	for linux-phy@lists.infradead.org; Mon, 04 Jul 2022 16:11:56 +0000
-Received: by mail-lf1-x131.google.com with SMTP id t19so15884017lfl.5
-        for <linux-phy@lists.infradead.org>; Mon, 04 Jul 2022 09:11:51 -0700 (PDT)
+	id 1o8Og0-009uLd-EV
+	for linux-phy@lists.infradead.org; Mon, 04 Jul 2022 16:11:57 +0000
+Received: by mail-lf1-x132.google.com with SMTP id y16so16491205lfb.9
+        for <linux-phy@lists.infradead.org>; Mon, 04 Jul 2022 09:11:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:mime-version
-         :content-transfer-encoding;
-        bh=rvpMkL8rwQeoEo+SMzO+GF3s7pNzolh8BqnzxKkFoo4=;
-        b=PRa8oeritKHlX5Cuo59DeIr0jqFFxqZ1SUAiCm7V/3n46EK/pO7XM36ROBw3DzXSXQ
-         YxJhUduCoQbUeCSf4f+YyP0BecLCr5Bdx0rzFxhPwJiYWfbtX1FSwGRSAoCvzxET1Aze
-         d8bQuCcF05gDIgavHgfmsknIUBq4J7Cv/dhY0Q7FDmoPhqCMKh/YwDkOgUpXAZTVm6kx
-         xj6PcFZA+zxLttELoWt2i3Nsro/aZyINoJiHx3vMmZ313zFWalf6OIYMpBFqs/QB+Zh2
-         facRBNtre9zuGmBE7bQfhiLwEWoNOsuccYUiGxdwwsf9Fwk8OCu0Shq5UH8A38/eTp84
-         QPig==
+        h=from:to:cc:subject:date:message-id:in-reply-to:references
+         :mime-version:content-transfer-encoding;
+        bh=33SMaLh1eoDBAxmhXTjcVQWnyDJ3mzNy1PP5WaC9dV8=;
+        b=rspOa5EajZPOfNl0ESTchvhQgYhmUu8/ueOoPO44oe2+2Wog+oNj1fpANVwPGESYrF
+         5XvBIRqQLRYgoJfdxt/vk4TpyHZd/ZEG3sxCaKFGtFfeS7whXyDPggGmA71CDY9s6915
+         2IXUgtBd9BuBTr7dW+Vb0erOlBGKLD9G+mUSlioCNwkwLtOpcyOPF/h2BL/lC0s1St6n
+         xSs7vPhyOP4B4CEwjE8N+BvQHR3TqjV/3JDffKSzfuBG2SCG/3t7D65UOJLTD/pdI1dC
+         7/DNB/IFANuvTq/u4p1D+IxF+djQM0Lg8QSBwGoja6RbCIA6rpxflr5DfuZTRdhECOd0
+         lwNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
-         :content-transfer-encoding;
-        bh=rvpMkL8rwQeoEo+SMzO+GF3s7pNzolh8BqnzxKkFoo4=;
-        b=pEW2YMipNJ3rxDF63ZO53YeXw1Hl9IsQfg9kw25XxzUzbCgAcqL+kdjNtrJ7fdNAk6
-         EiBdxnHxy33u2o+3DHwrT8F9UrkMT8DiCsub5UzxfXvGvqi6wI2k3PnAo9RlTG2W8xIT
-         751namQNygytSGLeo7eNKfedzHD0yqHMidfOCc6AO6g5nnpa5gh3My7A9ONUOx5g1Br9
-         sV5flv64pal46BUt1DiYpod87s6Lt/r2R2gzMbTZey2gpET0zxJevFUFcGKrlPkwyyKR
-         DwkM+Z4RH1foECx7Q+GxW87ED4VAxYcgTFuUP2KkuPz3UKPXNVJp9rlLpOGXJe3z++Ol
-         NX7w==
-X-Gm-Message-State: AJIora8K9VSbgJ93nyVjRwS6CKm0nZQwHB+arn+dRJoCazl924i8Dv5F
-	oeGW5u0VqQmiCZKsgQP/+cLlvj28Rt6exQ==
-X-Google-Smtp-Source: AGRyM1tTn7DtmPOMMB8Ftu3ZrQuStfkpwldPqX63M2wVWQqfl+bhBR3Ly0in/NV3wLfdHb+lrvQP0g==
-X-Received: by 2002:ac2:489c:0:b0:47f:6c54:7c56 with SMTP id x28-20020ac2489c000000b0047f6c547c56mr18196383lfc.529.1656951110018;
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+         :references:mime-version:content-transfer-encoding;
+        bh=33SMaLh1eoDBAxmhXTjcVQWnyDJ3mzNy1PP5WaC9dV8=;
+        b=a+pVJVOgSp9PuptKYuP7qQ+UijpXE7pookouiWuAxL4Lw24V33tz7yIqlgzdqOvCiU
+         /KBiWF0jIqEfMYwewK7gu4c/dKu1UBfG+RAv0IxH7G6tpZOdNESthVRJjKQlZZxf4s0i
+         g1neHGpLtVc9A0ijpAXTTKHoJIvUVFTQxUmT5+XnrFiV+zcueAMCCdGUs9x9hoTqchKo
+         9DI/vZtDqbXgwxSWGmTbv21w2owZhWDr0SwOmeb98/ZEgLiBXPRkQwy6ngMDaFG0bnsD
+         DQ81XYYyBGcJjjPpTXojpql0quIV0czBxSKfoN5siCntIXQstZz34qoZrVVuX5xf37zc
+         qJZQ==
+X-Gm-Message-State: AJIora+0ExrNpm2CBgadIgPQPmnsRsx4xaRIgl1+OMscuOGTdk3hgLL8
+	k/gTIVTZ+wGoH28IXrXqIlonmA==
+X-Google-Smtp-Source: AGRyM1tME+0Mf2I5nShZjoogNnmb77dv/j/FemxX3GyQsTed1mGiCD2xsSlfShkpWOGQKuQxOnKESQ==
+X-Received: by 2002:a05:6512:3b9d:b0:47f:7712:3ece with SMTP id g29-20020a0565123b9d00b0047f77123ecemr18483411lfv.127.1656951110999;
         Mon, 04 Jul 2022 09:11:50 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id bj16-20020a2eaa90000000b0025d254180d7sm381273ljb.113.2022.07.04.09.11.49
+        by smtp.gmail.com with ESMTPSA id bj16-20020a2eaa90000000b0025d254180d7sm381273ljb.113.2022.07.04.09.11.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 04 Jul 2022 09:11:49 -0700 (PDT)
+        Mon, 04 Jul 2022 09:11:50 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -75,16 +75,18 @@ Cc: Stephen Boyd <swboyd@chromium.org>,
 	freedreno@lists.freedesktop.org,
 	Kishon Vijay Abraham I <kishon@ti.com>,
 	Vinod Koul <vkoul@kernel.org>,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v3 0/3] drm/msm/hdmi: turn MSM8996 HDMI PHY into OF clock provider
-Date: Mon,  4 Jul 2022 19:11:45 +0300
-Message-Id: <20220704161148.814510-1-dmitry.baryshkov@linaro.org>
+	linux-phy@lists.infradead.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v3 1/3] dt-bindings: phy: qcom,hdmi-phy-qmp: add clock-cells and XO clock
+Date: Mon,  4 Jul 2022 19:11:46 +0300
+Message-Id: <20220704161148.814510-2-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220704161148.814510-1-dmitry.baryshkov@linaro.org>
+References: <20220704161148.814510-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220704_091154_240095_59961CC3 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220704_091156_522560_73B18AC8 
+X-CRM114-Status: GOOD (  11.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,36 +103,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On MSM8996 the HDMI PHY is the QMP PHY, it provides an HDMI PLL clock
-used by the MMCC. Add support for providing this clock to the OF
-framework by registerding the clock provider and adding #clock-cells
-property to the DT node.
+As the QMP HDMI PHY is a clock provider, add constant #clock-cells
+property. For the compatibility with older DTs the property is not
+marked as required. Also add the XO clock to the list of the clocks used
+by the driver.
 
-The dt-bindings from this series depends on changes from [1] (part of
-linux-next, but not of the msm-next yet).
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ .../bindings/phy/qcom,hdmi-phy-qmp.yaml           | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
 
-[1]: https://patchwork.freedesktop.org/series/104836/
-
-Changes since v2:
-- Added minItems: 2 to clock-names property (Rob)
-- Explicitly mentioned dependencies
-
-Changes since v1:
-- Also handle the xo clock (include it into the dtsi, use parent_data
-  instead of parent_names). The patches were changed, so I didn't pick
-  up the R-b tags.
-
-Dmitry Baryshkov (3):
-  dt-bindings: phy: qcom,hdmi-phy-qmp: add clock-cells and XO clock
-  drm/msm/hdmi: make hdmi_phy_8996 OF clk provider
-  arm64: dts: qcom: msm8996: add #clock-cells and XO clock to the HDMI
-    PHY node
-
- .../bindings/phy/qcom,hdmi-phy-qmp.yaml       | 15 ++++++++---
- arch/arm64/boot/dts/qcom/msm8996.dtsi         |  8 ++++--
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c      | 25 +++++++++++--------
- 3 files changed, 32 insertions(+), 16 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+index eea2e02678ed..83fe4b39b56f 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+@@ -28,12 +28,15 @@ properties:
+       - const: hdmi_phy
+ 
+   clocks:
+-    maxItems: 2
++    minItems: 2
++    maxItems: 3
+ 
+   clock-names:
++    minItems: 2
+     items:
+       - const: iface
+       - const: ref
++      - const: xo
+ 
+   power-domains:
+     maxItems: 1
+@@ -44,6 +47,9 @@ properties:
+   vddio-supply:
+     description: phandle to VDD I/O supply regulator
+ 
++  '#clock-cells':
++    const: 0
++
+   '#phy-cells':
+     const: 0
+ 
+@@ -75,9 +81,12 @@ examples:
+                   "hdmi_phy";
+ 
+       clocks = <&mmcc 116>,
+-               <&gcc 214>;
++               <&gcc 214>,
++               <&xo_board>;
+       clock-names = "iface",
+-                    "ref";
++                    "ref",
++                    "xo";
++      #clock-cells = <0>;
+       #phy-cells = <0>;
+ 
+       vddio-supply = <&vreg_l12a_1p8>;
 -- 
 2.35.1
 
