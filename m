@@ -4,86 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BC1DC433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 11:56:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F2E0C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 11:58:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3cHpurhTs62jr2rcnz+6HFrv4l9lmd7gpwFIAwoeL9Y=; b=H7RaH+nyBT8zmg
-	ptyHOrAmaQOx7oocPPJqdahVJydTU4pLUY2f99EzlGtnD8HyHSHNDw4ywe2qmf1xilB8DxASZmCgn
-	hw9YdPikiruGLNv/EcvXGfRXVUVF+mAz+AusanEUfBuCR4XNA9kmkP9E2lF7YZX+jtIc2rTkZkGK6
-	yp7Vfijk6O+oNJ01kNXxCsH4x77tGHRHhnR9Yl3KABHsDc5DyRr7N+fcdu1UWjYHrLG/Q5gkNjzqZ
-	cuBRzrUDHGY0ckIDz8qogdl1jTgQSpM5/oBU+z2tGaeFwBBLaskB0ntlchLn4hrb9Os/9+nUtpKig
-	S2NxE7qpA8eaiskCvmsw==;
+	List-Owner; bh=TVcSYsqtsbtujleSAZBvRScsHWzU7YLxrHX1OmfKmEE=; b=ebcYNRU5etQrMa
+	1FuGdfGpjevnsGY6guLy5A7ljo/NmTgrIslMt15nBgGW/4FJ6+fz+cCIzHbQ8iqX80qTD/ic5MSra
+	rH9OyT2Qee0zEFTIcQCxedRd8Iir43qd35I1hi3FWa/EyD/9rcB4z7nuMLl6IMZ/lEeRLYJKJcarA
+	+OKRTN+xV5C2MWeCl2kRFuazAtTLWixZtbCRdIMvYocmqARFfjlXSZZan0Mt7w1UVLEFDuKUdF7P8
+	V4YLz3biAdOAsD4IqaqpBLgCgX8Zd9i+m1chEdFXu/Dfq9QkFP8EwxbHRdSco8s/laYxkmS/NARVY
+	vJ/VKVm0x0lNI2ksGTbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8hAW-00HYkB-RY; Tue, 05 Jul 2022 11:56:40 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1o8hCB-00HZVT-H8; Tue, 05 Jul 2022 11:58:23 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8hAT-00HYh9-Dc
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 11:56:38 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id i17so9432302ljj.12
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 04:56:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=Vsyz7Rlb53JTlbHvnnvdRFpkzvwYidG5knYyvTWU2J4=;
-        b=J6Xn7PwhlmRL7Kr9Bf4WitjD0eaEp+S7R2w8kXZs6D9tSVlKBV8mGj12PFb/afjI7P
-         JgcoIl3VgyhipdKeKvV1sIo5+Dks/B7z9qOLzwx7uFR0wEO04pZ53kK/hBAt4XGI6hME
-         sMojGdcXlpLpIJ1OXj8XizfCfLxDv8ALSt4PfnGQOdCVRfoOcV1ThEpIx/Bs/7eTPbBY
-         XpRIam2VUHXzNalRQvG3bOfx/+Im167jX2UDMIX1gFPSwtBIKB8IuZ4cG+KIA+jP6I4z
-         BJ/M93qt1RiKaeG9C5vbSkTqiT/cguYMKFMl5q0AWvaWvhLpGOgEm1r24VnOzX9DNK1l
-         3gdw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=Vsyz7Rlb53JTlbHvnnvdRFpkzvwYidG5knYyvTWU2J4=;
-        b=z2K4X58MkcJ2IVlmv+rkwuA082lmUy0GC51ofrlvgR95N6NYaQwTwyZbTej0JMklBK
-         AWWNCYRUs3qMKz3yyzxE1buERtR6B+o70YYvapkkCIpU06m3lF4oXBaFRCD5hv7MQGIz
-         pg6K9GYpAWa3nyc/G2CNOuvpmFrvQ4BHQtbomMjkAdp+6Mvkjr7LNoe77RwhZjpeqGyV
-         yTbJQS4F28evEExE5CbeFEj/4NYzW0MEMP+5sFkJX/xvIXLiwMa5t9ebDyKZMtevV1uB
-         +ZTr9GPDOnPfG5oKfJqt0wfd2ct9vqZe0D8tDOf3GSyfJG/0L4jzJfsKErakj2i1Wzc2
-         Uy9w==
-X-Gm-Message-State: AJIora+QKUoxBQN9/2on9Oj6hAWPt86IOaY6o9G6NTVhJy7xzGrn5lyX
-	LNvUhAiGZi4JIOoUyd+uKBesaQ==
-X-Google-Smtp-Source: AGRyM1s8dtYMfQ0WmJojokE+mPEUDR+r4cp5dqxRDFw4fkhs4A6Iya7P4qMDZAfLM9Dp/WYdyBx2Ug==
-X-Received: by 2002:a2e:90f:0:b0:25d:309e:422f with SMTP id 15-20020a2e090f000000b0025d309e422fmr2096329ljj.179.1657022193599;
-        Tue, 05 Jul 2022 04:56:33 -0700 (PDT)
-Received: from [192.168.1.52] ([84.20.121.239])
-        by smtp.gmail.com with ESMTPSA id w16-20020a05651234d000b004815305854bsm2768554lfr.61.2022.07.05.04.56.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Jul 2022 04:56:33 -0700 (PDT)
-Message-ID: <963917cf-0f9d-600f-564e-9e687270b1af@linaro.org>
-Date: Tue, 5 Jul 2022 13:56:32 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH 17/43] dt-bindings: phy: qcom,qmp-pcie: add missing child
- node schema
-Content-Language: en-US
-To: Johan Hovold <johan@kernel.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+	id 1o8hC8-00HZTn-Pw
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 11:58:22 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 0DE4261727;
+	Tue,  5 Jul 2022 11:58:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C823CC341C7;
+	Tue,  5 Jul 2022 11:58:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1657022299;
+	bh=lCXFzDOu/arhn1E7qbcpYeWsTGXEZM7HRnIjvJuXRQo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=ItEhj+54jubFtuMGB8gFICe9Al+h8/22un5trpf08ioiYyvwAhcQzH8J88lV0U0Wk
+	 3kjJoLEbZ999TJifjmeJ2AwV3LE8AGTm5SW8a0VbWS/jRSxWRcs0MgbfYv6I3JUbY5
+	 oWlVK3xxkK0cuX9vrewGjpSUrtKS6NUGwyo5lmGSfYP/Etsm65PW47EAH8KnNNIBAK
+	 mbszHYkTs/pjmhQSLifETgm9myld2cOlwWOz7opBpUtW9M9iin29/e2On84my9D0dS
+	 iaLLBkRA28pyUz2XF0HEHioDPv/P3pqY+j6u2i3yZtvqyM5Gz223bCAimMTq9WM22o
+	 wp5tytzOK0tIg==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan@kernel.org>)
+	id 1o8hC7-000679-Jh; Tue, 05 Jul 2022 13:58:20 +0200
+Date: Tue, 5 Jul 2022 13:58:19 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 38/43] phy: qcom-qmp-pcie: drop pipe clock lane suffix
+Message-ID: <YsQnW2o4eCU8PlWl@hovoldconsulting.com>
 References: <20220705094239.17174-1-johan+linaro@kernel.org>
- <20220705094239.17174-18-johan+linaro@kernel.org>
- <4bc79a1c-66b1-225d-5026-ddf3e6f7d22c@linaro.org>
- <YsQlzr6nyvz761Kz@hovoldconsulting.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <YsQlzr6nyvz761Kz@hovoldconsulting.com>
+ <20220705094239.17174-39-johan+linaro@kernel.org>
+ <dcff330c-92ec-2302-8e2a-4ac124e72942@linaro.org>
+ <76508b56-6733-b65c-d81c-31ac173780c0@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <76508b56-6733-b65c-d81c-31ac173780c0@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_045637_511655_CBEB9488 
-X-CRM114-Status: GOOD (  15.56  )
+X-CRM114-CacheID: sfid-20220705_045820_942756_5FCAC78A 
+X-CRM114-Status: GOOD (  22.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,81 +85,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/07/2022 13:51, Johan Hovold wrote:
-> On Tue, Jul 05, 2022 at 12:18:37PM +0200, Krzysztof Kozlowski wrote:
->> On 05/07/2022 11:42, Johan Hovold wrote:
->>> Add the missing the description of the PHY-provider child node which was
->>> ignored when converting to DT schema.
->>>
->>> Also fix up the incorrect description that claimed that one child node
->>> per lane was required.
->>>
->>> Fixes: ccf51c1cedfd ("dt-bindings: phy: qcom,qmp: Convert QMP PHY bindings to yaml")
->>> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
->>> ---
->>>  .../bindings/phy/qcom,qmp-pcie-phy.yaml       | 88 ++++++++++++++++++-
->>>  1 file changed, 85 insertions(+), 3 deletions(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
->>> index ff1577f68a00..5a1ebf874559 100644
->>> --- a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
->>> +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
->>> @@ -69,9 +69,37 @@ properties:
-> 
->>> +  - if:
->>> +      properties:
->>> +        compatible:
->>> +          contains:
->>> +            enum:
->>> +              - qcom,sm8250-qmp-gen3x2-pcie-phy
->>> +              - qcom,sm8250-qmp-modem-pcie-phy
->>> +              - qcom,sm8450-qmp-gen4x2-pcie-phy
->>> +    then:
->>> +      patternProperties:
->>> +        "^phy@[0-9a-f]+$":
->>> +          properties:
->>> +            reg:
->>> +              items:
->>> +                - description: TX lane 1
->>> +                - description: RX lane 1
->>> +                - description: PCS
->>> +                - description: TX lane 2
->>> +                - description: RX lane 2
->>> +                - description: PCS_MISC
->>> +    else:
->>> +      patternProperties:
->>> +        "^phy@[0-9a-f]+$":
->>> +          properties:
->>> +            reg:
->>> +              minItems: 3
->>> +              maxItems: 4
->>> +              items:
->>> +                - description: TX
->>> +                - description: RX
->>> +                - description: PCS
->>> +                - description: PCS_MISC
->>> +      if:
->>
->> Do not include if within other if. Just split the entire section to its
->> own if:.
-> 
-> That sounds like it would just obfuscate the logic. The else clause
-> specified 3-4 registers and the nested if determines which compatibles
-> use which by further narrowing the range.
-> 
-> If you move it out to the else: this would be really hard understand and
-> verify.
+On Tue, Jul 05, 2022 at 02:13:04PM +0300, Dmitry Baryshkov wrote:
+> On 05/07/2022 13:20, Krzysztof Kozlowski wrote:
+> > On 05/07/2022 11:42, Johan Hovold wrote:
+> >> The pipe clock is defined in the "lane" node so there's no need to keep
+> >> adding a redundant lane-number suffix to the clock name.
+> >>
+> >> Drop the lane suffix from the pipe clock name, but continue supporting
+> >> the legacy name as a fall back.
+> >>
+> >> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> >> ---
+> >>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 8 ++++++--
+> >>   1 file changed, 6 insertions(+), 2 deletions(-)
+> >>
+> >> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> >> index 385ea3d8de08..254ad25591b9 100644
+> >> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> >> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> >> @@ -2210,8 +2210,12 @@ int qcom_qmp_phy_pcie_create(struct device *dev, struct device_node *np, int id,
+> >>   	if (!qphy->pcs_misc)
+> >>   		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
+> >>   
+> >> -	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
+> >> -	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
+> >> +	qphy->pipe_clk = devm_get_clk_from_child(dev, np, "pipe");
+> > 
+> > Just get first clock and no need for handling any deprecation.
 
-Every bindings are expected to do that way and most of them are doing
-it: define broad constraints in properties:, then define strict
-constraints per each variant. Easy to follow code. This binding is not
-particularly special to make it different than other ones. Doing
-semi-strict constraints in if: and then additional constrain in nested
-if: is not easy to understand and verify.
+I still want to deprecate the current name as it makes no sense and
+risks introducing inconsistencies when adding new resources (e.g. should
+they also get a bogus suffix).
 
+> If I got it correctly, passing NULL instead of the name would do the trick.
 
-Best regards,
-Krzysztof
+Ah, thanks for spotting that. I feared this would require adding a host
+of new devres wrappers otherwise.
+
+Would still be needed for the upcoming second pipediv2 clock though...
+
+Johan
 
 -- 
 linux-phy mailing list
