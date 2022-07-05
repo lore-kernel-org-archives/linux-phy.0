@@ -4,68 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC815C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:37:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2BE0C43334
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:39:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XXX/v83hKnyz8aB2RlQCDN6Do733KX9dEr+ali+KP98=; b=SJ72HJuseBSKNF
-	Hoa0Rdv0imQryUiGhEKw/zA8qtQhXUFuFEVgXKTw4sRWPEZmMioviEpUihNBzqBSieR7XuYTiRckP
-	aarGnvmDKrZHkqtVRu5sKKZ6CztaVxm5cJGF51an5F38FagvXTyJ2oMoCrCpqnnA0NmkSi733hBHI
-	QX50t6IodrjIUBaIk7oKJBhUmbtszb3h8zLleURCnekkhuOMSaiYbhdSFrQdhy8NnAR/sKqrOisQ8
-	8fYhldNT17vzJ+At1H0mBhORkjSGLFdu3tqGELroj5BpGzOxgGW8IxSravHt+E+WNO6Wlry4UF2sq
-	xVxO+z12enXnjVZLkwvQ==;
+	List-Owner; bh=PPpVJLl94VxmD/R3DejGHNYnAwxK8oaoODsGNG4lcTg=; b=F27htlOiOIh6Lp
+	+kcwaz1VtyF12+Tn+OKFOmh7gnzFRWcQJQWpEIvxd4FOMGjcc/JJ0j8tNjzh7NQusJ1+mJ1fyaspH
+	3f6UwOSg5eHERuNRXrc+iNUC2wjCosriKdwhpUSfyqANXEpNJVS+fLylqU9r2Qpzw0MQVsD6vI3jS
+	/J9uAoHCZFtD2HpMZTe3JGUexQvVsWLOo7JgXWMOT+7n6CvJBk8Se7I9MgLFzVjtLl2UltGhIGELw
+	uXO3fCLpZO8pFKN9X2HEa27Mp2NpL68owYTRxCvKIZFP18MgFwJS5b5S19lVuzTnUr9SkFYMjB7ig
+	+zyWyKD9G/KOmA4rx2+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8ezj-00GmiP-Rm; Tue, 05 Jul 2022 09:37:23 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1o8f1O-00Gne3-6Y; Tue, 05 Jul 2022 09:39:06 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8etU-00Gj16-KH
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:30:58 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id t25so19552240lfg.7
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:30:53 -0700 (PDT)
+	id 1o8evp-00GkPI-IL
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:33:23 +0000
+Received: by mail-lf1-x131.google.com with SMTP id y16so19529776lfb.9
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:33:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=25RFioIXsDd1V/OTuFJDIoijZiLPJ85nAmDq5oM1rXE=;
-        b=RjDqVyyHnHJTKwb1zAXIYHD8G47BhHa9faCZRb8LhoO8l2Acfm3WfCLa3S3YQrnqxr
-         7rJBu9AfOHhMjg9Tg5TXqqEYYQct2sIZR3hiAFEfuG3MNyoXyb4qH6Uj25eYz++znS8D
-         FDj+vYEVidM8FlxN1Z+a7FS9hoXSohWFhobUGuNe+yNpTve4kf8DP+YK6J8k7VMIdfgM
-         dOL7rE6gkk5ZzGN75LJF04FdntRQt7Vj1NAEcFpl/6y3wfR7xfplZUVpBAKdzAR+1Nhr
-         7WpZZIC6bzYrxOsB2sKc9T4UL6/HSchnysI4fJIq962gD1Et6lWLJiycEGq/iEKM6nE8
-         foRg==
+        bh=yzfP/lbnZ03H0j9vVtb9A0tPicYwAQrUmnwfp/loKHw=;
+        b=ZOIMt23f6Ag/+weSlpQFCEQcsu2IFtieWj3iKBkDh1rPGdNLQvdvdutGW5RHTRhDIB
+         LwnzP7O64wgm+ITODYjdvsDzOqa/Ol42WVzWloMSvoKOaUNZhSCZcMfrF5Dvs8x+bcgN
+         OkKOn117XIFKF2TmmvLDccTeGH3VYfZ49vqwtvpsREbccTdt+e4aRajVdIzIapj71fcW
+         m9fZ2pr1axyzjOo5Qfjv1mC14GCh3WXYNP0pxrEdr6jautoFW785zp5hc3xnGX2isPXw
+         RfElRpgCpWu1pfl6sKQhIyrNW1lrW4zZUdtfO9vBeXgusfGFlIFG1SesMypypsDvl8xf
+         CQyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=25RFioIXsDd1V/OTuFJDIoijZiLPJ85nAmDq5oM1rXE=;
-        b=s0Q+YoHRuBVG3Xb5Ojct4Kbtw/cZXoeQlWials1t4T67T0fLJBcIzb/77CJ4dRdkx5
-         +DL1/XvlibGk+5Y0tUWVd90vFBRRA8io+0GwqME2cVEI3+VpmkVUxhTMRGSC9ulR4mQd
-         xR9+5yqw0+zwc4v+LrofMhQNZG719ZOvJRMwr4yY6+vEJ9HMJXdqui1RHaaRL4PFjy6X
-         irPhGrBVpijEeb4qE4RTx6doDuo8iHq/+WfPcFY5GAbQi0hb6S/ACXwzPAoGc8AtP1Dv
-         1L6L417DdA0murWpiyRF/BcG5bRtHiezoiZr/S7gpSp3vAJuiJwDT7psuD/rvenqj/PP
-         khCw==
-X-Gm-Message-State: AJIora/yOoWi02FmGKvWwO4FnB3wcxy1kfj/k+u0qeZaWtuM+QQXE8G5
-	Q9/w+ooqadNuo8JUGmNI2WLY0A==
-X-Google-Smtp-Source: AGRyM1tzHaMhD9AcvedsJKlqa3XUgEpYZiDx0EQv97JGtZN0QNuEQBVtHzNKqU74KximQc03N/+4ZQ==
-X-Received: by 2002:a05:6512:261f:b0:480:fd2b:23c8 with SMTP id bt31-20020a056512261f00b00480fd2b23c8mr22443229lfb.434.1657013452562;
-        Tue, 05 Jul 2022 02:30:52 -0700 (PDT)
+        bh=yzfP/lbnZ03H0j9vVtb9A0tPicYwAQrUmnwfp/loKHw=;
+        b=ylLWVt5P6ATmtXYTeCQD0lmvZe+VdPcjxzqaCkkZqF7lvxWPszyrDIGNOhUCrYYC5b
+         AYpsSAksOcLiN1KhaD8ODSW2PBq7XQ6fG1+6+BpZhI1bvttj5zYi2SlrARqMpRxOhIGT
+         8/c7gaGwSBtNSu6bwfsR9HTuDV7teyqwZOLUVVpGVU2/0xHq+AYJlDpYw9Ygu5jX1Qez
+         W6gI47cVEdEq5BXI+YEW8WPbFJDT7O2PYyuuPqiU9DIlrAfI1CYjgMvqMzQvuUQ7qrlq
+         5zDBYXtBChWzI50e7k0IKzWPyrbKrlpnpioLxxYa+HZUwHy+SyC58Fa/3PZk9G+iNGA2
+         DUDQ==
+X-Gm-Message-State: AJIora/RnTL8vEmMZl82vg0b+vD4F/M4M/siPtLG+WFCQkv58LRolB7s
+	Qg20I7reXkGkYZMHby8Bqs8O1Q==
+X-Google-Smtp-Source: AGRyM1vxnkUSDiWxBI+uKP8agxowY1mJtD6LNtIkhsrjovzczkpcL/6rBXczfAQWWPAnn59xwqEgVw==
+X-Received: by 2002:a05:6512:529:b0:483:535b:dc28 with SMTP id o9-20020a056512052900b00483535bdc28mr1946916lfc.540.1657013596716;
+        Tue, 05 Jul 2022 02:33:16 -0700 (PDT)
 Received: from [192.168.1.52] ([84.20.121.239])
-        by smtp.gmail.com with ESMTPSA id d17-20020a0565123d1100b0047f7a5e0c23sm5592896lfv.275.2022.07.05.02.30.51
+        by smtp.gmail.com with ESMTPSA id z7-20020a2e3507000000b0025a7f1065fdsm5250994ljz.107.2022.07.05.02.33.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Jul 2022 02:30:52 -0700 (PDT)
-Message-ID: <d57a09cc-ed11-44d9-f2b3-55bc461f16de@linaro.org>
-Date: Tue, 5 Jul 2022 11:30:50 +0200
+        Tue, 05 Jul 2022 02:33:16 -0700 (PDT)
+Message-ID: <f025408a-822d-328b-2c45-206729ebbd91@linaro.org>
+Date: Tue, 5 Jul 2022 11:33:15 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.11.0
-Subject: Re: [PATCH 1/3] phy: samsung-ufs: convert phy clk usage to clk_bulk
- API
+Subject: Re: [PATCH 2/3] phy: samsung-ufs: ufs: change phy on/off control
 Content-Language: en-US
 To: Chanho Park <chanho61.park@samsung.com>,
  Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
@@ -75,13 +74,13 @@ To: Chanho Park <chanho61.park@samsung.com>,
 Cc: linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
 References: <20220705065440.117864-1-chanho61.park@samsung.com>
- <CGME20220705065722epcas2p2973795cc88ee436480abcb48435059a8@epcas2p2.samsung.com>
- <20220705065440.117864-2-chanho61.park@samsung.com>
+ <CGME20220705065722epcas2p1e93a8511b906d5e111bff48a312d0603@epcas2p1.samsung.com>
+ <20220705065440.117864-3-chanho61.park@samsung.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220705065440.117864-2-chanho61.park@samsung.com>
+In-Reply-To: <20220705065440.117864-3-chanho61.park@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_023056_746175_3FCF2067 
-X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-CacheID: sfid-20220705_023321_692679_32B859AF 
+X-CRM114-Status: UNSURE (   7.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,14 +99,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 05/07/2022 08:54, Chanho Park wrote:
-> Instead of using separated clock manipulation, this converts the phy
-> clock usage to be clk_bulk APIs. By using this, we can completely
-> remove has_symbol_clk check and symbol clk variables.
-> Furthermore, clk_get should be moved to probe because there is no need
-> to get them in the phy_init callback.
+> The sequence of controlling ufs phy block should be below:
 > 
-> Signed-off-by: Chanho Park <chanho61.park@samsung.com>
+> 1) Power On
+>  - Turn off pmu isolation
+>  - Clock enable
+> 2) Power Off
+>  - Clock disable
+>  - Turn on pmu isolation
+> 
 
+Makes sense.
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
