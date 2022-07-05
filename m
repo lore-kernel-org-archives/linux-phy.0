@@ -4,86 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A52BC433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:23:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48696C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:45:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GluCwfJjtpDx0BkFMFjZ/Hqvqlq85GnKe6K3yC5RcUg=; b=XhVF+ns0jjCyQB
-	7RiDKvuNMBHYOhEy1f5rxCJQferG2AG4LR7n1e4irsqUFPVVXPIc992mhZd8JleqB/kEWaU9G1XSk
-	UizS6KfWRULcMgriPw1S2wsv3XT6x1X//8MJySNBGQtmyNNhb4lm9nTRnun1cFWZ8NaBcgFry040z
-	eQywzykBiP4y8yg6yAR1QrOhj4fAdc5YtnbrW4rawx29VyyW8ezhfQw6YO5oig8VlE/hG3JCkB0uC
-	l50YCDMUZDif85K0slmZn2smgK0N1wKp71OMQv/g3VL0YgIzCAaqpipHSm/bzFoBIvsLAS25aCwz1
-	tslThJjJkkk+MYGMJACQ==;
+	List-Owner; bh=IThsmm6vOZzNyCYyFfFG4g2UvX7Pu4DNGXZmARQgXTI=; b=EXw4qlrA1NjJfe
+	4ShiOFuerKDREpLlXTLBHyhpr5BP5hD8wm3VLyXqgrWM3XmVnGTAIk2L8A0RJoWUesixLdYv2Gt17
+	1XtrQ4hW8m0yIxQJXML2Kx2F4ruJAngeBL2vQwyT1l69NUCYcsfL4U5vSM2wj4ilLA7rYl/u5bZpX
+	0visWWuJ56QeSGZXLv6c2hIos0EWf2Cu06VpSm62OTJn1Qdvhj47ZZcIc8MhDSf6maBKTglhtzsqC
+	VMD0b9w/phQiysR+ealeccreiE2Z4EimTwtwkGZ3IPjfewixretVWu1V78OkZyDbdsPFxUxQBiW8P
+	GH3Y+gcsoZZ81BI8bvjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fiU-00H8os-TN; Tue, 05 Jul 2022 10:23:38 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1o8g3w-00HFWb-Io; Tue, 05 Jul 2022 10:45:48 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fiR-00H8nj-Md
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 10:23:36 +0000
-Received: by mail-lf1-x130.google.com with SMTP id i18so19740145lfu.8
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 03:23:35 -0700 (PDT)
+	id 1o8f5Y-00GqlF-AC
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:43:25 +0000
+Received: by mail-lf1-x129.google.com with SMTP id e12so19604204lfr.6
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:43:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=D5siEQlI9XeniTKofv/2Ej6WMzqEAvwWpsCPDQ5Kx7k=;
-        b=RGrEAp7zvLo7CTBtpOOl5wiObpP8CTfkfXlUAXMlhsoqFhctrsSeGyQvtum9CIMClQ
-         T2ionu2utuPpEtPp8pEJ1SrdUwt2orU2kEVDrs+3cuzWyq/aWS8d8HJ1BODLE3gLG/HQ
-         RBUoCV972pvReTzlL93EsOl9qCj7Q0tfHPFaOGFNAc11JkQgLqlPVzTqZU0rPwrcPWPM
-         zqah7tRBSuz0NI3lQ0TFfXPoX1D5qN8bfxwKApd5EefSfCQaNvTQxv8fRbZDoiTJmfhX
-         MqhY2392OhqhTie0d3Dt2sfN2AmOf8QjBFhWFMU/jXuVt2SwDcxGluCbmyzT1H/m4MVZ
-         aNlQ==
+        h=from:to:cc:subject:date:message-id:in-reply-to:references
+         :mime-version:content-transfer-encoding;
+        bh=01bj+k2iK46i8ygWClSrCFjTLx488NH70cSKsBIKTsg=;
+        b=EBgIy95oI1YlRgvATQfJpS80cR7EKsjCNm4gaabQMdE36oQ9UB4d7CLRx0DUJcgtZR
+         9sst1JhY5f10oCLZxtduKw5h5XQsAuREy/710ch6VcAzhx0Z2Poy55Zly5n3lKc0Yc6J
+         dI21tdKCkbfGHjVT53SzHgoqD8QuP1bswransbJNb6dKvxqPgM9mV10EHrYx8EWNd9jd
+         G8cPRINN7VaKqCDffeao7LkChyQ+/FQCmuNgO3q0EaSmMLIXfGRr/+Iy1s1bASStqP7v
+         SOCgW26WRGL7s8rqCkmqwp7nvfOWL8FE8TAsAjKtswA2gmohvA4VO+DvoAnjiFj1DyxY
+         0Bvw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=D5siEQlI9XeniTKofv/2Ej6WMzqEAvwWpsCPDQ5Kx7k=;
-        b=COKA+jTVN7baSNRcZZNDmyZ3io4pGrpbRObbzhMJVm+CgjmFytkEeAC77XgUydhFRe
-         sj6viYOAXQzjNozBuR0veSqt3aWkPVgSGjSv4RZwjqL61Xq8qscn+xmxsP+bYEE/hmhl
-         5HCK8GJVpVh6bpeKTi2kxvJaZhD6omjsSanbyIf6p4DDz821LMZg17CJiI0gbozG9+xd
-         B0NkJBzQOikL0Jyp1JOppnZSfKx2WweK5Nyesbgd0UxrzfcEDkCRzJ6UXuPMbeTkAL3I
-         KDS1Y5lRg9HdR+NNhO769JR3oud994CSTCOcg7Bq/cJneOqqXc8U4NXv2xjRxGCROZvi
-         TeGQ==
-X-Gm-Message-State: AJIora+o3QrE2PpguOpDtkoXqWuU/Dtq7tejBD5LY2izT/crizW3WrVv
-	I9G9MD4rgHB329n84vEvwaO5aw==
-X-Google-Smtp-Source: AGRyM1u/5ekv4E6MjvZ4URSOmp1X5JoJIqCjqdBiA5tEuuxuPaVwWaOw4MHCavNj71iNDl2hB3U8ng==
-X-Received: by 2002:a05:6512:260e:b0:47d:ae43:62b3 with SMTP id bt14-20020a056512260e00b0047dae4362b3mr23834973lfb.77.1657016613842;
-        Tue, 05 Jul 2022 03:23:33 -0700 (PDT)
-Received: from [192.168.1.52] ([84.20.121.239])
-        by smtp.gmail.com with ESMTPSA id s6-20020a056512214600b0047b0f2d7650sm5622474lfr.271.2022.07.05.03.23.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Jul 2022 03:23:33 -0700 (PDT)
-Message-ID: <b1a14a8d-489c-6871-332d-230811baace3@linaro.org>
-Date: Tue, 5 Jul 2022 12:23:32 +0200
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+         :references:mime-version:content-transfer-encoding;
+        bh=01bj+k2iK46i8ygWClSrCFjTLx488NH70cSKsBIKTsg=;
+        b=sP9L5LCOeWS9WtVd1/+AJZ0hffT3DNoCXfGszw/nCbsVyED70BjkLRAsnb0Qc8GEnK
+         LAa6IMby8KSAy4IeLLHCxjBX7rJCmw6Cveu1ma69eSIQgh+qOk6Fvd0b50lsMPBuoRC4
+         b4bazzhDMqVkgftW36ssoeV3p8f3HSIwer5oTfLVQg43WGr6GwoglJ6pfGrvr5uukMpx
+         3FKVq3LcUHklYdiIY99F8H/zL6s9SqMNuer28MZYBBahg/JYOUIYQfBDWeKn+U/zFun3
+         MRUeEd1XypcQmU9HefyUjMBdCSaFudhMz1ZmMToWBK4fOuo+OXTQVI13dKd4oGkpCLSN
+         FE8w==
+X-Gm-Message-State: AJIora8HHy5bY+PuW1yt97WbNHReUJnDaNXL0uDyGpWzWoPgXOsMZ1aM
+	oKSG0ZRdHwHLgn7wxaZqRyYgng==
+X-Google-Smtp-Source: AGRyM1t3YCQvDbMe1JwFFlmHtpCo9dv5TH+j6hW5E21eFvkk5xFInDRir/IU9QDicNR/uPGC213yAw==
+X-Received: by 2002:a05:6512:128f:b0:480:fd23:6647 with SMTP id u15-20020a056512128f00b00480fd236647mr22510026lfs.136.1657014202606;
+        Tue, 05 Jul 2022 02:43:22 -0700 (PDT)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id f7-20020a056512360700b00482f206b087sm491683lfs.39.2022.07.05.02.43.21
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 05 Jul 2022 02:43:22 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v1 01/28] phy: qcom-qmp: fix the QSERDES_V5_COM_CMN_MODE register
+Date: Tue,  5 Jul 2022 12:42:53 +0300
+Message-Id: <20220705094320.1313312-2-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
+References: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH 07/43] dt-bindings: phy: qcom,msm8996-qmp-pcie: clean up
- constraints
-Content-Language: en-US
-To: Johan Hovold <johan@kernel.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20220705094239.17174-1-johan+linaro@kernel.org>
- <20220705094239.17174-8-johan+linaro@kernel.org>
- <4b1a9ded-24b1-faf1-e105-f18afef57682@linaro.org>
- <YsQQnT5ixHtSo+vk@hovoldconsulting.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <YsQQnT5ixHtSo+vk@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_032335_788165_221528E9 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20220705_024324_392465_066B8CE1 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,23 +94,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/07/2022 12:21, Johan Hovold wrote:
-> On Tue, Jul 05, 2022 at 12:09:19PM +0200, Krzysztof Kozlowski wrote:
->> On 05/07/2022 11:42, Johan Hovold wrote:
->>> Drop the compatible conditional and tighten the property constraints.
->>>
->>> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
->>
->> Squash it with previous patch. Does not make sense to add new file and a
->> patch later change it.
-> 
-> I beg to differ, for the reasons I just spelled out in my previous
-> reply.
+Change QSERDES_V5_COM_CMN_MODE to be defined to 0x1a0 rather than 0x1a4.
+The only user of this register name (sm8450_qmp_gen4x2_pcie_serdes_tbl)
+should use the 0x1a0 register, as stated in the downstream dtsi tree.
 
-So let's keep the discussion there.
+Fixes: 2c91bf6bf290 ("phy: qcom-qmp: Add SM8450 PCIe1 PHY support")
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-Best regards,
-Krzysztof
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index f4ee5884c076..581f09c71667 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -1116,7 +1116,8 @@
+ #define QSERDES_V5_COM_CORE_CLK_EN			0x174
+ #define QSERDES_V5_COM_CMN_CONFIG			0x17c
+ #define QSERDES_V5_COM_CMN_MISC1			0x19c
+-#define QSERDES_V5_COM_CMN_MODE				0x1a4
++#define QSERDES_V5_COM_CMN_MODE				0x1a0
++#define QSERDES_V5_COM_CMN_MODE_CONTD			0x1a4
+ #define QSERDES_V5_COM_VCO_DC_LEVEL_CTRL		0x1a8
+ #define QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE1_MODE0	0x1ac
+ #define QSERDES_V5_COM_BIN_VCOCAL_CMP_CODE2_MODE0	0x1b0
+-- 
+2.35.1
+
 
 -- 
 linux-phy mailing list
