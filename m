@@ -4,84 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57B61C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 07:21:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC3A0C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 07:26:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:Cc:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kqtf1Ck5qtO2BzMnHdijEkNFxNffDHnggLa0FX/TyXA=; b=3vANJYE7KghspM
-	96nN5fiUHs79+wQ0wikenXiew7peEKnZ+4qNtFXwuVaALzYCGWE0LP4FHna2lxGwrwL9wkGX9m8EM
-	z53IaGVxcnpJLU/uZdnks33vWGZfeyNf7m9bOv0GLw24bfsqm5C5VujMwI7e3n+d4p5zuJFIqbna+
-	afc7yW6shmLm1tzCHZZWPHBX84VFH09lQvUndQyKA0qdeMvFbO0i6w3Kl+Vpils2tpySxLVBTxRAc
-	KRfSKnxRfp0nC6tFCblSAdKrdg7Zpbi5IZCl3HaKs5Bv+TNP+3SIOX1i+OwuJ9QSMO1mmRD5s3ZiA
-	8hjUkRvVPZfwInv9nlZA==;
+	List-Owner; bh=Ixlo15zBbqm7J9cu5CelxYBlNc8QGUnwJvjpi2c1GfY=; b=hfhKN8uWyRExuO
+	/LUIpRSTndHz00BPQ9vQ+NH/p79/wEcDivntSuWpJ7Al5VarxqtRFCGHvyHVPfRHHtXWkqh7YC8Lo
+	IyW7BtJydJ7iPYd9zaipWylRQ9Ion2wTqPD2y0PzwXFmxxFqaHPHeXzLL1v2xgiyF1un9ws36VPBE
+	Ed2cBcnfVckuNCGFG98mdkmGXh021q5NWCHg5nOf/0Yr7eQEZwvIv8WUAHt1FlmYZUetQymfAgU2j
+	qvA2ibE1u4tihda5tum9qoAgb1Mikno60DZPJhtMlJdQ8GhFZV5jg5NBCVYTISpgkdOcWmkejwdVc
+	xgVdXmPTQQ/HK6kZKbJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8csb-00FXWQ-PJ; Tue, 05 Jul 2022 07:21:53 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1o8cwm-00FaRS-0Q; Tue, 05 Jul 2022 07:26:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8csZ-00FXMQ-Pf
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 07:21:53 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id o4so16201170wrh.3
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 00:21:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20210112.gappssmtp.com; s=20210112;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :references:cc:from:organization:in-reply-to
-         :content-transfer-encoding;
-        bh=jup5yi9H7xUYGePSxxyktmglyW6uLEzBdr9VBRZBloA=;
-        b=LzyC1BslQcQDLwEh59d9Kfgx2N20Ze+0hRqNNCPsWakeskMfJdQfZpxWmWtA34cHFT
-         xgCbDp7n8a0oIe1/vz3FeCy7qd2GKvBrFEX5HnGSTOq894MfppO6OOXFxL50ATudJ0ea
-         tH+jsB5hb0v8JAIY4Rsu5CU+G+t1QEmxZcWmjjq24GmMTpjESFqyUWsldy7IJplbglH/
-         ti0+hHwePBRCkv5Or5A+COl332Bv+lcii5owVjP+aoAZACzXkasK1qn1yTg/dQC92eow
-         oSM6DubSDEGR6PpxG6rZqbXCngI43E7+/GP1u1ILKaDV5vj7DiM7BnrlteJAEG0kTz8h
-         tOGA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:references:cc:from:organization:in-reply-to
-         :content-transfer-encoding;
-        bh=jup5yi9H7xUYGePSxxyktmglyW6uLEzBdr9VBRZBloA=;
-        b=7hkzsCt21QA5fRLpPCtD2ez3qHAU+ZLbXGvIIQ1fu+cRhv7VXB4Hvd6z3b915f+0Hy
-         /v1XjBLzT1l0P5PBfNP9ANK0bmzLvLledZztldmyCf2fD6sDSoQm/xhncpIFI+UFdocu
-         IoNxOxYTKV8V7g8yGxdm67rU8KcWFLZi9yMKcr27p6erEG6rbYWL/yTVIz7C59Tza/32
-         Y0KxxMc+TI+OKIORK01+dalnvG6nf8U4n/DNDZXmNWJTYQtfPrFVHS4iv7umzATxVDrs
-         u3WjWYJ1rKssSjWxbpOBuhY6RuBw1ZU//IpZbe9b8qeUgOXg1Ed5JvT10nG9mFwFpbj8
-         dvlA==
-X-Gm-Message-State: AJIora8MHrmTIvV1VstUgnTI3C7O2O3xhgxnyFesV78Zlqo1SdoHuxI1
-	lriNjfIaCVMyLU0Imxy025i2pA==
-X-Google-Smtp-Source: AGRyM1smRihRT50fdOIiQfU+V8EUtDDGx/W73L/08nARMlYF5jSo5SQ5+guiRsMa9ttFJ2BN1YUJJQ==
-X-Received: by 2002:a5d:598e:0:b0:21d:37df:3f2e with SMTP id n14-20020a5d598e000000b0021d37df3f2emr25254699wri.451.1657005710509;
-        Tue, 05 Jul 2022 00:21:50 -0700 (PDT)
-Received: from ?IPV6:2001:861:44c0:66c0:3c4f:78be:dc90:14f9? ([2001:861:44c0:66c0:3c4f:78be:dc90:14f9])
-        by smtp.gmail.com with ESMTPSA id r16-20020a05600c35d000b003a0375c4f73sm22157331wmq.44.2022.07.05.00.21.49
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Jul 2022 00:21:50 -0700 (PDT)
-Message-ID: <e2746084-ee88-7dc6-afd5-0d0dca4723c4@baylibre.com>
-Date: Tue, 5 Jul 2022 09:21:49 +0200
+	id 1o8cwj-00FaQh-4z
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 07:26:10 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 80D1E616E2;
+	Tue,  5 Jul 2022 07:26:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0DA5AC341C7;
+	Tue,  5 Jul 2022 07:26:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1657005967;
+	bh=2ke/GFcpKNlkf1abJKLSvHpq01nNyM6rM105EyusMAo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=vD0UG/32u10tfpK5mUHaEpKbdaZsSMrAG0z8MyitWdYIoKNOhHDh6YZqHz5nbnELi
+	 6bB0xZ57sqZJtTzEgLXxTQzJtzPi7rO5urI6IiVNe7wNjPETXJUGRqb8WL4H+HBcnu
+	 5FRoskCWb2Qtr58GAwwpSQrewL7BMIec4zEh1RB0jbll1RAAF+BKcU7UeZ0b3IxejS
+	 j3k/L622MeDjlD0CnjQPmYst5ZlCCK95RJQX4VoKuWbyV/rs+DoPDjXpU65MyFljfx
+	 cwE3qB9L4UmImykpNnecYDQhRXiMFVoqpE/fAhkLQUkbA4eqD/XIH2KWiw3dnWjzPq
+	 U0skef4+wZo6w==
+Date: Tue, 5 Jul 2022 12:56:02 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Robert Marko <robimarko@gmail.com>
+Cc: agross@kernel.org, bjorn.andersson@linaro.org, kishon@ti.com,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dmitry.baryshkov@linaro.org
+Subject: Re: [PATCH v4 1/3] phy: qcom-qmp-pcie: make pipe clock rate
+ configurable
+Message-ID: <YsPnirGLLlBdOZsL@matsya>
+References: <20220621195512.1760362-1-robimarko@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.1
-Subject: Re: [PATCH] phy: amlogic: phy-meson-axg-mipi-pcie-analog: Hold
- reference returned by of_get_parent()
-Content-Language: en-US
-To: Liang He <windhl@126.com>, kishon@ti.com, khilman@baylibre.com,
- jbrunet@baylibre.com, martin.blumenstingl@googlemail.com,
- linux-phy@lists.infradead.org
-References: <20220705021526.281441-1-windhl@126.com>
-Cc: "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Organization: Baylibre
-In-Reply-To: <20220705021526.281441-1-windhl@126.com>
+Content-Disposition: inline
+In-Reply-To: <20220621195512.1760362-1-robimarko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_002151_905235_B9C18DF0 
-X-CRM114-Status: GOOD (  16.19  )
+X-CRM114-CacheID: sfid-20220705_002609_286987_12DAF506 
+X-CRM114-Status: UNSURE (   6.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,48 +72,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-+ linux-amlogic, linux-arm-kernel, linux-kernel
+On 21-06-22, 21:55, Robert Marko wrote:
+> IPQ8074 Gen3 PCIe PHY uses 250MHz as the pipe clock rate instead of 125MHz
+> like every other PCIe QMP PHY does, so make it configurable as part of the
+> qmp_phy_cfg.
 
-On 05/07/2022 04:15, Liang He wrote:
-> We should hold the reference returned by of_get_parent() and use it
-> to call of_node_put() for reference balance.
-> 
-> Fixes: 8eff8b4e22d9 ("phy: amlogic: phy-meson-axg-mipi-pcie-analog: add support for MIPI DSI analog")
-> Signed-off-by: Liang He <windhl@126.com>
-> ---
->   drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c | 6 ++++--
->   1 file changed, 4 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c b/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c
-> index 1027ece6ca12..a3e1108b736d 100644
-> --- a/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c
-> +++ b/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c
-> @@ -197,7 +197,7 @@ static int phy_axg_mipi_pcie_analog_probe(struct platform_device *pdev)
->   	struct phy_provider *phy;
->   	struct device *dev = &pdev->dev;
->   	struct phy_axg_mipi_pcie_analog_priv *priv;
-> -	struct device_node *np = dev->of_node;
-> +	struct device_node *np = dev->of_node, *parent_np;
->   	struct regmap *map;
->   	int ret;
->   
-> @@ -206,7 +206,9 @@ static int phy_axg_mipi_pcie_analog_probe(struct platform_device *pdev)
->   		return -ENOMEM;
->   
->   	/* Get the hhi system controller node */
-> -	map = syscon_node_to_regmap(of_get_parent(dev->of_node));
-> +	parent_np = of_get_parent(dev->of_node);
-> +	map = syscon_node_to_regmap(parent_np);
-> +	of_node_put(parent_np);
->   	if (IS_ERR(map)) {
->   		dev_err(dev,
->   			"failed to get HHI regmap\n");
+Applied, thanks
 
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
