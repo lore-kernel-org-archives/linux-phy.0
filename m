@@ -4,83 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 501AFC43334
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:39:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C093EC433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:43:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tPFyJ7Haf8N/AdKH2wgTdCZhH/z3cxAhbnP9c/0Fm20=; b=bxe82E7nPhQXgz
-	1tBBsuiJZu8np8zuqvKANJwvut2k0fycJgGQq4XCmdmO4YfdsqCxteB8Z80eQxEuHaqtIVR/M2teJ
-	s+Cg0mquUttjQH1GW31MsXsHHecaC+eSOLfz2mJIA5J6/dDHmaT0Ys1tp2TnjoMSe2wNpE8KA+2/p
-	M37BDXe76ysuB5Nu0I4CEkqNIfHpQSxrQLBy9xhMC1FoDdRmMB9z5RL2+mF1WB92tVkiYoRkvlZtr
-	JtV9N5bW1So3SLa/vI+Qyjg4xnl9K8qvOIGRAF36gCt9fXtGXh+UibQGDf8mb8aHkttgOEpPjOMUb
-	4TTvEMIG2H6i3xFysXig==;
+	List-Owner; bh=Pa0ojhU4TWOiu8ygZDuYng3GFyLAHU52sfkpSO2h5DA=; b=sphjx51diYehSw
+	XwpTC5rxnC1alomL+T7oDgg0FK7fPSlcFMdpEMSSd5gocczi/VlE+RY4gHxKQeRKFnWyO8uyRxjkM
+	4luzbX5B91kE1i+RE9WXZwUklf/s03CuF88SsP39RwJCmxuylAGqsvFwVZp8e81cncjDACiXSRHZ3
+	3XnBm7DXWqpRY/ThiYdjc9Yb2oJvvryvqyqGpRUtKC6GTTmFKIqaQzYkWvNFBhb2wDlvjbv6nOq2q
+	g3p7uAIYJIwSzG8uF3DS4Me41mPBAiJJfP2VkSYstFzvyLtPEwPVd9QrbrtT4dMtU6HzrE/jGi0Mk
+	u34Oj1Y7B2bPXjoPY8jg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8f1y-00Go8b-JK; Tue, 05 Jul 2022 09:39:42 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1o8f61-00GrAa-1E; Tue, 05 Jul 2022 09:43:53 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8eya-00Gm0c-EZ
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:36:14 +0000
-Received: by mail-lf1-x129.google.com with SMTP id t25so19572823lfg.7
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:36:11 -0700 (PDT)
+	id 1o8f5t-00GquK-43
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:43:47 +0000
+Received: by mail-lf1-x131.google.com with SMTP id m18so1146165lfg.10
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:43:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
-        h=message-id:date:mime-version:user-agent:subject:content-language:to
-         :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=DVpNA/tLD/wvwSxUeEUrSF+gBAXB9p0G4i2gTUY7urk=;
-        b=Kl1wLaVX0l0SkIKLe+s6DLVY5Wie08GC35B2K0NpcRRIxKdH7fbwvzcZGq/3TB49so
-         9npPluaHmv29OPp44rcZGSxxc8azqw8MgTbBi5FboSN0yNOf7aTzhkA4q6Tgo+p/D+fB
-         alij7kkxVwVDnunV6i/5yTjIAXHUc/47g8NznZFe4jIkGcnmH/lOEPcbdYhfmsFZb5An
-         83b67neobRFsT0lCpQ+Rp6dBbhsn1QvjBDKyA2alZq3LS2NhfAWCRnUF7hUiGgns5CD/
-         3tqtYEZApRjUoPveGsXsoHYRjEfvmGf022D1FOkzeNGfXSzybQ6HRM/Ef4NElQ+4MONC
-         67dg==
+        h=from:to:cc:subject:date:message-id:in-reply-to:references
+         :mime-version:content-transfer-encoding;
+        bh=VF782H/CGM+yUVuKMfHxljNx32Yu3c6SHY81r1JpfEc=;
+        b=atSWu6QBeulIdmfjeCEg0V4RECYLnSl1Jc1fFH+9c4V6KUBd1F2n70IkPjJM1pK/cw
+         n1b5krIb6fb8jN6msxITUcxXAmI+YRCx5uGZnTPm4bVDhWdtQ94aK4beQ8FiFQIhO8jL
+         0Vj9EKaeFH7nKGpy960pg3WBqJNb8l84hmcT3QZu5MhI0zZwHNJT/0xQvvi1X3qRh6v+
+         zIfLydhGYq4BvcxXZKIpjqlktzxXEriRfx+3hKIUjJKTnJpshQey4FBOnSYkuG7k0qih
+         0URg7XYi4Y8iGaiVoAZh1QNDF2SIX57sijiOlRd8oRzl22tWP1So0p6oql1ehgOrfGnb
+         vhEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
-         :content-language:to:cc:references:from:in-reply-to
-         :content-transfer-encoding;
-        bh=DVpNA/tLD/wvwSxUeEUrSF+gBAXB9p0G4i2gTUY7urk=;
-        b=SZV1qw0LxLNiwfwEUs4U/iRajdhfKpqPFlA2lh9HG3MAO6JFzcSedReZPjicWOyAWc
-         xutPSZBrfKj4j1zjPJmxg8rjWT1ct5O+O6i+tOhEa4/21eSixfiU1MZcbHKGf+jZXHmt
-         nO+0WG21QtXG6IssbpW4cB806C5mFmpJBLCHrPGfRTnbd6HnzSyHPtvlYLB7zgVP0CDM
-         Z9Q5B+aIn8KaaS6SYErhwNcot9wvLf5RHEXah2pLiNOjMN056n0ttFSmORh55l7pQtZt
-         EvZeKf4ULyOQKbPc94greNIhLhJQldbPgodEsbM1/UL5rNp13gLKaej2VnOHnBonpk7Q
-         eG5Q==
-X-Gm-Message-State: AJIora9PiDP3DNwIxybq/oNdo9tJ6byFJlzkZhGp7ZUOF3btuT4x+gPP
-	c8KTAXsLfg6r8Pz/gyMDdUJqoQ==
-X-Google-Smtp-Source: AGRyM1sYGyEqkaCnXtTCeKFV77xk0RouTj+keeHZY5v3cr5MdA2/69gP8t4dwAwlMR1FESY1AQydhA==
-X-Received: by 2002:a05:6512:32c1:b0:47f:9d05:b6be with SMTP id f1-20020a05651232c100b0047f9d05b6bemr21155038lfg.335.1657013769673;
-        Tue, 05 Jul 2022 02:36:09 -0700 (PDT)
-Received: from [192.168.1.52] ([84.20.121.239])
-        by smtp.gmail.com with ESMTPSA id q14-20020a056512210e00b0048389c88ba6sm249336lfr.40.2022.07.05.02.36.08
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Jul 2022 02:36:09 -0700 (PDT)
-Message-ID: <d23604f8-f6b3-0f2f-6ab0-418a6fb9549f@linaro.org>
-Date: Tue, 5 Jul 2022 11:36:07 +0200
+        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+         :references:mime-version:content-transfer-encoding;
+        bh=VF782H/CGM+yUVuKMfHxljNx32Yu3c6SHY81r1JpfEc=;
+        b=O+yU4u+g6hdmJYiYjWhFEdCUBas4o+mRgONrxTulqQ35EN8dkF42b65FSEHYQ5/XbK
+         d8S50cF+GlOO9THJmQVFuTz/t50nsuXSGTSgjYNa8C8BQQP5SeB5z4K1oApvikGiCl/W
+         seXFF8SKNzENu0bmbrA6avh1ZD35SQUPQC2zenW2JVQh6QRxZmXZuIkwczlWmGPcRxsi
+         5DaAjxSkodbc75+YWJjSChf3Sao190VOEHBA2JFgsl2sqkYlM2WsQRwqTzZNR4wbbXgg
+         ASJw3wibKr1WWOJiEAveOoJCjeuqlX/WR5p/G/MBDzZUE4cUOFc3Ze1djRd29vLgm03K
+         MZXg==
+X-Gm-Message-State: AJIora/36XLxwtQg6HeIq14K0GW5xz7SQN0FT1tOGgHyrJlmfh7+pZea
+	tQbLL3Gs3zvv1zGBx1WHSUv/pQ==
+X-Google-Smtp-Source: AGRyM1ujC0dYM3Yhg6rFfcGazZdQNZS5UNAPdwsvs9xSRe6cd2UorMj62Om0lpl1/2toTNerVZfDsQ==
+X-Received: by 2002:a05:6512:12cb:b0:482:c9e4:ead8 with SMTP id p11-20020a05651212cb00b00482c9e4ead8mr3483365lfg.81.1657014224602;
+        Tue, 05 Jul 2022 02:43:44 -0700 (PDT)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id f7-20020a056512360700b00482f206b087sm491683lfs.39.2022.07.05.02.43.43
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 05 Jul 2022 02:43:44 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v1 28/28] phy: qcom-qmp-usb: define QPHY_V2_PCS_PLL_LOCK_CHK_DLY_TIME register
+Date: Tue,  5 Jul 2022 12:43:20 +0300
+Message-Id: <20220705094320.1313312-29-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
+References: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: [PATCH 3/3] ufs: ufs-exynos: change ufs phy control sequence
-Content-Language: en-US
-To: Chanho Park <chanho61.park@samsung.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Vinod Koul <vkoul@kernel.org>,
- "James E . J . Bottomley" <jejb@linux.ibm.com>,
- "Martin K . Petersen" <martin.petersen@oracle.com>,
- Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>
-Cc: linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-References: <20220705065440.117864-1-chanho61.park@samsung.com>
- <CGME20220705065722epcas2p3f9970697f6d1f1fed43e10fe17019619@epcas2p3.samsung.com>
- <20220705065440.117864-4-chanho61.park@samsung.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220705065440.117864-4-chanho61.park@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_023612_581649_77855674 
-X-CRM114-Status: GOOD (  16.65  )
+X-CRM114-CacheID: sfid-20220705_024345_239244_A1BF7A01 
+X-CRM114-Status: GOOD (  11.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,50 +93,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/07/2022 08:54, Chanho Park wrote:
-> Since commit 1599069a62c6 ("phy: core: Warn when phy_power_on is called
-> before phy_init"), below warning has been reported.
-> 
-> phy_power_on was called before phy_init
-> 
-> To address this, we need to remove phy_power_on from
-> exynos_ufs_phy_init and move it after phy_init. phy_power_off and
-> phy_exit are also necessary in exynos_ufs_remove.
-> 
-> Signed-off-by: Chanho Park <chanho61.park@samsung.com>
-> ---
->  drivers/ufs/host/ufs-exynos.c | 13 +++++++------
->  1 file changed, 7 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/ufs/host/ufs-exynos.c b/drivers/ufs/host/ufs-exynos.c
-> index f971569bafc7..5718296e2521 100644
-> --- a/drivers/ufs/host/ufs-exynos.c
-> +++ b/drivers/ufs/host/ufs-exynos.c
-> @@ -908,6 +908,8 @@ static int exynos_ufs_phy_init(struct exynos_ufs *ufs)
->  		goto out_exit_phy;
->  	}
->  
-> +	phy_power_on(generic_phy);
+Other PHYs tables directly reference QPHY_PLL_LOCK_CHK_DLY_TIME register
+without using reglayout. Define corresponding register to be used by
+msm8996 PHY tables and use it directly.
 
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c        | 1 -
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 4 +---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 4 +---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h       | 1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c          | 1 -
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 1 -
+ 6 files changed, 3 insertions(+), 9 deletions(-)
 
-What about phy_power_on() return code?
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 3f2c89ffee21..01e1d3f7538b 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -121,7 +121,6 @@ enum qphy_reg_layout {
+ 	QPHY_COM_START_CONTROL,
+ 	QPHY_COM_PCS_READY_STATUS,
+ 	/* PCS registers */
+-	QPHY_PLL_LOCK_CHK_DLY_TIME,
+ 	QPHY_SW_RESET,
+ 	QPHY_START_CTRL,
+ 	QPHY_PCS_READY_STATUS,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+index 4517f05fe45f..be6a94439b6c 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+@@ -121,7 +121,6 @@ enum qphy_reg_layout {
+ 	QPHY_COM_START_CONTROL,
+ 	QPHY_COM_PCS_READY_STATUS,
+ 	/* PCS registers */
+-	QPHY_PLL_LOCK_CHK_DLY_TIME,
+ 	QPHY_SW_RESET,
+ 	QPHY_START_CTRL,
+ 	QPHY_PCS_READY_STATUS,
+@@ -141,7 +140,6 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_COM_POWER_DOWN_CONTROL]	= 0x404,
+ 	[QPHY_COM_START_CONTROL]	= 0x408,
+ 	[QPHY_COM_PCS_READY_STATUS]	= 0x448,
+-	[QPHY_PLL_LOCK_CHK_DLY_TIME]	= 0xa8,
+ 	[QPHY_SW_RESET]			= 0x00,
+ 	[QPHY_START_CTRL]		= 0x08,
+ 	[QPHY_PCS_STATUS]		= 0x174,
+@@ -216,7 +214,7 @@ static const struct qmp_phy_init_tbl msm8996_pcie_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_PWRUP_RESET_DLY_TIME_AUXCLK, 0x00),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_LP_WAKEUP_DLY_TIME_AUXCLK, 0x01),
+ 
+-	QMP_PHY_INIT_CFG_L(QPHY_PLL_LOCK_CHK_DLY_TIME, 0x05),
++	QMP_PHY_INIT_CFG(QPHY_V2_PCS_PLL_LOCK_CHK_DLY_TIME, 0x05),
+ 
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_ENDPOINT_REFCLK_DRIVE, 0x05),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_POWER_DOWN_CONTROL, 0x02),
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 59ba40c39ab3..2d65e1f56bfc 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -121,7 +121,6 @@ enum qphy_reg_layout {
+ 	QPHY_COM_START_CONTROL,
+ 	QPHY_COM_PCS_READY_STATUS,
+ 	/* PCS registers */
+-	QPHY_PLL_LOCK_CHK_DLY_TIME,
+ 	QPHY_SW_RESET,
+ 	QPHY_START_CTRL,
+ 	QPHY_PCS_READY_STATUS,
+@@ -148,7 +147,6 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_COM_POWER_DOWN_CONTROL]	= 0x404,
+ 	[QPHY_COM_START_CONTROL]	= 0x408,
+ 	[QPHY_COM_PCS_READY_STATUS]	= 0x448,
+-	[QPHY_PLL_LOCK_CHK_DLY_TIME]	= 0xa8,
+ 	[QPHY_SW_RESET]			= 0x00,
+ 	[QPHY_START_CTRL]		= 0x08,
+ 	[QPHY_PCS_STATUS]		= 0x174,
+@@ -435,7 +433,7 @@ static const struct qmp_phy_init_tbl ipq8074_pcie_pcs_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_L1SS_WAKEUP_DLY_TIME_AUXCLK_LSB, 0x40),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_PLL_LOCK_CHK_DLY_TIME_AUXCLK_LSB, 0x0),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_LP_WAKEUP_DLY_TIME_AUXCLK, 0x40),
+-	QMP_PHY_INIT_CFG_L(QPHY_PLL_LOCK_CHK_DLY_TIME, 0x73),
++	QMP_PHY_INIT_CFG(QPHY_V2_PCS_PLL_LOCK_CHK_DLY_TIME, 0x73),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_RX_SIGDET_LVL, 0x99),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_TXDEEMPH_M6DB_V0, 0x15),
+ 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_TXDEEMPH_M3P5DB_V0, 0xe),
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h
+index 9593277cbd3a..c8515f506872 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h
+@@ -24,6 +24,7 @@
+ #define QPHY_V2_PCS_LOCK_DETECT_CONFIG3			0x088
+ #define QPHY_V2_PCS_PWRUP_RESET_DLY_TIME_AUXCLK		0x0a0
+ #define QPHY_V2_PCS_LP_WAKEUP_DLY_TIME_AUXCLK		0x0a4
++#define QPHY_V2_PCS_PLL_LOCK_CHK_DLY_TIME		0x0a8
+ #define QPHY_V2_PCS_FLL_CNTRL1				0x0c0
+ #define QPHY_V2_PCS_FLL_CNTRL2				0x0c4
+ #define QPHY_V2_PCS_FLL_CNT_VAL_L			0x0c8
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index 7ab129cd739b..c8583f5a54bd 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -121,7 +121,6 @@ enum qphy_reg_layout {
+ 	QPHY_COM_START_CONTROL,
+ 	QPHY_COM_PCS_READY_STATUS,
+ 	/* PCS registers */
+-	QPHY_PLL_LOCK_CHK_DLY_TIME,
+ 	QPHY_SW_RESET,
+ 	QPHY_START_CTRL,
+ 	QPHY_PCS_READY_STATUS,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index ff1e10bfdea3..1d270356a97f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -121,7 +121,6 @@ enum qphy_reg_layout {
+ 	QPHY_COM_START_CONTROL,
+ 	QPHY_COM_PCS_READY_STATUS,
+ 	/* PCS registers */
+-	QPHY_PLL_LOCK_CHK_DLY_TIME,
+ 	QPHY_SW_RESET,
+ 	QPHY_START_CTRL,
+ 	QPHY_PCS_READY_STATUS,
+-- 
+2.35.1
 
-> +
->  	return 0;
->  
->  out_exit_phy:
-> @@ -1169,10 +1171,6 @@ static int exynos_ufs_init(struct ufs_hba *hba)
->  		goto out;
->  	}
->  
-> -	ret = phy_power_on(ufs->phy);
-> -	if (ret)
-> -		goto phy_off;
-> -
-
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
