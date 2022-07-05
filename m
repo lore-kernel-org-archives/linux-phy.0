@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E5FECCA47F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53337CCA47B
 	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:51:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=B82zOjg4lrk0YEEyCftvimBAn1E8TO2Wz3kNO9bVaCM=; b=Z899w8vDR86+v/
-	PfxnSvMy1Ajy0OF7gIsOdeHqyqlkJu0tK8fsqk8vnh2kghS2uhT1RSOPy9xML6raxNZHDVMFKCBG9
-	2zpspwNiv+1gxhGagTrOEDCpoWYS+movZnHcZFsLqXhYuYvlRf4+hvNacfkUO5swVnWWJYg9Gcc5w
-	bPXdQUDONwIIkuTr1SGE1T2a56QJpCrO2o14/+ozaSeV/xrS1nPeKjRXDl1v0LmOYAkljCQOou3dN
-	8ctwZ+g/TZ60wY3J9AtLPs1I6V88hGG15JCFkIR9oJ1l0tH40lWgCesJXfTzP4Le9Y03EG01IngHv
-	+wvOpSDtWQ9f0WR+/zKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7FGOpAGaCmt4lPCdupNGpL6cww82M6/a/7xtRvV64mI=; b=t60t2/G43WeGRq
+	2rKSpLPvGDsyftPrBukUvQ/PyEi4SVk7tPKWHAtw5CJC5riYm5GVGePJaejiwf7jR3wkjMYywcUqz
+	w0Cku70hNPaNQsfB2w0ZWcDpaEXSVBuvHm4UWGzGfebV6bLnIuBi87qoWcvmIZxd6VZz4/tBpdgIG
+	StXIoeyThpEos+BR8bGkZum+N96qS4c99gl+MdC4jqB4yEHT88ifGtUjhVq6ckYE+NIkSl1s3DeMp
+	kDebAb43t8rKhuL/zxtQWp9taNuTFdK7MvPc1dClZ0g13F8O9VkxTSlhXH1/+2bmaxWpeQFT9C+Gp
+	b4KT1kB7pNYQzV0CjVIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fDa-00GwSb-8f; Tue, 05 Jul 2022 09:51:42 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1o8fDa-00GwTB-HK; Tue, 05 Jul 2022 09:51:42 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fB4-00GuS2-AR
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:12 +0000
+	id 1o8fB6-00GuVn-VI
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:13 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 4F586B8170B;
-	Tue,  5 Jul 2022 09:49:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 29831C341D1;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 083DF6194D;
+	Tue,  5 Jul 2022 09:49:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B49D7C341F2;
 	Tue,  5 Jul 2022 09:49:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1657014542;
-	bh=PRWF0dxD1eXxpPCxf2RrBgIGlcN0HFetPfQNjqW6hVY=;
-	h=From:To:Cc:Subject:Date:From;
-	b=AID+pfdcyTF9puV9smoekOeujTxZItnvAW8tiIHIpKy5zpbSoSh1TGtKgyuvokq38
-	 muyKEZmytORg7XJujwIQ/IUayRyPB0vHyoiBjx64I+1Rap9UeZSmPuC9PSt5vzUm6M
-	 70b5MSa1CDT4b+2YovO8NscM0UQRgbstOqh+kdYKTsC8yt8gh3oNdpY/y70lFQmv6w
-	 gxP8ZX6+xn/iPtbXKu3JGY8Uav19ohF7IRYKB6YhlodehgqLvX40yHWGdwJwwgZi3v
-	 vhTGeWCitD/hQ81aZ1pp32+HX7W3jPXTrYSGl083FaDvyrkHVVUTLPnzAz4OfyGTFk
-	 +CkS4e3PVUc0A==
+	bh=p1mQzE9YzRv1TmEiNJ1vRrzITwgEKyTWEASrGpAbf38=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=FcZVI/NKW1xpx6eoaa2h5/Kg581nkinvgRRpK7KTcwi5ZWXnVMHTnzpFUkhUdyijh
+	 p0AtYLlq8w3qk+1putIzjB0JYIdWBsmKLgc+hGQBddK4OYhLPq6WeYvojwhaWV/Ch9
+	 5Y9LgtM15ED7bpRyXv9W03wFrJCNdrhqonO1VZdEsiU1/SeRfIweLcYVxQWi1xh7pN
+	 IbYYcZz0XaMmfr2/EzjYGz6oVDWD/MwlhONQ9PpLQXq07CnkFdvB/lRb+w1x+T95+E
+	 HahedK+l5eE2FhN/eDt1RvhsYcyr0kN2pJ/S6ogDYjZK9Ig1k7GgvliJfJhU8Ce/k1
+	 e4jUqpZvr7FXQ==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1o8fB0-0004Wr-GB; Tue, 05 Jul 2022 11:49:02 +0200
+	id 1o8fB1-0004XR-MX; Tue, 05 Jul 2022 11:49:03 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -57,14 +57,17 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 00/43] phy: qcom,qmp: fix dt-bindings and deprecate lane suffix
-Date: Tue,  5 Jul 2022 11:41:56 +0200
-Message-Id: <20220705094239.17174-1-johan+linaro@kernel.org>
+Subject: [PATCH 13/43] dt-bindings: phy: qcom,qmp-pcie: clean up register constraints
+Date: Tue,  5 Jul 2022 11:42:09 +0200
+Message-Id: <20220705094239.17174-14-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220705094239.17174-1-johan+linaro@kernel.org>
+References: <20220705094239.17174-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_024906_739392_BFD426A4 
-X-CRM114-Status: GOOD (  15.62  )
+X-CRM114-CacheID: sfid-20220705_024909_145009_BF2B9DEC 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,99 +84,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When adding support for SC8280XP to the QMP PHY driver I noticed that
-the PHY provider child node was not described by the current DT schema.
+Only some USB and combo PHYs have a second dp_com control block.
 
-The SC8280XP PHYs also need a second fixed-divider PIPE clock
-("pipediv2") and I didn't want to have to add a bogus "lane" suffix to
-the clock name just to match the current "pipe0" name so I decided to
-deprecate the unnecessary suffix in the current binding instead.
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml | 2 --
+ 1 file changed, 2 deletions(-)
 
-To be able to add the missing child-node schema and handle device
-specifics like additional PIPE clocks, it quickly became obvious that
-the binding needs to be split up.
-
-This series fixes some issue with the current schema before splitting
-it up in separate schemas for PCIe, UFS and USB, which are then cleaned
-up further before adding missing parts like the child PHY provider
-nodes and examples.
-
-The MSM8996 PCIe PHY gets its own schema as this is the only non-combo
-PHY that actually provides more than one PHY per IP block. Note that the
-"lane" suffix is still unnecessary and misleading.
-
-The final patches adds support for the new resource names to the
-(recently split up) PHY drivers. Included is also a related combo PHY
-cleanup.
-
-I'll post a separate series with related DTS fixes caught while
-developing this series.
-
-Johan
-
-
-Johan Hovold (43):
-  dt-bindings: phy: qcom,qmp: fix bogus clock-cells property
-  dt-bindings: phy: qcom,qmp: sort compatible strings
-  dt-bindings: phy: qcom,qmp: clean up descriptions
-  dt-bindings: phy: qcom,qmp: clean up example
-  dt-bindings: phy: qcom,qmp: drop child-node comment
-  dt-bindings: phy: qcom,qmp: split out msm8996-qmp-pcie-phy
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: clean up constraints
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: add missing child node schema
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: add example node
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: deprecate PIPE clock names
-  dt-bindings: phy: qcom,msm8996-qmp-pcie: deprecate reset names
-  dt-bindings: phy: qcom,qmp: split out PCIe PHY binding
-  dt-bindings: phy: qcom,qmp-pcie: clean up register constraints
-  dt-bindings: phy: qcom,qmp-pcie: clean up clock constraints
-  dt-bindings: phy: qcom,qmp-pcie: clean up reset constraints
-  dt-bindings: phy: qcom,qmp-pcie: drop unused vddp-ref-clk supply
-  dt-bindings: phy: qcom,qmp-pcie: add missing child node schema
-  dt-bindings: phy: qcom,qmp-pcie: add example node
-  dt-bindings: phy: qcom,qmp-pcie: deprecate PIPE clock name
-  dt-bindings: phy: qcom,qmp: split out UFS PHY binding
-  dt-bindings: phy: qcom,qmp-ufs: clean up supplies
-  dt-bindings: phy: qcom,qmp-ufs: clean up reset providers
-  dt-bindings: phy: qcom,qmp-ufs: clean up clock constraints
-  dt-bindings: phy: qcom,qmp-ufs: clean up register constraints
-  dt-bindings: phy: qcom,qmp-ufs: add missing SM8450 clock
-  dt-bindings: phy: qcom,qmp-ufs: add missing SM8150 power domain
-  dt-bindings: phy: qcom,qmp-ufs: add missing child node schema
-  dt-bindings: phy: qcom,qmp-ufs: add example node
-  dt-bindings: phy: qcom,qmp: split out USB binding
-  dt-bindings: phy: qcom,qmp-usb: clean up clock constraints
-  dt-bindings: phy: qcom,qmp-usb: clean up supplies
-  dt-bindings: phy: qcom,qmp-usb: drop unused vddp-ref-clk supply
-  dt-bindings: phy: qcom,qmp-usb: clean up reset providers
-  dt-bindings: phy: qcom,qmp-usb: add missing child node schema
-  dt-bindings: phy: qcom,qmp-usb: deprecate PIPE clock name
-  dt-bindings: phy: qcom,qmp-usb3-dp: fix bogus clock-cells property
-  dt-bindings: phy: qcom,qmp-usb3-dp: deprecate USB PIPE clock name
-  phy: qcom-qmp-pcie: drop pipe clock lane suffix
-  phy: qcom-qmp-combo: drop unused lane reset
-  phy: qcom-qmp-combo: drop pipe clock lane suffix
-  phy: qcom-qmp-pcie-msm8996: drop pipe clock lane suffix
-  phy: qcom-qmp-pcie-msm8996: drop reset lane suffix
-  phy: qcom-qmp-usb: drop pipe clock lane suffix
-
- .../phy/qcom,msm8996-qmp-pcie-phy.yaml        | 212 ++++++++
- .../bindings/phy/qcom,qmp-pcie-phy.yaml       | 309 +++++++++++
- .../devicetree/bindings/phy/qcom,qmp-phy.yaml | 500 ------------------
- .../bindings/phy/qcom,qmp-ufs-phy.yaml        | 249 +++++++++
- .../bindings/phy/qcom,qmp-usb-phy.yaml        | 417 +++++++++++++++
- .../bindings/phy/qcom,qmp-usb3-dp-phy.yaml    |  15 +-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     |  10 +-
- .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  |  17 +-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      |   8 +-
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |   8 +-
- 10 files changed, 1224 insertions(+), 521 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-ufs-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,qmp-usb-phy.yaml
-
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+index d1d4a468acc3..7cdc1cce06cf 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+@@ -31,10 +31,8 @@ properties:
+       - qcom,sm8450-qmp-gen4x2-pcie-phy
+ 
+   reg:
+-    minItems: 1
+     items:
+       - description: Address and length of PHY's common serdes block.
+-      - description: Address and length of PHY's DP_COM control block.
+ 
+   "#address-cells":
+     enum: [ 1, 2 ]
 -- 
 2.35.1
 
