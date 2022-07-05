@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53337CCA47B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5823CCA481
 	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:51:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7FGOpAGaCmt4lPCdupNGpL6cww82M6/a/7xtRvV64mI=; b=t60t2/G43WeGRq
-	2rKSpLPvGDsyftPrBukUvQ/PyEi4SVk7tPKWHAtw5CJC5riYm5GVGePJaejiwf7jR3wkjMYywcUqz
-	w0Cku70hNPaNQsfB2w0ZWcDpaEXSVBuvHm4UWGzGfebV6bLnIuBi87qoWcvmIZxd6VZz4/tBpdgIG
-	StXIoeyThpEos+BR8bGkZum+N96qS4c99gl+MdC4jqB4yEHT88ifGtUjhVq6ckYE+NIkSl1s3DeMp
-	kDebAb43t8rKhuL/zxtQWp9taNuTFdK7MvPc1dClZ0g13F8O9VkxTSlhXH1/+2bmaxWpeQFT9C+Gp
-	b4KT1kB7pNYQzV0CjVIw==;
+	List-Owner; bh=hJjXsa1Ya539JARM/sE21bd+XuKKHuxTmASIaxVVjA8=; b=J//xFz3Ieo10ta
+	bUSKcxv4VAaKp+F98KD5ed7Ogjbj18PsPoGqRvJqBJFnfCnJosqL/glxpnIJ6dhZQoOdzL934wgf4
+	Wmkl4oDj1u/jOHN/dUDSefKaLumBpPceh/LhizHdgcZ5UoSlu/hCxR+PqoBt1/7rK/88IAniiUsow
+	clX9SyaL7SPlzaQaqB9f4arNSkb/V/0a/FR1t7jx0KMeT835poPqylbfe4E8B6jpD2WWodtRzC4oE
+	9nk6L8kW+r0ZWN28PgcSOi14kTFuvB2z2rtFVBCvHEwXvLOJXKZLwBzr1jHwrF4SvbnXJv1AAjX4n
+	GKGeZNBuK8IQXER9A/+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fDa-00GwTB-HK; Tue, 05 Jul 2022 09:51:42 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1o8fDa-00GwTg-SK; Tue, 05 Jul 2022 09:51:42 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fB6-00GuVn-VI
+	id 1o8fB6-00GuVm-Up
 	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:13 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 083DF6194D;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 2B3EB6194C;
 	Tue,  5 Jul 2022 09:49:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B49D7C341F2;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DE74FC341CD;
 	Tue,  5 Jul 2022 09:49:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1657014542;
-	bh=p1mQzE9YzRv1TmEiNJ1vRrzITwgEKyTWEASrGpAbf38=;
+	bh=+lRInMhIruR0OwlIKudAUTFxtNBmuvC62exzVnl3McY=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=FcZVI/NKW1xpx6eoaa2h5/Kg581nkinvgRRpK7KTcwi5ZWXnVMHTnzpFUkhUdyijh
-	 p0AtYLlq8w3qk+1putIzjB0JYIdWBsmKLgc+hGQBddK4OYhLPq6WeYvojwhaWV/Ch9
-	 5Y9LgtM15ED7bpRyXv9W03wFrJCNdrhqonO1VZdEsiU1/SeRfIweLcYVxQWi1xh7pN
-	 IbYYcZz0XaMmfr2/EzjYGz6oVDWD/MwlhONQ9PpLQXq07CnkFdvB/lRb+w1x+T95+E
-	 HahedK+l5eE2FhN/eDt1RvhsYcyr0kN2pJ/S6ogDYjZK9Ig1k7GgvliJfJhU8Ce/k1
-	 e4jUqpZvr7FXQ==
+	b=Dpg6vMEnC5XGbzAdFslHv9GqI4rkDpB9t9km9Sq15c3FAi22kc8bD8J5WOPZs2eD7
+	 sVzOiun8ja3vYhhjRiSi3d6I7FQF/0qnAckrFK11OxWk7uBWeUIKFDFO/oQvEZdam8
+	 m65k1M7th3K3pvepFmu8ow+4a0rfN/hqf3LVWMx88cg2AL/KWPPwTNQAhnftstVGGI
+	 xszRwIkiFd8mC88JbnHDqxWKvBMmPDL7thrtPBw9fFihdCYW5lhcAJiPEPunVROXjT
+	 sQOhyCv9HI4HXo7s/VQh1JOFT94V5GleFBV/StkbZ1bOR0pkDWFKfLuhMfwXDGjdbB
+	 bQMBE6LHBsuXw==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1o8fB1-0004XR-MX; Tue, 05 Jul 2022 11:49:03 +0200
+	id 1o8fB1-0004XW-Ry; Tue, 05 Jul 2022 11:49:03 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -57,17 +57,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 13/43] dt-bindings: phy: qcom,qmp-pcie: clean up register constraints
-Date: Tue,  5 Jul 2022 11:42:09 +0200
-Message-Id: <20220705094239.17174-14-johan+linaro@kernel.org>
+Subject: [PATCH 15/43] dt-bindings: phy: qcom,qmp-pcie: clean up reset constraints
+Date: Tue,  5 Jul 2022 11:42:11 +0200
+Message-Id: <20220705094239.17174-16-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220705094239.17174-1-johan+linaro@kernel.org>
 References: <20220705094239.17174-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_024909_145009_BF2B9DEC 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220705_024909_171602_E108185E 
+X-CRM114-Status: GOOD (  11.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,28 +83,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Only some USB and combo PHYs have a second dp_com control block.
+The PCIe PHY binding requires one or two resets.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml | 2 --
- 1 file changed, 2 deletions(-)
+ Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
-index d1d4a468acc3..7cdc1cce06cf 100644
+index 0486b2b48d72..557cccc8f4dd 100644
 --- a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
 +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
-@@ -31,10 +31,8 @@ properties:
-       - qcom,sm8450-qmp-gen4x2-pcie-phy
+@@ -52,11 +52,11 @@ properties:
  
-   reg:
--    minItems: 1
-     items:
-       - description: Address and length of PHY's common serdes block.
--      - description: Address and length of PHY's DP_COM control block.
+   resets:
+     minItems: 1
+-    maxItems: 3
++    maxItems: 2
  
-   "#address-cells":
-     enum: [ 1, 2 ]
+   reset-names:
+     minItems: 1
+-    maxItems: 3
++    maxItems: 2
+ 
+   vdda-phy-supply:
+     description:
 -- 
 2.35.1
 
