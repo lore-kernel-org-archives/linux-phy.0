@@ -4,93 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46212C43334
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 19:58:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72EB4C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 22:49:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y1VYggxS/CKCUerFo7NaZoZ4nnIT2PmAucfoLEpEBeU=; b=klvusZJnqcdszj
-	m4da8pXMwJyhNS31vQp8F404tzV+T/oDrXiJqzQxZANRCFGEBWROXjnwW1fpIbW07A8FrlEdK3h1P
-	dx5wL5z8j+XbbaBBddpn/SGVzMjkcfO4oEuYEyb5gPRFPunUXcZRz8feEuTmnl2e9w1QlL7y9mL0W
-	4RTxCUdgTYM+tNjaOzM6zr/BTVqfHcvXvsuoa/LSxe95thYiTWTEJZe6Gu2AkbdVd3qaqmK9YSF26
-	1Ycv8kHhooYoC12Jklbn/fh9lo4dVRRWZDYWgNNwcHFCWtht3JU0SEzAJ2Tf3DSCmWsAvdK6tB5EJ
-	zrrp09vD9vVjkNJgNjYg==;
+	List-Owner; bh=G/uWHGlx/rTQZVlB4TSGfj+9Q+rsbX06DeuQVC27a0M=; b=iGM/A3HUTmAWcB
+	ZrnoBppFMX5N/X7e/3OVJdA0t8o237J0e4mjgQOEX/m5h8ViTEk+yNcAMw38OKntVp3yf1kEL8swt
+	qdpltkhguz8jRMgbMJyhWch4WQZdT/cCG9U/fvwlmf0Nm5zME9aWUWcVE0CKpOnGBq841JdwGla1z
+	JQPDJcBlPi7ub4o8KKkRJ/kPon7i7MkjN43T0kfuvRLvpJdi3HqXx0F94u7djpGlDUPiH1LdpqFc9
+	EoBsSeRJhExboelR2S5tk4SrfKsw28Vo1PnEiJbXB5KA3f+6Vdre8ZnnILWC2a9yhCSc8EGGUv8cX
+	Dpnaga2+pv8drp3X+hcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8ogp-002V80-KJ; Tue, 05 Jul 2022 19:58:31 +0000
+	id 1o8rLz-003IZc-OZ; Tue, 05 Jul 2022 22:49:11 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fOZ-00H219-4H
-	for linux-phy@bombadil.infradead.org; Tue, 05 Jul 2022 10:03:03 +0000
+	id 1o8fO1-00H219-AS
+	for linux-phy@bombadil.infradead.org; Tue, 05 Jul 2022 10:02:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=VwNvNf/fg1vH6mgfjM91FaQKXDEsvJNkyrukqfVltYE=; b=aHCaIsP9PP6QYHxoJWamu7iVUS
-	i1rNItXnuSbt5EpeH7gXetwFiK440s2bcghsDQtBBj8tSXc65goZFs8M+f5179iLHvFijsBvsxQx7
-	4neg8kdSgupvGqv0zM5CZubK8MX9dvvoSaGao60yVXD1Oud/Afj5beWVHe74pc/9QolwMPyshSA2J
-	lu6JuicIWs5vpEOd2WHEDQYk3h5Rk9Iw05kRBxhPO2n68Fku8fuZM9Fd4kStzABnLF9RxrIkeIKQB
-	x5VXvdrdHbeA+cBiM85OIxt0WGF4VveiesFInb9L+FvP7+0x6hJjhyLffM8vGk9/x9qyabpA9QiJ8
-	YMpWGUbw==;
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	bh=LyZG814cLZUwWL6VWDbrXyUCApcvrncQqEb1pQY0yrA=; b=L8S0Ik61Nqn9Hf1ggD0j+RvXgW
+	r2xK9lbEhQr/Sqf8bPAfrmRrlYZ4PKYwsl+5k6nzRXAyBbtTLuh7rXkE7vZgOuoPmoagZEsE545Fx
+	Jjsp0qZOz4MCeRRcmVr/5BZbUQE1xr+QXAb5snu0/ewq7REQzS6A36GstqCbkvImH+SyAMv8TIgHW
+	HeLz6g0TRX3Q0urM88J/FeaWrBowtqTN1AemzqKbtrlS2P3TosYIKNSs2uNtDTd4WKE2pSxPiJzWf
+	6/7unp48SDjLtHJeJa3K2WM02mOK9+GjCtVUDllc/9YUmlLo+Ub6dtCGrKtk4HmMyEvwgAOkigacc
+	cBMS/FKQ==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8f5q-00HUxK-1C
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:43:44 +0000
-Received: by mail-lf1-x135.google.com with SMTP id y16so19568720lfb.9
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:43:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google;
-        h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version:content-transfer-encoding;
-        bh=VwNvNf/fg1vH6mgfjM91FaQKXDEsvJNkyrukqfVltYE=;
-        b=vik+3Fg8JjZCm69qK/nlsGUODuaFijx9rwgGcPpZu9aR+zAsqfntoQlL5dQyStnY8a
-         I/a0UU+n1JGeh7wIi+Y2mGU0QRrIsfAj8qEbCVlCkVIUTBz6d0j13A9V+b2L6BIlf5j1
-         ctRSRNmDy6WrzaGB3suNbw0J8CH68rHSBdNMLr5O4gmz2japZ5l9KdIFR8VY/2pBo0zC
-         ZfqzZVhPctk3E84oLCmbVhrpvFyqagNREJWjNRRlaPQ9qojQYC2txF2qukEx9Xj2iJWs
-         C8Xz4+KMstoWrKY9XuXZ8O+N8ApPqcHFBw/x+Q8ePG555rBtICeERIPxRVxdNv7A/WDA
-         Tezg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version:content-transfer-encoding;
-        bh=VwNvNf/fg1vH6mgfjM91FaQKXDEsvJNkyrukqfVltYE=;
-        b=KWu9FeQbevM6Qvo22mqEPpioTk6P/6xjscjyZalYs04ReGZCODCp3+SD5iQPcrjQIv
-         MhJvxByUZmNpzIFXkKmioZWrJEroEKBC25uzKuT3A4eYvMZlkGZb+D2R4a6630QRmYV1
-         s5zL1f+3bJbhDyX4kXTP3QYxxFR1AtmGSDw6JokJZAKNRMse842gZK5sWUVwAWywoHdv
-         Gf+X98wbN9/5u2HR4CnNJVXfA1kddXXEflEcvHC8SDgVWY0DmHgrrtrt80WmLx3qUDUU
-         /zs6QIMiXTzs9RuG3/oE1AtZ1q1mFt6q8AoNxfETJ0DKNWj7XjA7F3w4t/Gs1qWFv0Dj
-         FmJA==
-X-Gm-Message-State: AJIora/QvxwTnGS2ZGSxYbBNh4+oKfoTrVO1D+PiGub5qOnysDJXbq89
-	UjnDrFn4czbaIRMaLtX+ncLPwA==
-X-Google-Smtp-Source: AGRyM1tYjgq4m0NSxxofE+N2s9ox1NAQnbGUez2sFMnC9EfsebjO7RIftVuSC2NsJ49VBDwjav0rwQ==
-X-Received: by 2002:a05:6512:158d:b0:47f:718c:28b5 with SMTP id bp13-20020a056512158d00b0047f718c28b5mr22838961lfb.397.1657014214820;
-        Tue, 05 Jul 2022 02:43:34 -0700 (PDT)
-Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id f7-20020a056512360700b00482f206b087sm491683lfs.39.2022.07.05.02.43.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 05 Jul 2022 02:43:34 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Andy Gross <agross@kernel.org>,
+	id 1o8fBF-00HV7I-Dy
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:20 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id ED4026195D;
+	Tue,  5 Jul 2022 09:49:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 053BFC36AFB;
+	Tue,  5 Jul 2022 09:49:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1657014545;
+	bh=wcigz9eclfSlWhiIkb00jJF/UDQ56QYbAzKSS2z1YZ8=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=kS5qxQ0WIivvIBz1ZT5ed8ga5vBNVzH0vvcvbnikOB18zbQ3Ahg89WGoDp2Hbe4Bk
+	 DGXYq6wRxTa2OW0akV/vfoO28WjOHOmlTA9HKtJWfEJYE82znjn8ptSypyWH4gaV9O
+	 4ja90ZV6zmc10StWi9rbSP2aV5t/ukUBE19BnvwtHn0fr6X+uhd5A1EYbzC9MWSUtV
+	 64hcgg4ReNdLJvCj/HOhAAIyOptEZ9tfnwcy/pZG0tI3pKjiibuTHSskFguML9Cnbv
+	 p7ZTot6duCOe1YhBYJaA3pO/44+4Ww+hZJWLCFeCm+bpUW4eNT0Zg/dZ5j7WqBsou/
+	 JXo2cVUL8Md1Q==
+Received: from johan by xi.lan with local (Exim 4.94.2)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1o8fB3-0004Yf-TZ; Tue, 05 Jul 2022 11:49:05 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Konrad Dybcio <konrad.dybcio@somainline.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	Kishon Vijay Abraham I <kishon@ti.com>,
 	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v1 16/28] phy: qcom-qmp: move PCS V5 registers to separate headers
-Date: Tue,  5 Jul 2022 12:43:08 +0300
-Message-Id: <20220705094320.1313312-17-dmitry.baryshkov@linaro.org>
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 38/43] phy: qcom-qmp-pcie: drop pipe clock lane suffix
+Date: Tue,  5 Jul 2022 11:42:34 +0200
+Message-Id: <20220705094239.17174-39-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
-References: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
+In-Reply-To: <20220705094239.17174-1-johan+linaro@kernel.org>
+References: <20220705094239.17174-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_104342_735016_A43EA73C 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20220705_104918_304846_193A0A1D 
+X-CRM114-Status: GOOD (  12.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,227 +97,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Move PCS V5 registers to the separate headers.
+The pipe clock is defined in the "lane" node so there's no need to keep
+adding a redundant lane-number suffix to the clock name.
 
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Drop the lane suffix from the pipe clock name, but continue supporting
+the legacy name as a fall back.
+
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   | 16 +++++
- .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h    | 27 ++++++++
- .../phy/qualcomm/phy-qcom-qmp-pcs-usb-v5.h    | 36 +++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h    | 17 +++++
- drivers/phy/qualcomm/phy-qcom-qmp.h           | 63 ++-----------------
- 5 files changed, 101 insertions(+), 58 deletions(-)
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v5.h
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
-new file mode 100644
-index 000000000000..2e19fb3f051e
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h
-@@ -0,0 +1,16 @@
-+/* Only for QMP V5 PHY - PCS_PCIE registers */
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_PCIE_V5_H_
-+#define QCOM_PHY_QMP_PCS_PCIE_V5_H_
-+
-+/* Only for QMP V5 PHY - PCS_PCIE registers */
-+#define QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x20
-+#define QPHY_V5_PCS_PCIE_INT_AUX_CLK_CONFIG1		0x54
-+#define QPHY_V5_PCS_PCIE_OSC_DTCT_ACTIONS		0x94
-+#define QPHY_V5_PCS_PCIE_EQ_CONFIG2			0xa8
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h
-new file mode 100644
-index 000000000000..bcca23493b7e
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v5.h
-@@ -0,0 +1,27 @@
-+/* Only for QMP V5 PHY - UFS PCS registers */
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_UFS_V5_H_
-+#define QCOM_PHY_QMP_PCS_UFS_V5_H_
-+
-+/* Only for QMP V5 PHY - UFS PCS registers */
-+#define QPHY_V5_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB	0x00c
-+#define QPHY_V5_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB	0x010
-+#define QPHY_V5_PCS_UFS_PLL_CNTL			0x02c
-+#define QPHY_V5_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x030
-+#define QPHY_V5_PCS_UFS_TX_SMALL_AMP_DRV_LVL		0x038
-+#define QPHY_V5_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
-+#define QPHY_V5_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0b4
-+#define QPHY_V5_PCS_UFS_DEBUG_BUS_CLKSEL		0x124
-+#define QPHY_V5_PCS_UFS_RX_MIN_HIBERN8_TIME		0x150
-+#define QPHY_V5_PCS_UFS_RX_SIGDET_CTRL1			0x154
-+#define QPHY_V5_PCS_UFS_RX_SIGDET_CTRL2			0x158
-+#define QPHY_V5_PCS_UFS_TX_PWM_GEAR_BAND		0x160
-+#define QPHY_V5_PCS_UFS_TX_HS_GEAR_BAND			0x168
-+#define QPHY_V5_PCS_UFS_TX_MID_TERM_CTRL1		0x1d8
-+#define QPHY_V5_PCS_UFS_MULTI_LANE_CTRL1		0x1e0
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v5.h
-new file mode 100644
-index 000000000000..73de626223ed
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v5.h
-@@ -0,0 +1,36 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_USB_V5_H_
-+#define QCOM_PHY_QMP_PCS_USB_V5_H_
-+
-+/* Only for QMP V5 PHY - USB3 have different offsets than V4 */
-+#define QPHY_V5_PCS_USB3_POWER_STATE_CONFIG1		0x000
-+#define QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_STATUS		0x004
-+#define QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL		0x008
-+#define QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL2		0x00c
-+#define QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_SOURCE_STATUS	0x010
-+#define QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR		0x014
-+#define QPHY_V5_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL	0x018
-+#define QPHY_V5_PCS_USB3_LFPS_TX_ECSTART		0x01c
-+#define QPHY_V5_PCS_USB3_LFPS_PER_TIMER_VAL		0x020
-+#define QPHY_V5_PCS_USB3_LFPS_TX_END_CNT_U3_START	0x024
-+#define QPHY_V5_PCS_USB3_LFPS_CONFIG1			0x028
-+#define QPHY_V5_PCS_USB3_RXEQTRAINING_LOCK_TIME		0x02c
-+#define QPHY_V5_PCS_USB3_RXEQTRAINING_WAIT_TIME		0x030
-+#define QPHY_V5_PCS_USB3_RXEQTRAINING_CTLE_TIME		0x034
-+#define QPHY_V5_PCS_USB3_RXEQTRAINING_WAIT_TIME_S2	0x038
-+#define QPHY_V5_PCS_USB3_RXEQTRAINING_DFE_TIME_S2	0x03c
-+#define QPHY_V5_PCS_USB3_RCVR_DTCT_DLY_U3_L		0x040
-+#define QPHY_V5_PCS_USB3_RCVR_DTCT_DLY_U3_H		0x044
-+#define QPHY_V5_PCS_USB3_ARCVR_DTCT_EN_PERIOD		0x048
-+#define QPHY_V5_PCS_USB3_ARCVR_DTCT_CM_DLY		0x04c
-+#define QPHY_V5_PCS_USB3_TXONESZEROS_RUN_LENGTH		0x050
-+#define QPHY_V5_PCS_USB3_ALFPS_DEGLITCH_VAL		0x054
-+#define QPHY_V5_PCS_USB3_SIGDET_STARTUP_TIMER_VAL	0x058
-+#define QPHY_V5_PCS_USB3_TEST_CONTROL			0x05c
-+#define QPHY_V5_PCS_USB3_RXTERMINATION_DLY_SEL		0x060
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-new file mode 100644
-index 000000000000..61a44519f969
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-@@ -0,0 +1,17 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_V5_H_
-+#define QCOM_PHY_QMP_PCS_V5_H_
-+
-+/* Only for QMP V5 PHY - USB/PCIe PCS registers */
-+#define QPHY_V5_PCS_REFGEN_REQ_CONFIG1			0x0dc
-+#define QPHY_V5_PCS_G3S2_PRE_GAIN			0x170
-+#define QPHY_V5_PCS_RX_SIGDET_LVL			0x188
-+#define QPHY_V5_PCS_RATE_SLEW_CNTRL1			0x198
-+#define QPHY_V5_PCS_EQ_CONFIG2				0x1e0
-+#define QPHY_V5_PCS_EQ_CONFIG3				0x1e4
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index 05da0725df71..9d93ae785b16 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -30,6 +30,11 @@
- #include "phy-qcom-qmp-pcs-usb-v4.h"
- #include "phy-qcom-qmp-pcs-ufs-v4.h"
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 385ea3d8de08..254ad25591b9 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -2210,8 +2210,12 @@ int qcom_qmp_phy_pcie_create(struct device *dev, struct device_node *np, int id,
+ 	if (!qphy->pcs_misc)
+ 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
  
-+#include "phy-qcom-qmp-pcs-v5.h"
-+#include "phy-qcom-qmp-pcs-pcie-v5.h"
-+#include "phy-qcom-qmp-pcs-usb-v5.h"
-+#include "phy-qcom-qmp-pcs-ufs-v5.h"
-+
- /* Only for QMP V3 & V4 PHY - DP COM registers */
- #define QPHY_V3_DP_COM_PHY_MODE_CTRL			0x00
- #define QPHY_V3_DP_COM_SW_RESET				0x04
-@@ -334,20 +339,6 @@
- #define QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH5_RATE3	0x218
- #define QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH6_RATE3	0x220
- 
--/* Only for QMP V5 PHY - USB/PCIe PCS registers */
--#define QPHY_V5_PCS_REFGEN_REQ_CONFIG1			0x0dc
--#define QPHY_V5_PCS_G3S2_PRE_GAIN			0x170
--#define QPHY_V5_PCS_RX_SIGDET_LVL			0x188
--#define QPHY_V5_PCS_RATE_SLEW_CNTRL1			0x198
--#define QPHY_V5_PCS_EQ_CONFIG2				0x1e0
--#define QPHY_V5_PCS_EQ_CONFIG3				0x1e4
--
--/* Only for QMP V5 PHY - PCS_PCIE registers */
--#define QPHY_V5_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x20
--#define QPHY_V5_PCS_PCIE_INT_AUX_CLK_CONFIG1		0x54
--#define QPHY_V5_PCS_PCIE_OSC_DTCT_ACTIONS		0x94
--#define QPHY_V5_PCS_PCIE_EQ_CONFIG2			0xa8
--
- /* Only for QMP V5_20 PHY - PCIe PCS registers */
- #define QPHY_V5_20_PCS_PCIE_ENDPOINT_REFCLK_DRIVE	0x01c
- #define QPHY_V5_20_PCS_PCIE_OSC_DTCT_ACTIONS		0x090
-@@ -356,48 +347,4 @@
- #define QPHY_V5_20_PCS_PCIE_G4_PRE_GAIN			0x15c
- #define QPHY_V5_20_PCS_PCIE_RX_MARGINING_CONFIG3	0x184
- 
--/* Only for QMP V5 PHY - UFS PCS registers */
--#define QPHY_V5_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB	0x00c
--#define QPHY_V5_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB	0x010
--#define QPHY_V5_PCS_UFS_PLL_CNTL			0x02c
--#define QPHY_V5_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x030
--#define QPHY_V5_PCS_UFS_TX_SMALL_AMP_DRV_LVL		0x038
--#define QPHY_V5_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
--#define QPHY_V5_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0b4
--#define QPHY_V5_PCS_UFS_DEBUG_BUS_CLKSEL		0x124
--#define QPHY_V5_PCS_UFS_RX_MIN_HIBERN8_TIME		0x150
--#define QPHY_V5_PCS_UFS_RX_SIGDET_CTRL1			0x154
--#define QPHY_V5_PCS_UFS_RX_SIGDET_CTRL2			0x158
--#define QPHY_V5_PCS_UFS_TX_PWM_GEAR_BAND		0x160
--#define QPHY_V5_PCS_UFS_TX_HS_GEAR_BAND			0x168
--#define QPHY_V5_PCS_UFS_TX_MID_TERM_CTRL1		0x1d8
--#define QPHY_V5_PCS_UFS_MULTI_LANE_CTRL1		0x1e0
--
--/* Only for QMP V5 PHY - USB3 have different offsets than V4 */
--#define QPHY_V5_PCS_USB3_POWER_STATE_CONFIG1		0x000
--#define QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_STATUS		0x004
--#define QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL		0x008
--#define QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL2		0x00c
--#define QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_SOURCE_STATUS	0x010
--#define QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR		0x014
--#define QPHY_V5_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL	0x018
--#define QPHY_V5_PCS_USB3_LFPS_TX_ECSTART		0x01c
--#define QPHY_V5_PCS_USB3_LFPS_PER_TIMER_VAL		0x020
--#define QPHY_V5_PCS_USB3_LFPS_TX_END_CNT_U3_START	0x024
--#define QPHY_V5_PCS_USB3_LFPS_CONFIG1			0x028
--#define QPHY_V5_PCS_USB3_RXEQTRAINING_LOCK_TIME		0x02c
--#define QPHY_V5_PCS_USB3_RXEQTRAINING_WAIT_TIME		0x030
--#define QPHY_V5_PCS_USB3_RXEQTRAINING_CTLE_TIME		0x034
--#define QPHY_V5_PCS_USB3_RXEQTRAINING_WAIT_TIME_S2	0x038
--#define QPHY_V5_PCS_USB3_RXEQTRAINING_DFE_TIME_S2	0x03c
--#define QPHY_V5_PCS_USB3_RCVR_DTCT_DLY_U3_L		0x040
--#define QPHY_V5_PCS_USB3_RCVR_DTCT_DLY_U3_H		0x044
--#define QPHY_V5_PCS_USB3_ARCVR_DTCT_EN_PERIOD		0x048
--#define QPHY_V5_PCS_USB3_ARCVR_DTCT_CM_DLY		0x04c
--#define QPHY_V5_PCS_USB3_TXONESZEROS_RUN_LENGTH		0x050
--#define QPHY_V5_PCS_USB3_ALFPS_DEGLITCH_VAL		0x054
--#define QPHY_V5_PCS_USB3_SIGDET_STARTUP_TIMER_VAL	0x058
--#define QPHY_V5_PCS_USB3_TEST_CONTROL			0x05c
--#define QPHY_V5_PCS_USB3_RXTERMINATION_DLY_SEL		0x060
--
- #endif
+-	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
+-	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
++	qphy->pipe_clk = devm_get_clk_from_child(dev, np, "pipe");
++	if (IS_ERR(qphy->pipe_clk) && PTR_ERR(qphy->pipe_clk) != -EPROBE_DEFER) {
++		/* Fall back to the legacy pipe clock name. */
++		snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
++		qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
++	}
+ 	if (IS_ERR(qphy->pipe_clk)) {
+ 		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
+ 				     "failed to get lane%d pipe clock\n", id);
 -- 
 2.35.1
 
