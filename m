@@ -4,70 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37EC1CCA47C
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:20:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80EDEC43334
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:20:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=txmFf/q14QaZuYN31oORXHtJ2QqcZ7mHTA8Y50Vb0ow=; b=a2KQqF5aY9GLsF
-	WseFkSKFm9TumyIlwTpzEbvV0KULcdH20o/kGhULTd0K+w3BL0jZERwZ/T+ummgnz/ggMn2HL+vbo
-	WtIuLKe8M74NkPIVtmcl7Y4dadrCKCTcK6ttHcqiOfvNm77GW8FbSvYDTDHh0XnNMFfk5yDl1VWFf
-	zL3B03LgcCz+EgHxZmuTjpEWMTKX3Vmt9NXTU1YCvxMt7DwSibWIhRce5e+FJcNqnUeuCczp3FGdU
-	+jG6CigRLTTxv3sMVQe4P5FK0fineBa0snOGCbarm2dlotk2Qx7CsjMC1BrrPO71zNO1vEOmWV+fP
-	VJ0JWZGAYXTP7vvtxf9A==;
+	List-Owner; bh=i/C9gBoMq8ePqQ/9scjBowciVmXQW/Pwzs0cPZ8UVUk=; b=o/bqEPwpwE+Km4
+	kDNKNRHyrTVz0hS3DPyloCTzboMGbiSw4Txy6xD2Eu0NxHaCX6l6thjviIn25OsxUDg9+/KIHx3sb
+	Tm9Y5GA2h6UOwGSesjQEjaT493ObvkTVkFdxm55UGxDbF58K8CEFfi/5KsKo6Nu51xdJjAXOJ+jZg
+	vYpsVyTR3n6DoVeez/hOpP4NHxT4cXTUGLmwWgUh06DoOMKq+1a6GDoW/PvDMf7lQsg/GR5AmaRFS
+	NHm/2AR+k/EeCyNoDUU85kap+vzehpK5cUY4ITD4cMVyoyb3phC31Ky1kh0CmnV67ihVgOOq/A4BV
+	rr5CvMFbDNV/xePL2ONw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8ffp-00H8EM-KZ; Tue, 05 Jul 2022 10:20:53 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1o8fft-00H8Ft-TD; Tue, 05 Jul 2022 10:20:57 +0000
+Received: from mail-lj1-x232.google.com ([2a00:1450:4864:20::232])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8ffn-00H8D5-1h
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 10:20:52 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 0CA60B81744;
-	Tue,  5 Jul 2022 10:20:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5629FC341C7;
-	Tue,  5 Jul 2022 10:20:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657016447;
-	bh=RAkY+wvaF4GTKl/ePFJozpLmUoWkpkz/u3e8jPZsNlo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=R00oG4MoK+jENJsN8NWEwyAabitOydRAZY5pVC5z1n47uXmbFpC97MmjcrYTNwocE
-	 C0cHwv2nwRjBd9vQfF4PKuExDVcufw+rkkerk5ngbDT6ipv52cCTTD216KYP5n3KVd
-	 Zq57LM46H3/Zv7UjtguPm42sQqeq/rpZlgJ7wR9UwRZutHARmyPoIpfj/VhCzEAoE6
-	 TTG9izVBhvnvqyCbLpBndoRcTSwqLRWxiBeJGuxMM+/d7T4s6siDEmdGXBvrJT+fy7
-	 CRjw43Pe7k8IMyZW9W6Ap2GVlqqiS+q0hfD8tCXCi94lzKGes3EzUN66FMQe1wv7sZ
-	 owZZ+7QA8t+dw==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1o8ffj-00055H-SU; Tue, 05 Jul 2022 12:20:47 +0200
-Date: Tue, 5 Jul 2022 12:20:47 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 06/43] dt-bindings: phy: qcom,qmp: split out
- msm8996-qmp-pcie-phy
-Message-ID: <YsQQfwqmiQ7O3FdY@hovoldconsulting.com>
-References: <20220705094239.17174-1-johan+linaro@kernel.org>
- <20220705094239.17174-7-johan+linaro@kernel.org>
- <46b0cdab-aa94-7f55-5d9f-f79a644f0fec@linaro.org>
+	id 1o8ffr-00H8EU-Rg
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 10:20:57 +0000
+Received: by mail-lj1-x232.google.com with SMTP id o10so3246100ljj.13
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 03:20:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=message-id:date:mime-version:user-agent:subject:content-language:to
+         :cc:references:from:in-reply-to:content-transfer-encoding;
+        bh=/mmU3Wx1JlIcuJQsWUBY6wF04bFzuVZBMWftRGHu/JE=;
+        b=Qr6cuvuPcBK+Fgstwz4GREMfZYaZ9mWaMh00nQJCeqbumLKuEK9eM/4lO7rrYhp5Zx
+         iml30lPV8P5bSBtwsfQ+CR9so2br7r5VSgfcBTK7iyAmTRvu7QHwYO48vEn8VDUr6xFh
+         Jg/V7tCUR5WliakG/O4dmZwskg9cyd8pzayQOalxlnvOtpr40tlvRiAavf6DTJcEgnIw
+         H2x8j/pUnrTxWDrZE1FMOdW7W+01A/q5agf0/rpvQLhliVoCOCTPwQ1cKU3LEPGYT+xa
+         aA9jkQuD+l4UOViQ0DT3vjM2izRHS/E8rkcK2aItsxH2lFEqDTOu/NTkdpisBxljZuco
+         Mhag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :content-transfer-encoding;
+        bh=/mmU3Wx1JlIcuJQsWUBY6wF04bFzuVZBMWftRGHu/JE=;
+        b=zv4q76hadGOfDVuve2fCOLzjVMPpDs74bTnb6ODhVkR4vj5M9eUI9b5/baqujpN70U
+         v6ecASxbi7Kh9S1RtzWoX0dQldC9GncPn4qzbBbpaJMpAYZrkGpNB6yDrLDOQZoSdJj7
+         Y1GamKzfkvdajKLIuyetX1a9Jhx5u97nKi7YzuYPTPymHNoBWQT+lsnR1EKa825EeHav
+         bN8dxx9TlSRHLebhfTYnkJzIG/03b6TYrgCK03BFTRf+Qi90hUjN3gzGxW6qp4L7xYoQ
+         guN+Hg9OZ5ILD8ktc28wsJjb3eLm3RduE54nGIJI1dDsNxIWk14PhO5beXI84nlChSyF
+         N5iw==
+X-Gm-Message-State: AJIora931pjYvegpn/M3i3xrUU0Br7lBxba2poi6rCXJlmePcYG0TfuL
+	aiHOXRuWIhp3vMggTsJTFOKM5Q==
+X-Google-Smtp-Source: AGRyM1sy1BAlaJYBA70syO2cxWxY/rOzAqoPb5lkAbBJ4uTalOaHpUBxuP9res7X63bZoHG9NAbOpg==
+X-Received: by 2002:a2e:9c95:0:b0:25b:b58f:6080 with SMTP id x21-20020a2e9c95000000b0025bb58f6080mr18848968lji.441.1657016453379;
+        Tue, 05 Jul 2022 03:20:53 -0700 (PDT)
+Received: from [192.168.1.52] ([84.20.121.239])
+        by smtp.gmail.com with ESMTPSA id b7-20020a056512070700b0047255d211f7sm5608253lfs.294.2022.07.05.03.20.52
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 05 Jul 2022 03:20:52 -0700 (PDT)
+Message-ID: <1fed199e-0eb8-a7a5-08a4-141694081758@linaro.org>
+Date: Tue, 5 Jul 2022 12:20:51 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <46b0cdab-aa94-7f55-5d9f-f79a644f0fec@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: [PATCH 40/43] phy: qcom-qmp-combo: drop pipe clock lane suffix
+Content-Language: en-US
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20220705094239.17174-1-johan+linaro@kernel.org>
+ <20220705094239.17174-41-johan+linaro@kernel.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220705094239.17174-41-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_032051_448923_FAFF489D 
-X-CRM114-Status: GOOD (  21.32  )
+X-CRM114-CacheID: sfid-20220705_032055_941403_9F921F31 
+X-CRM114-Status: GOOD (  16.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,90 +97,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 05, 2022 at 12:08:36PM +0200, Krzysztof Kozlowski wrote:
-> On 05/07/2022 11:42, Johan Hovold wrote:
-> > The QMP PHY DT schema is getting unwieldy. Break out the odd-bird
-> > msm8996-qmp-pcie-phy which is the only QMP PHY that uses separate
-> > "per-lane" nodes.
-> > 
-> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> > ---
-> >  .../phy/qcom,msm8996-qmp-pcie-phy.yaml        | 114 ++++++++++++++++++
-> >  .../devicetree/bindings/phy/qcom,qmp-phy.yaml |  32 -----
-> >  2 files changed, 114 insertions(+), 32 deletions(-)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-> > new file mode 100644
-> > index 000000000000..14fd86fd91ec
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-> > @@ -0,0 +1,114 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +
+On 05/07/2022 11:42, Johan Hovold wrote:
+> The pipe clock is defined in the "lane" node so there's no need to keep
+> adding a redundant lane-number suffix to the clock name.
 > 
-> No line break
+> Drop the lane suffix from the pipe clock name, but continue supporting
+> the legacy name as a fall back.
 > 
-> > +%YAML 1.2
-> > +---
-> > +$id: "http://devicetree.org/schemas/phy/qcom,msm8996-qmp-pcie-phy.yaml#"
-> > +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
 > 
-> Drop the quotes from two above.
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index b266514ae9ee..7b2eb234cfc2 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -2558,8 +2558,12 @@ int qcom_qmp_phy_combo_create(struct device *dev, struct device_node *np, int id
+>  	 * Otherwise, we initialize pipe clock to NULL for
+>  	 * all phys that don't need this.
+>  	 */
+> -	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
+> -	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
+> +	qphy->pipe_clk = devm_get_clk_from_child(dev, np, "pipe");
 
-This comes from the current binding. I can clean that one up first.
+Just grab first clock.
 
-> > +
-> > +title: Qualcomm QMP PHY controller (MSM8996 PCIe)
-> > +
-> > +maintainers:
-> > +  - Vinod Koul <vkoul@kernel.org>
-> > +
-> > +description:
-> > +  QMP PHY controller supports physical layer functionality for a number of
-> > +  controllers on Qualcomm chipsets, such as, PCIe, UFS, and USB.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: qcom,msm8996-qmp-pcie-phy
-> > +
-> > +  reg:
-> > +    minItems: 1
-> > +    items:
-> > +      - description: Address and length of PHY's common serdes block.
-> > +      - description: Address and length of PHY's DP_COM control block.
-> 
-> Are two reg items applicable here?
-
-No, but see below.
-
-> > +
-> > +  "#address-cells":
-> > +    enum: [ 1, 2 ]
-> > +
-> > +  "#size-cells":
-> > +    enum: [ 1, 2 ]
-> > +
-> > +  ranges: true
-> > +
-> > +  clocks:
-> > +    minItems: 1
-> > +    maxItems: 4
-> 
-> Define clocks here, not in allOf:if:then.
-
-To remain sane, and to help reviewers, I decided not to do changes to
-the binding while splitting it up which would only make them harder
-to review.
-
-Hence the split followed by cleanup/tightening of constraints.
-
-> How about an example?
-
-That's also a new addition to the binding and goes in a later separate
-patch.
-
-Johan
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
