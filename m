@@ -4,71 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F2E0C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 11:58:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 704F1C43334
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 11:59:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TVcSYsqtsbtujleSAZBvRScsHWzU7YLxrHX1OmfKmEE=; b=ebcYNRU5etQrMa
-	1FuGdfGpjevnsGY6guLy5A7ljo/NmTgrIslMt15nBgGW/4FJ6+fz+cCIzHbQ8iqX80qTD/ic5MSra
-	rH9OyT2Qee0zEFTIcQCxedRd8Iir43qd35I1hi3FWa/EyD/9rcB4z7nuMLl6IMZ/lEeRLYJKJcarA
-	+OKRTN+xV5C2MWeCl2kRFuazAtTLWixZtbCRdIMvYocmqARFfjlXSZZan0Mt7w1UVLEFDuKUdF7P8
-	V4YLz3biAdOAsD4IqaqpBLgCgX8Zd9i+m1chEdFXu/Dfq9QkFP8EwxbHRdSco8s/laYxkmS/NARVY
-	vJ/VKVm0x0lNI2ksGTbg==;
+	List-Owner; bh=4iTozrzyAj1fEsK+Xv2Z8znbWEw8JWDLtH99L+V40no=; b=G0mUekSWPvl61d
+	bN0oLJCrT4iEqXd4yi/VmARee9IOqo3EIVxyrEeRS9CtVyY8KcOYW6pm/WZ+uT3j0CkZT2Kd/RI2U
+	Rs2U+nR6y180NTvQSMVHhCkwCfrXB6OHI8qkPYLsnP0AoizP01gQrp9VRQG8rNNt6jLZu1wFjfsnX
+	7GN3rt0E/72mG6O+96B0zJjb/93Bq5LiuVBWxPsuk7l6WHKizwftbrkUGAVLqCsqZYNjgorZnSwO8
+	atXBskLFjzCzO2Dio+7Ys7Z57SPVBo/Mo3KGLZrC/1n7vL2lSI6SU+harUNyMLSKMhj1nSGgmdjDe
+	NNM2SjgIVU/xRuWp7rBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8hCB-00HZVT-H8; Tue, 05 Jul 2022 11:58:23 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1o8hDK-00HZuC-LG; Tue, 05 Jul 2022 11:59:34 +0000
+Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8hC8-00HZTn-Pw
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 11:58:22 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 0DE4261727;
-	Tue,  5 Jul 2022 11:58:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C823CC341C7;
-	Tue,  5 Jul 2022 11:58:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657022299;
-	bh=lCXFzDOu/arhn1E7qbcpYeWsTGXEZM7HRnIjvJuXRQo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ItEhj+54jubFtuMGB8gFICe9Al+h8/22un5trpf08ioiYyvwAhcQzH8J88lV0U0Wk
-	 3kjJoLEbZ999TJifjmeJ2AwV3LE8AGTm5SW8a0VbWS/jRSxWRcs0MgbfYv6I3JUbY5
-	 oWlVK3xxkK0cuX9vrewGjpSUrtKS6NUGwyo5lmGSfYP/Etsm65PW47EAH8KnNNIBAK
-	 mbszHYkTs/pjmhQSLifETgm9myld2cOlwWOz7opBpUtW9M9iin29/e2On84my9D0dS
-	 iaLLBkRA28pyUz2XF0HEHioDPv/P3pqY+j6u2i3yZtvqyM5Gz223bCAimMTq9WM22o
-	 wp5tytzOK0tIg==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan@kernel.org>)
-	id 1o8hC7-000679-Jh; Tue, 05 Jul 2022 13:58:20 +0200
-Date: Tue, 5 Jul 2022 13:58:19 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 38/43] phy: qcom-qmp-pcie: drop pipe clock lane suffix
-Message-ID: <YsQnW2o4eCU8PlWl@hovoldconsulting.com>
-References: <20220705094239.17174-1-johan+linaro@kernel.org>
- <20220705094239.17174-39-johan+linaro@kernel.org>
- <dcff330c-92ec-2302-8e2a-4ac124e72942@linaro.org>
- <76508b56-6733-b65c-d81c-31ac173780c0@linaro.org>
+	id 1o8hDH-00HZqs-9u
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 11:59:32 +0000
+Received: by mail-lf1-x133.google.com with SMTP id g11so4901408lfb.11
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 04:59:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=message-id:date:mime-version:user-agent:subject:content-language:to
+         :cc:references:from:in-reply-to:content-transfer-encoding;
+        bh=6siEFuHTvz2wiZjNJS/sIJYuAAMQPwq2R44ZfoCD8LA=;
+        b=mmuxC3elnOWnJdm5y+8IWI+4z7RlV9dmMTlrS0adveVMqJh+LSw26uvhbaVdv3c0CR
+         NuJPlLuAdBIbFCS8Te4/RIxJlEHrQ+Mfl4I+o+zr9pfU5pybB+ywLTau2DRz7+Yelc9A
+         t1ruCo+VQ8Z311ZLnL1XtCmnyFDo5l0GHoMqa/GtSS4ME67YqQ4KHuqUIwhJStxL6Hc8
+         hOqbk1OsLDWWeFyOsua8Z5S37UULokgit4LFactvNLRewEMNpDFL1w02H1/bugsbRKAK
+         9HUhrnzcXHcqNC24WU73b86l1LSlG8DSw4Ht/K6yOaCliDS7nSC1M4ySSZA/PxTI7x3o
+         HAXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :content-transfer-encoding;
+        bh=6siEFuHTvz2wiZjNJS/sIJYuAAMQPwq2R44ZfoCD8LA=;
+        b=Mzjuf1PIIe20frBH1rxnD4X0PEKxYDQ81yoe5dOerro30zaC1Twf2w6OgA/H8VzxPq
+         oFP/EOUCgiX5+r5iO9tuFU9A+xHu0i095Tqeu+g+GviRg0PXfVqqgHz6c32P8uqWBVjM
+         WdXvPwigNMzIvLc+r2pci/LwFpA7JK8N0nFaZqDuMUPr5ueIu5bjFvNHT7a2ZeVObJ5V
+         hhkt7WkczozT8fdJ5YJ+vzB/mM6Y9XO8aDRV5U8vCvzrKn9RlMEldarwjAp/USDw8/8n
+         K35mWLuJ3a+f4z8yQ186GeZUMDpGMkCEVqj2sBqvygBGsNQXz9AjwOwGyvDJfVXt9401
+         un9g==
+X-Gm-Message-State: AJIora+VNOUQiAxCQYnK3n7tnbbZQVoBcKGUY6C7HrP7Dfiz1kmFVGBQ
+	1wrvC+yV/TSIM5H8Le2+U+C+ivP823992Q==
+X-Google-Smtp-Source: AGRyM1tZ8htjZWP+QnN9dvmr8bSoCF+K5t1fwgkt71yBEOScwK7N7obCz+hU0Pi1vOMOFazWj0isCg==
+X-Received: by 2002:a05:6512:b23:b0:481:3e76:4942 with SMTP id w35-20020a0565120b2300b004813e764942mr21872103lfu.384.1657022368111;
+        Tue, 05 Jul 2022 04:59:28 -0700 (PDT)
+Received: from [192.168.1.52] ([84.20.121.239])
+        by smtp.gmail.com with ESMTPSA id o4-20020a05651205c400b0047f8990e8c2sm5683389lfo.140.2022.07.05.04.59.26
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 05 Jul 2022 04:59:27 -0700 (PDT)
+Message-ID: <8d739c84-ba61-a030-ea8a-63a3f45c642c@linaro.org>
+Date: Tue, 5 Jul 2022 13:59:26 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <76508b56-6733-b65c-d81c-31ac173780c0@linaro.org>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: [PATCH 16/43] dt-bindings: phy: qcom,qmp-pcie: drop unused
+ vddp-ref-clk supply
+Content-Language: en-US
+To: Johan Hovold <johan@kernel.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Andy Gross <agross@kernel.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20220705094239.17174-1-johan+linaro@kernel.org>
+ <20220705094239.17174-17-johan+linaro@kernel.org>
+ <d3a49c05-0fd0-920e-bd0a-f821e8e27b8b@linaro.org>
+ <YsQkmUVla9+CDYly@hovoldconsulting.com>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <YsQkmUVla9+CDYly@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_045820_942756_5FCAC78A 
-X-CRM114-Status: GOOD (  22.46  )
+X-CRM114-CacheID: sfid-20220705_045931_397232_B5F25E9C 
+X-CRM114-Status: GOOD (  10.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,46 +100,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 05, 2022 at 02:13:04PM +0300, Dmitry Baryshkov wrote:
-> On 05/07/2022 13:20, Krzysztof Kozlowski wrote:
-> > On 05/07/2022 11:42, Johan Hovold wrote:
-> >> The pipe clock is defined in the "lane" node so there's no need to keep
-> >> adding a redundant lane-number suffix to the clock name.
-> >>
-> >> Drop the lane suffix from the pipe clock name, but continue supporting
-> >> the legacy name as a fall back.
-> >>
-> >> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> >> ---
-> >>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 8 ++++++--
-> >>   1 file changed, 6 insertions(+), 2 deletions(-)
-> >>
-> >> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> >> index 385ea3d8de08..254ad25591b9 100644
-> >> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> >> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> >> @@ -2210,8 +2210,12 @@ int qcom_qmp_phy_pcie_create(struct device *dev, struct device_node *np, int id,
-> >>   	if (!qphy->pcs_misc)
-> >>   		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
-> >>   
-> >> -	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
-> >> -	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-> >> +	qphy->pipe_clk = devm_get_clk_from_child(dev, np, "pipe");
-> > 
-> > Just get first clock and no need for handling any deprecation.
+On 05/07/2022 13:46, Johan Hovold wrote:
+>> It's okay to copy existing bindings which are applicable and then in
+>> separate patch deprecate things or remove pieces which are not correct.
+>> But all this in assumption that the first copy already selected only
+>> applicable parts.
+> 
+> But how would you be able to tell what parts I left out from the
+> original copy 
 
-I still want to deprecate the current name as it makes no sense and
-risks introducing inconsistencies when adding new resources (e.g. should
-they also get a bogus suffix).
+They are obvious and immediately visible. I see old bindings and new
+bindings - no troubles to compare. I review new bindings - everything in
+place.
 
-> If I got it correctly, passing NULL instead of the name would do the trick.
+I don't want to review old code, inapplicable code. The patch I am
+reviewing (the one doing the split) must bring correct bindings, except
+these few differences like deprecated stuff.
 
-Ah, thanks for spotting that. I feared this would require adding a host
-of new devres wrappers otherwise.
+> unless I first do the split and then explicitly remove
+> things that were presumably *never* applicable and just happened to be
+> added because all bindings where combined in one large mess of a schema?
 
-Would still be needed for the upcoming second pipediv2 clock though...
-
-Johan
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
