@@ -4,121 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 723EEC43334
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 17:28:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D89F5C433EF
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 17:36:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oMlrpHLCUz6u/V5XJBcK5L3xwFKmT/S/PffD9fnEFRo=; b=giBJOAw3bEKuO3QIPrjFl2Id/S
-	Ctq+kUbnAjAiI/LXQoHPjCIrGuFLT0IPT7+yR8R+iZpz70fmKHMAfv1UpIAVrsH4Pcl6pFKpYqxAm
-	/JwWX/Af1px/qcVGPGXnIQlqnJGsDdx/BGBvxM7uWIRAeJ3Y1gO5bPeAB/MUnDLCMxrBDdEaAfkwU
-	7siuuOTfU7Xi5VwJ/1Dn4JrEYbmHXbb4C2xhPkv7pXwF8rBk7G7ucWrfd7pvip2STukzo0oi22qLo
-	47snIMo4xHdWS436SxqKlHQ5LRhtleHuOGTihzwtsGGoy0vUuvlG4PFHL4Kx3lA9EUaKkGovV3pRg
-	y1NGsnnQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oqSRjVIHFdv+cjxSpgVQSHM498XqrmYXuiHFskU/IFI=; b=0j5QgcLo4V0hkc
+	3tb9ZcmoSc5JoI24RlZWRtR5DtaVKbbm2AuQIZ8ryUCvs6pKgJRSYRrEv+2TMPojxG2MDmT563Qgx
+	0SJ1wsdGq4znOSRjCSVRou4fJrRv6fo9N1QUW8ssz4Rn/6tDXdXwnN5EnfC9QjQG4/CcDicWKsw9U
+	i9m0+whCrmOU886Qg1gWGylhuDunJuHvOAxDuOn0Z7Zd1fbZu60uopkPJf9lQxmzwHIxVcJy5bmWL
+	07bzZTlT5nURQnBkj0/4uW/r3VCIIXcwn6MHuegcb4Bh37PuFaCcE2KS/t1k3yAeynoWMo1zAGUq7
+	/pv0OnAzVuNv1vgt8UhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8mLT-001rrd-Q5; Tue, 05 Jul 2022 17:28:19 +0000
-Received: from mail-qk1-x72a.google.com ([2607:f8b0:4864:20::72a])
+	id 1o8mTc-001vgH-0L; Tue, 05 Jul 2022 17:36:44 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8mL1-001rh1-Dg
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 17:27:53 +0000
-Received: by mail-qk1-x72a.google.com with SMTP id k20so9249666qkj.1
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 10:27:50 -0700 (PDT)
+	id 1o8fOV-00H219-AD
+	for linux-phy@bombadil.infradead.org; Tue, 05 Jul 2022 10:02:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=VK2ZGnAAJUxlWsXlxgZdSWHn6WBnB1AZNJCzddcADrY=; b=n2efLmfd8JNSUZeApq5XsddG4Z
+	ACXlr5hxwQiqKiGMGbCIZUx1TW+d34KiGwEM7k36fEGbtX5aV9kKljBqbztYftsyxd1YmG4nsnJW2
+	znQT1etwnZYQhJ9FNaRInLxxwnkEHp6q+9ZW1r9Ih1tCxik2RVlhsQdVwIrOqDg10E+rSbm780v74
+	spGpe3RflBgVGq3WcBrWcfVXJZ01stcIBaajtCJw1gU0zkEggPG6KeUCR0QKwivwhi+PJ68BHPHwK
+	EwW5BVDOyzu8kCJOuQWSzjijkanlEaqerRo5YjVKSREb9IKnwBDAD9wt9iYh0vsvrQpvkGPUbzPHa
+	wrNy/8XQ==;
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	by desiato.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1o8f5q-00HUwq-1I
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:44:09 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id j21so19664938lfe.1
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:43:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google;
+        d=linaro.org; s=google;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
-         :mime-version;
-        bh=SknzXaw89HZ0kBGmp19o2eX5p3jFq5ptkv1IQhU7Xtg=;
-        b=O6Fjqb9aDqwD5+imuUbbmuJAaHTC06J1gsNuDN43qOlT3s4XitZukAaneNFI7nTSOj
-         qzsKBSj+hWo8pmDfC4klS78bdbePLxHYQRx2j/QXCDCr5cQtnyMq2WTOUbIT2kM/t2Hs
-         dPrCbVixcLFhHB6frUDQHJuFAFQdSR4G2K0qc=
+         :mime-version:content-transfer-encoding;
+        bh=VK2ZGnAAJUxlWsXlxgZdSWHn6WBnB1AZNJCzddcADrY=;
+        b=qoZBiGz06S8TDi71CTSq/diRtZBjgXAAV5DNsyV47ki0JmvCvWkxP6gU8mpnTAE0dR
+         9w/qIn6qarxqSdl3Cu17AVIFrWvBojjSEH4BLeWPY9B/cBIi2dGc48JZhukmCR8rOaXU
+         SZ4JE6a2ifihWkwlLvCidPp/FLmhFm148SjM14w3pgmVf85AmnINCnabHgTic1B8nY2+
+         CLTYTI+tTIjWIQzLJcWu4UjLEAVbp9ZHjK4pnL/EReUImqbbvMofaRekl9ya7D4HCrFe
+         HH1AX6LuUKSg9vTjimWT6pDTbYRP0oU7/Z80SyXqz8L1hjxUOwxLj9MEuORReCyhKGaC
+         jk6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
-         :references:mime-version;
-        bh=SknzXaw89HZ0kBGmp19o2eX5p3jFq5ptkv1IQhU7Xtg=;
-        b=xYRawUPlpe1tVPpkVNnkxRL6DfuqdiUbJRUtaDZWA01nicw5JVkzr5UKaHCboFfdqg
-         KccqRsOmOzyHSkcoSGBeec/IKIphb7ZKAcvosHGiYnkOr2+mhnyxtYJ0CWNgMJmWAiCp
-         BWEW7xWKuw1Wlk/dQ420mHO8o1N+PkGqYcfYX5RTtDmLmcyk/SRxqKwI+Ds3okKERt0/
-         04kEzY86IGLGAvRuBMETPjt2KtePzd6cYkOrRZWe28ffbsdPvYPZcyvPho6SbTF++dmD
-         ls3QwAUdpFJ+6KNhnTM0nkFkCAz/dHPcLO2JNa3kt02eUj7WxIN0INol1eHhWLLCEW/I
-         Uqpg==
-X-Gm-Message-State: AJIora/SvPxNc7lGKWe0bxwb3qymDBwXIJgx9SD72owcdJupP+ogXMpY
-	qyaMLXc8RTFD35prnYMeHUHbVw==
-X-Google-Smtp-Source: AGRyM1tICpJBWTpJluwVWgvr/SiLOtLEOfN8aYULIVJ2nAnAkDYsCqqAiCqdyZRxsnO8pWoWjjJEXw==
-X-Received: by 2002:a05:620a:c1b:b0:6af:1f8c:d73d with SMTP id l27-20020a05620a0c1b00b006af1f8cd73dmr24124048qki.536.1657042069366;
-        Tue, 05 Jul 2022 10:27:49 -0700 (PDT)
-Received: from ubuntu-22.localdomain ([192.19.222.250])
-        by smtp.gmail.com with ESMTPSA id d8-20020ac85ac8000000b00304e70585f9sm24439851qtd.72.2022.07.05.10.27.44
+         :references:mime-version:content-transfer-encoding;
+        bh=VK2ZGnAAJUxlWsXlxgZdSWHn6WBnB1AZNJCzddcADrY=;
+        b=IhTXYq2y1BenKaz2No8gPiN4ol/CVsFMT1xu48CZ3iKOF9gf9Zf657QdyiJ6Q2f07R
+         XCuikPU5Elw+9CQ0+zQXmRTCKRoQ91dqFzVJgqNuOeZoFeA665YhRxGStIC79OJHI6oB
+         1IoALDOupOudVlfrYubXGczHJeTBBS/4OtjEJNuys/eeNVm0uzeTWQoDBje4W9Nvyd6c
+         9/K3OMSI78nuq5JComsZ69asfVvi1yC/N5zXkBPrr0c2hNagLFsKwIDeSVDxRTYnqAuI
+         KOThNreamugB5tJYReq3aGr99wgwyooy7I470+G+SI6GRHySXprVVR/KXC45oRKQa49s
+         Ybsw==
+X-Gm-Message-State: AJIora8FroRSdiDNLfAIh3iEoe7QGrv9eHTGE13/AUnbntFuPkY2raCI
+	FAZzESIrxrh1TBR7HuYfPapUIg==
+X-Google-Smtp-Source: AGRyM1sMaEEudOoA/Iz6USJ9yz4mOeVeLtXcTDYCWrED+w2Xzkarg30mIQXmm2zPh8zKhw420SLkyA==
+X-Received: by 2002:a05:6512:169f:b0:482:f605:c19c with SMTP id bu31-20020a056512169f00b00482f605c19cmr3139331lfb.592.1657014213881;
+        Tue, 05 Jul 2022 02:43:33 -0700 (PDT)
+Received: from eriador.lan ([37.153.55.125])
+        by smtp.gmail.com with ESMTPSA id f7-20020a056512360700b00482f206b087sm491683lfs.39.2022.07.05.02.43.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 05 Jul 2022 10:27:48 -0700 (PDT)
-From: William Zhang <william.zhang@broadcom.com>
-To: Linux ARM List <linux-arm-kernel@lists.infradead.org>
-Cc: joel.peshkin@broadcom.com,
-	kursad.oney@broadcom.com,
-	f.fainelli@gmail.com,
-	anand.gore@broadcom.com,
-	Broadcom Kernel List <bcm-kernel-feedback-list@broadcom.com>,
-	philippe.reynes@softathome.com,
-	dan.beygelman@broadcom.com,
-	William Zhang <william.zhang@broadcom.com>,
-	Al Cooper <alcooperx@gmail.com>,
-	Andre Przywara <andre.przywara@arm.com>,
-	Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
-	Ard Biesheuvel <ardb@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Cai Huoqing <cai.huoqing@linux.dev>,
-	Conor Dooley <conor.dooley@microchip.com>,
-	Damien Le Moal <damien.lemoal@opensource.wdc.com>,
-	Eugen Hristev <eugen.hristev@microchip.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	Jan Dabros <jsd@semihalf.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
-	Jie Deng <jie.deng@intel.com>,
-	Jiri Slaby <jirislaby@kernel.org>,
-	Kavyasree Kotagiri <kavyasree.kotagiri@microchip.com>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Lukas Bulwahn <lukas.bulwahn@gmail.com>,
-	Mark Brown <broonie@kernel.org>,
-	Matt Mackall <mpm@selenic.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Nathan Chancellor <nathan@kernel.org>,
-	Nicolas Ferre <nicolas.ferre@microchip.com>,
-	=?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
-	Rob Herring <robh@kernel.org>,
-	Russell King <linux@armlinux.org.uk>,
-	Sam Protsenko <semen.protsenko@linaro.org>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Sunil Goutham <sgoutham@marvell.com>,
-	Sven Peter <sven@svenpeter.dev>,
-	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
-	Tyrone Ting <kfting@nuvoton.com>,
+        Tue, 05 Jul 2022 02:43:33 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Andy Gross <agross@kernel.org>,
+	Bjorn Andersson <bjorn.andersson@linaro.org>,
+	Konrad Dybcio <konrad.dybcio@somainline.org>,
 	Vinod Koul <vkoul@kernel.org>,
-	Wolfram Sang <wsa@kernel.org>,
-	linux-clk@vger.kernel.org,
-	linux-crypto@vger.kernel.org,
-	linux-i2c@vger.kernel.org,
-	linux-ide@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org
-Subject: [PATCH 5/9] arm: bcmbca: Replace ARCH_BCM_63XX with ARCH_BCMBCA
-Date: Tue,  5 Jul 2022 10:26:09 -0700
-Message-Id: <20220705172613.21152-6-william.zhang@broadcom.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20220705172613.21152-1-william.zhang@broadcom.com>
-References: <20220705172613.21152-1-william.zhang@broadcom.com>
+	Kishon Vijay Abraham I <kishon@ti.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v1 15/28] phy: qcom-qmp: move PCS V4 registers to separate headers
+Date: Tue,  5 Jul 2022 12:43:07 +0300
+Message-Id: <20220705094320.1313312-16-dmitry.baryshkov@linaro.org>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
+References: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_102751_494006_AAF378A9 
-X-CRM114-Status: GOOD (  16.84  )
+X-CRM114-CacheID: sfid-20220705_104342_789754_BF2F6199 
+X-CRM114-Status: GOOD (  13.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,238 +102,502 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0095466127716869598=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============0095466127716869598==
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256;
-	boundary="000000000000f1859805e3122b54"
+Move PCS V4 registers to the separate headers.
 
---000000000000f1859805e3122b54
-Content-Transfer-Encoding: 8bit
-
-Update ARCH_BCM_63XX in all sources to use ARCHB_BCMBCA instead.
-
-Signed-off-by: William Zhang <william.zhang@broadcom.com>
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
+ .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h   |  23 +++
+ .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v4.h    |  31 +++
+ .../phy/qualcomm/phy-qcom-qmp-pcs-usb-v4.h    |  34 ++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4.h    | 135 ++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.h           | 192 +-----------------
+ 5 files changed, 228 insertions(+), 187 deletions(-)
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v4.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v4.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4.h
 
- arch/arm/Kconfig.debug         | 2 +-
- drivers/ata/Kconfig            | 2 +-
- drivers/char/hw_random/Kconfig | 2 +-
- drivers/clk/bcm/Kconfig        | 4 ++--
- drivers/i2c/busses/Kconfig     | 2 +-
- drivers/phy/broadcom/Kconfig   | 2 +-
- drivers/spi/Kconfig            | 2 +-
- drivers/tty/serial/Kconfig     | 4 ++--
- 8 files changed, 10 insertions(+), 10 deletions(-)
-
-diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
-index 9b0aa4822d69..792796a348c3 100644
---- a/arch/arm/Kconfig.debug
-+++ b/arch/arm/Kconfig.debug
-@@ -271,7 +271,7 @@ choice
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h
+new file mode 100644
+index 000000000000..5a97867c5ba6
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4.h
+@@ -0,0 +1,23 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_PCS_PCIE_V4_H_
++#define QCOM_PHY_QMP_PCS_PCIE_V4_H_
++
++/* Only for QMP V4 PHY - PCS_PCIE registers (same as PCS_MISC?) */
++#define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG2		0x0c
++#define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG4		0x14
++#define QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x1c
++#define QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L	0x40
++#define QPHY_V4_PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L	0x48
++#define QPHY_V4_PCS_PCIE_INT_AUX_CLK_CONFIG1		0x50
++#define QPHY_V4_PCS_PCIE_OSC_DTCT_ACTIONS		0x90
++#define QPHY_V4_PCS_PCIE_EQ_CONFIG1			0xa0
++#define QPHY_V4_PCS_PCIE_EQ_CONFIG2			0xa4
++#define QPHY_V4_PCS_PCIE_PRESET_P6_P7_PRE		0xb4
++#define QPHY_V4_PCS_PCIE_PRESET_P10_PRE			0xbc
++#define QPHY_V4_PCS_PCIE_PRESET_P10_POST		0xe0
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v4.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v4.h
+new file mode 100644
+index 000000000000..a1c7d3d17150
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v4.h
+@@ -0,0 +1,31 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_PCS_UFS_V4_H_
++#define QCOM_PHY_QMP_PCS_UFS_V4_H_
++
++/* Only for QMP V4 PHY - UFS PCS registers */
++#define QPHY_V4_PCS_UFS_PHY_START			0x000
++#define QPHY_V4_PCS_UFS_POWER_DOWN_CONTROL		0x004
++#define QPHY_V4_PCS_UFS_SW_RESET			0x008
++#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB	0x00c
++#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB	0x010
++#define QPHY_V4_PCS_UFS_PLL_CNTL			0x02c
++#define QPHY_V4_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x030
++#define QPHY_V4_PCS_UFS_TX_SMALL_AMP_DRV_LVL		0x038
++#define QPHY_V4_PCS_UFS_BIST_FIXED_PAT_CTRL		0x060
++#define QPHY_V4_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
++#define QPHY_V4_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0b4
++#define QPHY_V4_PCS_UFS_DEBUG_BUS_CLKSEL		0x124
++#define QPHY_V4_PCS_UFS_LINECFG_DISABLE			0x148
++#define QPHY_V4_PCS_UFS_RX_MIN_HIBERN8_TIME		0x150
++#define QPHY_V4_PCS_UFS_RX_SIGDET_CTRL2			0x158
++#define QPHY_V4_PCS_UFS_TX_PWM_GEAR_BAND		0x160
++#define QPHY_V4_PCS_UFS_TX_HS_GEAR_BAND			0x168
++#define QPHY_V4_PCS_UFS_READY_STATUS			0x180
++#define QPHY_V4_PCS_UFS_TX_MID_TERM_CTRL1		0x1d8
++#define QPHY_V4_PCS_UFS_MULTI_LANE_CTRL1		0x1e0
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v4.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v4.h
+new file mode 100644
+index 000000000000..d7fd4ac0fc55
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v4.h
+@@ -0,0 +1,34 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_PCS_USB_V4_H_
++#define QCOM_PHY_QMP_PCS_USB_V4_H_
++
++/* Only for QMP V4 PHY - USB3 PCS registers */
++#define QPHY_V4_PCS_USB3_POWER_STATE_CONFIG1		0x000
++#define QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_STATUS		0x004
++#define QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_CTRL		0x008
++#define QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_CTRL2		0x00c
++#define QPHY_V4_PCS_USB3_LFPS_RXTERM_IRQ_SOURCE_STATUS	0x010
++#define QPHY_V4_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR		0x014
++#define QPHY_V4_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL	0x018
++#define QPHY_V4_PCS_USB3_LFPS_TX_ECSTART		0x01c
++#define QPHY_V4_PCS_USB3_LFPS_PER_TIMER_VAL		0x020
++#define QPHY_V4_PCS_USB3_LFPS_TX_END_CNT_U3_START	0x024
++#define QPHY_V4_PCS_USB3_RXEQTRAINING_LOCK_TIME		0x028
++#define QPHY_V4_PCS_USB3_RXEQTRAINING_WAIT_TIME		0x02c
++#define QPHY_V4_PCS_USB3_RXEQTRAINING_CTLE_TIME		0x030
++#define QPHY_V4_PCS_USB3_RXEQTRAINING_WAIT_TIME_S2	0x034
++#define QPHY_V4_PCS_USB3_RXEQTRAINING_DFE_TIME_S2	0x038
++#define QPHY_V4_PCS_USB3_RCVR_DTCT_DLY_U3_L		0x03c
++#define QPHY_V4_PCS_USB3_RCVR_DTCT_DLY_U3_H		0x040
++#define QPHY_V4_PCS_USB3_ARCVR_DTCT_EN_PERIOD		0x044
++#define QPHY_V4_PCS_USB3_ARCVR_DTCT_CM_DLY		0x048
++#define QPHY_V4_PCS_USB3_TXONESZEROS_RUN_LENGTH		0x04c
++#define QPHY_V4_PCS_USB3_ALFPS_DEGLITCH_VAL		0x050
++#define QPHY_V4_PCS_USB3_SIGDET_STARTUP_TIMER_VAL	0x054
++#define QPHY_V4_PCS_USB3_TEST_CONTROL			0x058
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4.h
+new file mode 100644
+index 000000000000..a2c1eba2b693
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4.h
+@@ -0,0 +1,135 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_PCS_V4_H_
++#define QCOM_PHY_QMP_PCS_V4_H_
++
++/* Only for QMP V4 PHY - USB/PCIe PCS registers */
++#define QPHY_V4_PCS_SW_RESET				0x000
++#define QPHY_V4_PCS_REVISION_ID0			0x004
++#define QPHY_V4_PCS_REVISION_ID1			0x008
++#define QPHY_V4_PCS_REVISION_ID2			0x00c
++#define QPHY_V4_PCS_REVISION_ID3			0x010
++#define QPHY_V4_PCS_PCS_STATUS1				0x014
++#define QPHY_V4_PCS_PCS_STATUS2				0x018
++#define QPHY_V4_PCS_PCS_STATUS3				0x01c
++#define QPHY_V4_PCS_PCS_STATUS4				0x020
++#define QPHY_V4_PCS_PCS_STATUS5				0x024
++#define QPHY_V4_PCS_PCS_STATUS6				0x028
++#define QPHY_V4_PCS_PCS_STATUS7				0x02c
++#define QPHY_V4_PCS_DEBUG_BUS_0_STATUS			0x030
++#define QPHY_V4_PCS_DEBUG_BUS_1_STATUS			0x034
++#define QPHY_V4_PCS_DEBUG_BUS_2_STATUS			0x038
++#define QPHY_V4_PCS_DEBUG_BUS_3_STATUS			0x03c
++#define QPHY_V4_PCS_POWER_DOWN_CONTROL			0x040
++#define QPHY_V4_PCS_START_CONTROL			0x044
++#define QPHY_V4_PCS_INSIG_SW_CTRL1			0x048
++#define QPHY_V4_PCS_INSIG_SW_CTRL2			0x04c
++#define QPHY_V4_PCS_INSIG_SW_CTRL3			0x050
++#define QPHY_V4_PCS_INSIG_SW_CTRL4			0x054
++#define QPHY_V4_PCS_INSIG_SW_CTRL5			0x058
++#define QPHY_V4_PCS_INSIG_SW_CTRL6			0x05c
++#define QPHY_V4_PCS_INSIG_SW_CTRL7			0x060
++#define QPHY_V4_PCS_INSIG_SW_CTRL8			0x064
++#define QPHY_V4_PCS_INSIG_MX_CTRL1			0x068
++#define QPHY_V4_PCS_INSIG_MX_CTRL2			0x06c
++#define QPHY_V4_PCS_INSIG_MX_CTRL3			0x070
++#define QPHY_V4_PCS_INSIG_MX_CTRL4			0x074
++#define QPHY_V4_PCS_INSIG_MX_CTRL5			0x078
++#define QPHY_V4_PCS_INSIG_MX_CTRL7			0x07c
++#define QPHY_V4_PCS_INSIG_MX_CTRL8			0x080
++#define QPHY_V4_PCS_OUTSIG_SW_CTRL1			0x084
++#define QPHY_V4_PCS_OUTSIG_MX_CTRL1			0x088
++#define QPHY_V4_PCS_CLAMP_ENABLE			0x08c
++#define QPHY_V4_PCS_POWER_STATE_CONFIG1			0x090
++#define QPHY_V4_PCS_POWER_STATE_CONFIG2			0x094
++#define QPHY_V4_PCS_FLL_CNTRL1				0x098
++#define QPHY_V4_PCS_FLL_CNTRL2				0x09c
++#define QPHY_V4_PCS_FLL_CNT_VAL_L			0x0a0
++#define QPHY_V4_PCS_FLL_CNT_VAL_H_TOL			0x0a4
++#define QPHY_V4_PCS_FLL_MAN_CODE			0x0a8
++#define QPHY_V4_PCS_TEST_CONTROL1			0x0ac
++#define QPHY_V4_PCS_TEST_CONTROL2			0x0b0
++#define QPHY_V4_PCS_TEST_CONTROL3			0x0b4
++#define QPHY_V4_PCS_TEST_CONTROL4			0x0b8
++#define QPHY_V4_PCS_TEST_CONTROL5			0x0bc
++#define QPHY_V4_PCS_TEST_CONTROL6			0x0c0
++#define QPHY_V4_PCS_LOCK_DETECT_CONFIG1			0x0c4
++#define QPHY_V4_PCS_LOCK_DETECT_CONFIG2			0x0c8
++#define QPHY_V4_PCS_LOCK_DETECT_CONFIG3			0x0cc
++#define QPHY_V4_PCS_LOCK_DETECT_CONFIG4			0x0d0
++#define QPHY_V4_PCS_LOCK_DETECT_CONFIG5			0x0d4
++#define QPHY_V4_PCS_LOCK_DETECT_CONFIG6			0x0d8
++#define QPHY_V4_PCS_REFGEN_REQ_CONFIG1			0x0dc
++#define QPHY_V4_PCS_REFGEN_REQ_CONFIG2			0x0e0
++#define QPHY_V4_PCS_REFGEN_REQ_CONFIG3			0x0e4
++#define QPHY_V4_PCS_BIST_CTRL				0x0e8
++#define QPHY_V4_PCS_PRBS_POLY0				0x0ec
++#define QPHY_V4_PCS_PRBS_POLY1				0x0f0
++#define QPHY_V4_PCS_FIXED_PAT0				0x0f4
++#define QPHY_V4_PCS_FIXED_PAT1				0x0f8
++#define QPHY_V4_PCS_FIXED_PAT2				0x0fc
++#define QPHY_V4_PCS_FIXED_PAT3				0x100
++#define QPHY_V4_PCS_FIXED_PAT4				0x104
++#define QPHY_V4_PCS_FIXED_PAT5				0x108
++#define QPHY_V4_PCS_FIXED_PAT6				0x10c
++#define QPHY_V4_PCS_FIXED_PAT7				0x110
++#define QPHY_V4_PCS_FIXED_PAT8				0x114
++#define QPHY_V4_PCS_FIXED_PAT9				0x118
++#define QPHY_V4_PCS_FIXED_PAT10				0x11c
++#define QPHY_V4_PCS_FIXED_PAT11				0x120
++#define QPHY_V4_PCS_FIXED_PAT12				0x124
++#define QPHY_V4_PCS_FIXED_PAT13				0x128
++#define QPHY_V4_PCS_FIXED_PAT14				0x12c
++#define QPHY_V4_PCS_FIXED_PAT15				0x130
++#define QPHY_V4_PCS_TXMGN_CONFIG			0x134
++#define QPHY_V4_PCS_G12S1_TXMGN_V0			0x138
++#define QPHY_V4_PCS_G12S1_TXMGN_V1			0x13c
++#define QPHY_V4_PCS_G12S1_TXMGN_V2			0x140
++#define QPHY_V4_PCS_G12S1_TXMGN_V3			0x144
++#define QPHY_V4_PCS_G12S1_TXMGN_V4			0x148
++#define QPHY_V4_PCS_G12S1_TXMGN_V0_RS			0x14c
++#define QPHY_V4_PCS_G12S1_TXMGN_V1_RS			0x150
++#define QPHY_V4_PCS_G12S1_TXMGN_V2_RS			0x154
++#define QPHY_V4_PCS_G12S1_TXMGN_V3_RS			0x158
++#define QPHY_V4_PCS_G12S1_TXMGN_V4_RS			0x15c
++#define QPHY_V4_PCS_G3S2_TXMGN_MAIN			0x160
++#define QPHY_V4_PCS_G3S2_TXMGN_MAIN_RS			0x164
++#define QPHY_V4_PCS_G12S1_TXDEEMPH_M6DB			0x168
++#define QPHY_V4_PCS_G12S1_TXDEEMPH_M3P5DB		0x16c
++#define QPHY_V4_PCS_G3S2_PRE_GAIN			0x170
++#define QPHY_V4_PCS_G3S2_POST_GAIN			0x174
++#define QPHY_V4_PCS_G3S2_PRE_POST_OFFSET		0x178
++#define QPHY_V4_PCS_G3S2_PRE_GAIN_RS			0x17c
++#define QPHY_V4_PCS_G3S2_POST_GAIN_RS			0x180
++#define QPHY_V4_PCS_G3S2_PRE_POST_OFFSET_RS		0x184
++#define QPHY_V4_PCS_RX_SIGDET_LVL			0x188
++#define QPHY_V4_PCS_RX_SIGDET_DTCT_CNTRL		0x18c
++#define QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_L		0x190
++#define QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_H		0x194
++#define QPHY_V4_PCS_RATE_SLEW_CNTRL1			0x198
++#define QPHY_V4_PCS_RATE_SLEW_CNTRL2			0x19c
++#define QPHY_V4_PCS_PWRUP_RESET_DLY_TIME_AUXCLK		0x1a0
++#define QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_L	0x1a4
++#define QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_H	0x1a8
++#define QPHY_V4_PCS_TSYNC_RSYNC_TIME			0x1ac
++#define QPHY_V4_PCS_CDR_RESET_TIME			0x1b0
++#define QPHY_V4_PCS_TSYNC_DLY_TIME			0x1b4
++#define QPHY_V4_PCS_ELECIDLE_DLY_SEL			0x1b8
++#define QPHY_V4_PCS_CMN_ACK_OUT_SEL			0x1bc
++#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG1		0x1c0
++#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG2		0x1c4
++#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG3		0x1c8
++#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG4		0x1cc
++#define QPHY_V4_PCS_PCS_TX_RX_CONFIG			0x1d0
++#define QPHY_V4_PCS_RX_IDLE_DTCT_CNTRL			0x1d4
++#define QPHY_V4_PCS_RX_DCC_CAL_CONFIG			0x1d8
++#define QPHY_V4_PCS_EQ_CONFIG1				0x1dc
++#define QPHY_V4_PCS_EQ_CONFIG2				0x1e0
++#define QPHY_V4_PCS_EQ_CONFIG3				0x1e4
++#define QPHY_V4_PCS_EQ_CONFIG4				0x1e8
++#define QPHY_V4_PCS_EQ_CONFIG5				0x1ec
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index 1290c62a16fe..05da0725df71 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -25,6 +25,11 @@
+ #include "phy-qcom-qmp-pcs-v3.h"
+ #include "phy-qcom-qmp-pcs-misc-v3.h"
  
- 	config DEBUG_BCM63XX_UART
- 		bool "Kernel low-level debugging on BCM63XX UART"
--		depends on ARCH_BCM_63XX
-+		depends on ARCH_BCMBCA
++#include "phy-qcom-qmp-pcs-v4.h"
++#include "phy-qcom-qmp-pcs-pcie-v4.h"
++#include "phy-qcom-qmp-pcs-usb-v4.h"
++#include "phy-qcom-qmp-pcs-ufs-v4.h"
++
+ /* Only for QMP V3 & V4 PHY - DP COM registers */
+ #define QPHY_V3_DP_COM_PHY_MODE_CTRL			0x00
+ #define QPHY_V3_DP_COM_SW_RESET				0x04
+@@ -142,28 +147,6 @@
+ #define QSERDES_V4_20_RX_DFE_CTLE_POST_CAL_OFFSET	0x20c
+ #define QSERDES_V4_20_RX_MARG_COARSE_CTRL2		0x23c
  
- 	config DEBUG_BERLIN_UART
- 		bool "Marvell Berlin SoC Debug UART"
-diff --git a/drivers/ata/Kconfig b/drivers/ata/Kconfig
-index bb45a9c00514..1c9f4fb2595d 100644
---- a/drivers/ata/Kconfig
-+++ b/drivers/ata/Kconfig
-@@ -148,7 +148,7 @@ config SATA_AHCI_PLATFORM
- config AHCI_BRCM
- 	tristate "Broadcom AHCI SATA support"
- 	depends on ARCH_BRCMSTB || BMIPS_GENERIC || ARCH_BCM_NSP || \
--		   ARCH_BCM_63XX || COMPILE_TEST
-+		   ARCH_BCMBCA || COMPILE_TEST
- 	select SATA_HOST
- 	help
- 	  This option enables support for the AHCI SATA3 controller found on
-diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-index b3f2d55dc551..3da8e85f8aae 100644
---- a/drivers/char/hw_random/Kconfig
-+++ b/drivers/char/hw_random/Kconfig
-@@ -87,7 +87,7 @@ config HW_RANDOM_BA431
- config HW_RANDOM_BCM2835
- 	tristate "Broadcom BCM2835/BCM63xx Random Number Generator support"
- 	depends on ARCH_BCM2835 || ARCH_BCM_NSP || ARCH_BCM_5301X || \
--		   ARCH_BCM_63XX || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
-+		   ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
- 	default HW_RANDOM
- 	help
- 	  This driver provides kernel-side support for the Random Number
-diff --git a/drivers/clk/bcm/Kconfig b/drivers/clk/bcm/Kconfig
-index ec738f74a026..77266afb1c79 100644
---- a/drivers/clk/bcm/Kconfig
-+++ b/drivers/clk/bcm/Kconfig
-@@ -22,9 +22,9 @@ config CLK_BCM2835
+-/* Only for QMP V4 PHY - UFS PCS registers */
+-#define QPHY_V4_PCS_UFS_PHY_START			0x000
+-#define QPHY_V4_PCS_UFS_POWER_DOWN_CONTROL		0x004
+-#define QPHY_V4_PCS_UFS_SW_RESET			0x008
+-#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB	0x00c
+-#define QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB	0x010
+-#define QPHY_V4_PCS_UFS_PLL_CNTL			0x02c
+-#define QPHY_V4_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x030
+-#define QPHY_V4_PCS_UFS_TX_SMALL_AMP_DRV_LVL		0x038
+-#define QPHY_V4_PCS_UFS_BIST_FIXED_PAT_CTRL		0x060
+-#define QPHY_V4_PCS_UFS_TX_HSGEAR_CAPABILITY		0x074
+-#define QPHY_V4_PCS_UFS_RX_HSGEAR_CAPABILITY		0x0b4
+-#define QPHY_V4_PCS_UFS_DEBUG_BUS_CLKSEL		0x124
+-#define QPHY_V4_PCS_UFS_LINECFG_DISABLE			0x148
+-#define QPHY_V4_PCS_UFS_RX_MIN_HIBERN8_TIME		0x150
+-#define QPHY_V4_PCS_UFS_RX_SIGDET_CTRL2			0x158
+-#define QPHY_V4_PCS_UFS_TX_PWM_GEAR_BAND		0x160
+-#define QPHY_V4_PCS_UFS_TX_HS_GEAR_BAND			0x168
+-#define QPHY_V4_PCS_UFS_READY_STATUS			0x180
+-#define QPHY_V4_PCS_UFS_TX_MID_TERM_CTRL1		0x1d8
+-#define QPHY_V4_PCS_UFS_MULTI_LANE_CTRL1		0x1e0
+-
+ /* PCIE GEN3 COM registers */
+ #define PCIE_GEN3_QHP_COM_SSC_EN_CENTER			0x14
+ #define PCIE_GEN3_QHP_COM_SSC_PER1			0x20
+@@ -278,157 +261,6 @@
+ #define PCIE_GEN3_QHP_PHY_POWER_STATE_CONFIG5		0x16c
+ #define PCIE_GEN3_QHP_PHY_PCS_TX_RX_CONFIG		0x174
  
- config CLK_BCM_63XX
- 	bool "Broadcom BCM63xx clock support"
--	depends on ARCH_BCM_63XX || COMPILE_TEST
-+	depends on ARCH_BCMBCA || COMPILE_TEST
- 	select COMMON_CLK_IPROC
--	default ARCH_BCM_63XX
-+	default ARCH_BCMBCA
- 	help
- 	  Enable common clock framework support for Broadcom BCM63xx DSL SoCs
- 	  based on the ARM architecture
-diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
-index b1d7069dd377..acf2a393bd56 100644
---- a/drivers/i2c/busses/Kconfig
-+++ b/drivers/i2c/busses/Kconfig
-@@ -486,7 +486,7 @@ config I2C_BCM_KONA
+-/* Only for QMP V4 PHY - USB/PCIe PCS registers */
+-#define QPHY_V4_PCS_SW_RESET				0x000
+-#define QPHY_V4_PCS_REVISION_ID0			0x004
+-#define QPHY_V4_PCS_REVISION_ID1			0x008
+-#define QPHY_V4_PCS_REVISION_ID2			0x00c
+-#define QPHY_V4_PCS_REVISION_ID3			0x010
+-#define QPHY_V4_PCS_PCS_STATUS1				0x014
+-#define QPHY_V4_PCS_PCS_STATUS2				0x018
+-#define QPHY_V4_PCS_PCS_STATUS3				0x01c
+-#define QPHY_V4_PCS_PCS_STATUS4				0x020
+-#define QPHY_V4_PCS_PCS_STATUS5				0x024
+-#define QPHY_V4_PCS_PCS_STATUS6				0x028
+-#define QPHY_V4_PCS_PCS_STATUS7				0x02c
+-#define QPHY_V4_PCS_DEBUG_BUS_0_STATUS			0x030
+-#define QPHY_V4_PCS_DEBUG_BUS_1_STATUS			0x034
+-#define QPHY_V4_PCS_DEBUG_BUS_2_STATUS			0x038
+-#define QPHY_V4_PCS_DEBUG_BUS_3_STATUS			0x03c
+-#define QPHY_V4_PCS_POWER_DOWN_CONTROL			0x040
+-#define QPHY_V4_PCS_START_CONTROL			0x044
+-#define QPHY_V4_PCS_INSIG_SW_CTRL1			0x048
+-#define QPHY_V4_PCS_INSIG_SW_CTRL2			0x04c
+-#define QPHY_V4_PCS_INSIG_SW_CTRL3			0x050
+-#define QPHY_V4_PCS_INSIG_SW_CTRL4			0x054
+-#define QPHY_V4_PCS_INSIG_SW_CTRL5			0x058
+-#define QPHY_V4_PCS_INSIG_SW_CTRL6			0x05c
+-#define QPHY_V4_PCS_INSIG_SW_CTRL7			0x060
+-#define QPHY_V4_PCS_INSIG_SW_CTRL8			0x064
+-#define QPHY_V4_PCS_INSIG_MX_CTRL1			0x068
+-#define QPHY_V4_PCS_INSIG_MX_CTRL2			0x06c
+-#define QPHY_V4_PCS_INSIG_MX_CTRL3			0x070
+-#define QPHY_V4_PCS_INSIG_MX_CTRL4			0x074
+-#define QPHY_V4_PCS_INSIG_MX_CTRL5			0x078
+-#define QPHY_V4_PCS_INSIG_MX_CTRL7			0x07c
+-#define QPHY_V4_PCS_INSIG_MX_CTRL8			0x080
+-#define QPHY_V4_PCS_OUTSIG_SW_CTRL1			0x084
+-#define QPHY_V4_PCS_OUTSIG_MX_CTRL1			0x088
+-#define QPHY_V4_PCS_CLAMP_ENABLE			0x08c
+-#define QPHY_V4_PCS_POWER_STATE_CONFIG1			0x090
+-#define QPHY_V4_PCS_POWER_STATE_CONFIG2			0x094
+-#define QPHY_V4_PCS_FLL_CNTRL1				0x098
+-#define QPHY_V4_PCS_FLL_CNTRL2				0x09c
+-#define QPHY_V4_PCS_FLL_CNT_VAL_L			0x0a0
+-#define QPHY_V4_PCS_FLL_CNT_VAL_H_TOL			0x0a4
+-#define QPHY_V4_PCS_FLL_MAN_CODE			0x0a8
+-#define QPHY_V4_PCS_TEST_CONTROL1			0x0ac
+-#define QPHY_V4_PCS_TEST_CONTROL2			0x0b0
+-#define QPHY_V4_PCS_TEST_CONTROL3			0x0b4
+-#define QPHY_V4_PCS_TEST_CONTROL4			0x0b8
+-#define QPHY_V4_PCS_TEST_CONTROL5			0x0bc
+-#define QPHY_V4_PCS_TEST_CONTROL6			0x0c0
+-#define QPHY_V4_PCS_LOCK_DETECT_CONFIG1			0x0c4
+-#define QPHY_V4_PCS_LOCK_DETECT_CONFIG2			0x0c8
+-#define QPHY_V4_PCS_LOCK_DETECT_CONFIG3			0x0cc
+-#define QPHY_V4_PCS_LOCK_DETECT_CONFIG4			0x0d0
+-#define QPHY_V4_PCS_LOCK_DETECT_CONFIG5			0x0d4
+-#define QPHY_V4_PCS_LOCK_DETECT_CONFIG6			0x0d8
+-#define QPHY_V4_PCS_REFGEN_REQ_CONFIG1			0x0dc
+-#define QPHY_V4_PCS_REFGEN_REQ_CONFIG2			0x0e0
+-#define QPHY_V4_PCS_REFGEN_REQ_CONFIG3			0x0e4
+-#define QPHY_V4_PCS_BIST_CTRL				0x0e8
+-#define QPHY_V4_PCS_PRBS_POLY0				0x0ec
+-#define QPHY_V4_PCS_PRBS_POLY1				0x0f0
+-#define QPHY_V4_PCS_FIXED_PAT0				0x0f4
+-#define QPHY_V4_PCS_FIXED_PAT1				0x0f8
+-#define QPHY_V4_PCS_FIXED_PAT2				0x0fc
+-#define QPHY_V4_PCS_FIXED_PAT3				0x100
+-#define QPHY_V4_PCS_FIXED_PAT4				0x104
+-#define QPHY_V4_PCS_FIXED_PAT5				0x108
+-#define QPHY_V4_PCS_FIXED_PAT6				0x10c
+-#define QPHY_V4_PCS_FIXED_PAT7				0x110
+-#define QPHY_V4_PCS_FIXED_PAT8				0x114
+-#define QPHY_V4_PCS_FIXED_PAT9				0x118
+-#define QPHY_V4_PCS_FIXED_PAT10				0x11c
+-#define QPHY_V4_PCS_FIXED_PAT11				0x120
+-#define QPHY_V4_PCS_FIXED_PAT12				0x124
+-#define QPHY_V4_PCS_FIXED_PAT13				0x128
+-#define QPHY_V4_PCS_FIXED_PAT14				0x12c
+-#define QPHY_V4_PCS_FIXED_PAT15				0x130
+-#define QPHY_V4_PCS_TXMGN_CONFIG			0x134
+-#define QPHY_V4_PCS_G12S1_TXMGN_V0			0x138
+-#define QPHY_V4_PCS_G12S1_TXMGN_V1			0x13c
+-#define QPHY_V4_PCS_G12S1_TXMGN_V2			0x140
+-#define QPHY_V4_PCS_G12S1_TXMGN_V3			0x144
+-#define QPHY_V4_PCS_G12S1_TXMGN_V4			0x148
+-#define QPHY_V4_PCS_G12S1_TXMGN_V0_RS			0x14c
+-#define QPHY_V4_PCS_G12S1_TXMGN_V1_RS			0x150
+-#define QPHY_V4_PCS_G12S1_TXMGN_V2_RS			0x154
+-#define QPHY_V4_PCS_G12S1_TXMGN_V3_RS			0x158
+-#define QPHY_V4_PCS_G12S1_TXMGN_V4_RS			0x15c
+-#define QPHY_V4_PCS_G3S2_TXMGN_MAIN			0x160
+-#define QPHY_V4_PCS_G3S2_TXMGN_MAIN_RS			0x164
+-#define QPHY_V4_PCS_G12S1_TXDEEMPH_M6DB			0x168
+-#define QPHY_V4_PCS_G12S1_TXDEEMPH_M3P5DB		0x16c
+-#define QPHY_V4_PCS_G3S2_PRE_GAIN			0x170
+-#define QPHY_V4_PCS_G3S2_POST_GAIN			0x174
+-#define QPHY_V4_PCS_G3S2_PRE_POST_OFFSET		0x178
+-#define QPHY_V4_PCS_G3S2_PRE_GAIN_RS			0x17c
+-#define QPHY_V4_PCS_G3S2_POST_GAIN_RS			0x180
+-#define QPHY_V4_PCS_G3S2_PRE_POST_OFFSET_RS		0x184
+-#define QPHY_V4_PCS_RX_SIGDET_LVL			0x188
+-#define QPHY_V4_PCS_RX_SIGDET_DTCT_CNTRL		0x18c
+-#define QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_L		0x190
+-#define QPHY_V4_PCS_RCVR_DTCT_DLY_P1U2_H		0x194
+-#define QPHY_V4_PCS_RATE_SLEW_CNTRL1			0x198
+-#define QPHY_V4_PCS_RATE_SLEW_CNTRL2			0x19c
+-#define QPHY_V4_PCS_PWRUP_RESET_DLY_TIME_AUXCLK		0x1a0
+-#define QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_L	0x1a4
+-#define QPHY_V4_PCS_P2U3_WAKEUP_DLY_TIME_AUXCLK_H	0x1a8
+-#define QPHY_V4_PCS_TSYNC_RSYNC_TIME			0x1ac
+-#define QPHY_V4_PCS_CDR_RESET_TIME			0x1b0
+-#define QPHY_V4_PCS_TSYNC_DLY_TIME			0x1b4
+-#define QPHY_V4_PCS_ELECIDLE_DLY_SEL			0x1b8
+-#define QPHY_V4_PCS_CMN_ACK_OUT_SEL			0x1bc
+-#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG1		0x1c0
+-#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG2		0x1c4
+-#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG3		0x1c8
+-#define QPHY_V4_PCS_ALIGN_DETECT_CONFIG4		0x1cc
+-#define QPHY_V4_PCS_PCS_TX_RX_CONFIG			0x1d0
+-#define QPHY_V4_PCS_RX_IDLE_DTCT_CNTRL			0x1d4
+-#define QPHY_V4_PCS_RX_DCC_CAL_CONFIG			0x1d8
+-#define QPHY_V4_PCS_EQ_CONFIG1				0x1dc
+-#define QPHY_V4_PCS_EQ_CONFIG2				0x1e0
+-#define QPHY_V4_PCS_EQ_CONFIG3				0x1e4
+-#define QPHY_V4_PCS_EQ_CONFIG4				0x1e8
+-#define QPHY_V4_PCS_EQ_CONFIG5				0x1ec
+-
+-/* Only for QMP V4 PHY - USB3 PCS registers */
+-#define QPHY_V4_PCS_USB3_POWER_STATE_CONFIG1		0x000
+-#define QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_STATUS		0x004
+-#define QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_CTRL		0x008
+-#define QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_CTRL2		0x00c
+-#define QPHY_V4_PCS_USB3_LFPS_RXTERM_IRQ_SOURCE_STATUS	0x010
+-#define QPHY_V4_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR		0x014
+-#define QPHY_V4_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL	0x018
+-#define QPHY_V4_PCS_USB3_LFPS_TX_ECSTART		0x01c
+-#define QPHY_V4_PCS_USB3_LFPS_PER_TIMER_VAL		0x020
+-#define QPHY_V4_PCS_USB3_LFPS_TX_END_CNT_U3_START	0x024
+-#define QPHY_V4_PCS_USB3_RXEQTRAINING_LOCK_TIME		0x028
+-#define QPHY_V4_PCS_USB3_RXEQTRAINING_WAIT_TIME		0x02c
+-#define QPHY_V4_PCS_USB3_RXEQTRAINING_CTLE_TIME		0x030
+-#define QPHY_V4_PCS_USB3_RXEQTRAINING_WAIT_TIME_S2	0x034
+-#define QPHY_V4_PCS_USB3_RXEQTRAINING_DFE_TIME_S2	0x038
+-#define QPHY_V4_PCS_USB3_RCVR_DTCT_DLY_U3_L		0x03c
+-#define QPHY_V4_PCS_USB3_RCVR_DTCT_DLY_U3_H		0x040
+-#define QPHY_V4_PCS_USB3_ARCVR_DTCT_EN_PERIOD		0x044
+-#define QPHY_V4_PCS_USB3_ARCVR_DTCT_CM_DLY		0x048
+-#define QPHY_V4_PCS_USB3_TXONESZEROS_RUN_LENGTH		0x04c
+-#define QPHY_V4_PCS_USB3_ALFPS_DEGLITCH_VAL		0x050
+-#define QPHY_V4_PCS_USB3_SIGDET_STARTUP_TIMER_VAL	0x054
+-#define QPHY_V4_PCS_USB3_TEST_CONTROL			0x058
+-
+ /* Only for QMP V4_20 PHY - USB/PCIe PCS registers */
+ #define QPHY_V4_20_PCS_RX_SIGDET_LVL			0x188
+ #define QPHY_V4_20_PCS_EQ_CONFIG2			0x1d8
+@@ -443,20 +275,6 @@
+ #define QPHY_V4_PCS_MISC_TYPEC_STATUS			0x10
+ #define QPHY_V4_PCS_MISC_PLACEHOLDER_STATUS		0x14
  
- config I2C_BRCMSTB
- 	tristate "BRCM Settop/DSL I2C controller"
--	depends on ARCH_BCM2835 || ARCH_BCM4908 || ARCH_BCM_63XX || \
-+	depends on ARCH_BCM2835 || ARCH_BCM4908 || ARCH_BCMBCA || \
- 		   ARCH_BRCMSTB || BMIPS_GENERIC || COMPILE_TEST
- 	default y
- 	help
-diff --git a/drivers/phy/broadcom/Kconfig b/drivers/phy/broadcom/Kconfig
-index 849c4204f550..93a6a8ee4716 100644
---- a/drivers/phy/broadcom/Kconfig
-+++ b/drivers/phy/broadcom/Kconfig
-@@ -83,7 +83,7 @@ config PHY_NS2_USB_DRD
- config PHY_BRCM_SATA
- 	tristate "Broadcom SATA PHY driver"
- 	depends on ARCH_BRCMSTB || ARCH_BCM_IPROC || BMIPS_GENERIC || \
--		   ARCH_BCM_63XX || COMPILE_TEST
-+		   ARCH_BCMBCA || COMPILE_TEST
- 	depends on OF
- 	select GENERIC_PHY
- 	default ARCH_BCM_IPROC
-diff --git a/drivers/spi/Kconfig b/drivers/spi/Kconfig
-index 2d034459e79f..8e550269d488 100644
---- a/drivers/spi/Kconfig
-+++ b/drivers/spi/Kconfig
-@@ -183,7 +183,7 @@ config SPI_BCM63XX
- 
- config SPI_BCM63XX_HSSPI
- 	tristate "Broadcom BCM63XX HS SPI controller driver"
--	depends on BCM63XX || BMIPS_GENERIC || ARCH_BCM_63XX || COMPILE_TEST
-+	depends on BCM63XX || BMIPS_GENERIC || ARCH_BCMBCA || COMPILE_TEST
- 	help
- 	  This enables support for the High Speed SPI controller present on
- 	  newer Broadcom BCM63XX SoCs.
-diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-index 8a3ee1525d80..e3279544b03c 100644
---- a/drivers/tty/serial/Kconfig
-+++ b/drivers/tty/serial/Kconfig
-@@ -1100,8 +1100,8 @@ config SERIAL_TIMBERDALE
- config SERIAL_BCM63XX
- 	tristate "Broadcom BCM63xx/BCM33xx UART support"
- 	select SERIAL_CORE
--	depends on ARCH_BCM4908 || ARCH_BCM_63XX || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
--	default ARCH_BCM4908 || ARCH_BCM_63XX || BCM63XX || BMIPS_GENERIC
-+	depends on ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC || COMPILE_TEST
-+	default ARCH_BCM4908 || ARCH_BCMBCA || BCM63XX || BMIPS_GENERIC
- 	help
- 	  This enables the driver for the onchip UART core found on
- 	  the following chipsets:
+-/* Only for QMP V4 PHY - PCS_PCIE registers (same as PCS_MISC?) */
+-#define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG2		0x0c
+-#define QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG4		0x14
+-#define QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE		0x1c
+-#define QPHY_V4_PCS_PCIE_L1P1_WAKEUP_DLY_TIME_AUXCLK_L	0x40
+-#define QPHY_V4_PCS_PCIE_L1P2_WAKEUP_DLY_TIME_AUXCLK_L	0x48
+-#define QPHY_V4_PCS_PCIE_INT_AUX_CLK_CONFIG1		0x50
+-#define QPHY_V4_PCS_PCIE_OSC_DTCT_ACTIONS		0x90
+-#define QPHY_V4_PCS_PCIE_EQ_CONFIG1			0xa0
+-#define QPHY_V4_PCS_PCIE_EQ_CONFIG2			0xa4
+-#define QPHY_V4_PCS_PCIE_PRESET_P6_P7_PRE		0xb4
+-#define QPHY_V4_PCS_PCIE_PRESET_P10_PRE			0xbc
+-#define QPHY_V4_PCS_PCIE_PRESET_P10_POST		0xe0
+-
+ #define QPHY_V4_20_PCS_PCIE_EQ_CONFIG1			0x0a0
+ #define QPHY_V4_20_PCS_PCIE_G3_RXEQEVAL_TIME		0x0f0
+ #define QPHY_V4_20_PCS_PCIE_G4_RXEQEVAL_TIME		0x0f4
 -- 
-2.34.1
+2.35.1
 
-
---000000000000f1859805e3122b54
-Content-Type: application/pkcs7-signature; name="smime.p7s"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Description: S/MIME Cryptographic Signature
-
-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
-TltlrAeBKRJ1M9O/DY5v7L1Yrs//7XIRg/d2ZPAOSGBQzFYjYTFWwNBiR1s1zP0m2y56DPbS5gwj
-fqAN/I4PJHIvTh3zUgHXNKadYoYRiPHXfaTWO9UhzysOpQIDAQABo4IB2zCCAdcwDgYDVR0PAQH/
-BAQDAgWgMIGjBggrBgEFBQcBAQSBljCBkzBOBggrBgEFBQcwAoZCaHR0cDovL3NlY3VyZS5nbG9i
-YWxzaWduLmNvbS9jYWNlcnQvZ3NnY2NyM3BlcnNvbmFsc2lnbjJjYTIwMjAuY3J0MEEGCCsGAQUF
-BzABhjVodHRwOi8vb2NzcC5nbG9iYWxzaWduLmNvbS9nc2djY3IzcGVyc29uYWxzaWduMmNhMjAy
-MDBNBgNVHSAERjBEMEIGCisGAQQBoDIBKAowNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xv
-YmFsc2lnbi5jb20vcmVwb3NpdG9yeS8wCQYDVR0TBAIwADBJBgNVHR8EQjBAMD6gPKA6hjhodHRw
-Oi8vY3JsLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNwZXJzb25hbHNpZ24yY2EyMDIwLmNybDAlBgNV
-HREEHjAcgRp3aWxsaWFtLnpoYW5nQGJyb2FkY29tLmNvbTATBgNVHSUEDDAKBggrBgEFBQcDBDAf
-BgNVHSMEGDAWgBSWM9HmWBdbNHWKgVZk1b5I3qGPzzAdBgNVHQ4EFgQUohM5GmNlGWe5wpzDxzIy
-+EgzbRswDQYJKoZIhvcNAQELBQADggEBACKu9JSQAYTlmC+JTniO/C/UcXGonATI/muBjWTxtkHc
-abZtz0uwzzrRrpV+mbHLGVFFeRbXSLvcEzqHp8VomXifEZlfsE9LajSehzaqhd+np+tmUPz1RlI/
-ibZ7vW+1VF18lfoL+wHs2H0fsG6JfoqZldEWYXASXnUrs0iTLgXxvwaQj69cSMuzfFm1X5kWqWCP
-W0KkR8025J0L5L4yXfkSO6psD/k4VcTsMJHLN4RfMuaXIT6EM0cNO6h3GypyTuPf1N1X+F6WQPKb
-1u+rvdML63P9fX7e7mwwGt5klRnf8aK2VU7mIdYCcrFHaKDTW3fkG6kIgrE1wWSgiZYL400xggJt
-MIICaQIBATBrMFsxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTEwLwYD
-VQQDEyhHbG9iYWxTaWduIEdDQyBSMyBQZXJzb25hbFNpZ24gMiBDQSAyMDIwAgw28eX6TfvsbNfu
-SIMwDQYJYIZIAWUDBAIBBQCggdQwLwYJKoZIhvcNAQkEMSIEIPgYZPgWW4RYqL7NYCmuLdm1S+Ge
-H/PcUJV33ZnfqGh6MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTIy
-MDcwNTE3Mjc0OVowaQYJKoZIhvcNAQkPMVwwWjALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsG
-CWCGSAFlAwQBAjAKBggqhkiG9w0DBzALBgkqhkiG9w0BAQowCwYJKoZIhvcNAQEHMAsGCWCGSAFl
-AwQCATANBgkqhkiG9w0BAQEFAASCAQBW0XC9tAcuZ1pP9F2RiNgMTvLp130Q17o7uHM4h/0RdZT0
-CciFab65Efjb4MHR4/uVx3CHcwlnpoG1O/8A7BoEtk73kLP4rcGscR2NHuUtvxS0Cs9osf+mUKiP
-RcQfjOTKBKsr0o8agx6U1+XkbQBpHgKnCrJhasMeE5HgtcKNjmFApxiPHPlqFQmne1DZr4ubeDHs
-jzmTZ6kKNd6Eqiwh7om6T2u0vAk613nOpnxffhxgqrxkgsuKW1TuKbHvwgig0dIKoNom99Kk3Thg
-TZ7K/Y1CZiX92+evGTHNyycM2vjW8/xE3/IQGRJhrS7vE3S3YWUbNNB6geVPXpRbB+TL
---000000000000f1859805e3122b54--
-
-
---===============0095466127716869598==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0095466127716869598==--
-
