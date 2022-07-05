@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8393AC43334
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:51:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD074CCA47C
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:51:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oc8BnMhaAJdmiF/9LKJ/Yqc6FzUGxVCWfbo1CoCjpZ8=; b=mjnUlmp5kWpZPf
-	hlkuy+kXSI1XTIVRjCs0KhDPzeFCb2UmDzOUPZSlperseeo74ElnJik1S3WaAbzFqkCBhLMOlETv7
-	KjfJsrmIMi8r93mwpO8TkBBzQkg8Su+LM0oyLaaz7g7y+hChWOUpfkTJQjN2eaJk4sfZHPnSH6Lxr
-	6HUxpu4Xj6LD16V07rQOp84NFSSdKhrQcoHrMVt+GpBGqjcFpYC98Qmu04GLo8E+8UF8RxOAmjVps
-	LacF5Ioo0XAcD3j/sYqwg4jJZeMNYmml0ZZaWONb2eLyspsn1vy+FpjZlz18OY6h0Lq4g1hPmST3C
-	Pwf3pKwc+r7w4aTqHVGw==;
+	List-Owner; bh=R4GWQJjQB5hYiNt0KgL8imEcL/dWJLWSTEAIkV7a9bQ=; b=AOE52YjUhRcZEJ
+	XvX7San25nswBtmAoItMEfKIuxfpPQ3eHszYvzflcRqmTXGy++4B2DNc7ZWfquDO9uIuNUBuIS++O
+	SdANDhVScZkgYnC4z/dVr/T8nmVCEMG5CG/2Fzy7mmujArJ40vLjLsw+Pk2q/hxqaZumBDqE8bTAG
+	Avk/BU1KqzFn8ig1FAhEf3/xupVJOPEJH/nlmA1BM4nzim3UMeNP3sH+waslCN7N7X2licvG1dvVP
+	k4ZV6QMU29q1LfnauCuDThypOaYDkPbFTwUHV8QQypT3MA05cF8uFYRoGaEasj11BSBwwI6ViY8oZ
+	ceqPxsZB+Ely3l0EqwcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fDW-00GwNW-Pm; Tue, 05 Jul 2022 09:51:38 +0000
+	id 1o8fDX-00GwPC-Ts; Tue, 05 Jul 2022 09:51:39 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fB3-00GuSC-Hn
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:08 +0000
+	id 1o8fB3-00GuS6-I7
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:09 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id C2E4561939;
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 9BD3E6192B;
 	Tue,  5 Jul 2022 09:49:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5BCBFC341E4;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D140C341E1;
 	Tue,  5 Jul 2022 09:49:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1657014542;
-	bh=VVg4jZIiDuyCLFuPo+TMMEfePD6ymiFC4L/Ctad/WPs=;
+	bh=5IEFwvykKWpluWYXuOvfZ01fDmcJ5NrUbb4Qf56H6+g=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=dROh7zTIa22ghKI7OeYe/tQhjZzeHn8RhtWh+0xm2EqgxBAc53e6+tDXsCX5UIWuq
-	 brXYfB/UXBYThFwm2Sdlf1a+SsD8bqZ6kGh4bWFCgHU45G8bmNSaVYvUgm/e06SwNp
-	 964UVhYofNEO1IZqThhHOMHcefnDxh91DQtaB3VSciqfn24l7WbIXMP616MAzI6Rh0
-	 Thct2wGQM/OfZw6kvq9TDuUDheP3vu95S1Rg3CMWAeXmYp/eJX6yW3vRM41yJqHogR
-	 vaFkYD7dgMAno5wRI1H+0jaXAo9RFQNb/RMikF+1gd4d1UDNrPTCMinkoWgzvpr4hK
-	 gFx7Vu1xiDacQ==
+	b=fvKR8YLNh6OgoPX2GLks3m2adddWQtdVdc/rNcRL0ZkIEzfSO0DHlLGw/fGPEM4AC
+	 Qc7Thw9QZhHLpEAVo7pCxBFHAb70VESP6/F+vDykawvtTudUwOVIDIRrNaZJsWGvhS
+	 7ml2Ug1lQzFexSGVHeZTfGeR+8DO7twQm57/Z6Ic+f1Qx3n5DXwWuFEXsMUmaQ8kLK
+	 YD1RI/Bl8MYxgzwrwFmAPD0bLa2ZR+OyeU5kCuzdZ8Evbk6GMV5/vLdqUvFhfhF+9N
+	 iw+7RI9FpJNDocQYt4twpUoYbWrvPBdLItla/zVqosHlX3tEJqLwk+HZD3V6no1iSs
+	 7/tMu+eL9tQaA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan+linaro@kernel.org>)
-	id 1o8fB1-0004XF-Ac; Tue, 05 Jul 2022 11:49:03 +0200
+	id 1o8fB1-0004X9-46; Tue, 05 Jul 2022 11:49:03 +0200
 From: Johan Hovold <johan+linaro@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh+dt@kernel.org>,
@@ -57,17 +57,16 @@ Cc: Andy Gross <agross@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 09/43] dt-bindings: phy: qcom,msm8996-qmp-pcie: add example node
-Date: Tue,  5 Jul 2022 11:42:05 +0200
-Message-Id: <20220705094239.17174-10-johan+linaro@kernel.org>
+Subject: [PATCH 07/43] dt-bindings: phy: qcom,msm8996-qmp-pcie: clean up constraints
+Date: Tue,  5 Jul 2022 11:42:03 +0200
+Message-Id: <20220705094239.17174-8-johan+linaro@kernel.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220705094239.17174-1-johan+linaro@kernel.org>
 References: <20220705094239.17174-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_024905_834327_9FB9384A 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220705_024905_794840_5A1CE702 
+X-CRM114-Status: GOOD (  10.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,93 +83,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add an example node based on a cleaned up version of msm8996.dtsi.
+Drop the compatible conditional and tighten the property constraints.
 
 Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../phy/qcom,msm8996-qmp-pcie-phy.yaml        | 72 +++++++++++++++++++
- 1 file changed, 72 insertions(+)
+ .../phy/qcom,msm8996-qmp-pcie-phy.yaml        | 65 +++++--------------
+ 1 file changed, 18 insertions(+), 47 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-index 8aadb25686b2..45f7bb7a632a 100644
+index 14fd86fd91ec..b73bf5c06358 100644
 --- a/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
 +++ b/Documentation/devicetree/bindings/phy/qcom,msm8996-qmp-pcie-phy.yaml
-@@ -130,3 +130,75 @@ required:
-   - vdda-pll-supply
+@@ -19,10 +19,8 @@ properties:
+     const: qcom,msm8996-qmp-pcie-phy
+ 
+   reg:
+-    minItems: 1
+     items:
+       - description: Address and length of PHY's common serdes block.
+-      - description: Address and length of PHY's DP_COM control block.
+ 
+   "#address-cells":
+     enum: [ 1, 2 ]
+@@ -33,20 +31,28 @@ properties:
+   ranges: true
+ 
+   clocks:
+-    minItems: 1
+-    maxItems: 4
++    items:
++      - description: PHY aux clock.
++      - description: PHY config clock.
++      - description: 19.2 MHz ref clock.
+ 
+   clock-names:
+-    minItems: 1
+-    maxItems: 4
++    items:
++      - const: aux
++      - const: cfg_ahb
++      - const: ref
+ 
+   resets:
+-    minItems: 1
+-    maxItems: 3
++    items:
++      - description: Reset of PHY block.
++      - description: PHY common block reset.
++      - description: PHY's ahb cfg block reset.
+ 
+   reset-names:
+-    minItems: 1
+-    maxItems: 3
++    items:
++      - const: phy
++      - const: common
++      - const: cfg
+ 
+   vdda-phy-supply:
+     description:
+@@ -56,10 +62,6 @@ properties:
+     description:
+       Phandle to 1.8V regulator supply to PHY refclk pll block.
+ 
+-  vddp-ref-clk-supply:
+-    description:
+-      Phandle to a regulator supply to any specific refclk pll block.
+-
+ patternProperties:
+   "^phy@[0-9a-f]+$":
+     type: object
+@@ -77,38 +79,7 @@ required:
+   - clock-names
+   - resets
+   - reset-names
++  - vdda-phy-supply
++  - vdda-pll-supply
  
  additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/qcom,gcc-msm8996.h>
-+    pcie_phy: phy-wrapper@34000 {
-+        compatible = "qcom,msm8996-qmp-pcie-phy";
-+        reg = <0x34000 0x488>;
-+        #address-cells = <1>;
-+        #size-cells = <1>;
-+        ranges = <0x0 0x34000 0x4000>;
-+
-+        clocks = <&gcc GCC_PCIE_PHY_AUX_CLK>,
-+                 <&gcc GCC_PCIE_PHY_CFG_AHB_CLK>,
-+                 <&gcc GCC_PCIE_CLKREF_CLK>;
-+        clock-names = "aux", "cfg_ahb", "ref";
-+
-+        resets = <&gcc GCC_PCIE_PHY_BCR>,
-+                 <&gcc GCC_PCIE_PHY_COM_BCR>,
-+                 <&gcc GCC_PCIE_PHY_COM_NOCSR_BCR>;
-+        reset-names = "phy", "common", "cfg";
-+
-+        vdda-phy-supply = <&vreg_l28a_0p925>;
-+        vdda-pll-supply = <&vreg_l12a_1p8>;
-+
-+        pciephy_0: phy@1000 {
-+            reg = <0x1000 0x130>,
-+                  <0x1200 0x200>,
-+                  <0x1400 0x1dc>;
-+
-+            clocks = <&gcc GCC_PCIE_0_PIPE_CLK>;
-+            clock-names = "pipe0";
-+            resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-+            reset-names = "lane0";
-+
-+            #clock-cells = <0>;
-+            clock-output-names = "pcie_0_pipe_clk_src";
-+
-+            #phy-cells = <0>;
-+        };
-+
-+        pciephy_1: phy@2000 {
-+            reg = <0x2000 0x130>,
-+                  <0x2200 0x200>,
-+                  <0x2400 0x1dc>;
-+
-+            clocks = <&gcc GCC_PCIE_1_PIPE_CLK>;
-+            clock-names = "pipe1";
-+            resets = <&gcc GCC_PCIE_1_PHY_BCR>;
-+            reset-names = "lane1";
-+
-+            #clock-cells = <0>;
-+            clock-output-names = "pcie_1_pipe_clk_src";
-+
-+            #phy-cells = <0>;
-+        };
-+
-+        pciephy_2: phy@3000 {
-+            reg = <0x3000 0x130>,
-+                  <0x3200 0x200>,
-+                  <0x3400 0x1dc>;
-+
-+            clocks = <&gcc GCC_PCIE_2_PIPE_CLK>;
-+            clock-names = "pipe2";
-+            resets = <&gcc GCC_PCIE_2_PHY_BCR>;
-+            reset-names = "lane2";
-+
-+            #clock-cells = <0>;
-+            clock-output-names = "pcie_2_pipe_clk_src";
-+
-+            #phy-cells = <0>;
-+        };
-+    };
+-
+-allOf:
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,msm8996-qmp-pcie-phy
+-    then:
+-      properties:
+-        clocks:
+-          items:
+-            - description: PHY aux clock.
+-            - description: PHY config clock.
+-            - description: 19.2 MHz ref clock.
+-        clock-names:
+-          items:
+-            - const: aux
+-            - const: cfg_ahb
+-            - const: ref
+-        resets:
+-          items:
+-            - description: Reset of PHY block.
+-            - description: PHY common block reset.
+-            - description: PHY's ahb cfg block reset.
+-        reset-names:
+-          items:
+-            - const: phy
+-            - const: common
+-            - const: cfg
+-      required:
+-        - vdda-phy-supply
+-        - vdda-pll-supply
 -- 
 2.35.1
 
