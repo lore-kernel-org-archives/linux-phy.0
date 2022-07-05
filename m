@@ -4,61 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E902C433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 06:33:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CC1BC43334
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 06:45:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zqpXE9PHiOXTfpbU+KeiVhsLdDWSah4XzrBp7H0ktpU=; b=orN+8Xkbdatfmy
-	OfgOei2/j++a/xfPn9r0URSfSkLDf01h3ZgBBYHH6MkHHYnzebzv43NIEQjeb4sYRH2G6toc/Qrqu
-	HbBOo+djMwqZuci5tJF7BisTno7AUWf0iCP8I1GCmsKyjXvoOw/j8t0aZabvYZX5YMJv/t5ZLCQUe
-	vB4y2dqQnx+PgAm8gwxNLDAqH14HaW0fY7UPz0gRykXbk6VvVsJNHpUCY70HERoEG6PVg3LCC6ACY
-	TAl2vtrRu6689U72Mq2e6+j07LlKy/ocZDYQRDq6yuz/4ILSkvswsUl5spur3PZEX0WagXhZuL6aq
-	nWt23VcZsWmx733aznxg==;
+	List-Owner; bh=H0YQDAL+i4Twxzp0B9PU3L2zTncUn7DGrQ3wyhB8c8s=; b=ck9tD4/Dm2umCv
+	DgZeULI9WkT0r2AH17AOX1M4LEK5Af3sMtWChwUISq/c8N9BhCpERkSkuRtlsTERm6cIEgFXmKSng
+	gxX3yCOTUR6gIZLy2JsRF89//MwQ9Ezh96mf7IKTmFXc9KuWIqIjVNkx4+IxicvGbaxGpeJ2k1yUy
+	Vu2LD6qzK5t61ttqpip1H3pHAiHyaqtcs5v/Oji8yePUl9ykeQqoTSFQoO8OTgB54Q657XTPvq9In
+	XtUoy6hw3htO9N6IVw32heFc/3HU0w88Z7csNkR95RpjiaOoeqJE24HsAetN3A4wW7/GyFdH57yfk
+	bl0fpqahf5yvvwmsO9zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8c8D-00F55Z-Ii; Tue, 05 Jul 2022 06:33:57 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1o8cJf-00FA3y-Ua; Tue, 05 Jul 2022 06:45:47 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8c7v-00F4ri-JN; Tue, 05 Jul 2022 06:33:40 +0000
+	id 1o8cIv-00F9mw-O4; Tue, 05 Jul 2022 06:45:03 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by ams.source.kernel.org (Postfix) with ESMTPS id 3A1CAB81617;
-	Tue,  5 Jul 2022 06:33:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76D8BC341C7;
-	Tue,  5 Jul 2022 06:33:36 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id EDB8961531;
+	Tue,  5 Jul 2022 06:45:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C812FC341C7;
+	Tue,  5 Jul 2022 06:44:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657002817;
-	bh=5gsyNNx8/9no9ENTib+RiXe7ITFvjUXl6MeaqVSqsb0=;
+	s=k20201202; t=1657003500;
+	bh=WL2ZjfUm1JPUj/hXx9GP7t66KvqlfcwU00enUOuINVs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=S7nczGZsoml5YVimtw38q542lymxBncPRvBRo9Gl5ztIBA2gqgi1mVpsRT4Hccc1w
-	 hkJ+lq1EM7rgfcIhy6LdTH60xae3NP5A9fPvohTvB+W6RLxQu1J0y1DBjQtju/kv/x
-	 n4ogrsFZqJfS5kRtoClUuBm0vpKnVlGYjxaSoyrqgvib39coV1XaM4azo05+dmgctE
-	 A8/24ZnvzHrofTj+/IyVkBbTT6dNWQpXI0FD4qS+yois9TDAPjzMgkaCB+5bBpNfe5
-	 F+EeH+WuXP1kpg/DUTwKzkrKtZC69ict1c0kreqIZBoYUyqp9Y9OgTYXsNX+yphV1b
-	 IXgOJ+MWnoUjw==
-Date: Tue, 5 Jul 2022 12:03:32 +0530
+	b=ROkX858tmIqxpm5qUaJ2mSUbcqNCDVCEl3Con5a2RmhoqVNGf9efznpsRqSnwfgRj
+	 qVtQX1eV0TxtgfI9yHScf/OxpbW23xJeRlohdUPin+1o3e0Z6Zw+iULuKVkNwxEPSA
+	 F+klU3hX1e/TRBahQw6GZYpm2WNlZ/KFDj58cga9ADMIg8J7rLVYq5OPP1WYM8TLIi
+	 N3HmY0Sxk3dh0yJIT3OCwtyzZDy57OmjsA1ogR29qs4P+XAyWvl/lHJCyXnW1ccU/O
+	 N+8tUWtWnCt1006ny35PSh6j/cDhbW63nlMuCMsJhZWJtzbj0WV2PbMTGBJnAGCdH8
+	 PY2V9re7uZwXA==
+Date: Tue, 5 Jul 2022 12:14:54 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Peter Geis <pgwipeout@gmail.com>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v1] phy: rockchip-inno-usb2: Prevent incorrect error on
- probe
-Message-ID: <YsPbPPsMb0O9LTr3@matsya>
-References: <20220625212711.558495-1-pgwipeout@gmail.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Cc: kishon@ti.com, linux-phy@lists.infradead.org,
+	linux-amlogic@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 2/2] phy: amlogic: Add G12A Analog MIPI D-PHY driver
+Message-ID: <YsPd5iwTwHOkkSz9@matsya>
+References: <20220616133811.1674777-1-narmstrong@baylibre.com>
+ <20220616133811.1674777-3-narmstrong@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220625212711.558495-1-pgwipeout@gmail.com>
+In-Reply-To: <20220616133811.1674777-3-narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220704_233339_828877_34E04AB0 
-X-CRM114-Status: UNSURE (   8.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220704_234501_944666_501A345A 
+X-CRM114-Status: GOOD (  28.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,12 +73,247 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-06-22, 17:27, Peter Geis wrote:
-> If a phy supply is designated but isn't available at probe time, an
-> EPROBE_DEFER is returned. Use dev_err_probe to prevent this from
-> incorrectly printing during boot.
+On 16-06-22, 15:38, Neil Armstrong wrote:
+> The Amlogic G12A SoCs embeds an Analog MIPI D-PHY used to communicate with DSI
+> panels.
+> 
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+>  drivers/phy/amlogic/Kconfig                   |  12 ++
+>  drivers/phy/amlogic/Makefile                  |   1 +
+>  .../amlogic/phy-meson-g12a-mipi-dphy-analog.c | 177 ++++++++++++++++++
+>  3 files changed, 190 insertions(+)
+>  create mode 100644 drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
+> 
+> diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
+> index 486ca23aba32..e4d1170efd54 100644
+> --- a/drivers/phy/amlogic/Kconfig
+> +++ b/drivers/phy/amlogic/Kconfig
+> @@ -59,6 +59,18 @@ config PHY_MESON_G12A_USB3_PCIE
+>  	  in Meson G12A SoCs.
+>  	  If unsure, say N.
+>  
+> +config PHY_MESON_G12A_MIPI_DPHY_ANALOG
 
-Applied, thanks
+this should be sorted alphabetically, so before PHY_MESON_G12A_USB3_PCIE
+
+> +	tristate "Meson G12A MIPI Analog DPHY driver"
+> +	default ARCH_MESON
+> +	depends on OF && (ARCH_MESON || COMPILE_TEST)
+> +	select GENERIC_PHY
+> +	select REGMAP_MMIO
+> +	select GENERIC_PHY_MIPI_DPHY
+> +	help
+> +	  Enable this to support the Meson MIPI Analog DPHY found in Meson G12A
+> +	  SoCs.
+> +	  If unsure, say N.
+> +
+>  config PHY_MESON_AXG_PCIE
+>  	tristate "Meson AXG PCIE PHY driver"
+>  	default ARCH_MESON
+> diff --git a/drivers/phy/amlogic/Makefile b/drivers/phy/amlogic/Makefile
+> index c0886c850bb0..91e3b9790c03 100644
+> --- a/drivers/phy/amlogic/Makefile
+> +++ b/drivers/phy/amlogic/Makefile
+> @@ -4,6 +4,7 @@ obj-$(CONFIG_PHY_MESON8B_USB2)			+= phy-meson8b-usb2.o
+>  obj-$(CONFIG_PHY_MESON_GXL_USB2)		+= phy-meson-gxl-usb2.o
+>  obj-$(CONFIG_PHY_MESON_G12A_USB2)		+= phy-meson-g12a-usb2.o
+>  obj-$(CONFIG_PHY_MESON_G12A_USB3_PCIE)		+= phy-meson-g12a-usb3-pcie.o
+> +obj-$(CONFIG_PHY_MESON_G12A_MIPI_DPHY_ANALOG)	+= phy-meson-g12a-mipi-dphy-analog.o
+>  obj-$(CONFIG_PHY_MESON_AXG_PCIE)		+= phy-meson-axg-pcie.o
+>  obj-$(CONFIG_PHY_MESON_AXG_MIPI_PCIE_ANALOG)	+= phy-meson-axg-mipi-pcie-analog.o
+>  obj-$(CONFIG_PHY_MESON_AXG_MIPI_DPHY)		+= phy-meson-axg-mipi-dphy.o
+> diff --git a/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c b/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
+> new file mode 100644
+> index 000000000000..adfcca38a952
+> --- /dev/null
+> +++ b/drivers/phy/amlogic/phy-meson-g12a-mipi-dphy-analog.c
+> @@ -0,0 +1,177 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Meson G12A MIPI DSI Analog PHY
+> + *
+> + * Copyright (C) 2018 Amlogic, Inc. All rights reserved
+> + * Copyright (C) 2020 BayLibre, SAS
+
+2022 now?
+
+> + * Author: Neil Armstrong <narmstrong@baylibre.com>
+> + */
+> +#include <linux/bitfield.h>
+> +#include <linux/bitops.h>
+> +#include <linux/module.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/regmap.h>
+> +#include <linux/delay.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/platform_device.h>
+> +#include <dt-bindings/phy/phy.h>
+> +
+> +#define HHI_MIPI_CNTL0 0x00
+> +#define		HHI_MIPI_CNTL0_DIF_REF_CTL1	GENMASK(31, 16)
+> +#define		HHI_MIPI_CNTL0_DIF_REF_CTL0	GENMASK(15, 0)
+> +
+> +#define HHI_MIPI_CNTL1 0x04
+> +#define		HHI_MIPI_CNTL1_BANDGAP		BIT(16)
+> +#define		HHI_MIPI_CNTL2_DIF_REF_CTL2	GENMASK(15, 0)
+> +
+> +#define HHI_MIPI_CNTL2 0x08
+> +#define		HHI_MIPI_CNTL2_DIF_TX_CTL1	GENMASK(31, 16)
+> +#define		HHI_MIPI_CNTL2_CH_EN		GENMASK(15, 11)
+> +#define		HHI_MIPI_CNTL2_DIF_TX_CTL0	GENMASK(10, 0)
+> +
+> +#define DSI_LANE_0				BIT(4)
+> +#define DSI_LANE_1				BIT(3)
+> +#define DSI_LANE_CLK				BIT(2)
+> +#define DSI_LANE_2				BIT(1)
+> +#define DSI_LANE_3				BIT(0)
+> +
+> +struct phy_g12a_mipi_dphy_analog_priv {
+> +	struct phy *phy;
+> +	struct regmap *regmap;
+> +	struct phy_configure_opts_mipi_dphy config;
+> +};
+> +
+> +static int phy_g12a_mipi_dphy_analog_configure(struct phy *phy,
+> +					       union phy_configure_opts *opts)
+> +{
+> +	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = phy_mipi_dphy_config_validate(&opts->mipi_dphy);
+> +	if (ret)
+> +		return ret;
+> +
+> +	memcpy(&priv->config, opts, sizeof(priv->config));
+> +
+> +	return 0;
+> +}
+> +
+> +static int phy_g12a_mipi_dphy_analog_power_on(struct phy *phy)
+> +{
+> +	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
+> +	unsigned int reg;
+> +
+> +	regmap_write(priv->regmap, HHI_MIPI_CNTL0,
+> +		     FIELD_PREP(HHI_MIPI_CNTL0_DIF_REF_CTL0, 0x8) |
+> +		     FIELD_PREP(HHI_MIPI_CNTL0_DIF_REF_CTL1, 0xa487));
+> +
+> +	regmap_write(priv->regmap, HHI_MIPI_CNTL1,
+> +		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_REF_CTL2, 0x2e) |
+> +		     HHI_MIPI_CNTL1_BANDGAP);
+> +
+> +	regmap_write(priv->regmap, HHI_MIPI_CNTL2,
+> +		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_TX_CTL0, 0x459) |
+> +		     FIELD_PREP(HHI_MIPI_CNTL2_DIF_TX_CTL1, 0x2680));
+> +
+> +	reg = DSI_LANE_CLK;
+> +	switch (priv->config.lanes) {
+> +	case 4:
+> +		reg |= DSI_LANE_3;
+> +		fallthrough;
+> +	case 3:
+> +		reg |= DSI_LANE_2;
+> +		fallthrough;
+> +	case 2:
+> +		reg |= DSI_LANE_1;
+> +		fallthrough;
+> +	case 1:
+> +		reg |= DSI_LANE_0;
+> +		break;
+> +	default:
+> +		reg = 0;
+> +	}
+> +
+> +	regmap_update_bits(priv->regmap, HHI_MIPI_CNTL2,
+> +			   HHI_MIPI_CNTL2_CH_EN,
+> +			   FIELD_PREP(HHI_MIPI_CNTL2_CH_EN, reg));
+> +
+> +	return 0;
+> +}
+> +
+> +static int phy_g12a_mipi_dphy_analog_power_off(struct phy *phy)
+> +{
+> +	struct phy_g12a_mipi_dphy_analog_priv *priv = phy_get_drvdata(phy);
+> +
+> +	regmap_write(priv->regmap, HHI_MIPI_CNTL0, 0);
+> +	regmap_write(priv->regmap, HHI_MIPI_CNTL1, 0);
+> +	regmap_write(priv->regmap, HHI_MIPI_CNTL2, 0);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops phy_g12a_mipi_dphy_analog_ops = {
+> +	.configure = phy_g12a_mipi_dphy_analog_configure,
+> +	.power_on = phy_g12a_mipi_dphy_analog_power_on,
+> +	.power_off = phy_g12a_mipi_dphy_analog_power_off,
+> +	.owner = THIS_MODULE,
+> +};
+> +
+> +static int phy_g12a_mipi_dphy_analog_probe(struct platform_device *pdev)
+> +{
+> +	struct phy_provider *phy;
+> +	struct device *dev = &pdev->dev;
+> +	struct phy_g12a_mipi_dphy_analog_priv *priv;
+> +	struct device_node *np = dev->of_node;
+> +	struct regmap *map;
+> +	int ret;
+> +
+> +	priv = devm_kmalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	/* Get the hhi system controller node */
+> +	map = syscon_node_to_regmap(of_get_parent(dev->of_node));
+> +	if (IS_ERR(map)) {
+> +		dev_err(dev,
+> +			"failed to get HHI regmap\n");
+> +		return PTR_ERR(map);
+> +	}
+> +
+> +	priv->regmap = map;
+> +
+> +	priv->phy = devm_phy_create(dev, np, &phy_g12a_mipi_dphy_analog_ops);
+> +	if (IS_ERR(priv->phy)) {
+> +		ret = PTR_ERR(priv->phy);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "failed to create PHY\n");
+
+log the error ?
+
+> +		return ret;
+> +	}
+> +
+> +	phy_set_drvdata(priv->phy, priv);
+> +	dev_set_drvdata(dev, priv);
+> +
+> +	phy = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> +
+> +	return PTR_ERR_OR_ZERO(phy);
+> +}
+> +
+> +static const struct of_device_id phy_g12a_mipi_dphy_analog_of_match[] = {
+> +	{
+> +		.compatible = "amlogic,g12a-mipi-dphy-analog",
+> +	},
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, phy_g12a_mipi_dphy_analog_of_match);
+> +
+> +static struct platform_driver phy_g12a_mipi_dphy_analog_driver = {
+> +	.probe = phy_g12a_mipi_dphy_analog_probe,
+> +	.driver = {
+> +		.name = "phy-meson-g12a-mipi-dphy-analog",
+> +		.of_match_table = phy_g12a_mipi_dphy_analog_of_match,
+> +	},
+> +};
+> +module_platform_driver(phy_g12a_mipi_dphy_analog_driver);
+> +
+> +MODULE_AUTHOR("Neil Armstrong <narmstrong@baylibre.com>");
+> +MODULE_DESCRIPTION("Meson G12A MIPI Analog D-PHY driver");
+> +MODULE_LICENSE("GPL v2");
+> -- 
+> 2.25.1
 
 -- 
 ~Vinod
