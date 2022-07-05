@@ -4,69 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB224CCA485
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 09:51:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD42FCCA47C
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:01:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QBHWcS1x9OHRI7XAYfjRVyM/ohEmLILpTPeuTe5IidE=; b=UKZ/xxNI7v7h+0
-	ME7Xqyv657zm7BljmONr0kONfLBqUnPDbmuoX/85GUbtwbpsqgmg6BVU1/MkjCOIZZWXr86alDD3Z
-	4O5mVEUcT3FSMzfAcM05PjljuauSqDqpvEGEGL8gm1EiXQoz5YAXlrqFlnSJ+MPl4oCqY2T5PUD2z
-	rw6uu6+qDvthYHHxkA7O9AqViYApHyu+nXQUIqWGg2tluCrQyfOpm6mRICONIvoBtVPp9EePdHoQS
-	F/1Wuwo4Sf2/qQUO3V3sYz6E9f6PTdWkEZWCzy2Z1b2g71K+Yqh7GDp6H0JtLJ5s+lUsp3BLgnl9d
-	99AitnVbZxRPXkFNZ9NA==;
+	List-Owner; bh=wp1XTzWVRq1D8AbNbE1HnD3iKYLVg/j4CPI7YqqlPLk=; b=3oT5J9KEoIXKeK
+	1Wzwbj9Shm5eHzP4NUZr07SF1hSBCTxc95WVI427FdxV5J2S5KYiwZn+3idDlSpEoJonEqd40JR4h
+	LaZURYlz83bV9FCAooIxA+cjg1P6j5Hfnvihw5EZyfv6HL75+o+ELlbn/AvRNz5QFGauxeQV7Jde0
+	nsoYurygbcmW7WWuiVcmrQ7dXQeXlD2ZW3K86sf1K2WlvTYVewtTfczQWrw8jrtSJXqRbOKNCxb2R
+	7SlMJupxuO8uWsFwVCCJZLkYFjnToR3HA1eCpBQS5e1fn6I9eNL8iI0H6rwGILV4QO3s6pu4e3wtW
+	waYB0ucrzHmYFbjALdgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fDl-00GwgU-UB; Tue, 05 Jul 2022 09:51:53 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1o8fNO-00H36j-18; Tue, 05 Jul 2022 10:01:50 +0000
+Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fBF-00GuYX-O8
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:49:22 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 75DFC6195C;
-	Tue,  5 Jul 2022 09:49:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C8F6C341E6;
-	Tue,  5 Jul 2022 09:49:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657014545;
-	bh=piYlAksvw7TqXfZQBtDopHCTzi1zuCK2raNHXyFhjds=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=UvDyJrBDF+nnK4WRhAi9c7EzJ6yH+8+ULJkW6bBBSzWTT+IJQ6IXqSuZ3ysOWiSzi
-	 sAqfFk5Se02vo1SZc3BhY3M3V8e1ZRBk5f4rVZ7UNk2P+/N97pgaCR3XJOiR4oH9F8
-	 PqAEoDXY88IrHCAKxJGILlxuO36OAbvPI4j/Y2piIC8S+cKha+8GlgwMYMv40aeBm/
-	 C3Px2/jUYm86vQ6aAB0hDrLOBNwW1QVyPYyMM29R757bav9OWA5ajasu4k9T1GU8am
-	 eKnYdRVrBEDAj9PHwhQR+nSbrZl0dZNrHDwsQQHw/8QPBaxvLkzBpniHUsZgasZiUD
-	 yXKIN1Y7XZv8A==
-Received: from johan by xi.lan with local (Exim 4.94.2)
-	(envelope-from <johan+linaro@kernel.org>)
-	id 1o8fB4-0004bD-J5; Tue, 05 Jul 2022 11:49:06 +0200
-From: Johan Hovold <johan+linaro@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: Andy Gross <agross@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@linaro.org>,
-	Kishon Vijay Abraham I <kishon@ti.com>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan+linaro@kernel.org>
-Subject: [PATCH 43/43] phy: qcom-qmp-usb: drop pipe clock lane suffix
-Date: Tue,  5 Jul 2022 11:42:39 +0200
-Message-Id: <20220705094239.17174-44-johan+linaro@kernel.org>
-X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220705094239.17174-1-johan+linaro@kernel.org>
-References: <20220705094239.17174-1-johan+linaro@kernel.org>
+	id 1o8fNL-00H35G-En
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 10:01:48 +0000
+Received: by mail-lj1-x22c.google.com with SMTP id l7so13116127ljj.4
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 03:01:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google;
+        h=message-id:date:mime-version:user-agent:subject:content-language:to
+         :cc:references:from:in-reply-to:content-transfer-encoding;
+        bh=U9PFsZB/0/QmRDr09pEYPH9caFXecL3SOxTVBS97+JI=;
+        b=wJ0jItWtosja/wQoJjQWUnJNtMedQ0Paoz9oR1YCGkWbN/mX7p9BbtGW0KibSdpqe3
+         bQ04O/a8BT+HQ4AK3ufi8ansChrgSSzNZp6E1yKDrZOJDvGVRMyRvrmsCCfCF5nyAjiG
+         A1c+Tckjym7I8zO1Kb5DOmaCjLvOuXQeCrEyTpOvlb91y2TUCS2SGAVx2viDOF2Dqz8x
+         /nPY1OiCvFilgLZQLnm2jxqu0ZU1+S/nNcRCongYMEK1qYkIOyFLQwRw9CJ3YSbcRJDE
+         h34jXHj+sOBFuFHeyGRMyz/2HLprGosDvQ1taUp+D+KYhH8CloW8Id+Dimkz/xz1KFtc
+         MmjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+         :content-language:to:cc:references:from:in-reply-to
+         :content-transfer-encoding;
+        bh=U9PFsZB/0/QmRDr09pEYPH9caFXecL3SOxTVBS97+JI=;
+        b=6V2O+Wv3Lmmuo22mChWNTA4ScpH3fV9yTEfEwUCe0NW8M+FthpiJ3p97Ln6Rqq/7qM
+         0eRG7naDo9oeN1Fu5/Gr1PARU193JOMAO8CSV5GQOgtEk2Qs7A6WI0aFPfCz8hJ6osPV
+         OthKfPbFF17bdhY1b+eP4eB4yQKB1svuvLCy8UpaSGyX5pwTdX1Noy6JSP/vQ7h7ubsv
+         Miz5FmAXdE2lncZqVF80aV2QpcbjPEbEuqY//tbYtziaytl8gYwt6LucZqwCKmeUG/NF
+         /fckz9fN0ho1kNr6rgQiUVF+5sry8O66zmOmMrjm9yIiZNyBmPKWQrmL/jhqxLDvhS0h
+         vdSg==
+X-Gm-Message-State: AJIora+FilTA4szqICBERYrmx83fpfD7HZyRrWKhxZFSTpc5uhWNKNNR
+	+E1hqX3zP/VrRgZLXq0Fyy/AbA==
+X-Google-Smtp-Source: AGRyM1vZzAee/PdXNufa+In8yExr4AGKcMzQRZAvFKn5/GGjH7hPM3pVeIBp/gKb93qyLkk6yYkE3A==
+X-Received: by 2002:a2e:b8c2:0:b0:25b:6b0c:34e with SMTP id s2-20020a2eb8c2000000b0025b6b0c034emr10195075ljp.397.1657015305041;
+        Tue, 05 Jul 2022 03:01:45 -0700 (PDT)
+Received: from [192.168.1.52] ([84.20.121.239])
+        by smtp.gmail.com with ESMTPSA id r1-20020a2e8e21000000b0025d2ed848d6sm465617ljk.24.2022.07.05.03.01.43
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 05 Jul 2022 03:01:44 -0700 (PDT)
+Message-ID: <7ae2f396-7cee-7a34-2148-b2a1b7867751@linaro.org>
+Date: Tue, 5 Jul 2022 12:01:42 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: [PATCH 01/43] dt-bindings: phy: qcom,qmp: fix bogus clock-cells
+ property
+Content-Language: en-US
+To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20220705094239.17174-1-johan+linaro@kernel.org>
+ <20220705094239.17174-2-johan+linaro@kernel.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20220705094239.17174-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_024917_946694_565BFCB0 
-X-CRM114-Status: GOOD (  12.31  )
+X-CRM114-CacheID: sfid-20220705_030147_590211_95C0363A 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,39 +99,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The pipe clock is defined in the "lane" node so there's no need to keep
-adding a redundant lane-number suffix to the clock name.
+On 05/07/2022 11:41, Johan Hovold wrote:
+> The QMP PHY wrapper node is not a clock provider so drop the bogus
+> '#clock-cells' property that was added when converting to DT schema.
+> 
+> Fixes: ccf51c1cedfd ("dt-bindings: phy: qcom,qmp: Convert QMP PHY bindings to yaml")
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml | 5 -----
+>  1 file changed, 5 deletions(-)
 
-Drop the lane suffix from the pipe clock name, but continue supporting
-the legacy name as a fall back.
 
-Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 994a8232be7b..dfe7294a589f 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -2665,8 +2665,12 @@ int qcom_qmp_phy_usb_create(struct device *dev, struct device_node *np, int id,
- 	if (!qphy->pcs_misc)
- 		dev_vdbg(dev, "PHY pcs_misc-reg not used\n");
- 
--	snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
--	qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	qphy->pipe_clk = devm_get_clk_from_child(dev, np, "pipe");
-+	if (IS_ERR(qphy->pipe_clk) && PTR_ERR(qphy->pipe_clk) != -EPROBE_DEFER) {
-+		/* Fall back to the legacy pipe clock name. */
-+		snprintf(prop_name, sizeof(prop_name), "pipe%d", id);
-+		qphy->pipe_clk = devm_get_clk_from_child(dev, np, prop_name);
-+	}
- 	if (IS_ERR(qphy->pipe_clk)) {
- 		return dev_err_probe(dev, PTR_ERR(qphy->pipe_clk),
- 				     "failed to get lane%d pipe clock\n", id);
--- 
-2.35.1
 
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
