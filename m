@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88B36CCA48A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A542CCA489
 	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:45:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,52 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QEsBl/2zZmy2QUGSW2jHXxsE+PuFJKWFYoAEJ017LXg=; b=C0ht7ml4jqsFsS
-	rNhiy0Z00G7bAoh7mYpF8foPGiZTvHu6OQ6vh4DLb019mL0amlMillg3PIog9vZBcqWqYCuWjyGoH
-	PjhHsDxXhB+55Ou3y8r6erDhSXWlPR5aLIi6zHkGchWD5yZ9X1xc+bGecmL6dYg5XrwLbh9hboLgK
-	qINtKbWykL6jSnDQ8Axk1UgU1+JC8oKRYlkkJE1Z43rVhu6OlkhVwZo3hj+tMq7Zb1Xy/XL+WVEFv
-	qglK3gm3/ulcgc2zammxgA1R8ogJ8WmPArKc4ygx+mmgCOX/Wp0NiSgyPm20Xcw0EAf1kktqk0inC
-	g/MaVjBX778IkF9q2YVg==;
+	List-Owner; bh=CHN8a5wY94Ae7Zj8IaoT8TbaDo4NE+J2DqzDzsnCBwc=; b=NdMRSgyeHe1xCD
+	TAJgHiikUHabo+cXqajxeqOENsJC+b+xkzdPX4AwPb8oaazDDK1VMwDVp9MT6HOfKLa+C7qMURfun
+	6y304kx4zmUAUTS8ty4ajgOgUl82MOlRqqhZDk6tNtoEJ0YUpcA4j46tMBVpmoPhtnMmWG4e2W5Bc
+	A/jxOGtfXqzXAlQdyxC8k+5Pdmhs/6snIrrLkCAiALDoCL823Vc4VX4UHe2/rMYNk0c+qlYiZt/QT
+	7hrfhhtRnxbudWS42J57Nzqge9P9+/pe7toh/6TIJE/u4grJYFyptx5ohnT6UgXggte5OyqEiUwIF
+	+TzSHQWBrR5eQORziE/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8g40-00HFdZ-Ug; Tue, 05 Jul 2022 10:45:52 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1o8g40-00HFdJ-O3; Tue, 05 Jul 2022 10:45:52 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8f5k-00GqnP-8M
+	id 1o8f5l-00GqrZ-RI
 	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 09:43:41 +0000
-Received: by mail-lf1-x132.google.com with SMTP id i18so19579989lfu.8
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:43:36 -0700 (PDT)
+Received: by mail-lf1-x136.google.com with SMTP id j21so19665202lfe.1
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 02:43:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=from:to:cc:subject:date:message-id:in-reply-to:references
          :mime-version:content-transfer-encoding;
-        bh=bmWZlPEoCc7yEV5QZRYCeDhywSKKKMfq64KU+sXfyIs=;
-        b=EEIxS/xGkUMiRs2vJPZY1pP1jKJajOXf13iEZAnU/S9cuXqUHnvV0Hob4tVyf8IfsO
-         xen9JMWYvAGL4xDT7y1JbPqLxkr9J5CJ+0ncETq1vjmgcky6dKPN8nV3uozstO8Fz2bb
-         to/GKysVWZncbo8FNzCXQBrK0CJRXBpX8Ef5OUXSSdJMyLjxxWWx4r4JCzvD/l4uQm2Z
-         toKhQ1JFv5BOpfEEnc4sa/pOXsk4F25WP2tlwEhtSkJ+yY6Py3PCLA2Qcyp+tMGxxvDs
-         tEySLhI0I4N++nyuVHLVje1dsybxAW209t93wjfcnnN7pmk9vhcox0zW6gQON9hUJNnr
-         GBFA==
+        bh=OMhvoows2nRxYeovzopRV3kchz7EG7WvEIUgubFlpR8=;
+        b=C33VVrtP3C/WMG7DzpiZ6+TMxNTw53+WTigNVFE75POWO588GoCnOCm+eT813DGsPx
+         AwA6J4S95/+S9TbPhCkpL1AWnJ/+HexXOoLB6w6M5aOC6YHynokOxBmQJ/SaNmVWr7F3
+         yRCieaL7NmlitlqofSiTM4NKOZZz9O0b2/bkUUbNiG+3qmCRYRPuMAO7pwtjTbo96Rbn
+         OuPepzzM3t8L3DfutOvvR+5o/4u08r6KYHQZIHNfmD+IdCYKHLuVqIEP+WL2eKJ0cAd8
+         LsOe4J1sdZ1VFGdSAc0G5eoSdcH700Pg7PYGig7DPYxDywpYlW8EJ4z/WKqWRda+tyrC
+         0bkQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
          :references:mime-version:content-transfer-encoding;
-        bh=bmWZlPEoCc7yEV5QZRYCeDhywSKKKMfq64KU+sXfyIs=;
-        b=nFlD2v3YBTuuLiFnNSV/MV38DEDG15YIsuOPJ3h1T9ItUG8UpdaO6wN/mU3slLH/4s
-         Oysw/IQK8G3ZO5AZTRv7CWqpLDf0rOnNQY4jYQZQl5gGVs1XaV6SVeB0vUKG+Ht69KL4
-         Fz+bviKeHtwDpxWrkmHY0qSaGTClGz6+He6lXbledIiL7bmAz6tkSDXKEsCnRffn1smM
-         3V+Y6yNZ7K4+rEXdxBa7vde9ln/X6fXmrWpaICfTnb5ag4bHIuvx1WtRbTsz/4dhrR8T
-         kJUlA0XEZhOjudOHPgHcl3eebGGLDujkAgdx3N0HIv0Q7zPaqjxDvMu5yD1xz4267jv9
-         XncA==
-X-Gm-Message-State: AJIora+qKFZYFu1LwM9K9GzfghZa7fvhyTSvjWNkd/WpRns5J5fp11SC
-	wjL0ZPw77nbqsexx8VGpm4w/DA==
-X-Google-Smtp-Source: AGRyM1t25nE5IwcPKCZLYHFBSoCVtbe/M7Uqc/jbVqJh08bU/YOypGNM+Qy0HaTEGtfWrTsbbteipw==
-X-Received: by 2002:a05:6512:3b8e:b0:481:1a75:452 with SMTP id g14-20020a0565123b8e00b004811a750452mr23348998lfv.238.1657014215606;
-        Tue, 05 Jul 2022 02:43:35 -0700 (PDT)
+        bh=OMhvoows2nRxYeovzopRV3kchz7EG7WvEIUgubFlpR8=;
+        b=jPL6Tk7u/067t+k8/0g1MMWXeqWdiD9GFNKDAu4j8o3o3PUUjGEtg6lt5NyHWxV05I
+         4t2RjD7asNArJ7qMNfvpyao+iZP8K7K0zNb9JTo9iyrt9L7tUMah8kkxW0gAjnql2Vqx
+         WEG1PPc+KnIjFdRiGGESrnzDHp9V1WRA1bOkv+cL87s/vaqXGFfnOdp+9HlRqKfB1wZl
+         5BxDkhcMmVen0km6zn+tyMt0Pmo9vdWB2PjVTXPZx0fL8SD+wMkWLGQdqwDQ3dB70uqt
+         3vp8R4dX+U5dSlTH0KFZIozls5c1rb8ksVHtbb3x4HfgVUmHfdf/v5yK+EjZUVftxnFX
+         0+Ew==
+X-Gm-Message-State: AJIora/igtERS7IDOneIdkG9k+mpNOd3qExfYUcZWk0zG4YgjtT2Hq4h
+	i/HGIjh77xgdwd8d6BaTlHNAo72rvhIdew==
+X-Google-Smtp-Source: AGRyM1thrFmAaBY+yGC0Q36YwDa4SXL9sQ06lrB+lVdD/Cdo8PUyGqTkJ5Xy5iedrGnAhjIncxOVKQ==
+X-Received: by 2002:a05:6512:3409:b0:47f:af77:8678 with SMTP id i9-20020a056512340900b0047faf778678mr23340951lfr.152.1657014217323;
+        Tue, 05 Jul 2022 02:43:37 -0700 (PDT)
 Received: from eriador.lan ([37.153.55.125])
-        by smtp.gmail.com with ESMTPSA id f7-20020a056512360700b00482f206b087sm491683lfs.39.2022.07.05.02.43.34
+        by smtp.gmail.com with ESMTPSA id f7-20020a056512360700b00482f206b087sm491683lfs.39.2022.07.05.02.43.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 05 Jul 2022 02:43:35 -0700 (PDT)
+        Tue, 05 Jul 2022 02:43:36 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Andy Gross <agross@kernel.org>,
 	Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -67,16 +67,16 @@ To: Andy Gross <agross@kernel.org>,
 Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v1 17/28] phy: qcom-qmp: move PCIE QHP registers to separate header
-Date: Tue,  5 Jul 2022 12:43:09 +0300
-Message-Id: <20220705094320.1313312-18-dmitry.baryshkov@linaro.org>
+Subject: [PATCH v1 19/28] phy: qcom-qmp: split allegedly 4.20 and 5.20 PCS registers
+Date: Tue,  5 Jul 2022 12:43:11 +0300
+Message-Id: <20220705094320.1313312-20-dmitry.baryshkov@linaro.org>
 X-Mailer: git-send-email 2.35.1
 In-Reply-To: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
 References: <20220705094320.1313312-1-dmitry.baryshkov@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_024336_383404_7BA806BD 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20220705_024337_991761_B5C579CB 
+X-CRM114-Status: GOOD (  13.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,279 +93,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Move PCIE QHP registers to the separate header. QHP is a sepecial PHY
-kind used on sdm845 to drive one of PCIe links.
+Split registers definitions belonging allegedly to 4.20 and 5.20 QMP
+PHYs. They are used for the PCIe QMP PHYs, which have no good open
+source reference.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie-qhp.h | 123 +++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp.h          | 116 +----------------
- 2 files changed, 125 insertions(+), 114 deletions(-)
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcie-qhp.h
+ .../qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h    | 17 ++++++++++++
+ .../qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h    | 17 ++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4_20.h | 15 +++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.h           | 27 ++++---------------
+ 4 files changed, 54 insertions(+), 22 deletions(-)
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4_20.h
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-qhp.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-qhp.h
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h
 new file mode 100644
-index 000000000000..e4a4d2cd85eb
+index 000000000000..af273602998e
 --- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-qhp.h
-@@ -0,0 +1,123 @@
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h
+@@ -0,0 +1,17 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
 +/*
 + * Copyright (c) 2017, The Linux Foundation. All rights reserved.
 + */
 +
-+#ifndef QCOM_PHY_QMP_PCIE_QHP_H_
-+#define QCOM_PHY_QMP_PCIE_QHP_H_
++#ifndef QCOM_PHY_QMP_PCS_PCIE_V4_20_H_
++#define QCOM_PHY_QMP_PCS_PCIE_V4_20_H_
 +
-+/* PCIE GEN3 COM registers */
-+#define PCIE_GEN3_QHP_COM_SSC_EN_CENTER			0x14
-+#define PCIE_GEN3_QHP_COM_SSC_PER1			0x20
-+#define PCIE_GEN3_QHP_COM_SSC_PER2			0x24
-+#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE1		0x28
-+#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE2		0x2c
-+#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE1_MODE1		0x34
-+#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE2_MODE1		0x38
-+#define PCIE_GEN3_QHP_COM_BIAS_EN_CKBUFLR_EN		0x54
-+#define PCIE_GEN3_QHP_COM_CLK_ENABLE1			0x58
-+#define PCIE_GEN3_QHP_COM_LOCK_CMP1_MODE0		0x6c
-+#define PCIE_GEN3_QHP_COM_LOCK_CMP2_MODE0		0x70
-+#define PCIE_GEN3_QHP_COM_LOCK_CMP1_MODE1		0x78
-+#define PCIE_GEN3_QHP_COM_LOCK_CMP2_MODE1		0x7c
-+#define PCIE_GEN3_QHP_COM_BGV_TRIM			0x98
-+#define PCIE_GEN3_QHP_COM_CP_CTRL_MODE0			0xb4
-+#define PCIE_GEN3_QHP_COM_CP_CTRL_MODE1			0xb8
-+#define PCIE_GEN3_QHP_COM_PLL_RCTRL_MODE0		0xc0
-+#define PCIE_GEN3_QHP_COM_PLL_RCTRL_MODE1		0xc4
-+#define PCIE_GEN3_QHP_COM_PLL_CCTRL_MODE0		0xcc
-+#define PCIE_GEN3_QHP_COM_PLL_CCTRL_MODE1		0xd0
-+#define PCIE_GEN3_QHP_COM_SYSCLK_EN_SEL			0xdc
-+#define PCIE_GEN3_QHP_COM_RESTRIM_CTRL2			0xf0
-+#define PCIE_GEN3_QHP_COM_LOCK_CMP_EN			0xf8
-+#define PCIE_GEN3_QHP_COM_DEC_START_MODE0		0x100
-+#define PCIE_GEN3_QHP_COM_DEC_START_MODE1		0x108
-+#define PCIE_GEN3_QHP_COM_DIV_FRAC_START1_MODE0		0x11c
-+#define PCIE_GEN3_QHP_COM_DIV_FRAC_START2_MODE0		0x120
-+#define PCIE_GEN3_QHP_COM_DIV_FRAC_START3_MODE0		0x124
-+#define PCIE_GEN3_QHP_COM_DIV_FRAC_START1_MODE1		0x128
-+#define PCIE_GEN3_QHP_COM_DIV_FRAC_START2_MODE1		0x12c
-+#define PCIE_GEN3_QHP_COM_DIV_FRAC_START3_MODE1		0x130
-+#define PCIE_GEN3_QHP_COM_INTEGLOOP_GAIN0_MODE0		0x150
-+#define PCIE_GEN3_QHP_COM_INTEGLOOP_GAIN0_MODE1		0x158
-+#define PCIE_GEN3_QHP_COM_VCO_TUNE_MAP			0x178
-+#define PCIE_GEN3_QHP_COM_BG_CTRL			0x1c8
-+#define PCIE_GEN3_QHP_COM_CLK_SELECT			0x1cc
-+#define PCIE_GEN3_QHP_COM_HSCLK_SEL1			0x1d0
-+#define PCIE_GEN3_QHP_COM_CORECLK_DIV			0x1e0
-+#define PCIE_GEN3_QHP_COM_CORE_CLK_EN			0x1e8
-+#define PCIE_GEN3_QHP_COM_CMN_CONFIG			0x1f0
-+#define PCIE_GEN3_QHP_COM_SVS_MODE_CLK_SEL		0x1fc
-+#define PCIE_GEN3_QHP_COM_CORECLK_DIV_MODE1		0x21c
-+#define PCIE_GEN3_QHP_COM_CMN_MODE			0x224
-+#define PCIE_GEN3_QHP_COM_VREGCLK_DIV1			0x228
-+#define PCIE_GEN3_QHP_COM_VREGCLK_DIV2			0x22c
++#define QPHY_V4_20_PCS_PCIE_EQ_CONFIG1			0x0a0
++#define QPHY_V4_20_PCS_PCIE_G3_RXEQEVAL_TIME		0x0f0
++#define QPHY_V4_20_PCS_PCIE_G4_RXEQEVAL_TIME		0x0f4
++#define QPHY_V4_20_PCS_PCIE_G4_EQ_CONFIG2		0x0fc
++#define QPHY_V4_20_PCS_PCIE_G4_EQ_CONFIG5		0x108
++#define QPHY_V4_20_PCS_LANE1_INSIG_SW_CTRL2		0x824
++#define QPHY_V4_20_PCS_LANE1_INSIG_MX_CTRL2		0x828
 +
-+/* PCIE GEN3 QHP Lane registers */
-+#define PCIE_GEN3_QHP_L0_DRVR_CTRL0			0xc
-+#define PCIE_GEN3_QHP_L0_DRVR_CTRL1			0x10
-+#define PCIE_GEN3_QHP_L0_DRVR_CTRL2			0x14
-+#define PCIE_GEN3_QHP_L0_DRVR_TAP_EN			0x18
-+#define PCIE_GEN3_QHP_L0_TX_BAND_MODE			0x60
-+#define PCIE_GEN3_QHP_L0_LANE_MODE			0x64
-+#define PCIE_GEN3_QHP_L0_PARALLEL_RATE			0x7c
-+#define PCIE_GEN3_QHP_L0_CML_CTRL_MODE0			0xc0
-+#define PCIE_GEN3_QHP_L0_CML_CTRL_MODE1			0xc4
-+#define PCIE_GEN3_QHP_L0_CML_CTRL_MODE2			0xc8
-+#define PCIE_GEN3_QHP_L0_PREAMP_CTRL_MODE1		0xd0
-+#define PCIE_GEN3_QHP_L0_PREAMP_CTRL_MODE2		0xd4
-+#define PCIE_GEN3_QHP_L0_MIXER_CTRL_MODE0		0xd8
-+#define PCIE_GEN3_QHP_L0_MIXER_CTRL_MODE1		0xdc
-+#define PCIE_GEN3_QHP_L0_MIXER_CTRL_MODE2		0xe0
-+#define PCIE_GEN3_QHP_L0_CTLE_THRESH_DFE		0xfc
-+#define PCIE_GEN3_QHP_L0_CGA_THRESH_DFE			0x100
-+#define PCIE_GEN3_QHP_L0_RXENGINE_EN0			0x108
-+#define PCIE_GEN3_QHP_L0_CTLE_TRAIN_TIME		0x114
-+#define PCIE_GEN3_QHP_L0_CTLE_DFE_OVRLP_TIME		0x118
-+#define PCIE_GEN3_QHP_L0_DFE_REFRESH_TIME		0x11c
-+#define PCIE_GEN3_QHP_L0_DFE_ENABLE_TIME		0x120
-+#define PCIE_GEN3_QHP_L0_VGA_GAIN			0x124
-+#define PCIE_GEN3_QHP_L0_DFE_GAIN			0x128
-+#define PCIE_GEN3_QHP_L0_EQ_GAIN			0x130
-+#define PCIE_GEN3_QHP_L0_OFFSET_GAIN			0x134
-+#define PCIE_GEN3_QHP_L0_PRE_GAIN			0x138
-+#define PCIE_GEN3_QHP_L0_VGA_INITVAL			0x13c
-+#define PCIE_GEN3_QHP_L0_EQ_INTVAL			0x154
-+#define PCIE_GEN3_QHP_L0_EDAC_INITVAL			0x160
-+#define PCIE_GEN3_QHP_L0_RXEQ_INITB0			0x168
-+#define PCIE_GEN3_QHP_L0_RXEQ_INITB1			0x16c
-+#define PCIE_GEN3_QHP_L0_RCVRDONE_THRESH1		0x178
-+#define PCIE_GEN3_QHP_L0_RXEQ_CTRL			0x180
-+#define PCIE_GEN3_QHP_L0_UCDR_FO_GAIN_MODE0		0x184
-+#define PCIE_GEN3_QHP_L0_UCDR_FO_GAIN_MODE1		0x188
-+#define PCIE_GEN3_QHP_L0_UCDR_FO_GAIN_MODE2		0x18c
-+#define PCIE_GEN3_QHP_L0_UCDR_SO_GAIN_MODE0		0x190
-+#define PCIE_GEN3_QHP_L0_UCDR_SO_GAIN_MODE1		0x194
-+#define PCIE_GEN3_QHP_L0_UCDR_SO_GAIN_MODE2		0x198
-+#define PCIE_GEN3_QHP_L0_UCDR_SO_CONFIG			0x19c
-+#define PCIE_GEN3_QHP_L0_RX_BAND			0x1a4
-+#define PCIE_GEN3_QHP_L0_RX_RCVR_PATH1_MODE0		0x1c0
-+#define PCIE_GEN3_QHP_L0_RX_RCVR_PATH1_MODE1		0x1c4
-+#define PCIE_GEN3_QHP_L0_RX_RCVR_PATH1_MODE2		0x1c8
-+#define PCIE_GEN3_QHP_L0_SIGDET_ENABLES			0x230
-+#define PCIE_GEN3_QHP_L0_SIGDET_CNTRL			0x234
-+#define PCIE_GEN3_QHP_L0_SIGDET_DEGLITCH_CNTRL		0x238
-+#define PCIE_GEN3_QHP_L0_DCC_GAIN			0x2a4
-+#define PCIE_GEN3_QHP_L0_RSM_START			0x2a8
-+#define PCIE_GEN3_QHP_L0_RX_EN_SIGNAL			0x2ac
-+#define PCIE_GEN3_QHP_L0_PSM_RX_EN_CAL			0x2b0
-+#define PCIE_GEN3_QHP_L0_RX_MISC_CNTRL0			0x2b8
-+#define PCIE_GEN3_QHP_L0_TS0_TIMER			0x2c0
-+#define PCIE_GEN3_QHP_L0_DLL_HIGHDATARATE		0x2c4
-+#define PCIE_GEN3_QHP_L0_RX_RESETCODE_OFFSET		0x2cc
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h
+new file mode 100644
+index 000000000000..1eedf50cf9cb
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h
+@@ -0,0 +1,17 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
 +
-+/* PCIE GEN3 PCS registers */
-+#define PCIE_GEN3_QHP_PHY_TXMGN_MAIN_V0_M3P5DB		0x2c
-+#define PCIE_GEN3_QHP_PHY_TXMGN_POST_V0_M3P5DB		0x40
-+#define PCIE_GEN3_QHP_PHY_TXMGN_MAIN_V0_M6DB		0x54
-+#define PCIE_GEN3_QHP_PHY_TXMGN_POST_V0_M6DB		0x68
-+#define PCIE_GEN3_QHP_PHY_POWER_STATE_CONFIG		0x15c
-+#define PCIE_GEN3_QHP_PHY_POWER_STATE_CONFIG5		0x16c
-+#define PCIE_GEN3_QHP_PHY_PCS_TX_RX_CONFIG		0x174
++#ifndef QCOM_PHY_QMP_PCS_PCIE_V5_20_H_
++#define QCOM_PHY_QMP_PCS_PCIE_V5_20_H_
++
++/* Only for QMP V5_20 PHY - PCIe PCS registers */
++#define QPHY_V5_20_PCS_PCIE_ENDPOINT_REFCLK_DRIVE	0x01c
++#define QPHY_V5_20_PCS_PCIE_OSC_DTCT_ACTIONS		0x090
++#define QPHY_V5_20_PCS_PCIE_EQ_CONFIG1			0x0a0
++#define QPHY_V5_20_PCS_PCIE_G4_EQ_CONFIG5		0x108
++#define QPHY_V5_20_PCS_PCIE_G4_PRE_GAIN			0x15c
++#define QPHY_V5_20_PCS_PCIE_RX_MARGINING_CONFIG3	0x184
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4_20.h
+new file mode 100644
+index 000000000000..08c3dd115488
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v4_20.h
+@@ -0,0 +1,15 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_PCS_V4_20_H_
++#define QCOM_PHY_QMP_PCS_V4_20_H_
++
++/* Only for QMP V4_20 PHY - USB/PCIe PCS registers */
++#define QPHY_V4_20_PCS_RX_SIGDET_LVL			0x188
++#define QPHY_V4_20_PCS_EQ_CONFIG2			0x1d8
++#define QPHY_V4_20_PCS_EQ_CONFIG4			0x1e0
++#define QPHY_V4_20_PCS_EQ_CONFIG5			0x1e4
 +
 +#endif
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index 9d93ae785b16..59510d927fec 100644
+index 1f8684c87c06..cdbbcf6b5686 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp.h
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -35,6 +35,8 @@
+@@ -32,11 +32,16 @@
+ #include "phy-qcom-qmp-pcs-usb-v4.h"
+ #include "phy-qcom-qmp-pcs-ufs-v4.h"
+ 
++#include "phy-qcom-qmp-pcs-v4_20.h"
++#include "phy-qcom-qmp-pcs-pcie-v4_20.h"
++
+ #include "phy-qcom-qmp-pcs-v5.h"
+ #include "phy-qcom-qmp-pcs-pcie-v5.h"
  #include "phy-qcom-qmp-pcs-usb-v5.h"
  #include "phy-qcom-qmp-pcs-ufs-v5.h"
  
-+#include "phy-qcom-qmp-pcie-qhp.h"
++#include "phy-qcom-qmp-pcs-pcie-v5_20.h"
 +
- /* Only for QMP V3 & V4 PHY - DP COM registers */
- #define QPHY_V3_DP_COM_PHY_MODE_CTRL			0x00
- #define QPHY_V3_DP_COM_SW_RESET				0x04
-@@ -152,120 +154,6 @@
- #define QSERDES_V4_20_RX_DFE_CTLE_POST_CAL_OFFSET	0x20c
- #define QSERDES_V4_20_RX_MARG_COARSE_CTRL2		0x23c
+ #include "phy-qcom-qmp-pcie-qhp.h"
  
--/* PCIE GEN3 COM registers */
--#define PCIE_GEN3_QHP_COM_SSC_EN_CENTER			0x14
--#define PCIE_GEN3_QHP_COM_SSC_PER1			0x20
--#define PCIE_GEN3_QHP_COM_SSC_PER2			0x24
--#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE1		0x28
--#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE2		0x2c
--#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE1_MODE1		0x34
--#define PCIE_GEN3_QHP_COM_SSC_STEP_SIZE2_MODE1		0x38
--#define PCIE_GEN3_QHP_COM_BIAS_EN_CKBUFLR_EN		0x54
--#define PCIE_GEN3_QHP_COM_CLK_ENABLE1			0x58
--#define PCIE_GEN3_QHP_COM_LOCK_CMP1_MODE0		0x6c
--#define PCIE_GEN3_QHP_COM_LOCK_CMP2_MODE0		0x70
--#define PCIE_GEN3_QHP_COM_LOCK_CMP1_MODE1		0x78
--#define PCIE_GEN3_QHP_COM_LOCK_CMP2_MODE1		0x7c
--#define PCIE_GEN3_QHP_COM_BGV_TRIM			0x98
--#define PCIE_GEN3_QHP_COM_CP_CTRL_MODE0			0xb4
--#define PCIE_GEN3_QHP_COM_CP_CTRL_MODE1			0xb8
--#define PCIE_GEN3_QHP_COM_PLL_RCTRL_MODE0		0xc0
--#define PCIE_GEN3_QHP_COM_PLL_RCTRL_MODE1		0xc4
--#define PCIE_GEN3_QHP_COM_PLL_CCTRL_MODE0		0xcc
--#define PCIE_GEN3_QHP_COM_PLL_CCTRL_MODE1		0xd0
--#define PCIE_GEN3_QHP_COM_SYSCLK_EN_SEL			0xdc
--#define PCIE_GEN3_QHP_COM_RESTRIM_CTRL2			0xf0
--#define PCIE_GEN3_QHP_COM_LOCK_CMP_EN			0xf8
--#define PCIE_GEN3_QHP_COM_DEC_START_MODE0		0x100
--#define PCIE_GEN3_QHP_COM_DEC_START_MODE1		0x108
--#define PCIE_GEN3_QHP_COM_DIV_FRAC_START1_MODE0		0x11c
--#define PCIE_GEN3_QHP_COM_DIV_FRAC_START2_MODE0		0x120
--#define PCIE_GEN3_QHP_COM_DIV_FRAC_START3_MODE0		0x124
--#define PCIE_GEN3_QHP_COM_DIV_FRAC_START1_MODE1		0x128
--#define PCIE_GEN3_QHP_COM_DIV_FRAC_START2_MODE1		0x12c
--#define PCIE_GEN3_QHP_COM_DIV_FRAC_START3_MODE1		0x130
--#define PCIE_GEN3_QHP_COM_INTEGLOOP_GAIN0_MODE0		0x150
--#define PCIE_GEN3_QHP_COM_INTEGLOOP_GAIN0_MODE1		0x158
--#define PCIE_GEN3_QHP_COM_VCO_TUNE_MAP			0x178
--#define PCIE_GEN3_QHP_COM_BG_CTRL			0x1c8
--#define PCIE_GEN3_QHP_COM_CLK_SELECT			0x1cc
--#define PCIE_GEN3_QHP_COM_HSCLK_SEL1			0x1d0
--#define PCIE_GEN3_QHP_COM_CORECLK_DIV			0x1e0
--#define PCIE_GEN3_QHP_COM_CORE_CLK_EN			0x1e8
--#define PCIE_GEN3_QHP_COM_CMN_CONFIG			0x1f0
--#define PCIE_GEN3_QHP_COM_SVS_MODE_CLK_SEL		0x1fc
--#define PCIE_GEN3_QHP_COM_CORECLK_DIV_MODE1		0x21c
--#define PCIE_GEN3_QHP_COM_CMN_MODE			0x224
--#define PCIE_GEN3_QHP_COM_VREGCLK_DIV1			0x228
--#define PCIE_GEN3_QHP_COM_VREGCLK_DIV2			0x22c
+ /* Only for QMP V3 & V4 PHY - DP COM registers */
+@@ -121,12 +126,6 @@
+ #define QSERDES_V4_DP_PHY_AUX_INTERRUPT_STATUS		0x0d8
+ #define QSERDES_V4_DP_PHY_STATUS			0x0dc
+ 
+-/* Only for QMP V4_20 PHY - USB/PCIe PCS registers */
+-#define QPHY_V4_20_PCS_RX_SIGDET_LVL			0x188
+-#define QPHY_V4_20_PCS_EQ_CONFIG2			0x1d8
+-#define QPHY_V4_20_PCS_EQ_CONFIG4			0x1e0
+-#define QPHY_V4_20_PCS_EQ_CONFIG5			0x1e4
 -
--/* PCIE GEN3 QHP Lane registers */
--#define PCIE_GEN3_QHP_L0_DRVR_CTRL0			0xc
--#define PCIE_GEN3_QHP_L0_DRVR_CTRL1			0x10
--#define PCIE_GEN3_QHP_L0_DRVR_CTRL2			0x14
--#define PCIE_GEN3_QHP_L0_DRVR_TAP_EN			0x18
--#define PCIE_GEN3_QHP_L0_TX_BAND_MODE			0x60
--#define PCIE_GEN3_QHP_L0_LANE_MODE			0x64
--#define PCIE_GEN3_QHP_L0_PARALLEL_RATE			0x7c
--#define PCIE_GEN3_QHP_L0_CML_CTRL_MODE0			0xc0
--#define PCIE_GEN3_QHP_L0_CML_CTRL_MODE1			0xc4
--#define PCIE_GEN3_QHP_L0_CML_CTRL_MODE2			0xc8
--#define PCIE_GEN3_QHP_L0_PREAMP_CTRL_MODE1		0xd0
--#define PCIE_GEN3_QHP_L0_PREAMP_CTRL_MODE2		0xd4
--#define PCIE_GEN3_QHP_L0_MIXER_CTRL_MODE0		0xd8
--#define PCIE_GEN3_QHP_L0_MIXER_CTRL_MODE1		0xdc
--#define PCIE_GEN3_QHP_L0_MIXER_CTRL_MODE2		0xe0
--#define PCIE_GEN3_QHP_L0_CTLE_THRESH_DFE		0xfc
--#define PCIE_GEN3_QHP_L0_CGA_THRESH_DFE			0x100
--#define PCIE_GEN3_QHP_L0_RXENGINE_EN0			0x108
--#define PCIE_GEN3_QHP_L0_CTLE_TRAIN_TIME		0x114
--#define PCIE_GEN3_QHP_L0_CTLE_DFE_OVRLP_TIME		0x118
--#define PCIE_GEN3_QHP_L0_DFE_REFRESH_TIME		0x11c
--#define PCIE_GEN3_QHP_L0_DFE_ENABLE_TIME		0x120
--#define PCIE_GEN3_QHP_L0_VGA_GAIN			0x124
--#define PCIE_GEN3_QHP_L0_DFE_GAIN			0x128
--#define PCIE_GEN3_QHP_L0_EQ_GAIN			0x130
--#define PCIE_GEN3_QHP_L0_OFFSET_GAIN			0x134
--#define PCIE_GEN3_QHP_L0_PRE_GAIN			0x138
--#define PCIE_GEN3_QHP_L0_VGA_INITVAL			0x13c
--#define PCIE_GEN3_QHP_L0_EQ_INTVAL			0x154
--#define PCIE_GEN3_QHP_L0_EDAC_INITVAL			0x160
--#define PCIE_GEN3_QHP_L0_RXEQ_INITB0			0x168
--#define PCIE_GEN3_QHP_L0_RXEQ_INITB1			0x16c
--#define PCIE_GEN3_QHP_L0_RCVRDONE_THRESH1		0x178
--#define PCIE_GEN3_QHP_L0_RXEQ_CTRL			0x180
--#define PCIE_GEN3_QHP_L0_UCDR_FO_GAIN_MODE0		0x184
--#define PCIE_GEN3_QHP_L0_UCDR_FO_GAIN_MODE1		0x188
--#define PCIE_GEN3_QHP_L0_UCDR_FO_GAIN_MODE2		0x18c
--#define PCIE_GEN3_QHP_L0_UCDR_SO_GAIN_MODE0		0x190
--#define PCIE_GEN3_QHP_L0_UCDR_SO_GAIN_MODE1		0x194
--#define PCIE_GEN3_QHP_L0_UCDR_SO_GAIN_MODE2		0x198
--#define PCIE_GEN3_QHP_L0_UCDR_SO_CONFIG			0x19c
--#define PCIE_GEN3_QHP_L0_RX_BAND			0x1a4
--#define PCIE_GEN3_QHP_L0_RX_RCVR_PATH1_MODE0		0x1c0
--#define PCIE_GEN3_QHP_L0_RX_RCVR_PATH1_MODE1		0x1c4
--#define PCIE_GEN3_QHP_L0_RX_RCVR_PATH1_MODE2		0x1c8
--#define PCIE_GEN3_QHP_L0_SIGDET_ENABLES			0x230
--#define PCIE_GEN3_QHP_L0_SIGDET_CNTRL			0x234
--#define PCIE_GEN3_QHP_L0_SIGDET_DEGLITCH_CNTRL		0x238
--#define PCIE_GEN3_QHP_L0_DCC_GAIN			0x2a4
--#define PCIE_GEN3_QHP_L0_RSM_START			0x2a8
--#define PCIE_GEN3_QHP_L0_RX_EN_SIGNAL			0x2ac
--#define PCIE_GEN3_QHP_L0_PSM_RX_EN_CAL			0x2b0
--#define PCIE_GEN3_QHP_L0_RX_MISC_CNTRL0			0x2b8
--#define PCIE_GEN3_QHP_L0_TS0_TIMER			0x2c0
--#define PCIE_GEN3_QHP_L0_DLL_HIGHDATARATE		0x2c4
--#define PCIE_GEN3_QHP_L0_RX_RESETCODE_OFFSET		0x2cc
+ /* Only for QMP V4 PHY - PCS_MISC registers */
+ #define QPHY_V4_PCS_MISC_TYPEC_CTRL			0x00
+ #define QPHY_V4_PCS_MISC_TYPEC_PWRDN_CTRL		0x04
+@@ -135,20 +134,4 @@
+ #define QPHY_V4_PCS_MISC_TYPEC_STATUS			0x10
+ #define QPHY_V4_PCS_MISC_PLACEHOLDER_STATUS		0x14
+ 
+-#define QPHY_V4_20_PCS_PCIE_EQ_CONFIG1			0x0a0
+-#define QPHY_V4_20_PCS_PCIE_G3_RXEQEVAL_TIME		0x0f0
+-#define QPHY_V4_20_PCS_PCIE_G4_RXEQEVAL_TIME		0x0f4
+-#define QPHY_V4_20_PCS_PCIE_G4_EQ_CONFIG2		0x0fc
+-#define QPHY_V4_20_PCS_PCIE_G4_EQ_CONFIG5		0x108
+-#define QPHY_V4_20_PCS_LANE1_INSIG_SW_CTRL2		0x824
+-#define QPHY_V4_20_PCS_LANE1_INSIG_MX_CTRL2		0x828
 -
--/* PCIE GEN3 PCS registers */
--#define PCIE_GEN3_QHP_PHY_TXMGN_MAIN_V0_M3P5DB		0x2c
--#define PCIE_GEN3_QHP_PHY_TXMGN_POST_V0_M3P5DB		0x40
--#define PCIE_GEN3_QHP_PHY_TXMGN_MAIN_V0_M6DB		0x54
--#define PCIE_GEN3_QHP_PHY_TXMGN_POST_V0_M6DB		0x68
--#define PCIE_GEN3_QHP_PHY_POWER_STATE_CONFIG		0x15c
--#define PCIE_GEN3_QHP_PHY_POWER_STATE_CONFIG5		0x16c
--#define PCIE_GEN3_QHP_PHY_PCS_TX_RX_CONFIG		0x174
+-/* Only for QMP V5_20 PHY - PCIe PCS registers */
+-#define QPHY_V5_20_PCS_PCIE_ENDPOINT_REFCLK_DRIVE	0x01c
+-#define QPHY_V5_20_PCS_PCIE_OSC_DTCT_ACTIONS		0x090
+-#define QPHY_V5_20_PCS_PCIE_EQ_CONFIG1			0x0a0
+-#define QPHY_V5_20_PCS_PCIE_G4_EQ_CONFIG5		0x108
+-#define QPHY_V5_20_PCS_PCIE_G4_PRE_GAIN			0x15c
+-#define QPHY_V5_20_PCS_PCIE_RX_MARGINING_CONFIG3	0x184
 -
- /* Only for QMP V4_20 PHY - USB/PCIe PCS registers */
- #define QPHY_V4_20_PCS_RX_SIGDET_LVL			0x188
- #define QPHY_V4_20_PCS_EQ_CONFIG2			0x1d8
+ #endif
 -- 
 2.35.1
 
