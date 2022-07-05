@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3836DC433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 11:46:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63994C43334
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 11:51:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wBfjt48dGlIutmq72I2jMcuZnSv3tK28z5AgAYHrehA=; b=4Y2iclYxbJDZgf
-	91g8r32o9kAojpN2l3yMEpijTT44rhwIU6PyMitaWMNpB7A4ivt/WGNOlGcf6pA+8M30hCW8Rim/A
-	rDtQpxIrnJq9q7Ha3x7qCnIDro4sbTbktiMOA9sEmoSK3bCZS/z0Q2rY8vD1pSN1oDxFllHwAxS+a
-	5n0MjzSf0Q48VuZ34QVCKzhvL0kGtqREA0di5+lmcU38oC9KFNAEnY2npje0lxpXlrReknMjILlC7
-	+lXniUbBkINe9Cn/2XREP2WCOrAv2OYRK3X95s/NIiYyrCgkxAr9EZRbhG/nndgjYrgLOlV9/wCP4
-	AJXFmIFZ2KJDK9r++FCA==;
+	List-Owner; bh=Nis8MjKNc3a5bcfAjV+MK3uAeGQKdQAeDc9rhpMKcn0=; b=eBo346y4urwHEH
+	LdSKAq8rPm9Fd8fRKCnOY/BiC8Rv9E48/LGAYUkpKnRpdtBHEgItx0TF9B8HTmoL/DyLxSpSjWNKb
+	7jrd+4lwwN1tb542x2zSggIy+d3oxiOGw/c/CPH2jagUmMYYRWG9nhD/EfTPL7elSyLQhZINL4v91
+	W/pMeXYJad5pEHE3Eqe7kO0KJtDIB76fpSQogoRb+tMaPrqR+kgyX9JImQ3k1YKn/aZ83J+E+l6ZT
+	sG4vjyZTNrG96Qy9nbOIxEtjF4Iez65H5IKVekjzyFRdqEHJhspMZvDr26N3AYjqRdPINVvHCNqtj
+	Wyo8xlZ1jywS+T7ExsfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8h0n-00HVcW-Hs; Tue, 05 Jul 2022 11:46:37 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1o8h5l-00HWeJ-Pi; Tue, 05 Jul 2022 11:51:45 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8h0k-00HVb9-R5
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 11:46:36 +0000
+	id 1o8h5j-00HWdK-E6
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 11:51:44 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by dfw.source.kernel.org (Postfix) with ESMTPS id 2D55E616E9;
-	Tue,  5 Jul 2022 11:46:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83181C341CE;
-	Tue,  5 Jul 2022 11:46:33 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id A94F561714;
+	Tue,  5 Jul 2022 11:51:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0ADEFC341CB;
+	Tue,  5 Jul 2022 11:51:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1657021593;
-	bh=g9kyp+0dqAAFhiEd0vppJfgTzCC43SYBYOZLu2V0sgU=;
+	s=k20201202; t=1657021902;
+	bh=37ErEos1glNflV0Z8TycaNQrb1sNVtveZKaWkyeGY4Y=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BV2AyIIK1FKrm5uJx7f2fQJU5dXNzlYlA9nCPEiHIhAfRKUPoNR63d45CV8hKNk41
-	 MvlsW0mf5/KvVMJhqRNi76PqRFEPwfrrIoqZB79KwuaUSITaRvaSdlFX7lsn6gVZDq
-	 FnF4S2KbzTiMzYuMZ39sM3wxgKN5y+bY29r1aKr09NB7VaG9Ypl3oWOKgXGs/zvuZ7
-	 Luy/ybkDrNIEOvDb2PA0VO90Hz3u9rTAO6NqlJIT6PKaY8myVBoK/TFophbp7M2lYs
-	 n6pLS/UH1Nn130fVA22aQAepSNimte77Xvu9v6k7XBVnKpazywMOBzSwXFdy4QbZke
-	 +7fsJfjTyiaqg==
+	b=X15yTqoh73uHtWmXjsLZ5BSqB88XR8KYXv2Gj3ZpGsVXg3vZ7aPkzd2B1F1UvFr3h
+	 1zHdVE5NdYIqqHDgj44DLHqQSUMFZ6etSPHY1GCMi5Vel2BBFzvHM9JWa5urz7vvIj
+	 lw5de7cWFSlg3Fa0x/ocKJj0x25dJyq+uIcFIyC0Fzd/Cq9KI2/4KGuN2PMcC+8vZX
+	 rK+Rhaw/aDtcH8gc4OMd/nxdT5JpOuRFZOM6IEjEK6BecLI+GS64HF9kxnjlRdLh2D
+	 cnnHef330954A4i4mkFnyjBV18vnfc60zMB/p8YlVu22fdPKe+FShIrNJsLskqdn85
+	 4+nTGKUOHi5vA==
 Received: from johan by xi.lan with local (Exim 4.94.2)
 	(envelope-from <johan@kernel.org>)
-	id 1o8h0j-00062C-Hr; Tue, 05 Jul 2022 13:46:34 +0200
-Date: Tue, 5 Jul 2022 13:46:33 +0200
+	id 1o8h5i-00064X-Oq; Tue, 05 Jul 2022 13:51:42 +0200
+Date: Tue, 5 Jul 2022 13:51:42 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -56,18 +56,18 @@ Cc: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@ti.com>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 16/43] dt-bindings: phy: qcom,qmp-pcie: drop unused
- vddp-ref-clk supply
-Message-ID: <YsQkmUVla9+CDYly@hovoldconsulting.com>
+Subject: Re: [PATCH 17/43] dt-bindings: phy: qcom,qmp-pcie: add missing child
+ node schema
+Message-ID: <YsQlzr6nyvz761Kz@hovoldconsulting.com>
 References: <20220705094239.17174-1-johan+linaro@kernel.org>
- <20220705094239.17174-17-johan+linaro@kernel.org>
- <d3a49c05-0fd0-920e-bd0a-f821e8e27b8b@linaro.org>
+ <20220705094239.17174-18-johan+linaro@kernel.org>
+ <4bc79a1c-66b1-225d-5026-ddf3e6f7d22c@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d3a49c05-0fd0-920e-bd0a-f821e8e27b8b@linaro.org>
+In-Reply-To: <4bc79a1c-66b1-225d-5026-ddf3e6f7d22c@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_044634_955205_F6EC05F6 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20220705_045143_633457_4479ED18 
+X-CRM114-Status: GOOD (  18.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,28 +84,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 05, 2022 at 12:16:34PM +0200, Krzysztof Kozlowski wrote:
+On Tue, Jul 05, 2022 at 12:18:37PM +0200, Krzysztof Kozlowski wrote:
 > On 05/07/2022 11:42, Johan Hovold wrote:
-> > Only UFS PHY nodes in mainline have a vddp-ref-clk supply. Drop it from
-> > the PCIe PHY binding.
+> > Add the missing the description of the PHY-provider child node which was
+> > ignored when converting to DT schema.
 > > 
+> > Also fix up the incorrect description that claimed that one child node
+> > per lane was required.
+> > 
+> > Fixes: ccf51c1cedfd ("dt-bindings: phy: qcom,qmp: Convert QMP PHY bindings to yaml")
+> > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> > ---
+> >  .../bindings/phy/qcom,qmp-pcie-phy.yaml       | 88 ++++++++++++++++++-
+> >  1 file changed, 85 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+> > index ff1577f68a00..5a1ebf874559 100644
+> > --- a/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/qcom,qmp-pcie-phy.yaml
+> > @@ -69,9 +69,37 @@ properties:
+
+> > +  - if:
+> > +      properties:
+> > +        compatible:
+> > +          contains:
+> > +            enum:
+> > +              - qcom,sm8250-qmp-gen3x2-pcie-phy
+> > +              - qcom,sm8250-qmp-modem-pcie-phy
+> > +              - qcom,sm8450-qmp-gen4x2-pcie-phy
+> > +    then:
+> > +      patternProperties:
+> > +        "^phy@[0-9a-f]+$":
+> > +          properties:
+> > +            reg:
+> > +              items:
+> > +                - description: TX lane 1
+> > +                - description: RX lane 1
+> > +                - description: PCS
+> > +                - description: TX lane 2
+> > +                - description: RX lane 2
+> > +                - description: PCS_MISC
+> > +    else:
+> > +      patternProperties:
+> > +        "^phy@[0-9a-f]+$":
+> > +          properties:
+> > +            reg:
+> > +              minItems: 3
+> > +              maxItems: 4
+> > +              items:
+> > +                - description: TX
+> > +                - description: RX
+> > +                - description: PCS
+> > +                - description: PCS_MISC
+> > +      if:
 > 
-> That's not really good reason. Either the hardware uses ref-clk supply
-> or not. Now it looks like you copied everything from common schema and
-> clean things up. That's not how it should be organize.
+> Do not include if within other if. Just split the entire section to its
+> own if:.
 
-Yes, and I've been pretty clear that that's how I'm going about to
-disentangle the current binding.
- 
-> It's okay to copy existing bindings which are applicable and then in
-> separate patch deprecate things or remove pieces which are not correct.
-> But all this in assumption that the first copy already selected only
-> applicable parts.
+That sounds like it would just obfuscate the logic. The else clause
+specified 3-4 registers and the nested if determines which compatibles
+use which by further narrowing the range.
 
-But how would you be able to tell what parts I left out from the
-original copy unless I first do the split and then explicitly remove
-things that were presumably *never* applicable and just happened to be
-added because all bindings where combined in one large mess of a schema?
+If you move it out to the else: this would be really hard understand and
+verify.
+
+> > +        properties:
+> > +          compatible:
+> > +            contains:
+> > +              enum:
+> > +                - qcom,ipq6018-qmp-pcie-phy
+> > +                - qcom,ipq8074-qmp-pcie-phy
+> > +                - qcom,msm8998-qmp-pcie-phy
+> > +                - qcom,sdm845-qhp-pcie-phy
+> > +      then:
+> > +        patternProperties:
+> > +          "^phy@[0-9a-f]+$":
+> > +            properties:
+> > +              reg:
+> > +                maxItems: 3
+> > +      else:
+> > +        patternProperties:
+> > +          "^phy@[0-9a-f]+$":
+> > +            properties:
+> > +              reg:
+> > +                minItems: 4
 
 Johan
 
