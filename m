@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4977CC433EF
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:02:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C05A6C43334
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Jul 2022 10:03:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p22hXGDSpC34Vz0eZleRceeHGSOp7K7HRWLodB5AnR8=; b=ZkuSe74/ooJmED
-	VrCUk5R2ZIQ6BQ5xPRjGVXJVCeZ84yKpY3A9eYgzhRL3rA5MlekYAU5nky6/S6bgjo6/UTSzZMmiG
-	+sAFBx2OgrpeJcIV79uuRYBjzsj44p7M6L709xOG6AKBogTgAePlXhyBnXMbu7gS5J1MuW7nqzM4c
-	zvu+K81ZaqnyKMmyPZZczq/W0mJ3wyywqteS8MVQ3maqzw98b9MnyP8HGicW3tPQehdVmBXg0Fa6j
-	LtUzzxhdAzT9/9qWu0N1LFPpIihusdX8InxMxudCzgXw4i5rN1yUG2CtgC/44kMxD2mrw3EmKQEjd
-	u6NhjwlDXEpNHjJtJU/w==;
+	List-Owner; bh=7Qtt7wSGXUd1l6K0+uQf6D6/hJa+7he+1UDqSJf9K9E=; b=JPrL/YVx351BJr
+	n74KXpcCTXOy/8J2h2TjeIuipBEpyMqj199AW0r8mHmTLFXjj7ZERBa/D+8+ap8IGGe2RoEO7Kvz0
+	NuGVD07gH+lFFEfGDK1aKNliWoH7i0f5Qk7WnucueuPuiBEPVCRrGQSRczsFDZBBZq+GLeI8hEAMY
+	yR/7ixlTGiN/W6cS6WoBymP/vHS5rhNgQLayQ0DLha8Qylap8HuTusKKxGNEs/Tvoxind//647xpe
+	kk18GDfhRk9ogUojEa3/ALIRwRuTt5xjhb0lZWS4FXOT64zsQh4uGAfzUA30hG60j9Q08aVPZwFQT
+	ZZv2qylgdmlZFBwb2/RA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fNs-00H3G7-OU; Tue, 05 Jul 2022 10:02:20 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1o8fOb-00H3Xn-7B; Tue, 05 Jul 2022 10:03:05 +0000
+Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1o8fNq-00H3Ew-JP
-	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 10:02:19 +0000
-Received: by mail-lf1-x136.google.com with SMTP id g11so4440851lfb.11
-        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 03:02:18 -0700 (PDT)
+	id 1o8fOY-00H3Vz-O7
+	for linux-phy@lists.infradead.org; Tue, 05 Jul 2022 10:03:03 +0000
+Received: by mail-lj1-x231.google.com with SMTP id a39so13851909ljq.11
+        for <linux-phy@lists.infradead.org>; Tue, 05 Jul 2022 03:03:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=linaro.org; s=google;
         h=message-id:date:mime-version:user-agent:subject:content-language:to
          :cc:references:from:in-reply-to:content-transfer-encoding;
-        bh=YsVdI7fHl1VxO3Wl5w8gk6OXuhIP/NlmiGI+6KYr6zs=;
-        b=LUQmv684ojJXX0kS8+ZVOyZfAKtuh0TUojYHooSk1/kbN5fo1AEWOBL8BXQpL7IUhu
-         +/YjUK4GHkOSfagzACV816hgVCTDsUAaMZ65YkokqADDGa8qsD+cY1t+bAm4/h7jBLzo
-         TGUhCJyo/J0u4i85m2lnnFxDSPSyUBwMUIl6oFYQL4PIhUuRzdcagjqitKsei8pmEmGM
-         59biwf1TYTsnphy9c+SJVl3tjOa+y1Yvm/MTVLTyiNnXB2V50MMz+2ySCWXxfhlvbDJ7
-         RCFUnzHf2WhV44SxIh6j1ipaFqyo5Dd6SD5vWF1jNcvZ02j3dDk1iuJGCvU8m3imdelG
-         U1eA==
+        bh=w9+SQsY/NLl9h6xMjjbnzFOp0g9U5sIW1EUYanyyw+c=;
+        b=HxGx8j+pPyygvzH4xlqJHqV6m1QNJxV4cPrs2F+AGjML6Y/2hCEL0JqlTSxgBqw1uF
+         ObIdy/JmJaNkNCR0ccJCZXrdwJr5hitpKZHHiabgYKkcfEWr+sFr83PBScyKmcJDNhXF
+         LNuOPmpjJvgTkQ9JS0tBwA0RsodAOTXEvM1w9xEXHzjzZ0gXx/AkzN9HVYGm92vJmUBW
+         0omqDIVJhHeR/O0jgt/X0qDJicb6IGh1H/dTXVw1MYSiwuprvc/8dd3l4KQl1uexv/xf
+         0PKX9REU3os1TA811cdPExcyH/+9RhDzWFOCGVu+IkKoGWTsmtmhnSyDKZmN/C8EKyU7
+         hJyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
         h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
          :content-language:to:cc:references:from:in-reply-to
          :content-transfer-encoding;
-        bh=YsVdI7fHl1VxO3Wl5w8gk6OXuhIP/NlmiGI+6KYr6zs=;
-        b=Gstl6nuZI2CdjOuAU1wCu6CfRuRPYh9W/VvkT9HiPNAgYRyrXLi9jkHrPX9GQm0+jV
-         isFgzTKwQ0isj5irue1ct/FpJrkQwTrO7h5bMu3sISFKUNFZ3qwqHz9sErV8o0YgNGgH
-         piymGAS+TNaga3jj/nEDnKo5NtHyOubLjqDvyfESaQ+4qh0uRhf9Av0q9AvcGKcQwMrM
-         z82iP/635U9Hw5OoX4CIcc9R5SBaOtWeo3JNovALAgFRSnoocxcfBaZvlDMXyNhtdN6C
-         ssCXuxRNVfnrzOPYFZOS0TRdc3woPWHOvLfolqJRt6eemyaJ53Em9CRhIvZtvMeBSOcJ
-         erNA==
-X-Gm-Message-State: AJIora+2v065LqpaRYClFpPJeliGyMEfnfx6P7623DrmTg4IpcYm++Cc
-	25EbgeQ+ObsMLHPBrgv898Pwu/1c0iOUkg==
-X-Google-Smtp-Source: AGRyM1v7t1GhNIVSZTg1X939xuA0e3pQLj4BvtxRMtuqaEdgbiTxylVDRXSRMYzbO69WGBTLo0ob/A==
-X-Received: by 2002:a05:6512:3b9d:b0:47f:7712:3ece with SMTP id g29-20020a0565123b9d00b0047f77123ecemr20980076lfv.127.1657015336913;
-        Tue, 05 Jul 2022 03:02:16 -0700 (PDT)
+        bh=w9+SQsY/NLl9h6xMjjbnzFOp0g9U5sIW1EUYanyyw+c=;
+        b=H3zFeQldGizfxcJx1mFAMxUOBrWWWz6G7eZi8/AHaV+uuNRdoCu0lxe62e8rH5qMnh
+         E9sCrMelwFinGYaMDQ/8onZMfjMa99lxR989kYodwPy/FLyTJfnUW0ajqwic4PLrby2Z
+         cMQFvGaWMGUhUiTDlP7Z7QGd8cSmck930YNUtPFjzGgV4JFGDWLxn+8LCh6DA8ytZpil
+         2D5ZlYQVHPGkG+ZxIiI5GGqVvaoPMoqstGaMBTPg2+r3XgrhCq3mYQyOxVfKVtGBDhb3
+         YzC9Yx5isMkrD6PD/5oKdmyMDgb25ySe+92akY+fGwJdEukiq0jXNI6bQNf+VoctmnpC
+         0aCQ==
+X-Gm-Message-State: AJIora/wkPtA5JxdiNXJm9ib7wG1ydTHzvbTNBbs0zZe6ZL8iYhfMYko
+	0g28ItRbbi8gQKt+dpmSe3lforJEfPScDw==
+X-Google-Smtp-Source: AGRyM1uwnvOcoQafM3SLYRmg5cf9HHvDJs0sgnpJ9Zzs28wWHyGPma2Rftkuh+3aPkH5nmdGjaunTA==
+X-Received: by 2002:a2e:8958:0:b0:25a:852a:c302 with SMTP id b24-20020a2e8958000000b0025a852ac302mr19530866ljk.130.1657015381066;
+        Tue, 05 Jul 2022 03:03:01 -0700 (PDT)
 Received: from [192.168.1.52] ([84.20.121.239])
-        by smtp.gmail.com with ESMTPSA id o4-20020a05651205c400b0047f8990e8c2sm5635777lfo.140.2022.07.05.03.02.15
+        by smtp.gmail.com with ESMTPSA id u16-20020ac258d0000000b0047f6f675ea1sm5610685lfo.161.2022.07.05.03.02.59
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 05 Jul 2022 03:02:16 -0700 (PDT)
-Message-ID: <b4058e50-8042-fe60-9a78-04bca7a09f3f@linaro.org>
-Date: Tue, 5 Jul 2022 12:02:15 +0200
+        Tue, 05 Jul 2022 03:03:00 -0700 (PDT)
+Message-ID: <7f418618-a40f-9ada-629a-6d6b08a29fd3@linaro.org>
+Date: Tue, 5 Jul 2022 12:02:59 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.11.0
-Subject: Re: [PATCH 02/43] dt-bindings: phy: qcom,qmp: sort compatible strings
+Subject: Re: [PATCH 03/43] dt-bindings: phy: qcom,qmp: clean up descriptions
 Content-Language: en-US
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
@@ -75,12 +75,12 @@ Cc: Andy Gross <agross@kernel.org>,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
 References: <20220705094239.17174-1-johan+linaro@kernel.org>
- <20220705094239.17174-3-johan+linaro@kernel.org>
+ <20220705094239.17174-4-johan+linaro@kernel.org>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20220705094239.17174-3-johan+linaro@kernel.org>
+In-Reply-To: <20220705094239.17174-4-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220705_030218_712769_9902B00C 
-X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-CacheID: sfid-20220705_030302_819377_97000036 
+X-CRM114-Status: UNSURE (   6.58  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -99,13 +99,11 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 05/07/2022 11:41, Johan Hovold wrote:
-> Sort the compatible strings alphabetically to make it easier to look up
-> entries and add new ones.
+> Clean up the descriptions somewhat by using uppercase "PHY" consistently
+> and spelling out "clock".
 > 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 
-
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 
 Best regards,
